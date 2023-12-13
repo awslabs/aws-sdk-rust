@@ -23,7 +23,7 @@ impl ModifyClusterParameterGroupInputBuilder {
 /// Fluent builder constructing a request to `ModifyClusterParameterGroup`.
 ///
 /// <p>Modifies the parameters of a parameter group. For the parameters parameter, it can't contain ASCII characters.</p>
-/// <p>For more information about parameters and parameter groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+/// <p> For more information about parameters and parameter groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyClusterParameterGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

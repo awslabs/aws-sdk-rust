@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifySubnetAttributeInput {
-    /// <p>Specify <code>true</code> to indicate that network interfaces created in the specified subnet should be assigned an IPv6 address. This includes a network interface that's created when launching an instance into the subnet (the instance therefore receives an IPv6 address).</p>
+    /// <p>Specify <code>true</code> to indicate that network interfaces created in the specified subnet should be assigned an IPv6 address. This includes a network interface that's created when launching an instance into the subnet (the instance therefore receives an IPv6 address). </p>
     /// <p>If you enable the IPv6 addressing feature for your subnet, your network interface or instance only receives an IPv6 address if it's created using version <code>2016-11-15</code> or later of the Amazon EC2 API.</p>
     pub assign_ipv6_address_on_creation: ::std::option::Option<crate::types::AttributeBooleanValue>,
     /// <p>Specify <code>true</code> to indicate that network interfaces attached to instances created in the specified subnet should be assigned a public IPv4 address.</p>
@@ -24,13 +24,13 @@ pub struct ModifySubnetAttributeInput {
     pub enable_resource_name_dns_a_record_on_launch: ::std::option::Option<crate::types::AttributeBooleanValue>,
     /// <p>Indicates whether to respond to DNS queries for instance hostnames with DNS AAAA records.</p>
     pub enable_resource_name_dns_aaaa_record_on_launch: ::std::option::Option<crate::types::AttributeBooleanValue>,
-    /// <p>Indicates the device position for local network interfaces in this subnet. For example, <code>1</code> indicates local network interfaces in this subnet are the secondary network interface (eth1). A local network interface cannot be the primary network interface (eth0).</p>
+    /// <p> Indicates the device position for local network interfaces in this subnet. For example, <code>1</code> indicates local network interfaces in this subnet are the secondary network interface (eth1). A local network interface cannot be the primary network interface (eth0). </p>
     pub enable_lni_at_device_index: ::std::option::Option<i32>,
-    /// <p>Specify <code>true</code> to indicate that local network interfaces at the current position should be disabled.</p>
+    /// <p> Specify <code>true</code> to indicate that local network interfaces at the current position should be disabled. </p>
     pub disable_lni_at_device_index: ::std::option::Option<crate::types::AttributeBooleanValue>,
 }
 impl ModifySubnetAttributeInput {
-    /// <p>Specify <code>true</code> to indicate that network interfaces created in the specified subnet should be assigned an IPv6 address. This includes a network interface that's created when launching an instance into the subnet (the instance therefore receives an IPv6 address).</p>
+    /// <p>Specify <code>true</code> to indicate that network interfaces created in the specified subnet should be assigned an IPv6 address. This includes a network interface that's created when launching an instance into the subnet (the instance therefore receives an IPv6 address). </p>
     /// <p>If you enable the IPv6 addressing feature for your subnet, your network interface or instance only receives an IPv6 address if it's created using version <code>2016-11-15</code> or later of the Amazon EC2 API.</p>
     pub fn assign_ipv6_address_on_creation(&self) -> ::std::option::Option<&crate::types::AttributeBooleanValue> {
         self.assign_ipv6_address_on_creation.as_ref()
@@ -69,11 +69,11 @@ impl ModifySubnetAttributeInput {
     pub fn enable_resource_name_dns_aaaa_record_on_launch(&self) -> ::std::option::Option<&crate::types::AttributeBooleanValue> {
         self.enable_resource_name_dns_aaaa_record_on_launch.as_ref()
     }
-    /// <p>Indicates the device position for local network interfaces in this subnet. For example, <code>1</code> indicates local network interfaces in this subnet are the secondary network interface (eth1). A local network interface cannot be the primary network interface (eth0).</p>
+    /// <p> Indicates the device position for local network interfaces in this subnet. For example, <code>1</code> indicates local network interfaces in this subnet are the secondary network interface (eth1). A local network interface cannot be the primary network interface (eth0). </p>
     pub fn enable_lni_at_device_index(&self) -> ::std::option::Option<i32> {
         self.enable_lni_at_device_index
     }
-    /// <p>Specify <code>true</code> to indicate that local network interfaces at the current position should be disabled.</p>
+    /// <p> Specify <code>true</code> to indicate that local network interfaces at the current position should be disabled. </p>
     pub fn disable_lni_at_device_index(&self) -> ::std::option::Option<&crate::types::AttributeBooleanValue> {
         self.disable_lni_at_device_index.as_ref()
     }
@@ -102,19 +102,19 @@ pub struct ModifySubnetAttributeInputBuilder {
     pub(crate) disable_lni_at_device_index: ::std::option::Option<crate::types::AttributeBooleanValue>,
 }
 impl ModifySubnetAttributeInputBuilder {
-    /// <p>Specify <code>true</code> to indicate that network interfaces created in the specified subnet should be assigned an IPv6 address. This includes a network interface that's created when launching an instance into the subnet (the instance therefore receives an IPv6 address).</p>
+    /// <p>Specify <code>true</code> to indicate that network interfaces created in the specified subnet should be assigned an IPv6 address. This includes a network interface that's created when launching an instance into the subnet (the instance therefore receives an IPv6 address). </p>
     /// <p>If you enable the IPv6 addressing feature for your subnet, your network interface or instance only receives an IPv6 address if it's created using version <code>2016-11-15</code> or later of the Amazon EC2 API.</p>
     pub fn assign_ipv6_address_on_creation(mut self, input: crate::types::AttributeBooleanValue) -> Self {
         self.assign_ipv6_address_on_creation = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specify <code>true</code> to indicate that network interfaces created in the specified subnet should be assigned an IPv6 address. This includes a network interface that's created when launching an instance into the subnet (the instance therefore receives an IPv6 address).</p>
+    /// <p>Specify <code>true</code> to indicate that network interfaces created in the specified subnet should be assigned an IPv6 address. This includes a network interface that's created when launching an instance into the subnet (the instance therefore receives an IPv6 address). </p>
     /// <p>If you enable the IPv6 addressing feature for your subnet, your network interface or instance only receives an IPv6 address if it's created using version <code>2016-11-15</code> or later of the Amazon EC2 API.</p>
     pub fn set_assign_ipv6_address_on_creation(mut self, input: ::std::option::Option<crate::types::AttributeBooleanValue>) -> Self {
         self.assign_ipv6_address_on_creation = input;
         self
     }
-    /// <p>Specify <code>true</code> to indicate that network interfaces created in the specified subnet should be assigned an IPv6 address. This includes a network interface that's created when launching an instance into the subnet (the instance therefore receives an IPv6 address).</p>
+    /// <p>Specify <code>true</code> to indicate that network interfaces created in the specified subnet should be assigned an IPv6 address. This includes a network interface that's created when launching an instance into the subnet (the instance therefore receives an IPv6 address). </p>
     /// <p>If you enable the IPv6 addressing feature for your subnet, your network interface or instance only receives an IPv6 address if it's created using version <code>2016-11-15</code> or later of the Amazon EC2 API.</p>
     pub fn get_assign_ipv6_address_on_creation(&self) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
         &self.assign_ipv6_address_on_creation
@@ -238,31 +238,31 @@ impl ModifySubnetAttributeInputBuilder {
     pub fn get_enable_resource_name_dns_aaaa_record_on_launch(&self) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
         &self.enable_resource_name_dns_aaaa_record_on_launch
     }
-    /// <p>Indicates the device position for local network interfaces in this subnet. For example, <code>1</code> indicates local network interfaces in this subnet are the secondary network interface (eth1). A local network interface cannot be the primary network interface (eth0).</p>
+    /// <p> Indicates the device position for local network interfaces in this subnet. For example, <code>1</code> indicates local network interfaces in this subnet are the secondary network interface (eth1). A local network interface cannot be the primary network interface (eth0). </p>
     pub fn enable_lni_at_device_index(mut self, input: i32) -> Self {
         self.enable_lni_at_device_index = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates the device position for local network interfaces in this subnet. For example, <code>1</code> indicates local network interfaces in this subnet are the secondary network interface (eth1). A local network interface cannot be the primary network interface (eth0).</p>
+    /// <p> Indicates the device position for local network interfaces in this subnet. For example, <code>1</code> indicates local network interfaces in this subnet are the secondary network interface (eth1). A local network interface cannot be the primary network interface (eth0). </p>
     pub fn set_enable_lni_at_device_index(mut self, input: ::std::option::Option<i32>) -> Self {
         self.enable_lni_at_device_index = input;
         self
     }
-    /// <p>Indicates the device position for local network interfaces in this subnet. For example, <code>1</code> indicates local network interfaces in this subnet are the secondary network interface (eth1). A local network interface cannot be the primary network interface (eth0).</p>
+    /// <p> Indicates the device position for local network interfaces in this subnet. For example, <code>1</code> indicates local network interfaces in this subnet are the secondary network interface (eth1). A local network interface cannot be the primary network interface (eth0). </p>
     pub fn get_enable_lni_at_device_index(&self) -> &::std::option::Option<i32> {
         &self.enable_lni_at_device_index
     }
-    /// <p>Specify <code>true</code> to indicate that local network interfaces at the current position should be disabled.</p>
+    /// <p> Specify <code>true</code> to indicate that local network interfaces at the current position should be disabled. </p>
     pub fn disable_lni_at_device_index(mut self, input: crate::types::AttributeBooleanValue) -> Self {
         self.disable_lni_at_device_index = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specify <code>true</code> to indicate that local network interfaces at the current position should be disabled.</p>
+    /// <p> Specify <code>true</code> to indicate that local network interfaces at the current position should be disabled. </p>
     pub fn set_disable_lni_at_device_index(mut self, input: ::std::option::Option<crate::types::AttributeBooleanValue>) -> Self {
         self.disable_lni_at_device_index = input;
         self
     }
-    /// <p>Specify <code>true</code> to indicate that local network interfaces at the current position should be disabled.</p>
+    /// <p> Specify <code>true</code> to indicate that local network interfaces at the current position should be disabled. </p>
     pub fn get_disable_lni_at_device_index(&self) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
         &self.disable_lni_at_device_index
     }

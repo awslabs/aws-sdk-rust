@@ -16,7 +16,7 @@ pub struct Ec2InstanceDetails {
     pub platform: ::std::option::Option<::std::string::String>,
     /// <p>Determines whether the recommended reservation is dedicated or shared.</p>
     pub tenancy: ::std::option::Option<::std::string::String>,
-    /// <p>Determines whether the recommendation is for a current-generation instance.</p>
+    /// <p>Determines whether the recommendation is for a current-generation instance. </p>
     pub current_generation: bool,
     /// <p>Determines whether the recommended reservation is size flexible.</p>
     pub size_flex_eligible: bool,
@@ -46,7 +46,7 @@ impl Ec2InstanceDetails {
     pub fn tenancy(&self) -> ::std::option::Option<&str> {
         self.tenancy.as_deref()
     }
-    /// <p>Determines whether the recommendation is for a current-generation instance.</p>
+    /// <p>Determines whether the recommendation is for a current-generation instance. </p>
     pub fn current_generation(&self) -> bool {
         self.current_generation
     }
@@ -160,17 +160,17 @@ impl Ec2InstanceDetailsBuilder {
     pub fn get_tenancy(&self) -> &::std::option::Option<::std::string::String> {
         &self.tenancy
     }
-    /// <p>Determines whether the recommendation is for a current-generation instance.</p>
+    /// <p>Determines whether the recommendation is for a current-generation instance. </p>
     pub fn current_generation(mut self, input: bool) -> Self {
         self.current_generation = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Determines whether the recommendation is for a current-generation instance.</p>
+    /// <p>Determines whether the recommendation is for a current-generation instance. </p>
     pub fn set_current_generation(mut self, input: ::std::option::Option<bool>) -> Self {
         self.current_generation = input;
         self
     }
-    /// <p>Determines whether the recommendation is for a current-generation instance.</p>
+    /// <p>Determines whether the recommendation is for a current-generation instance. </p>
     pub fn get_current_generation(&self) -> &::std::option::Option<bool> {
         &self.current_generation
     }

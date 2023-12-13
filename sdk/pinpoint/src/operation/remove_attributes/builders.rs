@@ -124,12 +124,9 @@ impl RemoveAttributesFluentBuilder {
     }
     /// <p>The type of attribute or attributes to remove. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>endpoint-custom-attributes - Custom attributes that describe endpoints, such as the date when an associated user opted in or out of receiving communications from you through a specific type of channel.</p></li>
-    /// <li>
-    /// <p>endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints, such as the number of app sessions or the number of items left in a cart.</p></li>
-    /// <li>
-    /// <p>endpoint-user-attributes - Custom attributes that describe users, such as first name, last name, and age.</p></li>
+    /// <li><p>endpoint-custom-attributes - Custom attributes that describe endpoints, such as the date when an associated user opted in or out of receiving communications from you through a specific type of channel.</p></li>
+    /// <li><p>endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints, such as the number of app sessions or the number of items left in a cart.</p></li>
+    /// <li><p>endpoint-user-attributes - Custom attributes that describe users, such as first name, last name, and age.</p></li>
     /// </ul>
     pub fn attribute_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attribute_type(input.into());
@@ -137,12 +134,9 @@ impl RemoveAttributesFluentBuilder {
     }
     /// <p>The type of attribute or attributes to remove. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>endpoint-custom-attributes - Custom attributes that describe endpoints, such as the date when an associated user opted in or out of receiving communications from you through a specific type of channel.</p></li>
-    /// <li>
-    /// <p>endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints, such as the number of app sessions or the number of items left in a cart.</p></li>
-    /// <li>
-    /// <p>endpoint-user-attributes - Custom attributes that describe users, such as first name, last name, and age.</p></li>
+    /// <li><p>endpoint-custom-attributes - Custom attributes that describe endpoints, such as the date when an associated user opted in or out of receiving communications from you through a specific type of channel.</p></li>
+    /// <li><p>endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints, such as the number of app sessions or the number of items left in a cart.</p></li>
+    /// <li><p>endpoint-user-attributes - Custom attributes that describe users, such as first name, last name, and age.</p></li>
     /// </ul>
     pub fn set_attribute_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_attribute_type(input);
@@ -150,12 +144,9 @@ impl RemoveAttributesFluentBuilder {
     }
     /// <p>The type of attribute or attributes to remove. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>endpoint-custom-attributes - Custom attributes that describe endpoints, such as the date when an associated user opted in or out of receiving communications from you through a specific type of channel.</p></li>
-    /// <li>
-    /// <p>endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints, such as the number of app sessions or the number of items left in a cart.</p></li>
-    /// <li>
-    /// <p>endpoint-user-attributes - Custom attributes that describe users, such as first name, last name, and age.</p></li>
+    /// <li><p>endpoint-custom-attributes - Custom attributes that describe endpoints, such as the date when an associated user opted in or out of receiving communications from you through a specific type of channel.</p></li>
+    /// <li><p>endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints, such as the number of app sessions or the number of items left in a cart.</p></li>
+    /// <li><p>endpoint-user-attributes - Custom attributes that describe users, such as first name, last name, and age.</p></li>
     /// </ul>
     pub fn get_attribute_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_attribute_type()

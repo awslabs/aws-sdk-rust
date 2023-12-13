@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder takes no input, just [`send`](crate::operation::get_portfolio_summary::builders::GetPortfolioSummaryFluentBuilder::send) it.
     /// - On success, responds with [`GetPortfolioSummaryOutput`](crate::operation::get_portfolio_summary::GetPortfolioSummaryOutput) with field(s):
-    ///   - [`assessment_summary(Option<AssessmentSummary>)`](crate::operation::get_portfolio_summary::GetPortfolioSummaryOutput::assessment_summary): <p>An assessment summary for the portfolio including the number of servers to rehost and the overall number of anti-patterns.</p>
+    ///   - [`assessment_summary(Option<AssessmentSummary>)`](crate::operation::get_portfolio_summary::GetPortfolioSummaryOutput::assessment_summary): <p> An assessment summary for the portfolio including the number of servers to rehost and the overall number of anti-patterns. </p>
     /// - On failure, responds with [`SdkError<GetPortfolioSummaryError>`](crate::operation::get_portfolio_summary::GetPortfolioSummaryError)
     pub fn get_portfolio_summary(&self) -> crate::operation::get_portfolio_summary::builders::GetPortfolioSummaryFluentBuilder {
         crate::operation::get_portfolio_summary::builders::GetPortfolioSummaryFluentBuilder::new(self.handle.clone())

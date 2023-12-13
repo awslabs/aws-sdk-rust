@@ -112,28 +112,25 @@ impl ListLicenseManagerReportGeneratorsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>Filters to scope the results. The following filters are supported:</p>
+    /// <p>Filters to scope the results. The following filters are supported: </p>
     /// <ul>
-    /// <li>
-    /// <p><code>LicenseConfigurationArn</code></p></li>
+    /// <li> <p> <code>LicenseConfigurationArn</code> </p> </li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>Filters to scope the results. The following filters are supported:</p>
+    /// <p>Filters to scope the results. The following filters are supported: </p>
     /// <ul>
-    /// <li>
-    /// <p><code>LicenseConfigurationArn</code></p></li>
+    /// <li> <p> <code>LicenseConfigurationArn</code> </p> </li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
-    /// <p>Filters to scope the results. The following filters are supported:</p>
+    /// <p>Filters to scope the results. The following filters are supported: </p>
     /// <ul>
-    /// <li>
-    /// <p><code>LicenseConfigurationArn</code></p></li>
+    /// <li> <p> <code>LicenseConfigurationArn</code> </p> </li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()

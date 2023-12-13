@@ -4,12 +4,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetHealthCheckLastFailureReasonOutput {
-    /// <p>A list that contains one <code>Observation</code> element for each Amazon Route 53 health checker that is reporting a last failure reason.</p>
+    /// <p>A list that contains one <code>Observation</code> element for each Amazon Route 53 health checker that is reporting a last failure reason. </p>
     pub health_check_observations: ::std::vec::Vec<crate::types::HealthCheckObservation>,
     _request_id: Option<String>,
 }
 impl GetHealthCheckLastFailureReasonOutput {
-    /// <p>A list that contains one <code>Observation</code> element for each Amazon Route 53 health checker that is reporting a last failure reason.</p>
+    /// <p>A list that contains one <code>Observation</code> element for each Amazon Route 53 health checker that is reporting a last failure reason. </p>
     pub fn health_check_observations(&self) -> &[crate::types::HealthCheckObservation] {
         use std::ops::Deref;
         self.health_check_observations.deref()
@@ -39,19 +39,19 @@ impl GetHealthCheckLastFailureReasonOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_health_check_observations`](Self::set_health_check_observations).
     ///
-    /// <p>A list that contains one <code>Observation</code> element for each Amazon Route 53 health checker that is reporting a last failure reason.</p>
+    /// <p>A list that contains one <code>Observation</code> element for each Amazon Route 53 health checker that is reporting a last failure reason. </p>
     pub fn health_check_observations(mut self, input: crate::types::HealthCheckObservation) -> Self {
         let mut v = self.health_check_observations.unwrap_or_default();
         v.push(input);
         self.health_check_observations = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list that contains one <code>Observation</code> element for each Amazon Route 53 health checker that is reporting a last failure reason.</p>
+    /// <p>A list that contains one <code>Observation</code> element for each Amazon Route 53 health checker that is reporting a last failure reason. </p>
     pub fn set_health_check_observations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HealthCheckObservation>>) -> Self {
         self.health_check_observations = input;
         self
     }
-    /// <p>A list that contains one <code>Observation</code> element for each Amazon Route 53 health checker that is reporting a last failure reason.</p>
+    /// <p>A list that contains one <code>Observation</code> element for each Amazon Route 53 health checker that is reporting a last failure reason. </p>
     pub fn get_health_check_observations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HealthCheckObservation>> {
         &self.health_check_observations
     }

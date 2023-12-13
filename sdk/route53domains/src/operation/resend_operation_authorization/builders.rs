@@ -22,7 +22,7 @@ impl ResendOperationAuthorizationInputBuilder {
 }
 /// Fluent builder constructing a request to `ResendOperationAuthorization`.
 ///
-/// <p>Resend the form of authorization email for this operation.</p>
+/// <p> Resend the form of authorization email for this operation. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ResendOperationAuthorizationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl ResendOperationAuthorizationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Operation ID.</p>
+    /// <p> Operation ID. </p>
     pub fn operation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.operation_id(input.into());
         self
     }
-    /// <p>Operation ID.</p>
+    /// <p> Operation ID. </p>
     pub fn set_operation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_operation_id(input);
         self
     }
-    /// <p>Operation ID.</p>
+    /// <p> Operation ID. </p>
     pub fn get_operation_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_operation_id()
     }

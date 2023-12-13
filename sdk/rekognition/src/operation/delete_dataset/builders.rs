@@ -25,7 +25,7 @@ impl DeleteDatasetInputBuilder {
 /// <note>
 /// <p>This operation applies only to Amazon Rekognition Custom Labels.</p>
 /// </note>
-/// <p>Deletes an existing Amazon Rekognition Custom Labels dataset. Deleting a dataset might take while. Use <code>DescribeDataset</code> to check the current status. The dataset is still deleting if the value of <code>Status</code> is <code>DELETE_IN_PROGRESS</code>. If you try to access the dataset after it is deleted, you get a <code>ResourceNotFoundException</code> exception.</p>
+/// <p>Deletes an existing Amazon Rekognition Custom Labels dataset. Deleting a dataset might take while. Use <code>DescribeDataset</code> to check the current status. The dataset is still deleting if the value of <code>Status</code> is <code>DELETE_IN_PROGRESS</code>. If you try to access the dataset after it is deleted, you get a <code>ResourceNotFoundException</code> exception. </p>
 /// <p>You can't delete a dataset while it is creating (<code>Status</code> = <code>CREATE_IN_PROGRESS</code>) or if the dataset is updating (<code>Status</code> = <code>UPDATE_IN_PROGRESS</code>).</p>
 /// <p>This operation requires permissions to perform the <code>rekognition:DeleteDataset</code> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -113,17 +113,17 @@ impl DeleteDatasetFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ARN of the Amazon Rekognition Custom Labels dataset that you want to delete.</p>
+    /// <p> The ARN of the Amazon Rekognition Custom Labels dataset that you want to delete. </p>
     pub fn dataset_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dataset_arn(input.into());
         self
     }
-    /// <p>The ARN of the Amazon Rekognition Custom Labels dataset that you want to delete.</p>
+    /// <p> The ARN of the Amazon Rekognition Custom Labels dataset that you want to delete. </p>
     pub fn set_dataset_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dataset_arn(input);
         self
     }
-    /// <p>The ARN of the Amazon Rekognition Custom Labels dataset that you want to delete.</p>
+    /// <p> The ARN of the Amazon Rekognition Custom Labels dataset that you want to delete. </p>
     pub fn get_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_dataset_arn()
     }

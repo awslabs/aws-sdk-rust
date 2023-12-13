@@ -6,11 +6,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SpellCorrectionConfiguration {
-    /// <p><code>TRUE</code> to suggest spell corrections for queries.</p>
+    /// <p> <code>TRUE</code> to suggest spell corrections for queries.</p>
     pub include_query_spell_check_suggestions: bool,
 }
 impl SpellCorrectionConfiguration {
-    /// <p><code>TRUE</code> to suggest spell corrections for queries.</p>
+    /// <p> <code>TRUE</code> to suggest spell corrections for queries.</p>
     pub fn include_query_spell_check_suggestions(&self) -> bool {
         self.include_query_spell_check_suggestions
     }
@@ -29,18 +29,18 @@ pub struct SpellCorrectionConfigurationBuilder {
     pub(crate) include_query_spell_check_suggestions: ::std::option::Option<bool>,
 }
 impl SpellCorrectionConfigurationBuilder {
-    /// <p><code>TRUE</code> to suggest spell corrections for queries.</p>
+    /// <p> <code>TRUE</code> to suggest spell corrections for queries.</p>
     /// This field is required.
     pub fn include_query_spell_check_suggestions(mut self, input: bool) -> Self {
         self.include_query_spell_check_suggestions = ::std::option::Option::Some(input);
         self
     }
-    /// <p><code>TRUE</code> to suggest spell corrections for queries.</p>
+    /// <p> <code>TRUE</code> to suggest spell corrections for queries.</p>
     pub fn set_include_query_spell_check_suggestions(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_query_spell_check_suggestions = input;
         self
     }
-    /// <p><code>TRUE</code> to suggest spell corrections for queries.</p>
+    /// <p> <code>TRUE</code> to suggest spell corrections for queries.</p>
     pub fn get_include_query_spell_check_suggestions(&self) -> &::std::option::Option<bool> {
         &self.include_query_spell_check_suggestions
     }

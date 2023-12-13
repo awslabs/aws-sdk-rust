@@ -8,7 +8,7 @@ pub struct FlywheelSummary {
     pub flywheel_arn: ::std::option::Option<::std::string::String>,
     /// <p>ARN of the active model version for the flywheel.</p>
     pub active_model_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Amazon S3 URI of the data lake location.</p>
+    /// <p>Amazon S3 URI of the data lake location. </p>
     pub data_lake_s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>The status of the flywheel.</p>
     pub status: ::std::option::Option<crate::types::FlywheelStatus>,
@@ -32,7 +32,7 @@ impl FlywheelSummary {
     pub fn active_model_arn(&self) -> ::std::option::Option<&str> {
         self.active_model_arn.as_deref()
     }
-    /// <p>Amazon S3 URI of the data lake location.</p>
+    /// <p>Amazon S3 URI of the data lake location. </p>
     pub fn data_lake_s3_uri(&self) -> ::std::option::Option<&str> {
         self.data_lake_s3_uri.as_deref()
     }
@@ -111,17 +111,17 @@ impl FlywheelSummaryBuilder {
     pub fn get_active_model_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.active_model_arn
     }
-    /// <p>Amazon S3 URI of the data lake location.</p>
+    /// <p>Amazon S3 URI of the data lake location. </p>
     pub fn data_lake_s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_lake_s3_uri = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Amazon S3 URI of the data lake location.</p>
+    /// <p>Amazon S3 URI of the data lake location. </p>
     pub fn set_data_lake_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_lake_s3_uri = input;
         self
     }
-    /// <p>Amazon S3 URI of the data lake location.</p>
+    /// <p>Amazon S3 URI of the data lake location. </p>
     pub fn get_data_lake_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_lake_s3_uri
     }

@@ -22,31 +22,21 @@ impl UpdatePolicyInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdatePolicy`.
 ///
-/// <p>Modifies a Cedar static policy in the specified policy store. You can change only certain elements of the <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_UpdatePolicyInput.html#amazonverifiedpermissions-UpdatePolicy-request-UpdatePolicyDefinition">UpdatePolicyDefinition</a> parameter. You can directly update only static policies. To change a template-linked policy, you must update the template instead, using <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_UpdatePolicyTemplate.html">UpdatePolicyTemplate</a>.</p><note>
+/// <p>Modifies a Cedar static policy in the specified policy store. You can change only certain elements of the <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_UpdatePolicyInput.html#amazonverifiedpermissions-UpdatePolicy-request-UpdatePolicyDefinition">UpdatePolicyDefinition</a> parameter. You can directly update only static policies. To change a template-linked policy, you must update the template instead, using <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_UpdatePolicyTemplate.html">UpdatePolicyTemplate</a>.</p> <note>
 /// <ul>
-/// <li>
-/// <p>If policy validation is enabled in the policy store, then updating a static policy causes Verified Permissions to validate the policy against the schema in the policy store. If the updated static policy doesn't pass validation, the operation fails and the update isn't stored.</p></li>
-/// <li>
-/// <p>When you edit a static policy, You can change only certain elements of a static policy:</p>
+/// <li> <p>If policy validation is enabled in the policy store, then updating a static policy causes Verified Permissions to validate the policy against the schema in the policy store. If the updated static policy doesn't pass validation, the operation fails and the update isn't stored.</p> </li>
+/// <li> <p>When you edit a static policy, You can change only certain elements of a static policy:</p>
 /// <ul>
-/// <li>
-/// <p>The action referenced by the policy.</p></li>
-/// <li>
-/// <p>A condition clause, such as when and unless.</p></li>
-/// </ul>
-/// <p>You can't change these elements of a static policy:</p>
+/// <li> <p>The action referenced by the policy. </p> </li>
+/// <li> <p>A condition clause, such as when and unless. </p> </li>
+/// </ul> <p>You can't change these elements of a static policy: </p>
 /// <ul>
-/// <li>
-/// <p>Changing a policy from a static policy to a template-linked policy.</p></li>
-/// <li>
-/// <p>Changing the effect of a static policy from permit or forbid.</p></li>
-/// <li>
-/// <p>The principal referenced by a static policy.</p></li>
-/// <li>
-/// <p>The resource referenced by a static policy.</p></li>
-/// </ul></li>
-/// <li>
-/// <p>To update a template-linked policy, you must update the template instead.</p></li>
+/// <li> <p>Changing a policy from a static policy to a template-linked policy. </p> </li>
+/// <li> <p>Changing the effect of a static policy from permit or forbid. </p> </li>
+/// <li> <p>The principal referenced by a static policy. </p> </li>
+/// <li> <p>The resource referenced by a static policy. </p> </li>
+/// </ul> </li>
+/// <li> <p>To update a template-linked policy, you must update the template instead. </p> </li>
 /// </ul>
 /// </note> <note>
 /// <p>Verified Permissions is <i> <a href="https://wikipedia.org/wiki/Eventual_consistency">eventually consistent</a> </i>. It can take a few seconds for a new or changed element to be propagate through the service and be visible in the results of other Verified Permissions operations.</p>
@@ -167,21 +157,15 @@ impl UpdatePolicyFluentBuilder {
     /// <p>Specifies the updated policy content that you want to replace on the specified policy. The content must be valid Cedar policy language text.</p>
     /// <p>You can change only the following elements from the policy definition:</p>
     /// <ul>
-    /// <li>
-    /// <p>The <code>action</code> referenced by the policy.</p></li>
-    /// <li>
-    /// <p>Any conditional clauses, such as <code>when</code> or <code>unless</code> clauses.</p></li>
+    /// <li> <p>The <code>action</code> referenced by the policy.</p> </li>
+    /// <li> <p>Any conditional clauses, such as <code>when</code> or <code>unless</code> clauses.</p> </li>
     /// </ul>
     /// <p>You <b>can't</b> change the following elements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Changing from <code>static</code> to <code>templateLinked</code>.</p></li>
-    /// <li>
-    /// <p>Changing the effect of the policy from <code>permit</code> or <code>forbid</code>.</p></li>
-    /// <li>
-    /// <p>The <code>principal</code> referenced by the policy.</p></li>
-    /// <li>
-    /// <p>The <code>resource</code> referenced by the policy.</p></li>
+    /// <li> <p>Changing from <code>static</code> to <code>templateLinked</code>.</p> </li>
+    /// <li> <p>Changing the effect of the policy from <code>permit</code> or <code>forbid</code>.</p> </li>
+    /// <li> <p>The <code>principal</code> referenced by the policy.</p> </li>
+    /// <li> <p>The <code>resource</code> referenced by the policy.</p> </li>
     /// </ul>
     pub fn definition(mut self, input: crate::types::UpdatePolicyDefinition) -> Self {
         self.inner = self.inner.definition(input);
@@ -190,21 +174,15 @@ impl UpdatePolicyFluentBuilder {
     /// <p>Specifies the updated policy content that you want to replace on the specified policy. The content must be valid Cedar policy language text.</p>
     /// <p>You can change only the following elements from the policy definition:</p>
     /// <ul>
-    /// <li>
-    /// <p>The <code>action</code> referenced by the policy.</p></li>
-    /// <li>
-    /// <p>Any conditional clauses, such as <code>when</code> or <code>unless</code> clauses.</p></li>
+    /// <li> <p>The <code>action</code> referenced by the policy.</p> </li>
+    /// <li> <p>Any conditional clauses, such as <code>when</code> or <code>unless</code> clauses.</p> </li>
     /// </ul>
     /// <p>You <b>can't</b> change the following elements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Changing from <code>static</code> to <code>templateLinked</code>.</p></li>
-    /// <li>
-    /// <p>Changing the effect of the policy from <code>permit</code> or <code>forbid</code>.</p></li>
-    /// <li>
-    /// <p>The <code>principal</code> referenced by the policy.</p></li>
-    /// <li>
-    /// <p>The <code>resource</code> referenced by the policy.</p></li>
+    /// <li> <p>Changing from <code>static</code> to <code>templateLinked</code>.</p> </li>
+    /// <li> <p>Changing the effect of the policy from <code>permit</code> or <code>forbid</code>.</p> </li>
+    /// <li> <p>The <code>principal</code> referenced by the policy.</p> </li>
+    /// <li> <p>The <code>resource</code> referenced by the policy.</p> </li>
     /// </ul>
     pub fn set_definition(mut self, input: ::std::option::Option<crate::types::UpdatePolicyDefinition>) -> Self {
         self.inner = self.inner.set_definition(input);
@@ -213,21 +191,15 @@ impl UpdatePolicyFluentBuilder {
     /// <p>Specifies the updated policy content that you want to replace on the specified policy. The content must be valid Cedar policy language text.</p>
     /// <p>You can change only the following elements from the policy definition:</p>
     /// <ul>
-    /// <li>
-    /// <p>The <code>action</code> referenced by the policy.</p></li>
-    /// <li>
-    /// <p>Any conditional clauses, such as <code>when</code> or <code>unless</code> clauses.</p></li>
+    /// <li> <p>The <code>action</code> referenced by the policy.</p> </li>
+    /// <li> <p>Any conditional clauses, such as <code>when</code> or <code>unless</code> clauses.</p> </li>
     /// </ul>
     /// <p>You <b>can't</b> change the following elements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Changing from <code>static</code> to <code>templateLinked</code>.</p></li>
-    /// <li>
-    /// <p>Changing the effect of the policy from <code>permit</code> or <code>forbid</code>.</p></li>
-    /// <li>
-    /// <p>The <code>principal</code> referenced by the policy.</p></li>
-    /// <li>
-    /// <p>The <code>resource</code> referenced by the policy.</p></li>
+    /// <li> <p>Changing from <code>static</code> to <code>templateLinked</code>.</p> </li>
+    /// <li> <p>Changing the effect of the policy from <code>permit</code> or <code>forbid</code>.</p> </li>
+    /// <li> <p>The <code>principal</code> referenced by the policy.</p> </li>
+    /// <li> <p>The <code>resource</code> referenced by the policy.</p> </li>
     /// </ul>
     pub fn get_definition(&self) -> &::std::option::Option<crate::types::UpdatePolicyDefinition> {
         self.inner.get_definition()

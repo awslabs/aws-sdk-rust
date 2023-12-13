@@ -6,7 +6,7 @@
 pub struct StreamingConfiguration {
     /// <p>The data type of the configuration.</p>
     pub data_type: crate::types::MessagingDataType,
-    /// <p>The ARN of the resource in the configuration.</p>
+    /// <p>The ARN of the resource in the configuration. </p>
     pub resource_arn: ::std::string::String,
 }
 impl StreamingConfiguration {
@@ -14,7 +14,7 @@ impl StreamingConfiguration {
     pub fn data_type(&self) -> &crate::types::MessagingDataType {
         &self.data_type
     }
-    /// <p>The ARN of the resource in the configuration.</p>
+    /// <p>The ARN of the resource in the configuration. </p>
     pub fn resource_arn(&self) -> &str {
         use std::ops::Deref;
         self.resource_arn.deref()
@@ -50,18 +50,18 @@ impl StreamingConfigurationBuilder {
     pub fn get_data_type(&self) -> &::std::option::Option<crate::types::MessagingDataType> {
         &self.data_type
     }
-    /// <p>The ARN of the resource in the configuration.</p>
+    /// <p>The ARN of the resource in the configuration. </p>
     /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the resource in the configuration.</p>
+    /// <p>The ARN of the resource in the configuration. </p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
     }
-    /// <p>The ARN of the resource in the configuration.</p>
+    /// <p>The ARN of the resource in the configuration. </p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }

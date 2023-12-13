@@ -6,10 +6,8 @@
 pub struct AccountDetails {
     /// <p>The type of email your account is sending. The mail type can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>MARKETING</code> – Most of your sending traffic is to keep your customers informed of your latest offering.</p></li>
-    /// <li>
-    /// <p><code>TRANSACTIONAL</code> – Most of your sending traffic is to communicate during a transaction with a customer.</p></li>
+    /// <li> <p> <code>MARKETING</code> – Most of your sending traffic is to keep your customers informed of your latest offering.</p> </li>
+    /// <li> <p> <code>TRANSACTIONAL</code> – Most of your sending traffic is to communicate during a transaction with a customer.</p> </li>
     /// </ul>
     pub mail_type: ::std::option::Option<crate::types::MailType>,
     /// <p>The URL of your website. This information helps us better understand the type of content that you plan to send.</p>
@@ -26,10 +24,8 @@ pub struct AccountDetails {
 impl AccountDetails {
     /// <p>The type of email your account is sending. The mail type can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>MARKETING</code> – Most of your sending traffic is to keep your customers informed of your latest offering.</p></li>
-    /// <li>
-    /// <p><code>TRANSACTIONAL</code> – Most of your sending traffic is to communicate during a transaction with a customer.</p></li>
+    /// <li> <p> <code>MARKETING</code> – Most of your sending traffic is to keep your customers informed of your latest offering.</p> </li>
+    /// <li> <p> <code>TRANSACTIONAL</code> – Most of your sending traffic is to communicate during a transaction with a customer.</p> </li>
     /// </ul>
     pub fn mail_type(&self) -> ::std::option::Option<&crate::types::MailType> {
         self.mail_type.as_ref()
@@ -90,10 +86,8 @@ pub struct AccountDetailsBuilder {
 impl AccountDetailsBuilder {
     /// <p>The type of email your account is sending. The mail type can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>MARKETING</code> – Most of your sending traffic is to keep your customers informed of your latest offering.</p></li>
-    /// <li>
-    /// <p><code>TRANSACTIONAL</code> – Most of your sending traffic is to communicate during a transaction with a customer.</p></li>
+    /// <li> <p> <code>MARKETING</code> – Most of your sending traffic is to keep your customers informed of your latest offering.</p> </li>
+    /// <li> <p> <code>TRANSACTIONAL</code> – Most of your sending traffic is to communicate during a transaction with a customer.</p> </li>
     /// </ul>
     pub fn mail_type(mut self, input: crate::types::MailType) -> Self {
         self.mail_type = ::std::option::Option::Some(input);
@@ -101,10 +95,8 @@ impl AccountDetailsBuilder {
     }
     /// <p>The type of email your account is sending. The mail type can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>MARKETING</code> – Most of your sending traffic is to keep your customers informed of your latest offering.</p></li>
-    /// <li>
-    /// <p><code>TRANSACTIONAL</code> – Most of your sending traffic is to communicate during a transaction with a customer.</p></li>
+    /// <li> <p> <code>MARKETING</code> – Most of your sending traffic is to keep your customers informed of your latest offering.</p> </li>
+    /// <li> <p> <code>TRANSACTIONAL</code> – Most of your sending traffic is to communicate during a transaction with a customer.</p> </li>
     /// </ul>
     pub fn set_mail_type(mut self, input: ::std::option::Option<crate::types::MailType>) -> Self {
         self.mail_type = input;
@@ -112,10 +104,8 @@ impl AccountDetailsBuilder {
     }
     /// <p>The type of email your account is sending. The mail type can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>MARKETING</code> – Most of your sending traffic is to keep your customers informed of your latest offering.</p></li>
-    /// <li>
-    /// <p><code>TRANSACTIONAL</code> – Most of your sending traffic is to communicate during a transaction with a customer.</p></li>
+    /// <li> <p> <code>MARKETING</code> – Most of your sending traffic is to keep your customers informed of your latest offering.</p> </li>
+    /// <li> <p> <code>TRANSACTIONAL</code> – Most of your sending traffic is to communicate during a transaction with a customer.</p> </li>
     /// </ul>
     pub fn get_mail_type(&self) -> &::std::option::Option<crate::types::MailType> {
         &self.mail_type

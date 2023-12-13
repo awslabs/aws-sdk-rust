@@ -2,10 +2,8 @@
 
 /// <p>There are two possible types of transactions used for this data type:</p>
 /// <ul>
-/// <li>
-/// <p>A Bitcoin transaction is a movement of BTC from one address to another.</p></li>
-/// <li>
-/// <p>An Ethereum transaction refers to an action initiated by an externally owned account, which is an account managed by a human, not a contract. For example, if Bob sends Alice 1 ETH, Bob's account must be debited and Alice's must be credited. This state-changing action occurs within a transaction.</p></li>
+/// <li> <p>A Bitcoin transaction is a movement of BTC from one address to another.</p> </li>
+/// <li> <p>An Ethereum transaction refers to an action initiated by an externally owned account, which is an account managed by a human, not a contract. For example, if Bob sends Alice 1 ETH, Bob's account must be debited and Alice's must be credited. This state-changing action occurs within a transaction.</p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
@@ -18,7 +16,7 @@ pub struct Transaction {
     pub transaction_hash: ::std::string::String,
     /// <p>The block number in which the transaction is recorded.</p>
     pub block_number: ::std::option::Option<::std::string::String>,
-    /// <p>The <code>Timestamp</code> of the transaction.</p>
+    /// <p>The <code>Timestamp</code> of the transaction. </p>
     pub transaction_timestamp: ::aws_smithy_types::DateTime,
     /// <p>The index of the transaction within a blockchain.</p>
     pub transaction_index: i64,
@@ -67,7 +65,7 @@ impl Transaction {
     pub fn block_number(&self) -> ::std::option::Option<&str> {
         self.block_number.as_deref()
     }
-    /// <p>The <code>Timestamp</code> of the transaction.</p>
+    /// <p>The <code>Timestamp</code> of the transaction. </p>
     pub fn transaction_timestamp(&self) -> &::aws_smithy_types::DateTime {
         &self.transaction_timestamp
     }
@@ -219,18 +217,18 @@ impl TransactionBuilder {
     pub fn get_block_number(&self) -> &::std::option::Option<::std::string::String> {
         &self.block_number
     }
-    /// <p>The <code>Timestamp</code> of the transaction.</p>
+    /// <p>The <code>Timestamp</code> of the transaction. </p>
     /// This field is required.
     pub fn transaction_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.transaction_timestamp = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The <code>Timestamp</code> of the transaction.</p>
+    /// <p>The <code>Timestamp</code> of the transaction. </p>
     pub fn set_transaction_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.transaction_timestamp = input;
         self
     }
-    /// <p>The <code>Timestamp</code> of the transaction.</p>
+    /// <p>The <code>Timestamp</code> of the transaction. </p>
     pub fn get_transaction_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.transaction_timestamp
     }

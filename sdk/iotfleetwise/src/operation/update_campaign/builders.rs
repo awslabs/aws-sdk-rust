@@ -22,7 +22,7 @@ impl UpdateCampaignInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateCampaign`.
 ///
-/// <p>Updates a campaign.</p>
+/// <p> Updates a campaign. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateCampaignFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl UpdateCampaignFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the campaign to update.</p>
+    /// <p> The name of the campaign to update. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of the campaign to update.</p>
+    /// <p> The name of the campaign to update. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name of the campaign to update.</p>
+    /// <p> The name of the campaign to update. </p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
@@ -140,63 +140,51 @@ impl UpdateCampaignFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_data_extra_dimensions`](Self::set_data_extra_dimensions).
     ///
-    /// <p>A list of vehicle attributes to associate with a signal.</p>
+    /// <p> A list of vehicle attributes to associate with a signal. </p>
     /// <p>Default: An empty array</p>
     pub fn data_extra_dimensions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data_extra_dimensions(input.into());
         self
     }
-    /// <p>A list of vehicle attributes to associate with a signal.</p>
+    /// <p> A list of vehicle attributes to associate with a signal. </p>
     /// <p>Default: An empty array</p>
     pub fn set_data_extra_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_data_extra_dimensions(input);
         self
     }
-    /// <p>A list of vehicle attributes to associate with a signal.</p>
+    /// <p> A list of vehicle attributes to associate with a signal. </p>
     /// <p>Default: An empty array</p>
     pub fn get_data_extra_dimensions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_data_extra_dimensions()
     }
-    /// <p>Specifies how to update a campaign. The action can be one of the following:</p>
+    /// <p> Specifies how to update a campaign. The action can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>APPROVE</code> - To approve delivering a data collection scheme to vehicles.</p></li>
-    /// <li>
-    /// <p><code>SUSPEND</code> - To suspend collecting signal data. The campaign is deleted from vehicles and all vehicles in the suspended campaign will stop sending data.</p></li>
-    /// <li>
-    /// <p><code>RESUME</code> - To reactivate the <code>SUSPEND</code> campaign. The campaign is redeployed to all vehicles and the vehicles will resume sending data.</p></li>
-    /// <li>
-    /// <p><code>UPDATE</code> - To update a campaign.</p></li>
+    /// <li> <p> <code>APPROVE</code> - To approve delivering a data collection scheme to vehicles. </p> </li>
+    /// <li> <p> <code>SUSPEND</code> - To suspend collecting signal data. The campaign is deleted from vehicles and all vehicles in the suspended campaign will stop sending data.</p> </li>
+    /// <li> <p> <code>RESUME</code> - To reactivate the <code>SUSPEND</code> campaign. The campaign is redeployed to all vehicles and the vehicles will resume sending data.</p> </li>
+    /// <li> <p> <code>UPDATE</code> - To update a campaign. </p> </li>
     /// </ul>
     pub fn action(mut self, input: crate::types::UpdateCampaignAction) -> Self {
         self.inner = self.inner.action(input);
         self
     }
-    /// <p>Specifies how to update a campaign. The action can be one of the following:</p>
+    /// <p> Specifies how to update a campaign. The action can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>APPROVE</code> - To approve delivering a data collection scheme to vehicles.</p></li>
-    /// <li>
-    /// <p><code>SUSPEND</code> - To suspend collecting signal data. The campaign is deleted from vehicles and all vehicles in the suspended campaign will stop sending data.</p></li>
-    /// <li>
-    /// <p><code>RESUME</code> - To reactivate the <code>SUSPEND</code> campaign. The campaign is redeployed to all vehicles and the vehicles will resume sending data.</p></li>
-    /// <li>
-    /// <p><code>UPDATE</code> - To update a campaign.</p></li>
+    /// <li> <p> <code>APPROVE</code> - To approve delivering a data collection scheme to vehicles. </p> </li>
+    /// <li> <p> <code>SUSPEND</code> - To suspend collecting signal data. The campaign is deleted from vehicles and all vehicles in the suspended campaign will stop sending data.</p> </li>
+    /// <li> <p> <code>RESUME</code> - To reactivate the <code>SUSPEND</code> campaign. The campaign is redeployed to all vehicles and the vehicles will resume sending data.</p> </li>
+    /// <li> <p> <code>UPDATE</code> - To update a campaign. </p> </li>
     /// </ul>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::UpdateCampaignAction>) -> Self {
         self.inner = self.inner.set_action(input);
         self
     }
-    /// <p>Specifies how to update a campaign. The action can be one of the following:</p>
+    /// <p> Specifies how to update a campaign. The action can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>APPROVE</code> - To approve delivering a data collection scheme to vehicles.</p></li>
-    /// <li>
-    /// <p><code>SUSPEND</code> - To suspend collecting signal data. The campaign is deleted from vehicles and all vehicles in the suspended campaign will stop sending data.</p></li>
-    /// <li>
-    /// <p><code>RESUME</code> - To reactivate the <code>SUSPEND</code> campaign. The campaign is redeployed to all vehicles and the vehicles will resume sending data.</p></li>
-    /// <li>
-    /// <p><code>UPDATE</code> - To update a campaign.</p></li>
+    /// <li> <p> <code>APPROVE</code> - To approve delivering a data collection scheme to vehicles. </p> </li>
+    /// <li> <p> <code>SUSPEND</code> - To suspend collecting signal data. The campaign is deleted from vehicles and all vehicles in the suspended campaign will stop sending data.</p> </li>
+    /// <li> <p> <code>RESUME</code> - To reactivate the <code>SUSPEND</code> campaign. The campaign is redeployed to all vehicles and the vehicles will resume sending data.</p> </li>
+    /// <li> <p> <code>UPDATE</code> - To update a campaign. </p> </li>
     /// </ul>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::UpdateCampaignAction> {
         self.inner.get_action()

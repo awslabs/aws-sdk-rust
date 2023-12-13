@@ -248,7 +248,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for TranslateDocu
 pub enum TranslateDocumentError {
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p>The request that you made is not valid. Check your request to determine why it's not valid and then retry the request.</p>
+    /// <p> The request that you made is not valid. Check your request to determine why it's not valid and then retry the request. </p>
     InvalidRequestException(crate::types::error::InvalidRequestException),
     /// <p>The specified limit has been exceeded. Review your request and retry it with a quantity below the stated limit.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
@@ -256,9 +256,9 @@ pub enum TranslateDocumentError {
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The Amazon Translate service is temporarily unavailable. Wait a bit and then retry your request.</p>
     ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
-    /// <p>You have made too many requests within a short period of time. Wait for a short time and then try your request again.</p>
+    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again.</p>
     TooManyRequestsException(crate::types::error::TooManyRequestsException),
-    /// <p>Amazon Translate does not support translation from the language of the source text into the requested target language. For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
+    /// <p>Amazon Translate does not support translation from the language of the source text into the requested target language. For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>. </p>
     UnsupportedLanguagePairException(crate::types::error::UnsupportedLanguagePairException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

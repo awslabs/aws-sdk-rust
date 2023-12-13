@@ -6,19 +6,19 @@
 pub struct ResourceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: ::std::string::String,
-    /// <p>The ID of the Amazon Web Services resource that could not be found.</p>
+    /// <p> The ID of the Amazon Web Services resource that could not be found. </p>
     pub resource_id: ::std::string::String,
-    /// <p>The type of the Amazon Web Services resource that could not be found.</p>
+    /// <p> The type of the Amazon Web Services resource that could not be found. </p>
     pub resource_type: ::std::string::String,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl ResourceNotFoundException {
-    /// <p>The ID of the Amazon Web Services resource that could not be found.</p>
+    /// <p> The ID of the Amazon Web Services resource that could not be found. </p>
     pub fn resource_id(&self) -> &str {
         use std::ops::Deref;
         self.resource_id.deref()
     }
-    /// <p>The type of the Amazon Web Services resource that could not be found.</p>
+    /// <p> The type of the Amazon Web Services resource that could not be found. </p>
     pub fn resource_type(&self) -> &str {
         use std::ops::Deref;
         self.resource_type.deref()
@@ -83,33 +83,33 @@ impl ResourceNotFoundExceptionBuilder {
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
-    /// <p>The ID of the Amazon Web Services resource that could not be found.</p>
+    /// <p> The ID of the Amazon Web Services resource that could not be found. </p>
     /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the Amazon Web Services resource that could not be found.</p>
+    /// <p> The ID of the Amazon Web Services resource that could not be found. </p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
     }
-    /// <p>The ID of the Amazon Web Services resource that could not be found.</p>
+    /// <p> The ID of the Amazon Web Services resource that could not be found. </p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_id
     }
-    /// <p>The type of the Amazon Web Services resource that could not be found.</p>
+    /// <p> The type of the Amazon Web Services resource that could not be found. </p>
     /// This field is required.
     pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The type of the Amazon Web Services resource that could not be found.</p>
+    /// <p> The type of the Amazon Web Services resource that could not be found. </p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
         self
     }
-    /// <p>The type of the Amazon Web Services resource that could not be found.</p>
+    /// <p> The type of the Amazon Web Services resource that could not be found. </p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_type
     }

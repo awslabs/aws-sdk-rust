@@ -252,7 +252,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateApplica
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreateApplicationError {
-    /// <p>User does not have permissions to perform this action.</p>
+    /// <p> User does not have permissions to perform this action. </p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>The server encountered an internal error and is unable to complete the request.</p>
     InternalServerException(crate::types::error::InternalServerException),

@@ -12,7 +12,6 @@
 #![allow(clippy::result_large_err)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
-#![cfg_attr(docsrs, feature(doc_auto_cfg))]
 //! DataSync is an online data movement and discovery service that simplifies data migration and helps you quickly, easily, and securely transfer your file or object data to, from, and between Amazon Web Services storage services.
 //!
 //! This API interface reference includes documentation for using DataSync programmatically. For complete information, see the _ [DataSync User Guide](https://docs.aws.amazon.com/datasync/latest/userguide/what-is-datasync.html) _.
@@ -28,8 +27,8 @@
 //!
 //! ```toml
 //! [dependencies]
-//! aws-config = { version = "1.1.0", features = ["behavior-version-latest"] }
-//! aws-sdk-datasync = "1.5.0"
+//! aws-config = { version = "1.0.3", features = ["behavior-version-latest"] }
+//! aws-sdk-datasync = "1.6.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -193,11 +192,11 @@ pub(crate) mod protocol_serde;
 
 mod serialization_settings;
 
-mod endpoint_lib;
-
 mod lens;
 
 mod serde_util;
+
+mod endpoint_lib;
 
 mod json_errors;
 

@@ -242,9 +242,9 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateUsageLi
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreateUsageLimitError {
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.</p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
     ClusterNotFoundFault(crate::types::error::ClusterNotFoundFault),
-    /// <p>The specified cluster is not in the <code>available</code> state.</p>
+    /// <p>The specified cluster is not in the <code>available</code> state. </p>
     InvalidClusterStateFault(crate::types::error::InvalidClusterStateFault),
     /// <p>The usage limit is not valid.</p>
     InvalidUsageLimitFault(crate::types::error::InvalidUsageLimitFault),
@@ -254,7 +254,7 @@ pub enum CreateUsageLimitError {
     TagLimitExceededFault(crate::types::error::TagLimitExceededFault),
     /// <p>The requested operation isn't supported.</p>
     UnsupportedOperationFault(crate::types::error::UnsupportedOperationFault),
-    /// <p>The usage limit already exists.</p>
+    /// <p>The usage limit already exists. </p>
     UsageLimitAlreadyExistsFault(crate::types::error::UsageLimitAlreadyExistsFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

@@ -18,50 +18,34 @@ pub struct GetMlModelOutput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the <code>MLModel</code>. This element can have one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to describe a <code>MLModel</code>.</p></li>
-    /// <li>
-    /// <p><code>INPROGRESS</code> - The request is processing.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - The request did not run to completion. The ML model isn't usable.</p></li>
-    /// <li>
-    /// <p><code>COMPLETED</code> - The request completed successfully.</p></li>
-    /// <li>
-    /// <p><code>DELETED</code> - The <code>MLModel</code> is marked as deleted. It isn't usable.</p></li>
+    /// <li> <p> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to describe a <code>MLModel</code>.</p> </li>
+    /// <li> <p> <code>INPROGRESS</code> - The request is processing.</p> </li>
+    /// <li> <p> <code>FAILED</code> - The request did not run to completion. The ML model isn't usable.</p> </li>
+    /// <li> <p> <code>COMPLETED</code> - The request completed successfully.</p> </li>
+    /// <li> <p> <code>DELETED</code> - The <code>MLModel</code> is marked as deleted. It isn't usable.</p> </li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::EntityStatus>,
     /// <p>Long integer type that is a 64-bit signed number.</p>
     pub size_in_bytes: ::std::option::Option<i64>,
-    /// <p>The current endpoint of the <code>MLModel</code></p>
+    /// <p>The current endpoint of the <code>MLModel</code> </p>
     pub endpoint_info: ::std::option::Option<crate::types::RealtimeEndpointInfo>,
     /// <p>A list of the training parameters in the <code>MLModel</code>. The list is implemented as a map of key-value pairs.</p>
     /// <p>The following is the current set of training parameters:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>sgd.maxMLModelSizeInBytes</code> - The maximum allowed size of the model. Depending on the input data, the size of the model might affect its performance.</p>
-    /// <p>The value is an integer that ranges from <code>100000</code> to <code>2147483648</code>. The default value is <code>33554432</code>.</p></li>
-    /// <li>
-    /// <p><code>sgd.maxPasses</code> - The number of times that the training process traverses the observations to build the <code>MLModel</code>. The value is an integer that ranges from <code>1</code> to <code>10000</code>. The default value is <code>10</code>.</p></li>
-    /// <li>
-    /// <p><code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data. Shuffling data improves a model's ability to find the optimal solution for a variety of data types. The valid values are <code>auto</code> and <code>none</code>. The default value is <code>none</code>. We strongly recommend that you shuffle your data.</p></li>
-    /// <li>
-    /// <p><code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to zero, resulting in a sparse feature set. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p>
-    /// <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L1 normalization. This parameter can't be used when <code>L2</code> is specified. Use this parameter sparingly.</p></li>
-    /// <li>
-    /// <p><code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to small, nonzero values. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p>
-    /// <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L2 normalization. This parameter can't be used when <code>L1</code> is specified. Use this parameter sparingly.</p></li>
+    /// <li> <p> <code>sgd.maxMLModelSizeInBytes</code> - The maximum allowed size of the model. Depending on the input data, the size of the model might affect its performance.</p> <p> The value is an integer that ranges from <code>100000</code> to <code>2147483648</code>. The default value is <code>33554432</code>.</p> </li>
+    /// <li> <p> <code>sgd.maxPasses</code> - The number of times that the training process traverses the observations to build the <code>MLModel</code>. The value is an integer that ranges from <code>1</code> to <code>10000</code>. The default value is <code>10</code>.</p> </li>
+    /// <li> <p> <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data. Shuffling data improves a model's ability to find the optimal solution for a variety of data types. The valid values are <code>auto</code> and <code>none</code>. The default value is <code>none</code>. We strongly recommend that you shuffle your data.</p> </li>
+    /// <li> <p> <code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to zero, resulting in a sparse feature set. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L1 normalization. This parameter can't be used when <code>L2</code> is specified. Use this parameter sparingly.</p> </li>
+    /// <li> <p> <code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to small, nonzero values. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L2 normalization. This parameter can't be used when <code>L1</code> is specified. Use this parameter sparingly.</p> </li>
     /// </ul>
     pub training_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The location of the data file or directory in Amazon Simple Storage Service (Amazon S3).</p>
     pub input_data_location_s3: ::std::option::Option<::std::string::String>,
-    /// <p>Identifies the <code>MLModel</code> category. The following are the available types:</p>
+    /// <p>Identifies the <code>MLModel</code> category. The following are the available types: </p>
     /// <ul>
-    /// <li>
-    /// <p>REGRESSION -- Produces a numeric result. For example, "What price should a house be listed at?"</p></li>
-    /// <li>
-    /// <p>BINARY -- Produces one of two possible results. For example, "Is this an e-commerce website?"</p></li>
-    /// <li>
-    /// <p>MULTICLASS -- Produces one of several possible results. For example, "Is this a HIGH, LOW or MEDIUM risk trade?"</p></li>
+    /// <li> <p>REGRESSION -- Produces a numeric result. For example, "What price should a house be listed at?"</p> </li>
+    /// <li> <p>BINARY -- Produces one of two possible results. For example, "Is this an e-commerce website?"</p> </li>
+    /// <li> <p>MULTICLASS -- Produces one of several possible results. For example, "Is this a HIGH, LOW or MEDIUM risk trade?"</p> </li>
     /// </ul>
     pub ml_model_type: ::std::option::Option<crate::types::MlModelType>,
     /// <p>The scoring threshold is used in binary classification <code>MLModel</code> models. It marks the boundary between a positive prediction and a negative prediction.</p>
@@ -80,10 +64,10 @@ pub struct GetMlModelOutput {
     /// <p>The epoch time when Amazon Machine Learning marked the <code>MLModel</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>MLModel</code> is in the <code>PENDING</code> state.</p>
     pub started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The recipe to use when training the <code>MLModel</code>. The <code>Recipe</code> provides detailed information about the observation data to use during training, and manipulations to perform on the observation data during training.</p>
-    /// <p><b>Note:</b> This parameter is provided as part of the verbose format.</p>
+    /// <p> <b>Note:</b> This parameter is provided as part of the verbose format.</p>
     pub recipe: ::std::option::Option<::std::string::String>,
     /// <p>The schema used by all of the data files referenced by the <code>DataSource</code>.</p>
-    /// <p><b>Note:</b> This parameter is provided as part of the verbose format.</p>
+    /// <p> <b>Note:</b> This parameter is provided as part of the verbose format.</p>
     pub schema: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -114,16 +98,11 @@ impl GetMlModelOutput {
     }
     /// <p>The current status of the <code>MLModel</code>. This element can have one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to describe a <code>MLModel</code>.</p></li>
-    /// <li>
-    /// <p><code>INPROGRESS</code> - The request is processing.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - The request did not run to completion. The ML model isn't usable.</p></li>
-    /// <li>
-    /// <p><code>COMPLETED</code> - The request completed successfully.</p></li>
-    /// <li>
-    /// <p><code>DELETED</code> - The <code>MLModel</code> is marked as deleted. It isn't usable.</p></li>
+    /// <li> <p> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to describe a <code>MLModel</code>.</p> </li>
+    /// <li> <p> <code>INPROGRESS</code> - The request is processing.</p> </li>
+    /// <li> <p> <code>FAILED</code> - The request did not run to completion. The ML model isn't usable.</p> </li>
+    /// <li> <p> <code>COMPLETED</code> - The request completed successfully.</p> </li>
+    /// <li> <p> <code>DELETED</code> - The <code>MLModel</code> is marked as deleted. It isn't usable.</p> </li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::EntityStatus> {
         self.status.as_ref()
@@ -132,26 +111,18 @@ impl GetMlModelOutput {
     pub fn size_in_bytes(&self) -> ::std::option::Option<i64> {
         self.size_in_bytes
     }
-    /// <p>The current endpoint of the <code>MLModel</code></p>
+    /// <p>The current endpoint of the <code>MLModel</code> </p>
     pub fn endpoint_info(&self) -> ::std::option::Option<&crate::types::RealtimeEndpointInfo> {
         self.endpoint_info.as_ref()
     }
     /// <p>A list of the training parameters in the <code>MLModel</code>. The list is implemented as a map of key-value pairs.</p>
     /// <p>The following is the current set of training parameters:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>sgd.maxMLModelSizeInBytes</code> - The maximum allowed size of the model. Depending on the input data, the size of the model might affect its performance.</p>
-    /// <p>The value is an integer that ranges from <code>100000</code> to <code>2147483648</code>. The default value is <code>33554432</code>.</p></li>
-    /// <li>
-    /// <p><code>sgd.maxPasses</code> - The number of times that the training process traverses the observations to build the <code>MLModel</code>. The value is an integer that ranges from <code>1</code> to <code>10000</code>. The default value is <code>10</code>.</p></li>
-    /// <li>
-    /// <p><code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data. Shuffling data improves a model's ability to find the optimal solution for a variety of data types. The valid values are <code>auto</code> and <code>none</code>. The default value is <code>none</code>. We strongly recommend that you shuffle your data.</p></li>
-    /// <li>
-    /// <p><code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to zero, resulting in a sparse feature set. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p>
-    /// <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L1 normalization. This parameter can't be used when <code>L2</code> is specified. Use this parameter sparingly.</p></li>
-    /// <li>
-    /// <p><code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to small, nonzero values. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p>
-    /// <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L2 normalization. This parameter can't be used when <code>L1</code> is specified. Use this parameter sparingly.</p></li>
+    /// <li> <p> <code>sgd.maxMLModelSizeInBytes</code> - The maximum allowed size of the model. Depending on the input data, the size of the model might affect its performance.</p> <p> The value is an integer that ranges from <code>100000</code> to <code>2147483648</code>. The default value is <code>33554432</code>.</p> </li>
+    /// <li> <p> <code>sgd.maxPasses</code> - The number of times that the training process traverses the observations to build the <code>MLModel</code>. The value is an integer that ranges from <code>1</code> to <code>10000</code>. The default value is <code>10</code>.</p> </li>
+    /// <li> <p> <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data. Shuffling data improves a model's ability to find the optimal solution for a variety of data types. The valid values are <code>auto</code> and <code>none</code>. The default value is <code>none</code>. We strongly recommend that you shuffle your data.</p> </li>
+    /// <li> <p> <code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to zero, resulting in a sparse feature set. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L1 normalization. This parameter can't be used when <code>L2</code> is specified. Use this parameter sparingly.</p> </li>
+    /// <li> <p> <code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to small, nonzero values. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L2 normalization. This parameter can't be used when <code>L1</code> is specified. Use this parameter sparingly.</p> </li>
     /// </ul>
     pub fn training_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.training_parameters.as_ref()
@@ -160,14 +131,11 @@ impl GetMlModelOutput {
     pub fn input_data_location_s3(&self) -> ::std::option::Option<&str> {
         self.input_data_location_s3.as_deref()
     }
-    /// <p>Identifies the <code>MLModel</code> category. The following are the available types:</p>
+    /// <p>Identifies the <code>MLModel</code> category. The following are the available types: </p>
     /// <ul>
-    /// <li>
-    /// <p>REGRESSION -- Produces a numeric result. For example, "What price should a house be listed at?"</p></li>
-    /// <li>
-    /// <p>BINARY -- Produces one of two possible results. For example, "Is this an e-commerce website?"</p></li>
-    /// <li>
-    /// <p>MULTICLASS -- Produces one of several possible results. For example, "Is this a HIGH, LOW or MEDIUM risk trade?"</p></li>
+    /// <li> <p>REGRESSION -- Produces a numeric result. For example, "What price should a house be listed at?"</p> </li>
+    /// <li> <p>BINARY -- Produces one of two possible results. For example, "Is this an e-commerce website?"</p> </li>
+    /// <li> <p>MULTICLASS -- Produces one of several possible results. For example, "Is this a HIGH, LOW or MEDIUM risk trade?"</p> </li>
     /// </ul>
     pub fn ml_model_type(&self) -> ::std::option::Option<&crate::types::MlModelType> {
         self.ml_model_type.as_ref()
@@ -202,12 +170,12 @@ impl GetMlModelOutput {
         self.started_at.as_ref()
     }
     /// <p>The recipe to use when training the <code>MLModel</code>. The <code>Recipe</code> provides detailed information about the observation data to use during training, and manipulations to perform on the observation data during training.</p>
-    /// <p><b>Note:</b> This parameter is provided as part of the verbose format.</p>
+    /// <p> <b>Note:</b> This parameter is provided as part of the verbose format.</p>
     pub fn recipe(&self) -> ::std::option::Option<&str> {
         self.recipe.as_deref()
     }
     /// <p>The schema used by all of the data files referenced by the <code>DataSource</code>.</p>
-    /// <p><b>Note:</b> This parameter is provided as part of the verbose format.</p>
+    /// <p> <b>Note:</b> This parameter is provided as part of the verbose format.</p>
     pub fn schema(&self) -> ::std::option::Option<&str> {
         self.schema.as_deref()
     }
@@ -338,16 +306,11 @@ impl GetMlModelOutputBuilder {
     }
     /// <p>The current status of the <code>MLModel</code>. This element can have one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to describe a <code>MLModel</code>.</p></li>
-    /// <li>
-    /// <p><code>INPROGRESS</code> - The request is processing.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - The request did not run to completion. The ML model isn't usable.</p></li>
-    /// <li>
-    /// <p><code>COMPLETED</code> - The request completed successfully.</p></li>
-    /// <li>
-    /// <p><code>DELETED</code> - The <code>MLModel</code> is marked as deleted. It isn't usable.</p></li>
+    /// <li> <p> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to describe a <code>MLModel</code>.</p> </li>
+    /// <li> <p> <code>INPROGRESS</code> - The request is processing.</p> </li>
+    /// <li> <p> <code>FAILED</code> - The request did not run to completion. The ML model isn't usable.</p> </li>
+    /// <li> <p> <code>COMPLETED</code> - The request completed successfully.</p> </li>
+    /// <li> <p> <code>DELETED</code> - The <code>MLModel</code> is marked as deleted. It isn't usable.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::EntityStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -355,16 +318,11 @@ impl GetMlModelOutputBuilder {
     }
     /// <p>The current status of the <code>MLModel</code>. This element can have one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to describe a <code>MLModel</code>.</p></li>
-    /// <li>
-    /// <p><code>INPROGRESS</code> - The request is processing.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - The request did not run to completion. The ML model isn't usable.</p></li>
-    /// <li>
-    /// <p><code>COMPLETED</code> - The request completed successfully.</p></li>
-    /// <li>
-    /// <p><code>DELETED</code> - The <code>MLModel</code> is marked as deleted. It isn't usable.</p></li>
+    /// <li> <p> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to describe a <code>MLModel</code>.</p> </li>
+    /// <li> <p> <code>INPROGRESS</code> - The request is processing.</p> </li>
+    /// <li> <p> <code>FAILED</code> - The request did not run to completion. The ML model isn't usable.</p> </li>
+    /// <li> <p> <code>COMPLETED</code> - The request completed successfully.</p> </li>
+    /// <li> <p> <code>DELETED</code> - The <code>MLModel</code> is marked as deleted. It isn't usable.</p> </li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::EntityStatus>) -> Self {
         self.status = input;
@@ -372,16 +330,11 @@ impl GetMlModelOutputBuilder {
     }
     /// <p>The current status of the <code>MLModel</code>. This element can have one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to describe a <code>MLModel</code>.</p></li>
-    /// <li>
-    /// <p><code>INPROGRESS</code> - The request is processing.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - The request did not run to completion. The ML model isn't usable.</p></li>
-    /// <li>
-    /// <p><code>COMPLETED</code> - The request completed successfully.</p></li>
-    /// <li>
-    /// <p><code>DELETED</code> - The <code>MLModel</code> is marked as deleted. It isn't usable.</p></li>
+    /// <li> <p> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to describe a <code>MLModel</code>.</p> </li>
+    /// <li> <p> <code>INPROGRESS</code> - The request is processing.</p> </li>
+    /// <li> <p> <code>FAILED</code> - The request did not run to completion. The ML model isn't usable.</p> </li>
+    /// <li> <p> <code>COMPLETED</code> - The request completed successfully.</p> </li>
+    /// <li> <p> <code>DELETED</code> - The <code>MLModel</code> is marked as deleted. It isn't usable.</p> </li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::EntityStatus> {
         &self.status
@@ -400,17 +353,17 @@ impl GetMlModelOutputBuilder {
     pub fn get_size_in_bytes(&self) -> &::std::option::Option<i64> {
         &self.size_in_bytes
     }
-    /// <p>The current endpoint of the <code>MLModel</code></p>
+    /// <p>The current endpoint of the <code>MLModel</code> </p>
     pub fn endpoint_info(mut self, input: crate::types::RealtimeEndpointInfo) -> Self {
         self.endpoint_info = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current endpoint of the <code>MLModel</code></p>
+    /// <p>The current endpoint of the <code>MLModel</code> </p>
     pub fn set_endpoint_info(mut self, input: ::std::option::Option<crate::types::RealtimeEndpointInfo>) -> Self {
         self.endpoint_info = input;
         self
     }
-    /// <p>The current endpoint of the <code>MLModel</code></p>
+    /// <p>The current endpoint of the <code>MLModel</code> </p>
     pub fn get_endpoint_info(&self) -> &::std::option::Option<crate::types::RealtimeEndpointInfo> {
         &self.endpoint_info
     }
@@ -421,19 +374,11 @@ impl GetMlModelOutputBuilder {
     /// <p>A list of the training parameters in the <code>MLModel</code>. The list is implemented as a map of key-value pairs.</p>
     /// <p>The following is the current set of training parameters:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>sgd.maxMLModelSizeInBytes</code> - The maximum allowed size of the model. Depending on the input data, the size of the model might affect its performance.</p>
-    /// <p>The value is an integer that ranges from <code>100000</code> to <code>2147483648</code>. The default value is <code>33554432</code>.</p></li>
-    /// <li>
-    /// <p><code>sgd.maxPasses</code> - The number of times that the training process traverses the observations to build the <code>MLModel</code>. The value is an integer that ranges from <code>1</code> to <code>10000</code>. The default value is <code>10</code>.</p></li>
-    /// <li>
-    /// <p><code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data. Shuffling data improves a model's ability to find the optimal solution for a variety of data types. The valid values are <code>auto</code> and <code>none</code>. The default value is <code>none</code>. We strongly recommend that you shuffle your data.</p></li>
-    /// <li>
-    /// <p><code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to zero, resulting in a sparse feature set. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p>
-    /// <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L1 normalization. This parameter can't be used when <code>L2</code> is specified. Use this parameter sparingly.</p></li>
-    /// <li>
-    /// <p><code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to small, nonzero values. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p>
-    /// <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L2 normalization. This parameter can't be used when <code>L1</code> is specified. Use this parameter sparingly.</p></li>
+    /// <li> <p> <code>sgd.maxMLModelSizeInBytes</code> - The maximum allowed size of the model. Depending on the input data, the size of the model might affect its performance.</p> <p> The value is an integer that ranges from <code>100000</code> to <code>2147483648</code>. The default value is <code>33554432</code>.</p> </li>
+    /// <li> <p> <code>sgd.maxPasses</code> - The number of times that the training process traverses the observations to build the <code>MLModel</code>. The value is an integer that ranges from <code>1</code> to <code>10000</code>. The default value is <code>10</code>.</p> </li>
+    /// <li> <p> <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data. Shuffling data improves a model's ability to find the optimal solution for a variety of data types. The valid values are <code>auto</code> and <code>none</code>. The default value is <code>none</code>. We strongly recommend that you shuffle your data.</p> </li>
+    /// <li> <p> <code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to zero, resulting in a sparse feature set. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L1 normalization. This parameter can't be used when <code>L2</code> is specified. Use this parameter sparingly.</p> </li>
+    /// <li> <p> <code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to small, nonzero values. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L2 normalization. This parameter can't be used when <code>L1</code> is specified. Use this parameter sparingly.</p> </li>
     /// </ul>
     pub fn training_parameters(
         mut self,
@@ -448,19 +393,11 @@ impl GetMlModelOutputBuilder {
     /// <p>A list of the training parameters in the <code>MLModel</code>. The list is implemented as a map of key-value pairs.</p>
     /// <p>The following is the current set of training parameters:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>sgd.maxMLModelSizeInBytes</code> - The maximum allowed size of the model. Depending on the input data, the size of the model might affect its performance.</p>
-    /// <p>The value is an integer that ranges from <code>100000</code> to <code>2147483648</code>. The default value is <code>33554432</code>.</p></li>
-    /// <li>
-    /// <p><code>sgd.maxPasses</code> - The number of times that the training process traverses the observations to build the <code>MLModel</code>. The value is an integer that ranges from <code>1</code> to <code>10000</code>. The default value is <code>10</code>.</p></li>
-    /// <li>
-    /// <p><code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data. Shuffling data improves a model's ability to find the optimal solution for a variety of data types. The valid values are <code>auto</code> and <code>none</code>. The default value is <code>none</code>. We strongly recommend that you shuffle your data.</p></li>
-    /// <li>
-    /// <p><code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to zero, resulting in a sparse feature set. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p>
-    /// <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L1 normalization. This parameter can't be used when <code>L2</code> is specified. Use this parameter sparingly.</p></li>
-    /// <li>
-    /// <p><code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to small, nonzero values. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p>
-    /// <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L2 normalization. This parameter can't be used when <code>L1</code> is specified. Use this parameter sparingly.</p></li>
+    /// <li> <p> <code>sgd.maxMLModelSizeInBytes</code> - The maximum allowed size of the model. Depending on the input data, the size of the model might affect its performance.</p> <p> The value is an integer that ranges from <code>100000</code> to <code>2147483648</code>. The default value is <code>33554432</code>.</p> </li>
+    /// <li> <p> <code>sgd.maxPasses</code> - The number of times that the training process traverses the observations to build the <code>MLModel</code>. The value is an integer that ranges from <code>1</code> to <code>10000</code>. The default value is <code>10</code>.</p> </li>
+    /// <li> <p> <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data. Shuffling data improves a model's ability to find the optimal solution for a variety of data types. The valid values are <code>auto</code> and <code>none</code>. The default value is <code>none</code>. We strongly recommend that you shuffle your data.</p> </li>
+    /// <li> <p> <code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to zero, resulting in a sparse feature set. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L1 normalization. This parameter can't be used when <code>L2</code> is specified. Use this parameter sparingly.</p> </li>
+    /// <li> <p> <code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to small, nonzero values. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L2 normalization. This parameter can't be used when <code>L1</code> is specified. Use this parameter sparingly.</p> </li>
     /// </ul>
     pub fn set_training_parameters(
         mut self,
@@ -472,19 +409,11 @@ impl GetMlModelOutputBuilder {
     /// <p>A list of the training parameters in the <code>MLModel</code>. The list is implemented as a map of key-value pairs.</p>
     /// <p>The following is the current set of training parameters:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>sgd.maxMLModelSizeInBytes</code> - The maximum allowed size of the model. Depending on the input data, the size of the model might affect its performance.</p>
-    /// <p>The value is an integer that ranges from <code>100000</code> to <code>2147483648</code>. The default value is <code>33554432</code>.</p></li>
-    /// <li>
-    /// <p><code>sgd.maxPasses</code> - The number of times that the training process traverses the observations to build the <code>MLModel</code>. The value is an integer that ranges from <code>1</code> to <code>10000</code>. The default value is <code>10</code>.</p></li>
-    /// <li>
-    /// <p><code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data. Shuffling data improves a model's ability to find the optimal solution for a variety of data types. The valid values are <code>auto</code> and <code>none</code>. The default value is <code>none</code>. We strongly recommend that you shuffle your data.</p></li>
-    /// <li>
-    /// <p><code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to zero, resulting in a sparse feature set. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p>
-    /// <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L1 normalization. This parameter can't be used when <code>L2</code> is specified. Use this parameter sparingly.</p></li>
-    /// <li>
-    /// <p><code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to small, nonzero values. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p>
-    /// <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L2 normalization. This parameter can't be used when <code>L1</code> is specified. Use this parameter sparingly.</p></li>
+    /// <li> <p> <code>sgd.maxMLModelSizeInBytes</code> - The maximum allowed size of the model. Depending on the input data, the size of the model might affect its performance.</p> <p> The value is an integer that ranges from <code>100000</code> to <code>2147483648</code>. The default value is <code>33554432</code>.</p> </li>
+    /// <li> <p> <code>sgd.maxPasses</code> - The number of times that the training process traverses the observations to build the <code>MLModel</code>. The value is an integer that ranges from <code>1</code> to <code>10000</code>. The default value is <code>10</code>.</p> </li>
+    /// <li> <p> <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data. Shuffling data improves a model's ability to find the optimal solution for a variety of data types. The valid values are <code>auto</code> and <code>none</code>. The default value is <code>none</code>. We strongly recommend that you shuffle your data.</p> </li>
+    /// <li> <p> <code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to zero, resulting in a sparse feature set. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L1 normalization. This parameter can't be used when <code>L2</code> is specified. Use this parameter sparingly.</p> </li>
+    /// <li> <p> <code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to small, nonzero values. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L2 normalization. This parameter can't be used when <code>L1</code> is specified. Use this parameter sparingly.</p> </li>
     /// </ul>
     pub fn get_training_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.training_parameters
@@ -503,40 +432,31 @@ impl GetMlModelOutputBuilder {
     pub fn get_input_data_location_s3(&self) -> &::std::option::Option<::std::string::String> {
         &self.input_data_location_s3
     }
-    /// <p>Identifies the <code>MLModel</code> category. The following are the available types:</p>
+    /// <p>Identifies the <code>MLModel</code> category. The following are the available types: </p>
     /// <ul>
-    /// <li>
-    /// <p>REGRESSION -- Produces a numeric result. For example, "What price should a house be listed at?"</p></li>
-    /// <li>
-    /// <p>BINARY -- Produces one of two possible results. For example, "Is this an e-commerce website?"</p></li>
-    /// <li>
-    /// <p>MULTICLASS -- Produces one of several possible results. For example, "Is this a HIGH, LOW or MEDIUM risk trade?"</p></li>
+    /// <li> <p>REGRESSION -- Produces a numeric result. For example, "What price should a house be listed at?"</p> </li>
+    /// <li> <p>BINARY -- Produces one of two possible results. For example, "Is this an e-commerce website?"</p> </li>
+    /// <li> <p>MULTICLASS -- Produces one of several possible results. For example, "Is this a HIGH, LOW or MEDIUM risk trade?"</p> </li>
     /// </ul>
     pub fn ml_model_type(mut self, input: crate::types::MlModelType) -> Self {
         self.ml_model_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Identifies the <code>MLModel</code> category. The following are the available types:</p>
+    /// <p>Identifies the <code>MLModel</code> category. The following are the available types: </p>
     /// <ul>
-    /// <li>
-    /// <p>REGRESSION -- Produces a numeric result. For example, "What price should a house be listed at?"</p></li>
-    /// <li>
-    /// <p>BINARY -- Produces one of two possible results. For example, "Is this an e-commerce website?"</p></li>
-    /// <li>
-    /// <p>MULTICLASS -- Produces one of several possible results. For example, "Is this a HIGH, LOW or MEDIUM risk trade?"</p></li>
+    /// <li> <p>REGRESSION -- Produces a numeric result. For example, "What price should a house be listed at?"</p> </li>
+    /// <li> <p>BINARY -- Produces one of two possible results. For example, "Is this an e-commerce website?"</p> </li>
+    /// <li> <p>MULTICLASS -- Produces one of several possible results. For example, "Is this a HIGH, LOW or MEDIUM risk trade?"</p> </li>
     /// </ul>
     pub fn set_ml_model_type(mut self, input: ::std::option::Option<crate::types::MlModelType>) -> Self {
         self.ml_model_type = input;
         self
     }
-    /// <p>Identifies the <code>MLModel</code> category. The following are the available types:</p>
+    /// <p>Identifies the <code>MLModel</code> category. The following are the available types: </p>
     /// <ul>
-    /// <li>
-    /// <p>REGRESSION -- Produces a numeric result. For example, "What price should a house be listed at?"</p></li>
-    /// <li>
-    /// <p>BINARY -- Produces one of two possible results. For example, "Is this an e-commerce website?"</p></li>
-    /// <li>
-    /// <p>MULTICLASS -- Produces one of several possible results. For example, "Is this a HIGH, LOW or MEDIUM risk trade?"</p></li>
+    /// <li> <p>REGRESSION -- Produces a numeric result. For example, "What price should a house be listed at?"</p> </li>
+    /// <li> <p>BINARY -- Produces one of two possible results. For example, "Is this an e-commerce website?"</p> </li>
+    /// <li> <p>MULTICLASS -- Produces one of several possible results. For example, "Is this a HIGH, LOW or MEDIUM risk trade?"</p> </li>
     /// </ul>
     pub fn get_ml_model_type(&self) -> &::std::option::Option<crate::types::MlModelType> {
         &self.ml_model_type
@@ -643,36 +563,36 @@ impl GetMlModelOutputBuilder {
         &self.started_at
     }
     /// <p>The recipe to use when training the <code>MLModel</code>. The <code>Recipe</code> provides detailed information about the observation data to use during training, and manipulations to perform on the observation data during training.</p>
-    /// <p><b>Note:</b> This parameter is provided as part of the verbose format.</p>
+    /// <p> <b>Note:</b> This parameter is provided as part of the verbose format.</p>
     pub fn recipe(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recipe = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The recipe to use when training the <code>MLModel</code>. The <code>Recipe</code> provides detailed information about the observation data to use during training, and manipulations to perform on the observation data during training.</p>
-    /// <p><b>Note:</b> This parameter is provided as part of the verbose format.</p>
+    /// <p> <b>Note:</b> This parameter is provided as part of the verbose format.</p>
     pub fn set_recipe(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recipe = input;
         self
     }
     /// <p>The recipe to use when training the <code>MLModel</code>. The <code>Recipe</code> provides detailed information about the observation data to use during training, and manipulations to perform on the observation data during training.</p>
-    /// <p><b>Note:</b> This parameter is provided as part of the verbose format.</p>
+    /// <p> <b>Note:</b> This parameter is provided as part of the verbose format.</p>
     pub fn get_recipe(&self) -> &::std::option::Option<::std::string::String> {
         &self.recipe
     }
     /// <p>The schema used by all of the data files referenced by the <code>DataSource</code>.</p>
-    /// <p><b>Note:</b> This parameter is provided as part of the verbose format.</p>
+    /// <p> <b>Note:</b> This parameter is provided as part of the verbose format.</p>
     pub fn schema(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The schema used by all of the data files referenced by the <code>DataSource</code>.</p>
-    /// <p><b>Note:</b> This parameter is provided as part of the verbose format.</p>
+    /// <p> <b>Note:</b> This parameter is provided as part of the verbose format.</p>
     pub fn set_schema(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema = input;
         self
     }
     /// <p>The schema used by all of the data files referenced by the <code>DataSource</code>.</p>
-    /// <p><b>Note:</b> This parameter is provided as part of the verbose format.</p>
+    /// <p> <b>Note:</b> This parameter is provided as part of the verbose format.</p>
     pub fn get_schema(&self) -> &::std::option::Option<::std::string::String> {
         &self.schema
     }

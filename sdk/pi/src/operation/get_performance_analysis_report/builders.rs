@@ -22,7 +22,7 @@ impl GetPerformanceAnalysisReportInputBuilder {
 }
 /// Fluent builder constructing a request to `GetPerformanceAnalysisReport`.
 ///
-/// <p>Retrieves the report including the report ID, status, time details, and the insights with recommendations. The report status can be <code>RUNNING</code>, <code>SUCCEEDED</code>, or <code>FAILED</code>. The insights include the <code>description</code> and <code>recommendation</code> fields.</p>
+/// <p>Retrieves the report including the report ID, status, time details, and the insights with recommendations. The report status can be <code>RUNNING</code>, <code>SUCCEEDED</code>, or <code>FAILED</code>. The insights include the <code>description</code> and <code>recommendation</code> fields. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetPerformanceAnalysisReportFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -139,17 +139,17 @@ impl GetPerformanceAnalysisReportFluentBuilder {
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_identifier()
     }
-    /// <p>A unique identifier of the created analysis report. For example, <code>report-12345678901234567</code></p>
+    /// <p>A unique identifier of the created analysis report. For example, <code>report-12345678901234567</code> </p>
     pub fn analysis_report_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.analysis_report_id(input.into());
         self
     }
-    /// <p>A unique identifier of the created analysis report. For example, <code>report-12345678901234567</code></p>
+    /// <p>A unique identifier of the created analysis report. For example, <code>report-12345678901234567</code> </p>
     pub fn set_analysis_report_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_analysis_report_id(input);
         self
     }
-    /// <p>A unique identifier of the created analysis report. For example, <code>report-12345678901234567</code></p>
+    /// <p>A unique identifier of the created analysis report. For example, <code>report-12345678901234567</code> </p>
     pub fn get_analysis_report_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_analysis_report_id()
     }
@@ -167,17 +167,17 @@ impl GetPerformanceAnalysisReportFluentBuilder {
     pub fn get_text_format(&self) -> &::std::option::Option<crate::types::TextFormat> {
         self.inner.get_text_format()
     }
-    /// <p>The text language in the report. The default language is <code>EN_US</code> (English).</p>
+    /// <p>The text language in the report. The default language is <code>EN_US</code> (English). </p>
     pub fn accept_language(mut self, input: crate::types::AcceptLanguage) -> Self {
         self.inner = self.inner.accept_language(input);
         self
     }
-    /// <p>The text language in the report. The default language is <code>EN_US</code> (English).</p>
+    /// <p>The text language in the report. The default language is <code>EN_US</code> (English). </p>
     pub fn set_accept_language(mut self, input: ::std::option::Option<crate::types::AcceptLanguage>) -> Self {
         self.inner = self.inner.set_accept_language(input);
         self
     }
-    /// <p>The text language in the report. The default language is <code>EN_US</code> (English).</p>
+    /// <p>The text language in the report. The default language is <code>EN_US</code> (English). </p>
     pub fn get_accept_language(&self) -> &::std::option::Option<crate::types::AcceptLanguage> {
         self.inner.get_accept_language()
     }

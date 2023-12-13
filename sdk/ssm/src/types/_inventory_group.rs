@@ -6,7 +6,7 @@
 pub struct InventoryGroup {
     /// <p>The name of the group.</p>
     pub name: ::std::string::String,
-    /// <p>Filters define the criteria for the group. The <code>matchingCount</code> field displays the number of resources that match the criteria. The <code>notMatchingCount</code> field displays the number of resources that don't match the criteria.</p>
+    /// <p>Filters define the criteria for the group. The <code>matchingCount</code> field displays the number of resources that match the criteria. The <code>notMatchingCount</code> field displays the number of resources that don't match the criteria. </p>
     pub filters: ::std::vec::Vec<crate::types::InventoryFilter>,
 }
 impl InventoryGroup {
@@ -15,7 +15,7 @@ impl InventoryGroup {
         use std::ops::Deref;
         self.name.deref()
     }
-    /// <p>Filters define the criteria for the group. The <code>matchingCount</code> field displays the number of resources that match the criteria. The <code>notMatchingCount</code> field displays the number of resources that don't match the criteria.</p>
+    /// <p>Filters define the criteria for the group. The <code>matchingCount</code> field displays the number of resources that match the criteria. The <code>notMatchingCount</code> field displays the number of resources that don't match the criteria. </p>
     pub fn filters(&self) -> &[crate::types::InventoryFilter] {
         use std::ops::Deref;
         self.filters.deref()
@@ -55,19 +55,19 @@ impl InventoryGroupBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>Filters define the criteria for the group. The <code>matchingCount</code> field displays the number of resources that match the criteria. The <code>notMatchingCount</code> field displays the number of resources that don't match the criteria.</p>
+    /// <p>Filters define the criteria for the group. The <code>matchingCount</code> field displays the number of resources that match the criteria. The <code>notMatchingCount</code> field displays the number of resources that don't match the criteria. </p>
     pub fn filters(mut self, input: crate::types::InventoryFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
         v.push(input);
         self.filters = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Filters define the criteria for the group. The <code>matchingCount</code> field displays the number of resources that match the criteria. The <code>notMatchingCount</code> field displays the number of resources that don't match the criteria.</p>
+    /// <p>Filters define the criteria for the group. The <code>matchingCount</code> field displays the number of resources that match the criteria. The <code>notMatchingCount</code> field displays the number of resources that don't match the criteria. </p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InventoryFilter>>) -> Self {
         self.filters = input;
         self
     }
-    /// <p>Filters define the criteria for the group. The <code>matchingCount</code> field displays the number of resources that match the criteria. The <code>notMatchingCount</code> field displays the number of resources that don't match the criteria.</p>
+    /// <p>Filters define the criteria for the group. The <code>matchingCount</code> field displays the number of resources that match the criteria. The <code>notMatchingCount</code> field displays the number of resources that don't match the criteria. </p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InventoryFilter>> {
         &self.filters
     }

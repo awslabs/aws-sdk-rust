@@ -8,7 +8,7 @@ pub struct DataSetSummary {
     pub data_set_name: ::std::string::String,
     /// <p>The type of data set. The only supported value is VSAM.</p>
     pub data_set_org: ::std::option::Option<::std::string::String>,
-    /// <p>The format of the data set.</p>
+    /// <p>The format of the data set. </p>
     pub format: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the data set was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -27,7 +27,7 @@ impl DataSetSummary {
     pub fn data_set_org(&self) -> ::std::option::Option<&str> {
         self.data_set_org.as_deref()
     }
-    /// <p>The format of the data set.</p>
+    /// <p>The format of the data set. </p>
     pub fn format(&self) -> ::std::option::Option<&str> {
         self.format.as_deref()
     }
@@ -92,17 +92,17 @@ impl DataSetSummaryBuilder {
     pub fn get_data_set_org(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_set_org
     }
-    /// <p>The format of the data set.</p>
+    /// <p>The format of the data set. </p>
     pub fn format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.format = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The format of the data set.</p>
+    /// <p>The format of the data set. </p>
     pub fn set_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.format = input;
         self
     }
-    /// <p>The format of the data set.</p>
+    /// <p>The format of the data set. </p>
     pub fn get_format(&self) -> &::std::option::Option<::std::string::String> {
         &self.format
     }

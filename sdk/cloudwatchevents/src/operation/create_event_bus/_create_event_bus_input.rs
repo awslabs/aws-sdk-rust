@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateEventBusInput {
-    /// <p>The name of the new event bus.</p>
+    /// <p>The name of the new event bus. </p>
     /// <p>Event bus names cannot contain the / character. You can't use the name <code>default</code> for a custom event bus, as this name is already used for your account's default event bus.</p>
     /// <p>If this is a partner event bus, the name must exactly match the name of the partner event source that this event bus is matched to.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -13,7 +13,7 @@ pub struct CreateEventBusInput {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateEventBusInput {
-    /// <p>The name of the new event bus.</p>
+    /// <p>The name of the new event bus. </p>
     /// <p>Event bus names cannot contain the / character. You can't use the name <code>default</code> for a custom event bus, as this name is already used for your account's default event bus.</p>
     /// <p>If this is a partner event bus, the name must exactly match the name of the partner event source that this event bus is matched to.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -46,7 +46,7 @@ pub struct CreateEventBusInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateEventBusInputBuilder {
-    /// <p>The name of the new event bus.</p>
+    /// <p>The name of the new event bus. </p>
     /// <p>Event bus names cannot contain the / character. You can't use the name <code>default</code> for a custom event bus, as this name is already used for your account's default event bus.</p>
     /// <p>If this is a partner event bus, the name must exactly match the name of the partner event source that this event bus is matched to.</p>
     /// This field is required.
@@ -54,14 +54,14 @@ impl CreateEventBusInputBuilder {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the new event bus.</p>
+    /// <p>The name of the new event bus. </p>
     /// <p>Event bus names cannot contain the / character. You can't use the name <code>default</code> for a custom event bus, as this name is already used for your account's default event bus.</p>
     /// <p>If this is a partner event bus, the name must exactly match the name of the partner event source that this event bus is matched to.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the new event bus.</p>
+    /// <p>The name of the new event bus. </p>
     /// <p>Event bus names cannot contain the / character. You can't use the name <code>default</code> for a custom event bus, as this name is already used for your account's default event bus.</p>
     /// <p>If this is a partner event bus, the name must exactly match the name of the partner event source that this event bus is matched to.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {

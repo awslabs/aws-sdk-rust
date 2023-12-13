@@ -115,17 +115,17 @@ impl CreateTransitGatewayRouteTableAttachmentFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the peer for the</p>
+    /// <p>The ID of the peer for the </p>
     pub fn peering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.peering_id(input.into());
         self
     }
-    /// <p>The ID of the peer for the</p>
+    /// <p>The ID of the peer for the </p>
     pub fn set_peering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_peering_id(input);
         self
     }
-    /// <p>The ID of the peer for the</p>
+    /// <p>The ID of the peer for the </p>
     pub fn get_peering_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_peering_id()
     }

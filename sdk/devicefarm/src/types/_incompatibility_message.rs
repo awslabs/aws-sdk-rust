@@ -9,18 +9,12 @@ pub struct IncompatibilityMessage {
     /// <p>The type of incompatibility.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>ARN</p></li>
-    /// <li>
-    /// <p>FORM_FACTOR (for example, phone or tablet)</p></li>
-    /// <li>
-    /// <p>MANUFACTURER</p></li>
-    /// <li>
-    /// <p>PLATFORM (for example, Android or iOS)</p></li>
-    /// <li>
-    /// <p>REMOTE_ACCESS_ENABLED</p></li>
-    /// <li>
-    /// <p>APPIUM_VERSION</p></li>
+    /// <li> <p>ARN</p> </li>
+    /// <li> <p>FORM_FACTOR (for example, phone or tablet)</p> </li>
+    /// <li> <p>MANUFACTURER</p> </li>
+    /// <li> <p>PLATFORM (for example, Android or iOS)</p> </li>
+    /// <li> <p>REMOTE_ACCESS_ENABLED</p> </li>
+    /// <li> <p>APPIUM_VERSION</p> </li>
     /// </ul>
     pub r#type: ::std::option::Option<crate::types::DeviceAttribute>,
 }
@@ -32,18 +26,12 @@ impl IncompatibilityMessage {
     /// <p>The type of incompatibility.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>ARN</p></li>
-    /// <li>
-    /// <p>FORM_FACTOR (for example, phone or tablet)</p></li>
-    /// <li>
-    /// <p>MANUFACTURER</p></li>
-    /// <li>
-    /// <p>PLATFORM (for example, Android or iOS)</p></li>
-    /// <li>
-    /// <p>REMOTE_ACCESS_ENABLED</p></li>
-    /// <li>
-    /// <p>APPIUM_VERSION</p></li>
+    /// <li> <p>ARN</p> </li>
+    /// <li> <p>FORM_FACTOR (for example, phone or tablet)</p> </li>
+    /// <li> <p>MANUFACTURER</p> </li>
+    /// <li> <p>PLATFORM (for example, Android or iOS)</p> </li>
+    /// <li> <p>REMOTE_ACCESS_ENABLED</p> </li>
+    /// <li> <p>APPIUM_VERSION</p> </li>
     /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::DeviceAttribute> {
         self.r#type.as_ref()
@@ -81,18 +69,12 @@ impl IncompatibilityMessageBuilder {
     /// <p>The type of incompatibility.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>ARN</p></li>
-    /// <li>
-    /// <p>FORM_FACTOR (for example, phone or tablet)</p></li>
-    /// <li>
-    /// <p>MANUFACTURER</p></li>
-    /// <li>
-    /// <p>PLATFORM (for example, Android or iOS)</p></li>
-    /// <li>
-    /// <p>REMOTE_ACCESS_ENABLED</p></li>
-    /// <li>
-    /// <p>APPIUM_VERSION</p></li>
+    /// <li> <p>ARN</p> </li>
+    /// <li> <p>FORM_FACTOR (for example, phone or tablet)</p> </li>
+    /// <li> <p>MANUFACTURER</p> </li>
+    /// <li> <p>PLATFORM (for example, Android or iOS)</p> </li>
+    /// <li> <p>REMOTE_ACCESS_ENABLED</p> </li>
+    /// <li> <p>APPIUM_VERSION</p> </li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::DeviceAttribute) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -101,18 +83,12 @@ impl IncompatibilityMessageBuilder {
     /// <p>The type of incompatibility.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>ARN</p></li>
-    /// <li>
-    /// <p>FORM_FACTOR (for example, phone or tablet)</p></li>
-    /// <li>
-    /// <p>MANUFACTURER</p></li>
-    /// <li>
-    /// <p>PLATFORM (for example, Android or iOS)</p></li>
-    /// <li>
-    /// <p>REMOTE_ACCESS_ENABLED</p></li>
-    /// <li>
-    /// <p>APPIUM_VERSION</p></li>
+    /// <li> <p>ARN</p> </li>
+    /// <li> <p>FORM_FACTOR (for example, phone or tablet)</p> </li>
+    /// <li> <p>MANUFACTURER</p> </li>
+    /// <li> <p>PLATFORM (for example, Android or iOS)</p> </li>
+    /// <li> <p>REMOTE_ACCESS_ENABLED</p> </li>
+    /// <li> <p>APPIUM_VERSION</p> </li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::DeviceAttribute>) -> Self {
         self.r#type = input;
@@ -121,18 +97,12 @@ impl IncompatibilityMessageBuilder {
     /// <p>The type of incompatibility.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>ARN</p></li>
-    /// <li>
-    /// <p>FORM_FACTOR (for example, phone or tablet)</p></li>
-    /// <li>
-    /// <p>MANUFACTURER</p></li>
-    /// <li>
-    /// <p>PLATFORM (for example, Android or iOS)</p></li>
-    /// <li>
-    /// <p>REMOTE_ACCESS_ENABLED</p></li>
-    /// <li>
-    /// <p>APPIUM_VERSION</p></li>
+    /// <li> <p>ARN</p> </li>
+    /// <li> <p>FORM_FACTOR (for example, phone or tablet)</p> </li>
+    /// <li> <p>MANUFACTURER</p> </li>
+    /// <li> <p>PLATFORM (for example, Android or iOS)</p> </li>
+    /// <li> <p>REMOTE_ACCESS_ENABLED</p> </li>
+    /// <li> <p>APPIUM_VERSION</p> </li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::DeviceAttribute> {
         &self.r#type

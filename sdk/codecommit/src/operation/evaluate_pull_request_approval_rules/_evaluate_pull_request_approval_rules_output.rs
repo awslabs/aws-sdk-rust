@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluatePullRequestApprovalRulesOutput {
-    /// <p>The result of the evaluation, including the names of the rules whose conditions have been met (if any), the names of the rules whose conditions have not been met (if any), whether the pull request is in the approved state, and whether the pull request approval rule has been set aside by an override.</p>
+    /// <p>The result of the evaluation, including the names of the rules whose conditions have been met (if any), the names of the rules whose conditions have not been met (if any), whether the pull request is in the approved state, and whether the pull request approval rule has been set aside by an override. </p>
     pub evaluation: ::std::option::Option<crate::types::Evaluation>,
     _request_id: Option<String>,
 }
 impl EvaluatePullRequestApprovalRulesOutput {
-    /// <p>The result of the evaluation, including the names of the rules whose conditions have been met (if any), the names of the rules whose conditions have not been met (if any), whether the pull request is in the approved state, and whether the pull request approval rule has been set aside by an override.</p>
+    /// <p>The result of the evaluation, including the names of the rules whose conditions have been met (if any), the names of the rules whose conditions have not been met (if any), whether the pull request is in the approved state, and whether the pull request approval rule has been set aside by an override. </p>
     pub fn evaluation(&self) -> ::std::option::Option<&crate::types::Evaluation> {
         self.evaluation.as_ref()
     }
@@ -33,18 +33,18 @@ pub struct EvaluatePullRequestApprovalRulesOutputBuilder {
     _request_id: Option<String>,
 }
 impl EvaluatePullRequestApprovalRulesOutputBuilder {
-    /// <p>The result of the evaluation, including the names of the rules whose conditions have been met (if any), the names of the rules whose conditions have not been met (if any), whether the pull request is in the approved state, and whether the pull request approval rule has been set aside by an override.</p>
+    /// <p>The result of the evaluation, including the names of the rules whose conditions have been met (if any), the names of the rules whose conditions have not been met (if any), whether the pull request is in the approved state, and whether the pull request approval rule has been set aside by an override. </p>
     /// This field is required.
     pub fn evaluation(mut self, input: crate::types::Evaluation) -> Self {
         self.evaluation = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The result of the evaluation, including the names of the rules whose conditions have been met (if any), the names of the rules whose conditions have not been met (if any), whether the pull request is in the approved state, and whether the pull request approval rule has been set aside by an override.</p>
+    /// <p>The result of the evaluation, including the names of the rules whose conditions have been met (if any), the names of the rules whose conditions have not been met (if any), whether the pull request is in the approved state, and whether the pull request approval rule has been set aside by an override. </p>
     pub fn set_evaluation(mut self, input: ::std::option::Option<crate::types::Evaluation>) -> Self {
         self.evaluation = input;
         self
     }
-    /// <p>The result of the evaluation, including the names of the rules whose conditions have been met (if any), the names of the rules whose conditions have not been met (if any), whether the pull request is in the approved state, and whether the pull request approval rule has been set aside by an override.</p>
+    /// <p>The result of the evaluation, including the names of the rules whose conditions have been met (if any), the names of the rules whose conditions have not been met (if any), whether the pull request is in the approved state, and whether the pull request approval rule has been set aside by an override. </p>
     pub fn get_evaluation(&self) -> &::std::option::Option<crate::types::Evaluation> {
         &self.evaluation
     }

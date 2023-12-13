@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScheduleLambdaFunctionFailedEventAttributes {
-    /// <p>The ID provided in the <code>ScheduleLambdaFunction</code> decision that failed.</p>
+    /// <p>The ID provided in the <code>ScheduleLambdaFunction</code> decision that failed. </p>
     pub id: ::std::string::String,
     /// <p>The name of the Lambda function.</p>
     pub name: ::std::string::String,
-    /// <p>The cause of the failure. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p><note>
+    /// <p>The cause of the failure. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p> <note>
     /// <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     /// </note>
     pub cause: crate::types::ScheduleLambdaFunctionFailedCause,
@@ -16,7 +16,7 @@ pub struct ScheduleLambdaFunctionFailedEventAttributes {
     pub decision_task_completed_event_id: i64,
 }
 impl ScheduleLambdaFunctionFailedEventAttributes {
-    /// <p>The ID provided in the <code>ScheduleLambdaFunction</code> decision that failed.</p>
+    /// <p>The ID provided in the <code>ScheduleLambdaFunction</code> decision that failed. </p>
     pub fn id(&self) -> &str {
         use std::ops::Deref;
         self.id.deref()
@@ -26,7 +26,7 @@ impl ScheduleLambdaFunctionFailedEventAttributes {
         use std::ops::Deref;
         self.name.deref()
     }
-    /// <p>The cause of the failure. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p><note>
+    /// <p>The cause of the failure. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p> <note>
     /// <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     /// </note>
     pub fn cause(&self) -> &crate::types::ScheduleLambdaFunctionFailedCause {
@@ -54,18 +54,18 @@ pub struct ScheduleLambdaFunctionFailedEventAttributesBuilder {
     pub(crate) decision_task_completed_event_id: ::std::option::Option<i64>,
 }
 impl ScheduleLambdaFunctionFailedEventAttributesBuilder {
-    /// <p>The ID provided in the <code>ScheduleLambdaFunction</code> decision that failed.</p>
+    /// <p>The ID provided in the <code>ScheduleLambdaFunction</code> decision that failed. </p>
     /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID provided in the <code>ScheduleLambdaFunction</code> decision that failed.</p>
+    /// <p>The ID provided in the <code>ScheduleLambdaFunction</code> decision that failed. </p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// <p>The ID provided in the <code>ScheduleLambdaFunction</code> decision that failed.</p>
+    /// <p>The ID provided in the <code>ScheduleLambdaFunction</code> decision that failed. </p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
@@ -84,7 +84,7 @@ impl ScheduleLambdaFunctionFailedEventAttributesBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The cause of the failure. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p><note>
+    /// <p>The cause of the failure. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p> <note>
     /// <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     /// </note>
     /// This field is required.
@@ -92,14 +92,14 @@ impl ScheduleLambdaFunctionFailedEventAttributesBuilder {
         self.cause = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The cause of the failure. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p><note>
+    /// <p>The cause of the failure. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p> <note>
     /// <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     /// </note>
     pub fn set_cause(mut self, input: ::std::option::Option<crate::types::ScheduleLambdaFunctionFailedCause>) -> Self {
         self.cause = input;
         self
     }
-    /// <p>The cause of the failure. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p><note>
+    /// <p>The cause of the failure. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p> <note>
     /// <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     /// </note>
     pub fn get_cause(&self) -> &::std::option::Option<crate::types::ScheduleLambdaFunctionFailedCause> {

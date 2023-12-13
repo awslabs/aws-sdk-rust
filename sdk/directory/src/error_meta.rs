@@ -23,7 +23,7 @@ pub enum Error {
     DirectoryAlreadySharedException(crate::types::error::DirectoryAlreadySharedException),
     /// <p>The specified directory does not exist in the system.</p>
     DirectoryDoesNotExistException(crate::types::error::DirectoryDoesNotExistException),
-    /// <p>The directory is already updated to desired update type settings.</p>
+    /// <p> The directory is already updated to desired update type settings. </p>
     DirectoryInDesiredStateException(crate::types::error::DirectoryInDesiredStateException),
     /// <p>The maximum number of directories in the region has been reached. You can use the <code>GetDirectoryLimits</code> operation to determine your directory limits in the region.</p>
     DirectoryLimitExceededException(crate::types::error::DirectoryLimitExceededException),

@@ -8,16 +8,16 @@ pub struct ReportJob {
     pub report_job_id: ::std::option::Option<::std::string::String>,
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
     pub report_plan_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p>
-    /// <p><code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code></p>
+    /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are: </p>
+    /// <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
     pub report_template: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that a report job is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that a report job is completed, in Unix format and Coordinated Universal Time (UTC). The value of <code>CompletionTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub completion_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of a report job. The statuses are:</p>
-    /// <p><code>CREATED | RUNNING | COMPLETED | FAILED</code></p>
-    /// <p><code>COMPLETED</code> means that the report is available for your review at your designated destination. If the status is <code>FAILED</code>, review the <code>StatusMessage</code> for the reason.</p>
+    /// <p> <code>CREATED | RUNNING | COMPLETED | FAILED</code> </p>
+    /// <p> <code>COMPLETED</code> means that the report is available for your review at your designated destination. If the status is <code>FAILED</code>, review the <code>StatusMessage</code> for the reason.</p>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>A message explaining the status of the report job.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
@@ -33,8 +33,8 @@ impl ReportJob {
     pub fn report_plan_arn(&self) -> ::std::option::Option<&str> {
         self.report_plan_arn.as_deref()
     }
-    /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p>
-    /// <p><code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code></p>
+    /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are: </p>
+    /// <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
     pub fn report_template(&self) -> ::std::option::Option<&str> {
         self.report_template.as_deref()
     }
@@ -47,8 +47,8 @@ impl ReportJob {
         self.completion_time.as_ref()
     }
     /// <p>The status of a report job. The statuses are:</p>
-    /// <p><code>CREATED | RUNNING | COMPLETED | FAILED</code></p>
-    /// <p><code>COMPLETED</code> means that the report is available for your review at your designated destination. If the status is <code>FAILED</code>, review the <code>StatusMessage</code> for the reason.</p>
+    /// <p> <code>CREATED | RUNNING | COMPLETED | FAILED</code> </p>
+    /// <p> <code>COMPLETED</code> means that the report is available for your review at your designated destination. If the status is <code>FAILED</code>, review the <code>StatusMessage</code> for the reason.</p>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
@@ -110,20 +110,20 @@ impl ReportJobBuilder {
     pub fn get_report_plan_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.report_plan_arn
     }
-    /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p>
-    /// <p><code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code></p>
+    /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are: </p>
+    /// <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
     pub fn report_template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.report_template = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p>
-    /// <p><code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code></p>
+    /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are: </p>
+    /// <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
     pub fn set_report_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.report_template = input;
         self
     }
-    /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p>
-    /// <p><code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code></p>
+    /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are: </p>
+    /// <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
     pub fn get_report_template(&self) -> &::std::option::Option<::std::string::String> {
         &self.report_template
     }
@@ -156,22 +156,22 @@ impl ReportJobBuilder {
         &self.completion_time
     }
     /// <p>The status of a report job. The statuses are:</p>
-    /// <p><code>CREATED | RUNNING | COMPLETED | FAILED</code></p>
-    /// <p><code>COMPLETED</code> means that the report is available for your review at your designated destination. If the status is <code>FAILED</code>, review the <code>StatusMessage</code> for the reason.</p>
+    /// <p> <code>CREATED | RUNNING | COMPLETED | FAILED</code> </p>
+    /// <p> <code>COMPLETED</code> means that the report is available for your review at your designated destination. If the status is <code>FAILED</code>, review the <code>StatusMessage</code> for the reason.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of a report job. The statuses are:</p>
-    /// <p><code>CREATED | RUNNING | COMPLETED | FAILED</code></p>
-    /// <p><code>COMPLETED</code> means that the report is available for your review at your designated destination. If the status is <code>FAILED</code>, review the <code>StatusMessage</code> for the reason.</p>
+    /// <p> <code>CREATED | RUNNING | COMPLETED | FAILED</code> </p>
+    /// <p> <code>COMPLETED</code> means that the report is available for your review at your designated destination. If the status is <code>FAILED</code>, review the <code>StatusMessage</code> for the reason.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
     /// <p>The status of a report job. The statuses are:</p>
-    /// <p><code>CREATED | RUNNING | COMPLETED | FAILED</code></p>
-    /// <p><code>COMPLETED</code> means that the report is available for your review at your designated destination. If the status is <code>FAILED</code>, review the <code>StatusMessage</code> for the reason.</p>
+    /// <p> <code>CREATED | RUNNING | COMPLETED | FAILED</code> </p>
+    /// <p> <code>COMPLETED</code> means that the report is available for your review at your designated destination. If the status is <code>FAILED</code>, review the <code>StatusMessage</code> for the reason.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status
     }

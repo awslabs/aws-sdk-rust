@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCollectorsOutput {
-    /// <p>The list of all the installed collectors.</p>
+    /// <p> The list of all the installed collectors. </p>
     pub collectors: ::std::option::Option<::std::vec::Vec<crate::types::Collector>>,
-    /// <p>The token you use to retrieve the next set of results, or null if there are no more results.</p>
+    /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListCollectorsOutput {
-    /// <p>The list of all the installed collectors.</p>
+    /// <p> The list of all the installed collectors. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.collectors.is_none()`.
     pub fn collectors(&self) -> &[crate::types::Collector] {
         self.collectors.as_deref().unwrap_or_default()
     }
-    /// <p>The token you use to retrieve the next set of results, or null if there are no more results.</p>
+    /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -46,33 +46,33 @@ impl ListCollectorsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_collectors`](Self::set_collectors).
     ///
-    /// <p>The list of all the installed collectors.</p>
+    /// <p> The list of all the installed collectors. </p>
     pub fn collectors(mut self, input: crate::types::Collector) -> Self {
         let mut v = self.collectors.unwrap_or_default();
         v.push(input);
         self.collectors = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of all the installed collectors.</p>
+    /// <p> The list of all the installed collectors. </p>
     pub fn set_collectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Collector>>) -> Self {
         self.collectors = input;
         self
     }
-    /// <p>The list of all the installed collectors.</p>
+    /// <p> The list of all the installed collectors. </p>
     pub fn get_collectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Collector>> {
         &self.collectors
     }
-    /// <p>The token you use to retrieve the next set of results, or null if there are no more results.</p>
+    /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token you use to retrieve the next set of results, or null if there are no more results.</p>
+    /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The token you use to retrieve the next set of results, or null if there are no more results.</p>
+    /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

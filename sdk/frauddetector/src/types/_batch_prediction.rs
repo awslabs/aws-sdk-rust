@@ -24,7 +24,7 @@ pub struct BatchPrediction {
     pub event_type_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the detector.</p>
     pub detector_name: ::std::option::Option<::std::string::String>,
-    /// <p>The detector version.</p>
+    /// <p>The detector version. </p>
     pub detector_version: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the IAM role to use for this job request.</p>
     pub iam_role_arn: ::std::option::Option<::std::string::String>,
@@ -76,7 +76,7 @@ impl BatchPrediction {
     pub fn detector_name(&self) -> ::std::option::Option<&str> {
         self.detector_name.as_deref()
     }
-    /// <p>The detector version.</p>
+    /// <p>The detector version. </p>
     pub fn detector_version(&self) -> ::std::option::Option<&str> {
         self.detector_version.as_deref()
     }
@@ -265,17 +265,17 @@ impl BatchPredictionBuilder {
     pub fn get_detector_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.detector_name
     }
-    /// <p>The detector version.</p>
+    /// <p>The detector version. </p>
     pub fn detector_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The detector version.</p>
+    /// <p>The detector version. </p>
     pub fn set_detector_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detector_version = input;
         self
     }
-    /// <p>The detector version.</p>
+    /// <p>The detector version. </p>
     pub fn get_detector_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.detector_version
     }

@@ -22,7 +22,7 @@ impl UpdateKxVolumeInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateKxVolume`.
 ///
-/// <p>Updates the throughput or capacity of a volume. During the update process, the filesystem might be unavailable for a few minutes. You can retry any operations after the update is complete.</p>
+/// <p> Updates the throughput or capacity of a volume. During the update process, the filesystem might be unavailable for a few minutes. You can retry any operations after the update is complete. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateKxVolumeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,45 +108,45 @@ impl UpdateKxVolumeFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>A unique identifier for the kdb environment where you created the storage volume.</p>
+    /// <p>A unique identifier for the kdb environment where you created the storage volume. </p>
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_id(input.into());
         self
     }
-    /// <p>A unique identifier for the kdb environment where you created the storage volume.</p>
+    /// <p>A unique identifier for the kdb environment where you created the storage volume. </p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_id(input);
         self
     }
-    /// <p>A unique identifier for the kdb environment where you created the storage volume.</p>
+    /// <p>A unique identifier for the kdb environment where you created the storage volume. </p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_environment_id()
     }
-    /// <p>A unique identifier for the volume.</p>
+    /// <p> A unique identifier for the volume.</p>
     pub fn volume_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.volume_name(input.into());
         self
     }
-    /// <p>A unique identifier for the volume.</p>
+    /// <p> A unique identifier for the volume.</p>
     pub fn set_volume_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_volume_name(input);
         self
     }
-    /// <p>A unique identifier for the volume.</p>
+    /// <p> A unique identifier for the volume.</p>
     pub fn get_volume_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_volume_name()
     }
-    /// <p>A description of the volume.</p>
+    /// <p> A description of the volume. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>A description of the volume.</p>
+    /// <p> A description of the volume. </p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>A description of the volume.</p>
+    /// <p> A description of the volume. </p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
@@ -164,17 +164,17 @@ impl UpdateKxVolumeFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
-    /// <p>Specifies the configuration for the Network attached storage (NAS_1) file system volume.</p>
+    /// <p> Specifies the configuration for the Network attached storage (NAS_1) file system volume.</p>
     pub fn nas1_configuration(mut self, input: crate::types::KxNas1Configuration) -> Self {
         self.inner = self.inner.nas1_configuration(input);
         self
     }
-    /// <p>Specifies the configuration for the Network attached storage (NAS_1) file system volume.</p>
+    /// <p> Specifies the configuration for the Network attached storage (NAS_1) file system volume.</p>
     pub fn set_nas1_configuration(mut self, input: ::std::option::Option<crate::types::KxNas1Configuration>) -> Self {
         self.inner = self.inner.set_nas1_configuration(input);
         self
     }
-    /// <p>Specifies the configuration for the Network attached storage (NAS_1) file system volume.</p>
+    /// <p> Specifies the configuration for the Network attached storage (NAS_1) file system volume.</p>
     pub fn get_nas1_configuration(&self) -> &::std::option::Option<crate::types::KxNas1Configuration> {
         self.inner.get_nas1_configuration()
     }

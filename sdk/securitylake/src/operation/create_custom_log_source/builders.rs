@@ -142,64 +142,35 @@ impl CreateCustomLogSourceFluentBuilder {
     ///
     /// <p>The Open Cybersecurity Schema Framework (OCSF) event classes which describes the type of data that the custom source will send to Security Lake. The supported event classes are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ACCESS_ACTIVITY</code></p></li>
-    /// <li>
-    /// <p><code>FILE_ACTIVITY</code></p></li>
-    /// <li>
-    /// <p><code>KERNEL_ACTIVITY</code></p></li>
-    /// <li>
-    /// <p><code>KERNEL_EXTENSION</code></p></li>
-    /// <li>
-    /// <p><code>MEMORY_ACTIVITY</code></p></li>
-    /// <li>
-    /// <p><code>MODULE_ACTIVITY</code></p></li>
-    /// <li>
-    /// <p><code>PROCESS_ACTIVITY</code></p></li>
-    /// <li>
-    /// <p><code>REGISTRY_KEY_ACTIVITY</code></p></li>
-    /// <li>
-    /// <p><code>REGISTRY_VALUE_ACTIVITY</code></p></li>
-    /// <li>
-    /// <p><code>RESOURCE_ACTIVITY</code></p></li>
-    /// <li>
-    /// <p><code>SCHEDULED_JOB_ACTIVITY</code></p></li>
-    /// <li>
-    /// <p><code>SECURITY_FINDING</code></p></li>
-    /// <li>
-    /// <p><code>ACCOUNT_CHANGE</code></p></li>
-    /// <li>
-    /// <p><code>AUTHENTICATION</code></p></li>
-    /// <li>
-    /// <p><code>AUTHORIZATION</code></p></li>
-    /// <li>
-    /// <p><code>ENTITY_MANAGEMENT_AUDIT</code></p></li>
-    /// <li>
-    /// <p><code>DHCP_ACTIVITY</code></p></li>
-    /// <li>
-    /// <p><code>NETWORK_ACTIVITY</code></p></li>
-    /// <li>
-    /// <p><code>DNS_ACTIVITY</code></p></li>
-    /// <li>
-    /// <p><code>FTP_ACTIVITY</code></p></li>
-    /// <li>
-    /// <p><code>HTTP_ACTIVITY</code></p></li>
-    /// <li>
-    /// <p><code>RDP_ACTIVITY</code></p></li>
-    /// <li>
-    /// <p><code>SMB_ACTIVITY</code></p></li>
-    /// <li>
-    /// <p><code>SSH_ACTIVITY</code></p></li>
-    /// <li>
-    /// <p><code>CONFIG_STATE</code></p></li>
-    /// <li>
-    /// <p><code>INVENTORY_INFO</code></p></li>
-    /// <li>
-    /// <p><code>EMAIL_ACTIVITY</code></p></li>
-    /// <li>
-    /// <p><code>API_ACTIVITY</code></p></li>
-    /// <li>
-    /// <p><code>CLOUD_API</code></p></li>
+    /// <li> <p> <code>ACCESS_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>FILE_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>KERNEL_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>KERNEL_EXTENSION</code> </p> </li>
+    /// <li> <p> <code>MEMORY_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>MODULE_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>PROCESS_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>REGISTRY_KEY_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>REGISTRY_VALUE_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>RESOURCE_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>SCHEDULED_JOB_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>SECURITY_FINDING</code> </p> </li>
+    /// <li> <p> <code>ACCOUNT_CHANGE</code> </p> </li>
+    /// <li> <p> <code>AUTHENTICATION</code> </p> </li>
+    /// <li> <p> <code>AUTHORIZATION</code> </p> </li>
+    /// <li> <p> <code>ENTITY_MANAGEMENT_AUDIT</code> </p> </li>
+    /// <li> <p> <code>DHCP_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>NETWORK_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>DNS_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>FTP_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>HTTP_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>RDP_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>SMB_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>SSH_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>CONFIG_STATE</code> </p> </li>
+    /// <li> <p> <code>INVENTORY_INFO</code> </p> </li>
+    /// <li> <p> <code>EMAIL_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>API_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>CLOUD_API</code> </p> </li>
     /// </ul>
     pub fn event_classes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_classes(input.into());
@@ -207,64 +178,35 @@ impl CreateCustomLogSourceFluentBuilder {
     }
     /// <p>The Open Cybersecurity Schema Framework (OCSF) event classes which describes the type of data that the custom source will send to Security Lake. The supported event classes are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ACCESS_ACTIVITY</code></p></li>
-    /// <li>
-    /// <p><code>FILE_ACTIVITY</code></p></li>
-    /// <li>
-    /// <p><code>KERNEL_ACTIVITY</code></p></li>
-    /// <li>
-    /// <p><code>KERNEL_EXTENSION</code></p></li>
-    /// <li>
-    /// <p><code>MEMORY_ACTIVITY</code></p></li>
-    /// <li>
-    /// <p><code>MODULE_ACTIVITY</code></p></li>
-    /// <li>
-    /// <p><code>PROCESS_ACTIVITY</code></p></li>
-    /// <li>
-    /// <p><code>REGISTRY_KEY_ACTIVITY</code></p></li>
-    /// <li>
-    /// <p><code>REGISTRY_VALUE_ACTIVITY</code></p></li>
-    /// <li>
-    /// <p><code>RESOURCE_ACTIVITY</code></p></li>
-    /// <li>
-    /// <p><code>SCHEDULED_JOB_ACTIVITY</code></p></li>
-    /// <li>
-    /// <p><code>SECURITY_FINDING</code></p></li>
-    /// <li>
-    /// <p><code>ACCOUNT_CHANGE</code></p></li>
-    /// <li>
-    /// <p><code>AUTHENTICATION</code></p></li>
-    /// <li>
-    /// <p><code>AUTHORIZATION</code></p></li>
-    /// <li>
-    /// <p><code>ENTITY_MANAGEMENT_AUDIT</code></p></li>
-    /// <li>
-    /// <p><code>DHCP_ACTIVITY</code></p></li>
-    /// <li>
-    /// <p><code>NETWORK_ACTIVITY</code></p></li>
-    /// <li>
-    /// <p><code>DNS_ACTIVITY</code></p></li>
-    /// <li>
-    /// <p><code>FTP_ACTIVITY</code></p></li>
-    /// <li>
-    /// <p><code>HTTP_ACTIVITY</code></p></li>
-    /// <li>
-    /// <p><code>RDP_ACTIVITY</code></p></li>
-    /// <li>
-    /// <p><code>SMB_ACTIVITY</code></p></li>
-    /// <li>
-    /// <p><code>SSH_ACTIVITY</code></p></li>
-    /// <li>
-    /// <p><code>CONFIG_STATE</code></p></li>
-    /// <li>
-    /// <p><code>INVENTORY_INFO</code></p></li>
-    /// <li>
-    /// <p><code>EMAIL_ACTIVITY</code></p></li>
-    /// <li>
-    /// <p><code>API_ACTIVITY</code></p></li>
-    /// <li>
-    /// <p><code>CLOUD_API</code></p></li>
+    /// <li> <p> <code>ACCESS_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>FILE_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>KERNEL_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>KERNEL_EXTENSION</code> </p> </li>
+    /// <li> <p> <code>MEMORY_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>MODULE_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>PROCESS_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>REGISTRY_KEY_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>REGISTRY_VALUE_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>RESOURCE_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>SCHEDULED_JOB_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>SECURITY_FINDING</code> </p> </li>
+    /// <li> <p> <code>ACCOUNT_CHANGE</code> </p> </li>
+    /// <li> <p> <code>AUTHENTICATION</code> </p> </li>
+    /// <li> <p> <code>AUTHORIZATION</code> </p> </li>
+    /// <li> <p> <code>ENTITY_MANAGEMENT_AUDIT</code> </p> </li>
+    /// <li> <p> <code>DHCP_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>NETWORK_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>DNS_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>FTP_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>HTTP_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>RDP_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>SMB_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>SSH_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>CONFIG_STATE</code> </p> </li>
+    /// <li> <p> <code>INVENTORY_INFO</code> </p> </li>
+    /// <li> <p> <code>EMAIL_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>API_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>CLOUD_API</code> </p> </li>
     /// </ul>
     pub fn set_event_classes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_event_classes(input);
@@ -272,64 +214,35 @@ impl CreateCustomLogSourceFluentBuilder {
     }
     /// <p>The Open Cybersecurity Schema Framework (OCSF) event classes which describes the type of data that the custom source will send to Security Lake. The supported event classes are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ACCESS_ACTIVITY</code></p></li>
-    /// <li>
-    /// <p><code>FILE_ACTIVITY</code></p></li>
-    /// <li>
-    /// <p><code>KERNEL_ACTIVITY</code></p></li>
-    /// <li>
-    /// <p><code>KERNEL_EXTENSION</code></p></li>
-    /// <li>
-    /// <p><code>MEMORY_ACTIVITY</code></p></li>
-    /// <li>
-    /// <p><code>MODULE_ACTIVITY</code></p></li>
-    /// <li>
-    /// <p><code>PROCESS_ACTIVITY</code></p></li>
-    /// <li>
-    /// <p><code>REGISTRY_KEY_ACTIVITY</code></p></li>
-    /// <li>
-    /// <p><code>REGISTRY_VALUE_ACTIVITY</code></p></li>
-    /// <li>
-    /// <p><code>RESOURCE_ACTIVITY</code></p></li>
-    /// <li>
-    /// <p><code>SCHEDULED_JOB_ACTIVITY</code></p></li>
-    /// <li>
-    /// <p><code>SECURITY_FINDING</code></p></li>
-    /// <li>
-    /// <p><code>ACCOUNT_CHANGE</code></p></li>
-    /// <li>
-    /// <p><code>AUTHENTICATION</code></p></li>
-    /// <li>
-    /// <p><code>AUTHORIZATION</code></p></li>
-    /// <li>
-    /// <p><code>ENTITY_MANAGEMENT_AUDIT</code></p></li>
-    /// <li>
-    /// <p><code>DHCP_ACTIVITY</code></p></li>
-    /// <li>
-    /// <p><code>NETWORK_ACTIVITY</code></p></li>
-    /// <li>
-    /// <p><code>DNS_ACTIVITY</code></p></li>
-    /// <li>
-    /// <p><code>FTP_ACTIVITY</code></p></li>
-    /// <li>
-    /// <p><code>HTTP_ACTIVITY</code></p></li>
-    /// <li>
-    /// <p><code>RDP_ACTIVITY</code></p></li>
-    /// <li>
-    /// <p><code>SMB_ACTIVITY</code></p></li>
-    /// <li>
-    /// <p><code>SSH_ACTIVITY</code></p></li>
-    /// <li>
-    /// <p><code>CONFIG_STATE</code></p></li>
-    /// <li>
-    /// <p><code>INVENTORY_INFO</code></p></li>
-    /// <li>
-    /// <p><code>EMAIL_ACTIVITY</code></p></li>
-    /// <li>
-    /// <p><code>API_ACTIVITY</code></p></li>
-    /// <li>
-    /// <p><code>CLOUD_API</code></p></li>
+    /// <li> <p> <code>ACCESS_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>FILE_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>KERNEL_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>KERNEL_EXTENSION</code> </p> </li>
+    /// <li> <p> <code>MEMORY_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>MODULE_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>PROCESS_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>REGISTRY_KEY_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>REGISTRY_VALUE_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>RESOURCE_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>SCHEDULED_JOB_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>SECURITY_FINDING</code> </p> </li>
+    /// <li> <p> <code>ACCOUNT_CHANGE</code> </p> </li>
+    /// <li> <p> <code>AUTHENTICATION</code> </p> </li>
+    /// <li> <p> <code>AUTHORIZATION</code> </p> </li>
+    /// <li> <p> <code>ENTITY_MANAGEMENT_AUDIT</code> </p> </li>
+    /// <li> <p> <code>DHCP_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>NETWORK_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>DNS_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>FTP_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>HTTP_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>RDP_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>SMB_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>SSH_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>CONFIG_STATE</code> </p> </li>
+    /// <li> <p> <code>INVENTORY_INFO</code> </p> </li>
+    /// <li> <p> <code>EMAIL_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>API_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>CLOUD_API</code> </p> </li>
     /// </ul>
     pub fn get_event_classes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_event_classes()

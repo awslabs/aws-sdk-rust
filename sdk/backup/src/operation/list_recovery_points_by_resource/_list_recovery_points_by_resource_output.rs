@@ -5,7 +5,7 @@
 pub struct ListRecoveryPointsByResourceOutput {
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>An array of objects that contain detailed information about recovery points of the specified resource type.</p><note>
+    /// <p>An array of objects that contain detailed information about recovery points of the specified resource type.</p> <note>
     /// <p>Only Amazon EFS and Amazon EC2 recovery points return BackupVaultName.</p>
     /// </note>
     pub recovery_points: ::std::option::Option<::std::vec::Vec<crate::types::RecoveryPointByResource>>,
@@ -16,7 +16,7 @@ impl ListRecoveryPointsByResourceOutput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>An array of objects that contain detailed information about recovery points of the specified resource type.</p><note>
+    /// <p>An array of objects that contain detailed information about recovery points of the specified resource type.</p> <note>
     /// <p>Only Amazon EFS and Amazon EC2 recovery points return BackupVaultName.</p>
     /// </note>
     ///
@@ -64,7 +64,7 @@ impl ListRecoveryPointsByResourceOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_recovery_points`](Self::set_recovery_points).
     ///
-    /// <p>An array of objects that contain detailed information about recovery points of the specified resource type.</p><note>
+    /// <p>An array of objects that contain detailed information about recovery points of the specified resource type.</p> <note>
     /// <p>Only Amazon EFS and Amazon EC2 recovery points return BackupVaultName.</p>
     /// </note>
     pub fn recovery_points(mut self, input: crate::types::RecoveryPointByResource) -> Self {
@@ -73,14 +73,14 @@ impl ListRecoveryPointsByResourceOutputBuilder {
         self.recovery_points = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of objects that contain detailed information about recovery points of the specified resource type.</p><note>
+    /// <p>An array of objects that contain detailed information about recovery points of the specified resource type.</p> <note>
     /// <p>Only Amazon EFS and Amazon EC2 recovery points return BackupVaultName.</p>
     /// </note>
     pub fn set_recovery_points(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecoveryPointByResource>>) -> Self {
         self.recovery_points = input;
         self
     }
-    /// <p>An array of objects that contain detailed information about recovery points of the specified resource type.</p><note>
+    /// <p>An array of objects that contain detailed information about recovery points of the specified resource type.</p> <note>
     /// <p>Only Amazon EFS and Amazon EC2 recovery points return BackupVaultName.</p>
     /// </note>
     pub fn get_recovery_points(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecoveryPointByResource>> {

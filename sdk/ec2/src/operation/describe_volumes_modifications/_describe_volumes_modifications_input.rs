@@ -9,28 +9,17 @@ pub struct DescribeVolumesModificationsInput {
     pub volume_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>modification-state</code> - The current modification state (modifying | optimizing | completed | failed).</p></li>
-    /// <li>
-    /// <p><code>original-iops</code> - The original IOPS rate of the volume.</p></li>
-    /// <li>
-    /// <p><code>original-size</code> - The original size of the volume, in GiB.</p></li>
-    /// <li>
-    /// <p><code>original-volume-type</code> - The original volume type of the volume (standard | io1 | io2 | gp2 | sc1 | st1).</p></li>
-    /// <li>
-    /// <p><code>originalMultiAttachEnabled</code> - Indicates whether Multi-Attach support was enabled (true | false).</p></li>
-    /// <li>
-    /// <p><code>start-time</code> - The modification start time.</p></li>
-    /// <li>
-    /// <p><code>target-iops</code> - The target IOPS rate of the volume.</p></li>
-    /// <li>
-    /// <p><code>target-size</code> - The target size of the volume, in GiB.</p></li>
-    /// <li>
-    /// <p><code>target-volume-type</code> - The target volume type of the volume (standard | io1 | io2 | gp2 | sc1 | st1).</p></li>
-    /// <li>
-    /// <p><code>targetMultiAttachEnabled</code> - Indicates whether Multi-Attach support is to be enabled (true | false).</p></li>
-    /// <li>
-    /// <p><code>volume-id</code> - The ID of the volume.</p></li>
+    /// <li> <p> <code>modification-state</code> - The current modification state (modifying | optimizing | completed | failed).</p> </li>
+    /// <li> <p> <code>original-iops</code> - The original IOPS rate of the volume.</p> </li>
+    /// <li> <p> <code>original-size</code> - The original size of the volume, in GiB.</p> </li>
+    /// <li> <p> <code>original-volume-type</code> - The original volume type of the volume (standard | io1 | io2 | gp2 | sc1 | st1).</p> </li>
+    /// <li> <p> <code>originalMultiAttachEnabled</code> - Indicates whether Multi-Attach support was enabled (true | false).</p> </li>
+    /// <li> <p> <code>start-time</code> - The modification start time.</p> </li>
+    /// <li> <p> <code>target-iops</code> - The target IOPS rate of the volume.</p> </li>
+    /// <li> <p> <code>target-size</code> - The target size of the volume, in GiB.</p> </li>
+    /// <li> <p> <code>target-volume-type</code> - The target volume type of the volume (standard | io1 | io2 | gp2 | sc1 | st1).</p> </li>
+    /// <li> <p> <code>targetMultiAttachEnabled</code> - Indicates whether Multi-Attach support is to be enabled (true | false).</p> </li>
+    /// <li> <p> <code>volume-id</code> - The ID of the volume.</p> </li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The token returned by a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
@@ -51,28 +40,17 @@ impl DescribeVolumesModificationsInput {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>modification-state</code> - The current modification state (modifying | optimizing | completed | failed).</p></li>
-    /// <li>
-    /// <p><code>original-iops</code> - The original IOPS rate of the volume.</p></li>
-    /// <li>
-    /// <p><code>original-size</code> - The original size of the volume, in GiB.</p></li>
-    /// <li>
-    /// <p><code>original-volume-type</code> - The original volume type of the volume (standard | io1 | io2 | gp2 | sc1 | st1).</p></li>
-    /// <li>
-    /// <p><code>originalMultiAttachEnabled</code> - Indicates whether Multi-Attach support was enabled (true | false).</p></li>
-    /// <li>
-    /// <p><code>start-time</code> - The modification start time.</p></li>
-    /// <li>
-    /// <p><code>target-iops</code> - The target IOPS rate of the volume.</p></li>
-    /// <li>
-    /// <p><code>target-size</code> - The target size of the volume, in GiB.</p></li>
-    /// <li>
-    /// <p><code>target-volume-type</code> - The target volume type of the volume (standard | io1 | io2 | gp2 | sc1 | st1).</p></li>
-    /// <li>
-    /// <p><code>targetMultiAttachEnabled</code> - Indicates whether Multi-Attach support is to be enabled (true | false).</p></li>
-    /// <li>
-    /// <p><code>volume-id</code> - The ID of the volume.</p></li>
+    /// <li> <p> <code>modification-state</code> - The current modification state (modifying | optimizing | completed | failed).</p> </li>
+    /// <li> <p> <code>original-iops</code> - The original IOPS rate of the volume.</p> </li>
+    /// <li> <p> <code>original-size</code> - The original size of the volume, in GiB.</p> </li>
+    /// <li> <p> <code>original-volume-type</code> - The original volume type of the volume (standard | io1 | io2 | gp2 | sc1 | st1).</p> </li>
+    /// <li> <p> <code>originalMultiAttachEnabled</code> - Indicates whether Multi-Attach support was enabled (true | false).</p> </li>
+    /// <li> <p> <code>start-time</code> - The modification start time.</p> </li>
+    /// <li> <p> <code>target-iops</code> - The target IOPS rate of the volume.</p> </li>
+    /// <li> <p> <code>target-size</code> - The target size of the volume, in GiB.</p> </li>
+    /// <li> <p> <code>target-volume-type</code> - The target volume type of the volume (standard | io1 | io2 | gp2 | sc1 | st1).</p> </li>
+    /// <li> <p> <code>targetMultiAttachEnabled</code> - Indicates whether Multi-Attach support is to be enabled (true | false).</p> </li>
+    /// <li> <p> <code>volume-id</code> - The ID of the volume.</p> </li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
@@ -146,28 +124,17 @@ impl DescribeVolumesModificationsInputBuilder {
     ///
     /// <p>The filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>modification-state</code> - The current modification state (modifying | optimizing | completed | failed).</p></li>
-    /// <li>
-    /// <p><code>original-iops</code> - The original IOPS rate of the volume.</p></li>
-    /// <li>
-    /// <p><code>original-size</code> - The original size of the volume, in GiB.</p></li>
-    /// <li>
-    /// <p><code>original-volume-type</code> - The original volume type of the volume (standard | io1 | io2 | gp2 | sc1 | st1).</p></li>
-    /// <li>
-    /// <p><code>originalMultiAttachEnabled</code> - Indicates whether Multi-Attach support was enabled (true | false).</p></li>
-    /// <li>
-    /// <p><code>start-time</code> - The modification start time.</p></li>
-    /// <li>
-    /// <p><code>target-iops</code> - The target IOPS rate of the volume.</p></li>
-    /// <li>
-    /// <p><code>target-size</code> - The target size of the volume, in GiB.</p></li>
-    /// <li>
-    /// <p><code>target-volume-type</code> - The target volume type of the volume (standard | io1 | io2 | gp2 | sc1 | st1).</p></li>
-    /// <li>
-    /// <p><code>targetMultiAttachEnabled</code> - Indicates whether Multi-Attach support is to be enabled (true | false).</p></li>
-    /// <li>
-    /// <p><code>volume-id</code> - The ID of the volume.</p></li>
+    /// <li> <p> <code>modification-state</code> - The current modification state (modifying | optimizing | completed | failed).</p> </li>
+    /// <li> <p> <code>original-iops</code> - The original IOPS rate of the volume.</p> </li>
+    /// <li> <p> <code>original-size</code> - The original size of the volume, in GiB.</p> </li>
+    /// <li> <p> <code>original-volume-type</code> - The original volume type of the volume (standard | io1 | io2 | gp2 | sc1 | st1).</p> </li>
+    /// <li> <p> <code>originalMultiAttachEnabled</code> - Indicates whether Multi-Attach support was enabled (true | false).</p> </li>
+    /// <li> <p> <code>start-time</code> - The modification start time.</p> </li>
+    /// <li> <p> <code>target-iops</code> - The target IOPS rate of the volume.</p> </li>
+    /// <li> <p> <code>target-size</code> - The target size of the volume, in GiB.</p> </li>
+    /// <li> <p> <code>target-volume-type</code> - The target volume type of the volume (standard | io1 | io2 | gp2 | sc1 | st1).</p> </li>
+    /// <li> <p> <code>targetMultiAttachEnabled</code> - Indicates whether Multi-Attach support is to be enabled (true | false).</p> </li>
+    /// <li> <p> <code>volume-id</code> - The ID of the volume.</p> </li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
@@ -177,28 +144,17 @@ impl DescribeVolumesModificationsInputBuilder {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>modification-state</code> - The current modification state (modifying | optimizing | completed | failed).</p></li>
-    /// <li>
-    /// <p><code>original-iops</code> - The original IOPS rate of the volume.</p></li>
-    /// <li>
-    /// <p><code>original-size</code> - The original size of the volume, in GiB.</p></li>
-    /// <li>
-    /// <p><code>original-volume-type</code> - The original volume type of the volume (standard | io1 | io2 | gp2 | sc1 | st1).</p></li>
-    /// <li>
-    /// <p><code>originalMultiAttachEnabled</code> - Indicates whether Multi-Attach support was enabled (true | false).</p></li>
-    /// <li>
-    /// <p><code>start-time</code> - The modification start time.</p></li>
-    /// <li>
-    /// <p><code>target-iops</code> - The target IOPS rate of the volume.</p></li>
-    /// <li>
-    /// <p><code>target-size</code> - The target size of the volume, in GiB.</p></li>
-    /// <li>
-    /// <p><code>target-volume-type</code> - The target volume type of the volume (standard | io1 | io2 | gp2 | sc1 | st1).</p></li>
-    /// <li>
-    /// <p><code>targetMultiAttachEnabled</code> - Indicates whether Multi-Attach support is to be enabled (true | false).</p></li>
-    /// <li>
-    /// <p><code>volume-id</code> - The ID of the volume.</p></li>
+    /// <li> <p> <code>modification-state</code> - The current modification state (modifying | optimizing | completed | failed).</p> </li>
+    /// <li> <p> <code>original-iops</code> - The original IOPS rate of the volume.</p> </li>
+    /// <li> <p> <code>original-size</code> - The original size of the volume, in GiB.</p> </li>
+    /// <li> <p> <code>original-volume-type</code> - The original volume type of the volume (standard | io1 | io2 | gp2 | sc1 | st1).</p> </li>
+    /// <li> <p> <code>originalMultiAttachEnabled</code> - Indicates whether Multi-Attach support was enabled (true | false).</p> </li>
+    /// <li> <p> <code>start-time</code> - The modification start time.</p> </li>
+    /// <li> <p> <code>target-iops</code> - The target IOPS rate of the volume.</p> </li>
+    /// <li> <p> <code>target-size</code> - The target size of the volume, in GiB.</p> </li>
+    /// <li> <p> <code>target-volume-type</code> - The target volume type of the volume (standard | io1 | io2 | gp2 | sc1 | st1).</p> </li>
+    /// <li> <p> <code>targetMultiAttachEnabled</code> - Indicates whether Multi-Attach support is to be enabled (true | false).</p> </li>
+    /// <li> <p> <code>volume-id</code> - The ID of the volume.</p> </li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
@@ -206,28 +162,17 @@ impl DescribeVolumesModificationsInputBuilder {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>modification-state</code> - The current modification state (modifying | optimizing | completed | failed).</p></li>
-    /// <li>
-    /// <p><code>original-iops</code> - The original IOPS rate of the volume.</p></li>
-    /// <li>
-    /// <p><code>original-size</code> - The original size of the volume, in GiB.</p></li>
-    /// <li>
-    /// <p><code>original-volume-type</code> - The original volume type of the volume (standard | io1 | io2 | gp2 | sc1 | st1).</p></li>
-    /// <li>
-    /// <p><code>originalMultiAttachEnabled</code> - Indicates whether Multi-Attach support was enabled (true | false).</p></li>
-    /// <li>
-    /// <p><code>start-time</code> - The modification start time.</p></li>
-    /// <li>
-    /// <p><code>target-iops</code> - The target IOPS rate of the volume.</p></li>
-    /// <li>
-    /// <p><code>target-size</code> - The target size of the volume, in GiB.</p></li>
-    /// <li>
-    /// <p><code>target-volume-type</code> - The target volume type of the volume (standard | io1 | io2 | gp2 | sc1 | st1).</p></li>
-    /// <li>
-    /// <p><code>targetMultiAttachEnabled</code> - Indicates whether Multi-Attach support is to be enabled (true | false).</p></li>
-    /// <li>
-    /// <p><code>volume-id</code> - The ID of the volume.</p></li>
+    /// <li> <p> <code>modification-state</code> - The current modification state (modifying | optimizing | completed | failed).</p> </li>
+    /// <li> <p> <code>original-iops</code> - The original IOPS rate of the volume.</p> </li>
+    /// <li> <p> <code>original-size</code> - The original size of the volume, in GiB.</p> </li>
+    /// <li> <p> <code>original-volume-type</code> - The original volume type of the volume (standard | io1 | io2 | gp2 | sc1 | st1).</p> </li>
+    /// <li> <p> <code>originalMultiAttachEnabled</code> - Indicates whether Multi-Attach support was enabled (true | false).</p> </li>
+    /// <li> <p> <code>start-time</code> - The modification start time.</p> </li>
+    /// <li> <p> <code>target-iops</code> - The target IOPS rate of the volume.</p> </li>
+    /// <li> <p> <code>target-size</code> - The target size of the volume, in GiB.</p> </li>
+    /// <li> <p> <code>target-volume-type</code> - The target volume type of the volume (standard | io1 | io2 | gp2 | sc1 | st1).</p> </li>
+    /// <li> <p> <code>targetMultiAttachEnabled</code> - Indicates whether Multi-Attach support is to be enabled (true | false).</p> </li>
+    /// <li> <p> <code>volume-id</code> - The ID of the volume.</p> </li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters

@@ -7,12 +7,9 @@ pub struct ListCopyJobSummariesOutput {
     pub copy_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::CopyJobSummary>>,
     /// <p>This is the period that sets the boundaries for returned results.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ONE_DAY</code> for daily job count for the prior 14 days.</p></li>
-    /// <li>
-    /// <p><code>SEVEN_DAYS</code> for the aggregated job count for the prior 7 days.</p></li>
-    /// <li>
-    /// <p><code>FOURTEEN_DAYS</code> for aggregated job count for prior 14 days.</p></li>
+    /// <li> <p> <code>ONE_DAY</code> for daily job count for the prior 14 days.</p> </li>
+    /// <li> <p> <code>SEVEN_DAYS</code> for the aggregated job count for the prior 7 days.</p> </li>
+    /// <li> <p> <code>FOURTEEN_DAYS</code> for aggregated job count for prior 14 days.</p> </li>
     /// </ul>
     pub aggregation_period: ::std::option::Option<::std::string::String>,
     /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>MaxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
@@ -28,12 +25,9 @@ impl ListCopyJobSummariesOutput {
     }
     /// <p>This is the period that sets the boundaries for returned results.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ONE_DAY</code> for daily job count for the prior 14 days.</p></li>
-    /// <li>
-    /// <p><code>SEVEN_DAYS</code> for the aggregated job count for the prior 7 days.</p></li>
-    /// <li>
-    /// <p><code>FOURTEEN_DAYS</code> for aggregated job count for prior 14 days.</p></li>
+    /// <li> <p> <code>ONE_DAY</code> for daily job count for the prior 14 days.</p> </li>
+    /// <li> <p> <code>SEVEN_DAYS</code> for the aggregated job count for the prior 7 days.</p> </li>
+    /// <li> <p> <code>FOURTEEN_DAYS</code> for aggregated job count for prior 14 days.</p> </li>
     /// </ul>
     pub fn aggregation_period(&self) -> ::std::option::Option<&str> {
         self.aggregation_period.as_deref()
@@ -87,12 +81,9 @@ impl ListCopyJobSummariesOutputBuilder {
     }
     /// <p>This is the period that sets the boundaries for returned results.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ONE_DAY</code> for daily job count for the prior 14 days.</p></li>
-    /// <li>
-    /// <p><code>SEVEN_DAYS</code> for the aggregated job count for the prior 7 days.</p></li>
-    /// <li>
-    /// <p><code>FOURTEEN_DAYS</code> for aggregated job count for prior 14 days.</p></li>
+    /// <li> <p> <code>ONE_DAY</code> for daily job count for the prior 14 days.</p> </li>
+    /// <li> <p> <code>SEVEN_DAYS</code> for the aggregated job count for the prior 7 days.</p> </li>
+    /// <li> <p> <code>FOURTEEN_DAYS</code> for aggregated job count for prior 14 days.</p> </li>
     /// </ul>
     pub fn aggregation_period(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aggregation_period = ::std::option::Option::Some(input.into());
@@ -100,12 +91,9 @@ impl ListCopyJobSummariesOutputBuilder {
     }
     /// <p>This is the period that sets the boundaries for returned results.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ONE_DAY</code> for daily job count for the prior 14 days.</p></li>
-    /// <li>
-    /// <p><code>SEVEN_DAYS</code> for the aggregated job count for the prior 7 days.</p></li>
-    /// <li>
-    /// <p><code>FOURTEEN_DAYS</code> for aggregated job count for prior 14 days.</p></li>
+    /// <li> <p> <code>ONE_DAY</code> for daily job count for the prior 14 days.</p> </li>
+    /// <li> <p> <code>SEVEN_DAYS</code> for the aggregated job count for the prior 7 days.</p> </li>
+    /// <li> <p> <code>FOURTEEN_DAYS</code> for aggregated job count for prior 14 days.</p> </li>
     /// </ul>
     pub fn set_aggregation_period(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aggregation_period = input;
@@ -113,12 +101,9 @@ impl ListCopyJobSummariesOutputBuilder {
     }
     /// <p>This is the period that sets the boundaries for returned results.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ONE_DAY</code> for daily job count for the prior 14 days.</p></li>
-    /// <li>
-    /// <p><code>SEVEN_DAYS</code> for the aggregated job count for the prior 7 days.</p></li>
-    /// <li>
-    /// <p><code>FOURTEEN_DAYS</code> for aggregated job count for prior 14 days.</p></li>
+    /// <li> <p> <code>ONE_DAY</code> for daily job count for the prior 14 days.</p> </li>
+    /// <li> <p> <code>SEVEN_DAYS</code> for the aggregated job count for the prior 7 days.</p> </li>
+    /// <li> <p> <code>FOURTEEN_DAYS</code> for aggregated job count for prior 14 days.</p> </li>
     /// </ul>
     pub fn get_aggregation_period(&self) -> &::std::option::Option<::std::string::String> {
         &self.aggregation_period

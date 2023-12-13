@@ -9,7 +9,7 @@ pub struct Document {
     pub id: ::std::string::String,
     /// <p>The title of the document.</p>
     pub title: ::std::option::Option<::std::string::String>,
-    /// <p>The contents of the document.</p>
+    /// <p>The contents of the document. </p>
     /// <p>Documents passed to the <code>Blob</code> parameter must be base64 encoded. Your code might not need to encode the document file bytes if you're using an Amazon Web Services SDK to call Amazon Kendra APIs. If you are calling the Amazon Kendra endpoint directly using REST, you must base64 encode the contents before sending.</p>
     pub blob: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>Information required to find a specific file in an Amazon S3 bucket.</p>
@@ -38,7 +38,7 @@ impl Document {
     pub fn title(&self) -> ::std::option::Option<&str> {
         self.title.as_deref()
     }
-    /// <p>The contents of the document.</p>
+    /// <p>The contents of the document. </p>
     /// <p>Documents passed to the <code>Blob</code> parameter must be base64 encoded. Your code might not need to encode the document file bytes if you're using an Amazon Web Services SDK to call Amazon Kendra APIs. If you are calling the Amazon Kendra endpoint directly using REST, you must base64 encode the contents before sending.</p>
     pub fn blob(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.blob.as_ref()
@@ -130,19 +130,19 @@ impl DocumentBuilder {
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
         &self.title
     }
-    /// <p>The contents of the document.</p>
+    /// <p>The contents of the document. </p>
     /// <p>Documents passed to the <code>Blob</code> parameter must be base64 encoded. Your code might not need to encode the document file bytes if you're using an Amazon Web Services SDK to call Amazon Kendra APIs. If you are calling the Amazon Kendra endpoint directly using REST, you must base64 encode the contents before sending.</p>
     pub fn blob(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.blob = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The contents of the document.</p>
+    /// <p>The contents of the document. </p>
     /// <p>Documents passed to the <code>Blob</code> parameter must be base64 encoded. Your code might not need to encode the document file bytes if you're using an Amazon Web Services SDK to call Amazon Kendra APIs. If you are calling the Amazon Kendra endpoint directly using REST, you must base64 encode the contents before sending.</p>
     pub fn set_blob(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.blob = input;
         self
     }
-    /// <p>The contents of the document.</p>
+    /// <p>The contents of the document. </p>
     /// <p>Documents passed to the <code>Blob</code> parameter must be base64 encoded. Your code might not need to encode the document file bytes if you're using an Amazon Web Services SDK to call Amazon Kendra APIs. If you are calling the Amazon Kendra endpoint directly using REST, you must base64 encode the contents before sending.</p>
     pub fn get_blob(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         &self.blob

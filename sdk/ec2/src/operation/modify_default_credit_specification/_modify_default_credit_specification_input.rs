@@ -8,7 +8,7 @@ pub struct ModifyDefaultCreditSpecificationInput {
     /// <p>The instance family.</p>
     pub instance_family: ::std::option::Option<crate::types::UnlimitedSupportedInstanceFamily>,
     /// <p>The credit option for CPU usage of the instance family.</p>
-    /// <p>Valid Values: <code>standard</code> | <code>unlimited</code></p>
+    /// <p>Valid Values: <code>standard</code> | <code>unlimited</code> </p>
     pub cpu_credits: ::std::option::Option<::std::string::String>,
 }
 impl ModifyDefaultCreditSpecificationInput {
@@ -21,7 +21,7 @@ impl ModifyDefaultCreditSpecificationInput {
         self.instance_family.as_ref()
     }
     /// <p>The credit option for CPU usage of the instance family.</p>
-    /// <p>Valid Values: <code>standard</code> | <code>unlimited</code></p>
+    /// <p>Valid Values: <code>standard</code> | <code>unlimited</code> </p>
     pub fn cpu_credits(&self) -> ::std::option::Option<&str> {
         self.cpu_credits.as_deref()
     }
@@ -72,20 +72,20 @@ impl ModifyDefaultCreditSpecificationInputBuilder {
         &self.instance_family
     }
     /// <p>The credit option for CPU usage of the instance family.</p>
-    /// <p>Valid Values: <code>standard</code> | <code>unlimited</code></p>
+    /// <p>Valid Values: <code>standard</code> | <code>unlimited</code> </p>
     /// This field is required.
     pub fn cpu_credits(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cpu_credits = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The credit option for CPU usage of the instance family.</p>
-    /// <p>Valid Values: <code>standard</code> | <code>unlimited</code></p>
+    /// <p>Valid Values: <code>standard</code> | <code>unlimited</code> </p>
     pub fn set_cpu_credits(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cpu_credits = input;
         self
     }
     /// <p>The credit option for CPU usage of the instance family.</p>
-    /// <p>Valid Values: <code>standard</code> | <code>unlimited</code></p>
+    /// <p>Valid Values: <code>standard</code> | <code>unlimited</code> </p>
     pub fn get_cpu_credits(&self) -> &::std::option::Option<::std::string::String> {
         &self.cpu_credits
     }

@@ -7,21 +7,15 @@ pub struct ListTimelineEventsInput {
     pub incident_record_arn: ::std::option::Option<::std::string::String>,
     /// <p>Filters the timeline events based on the provided conditional values. You can filter timeline events with the following keys:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>eventReference</code></p></li>
-    /// <li>
-    /// <p><code>eventTime</code></p></li>
-    /// <li>
-    /// <p><code>eventType</code></p></li>
+    /// <li> <p> <code>eventReference</code> </p> </li>
+    /// <li> <p> <code>eventTime</code> </p> </li>
+    /// <li> <p> <code>eventType</code> </p> </li>
     /// </ul>
     /// <p>Note the following when deciding how to use Filters:</p>
     /// <ul>
-    /// <li>
-    /// <p>If you don't specify a Filter, the response includes all timeline events.</p></li>
-    /// <li>
-    /// <p>If you specify more than one filter in a single request, the response returns timeline events that match all filters.</p></li>
-    /// <li>
-    /// <p>If you specify a filter with more than one value, the response returns timeline events that match any of the values provided.</p></li>
+    /// <li> <p>If you don't specify a Filter, the response includes all timeline events.</p> </li>
+    /// <li> <p>If you specify more than one filter in a single request, the response returns timeline events that match all filters.</p> </li>
+    /// <li> <p>If you specify a filter with more than one value, the response returns timeline events that match any of the values provided.</p> </li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>Sort timeline events by the specified key value pair.</p>
@@ -40,21 +34,15 @@ impl ListTimelineEventsInput {
     }
     /// <p>Filters the timeline events based on the provided conditional values. You can filter timeline events with the following keys:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>eventReference</code></p></li>
-    /// <li>
-    /// <p><code>eventTime</code></p></li>
-    /// <li>
-    /// <p><code>eventType</code></p></li>
+    /// <li> <p> <code>eventReference</code> </p> </li>
+    /// <li> <p> <code>eventTime</code> </p> </li>
+    /// <li> <p> <code>eventType</code> </p> </li>
     /// </ul>
     /// <p>Note the following when deciding how to use Filters:</p>
     /// <ul>
-    /// <li>
-    /// <p>If you don't specify a Filter, the response includes all timeline events.</p></li>
-    /// <li>
-    /// <p>If you specify more than one filter in a single request, the response returns timeline events that match all filters.</p></li>
-    /// <li>
-    /// <p>If you specify a filter with more than one value, the response returns timeline events that match any of the values provided.</p></li>
+    /// <li> <p>If you don't specify a Filter, the response includes all timeline events.</p> </li>
+    /// <li> <p>If you specify more than one filter in a single request, the response returns timeline events that match all filters.</p> </li>
+    /// <li> <p>If you specify a filter with more than one value, the response returns timeline events that match any of the values provided.</p> </li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
@@ -118,21 +106,15 @@ impl ListTimelineEventsInputBuilder {
     ///
     /// <p>Filters the timeline events based on the provided conditional values. You can filter timeline events with the following keys:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>eventReference</code></p></li>
-    /// <li>
-    /// <p><code>eventTime</code></p></li>
-    /// <li>
-    /// <p><code>eventType</code></p></li>
+    /// <li> <p> <code>eventReference</code> </p> </li>
+    /// <li> <p> <code>eventTime</code> </p> </li>
+    /// <li> <p> <code>eventType</code> </p> </li>
     /// </ul>
     /// <p>Note the following when deciding how to use Filters:</p>
     /// <ul>
-    /// <li>
-    /// <p>If you don't specify a Filter, the response includes all timeline events.</p></li>
-    /// <li>
-    /// <p>If you specify more than one filter in a single request, the response returns timeline events that match all filters.</p></li>
-    /// <li>
-    /// <p>If you specify a filter with more than one value, the response returns timeline events that match any of the values provided.</p></li>
+    /// <li> <p>If you don't specify a Filter, the response includes all timeline events.</p> </li>
+    /// <li> <p>If you specify more than one filter in a single request, the response returns timeline events that match all filters.</p> </li>
+    /// <li> <p>If you specify a filter with more than one value, the response returns timeline events that match any of the values provided.</p> </li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
@@ -142,21 +124,15 @@ impl ListTimelineEventsInputBuilder {
     }
     /// <p>Filters the timeline events based on the provided conditional values. You can filter timeline events with the following keys:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>eventReference</code></p></li>
-    /// <li>
-    /// <p><code>eventTime</code></p></li>
-    /// <li>
-    /// <p><code>eventType</code></p></li>
+    /// <li> <p> <code>eventReference</code> </p> </li>
+    /// <li> <p> <code>eventTime</code> </p> </li>
+    /// <li> <p> <code>eventType</code> </p> </li>
     /// </ul>
     /// <p>Note the following when deciding how to use Filters:</p>
     /// <ul>
-    /// <li>
-    /// <p>If you don't specify a Filter, the response includes all timeline events.</p></li>
-    /// <li>
-    /// <p>If you specify more than one filter in a single request, the response returns timeline events that match all filters.</p></li>
-    /// <li>
-    /// <p>If you specify a filter with more than one value, the response returns timeline events that match any of the values provided.</p></li>
+    /// <li> <p>If you don't specify a Filter, the response includes all timeline events.</p> </li>
+    /// <li> <p>If you specify more than one filter in a single request, the response returns timeline events that match all filters.</p> </li>
+    /// <li> <p>If you specify a filter with more than one value, the response returns timeline events that match any of the values provided.</p> </li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
@@ -164,21 +140,15 @@ impl ListTimelineEventsInputBuilder {
     }
     /// <p>Filters the timeline events based on the provided conditional values. You can filter timeline events with the following keys:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>eventReference</code></p></li>
-    /// <li>
-    /// <p><code>eventTime</code></p></li>
-    /// <li>
-    /// <p><code>eventType</code></p></li>
+    /// <li> <p> <code>eventReference</code> </p> </li>
+    /// <li> <p> <code>eventTime</code> </p> </li>
+    /// <li> <p> <code>eventType</code> </p> </li>
     /// </ul>
     /// <p>Note the following when deciding how to use Filters:</p>
     /// <ul>
-    /// <li>
-    /// <p>If you don't specify a Filter, the response includes all timeline events.</p></li>
-    /// <li>
-    /// <p>If you specify more than one filter in a single request, the response returns timeline events that match all filters.</p></li>
-    /// <li>
-    /// <p>If you specify a filter with more than one value, the response returns timeline events that match any of the values provided.</p></li>
+    /// <li> <p>If you don't specify a Filter, the response includes all timeline events.</p> </li>
+    /// <li> <p>If you specify more than one filter in a single request, the response returns timeline events that match all filters.</p> </li>
+    /// <li> <p>If you specify a filter with more than one value, the response returns timeline events that match any of the values provided.</p> </li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters

@@ -6,7 +6,7 @@
 pub struct TextArrayOptions {
     /// A value to use for the field if the field isn't specified for a document.
     pub default_value: ::std::option::Option<::std::string::String>,
-    /// <p>A list of source fields to map to the field.</p>
+    /// <p>A list of source fields to map to the field. </p>
     pub source_fields: ::std::option::Option<::std::string::String>,
     /// <p>Whether the contents of the field can be returned in the search results.</p>
     pub return_enabled: ::std::option::Option<bool>,
@@ -20,7 +20,7 @@ impl TextArrayOptions {
     pub fn default_value(&self) -> ::std::option::Option<&str> {
         self.default_value.as_deref()
     }
-    /// <p>A list of source fields to map to the field.</p>
+    /// <p>A list of source fields to map to the field. </p>
     pub fn source_fields(&self) -> ::std::option::Option<&str> {
         self.source_fields.as_deref()
     }
@@ -69,17 +69,17 @@ impl TextArrayOptionsBuilder {
     pub fn get_default_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.default_value
     }
-    /// <p>A list of source fields to map to the field.</p>
+    /// <p>A list of source fields to map to the field. </p>
     pub fn source_fields(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_fields = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A list of source fields to map to the field.</p>
+    /// <p>A list of source fields to map to the field. </p>
     pub fn set_source_fields(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_fields = input;
         self
     }
-    /// <p>A list of source fields to map to the field.</p>
+    /// <p>A list of source fields to map to the field. </p>
     pub fn get_source_fields(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_fields
     }

@@ -6,7 +6,7 @@ pub struct CreateAccessPolicyOutput {
     /// <p>The ID of the access policy.</p>
     pub access_policy_id: ::std::string::String,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p>
-    /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code></p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code> </p>
     pub access_policy_arn: ::std::string::String,
     _request_id: Option<String>,
 }
@@ -17,7 +17,7 @@ impl CreateAccessPolicyOutput {
         self.access_policy_id.deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p>
-    /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code></p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code> </p>
     pub fn access_policy_arn(&self) -> &str {
         use std::ops::Deref;
         self.access_policy_arn.deref()
@@ -60,20 +60,20 @@ impl CreateAccessPolicyOutputBuilder {
         &self.access_policy_id
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p>
-    /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code></p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code> </p>
     /// This field is required.
     pub fn access_policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_policy_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p>
-    /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code></p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code> </p>
     pub fn set_access_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_policy_arn = input;
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p>
-    /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code></p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code> </p>
     pub fn get_access_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.access_policy_arn
     }

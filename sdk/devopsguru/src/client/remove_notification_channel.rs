@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RemoveNotificationChannel`](crate::operation::remove_notification_channel::builders::RemoveNotificationChannelFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::remove_notification_channel::builders::RemoveNotificationChannelFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::remove_notification_channel::builders::RemoveNotificationChannelFluentBuilder::set_id):<br>required: **true**<br><p>The ID of the notification channel to be removed.</p><br>
+    ///   - [`id(impl Into<String>)`](crate::operation::remove_notification_channel::builders::RemoveNotificationChannelFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::remove_notification_channel::builders::RemoveNotificationChannelFluentBuilder::set_id):<br>required: **true**<br><p> The ID of the notification channel to be removed. </p><br>
     /// - On success, responds with [`RemoveNotificationChannelOutput`](crate::operation::remove_notification_channel::RemoveNotificationChannelOutput)
     /// - On failure, responds with [`SdkError<RemoveNotificationChannelError>`](crate::operation::remove_notification_channel::RemoveNotificationChannelError)
     pub fn remove_notification_channel(&self) -> crate::operation::remove_notification_channel::builders::RemoveNotificationChannelFluentBuilder {

@@ -8,15 +8,14 @@ pub struct QuipConfiguration {
     pub domain: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs that are required to connect to your Quip. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
-    /// <li>
-    /// <p>accessToken—The token created in Quip. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html">Using a Quip data source</a>.</p></li>
+    /// <li> <p>accessToken—The token created in Quip. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html">Using a Quip data source</a>.</p> </li>
     /// </ul>
     pub secret_arn: ::std::string::String,
-    /// <p><code>TRUE</code> to index file comments.</p>
+    /// <p> <code>TRUE</code> to index file comments.</p>
     pub crawl_file_comments: bool,
-    /// <p><code>TRUE</code> to index the contents of chat rooms.</p>
+    /// <p> <code>TRUE</code> to index the contents of chat rooms.</p>
     pub crawl_chat_rooms: bool,
-    /// <p><code>TRUE</code> to index attachments.</p>
+    /// <p> <code>TRUE</code> to index attachments.</p>
     pub crawl_attachments: bool,
     /// <p>The identifiers of the Quip folders you want to index. You can find the folder ID in your browser URL when you access your folder in Quip. For example, <i>https://quip-company.quipdomain.com/zlLuOVNSarTL/folder-name</i>. The folder ID in this example is "zlLuOVNSarTL".</p>
     pub folder_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -41,22 +40,21 @@ impl QuipConfiguration {
     }
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs that are required to connect to your Quip. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
-    /// <li>
-    /// <p>accessToken—The token created in Quip. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html">Using a Quip data source</a>.</p></li>
+    /// <li> <p>accessToken—The token created in Quip. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html">Using a Quip data source</a>.</p> </li>
     /// </ul>
     pub fn secret_arn(&self) -> &str {
         use std::ops::Deref;
         self.secret_arn.deref()
     }
-    /// <p><code>TRUE</code> to index file comments.</p>
+    /// <p> <code>TRUE</code> to index file comments.</p>
     pub fn crawl_file_comments(&self) -> bool {
         self.crawl_file_comments
     }
-    /// <p><code>TRUE</code> to index the contents of chat rooms.</p>
+    /// <p> <code>TRUE</code> to index the contents of chat rooms.</p>
     pub fn crawl_chat_rooms(&self) -> bool {
         self.crawl_chat_rooms
     }
-    /// <p><code>TRUE</code> to index attachments.</p>
+    /// <p> <code>TRUE</code> to index attachments.</p>
     pub fn crawl_attachments(&self) -> bool {
         self.crawl_attachments
     }
@@ -143,8 +141,7 @@ impl QuipConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs that are required to connect to your Quip. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
-    /// <li>
-    /// <p>accessToken—The token created in Quip. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html">Using a Quip data source</a>.</p></li>
+    /// <li> <p>accessToken—The token created in Quip. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html">Using a Quip data source</a>.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -153,8 +150,7 @@ impl QuipConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs that are required to connect to your Quip. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
-    /// <li>
-    /// <p>accessToken—The token created in Quip. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html">Using a Quip data source</a>.</p></li>
+    /// <li> <p>accessToken—The token created in Quip. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html">Using a Quip data source</a>.</p> </li>
     /// </ul>
     pub fn set_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_arn = input;
@@ -162,51 +158,50 @@ impl QuipConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs that are required to connect to your Quip. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
-    /// <li>
-    /// <p>accessToken—The token created in Quip. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html">Using a Quip data source</a>.</p></li>
+    /// <li> <p>accessToken—The token created in Quip. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html">Using a Quip data source</a>.</p> </li>
     /// </ul>
     pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.secret_arn
     }
-    /// <p><code>TRUE</code> to index file comments.</p>
+    /// <p> <code>TRUE</code> to index file comments.</p>
     pub fn crawl_file_comments(mut self, input: bool) -> Self {
         self.crawl_file_comments = ::std::option::Option::Some(input);
         self
     }
-    /// <p><code>TRUE</code> to index file comments.</p>
+    /// <p> <code>TRUE</code> to index file comments.</p>
     pub fn set_crawl_file_comments(mut self, input: ::std::option::Option<bool>) -> Self {
         self.crawl_file_comments = input;
         self
     }
-    /// <p><code>TRUE</code> to index file comments.</p>
+    /// <p> <code>TRUE</code> to index file comments.</p>
     pub fn get_crawl_file_comments(&self) -> &::std::option::Option<bool> {
         &self.crawl_file_comments
     }
-    /// <p><code>TRUE</code> to index the contents of chat rooms.</p>
+    /// <p> <code>TRUE</code> to index the contents of chat rooms.</p>
     pub fn crawl_chat_rooms(mut self, input: bool) -> Self {
         self.crawl_chat_rooms = ::std::option::Option::Some(input);
         self
     }
-    /// <p><code>TRUE</code> to index the contents of chat rooms.</p>
+    /// <p> <code>TRUE</code> to index the contents of chat rooms.</p>
     pub fn set_crawl_chat_rooms(mut self, input: ::std::option::Option<bool>) -> Self {
         self.crawl_chat_rooms = input;
         self
     }
-    /// <p><code>TRUE</code> to index the contents of chat rooms.</p>
+    /// <p> <code>TRUE</code> to index the contents of chat rooms.</p>
     pub fn get_crawl_chat_rooms(&self) -> &::std::option::Option<bool> {
         &self.crawl_chat_rooms
     }
-    /// <p><code>TRUE</code> to index attachments.</p>
+    /// <p> <code>TRUE</code> to index attachments.</p>
     pub fn crawl_attachments(mut self, input: bool) -> Self {
         self.crawl_attachments = ::std::option::Option::Some(input);
         self
     }
-    /// <p><code>TRUE</code> to index attachments.</p>
+    /// <p> <code>TRUE</code> to index attachments.</p>
     pub fn set_crawl_attachments(mut self, input: ::std::option::Option<bool>) -> Self {
         self.crawl_attachments = input;
         self
     }
-    /// <p><code>TRUE</code> to index attachments.</p>
+    /// <p> <code>TRUE</code> to index attachments.</p>
     pub fn get_crawl_attachments(&self) -> &::std::option::Option<bool> {
         &self.crawl_attachments
     }

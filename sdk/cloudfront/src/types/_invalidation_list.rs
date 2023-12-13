@@ -12,7 +12,7 @@ pub struct InvalidationList {
     pub max_items: i32,
     /// <p>A flag that indicates whether more invalidation batch requests remain to be listed. If your results were truncated, you can make a follow-up pagination request using the <code>Marker</code> request parameter to retrieve more invalidation batches in the list.</p>
     pub is_truncated: bool,
-    /// <p>The number of invalidation batches that were created by the current Amazon Web Services account.</p>
+    /// <p>The number of invalidation batches that were created by the current Amazon Web Services account. </p>
     pub quantity: i32,
     /// <p>A complex type that contains one <code>InvalidationSummary</code> element for each invalidation batch created by the current Amazon Web Services account.</p>
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::InvalidationSummary>>,
@@ -35,7 +35,7 @@ impl InvalidationList {
     pub fn is_truncated(&self) -> bool {
         self.is_truncated
     }
-    /// <p>The number of invalidation batches that were created by the current Amazon Web Services account.</p>
+    /// <p>The number of invalidation batches that were created by the current Amazon Web Services account. </p>
     pub fn quantity(&self) -> i32 {
         self.quantity
     }
@@ -124,18 +124,18 @@ impl InvalidationListBuilder {
     pub fn get_is_truncated(&self) -> &::std::option::Option<bool> {
         &self.is_truncated
     }
-    /// <p>The number of invalidation batches that were created by the current Amazon Web Services account.</p>
+    /// <p>The number of invalidation batches that were created by the current Amazon Web Services account. </p>
     /// This field is required.
     pub fn quantity(mut self, input: i32) -> Self {
         self.quantity = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of invalidation batches that were created by the current Amazon Web Services account.</p>
+    /// <p>The number of invalidation batches that were created by the current Amazon Web Services account. </p>
     pub fn set_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.quantity = input;
         self
     }
-    /// <p>The number of invalidation batches that were created by the current Amazon Web Services account.</p>
+    /// <p>The number of invalidation batches that were created by the current Amazon Web Services account. </p>
     pub fn get_quantity(&self) -> &::std::option::Option<i32> {
         &self.quantity
     }

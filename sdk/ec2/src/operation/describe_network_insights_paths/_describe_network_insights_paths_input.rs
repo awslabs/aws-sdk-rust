@@ -7,28 +7,17 @@ pub struct DescribeNetworkInsightsPathsInput {
     pub network_insights_path_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The filters. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>destination - The ID of the resource.</p></li>
-    /// <li>
-    /// <p>filter-at-source.source-address - The source IPv4 address at the source.</p></li>
-    /// <li>
-    /// <p>filter-at-source.source-port-range - The source port range at the source.</p></li>
-    /// <li>
-    /// <p>filter-at-source.destination-address - The destination IPv4 address at the source.</p></li>
-    /// <li>
-    /// <p>filter-at-source.destination-port-range - The destination port range at the source.</p></li>
-    /// <li>
-    /// <p>filter-at-destination.source-address - The source IPv4 address at the destination.</p></li>
-    /// <li>
-    /// <p>filter-at-destination.source-port-range - The source port range at the destination.</p></li>
-    /// <li>
-    /// <p>filter-at-destination.destination-address - The destination IPv4 address at the destination.</p></li>
-    /// <li>
-    /// <p>filter-at-destination.destination-port-range - The destination port range at the destination.</p></li>
-    /// <li>
-    /// <p>protocol - The protocol.</p></li>
-    /// <li>
-    /// <p>source - The ID of the resource.</p></li>
+    /// <li> <p>destination - The ID of the resource.</p> </li>
+    /// <li> <p>filter-at-source.source-address - The source IPv4 address at the source.</p> </li>
+    /// <li> <p>filter-at-source.source-port-range - The source port range at the source.</p> </li>
+    /// <li> <p>filter-at-source.destination-address - The destination IPv4 address at the source.</p> </li>
+    /// <li> <p>filter-at-source.destination-port-range - The destination port range at the source.</p> </li>
+    /// <li> <p>filter-at-destination.source-address - The source IPv4 address at the destination.</p> </li>
+    /// <li> <p>filter-at-destination.source-port-range - The source port range at the destination.</p> </li>
+    /// <li> <p>filter-at-destination.destination-address - The destination IPv4 address at the destination.</p> </li>
+    /// <li> <p>filter-at-destination.destination-port-range - The destination port range at the destination.</p> </li>
+    /// <li> <p>protocol - The protocol.</p> </li>
+    /// <li> <p>source - The ID of the resource.</p> </li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
@@ -47,28 +36,17 @@ impl DescribeNetworkInsightsPathsInput {
     }
     /// <p>The filters. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>destination - The ID of the resource.</p></li>
-    /// <li>
-    /// <p>filter-at-source.source-address - The source IPv4 address at the source.</p></li>
-    /// <li>
-    /// <p>filter-at-source.source-port-range - The source port range at the source.</p></li>
-    /// <li>
-    /// <p>filter-at-source.destination-address - The destination IPv4 address at the source.</p></li>
-    /// <li>
-    /// <p>filter-at-source.destination-port-range - The destination port range at the source.</p></li>
-    /// <li>
-    /// <p>filter-at-destination.source-address - The source IPv4 address at the destination.</p></li>
-    /// <li>
-    /// <p>filter-at-destination.source-port-range - The source port range at the destination.</p></li>
-    /// <li>
-    /// <p>filter-at-destination.destination-address - The destination IPv4 address at the destination.</p></li>
-    /// <li>
-    /// <p>filter-at-destination.destination-port-range - The destination port range at the destination.</p></li>
-    /// <li>
-    /// <p>protocol - The protocol.</p></li>
-    /// <li>
-    /// <p>source - The ID of the resource.</p></li>
+    /// <li> <p>destination - The ID of the resource.</p> </li>
+    /// <li> <p>filter-at-source.source-address - The source IPv4 address at the source.</p> </li>
+    /// <li> <p>filter-at-source.source-port-range - The source port range at the source.</p> </li>
+    /// <li> <p>filter-at-source.destination-address - The destination IPv4 address at the source.</p> </li>
+    /// <li> <p>filter-at-source.destination-port-range - The destination port range at the source.</p> </li>
+    /// <li> <p>filter-at-destination.source-address - The source IPv4 address at the destination.</p> </li>
+    /// <li> <p>filter-at-destination.source-port-range - The source port range at the destination.</p> </li>
+    /// <li> <p>filter-at-destination.destination-address - The destination IPv4 address at the destination.</p> </li>
+    /// <li> <p>filter-at-destination.destination-port-range - The destination port range at the destination.</p> </li>
+    /// <li> <p>protocol - The protocol.</p> </li>
+    /// <li> <p>source - The ID of the resource.</p> </li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
@@ -132,28 +110,17 @@ impl DescribeNetworkInsightsPathsInputBuilder {
     ///
     /// <p>The filters. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>destination - The ID of the resource.</p></li>
-    /// <li>
-    /// <p>filter-at-source.source-address - The source IPv4 address at the source.</p></li>
-    /// <li>
-    /// <p>filter-at-source.source-port-range - The source port range at the source.</p></li>
-    /// <li>
-    /// <p>filter-at-source.destination-address - The destination IPv4 address at the source.</p></li>
-    /// <li>
-    /// <p>filter-at-source.destination-port-range - The destination port range at the source.</p></li>
-    /// <li>
-    /// <p>filter-at-destination.source-address - The source IPv4 address at the destination.</p></li>
-    /// <li>
-    /// <p>filter-at-destination.source-port-range - The source port range at the destination.</p></li>
-    /// <li>
-    /// <p>filter-at-destination.destination-address - The destination IPv4 address at the destination.</p></li>
-    /// <li>
-    /// <p>filter-at-destination.destination-port-range - The destination port range at the destination.</p></li>
-    /// <li>
-    /// <p>protocol - The protocol.</p></li>
-    /// <li>
-    /// <p>source - The ID of the resource.</p></li>
+    /// <li> <p>destination - The ID of the resource.</p> </li>
+    /// <li> <p>filter-at-source.source-address - The source IPv4 address at the source.</p> </li>
+    /// <li> <p>filter-at-source.source-port-range - The source port range at the source.</p> </li>
+    /// <li> <p>filter-at-source.destination-address - The destination IPv4 address at the source.</p> </li>
+    /// <li> <p>filter-at-source.destination-port-range - The destination port range at the source.</p> </li>
+    /// <li> <p>filter-at-destination.source-address - The source IPv4 address at the destination.</p> </li>
+    /// <li> <p>filter-at-destination.source-port-range - The source port range at the destination.</p> </li>
+    /// <li> <p>filter-at-destination.destination-address - The destination IPv4 address at the destination.</p> </li>
+    /// <li> <p>filter-at-destination.destination-port-range - The destination port range at the destination.</p> </li>
+    /// <li> <p>protocol - The protocol.</p> </li>
+    /// <li> <p>source - The ID of the resource.</p> </li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
@@ -163,28 +130,17 @@ impl DescribeNetworkInsightsPathsInputBuilder {
     }
     /// <p>The filters. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>destination - The ID of the resource.</p></li>
-    /// <li>
-    /// <p>filter-at-source.source-address - The source IPv4 address at the source.</p></li>
-    /// <li>
-    /// <p>filter-at-source.source-port-range - The source port range at the source.</p></li>
-    /// <li>
-    /// <p>filter-at-source.destination-address - The destination IPv4 address at the source.</p></li>
-    /// <li>
-    /// <p>filter-at-source.destination-port-range - The destination port range at the source.</p></li>
-    /// <li>
-    /// <p>filter-at-destination.source-address - The source IPv4 address at the destination.</p></li>
-    /// <li>
-    /// <p>filter-at-destination.source-port-range - The source port range at the destination.</p></li>
-    /// <li>
-    /// <p>filter-at-destination.destination-address - The destination IPv4 address at the destination.</p></li>
-    /// <li>
-    /// <p>filter-at-destination.destination-port-range - The destination port range at the destination.</p></li>
-    /// <li>
-    /// <p>protocol - The protocol.</p></li>
-    /// <li>
-    /// <p>source - The ID of the resource.</p></li>
+    /// <li> <p>destination - The ID of the resource.</p> </li>
+    /// <li> <p>filter-at-source.source-address - The source IPv4 address at the source.</p> </li>
+    /// <li> <p>filter-at-source.source-port-range - The source port range at the source.</p> </li>
+    /// <li> <p>filter-at-source.destination-address - The destination IPv4 address at the source.</p> </li>
+    /// <li> <p>filter-at-source.destination-port-range - The destination port range at the source.</p> </li>
+    /// <li> <p>filter-at-destination.source-address - The source IPv4 address at the destination.</p> </li>
+    /// <li> <p>filter-at-destination.source-port-range - The source port range at the destination.</p> </li>
+    /// <li> <p>filter-at-destination.destination-address - The destination IPv4 address at the destination.</p> </li>
+    /// <li> <p>filter-at-destination.destination-port-range - The destination port range at the destination.</p> </li>
+    /// <li> <p>protocol - The protocol.</p> </li>
+    /// <li> <p>source - The ID of the resource.</p> </li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
@@ -192,28 +148,17 @@ impl DescribeNetworkInsightsPathsInputBuilder {
     }
     /// <p>The filters. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>destination - The ID of the resource.</p></li>
-    /// <li>
-    /// <p>filter-at-source.source-address - The source IPv4 address at the source.</p></li>
-    /// <li>
-    /// <p>filter-at-source.source-port-range - The source port range at the source.</p></li>
-    /// <li>
-    /// <p>filter-at-source.destination-address - The destination IPv4 address at the source.</p></li>
-    /// <li>
-    /// <p>filter-at-source.destination-port-range - The destination port range at the source.</p></li>
-    /// <li>
-    /// <p>filter-at-destination.source-address - The source IPv4 address at the destination.</p></li>
-    /// <li>
-    /// <p>filter-at-destination.source-port-range - The source port range at the destination.</p></li>
-    /// <li>
-    /// <p>filter-at-destination.destination-address - The destination IPv4 address at the destination.</p></li>
-    /// <li>
-    /// <p>filter-at-destination.destination-port-range - The destination port range at the destination.</p></li>
-    /// <li>
-    /// <p>protocol - The protocol.</p></li>
-    /// <li>
-    /// <p>source - The ID of the resource.</p></li>
+    /// <li> <p>destination - The ID of the resource.</p> </li>
+    /// <li> <p>filter-at-source.source-address - The source IPv4 address at the source.</p> </li>
+    /// <li> <p>filter-at-source.source-port-range - The source port range at the source.</p> </li>
+    /// <li> <p>filter-at-source.destination-address - The destination IPv4 address at the source.</p> </li>
+    /// <li> <p>filter-at-source.destination-port-range - The destination port range at the source.</p> </li>
+    /// <li> <p>filter-at-destination.source-address - The source IPv4 address at the destination.</p> </li>
+    /// <li> <p>filter-at-destination.source-port-range - The source port range at the destination.</p> </li>
+    /// <li> <p>filter-at-destination.destination-address - The destination IPv4 address at the destination.</p> </li>
+    /// <li> <p>filter-at-destination.destination-port-range - The destination port range at the destination.</p> </li>
+    /// <li> <p>protocol - The protocol.</p> </li>
+    /// <li> <p>source - The ID of the resource.</p> </li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters

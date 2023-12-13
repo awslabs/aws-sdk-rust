@@ -6,7 +6,7 @@
 pub struct PendingAggregationRequest {
     /// <p>The 12-digit account ID of the account requesting to aggregate data.</p>
     pub requester_account_id: ::std::option::Option<::std::string::String>,
-    /// <p>The region requesting to aggregate data.</p>
+    /// <p>The region requesting to aggregate data. </p>
     pub requester_aws_region: ::std::option::Option<::std::string::String>,
 }
 impl PendingAggregationRequest {
@@ -14,7 +14,7 @@ impl PendingAggregationRequest {
     pub fn requester_account_id(&self) -> ::std::option::Option<&str> {
         self.requester_account_id.as_deref()
     }
-    /// <p>The region requesting to aggregate data.</p>
+    /// <p>The region requesting to aggregate data. </p>
     pub fn requester_aws_region(&self) -> ::std::option::Option<&str> {
         self.requester_aws_region.as_deref()
     }
@@ -48,17 +48,17 @@ impl PendingAggregationRequestBuilder {
     pub fn get_requester_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.requester_account_id
     }
-    /// <p>The region requesting to aggregate data.</p>
+    /// <p>The region requesting to aggregate data. </p>
     pub fn requester_aws_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.requester_aws_region = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The region requesting to aggregate data.</p>
+    /// <p>The region requesting to aggregate data. </p>
     pub fn set_requester_aws_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.requester_aws_region = input;
         self
     }
-    /// <p>The region requesting to aggregate data.</p>
+    /// <p>The region requesting to aggregate data. </p>
     pub fn get_requester_aws_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.requester_aws_region
     }

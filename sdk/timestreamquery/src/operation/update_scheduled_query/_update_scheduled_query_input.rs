@@ -5,7 +5,7 @@
 pub struct UpdateScheduledQueryInput {
     /// <p>ARN of the scheuled query.</p>
     pub scheduled_query_arn: ::std::option::Option<::std::string::String>,
-    /// <p>State of the scheduled query.</p>
+    /// <p>State of the scheduled query. </p>
     pub state: ::std::option::Option<crate::types::ScheduledQueryState>,
 }
 impl UpdateScheduledQueryInput {
@@ -13,7 +13,7 @@ impl UpdateScheduledQueryInput {
     pub fn scheduled_query_arn(&self) -> ::std::option::Option<&str> {
         self.scheduled_query_arn.as_deref()
     }
-    /// <p>State of the scheduled query.</p>
+    /// <p>State of the scheduled query. </p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::ScheduledQueryState> {
         self.state.as_ref()
     }
@@ -48,18 +48,18 @@ impl UpdateScheduledQueryInputBuilder {
     pub fn get_scheduled_query_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.scheduled_query_arn
     }
-    /// <p>State of the scheduled query.</p>
+    /// <p>State of the scheduled query. </p>
     /// This field is required.
     pub fn state(mut self, input: crate::types::ScheduledQueryState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
     }
-    /// <p>State of the scheduled query.</p>
+    /// <p>State of the scheduled query. </p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ScheduledQueryState>) -> Self {
         self.state = input;
         self
     }
-    /// <p>State of the scheduled query.</p>
+    /// <p>State of the scheduled query. </p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ScheduledQueryState> {
         &self.state
     }

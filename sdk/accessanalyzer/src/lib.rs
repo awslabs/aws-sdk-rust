@@ -12,7 +12,6 @@
 #![allow(clippy::result_large_err)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
-#![cfg_attr(docsrs, feature(doc_auto_cfg))]
 //! Identity and Access Management Access Analyzer helps you to set, verify, and refine your IAM policies by providing a suite of capabilities. Its features include findings for external and unused access, basic and custom policy checks for validating policies, and policy generation to generate fine-grained policies. To start using IAM Access Analyzer to identify external or unused access, you first need to create an analyzer.
 //!
 //! __External access analyzers__ help identify potential risks of accessing resources by enabling you to identify any resource policies that grant access to an external principal. It does this by using logic-based reasoning to analyze resource-based policies in your Amazon Web Services environment. An external principal can be another Amazon Web Services account, a root user, an IAM user or role, a federated user, an Amazon Web Services service, or an anonymous user. You can also use IAM Access Analyzer to preview public and cross-account access to your resources before deploying permissions changes.
@@ -34,8 +33,8 @@
 //!
 //! ```toml
 //! [dependencies]
-//! aws-config = { version = "1.1.0", features = ["behavior-version-latest"] }
-//! aws-sdk-accessanalyzer = "1.6.0"
+//! aws-config = { version = "1.0.3", features = ["behavior-version-latest"] }
+//! aws-sdk-accessanalyzer = "1.7.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -199,11 +198,11 @@ pub(crate) mod protocol_serde;
 
 mod serialization_settings;
 
-mod endpoint_lib;
-
 mod lens;
 
 mod serde_util;
+
+mod endpoint_lib;
 
 mod json_errors;
 

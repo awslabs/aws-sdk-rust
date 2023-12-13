@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct KafkaSettings {
-    /// <p>A comma-separated list of one or more broker locations in your Kafka cluster that host your Kafka instance. Specify each broker location in the form <code> <i>broker-hostname-or-ip</i>:<i>port</i> </code>. For example, <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>. For more information and examples of specifying a list of broker locations, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using Apache Kafka as a target for Database Migration Service</a> in the <i>Database Migration Service User Guide</i>.</p>
+    /// <p>A comma-separated list of one or more broker locations in your Kafka cluster that host your Kafka instance. Specify each broker location in the form <code> <i>broker-hostname-or-ip</i>:<i>port</i> </code>. For example, <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>. For more information and examples of specifying a list of broker locations, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using Apache Kafka as a target for Database Migration Service</a> in the <i>Database Migration Service User Guide</i>. </p>
     pub broker: ::std::option::Option<::std::string::String>,
     /// <p>The topic to which you migrate the data. If you don't specify a topic, DMS specifies <code>"kafka-default-topic"</code> as the migration topic.</p>
     pub topic: ::std::option::Option<::std::string::String>,
@@ -30,23 +30,23 @@ pub struct KafkaSettings {
     pub ssl_client_certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the client private key used to securely connect to a Kafka target endpoint.</p>
     pub ssl_client_key_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The password for the client private key used to securely connect to a Kafka target endpoint.</p>
+    /// <p> The password for the client private key used to securely connect to a Kafka target endpoint.</p>
     pub ssl_client_key_password: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) for the private certificate authority (CA) cert that DMS uses to securely connect to your Kafka target endpoint.</p>
+    /// <p> The Amazon Resource Name (ARN) for the private certificate authority (CA) cert that DMS uses to securely connect to your Kafka target endpoint.</p>
     pub ssl_ca_certificate_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The secure user name you created when you first set up your MSK cluster to validate a client identity and make an encrypted connection between server and client using SASL-SSL authentication.</p>
+    /// <p> The secure user name you created when you first set up your MSK cluster to validate a client identity and make an encrypted connection between server and client using SASL-SSL authentication.</p>
     pub sasl_username: ::std::option::Option<::std::string::String>,
     /// <p>The secure password you created when you first set up your MSK cluster to validate a client identity and make an encrypted connection between server and client using SASL-SSL authentication.</p>
     pub sasl_password: ::std::option::Option<::std::string::String>,
     /// <p>Set this optional parameter to <code>true</code> to avoid adding a '0x' prefix to raw data in hexadecimal format. For example, by default, DMS adds a '0x' prefix to the LOB column type in hexadecimal format moving from an Oracle source to a Kafka target. Use the <code>NoHexPrefix</code> endpoint setting to enable migration of RAW data type columns without adding the '0x' prefix.</p>
     pub no_hex_prefix: ::std::option::Option<bool>,
-    /// <p>For SASL/SSL authentication, DMS supports the <code>SCRAM-SHA-512</code> mechanism by default. DMS versions 3.5.0 and later also support the <code>PLAIN</code> mechanism. To use the <code>PLAIN</code> mechanism, set this parameter to <code>PLAIN.</code></p>
+    /// <p>For SASL/SSL authentication, DMS supports the <code>SCRAM-SHA-512</code> mechanism by default. DMS versions 3.5.0 and later also support the <code>PLAIN</code> mechanism. To use the <code>PLAIN</code> mechanism, set this parameter to <code>PLAIN.</code> </p>
     pub sasl_mechanism: ::std::option::Option<crate::types::KafkaSaslMechanism>,
-    /// <p>Sets hostname verification for the certificate. This setting is supported in DMS version 3.5.1 and later.</p>
+    /// <p>Sets hostname verification for the certificate. This setting is supported in DMS version 3.5.1 and later. </p>
     pub ssl_endpoint_identification_algorithm: ::std::option::Option<crate::types::KafkaSslEndpointIdentificationAlgorithm>,
 }
 impl KafkaSettings {
-    /// <p>A comma-separated list of one or more broker locations in your Kafka cluster that host your Kafka instance. Specify each broker location in the form <code> <i>broker-hostname-or-ip</i>:<i>port</i> </code>. For example, <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>. For more information and examples of specifying a list of broker locations, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using Apache Kafka as a target for Database Migration Service</a> in the <i>Database Migration Service User Guide</i>.</p>
+    /// <p>A comma-separated list of one or more broker locations in your Kafka cluster that host your Kafka instance. Specify each broker location in the form <code> <i>broker-hostname-or-ip</i>:<i>port</i> </code>. For example, <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>. For more information and examples of specifying a list of broker locations, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using Apache Kafka as a target for Database Migration Service</a> in the <i>Database Migration Service User Guide</i>. </p>
     pub fn broker(&self) -> ::std::option::Option<&str> {
         self.broker.as_deref()
     }
@@ -98,15 +98,15 @@ impl KafkaSettings {
     pub fn ssl_client_key_arn(&self) -> ::std::option::Option<&str> {
         self.ssl_client_key_arn.as_deref()
     }
-    /// <p>The password for the client private key used to securely connect to a Kafka target endpoint.</p>
+    /// <p> The password for the client private key used to securely connect to a Kafka target endpoint.</p>
     pub fn ssl_client_key_password(&self) -> ::std::option::Option<&str> {
         self.ssl_client_key_password.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) for the private certificate authority (CA) cert that DMS uses to securely connect to your Kafka target endpoint.</p>
+    /// <p> The Amazon Resource Name (ARN) for the private certificate authority (CA) cert that DMS uses to securely connect to your Kafka target endpoint.</p>
     pub fn ssl_ca_certificate_arn(&self) -> ::std::option::Option<&str> {
         self.ssl_ca_certificate_arn.as_deref()
     }
-    /// <p>The secure user name you created when you first set up your MSK cluster to validate a client identity and make an encrypted connection between server and client using SASL-SSL authentication.</p>
+    /// <p> The secure user name you created when you first set up your MSK cluster to validate a client identity and make an encrypted connection between server and client using SASL-SSL authentication.</p>
     pub fn sasl_username(&self) -> ::std::option::Option<&str> {
         self.sasl_username.as_deref()
     }
@@ -118,11 +118,11 @@ impl KafkaSettings {
     pub fn no_hex_prefix(&self) -> ::std::option::Option<bool> {
         self.no_hex_prefix
     }
-    /// <p>For SASL/SSL authentication, DMS supports the <code>SCRAM-SHA-512</code> mechanism by default. DMS versions 3.5.0 and later also support the <code>PLAIN</code> mechanism. To use the <code>PLAIN</code> mechanism, set this parameter to <code>PLAIN.</code></p>
+    /// <p>For SASL/SSL authentication, DMS supports the <code>SCRAM-SHA-512</code> mechanism by default. DMS versions 3.5.0 and later also support the <code>PLAIN</code> mechanism. To use the <code>PLAIN</code> mechanism, set this parameter to <code>PLAIN.</code> </p>
     pub fn sasl_mechanism(&self) -> ::std::option::Option<&crate::types::KafkaSaslMechanism> {
         self.sasl_mechanism.as_ref()
     }
-    /// <p>Sets hostname verification for the certificate. This setting is supported in DMS version 3.5.1 and later.</p>
+    /// <p>Sets hostname verification for the certificate. This setting is supported in DMS version 3.5.1 and later. </p>
     pub fn ssl_endpoint_identification_algorithm(&self) -> ::std::option::Option<&crate::types::KafkaSslEndpointIdentificationAlgorithm> {
         self.ssl_endpoint_identification_algorithm.as_ref()
     }
@@ -186,17 +186,17 @@ pub struct KafkaSettingsBuilder {
     pub(crate) ssl_endpoint_identification_algorithm: ::std::option::Option<crate::types::KafkaSslEndpointIdentificationAlgorithm>,
 }
 impl KafkaSettingsBuilder {
-    /// <p>A comma-separated list of one or more broker locations in your Kafka cluster that host your Kafka instance. Specify each broker location in the form <code> <i>broker-hostname-or-ip</i>:<i>port</i> </code>. For example, <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>. For more information and examples of specifying a list of broker locations, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using Apache Kafka as a target for Database Migration Service</a> in the <i>Database Migration Service User Guide</i>.</p>
+    /// <p>A comma-separated list of one or more broker locations in your Kafka cluster that host your Kafka instance. Specify each broker location in the form <code> <i>broker-hostname-or-ip</i>:<i>port</i> </code>. For example, <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>. For more information and examples of specifying a list of broker locations, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using Apache Kafka as a target for Database Migration Service</a> in the <i>Database Migration Service User Guide</i>. </p>
     pub fn broker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.broker = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A comma-separated list of one or more broker locations in your Kafka cluster that host your Kafka instance. Specify each broker location in the form <code> <i>broker-hostname-or-ip</i>:<i>port</i> </code>. For example, <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>. For more information and examples of specifying a list of broker locations, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using Apache Kafka as a target for Database Migration Service</a> in the <i>Database Migration Service User Guide</i>.</p>
+    /// <p>A comma-separated list of one or more broker locations in your Kafka cluster that host your Kafka instance. Specify each broker location in the form <code> <i>broker-hostname-or-ip</i>:<i>port</i> </code>. For example, <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>. For more information and examples of specifying a list of broker locations, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using Apache Kafka as a target for Database Migration Service</a> in the <i>Database Migration Service User Guide</i>. </p>
     pub fn set_broker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.broker = input;
         self
     }
-    /// <p>A comma-separated list of one or more broker locations in your Kafka cluster that host your Kafka instance. Specify each broker location in the form <code> <i>broker-hostname-or-ip</i>:<i>port</i> </code>. For example, <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>. For more information and examples of specifying a list of broker locations, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using Apache Kafka as a target for Database Migration Service</a> in the <i>Database Migration Service User Guide</i>.</p>
+    /// <p>A comma-separated list of one or more broker locations in your Kafka cluster that host your Kafka instance. Specify each broker location in the form <code> <i>broker-hostname-or-ip</i>:<i>port</i> </code>. For example, <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>. For more information and examples of specifying a list of broker locations, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using Apache Kafka as a target for Database Migration Service</a> in the <i>Database Migration Service User Guide</i>. </p>
     pub fn get_broker(&self) -> &::std::option::Option<::std::string::String> {
         &self.broker
     }
@@ -368,45 +368,45 @@ impl KafkaSettingsBuilder {
     pub fn get_ssl_client_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.ssl_client_key_arn
     }
-    /// <p>The password for the client private key used to securely connect to a Kafka target endpoint.</p>
+    /// <p> The password for the client private key used to securely connect to a Kafka target endpoint.</p>
     pub fn ssl_client_key_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ssl_client_key_password = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The password for the client private key used to securely connect to a Kafka target endpoint.</p>
+    /// <p> The password for the client private key used to securely connect to a Kafka target endpoint.</p>
     pub fn set_ssl_client_key_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ssl_client_key_password = input;
         self
     }
-    /// <p>The password for the client private key used to securely connect to a Kafka target endpoint.</p>
+    /// <p> The password for the client private key used to securely connect to a Kafka target endpoint.</p>
     pub fn get_ssl_client_key_password(&self) -> &::std::option::Option<::std::string::String> {
         &self.ssl_client_key_password
     }
-    /// <p>The Amazon Resource Name (ARN) for the private certificate authority (CA) cert that DMS uses to securely connect to your Kafka target endpoint.</p>
+    /// <p> The Amazon Resource Name (ARN) for the private certificate authority (CA) cert that DMS uses to securely connect to your Kafka target endpoint.</p>
     pub fn ssl_ca_certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ssl_ca_certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the private certificate authority (CA) cert that DMS uses to securely connect to your Kafka target endpoint.</p>
+    /// <p> The Amazon Resource Name (ARN) for the private certificate authority (CA) cert that DMS uses to securely connect to your Kafka target endpoint.</p>
     pub fn set_ssl_ca_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ssl_ca_certificate_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the private certificate authority (CA) cert that DMS uses to securely connect to your Kafka target endpoint.</p>
+    /// <p> The Amazon Resource Name (ARN) for the private certificate authority (CA) cert that DMS uses to securely connect to your Kafka target endpoint.</p>
     pub fn get_ssl_ca_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.ssl_ca_certificate_arn
     }
-    /// <p>The secure user name you created when you first set up your MSK cluster to validate a client identity and make an encrypted connection between server and client using SASL-SSL authentication.</p>
+    /// <p> The secure user name you created when you first set up your MSK cluster to validate a client identity and make an encrypted connection between server and client using SASL-SSL authentication.</p>
     pub fn sasl_username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sasl_username = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The secure user name you created when you first set up your MSK cluster to validate a client identity and make an encrypted connection between server and client using SASL-SSL authentication.</p>
+    /// <p> The secure user name you created when you first set up your MSK cluster to validate a client identity and make an encrypted connection between server and client using SASL-SSL authentication.</p>
     pub fn set_sasl_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sasl_username = input;
         self
     }
-    /// <p>The secure user name you created when you first set up your MSK cluster to validate a client identity and make an encrypted connection between server and client using SASL-SSL authentication.</p>
+    /// <p> The secure user name you created when you first set up your MSK cluster to validate a client identity and make an encrypted connection between server and client using SASL-SSL authentication.</p>
     pub fn get_sasl_username(&self) -> &::std::option::Option<::std::string::String> {
         &self.sasl_username
     }
@@ -438,26 +438,26 @@ impl KafkaSettingsBuilder {
     pub fn get_no_hex_prefix(&self) -> &::std::option::Option<bool> {
         &self.no_hex_prefix
     }
-    /// <p>For SASL/SSL authentication, DMS supports the <code>SCRAM-SHA-512</code> mechanism by default. DMS versions 3.5.0 and later also support the <code>PLAIN</code> mechanism. To use the <code>PLAIN</code> mechanism, set this parameter to <code>PLAIN.</code></p>
+    /// <p>For SASL/SSL authentication, DMS supports the <code>SCRAM-SHA-512</code> mechanism by default. DMS versions 3.5.0 and later also support the <code>PLAIN</code> mechanism. To use the <code>PLAIN</code> mechanism, set this parameter to <code>PLAIN.</code> </p>
     pub fn sasl_mechanism(mut self, input: crate::types::KafkaSaslMechanism) -> Self {
         self.sasl_mechanism = ::std::option::Option::Some(input);
         self
     }
-    /// <p>For SASL/SSL authentication, DMS supports the <code>SCRAM-SHA-512</code> mechanism by default. DMS versions 3.5.0 and later also support the <code>PLAIN</code> mechanism. To use the <code>PLAIN</code> mechanism, set this parameter to <code>PLAIN.</code></p>
+    /// <p>For SASL/SSL authentication, DMS supports the <code>SCRAM-SHA-512</code> mechanism by default. DMS versions 3.5.0 and later also support the <code>PLAIN</code> mechanism. To use the <code>PLAIN</code> mechanism, set this parameter to <code>PLAIN.</code> </p>
     pub fn set_sasl_mechanism(mut self, input: ::std::option::Option<crate::types::KafkaSaslMechanism>) -> Self {
         self.sasl_mechanism = input;
         self
     }
-    /// <p>For SASL/SSL authentication, DMS supports the <code>SCRAM-SHA-512</code> mechanism by default. DMS versions 3.5.0 and later also support the <code>PLAIN</code> mechanism. To use the <code>PLAIN</code> mechanism, set this parameter to <code>PLAIN.</code></p>
+    /// <p>For SASL/SSL authentication, DMS supports the <code>SCRAM-SHA-512</code> mechanism by default. DMS versions 3.5.0 and later also support the <code>PLAIN</code> mechanism. To use the <code>PLAIN</code> mechanism, set this parameter to <code>PLAIN.</code> </p>
     pub fn get_sasl_mechanism(&self) -> &::std::option::Option<crate::types::KafkaSaslMechanism> {
         &self.sasl_mechanism
     }
-    /// <p>Sets hostname verification for the certificate. This setting is supported in DMS version 3.5.1 and later.</p>
+    /// <p>Sets hostname verification for the certificate. This setting is supported in DMS version 3.5.1 and later. </p>
     pub fn ssl_endpoint_identification_algorithm(mut self, input: crate::types::KafkaSslEndpointIdentificationAlgorithm) -> Self {
         self.ssl_endpoint_identification_algorithm = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Sets hostname verification for the certificate. This setting is supported in DMS version 3.5.1 and later.</p>
+    /// <p>Sets hostname verification for the certificate. This setting is supported in DMS version 3.5.1 and later. </p>
     pub fn set_ssl_endpoint_identification_algorithm(
         mut self,
         input: ::std::option::Option<crate::types::KafkaSslEndpointIdentificationAlgorithm>,
@@ -465,7 +465,7 @@ impl KafkaSettingsBuilder {
         self.ssl_endpoint_identification_algorithm = input;
         self
     }
-    /// <p>Sets hostname verification for the certificate. This setting is supported in DMS version 3.5.1 and later.</p>
+    /// <p>Sets hostname verification for the certificate. This setting is supported in DMS version 3.5.1 and later. </p>
     pub fn get_ssl_endpoint_identification_algorithm(&self) -> &::std::option::Option<crate::types::KafkaSslEndpointIdentificationAlgorithm> {
         &self.ssl_endpoint_identification_algorithm
     }

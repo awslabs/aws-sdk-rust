@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteLabelInput {
-    /// <p>The name of the label group that contains the label that you want to delete. Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
+    /// <p> The name of the label group that contains the label that you want to delete. Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
     pub label_group_name: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the label that you want to delete.</p>
+    /// <p> The ID of the label that you want to delete. </p>
     pub label_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteLabelInput {
-    /// <p>The name of the label group that contains the label that you want to delete. Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
+    /// <p> The name of the label group that contains the label that you want to delete. Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
     pub fn label_group_name(&self) -> ::std::option::Option<&str> {
         self.label_group_name.as_deref()
     }
-    /// <p>The ID of the label that you want to delete.</p>
+    /// <p> The ID of the label that you want to delete. </p>
     pub fn label_id(&self) -> ::std::option::Option<&str> {
         self.label_id.as_deref()
     }
@@ -33,33 +33,33 @@ pub struct DeleteLabelInputBuilder {
     pub(crate) label_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteLabelInputBuilder {
-    /// <p>The name of the label group that contains the label that you want to delete. Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
+    /// <p> The name of the label group that contains the label that you want to delete. Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
     /// This field is required.
     pub fn label_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label_group_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the label group that contains the label that you want to delete. Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
+    /// <p> The name of the label group that contains the label that you want to delete. Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
     pub fn set_label_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.label_group_name = input;
         self
     }
-    /// <p>The name of the label group that contains the label that you want to delete. Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
+    /// <p> The name of the label group that contains the label that you want to delete. Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
     pub fn get_label_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.label_group_name
     }
-    /// <p>The ID of the label that you want to delete.</p>
+    /// <p> The ID of the label that you want to delete. </p>
     /// This field is required.
     pub fn label_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the label that you want to delete.</p>
+    /// <p> The ID of the label that you want to delete. </p>
     pub fn set_label_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.label_id = input;
         self
     }
-    /// <p>The ID of the label that you want to delete.</p>
+    /// <p> The ID of the label that you want to delete. </p>
     pub fn get_label_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.label_id
     }

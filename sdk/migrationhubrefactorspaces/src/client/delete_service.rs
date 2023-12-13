@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`environment_identifier(impl Into<String>)`](crate::operation::delete_service::builders::DeleteServiceFluentBuilder::environment_identifier) / [`set_environment_identifier(Option<String>)`](crate::operation::delete_service::builders::DeleteServiceFluentBuilder::set_environment_identifier):<br>required: **true**<br><p>The ID of the environment that the service is in.</p><br>
-    ///   - [`application_identifier(impl Into<String>)`](crate::operation::delete_service::builders::DeleteServiceFluentBuilder::application_identifier) / [`set_application_identifier(Option<String>)`](crate::operation::delete_service::builders::DeleteServiceFluentBuilder::set_application_identifier):<br>required: **true**<br><p>Deletes a Refactor Spaces service.</p><note>  <p>The <code>RefactorSpacesSecurityGroup</code> security group must be removed from all Amazon Web Services resources in the virtual private cloud (VPC) prior to deleting a service with a URL endpoint in a VPC.</p> </note><br>
+    ///   - [`application_identifier(impl Into<String>)`](crate::operation::delete_service::builders::DeleteServiceFluentBuilder::application_identifier) / [`set_application_identifier(Option<String>)`](crate::operation::delete_service::builders::DeleteServiceFluentBuilder::set_application_identifier):<br>required: **true**<br><p>Deletes a Refactor Spaces service.</p> <note>   <p>The <code>RefactorSpacesSecurityGroup</code> security group must be removed from all Amazon Web Services resources in the virtual private cloud (VPC) prior to deleting a service with a URL endpoint in a VPC.</p>  </note><br>
     ///   - [`service_identifier(impl Into<String>)`](crate::operation::delete_service::builders::DeleteServiceFluentBuilder::service_identifier) / [`set_service_identifier(Option<String>)`](crate::operation::delete_service::builders::DeleteServiceFluentBuilder::set_service_identifier):<br>required: **true**<br><p>The ID of the service to delete.</p><br>
     /// - On success, responds with [`DeleteServiceOutput`](crate::operation::delete_service::DeleteServiceOutput) with field(s):
     ///   - [`service_id(Option<String>)`](crate::operation::delete_service::DeleteServiceOutput::service_id): <p>The unique identifier of the service.</p>
@@ -12,8 +12,8 @@ impl super::Client {
     ///   - [`arn(Option<String>)`](crate::operation::delete_service::DeleteServiceOutput::arn): <p>The Amazon Resource Name (ARN) of the service.</p>
     ///   - [`environment_id(Option<String>)`](crate::operation::delete_service::DeleteServiceOutput::environment_id): <p>The unique identifier of the environment.</p>
     ///   - [`application_id(Option<String>)`](crate::operation::delete_service::DeleteServiceOutput::application_id): <p>The ID of the application that the service is in.</p>
-    ///   - [`state(Option<ServiceState>)`](crate::operation::delete_service::DeleteServiceOutput::state): <p>The current state of the service.</p>
-    ///   - [`last_updated_time(Option<DateTime>)`](crate::operation::delete_service::DeleteServiceOutput::last_updated_time): <p>A timestamp that indicates when the service was last updated.</p>
+    ///   - [`state(Option<ServiceState>)`](crate::operation::delete_service::DeleteServiceOutput::state): <p>The current state of the service. </p>
+    ///   - [`last_updated_time(Option<DateTime>)`](crate::operation::delete_service::DeleteServiceOutput::last_updated_time): <p>A timestamp that indicates when the service was last updated. </p>
     /// - On failure, responds with [`SdkError<DeleteServiceError>`](crate::operation::delete_service::DeleteServiceError)
     pub fn delete_service(&self) -> crate::operation::delete_service::builders::DeleteServiceFluentBuilder {
         crate::operation::delete_service::builders::DeleteServiceFluentBuilder::new(self.handle.clone())

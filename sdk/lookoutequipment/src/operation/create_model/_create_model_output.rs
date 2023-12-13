@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateModelOutput {
-    /// <p>The Amazon Resource Name (ARN) of the model being created.</p>
+    /// <p>The Amazon Resource Name (ARN) of the model being created. </p>
     pub model_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates the status of the <code>CreateModel</code> operation.</p>
+    /// <p>Indicates the status of the <code>CreateModel</code> operation. </p>
     pub status: ::std::option::Option<crate::types::ModelStatus>,
     _request_id: Option<String>,
 }
 impl CreateModelOutput {
-    /// <p>The Amazon Resource Name (ARN) of the model being created.</p>
+    /// <p>The Amazon Resource Name (ARN) of the model being created. </p>
     pub fn model_arn(&self) -> ::std::option::Option<&str> {
         self.model_arn.as_deref()
     }
-    /// <p>Indicates the status of the <code>CreateModel</code> operation.</p>
+    /// <p>Indicates the status of the <code>CreateModel</code> operation. </p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ModelStatus> {
         self.status.as_ref()
     }
@@ -40,31 +40,31 @@ pub struct CreateModelOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateModelOutputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the model being created.</p>
+    /// <p>The Amazon Resource Name (ARN) of the model being created. </p>
     pub fn model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the model being created.</p>
+    /// <p>The Amazon Resource Name (ARN) of the model being created. </p>
     pub fn set_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the model being created.</p>
+    /// <p>The Amazon Resource Name (ARN) of the model being created. </p>
     pub fn get_model_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_arn
     }
-    /// <p>Indicates the status of the <code>CreateModel</code> operation.</p>
+    /// <p>Indicates the status of the <code>CreateModel</code> operation. </p>
     pub fn status(mut self, input: crate::types::ModelStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates the status of the <code>CreateModel</code> operation.</p>
+    /// <p>Indicates the status of the <code>CreateModel</code> operation. </p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ModelStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>Indicates the status of the <code>CreateModel</code> operation.</p>
+    /// <p>Indicates the status of the <code>CreateModel</code> operation. </p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ModelStatus> {
         &self.status
     }

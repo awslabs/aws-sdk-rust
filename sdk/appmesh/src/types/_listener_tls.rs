@@ -6,12 +6,9 @@
 pub struct ListenerTls {
     /// <p>Specify one of the following modes.</p>
     /// <ul>
-    /// <li>
-    /// <p><b></b>STRICT – Listener only accepts connections with TLS enabled.</p></li>
-    /// <li>
-    /// <p><b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p></li>
-    /// <li>
-    /// <p><b></b>DISABLED – Listener only accepts connections without TLS.</p></li>
+    /// <li> <p> <b></b>STRICT – Listener only accepts connections with TLS enabled. </p> </li>
+    /// <li> <p> <b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p> </li>
+    /// <li> <p> <b></b>DISABLED – Listener only accepts connections without TLS. </p> </li>
     /// </ul>
     pub mode: crate::types::ListenerTlsMode,
     /// <p>A reference to an object that represents a listener's Transport Layer Security (TLS) certificate.</p>
@@ -22,12 +19,9 @@ pub struct ListenerTls {
 impl ListenerTls {
     /// <p>Specify one of the following modes.</p>
     /// <ul>
-    /// <li>
-    /// <p><b></b>STRICT – Listener only accepts connections with TLS enabled.</p></li>
-    /// <li>
-    /// <p><b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p></li>
-    /// <li>
-    /// <p><b></b>DISABLED – Listener only accepts connections without TLS.</p></li>
+    /// <li> <p> <b></b>STRICT – Listener only accepts connections with TLS enabled. </p> </li>
+    /// <li> <p> <b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p> </li>
+    /// <li> <p> <b></b>DISABLED – Listener only accepts connections without TLS. </p> </li>
     /// </ul>
     pub fn mode(&self) -> &crate::types::ListenerTlsMode {
         &self.mode
@@ -59,12 +53,9 @@ pub struct ListenerTlsBuilder {
 impl ListenerTlsBuilder {
     /// <p>Specify one of the following modes.</p>
     /// <ul>
-    /// <li>
-    /// <p><b></b>STRICT – Listener only accepts connections with TLS enabled.</p></li>
-    /// <li>
-    /// <p><b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p></li>
-    /// <li>
-    /// <p><b></b>DISABLED – Listener only accepts connections without TLS.</p></li>
+    /// <li> <p> <b></b>STRICT – Listener only accepts connections with TLS enabled. </p> </li>
+    /// <li> <p> <b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p> </li>
+    /// <li> <p> <b></b>DISABLED – Listener only accepts connections without TLS. </p> </li>
     /// </ul>
     /// This field is required.
     pub fn mode(mut self, input: crate::types::ListenerTlsMode) -> Self {
@@ -73,12 +64,9 @@ impl ListenerTlsBuilder {
     }
     /// <p>Specify one of the following modes.</p>
     /// <ul>
-    /// <li>
-    /// <p><b></b>STRICT – Listener only accepts connections with TLS enabled.</p></li>
-    /// <li>
-    /// <p><b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p></li>
-    /// <li>
-    /// <p><b></b>DISABLED – Listener only accepts connections without TLS.</p></li>
+    /// <li> <p> <b></b>STRICT – Listener only accepts connections with TLS enabled. </p> </li>
+    /// <li> <p> <b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p> </li>
+    /// <li> <p> <b></b>DISABLED – Listener only accepts connections without TLS. </p> </li>
     /// </ul>
     pub fn set_mode(mut self, input: ::std::option::Option<crate::types::ListenerTlsMode>) -> Self {
         self.mode = input;
@@ -86,12 +74,9 @@ impl ListenerTlsBuilder {
     }
     /// <p>Specify one of the following modes.</p>
     /// <ul>
-    /// <li>
-    /// <p><b></b>STRICT – Listener only accepts connections with TLS enabled.</p></li>
-    /// <li>
-    /// <p><b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p></li>
-    /// <li>
-    /// <p><b></b>DISABLED – Listener only accepts connections without TLS.</p></li>
+    /// <li> <p> <b></b>STRICT – Listener only accepts connections with TLS enabled. </p> </li>
+    /// <li> <p> <b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p> </li>
+    /// <li> <p> <b></b>DISABLED – Listener only accepts connections without TLS. </p> </li>
     /// </ul>
     pub fn get_mode(&self) -> &::std::option::Option<crate::types::ListenerTlsMode> {
         &self.mode

@@ -9,7 +9,7 @@ pub struct DescribeStateMachineForExecutionOutput {
     pub name: ::std::string::String,
     /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
     pub definition: ::std::string::String,
-    /// <p>The Amazon Resource Name (ARN) of the IAM role of the State Machine for the execution.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role of the State Machine for the execution. </p>
     pub role_arn: ::std::string::String,
     /// <p>The date and time the state machine associated with an execution was updated. For a newly created state machine, this is the creation date.</p>
     pub update_date: ::aws_smithy_types::DateTime,
@@ -42,7 +42,7 @@ impl DescribeStateMachineForExecutionOutput {
         use std::ops::Deref;
         self.definition.deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role of the State Machine for the execution.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role of the State Machine for the execution. </p>
     pub fn role_arn(&self) -> &str {
         use std::ops::Deref;
         self.role_arn.deref()
@@ -164,18 +164,18 @@ impl DescribeStateMachineForExecutionOutputBuilder {
     pub fn get_definition(&self) -> &::std::option::Option<::std::string::String> {
         &self.definition
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role of the State Machine for the execution.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role of the State Machine for the execution. </p>
     /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role of the State Machine for the execution.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role of the State Machine for the execution. </p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role of the State Machine for the execution.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role of the State Machine for the execution. </p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }

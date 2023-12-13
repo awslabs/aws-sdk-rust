@@ -22,7 +22,7 @@ impl UpdateProjectInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateProject`.
 ///
-/// <p>Updates a machine learning (ML) project that is created from a template that sets up an ML pipeline from training to deploying an approved model.</p><note>
+/// <p>Updates a machine learning (ML) project that is created from a template that sets up an ML pipeline from training to deploying an approved model.</p> <note>
 /// <p>You must not update a project that is in use. If you update the <code>ServiceCatalogProvisioningUpdateDetails</code> of a project that is active or being created, or updated, you may lose resources already created by the project.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -138,12 +138,12 @@ impl UpdateProjectFluentBuilder {
     pub fn get_project_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_project_description()
     }
-    /// <p>The product ID and provisioning artifact ID to provision a service catalog. The provisioning artifact ID will default to the latest provisioning artifact ID of the product, if you don't provide the provisioning artifact ID. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>.</p>
+    /// <p>The product ID and provisioning artifact ID to provision a service catalog. The provisioning artifact ID will default to the latest provisioning artifact ID of the product, if you don't provide the provisioning artifact ID. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>. </p>
     pub fn service_catalog_provisioning_update_details(mut self, input: crate::types::ServiceCatalogProvisioningUpdateDetails) -> Self {
         self.inner = self.inner.service_catalog_provisioning_update_details(input);
         self
     }
-    /// <p>The product ID and provisioning artifact ID to provision a service catalog. The provisioning artifact ID will default to the latest provisioning artifact ID of the product, if you don't provide the provisioning artifact ID. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>.</p>
+    /// <p>The product ID and provisioning artifact ID to provision a service catalog. The provisioning artifact ID will default to the latest provisioning artifact ID of the product, if you don't provide the provisioning artifact ID. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>. </p>
     pub fn set_service_catalog_provisioning_update_details(
         mut self,
         input: ::std::option::Option<crate::types::ServiceCatalogProvisioningUpdateDetails>,
@@ -151,7 +151,7 @@ impl UpdateProjectFluentBuilder {
         self.inner = self.inner.set_service_catalog_provisioning_update_details(input);
         self
     }
-    /// <p>The product ID and provisioning artifact ID to provision a service catalog. The provisioning artifact ID will default to the latest provisioning artifact ID of the product, if you don't provide the provisioning artifact ID. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>.</p>
+    /// <p>The product ID and provisioning artifact ID to provision a service catalog. The provisioning artifact ID will default to the latest provisioning artifact ID of the product, if you don't provide the provisioning artifact ID. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>. </p>
     pub fn get_service_catalog_provisioning_update_details(&self) -> &::std::option::Option<crate::types::ServiceCatalogProvisioningUpdateDetails> {
         self.inner.get_service_catalog_provisioning_update_details()
     }

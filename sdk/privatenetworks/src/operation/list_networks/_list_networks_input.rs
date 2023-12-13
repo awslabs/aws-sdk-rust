@@ -5,8 +5,7 @@
 pub struct ListNetworksInput {
     /// <p>The filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>STATUS</code> - The status (<code>AVAILABLE</code> | <code>CREATED</code> | <code>DELETED</code> | <code>DEPROVISIONING</code> | <code>PROVISIONING</code>).</p></li>
+    /// <li> <p> <code>STATUS</code> - The status (<code>AVAILABLE</code> | <code>CREATED</code> | <code>DELETED</code> | <code>DEPROVISIONING</code> | <code>PROVISIONING</code>).</p> </li>
     /// </ul>
     /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
     pub filters: ::std::option::Option<::std::collections::HashMap<crate::types::NetworkFilterKeys, ::std::vec::Vec<::std::string::String>>>,
@@ -18,8 +17,7 @@ pub struct ListNetworksInput {
 impl ListNetworksInput {
     /// <p>The filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>STATUS</code> - The status (<code>AVAILABLE</code> | <code>CREATED</code> | <code>DELETED</code> | <code>DEPROVISIONING</code> | <code>PROVISIONING</code>).</p></li>
+    /// <li> <p> <code>STATUS</code> - The status (<code>AVAILABLE</code> | <code>CREATED</code> | <code>DELETED</code> | <code>DEPROVISIONING</code> | <code>PROVISIONING</code>).</p> </li>
     /// </ul>
     /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
     pub fn filters(
@@ -58,8 +56,7 @@ impl ListNetworksInputBuilder {
     ///
     /// <p>The filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>STATUS</code> - The status (<code>AVAILABLE</code> | <code>CREATED</code> | <code>DELETED</code> | <code>DEPROVISIONING</code> | <code>PROVISIONING</code>).</p></li>
+    /// <li> <p> <code>STATUS</code> - The status (<code>AVAILABLE</code> | <code>CREATED</code> | <code>DELETED</code> | <code>DEPROVISIONING</code> | <code>PROVISIONING</code>).</p> </li>
     /// </ul>
     /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
     pub fn filters(mut self, k: crate::types::NetworkFilterKeys, v: ::std::vec::Vec<::std::string::String>) -> Self {
@@ -70,8 +67,7 @@ impl ListNetworksInputBuilder {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>STATUS</code> - The status (<code>AVAILABLE</code> | <code>CREATED</code> | <code>DELETED</code> | <code>DEPROVISIONING</code> | <code>PROVISIONING</code>).</p></li>
+    /// <li> <p> <code>STATUS</code> - The status (<code>AVAILABLE</code> | <code>CREATED</code> | <code>DELETED</code> | <code>DEPROVISIONING</code> | <code>PROVISIONING</code>).</p> </li>
     /// </ul>
     /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
     pub fn set_filters(
@@ -83,8 +79,7 @@ impl ListNetworksInputBuilder {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>STATUS</code> - The status (<code>AVAILABLE</code> | <code>CREATED</code> | <code>DELETED</code> | <code>DEPROVISIONING</code> | <code>PROVISIONING</code>).</p></li>
+    /// <li> <p> <code>STATUS</code> - The status (<code>AVAILABLE</code> | <code>CREATED</code> | <code>DELETED</code> | <code>DEPROVISIONING</code> | <code>PROVISIONING</code>).</p> </li>
     /// </ul>
     /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
     pub fn get_filters(

@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`creation_time_after(DateTime)`](crate::operation::list_models::builders::ListModelsFluentBuilder::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::operation::list_models::builders::ListModelsFluentBuilder::set_creation_time_after):<br>required: **false**<br><p>A filter that returns only models with a creation time greater than or equal to the specified time (timestamp).</p><br>
     /// - On success, responds with [`ListModelsOutput`](crate::operation::list_models::ListModelsOutput) with field(s):
     ///   - [`models(Option<Vec::<ModelSummary>>)`](crate::operation::list_models::ListModelsOutput::models): <p>An array of <code>ModelSummary</code> objects, each of which lists a model.</p>
-    ///   - [`next_token(Option<String>)`](crate::operation::list_models::ListModelsOutput::next_token): <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of models, use it in the subsequent request.</p>
+    ///   - [`next_token(Option<String>)`](crate::operation::list_models::ListModelsOutput::next_token): <p> If the response is truncated, SageMaker returns this token. To retrieve the next set of models, use it in the subsequent request. </p>
     /// - On failure, responds with [`SdkError<ListModelsError>`](crate::operation::list_models::ListModelsError)
     pub fn list_models(&self) -> crate::operation::list_models::builders::ListModelsFluentBuilder {
         crate::operation::list_models::builders::ListModelsFluentBuilder::new(self.handle.clone())

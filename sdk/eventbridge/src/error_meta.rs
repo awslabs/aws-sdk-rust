@@ -15,7 +15,7 @@ pub enum Error {
     InvalidStateException(crate::types::error::InvalidStateException),
     /// <p>The request failed because it attempted to create resource beyond the allowed service quota.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
-    /// <p>This rule was created by an Amazon Web Services service on behalf of your account. It is managed by that service. If you see this error in response to <code>DeleteRule</code> or <code>RemoveTargets</code>, you can use the <code>Force</code> parameter in those calls to delete the rule or remove targets from the rule. You cannot modify these managed rules by using <code>DisableRule</code>, <code>EnableRule</code>, <code>PutTargets</code>, <code>PutRule</code>, <code>TagResource</code>, or <code>UntagResource</code>.</p>
+    /// <p>This rule was created by an Amazon Web Services service on behalf of your account. It is managed by that service. If you see this error in response to <code>DeleteRule</code> or <code>RemoveTargets</code>, you can use the <code>Force</code> parameter in those calls to delete the rule or remove targets from the rule. You cannot modify these managed rules by using <code>DisableRule</code>, <code>EnableRule</code>, <code>PutTargets</code>, <code>PutRule</code>, <code>TagResource</code>, or <code>UntagResource</code>. </p>
     ManagedRuleException(crate::types::error::ManagedRuleException),
     /// <p>The operation you are attempting is not available in this region.</p>
     OperationDisabledException(crate::types::error::OperationDisabledException),

@@ -136,17 +136,17 @@ impl UpdateContactScheduleFluentBuilder {
     pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_contact_id()
     }
-    /// <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound flow. The scheduled time cannot be in the past. It must be within up to 6 days in future.</p>
+    /// <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
     pub fn scheduled_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.scheduled_time(input);
         self
     }
-    /// <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound flow. The scheduled time cannot be in the past. It must be within up to 6 days in future.</p>
+    /// <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
     pub fn set_scheduled_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_scheduled_time(input);
         self
     }
-    /// <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound flow. The scheduled time cannot be in the past. It must be within up to 6 days in future.</p>
+    /// <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
     pub fn get_scheduled_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_scheduled_time()
     }

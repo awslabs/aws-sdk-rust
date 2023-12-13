@@ -12,7 +12,7 @@ pub struct TrustedAdvisorCheckDescription {
     pub description: ::std::string::String,
     /// <p>The category of the Trusted Advisor check.</p>
     pub category: ::std::string::String,
-    /// <p>The column headings for the data returned by the Trusted Advisor check. The order of the headings corresponds to the order of the data in the <b>Metadata</b> element of the <code>TrustedAdvisorResourceDetail</code> for the check. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data.</p>
+    /// <p>The column headings for the data returned by the Trusted Advisor check. The order of the headings corresponds to the order of the data in the <b>Metadata</b> element of the <code>TrustedAdvisorResourceDetail</code> for the check. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data. </p>
     pub metadata: ::std::vec::Vec<::std::option::Option<::std::string::String>>,
 }
 impl TrustedAdvisorCheckDescription {
@@ -36,7 +36,7 @@ impl TrustedAdvisorCheckDescription {
         use std::ops::Deref;
         self.category.deref()
     }
-    /// <p>The column headings for the data returned by the Trusted Advisor check. The order of the headings corresponds to the order of the data in the <b>Metadata</b> element of the <code>TrustedAdvisorResourceDetail</code> for the check. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data.</p>
+    /// <p>The column headings for the data returned by the Trusted Advisor check. The order of the headings corresponds to the order of the data in the <b>Metadata</b> element of the <code>TrustedAdvisorResourceDetail</code> for the check. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data. </p>
     pub fn metadata(&self) -> &[::std::option::Option<::std::string::String>] {
         use std::ops::Deref;
         self.metadata.deref()
@@ -124,19 +124,19 @@ impl TrustedAdvisorCheckDescriptionBuilder {
     ///
     /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
     ///
-    /// <p>The column headings for the data returned by the Trusted Advisor check. The order of the headings corresponds to the order of the data in the <b>Metadata</b> element of the <code>TrustedAdvisorResourceDetail</code> for the check. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data.</p>
+    /// <p>The column headings for the data returned by the Trusted Advisor check. The order of the headings corresponds to the order of the data in the <b>Metadata</b> element of the <code>TrustedAdvisorResourceDetail</code> for the check. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data. </p>
     pub fn metadata(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         let mut v = self.metadata.unwrap_or_default();
         v.push(input);
         self.metadata = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The column headings for the data returned by the Trusted Advisor check. The order of the headings corresponds to the order of the data in the <b>Metadata</b> element of the <code>TrustedAdvisorResourceDetail</code> for the check. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data.</p>
+    /// <p>The column headings for the data returned by the Trusted Advisor check. The order of the headings corresponds to the order of the data in the <b>Metadata</b> element of the <code>TrustedAdvisorResourceDetail</code> for the check. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data. </p>
     pub fn set_metadata(mut self, input: ::std::option::Option<::std::vec::Vec<::std::option::Option<::std::string::String>>>) -> Self {
         self.metadata = input;
         self
     }
-    /// <p>The column headings for the data returned by the Trusted Advisor check. The order of the headings corresponds to the order of the data in the <b>Metadata</b> element of the <code>TrustedAdvisorResourceDetail</code> for the check. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data.</p>
+    /// <p>The column headings for the data returned by the Trusted Advisor check. The order of the headings corresponds to the order of the data in the <b>Metadata</b> element of the <code>TrustedAdvisorResourceDetail</code> for the check. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data. </p>
     pub fn get_metadata(&self) -> &::std::option::Option<::std::vec::Vec<::std::option::Option<::std::string::String>>> {
         &self.metadata
     }

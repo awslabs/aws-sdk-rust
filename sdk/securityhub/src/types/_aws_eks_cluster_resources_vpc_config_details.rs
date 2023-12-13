@@ -8,7 +8,7 @@ pub struct AwsEksClusterResourcesVpcConfigDetails {
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The subnets that are associated with the cluster.</p>
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Indicates whether the Amazon EKS public API server endpoint is turned on. If the Amazon EKS public API server endpoint is turned off, your cluster's Kubernetes API server can only receive requests that originate from within the cluster VPC.</p>
+    /// <p> Indicates whether the Amazon EKS public API server endpoint is turned on. If the Amazon EKS public API server endpoint is turned off, your cluster's Kubernetes API server can only receive requests that originate from within the cluster VPC. </p>
     pub endpoint_public_access: ::std::option::Option<bool>,
 }
 impl AwsEksClusterResourcesVpcConfigDetails {
@@ -24,7 +24,7 @@ impl AwsEksClusterResourcesVpcConfigDetails {
     pub fn subnet_ids(&self) -> &[::std::string::String] {
         self.subnet_ids.as_deref().unwrap_or_default()
     }
-    /// <p>Indicates whether the Amazon EKS public API server endpoint is turned on. If the Amazon EKS public API server endpoint is turned off, your cluster's Kubernetes API server can only receive requests that originate from within the cluster VPC.</p>
+    /// <p> Indicates whether the Amazon EKS public API server endpoint is turned on. If the Amazon EKS public API server endpoint is turned off, your cluster's Kubernetes API server can only receive requests that originate from within the cluster VPC. </p>
     pub fn endpoint_public_access(&self) -> ::std::option::Option<bool> {
         self.endpoint_public_access
     }
@@ -85,17 +85,17 @@ impl AwsEksClusterResourcesVpcConfigDetailsBuilder {
     pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.subnet_ids
     }
-    /// <p>Indicates whether the Amazon EKS public API server endpoint is turned on. If the Amazon EKS public API server endpoint is turned off, your cluster's Kubernetes API server can only receive requests that originate from within the cluster VPC.</p>
+    /// <p> Indicates whether the Amazon EKS public API server endpoint is turned on. If the Amazon EKS public API server endpoint is turned off, your cluster's Kubernetes API server can only receive requests that originate from within the cluster VPC. </p>
     pub fn endpoint_public_access(mut self, input: bool) -> Self {
         self.endpoint_public_access = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether the Amazon EKS public API server endpoint is turned on. If the Amazon EKS public API server endpoint is turned off, your cluster's Kubernetes API server can only receive requests that originate from within the cluster VPC.</p>
+    /// <p> Indicates whether the Amazon EKS public API server endpoint is turned on. If the Amazon EKS public API server endpoint is turned off, your cluster's Kubernetes API server can only receive requests that originate from within the cluster VPC. </p>
     pub fn set_endpoint_public_access(mut self, input: ::std::option::Option<bool>) -> Self {
         self.endpoint_public_access = input;
         self
     }
-    /// <p>Indicates whether the Amazon EKS public API server endpoint is turned on. If the Amazon EKS public API server endpoint is turned off, your cluster's Kubernetes API server can only receive requests that originate from within the cluster VPC.</p>
+    /// <p> Indicates whether the Amazon EKS public API server endpoint is turned on. If the Amazon EKS public API server endpoint is turned off, your cluster's Kubernetes API server can only receive requests that originate from within the cluster VPC. </p>
     pub fn get_endpoint_public_access(&self) -> &::std::option::Option<bool> {
         &self.endpoint_public_access
     }

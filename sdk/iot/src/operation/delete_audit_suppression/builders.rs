@@ -22,7 +22,7 @@ impl DeleteAuditSuppressionInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteAuditSuppression`.
 ///
-/// <p>Deletes a Device Defender audit suppression.</p>
+/// <p> Deletes a Device Defender audit suppression. </p>
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteAuditSuppression</a> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAuditSuppressionFluentBuilder {

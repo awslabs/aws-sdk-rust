@@ -140,17 +140,17 @@ impl CreateLaunchProfileFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_ec2_subnet_ids`](Self::set_ec2_subnet_ids).
     ///
-    /// <p>Specifies the IDs of the EC2 subnets where streaming sessions will be accessible from. These subnets must support the specified instance types.</p>
+    /// <p>Specifies the IDs of the EC2 subnets where streaming sessions will be accessible from. These subnets must support the specified instance types. </p>
     pub fn ec2_subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ec2_subnet_ids(input.into());
         self
     }
-    /// <p>Specifies the IDs of the EC2 subnets where streaming sessions will be accessible from. These subnets must support the specified instance types.</p>
+    /// <p>Specifies the IDs of the EC2 subnets where streaming sessions will be accessible from. These subnets must support the specified instance types. </p>
     pub fn set_ec2_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_ec2_subnet_ids(input);
         self
     }
-    /// <p>Specifies the IDs of the EC2 subnets where streaming sessions will be accessible from. These subnets must support the specified instance types.</p>
+    /// <p>Specifies the IDs of the EC2 subnets where streaming sessions will be accessible from. These subnets must support the specified instance types. </p>
     pub fn get_ec2_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_ec2_subnet_ids()
     }
@@ -218,17 +218,17 @@ impl CreateLaunchProfileFluentBuilder {
     pub fn get_studio_component_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_studio_component_ids()
     }
-    /// <p>The studio ID.</p>
+    /// <p>The studio ID. </p>
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.studio_id(input.into());
         self
     }
-    /// <p>The studio ID.</p>
+    /// <p>The studio ID. </p>
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_studio_id(input);
         self
     }
-    /// <p>The studio ID.</p>
+    /// <p>The studio ID. </p>
     pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_studio_id()
     }

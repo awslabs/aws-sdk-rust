@@ -3,24 +3,24 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDatasetOutput {
-    /// <p>The name of the dataset being created.</p>
+    /// <p>The name of the dataset being created. </p>
     pub dataset_name: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the dataset being created.</p>
+    /// <p> The Amazon Resource Name (ARN) of the dataset being created. </p>
     pub dataset_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates the status of the <code>CreateDataset</code> operation.</p>
+    /// <p>Indicates the status of the <code>CreateDataset</code> operation. </p>
     pub status: ::std::option::Option<crate::types::DatasetStatus>,
     _request_id: Option<String>,
 }
 impl CreateDatasetOutput {
-    /// <p>The name of the dataset being created.</p>
+    /// <p>The name of the dataset being created. </p>
     pub fn dataset_name(&self) -> ::std::option::Option<&str> {
         self.dataset_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the dataset being created.</p>
+    /// <p> The Amazon Resource Name (ARN) of the dataset being created. </p>
     pub fn dataset_arn(&self) -> ::std::option::Option<&str> {
         self.dataset_arn.as_deref()
     }
-    /// <p>Indicates the status of the <code>CreateDataset</code> operation.</p>
+    /// <p>Indicates the status of the <code>CreateDataset</code> operation. </p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::DatasetStatus> {
         self.status.as_ref()
     }
@@ -47,45 +47,45 @@ pub struct CreateDatasetOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateDatasetOutputBuilder {
-    /// <p>The name of the dataset being created.</p>
+    /// <p>The name of the dataset being created. </p>
     pub fn dataset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the dataset being created.</p>
+    /// <p>The name of the dataset being created. </p>
     pub fn set_dataset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_name = input;
         self
     }
-    /// <p>The name of the dataset being created.</p>
+    /// <p>The name of the dataset being created. </p>
     pub fn get_dataset_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.dataset_name
     }
-    /// <p>The Amazon Resource Name (ARN) of the dataset being created.</p>
+    /// <p> The Amazon Resource Name (ARN) of the dataset being created. </p>
     pub fn dataset_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the dataset being created.</p>
+    /// <p> The Amazon Resource Name (ARN) of the dataset being created. </p>
     pub fn set_dataset_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the dataset being created.</p>
+    /// <p> The Amazon Resource Name (ARN) of the dataset being created. </p>
     pub fn get_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.dataset_arn
     }
-    /// <p>Indicates the status of the <code>CreateDataset</code> operation.</p>
+    /// <p>Indicates the status of the <code>CreateDataset</code> operation. </p>
     pub fn status(mut self, input: crate::types::DatasetStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates the status of the <code>CreateDataset</code> operation.</p>
+    /// <p>Indicates the status of the <code>CreateDataset</code> operation. </p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::DatasetStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>Indicates the status of the <code>CreateDataset</code> operation.</p>
+    /// <p>Indicates the status of the <code>CreateDataset</code> operation. </p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::DatasetStatus> {
         &self.status
     }

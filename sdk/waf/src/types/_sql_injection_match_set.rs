@@ -2,14 +2,14 @@
 
 /// <note>
 /// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p><b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use.</p>
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
 /// </note>
 /// <p>A complex type that contains <code>SqlInjectionMatchTuple</code> objects, which specify the parts of web requests that you want AWS WAF to inspect for snippets of malicious SQL code and, if you want AWS WAF to inspect a header, the name of the header. If a <code>SqlInjectionMatchSet</code> contains more than one <code>SqlInjectionMatchTuple</code> object, a request needs to include snippets of SQL code in only one of the specified parts of the request to be considered a match.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SqlInjectionMatchSet {
     /// <p>A unique identifier for a <code>SqlInjectionMatchSet</code>. You use <code>SqlInjectionMatchSetId</code> to get information about a <code>SqlInjectionMatchSet</code> (see <code>GetSqlInjectionMatchSet</code>), update a <code>SqlInjectionMatchSet</code> (see <code>UpdateSqlInjectionMatchSet</code>), insert a <code>SqlInjectionMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SqlInjectionMatchSet</code> from AWS WAF (see <code>DeleteSqlInjectionMatchSet</code>).</p>
-    /// <p><code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
+    /// <p> <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
     pub sql_injection_match_set_id: ::std::string::String,
     /// <p>The name, if any, of the <code>SqlInjectionMatchSet</code>.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -18,7 +18,7 @@ pub struct SqlInjectionMatchSet {
 }
 impl SqlInjectionMatchSet {
     /// <p>A unique identifier for a <code>SqlInjectionMatchSet</code>. You use <code>SqlInjectionMatchSetId</code> to get information about a <code>SqlInjectionMatchSet</code> (see <code>GetSqlInjectionMatchSet</code>), update a <code>SqlInjectionMatchSet</code> (see <code>UpdateSqlInjectionMatchSet</code>), insert a <code>SqlInjectionMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SqlInjectionMatchSet</code> from AWS WAF (see <code>DeleteSqlInjectionMatchSet</code>).</p>
-    /// <p><code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
+    /// <p> <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
     pub fn sql_injection_match_set_id(&self) -> &str {
         use std::ops::Deref;
         self.sql_injection_match_set_id.deref()
@@ -50,20 +50,20 @@ pub struct SqlInjectionMatchSetBuilder {
 }
 impl SqlInjectionMatchSetBuilder {
     /// <p>A unique identifier for a <code>SqlInjectionMatchSet</code>. You use <code>SqlInjectionMatchSetId</code> to get information about a <code>SqlInjectionMatchSet</code> (see <code>GetSqlInjectionMatchSet</code>), update a <code>SqlInjectionMatchSet</code> (see <code>UpdateSqlInjectionMatchSet</code>), insert a <code>SqlInjectionMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SqlInjectionMatchSet</code> from AWS WAF (see <code>DeleteSqlInjectionMatchSet</code>).</p>
-    /// <p><code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
+    /// <p> <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
     /// This field is required.
     pub fn sql_injection_match_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sql_injection_match_set_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for a <code>SqlInjectionMatchSet</code>. You use <code>SqlInjectionMatchSetId</code> to get information about a <code>SqlInjectionMatchSet</code> (see <code>GetSqlInjectionMatchSet</code>), update a <code>SqlInjectionMatchSet</code> (see <code>UpdateSqlInjectionMatchSet</code>), insert a <code>SqlInjectionMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SqlInjectionMatchSet</code> from AWS WAF (see <code>DeleteSqlInjectionMatchSet</code>).</p>
-    /// <p><code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
+    /// <p> <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
     pub fn set_sql_injection_match_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sql_injection_match_set_id = input;
         self
     }
     /// <p>A unique identifier for a <code>SqlInjectionMatchSet</code>. You use <code>SqlInjectionMatchSetId</code> to get information about a <code>SqlInjectionMatchSet</code> (see <code>GetSqlInjectionMatchSet</code>), update a <code>SqlInjectionMatchSet</code> (see <code>UpdateSqlInjectionMatchSet</code>), insert a <code>SqlInjectionMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SqlInjectionMatchSet</code> from AWS WAF (see <code>DeleteSqlInjectionMatchSet</code>).</p>
-    /// <p><code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
+    /// <p> <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
     pub fn get_sql_injection_match_set_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.sql_injection_match_set_id
     }

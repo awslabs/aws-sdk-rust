@@ -248,9 +248,9 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetSettingsEn
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum GetSettingsError {
-    /// <p>Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again.</p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>An internal service error occurred during the processing of your request. Try again later.</p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::types::error::InternalServerException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

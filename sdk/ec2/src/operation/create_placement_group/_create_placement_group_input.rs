@@ -14,12 +14,10 @@ pub struct CreatePlacementGroupInput {
     pub partition_count: ::std::option::Option<i32>,
     /// <p>The tags to apply to the new placement group.</p>
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    /// <p>Determines how placement groups spread instances.</p>
+    /// <p>Determines how placement groups spread instances. </p>
     /// <ul>
-    /// <li>
-    /// <p>Host – You can use <code>host</code> only with Outpost placement groups.</p></li>
-    /// <li>
-    /// <p>Rack – No usage restrictions.</p></li>
+    /// <li> <p>Host – You can use <code>host</code> only with Outpost placement groups.</p> </li>
+    /// <li> <p>Rack – No usage restrictions.</p> </li>
     /// </ul>
     pub spread_level: ::std::option::Option<crate::types::SpreadLevel>,
 }
@@ -47,12 +45,10 @@ impl CreatePlacementGroupInput {
     pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
         self.tag_specifications.as_deref().unwrap_or_default()
     }
-    /// <p>Determines how placement groups spread instances.</p>
+    /// <p>Determines how placement groups spread instances. </p>
     /// <ul>
-    /// <li>
-    /// <p>Host – You can use <code>host</code> only with Outpost placement groups.</p></li>
-    /// <li>
-    /// <p>Rack – No usage restrictions.</p></li>
+    /// <li> <p>Host – You can use <code>host</code> only with Outpost placement groups.</p> </li>
+    /// <li> <p>Rack – No usage restrictions.</p> </li>
     /// </ul>
     pub fn spread_level(&self) -> ::std::option::Option<&crate::types::SpreadLevel> {
         self.spread_level.as_ref()
@@ -156,34 +152,28 @@ impl CreatePlacementGroupInputBuilder {
     pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
-    /// <p>Determines how placement groups spread instances.</p>
+    /// <p>Determines how placement groups spread instances. </p>
     /// <ul>
-    /// <li>
-    /// <p>Host – You can use <code>host</code> only with Outpost placement groups.</p></li>
-    /// <li>
-    /// <p>Rack – No usage restrictions.</p></li>
+    /// <li> <p>Host – You can use <code>host</code> only with Outpost placement groups.</p> </li>
+    /// <li> <p>Rack – No usage restrictions.</p> </li>
     /// </ul>
     pub fn spread_level(mut self, input: crate::types::SpreadLevel) -> Self {
         self.spread_level = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Determines how placement groups spread instances.</p>
+    /// <p>Determines how placement groups spread instances. </p>
     /// <ul>
-    /// <li>
-    /// <p>Host – You can use <code>host</code> only with Outpost placement groups.</p></li>
-    /// <li>
-    /// <p>Rack – No usage restrictions.</p></li>
+    /// <li> <p>Host – You can use <code>host</code> only with Outpost placement groups.</p> </li>
+    /// <li> <p>Rack – No usage restrictions.</p> </li>
     /// </ul>
     pub fn set_spread_level(mut self, input: ::std::option::Option<crate::types::SpreadLevel>) -> Self {
         self.spread_level = input;
         self
     }
-    /// <p>Determines how placement groups spread instances.</p>
+    /// <p>Determines how placement groups spread instances. </p>
     /// <ul>
-    /// <li>
-    /// <p>Host – You can use <code>host</code> only with Outpost placement groups.</p></li>
-    /// <li>
-    /// <p>Rack – No usage restrictions.</p></li>
+    /// <li> <p>Host – You can use <code>host</code> only with Outpost placement groups.</p> </li>
+    /// <li> <p>Rack – No usage restrictions.</p> </li>
     /// </ul>
     pub fn get_spread_level(&self) -> &::std::option::Option<crate::types::SpreadLevel> {
         &self.spread_level

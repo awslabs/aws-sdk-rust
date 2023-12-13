@@ -22,10 +22,10 @@ impl CreateBackupInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateBackup`.
 ///
-/// <p>Creates an application-level backup of a server. While the server is in the <code>BACKING_UP</code> state, the server cannot be changed, and no additional backup can be created.</p>
-/// <p>Backups can be created for servers in <code>RUNNING</code>, <code>HEALTHY</code>, and <code>UNHEALTHY</code> states. By default, you can create a maximum of 50 manual backups.</p>
-/// <p>This operation is asynchronous.</p>
-/// <p>A <code>LimitExceededException</code> is thrown when the maximum number of manual backups is reached. An <code>InvalidStateException</code> is thrown when the server is not in any of the following states: RUNNING, HEALTHY, or UNHEALTHY. A <code>ResourceNotFoundException</code> is thrown when the server is not found. A <code>ValidationException</code> is thrown when parameters of the request are not valid.</p>
+/// <p> Creates an application-level backup of a server. While the server is in the <code>BACKING_UP</code> state, the server cannot be changed, and no additional backup can be created. </p>
+/// <p> Backups can be created for servers in <code>RUNNING</code>, <code>HEALTHY</code>, and <code>UNHEALTHY</code> states. By default, you can create a maximum of 50 manual backups. </p>
+/// <p> This operation is asynchronous. </p>
+/// <p> A <code>LimitExceededException</code> is thrown when the maximum number of manual backups is reached. An <code>InvalidStateException</code> is thrown when the server is not in any of the following states: RUNNING, HEALTHY, or UNHEALTHY. A <code>ResourceNotFoundException</code> is thrown when the server is not found. A <code>ValidationException</code> is thrown when parameters of the request are not valid. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateBackupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -111,31 +111,31 @@ impl CreateBackupFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the server that you want to back up.</p>
+    /// <p>The name of the server that you want to back up. </p>
     pub fn server_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.server_name(input.into());
         self
     }
-    /// <p>The name of the server that you want to back up.</p>
+    /// <p>The name of the server that you want to back up. </p>
     pub fn set_server_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_server_name(input);
         self
     }
-    /// <p>The name of the server that you want to back up.</p>
+    /// <p>The name of the server that you want to back up. </p>
     pub fn get_server_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_server_name()
     }
-    /// <p>A user-defined description of the backup.</p>
+    /// <p> A user-defined description of the backup. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>A user-defined description of the backup.</p>
+    /// <p> A user-defined description of the backup. </p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>A user-defined description of the backup.</p>
+    /// <p> A user-defined description of the backup. </p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
@@ -145,16 +145,11 @@ impl CreateBackupFluentBuilder {
     ///
     /// <p>A map that contains tag keys and tag values to attach to an AWS OpsWorks-CM server backup.</p>
     /// <ul>
-    /// <li>
-    /// <p>The key cannot be empty.</p></li>
-    /// <li>
-    /// <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code></p></li>
-    /// <li>
-    /// <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code></p></li>
-    /// <li>
-    /// <p>Leading and trailing white spaces are trimmed from both the key and value.</p></li>
-    /// <li>
-    /// <p>A maximum of 50 user-applied tags is allowed for tag-supported AWS OpsWorks-CM resources.</p></li>
+    /// <li> <p>The key cannot be empty.</p> </li>
+    /// <li> <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p> </li>
+    /// <li> <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p> </li>
+    /// <li> <p>Leading and trailing white spaces are trimmed from both the key and value.</p> </li>
+    /// <li> <p>A maximum of 50 user-applied tags is allowed for tag-supported AWS OpsWorks-CM resources.</p> </li>
     /// </ul>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
@@ -162,16 +157,11 @@ impl CreateBackupFluentBuilder {
     }
     /// <p>A map that contains tag keys and tag values to attach to an AWS OpsWorks-CM server backup.</p>
     /// <ul>
-    /// <li>
-    /// <p>The key cannot be empty.</p></li>
-    /// <li>
-    /// <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code></p></li>
-    /// <li>
-    /// <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code></p></li>
-    /// <li>
-    /// <p>Leading and trailing white spaces are trimmed from both the key and value.</p></li>
-    /// <li>
-    /// <p>A maximum of 50 user-applied tags is allowed for tag-supported AWS OpsWorks-CM resources.</p></li>
+    /// <li> <p>The key cannot be empty.</p> </li>
+    /// <li> <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p> </li>
+    /// <li> <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p> </li>
+    /// <li> <p>Leading and trailing white spaces are trimmed from both the key and value.</p> </li>
+    /// <li> <p>A maximum of 50 user-applied tags is allowed for tag-supported AWS OpsWorks-CM resources.</p> </li>
     /// </ul>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
@@ -179,16 +169,11 @@ impl CreateBackupFluentBuilder {
     }
     /// <p>A map that contains tag keys and tag values to attach to an AWS OpsWorks-CM server backup.</p>
     /// <ul>
-    /// <li>
-    /// <p>The key cannot be empty.</p></li>
-    /// <li>
-    /// <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code></p></li>
-    /// <li>
-    /// <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code></p></li>
-    /// <li>
-    /// <p>Leading and trailing white spaces are trimmed from both the key and value.</p></li>
-    /// <li>
-    /// <p>A maximum of 50 user-applied tags is allowed for tag-supported AWS OpsWorks-CM resources.</p></li>
+    /// <li> <p>The key cannot be empty.</p> </li>
+    /// <li> <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p> </li>
+    /// <li> <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p> </li>
+    /// <li> <p>Leading and trailing white spaces are trimmed from both the key and value.</p> </li>
+    /// <li> <p>A maximum of 50 user-applied tags is allowed for tag-supported AWS OpsWorks-CM resources.</p> </li>
     /// </ul>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()

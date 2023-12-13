@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAssetBundleImportJobInput {
-    /// <p>The ID of the Amazon Web Services account the import job was executed in.</p>
+    /// <p>The ID of the Amazon Web Services account the import job was executed in. </p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the job. The job ID is set when you start a new job with a <code>StartAssetBundleImportJob</code> API call.</p>
     pub asset_bundle_import_job_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAssetBundleImportJobInput {
-    /// <p>The ID of the Amazon Web Services account the import job was executed in.</p>
+    /// <p>The ID of the Amazon Web Services account the import job was executed in. </p>
     pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
@@ -33,18 +33,18 @@ pub struct DescribeAssetBundleImportJobInputBuilder {
     pub(crate) asset_bundle_import_job_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAssetBundleImportJobInputBuilder {
-    /// <p>The ID of the Amazon Web Services account the import job was executed in.</p>
+    /// <p>The ID of the Amazon Web Services account the import job was executed in. </p>
     /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the Amazon Web Services account the import job was executed in.</p>
+    /// <p>The ID of the Amazon Web Services account the import job was executed in. </p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
-    /// <p>The ID of the Amazon Web Services account the import job was executed in.</p>
+    /// <p>The ID of the Amazon Web Services account the import job was executed in. </p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.aws_account_id
     }

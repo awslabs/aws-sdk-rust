@@ -22,7 +22,7 @@ impl GetRecordInputBuilder {
 }
 /// Fluent builder constructing a request to `GetRecord`.
 ///
-/// <p>Use for <code>OnlineStore</code> serving from a <code>FeatureStore</code>. Only the latest records stored in the <code>OnlineStore</code> can be retrieved. If no Record with <code>RecordIdentifierValue</code> is found, then an empty result is returned.</p>
+/// <p>Use for <code>OnlineStore</code> serving from a <code>FeatureStore</code>. Only the latest records stored in the <code>OnlineStore</code> can be retrieved. If no Record with <code>RecordIdentifierValue</code> is found, then an empty result is returned. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetRecordFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -116,17 +116,17 @@ impl GetRecordFluentBuilder {
     pub fn get_feature_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_feature_group_name()
     }
-    /// <p>The value that corresponds to <code>RecordIdentifier</code> type and uniquely identifies the record in the <code>FeatureGroup</code>.</p>
+    /// <p>The value that corresponds to <code>RecordIdentifier</code> type and uniquely identifies the record in the <code>FeatureGroup</code>. </p>
     pub fn record_identifier_value_as_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.record_identifier_value_as_string(input.into());
         self
     }
-    /// <p>The value that corresponds to <code>RecordIdentifier</code> type and uniquely identifies the record in the <code>FeatureGroup</code>.</p>
+    /// <p>The value that corresponds to <code>RecordIdentifier</code> type and uniquely identifies the record in the <code>FeatureGroup</code>. </p>
     pub fn set_record_identifier_value_as_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_record_identifier_value_as_string(input);
         self
     }
-    /// <p>The value that corresponds to <code>RecordIdentifier</code> type and uniquely identifies the record in the <code>FeatureGroup</code>.</p>
+    /// <p>The value that corresponds to <code>RecordIdentifier</code> type and uniquely identifies the record in the <code>FeatureGroup</code>. </p>
     pub fn get_record_identifier_value_as_string(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_record_identifier_value_as_string()
     }

@@ -17,7 +17,7 @@ impl super::Client {
     ///   - [`service_network_name(Option<String>)`](crate::operation::get_service_network_service_association::GetServiceNetworkServiceAssociationOutput::service_network_name): <p>The name of the service network.</p>
     ///   - [`service_network_arn(Option<String>)`](crate::operation::get_service_network_service_association::GetServiceNetworkServiceAssociationOutput::service_network_arn): <p>The Amazon Resource Name (ARN) of the service network.</p>
     ///   - [`dns_entry(Option<DnsEntry>)`](crate::operation::get_service_network_service_association::GetServiceNetworkServiceAssociationOutput::dns_entry): <p>The DNS name of the service.</p>
-    ///   - [`custom_domain_name(Option<String>)`](crate::operation::get_service_network_service_association::GetServiceNetworkServiceAssociationOutput::custom_domain_name): <p>The custom domain name of the service.</p>
+    ///   - [`custom_domain_name(Option<String>)`](crate::operation::get_service_network_service_association::GetServiceNetworkServiceAssociationOutput::custom_domain_name): <p>The custom domain name of the service. </p>
     ///   - [`failure_message(Option<String>)`](crate::operation::get_service_network_service_association::GetServiceNetworkServiceAssociationOutput::failure_message): <p>The failure message.</p>
     ///   - [`failure_code(Option<String>)`](crate::operation::get_service_network_service_association::GetServiceNetworkServiceAssociationOutput::failure_code): <p>The failure code.</p>
     /// - On failure, responds with [`SdkError<GetServiceNetworkServiceAssociationError>`](crate::operation::get_service_network_service_association::GetServiceNetworkServiceAssociationError)

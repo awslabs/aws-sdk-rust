@@ -7,7 +7,7 @@ pub struct UpdateWorkspaceImagePermissionInput {
     pub image_id: ::std::option::Option<::std::string::String>,
     /// <p>The permission to copy the image. This permission can be revoked only after an image has been shared.</p>
     pub allow_copy_image: ::std::option::Option<bool>,
-    /// <p>The identifier of the Amazon Web Services account to share or unshare the image with.</p><important>
+    /// <p>The identifier of the Amazon Web Services account to share or unshare the image with.</p> <important>
     /// <p>Before sharing the image, confirm that you are sharing to the correct Amazon Web Services account ID.</p>
     /// </important>
     pub shared_account_id: ::std::option::Option<::std::string::String>,
@@ -21,7 +21,7 @@ impl UpdateWorkspaceImagePermissionInput {
     pub fn allow_copy_image(&self) -> ::std::option::Option<bool> {
         self.allow_copy_image
     }
-    /// <p>The identifier of the Amazon Web Services account to share or unshare the image with.</p><important>
+    /// <p>The identifier of the Amazon Web Services account to share or unshare the image with.</p> <important>
     /// <p>Before sharing the image, confirm that you are sharing to the correct Amazon Web Services account ID.</p>
     /// </important>
     pub fn shared_account_id(&self) -> ::std::option::Option<&str> {
@@ -74,7 +74,7 @@ impl UpdateWorkspaceImagePermissionInputBuilder {
     pub fn get_allow_copy_image(&self) -> &::std::option::Option<bool> {
         &self.allow_copy_image
     }
-    /// <p>The identifier of the Amazon Web Services account to share or unshare the image with.</p><important>
+    /// <p>The identifier of the Amazon Web Services account to share or unshare the image with.</p> <important>
     /// <p>Before sharing the image, confirm that you are sharing to the correct Amazon Web Services account ID.</p>
     /// </important>
     /// This field is required.
@@ -82,14 +82,14 @@ impl UpdateWorkspaceImagePermissionInputBuilder {
         self.shared_account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Web Services account to share or unshare the image with.</p><important>
+    /// <p>The identifier of the Amazon Web Services account to share or unshare the image with.</p> <important>
     /// <p>Before sharing the image, confirm that you are sharing to the correct Amazon Web Services account ID.</p>
     /// </important>
     pub fn set_shared_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.shared_account_id = input;
         self
     }
-    /// <p>The identifier of the Amazon Web Services account to share or unshare the image with.</p><important>
+    /// <p>The identifier of the Amazon Web Services account to share or unshare the image with.</p> <important>
     /// <p>Before sharing the image, confirm that you are sharing to the correct Amazon Web Services account ID.</p>
     /// </important>
     pub fn get_shared_account_id(&self) -> &::std::option::Option<::std::string::String> {

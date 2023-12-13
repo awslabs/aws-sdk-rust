@@ -10,11 +10,11 @@ pub struct ResourceViolation {
     pub aws_ec2_network_interface_violation: ::std::option::Option<crate::types::AwsEc2NetworkInterfaceViolation>,
     /// <p>Violation detail for an EC2 instance.</p>
     pub aws_ec2_instance_violation: ::std::option::Option<crate::types::AwsEc2InstanceViolation>,
-    /// <p>Violation detail for an Network Firewall policy that indicates that a subnet has no Firewall Manager managed firewall in its VPC.</p>
+    /// <p>Violation detail for an Network Firewall policy that indicates that a subnet has no Firewall Manager managed firewall in its VPC. </p>
     pub network_firewall_missing_firewall_violation: ::std::option::Option<crate::types::NetworkFirewallMissingFirewallViolation>,
     /// <p>Violation detail for an Network Firewall policy that indicates that an Availability Zone is missing the expected Firewall Manager managed subnet.</p>
     pub network_firewall_missing_subnet_violation: ::std::option::Option<crate::types::NetworkFirewallMissingSubnetViolation>,
-    /// <p>Violation detail for an Network Firewall policy that indicates that a subnet is not associated with the expected Firewall Manager managed route table.</p>
+    /// <p>Violation detail for an Network Firewall policy that indicates that a subnet is not associated with the expected Firewall Manager managed route table. </p>
     pub network_firewall_missing_expected_rt_violation: ::std::option::Option<crate::types::NetworkFirewallMissingExpectedRtViolation>,
     /// <p>Violation detail for an Network Firewall policy that indicates that a firewall policy in an individual account has been modified in a way that makes it noncompliant. For example, the individual account owner might have deleted a rule group, changed the priority of a stateless rule group, or changed a policy default action.</p>
     pub network_firewall_policy_modified_violation: ::std::option::Option<crate::types::NetworkFirewallPolicyModifiedViolation>,
@@ -32,11 +32,11 @@ pub struct ResourceViolation {
     pub network_firewall_unexpected_gateway_routes_violation: ::std::option::Option<crate::types::NetworkFirewallUnexpectedGatewayRoutesViolation>,
     /// <p>Expected routes are missing from Network Firewall.</p>
     pub network_firewall_missing_expected_routes_violation: ::std::option::Option<crate::types::NetworkFirewallMissingExpectedRoutesViolation>,
-    /// <p>Violation detail for a DNS Firewall policy that indicates that a rule group that Firewall Manager tried to associate with a VPC has the same priority as a rule group that's already associated.</p>
+    /// <p>Violation detail for a DNS Firewall policy that indicates that a rule group that Firewall Manager tried to associate with a VPC has the same priority as a rule group that's already associated. </p>
     pub dns_rule_group_priority_conflict_violation: ::std::option::Option<crate::types::DnsRuleGroupPriorityConflictViolation>,
-    /// <p>Violation detail for a DNS Firewall policy that indicates that a rule group that Firewall Manager tried to associate with a VPC is already associated with the VPC and can't be associated again.</p>
+    /// <p>Violation detail for a DNS Firewall policy that indicates that a rule group that Firewall Manager tried to associate with a VPC is already associated with the VPC and can't be associated again. </p>
     pub dns_duplicate_rule_group_violation: ::std::option::Option<crate::types::DnsDuplicateRuleGroupViolation>,
-    /// <p>Violation detail for a DNS Firewall policy that indicates that the VPC reached the limit for associated DNS Firewall rule groups. Firewall Manager tried to associate another rule group with the VPC and failed.</p>
+    /// <p>Violation detail for a DNS Firewall policy that indicates that the VPC reached the limit for associated DNS Firewall rule groups. Firewall Manager tried to associate another rule group with the VPC and failed. </p>
     pub dns_rule_group_limit_exceeded_violation: ::std::option::Option<crate::types::DnsRuleGroupLimitExceededViolation>,
     /// <p>A list of possible remediation action lists. Each individual possible remediation action is a list of individual remediation actions.</p>
     pub possible_remediation_actions: ::std::option::Option<crate::types::PossibleRemediationActions>,
@@ -67,7 +67,7 @@ impl ResourceViolation {
     pub fn aws_ec2_instance_violation(&self) -> ::std::option::Option<&crate::types::AwsEc2InstanceViolation> {
         self.aws_ec2_instance_violation.as_ref()
     }
-    /// <p>Violation detail for an Network Firewall policy that indicates that a subnet has no Firewall Manager managed firewall in its VPC.</p>
+    /// <p>Violation detail for an Network Firewall policy that indicates that a subnet has no Firewall Manager managed firewall in its VPC. </p>
     pub fn network_firewall_missing_firewall_violation(&self) -> ::std::option::Option<&crate::types::NetworkFirewallMissingFirewallViolation> {
         self.network_firewall_missing_firewall_violation.as_ref()
     }
@@ -75,7 +75,7 @@ impl ResourceViolation {
     pub fn network_firewall_missing_subnet_violation(&self) -> ::std::option::Option<&crate::types::NetworkFirewallMissingSubnetViolation> {
         self.network_firewall_missing_subnet_violation.as_ref()
     }
-    /// <p>Violation detail for an Network Firewall policy that indicates that a subnet is not associated with the expected Firewall Manager managed route table.</p>
+    /// <p>Violation detail for an Network Firewall policy that indicates that a subnet is not associated with the expected Firewall Manager managed route table. </p>
     pub fn network_firewall_missing_expected_rt_violation(&self) -> ::std::option::Option<&crate::types::NetworkFirewallMissingExpectedRtViolation> {
         self.network_firewall_missing_expected_rt_violation.as_ref()
     }
@@ -119,15 +119,15 @@ impl ResourceViolation {
     ) -> ::std::option::Option<&crate::types::NetworkFirewallMissingExpectedRoutesViolation> {
         self.network_firewall_missing_expected_routes_violation.as_ref()
     }
-    /// <p>Violation detail for a DNS Firewall policy that indicates that a rule group that Firewall Manager tried to associate with a VPC has the same priority as a rule group that's already associated.</p>
+    /// <p>Violation detail for a DNS Firewall policy that indicates that a rule group that Firewall Manager tried to associate with a VPC has the same priority as a rule group that's already associated. </p>
     pub fn dns_rule_group_priority_conflict_violation(&self) -> ::std::option::Option<&crate::types::DnsRuleGroupPriorityConflictViolation> {
         self.dns_rule_group_priority_conflict_violation.as_ref()
     }
-    /// <p>Violation detail for a DNS Firewall policy that indicates that a rule group that Firewall Manager tried to associate with a VPC is already associated with the VPC and can't be associated again.</p>
+    /// <p>Violation detail for a DNS Firewall policy that indicates that a rule group that Firewall Manager tried to associate with a VPC is already associated with the VPC and can't be associated again. </p>
     pub fn dns_duplicate_rule_group_violation(&self) -> ::std::option::Option<&crate::types::DnsDuplicateRuleGroupViolation> {
         self.dns_duplicate_rule_group_violation.as_ref()
     }
-    /// <p>Violation detail for a DNS Firewall policy that indicates that the VPC reached the limit for associated DNS Firewall rule groups. Firewall Manager tried to associate another rule group with the VPC and failed.</p>
+    /// <p>Violation detail for a DNS Firewall policy that indicates that the VPC reached the limit for associated DNS Firewall rule groups. Firewall Manager tried to associate another rule group with the VPC and failed. </p>
     pub fn dns_rule_group_limit_exceeded_violation(&self) -> ::std::option::Option<&crate::types::DnsRuleGroupLimitExceededViolation> {
         self.dns_rule_group_limit_exceeded_violation.as_ref()
     }
@@ -248,12 +248,12 @@ impl ResourceViolationBuilder {
     pub fn get_aws_ec2_instance_violation(&self) -> &::std::option::Option<crate::types::AwsEc2InstanceViolation> {
         &self.aws_ec2_instance_violation
     }
-    /// <p>Violation detail for an Network Firewall policy that indicates that a subnet has no Firewall Manager managed firewall in its VPC.</p>
+    /// <p>Violation detail for an Network Firewall policy that indicates that a subnet has no Firewall Manager managed firewall in its VPC. </p>
     pub fn network_firewall_missing_firewall_violation(mut self, input: crate::types::NetworkFirewallMissingFirewallViolation) -> Self {
         self.network_firewall_missing_firewall_violation = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Violation detail for an Network Firewall policy that indicates that a subnet has no Firewall Manager managed firewall in its VPC.</p>
+    /// <p>Violation detail for an Network Firewall policy that indicates that a subnet has no Firewall Manager managed firewall in its VPC. </p>
     pub fn set_network_firewall_missing_firewall_violation(
         mut self,
         input: ::std::option::Option<crate::types::NetworkFirewallMissingFirewallViolation>,
@@ -261,7 +261,7 @@ impl ResourceViolationBuilder {
         self.network_firewall_missing_firewall_violation = input;
         self
     }
-    /// <p>Violation detail for an Network Firewall policy that indicates that a subnet has no Firewall Manager managed firewall in its VPC.</p>
+    /// <p>Violation detail for an Network Firewall policy that indicates that a subnet has no Firewall Manager managed firewall in its VPC. </p>
     pub fn get_network_firewall_missing_firewall_violation(&self) -> &::std::option::Option<crate::types::NetworkFirewallMissingFirewallViolation> {
         &self.network_firewall_missing_firewall_violation
     }
@@ -282,12 +282,12 @@ impl ResourceViolationBuilder {
     pub fn get_network_firewall_missing_subnet_violation(&self) -> &::std::option::Option<crate::types::NetworkFirewallMissingSubnetViolation> {
         &self.network_firewall_missing_subnet_violation
     }
-    /// <p>Violation detail for an Network Firewall policy that indicates that a subnet is not associated with the expected Firewall Manager managed route table.</p>
+    /// <p>Violation detail for an Network Firewall policy that indicates that a subnet is not associated with the expected Firewall Manager managed route table. </p>
     pub fn network_firewall_missing_expected_rt_violation(mut self, input: crate::types::NetworkFirewallMissingExpectedRtViolation) -> Self {
         self.network_firewall_missing_expected_rt_violation = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Violation detail for an Network Firewall policy that indicates that a subnet is not associated with the expected Firewall Manager managed route table.</p>
+    /// <p>Violation detail for an Network Firewall policy that indicates that a subnet is not associated with the expected Firewall Manager managed route table. </p>
     pub fn set_network_firewall_missing_expected_rt_violation(
         mut self,
         input: ::std::option::Option<crate::types::NetworkFirewallMissingExpectedRtViolation>,
@@ -295,7 +295,7 @@ impl ResourceViolationBuilder {
         self.network_firewall_missing_expected_rt_violation = input;
         self
     }
-    /// <p>Violation detail for an Network Firewall policy that indicates that a subnet is not associated with the expected Firewall Manager managed route table.</p>
+    /// <p>Violation detail for an Network Firewall policy that indicates that a subnet is not associated with the expected Firewall Manager managed route table. </p>
     pub fn get_network_firewall_missing_expected_rt_violation(
         &self,
     ) -> &::std::option::Option<crate::types::NetworkFirewallMissingExpectedRtViolation> {
@@ -447,12 +447,12 @@ impl ResourceViolationBuilder {
     ) -> &::std::option::Option<crate::types::NetworkFirewallMissingExpectedRoutesViolation> {
         &self.network_firewall_missing_expected_routes_violation
     }
-    /// <p>Violation detail for a DNS Firewall policy that indicates that a rule group that Firewall Manager tried to associate with a VPC has the same priority as a rule group that's already associated.</p>
+    /// <p>Violation detail for a DNS Firewall policy that indicates that a rule group that Firewall Manager tried to associate with a VPC has the same priority as a rule group that's already associated. </p>
     pub fn dns_rule_group_priority_conflict_violation(mut self, input: crate::types::DnsRuleGroupPriorityConflictViolation) -> Self {
         self.dns_rule_group_priority_conflict_violation = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Violation detail for a DNS Firewall policy that indicates that a rule group that Firewall Manager tried to associate with a VPC has the same priority as a rule group that's already associated.</p>
+    /// <p>Violation detail for a DNS Firewall policy that indicates that a rule group that Firewall Manager tried to associate with a VPC has the same priority as a rule group that's already associated. </p>
     pub fn set_dns_rule_group_priority_conflict_violation(
         mut self,
         input: ::std::option::Option<crate::types::DnsRuleGroupPriorityConflictViolation>,
@@ -460,30 +460,30 @@ impl ResourceViolationBuilder {
         self.dns_rule_group_priority_conflict_violation = input;
         self
     }
-    /// <p>Violation detail for a DNS Firewall policy that indicates that a rule group that Firewall Manager tried to associate with a VPC has the same priority as a rule group that's already associated.</p>
+    /// <p>Violation detail for a DNS Firewall policy that indicates that a rule group that Firewall Manager tried to associate with a VPC has the same priority as a rule group that's already associated. </p>
     pub fn get_dns_rule_group_priority_conflict_violation(&self) -> &::std::option::Option<crate::types::DnsRuleGroupPriorityConflictViolation> {
         &self.dns_rule_group_priority_conflict_violation
     }
-    /// <p>Violation detail for a DNS Firewall policy that indicates that a rule group that Firewall Manager tried to associate with a VPC is already associated with the VPC and can't be associated again.</p>
+    /// <p>Violation detail for a DNS Firewall policy that indicates that a rule group that Firewall Manager tried to associate with a VPC is already associated with the VPC and can't be associated again. </p>
     pub fn dns_duplicate_rule_group_violation(mut self, input: crate::types::DnsDuplicateRuleGroupViolation) -> Self {
         self.dns_duplicate_rule_group_violation = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Violation detail for a DNS Firewall policy that indicates that a rule group that Firewall Manager tried to associate with a VPC is already associated with the VPC and can't be associated again.</p>
+    /// <p>Violation detail for a DNS Firewall policy that indicates that a rule group that Firewall Manager tried to associate with a VPC is already associated with the VPC and can't be associated again. </p>
     pub fn set_dns_duplicate_rule_group_violation(mut self, input: ::std::option::Option<crate::types::DnsDuplicateRuleGroupViolation>) -> Self {
         self.dns_duplicate_rule_group_violation = input;
         self
     }
-    /// <p>Violation detail for a DNS Firewall policy that indicates that a rule group that Firewall Manager tried to associate with a VPC is already associated with the VPC and can't be associated again.</p>
+    /// <p>Violation detail for a DNS Firewall policy that indicates that a rule group that Firewall Manager tried to associate with a VPC is already associated with the VPC and can't be associated again. </p>
     pub fn get_dns_duplicate_rule_group_violation(&self) -> &::std::option::Option<crate::types::DnsDuplicateRuleGroupViolation> {
         &self.dns_duplicate_rule_group_violation
     }
-    /// <p>Violation detail for a DNS Firewall policy that indicates that the VPC reached the limit for associated DNS Firewall rule groups. Firewall Manager tried to associate another rule group with the VPC and failed.</p>
+    /// <p>Violation detail for a DNS Firewall policy that indicates that the VPC reached the limit for associated DNS Firewall rule groups. Firewall Manager tried to associate another rule group with the VPC and failed. </p>
     pub fn dns_rule_group_limit_exceeded_violation(mut self, input: crate::types::DnsRuleGroupLimitExceededViolation) -> Self {
         self.dns_rule_group_limit_exceeded_violation = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Violation detail for a DNS Firewall policy that indicates that the VPC reached the limit for associated DNS Firewall rule groups. Firewall Manager tried to associate another rule group with the VPC and failed.</p>
+    /// <p>Violation detail for a DNS Firewall policy that indicates that the VPC reached the limit for associated DNS Firewall rule groups. Firewall Manager tried to associate another rule group with the VPC and failed. </p>
     pub fn set_dns_rule_group_limit_exceeded_violation(
         mut self,
         input: ::std::option::Option<crate::types::DnsRuleGroupLimitExceededViolation>,
@@ -491,7 +491,7 @@ impl ResourceViolationBuilder {
         self.dns_rule_group_limit_exceeded_violation = input;
         self
     }
-    /// <p>Violation detail for a DNS Firewall policy that indicates that the VPC reached the limit for associated DNS Firewall rule groups. Firewall Manager tried to associate another rule group with the VPC and failed.</p>
+    /// <p>Violation detail for a DNS Firewall policy that indicates that the VPC reached the limit for associated DNS Firewall rule groups. Firewall Manager tried to associate another rule group with the VPC and failed. </p>
     pub fn get_dns_rule_group_limit_exceeded_violation(&self) -> &::std::option::Option<crate::types::DnsRuleGroupLimitExceededViolation> {
         &self.dns_rule_group_limit_exceeded_violation
     }

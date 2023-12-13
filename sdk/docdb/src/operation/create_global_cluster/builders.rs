@@ -24,7 +24,7 @@ impl CreateGlobalClusterInputBuilder {
 ///
 /// <p>Creates an Amazon DocumentDB global cluster that can span multiple multiple Amazon Web Services Regions. The global cluster contains one primary cluster with read-write capability, and up-to give read-only secondary clusters. Global clusters uses storage-based fast replication across regions with latencies less than one second, using dedicated infrastructure with no impact to your workload’s performance.</p>
 /// <p></p>
-/// <p>You can create a global cluster that is initially empty, and then add a primary and a secondary to it. Or you can specify an existing cluster during the create operation, and this cluster becomes the primary of the global cluster.</p><note>
+/// <p>You can create a global cluster that is initially empty, and then add a primary and a secondary to it. Or you can specify an existing cluster during the create operation, and this cluster becomes the primary of the global cluster. </p> <note>
 /// <p>This action only applies to Amazon DocumentDB clusters.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -168,17 +168,17 @@ impl CreateGlobalClusterFluentBuilder {
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_engine_version()
     }
-    /// <p>The deletion protection setting for the new global cluster. The global cluster can't be deleted when deletion protection is enabled.</p>
+    /// <p>The deletion protection setting for the new global cluster. The global cluster can't be deleted when deletion protection is enabled. </p>
     pub fn deletion_protection(mut self, input: bool) -> Self {
         self.inner = self.inner.deletion_protection(input);
         self
     }
-    /// <p>The deletion protection setting for the new global cluster. The global cluster can't be deleted when deletion protection is enabled.</p>
+    /// <p>The deletion protection setting for the new global cluster. The global cluster can't be deleted when deletion protection is enabled. </p>
     pub fn set_deletion_protection(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_deletion_protection(input);
         self
     }
-    /// <p>The deletion protection setting for the new global cluster. The global cluster can't be deleted when deletion protection is enabled.</p>
+    /// <p>The deletion protection setting for the new global cluster. The global cluster can't be deleted when deletion protection is enabled. </p>
     pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
         self.inner.get_deletion_protection()
     }
@@ -196,17 +196,17 @@ impl CreateGlobalClusterFluentBuilder {
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_database_name()
     }
-    /// <p>The storage encryption setting for the new global cluster.</p>
+    /// <p>The storage encryption setting for the new global cluster. </p>
     pub fn storage_encrypted(mut self, input: bool) -> Self {
         self.inner = self.inner.storage_encrypted(input);
         self
     }
-    /// <p>The storage encryption setting for the new global cluster.</p>
+    /// <p>The storage encryption setting for the new global cluster. </p>
     pub fn set_storage_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_storage_encrypted(input);
         self
     }
-    /// <p>The storage encryption setting for the new global cluster.</p>
+    /// <p>The storage encryption setting for the new global cluster. </p>
     pub fn get_storage_encrypted(&self) -> &::std::option::Option<bool> {
         self.inner.get_storage_encrypted()
     }

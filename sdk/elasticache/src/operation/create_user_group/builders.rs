@@ -22,7 +22,7 @@ impl CreateUserGroupInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateUserGroup`.
 ///
-/// <p>For Redis engine version 6.0 onwards: Creates a Redis user group. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using Role Based Access Control (RBAC)</a></p>
+/// <p>For Redis engine version 6.0 onwards: Creates a Redis user group. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using Role Based Access Control (RBAC)</a> </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateUserGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -122,17 +122,17 @@ impl CreateUserGroupFluentBuilder {
     pub fn get_user_group_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_group_id()
     }
-    /// <p>The current supported value is Redis.</p>
+    /// <p>The current supported value is Redis. </p>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.engine(input.into());
         self
     }
-    /// <p>The current supported value is Redis.</p>
+    /// <p>The current supported value is Redis. </p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_engine(input);
         self
     }
-    /// <p>The current supported value is Redis.</p>
+    /// <p>The current supported value is Redis. </p>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_engine()
     }

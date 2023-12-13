@@ -23,15 +23,12 @@ impl ListActivityTypesInputBuilder {
 /// Fluent builder constructing a request to `ListActivityTypes`.
 ///
 /// <p>Returns information about all activities registered in the specified domain that match the specified name and registration status. The result includes information like creation date, current status of the activity, etc. The results may be split into multiple pages. To retrieve subsequent pages, make the call again using the <code>nextPageToken</code> returned by the initial call.</p>
-/// <p><b>Access Control</b></p>
+/// <p> <b>Access Control</b> </p>
 /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p>
 /// <ul>
-/// <li>
-/// <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p></li>
-/// <li>
-/// <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p></li>
-/// <li>
-/// <p>You cannot use an IAM policy to constrain this action's parameters.</p></li>
+/// <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li>
+/// <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li>
+/// <li> <p>You cannot use an IAM policy to constrain this action's parameters.</p> </li>
 /// </ul>
 /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -167,34 +164,34 @@ impl ListActivityTypesFluentBuilder {
     pub fn get_registration_status(&self) -> &::std::option::Option<crate::types::RegistrationStatus> {
         self.inner.get_registration_status()
     }
-    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>".</p>
-    /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
+    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+    /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
     pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_page_token(input.into());
         self
     }
-    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>".</p>
-    /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
+    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+    /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
     pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_page_token(input);
         self
     }
-    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>".</p>
-    /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
+    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+    /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
     pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_page_token()
     }
-    /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results.</p>
+    /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
     pub fn maximum_page_size(mut self, input: i32) -> Self {
         self.inner = self.inner.maximum_page_size(input);
         self
     }
-    /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results.</p>
+    /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
     pub fn set_maximum_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_maximum_page_size(input);
         self
     }
-    /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results.</p>
+    /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
     pub fn get_maximum_page_size(&self) -> &::std::option::Option<i32> {
         self.inner.get_maximum_page_size()
     }

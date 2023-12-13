@@ -42,9 +42,9 @@ pub struct ResourceMapping {
     pub mapping_type: crate::types::ResourceMappingType,
     /// <p>Identifier of the physical resource.</p>
     pub physical_resource_id: ::std::option::Option<crate::types::PhysicalResourceId>,
-    /// <p>The short name of the Terraform source.</p>
+    /// <p> The short name of the Terraform source. </p>
     pub terraform_source_name: ::std::option::Option<::std::string::String>,
-    /// <p>Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p><note>
+    /// <p>Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p> <note>
     /// <p>This parameter accepts values in "eks-cluster/namespace" format.</p>
     /// </note>
     pub eks_source_name: ::std::option::Option<::std::string::String>,
@@ -100,11 +100,11 @@ impl ResourceMapping {
     pub fn physical_resource_id(&self) -> ::std::option::Option<&crate::types::PhysicalResourceId> {
         self.physical_resource_id.as_ref()
     }
-    /// <p>The short name of the Terraform source.</p>
+    /// <p> The short name of the Terraform source. </p>
     pub fn terraform_source_name(&self) -> ::std::option::Option<&str> {
         self.terraform_source_name.as_deref()
     }
-    /// <p>Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p><note>
+    /// <p>Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p> <note>
     /// <p>This parameter accepts values in "eks-cluster/namespace" format.</p>
     /// </note>
     pub fn eks_source_name(&self) -> ::std::option::Option<&str> {
@@ -296,35 +296,35 @@ impl ResourceMappingBuilder {
     pub fn get_physical_resource_id(&self) -> &::std::option::Option<crate::types::PhysicalResourceId> {
         &self.physical_resource_id
     }
-    /// <p>The short name of the Terraform source.</p>
+    /// <p> The short name of the Terraform source. </p>
     pub fn terraform_source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.terraform_source_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The short name of the Terraform source.</p>
+    /// <p> The short name of the Terraform source. </p>
     pub fn set_terraform_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.terraform_source_name = input;
         self
     }
-    /// <p>The short name of the Terraform source.</p>
+    /// <p> The short name of the Terraform source. </p>
     pub fn get_terraform_source_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.terraform_source_name
     }
-    /// <p>Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p><note>
+    /// <p>Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p> <note>
     /// <p>This parameter accepts values in "eks-cluster/namespace" format.</p>
     /// </note>
     pub fn eks_source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.eks_source_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p><note>
+    /// <p>Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p> <note>
     /// <p>This parameter accepts values in "eks-cluster/namespace" format.</p>
     /// </note>
     pub fn set_eks_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.eks_source_name = input;
         self
     }
-    /// <p>Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p><note>
+    /// <p>Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p> <note>
     /// <p>This parameter accepts values in "eks-cluster/namespace" format.</p>
     /// </note>
     pub fn get_eks_source_name(&self) -> &::std::option::Option<::std::string::String> {

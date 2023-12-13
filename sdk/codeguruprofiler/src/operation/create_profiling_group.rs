@@ -277,11 +277,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateProfili
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreateProfilingGroupError {
-    /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request.</p>
+    /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request. </p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>The server encountered an internal error and is unable to complete the request.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p>You have exceeded your service quota. To perform the requested action, remove some of the relevant resources, or use <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/intro.html">Service Quotas</a> to request a service quota increase.</p>
+    /// <p>You have exceeded your service quota. To perform the requested action, remove some of the relevant resources, or use <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/intro.html">Service Quotas</a> to request a service quota increase. </p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::types::error::ThrottlingException),

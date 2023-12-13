@@ -16,7 +16,7 @@ pub struct JobExecution {
     pub queued_at: i64,
     /// <p>The time, in milliseconds since the epoch, when the job execution was started.</p>
     pub started_at: ::std::option::Option<i64>,
-    /// <p>The time, in milliseconds since the epoch, when the job execution was last updated.</p>
+    /// <p>The time, in milliseconds since the epoch, when the job execution was last updated. </p>
     pub last_updated_at: i64,
     /// <p>The estimated number of seconds that remain before the job execution status will be changed to <code>TIMED_OUT</code>.</p>
     pub approximate_seconds_before_timed_out: ::std::option::Option<i64>,
@@ -52,7 +52,7 @@ impl JobExecution {
     pub fn started_at(&self) -> ::std::option::Option<i64> {
         self.started_at
     }
-    /// <p>The time, in milliseconds since the epoch, when the job execution was last updated.</p>
+    /// <p>The time, in milliseconds since the epoch, when the job execution was last updated. </p>
     pub fn last_updated_at(&self) -> i64 {
         self.last_updated_at
     }
@@ -194,17 +194,17 @@ impl JobExecutionBuilder {
     pub fn get_started_at(&self) -> &::std::option::Option<i64> {
         &self.started_at
     }
-    /// <p>The time, in milliseconds since the epoch, when the job execution was last updated.</p>
+    /// <p>The time, in milliseconds since the epoch, when the job execution was last updated. </p>
     pub fn last_updated_at(mut self, input: i64) -> Self {
         self.last_updated_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time, in milliseconds since the epoch, when the job execution was last updated.</p>
+    /// <p>The time, in milliseconds since the epoch, when the job execution was last updated. </p>
     pub fn set_last_updated_at(mut self, input: ::std::option::Option<i64>) -> Self {
         self.last_updated_at = input;
         self
     }
-    /// <p>The time, in milliseconds since the epoch, when the job execution was last updated.</p>
+    /// <p>The time, in milliseconds since the epoch, when the job execution was last updated. </p>
     pub fn get_last_updated_at(&self) -> &::std::option::Option<i64> {
         &self.last_updated_at
     }

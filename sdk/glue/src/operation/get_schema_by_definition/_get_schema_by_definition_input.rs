@@ -5,10 +5,8 @@
 pub struct GetSchemaByDefinitionInput {
     /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
     /// <ul>
-    /// <li>
-    /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p></li>
-    /// <li>
-    /// <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p></li>
+    /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
+    /// <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
     /// </ul>
     pub schema_id: ::std::option::Option<crate::types::SchemaId>,
     /// <p>The definition of the schema for which schema details are required.</p>
@@ -17,10 +15,8 @@ pub struct GetSchemaByDefinitionInput {
 impl GetSchemaByDefinitionInput {
     /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
     /// <ul>
-    /// <li>
-    /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p></li>
-    /// <li>
-    /// <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p></li>
+    /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
+    /// <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
     /// </ul>
     pub fn schema_id(&self) -> ::std::option::Option<&crate::types::SchemaId> {
         self.schema_id.as_ref()
@@ -47,10 +43,8 @@ pub struct GetSchemaByDefinitionInputBuilder {
 impl GetSchemaByDefinitionInputBuilder {
     /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
     /// <ul>
-    /// <li>
-    /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p></li>
-    /// <li>
-    /// <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p></li>
+    /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
+    /// <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn schema_id(mut self, input: crate::types::SchemaId) -> Self {
@@ -59,10 +53,8 @@ impl GetSchemaByDefinitionInputBuilder {
     }
     /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
     /// <ul>
-    /// <li>
-    /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p></li>
-    /// <li>
-    /// <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p></li>
+    /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
+    /// <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
     /// </ul>
     pub fn set_schema_id(mut self, input: ::std::option::Option<crate::types::SchemaId>) -> Self {
         self.schema_id = input;
@@ -70,10 +62,8 @@ impl GetSchemaByDefinitionInputBuilder {
     }
     /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
     /// <ul>
-    /// <li>
-    /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p></li>
-    /// <li>
-    /// <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p></li>
+    /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
+    /// <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
     /// </ul>
     pub fn get_schema_id(&self) -> &::std::option::Option<crate::types::SchemaId> {
         &self.schema_id

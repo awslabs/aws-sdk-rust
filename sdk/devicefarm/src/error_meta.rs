@@ -9,7 +9,7 @@ pub enum Error {
     CannotDeleteException(crate::types::error::CannotDeleteException),
     /// <p>An entity with the same name already exists.</p>
     IdempotencyException(crate::types::error::IdempotencyException),
-    /// <p>An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this error.</p>
+    /// <p>An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this error. </p>
     InternalServiceException(crate::types::error::InternalServiceException),
     /// <p>There was an error with the update request, or you do not have sufficient permissions to update this VPC endpoint configuration.</p>
     InvalidOperationException(crate::types::error::InvalidOperationException),
@@ -25,7 +25,7 @@ pub enum Error {
     TagOperationException(crate::types::error::TagOperationException),
     /// <p>The request doesn't comply with the AWS Identity and Access Management (IAM) tag policy. Correct your request and then retry it.</p>
     TagPolicyException(crate::types::error::TagPolicyException),
-    /// <p>The list of tags on the repository is over the limit. The maximum number of tags that can be applied to a repository is 50.</p>
+    /// <p>The list of tags on the repository is over the limit. The maximum number of tags that can be applied to a repository is 50. </p>
     TooManyTagsException(crate::types::error::TooManyTagsException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

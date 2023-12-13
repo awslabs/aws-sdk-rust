@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAssessmentReportOutput {
-    /// <p>Specifies the status of the request to generate an assessment report.</p>
+    /// <p>Specifies the status of the request to generate an assessment report. </p>
     pub status: crate::types::ReportStatus,
     /// <p>Specifies the URL where you can find the generated assessment report. This parameter is only returned if the report is successfully generated.</p>
     pub url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetAssessmentReportOutput {
-    /// <p>Specifies the status of the request to generate an assessment report.</p>
+    /// <p>Specifies the status of the request to generate an assessment report. </p>
     pub fn status(&self) -> &crate::types::ReportStatus {
         &self.status
     }
@@ -40,18 +40,18 @@ pub struct GetAssessmentReportOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetAssessmentReportOutputBuilder {
-    /// <p>Specifies the status of the request to generate an assessment report.</p>
+    /// <p>Specifies the status of the request to generate an assessment report. </p>
     /// This field is required.
     pub fn status(mut self, input: crate::types::ReportStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the status of the request to generate an assessment report.</p>
+    /// <p>Specifies the status of the request to generate an assessment report. </p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ReportStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>Specifies the status of the request to generate an assessment report.</p>
+    /// <p>Specifies the status of the request to generate an assessment report. </p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ReportStatus> {
         &self.status
     }

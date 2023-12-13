@@ -22,7 +22,7 @@ impl UpdateShareInvitationInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateShareInvitation`.
 ///
-/// <p>Update a workload or custom lens share invitation.</p><note>
+/// <p>Update a workload or custom lens share invitation.</p> <note>
 /// <p>This API operation can be called independently of any resource. Previous documentation implied that a workload ARN must be specified.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

@@ -14,18 +14,14 @@ pub struct StackInstanceResourceDriftsSummary {
     pub physical_resource_id_context: ::std::option::Option<::std::vec::Vec<crate::types::PhysicalResourceIdContextKeyValuePair>>,
     /// <p>Type of resource. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a> in the CloudFormation User Guide.</p>
     pub resource_type: ::std::option::Option<::std::string::String>,
-    /// <p>Status of the actual configuration of the resource compared to its expected configuration. These will be present only for resources whose <code>StackInstanceResourceDriftStatus</code> is <code>MODIFIED</code>.</p>
+    /// <p>Status of the actual configuration of the resource compared to its expected configuration. These will be present only for resources whose <code>StackInstanceResourceDriftStatus</code> is <code>MODIFIED</code>. </p>
     pub property_differences: ::std::option::Option<::std::vec::Vec<crate::types::PropertyDifference>>,
     /// <p>The drift status of the resource in a stack instance.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>DELETED</code>: The resource differs from its expected template configuration in that the resource has been deleted.</p></li>
-    /// <li>
-    /// <p><code>MODIFIED</code>: One or more resource properties differ from their expected template values.</p></li>
-    /// <li>
-    /// <p><code>IN_SYNC</code>: The resource's actual configuration matches its expected template configuration.</p></li>
-    /// <li>
-    /// <p><code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.</p></li>
+    /// <li> <p> <code>DELETED</code>: The resource differs from its expected template configuration in that the resource has been deleted.</p> </li>
+    /// <li> <p> <code>MODIFIED</code>: One or more resource properties differ from their expected template values.</p> </li>
+    /// <li> <p> <code>IN_SYNC</code>: The resource's actual configuration matches its expected template configuration.</p> </li>
+    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.</p> </li>
     /// </ul>
     pub stack_resource_drift_status: ::std::option::Option<crate::types::StackResourceDriftStatus>,
     /// <p>Time at which the stack instance drift detection operation was initiated.</p>
@@ -54,7 +50,7 @@ impl StackInstanceResourceDriftsSummary {
     pub fn resource_type(&self) -> ::std::option::Option<&str> {
         self.resource_type.as_deref()
     }
-    /// <p>Status of the actual configuration of the resource compared to its expected configuration. These will be present only for resources whose <code>StackInstanceResourceDriftStatus</code> is <code>MODIFIED</code>.</p>
+    /// <p>Status of the actual configuration of the resource compared to its expected configuration. These will be present only for resources whose <code>StackInstanceResourceDriftStatus</code> is <code>MODIFIED</code>. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.property_differences.is_none()`.
     pub fn property_differences(&self) -> &[crate::types::PropertyDifference] {
@@ -62,14 +58,10 @@ impl StackInstanceResourceDriftsSummary {
     }
     /// <p>The drift status of the resource in a stack instance.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>DELETED</code>: The resource differs from its expected template configuration in that the resource has been deleted.</p></li>
-    /// <li>
-    /// <p><code>MODIFIED</code>: One or more resource properties differ from their expected template values.</p></li>
-    /// <li>
-    /// <p><code>IN_SYNC</code>: The resource's actual configuration matches its expected template configuration.</p></li>
-    /// <li>
-    /// <p><code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.</p></li>
+    /// <li> <p> <code>DELETED</code>: The resource differs from its expected template configuration in that the resource has been deleted.</p> </li>
+    /// <li> <p> <code>MODIFIED</code>: One or more resource properties differ from their expected template values.</p> </li>
+    /// <li> <p> <code>IN_SYNC</code>: The resource's actual configuration matches its expected template configuration.</p> </li>
+    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.</p> </li>
     /// </ul>
     pub fn stack_resource_drift_status(&self) -> ::std::option::Option<&crate::types::StackResourceDriftStatus> {
         self.stack_resource_drift_status.as_ref()
@@ -186,32 +178,28 @@ impl StackInstanceResourceDriftsSummaryBuilder {
     ///
     /// To override the contents of this collection use [`set_property_differences`](Self::set_property_differences).
     ///
-    /// <p>Status of the actual configuration of the resource compared to its expected configuration. These will be present only for resources whose <code>StackInstanceResourceDriftStatus</code> is <code>MODIFIED</code>.</p>
+    /// <p>Status of the actual configuration of the resource compared to its expected configuration. These will be present only for resources whose <code>StackInstanceResourceDriftStatus</code> is <code>MODIFIED</code>. </p>
     pub fn property_differences(mut self, input: crate::types::PropertyDifference) -> Self {
         let mut v = self.property_differences.unwrap_or_default();
         v.push(input);
         self.property_differences = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Status of the actual configuration of the resource compared to its expected configuration. These will be present only for resources whose <code>StackInstanceResourceDriftStatus</code> is <code>MODIFIED</code>.</p>
+    /// <p>Status of the actual configuration of the resource compared to its expected configuration. These will be present only for resources whose <code>StackInstanceResourceDriftStatus</code> is <code>MODIFIED</code>. </p>
     pub fn set_property_differences(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PropertyDifference>>) -> Self {
         self.property_differences = input;
         self
     }
-    /// <p>Status of the actual configuration of the resource compared to its expected configuration. These will be present only for resources whose <code>StackInstanceResourceDriftStatus</code> is <code>MODIFIED</code>.</p>
+    /// <p>Status of the actual configuration of the resource compared to its expected configuration. These will be present only for resources whose <code>StackInstanceResourceDriftStatus</code> is <code>MODIFIED</code>. </p>
     pub fn get_property_differences(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PropertyDifference>> {
         &self.property_differences
     }
     /// <p>The drift status of the resource in a stack instance.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>DELETED</code>: The resource differs from its expected template configuration in that the resource has been deleted.</p></li>
-    /// <li>
-    /// <p><code>MODIFIED</code>: One or more resource properties differ from their expected template values.</p></li>
-    /// <li>
-    /// <p><code>IN_SYNC</code>: The resource's actual configuration matches its expected template configuration.</p></li>
-    /// <li>
-    /// <p><code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.</p></li>
+    /// <li> <p> <code>DELETED</code>: The resource differs from its expected template configuration in that the resource has been deleted.</p> </li>
+    /// <li> <p> <code>MODIFIED</code>: One or more resource properties differ from their expected template values.</p> </li>
+    /// <li> <p> <code>IN_SYNC</code>: The resource's actual configuration matches its expected template configuration.</p> </li>
+    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn stack_resource_drift_status(mut self, input: crate::types::StackResourceDriftStatus) -> Self {
@@ -220,14 +208,10 @@ impl StackInstanceResourceDriftsSummaryBuilder {
     }
     /// <p>The drift status of the resource in a stack instance.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>DELETED</code>: The resource differs from its expected template configuration in that the resource has been deleted.</p></li>
-    /// <li>
-    /// <p><code>MODIFIED</code>: One or more resource properties differ from their expected template values.</p></li>
-    /// <li>
-    /// <p><code>IN_SYNC</code>: The resource's actual configuration matches its expected template configuration.</p></li>
-    /// <li>
-    /// <p><code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.</p></li>
+    /// <li> <p> <code>DELETED</code>: The resource differs from its expected template configuration in that the resource has been deleted.</p> </li>
+    /// <li> <p> <code>MODIFIED</code>: One or more resource properties differ from their expected template values.</p> </li>
+    /// <li> <p> <code>IN_SYNC</code>: The resource's actual configuration matches its expected template configuration.</p> </li>
+    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.</p> </li>
     /// </ul>
     pub fn set_stack_resource_drift_status(mut self, input: ::std::option::Option<crate::types::StackResourceDriftStatus>) -> Self {
         self.stack_resource_drift_status = input;
@@ -235,14 +219,10 @@ impl StackInstanceResourceDriftsSummaryBuilder {
     }
     /// <p>The drift status of the resource in a stack instance.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>DELETED</code>: The resource differs from its expected template configuration in that the resource has been deleted.</p></li>
-    /// <li>
-    /// <p><code>MODIFIED</code>: One or more resource properties differ from their expected template values.</p></li>
-    /// <li>
-    /// <p><code>IN_SYNC</code>: The resource's actual configuration matches its expected template configuration.</p></li>
-    /// <li>
-    /// <p><code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.</p></li>
+    /// <li> <p> <code>DELETED</code>: The resource differs from its expected template configuration in that the resource has been deleted.</p> </li>
+    /// <li> <p> <code>MODIFIED</code>: One or more resource properties differ from their expected template values.</p> </li>
+    /// <li> <p> <code>IN_SYNC</code>: The resource's actual configuration matches its expected template configuration.</p> </li>
+    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.</p> </li>
     /// </ul>
     pub fn get_stack_resource_drift_status(&self) -> &::std::option::Option<crate::types::StackResourceDriftStatus> {
         &self.stack_resource_drift_status

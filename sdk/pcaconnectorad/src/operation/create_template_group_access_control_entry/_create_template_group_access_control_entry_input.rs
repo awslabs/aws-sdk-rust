@@ -9,7 +9,7 @@ pub struct CreateTemplateGroupAccessControlEntryInput {
     pub group_security_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Name of the Active Directory group. This name does not need to match the group name in Active Directory.</p>
     pub group_display_name: ::std::option::Option<::std::string::String>,
-    /// <p>Allow or deny permissions for an Active Directory group to enroll or autoenroll certificates for a template.</p>
+    /// <p> Allow or deny permissions for an Active Directory group to enroll or autoenroll certificates for a template.</p>
     pub access_rights: ::std::option::Option<crate::types::AccessRights>,
     /// <p>Idempotency token.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -27,7 +27,7 @@ impl CreateTemplateGroupAccessControlEntryInput {
     pub fn group_display_name(&self) -> ::std::option::Option<&str> {
         self.group_display_name.as_deref()
     }
-    /// <p>Allow or deny permissions for an Active Directory group to enroll or autoenroll certificates for a template.</p>
+    /// <p> Allow or deny permissions for an Active Directory group to enroll or autoenroll certificates for a template.</p>
     pub fn access_rights(&self) -> ::std::option::Option<&crate::types::AccessRights> {
         self.access_rights.as_ref()
     }
@@ -99,18 +99,18 @@ impl CreateTemplateGroupAccessControlEntryInputBuilder {
     pub fn get_group_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.group_display_name
     }
-    /// <p>Allow or deny permissions for an Active Directory group to enroll or autoenroll certificates for a template.</p>
+    /// <p> Allow or deny permissions for an Active Directory group to enroll or autoenroll certificates for a template.</p>
     /// This field is required.
     pub fn access_rights(mut self, input: crate::types::AccessRights) -> Self {
         self.access_rights = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Allow or deny permissions for an Active Directory group to enroll or autoenroll certificates for a template.</p>
+    /// <p> Allow or deny permissions for an Active Directory group to enroll or autoenroll certificates for a template.</p>
     pub fn set_access_rights(mut self, input: ::std::option::Option<crate::types::AccessRights>) -> Self {
         self.access_rights = input;
         self
     }
-    /// <p>Allow or deny permissions for an Active Directory group to enroll or autoenroll certificates for a template.</p>
+    /// <p> Allow or deny permissions for an Active Directory group to enroll or autoenroll certificates for a template.</p>
     pub fn get_access_rights(&self) -> &::std::option::Option<crate::types::AccessRights> {
         &self.access_rights
     }

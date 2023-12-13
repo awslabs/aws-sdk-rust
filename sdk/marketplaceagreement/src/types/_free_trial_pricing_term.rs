@@ -6,7 +6,7 @@
 pub struct FreeTrialPricingTerm {
     /// <p>Category of the term.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
-    /// <p>Duration of the free trial period (5–31 days).</p>
+    /// <p>Duration of the free trial period (5–31 days). </p>
     pub duration: ::std::option::Option<::std::string::String>,
     /// <p>Entitlements granted to the acceptor of a free trial as part of an agreement execution.</p>
     pub grants: ::std::option::Option<::std::vec::Vec<crate::types::GrantItem>>,
@@ -16,7 +16,7 @@ impl FreeTrialPricingTerm {
     pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
-    /// <p>Duration of the free trial period (5–31 days).</p>
+    /// <p>Duration of the free trial period (5–31 days). </p>
     pub fn duration(&self) -> ::std::option::Option<&str> {
         self.duration.as_deref()
     }
@@ -57,17 +57,17 @@ impl FreeTrialPricingTermBuilder {
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.r#type
     }
-    /// <p>Duration of the free trial period (5–31 days).</p>
+    /// <p>Duration of the free trial period (5–31 days). </p>
     pub fn duration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.duration = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Duration of the free trial period (5–31 days).</p>
+    /// <p>Duration of the free trial period (5–31 days). </p>
     pub fn set_duration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.duration = input;
         self
     }
-    /// <p>Duration of the free trial period (5–31 days).</p>
+    /// <p>Duration of the free trial period (5–31 days). </p>
     pub fn get_duration(&self) -> &::std::option::Option<::std::string::String> {
         &self.duration
     }

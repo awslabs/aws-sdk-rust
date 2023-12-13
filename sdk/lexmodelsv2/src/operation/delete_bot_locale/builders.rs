@@ -123,17 +123,17 @@ impl DeleteBotLocaleFluentBuilder {
     pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_bot_id()
     }
-    /// <p>The version of the bot that contains the locale.</p>
+    /// <p>The version of the bot that contains the locale. </p>
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bot_version(input.into());
         self
     }
-    /// <p>The version of the bot that contains the locale.</p>
+    /// <p>The version of the bot that contains the locale. </p>
     pub fn set_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bot_version(input);
         self
     }
-    /// <p>The version of the bot that contains the locale.</p>
+    /// <p>The version of the bot that contains the locale. </p>
     pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_bot_version()
     }

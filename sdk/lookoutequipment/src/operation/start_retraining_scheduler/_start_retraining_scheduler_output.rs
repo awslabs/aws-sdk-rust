@@ -3,24 +3,24 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartRetrainingSchedulerOutput {
-    /// <p>The name of the model whose retraining scheduler is being started.</p>
+    /// <p>The name of the model whose retraining scheduler is being started. </p>
     pub model_name: ::std::option::Option<::std::string::String>,
-    /// <p>The ARN of the model whose retraining scheduler is being started.</p>
+    /// <p>The ARN of the model whose retraining scheduler is being started. </p>
     pub model_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The status of the retraining scheduler.</p>
+    /// <p>The status of the retraining scheduler. </p>
     pub status: ::std::option::Option<crate::types::RetrainingSchedulerStatus>,
     _request_id: Option<String>,
 }
 impl StartRetrainingSchedulerOutput {
-    /// <p>The name of the model whose retraining scheduler is being started.</p>
+    /// <p>The name of the model whose retraining scheduler is being started. </p>
     pub fn model_name(&self) -> ::std::option::Option<&str> {
         self.model_name.as_deref()
     }
-    /// <p>The ARN of the model whose retraining scheduler is being started.</p>
+    /// <p>The ARN of the model whose retraining scheduler is being started. </p>
     pub fn model_arn(&self) -> ::std::option::Option<&str> {
         self.model_arn.as_deref()
     }
-    /// <p>The status of the retraining scheduler.</p>
+    /// <p>The status of the retraining scheduler. </p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::RetrainingSchedulerStatus> {
         self.status.as_ref()
     }
@@ -47,45 +47,45 @@ pub struct StartRetrainingSchedulerOutputBuilder {
     _request_id: Option<String>,
 }
 impl StartRetrainingSchedulerOutputBuilder {
-    /// <p>The name of the model whose retraining scheduler is being started.</p>
+    /// <p>The name of the model whose retraining scheduler is being started. </p>
     pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the model whose retraining scheduler is being started.</p>
+    /// <p>The name of the model whose retraining scheduler is being started. </p>
     pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_name = input;
         self
     }
-    /// <p>The name of the model whose retraining scheduler is being started.</p>
+    /// <p>The name of the model whose retraining scheduler is being started. </p>
     pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_name
     }
-    /// <p>The ARN of the model whose retraining scheduler is being started.</p>
+    /// <p>The ARN of the model whose retraining scheduler is being started. </p>
     pub fn model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the model whose retraining scheduler is being started.</p>
+    /// <p>The ARN of the model whose retraining scheduler is being started. </p>
     pub fn set_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_arn = input;
         self
     }
-    /// <p>The ARN of the model whose retraining scheduler is being started.</p>
+    /// <p>The ARN of the model whose retraining scheduler is being started. </p>
     pub fn get_model_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_arn
     }
-    /// <p>The status of the retraining scheduler.</p>
+    /// <p>The status of the retraining scheduler. </p>
     pub fn status(mut self, input: crate::types::RetrainingSchedulerStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the retraining scheduler.</p>
+    /// <p>The status of the retraining scheduler. </p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::RetrainingSchedulerStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of the retraining scheduler.</p>
+    /// <p>The status of the retraining scheduler. </p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::RetrainingSchedulerStatus> {
         &self.status
     }

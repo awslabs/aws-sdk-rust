@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartDataIngestionJobOutput {
-    /// <p>Indicates the job ID of the data ingestion job.</p>
+    /// <p>Indicates the job ID of the data ingestion job. </p>
     pub job_id: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates the status of the <code>StartDataIngestionJob</code> operation.</p>
+    /// <p>Indicates the status of the <code>StartDataIngestionJob</code> operation. </p>
     pub status: ::std::option::Option<crate::types::IngestionJobStatus>,
     _request_id: Option<String>,
 }
 impl StartDataIngestionJobOutput {
-    /// <p>Indicates the job ID of the data ingestion job.</p>
+    /// <p>Indicates the job ID of the data ingestion job. </p>
     pub fn job_id(&self) -> ::std::option::Option<&str> {
         self.job_id.as_deref()
     }
-    /// <p>Indicates the status of the <code>StartDataIngestionJob</code> operation.</p>
+    /// <p>Indicates the status of the <code>StartDataIngestionJob</code> operation. </p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::IngestionJobStatus> {
         self.status.as_ref()
     }
@@ -40,31 +40,31 @@ pub struct StartDataIngestionJobOutputBuilder {
     _request_id: Option<String>,
 }
 impl StartDataIngestionJobOutputBuilder {
-    /// <p>Indicates the job ID of the data ingestion job.</p>
+    /// <p>Indicates the job ID of the data ingestion job. </p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Indicates the job ID of the data ingestion job.</p>
+    /// <p>Indicates the job ID of the data ingestion job. </p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_id = input;
         self
     }
-    /// <p>Indicates the job ID of the data ingestion job.</p>
+    /// <p>Indicates the job ID of the data ingestion job. </p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_id
     }
-    /// <p>Indicates the status of the <code>StartDataIngestionJob</code> operation.</p>
+    /// <p>Indicates the status of the <code>StartDataIngestionJob</code> operation. </p>
     pub fn status(mut self, input: crate::types::IngestionJobStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates the status of the <code>StartDataIngestionJob</code> operation.</p>
+    /// <p>Indicates the status of the <code>StartDataIngestionJob</code> operation. </p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::IngestionJobStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>Indicates the status of the <code>StartDataIngestionJob</code> operation.</p>
+    /// <p>Indicates the status of the <code>StartDataIngestionJob</code> operation. </p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::IngestionJobStatus> {
         &self.status
     }

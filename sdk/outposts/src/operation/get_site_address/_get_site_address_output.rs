@@ -5,9 +5,9 @@
 pub struct GetSiteAddressOutput {
     /// <p>The ID of the site.</p>
     pub site_id: ::std::option::Option<::std::string::String>,
-    /// <p>The type of the address you receive.</p>
+    /// <p>The type of the address you receive. </p>
     pub address_type: ::std::option::Option<crate::types::AddressType>,
-    /// <p>Information about the address.</p>
+    /// <p> Information about the address. </p>
     pub address: ::std::option::Option<crate::types::Address>,
     _request_id: Option<String>,
 }
@@ -16,11 +16,11 @@ impl GetSiteAddressOutput {
     pub fn site_id(&self) -> ::std::option::Option<&str> {
         self.site_id.as_deref()
     }
-    /// <p>The type of the address you receive.</p>
+    /// <p>The type of the address you receive. </p>
     pub fn address_type(&self) -> ::std::option::Option<&crate::types::AddressType> {
         self.address_type.as_ref()
     }
-    /// <p>Information about the address.</p>
+    /// <p> Information about the address. </p>
     pub fn address(&self) -> ::std::option::Option<&crate::types::Address> {
         self.address.as_ref()
     }
@@ -61,31 +61,31 @@ impl GetSiteAddressOutputBuilder {
     pub fn get_site_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.site_id
     }
-    /// <p>The type of the address you receive.</p>
+    /// <p>The type of the address you receive. </p>
     pub fn address_type(mut self, input: crate::types::AddressType) -> Self {
         self.address_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of the address you receive.</p>
+    /// <p>The type of the address you receive. </p>
     pub fn set_address_type(mut self, input: ::std::option::Option<crate::types::AddressType>) -> Self {
         self.address_type = input;
         self
     }
-    /// <p>The type of the address you receive.</p>
+    /// <p>The type of the address you receive. </p>
     pub fn get_address_type(&self) -> &::std::option::Option<crate::types::AddressType> {
         &self.address_type
     }
-    /// <p>Information about the address.</p>
+    /// <p> Information about the address. </p>
     pub fn address(mut self, input: crate::types::Address) -> Self {
         self.address = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Information about the address.</p>
+    /// <p> Information about the address. </p>
     pub fn set_address(mut self, input: ::std::option::Option<crate::types::Address>) -> Self {
         self.address = input;
         self
     }
-    /// <p>Information about the address.</p>
+    /// <p> Information about the address. </p>
     pub fn get_address(&self) -> &::std::option::Option<crate::types::Address> {
         &self.address
     }

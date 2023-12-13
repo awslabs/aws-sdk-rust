@@ -137,7 +137,7 @@ impl CreateTopicRuleFluentBuilder {
     pub fn get_topic_rule_payload(&self) -> &::std::option::Option<crate::types::TopicRulePayload> {
         self.inner.get_topic_rule_payload()
     }
-    /// <p>Metadata which can be used to manage the topic rule.</p><note>
+    /// <p>Metadata which can be used to manage the topic rule.</p> <note>
     /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
     /// <p>For the CLI command-line parameter use format: --tags "key1=value1&amp;key2=value2..."</p>
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
@@ -146,7 +146,7 @@ impl CreateTopicRuleFluentBuilder {
         self.inner = self.inner.tags(input.into());
         self
     }
-    /// <p>Metadata which can be used to manage the topic rule.</p><note>
+    /// <p>Metadata which can be used to manage the topic rule.</p> <note>
     /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
     /// <p>For the CLI command-line parameter use format: --tags "key1=value1&amp;key2=value2..."</p>
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
@@ -155,7 +155,7 @@ impl CreateTopicRuleFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>Metadata which can be used to manage the topic rule.</p><note>
+    /// <p>Metadata which can be used to manage the topic rule.</p> <note>
     /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
     /// <p>For the CLI command-line parameter use format: --tags "key1=value1&amp;key2=value2..."</p>
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>

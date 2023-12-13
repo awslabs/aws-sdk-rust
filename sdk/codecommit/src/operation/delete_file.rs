@@ -249,7 +249,7 @@ pub enum DeleteFileError {
     BranchNameIsTagNameException(crate::types::error::BranchNameIsTagNameException),
     /// <p>A branch name is required, but was not specified.</p>
     BranchNameRequiredException(crate::types::error::BranchNameRequiredException),
-    /// <p>The commit message is too long. Provide a shorter string.</p>
+    /// <p>The commit message is too long. Provide a shorter string. </p>
     CommitMessageLengthExceededException(crate::types::error::CommitMessageLengthExceededException),
     /// <p>An encryption integrity check failed.</p>
     EncryptionIntegrityChecksFailedException(crate::types::error::EncryptionIntegrityChecksFailedException),
@@ -271,11 +271,11 @@ pub enum DeleteFileError {
     InvalidParentCommitIdException(crate::types::error::InvalidParentCommitIdException),
     /// <p>The specified path is not valid.</p>
     InvalidPathException(crate::types::error::InvalidPathException),
-    /// <p>A specified repository name is not valid.</p><note>
+    /// <p>A specified repository name is not valid.</p> <note>
     /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::types::error::InvalidRepositoryNameException),
-    /// <p>The user name is not valid because it has exceeded the character limit for author names.</p>
+    /// <p>The user name is not valid because it has exceeded the character limit for author names. </p>
     NameLengthExceededException(crate::types::error::NameLengthExceededException),
     /// <p>The parent commit ID is not valid because it does not exist. The specified parent commit ID does not exist in the specified branch of the repository.</p>
     ParentCommitDoesNotExistException(crate::types::error::ParentCommitDoesNotExistException),

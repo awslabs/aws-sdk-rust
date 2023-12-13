@@ -12,7 +12,6 @@
 #![allow(clippy::result_large_err)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
-#![cfg_attr(docsrs, feature(doc_auto_cfg))]
 //! Identity and Access Management Roles Anywhere provides a secure way for your workloads such as servers, containers, and applications that run outside of Amazon Web Services to obtain temporary Amazon Web Services credentials. Your workloads can use the same IAM policies and roles you have for native Amazon Web Services applications to access Amazon Web Services resources. Using IAM Roles Anywhere eliminates the need to manage long-term credentials for workloads running outside of Amazon Web Services.
 //!
 //! To use IAM Roles Anywhere, your workloads must use X.509 certificates issued by their certificate authority (CA). You register the CA with IAM Roles Anywhere as a trust anchor to establish trust between your public key infrastructure (PKI) and IAM Roles Anywhere. If you don't manage your own PKI system, you can use Private Certificate Authority to create a CA and then use that to establish trust with IAM Roles Anywhere.
@@ -30,8 +29,8 @@
 //!
 //! ```toml
 //! [dependencies]
-//! aws-config = { version = "1.1.0", features = ["behavior-version-latest"] }
-//! aws-sdk-rolesanywhere = "1.5.0"
+//! aws-config = { version = "1.0.3", features = ["behavior-version-latest"] }
+//! aws-sdk-rolesanywhere = "1.6.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -191,11 +190,11 @@ pub(crate) mod protocol_serde;
 
 mod serialization_settings;
 
-mod endpoint_lib;
-
 mod lens;
 
 mod serde_util;
+
+mod endpoint_lib;
 
 mod json_errors;
 

@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartBatchDeleteConfigurationTaskOutput {
-    /// <p>The unique identifier associated with the newly started deletion task.</p>
+    /// <p> The unique identifier associated with the newly started deletion task. </p>
     pub task_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl StartBatchDeleteConfigurationTaskOutput {
-    /// <p>The unique identifier associated with the newly started deletion task.</p>
+    /// <p> The unique identifier associated with the newly started deletion task. </p>
     pub fn task_id(&self) -> ::std::option::Option<&str> {
         self.task_id.as_deref()
     }
@@ -33,17 +33,17 @@ pub struct StartBatchDeleteConfigurationTaskOutputBuilder {
     _request_id: Option<String>,
 }
 impl StartBatchDeleteConfigurationTaskOutputBuilder {
-    /// <p>The unique identifier associated with the newly started deletion task.</p>
+    /// <p> The unique identifier associated with the newly started deletion task. </p>
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier associated with the newly started deletion task.</p>
+    /// <p> The unique identifier associated with the newly started deletion task. </p>
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_id = input;
         self
     }
-    /// <p>The unique identifier associated with the newly started deletion task.</p>
+    /// <p> The unique identifier associated with the newly started deletion task. </p>
     pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.task_id
     }

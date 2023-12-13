@@ -20,10 +20,8 @@ pub struct JournalS3ExportDescription {
     pub s3_export_configuration: ::std::option::Option<crate::types::S3ExportConfiguration>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal export job to do the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.</p></li>
-    /// <li>
-    /// <p>(Optional) Use your customer managed key in Key Management Service (KMS) for server-side encryption of your exported data.</p></li>
+    /// <li> <p>Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li>
+    /// <li> <p>(Optional) Use your customer managed key in Key Management Service (KMS) for server-side encryption of your exported data.</p> </li>
     /// </ul>
     pub role_arn: ::std::string::String,
     /// <p>The output format of the exported journal data.</p>
@@ -62,10 +60,8 @@ impl JournalS3ExportDescription {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal export job to do the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.</p></li>
-    /// <li>
-    /// <p>(Optional) Use your customer managed key in Key Management Service (KMS) for server-side encryption of your exported data.</p></li>
+    /// <li> <p>Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li>
+    /// <li> <p>(Optional) Use your customer managed key in Key Management Service (KMS) for server-side encryption of your exported data.</p> </li>
     /// </ul>
     pub fn role_arn(&self) -> &str {
         use std::ops::Deref;
@@ -205,10 +201,8 @@ impl JournalS3ExportDescriptionBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal export job to do the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.</p></li>
-    /// <li>
-    /// <p>(Optional) Use your customer managed key in Key Management Service (KMS) for server-side encryption of your exported data.</p></li>
+    /// <li> <p>Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li>
+    /// <li> <p>(Optional) Use your customer managed key in Key Management Service (KMS) for server-side encryption of your exported data.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -217,10 +211,8 @@ impl JournalS3ExportDescriptionBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal export job to do the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.</p></li>
-    /// <li>
-    /// <p>(Optional) Use your customer managed key in Key Management Service (KMS) for server-side encryption of your exported data.</p></li>
+    /// <li> <p>Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li>
+    /// <li> <p>(Optional) Use your customer managed key in Key Management Service (KMS) for server-side encryption of your exported data.</p> </li>
     /// </ul>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
@@ -228,10 +220,8 @@ impl JournalS3ExportDescriptionBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal export job to do the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.</p></li>
-    /// <li>
-    /// <p>(Optional) Use your customer managed key in Key Management Service (KMS) for server-side encryption of your exported data.</p></li>
+    /// <li> <p>Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li>
+    /// <li> <p>(Optional) Use your customer managed key in Key Management Service (KMS) for server-side encryption of your exported data.</p> </li>
     /// </ul>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn

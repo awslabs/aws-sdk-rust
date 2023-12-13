@@ -15,7 +15,7 @@ pub struct CreateWorkloadInput {
     pub account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The list of Amazon Web Services Regions associated with the workload, for example, <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
     pub aws_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The list of non-Amazon Web Services Regions associated with the workload.</p>
+    /// <p> The list of non-Amazon Web Services Regions associated with the workload.</p>
     pub non_aws_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The priorities of the pillars, which are used to order items in the improvement plan. Each pillar is represented by its <code>PillarReviewSummary$PillarId</code>.</p>
     pub pillar_priorities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -26,60 +26,33 @@ pub struct CreateWorkloadInput {
     /// <p>The industry type for the workload.</p>
     /// <p>If specified, must be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Agriculture</code></p></li>
-    /// <li>
-    /// <p><code>Automobile</code></p></li>
-    /// <li>
-    /// <p><code>Defense</code></p></li>
-    /// <li>
-    /// <p><code>Design and Engineering</code></p></li>
-    /// <li>
-    /// <p><code>Digital Advertising</code></p></li>
-    /// <li>
-    /// <p><code>Education</code></p></li>
-    /// <li>
-    /// <p><code>Environmental Protection</code></p></li>
-    /// <li>
-    /// <p><code>Financial Services</code></p></li>
-    /// <li>
-    /// <p><code>Gaming</code></p></li>
-    /// <li>
-    /// <p><code>General Public Services</code></p></li>
-    /// <li>
-    /// <p><code>Healthcare</code></p></li>
-    /// <li>
-    /// <p><code>Hospitality</code></p></li>
-    /// <li>
-    /// <p><code>InfoTech</code></p></li>
-    /// <li>
-    /// <p><code>Justice and Public Safety</code></p></li>
-    /// <li>
-    /// <p><code>Life Sciences</code></p></li>
-    /// <li>
-    /// <p><code>Manufacturing</code></p></li>
-    /// <li>
-    /// <p><code>Media &amp; Entertainment</code></p></li>
-    /// <li>
-    /// <p><code>Mining &amp; Resources</code></p></li>
-    /// <li>
-    /// <p><code>Oil &amp; Gas</code></p></li>
-    /// <li>
-    /// <p><code>Power &amp; Utilities</code></p></li>
-    /// <li>
-    /// <p><code>Professional Services</code></p></li>
-    /// <li>
-    /// <p><code>Real Estate &amp; Construction</code></p></li>
-    /// <li>
-    /// <p><code>Retail &amp; Wholesale</code></p></li>
-    /// <li>
-    /// <p><code>Social Protection</code></p></li>
-    /// <li>
-    /// <p><code>Telecommunications</code></p></li>
-    /// <li>
-    /// <p><code>Travel, Transportation &amp; Logistics</code></p></li>
-    /// <li>
-    /// <p><code>Other</code></p></li>
+    /// <li> <p> <code>Agriculture</code> </p> </li>
+    /// <li> <p> <code>Automobile</code> </p> </li>
+    /// <li> <p> <code>Defense</code> </p> </li>
+    /// <li> <p> <code>Design and Engineering</code> </p> </li>
+    /// <li> <p> <code>Digital Advertising</code> </p> </li>
+    /// <li> <p> <code>Education</code> </p> </li>
+    /// <li> <p> <code>Environmental Protection</code> </p> </li>
+    /// <li> <p> <code>Financial Services</code> </p> </li>
+    /// <li> <p> <code>Gaming</code> </p> </li>
+    /// <li> <p> <code>General Public Services</code> </p> </li>
+    /// <li> <p> <code>Healthcare</code> </p> </li>
+    /// <li> <p> <code>Hospitality</code> </p> </li>
+    /// <li> <p> <code>InfoTech</code> </p> </li>
+    /// <li> <p> <code>Justice and Public Safety</code> </p> </li>
+    /// <li> <p> <code>Life Sciences</code> </p> </li>
+    /// <li> <p> <code>Manufacturing</code> </p> </li>
+    /// <li> <p> <code>Media &amp; Entertainment</code> </p> </li>
+    /// <li> <p> <code>Mining &amp; Resources</code> </p> </li>
+    /// <li> <p> <code>Oil &amp; Gas</code> </p> </li>
+    /// <li> <p> <code>Power &amp; Utilities</code> </p> </li>
+    /// <li> <p> <code>Professional Services</code> </p> </li>
+    /// <li> <p> <code>Real Estate &amp; Construction</code> </p> </li>
+    /// <li> <p> <code>Retail &amp; Wholesale</code> </p> </li>
+    /// <li> <p> <code>Social Protection</code> </p> </li>
+    /// <li> <p> <code>Telecommunications</code> </p> </li>
+    /// <li> <p> <code>Travel, Transportation &amp; Logistics</code> </p> </li>
+    /// <li> <p> <code>Other</code> </p> </li>
     /// </ul>
     pub industry_type: ::std::option::Option<::std::string::String>,
     /// <p>The industry for the workload.</p>
@@ -91,7 +64,7 @@ pub struct CreateWorkloadInput {
     /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
     pub notes: ::std::option::Option<::std::string::String>,
     /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
-    /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p><important>
+    /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
     /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
     pub client_request_token: ::std::option::Option<::std::string::String>,
@@ -132,7 +105,7 @@ impl CreateWorkloadInput {
     pub fn aws_regions(&self) -> &[::std::string::String] {
         self.aws_regions.as_deref().unwrap_or_default()
     }
-    /// <p>The list of non-Amazon Web Services Regions associated with the workload.</p>
+    /// <p> The list of non-Amazon Web Services Regions associated with the workload.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.non_aws_regions.is_none()`.
     pub fn non_aws_regions(&self) -> &[::std::string::String] {
@@ -155,60 +128,33 @@ impl CreateWorkloadInput {
     /// <p>The industry type for the workload.</p>
     /// <p>If specified, must be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Agriculture</code></p></li>
-    /// <li>
-    /// <p><code>Automobile</code></p></li>
-    /// <li>
-    /// <p><code>Defense</code></p></li>
-    /// <li>
-    /// <p><code>Design and Engineering</code></p></li>
-    /// <li>
-    /// <p><code>Digital Advertising</code></p></li>
-    /// <li>
-    /// <p><code>Education</code></p></li>
-    /// <li>
-    /// <p><code>Environmental Protection</code></p></li>
-    /// <li>
-    /// <p><code>Financial Services</code></p></li>
-    /// <li>
-    /// <p><code>Gaming</code></p></li>
-    /// <li>
-    /// <p><code>General Public Services</code></p></li>
-    /// <li>
-    /// <p><code>Healthcare</code></p></li>
-    /// <li>
-    /// <p><code>Hospitality</code></p></li>
-    /// <li>
-    /// <p><code>InfoTech</code></p></li>
-    /// <li>
-    /// <p><code>Justice and Public Safety</code></p></li>
-    /// <li>
-    /// <p><code>Life Sciences</code></p></li>
-    /// <li>
-    /// <p><code>Manufacturing</code></p></li>
-    /// <li>
-    /// <p><code>Media &amp; Entertainment</code></p></li>
-    /// <li>
-    /// <p><code>Mining &amp; Resources</code></p></li>
-    /// <li>
-    /// <p><code>Oil &amp; Gas</code></p></li>
-    /// <li>
-    /// <p><code>Power &amp; Utilities</code></p></li>
-    /// <li>
-    /// <p><code>Professional Services</code></p></li>
-    /// <li>
-    /// <p><code>Real Estate &amp; Construction</code></p></li>
-    /// <li>
-    /// <p><code>Retail &amp; Wholesale</code></p></li>
-    /// <li>
-    /// <p><code>Social Protection</code></p></li>
-    /// <li>
-    /// <p><code>Telecommunications</code></p></li>
-    /// <li>
-    /// <p><code>Travel, Transportation &amp; Logistics</code></p></li>
-    /// <li>
-    /// <p><code>Other</code></p></li>
+    /// <li> <p> <code>Agriculture</code> </p> </li>
+    /// <li> <p> <code>Automobile</code> </p> </li>
+    /// <li> <p> <code>Defense</code> </p> </li>
+    /// <li> <p> <code>Design and Engineering</code> </p> </li>
+    /// <li> <p> <code>Digital Advertising</code> </p> </li>
+    /// <li> <p> <code>Education</code> </p> </li>
+    /// <li> <p> <code>Environmental Protection</code> </p> </li>
+    /// <li> <p> <code>Financial Services</code> </p> </li>
+    /// <li> <p> <code>Gaming</code> </p> </li>
+    /// <li> <p> <code>General Public Services</code> </p> </li>
+    /// <li> <p> <code>Healthcare</code> </p> </li>
+    /// <li> <p> <code>Hospitality</code> </p> </li>
+    /// <li> <p> <code>InfoTech</code> </p> </li>
+    /// <li> <p> <code>Justice and Public Safety</code> </p> </li>
+    /// <li> <p> <code>Life Sciences</code> </p> </li>
+    /// <li> <p> <code>Manufacturing</code> </p> </li>
+    /// <li> <p> <code>Media &amp; Entertainment</code> </p> </li>
+    /// <li> <p> <code>Mining &amp; Resources</code> </p> </li>
+    /// <li> <p> <code>Oil &amp; Gas</code> </p> </li>
+    /// <li> <p> <code>Power &amp; Utilities</code> </p> </li>
+    /// <li> <p> <code>Professional Services</code> </p> </li>
+    /// <li> <p> <code>Real Estate &amp; Construction</code> </p> </li>
+    /// <li> <p> <code>Retail &amp; Wholesale</code> </p> </li>
+    /// <li> <p> <code>Social Protection</code> </p> </li>
+    /// <li> <p> <code>Telecommunications</code> </p> </li>
+    /// <li> <p> <code>Travel, Transportation &amp; Logistics</code> </p> </li>
+    /// <li> <p> <code>Other</code> </p> </li>
     /// </ul>
     pub fn industry_type(&self) -> ::std::option::Option<&str> {
         self.industry_type.as_deref()
@@ -230,7 +176,7 @@ impl CreateWorkloadInput {
         self.notes.as_deref()
     }
     /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
-    /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p><important>
+    /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
     /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
     pub fn client_request_token(&self) -> ::std::option::Option<&str> {
@@ -387,19 +333,19 @@ impl CreateWorkloadInputBuilder {
     ///
     /// To override the contents of this collection use [`set_non_aws_regions`](Self::set_non_aws_regions).
     ///
-    /// <p>The list of non-Amazon Web Services Regions associated with the workload.</p>
+    /// <p> The list of non-Amazon Web Services Regions associated with the workload.</p>
     pub fn non_aws_regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.non_aws_regions.unwrap_or_default();
         v.push(input.into());
         self.non_aws_regions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of non-Amazon Web Services Regions associated with the workload.</p>
+    /// <p> The list of non-Amazon Web Services Regions associated with the workload.</p>
     pub fn set_non_aws_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.non_aws_regions = input;
         self
     }
-    /// <p>The list of non-Amazon Web Services Regions associated with the workload.</p>
+    /// <p> The list of non-Amazon Web Services Regions associated with the workload.</p>
     pub fn get_non_aws_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.non_aws_regions
     }
@@ -454,60 +400,33 @@ impl CreateWorkloadInputBuilder {
     /// <p>The industry type for the workload.</p>
     /// <p>If specified, must be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Agriculture</code></p></li>
-    /// <li>
-    /// <p><code>Automobile</code></p></li>
-    /// <li>
-    /// <p><code>Defense</code></p></li>
-    /// <li>
-    /// <p><code>Design and Engineering</code></p></li>
-    /// <li>
-    /// <p><code>Digital Advertising</code></p></li>
-    /// <li>
-    /// <p><code>Education</code></p></li>
-    /// <li>
-    /// <p><code>Environmental Protection</code></p></li>
-    /// <li>
-    /// <p><code>Financial Services</code></p></li>
-    /// <li>
-    /// <p><code>Gaming</code></p></li>
-    /// <li>
-    /// <p><code>General Public Services</code></p></li>
-    /// <li>
-    /// <p><code>Healthcare</code></p></li>
-    /// <li>
-    /// <p><code>Hospitality</code></p></li>
-    /// <li>
-    /// <p><code>InfoTech</code></p></li>
-    /// <li>
-    /// <p><code>Justice and Public Safety</code></p></li>
-    /// <li>
-    /// <p><code>Life Sciences</code></p></li>
-    /// <li>
-    /// <p><code>Manufacturing</code></p></li>
-    /// <li>
-    /// <p><code>Media &amp; Entertainment</code></p></li>
-    /// <li>
-    /// <p><code>Mining &amp; Resources</code></p></li>
-    /// <li>
-    /// <p><code>Oil &amp; Gas</code></p></li>
-    /// <li>
-    /// <p><code>Power &amp; Utilities</code></p></li>
-    /// <li>
-    /// <p><code>Professional Services</code></p></li>
-    /// <li>
-    /// <p><code>Real Estate &amp; Construction</code></p></li>
-    /// <li>
-    /// <p><code>Retail &amp; Wholesale</code></p></li>
-    /// <li>
-    /// <p><code>Social Protection</code></p></li>
-    /// <li>
-    /// <p><code>Telecommunications</code></p></li>
-    /// <li>
-    /// <p><code>Travel, Transportation &amp; Logistics</code></p></li>
-    /// <li>
-    /// <p><code>Other</code></p></li>
+    /// <li> <p> <code>Agriculture</code> </p> </li>
+    /// <li> <p> <code>Automobile</code> </p> </li>
+    /// <li> <p> <code>Defense</code> </p> </li>
+    /// <li> <p> <code>Design and Engineering</code> </p> </li>
+    /// <li> <p> <code>Digital Advertising</code> </p> </li>
+    /// <li> <p> <code>Education</code> </p> </li>
+    /// <li> <p> <code>Environmental Protection</code> </p> </li>
+    /// <li> <p> <code>Financial Services</code> </p> </li>
+    /// <li> <p> <code>Gaming</code> </p> </li>
+    /// <li> <p> <code>General Public Services</code> </p> </li>
+    /// <li> <p> <code>Healthcare</code> </p> </li>
+    /// <li> <p> <code>Hospitality</code> </p> </li>
+    /// <li> <p> <code>InfoTech</code> </p> </li>
+    /// <li> <p> <code>Justice and Public Safety</code> </p> </li>
+    /// <li> <p> <code>Life Sciences</code> </p> </li>
+    /// <li> <p> <code>Manufacturing</code> </p> </li>
+    /// <li> <p> <code>Media &amp; Entertainment</code> </p> </li>
+    /// <li> <p> <code>Mining &amp; Resources</code> </p> </li>
+    /// <li> <p> <code>Oil &amp; Gas</code> </p> </li>
+    /// <li> <p> <code>Power &amp; Utilities</code> </p> </li>
+    /// <li> <p> <code>Professional Services</code> </p> </li>
+    /// <li> <p> <code>Real Estate &amp; Construction</code> </p> </li>
+    /// <li> <p> <code>Retail &amp; Wholesale</code> </p> </li>
+    /// <li> <p> <code>Social Protection</code> </p> </li>
+    /// <li> <p> <code>Telecommunications</code> </p> </li>
+    /// <li> <p> <code>Travel, Transportation &amp; Logistics</code> </p> </li>
+    /// <li> <p> <code>Other</code> </p> </li>
     /// </ul>
     pub fn industry_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.industry_type = ::std::option::Option::Some(input.into());
@@ -516,60 +435,33 @@ impl CreateWorkloadInputBuilder {
     /// <p>The industry type for the workload.</p>
     /// <p>If specified, must be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Agriculture</code></p></li>
-    /// <li>
-    /// <p><code>Automobile</code></p></li>
-    /// <li>
-    /// <p><code>Defense</code></p></li>
-    /// <li>
-    /// <p><code>Design and Engineering</code></p></li>
-    /// <li>
-    /// <p><code>Digital Advertising</code></p></li>
-    /// <li>
-    /// <p><code>Education</code></p></li>
-    /// <li>
-    /// <p><code>Environmental Protection</code></p></li>
-    /// <li>
-    /// <p><code>Financial Services</code></p></li>
-    /// <li>
-    /// <p><code>Gaming</code></p></li>
-    /// <li>
-    /// <p><code>General Public Services</code></p></li>
-    /// <li>
-    /// <p><code>Healthcare</code></p></li>
-    /// <li>
-    /// <p><code>Hospitality</code></p></li>
-    /// <li>
-    /// <p><code>InfoTech</code></p></li>
-    /// <li>
-    /// <p><code>Justice and Public Safety</code></p></li>
-    /// <li>
-    /// <p><code>Life Sciences</code></p></li>
-    /// <li>
-    /// <p><code>Manufacturing</code></p></li>
-    /// <li>
-    /// <p><code>Media &amp; Entertainment</code></p></li>
-    /// <li>
-    /// <p><code>Mining &amp; Resources</code></p></li>
-    /// <li>
-    /// <p><code>Oil &amp; Gas</code></p></li>
-    /// <li>
-    /// <p><code>Power &amp; Utilities</code></p></li>
-    /// <li>
-    /// <p><code>Professional Services</code></p></li>
-    /// <li>
-    /// <p><code>Real Estate &amp; Construction</code></p></li>
-    /// <li>
-    /// <p><code>Retail &amp; Wholesale</code></p></li>
-    /// <li>
-    /// <p><code>Social Protection</code></p></li>
-    /// <li>
-    /// <p><code>Telecommunications</code></p></li>
-    /// <li>
-    /// <p><code>Travel, Transportation &amp; Logistics</code></p></li>
-    /// <li>
-    /// <p><code>Other</code></p></li>
+    /// <li> <p> <code>Agriculture</code> </p> </li>
+    /// <li> <p> <code>Automobile</code> </p> </li>
+    /// <li> <p> <code>Defense</code> </p> </li>
+    /// <li> <p> <code>Design and Engineering</code> </p> </li>
+    /// <li> <p> <code>Digital Advertising</code> </p> </li>
+    /// <li> <p> <code>Education</code> </p> </li>
+    /// <li> <p> <code>Environmental Protection</code> </p> </li>
+    /// <li> <p> <code>Financial Services</code> </p> </li>
+    /// <li> <p> <code>Gaming</code> </p> </li>
+    /// <li> <p> <code>General Public Services</code> </p> </li>
+    /// <li> <p> <code>Healthcare</code> </p> </li>
+    /// <li> <p> <code>Hospitality</code> </p> </li>
+    /// <li> <p> <code>InfoTech</code> </p> </li>
+    /// <li> <p> <code>Justice and Public Safety</code> </p> </li>
+    /// <li> <p> <code>Life Sciences</code> </p> </li>
+    /// <li> <p> <code>Manufacturing</code> </p> </li>
+    /// <li> <p> <code>Media &amp; Entertainment</code> </p> </li>
+    /// <li> <p> <code>Mining &amp; Resources</code> </p> </li>
+    /// <li> <p> <code>Oil &amp; Gas</code> </p> </li>
+    /// <li> <p> <code>Power &amp; Utilities</code> </p> </li>
+    /// <li> <p> <code>Professional Services</code> </p> </li>
+    /// <li> <p> <code>Real Estate &amp; Construction</code> </p> </li>
+    /// <li> <p> <code>Retail &amp; Wholesale</code> </p> </li>
+    /// <li> <p> <code>Social Protection</code> </p> </li>
+    /// <li> <p> <code>Telecommunications</code> </p> </li>
+    /// <li> <p> <code>Travel, Transportation &amp; Logistics</code> </p> </li>
+    /// <li> <p> <code>Other</code> </p> </li>
     /// </ul>
     pub fn set_industry_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.industry_type = input;
@@ -578,60 +470,33 @@ impl CreateWorkloadInputBuilder {
     /// <p>The industry type for the workload.</p>
     /// <p>If specified, must be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Agriculture</code></p></li>
-    /// <li>
-    /// <p><code>Automobile</code></p></li>
-    /// <li>
-    /// <p><code>Defense</code></p></li>
-    /// <li>
-    /// <p><code>Design and Engineering</code></p></li>
-    /// <li>
-    /// <p><code>Digital Advertising</code></p></li>
-    /// <li>
-    /// <p><code>Education</code></p></li>
-    /// <li>
-    /// <p><code>Environmental Protection</code></p></li>
-    /// <li>
-    /// <p><code>Financial Services</code></p></li>
-    /// <li>
-    /// <p><code>Gaming</code></p></li>
-    /// <li>
-    /// <p><code>General Public Services</code></p></li>
-    /// <li>
-    /// <p><code>Healthcare</code></p></li>
-    /// <li>
-    /// <p><code>Hospitality</code></p></li>
-    /// <li>
-    /// <p><code>InfoTech</code></p></li>
-    /// <li>
-    /// <p><code>Justice and Public Safety</code></p></li>
-    /// <li>
-    /// <p><code>Life Sciences</code></p></li>
-    /// <li>
-    /// <p><code>Manufacturing</code></p></li>
-    /// <li>
-    /// <p><code>Media &amp; Entertainment</code></p></li>
-    /// <li>
-    /// <p><code>Mining &amp; Resources</code></p></li>
-    /// <li>
-    /// <p><code>Oil &amp; Gas</code></p></li>
-    /// <li>
-    /// <p><code>Power &amp; Utilities</code></p></li>
-    /// <li>
-    /// <p><code>Professional Services</code></p></li>
-    /// <li>
-    /// <p><code>Real Estate &amp; Construction</code></p></li>
-    /// <li>
-    /// <p><code>Retail &amp; Wholesale</code></p></li>
-    /// <li>
-    /// <p><code>Social Protection</code></p></li>
-    /// <li>
-    /// <p><code>Telecommunications</code></p></li>
-    /// <li>
-    /// <p><code>Travel, Transportation &amp; Logistics</code></p></li>
-    /// <li>
-    /// <p><code>Other</code></p></li>
+    /// <li> <p> <code>Agriculture</code> </p> </li>
+    /// <li> <p> <code>Automobile</code> </p> </li>
+    /// <li> <p> <code>Defense</code> </p> </li>
+    /// <li> <p> <code>Design and Engineering</code> </p> </li>
+    /// <li> <p> <code>Digital Advertising</code> </p> </li>
+    /// <li> <p> <code>Education</code> </p> </li>
+    /// <li> <p> <code>Environmental Protection</code> </p> </li>
+    /// <li> <p> <code>Financial Services</code> </p> </li>
+    /// <li> <p> <code>Gaming</code> </p> </li>
+    /// <li> <p> <code>General Public Services</code> </p> </li>
+    /// <li> <p> <code>Healthcare</code> </p> </li>
+    /// <li> <p> <code>Hospitality</code> </p> </li>
+    /// <li> <p> <code>InfoTech</code> </p> </li>
+    /// <li> <p> <code>Justice and Public Safety</code> </p> </li>
+    /// <li> <p> <code>Life Sciences</code> </p> </li>
+    /// <li> <p> <code>Manufacturing</code> </p> </li>
+    /// <li> <p> <code>Media &amp; Entertainment</code> </p> </li>
+    /// <li> <p> <code>Mining &amp; Resources</code> </p> </li>
+    /// <li> <p> <code>Oil &amp; Gas</code> </p> </li>
+    /// <li> <p> <code>Power &amp; Utilities</code> </p> </li>
+    /// <li> <p> <code>Professional Services</code> </p> </li>
+    /// <li> <p> <code>Real Estate &amp; Construction</code> </p> </li>
+    /// <li> <p> <code>Retail &amp; Wholesale</code> </p> </li>
+    /// <li> <p> <code>Social Protection</code> </p> </li>
+    /// <li> <p> <code>Telecommunications</code> </p> </li>
+    /// <li> <p> <code>Travel, Transportation &amp; Logistics</code> </p> </li>
+    /// <li> <p> <code>Other</code> </p> </li>
     /// </ul>
     pub fn get_industry_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.industry_type
@@ -691,7 +556,7 @@ impl CreateWorkloadInputBuilder {
         &self.notes
     }
     /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
-    /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p><important>
+    /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
     /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
     /// This field is required.
@@ -700,7 +565,7 @@ impl CreateWorkloadInputBuilder {
         self
     }
     /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
-    /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p><important>
+    /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
     /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -708,7 +573,7 @@ impl CreateWorkloadInputBuilder {
         self
     }
     /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
-    /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p><important>
+    /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
     /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {

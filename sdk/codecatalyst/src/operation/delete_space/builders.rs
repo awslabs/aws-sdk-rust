@@ -22,7 +22,7 @@ impl DeleteSpaceInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteSpace`.
 ///
-/// <p>Deletes a space.</p><important>
+/// <p>Deletes a space.</p> <important>
 /// <p>Deleting a space cannot be undone. Additionally, since space names must be unique across Amazon CodeCatalyst, you cannot reuse names of deleted spaces.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

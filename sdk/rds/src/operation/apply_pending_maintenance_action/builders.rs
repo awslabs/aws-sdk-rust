@@ -123,31 +123,28 @@ impl ApplyPendingMaintenanceActionFluentBuilder {
         self.inner.get_resource_identifier()
     }
     /// <p>The pending maintenance action to apply to this resource.</p>
-    /// <p>Valid Values: <code>system-update</code>, <code>db-upgrade</code>, <code>hardware-maintenance</code>, <code>ca-certificate-rotation</code></p>
+    /// <p>Valid Values: <code>system-update</code>, <code>db-upgrade</code>, <code>hardware-maintenance</code>, <code>ca-certificate-rotation</code> </p>
     pub fn apply_action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.apply_action(input.into());
         self
     }
     /// <p>The pending maintenance action to apply to this resource.</p>
-    /// <p>Valid Values: <code>system-update</code>, <code>db-upgrade</code>, <code>hardware-maintenance</code>, <code>ca-certificate-rotation</code></p>
+    /// <p>Valid Values: <code>system-update</code>, <code>db-upgrade</code>, <code>hardware-maintenance</code>, <code>ca-certificate-rotation</code> </p>
     pub fn set_apply_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_apply_action(input);
         self
     }
     /// <p>The pending maintenance action to apply to this resource.</p>
-    /// <p>Valid Values: <code>system-update</code>, <code>db-upgrade</code>, <code>hardware-maintenance</code>, <code>ca-certificate-rotation</code></p>
+    /// <p>Valid Values: <code>system-update</code>, <code>db-upgrade</code>, <code>hardware-maintenance</code>, <code>ca-certificate-rotation</code> </p>
     pub fn get_apply_action(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_apply_action()
     }
     /// <p>A value that specifies the type of opt-in request, or undoes an opt-in request. An opt-in request of type <code>immediate</code> can't be undone.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>immediate</code> - Apply the maintenance action immediately.</p></li>
-    /// <li>
-    /// <p><code>next-maintenance</code> - Apply the maintenance action during the next maintenance window for the resource.</p></li>
-    /// <li>
-    /// <p><code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in requests.</p></li>
+    /// <li> <p> <code>immediate</code> - Apply the maintenance action immediately.</p> </li>
+    /// <li> <p> <code>next-maintenance</code> - Apply the maintenance action during the next maintenance window for the resource.</p> </li>
+    /// <li> <p> <code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in requests.</p> </li>
     /// </ul>
     pub fn opt_in_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.opt_in_type(input.into());
@@ -156,12 +153,9 @@ impl ApplyPendingMaintenanceActionFluentBuilder {
     /// <p>A value that specifies the type of opt-in request, or undoes an opt-in request. An opt-in request of type <code>immediate</code> can't be undone.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>immediate</code> - Apply the maintenance action immediately.</p></li>
-    /// <li>
-    /// <p><code>next-maintenance</code> - Apply the maintenance action during the next maintenance window for the resource.</p></li>
-    /// <li>
-    /// <p><code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in requests.</p></li>
+    /// <li> <p> <code>immediate</code> - Apply the maintenance action immediately.</p> </li>
+    /// <li> <p> <code>next-maintenance</code> - Apply the maintenance action during the next maintenance window for the resource.</p> </li>
+    /// <li> <p> <code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in requests.</p> </li>
     /// </ul>
     pub fn set_opt_in_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_opt_in_type(input);
@@ -170,12 +164,9 @@ impl ApplyPendingMaintenanceActionFluentBuilder {
     /// <p>A value that specifies the type of opt-in request, or undoes an opt-in request. An opt-in request of type <code>immediate</code> can't be undone.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>immediate</code> - Apply the maintenance action immediately.</p></li>
-    /// <li>
-    /// <p><code>next-maintenance</code> - Apply the maintenance action during the next maintenance window for the resource.</p></li>
-    /// <li>
-    /// <p><code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in requests.</p></li>
+    /// <li> <p> <code>immediate</code> - Apply the maintenance action immediately.</p> </li>
+    /// <li> <p> <code>next-maintenance</code> - Apply the maintenance action during the next maintenance window for the resource.</p> </li>
+    /// <li> <p> <code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in requests.</p> </li>
     /// </ul>
     pub fn get_opt_in_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_opt_in_type()

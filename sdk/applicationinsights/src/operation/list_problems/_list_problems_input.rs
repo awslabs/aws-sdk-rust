@@ -15,7 +15,7 @@ pub struct ListProblemsInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token to request the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the component.</p>
+    /// <p> The name of the component. </p>
     pub component_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether or not you can view the problem. If not specified, visible and ignored problems are returned.</p>
     pub visibility: ::std::option::Option<crate::types::Visibility>,
@@ -45,7 +45,7 @@ impl ListProblemsInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The name of the component.</p>
+    /// <p> The name of the component. </p>
     pub fn component_name(&self) -> ::std::option::Option<&str> {
         self.component_name.as_deref()
     }
@@ -159,17 +159,17 @@ impl ListProblemsInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>The name of the component.</p>
+    /// <p> The name of the component. </p>
     pub fn component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the component.</p>
+    /// <p> The name of the component. </p>
     pub fn set_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.component_name = input;
         self
     }
-    /// <p>The name of the component.</p>
+    /// <p> The name of the component. </p>
     pub fn get_component_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.component_name
     }

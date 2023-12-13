@@ -3,15 +3,15 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdatePricingPlan`](crate::operation::update_pricing_plan::builders::UpdatePricingPlanFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::operation::update_pricing_plan::builders::UpdatePricingPlanFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::update_pricing_plan::builders::UpdatePricingPlanFluentBuilder::set_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the pricing plan that you're updating.</p><br>
-    ///   - [`name(impl Into<String>)`](crate::operation::update_pricing_plan::builders::UpdatePricingPlanFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_pricing_plan::builders::UpdatePricingPlanFluentBuilder::set_name):<br>required: **false**<br><p>The name of the pricing plan. The name must be unique to each pricing plan.</p><br>
-    ///   - [`description(impl Into<String>)`](crate::operation::update_pricing_plan::builders::UpdatePricingPlanFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_pricing_plan::builders::UpdatePricingPlanFluentBuilder::set_description):<br>required: **false**<br><p>The description of the pricing plan.</p><br>
+    ///   - [`arn(impl Into<String>)`](crate::operation::update_pricing_plan::builders::UpdatePricingPlanFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::update_pricing_plan::builders::UpdatePricingPlanFluentBuilder::set_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the pricing plan that you're updating. </p><br>
+    ///   - [`name(impl Into<String>)`](crate::operation::update_pricing_plan::builders::UpdatePricingPlanFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_pricing_plan::builders::UpdatePricingPlanFluentBuilder::set_name):<br>required: **false**<br><p>The name of the pricing plan. The name must be unique to each pricing plan. </p><br>
+    ///   - [`description(impl Into<String>)`](crate::operation::update_pricing_plan::builders::UpdatePricingPlanFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_pricing_plan::builders::UpdatePricingPlanFluentBuilder::set_description):<br>required: **false**<br><p>The description of the pricing plan. </p><br>
     /// - On success, responds with [`UpdatePricingPlanOutput`](crate::operation::update_pricing_plan::UpdatePricingPlanOutput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::operation::update_pricing_plan::UpdatePricingPlanOutput::arn): <p>The Amazon Resource Name (ARN) of the updated pricing plan.</p>
-    ///   - [`name(Option<String>)`](crate::operation::update_pricing_plan::UpdatePricingPlanOutput::name): <p>The name of the pricing plan. The name must be unique to each pricing plan.</p>
-    ///   - [`description(Option<String>)`](crate::operation::update_pricing_plan::UpdatePricingPlanOutput::description): <p>The new description for the pricing rule.</p>
-    ///   - [`size(i64)`](crate::operation::update_pricing_plan::UpdatePricingPlanOutput::size): <p>The pricing rules count that's currently associated with this pricing plan list.</p>
-    ///   - [`last_modified_time(i64)`](crate::operation::update_pricing_plan::UpdatePricingPlanOutput::last_modified_time): <p>The most recent time when the pricing plan was modified.</p>
+    ///   - [`arn(Option<String>)`](crate::operation::update_pricing_plan::UpdatePricingPlanOutput::arn): <p>The Amazon Resource Name (ARN) of the updated pricing plan. </p>
+    ///   - [`name(Option<String>)`](crate::operation::update_pricing_plan::UpdatePricingPlanOutput::name): <p> The name of the pricing plan. The name must be unique to each pricing plan. </p>
+    ///   - [`description(Option<String>)`](crate::operation::update_pricing_plan::UpdatePricingPlanOutput::description): <p> The new description for the pricing rule. </p>
+    ///   - [`size(i64)`](crate::operation::update_pricing_plan::UpdatePricingPlanOutput::size): <p> The pricing rules count that's currently associated with this pricing plan list. </p>
+    ///   - [`last_modified_time(i64)`](crate::operation::update_pricing_plan::UpdatePricingPlanOutput::last_modified_time): <p> The most recent time when the pricing plan was modified. </p>
     /// - On failure, responds with [`SdkError<UpdatePricingPlanError>`](crate::operation::update_pricing_plan::UpdatePricingPlanError)
     pub fn update_pricing_plan(&self) -> crate::operation::update_pricing_plan::builders::UpdatePricingPlanFluentBuilder {
         crate::operation::update_pricing_plan::builders::UpdatePricingPlanFluentBuilder::new(self.handle.clone())

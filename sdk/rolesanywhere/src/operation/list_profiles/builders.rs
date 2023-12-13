@@ -23,7 +23,7 @@ impl ListProfilesInputBuilder {
 /// Fluent builder constructing a request to `ListProfiles`.
 ///
 /// <p>Lists all profiles in the authenticated account and Amazon Web Services Region.</p>
-/// <p><b>Required permissions: </b> <code>rolesanywhere:ListProfiles</code>.</p>
+/// <p> <b>Required permissions: </b> <code>rolesanywhere:ListProfiles</code>. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListProfilesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -129,17 +129,17 @@ impl ListProfilesFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>The number of resources in the paginated list.</p>
+    /// <p>The number of resources in the paginated list. </p>
     pub fn page_size(mut self, input: i32) -> Self {
         self.inner = self.inner.page_size(input);
         self
     }
-    /// <p>The number of resources in the paginated list.</p>
+    /// <p>The number of resources in the paginated list. </p>
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_page_size(input);
         self
     }
-    /// <p>The number of resources in the paginated list.</p>
+    /// <p>The number of resources in the paginated list. </p>
     pub fn get_page_size(&self) -> &::std::option::Option<i32> {
         self.inner.get_page_size()
     }

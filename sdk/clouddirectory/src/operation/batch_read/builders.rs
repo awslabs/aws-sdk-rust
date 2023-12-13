@@ -22,7 +22,7 @@ impl BatchReadInputBuilder {
 }
 /// Fluent builder constructing a request to `BatchRead`.
 ///
-/// <p>Performs all the read operations in a batch.</p>
+/// <p>Performs all the read operations in a batch. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchReadFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

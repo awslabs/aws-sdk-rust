@@ -10,14 +10,10 @@ pub struct MonitoringSchedule {
     pub monitoring_schedule_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the monitoring schedule. This can be one of the following values.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PENDING</code> - The schedule is pending being created.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - The schedule failed.</p></li>
-    /// <li>
-    /// <p><code>SCHEDULED</code> - The schedule was successfully created.</p></li>
-    /// <li>
-    /// <p><code>STOPPED</code> - The schedule was stopped.</p></li>
+    /// <li> <p> <code>PENDING</code> - The schedule is pending being created.</p> </li>
+    /// <li> <p> <code>FAILED</code> - The schedule failed.</p> </li>
+    /// <li> <p> <code>SCHEDULED</code> - The schedule was successfully created.</p> </li>
+    /// <li> <p> <code>STOPPED</code> - The schedule was stopped.</p> </li>
     /// </ul>
     pub monitoring_schedule_status: ::std::option::Option<crate::types::ScheduleStatus>,
     /// <p>The type of the monitoring job definition to schedule.</p>
@@ -48,14 +44,10 @@ impl MonitoringSchedule {
     }
     /// <p>The status of the monitoring schedule. This can be one of the following values.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PENDING</code> - The schedule is pending being created.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - The schedule failed.</p></li>
-    /// <li>
-    /// <p><code>SCHEDULED</code> - The schedule was successfully created.</p></li>
-    /// <li>
-    /// <p><code>STOPPED</code> - The schedule was stopped.</p></li>
+    /// <li> <p> <code>PENDING</code> - The schedule is pending being created.</p> </li>
+    /// <li> <p> <code>FAILED</code> - The schedule failed.</p> </li>
+    /// <li> <p> <code>SCHEDULED</code> - The schedule was successfully created.</p> </li>
+    /// <li> <p> <code>STOPPED</code> - The schedule was stopped.</p> </li>
     /// </ul>
     pub fn monitoring_schedule_status(&self) -> ::std::option::Option<&crate::types::ScheduleStatus> {
         self.monitoring_schedule_status.as_ref()
@@ -149,14 +141,10 @@ impl MonitoringScheduleBuilder {
     }
     /// <p>The status of the monitoring schedule. This can be one of the following values.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PENDING</code> - The schedule is pending being created.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - The schedule failed.</p></li>
-    /// <li>
-    /// <p><code>SCHEDULED</code> - The schedule was successfully created.</p></li>
-    /// <li>
-    /// <p><code>STOPPED</code> - The schedule was stopped.</p></li>
+    /// <li> <p> <code>PENDING</code> - The schedule is pending being created.</p> </li>
+    /// <li> <p> <code>FAILED</code> - The schedule failed.</p> </li>
+    /// <li> <p> <code>SCHEDULED</code> - The schedule was successfully created.</p> </li>
+    /// <li> <p> <code>STOPPED</code> - The schedule was stopped.</p> </li>
     /// </ul>
     pub fn monitoring_schedule_status(mut self, input: crate::types::ScheduleStatus) -> Self {
         self.monitoring_schedule_status = ::std::option::Option::Some(input);
@@ -164,14 +152,10 @@ impl MonitoringScheduleBuilder {
     }
     /// <p>The status of the monitoring schedule. This can be one of the following values.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PENDING</code> - The schedule is pending being created.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - The schedule failed.</p></li>
-    /// <li>
-    /// <p><code>SCHEDULED</code> - The schedule was successfully created.</p></li>
-    /// <li>
-    /// <p><code>STOPPED</code> - The schedule was stopped.</p></li>
+    /// <li> <p> <code>PENDING</code> - The schedule is pending being created.</p> </li>
+    /// <li> <p> <code>FAILED</code> - The schedule failed.</p> </li>
+    /// <li> <p> <code>SCHEDULED</code> - The schedule was successfully created.</p> </li>
+    /// <li> <p> <code>STOPPED</code> - The schedule was stopped.</p> </li>
     /// </ul>
     pub fn set_monitoring_schedule_status(mut self, input: ::std::option::Option<crate::types::ScheduleStatus>) -> Self {
         self.monitoring_schedule_status = input;
@@ -179,14 +163,10 @@ impl MonitoringScheduleBuilder {
     }
     /// <p>The status of the monitoring schedule. This can be one of the following values.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PENDING</code> - The schedule is pending being created.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - The schedule failed.</p></li>
-    /// <li>
-    /// <p><code>SCHEDULED</code> - The schedule was successfully created.</p></li>
-    /// <li>
-    /// <p><code>STOPPED</code> - The schedule was stopped.</p></li>
+    /// <li> <p> <code>PENDING</code> - The schedule is pending being created.</p> </li>
+    /// <li> <p> <code>FAILED</code> - The schedule failed.</p> </li>
+    /// <li> <p> <code>SCHEDULED</code> - The schedule was successfully created.</p> </li>
+    /// <li> <p> <code>STOPPED</code> - The schedule was stopped.</p> </li>
     /// </ul>
     pub fn get_monitoring_schedule_status(&self) -> &::std::option::Option<crate::types::ScheduleStatus> {
         &self.monitoring_schedule_status

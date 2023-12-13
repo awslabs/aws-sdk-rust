@@ -22,9 +22,9 @@ impl ListContainersInputBuilder {
 }
 /// Fluent builder constructing a request to `ListContainers`.
 ///
-/// <p>Lists the properties of all containers in AWS Elemental MediaStore.</p>
-/// <p>You can query to receive all the containers in one response. Or you can include the <code>MaxResults</code> parameter to receive a limited number of containers in each response. In this case, the response includes a token. To get the next set of containers, send the command again, this time with the <code>NextToken</code> parameter (with the returned token as its value). The next set of responses appears, with a token if there are still more containers to receive.</p>
-/// <p>See also <code>DescribeContainer</code>, which gets the properties of one container.</p>
+/// <p>Lists the properties of all containers in AWS Elemental MediaStore. </p>
+/// <p>You can query to receive all the containers in one response. Or you can include the <code>MaxResults</code> parameter to receive a limited number of containers in each response. In this case, the response includes a token. To get the next set of containers, send the command again, this time with the <code>NextToken</code> parameter (with the returned token as its value). The next set of responses appears, with a token if there are still more containers to receive. </p>
+/// <p>See also <code>DescribeContainer</code>, which gets the properties of one container. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListContainersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -130,17 +130,17 @@ impl ListContainersFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>Enter the maximum number of containers in the response. Use from 1 to 255 characters.</p>
+    /// <p>Enter the maximum number of containers in the response. Use from 1 to 255 characters. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>Enter the maximum number of containers in the response. Use from 1 to 255 characters.</p>
+    /// <p>Enter the maximum number of containers in the response. Use from 1 to 255 characters. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>Enter the maximum number of containers in the response. Use from 1 to 255 characters.</p>
+    /// <p>Enter the maximum number of containers in the response. Use from 1 to 255 characters. </p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

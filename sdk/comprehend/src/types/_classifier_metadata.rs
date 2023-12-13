@@ -4,17 +4,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ClassifierMetadata {
-    /// <p>The number of labels in the input data.</p>
+    /// <p>The number of labels in the input data. </p>
     pub number_of_labels: ::std::option::Option<i32>,
     /// <p>The number of documents in the input data that were used to train the classifier. Typically this is 80 to 90 percent of the input documents.</p>
     pub number_of_trained_documents: ::std::option::Option<i32>,
     /// <p>The number of documents in the input data that were used to test the classifier. Typically this is 10 to 20 percent of the input documents, up to 10,000 documents.</p>
     pub number_of_test_documents: ::std::option::Option<i32>,
-    /// <p>Describes the result metrics for the test data associated with an documentation classifier.</p>
+    /// <p> Describes the result metrics for the test data associated with an documentation classifier.</p>
     pub evaluation_metrics: ::std::option::Option<crate::types::ClassifierEvaluationMetrics>,
 }
 impl ClassifierMetadata {
-    /// <p>The number of labels in the input data.</p>
+    /// <p>The number of labels in the input data. </p>
     pub fn number_of_labels(&self) -> ::std::option::Option<i32> {
         self.number_of_labels
     }
@@ -26,7 +26,7 @@ impl ClassifierMetadata {
     pub fn number_of_test_documents(&self) -> ::std::option::Option<i32> {
         self.number_of_test_documents
     }
-    /// <p>Describes the result metrics for the test data associated with an documentation classifier.</p>
+    /// <p> Describes the result metrics for the test data associated with an documentation classifier.</p>
     pub fn evaluation_metrics(&self) -> ::std::option::Option<&crate::types::ClassifierEvaluationMetrics> {
         self.evaluation_metrics.as_ref()
     }
@@ -58,17 +58,17 @@ pub struct ClassifierMetadataBuilder {
     pub(crate) evaluation_metrics: ::std::option::Option<crate::types::ClassifierEvaluationMetrics>,
 }
 impl ClassifierMetadataBuilder {
-    /// <p>The number of labels in the input data.</p>
+    /// <p>The number of labels in the input data. </p>
     pub fn number_of_labels(mut self, input: i32) -> Self {
         self.number_of_labels = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of labels in the input data.</p>
+    /// <p>The number of labels in the input data. </p>
     pub fn set_number_of_labels(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_labels = input;
         self
     }
-    /// <p>The number of labels in the input data.</p>
+    /// <p>The number of labels in the input data. </p>
     pub fn get_number_of_labels(&self) -> &::std::option::Option<i32> {
         &self.number_of_labels
     }
@@ -100,17 +100,17 @@ impl ClassifierMetadataBuilder {
     pub fn get_number_of_test_documents(&self) -> &::std::option::Option<i32> {
         &self.number_of_test_documents
     }
-    /// <p>Describes the result metrics for the test data associated with an documentation classifier.</p>
+    /// <p> Describes the result metrics for the test data associated with an documentation classifier.</p>
     pub fn evaluation_metrics(mut self, input: crate::types::ClassifierEvaluationMetrics) -> Self {
         self.evaluation_metrics = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Describes the result metrics for the test data associated with an documentation classifier.</p>
+    /// <p> Describes the result metrics for the test data associated with an documentation classifier.</p>
     pub fn set_evaluation_metrics(mut self, input: ::std::option::Option<crate::types::ClassifierEvaluationMetrics>) -> Self {
         self.evaluation_metrics = input;
         self
     }
-    /// <p>Describes the result metrics for the test data associated with an documentation classifier.</p>
+    /// <p> Describes the result metrics for the test data associated with an documentation classifier.</p>
     pub fn get_evaluation_metrics(&self) -> &::std::option::Option<crate::types::ClassifierEvaluationMetrics> {
         &self.evaluation_metrics
     }

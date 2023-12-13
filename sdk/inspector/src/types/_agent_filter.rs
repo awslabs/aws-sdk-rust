@@ -6,7 +6,7 @@
 pub struct AgentFilter {
     /// <p>The current health state of the agent. Values can be set to <b>HEALTHY</b> or <b>UNHEALTHY</b>.</p>
     pub agent_healths: ::std::vec::Vec<crate::types::AgentHealth>,
-    /// <p>The detailed health state of the agent. Values can be set to <b>IDLE</b>, <b>RUNNING</b>, <b>SHUTDOWN</b>, <b>UNHEALTHY</b>, <b>THROTTLED</b>, and <b>UNKNOWN</b>.</p>
+    /// <p>The detailed health state of the agent. Values can be set to <b>IDLE</b>, <b>RUNNING</b>, <b>SHUTDOWN</b>, <b>UNHEALTHY</b>, <b>THROTTLED</b>, and <b>UNKNOWN</b>. </p>
     pub agent_health_codes: ::std::vec::Vec<crate::types::AgentHealthCode>,
 }
 impl AgentFilter {
@@ -15,7 +15,7 @@ impl AgentFilter {
         use std::ops::Deref;
         self.agent_healths.deref()
     }
-    /// <p>The detailed health state of the agent. Values can be set to <b>IDLE</b>, <b>RUNNING</b>, <b>SHUTDOWN</b>, <b>UNHEALTHY</b>, <b>THROTTLED</b>, and <b>UNKNOWN</b>.</p>
+    /// <p>The detailed health state of the agent. Values can be set to <b>IDLE</b>, <b>RUNNING</b>, <b>SHUTDOWN</b>, <b>UNHEALTHY</b>, <b>THROTTLED</b>, and <b>UNKNOWN</b>. </p>
     pub fn agent_health_codes(&self) -> &[crate::types::AgentHealthCode] {
         use std::ops::Deref;
         self.agent_health_codes.deref()
@@ -60,19 +60,19 @@ impl AgentFilterBuilder {
     ///
     /// To override the contents of this collection use [`set_agent_health_codes`](Self::set_agent_health_codes).
     ///
-    /// <p>The detailed health state of the agent. Values can be set to <b>IDLE</b>, <b>RUNNING</b>, <b>SHUTDOWN</b>, <b>UNHEALTHY</b>, <b>THROTTLED</b>, and <b>UNKNOWN</b>.</p>
+    /// <p>The detailed health state of the agent. Values can be set to <b>IDLE</b>, <b>RUNNING</b>, <b>SHUTDOWN</b>, <b>UNHEALTHY</b>, <b>THROTTLED</b>, and <b>UNKNOWN</b>. </p>
     pub fn agent_health_codes(mut self, input: crate::types::AgentHealthCode) -> Self {
         let mut v = self.agent_health_codes.unwrap_or_default();
         v.push(input);
         self.agent_health_codes = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The detailed health state of the agent. Values can be set to <b>IDLE</b>, <b>RUNNING</b>, <b>SHUTDOWN</b>, <b>UNHEALTHY</b>, <b>THROTTLED</b>, and <b>UNKNOWN</b>.</p>
+    /// <p>The detailed health state of the agent. Values can be set to <b>IDLE</b>, <b>RUNNING</b>, <b>SHUTDOWN</b>, <b>UNHEALTHY</b>, <b>THROTTLED</b>, and <b>UNKNOWN</b>. </p>
     pub fn set_agent_health_codes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AgentHealthCode>>) -> Self {
         self.agent_health_codes = input;
         self
     }
-    /// <p>The detailed health state of the agent. Values can be set to <b>IDLE</b>, <b>RUNNING</b>, <b>SHUTDOWN</b>, <b>UNHEALTHY</b>, <b>THROTTLED</b>, and <b>UNKNOWN</b>.</p>
+    /// <p>The detailed health state of the agent. Values can be set to <b>IDLE</b>, <b>RUNNING</b>, <b>SHUTDOWN</b>, <b>UNHEALTHY</b>, <b>THROTTLED</b>, and <b>UNKNOWN</b>. </p>
     pub fn get_agent_health_codes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AgentHealthCode>> {
         &self.agent_health_codes
     }

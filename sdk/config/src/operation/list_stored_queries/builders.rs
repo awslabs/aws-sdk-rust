@@ -22,7 +22,7 @@ impl ListStoredQueriesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListStoredQueries`.
 ///
-/// <p>Lists the stored queries for a single Amazon Web Services account and a single Amazon Web Services Region. The default is 100.</p>
+/// <p>Lists the stored queries for a single Amazon Web Services account and a single Amazon Web Services Region. The default is 100. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListStoredQueriesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

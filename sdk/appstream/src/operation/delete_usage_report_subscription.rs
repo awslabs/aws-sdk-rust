@@ -251,7 +251,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteUsageRe
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DeleteUsageReportSubscriptionError {
-    /// <p>The resource cannot be created because your AWS account is suspended. For assistance, contact AWS Support.</p>
+    /// <p>The resource cannot be created because your AWS account is suspended. For assistance, contact AWS Support. </p>
     InvalidAccountStatusException(crate::types::error::InvalidAccountStatusException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),

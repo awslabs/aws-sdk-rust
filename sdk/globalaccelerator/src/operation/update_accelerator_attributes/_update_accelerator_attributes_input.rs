@@ -10,7 +10,7 @@ pub struct UpdateAcceleratorAttributesInput {
     pub flow_logs_enabled: ::std::option::Option<bool>,
     /// <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and have a bucket policy that grants Global Accelerator permission to write to the bucket.</p>
     pub flow_logs_s3_bucket: ::std::option::Option<::std::string::String>,
-    /// <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>.</p>
+    /// <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. </p>
     /// <p>If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>
     /// <p>s3-bucket_name//AWSLogs/aws_account_id</p>
     pub flow_logs_s3_prefix: ::std::option::Option<::std::string::String>,
@@ -29,7 +29,7 @@ impl UpdateAcceleratorAttributesInput {
     pub fn flow_logs_s3_bucket(&self) -> ::std::option::Option<&str> {
         self.flow_logs_s3_bucket.as_deref()
     }
-    /// <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>.</p>
+    /// <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. </p>
     /// <p>If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>
     /// <p>s3-bucket_name//AWSLogs/aws_account_id</p>
     pub fn flow_logs_s3_prefix(&self) -> ::std::option::Option<&str> {
@@ -99,21 +99,21 @@ impl UpdateAcceleratorAttributesInputBuilder {
     pub fn get_flow_logs_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
         &self.flow_logs_s3_bucket
     }
-    /// <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>.</p>
+    /// <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. </p>
     /// <p>If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>
     /// <p>s3-bucket_name//AWSLogs/aws_account_id</p>
     pub fn flow_logs_s3_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_logs_s3_prefix = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>.</p>
+    /// <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. </p>
     /// <p>If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>
     /// <p>s3-bucket_name//AWSLogs/aws_account_id</p>
     pub fn set_flow_logs_s3_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.flow_logs_s3_prefix = input;
         self
     }
-    /// <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>.</p>
+    /// <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. </p>
     /// <p>If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>
     /// <p>s3-bucket_name//AWSLogs/aws_account_id</p>
     pub fn get_flow_logs_s3_prefix(&self) -> &::std::option::Option<::std::string::String> {

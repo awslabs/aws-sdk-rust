@@ -4,13 +4,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsApiGatewayV2ApiDetails {
-    /// <p>The URI of the API.</p>
-    /// <p>Uses the format <code> <i><api-id></api-id></i>.execute-api.<i><region></region></i>.amazonaws.com</code></p>
+    /// <p>The URI of the API. </p>
+    /// <p>Uses the format <code> <i>
+    /// <api-id></api-id></i>.execute-api.<i>
+    /// <region></region></i>.amazonaws.com</code> </p>
     /// <p>The stage name is typically appended to the URI to form a complete path to a deployed API stage.</p>
     pub api_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the API.</p>
     pub api_id: ::std::option::Option<::std::string::String>,
-    /// <p>An API key selection expression. Supported only for WebSocket APIs.</p>
+    /// <p>An API key selection expression. Supported only for WebSocket APIs. </p>
     pub api_key_selection_expression: ::std::option::Option<::std::string::String>,
     /// <p>Indicates when the API was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
@@ -22,7 +24,7 @@ pub struct AwsApiGatewayV2ApiDetails {
     /// <p>The name of the API.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The API protocol for the API.</p>
-    /// <p>Valid values: <code>WEBSOCKET</code> | <code>HTTP</code></p>
+    /// <p>Valid values: <code>WEBSOCKET</code> | <code>HTTP</code> </p>
     pub protocol_type: ::std::option::Option<::std::string::String>,
     /// <p>The route selection expression for the API.</p>
     /// <p>For HTTP APIs, must be <code>${request.method} ${request.path}</code>. This is the default value for HTTP APIs.</p>
@@ -32,8 +34,10 @@ pub struct AwsApiGatewayV2ApiDetails {
     pub cors_configuration: ::std::option::Option<crate::types::AwsCorsConfiguration>,
 }
 impl AwsApiGatewayV2ApiDetails {
-    /// <p>The URI of the API.</p>
-    /// <p>Uses the format <code> <i><api-id></api-id></i>.execute-api.<i><region></region></i>.amazonaws.com</code></p>
+    /// <p>The URI of the API. </p>
+    /// <p>Uses the format <code> <i>
+    /// <api-id></api-id></i>.execute-api.<i>
+    /// <region></region></i>.amazonaws.com</code> </p>
     /// <p>The stage name is typically appended to the URI to form a complete path to a deployed API stage.</p>
     pub fn api_endpoint(&self) -> ::std::option::Option<&str> {
         self.api_endpoint.as_deref()
@@ -42,7 +46,7 @@ impl AwsApiGatewayV2ApiDetails {
     pub fn api_id(&self) -> ::std::option::Option<&str> {
         self.api_id.as_deref()
     }
-    /// <p>An API key selection expression. Supported only for WebSocket APIs.</p>
+    /// <p>An API key selection expression. Supported only for WebSocket APIs. </p>
     pub fn api_key_selection_expression(&self) -> ::std::option::Option<&str> {
         self.api_key_selection_expression.as_deref()
     }
@@ -64,7 +68,7 @@ impl AwsApiGatewayV2ApiDetails {
         self.name.as_deref()
     }
     /// <p>The API protocol for the API.</p>
-    /// <p>Valid values: <code>WEBSOCKET</code> | <code>HTTP</code></p>
+    /// <p>Valid values: <code>WEBSOCKET</code> | <code>HTTP</code> </p>
     pub fn protocol_type(&self) -> ::std::option::Option<&str> {
         self.protocol_type.as_deref()
     }
@@ -102,22 +106,28 @@ pub struct AwsApiGatewayV2ApiDetailsBuilder {
     pub(crate) cors_configuration: ::std::option::Option<crate::types::AwsCorsConfiguration>,
 }
 impl AwsApiGatewayV2ApiDetailsBuilder {
-    /// <p>The URI of the API.</p>
-    /// <p>Uses the format <code> <i><api-id></api-id></i>.execute-api.<i><region></region></i>.amazonaws.com</code></p>
+    /// <p>The URI of the API. </p>
+    /// <p>Uses the format <code> <i>
+    /// <api-id></api-id></i>.execute-api.<i>
+    /// <region></region></i>.amazonaws.com</code> </p>
     /// <p>The stage name is typically appended to the URI to form a complete path to a deployed API stage.</p>
     pub fn api_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_endpoint = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The URI of the API.</p>
-    /// <p>Uses the format <code> <i><api-id></api-id></i>.execute-api.<i><region></region></i>.amazonaws.com</code></p>
+    /// <p>The URI of the API. </p>
+    /// <p>Uses the format <code> <i>
+    /// <api-id></api-id></i>.execute-api.<i>
+    /// <region></region></i>.amazonaws.com</code> </p>
     /// <p>The stage name is typically appended to the URI to form a complete path to a deployed API stage.</p>
     pub fn set_api_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_endpoint = input;
         self
     }
-    /// <p>The URI of the API.</p>
-    /// <p>Uses the format <code> <i><api-id></api-id></i>.execute-api.<i><region></region></i>.amazonaws.com</code></p>
+    /// <p>The URI of the API. </p>
+    /// <p>Uses the format <code> <i>
+    /// <api-id></api-id></i>.execute-api.<i>
+    /// <region></region></i>.amazonaws.com</code> </p>
     /// <p>The stage name is typically appended to the URI to form a complete path to a deployed API stage.</p>
     pub fn get_api_endpoint(&self) -> &::std::option::Option<::std::string::String> {
         &self.api_endpoint
@@ -136,17 +146,17 @@ impl AwsApiGatewayV2ApiDetailsBuilder {
     pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.api_id
     }
-    /// <p>An API key selection expression. Supported only for WebSocket APIs.</p>
+    /// <p>An API key selection expression. Supported only for WebSocket APIs. </p>
     pub fn api_key_selection_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_key_selection_expression = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An API key selection expression. Supported only for WebSocket APIs.</p>
+    /// <p>An API key selection expression. Supported only for WebSocket APIs. </p>
     pub fn set_api_key_selection_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_key_selection_expression = input;
         self
     }
-    /// <p>An API key selection expression. Supported only for WebSocket APIs.</p>
+    /// <p>An API key selection expression. Supported only for WebSocket APIs. </p>
     pub fn get_api_key_selection_expression(&self) -> &::std::option::Option<::std::string::String> {
         &self.api_key_selection_expression
     }
@@ -210,19 +220,19 @@ impl AwsApiGatewayV2ApiDetailsBuilder {
         &self.name
     }
     /// <p>The API protocol for the API.</p>
-    /// <p>Valid values: <code>WEBSOCKET</code> | <code>HTTP</code></p>
+    /// <p>Valid values: <code>WEBSOCKET</code> | <code>HTTP</code> </p>
     pub fn protocol_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.protocol_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The API protocol for the API.</p>
-    /// <p>Valid values: <code>WEBSOCKET</code> | <code>HTTP</code></p>
+    /// <p>Valid values: <code>WEBSOCKET</code> | <code>HTTP</code> </p>
     pub fn set_protocol_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.protocol_type = input;
         self
     }
     /// <p>The API protocol for the API.</p>
-    /// <p>Valid values: <code>WEBSOCKET</code> | <code>HTTP</code></p>
+    /// <p>Valid values: <code>WEBSOCKET</code> | <code>HTTP</code> </p>
     pub fn get_protocol_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.protocol_type
     }

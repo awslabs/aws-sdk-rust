@@ -15,7 +15,7 @@ pub struct GetSegmentDetectionOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of segments detected in a video. The array is sorted by the segment types (TECHNICAL_CUE or SHOT) specified in the <code>SegmentTypes</code> input parameter of <code>StartSegmentDetection</code>. Within each segment type the array is sorted by timestamp values.</p>
     pub segments: ::std::option::Option<::std::vec::Vec<crate::types::SegmentDetection>>,
-    /// <p>An array containing the segment types requested in the call to <code>StartSegmentDetection</code>.</p>
+    /// <p>An array containing the segment types requested in the call to <code>StartSegmentDetection</code>. </p>
     pub selected_segment_types: ::std::option::Option<::std::vec::Vec<crate::types::SegmentTypeInfo>>,
     /// <p>Job identifier for the segment detection operation for which you want to obtain results. The job identifer is returned by an initial call to StartSegmentDetection.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
@@ -56,7 +56,7 @@ impl GetSegmentDetectionOutput {
     pub fn segments(&self) -> &[crate::types::SegmentDetection] {
         self.segments.as_deref().unwrap_or_default()
     }
-    /// <p>An array containing the segment types requested in the call to <code>StartSegmentDetection</code>.</p>
+    /// <p>An array containing the segment types requested in the call to <code>StartSegmentDetection</code>. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.selected_segment_types.is_none()`.
     pub fn selected_segment_types(&self) -> &[crate::types::SegmentTypeInfo] {
@@ -210,19 +210,19 @@ impl GetSegmentDetectionOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_selected_segment_types`](Self::set_selected_segment_types).
     ///
-    /// <p>An array containing the segment types requested in the call to <code>StartSegmentDetection</code>.</p>
+    /// <p>An array containing the segment types requested in the call to <code>StartSegmentDetection</code>. </p>
     pub fn selected_segment_types(mut self, input: crate::types::SegmentTypeInfo) -> Self {
         let mut v = self.selected_segment_types.unwrap_or_default();
         v.push(input);
         self.selected_segment_types = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array containing the segment types requested in the call to <code>StartSegmentDetection</code>.</p>
+    /// <p>An array containing the segment types requested in the call to <code>StartSegmentDetection</code>. </p>
     pub fn set_selected_segment_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SegmentTypeInfo>>) -> Self {
         self.selected_segment_types = input;
         self
     }
-    /// <p>An array containing the segment types requested in the call to <code>StartSegmentDetection</code>.</p>
+    /// <p>An array containing the segment types requested in the call to <code>StartSegmentDetection</code>. </p>
     pub fn get_selected_segment_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SegmentTypeInfo>> {
         &self.selected_segment_types
     }

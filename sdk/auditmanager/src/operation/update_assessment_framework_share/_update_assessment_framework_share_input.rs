@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAssessmentFrameworkShareInput {
-    /// <p>The unique identifier for the share request.</p>
+    /// <p> The unique identifier for the share request. </p>
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the share request is a sent request or a received request.</p>
     pub request_type: ::std::option::Option<crate::types::ShareRequestType>,
@@ -11,7 +11,7 @@ pub struct UpdateAssessmentFrameworkShareInput {
     pub action: ::std::option::Option<crate::types::ShareRequestAction>,
 }
 impl UpdateAssessmentFrameworkShareInput {
-    /// <p>The unique identifier for the share request.</p>
+    /// <p> The unique identifier for the share request. </p>
     pub fn request_id(&self) -> ::std::option::Option<&str> {
         self.request_id.as_deref()
     }
@@ -40,18 +40,18 @@ pub struct UpdateAssessmentFrameworkShareInputBuilder {
     pub(crate) action: ::std::option::Option<crate::types::ShareRequestAction>,
 }
 impl UpdateAssessmentFrameworkShareInputBuilder {
-    /// <p>The unique identifier for the share request.</p>
+    /// <p> The unique identifier for the share request. </p>
     /// This field is required.
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier for the share request.</p>
+    /// <p> The unique identifier for the share request. </p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.request_id = input;
         self
     }
-    /// <p>The unique identifier for the share request.</p>
+    /// <p> The unique identifier for the share request. </p>
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.request_id
     }

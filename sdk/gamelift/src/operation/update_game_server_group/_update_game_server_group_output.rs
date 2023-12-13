@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateGameServerGroupOutput {
-    /// <p>An object that describes the game server group resource with updated properties.</p>
+    /// <p>An object that describes the game server group resource with updated properties. </p>
     pub game_server_group: ::std::option::Option<crate::types::GameServerGroup>,
     _request_id: Option<String>,
 }
 impl UpdateGameServerGroupOutput {
-    /// <p>An object that describes the game server group resource with updated properties.</p>
+    /// <p>An object that describes the game server group resource with updated properties. </p>
     pub fn game_server_group(&self) -> ::std::option::Option<&crate::types::GameServerGroup> {
         self.game_server_group.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct UpdateGameServerGroupOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateGameServerGroupOutputBuilder {
-    /// <p>An object that describes the game server group resource with updated properties.</p>
+    /// <p>An object that describes the game server group resource with updated properties. </p>
     pub fn game_server_group(mut self, input: crate::types::GameServerGroup) -> Self {
         self.game_server_group = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An object that describes the game server group resource with updated properties.</p>
+    /// <p>An object that describes the game server group resource with updated properties. </p>
     pub fn set_game_server_group(mut self, input: ::std::option::Option<crate::types::GameServerGroup>) -> Self {
         self.game_server_group = input;
         self
     }
-    /// <p>An object that describes the game server group resource with updated properties.</p>
+    /// <p>An object that describes the game server group resource with updated properties. </p>
     pub fn get_game_server_group(&self) -> &::std::option::Option<crate::types::GameServerGroup> {
         &self.game_server_group
     }

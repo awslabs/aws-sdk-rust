@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListJobsOutput {
-    /// <p>Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the job is a job part, in the case of export jobs.</p>
+    /// <p>Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the job is a job part, in the case of export jobs. </p>
     pub job_list_entries: ::std::option::Option<::std::vec::Vec<crate::types::JobListEntry>>,
     /// <p>HTTP requests are stateless. If you use this automatically generated <code>NextToken</code> value in your next <code>ListJobs</code> call, your returned <code>JobListEntry</code> objects will start from this point in the array.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListJobsOutput {
-    /// <p>Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the job is a job part, in the case of export jobs.</p>
+    /// <p>Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the job is a job part, in the case of export jobs. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.job_list_entries.is_none()`.
     pub fn job_list_entries(&self) -> &[crate::types::JobListEntry] {
@@ -46,19 +46,19 @@ impl ListJobsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_job_list_entries`](Self::set_job_list_entries).
     ///
-    /// <p>Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the job is a job part, in the case of export jobs.</p>
+    /// <p>Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the job is a job part, in the case of export jobs. </p>
     pub fn job_list_entries(mut self, input: crate::types::JobListEntry) -> Self {
         let mut v = self.job_list_entries.unwrap_or_default();
         v.push(input);
         self.job_list_entries = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the job is a job part, in the case of export jobs.</p>
+    /// <p>Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the job is a job part, in the case of export jobs. </p>
     pub fn set_job_list_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobListEntry>>) -> Self {
         self.job_list_entries = input;
         self
     }
-    /// <p>Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the job is a job part, in the case of export jobs.</p>
+    /// <p>Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the job is a job part, in the case of export jobs. </p>
     pub fn get_job_list_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobListEntry>> {
         &self.job_list_entries
     }

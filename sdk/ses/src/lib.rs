@@ -12,7 +12,6 @@
 #![allow(clippy::result_large_err)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
-#![cfg_attr(docsrs, feature(doc_auto_cfg))]
 //! This document contains reference information for the [Amazon Simple Email Service](https://aws.amazon.com/ses/) (Amazon SES) API, version 2010-12-01. This document is best used in conjunction with the [Amazon SES Developer Guide](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html).
 //!
 //! This documentation contains reference information related to the following:
@@ -32,8 +31,8 @@
 //!
 //! ```toml
 //! [dependencies]
-//! aws-config = { version = "1.1.0", features = ["behavior-version-latest"] }
-//! aws-sdk-ses = "1.5.0"
+//! aws-config = { version = "1.0.3", features = ["behavior-version-latest"] }
+//! aws-sdk-ses = "1.6.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -193,11 +192,11 @@ pub(crate) mod protocol_serde;
 
 mod serialization_settings;
 
-mod endpoint_lib;
-
 mod lens;
 
 mod serde_util;
+
+mod endpoint_lib;
 
 mod rest_xml_wrapped_errors;
 

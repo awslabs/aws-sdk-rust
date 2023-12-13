@@ -246,7 +246,7 @@ pub enum RevokeDBSecurityGroupIngressError {
     /// <p>The specified CIDR IP range or Amazon EC2 security group might not be authorized for the specified DB security group.</p>
     /// <p>Or, RDS might not be authorized to perform necessary actions using IAM on your behalf.</p>
     AuthorizationNotFoundFault(crate::types::error::AuthorizationNotFoundFault),
-    /// <p><code>DBSecurityGroupName</code> doesn't refer to an existing DB security group.</p>
+    /// <p> <code>DBSecurityGroupName</code> doesn't refer to an existing DB security group.</p>
     DbSecurityGroupNotFoundFault(crate::types::error::DbSecurityGroupNotFoundFault),
     /// <p>The state of the DB security group doesn't allow deletion.</p>
     InvalidDbSecurityGroupStateFault(crate::types::error::InvalidDbSecurityGroupStateFault),

@@ -17,7 +17,7 @@ pub struct DataCellsFilter {
     /// <p>A list of column names and/or nested column attributes. When specifying nested attributes, use a qualified dot (.) delimited format such as "address"."zip". Nested attributes within this list may not exceed a depth of 5.</p>
     pub column_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A wildcard with exclusions.</p>
-    /// <p>You must specify either a <code>ColumnNames</code> list or the <code>ColumnWildCard</code>.</p>
+    /// <p>You must specify either a <code>ColumnNames</code> list or the <code>ColumnWildCard</code>. </p>
     pub column_wildcard: ::std::option::Option<crate::types::ColumnWildcard>,
     /// <p>The ID of the data cells filter version.</p>
     pub version_id: ::std::option::Option<::std::string::String>,
@@ -54,7 +54,7 @@ impl DataCellsFilter {
         self.column_names.as_deref().unwrap_or_default()
     }
     /// <p>A wildcard with exclusions.</p>
-    /// <p>You must specify either a <code>ColumnNames</code> list or the <code>ColumnWildCard</code>.</p>
+    /// <p>You must specify either a <code>ColumnNames</code> list or the <code>ColumnWildCard</code>. </p>
     pub fn column_wildcard(&self) -> ::std::option::Option<&crate::types::ColumnWildcard> {
         self.column_wildcard.as_ref()
     }
@@ -179,19 +179,19 @@ impl DataCellsFilterBuilder {
         &self.column_names
     }
     /// <p>A wildcard with exclusions.</p>
-    /// <p>You must specify either a <code>ColumnNames</code> list or the <code>ColumnWildCard</code>.</p>
+    /// <p>You must specify either a <code>ColumnNames</code> list or the <code>ColumnWildCard</code>. </p>
     pub fn column_wildcard(mut self, input: crate::types::ColumnWildcard) -> Self {
         self.column_wildcard = ::std::option::Option::Some(input);
         self
     }
     /// <p>A wildcard with exclusions.</p>
-    /// <p>You must specify either a <code>ColumnNames</code> list or the <code>ColumnWildCard</code>.</p>
+    /// <p>You must specify either a <code>ColumnNames</code> list or the <code>ColumnWildCard</code>. </p>
     pub fn set_column_wildcard(mut self, input: ::std::option::Option<crate::types::ColumnWildcard>) -> Self {
         self.column_wildcard = input;
         self
     }
     /// <p>A wildcard with exclusions.</p>
-    /// <p>You must specify either a <code>ColumnNames</code> list or the <code>ColumnWildCard</code>.</p>
+    /// <p>You must specify either a <code>ColumnNames</code> list or the <code>ColumnWildCard</code>. </p>
     pub fn get_column_wildcard(&self) -> &::std::option::Option<crate::types::ColumnWildcard> {
         &self.column_wildcard
     }

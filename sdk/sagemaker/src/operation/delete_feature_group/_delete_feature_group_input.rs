@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFeatureGroupInput {
-    /// <p>The name of the <code>FeatureGroup</code> you want to delete. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account.</p>
+    /// <p>The name of the <code>FeatureGroup</code> you want to delete. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account. </p>
     pub feature_group_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteFeatureGroupInput {
-    /// <p>The name of the <code>FeatureGroup</code> you want to delete. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account.</p>
+    /// <p>The name of the <code>FeatureGroup</code> you want to delete. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account. </p>
     pub fn feature_group_name(&self) -> ::std::option::Option<&str> {
         self.feature_group_name.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct DeleteFeatureGroupInputBuilder {
     pub(crate) feature_group_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteFeatureGroupInputBuilder {
-    /// <p>The name of the <code>FeatureGroup</code> you want to delete. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account.</p>
+    /// <p>The name of the <code>FeatureGroup</code> you want to delete. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account. </p>
     /// This field is required.
     pub fn feature_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_group_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the <code>FeatureGroup</code> you want to delete. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account.</p>
+    /// <p>The name of the <code>FeatureGroup</code> you want to delete. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account. </p>
     pub fn set_feature_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.feature_group_name = input;
         self
     }
-    /// <p>The name of the <code>FeatureGroup</code> you want to delete. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account.</p>
+    /// <p>The name of the <code>FeatureGroup</code> you want to delete. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account. </p>
     pub fn get_feature_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.feature_group_name
     }

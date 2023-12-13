@@ -22,7 +22,7 @@ impl DefineIndexFieldInputBuilder {
 }
 /// Fluent builder constructing a request to `DefineIndexField`.
 ///
-/// <p>Configures an <code><code>IndexField</code></code> for the search domain. Used to create new fields and modify existing ones. You must specify the name of the domain you are configuring and an index field configuration. The index field configuration specifies a unique name, the index field type, and the options you want to configure for the field. The options you can specify depend on the <code><code>IndexFieldType</code></code>. If the field exists, the new configuration replaces the old one. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html" target="_blank">Configuring Index Fields</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
+/// <p>Configures an <code><code>IndexField</code></code> for the search domain. Used to create new fields and modify existing ones. You must specify the name of the domain you are configuring and an index field configuration. The index field configuration specifies a unique name, the index field type, and the options you want to configure for the field. The options you can specify depend on the <code><code>IndexFieldType</code></code>. If the field exists, the new configuration replaces the old one. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html" target="_blank">Configuring Index Fields</a> in the <i>Amazon CloudSearch Developer Guide</i>. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DefineIndexFieldFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -122,17 +122,17 @@ impl DefineIndexFieldFluentBuilder {
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_name()
     }
-    /// <p>The index field and field options you want to configure.</p>
+    /// <p>The index field and field options you want to configure. </p>
     pub fn index_field(mut self, input: crate::types::IndexField) -> Self {
         self.inner = self.inner.index_field(input);
         self
     }
-    /// <p>The index field and field options you want to configure.</p>
+    /// <p>The index field and field options you want to configure. </p>
     pub fn set_index_field(mut self, input: ::std::option::Option<crate::types::IndexField>) -> Self {
         self.inner = self.inner.set_index_field(input);
         self
     }
-    /// <p>The index field and field options you want to configure.</p>
+    /// <p>The index field and field options you want to configure. </p>
     pub fn get_index_field(&self) -> &::std::option::Option<crate::types::IndexField> {
         self.inner.get_index_field()
     }

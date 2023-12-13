@@ -12,7 +12,6 @@
 #![allow(clippy::result_large_err)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
-#![cfg_attr(docsrs, feature(doc_auto_cfg))]
 //! This section provides documentation for the Amazon CodeGuru Reviewer API operations. CodeGuru Reviewer is a service that uses program analysis and machine learning to detect potential defects that are difficult for developers to find and recommends fixes in your Java and Python code.
 //!
 //! By proactively detecting and providing recommendations for addressing code defects and implementing best practices, CodeGuru Reviewer improves the overall quality and maintainability of your code base during the code review stage. For more information about CodeGuru Reviewer, see the _ [Amazon CodeGuru Reviewer User Guide](https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/welcome.html)._
@@ -30,8 +29,8 @@
 //!
 //! ```toml
 //! [dependencies]
-//! aws-config = { version = "1.1.0", features = ["behavior-version-latest"] }
-//! aws-sdk-codegurureviewer = "1.5.0"
+//! aws-config = { version = "1.0.3", features = ["behavior-version-latest"] }
+//! aws-sdk-codegurureviewer = "1.6.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -195,9 +194,9 @@ pub(crate) mod protocol_serde;
 
 mod serialization_settings;
 
-mod endpoint_lib;
-
 mod lens;
+
+mod endpoint_lib;
 
 mod json_errors;
 

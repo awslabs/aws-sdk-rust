@@ -26,14 +26,11 @@ impl StartExecutionInputBuilder {
 /// <p>A qualified state machine ARN can either refer to a <i>Distributed Map state</i> defined within a state machine, a version ARN, or an alias ARN.</p>
 /// <p>The following are some examples of qualified and unqualified state machine ARNs:</p>
 /// <ul>
-/// <li>
-/// <p>The following qualified state machine ARN refers to a <i>Distributed Map state</i> with a label <code>mapStateLabel</code> in a state machine named <code>myStateMachine</code>.</p>
-/// <p><code>arn:partition:states:region:account-id:stateMachine:myStateMachine/mapStateLabel</code></p><note>
+/// <li> <p>The following qualified state machine ARN refers to a <i>Distributed Map state</i> with a label <code>mapStateLabel</code> in a state machine named <code>myStateMachine</code>.</p> <p> <code>arn:partition:states:region:account-id:stateMachine:myStateMachine/mapStateLabel</code> </p> <note>
 /// <p>If you provide a qualified state machine ARN that refers to a <i>Distributed Map state</i>, the request fails with <code>ValidationException</code>.</p>
-/// </note></li>
-/// <li>
-/// <p>The following qualified state machine ARN refers to an alias named <code>PROD</code>.</p>
-/// <p><code>arn:<partition>
+/// </note> </li>
+/// <li> <p>The following qualified state machine ARN refers to an alias named <code>PROD</code>.</p> <p> <code>arn:
+/// <partition>
 /// :states:
 /// <region>
 /// :
@@ -42,12 +39,11 @@ impl StartExecutionInputBuilder {
 /// <mystatemachine:prod></mystatemachine:prod>
 /// </account-id>
 /// </region>
-/// </partition></code></p><note>
+/// </partition></code> </p> <note>
 /// <p>If you provide a qualified state machine ARN that refers to a version ARN or an alias ARN, the request starts execution for that version or alias.</p>
-/// </note></li>
-/// <li>
-/// <p>The following unqualified state machine ARN refers to a state machine named <code>myStateMachine</code>.</p>
-/// <p><code>arn:<partition>
+/// </note> </li>
+/// <li> <p>The following unqualified state machine ARN refers to a state machine named <code>myStateMachine</code>.</p> <p> <code>arn:
+/// <partition>
 /// :states:
 /// <region>
 /// :
@@ -56,12 +52,12 @@ impl StartExecutionInputBuilder {
 /// <mystatemachine></mystatemachine>
 /// </account-id>
 /// </region>
-/// </partition></code></p></li>
+/// </partition></code> </p> </li>
 /// </ul>
 /// <p>If you start an execution with an unqualified state machine ARN, Step Functions uses the latest revision of the state machine for the execution.</p>
-/// <p>To start executions of a state machine <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version</a>, call <code>StartExecution</code> and provide the version ARN or the ARN of an <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a> that points to the version.</p><note>
-/// <p><code>StartExecution</code> is idempotent for <code>STANDARD</code> workflows. For a <code>STANDARD</code> workflow, if you call <code>StartExecution</code> with the same name and input as a running execution, the call succeeds and return the same response as the original request. If the execution is closed or if the input is different, it returns a <code>400 ExecutionAlreadyExists</code> error. You can reuse names after 90 days.</p>
-/// <p><code>StartExecution</code> isn't idempotent for <code>EXPRESS</code> workflows.</p>
+/// <p>To start executions of a state machine <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version</a>, call <code>StartExecution</code> and provide the version ARN or the ARN of an <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a> that points to the version.</p> <note>
+/// <p> <code>StartExecution</code> is idempotent for <code>STANDARD</code> workflows. For a <code>STANDARD</code> workflow, if you call <code>StartExecution</code> with the same name and input as a running execution, the call succeeds and return the same response as the original request. If the execution is closed or if the input is different, it returns a <code>400 ExecutionAlreadyExists</code> error. You can reuse names after 90 days. </p>
+/// <p> <code>StartExecution</code> isn't idempotent for <code>EXPRESS</code> workflows. </p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartExecutionFluentBuilder {
@@ -151,9 +147,8 @@ impl StartExecutionFluentBuilder {
     /// <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
     /// <p>The <code>stateMachineArn</code> parameter accepts one of the following inputs:</p>
     /// <ul>
-    /// <li>
-    /// <p><b>An unqualified state machine ARN</b> – Refers to a state machine ARN that isn't qualified with a version or alias ARN. The following is an example of an unqualified state machine ARN.</p>
-    /// <p><code>arn:<partition>
+    /// <li> <p> <b>An unqualified state machine ARN</b> – Refers to a state machine ARN that isn't qualified with a version or alias ARN. The following is an example of an unqualified state machine ARN.</p> <p> <code>arn:
+    /// <partition>
     /// :states:
     /// <region>
     /// :
@@ -162,11 +157,9 @@ impl StartExecutionFluentBuilder {
     /// <mystatemachine></mystatemachine>
     /// </account-id>
     /// </region>
-    /// </partition></code></p>
-    /// <p>Step Functions doesn't associate state machine executions that you start with an unqualified ARN with a version. This is true even if that version uses the same revision that the execution used.</p></li>
-    /// <li>
-    /// <p><b>A state machine version ARN</b> – Refers to a version ARN, which is a combination of state machine ARN and the version number separated by a colon (:). The following is an example of the ARN for version 10.</p>
-    /// <p><code>arn:<partition>
+    /// </partition></code> </p> <p>Step Functions doesn't associate state machine executions that you start with an unqualified ARN with a version. This is true even if that version uses the same revision that the execution used.</p> </li>
+    /// <li> <p> <b>A state machine version ARN</b> – Refers to a version ARN, which is a combination of state machine ARN and the version number separated by a colon (:). The following is an example of the ARN for version 10. </p> <p> <code>arn:
+    /// <partition>
     /// :states:
     /// <region>
     /// :
@@ -177,11 +170,9 @@ impl StartExecutionFluentBuilder {
     /// </mystatemachine>
     /// </account-id>
     /// </region>
-    /// </partition></code></p>
-    /// <p>Step Functions doesn't associate executions that you start with a version ARN with any aliases that point to that version.</p></li>
-    /// <li>
-    /// <p><b>A state machine alias ARN</b> – Refers to an alias ARN, which is a combination of state machine ARN and the alias name separated by a colon (:). The following is an example of the ARN for an alias named <code>PROD</code>.</p>
-    /// <p><code>arn:<partition>
+    /// </partition></code> </p> <p>Step Functions doesn't associate executions that you start with a version ARN with any aliases that point to that version.</p> </li>
+    /// <li> <p> <b>A state machine alias ARN</b> – Refers to an alias ARN, which is a combination of state machine ARN and the alias name separated by a colon (:). The following is an example of the ARN for an alias named <code>PROD</code>.</p> <p> <code>arn:
+    /// <partition>
     /// :states:
     /// <region>
     /// :
@@ -190,8 +181,7 @@ impl StartExecutionFluentBuilder {
     /// <mystatemachine:prod></mystatemachine:prod>
     /// </account-id>
     /// </region>
-    /// </partition></code></p>
-    /// <p>Step Functions associates executions that you start with an alias ARN with that alias and the state machine version used for that execution.</p></li>
+    /// </partition></code> </p> <p>Step Functions associates executions that you start with an alias ARN with that alias and the state machine version used for that execution.</p> </li>
     /// </ul>
     pub fn state_machine_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.state_machine_arn(input.into());
@@ -200,9 +190,8 @@ impl StartExecutionFluentBuilder {
     /// <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
     /// <p>The <code>stateMachineArn</code> parameter accepts one of the following inputs:</p>
     /// <ul>
-    /// <li>
-    /// <p><b>An unqualified state machine ARN</b> – Refers to a state machine ARN that isn't qualified with a version or alias ARN. The following is an example of an unqualified state machine ARN.</p>
-    /// <p><code>arn:<partition>
+    /// <li> <p> <b>An unqualified state machine ARN</b> – Refers to a state machine ARN that isn't qualified with a version or alias ARN. The following is an example of an unqualified state machine ARN.</p> <p> <code>arn:
+    /// <partition>
     /// :states:
     /// <region>
     /// :
@@ -211,11 +200,9 @@ impl StartExecutionFluentBuilder {
     /// <mystatemachine></mystatemachine>
     /// </account-id>
     /// </region>
-    /// </partition></code></p>
-    /// <p>Step Functions doesn't associate state machine executions that you start with an unqualified ARN with a version. This is true even if that version uses the same revision that the execution used.</p></li>
-    /// <li>
-    /// <p><b>A state machine version ARN</b> – Refers to a version ARN, which is a combination of state machine ARN and the version number separated by a colon (:). The following is an example of the ARN for version 10.</p>
-    /// <p><code>arn:<partition>
+    /// </partition></code> </p> <p>Step Functions doesn't associate state machine executions that you start with an unqualified ARN with a version. This is true even if that version uses the same revision that the execution used.</p> </li>
+    /// <li> <p> <b>A state machine version ARN</b> – Refers to a version ARN, which is a combination of state machine ARN and the version number separated by a colon (:). The following is an example of the ARN for version 10. </p> <p> <code>arn:
+    /// <partition>
     /// :states:
     /// <region>
     /// :
@@ -226,11 +213,9 @@ impl StartExecutionFluentBuilder {
     /// </mystatemachine>
     /// </account-id>
     /// </region>
-    /// </partition></code></p>
-    /// <p>Step Functions doesn't associate executions that you start with a version ARN with any aliases that point to that version.</p></li>
-    /// <li>
-    /// <p><b>A state machine alias ARN</b> – Refers to an alias ARN, which is a combination of state machine ARN and the alias name separated by a colon (:). The following is an example of the ARN for an alias named <code>PROD</code>.</p>
-    /// <p><code>arn:<partition>
+    /// </partition></code> </p> <p>Step Functions doesn't associate executions that you start with a version ARN with any aliases that point to that version.</p> </li>
+    /// <li> <p> <b>A state machine alias ARN</b> – Refers to an alias ARN, which is a combination of state machine ARN and the alias name separated by a colon (:). The following is an example of the ARN for an alias named <code>PROD</code>.</p> <p> <code>arn:
+    /// <partition>
     /// :states:
     /// <region>
     /// :
@@ -239,8 +224,7 @@ impl StartExecutionFluentBuilder {
     /// <mystatemachine:prod></mystatemachine:prod>
     /// </account-id>
     /// </region>
-    /// </partition></code></p>
-    /// <p>Step Functions associates executions that you start with an alias ARN with that alias and the state machine version used for that execution.</p></li>
+    /// </partition></code> </p> <p>Step Functions associates executions that you start with an alias ARN with that alias and the state machine version used for that execution.</p> </li>
     /// </ul>
     pub fn set_state_machine_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_state_machine_arn(input);
@@ -249,9 +233,8 @@ impl StartExecutionFluentBuilder {
     /// <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
     /// <p>The <code>stateMachineArn</code> parameter accepts one of the following inputs:</p>
     /// <ul>
-    /// <li>
-    /// <p><b>An unqualified state machine ARN</b> – Refers to a state machine ARN that isn't qualified with a version or alias ARN. The following is an example of an unqualified state machine ARN.</p>
-    /// <p><code>arn:<partition>
+    /// <li> <p> <b>An unqualified state machine ARN</b> – Refers to a state machine ARN that isn't qualified with a version or alias ARN. The following is an example of an unqualified state machine ARN.</p> <p> <code>arn:
+    /// <partition>
     /// :states:
     /// <region>
     /// :
@@ -260,11 +243,9 @@ impl StartExecutionFluentBuilder {
     /// <mystatemachine></mystatemachine>
     /// </account-id>
     /// </region>
-    /// </partition></code></p>
-    /// <p>Step Functions doesn't associate state machine executions that you start with an unqualified ARN with a version. This is true even if that version uses the same revision that the execution used.</p></li>
-    /// <li>
-    /// <p><b>A state machine version ARN</b> – Refers to a version ARN, which is a combination of state machine ARN and the version number separated by a colon (:). The following is an example of the ARN for version 10.</p>
-    /// <p><code>arn:<partition>
+    /// </partition></code> </p> <p>Step Functions doesn't associate state machine executions that you start with an unqualified ARN with a version. This is true even if that version uses the same revision that the execution used.</p> </li>
+    /// <li> <p> <b>A state machine version ARN</b> – Refers to a version ARN, which is a combination of state machine ARN and the version number separated by a colon (:). The following is an example of the ARN for version 10. </p> <p> <code>arn:
+    /// <partition>
     /// :states:
     /// <region>
     /// :
@@ -275,11 +256,9 @@ impl StartExecutionFluentBuilder {
     /// </mystatemachine>
     /// </account-id>
     /// </region>
-    /// </partition></code></p>
-    /// <p>Step Functions doesn't associate executions that you start with a version ARN with any aliases that point to that version.</p></li>
-    /// <li>
-    /// <p><b>A state machine alias ARN</b> – Refers to an alias ARN, which is a combination of state machine ARN and the alias name separated by a colon (:). The following is an example of the ARN for an alias named <code>PROD</code>.</p>
-    /// <p><code>arn:<partition>
+    /// </partition></code> </p> <p>Step Functions doesn't associate executions that you start with a version ARN with any aliases that point to that version.</p> </li>
+    /// <li> <p> <b>A state machine alias ARN</b> – Refers to an alias ARN, which is a combination of state machine ARN and the alias name separated by a colon (:). The following is an example of the ARN for an alias named <code>PROD</code>.</p> <p> <code>arn:
+    /// <partition>
     /// :states:
     /// <region>
     /// :
@@ -288,8 +267,7 @@ impl StartExecutionFluentBuilder {
     /// <mystatemachine:prod></mystatemachine:prod>
     /// </account-id>
     /// </region>
-    /// </partition></code></p>
-    /// <p>Step Functions associates executions that you start with an alias ARN with that alias and the state machine version used for that execution.</p></li>
+    /// </partition></code> </p> <p>Step Functions associates executions that you start with an alias ARN with that alias and the state machine version used for that execution.</p> </li>
     /// </ul>
     pub fn get_state_machine_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_state_machine_arn()
@@ -298,16 +276,11 @@ impl StartExecutionFluentBuilder {
     /// <p>If you don't provide a name for the execution, Step Functions automatically generates a universally unique identifier (UUID) as the execution name.</p>
     /// <p>A name must <i>not</i> contain:</p>
     /// <ul>
-    /// <li>
-    /// <p>white space</p></li>
-    /// <li>
-    /// <p>brackets <code>&lt; &gt; { } [ ]</code></p></li>
-    /// <li>
-    /// <p>wildcard characters <code>? *</code></p></li>
-    /// <li>
-    /// <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code></p></li>
-    /// <li>
-    /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p></li>
+    /// <li> <p>white space</p> </li>
+    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
+    /// <li> <p>wildcard characters <code>? *</code> </p> </li>
+    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
+    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -318,16 +291,11 @@ impl StartExecutionFluentBuilder {
     /// <p>If you don't provide a name for the execution, Step Functions automatically generates a universally unique identifier (UUID) as the execution name.</p>
     /// <p>A name must <i>not</i> contain:</p>
     /// <ul>
-    /// <li>
-    /// <p>white space</p></li>
-    /// <li>
-    /// <p>brackets <code>&lt; &gt; { } [ ]</code></p></li>
-    /// <li>
-    /// <p>wildcard characters <code>? *</code></p></li>
-    /// <li>
-    /// <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code></p></li>
-    /// <li>
-    /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p></li>
+    /// <li> <p>white space</p> </li>
+    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
+    /// <li> <p>wildcard characters <code>? *</code> </p> </li>
+    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
+    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -338,24 +306,19 @@ impl StartExecutionFluentBuilder {
     /// <p>If you don't provide a name for the execution, Step Functions automatically generates a universally unique identifier (UUID) as the execution name.</p>
     /// <p>A name must <i>not</i> contain:</p>
     /// <ul>
-    /// <li>
-    /// <p>white space</p></li>
-    /// <li>
-    /// <p>brackets <code>&lt; &gt; { } [ ]</code></p></li>
-    /// <li>
-    /// <p>wildcard characters <code>? *</code></p></li>
-    /// <li>
-    /// <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code></p></li>
-    /// <li>
-    /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p></li>
+    /// <li> <p>white space</p> </li>
+    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
+    /// <li> <p>wildcard characters <code>? *</code> </p> </li>
+    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
+    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
     /// <p>The string that contains the JSON input data for the execution, for example:</p>
-    /// <p><code>"input": "{\"first_name\" : \"test\"}"</code></p><note>
-    /// <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>"input": "{}"</code></p>
+    /// <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> <note>
+    /// <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>"input": "{}"</code> </p>
     /// </note>
     /// <p>Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub fn input(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -363,8 +326,8 @@ impl StartExecutionFluentBuilder {
         self
     }
     /// <p>The string that contains the JSON input data for the execution, for example:</p>
-    /// <p><code>"input": "{\"first_name\" : \"test\"}"</code></p><note>
-    /// <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>"input": "{}"</code></p>
+    /// <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> <note>
+    /// <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>"input": "{}"</code> </p>
     /// </note>
     /// <p>Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub fn set_input(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -372,8 +335,8 @@ impl StartExecutionFluentBuilder {
         self
     }
     /// <p>The string that contains the JSON input data for the execution, for example:</p>
-    /// <p><code>"input": "{\"first_name\" : \"test\"}"</code></p><note>
-    /// <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>"input": "{}"</code></p>
+    /// <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> <note>
+    /// <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>"input": "{}"</code> </p>
     /// </note>
     /// <p>Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub fn get_input(&self) -> &::std::option::Option<::std::string::String> {

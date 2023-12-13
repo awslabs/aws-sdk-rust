@@ -5,7 +5,7 @@
 pub struct BatchDeleteScheduledActionInput {
     /// <p>The name of the Auto Scaling group.</p>
     pub auto_scaling_group_name: ::std::option::Option<::std::string::String>,
-    /// <p>The names of the scheduled actions to delete. The maximum number allowed is 50.</p>
+    /// <p>The names of the scheduled actions to delete. The maximum number allowed is 50. </p>
     pub scheduled_action_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchDeleteScheduledActionInput {
@@ -13,7 +13,7 @@ impl BatchDeleteScheduledActionInput {
     pub fn auto_scaling_group_name(&self) -> ::std::option::Option<&str> {
         self.auto_scaling_group_name.as_deref()
     }
-    /// <p>The names of the scheduled actions to delete. The maximum number allowed is 50.</p>
+    /// <p>The names of the scheduled actions to delete. The maximum number allowed is 50. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scheduled_action_names.is_none()`.
     pub fn scheduled_action_names(&self) -> &[::std::string::String] {
@@ -54,19 +54,19 @@ impl BatchDeleteScheduledActionInputBuilder {
     ///
     /// To override the contents of this collection use [`set_scheduled_action_names`](Self::set_scheduled_action_names).
     ///
-    /// <p>The names of the scheduled actions to delete. The maximum number allowed is 50.</p>
+    /// <p>The names of the scheduled actions to delete. The maximum number allowed is 50. </p>
     pub fn scheduled_action_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.scheduled_action_names.unwrap_or_default();
         v.push(input.into());
         self.scheduled_action_names = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The names of the scheduled actions to delete. The maximum number allowed is 50.</p>
+    /// <p>The names of the scheduled actions to delete. The maximum number allowed is 50. </p>
     pub fn set_scheduled_action_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.scheduled_action_names = input;
         self
     }
-    /// <p>The names of the scheduled actions to delete. The maximum number allowed is 50.</p>
+    /// <p>The names of the scheduled actions to delete. The maximum number allowed is 50. </p>
     pub fn get_scheduled_action_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.scheduled_action_names
     }

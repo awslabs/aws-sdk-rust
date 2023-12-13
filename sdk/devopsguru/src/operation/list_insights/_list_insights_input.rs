@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListInsightsInput {
-    /// <p>A filter used to filter the returned insights by their status. You can specify one status filter.</p>
+    /// <p> A filter used to filter the returned insights by their status. You can specify one status filter. </p>
     pub status_filter: ::std::option::Option<crate::types::ListInsightsStatusFilter>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -11,7 +11,7 @@ pub struct ListInsightsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListInsightsInput {
-    /// <p>A filter used to filter the returned insights by their status. You can specify one status filter.</p>
+    /// <p> A filter used to filter the returned insights by their status. You can specify one status filter. </p>
     pub fn status_filter(&self) -> ::std::option::Option<&crate::types::ListInsightsStatusFilter> {
         self.status_filter.as_ref()
     }
@@ -40,18 +40,18 @@ pub struct ListInsightsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListInsightsInputBuilder {
-    /// <p>A filter used to filter the returned insights by their status. You can specify one status filter.</p>
+    /// <p> A filter used to filter the returned insights by their status. You can specify one status filter. </p>
     /// This field is required.
     pub fn status_filter(mut self, input: crate::types::ListInsightsStatusFilter) -> Self {
         self.status_filter = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A filter used to filter the returned insights by their status. You can specify one status filter.</p>
+    /// <p> A filter used to filter the returned insights by their status. You can specify one status filter. </p>
     pub fn set_status_filter(mut self, input: ::std::option::Option<crate::types::ListInsightsStatusFilter>) -> Self {
         self.status_filter = input;
         self
     }
-    /// <p>A filter used to filter the returned insights by their status. You can specify one status filter.</p>
+    /// <p> A filter used to filter the returned insights by their status. You can specify one status filter. </p>
     pub fn get_status_filter(&self) -> &::std::option::Option<crate::types::ListInsightsStatusFilter> {
         &self.status_filter
     }

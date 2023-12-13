@@ -22,7 +22,7 @@ impl StartSimulationJobBatchInputBuilder {
 }
 /// Fluent builder constructing a request to `StartSimulationJobBatch`.
 ///
-/// <p>Starts a new simulation job batch. The batch is defined using one or more <code>SimulationJobRequest</code> objects.</p>
+/// <p>Starts a new simulation job batch. The batch is defined using one or more <code>SimulationJobRequest</code> objects. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartSimulationJobBatchFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

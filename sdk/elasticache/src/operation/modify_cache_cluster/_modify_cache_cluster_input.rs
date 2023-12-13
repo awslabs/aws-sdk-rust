@@ -8,7 +8,7 @@ pub struct ModifyCacheClusterInput {
     pub cache_cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of cache nodes that the cluster should have. If the value for <code>NumCacheNodes</code> is greater than the sum of the number of current cache nodes and the number of cache nodes pending creation (which may be zero), more nodes are added. If the value is less than the number of existing cache nodes, nodes are removed. If the value is equal to the number of current cache nodes, any pending add or remove requests are canceled.</p>
     /// <p>If you are removing cache nodes, you must use the <code>CacheNodeIdsToRemove</code> parameter to provide the IDs of the specific cache nodes to remove.</p>
-    /// <p>For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1 and 40.</p><note>
+    /// <p>For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1 and 40.</p> <note>
     /// <p>Adding or removing Memcached cache nodes can be applied immediately or as a pending operation (see <code>ApplyImmediately</code>).</p>
     /// <p>A pending operation to modify the number of cache nodes in a cluster during its maintenance window, whether by adding or removing nodes in accordance with the scale out architecture, is not queued. The customer's latest request to add or remove nodes to the cluster overrides any previous pending operations to modify the number of cache nodes in the cluster. For example, a request to remove 2 nodes would override a previous pending operation to remove 3 nodes. Similarly, a request to add 2 nodes would override a previous pending operation to remove 3 nodes and vice versa. As Memcached cache nodes may now be provisioned in different Availability Zones with flexible cache node placement, a request to add nodes does not automatically override a previous pending operation to add nodes. The customer can modify the previous pending operation to add more nodes or explicitly cancel the pending request and retry the new request. To cancel pending operations to modify the number of cache nodes in a cluster, use the <code>ModifyCacheCluster</code> request and set <code>NumCacheNodes</code> equal to the number of cache nodes currently in the cluster.</p>
     /// </note>
@@ -18,9 +18,9 @@ pub struct ModifyCacheClusterInput {
     pub cache_node_ids_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies whether the new nodes in this Memcached cluster are all created in a single Availability Zone or created across multiple Availability Zones.</p>
     /// <p>Valid values: <code>single-az</code> | <code>cross-az</code>.</p>
-    /// <p>This option is only supported for Memcached clusters.</p><note>
+    /// <p>This option is only supported for Memcached clusters.</p> <note>
     /// <p>You cannot specify <code>single-az</code> if the Memcached cluster already has cache nodes in different Availability Zones. If <code>cross-az</code> is specified, existing Memcached nodes remain in their current Availability Zone.</p>
-    /// <p>Only newly created nodes are located in different Availability Zones.</p>
+    /// <p>Only newly created nodes are located in different Availability Zones. </p>
     /// </note>
     pub az_mode: ::std::option::Option<crate::types::AzMode>,
     /// <note>
@@ -30,59 +30,40 @@ pub struct ModifyCacheClusterInput {
     /// <p>This parameter is only valid when <code>NumCacheNodes</code> in the request is greater than the sum of the number of active cache nodes and the number of cache nodes pending creation (which may be zero). The number of Availability Zones supplied in this list must match the cache nodes being added in this request.</p>
     /// <p>Scenarios:</p>
     /// <ul>
-    /// <li>
-    /// <p><b>Scenario 1:</b> You have 3 active nodes and wish to add 2 nodes. Specify <code>NumCacheNodes=5</code> (3 + 2) and optionally specify two Availability Zones for the two new nodes.</p></li>
-    /// <li>
-    /// <p><b>Scenario 2:</b> You have 3 active nodes and 2 nodes pending creation (from the scenario 1 call) and want to add 1 more node. Specify <code>NumCacheNodes=6</code> ((3 + 2) + 1) and optionally specify an Availability Zone for the new node.</p></li>
-    /// <li>
-    /// <p><b>Scenario 3:</b> You want to cancel all pending operations. Specify <code>NumCacheNodes=3</code> to cancel all pending operations.</p></li>
+    /// <li> <p> <b>Scenario 1:</b> You have 3 active nodes and wish to add 2 nodes. Specify <code>NumCacheNodes=5</code> (3 + 2) and optionally specify two Availability Zones for the two new nodes.</p> </li>
+    /// <li> <p> <b>Scenario 2:</b> You have 3 active nodes and 2 nodes pending creation (from the scenario 1 call) and want to add 1 more node. Specify <code>NumCacheNodes=6</code> ((3 + 2) + 1) and optionally specify an Availability Zone for the new node.</p> </li>
+    /// <li> <p> <b>Scenario 3:</b> You want to cancel all pending operations. Specify <code>NumCacheNodes=3</code> to cancel all pending operations.</p> </li>
     /// </ul>
     /// <p>The Availability Zone placement of nodes pending creation cannot be modified. If you wish to cancel any nodes pending creation, add 0 nodes by setting <code>NumCacheNodes</code> to the number of current nodes.</p>
     /// <p>If <code>cross-az</code> is specified, existing Memcached nodes remain in their current Availability Zone. Only newly created nodes can be located in different Availability Zones. For guidance on how to move existing Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b> section of <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNodes.SupportedTypes.html">Cache Node Considerations for Memcached</a>.</p>
-    /// <p><b>Impact of new add/remove requests upon pending requests</b></p>
+    /// <p> <b>Impact of new add/remove requests upon pending requests</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>Scenario-1</p>
+    /// <li> <p>Scenario-1</p>
     /// <ul>
-    /// <li>
-    /// <p>Pending Action: Delete</p></li>
-    /// <li>
-    /// <p>New Request: Delete</p></li>
-    /// <li>
-    /// <p>Result: The new delete, pending or immediate, replaces the pending delete.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p>Scenario-2</p>
+    /// <li> <p>Pending Action: Delete</p> </li>
+    /// <li> <p>New Request: Delete</p> </li>
+    /// <li> <p>Result: The new delete, pending or immediate, replaces the pending delete.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>Scenario-2</p>
     /// <ul>
-    /// <li>
-    /// <p>Pending Action: Delete</p></li>
-    /// <li>
-    /// <p>New Request: Create</p></li>
-    /// <li>
-    /// <p>Result: The new create, pending or immediate, replaces the pending delete.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p>Scenario-3</p>
+    /// <li> <p>Pending Action: Delete</p> </li>
+    /// <li> <p>New Request: Create</p> </li>
+    /// <li> <p>Result: The new create, pending or immediate, replaces the pending delete.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>Scenario-3</p>
     /// <ul>
-    /// <li>
-    /// <p>Pending Action: Create</p></li>
-    /// <li>
-    /// <p>New Request: Delete</p></li>
-    /// <li>
-    /// <p>Result: The new delete, pending or immediate, replaces the pending create.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p>Scenario-4</p>
+    /// <li> <p>Pending Action: Create</p> </li>
+    /// <li> <p>New Request: Delete</p> </li>
+    /// <li> <p>Result: The new delete, pending or immediate, replaces the pending create.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>Scenario-4</p>
     /// <ul>
-    /// <li>
-    /// <p>Pending Action: Create</p></li>
-    /// <li>
-    /// <p>New Request: Create</p></li>
-    /// <li>
-    /// <p>Result: The new create is added to the pending create.</p><important>
-    /// <p><b>Important:</b> If the new create request is <b>Apply Immediately - Yes</b>, all creates are performed immediately. If the new create request is <b>Apply Immediately - No</b>, all creates are pending.</p>
-    /// </important></li>
-    /// </ul></li>
+    /// <li> <p>Pending Action: Create</p> </li>
+    /// <li> <p>New Request: Create</p> </li>
+    /// <li> <p>Result: The new create is added to the pending create.</p> <important>
+    /// <p> <b>Important:</b> If the new create request is <b>Apply Immediately - Yes</b>, all creates are performed immediately. If the new create request is <b>Apply Immediately - No</b>, all creates are pending.</p>
+    /// </important> </li>
+    /// </ul> </li>
     /// </ul>
     pub new_availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of cache security group names to authorize on this cluster. This change is asynchronously applied as soon as possible.</p>
@@ -95,71 +76,59 @@ pub struct ModifyCacheClusterInput {
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
     /// <p>Valid values for <code>ddd</code> are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>sun</code></p></li>
-    /// <li>
-    /// <p><code>mon</code></p></li>
-    /// <li>
-    /// <p><code>tue</code></p></li>
-    /// <li>
-    /// <p><code>wed</code></p></li>
-    /// <li>
-    /// <p><code>thu</code></p></li>
-    /// <li>
-    /// <p><code>fri</code></p></li>
-    /// <li>
-    /// <p><code>sat</code></p></li>
+    /// <li> <p> <code>sun</code> </p> </li>
+    /// <li> <p> <code>mon</code> </p> </li>
+    /// <li> <p> <code>tue</code> </p> </li>
+    /// <li> <p> <code>wed</code> </p> </li>
+    /// <li> <p> <code>thu</code> </p> </li>
+    /// <li> <p> <code>fri</code> </p> </li>
+    /// <li> <p> <code>sat</code> </p> </li>
     /// </ul>
-    /// <p>Example: <code>sun:23:00-mon:01:30</code></p>
+    /// <p>Example: <code>sun:23:00-mon:01:30</code> </p>
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications are sent.</p><note>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications are sent.</p> <note>
     /// <p>The Amazon SNS topic owner must be same as the cluster owner.</p>
     /// </note>
     pub notification_topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the cache parameter group to apply to this cluster. This change is asynchronously applied as soon as possible for parameters when the <code>ApplyImmediately</code> parameter is specified as <code>true</code> for this request.</p>
     pub cache_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the Amazon SNS notification topic. Notifications are sent only if the status is <code>active</code>.</p>
-    /// <p>Valid values: <code>active</code> | <code>inactive</code></p>
+    /// <p>Valid values: <code>active</code> | <code>inactive</code> </p>
     pub notification_topic_status: ::std::option::Option<::std::string::String>,
     /// <p>If <code>true</code>, this parameter causes the modifications in this request and any pending modifications to be applied, asynchronously and as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the cluster.</p>
-    /// <p>If <code>false</code>, changes to the cluster are applied on the next maintenance reboot, or the next failure reboot, whichever occurs first.</p><important>
+    /// <p>If <code>false</code>, changes to the cluster are applied on the next maintenance reboot, or the next failure reboot, whichever occurs first.</p> <important>
     /// <p>If you perform a <code>ModifyCacheCluster</code> before a pending modification is applied, the pending modification is replaced by the newer modification.</p>
     /// </important>
-    /// <p>Valid values: <code>true</code> | <code>false</code></p>
-    /// <p>Default: <code>false</code></p>
+    /// <p>Valid values: <code>true</code> | <code>false</code> </p>
+    /// <p>Default: <code>false</code> </p>
     pub apply_immediately: ::std::option::Option<bool>,
     /// <p>The upgraded version of the cache engine to be run on the cache nodes.</p>
-    /// <p><b>Important:</b> You can upgrade to a newer engine version (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you want to use an earlier engine version, you must delete the existing cluster and create it anew with the earlier engine version.</p>
+    /// <p> <b>Important:</b> You can upgrade to a newer engine version (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you want to use an earlier engine version, you must delete the existing cluster and create it anew with the earlier engine version. </p>
     pub engine_version: ::std::option::Option<::std::string::String>,
-    /// <p>&nbsp;If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp;</p>
+    /// <p>&nbsp;If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp; </p>
     pub auto_minor_version_upgrade: ::std::option::Option<bool>,
-    /// <p>The number of days for which ElastiCache retains automatic cluster snapshots before deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p><note>
+    /// <p>The number of days for which ElastiCache retains automatic cluster snapshots before deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p> <note>
     /// <p>If the value of <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned off.</p>
     /// </note>
     pub snapshot_retention_limit: ::std::option::Option<i32>,
-    /// <p>The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your cluster.</p>
+    /// <p>The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your cluster. </p>
     pub snapshot_window: ::std::option::Option<::std::string::String>,
     /// <p>A valid cache node type that you want to scale this cluster up to.</p>
     pub cache_node_type: ::std::option::Option<::std::string::String>,
     /// <p>Reserved parameter. The password used to access a password protected server. This parameter must be specified with the <code>auth-token-update</code> parameter. Password constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be only printable ASCII characters</p></li>
-    /// <li>
-    /// <p>Must be at least 16 characters and no more than 128 characters in length</p></li>
-    /// <li>
-    /// <p>Cannot contain any of the following characters: '/', '"', or '@', '%'</p></li>
+    /// <li> <p>Must be only printable ASCII characters</p> </li>
+    /// <li> <p>Must be at least 16 characters and no more than 128 characters in length</p> </li>
+    /// <li> <p>Cannot contain any of the following characters: '/', '"', or '@', '%'</p> </li>
     /// </ul>
-    /// <p>For more information, see AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.</p>
+    /// <p> For more information, see AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.</p>
     pub auth_token: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the strategy to use to update the AUTH token. This parameter must be specified with the <code>auth-token</code> parameter. Possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>Rotate</p></li>
-    /// <li>
-    /// <p>Set</p></li>
+    /// <li> <p>Rotate</p> </li>
+    /// <li> <p>Set</p> </li>
     /// </ul>
-    /// <p>For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis AUTH</a></p>
+    /// <p> For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis AUTH</a> </p>
     pub auth_token_update_strategy: ::std::option::Option<crate::types::AuthTokenUpdateStrategyType>,
     /// <p>Specifies the destination, format and type of the logs.</p>
     pub log_delivery_configurations: ::std::option::Option<::std::vec::Vec<crate::types::LogDeliveryConfigurationRequest>>,
@@ -173,7 +142,7 @@ impl ModifyCacheClusterInput {
     }
     /// <p>The number of cache nodes that the cluster should have. If the value for <code>NumCacheNodes</code> is greater than the sum of the number of current cache nodes and the number of cache nodes pending creation (which may be zero), more nodes are added. If the value is less than the number of existing cache nodes, nodes are removed. If the value is equal to the number of current cache nodes, any pending add or remove requests are canceled.</p>
     /// <p>If you are removing cache nodes, you must use the <code>CacheNodeIdsToRemove</code> parameter to provide the IDs of the specific cache nodes to remove.</p>
-    /// <p>For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1 and 40.</p><note>
+    /// <p>For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1 and 40.</p> <note>
     /// <p>Adding or removing Memcached cache nodes can be applied immediately or as a pending operation (see <code>ApplyImmediately</code>).</p>
     /// <p>A pending operation to modify the number of cache nodes in a cluster during its maintenance window, whether by adding or removing nodes in accordance with the scale out architecture, is not queued. The customer's latest request to add or remove nodes to the cluster overrides any previous pending operations to modify the number of cache nodes in the cluster. For example, a request to remove 2 nodes would override a previous pending operation to remove 3 nodes. Similarly, a request to add 2 nodes would override a previous pending operation to remove 3 nodes and vice versa. As Memcached cache nodes may now be provisioned in different Availability Zones with flexible cache node placement, a request to add nodes does not automatically override a previous pending operation to add nodes. The customer can modify the previous pending operation to add more nodes or explicitly cancel the pending request and retry the new request. To cancel pending operations to modify the number of cache nodes in a cluster, use the <code>ModifyCacheCluster</code> request and set <code>NumCacheNodes</code> equal to the number of cache nodes currently in the cluster.</p>
     /// </note>
@@ -189,9 +158,9 @@ impl ModifyCacheClusterInput {
     }
     /// <p>Specifies whether the new nodes in this Memcached cluster are all created in a single Availability Zone or created across multiple Availability Zones.</p>
     /// <p>Valid values: <code>single-az</code> | <code>cross-az</code>.</p>
-    /// <p>This option is only supported for Memcached clusters.</p><note>
+    /// <p>This option is only supported for Memcached clusters.</p> <note>
     /// <p>You cannot specify <code>single-az</code> if the Memcached cluster already has cache nodes in different Availability Zones. If <code>cross-az</code> is specified, existing Memcached nodes remain in their current Availability Zone.</p>
-    /// <p>Only newly created nodes are located in different Availability Zones.</p>
+    /// <p>Only newly created nodes are located in different Availability Zones. </p>
     /// </note>
     pub fn az_mode(&self) -> ::std::option::Option<&crate::types::AzMode> {
         self.az_mode.as_ref()
@@ -203,59 +172,40 @@ impl ModifyCacheClusterInput {
     /// <p>This parameter is only valid when <code>NumCacheNodes</code> in the request is greater than the sum of the number of active cache nodes and the number of cache nodes pending creation (which may be zero). The number of Availability Zones supplied in this list must match the cache nodes being added in this request.</p>
     /// <p>Scenarios:</p>
     /// <ul>
-    /// <li>
-    /// <p><b>Scenario 1:</b> You have 3 active nodes and wish to add 2 nodes. Specify <code>NumCacheNodes=5</code> (3 + 2) and optionally specify two Availability Zones for the two new nodes.</p></li>
-    /// <li>
-    /// <p><b>Scenario 2:</b> You have 3 active nodes and 2 nodes pending creation (from the scenario 1 call) and want to add 1 more node. Specify <code>NumCacheNodes=6</code> ((3 + 2) + 1) and optionally specify an Availability Zone for the new node.</p></li>
-    /// <li>
-    /// <p><b>Scenario 3:</b> You want to cancel all pending operations. Specify <code>NumCacheNodes=3</code> to cancel all pending operations.</p></li>
+    /// <li> <p> <b>Scenario 1:</b> You have 3 active nodes and wish to add 2 nodes. Specify <code>NumCacheNodes=5</code> (3 + 2) and optionally specify two Availability Zones for the two new nodes.</p> </li>
+    /// <li> <p> <b>Scenario 2:</b> You have 3 active nodes and 2 nodes pending creation (from the scenario 1 call) and want to add 1 more node. Specify <code>NumCacheNodes=6</code> ((3 + 2) + 1) and optionally specify an Availability Zone for the new node.</p> </li>
+    /// <li> <p> <b>Scenario 3:</b> You want to cancel all pending operations. Specify <code>NumCacheNodes=3</code> to cancel all pending operations.</p> </li>
     /// </ul>
     /// <p>The Availability Zone placement of nodes pending creation cannot be modified. If you wish to cancel any nodes pending creation, add 0 nodes by setting <code>NumCacheNodes</code> to the number of current nodes.</p>
     /// <p>If <code>cross-az</code> is specified, existing Memcached nodes remain in their current Availability Zone. Only newly created nodes can be located in different Availability Zones. For guidance on how to move existing Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b> section of <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNodes.SupportedTypes.html">Cache Node Considerations for Memcached</a>.</p>
-    /// <p><b>Impact of new add/remove requests upon pending requests</b></p>
+    /// <p> <b>Impact of new add/remove requests upon pending requests</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>Scenario-1</p>
+    /// <li> <p>Scenario-1</p>
     /// <ul>
-    /// <li>
-    /// <p>Pending Action: Delete</p></li>
-    /// <li>
-    /// <p>New Request: Delete</p></li>
-    /// <li>
-    /// <p>Result: The new delete, pending or immediate, replaces the pending delete.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p>Scenario-2</p>
+    /// <li> <p>Pending Action: Delete</p> </li>
+    /// <li> <p>New Request: Delete</p> </li>
+    /// <li> <p>Result: The new delete, pending or immediate, replaces the pending delete.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>Scenario-2</p>
     /// <ul>
-    /// <li>
-    /// <p>Pending Action: Delete</p></li>
-    /// <li>
-    /// <p>New Request: Create</p></li>
-    /// <li>
-    /// <p>Result: The new create, pending or immediate, replaces the pending delete.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p>Scenario-3</p>
+    /// <li> <p>Pending Action: Delete</p> </li>
+    /// <li> <p>New Request: Create</p> </li>
+    /// <li> <p>Result: The new create, pending or immediate, replaces the pending delete.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>Scenario-3</p>
     /// <ul>
-    /// <li>
-    /// <p>Pending Action: Create</p></li>
-    /// <li>
-    /// <p>New Request: Delete</p></li>
-    /// <li>
-    /// <p>Result: The new delete, pending or immediate, replaces the pending create.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p>Scenario-4</p>
+    /// <li> <p>Pending Action: Create</p> </li>
+    /// <li> <p>New Request: Delete</p> </li>
+    /// <li> <p>Result: The new delete, pending or immediate, replaces the pending create.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>Scenario-4</p>
     /// <ul>
-    /// <li>
-    /// <p>Pending Action: Create</p></li>
-    /// <li>
-    /// <p>New Request: Create</p></li>
-    /// <li>
-    /// <p>Result: The new create is added to the pending create.</p><important>
-    /// <p><b>Important:</b> If the new create request is <b>Apply Immediately - Yes</b>, all creates are performed immediately. If the new create request is <b>Apply Immediately - No</b>, all creates are pending.</p>
-    /// </important></li>
-    /// </ul></li>
+    /// <li> <p>Pending Action: Create</p> </li>
+    /// <li> <p>New Request: Create</p> </li>
+    /// <li> <p>Result: The new create is added to the pending create.</p> <important>
+    /// <p> <b>Important:</b> If the new create request is <b>Apply Immediately - Yes</b>, all creates are performed immediately. If the new create request is <b>Apply Immediately - No</b>, all creates are pending.</p>
+    /// </important> </li>
+    /// </ul> </li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.new_availability_zones.is_none()`.
@@ -280,26 +230,19 @@ impl ModifyCacheClusterInput {
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
     /// <p>Valid values for <code>ddd</code> are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>sun</code></p></li>
-    /// <li>
-    /// <p><code>mon</code></p></li>
-    /// <li>
-    /// <p><code>tue</code></p></li>
-    /// <li>
-    /// <p><code>wed</code></p></li>
-    /// <li>
-    /// <p><code>thu</code></p></li>
-    /// <li>
-    /// <p><code>fri</code></p></li>
-    /// <li>
-    /// <p><code>sat</code></p></li>
+    /// <li> <p> <code>sun</code> </p> </li>
+    /// <li> <p> <code>mon</code> </p> </li>
+    /// <li> <p> <code>tue</code> </p> </li>
+    /// <li> <p> <code>wed</code> </p> </li>
+    /// <li> <p> <code>thu</code> </p> </li>
+    /// <li> <p> <code>fri</code> </p> </li>
+    /// <li> <p> <code>sat</code> </p> </li>
     /// </ul>
-    /// <p>Example: <code>sun:23:00-mon:01:30</code></p>
+    /// <p>Example: <code>sun:23:00-mon:01:30</code> </p>
     pub fn preferred_maintenance_window(&self) -> ::std::option::Option<&str> {
         self.preferred_maintenance_window.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications are sent.</p><note>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications are sent.</p> <note>
     /// <p>The Amazon SNS topic owner must be same as the cluster owner.</p>
     /// </note>
     pub fn notification_topic_arn(&self) -> ::std::option::Option<&str> {
@@ -310,35 +253,35 @@ impl ModifyCacheClusterInput {
         self.cache_parameter_group_name.as_deref()
     }
     /// <p>The status of the Amazon SNS notification topic. Notifications are sent only if the status is <code>active</code>.</p>
-    /// <p>Valid values: <code>active</code> | <code>inactive</code></p>
+    /// <p>Valid values: <code>active</code> | <code>inactive</code> </p>
     pub fn notification_topic_status(&self) -> ::std::option::Option<&str> {
         self.notification_topic_status.as_deref()
     }
     /// <p>If <code>true</code>, this parameter causes the modifications in this request and any pending modifications to be applied, asynchronously and as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the cluster.</p>
-    /// <p>If <code>false</code>, changes to the cluster are applied on the next maintenance reboot, or the next failure reboot, whichever occurs first.</p><important>
+    /// <p>If <code>false</code>, changes to the cluster are applied on the next maintenance reboot, or the next failure reboot, whichever occurs first.</p> <important>
     /// <p>If you perform a <code>ModifyCacheCluster</code> before a pending modification is applied, the pending modification is replaced by the newer modification.</p>
     /// </important>
-    /// <p>Valid values: <code>true</code> | <code>false</code></p>
-    /// <p>Default: <code>false</code></p>
+    /// <p>Valid values: <code>true</code> | <code>false</code> </p>
+    /// <p>Default: <code>false</code> </p>
     pub fn apply_immediately(&self) -> ::std::option::Option<bool> {
         self.apply_immediately
     }
     /// <p>The upgraded version of the cache engine to be run on the cache nodes.</p>
-    /// <p><b>Important:</b> You can upgrade to a newer engine version (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you want to use an earlier engine version, you must delete the existing cluster and create it anew with the earlier engine version.</p>
+    /// <p> <b>Important:</b> You can upgrade to a newer engine version (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you want to use an earlier engine version, you must delete the existing cluster and create it anew with the earlier engine version. </p>
     pub fn engine_version(&self) -> ::std::option::Option<&str> {
         self.engine_version.as_deref()
     }
-    /// <p>&nbsp;If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp;</p>
+    /// <p>&nbsp;If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp; </p>
     pub fn auto_minor_version_upgrade(&self) -> ::std::option::Option<bool> {
         self.auto_minor_version_upgrade
     }
-    /// <p>The number of days for which ElastiCache retains automatic cluster snapshots before deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p><note>
+    /// <p>The number of days for which ElastiCache retains automatic cluster snapshots before deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p> <note>
     /// <p>If the value of <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned off.</p>
     /// </note>
     pub fn snapshot_retention_limit(&self) -> ::std::option::Option<i32> {
         self.snapshot_retention_limit
     }
-    /// <p>The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your cluster.</p>
+    /// <p>The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your cluster. </p>
     pub fn snapshot_window(&self) -> ::std::option::Option<&str> {
         self.snapshot_window.as_deref()
     }
@@ -348,25 +291,20 @@ impl ModifyCacheClusterInput {
     }
     /// <p>Reserved parameter. The password used to access a password protected server. This parameter must be specified with the <code>auth-token-update</code> parameter. Password constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be only printable ASCII characters</p></li>
-    /// <li>
-    /// <p>Must be at least 16 characters and no more than 128 characters in length</p></li>
-    /// <li>
-    /// <p>Cannot contain any of the following characters: '/', '"', or '@', '%'</p></li>
+    /// <li> <p>Must be only printable ASCII characters</p> </li>
+    /// <li> <p>Must be at least 16 characters and no more than 128 characters in length</p> </li>
+    /// <li> <p>Cannot contain any of the following characters: '/', '"', or '@', '%'</p> </li>
     /// </ul>
-    /// <p>For more information, see AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.</p>
+    /// <p> For more information, see AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.</p>
     pub fn auth_token(&self) -> ::std::option::Option<&str> {
         self.auth_token.as_deref()
     }
     /// <p>Specifies the strategy to use to update the AUTH token. This parameter must be specified with the <code>auth-token</code> parameter. Possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>Rotate</p></li>
-    /// <li>
-    /// <p>Set</p></li>
+    /// <li> <p>Rotate</p> </li>
+    /// <li> <p>Set</p> </li>
     /// </ul>
-    /// <p>For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis AUTH</a></p>
+    /// <p> For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis AUTH</a> </p>
     pub fn auth_token_update_strategy(&self) -> ::std::option::Option<&crate::types::AuthTokenUpdateStrategyType> {
         self.auth_token_update_strategy.as_ref()
     }
@@ -432,7 +370,7 @@ impl ModifyCacheClusterInputBuilder {
     }
     /// <p>The number of cache nodes that the cluster should have. If the value for <code>NumCacheNodes</code> is greater than the sum of the number of current cache nodes and the number of cache nodes pending creation (which may be zero), more nodes are added. If the value is less than the number of existing cache nodes, nodes are removed. If the value is equal to the number of current cache nodes, any pending add or remove requests are canceled.</p>
     /// <p>If you are removing cache nodes, you must use the <code>CacheNodeIdsToRemove</code> parameter to provide the IDs of the specific cache nodes to remove.</p>
-    /// <p>For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1 and 40.</p><note>
+    /// <p>For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1 and 40.</p> <note>
     /// <p>Adding or removing Memcached cache nodes can be applied immediately or as a pending operation (see <code>ApplyImmediately</code>).</p>
     /// <p>A pending operation to modify the number of cache nodes in a cluster during its maintenance window, whether by adding or removing nodes in accordance with the scale out architecture, is not queued. The customer's latest request to add or remove nodes to the cluster overrides any previous pending operations to modify the number of cache nodes in the cluster. For example, a request to remove 2 nodes would override a previous pending operation to remove 3 nodes. Similarly, a request to add 2 nodes would override a previous pending operation to remove 3 nodes and vice versa. As Memcached cache nodes may now be provisioned in different Availability Zones with flexible cache node placement, a request to add nodes does not automatically override a previous pending operation to add nodes. The customer can modify the previous pending operation to add more nodes or explicitly cancel the pending request and retry the new request. To cancel pending operations to modify the number of cache nodes in a cluster, use the <code>ModifyCacheCluster</code> request and set <code>NumCacheNodes</code> equal to the number of cache nodes currently in the cluster.</p>
     /// </note>
@@ -442,7 +380,7 @@ impl ModifyCacheClusterInputBuilder {
     }
     /// <p>The number of cache nodes that the cluster should have. If the value for <code>NumCacheNodes</code> is greater than the sum of the number of current cache nodes and the number of cache nodes pending creation (which may be zero), more nodes are added. If the value is less than the number of existing cache nodes, nodes are removed. If the value is equal to the number of current cache nodes, any pending add or remove requests are canceled.</p>
     /// <p>If you are removing cache nodes, you must use the <code>CacheNodeIdsToRemove</code> parameter to provide the IDs of the specific cache nodes to remove.</p>
-    /// <p>For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1 and 40.</p><note>
+    /// <p>For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1 and 40.</p> <note>
     /// <p>Adding or removing Memcached cache nodes can be applied immediately or as a pending operation (see <code>ApplyImmediately</code>).</p>
     /// <p>A pending operation to modify the number of cache nodes in a cluster during its maintenance window, whether by adding or removing nodes in accordance with the scale out architecture, is not queued. The customer's latest request to add or remove nodes to the cluster overrides any previous pending operations to modify the number of cache nodes in the cluster. For example, a request to remove 2 nodes would override a previous pending operation to remove 3 nodes. Similarly, a request to add 2 nodes would override a previous pending operation to remove 3 nodes and vice versa. As Memcached cache nodes may now be provisioned in different Availability Zones with flexible cache node placement, a request to add nodes does not automatically override a previous pending operation to add nodes. The customer can modify the previous pending operation to add more nodes or explicitly cancel the pending request and retry the new request. To cancel pending operations to modify the number of cache nodes in a cluster, use the <code>ModifyCacheCluster</code> request and set <code>NumCacheNodes</code> equal to the number of cache nodes currently in the cluster.</p>
     /// </note>
@@ -452,7 +390,7 @@ impl ModifyCacheClusterInputBuilder {
     }
     /// <p>The number of cache nodes that the cluster should have. If the value for <code>NumCacheNodes</code> is greater than the sum of the number of current cache nodes and the number of cache nodes pending creation (which may be zero), more nodes are added. If the value is less than the number of existing cache nodes, nodes are removed. If the value is equal to the number of current cache nodes, any pending add or remove requests are canceled.</p>
     /// <p>If you are removing cache nodes, you must use the <code>CacheNodeIdsToRemove</code> parameter to provide the IDs of the specific cache nodes to remove.</p>
-    /// <p>For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1 and 40.</p><note>
+    /// <p>For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1 and 40.</p> <note>
     /// <p>Adding or removing Memcached cache nodes can be applied immediately or as a pending operation (see <code>ApplyImmediately</code>).</p>
     /// <p>A pending operation to modify the number of cache nodes in a cluster during its maintenance window, whether by adding or removing nodes in accordance with the scale out architecture, is not queued. The customer's latest request to add or remove nodes to the cluster overrides any previous pending operations to modify the number of cache nodes in the cluster. For example, a request to remove 2 nodes would override a previous pending operation to remove 3 nodes. Similarly, a request to add 2 nodes would override a previous pending operation to remove 3 nodes and vice versa. As Memcached cache nodes may now be provisioned in different Availability Zones with flexible cache node placement, a request to add nodes does not automatically override a previous pending operation to add nodes. The customer can modify the previous pending operation to add more nodes or explicitly cancel the pending request and retry the new request. To cancel pending operations to modify the number of cache nodes in a cluster, use the <code>ModifyCacheCluster</code> request and set <code>NumCacheNodes</code> equal to the number of cache nodes currently in the cluster.</p>
     /// </note>
@@ -484,9 +422,9 @@ impl ModifyCacheClusterInputBuilder {
     }
     /// <p>Specifies whether the new nodes in this Memcached cluster are all created in a single Availability Zone or created across multiple Availability Zones.</p>
     /// <p>Valid values: <code>single-az</code> | <code>cross-az</code>.</p>
-    /// <p>This option is only supported for Memcached clusters.</p><note>
+    /// <p>This option is only supported for Memcached clusters.</p> <note>
     /// <p>You cannot specify <code>single-az</code> if the Memcached cluster already has cache nodes in different Availability Zones. If <code>cross-az</code> is specified, existing Memcached nodes remain in their current Availability Zone.</p>
-    /// <p>Only newly created nodes are located in different Availability Zones.</p>
+    /// <p>Only newly created nodes are located in different Availability Zones. </p>
     /// </note>
     pub fn az_mode(mut self, input: crate::types::AzMode) -> Self {
         self.az_mode = ::std::option::Option::Some(input);
@@ -494,9 +432,9 @@ impl ModifyCacheClusterInputBuilder {
     }
     /// <p>Specifies whether the new nodes in this Memcached cluster are all created in a single Availability Zone or created across multiple Availability Zones.</p>
     /// <p>Valid values: <code>single-az</code> | <code>cross-az</code>.</p>
-    /// <p>This option is only supported for Memcached clusters.</p><note>
+    /// <p>This option is only supported for Memcached clusters.</p> <note>
     /// <p>You cannot specify <code>single-az</code> if the Memcached cluster already has cache nodes in different Availability Zones. If <code>cross-az</code> is specified, existing Memcached nodes remain in their current Availability Zone.</p>
-    /// <p>Only newly created nodes are located in different Availability Zones.</p>
+    /// <p>Only newly created nodes are located in different Availability Zones. </p>
     /// </note>
     pub fn set_az_mode(mut self, input: ::std::option::Option<crate::types::AzMode>) -> Self {
         self.az_mode = input;
@@ -504,9 +442,9 @@ impl ModifyCacheClusterInputBuilder {
     }
     /// <p>Specifies whether the new nodes in this Memcached cluster are all created in a single Availability Zone or created across multiple Availability Zones.</p>
     /// <p>Valid values: <code>single-az</code> | <code>cross-az</code>.</p>
-    /// <p>This option is only supported for Memcached clusters.</p><note>
+    /// <p>This option is only supported for Memcached clusters.</p> <note>
     /// <p>You cannot specify <code>single-az</code> if the Memcached cluster already has cache nodes in different Availability Zones. If <code>cross-az</code> is specified, existing Memcached nodes remain in their current Availability Zone.</p>
-    /// <p>Only newly created nodes are located in different Availability Zones.</p>
+    /// <p>Only newly created nodes are located in different Availability Zones. </p>
     /// </note>
     pub fn get_az_mode(&self) -> &::std::option::Option<crate::types::AzMode> {
         &self.az_mode
@@ -522,59 +460,40 @@ impl ModifyCacheClusterInputBuilder {
     /// <p>This parameter is only valid when <code>NumCacheNodes</code> in the request is greater than the sum of the number of active cache nodes and the number of cache nodes pending creation (which may be zero). The number of Availability Zones supplied in this list must match the cache nodes being added in this request.</p>
     /// <p>Scenarios:</p>
     /// <ul>
-    /// <li>
-    /// <p><b>Scenario 1:</b> You have 3 active nodes and wish to add 2 nodes. Specify <code>NumCacheNodes=5</code> (3 + 2) and optionally specify two Availability Zones for the two new nodes.</p></li>
-    /// <li>
-    /// <p><b>Scenario 2:</b> You have 3 active nodes and 2 nodes pending creation (from the scenario 1 call) and want to add 1 more node. Specify <code>NumCacheNodes=6</code> ((3 + 2) + 1) and optionally specify an Availability Zone for the new node.</p></li>
-    /// <li>
-    /// <p><b>Scenario 3:</b> You want to cancel all pending operations. Specify <code>NumCacheNodes=3</code> to cancel all pending operations.</p></li>
+    /// <li> <p> <b>Scenario 1:</b> You have 3 active nodes and wish to add 2 nodes. Specify <code>NumCacheNodes=5</code> (3 + 2) and optionally specify two Availability Zones for the two new nodes.</p> </li>
+    /// <li> <p> <b>Scenario 2:</b> You have 3 active nodes and 2 nodes pending creation (from the scenario 1 call) and want to add 1 more node. Specify <code>NumCacheNodes=6</code> ((3 + 2) + 1) and optionally specify an Availability Zone for the new node.</p> </li>
+    /// <li> <p> <b>Scenario 3:</b> You want to cancel all pending operations. Specify <code>NumCacheNodes=3</code> to cancel all pending operations.</p> </li>
     /// </ul>
     /// <p>The Availability Zone placement of nodes pending creation cannot be modified. If you wish to cancel any nodes pending creation, add 0 nodes by setting <code>NumCacheNodes</code> to the number of current nodes.</p>
     /// <p>If <code>cross-az</code> is specified, existing Memcached nodes remain in their current Availability Zone. Only newly created nodes can be located in different Availability Zones. For guidance on how to move existing Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b> section of <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNodes.SupportedTypes.html">Cache Node Considerations for Memcached</a>.</p>
-    /// <p><b>Impact of new add/remove requests upon pending requests</b></p>
+    /// <p> <b>Impact of new add/remove requests upon pending requests</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>Scenario-1</p>
+    /// <li> <p>Scenario-1</p>
     /// <ul>
-    /// <li>
-    /// <p>Pending Action: Delete</p></li>
-    /// <li>
-    /// <p>New Request: Delete</p></li>
-    /// <li>
-    /// <p>Result: The new delete, pending or immediate, replaces the pending delete.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p>Scenario-2</p>
+    /// <li> <p>Pending Action: Delete</p> </li>
+    /// <li> <p>New Request: Delete</p> </li>
+    /// <li> <p>Result: The new delete, pending or immediate, replaces the pending delete.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>Scenario-2</p>
     /// <ul>
-    /// <li>
-    /// <p>Pending Action: Delete</p></li>
-    /// <li>
-    /// <p>New Request: Create</p></li>
-    /// <li>
-    /// <p>Result: The new create, pending or immediate, replaces the pending delete.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p>Scenario-3</p>
+    /// <li> <p>Pending Action: Delete</p> </li>
+    /// <li> <p>New Request: Create</p> </li>
+    /// <li> <p>Result: The new create, pending or immediate, replaces the pending delete.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>Scenario-3</p>
     /// <ul>
-    /// <li>
-    /// <p>Pending Action: Create</p></li>
-    /// <li>
-    /// <p>New Request: Delete</p></li>
-    /// <li>
-    /// <p>Result: The new delete, pending or immediate, replaces the pending create.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p>Scenario-4</p>
+    /// <li> <p>Pending Action: Create</p> </li>
+    /// <li> <p>New Request: Delete</p> </li>
+    /// <li> <p>Result: The new delete, pending or immediate, replaces the pending create.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>Scenario-4</p>
     /// <ul>
-    /// <li>
-    /// <p>Pending Action: Create</p></li>
-    /// <li>
-    /// <p>New Request: Create</p></li>
-    /// <li>
-    /// <p>Result: The new create is added to the pending create.</p><important>
-    /// <p><b>Important:</b> If the new create request is <b>Apply Immediately - Yes</b>, all creates are performed immediately. If the new create request is <b>Apply Immediately - No</b>, all creates are pending.</p>
-    /// </important></li>
-    /// </ul></li>
+    /// <li> <p>Pending Action: Create</p> </li>
+    /// <li> <p>New Request: Create</p> </li>
+    /// <li> <p>Result: The new create is added to the pending create.</p> <important>
+    /// <p> <b>Important:</b> If the new create request is <b>Apply Immediately - Yes</b>, all creates are performed immediately. If the new create request is <b>Apply Immediately - No</b>, all creates are pending.</p>
+    /// </important> </li>
+    /// </ul> </li>
     /// </ul>
     pub fn new_availability_zones(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.new_availability_zones.unwrap_or_default();
@@ -589,59 +508,40 @@ impl ModifyCacheClusterInputBuilder {
     /// <p>This parameter is only valid when <code>NumCacheNodes</code> in the request is greater than the sum of the number of active cache nodes and the number of cache nodes pending creation (which may be zero). The number of Availability Zones supplied in this list must match the cache nodes being added in this request.</p>
     /// <p>Scenarios:</p>
     /// <ul>
-    /// <li>
-    /// <p><b>Scenario 1:</b> You have 3 active nodes and wish to add 2 nodes. Specify <code>NumCacheNodes=5</code> (3 + 2) and optionally specify two Availability Zones for the two new nodes.</p></li>
-    /// <li>
-    /// <p><b>Scenario 2:</b> You have 3 active nodes and 2 nodes pending creation (from the scenario 1 call) and want to add 1 more node. Specify <code>NumCacheNodes=6</code> ((3 + 2) + 1) and optionally specify an Availability Zone for the new node.</p></li>
-    /// <li>
-    /// <p><b>Scenario 3:</b> You want to cancel all pending operations. Specify <code>NumCacheNodes=3</code> to cancel all pending operations.</p></li>
+    /// <li> <p> <b>Scenario 1:</b> You have 3 active nodes and wish to add 2 nodes. Specify <code>NumCacheNodes=5</code> (3 + 2) and optionally specify two Availability Zones for the two new nodes.</p> </li>
+    /// <li> <p> <b>Scenario 2:</b> You have 3 active nodes and 2 nodes pending creation (from the scenario 1 call) and want to add 1 more node. Specify <code>NumCacheNodes=6</code> ((3 + 2) + 1) and optionally specify an Availability Zone for the new node.</p> </li>
+    /// <li> <p> <b>Scenario 3:</b> You want to cancel all pending operations. Specify <code>NumCacheNodes=3</code> to cancel all pending operations.</p> </li>
     /// </ul>
     /// <p>The Availability Zone placement of nodes pending creation cannot be modified. If you wish to cancel any nodes pending creation, add 0 nodes by setting <code>NumCacheNodes</code> to the number of current nodes.</p>
     /// <p>If <code>cross-az</code> is specified, existing Memcached nodes remain in their current Availability Zone. Only newly created nodes can be located in different Availability Zones. For guidance on how to move existing Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b> section of <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNodes.SupportedTypes.html">Cache Node Considerations for Memcached</a>.</p>
-    /// <p><b>Impact of new add/remove requests upon pending requests</b></p>
+    /// <p> <b>Impact of new add/remove requests upon pending requests</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>Scenario-1</p>
+    /// <li> <p>Scenario-1</p>
     /// <ul>
-    /// <li>
-    /// <p>Pending Action: Delete</p></li>
-    /// <li>
-    /// <p>New Request: Delete</p></li>
-    /// <li>
-    /// <p>Result: The new delete, pending or immediate, replaces the pending delete.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p>Scenario-2</p>
+    /// <li> <p>Pending Action: Delete</p> </li>
+    /// <li> <p>New Request: Delete</p> </li>
+    /// <li> <p>Result: The new delete, pending or immediate, replaces the pending delete.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>Scenario-2</p>
     /// <ul>
-    /// <li>
-    /// <p>Pending Action: Delete</p></li>
-    /// <li>
-    /// <p>New Request: Create</p></li>
-    /// <li>
-    /// <p>Result: The new create, pending or immediate, replaces the pending delete.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p>Scenario-3</p>
+    /// <li> <p>Pending Action: Delete</p> </li>
+    /// <li> <p>New Request: Create</p> </li>
+    /// <li> <p>Result: The new create, pending or immediate, replaces the pending delete.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>Scenario-3</p>
     /// <ul>
-    /// <li>
-    /// <p>Pending Action: Create</p></li>
-    /// <li>
-    /// <p>New Request: Delete</p></li>
-    /// <li>
-    /// <p>Result: The new delete, pending or immediate, replaces the pending create.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p>Scenario-4</p>
+    /// <li> <p>Pending Action: Create</p> </li>
+    /// <li> <p>New Request: Delete</p> </li>
+    /// <li> <p>Result: The new delete, pending or immediate, replaces the pending create.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>Scenario-4</p>
     /// <ul>
-    /// <li>
-    /// <p>Pending Action: Create</p></li>
-    /// <li>
-    /// <p>New Request: Create</p></li>
-    /// <li>
-    /// <p>Result: The new create is added to the pending create.</p><important>
-    /// <p><b>Important:</b> If the new create request is <b>Apply Immediately - Yes</b>, all creates are performed immediately. If the new create request is <b>Apply Immediately - No</b>, all creates are pending.</p>
-    /// </important></li>
-    /// </ul></li>
+    /// <li> <p>Pending Action: Create</p> </li>
+    /// <li> <p>New Request: Create</p> </li>
+    /// <li> <p>Result: The new create is added to the pending create.</p> <important>
+    /// <p> <b>Important:</b> If the new create request is <b>Apply Immediately - Yes</b>, all creates are performed immediately. If the new create request is <b>Apply Immediately - No</b>, all creates are pending.</p>
+    /// </important> </li>
+    /// </ul> </li>
     /// </ul>
     pub fn set_new_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.new_availability_zones = input;
@@ -654,59 +554,40 @@ impl ModifyCacheClusterInputBuilder {
     /// <p>This parameter is only valid when <code>NumCacheNodes</code> in the request is greater than the sum of the number of active cache nodes and the number of cache nodes pending creation (which may be zero). The number of Availability Zones supplied in this list must match the cache nodes being added in this request.</p>
     /// <p>Scenarios:</p>
     /// <ul>
-    /// <li>
-    /// <p><b>Scenario 1:</b> You have 3 active nodes and wish to add 2 nodes. Specify <code>NumCacheNodes=5</code> (3 + 2) and optionally specify two Availability Zones for the two new nodes.</p></li>
-    /// <li>
-    /// <p><b>Scenario 2:</b> You have 3 active nodes and 2 nodes pending creation (from the scenario 1 call) and want to add 1 more node. Specify <code>NumCacheNodes=6</code> ((3 + 2) + 1) and optionally specify an Availability Zone for the new node.</p></li>
-    /// <li>
-    /// <p><b>Scenario 3:</b> You want to cancel all pending operations. Specify <code>NumCacheNodes=3</code> to cancel all pending operations.</p></li>
+    /// <li> <p> <b>Scenario 1:</b> You have 3 active nodes and wish to add 2 nodes. Specify <code>NumCacheNodes=5</code> (3 + 2) and optionally specify two Availability Zones for the two new nodes.</p> </li>
+    /// <li> <p> <b>Scenario 2:</b> You have 3 active nodes and 2 nodes pending creation (from the scenario 1 call) and want to add 1 more node. Specify <code>NumCacheNodes=6</code> ((3 + 2) + 1) and optionally specify an Availability Zone for the new node.</p> </li>
+    /// <li> <p> <b>Scenario 3:</b> You want to cancel all pending operations. Specify <code>NumCacheNodes=3</code> to cancel all pending operations.</p> </li>
     /// </ul>
     /// <p>The Availability Zone placement of nodes pending creation cannot be modified. If you wish to cancel any nodes pending creation, add 0 nodes by setting <code>NumCacheNodes</code> to the number of current nodes.</p>
     /// <p>If <code>cross-az</code> is specified, existing Memcached nodes remain in their current Availability Zone. Only newly created nodes can be located in different Availability Zones. For guidance on how to move existing Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b> section of <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNodes.SupportedTypes.html">Cache Node Considerations for Memcached</a>.</p>
-    /// <p><b>Impact of new add/remove requests upon pending requests</b></p>
+    /// <p> <b>Impact of new add/remove requests upon pending requests</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>Scenario-1</p>
+    /// <li> <p>Scenario-1</p>
     /// <ul>
-    /// <li>
-    /// <p>Pending Action: Delete</p></li>
-    /// <li>
-    /// <p>New Request: Delete</p></li>
-    /// <li>
-    /// <p>Result: The new delete, pending or immediate, replaces the pending delete.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p>Scenario-2</p>
+    /// <li> <p>Pending Action: Delete</p> </li>
+    /// <li> <p>New Request: Delete</p> </li>
+    /// <li> <p>Result: The new delete, pending or immediate, replaces the pending delete.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>Scenario-2</p>
     /// <ul>
-    /// <li>
-    /// <p>Pending Action: Delete</p></li>
-    /// <li>
-    /// <p>New Request: Create</p></li>
-    /// <li>
-    /// <p>Result: The new create, pending or immediate, replaces the pending delete.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p>Scenario-3</p>
+    /// <li> <p>Pending Action: Delete</p> </li>
+    /// <li> <p>New Request: Create</p> </li>
+    /// <li> <p>Result: The new create, pending or immediate, replaces the pending delete.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>Scenario-3</p>
     /// <ul>
-    /// <li>
-    /// <p>Pending Action: Create</p></li>
-    /// <li>
-    /// <p>New Request: Delete</p></li>
-    /// <li>
-    /// <p>Result: The new delete, pending or immediate, replaces the pending create.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p>Scenario-4</p>
+    /// <li> <p>Pending Action: Create</p> </li>
+    /// <li> <p>New Request: Delete</p> </li>
+    /// <li> <p>Result: The new delete, pending or immediate, replaces the pending create.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>Scenario-4</p>
     /// <ul>
-    /// <li>
-    /// <p>Pending Action: Create</p></li>
-    /// <li>
-    /// <p>New Request: Create</p></li>
-    /// <li>
-    /// <p>Result: The new create is added to the pending create.</p><important>
-    /// <p><b>Important:</b> If the new create request is <b>Apply Immediately - Yes</b>, all creates are performed immediately. If the new create request is <b>Apply Immediately - No</b>, all creates are pending.</p>
-    /// </important></li>
-    /// </ul></li>
+    /// <li> <p>Pending Action: Create</p> </li>
+    /// <li> <p>New Request: Create</p> </li>
+    /// <li> <p>Result: The new create is added to the pending create.</p> <important>
+    /// <p> <b>Important:</b> If the new create request is <b>Apply Immediately - Yes</b>, all creates are performed immediately. If the new create request is <b>Apply Immediately - No</b>, all creates are pending.</p>
+    /// </important> </li>
+    /// </ul> </li>
     /// </ul>
     pub fn get_new_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.new_availability_zones
@@ -763,22 +644,15 @@ impl ModifyCacheClusterInputBuilder {
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
     /// <p>Valid values for <code>ddd</code> are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>sun</code></p></li>
-    /// <li>
-    /// <p><code>mon</code></p></li>
-    /// <li>
-    /// <p><code>tue</code></p></li>
-    /// <li>
-    /// <p><code>wed</code></p></li>
-    /// <li>
-    /// <p><code>thu</code></p></li>
-    /// <li>
-    /// <p><code>fri</code></p></li>
-    /// <li>
-    /// <p><code>sat</code></p></li>
+    /// <li> <p> <code>sun</code> </p> </li>
+    /// <li> <p> <code>mon</code> </p> </li>
+    /// <li> <p> <code>tue</code> </p> </li>
+    /// <li> <p> <code>wed</code> </p> </li>
+    /// <li> <p> <code>thu</code> </p> </li>
+    /// <li> <p> <code>fri</code> </p> </li>
+    /// <li> <p> <code>sat</code> </p> </li>
     /// </ul>
-    /// <p>Example: <code>sun:23:00-mon:01:30</code></p>
+    /// <p>Example: <code>sun:23:00-mon:01:30</code> </p>
     pub fn preferred_maintenance_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_maintenance_window = ::std::option::Option::Some(input.into());
         self
@@ -786,22 +660,15 @@ impl ModifyCacheClusterInputBuilder {
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
     /// <p>Valid values for <code>ddd</code> are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>sun</code></p></li>
-    /// <li>
-    /// <p><code>mon</code></p></li>
-    /// <li>
-    /// <p><code>tue</code></p></li>
-    /// <li>
-    /// <p><code>wed</code></p></li>
-    /// <li>
-    /// <p><code>thu</code></p></li>
-    /// <li>
-    /// <p><code>fri</code></p></li>
-    /// <li>
-    /// <p><code>sat</code></p></li>
+    /// <li> <p> <code>sun</code> </p> </li>
+    /// <li> <p> <code>mon</code> </p> </li>
+    /// <li> <p> <code>tue</code> </p> </li>
+    /// <li> <p> <code>wed</code> </p> </li>
+    /// <li> <p> <code>thu</code> </p> </li>
+    /// <li> <p> <code>fri</code> </p> </li>
+    /// <li> <p> <code>sat</code> </p> </li>
     /// </ul>
-    /// <p>Example: <code>sun:23:00-mon:01:30</code></p>
+    /// <p>Example: <code>sun:23:00-mon:01:30</code> </p>
     pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_maintenance_window = input;
         self
@@ -809,40 +676,33 @@ impl ModifyCacheClusterInputBuilder {
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
     /// <p>Valid values for <code>ddd</code> are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>sun</code></p></li>
-    /// <li>
-    /// <p><code>mon</code></p></li>
-    /// <li>
-    /// <p><code>tue</code></p></li>
-    /// <li>
-    /// <p><code>wed</code></p></li>
-    /// <li>
-    /// <p><code>thu</code></p></li>
-    /// <li>
-    /// <p><code>fri</code></p></li>
-    /// <li>
-    /// <p><code>sat</code></p></li>
+    /// <li> <p> <code>sun</code> </p> </li>
+    /// <li> <p> <code>mon</code> </p> </li>
+    /// <li> <p> <code>tue</code> </p> </li>
+    /// <li> <p> <code>wed</code> </p> </li>
+    /// <li> <p> <code>thu</code> </p> </li>
+    /// <li> <p> <code>fri</code> </p> </li>
+    /// <li> <p> <code>sat</code> </p> </li>
     /// </ul>
-    /// <p>Example: <code>sun:23:00-mon:01:30</code></p>
+    /// <p>Example: <code>sun:23:00-mon:01:30</code> </p>
     pub fn get_preferred_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
         &self.preferred_maintenance_window
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications are sent.</p><note>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications are sent.</p> <note>
     /// <p>The Amazon SNS topic owner must be same as the cluster owner.</p>
     /// </note>
     pub fn notification_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notification_topic_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications are sent.</p><note>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications are sent.</p> <note>
     /// <p>The Amazon SNS topic owner must be same as the cluster owner.</p>
     /// </note>
     pub fn set_notification_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notification_topic_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications are sent.</p><note>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications are sent.</p> <note>
     /// <p>The Amazon SNS topic owner must be same as the cluster owner.</p>
     /// </note>
     pub fn get_notification_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -863,113 +723,113 @@ impl ModifyCacheClusterInputBuilder {
         &self.cache_parameter_group_name
     }
     /// <p>The status of the Amazon SNS notification topic. Notifications are sent only if the status is <code>active</code>.</p>
-    /// <p>Valid values: <code>active</code> | <code>inactive</code></p>
+    /// <p>Valid values: <code>active</code> | <code>inactive</code> </p>
     pub fn notification_topic_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notification_topic_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the Amazon SNS notification topic. Notifications are sent only if the status is <code>active</code>.</p>
-    /// <p>Valid values: <code>active</code> | <code>inactive</code></p>
+    /// <p>Valid values: <code>active</code> | <code>inactive</code> </p>
     pub fn set_notification_topic_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notification_topic_status = input;
         self
     }
     /// <p>The status of the Amazon SNS notification topic. Notifications are sent only if the status is <code>active</code>.</p>
-    /// <p>Valid values: <code>active</code> | <code>inactive</code></p>
+    /// <p>Valid values: <code>active</code> | <code>inactive</code> </p>
     pub fn get_notification_topic_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.notification_topic_status
     }
     /// <p>If <code>true</code>, this parameter causes the modifications in this request and any pending modifications to be applied, asynchronously and as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the cluster.</p>
-    /// <p>If <code>false</code>, changes to the cluster are applied on the next maintenance reboot, or the next failure reboot, whichever occurs first.</p><important>
+    /// <p>If <code>false</code>, changes to the cluster are applied on the next maintenance reboot, or the next failure reboot, whichever occurs first.</p> <important>
     /// <p>If you perform a <code>ModifyCacheCluster</code> before a pending modification is applied, the pending modification is replaced by the newer modification.</p>
     /// </important>
-    /// <p>Valid values: <code>true</code> | <code>false</code></p>
-    /// <p>Default: <code>false</code></p>
+    /// <p>Valid values: <code>true</code> | <code>false</code> </p>
+    /// <p>Default: <code>false</code> </p>
     pub fn apply_immediately(mut self, input: bool) -> Self {
         self.apply_immediately = ::std::option::Option::Some(input);
         self
     }
     /// <p>If <code>true</code>, this parameter causes the modifications in this request and any pending modifications to be applied, asynchronously and as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the cluster.</p>
-    /// <p>If <code>false</code>, changes to the cluster are applied on the next maintenance reboot, or the next failure reboot, whichever occurs first.</p><important>
+    /// <p>If <code>false</code>, changes to the cluster are applied on the next maintenance reboot, or the next failure reboot, whichever occurs first.</p> <important>
     /// <p>If you perform a <code>ModifyCacheCluster</code> before a pending modification is applied, the pending modification is replaced by the newer modification.</p>
     /// </important>
-    /// <p>Valid values: <code>true</code> | <code>false</code></p>
-    /// <p>Default: <code>false</code></p>
+    /// <p>Valid values: <code>true</code> | <code>false</code> </p>
+    /// <p>Default: <code>false</code> </p>
     pub fn set_apply_immediately(mut self, input: ::std::option::Option<bool>) -> Self {
         self.apply_immediately = input;
         self
     }
     /// <p>If <code>true</code>, this parameter causes the modifications in this request and any pending modifications to be applied, asynchronously and as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the cluster.</p>
-    /// <p>If <code>false</code>, changes to the cluster are applied on the next maintenance reboot, or the next failure reboot, whichever occurs first.</p><important>
+    /// <p>If <code>false</code>, changes to the cluster are applied on the next maintenance reboot, or the next failure reboot, whichever occurs first.</p> <important>
     /// <p>If you perform a <code>ModifyCacheCluster</code> before a pending modification is applied, the pending modification is replaced by the newer modification.</p>
     /// </important>
-    /// <p>Valid values: <code>true</code> | <code>false</code></p>
-    /// <p>Default: <code>false</code></p>
+    /// <p>Valid values: <code>true</code> | <code>false</code> </p>
+    /// <p>Default: <code>false</code> </p>
     pub fn get_apply_immediately(&self) -> &::std::option::Option<bool> {
         &self.apply_immediately
     }
     /// <p>The upgraded version of the cache engine to be run on the cache nodes.</p>
-    /// <p><b>Important:</b> You can upgrade to a newer engine version (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you want to use an earlier engine version, you must delete the existing cluster and create it anew with the earlier engine version.</p>
+    /// <p> <b>Important:</b> You can upgrade to a newer engine version (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you want to use an earlier engine version, you must delete the existing cluster and create it anew with the earlier engine version. </p>
     pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The upgraded version of the cache engine to be run on the cache nodes.</p>
-    /// <p><b>Important:</b> You can upgrade to a newer engine version (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you want to use an earlier engine version, you must delete the existing cluster and create it anew with the earlier engine version.</p>
+    /// <p> <b>Important:</b> You can upgrade to a newer engine version (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you want to use an earlier engine version, you must delete the existing cluster and create it anew with the earlier engine version. </p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_version = input;
         self
     }
     /// <p>The upgraded version of the cache engine to be run on the cache nodes.</p>
-    /// <p><b>Important:</b> You can upgrade to a newer engine version (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you want to use an earlier engine version, you must delete the existing cluster and create it anew with the earlier engine version.</p>
+    /// <p> <b>Important:</b> You can upgrade to a newer engine version (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you want to use an earlier engine version, you must delete the existing cluster and create it anew with the earlier engine version. </p>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine_version
     }
-    /// <p>&nbsp;If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp;</p>
+    /// <p>&nbsp;If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp; </p>
     pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
         self.auto_minor_version_upgrade = ::std::option::Option::Some(input);
         self
     }
-    /// <p>&nbsp;If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp;</p>
+    /// <p>&nbsp;If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp; </p>
     pub fn set_auto_minor_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_minor_version_upgrade = input;
         self
     }
-    /// <p>&nbsp;If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp;</p>
+    /// <p>&nbsp;If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp; </p>
     pub fn get_auto_minor_version_upgrade(&self) -> &::std::option::Option<bool> {
         &self.auto_minor_version_upgrade
     }
-    /// <p>The number of days for which ElastiCache retains automatic cluster snapshots before deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p><note>
+    /// <p>The number of days for which ElastiCache retains automatic cluster snapshots before deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p> <note>
     /// <p>If the value of <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned off.</p>
     /// </note>
     pub fn snapshot_retention_limit(mut self, input: i32) -> Self {
         self.snapshot_retention_limit = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of days for which ElastiCache retains automatic cluster snapshots before deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p><note>
+    /// <p>The number of days for which ElastiCache retains automatic cluster snapshots before deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p> <note>
     /// <p>If the value of <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned off.</p>
     /// </note>
     pub fn set_snapshot_retention_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.snapshot_retention_limit = input;
         self
     }
-    /// <p>The number of days for which ElastiCache retains automatic cluster snapshots before deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p><note>
+    /// <p>The number of days for which ElastiCache retains automatic cluster snapshots before deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p> <note>
     /// <p>If the value of <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned off.</p>
     /// </note>
     pub fn get_snapshot_retention_limit(&self) -> &::std::option::Option<i32> {
         &self.snapshot_retention_limit
     }
-    /// <p>The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your cluster.</p>
+    /// <p>The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your cluster. </p>
     pub fn snapshot_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_window = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your cluster.</p>
+    /// <p>The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your cluster. </p>
     pub fn set_snapshot_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_window = input;
         self
     }
-    /// <p>The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your cluster.</p>
+    /// <p>The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your cluster. </p>
     pub fn get_snapshot_window(&self) -> &::std::option::Option<::std::string::String> {
         &self.snapshot_window
     }
@@ -989,77 +849,62 @@ impl ModifyCacheClusterInputBuilder {
     }
     /// <p>Reserved parameter. The password used to access a password protected server. This parameter must be specified with the <code>auth-token-update</code> parameter. Password constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be only printable ASCII characters</p></li>
-    /// <li>
-    /// <p>Must be at least 16 characters and no more than 128 characters in length</p></li>
-    /// <li>
-    /// <p>Cannot contain any of the following characters: '/', '"', or '@', '%'</p></li>
+    /// <li> <p>Must be only printable ASCII characters</p> </li>
+    /// <li> <p>Must be at least 16 characters and no more than 128 characters in length</p> </li>
+    /// <li> <p>Cannot contain any of the following characters: '/', '"', or '@', '%'</p> </li>
     /// </ul>
-    /// <p>For more information, see AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.</p>
+    /// <p> For more information, see AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.</p>
     pub fn auth_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auth_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Reserved parameter. The password used to access a password protected server. This parameter must be specified with the <code>auth-token-update</code> parameter. Password constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be only printable ASCII characters</p></li>
-    /// <li>
-    /// <p>Must be at least 16 characters and no more than 128 characters in length</p></li>
-    /// <li>
-    /// <p>Cannot contain any of the following characters: '/', '"', or '@', '%'</p></li>
+    /// <li> <p>Must be only printable ASCII characters</p> </li>
+    /// <li> <p>Must be at least 16 characters and no more than 128 characters in length</p> </li>
+    /// <li> <p>Cannot contain any of the following characters: '/', '"', or '@', '%'</p> </li>
     /// </ul>
-    /// <p>For more information, see AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.</p>
+    /// <p> For more information, see AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.</p>
     pub fn set_auth_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auth_token = input;
         self
     }
     /// <p>Reserved parameter. The password used to access a password protected server. This parameter must be specified with the <code>auth-token-update</code> parameter. Password constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be only printable ASCII characters</p></li>
-    /// <li>
-    /// <p>Must be at least 16 characters and no more than 128 characters in length</p></li>
-    /// <li>
-    /// <p>Cannot contain any of the following characters: '/', '"', or '@', '%'</p></li>
+    /// <li> <p>Must be only printable ASCII characters</p> </li>
+    /// <li> <p>Must be at least 16 characters and no more than 128 characters in length</p> </li>
+    /// <li> <p>Cannot contain any of the following characters: '/', '"', or '@', '%'</p> </li>
     /// </ul>
-    /// <p>For more information, see AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.</p>
+    /// <p> For more information, see AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.</p>
     pub fn get_auth_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.auth_token
     }
     /// <p>Specifies the strategy to use to update the AUTH token. This parameter must be specified with the <code>auth-token</code> parameter. Possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>Rotate</p></li>
-    /// <li>
-    /// <p>Set</p></li>
+    /// <li> <p>Rotate</p> </li>
+    /// <li> <p>Set</p> </li>
     /// </ul>
-    /// <p>For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis AUTH</a></p>
+    /// <p> For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis AUTH</a> </p>
     pub fn auth_token_update_strategy(mut self, input: crate::types::AuthTokenUpdateStrategyType) -> Self {
         self.auth_token_update_strategy = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the strategy to use to update the AUTH token. This parameter must be specified with the <code>auth-token</code> parameter. Possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>Rotate</p></li>
-    /// <li>
-    /// <p>Set</p></li>
+    /// <li> <p>Rotate</p> </li>
+    /// <li> <p>Set</p> </li>
     /// </ul>
-    /// <p>For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis AUTH</a></p>
+    /// <p> For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis AUTH</a> </p>
     pub fn set_auth_token_update_strategy(mut self, input: ::std::option::Option<crate::types::AuthTokenUpdateStrategyType>) -> Self {
         self.auth_token_update_strategy = input;
         self
     }
     /// <p>Specifies the strategy to use to update the AUTH token. This parameter must be specified with the <code>auth-token</code> parameter. Possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>Rotate</p></li>
-    /// <li>
-    /// <p>Set</p></li>
+    /// <li> <p>Rotate</p> </li>
+    /// <li> <p>Set</p> </li>
     /// </ul>
-    /// <p>For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis AUTH</a></p>
+    /// <p> For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis AUTH</a> </p>
     pub fn get_auth_token_update_strategy(&self) -> &::std::option::Option<crate::types::AuthTokenUpdateStrategyType> {
         &self.auth_token_update_strategy
     }

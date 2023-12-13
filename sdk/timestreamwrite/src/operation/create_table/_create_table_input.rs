@@ -9,11 +9,11 @@ pub struct CreateTableInput {
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The duration for which your time-series data must be stored in the memory store and the magnetic store.</p>
     pub retention_properties: ::std::option::Option<crate::types::RetentionProperties>,
-    /// <p>A list of key-value pairs to label the table.</p>
+    /// <p> A list of key-value pairs to label the table. </p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Contains properties to set on the table when enabling magnetic store writes.</p>
     pub magnetic_store_write_properties: ::std::option::Option<crate::types::MagneticStoreWriteProperties>,
-    /// <p>The schema of the table.</p>
+    /// <p> The schema of the table. </p>
     pub schema: ::std::option::Option<crate::types::Schema>,
 }
 impl CreateTableInput {
@@ -29,7 +29,7 @@ impl CreateTableInput {
     pub fn retention_properties(&self) -> ::std::option::Option<&crate::types::RetentionProperties> {
         self.retention_properties.as_ref()
     }
-    /// <p>A list of key-value pairs to label the table.</p>
+    /// <p> A list of key-value pairs to label the table. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
     pub fn tags(&self) -> &[crate::types::Tag] {
@@ -39,7 +39,7 @@ impl CreateTableInput {
     pub fn magnetic_store_write_properties(&self) -> ::std::option::Option<&crate::types::MagneticStoreWriteProperties> {
         self.magnetic_store_write_properties.as_ref()
     }
-    /// <p>The schema of the table.</p>
+    /// <p> The schema of the table. </p>
     pub fn schema(&self) -> ::std::option::Option<&crate::types::Schema> {
         self.schema.as_ref()
     }
@@ -111,19 +111,19 @@ impl CreateTableInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A list of key-value pairs to label the table.</p>
+    /// <p> A list of key-value pairs to label the table. </p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
         self.tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of key-value pairs to label the table.</p>
+    /// <p> A list of key-value pairs to label the table. </p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>A list of key-value pairs to label the table.</p>
+    /// <p> A list of key-value pairs to label the table. </p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
@@ -141,17 +141,17 @@ impl CreateTableInputBuilder {
     pub fn get_magnetic_store_write_properties(&self) -> &::std::option::Option<crate::types::MagneticStoreWriteProperties> {
         &self.magnetic_store_write_properties
     }
-    /// <p>The schema of the table.</p>
+    /// <p> The schema of the table. </p>
     pub fn schema(mut self, input: crate::types::Schema) -> Self {
         self.schema = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The schema of the table.</p>
+    /// <p> The schema of the table. </p>
     pub fn set_schema(mut self, input: ::std::option::Option<crate::types::Schema>) -> Self {
         self.schema = input;
         self
     }
-    /// <p>The schema of the table.</p>
+    /// <p> The schema of the table. </p>
     pub fn get_schema(&self) -> &::std::option::Option<crate::types::Schema> {
         &self.schema
     }

@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccountAggregationSource {
-    /// <p>The 12-digit account ID of the account being aggregated.</p>
+    /// <p>The 12-digit account ID of the account being aggregated. </p>
     pub account_ids: ::std::vec::Vec<::std::string::String>,
     /// <p>If true, aggregate existing Config regions and future regions.</p>
     pub all_aws_regions: bool,
@@ -12,7 +12,7 @@ pub struct AccountAggregationSource {
     pub aws_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AccountAggregationSource {
-    /// <p>The 12-digit account ID of the account being aggregated.</p>
+    /// <p>The 12-digit account ID of the account being aggregated. </p>
     pub fn account_ids(&self) -> &[::std::string::String] {
         use std::ops::Deref;
         self.account_ids.deref()
@@ -48,19 +48,19 @@ impl AccountAggregationSourceBuilder {
     ///
     /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
     ///
-    /// <p>The 12-digit account ID of the account being aggregated.</p>
+    /// <p>The 12-digit account ID of the account being aggregated. </p>
     pub fn account_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.account_ids.unwrap_or_default();
         v.push(input.into());
         self.account_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The 12-digit account ID of the account being aggregated.</p>
+    /// <p>The 12-digit account ID of the account being aggregated. </p>
     pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.account_ids = input;
         self
     }
-    /// <p>The 12-digit account ID of the account being aggregated.</p>
+    /// <p>The 12-digit account ID of the account being aggregated. </p>
     pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.account_ids
     }

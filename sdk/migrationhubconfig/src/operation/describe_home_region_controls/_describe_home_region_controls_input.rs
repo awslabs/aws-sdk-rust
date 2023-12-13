@@ -9,7 +9,7 @@ pub struct DescribeHomeRegionControlsInput {
     pub home_region: ::std::option::Option<::std::string::String>,
     /// <p>The target parameter specifies the identifier to which the home region is applied, which is always of type <code>ACCOUNT</code>. It applies the home region to the current <code>ACCOUNT</code>.</p>
     pub target: ::std::option::Option<crate::types::Target>,
-    /// <p>The maximum number of filtering results to display per page.</p>
+    /// <p>The maximum number of filtering results to display per page. </p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>If a <code>NextToken</code> was returned by a previous call, more results are available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -27,7 +27,7 @@ impl DescribeHomeRegionControlsInput {
     pub fn target(&self) -> ::std::option::Option<&crate::types::Target> {
         self.target.as_ref()
     }
-    /// <p>The maximum number of filtering results to display per page.</p>
+    /// <p>The maximum number of filtering results to display per page. </p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -96,17 +96,17 @@ impl DescribeHomeRegionControlsInputBuilder {
     pub fn get_target(&self) -> &::std::option::Option<crate::types::Target> {
         &self.target
     }
-    /// <p>The maximum number of filtering results to display per page.</p>
+    /// <p>The maximum number of filtering results to display per page. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of filtering results to display per page.</p>
+    /// <p>The maximum number of filtering results to display per page. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of filtering results to display per page.</p>
+    /// <p>The maximum number of filtering results to display per page. </p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

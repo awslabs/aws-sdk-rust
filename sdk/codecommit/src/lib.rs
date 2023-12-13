@@ -12,7 +12,6 @@
 #![allow(clippy::result_large_err)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
-#![cfg_attr(docsrs, feature(doc_auto_cfg))]
 //! This is the _CodeCommit API Reference_. This reference provides descriptions of the operations and data types for CodeCommit API along with usage examples.
 //!
 //! You can use the CodeCommit API to work with the following objects:
@@ -128,8 +127,8 @@
 //!
 //! ```toml
 //! [dependencies]
-//! aws-config = { version = "1.1.0", features = ["behavior-version-latest"] }
-//! aws-sdk-codecommit = "1.5.0"
+//! aws-config = { version = "1.0.3", features = ["behavior-version-latest"] }
+//! aws-sdk-codecommit = "1.6.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -293,11 +292,11 @@ pub(crate) mod protocol_serde;
 
 mod serialization_settings;
 
-mod endpoint_lib;
-
 mod lens;
 
 mod serde_util;
+
+mod endpoint_lib;
 
 mod json_errors;
 

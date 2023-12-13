@@ -8,7 +8,7 @@ pub struct EffectivePolicy {
     pub policy_content: ::std::option::Option<::std::string::String>,
     /// <p>The time of the last update to this policy.</p>
     pub last_updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The account ID of the policy target.</p>
+    /// <p>The account ID of the policy target. </p>
     pub target_id: ::std::option::Option<::std::string::String>,
     /// <p>The policy type.</p>
     pub policy_type: ::std::option::Option<crate::types::EffectivePolicyType>,
@@ -22,7 +22,7 @@ impl EffectivePolicy {
     pub fn last_updated_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_timestamp.as_ref()
     }
-    /// <p>The account ID of the policy target.</p>
+    /// <p>The account ID of the policy target. </p>
     pub fn target_id(&self) -> ::std::option::Option<&str> {
         self.target_id.as_deref()
     }
@@ -76,17 +76,17 @@ impl EffectivePolicyBuilder {
     pub fn get_last_updated_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_timestamp
     }
-    /// <p>The account ID of the policy target.</p>
+    /// <p>The account ID of the policy target. </p>
     pub fn target_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The account ID of the policy target.</p>
+    /// <p>The account ID of the policy target. </p>
     pub fn set_target_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_id = input;
         self
     }
-    /// <p>The account ID of the policy target.</p>
+    /// <p>The account ID of the policy target. </p>
     pub fn get_target_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_id
     }

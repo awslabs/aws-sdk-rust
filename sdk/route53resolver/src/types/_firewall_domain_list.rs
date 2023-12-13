@@ -5,29 +5,29 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FirewallDomainList {
-    /// <p>The ID of the domain list.</p>
+    /// <p>The ID of the domain list. </p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the firewall domain list.</p>
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the domain list.</p>
+    /// <p>The name of the domain list. </p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The number of domain names that are specified in the domain list.</p>
     pub domain_count: ::std::option::Option<i32>,
-    /// <p>The status of the domain list.</p>
+    /// <p>The status of the domain list. </p>
     pub status: ::std::option::Option<crate::types::FirewallDomainListStatus>,
     /// <p>Additional information about the status of the list, if available.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The owner of the list, used only for lists that are not managed by you. For example, the managed domain list <code>AWSManagedDomainsMalwareDomainList</code> has the managed owner name <code>Route 53 Resolver DNS Firewall</code>.</p>
     pub managed_owner_name: ::std::option::Option<::std::string::String>,
-    /// <p>A unique string defined by you to identify the request. This allows you to retry failed requests without the risk of running the operation twice. This can be any unique string, for example, a timestamp.</p>
+    /// <p>A unique string defined by you to identify the request. This allows you to retry failed requests without the risk of running the operation twice. This can be any unique string, for example, a timestamp. </p>
     pub creator_request_id: ::std::option::Option<::std::string::String>,
-    /// <p>The date and time that the domain list was created, in Unix time format and Coordinated Universal Time (UTC).</p>
+    /// <p>The date and time that the domain list was created, in Unix time format and Coordinated Universal Time (UTC). </p>
     pub creation_time: ::std::option::Option<::std::string::String>,
-    /// <p>The date and time that the domain list was last modified, in Unix time format and Coordinated Universal Time (UTC).</p>
+    /// <p>The date and time that the domain list was last modified, in Unix time format and Coordinated Universal Time (UTC). </p>
     pub modification_time: ::std::option::Option<::std::string::String>,
 }
 impl FirewallDomainList {
-    /// <p>The ID of the domain list.</p>
+    /// <p>The ID of the domain list. </p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -35,7 +35,7 @@ impl FirewallDomainList {
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The name of the domain list.</p>
+    /// <p>The name of the domain list. </p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -43,7 +43,7 @@ impl FirewallDomainList {
     pub fn domain_count(&self) -> ::std::option::Option<i32> {
         self.domain_count
     }
-    /// <p>The status of the domain list.</p>
+    /// <p>The status of the domain list. </p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::FirewallDomainListStatus> {
         self.status.as_ref()
     }
@@ -55,15 +55,15 @@ impl FirewallDomainList {
     pub fn managed_owner_name(&self) -> ::std::option::Option<&str> {
         self.managed_owner_name.as_deref()
     }
-    /// <p>A unique string defined by you to identify the request. This allows you to retry failed requests without the risk of running the operation twice. This can be any unique string, for example, a timestamp.</p>
+    /// <p>A unique string defined by you to identify the request. This allows you to retry failed requests without the risk of running the operation twice. This can be any unique string, for example, a timestamp. </p>
     pub fn creator_request_id(&self) -> ::std::option::Option<&str> {
         self.creator_request_id.as_deref()
     }
-    /// <p>The date and time that the domain list was created, in Unix time format and Coordinated Universal Time (UTC).</p>
+    /// <p>The date and time that the domain list was created, in Unix time format and Coordinated Universal Time (UTC). </p>
     pub fn creation_time(&self) -> ::std::option::Option<&str> {
         self.creation_time.as_deref()
     }
-    /// <p>The date and time that the domain list was last modified, in Unix time format and Coordinated Universal Time (UTC).</p>
+    /// <p>The date and time that the domain list was last modified, in Unix time format and Coordinated Universal Time (UTC). </p>
     pub fn modification_time(&self) -> ::std::option::Option<&str> {
         self.modification_time.as_deref()
     }
@@ -91,17 +91,17 @@ pub struct FirewallDomainListBuilder {
     pub(crate) modification_time: ::std::option::Option<::std::string::String>,
 }
 impl FirewallDomainListBuilder {
-    /// <p>The ID of the domain list.</p>
+    /// <p>The ID of the domain list. </p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the domain list.</p>
+    /// <p>The ID of the domain list. </p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// <p>The ID of the domain list.</p>
+    /// <p>The ID of the domain list. </p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
@@ -119,17 +119,17 @@ impl FirewallDomainListBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>The name of the domain list.</p>
+    /// <p>The name of the domain list. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the domain list.</p>
+    /// <p>The name of the domain list. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the domain list.</p>
+    /// <p>The name of the domain list. </p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
@@ -147,17 +147,17 @@ impl FirewallDomainListBuilder {
     pub fn get_domain_count(&self) -> &::std::option::Option<i32> {
         &self.domain_count
     }
-    /// <p>The status of the domain list.</p>
+    /// <p>The status of the domain list. </p>
     pub fn status(mut self, input: crate::types::FirewallDomainListStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the domain list.</p>
+    /// <p>The status of the domain list. </p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::FirewallDomainListStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of the domain list.</p>
+    /// <p>The status of the domain list. </p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::FirewallDomainListStatus> {
         &self.status
     }
@@ -189,45 +189,45 @@ impl FirewallDomainListBuilder {
     pub fn get_managed_owner_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.managed_owner_name
     }
-    /// <p>A unique string defined by you to identify the request. This allows you to retry failed requests without the risk of running the operation twice. This can be any unique string, for example, a timestamp.</p>
+    /// <p>A unique string defined by you to identify the request. This allows you to retry failed requests without the risk of running the operation twice. This can be any unique string, for example, a timestamp. </p>
     pub fn creator_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creator_request_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique string defined by you to identify the request. This allows you to retry failed requests without the risk of running the operation twice. This can be any unique string, for example, a timestamp.</p>
+    /// <p>A unique string defined by you to identify the request. This allows you to retry failed requests without the risk of running the operation twice. This can be any unique string, for example, a timestamp. </p>
     pub fn set_creator_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creator_request_id = input;
         self
     }
-    /// <p>A unique string defined by you to identify the request. This allows you to retry failed requests without the risk of running the operation twice. This can be any unique string, for example, a timestamp.</p>
+    /// <p>A unique string defined by you to identify the request. This allows you to retry failed requests without the risk of running the operation twice. This can be any unique string, for example, a timestamp. </p>
     pub fn get_creator_request_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.creator_request_id
     }
-    /// <p>The date and time that the domain list was created, in Unix time format and Coordinated Universal Time (UTC).</p>
+    /// <p>The date and time that the domain list was created, in Unix time format and Coordinated Universal Time (UTC). </p>
     pub fn creation_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_time = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The date and time that the domain list was created, in Unix time format and Coordinated Universal Time (UTC).</p>
+    /// <p>The date and time that the domain list was created, in Unix time format and Coordinated Universal Time (UTC). </p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creation_time = input;
         self
     }
-    /// <p>The date and time that the domain list was created, in Unix time format and Coordinated Universal Time (UTC).</p>
+    /// <p>The date and time that the domain list was created, in Unix time format and Coordinated Universal Time (UTC). </p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.creation_time
     }
-    /// <p>The date and time that the domain list was last modified, in Unix time format and Coordinated Universal Time (UTC).</p>
+    /// <p>The date and time that the domain list was last modified, in Unix time format and Coordinated Universal Time (UTC). </p>
     pub fn modification_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.modification_time = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The date and time that the domain list was last modified, in Unix time format and Coordinated Universal Time (UTC).</p>
+    /// <p>The date and time that the domain list was last modified, in Unix time format and Coordinated Universal Time (UTC). </p>
     pub fn set_modification_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.modification_time = input;
         self
     }
-    /// <p>The date and time that the domain list was last modified, in Unix time format and Coordinated Universal Time (UTC).</p>
+    /// <p>The date and time that the domain list was last modified, in Unix time format and Coordinated Universal Time (UTC). </p>
     pub fn get_modification_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.modification_time
     }

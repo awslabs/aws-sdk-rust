@@ -6,31 +6,28 @@ pub struct ListBackupJobSummariesInput {
     /// <p>Returns the job count for the specified account.</p>
     /// <p>If the request is sent from a member account or an account not part of Amazon Web Services Organizations, jobs within requestor's account will be returned.</p>
     /// <p>Root, admin, and delegated administrator accounts can use the value ANY to return job counts from every account in the organization.</p>
-    /// <p><code>AGGREGATE_ALL</code> aggregates job counts from all accounts within the authenticated organization, then returns the sum.</p>
+    /// <p> <code>AGGREGATE_ALL</code> aggregates job counts from all accounts within the authenticated organization, then returns the sum.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>This parameter returns the job count for jobs with the specified state.</p>
     /// <p>The the value ANY returns count of all states.</p>
-    /// <p><code>AGGREGATE_ALL</code> aggregates job counts for all states and returns the sum.</p>
+    /// <p> <code>AGGREGATE_ALL</code> aggregates job counts for all states and returns the sum.</p>
     pub state: ::std::option::Option<crate::types::BackupJobStatus>,
     /// <p>Returns the job count for the specified resource type. Use request <code>GetSupportedResourceTypes</code> to obtain strings for supported resource types.</p>
     /// <p>The the value ANY returns count of all resource types.</p>
-    /// <p><code>AGGREGATE_ALL</code> aggregates job counts for all resource types and returns the sum.</p>
+    /// <p> <code>AGGREGATE_ALL</code> aggregates job counts for all resource types and returns the sum.</p>
     /// <p>The type of Amazon Web Services resource to be backed up; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database.</p>
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>This parameter returns the job count for the specified message category.</p>
     /// <p>Example accepted strings include <code>AccessDenied</code>, <code>Success</code>, and <code>InvalidParameters</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of accepted MessageCategory strings.</p>
     /// <p>The the value ANY returns count of all message categories.</p>
-    /// <p><code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.</p>
+    /// <p> <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.</p>
     pub message_category: ::std::option::Option<::std::string::String>,
     /// <p>This is the period that sets the boundaries for returned results.</p>
     /// <p>Acceptable values include</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ONE_DAY</code> for daily job count for the prior 14 days.</p></li>
-    /// <li>
-    /// <p><code>SEVEN_DAYS</code> for the aggregated job count for the prior 7 days.</p></li>
-    /// <li>
-    /// <p><code>FOURTEEN_DAYS</code> for aggregated job count for prior 14 days.</p></li>
+    /// <li> <p> <code>ONE_DAY</code> for daily job count for the prior 14 days.</p> </li>
+    /// <li> <p> <code>SEVEN_DAYS</code> for the aggregated job count for the prior 7 days.</p> </li>
+    /// <li> <p> <code>FOURTEEN_DAYS</code> for aggregated job count for prior 14 days.</p> </li>
     /// </ul>
     pub aggregation_period: ::std::option::Option<crate::types::AggregationPeriod>,
     /// <p>This parameter sets the maximum number of items to be returned.</p>
@@ -43,19 +40,19 @@ impl ListBackupJobSummariesInput {
     /// <p>Returns the job count for the specified account.</p>
     /// <p>If the request is sent from a member account or an account not part of Amazon Web Services Organizations, jobs within requestor's account will be returned.</p>
     /// <p>Root, admin, and delegated administrator accounts can use the value ANY to return job counts from every account in the organization.</p>
-    /// <p><code>AGGREGATE_ALL</code> aggregates job counts from all accounts within the authenticated organization, then returns the sum.</p>
+    /// <p> <code>AGGREGATE_ALL</code> aggregates job counts from all accounts within the authenticated organization, then returns the sum.</p>
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>This parameter returns the job count for jobs with the specified state.</p>
     /// <p>The the value ANY returns count of all states.</p>
-    /// <p><code>AGGREGATE_ALL</code> aggregates job counts for all states and returns the sum.</p>
+    /// <p> <code>AGGREGATE_ALL</code> aggregates job counts for all states and returns the sum.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::BackupJobStatus> {
         self.state.as_ref()
     }
     /// <p>Returns the job count for the specified resource type. Use request <code>GetSupportedResourceTypes</code> to obtain strings for supported resource types.</p>
     /// <p>The the value ANY returns count of all resource types.</p>
-    /// <p><code>AGGREGATE_ALL</code> aggregates job counts for all resource types and returns the sum.</p>
+    /// <p> <code>AGGREGATE_ALL</code> aggregates job counts for all resource types and returns the sum.</p>
     /// <p>The type of Amazon Web Services resource to be backed up; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database.</p>
     pub fn resource_type(&self) -> ::std::option::Option<&str> {
         self.resource_type.as_deref()
@@ -63,19 +60,16 @@ impl ListBackupJobSummariesInput {
     /// <p>This parameter returns the job count for the specified message category.</p>
     /// <p>Example accepted strings include <code>AccessDenied</code>, <code>Success</code>, and <code>InvalidParameters</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of accepted MessageCategory strings.</p>
     /// <p>The the value ANY returns count of all message categories.</p>
-    /// <p><code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.</p>
+    /// <p> <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.</p>
     pub fn message_category(&self) -> ::std::option::Option<&str> {
         self.message_category.as_deref()
     }
     /// <p>This is the period that sets the boundaries for returned results.</p>
     /// <p>Acceptable values include</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ONE_DAY</code> for daily job count for the prior 14 days.</p></li>
-    /// <li>
-    /// <p><code>SEVEN_DAYS</code> for the aggregated job count for the prior 7 days.</p></li>
-    /// <li>
-    /// <p><code>FOURTEEN_DAYS</code> for aggregated job count for prior 14 days.</p></li>
+    /// <li> <p> <code>ONE_DAY</code> for daily job count for the prior 14 days.</p> </li>
+    /// <li> <p> <code>SEVEN_DAYS</code> for the aggregated job count for the prior 7 days.</p> </li>
+    /// <li> <p> <code>FOURTEEN_DAYS</code> for aggregated job count for prior 14 days.</p> </li>
     /// </ul>
     pub fn aggregation_period(&self) -> ::std::option::Option<&crate::types::AggregationPeriod> {
         self.aggregation_period.as_ref()
@@ -113,7 +107,7 @@ impl ListBackupJobSummariesInputBuilder {
     /// <p>Returns the job count for the specified account.</p>
     /// <p>If the request is sent from a member account or an account not part of Amazon Web Services Organizations, jobs within requestor's account will be returned.</p>
     /// <p>Root, admin, and delegated administrator accounts can use the value ANY to return job counts from every account in the organization.</p>
-    /// <p><code>AGGREGATE_ALL</code> aggregates job counts from all accounts within the authenticated organization, then returns the sum.</p>
+    /// <p> <code>AGGREGATE_ALL</code> aggregates job counts from all accounts within the authenticated organization, then returns the sum.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -121,7 +115,7 @@ impl ListBackupJobSummariesInputBuilder {
     /// <p>Returns the job count for the specified account.</p>
     /// <p>If the request is sent from a member account or an account not part of Amazon Web Services Organizations, jobs within requestor's account will be returned.</p>
     /// <p>Root, admin, and delegated administrator accounts can use the value ANY to return job counts from every account in the organization.</p>
-    /// <p><code>AGGREGATE_ALL</code> aggregates job counts from all accounts within the authenticated organization, then returns the sum.</p>
+    /// <p> <code>AGGREGATE_ALL</code> aggregates job counts from all accounts within the authenticated organization, then returns the sum.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
@@ -129,33 +123,33 @@ impl ListBackupJobSummariesInputBuilder {
     /// <p>Returns the job count for the specified account.</p>
     /// <p>If the request is sent from a member account or an account not part of Amazon Web Services Organizations, jobs within requestor's account will be returned.</p>
     /// <p>Root, admin, and delegated administrator accounts can use the value ANY to return job counts from every account in the organization.</p>
-    /// <p><code>AGGREGATE_ALL</code> aggregates job counts from all accounts within the authenticated organization, then returns the sum.</p>
+    /// <p> <code>AGGREGATE_ALL</code> aggregates job counts from all accounts within the authenticated organization, then returns the sum.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }
     /// <p>This parameter returns the job count for jobs with the specified state.</p>
     /// <p>The the value ANY returns count of all states.</p>
-    /// <p><code>AGGREGATE_ALL</code> aggregates job counts for all states and returns the sum.</p>
+    /// <p> <code>AGGREGATE_ALL</code> aggregates job counts for all states and returns the sum.</p>
     pub fn state(mut self, input: crate::types::BackupJobStatus) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>This parameter returns the job count for jobs with the specified state.</p>
     /// <p>The the value ANY returns count of all states.</p>
-    /// <p><code>AGGREGATE_ALL</code> aggregates job counts for all states and returns the sum.</p>
+    /// <p> <code>AGGREGATE_ALL</code> aggregates job counts for all states and returns the sum.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::BackupJobStatus>) -> Self {
         self.state = input;
         self
     }
     /// <p>This parameter returns the job count for jobs with the specified state.</p>
     /// <p>The the value ANY returns count of all states.</p>
-    /// <p><code>AGGREGATE_ALL</code> aggregates job counts for all states and returns the sum.</p>
+    /// <p> <code>AGGREGATE_ALL</code> aggregates job counts for all states and returns the sum.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::BackupJobStatus> {
         &self.state
     }
     /// <p>Returns the job count for the specified resource type. Use request <code>GetSupportedResourceTypes</code> to obtain strings for supported resource types.</p>
     /// <p>The the value ANY returns count of all resource types.</p>
-    /// <p><code>AGGREGATE_ALL</code> aggregates job counts for all resource types and returns the sum.</p>
+    /// <p> <code>AGGREGATE_ALL</code> aggregates job counts for all resource types and returns the sum.</p>
     /// <p>The type of Amazon Web Services resource to be backed up; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database.</p>
     pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
@@ -163,7 +157,7 @@ impl ListBackupJobSummariesInputBuilder {
     }
     /// <p>Returns the job count for the specified resource type. Use request <code>GetSupportedResourceTypes</code> to obtain strings for supported resource types.</p>
     /// <p>The the value ANY returns count of all resource types.</p>
-    /// <p><code>AGGREGATE_ALL</code> aggregates job counts for all resource types and returns the sum.</p>
+    /// <p> <code>AGGREGATE_ALL</code> aggregates job counts for all resource types and returns the sum.</p>
     /// <p>The type of Amazon Web Services resource to be backed up; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
@@ -171,7 +165,7 @@ impl ListBackupJobSummariesInputBuilder {
     }
     /// <p>Returns the job count for the specified resource type. Use request <code>GetSupportedResourceTypes</code> to obtain strings for supported resource types.</p>
     /// <p>The the value ANY returns count of all resource types.</p>
-    /// <p><code>AGGREGATE_ALL</code> aggregates job counts for all resource types and returns the sum.</p>
+    /// <p> <code>AGGREGATE_ALL</code> aggregates job counts for all resource types and returns the sum.</p>
     /// <p>The type of Amazon Web Services resource to be backed up; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_type
@@ -179,7 +173,7 @@ impl ListBackupJobSummariesInputBuilder {
     /// <p>This parameter returns the job count for the specified message category.</p>
     /// <p>Example accepted strings include <code>AccessDenied</code>, <code>Success</code>, and <code>InvalidParameters</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of accepted MessageCategory strings.</p>
     /// <p>The the value ANY returns count of all message categories.</p>
-    /// <p><code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.</p>
+    /// <p> <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.</p>
     pub fn message_category(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_category = ::std::option::Option::Some(input.into());
         self
@@ -187,7 +181,7 @@ impl ListBackupJobSummariesInputBuilder {
     /// <p>This parameter returns the job count for the specified message category.</p>
     /// <p>Example accepted strings include <code>AccessDenied</code>, <code>Success</code>, and <code>InvalidParameters</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of accepted MessageCategory strings.</p>
     /// <p>The the value ANY returns count of all message categories.</p>
-    /// <p><code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.</p>
+    /// <p> <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.</p>
     pub fn set_message_category(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message_category = input;
         self
@@ -195,19 +189,16 @@ impl ListBackupJobSummariesInputBuilder {
     /// <p>This parameter returns the job count for the specified message category.</p>
     /// <p>Example accepted strings include <code>AccessDenied</code>, <code>Success</code>, and <code>InvalidParameters</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of accepted MessageCategory strings.</p>
     /// <p>The the value ANY returns count of all message categories.</p>
-    /// <p><code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.</p>
+    /// <p> <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.</p>
     pub fn get_message_category(&self) -> &::std::option::Option<::std::string::String> {
         &self.message_category
     }
     /// <p>This is the period that sets the boundaries for returned results.</p>
     /// <p>Acceptable values include</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ONE_DAY</code> for daily job count for the prior 14 days.</p></li>
-    /// <li>
-    /// <p><code>SEVEN_DAYS</code> for the aggregated job count for the prior 7 days.</p></li>
-    /// <li>
-    /// <p><code>FOURTEEN_DAYS</code> for aggregated job count for prior 14 days.</p></li>
+    /// <li> <p> <code>ONE_DAY</code> for daily job count for the prior 14 days.</p> </li>
+    /// <li> <p> <code>SEVEN_DAYS</code> for the aggregated job count for the prior 7 days.</p> </li>
+    /// <li> <p> <code>FOURTEEN_DAYS</code> for aggregated job count for prior 14 days.</p> </li>
     /// </ul>
     pub fn aggregation_period(mut self, input: crate::types::AggregationPeriod) -> Self {
         self.aggregation_period = ::std::option::Option::Some(input);
@@ -216,12 +207,9 @@ impl ListBackupJobSummariesInputBuilder {
     /// <p>This is the period that sets the boundaries for returned results.</p>
     /// <p>Acceptable values include</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ONE_DAY</code> for daily job count for the prior 14 days.</p></li>
-    /// <li>
-    /// <p><code>SEVEN_DAYS</code> for the aggregated job count for the prior 7 days.</p></li>
-    /// <li>
-    /// <p><code>FOURTEEN_DAYS</code> for aggregated job count for prior 14 days.</p></li>
+    /// <li> <p> <code>ONE_DAY</code> for daily job count for the prior 14 days.</p> </li>
+    /// <li> <p> <code>SEVEN_DAYS</code> for the aggregated job count for the prior 7 days.</p> </li>
+    /// <li> <p> <code>FOURTEEN_DAYS</code> for aggregated job count for prior 14 days.</p> </li>
     /// </ul>
     pub fn set_aggregation_period(mut self, input: ::std::option::Option<crate::types::AggregationPeriod>) -> Self {
         self.aggregation_period = input;
@@ -230,12 +218,9 @@ impl ListBackupJobSummariesInputBuilder {
     /// <p>This is the period that sets the boundaries for returned results.</p>
     /// <p>Acceptable values include</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ONE_DAY</code> for daily job count for the prior 14 days.</p></li>
-    /// <li>
-    /// <p><code>SEVEN_DAYS</code> for the aggregated job count for the prior 7 days.</p></li>
-    /// <li>
-    /// <p><code>FOURTEEN_DAYS</code> for aggregated job count for prior 14 days.</p></li>
+    /// <li> <p> <code>ONE_DAY</code> for daily job count for the prior 14 days.</p> </li>
+    /// <li> <p> <code>SEVEN_DAYS</code> for the aggregated job count for the prior 7 days.</p> </li>
+    /// <li> <p> <code>FOURTEEN_DAYS</code> for aggregated job count for prior 14 days.</p> </li>
     /// </ul>
     pub fn get_aggregation_period(&self) -> &::std::option::Option<crate::types::AggregationPeriod> {
         &self.aggregation_period

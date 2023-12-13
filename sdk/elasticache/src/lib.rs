@@ -12,7 +12,6 @@
 #![allow(clippy::result_large_err)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
-#![cfg_attr(docsrs, feature(doc_auto_cfg))]
 //! Amazon ElastiCache is a web service that makes it easier to set up, operate, and scale a distributed cache in the cloud.
 //!
 //! With ElastiCache, customers get all of the benefits of a high-performance, in-memory cache with less of the administrative burden involved in launching and managing a distributed cache. The service makes setup, scaling, and cluster failure handling much simpler than in a self-managed cache deployment.
@@ -30,8 +29,8 @@
 //!
 //! ```toml
 //! [dependencies]
-//! aws-config = { version = "1.1.0", features = ["behavior-version-latest"] }
-//! aws-sdk-elasticache = "1.6.0"
+//! aws-config = { version = "1.0.3", features = ["behavior-version-latest"] }
+//! aws-sdk-elasticache = "1.7.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -191,9 +190,9 @@ pub(crate) mod protocol_serde;
 
 mod serialization_settings;
 
-mod endpoint_lib;
-
 mod lens;
+
+mod endpoint_lib;
 
 mod rest_xml_wrapped_errors;
 

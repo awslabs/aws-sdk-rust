@@ -22,7 +22,7 @@ impl BatchGetTokenBalanceInputBuilder {
 }
 /// Fluent builder constructing a request to `BatchGetTokenBalance`.
 ///
-/// <p>Gets the token balance for a batch of tokens by using the <code>BatchGetTokenBalance</code> action for every token in the request.</p><note>
+/// <p>Gets the token balance for a batch of tokens by using the <code>BatchGetTokenBalance</code> action for every token in the request.</p> <note>
 /// <p>Only the native tokens BTC,ETH, and the ERC-20, ERC-721, and ERC 1155 token standards are supported.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

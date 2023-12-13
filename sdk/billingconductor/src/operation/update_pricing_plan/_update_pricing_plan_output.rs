@@ -3,36 +3,36 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdatePricingPlanOutput {
-    /// <p>The Amazon Resource Name (ARN) of the updated pricing plan.</p>
+    /// <p>The Amazon Resource Name (ARN) of the updated pricing plan. </p>
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the pricing plan. The name must be unique to each pricing plan.</p>
+    /// <p> The name of the pricing plan. The name must be unique to each pricing plan. </p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The new description for the pricing rule.</p>
+    /// <p> The new description for the pricing rule. </p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The pricing rules count that's currently associated with this pricing plan list.</p>
+    /// <p> The pricing rules count that's currently associated with this pricing plan list. </p>
     pub size: i64,
-    /// <p>The most recent time when the pricing plan was modified.</p>
+    /// <p> The most recent time when the pricing plan was modified. </p>
     pub last_modified_time: i64,
     _request_id: Option<String>,
 }
 impl UpdatePricingPlanOutput {
-    /// <p>The Amazon Resource Name (ARN) of the updated pricing plan.</p>
+    /// <p>The Amazon Resource Name (ARN) of the updated pricing plan. </p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The name of the pricing plan. The name must be unique to each pricing plan.</p>
+    /// <p> The name of the pricing plan. The name must be unique to each pricing plan. </p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The new description for the pricing rule.</p>
+    /// <p> The new description for the pricing rule. </p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The pricing rules count that's currently associated with this pricing plan list.</p>
+    /// <p> The pricing rules count that's currently associated with this pricing plan list. </p>
     pub fn size(&self) -> i64 {
         self.size
     }
-    /// <p>The most recent time when the pricing plan was modified.</p>
+    /// <p> The most recent time when the pricing plan was modified. </p>
     pub fn last_modified_time(&self) -> i64 {
         self.last_modified_time
     }
@@ -73,73 +73,73 @@ pub struct UpdatePricingPlanOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdatePricingPlanOutputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the updated pricing plan.</p>
+    /// <p>The Amazon Resource Name (ARN) of the updated pricing plan. </p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the updated pricing plan.</p>
+    /// <p>The Amazon Resource Name (ARN) of the updated pricing plan. </p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the updated pricing plan.</p>
+    /// <p>The Amazon Resource Name (ARN) of the updated pricing plan. </p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>The name of the pricing plan. The name must be unique to each pricing plan.</p>
+    /// <p> The name of the pricing plan. The name must be unique to each pricing plan. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the pricing plan. The name must be unique to each pricing plan.</p>
+    /// <p> The name of the pricing plan. The name must be unique to each pricing plan. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the pricing plan. The name must be unique to each pricing plan.</p>
+    /// <p> The name of the pricing plan. The name must be unique to each pricing plan. </p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The new description for the pricing rule.</p>
+    /// <p> The new description for the pricing rule. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The new description for the pricing rule.</p>
+    /// <p> The new description for the pricing rule. </p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>The new description for the pricing rule.</p>
+    /// <p> The new description for the pricing rule. </p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The pricing rules count that's currently associated with this pricing plan list.</p>
+    /// <p> The pricing rules count that's currently associated with this pricing plan list. </p>
     pub fn size(mut self, input: i64) -> Self {
         self.size = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The pricing rules count that's currently associated with this pricing plan list.</p>
+    /// <p> The pricing rules count that's currently associated with this pricing plan list. </p>
     pub fn set_size(mut self, input: ::std::option::Option<i64>) -> Self {
         self.size = input;
         self
     }
-    /// <p>The pricing rules count that's currently associated with this pricing plan list.</p>
+    /// <p> The pricing rules count that's currently associated with this pricing plan list. </p>
     pub fn get_size(&self) -> &::std::option::Option<i64> {
         &self.size
     }
-    /// <p>The most recent time when the pricing plan was modified.</p>
+    /// <p> The most recent time when the pricing plan was modified. </p>
     pub fn last_modified_time(mut self, input: i64) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The most recent time when the pricing plan was modified.</p>
+    /// <p> The most recent time when the pricing plan was modified. </p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.last_modified_time = input;
         self
     }
-    /// <p>The most recent time when the pricing plan was modified.</p>
+    /// <p> The most recent time when the pricing plan was modified. </p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<i64> {
         &self.last_modified_time
     }

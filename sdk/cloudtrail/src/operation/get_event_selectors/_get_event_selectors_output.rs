@@ -7,7 +7,7 @@ pub struct GetEventSelectorsOutput {
     pub trail_arn: ::std::option::Option<::std::string::String>,
     /// <p>The event selectors that are configured for the trail.</p>
     pub event_selectors: ::std::option::Option<::std::vec::Vec<crate::types::EventSelector>>,
-    /// <p>The advanced event selectors that are configured for the trail.</p>
+    /// <p> The advanced event selectors that are configured for the trail. </p>
     pub advanced_event_selectors: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>>,
     _request_id: Option<String>,
 }
@@ -22,7 +22,7 @@ impl GetEventSelectorsOutput {
     pub fn event_selectors(&self) -> &[crate::types::EventSelector] {
         self.event_selectors.as_deref().unwrap_or_default()
     }
-    /// <p>The advanced event selectors that are configured for the trail.</p>
+    /// <p> The advanced event selectors that are configured for the trail. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.advanced_event_selectors.is_none()`.
     pub fn advanced_event_selectors(&self) -> &[crate::types::AdvancedEventSelector] {
@@ -89,19 +89,19 @@ impl GetEventSelectorsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_advanced_event_selectors`](Self::set_advanced_event_selectors).
     ///
-    /// <p>The advanced event selectors that are configured for the trail.</p>
+    /// <p> The advanced event selectors that are configured for the trail. </p>
     pub fn advanced_event_selectors(mut self, input: crate::types::AdvancedEventSelector) -> Self {
         let mut v = self.advanced_event_selectors.unwrap_or_default();
         v.push(input);
         self.advanced_event_selectors = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The advanced event selectors that are configured for the trail.</p>
+    /// <p> The advanced event selectors that are configured for the trail. </p>
     pub fn set_advanced_event_selectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>>) -> Self {
         self.advanced_event_selectors = input;
         self
     }
-    /// <p>The advanced event selectors that are configured for the trail.</p>
+    /// <p> The advanced event selectors that are configured for the trail. </p>
     pub fn get_advanced_event_selectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>> {
         &self.advanced_event_selectors
     }

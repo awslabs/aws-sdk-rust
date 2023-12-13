@@ -25,10 +25,8 @@ impl GetAssetPropertyAggregatesInputBuilder {
 /// <p>Gets aggregated values for an asset property. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#aggregates">Querying aggregates</a> in the <i>IoT SiteWise User Guide</i>.</p>
 /// <p>To identify an asset property, you must specify one of the following:</p>
 /// <ul>
-/// <li>
-/// <p>The <code>assetId</code> and <code>propertyId</code> of an asset property.</p></li>
-/// <li>
-/// <p>A <code>propertyAlias</code>, which is a data stream alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p></li>
+/// <li> <p>The <code>assetId</code> and <code>propertyId</code> of an asset property.</p> </li>
+/// <li> <p>A <code>propertyAlias</code>, which is a data stream alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p> </li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAssetPropertyAggregatesFluentBuilder {
@@ -242,19 +240,19 @@ impl GetAssetPropertyAggregatesFluentBuilder {
         self.inner.get_end_date()
     }
     /// <p>The chronological sorting order of the requested information.</p>
-    /// <p>Default: <code>ASCENDING</code></p>
+    /// <p>Default: <code>ASCENDING</code> </p>
     pub fn time_ordering(mut self, input: crate::types::TimeOrdering) -> Self {
         self.inner = self.inner.time_ordering(input);
         self
     }
     /// <p>The chronological sorting order of the requested information.</p>
-    /// <p>Default: <code>ASCENDING</code></p>
+    /// <p>Default: <code>ASCENDING</code> </p>
     pub fn set_time_ordering(mut self, input: ::std::option::Option<crate::types::TimeOrdering>) -> Self {
         self.inner = self.inner.set_time_ordering(input);
         self
     }
     /// <p>The chronological sorting order of the requested information.</p>
-    /// <p>Default: <code>ASCENDING</code></p>
+    /// <p>Default: <code>ASCENDING</code> </p>
     pub fn get_time_ordering(&self) -> &::std::option::Option<crate::types::TimeOrdering> {
         self.inner.get_time_ordering()
     }
@@ -274,10 +272,8 @@ impl GetAssetPropertyAggregatesFluentBuilder {
     }
     /// <p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p>
     /// <ul>
-    /// <li>
-    /// <p>The size of the result set is equal to 1 MB.</p></li>
-    /// <li>
-    /// <p>The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 2500.</p></li>
+    /// <li> <p>The size of the result set is equal to 1 MB.</p> </li>
+    /// <li> <p>The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 2500.</p> </li>
     /// </ul>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -285,10 +281,8 @@ impl GetAssetPropertyAggregatesFluentBuilder {
     }
     /// <p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p>
     /// <ul>
-    /// <li>
-    /// <p>The size of the result set is equal to 1 MB.</p></li>
-    /// <li>
-    /// <p>The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 2500.</p></li>
+    /// <li> <p>The size of the result set is equal to 1 MB.</p> </li>
+    /// <li> <p>The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 2500.</p> </li>
     /// </ul>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
@@ -296,10 +290,8 @@ impl GetAssetPropertyAggregatesFluentBuilder {
     }
     /// <p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p>
     /// <ul>
-    /// <li>
-    /// <p>The size of the result set is equal to 1 MB.</p></li>
-    /// <li>
-    /// <p>The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 2500.</p></li>
+    /// <li> <p>The size of the result set is equal to 1 MB.</p> </li>
+    /// <li> <p>The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 2500.</p> </li>
     /// </ul>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()

@@ -154,17 +154,17 @@ impl CreateAdapterFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_feature_types`](Self::set_feature_types).
     ///
-    /// <p>The type of feature that the adapter is being trained on. Currrenly, supported feature types are: <code>QUERIES</code></p>
+    /// <p>The type of feature that the adapter is being trained on. Currrenly, supported feature types are: <code>QUERIES</code> </p>
     pub fn feature_types(mut self, input: crate::types::FeatureType) -> Self {
         self.inner = self.inner.feature_types(input);
         self
     }
-    /// <p>The type of feature that the adapter is being trained on. Currrenly, supported feature types are: <code>QUERIES</code></p>
+    /// <p>The type of feature that the adapter is being trained on. Currrenly, supported feature types are: <code>QUERIES</code> </p>
     pub fn set_feature_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FeatureType>>) -> Self {
         self.inner = self.inner.set_feature_types(input);
         self
     }
-    /// <p>The type of feature that the adapter is being trained on. Currrenly, supported feature types are: <code>QUERIES</code></p>
+    /// <p>The type of feature that the adapter is being trained on. Currrenly, supported feature types are: <code>QUERIES</code> </p>
     pub fn get_feature_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FeatureType>> {
         self.inner.get_feature_types()
     }

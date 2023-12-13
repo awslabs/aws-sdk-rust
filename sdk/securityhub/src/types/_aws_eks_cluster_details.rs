@@ -10,18 +10,12 @@ pub struct AwsEksClusterDetails {
     pub certificate_authority_data: ::std::option::Option<::std::string::String>,
     /// <p>The status of the cluster. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ACTIVE</code></p></li>
-    /// <li>
-    /// <p><code>CREATING</code></p></li>
-    /// <li>
-    /// <p><code>DELETING</code></p></li>
-    /// <li>
-    /// <p><code>FAILED</code></p></li>
-    /// <li>
-    /// <p><code>PENDING</code></p></li>
-    /// <li>
-    /// <p><code>UPDATING</code></p></li>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATING</code> </p> </li>
+    /// <li> <p> <code>DELETING</code> </p> </li>
+    /// <li> <p> <code>FAILED</code> </p> </li>
+    /// <li> <p> <code>PENDING</code> </p> </li>
+    /// <li> <p> <code>UPDATING</code> </p> </li>
     /// </ul>
     pub cluster_status: ::std::option::Option<::std::string::String>,
     /// <p>The endpoint for the Amazon EKS API server.</p>
@@ -48,18 +42,12 @@ impl AwsEksClusterDetails {
     }
     /// <p>The status of the cluster. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ACTIVE</code></p></li>
-    /// <li>
-    /// <p><code>CREATING</code></p></li>
-    /// <li>
-    /// <p><code>DELETING</code></p></li>
-    /// <li>
-    /// <p><code>FAILED</code></p></li>
-    /// <li>
-    /// <p><code>PENDING</code></p></li>
-    /// <li>
-    /// <p><code>UPDATING</code></p></li>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATING</code> </p> </li>
+    /// <li> <p> <code>DELETING</code> </p> </li>
+    /// <li> <p> <code>FAILED</code> </p> </li>
+    /// <li> <p> <code>PENDING</code> </p> </li>
+    /// <li> <p> <code>UPDATING</code> </p> </li>
     /// </ul>
     pub fn cluster_status(&self) -> ::std::option::Option<&str> {
         self.cluster_status.as_deref()
@@ -141,18 +129,12 @@ impl AwsEksClusterDetailsBuilder {
     }
     /// <p>The status of the cluster. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ACTIVE</code></p></li>
-    /// <li>
-    /// <p><code>CREATING</code></p></li>
-    /// <li>
-    /// <p><code>DELETING</code></p></li>
-    /// <li>
-    /// <p><code>FAILED</code></p></li>
-    /// <li>
-    /// <p><code>PENDING</code></p></li>
-    /// <li>
-    /// <p><code>UPDATING</code></p></li>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATING</code> </p> </li>
+    /// <li> <p> <code>DELETING</code> </p> </li>
+    /// <li> <p> <code>FAILED</code> </p> </li>
+    /// <li> <p> <code>PENDING</code> </p> </li>
+    /// <li> <p> <code>UPDATING</code> </p> </li>
     /// </ul>
     pub fn cluster_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_status = ::std::option::Option::Some(input.into());
@@ -160,18 +142,12 @@ impl AwsEksClusterDetailsBuilder {
     }
     /// <p>The status of the cluster. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ACTIVE</code></p></li>
-    /// <li>
-    /// <p><code>CREATING</code></p></li>
-    /// <li>
-    /// <p><code>DELETING</code></p></li>
-    /// <li>
-    /// <p><code>FAILED</code></p></li>
-    /// <li>
-    /// <p><code>PENDING</code></p></li>
-    /// <li>
-    /// <p><code>UPDATING</code></p></li>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATING</code> </p> </li>
+    /// <li> <p> <code>DELETING</code> </p> </li>
+    /// <li> <p> <code>FAILED</code> </p> </li>
+    /// <li> <p> <code>PENDING</code> </p> </li>
+    /// <li> <p> <code>UPDATING</code> </p> </li>
     /// </ul>
     pub fn set_cluster_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_status = input;
@@ -179,18 +155,12 @@ impl AwsEksClusterDetailsBuilder {
     }
     /// <p>The status of the cluster. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ACTIVE</code></p></li>
-    /// <li>
-    /// <p><code>CREATING</code></p></li>
-    /// <li>
-    /// <p><code>DELETING</code></p></li>
-    /// <li>
-    /// <p><code>FAILED</code></p></li>
-    /// <li>
-    /// <p><code>PENDING</code></p></li>
-    /// <li>
-    /// <p><code>UPDATING</code></p></li>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATING</code> </p> </li>
+    /// <li> <p> <code>DELETING</code> </p> </li>
+    /// <li> <p> <code>FAILED</code> </p> </li>
+    /// <li> <p> <code>PENDING</code> </p> </li>
+    /// <li> <p> <code>UPDATING</code> </p> </li>
     /// </ul>
     pub fn get_cluster_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_status

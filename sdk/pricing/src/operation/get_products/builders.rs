@@ -114,17 +114,17 @@ impl GetProductsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::get_products::paginator::GetProductsPaginator {
         crate::operation::get_products::paginator::GetProductsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The code for the service whose products you want to retrieve.</p>
+    /// <p>The code for the service whose products you want to retrieve. </p>
     pub fn service_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_code(input.into());
         self
     }
-    /// <p>The code for the service whose products you want to retrieve.</p>
+    /// <p>The code for the service whose products you want to retrieve. </p>
     pub fn set_service_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_code(input);
         self
     }
-    /// <p>The code for the service whose products you want to retrieve.</p>
+    /// <p>The code for the service whose products you want to retrieve. </p>
     pub fn get_service_code(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_service_code()
     }
@@ -147,19 +147,19 @@ impl GetProductsFluentBuilder {
         self.inner.get_filters()
     }
     /// <p>The format version that you want the response to be in.</p>
-    /// <p>Valid values are: <code>aws_v1</code></p>
+    /// <p>Valid values are: <code>aws_v1</code> </p>
     pub fn format_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.format_version(input.into());
         self
     }
     /// <p>The format version that you want the response to be in.</p>
-    /// <p>Valid values are: <code>aws_v1</code></p>
+    /// <p>Valid values are: <code>aws_v1</code> </p>
     pub fn set_format_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_format_version(input);
         self
     }
     /// <p>The format version that you want the response to be in.</p>
-    /// <p>Valid values are: <code>aws_v1</code></p>
+    /// <p>Valid values are: <code>aws_v1</code> </p>
     pub fn get_format_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_format_version()
     }

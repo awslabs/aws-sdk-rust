@@ -22,7 +22,7 @@ impl ListVirtualMfaDevicesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListVirtualMFADevices`.
 ///
-/// <p>Lists the virtual MFA devices defined in the Amazon Web Services account by assignment status. If you do not specify an assignment status, the operation returns a list of all virtual MFA devices. Assignment status can be <code>Assigned</code>, <code>Unassigned</code>, or <code>Any</code>.</p><note>
+/// <p>Lists the virtual MFA devices defined in the Amazon Web Services account by assignment status. If you do not specify an assignment status, the operation returns a list of all virtual MFA devices. Assignment status can be <code>Assigned</code>, <code>Unassigned</code>, or <code>Any</code>.</p> <note>
 /// <p>IAM resource-listing operations return a subset of the available attributes for the resource. For example, this operation does not return tags, even though they are an attribute of the returned object. To view tag information for a virtual MFA device, see <code>ListMFADeviceTags</code>.</p>
 /// </note>
 /// <p>You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters.</p>
@@ -117,17 +117,17 @@ impl ListVirtualMFADevicesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_virtual_mfa_devices::paginator::ListVirtualMfaDevicesPaginator {
         crate::operation::list_virtual_mfa_devices::paginator::ListVirtualMfaDevicesPaginator::new(self.handle, self.inner)
     }
-    /// <p>The status (<code>Unassigned</code> or <code>Assigned</code>) of the devices to list. If you do not specify an <code>AssignmentStatus</code>, the operation defaults to <code>Any</code>, which lists both assigned and unassigned virtual MFA devices.,</p>
+    /// <p> The status (<code>Unassigned</code> or <code>Assigned</code>) of the devices to list. If you do not specify an <code>AssignmentStatus</code>, the operation defaults to <code>Any</code>, which lists both assigned and unassigned virtual MFA devices.,</p>
     pub fn assignment_status(mut self, input: crate::types::AssignmentStatusType) -> Self {
         self.inner = self.inner.assignment_status(input);
         self
     }
-    /// <p>The status (<code>Unassigned</code> or <code>Assigned</code>) of the devices to list. If you do not specify an <code>AssignmentStatus</code>, the operation defaults to <code>Any</code>, which lists both assigned and unassigned virtual MFA devices.,</p>
+    /// <p> The status (<code>Unassigned</code> or <code>Assigned</code>) of the devices to list. If you do not specify an <code>AssignmentStatus</code>, the operation defaults to <code>Any</code>, which lists both assigned and unassigned virtual MFA devices.,</p>
     pub fn set_assignment_status(mut self, input: ::std::option::Option<crate::types::AssignmentStatusType>) -> Self {
         self.inner = self.inner.set_assignment_status(input);
         self
     }
-    /// <p>The status (<code>Unassigned</code> or <code>Assigned</code>) of the devices to list. If you do not specify an <code>AssignmentStatus</code>, the operation defaults to <code>Any</code>, which lists both assigned and unassigned virtual MFA devices.,</p>
+    /// <p> The status (<code>Unassigned</code> or <code>Assigned</code>) of the devices to list. If you do not specify an <code>AssignmentStatus</code>, the operation defaults to <code>Any</code>, which lists both assigned and unassigned virtual MFA devices.,</p>
     pub fn get_assignment_status(&self) -> &::std::option::Option<crate::types::AssignmentStatusType> {
         self.inner.get_assignment_status()
     }

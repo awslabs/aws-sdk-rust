@@ -16,7 +16,7 @@ pub struct ReservedElasticsearchInstance {
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The duration, in seconds, for which the Elasticsearch instance is reserved.</p>
     pub duration: i32,
-    /// <p>The upfront fixed charge you will paid to purchase the specific reserved Elasticsearch instance offering.</p>
+    /// <p>The upfront fixed charge you will paid to purchase the specific reserved Elasticsearch instance offering. </p>
     pub fixed_price: ::std::option::Option<f64>,
     /// <p>The rate you are charged for each hour for the domain that is using this reserved instance.</p>
     pub usage_price: ::std::option::Option<f64>,
@@ -56,7 +56,7 @@ impl ReservedElasticsearchInstance {
     pub fn duration(&self) -> i32 {
         self.duration
     }
-    /// <p>The upfront fixed charge you will paid to purchase the specific reserved Elasticsearch instance offering.</p>
+    /// <p>The upfront fixed charge you will paid to purchase the specific reserved Elasticsearch instance offering. </p>
     pub fn fixed_price(&self) -> ::std::option::Option<f64> {
         self.fixed_price
     }
@@ -197,17 +197,17 @@ impl ReservedElasticsearchInstanceBuilder {
     pub fn get_duration(&self) -> &::std::option::Option<i32> {
         &self.duration
     }
-    /// <p>The upfront fixed charge you will paid to purchase the specific reserved Elasticsearch instance offering.</p>
+    /// <p>The upfront fixed charge you will paid to purchase the specific reserved Elasticsearch instance offering. </p>
     pub fn fixed_price(mut self, input: f64) -> Self {
         self.fixed_price = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The upfront fixed charge you will paid to purchase the specific reserved Elasticsearch instance offering.</p>
+    /// <p>The upfront fixed charge you will paid to purchase the specific reserved Elasticsearch instance offering. </p>
     pub fn set_fixed_price(mut self, input: ::std::option::Option<f64>) -> Self {
         self.fixed_price = input;
         self
     }
-    /// <p>The upfront fixed charge you will paid to purchase the specific reserved Elasticsearch instance offering.</p>
+    /// <p>The upfront fixed charge you will paid to purchase the specific reserved Elasticsearch instance offering. </p>
     pub fn get_fixed_price(&self) -> &::std::option::Option<f64> {
         &self.fixed_price
     }

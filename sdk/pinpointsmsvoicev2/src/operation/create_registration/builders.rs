@@ -22,7 +22,7 @@ impl CreateRegistrationInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateRegistration`.
 ///
-/// <p>Creates a new registration based on the <b>RegistrationType</b> field.</p>
+/// <p>Creates a new registration based on the <b>RegistrationType</b> field. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateRegistrationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

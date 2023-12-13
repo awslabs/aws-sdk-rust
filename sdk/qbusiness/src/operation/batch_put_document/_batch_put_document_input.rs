@@ -5,7 +5,7 @@
 pub struct BatchPutDocumentInput {
     /// <p>The identifier of the Amazon Q application.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of the Amazon Q index to add the documents to.</p>
+    /// <p>The identifier of the Amazon Q index to add the documents to. </p>
     pub index_id: ::std::option::Option<::std::string::String>,
     /// <p>One or more documents to add to the index.</p>
     pub documents: ::std::option::Option<::std::vec::Vec<crate::types::Document>>,
@@ -19,7 +19,7 @@ impl BatchPutDocumentInput {
     pub fn application_id(&self) -> ::std::option::Option<&str> {
         self.application_id.as_deref()
     }
-    /// <p>The identifier of the Amazon Q index to add the documents to.</p>
+    /// <p>The identifier of the Amazon Q index to add the documents to. </p>
     pub fn index_id(&self) -> ::std::option::Option<&str> {
         self.index_id.as_deref()
     }
@@ -71,18 +71,18 @@ impl BatchPutDocumentInputBuilder {
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_id
     }
-    /// <p>The identifier of the Amazon Q index to add the documents to.</p>
+    /// <p>The identifier of the Amazon Q index to add the documents to. </p>
     /// This field is required.
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q index to add the documents to.</p>
+    /// <p>The identifier of the Amazon Q index to add the documents to. </p>
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.index_id = input;
         self
     }
-    /// <p>The identifier of the Amazon Q index to add the documents to.</p>
+    /// <p>The identifier of the Amazon Q index to add the documents to. </p>
     pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.index_id
     }

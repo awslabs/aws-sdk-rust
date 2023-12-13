@@ -123,19 +123,19 @@ impl UpdateCodeRepositoryFluentBuilder {
         self.inner.get_code_repository_name()
     }
     /// <p>The configuration of the git repository, including the URL and the Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository. The secret must have a staging label of <code>AWSCURRENT</code> and must be in the following format:</p>
-    /// <p><code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code></p>
+    /// <p> <code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code> </p>
     pub fn git_config(mut self, input: crate::types::GitConfigForUpdate) -> Self {
         self.inner = self.inner.git_config(input);
         self
     }
     /// <p>The configuration of the git repository, including the URL and the Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository. The secret must have a staging label of <code>AWSCURRENT</code> and must be in the following format:</p>
-    /// <p><code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code></p>
+    /// <p> <code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code> </p>
     pub fn set_git_config(mut self, input: ::std::option::Option<crate::types::GitConfigForUpdate>) -> Self {
         self.inner = self.inner.set_git_config(input);
         self
     }
     /// <p>The configuration of the git repository, including the URL and the Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository. The secret must have a staging label of <code>AWSCURRENT</code> and must be in the following format:</p>
-    /// <p><code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code></p>
+    /// <p> <code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code> </p>
     pub fn get_git_config(&self) -> &::std::option::Option<crate::types::GitConfigForUpdate> {
         self.inner.get_git_config()
     }

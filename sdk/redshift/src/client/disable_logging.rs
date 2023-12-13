@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DisableLogging`](crate::operation::disable_logging::builders::DisableLoggingFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`cluster_identifier(impl Into<String>)`](crate::operation::disable_logging::builders::DisableLoggingFluentBuilder::cluster_identifier) / [`set_cluster_identifier(Option<String>)`](crate::operation::disable_logging::builders::DisableLoggingFluentBuilder::set_cluster_identifier):<br>required: **true**<br><p>The identifier of the cluster on which logging is to be stopped.</p> <p>Example: <code>examplecluster</code></p><br>
+    ///   - [`cluster_identifier(impl Into<String>)`](crate::operation::disable_logging::builders::DisableLoggingFluentBuilder::cluster_identifier) / [`set_cluster_identifier(Option<String>)`](crate::operation::disable_logging::builders::DisableLoggingFluentBuilder::set_cluster_identifier):<br>required: **true**<br><p>The identifier of the cluster on which logging is to be stopped.</p>  <p>Example: <code>examplecluster</code> </p><br>
     /// - On success, responds with [`DisableLoggingOutput`](crate::operation::disable_logging::DisableLoggingOutput) with field(s):
-    ///   - [`logging_enabled(Option<bool>)`](crate::operation::disable_logging::DisableLoggingOutput::logging_enabled): <p><code>true</code> if logging is on, <code>false</code> if logging is off.</p>
+    ///   - [`logging_enabled(Option<bool>)`](crate::operation::disable_logging::DisableLoggingOutput::logging_enabled): <p> <code>true</code> if logging is on, <code>false</code> if logging is off.</p>
     ///   - [`bucket_name(Option<String>)`](crate::operation::disable_logging::DisableLoggingOutput::bucket_name): <p>The name of the S3 bucket where the log files are stored.</p>
     ///   - [`s3_key_prefix(Option<String>)`](crate::operation::disable_logging::DisableLoggingOutput::s3_key_prefix): <p>The prefix applied to the log file names.</p>
     ///   - [`last_successful_delivery_time(Option<DateTime>)`](crate::operation::disable_logging::DisableLoggingOutput::last_successful_delivery_time): <p>The last time that logs were delivered.</p>

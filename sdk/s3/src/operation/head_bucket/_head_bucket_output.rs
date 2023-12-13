@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HeadBucketOutput {
-    /// <p>The type of location where the bucket is created.</p><note>
+    /// <p>The type of location where the bucket is created.</p> <note>
     /// <p>This functionality is only supported by directory buckets.</p>
     /// </note>
     pub bucket_location_type: ::std::option::Option<crate::types::LocationType>,
     /// <p>The name of the location where the bucket will be created.</p>
-    /// <p>For directory buckets, the AZ ID of the Availability Zone where the bucket is created. An example AZ ID value is <code>usw2-az2</code>.</p><note>
+    /// <p>For directory buckets, the AZ ID of the Availability Zone where the bucket is created. An example AZ ID value is <code>usw2-az2</code>.</p> <note>
     /// <p>This functionality is only supported by directory buckets.</p>
     /// </note>
     pub bucket_location_name: ::std::option::Option<::std::string::String>,
-    /// <p>The Region that the bucket is located.</p><note>
+    /// <p>The Region that the bucket is located.</p> <note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub bucket_region: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates whether the bucket name used in the request is an access point alias.</p><note>
+    /// <p>Indicates whether the bucket name used in the request is an access point alias.</p> <note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub access_point_alias: ::std::option::Option<bool>,
@@ -24,26 +24,26 @@ pub struct HeadBucketOutput {
     _request_id: Option<String>,
 }
 impl HeadBucketOutput {
-    /// <p>The type of location where the bucket is created.</p><note>
+    /// <p>The type of location where the bucket is created.</p> <note>
     /// <p>This functionality is only supported by directory buckets.</p>
     /// </note>
     pub fn bucket_location_type(&self) -> ::std::option::Option<&crate::types::LocationType> {
         self.bucket_location_type.as_ref()
     }
     /// <p>The name of the location where the bucket will be created.</p>
-    /// <p>For directory buckets, the AZ ID of the Availability Zone where the bucket is created. An example AZ ID value is <code>usw2-az2</code>.</p><note>
+    /// <p>For directory buckets, the AZ ID of the Availability Zone where the bucket is created. An example AZ ID value is <code>usw2-az2</code>.</p> <note>
     /// <p>This functionality is only supported by directory buckets.</p>
     /// </note>
     pub fn bucket_location_name(&self) -> ::std::option::Option<&str> {
         self.bucket_location_name.as_deref()
     }
-    /// <p>The Region that the bucket is located.</p><note>
+    /// <p>The Region that the bucket is located.</p> <note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn bucket_region(&self) -> ::std::option::Option<&str> {
         self.bucket_region.as_deref()
     }
-    /// <p>Indicates whether the bucket name used in the request is an access point alias.</p><note>
+    /// <p>Indicates whether the bucket name used in the request is an access point alias.</p> <note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn access_point_alias(&self) -> ::std::option::Option<bool> {
@@ -79,28 +79,28 @@ pub struct HeadBucketOutputBuilder {
     _request_id: Option<String>,
 }
 impl HeadBucketOutputBuilder {
-    /// <p>The type of location where the bucket is created.</p><note>
+    /// <p>The type of location where the bucket is created.</p> <note>
     /// <p>This functionality is only supported by directory buckets.</p>
     /// </note>
     pub fn bucket_location_type(mut self, input: crate::types::LocationType) -> Self {
         self.bucket_location_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of location where the bucket is created.</p><note>
+    /// <p>The type of location where the bucket is created.</p> <note>
     /// <p>This functionality is only supported by directory buckets.</p>
     /// </note>
     pub fn set_bucket_location_type(mut self, input: ::std::option::Option<crate::types::LocationType>) -> Self {
         self.bucket_location_type = input;
         self
     }
-    /// <p>The type of location where the bucket is created.</p><note>
+    /// <p>The type of location where the bucket is created.</p> <note>
     /// <p>This functionality is only supported by directory buckets.</p>
     /// </note>
     pub fn get_bucket_location_type(&self) -> &::std::option::Option<crate::types::LocationType> {
         &self.bucket_location_type
     }
     /// <p>The name of the location where the bucket will be created.</p>
-    /// <p>For directory buckets, the AZ ID of the Availability Zone where the bucket is created. An example AZ ID value is <code>usw2-az2</code>.</p><note>
+    /// <p>For directory buckets, the AZ ID of the Availability Zone where the bucket is created. An example AZ ID value is <code>usw2-az2</code>.</p> <note>
     /// <p>This functionality is only supported by directory buckets.</p>
     /// </note>
     pub fn bucket_location_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -108,7 +108,7 @@ impl HeadBucketOutputBuilder {
         self
     }
     /// <p>The name of the location where the bucket will be created.</p>
-    /// <p>For directory buckets, the AZ ID of the Availability Zone where the bucket is created. An example AZ ID value is <code>usw2-az2</code>.</p><note>
+    /// <p>For directory buckets, the AZ ID of the Availability Zone where the bucket is created. An example AZ ID value is <code>usw2-az2</code>.</p> <note>
     /// <p>This functionality is only supported by directory buckets.</p>
     /// </note>
     pub fn set_bucket_location_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -116,47 +116,47 @@ impl HeadBucketOutputBuilder {
         self
     }
     /// <p>The name of the location where the bucket will be created.</p>
-    /// <p>For directory buckets, the AZ ID of the Availability Zone where the bucket is created. An example AZ ID value is <code>usw2-az2</code>.</p><note>
+    /// <p>For directory buckets, the AZ ID of the Availability Zone where the bucket is created. An example AZ ID value is <code>usw2-az2</code>.</p> <note>
     /// <p>This functionality is only supported by directory buckets.</p>
     /// </note>
     pub fn get_bucket_location_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.bucket_location_name
     }
-    /// <p>The Region that the bucket is located.</p><note>
+    /// <p>The Region that the bucket is located.</p> <note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn bucket_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_region = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Region that the bucket is located.</p><note>
+    /// <p>The Region that the bucket is located.</p> <note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_bucket_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket_region = input;
         self
     }
-    /// <p>The Region that the bucket is located.</p><note>
+    /// <p>The Region that the bucket is located.</p> <note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn get_bucket_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.bucket_region
     }
-    /// <p>Indicates whether the bucket name used in the request is an access point alias.</p><note>
+    /// <p>Indicates whether the bucket name used in the request is an access point alias.</p> <note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn access_point_alias(mut self, input: bool) -> Self {
         self.access_point_alias = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether the bucket name used in the request is an access point alias.</p><note>
+    /// <p>Indicates whether the bucket name used in the request is an access point alias.</p> <note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_access_point_alias(mut self, input: ::std::option::Option<bool>) -> Self {
         self.access_point_alias = input;
         self
     }
-    /// <p>Indicates whether the bucket name used in the request is an access point alias.</p><note>
+    /// <p>Indicates whether the bucket name used in the request is an access point alias.</p> <note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn get_access_point_alias(&self) -> &::std::option::Option<bool> {

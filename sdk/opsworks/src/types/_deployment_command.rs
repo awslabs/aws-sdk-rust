@@ -7,90 +7,66 @@ pub struct DeploymentCommand {
     /// <p>Specifies the operation. You can specify only one command.</p>
     /// <p>For stacks, the following commands are available:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>execute_recipes</code>: Execute one or more recipes. To specify the recipes, set an <code>Args</code> parameter named <code>recipes</code> to the list of recipes to be executed. For example, to execute <code>phpapp::appsetup</code>, set <code>Args</code> to <code>{"recipes":["phpapp::appsetup"]}</code>.</p></li>
-    /// <li>
-    /// <p><code>install_dependencies</code>: Install the stack's dependencies.</p></li>
-    /// <li>
-    /// <p><code>update_custom_cookbooks</code>: Update the stack's custom cookbooks.</p></li>
-    /// <li>
-    /// <p><code>update_dependencies</code>: Update the stack's dependencies.</p></li>
-    /// </ul><note>
+    /// <li> <p> <code>execute_recipes</code>: Execute one or more recipes. To specify the recipes, set an <code>Args</code> parameter named <code>recipes</code> to the list of recipes to be executed. For example, to execute <code>phpapp::appsetup</code>, set <code>Args</code> to <code>{"recipes":["phpapp::appsetup"]}</code>.</p> </li>
+    /// <li> <p> <code>install_dependencies</code>: Install the stack's dependencies.</p> </li>
+    /// <li> <p> <code>update_custom_cookbooks</code>: Update the stack's custom cookbooks.</p> </li>
+    /// <li> <p> <code>update_dependencies</code>: Update the stack's dependencies.</p> </li>
+    /// </ul> <note>
     /// <p>The update_dependencies and install_dependencies commands are supported only for Linux instances. You can run the commands successfully on Windows instances, but they do nothing.</p>
     /// </note>
     /// <p>For apps, the following commands are available:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>deploy</code>: Deploy an app. Ruby on Rails apps have an optional <code>Args</code> parameter named <code>migrate</code>. Set <code>Args</code> to {"migrate":["true"]} to migrate the database. The default setting is {"migrate":["false"]}.</p></li>
-    /// <li>
-    /// <p><code>rollback</code> Roll the app back to the previous version. When you update an app, AWS OpsWorks Stacks stores the previous version, up to a maximum of five versions. You can use this command to roll an app back as many as four versions.</p></li>
-    /// <li>
-    /// <p><code>start</code>: Start the app's web or application server.</p></li>
-    /// <li>
-    /// <p><code>stop</code>: Stop the app's web or application server.</p></li>
-    /// <li>
-    /// <p><code>restart</code>: Restart the app's web or application server.</p></li>
-    /// <li>
-    /// <p><code>undeploy</code>: Undeploy the app.</p></li>
+    /// <li> <p> <code>deploy</code>: Deploy an app. Ruby on Rails apps have an optional <code>Args</code> parameter named <code>migrate</code>. Set <code>Args</code> to {"migrate":["true"]} to migrate the database. The default setting is {"migrate":["false"]}.</p> </li>
+    /// <li> <p> <code>rollback</code> Roll the app back to the previous version. When you update an app, AWS OpsWorks Stacks stores the previous version, up to a maximum of five versions. You can use this command to roll an app back as many as four versions.</p> </li>
+    /// <li> <p> <code>start</code>: Start the app's web or application server.</p> </li>
+    /// <li> <p> <code>stop</code>: Stop the app's web or application server.</p> </li>
+    /// <li> <p> <code>restart</code>: Restart the app's web or application server.</p> </li>
+    /// <li> <p> <code>undeploy</code>: Undeploy the app.</p> </li>
     /// </ul>
     pub name: crate::types::DeploymentCommandName,
     /// <p>The arguments of those commands that take arguments. It should be set to a JSON object with the following format:</p>
-    /// <p><code>{"arg_name1" : ["value1", "value2", ...], "arg_name2" : ["value1", "value2", ...], ...}</code></p>
+    /// <p> <code>{"arg_name1" : ["value1", "value2", ...], "arg_name2" : ["value1", "value2", ...], ...}</code> </p>
     /// <p>The <code>update_dependencies</code> command takes two arguments:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>upgrade_os_to</code> - Specifies the desired Amazon Linux version for instances whose OS you want to upgrade, such as <code>Amazon Linux 2016.09</code>. You must also set the <code>allow_reboot</code> argument to true.</p></li>
-    /// <li>
-    /// <p><code>allow_reboot</code> - Specifies whether to allow AWS OpsWorks Stacks to reboot the instances if necessary, after installing the updates. This argument can be set to either <code>true</code> or <code>false</code>. The default value is <code>false</code>.</p></li>
+    /// <li> <p> <code>upgrade_os_to</code> - Specifies the desired Amazon Linux version for instances whose OS you want to upgrade, such as <code>Amazon Linux 2016.09</code>. You must also set the <code>allow_reboot</code> argument to true.</p> </li>
+    /// <li> <p> <code>allow_reboot</code> - Specifies whether to allow AWS OpsWorks Stacks to reboot the instances if necessary, after installing the updates. This argument can be set to either <code>true</code> or <code>false</code>. The default value is <code>false</code>.</p> </li>
     /// </ul>
     /// <p>For example, to upgrade an instance to Amazon Linux 2016.09, set <code>Args</code> to the following.</p>
-    /// <p><code> { "upgrade_os_to":["Amazon Linux 2016.09"], "allow_reboot":["true"] } </code></p>
+    /// <p> <code> { "upgrade_os_to":["Amazon Linux 2016.09"], "allow_reboot":["true"] } </code> </p>
     pub args: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
 }
 impl DeploymentCommand {
     /// <p>Specifies the operation. You can specify only one command.</p>
     /// <p>For stacks, the following commands are available:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>execute_recipes</code>: Execute one or more recipes. To specify the recipes, set an <code>Args</code> parameter named <code>recipes</code> to the list of recipes to be executed. For example, to execute <code>phpapp::appsetup</code>, set <code>Args</code> to <code>{"recipes":["phpapp::appsetup"]}</code>.</p></li>
-    /// <li>
-    /// <p><code>install_dependencies</code>: Install the stack's dependencies.</p></li>
-    /// <li>
-    /// <p><code>update_custom_cookbooks</code>: Update the stack's custom cookbooks.</p></li>
-    /// <li>
-    /// <p><code>update_dependencies</code>: Update the stack's dependencies.</p></li>
-    /// </ul><note>
+    /// <li> <p> <code>execute_recipes</code>: Execute one or more recipes. To specify the recipes, set an <code>Args</code> parameter named <code>recipes</code> to the list of recipes to be executed. For example, to execute <code>phpapp::appsetup</code>, set <code>Args</code> to <code>{"recipes":["phpapp::appsetup"]}</code>.</p> </li>
+    /// <li> <p> <code>install_dependencies</code>: Install the stack's dependencies.</p> </li>
+    /// <li> <p> <code>update_custom_cookbooks</code>: Update the stack's custom cookbooks.</p> </li>
+    /// <li> <p> <code>update_dependencies</code>: Update the stack's dependencies.</p> </li>
+    /// </ul> <note>
     /// <p>The update_dependencies and install_dependencies commands are supported only for Linux instances. You can run the commands successfully on Windows instances, but they do nothing.</p>
     /// </note>
     /// <p>For apps, the following commands are available:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>deploy</code>: Deploy an app. Ruby on Rails apps have an optional <code>Args</code> parameter named <code>migrate</code>. Set <code>Args</code> to {"migrate":["true"]} to migrate the database. The default setting is {"migrate":["false"]}.</p></li>
-    /// <li>
-    /// <p><code>rollback</code> Roll the app back to the previous version. When you update an app, AWS OpsWorks Stacks stores the previous version, up to a maximum of five versions. You can use this command to roll an app back as many as four versions.</p></li>
-    /// <li>
-    /// <p><code>start</code>: Start the app's web or application server.</p></li>
-    /// <li>
-    /// <p><code>stop</code>: Stop the app's web or application server.</p></li>
-    /// <li>
-    /// <p><code>restart</code>: Restart the app's web or application server.</p></li>
-    /// <li>
-    /// <p><code>undeploy</code>: Undeploy the app.</p></li>
+    /// <li> <p> <code>deploy</code>: Deploy an app. Ruby on Rails apps have an optional <code>Args</code> parameter named <code>migrate</code>. Set <code>Args</code> to {"migrate":["true"]} to migrate the database. The default setting is {"migrate":["false"]}.</p> </li>
+    /// <li> <p> <code>rollback</code> Roll the app back to the previous version. When you update an app, AWS OpsWorks Stacks stores the previous version, up to a maximum of five versions. You can use this command to roll an app back as many as four versions.</p> </li>
+    /// <li> <p> <code>start</code>: Start the app's web or application server.</p> </li>
+    /// <li> <p> <code>stop</code>: Stop the app's web or application server.</p> </li>
+    /// <li> <p> <code>restart</code>: Restart the app's web or application server.</p> </li>
+    /// <li> <p> <code>undeploy</code>: Undeploy the app.</p> </li>
     /// </ul>
     pub fn name(&self) -> &crate::types::DeploymentCommandName {
         &self.name
     }
     /// <p>The arguments of those commands that take arguments. It should be set to a JSON object with the following format:</p>
-    /// <p><code>{"arg_name1" : ["value1", "value2", ...], "arg_name2" : ["value1", "value2", ...], ...}</code></p>
+    /// <p> <code>{"arg_name1" : ["value1", "value2", ...], "arg_name2" : ["value1", "value2", ...], ...}</code> </p>
     /// <p>The <code>update_dependencies</code> command takes two arguments:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>upgrade_os_to</code> - Specifies the desired Amazon Linux version for instances whose OS you want to upgrade, such as <code>Amazon Linux 2016.09</code>. You must also set the <code>allow_reboot</code> argument to true.</p></li>
-    /// <li>
-    /// <p><code>allow_reboot</code> - Specifies whether to allow AWS OpsWorks Stacks to reboot the instances if necessary, after installing the updates. This argument can be set to either <code>true</code> or <code>false</code>. The default value is <code>false</code>.</p></li>
+    /// <li> <p> <code>upgrade_os_to</code> - Specifies the desired Amazon Linux version for instances whose OS you want to upgrade, such as <code>Amazon Linux 2016.09</code>. You must also set the <code>allow_reboot</code> argument to true.</p> </li>
+    /// <li> <p> <code>allow_reboot</code> - Specifies whether to allow AWS OpsWorks Stacks to reboot the instances if necessary, after installing the updates. This argument can be set to either <code>true</code> or <code>false</code>. The default value is <code>false</code>.</p> </li>
     /// </ul>
     /// <p>For example, to upgrade an instance to Amazon Linux 2016.09, set <code>Args</code> to the following.</p>
-    /// <p><code> { "upgrade_os_to":["Amazon Linux 2016.09"], "allow_reboot":["true"] } </code></p>
+    /// <p> <code> { "upgrade_os_to":["Amazon Linux 2016.09"], "allow_reboot":["true"] } </code> </p>
     pub fn args(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.args.as_ref()
     }
@@ -113,31 +89,21 @@ impl DeploymentCommandBuilder {
     /// <p>Specifies the operation. You can specify only one command.</p>
     /// <p>For stacks, the following commands are available:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>execute_recipes</code>: Execute one or more recipes. To specify the recipes, set an <code>Args</code> parameter named <code>recipes</code> to the list of recipes to be executed. For example, to execute <code>phpapp::appsetup</code>, set <code>Args</code> to <code>{"recipes":["phpapp::appsetup"]}</code>.</p></li>
-    /// <li>
-    /// <p><code>install_dependencies</code>: Install the stack's dependencies.</p></li>
-    /// <li>
-    /// <p><code>update_custom_cookbooks</code>: Update the stack's custom cookbooks.</p></li>
-    /// <li>
-    /// <p><code>update_dependencies</code>: Update the stack's dependencies.</p></li>
-    /// </ul><note>
+    /// <li> <p> <code>execute_recipes</code>: Execute one or more recipes. To specify the recipes, set an <code>Args</code> parameter named <code>recipes</code> to the list of recipes to be executed. For example, to execute <code>phpapp::appsetup</code>, set <code>Args</code> to <code>{"recipes":["phpapp::appsetup"]}</code>.</p> </li>
+    /// <li> <p> <code>install_dependencies</code>: Install the stack's dependencies.</p> </li>
+    /// <li> <p> <code>update_custom_cookbooks</code>: Update the stack's custom cookbooks.</p> </li>
+    /// <li> <p> <code>update_dependencies</code>: Update the stack's dependencies.</p> </li>
+    /// </ul> <note>
     /// <p>The update_dependencies and install_dependencies commands are supported only for Linux instances. You can run the commands successfully on Windows instances, but they do nothing.</p>
     /// </note>
     /// <p>For apps, the following commands are available:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>deploy</code>: Deploy an app. Ruby on Rails apps have an optional <code>Args</code> parameter named <code>migrate</code>. Set <code>Args</code> to {"migrate":["true"]} to migrate the database. The default setting is {"migrate":["false"]}.</p></li>
-    /// <li>
-    /// <p><code>rollback</code> Roll the app back to the previous version. When you update an app, AWS OpsWorks Stacks stores the previous version, up to a maximum of five versions. You can use this command to roll an app back as many as four versions.</p></li>
-    /// <li>
-    /// <p><code>start</code>: Start the app's web or application server.</p></li>
-    /// <li>
-    /// <p><code>stop</code>: Stop the app's web or application server.</p></li>
-    /// <li>
-    /// <p><code>restart</code>: Restart the app's web or application server.</p></li>
-    /// <li>
-    /// <p><code>undeploy</code>: Undeploy the app.</p></li>
+    /// <li> <p> <code>deploy</code>: Deploy an app. Ruby on Rails apps have an optional <code>Args</code> parameter named <code>migrate</code>. Set <code>Args</code> to {"migrate":["true"]} to migrate the database. The default setting is {"migrate":["false"]}.</p> </li>
+    /// <li> <p> <code>rollback</code> Roll the app back to the previous version. When you update an app, AWS OpsWorks Stacks stores the previous version, up to a maximum of five versions. You can use this command to roll an app back as many as four versions.</p> </li>
+    /// <li> <p> <code>start</code>: Start the app's web or application server.</p> </li>
+    /// <li> <p> <code>stop</code>: Stop the app's web or application server.</p> </li>
+    /// <li> <p> <code>restart</code>: Restart the app's web or application server.</p> </li>
+    /// <li> <p> <code>undeploy</code>: Undeploy the app.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn name(mut self, input: crate::types::DeploymentCommandName) -> Self {
@@ -147,31 +113,21 @@ impl DeploymentCommandBuilder {
     /// <p>Specifies the operation. You can specify only one command.</p>
     /// <p>For stacks, the following commands are available:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>execute_recipes</code>: Execute one or more recipes. To specify the recipes, set an <code>Args</code> parameter named <code>recipes</code> to the list of recipes to be executed. For example, to execute <code>phpapp::appsetup</code>, set <code>Args</code> to <code>{"recipes":["phpapp::appsetup"]}</code>.</p></li>
-    /// <li>
-    /// <p><code>install_dependencies</code>: Install the stack's dependencies.</p></li>
-    /// <li>
-    /// <p><code>update_custom_cookbooks</code>: Update the stack's custom cookbooks.</p></li>
-    /// <li>
-    /// <p><code>update_dependencies</code>: Update the stack's dependencies.</p></li>
-    /// </ul><note>
+    /// <li> <p> <code>execute_recipes</code>: Execute one or more recipes. To specify the recipes, set an <code>Args</code> parameter named <code>recipes</code> to the list of recipes to be executed. For example, to execute <code>phpapp::appsetup</code>, set <code>Args</code> to <code>{"recipes":["phpapp::appsetup"]}</code>.</p> </li>
+    /// <li> <p> <code>install_dependencies</code>: Install the stack's dependencies.</p> </li>
+    /// <li> <p> <code>update_custom_cookbooks</code>: Update the stack's custom cookbooks.</p> </li>
+    /// <li> <p> <code>update_dependencies</code>: Update the stack's dependencies.</p> </li>
+    /// </ul> <note>
     /// <p>The update_dependencies and install_dependencies commands are supported only for Linux instances. You can run the commands successfully on Windows instances, but they do nothing.</p>
     /// </note>
     /// <p>For apps, the following commands are available:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>deploy</code>: Deploy an app. Ruby on Rails apps have an optional <code>Args</code> parameter named <code>migrate</code>. Set <code>Args</code> to {"migrate":["true"]} to migrate the database. The default setting is {"migrate":["false"]}.</p></li>
-    /// <li>
-    /// <p><code>rollback</code> Roll the app back to the previous version. When you update an app, AWS OpsWorks Stacks stores the previous version, up to a maximum of five versions. You can use this command to roll an app back as many as four versions.</p></li>
-    /// <li>
-    /// <p><code>start</code>: Start the app's web or application server.</p></li>
-    /// <li>
-    /// <p><code>stop</code>: Stop the app's web or application server.</p></li>
-    /// <li>
-    /// <p><code>restart</code>: Restart the app's web or application server.</p></li>
-    /// <li>
-    /// <p><code>undeploy</code>: Undeploy the app.</p></li>
+    /// <li> <p> <code>deploy</code>: Deploy an app. Ruby on Rails apps have an optional <code>Args</code> parameter named <code>migrate</code>. Set <code>Args</code> to {"migrate":["true"]} to migrate the database. The default setting is {"migrate":["false"]}.</p> </li>
+    /// <li> <p> <code>rollback</code> Roll the app back to the previous version. When you update an app, AWS OpsWorks Stacks stores the previous version, up to a maximum of five versions. You can use this command to roll an app back as many as four versions.</p> </li>
+    /// <li> <p> <code>start</code>: Start the app's web or application server.</p> </li>
+    /// <li> <p> <code>stop</code>: Stop the app's web or application server.</p> </li>
+    /// <li> <p> <code>restart</code>: Restart the app's web or application server.</p> </li>
+    /// <li> <p> <code>undeploy</code>: Undeploy the app.</p> </li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::DeploymentCommandName>) -> Self {
         self.name = input;
@@ -180,31 +136,21 @@ impl DeploymentCommandBuilder {
     /// <p>Specifies the operation. You can specify only one command.</p>
     /// <p>For stacks, the following commands are available:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>execute_recipes</code>: Execute one or more recipes. To specify the recipes, set an <code>Args</code> parameter named <code>recipes</code> to the list of recipes to be executed. For example, to execute <code>phpapp::appsetup</code>, set <code>Args</code> to <code>{"recipes":["phpapp::appsetup"]}</code>.</p></li>
-    /// <li>
-    /// <p><code>install_dependencies</code>: Install the stack's dependencies.</p></li>
-    /// <li>
-    /// <p><code>update_custom_cookbooks</code>: Update the stack's custom cookbooks.</p></li>
-    /// <li>
-    /// <p><code>update_dependencies</code>: Update the stack's dependencies.</p></li>
-    /// </ul><note>
+    /// <li> <p> <code>execute_recipes</code>: Execute one or more recipes. To specify the recipes, set an <code>Args</code> parameter named <code>recipes</code> to the list of recipes to be executed. For example, to execute <code>phpapp::appsetup</code>, set <code>Args</code> to <code>{"recipes":["phpapp::appsetup"]}</code>.</p> </li>
+    /// <li> <p> <code>install_dependencies</code>: Install the stack's dependencies.</p> </li>
+    /// <li> <p> <code>update_custom_cookbooks</code>: Update the stack's custom cookbooks.</p> </li>
+    /// <li> <p> <code>update_dependencies</code>: Update the stack's dependencies.</p> </li>
+    /// </ul> <note>
     /// <p>The update_dependencies and install_dependencies commands are supported only for Linux instances. You can run the commands successfully on Windows instances, but they do nothing.</p>
     /// </note>
     /// <p>For apps, the following commands are available:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>deploy</code>: Deploy an app. Ruby on Rails apps have an optional <code>Args</code> parameter named <code>migrate</code>. Set <code>Args</code> to {"migrate":["true"]} to migrate the database. The default setting is {"migrate":["false"]}.</p></li>
-    /// <li>
-    /// <p><code>rollback</code> Roll the app back to the previous version. When you update an app, AWS OpsWorks Stacks stores the previous version, up to a maximum of five versions. You can use this command to roll an app back as many as four versions.</p></li>
-    /// <li>
-    /// <p><code>start</code>: Start the app's web or application server.</p></li>
-    /// <li>
-    /// <p><code>stop</code>: Stop the app's web or application server.</p></li>
-    /// <li>
-    /// <p><code>restart</code>: Restart the app's web or application server.</p></li>
-    /// <li>
-    /// <p><code>undeploy</code>: Undeploy the app.</p></li>
+    /// <li> <p> <code>deploy</code>: Deploy an app. Ruby on Rails apps have an optional <code>Args</code> parameter named <code>migrate</code>. Set <code>Args</code> to {"migrate":["true"]} to migrate the database. The default setting is {"migrate":["false"]}.</p> </li>
+    /// <li> <p> <code>rollback</code> Roll the app back to the previous version. When you update an app, AWS OpsWorks Stacks stores the previous version, up to a maximum of five versions. You can use this command to roll an app back as many as four versions.</p> </li>
+    /// <li> <p> <code>start</code>: Start the app's web or application server.</p> </li>
+    /// <li> <p> <code>stop</code>: Stop the app's web or application server.</p> </li>
+    /// <li> <p> <code>restart</code>: Restart the app's web or application server.</p> </li>
+    /// <li> <p> <code>undeploy</code>: Undeploy the app.</p> </li>
     /// </ul>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::DeploymentCommandName> {
         &self.name
@@ -214,16 +160,14 @@ impl DeploymentCommandBuilder {
     /// To override the contents of this collection use [`set_args`](Self::set_args).
     ///
     /// <p>The arguments of those commands that take arguments. It should be set to a JSON object with the following format:</p>
-    /// <p><code>{"arg_name1" : ["value1", "value2", ...], "arg_name2" : ["value1", "value2", ...], ...}</code></p>
+    /// <p> <code>{"arg_name1" : ["value1", "value2", ...], "arg_name2" : ["value1", "value2", ...], ...}</code> </p>
     /// <p>The <code>update_dependencies</code> command takes two arguments:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>upgrade_os_to</code> - Specifies the desired Amazon Linux version for instances whose OS you want to upgrade, such as <code>Amazon Linux 2016.09</code>. You must also set the <code>allow_reboot</code> argument to true.</p></li>
-    /// <li>
-    /// <p><code>allow_reboot</code> - Specifies whether to allow AWS OpsWorks Stacks to reboot the instances if necessary, after installing the updates. This argument can be set to either <code>true</code> or <code>false</code>. The default value is <code>false</code>.</p></li>
+    /// <li> <p> <code>upgrade_os_to</code> - Specifies the desired Amazon Linux version for instances whose OS you want to upgrade, such as <code>Amazon Linux 2016.09</code>. You must also set the <code>allow_reboot</code> argument to true.</p> </li>
+    /// <li> <p> <code>allow_reboot</code> - Specifies whether to allow AWS OpsWorks Stacks to reboot the instances if necessary, after installing the updates. This argument can be set to either <code>true</code> or <code>false</code>. The default value is <code>false</code>.</p> </li>
     /// </ul>
     /// <p>For example, to upgrade an instance to Amazon Linux 2016.09, set <code>Args</code> to the following.</p>
-    /// <p><code> { "upgrade_os_to":["Amazon Linux 2016.09"], "allow_reboot":["true"] } </code></p>
+    /// <p> <code> { "upgrade_os_to":["Amazon Linux 2016.09"], "allow_reboot":["true"] } </code> </p>
     pub fn args(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.args.unwrap_or_default();
         hash_map.insert(k.into(), v);
@@ -231,16 +175,14 @@ impl DeploymentCommandBuilder {
         self
     }
     /// <p>The arguments of those commands that take arguments. It should be set to a JSON object with the following format:</p>
-    /// <p><code>{"arg_name1" : ["value1", "value2", ...], "arg_name2" : ["value1", "value2", ...], ...}</code></p>
+    /// <p> <code>{"arg_name1" : ["value1", "value2", ...], "arg_name2" : ["value1", "value2", ...], ...}</code> </p>
     /// <p>The <code>update_dependencies</code> command takes two arguments:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>upgrade_os_to</code> - Specifies the desired Amazon Linux version for instances whose OS you want to upgrade, such as <code>Amazon Linux 2016.09</code>. You must also set the <code>allow_reboot</code> argument to true.</p></li>
-    /// <li>
-    /// <p><code>allow_reboot</code> - Specifies whether to allow AWS OpsWorks Stacks to reboot the instances if necessary, after installing the updates. This argument can be set to either <code>true</code> or <code>false</code>. The default value is <code>false</code>.</p></li>
+    /// <li> <p> <code>upgrade_os_to</code> - Specifies the desired Amazon Linux version for instances whose OS you want to upgrade, such as <code>Amazon Linux 2016.09</code>. You must also set the <code>allow_reboot</code> argument to true.</p> </li>
+    /// <li> <p> <code>allow_reboot</code> - Specifies whether to allow AWS OpsWorks Stacks to reboot the instances if necessary, after installing the updates. This argument can be set to either <code>true</code> or <code>false</code>. The default value is <code>false</code>.</p> </li>
     /// </ul>
     /// <p>For example, to upgrade an instance to Amazon Linux 2016.09, set <code>Args</code> to the following.</p>
-    /// <p><code> { "upgrade_os_to":["Amazon Linux 2016.09"], "allow_reboot":["true"] } </code></p>
+    /// <p> <code> { "upgrade_os_to":["Amazon Linux 2016.09"], "allow_reboot":["true"] } </code> </p>
     pub fn set_args(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
@@ -249,16 +191,14 @@ impl DeploymentCommandBuilder {
         self
     }
     /// <p>The arguments of those commands that take arguments. It should be set to a JSON object with the following format:</p>
-    /// <p><code>{"arg_name1" : ["value1", "value2", ...], "arg_name2" : ["value1", "value2", ...], ...}</code></p>
+    /// <p> <code>{"arg_name1" : ["value1", "value2", ...], "arg_name2" : ["value1", "value2", ...], ...}</code> </p>
     /// <p>The <code>update_dependencies</code> command takes two arguments:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>upgrade_os_to</code> - Specifies the desired Amazon Linux version for instances whose OS you want to upgrade, such as <code>Amazon Linux 2016.09</code>. You must also set the <code>allow_reboot</code> argument to true.</p></li>
-    /// <li>
-    /// <p><code>allow_reboot</code> - Specifies whether to allow AWS OpsWorks Stacks to reboot the instances if necessary, after installing the updates. This argument can be set to either <code>true</code> or <code>false</code>. The default value is <code>false</code>.</p></li>
+    /// <li> <p> <code>upgrade_os_to</code> - Specifies the desired Amazon Linux version for instances whose OS you want to upgrade, such as <code>Amazon Linux 2016.09</code>. You must also set the <code>allow_reboot</code> argument to true.</p> </li>
+    /// <li> <p> <code>allow_reboot</code> - Specifies whether to allow AWS OpsWorks Stacks to reboot the instances if necessary, after installing the updates. This argument can be set to either <code>true</code> or <code>false</code>. The default value is <code>false</code>.</p> </li>
     /// </ul>
     /// <p>For example, to upgrade an instance to Amazon Linux 2016.09, set <code>Args</code> to the following.</p>
-    /// <p><code> { "upgrade_os_to":["Amazon Linux 2016.09"], "allow_reboot":["true"] } </code></p>
+    /// <p> <code> { "upgrade_os_to":["Amazon Linux 2016.09"], "allow_reboot":["true"] } </code> </p>
     pub fn get_args(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         &self.args
     }

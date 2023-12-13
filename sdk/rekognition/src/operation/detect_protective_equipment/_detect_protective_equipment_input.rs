@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectProtectiveEquipmentInput {
-    /// <p>The image in which you want to detect PPE on detected persons. The image can be passed as image bytes or you can reference an image stored in an Amazon S3 bucket.</p>
+    /// <p>The image in which you want to detect PPE on detected persons. The image can be passed as image bytes or you can reference an image stored in an Amazon S3 bucket. </p>
     pub image: ::std::option::Option<crate::types::Image>,
     /// <p>An array of PPE types that you want to summarize.</p>
     pub summarization_attributes: ::std::option::Option<crate::types::ProtectiveEquipmentSummarizationAttributes>,
 }
 impl DetectProtectiveEquipmentInput {
-    /// <p>The image in which you want to detect PPE on detected persons. The image can be passed as image bytes or you can reference an image stored in an Amazon S3 bucket.</p>
+    /// <p>The image in which you want to detect PPE on detected persons. The image can be passed as image bytes or you can reference an image stored in an Amazon S3 bucket. </p>
     pub fn image(&self) -> ::std::option::Option<&crate::types::Image> {
         self.image.as_ref()
     }
@@ -33,18 +33,18 @@ pub struct DetectProtectiveEquipmentInputBuilder {
     pub(crate) summarization_attributes: ::std::option::Option<crate::types::ProtectiveEquipmentSummarizationAttributes>,
 }
 impl DetectProtectiveEquipmentInputBuilder {
-    /// <p>The image in which you want to detect PPE on detected persons. The image can be passed as image bytes or you can reference an image stored in an Amazon S3 bucket.</p>
+    /// <p>The image in which you want to detect PPE on detected persons. The image can be passed as image bytes or you can reference an image stored in an Amazon S3 bucket. </p>
     /// This field is required.
     pub fn image(mut self, input: crate::types::Image) -> Self {
         self.image = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The image in which you want to detect PPE on detected persons. The image can be passed as image bytes or you can reference an image stored in an Amazon S3 bucket.</p>
+    /// <p>The image in which you want to detect PPE on detected persons. The image can be passed as image bytes or you can reference an image stored in an Amazon S3 bucket. </p>
     pub fn set_image(mut self, input: ::std::option::Option<crate::types::Image>) -> Self {
         self.image = input;
         self
     }
-    /// <p>The image in which you want to detect PPE on detected persons. The image can be passed as image bytes or you can reference an image stored in an Amazon S3 bucket.</p>
+    /// <p>The image in which you want to detect PPE on detected persons. The image can be passed as image bytes or you can reference an image stored in an Amazon S3 bucket. </p>
     pub fn get_image(&self) -> &::std::option::Option<crate::types::Image> {
         &self.image
     }

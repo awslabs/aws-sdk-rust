@@ -22,7 +22,7 @@ impl ListInstancesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListInstances`.
 ///
-/// <p>Lists the details of the organization and account instances of IAM Identity Center that were created in or visible to the account calling this API.</p>
+/// <p>Lists the details of the organization and account instances of IAM Identity Center that were created in or visible to the account calling this API. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListInstancesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

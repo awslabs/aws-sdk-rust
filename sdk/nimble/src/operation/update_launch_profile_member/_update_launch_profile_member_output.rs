@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateLaunchProfileMemberOutput {
-    /// <p>The updated member.</p>
+    /// <p>The updated member. </p>
     pub member: ::std::option::Option<crate::types::LaunchProfileMembership>,
     _request_id: Option<String>,
 }
 impl UpdateLaunchProfileMemberOutput {
-    /// <p>The updated member.</p>
+    /// <p>The updated member. </p>
     pub fn member(&self) -> ::std::option::Option<&crate::types::LaunchProfileMembership> {
         self.member.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct UpdateLaunchProfileMemberOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateLaunchProfileMemberOutputBuilder {
-    /// <p>The updated member.</p>
+    /// <p>The updated member. </p>
     pub fn member(mut self, input: crate::types::LaunchProfileMembership) -> Self {
         self.member = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The updated member.</p>
+    /// <p>The updated member. </p>
     pub fn set_member(mut self, input: ::std::option::Option<crate::types::LaunchProfileMembership>) -> Self {
         self.member = input;
         self
     }
-    /// <p>The updated member.</p>
+    /// <p>The updated member. </p>
     pub fn get_member(&self) -> &::std::option::Option<crate::types::LaunchProfileMembership> {
         &self.member
     }

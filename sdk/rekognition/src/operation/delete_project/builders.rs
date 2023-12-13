@@ -23,8 +23,8 @@ impl DeleteProjectInputBuilder {
 /// Fluent builder constructing a request to `DeleteProject`.
 ///
 /// <p>Deletes a Amazon Rekognition project. To delete a project you must first delete all models or adapters associated with the project. To delete a model or adapter, see <code>DeleteProjectVersion</code>.</p>
-/// <p><code>DeleteProject</code> is an asynchronous operation. To check if the project is deleted, call <code>DescribeProjects</code>. The project is deleted when the project no longer appears in the response. Be aware that deleting a given project will also delete any <code>ProjectPolicies</code> associated with that project.</p>
-/// <p>This operation requires permissions to perform the <code>rekognition:DeleteProject</code> action.</p>
+/// <p> <code>DeleteProject</code> is an asynchronous operation. To check if the project is deleted, call <code>DescribeProjects</code>. The project is deleted when the project no longer appears in the response. Be aware that deleting a given project will also delete any <code>ProjectPolicies</code> associated with that project.</p>
+/// <p>This operation requires permissions to perform the <code>rekognition:DeleteProject</code> action. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteProjectFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

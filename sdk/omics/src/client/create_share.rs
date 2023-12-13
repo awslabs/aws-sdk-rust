@@ -3,13 +3,13 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateShare`](crate::operation::create_share::builders::CreateShareFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::operation::create_share::builders::CreateShareFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::create_share::builders::CreateShareFluentBuilder::set_resource_arn):<br>required: **true**<br><p>The resource ARN for the analytics store to be shared.</p><br>
-    ///   - [`principal_subscriber(impl Into<String>)`](crate::operation::create_share::builders::CreateShareFluentBuilder::principal_subscriber) / [`set_principal_subscriber(Option<String>)`](crate::operation::create_share::builders::CreateShareFluentBuilder::set_principal_subscriber):<br>required: **true**<br><p>The principal subscriber is the account being given access to the analytics store data through the share offer.</p><br>
-    ///   - [`share_name(impl Into<String>)`](crate::operation::create_share::builders::CreateShareFluentBuilder::share_name) / [`set_share_name(Option<String>)`](crate::operation::create_share::builders::CreateShareFluentBuilder::set_share_name):<br>required: **false**<br><p>A name given to the share.</p><br>
+    ///   - [`resource_arn(impl Into<String>)`](crate::operation::create_share::builders::CreateShareFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::create_share::builders::CreateShareFluentBuilder::set_resource_arn):<br>required: **true**<br><p> The resource ARN for the analytics store to be shared. </p><br>
+    ///   - [`principal_subscriber(impl Into<String>)`](crate::operation::create_share::builders::CreateShareFluentBuilder::principal_subscriber) / [`set_principal_subscriber(Option<String>)`](crate::operation::create_share::builders::CreateShareFluentBuilder::set_principal_subscriber):<br>required: **true**<br><p> The principal subscriber is the account being given access to the analytics store data through the share offer. </p><br>
+    ///   - [`share_name(impl Into<String>)`](crate::operation::create_share::builders::CreateShareFluentBuilder::share_name) / [`set_share_name(Option<String>)`](crate::operation::create_share::builders::CreateShareFluentBuilder::set_share_name):<br>required: **false**<br><p> A name given to the share. </p><br>
     /// - On success, responds with [`CreateShareOutput`](crate::operation::create_share::CreateShareOutput) with field(s):
-    ///   - [`share_id(Option<String>)`](crate::operation::create_share::CreateShareOutput::share_id): <p>An ID generated for the share.</p>
-    ///   - [`status(Option<ShareStatus>)`](crate::operation::create_share::CreateShareOutput::status): <p>The status of a share.</p>
-    ///   - [`share_name(Option<String>)`](crate::operation::create_share::CreateShareOutput::share_name): <p>A name given to the share.</p>
+    ///   - [`share_id(Option<String>)`](crate::operation::create_share::CreateShareOutput::share_id): <p> An ID generated for the share. </p>
+    ///   - [`status(Option<ShareStatus>)`](crate::operation::create_share::CreateShareOutput::status): <p> The status of a share. </p>
+    ///   - [`share_name(Option<String>)`](crate::operation::create_share::CreateShareOutput::share_name): <p> A name given to the share. </p>
     /// - On failure, responds with [`SdkError<CreateShareError>`](crate::operation::create_share::CreateShareError)
     pub fn create_share(&self) -> crate::operation::create_share::builders::CreateShareFluentBuilder {
         crate::operation::create_share::builders::CreateShareFluentBuilder::new(self.handle.clone())

@@ -9,19 +9,18 @@ pub struct SlackConfiguration {
     pub team_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Slack workspace team. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
-    /// <li>
-    /// <p>slackToken—The user or bot token created in Slack. For more information on creating a token in Slack, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html#slack-authentication">Authentication for a Slack data source</a>.</p></li>
+    /// <li> <p>slackToken—The user or bot token created in Slack. For more information on creating a token in Slack, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html#slack-authentication">Authentication for a Slack data source</a>.</p> </li>
     /// </ul>
     pub secret_arn: ::std::string::String,
     /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your Slack. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
     pub vpc_configuration: ::std::option::Option<crate::types::DataSourceVpcConfiguration>,
     /// <p>Specify whether to index public channels, private channels, group messages, and direct messages. You can specify one or more of these options.</p>
     pub slack_entity_list: ::std::vec::Vec<crate::types::SlackEntity>,
-    /// <p><code>TRUE</code> to use the Slack change log to determine which documents require updating in the index. Depending on the Slack change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in Slack.</p>
+    /// <p> <code>TRUE</code> to use the Slack change log to determine which documents require updating in the index. Depending on the Slack change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in Slack.</p>
     pub use_change_log: bool,
-    /// <p><code>TRUE</code> to index bot messages from your Slack workspace team.</p>
+    /// <p> <code>TRUE</code> to index bot messages from your Slack workspace team.</p>
     pub crawl_bot_message: bool,
-    /// <p><code>TRUE</code> to exclude archived messages to index from your Slack workspace team.</p>
+    /// <p> <code>TRUE</code> to exclude archived messages to index from your Slack workspace team.</p>
     pub exclude_archived: bool,
     /// <p>The date to start crawling your data from your Slack workspace team. The date must follow this format: <code>yyyy-mm-dd</code>.</p>
     pub since_crawl_date: ::std::string::String,
@@ -48,8 +47,7 @@ impl SlackConfiguration {
     }
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Slack workspace team. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
-    /// <li>
-    /// <p>slackToken—The user or bot token created in Slack. For more information on creating a token in Slack, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html#slack-authentication">Authentication for a Slack data source</a>.</p></li>
+    /// <li> <p>slackToken—The user or bot token created in Slack. For more information on creating a token in Slack, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html#slack-authentication">Authentication for a Slack data source</a>.</p> </li>
     /// </ul>
     pub fn secret_arn(&self) -> &str {
         use std::ops::Deref;
@@ -64,15 +62,15 @@ impl SlackConfiguration {
         use std::ops::Deref;
         self.slack_entity_list.deref()
     }
-    /// <p><code>TRUE</code> to use the Slack change log to determine which documents require updating in the index. Depending on the Slack change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in Slack.</p>
+    /// <p> <code>TRUE</code> to use the Slack change log to determine which documents require updating in the index. Depending on the Slack change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in Slack.</p>
     pub fn use_change_log(&self) -> bool {
         self.use_change_log
     }
-    /// <p><code>TRUE</code> to index bot messages from your Slack workspace team.</p>
+    /// <p> <code>TRUE</code> to index bot messages from your Slack workspace team.</p>
     pub fn crawl_bot_message(&self) -> bool {
         self.crawl_bot_message
     }
-    /// <p><code>TRUE</code> to exclude archived messages to index from your Slack workspace team.</p>
+    /// <p> <code>TRUE</code> to exclude archived messages to index from your Slack workspace team.</p>
     pub fn exclude_archived(&self) -> bool {
         self.exclude_archived
     }
@@ -164,8 +162,7 @@ impl SlackConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Slack workspace team. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
-    /// <li>
-    /// <p>slackToken—The user or bot token created in Slack. For more information on creating a token in Slack, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html#slack-authentication">Authentication for a Slack data source</a>.</p></li>
+    /// <li> <p>slackToken—The user or bot token created in Slack. For more information on creating a token in Slack, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html#slack-authentication">Authentication for a Slack data source</a>.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -174,8 +171,7 @@ impl SlackConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Slack workspace team. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
-    /// <li>
-    /// <p>slackToken—The user or bot token created in Slack. For more information on creating a token in Slack, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html#slack-authentication">Authentication for a Slack data source</a>.</p></li>
+    /// <li> <p>slackToken—The user or bot token created in Slack. For more information on creating a token in Slack, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html#slack-authentication">Authentication for a Slack data source</a>.</p> </li>
     /// </ul>
     pub fn set_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_arn = input;
@@ -183,8 +179,7 @@ impl SlackConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Slack workspace team. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
-    /// <li>
-    /// <p>slackToken—The user or bot token created in Slack. For more information on creating a token in Slack, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html#slack-authentication">Authentication for a Slack data source</a>.</p></li>
+    /// <li> <p>slackToken—The user or bot token created in Slack. For more information on creating a token in Slack, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html#slack-authentication">Authentication for a Slack data source</a>.</p> </li>
     /// </ul>
     pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.secret_arn
@@ -223,45 +218,45 @@ impl SlackConfigurationBuilder {
     pub fn get_slack_entity_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SlackEntity>> {
         &self.slack_entity_list
     }
-    /// <p><code>TRUE</code> to use the Slack change log to determine which documents require updating in the index. Depending on the Slack change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in Slack.</p>
+    /// <p> <code>TRUE</code> to use the Slack change log to determine which documents require updating in the index. Depending on the Slack change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in Slack.</p>
     pub fn use_change_log(mut self, input: bool) -> Self {
         self.use_change_log = ::std::option::Option::Some(input);
         self
     }
-    /// <p><code>TRUE</code> to use the Slack change log to determine which documents require updating in the index. Depending on the Slack change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in Slack.</p>
+    /// <p> <code>TRUE</code> to use the Slack change log to determine which documents require updating in the index. Depending on the Slack change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in Slack.</p>
     pub fn set_use_change_log(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_change_log = input;
         self
     }
-    /// <p><code>TRUE</code> to use the Slack change log to determine which documents require updating in the index. Depending on the Slack change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in Slack.</p>
+    /// <p> <code>TRUE</code> to use the Slack change log to determine which documents require updating in the index. Depending on the Slack change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in Slack.</p>
     pub fn get_use_change_log(&self) -> &::std::option::Option<bool> {
         &self.use_change_log
     }
-    /// <p><code>TRUE</code> to index bot messages from your Slack workspace team.</p>
+    /// <p> <code>TRUE</code> to index bot messages from your Slack workspace team.</p>
     pub fn crawl_bot_message(mut self, input: bool) -> Self {
         self.crawl_bot_message = ::std::option::Option::Some(input);
         self
     }
-    /// <p><code>TRUE</code> to index bot messages from your Slack workspace team.</p>
+    /// <p> <code>TRUE</code> to index bot messages from your Slack workspace team.</p>
     pub fn set_crawl_bot_message(mut self, input: ::std::option::Option<bool>) -> Self {
         self.crawl_bot_message = input;
         self
     }
-    /// <p><code>TRUE</code> to index bot messages from your Slack workspace team.</p>
+    /// <p> <code>TRUE</code> to index bot messages from your Slack workspace team.</p>
     pub fn get_crawl_bot_message(&self) -> &::std::option::Option<bool> {
         &self.crawl_bot_message
     }
-    /// <p><code>TRUE</code> to exclude archived messages to index from your Slack workspace team.</p>
+    /// <p> <code>TRUE</code> to exclude archived messages to index from your Slack workspace team.</p>
     pub fn exclude_archived(mut self, input: bool) -> Self {
         self.exclude_archived = ::std::option::Option::Some(input);
         self
     }
-    /// <p><code>TRUE</code> to exclude archived messages to index from your Slack workspace team.</p>
+    /// <p> <code>TRUE</code> to exclude archived messages to index from your Slack workspace team.</p>
     pub fn set_exclude_archived(mut self, input: ::std::option::Option<bool>) -> Self {
         self.exclude_archived = input;
         self
     }
-    /// <p><code>TRUE</code> to exclude archived messages to index from your Slack workspace team.</p>
+    /// <p> <code>TRUE</code> to exclude archived messages to index from your Slack workspace team.</p>
     pub fn get_exclude_archived(&self) -> &::std::option::Option<bool> {
         &self.exclude_archived
     }

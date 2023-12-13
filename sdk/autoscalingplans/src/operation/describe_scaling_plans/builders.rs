@@ -126,21 +126,21 @@ impl DescribeScalingPlansFluentBuilder {
     pub fn get_scaling_plan_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_scaling_plan_names()
     }
-    /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p><note>
+    /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p> <note>
     /// <p>If you specify a scaling plan version, you must also specify a scaling plan name.</p>
     /// </note>
     pub fn scaling_plan_version(mut self, input: i64) -> Self {
         self.inner = self.inner.scaling_plan_version(input);
         self
     }
-    /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p><note>
+    /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p> <note>
     /// <p>If you specify a scaling plan version, you must also specify a scaling plan name.</p>
     /// </note>
     pub fn set_scaling_plan_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_scaling_plan_version(input);
         self
     }
-    /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p><note>
+    /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p> <note>
     /// <p>If you specify a scaling plan version, you must also specify a scaling plan name.</p>
     /// </note>
     pub fn get_scaling_plan_version(&self) -> &::std::option::Option<i64> {

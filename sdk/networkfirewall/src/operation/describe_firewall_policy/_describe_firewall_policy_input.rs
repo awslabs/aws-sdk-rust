@@ -4,20 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFirewallPolicyInput {
     /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub firewall_policy_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub firewall_policy_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeFirewallPolicyInput {
     /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub fn firewall_policy_name(&self) -> ::std::option::Option<&str> {
         self.firewall_policy_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub fn firewall_policy_arn(&self) -> ::std::option::Option<&str> {
         self.firewall_policy_arn.as_deref()
     }
@@ -38,36 +38,36 @@ pub struct DescribeFirewallPolicyInputBuilder {
 }
 impl DescribeFirewallPolicyInputBuilder {
     /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub fn firewall_policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_policy_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub fn set_firewall_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_policy_name = input;
         self
     }
     /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub fn get_firewall_policy_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.firewall_policy_name
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub fn firewall_policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_policy_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub fn set_firewall_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_policy_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub fn get_firewall_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.firewall_policy_arn
     }

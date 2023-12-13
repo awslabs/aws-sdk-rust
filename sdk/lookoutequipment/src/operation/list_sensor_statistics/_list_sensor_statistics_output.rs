@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSensorStatisticsOutput {
-    /// <p>Provides ingestion-based statistics regarding the specified sensor with respect to various validation types, such as whether data exists, the number and percentage of missing values, and the number and percentage of duplicate timestamps.</p>
+    /// <p>Provides ingestion-based statistics regarding the specified sensor with respect to various validation types, such as whether data exists, the number and percentage of missing values, and the number and percentage of duplicate timestamps. </p>
     pub sensor_statistics_summaries: ::std::option::Option<::std::vec::Vec<crate::types::SensorStatisticsSummary>>,
-    /// <p>An opaque pagination token indicating where to continue the listing of sensor statistics.</p>
+    /// <p>An opaque pagination token indicating where to continue the listing of sensor statistics. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListSensorStatisticsOutput {
-    /// <p>Provides ingestion-based statistics regarding the specified sensor with respect to various validation types, such as whether data exists, the number and percentage of missing values, and the number and percentage of duplicate timestamps.</p>
+    /// <p>Provides ingestion-based statistics regarding the specified sensor with respect to various validation types, such as whether data exists, the number and percentage of missing values, and the number and percentage of duplicate timestamps. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sensor_statistics_summaries.is_none()`.
     pub fn sensor_statistics_summaries(&self) -> &[crate::types::SensorStatisticsSummary] {
         self.sensor_statistics_summaries.as_deref().unwrap_or_default()
     }
-    /// <p>An opaque pagination token indicating where to continue the listing of sensor statistics.</p>
+    /// <p>An opaque pagination token indicating where to continue the listing of sensor statistics. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -46,33 +46,33 @@ impl ListSensorStatisticsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_sensor_statistics_summaries`](Self::set_sensor_statistics_summaries).
     ///
-    /// <p>Provides ingestion-based statistics regarding the specified sensor with respect to various validation types, such as whether data exists, the number and percentage of missing values, and the number and percentage of duplicate timestamps.</p>
+    /// <p>Provides ingestion-based statistics regarding the specified sensor with respect to various validation types, such as whether data exists, the number and percentage of missing values, and the number and percentage of duplicate timestamps. </p>
     pub fn sensor_statistics_summaries(mut self, input: crate::types::SensorStatisticsSummary) -> Self {
         let mut v = self.sensor_statistics_summaries.unwrap_or_default();
         v.push(input);
         self.sensor_statistics_summaries = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Provides ingestion-based statistics regarding the specified sensor with respect to various validation types, such as whether data exists, the number and percentage of missing values, and the number and percentage of duplicate timestamps.</p>
+    /// <p>Provides ingestion-based statistics regarding the specified sensor with respect to various validation types, such as whether data exists, the number and percentage of missing values, and the number and percentage of duplicate timestamps. </p>
     pub fn set_sensor_statistics_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SensorStatisticsSummary>>) -> Self {
         self.sensor_statistics_summaries = input;
         self
     }
-    /// <p>Provides ingestion-based statistics regarding the specified sensor with respect to various validation types, such as whether data exists, the number and percentage of missing values, and the number and percentage of duplicate timestamps.</p>
+    /// <p>Provides ingestion-based statistics regarding the specified sensor with respect to various validation types, such as whether data exists, the number and percentage of missing values, and the number and percentage of duplicate timestamps. </p>
     pub fn get_sensor_statistics_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SensorStatisticsSummary>> {
         &self.sensor_statistics_summaries
     }
-    /// <p>An opaque pagination token indicating where to continue the listing of sensor statistics.</p>
+    /// <p>An opaque pagination token indicating where to continue the listing of sensor statistics. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An opaque pagination token indicating where to continue the listing of sensor statistics.</p>
+    /// <p>An opaque pagination token indicating where to continue the listing of sensor statistics. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>An opaque pagination token indicating where to continue the listing of sensor statistics.</p>
+    /// <p>An opaque pagination token indicating where to continue the listing of sensor statistics. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

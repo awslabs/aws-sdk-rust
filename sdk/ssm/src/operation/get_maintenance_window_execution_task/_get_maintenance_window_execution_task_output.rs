@@ -13,15 +13,13 @@ pub struct GetMaintenanceWindowExecutionTaskOutput {
     pub service_role: ::std::option::Option<::std::string::String>,
     /// <p>The type of task that was run.</p>
     pub r#type: ::std::option::Option<crate::types::MaintenanceWindowTaskType>,
-    /// <p>The parameters passed to the task when it was run.</p><note>
-    /// <p><code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
+    /// <p>The parameters passed to the task when it was run.</p> <note>
+    /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     /// <p>The map has the following format:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Key</code>: string, between 1 and 255 characters</p></li>
-    /// <li>
-    /// <p><code>Value</code>: an array of strings, each between 1 and 255 characters</p></li>
+    /// <li> <p> <code>Key</code>: string, between 1 and 255 characters</p> </li>
+    /// <li> <p> <code>Value</code>: an array of strings, each between 1 and 255 characters</p> </li>
     /// </ul>
     pub task_parameters: ::std::option::Option<
         ::std::vec::Vec<::std::collections::HashMap<::std::string::String, crate::types::MaintenanceWindowTaskParameterValueExpression>>,
@@ -67,15 +65,13 @@ impl GetMaintenanceWindowExecutionTaskOutput {
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::MaintenanceWindowTaskType> {
         self.r#type.as_ref()
     }
-    /// <p>The parameters passed to the task when it was run.</p><note>
-    /// <p><code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
+    /// <p>The parameters passed to the task when it was run.</p> <note>
+    /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     /// <p>The map has the following format:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Key</code>: string, between 1 and 255 characters</p></li>
-    /// <li>
-    /// <p><code>Value</code>: an array of strings, each between 1 and 255 characters</p></li>
+    /// <li> <p> <code>Key</code>: string, between 1 and 255 characters</p> </li>
+    /// <li> <p> <code>Value</code>: an array of strings, each between 1 and 255 characters</p> </li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.task_parameters.is_none()`.
@@ -255,15 +251,13 @@ impl GetMaintenanceWindowExecutionTaskOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_task_parameters`](Self::set_task_parameters).
     ///
-    /// <p>The parameters passed to the task when it was run.</p><note>
-    /// <p><code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
+    /// <p>The parameters passed to the task when it was run.</p> <note>
+    /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     /// <p>The map has the following format:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Key</code>: string, between 1 and 255 characters</p></li>
-    /// <li>
-    /// <p><code>Value</code>: an array of strings, each between 1 and 255 characters</p></li>
+    /// <li> <p> <code>Key</code>: string, between 1 and 255 characters</p> </li>
+    /// <li> <p> <code>Value</code>: an array of strings, each between 1 and 255 characters</p> </li>
     /// </ul>
     pub fn task_parameters(
         mut self,
@@ -274,15 +268,13 @@ impl GetMaintenanceWindowExecutionTaskOutputBuilder {
         self.task_parameters = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The parameters passed to the task when it was run.</p><note>
-    /// <p><code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
+    /// <p>The parameters passed to the task when it was run.</p> <note>
+    /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     /// <p>The map has the following format:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Key</code>: string, between 1 and 255 characters</p></li>
-    /// <li>
-    /// <p><code>Value</code>: an array of strings, each between 1 and 255 characters</p></li>
+    /// <li> <p> <code>Key</code>: string, between 1 and 255 characters</p> </li>
+    /// <li> <p> <code>Value</code>: an array of strings, each between 1 and 255 characters</p> </li>
     /// </ul>
     pub fn set_task_parameters(
         mut self,
@@ -293,15 +285,13 @@ impl GetMaintenanceWindowExecutionTaskOutputBuilder {
         self.task_parameters = input;
         self
     }
-    /// <p>The parameters passed to the task when it was run.</p><note>
-    /// <p><code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
+    /// <p>The parameters passed to the task when it was run.</p> <note>
+    /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     /// <p>The map has the following format:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Key</code>: string, between 1 and 255 characters</p></li>
-    /// <li>
-    /// <p><code>Value</code>: an array of strings, each between 1 and 255 characters</p></li>
+    /// <li> <p> <code>Key</code>: string, between 1 and 255 characters</p> </li>
+    /// <li> <p> <code>Value</code>: an array of strings, each between 1 and 255 characters</p> </li>
     /// </ul>
     pub fn get_task_parameters(
         &self,

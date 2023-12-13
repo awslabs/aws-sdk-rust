@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEnvironmentVpcsOutput {
-    /// <p>The list of <code>EnvironmentVpc</code> objects.</p>
+    /// <p>The list of <code>EnvironmentVpc</code> objects. </p>
     pub environment_vpc_list: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVpc>>,
     /// <p>The token for the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListEnvironmentVpcsOutput {
-    /// <p>The list of <code>EnvironmentVpc</code> objects.</p>
+    /// <p>The list of <code>EnvironmentVpc</code> objects. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.environment_vpc_list.is_none()`.
     pub fn environment_vpc_list(&self) -> &[crate::types::EnvironmentVpc] {
@@ -46,19 +46,19 @@ impl ListEnvironmentVpcsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_environment_vpc_list`](Self::set_environment_vpc_list).
     ///
-    /// <p>The list of <code>EnvironmentVpc</code> objects.</p>
+    /// <p>The list of <code>EnvironmentVpc</code> objects. </p>
     pub fn environment_vpc_list(mut self, input: crate::types::EnvironmentVpc) -> Self {
         let mut v = self.environment_vpc_list.unwrap_or_default();
         v.push(input);
         self.environment_vpc_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of <code>EnvironmentVpc</code> objects.</p>
+    /// <p>The list of <code>EnvironmentVpc</code> objects. </p>
     pub fn set_environment_vpc_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVpc>>) -> Self {
         self.environment_vpc_list = input;
         self
     }
-    /// <p>The list of <code>EnvironmentVpc</code> objects.</p>
+    /// <p>The list of <code>EnvironmentVpc</code> objects. </p>
     pub fn get_environment_vpc_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVpc>> {
         &self.environment_vpc_list
     }

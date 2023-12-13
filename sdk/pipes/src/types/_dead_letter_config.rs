@@ -4,12 +4,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeadLetterConfig {
-    /// <p>The ARN of the specified target for the dead-letter queue.</p>
+    /// <p>The ARN of the specified target for the dead-letter queue. </p>
     /// <p>For Amazon Kinesis stream and Amazon DynamoDB stream sources, specify either an Amazon SNS topic or Amazon SQS queue ARN.</p>
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl DeadLetterConfig {
-    /// <p>The ARN of the specified target for the dead-letter queue.</p>
+    /// <p>The ARN of the specified target for the dead-letter queue. </p>
     /// <p>For Amazon Kinesis stream and Amazon DynamoDB stream sources, specify either an Amazon SNS topic or Amazon SQS queue ARN.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
@@ -29,19 +29,19 @@ pub struct DeadLetterConfigBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
 impl DeadLetterConfigBuilder {
-    /// <p>The ARN of the specified target for the dead-letter queue.</p>
+    /// <p>The ARN of the specified target for the dead-letter queue. </p>
     /// <p>For Amazon Kinesis stream and Amazon DynamoDB stream sources, specify either an Amazon SNS topic or Amazon SQS queue ARN.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the specified target for the dead-letter queue.</p>
+    /// <p>The ARN of the specified target for the dead-letter queue. </p>
     /// <p>For Amazon Kinesis stream and Amazon DynamoDB stream sources, specify either an Amazon SNS topic or Amazon SQS queue ARN.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>The ARN of the specified target for the dead-letter queue.</p>
+    /// <p>The ARN of the specified target for the dead-letter queue. </p>
     /// <p>For Amazon Kinesis stream and Amazon DynamoDB stream sources, specify either an Amazon SNS topic or Amazon SQS queue ARN.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn

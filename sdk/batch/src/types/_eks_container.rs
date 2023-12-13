@@ -16,7 +16,7 @@ pub struct EksContainer {
     /// <p>An array of arguments to the entrypoint. If this isn't specified, the <code>CMD</code> of the container image is used. This corresponds to the <code>args</code> member in the <a href="https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/#entrypoint">Entrypoint</a> portion of the <a href="https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/">Pod</a> in Kubernetes. Environment variable references are expanded using the container's environment.</p>
     /// <p>If the referenced environment variable doesn't exist, the reference in the command isn't changed. For example, if the reference is to "<code>$(NAME1)</code>" and the <code>NAME1</code> environment variable doesn't exist, the command string will remain "<code>$(NAME1)</code>." <code>$$</code> is replaced with <code>$</code>, and the resulting string isn't expanded. For example, <code>$$(VAR_NAME)</code> is passed as <code>$(VAR_NAME)</code> whether or not the <code>VAR_NAME</code> environment variable exists. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the <i>Dockerfile reference</i> and <a href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define a command and arguments for a pod</a> in the <i>Kubernetes documentation</i>.</p>
     pub args: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The environment variables to pass to a container.</p><note>
+    /// <p>The environment variables to pass to a container.</p> <note>
     /// <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for variables that Batch sets.</p>
     /// </note>
     pub env: ::std::option::Option<::std::vec::Vec<crate::types::EksContainerEnvironmentVariable>>,
@@ -54,7 +54,7 @@ impl EksContainer {
     pub fn args(&self) -> &[::std::string::String] {
         self.args.as_deref().unwrap_or_default()
     }
-    /// <p>The environment variables to pass to a container.</p><note>
+    /// <p>The environment variables to pass to a container.</p> <note>
     /// <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for variables that Batch sets.</p>
     /// </note>
     ///
@@ -192,7 +192,7 @@ impl EksContainerBuilder {
     ///
     /// To override the contents of this collection use [`set_env`](Self::set_env).
     ///
-    /// <p>The environment variables to pass to a container.</p><note>
+    /// <p>The environment variables to pass to a container.</p> <note>
     /// <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for variables that Batch sets.</p>
     /// </note>
     pub fn env(mut self, input: crate::types::EksContainerEnvironmentVariable) -> Self {
@@ -201,14 +201,14 @@ impl EksContainerBuilder {
         self.env = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The environment variables to pass to a container.</p><note>
+    /// <p>The environment variables to pass to a container.</p> <note>
     /// <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for variables that Batch sets.</p>
     /// </note>
     pub fn set_env(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EksContainerEnvironmentVariable>>) -> Self {
         self.env = input;
         self
     }
-    /// <p>The environment variables to pass to a container.</p><note>
+    /// <p>The environment variables to pass to a container.</p> <note>
     /// <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for variables that Batch sets.</p>
     /// </note>
     pub fn get_env(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EksContainerEnvironmentVariable>> {

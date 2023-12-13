@@ -15,24 +15,17 @@ pub struct UpdateImageVersionInput {
     pub aliases_to_delete: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The availability of the image version specified by the maintainer.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>NOT_PROVIDED</code>: The maintainers did not provide a status for image version stability.</p></li>
-    /// <li>
-    /// <p><code>STABLE</code>: The image version is stable.</p></li>
-    /// <li>
-    /// <p><code>TO_BE_ARCHIVED</code>: The image version is set to be archived. Custom image versions that are set to be archived are automatically archived after three months.</p></li>
-    /// <li>
-    /// <p><code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are no longer actively supported.</p></li>
+    /// <li> <p> <code>NOT_PROVIDED</code>: The maintainers did not provide a status for image version stability.</p> </li>
+    /// <li> <p> <code>STABLE</code>: The image version is stable.</p> </li>
+    /// <li> <p> <code>TO_BE_ARCHIVED</code>: The image version is set to be archived. Custom image versions that are set to be archived are automatically archived after three months.</p> </li>
+    /// <li> <p> <code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are no longer actively supported. </p> </li>
     /// </ul>
     pub vendor_guidance: ::std::option::Option<crate::types::VendorGuidance>,
     /// <p>Indicates SageMaker job type compatibility.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>TRAINING</code>: The image version is compatible with SageMaker training jobs.</p></li>
-    /// <li>
-    /// <p><code>INFERENCE</code>: The image version is compatible with SageMaker inference jobs.</p></li>
-    /// <li>
-    /// <p><code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.</p></li>
+    /// <li> <p> <code>TRAINING</code>: The image version is compatible with SageMaker training jobs.</p> </li>
+    /// <li> <p> <code>INFERENCE</code>: The image version is compatible with SageMaker inference jobs.</p> </li>
+    /// <li> <p> <code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.</p> </li>
     /// </ul>
     pub job_type: ::std::option::Option<crate::types::JobType>,
     /// <p>The machine learning framework vended in the image version.</p>
@@ -41,10 +34,8 @@ pub struct UpdateImageVersionInput {
     pub programming_lang: ::std::option::Option<::std::string::String>,
     /// <p>Indicates CPU or GPU compatibility.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CPU</code>: The image version is compatible with CPU.</p></li>
-    /// <li>
-    /// <p><code>GPU</code>: The image version is compatible with GPU.</p></li>
+    /// <li> <p> <code>CPU</code>: The image version is compatible with CPU.</p> </li>
+    /// <li> <p> <code>GPU</code>: The image version is compatible with GPU.</p> </li>
     /// </ul>
     pub processor: ::std::option::Option<crate::types::Processor>,
     /// <p>Indicates Horovod compatibility.</p>
@@ -79,26 +70,19 @@ impl UpdateImageVersionInput {
     }
     /// <p>The availability of the image version specified by the maintainer.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>NOT_PROVIDED</code>: The maintainers did not provide a status for image version stability.</p></li>
-    /// <li>
-    /// <p><code>STABLE</code>: The image version is stable.</p></li>
-    /// <li>
-    /// <p><code>TO_BE_ARCHIVED</code>: The image version is set to be archived. Custom image versions that are set to be archived are automatically archived after three months.</p></li>
-    /// <li>
-    /// <p><code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are no longer actively supported.</p></li>
+    /// <li> <p> <code>NOT_PROVIDED</code>: The maintainers did not provide a status for image version stability.</p> </li>
+    /// <li> <p> <code>STABLE</code>: The image version is stable.</p> </li>
+    /// <li> <p> <code>TO_BE_ARCHIVED</code>: The image version is set to be archived. Custom image versions that are set to be archived are automatically archived after three months.</p> </li>
+    /// <li> <p> <code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are no longer actively supported. </p> </li>
     /// </ul>
     pub fn vendor_guidance(&self) -> ::std::option::Option<&crate::types::VendorGuidance> {
         self.vendor_guidance.as_ref()
     }
     /// <p>Indicates SageMaker job type compatibility.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>TRAINING</code>: The image version is compatible with SageMaker training jobs.</p></li>
-    /// <li>
-    /// <p><code>INFERENCE</code>: The image version is compatible with SageMaker inference jobs.</p></li>
-    /// <li>
-    /// <p><code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.</p></li>
+    /// <li> <p> <code>TRAINING</code>: The image version is compatible with SageMaker training jobs.</p> </li>
+    /// <li> <p> <code>INFERENCE</code>: The image version is compatible with SageMaker inference jobs.</p> </li>
+    /// <li> <p> <code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.</p> </li>
     /// </ul>
     pub fn job_type(&self) -> ::std::option::Option<&crate::types::JobType> {
         self.job_type.as_ref()
@@ -113,10 +97,8 @@ impl UpdateImageVersionInput {
     }
     /// <p>Indicates CPU or GPU compatibility.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CPU</code>: The image version is compatible with CPU.</p></li>
-    /// <li>
-    /// <p><code>GPU</code>: The image version is compatible with GPU.</p></li>
+    /// <li> <p> <code>CPU</code>: The image version is compatible with CPU.</p> </li>
+    /// <li> <p> <code>GPU</code>: The image version is compatible with GPU.</p> </li>
     /// </ul>
     pub fn processor(&self) -> ::std::option::Option<&crate::types::Processor> {
         self.processor.as_ref()
@@ -240,14 +222,10 @@ impl UpdateImageVersionInputBuilder {
     }
     /// <p>The availability of the image version specified by the maintainer.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>NOT_PROVIDED</code>: The maintainers did not provide a status for image version stability.</p></li>
-    /// <li>
-    /// <p><code>STABLE</code>: The image version is stable.</p></li>
-    /// <li>
-    /// <p><code>TO_BE_ARCHIVED</code>: The image version is set to be archived. Custom image versions that are set to be archived are automatically archived after three months.</p></li>
-    /// <li>
-    /// <p><code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are no longer actively supported.</p></li>
+    /// <li> <p> <code>NOT_PROVIDED</code>: The maintainers did not provide a status for image version stability.</p> </li>
+    /// <li> <p> <code>STABLE</code>: The image version is stable.</p> </li>
+    /// <li> <p> <code>TO_BE_ARCHIVED</code>: The image version is set to be archived. Custom image versions that are set to be archived are automatically archived after three months.</p> </li>
+    /// <li> <p> <code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are no longer actively supported. </p> </li>
     /// </ul>
     pub fn vendor_guidance(mut self, input: crate::types::VendorGuidance) -> Self {
         self.vendor_guidance = ::std::option::Option::Some(input);
@@ -255,14 +233,10 @@ impl UpdateImageVersionInputBuilder {
     }
     /// <p>The availability of the image version specified by the maintainer.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>NOT_PROVIDED</code>: The maintainers did not provide a status for image version stability.</p></li>
-    /// <li>
-    /// <p><code>STABLE</code>: The image version is stable.</p></li>
-    /// <li>
-    /// <p><code>TO_BE_ARCHIVED</code>: The image version is set to be archived. Custom image versions that are set to be archived are automatically archived after three months.</p></li>
-    /// <li>
-    /// <p><code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are no longer actively supported.</p></li>
+    /// <li> <p> <code>NOT_PROVIDED</code>: The maintainers did not provide a status for image version stability.</p> </li>
+    /// <li> <p> <code>STABLE</code>: The image version is stable.</p> </li>
+    /// <li> <p> <code>TO_BE_ARCHIVED</code>: The image version is set to be archived. Custom image versions that are set to be archived are automatically archived after three months.</p> </li>
+    /// <li> <p> <code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are no longer actively supported. </p> </li>
     /// </ul>
     pub fn set_vendor_guidance(mut self, input: ::std::option::Option<crate::types::VendorGuidance>) -> Self {
         self.vendor_guidance = input;
@@ -270,26 +244,19 @@ impl UpdateImageVersionInputBuilder {
     }
     /// <p>The availability of the image version specified by the maintainer.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>NOT_PROVIDED</code>: The maintainers did not provide a status for image version stability.</p></li>
-    /// <li>
-    /// <p><code>STABLE</code>: The image version is stable.</p></li>
-    /// <li>
-    /// <p><code>TO_BE_ARCHIVED</code>: The image version is set to be archived. Custom image versions that are set to be archived are automatically archived after three months.</p></li>
-    /// <li>
-    /// <p><code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are no longer actively supported.</p></li>
+    /// <li> <p> <code>NOT_PROVIDED</code>: The maintainers did not provide a status for image version stability.</p> </li>
+    /// <li> <p> <code>STABLE</code>: The image version is stable.</p> </li>
+    /// <li> <p> <code>TO_BE_ARCHIVED</code>: The image version is set to be archived. Custom image versions that are set to be archived are automatically archived after three months.</p> </li>
+    /// <li> <p> <code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are no longer actively supported. </p> </li>
     /// </ul>
     pub fn get_vendor_guidance(&self) -> &::std::option::Option<crate::types::VendorGuidance> {
         &self.vendor_guidance
     }
     /// <p>Indicates SageMaker job type compatibility.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>TRAINING</code>: The image version is compatible with SageMaker training jobs.</p></li>
-    /// <li>
-    /// <p><code>INFERENCE</code>: The image version is compatible with SageMaker inference jobs.</p></li>
-    /// <li>
-    /// <p><code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.</p></li>
+    /// <li> <p> <code>TRAINING</code>: The image version is compatible with SageMaker training jobs.</p> </li>
+    /// <li> <p> <code>INFERENCE</code>: The image version is compatible with SageMaker inference jobs.</p> </li>
+    /// <li> <p> <code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.</p> </li>
     /// </ul>
     pub fn job_type(mut self, input: crate::types::JobType) -> Self {
         self.job_type = ::std::option::Option::Some(input);
@@ -297,12 +264,9 @@ impl UpdateImageVersionInputBuilder {
     }
     /// <p>Indicates SageMaker job type compatibility.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>TRAINING</code>: The image version is compatible with SageMaker training jobs.</p></li>
-    /// <li>
-    /// <p><code>INFERENCE</code>: The image version is compatible with SageMaker inference jobs.</p></li>
-    /// <li>
-    /// <p><code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.</p></li>
+    /// <li> <p> <code>TRAINING</code>: The image version is compatible with SageMaker training jobs.</p> </li>
+    /// <li> <p> <code>INFERENCE</code>: The image version is compatible with SageMaker inference jobs.</p> </li>
+    /// <li> <p> <code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.</p> </li>
     /// </ul>
     pub fn set_job_type(mut self, input: ::std::option::Option<crate::types::JobType>) -> Self {
         self.job_type = input;
@@ -310,12 +274,9 @@ impl UpdateImageVersionInputBuilder {
     }
     /// <p>Indicates SageMaker job type compatibility.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>TRAINING</code>: The image version is compatible with SageMaker training jobs.</p></li>
-    /// <li>
-    /// <p><code>INFERENCE</code>: The image version is compatible with SageMaker inference jobs.</p></li>
-    /// <li>
-    /// <p><code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.</p></li>
+    /// <li> <p> <code>TRAINING</code>: The image version is compatible with SageMaker training jobs.</p> </li>
+    /// <li> <p> <code>INFERENCE</code>: The image version is compatible with SageMaker inference jobs.</p> </li>
+    /// <li> <p> <code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.</p> </li>
     /// </ul>
     pub fn get_job_type(&self) -> &::std::option::Option<crate::types::JobType> {
         &self.job_type
@@ -350,10 +311,8 @@ impl UpdateImageVersionInputBuilder {
     }
     /// <p>Indicates CPU or GPU compatibility.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CPU</code>: The image version is compatible with CPU.</p></li>
-    /// <li>
-    /// <p><code>GPU</code>: The image version is compatible with GPU.</p></li>
+    /// <li> <p> <code>CPU</code>: The image version is compatible with CPU.</p> </li>
+    /// <li> <p> <code>GPU</code>: The image version is compatible with GPU.</p> </li>
     /// </ul>
     pub fn processor(mut self, input: crate::types::Processor) -> Self {
         self.processor = ::std::option::Option::Some(input);
@@ -361,10 +320,8 @@ impl UpdateImageVersionInputBuilder {
     }
     /// <p>Indicates CPU or GPU compatibility.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CPU</code>: The image version is compatible with CPU.</p></li>
-    /// <li>
-    /// <p><code>GPU</code>: The image version is compatible with GPU.</p></li>
+    /// <li> <p> <code>CPU</code>: The image version is compatible with CPU.</p> </li>
+    /// <li> <p> <code>GPU</code>: The image version is compatible with GPU.</p> </li>
     /// </ul>
     pub fn set_processor(mut self, input: ::std::option::Option<crate::types::Processor>) -> Self {
         self.processor = input;
@@ -372,10 +329,8 @@ impl UpdateImageVersionInputBuilder {
     }
     /// <p>Indicates CPU or GPU compatibility.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CPU</code>: The image version is compatible with CPU.</p></li>
-    /// <li>
-    /// <p><code>GPU</code>: The image version is compatible with GPU.</p></li>
+    /// <li> <p> <code>CPU</code>: The image version is compatible with CPU.</p> </li>
+    /// <li> <p> <code>GPU</code>: The image version is compatible with GPU.</p> </li>
     /// </ul>
     pub fn get_processor(&self) -> &::std::option::Option<crate::types::Processor> {
         &self.processor

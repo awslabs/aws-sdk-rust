@@ -7,7 +7,7 @@ pub struct GetOutpostInstanceTypesOutput {
     pub instance_types: ::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeItem>>,
     /// <p>The pagination token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the Outpost.</p>
+    /// <p> The ID of the Outpost. </p>
     pub outpost_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
     pub outpost_arn: ::std::option::Option<::std::string::String>,
@@ -24,7 +24,7 @@ impl GetOutpostInstanceTypesOutput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The ID of the Outpost.</p>
+    /// <p> The ID of the Outpost. </p>
     pub fn outpost_id(&self) -> ::std::option::Option<&str> {
         self.outpost_id.as_deref()
     }
@@ -90,17 +90,17 @@ impl GetOutpostInstanceTypesOutputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>The ID of the Outpost.</p>
+    /// <p> The ID of the Outpost. </p>
     pub fn outpost_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outpost_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the Outpost.</p>
+    /// <p> The ID of the Outpost. </p>
     pub fn set_outpost_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outpost_id = input;
         self
     }
-    /// <p>The ID of the Outpost.</p>
+    /// <p> The ID of the Outpost. </p>
     pub fn get_outpost_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.outpost_id
     }

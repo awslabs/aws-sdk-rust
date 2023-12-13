@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListManagedInsightRulesOutput {
-    /// <p>The managed rules that are available for the specified Amazon Web Services resource.</p>
+    /// <p> The managed rules that are available for the specified Amazon Web Services resource. </p>
     pub managed_rules: ::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleDescription>>,
-    /// <p>Include this value to get the next set of rules if the value was returned by the previous operation.</p>
+    /// <p> Include this value to get the next set of rules if the value was returned by the previous operation. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListManagedInsightRulesOutput {
-    /// <p>The managed rules that are available for the specified Amazon Web Services resource.</p>
+    /// <p> The managed rules that are available for the specified Amazon Web Services resource. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.managed_rules.is_none()`.
     pub fn managed_rules(&self) -> &[crate::types::ManagedRuleDescription] {
         self.managed_rules.as_deref().unwrap_or_default()
     }
-    /// <p>Include this value to get the next set of rules if the value was returned by the previous operation.</p>
+    /// <p> Include this value to get the next set of rules if the value was returned by the previous operation. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -46,33 +46,33 @@ impl ListManagedInsightRulesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_managed_rules`](Self::set_managed_rules).
     ///
-    /// <p>The managed rules that are available for the specified Amazon Web Services resource.</p>
+    /// <p> The managed rules that are available for the specified Amazon Web Services resource. </p>
     pub fn managed_rules(mut self, input: crate::types::ManagedRuleDescription) -> Self {
         let mut v = self.managed_rules.unwrap_or_default();
         v.push(input);
         self.managed_rules = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The managed rules that are available for the specified Amazon Web Services resource.</p>
+    /// <p> The managed rules that are available for the specified Amazon Web Services resource. </p>
     pub fn set_managed_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleDescription>>) -> Self {
         self.managed_rules = input;
         self
     }
-    /// <p>The managed rules that are available for the specified Amazon Web Services resource.</p>
+    /// <p> The managed rules that are available for the specified Amazon Web Services resource. </p>
     pub fn get_managed_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleDescription>> {
         &self.managed_rules
     }
-    /// <p>Include this value to get the next set of rules if the value was returned by the previous operation.</p>
+    /// <p> Include this value to get the next set of rules if the value was returned by the previous operation. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Include this value to get the next set of rules if the value was returned by the previous operation.</p>
+    /// <p> Include this value to get the next set of rules if the value was returned by the previous operation. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>Include this value to get the next set of rules if the value was returned by the previous operation.</p>
+    /// <p> Include this value to get the next set of rules if the value was returned by the previous operation. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

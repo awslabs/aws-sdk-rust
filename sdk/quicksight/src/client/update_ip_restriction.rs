@@ -9,7 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateIpRestrictionOutput`](crate::operation::update_ip_restriction::UpdateIpRestrictionOutput) with field(s):
     ///   - [`aws_account_id(Option<String>)`](crate::operation::update_ip_restriction::UpdateIpRestrictionOutput::aws_account_id): <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::update_ip_restriction::UpdateIpRestrictionOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
-    ///   - [`status(i32)`](crate::operation::update_ip_restriction::UpdateIpRestrictionOutput::status): <p>The HTTP status of the request.</p>
+    ///   - [`status(i32)`](crate::operation::update_ip_restriction::UpdateIpRestrictionOutput::status): <p>The HTTP status of the request. </p>
     /// - On failure, responds with [`SdkError<UpdateIpRestrictionError>`](crate::operation::update_ip_restriction::UpdateIpRestrictionError)
     pub fn update_ip_restriction(&self) -> crate::operation::update_ip_restriction::builders::UpdateIpRestrictionFluentBuilder {
         crate::operation::update_ip_restriction::builders::UpdateIpRestrictionFluentBuilder::new(self.handle.clone())

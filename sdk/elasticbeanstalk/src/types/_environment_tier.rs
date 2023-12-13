@@ -7,22 +7,18 @@ pub struct EnvironmentTier {
     /// <p>The name of this environment tier.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p>For <i>Web server tier</i> – <code>WebServer</code></p></li>
-    /// <li>
-    /// <p>For <i>Worker tier</i> – <code>Worker</code></p></li>
+    /// <li> <p>For <i>Web server tier</i> – <code>WebServer</code> </p> </li>
+    /// <li> <p>For <i>Worker tier</i> – <code>Worker</code> </p> </li>
     /// </ul>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of this environment tier.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p>For <i>Web server tier</i> – <code>Standard</code></p></li>
-    /// <li>
-    /// <p>For <i>Worker tier</i> – <code>SQS/HTTP</code></p></li>
+    /// <li> <p>For <i>Web server tier</i> – <code>Standard</code> </p> </li>
+    /// <li> <p>For <i>Worker tier</i> – <code>SQS/HTTP</code> </p> </li>
     /// </ul>
     pub r#type: ::std::option::Option<::std::string::String>,
-    /// <p>The version of this environment tier. When you don't set a value to it, Elastic Beanstalk uses the latest compatible worker tier version.</p><note>
+    /// <p>The version of this environment tier. When you don't set a value to it, Elastic Beanstalk uses the latest compatible worker tier version.</p> <note>
     /// <p>This member is deprecated. Any specific version that you set may become out of date. We recommend leaving it unspecified.</p>
     /// </note>
     pub version: ::std::option::Option<::std::string::String>,
@@ -31,10 +27,8 @@ impl EnvironmentTier {
     /// <p>The name of this environment tier.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p>For <i>Web server tier</i> – <code>WebServer</code></p></li>
-    /// <li>
-    /// <p>For <i>Worker tier</i> – <code>Worker</code></p></li>
+    /// <li> <p>For <i>Web server tier</i> – <code>WebServer</code> </p> </li>
+    /// <li> <p>For <i>Worker tier</i> – <code>Worker</code> </p> </li>
     /// </ul>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
@@ -42,15 +36,13 @@ impl EnvironmentTier {
     /// <p>The type of this environment tier.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p>For <i>Web server tier</i> – <code>Standard</code></p></li>
-    /// <li>
-    /// <p>For <i>Worker tier</i> – <code>SQS/HTTP</code></p></li>
+    /// <li> <p>For <i>Web server tier</i> – <code>Standard</code> </p> </li>
+    /// <li> <p>For <i>Worker tier</i> – <code>SQS/HTTP</code> </p> </li>
     /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
-    /// <p>The version of this environment tier. When you don't set a value to it, Elastic Beanstalk uses the latest compatible worker tier version.</p><note>
+    /// <p>The version of this environment tier. When you don't set a value to it, Elastic Beanstalk uses the latest compatible worker tier version.</p> <note>
     /// <p>This member is deprecated. Any specific version that you set may become out of date. We recommend leaving it unspecified.</p>
     /// </note>
     pub fn version(&self) -> ::std::option::Option<&str> {
@@ -76,10 +68,8 @@ impl EnvironmentTierBuilder {
     /// <p>The name of this environment tier.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p>For <i>Web server tier</i> – <code>WebServer</code></p></li>
-    /// <li>
-    /// <p>For <i>Worker tier</i> – <code>Worker</code></p></li>
+    /// <li> <p>For <i>Web server tier</i> – <code>WebServer</code> </p> </li>
+    /// <li> <p>For <i>Worker tier</i> – <code>Worker</code> </p> </li>
     /// </ul>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -88,10 +78,8 @@ impl EnvironmentTierBuilder {
     /// <p>The name of this environment tier.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p>For <i>Web server tier</i> – <code>WebServer</code></p></li>
-    /// <li>
-    /// <p>For <i>Worker tier</i> – <code>Worker</code></p></li>
+    /// <li> <p>For <i>Web server tier</i> – <code>WebServer</code> </p> </li>
+    /// <li> <p>For <i>Worker tier</i> – <code>Worker</code> </p> </li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
@@ -100,10 +88,8 @@ impl EnvironmentTierBuilder {
     /// <p>The name of this environment tier.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p>For <i>Web server tier</i> – <code>WebServer</code></p></li>
-    /// <li>
-    /// <p>For <i>Worker tier</i> – <code>Worker</code></p></li>
+    /// <li> <p>For <i>Web server tier</i> – <code>WebServer</code> </p> </li>
+    /// <li> <p>For <i>Worker tier</i> – <code>Worker</code> </p> </li>
     /// </ul>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
@@ -111,10 +97,8 @@ impl EnvironmentTierBuilder {
     /// <p>The type of this environment tier.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p>For <i>Web server tier</i> – <code>Standard</code></p></li>
-    /// <li>
-    /// <p>For <i>Worker tier</i> – <code>SQS/HTTP</code></p></li>
+    /// <li> <p>For <i>Web server tier</i> – <code>Standard</code> </p> </li>
+    /// <li> <p>For <i>Worker tier</i> – <code>SQS/HTTP</code> </p> </li>
     /// </ul>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -123,10 +107,8 @@ impl EnvironmentTierBuilder {
     /// <p>The type of this environment tier.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p>For <i>Web server tier</i> – <code>Standard</code></p></li>
-    /// <li>
-    /// <p>For <i>Worker tier</i> – <code>SQS/HTTP</code></p></li>
+    /// <li> <p>For <i>Web server tier</i> – <code>Standard</code> </p> </li>
+    /// <li> <p>For <i>Worker tier</i> – <code>SQS/HTTP</code> </p> </li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
@@ -135,29 +117,27 @@ impl EnvironmentTierBuilder {
     /// <p>The type of this environment tier.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p>For <i>Web server tier</i> – <code>Standard</code></p></li>
-    /// <li>
-    /// <p>For <i>Worker tier</i> – <code>SQS/HTTP</code></p></li>
+    /// <li> <p>For <i>Web server tier</i> – <code>Standard</code> </p> </li>
+    /// <li> <p>For <i>Worker tier</i> – <code>SQS/HTTP</code> </p> </li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.r#type
     }
-    /// <p>The version of this environment tier. When you don't set a value to it, Elastic Beanstalk uses the latest compatible worker tier version.</p><note>
+    /// <p>The version of this environment tier. When you don't set a value to it, Elastic Beanstalk uses the latest compatible worker tier version.</p> <note>
     /// <p>This member is deprecated. Any specific version that you set may become out of date. We recommend leaving it unspecified.</p>
     /// </note>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The version of this environment tier. When you don't set a value to it, Elastic Beanstalk uses the latest compatible worker tier version.</p><note>
+    /// <p>The version of this environment tier. When you don't set a value to it, Elastic Beanstalk uses the latest compatible worker tier version.</p> <note>
     /// <p>This member is deprecated. Any specific version that you set may become out of date. We recommend leaving it unspecified.</p>
     /// </note>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
     }
-    /// <p>The version of this environment tier. When you don't set a value to it, Elastic Beanstalk uses the latest compatible worker tier version.</p><note>
+    /// <p>The version of this environment tier. When you don't set a value to it, Elastic Beanstalk uses the latest compatible worker tier version.</p> <note>
     /// <p>This member is deprecated. Any specific version that you set may become out of date. We recommend leaving it unspecified.</p>
     /// </note>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {

@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClientLoginBannerResponseOptions {
     /// <p>Current state of text banner feature.</p>
-    /// <p>Valid values: <code>true | false</code></p>
+    /// <p>Valid values: <code>true | false</code> </p>
     pub enabled: ::std::option::Option<bool>,
     /// <p>Customizable text that will be displayed in a banner on Amazon Web Services provided clients when a VPN session is established. UTF-8 encoded characters only. Maximum of 1400 characters.</p>
     pub banner_text: ::std::option::Option<::std::string::String>,
 }
 impl ClientLoginBannerResponseOptions {
     /// <p>Current state of text banner feature.</p>
-    /// <p>Valid values: <code>true | false</code></p>
+    /// <p>Valid values: <code>true | false</code> </p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
@@ -37,19 +37,19 @@ pub struct ClientLoginBannerResponseOptionsBuilder {
 }
 impl ClientLoginBannerResponseOptionsBuilder {
     /// <p>Current state of text banner feature.</p>
-    /// <p>Valid values: <code>true | false</code></p>
+    /// <p>Valid values: <code>true | false</code> </p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Current state of text banner feature.</p>
-    /// <p>Valid values: <code>true | false</code></p>
+    /// <p>Valid values: <code>true | false</code> </p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }
     /// <p>Current state of text banner feature.</p>
-    /// <p>Valid values: <code>true | false</code></p>
+    /// <p>Valid values: <code>true | false</code> </p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
         &self.enabled
     }

@@ -8,11 +8,11 @@ pub struct ResourceInfo {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon resource name (ARN) that specifies the resource across services.</p>
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p>Provides information about the Service Catalog App Registry resource type.</p>
+    /// <p> Provides information about the Service Catalog App Registry resource type. </p>
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
-    /// <p>The details related to the resource.</p>
+    /// <p> The details related to the resource. </p>
     pub resource_details: ::std::option::Option<crate::types::ResourceDetails>,
-    /// <p>Determines whether an application tag is applied or skipped.</p>
+    /// <p> Determines whether an application tag is applied or skipped. </p>
     pub options: ::std::option::Option<::std::vec::Vec<crate::types::AssociationOption>>,
 }
 impl ResourceInfo {
@@ -24,15 +24,15 @@ impl ResourceInfo {
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>Provides information about the Service Catalog App Registry resource type.</p>
+    /// <p> Provides information about the Service Catalog App Registry resource type. </p>
     pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
-    /// <p>The details related to the resource.</p>
+    /// <p> The details related to the resource. </p>
     pub fn resource_details(&self) -> ::std::option::Option<&crate::types::ResourceDetails> {
         self.resource_details.as_ref()
     }
-    /// <p>Determines whether an application tag is applied or skipped.</p>
+    /// <p> Determines whether an application tag is applied or skipped. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.options.is_none()`.
     pub fn options(&self) -> &[crate::types::AssociationOption] {
@@ -85,31 +85,31 @@ impl ResourceInfoBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>Provides information about the Service Catalog App Registry resource type.</p>
+    /// <p> Provides information about the Service Catalog App Registry resource type. </p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Provides information about the Service Catalog App Registry resource type.</p>
+    /// <p> Provides information about the Service Catalog App Registry resource type. </p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
-    /// <p>Provides information about the Service Catalog App Registry resource type.</p>
+    /// <p> Provides information about the Service Catalog App Registry resource type. </p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
         &self.resource_type
     }
-    /// <p>The details related to the resource.</p>
+    /// <p> The details related to the resource. </p>
     pub fn resource_details(mut self, input: crate::types::ResourceDetails) -> Self {
         self.resource_details = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The details related to the resource.</p>
+    /// <p> The details related to the resource. </p>
     pub fn set_resource_details(mut self, input: ::std::option::Option<crate::types::ResourceDetails>) -> Self {
         self.resource_details = input;
         self
     }
-    /// <p>The details related to the resource.</p>
+    /// <p> The details related to the resource. </p>
     pub fn get_resource_details(&self) -> &::std::option::Option<crate::types::ResourceDetails> {
         &self.resource_details
     }
@@ -117,19 +117,19 @@ impl ResourceInfoBuilder {
     ///
     /// To override the contents of this collection use [`set_options`](Self::set_options).
     ///
-    /// <p>Determines whether an application tag is applied or skipped.</p>
+    /// <p> Determines whether an application tag is applied or skipped. </p>
     pub fn options(mut self, input: crate::types::AssociationOption) -> Self {
         let mut v = self.options.unwrap_or_default();
         v.push(input);
         self.options = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Determines whether an application tag is applied or skipped.</p>
+    /// <p> Determines whether an application tag is applied or skipped. </p>
     pub fn set_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssociationOption>>) -> Self {
         self.options = input;
         self
     }
-    /// <p>Determines whether an application tag is applied or skipped.</p>
+    /// <p> Determines whether an application tag is applied or skipped. </p>
     pub fn get_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociationOption>> {
         &self.options
     }

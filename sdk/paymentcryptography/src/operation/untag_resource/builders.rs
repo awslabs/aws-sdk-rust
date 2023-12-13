@@ -22,16 +22,14 @@ impl UntagResourceInputBuilder {
 }
 /// Fluent builder constructing a request to `UntagResource`.
 ///
-/// <p>Deletes a tag from an Amazon Web Services Payment Cryptography key.</p><note>
+/// <p>Deletes a tag from an Amazon Web Services Payment Cryptography key.</p> <note>
 /// <p>Tagging or untagging an Amazon Web Services Payment Cryptography key can allow or deny permission to the key.</p>
 /// </note>
-/// <p><b>Cross-account use:</b> This operation can't be used across different Amazon Web Services accounts.</p>
-/// <p><b>Related operations:</b></p>
+/// <p> <b>Cross-account use:</b> This operation can't be used across different Amazon Web Services accounts.</p>
+/// <p> <b>Related operations:</b> </p>
 /// <ul>
-/// <li>
-/// <p><code>ListTagsForResource</code></p></li>
-/// <li>
-/// <p><code>TagResource</code></p></li>
+/// <li> <p> <code>ListTagsForResource</code> </p> </li>
+/// <li> <p> <code>TagResource</code> </p> </li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UntagResourceFluentBuilder {

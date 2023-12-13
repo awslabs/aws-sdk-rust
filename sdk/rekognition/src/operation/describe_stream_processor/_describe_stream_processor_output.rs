@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeStreamProcessorOutput {
-    /// <p>Name of the stream processor.</p>
+    /// <p>Name of the stream processor. </p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>ARN of the stream processor.</p>
     pub stream_processor_arn: ::std::option::Option<::std::string::String>,
@@ -27,16 +27,16 @@ pub struct DescribeStreamProcessorOutput {
     /// <p>Amazon Rekognition publishes a notification the first time an object of interest or a person is detected in the video stream. For example, if Amazon Rekognition detects a person at second 2, a pet at second 4, and a person again at second 5, Amazon Rekognition sends 2 object class detected notifications, one for a person at second 2 and one for a pet at second 4.</p>
     /// <p>Amazon Rekognition also publishes an an end-of-session notification with a summary when the stream processing session is complete.</p>
     pub notification_channel: ::std::option::Option<crate::types::StreamProcessorNotificationChannel>,
-    /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). This is an optional parameter for label detection stream processors.</p>
+    /// <p> The identifier for your AWS Key Management Service key (AWS KMS key). This is an optional parameter for label detection stream processors. </p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies locations in the frames where Amazon Rekognition checks for objects or people. This is an optional parameter for label detection stream processors.</p>
+    /// <p> Specifies locations in the frames where Amazon Rekognition checks for objects or people. This is an optional parameter for label detection stream processors. </p>
     pub regions_of_interest: ::std::option::Option<::std::vec::Vec<crate::types::RegionOfInterest>>,
-    /// <p>Shows whether you are sharing data with Rekognition to improve model performance. You can choose this option at the account level or on a per-stream basis. Note that if you opt out at the account level this setting is ignored on individual streams.</p>
+    /// <p> Shows whether you are sharing data with Rekognition to improve model performance. You can choose this option at the account level or on a per-stream basis. Note that if you opt out at the account level this setting is ignored on individual streams. </p>
     pub data_sharing_preference: ::std::option::Option<crate::types::StreamProcessorDataSharingPreference>,
     _request_id: Option<String>,
 }
 impl DescribeStreamProcessorOutput {
-    /// <p>Name of the stream processor.</p>
+    /// <p>Name of the stream processor. </p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -82,17 +82,17 @@ impl DescribeStreamProcessorOutput {
     pub fn notification_channel(&self) -> ::std::option::Option<&crate::types::StreamProcessorNotificationChannel> {
         self.notification_channel.as_ref()
     }
-    /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). This is an optional parameter for label detection stream processors.</p>
+    /// <p> The identifier for your AWS Key Management Service key (AWS KMS key). This is an optional parameter for label detection stream processors. </p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
-    /// <p>Specifies locations in the frames where Amazon Rekognition checks for objects or people. This is an optional parameter for label detection stream processors.</p>
+    /// <p> Specifies locations in the frames where Amazon Rekognition checks for objects or people. This is an optional parameter for label detection stream processors. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.regions_of_interest.is_none()`.
     pub fn regions_of_interest(&self) -> &[crate::types::RegionOfInterest] {
         self.regions_of_interest.as_deref().unwrap_or_default()
     }
-    /// <p>Shows whether you are sharing data with Rekognition to improve model performance. You can choose this option at the account level or on a per-stream basis. Note that if you opt out at the account level this setting is ignored on individual streams.</p>
+    /// <p> Shows whether you are sharing data with Rekognition to improve model performance. You can choose this option at the account level or on a per-stream basis. Note that if you opt out at the account level this setting is ignored on individual streams. </p>
     pub fn data_sharing_preference(&self) -> ::std::option::Option<&crate::types::StreamProcessorDataSharingPreference> {
         self.data_sharing_preference.as_ref()
     }
@@ -130,17 +130,17 @@ pub struct DescribeStreamProcessorOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeStreamProcessorOutputBuilder {
-    /// <p>Name of the stream processor.</p>
+    /// <p>Name of the stream processor. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Name of the stream processor.</p>
+    /// <p>Name of the stream processor. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>Name of the stream processor.</p>
+    /// <p>Name of the stream processor. </p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
@@ -290,17 +290,17 @@ impl DescribeStreamProcessorOutputBuilder {
     pub fn get_notification_channel(&self) -> &::std::option::Option<crate::types::StreamProcessorNotificationChannel> {
         &self.notification_channel
     }
-    /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). This is an optional parameter for label detection stream processors.</p>
+    /// <p> The identifier for your AWS Key Management Service key (AWS KMS key). This is an optional parameter for label detection stream processors. </p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). This is an optional parameter for label detection stream processors.</p>
+    /// <p> The identifier for your AWS Key Management Service key (AWS KMS key). This is an optional parameter for label detection stream processors. </p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
     }
-    /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). This is an optional parameter for label detection stream processors.</p>
+    /// <p> The identifier for your AWS Key Management Service key (AWS KMS key). This is an optional parameter for label detection stream processors. </p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id
     }
@@ -308,33 +308,33 @@ impl DescribeStreamProcessorOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_regions_of_interest`](Self::set_regions_of_interest).
     ///
-    /// <p>Specifies locations in the frames where Amazon Rekognition checks for objects or people. This is an optional parameter for label detection stream processors.</p>
+    /// <p> Specifies locations in the frames where Amazon Rekognition checks for objects or people. This is an optional parameter for label detection stream processors. </p>
     pub fn regions_of_interest(mut self, input: crate::types::RegionOfInterest) -> Self {
         let mut v = self.regions_of_interest.unwrap_or_default();
         v.push(input);
         self.regions_of_interest = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Specifies locations in the frames where Amazon Rekognition checks for objects or people. This is an optional parameter for label detection stream processors.</p>
+    /// <p> Specifies locations in the frames where Amazon Rekognition checks for objects or people. This is an optional parameter for label detection stream processors. </p>
     pub fn set_regions_of_interest(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RegionOfInterest>>) -> Self {
         self.regions_of_interest = input;
         self
     }
-    /// <p>Specifies locations in the frames where Amazon Rekognition checks for objects or people. This is an optional parameter for label detection stream processors.</p>
+    /// <p> Specifies locations in the frames where Amazon Rekognition checks for objects or people. This is an optional parameter for label detection stream processors. </p>
     pub fn get_regions_of_interest(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RegionOfInterest>> {
         &self.regions_of_interest
     }
-    /// <p>Shows whether you are sharing data with Rekognition to improve model performance. You can choose this option at the account level or on a per-stream basis. Note that if you opt out at the account level this setting is ignored on individual streams.</p>
+    /// <p> Shows whether you are sharing data with Rekognition to improve model performance. You can choose this option at the account level or on a per-stream basis. Note that if you opt out at the account level this setting is ignored on individual streams. </p>
     pub fn data_sharing_preference(mut self, input: crate::types::StreamProcessorDataSharingPreference) -> Self {
         self.data_sharing_preference = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Shows whether you are sharing data with Rekognition to improve model performance. You can choose this option at the account level or on a per-stream basis. Note that if you opt out at the account level this setting is ignored on individual streams.</p>
+    /// <p> Shows whether you are sharing data with Rekognition to improve model performance. You can choose this option at the account level or on a per-stream basis. Note that if you opt out at the account level this setting is ignored on individual streams. </p>
     pub fn set_data_sharing_preference(mut self, input: ::std::option::Option<crate::types::StreamProcessorDataSharingPreference>) -> Self {
         self.data_sharing_preference = input;
         self
     }
-    /// <p>Shows whether you are sharing data with Rekognition to improve model performance. You can choose this option at the account level or on a per-stream basis. Note that if you opt out at the account level this setting is ignored on individual streams.</p>
+    /// <p> Shows whether you are sharing data with Rekognition to improve model performance. You can choose this option at the account level or on a per-stream basis. Note that if you opt out at the account level this setting is ignored on individual streams. </p>
     pub fn get_data_sharing_preference(&self) -> &::std::option::Option<crate::types::StreamProcessorDataSharingPreference> {
         &self.data_sharing_preference
     }

@@ -15,7 +15,7 @@ pub struct CreateLifecyclePolicyInput {
     pub resource_type: ::std::option::Option<crate::types::LifecyclePolicyResourceType>,
     /// <p>Configuration details for the lifecycle policy rules.</p>
     pub policy_details: ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicyDetail>>,
-    /// <p>Selection criteria for the resources that the lifecycle policy applies to.</p>
+    /// <p>Selection criteria for the resources that the lifecycle policy applies to. </p>
     pub resource_selection: ::std::option::Option<crate::types::LifecyclePolicyResourceSelection>,
     /// <p>Tags to apply to the lifecycle policy resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -49,7 +49,7 @@ impl CreateLifecyclePolicyInput {
     pub fn policy_details(&self) -> &[crate::types::LifecyclePolicyDetail] {
         self.policy_details.as_deref().unwrap_or_default()
     }
-    /// <p>Selection criteria for the resources that the lifecycle policy applies to.</p>
+    /// <p>Selection criteria for the resources that the lifecycle policy applies to. </p>
     pub fn resource_selection(&self) -> ::std::option::Option<&crate::types::LifecyclePolicyResourceSelection> {
         self.resource_selection.as_ref()
     }
@@ -177,18 +177,18 @@ impl CreateLifecyclePolicyInputBuilder {
     pub fn get_policy_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicyDetail>> {
         &self.policy_details
     }
-    /// <p>Selection criteria for the resources that the lifecycle policy applies to.</p>
+    /// <p>Selection criteria for the resources that the lifecycle policy applies to. </p>
     /// This field is required.
     pub fn resource_selection(mut self, input: crate::types::LifecyclePolicyResourceSelection) -> Self {
         self.resource_selection = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Selection criteria for the resources that the lifecycle policy applies to.</p>
+    /// <p>Selection criteria for the resources that the lifecycle policy applies to. </p>
     pub fn set_resource_selection(mut self, input: ::std::option::Option<crate::types::LifecyclePolicyResourceSelection>) -> Self {
         self.resource_selection = input;
         self
     }
-    /// <p>Selection criteria for the resources that the lifecycle policy applies to.</p>
+    /// <p>Selection criteria for the resources that the lifecycle policy applies to. </p>
     pub fn get_resource_selection(&self) -> &::std::option::Option<crate::types::LifecyclePolicyResourceSelection> {
         &self.resource_selection
     }

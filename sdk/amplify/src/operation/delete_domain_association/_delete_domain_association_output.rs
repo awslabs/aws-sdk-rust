@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDomainAssociationOutput {
-    /// <p>Describes a domain association that associates a custom domain with an Amplify app.</p>
+    /// <p> Describes a domain association that associates a custom domain with an Amplify app. </p>
     pub domain_association: ::std::option::Option<crate::types::DomainAssociation>,
     _request_id: Option<String>,
 }
 impl DeleteDomainAssociationOutput {
-    /// <p>Describes a domain association that associates a custom domain with an Amplify app.</p>
+    /// <p> Describes a domain association that associates a custom domain with an Amplify app. </p>
     pub fn domain_association(&self) -> ::std::option::Option<&crate::types::DomainAssociation> {
         self.domain_association.as_ref()
     }
@@ -33,18 +33,18 @@ pub struct DeleteDomainAssociationOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteDomainAssociationOutputBuilder {
-    /// <p>Describes a domain association that associates a custom domain with an Amplify app.</p>
+    /// <p> Describes a domain association that associates a custom domain with an Amplify app. </p>
     /// This field is required.
     pub fn domain_association(mut self, input: crate::types::DomainAssociation) -> Self {
         self.domain_association = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Describes a domain association that associates a custom domain with an Amplify app.</p>
+    /// <p> Describes a domain association that associates a custom domain with an Amplify app. </p>
     pub fn set_domain_association(mut self, input: ::std::option::Option<crate::types::DomainAssociation>) -> Self {
         self.domain_association = input;
         self
     }
-    /// <p>Describes a domain association that associates a custom domain with an Amplify app.</p>
+    /// <p> Describes a domain association that associates a custom domain with an Amplify app. </p>
     pub fn get_domain_association(&self) -> &::std::option::Option<crate::types::DomainAssociation> {
         &self.domain_association
     }

@@ -22,7 +22,7 @@ impl DescribeConnectorsInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeConnectors`.
 ///
-/// <p>Describes the connectors vended by Amazon AppFlow for specified connector types. If you don't specify a connector type, this operation describes all connectors vended by Amazon AppFlow. If there are more connectors than can be returned in one page, the response contains a <code>nextToken</code> object, which can be be passed in to the next call to the <code>DescribeConnectors</code> API operation to retrieve the next page.</p>
+/// <p> Describes the connectors vended by Amazon AppFlow for specified connector types. If you don't specify a connector type, this operation describes all connectors vended by Amazon AppFlow. If there are more connectors than can be returned in one page, the response contains a <code>nextToken</code> object, which can be be passed in to the next call to the <code>DescribeConnectors</code> API operation to retrieve the next page. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeConnectorsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -118,17 +118,17 @@ impl DescribeConnectorsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_connector_types`](Self::set_connector_types).
     ///
-    /// <p>The type of connector, such as Salesforce, Amplitude, and so on.</p>
+    /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
     pub fn connector_types(mut self, input: crate::types::ConnectorType) -> Self {
         self.inner = self.inner.connector_types(input);
         self
     }
-    /// <p>The type of connector, such as Salesforce, Amplitude, and so on.</p>
+    /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
     pub fn set_connector_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConnectorType>>) -> Self {
         self.inner = self.inner.set_connector_types(input);
         self
     }
-    /// <p>The type of connector, such as Salesforce, Amplitude, and so on.</p>
+    /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
     pub fn get_connector_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectorType>> {
         self.inner.get_connector_types()
     }
@@ -146,17 +146,17 @@ impl DescribeConnectorsFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p>The pagination token for the next page of data.</p>
+    /// <p> The pagination token for the next page of data. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>The pagination token for the next page of data.</p>
+    /// <p> The pagination token for the next page of data. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>The pagination token for the next page of data.</p>
+    /// <p> The pagination token for the next page of data. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

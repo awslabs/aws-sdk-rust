@@ -23,7 +23,7 @@ impl ListShareInvitationsInputBuilder {
 /// Fluent builder constructing a request to `ListShareInvitations`.
 ///
 /// <p>List the share invitations.</p>
-/// <p><code>WorkloadNamePrefix</code>, <code>LensNamePrefix</code>, <code>ProfileNamePrefix</code>, and <code>TemplateNamePrefix</code> are mutually exclusive. Use the parameter that matches your <code>ShareResourceType</code>.</p>
+/// <p> <code>WorkloadNamePrefix</code>, <code>LensNamePrefix</code>, <code>ProfileNamePrefix</code>, and <code>TemplateNamePrefix</code> are mutually exclusive. Use the parameter that matches your <code>ShareResourceType</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListShareInvitationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

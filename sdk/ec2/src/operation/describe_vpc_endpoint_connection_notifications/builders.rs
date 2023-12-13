@@ -160,18 +160,12 @@ impl DescribeVpcEndpointConnectionNotificationsFluentBuilder {
     ///
     /// <p>The filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>connection-notification-arn</code> - The ARN of the SNS topic for the notification.</p></li>
-    /// <li>
-    /// <p><code>connection-notification-id</code> - The ID of the notification.</p></li>
-    /// <li>
-    /// <p><code>connection-notification-state</code> - The state of the notification (<code>Enabled</code> | <code>Disabled</code>).</p></li>
-    /// <li>
-    /// <p><code>connection-notification-type</code> - The type of notification (<code>Topic</code>).</p></li>
-    /// <li>
-    /// <p><code>service-id</code> - The ID of the endpoint service.</p></li>
-    /// <li>
-    /// <p><code>vpc-endpoint-id</code> - The ID of the VPC endpoint.</p></li>
+    /// <li> <p> <code>connection-notification-arn</code> - The ARN of the SNS topic for the notification.</p> </li>
+    /// <li> <p> <code>connection-notification-id</code> - The ID of the notification.</p> </li>
+    /// <li> <p> <code>connection-notification-state</code> - The state of the notification (<code>Enabled</code> | <code>Disabled</code>).</p> </li>
+    /// <li> <p> <code>connection-notification-type</code> - The type of notification (<code>Topic</code>).</p> </li>
+    /// <li> <p> <code>service-id</code> - The ID of the endpoint service.</p> </li>
+    /// <li> <p> <code>vpc-endpoint-id</code> - The ID of the VPC endpoint.</p> </li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
@@ -179,18 +173,12 @@ impl DescribeVpcEndpointConnectionNotificationsFluentBuilder {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>connection-notification-arn</code> - The ARN of the SNS topic for the notification.</p></li>
-    /// <li>
-    /// <p><code>connection-notification-id</code> - The ID of the notification.</p></li>
-    /// <li>
-    /// <p><code>connection-notification-state</code> - The state of the notification (<code>Enabled</code> | <code>Disabled</code>).</p></li>
-    /// <li>
-    /// <p><code>connection-notification-type</code> - The type of notification (<code>Topic</code>).</p></li>
-    /// <li>
-    /// <p><code>service-id</code> - The ID of the endpoint service.</p></li>
-    /// <li>
-    /// <p><code>vpc-endpoint-id</code> - The ID of the VPC endpoint.</p></li>
+    /// <li> <p> <code>connection-notification-arn</code> - The ARN of the SNS topic for the notification.</p> </li>
+    /// <li> <p> <code>connection-notification-id</code> - The ID of the notification.</p> </li>
+    /// <li> <p> <code>connection-notification-state</code> - The state of the notification (<code>Enabled</code> | <code>Disabled</code>).</p> </li>
+    /// <li> <p> <code>connection-notification-type</code> - The type of notification (<code>Topic</code>).</p> </li>
+    /// <li> <p> <code>service-id</code> - The ID of the endpoint service.</p> </li>
+    /// <li> <p> <code>vpc-endpoint-id</code> - The ID of the VPC endpoint.</p> </li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
@@ -198,18 +186,12 @@ impl DescribeVpcEndpointConnectionNotificationsFluentBuilder {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>connection-notification-arn</code> - The ARN of the SNS topic for the notification.</p></li>
-    /// <li>
-    /// <p><code>connection-notification-id</code> - The ID of the notification.</p></li>
-    /// <li>
-    /// <p><code>connection-notification-state</code> - The state of the notification (<code>Enabled</code> | <code>Disabled</code>).</p></li>
-    /// <li>
-    /// <p><code>connection-notification-type</code> - The type of notification (<code>Topic</code>).</p></li>
-    /// <li>
-    /// <p><code>service-id</code> - The ID of the endpoint service.</p></li>
-    /// <li>
-    /// <p><code>vpc-endpoint-id</code> - The ID of the VPC endpoint.</p></li>
+    /// <li> <p> <code>connection-notification-arn</code> - The ARN of the SNS topic for the notification.</p> </li>
+    /// <li> <p> <code>connection-notification-id</code> - The ID of the notification.</p> </li>
+    /// <li> <p> <code>connection-notification-state</code> - The state of the notification (<code>Enabled</code> | <code>Disabled</code>).</p> </li>
+    /// <li> <p> <code>connection-notification-type</code> - The type of notification (<code>Topic</code>).</p> </li>
+    /// <li> <p> <code>service-id</code> - The ID of the endpoint service.</p> </li>
+    /// <li> <p> <code>vpc-endpoint-id</code> - The ID of the VPC endpoint.</p> </li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()

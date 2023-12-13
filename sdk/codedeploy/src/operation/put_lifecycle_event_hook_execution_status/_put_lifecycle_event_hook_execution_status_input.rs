@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutLifecycleEventHookExecutionStatusInput {
-    /// <p>The unique ID of a deployment. Pass this ID to a Lambda function that validates a deployment lifecycle event.</p>
+    /// <p> The unique ID of a deployment. Pass this ID to a Lambda function that validates a deployment lifecycle event. </p>
     pub deployment_id: ::std::option::Option<::std::string::String>,
-    /// <p>The execution ID of a deployment's lifecycle hook. A deployment lifecycle hook is specified in the <code>hooks</code> section of the AppSpec file.</p>
+    /// <p> The execution ID of a deployment's lifecycle hook. A deployment lifecycle hook is specified in the <code>hooks</code> section of the AppSpec file. </p>
     pub lifecycle_event_hook_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The result of a Lambda function that validates a deployment lifecycle event. The values listed in <b>Valid Values</b> are valid for lifecycle statuses in general; however, only <code>Succeeded</code> and <code>Failed</code> can be passed successfully in your API call.</p>
     pub status: ::std::option::Option<crate::types::LifecycleEventStatus>,
 }
 impl PutLifecycleEventHookExecutionStatusInput {
-    /// <p>The unique ID of a deployment. Pass this ID to a Lambda function that validates a deployment lifecycle event.</p>
+    /// <p> The unique ID of a deployment. Pass this ID to a Lambda function that validates a deployment lifecycle event. </p>
     pub fn deployment_id(&self) -> ::std::option::Option<&str> {
         self.deployment_id.as_deref()
     }
-    /// <p>The execution ID of a deployment's lifecycle hook. A deployment lifecycle hook is specified in the <code>hooks</code> section of the AppSpec file.</p>
+    /// <p> The execution ID of a deployment's lifecycle hook. A deployment lifecycle hook is specified in the <code>hooks</code> section of the AppSpec file. </p>
     pub fn lifecycle_event_hook_execution_id(&self) -> ::std::option::Option<&str> {
         self.lifecycle_event_hook_execution_id.as_deref()
     }
@@ -40,31 +40,31 @@ pub struct PutLifecycleEventHookExecutionStatusInputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::LifecycleEventStatus>,
 }
 impl PutLifecycleEventHookExecutionStatusInputBuilder {
-    /// <p>The unique ID of a deployment. Pass this ID to a Lambda function that validates a deployment lifecycle event.</p>
+    /// <p> The unique ID of a deployment. Pass this ID to a Lambda function that validates a deployment lifecycle event. </p>
     pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique ID of a deployment. Pass this ID to a Lambda function that validates a deployment lifecycle event.</p>
+    /// <p> The unique ID of a deployment. Pass this ID to a Lambda function that validates a deployment lifecycle event. </p>
     pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_id = input;
         self
     }
-    /// <p>The unique ID of a deployment. Pass this ID to a Lambda function that validates a deployment lifecycle event.</p>
+    /// <p> The unique ID of a deployment. Pass this ID to a Lambda function that validates a deployment lifecycle event. </p>
     pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.deployment_id
     }
-    /// <p>The execution ID of a deployment's lifecycle hook. A deployment lifecycle hook is specified in the <code>hooks</code> section of the AppSpec file.</p>
+    /// <p> The execution ID of a deployment's lifecycle hook. A deployment lifecycle hook is specified in the <code>hooks</code> section of the AppSpec file. </p>
     pub fn lifecycle_event_hook_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lifecycle_event_hook_execution_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The execution ID of a deployment's lifecycle hook. A deployment lifecycle hook is specified in the <code>hooks</code> section of the AppSpec file.</p>
+    /// <p> The execution ID of a deployment's lifecycle hook. A deployment lifecycle hook is specified in the <code>hooks</code> section of the AppSpec file. </p>
     pub fn set_lifecycle_event_hook_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lifecycle_event_hook_execution_id = input;
         self
     }
-    /// <p>The execution ID of a deployment's lifecycle hook. A deployment lifecycle hook is specified in the <code>hooks</code> section of the AppSpec file.</p>
+    /// <p> The execution ID of a deployment's lifecycle hook. A deployment lifecycle hook is specified in the <code>hooks</code> section of the AppSpec file. </p>
     pub fn get_lifecycle_event_hook_execution_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.lifecycle_event_hook_execution_id
     }

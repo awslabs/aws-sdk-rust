@@ -22,8 +22,8 @@ impl UntagResourceInputBuilder {
 }
 /// Fluent builder constructing a request to `UntagResource`.
 ///
-/// <p>Removes the specified tags from an Elastic Inference Accelerator.</p>
-/// <p>February 15, 2023: Starting April 15, 2023, AWS will not onboard new customers to Amazon Elastic Inference (EI), and will help current customers migrate their workloads to options that offer better price and performance. After April 15, 2023, new customers will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once during the past 30-day period are considered current customers and will be able to continue using the service.</p>
+/// <p> Removes the specified tags from an Elastic Inference Accelerator. </p>
+/// <p> February 15, 2023: Starting April 15, 2023, AWS will not onboard new customers to Amazon Elastic Inference (EI), and will help current customers migrate their workloads to options that offer better price and performance. After April 15, 2023, new customers will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once during the past 30-day period are considered current customers and will be able to continue using the service. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UntagResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -109,17 +109,17 @@ impl UntagResourceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ARN of the Elastic Inference Accelerator to untag.</p>
+    /// <p> The ARN of the Elastic Inference Accelerator to untag. </p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());
         self
     }
-    /// <p>The ARN of the Elastic Inference Accelerator to untag.</p>
+    /// <p> The ARN of the Elastic Inference Accelerator to untag. </p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
-    /// <p>The ARN of the Elastic Inference Accelerator to untag.</p>
+    /// <p> The ARN of the Elastic Inference Accelerator to untag. </p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_arn()
     }
@@ -127,17 +127,17 @@ impl UntagResourceFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
     ///
-    /// <p>The list of tags to remove from the Elastic Inference Accelerator.</p>
+    /// <p> The list of tags to remove from the Elastic Inference Accelerator. </p>
     pub fn tag_keys(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tag_keys(input.into());
         self
     }
-    /// <p>The list of tags to remove from the Elastic Inference Accelerator.</p>
+    /// <p> The list of tags to remove from the Elastic Inference Accelerator. </p>
     pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_tag_keys(input);
         self
     }
-    /// <p>The list of tags to remove from the Elastic Inference Accelerator.</p>
+    /// <p> The list of tags to remove from the Elastic Inference Accelerator. </p>
     pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_tag_keys()
     }

@@ -24,7 +24,7 @@ impl UpdateOpenIdConnectProviderThumbprintInputBuilder {
 ///
 /// <p>Replaces the existing list of server certificate thumbprints associated with an OpenID Connect (OIDC) provider resource object with a new list of thumbprints.</p>
 /// <p>The list that you pass with this operation completely replaces the existing list of thumbprints. (The lists are not merged.)</p>
-/// <p>Typically, you need to update a thumbprint only when the identity provider certificate changes, which occurs rarely. However, if the provider's certificate <i>does</i> change, any attempt to assume an IAM role that specifies the OIDC provider as a principal fails until the certificate thumbprint is updated.</p><note>
+/// <p>Typically, you need to update a thumbprint only when the identity provider certificate changes, which occurs rarely. However, if the provider's certificate <i>does</i> change, any attempt to assume an IAM role that specifies the OIDC provider as a principal fails until the certificate thumbprint is updated.</p> <note>
 /// <p>Amazon Web Services secures communication with some OIDC identity providers (IdPs) through our library of trusted root certificate authorities (CAs) instead of using a certificate thumbprint to verify your IdP server certificate. These OIDC IdPs include Auth0, GitHub, Google, and those that use an Amazon S3 bucket to host a JSON Web Key Set (JWKS) endpoint. In these cases, your legacy thumbprint remains in your configuration, but is no longer used for validation.</p>
 /// </note> <note>
 /// <p>Trust for the OIDC provider is derived from the provider certificate and is validated by the thumbprint. Therefore, it is best to limit access to the <code>UpdateOpenIDConnectProviderThumbprint</code> operation to highly privileged users.</p>
@@ -139,17 +139,17 @@ impl UpdateOpenIDConnectProviderThumbprintFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_thumbprint_list`](Self::set_thumbprint_list).
     ///
-    /// <p>A list of certificate thumbprints that are associated with the specified IAM OpenID Connect provider. For more information, see <code>CreateOpenIDConnectProvider</code>.</p>
+    /// <p>A list of certificate thumbprints that are associated with the specified IAM OpenID Connect provider. For more information, see <code>CreateOpenIDConnectProvider</code>. </p>
     pub fn thumbprint_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.thumbprint_list(input.into());
         self
     }
-    /// <p>A list of certificate thumbprints that are associated with the specified IAM OpenID Connect provider. For more information, see <code>CreateOpenIDConnectProvider</code>.</p>
+    /// <p>A list of certificate thumbprints that are associated with the specified IAM OpenID Connect provider. For more information, see <code>CreateOpenIDConnectProvider</code>. </p>
     pub fn set_thumbprint_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_thumbprint_list(input);
         self
     }
-    /// <p>A list of certificate thumbprints that are associated with the specified IAM OpenID Connect provider. For more information, see <code>CreateOpenIDConnectProvider</code>.</p>
+    /// <p>A list of certificate thumbprints that are associated with the specified IAM OpenID Connect provider. For more information, see <code>CreateOpenIDConnectProvider</code>. </p>
     pub fn get_thumbprint_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_thumbprint_list()
     }

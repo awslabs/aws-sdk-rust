@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Subscription {
-    /// <p>The start time of the subscription, in Unix time in seconds.</p>
+    /// <p>The start time of the subscription, in Unix time in seconds. </p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time your subscription will end.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -17,15 +17,15 @@ pub struct Subscription {
     pub limits: ::std::option::Option<::std::vec::Vec<crate::types::Limit>>,
     /// <p>If <code>ENABLED</code>, the Shield Response Team (SRT) will use email and phone to notify contacts about escalations to the SRT and to initiate proactive customer support.</p>
     /// <p>If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status changes to <code>ENABLED</code> when your request is fully processed.</p>
-    /// <p>If <code>DISABLED</code>, the SRT will not proactively notify contacts about escalations or to initiate proactive customer support.</p>
+    /// <p>If <code>DISABLED</code>, the SRT will not proactively notify contacts about escalations or to initiate proactive customer support. </p>
     pub proactive_engagement_status: ::std::option::Option<crate::types::ProactiveEngagementStatus>,
-    /// <p>Limits settings for your subscription.</p>
+    /// <p>Limits settings for your subscription. </p>
     pub subscription_limits: ::std::option::Option<crate::types::SubscriptionLimits>,
     /// <p>The ARN (Amazon Resource Name) of the subscription.</p>
     pub subscription_arn: ::std::option::Option<::std::string::String>,
 }
 impl Subscription {
-    /// <p>The start time of the subscription, in Unix time in seconds.</p>
+    /// <p>The start time of the subscription, in Unix time in seconds. </p>
     pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
@@ -50,11 +50,11 @@ impl Subscription {
     }
     /// <p>If <code>ENABLED</code>, the Shield Response Team (SRT) will use email and phone to notify contacts about escalations to the SRT and to initiate proactive customer support.</p>
     /// <p>If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status changes to <code>ENABLED</code> when your request is fully processed.</p>
-    /// <p>If <code>DISABLED</code>, the SRT will not proactively notify contacts about escalations or to initiate proactive customer support.</p>
+    /// <p>If <code>DISABLED</code>, the SRT will not proactively notify contacts about escalations or to initiate proactive customer support. </p>
     pub fn proactive_engagement_status(&self) -> ::std::option::Option<&crate::types::ProactiveEngagementStatus> {
         self.proactive_engagement_status.as_ref()
     }
-    /// <p>Limits settings for your subscription.</p>
+    /// <p>Limits settings for your subscription. </p>
     pub fn subscription_limits(&self) -> ::std::option::Option<&crate::types::SubscriptionLimits> {
         self.subscription_limits.as_ref()
     }
@@ -84,17 +84,17 @@ pub struct SubscriptionBuilder {
     pub(crate) subscription_arn: ::std::option::Option<::std::string::String>,
 }
 impl SubscriptionBuilder {
-    /// <p>The start time of the subscription, in Unix time in seconds.</p>
+    /// <p>The start time of the subscription, in Unix time in seconds. </p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The start time of the subscription, in Unix time in seconds.</p>
+    /// <p>The start time of the subscription, in Unix time in seconds. </p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
-    /// <p>The start time of the subscription, in Unix time in seconds.</p>
+    /// <p>The start time of the subscription, in Unix time in seconds. </p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.start_time
     }
@@ -165,36 +165,36 @@ impl SubscriptionBuilder {
     }
     /// <p>If <code>ENABLED</code>, the Shield Response Team (SRT) will use email and phone to notify contacts about escalations to the SRT and to initiate proactive customer support.</p>
     /// <p>If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status changes to <code>ENABLED</code> when your request is fully processed.</p>
-    /// <p>If <code>DISABLED</code>, the SRT will not proactively notify contacts about escalations or to initiate proactive customer support.</p>
+    /// <p>If <code>DISABLED</code>, the SRT will not proactively notify contacts about escalations or to initiate proactive customer support. </p>
     pub fn proactive_engagement_status(mut self, input: crate::types::ProactiveEngagementStatus) -> Self {
         self.proactive_engagement_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>If <code>ENABLED</code>, the Shield Response Team (SRT) will use email and phone to notify contacts about escalations to the SRT and to initiate proactive customer support.</p>
     /// <p>If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status changes to <code>ENABLED</code> when your request is fully processed.</p>
-    /// <p>If <code>DISABLED</code>, the SRT will not proactively notify contacts about escalations or to initiate proactive customer support.</p>
+    /// <p>If <code>DISABLED</code>, the SRT will not proactively notify contacts about escalations or to initiate proactive customer support. </p>
     pub fn set_proactive_engagement_status(mut self, input: ::std::option::Option<crate::types::ProactiveEngagementStatus>) -> Self {
         self.proactive_engagement_status = input;
         self
     }
     /// <p>If <code>ENABLED</code>, the Shield Response Team (SRT) will use email and phone to notify contacts about escalations to the SRT and to initiate proactive customer support.</p>
     /// <p>If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status changes to <code>ENABLED</code> when your request is fully processed.</p>
-    /// <p>If <code>DISABLED</code>, the SRT will not proactively notify contacts about escalations or to initiate proactive customer support.</p>
+    /// <p>If <code>DISABLED</code>, the SRT will not proactively notify contacts about escalations or to initiate proactive customer support. </p>
     pub fn get_proactive_engagement_status(&self) -> &::std::option::Option<crate::types::ProactiveEngagementStatus> {
         &self.proactive_engagement_status
     }
-    /// <p>Limits settings for your subscription.</p>
+    /// <p>Limits settings for your subscription. </p>
     /// This field is required.
     pub fn subscription_limits(mut self, input: crate::types::SubscriptionLimits) -> Self {
         self.subscription_limits = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Limits settings for your subscription.</p>
+    /// <p>Limits settings for your subscription. </p>
     pub fn set_subscription_limits(mut self, input: ::std::option::Option<crate::types::SubscriptionLimits>) -> Self {
         self.subscription_limits = input;
         self
     }
-    /// <p>Limits settings for your subscription.</p>
+    /// <p>Limits settings for your subscription. </p>
     pub fn get_subscription_limits(&self) -> &::std::option::Option<crate::types::SubscriptionLimits> {
         &self.subscription_limits
     }

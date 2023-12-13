@@ -11,12 +11,9 @@ pub struct Stream {
     /// <p>A timestamp, in ISO 8601 format, for this stream.</p>
     /// <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p>
     /// <ul>
-    /// <li>
-    /// <p>the Amazon Web Services customer ID.</p></li>
-    /// <li>
-    /// <p>the table name</p></li>
-    /// <li>
-    /// <p>the <code>StreamLabel</code></p></li>
+    /// <li> <p>the Amazon Web Services customer ID.</p> </li>
+    /// <li> <p>the table name</p> </li>
+    /// <li> <p>the <code>StreamLabel</code> </p> </li>
     /// </ul>
     pub stream_label: ::std::option::Option<::std::string::String>,
 }
@@ -32,12 +29,9 @@ impl Stream {
     /// <p>A timestamp, in ISO 8601 format, for this stream.</p>
     /// <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p>
     /// <ul>
-    /// <li>
-    /// <p>the Amazon Web Services customer ID.</p></li>
-    /// <li>
-    /// <p>the table name</p></li>
-    /// <li>
-    /// <p>the <code>StreamLabel</code></p></li>
+    /// <li> <p>the Amazon Web Services customer ID.</p> </li>
+    /// <li> <p>the table name</p> </li>
+    /// <li> <p>the <code>StreamLabel</code> </p> </li>
     /// </ul>
     pub fn stream_label(&self) -> ::std::option::Option<&str> {
         self.stream_label.as_deref()
@@ -90,12 +84,9 @@ impl StreamBuilder {
     /// <p>A timestamp, in ISO 8601 format, for this stream.</p>
     /// <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p>
     /// <ul>
-    /// <li>
-    /// <p>the Amazon Web Services customer ID.</p></li>
-    /// <li>
-    /// <p>the table name</p></li>
-    /// <li>
-    /// <p>the <code>StreamLabel</code></p></li>
+    /// <li> <p>the Amazon Web Services customer ID.</p> </li>
+    /// <li> <p>the table name</p> </li>
+    /// <li> <p>the <code>StreamLabel</code> </p> </li>
     /// </ul>
     pub fn stream_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_label = ::std::option::Option::Some(input.into());
@@ -104,12 +95,9 @@ impl StreamBuilder {
     /// <p>A timestamp, in ISO 8601 format, for this stream.</p>
     /// <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p>
     /// <ul>
-    /// <li>
-    /// <p>the Amazon Web Services customer ID.</p></li>
-    /// <li>
-    /// <p>the table name</p></li>
-    /// <li>
-    /// <p>the <code>StreamLabel</code></p></li>
+    /// <li> <p>the Amazon Web Services customer ID.</p> </li>
+    /// <li> <p>the table name</p> </li>
+    /// <li> <p>the <code>StreamLabel</code> </p> </li>
     /// </ul>
     pub fn set_stream_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_label = input;
@@ -118,12 +106,9 @@ impl StreamBuilder {
     /// <p>A timestamp, in ISO 8601 format, for this stream.</p>
     /// <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p>
     /// <ul>
-    /// <li>
-    /// <p>the Amazon Web Services customer ID.</p></li>
-    /// <li>
-    /// <p>the table name</p></li>
-    /// <li>
-    /// <p>the <code>StreamLabel</code></p></li>
+    /// <li> <p>the Amazon Web Services customer ID.</p> </li>
+    /// <li> <p>the table name</p> </li>
+    /// <li> <p>the <code>StreamLabel</code> </p> </li>
     /// </ul>
     pub fn get_stream_label(&self) -> &::std::option::Option<::std::string::String> {
         &self.stream_label

@@ -271,7 +271,7 @@ pub enum RegisterTargetWithMaintenanceWindowError {
     /// <p>Error returned when the ID specified for a resource, such as a maintenance window or patch baseline, doesn't exist.</p>
     /// <p>For information about resource quotas in Amazon Web Services Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     DoesNotExistException(crate::types::error::DoesNotExistException),
-    /// <p>Error returned when an idempotent operation is retried and the parameters don't match the original call to the API with the same idempotency token.</p>
+    /// <p>Error returned when an idempotent operation is retried and the parameters don't match the original call to the API with the same idempotency token. </p>
     IdempotentParameterMismatch(crate::types::error::IdempotentParameterMismatch),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::types::error::InternalServerError),

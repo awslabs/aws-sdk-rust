@@ -3,50 +3,36 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAnomalySubscriptionInput {
-    /// <p>The cost anomaly subscription object that you want to create.</p>
+    /// <p>The cost anomaly subscription object that you want to create. </p>
     pub anomaly_subscription: ::std::option::Option<crate::types::AnomalySubscription>,
     /// <p>An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html"> <code>AnomalySubscription</code> </a>. You can use resource tags to control access to your <code>subscription</code> using IAM policies.</p>
     /// <p>Each tag consists of a key and a value, and each key must be unique for the resource. The following restrictions apply to resource tags:</p>
     /// <ul>
-    /// <li>
-    /// <p>Although the maximum number of array members is 200, you can assign a maximum of 50 user-tags to one resource. The remaining are reserved for Amazon Web Services use</p></li>
-    /// <li>
-    /// <p>The maximum length of a key is 128 characters</p></li>
-    /// <li>
-    /// <p>The maximum length of a value is 256 characters</p></li>
-    /// <li>
-    /// <p>Keys and values can only contain alphanumeric characters, spaces, and any of the following: <code>_.:/=+@-</code></p></li>
-    /// <li>
-    /// <p>Keys and values are case sensitive</p></li>
-    /// <li>
-    /// <p>Keys and values are trimmed for any leading or trailing whitespaces</p></li>
-    /// <li>
-    /// <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p></li>
+    /// <li> <p>Although the maximum number of array members is 200, you can assign a maximum of 50 user-tags to one resource. The remaining are reserved for Amazon Web Services use</p> </li>
+    /// <li> <p>The maximum length of a key is 128 characters</p> </li>
+    /// <li> <p>The maximum length of a value is 256 characters</p> </li>
+    /// <li> <p>Keys and values can only contain alphanumeric characters, spaces, and any of the following: <code>_.:/=+@-</code> </p> </li>
+    /// <li> <p>Keys and values are case sensitive</p> </li>
+    /// <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li>
+    /// <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
     /// </ul>
     pub resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>,
 }
 impl CreateAnomalySubscriptionInput {
-    /// <p>The cost anomaly subscription object that you want to create.</p>
+    /// <p>The cost anomaly subscription object that you want to create. </p>
     pub fn anomaly_subscription(&self) -> ::std::option::Option<&crate::types::AnomalySubscription> {
         self.anomaly_subscription.as_ref()
     }
     /// <p>An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html"> <code>AnomalySubscription</code> </a>. You can use resource tags to control access to your <code>subscription</code> using IAM policies.</p>
     /// <p>Each tag consists of a key and a value, and each key must be unique for the resource. The following restrictions apply to resource tags:</p>
     /// <ul>
-    /// <li>
-    /// <p>Although the maximum number of array members is 200, you can assign a maximum of 50 user-tags to one resource. The remaining are reserved for Amazon Web Services use</p></li>
-    /// <li>
-    /// <p>The maximum length of a key is 128 characters</p></li>
-    /// <li>
-    /// <p>The maximum length of a value is 256 characters</p></li>
-    /// <li>
-    /// <p>Keys and values can only contain alphanumeric characters, spaces, and any of the following: <code>_.:/=+@-</code></p></li>
-    /// <li>
-    /// <p>Keys and values are case sensitive</p></li>
-    /// <li>
-    /// <p>Keys and values are trimmed for any leading or trailing whitespaces</p></li>
-    /// <li>
-    /// <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p></li>
+    /// <li> <p>Although the maximum number of array members is 200, you can assign a maximum of 50 user-tags to one resource. The remaining are reserved for Amazon Web Services use</p> </li>
+    /// <li> <p>The maximum length of a key is 128 characters</p> </li>
+    /// <li> <p>The maximum length of a value is 256 characters</p> </li>
+    /// <li> <p>Keys and values can only contain alphanumeric characters, spaces, and any of the following: <code>_.:/=+@-</code> </p> </li>
+    /// <li> <p>Keys and values are case sensitive</p> </li>
+    /// <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li>
+    /// <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_tags.is_none()`.
@@ -69,18 +55,18 @@ pub struct CreateAnomalySubscriptionInputBuilder {
     pub(crate) resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>,
 }
 impl CreateAnomalySubscriptionInputBuilder {
-    /// <p>The cost anomaly subscription object that you want to create.</p>
+    /// <p>The cost anomaly subscription object that you want to create. </p>
     /// This field is required.
     pub fn anomaly_subscription(mut self, input: crate::types::AnomalySubscription) -> Self {
         self.anomaly_subscription = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The cost anomaly subscription object that you want to create.</p>
+    /// <p>The cost anomaly subscription object that you want to create. </p>
     pub fn set_anomaly_subscription(mut self, input: ::std::option::Option<crate::types::AnomalySubscription>) -> Self {
         self.anomaly_subscription = input;
         self
     }
-    /// <p>The cost anomaly subscription object that you want to create.</p>
+    /// <p>The cost anomaly subscription object that you want to create. </p>
     pub fn get_anomaly_subscription(&self) -> &::std::option::Option<crate::types::AnomalySubscription> {
         &self.anomaly_subscription
     }
@@ -91,20 +77,13 @@ impl CreateAnomalySubscriptionInputBuilder {
     /// <p>An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html"> <code>AnomalySubscription</code> </a>. You can use resource tags to control access to your <code>subscription</code> using IAM policies.</p>
     /// <p>Each tag consists of a key and a value, and each key must be unique for the resource. The following restrictions apply to resource tags:</p>
     /// <ul>
-    /// <li>
-    /// <p>Although the maximum number of array members is 200, you can assign a maximum of 50 user-tags to one resource. The remaining are reserved for Amazon Web Services use</p></li>
-    /// <li>
-    /// <p>The maximum length of a key is 128 characters</p></li>
-    /// <li>
-    /// <p>The maximum length of a value is 256 characters</p></li>
-    /// <li>
-    /// <p>Keys and values can only contain alphanumeric characters, spaces, and any of the following: <code>_.:/=+@-</code></p></li>
-    /// <li>
-    /// <p>Keys and values are case sensitive</p></li>
-    /// <li>
-    /// <p>Keys and values are trimmed for any leading or trailing whitespaces</p></li>
-    /// <li>
-    /// <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p></li>
+    /// <li> <p>Although the maximum number of array members is 200, you can assign a maximum of 50 user-tags to one resource. The remaining are reserved for Amazon Web Services use</p> </li>
+    /// <li> <p>The maximum length of a key is 128 characters</p> </li>
+    /// <li> <p>The maximum length of a value is 256 characters</p> </li>
+    /// <li> <p>Keys and values can only contain alphanumeric characters, spaces, and any of the following: <code>_.:/=+@-</code> </p> </li>
+    /// <li> <p>Keys and values are case sensitive</p> </li>
+    /// <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li>
+    /// <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
     /// </ul>
     pub fn resource_tags(mut self, input: crate::types::ResourceTag) -> Self {
         let mut v = self.resource_tags.unwrap_or_default();
@@ -115,20 +94,13 @@ impl CreateAnomalySubscriptionInputBuilder {
     /// <p>An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html"> <code>AnomalySubscription</code> </a>. You can use resource tags to control access to your <code>subscription</code> using IAM policies.</p>
     /// <p>Each tag consists of a key and a value, and each key must be unique for the resource. The following restrictions apply to resource tags:</p>
     /// <ul>
-    /// <li>
-    /// <p>Although the maximum number of array members is 200, you can assign a maximum of 50 user-tags to one resource. The remaining are reserved for Amazon Web Services use</p></li>
-    /// <li>
-    /// <p>The maximum length of a key is 128 characters</p></li>
-    /// <li>
-    /// <p>The maximum length of a value is 256 characters</p></li>
-    /// <li>
-    /// <p>Keys and values can only contain alphanumeric characters, spaces, and any of the following: <code>_.:/=+@-</code></p></li>
-    /// <li>
-    /// <p>Keys and values are case sensitive</p></li>
-    /// <li>
-    /// <p>Keys and values are trimmed for any leading or trailing whitespaces</p></li>
-    /// <li>
-    /// <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p></li>
+    /// <li> <p>Although the maximum number of array members is 200, you can assign a maximum of 50 user-tags to one resource. The remaining are reserved for Amazon Web Services use</p> </li>
+    /// <li> <p>The maximum length of a key is 128 characters</p> </li>
+    /// <li> <p>The maximum length of a value is 256 characters</p> </li>
+    /// <li> <p>Keys and values can only contain alphanumeric characters, spaces, and any of the following: <code>_.:/=+@-</code> </p> </li>
+    /// <li> <p>Keys and values are case sensitive</p> </li>
+    /// <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li>
+    /// <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
     /// </ul>
     pub fn set_resource_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>) -> Self {
         self.resource_tags = input;
@@ -137,20 +109,13 @@ impl CreateAnomalySubscriptionInputBuilder {
     /// <p>An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html"> <code>AnomalySubscription</code> </a>. You can use resource tags to control access to your <code>subscription</code> using IAM policies.</p>
     /// <p>Each tag consists of a key and a value, and each key must be unique for the resource. The following restrictions apply to resource tags:</p>
     /// <ul>
-    /// <li>
-    /// <p>Although the maximum number of array members is 200, you can assign a maximum of 50 user-tags to one resource. The remaining are reserved for Amazon Web Services use</p></li>
-    /// <li>
-    /// <p>The maximum length of a key is 128 characters</p></li>
-    /// <li>
-    /// <p>The maximum length of a value is 256 characters</p></li>
-    /// <li>
-    /// <p>Keys and values can only contain alphanumeric characters, spaces, and any of the following: <code>_.:/=+@-</code></p></li>
-    /// <li>
-    /// <p>Keys and values are case sensitive</p></li>
-    /// <li>
-    /// <p>Keys and values are trimmed for any leading or trailing whitespaces</p></li>
-    /// <li>
-    /// <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p></li>
+    /// <li> <p>Although the maximum number of array members is 200, you can assign a maximum of 50 user-tags to one resource. The remaining are reserved for Amazon Web Services use</p> </li>
+    /// <li> <p>The maximum length of a key is 128 characters</p> </li>
+    /// <li> <p>The maximum length of a value is 256 characters</p> </li>
+    /// <li> <p>Keys and values can only contain alphanumeric characters, spaces, and any of the following: <code>_.:/=+@-</code> </p> </li>
+    /// <li> <p>Keys and values are case sensitive</p> </li>
+    /// <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li>
+    /// <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
     /// </ul>
     pub fn get_resource_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>> {
         &self.resource_tags

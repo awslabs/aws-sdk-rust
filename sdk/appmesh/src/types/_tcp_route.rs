@@ -6,7 +6,7 @@
 pub struct TcpRoute {
     /// <p>The action to take if a match is determined.</p>
     pub action: ::std::option::Option<crate::types::TcpRouteAction>,
-    /// <p>An object that represents types of timeouts.</p>
+    /// <p>An object that represents types of timeouts. </p>
     pub timeout: ::std::option::Option<crate::types::TcpTimeout>,
     /// <p>An object that represents the criteria for determining a request match.</p>
     pub r#match: ::std::option::Option<crate::types::TcpRouteMatch>,
@@ -16,7 +16,7 @@ impl TcpRoute {
     pub fn action(&self) -> ::std::option::Option<&crate::types::TcpRouteAction> {
         self.action.as_ref()
     }
-    /// <p>An object that represents types of timeouts.</p>
+    /// <p>An object that represents types of timeouts. </p>
     pub fn timeout(&self) -> ::std::option::Option<&crate::types::TcpTimeout> {
         self.timeout.as_ref()
     }
@@ -56,17 +56,17 @@ impl TcpRouteBuilder {
     pub fn get_action(&self) -> &::std::option::Option<crate::types::TcpRouteAction> {
         &self.action
     }
-    /// <p>An object that represents types of timeouts.</p>
+    /// <p>An object that represents types of timeouts. </p>
     pub fn timeout(mut self, input: crate::types::TcpTimeout) -> Self {
         self.timeout = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An object that represents types of timeouts.</p>
+    /// <p>An object that represents types of timeouts. </p>
     pub fn set_timeout(mut self, input: ::std::option::Option<crate::types::TcpTimeout>) -> Self {
         self.timeout = input;
         self
     }
-    /// <p>An object that represents types of timeouts.</p>
+    /// <p>An object that represents types of timeouts. </p>
     pub fn get_timeout(&self) -> &::std::option::Option<crate::types::TcpTimeout> {
         &self.timeout
     }

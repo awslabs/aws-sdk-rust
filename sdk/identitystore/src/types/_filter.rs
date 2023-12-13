@@ -6,7 +6,7 @@
 pub struct Filter {
     /// <p>The attribute path that is used to specify which attribute name to search. Length limit is 255 characters. For example, <code>UserName</code> is a valid attribute path for the <code>ListUsers</code> API, and <code>DisplayName</code> is a valid attribute path for the <code>ListGroups</code> API.</p>
     pub attribute_path: ::std::string::String,
-    /// <p>Represents the data for an attribute. Each attribute value is described as a name-value pair.</p>
+    /// <p>Represents the data for an attribute. Each attribute value is described as a name-value pair. </p>
     pub attribute_value: ::std::string::String,
 }
 impl Filter {
@@ -15,7 +15,7 @@ impl Filter {
         use std::ops::Deref;
         self.attribute_path.deref()
     }
-    /// <p>Represents the data for an attribute. Each attribute value is described as a name-value pair.</p>
+    /// <p>Represents the data for an attribute. Each attribute value is described as a name-value pair. </p>
     pub fn attribute_value(&self) -> &str {
         use std::ops::Deref;
         self.attribute_value.deref()
@@ -59,18 +59,18 @@ impl FilterBuilder {
     pub fn get_attribute_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.attribute_path
     }
-    /// <p>Represents the data for an attribute. Each attribute value is described as a name-value pair.</p>
+    /// <p>Represents the data for an attribute. Each attribute value is described as a name-value pair. </p>
     /// This field is required.
     pub fn attribute_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_value = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Represents the data for an attribute. Each attribute value is described as a name-value pair.</p>
+    /// <p>Represents the data for an attribute. Each attribute value is described as a name-value pair. </p>
     pub fn set_attribute_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attribute_value = input;
         self
     }
-    /// <p>Represents the data for an attribute. Each attribute value is described as a name-value pair.</p>
+    /// <p>Represents the data for an attribute. Each attribute value is described as a name-value pair. </p>
     pub fn get_attribute_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.attribute_value
     }

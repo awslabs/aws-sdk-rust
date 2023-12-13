@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`AssociateVehicleFleet`](crate::operation::associate_vehicle_fleet::builders::AssociateVehicleFleetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`vehicle_name(impl Into<String>)`](crate::operation::associate_vehicle_fleet::builders::AssociateVehicleFleetFluentBuilder::vehicle_name) / [`set_vehicle_name(Option<String>)`](crate::operation::associate_vehicle_fleet::builders::AssociateVehicleFleetFluentBuilder::set_vehicle_name):<br>required: **true**<br><p>The unique ID of the vehicle to associate with the fleet.</p><br>
-    ///   - [`fleet_id(impl Into<String>)`](crate::operation::associate_vehicle_fleet::builders::AssociateVehicleFleetFluentBuilder::fleet_id) / [`set_fleet_id(Option<String>)`](crate::operation::associate_vehicle_fleet::builders::AssociateVehicleFleetFluentBuilder::set_fleet_id):<br>required: **true**<br><p>The ID of a fleet.</p><br>
+    ///   - [`vehicle_name(impl Into<String>)`](crate::operation::associate_vehicle_fleet::builders::AssociateVehicleFleetFluentBuilder::vehicle_name) / [`set_vehicle_name(Option<String>)`](crate::operation::associate_vehicle_fleet::builders::AssociateVehicleFleetFluentBuilder::set_vehicle_name):<br>required: **true**<br><p> The unique ID of the vehicle to associate with the fleet. </p><br>
+    ///   - [`fleet_id(impl Into<String>)`](crate::operation::associate_vehicle_fleet::builders::AssociateVehicleFleetFluentBuilder::fleet_id) / [`set_fleet_id(Option<String>)`](crate::operation::associate_vehicle_fleet::builders::AssociateVehicleFleetFluentBuilder::set_fleet_id):<br>required: **true**<br><p> The ID of a fleet. </p><br>
     /// - On success, responds with [`AssociateVehicleFleetOutput`](crate::operation::associate_vehicle_fleet::AssociateVehicleFleetOutput)
     /// - On failure, responds with [`SdkError<AssociateVehicleFleetError>`](crate::operation::associate_vehicle_fleet::AssociateVehicleFleetError)
     pub fn associate_vehicle_fleet(&self) -> crate::operation::associate_vehicle_fleet::builders::AssociateVehicleFleetFluentBuilder {

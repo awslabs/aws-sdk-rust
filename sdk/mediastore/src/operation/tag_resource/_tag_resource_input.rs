@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) for the container.</p>
+    /// <p>The Amazon Resource Name (ARN) for the container. </p>
     pub resource: ::std::option::Option<::std::string::String>,
     /// <p>An array of key:value pairs that you want to add to the container. You need to specify only the tags that you want to add or update. For example, suppose a container already has two tags (customer:CompanyA and priority:High). You want to change the priority tag and also add a third tag (type:Contract). For TagResource, you specify the following tags: priority:Medium, type:Contract. The result is that your container has three tags: customer:CompanyA, priority:Medium, and type:Contract.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl TagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) for the container.</p>
+    /// <p>The Amazon Resource Name (ARN) for the container. </p>
     pub fn resource(&self) -> ::std::option::Option<&str> {
         self.resource.as_deref()
     }
@@ -35,18 +35,18 @@ pub struct TagResourceInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl TagResourceInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) for the container.</p>
+    /// <p>The Amazon Resource Name (ARN) for the container. </p>
     /// This field is required.
     pub fn resource(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the container.</p>
+    /// <p>The Amazon Resource Name (ARN) for the container. </p>
     pub fn set_resource(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the container.</p>
+    /// <p>The Amazon Resource Name (ARN) for the container. </p>
     pub fn get_resource(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource
     }

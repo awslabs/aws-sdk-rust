@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutPermissionsBoundaryToPermissionSetInput {
-    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
+    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
     pub instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the <code>PermissionSet</code>.</p>
     pub permission_set_arn: ::std::option::Option<::std::string::String>,
@@ -11,7 +11,7 @@ pub struct PutPermissionsBoundaryToPermissionSetInput {
     pub permissions_boundary: ::std::option::Option<crate::types::PermissionsBoundary>,
 }
 impl PutPermissionsBoundaryToPermissionSetInput {
-    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
+    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
     pub fn instance_arn(&self) -> ::std::option::Option<&str> {
         self.instance_arn.as_deref()
     }
@@ -40,18 +40,18 @@ pub struct PutPermissionsBoundaryToPermissionSetInputBuilder {
     pub(crate) permissions_boundary: ::std::option::Option<crate::types::PermissionsBoundary>,
 }
 impl PutPermissionsBoundaryToPermissionSetInputBuilder {
-    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
+    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
     /// This field is required.
     pub fn instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
+    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
     pub fn set_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_arn = input;
         self
     }
-    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
+    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
     pub fn get_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_arn
     }

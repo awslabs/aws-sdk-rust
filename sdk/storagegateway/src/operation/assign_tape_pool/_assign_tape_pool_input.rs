@@ -8,7 +8,7 @@ pub struct AssignTapePoolInput {
     /// <p>The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
     pub pool_id: ::std::option::Option<::std::string::String>,
     /// <p>Set permissions to bypass governance retention. If the lock type of the archived tape is <code>Governance</code>, the tape's archived age is not older than <code>RetentionLockInDays</code>, and the user does not already have <code>BypassGovernanceRetention</code>, setting this to TRUE enables the user to bypass the retention lock. This parameter is set to true by default for calls from the console.</p>
-    /// <p>Valid values: <code>TRUE</code> | <code>FALSE</code></p>
+    /// <p>Valid values: <code>TRUE</code> | <code>FALSE</code> </p>
     pub bypass_governance_retention: ::std::option::Option<bool>,
 }
 impl AssignTapePoolInput {
@@ -21,7 +21,7 @@ impl AssignTapePoolInput {
         self.pool_id.as_deref()
     }
     /// <p>Set permissions to bypass governance retention. If the lock type of the archived tape is <code>Governance</code>, the tape's archived age is not older than <code>RetentionLockInDays</code>, and the user does not already have <code>BypassGovernanceRetention</code>, setting this to TRUE enables the user to bypass the retention lock. This parameter is set to true by default for calls from the console.</p>
-    /// <p>Valid values: <code>TRUE</code> | <code>FALSE</code></p>
+    /// <p>Valid values: <code>TRUE</code> | <code>FALSE</code> </p>
     pub fn bypass_governance_retention(&self) -> ::std::option::Option<bool> {
         self.bypass_governance_retention
     }
@@ -73,19 +73,19 @@ impl AssignTapePoolInputBuilder {
         &self.pool_id
     }
     /// <p>Set permissions to bypass governance retention. If the lock type of the archived tape is <code>Governance</code>, the tape's archived age is not older than <code>RetentionLockInDays</code>, and the user does not already have <code>BypassGovernanceRetention</code>, setting this to TRUE enables the user to bypass the retention lock. This parameter is set to true by default for calls from the console.</p>
-    /// <p>Valid values: <code>TRUE</code> | <code>FALSE</code></p>
+    /// <p>Valid values: <code>TRUE</code> | <code>FALSE</code> </p>
     pub fn bypass_governance_retention(mut self, input: bool) -> Self {
         self.bypass_governance_retention = ::std::option::Option::Some(input);
         self
     }
     /// <p>Set permissions to bypass governance retention. If the lock type of the archived tape is <code>Governance</code>, the tape's archived age is not older than <code>RetentionLockInDays</code>, and the user does not already have <code>BypassGovernanceRetention</code>, setting this to TRUE enables the user to bypass the retention lock. This parameter is set to true by default for calls from the console.</p>
-    /// <p>Valid values: <code>TRUE</code> | <code>FALSE</code></p>
+    /// <p>Valid values: <code>TRUE</code> | <code>FALSE</code> </p>
     pub fn set_bypass_governance_retention(mut self, input: ::std::option::Option<bool>) -> Self {
         self.bypass_governance_retention = input;
         self
     }
     /// <p>Set permissions to bypass governance retention. If the lock type of the archived tape is <code>Governance</code>, the tape's archived age is not older than <code>RetentionLockInDays</code>, and the user does not already have <code>BypassGovernanceRetention</code>, setting this to TRUE enables the user to bypass the retention lock. This parameter is set to true by default for calls from the console.</p>
-    /// <p>Valid values: <code>TRUE</code> | <code>FALSE</code></p>
+    /// <p>Valid values: <code>TRUE</code> | <code>FALSE</code> </p>
     pub fn get_bypass_governance_retention(&self) -> &::std::option::Option<bool> {
         &self.bypass_governance_retention
     }

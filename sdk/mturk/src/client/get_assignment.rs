@@ -5,8 +5,8 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`assignment_id(impl Into<String>)`](crate::operation::get_assignment::builders::GetAssignmentFluentBuilder::assignment_id) / [`set_assignment_id(Option<String>)`](crate::operation::get_assignment::builders::GetAssignmentFluentBuilder::set_assignment_id):<br>required: **true**<br><p>The ID of the Assignment to be retrieved.</p><br>
     /// - On success, responds with [`GetAssignmentOutput`](crate::operation::get_assignment::GetAssignmentOutput) with field(s):
-    ///   - [`assignment(Option<Assignment>)`](crate::operation::get_assignment::GetAssignmentOutput::assignment): <p>The assignment. The response includes one Assignment element.</p>
-    ///   - [`hit(Option<Hit>)`](crate::operation::get_assignment::GetAssignmentOutput::hit): <p>The HIT associated with this assignment. The response includes one HIT element.</p>
+    ///   - [`assignment(Option<Assignment>)`](crate::operation::get_assignment::GetAssignmentOutput::assignment): <p> The assignment. The response includes one Assignment element. </p>
+    ///   - [`hit(Option<Hit>)`](crate::operation::get_assignment::GetAssignmentOutput::hit): <p> The HIT associated with this assignment. The response includes one HIT element.</p>
     /// - On failure, responds with [`SdkError<GetAssignmentError>`](crate::operation::get_assignment::GetAssignmentError)
     pub fn get_assignment(&self) -> crate::operation::get_assignment::builders::GetAssignmentFluentBuilder {
         crate::operation::get_assignment::builders::GetAssignmentFluentBuilder::new(self.handle.clone())

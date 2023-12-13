@@ -8,11 +8,11 @@ pub struct Job {
     pub job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier you assigned to this job when it was created.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a device when the thing representing the device is added to a target group, even after the job was completed by all things originally in the group.</p><note>
+    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a device when the thing representing the device is added to a target group, even after the job was completed by all things originally in the group. </p> <note>
     /// <p>We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using continuous jobs, devices that join the group receive the job execution even after the job has been created.</p>
     /// </note>
     pub target_selection: ::std::option::Option<crate::types::TargetSelection>,
-    /// <p>The status of the job, one of <code>IN_PROGRESS</code>, <code>CANCELED</code>, <code>DELETION_IN_PROGRESS</code> or <code>COMPLETED</code>.</p>
+    /// <p>The status of the job, one of <code>IN_PROGRESS</code>, <code>CANCELED</code>, <code>DELETION_IN_PROGRESS</code> or <code>COMPLETED</code>. </p>
     pub status: ::std::option::Option<crate::types::JobStatus>,
     /// <p>Will be <code>true</code> if the job was canceled with the optional <code>force</code> parameter set to <code>true</code>.</p>
     pub force_canceled: ::std::option::Option<bool>,
@@ -42,7 +42,7 @@ pub struct Job {
     pub timeout_config: ::std::option::Option<crate::types::TimeoutConfig>,
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
     /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
-    /// <p><code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code></p><note>
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
     /// <p>The <code>namespaceId</code> feature is in public preview.</p>
     /// </note>
     pub namespace_id: ::std::option::Option<::std::string::String>,
@@ -50,8 +50,8 @@ pub struct Job {
     pub job_template_arn: ::std::option::Option<::std::string::String>,
     /// <p>The configuration for the criteria to retry the job.</p>
     pub job_executions_retry_config: ::std::option::Option<crate::types::JobExecutionsRetryConfig>,
-    /// <p>A key-value map that pairs the patterns that need to be replaced in a managed template job document schema. You can use the description of each key as a guidance to specify the inputs during runtime when creating a job.</p><note>
-    /// <p><code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates. This parameter can't be used with custom job templates or to create jobs from them.</p>
+    /// <p>A key-value map that pairs the patterns that need to be replaced in a managed template job document schema. You can use the description of each key as a guidance to specify the inputs during runtime when creating a job.</p> <note>
+    /// <p> <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates. This parameter can't be used with custom job templates or to create jobs from them.</p>
     /// </note>
     pub document_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Indicates whether a job is concurrent. Will be true when a job is rolling out new job executions or canceling previously created executions, otherwise false.</p>
@@ -60,8 +60,8 @@ pub struct Job {
     pub scheduling_config: ::std::option::Option<crate::types::SchedulingConfig>,
     /// <p>Displays the next seven maintenance window occurrences and their start times.</p>
     pub scheduled_job_rollouts: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledJobRollout>>,
-    /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes.</p>
-    /// <p><b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are allowed.</p>
+    /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes. </p>
+    /// <p> <b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are allowed.</p>
     pub destination_package_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Job {
@@ -73,13 +73,13 @@ impl Job {
     pub fn job_id(&self) -> ::std::option::Option<&str> {
         self.job_id.as_deref()
     }
-    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a device when the thing representing the device is added to a target group, even after the job was completed by all things originally in the group.</p><note>
+    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a device when the thing representing the device is added to a target group, even after the job was completed by all things originally in the group. </p> <note>
     /// <p>We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using continuous jobs, devices that join the group receive the job execution even after the job has been created.</p>
     /// </note>
     pub fn target_selection(&self) -> ::std::option::Option<&crate::types::TargetSelection> {
         self.target_selection.as_ref()
     }
-    /// <p>The status of the job, one of <code>IN_PROGRESS</code>, <code>CANCELED</code>, <code>DELETION_IN_PROGRESS</code> or <code>COMPLETED</code>.</p>
+    /// <p>The status of the job, one of <code>IN_PROGRESS</code>, <code>CANCELED</code>, <code>DELETION_IN_PROGRESS</code> or <code>COMPLETED</code>. </p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::JobStatus> {
         self.status.as_ref()
     }
@@ -139,7 +139,7 @@ impl Job {
     }
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
     /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
-    /// <p><code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code></p><note>
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
     /// <p>The <code>namespaceId</code> feature is in public preview.</p>
     /// </note>
     pub fn namespace_id(&self) -> ::std::option::Option<&str> {
@@ -153,8 +153,8 @@ impl Job {
     pub fn job_executions_retry_config(&self) -> ::std::option::Option<&crate::types::JobExecutionsRetryConfig> {
         self.job_executions_retry_config.as_ref()
     }
-    /// <p>A key-value map that pairs the patterns that need to be replaced in a managed template job document schema. You can use the description of each key as a guidance to specify the inputs during runtime when creating a job.</p><note>
-    /// <p><code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates. This parameter can't be used with custom job templates or to create jobs from them.</p>
+    /// <p>A key-value map that pairs the patterns that need to be replaced in a managed template job document schema. You can use the description of each key as a guidance to specify the inputs during runtime when creating a job.</p> <note>
+    /// <p> <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates. This parameter can't be used with custom job templates or to create jobs from them.</p>
     /// </note>
     pub fn document_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.document_parameters.as_ref()
@@ -173,8 +173,8 @@ impl Job {
     pub fn scheduled_job_rollouts(&self) -> &[crate::types::ScheduledJobRollout] {
         self.scheduled_job_rollouts.as_deref().unwrap_or_default()
     }
-    /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes.</p>
-    /// <p><b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are allowed.</p>
+    /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes. </p>
+    /// <p> <b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are allowed.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destination_package_versions.is_none()`.
     pub fn destination_package_versions(&self) -> &[::std::string::String] {
@@ -247,37 +247,37 @@ impl JobBuilder {
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_id
     }
-    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a device when the thing representing the device is added to a target group, even after the job was completed by all things originally in the group.</p><note>
+    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a device when the thing representing the device is added to a target group, even after the job was completed by all things originally in the group. </p> <note>
     /// <p>We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using continuous jobs, devices that join the group receive the job execution even after the job has been created.</p>
     /// </note>
     pub fn target_selection(mut self, input: crate::types::TargetSelection) -> Self {
         self.target_selection = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a device when the thing representing the device is added to a target group, even after the job was completed by all things originally in the group.</p><note>
+    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a device when the thing representing the device is added to a target group, even after the job was completed by all things originally in the group. </p> <note>
     /// <p>We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using continuous jobs, devices that join the group receive the job execution even after the job has been created.</p>
     /// </note>
     pub fn set_target_selection(mut self, input: ::std::option::Option<crate::types::TargetSelection>) -> Self {
         self.target_selection = input;
         self
     }
-    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a device when the thing representing the device is added to a target group, even after the job was completed by all things originally in the group.</p><note>
+    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a device when the thing representing the device is added to a target group, even after the job was completed by all things originally in the group. </p> <note>
     /// <p>We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using continuous jobs, devices that join the group receive the job execution even after the job has been created.</p>
     /// </note>
     pub fn get_target_selection(&self) -> &::std::option::Option<crate::types::TargetSelection> {
         &self.target_selection
     }
-    /// <p>The status of the job, one of <code>IN_PROGRESS</code>, <code>CANCELED</code>, <code>DELETION_IN_PROGRESS</code> or <code>COMPLETED</code>.</p>
+    /// <p>The status of the job, one of <code>IN_PROGRESS</code>, <code>CANCELED</code>, <code>DELETION_IN_PROGRESS</code> or <code>COMPLETED</code>. </p>
     pub fn status(mut self, input: crate::types::JobStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the job, one of <code>IN_PROGRESS</code>, <code>CANCELED</code>, <code>DELETION_IN_PROGRESS</code> or <code>COMPLETED</code>.</p>
+    /// <p>The status of the job, one of <code>IN_PROGRESS</code>, <code>CANCELED</code>, <code>DELETION_IN_PROGRESS</code> or <code>COMPLETED</code>. </p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of the job, one of <code>IN_PROGRESS</code>, <code>CANCELED</code>, <code>DELETION_IN_PROGRESS</code> or <code>COMPLETED</code>.</p>
+    /// <p>The status of the job, one of <code>IN_PROGRESS</code>, <code>CANCELED</code>, <code>DELETION_IN_PROGRESS</code> or <code>COMPLETED</code>. </p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
         &self.status
     }
@@ -471,7 +471,7 @@ impl JobBuilder {
     }
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
     /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
-    /// <p><code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code></p><note>
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
     /// <p>The <code>namespaceId</code> feature is in public preview.</p>
     /// </note>
     pub fn namespace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -480,7 +480,7 @@ impl JobBuilder {
     }
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
     /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
-    /// <p><code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code></p><note>
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
     /// <p>The <code>namespaceId</code> feature is in public preview.</p>
     /// </note>
     pub fn set_namespace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -489,7 +489,7 @@ impl JobBuilder {
     }
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
     /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
-    /// <p><code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code></p><note>
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
     /// <p>The <code>namespaceId</code> feature is in public preview.</p>
     /// </note>
     pub fn get_namespace_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -527,8 +527,8 @@ impl JobBuilder {
     ///
     /// To override the contents of this collection use [`set_document_parameters`](Self::set_document_parameters).
     ///
-    /// <p>A key-value map that pairs the patterns that need to be replaced in a managed template job document schema. You can use the description of each key as a guidance to specify the inputs during runtime when creating a job.</p><note>
-    /// <p><code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates. This parameter can't be used with custom job templates or to create jobs from them.</p>
+    /// <p>A key-value map that pairs the patterns that need to be replaced in a managed template job document schema. You can use the description of each key as a guidance to specify the inputs during runtime when creating a job.</p> <note>
+    /// <p> <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates. This parameter can't be used with custom job templates or to create jobs from them.</p>
     /// </note>
     pub fn document_parameters(
         mut self,
@@ -540,8 +540,8 @@ impl JobBuilder {
         self.document_parameters = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>A key-value map that pairs the patterns that need to be replaced in a managed template job document schema. You can use the description of each key as a guidance to specify the inputs during runtime when creating a job.</p><note>
-    /// <p><code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates. This parameter can't be used with custom job templates or to create jobs from them.</p>
+    /// <p>A key-value map that pairs the patterns that need to be replaced in a managed template job document schema. You can use the description of each key as a guidance to specify the inputs during runtime when creating a job.</p> <note>
+    /// <p> <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates. This parameter can't be used with custom job templates or to create jobs from them.</p>
     /// </note>
     pub fn set_document_parameters(
         mut self,
@@ -550,8 +550,8 @@ impl JobBuilder {
         self.document_parameters = input;
         self
     }
-    /// <p>A key-value map that pairs the patterns that need to be replaced in a managed template job document schema. You can use the description of each key as a guidance to specify the inputs during runtime when creating a job.</p><note>
-    /// <p><code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates. This parameter can't be used with custom job templates or to create jobs from them.</p>
+    /// <p>A key-value map that pairs the patterns that need to be replaced in a managed template job document schema. You can use the description of each key as a guidance to specify the inputs during runtime when creating a job.</p> <note>
+    /// <p> <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates. This parameter can't be used with custom job templates or to create jobs from them.</p>
     /// </note>
     pub fn get_document_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.document_parameters
@@ -608,22 +608,22 @@ impl JobBuilder {
     ///
     /// To override the contents of this collection use [`set_destination_package_versions`](Self::set_destination_package_versions).
     ///
-    /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes.</p>
-    /// <p><b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are allowed.</p>
+    /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes. </p>
+    /// <p> <b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are allowed.</p>
     pub fn destination_package_versions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.destination_package_versions.unwrap_or_default();
         v.push(input.into());
         self.destination_package_versions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes.</p>
-    /// <p><b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are allowed.</p>
+    /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes. </p>
+    /// <p> <b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are allowed.</p>
     pub fn set_destination_package_versions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.destination_package_versions = input;
         self
     }
-    /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes.</p>
-    /// <p><b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are allowed.</p>
+    /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes. </p>
+    /// <p> <b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are allowed.</p>
     pub fn get_destination_package_versions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.destination_package_versions
     }

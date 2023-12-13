@@ -12,7 +12,7 @@ pub struct ScheduledQueryDescription {
     pub query_string: ::std::string::String,
     /// <p>Creation time of the scheduled query.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>State of the scheduled query.</p>
+    /// <p>State of the scheduled query. </p>
     pub state: crate::types::ScheduledQueryState,
     /// <p>Last time the query was run.</p>
     pub previous_invocation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -30,7 +30,7 @@ pub struct ScheduledQueryDescription {
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Error-reporting configuration for the scheduled query.</p>
     pub error_report_configuration: ::std::option::Option<crate::types::ErrorReportConfiguration>,
-    /// <p>Runtime summary for the last scheduled query run.</p>
+    /// <p>Runtime summary for the last scheduled query run. </p>
     pub last_run_summary: ::std::option::Option<crate::types::ScheduledQueryRunSummary>,
     /// <p>Runtime summary for the last five failed scheduled query runs.</p>
     pub recently_failed_runs: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledQueryRunSummary>>,
@@ -55,7 +55,7 @@ impl ScheduledQueryDescription {
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>State of the scheduled query.</p>
+    /// <p>State of the scheduled query. </p>
     pub fn state(&self) -> &crate::types::ScheduledQueryState {
         &self.state
     }
@@ -91,7 +91,7 @@ impl ScheduledQueryDescription {
     pub fn error_report_configuration(&self) -> ::std::option::Option<&crate::types::ErrorReportConfiguration> {
         self.error_report_configuration.as_ref()
     }
-    /// <p>Runtime summary for the last scheduled query run.</p>
+    /// <p>Runtime summary for the last scheduled query run. </p>
     pub fn last_run_summary(&self) -> ::std::option::Option<&crate::types::ScheduledQueryRunSummary> {
         self.last_run_summary.as_ref()
     }
@@ -210,18 +210,18 @@ impl ScheduledQueryDescriptionBuilder {
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }
-    /// <p>State of the scheduled query.</p>
+    /// <p>State of the scheduled query. </p>
     /// This field is required.
     pub fn state(mut self, input: crate::types::ScheduledQueryState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
     }
-    /// <p>State of the scheduled query.</p>
+    /// <p>State of the scheduled query. </p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ScheduledQueryState>) -> Self {
         self.state = input;
         self
     }
-    /// <p>State of the scheduled query.</p>
+    /// <p>State of the scheduled query. </p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ScheduledQueryState> {
         &self.state
     }
@@ -339,17 +339,17 @@ impl ScheduledQueryDescriptionBuilder {
     pub fn get_error_report_configuration(&self) -> &::std::option::Option<crate::types::ErrorReportConfiguration> {
         &self.error_report_configuration
     }
-    /// <p>Runtime summary for the last scheduled query run.</p>
+    /// <p>Runtime summary for the last scheduled query run. </p>
     pub fn last_run_summary(mut self, input: crate::types::ScheduledQueryRunSummary) -> Self {
         self.last_run_summary = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Runtime summary for the last scheduled query run.</p>
+    /// <p>Runtime summary for the last scheduled query run. </p>
     pub fn set_last_run_summary(mut self, input: ::std::option::Option<crate::types::ScheduledQueryRunSummary>) -> Self {
         self.last_run_summary = input;
         self
     }
-    /// <p>Runtime summary for the last scheduled query run.</p>
+    /// <p>Runtime summary for the last scheduled query run. </p>
     pub fn get_last_run_summary(&self) -> &::std::option::Option<crate::types::ScheduledQueryRunSummary> {
         &self.last_run_summary
     }

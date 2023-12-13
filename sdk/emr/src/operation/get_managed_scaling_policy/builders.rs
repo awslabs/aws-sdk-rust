@@ -22,7 +22,7 @@ impl GetManagedScalingPolicyInputBuilder {
 }
 /// Fluent builder constructing a request to `GetManagedScalingPolicy`.
 ///
-/// <p>Fetches the attached managed scaling policy for an Amazon EMR cluster.</p>
+/// <p>Fetches the attached managed scaling policy for an Amazon EMR cluster. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetManagedScalingPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl GetManagedScalingPolicyFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Specifies the ID of the cluster for which the managed scaling policy will be fetched.</p>
+    /// <p>Specifies the ID of the cluster for which the managed scaling policy will be fetched. </p>
     pub fn cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_id(input.into());
         self
     }
-    /// <p>Specifies the ID of the cluster for which the managed scaling policy will be fetched.</p>
+    /// <p>Specifies the ID of the cluster for which the managed scaling policy will be fetched. </p>
     pub fn set_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_id(input);
         self
     }
-    /// <p>Specifies the ID of the cluster for which the managed scaling policy will be fetched.</p>
+    /// <p>Specifies the ID of the cluster for which the managed scaling policy will be fetched. </p>
     pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cluster_id()
     }

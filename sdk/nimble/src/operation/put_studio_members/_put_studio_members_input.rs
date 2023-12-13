@@ -9,7 +9,7 @@ pub struct PutStudioMembersInput {
     pub identity_store_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of members.</p>
     pub members: ::std::option::Option<::std::vec::Vec<crate::types::NewStudioMember>>,
-    /// <p>The studio ID.</p>
+    /// <p>The studio ID. </p>
     pub studio_id: ::std::option::Option<::std::string::String>,
 }
 impl PutStudioMembersInput {
@@ -27,7 +27,7 @@ impl PutStudioMembersInput {
     pub fn members(&self) -> &[crate::types::NewStudioMember] {
         self.members.as_deref().unwrap_or_default()
     }
-    /// <p>The studio ID.</p>
+    /// <p>The studio ID. </p>
     pub fn studio_id(&self) -> ::std::option::Option<&str> {
         self.studio_id.as_deref()
     }
@@ -98,18 +98,18 @@ impl PutStudioMembersInputBuilder {
     pub fn get_members(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NewStudioMember>> {
         &self.members
     }
-    /// <p>The studio ID.</p>
+    /// <p>The studio ID. </p>
     /// This field is required.
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The studio ID.</p>
+    /// <p>The studio ID. </p>
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.studio_id = input;
         self
     }
-    /// <p>The studio ID.</p>
+    /// <p>The studio ID. </p>
     pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.studio_id
     }

@@ -109,29 +109,27 @@ impl EnableLoggingFluentBuilder {
         self
     }
     /// <p>The identifier of the cluster on which logging is to be started.</p>
-    /// <p>Example: <code>examplecluster</code></p>
+    /// <p>Example: <code>examplecluster</code> </p>
     pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_identifier(input.into());
         self
     }
     /// <p>The identifier of the cluster on which logging is to be started.</p>
-    /// <p>Example: <code>examplecluster</code></p>
+    /// <p>Example: <code>examplecluster</code> </p>
     pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_identifier(input);
         self
     }
     /// <p>The identifier of the cluster on which logging is to be started.</p>
-    /// <p>Example: <code>examplecluster</code></p>
+    /// <p>Example: <code>examplecluster</code> </p>
     pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cluster_identifier()
     }
     /// <p>The name of an existing S3 bucket where the log files are to be stored.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be in the same region as the cluster</p></li>
-    /// <li>
-    /// <p>The cluster must have read bucket and put object permissions</p></li>
+    /// <li> <p>Must be in the same region as the cluster</p> </li>
+    /// <li> <p>The cluster must have read bucket and put object permissions</p> </li>
     /// </ul>
     pub fn bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bucket_name(input.into());
@@ -140,10 +138,8 @@ impl EnableLoggingFluentBuilder {
     /// <p>The name of an existing S3 bucket where the log files are to be stored.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be in the same region as the cluster</p></li>
-    /// <li>
-    /// <p>The cluster must have read bucket and put object permissions</p></li>
+    /// <li> <p>Must be in the same region as the cluster</p> </li>
+    /// <li> <p>The cluster must have read bucket and put object permissions</p> </li>
     /// </ul>
     pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bucket_name(input);
@@ -152,10 +148,8 @@ impl EnableLoggingFluentBuilder {
     /// <p>The name of an existing S3 bucket where the log files are to be stored.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be in the same region as the cluster</p></li>
-    /// <li>
-    /// <p>The cluster must have read bucket and put object permissions</p></li>
+    /// <li> <p>Must be in the same region as the cluster</p> </li>
+    /// <li> <p>The cluster must have read bucket and put object permissions</p> </li>
     /// </ul>
     pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_bucket_name()
@@ -163,22 +157,15 @@ impl EnableLoggingFluentBuilder {
     /// <p>The prefix applied to the log file names.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Cannot exceed 512 characters</p></li>
-    /// <li>
-    /// <p>Cannot contain spaces( ), double quotes ("), single quotes ('), a backslash (\), or control characters. The hexadecimal codes for invalid characters are:</p>
+    /// <li> <p>Cannot exceed 512 characters</p> </li>
+    /// <li> <p>Cannot contain spaces( ), double quotes ("), single quotes ('), a backslash (\), or control characters. The hexadecimal codes for invalid characters are: </p>
     /// <ul>
-    /// <li>
-    /// <p>x00 to x20</p></li>
-    /// <li>
-    /// <p>x22</p></li>
-    /// <li>
-    /// <p>x27</p></li>
-    /// <li>
-    /// <p>x5c</p></li>
-    /// <li>
-    /// <p>x7f or larger</p></li>
-    /// </ul></li>
+    /// <li> <p>x00 to x20</p> </li>
+    /// <li> <p>x22</p> </li>
+    /// <li> <p>x27</p> </li>
+    /// <li> <p>x5c</p> </li>
+    /// <li> <p>x7f or larger</p> </li>
+    /// </ul> </li>
     /// </ul>
     pub fn s3_key_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.s3_key_prefix(input.into());
@@ -187,22 +174,15 @@ impl EnableLoggingFluentBuilder {
     /// <p>The prefix applied to the log file names.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Cannot exceed 512 characters</p></li>
-    /// <li>
-    /// <p>Cannot contain spaces( ), double quotes ("), single quotes ('), a backslash (\), or control characters. The hexadecimal codes for invalid characters are:</p>
+    /// <li> <p>Cannot exceed 512 characters</p> </li>
+    /// <li> <p>Cannot contain spaces( ), double quotes ("), single quotes ('), a backslash (\), or control characters. The hexadecimal codes for invalid characters are: </p>
     /// <ul>
-    /// <li>
-    /// <p>x00 to x20</p></li>
-    /// <li>
-    /// <p>x22</p></li>
-    /// <li>
-    /// <p>x27</p></li>
-    /// <li>
-    /// <p>x5c</p></li>
-    /// <li>
-    /// <p>x7f or larger</p></li>
-    /// </ul></li>
+    /// <li> <p>x00 to x20</p> </li>
+    /// <li> <p>x22</p> </li>
+    /// <li> <p>x27</p> </li>
+    /// <li> <p>x5c</p> </li>
+    /// <li> <p>x7f or larger</p> </li>
+    /// </ul> </li>
     /// </ul>
     pub fn set_s3_key_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_s3_key_prefix(input);
@@ -211,22 +191,15 @@ impl EnableLoggingFluentBuilder {
     /// <p>The prefix applied to the log file names.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Cannot exceed 512 characters</p></li>
-    /// <li>
-    /// <p>Cannot contain spaces( ), double quotes ("), single quotes ('), a backslash (\), or control characters. The hexadecimal codes for invalid characters are:</p>
+    /// <li> <p>Cannot exceed 512 characters</p> </li>
+    /// <li> <p>Cannot contain spaces( ), double quotes ("), single quotes ('), a backslash (\), or control characters. The hexadecimal codes for invalid characters are: </p>
     /// <ul>
-    /// <li>
-    /// <p>x00 to x20</p></li>
-    /// <li>
-    /// <p>x22</p></li>
-    /// <li>
-    /// <p>x27</p></li>
-    /// <li>
-    /// <p>x5c</p></li>
-    /// <li>
-    /// <p>x7f or larger</p></li>
-    /// </ul></li>
+    /// <li> <p>x00 to x20</p> </li>
+    /// <li> <p>x22</p> </li>
+    /// <li> <p>x27</p> </li>
+    /// <li> <p>x5c</p> </li>
+    /// <li> <p>x7f or larger</p> </li>
+    /// </ul> </li>
     /// </ul>
     pub fn get_s3_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_s3_key_prefix()

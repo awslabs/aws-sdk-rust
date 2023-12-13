@@ -5,42 +5,44 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputTransformer {
     /// <p>Map of JSON paths to be extracted from the event. You can then insert these in the template in <code>InputTemplate</code> to produce the output you want to be sent to the target.</p>
-    /// <p><code>InputPathsMap</code> is an array key-value pairs, where each value is a valid JSON path. You can have as many as 100 key-value pairs. You must use JSON dot notation, not bracket notation.</p>
-    /// <p>The keys cannot start with "Amazon Web Services."</p>
+    /// <p> <code>InputPathsMap</code> is an array key-value pairs, where each value is a valid JSON path. You can have as many as 100 key-value pairs. You must use JSON dot notation, not bracket notation.</p>
+    /// <p>The keys cannot start with "Amazon Web Services." </p>
     pub input_paths_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Input template where you specify placeholders that will be filled with the values of the keys from <code>InputPathsMap</code> to customize the data sent to the target. Enclose each <code>InputPathsMaps</code> value in brackets: &lt;<i>value</i>&gt; The InputTemplate must be valid JSON.</p>
     /// <p>If <code>InputTemplate</code> is a JSON object (surrounded by curly braces), the following restrictions apply:</p>
     /// <ul>
-    /// <li>
-    /// <p>The placeholder cannot be used as an object key.</p></li>
+    /// <li> <p>The placeholder cannot be used as an object key.</p> </li>
     /// </ul>
     /// <p>The following example shows the syntax for using <code>InputPathsMap</code> and <code>InputTemplate</code>.</p>
-    /// <p><code> "InputTransformer":</code></p>
-    /// <p><code>{</code></p>
-    /// <p><code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code></p>
-    /// <p><code>"InputTemplate": "<instance>
+    /// <p> <code> "InputTransformer":</code> </p>
+    /// <p> <code>{</code> </p>
+    /// <p> <code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code> </p>
+    /// <p> <code>"InputTemplate": "
+    /// <instance>
     /// is in state
     /// <status>
     /// "
     /// </status>
-    /// </instance></code></p>
-    /// <p><code>}</code></p>
+    /// </instance></code> </p>
+    /// <p> <code>}</code> </p>
     /// <p>To have the <code>InputTemplate</code> include quote marks within a JSON string, escape each quote marks with a slash, as in the following example:</p>
-    /// <p><code> "InputTransformer":</code></p>
-    /// <p><code>{</code></p>
-    /// <p><code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code></p>
-    /// <p><code>"InputTemplate": "<instance>
+    /// <p> <code> "InputTransformer":</code> </p>
+    /// <p> <code>{</code> </p>
+    /// <p> <code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code> </p>
+    /// <p> <code>"InputTemplate": "
+    /// <instance>
     /// is in state \"
     /// <status>
     /// \""
     /// </status>
-    /// </instance></code></p>
-    /// <p><code>}</code></p>
+    /// </instance></code> </p>
+    /// <p> <code>}</code> </p>
     /// <p>The <code>InputTemplate</code> can also be valid JSON with varibles in quotes or out, as in the following example:</p>
-    /// <p><code> "InputTransformer":</code></p>
-    /// <p><code>{</code></p>
-    /// <p><code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code></p>
-    /// <p><code>"InputTemplate": '{"myInstance": <instance>
+    /// <p> <code> "InputTransformer":</code> </p>
+    /// <p> <code>{</code> </p>
+    /// <p> <code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code> </p>
+    /// <p> <code>"InputTemplate": '{"myInstance":
+    /// <instance>
     /// ,"myStatus": "
     /// <instance>
     /// is in state \"
@@ -48,50 +50,52 @@ pub struct InputTransformer {
     /// \""}'
     /// </status>
     /// </instance>
-    /// </instance></code></p>
-    /// <p><code>}</code></p>
+    /// </instance></code> </p>
+    /// <p> <code>}</code> </p>
     pub input_template: ::std::string::String,
 }
 impl InputTransformer {
     /// <p>Map of JSON paths to be extracted from the event. You can then insert these in the template in <code>InputTemplate</code> to produce the output you want to be sent to the target.</p>
-    /// <p><code>InputPathsMap</code> is an array key-value pairs, where each value is a valid JSON path. You can have as many as 100 key-value pairs. You must use JSON dot notation, not bracket notation.</p>
-    /// <p>The keys cannot start with "Amazon Web Services."</p>
+    /// <p> <code>InputPathsMap</code> is an array key-value pairs, where each value is a valid JSON path. You can have as many as 100 key-value pairs. You must use JSON dot notation, not bracket notation.</p>
+    /// <p>The keys cannot start with "Amazon Web Services." </p>
     pub fn input_paths_map(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.input_paths_map.as_ref()
     }
     /// <p>Input template where you specify placeholders that will be filled with the values of the keys from <code>InputPathsMap</code> to customize the data sent to the target. Enclose each <code>InputPathsMaps</code> value in brackets: &lt;<i>value</i>&gt; The InputTemplate must be valid JSON.</p>
     /// <p>If <code>InputTemplate</code> is a JSON object (surrounded by curly braces), the following restrictions apply:</p>
     /// <ul>
-    /// <li>
-    /// <p>The placeholder cannot be used as an object key.</p></li>
+    /// <li> <p>The placeholder cannot be used as an object key.</p> </li>
     /// </ul>
     /// <p>The following example shows the syntax for using <code>InputPathsMap</code> and <code>InputTemplate</code>.</p>
-    /// <p><code> "InputTransformer":</code></p>
-    /// <p><code>{</code></p>
-    /// <p><code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code></p>
-    /// <p><code>"InputTemplate": "<instance>
+    /// <p> <code> "InputTransformer":</code> </p>
+    /// <p> <code>{</code> </p>
+    /// <p> <code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code> </p>
+    /// <p> <code>"InputTemplate": "
+    /// <instance>
     /// is in state
     /// <status>
     /// "
     /// </status>
-    /// </instance></code></p>
-    /// <p><code>}</code></p>
+    /// </instance></code> </p>
+    /// <p> <code>}</code> </p>
     /// <p>To have the <code>InputTemplate</code> include quote marks within a JSON string, escape each quote marks with a slash, as in the following example:</p>
-    /// <p><code> "InputTransformer":</code></p>
-    /// <p><code>{</code></p>
-    /// <p><code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code></p>
-    /// <p><code>"InputTemplate": "<instance>
+    /// <p> <code> "InputTransformer":</code> </p>
+    /// <p> <code>{</code> </p>
+    /// <p> <code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code> </p>
+    /// <p> <code>"InputTemplate": "
+    /// <instance>
     /// is in state \"
     /// <status>
     /// \""
     /// </status>
-    /// </instance></code></p>
-    /// <p><code>}</code></p>
+    /// </instance></code> </p>
+    /// <p> <code>}</code> </p>
     /// <p>The <code>InputTemplate</code> can also be valid JSON with varibles in quotes or out, as in the following example:</p>
-    /// <p><code> "InputTransformer":</code></p>
-    /// <p><code>{</code></p>
-    /// <p><code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code></p>
-    /// <p><code>"InputTemplate": '{"myInstance": <instance>
+    /// <p> <code> "InputTransformer":</code> </p>
+    /// <p> <code>{</code> </p>
+    /// <p> <code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code> </p>
+    /// <p> <code>"InputTemplate": '{"myInstance":
+    /// <instance>
     /// ,"myStatus": "
     /// <instance>
     /// is in state \"
@@ -99,8 +103,8 @@ impl InputTransformer {
     /// \""}'
     /// </status>
     /// </instance>
-    /// </instance></code></p>
-    /// <p><code>}</code></p>
+    /// </instance></code> </p>
+    /// <p> <code>}</code> </p>
     pub fn input_template(&self) -> &str {
         use std::ops::Deref;
         self.input_template.deref()
@@ -126,8 +130,8 @@ impl InputTransformerBuilder {
     /// To override the contents of this collection use [`set_input_paths_map`](Self::set_input_paths_map).
     ///
     /// <p>Map of JSON paths to be extracted from the event. You can then insert these in the template in <code>InputTemplate</code> to produce the output you want to be sent to the target.</p>
-    /// <p><code>InputPathsMap</code> is an array key-value pairs, where each value is a valid JSON path. You can have as many as 100 key-value pairs. You must use JSON dot notation, not bracket notation.</p>
-    /// <p>The keys cannot start with "Amazon Web Services."</p>
+    /// <p> <code>InputPathsMap</code> is an array key-value pairs, where each value is a valid JSON path. You can have as many as 100 key-value pairs. You must use JSON dot notation, not bracket notation.</p>
+    /// <p>The keys cannot start with "Amazon Web Services." </p>
     pub fn input_paths_map(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -139,8 +143,8 @@ impl InputTransformerBuilder {
         self
     }
     /// <p>Map of JSON paths to be extracted from the event. You can then insert these in the template in <code>InputTemplate</code> to produce the output you want to be sent to the target.</p>
-    /// <p><code>InputPathsMap</code> is an array key-value pairs, where each value is a valid JSON path. You can have as many as 100 key-value pairs. You must use JSON dot notation, not bracket notation.</p>
-    /// <p>The keys cannot start with "Amazon Web Services."</p>
+    /// <p> <code>InputPathsMap</code> is an array key-value pairs, where each value is a valid JSON path. You can have as many as 100 key-value pairs. You must use JSON dot notation, not bracket notation.</p>
+    /// <p>The keys cannot start with "Amazon Web Services." </p>
     pub fn set_input_paths_map(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -149,44 +153,46 @@ impl InputTransformerBuilder {
         self
     }
     /// <p>Map of JSON paths to be extracted from the event. You can then insert these in the template in <code>InputTemplate</code> to produce the output you want to be sent to the target.</p>
-    /// <p><code>InputPathsMap</code> is an array key-value pairs, where each value is a valid JSON path. You can have as many as 100 key-value pairs. You must use JSON dot notation, not bracket notation.</p>
-    /// <p>The keys cannot start with "Amazon Web Services."</p>
+    /// <p> <code>InputPathsMap</code> is an array key-value pairs, where each value is a valid JSON path. You can have as many as 100 key-value pairs. You must use JSON dot notation, not bracket notation.</p>
+    /// <p>The keys cannot start with "Amazon Web Services." </p>
     pub fn get_input_paths_map(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.input_paths_map
     }
     /// <p>Input template where you specify placeholders that will be filled with the values of the keys from <code>InputPathsMap</code> to customize the data sent to the target. Enclose each <code>InputPathsMaps</code> value in brackets: &lt;<i>value</i>&gt; The InputTemplate must be valid JSON.</p>
     /// <p>If <code>InputTemplate</code> is a JSON object (surrounded by curly braces), the following restrictions apply:</p>
     /// <ul>
-    /// <li>
-    /// <p>The placeholder cannot be used as an object key.</p></li>
+    /// <li> <p>The placeholder cannot be used as an object key.</p> </li>
     /// </ul>
     /// <p>The following example shows the syntax for using <code>InputPathsMap</code> and <code>InputTemplate</code>.</p>
-    /// <p><code> "InputTransformer":</code></p>
-    /// <p><code>{</code></p>
-    /// <p><code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code></p>
-    /// <p><code>"InputTemplate": "<instance>
+    /// <p> <code> "InputTransformer":</code> </p>
+    /// <p> <code>{</code> </p>
+    /// <p> <code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code> </p>
+    /// <p> <code>"InputTemplate": "
+    /// <instance>
     /// is in state
     /// <status>
     /// "
     /// </status>
-    /// </instance></code></p>
-    /// <p><code>}</code></p>
+    /// </instance></code> </p>
+    /// <p> <code>}</code> </p>
     /// <p>To have the <code>InputTemplate</code> include quote marks within a JSON string, escape each quote marks with a slash, as in the following example:</p>
-    /// <p><code> "InputTransformer":</code></p>
-    /// <p><code>{</code></p>
-    /// <p><code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code></p>
-    /// <p><code>"InputTemplate": "<instance>
+    /// <p> <code> "InputTransformer":</code> </p>
+    /// <p> <code>{</code> </p>
+    /// <p> <code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code> </p>
+    /// <p> <code>"InputTemplate": "
+    /// <instance>
     /// is in state \"
     /// <status>
     /// \""
     /// </status>
-    /// </instance></code></p>
-    /// <p><code>}</code></p>
+    /// </instance></code> </p>
+    /// <p> <code>}</code> </p>
     /// <p>The <code>InputTemplate</code> can also be valid JSON with varibles in quotes or out, as in the following example:</p>
-    /// <p><code> "InputTransformer":</code></p>
-    /// <p><code>{</code></p>
-    /// <p><code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code></p>
-    /// <p><code>"InputTemplate": '{"myInstance": <instance>
+    /// <p> <code> "InputTransformer":</code> </p>
+    /// <p> <code>{</code> </p>
+    /// <p> <code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code> </p>
+    /// <p> <code>"InputTemplate": '{"myInstance":
+    /// <instance>
     /// ,"myStatus": "
     /// <instance>
     /// is in state \"
@@ -194,8 +200,8 @@ impl InputTransformerBuilder {
     /// \""}'
     /// </status>
     /// </instance>
-    /// </instance></code></p>
-    /// <p><code>}</code></p>
+    /// </instance></code> </p>
+    /// <p> <code>}</code> </p>
     /// This field is required.
     pub fn input_template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_template = ::std::option::Option::Some(input.into());
@@ -204,36 +210,38 @@ impl InputTransformerBuilder {
     /// <p>Input template where you specify placeholders that will be filled with the values of the keys from <code>InputPathsMap</code> to customize the data sent to the target. Enclose each <code>InputPathsMaps</code> value in brackets: &lt;<i>value</i>&gt; The InputTemplate must be valid JSON.</p>
     /// <p>If <code>InputTemplate</code> is a JSON object (surrounded by curly braces), the following restrictions apply:</p>
     /// <ul>
-    /// <li>
-    /// <p>The placeholder cannot be used as an object key.</p></li>
+    /// <li> <p>The placeholder cannot be used as an object key.</p> </li>
     /// </ul>
     /// <p>The following example shows the syntax for using <code>InputPathsMap</code> and <code>InputTemplate</code>.</p>
-    /// <p><code> "InputTransformer":</code></p>
-    /// <p><code>{</code></p>
-    /// <p><code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code></p>
-    /// <p><code>"InputTemplate": "<instance>
+    /// <p> <code> "InputTransformer":</code> </p>
+    /// <p> <code>{</code> </p>
+    /// <p> <code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code> </p>
+    /// <p> <code>"InputTemplate": "
+    /// <instance>
     /// is in state
     /// <status>
     /// "
     /// </status>
-    /// </instance></code></p>
-    /// <p><code>}</code></p>
+    /// </instance></code> </p>
+    /// <p> <code>}</code> </p>
     /// <p>To have the <code>InputTemplate</code> include quote marks within a JSON string, escape each quote marks with a slash, as in the following example:</p>
-    /// <p><code> "InputTransformer":</code></p>
-    /// <p><code>{</code></p>
-    /// <p><code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code></p>
-    /// <p><code>"InputTemplate": "<instance>
+    /// <p> <code> "InputTransformer":</code> </p>
+    /// <p> <code>{</code> </p>
+    /// <p> <code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code> </p>
+    /// <p> <code>"InputTemplate": "
+    /// <instance>
     /// is in state \"
     /// <status>
     /// \""
     /// </status>
-    /// </instance></code></p>
-    /// <p><code>}</code></p>
+    /// </instance></code> </p>
+    /// <p> <code>}</code> </p>
     /// <p>The <code>InputTemplate</code> can also be valid JSON with varibles in quotes or out, as in the following example:</p>
-    /// <p><code> "InputTransformer":</code></p>
-    /// <p><code>{</code></p>
-    /// <p><code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code></p>
-    /// <p><code>"InputTemplate": '{"myInstance": <instance>
+    /// <p> <code> "InputTransformer":</code> </p>
+    /// <p> <code>{</code> </p>
+    /// <p> <code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code> </p>
+    /// <p> <code>"InputTemplate": '{"myInstance":
+    /// <instance>
     /// ,"myStatus": "
     /// <instance>
     /// is in state \"
@@ -241,8 +249,8 @@ impl InputTransformerBuilder {
     /// \""}'
     /// </status>
     /// </instance>
-    /// </instance></code></p>
-    /// <p><code>}</code></p>
+    /// </instance></code> </p>
+    /// <p> <code>}</code> </p>
     pub fn set_input_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input_template = input;
         self
@@ -250,36 +258,38 @@ impl InputTransformerBuilder {
     /// <p>Input template where you specify placeholders that will be filled with the values of the keys from <code>InputPathsMap</code> to customize the data sent to the target. Enclose each <code>InputPathsMaps</code> value in brackets: &lt;<i>value</i>&gt; The InputTemplate must be valid JSON.</p>
     /// <p>If <code>InputTemplate</code> is a JSON object (surrounded by curly braces), the following restrictions apply:</p>
     /// <ul>
-    /// <li>
-    /// <p>The placeholder cannot be used as an object key.</p></li>
+    /// <li> <p>The placeholder cannot be used as an object key.</p> </li>
     /// </ul>
     /// <p>The following example shows the syntax for using <code>InputPathsMap</code> and <code>InputTemplate</code>.</p>
-    /// <p><code> "InputTransformer":</code></p>
-    /// <p><code>{</code></p>
-    /// <p><code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code></p>
-    /// <p><code>"InputTemplate": "<instance>
+    /// <p> <code> "InputTransformer":</code> </p>
+    /// <p> <code>{</code> </p>
+    /// <p> <code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code> </p>
+    /// <p> <code>"InputTemplate": "
+    /// <instance>
     /// is in state
     /// <status>
     /// "
     /// </status>
-    /// </instance></code></p>
-    /// <p><code>}</code></p>
+    /// </instance></code> </p>
+    /// <p> <code>}</code> </p>
     /// <p>To have the <code>InputTemplate</code> include quote marks within a JSON string, escape each quote marks with a slash, as in the following example:</p>
-    /// <p><code> "InputTransformer":</code></p>
-    /// <p><code>{</code></p>
-    /// <p><code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code></p>
-    /// <p><code>"InputTemplate": "<instance>
+    /// <p> <code> "InputTransformer":</code> </p>
+    /// <p> <code>{</code> </p>
+    /// <p> <code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code> </p>
+    /// <p> <code>"InputTemplate": "
+    /// <instance>
     /// is in state \"
     /// <status>
     /// \""
     /// </status>
-    /// </instance></code></p>
-    /// <p><code>}</code></p>
+    /// </instance></code> </p>
+    /// <p> <code>}</code> </p>
     /// <p>The <code>InputTemplate</code> can also be valid JSON with varibles in quotes or out, as in the following example:</p>
-    /// <p><code> "InputTransformer":</code></p>
-    /// <p><code>{</code></p>
-    /// <p><code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code></p>
-    /// <p><code>"InputTemplate": '{"myInstance": <instance>
+    /// <p> <code> "InputTransformer":</code> </p>
+    /// <p> <code>{</code> </p>
+    /// <p> <code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code> </p>
+    /// <p> <code>"InputTemplate": '{"myInstance":
+    /// <instance>
     /// ,"myStatus": "
     /// <instance>
     /// is in state \"
@@ -287,8 +297,8 @@ impl InputTransformerBuilder {
     /// \""}'
     /// </status>
     /// </instance>
-    /// </instance></code></p>
-    /// <p><code>}</code></p>
+    /// </instance></code> </p>
+    /// <p> <code>}</code> </p>
     pub fn get_input_template(&self) -> &::std::option::Option<::std::string::String> {
         &self.input_template
     }

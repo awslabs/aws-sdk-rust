@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`resource_name(impl Into<String>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::resource_name) / [`set_resource_name(Option<String>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::set_resource_name):<br>required: **true**<br><p>The name of the DAX resource to which tags should be added.</p><br>
-    ///   - [`tags(Tag)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::tags) / [`set_tags(Option<Vec::<Tag>>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::set_tags):<br>required: **true**<br><p>The tags to be assigned to the DAX resource.</p><br>
+    ///   - [`tags(Tag)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::tags) / [`set_tags(Option<Vec::<Tag>>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::set_tags):<br>required: **true**<br><p>The tags to be assigned to the DAX resource. </p><br>
     /// - On success, responds with [`TagResourceOutput`](crate::operation::tag_resource::TagResourceOutput) with field(s):
     ///   - [`tags(Option<Vec::<Tag>>)`](crate::operation::tag_resource::TagResourceOutput::tags): <p>The list of tags that are associated with the DAX resource.</p>
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::operation::tag_resource::TagResourceError)

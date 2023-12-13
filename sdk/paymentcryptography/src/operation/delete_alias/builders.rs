@@ -24,17 +24,13 @@ impl DeleteAliasInputBuilder {
 ///
 /// <p>Deletes the alias, but doesn't affect the underlying key.</p>
 /// <p>Each key can have multiple aliases. To get the aliases of all keys, use the <code>ListAliases</code> operation. To change the alias of a key, first use <code>DeleteAlias</code> to delete the current alias and then use <code>CreateAlias</code> to create a new alias. To associate an existing alias with a different key, call <code>UpdateAlias</code>.</p>
-/// <p><b>Cross-account use:</b> This operation can't be used across different Amazon Web Services accounts.</p>
-/// <p><b>Related operations:</b></p>
+/// <p> <b>Cross-account use:</b> This operation can't be used across different Amazon Web Services accounts.</p>
+/// <p> <b>Related operations:</b> </p>
 /// <ul>
-/// <li>
-/// <p><code>CreateAlias</code></p></li>
-/// <li>
-/// <p><code>GetAlias</code></p></li>
-/// <li>
-/// <p><code>ListAliases</code></p></li>
-/// <li>
-/// <p><code>UpdateAlias</code></p></li>
+/// <li> <p> <code>CreateAlias</code> </p> </li>
+/// <li> <p> <code>GetAlias</code> </p> </li>
+/// <li> <p> <code>ListAliases</code> </p> </li>
+/// <li> <p> <code>UpdateAlias</code> </p> </li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAliasFluentBuilder {

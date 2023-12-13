@@ -22,7 +22,7 @@ impl GetModelManifestInputBuilder {
 }
 /// Fluent builder constructing a request to `GetModelManifest`.
 ///
-/// <p>Retrieves information about a vehicle model (model manifest).</p>
+/// <p> Retrieves information about a vehicle model (model manifest). </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetModelManifestFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl GetModelManifestFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the vehicle model to retrieve information about.</p>
+    /// <p> The name of the vehicle model to retrieve information about. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of the vehicle model to retrieve information about.</p>
+    /// <p> The name of the vehicle model to retrieve information about. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name of the vehicle model to retrieve information about.</p>
+    /// <p> The name of the vehicle model to retrieve information about. </p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }

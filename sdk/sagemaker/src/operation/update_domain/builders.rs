@@ -201,10 +201,8 @@ impl UpdateDomainFluentBuilder {
     }
     /// <p>Specifies the VPC used for non-EFS traffic.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access.</p></li>
-    /// <li>
-    /// <p><code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets.</p></li>
+    /// <li> <p> <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access.</p> </li>
+    /// <li> <p> <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets.</p> </li>
     /// </ul>
     /// <p>This configuration can only be modified if there are no apps in the <code>InService</code>, <code>Pending</code>, or <code>Deleting</code> state. The configuration cannot be updated if <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is already set or <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided as part of the same request.</p>
     pub fn app_network_access_type(mut self, input: crate::types::AppNetworkAccessType) -> Self {
@@ -213,10 +211,8 @@ impl UpdateDomainFluentBuilder {
     }
     /// <p>Specifies the VPC used for non-EFS traffic.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access.</p></li>
-    /// <li>
-    /// <p><code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets.</p></li>
+    /// <li> <p> <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access.</p> </li>
+    /// <li> <p> <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets.</p> </li>
     /// </ul>
     /// <p>This configuration can only be modified if there are no apps in the <code>InService</code>, <code>Pending</code>, or <code>Deleting</code> state. The configuration cannot be updated if <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is already set or <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided as part of the same request.</p>
     pub fn set_app_network_access_type(mut self, input: ::std::option::Option<crate::types::AppNetworkAccessType>) -> Self {
@@ -225,10 +221,8 @@ impl UpdateDomainFluentBuilder {
     }
     /// <p>Specifies the VPC used for non-EFS traffic.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access.</p></li>
-    /// <li>
-    /// <p><code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets.</p></li>
+    /// <li> <p> <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access.</p> </li>
+    /// <li> <p> <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets.</p> </li>
     /// </ul>
     /// <p>This configuration can only be modified if there are no apps in the <code>InService</code>, <code>Pending</code>, or <code>Deleting</code> state. The configuration cannot be updated if <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is already set or <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided as part of the same request.</p>
     pub fn get_app_network_access_type(&self) -> &::std::option::Option<crate::types::AppNetworkAccessType> {

@@ -20,7 +20,7 @@ pub struct ActivityTaskScheduledEventAttributes {
     pub start_to_close_timeout: ::std::option::Option<::std::string::String>,
     /// <p>The task list in which the activity task has been scheduled.</p>
     pub task_list: ::std::option::Option<crate::types::TaskList>,
-    /// <p>The priority to assign to the scheduled activity task. If set, this overrides any default priority value that was assigned when the activity type was registered.</p>
+    /// <p> The priority to assign to the scheduled activity task. If set, this overrides any default priority value that was assigned when the activity type was registered.</p>
     /// <p>Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
     /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     pub task_priority: ::std::option::Option<::std::string::String>,
@@ -63,7 +63,7 @@ impl ActivityTaskScheduledEventAttributes {
     pub fn task_list(&self) -> ::std::option::Option<&crate::types::TaskList> {
         self.task_list.as_ref()
     }
-    /// <p>The priority to assign to the scheduled activity task. If set, this overrides any default priority value that was assigned when the activity type was registered.</p>
+    /// <p> The priority to assign to the scheduled activity task. If set, this overrides any default priority value that was assigned when the activity type was registered.</p>
     /// <p>Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
     /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     pub fn task_priority(&self) -> ::std::option::Option<&str> {
@@ -217,21 +217,21 @@ impl ActivityTaskScheduledEventAttributesBuilder {
     pub fn get_task_list(&self) -> &::std::option::Option<crate::types::TaskList> {
         &self.task_list
     }
-    /// <p>The priority to assign to the scheduled activity task. If set, this overrides any default priority value that was assigned when the activity type was registered.</p>
+    /// <p> The priority to assign to the scheduled activity task. If set, this overrides any default priority value that was assigned when the activity type was registered.</p>
     /// <p>Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
     /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     pub fn task_priority(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_priority = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The priority to assign to the scheduled activity task. If set, this overrides any default priority value that was assigned when the activity type was registered.</p>
+    /// <p> The priority to assign to the scheduled activity task. If set, this overrides any default priority value that was assigned when the activity type was registered.</p>
     /// <p>Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
     /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     pub fn set_task_priority(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_priority = input;
         self
     }
-    /// <p>The priority to assign to the scheduled activity task. If set, this overrides any default priority value that was assigned when the activity type was registered.</p>
+    /// <p> The priority to assign to the scheduled activity task. If set, this overrides any default priority value that was assigned when the activity type was registered.</p>
     /// <p>Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
     /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     pub fn get_task_priority(&self) -> &::std::option::Option<::std::string::String> {

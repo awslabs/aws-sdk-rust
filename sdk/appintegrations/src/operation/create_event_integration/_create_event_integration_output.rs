@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateEventIntegrationOutput {
-    /// <p>The Amazon Resource Name (ARN) of the event integration.</p>
+    /// <p>The Amazon Resource Name (ARN) of the event integration. </p>
     pub event_integration_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateEventIntegrationOutput {
-    /// <p>The Amazon Resource Name (ARN) of the event integration.</p>
+    /// <p>The Amazon Resource Name (ARN) of the event integration. </p>
     pub fn event_integration_arn(&self) -> ::std::option::Option<&str> {
         self.event_integration_arn.as_deref()
     }
@@ -33,17 +33,17 @@ pub struct CreateEventIntegrationOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateEventIntegrationOutputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the event integration.</p>
+    /// <p>The Amazon Resource Name (ARN) of the event integration. </p>
     pub fn event_integration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_integration_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the event integration.</p>
+    /// <p>The Amazon Resource Name (ARN) of the event integration. </p>
     pub fn set_event_integration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_integration_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the event integration.</p>
+    /// <p>The Amazon Resource Name (ARN) of the event integration. </p>
     pub fn get_event_integration_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_integration_arn
     }

@@ -9,7 +9,7 @@ pub struct AwsApiGatewayV2RouteSettings {
     /// <p>The logging level. The logging level affects the log entries that are pushed to CloudWatch Logs. Supported only for WebSocket APIs.</p>
     /// <p>If the logging level is <code>ERROR</code>, then the logs only include error-level entries.</p>
     /// <p>If the logging level is <code>INFO</code>, then the logs include both <code>ERROR</code> events and extra informational events.</p>
-    /// <p>Valid values: <code>OFF</code> | <code>ERROR</code> | <code>INFO</code></p>
+    /// <p>Valid values: <code>OFF</code> | <code>ERROR</code> | <code>INFO</code> </p>
     pub logging_level: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether data trace logging is enabled. Data trace logging affects the log entries that are pushed to CloudWatch Logs. Supported only for WebSocket APIs.</p>
     pub data_trace_enabled: ::std::option::Option<bool>,
@@ -26,7 +26,7 @@ impl AwsApiGatewayV2RouteSettings {
     /// <p>The logging level. The logging level affects the log entries that are pushed to CloudWatch Logs. Supported only for WebSocket APIs.</p>
     /// <p>If the logging level is <code>ERROR</code>, then the logs only include error-level entries.</p>
     /// <p>If the logging level is <code>INFO</code>, then the logs include both <code>ERROR</code> events and extra informational events.</p>
-    /// <p>Valid values: <code>OFF</code> | <code>ERROR</code> | <code>INFO</code></p>
+    /// <p>Valid values: <code>OFF</code> | <code>ERROR</code> | <code>INFO</code> </p>
     pub fn logging_level(&self) -> ::std::option::Option<&str> {
         self.logging_level.as_deref()
     }
@@ -78,7 +78,7 @@ impl AwsApiGatewayV2RouteSettingsBuilder {
     /// <p>The logging level. The logging level affects the log entries that are pushed to CloudWatch Logs. Supported only for WebSocket APIs.</p>
     /// <p>If the logging level is <code>ERROR</code>, then the logs only include error-level entries.</p>
     /// <p>If the logging level is <code>INFO</code>, then the logs include both <code>ERROR</code> events and extra informational events.</p>
-    /// <p>Valid values: <code>OFF</code> | <code>ERROR</code> | <code>INFO</code></p>
+    /// <p>Valid values: <code>OFF</code> | <code>ERROR</code> | <code>INFO</code> </p>
     pub fn logging_level(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.logging_level = ::std::option::Option::Some(input.into());
         self
@@ -86,7 +86,7 @@ impl AwsApiGatewayV2RouteSettingsBuilder {
     /// <p>The logging level. The logging level affects the log entries that are pushed to CloudWatch Logs. Supported only for WebSocket APIs.</p>
     /// <p>If the logging level is <code>ERROR</code>, then the logs only include error-level entries.</p>
     /// <p>If the logging level is <code>INFO</code>, then the logs include both <code>ERROR</code> events and extra informational events.</p>
-    /// <p>Valid values: <code>OFF</code> | <code>ERROR</code> | <code>INFO</code></p>
+    /// <p>Valid values: <code>OFF</code> | <code>ERROR</code> | <code>INFO</code> </p>
     pub fn set_logging_level(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.logging_level = input;
         self
@@ -94,7 +94,7 @@ impl AwsApiGatewayV2RouteSettingsBuilder {
     /// <p>The logging level. The logging level affects the log entries that are pushed to CloudWatch Logs. Supported only for WebSocket APIs.</p>
     /// <p>If the logging level is <code>ERROR</code>, then the logs only include error-level entries.</p>
     /// <p>If the logging level is <code>INFO</code>, then the logs include both <code>ERROR</code> events and extra informational events.</p>
-    /// <p>Valid values: <code>OFF</code> | <code>ERROR</code> | <code>INFO</code></p>
+    /// <p>Valid values: <code>OFF</code> | <code>ERROR</code> | <code>INFO</code> </p>
     pub fn get_logging_level(&self) -> &::std::option::Option<::std::string::String> {
         &self.logging_level
     }

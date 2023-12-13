@@ -4,9 +4,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CsvConfiguration {
-    /// <p>Column separator can be one of comma (','), pipe ('|), semicolon (';'), tab('/t'), or blank space (' ').</p>
+    /// <p>Column separator can be one of comma (','), pipe ('|), semicolon (';'), tab('/t'), or blank space (' '). </p>
     pub column_separator: ::std::option::Option<::std::string::String>,
-    /// <p>Escape character can be one of</p>
+    /// <p>Escape character can be one of </p>
     pub escape_char: ::std::option::Option<::std::string::String>,
     /// <p>Can be single quote (') or double quote (").</p>
     pub quote_char: ::std::option::Option<::std::string::String>,
@@ -16,11 +16,11 @@ pub struct CsvConfiguration {
     pub trim_white_space: ::std::option::Option<bool>,
 }
 impl CsvConfiguration {
-    /// <p>Column separator can be one of comma (','), pipe ('|), semicolon (';'), tab('/t'), or blank space (' ').</p>
+    /// <p>Column separator can be one of comma (','), pipe ('|), semicolon (';'), tab('/t'), or blank space (' '). </p>
     pub fn column_separator(&self) -> ::std::option::Option<&str> {
         self.column_separator.as_deref()
     }
-    /// <p>Escape character can be one of</p>
+    /// <p>Escape character can be one of </p>
     pub fn escape_char(&self) -> ::std::option::Option<&str> {
         self.escape_char.as_deref()
     }
@@ -55,31 +55,31 @@ pub struct CsvConfigurationBuilder {
     pub(crate) trim_white_space: ::std::option::Option<bool>,
 }
 impl CsvConfigurationBuilder {
-    /// <p>Column separator can be one of comma (','), pipe ('|), semicolon (';'), tab('/t'), or blank space (' ').</p>
+    /// <p>Column separator can be one of comma (','), pipe ('|), semicolon (';'), tab('/t'), or blank space (' '). </p>
     pub fn column_separator(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.column_separator = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Column separator can be one of comma (','), pipe ('|), semicolon (';'), tab('/t'), or blank space (' ').</p>
+    /// <p>Column separator can be one of comma (','), pipe ('|), semicolon (';'), tab('/t'), or blank space (' '). </p>
     pub fn set_column_separator(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.column_separator = input;
         self
     }
-    /// <p>Column separator can be one of comma (','), pipe ('|), semicolon (';'), tab('/t'), or blank space (' ').</p>
+    /// <p>Column separator can be one of comma (','), pipe ('|), semicolon (';'), tab('/t'), or blank space (' '). </p>
     pub fn get_column_separator(&self) -> &::std::option::Option<::std::string::String> {
         &self.column_separator
     }
-    /// <p>Escape character can be one of</p>
+    /// <p>Escape character can be one of </p>
     pub fn escape_char(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.escape_char = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Escape character can be one of</p>
+    /// <p>Escape character can be one of </p>
     pub fn set_escape_char(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.escape_char = input;
         self
     }
-    /// <p>Escape character can be one of</p>
+    /// <p>Escape character can be one of </p>
     pub fn get_escape_char(&self) -> &::std::option::Option<::std::string::String> {
         &self.escape_char
     }

@@ -3,10 +3,8 @@
 /// <p>Contains information for an asset property aggregate entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyAggregates.html">BatchGetAssetPropertyAggregates</a> API.</p>
 /// <p>To identify an asset property, you must specify one of the following:</p>
 /// <ul>
-/// <li>
-/// <p>The <code>assetId</code> and <code>propertyId</code> of an asset property.</p></li>
-/// <li>
-/// <p>A <code>propertyAlias</code>, which is a data stream alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p></li>
+/// <li> <p>The <code>assetId</code> and <code>propertyId</code> of an asset property.</p> </li>
+/// <li> <p>A <code>propertyAlias</code>, which is a data stream alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
@@ -30,7 +28,7 @@ pub struct BatchGetAssetPropertyAggregatesEntry {
     /// <p>The quality by which to filter asset data.</p>
     pub qualities: ::std::option::Option<::std::vec::Vec<crate::types::Quality>>,
     /// <p>The chronological sorting order of the requested information.</p>
-    /// <p>Default: <code>ASCENDING</code></p>
+    /// <p>Default: <code>ASCENDING</code> </p>
     pub time_ordering: ::std::option::Option<crate::types::TimeOrdering>,
 }
 impl BatchGetAssetPropertyAggregatesEntry {
@@ -76,7 +74,7 @@ impl BatchGetAssetPropertyAggregatesEntry {
         self.qualities.as_deref().unwrap_or_default()
     }
     /// <p>The chronological sorting order of the requested information.</p>
-    /// <p>Default: <code>ASCENDING</code></p>
+    /// <p>Default: <code>ASCENDING</code> </p>
     pub fn time_ordering(&self) -> ::std::option::Option<&crate::types::TimeOrdering> {
         self.time_ordering.as_ref()
     }
@@ -247,19 +245,19 @@ impl BatchGetAssetPropertyAggregatesEntryBuilder {
         &self.qualities
     }
     /// <p>The chronological sorting order of the requested information.</p>
-    /// <p>Default: <code>ASCENDING</code></p>
+    /// <p>Default: <code>ASCENDING</code> </p>
     pub fn time_ordering(mut self, input: crate::types::TimeOrdering) -> Self {
         self.time_ordering = ::std::option::Option::Some(input);
         self
     }
     /// <p>The chronological sorting order of the requested information.</p>
-    /// <p>Default: <code>ASCENDING</code></p>
+    /// <p>Default: <code>ASCENDING</code> </p>
     pub fn set_time_ordering(mut self, input: ::std::option::Option<crate::types::TimeOrdering>) -> Self {
         self.time_ordering = input;
         self
     }
     /// <p>The chronological sorting order of the requested information.</p>
-    /// <p>Default: <code>ASCENDING</code></p>
+    /// <p>Default: <code>ASCENDING</code> </p>
     pub fn get_time_ordering(&self) -> &::std::option::Option<crate::types::TimeOrdering> {
         &self.time_ordering
     }

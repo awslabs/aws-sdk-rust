@@ -126,19 +126,19 @@ impl UpdateRotationFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_contact_ids`](Self::set_contact_ids).
     ///
-    /// <p>The Amazon Resource Names (ARNs) of the contacts to include in the updated rotation.</p>
+    /// <p>The Amazon Resource Names (ARNs) of the contacts to include in the updated rotation. </p>
     /// <p>The order in which you list the contacts is their shift order in the rotation schedule.</p>
     pub fn contact_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.contact_ids(input.into());
         self
     }
-    /// <p>The Amazon Resource Names (ARNs) of the contacts to include in the updated rotation.</p>
+    /// <p>The Amazon Resource Names (ARNs) of the contacts to include in the updated rotation. </p>
     /// <p>The order in which you list the contacts is their shift order in the rotation schedule.</p>
     pub fn set_contact_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_contact_ids(input);
         self
     }
-    /// <p>The Amazon Resource Names (ARNs) of the contacts to include in the updated rotation.</p>
+    /// <p>The Amazon Resource Names (ARNs) of the contacts to include in the updated rotation. </p>
     /// <p>The order in which you list the contacts is their shift order in the rotation schedule.</p>
     pub fn get_contact_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_contact_ids()
@@ -157,21 +157,21 @@ impl UpdateRotationFluentBuilder {
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_start_time()
     }
-    /// <p>The time zone to base the updated rotation’s activity on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p><note>
+    /// <p>The time zone to base the updated rotation’s activity on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p> <note>
     /// <p>Designators for time zones that don’t support Daylight Savings Time Rules, such as Pacific Standard Time (PST) and Pacific Daylight Time (PDT), aren't supported.</p>
     /// </note>
     pub fn time_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.time_zone_id(input.into());
         self
     }
-    /// <p>The time zone to base the updated rotation’s activity on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p><note>
+    /// <p>The time zone to base the updated rotation’s activity on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p> <note>
     /// <p>Designators for time zones that don’t support Daylight Savings Time Rules, such as Pacific Standard Time (PST) and Pacific Daylight Time (PDT), aren't supported.</p>
     /// </note>
     pub fn set_time_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_time_zone_id(input);
         self
     }
-    /// <p>The time zone to base the updated rotation’s activity on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p><note>
+    /// <p>The time zone to base the updated rotation’s activity on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p> <note>
     /// <p>Designators for time zones that don’t support Daylight Savings Time Rules, such as Pacific Standard Time (PST) and Pacific Daylight Time (PDT), aren't supported.</p>
     /// </note>
     pub fn get_time_zone_id(&self) -> &::std::option::Option<::std::string::String> {

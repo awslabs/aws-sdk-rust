@@ -5,8 +5,8 @@
 pub struct DescribeAgentsInput {
     /// <p>The agent or the collector IDs for which you want information. If you specify no IDs, the system returns information about all agents/collectors associated with your user.</p>
     pub agent_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example:</p>
-    /// <p><code>{"key": "collectionStatus", "value": "STARTED"}</code></p>
+    /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p>
+    /// <p> <code>{"key": "collectionStatus", "value": "STARTED"}</code> </p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The total number of agents/collectors to return in a single page of output. The maximum value is 100.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -20,8 +20,8 @@ impl DescribeAgentsInput {
     pub fn agent_ids(&self) -> &[::std::string::String] {
         self.agent_ids.as_deref().unwrap_or_default()
     }
-    /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example:</p>
-    /// <p><code>{"key": "collectionStatus", "value": "STARTED"}</code></p>
+    /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p>
+    /// <p> <code>{"key": "collectionStatus", "value": "STARTED"}</code> </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
     pub fn filters(&self) -> &[crate::types::Filter] {
@@ -77,22 +77,22 @@ impl DescribeAgentsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example:</p>
-    /// <p><code>{"key": "collectionStatus", "value": "STARTED"}</code></p>
+    /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p>
+    /// <p> <code>{"key": "collectionStatus", "value": "STARTED"}</code> </p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
         v.push(input);
         self.filters = ::std::option::Option::Some(v);
         self
     }
-    /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example:</p>
-    /// <p><code>{"key": "collectionStatus", "value": "STARTED"}</code></p>
+    /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p>
+    /// <p> <code>{"key": "collectionStatus", "value": "STARTED"}</code> </p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
-    /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example:</p>
-    /// <p><code>{"key": "collectionStatus", "value": "STARTED"}</code></p>
+    /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p>
+    /// <p> <code>{"key": "collectionStatus", "value": "STARTED"}</code> </p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters
     }

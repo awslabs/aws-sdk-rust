@@ -9,11 +9,11 @@ pub struct ConfigureAccessPointInput {
     pub position: ::std::option::Option<crate::types::Position>,
     /// <p>The CPI user name of the CPI user who is certifying the coordinates of the radio unit.</p>
     pub cpi_username: ::std::option::Option<::std::string::String>,
-    /// <p>The CPI user ID of the CPI user who is certifying the coordinates of the network resource.</p>
+    /// <p>The CPI user ID of the CPI user who is certifying the coordinates of the network resource. </p>
     pub cpi_user_id: ::std::option::Option<::std::string::String>,
     /// <p>The CPI password associated with the CPI certificate in <code>cpiSecretKey</code>.</p>
     pub cpi_user_password: ::std::option::Option<::std::string::String>,
-    /// <p>A Base64 encoded string of the CPI certificate associated with the CPI user who is certifying the coordinates of the network resource.</p>
+    /// <p>A Base64 encoded string of the CPI certificate associated with the CPI user who is certifying the coordinates of the network resource. </p>
     pub cpi_secret_key: ::std::option::Option<::std::string::String>,
 }
 impl ConfigureAccessPointInput {
@@ -29,7 +29,7 @@ impl ConfigureAccessPointInput {
     pub fn cpi_username(&self) -> ::std::option::Option<&str> {
         self.cpi_username.as_deref()
     }
-    /// <p>The CPI user ID of the CPI user who is certifying the coordinates of the network resource.</p>
+    /// <p>The CPI user ID of the CPI user who is certifying the coordinates of the network resource. </p>
     pub fn cpi_user_id(&self) -> ::std::option::Option<&str> {
         self.cpi_user_id.as_deref()
     }
@@ -37,7 +37,7 @@ impl ConfigureAccessPointInput {
     pub fn cpi_user_password(&self) -> ::std::option::Option<&str> {
         self.cpi_user_password.as_deref()
     }
-    /// <p>A Base64 encoded string of the CPI certificate associated with the CPI user who is certifying the coordinates of the network resource.</p>
+    /// <p>A Base64 encoded string of the CPI certificate associated with the CPI user who is certifying the coordinates of the network resource. </p>
     pub fn cpi_secret_key(&self) -> ::std::option::Option<&str> {
         self.cpi_secret_key.as_deref()
     }
@@ -116,17 +116,17 @@ impl ConfigureAccessPointInputBuilder {
     pub fn get_cpi_username(&self) -> &::std::option::Option<::std::string::String> {
         &self.cpi_username
     }
-    /// <p>The CPI user ID of the CPI user who is certifying the coordinates of the network resource.</p>
+    /// <p>The CPI user ID of the CPI user who is certifying the coordinates of the network resource. </p>
     pub fn cpi_user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cpi_user_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The CPI user ID of the CPI user who is certifying the coordinates of the network resource.</p>
+    /// <p>The CPI user ID of the CPI user who is certifying the coordinates of the network resource. </p>
     pub fn set_cpi_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cpi_user_id = input;
         self
     }
-    /// <p>The CPI user ID of the CPI user who is certifying the coordinates of the network resource.</p>
+    /// <p>The CPI user ID of the CPI user who is certifying the coordinates of the network resource. </p>
     pub fn get_cpi_user_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.cpi_user_id
     }
@@ -144,17 +144,17 @@ impl ConfigureAccessPointInputBuilder {
     pub fn get_cpi_user_password(&self) -> &::std::option::Option<::std::string::String> {
         &self.cpi_user_password
     }
-    /// <p>A Base64 encoded string of the CPI certificate associated with the CPI user who is certifying the coordinates of the network resource.</p>
+    /// <p>A Base64 encoded string of the CPI certificate associated with the CPI user who is certifying the coordinates of the network resource. </p>
     pub fn cpi_secret_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cpi_secret_key = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A Base64 encoded string of the CPI certificate associated with the CPI user who is certifying the coordinates of the network resource.</p>
+    /// <p>A Base64 encoded string of the CPI certificate associated with the CPI user who is certifying the coordinates of the network resource. </p>
     pub fn set_cpi_secret_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cpi_secret_key = input;
         self
     }
-    /// <p>A Base64 encoded string of the CPI certificate associated with the CPI user who is certifying the coordinates of the network resource.</p>
+    /// <p>A Base64 encoded string of the CPI certificate associated with the CPI user who is certifying the coordinates of the network resource. </p>
     pub fn get_cpi_secret_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.cpi_secret_key
     }

@@ -6,11 +6,11 @@
 pub struct SearchForPositionResult {
     /// <p>Details about the search result, such as its address and position.</p>
     pub place: ::std::option::Option<crate::types::Place>,
-    /// <p>The distance in meters of a great-circle arc between the query position and the result.</p><note>
+    /// <p>The distance in meters of a great-circle arc between the query position and the result.</p> <note>
     /// <p>A great-circle arc is the shortest path on a sphere, in this case the Earth. This returns the shortest distance between two locations.</p>
     /// </note>
     pub distance: f64,
-    /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p><note>
+    /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note>
     /// <p>For <code>SearchPlaceIndexForPosition</code> operations, the <code>PlaceId</code> is returned only by place indexes that use HERE or Grab as a data provider.</p>
     /// </note>
     pub place_id: ::std::option::Option<::std::string::String>,
@@ -20,13 +20,13 @@ impl SearchForPositionResult {
     pub fn place(&self) -> ::std::option::Option<&crate::types::Place> {
         self.place.as_ref()
     }
-    /// <p>The distance in meters of a great-circle arc between the query position and the result.</p><note>
+    /// <p>The distance in meters of a great-circle arc between the query position and the result.</p> <note>
     /// <p>A great-circle arc is the shortest path on a sphere, in this case the Earth. This returns the shortest distance between two locations.</p>
     /// </note>
     pub fn distance(&self) -> f64 {
         self.distance
     }
-    /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p><note>
+    /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note>
     /// <p>For <code>SearchPlaceIndexForPosition</code> operations, the <code>PlaceId</code> is returned only by place indexes that use HERE or Grab as a data provider.</p>
     /// </note>
     pub fn place_id(&self) -> ::std::option::Option<&str> {
@@ -64,7 +64,7 @@ impl SearchForPositionResultBuilder {
     pub fn get_place(&self) -> &::std::option::Option<crate::types::Place> {
         &self.place
     }
-    /// <p>The distance in meters of a great-circle arc between the query position and the result.</p><note>
+    /// <p>The distance in meters of a great-circle arc between the query position and the result.</p> <note>
     /// <p>A great-circle arc is the shortest path on a sphere, in this case the Earth. This returns the shortest distance between two locations.</p>
     /// </note>
     /// This field is required.
@@ -72,34 +72,34 @@ impl SearchForPositionResultBuilder {
         self.distance = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The distance in meters of a great-circle arc between the query position and the result.</p><note>
+    /// <p>The distance in meters of a great-circle arc between the query position and the result.</p> <note>
     /// <p>A great-circle arc is the shortest path on a sphere, in this case the Earth. This returns the shortest distance between two locations.</p>
     /// </note>
     pub fn set_distance(mut self, input: ::std::option::Option<f64>) -> Self {
         self.distance = input;
         self
     }
-    /// <p>The distance in meters of a great-circle arc between the query position and the result.</p><note>
+    /// <p>The distance in meters of a great-circle arc between the query position and the result.</p> <note>
     /// <p>A great-circle arc is the shortest path on a sphere, in this case the Earth. This returns the shortest distance between two locations.</p>
     /// </note>
     pub fn get_distance(&self) -> &::std::option::Option<f64> {
         &self.distance
     }
-    /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p><note>
+    /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note>
     /// <p>For <code>SearchPlaceIndexForPosition</code> operations, the <code>PlaceId</code> is returned only by place indexes that use HERE or Grab as a data provider.</p>
     /// </note>
     pub fn place_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.place_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p><note>
+    /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note>
     /// <p>For <code>SearchPlaceIndexForPosition</code> operations, the <code>PlaceId</code> is returned only by place indexes that use HERE or Grab as a data provider.</p>
     /// </note>
     pub fn set_place_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.place_id = input;
         self
     }
-    /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p><note>
+    /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note>
     /// <p>For <code>SearchPlaceIndexForPosition</code> operations, the <code>PlaceId</code> is returned only by place indexes that use HERE or Grab as a data provider.</p>
     /// </note>
     pub fn get_place_id(&self) -> &::std::option::Option<::std::string::String> {

@@ -118,21 +118,21 @@ impl ListTargetsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>The filters to use to return information by service or resource type. Valid filters include target type, target address, and target status.</p><note>
+    /// <p>The filters to use to return information by service or resource type. Valid filters include target type, target address, and target status.</p> <note>
     /// <p>A filter with the same name can appear more than once when used with OR statements. Filters with different names should be applied with AND statements.</p>
     /// </note>
     pub fn filters(mut self, input: crate::types::ListTargetsFilter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>The filters to use to return information by service or resource type. Valid filters include target type, target address, and target status.</p><note>
+    /// <p>The filters to use to return information by service or resource type. Valid filters include target type, target address, and target status.</p> <note>
     /// <p>A filter with the same name can appear more than once when used with OR statements. Filters with different names should be applied with AND statements.</p>
     /// </note>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListTargetsFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
-    /// <p>The filters to use to return information by service or resource type. Valid filters include target type, target address, and target status.</p><note>
+    /// <p>The filters to use to return information by service or resource type. Valid filters include target type, target address, and target status.</p> <note>
     /// <p>A filter with the same name can appear more than once when used with OR statements. Filters with different names should be applied with AND statements.</p>
     /// </note>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListTargetsFilter>> {

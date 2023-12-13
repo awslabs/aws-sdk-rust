@@ -15,10 +15,8 @@ pub struct ListSessionMetricsInput {
     pub bin_by: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsBinBySpecification>>,
     /// <p>A list of objects, each of which specifies how to group the results. You can group by the following criteria:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ConversationEndState</code> – The final state of the conversation. The possible end states are detailed in <a href="https://docs.aws.amazon.com/analytics-key-definitions-conversations">Key definitions</a> in the user guide.</p></li>
-    /// <li>
-    /// <p><code>LocaleId</code> – The unique identifier of the bot locale.</p></li>
+    /// <li> <p> <code>ConversationEndState</code> – The final state of the conversation. The possible end states are detailed in <a href="https://docs.aws.amazon.com/analytics-key-definitions-conversations">Key definitions</a> in the user guide.</p> </li>
+    /// <li> <p> <code>LocaleId</code> – The unique identifier of the bot locale.</p> </li>
     /// </ul>
     pub group_by: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsSessionGroupBySpecification>>,
     /// <p>A list of objects, each of which describes a condition by which you want to filter the results.</p>
@@ -56,10 +54,8 @@ impl ListSessionMetricsInput {
     }
     /// <p>A list of objects, each of which specifies how to group the results. You can group by the following criteria:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ConversationEndState</code> – The final state of the conversation. The possible end states are detailed in <a href="https://docs.aws.amazon.com/analytics-key-definitions-conversations">Key definitions</a> in the user guide.</p></li>
-    /// <li>
-    /// <p><code>LocaleId</code> – The unique identifier of the bot locale.</p></li>
+    /// <li> <p> <code>ConversationEndState</code> – The final state of the conversation. The possible end states are detailed in <a href="https://docs.aws.amazon.com/analytics-key-definitions-conversations">Key definitions</a> in the user guide.</p> </li>
+    /// <li> <p> <code>LocaleId</code> – The unique identifier of the bot locale.</p> </li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.group_by.is_none()`.
@@ -195,10 +191,8 @@ impl ListSessionMetricsInputBuilder {
     ///
     /// <p>A list of objects, each of which specifies how to group the results. You can group by the following criteria:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ConversationEndState</code> – The final state of the conversation. The possible end states are detailed in <a href="https://docs.aws.amazon.com/analytics-key-definitions-conversations">Key definitions</a> in the user guide.</p></li>
-    /// <li>
-    /// <p><code>LocaleId</code> – The unique identifier of the bot locale.</p></li>
+    /// <li> <p> <code>ConversationEndState</code> – The final state of the conversation. The possible end states are detailed in <a href="https://docs.aws.amazon.com/analytics-key-definitions-conversations">Key definitions</a> in the user guide.</p> </li>
+    /// <li> <p> <code>LocaleId</code> – The unique identifier of the bot locale.</p> </li>
     /// </ul>
     pub fn group_by(mut self, input: crate::types::AnalyticsSessionGroupBySpecification) -> Self {
         let mut v = self.group_by.unwrap_or_default();
@@ -208,10 +202,8 @@ impl ListSessionMetricsInputBuilder {
     }
     /// <p>A list of objects, each of which specifies how to group the results. You can group by the following criteria:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ConversationEndState</code> – The final state of the conversation. The possible end states are detailed in <a href="https://docs.aws.amazon.com/analytics-key-definitions-conversations">Key definitions</a> in the user guide.</p></li>
-    /// <li>
-    /// <p><code>LocaleId</code> – The unique identifier of the bot locale.</p></li>
+    /// <li> <p> <code>ConversationEndState</code> – The final state of the conversation. The possible end states are detailed in <a href="https://docs.aws.amazon.com/analytics-key-definitions-conversations">Key definitions</a> in the user guide.</p> </li>
+    /// <li> <p> <code>LocaleId</code> – The unique identifier of the bot locale.</p> </li>
     /// </ul>
     pub fn set_group_by(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsSessionGroupBySpecification>>) -> Self {
         self.group_by = input;
@@ -219,10 +211,8 @@ impl ListSessionMetricsInputBuilder {
     }
     /// <p>A list of objects, each of which specifies how to group the results. You can group by the following criteria:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ConversationEndState</code> – The final state of the conversation. The possible end states are detailed in <a href="https://docs.aws.amazon.com/analytics-key-definitions-conversations">Key definitions</a> in the user guide.</p></li>
-    /// <li>
-    /// <p><code>LocaleId</code> – The unique identifier of the bot locale.</p></li>
+    /// <li> <p> <code>ConversationEndState</code> – The final state of the conversation. The possible end states are detailed in <a href="https://docs.aws.amazon.com/analytics-key-definitions-conversations">Key definitions</a> in the user guide.</p> </li>
+    /// <li> <p> <code>LocaleId</code> – The unique identifier of the bot locale.</p> </li>
     /// </ul>
     pub fn get_group_by(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsSessionGroupBySpecification>> {
         &self.group_by

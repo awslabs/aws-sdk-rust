@@ -5,7 +5,7 @@
 pub struct ListSpacesOutput {
     /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>Information about the spaces.</p>
+    /// <p>Information about the spaces. </p>
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::SpaceSummary>>,
     _request_id: Option<String>,
 }
@@ -14,7 +14,7 @@ impl ListSpacesOutput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Information about the spaces.</p>
+    /// <p>Information about the spaces. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
     pub fn items(&self) -> &[crate::types::SpaceSummary] {
@@ -60,19 +60,19 @@ impl ListSpacesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_items`](Self::set_items).
     ///
-    /// <p>Information about the spaces.</p>
+    /// <p>Information about the spaces. </p>
     pub fn items(mut self, input: crate::types::SpaceSummary) -> Self {
         let mut v = self.items.unwrap_or_default();
         v.push(input);
         self.items = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Information about the spaces.</p>
+    /// <p>Information about the spaces. </p>
     pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SpaceSummary>>) -> Self {
         self.items = input;
         self
     }
-    /// <p>Information about the spaces.</p>
+    /// <p>Information about the spaces. </p>
     pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SpaceSummary>> {
         &self.items
     }

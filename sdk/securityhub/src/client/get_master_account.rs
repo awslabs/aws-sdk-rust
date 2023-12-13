@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder takes no input, just [`send`](crate::operation::get_master_account::builders::GetMasterAccountFluentBuilder::send) it.
     /// - On success, responds with [`GetMasterAccountOutput`](crate::operation::get_master_account::GetMasterAccountOutput) with field(s):
-    ///   - [`master(Option<Invitation>)`](crate::operation::get_master_account::GetMasterAccountOutput::master): <p>A list of details about the Security Hub administrator account for the current member account.</p>
+    ///   - [`master(Option<Invitation>)`](crate::operation::get_master_account::GetMasterAccountOutput::master): <p>A list of details about the Security Hub administrator account for the current member account. </p>
     /// - On failure, responds with [`SdkError<GetMasterAccountError>`](crate::operation::get_master_account::GetMasterAccountError)
     #[deprecated(note = "This API has been deprecated, use GetAdministratorAccount API instead.")]
     pub fn get_master_account(&self) -> crate::operation::get_master_account::builders::GetMasterAccountFluentBuilder {

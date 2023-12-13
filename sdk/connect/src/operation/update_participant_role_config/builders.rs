@@ -24,16 +24,12 @@ impl UpdateParticipantRoleConfigInputBuilder {
 ///
 /// <p>Updates timeouts for when human chat participants are to be considered idle, and when agents are automatically disconnected from a chat due to idleness. You can set four timers:</p>
 /// <ul>
-/// <li>
-/// <p>Customer idle timeout</p></li>
-/// <li>
-/// <p>Customer auto-disconnect timeout</p></li>
-/// <li>
-/// <p>Agent idle timeout</p></li>
-/// <li>
-/// <p>Agent auto-disconnect timeout</p></li>
+/// <li> <p>Customer idle timeout</p> </li>
+/// <li> <p>Customer auto-disconnect timeout</p> </li>
+/// <li> <p>Agent idle timeout</p> </li>
+/// <li> <p>Agent auto-disconnect timeout</p> </li>
 /// </ul>
-/// <p>For more information about how chat timeouts work, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-chat-timeouts.html">Set up chat timeouts for human participants</a>.</p>
+/// <p>For more information about how chat timeouts work, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-chat-timeouts.html">Set up chat timeouts for human participants</a>. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateParticipantRoleConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -133,17 +129,17 @@ impl UpdateParticipantRoleConfigFluentBuilder {
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_id()
     }
-    /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
+    /// <p>The identifier of the contact in this instance of Amazon Connect. </p>
     pub fn contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.contact_id(input.into());
         self
     }
-    /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
+    /// <p>The identifier of the contact in this instance of Amazon Connect. </p>
     pub fn set_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_contact_id(input);
         self
     }
-    /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
+    /// <p>The identifier of the contact in this instance of Amazon Connect. </p>
     pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_contact_id()
     }

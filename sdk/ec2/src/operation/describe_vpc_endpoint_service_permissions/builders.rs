@@ -156,10 +156,8 @@ impl DescribeVpcEndpointServicePermissionsFluentBuilder {
     ///
     /// <p>The filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>principal</code> - The ARN of the principal.</p></li>
-    /// <li>
-    /// <p><code>principal-type</code> - The principal type (<code>All</code> | <code>Service</code> | <code>OrganizationUnit</code> | <code>Account</code> | <code>User</code> | <code>Role</code>).</p></li>
+    /// <li> <p> <code>principal</code> - The ARN of the principal.</p> </li>
+    /// <li> <p> <code>principal-type</code> - The principal type (<code>All</code> | <code>Service</code> | <code>OrganizationUnit</code> | <code>Account</code> | <code>User</code> | <code>Role</code>).</p> </li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
@@ -167,10 +165,8 @@ impl DescribeVpcEndpointServicePermissionsFluentBuilder {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>principal</code> - The ARN of the principal.</p></li>
-    /// <li>
-    /// <p><code>principal-type</code> - The principal type (<code>All</code> | <code>Service</code> | <code>OrganizationUnit</code> | <code>Account</code> | <code>User</code> | <code>Role</code>).</p></li>
+    /// <li> <p> <code>principal</code> - The ARN of the principal.</p> </li>
+    /// <li> <p> <code>principal-type</code> - The principal type (<code>All</code> | <code>Service</code> | <code>OrganizationUnit</code> | <code>Account</code> | <code>User</code> | <code>Role</code>).</p> </li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
@@ -178,10 +174,8 @@ impl DescribeVpcEndpointServicePermissionsFluentBuilder {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>principal</code> - The ARN of the principal.</p></li>
-    /// <li>
-    /// <p><code>principal-type</code> - The principal type (<code>All</code> | <code>Service</code> | <code>OrganizationUnit</code> | <code>Account</code> | <code>User</code> | <code>Role</code>).</p></li>
+    /// <li> <p> <code>principal</code> - The ARN of the principal.</p> </li>
+    /// <li> <p> <code>principal-type</code> - The principal type (<code>All</code> | <code>Service</code> | <code>OrganizationUnit</code> | <code>Account</code> | <code>User</code> | <code>Role</code>).</p> </li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()

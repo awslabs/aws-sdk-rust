@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEventCategoriesInput {
     /// <p>The type of source that is generating the events.</p>
-    /// <p>Valid values: <code>db-instance</code>, <code>db-parameter-group</code>, <code>db-security-group</code></p>
+    /// <p>Valid values: <code>db-instance</code>, <code>db-parameter-group</code>, <code>db-security-group</code> </p>
     pub source_type: ::std::option::Option<::std::string::String>,
     /// <p>This parameter is not currently supported.</p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
 }
 impl DescribeEventCategoriesInput {
     /// <p>The type of source that is generating the events.</p>
-    /// <p>Valid values: <code>db-instance</code>, <code>db-parameter-group</code>, <code>db-security-group</code></p>
+    /// <p>Valid values: <code>db-instance</code>, <code>db-parameter-group</code>, <code>db-security-group</code> </p>
     pub fn source_type(&self) -> ::std::option::Option<&str> {
         self.source_type.as_deref()
     }
@@ -39,19 +39,19 @@ pub struct DescribeEventCategoriesInputBuilder {
 }
 impl DescribeEventCategoriesInputBuilder {
     /// <p>The type of source that is generating the events.</p>
-    /// <p>Valid values: <code>db-instance</code>, <code>db-parameter-group</code>, <code>db-security-group</code></p>
+    /// <p>Valid values: <code>db-instance</code>, <code>db-parameter-group</code>, <code>db-security-group</code> </p>
     pub fn source_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of source that is generating the events.</p>
-    /// <p>Valid values: <code>db-instance</code>, <code>db-parameter-group</code>, <code>db-security-group</code></p>
+    /// <p>Valid values: <code>db-instance</code>, <code>db-parameter-group</code>, <code>db-security-group</code> </p>
     pub fn set_source_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_type = input;
         self
     }
     /// <p>The type of source that is generating the events.</p>
-    /// <p>Valid values: <code>db-instance</code>, <code>db-parameter-group</code>, <code>db-security-group</code></p>
+    /// <p>Valid values: <code>db-instance</code>, <code>db-parameter-group</code>, <code>db-security-group</code> </p>
     pub fn get_source_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_type
     }

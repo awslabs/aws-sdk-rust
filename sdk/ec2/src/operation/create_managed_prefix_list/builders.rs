@@ -190,19 +190,19 @@ impl CreateManagedPrefixListFluentBuilder {
         self.inner.get_tag_specifications()
     }
     /// <p>The IP address type.</p>
-    /// <p>Valid Values: <code>IPv4</code> | <code>IPv6</code></p>
+    /// <p>Valid Values: <code>IPv4</code> | <code>IPv6</code> </p>
     pub fn address_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.address_family(input.into());
         self
     }
     /// <p>The IP address type.</p>
-    /// <p>Valid Values: <code>IPv4</code> | <code>IPv6</code></p>
+    /// <p>Valid Values: <code>IPv4</code> | <code>IPv6</code> </p>
     pub fn set_address_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_address_family(input);
         self
     }
     /// <p>The IP address type.</p>
-    /// <p>Valid Values: <code>IPv4</code> | <code>IPv6</code></p>
+    /// <p>Valid Values: <code>IPv4</code> | <code>IPv6</code> </p>
     pub fn get_address_family(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_address_family()
     }

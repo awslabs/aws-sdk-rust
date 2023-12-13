@@ -24,19 +24,17 @@ impl ListAliasesInputBuilder {
 ///
 /// <p>Gets a list of aliases in the caller's Amazon Web Services account and region. For more information about aliases, see <code>CreateAlias</code>.</p>
 /// <p>By default, the <code>ListAliases</code> operation returns all aliases in the account and region. To get only the aliases associated with a particular KMS key, use the <code>KeyId</code> parameter.</p>
-/// <p>The <code>ListAliases</code> response can include aliases that you created and associated with your customer managed keys, and aliases that Amazon Web Services created and associated with Amazon Web Services managed keys in your account. You can recognize Amazon Web Services aliases because their names have the format <code>aws/<service-name></service-name></code>, such as <code>aws/dynamodb</code>.</p>
+/// <p>The <code>ListAliases</code> response can include aliases that you created and associated with your customer managed keys, and aliases that Amazon Web Services created and associated with Amazon Web Services managed keys in your account. You can recognize Amazon Web Services aliases because their names have the format <code>aws/
+/// <service-name></service-name></code>, such as <code>aws/dynamodb</code>.</p>
 /// <p>The response might also include aliases that have no <code>TargetKeyId</code> field. These are predefined aliases that Amazon Web Services has created but has not yet associated with a KMS key. Aliases that Amazon Web Services creates in your account, including predefined aliases, do not count against your <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#aliases-limit">KMS aliases quota</a>.</p>
-/// <p><b>Cross-account use</b>: No. <code>ListAliases</code> does not return aliases in other Amazon Web Services accounts.</p>
-/// <p><b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:ListAliases</a> (IAM policy)</p>
+/// <p> <b>Cross-account use</b>: No. <code>ListAliases</code> does not return aliases in other Amazon Web Services accounts.</p>
+/// <p> <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:ListAliases</a> (IAM policy)</p>
 /// <p>For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-alias.html#alias-access">Controlling access to aliases</a> in the <i>Key Management Service Developer Guide</i>.</p>
-/// <p><b>Related operations:</b></p>
+/// <p> <b>Related operations:</b> </p>
 /// <ul>
-/// <li>
-/// <p><code>CreateAlias</code></p></li>
-/// <li>
-/// <p><code>DeleteAlias</code></p></li>
-/// <li>
-/// <p><code>UpdateAlias</code></p></li>
+/// <li> <p> <code>CreateAlias</code> </p> </li>
+/// <li> <p> <code>DeleteAlias</code> </p> </li>
+/// <li> <p> <code>UpdateAlias</code> </p> </li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAliasesFluentBuilder {
@@ -129,45 +127,39 @@ impl ListAliasesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_aliases::paginator::ListAliasesPaginator {
         crate::operation::list_aliases::paginator::ListAliasesPaginator::new(self.handle, self.inner)
     }
-    /// <p>Lists only aliases that are associated with the specified KMS key. Enter a KMS key in your Amazon Web Services account.</p>
+    /// <p>Lists only aliases that are associated with the specified KMS key. Enter a KMS key in your Amazon Web Services account. </p>
     /// <p>This parameter is optional. If you omit it, <code>ListAliases</code> returns all aliases in the account and Region.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code></p></li>
-    /// <li>
-    /// <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code></p></li>
+    /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+    /// <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
     /// </ul>
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
     pub fn key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.key_id(input.into());
         self
     }
-    /// <p>Lists only aliases that are associated with the specified KMS key. Enter a KMS key in your Amazon Web Services account.</p>
+    /// <p>Lists only aliases that are associated with the specified KMS key. Enter a KMS key in your Amazon Web Services account. </p>
     /// <p>This parameter is optional. If you omit it, <code>ListAliases</code> returns all aliases in the account and Region.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code></p></li>
-    /// <li>
-    /// <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code></p></li>
+    /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+    /// <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
     /// </ul>
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
     pub fn set_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_key_id(input);
         self
     }
-    /// <p>Lists only aliases that are associated with the specified KMS key. Enter a KMS key in your Amazon Web Services account.</p>
+    /// <p>Lists only aliases that are associated with the specified KMS key. Enter a KMS key in your Amazon Web Services account. </p>
     /// <p>This parameter is optional. If you omit it, <code>ListAliases</code> returns all aliases in the account and Region.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code></p></li>
-    /// <li>
-    /// <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code></p></li>
+    /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+    /// <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
     /// </ul>
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
     pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {

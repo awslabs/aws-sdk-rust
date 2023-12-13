@@ -22,7 +22,7 @@ impl CreateBackupVaultInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateBackupVault`.
 ///
-/// <p>Creates a logical container where backups are stored. A <code>CreateBackupVault</code> request includes a name, optionally one or more resource tags, an encryption key, and a request ID.</p><note>
+/// <p>Creates a logical container where backups are stored. A <code>CreateBackupVault</code> request includes a name, optionally one or more resource tags, an encryption key, and a request ID.</p> <note>
 /// <p>Do not include sensitive data, such as passport numbers, in the name of a backup vault.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

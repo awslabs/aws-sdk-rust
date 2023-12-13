@@ -109,17 +109,17 @@ impl GetRoomSkillParameterFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ARN of the room from which to get the room skill parameter details.</p>
+    /// <p>The ARN of the room from which to get the room skill parameter details. </p>
     pub fn room_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.room_arn(input.into());
         self
     }
-    /// <p>The ARN of the room from which to get the room skill parameter details.</p>
+    /// <p>The ARN of the room from which to get the room skill parameter details. </p>
     pub fn set_room_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_room_arn(input);
         self
     }
-    /// <p>The ARN of the room from which to get the room skill parameter details.</p>
+    /// <p>The ARN of the room from which to get the room skill parameter details. </p>
     pub fn get_room_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_room_arn()
     }

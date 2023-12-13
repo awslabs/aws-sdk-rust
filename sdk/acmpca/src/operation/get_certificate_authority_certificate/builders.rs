@@ -22,7 +22,7 @@ impl GetCertificateAuthorityCertificateInputBuilder {
 }
 /// Fluent builder constructing a request to `GetCertificateAuthorityCertificate`.
 ///
-/// <p>Retrieves the certificate and certificate chain for your private certificate authority (CA) or one that has been shared with you. Both the certificate and the chain are base64 PEM-encoded. The chain does not include the CA certificate. Each certificate in the chain signs the one before it.</p>
+/// <p>Retrieves the certificate and certificate chain for your private certificate authority (CA) or one that has been shared with you. Both the certificate and the chain are base64 PEM-encoded. The chain does not include the CA certificate. Each certificate in the chain signs the one before it. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetCertificateAuthorityCertificateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -109,19 +109,19 @@ impl GetCertificateAuthorityCertificateFluentBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of your private CA. This is of the form:</p>
-    /// <p><code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>.</p>
+    /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
     pub fn certificate_authority_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_authority_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of your private CA. This is of the form:</p>
-    /// <p><code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>.</p>
+    /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
     pub fn set_certificate_authority_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate_authority_arn(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of your private CA. This is of the form:</p>
-    /// <p><code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>.</p>
+    /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
     pub fn get_certificate_authority_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_certificate_authority_arn()
     }

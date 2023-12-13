@@ -120,14 +120,10 @@ impl ListImageScanFindingsFluentBuilder {
     ///
     /// <p>An array of name value pairs that you can use to filter your results. You can use the following filters to streamline results:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>imageBuildVersionArn</code></p></li>
-    /// <li>
-    /// <p><code>imagePipelineArn</code></p></li>
-    /// <li>
-    /// <p><code>vulnerabilityId</code></p></li>
-    /// <li>
-    /// <p><code>severity</code></p></li>
+    /// <li> <p> <code>imageBuildVersionArn</code> </p> </li>
+    /// <li> <p> <code>imagePipelineArn</code> </p> </li>
+    /// <li> <p> <code>vulnerabilityId</code> </p> </li>
+    /// <li> <p> <code>severity</code> </p> </li>
     /// </ul>
     /// <p>If you don't request a filter, then all findings in your account are listed.</p>
     pub fn filters(mut self, input: crate::types::ImageScanFindingsFilter) -> Self {
@@ -136,14 +132,10 @@ impl ListImageScanFindingsFluentBuilder {
     }
     /// <p>An array of name value pairs that you can use to filter your results. You can use the following filters to streamline results:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>imageBuildVersionArn</code></p></li>
-    /// <li>
-    /// <p><code>imagePipelineArn</code></p></li>
-    /// <li>
-    /// <p><code>vulnerabilityId</code></p></li>
-    /// <li>
-    /// <p><code>severity</code></p></li>
+    /// <li> <p> <code>imageBuildVersionArn</code> </p> </li>
+    /// <li> <p> <code>imagePipelineArn</code> </p> </li>
+    /// <li> <p> <code>vulnerabilityId</code> </p> </li>
+    /// <li> <p> <code>severity</code> </p> </li>
     /// </ul>
     /// <p>If you don't request a filter, then all findings in your account are listed.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImageScanFindingsFilter>>) -> Self {
@@ -152,14 +144,10 @@ impl ListImageScanFindingsFluentBuilder {
     }
     /// <p>An array of name value pairs that you can use to filter your results. You can use the following filters to streamline results:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>imageBuildVersionArn</code></p></li>
-    /// <li>
-    /// <p><code>imagePipelineArn</code></p></li>
-    /// <li>
-    /// <p><code>vulnerabilityId</code></p></li>
-    /// <li>
-    /// <p><code>severity</code></p></li>
+    /// <li> <p> <code>imageBuildVersionArn</code> </p> </li>
+    /// <li> <p> <code>imagePipelineArn</code> </p> </li>
+    /// <li> <p> <code>vulnerabilityId</code> </p> </li>
+    /// <li> <p> <code>severity</code> </p> </li>
     /// </ul>
     /// <p>If you don't request a filter, then all findings in your account are listed.</p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageScanFindingsFilter>> {

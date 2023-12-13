@@ -21,7 +21,7 @@ pub struct UpdateAppVersionResourceInput {
     pub app_components: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Currently, there is no supported additional information for resources.</p>
     pub additional_info: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
-    /// <p>Indicates if a resource is excluded from an Resilience Hub application.</p><note>
+    /// <p>Indicates if a resource is excluded from an Resilience Hub application.</p> <note>
     /// <p>You can exclude only imported resources from an Resilience Hub application.</p>
     /// </note>
     pub excluded: ::std::option::Option<bool>,
@@ -67,7 +67,7 @@ impl UpdateAppVersionResourceInput {
     ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.additional_info.as_ref()
     }
-    /// <p>Indicates if a resource is excluded from an Resilience Hub application.</p><note>
+    /// <p>Indicates if a resource is excluded from an Resilience Hub application.</p> <note>
     /// <p>You can exclude only imported resources from an Resilience Hub application.</p>
     /// </note>
     pub fn excluded(&self) -> ::std::option::Option<bool> {
@@ -241,21 +241,21 @@ impl UpdateAppVersionResourceInputBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         &self.additional_info
     }
-    /// <p>Indicates if a resource is excluded from an Resilience Hub application.</p><note>
+    /// <p>Indicates if a resource is excluded from an Resilience Hub application.</p> <note>
     /// <p>You can exclude only imported resources from an Resilience Hub application.</p>
     /// </note>
     pub fn excluded(mut self, input: bool) -> Self {
         self.excluded = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates if a resource is excluded from an Resilience Hub application.</p><note>
+    /// <p>Indicates if a resource is excluded from an Resilience Hub application.</p> <note>
     /// <p>You can exclude only imported resources from an Resilience Hub application.</p>
     /// </note>
     pub fn set_excluded(mut self, input: ::std::option::Option<bool>) -> Self {
         self.excluded = input;
         self
     }
-    /// <p>Indicates if a resource is excluded from an Resilience Hub application.</p><note>
+    /// <p>Indicates if a resource is excluded from an Resilience Hub application.</p> <note>
     /// <p>You can exclude only imported resources from an Resilience Hub application.</p>
     /// </note>
     pub fn get_excluded(&self) -> &::std::option::Option<bool> {

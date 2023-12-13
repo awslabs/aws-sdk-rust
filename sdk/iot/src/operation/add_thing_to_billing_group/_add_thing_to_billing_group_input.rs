@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddThingToBillingGroupInput {
-    /// <p>The name of the billing group.</p><note>
+    /// <p>The name of the billing group.</p> <note>
     /// <p>This call is asynchronous. It might take several seconds for the detachment to propagate.</p>
     /// </note>
     pub billing_group_name: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ pub struct AddThingToBillingGroupInput {
     pub thing_arn: ::std::option::Option<::std::string::String>,
 }
 impl AddThingToBillingGroupInput {
-    /// <p>The name of the billing group.</p><note>
+    /// <p>The name of the billing group.</p> <note>
     /// <p>This call is asynchronous. It might take several seconds for the detachment to propagate.</p>
     /// </note>
     pub fn billing_group_name(&self) -> ::std::option::Option<&str> {
@@ -51,21 +51,21 @@ pub struct AddThingToBillingGroupInputBuilder {
     pub(crate) thing_arn: ::std::option::Option<::std::string::String>,
 }
 impl AddThingToBillingGroupInputBuilder {
-    /// <p>The name of the billing group.</p><note>
+    /// <p>The name of the billing group.</p> <note>
     /// <p>This call is asynchronous. It might take several seconds for the detachment to propagate.</p>
     /// </note>
     pub fn billing_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.billing_group_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the billing group.</p><note>
+    /// <p>The name of the billing group.</p> <note>
     /// <p>This call is asynchronous. It might take several seconds for the detachment to propagate.</p>
     /// </note>
     pub fn set_billing_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.billing_group_name = input;
         self
     }
-    /// <p>The name of the billing group.</p><note>
+    /// <p>The name of the billing group.</p> <note>
     /// <p>This call is asynchronous. It might take several seconds for the detachment to propagate.</p>
     /// </note>
     pub fn get_billing_group_name(&self) -> &::std::option::Option<::std::string::String> {

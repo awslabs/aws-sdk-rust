@@ -22,7 +22,7 @@ impl GetTokenBalanceInputBuilder {
 }
 /// Fluent builder constructing a request to `GetTokenBalance`.
 ///
-/// <p>Gets the balance of a specific token, including native tokens, for a given address (wallet or contract) on the blockchain.</p><note>
+/// <p>Gets the balance of a specific token, including native tokens, for a given address (wallet or contract) on the blockchain.</p> <note>
 /// <p>Only the native tokens BTC,ETH, and the ERC-20, ERC-721, and ERC 1155 token standards are supported.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -138,21 +138,21 @@ impl GetTokenBalanceFluentBuilder {
     pub fn get_owner_identifier(&self) -> &::std::option::Option<crate::types::OwnerIdentifier> {
         self.inner.get_owner_identifier()
     }
-    /// <p>The time for when the TokenBalance is requested or the current time if a time is not provided in the request.</p><note>
+    /// <p>The time for when the TokenBalance is requested or the current time if a time is not provided in the request.</p> <note>
     /// <p>This time will only be recorded up to the second.</p>
     /// </note>
     pub fn at_blockchain_instant(mut self, input: crate::types::BlockchainInstant) -> Self {
         self.inner = self.inner.at_blockchain_instant(input);
         self
     }
-    /// <p>The time for when the TokenBalance is requested or the current time if a time is not provided in the request.</p><note>
+    /// <p>The time for when the TokenBalance is requested or the current time if a time is not provided in the request.</p> <note>
     /// <p>This time will only be recorded up to the second.</p>
     /// </note>
     pub fn set_at_blockchain_instant(mut self, input: ::std::option::Option<crate::types::BlockchainInstant>) -> Self {
         self.inner = self.inner.set_at_blockchain_instant(input);
         self
     }
-    /// <p>The time for when the TokenBalance is requested or the current time if a time is not provided in the request.</p><note>
+    /// <p>The time for when the TokenBalance is requested or the current time if a time is not provided in the request.</p> <note>
     /// <p>This time will only be recorded up to the second.</p>
     /// </note>
     pub fn get_at_blockchain_instant(&self) -> &::std::option::Option<crate::types::BlockchainInstant> {

@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReportSetting {
     /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p>
-    /// <p><code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code></p>
+    /// <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
     pub report_template: ::std::string::String,
     /// <p>The Amazon Resource Names (ARNs) of the frameworks a report covers.</p>
     pub framework_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -20,7 +20,7 @@ pub struct ReportSetting {
 }
 impl ReportSetting {
     /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p>
-    /// <p><code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code></p>
+    /// <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
     pub fn report_template(&self) -> &str {
         use std::ops::Deref;
         self.report_template.deref()
@@ -74,20 +74,20 @@ pub struct ReportSettingBuilder {
 }
 impl ReportSettingBuilder {
     /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p>
-    /// <p><code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code></p>
+    /// <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
     /// This field is required.
     pub fn report_template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.report_template = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p>
-    /// <p><code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code></p>
+    /// <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
     pub fn set_report_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.report_template = input;
         self
     }
     /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p>
-    /// <p><code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code></p>
+    /// <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
     pub fn get_report_template(&self) -> &::std::option::Option<::std::string::String> {
         &self.report_template
     }

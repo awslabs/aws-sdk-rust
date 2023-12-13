@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeBudgetActionsForBudgetOutput {
-    /// <p>A list of the budget action resources information.</p>
+    /// <p> A list of the budget action resources information. </p>
     pub actions: ::std::vec::Vec<crate::types::Action>,
-    /// <p>A generic string.</p>
+    /// <p> A generic string.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeBudgetActionsForBudgetOutput {
-    /// <p>A list of the budget action resources information.</p>
+    /// <p> A list of the budget action resources information. </p>
     pub fn actions(&self) -> &[crate::types::Action] {
         use std::ops::Deref;
         self.actions.deref()
     }
-    /// <p>A generic string.</p>
+    /// <p> A generic string.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -45,33 +45,33 @@ impl DescribeBudgetActionsForBudgetOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_actions`](Self::set_actions).
     ///
-    /// <p>A list of the budget action resources information.</p>
+    /// <p> A list of the budget action resources information. </p>
     pub fn actions(mut self, input: crate::types::Action) -> Self {
         let mut v = self.actions.unwrap_or_default();
         v.push(input);
         self.actions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of the budget action resources information.</p>
+    /// <p> A list of the budget action resources information. </p>
     pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Action>>) -> Self {
         self.actions = input;
         self
     }
-    /// <p>A list of the budget action resources information.</p>
+    /// <p> A list of the budget action resources information. </p>
     pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Action>> {
         &self.actions
     }
-    /// <p>A generic string.</p>
+    /// <p> A generic string.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A generic string.</p>
+    /// <p> A generic string.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>A generic string.</p>
+    /// <p> A generic string.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

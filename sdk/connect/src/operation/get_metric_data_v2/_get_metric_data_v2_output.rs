@@ -5,7 +5,7 @@
 pub struct GetMetricDataV2Output {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>Information about the metrics requested in the API request If no grouping is specified, a summary of metric data is returned.</p>
+    /// <p>Information about the metrics requested in the API request If no grouping is specified, a summary of metric data is returned. </p>
     pub metric_results: ::std::option::Option<::std::vec::Vec<crate::types::MetricResultV2>>,
     _request_id: Option<String>,
 }
@@ -14,7 +14,7 @@ impl GetMetricDataV2Output {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Information about the metrics requested in the API request If no grouping is specified, a summary of metric data is returned.</p>
+    /// <p>Information about the metrics requested in the API request If no grouping is specified, a summary of metric data is returned. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_results.is_none()`.
     pub fn metric_results(&self) -> &[crate::types::MetricResultV2] {
@@ -60,19 +60,19 @@ impl GetMetricDataV2OutputBuilder {
     ///
     /// To override the contents of this collection use [`set_metric_results`](Self::set_metric_results).
     ///
-    /// <p>Information about the metrics requested in the API request If no grouping is specified, a summary of metric data is returned.</p>
+    /// <p>Information about the metrics requested in the API request If no grouping is specified, a summary of metric data is returned. </p>
     pub fn metric_results(mut self, input: crate::types::MetricResultV2) -> Self {
         let mut v = self.metric_results.unwrap_or_default();
         v.push(input);
         self.metric_results = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Information about the metrics requested in the API request If no grouping is specified, a summary of metric data is returned.</p>
+    /// <p>Information about the metrics requested in the API request If no grouping is specified, a summary of metric data is returned. </p>
     pub fn set_metric_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricResultV2>>) -> Self {
         self.metric_results = input;
         self
     }
-    /// <p>Information about the metrics requested in the API request If no grouping is specified, a summary of metric data is returned.</p>
+    /// <p>Information about the metrics requested in the API request If no grouping is specified, a summary of metric data is returned. </p>
     pub fn get_metric_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricResultV2>> {
         &self.metric_results
     }

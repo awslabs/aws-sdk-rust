@@ -22,7 +22,7 @@ impl DeleteContainerInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteContainer`.
 ///
-/// <p>Deletes the specified container. Before you make a <code>DeleteContainer</code> request, delete any objects in the container or in any folders in the container. You can delete only empty containers.</p>
+/// <p>Deletes the specified container. Before you make a <code>DeleteContainer</code> request, delete any objects in the container or in any folders in the container. You can delete only empty containers. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteContainerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DeleteContainerFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the container to delete.</p>
+    /// <p>The name of the container to delete. </p>
     pub fn container_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.container_name(input.into());
         self
     }
-    /// <p>The name of the container to delete.</p>
+    /// <p>The name of the container to delete. </p>
     pub fn set_container_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_container_name(input);
         self
     }
-    /// <p>The name of the container to delete.</p>
+    /// <p>The name of the container to delete. </p>
     pub fn get_container_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_container_name()
     }

@@ -126,21 +126,21 @@ impl CreateLocationSmbFluentBuilder {
     pub fn get_subdirectory(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_subdirectory()
     }
-    /// <p>Specifies the Domain Name Service (DNS) name or IP address of the SMB file server that your DataSync agent will mount.</p><note>
+    /// <p>Specifies the Domain Name Service (DNS) name or IP address of the SMB file server that your DataSync agent will mount.</p> <note>
     /// <p>You can't specify an IP version 6 (IPv6) address.</p>
     /// </note>
     pub fn server_hostname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.server_hostname(input.into());
         self
     }
-    /// <p>Specifies the Domain Name Service (DNS) name or IP address of the SMB file server that your DataSync agent will mount.</p><note>
+    /// <p>Specifies the Domain Name Service (DNS) name or IP address of the SMB file server that your DataSync agent will mount.</p> <note>
     /// <p>You can't specify an IP version 6 (IPv6) address.</p>
     /// </note>
     pub fn set_server_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_server_hostname(input);
         self
     }
-    /// <p>Specifies the Domain Name Service (DNS) name or IP address of the SMB file server that your DataSync agent will mount.</p><note>
+    /// <p>Specifies the Domain Name Service (DNS) name or IP address of the SMB file server that your DataSync agent will mount.</p> <note>
     /// <p>You can't specify an IP version 6 (IPv6) address.</p>
     /// </note>
     pub fn get_server_hostname(&self) -> &::std::option::Option<::std::string::String> {
@@ -163,21 +163,21 @@ impl CreateLocationSmbFluentBuilder {
     pub fn get_user(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user()
     }
-    /// <p>Specifies the Windows domain name that your SMB file server belongs to.</p>
+    /// <p>Specifies the Windows domain name that your SMB file server belongs to. </p>
     /// <p>If you have multiple domains in your environment, configuring this parameter makes sure that DataSync connects to the right file server.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required permissions</a> for SMB locations.</p>
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain(input.into());
         self
     }
-    /// <p>Specifies the Windows domain name that your SMB file server belongs to.</p>
+    /// <p>Specifies the Windows domain name that your SMB file server belongs to. </p>
     /// <p>If you have multiple domains in your environment, configuring this parameter makes sure that DataSync connects to the right file server.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required permissions</a> for SMB locations.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain(input);
         self
     }
-    /// <p>Specifies the Windows domain name that your SMB file server belongs to.</p>
+    /// <p>Specifies the Windows domain name that your SMB file server belongs to. </p>
     /// <p>If you have multiple domains in your environment, configuring this parameter makes sure that DataSync connects to the right file server.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required permissions</a> for SMB locations.</p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {

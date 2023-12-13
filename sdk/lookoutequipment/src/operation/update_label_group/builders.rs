@@ -22,7 +22,7 @@ impl UpdateLabelGroupInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateLabelGroup`.
 ///
-/// <p>Updates the label group.</p>
+/// <p> Updates the label group. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateLabelGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl UpdateLabelGroupFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the label group to be updated.</p>
+    /// <p> The name of the label group to be updated. </p>
     pub fn label_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.label_group_name(input.into());
         self
     }
-    /// <p>The name of the label group to be updated.</p>
+    /// <p> The name of the label group to be updated. </p>
     pub fn set_label_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_label_group_name(input);
         self
     }
-    /// <p>The name of the label group to be updated.</p>
+    /// <p> The name of the label group to be updated. </p>
     pub fn get_label_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_label_group_name()
     }
@@ -126,19 +126,19 @@ impl UpdateLabelGroupFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_fault_codes`](Self::set_fault_codes).
     ///
-    /// <p>Updates the code indicating the type of anomaly associated with the label.</p>
+    /// <p> Updates the code indicating the type of anomaly associated with the label. </p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
     pub fn fault_codes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fault_codes(input.into());
         self
     }
-    /// <p>Updates the code indicating the type of anomaly associated with the label.</p>
+    /// <p> Updates the code indicating the type of anomaly associated with the label. </p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
     pub fn set_fault_codes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_fault_codes(input);
         self
     }
-    /// <p>Updates the code indicating the type of anomaly associated with the label.</p>
+    /// <p> Updates the code indicating the type of anomaly associated with the label. </p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
     pub fn get_fault_codes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_fault_codes()

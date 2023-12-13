@@ -5,27 +5,27 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProtectiveEquipmentSummary {
-    /// <p>An array of IDs for persons who are wearing detected personal protective equipment.</p>
+    /// <p>An array of IDs for persons who are wearing detected personal protective equipment. </p>
     pub persons_with_required_equipment: ::std::option::Option<::std::vec::Vec<i32>>,
-    /// <p>An array of IDs for persons who are not wearing all of the types of PPE specified in the <code>RequiredEquipmentTypes</code> field of the detected personal protective equipment.</p>
+    /// <p>An array of IDs for persons who are not wearing all of the types of PPE specified in the <code>RequiredEquipmentTypes</code> field of the detected personal protective equipment. </p>
     pub persons_without_required_equipment: ::std::option::Option<::std::vec::Vec<i32>>,
-    /// <p>An array of IDs for persons where it was not possible to determine if they are wearing personal protective equipment.</p>
+    /// <p>An array of IDs for persons where it was not possible to determine if they are wearing personal protective equipment. </p>
     pub persons_indeterminate: ::std::option::Option<::std::vec::Vec<i32>>,
 }
 impl ProtectiveEquipmentSummary {
-    /// <p>An array of IDs for persons who are wearing detected personal protective equipment.</p>
+    /// <p>An array of IDs for persons who are wearing detected personal protective equipment. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.persons_with_required_equipment.is_none()`.
     pub fn persons_with_required_equipment(&self) -> &[i32] {
         self.persons_with_required_equipment.as_deref().unwrap_or_default()
     }
-    /// <p>An array of IDs for persons who are not wearing all of the types of PPE specified in the <code>RequiredEquipmentTypes</code> field of the detected personal protective equipment.</p>
+    /// <p>An array of IDs for persons who are not wearing all of the types of PPE specified in the <code>RequiredEquipmentTypes</code> field of the detected personal protective equipment. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.persons_without_required_equipment.is_none()`.
     pub fn persons_without_required_equipment(&self) -> &[i32] {
         self.persons_without_required_equipment.as_deref().unwrap_or_default()
     }
-    /// <p>An array of IDs for persons where it was not possible to determine if they are wearing personal protective equipment.</p>
+    /// <p>An array of IDs for persons where it was not possible to determine if they are wearing personal protective equipment. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.persons_indeterminate.is_none()`.
     pub fn persons_indeterminate(&self) -> &[i32] {
@@ -52,19 +52,19 @@ impl ProtectiveEquipmentSummaryBuilder {
     ///
     /// To override the contents of this collection use [`set_persons_with_required_equipment`](Self::set_persons_with_required_equipment).
     ///
-    /// <p>An array of IDs for persons who are wearing detected personal protective equipment.</p>
+    /// <p>An array of IDs for persons who are wearing detected personal protective equipment. </p>
     pub fn persons_with_required_equipment(mut self, input: i32) -> Self {
         let mut v = self.persons_with_required_equipment.unwrap_or_default();
         v.push(input);
         self.persons_with_required_equipment = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of IDs for persons who are wearing detected personal protective equipment.</p>
+    /// <p>An array of IDs for persons who are wearing detected personal protective equipment. </p>
     pub fn set_persons_with_required_equipment(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
         self.persons_with_required_equipment = input;
         self
     }
-    /// <p>An array of IDs for persons who are wearing detected personal protective equipment.</p>
+    /// <p>An array of IDs for persons who are wearing detected personal protective equipment. </p>
     pub fn get_persons_with_required_equipment(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
         &self.persons_with_required_equipment
     }
@@ -72,19 +72,19 @@ impl ProtectiveEquipmentSummaryBuilder {
     ///
     /// To override the contents of this collection use [`set_persons_without_required_equipment`](Self::set_persons_without_required_equipment).
     ///
-    /// <p>An array of IDs for persons who are not wearing all of the types of PPE specified in the <code>RequiredEquipmentTypes</code> field of the detected personal protective equipment.</p>
+    /// <p>An array of IDs for persons who are not wearing all of the types of PPE specified in the <code>RequiredEquipmentTypes</code> field of the detected personal protective equipment. </p>
     pub fn persons_without_required_equipment(mut self, input: i32) -> Self {
         let mut v = self.persons_without_required_equipment.unwrap_or_default();
         v.push(input);
         self.persons_without_required_equipment = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of IDs for persons who are not wearing all of the types of PPE specified in the <code>RequiredEquipmentTypes</code> field of the detected personal protective equipment.</p>
+    /// <p>An array of IDs for persons who are not wearing all of the types of PPE specified in the <code>RequiredEquipmentTypes</code> field of the detected personal protective equipment. </p>
     pub fn set_persons_without_required_equipment(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
         self.persons_without_required_equipment = input;
         self
     }
-    /// <p>An array of IDs for persons who are not wearing all of the types of PPE specified in the <code>RequiredEquipmentTypes</code> field of the detected personal protective equipment.</p>
+    /// <p>An array of IDs for persons who are not wearing all of the types of PPE specified in the <code>RequiredEquipmentTypes</code> field of the detected personal protective equipment. </p>
     pub fn get_persons_without_required_equipment(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
         &self.persons_without_required_equipment
     }
@@ -92,19 +92,19 @@ impl ProtectiveEquipmentSummaryBuilder {
     ///
     /// To override the contents of this collection use [`set_persons_indeterminate`](Self::set_persons_indeterminate).
     ///
-    /// <p>An array of IDs for persons where it was not possible to determine if they are wearing personal protective equipment.</p>
+    /// <p>An array of IDs for persons where it was not possible to determine if they are wearing personal protective equipment. </p>
     pub fn persons_indeterminate(mut self, input: i32) -> Self {
         let mut v = self.persons_indeterminate.unwrap_or_default();
         v.push(input);
         self.persons_indeterminate = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of IDs for persons where it was not possible to determine if they are wearing personal protective equipment.</p>
+    /// <p>An array of IDs for persons where it was not possible to determine if they are wearing personal protective equipment. </p>
     pub fn set_persons_indeterminate(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
         self.persons_indeterminate = input;
         self
     }
-    /// <p>An array of IDs for persons where it was not possible to determine if they are wearing personal protective equipment.</p>
+    /// <p>An array of IDs for persons where it was not possible to determine if they are wearing personal protective equipment. </p>
     pub fn get_persons_indeterminate(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
         &self.persons_indeterminate
     }

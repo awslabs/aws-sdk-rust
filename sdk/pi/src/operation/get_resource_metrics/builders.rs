@@ -22,7 +22,7 @@ impl GetResourceMetricsInputBuilder {
 }
 /// Fluent builder constructing a request to `GetResourceMetrics`.
 ///
-/// <p>Retrieve Performance Insights metrics for a set of data sources over a time period. You can provide specific dimension groups and dimensions, and provide aggregation and filtering criteria for each group.</p><note>
+/// <p>Retrieve Performance Insights metrics for a set of data sources over a time period. You can provide specific dimension groups and dimensions, and provide aggregation and filtering criteria for each group.</p> <note>
 /// <p>Each response element returns a maximum of 500 bytes. For larger elements, such as SQL statements, only the first 500 bytes are returned.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -118,10 +118,8 @@ impl GetResourceMetricsFluentBuilder {
     }
     /// <p>The Amazon Web Services service for which Performance Insights returns metrics. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>RDS</code></p></li>
-    /// <li>
-    /// <p><code>DOCDB</code></p></li>
+    /// <li> <p> <code>RDS</code> </p> </li>
+    /// <li> <p> <code>DOCDB</code> </p> </li>
     /// </ul>
     pub fn service_type(mut self, input: crate::types::ServiceType) -> Self {
         self.inner = self.inner.service_type(input);
@@ -129,10 +127,8 @@ impl GetResourceMetricsFluentBuilder {
     }
     /// <p>The Amazon Web Services service for which Performance Insights returns metrics. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>RDS</code></p></li>
-    /// <li>
-    /// <p><code>DOCDB</code></p></li>
+    /// <li> <p> <code>RDS</code> </p> </li>
+    /// <li> <p> <code>DOCDB</code> </p> </li>
     /// </ul>
     pub fn set_service_type(mut self, input: ::std::option::Option<crate::types::ServiceType>) -> Self {
         self.inner = self.inner.set_service_type(input);
@@ -140,10 +136,8 @@ impl GetResourceMetricsFluentBuilder {
     }
     /// <p>The Amazon Web Services service for which Performance Insights returns metrics. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>RDS</code></p></li>
-    /// <li>
-    /// <p><code>DOCDB</code></p></li>
+    /// <li> <p> <code>RDS</code> </p> </li>
+    /// <li> <p> <code>DOCDB</code> </p> </li>
     /// </ul>
     pub fn get_service_type(&self) -> &::std::option::Option<crate::types::ServiceType> {
         self.inner.get_service_type()
@@ -219,16 +213,11 @@ impl GetResourceMetricsFluentBuilder {
     }
     /// <p>The granularity, in seconds, of the data points returned from Performance Insights. A period can be as short as one second, or as long as one day (86400 seconds). Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>1</code> (one second)</p></li>
-    /// <li>
-    /// <p><code>60</code> (one minute)</p></li>
-    /// <li>
-    /// <p><code>300</code> (five minutes)</p></li>
-    /// <li>
-    /// <p><code>3600</code> (one hour)</p></li>
-    /// <li>
-    /// <p><code>86400</code> (twenty-four hours)</p></li>
+    /// <li> <p> <code>1</code> (one second)</p> </li>
+    /// <li> <p> <code>60</code> (one minute)</p> </li>
+    /// <li> <p> <code>300</code> (five minutes)</p> </li>
+    /// <li> <p> <code>3600</code> (one hour)</p> </li>
+    /// <li> <p> <code>86400</code> (twenty-four hours)</p> </li>
     /// </ul>
     /// <p>If you don't specify <code>PeriodInSeconds</code>, then Performance Insights will choose a value for you, with a goal of returning roughly 100-200 data points in the response.</p>
     pub fn period_in_seconds(mut self, input: i32) -> Self {
@@ -237,16 +226,11 @@ impl GetResourceMetricsFluentBuilder {
     }
     /// <p>The granularity, in seconds, of the data points returned from Performance Insights. A period can be as short as one second, or as long as one day (86400 seconds). Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>1</code> (one second)</p></li>
-    /// <li>
-    /// <p><code>60</code> (one minute)</p></li>
-    /// <li>
-    /// <p><code>300</code> (five minutes)</p></li>
-    /// <li>
-    /// <p><code>3600</code> (one hour)</p></li>
-    /// <li>
-    /// <p><code>86400</code> (twenty-four hours)</p></li>
+    /// <li> <p> <code>1</code> (one second)</p> </li>
+    /// <li> <p> <code>60</code> (one minute)</p> </li>
+    /// <li> <p> <code>300</code> (five minutes)</p> </li>
+    /// <li> <p> <code>3600</code> (one hour)</p> </li>
+    /// <li> <p> <code>86400</code> (twenty-four hours)</p> </li>
     /// </ul>
     /// <p>If you don't specify <code>PeriodInSeconds</code>, then Performance Insights will choose a value for you, with a goal of returning roughly 100-200 data points in the response.</p>
     pub fn set_period_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
@@ -255,32 +239,27 @@ impl GetResourceMetricsFluentBuilder {
     }
     /// <p>The granularity, in seconds, of the data points returned from Performance Insights. A period can be as short as one second, or as long as one day (86400 seconds). Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>1</code> (one second)</p></li>
-    /// <li>
-    /// <p><code>60</code> (one minute)</p></li>
-    /// <li>
-    /// <p><code>300</code> (five minutes)</p></li>
-    /// <li>
-    /// <p><code>3600</code> (one hour)</p></li>
-    /// <li>
-    /// <p><code>86400</code> (twenty-four hours)</p></li>
+    /// <li> <p> <code>1</code> (one second)</p> </li>
+    /// <li> <p> <code>60</code> (one minute)</p> </li>
+    /// <li> <p> <code>300</code> (five minutes)</p> </li>
+    /// <li> <p> <code>3600</code> (one hour)</p> </li>
+    /// <li> <p> <code>86400</code> (twenty-four hours)</p> </li>
     /// </ul>
     /// <p>If you don't specify <code>PeriodInSeconds</code>, then Performance Insights will choose a value for you, with a goal of returning roughly 100-200 data points in the response.</p>
     pub fn get_period_in_seconds(&self) -> &::std::option::Option<i32> {
         self.inner.get_period_in_seconds()
     }
-    /// <p>The maximum number of items to return in the response. If more items exist than the specified <code>MaxRecords</code> value, a pagination token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of items to return in the response. If more items exist than the specified <code>MaxRecords</code> value, a pagination token is included in the response so that the remaining results can be retrieved. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of items to return in the response. If more items exist than the specified <code>MaxRecords</code> value, a pagination token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of items to return in the response. If more items exist than the specified <code>MaxRecords</code> value, a pagination token is included in the response so that the remaining results can be retrieved. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The maximum number of items to return in the response. If more items exist than the specified <code>MaxRecords</code> value, a pagination token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of items to return in the response. If more items exist than the specified <code>MaxRecords</code> value, a pagination token is included in the response so that the remaining results can be retrieved. </p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

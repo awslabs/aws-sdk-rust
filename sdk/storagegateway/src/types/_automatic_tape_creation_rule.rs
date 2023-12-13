@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutomaticTapeCreationRule {
-    /// <p>A prefix that you append to the barcode of the virtual tape that you are creating. This prefix makes the barcode unique.</p><note>
+    /// <p>A prefix that you append to the barcode of the virtual tape that you are creating. This prefix makes the barcode unique.</p> <note>
     /// <p>The prefix must be 1-4 characters in length and must be one of the uppercase letters from A to Z.</p>
     /// </note>
     pub tape_barcode_prefix: ::std::string::String,
@@ -18,7 +18,7 @@ pub struct AutomaticTapeCreationRule {
     pub worm: bool,
 }
 impl AutomaticTapeCreationRule {
-    /// <p>A prefix that you append to the barcode of the virtual tape that you are creating. This prefix makes the barcode unique.</p><note>
+    /// <p>A prefix that you append to the barcode of the virtual tape that you are creating. This prefix makes the barcode unique.</p> <note>
     /// <p>The prefix must be 1-4 characters in length and must be one of the uppercase letters from A to Z.</p>
     /// </note>
     pub fn tape_barcode_prefix(&self) -> &str {
@@ -61,7 +61,7 @@ pub struct AutomaticTapeCreationRuleBuilder {
     pub(crate) worm: ::std::option::Option<bool>,
 }
 impl AutomaticTapeCreationRuleBuilder {
-    /// <p>A prefix that you append to the barcode of the virtual tape that you are creating. This prefix makes the barcode unique.</p><note>
+    /// <p>A prefix that you append to the barcode of the virtual tape that you are creating. This prefix makes the barcode unique.</p> <note>
     /// <p>The prefix must be 1-4 characters in length and must be one of the uppercase letters from A to Z.</p>
     /// </note>
     /// This field is required.
@@ -69,14 +69,14 @@ impl AutomaticTapeCreationRuleBuilder {
         self.tape_barcode_prefix = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A prefix that you append to the barcode of the virtual tape that you are creating. This prefix makes the barcode unique.</p><note>
+    /// <p>A prefix that you append to the barcode of the virtual tape that you are creating. This prefix makes the barcode unique.</p> <note>
     /// <p>The prefix must be 1-4 characters in length and must be one of the uppercase letters from A to Z.</p>
     /// </note>
     pub fn set_tape_barcode_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tape_barcode_prefix = input;
         self
     }
-    /// <p>A prefix that you append to the barcode of the virtual tape that you are creating. This prefix makes the barcode unique.</p><note>
+    /// <p>A prefix that you append to the barcode of the virtual tape that you are creating. This prefix makes the barcode unique.</p> <note>
     /// <p>The prefix must be 1-4 characters in length and must be one of the uppercase letters from A to Z.</p>
     /// </note>
     pub fn get_tape_barcode_prefix(&self) -> &::std::option::Option<::std::string::String> {

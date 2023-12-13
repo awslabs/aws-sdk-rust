@@ -22,8 +22,8 @@ impl DescribeResizeInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeResize`.
 ///
-/// <p>Returns information about the last resize operation for the specified cluster. If no resize operation has ever been initiated for the specified cluster, a <code>HTTP 404</code> error is returned. If a resize operation was initiated and completed, the status of the resize remains as <code>SUCCEEDED</code> until the next resize.</p>
-/// <p>A resize operation can be requested using <code>ModifyCluster</code> and specifying a different number or type of nodes for the cluster.</p>
+/// <p>Returns information about the last resize operation for the specified cluster. If no resize operation has ever been initiated for the specified cluster, a <code>HTTP 404</code> error is returned. If a resize operation was initiated and completed, the status of the resize remains as <code>SUCCEEDED</code> until the next resize. </p>
+/// <p>A resize operation can be requested using <code>ModifyCluster</code> and specifying a different number or type of nodes for the cluster. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeResizeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

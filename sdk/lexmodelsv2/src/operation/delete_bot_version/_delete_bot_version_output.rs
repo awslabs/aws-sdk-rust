@@ -7,7 +7,7 @@ pub struct DeleteBotVersionOutput {
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the bot that is being deleted.</p>
     pub bot_version: ::std::option::Option<::std::string::String>,
-    /// <p>The current status of the bot.</p>
+    /// <p>The current status of the bot. </p>
     pub bot_status: ::std::option::Option<crate::types::BotStatus>,
     _request_id: Option<String>,
 }
@@ -20,7 +20,7 @@ impl DeleteBotVersionOutput {
     pub fn bot_version(&self) -> ::std::option::Option<&str> {
         self.bot_version.as_deref()
     }
-    /// <p>The current status of the bot.</p>
+    /// <p>The current status of the bot. </p>
     pub fn bot_status(&self) -> ::std::option::Option<&crate::types::BotStatus> {
         self.bot_status.as_ref()
     }
@@ -75,17 +75,17 @@ impl DeleteBotVersionOutputBuilder {
     pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.bot_version
     }
-    /// <p>The current status of the bot.</p>
+    /// <p>The current status of the bot. </p>
     pub fn bot_status(mut self, input: crate::types::BotStatus) -> Self {
         self.bot_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current status of the bot.</p>
+    /// <p>The current status of the bot. </p>
     pub fn set_bot_status(mut self, input: ::std::option::Option<crate::types::BotStatus>) -> Self {
         self.bot_status = input;
         self
     }
-    /// <p>The current status of the bot.</p>
+    /// <p>The current status of the bot. </p>
     pub fn get_bot_status(&self) -> &::std::option::Option<crate::types::BotStatus> {
         &self.bot_status
     }

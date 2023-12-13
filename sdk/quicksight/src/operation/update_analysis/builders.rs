@@ -150,17 +150,17 @@ impl UpdateAnalysisFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>The parameter names and override values that you want to use. An analysis can have any parameter type, and some parameters might accept multiple values.</p>
+    /// <p>The parameter names and override values that you want to use. An analysis can have any parameter type, and some parameters might accept multiple values. </p>
     pub fn parameters(mut self, input: crate::types::Parameters) -> Self {
         self.inner = self.inner.parameters(input);
         self
     }
-    /// <p>The parameter names and override values that you want to use. An analysis can have any parameter type, and some parameters might accept multiple values.</p>
+    /// <p>The parameter names and override values that you want to use. An analysis can have any parameter type, and some parameters might accept multiple values. </p>
     pub fn set_parameters(mut self, input: ::std::option::Option<crate::types::Parameters>) -> Self {
         self.inner = self.inner.set_parameters(input);
         self
     }
-    /// <p>The parameter names and override values that you want to use. An analysis can have any parameter type, and some parameters might accept multiple values.</p>
+    /// <p>The parameter names and override values that you want to use. An analysis can have any parameter type, and some parameters might accept multiple values. </p>
     pub fn get_parameters(&self) -> &::std::option::Option<crate::types::Parameters> {
         self.inner.get_parameters()
     }

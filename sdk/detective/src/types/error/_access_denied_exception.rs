@@ -12,7 +12,7 @@ pub struct AccessDeniedException {
     pub error_code_reason: ::std::option::Option<::std::string::String>,
     /// <p>The error code associated with the access denied exception.</p>
     pub sub_error_code: ::std::option::Option<crate::types::ErrorCode>,
-    /// <p>An explanation of why access was denied.</p>
+    /// <p> An explanation of why access was denied.</p>
     pub sub_error_code_reason: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
@@ -29,7 +29,7 @@ impl AccessDeniedException {
     pub fn sub_error_code(&self) -> ::std::option::Option<&crate::types::ErrorCode> {
         self.sub_error_code.as_ref()
     }
-    /// <p>An explanation of why access was denied.</p>
+    /// <p> An explanation of why access was denied.</p>
     pub fn sub_error_code_reason(&self) -> ::std::option::Option<&str> {
         self.sub_error_code_reason.as_deref()
     }
@@ -138,17 +138,17 @@ impl AccessDeniedExceptionBuilder {
     pub fn get_sub_error_code(&self) -> &::std::option::Option<crate::types::ErrorCode> {
         &self.sub_error_code
     }
-    /// <p>An explanation of why access was denied.</p>
+    /// <p> An explanation of why access was denied.</p>
     pub fn sub_error_code_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sub_error_code_reason = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An explanation of why access was denied.</p>
+    /// <p> An explanation of why access was denied.</p>
     pub fn set_sub_error_code_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sub_error_code_reason = input;
         self
     }
-    /// <p>An explanation of why access was denied.</p>
+    /// <p> An explanation of why access was denied.</p>
     pub fn get_sub_error_code_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.sub_error_code_reason
     }

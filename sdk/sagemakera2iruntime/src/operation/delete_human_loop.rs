@@ -256,7 +256,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteHumanLo
 pub enum DeleteHumanLoopError {
     /// <p>We couldn't process your request because of an issue with the server. Try again later.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p>We couldn't find the requested resource. Check that your resources exists and were created in the same AWS Region as your request, and try your request again.</p>
+    /// <p>We couldn't find the requested resource. Check that your resources exists and were created in the same AWS Region as your request, and try your request again. </p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>You exceeded the maximum number of requests.</p>
     ThrottlingException(crate::types::error::ThrottlingException),

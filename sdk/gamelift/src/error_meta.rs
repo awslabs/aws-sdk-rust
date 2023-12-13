@@ -28,7 +28,7 @@ pub enum Error {
     OutOfCapacityException(crate::types::error::OutOfCapacityException),
     /// <p>The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying.</p>
     TaggingFailedException(crate::types::error::TaggingFailedException),
-    /// <p>The service is unable to resolve the routing for a particular alias because it has a terminal <code>RoutingStrategy</code> associated with it. The message returned in this exception is the message defined in the routing strategy itself. Such requests should only be retried if the routing strategy for the specified alias is modified.</p>
+    /// <p>The service is unable to resolve the routing for a particular alias because it has a terminal <code>RoutingStrategy</code> associated with it. The message returned in this exception is the message defined in the routing strategy itself. Such requests should only be retried if the routing strategy for the specified alias is modified. </p>
     TerminalRoutingStrategyException(crate::types::error::TerminalRoutingStrategyException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::types::error::UnauthorizedException),

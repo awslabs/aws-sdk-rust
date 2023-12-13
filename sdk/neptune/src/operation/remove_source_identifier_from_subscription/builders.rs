@@ -126,17 +126,17 @@ impl RemoveSourceIdentifierFromSubscriptionFluentBuilder {
     pub fn get_subscription_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_subscription_name()
     }
-    /// <p>The source identifier to be removed from the subscription, such as the <b>DB instance identifier</b> for a DB instance or the name of a security group.</p>
+    /// <p> The source identifier to be removed from the subscription, such as the <b>DB instance identifier</b> for a DB instance or the name of a security group.</p>
     pub fn source_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_identifier(input.into());
         self
     }
-    /// <p>The source identifier to be removed from the subscription, such as the <b>DB instance identifier</b> for a DB instance or the name of a security group.</p>
+    /// <p> The source identifier to be removed from the subscription, such as the <b>DB instance identifier</b> for a DB instance or the name of a security group.</p>
     pub fn set_source_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_identifier(input);
         self
     }
-    /// <p>The source identifier to be removed from the subscription, such as the <b>DB instance identifier</b> for a DB instance or the name of a security group.</p>
+    /// <p> The source identifier to be removed from the subscription, such as the <b>DB instance identifier</b> for a DB instance or the name of a security group.</p>
     pub fn get_source_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_identifier()
     }

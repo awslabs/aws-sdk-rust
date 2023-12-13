@@ -248,7 +248,7 @@ pub enum TagResourceError {
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
-    /// <p>The request contains more tags than can be associated with a resource (50 tags per resource). The maximum number of tags includes both existing tags and those included in your current request.</p>
+    /// <p>The request contains more tags than can be associated with a resource (50 tags per resource). The maximum number of tags includes both existing tags and those included in your current request. </p>
     TooManyTagsException(crate::types::error::TooManyTagsException),
     /// <p>Input validation failed. Check your request parameters and retry the request.</p>
     ValidationException(crate::types::error::ValidationException),

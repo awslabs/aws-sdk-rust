@@ -6,7 +6,7 @@
 pub struct ListJobsByPipelineOutput {
     /// <p>An array of <code>Job</code> objects that are in the specified pipeline.</p>
     pub jobs: ::std::option::Option<::std::vec::Vec<crate::types::Job>>,
-    /// <p>A value that you use to access the second and subsequent pages of results, if any. When the jobs in the specified pipeline fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>.</p>
+    /// <p> A value that you use to access the second and subsequent pages of results, if any. When the jobs in the specified pipeline fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>. </p>
     pub next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -17,7 +17,7 @@ impl ListJobsByPipelineOutput {
     pub fn jobs(&self) -> &[crate::types::Job] {
         self.jobs.as_deref().unwrap_or_default()
     }
-    /// <p>A value that you use to access the second and subsequent pages of results, if any. When the jobs in the specified pipeline fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>.</p>
+    /// <p> A value that you use to access the second and subsequent pages of results, if any. When the jobs in the specified pipeline fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>. </p>
     pub fn next_page_token(&self) -> ::std::option::Option<&str> {
         self.next_page_token.as_deref()
     }
@@ -63,17 +63,17 @@ impl ListJobsByPipelineOutputBuilder {
     pub fn get_jobs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Job>> {
         &self.jobs
     }
-    /// <p>A value that you use to access the second and subsequent pages of results, if any. When the jobs in the specified pipeline fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>.</p>
+    /// <p> A value that you use to access the second and subsequent pages of results, if any. When the jobs in the specified pipeline fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>. </p>
     pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A value that you use to access the second and subsequent pages of results, if any. When the jobs in the specified pipeline fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>.</p>
+    /// <p> A value that you use to access the second and subsequent pages of results, if any. When the jobs in the specified pipeline fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>. </p>
     pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_token = input;
         self
     }
-    /// <p>A value that you use to access the second and subsequent pages of results, if any. When the jobs in the specified pipeline fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>.</p>
+    /// <p> A value that you use to access the second and subsequent pages of results, if any. When the jobs in the specified pipeline fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>. </p>
     pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_page_token
     }

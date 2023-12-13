@@ -7,16 +7,12 @@ pub struct CreateRegistrationAttachmentOutput {
     pub registration_attachment_arn: ::std::string::String,
     /// <p>The unique identifier for the registration attachment.</p>
     pub registration_attachment_id: ::std::string::String,
-    /// <p>The status of the registration attachment.</p>
+    /// <p>The status of the registration attachment. </p>
     /// <ul>
-    /// <li>
-    /// <p><code>UPLOAD_IN_PROGRESS</code> The attachment is being uploaded.</p></li>
-    /// <li>
-    /// <p><code>UPLOAD_COMPLETE</code> The attachment has been uploaded.</p></li>
-    /// <li>
-    /// <p><code>UPLOAD_FAILED</code> The attachment failed to uploaded.</p></li>
-    /// <li>
-    /// <p><code>DELETED</code> The attachment has been deleted..</p></li>
+    /// <li> <p> <code>UPLOAD_IN_PROGRESS</code> The attachment is being uploaded.</p> </li>
+    /// <li> <p> <code>UPLOAD_COMPLETE</code> The attachment has been uploaded.</p> </li>
+    /// <li> <p> <code>UPLOAD_FAILED</code> The attachment failed to uploaded.</p> </li>
+    /// <li> <p> <code>DELETED</code> The attachment has been deleted..</p> </li>
     /// </ul>
     pub attachment_status: crate::types::AttachmentStatus,
     /// <p>An array of tags (key and value pairs) to associate with the registration attachment.</p>
@@ -36,16 +32,12 @@ impl CreateRegistrationAttachmentOutput {
         use std::ops::Deref;
         self.registration_attachment_id.deref()
     }
-    /// <p>The status of the registration attachment.</p>
+    /// <p>The status of the registration attachment. </p>
     /// <ul>
-    /// <li>
-    /// <p><code>UPLOAD_IN_PROGRESS</code> The attachment is being uploaded.</p></li>
-    /// <li>
-    /// <p><code>UPLOAD_COMPLETE</code> The attachment has been uploaded.</p></li>
-    /// <li>
-    /// <p><code>UPLOAD_FAILED</code> The attachment failed to uploaded.</p></li>
-    /// <li>
-    /// <p><code>DELETED</code> The attachment has been deleted..</p></li>
+    /// <li> <p> <code>UPLOAD_IN_PROGRESS</code> The attachment is being uploaded.</p> </li>
+    /// <li> <p> <code>UPLOAD_COMPLETE</code> The attachment has been uploaded.</p> </li>
+    /// <li> <p> <code>UPLOAD_FAILED</code> The attachment failed to uploaded.</p> </li>
+    /// <li> <p> <code>DELETED</code> The attachment has been deleted..</p> </li>
     /// </ul>
     pub fn attachment_status(&self) -> &crate::types::AttachmentStatus {
         &self.attachment_status
@@ -115,47 +107,35 @@ impl CreateRegistrationAttachmentOutputBuilder {
     pub fn get_registration_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.registration_attachment_id
     }
-    /// <p>The status of the registration attachment.</p>
+    /// <p>The status of the registration attachment. </p>
     /// <ul>
-    /// <li>
-    /// <p><code>UPLOAD_IN_PROGRESS</code> The attachment is being uploaded.</p></li>
-    /// <li>
-    /// <p><code>UPLOAD_COMPLETE</code> The attachment has been uploaded.</p></li>
-    /// <li>
-    /// <p><code>UPLOAD_FAILED</code> The attachment failed to uploaded.</p></li>
-    /// <li>
-    /// <p><code>DELETED</code> The attachment has been deleted..</p></li>
+    /// <li> <p> <code>UPLOAD_IN_PROGRESS</code> The attachment is being uploaded.</p> </li>
+    /// <li> <p> <code>UPLOAD_COMPLETE</code> The attachment has been uploaded.</p> </li>
+    /// <li> <p> <code>UPLOAD_FAILED</code> The attachment failed to uploaded.</p> </li>
+    /// <li> <p> <code>DELETED</code> The attachment has been deleted..</p> </li>
     /// </ul>
     /// This field is required.
     pub fn attachment_status(mut self, input: crate::types::AttachmentStatus) -> Self {
         self.attachment_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the registration attachment.</p>
+    /// <p>The status of the registration attachment. </p>
     /// <ul>
-    /// <li>
-    /// <p><code>UPLOAD_IN_PROGRESS</code> The attachment is being uploaded.</p></li>
-    /// <li>
-    /// <p><code>UPLOAD_COMPLETE</code> The attachment has been uploaded.</p></li>
-    /// <li>
-    /// <p><code>UPLOAD_FAILED</code> The attachment failed to uploaded.</p></li>
-    /// <li>
-    /// <p><code>DELETED</code> The attachment has been deleted..</p></li>
+    /// <li> <p> <code>UPLOAD_IN_PROGRESS</code> The attachment is being uploaded.</p> </li>
+    /// <li> <p> <code>UPLOAD_COMPLETE</code> The attachment has been uploaded.</p> </li>
+    /// <li> <p> <code>UPLOAD_FAILED</code> The attachment failed to uploaded.</p> </li>
+    /// <li> <p> <code>DELETED</code> The attachment has been deleted..</p> </li>
     /// </ul>
     pub fn set_attachment_status(mut self, input: ::std::option::Option<crate::types::AttachmentStatus>) -> Self {
         self.attachment_status = input;
         self
     }
-    /// <p>The status of the registration attachment.</p>
+    /// <p>The status of the registration attachment. </p>
     /// <ul>
-    /// <li>
-    /// <p><code>UPLOAD_IN_PROGRESS</code> The attachment is being uploaded.</p></li>
-    /// <li>
-    /// <p><code>UPLOAD_COMPLETE</code> The attachment has been uploaded.</p></li>
-    /// <li>
-    /// <p><code>UPLOAD_FAILED</code> The attachment failed to uploaded.</p></li>
-    /// <li>
-    /// <p><code>DELETED</code> The attachment has been deleted..</p></li>
+    /// <li> <p> <code>UPLOAD_IN_PROGRESS</code> The attachment is being uploaded.</p> </li>
+    /// <li> <p> <code>UPLOAD_COMPLETE</code> The attachment has been uploaded.</p> </li>
+    /// <li> <p> <code>UPLOAD_FAILED</code> The attachment failed to uploaded.</p> </li>
+    /// <li> <p> <code>DELETED</code> The attachment has been deleted..</p> </li>
     /// </ul>
     pub fn get_attachment_status(&self) -> &::std::option::Option<crate::types::AttachmentStatus> {
         &self.attachment_status

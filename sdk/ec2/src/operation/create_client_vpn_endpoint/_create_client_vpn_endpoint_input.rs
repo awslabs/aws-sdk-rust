@@ -12,24 +12,20 @@ pub struct CreateClientVpnEndpointInput {
     /// <p>Information about the client connection logging options.</p>
     /// <p>If you enable client connection logging, data about client connections is sent to a Cloudwatch Logs log stream. The following information is logged:</p>
     /// <ul>
-    /// <li>
-    /// <p>Client connection requests</p></li>
-    /// <li>
-    /// <p>Client connection results (successful and unsuccessful)</p></li>
-    /// <li>
-    /// <p>Reasons for unsuccessful client connection requests</p></li>
-    /// <li>
-    /// <p>Client connection termination time</p></li>
+    /// <li> <p>Client connection requests</p> </li>
+    /// <li> <p>Client connection results (successful and unsuccessful)</p> </li>
+    /// <li> <p>Reasons for unsuccessful client connection requests</p> </li>
+    /// <li> <p>Client connection termination time</p> </li>
     /// </ul>
     pub connection_log_options: ::std::option::Option<crate::types::ConnectionLogOptions>,
     /// <p>Information about the DNS servers to be used for DNS resolution. A Client VPN endpoint can have up to two DNS servers. If no DNS server is specified, the DNS address configured on the device is used for the DNS server.</p>
     pub dns_servers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The transport protocol to be used by the VPN session.</p>
-    /// <p>Default value: <code>udp</code></p>
+    /// <p>Default value: <code>udp</code> </p>
     pub transport_protocol: ::std::option::Option<crate::types::TransportProtocol>,
     /// <p>The port number to assign to the Client VPN endpoint for TCP and UDP traffic.</p>
-    /// <p>Valid Values: <code>443</code> | <code>1194</code></p>
-    /// <p>Default Value: <code>443</code></p>
+    /// <p>Valid Values: <code>443</code> | <code>1194</code> </p>
+    /// <p>Default Value: <code>443</code> </p>
     pub vpn_port: ::std::option::Option<i32>,
     /// <p>A brief description of the Client VPN endpoint.</p>
     pub description: ::std::option::Option<::std::string::String>,
@@ -48,13 +44,13 @@ pub struct CreateClientVpnEndpointInput {
     /// <p>The ID of the VPC to associate with the Client VPN endpoint. If no security group IDs are specified in the request, the default security group for the VPC is applied.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>Specify whether to enable the self-service portal for the Client VPN endpoint.</p>
-    /// <p>Default Value: <code>enabled</code></p>
+    /// <p>Default Value: <code>enabled</code> </p>
     pub self_service_portal: ::std::option::Option<crate::types::SelfServicePortal>,
     /// <p>The options for managing connection authorization for new client connections.</p>
     pub client_connect_options: ::std::option::Option<crate::types::ClientConnectOptions>,
     /// <p>The maximum VPN session duration time in hours.</p>
-    /// <p>Valid values: <code>8 | 10 | 12 | 24</code></p>
-    /// <p>Default value: <code>24</code></p>
+    /// <p>Valid values: <code>8 | 10 | 12 | 24</code> </p>
+    /// <p>Default value: <code>24</code> </p>
     pub session_timeout_hours: ::std::option::Option<i32>,
     /// <p>Options for enabling a customizable text banner that will be displayed on Amazon Web Services provided clients when a VPN session is established.</p>
     pub client_login_banner_options: ::std::option::Option<crate::types::ClientLoginBannerOptions>,
@@ -77,14 +73,10 @@ impl CreateClientVpnEndpointInput {
     /// <p>Information about the client connection logging options.</p>
     /// <p>If you enable client connection logging, data about client connections is sent to a Cloudwatch Logs log stream. The following information is logged:</p>
     /// <ul>
-    /// <li>
-    /// <p>Client connection requests</p></li>
-    /// <li>
-    /// <p>Client connection results (successful and unsuccessful)</p></li>
-    /// <li>
-    /// <p>Reasons for unsuccessful client connection requests</p></li>
-    /// <li>
-    /// <p>Client connection termination time</p></li>
+    /// <li> <p>Client connection requests</p> </li>
+    /// <li> <p>Client connection results (successful and unsuccessful)</p> </li>
+    /// <li> <p>Reasons for unsuccessful client connection requests</p> </li>
+    /// <li> <p>Client connection termination time</p> </li>
     /// </ul>
     pub fn connection_log_options(&self) -> ::std::option::Option<&crate::types::ConnectionLogOptions> {
         self.connection_log_options.as_ref()
@@ -96,13 +88,13 @@ impl CreateClientVpnEndpointInput {
         self.dns_servers.as_deref().unwrap_or_default()
     }
     /// <p>The transport protocol to be used by the VPN session.</p>
-    /// <p>Default value: <code>udp</code></p>
+    /// <p>Default value: <code>udp</code> </p>
     pub fn transport_protocol(&self) -> ::std::option::Option<&crate::types::TransportProtocol> {
         self.transport_protocol.as_ref()
     }
     /// <p>The port number to assign to the Client VPN endpoint for TCP and UDP traffic.</p>
-    /// <p>Valid Values: <code>443</code> | <code>1194</code></p>
-    /// <p>Default Value: <code>443</code></p>
+    /// <p>Valid Values: <code>443</code> | <code>1194</code> </p>
+    /// <p>Default Value: <code>443</code> </p>
     pub fn vpn_port(&self) -> ::std::option::Option<i32> {
         self.vpn_port
     }
@@ -141,7 +133,7 @@ impl CreateClientVpnEndpointInput {
         self.vpc_id.as_deref()
     }
     /// <p>Specify whether to enable the self-service portal for the Client VPN endpoint.</p>
-    /// <p>Default Value: <code>enabled</code></p>
+    /// <p>Default Value: <code>enabled</code> </p>
     pub fn self_service_portal(&self) -> ::std::option::Option<&crate::types::SelfServicePortal> {
         self.self_service_portal.as_ref()
     }
@@ -150,8 +142,8 @@ impl CreateClientVpnEndpointInput {
         self.client_connect_options.as_ref()
     }
     /// <p>The maximum VPN session duration time in hours.</p>
-    /// <p>Valid values: <code>8 | 10 | 12 | 24</code></p>
-    /// <p>Default value: <code>24</code></p>
+    /// <p>Valid values: <code>8 | 10 | 12 | 24</code> </p>
+    /// <p>Default value: <code>24</code> </p>
     pub fn session_timeout_hours(&self) -> ::std::option::Option<i32> {
         self.session_timeout_hours
     }
@@ -244,14 +236,10 @@ impl CreateClientVpnEndpointInputBuilder {
     /// <p>Information about the client connection logging options.</p>
     /// <p>If you enable client connection logging, data about client connections is sent to a Cloudwatch Logs log stream. The following information is logged:</p>
     /// <ul>
-    /// <li>
-    /// <p>Client connection requests</p></li>
-    /// <li>
-    /// <p>Client connection results (successful and unsuccessful)</p></li>
-    /// <li>
-    /// <p>Reasons for unsuccessful client connection requests</p></li>
-    /// <li>
-    /// <p>Client connection termination time</p></li>
+    /// <li> <p>Client connection requests</p> </li>
+    /// <li> <p>Client connection results (successful and unsuccessful)</p> </li>
+    /// <li> <p>Reasons for unsuccessful client connection requests</p> </li>
+    /// <li> <p>Client connection termination time</p> </li>
     /// </ul>
     /// This field is required.
     pub fn connection_log_options(mut self, input: crate::types::ConnectionLogOptions) -> Self {
@@ -261,14 +249,10 @@ impl CreateClientVpnEndpointInputBuilder {
     /// <p>Information about the client connection logging options.</p>
     /// <p>If you enable client connection logging, data about client connections is sent to a Cloudwatch Logs log stream. The following information is logged:</p>
     /// <ul>
-    /// <li>
-    /// <p>Client connection requests</p></li>
-    /// <li>
-    /// <p>Client connection results (successful and unsuccessful)</p></li>
-    /// <li>
-    /// <p>Reasons for unsuccessful client connection requests</p></li>
-    /// <li>
-    /// <p>Client connection termination time</p></li>
+    /// <li> <p>Client connection requests</p> </li>
+    /// <li> <p>Client connection results (successful and unsuccessful)</p> </li>
+    /// <li> <p>Reasons for unsuccessful client connection requests</p> </li>
+    /// <li> <p>Client connection termination time</p> </li>
     /// </ul>
     pub fn set_connection_log_options(mut self, input: ::std::option::Option<crate::types::ConnectionLogOptions>) -> Self {
         self.connection_log_options = input;
@@ -277,14 +261,10 @@ impl CreateClientVpnEndpointInputBuilder {
     /// <p>Information about the client connection logging options.</p>
     /// <p>If you enable client connection logging, data about client connections is sent to a Cloudwatch Logs log stream. The following information is logged:</p>
     /// <ul>
-    /// <li>
-    /// <p>Client connection requests</p></li>
-    /// <li>
-    /// <p>Client connection results (successful and unsuccessful)</p></li>
-    /// <li>
-    /// <p>Reasons for unsuccessful client connection requests</p></li>
-    /// <li>
-    /// <p>Client connection termination time</p></li>
+    /// <li> <p>Client connection requests</p> </li>
+    /// <li> <p>Client connection results (successful and unsuccessful)</p> </li>
+    /// <li> <p>Reasons for unsuccessful client connection requests</p> </li>
+    /// <li> <p>Client connection termination time</p> </li>
     /// </ul>
     pub fn get_connection_log_options(&self) -> &::std::option::Option<crate::types::ConnectionLogOptions> {
         &self.connection_log_options
@@ -310,39 +290,39 @@ impl CreateClientVpnEndpointInputBuilder {
         &self.dns_servers
     }
     /// <p>The transport protocol to be used by the VPN session.</p>
-    /// <p>Default value: <code>udp</code></p>
+    /// <p>Default value: <code>udp</code> </p>
     pub fn transport_protocol(mut self, input: crate::types::TransportProtocol) -> Self {
         self.transport_protocol = ::std::option::Option::Some(input);
         self
     }
     /// <p>The transport protocol to be used by the VPN session.</p>
-    /// <p>Default value: <code>udp</code></p>
+    /// <p>Default value: <code>udp</code> </p>
     pub fn set_transport_protocol(mut self, input: ::std::option::Option<crate::types::TransportProtocol>) -> Self {
         self.transport_protocol = input;
         self
     }
     /// <p>The transport protocol to be used by the VPN session.</p>
-    /// <p>Default value: <code>udp</code></p>
+    /// <p>Default value: <code>udp</code> </p>
     pub fn get_transport_protocol(&self) -> &::std::option::Option<crate::types::TransportProtocol> {
         &self.transport_protocol
     }
     /// <p>The port number to assign to the Client VPN endpoint for TCP and UDP traffic.</p>
-    /// <p>Valid Values: <code>443</code> | <code>1194</code></p>
-    /// <p>Default Value: <code>443</code></p>
+    /// <p>Valid Values: <code>443</code> | <code>1194</code> </p>
+    /// <p>Default Value: <code>443</code> </p>
     pub fn vpn_port(mut self, input: i32) -> Self {
         self.vpn_port = ::std::option::Option::Some(input);
         self
     }
     /// <p>The port number to assign to the Client VPN endpoint for TCP and UDP traffic.</p>
-    /// <p>Valid Values: <code>443</code> | <code>1194</code></p>
-    /// <p>Default Value: <code>443</code></p>
+    /// <p>Valid Values: <code>443</code> | <code>1194</code> </p>
+    /// <p>Default Value: <code>443</code> </p>
     pub fn set_vpn_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.vpn_port = input;
         self
     }
     /// <p>The port number to assign to the Client VPN endpoint for TCP and UDP traffic.</p>
-    /// <p>Valid Values: <code>443</code> | <code>1194</code></p>
-    /// <p>Default Value: <code>443</code></p>
+    /// <p>Valid Values: <code>443</code> | <code>1194</code> </p>
+    /// <p>Default Value: <code>443</code> </p>
     pub fn get_vpn_port(&self) -> &::std::option::Option<i32> {
         &self.vpn_port
     }
@@ -463,19 +443,19 @@ impl CreateClientVpnEndpointInputBuilder {
         &self.vpc_id
     }
     /// <p>Specify whether to enable the self-service portal for the Client VPN endpoint.</p>
-    /// <p>Default Value: <code>enabled</code></p>
+    /// <p>Default Value: <code>enabled</code> </p>
     pub fn self_service_portal(mut self, input: crate::types::SelfServicePortal) -> Self {
         self.self_service_portal = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specify whether to enable the self-service portal for the Client VPN endpoint.</p>
-    /// <p>Default Value: <code>enabled</code></p>
+    /// <p>Default Value: <code>enabled</code> </p>
     pub fn set_self_service_portal(mut self, input: ::std::option::Option<crate::types::SelfServicePortal>) -> Self {
         self.self_service_portal = input;
         self
     }
     /// <p>Specify whether to enable the self-service portal for the Client VPN endpoint.</p>
-    /// <p>Default Value: <code>enabled</code></p>
+    /// <p>Default Value: <code>enabled</code> </p>
     pub fn get_self_service_portal(&self) -> &::std::option::Option<crate::types::SelfServicePortal> {
         &self.self_service_portal
     }
@@ -494,22 +474,22 @@ impl CreateClientVpnEndpointInputBuilder {
         &self.client_connect_options
     }
     /// <p>The maximum VPN session duration time in hours.</p>
-    /// <p>Valid values: <code>8 | 10 | 12 | 24</code></p>
-    /// <p>Default value: <code>24</code></p>
+    /// <p>Valid values: <code>8 | 10 | 12 | 24</code> </p>
+    /// <p>Default value: <code>24</code> </p>
     pub fn session_timeout_hours(mut self, input: i32) -> Self {
         self.session_timeout_hours = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum VPN session duration time in hours.</p>
-    /// <p>Valid values: <code>8 | 10 | 12 | 24</code></p>
-    /// <p>Default value: <code>24</code></p>
+    /// <p>Valid values: <code>8 | 10 | 12 | 24</code> </p>
+    /// <p>Default value: <code>24</code> </p>
     pub fn set_session_timeout_hours(mut self, input: ::std::option::Option<i32>) -> Self {
         self.session_timeout_hours = input;
         self
     }
     /// <p>The maximum VPN session duration time in hours.</p>
-    /// <p>Valid values: <code>8 | 10 | 12 | 24</code></p>
-    /// <p>Default value: <code>24</code></p>
+    /// <p>Valid values: <code>8 | 10 | 12 | 24</code> </p>
+    /// <p>Default value: <code>24</code> </p>
     pub fn get_session_timeout_hours(&self) -> &::std::option::Option<i32> {
         &self.session_timeout_hours
     }

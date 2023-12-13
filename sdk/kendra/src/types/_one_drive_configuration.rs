@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OneDriveConfiguration {
-    /// <p>The Azure Active Directory domain of the organization.</p>
+    /// <p>The Azure Active Directory domain of the organization. </p>
     pub tenant_domain: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the user name and password to connect to OneDrive. The user name should be the application ID for the OneDrive application, and the password is the application key for the OneDrive application.</p>
     pub secret_arn: ::std::string::String,
@@ -18,11 +18,11 @@ pub struct OneDriveConfiguration {
     pub exclusion_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map OneDrive data source attributes or field names to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to OneDrive fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The OneDrive data source field names must exist in your OneDrive custom metadata.</p>
     pub field_mappings: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
-    /// <p><code>TRUE</code> to disable local groups information.</p>
+    /// <p> <code>TRUE</code> to disable local groups information.</p>
     pub disable_local_groups: bool,
 }
 impl OneDriveConfiguration {
-    /// <p>The Azure Active Directory domain of the organization.</p>
+    /// <p>The Azure Active Directory domain of the organization. </p>
     pub fn tenant_domain(&self) -> &str {
         use std::ops::Deref;
         self.tenant_domain.deref()
@@ -56,7 +56,7 @@ impl OneDriveConfiguration {
     pub fn field_mappings(&self) -> &[crate::types::DataSourceToIndexFieldMapping] {
         self.field_mappings.as_deref().unwrap_or_default()
     }
-    /// <p><code>TRUE</code> to disable local groups information.</p>
+    /// <p> <code>TRUE</code> to disable local groups information.</p>
     pub fn disable_local_groups(&self) -> bool {
         self.disable_local_groups
     }
@@ -81,18 +81,18 @@ pub struct OneDriveConfigurationBuilder {
     pub(crate) disable_local_groups: ::std::option::Option<bool>,
 }
 impl OneDriveConfigurationBuilder {
-    /// <p>The Azure Active Directory domain of the organization.</p>
+    /// <p>The Azure Active Directory domain of the organization. </p>
     /// This field is required.
     pub fn tenant_domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tenant_domain = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Azure Active Directory domain of the organization.</p>
+    /// <p>The Azure Active Directory domain of the organization. </p>
     pub fn set_tenant_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tenant_domain = input;
         self
     }
-    /// <p>The Azure Active Directory domain of the organization.</p>
+    /// <p>The Azure Active Directory domain of the organization. </p>
     pub fn get_tenant_domain(&self) -> &::std::option::Option<::std::string::String> {
         &self.tenant_domain
     }
@@ -192,17 +192,17 @@ impl OneDriveConfigurationBuilder {
     pub fn get_field_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>> {
         &self.field_mappings
     }
-    /// <p><code>TRUE</code> to disable local groups information.</p>
+    /// <p> <code>TRUE</code> to disable local groups information.</p>
     pub fn disable_local_groups(mut self, input: bool) -> Self {
         self.disable_local_groups = ::std::option::Option::Some(input);
         self
     }
-    /// <p><code>TRUE</code> to disable local groups information.</p>
+    /// <p> <code>TRUE</code> to disable local groups information.</p>
     pub fn set_disable_local_groups(mut self, input: ::std::option::Option<bool>) -> Self {
         self.disable_local_groups = input;
         self
     }
-    /// <p><code>TRUE</code> to disable local groups information.</p>
+    /// <p> <code>TRUE</code> to disable local groups information.</p>
     pub fn get_disable_local_groups(&self) -> &::std::option::Option<bool> {
         &self.disable_local_groups
     }

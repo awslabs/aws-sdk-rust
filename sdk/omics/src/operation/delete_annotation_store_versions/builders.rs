@@ -22,7 +22,7 @@ impl DeleteAnnotationStoreVersionsInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteAnnotationStoreVersions`.
 ///
-/// <p>Deletes one or multiple versions of an annotation store.</p>
+/// <p> Deletes one or multiple versions of an annotation store. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAnnotationStoreVersionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DeleteAnnotationStoreVersionsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the annotation store from which versions are being deleted.</p>
+    /// <p> The name of the annotation store from which versions are being deleted. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of the annotation store from which versions are being deleted.</p>
+    /// <p> The name of the annotation store from which versions are being deleted. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name of the annotation store from which versions are being deleted.</p>
+    /// <p> The name of the annotation store from which versions are being deleted. </p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
@@ -126,31 +126,31 @@ impl DeleteAnnotationStoreVersionsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_versions`](Self::set_versions).
     ///
-    /// <p>The versions of an annotation store to be deleted.</p>
+    /// <p> The versions of an annotation store to be deleted. </p>
     pub fn versions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.versions(input.into());
         self
     }
-    /// <p>The versions of an annotation store to be deleted.</p>
+    /// <p> The versions of an annotation store to be deleted. </p>
     pub fn set_versions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_versions(input);
         self
     }
-    /// <p>The versions of an annotation store to be deleted.</p>
+    /// <p> The versions of an annotation store to be deleted. </p>
     pub fn get_versions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_versions()
     }
-    /// <p>Forces the deletion of an annotation store version when imports are in-progress..</p>
+    /// <p> Forces the deletion of an annotation store version when imports are in-progress.. </p>
     pub fn force(mut self, input: bool) -> Self {
         self.inner = self.inner.force(input);
         self
     }
-    /// <p>Forces the deletion of an annotation store version when imports are in-progress..</p>
+    /// <p> Forces the deletion of an annotation store version when imports are in-progress.. </p>
     pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_force(input);
         self
     }
-    /// <p>Forces the deletion of an annotation store version when imports are in-progress..</p>
+    /// <p> Forces the deletion of an annotation store version when imports are in-progress.. </p>
     pub fn get_force(&self) -> &::std::option::Option<bool> {
         self.inner.get_force()
     }

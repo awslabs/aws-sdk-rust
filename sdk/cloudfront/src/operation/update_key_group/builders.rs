@@ -25,12 +25,9 @@ impl UpdateKeyGroupInputBuilder {
 /// <p>Updates a key group.</p>
 /// <p>When you update a key group, all the fields are updated with the values provided in the request. You cannot update some fields independent of others. To update a key group:</p>
 /// <ol>
-/// <li>
-/// <p>Get the current key group with <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.</p></li>
-/// <li>
-/// <p>Locally modify the fields in the key group that you want to update. For example, add or remove public key IDs.</p></li>
-/// <li>
-/// <p>Call <code>UpdateKeyGroup</code> with the entire key group object, including the fields that you modified and those that you didn't.</p></li>
+/// <li> <p>Get the current key group with <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.</p> </li>
+/// <li> <p>Locally modify the fields in the key group that you want to update. For example, add or remove public key IDs.</p> </li>
+/// <li> <p>Call <code>UpdateKeyGroup</code> with the entire key group object, including the fields that you modified and those that you didn't.</p> </li>
 /// </ol>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateKeyGroupFluentBuilder {

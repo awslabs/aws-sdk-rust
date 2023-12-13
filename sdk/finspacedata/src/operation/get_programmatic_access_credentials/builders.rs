@@ -109,17 +109,17 @@ impl GetProgrammaticAccessCredentialsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The time duration in which the credentials remain valid.</p>
+    /// <p>The time duration in which the credentials remain valid. </p>
     pub fn duration_in_minutes(mut self, input: i64) -> Self {
         self.inner = self.inner.duration_in_minutes(input);
         self
     }
-    /// <p>The time duration in which the credentials remain valid.</p>
+    /// <p>The time duration in which the credentials remain valid. </p>
     pub fn set_duration_in_minutes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_duration_in_minutes(input);
         self
     }
-    /// <p>The time duration in which the credentials remain valid.</p>
+    /// <p>The time duration in which the credentials remain valid. </p>
     pub fn get_duration_in_minutes(&self) -> &::std::option::Option<i64> {
         self.inner.get_duration_in_minutes()
     }

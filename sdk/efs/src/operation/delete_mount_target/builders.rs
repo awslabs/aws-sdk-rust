@@ -26,15 +26,13 @@ impl DeleteMountTargetInputBuilder {
 /// <p>This operation forcibly breaks any mounts of the file system by using the mount target that is being deleted, which might disrupt instances or applications using those mounts. To avoid applications getting cut off abruptly, you might consider unmounting any mounts of the mount target, if feasible. The operation also deletes the associated network interface. Uncommitted writes might be lost, but breaking a mount target using this operation does not corrupt the file system itself. The file system you created remains. You can mount an EC2 instance in your VPC by using another mount target.</p>
 /// <p>This operation requires permissions for the following action on the file system:</p>
 /// <ul>
-/// <li>
-/// <p><code>elasticfilesystem:DeleteMountTarget</code></p></li>
-/// </ul><note>
-/// <p>The <code>DeleteMountTarget</code> call returns while the mount target state is still <code>deleting</code>. You can check the mount target deletion by calling the <code>DescribeMountTargets</code> operation, which returns a list of mount target descriptions for the given file system.</p>
+/// <li> <p> <code>elasticfilesystem:DeleteMountTarget</code> </p> </li>
+/// </ul> <note>
+/// <p>The <code>DeleteMountTarget</code> call returns while the mount target state is still <code>deleting</code>. You can check the mount target deletion by calling the <code>DescribeMountTargets</code> operation, which returns a list of mount target descriptions for the given file system. </p>
 /// </note>
 /// <p>The operation also requires permissions for the following Amazon EC2 action on the mount target's network interface:</p>
 /// <ul>
-/// <li>
-/// <p><code>ec2:DeleteNetworkInterface</code></p></li>
+/// <li> <p> <code>ec2:DeleteNetworkInterface</code> </p> </li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteMountTargetFluentBuilder {

@@ -8,11 +8,11 @@ pub struct OriginEndpointListConfiguration {
     pub arn: ::std::string::String,
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
     pub channel_group_name: ::std::string::String,
-    /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group.</p>
+    /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. </p>
     pub channel_name: ::std::string::String,
-    /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel.</p>
+    /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel. </p>
     pub origin_endpoint_name: ::std::string::String,
-    /// <p>The type of container attached to this origin endpoint. A container type is a file format that encapsulates one or more media streams, such as audio and video, into a single file.</p>
+    /// <p>The type of container attached to this origin endpoint. A container type is a file format that encapsulates one or more media streams, such as audio and video, into a single file. </p>
     pub container_type: crate::types::ContainerType,
     /// <p>Any descriptive information that you want to add to the origin endpoint for future identification purposes.</p>
     pub description: ::std::option::Option<::std::string::String>,
@@ -36,17 +36,17 @@ impl OriginEndpointListConfiguration {
         use std::ops::Deref;
         self.channel_group_name.deref()
     }
-    /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group.</p>
+    /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. </p>
     pub fn channel_name(&self) -> &str {
         use std::ops::Deref;
         self.channel_name.deref()
     }
-    /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel.</p>
+    /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel. </p>
     pub fn origin_endpoint_name(&self) -> &str {
         use std::ops::Deref;
         self.origin_endpoint_name.deref()
     }
-    /// <p>The type of container attached to this origin endpoint. A container type is a file format that encapsulates one or more media streams, such as audio and video, into a single file.</p>
+    /// <p>The type of container attached to this origin endpoint. A container type is a file format that encapsulates one or more media streams, such as audio and video, into a single file. </p>
     pub fn container_type(&self) -> &crate::types::ContainerType {
         &self.container_type
     }
@@ -128,48 +128,48 @@ impl OriginEndpointListConfigurationBuilder {
     pub fn get_channel_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.channel_group_name
     }
-    /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group.</p>
+    /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. </p>
     /// This field is required.
     pub fn channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group.</p>
+    /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. </p>
     pub fn set_channel_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel_name = input;
         self
     }
-    /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group.</p>
+    /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. </p>
     pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.channel_name
     }
-    /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel.</p>
+    /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel. </p>
     /// This field is required.
     pub fn origin_endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origin_endpoint_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel.</p>
+    /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel. </p>
     pub fn set_origin_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.origin_endpoint_name = input;
         self
     }
-    /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel.</p>
+    /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel. </p>
     pub fn get_origin_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.origin_endpoint_name
     }
-    /// <p>The type of container attached to this origin endpoint. A container type is a file format that encapsulates one or more media streams, such as audio and video, into a single file.</p>
+    /// <p>The type of container attached to this origin endpoint. A container type is a file format that encapsulates one or more media streams, such as audio and video, into a single file. </p>
     /// This field is required.
     pub fn container_type(mut self, input: crate::types::ContainerType) -> Self {
         self.container_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of container attached to this origin endpoint. A container type is a file format that encapsulates one or more media streams, such as audio and video, into a single file.</p>
+    /// <p>The type of container attached to this origin endpoint. A container type is a file format that encapsulates one or more media streams, such as audio and video, into a single file. </p>
     pub fn set_container_type(mut self, input: ::std::option::Option<crate::types::ContainerType>) -> Self {
         self.container_type = input;
         self
     }
-    /// <p>The type of container attached to this origin endpoint. A container type is a file format that encapsulates one or more media streams, such as audio and video, into a single file.</p>
+    /// <p>The type of container attached to this origin endpoint. A container type is a file format that encapsulates one or more media streams, such as audio and video, into a single file. </p>
     pub fn get_container_type(&self) -> &::std::option::Option<crate::types::ContainerType> {
         &self.container_type
     }

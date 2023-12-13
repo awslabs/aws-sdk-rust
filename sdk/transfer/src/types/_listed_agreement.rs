@@ -8,7 +8,7 @@ pub struct ListedAgreement {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
     pub agreement_id: ::std::option::Option<::std::string::String>,
-    /// <p>The current description for the agreement. You can change it by calling the <code>UpdateAgreement</code> operation and providing a new description.</p>
+    /// <p>The current description for the agreement. You can change it by calling the <code>UpdateAgreement</code> operation and providing a new description. </p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The agreement can be either <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
     pub status: ::std::option::Option<crate::types::AgreementStatusType>,
@@ -28,7 +28,7 @@ impl ListedAgreement {
     pub fn agreement_id(&self) -> ::std::option::Option<&str> {
         self.agreement_id.as_deref()
     }
-    /// <p>The current description for the agreement. You can change it by calling the <code>UpdateAgreement</code> operation and providing a new description.</p>
+    /// <p>The current description for the agreement. You can change it by calling the <code>UpdateAgreement</code> operation and providing a new description. </p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -97,17 +97,17 @@ impl ListedAgreementBuilder {
     pub fn get_agreement_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.agreement_id
     }
-    /// <p>The current description for the agreement. You can change it by calling the <code>UpdateAgreement</code> operation and providing a new description.</p>
+    /// <p>The current description for the agreement. You can change it by calling the <code>UpdateAgreement</code> operation and providing a new description. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The current description for the agreement. You can change it by calling the <code>UpdateAgreement</code> operation and providing a new description.</p>
+    /// <p>The current description for the agreement. You can change it by calling the <code>UpdateAgreement</code> operation and providing a new description. </p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>The current description for the agreement. You can change it by calling the <code>UpdateAgreement</code> operation and providing a new description.</p>
+    /// <p>The current description for the agreement. You can change it by calling the <code>UpdateAgreement</code> operation and providing a new description. </p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }

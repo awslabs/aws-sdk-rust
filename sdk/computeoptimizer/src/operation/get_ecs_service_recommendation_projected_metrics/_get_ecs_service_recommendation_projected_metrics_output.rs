@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEcsServiceRecommendationProjectedMetricsOutput {
-    /// <p>An array of objects that describes the projected metrics.</p>
+    /// <p> An array of objects that describes the projected metrics. </p>
     pub recommended_option_projected_metrics: ::std::option::Option<::std::vec::Vec<crate::types::EcsServiceRecommendedOptionProjectedMetric>>,
     _request_id: Option<String>,
 }
 impl GetEcsServiceRecommendationProjectedMetricsOutput {
-    /// <p>An array of objects that describes the projected metrics.</p>
+    /// <p> An array of objects that describes the projected metrics. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recommended_option_projected_metrics.is_none()`.
     pub fn recommended_option_projected_metrics(&self) -> &[crate::types::EcsServiceRecommendedOptionProjectedMetric] {
@@ -40,14 +40,14 @@ impl GetEcsServiceRecommendationProjectedMetricsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_recommended_option_projected_metrics`](Self::set_recommended_option_projected_metrics).
     ///
-    /// <p>An array of objects that describes the projected metrics.</p>
+    /// <p> An array of objects that describes the projected metrics. </p>
     pub fn recommended_option_projected_metrics(mut self, input: crate::types::EcsServiceRecommendedOptionProjectedMetric) -> Self {
         let mut v = self.recommended_option_projected_metrics.unwrap_or_default();
         v.push(input);
         self.recommended_option_projected_metrics = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of objects that describes the projected metrics.</p>
+    /// <p> An array of objects that describes the projected metrics. </p>
     pub fn set_recommended_option_projected_metrics(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::EcsServiceRecommendedOptionProjectedMetric>>,
@@ -55,7 +55,7 @@ impl GetEcsServiceRecommendationProjectedMetricsOutputBuilder {
         self.recommended_option_projected_metrics = input;
         self
     }
-    /// <p>An array of objects that describes the projected metrics.</p>
+    /// <p> An array of objects that describes the projected metrics. </p>
     pub fn get_recommended_option_projected_metrics(
         &self,
     ) -> &::std::option::Option<::std::vec::Vec<crate::types::EcsServiceRecommendedOptionProjectedMetric>> {

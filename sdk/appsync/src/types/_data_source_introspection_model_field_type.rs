@@ -7,17 +7,14 @@ pub struct DataSourceIntrospectionModelFieldType {
     /// <p>Specifies the classification of data. For example, this could be set to values like <code>Scalar</code> or <code>NonNull</code> to indicate a fundamental property of the field.</p>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Scalar</code>: Indicates the value is a primitive type (scalar).</p></li>
-    /// <li>
-    /// <p><code>NonNull</code>: Indicates the field cannot be <code>null</code>.</p></li>
-    /// <li>
-    /// <p><code>List</code>: Indicates the field contains a list.</p></li>
+    /// <li> <p> <code>Scalar</code>: Indicates the value is a primitive type (scalar).</p> </li>
+    /// <li> <p> <code>NonNull</code>: Indicates the field cannot be <code>null</code>.</p> </li>
+    /// <li> <p> <code>List</code>: Indicates the field contains a list.</p> </li>
     /// </ul>
     pub kind: ::std::option::Option<::std::string::String>,
     /// <p>The name of the data type that represents the field. For example, <code>String</code> is a valid <code>name</code> value.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The <code>DataSourceIntrospectionModelFieldType</code> object data. The <code>type</code> is only present if <code>DataSourceIntrospectionModelFieldType.kind</code> is set to <code>NonNull</code> or <code>List</code>.</p>
+    /// <p>The <code>DataSourceIntrospectionModelFieldType</code> object data. The <code>type</code> is only present if <code>DataSourceIntrospectionModelFieldType.kind</code> is set to <code>NonNull</code> or <code>List</code>. </p>
     /// <p>The <code>type</code> typically contains its own <code>kind</code> and <code>name</code> fields to represent the actual type data. For instance, <code>type</code> could contain a <code>kind</code> value of <code>Scalar</code> with a <code>name</code> value of <code>String</code>. The values <code>Scalar</code> and <code>String</code> will be collectively stored in the <code>values</code> field.</p>
     pub r#type: ::std::option::Option<::std::boxed::Box<crate::types::DataSourceIntrospectionModelFieldType>>,
     /// <p>The values of the <code>type</code> field. This field represents the AppSync data type equivalent of the introspected field.</p>
@@ -27,12 +24,9 @@ impl DataSourceIntrospectionModelFieldType {
     /// <p>Specifies the classification of data. For example, this could be set to values like <code>Scalar</code> or <code>NonNull</code> to indicate a fundamental property of the field.</p>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Scalar</code>: Indicates the value is a primitive type (scalar).</p></li>
-    /// <li>
-    /// <p><code>NonNull</code>: Indicates the field cannot be <code>null</code>.</p></li>
-    /// <li>
-    /// <p><code>List</code>: Indicates the field contains a list.</p></li>
+    /// <li> <p> <code>Scalar</code>: Indicates the value is a primitive type (scalar).</p> </li>
+    /// <li> <p> <code>NonNull</code>: Indicates the field cannot be <code>null</code>.</p> </li>
+    /// <li> <p> <code>List</code>: Indicates the field contains a list.</p> </li>
     /// </ul>
     pub fn kind(&self) -> ::std::option::Option<&str> {
         self.kind.as_deref()
@@ -41,7 +35,7 @@ impl DataSourceIntrospectionModelFieldType {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The <code>DataSourceIntrospectionModelFieldType</code> object data. The <code>type</code> is only present if <code>DataSourceIntrospectionModelFieldType.kind</code> is set to <code>NonNull</code> or <code>List</code>.</p>
+    /// <p>The <code>DataSourceIntrospectionModelFieldType</code> object data. The <code>type</code> is only present if <code>DataSourceIntrospectionModelFieldType.kind</code> is set to <code>NonNull</code> or <code>List</code>. </p>
     /// <p>The <code>type</code> typically contains its own <code>kind</code> and <code>name</code> fields to represent the actual type data. For instance, <code>type</code> could contain a <code>kind</code> value of <code>Scalar</code> with a <code>name</code> value of <code>String</code>. The values <code>Scalar</code> and <code>String</code> will be collectively stored in the <code>values</code> field.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::DataSourceIntrospectionModelFieldType> {
         self.r#type.as_deref()
@@ -73,12 +67,9 @@ impl DataSourceIntrospectionModelFieldTypeBuilder {
     /// <p>Specifies the classification of data. For example, this could be set to values like <code>Scalar</code> or <code>NonNull</code> to indicate a fundamental property of the field.</p>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Scalar</code>: Indicates the value is a primitive type (scalar).</p></li>
-    /// <li>
-    /// <p><code>NonNull</code>: Indicates the field cannot be <code>null</code>.</p></li>
-    /// <li>
-    /// <p><code>List</code>: Indicates the field contains a list.</p></li>
+    /// <li> <p> <code>Scalar</code>: Indicates the value is a primitive type (scalar).</p> </li>
+    /// <li> <p> <code>NonNull</code>: Indicates the field cannot be <code>null</code>.</p> </li>
+    /// <li> <p> <code>List</code>: Indicates the field contains a list.</p> </li>
     /// </ul>
     pub fn kind(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kind = ::std::option::Option::Some(input.into());
@@ -87,12 +78,9 @@ impl DataSourceIntrospectionModelFieldTypeBuilder {
     /// <p>Specifies the classification of data. For example, this could be set to values like <code>Scalar</code> or <code>NonNull</code> to indicate a fundamental property of the field.</p>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Scalar</code>: Indicates the value is a primitive type (scalar).</p></li>
-    /// <li>
-    /// <p><code>NonNull</code>: Indicates the field cannot be <code>null</code>.</p></li>
-    /// <li>
-    /// <p><code>List</code>: Indicates the field contains a list.</p></li>
+    /// <li> <p> <code>Scalar</code>: Indicates the value is a primitive type (scalar).</p> </li>
+    /// <li> <p> <code>NonNull</code>: Indicates the field cannot be <code>null</code>.</p> </li>
+    /// <li> <p> <code>List</code>: Indicates the field contains a list.</p> </li>
     /// </ul>
     pub fn set_kind(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kind = input;
@@ -101,12 +89,9 @@ impl DataSourceIntrospectionModelFieldTypeBuilder {
     /// <p>Specifies the classification of data. For example, this could be set to values like <code>Scalar</code> or <code>NonNull</code> to indicate a fundamental property of the field.</p>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Scalar</code>: Indicates the value is a primitive type (scalar).</p></li>
-    /// <li>
-    /// <p><code>NonNull</code>: Indicates the field cannot be <code>null</code>.</p></li>
-    /// <li>
-    /// <p><code>List</code>: Indicates the field contains a list.</p></li>
+    /// <li> <p> <code>Scalar</code>: Indicates the value is a primitive type (scalar).</p> </li>
+    /// <li> <p> <code>NonNull</code>: Indicates the field cannot be <code>null</code>.</p> </li>
+    /// <li> <p> <code>List</code>: Indicates the field contains a list.</p> </li>
     /// </ul>
     pub fn get_kind(&self) -> &::std::option::Option<::std::string::String> {
         &self.kind
@@ -125,19 +110,19 @@ impl DataSourceIntrospectionModelFieldTypeBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The <code>DataSourceIntrospectionModelFieldType</code> object data. The <code>type</code> is only present if <code>DataSourceIntrospectionModelFieldType.kind</code> is set to <code>NonNull</code> or <code>List</code>.</p>
+    /// <p>The <code>DataSourceIntrospectionModelFieldType</code> object data. The <code>type</code> is only present if <code>DataSourceIntrospectionModelFieldType.kind</code> is set to <code>NonNull</code> or <code>List</code>. </p>
     /// <p>The <code>type</code> typically contains its own <code>kind</code> and <code>name</code> fields to represent the actual type data. For instance, <code>type</code> could contain a <code>kind</code> value of <code>Scalar</code> with a <code>name</code> value of <code>String</code>. The values <code>Scalar</code> and <code>String</code> will be collectively stored in the <code>values</code> field.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::boxed::Box<crate::types::DataSourceIntrospectionModelFieldType>>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The <code>DataSourceIntrospectionModelFieldType</code> object data. The <code>type</code> is only present if <code>DataSourceIntrospectionModelFieldType.kind</code> is set to <code>NonNull</code> or <code>List</code>.</p>
+    /// <p>The <code>DataSourceIntrospectionModelFieldType</code> object data. The <code>type</code> is only present if <code>DataSourceIntrospectionModelFieldType.kind</code> is set to <code>NonNull</code> or <code>List</code>. </p>
     /// <p>The <code>type</code> typically contains its own <code>kind</code> and <code>name</code> fields to represent the actual type data. For instance, <code>type</code> could contain a <code>kind</code> value of <code>Scalar</code> with a <code>name</code> value of <code>String</code>. The values <code>Scalar</code> and <code>String</code> will be collectively stored in the <code>values</code> field.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::boxed::Box<crate::types::DataSourceIntrospectionModelFieldType>>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The <code>DataSourceIntrospectionModelFieldType</code> object data. The <code>type</code> is only present if <code>DataSourceIntrospectionModelFieldType.kind</code> is set to <code>NonNull</code> or <code>List</code>.</p>
+    /// <p>The <code>DataSourceIntrospectionModelFieldType</code> object data. The <code>type</code> is only present if <code>DataSourceIntrospectionModelFieldType.kind</code> is set to <code>NonNull</code> or <code>List</code>. </p>
     /// <p>The <code>type</code> typically contains its own <code>kind</code> and <code>name</code> fields to represent the actual type data. For instance, <code>type</code> could contain a <code>kind</code> value of <code>Scalar</code> with a <code>name</code> value of <code>String</code>. The values <code>Scalar</code> and <code>String</code> will be collectively stored in the <code>values</code> field.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::boxed::Box<crate::types::DataSourceIntrospectionModelFieldType>> {
         &self.r#type

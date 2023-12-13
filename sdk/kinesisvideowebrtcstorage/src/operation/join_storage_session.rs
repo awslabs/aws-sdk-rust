@@ -253,7 +253,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for JoinStorageSe
 pub enum JoinStorageSessionError {
     /// <p>You do not have required permissions to perform this operation.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client calls. Try making the call later.</p>
+    /// <p> Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client calls. Try making the call later. </p>
     ClientLimitExceededException(crate::types::error::ClientLimitExceededException),
     /// <p>The value for this input parameter is invalid.</p>
     InvalidArgumentException(crate::types::error::InvalidArgumentException),

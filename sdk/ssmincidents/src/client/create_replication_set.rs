@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`client_token(impl Into<String>)`](crate::operation::create_replication_set::builders::CreateReplicationSetFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::create_replication_set::builders::CreateReplicationSetFluentBuilder::set_client_token):<br>required: **false**<br><p>A token that ensures that the operation is called only once with the specified details.</p><br>
     ///   - [`tags(impl Into<String>, impl Into<String>)`](crate::operation::create_replication_set::builders::CreateReplicationSetFluentBuilder::tags) / [`set_tags(Option<HashMap::<String, String>>)`](crate::operation::create_replication_set::builders::CreateReplicationSetFluentBuilder::set_tags):<br>required: **false**<br><p>A list of tags to add to the replication set.</p><br>
     /// - On success, responds with [`CreateReplicationSetOutput`](crate::operation::create_replication_set::CreateReplicationSetOutput) with field(s):
-    ///   - [`arn(String)`](crate::operation::create_replication_set::CreateReplicationSetOutput::arn): <p>The Amazon Resource Name (ARN) of the replication set.</p>
+    ///   - [`arn(String)`](crate::operation::create_replication_set::CreateReplicationSetOutput::arn): <p>The Amazon Resource Name (ARN) of the replication set. </p>
     /// - On failure, responds with [`SdkError<CreateReplicationSetError>`](crate::operation::create_replication_set::CreateReplicationSetError)
     pub fn create_replication_set(&self) -> crate::operation::create_replication_set::builders::CreateReplicationSetFluentBuilder {
         crate::operation::create_replication_set::builders::CreateReplicationSetFluentBuilder::new(self.handle.clone())

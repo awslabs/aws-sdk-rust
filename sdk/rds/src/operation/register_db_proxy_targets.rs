@@ -242,9 +242,9 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for RegisterDBPro
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum RegisterDBProxyTargetsError {
-    /// <p><code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
+    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
     DbClusterNotFoundFault(crate::types::error::DbClusterNotFoundFault),
-    /// <p><code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
+    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
     DbInstanceNotFoundFault(crate::types::error::DbInstanceNotFoundFault),
     /// <p>The specified proxy name doesn't correspond to a proxy owned by your Amazon Web Services account in the specified Amazon Web Services Region.</p>
     DbProxyNotFoundFault(crate::types::error::DbProxyNotFoundFault),

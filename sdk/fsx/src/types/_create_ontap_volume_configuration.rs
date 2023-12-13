@@ -8,12 +8,9 @@ pub struct CreateOntapVolumeConfiguration {
     pub junction_path: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the security style for the volume. If a volume's security style is not specified, it is automatically set to the root volume's security style. The security style determines the type of permissions that FSx for ONTAP uses to control data access. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-volumes.html#volume-security-style">Volume security style</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>. Specify one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>UNIX</code> if the file system is managed by a UNIX administrator, the majority of users are NFS clients, and an application accessing the data uses a UNIX user as the service account.</p></li>
-    /// <li>
-    /// <p><code>NTFS</code> if the file system is managed by a Windows administrator, the majority of users are SMB clients, and an application accessing the data uses a Windows user as the service account.</p></li>
-    /// <li>
-    /// <p><code>MIXED</code> if the file system is managed by both UNIX and Windows administrators and users consist of both NFS and SMB clients.</p></li>
+    /// <li> <p> <code>UNIX</code> if the file system is managed by a UNIX administrator, the majority of users are NFS clients, and an application accessing the data uses a UNIX user as the service account. </p> </li>
+    /// <li> <p> <code>NTFS</code> if the file system is managed by a Windows administrator, the majority of users are SMB clients, and an application accessing the data uses a Windows user as the service account.</p> </li>
+    /// <li> <p> <code>MIXED</code> if the file system is managed by both UNIX and Windows administrators and users consist of both NFS and SMB clients.</p> </li>
     /// </ul>
     pub security_style: ::std::option::Option<crate::types::SecurityStyle>,
     /// <p>Specifies the size of the volume, in megabytes (MB), that you are creating.</p>
@@ -26,46 +23,37 @@ pub struct CreateOntapVolumeConfiguration {
     /// <p>Describes the data tiering policy for an ONTAP volume. When enabled, Amazon FSx for ONTAP's intelligent tiering automatically transitions a volume's data between the file system's primary storage and capacity pool storage based on your access patterns.</p>
     /// <p>Valid tiering policies are the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SNAPSHOT_ONLY</code> - (Default value) moves cold snapshots to the capacity pool storage tier.</p></li>
+    /// <li> <p> <code>SNAPSHOT_ONLY</code> - (Default value) moves cold snapshots to the capacity pool storage tier.</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p><code>AUTO</code> - moves cold user data and snapshots to the capacity pool storage tier based on your access patterns.</p></li>
+    /// <li> <p> <code>AUTO</code> - moves cold user data and snapshots to the capacity pool storage tier based on your access patterns.</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p><code>ALL</code> - moves all user data blocks in both the active file system and Snapshot copies to the storage pool tier.</p></li>
+    /// <li> <p> <code>ALL</code> - moves all user data blocks in both the active file system and Snapshot copies to the storage pool tier.</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p><code>NONE</code> - keeps a volume's data in the primary storage tier, preventing it from being moved to the capacity pool tier.</p></li>
+    /// <li> <p> <code>NONE</code> - keeps a volume's data in the primary storage tier, preventing it from being moved to the capacity pool tier.</p> </li>
     /// </ul>
     pub tiering_policy: ::std::option::Option<crate::types::TieringPolicy>,
     /// <p>Specifies the type of volume you are creating. Valid values are the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>RW</code> specifies a read/write volume. <code>RW</code> is the default.</p></li>
-    /// <li>
-    /// <p><code>DP</code> specifies a data-protection volume. A <code>DP</code> volume is read-only and can be used as the destination of a NetApp SnapMirror relationship.</p></li>
+    /// <li> <p> <code>RW</code> specifies a read/write volume. <code>RW</code> is the default.</p> </li>
+    /// <li> <p> <code>DP</code> specifies a data-protection volume. A <code>DP</code> volume is read-only and can be used as the destination of a NetApp SnapMirror relationship.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types">Volume types</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
     pub ontap_volume_type: ::std::option::Option<crate::types::InputOntapVolumeType>,
     /// <p>Specifies the snapshot policy for the volume. There are three built-in snapshot policies:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes past the hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes after midnight.</p></li>
-    /// <li>
-    /// <p><code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it only retains one snapshot from the weekly schedule.</p></li>
-    /// <li>
-    /// <p><code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent automatic snapshots from being taken.</p></li>
+    /// <li> <p> <code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes past the hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes after midnight.</p> </li>
+    /// <li> <p> <code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it only retains one snapshot from the weekly schedule.</p> </li>
+    /// <li> <p> <code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent automatic snapshots from being taken.</p> </li>
     /// </ul>
     /// <p>You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
     pub snapshot_policy: ::std::option::Option<::std::string::String>,
     /// <p>A boolean flag indicating whether tags for the volume should be copied to backups. This value defaults to false. If it's set to true, all tags for the volume are copied to all automatic and user-initiated backups where the user doesn't specify tags. If this value is true, and you specify one or more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the volume, regardless of this value.</p>
     pub copy_tags_to_backups: ::std::option::Option<bool>,
-    /// <p>Specifies the SnapLock configuration for an FSx for ONTAP volume.</p>
+    /// <p>Specifies the SnapLock configuration for an FSx for ONTAP volume. </p>
     pub snaplock_configuration: ::std::option::Option<crate::types::CreateSnaplockConfiguration>,
     /// <p>Use to specify the style of an ONTAP volume. For more information about FlexVols and FlexGroups, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types.html">Volume types</a> in Amazon FSx for NetApp ONTAP User Guide.</p>
     pub volume_style: ::std::option::Option<crate::types::VolumeStyle>,
@@ -81,12 +69,9 @@ impl CreateOntapVolumeConfiguration {
     }
     /// <p>Specifies the security style for the volume. If a volume's security style is not specified, it is automatically set to the root volume's security style. The security style determines the type of permissions that FSx for ONTAP uses to control data access. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-volumes.html#volume-security-style">Volume security style</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>. Specify one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>UNIX</code> if the file system is managed by a UNIX administrator, the majority of users are NFS clients, and an application accessing the data uses a UNIX user as the service account.</p></li>
-    /// <li>
-    /// <p><code>NTFS</code> if the file system is managed by a Windows administrator, the majority of users are SMB clients, and an application accessing the data uses a Windows user as the service account.</p></li>
-    /// <li>
-    /// <p><code>MIXED</code> if the file system is managed by both UNIX and Windows administrators and users consist of both NFS and SMB clients.</p></li>
+    /// <li> <p> <code>UNIX</code> if the file system is managed by a UNIX administrator, the majority of users are NFS clients, and an application accessing the data uses a UNIX user as the service account. </p> </li>
+    /// <li> <p> <code>NTFS</code> if the file system is managed by a Windows administrator, the majority of users are SMB clients, and an application accessing the data uses a Windows user as the service account.</p> </li>
+    /// <li> <p> <code>MIXED</code> if the file system is managed by both UNIX and Windows administrators and users consist of both NFS and SMB clients.</p> </li>
     /// </ul>
     pub fn security_style(&self) -> ::std::option::Option<&crate::types::SecurityStyle> {
         self.security_style.as_ref()
@@ -107,30 +92,24 @@ impl CreateOntapVolumeConfiguration {
     /// <p>Describes the data tiering policy for an ONTAP volume. When enabled, Amazon FSx for ONTAP's intelligent tiering automatically transitions a volume's data between the file system's primary storage and capacity pool storage based on your access patterns.</p>
     /// <p>Valid tiering policies are the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SNAPSHOT_ONLY</code> - (Default value) moves cold snapshots to the capacity pool storage tier.</p></li>
+    /// <li> <p> <code>SNAPSHOT_ONLY</code> - (Default value) moves cold snapshots to the capacity pool storage tier.</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p><code>AUTO</code> - moves cold user data and snapshots to the capacity pool storage tier based on your access patterns.</p></li>
+    /// <li> <p> <code>AUTO</code> - moves cold user data and snapshots to the capacity pool storage tier based on your access patterns.</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p><code>ALL</code> - moves all user data blocks in both the active file system and Snapshot copies to the storage pool tier.</p></li>
+    /// <li> <p> <code>ALL</code> - moves all user data blocks in both the active file system and Snapshot copies to the storage pool tier.</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p><code>NONE</code> - keeps a volume's data in the primary storage tier, preventing it from being moved to the capacity pool tier.</p></li>
+    /// <li> <p> <code>NONE</code> - keeps a volume's data in the primary storage tier, preventing it from being moved to the capacity pool tier.</p> </li>
     /// </ul>
     pub fn tiering_policy(&self) -> ::std::option::Option<&crate::types::TieringPolicy> {
         self.tiering_policy.as_ref()
     }
     /// <p>Specifies the type of volume you are creating. Valid values are the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>RW</code> specifies a read/write volume. <code>RW</code> is the default.</p></li>
-    /// <li>
-    /// <p><code>DP</code> specifies a data-protection volume. A <code>DP</code> volume is read-only and can be used as the destination of a NetApp SnapMirror relationship.</p></li>
+    /// <li> <p> <code>RW</code> specifies a read/write volume. <code>RW</code> is the default.</p> </li>
+    /// <li> <p> <code>DP</code> specifies a data-protection volume. A <code>DP</code> volume is read-only and can be used as the destination of a NetApp SnapMirror relationship.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types">Volume types</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
     pub fn ontap_volume_type(&self) -> ::std::option::Option<&crate::types::InputOntapVolumeType> {
@@ -138,12 +117,9 @@ impl CreateOntapVolumeConfiguration {
     }
     /// <p>Specifies the snapshot policy for the volume. There are three built-in snapshot policies:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes past the hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes after midnight.</p></li>
-    /// <li>
-    /// <p><code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it only retains one snapshot from the weekly schedule.</p></li>
-    /// <li>
-    /// <p><code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent automatic snapshots from being taken.</p></li>
+    /// <li> <p> <code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes past the hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes after midnight.</p> </li>
+    /// <li> <p> <code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it only retains one snapshot from the weekly schedule.</p> </li>
+    /// <li> <p> <code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent automatic snapshots from being taken.</p> </li>
     /// </ul>
     /// <p>You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
@@ -154,7 +130,7 @@ impl CreateOntapVolumeConfiguration {
     pub fn copy_tags_to_backups(&self) -> ::std::option::Option<bool> {
         self.copy_tags_to_backups
     }
-    /// <p>Specifies the SnapLock configuration for an FSx for ONTAP volume.</p>
+    /// <p>Specifies the SnapLock configuration for an FSx for ONTAP volume. </p>
     pub fn snaplock_configuration(&self) -> ::std::option::Option<&crate::types::CreateSnaplockConfiguration> {
         self.snaplock_configuration.as_ref()
     }
@@ -213,12 +189,9 @@ impl CreateOntapVolumeConfigurationBuilder {
     }
     /// <p>Specifies the security style for the volume. If a volume's security style is not specified, it is automatically set to the root volume's security style. The security style determines the type of permissions that FSx for ONTAP uses to control data access. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-volumes.html#volume-security-style">Volume security style</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>. Specify one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>UNIX</code> if the file system is managed by a UNIX administrator, the majority of users are NFS clients, and an application accessing the data uses a UNIX user as the service account.</p></li>
-    /// <li>
-    /// <p><code>NTFS</code> if the file system is managed by a Windows administrator, the majority of users are SMB clients, and an application accessing the data uses a Windows user as the service account.</p></li>
-    /// <li>
-    /// <p><code>MIXED</code> if the file system is managed by both UNIX and Windows administrators and users consist of both NFS and SMB clients.</p></li>
+    /// <li> <p> <code>UNIX</code> if the file system is managed by a UNIX administrator, the majority of users are NFS clients, and an application accessing the data uses a UNIX user as the service account. </p> </li>
+    /// <li> <p> <code>NTFS</code> if the file system is managed by a Windows administrator, the majority of users are SMB clients, and an application accessing the data uses a Windows user as the service account.</p> </li>
+    /// <li> <p> <code>MIXED</code> if the file system is managed by both UNIX and Windows administrators and users consist of both NFS and SMB clients.</p> </li>
     /// </ul>
     pub fn security_style(mut self, input: crate::types::SecurityStyle) -> Self {
         self.security_style = ::std::option::Option::Some(input);
@@ -226,12 +199,9 @@ impl CreateOntapVolumeConfigurationBuilder {
     }
     /// <p>Specifies the security style for the volume. If a volume's security style is not specified, it is automatically set to the root volume's security style. The security style determines the type of permissions that FSx for ONTAP uses to control data access. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-volumes.html#volume-security-style">Volume security style</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>. Specify one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>UNIX</code> if the file system is managed by a UNIX administrator, the majority of users are NFS clients, and an application accessing the data uses a UNIX user as the service account.</p></li>
-    /// <li>
-    /// <p><code>NTFS</code> if the file system is managed by a Windows administrator, the majority of users are SMB clients, and an application accessing the data uses a Windows user as the service account.</p></li>
-    /// <li>
-    /// <p><code>MIXED</code> if the file system is managed by both UNIX and Windows administrators and users consist of both NFS and SMB clients.</p></li>
+    /// <li> <p> <code>UNIX</code> if the file system is managed by a UNIX administrator, the majority of users are NFS clients, and an application accessing the data uses a UNIX user as the service account. </p> </li>
+    /// <li> <p> <code>NTFS</code> if the file system is managed by a Windows administrator, the majority of users are SMB clients, and an application accessing the data uses a Windows user as the service account.</p> </li>
+    /// <li> <p> <code>MIXED</code> if the file system is managed by both UNIX and Windows administrators and users consist of both NFS and SMB clients.</p> </li>
     /// </ul>
     pub fn set_security_style(mut self, input: ::std::option::Option<crate::types::SecurityStyle>) -> Self {
         self.security_style = input;
@@ -239,12 +209,9 @@ impl CreateOntapVolumeConfigurationBuilder {
     }
     /// <p>Specifies the security style for the volume. If a volume's security style is not specified, it is automatically set to the root volume's security style. The security style determines the type of permissions that FSx for ONTAP uses to control data access. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-volumes.html#volume-security-style">Volume security style</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>. Specify one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>UNIX</code> if the file system is managed by a UNIX administrator, the majority of users are NFS clients, and an application accessing the data uses a UNIX user as the service account.</p></li>
-    /// <li>
-    /// <p><code>NTFS</code> if the file system is managed by a Windows administrator, the majority of users are SMB clients, and an application accessing the data uses a Windows user as the service account.</p></li>
-    /// <li>
-    /// <p><code>MIXED</code> if the file system is managed by both UNIX and Windows administrators and users consist of both NFS and SMB clients.</p></li>
+    /// <li> <p> <code>UNIX</code> if the file system is managed by a UNIX administrator, the majority of users are NFS clients, and an application accessing the data uses a UNIX user as the service account. </p> </li>
+    /// <li> <p> <code>NTFS</code> if the file system is managed by a Windows administrator, the majority of users are SMB clients, and an application accessing the data uses a Windows user as the service account.</p> </li>
+    /// <li> <p> <code>MIXED</code> if the file system is managed by both UNIX and Windows administrators and users consist of both NFS and SMB clients.</p> </li>
     /// </ul>
     pub fn get_security_style(&self) -> &::std::option::Option<crate::types::SecurityStyle> {
         &self.security_style
@@ -298,20 +265,16 @@ impl CreateOntapVolumeConfigurationBuilder {
     /// <p>Describes the data tiering policy for an ONTAP volume. When enabled, Amazon FSx for ONTAP's intelligent tiering automatically transitions a volume's data between the file system's primary storage and capacity pool storage based on your access patterns.</p>
     /// <p>Valid tiering policies are the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SNAPSHOT_ONLY</code> - (Default value) moves cold snapshots to the capacity pool storage tier.</p></li>
+    /// <li> <p> <code>SNAPSHOT_ONLY</code> - (Default value) moves cold snapshots to the capacity pool storage tier.</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p><code>AUTO</code> - moves cold user data and snapshots to the capacity pool storage tier based on your access patterns.</p></li>
+    /// <li> <p> <code>AUTO</code> - moves cold user data and snapshots to the capacity pool storage tier based on your access patterns.</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p><code>ALL</code> - moves all user data blocks in both the active file system and Snapshot copies to the storage pool tier.</p></li>
+    /// <li> <p> <code>ALL</code> - moves all user data blocks in both the active file system and Snapshot copies to the storage pool tier.</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p><code>NONE</code> - keeps a volume's data in the primary storage tier, preventing it from being moved to the capacity pool tier.</p></li>
+    /// <li> <p> <code>NONE</code> - keeps a volume's data in the primary storage tier, preventing it from being moved to the capacity pool tier.</p> </li>
     /// </ul>
     pub fn tiering_policy(mut self, input: crate::types::TieringPolicy) -> Self {
         self.tiering_policy = ::std::option::Option::Some(input);
@@ -320,20 +283,16 @@ impl CreateOntapVolumeConfigurationBuilder {
     /// <p>Describes the data tiering policy for an ONTAP volume. When enabled, Amazon FSx for ONTAP's intelligent tiering automatically transitions a volume's data between the file system's primary storage and capacity pool storage based on your access patterns.</p>
     /// <p>Valid tiering policies are the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SNAPSHOT_ONLY</code> - (Default value) moves cold snapshots to the capacity pool storage tier.</p></li>
+    /// <li> <p> <code>SNAPSHOT_ONLY</code> - (Default value) moves cold snapshots to the capacity pool storage tier.</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p><code>AUTO</code> - moves cold user data and snapshots to the capacity pool storage tier based on your access patterns.</p></li>
+    /// <li> <p> <code>AUTO</code> - moves cold user data and snapshots to the capacity pool storage tier based on your access patterns.</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p><code>ALL</code> - moves all user data blocks in both the active file system and Snapshot copies to the storage pool tier.</p></li>
+    /// <li> <p> <code>ALL</code> - moves all user data blocks in both the active file system and Snapshot copies to the storage pool tier.</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p><code>NONE</code> - keeps a volume's data in the primary storage tier, preventing it from being moved to the capacity pool tier.</p></li>
+    /// <li> <p> <code>NONE</code> - keeps a volume's data in the primary storage tier, preventing it from being moved to the capacity pool tier.</p> </li>
     /// </ul>
     pub fn set_tiering_policy(mut self, input: ::std::option::Option<crate::types::TieringPolicy>) -> Self {
         self.tiering_policy = input;
@@ -342,30 +301,24 @@ impl CreateOntapVolumeConfigurationBuilder {
     /// <p>Describes the data tiering policy for an ONTAP volume. When enabled, Amazon FSx for ONTAP's intelligent tiering automatically transitions a volume's data between the file system's primary storage and capacity pool storage based on your access patterns.</p>
     /// <p>Valid tiering policies are the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SNAPSHOT_ONLY</code> - (Default value) moves cold snapshots to the capacity pool storage tier.</p></li>
+    /// <li> <p> <code>SNAPSHOT_ONLY</code> - (Default value) moves cold snapshots to the capacity pool storage tier.</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p><code>AUTO</code> - moves cold user data and snapshots to the capacity pool storage tier based on your access patterns.</p></li>
+    /// <li> <p> <code>AUTO</code> - moves cold user data and snapshots to the capacity pool storage tier based on your access patterns.</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p><code>ALL</code> - moves all user data blocks in both the active file system and Snapshot copies to the storage pool tier.</p></li>
+    /// <li> <p> <code>ALL</code> - moves all user data blocks in both the active file system and Snapshot copies to the storage pool tier.</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p><code>NONE</code> - keeps a volume's data in the primary storage tier, preventing it from being moved to the capacity pool tier.</p></li>
+    /// <li> <p> <code>NONE</code> - keeps a volume's data in the primary storage tier, preventing it from being moved to the capacity pool tier.</p> </li>
     /// </ul>
     pub fn get_tiering_policy(&self) -> &::std::option::Option<crate::types::TieringPolicy> {
         &self.tiering_policy
     }
     /// <p>Specifies the type of volume you are creating. Valid values are the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>RW</code> specifies a read/write volume. <code>RW</code> is the default.</p></li>
-    /// <li>
-    /// <p><code>DP</code> specifies a data-protection volume. A <code>DP</code> volume is read-only and can be used as the destination of a NetApp SnapMirror relationship.</p></li>
+    /// <li> <p> <code>RW</code> specifies a read/write volume. <code>RW</code> is the default.</p> </li>
+    /// <li> <p> <code>DP</code> specifies a data-protection volume. A <code>DP</code> volume is read-only and can be used as the destination of a NetApp SnapMirror relationship.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types">Volume types</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
     pub fn ontap_volume_type(mut self, input: crate::types::InputOntapVolumeType) -> Self {
@@ -374,10 +327,8 @@ impl CreateOntapVolumeConfigurationBuilder {
     }
     /// <p>Specifies the type of volume you are creating. Valid values are the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>RW</code> specifies a read/write volume. <code>RW</code> is the default.</p></li>
-    /// <li>
-    /// <p><code>DP</code> specifies a data-protection volume. A <code>DP</code> volume is read-only and can be used as the destination of a NetApp SnapMirror relationship.</p></li>
+    /// <li> <p> <code>RW</code> specifies a read/write volume. <code>RW</code> is the default.</p> </li>
+    /// <li> <p> <code>DP</code> specifies a data-protection volume. A <code>DP</code> volume is read-only and can be used as the destination of a NetApp SnapMirror relationship.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types">Volume types</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
     pub fn set_ontap_volume_type(mut self, input: ::std::option::Option<crate::types::InputOntapVolumeType>) -> Self {
@@ -386,10 +337,8 @@ impl CreateOntapVolumeConfigurationBuilder {
     }
     /// <p>Specifies the type of volume you are creating. Valid values are the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>RW</code> specifies a read/write volume. <code>RW</code> is the default.</p></li>
-    /// <li>
-    /// <p><code>DP</code> specifies a data-protection volume. A <code>DP</code> volume is read-only and can be used as the destination of a NetApp SnapMirror relationship.</p></li>
+    /// <li> <p> <code>RW</code> specifies a read/write volume. <code>RW</code> is the default.</p> </li>
+    /// <li> <p> <code>DP</code> specifies a data-protection volume. A <code>DP</code> volume is read-only and can be used as the destination of a NetApp SnapMirror relationship.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types">Volume types</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
     pub fn get_ontap_volume_type(&self) -> &::std::option::Option<crate::types::InputOntapVolumeType> {
@@ -397,12 +346,9 @@ impl CreateOntapVolumeConfigurationBuilder {
     }
     /// <p>Specifies the snapshot policy for the volume. There are three built-in snapshot policies:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes past the hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes after midnight.</p></li>
-    /// <li>
-    /// <p><code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it only retains one snapshot from the weekly schedule.</p></li>
-    /// <li>
-    /// <p><code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent automatic snapshots from being taken.</p></li>
+    /// <li> <p> <code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes past the hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes after midnight.</p> </li>
+    /// <li> <p> <code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it only retains one snapshot from the weekly schedule.</p> </li>
+    /// <li> <p> <code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent automatic snapshots from being taken.</p> </li>
     /// </ul>
     /// <p>You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
@@ -412,12 +358,9 @@ impl CreateOntapVolumeConfigurationBuilder {
     }
     /// <p>Specifies the snapshot policy for the volume. There are three built-in snapshot policies:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes past the hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes after midnight.</p></li>
-    /// <li>
-    /// <p><code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it only retains one snapshot from the weekly schedule.</p></li>
-    /// <li>
-    /// <p><code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent automatic snapshots from being taken.</p></li>
+    /// <li> <p> <code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes past the hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes after midnight.</p> </li>
+    /// <li> <p> <code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it only retains one snapshot from the weekly schedule.</p> </li>
+    /// <li> <p> <code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent automatic snapshots from being taken.</p> </li>
     /// </ul>
     /// <p>You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
@@ -427,12 +370,9 @@ impl CreateOntapVolumeConfigurationBuilder {
     }
     /// <p>Specifies the snapshot policy for the volume. There are three built-in snapshot policies:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes past the hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes after midnight.</p></li>
-    /// <li>
-    /// <p><code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it only retains one snapshot from the weekly schedule.</p></li>
-    /// <li>
-    /// <p><code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent automatic snapshots from being taken.</p></li>
+    /// <li> <p> <code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes past the hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes after midnight.</p> </li>
+    /// <li> <p> <code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it only retains one snapshot from the weekly schedule.</p> </li>
+    /// <li> <p> <code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent automatic snapshots from being taken.</p> </li>
     /// </ul>
     /// <p>You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
@@ -453,17 +393,17 @@ impl CreateOntapVolumeConfigurationBuilder {
     pub fn get_copy_tags_to_backups(&self) -> &::std::option::Option<bool> {
         &self.copy_tags_to_backups
     }
-    /// <p>Specifies the SnapLock configuration for an FSx for ONTAP volume.</p>
+    /// <p>Specifies the SnapLock configuration for an FSx for ONTAP volume. </p>
     pub fn snaplock_configuration(mut self, input: crate::types::CreateSnaplockConfiguration) -> Self {
         self.snaplock_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the SnapLock configuration for an FSx for ONTAP volume.</p>
+    /// <p>Specifies the SnapLock configuration for an FSx for ONTAP volume. </p>
     pub fn set_snaplock_configuration(mut self, input: ::std::option::Option<crate::types::CreateSnaplockConfiguration>) -> Self {
         self.snaplock_configuration = input;
         self
     }
-    /// <p>Specifies the SnapLock configuration for an FSx for ONTAP volume.</p>
+    /// <p>Specifies the SnapLock configuration for an FSx for ONTAP volume. </p>
     pub fn get_snaplock_configuration(&self) -> &::std::option::Option<crate::types::CreateSnaplockConfiguration> {
         &self.snaplock_configuration
     }

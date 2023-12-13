@@ -40,7 +40,7 @@ pub struct Namespace {
     pub properties: ::std::option::Option<crate::types::NamespaceProperties>,
     /// <p>The date that the namespace was created, in Unix date/time format and Coordinated Universal Time (UTC). The value of <code>CreateDate</code> is accurate to milliseconds. For example, the value <code>1516925490.087</code> represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running an operation twice.</p>
+    /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running an operation twice. </p>
     pub creator_request_id: ::std::option::Option<::std::string::String>,
 }
 impl Namespace {
@@ -96,7 +96,7 @@ impl Namespace {
     pub fn create_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
-    /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running an operation twice.</p>
+    /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running an operation twice. </p>
     pub fn creator_request_id(&self) -> ::std::option::Option<&str> {
         self.creator_request_id.as_deref()
     }
@@ -295,17 +295,17 @@ impl NamespaceBuilder {
     pub fn get_create_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.create_date
     }
-    /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running an operation twice.</p>
+    /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running an operation twice. </p>
     pub fn creator_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creator_request_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running an operation twice.</p>
+    /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running an operation twice. </p>
     pub fn set_creator_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creator_request_id = input;
         self
     }
-    /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running an operation twice.</p>
+    /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running an operation twice. </p>
     pub fn get_creator_request_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.creator_request_id
     }

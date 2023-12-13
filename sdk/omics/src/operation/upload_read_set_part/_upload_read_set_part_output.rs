@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UploadReadSetPartOutput {
-    /// <p>An identifier used to confirm that parts are being added to the intended upload.</p>
+    /// <p> An identifier used to confirm that parts are being added to the intended upload. </p>
     pub checksum: ::std::string::String,
     _request_id: Option<String>,
 }
 impl UploadReadSetPartOutput {
-    /// <p>An identifier used to confirm that parts are being added to the intended upload.</p>
+    /// <p> An identifier used to confirm that parts are being added to the intended upload. </p>
     pub fn checksum(&self) -> &str {
         use std::ops::Deref;
         self.checksum.deref()
@@ -34,18 +34,18 @@ pub struct UploadReadSetPartOutputBuilder {
     _request_id: Option<String>,
 }
 impl UploadReadSetPartOutputBuilder {
-    /// <p>An identifier used to confirm that parts are being added to the intended upload.</p>
+    /// <p> An identifier used to confirm that parts are being added to the intended upload. </p>
     /// This field is required.
     pub fn checksum(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.checksum = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An identifier used to confirm that parts are being added to the intended upload.</p>
+    /// <p> An identifier used to confirm that parts are being added to the intended upload. </p>
     pub fn set_checksum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.checksum = input;
         self
     }
-    /// <p>An identifier used to confirm that parts are being added to the intended upload.</p>
+    /// <p> An identifier used to confirm that parts are being added to the intended upload. </p>
     pub fn get_checksum(&self) -> &::std::option::Option<::std::string::String> {
         &self.checksum
     }

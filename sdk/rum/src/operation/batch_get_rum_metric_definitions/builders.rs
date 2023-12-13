@@ -160,19 +160,19 @@ impl BatchGetRumMetricDefinitionsFluentBuilder {
         self.inner.get_destination_arn()
     }
     /// <p>The maximum number of results to return in one operation. The default is 50. The maximum that you can specify is 100.</p>
-    /// <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
+    /// <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
     /// <p>The maximum number of results to return in one operation. The default is 50. The maximum that you can specify is 100.</p>
-    /// <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
+    /// <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
     /// <p>The maximum number of results to return in one operation. The default is 50. The maximum that you can specify is 100.</p>
-    /// <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
+    /// <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. </p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

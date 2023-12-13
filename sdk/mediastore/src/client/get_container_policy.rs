@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetContainerPolicy`](crate::operation::get_container_policy::builders::GetContainerPolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`container_name(impl Into<String>)`](crate::operation::get_container_policy::builders::GetContainerPolicyFluentBuilder::container_name) / [`set_container_name(Option<String>)`](crate::operation::get_container_policy::builders::GetContainerPolicyFluentBuilder::set_container_name):<br>required: **true**<br><p>The name of the container.</p><br>
+    ///   - [`container_name(impl Into<String>)`](crate::operation::get_container_policy::builders::GetContainerPolicyFluentBuilder::container_name) / [`set_container_name(Option<String>)`](crate::operation::get_container_policy::builders::GetContainerPolicyFluentBuilder::set_container_name):<br>required: **true**<br><p>The name of the container. </p><br>
     /// - On success, responds with [`GetContainerPolicyOutput`](crate::operation::get_container_policy::GetContainerPolicyOutput) with field(s):
     ///   - [`policy(String)`](crate::operation::get_container_policy::GetContainerPolicyOutput::policy): <p>The contents of the access policy.</p>
     /// - On failure, responds with [`SdkError<GetContainerPolicyError>`](crate::operation::get_container_policy::GetContainerPolicyError)

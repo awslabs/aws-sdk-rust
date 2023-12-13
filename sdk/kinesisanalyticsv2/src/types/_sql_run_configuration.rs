@@ -4,18 +4,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SqlRunConfiguration {
-    /// <p>The input source ID. You can get this ID by calling the <code>DescribeApplication</code> operation.</p>
+    /// <p>The input source ID. You can get this ID by calling the <code>DescribeApplication</code> operation. </p>
     pub input_id: ::std::string::String,
-    /// <p>The point at which you want the application to start processing records from the streaming source.</p>
+    /// <p>The point at which you want the application to start processing records from the streaming source. </p>
     pub input_starting_position_configuration: ::std::option::Option<crate::types::InputStartingPositionConfiguration>,
 }
 impl SqlRunConfiguration {
-    /// <p>The input source ID. You can get this ID by calling the <code>DescribeApplication</code> operation.</p>
+    /// <p>The input source ID. You can get this ID by calling the <code>DescribeApplication</code> operation. </p>
     pub fn input_id(&self) -> &str {
         use std::ops::Deref;
         self.input_id.deref()
     }
-    /// <p>The point at which you want the application to start processing records from the streaming source.</p>
+    /// <p>The point at which you want the application to start processing records from the streaming source. </p>
     pub fn input_starting_position_configuration(&self) -> ::std::option::Option<&crate::types::InputStartingPositionConfiguration> {
         self.input_starting_position_configuration.as_ref()
     }
@@ -35,28 +35,28 @@ pub struct SqlRunConfigurationBuilder {
     pub(crate) input_starting_position_configuration: ::std::option::Option<crate::types::InputStartingPositionConfiguration>,
 }
 impl SqlRunConfigurationBuilder {
-    /// <p>The input source ID. You can get this ID by calling the <code>DescribeApplication</code> operation.</p>
+    /// <p>The input source ID. You can get this ID by calling the <code>DescribeApplication</code> operation. </p>
     /// This field is required.
     pub fn input_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The input source ID. You can get this ID by calling the <code>DescribeApplication</code> operation.</p>
+    /// <p>The input source ID. You can get this ID by calling the <code>DescribeApplication</code> operation. </p>
     pub fn set_input_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input_id = input;
         self
     }
-    /// <p>The input source ID. You can get this ID by calling the <code>DescribeApplication</code> operation.</p>
+    /// <p>The input source ID. You can get this ID by calling the <code>DescribeApplication</code> operation. </p>
     pub fn get_input_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.input_id
     }
-    /// <p>The point at which you want the application to start processing records from the streaming source.</p>
+    /// <p>The point at which you want the application to start processing records from the streaming source. </p>
     /// This field is required.
     pub fn input_starting_position_configuration(mut self, input: crate::types::InputStartingPositionConfiguration) -> Self {
         self.input_starting_position_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The point at which you want the application to start processing records from the streaming source.</p>
+    /// <p>The point at which you want the application to start processing records from the streaming source. </p>
     pub fn set_input_starting_position_configuration(
         mut self,
         input: ::std::option::Option<crate::types::InputStartingPositionConfiguration>,
@@ -64,7 +64,7 @@ impl SqlRunConfigurationBuilder {
         self.input_starting_position_configuration = input;
         self
     }
-    /// <p>The point at which you want the application to start processing records from the streaming source.</p>
+    /// <p>The point at which you want the application to start processing records from the streaming source. </p>
     pub fn get_input_starting_position_configuration(&self) -> &::std::option::Option<crate::types::InputStartingPositionConfiguration> {
         &self.input_starting_position_configuration
     }

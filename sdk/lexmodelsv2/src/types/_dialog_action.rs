@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DialogAction {
-    /// <p>The action that the bot should execute.</p>
+    /// <p>The action that the bot should execute. </p>
     pub r#type: crate::types::DialogActionType,
     /// <p>If the dialog action is <code>ElicitSlot</code>, defines the slot to elicit from the user.</p>
     pub slot_to_elicit: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct DialogAction {
     pub suppress_next_message: ::std::option::Option<bool>,
 }
 impl DialogAction {
-    /// <p>The action that the bot should execute.</p>
+    /// <p>The action that the bot should execute. </p>
     pub fn r#type(&self) -> &crate::types::DialogActionType {
         &self.r#type
     }
@@ -41,18 +41,18 @@ pub struct DialogActionBuilder {
     pub(crate) suppress_next_message: ::std::option::Option<bool>,
 }
 impl DialogActionBuilder {
-    /// <p>The action that the bot should execute.</p>
+    /// <p>The action that the bot should execute. </p>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::DialogActionType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The action that the bot should execute.</p>
+    /// <p>The action that the bot should execute. </p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::DialogActionType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The action that the bot should execute.</p>
+    /// <p>The action that the bot should execute. </p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::DialogActionType> {
         &self.r#type
     }

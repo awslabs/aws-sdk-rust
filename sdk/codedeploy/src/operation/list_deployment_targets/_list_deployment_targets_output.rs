@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDeploymentTargetsOutput {
-    /// <p>The unique IDs of deployment targets.</p>
+    /// <p> The unique IDs of deployment targets. </p>
     pub target_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>If a large amount of information is returned, a token identifier is also returned. It can be used in a subsequent <code>ListDeploymentTargets</code> call to return the next set of deployment targets in the list.</p>
+    /// <p> If a large amount of information is returned, a token identifier is also returned. It can be used in a subsequent <code>ListDeploymentTargets</code> call to return the next set of deployment targets in the list. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListDeploymentTargetsOutput {
-    /// <p>The unique IDs of deployment targets.</p>
+    /// <p> The unique IDs of deployment targets. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_ids.is_none()`.
     pub fn target_ids(&self) -> &[::std::string::String] {
         self.target_ids.as_deref().unwrap_or_default()
     }
-    /// <p>If a large amount of information is returned, a token identifier is also returned. It can be used in a subsequent <code>ListDeploymentTargets</code> call to return the next set of deployment targets in the list.</p>
+    /// <p> If a large amount of information is returned, a token identifier is also returned. It can be used in a subsequent <code>ListDeploymentTargets</code> call to return the next set of deployment targets in the list. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -46,33 +46,33 @@ impl ListDeploymentTargetsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_target_ids`](Self::set_target_ids).
     ///
-    /// <p>The unique IDs of deployment targets.</p>
+    /// <p> The unique IDs of deployment targets. </p>
     pub fn target_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.target_ids.unwrap_or_default();
         v.push(input.into());
         self.target_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The unique IDs of deployment targets.</p>
+    /// <p> The unique IDs of deployment targets. </p>
     pub fn set_target_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.target_ids = input;
         self
     }
-    /// <p>The unique IDs of deployment targets.</p>
+    /// <p> The unique IDs of deployment targets. </p>
     pub fn get_target_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.target_ids
     }
-    /// <p>If a large amount of information is returned, a token identifier is also returned. It can be used in a subsequent <code>ListDeploymentTargets</code> call to return the next set of deployment targets in the list.</p>
+    /// <p> If a large amount of information is returned, a token identifier is also returned. It can be used in a subsequent <code>ListDeploymentTargets</code> call to return the next set of deployment targets in the list. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If a large amount of information is returned, a token identifier is also returned. It can be used in a subsequent <code>ListDeploymentTargets</code> call to return the next set of deployment targets in the list.</p>
+    /// <p> If a large amount of information is returned, a token identifier is also returned. It can be used in a subsequent <code>ListDeploymentTargets</code> call to return the next set of deployment targets in the list. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>If a large amount of information is returned, a token identifier is also returned. It can be used in a subsequent <code>ListDeploymentTargets</code> call to return the next set of deployment targets in the list.</p>
+    /// <p> If a large amount of information is returned, a token identifier is also returned. It can be used in a subsequent <code>ListDeploymentTargets</code> call to return the next set of deployment targets in the list. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

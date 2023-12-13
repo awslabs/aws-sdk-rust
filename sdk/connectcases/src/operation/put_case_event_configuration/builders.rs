@@ -22,7 +22,7 @@ impl PutCaseEventConfigurationInputBuilder {
 }
 /// Fluent builder constructing a request to `PutCaseEventConfiguration`.
 ///
-/// <p>Adds case event publishing configuration. For a complete list of fields you can add to the event message, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-fields.html">Create case fields</a> in the <i>Amazon Connect Administrator Guide</i></p>
+/// <p>Adds case event publishing configuration. For a complete list of fields you can add to the event message, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-fields.html">Create case fields</a> in the <i>Amazon Connect Administrator Guide</i> </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutCaseEventConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl PutCaseEventConfigurationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier of the Cases domain.</p>
+    /// <p>The unique identifier of the Cases domain. </p>
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_id(input.into());
         self
     }
-    /// <p>The unique identifier of the Cases domain.</p>
+    /// <p>The unique identifier of the Cases domain. </p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_id(input);
         self
     }
-    /// <p>The unique identifier of the Cases domain.</p>
+    /// <p>The unique identifier of the Cases domain. </p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_id()
     }

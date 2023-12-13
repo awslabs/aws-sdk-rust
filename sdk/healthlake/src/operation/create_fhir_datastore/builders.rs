@@ -136,17 +136,17 @@ impl CreateFHIRDatastoreFluentBuilder {
     pub fn get_datastore_type_version(&self) -> &::std::option::Option<crate::types::FhirVersion> {
         self.inner.get_datastore_type_version()
     }
-    /// <p>The server-side encryption key configuration for a customer provided encryption key specified for creating a data store.</p>
+    /// <p> The server-side encryption key configuration for a customer provided encryption key specified for creating a data store. </p>
     pub fn sse_configuration(mut self, input: crate::types::SseConfiguration) -> Self {
         self.inner = self.inner.sse_configuration(input);
         self
     }
-    /// <p>The server-side encryption key configuration for a customer provided encryption key specified for creating a data store.</p>
+    /// <p> The server-side encryption key configuration for a customer provided encryption key specified for creating a data store. </p>
     pub fn set_sse_configuration(mut self, input: ::std::option::Option<crate::types::SseConfiguration>) -> Self {
         self.inner = self.inner.set_sse_configuration(input);
         self
     }
-    /// <p>The server-side encryption key configuration for a customer provided encryption key specified for creating a data store.</p>
+    /// <p> The server-side encryption key configuration for a customer provided encryption key specified for creating a data store. </p>
     pub fn get_sse_configuration(&self) -> &::std::option::Option<crate::types::SseConfiguration> {
         self.inner.get_sse_configuration()
     }
@@ -182,17 +182,17 @@ impl CreateFHIRDatastoreFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>Resource tags that are applied to a data store when it is created.</p>
+    /// <p> Resource tags that are applied to a data store when it is created. </p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
-    /// <p>Resource tags that are applied to a data store when it is created.</p>
+    /// <p> Resource tags that are applied to a data store when it is created. </p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>Resource tags that are applied to a data store when it is created.</p>
+    /// <p> Resource tags that are applied to a data store when it is created. </p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }

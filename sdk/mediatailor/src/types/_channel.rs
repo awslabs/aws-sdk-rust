@@ -19,8 +19,8 @@ pub struct Channel {
     /// <p>The channel's output properties.</p>
     pub outputs: ::std::vec::Vec<crate::types::ResponseOutputItem>,
     /// <p>The type of playback mode for this channel.</p>
-    /// <p><code>LINEAR</code> - Programs play back-to-back only once.</p>
-    /// <p><code>LOOP</code> - Programs play back-to-back in an endless loop. When the last program in the schedule plays, playback loops back to the first program in the schedule.</p>
+    /// <p> <code>LINEAR</code> - Programs play back-to-back only once.</p>
+    /// <p> <code>LOOP</code> - Programs play back-to-back in an endless loop. When the last program in the schedule plays, playback loops back to the first program in the schedule.</p>
     pub playback_mode: ::std::string::String,
     /// <p>The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -63,8 +63,8 @@ impl Channel {
         self.outputs.deref()
     }
     /// <p>The type of playback mode for this channel.</p>
-    /// <p><code>LINEAR</code> - Programs play back-to-back only once.</p>
-    /// <p><code>LOOP</code> - Programs play back-to-back in an endless loop. When the last program in the schedule plays, playback loops back to the first program in the schedule.</p>
+    /// <p> <code>LINEAR</code> - Programs play back-to-back only once.</p>
+    /// <p> <code>LOOP</code> - Programs play back-to-back in an endless loop. When the last program in the schedule plays, playback loops back to the first program in the schedule.</p>
     pub fn playback_mode(&self) -> &str {
         use std::ops::Deref;
         self.playback_mode.deref()
@@ -215,23 +215,23 @@ impl ChannelBuilder {
         &self.outputs
     }
     /// <p>The type of playback mode for this channel.</p>
-    /// <p><code>LINEAR</code> - Programs play back-to-back only once.</p>
-    /// <p><code>LOOP</code> - Programs play back-to-back in an endless loop. When the last program in the schedule plays, playback loops back to the first program in the schedule.</p>
+    /// <p> <code>LINEAR</code> - Programs play back-to-back only once.</p>
+    /// <p> <code>LOOP</code> - Programs play back-to-back in an endless loop. When the last program in the schedule plays, playback loops back to the first program in the schedule.</p>
     /// This field is required.
     pub fn playback_mode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.playback_mode = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of playback mode for this channel.</p>
-    /// <p><code>LINEAR</code> - Programs play back-to-back only once.</p>
-    /// <p><code>LOOP</code> - Programs play back-to-back in an endless loop. When the last program in the schedule plays, playback loops back to the first program in the schedule.</p>
+    /// <p> <code>LINEAR</code> - Programs play back-to-back only once.</p>
+    /// <p> <code>LOOP</code> - Programs play back-to-back in an endless loop. When the last program in the schedule plays, playback loops back to the first program in the schedule.</p>
     pub fn set_playback_mode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.playback_mode = input;
         self
     }
     /// <p>The type of playback mode for this channel.</p>
-    /// <p><code>LINEAR</code> - Programs play back-to-back only once.</p>
-    /// <p><code>LOOP</code> - Programs play back-to-back in an endless loop. When the last program in the schedule plays, playback loops back to the first program in the schedule.</p>
+    /// <p> <code>LINEAR</code> - Programs play back-to-back only once.</p>
+    /// <p> <code>LOOP</code> - Programs play back-to-back in an endless loop. When the last program in the schedule plays, playback loops back to the first program in the schedule.</p>
     pub fn get_playback_mode(&self) -> &::std::option::Option<::std::string::String> {
         &self.playback_mode
     }

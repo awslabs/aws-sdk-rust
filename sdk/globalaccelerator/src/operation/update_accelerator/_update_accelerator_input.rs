@@ -9,7 +9,7 @@ pub struct UpdateAcceleratorInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The IP address type that an accelerator supports. For a standard accelerator, the value can be IPV4 or DUAL_STACK.</p>
     pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
-    /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true.</p>
+    /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p>
     /// <p>If the value is set to true, the accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>
     pub enabled: ::std::option::Option<bool>,
 }
@@ -26,7 +26,7 @@ impl UpdateAcceleratorInput {
     pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
         self.ip_address_type.as_ref()
     }
-    /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true.</p>
+    /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p>
     /// <p>If the value is set to true, the accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
@@ -92,19 +92,19 @@ impl UpdateAcceleratorInputBuilder {
     pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
         &self.ip_address_type
     }
-    /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true.</p>
+    /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p>
     /// <p>If the value is set to true, the accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true.</p>
+    /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p>
     /// <p>If the value is set to true, the accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }
-    /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true.</p>
+    /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p>
     /// <p>If the value is set to true, the accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
         &self.enabled

@@ -244,15 +244,15 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ModifyDBClust
 pub enum ModifyDBClusterError {
     /// <p>You already have a cluster with the given identifier.</p>
     DbClusterAlreadyExistsFault(crate::types::error::DbClusterAlreadyExistsFault),
-    /// <p><code>DBClusterIdentifier</code> doesn't refer to an existing cluster.</p>
+    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing cluster. </p>
     DbClusterNotFoundFault(crate::types::error::DbClusterNotFoundFault),
-    /// <p><code>DBClusterParameterGroupName</code> doesn't refer to an existing cluster parameter group.</p>
+    /// <p> <code>DBClusterParameterGroupName</code> doesn't refer to an existing cluster parameter group. </p>
     DbClusterParameterGroupNotFoundFault(crate::types::error::DbClusterParameterGroupNotFoundFault),
-    /// <p><code>DBSubnetGroupName</code> doesn't refer to an existing subnet group.</p>
+    /// <p> <code>DBSubnetGroupName</code> doesn't refer to an existing subnet group. </p>
     DbSubnetGroupNotFoundFault(crate::types::error::DbSubnetGroupNotFoundFault),
     /// <p>The cluster isn't in a valid state.</p>
     InvalidDbClusterStateFault(crate::types::error::InvalidDbClusterStateFault),
-    /// <p>The specified instance isn't in the <i>available</i> state.</p>
+    /// <p> The specified instance isn't in the <i>available</i> state. </p>
     InvalidDbInstanceStateFault(crate::types::error::InvalidDbInstanceStateFault),
     /// <p>The state of the security group doesn't allow deletion.</p>
     InvalidDbSecurityGroupStateFault(crate::types::error::InvalidDbSecurityGroupStateFault),

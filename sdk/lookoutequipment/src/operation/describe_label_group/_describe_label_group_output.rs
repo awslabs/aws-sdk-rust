@@ -3,38 +3,38 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLabelGroupOutput {
-    /// <p>The name of the label group.</p>
+    /// <p> The name of the label group. </p>
     pub label_group_name: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the label group.</p>
+    /// <p> The Amazon Resource Name (ARN) of the label group. </p>
     pub label_group_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Codes indicating the type of anomaly associated with the labels in the lagbel group.</p>
+    /// <p> Codes indicating the type of anomaly associated with the labels in the lagbel group. </p>
     pub fault_codes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The time at which the label group was created.</p>
+    /// <p> The time at which the label group was created. </p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The time at which the label group was updated.</p>
+    /// <p> The time at which the label group was updated. </p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl DescribeLabelGroupOutput {
-    /// <p>The name of the label group.</p>
+    /// <p> The name of the label group. </p>
     pub fn label_group_name(&self) -> ::std::option::Option<&str> {
         self.label_group_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the label group.</p>
+    /// <p> The Amazon Resource Name (ARN) of the label group. </p>
     pub fn label_group_arn(&self) -> ::std::option::Option<&str> {
         self.label_group_arn.as_deref()
     }
-    /// <p>Codes indicating the type of anomaly associated with the labels in the lagbel group.</p>
+    /// <p> Codes indicating the type of anomaly associated with the labels in the lagbel group. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fault_codes.is_none()`.
     pub fn fault_codes(&self) -> &[::std::string::String] {
         self.fault_codes.as_deref().unwrap_or_default()
     }
-    /// <p>The time at which the label group was created.</p>
+    /// <p> The time at which the label group was created. </p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The time at which the label group was updated.</p>
+    /// <p> The time at which the label group was updated. </p>
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
@@ -63,31 +63,31 @@ pub struct DescribeLabelGroupOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeLabelGroupOutputBuilder {
-    /// <p>The name of the label group.</p>
+    /// <p> The name of the label group. </p>
     pub fn label_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label_group_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the label group.</p>
+    /// <p> The name of the label group. </p>
     pub fn set_label_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.label_group_name = input;
         self
     }
-    /// <p>The name of the label group.</p>
+    /// <p> The name of the label group. </p>
     pub fn get_label_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.label_group_name
     }
-    /// <p>The Amazon Resource Name (ARN) of the label group.</p>
+    /// <p> The Amazon Resource Name (ARN) of the label group. </p>
     pub fn label_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label_group_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the label group.</p>
+    /// <p> The Amazon Resource Name (ARN) of the label group. </p>
     pub fn set_label_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.label_group_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the label group.</p>
+    /// <p> The Amazon Resource Name (ARN) of the label group. </p>
     pub fn get_label_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.label_group_arn
     }
@@ -95,47 +95,47 @@ impl DescribeLabelGroupOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_fault_codes`](Self::set_fault_codes).
     ///
-    /// <p>Codes indicating the type of anomaly associated with the labels in the lagbel group.</p>
+    /// <p> Codes indicating the type of anomaly associated with the labels in the lagbel group. </p>
     pub fn fault_codes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.fault_codes.unwrap_or_default();
         v.push(input.into());
         self.fault_codes = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Codes indicating the type of anomaly associated with the labels in the lagbel group.</p>
+    /// <p> Codes indicating the type of anomaly associated with the labels in the lagbel group. </p>
     pub fn set_fault_codes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.fault_codes = input;
         self
     }
-    /// <p>Codes indicating the type of anomaly associated with the labels in the lagbel group.</p>
+    /// <p> Codes indicating the type of anomaly associated with the labels in the lagbel group. </p>
     pub fn get_fault_codes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.fault_codes
     }
-    /// <p>The time at which the label group was created.</p>
+    /// <p> The time at which the label group was created. </p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time at which the label group was created.</p>
+    /// <p> The time at which the label group was created. </p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
-    /// <p>The time at which the label group was created.</p>
+    /// <p> The time at which the label group was created. </p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
-    /// <p>The time at which the label group was updated.</p>
+    /// <p> The time at which the label group was updated. </p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time at which the label group was updated.</p>
+    /// <p> The time at which the label group was updated. </p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
-    /// <p>The time at which the label group was updated.</p>
+    /// <p> The time at which the label group was updated. </p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }

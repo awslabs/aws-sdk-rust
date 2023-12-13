@@ -4,11 +4,11 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_apps::builders::ListAppsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_apps::builders::ListAppsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_apps::builders::ListAppsFluentBuilder::set_next_token):<br>required: **false**<br><p>A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another request to retrieve more entries.</p><br>
-    ///   - [`max_results(i32)`](crate::operation::list_apps::builders::ListAppsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_apps::builders::ListAppsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of records to list in a single response.</p><br>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_apps::builders::ListAppsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_apps::builders::ListAppsFluentBuilder::set_next_token):<br>required: **false**<br><p>A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p><br>
+    ///   - [`max_results(i32)`](crate::operation::list_apps::builders::ListAppsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_apps::builders::ListAppsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of records to list in a single response. </p><br>
     /// - On success, responds with [`ListAppsOutput`](crate::operation::list_apps::ListAppsOutput) with field(s):
-    ///   - [`apps(Vec::<App>)`](crate::operation::list_apps::ListAppsOutput::apps): <p>A list of Amplify apps.</p>
-    ///   - [`next_token(Option<String>)`](crate::operation::list_apps::ListAppsOutput::next_token): <p>A pagination token. Set to null to start listing apps from start. If non-null, the pagination token is returned in a result. Pass its value in here to list more projects.</p>
+    ///   - [`apps(Vec::<App>)`](crate::operation::list_apps::ListAppsOutput::apps): <p>A list of Amplify apps. </p>
+    ///   - [`next_token(Option<String>)`](crate::operation::list_apps::ListAppsOutput::next_token): <p>A pagination token. Set to null to start listing apps from start. If non-null, the pagination token is returned in a result. Pass its value in here to list more projects. </p>
     /// - On failure, responds with [`SdkError<ListAppsError>`](crate::operation::list_apps::ListAppsError)
     pub fn list_apps(&self) -> crate::operation::list_apps::builders::ListAppsFluentBuilder {
         crate::operation::list_apps::builders::ListAppsFluentBuilder::new(self.handle.clone())

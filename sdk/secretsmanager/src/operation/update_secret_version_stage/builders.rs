@@ -22,14 +22,14 @@ impl UpdateSecretVersionStageInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateSecretVersionStage`.
 ///
-/// <p>Modifies the staging labels attached to a version of a secret. Secrets Manager uses staging labels to track a version as it progresses through the secret rotation process. Each staging label can be attached to only one version at a time. To add a staging label to a version when it is already attached to another version, Secrets Manager first removes it from the other version first and then attaches it to this one. For more information about versions and staging labels, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/getting-started.html#term_version">Concepts: Version</a>.</p>
-/// <p>The staging labels that you specify in the <code>VersionStage</code> parameter are added to the existing list of staging labels for the version.</p>
-/// <p>You can move the <code>AWSCURRENT</code> staging label to this version by including it in this call.</p><note>
+/// <p>Modifies the staging labels attached to a version of a secret. Secrets Manager uses staging labels to track a version as it progresses through the secret rotation process. Each staging label can be attached to only one version at a time. To add a staging label to a version when it is already attached to another version, Secrets Manager first removes it from the other version first and then attaches it to this one. For more information about versions and staging labels, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/getting-started.html#term_version">Concepts: Version</a>. </p>
+/// <p>The staging labels that you specify in the <code>VersionStage</code> parameter are added to the existing list of staging labels for the version. </p>
+/// <p>You can move the <code>AWSCURRENT</code> staging label to this version by including it in this call.</p> <note>
 /// <p>Whenever you move <code>AWSCURRENT</code>, Secrets Manager automatically moves the label <code>AWSPREVIOUS</code> to the version that <code>AWSCURRENT</code> was removed from.</p>
 /// </note>
 /// <p>If this action results in the last label being removed from a version, then the version is considered to be 'deprecated' and can be deleted by Secrets Manager.</p>
 /// <p>Secrets Manager generates a CloudTrail log entry when you call this action. Do not include sensitive information in request parameters because it might be logged. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging Secrets Manager events with CloudTrail</a>.</p>
-/// <p><b>Required permissions: </b> <code>secretsmanager:UpdateSecretVersionStage</code>. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions"> IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control in Secrets Manager</a>.</p>
+/// <p> <b>Required permissions: </b> <code>secretsmanager:UpdateSecretVersionStage</code>. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions"> IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control in Secrets Manager</a>. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateSecretVersionStageFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -161,19 +161,19 @@ impl UpdateSecretVersionStageFluentBuilder {
         self.inner.get_remove_from_version_id()
     }
     /// <p>The ID of the version to add the staging label to. To remove a label from a version, then do not specify this parameter.</p>
-    /// <p>If the staging label is already attached to a different version of the secret, then you must also specify the <code>RemoveFromVersionId</code> parameter.</p>
+    /// <p>If the staging label is already attached to a different version of the secret, then you must also specify the <code>RemoveFromVersionId</code> parameter. </p>
     pub fn move_to_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.move_to_version_id(input.into());
         self
     }
     /// <p>The ID of the version to add the staging label to. To remove a label from a version, then do not specify this parameter.</p>
-    /// <p>If the staging label is already attached to a different version of the secret, then you must also specify the <code>RemoveFromVersionId</code> parameter.</p>
+    /// <p>If the staging label is already attached to a different version of the secret, then you must also specify the <code>RemoveFromVersionId</code> parameter. </p>
     pub fn set_move_to_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_move_to_version_id(input);
         self
     }
     /// <p>The ID of the version to add the staging label to. To remove a label from a version, then do not specify this parameter.</p>
-    /// <p>If the staging label is already attached to a different version of the secret, then you must also specify the <code>RemoveFromVersionId</code> parameter.</p>
+    /// <p>If the staging label is already attached to a different version of the secret, then you must also specify the <code>RemoveFromVersionId</code> parameter. </p>
     pub fn get_move_to_version_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_move_to_version_id()
     }

@@ -22,8 +22,8 @@ impl ListGroupMembershipsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListGroupMemberships`.
 ///
-/// <p>For the specified group in the specified identity store, returns the list of all <code>GroupMembership</code> objects and returns results in paginated form.</p><note>
-/// <p>If you have administrator access to a member account, you can use this API from the member account. Read about <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member accounts</a> in the <i>Organizations User Guide</i>.</p>
+/// <p>For the specified group in the specified identity store, returns the list of all <code>GroupMembership</code> objects and returns results in paginated form.</p> <note>
+/// <p>If you have administrator access to a member account, you can use this API from the member account. Read about <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member accounts</a> in the <i>Organizations User Guide</i>. </p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListGroupMembershipsFluentBuilder {

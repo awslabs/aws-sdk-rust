@@ -253,15 +253,15 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for RestoreTableF
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum RestoreTableFromClusterSnapshotError {
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.</p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
     ClusterNotFoundFault(crate::types::error::ClusterNotFoundFault),
     /// <p>The snapshot identifier does not refer to an existing cluster snapshot.</p>
     ClusterSnapshotNotFoundFault(crate::types::error::ClusterSnapshotNotFoundFault),
     /// <p>You have exceeded the allowed number of table restore requests. Wait for your current table restore requests to complete before making a new request.</p>
     InProgressTableRestoreQuotaExceededFault(crate::types::error::InProgressTableRestoreQuotaExceededFault),
-    /// <p>The specified cluster snapshot is not in the <code>available</code> state, or other accounts are authorized to access the snapshot.</p>
+    /// <p>The specified cluster snapshot is not in the <code>available</code> state, or other accounts are authorized to access the snapshot. </p>
     InvalidClusterSnapshotStateFault(crate::types::error::InvalidClusterSnapshotStateFault),
-    /// <p>The specified cluster is not in the <code>available</code> state.</p>
+    /// <p>The specified cluster is not in the <code>available</code> state. </p>
     InvalidClusterStateFault(crate::types::error::InvalidClusterStateFault),
     /// <p>The value specified for the <code>sourceDatabaseName</code>, <code>sourceSchemaName</code>, or <code>sourceTableName</code> parameter, or a combination of these, doesn't exist in the snapshot.</p>
     InvalidTableRestoreArgumentFault(crate::types::error::InvalidTableRestoreArgumentFault),

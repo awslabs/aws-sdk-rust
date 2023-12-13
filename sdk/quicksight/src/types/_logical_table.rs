@@ -6,7 +6,7 @@
 pub struct LogicalTable {
     /// <p>A display name for the logical table.</p>
     pub alias: ::std::string::String,
-    /// <p>Transform operations that act on this logical table. For this structure to be valid, only one of the attributes can be non-null.</p>
+    /// <p>Transform operations that act on this logical table. For this structure to be valid, only one of the attributes can be non-null. </p>
     pub data_transforms: ::std::option::Option<::std::vec::Vec<crate::types::TransformOperation>>,
     /// <p>Source of this logical table.</p>
     pub source: ::std::option::Option<crate::types::LogicalTableSource>,
@@ -17,7 +17,7 @@ impl LogicalTable {
         use std::ops::Deref;
         self.alias.deref()
     }
-    /// <p>Transform operations that act on this logical table. For this structure to be valid, only one of the attributes can be non-null.</p>
+    /// <p>Transform operations that act on this logical table. For this structure to be valid, only one of the attributes can be non-null. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_transforms.is_none()`.
     pub fn data_transforms(&self) -> &[crate::types::TransformOperation] {
@@ -63,19 +63,19 @@ impl LogicalTableBuilder {
     ///
     /// To override the contents of this collection use [`set_data_transforms`](Self::set_data_transforms).
     ///
-    /// <p>Transform operations that act on this logical table. For this structure to be valid, only one of the attributes can be non-null.</p>
+    /// <p>Transform operations that act on this logical table. For this structure to be valid, only one of the attributes can be non-null. </p>
     pub fn data_transforms(mut self, input: crate::types::TransformOperation) -> Self {
         let mut v = self.data_transforms.unwrap_or_default();
         v.push(input);
         self.data_transforms = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Transform operations that act on this logical table. For this structure to be valid, only one of the attributes can be non-null.</p>
+    /// <p>Transform operations that act on this logical table. For this structure to be valid, only one of the attributes can be non-null. </p>
     pub fn set_data_transforms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TransformOperation>>) -> Self {
         self.data_transforms = input;
         self
     }
-    /// <p>Transform operations that act on this logical table. For this structure to be valid, only one of the attributes can be non-null.</p>
+    /// <p>Transform operations that act on this logical table. For this structure to be valid, only one of the attributes can be non-null. </p>
     pub fn get_data_transforms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TransformOperation>> {
         &self.data_transforms
     }

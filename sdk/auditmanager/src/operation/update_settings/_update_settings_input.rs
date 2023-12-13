@@ -3,44 +3,44 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateSettingsInput {
-    /// <p>The Amazon Simple Notification Service (Amazon SNS) topic that Audit Manager sends notifications to.</p>
+    /// <p> The Amazon Simple Notification Service (Amazon SNS) topic that Audit Manager sends notifications to. </p>
     pub sns_topic: ::std::option::Option<::std::string::String>,
-    /// <p>The default S3 destination bucket for storing assessment reports.</p>
+    /// <p> The default S3 destination bucket for storing assessment reports. </p>
     pub default_assessment_reports_destination: ::std::option::Option<crate::types::AssessmentReportsDestination>,
-    /// <p>A list of the default audit owners.</p>
+    /// <p> A list of the default audit owners. </p>
     pub default_process_owners: ::std::option::Option<::std::vec::Vec<crate::types::Role>>,
-    /// <p>The KMS key details.</p>
+    /// <p> The KMS key details. </p>
     pub kms_key: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies whether the evidence finder feature is enabled. Change this attribute to enable or disable evidence finder.</p><important>
-    /// <p>When you use this attribute to disable evidence finder, Audit Manager deletes the event data store that’s used to query your evidence data. As a result, you can’t re-enable evidence finder and use the feature again. Your only alternative is to <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html">deregister</a> and then <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html">re-register</a> Audit Manager.</p>
+    /// <p>Specifies whether the evidence finder feature is enabled. Change this attribute to enable or disable evidence finder.</p> <important>
+    /// <p>When you use this attribute to disable evidence finder, Audit Manager deletes the event data store that’s used to query your evidence data. As a result, you can’t re-enable evidence finder and use the feature again. Your only alternative is to <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html">deregister</a> and then <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html">re-register</a> Audit Manager. </p>
     /// </important>
     pub evidence_finder_enabled: ::std::option::Option<bool>,
     /// <p>The deregistration policy for your Audit Manager data. You can use this attribute to determine how your data is handled when you deregister Audit Manager.</p>
     pub deregistration_policy: ::std::option::Option<crate::types::DeregistrationPolicy>,
-    /// <p>The default S3 destination bucket for storing evidence finder exports.</p>
+    /// <p> The default S3 destination bucket for storing evidence finder exports. </p>
     pub default_export_destination: ::std::option::Option<crate::types::DefaultExportDestination>,
 }
 impl UpdateSettingsInput {
-    /// <p>The Amazon Simple Notification Service (Amazon SNS) topic that Audit Manager sends notifications to.</p>
+    /// <p> The Amazon Simple Notification Service (Amazon SNS) topic that Audit Manager sends notifications to. </p>
     pub fn sns_topic(&self) -> ::std::option::Option<&str> {
         self.sns_topic.as_deref()
     }
-    /// <p>The default S3 destination bucket for storing assessment reports.</p>
+    /// <p> The default S3 destination bucket for storing assessment reports. </p>
     pub fn default_assessment_reports_destination(&self) -> ::std::option::Option<&crate::types::AssessmentReportsDestination> {
         self.default_assessment_reports_destination.as_ref()
     }
-    /// <p>A list of the default audit owners.</p>
+    /// <p> A list of the default audit owners. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.default_process_owners.is_none()`.
     pub fn default_process_owners(&self) -> &[crate::types::Role] {
         self.default_process_owners.as_deref().unwrap_or_default()
     }
-    /// <p>The KMS key details.</p>
+    /// <p> The KMS key details. </p>
     pub fn kms_key(&self) -> ::std::option::Option<&str> {
         self.kms_key.as_deref()
     }
-    /// <p>Specifies whether the evidence finder feature is enabled. Change this attribute to enable or disable evidence finder.</p><important>
-    /// <p>When you use this attribute to disable evidence finder, Audit Manager deletes the event data store that’s used to query your evidence data. As a result, you can’t re-enable evidence finder and use the feature again. Your only alternative is to <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html">deregister</a> and then <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html">re-register</a> Audit Manager.</p>
+    /// <p>Specifies whether the evidence finder feature is enabled. Change this attribute to enable or disable evidence finder.</p> <important>
+    /// <p>When you use this attribute to disable evidence finder, Audit Manager deletes the event data store that’s used to query your evidence data. As a result, you can’t re-enable evidence finder and use the feature again. Your only alternative is to <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html">deregister</a> and then <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html">re-register</a> Audit Manager. </p>
     /// </important>
     pub fn evidence_finder_enabled(&self) -> ::std::option::Option<bool> {
         self.evidence_finder_enabled
@@ -49,7 +49,7 @@ impl UpdateSettingsInput {
     pub fn deregistration_policy(&self) -> ::std::option::Option<&crate::types::DeregistrationPolicy> {
         self.deregistration_policy.as_ref()
     }
-    /// <p>The default S3 destination bucket for storing evidence finder exports.</p>
+    /// <p> The default S3 destination bucket for storing evidence finder exports. </p>
     pub fn default_export_destination(&self) -> ::std::option::Option<&crate::types::DefaultExportDestination> {
         self.default_export_destination.as_ref()
     }
@@ -87,31 +87,31 @@ pub struct UpdateSettingsInputBuilder {
     pub(crate) default_export_destination: ::std::option::Option<crate::types::DefaultExportDestination>,
 }
 impl UpdateSettingsInputBuilder {
-    /// <p>The Amazon Simple Notification Service (Amazon SNS) topic that Audit Manager sends notifications to.</p>
+    /// <p> The Amazon Simple Notification Service (Amazon SNS) topic that Audit Manager sends notifications to. </p>
     pub fn sns_topic(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sns_topic = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Simple Notification Service (Amazon SNS) topic that Audit Manager sends notifications to.</p>
+    /// <p> The Amazon Simple Notification Service (Amazon SNS) topic that Audit Manager sends notifications to. </p>
     pub fn set_sns_topic(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sns_topic = input;
         self
     }
-    /// <p>The Amazon Simple Notification Service (Amazon SNS) topic that Audit Manager sends notifications to.</p>
+    /// <p> The Amazon Simple Notification Service (Amazon SNS) topic that Audit Manager sends notifications to. </p>
     pub fn get_sns_topic(&self) -> &::std::option::Option<::std::string::String> {
         &self.sns_topic
     }
-    /// <p>The default S3 destination bucket for storing assessment reports.</p>
+    /// <p> The default S3 destination bucket for storing assessment reports. </p>
     pub fn default_assessment_reports_destination(mut self, input: crate::types::AssessmentReportsDestination) -> Self {
         self.default_assessment_reports_destination = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The default S3 destination bucket for storing assessment reports.</p>
+    /// <p> The default S3 destination bucket for storing assessment reports. </p>
     pub fn set_default_assessment_reports_destination(mut self, input: ::std::option::Option<crate::types::AssessmentReportsDestination>) -> Self {
         self.default_assessment_reports_destination = input;
         self
     }
-    /// <p>The default S3 destination bucket for storing assessment reports.</p>
+    /// <p> The default S3 destination bucket for storing assessment reports. </p>
     pub fn get_default_assessment_reports_destination(&self) -> &::std::option::Option<crate::types::AssessmentReportsDestination> {
         &self.default_assessment_reports_destination
     }
@@ -119,52 +119,52 @@ impl UpdateSettingsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_default_process_owners`](Self::set_default_process_owners).
     ///
-    /// <p>A list of the default audit owners.</p>
+    /// <p> A list of the default audit owners. </p>
     pub fn default_process_owners(mut self, input: crate::types::Role) -> Self {
         let mut v = self.default_process_owners.unwrap_or_default();
         v.push(input);
         self.default_process_owners = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of the default audit owners.</p>
+    /// <p> A list of the default audit owners. </p>
     pub fn set_default_process_owners(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Role>>) -> Self {
         self.default_process_owners = input;
         self
     }
-    /// <p>A list of the default audit owners.</p>
+    /// <p> A list of the default audit owners. </p>
     pub fn get_default_process_owners(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Role>> {
         &self.default_process_owners
     }
-    /// <p>The KMS key details.</p>
+    /// <p> The KMS key details. </p>
     pub fn kms_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The KMS key details.</p>
+    /// <p> The KMS key details. </p>
     pub fn set_kms_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key = input;
         self
     }
-    /// <p>The KMS key details.</p>
+    /// <p> The KMS key details. </p>
     pub fn get_kms_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key
     }
-    /// <p>Specifies whether the evidence finder feature is enabled. Change this attribute to enable or disable evidence finder.</p><important>
-    /// <p>When you use this attribute to disable evidence finder, Audit Manager deletes the event data store that’s used to query your evidence data. As a result, you can’t re-enable evidence finder and use the feature again. Your only alternative is to <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html">deregister</a> and then <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html">re-register</a> Audit Manager.</p>
+    /// <p>Specifies whether the evidence finder feature is enabled. Change this attribute to enable or disable evidence finder.</p> <important>
+    /// <p>When you use this attribute to disable evidence finder, Audit Manager deletes the event data store that’s used to query your evidence data. As a result, you can’t re-enable evidence finder and use the feature again. Your only alternative is to <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html">deregister</a> and then <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html">re-register</a> Audit Manager. </p>
     /// </important>
     pub fn evidence_finder_enabled(mut self, input: bool) -> Self {
         self.evidence_finder_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether the evidence finder feature is enabled. Change this attribute to enable or disable evidence finder.</p><important>
-    /// <p>When you use this attribute to disable evidence finder, Audit Manager deletes the event data store that’s used to query your evidence data. As a result, you can’t re-enable evidence finder and use the feature again. Your only alternative is to <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html">deregister</a> and then <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html">re-register</a> Audit Manager.</p>
+    /// <p>Specifies whether the evidence finder feature is enabled. Change this attribute to enable or disable evidence finder.</p> <important>
+    /// <p>When you use this attribute to disable evidence finder, Audit Manager deletes the event data store that’s used to query your evidence data. As a result, you can’t re-enable evidence finder and use the feature again. Your only alternative is to <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html">deregister</a> and then <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html">re-register</a> Audit Manager. </p>
     /// </important>
     pub fn set_evidence_finder_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.evidence_finder_enabled = input;
         self
     }
-    /// <p>Specifies whether the evidence finder feature is enabled. Change this attribute to enable or disable evidence finder.</p><important>
-    /// <p>When you use this attribute to disable evidence finder, Audit Manager deletes the event data store that’s used to query your evidence data. As a result, you can’t re-enable evidence finder and use the feature again. Your only alternative is to <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html">deregister</a> and then <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html">re-register</a> Audit Manager.</p>
+    /// <p>Specifies whether the evidence finder feature is enabled. Change this attribute to enable or disable evidence finder.</p> <important>
+    /// <p>When you use this attribute to disable evidence finder, Audit Manager deletes the event data store that’s used to query your evidence data. As a result, you can’t re-enable evidence finder and use the feature again. Your only alternative is to <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html">deregister</a> and then <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html">re-register</a> Audit Manager. </p>
     /// </important>
     pub fn get_evidence_finder_enabled(&self) -> &::std::option::Option<bool> {
         &self.evidence_finder_enabled
@@ -183,17 +183,17 @@ impl UpdateSettingsInputBuilder {
     pub fn get_deregistration_policy(&self) -> &::std::option::Option<crate::types::DeregistrationPolicy> {
         &self.deregistration_policy
     }
-    /// <p>The default S3 destination bucket for storing evidence finder exports.</p>
+    /// <p> The default S3 destination bucket for storing evidence finder exports. </p>
     pub fn default_export_destination(mut self, input: crate::types::DefaultExportDestination) -> Self {
         self.default_export_destination = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The default S3 destination bucket for storing evidence finder exports.</p>
+    /// <p> The default S3 destination bucket for storing evidence finder exports. </p>
     pub fn set_default_export_destination(mut self, input: ::std::option::Option<crate::types::DefaultExportDestination>) -> Self {
         self.default_export_destination = input;
         self
     }
-    /// <p>The default S3 destination bucket for storing evidence finder exports.</p>
+    /// <p> The default S3 destination bucket for storing evidence finder exports. </p>
     pub fn get_default_export_destination(&self) -> &::std::option::Option<crate::types::DefaultExportDestination> {
         &self.default_export_destination
     }

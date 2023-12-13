@@ -7,7 +7,7 @@ pub struct SearchAssociatedTranscriptsInput {
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the bot containing the transcripts that you are searching.</p>
     pub bot_version: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of the language and locale of the transcripts to search. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a></p>
+    /// <p>The identifier of the language and locale of the transcripts to search. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
     pub locale_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the bot recommendation associated with the transcripts to search.</p>
     pub bot_recommendation_id: ::std::option::Option<::std::string::String>,
@@ -29,7 +29,7 @@ impl SearchAssociatedTranscriptsInput {
     pub fn bot_version(&self) -> ::std::option::Option<&str> {
         self.bot_version.as_deref()
     }
-    /// <p>The identifier of the language and locale of the transcripts to search. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a></p>
+    /// <p>The identifier of the language and locale of the transcripts to search. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
     pub fn locale_id(&self) -> ::std::option::Option<&str> {
         self.locale_id.as_deref()
     }
@@ -107,18 +107,18 @@ impl SearchAssociatedTranscriptsInputBuilder {
     pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.bot_version
     }
-    /// <p>The identifier of the language and locale of the transcripts to search. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a></p>
+    /// <p>The identifier of the language and locale of the transcripts to search. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
     /// This field is required.
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the language and locale of the transcripts to search. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a></p>
+    /// <p>The identifier of the language and locale of the transcripts to search. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
     pub fn set_locale_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.locale_id = input;
         self
     }
-    /// <p>The identifier of the language and locale of the transcripts to search. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a></p>
+    /// <p>The identifier of the language and locale of the transcripts to search. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
     pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.locale_id
     }

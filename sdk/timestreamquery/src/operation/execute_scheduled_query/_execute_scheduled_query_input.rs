@@ -5,9 +5,9 @@
 pub struct ExecuteScheduledQueryInput {
     /// <p>ARN of the scheduled query.</p>
     pub scheduled_query_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The timestamp in UTC. Query will be run as if it was invoked at this timestamp.</p>
+    /// <p>The timestamp in UTC. Query will be run as if it was invoked at this timestamp. </p>
     pub invocation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Not used.</p>
+    /// <p>Not used. </p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl ExecuteScheduledQueryInput {
@@ -15,11 +15,11 @@ impl ExecuteScheduledQueryInput {
     pub fn scheduled_query_arn(&self) -> ::std::option::Option<&str> {
         self.scheduled_query_arn.as_deref()
     }
-    /// <p>The timestamp in UTC. Query will be run as if it was invoked at this timestamp.</p>
+    /// <p>The timestamp in UTC. Query will be run as if it was invoked at this timestamp. </p>
     pub fn invocation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.invocation_time.as_ref()
     }
-    /// <p>Not used.</p>
+    /// <p>Not used. </p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -64,32 +64,32 @@ impl ExecuteScheduledQueryInputBuilder {
     pub fn get_scheduled_query_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.scheduled_query_arn
     }
-    /// <p>The timestamp in UTC. Query will be run as if it was invoked at this timestamp.</p>
+    /// <p>The timestamp in UTC. Query will be run as if it was invoked at this timestamp. </p>
     /// This field is required.
     pub fn invocation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.invocation_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The timestamp in UTC. Query will be run as if it was invoked at this timestamp.</p>
+    /// <p>The timestamp in UTC. Query will be run as if it was invoked at this timestamp. </p>
     pub fn set_invocation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.invocation_time = input;
         self
     }
-    /// <p>The timestamp in UTC. Query will be run as if it was invoked at this timestamp.</p>
+    /// <p>The timestamp in UTC. Query will be run as if it was invoked at this timestamp. </p>
     pub fn get_invocation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.invocation_time
     }
-    /// <p>Not used.</p>
+    /// <p>Not used. </p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Not used.</p>
+    /// <p>Not used. </p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p>Not used.</p>
+    /// <p>Not used. </p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }

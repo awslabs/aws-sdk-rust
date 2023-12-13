@@ -5,20 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProvisioningHook {
     /// <p>The payload that was sent to the target function.</p>
-    /// <p><i>Note:</i> Only Lambda functions are currently supported.</p>
+    /// <p> <i>Note:</i> Only Lambda functions are currently supported.</p>
     pub payload_version: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the target function.</p>
-    /// <p><i>Note:</i> Only Lambda functions are currently supported.</p>
+    /// <p> <i>Note:</i> Only Lambda functions are currently supported.</p>
     pub target_arn: ::std::string::String,
 }
 impl ProvisioningHook {
     /// <p>The payload that was sent to the target function.</p>
-    /// <p><i>Note:</i> Only Lambda functions are currently supported.</p>
+    /// <p> <i>Note:</i> Only Lambda functions are currently supported.</p>
     pub fn payload_version(&self) -> ::std::option::Option<&str> {
         self.payload_version.as_deref()
     }
     /// <p>The ARN of the target function.</p>
-    /// <p><i>Note:</i> Only Lambda functions are currently supported.</p>
+    /// <p> <i>Note:</i> Only Lambda functions are currently supported.</p>
     pub fn target_arn(&self) -> &str {
         use std::ops::Deref;
         self.target_arn.deref()
@@ -40,37 +40,37 @@ pub struct ProvisioningHookBuilder {
 }
 impl ProvisioningHookBuilder {
     /// <p>The payload that was sent to the target function.</p>
-    /// <p><i>Note:</i> Only Lambda functions are currently supported.</p>
+    /// <p> <i>Note:</i> Only Lambda functions are currently supported.</p>
     pub fn payload_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.payload_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The payload that was sent to the target function.</p>
-    /// <p><i>Note:</i> Only Lambda functions are currently supported.</p>
+    /// <p> <i>Note:</i> Only Lambda functions are currently supported.</p>
     pub fn set_payload_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.payload_version = input;
         self
     }
     /// <p>The payload that was sent to the target function.</p>
-    /// <p><i>Note:</i> Only Lambda functions are currently supported.</p>
+    /// <p> <i>Note:</i> Only Lambda functions are currently supported.</p>
     pub fn get_payload_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.payload_version
     }
     /// <p>The ARN of the target function.</p>
-    /// <p><i>Note:</i> Only Lambda functions are currently supported.</p>
+    /// <p> <i>Note:</i> Only Lambda functions are currently supported.</p>
     /// This field is required.
     pub fn target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the target function.</p>
-    /// <p><i>Note:</i> Only Lambda functions are currently supported.</p>
+    /// <p> <i>Note:</i> Only Lambda functions are currently supported.</p>
     pub fn set_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_arn = input;
         self
     }
     /// <p>The ARN of the target function.</p>
-    /// <p><i>Note:</i> Only Lambda functions are currently supported.</p>
+    /// <p> <i>Note:</i> Only Lambda functions are currently supported.</p>
     pub fn get_target_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_arn
     }

@@ -10,12 +10,12 @@ pub struct ResourceSpec {
     pub sage_maker_image_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>The SageMakerImageVersionAlias.</p>
     pub sage_maker_image_version_alias: ::std::option::Option<::std::string::String>,
-    /// <p>The instance type that the image version runs on.</p><note>
-    /// <p><b>JupyterServer apps</b> only support the <code>system</code> value.</p>
+    /// <p>The instance type that the image version runs on.</p> <note>
+    /// <p> <b>JupyterServer apps</b> only support the <code>system</code> value.</p>
     /// <p>For <b>KernelGateway apps</b>, the <code>system</code> value is translated to <code>ml.t3.medium</code>. KernelGateway apps also support all other values for available instance types.</p>
     /// </note>
     pub instance_type: ::std::option::Option<crate::types::AppInstanceType>,
-    /// <p>The Amazon Resource Name (ARN) of the Lifecycle Configuration attached to the Resource.</p>
+    /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configuration attached to the Resource.</p>
     pub lifecycle_config_arn: ::std::option::Option<::std::string::String>,
 }
 impl ResourceSpec {
@@ -31,14 +31,14 @@ impl ResourceSpec {
     pub fn sage_maker_image_version_alias(&self) -> ::std::option::Option<&str> {
         self.sage_maker_image_version_alias.as_deref()
     }
-    /// <p>The instance type that the image version runs on.</p><note>
-    /// <p><b>JupyterServer apps</b> only support the <code>system</code> value.</p>
+    /// <p>The instance type that the image version runs on.</p> <note>
+    /// <p> <b>JupyterServer apps</b> only support the <code>system</code> value.</p>
     /// <p>For <b>KernelGateway apps</b>, the <code>system</code> value is translated to <code>ml.t3.medium</code>. KernelGateway apps also support all other values for available instance types.</p>
     /// </note>
     pub fn instance_type(&self) -> ::std::option::Option<&crate::types::AppInstanceType> {
         self.instance_type.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Lifecycle Configuration attached to the Resource.</p>
+    /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configuration attached to the Resource.</p>
     pub fn lifecycle_config_arn(&self) -> ::std::option::Option<&str> {
         self.lifecycle_config_arn.as_deref()
     }
@@ -103,40 +103,40 @@ impl ResourceSpecBuilder {
     pub fn get_sage_maker_image_version_alias(&self) -> &::std::option::Option<::std::string::String> {
         &self.sage_maker_image_version_alias
     }
-    /// <p>The instance type that the image version runs on.</p><note>
-    /// <p><b>JupyterServer apps</b> only support the <code>system</code> value.</p>
+    /// <p>The instance type that the image version runs on.</p> <note>
+    /// <p> <b>JupyterServer apps</b> only support the <code>system</code> value.</p>
     /// <p>For <b>KernelGateway apps</b>, the <code>system</code> value is translated to <code>ml.t3.medium</code>. KernelGateway apps also support all other values for available instance types.</p>
     /// </note>
     pub fn instance_type(mut self, input: crate::types::AppInstanceType) -> Self {
         self.instance_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The instance type that the image version runs on.</p><note>
-    /// <p><b>JupyterServer apps</b> only support the <code>system</code> value.</p>
+    /// <p>The instance type that the image version runs on.</p> <note>
+    /// <p> <b>JupyterServer apps</b> only support the <code>system</code> value.</p>
     /// <p>For <b>KernelGateway apps</b>, the <code>system</code> value is translated to <code>ml.t3.medium</code>. KernelGateway apps also support all other values for available instance types.</p>
     /// </note>
     pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::AppInstanceType>) -> Self {
         self.instance_type = input;
         self
     }
-    /// <p>The instance type that the image version runs on.</p><note>
-    /// <p><b>JupyterServer apps</b> only support the <code>system</code> value.</p>
+    /// <p>The instance type that the image version runs on.</p> <note>
+    /// <p> <b>JupyterServer apps</b> only support the <code>system</code> value.</p>
     /// <p>For <b>KernelGateway apps</b>, the <code>system</code> value is translated to <code>ml.t3.medium</code>. KernelGateway apps also support all other values for available instance types.</p>
     /// </note>
     pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::AppInstanceType> {
         &self.instance_type
     }
-    /// <p>The Amazon Resource Name (ARN) of the Lifecycle Configuration attached to the Resource.</p>
+    /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configuration attached to the Resource.</p>
     pub fn lifecycle_config_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lifecycle_config_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Lifecycle Configuration attached to the Resource.</p>
+    /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configuration attached to the Resource.</p>
     pub fn set_lifecycle_config_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lifecycle_config_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Lifecycle Configuration attached to the Resource.</p>
+    /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configuration attached to the Resource.</p>
     pub fn get_lifecycle_config_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.lifecycle_config_arn
     }

@@ -243,7 +243,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PromoteReadRe
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum PromoteReadReplicaDBClusterError {
-    /// <p><code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
+    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
     DbClusterNotFoundFault(crate::types::error::DbClusterNotFoundFault),
     /// <p>The requested operation can't be performed while the cluster is in this state.</p>
     InvalidDbClusterStateFault(crate::types::error::InvalidDbClusterStateFault),

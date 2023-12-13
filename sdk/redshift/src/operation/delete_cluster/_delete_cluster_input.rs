@@ -7,30 +7,23 @@ pub struct DeleteClusterInput {
     /// <p>The identifier of the cluster to be deleted.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must contain lowercase characters.</p></li>
-    /// <li>
-    /// <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p></li>
-    /// <li>
-    /// <p>First character must be a letter.</p></li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li> <p>Must contain lowercase characters.</p> </li>
+    /// <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>Determines whether a final snapshot of the cluster is created before Amazon Redshift deletes the cluster. If <code>true</code>, a final cluster snapshot is not created. If <code>false</code>, a final cluster snapshot is created before the cluster is deleted.</p><note>
+    /// <p>Determines whether a final snapshot of the cluster is created before Amazon Redshift deletes the cluster. If <code>true</code>, a final cluster snapshot is not created. If <code>false</code>, a final cluster snapshot is created before the cluster is deleted. </p> <note>
     /// <p>The <i>FinalClusterSnapshotIdentifier</i> parameter must be specified if <i>SkipFinalClusterSnapshot</i> is <code>false</code>.</p>
     /// </note>
-    /// <p>Default: <code>false</code></p>
+    /// <p>Default: <code>false</code> </p>
     pub skip_final_cluster_snapshot: ::std::option::Option<bool>,
-    /// <p>The identifier of the final snapshot that is to be created immediately before deleting the cluster. If this parameter is provided, <i>SkipFinalClusterSnapshot</i> must be <code>false</code>.</p>
+    /// <p>The identifier of the final snapshot that is to be created immediately before deleting the cluster. If this parameter is provided, <i>SkipFinalClusterSnapshot</i> must be <code>false</code>. </p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be 1 to 255 alphanumeric characters.</p></li>
-    /// <li>
-    /// <p>First character must be a letter.</p></li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li> <p>Must be 1 to 255 alphanumeric characters.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     pub final_cluster_snapshot_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely.</p>
@@ -42,34 +35,27 @@ impl DeleteClusterInput {
     /// <p>The identifier of the cluster to be deleted.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must contain lowercase characters.</p></li>
-    /// <li>
-    /// <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p></li>
-    /// <li>
-    /// <p>First character must be a letter.</p></li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li> <p>Must contain lowercase characters.</p> </li>
+    /// <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     pub fn cluster_identifier(&self) -> ::std::option::Option<&str> {
         self.cluster_identifier.as_deref()
     }
-    /// <p>Determines whether a final snapshot of the cluster is created before Amazon Redshift deletes the cluster. If <code>true</code>, a final cluster snapshot is not created. If <code>false</code>, a final cluster snapshot is created before the cluster is deleted.</p><note>
+    /// <p>Determines whether a final snapshot of the cluster is created before Amazon Redshift deletes the cluster. If <code>true</code>, a final cluster snapshot is not created. If <code>false</code>, a final cluster snapshot is created before the cluster is deleted. </p> <note>
     /// <p>The <i>FinalClusterSnapshotIdentifier</i> parameter must be specified if <i>SkipFinalClusterSnapshot</i> is <code>false</code>.</p>
     /// </note>
-    /// <p>Default: <code>false</code></p>
+    /// <p>Default: <code>false</code> </p>
     pub fn skip_final_cluster_snapshot(&self) -> ::std::option::Option<bool> {
         self.skip_final_cluster_snapshot
     }
-    /// <p>The identifier of the final snapshot that is to be created immediately before deleting the cluster. If this parameter is provided, <i>SkipFinalClusterSnapshot</i> must be <code>false</code>.</p>
+    /// <p>The identifier of the final snapshot that is to be created immediately before deleting the cluster. If this parameter is provided, <i>SkipFinalClusterSnapshot</i> must be <code>false</code>. </p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be 1 to 255 alphanumeric characters.</p></li>
-    /// <li>
-    /// <p>First character must be a letter.</p></li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li> <p>Must be 1 to 255 alphanumeric characters.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     pub fn final_cluster_snapshot_identifier(&self) -> ::std::option::Option<&str> {
         self.final_cluster_snapshot_identifier.as_deref()
@@ -101,14 +87,10 @@ impl DeleteClusterInputBuilder {
     /// <p>The identifier of the cluster to be deleted.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must contain lowercase characters.</p></li>
-    /// <li>
-    /// <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p></li>
-    /// <li>
-    /// <p>First character must be a letter.</p></li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li> <p>Must contain lowercase characters.</p> </li>
+    /// <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -118,14 +100,10 @@ impl DeleteClusterInputBuilder {
     /// <p>The identifier of the cluster to be deleted.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must contain lowercase characters.</p></li>
-    /// <li>
-    /// <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p></li>
-    /// <li>
-    /// <p>First character must be a letter.</p></li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li> <p>Must contain lowercase characters.</p> </li>
+    /// <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_identifier = input;
@@ -134,78 +112,65 @@ impl DeleteClusterInputBuilder {
     /// <p>The identifier of the cluster to be deleted.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must contain lowercase characters.</p></li>
-    /// <li>
-    /// <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p></li>
-    /// <li>
-    /// <p>First character must be a letter.</p></li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li> <p>Must contain lowercase characters.</p> </li>
+    /// <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_identifier
     }
-    /// <p>Determines whether a final snapshot of the cluster is created before Amazon Redshift deletes the cluster. If <code>true</code>, a final cluster snapshot is not created. If <code>false</code>, a final cluster snapshot is created before the cluster is deleted.</p><note>
+    /// <p>Determines whether a final snapshot of the cluster is created before Amazon Redshift deletes the cluster. If <code>true</code>, a final cluster snapshot is not created. If <code>false</code>, a final cluster snapshot is created before the cluster is deleted. </p> <note>
     /// <p>The <i>FinalClusterSnapshotIdentifier</i> parameter must be specified if <i>SkipFinalClusterSnapshot</i> is <code>false</code>.</p>
     /// </note>
-    /// <p>Default: <code>false</code></p>
+    /// <p>Default: <code>false</code> </p>
     pub fn skip_final_cluster_snapshot(mut self, input: bool) -> Self {
         self.skip_final_cluster_snapshot = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Determines whether a final snapshot of the cluster is created before Amazon Redshift deletes the cluster. If <code>true</code>, a final cluster snapshot is not created. If <code>false</code>, a final cluster snapshot is created before the cluster is deleted.</p><note>
+    /// <p>Determines whether a final snapshot of the cluster is created before Amazon Redshift deletes the cluster. If <code>true</code>, a final cluster snapshot is not created. If <code>false</code>, a final cluster snapshot is created before the cluster is deleted. </p> <note>
     /// <p>The <i>FinalClusterSnapshotIdentifier</i> parameter must be specified if <i>SkipFinalClusterSnapshot</i> is <code>false</code>.</p>
     /// </note>
-    /// <p>Default: <code>false</code></p>
+    /// <p>Default: <code>false</code> </p>
     pub fn set_skip_final_cluster_snapshot(mut self, input: ::std::option::Option<bool>) -> Self {
         self.skip_final_cluster_snapshot = input;
         self
     }
-    /// <p>Determines whether a final snapshot of the cluster is created before Amazon Redshift deletes the cluster. If <code>true</code>, a final cluster snapshot is not created. If <code>false</code>, a final cluster snapshot is created before the cluster is deleted.</p><note>
+    /// <p>Determines whether a final snapshot of the cluster is created before Amazon Redshift deletes the cluster. If <code>true</code>, a final cluster snapshot is not created. If <code>false</code>, a final cluster snapshot is created before the cluster is deleted. </p> <note>
     /// <p>The <i>FinalClusterSnapshotIdentifier</i> parameter must be specified if <i>SkipFinalClusterSnapshot</i> is <code>false</code>.</p>
     /// </note>
-    /// <p>Default: <code>false</code></p>
+    /// <p>Default: <code>false</code> </p>
     pub fn get_skip_final_cluster_snapshot(&self) -> &::std::option::Option<bool> {
         &self.skip_final_cluster_snapshot
     }
-    /// <p>The identifier of the final snapshot that is to be created immediately before deleting the cluster. If this parameter is provided, <i>SkipFinalClusterSnapshot</i> must be <code>false</code>.</p>
+    /// <p>The identifier of the final snapshot that is to be created immediately before deleting the cluster. If this parameter is provided, <i>SkipFinalClusterSnapshot</i> must be <code>false</code>. </p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be 1 to 255 alphanumeric characters.</p></li>
-    /// <li>
-    /// <p>First character must be a letter.</p></li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li> <p>Must be 1 to 255 alphanumeric characters.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     pub fn final_cluster_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.final_cluster_snapshot_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the final snapshot that is to be created immediately before deleting the cluster. If this parameter is provided, <i>SkipFinalClusterSnapshot</i> must be <code>false</code>.</p>
+    /// <p>The identifier of the final snapshot that is to be created immediately before deleting the cluster. If this parameter is provided, <i>SkipFinalClusterSnapshot</i> must be <code>false</code>. </p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be 1 to 255 alphanumeric characters.</p></li>
-    /// <li>
-    /// <p>First character must be a letter.</p></li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li> <p>Must be 1 to 255 alphanumeric characters.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     pub fn set_final_cluster_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.final_cluster_snapshot_identifier = input;
         self
     }
-    /// <p>The identifier of the final snapshot that is to be created immediately before deleting the cluster. If this parameter is provided, <i>SkipFinalClusterSnapshot</i> must be <code>false</code>.</p>
+    /// <p>The identifier of the final snapshot that is to be created immediately before deleting the cluster. If this parameter is provided, <i>SkipFinalClusterSnapshot</i> must be <code>false</code>. </p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be 1 to 255 alphanumeric characters.</p></li>
-    /// <li>
-    /// <p>First character must be a letter.</p></li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li> <p>Must be 1 to 255 alphanumeric characters.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     pub fn get_final_cluster_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.final_cluster_snapshot_identifier

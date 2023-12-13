@@ -7,7 +7,7 @@ pub struct BatchCreateTableRowsOutput {
     pub workbook_cursor: i64,
     /// <p>The map of batch item id to the row id that was created for that item.</p>
     pub created_rows: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    /// <p>The list of batch items in the request that could not be added to the table. Each element in this list contains one item from the request that could not be added to the table along with the reason why that item could not be added.</p>
+    /// <p> The list of batch items in the request that could not be added to the table. Each element in this list contains one item from the request that could not be added to the table along with the reason why that item could not be added. </p>
     pub failed_batch_items: ::std::option::Option<::std::vec::Vec<crate::types::FailedBatchItem>>,
     _request_id: Option<String>,
 }
@@ -20,7 +20,7 @@ impl BatchCreateTableRowsOutput {
     pub fn created_rows(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
         &self.created_rows
     }
-    /// <p>The list of batch items in the request that could not be added to the table. Each element in this list contains one item from the request that could not be added to the table along with the reason why that item could not be added.</p>
+    /// <p> The list of batch items in the request that could not be added to the table. Each element in this list contains one item from the request that could not be added to the table along with the reason why that item could not be added. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed_batch_items.is_none()`.
     pub fn failed_batch_items(&self) -> &[crate::types::FailedBatchItem] {
@@ -91,19 +91,19 @@ impl BatchCreateTableRowsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_failed_batch_items`](Self::set_failed_batch_items).
     ///
-    /// <p>The list of batch items in the request that could not be added to the table. Each element in this list contains one item from the request that could not be added to the table along with the reason why that item could not be added.</p>
+    /// <p> The list of batch items in the request that could not be added to the table. Each element in this list contains one item from the request that could not be added to the table along with the reason why that item could not be added. </p>
     pub fn failed_batch_items(mut self, input: crate::types::FailedBatchItem) -> Self {
         let mut v = self.failed_batch_items.unwrap_or_default();
         v.push(input);
         self.failed_batch_items = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of batch items in the request that could not be added to the table. Each element in this list contains one item from the request that could not be added to the table along with the reason why that item could not be added.</p>
+    /// <p> The list of batch items in the request that could not be added to the table. Each element in this list contains one item from the request that could not be added to the table along with the reason why that item could not be added. </p>
     pub fn set_failed_batch_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FailedBatchItem>>) -> Self {
         self.failed_batch_items = input;
         self
     }
-    /// <p>The list of batch items in the request that could not be added to the table. Each element in this list contains one item from the request that could not be added to the table along with the reason why that item could not be added.</p>
+    /// <p> The list of batch items in the request that could not be added to the table. Each element in this list contains one item from the request that could not be added to the table along with the reason why that item could not be added. </p>
     pub fn get_failed_batch_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedBatchItem>> {
         &self.failed_batch_items
     }

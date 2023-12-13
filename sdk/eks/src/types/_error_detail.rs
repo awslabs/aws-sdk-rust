@@ -4,22 +4,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ErrorDetail {
-    /// <p>A brief description of the error.</p>
+    /// <p>A brief description of the error. </p>
     /// <ul>
-    /// <li>
-    /// <p><b>SubnetNotFound</b>: We couldn't find one of the subnets associated with the cluster.</p></li>
-    /// <li>
-    /// <p><b>SecurityGroupNotFound</b>: We couldn't find one of the security groups associated with the cluster.</p></li>
-    /// <li>
-    /// <p><b>EniLimitReached</b>: You have reached the elastic network interface limit for your account.</p></li>
-    /// <li>
-    /// <p><b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any free IP addresses.</p></li>
-    /// <li>
-    /// <p><b>AccessDenied</b>: You don't have permissions to perform the specified operation.</p></li>
-    /// <li>
-    /// <p><b>OperationNotPermitted</b>: The service role associated with the cluster doesn't have the required access permissions for Amazon EKS.</p></li>
-    /// <li>
-    /// <p><b>VpcIdNotFound</b>: We couldn't find the VPC associated with the cluster.</p></li>
+    /// <li> <p> <b>SubnetNotFound</b>: We couldn't find one of the subnets associated with the cluster.</p> </li>
+    /// <li> <p> <b>SecurityGroupNotFound</b>: We couldn't find one of the security groups associated with the cluster.</p> </li>
+    /// <li> <p> <b>EniLimitReached</b>: You have reached the elastic network interface limit for your account.</p> </li>
+    /// <li> <p> <b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any free IP addresses.</p> </li>
+    /// <li> <p> <b>AccessDenied</b>: You don't have permissions to perform the specified operation.</p> </li>
+    /// <li> <p> <b>OperationNotPermitted</b>: The service role associated with the cluster doesn't have the required access permissions for Amazon EKS.</p> </li>
+    /// <li> <p> <b>VpcIdNotFound</b>: We couldn't find the VPC associated with the cluster.</p> </li>
     /// </ul>
     pub error_code: ::std::option::Option<crate::types::ErrorCode>,
     /// <p>A more complete description of the error.</p>
@@ -28,22 +21,15 @@ pub struct ErrorDetail {
     pub resource_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ErrorDetail {
-    /// <p>A brief description of the error.</p>
+    /// <p>A brief description of the error. </p>
     /// <ul>
-    /// <li>
-    /// <p><b>SubnetNotFound</b>: We couldn't find one of the subnets associated with the cluster.</p></li>
-    /// <li>
-    /// <p><b>SecurityGroupNotFound</b>: We couldn't find one of the security groups associated with the cluster.</p></li>
-    /// <li>
-    /// <p><b>EniLimitReached</b>: You have reached the elastic network interface limit for your account.</p></li>
-    /// <li>
-    /// <p><b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any free IP addresses.</p></li>
-    /// <li>
-    /// <p><b>AccessDenied</b>: You don't have permissions to perform the specified operation.</p></li>
-    /// <li>
-    /// <p><b>OperationNotPermitted</b>: The service role associated with the cluster doesn't have the required access permissions for Amazon EKS.</p></li>
-    /// <li>
-    /// <p><b>VpcIdNotFound</b>: We couldn't find the VPC associated with the cluster.</p></li>
+    /// <li> <p> <b>SubnetNotFound</b>: We couldn't find one of the subnets associated with the cluster.</p> </li>
+    /// <li> <p> <b>SecurityGroupNotFound</b>: We couldn't find one of the security groups associated with the cluster.</p> </li>
+    /// <li> <p> <b>EniLimitReached</b>: You have reached the elastic network interface limit for your account.</p> </li>
+    /// <li> <p> <b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any free IP addresses.</p> </li>
+    /// <li> <p> <b>AccessDenied</b>: You don't have permissions to perform the specified operation.</p> </li>
+    /// <li> <p> <b>OperationNotPermitted</b>: The service role associated with the cluster doesn't have the required access permissions for Amazon EKS.</p> </li>
+    /// <li> <p> <b>VpcIdNotFound</b>: We couldn't find the VPC associated with the cluster.</p> </li>
     /// </ul>
     pub fn error_code(&self) -> ::std::option::Option<&crate::types::ErrorCode> {
         self.error_code.as_ref()
@@ -75,64 +61,43 @@ pub struct ErrorDetailBuilder {
     pub(crate) resource_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ErrorDetailBuilder {
-    /// <p>A brief description of the error.</p>
+    /// <p>A brief description of the error. </p>
     /// <ul>
-    /// <li>
-    /// <p><b>SubnetNotFound</b>: We couldn't find one of the subnets associated with the cluster.</p></li>
-    /// <li>
-    /// <p><b>SecurityGroupNotFound</b>: We couldn't find one of the security groups associated with the cluster.</p></li>
-    /// <li>
-    /// <p><b>EniLimitReached</b>: You have reached the elastic network interface limit for your account.</p></li>
-    /// <li>
-    /// <p><b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any free IP addresses.</p></li>
-    /// <li>
-    /// <p><b>AccessDenied</b>: You don't have permissions to perform the specified operation.</p></li>
-    /// <li>
-    /// <p><b>OperationNotPermitted</b>: The service role associated with the cluster doesn't have the required access permissions for Amazon EKS.</p></li>
-    /// <li>
-    /// <p><b>VpcIdNotFound</b>: We couldn't find the VPC associated with the cluster.</p></li>
+    /// <li> <p> <b>SubnetNotFound</b>: We couldn't find one of the subnets associated with the cluster.</p> </li>
+    /// <li> <p> <b>SecurityGroupNotFound</b>: We couldn't find one of the security groups associated with the cluster.</p> </li>
+    /// <li> <p> <b>EniLimitReached</b>: You have reached the elastic network interface limit for your account.</p> </li>
+    /// <li> <p> <b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any free IP addresses.</p> </li>
+    /// <li> <p> <b>AccessDenied</b>: You don't have permissions to perform the specified operation.</p> </li>
+    /// <li> <p> <b>OperationNotPermitted</b>: The service role associated with the cluster doesn't have the required access permissions for Amazon EKS.</p> </li>
+    /// <li> <p> <b>VpcIdNotFound</b>: We couldn't find the VPC associated with the cluster.</p> </li>
     /// </ul>
     pub fn error_code(mut self, input: crate::types::ErrorCode) -> Self {
         self.error_code = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A brief description of the error.</p>
+    /// <p>A brief description of the error. </p>
     /// <ul>
-    /// <li>
-    /// <p><b>SubnetNotFound</b>: We couldn't find one of the subnets associated with the cluster.</p></li>
-    /// <li>
-    /// <p><b>SecurityGroupNotFound</b>: We couldn't find one of the security groups associated with the cluster.</p></li>
-    /// <li>
-    /// <p><b>EniLimitReached</b>: You have reached the elastic network interface limit for your account.</p></li>
-    /// <li>
-    /// <p><b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any free IP addresses.</p></li>
-    /// <li>
-    /// <p><b>AccessDenied</b>: You don't have permissions to perform the specified operation.</p></li>
-    /// <li>
-    /// <p><b>OperationNotPermitted</b>: The service role associated with the cluster doesn't have the required access permissions for Amazon EKS.</p></li>
-    /// <li>
-    /// <p><b>VpcIdNotFound</b>: We couldn't find the VPC associated with the cluster.</p></li>
+    /// <li> <p> <b>SubnetNotFound</b>: We couldn't find one of the subnets associated with the cluster.</p> </li>
+    /// <li> <p> <b>SecurityGroupNotFound</b>: We couldn't find one of the security groups associated with the cluster.</p> </li>
+    /// <li> <p> <b>EniLimitReached</b>: You have reached the elastic network interface limit for your account.</p> </li>
+    /// <li> <p> <b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any free IP addresses.</p> </li>
+    /// <li> <p> <b>AccessDenied</b>: You don't have permissions to perform the specified operation.</p> </li>
+    /// <li> <p> <b>OperationNotPermitted</b>: The service role associated with the cluster doesn't have the required access permissions for Amazon EKS.</p> </li>
+    /// <li> <p> <b>VpcIdNotFound</b>: We couldn't find the VPC associated with the cluster.</p> </li>
     /// </ul>
     pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::ErrorCode>) -> Self {
         self.error_code = input;
         self
     }
-    /// <p>A brief description of the error.</p>
+    /// <p>A brief description of the error. </p>
     /// <ul>
-    /// <li>
-    /// <p><b>SubnetNotFound</b>: We couldn't find one of the subnets associated with the cluster.</p></li>
-    /// <li>
-    /// <p><b>SecurityGroupNotFound</b>: We couldn't find one of the security groups associated with the cluster.</p></li>
-    /// <li>
-    /// <p><b>EniLimitReached</b>: You have reached the elastic network interface limit for your account.</p></li>
-    /// <li>
-    /// <p><b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any free IP addresses.</p></li>
-    /// <li>
-    /// <p><b>AccessDenied</b>: You don't have permissions to perform the specified operation.</p></li>
-    /// <li>
-    /// <p><b>OperationNotPermitted</b>: The service role associated with the cluster doesn't have the required access permissions for Amazon EKS.</p></li>
-    /// <li>
-    /// <p><b>VpcIdNotFound</b>: We couldn't find the VPC associated with the cluster.</p></li>
+    /// <li> <p> <b>SubnetNotFound</b>: We couldn't find one of the subnets associated with the cluster.</p> </li>
+    /// <li> <p> <b>SecurityGroupNotFound</b>: We couldn't find one of the security groups associated with the cluster.</p> </li>
+    /// <li> <p> <b>EniLimitReached</b>: You have reached the elastic network interface limit for your account.</p> </li>
+    /// <li> <p> <b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any free IP addresses.</p> </li>
+    /// <li> <p> <b>AccessDenied</b>: You don't have permissions to perform the specified operation.</p> </li>
+    /// <li> <p> <b>OperationNotPermitted</b>: The service role associated with the cluster doesn't have the required access permissions for Amazon EKS.</p> </li>
+    /// <li> <p> <b>VpcIdNotFound</b>: We couldn't find the VPC associated with the cluster.</p> </li>
     /// </ul>
     pub fn get_error_code(&self) -> &::std::option::Option<crate::types::ErrorCode> {
         &self.error_code

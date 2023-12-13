@@ -263,7 +263,7 @@ pub enum CreateNamespaceError {
     LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>One or more preconditions aren't met.</p>
     PreconditionNotMetException(crate::types::error::PreconditionNotMetException),
-    /// <p>The resource specified already exists.</p>
+    /// <p>The resource specified already exists. </p>
     ResourceExistsException(crate::types::error::ResourceExistsException),
     /// <p>One or more resources can't be found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),

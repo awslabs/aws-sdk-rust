@@ -259,7 +259,7 @@ pub enum GetCommitError {
     EncryptionKeyUnavailableException(crate::types::error::EncryptionKeyUnavailableException),
     /// <p>The specified commit ID is not valid.</p>
     InvalidCommitIdException(crate::types::error::InvalidCommitIdException),
-    /// <p>A specified repository name is not valid.</p><note>
+    /// <p>A specified repository name is not valid.</p> <note>
     /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::types::error::InvalidRepositoryNameException),

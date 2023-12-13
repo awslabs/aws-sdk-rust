@@ -243,7 +243,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CopyClusterSn
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CopyClusterSnapshotError {
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.</p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
     ClusterNotFoundFault(crate::types::error::ClusterNotFoundFault),
     /// <p>The value specified as a snapshot identifier is already used by an existing snapshot.</p>
     ClusterSnapshotAlreadyExistsFault(crate::types::error::ClusterSnapshotAlreadyExistsFault),
@@ -251,7 +251,7 @@ pub enum CopyClusterSnapshotError {
     ClusterSnapshotNotFoundFault(crate::types::error::ClusterSnapshotNotFoundFault),
     /// <p>The request would result in the user exceeding the allowed number of cluster snapshots.</p>
     ClusterSnapshotQuotaExceededFault(crate::types::error::ClusterSnapshotQuotaExceededFault),
-    /// <p>The specified cluster snapshot is not in the <code>available</code> state, or other accounts are authorized to access the snapshot.</p>
+    /// <p>The specified cluster snapshot is not in the <code>available</code> state, or other accounts are authorized to access the snapshot. </p>
     InvalidClusterSnapshotStateFault(crate::types::error::InvalidClusterSnapshotStateFault),
     /// <p>The retention period specified is either in the past or is not a valid value.</p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>

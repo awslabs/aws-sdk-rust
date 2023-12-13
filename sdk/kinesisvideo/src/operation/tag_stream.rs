@@ -248,7 +248,7 @@ pub enum TagStreamError {
     NotAuthorizedException(crate::types::error::NotAuthorizedException),
     /// <p>Amazon Kinesis Video Streams can't find the stream that you specified.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>You have exceeded the limit of tags that you can associate with the resource. A Kinesis video stream can support up to 50 tags.</p>
+    /// <p>You have exceeded the limit of tags that you can associate with the resource. A Kinesis video stream can support up to 50 tags. </p>
     TagsPerResourceExceededLimitException(crate::types::error::TagsPerResourceExceededLimitException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

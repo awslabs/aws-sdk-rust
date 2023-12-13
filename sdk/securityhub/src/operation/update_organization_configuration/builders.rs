@@ -151,17 +151,17 @@ impl UpdateOrganizationConfigurationFluentBuilder {
     pub fn get_auto_enable_standards(&self) -> &::std::option::Option<crate::types::AutoEnableStandards> {
         self.inner.get_auto_enable_standards()
     }
-    /// <p>Provides information about the way an organization is configured in Security Hub.</p>
+    /// <p> Provides information about the way an organization is configured in Security Hub. </p>
     pub fn organization_configuration(mut self, input: crate::types::OrganizationConfiguration) -> Self {
         self.inner = self.inner.organization_configuration(input);
         self
     }
-    /// <p>Provides information about the way an organization is configured in Security Hub.</p>
+    /// <p> Provides information about the way an organization is configured in Security Hub. </p>
     pub fn set_organization_configuration(mut self, input: ::std::option::Option<crate::types::OrganizationConfiguration>) -> Self {
         self.inner = self.inner.set_organization_configuration(input);
         self
     }
-    /// <p>Provides information about the way an organization is configured in Security Hub.</p>
+    /// <p> Provides information about the way an organization is configured in Security Hub. </p>
     pub fn get_organization_configuration(&self) -> &::std::option::Option<crate::types::OrganizationConfiguration> {
         self.inner.get_organization_configuration()
     }

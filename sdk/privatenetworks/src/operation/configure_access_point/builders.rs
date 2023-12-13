@@ -22,8 +22,8 @@ impl ConfigureAccessPointInputBuilder {
 }
 /// Fluent builder constructing a request to `ConfigureAccessPoint`.
 ///
-/// <p>Configures the specified network resource.</p>
-/// <p>Use this action to specify the geographic position of the hardware. You must provide Certified Professional Installer (CPI) credentials in the request so that we can obtain spectrum grants. For more information, see <a href="https://docs.aws.amazon.com/private-networks/latest/userguide/radio-units.html">Radio units</a> in the <i>Amazon Web Services Private 5G User Guide</i>.</p>
+/// <p>Configures the specified network resource. </p>
+/// <p> Use this action to specify the geographic position of the hardware. You must provide Certified Professional Installer (CPI) credentials in the request so that we can obtain spectrum grants. For more information, see <a href="https://docs.aws.amazon.com/private-networks/latest/userguide/radio-units.html">Radio units</a> in the <i>Amazon Web Services Private 5G User Guide</i>. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ConfigureAccessPointFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -151,17 +151,17 @@ impl ConfigureAccessPointFluentBuilder {
     pub fn get_cpi_username(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cpi_username()
     }
-    /// <p>The CPI user ID of the CPI user who is certifying the coordinates of the network resource.</p>
+    /// <p>The CPI user ID of the CPI user who is certifying the coordinates of the network resource. </p>
     pub fn cpi_user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cpi_user_id(input.into());
         self
     }
-    /// <p>The CPI user ID of the CPI user who is certifying the coordinates of the network resource.</p>
+    /// <p>The CPI user ID of the CPI user who is certifying the coordinates of the network resource. </p>
     pub fn set_cpi_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cpi_user_id(input);
         self
     }
-    /// <p>The CPI user ID of the CPI user who is certifying the coordinates of the network resource.</p>
+    /// <p>The CPI user ID of the CPI user who is certifying the coordinates of the network resource. </p>
     pub fn get_cpi_user_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cpi_user_id()
     }
@@ -179,17 +179,17 @@ impl ConfigureAccessPointFluentBuilder {
     pub fn get_cpi_user_password(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cpi_user_password()
     }
-    /// <p>A Base64 encoded string of the CPI certificate associated with the CPI user who is certifying the coordinates of the network resource.</p>
+    /// <p>A Base64 encoded string of the CPI certificate associated with the CPI user who is certifying the coordinates of the network resource. </p>
     pub fn cpi_secret_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cpi_secret_key(input.into());
         self
     }
-    /// <p>A Base64 encoded string of the CPI certificate associated with the CPI user who is certifying the coordinates of the network resource.</p>
+    /// <p>A Base64 encoded string of the CPI certificate associated with the CPI user who is certifying the coordinates of the network resource. </p>
     pub fn set_cpi_secret_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cpi_secret_key(input);
         self
     }
-    /// <p>A Base64 encoded string of the CPI certificate associated with the CPI user who is certifying the coordinates of the network resource.</p>
+    /// <p>A Base64 encoded string of the CPI certificate associated with the CPI user who is certifying the coordinates of the network resource. </p>
     pub fn get_cpi_secret_key(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cpi_secret_key()
     }

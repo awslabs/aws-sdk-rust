@@ -11,10 +11,10 @@ pub struct CreateUserPoolInput {
     /// <p>When active, <code>DeletionProtection</code> prevents accidental deletion of your user pool. Before you can delete a user pool that you have protected against deletion, you must deactivate this feature.</p>
     /// <p>When you try to delete a protected user pool in a <code>DeleteUserPool</code> API request, Amazon Cognito returns an <code>InvalidParameterException</code> error. To delete a protected user pool, send a new <code>DeleteUserPool</code> request after you deactivate deletion protection in an <code>UpdateUserPool</code> API request.</p>
     pub deletion_protection: ::std::option::Option<crate::types::DeletionProtectionType>,
-    /// <p>The Lambda trigger configuration information for the new user pool.</p><note>
+    /// <p>The Lambda trigger configuration information for the new user pool.</p> <note>
     /// <p>In a push model, event sources (such as Amazon S3 and custom applications) need permission to invoke a function. So you must make an extra call to add permission for these event sources to invoke your Lambda function.</p>
     /// <p></p>
-    /// <p>For more information on using the Lambda API to add permission, see<a href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html"> AddPermission </a>.</p>
+    /// <p>For more information on using the Lambda API to add permission, see<a href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html"> AddPermission </a>. </p>
     /// <p>For adding permission using the CLI, see<a href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html"> add-permission </a>.</p>
     /// </note>
     pub lambda_config: ::std::option::Option<crate::types::LambdaConfigType>,
@@ -38,7 +38,7 @@ pub struct CreateUserPoolInput {
     pub mfa_configuration: ::std::option::Option<crate::types::UserPoolMfaType>,
     /// <p>The settings for updates to user attributes. These settings include the property <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool setting that tells Amazon Cognito how to handle changes to the value of your users' email address and phone number attributes. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates"> Verifying updates to email addresses and phone numbers</a>.</p>
     pub user_attribute_update_settings: ::std::option::Option<crate::types::UserAttributeUpdateSettingsType>,
-    /// <p>The device-remembering configuration for a user pool. A null value indicates that you have deactivated device remembering in your user pool.</p><note>
+    /// <p>The device-remembering configuration for a user pool. A null value indicates that you have deactivated device remembering in your user pool.</p> <note>
     /// <p>When you provide a value for any <code>DeviceConfiguration</code> field, you activate the Amazon Cognito device-remembering feature.</p>
     /// </note>
     pub device_configuration: ::std::option::Option<crate::types::DeviceConfigurationType>,
@@ -75,10 +75,10 @@ impl CreateUserPoolInput {
     pub fn deletion_protection(&self) -> ::std::option::Option<&crate::types::DeletionProtectionType> {
         self.deletion_protection.as_ref()
     }
-    /// <p>The Lambda trigger configuration information for the new user pool.</p><note>
+    /// <p>The Lambda trigger configuration information for the new user pool.</p> <note>
     /// <p>In a push model, event sources (such as Amazon S3 and custom applications) need permission to invoke a function. So you must make an extra call to add permission for these event sources to invoke your Lambda function.</p>
     /// <p></p>
-    /// <p>For more information on using the Lambda API to add permission, see<a href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html"> AddPermission </a>.</p>
+    /// <p>For more information on using the Lambda API to add permission, see<a href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html"> AddPermission </a>. </p>
     /// <p>For adding permission using the CLI, see<a href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html"> add-permission </a>.</p>
     /// </note>
     pub fn lambda_config(&self) -> ::std::option::Option<&crate::types::LambdaConfigType> {
@@ -130,7 +130,7 @@ impl CreateUserPoolInput {
     pub fn user_attribute_update_settings(&self) -> ::std::option::Option<&crate::types::UserAttributeUpdateSettingsType> {
         self.user_attribute_update_settings.as_ref()
     }
-    /// <p>The device-remembering configuration for a user pool. A null value indicates that you have deactivated device remembering in your user pool.</p><note>
+    /// <p>The device-remembering configuration for a user pool. A null value indicates that you have deactivated device remembering in your user pool.</p> <note>
     /// <p>When you provide a value for any <code>DeviceConfiguration</code> field, you activate the Amazon Cognito device-remembering feature.</p>
     /// </note>
     pub fn device_configuration(&self) -> ::std::option::Option<&crate::types::DeviceConfigurationType> {
@@ -255,30 +255,30 @@ impl CreateUserPoolInputBuilder {
     pub fn get_deletion_protection(&self) -> &::std::option::Option<crate::types::DeletionProtectionType> {
         &self.deletion_protection
     }
-    /// <p>The Lambda trigger configuration information for the new user pool.</p><note>
+    /// <p>The Lambda trigger configuration information for the new user pool.</p> <note>
     /// <p>In a push model, event sources (such as Amazon S3 and custom applications) need permission to invoke a function. So you must make an extra call to add permission for these event sources to invoke your Lambda function.</p>
     /// <p></p>
-    /// <p>For more information on using the Lambda API to add permission, see<a href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html"> AddPermission </a>.</p>
+    /// <p>For more information on using the Lambda API to add permission, see<a href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html"> AddPermission </a>. </p>
     /// <p>For adding permission using the CLI, see<a href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html"> add-permission </a>.</p>
     /// </note>
     pub fn lambda_config(mut self, input: crate::types::LambdaConfigType) -> Self {
         self.lambda_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Lambda trigger configuration information for the new user pool.</p><note>
+    /// <p>The Lambda trigger configuration information for the new user pool.</p> <note>
     /// <p>In a push model, event sources (such as Amazon S3 and custom applications) need permission to invoke a function. So you must make an extra call to add permission for these event sources to invoke your Lambda function.</p>
     /// <p></p>
-    /// <p>For more information on using the Lambda API to add permission, see<a href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html"> AddPermission </a>.</p>
+    /// <p>For more information on using the Lambda API to add permission, see<a href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html"> AddPermission </a>. </p>
     /// <p>For adding permission using the CLI, see<a href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html"> add-permission </a>.</p>
     /// </note>
     pub fn set_lambda_config(mut self, input: ::std::option::Option<crate::types::LambdaConfigType>) -> Self {
         self.lambda_config = input;
         self
     }
-    /// <p>The Lambda trigger configuration information for the new user pool.</p><note>
+    /// <p>The Lambda trigger configuration information for the new user pool.</p> <note>
     /// <p>In a push model, event sources (such as Amazon S3 and custom applications) need permission to invoke a function. So you must make an extra call to add permission for these event sources to invoke your Lambda function.</p>
     /// <p></p>
-    /// <p>For more information on using the Lambda API to add permission, see<a href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html"> AddPermission </a>.</p>
+    /// <p>For more information on using the Lambda API to add permission, see<a href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html"> AddPermission </a>. </p>
     /// <p>For adding permission using the CLI, see<a href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html"> add-permission </a>.</p>
     /// </note>
     pub fn get_lambda_config(&self) -> &::std::option::Option<crate::types::LambdaConfigType> {
@@ -442,21 +442,21 @@ impl CreateUserPoolInputBuilder {
     pub fn get_user_attribute_update_settings(&self) -> &::std::option::Option<crate::types::UserAttributeUpdateSettingsType> {
         &self.user_attribute_update_settings
     }
-    /// <p>The device-remembering configuration for a user pool. A null value indicates that you have deactivated device remembering in your user pool.</p><note>
+    /// <p>The device-remembering configuration for a user pool. A null value indicates that you have deactivated device remembering in your user pool.</p> <note>
     /// <p>When you provide a value for any <code>DeviceConfiguration</code> field, you activate the Amazon Cognito device-remembering feature.</p>
     /// </note>
     pub fn device_configuration(mut self, input: crate::types::DeviceConfigurationType) -> Self {
         self.device_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The device-remembering configuration for a user pool. A null value indicates that you have deactivated device remembering in your user pool.</p><note>
+    /// <p>The device-remembering configuration for a user pool. A null value indicates that you have deactivated device remembering in your user pool.</p> <note>
     /// <p>When you provide a value for any <code>DeviceConfiguration</code> field, you activate the Amazon Cognito device-remembering feature.</p>
     /// </note>
     pub fn set_device_configuration(mut self, input: ::std::option::Option<crate::types::DeviceConfigurationType>) -> Self {
         self.device_configuration = input;
         self
     }
-    /// <p>The device-remembering configuration for a user pool. A null value indicates that you have deactivated device remembering in your user pool.</p><note>
+    /// <p>The device-remembering configuration for a user pool. A null value indicates that you have deactivated device remembering in your user pool.</p> <note>
     /// <p>When you provide a value for any <code>DeviceConfiguration</code> field, you activate the Amazon Cognito device-remembering feature.</p>
     /// </note>
     pub fn get_device_configuration(&self) -> &::std::option::Option<crate::types::DeviceConfigurationType> {

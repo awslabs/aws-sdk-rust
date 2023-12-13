@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListManagedInsightRulesInput {
-    /// <p>The ARN of an Amazon Web Services resource that has managed Contributor Insights rules.</p>
+    /// <p> The ARN of an Amazon Web Services resource that has managed Contributor Insights rules. </p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Include this value to get the next set of rules if the value was returned by the previous operation.</p>
+    /// <p> Include this value to get the next set of rules if the value was returned by the previous operation. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum number of results to return in one operation. If you omit this parameter, the default number is used. The default number is <code>100</code>.</p>
+    /// <p> The maximum number of results to return in one operation. If you omit this parameter, the default number is used. The default number is <code>100</code>. </p>
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListManagedInsightRulesInput {
-    /// <p>The ARN of an Amazon Web Services resource that has managed Contributor Insights rules.</p>
+    /// <p> The ARN of an Amazon Web Services resource that has managed Contributor Insights rules. </p>
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>Include this value to get the next set of rules if the value was returned by the previous operation.</p>
+    /// <p> Include this value to get the next set of rules if the value was returned by the previous operation. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return in one operation. If you omit this parameter, the default number is used. The default number is <code>100</code>.</p>
+    /// <p> The maximum number of results to return in one operation. If you omit this parameter, the default number is used. The default number is <code>100</code>. </p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -40,46 +40,46 @@ pub struct ListManagedInsightRulesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ListManagedInsightRulesInputBuilder {
-    /// <p>The ARN of an Amazon Web Services resource that has managed Contributor Insights rules.</p>
+    /// <p> The ARN of an Amazon Web Services resource that has managed Contributor Insights rules. </p>
     /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of an Amazon Web Services resource that has managed Contributor Insights rules.</p>
+    /// <p> The ARN of an Amazon Web Services resource that has managed Contributor Insights rules. </p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
     }
-    /// <p>The ARN of an Amazon Web Services resource that has managed Contributor Insights rules.</p>
+    /// <p> The ARN of an Amazon Web Services resource that has managed Contributor Insights rules. </p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }
-    /// <p>Include this value to get the next set of rules if the value was returned by the previous operation.</p>
+    /// <p> Include this value to get the next set of rules if the value was returned by the previous operation. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Include this value to get the next set of rules if the value was returned by the previous operation.</p>
+    /// <p> Include this value to get the next set of rules if the value was returned by the previous operation. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>Include this value to get the next set of rules if the value was returned by the previous operation.</p>
+    /// <p> Include this value to get the next set of rules if the value was returned by the previous operation. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>The maximum number of results to return in one operation. If you omit this parameter, the default number is used. The default number is <code>100</code>.</p>
+    /// <p> The maximum number of results to return in one operation. If you omit this parameter, the default number is used. The default number is <code>100</code>. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of results to return in one operation. If you omit this parameter, the default number is used. The default number is <code>100</code>.</p>
+    /// <p> The maximum number of results to return in one operation. If you omit this parameter, the default number is used. The default number is <code>100</code>. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of results to return in one operation. If you omit this parameter, the default number is used. The default number is <code>100</code>.</p>
+    /// <p> The maximum number of results to return in one operation. If you omit this parameter, the default number is used. The default number is <code>100</code>. </p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

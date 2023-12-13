@@ -5,9 +5,9 @@
 pub struct CreateModelInput {
     /// <p>The model ID.</p>
     pub model_id: ::std::option::Option<::std::string::String>,
-    /// <p>The model type.</p>
+    /// <p>The model type. </p>
     pub model_type: ::std::option::Option<crate::types::ModelTypeEnum>,
-    /// <p>The model description.</p>
+    /// <p>The model description. </p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The name of the event type.</p>
     pub event_type_name: ::std::option::Option<::std::string::String>,
@@ -19,11 +19,11 @@ impl CreateModelInput {
     pub fn model_id(&self) -> ::std::option::Option<&str> {
         self.model_id.as_deref()
     }
-    /// <p>The model type.</p>
+    /// <p>The model type. </p>
     pub fn model_type(&self) -> ::std::option::Option<&crate::types::ModelTypeEnum> {
         self.model_type.as_ref()
     }
-    /// <p>The model description.</p>
+    /// <p>The model description. </p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -71,32 +71,32 @@ impl CreateModelInputBuilder {
     pub fn get_model_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_id
     }
-    /// <p>The model type.</p>
+    /// <p>The model type. </p>
     /// This field is required.
     pub fn model_type(mut self, input: crate::types::ModelTypeEnum) -> Self {
         self.model_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The model type.</p>
+    /// <p>The model type. </p>
     pub fn set_model_type(mut self, input: ::std::option::Option<crate::types::ModelTypeEnum>) -> Self {
         self.model_type = input;
         self
     }
-    /// <p>The model type.</p>
+    /// <p>The model type. </p>
     pub fn get_model_type(&self) -> &::std::option::Option<crate::types::ModelTypeEnum> {
         &self.model_type
     }
-    /// <p>The model description.</p>
+    /// <p>The model description. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The model description.</p>
+    /// <p>The model description. </p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>The model description.</p>
+    /// <p>The model description. </p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }

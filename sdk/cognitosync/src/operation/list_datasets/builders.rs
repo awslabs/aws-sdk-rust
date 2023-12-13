@@ -23,7 +23,7 @@ impl ListDatasetsInputBuilder {
 /// Fluent builder constructing a request to `ListDatasets`.
 ///
 /// <p>Lists datasets for an identity. With Amazon Cognito Sync, each identity has access only to its own data. Thus, the credentials used to make this API call need to have access to the identity data.</p>
-/// <p>ListDatasets can be called with temporary user credentials provided by Cognito Identity or with developer credentials. You should use the Cognito Identity credentials to make this API call.</p><examples>
+/// <p>ListDatasets can be called with temporary user credentials provided by Cognito Identity or with developer credentials. You should use the Cognito Identity credentials to make this API call.</p> <examples>
 /// <example>
 /// <name>
 /// ListDatasets

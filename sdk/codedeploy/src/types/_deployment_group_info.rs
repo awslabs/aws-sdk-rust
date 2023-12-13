@@ -48,10 +48,11 @@ pub struct DeploymentGroupInfo {
     pub on_premises_tag_set: ::std::option::Option<crate::types::OnPremisesTagSet>,
     /// <p>The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).</p>
     pub compute_platform: ::std::option::Option<crate::types::ComputePlatform>,
-    /// <p>The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code><clustername>
+    /// <p> The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code>
+    /// <clustername>
     /// :
     /// <servicename></servicename>
-    /// </clustername></code>.</p>
+    /// </clustername></code>. </p>
     pub ecs_services: ::std::option::Option<::std::vec::Vec<crate::types::EcsService>>,
     /// <p>Indicates whether the deployment group was configured to have CodeDeploy install a termination hook into an Auto Scaling group.</p>
     /// <p>For more information about the termination hook, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors">How Amazon EC2 Auto Scaling works with CodeDeploy</a> in the <i>CodeDeploy User Guide</i>.</p>
@@ -152,10 +153,11 @@ impl DeploymentGroupInfo {
     pub fn compute_platform(&self) -> ::std::option::Option<&crate::types::ComputePlatform> {
         self.compute_platform.as_ref()
     }
-    /// <p>The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code><clustername>
+    /// <p> The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code>
+    /// <clustername>
     /// :
     /// <servicename></servicename>
-    /// </clustername></code>.</p>
+    /// </clustername></code>. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ecs_services.is_none()`.
     pub fn ecs_services(&self) -> &[crate::types::EcsService] {
@@ -531,28 +533,31 @@ impl DeploymentGroupInfoBuilder {
     ///
     /// To override the contents of this collection use [`set_ecs_services`](Self::set_ecs_services).
     ///
-    /// <p>The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code><clustername>
+    /// <p> The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code>
+    /// <clustername>
     /// :
     /// <servicename></servicename>
-    /// </clustername></code>.</p>
+    /// </clustername></code>. </p>
     pub fn ecs_services(mut self, input: crate::types::EcsService) -> Self {
         let mut v = self.ecs_services.unwrap_or_default();
         v.push(input);
         self.ecs_services = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code><clustername>
+    /// <p> The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code>
+    /// <clustername>
     /// :
     /// <servicename></servicename>
-    /// </clustername></code>.</p>
+    /// </clustername></code>. </p>
     pub fn set_ecs_services(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EcsService>>) -> Self {
         self.ecs_services = input;
         self
     }
-    /// <p>The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code><clustername>
+    /// <p> The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code>
+    /// <clustername>
     /// :
     /// <servicename></servicename>
-    /// </clustername></code>.</p>
+    /// </clustername></code>. </p>
     pub fn get_ecs_services(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EcsService>> {
         &self.ecs_services
     }

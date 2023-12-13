@@ -7,7 +7,7 @@ pub struct AddApplicationOutputOutput {
     pub application_arn: ::std::option::Option<::std::string::String>,
     /// <p>The updated application version ID. Kinesis Data Analytics increments this ID when the application is updated.</p>
     pub application_version_id: ::std::option::Option<i64>,
-    /// <p>Describes the application output configuration. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>.</p>
+    /// <p>Describes the application output configuration. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>. </p>
     pub output_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::OutputDescription>>,
     _request_id: Option<String>,
 }
@@ -20,7 +20,7 @@ impl AddApplicationOutputOutput {
     pub fn application_version_id(&self) -> ::std::option::Option<i64> {
         self.application_version_id
     }
-    /// <p>Describes the application output configuration. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>.</p>
+    /// <p>Describes the application output configuration. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_descriptions.is_none()`.
     pub fn output_descriptions(&self) -> &[crate::types::OutputDescription] {
@@ -81,19 +81,19 @@ impl AddApplicationOutputOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_output_descriptions`](Self::set_output_descriptions).
     ///
-    /// <p>Describes the application output configuration. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>.</p>
+    /// <p>Describes the application output configuration. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>. </p>
     pub fn output_descriptions(mut self, input: crate::types::OutputDescription) -> Self {
         let mut v = self.output_descriptions.unwrap_or_default();
         v.push(input);
         self.output_descriptions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Describes the application output configuration. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>.</p>
+    /// <p>Describes the application output configuration. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>. </p>
     pub fn set_output_descriptions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OutputDescription>>) -> Self {
         self.output_descriptions = input;
         self
     }
-    /// <p>Describes the application output configuration. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>.</p>
+    /// <p>Describes the application output configuration. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>. </p>
     pub fn get_output_descriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputDescription>> {
         &self.output_descriptions
     }

@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`records(Option<Vec::<DnsRecord>>)`](crate::operation::get_mail_domain::GetMailDomainOutput::records): <p>A list of the DNS records that WorkMail recommends adding in your DNS provider for the best user experience. The records configure your domain with DMARC, SPF, DKIM, and direct incoming email traffic to SES. See admin guide for more details.</p>
     ///   - [`is_test_domain(bool)`](crate::operation::get_mail_domain::GetMailDomainOutput::is_test_domain): <p>Specifies whether the domain is a test domain provided by WorkMail, or a custom domain.</p>
     ///   - [`is_default(bool)`](crate::operation::get_mail_domain::GetMailDomainOutput::is_default): <p>Specifies whether the domain is the default domain for your organization.</p>
-    ///   - [`ownership_verification_status(Option<DnsRecordVerificationStatus>)`](crate::operation::get_mail_domain::GetMailDomainOutput::ownership_verification_status): <p>Indicates the status of the domain ownership verification.</p>
+    ///   - [`ownership_verification_status(Option<DnsRecordVerificationStatus>)`](crate::operation::get_mail_domain::GetMailDomainOutput::ownership_verification_status): <p> Indicates the status of the domain ownership verification.</p>
     ///   - [`dkim_verification_status(Option<DnsRecordVerificationStatus>)`](crate::operation::get_mail_domain::GetMailDomainOutput::dkim_verification_status): <p>Indicates the status of a DKIM verification.</p>
     /// - On failure, responds with [`SdkError<GetMailDomainError>`](crate::operation::get_mail_domain::GetMailDomainError)
     pub fn get_mail_domain(&self) -> crate::operation::get_mail_domain::builders::GetMailDomainFluentBuilder {

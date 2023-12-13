@@ -7,7 +7,7 @@ pub struct TestIdentityProviderOutput {
     pub response: ::std::option::Option<::std::string::String>,
     /// <p>The HTTP status code that is the response from your API Gateway or your Lambda function.</p>
     pub status_code: i32,
-    /// <p>A message that indicates whether the test was successful or not.</p><note>
+    /// <p>A message that indicates whether the test was successful or not.</p> <note>
     /// <p>If an empty string is returned, the most likely cause is that the authentication failed due to an incorrect username or password.</p>
     /// </note>
     pub message: ::std::option::Option<::std::string::String>,
@@ -24,7 +24,7 @@ impl TestIdentityProviderOutput {
     pub fn status_code(&self) -> i32 {
         self.status_code
     }
-    /// <p>A message that indicates whether the test was successful or not.</p><note>
+    /// <p>A message that indicates whether the test was successful or not.</p> <note>
     /// <p>If an empty string is returned, the most likely cause is that the authentication failed due to an incorrect username or password.</p>
     /// </note>
     pub fn message(&self) -> ::std::option::Option<&str> {
@@ -88,21 +88,21 @@ impl TestIdentityProviderOutputBuilder {
     pub fn get_status_code(&self) -> &::std::option::Option<i32> {
         &self.status_code
     }
-    /// <p>A message that indicates whether the test was successful or not.</p><note>
+    /// <p>A message that indicates whether the test was successful or not.</p> <note>
     /// <p>If an empty string is returned, the most likely cause is that the authentication failed due to an incorrect username or password.</p>
     /// </note>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A message that indicates whether the test was successful or not.</p><note>
+    /// <p>A message that indicates whether the test was successful or not.</p> <note>
     /// <p>If an empty string is returned, the most likely cause is that the authentication failed due to an incorrect username or password.</p>
     /// </note>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
-    /// <p>A message that indicates whether the test was successful or not.</p><note>
+    /// <p>A message that indicates whether the test was successful or not.</p> <note>
     /// <p>If an empty string is returned, the most likely cause is that the authentication failed due to an incorrect username or password.</p>
     /// </note>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {

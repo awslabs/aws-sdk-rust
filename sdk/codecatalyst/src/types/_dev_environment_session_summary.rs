@@ -10,7 +10,7 @@ pub struct DevEnvironmentSessionSummary {
     pub project_name: ::std::string::String,
     /// <p>The system-generated unique ID of the Dev Environment.</p>
     pub dev_environment_id: ::std::string::String,
-    /// <p>The date and time the session started, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a></p>
+    /// <p>The date and time the session started, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a> </p>
     pub started_time: ::aws_smithy_types::DateTime,
     /// <p>The system-generated unique ID of the Dev Environment session.</p>
     pub id: ::std::string::String,
@@ -31,7 +31,7 @@ impl DevEnvironmentSessionSummary {
         use std::ops::Deref;
         self.dev_environment_id.deref()
     }
-    /// <p>The date and time the session started, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a></p>
+    /// <p>The date and time the session started, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a> </p>
     pub fn started_time(&self) -> &::aws_smithy_types::DateTime {
         &self.started_time
     }
@@ -104,18 +104,18 @@ impl DevEnvironmentSessionSummaryBuilder {
     pub fn get_dev_environment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.dev_environment_id
     }
-    /// <p>The date and time the session started, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a></p>
+    /// <p>The date and time the session started, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a> </p>
     /// This field is required.
     pub fn started_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.started_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time the session started, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a></p>
+    /// <p>The date and time the session started, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a> </p>
     pub fn set_started_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.started_time = input;
         self
     }
-    /// <p>The date and time the session started, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a></p>
+    /// <p>The date and time the session started, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a> </p>
     pub fn get_started_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.started_time
     }

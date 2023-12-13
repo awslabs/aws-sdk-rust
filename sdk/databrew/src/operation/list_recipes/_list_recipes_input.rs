@@ -3,16 +3,16 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRecipesInput {
-    /// <p>The maximum number of results to return in this request.</p>
+    /// <p>The maximum number of results to return in this request. </p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Return only those recipes with a version identifier of <code>LATEST_WORKING</code> or <code>LATEST_PUBLISHED</code>. If <code>RecipeVersion</code> is omitted, <code>ListRecipes</code> returns all of the <code>LATEST_PUBLISHED</code> recipe versions.</p>
-    /// <p>Valid values: <code>LATEST_WORKING</code> | <code>LATEST_PUBLISHED</code></p>
+    /// <p>Valid values: <code>LATEST_WORKING</code> | <code>LATEST_PUBLISHED</code> </p>
     pub recipe_version: ::std::option::Option<::std::string::String>,
 }
 impl ListRecipesInput {
-    /// <p>The maximum number of results to return in this request.</p>
+    /// <p>The maximum number of results to return in this request. </p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -21,7 +21,7 @@ impl ListRecipesInput {
         self.next_token.as_deref()
     }
     /// <p>Return only those recipes with a version identifier of <code>LATEST_WORKING</code> or <code>LATEST_PUBLISHED</code>. If <code>RecipeVersion</code> is omitted, <code>ListRecipes</code> returns all of the <code>LATEST_PUBLISHED</code> recipe versions.</p>
-    /// <p>Valid values: <code>LATEST_WORKING</code> | <code>LATEST_PUBLISHED</code></p>
+    /// <p>Valid values: <code>LATEST_WORKING</code> | <code>LATEST_PUBLISHED</code> </p>
     pub fn recipe_version(&self) -> ::std::option::Option<&str> {
         self.recipe_version.as_deref()
     }
@@ -42,17 +42,17 @@ pub struct ListRecipesInputBuilder {
     pub(crate) recipe_version: ::std::option::Option<::std::string::String>,
 }
 impl ListRecipesInputBuilder {
-    /// <p>The maximum number of results to return in this request.</p>
+    /// <p>The maximum number of results to return in this request. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of results to return in this request.</p>
+    /// <p>The maximum number of results to return in this request. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of results to return in this request.</p>
+    /// <p>The maximum number of results to return in this request. </p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
@@ -71,19 +71,19 @@ impl ListRecipesInputBuilder {
         &self.next_token
     }
     /// <p>Return only those recipes with a version identifier of <code>LATEST_WORKING</code> or <code>LATEST_PUBLISHED</code>. If <code>RecipeVersion</code> is omitted, <code>ListRecipes</code> returns all of the <code>LATEST_PUBLISHED</code> recipe versions.</p>
-    /// <p>Valid values: <code>LATEST_WORKING</code> | <code>LATEST_PUBLISHED</code></p>
+    /// <p>Valid values: <code>LATEST_WORKING</code> | <code>LATEST_PUBLISHED</code> </p>
     pub fn recipe_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recipe_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Return only those recipes with a version identifier of <code>LATEST_WORKING</code> or <code>LATEST_PUBLISHED</code>. If <code>RecipeVersion</code> is omitted, <code>ListRecipes</code> returns all of the <code>LATEST_PUBLISHED</code> recipe versions.</p>
-    /// <p>Valid values: <code>LATEST_WORKING</code> | <code>LATEST_PUBLISHED</code></p>
+    /// <p>Valid values: <code>LATEST_WORKING</code> | <code>LATEST_PUBLISHED</code> </p>
     pub fn set_recipe_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recipe_version = input;
         self
     }
     /// <p>Return only those recipes with a version identifier of <code>LATEST_WORKING</code> or <code>LATEST_PUBLISHED</code>. If <code>RecipeVersion</code> is omitted, <code>ListRecipes</code> returns all of the <code>LATEST_PUBLISHED</code> recipe versions.</p>
-    /// <p>Valid values: <code>LATEST_WORKING</code> | <code>LATEST_PUBLISHED</code></p>
+    /// <p>Valid values: <code>LATEST_WORKING</code> | <code>LATEST_PUBLISHED</code> </p>
     pub fn get_recipe_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.recipe_version
     }

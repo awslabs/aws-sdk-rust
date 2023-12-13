@@ -6,7 +6,7 @@
 pub struct DimensionMapping {
     /// <p></p>
     pub source_column: ::std::option::Option<::std::string::String>,
-    /// <p></p>
+    /// <p> </p>
     pub destination_column: ::std::option::Option<::std::string::String>,
 }
 impl DimensionMapping {
@@ -14,7 +14,7 @@ impl DimensionMapping {
     pub fn source_column(&self) -> ::std::option::Option<&str> {
         self.source_column.as_deref()
     }
-    /// <p></p>
+    /// <p> </p>
     pub fn destination_column(&self) -> ::std::option::Option<&str> {
         self.destination_column.as_deref()
     }
@@ -48,17 +48,17 @@ impl DimensionMappingBuilder {
     pub fn get_source_column(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_column
     }
-    /// <p></p>
+    /// <p> </p>
     pub fn destination_column(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_column = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p> </p>
     pub fn set_destination_column(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_column = input;
         self
     }
-    /// <p></p>
+    /// <p> </p>
     pub fn get_destination_column(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination_column
     }

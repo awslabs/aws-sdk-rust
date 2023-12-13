@@ -9,33 +9,26 @@ pub struct CreateFileSystemInput {
     /// <p>The type of Amazon FSx file system to create. Valid values are <code>WINDOWS</code>, <code>LUSTRE</code>, <code>ONTAP</code>, and <code>OPENZFS</code>.</p>
     pub file_system_type: ::std::option::Option<crate::types::FileSystemType>,
     /// <p>Sets the storage capacity of the file system that you're creating, in gibibytes (GiB).</p>
-    /// <p><b>FSx for Lustre file systems</b> - The amount of storage capacity that you can configure depends on the value that you set for <code>StorageType</code> and the Lustre <code>DeploymentType</code>, as follows:</p>
+    /// <p> <b>FSx for Lustre file systems</b> - The amount of storage capacity that you can configure depends on the value that you set for <code>StorageType</code> and the Lustre <code>DeploymentType</code>, as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>For <code>SCRATCH_2</code>, <code>PERSISTENT_2</code> and <code>PERSISTENT_1</code> deployment types using SSD storage type, the valid values are 1200 GiB, 2400 GiB, and increments of 2400 GiB.</p></li>
-    /// <li>
-    /// <p>For <code>PERSISTENT_1</code> HDD file systems, valid values are increments of 6000 GiB for 12 MB/s/TiB file systems and increments of 1800 GiB for 40 MB/s/TiB file systems.</p></li>
-    /// <li>
-    /// <p>For <code>SCRATCH_1</code> deployment type, valid values are 1200 GiB, 2400 GiB, and increments of 3600 GiB.</p></li>
+    /// <li> <p>For <code>SCRATCH_2</code>, <code>PERSISTENT_2</code> and <code>PERSISTENT_1</code> deployment types using SSD storage type, the valid values are 1200 GiB, 2400 GiB, and increments of 2400 GiB.</p> </li>
+    /// <li> <p>For <code>PERSISTENT_1</code> HDD file systems, valid values are increments of 6000 GiB for 12 MB/s/TiB file systems and increments of 1800 GiB for 40 MB/s/TiB file systems.</p> </li>
+    /// <li> <p>For <code>SCRATCH_1</code> deployment type, valid values are 1200 GiB, 2400 GiB, and increments of 3600 GiB.</p> </li>
     /// </ul>
-    /// <p><b>FSx for ONTAP file systems</b> - The amount of storage capacity that you can configure depends on the value of the <code>HAPairs</code> property. The minimum value is calculated as 1,024 * <code>HAPairs</code> and the maxium is calculated as 524,288 * <code>HAPairs</code>..</p>
-    /// <p><b>FSx for OpenZFS file systems</b> - The amount of storage capacity that you can configure is from 64 GiB up to 524,288 GiB (512 TiB).</p>
-    /// <p><b>FSx for Windows File Server file systems</b> - The amount of storage capacity that you can configure depends on the value that you set for <code>StorageType</code> as follows:</p>
+    /// <p> <b>FSx for ONTAP file systems</b> - The amount of storage capacity that you can configure depends on the value of the <code>HAPairs</code> property. The minimum value is calculated as 1,024 * <code>HAPairs</code> and the maxium is calculated as 524,288 * <code>HAPairs</code>..</p>
+    /// <p> <b>FSx for OpenZFS file systems</b> - The amount of storage capacity that you can configure is from 64 GiB up to 524,288 GiB (512 TiB).</p>
+    /// <p> <b>FSx for Windows File Server file systems</b> - The amount of storage capacity that you can configure depends on the value that you set for <code>StorageType</code> as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>For SSD storage, valid values are 32 GiB-65,536 GiB (64 TiB).</p></li>
-    /// <li>
-    /// <p>For HDD storage, valid values are 2000 GiB-65,536 GiB (64 TiB).</p></li>
+    /// <li> <p>For SSD storage, valid values are 32 GiB-65,536 GiB (64 TiB).</p> </li>
+    /// <li> <p>For HDD storage, valid values are 2000 GiB-65,536 GiB (64 TiB).</p> </li>
     /// </ul>
     pub storage_capacity: ::std::option::Option<i32>,
     /// <p>Sets the storage type for the file system that you're creating. Valid values are <code>SSD</code> and <code>HDD</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p>Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all Windows, Lustre, ONTAP, and OpenZFS deployment types.</p></li>
-    /// <li>
-    /// <p>Set to <code>HDD</code> to use hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> Windows file system deployment types, and on <code>PERSISTENT_1</code> Lustre file system deployment types.</p></li>
+    /// <li> <p>Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all Windows, Lustre, ONTAP, and OpenZFS deployment types.</p> </li>
+    /// <li> <p>Set to <code>HDD</code> to use hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> Windows file system deployment types, and on <code>PERSISTENT_1</code> Lustre file system deployment types. </p> </li>
     /// </ul>
-    /// <p>Default value is <code>SSD</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options"> Storage type options</a> in the <i>FSx for Windows File Server User Guide</i> and <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/what-is.html#storage-options">Multiple storage options</a> in the <i>FSx for Lustre User Guide</i>.</p>
+    /// <p>Default value is <code>SSD</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options"> Storage type options</a> in the <i>FSx for Windows File Server User Guide</i> and <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/what-is.html#storage-options">Multiple storage options</a> in the <i>FSx for Lustre User Guide</i>. </p>
     pub storage_type: ::std::option::Option<crate::types::StorageType>,
     /// <p>Specifies the IDs of the subnets that the file system will be accessible from. For Windows and ONTAP <code>MULTI_AZ_1</code> deployment types,provide exactly two subnet IDs, one for the preferred file server and one for the standby file server. You specify one of these subnets as the preferred subnet using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> or <code>OntapConfiguration &gt; PreferredSubnetID</code> properties. For more information about Multi-AZ file system configuration, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html"> Availability and durability: Single-AZ and Multi-AZ file systems</a> in the <i>Amazon FSx for Windows User Guide</i> and <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html"> Availability and durability</a> in the <i>Amazon FSx for ONTAP User Guide</i>.</p>
     /// <p>For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> and all Lustre deployment types, provide exactly one subnet ID. The file server is launched in that subnet's Availability Zone.</p>
@@ -46,31 +39,22 @@ pub struct CreateFileSystemInput {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Specifies the ID of the Key Management Service (KMS) key to use for encrypting data on Amazon FSx file systems, as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types only.</p>
-    /// <p><code>SCRATCH_1</code> and <code>SCRATCH_2</code> types are encrypted using the Amazon FSx service KMS key for your account.</p></li>
-    /// <li>
-    /// <p>Amazon FSx for NetApp ONTAP</p></li>
-    /// <li>
-    /// <p>Amazon FSx for OpenZFS</p></li>
-    /// <li>
-    /// <p>Amazon FSx for Windows File Server</p></li>
+    /// <li> <p>Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types only.</p> <p> <code>SCRATCH_1</code> and <code>SCRATCH_2</code> types are encrypted using the Amazon FSx service KMS key for your account.</p> </li>
+    /// <li> <p>Amazon FSx for NetApp ONTAP</p> </li>
+    /// <li> <p>Amazon FSx for OpenZFS</p> </li>
+    /// <li> <p>Amazon FSx for Windows File Server</p> </li>
     /// </ul>
     /// <p>If a <code>KmsKeyId</code> isn't specified, the Amazon FSx-managed KMS key for your account is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>Key Management Service API Reference</i>.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The Microsoft Windows configuration for the file system that's being created.</p>
     pub windows_configuration: ::std::option::Option<crate::types::CreateFileSystemWindowsConfiguration>,
-    /// <p>The Lustre configuration for the file system being created.</p><note>
+    /// <p>The Lustre configuration for the file system being created.</p> <note>
     /// <p>The following parameters are not supported for file systems with a data repository association created with .</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AutoImportPolicy</code></p></li>
-    /// <li>
-    /// <p><code>ExportPath</code></p></li>
-    /// <li>
-    /// <p><code>ImportedFileChunkSize</code></p></li>
-    /// <li>
-    /// <p><code>ImportPath</code></p></li>
+    /// <li> <p> <code>AutoImportPolicy</code> </p> </li>
+    /// <li> <p> <code>ExportPath</code> </p> </li>
+    /// <li> <p> <code>ImportedFileChunkSize</code> </p> </li>
+    /// <li> <p> <code>ImportPath</code> </p> </li>
     /// </ul>
     /// </note>
     pub lustre_configuration: ::std::option::Option<crate::types::CreateFileSystemLustreConfiguration>,
@@ -78,12 +62,10 @@ pub struct CreateFileSystemInput {
     pub ontap_configuration: ::std::option::Option<crate::types::CreateFileSystemOntapConfiguration>,
     /// <p>(Optional) For FSx for Lustre file systems, sets the Lustre version for the file system that you're creating. Valid values are <code>2.10</code>, <code>2.12</code>, and <code>2.15</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>2.10 is supported by the Scratch and Persistent_1 Lustre deployment types.</p></li>
-    /// <li>
-    /// <p>2.12 and 2.15 are supported by all Lustre deployment types. <code>2.12</code> or <code>2.15</code> is required when setting FSx for Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p></li>
+    /// <li> <p>2.10 is supported by the Scratch and Persistent_1 Lustre deployment types.</p> </li>
+    /// <li> <p>2.12 and 2.15 are supported by all Lustre deployment types. <code>2.12</code> or <code>2.15</code> is required when setting FSx for Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p> </li>
     /// </ul>
-    /// <p>Default value = <code>2.10</code>, except when <code>DeploymentType</code> is set to <code>PERSISTENT_2</code>, then the default is <code>2.12</code>.</p><note>
+    /// <p>Default value = <code>2.10</code>, except when <code>DeploymentType</code> is set to <code>PERSISTENT_2</code>, then the default is <code>2.12</code>.</p> <note>
     /// <p>If you set <code>FileSystemTypeVersion</code> to <code>2.10</code> for a <code>PERSISTENT_2</code> Lustre deployment type, the <code>CreateFileSystem</code> operation fails.</p>
     /// </note>
     pub file_system_type_version: ::std::option::Option<::std::string::String>,
@@ -100,35 +82,28 @@ impl CreateFileSystemInput {
         self.file_system_type.as_ref()
     }
     /// <p>Sets the storage capacity of the file system that you're creating, in gibibytes (GiB).</p>
-    /// <p><b>FSx for Lustre file systems</b> - The amount of storage capacity that you can configure depends on the value that you set for <code>StorageType</code> and the Lustre <code>DeploymentType</code>, as follows:</p>
+    /// <p> <b>FSx for Lustre file systems</b> - The amount of storage capacity that you can configure depends on the value that you set for <code>StorageType</code> and the Lustre <code>DeploymentType</code>, as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>For <code>SCRATCH_2</code>, <code>PERSISTENT_2</code> and <code>PERSISTENT_1</code> deployment types using SSD storage type, the valid values are 1200 GiB, 2400 GiB, and increments of 2400 GiB.</p></li>
-    /// <li>
-    /// <p>For <code>PERSISTENT_1</code> HDD file systems, valid values are increments of 6000 GiB for 12 MB/s/TiB file systems and increments of 1800 GiB for 40 MB/s/TiB file systems.</p></li>
-    /// <li>
-    /// <p>For <code>SCRATCH_1</code> deployment type, valid values are 1200 GiB, 2400 GiB, and increments of 3600 GiB.</p></li>
+    /// <li> <p>For <code>SCRATCH_2</code>, <code>PERSISTENT_2</code> and <code>PERSISTENT_1</code> deployment types using SSD storage type, the valid values are 1200 GiB, 2400 GiB, and increments of 2400 GiB.</p> </li>
+    /// <li> <p>For <code>PERSISTENT_1</code> HDD file systems, valid values are increments of 6000 GiB for 12 MB/s/TiB file systems and increments of 1800 GiB for 40 MB/s/TiB file systems.</p> </li>
+    /// <li> <p>For <code>SCRATCH_1</code> deployment type, valid values are 1200 GiB, 2400 GiB, and increments of 3600 GiB.</p> </li>
     /// </ul>
-    /// <p><b>FSx for ONTAP file systems</b> - The amount of storage capacity that you can configure depends on the value of the <code>HAPairs</code> property. The minimum value is calculated as 1,024 * <code>HAPairs</code> and the maxium is calculated as 524,288 * <code>HAPairs</code>..</p>
-    /// <p><b>FSx for OpenZFS file systems</b> - The amount of storage capacity that you can configure is from 64 GiB up to 524,288 GiB (512 TiB).</p>
-    /// <p><b>FSx for Windows File Server file systems</b> - The amount of storage capacity that you can configure depends on the value that you set for <code>StorageType</code> as follows:</p>
+    /// <p> <b>FSx for ONTAP file systems</b> - The amount of storage capacity that you can configure depends on the value of the <code>HAPairs</code> property. The minimum value is calculated as 1,024 * <code>HAPairs</code> and the maxium is calculated as 524,288 * <code>HAPairs</code>..</p>
+    /// <p> <b>FSx for OpenZFS file systems</b> - The amount of storage capacity that you can configure is from 64 GiB up to 524,288 GiB (512 TiB).</p>
+    /// <p> <b>FSx for Windows File Server file systems</b> - The amount of storage capacity that you can configure depends on the value that you set for <code>StorageType</code> as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>For SSD storage, valid values are 32 GiB-65,536 GiB (64 TiB).</p></li>
-    /// <li>
-    /// <p>For HDD storage, valid values are 2000 GiB-65,536 GiB (64 TiB).</p></li>
+    /// <li> <p>For SSD storage, valid values are 32 GiB-65,536 GiB (64 TiB).</p> </li>
+    /// <li> <p>For HDD storage, valid values are 2000 GiB-65,536 GiB (64 TiB).</p> </li>
     /// </ul>
     pub fn storage_capacity(&self) -> ::std::option::Option<i32> {
         self.storage_capacity
     }
     /// <p>Sets the storage type for the file system that you're creating. Valid values are <code>SSD</code> and <code>HDD</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p>Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all Windows, Lustre, ONTAP, and OpenZFS deployment types.</p></li>
-    /// <li>
-    /// <p>Set to <code>HDD</code> to use hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> Windows file system deployment types, and on <code>PERSISTENT_1</code> Lustre file system deployment types.</p></li>
+    /// <li> <p>Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all Windows, Lustre, ONTAP, and OpenZFS deployment types.</p> </li>
+    /// <li> <p>Set to <code>HDD</code> to use hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> Windows file system deployment types, and on <code>PERSISTENT_1</code> Lustre file system deployment types. </p> </li>
     /// </ul>
-    /// <p>Default value is <code>SSD</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options"> Storage type options</a> in the <i>FSx for Windows File Server User Guide</i> and <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/what-is.html#storage-options">Multiple storage options</a> in the <i>FSx for Lustre User Guide</i>.</p>
+    /// <p>Default value is <code>SSD</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options"> Storage type options</a> in the <i>FSx for Windows File Server User Guide</i> and <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/what-is.html#storage-options">Multiple storage options</a> in the <i>FSx for Lustre User Guide</i>. </p>
     pub fn storage_type(&self) -> ::std::option::Option<&crate::types::StorageType> {
         self.storage_type.as_ref()
     }
@@ -153,15 +128,10 @@ impl CreateFileSystemInput {
     }
     /// <p>Specifies the ID of the Key Management Service (KMS) key to use for encrypting data on Amazon FSx file systems, as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types only.</p>
-    /// <p><code>SCRATCH_1</code> and <code>SCRATCH_2</code> types are encrypted using the Amazon FSx service KMS key for your account.</p></li>
-    /// <li>
-    /// <p>Amazon FSx for NetApp ONTAP</p></li>
-    /// <li>
-    /// <p>Amazon FSx for OpenZFS</p></li>
-    /// <li>
-    /// <p>Amazon FSx for Windows File Server</p></li>
+    /// <li> <p>Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types only.</p> <p> <code>SCRATCH_1</code> and <code>SCRATCH_2</code> types are encrypted using the Amazon FSx service KMS key for your account.</p> </li>
+    /// <li> <p>Amazon FSx for NetApp ONTAP</p> </li>
+    /// <li> <p>Amazon FSx for OpenZFS</p> </li>
+    /// <li> <p>Amazon FSx for Windows File Server</p> </li>
     /// </ul>
     /// <p>If a <code>KmsKeyId</code> isn't specified, the Amazon FSx-managed KMS key for your account is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>Key Management Service API Reference</i>.</p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
@@ -171,17 +141,13 @@ impl CreateFileSystemInput {
     pub fn windows_configuration(&self) -> ::std::option::Option<&crate::types::CreateFileSystemWindowsConfiguration> {
         self.windows_configuration.as_ref()
     }
-    /// <p>The Lustre configuration for the file system being created.</p><note>
+    /// <p>The Lustre configuration for the file system being created.</p> <note>
     /// <p>The following parameters are not supported for file systems with a data repository association created with .</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AutoImportPolicy</code></p></li>
-    /// <li>
-    /// <p><code>ExportPath</code></p></li>
-    /// <li>
-    /// <p><code>ImportedFileChunkSize</code></p></li>
-    /// <li>
-    /// <p><code>ImportPath</code></p></li>
+    /// <li> <p> <code>AutoImportPolicy</code> </p> </li>
+    /// <li> <p> <code>ExportPath</code> </p> </li>
+    /// <li> <p> <code>ImportedFileChunkSize</code> </p> </li>
+    /// <li> <p> <code>ImportPath</code> </p> </li>
     /// </ul>
     /// </note>
     pub fn lustre_configuration(&self) -> ::std::option::Option<&crate::types::CreateFileSystemLustreConfiguration> {
@@ -193,12 +159,10 @@ impl CreateFileSystemInput {
     }
     /// <p>(Optional) For FSx for Lustre file systems, sets the Lustre version for the file system that you're creating. Valid values are <code>2.10</code>, <code>2.12</code>, and <code>2.15</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>2.10 is supported by the Scratch and Persistent_1 Lustre deployment types.</p></li>
-    /// <li>
-    /// <p>2.12 and 2.15 are supported by all Lustre deployment types. <code>2.12</code> or <code>2.15</code> is required when setting FSx for Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p></li>
+    /// <li> <p>2.10 is supported by the Scratch and Persistent_1 Lustre deployment types.</p> </li>
+    /// <li> <p>2.12 and 2.15 are supported by all Lustre deployment types. <code>2.12</code> or <code>2.15</code> is required when setting FSx for Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p> </li>
     /// </ul>
-    /// <p>Default value = <code>2.10</code>, except when <code>DeploymentType</code> is set to <code>PERSISTENT_2</code>, then the default is <code>2.12</code>.</p><note>
+    /// <p>Default value = <code>2.10</code>, except when <code>DeploymentType</code> is set to <code>PERSISTENT_2</code>, then the default is <code>2.12</code>.</p> <note>
     /// <p>If you set <code>FileSystemTypeVersion</code> to <code>2.10</code> for a <code>PERSISTENT_2</code> Lustre deployment type, the <code>CreateFileSystem</code> operation fails.</p>
     /// </note>
     pub fn file_system_type_version(&self) -> ::std::option::Option<&str> {
@@ -265,23 +229,18 @@ impl CreateFileSystemInputBuilder {
         &self.file_system_type
     }
     /// <p>Sets the storage capacity of the file system that you're creating, in gibibytes (GiB).</p>
-    /// <p><b>FSx for Lustre file systems</b> - The amount of storage capacity that you can configure depends on the value that you set for <code>StorageType</code> and the Lustre <code>DeploymentType</code>, as follows:</p>
+    /// <p> <b>FSx for Lustre file systems</b> - The amount of storage capacity that you can configure depends on the value that you set for <code>StorageType</code> and the Lustre <code>DeploymentType</code>, as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>For <code>SCRATCH_2</code>, <code>PERSISTENT_2</code> and <code>PERSISTENT_1</code> deployment types using SSD storage type, the valid values are 1200 GiB, 2400 GiB, and increments of 2400 GiB.</p></li>
-    /// <li>
-    /// <p>For <code>PERSISTENT_1</code> HDD file systems, valid values are increments of 6000 GiB for 12 MB/s/TiB file systems and increments of 1800 GiB for 40 MB/s/TiB file systems.</p></li>
-    /// <li>
-    /// <p>For <code>SCRATCH_1</code> deployment type, valid values are 1200 GiB, 2400 GiB, and increments of 3600 GiB.</p></li>
+    /// <li> <p>For <code>SCRATCH_2</code>, <code>PERSISTENT_2</code> and <code>PERSISTENT_1</code> deployment types using SSD storage type, the valid values are 1200 GiB, 2400 GiB, and increments of 2400 GiB.</p> </li>
+    /// <li> <p>For <code>PERSISTENT_1</code> HDD file systems, valid values are increments of 6000 GiB for 12 MB/s/TiB file systems and increments of 1800 GiB for 40 MB/s/TiB file systems.</p> </li>
+    /// <li> <p>For <code>SCRATCH_1</code> deployment type, valid values are 1200 GiB, 2400 GiB, and increments of 3600 GiB.</p> </li>
     /// </ul>
-    /// <p><b>FSx for ONTAP file systems</b> - The amount of storage capacity that you can configure depends on the value of the <code>HAPairs</code> property. The minimum value is calculated as 1,024 * <code>HAPairs</code> and the maxium is calculated as 524,288 * <code>HAPairs</code>..</p>
-    /// <p><b>FSx for OpenZFS file systems</b> - The amount of storage capacity that you can configure is from 64 GiB up to 524,288 GiB (512 TiB).</p>
-    /// <p><b>FSx for Windows File Server file systems</b> - The amount of storage capacity that you can configure depends on the value that you set for <code>StorageType</code> as follows:</p>
+    /// <p> <b>FSx for ONTAP file systems</b> - The amount of storage capacity that you can configure depends on the value of the <code>HAPairs</code> property. The minimum value is calculated as 1,024 * <code>HAPairs</code> and the maxium is calculated as 524,288 * <code>HAPairs</code>..</p>
+    /// <p> <b>FSx for OpenZFS file systems</b> - The amount of storage capacity that you can configure is from 64 GiB up to 524,288 GiB (512 TiB).</p>
+    /// <p> <b>FSx for Windows File Server file systems</b> - The amount of storage capacity that you can configure depends on the value that you set for <code>StorageType</code> as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>For SSD storage, valid values are 32 GiB-65,536 GiB (64 TiB).</p></li>
-    /// <li>
-    /// <p>For HDD storage, valid values are 2000 GiB-65,536 GiB (64 TiB).</p></li>
+    /// <li> <p>For SSD storage, valid values are 32 GiB-65,536 GiB (64 TiB).</p> </li>
+    /// <li> <p>For HDD storage, valid values are 2000 GiB-65,536 GiB (64 TiB).</p> </li>
     /// </ul>
     /// This field is required.
     pub fn storage_capacity(mut self, input: i32) -> Self {
@@ -289,82 +248,66 @@ impl CreateFileSystemInputBuilder {
         self
     }
     /// <p>Sets the storage capacity of the file system that you're creating, in gibibytes (GiB).</p>
-    /// <p><b>FSx for Lustre file systems</b> - The amount of storage capacity that you can configure depends on the value that you set for <code>StorageType</code> and the Lustre <code>DeploymentType</code>, as follows:</p>
+    /// <p> <b>FSx for Lustre file systems</b> - The amount of storage capacity that you can configure depends on the value that you set for <code>StorageType</code> and the Lustre <code>DeploymentType</code>, as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>For <code>SCRATCH_2</code>, <code>PERSISTENT_2</code> and <code>PERSISTENT_1</code> deployment types using SSD storage type, the valid values are 1200 GiB, 2400 GiB, and increments of 2400 GiB.</p></li>
-    /// <li>
-    /// <p>For <code>PERSISTENT_1</code> HDD file systems, valid values are increments of 6000 GiB for 12 MB/s/TiB file systems and increments of 1800 GiB for 40 MB/s/TiB file systems.</p></li>
-    /// <li>
-    /// <p>For <code>SCRATCH_1</code> deployment type, valid values are 1200 GiB, 2400 GiB, and increments of 3600 GiB.</p></li>
+    /// <li> <p>For <code>SCRATCH_2</code>, <code>PERSISTENT_2</code> and <code>PERSISTENT_1</code> deployment types using SSD storage type, the valid values are 1200 GiB, 2400 GiB, and increments of 2400 GiB.</p> </li>
+    /// <li> <p>For <code>PERSISTENT_1</code> HDD file systems, valid values are increments of 6000 GiB for 12 MB/s/TiB file systems and increments of 1800 GiB for 40 MB/s/TiB file systems.</p> </li>
+    /// <li> <p>For <code>SCRATCH_1</code> deployment type, valid values are 1200 GiB, 2400 GiB, and increments of 3600 GiB.</p> </li>
     /// </ul>
-    /// <p><b>FSx for ONTAP file systems</b> - The amount of storage capacity that you can configure depends on the value of the <code>HAPairs</code> property. The minimum value is calculated as 1,024 * <code>HAPairs</code> and the maxium is calculated as 524,288 * <code>HAPairs</code>..</p>
-    /// <p><b>FSx for OpenZFS file systems</b> - The amount of storage capacity that you can configure is from 64 GiB up to 524,288 GiB (512 TiB).</p>
-    /// <p><b>FSx for Windows File Server file systems</b> - The amount of storage capacity that you can configure depends on the value that you set for <code>StorageType</code> as follows:</p>
+    /// <p> <b>FSx for ONTAP file systems</b> - The amount of storage capacity that you can configure depends on the value of the <code>HAPairs</code> property. The minimum value is calculated as 1,024 * <code>HAPairs</code> and the maxium is calculated as 524,288 * <code>HAPairs</code>..</p>
+    /// <p> <b>FSx for OpenZFS file systems</b> - The amount of storage capacity that you can configure is from 64 GiB up to 524,288 GiB (512 TiB).</p>
+    /// <p> <b>FSx for Windows File Server file systems</b> - The amount of storage capacity that you can configure depends on the value that you set for <code>StorageType</code> as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>For SSD storage, valid values are 32 GiB-65,536 GiB (64 TiB).</p></li>
-    /// <li>
-    /// <p>For HDD storage, valid values are 2000 GiB-65,536 GiB (64 TiB).</p></li>
+    /// <li> <p>For SSD storage, valid values are 32 GiB-65,536 GiB (64 TiB).</p> </li>
+    /// <li> <p>For HDD storage, valid values are 2000 GiB-65,536 GiB (64 TiB).</p> </li>
     /// </ul>
     pub fn set_storage_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.storage_capacity = input;
         self
     }
     /// <p>Sets the storage capacity of the file system that you're creating, in gibibytes (GiB).</p>
-    /// <p><b>FSx for Lustre file systems</b> - The amount of storage capacity that you can configure depends on the value that you set for <code>StorageType</code> and the Lustre <code>DeploymentType</code>, as follows:</p>
+    /// <p> <b>FSx for Lustre file systems</b> - The amount of storage capacity that you can configure depends on the value that you set for <code>StorageType</code> and the Lustre <code>DeploymentType</code>, as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>For <code>SCRATCH_2</code>, <code>PERSISTENT_2</code> and <code>PERSISTENT_1</code> deployment types using SSD storage type, the valid values are 1200 GiB, 2400 GiB, and increments of 2400 GiB.</p></li>
-    /// <li>
-    /// <p>For <code>PERSISTENT_1</code> HDD file systems, valid values are increments of 6000 GiB for 12 MB/s/TiB file systems and increments of 1800 GiB for 40 MB/s/TiB file systems.</p></li>
-    /// <li>
-    /// <p>For <code>SCRATCH_1</code> deployment type, valid values are 1200 GiB, 2400 GiB, and increments of 3600 GiB.</p></li>
+    /// <li> <p>For <code>SCRATCH_2</code>, <code>PERSISTENT_2</code> and <code>PERSISTENT_1</code> deployment types using SSD storage type, the valid values are 1200 GiB, 2400 GiB, and increments of 2400 GiB.</p> </li>
+    /// <li> <p>For <code>PERSISTENT_1</code> HDD file systems, valid values are increments of 6000 GiB for 12 MB/s/TiB file systems and increments of 1800 GiB for 40 MB/s/TiB file systems.</p> </li>
+    /// <li> <p>For <code>SCRATCH_1</code> deployment type, valid values are 1200 GiB, 2400 GiB, and increments of 3600 GiB.</p> </li>
     /// </ul>
-    /// <p><b>FSx for ONTAP file systems</b> - The amount of storage capacity that you can configure depends on the value of the <code>HAPairs</code> property. The minimum value is calculated as 1,024 * <code>HAPairs</code> and the maxium is calculated as 524,288 * <code>HAPairs</code>..</p>
-    /// <p><b>FSx for OpenZFS file systems</b> - The amount of storage capacity that you can configure is from 64 GiB up to 524,288 GiB (512 TiB).</p>
-    /// <p><b>FSx for Windows File Server file systems</b> - The amount of storage capacity that you can configure depends on the value that you set for <code>StorageType</code> as follows:</p>
+    /// <p> <b>FSx for ONTAP file systems</b> - The amount of storage capacity that you can configure depends on the value of the <code>HAPairs</code> property. The minimum value is calculated as 1,024 * <code>HAPairs</code> and the maxium is calculated as 524,288 * <code>HAPairs</code>..</p>
+    /// <p> <b>FSx for OpenZFS file systems</b> - The amount of storage capacity that you can configure is from 64 GiB up to 524,288 GiB (512 TiB).</p>
+    /// <p> <b>FSx for Windows File Server file systems</b> - The amount of storage capacity that you can configure depends on the value that you set for <code>StorageType</code> as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>For SSD storage, valid values are 32 GiB-65,536 GiB (64 TiB).</p></li>
-    /// <li>
-    /// <p>For HDD storage, valid values are 2000 GiB-65,536 GiB (64 TiB).</p></li>
+    /// <li> <p>For SSD storage, valid values are 32 GiB-65,536 GiB (64 TiB).</p> </li>
+    /// <li> <p>For HDD storage, valid values are 2000 GiB-65,536 GiB (64 TiB).</p> </li>
     /// </ul>
     pub fn get_storage_capacity(&self) -> &::std::option::Option<i32> {
         &self.storage_capacity
     }
     /// <p>Sets the storage type for the file system that you're creating. Valid values are <code>SSD</code> and <code>HDD</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p>Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all Windows, Lustre, ONTAP, and OpenZFS deployment types.</p></li>
-    /// <li>
-    /// <p>Set to <code>HDD</code> to use hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> Windows file system deployment types, and on <code>PERSISTENT_1</code> Lustre file system deployment types.</p></li>
+    /// <li> <p>Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all Windows, Lustre, ONTAP, and OpenZFS deployment types.</p> </li>
+    /// <li> <p>Set to <code>HDD</code> to use hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> Windows file system deployment types, and on <code>PERSISTENT_1</code> Lustre file system deployment types. </p> </li>
     /// </ul>
-    /// <p>Default value is <code>SSD</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options"> Storage type options</a> in the <i>FSx for Windows File Server User Guide</i> and <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/what-is.html#storage-options">Multiple storage options</a> in the <i>FSx for Lustre User Guide</i>.</p>
+    /// <p>Default value is <code>SSD</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options"> Storage type options</a> in the <i>FSx for Windows File Server User Guide</i> and <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/what-is.html#storage-options">Multiple storage options</a> in the <i>FSx for Lustre User Guide</i>. </p>
     pub fn storage_type(mut self, input: crate::types::StorageType) -> Self {
         self.storage_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Sets the storage type for the file system that you're creating. Valid values are <code>SSD</code> and <code>HDD</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p>Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all Windows, Lustre, ONTAP, and OpenZFS deployment types.</p></li>
-    /// <li>
-    /// <p>Set to <code>HDD</code> to use hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> Windows file system deployment types, and on <code>PERSISTENT_1</code> Lustre file system deployment types.</p></li>
+    /// <li> <p>Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all Windows, Lustre, ONTAP, and OpenZFS deployment types.</p> </li>
+    /// <li> <p>Set to <code>HDD</code> to use hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> Windows file system deployment types, and on <code>PERSISTENT_1</code> Lustre file system deployment types. </p> </li>
     /// </ul>
-    /// <p>Default value is <code>SSD</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options"> Storage type options</a> in the <i>FSx for Windows File Server User Guide</i> and <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/what-is.html#storage-options">Multiple storage options</a> in the <i>FSx for Lustre User Guide</i>.</p>
+    /// <p>Default value is <code>SSD</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options"> Storage type options</a> in the <i>FSx for Windows File Server User Guide</i> and <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/what-is.html#storage-options">Multiple storage options</a> in the <i>FSx for Lustre User Guide</i>. </p>
     pub fn set_storage_type(mut self, input: ::std::option::Option<crate::types::StorageType>) -> Self {
         self.storage_type = input;
         self
     }
     /// <p>Sets the storage type for the file system that you're creating. Valid values are <code>SSD</code> and <code>HDD</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p>Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all Windows, Lustre, ONTAP, and OpenZFS deployment types.</p></li>
-    /// <li>
-    /// <p>Set to <code>HDD</code> to use hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> Windows file system deployment types, and on <code>PERSISTENT_1</code> Lustre file system deployment types.</p></li>
+    /// <li> <p>Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all Windows, Lustre, ONTAP, and OpenZFS deployment types.</p> </li>
+    /// <li> <p>Set to <code>HDD</code> to use hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> Windows file system deployment types, and on <code>PERSISTENT_1</code> Lustre file system deployment types. </p> </li>
     /// </ul>
-    /// <p>Default value is <code>SSD</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options"> Storage type options</a> in the <i>FSx for Windows File Server User Guide</i> and <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/what-is.html#storage-options">Multiple storage options</a> in the <i>FSx for Lustre User Guide</i>.</p>
+    /// <p>Default value is <code>SSD</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options"> Storage type options</a> in the <i>FSx for Windows File Server User Guide</i> and <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/what-is.html#storage-options">Multiple storage options</a> in the <i>FSx for Lustre User Guide</i>. </p>
     pub fn get_storage_type(&self) -> &::std::option::Option<crate::types::StorageType> {
         &self.storage_type
     }
@@ -433,15 +376,10 @@ impl CreateFileSystemInputBuilder {
     }
     /// <p>Specifies the ID of the Key Management Service (KMS) key to use for encrypting data on Amazon FSx file systems, as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types only.</p>
-    /// <p><code>SCRATCH_1</code> and <code>SCRATCH_2</code> types are encrypted using the Amazon FSx service KMS key for your account.</p></li>
-    /// <li>
-    /// <p>Amazon FSx for NetApp ONTAP</p></li>
-    /// <li>
-    /// <p>Amazon FSx for OpenZFS</p></li>
-    /// <li>
-    /// <p>Amazon FSx for Windows File Server</p></li>
+    /// <li> <p>Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types only.</p> <p> <code>SCRATCH_1</code> and <code>SCRATCH_2</code> types are encrypted using the Amazon FSx service KMS key for your account.</p> </li>
+    /// <li> <p>Amazon FSx for NetApp ONTAP</p> </li>
+    /// <li> <p>Amazon FSx for OpenZFS</p> </li>
+    /// <li> <p>Amazon FSx for Windows File Server</p> </li>
     /// </ul>
     /// <p>If a <code>KmsKeyId</code> isn't specified, the Amazon FSx-managed KMS key for your account is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>Key Management Service API Reference</i>.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -450,15 +388,10 @@ impl CreateFileSystemInputBuilder {
     }
     /// <p>Specifies the ID of the Key Management Service (KMS) key to use for encrypting data on Amazon FSx file systems, as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types only.</p>
-    /// <p><code>SCRATCH_1</code> and <code>SCRATCH_2</code> types are encrypted using the Amazon FSx service KMS key for your account.</p></li>
-    /// <li>
-    /// <p>Amazon FSx for NetApp ONTAP</p></li>
-    /// <li>
-    /// <p>Amazon FSx for OpenZFS</p></li>
-    /// <li>
-    /// <p>Amazon FSx for Windows File Server</p></li>
+    /// <li> <p>Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types only.</p> <p> <code>SCRATCH_1</code> and <code>SCRATCH_2</code> types are encrypted using the Amazon FSx service KMS key for your account.</p> </li>
+    /// <li> <p>Amazon FSx for NetApp ONTAP</p> </li>
+    /// <li> <p>Amazon FSx for OpenZFS</p> </li>
+    /// <li> <p>Amazon FSx for Windows File Server</p> </li>
     /// </ul>
     /// <p>If a <code>KmsKeyId</code> isn't specified, the Amazon FSx-managed KMS key for your account is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>Key Management Service API Reference</i>.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -467,15 +400,10 @@ impl CreateFileSystemInputBuilder {
     }
     /// <p>Specifies the ID of the Key Management Service (KMS) key to use for encrypting data on Amazon FSx file systems, as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types only.</p>
-    /// <p><code>SCRATCH_1</code> and <code>SCRATCH_2</code> types are encrypted using the Amazon FSx service KMS key for your account.</p></li>
-    /// <li>
-    /// <p>Amazon FSx for NetApp ONTAP</p></li>
-    /// <li>
-    /// <p>Amazon FSx for OpenZFS</p></li>
-    /// <li>
-    /// <p>Amazon FSx for Windows File Server</p></li>
+    /// <li> <p>Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types only.</p> <p> <code>SCRATCH_1</code> and <code>SCRATCH_2</code> types are encrypted using the Amazon FSx service KMS key for your account.</p> </li>
+    /// <li> <p>Amazon FSx for NetApp ONTAP</p> </li>
+    /// <li> <p>Amazon FSx for OpenZFS</p> </li>
+    /// <li> <p>Amazon FSx for Windows File Server</p> </li>
     /// </ul>
     /// <p>If a <code>KmsKeyId</code> isn't specified, the Amazon FSx-managed KMS key for your account is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>Key Management Service API Reference</i>.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -495,51 +423,39 @@ impl CreateFileSystemInputBuilder {
     pub fn get_windows_configuration(&self) -> &::std::option::Option<crate::types::CreateFileSystemWindowsConfiguration> {
         &self.windows_configuration
     }
-    /// <p>The Lustre configuration for the file system being created.</p><note>
+    /// <p>The Lustre configuration for the file system being created.</p> <note>
     /// <p>The following parameters are not supported for file systems with a data repository association created with .</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AutoImportPolicy</code></p></li>
-    /// <li>
-    /// <p><code>ExportPath</code></p></li>
-    /// <li>
-    /// <p><code>ImportedFileChunkSize</code></p></li>
-    /// <li>
-    /// <p><code>ImportPath</code></p></li>
+    /// <li> <p> <code>AutoImportPolicy</code> </p> </li>
+    /// <li> <p> <code>ExportPath</code> </p> </li>
+    /// <li> <p> <code>ImportedFileChunkSize</code> </p> </li>
+    /// <li> <p> <code>ImportPath</code> </p> </li>
     /// </ul>
     /// </note>
     pub fn lustre_configuration(mut self, input: crate::types::CreateFileSystemLustreConfiguration) -> Self {
         self.lustre_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Lustre configuration for the file system being created.</p><note>
+    /// <p>The Lustre configuration for the file system being created.</p> <note>
     /// <p>The following parameters are not supported for file systems with a data repository association created with .</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AutoImportPolicy</code></p></li>
-    /// <li>
-    /// <p><code>ExportPath</code></p></li>
-    /// <li>
-    /// <p><code>ImportedFileChunkSize</code></p></li>
-    /// <li>
-    /// <p><code>ImportPath</code></p></li>
+    /// <li> <p> <code>AutoImportPolicy</code> </p> </li>
+    /// <li> <p> <code>ExportPath</code> </p> </li>
+    /// <li> <p> <code>ImportedFileChunkSize</code> </p> </li>
+    /// <li> <p> <code>ImportPath</code> </p> </li>
     /// </ul>
     /// </note>
     pub fn set_lustre_configuration(mut self, input: ::std::option::Option<crate::types::CreateFileSystemLustreConfiguration>) -> Self {
         self.lustre_configuration = input;
         self
     }
-    /// <p>The Lustre configuration for the file system being created.</p><note>
+    /// <p>The Lustre configuration for the file system being created.</p> <note>
     /// <p>The following parameters are not supported for file systems with a data repository association created with .</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AutoImportPolicy</code></p></li>
-    /// <li>
-    /// <p><code>ExportPath</code></p></li>
-    /// <li>
-    /// <p><code>ImportedFileChunkSize</code></p></li>
-    /// <li>
-    /// <p><code>ImportPath</code></p></li>
+    /// <li> <p> <code>AutoImportPolicy</code> </p> </li>
+    /// <li> <p> <code>ExportPath</code> </p> </li>
+    /// <li> <p> <code>ImportedFileChunkSize</code> </p> </li>
+    /// <li> <p> <code>ImportPath</code> </p> </li>
     /// </ul>
     /// </note>
     pub fn get_lustre_configuration(&self) -> &::std::option::Option<crate::types::CreateFileSystemLustreConfiguration> {
@@ -561,12 +477,10 @@ impl CreateFileSystemInputBuilder {
     }
     /// <p>(Optional) For FSx for Lustre file systems, sets the Lustre version for the file system that you're creating. Valid values are <code>2.10</code>, <code>2.12</code>, and <code>2.15</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>2.10 is supported by the Scratch and Persistent_1 Lustre deployment types.</p></li>
-    /// <li>
-    /// <p>2.12 and 2.15 are supported by all Lustre deployment types. <code>2.12</code> or <code>2.15</code> is required when setting FSx for Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p></li>
+    /// <li> <p>2.10 is supported by the Scratch and Persistent_1 Lustre deployment types.</p> </li>
+    /// <li> <p>2.12 and 2.15 are supported by all Lustre deployment types. <code>2.12</code> or <code>2.15</code> is required when setting FSx for Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p> </li>
     /// </ul>
-    /// <p>Default value = <code>2.10</code>, except when <code>DeploymentType</code> is set to <code>PERSISTENT_2</code>, then the default is <code>2.12</code>.</p><note>
+    /// <p>Default value = <code>2.10</code>, except when <code>DeploymentType</code> is set to <code>PERSISTENT_2</code>, then the default is <code>2.12</code>.</p> <note>
     /// <p>If you set <code>FileSystemTypeVersion</code> to <code>2.10</code> for a <code>PERSISTENT_2</code> Lustre deployment type, the <code>CreateFileSystem</code> operation fails.</p>
     /// </note>
     pub fn file_system_type_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -575,12 +489,10 @@ impl CreateFileSystemInputBuilder {
     }
     /// <p>(Optional) For FSx for Lustre file systems, sets the Lustre version for the file system that you're creating. Valid values are <code>2.10</code>, <code>2.12</code>, and <code>2.15</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>2.10 is supported by the Scratch and Persistent_1 Lustre deployment types.</p></li>
-    /// <li>
-    /// <p>2.12 and 2.15 are supported by all Lustre deployment types. <code>2.12</code> or <code>2.15</code> is required when setting FSx for Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p></li>
+    /// <li> <p>2.10 is supported by the Scratch and Persistent_1 Lustre deployment types.</p> </li>
+    /// <li> <p>2.12 and 2.15 are supported by all Lustre deployment types. <code>2.12</code> or <code>2.15</code> is required when setting FSx for Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p> </li>
     /// </ul>
-    /// <p>Default value = <code>2.10</code>, except when <code>DeploymentType</code> is set to <code>PERSISTENT_2</code>, then the default is <code>2.12</code>.</p><note>
+    /// <p>Default value = <code>2.10</code>, except when <code>DeploymentType</code> is set to <code>PERSISTENT_2</code>, then the default is <code>2.12</code>.</p> <note>
     /// <p>If you set <code>FileSystemTypeVersion</code> to <code>2.10</code> for a <code>PERSISTENT_2</code> Lustre deployment type, the <code>CreateFileSystem</code> operation fails.</p>
     /// </note>
     pub fn set_file_system_type_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -589,12 +501,10 @@ impl CreateFileSystemInputBuilder {
     }
     /// <p>(Optional) For FSx for Lustre file systems, sets the Lustre version for the file system that you're creating. Valid values are <code>2.10</code>, <code>2.12</code>, and <code>2.15</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>2.10 is supported by the Scratch and Persistent_1 Lustre deployment types.</p></li>
-    /// <li>
-    /// <p>2.12 and 2.15 are supported by all Lustre deployment types. <code>2.12</code> or <code>2.15</code> is required when setting FSx for Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p></li>
+    /// <li> <p>2.10 is supported by the Scratch and Persistent_1 Lustre deployment types.</p> </li>
+    /// <li> <p>2.12 and 2.15 are supported by all Lustre deployment types. <code>2.12</code> or <code>2.15</code> is required when setting FSx for Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p> </li>
     /// </ul>
-    /// <p>Default value = <code>2.10</code>, except when <code>DeploymentType</code> is set to <code>PERSISTENT_2</code>, then the default is <code>2.12</code>.</p><note>
+    /// <p>Default value = <code>2.10</code>, except when <code>DeploymentType</code> is set to <code>PERSISTENT_2</code>, then the default is <code>2.12</code>.</p> <note>
     /// <p>If you set <code>FileSystemTypeVersion</code> to <code>2.10</code> for a <code>PERSISTENT_2</code> Lustre deployment type, the <code>CreateFileSystem</code> operation fails.</p>
     /// </note>
     pub fn get_file_system_type_version(&self) -> &::std::option::Option<::std::string::String> {

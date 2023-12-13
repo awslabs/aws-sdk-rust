@@ -6,20 +6,16 @@
 pub struct DashboardAttributes {
     /// <p>Specifies the status of your VDM engagement metrics collection. Can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ENABLED</code> – Amazon SES enables engagement metrics for your account.</p></li>
-    /// <li>
-    /// <p><code>DISABLED</code> – Amazon SES disables engagement metrics for your account.</p></li>
+    /// <li> <p> <code>ENABLED</code> – Amazon SES enables engagement metrics for your account.</p> </li>
+    /// <li> <p> <code>DISABLED</code> – Amazon SES disables engagement metrics for your account.</p> </li>
     /// </ul>
     pub engagement_metrics: ::std::option::Option<crate::types::FeatureStatus>,
 }
 impl DashboardAttributes {
     /// <p>Specifies the status of your VDM engagement metrics collection. Can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ENABLED</code> – Amazon SES enables engagement metrics for your account.</p></li>
-    /// <li>
-    /// <p><code>DISABLED</code> – Amazon SES disables engagement metrics for your account.</p></li>
+    /// <li> <p> <code>ENABLED</code> – Amazon SES enables engagement metrics for your account.</p> </li>
+    /// <li> <p> <code>DISABLED</code> – Amazon SES disables engagement metrics for your account.</p> </li>
     /// </ul>
     pub fn engagement_metrics(&self) -> ::std::option::Option<&crate::types::FeatureStatus> {
         self.engagement_metrics.as_ref()
@@ -41,10 +37,8 @@ pub struct DashboardAttributesBuilder {
 impl DashboardAttributesBuilder {
     /// <p>Specifies the status of your VDM engagement metrics collection. Can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ENABLED</code> – Amazon SES enables engagement metrics for your account.</p></li>
-    /// <li>
-    /// <p><code>DISABLED</code> – Amazon SES disables engagement metrics for your account.</p></li>
+    /// <li> <p> <code>ENABLED</code> – Amazon SES enables engagement metrics for your account.</p> </li>
+    /// <li> <p> <code>DISABLED</code> – Amazon SES disables engagement metrics for your account.</p> </li>
     /// </ul>
     pub fn engagement_metrics(mut self, input: crate::types::FeatureStatus) -> Self {
         self.engagement_metrics = ::std::option::Option::Some(input);
@@ -52,10 +46,8 @@ impl DashboardAttributesBuilder {
     }
     /// <p>Specifies the status of your VDM engagement metrics collection. Can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ENABLED</code> – Amazon SES enables engagement metrics for your account.</p></li>
-    /// <li>
-    /// <p><code>DISABLED</code> – Amazon SES disables engagement metrics for your account.</p></li>
+    /// <li> <p> <code>ENABLED</code> – Amazon SES enables engagement metrics for your account.</p> </li>
+    /// <li> <p> <code>DISABLED</code> – Amazon SES disables engagement metrics for your account.</p> </li>
     /// </ul>
     pub fn set_engagement_metrics(mut self, input: ::std::option::Option<crate::types::FeatureStatus>) -> Self {
         self.engagement_metrics = input;
@@ -63,10 +55,8 @@ impl DashboardAttributesBuilder {
     }
     /// <p>Specifies the status of your VDM engagement metrics collection. Can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ENABLED</code> – Amazon SES enables engagement metrics for your account.</p></li>
-    /// <li>
-    /// <p><code>DISABLED</code> – Amazon SES disables engagement metrics for your account.</p></li>
+    /// <li> <p> <code>ENABLED</code> – Amazon SES enables engagement metrics for your account.</p> </li>
+    /// <li> <p> <code>DISABLED</code> – Amazon SES disables engagement metrics for your account.</p> </li>
     /// </ul>
     pub fn get_engagement_metrics(&self) -> &::std::option::Option<crate::types::FeatureStatus> {
         &self.engagement_metrics

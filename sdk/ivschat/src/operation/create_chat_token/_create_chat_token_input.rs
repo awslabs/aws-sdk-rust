@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateChatTokenInput {
-    /// <p>Identifier of the room that the client is trying to access. Currently this must be an ARN.</p>
+    /// <p>Identifier of the room that the client is trying to access. Currently this must be an ARN. </p>
     pub room_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Application-provided ID that uniquely identifies the user associated with this token. This can be any UTF-8 encoded text.</p>
     pub user_id: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ pub struct CreateChatTokenInput {
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateChatTokenInput {
-    /// <p>Identifier of the room that the client is trying to access. Currently this must be an ARN.</p>
+    /// <p>Identifier of the room that the client is trying to access. Currently this must be an ARN. </p>
     pub fn room_identifier(&self) -> ::std::option::Option<&str> {
         self.room_identifier.as_deref()
     }
@@ -67,18 +67,18 @@ pub struct CreateChatTokenInputBuilder {
     pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateChatTokenInputBuilder {
-    /// <p>Identifier of the room that the client is trying to access. Currently this must be an ARN.</p>
+    /// <p>Identifier of the room that the client is trying to access. Currently this must be an ARN. </p>
     /// This field is required.
     pub fn room_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.room_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Identifier of the room that the client is trying to access. Currently this must be an ARN.</p>
+    /// <p>Identifier of the room that the client is trying to access. Currently this must be an ARN. </p>
     pub fn set_room_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.room_identifier = input;
         self
     }
-    /// <p>Identifier of the room that the client is trying to access. Currently this must be an ARN.</p>
+    /// <p>Identifier of the room that the client is trying to access. Currently this must be an ARN. </p>
     pub fn get_room_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.room_identifier
     }

@@ -10,9 +10,9 @@ pub struct InventoryResultItem {
     pub schema_version: ::std::string::String,
     /// <p>The time inventory item data was captured.</p>
     pub capture_time: ::std::option::Option<::std::string::String>,
-    /// <p>MD5 hash of the inventory item type contents. The content hash is used to determine whether to update inventory information. The PutInventory API doesn't update the inventory item type contents if the MD5 hash hasn't changed since last update.</p>
+    /// <p>MD5 hash of the inventory item type contents. The content hash is used to determine whether to update inventory information. The PutInventory API doesn't update the inventory item type contents if the MD5 hash hasn't changed since last update. </p>
     pub content_hash: ::std::option::Option<::std::string::String>,
-    /// <p>Contains all the inventory data of the item type. Results include attribute names and values.</p>
+    /// <p>Contains all the inventory data of the item type. Results include attribute names and values. </p>
     pub content: ::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl InventoryResultItem {
@@ -30,11 +30,11 @@ impl InventoryResultItem {
     pub fn capture_time(&self) -> ::std::option::Option<&str> {
         self.capture_time.as_deref()
     }
-    /// <p>MD5 hash of the inventory item type contents. The content hash is used to determine whether to update inventory information. The PutInventory API doesn't update the inventory item type contents if the MD5 hash hasn't changed since last update.</p>
+    /// <p>MD5 hash of the inventory item type contents. The content hash is used to determine whether to update inventory information. The PutInventory API doesn't update the inventory item type contents if the MD5 hash hasn't changed since last update. </p>
     pub fn content_hash(&self) -> ::std::option::Option<&str> {
         self.content_hash.as_deref()
     }
-    /// <p>Contains all the inventory data of the item type. Results include attribute names and values.</p>
+    /// <p>Contains all the inventory data of the item type. Results include attribute names and values. </p>
     pub fn content(&self) -> &[::std::collections::HashMap<::std::string::String, ::std::string::String>] {
         use std::ops::Deref;
         self.content.deref()
@@ -102,17 +102,17 @@ impl InventoryResultItemBuilder {
     pub fn get_capture_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.capture_time
     }
-    /// <p>MD5 hash of the inventory item type contents. The content hash is used to determine whether to update inventory information. The PutInventory API doesn't update the inventory item type contents if the MD5 hash hasn't changed since last update.</p>
+    /// <p>MD5 hash of the inventory item type contents. The content hash is used to determine whether to update inventory information. The PutInventory API doesn't update the inventory item type contents if the MD5 hash hasn't changed since last update. </p>
     pub fn content_hash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_hash = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>MD5 hash of the inventory item type contents. The content hash is used to determine whether to update inventory information. The PutInventory API doesn't update the inventory item type contents if the MD5 hash hasn't changed since last update.</p>
+    /// <p>MD5 hash of the inventory item type contents. The content hash is used to determine whether to update inventory information. The PutInventory API doesn't update the inventory item type contents if the MD5 hash hasn't changed since last update. </p>
     pub fn set_content_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_hash = input;
         self
     }
-    /// <p>MD5 hash of the inventory item type contents. The content hash is used to determine whether to update inventory information. The PutInventory API doesn't update the inventory item type contents if the MD5 hash hasn't changed since last update.</p>
+    /// <p>MD5 hash of the inventory item type contents. The content hash is used to determine whether to update inventory information. The PutInventory API doesn't update the inventory item type contents if the MD5 hash hasn't changed since last update. </p>
     pub fn get_content_hash(&self) -> &::std::option::Option<::std::string::String> {
         &self.content_hash
     }
@@ -120,14 +120,14 @@ impl InventoryResultItemBuilder {
     ///
     /// To override the contents of this collection use [`set_content`](Self::set_content).
     ///
-    /// <p>Contains all the inventory data of the item type. Results include attribute names and values.</p>
+    /// <p>Contains all the inventory data of the item type. Results include attribute names and values. </p>
     pub fn content(mut self, input: ::std::collections::HashMap<::std::string::String, ::std::string::String>) -> Self {
         let mut v = self.content.unwrap_or_default();
         v.push(input);
         self.content = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Contains all the inventory data of the item type. Results include attribute names and values.</p>
+    /// <p>Contains all the inventory data of the item type. Results include attribute names and values. </p>
     pub fn set_content(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>,
@@ -135,7 +135,7 @@ impl InventoryResultItemBuilder {
         self.content = input;
         self
     }
-    /// <p>Contains all the inventory data of the item type. Results include attribute names and values.</p>
+    /// <p>Contains all the inventory data of the item type. Results include attribute names and values. </p>
     pub fn get_content(&self) -> &::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>> {
         &self.content
     }

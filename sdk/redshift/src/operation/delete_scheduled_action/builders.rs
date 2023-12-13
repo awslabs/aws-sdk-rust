@@ -22,7 +22,7 @@ impl DeleteScheduledActionInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteScheduledAction`.
 ///
-/// <p>Deletes a scheduled action.</p>
+/// <p>Deletes a scheduled action. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteScheduledActionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DeleteScheduledActionFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the scheduled action to delete.</p>
+    /// <p>The name of the scheduled action to delete. </p>
     pub fn scheduled_action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.scheduled_action_name(input.into());
         self
     }
-    /// <p>The name of the scheduled action to delete.</p>
+    /// <p>The name of the scheduled action to delete. </p>
     pub fn set_scheduled_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_scheduled_action_name(input);
         self
     }
-    /// <p>The name of the scheduled action to delete.</p>
+    /// <p>The name of the scheduled action to delete. </p>
     pub fn get_scheduled_action_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_scheduled_action_name()
     }

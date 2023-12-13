@@ -24,19 +24,15 @@ impl UpdateServiceInputBuilder {
 ///
 /// <p>Submits a request to perform the following operations:</p>
 /// <ul>
-/// <li>
-/// <p>Update the TTL setting for existing <code>DnsRecords</code> configurations</p></li>
-/// <li>
-/// <p>Add, update, or delete <code>HealthCheckConfig</code> for a specified service</p><note>
+/// <li> <p>Update the TTL setting for existing <code>DnsRecords</code> configurations</p> </li>
+/// <li> <p>Add, update, or delete <code>HealthCheckConfig</code> for a specified service</p> <note>
 /// <p>You can't add, update, or delete a <code>HealthCheckCustomConfig</code> configuration.</p>
-/// </note></li>
+/// </note> </li>
 /// </ul>
 /// <p>For public and private DNS namespaces, note the following:</p>
 /// <ul>
-/// <li>
-/// <p>If you omit any existing <code>DnsRecords</code> or <code>HealthCheckConfig</code> configurations from an <code>UpdateService</code> request, the configurations are deleted from the service.</p></li>
-/// <li>
-/// <p>If you omit an existing <code>HealthCheckCustomConfig</code> configuration from an <code>UpdateService</code> request, the configuration isn't deleted from the service.</p></li>
+/// <li> <p>If you omit any existing <code>DnsRecords</code> or <code>HealthCheckConfig</code> configurations from an <code>UpdateService</code> request, the configurations are deleted from the service.</p> </li>
+/// <li> <p>If you omit an existing <code>HealthCheckCustomConfig</code> configuration from an <code>UpdateService</code> request, the configuration isn't deleted from the service.</p> </li>
 /// </ul>
 /// <p>When you update settings for a service, Cloud Map also updates the corresponding settings in all the records and health checks that were created by using the specified service.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

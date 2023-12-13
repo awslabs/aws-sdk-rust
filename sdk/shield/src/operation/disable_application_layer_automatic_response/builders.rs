@@ -22,7 +22,7 @@ impl DisableApplicationLayerAutomaticResponseInputBuilder {
 }
 /// Fluent builder constructing a request to `DisableApplicationLayerAutomaticResponse`.
 ///
-/// <p>Disable the Shield Advanced automatic application layer DDoS mitigation feature for the protected resource. This stops Shield Advanced from creating, verifying, and applying WAF rules for attacks that it detects for the resource.</p>
+/// <p>Disable the Shield Advanced automatic application layer DDoS mitigation feature for the protected resource. This stops Shield Advanced from creating, verifying, and applying WAF rules for attacks that it detects for the resource. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisableApplicationLayerAutomaticResponseFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

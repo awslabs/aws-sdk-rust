@@ -25,7 +25,7 @@ pub struct SubmitJobInput {
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>An object with various properties that override the defaults for the job definition that specify the name of a container in the specified job definition and the overrides it should receive. You can override the default command for a container, which is specified in the job definition or the Docker image, with a <code>command</code> override. You can also override existing environment variables on a container or add new environment variables to it with an <code>environment</code> override.</p>
     pub container_overrides: ::std::option::Option<crate::types::ContainerOverrides>,
-    /// <p>A list of node overrides in JSON format that specify the node range to target and the container overrides for that node range.</p><note>
+    /// <p>A list of node overrides in JSON format that specify the node range to target and the container overrides for that node range.</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources; use <code>containerOverrides</code> instead.</p>
     /// </note>
     pub node_overrides: ::std::option::Option<crate::types::NodeOverrides>,
@@ -82,7 +82,7 @@ impl SubmitJobInput {
     pub fn container_overrides(&self) -> ::std::option::Option<&crate::types::ContainerOverrides> {
         self.container_overrides.as_ref()
     }
-    /// <p>A list of node overrides in JSON format that specify the node range to target and the container overrides for that node range.</p><note>
+    /// <p>A list of node overrides in JSON format that specify the node range to target and the container overrides for that node range.</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources; use <code>containerOverrides</code> instead.</p>
     /// </note>
     pub fn node_overrides(&self) -> ::std::option::Option<&crate::types::NodeOverrides> {
@@ -287,21 +287,21 @@ impl SubmitJobInputBuilder {
     pub fn get_container_overrides(&self) -> &::std::option::Option<crate::types::ContainerOverrides> {
         &self.container_overrides
     }
-    /// <p>A list of node overrides in JSON format that specify the node range to target and the container overrides for that node range.</p><note>
+    /// <p>A list of node overrides in JSON format that specify the node range to target and the container overrides for that node range.</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources; use <code>containerOverrides</code> instead.</p>
     /// </note>
     pub fn node_overrides(mut self, input: crate::types::NodeOverrides) -> Self {
         self.node_overrides = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A list of node overrides in JSON format that specify the node range to target and the container overrides for that node range.</p><note>
+    /// <p>A list of node overrides in JSON format that specify the node range to target and the container overrides for that node range.</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources; use <code>containerOverrides</code> instead.</p>
     /// </note>
     pub fn set_node_overrides(mut self, input: ::std::option::Option<crate::types::NodeOverrides>) -> Self {
         self.node_overrides = input;
         self
     }
-    /// <p>A list of node overrides in JSON format that specify the node range to target and the container overrides for that node range.</p><note>
+    /// <p>A list of node overrides in JSON format that specify the node range to target and the container overrides for that node range.</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources; use <code>containerOverrides</code> instead.</p>
     /// </note>
     pub fn get_node_overrides(&self) -> &::std::option::Option<crate::types::NodeOverrides> {

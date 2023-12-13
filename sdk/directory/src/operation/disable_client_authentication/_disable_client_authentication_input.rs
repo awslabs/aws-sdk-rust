@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisableClientAuthenticationInput {
-    /// <p>The identifier of the directory</p>
+    /// <p>The identifier of the directory </p>
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of client authentication to disable. Currently, only the parameter, <code>SmartCard</code> is supported.</p>
     pub r#type: ::std::option::Option<crate::types::ClientAuthenticationType>,
 }
 impl DisableClientAuthenticationInput {
-    /// <p>The identifier of the directory</p>
+    /// <p>The identifier of the directory </p>
     pub fn directory_id(&self) -> ::std::option::Option<&str> {
         self.directory_id.as_deref()
     }
@@ -33,18 +33,18 @@ pub struct DisableClientAuthenticationInputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ClientAuthenticationType>,
 }
 impl DisableClientAuthenticationInputBuilder {
-    /// <p>The identifier of the directory</p>
+    /// <p>The identifier of the directory </p>
     /// This field is required.
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the directory</p>
+    /// <p>The identifier of the directory </p>
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.directory_id = input;
         self
     }
-    /// <p>The identifier of the directory</p>
+    /// <p>The identifier of the directory </p>
     pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.directory_id
     }

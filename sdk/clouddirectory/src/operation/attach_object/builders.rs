@@ -24,10 +24,8 @@ impl AttachObjectInputBuilder {
 ///
 /// <p>Attaches an existing object to another object. An object can be accessed in two ways:</p>
 /// <ol>
-/// <li>
-/// <p>Using the path</p></li>
-/// <li>
-/// <p>Using <code>ObjectIdentifier</code></p></li>
+/// <li> <p>Using the path</p> </li>
+/// <li> <p>Using <code>ObjectIdentifier</code> </p> </li>
 /// </ol>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AttachObjectFluentBuilder {

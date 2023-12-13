@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAssessmentInput {
-    /// <p>The <code>assessmentid</code> returned by <code>StartAssessment</code>.</p>
+    /// <p> The <code>assessmentid</code> returned by <code>StartAssessment</code>.</p>
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl GetAssessmentInput {
-    /// <p>The <code>assessmentid</code> returned by <code>StartAssessment</code>.</p>
+    /// <p> The <code>assessmentid</code> returned by <code>StartAssessment</code>.</p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct GetAssessmentInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
 impl GetAssessmentInputBuilder {
-    /// <p>The <code>assessmentid</code> returned by <code>StartAssessment</code>.</p>
+    /// <p> The <code>assessmentid</code> returned by <code>StartAssessment</code>.</p>
     /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The <code>assessmentid</code> returned by <code>StartAssessment</code>.</p>
+    /// <p> The <code>assessmentid</code> returned by <code>StartAssessment</code>.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// <p>The <code>assessmentid</code> returned by <code>StartAssessment</code>.</p>
+    /// <p> The <code>assessmentid</code> returned by <code>StartAssessment</code>.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }

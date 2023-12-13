@@ -6,7 +6,7 @@
 pub struct DeleteApplicationInput {
     /// <p>Name of the Amazon Kinesis Analytics application to delete.</p>
     pub application_name: ::std::option::Option<::std::string::String>,
-    /// <p>You can use the <code>DescribeApplication</code> operation to get this value.</p>
+    /// <p> You can use the <code>DescribeApplication</code> operation to get this value. </p>
     pub create_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DeleteApplicationInput {
@@ -14,7 +14,7 @@ impl DeleteApplicationInput {
     pub fn application_name(&self) -> ::std::option::Option<&str> {
         self.application_name.as_deref()
     }
-    /// <p>You can use the <code>DescribeApplication</code> operation to get this value.</p>
+    /// <p> You can use the <code>DescribeApplication</code> operation to get this value. </p>
     pub fn create_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.create_timestamp.as_ref()
     }
@@ -49,18 +49,18 @@ impl DeleteApplicationInputBuilder {
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_name
     }
-    /// <p>You can use the <code>DescribeApplication</code> operation to get this value.</p>
+    /// <p> You can use the <code>DescribeApplication</code> operation to get this value. </p>
     /// This field is required.
     pub fn create_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_timestamp = ::std::option::Option::Some(input);
         self
     }
-    /// <p>You can use the <code>DescribeApplication</code> operation to get this value.</p>
+    /// <p> You can use the <code>DescribeApplication</code> operation to get this value. </p>
     pub fn set_create_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_timestamp = input;
         self
     }
-    /// <p>You can use the <code>DescribeApplication</code> operation to get this value.</p>
+    /// <p> You can use the <code>DescribeApplication</code> operation to get this value. </p>
     pub fn get_create_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.create_timestamp
     }

@@ -9,12 +9,12 @@ pub struct UpdateComponentInput {
     /// <dl>
     /// <dt></dt>
     /// <dd>
-    /// <p><code>NONE</code></p>
+    /// <p> <code>NONE</code> </p>
     /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated. You can only specify <code>description</code> in this mode.</p>
     /// </dd>
     /// <dt></dt>
     /// <dd>
-    /// <p><code>CURRENT_VERSION</code></p>
+    /// <p> <code>CURRENT_VERSION</code> </p>
     /// <p>In this mode, the component is deployed and updated with the new <code>serviceSpec</code>, <code>templateSource</code>, and/or <code>type</code> that you provide. Only requested parameters are updated.</p>
     /// </dd>
     /// </dl>
@@ -27,7 +27,7 @@ pub struct UpdateComponentInput {
     pub service_instance_name: ::std::option::Option<::std::string::String>,
     /// <p>The service spec that you want the component to use to access service inputs. Set this only when the component is attached to a service instance.</p>
     pub service_spec: ::std::option::Option<::std::string::String>,
-    /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p><note>
+    /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p> <note>
     /// <p>Components support a single IaC file, even if you use Terraform as your template language.</p>
     /// </note>
     pub template_file: ::std::option::Option<::std::string::String>,
@@ -43,12 +43,12 @@ impl UpdateComponentInput {
     /// <dl>
     /// <dt></dt>
     /// <dd>
-    /// <p><code>NONE</code></p>
+    /// <p> <code>NONE</code> </p>
     /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated. You can only specify <code>description</code> in this mode.</p>
     /// </dd>
     /// <dt></dt>
     /// <dd>
-    /// <p><code>CURRENT_VERSION</code></p>
+    /// <p> <code>CURRENT_VERSION</code> </p>
     /// <p>In this mode, the component is deployed and updated with the new <code>serviceSpec</code>, <code>templateSource</code>, and/or <code>type</code> that you provide. Only requested parameters are updated.</p>
     /// </dd>
     /// </dl>
@@ -71,7 +71,7 @@ impl UpdateComponentInput {
     pub fn service_spec(&self) -> ::std::option::Option<&str> {
         self.service_spec.as_deref()
     }
-    /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p><note>
+    /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p> <note>
     /// <p>Components support a single IaC file, even if you use Terraform as your template language.</p>
     /// </note>
     pub fn template_file(&self) -> ::std::option::Option<&str> {
@@ -136,12 +136,12 @@ impl UpdateComponentInputBuilder {
     /// <dl>
     /// <dt></dt>
     /// <dd>
-    /// <p><code>NONE</code></p>
+    /// <p> <code>NONE</code> </p>
     /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated. You can only specify <code>description</code> in this mode.</p>
     /// </dd>
     /// <dt></dt>
     /// <dd>
-    /// <p><code>CURRENT_VERSION</code></p>
+    /// <p> <code>CURRENT_VERSION</code> </p>
     /// <p>In this mode, the component is deployed and updated with the new <code>serviceSpec</code>, <code>templateSource</code>, and/or <code>type</code> that you provide. Only requested parameters are updated.</p>
     /// </dd>
     /// </dl>
@@ -154,12 +154,12 @@ impl UpdateComponentInputBuilder {
     /// <dl>
     /// <dt></dt>
     /// <dd>
-    /// <p><code>NONE</code></p>
+    /// <p> <code>NONE</code> </p>
     /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated. You can only specify <code>description</code> in this mode.</p>
     /// </dd>
     /// <dt></dt>
     /// <dd>
-    /// <p><code>CURRENT_VERSION</code></p>
+    /// <p> <code>CURRENT_VERSION</code> </p>
     /// <p>In this mode, the component is deployed and updated with the new <code>serviceSpec</code>, <code>templateSource</code>, and/or <code>type</code> that you provide. Only requested parameters are updated.</p>
     /// </dd>
     /// </dl>
@@ -171,12 +171,12 @@ impl UpdateComponentInputBuilder {
     /// <dl>
     /// <dt></dt>
     /// <dd>
-    /// <p><code>NONE</code></p>
+    /// <p> <code>NONE</code> </p>
     /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated. You can only specify <code>description</code> in this mode.</p>
     /// </dd>
     /// <dt></dt>
     /// <dd>
-    /// <p><code>CURRENT_VERSION</code></p>
+    /// <p> <code>CURRENT_VERSION</code> </p>
     /// <p>In this mode, the component is deployed and updated with the new <code>serviceSpec</code>, <code>templateSource</code>, and/or <code>type</code> that you provide. Only requested parameters are updated.</p>
     /// </dd>
     /// </dl>
@@ -239,21 +239,21 @@ impl UpdateComponentInputBuilder {
     pub fn get_service_spec(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_spec
     }
-    /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p><note>
+    /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p> <note>
     /// <p>Components support a single IaC file, even if you use Terraform as your template language.</p>
     /// </note>
     pub fn template_file(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_file = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p><note>
+    /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p> <note>
     /// <p>Components support a single IaC file, even if you use Terraform as your template language.</p>
     /// </note>
     pub fn set_template_file(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_file = input;
         self
     }
-    /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p><note>
+    /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p> <note>
     /// <p>Components support a single IaC file, even if you use Terraform as your template language.</p>
     /// </note>
     pub fn get_template_file(&self) -> &::std::option::Option<::std::string::String> {

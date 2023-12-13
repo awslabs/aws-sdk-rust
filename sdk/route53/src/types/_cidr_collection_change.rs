@@ -6,7 +6,7 @@
 pub struct CidrCollectionChange {
     /// <p>Name of the location that is associated with the CIDR collection.</p>
     pub location_name: ::std::string::String,
-    /// <p>CIDR collection change action.</p>
+    /// <p>CIDR collection change action. </p>
     pub action: crate::types::CidrCollectionChangeAction,
     /// <p>List of CIDR blocks.</p>
     pub cidr_list: ::std::vec::Vec<::std::string::String>,
@@ -17,7 +17,7 @@ impl CidrCollectionChange {
         use std::ops::Deref;
         self.location_name.deref()
     }
-    /// <p>CIDR collection change action.</p>
+    /// <p>CIDR collection change action. </p>
     pub fn action(&self) -> &crate::types::CidrCollectionChangeAction {
         &self.action
     }
@@ -58,18 +58,18 @@ impl CidrCollectionChangeBuilder {
     pub fn get_location_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.location_name
     }
-    /// <p>CIDR collection change action.</p>
+    /// <p>CIDR collection change action. </p>
     /// This field is required.
     pub fn action(mut self, input: crate::types::CidrCollectionChangeAction) -> Self {
         self.action = ::std::option::Option::Some(input);
         self
     }
-    /// <p>CIDR collection change action.</p>
+    /// <p>CIDR collection change action. </p>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::CidrCollectionChangeAction>) -> Self {
         self.action = input;
         self
     }
-    /// <p>CIDR collection change action.</p>
+    /// <p>CIDR collection change action. </p>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::CidrCollectionChangeAction> {
         &self.action
     }

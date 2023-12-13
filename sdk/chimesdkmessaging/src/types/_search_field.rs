@@ -6,7 +6,7 @@
 pub struct SearchField {
     /// <p>An <code>enum</code> value that indicates the key to search the channel on. <code>MEMBERS</code> allows you to search channels based on memberships. You can use it with the <code>EQUALS</code> operator to get channels whose memberships are equal to the specified values, and with the <code>INCLUDES</code> operator to get channels whose memberships include the specified values.</p>
     pub key: crate::types::SearchFieldKey,
-    /// <p>The values that you want to search for, a list of strings. The values must be <code>AppInstanceUserArns</code> specified as a list of strings.</p><note>
+    /// <p>The values that you want to search for, a list of strings. The values must be <code>AppInstanceUserArns</code> specified as a list of strings.</p> <note>
     /// <p>This operation isn't supported for <code>AppInstanceUsers</code> with large number of memberships.</p>
     /// </note>
     pub values: ::std::vec::Vec<::std::string::String>,
@@ -18,7 +18,7 @@ impl SearchField {
     pub fn key(&self) -> &crate::types::SearchFieldKey {
         &self.key
     }
-    /// <p>The values that you want to search for, a list of strings. The values must be <code>AppInstanceUserArns</code> specified as a list of strings.</p><note>
+    /// <p>The values that you want to search for, a list of strings. The values must be <code>AppInstanceUserArns</code> specified as a list of strings.</p> <note>
     /// <p>This operation isn't supported for <code>AppInstanceUsers</code> with large number of memberships.</p>
     /// </note>
     pub fn values(&self) -> &[::std::string::String] {
@@ -65,7 +65,7 @@ impl SearchFieldBuilder {
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
     ///
-    /// <p>The values that you want to search for, a list of strings. The values must be <code>AppInstanceUserArns</code> specified as a list of strings.</p><note>
+    /// <p>The values that you want to search for, a list of strings. The values must be <code>AppInstanceUserArns</code> specified as a list of strings.</p> <note>
     /// <p>This operation isn't supported for <code>AppInstanceUsers</code> with large number of memberships.</p>
     /// </note>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -74,14 +74,14 @@ impl SearchFieldBuilder {
         self.values = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The values that you want to search for, a list of strings. The values must be <code>AppInstanceUserArns</code> specified as a list of strings.</p><note>
+    /// <p>The values that you want to search for, a list of strings. The values must be <code>AppInstanceUserArns</code> specified as a list of strings.</p> <note>
     /// <p>This operation isn't supported for <code>AppInstanceUsers</code> with large number of memberships.</p>
     /// </note>
     pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }
-    /// <p>The values that you want to search for, a list of strings. The values must be <code>AppInstanceUserArns</code> specified as a list of strings.</p><note>
+    /// <p>The values that you want to search for, a list of strings. The values must be <code>AppInstanceUserArns</code> specified as a list of strings.</p> <note>
     /// <p>This operation isn't supported for <code>AppInstanceUsers</code> with large number of memberships.</p>
     /// </note>
     pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {

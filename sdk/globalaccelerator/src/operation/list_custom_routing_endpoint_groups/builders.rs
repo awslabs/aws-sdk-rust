@@ -22,7 +22,7 @@ impl ListCustomRoutingEndpointGroupsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListCustomRoutingEndpointGroups`.
 ///
-/// <p>List the endpoint groups that are associated with a listener for a custom routing accelerator.</p>
+/// <p>List the endpoint groups that are associated with a listener for a custom routing accelerator. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListCustomRoutingEndpointGroupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

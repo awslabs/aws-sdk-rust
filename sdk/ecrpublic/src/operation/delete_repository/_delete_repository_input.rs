@@ -7,7 +7,7 @@ pub struct DeleteRepositoryInput {
     pub registry_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the repository to delete.</p>
     pub repository_name: ::std::option::Option<::std::string::String>,
-    /// <p>The force option can be used to delete a repository that contains images. If the force option is not used, the repository must be empty prior to deletion.</p>
+    /// <p> The force option can be used to delete a repository that contains images. If the force option is not used, the repository must be empty prior to deletion.</p>
     pub force: ::std::option::Option<bool>,
 }
 impl DeleteRepositoryInput {
@@ -19,7 +19,7 @@ impl DeleteRepositoryInput {
     pub fn repository_name(&self) -> ::std::option::Option<&str> {
         self.repository_name.as_deref()
     }
-    /// <p>The force option can be used to delete a repository that contains images. If the force option is not used, the repository must be empty prior to deletion.</p>
+    /// <p> The force option can be used to delete a repository that contains images. If the force option is not used, the repository must be empty prior to deletion.</p>
     pub fn force(&self) -> ::std::option::Option<bool> {
         self.force
     }
@@ -69,17 +69,17 @@ impl DeleteRepositoryInputBuilder {
     pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.repository_name
     }
-    /// <p>The force option can be used to delete a repository that contains images. If the force option is not used, the repository must be empty prior to deletion.</p>
+    /// <p> The force option can be used to delete a repository that contains images. If the force option is not used, the repository must be empty prior to deletion.</p>
     pub fn force(mut self, input: bool) -> Self {
         self.force = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The force option can be used to delete a repository that contains images. If the force option is not used, the repository must be empty prior to deletion.</p>
+    /// <p> The force option can be used to delete a repository that contains images. If the force option is not used, the repository must be empty prior to deletion.</p>
     pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
         self.force = input;
         self
     }
-    /// <p>The force option can be used to delete a repository that contains images. If the force option is not used, the repository must be empty prior to deletion.</p>
+    /// <p> The force option can be used to delete a repository that contains images. If the force option is not used, the repository must be empty prior to deletion.</p>
     pub fn get_force(&self) -> &::std::option::Option<bool> {
         &self.force
     }

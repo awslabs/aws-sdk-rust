@@ -140,17 +140,17 @@ impl ListLicenseConversionTasksFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>Filters to scope the results. Valid filters are <code>ResourceArns</code> and <code>Status</code>.</p>
+    /// <p> Filters to scope the results. Valid filters are <code>ResourceArns</code> and <code>Status</code>. </p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>Filters to scope the results. Valid filters are <code>ResourceArns</code> and <code>Status</code>.</p>
+    /// <p> Filters to scope the results. Valid filters are <code>ResourceArns</code> and <code>Status</code>. </p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
-    /// <p>Filters to scope the results. Valid filters are <code>ResourceArns</code> and <code>Status</code>.</p>
+    /// <p> Filters to scope the results. Valid filters are <code>ResourceArns</code> and <code>Status</code>. </p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()
     }

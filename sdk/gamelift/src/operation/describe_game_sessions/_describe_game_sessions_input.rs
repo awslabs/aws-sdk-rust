@@ -3,15 +3,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeGameSessionsInput {
-    /// <p>A unique identifier for the fleet to retrieve game sessions for. You can use either the fleet ID or ARN value.</p>
+    /// <p>A unique identifier for the fleet to retrieve game sessions for. You can use either the fleet ID or ARN value. </p>
     pub fleet_id: ::std::option::Option<::std::string::String>,
-    /// <p>A unique identifier for the game session to retrieve.</p>
+    /// <p>A unique identifier for the game session to retrieve. </p>
     pub game_session_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the alias associated with the fleet to retrieve game sessions for. You can use either the alias ID or ARN value.</p>
     pub alias_id: ::std::option::Option<::std::string::String>,
-    /// <p>A fleet location to get game sessions for. You can specify a fleet's home Region or a remote location. Use the Amazon Web Services Region code format, such as <code>us-west-2</code>.</p>
+    /// <p>A fleet location to get game sessions for. You can specify a fleet's home Region or a remote location. Use the Amazon Web Services Region code format, such as <code>us-west-2</code>. </p>
     pub location: ::std::option::Option<::std::string::String>,
-    /// <p>Game session status to filter results on. You can filter on the following states: <code>ACTIVE</code>, <code>TERMINATED</code>, <code>ACTIVATING</code>, and <code>TERMINATING</code>. The last two are transitory and used for only very brief periods of time.</p>
+    /// <p>Game session status to filter results on. You can filter on the following states: <code>ACTIVE</code>, <code>TERMINATED</code>, <code>ACTIVATING</code>, and <code>TERMINATING</code>. The last two are transitory and used for only very brief periods of time. </p>
     pub status_filter: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
     pub limit: ::std::option::Option<i32>,
@@ -19,11 +19,11 @@ pub struct DescribeGameSessionsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeGameSessionsInput {
-    /// <p>A unique identifier for the fleet to retrieve game sessions for. You can use either the fleet ID or ARN value.</p>
+    /// <p>A unique identifier for the fleet to retrieve game sessions for. You can use either the fleet ID or ARN value. </p>
     pub fn fleet_id(&self) -> ::std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
-    /// <p>A unique identifier for the game session to retrieve.</p>
+    /// <p>A unique identifier for the game session to retrieve. </p>
     pub fn game_session_id(&self) -> ::std::option::Option<&str> {
         self.game_session_id.as_deref()
     }
@@ -31,11 +31,11 @@ impl DescribeGameSessionsInput {
     pub fn alias_id(&self) -> ::std::option::Option<&str> {
         self.alias_id.as_deref()
     }
-    /// <p>A fleet location to get game sessions for. You can specify a fleet's home Region or a remote location. Use the Amazon Web Services Region code format, such as <code>us-west-2</code>.</p>
+    /// <p>A fleet location to get game sessions for. You can specify a fleet's home Region or a remote location. Use the Amazon Web Services Region code format, such as <code>us-west-2</code>. </p>
     pub fn location(&self) -> ::std::option::Option<&str> {
         self.location.as_deref()
     }
-    /// <p>Game session status to filter results on. You can filter on the following states: <code>ACTIVE</code>, <code>TERMINATED</code>, <code>ACTIVATING</code>, and <code>TERMINATING</code>. The last two are transitory and used for only very brief periods of time.</p>
+    /// <p>Game session status to filter results on. You can filter on the following states: <code>ACTIVE</code>, <code>TERMINATED</code>, <code>ACTIVATING</code>, and <code>TERMINATING</code>. The last two are transitory and used for only very brief periods of time. </p>
     pub fn status_filter(&self) -> ::std::option::Option<&str> {
         self.status_filter.as_deref()
     }
@@ -68,31 +68,31 @@ pub struct DescribeGameSessionsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeGameSessionsInputBuilder {
-    /// <p>A unique identifier for the fleet to retrieve game sessions for. You can use either the fleet ID or ARN value.</p>
+    /// <p>A unique identifier for the fleet to retrieve game sessions for. You can use either the fleet ID or ARN value. </p>
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique identifier for the fleet to retrieve game sessions for. You can use either the fleet ID or ARN value.</p>
+    /// <p>A unique identifier for the fleet to retrieve game sessions for. You can use either the fleet ID or ARN value. </p>
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fleet_id = input;
         self
     }
-    /// <p>A unique identifier for the fleet to retrieve game sessions for. You can use either the fleet ID or ARN value.</p>
+    /// <p>A unique identifier for the fleet to retrieve game sessions for. You can use either the fleet ID or ARN value. </p>
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.fleet_id
     }
-    /// <p>A unique identifier for the game session to retrieve.</p>
+    /// <p>A unique identifier for the game session to retrieve. </p>
     pub fn game_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_session_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique identifier for the game session to retrieve.</p>
+    /// <p>A unique identifier for the game session to retrieve. </p>
     pub fn set_game_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.game_session_id = input;
         self
     }
-    /// <p>A unique identifier for the game session to retrieve.</p>
+    /// <p>A unique identifier for the game session to retrieve. </p>
     pub fn get_game_session_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.game_session_id
     }
@@ -110,31 +110,31 @@ impl DescribeGameSessionsInputBuilder {
     pub fn get_alias_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.alias_id
     }
-    /// <p>A fleet location to get game sessions for. You can specify a fleet's home Region or a remote location. Use the Amazon Web Services Region code format, such as <code>us-west-2</code>.</p>
+    /// <p>A fleet location to get game sessions for. You can specify a fleet's home Region or a remote location. Use the Amazon Web Services Region code format, such as <code>us-west-2</code>. </p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A fleet location to get game sessions for. You can specify a fleet's home Region or a remote location. Use the Amazon Web Services Region code format, such as <code>us-west-2</code>.</p>
+    /// <p>A fleet location to get game sessions for. You can specify a fleet's home Region or a remote location. Use the Amazon Web Services Region code format, such as <code>us-west-2</code>. </p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location = input;
         self
     }
-    /// <p>A fleet location to get game sessions for. You can specify a fleet's home Region or a remote location. Use the Amazon Web Services Region code format, such as <code>us-west-2</code>.</p>
+    /// <p>A fleet location to get game sessions for. You can specify a fleet's home Region or a remote location. Use the Amazon Web Services Region code format, such as <code>us-west-2</code>. </p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.location
     }
-    /// <p>Game session status to filter results on. You can filter on the following states: <code>ACTIVE</code>, <code>TERMINATED</code>, <code>ACTIVATING</code>, and <code>TERMINATING</code>. The last two are transitory and used for only very brief periods of time.</p>
+    /// <p>Game session status to filter results on. You can filter on the following states: <code>ACTIVE</code>, <code>TERMINATED</code>, <code>ACTIVATING</code>, and <code>TERMINATING</code>. The last two are transitory and used for only very brief periods of time. </p>
     pub fn status_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_filter = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Game session status to filter results on. You can filter on the following states: <code>ACTIVE</code>, <code>TERMINATED</code>, <code>ACTIVATING</code>, and <code>TERMINATING</code>. The last two are transitory and used for only very brief periods of time.</p>
+    /// <p>Game session status to filter results on. You can filter on the following states: <code>ACTIVE</code>, <code>TERMINATED</code>, <code>ACTIVATING</code>, and <code>TERMINATING</code>. The last two are transitory and used for only very brief periods of time. </p>
     pub fn set_status_filter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_filter = input;
         self
     }
-    /// <p>Game session status to filter results on. You can filter on the following states: <code>ACTIVE</code>, <code>TERMINATED</code>, <code>ACTIVATING</code>, and <code>TERMINATING</code>. The last two are transitory and used for only very brief periods of time.</p>
+    /// <p>Game session status to filter results on. You can filter on the following states: <code>ACTIVE</code>, <code>TERMINATED</code>, <code>ACTIVATING</code>, and <code>TERMINATING</code>. The last two are transitory and used for only very brief periods of time. </p>
     pub fn get_status_filter(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_filter
     }

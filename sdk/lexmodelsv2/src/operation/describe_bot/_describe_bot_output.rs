@@ -7,7 +7,7 @@ pub struct DescribeBotOutput {
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the bot.</p>
     pub bot_name: ::std::option::Option<::std::string::String>,
-    /// <p>The description of the bot.</p>
+    /// <p>The description of the bot. </p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that has permission to access the bot.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
@@ -38,7 +38,7 @@ impl DescribeBotOutput {
     pub fn bot_name(&self) -> ::std::option::Option<&str> {
         self.bot_name.as_deref()
     }
-    /// <p>The description of the bot.</p>
+    /// <p>The description of the bot. </p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -142,17 +142,17 @@ impl DescribeBotOutputBuilder {
     pub fn get_bot_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.bot_name
     }
-    /// <p>The description of the bot.</p>
+    /// <p>The description of the bot. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The description of the bot.</p>
+    /// <p>The description of the bot. </p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>The description of the bot.</p>
+    /// <p>The description of the bot. </p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }

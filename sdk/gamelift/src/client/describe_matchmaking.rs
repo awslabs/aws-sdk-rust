@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeMatchmaking`](crate::operation::describe_matchmaking::builders::DescribeMatchmakingFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`ticket_ids(impl Into<String>)`](crate::operation::describe_matchmaking::builders::DescribeMatchmakingFluentBuilder::ticket_ids) / [`set_ticket_ids(Option<Vec::<String>>)`](crate::operation::describe_matchmaking::builders::DescribeMatchmakingFluentBuilder::set_ticket_ids):<br>required: **true**<br><p>A unique identifier for a matchmaking ticket. You can include up to 10 ID values.</p><br>
+    ///   - [`ticket_ids(impl Into<String>)`](crate::operation::describe_matchmaking::builders::DescribeMatchmakingFluentBuilder::ticket_ids) / [`set_ticket_ids(Option<Vec::<String>>)`](crate::operation::describe_matchmaking::builders::DescribeMatchmakingFluentBuilder::set_ticket_ids):<br>required: **true**<br><p>A unique identifier for a matchmaking ticket. You can include up to 10 ID values. </p><br>
     /// - On success, responds with [`DescribeMatchmakingOutput`](crate::operation::describe_matchmaking::DescribeMatchmakingOutput) with field(s):
     ///   - [`ticket_list(Option<Vec::<MatchmakingTicket>>)`](crate::operation::describe_matchmaking::DescribeMatchmakingOutput::ticket_list): <p>A collection of existing matchmaking ticket objects matching the request.</p>
     /// - On failure, responds with [`SdkError<DescribeMatchmakingError>`](crate::operation::describe_matchmaking::DescribeMatchmakingError)

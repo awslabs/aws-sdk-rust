@@ -9,7 +9,7 @@ pub struct UpdateOutpostResolverInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon EC2 instance count for a Resolver on the Outpost.</p>
     pub instance_count: ::std::option::Option<i32>,
-    /// <p>Amazon EC2 instance type.</p>
+    /// <p> Amazon EC2 instance type. </p>
     pub preferred_instance_type: ::std::option::Option<::std::string::String>,
 }
 impl UpdateOutpostResolverInput {
@@ -25,7 +25,7 @@ impl UpdateOutpostResolverInput {
     pub fn instance_count(&self) -> ::std::option::Option<i32> {
         self.instance_count
     }
-    /// <p>Amazon EC2 instance type.</p>
+    /// <p> Amazon EC2 instance type. </p>
     pub fn preferred_instance_type(&self) -> ::std::option::Option<&str> {
         self.preferred_instance_type.as_deref()
     }
@@ -90,17 +90,17 @@ impl UpdateOutpostResolverInputBuilder {
     pub fn get_instance_count(&self) -> &::std::option::Option<i32> {
         &self.instance_count
     }
-    /// <p>Amazon EC2 instance type.</p>
+    /// <p> Amazon EC2 instance type. </p>
     pub fn preferred_instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_instance_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Amazon EC2 instance type.</p>
+    /// <p> Amazon EC2 instance type. </p>
     pub fn set_preferred_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_instance_type = input;
         self
     }
-    /// <p>Amazon EC2 instance type.</p>
+    /// <p> Amazon EC2 instance type. </p>
     pub fn get_preferred_instance_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.preferred_instance_type
     }

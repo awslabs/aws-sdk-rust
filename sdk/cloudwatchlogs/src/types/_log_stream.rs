@@ -14,14 +14,14 @@ pub struct LogStream {
     pub last_event_timestamp: ::std::option::Option<i64>,
     /// <p>The ingestion time, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code> The <code>lastIngestionTime</code> value updates on an eventual consistency basis. It typically updates in less than an hour after ingestion, but in rare situations might take longer.</p>
     pub last_ingestion_time: ::std::option::Option<i64>,
-    /// <p>The sequence token.</p><important>
+    /// <p>The sequence token.</p> <important>
     /// <p>The sequence token is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are always accepted regardless of receiving an invalid sequence token. You don't need to obtain <code>uploadSequenceToken</code> to use a <code>PutLogEvents</code> action.</p>
     /// </important>
     pub upload_sequence_token: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the log stream.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The number of bytes stored.</p>
-    /// <p><b>Important:</b> As of June 17, 2019, this parameter is no longer supported for log streams, and is always reported as zero. This change applies only to log streams. The <code>storedBytes</code> parameter for log groups is not affected.</p>
+    /// <p> <b>Important:</b> As of June 17, 2019, this parameter is no longer supported for log streams, and is always reported as zero. This change applies only to log streams. The <code>storedBytes</code> parameter for log groups is not affected.</p>
     #[deprecated(
         note = "Starting on June 17, 2019, this parameter will be deprecated for log streams, and will be reported as zero. This change applies only to log streams. The storedBytes parameter for log groups is not affected."
     )]
@@ -48,7 +48,7 @@ impl LogStream {
     pub fn last_ingestion_time(&self) -> ::std::option::Option<i64> {
         self.last_ingestion_time
     }
-    /// <p>The sequence token.</p><important>
+    /// <p>The sequence token.</p> <important>
     /// <p>The sequence token is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are always accepted regardless of receiving an invalid sequence token. You don't need to obtain <code>uploadSequenceToken</code> to use a <code>PutLogEvents</code> action.</p>
     /// </important>
     pub fn upload_sequence_token(&self) -> ::std::option::Option<&str> {
@@ -59,7 +59,7 @@ impl LogStream {
         self.arn.as_deref()
     }
     /// <p>The number of bytes stored.</p>
-    /// <p><b>Important:</b> As of June 17, 2019, this parameter is no longer supported for log streams, and is always reported as zero. This change applies only to log streams. The <code>storedBytes</code> parameter for log groups is not affected.</p>
+    /// <p> <b>Important:</b> As of June 17, 2019, this parameter is no longer supported for log streams, and is always reported as zero. This change applies only to log streams. The <code>storedBytes</code> parameter for log groups is not affected.</p>
     #[deprecated(
         note = "Starting on June 17, 2019, this parameter will be deprecated for log streams, and will be reported as zero. This change applies only to log streams. The storedBytes parameter for log groups is not affected."
     )]
@@ -158,21 +158,21 @@ impl LogStreamBuilder {
     pub fn get_last_ingestion_time(&self) -> &::std::option::Option<i64> {
         &self.last_ingestion_time
     }
-    /// <p>The sequence token.</p><important>
+    /// <p>The sequence token.</p> <important>
     /// <p>The sequence token is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are always accepted regardless of receiving an invalid sequence token. You don't need to obtain <code>uploadSequenceToken</code> to use a <code>PutLogEvents</code> action.</p>
     /// </important>
     pub fn upload_sequence_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.upload_sequence_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The sequence token.</p><important>
+    /// <p>The sequence token.</p> <important>
     /// <p>The sequence token is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are always accepted regardless of receiving an invalid sequence token. You don't need to obtain <code>uploadSequenceToken</code> to use a <code>PutLogEvents</code> action.</p>
     /// </important>
     pub fn set_upload_sequence_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.upload_sequence_token = input;
         self
     }
-    /// <p>The sequence token.</p><important>
+    /// <p>The sequence token.</p> <important>
     /// <p>The sequence token is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are always accepted regardless of receiving an invalid sequence token. You don't need to obtain <code>uploadSequenceToken</code> to use a <code>PutLogEvents</code> action.</p>
     /// </important>
     pub fn get_upload_sequence_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -193,7 +193,7 @@ impl LogStreamBuilder {
         &self.arn
     }
     /// <p>The number of bytes stored.</p>
-    /// <p><b>Important:</b> As of June 17, 2019, this parameter is no longer supported for log streams, and is always reported as zero. This change applies only to log streams. The <code>storedBytes</code> parameter for log groups is not affected.</p>
+    /// <p> <b>Important:</b> As of June 17, 2019, this parameter is no longer supported for log streams, and is always reported as zero. This change applies only to log streams. The <code>storedBytes</code> parameter for log groups is not affected.</p>
     #[deprecated(
         note = "Starting on June 17, 2019, this parameter will be deprecated for log streams, and will be reported as zero. This change applies only to log streams. The storedBytes parameter for log groups is not affected."
     )]
@@ -202,7 +202,7 @@ impl LogStreamBuilder {
         self
     }
     /// <p>The number of bytes stored.</p>
-    /// <p><b>Important:</b> As of June 17, 2019, this parameter is no longer supported for log streams, and is always reported as zero. This change applies only to log streams. The <code>storedBytes</code> parameter for log groups is not affected.</p>
+    /// <p> <b>Important:</b> As of June 17, 2019, this parameter is no longer supported for log streams, and is always reported as zero. This change applies only to log streams. The <code>storedBytes</code> parameter for log groups is not affected.</p>
     #[deprecated(
         note = "Starting on June 17, 2019, this parameter will be deprecated for log streams, and will be reported as zero. This change applies only to log streams. The storedBytes parameter for log groups is not affected."
     )]
@@ -211,7 +211,7 @@ impl LogStreamBuilder {
         self
     }
     /// <p>The number of bytes stored.</p>
-    /// <p><b>Important:</b> As of June 17, 2019, this parameter is no longer supported for log streams, and is always reported as zero. This change applies only to log streams. The <code>storedBytes</code> parameter for log groups is not affected.</p>
+    /// <p> <b>Important:</b> As of June 17, 2019, this parameter is no longer supported for log streams, and is always reported as zero. This change applies only to log streams. The <code>storedBytes</code> parameter for log groups is not affected.</p>
     #[deprecated(
         note = "Starting on June 17, 2019, this parameter will be deprecated for log streams, and will be reported as zero. This change applies only to log streams. The storedBytes parameter for log groups is not affected."
     )]

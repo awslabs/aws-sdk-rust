@@ -129,25 +129,25 @@ impl ListPrefetchSchedulesFluentBuilder {
         self.inner.get_max_results()
     }
     /// <p>(Optional) If the playback configuration has more than <code>MaxResults</code> prefetch schedules, use <code>NextToken</code> to get the second and subsequent pages of results.</p>
-    /// <p>For the first <code>ListPrefetchSchedulesRequest</code> request, omit this value.</p>
-    /// <p>For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p>
-    /// <p>If the previous response didn't include a <code>NextToken</code> element, there are no more prefetch schedules to get.</p>
+    /// <p> For the first <code>ListPrefetchSchedulesRequest</code> request, omit this value.</p>
+    /// <p> For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p>
+    /// <p> If the previous response didn't include a <code>NextToken</code> element, there are no more prefetch schedules to get.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>(Optional) If the playback configuration has more than <code>MaxResults</code> prefetch schedules, use <code>NextToken</code> to get the second and subsequent pages of results.</p>
-    /// <p>For the first <code>ListPrefetchSchedulesRequest</code> request, omit this value.</p>
-    /// <p>For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p>
-    /// <p>If the previous response didn't include a <code>NextToken</code> element, there are no more prefetch schedules to get.</p>
+    /// <p> For the first <code>ListPrefetchSchedulesRequest</code> request, omit this value.</p>
+    /// <p> For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p>
+    /// <p> If the previous response didn't include a <code>NextToken</code> element, there are no more prefetch schedules to get.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
     /// <p>(Optional) If the playback configuration has more than <code>MaxResults</code> prefetch schedules, use <code>NextToken</code> to get the second and subsequent pages of results.</p>
-    /// <p>For the first <code>ListPrefetchSchedulesRequest</code> request, omit this value.</p>
-    /// <p>For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p>
-    /// <p>If the previous response didn't include a <code>NextToken</code> element, there are no more prefetch schedules to get.</p>
+    /// <p> For the first <code>ListPrefetchSchedulesRequest</code> request, omit this value.</p>
+    /// <p> For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p>
+    /// <p> If the previous response didn't include a <code>NextToken</code> element, there are no more prefetch schedules to get.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

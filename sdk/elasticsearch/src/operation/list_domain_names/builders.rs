@@ -22,7 +22,7 @@ impl ListDomainNamesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListDomainNames`.
 ///
-/// <p>Returns the name of all Elasticsearch domains owned by the current user's account.</p>
+/// <p>Returns the name of all Elasticsearch domains owned by the current user's account. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListDomainNamesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl ListDomainNamesFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Optional parameter to filter the output by domain engine type. Acceptable values are 'Elasticsearch' and 'OpenSearch'.</p>
+    /// <p> Optional parameter to filter the output by domain engine type. Acceptable values are 'Elasticsearch' and 'OpenSearch'. </p>
     pub fn engine_type(mut self, input: crate::types::EngineType) -> Self {
         self.inner = self.inner.engine_type(input);
         self
     }
-    /// <p>Optional parameter to filter the output by domain engine type. Acceptable values are 'Elasticsearch' and 'OpenSearch'.</p>
+    /// <p> Optional parameter to filter the output by domain engine type. Acceptable values are 'Elasticsearch' and 'OpenSearch'. </p>
     pub fn set_engine_type(mut self, input: ::std::option::Option<crate::types::EngineType>) -> Self {
         self.inner = self.inner.set_engine_type(input);
         self
     }
-    /// <p>Optional parameter to filter the output by domain engine type. Acceptable values are 'Elasticsearch' and 'OpenSearch'.</p>
+    /// <p> Optional parameter to filter the output by domain engine type. Acceptable values are 'Elasticsearch' and 'OpenSearch'. </p>
     pub fn get_engine_type(&self) -> &::std::option::Option<crate::types::EngineType> {
         self.inner.get_engine_type()
     }

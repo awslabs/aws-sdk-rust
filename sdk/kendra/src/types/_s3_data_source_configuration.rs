@@ -11,23 +11,17 @@ pub struct S3DataSourceConfiguration {
     /// <p>A list of glob patterns for documents that should be indexed. If a document that matches an inclusion pattern also matches an exclusion pattern, the document is not indexed.</p>
     /// <p>Some <a href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a> are:</p>
     /// <ul>
-    /// <li>
-    /// <p><i>*.txt</i> will include all text files in a directory (files with the extension .txt).</p></li>
-    /// <li>
-    /// <p><i>**/*.txt</i> will include all text files in a directory and its subdirectories.</p></li>
-    /// <li>
-    /// <p><i>*tax*</i> will include all files in a directory that contain 'tax' in the file name, such as 'tax', 'taxes', 'income_tax'.</p></li>
+    /// <li> <p> <i>*.txt</i> will include all text files in a directory (files with the extension .txt).</p> </li>
+    /// <li> <p> <i>**/*.txt</i> will include all text files in a directory and its subdirectories.</p> </li>
+    /// <li> <p> <i>*tax*</i> will include all files in a directory that contain 'tax' in the file name, such as 'tax', 'taxes', 'income_tax'.</p> </li>
     /// </ul>
     pub inclusion_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of glob patterns for documents that should not be indexed. If a document that matches an inclusion prefix or inclusion pattern also matches an exclusion pattern, the document is not indexed.</p>
     /// <p>Some <a href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a> are:</p>
     /// <ul>
-    /// <li>
-    /// <p><i>*.png , *.jpg</i> will exclude all PNG and JPEG image files in a directory (files with the extensions .png and .jpg).</p></li>
-    /// <li>
-    /// <p><i>*internal*</i> will exclude all files in a directory that contain 'internal' in the file name, such as 'internal', 'internal_only', 'company_internal'.</p></li>
-    /// <li>
-    /// <p><i>**/*internal*</i> will exclude all internal-related files in a directory and its subdirectories.</p></li>
+    /// <li> <p> <i>*.png , *.jpg</i> will exclude all PNG and JPEG image files in a directory (files with the extensions .png and .jpg).</p> </li>
+    /// <li> <p> <i>*internal*</i> will exclude all files in a directory that contain 'internal' in the file name, such as 'internal', 'internal_only', 'company_internal'.</p> </li>
+    /// <li> <p> <i>**/*internal*</i> will exclude all internal-related files in a directory and its subdirectories.</p> </li>
     /// </ul>
     pub exclusion_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Document metadata files that contain information such as the document access control information, source URI, document author, and custom attributes. Each metadata file contains metadata about a single document.</p>
@@ -50,12 +44,9 @@ impl S3DataSourceConfiguration {
     /// <p>A list of glob patterns for documents that should be indexed. If a document that matches an inclusion pattern also matches an exclusion pattern, the document is not indexed.</p>
     /// <p>Some <a href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a> are:</p>
     /// <ul>
-    /// <li>
-    /// <p><i>*.txt</i> will include all text files in a directory (files with the extension .txt).</p></li>
-    /// <li>
-    /// <p><i>**/*.txt</i> will include all text files in a directory and its subdirectories.</p></li>
-    /// <li>
-    /// <p><i>*tax*</i> will include all files in a directory that contain 'tax' in the file name, such as 'tax', 'taxes', 'income_tax'.</p></li>
+    /// <li> <p> <i>*.txt</i> will include all text files in a directory (files with the extension .txt).</p> </li>
+    /// <li> <p> <i>**/*.txt</i> will include all text files in a directory and its subdirectories.</p> </li>
+    /// <li> <p> <i>*tax*</i> will include all files in a directory that contain 'tax' in the file name, such as 'tax', 'taxes', 'income_tax'.</p> </li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inclusion_patterns.is_none()`.
@@ -65,12 +56,9 @@ impl S3DataSourceConfiguration {
     /// <p>A list of glob patterns for documents that should not be indexed. If a document that matches an inclusion prefix or inclusion pattern also matches an exclusion pattern, the document is not indexed.</p>
     /// <p>Some <a href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a> are:</p>
     /// <ul>
-    /// <li>
-    /// <p><i>*.png , *.jpg</i> will exclude all PNG and JPEG image files in a directory (files with the extensions .png and .jpg).</p></li>
-    /// <li>
-    /// <p><i>*internal*</i> will exclude all files in a directory that contain 'internal' in the file name, such as 'internal', 'internal_only', 'company_internal'.</p></li>
-    /// <li>
-    /// <p><i>**/*internal*</i> will exclude all internal-related files in a directory and its subdirectories.</p></li>
+    /// <li> <p> <i>*.png , *.jpg</i> will exclude all PNG and JPEG image files in a directory (files with the extensions .png and .jpg).</p> </li>
+    /// <li> <p> <i>*internal*</i> will exclude all files in a directory that contain 'internal' in the file name, such as 'internal', 'internal_only', 'company_internal'.</p> </li>
+    /// <li> <p> <i>**/*internal*</i> will exclude all internal-related files in a directory and its subdirectories.</p> </li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exclusion_patterns.is_none()`.
@@ -147,12 +135,9 @@ impl S3DataSourceConfigurationBuilder {
     /// <p>A list of glob patterns for documents that should be indexed. If a document that matches an inclusion pattern also matches an exclusion pattern, the document is not indexed.</p>
     /// <p>Some <a href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a> are:</p>
     /// <ul>
-    /// <li>
-    /// <p><i>*.txt</i> will include all text files in a directory (files with the extension .txt).</p></li>
-    /// <li>
-    /// <p><i>**/*.txt</i> will include all text files in a directory and its subdirectories.</p></li>
-    /// <li>
-    /// <p><i>*tax*</i> will include all files in a directory that contain 'tax' in the file name, such as 'tax', 'taxes', 'income_tax'.</p></li>
+    /// <li> <p> <i>*.txt</i> will include all text files in a directory (files with the extension .txt).</p> </li>
+    /// <li> <p> <i>**/*.txt</i> will include all text files in a directory and its subdirectories.</p> </li>
+    /// <li> <p> <i>*tax*</i> will include all files in a directory that contain 'tax' in the file name, such as 'tax', 'taxes', 'income_tax'.</p> </li>
     /// </ul>
     pub fn inclusion_patterns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.inclusion_patterns.unwrap_or_default();
@@ -163,12 +148,9 @@ impl S3DataSourceConfigurationBuilder {
     /// <p>A list of glob patterns for documents that should be indexed. If a document that matches an inclusion pattern also matches an exclusion pattern, the document is not indexed.</p>
     /// <p>Some <a href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a> are:</p>
     /// <ul>
-    /// <li>
-    /// <p><i>*.txt</i> will include all text files in a directory (files with the extension .txt).</p></li>
-    /// <li>
-    /// <p><i>**/*.txt</i> will include all text files in a directory and its subdirectories.</p></li>
-    /// <li>
-    /// <p><i>*tax*</i> will include all files in a directory that contain 'tax' in the file name, such as 'tax', 'taxes', 'income_tax'.</p></li>
+    /// <li> <p> <i>*.txt</i> will include all text files in a directory (files with the extension .txt).</p> </li>
+    /// <li> <p> <i>**/*.txt</i> will include all text files in a directory and its subdirectories.</p> </li>
+    /// <li> <p> <i>*tax*</i> will include all files in a directory that contain 'tax' in the file name, such as 'tax', 'taxes', 'income_tax'.</p> </li>
     /// </ul>
     pub fn set_inclusion_patterns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inclusion_patterns = input;
@@ -177,12 +159,9 @@ impl S3DataSourceConfigurationBuilder {
     /// <p>A list of glob patterns for documents that should be indexed. If a document that matches an inclusion pattern also matches an exclusion pattern, the document is not indexed.</p>
     /// <p>Some <a href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a> are:</p>
     /// <ul>
-    /// <li>
-    /// <p><i>*.txt</i> will include all text files in a directory (files with the extension .txt).</p></li>
-    /// <li>
-    /// <p><i>**/*.txt</i> will include all text files in a directory and its subdirectories.</p></li>
-    /// <li>
-    /// <p><i>*tax*</i> will include all files in a directory that contain 'tax' in the file name, such as 'tax', 'taxes', 'income_tax'.</p></li>
+    /// <li> <p> <i>*.txt</i> will include all text files in a directory (files with the extension .txt).</p> </li>
+    /// <li> <p> <i>**/*.txt</i> will include all text files in a directory and its subdirectories.</p> </li>
+    /// <li> <p> <i>*tax*</i> will include all files in a directory that contain 'tax' in the file name, such as 'tax', 'taxes', 'income_tax'.</p> </li>
     /// </ul>
     pub fn get_inclusion_patterns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.inclusion_patterns
@@ -194,12 +173,9 @@ impl S3DataSourceConfigurationBuilder {
     /// <p>A list of glob patterns for documents that should not be indexed. If a document that matches an inclusion prefix or inclusion pattern also matches an exclusion pattern, the document is not indexed.</p>
     /// <p>Some <a href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a> are:</p>
     /// <ul>
-    /// <li>
-    /// <p><i>*.png , *.jpg</i> will exclude all PNG and JPEG image files in a directory (files with the extensions .png and .jpg).</p></li>
-    /// <li>
-    /// <p><i>*internal*</i> will exclude all files in a directory that contain 'internal' in the file name, such as 'internal', 'internal_only', 'company_internal'.</p></li>
-    /// <li>
-    /// <p><i>**/*internal*</i> will exclude all internal-related files in a directory and its subdirectories.</p></li>
+    /// <li> <p> <i>*.png , *.jpg</i> will exclude all PNG and JPEG image files in a directory (files with the extensions .png and .jpg).</p> </li>
+    /// <li> <p> <i>*internal*</i> will exclude all files in a directory that contain 'internal' in the file name, such as 'internal', 'internal_only', 'company_internal'.</p> </li>
+    /// <li> <p> <i>**/*internal*</i> will exclude all internal-related files in a directory and its subdirectories.</p> </li>
     /// </ul>
     pub fn exclusion_patterns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.exclusion_patterns.unwrap_or_default();
@@ -210,12 +186,9 @@ impl S3DataSourceConfigurationBuilder {
     /// <p>A list of glob patterns for documents that should not be indexed. If a document that matches an inclusion prefix or inclusion pattern also matches an exclusion pattern, the document is not indexed.</p>
     /// <p>Some <a href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a> are:</p>
     /// <ul>
-    /// <li>
-    /// <p><i>*.png , *.jpg</i> will exclude all PNG and JPEG image files in a directory (files with the extensions .png and .jpg).</p></li>
-    /// <li>
-    /// <p><i>*internal*</i> will exclude all files in a directory that contain 'internal' in the file name, such as 'internal', 'internal_only', 'company_internal'.</p></li>
-    /// <li>
-    /// <p><i>**/*internal*</i> will exclude all internal-related files in a directory and its subdirectories.</p></li>
+    /// <li> <p> <i>*.png , *.jpg</i> will exclude all PNG and JPEG image files in a directory (files with the extensions .png and .jpg).</p> </li>
+    /// <li> <p> <i>*internal*</i> will exclude all files in a directory that contain 'internal' in the file name, such as 'internal', 'internal_only', 'company_internal'.</p> </li>
+    /// <li> <p> <i>**/*internal*</i> will exclude all internal-related files in a directory and its subdirectories.</p> </li>
     /// </ul>
     pub fn set_exclusion_patterns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.exclusion_patterns = input;
@@ -224,12 +197,9 @@ impl S3DataSourceConfigurationBuilder {
     /// <p>A list of glob patterns for documents that should not be indexed. If a document that matches an inclusion prefix or inclusion pattern also matches an exclusion pattern, the document is not indexed.</p>
     /// <p>Some <a href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a> are:</p>
     /// <ul>
-    /// <li>
-    /// <p><i>*.png , *.jpg</i> will exclude all PNG and JPEG image files in a directory (files with the extensions .png and .jpg).</p></li>
-    /// <li>
-    /// <p><i>*internal*</i> will exclude all files in a directory that contain 'internal' in the file name, such as 'internal', 'internal_only', 'company_internal'.</p></li>
-    /// <li>
-    /// <p><i>**/*internal*</i> will exclude all internal-related files in a directory and its subdirectories.</p></li>
+    /// <li> <p> <i>*.png , *.jpg</i> will exclude all PNG and JPEG image files in a directory (files with the extensions .png and .jpg).</p> </li>
+    /// <li> <p> <i>*internal*</i> will exclude all files in a directory that contain 'internal' in the file name, such as 'internal', 'internal_only', 'company_internal'.</p> </li>
+    /// <li> <p> <i>**/*internal*</i> will exclude all internal-related files in a directory and its subdirectories.</p> </li>
     /// </ul>
     pub fn get_exclusion_patterns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.exclusion_patterns

@@ -123,17 +123,17 @@ impl UpdateEvaluationFluentBuilder {
     pub fn get_evaluation_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_evaluation_id()
     }
-    /// <p>A new user-supplied name or description of the <code>Evaluation</code> that will replace the current content.</p>
+    /// <p>A new user-supplied name or description of the <code>Evaluation</code> that will replace the current content. </p>
     pub fn evaluation_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.evaluation_name(input.into());
         self
     }
-    /// <p>A new user-supplied name or description of the <code>Evaluation</code> that will replace the current content.</p>
+    /// <p>A new user-supplied name or description of the <code>Evaluation</code> that will replace the current content. </p>
     pub fn set_evaluation_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_evaluation_name(input);
         self
     }
-    /// <p>A new user-supplied name or description of the <code>Evaluation</code> that will replace the current content.</p>
+    /// <p>A new user-supplied name or description of the <code>Evaluation</code> that will replace the current content. </p>
     pub fn get_evaluation_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_evaluation_name()
     }

@@ -9,7 +9,7 @@ pub struct HlsContentProtection {
     pub method: ::std::option::Option<::std::string::String>,
     /// <p>If you want Elastic Transcoder to generate a key for you, leave this field blank.</p>
     /// <p>If you choose to supply your own key, you must encrypt the key by using AWS KMS. The key must be base64-encoded, and it must be one of the following bit lengths before being base64-encoded:</p>
-    /// <p><code>128</code>, <code>192</code>, or <code>256</code>.</p>
+    /// <p> <code>128</code>, <code>192</code>, or <code>256</code>. </p>
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>If Elastic Transcoder is generating your key for you, you must leave this field blank.</p>
     /// <p>The MD5 digest of the key that you want Elastic Transcoder to use to encrypt your output file, and that you want Elastic Transcoder to use as a checksum to make sure your key was not corrupted in transit. The key MD5 must be base64-encoded, and it must be exactly 16 bytes before being base64- encoded.</p>
@@ -30,7 +30,7 @@ impl HlsContentProtection {
     }
     /// <p>If you want Elastic Transcoder to generate a key for you, leave this field blank.</p>
     /// <p>If you choose to supply your own key, you must encrypt the key by using AWS KMS. The key must be base64-encoded, and it must be one of the following bit lengths before being base64-encoded:</p>
-    /// <p><code>128</code>, <code>192</code>, or <code>256</code>.</p>
+    /// <p> <code>128</code>, <code>192</code>, or <code>256</code>. </p>
     pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
     }
@@ -91,21 +91,21 @@ impl HlsContentProtectionBuilder {
     }
     /// <p>If you want Elastic Transcoder to generate a key for you, leave this field blank.</p>
     /// <p>If you choose to supply your own key, you must encrypt the key by using AWS KMS. The key must be base64-encoded, and it must be one of the following bit lengths before being base64-encoded:</p>
-    /// <p><code>128</code>, <code>192</code>, or <code>256</code>.</p>
+    /// <p> <code>128</code>, <code>192</code>, or <code>256</code>. </p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If you want Elastic Transcoder to generate a key for you, leave this field blank.</p>
     /// <p>If you choose to supply your own key, you must encrypt the key by using AWS KMS. The key must be base64-encoded, and it must be one of the following bit lengths before being base64-encoded:</p>
-    /// <p><code>128</code>, <code>192</code>, or <code>256</code>.</p>
+    /// <p> <code>128</code>, <code>192</code>, or <code>256</code>. </p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
     }
     /// <p>If you want Elastic Transcoder to generate a key for you, leave this field blank.</p>
     /// <p>If you choose to supply your own key, you must encrypt the key by using AWS KMS. The key must be base64-encoded, and it must be one of the following bit lengths before being base64-encoded:</p>
-    /// <p><code>128</code>, <code>192</code>, or <code>256</code>.</p>
+    /// <p> <code>128</code>, <code>192</code>, or <code>256</code>. </p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.key
     }

@@ -3,24 +3,24 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnableFederationOutput {
-    /// <p>The ARN of the event data store for which you enabled Lake query federation.</p>
+    /// <p> The ARN of the event data store for which you enabled Lake query federation. </p>
     pub event_data_store_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The federation status.</p>
+    /// <p> The federation status. </p>
     pub federation_status: ::std::option::Option<crate::types::FederationStatus>,
-    /// <p>The ARN of the federation role.</p>
+    /// <p> The ARN of the federation role. </p>
     pub federation_role_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl EnableFederationOutput {
-    /// <p>The ARN of the event data store for which you enabled Lake query federation.</p>
+    /// <p> The ARN of the event data store for which you enabled Lake query federation. </p>
     pub fn event_data_store_arn(&self) -> ::std::option::Option<&str> {
         self.event_data_store_arn.as_deref()
     }
-    /// <p>The federation status.</p>
+    /// <p> The federation status. </p>
     pub fn federation_status(&self) -> ::std::option::Option<&crate::types::FederationStatus> {
         self.federation_status.as_ref()
     }
-    /// <p>The ARN of the federation role.</p>
+    /// <p> The ARN of the federation role. </p>
     pub fn federation_role_arn(&self) -> ::std::option::Option<&str> {
         self.federation_role_arn.as_deref()
     }
@@ -47,45 +47,45 @@ pub struct EnableFederationOutputBuilder {
     _request_id: Option<String>,
 }
 impl EnableFederationOutputBuilder {
-    /// <p>The ARN of the event data store for which you enabled Lake query federation.</p>
+    /// <p> The ARN of the event data store for which you enabled Lake query federation. </p>
     pub fn event_data_store_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_data_store_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the event data store for which you enabled Lake query federation.</p>
+    /// <p> The ARN of the event data store for which you enabled Lake query federation. </p>
     pub fn set_event_data_store_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_data_store_arn = input;
         self
     }
-    /// <p>The ARN of the event data store for which you enabled Lake query federation.</p>
+    /// <p> The ARN of the event data store for which you enabled Lake query federation. </p>
     pub fn get_event_data_store_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_data_store_arn
     }
-    /// <p>The federation status.</p>
+    /// <p> The federation status. </p>
     pub fn federation_status(mut self, input: crate::types::FederationStatus) -> Self {
         self.federation_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The federation status.</p>
+    /// <p> The federation status. </p>
     pub fn set_federation_status(mut self, input: ::std::option::Option<crate::types::FederationStatus>) -> Self {
         self.federation_status = input;
         self
     }
-    /// <p>The federation status.</p>
+    /// <p> The federation status. </p>
     pub fn get_federation_status(&self) -> &::std::option::Option<crate::types::FederationStatus> {
         &self.federation_status
     }
-    /// <p>The ARN of the federation role.</p>
+    /// <p> The ARN of the federation role. </p>
     pub fn federation_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.federation_role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the federation role.</p>
+    /// <p> The ARN of the federation role. </p>
     pub fn set_federation_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.federation_role_arn = input;
         self
     }
-    /// <p>The ARN of the federation role.</p>
+    /// <p> The ARN of the federation role. </p>
     pub fn get_federation_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.federation_role_arn
     }

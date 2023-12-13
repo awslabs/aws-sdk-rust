@@ -253,13 +253,13 @@ pub enum TagResourceError {
     InvalidParameterException(crate::types::error::InvalidParameterException),
     /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Textract.</p>
     ProvisionedThroughputExceededException(crate::types::error::ProvisionedThroughputExceededException),
-    /// <p>Returned when an operation tried to access a nonexistent resource.</p>
+    /// <p> Returned when an operation tried to access a nonexistent resource. </p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>Returned when a request cannot be completed as it would exceed a maximum service quota.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>Amazon Textract is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
-    /// <p>Indicates that a request was not valid. Check request for proper formatting.</p>
+    /// <p> Indicates that a request was not valid. Check request for proper formatting. </p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

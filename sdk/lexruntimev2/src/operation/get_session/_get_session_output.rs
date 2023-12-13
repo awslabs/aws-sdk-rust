@@ -5,9 +5,9 @@
 pub struct GetSessionOutput {
     /// <p>The identifier of the returned session.</p>
     pub session_id: ::std::option::Option<::std::string::String>,
-    /// <p>A list of messages that were last sent to the user. The messages are ordered based on the order that your returned the messages from your Lambda function or the order that messages are defined in the bot.</p>
+    /// <p>A list of messages that were last sent to the user. The messages are ordered based on the order that your returned the messages from your Lambda function or the order that messages are defined in the bot. </p>
     pub messages: ::std::option::Option<::std::vec::Vec<crate::types::Message>>,
-    /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance.</p>
+    /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance. </p>
     /// <p>Each interpretation includes the intent, a score that indicates how confident Amazon Lex V2 is that the interpretation is the correct one, and an optional sentiment response that indicates the sentiment expressed in the utterance.</p>
     pub interpretations: ::std::option::Option<::std::vec::Vec<crate::types::Interpretation>>,
     /// <p>Represents the current state of the dialog between the user and the bot.</p>
@@ -20,13 +20,13 @@ impl GetSessionOutput {
     pub fn session_id(&self) -> ::std::option::Option<&str> {
         self.session_id.as_deref()
     }
-    /// <p>A list of messages that were last sent to the user. The messages are ordered based on the order that your returned the messages from your Lambda function or the order that messages are defined in the bot.</p>
+    /// <p>A list of messages that were last sent to the user. The messages are ordered based on the order that your returned the messages from your Lambda function or the order that messages are defined in the bot. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.messages.is_none()`.
     pub fn messages(&self) -> &[crate::types::Message] {
         self.messages.as_deref().unwrap_or_default()
     }
-    /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance.</p>
+    /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance. </p>
     /// <p>Each interpretation includes the intent, a score that indicates how confident Amazon Lex V2 is that the interpretation is the correct one, and an optional sentiment response that indicates the sentiment expressed in the utterance.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.interpretations.is_none()`.
@@ -80,19 +80,19 @@ impl GetSessionOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_messages`](Self::set_messages).
     ///
-    /// <p>A list of messages that were last sent to the user. The messages are ordered based on the order that your returned the messages from your Lambda function or the order that messages are defined in the bot.</p>
+    /// <p>A list of messages that were last sent to the user. The messages are ordered based on the order that your returned the messages from your Lambda function or the order that messages are defined in the bot. </p>
     pub fn messages(mut self, input: crate::types::Message) -> Self {
         let mut v = self.messages.unwrap_or_default();
         v.push(input);
         self.messages = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of messages that were last sent to the user. The messages are ordered based on the order that your returned the messages from your Lambda function or the order that messages are defined in the bot.</p>
+    /// <p>A list of messages that were last sent to the user. The messages are ordered based on the order that your returned the messages from your Lambda function or the order that messages are defined in the bot. </p>
     pub fn set_messages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Message>>) -> Self {
         self.messages = input;
         self
     }
-    /// <p>A list of messages that were last sent to the user. The messages are ordered based on the order that your returned the messages from your Lambda function or the order that messages are defined in the bot.</p>
+    /// <p>A list of messages that were last sent to the user. The messages are ordered based on the order that your returned the messages from your Lambda function or the order that messages are defined in the bot. </p>
     pub fn get_messages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Message>> {
         &self.messages
     }
@@ -100,7 +100,7 @@ impl GetSessionOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_interpretations`](Self::set_interpretations).
     ///
-    /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance.</p>
+    /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance. </p>
     /// <p>Each interpretation includes the intent, a score that indicates how confident Amazon Lex V2 is that the interpretation is the correct one, and an optional sentiment response that indicates the sentiment expressed in the utterance.</p>
     pub fn interpretations(mut self, input: crate::types::Interpretation) -> Self {
         let mut v = self.interpretations.unwrap_or_default();
@@ -108,13 +108,13 @@ impl GetSessionOutputBuilder {
         self.interpretations = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance.</p>
+    /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance. </p>
     /// <p>Each interpretation includes the intent, a score that indicates how confident Amazon Lex V2 is that the interpretation is the correct one, and an optional sentiment response that indicates the sentiment expressed in the utterance.</p>
     pub fn set_interpretations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Interpretation>>) -> Self {
         self.interpretations = input;
         self
     }
-    /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance.</p>
+    /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance. </p>
     /// <p>Each interpretation includes the intent, a score that indicates how confident Amazon Lex V2 is that the interpretation is the correct one, and an optional sentiment response that indicates the sentiment expressed in the utterance.</p>
     pub fn get_interpretations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Interpretation>> {
         &self.interpretations

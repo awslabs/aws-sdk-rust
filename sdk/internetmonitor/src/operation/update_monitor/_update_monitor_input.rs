@@ -3,10 +3,10 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateMonitorInput {
-    /// <p>The name of the monitor.</p>
+    /// <p>The name of the monitor. </p>
     pub monitor_name: ::std::option::Option<::std::string::String>,
     /// <p>The resources to include in a monitor, which you provide as a set of Amazon Resource Names (ARNs). Resources can be VPCs, NLBs, Amazon CloudFront distributions, or Amazon WorkSpaces directories.</p>
-    /// <p>You can add a combination of VPCs and CloudFront distributions, or you can add WorkSpaces directories, or you can add NLBs. You can't add NLBs or WorkSpaces directories together with any other resources.</p><note>
+    /// <p>You can add a combination of VPCs and CloudFront distributions, or you can add WorkSpaces directories, or you can add NLBs. You can't add NLBs or WorkSpaces directories together with any other resources.</p> <note>
     /// <p>If you add only Amazon Virtual Private Clouds resources, at least one VPC must have an Internet Gateway attached to it, to make sure that it has internet connectivity.</p>
     /// </note>
     pub resources_to_add: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -28,12 +28,12 @@ pub struct UpdateMonitorInput {
     pub health_events_config: ::std::option::Option<crate::types::HealthEventsConfig>,
 }
 impl UpdateMonitorInput {
-    /// <p>The name of the monitor.</p>
+    /// <p>The name of the monitor. </p>
     pub fn monitor_name(&self) -> ::std::option::Option<&str> {
         self.monitor_name.as_deref()
     }
     /// <p>The resources to include in a monitor, which you provide as a set of Amazon Resource Names (ARNs). Resources can be VPCs, NLBs, Amazon CloudFront distributions, or Amazon WorkSpaces directories.</p>
-    /// <p>You can add a combination of VPCs and CloudFront distributions, or you can add WorkSpaces directories, or you can add NLBs. You can't add NLBs or WorkSpaces directories together with any other resources.</p><note>
+    /// <p>You can add a combination of VPCs and CloudFront distributions, or you can add WorkSpaces directories, or you can add NLBs. You can't add NLBs or WorkSpaces directories together with any other resources.</p> <note>
     /// <p>If you add only Amazon Virtual Private Clouds resources, at least one VPC must have an Internet Gateway attached to it, to make sure that it has internet connectivity.</p>
     /// </note>
     ///
@@ -96,18 +96,18 @@ pub struct UpdateMonitorInputBuilder {
     pub(crate) health_events_config: ::std::option::Option<crate::types::HealthEventsConfig>,
 }
 impl UpdateMonitorInputBuilder {
-    /// <p>The name of the monitor.</p>
+    /// <p>The name of the monitor. </p>
     /// This field is required.
     pub fn monitor_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitor_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the monitor.</p>
+    /// <p>The name of the monitor. </p>
     pub fn set_monitor_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.monitor_name = input;
         self
     }
-    /// <p>The name of the monitor.</p>
+    /// <p>The name of the monitor. </p>
     pub fn get_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.monitor_name
     }
@@ -116,7 +116,7 @@ impl UpdateMonitorInputBuilder {
     /// To override the contents of this collection use [`set_resources_to_add`](Self::set_resources_to_add).
     ///
     /// <p>The resources to include in a monitor, which you provide as a set of Amazon Resource Names (ARNs). Resources can be VPCs, NLBs, Amazon CloudFront distributions, or Amazon WorkSpaces directories.</p>
-    /// <p>You can add a combination of VPCs and CloudFront distributions, or you can add WorkSpaces directories, or you can add NLBs. You can't add NLBs or WorkSpaces directories together with any other resources.</p><note>
+    /// <p>You can add a combination of VPCs and CloudFront distributions, or you can add WorkSpaces directories, or you can add NLBs. You can't add NLBs or WorkSpaces directories together with any other resources.</p> <note>
     /// <p>If you add only Amazon Virtual Private Clouds resources, at least one VPC must have an Internet Gateway attached to it, to make sure that it has internet connectivity.</p>
     /// </note>
     pub fn resources_to_add(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -126,7 +126,7 @@ impl UpdateMonitorInputBuilder {
         self
     }
     /// <p>The resources to include in a monitor, which you provide as a set of Amazon Resource Names (ARNs). Resources can be VPCs, NLBs, Amazon CloudFront distributions, or Amazon WorkSpaces directories.</p>
-    /// <p>You can add a combination of VPCs and CloudFront distributions, or you can add WorkSpaces directories, or you can add NLBs. You can't add NLBs or WorkSpaces directories together with any other resources.</p><note>
+    /// <p>You can add a combination of VPCs and CloudFront distributions, or you can add WorkSpaces directories, or you can add NLBs. You can't add NLBs or WorkSpaces directories together with any other resources.</p> <note>
     /// <p>If you add only Amazon Virtual Private Clouds resources, at least one VPC must have an Internet Gateway attached to it, to make sure that it has internet connectivity.</p>
     /// </note>
     pub fn set_resources_to_add(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
@@ -134,7 +134,7 @@ impl UpdateMonitorInputBuilder {
         self
     }
     /// <p>The resources to include in a monitor, which you provide as a set of Amazon Resource Names (ARNs). Resources can be VPCs, NLBs, Amazon CloudFront distributions, or Amazon WorkSpaces directories.</p>
-    /// <p>You can add a combination of VPCs and CloudFront distributions, or you can add WorkSpaces directories, or you can add NLBs. You can't add NLBs or WorkSpaces directories together with any other resources.</p><note>
+    /// <p>You can add a combination of VPCs and CloudFront distributions, or you can add WorkSpaces directories, or you can add NLBs. You can't add NLBs or WorkSpaces directories together with any other resources.</p> <note>
     /// <p>If you add only Amazon Virtual Private Clouds resources, at least one VPC must have an Internet Gateway attached to it, to make sure that it has internet connectivity.</p>
     /// </note>
     pub fn get_resources_to_add(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {

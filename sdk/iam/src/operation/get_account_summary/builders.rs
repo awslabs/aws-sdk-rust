@@ -23,7 +23,7 @@ impl GetAccountSummaryInputBuilder {
 /// Fluent builder constructing a request to `GetAccountSummary`.
 ///
 /// <p>Retrieves information about IAM entity usage and IAM quotas in the Amazon Web Services account.</p>
-/// <p>For information about IAM quotas, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM and STS quotas</a> in the <i>IAM User Guide</i>.</p>
+/// <p> For information about IAM quotas, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM and STS quotas</a> in the <i>IAM User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAccountSummaryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

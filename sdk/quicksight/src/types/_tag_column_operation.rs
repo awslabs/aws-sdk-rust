@@ -6,7 +6,7 @@
 pub struct TagColumnOperation {
     /// <p>The column that this operation acts on.</p>
     pub column_name: ::std::string::String,
-    /// <p>The dataset column tag, currently only used for geospatial type tagging.</p><note>
+    /// <p>The dataset column tag, currently only used for geospatial type tagging.</p> <note>
     /// <p>This is not tags for the Amazon Web Services tagging feature.</p>
     /// </note>
     pub tags: ::std::vec::Vec<crate::types::ColumnTag>,
@@ -17,7 +17,7 @@ impl TagColumnOperation {
         use std::ops::Deref;
         self.column_name.deref()
     }
-    /// <p>The dataset column tag, currently only used for geospatial type tagging.</p><note>
+    /// <p>The dataset column tag, currently only used for geospatial type tagging.</p> <note>
     /// <p>This is not tags for the Amazon Web Services tagging feature.</p>
     /// </note>
     pub fn tags(&self) -> &[crate::types::ColumnTag] {
@@ -59,7 +59,7 @@ impl TagColumnOperationBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The dataset column tag, currently only used for geospatial type tagging.</p><note>
+    /// <p>The dataset column tag, currently only used for geospatial type tagging.</p> <note>
     /// <p>This is not tags for the Amazon Web Services tagging feature.</p>
     /// </note>
     pub fn tags(mut self, input: crate::types::ColumnTag) -> Self {
@@ -68,14 +68,14 @@ impl TagColumnOperationBuilder {
         self.tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The dataset column tag, currently only used for geospatial type tagging.</p><note>
+    /// <p>The dataset column tag, currently only used for geospatial type tagging.</p> <note>
     /// <p>This is not tags for the Amazon Web Services tagging feature.</p>
     /// </note>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnTag>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>The dataset column tag, currently only used for geospatial type tagging.</p><note>
+    /// <p>The dataset column tag, currently only used for geospatial type tagging.</p> <note>
     /// <p>This is not tags for the Amazon Web Services tagging feature.</p>
     /// </note>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnTag>> {

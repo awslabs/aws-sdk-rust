@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelDetectMitigationActionsTaskInput {
-    /// <p>The unique identifier of the task.</p>
+    /// <p> The unique identifier of the task. </p>
     pub task_id: ::std::option::Option<::std::string::String>,
 }
 impl CancelDetectMitigationActionsTaskInput {
-    /// <p>The unique identifier of the task.</p>
+    /// <p> The unique identifier of the task. </p>
     pub fn task_id(&self) -> ::std::option::Option<&str> {
         self.task_id.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct CancelDetectMitigationActionsTaskInputBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
 }
 impl CancelDetectMitigationActionsTaskInputBuilder {
-    /// <p>The unique identifier of the task.</p>
+    /// <p> The unique identifier of the task. </p>
     /// This field is required.
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the task.</p>
+    /// <p> The unique identifier of the task. </p>
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_id = input;
         self
     }
-    /// <p>The unique identifier of the task.</p>
+    /// <p> The unique identifier of the task. </p>
     pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.task_id
     }

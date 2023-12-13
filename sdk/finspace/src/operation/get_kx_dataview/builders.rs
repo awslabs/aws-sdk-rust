@@ -22,7 +22,7 @@ impl GetKxDataviewInputBuilder {
 }
 /// Fluent builder constructing a request to `GetKxDataview`.
 ///
-/// <p>Retrieves details of the dataview.</p>
+/// <p> Retrieves details of the dataview. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetKxDataviewFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -122,17 +122,17 @@ impl GetKxDataviewFluentBuilder {
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_environment_id()
     }
-    /// <p>The name of the database where you created the dataview.</p>
+    /// <p> The name of the database where you created the dataview.</p>
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.database_name(input.into());
         self
     }
-    /// <p>The name of the database where you created the dataview.</p>
+    /// <p> The name of the database where you created the dataview.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_database_name(input);
         self
     }
-    /// <p>The name of the database where you created the dataview.</p>
+    /// <p> The name of the database where you created the dataview.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_database_name()
     }

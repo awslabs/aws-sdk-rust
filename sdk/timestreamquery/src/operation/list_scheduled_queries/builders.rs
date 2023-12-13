@@ -22,7 +22,7 @@ impl ListScheduledQueriesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListScheduledQueries`.
 ///
-/// <p>Gets a list of all scheduled queries in the caller's Amazon account and Region. <code>ListScheduledQueries</code> is eventually consistent.</p>
+/// <p>Gets a list of all scheduled queries in the caller's Amazon account and Region. <code>ListScheduledQueries</code> is eventually consistent. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListScheduledQueriesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -128,17 +128,17 @@ impl ListScheduledQueriesFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p>A pagination token to resume pagination.</p>
+    /// <p> A pagination token to resume pagination.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>A pagination token to resume pagination.</p>
+    /// <p> A pagination token to resume pagination.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>A pagination token to resume pagination.</p>
+    /// <p> A pagination token to resume pagination.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

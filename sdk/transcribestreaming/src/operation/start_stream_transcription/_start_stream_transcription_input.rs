@@ -11,17 +11,14 @@ pub struct StartStreamTranscriptionInput {
     pub media_sample_rate_hertz: ::std::option::Option<i32>,
     /// <p>Specify the encoding of your input audio. Supported formats are:</p>
     /// <ul>
-    /// <li>
-    /// <p>FLAC</p></li>
-    /// <li>
-    /// <p>OPUS-encoded audio in an Ogg container</p></li>
-    /// <li>
-    /// <p>PCM (only signed 16-bit little-endian audio formats, which does not include WAV)</p></li>
+    /// <li> <p>FLAC</p> </li>
+    /// <li> <p>OPUS-encoded audio in an Ogg container</p> </li>
+    /// <li> <p>PCM (only signed 16-bit little-endian audio formats, which does not include WAV)</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a>.</p>
     pub media_encoding: ::std::option::Option<crate::types::MediaEncoding>,
     /// <p>Specify the name of the custom vocabulary that you want to use when processing your transcription. Note that vocabulary names are case sensitive.</p>
-    /// <p>If the language of the specified custom vocabulary doesn't match the language identified in your media, the custom vocabulary is not applied to your transcription.</p><important>
+    /// <p>If the language of the specified custom vocabulary doesn't match the language identified in your media, the custom vocabulary is not applied to your transcription.</p> <important>
     /// <p>This parameter is <b>not</b> intended for use with the <code>IdentifyLanguage</code> parameter. If you're including <code>IdentifyLanguage</code> in your request and want to use one or more custom vocabularies with your transcription, use the <code>VocabularyNames</code> parameter instead.</p>
     /// </important>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom vocabularies</a>.</p>
@@ -33,7 +30,7 @@ pub struct StartStreamTranscriptionInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html">Transcribing streaming audio</a>.</p>
     pub audio_stream: ::aws_smithy_http::event_stream::EventStreamSender<crate::types::AudioStream, crate::types::error::AudioStreamError>,
     /// <p>Specify the name of the custom vocabulary filter that you want to use when processing your transcription. Note that vocabulary filter names are case sensitive.</p>
-    /// <p>If the language of the specified custom vocabulary filter doesn't match the language identified in your media, the vocabulary filter is not applied to your transcription.</p><important>
+    /// <p>If the language of the specified custom vocabulary filter doesn't match the language identified in your media, the vocabulary filter is not applied to your transcription.</p> <important>
     /// <p>This parameter is <b>not</b> intended for use with the <code>IdentifyLanguage</code> parameter. If you're including <code>IdentifyLanguage</code> in your request and want to use one or more vocabulary filters with your transcription, use the <code>VocabularyFilterNames</code> parameter instead.</p>
     /// </important>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-filtering.html">Using vocabulary filtering with unwanted words</a>.</p>
@@ -87,7 +84,7 @@ pub struct StartStreamTranscriptionInput {
     /// <p>Specify two or more language codes that represent the languages you think may be present in your media; including more than five is not recommended. If you're unsure what languages are present, do not include this parameter.</p>
     /// <p>Including language options can improve the accuracy of language identification.</p>
     /// <p>If you include <code>LanguageOptions</code> in your request, you must also include <code>IdentifyLanguage</code>.</p>
-    /// <p>For a list of languages supported with Amazon Transcribe streaming, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p><important>
+    /// <p>For a list of languages supported with Amazon Transcribe streaming, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p> <important>
     /// <p>You can only include one language dialect per language per stream. For example, you cannot include <code>en-US</code> and <code>en-AU</code> in the same request.</p>
     /// </important>
     pub language_options: ::std::option::Option<::std::string::String>,
@@ -100,13 +97,13 @@ pub struct StartStreamTranscriptionInput {
     /// <p>Note that you must include one of <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or <code>IdentifyMultipleLanguages</code> in your request. If you include more than one of these parameters, your transcription job fails.</p>
     pub identify_multiple_languages: ::std::option::Option<bool>,
     /// <p>Specify the names of the custom vocabularies that you want to use when processing your transcription. Note that vocabulary names are case sensitive.</p>
-    /// <p>If none of the languages of the specified custom vocabularies match the language identified in your media, your job fails.</p><important>
+    /// <p>If none of the languages of the specified custom vocabularies match the language identified in your media, your job fails.</p> <important>
     /// <p>This parameter is only intended for use <b>with</b> the <code>IdentifyLanguage</code> parameter. If you're <b>not</b> including <code>IdentifyLanguage</code> in your request and want to use a custom vocabulary with your transcription, use the <code>VocabularyName</code> parameter instead.</p>
     /// </important>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom vocabularies</a>.</p>
     pub vocabulary_names: ::std::option::Option<::std::string::String>,
     /// <p>Specify the names of the custom vocabulary filters that you want to use when processing your transcription. Note that vocabulary filter names are case sensitive.</p>
-    /// <p>If none of the languages of the specified custom vocabulary filters match the language identified in your media, your job fails.</p><important>
+    /// <p>If none of the languages of the specified custom vocabulary filters match the language identified in your media, your job fails.</p> <important>
     /// <p>This parameter is only intended for use <b>with</b> the <code>IdentifyLanguage</code> parameter. If you're <b>not</b> including <code>IdentifyLanguage</code> in your request and want to use a custom vocabulary filter with your transcription, use the <code>VocabularyFilterName</code> parameter instead.</p>
     /// </important>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-filtering.html">Using vocabulary filtering with unwanted words</a>.</p>
@@ -125,19 +122,16 @@ impl StartStreamTranscriptionInput {
     }
     /// <p>Specify the encoding of your input audio. Supported formats are:</p>
     /// <ul>
-    /// <li>
-    /// <p>FLAC</p></li>
-    /// <li>
-    /// <p>OPUS-encoded audio in an Ogg container</p></li>
-    /// <li>
-    /// <p>PCM (only signed 16-bit little-endian audio formats, which does not include WAV)</p></li>
+    /// <li> <p>FLAC</p> </li>
+    /// <li> <p>OPUS-encoded audio in an Ogg container</p> </li>
+    /// <li> <p>PCM (only signed 16-bit little-endian audio formats, which does not include WAV)</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a>.</p>
     pub fn media_encoding(&self) -> ::std::option::Option<&crate::types::MediaEncoding> {
         self.media_encoding.as_ref()
     }
     /// <p>Specify the name of the custom vocabulary that you want to use when processing your transcription. Note that vocabulary names are case sensitive.</p>
-    /// <p>If the language of the specified custom vocabulary doesn't match the language identified in your media, the custom vocabulary is not applied to your transcription.</p><important>
+    /// <p>If the language of the specified custom vocabulary doesn't match the language identified in your media, the custom vocabulary is not applied to your transcription.</p> <important>
     /// <p>This parameter is <b>not</b> intended for use with the <code>IdentifyLanguage</code> parameter. If you're including <code>IdentifyLanguage</code> in your request and want to use one or more custom vocabularies with your transcription, use the <code>VocabularyNames</code> parameter instead.</p>
     /// </important>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom vocabularies</a>.</p>
@@ -157,7 +151,7 @@ impl StartStreamTranscriptionInput {
         &self.audio_stream
     }
     /// <p>Specify the name of the custom vocabulary filter that you want to use when processing your transcription. Note that vocabulary filter names are case sensitive.</p>
-    /// <p>If the language of the specified custom vocabulary filter doesn't match the language identified in your media, the vocabulary filter is not applied to your transcription.</p><important>
+    /// <p>If the language of the specified custom vocabulary filter doesn't match the language identified in your media, the vocabulary filter is not applied to your transcription.</p> <important>
     /// <p>This parameter is <b>not</b> intended for use with the <code>IdentifyLanguage</code> parameter. If you're including <code>IdentifyLanguage</code> in your request and want to use one or more vocabulary filters with your transcription, use the <code>VocabularyFilterNames</code> parameter instead.</p>
     /// </important>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-filtering.html">Using vocabulary filtering with unwanted words</a>.</p>
@@ -235,7 +229,7 @@ impl StartStreamTranscriptionInput {
     /// <p>Specify two or more language codes that represent the languages you think may be present in your media; including more than five is not recommended. If you're unsure what languages are present, do not include this parameter.</p>
     /// <p>Including language options can improve the accuracy of language identification.</p>
     /// <p>If you include <code>LanguageOptions</code> in your request, you must also include <code>IdentifyLanguage</code>.</p>
-    /// <p>For a list of languages supported with Amazon Transcribe streaming, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p><important>
+    /// <p>For a list of languages supported with Amazon Transcribe streaming, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p> <important>
     /// <p>You can only include one language dialect per language per stream. For example, you cannot include <code>en-US</code> and <code>en-AU</code> in the same request.</p>
     /// </important>
     pub fn language_options(&self) -> ::std::option::Option<&str> {
@@ -254,7 +248,7 @@ impl StartStreamTranscriptionInput {
         self.identify_multiple_languages
     }
     /// <p>Specify the names of the custom vocabularies that you want to use when processing your transcription. Note that vocabulary names are case sensitive.</p>
-    /// <p>If none of the languages of the specified custom vocabularies match the language identified in your media, your job fails.</p><important>
+    /// <p>If none of the languages of the specified custom vocabularies match the language identified in your media, your job fails.</p> <important>
     /// <p>This parameter is only intended for use <b>with</b> the <code>IdentifyLanguage</code> parameter. If you're <b>not</b> including <code>IdentifyLanguage</code> in your request and want to use a custom vocabulary with your transcription, use the <code>VocabularyName</code> parameter instead.</p>
     /// </important>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom vocabularies</a>.</p>
@@ -262,7 +256,7 @@ impl StartStreamTranscriptionInput {
         self.vocabulary_names.as_deref()
     }
     /// <p>Specify the names of the custom vocabulary filters that you want to use when processing your transcription. Note that vocabulary filter names are case sensitive.</p>
-    /// <p>If none of the languages of the specified custom vocabulary filters match the language identified in your media, your job fails.</p><important>
+    /// <p>If none of the languages of the specified custom vocabulary filters match the language identified in your media, your job fails.</p> <important>
     /// <p>This parameter is only intended for use <b>with</b> the <code>IdentifyLanguage</code> parameter. If you're <b>not</b> including <code>IdentifyLanguage</code> in your request and want to use a custom vocabulary filter with your transcription, use the <code>VocabularyFilterName</code> parameter instead.</p>
     /// </important>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-filtering.html">Using vocabulary filtering with unwanted words</a>.</p>
@@ -344,12 +338,9 @@ impl StartStreamTranscriptionInputBuilder {
     }
     /// <p>Specify the encoding of your input audio. Supported formats are:</p>
     /// <ul>
-    /// <li>
-    /// <p>FLAC</p></li>
-    /// <li>
-    /// <p>OPUS-encoded audio in an Ogg container</p></li>
-    /// <li>
-    /// <p>PCM (only signed 16-bit little-endian audio formats, which does not include WAV)</p></li>
+    /// <li> <p>FLAC</p> </li>
+    /// <li> <p>OPUS-encoded audio in an Ogg container</p> </li>
+    /// <li> <p>PCM (only signed 16-bit little-endian audio formats, which does not include WAV)</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a>.</p>
     /// This field is required.
@@ -359,12 +350,9 @@ impl StartStreamTranscriptionInputBuilder {
     }
     /// <p>Specify the encoding of your input audio. Supported formats are:</p>
     /// <ul>
-    /// <li>
-    /// <p>FLAC</p></li>
-    /// <li>
-    /// <p>OPUS-encoded audio in an Ogg container</p></li>
-    /// <li>
-    /// <p>PCM (only signed 16-bit little-endian audio formats, which does not include WAV)</p></li>
+    /// <li> <p>FLAC</p> </li>
+    /// <li> <p>OPUS-encoded audio in an Ogg container</p> </li>
+    /// <li> <p>PCM (only signed 16-bit little-endian audio formats, which does not include WAV)</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a>.</p>
     pub fn set_media_encoding(mut self, input: ::std::option::Option<crate::types::MediaEncoding>) -> Self {
@@ -373,19 +361,16 @@ impl StartStreamTranscriptionInputBuilder {
     }
     /// <p>Specify the encoding of your input audio. Supported formats are:</p>
     /// <ul>
-    /// <li>
-    /// <p>FLAC</p></li>
-    /// <li>
-    /// <p>OPUS-encoded audio in an Ogg container</p></li>
-    /// <li>
-    /// <p>PCM (only signed 16-bit little-endian audio formats, which does not include WAV)</p></li>
+    /// <li> <p>FLAC</p> </li>
+    /// <li> <p>OPUS-encoded audio in an Ogg container</p> </li>
+    /// <li> <p>PCM (only signed 16-bit little-endian audio formats, which does not include WAV)</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a>.</p>
     pub fn get_media_encoding(&self) -> &::std::option::Option<crate::types::MediaEncoding> {
         &self.media_encoding
     }
     /// <p>Specify the name of the custom vocabulary that you want to use when processing your transcription. Note that vocabulary names are case sensitive.</p>
-    /// <p>If the language of the specified custom vocabulary doesn't match the language identified in your media, the custom vocabulary is not applied to your transcription.</p><important>
+    /// <p>If the language of the specified custom vocabulary doesn't match the language identified in your media, the custom vocabulary is not applied to your transcription.</p> <important>
     /// <p>This parameter is <b>not</b> intended for use with the <code>IdentifyLanguage</code> parameter. If you're including <code>IdentifyLanguage</code> in your request and want to use one or more custom vocabularies with your transcription, use the <code>VocabularyNames</code> parameter instead.</p>
     /// </important>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom vocabularies</a>.</p>
@@ -394,7 +379,7 @@ impl StartStreamTranscriptionInputBuilder {
         self
     }
     /// <p>Specify the name of the custom vocabulary that you want to use when processing your transcription. Note that vocabulary names are case sensitive.</p>
-    /// <p>If the language of the specified custom vocabulary doesn't match the language identified in your media, the custom vocabulary is not applied to your transcription.</p><important>
+    /// <p>If the language of the specified custom vocabulary doesn't match the language identified in your media, the custom vocabulary is not applied to your transcription.</p> <important>
     /// <p>This parameter is <b>not</b> intended for use with the <code>IdentifyLanguage</code> parameter. If you're including <code>IdentifyLanguage</code> in your request and want to use one or more custom vocabularies with your transcription, use the <code>VocabularyNames</code> parameter instead.</p>
     /// </important>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom vocabularies</a>.</p>
@@ -403,7 +388,7 @@ impl StartStreamTranscriptionInputBuilder {
         self
     }
     /// <p>Specify the name of the custom vocabulary that you want to use when processing your transcription. Note that vocabulary names are case sensitive.</p>
-    /// <p>If the language of the specified custom vocabulary doesn't match the language identified in your media, the custom vocabulary is not applied to your transcription.</p><important>
+    /// <p>If the language of the specified custom vocabulary doesn't match the language identified in your media, the custom vocabulary is not applied to your transcription.</p> <important>
     /// <p>This parameter is <b>not</b> intended for use with the <code>IdentifyLanguage</code> parameter. If you're including <code>IdentifyLanguage</code> in your request and want to use one or more custom vocabularies with your transcription, use the <code>VocabularyNames</code> parameter instead.</p>
     /// </important>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom vocabularies</a>.</p>
@@ -457,7 +442,7 @@ impl StartStreamTranscriptionInputBuilder {
         &self.audio_stream
     }
     /// <p>Specify the name of the custom vocabulary filter that you want to use when processing your transcription. Note that vocabulary filter names are case sensitive.</p>
-    /// <p>If the language of the specified custom vocabulary filter doesn't match the language identified in your media, the vocabulary filter is not applied to your transcription.</p><important>
+    /// <p>If the language of the specified custom vocabulary filter doesn't match the language identified in your media, the vocabulary filter is not applied to your transcription.</p> <important>
     /// <p>This parameter is <b>not</b> intended for use with the <code>IdentifyLanguage</code> parameter. If you're including <code>IdentifyLanguage</code> in your request and want to use one or more vocabulary filters with your transcription, use the <code>VocabularyFilterNames</code> parameter instead.</p>
     /// </important>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-filtering.html">Using vocabulary filtering with unwanted words</a>.</p>
@@ -466,7 +451,7 @@ impl StartStreamTranscriptionInputBuilder {
         self
     }
     /// <p>Specify the name of the custom vocabulary filter that you want to use when processing your transcription. Note that vocabulary filter names are case sensitive.</p>
-    /// <p>If the language of the specified custom vocabulary filter doesn't match the language identified in your media, the vocabulary filter is not applied to your transcription.</p><important>
+    /// <p>If the language of the specified custom vocabulary filter doesn't match the language identified in your media, the vocabulary filter is not applied to your transcription.</p> <important>
     /// <p>This parameter is <b>not</b> intended for use with the <code>IdentifyLanguage</code> parameter. If you're including <code>IdentifyLanguage</code> in your request and want to use one or more vocabulary filters with your transcription, use the <code>VocabularyFilterNames</code> parameter instead.</p>
     /// </important>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-filtering.html">Using vocabulary filtering with unwanted words</a>.</p>
@@ -475,7 +460,7 @@ impl StartStreamTranscriptionInputBuilder {
         self
     }
     /// <p>Specify the name of the custom vocabulary filter that you want to use when processing your transcription. Note that vocabulary filter names are case sensitive.</p>
-    /// <p>If the language of the specified custom vocabulary filter doesn't match the language identified in your media, the vocabulary filter is not applied to your transcription.</p><important>
+    /// <p>If the language of the specified custom vocabulary filter doesn't match the language identified in your media, the vocabulary filter is not applied to your transcription.</p> <important>
     /// <p>This parameter is <b>not</b> intended for use with the <code>IdentifyLanguage</code> parameter. If you're including <code>IdentifyLanguage</code> in your request and want to use one or more vocabulary filters with your transcription, use the <code>VocabularyFilterNames</code> parameter instead.</p>
     /// </important>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-filtering.html">Using vocabulary filtering with unwanted words</a>.</p>
@@ -711,7 +696,7 @@ impl StartStreamTranscriptionInputBuilder {
     /// <p>Specify two or more language codes that represent the languages you think may be present in your media; including more than five is not recommended. If you're unsure what languages are present, do not include this parameter.</p>
     /// <p>Including language options can improve the accuracy of language identification.</p>
     /// <p>If you include <code>LanguageOptions</code> in your request, you must also include <code>IdentifyLanguage</code>.</p>
-    /// <p>For a list of languages supported with Amazon Transcribe streaming, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p><important>
+    /// <p>For a list of languages supported with Amazon Transcribe streaming, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p> <important>
     /// <p>You can only include one language dialect per language per stream. For example, you cannot include <code>en-US</code> and <code>en-AU</code> in the same request.</p>
     /// </important>
     pub fn language_options(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -721,7 +706,7 @@ impl StartStreamTranscriptionInputBuilder {
     /// <p>Specify two or more language codes that represent the languages you think may be present in your media; including more than five is not recommended. If you're unsure what languages are present, do not include this parameter.</p>
     /// <p>Including language options can improve the accuracy of language identification.</p>
     /// <p>If you include <code>LanguageOptions</code> in your request, you must also include <code>IdentifyLanguage</code>.</p>
-    /// <p>For a list of languages supported with Amazon Transcribe streaming, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p><important>
+    /// <p>For a list of languages supported with Amazon Transcribe streaming, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p> <important>
     /// <p>You can only include one language dialect per language per stream. For example, you cannot include <code>en-US</code> and <code>en-AU</code> in the same request.</p>
     /// </important>
     pub fn set_language_options(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -731,7 +716,7 @@ impl StartStreamTranscriptionInputBuilder {
     /// <p>Specify two or more language codes that represent the languages you think may be present in your media; including more than five is not recommended. If you're unsure what languages are present, do not include this parameter.</p>
     /// <p>Including language options can improve the accuracy of language identification.</p>
     /// <p>If you include <code>LanguageOptions</code> in your request, you must also include <code>IdentifyLanguage</code>.</p>
-    /// <p>For a list of languages supported with Amazon Transcribe streaming, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p><important>
+    /// <p>For a list of languages supported with Amazon Transcribe streaming, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p> <important>
     /// <p>You can only include one language dialect per language per stream. For example, you cannot include <code>en-US</code> and <code>en-AU</code> in the same request.</p>
     /// </important>
     pub fn get_language_options(&self) -> &::std::option::Option<::std::string::String> {
@@ -778,7 +763,7 @@ impl StartStreamTranscriptionInputBuilder {
         &self.identify_multiple_languages
     }
     /// <p>Specify the names of the custom vocabularies that you want to use when processing your transcription. Note that vocabulary names are case sensitive.</p>
-    /// <p>If none of the languages of the specified custom vocabularies match the language identified in your media, your job fails.</p><important>
+    /// <p>If none of the languages of the specified custom vocabularies match the language identified in your media, your job fails.</p> <important>
     /// <p>This parameter is only intended for use <b>with</b> the <code>IdentifyLanguage</code> parameter. If you're <b>not</b> including <code>IdentifyLanguage</code> in your request and want to use a custom vocabulary with your transcription, use the <code>VocabularyName</code> parameter instead.</p>
     /// </important>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom vocabularies</a>.</p>
@@ -787,7 +772,7 @@ impl StartStreamTranscriptionInputBuilder {
         self
     }
     /// <p>Specify the names of the custom vocabularies that you want to use when processing your transcription. Note that vocabulary names are case sensitive.</p>
-    /// <p>If none of the languages of the specified custom vocabularies match the language identified in your media, your job fails.</p><important>
+    /// <p>If none of the languages of the specified custom vocabularies match the language identified in your media, your job fails.</p> <important>
     /// <p>This parameter is only intended for use <b>with</b> the <code>IdentifyLanguage</code> parameter. If you're <b>not</b> including <code>IdentifyLanguage</code> in your request and want to use a custom vocabulary with your transcription, use the <code>VocabularyName</code> parameter instead.</p>
     /// </important>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom vocabularies</a>.</p>
@@ -796,7 +781,7 @@ impl StartStreamTranscriptionInputBuilder {
         self
     }
     /// <p>Specify the names of the custom vocabularies that you want to use when processing your transcription. Note that vocabulary names are case sensitive.</p>
-    /// <p>If none of the languages of the specified custom vocabularies match the language identified in your media, your job fails.</p><important>
+    /// <p>If none of the languages of the specified custom vocabularies match the language identified in your media, your job fails.</p> <important>
     /// <p>This parameter is only intended for use <b>with</b> the <code>IdentifyLanguage</code> parameter. If you're <b>not</b> including <code>IdentifyLanguage</code> in your request and want to use a custom vocabulary with your transcription, use the <code>VocabularyName</code> parameter instead.</p>
     /// </important>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom vocabularies</a>.</p>
@@ -804,7 +789,7 @@ impl StartStreamTranscriptionInputBuilder {
         &self.vocabulary_names
     }
     /// <p>Specify the names of the custom vocabulary filters that you want to use when processing your transcription. Note that vocabulary filter names are case sensitive.</p>
-    /// <p>If none of the languages of the specified custom vocabulary filters match the language identified in your media, your job fails.</p><important>
+    /// <p>If none of the languages of the specified custom vocabulary filters match the language identified in your media, your job fails.</p> <important>
     /// <p>This parameter is only intended for use <b>with</b> the <code>IdentifyLanguage</code> parameter. If you're <b>not</b> including <code>IdentifyLanguage</code> in your request and want to use a custom vocabulary filter with your transcription, use the <code>VocabularyFilterName</code> parameter instead.</p>
     /// </important>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-filtering.html">Using vocabulary filtering with unwanted words</a>.</p>
@@ -813,7 +798,7 @@ impl StartStreamTranscriptionInputBuilder {
         self
     }
     /// <p>Specify the names of the custom vocabulary filters that you want to use when processing your transcription. Note that vocabulary filter names are case sensitive.</p>
-    /// <p>If none of the languages of the specified custom vocabulary filters match the language identified in your media, your job fails.</p><important>
+    /// <p>If none of the languages of the specified custom vocabulary filters match the language identified in your media, your job fails.</p> <important>
     /// <p>This parameter is only intended for use <b>with</b> the <code>IdentifyLanguage</code> parameter. If you're <b>not</b> including <code>IdentifyLanguage</code> in your request and want to use a custom vocabulary filter with your transcription, use the <code>VocabularyFilterName</code> parameter instead.</p>
     /// </important>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-filtering.html">Using vocabulary filtering with unwanted words</a>.</p>
@@ -822,7 +807,7 @@ impl StartStreamTranscriptionInputBuilder {
         self
     }
     /// <p>Specify the names of the custom vocabulary filters that you want to use when processing your transcription. Note that vocabulary filter names are case sensitive.</p>
-    /// <p>If none of the languages of the specified custom vocabulary filters match the language identified in your media, your job fails.</p><important>
+    /// <p>If none of the languages of the specified custom vocabulary filters match the language identified in your media, your job fails.</p> <important>
     /// <p>This parameter is only intended for use <b>with</b> the <code>IdentifyLanguage</code> parameter. If you're <b>not</b> including <code>IdentifyLanguage</code> in your request and want to use a custom vocabulary filter with your transcription, use the <code>VocabularyFilterName</code> parameter instead.</p>
     /// </important>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-filtering.html">Using vocabulary filtering with unwanted words</a>.</p>

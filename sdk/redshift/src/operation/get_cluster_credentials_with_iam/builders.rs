@@ -23,7 +23,7 @@ impl GetClusterCredentialsWithIamInputBuilder {
 /// Fluent builder constructing a request to `GetClusterCredentialsWithIAM`.
 ///
 /// <p>Returns a database user name and temporary password with temporary authorization to log in to an Amazon Redshift database. The database user is mapped 1:1 to the source Identity and Access Management (IAM) identity. For more information about IAM identities, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id.html">IAM Identities (users, user groups, and roles)</a> in the Amazon Web Services Identity and Access Management User Guide.</p>
-/// <p>The Identity and Access Management (IAM) identity that runs this operation must have an IAM policy attached that allows access to all necessary actions and resources. For more information about permissions, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html">Using identity-based policies (IAM policies)</a> in the Amazon Redshift Cluster Management Guide.</p>
+/// <p>The Identity and Access Management (IAM) identity that runs this operation must have an IAM policy attached that allows access to all necessary actions and resources. For more information about permissions, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html">Using identity-based policies (IAM policies)</a> in the Amazon Redshift Cluster Management Guide. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetClusterCredentialsWithIAMFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -123,17 +123,17 @@ impl GetClusterCredentialsWithIAMFluentBuilder {
     pub fn get_db_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_name()
     }
-    /// <p>The unique identifier of the cluster that contains the database for which you are requesting credentials.</p>
+    /// <p>The unique identifier of the cluster that contains the database for which you are requesting credentials. </p>
     pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_identifier(input.into());
         self
     }
-    /// <p>The unique identifier of the cluster that contains the database for which you are requesting credentials.</p>
+    /// <p>The unique identifier of the cluster that contains the database for which you are requesting credentials. </p>
     pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_identifier(input);
         self
     }
-    /// <p>The unique identifier of the cluster that contains the database for which you are requesting credentials.</p>
+    /// <p>The unique identifier of the cluster that contains the database for which you are requesting credentials. </p>
     pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cluster_identifier()
     }

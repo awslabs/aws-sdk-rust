@@ -13,7 +13,7 @@ pub struct Root {
     /// <p>The friendly name of the root.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The types of policies that are currently enabled for the root and therefore can be attached to the root or to its OUs or accounts.</p><note>
+    /// <p>The types of policies that are currently enabled for the root and therefore can be attached to the root or to its OUs or accounts.</p> <note>
     /// <p>Even if a policy type is shown as available in the organization, you can separately enable and disable them at the root level by using <code>EnablePolicyType</code> and <code>DisablePolicyType</code>. Use <code>DescribeOrganization</code> to see the availability of the policy types in that organization.</p>
     /// </note>
     pub policy_types: ::std::option::Option<::std::vec::Vec<crate::types::PolicyTypeSummary>>,
@@ -34,7 +34,7 @@ impl Root {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The types of policies that are currently enabled for the root and therefore can be attached to the root or to its OUs or accounts.</p><note>
+    /// <p>The types of policies that are currently enabled for the root and therefore can be attached to the root or to its OUs or accounts.</p> <note>
     /// <p>Even if a policy type is shown as available in the organization, you can separately enable and disable them at the root level by using <code>EnablePolicyType</code> and <code>DisablePolicyType</code>. Use <code>DescribeOrganization</code> to see the availability of the policy types in that organization.</p>
     /// </note>
     ///
@@ -115,7 +115,7 @@ impl RootBuilder {
     ///
     /// To override the contents of this collection use [`set_policy_types`](Self::set_policy_types).
     ///
-    /// <p>The types of policies that are currently enabled for the root and therefore can be attached to the root or to its OUs or accounts.</p><note>
+    /// <p>The types of policies that are currently enabled for the root and therefore can be attached to the root or to its OUs or accounts.</p> <note>
     /// <p>Even if a policy type is shown as available in the organization, you can separately enable and disable them at the root level by using <code>EnablePolicyType</code> and <code>DisablePolicyType</code>. Use <code>DescribeOrganization</code> to see the availability of the policy types in that organization.</p>
     /// </note>
     pub fn policy_types(mut self, input: crate::types::PolicyTypeSummary) -> Self {
@@ -124,14 +124,14 @@ impl RootBuilder {
         self.policy_types = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The types of policies that are currently enabled for the root and therefore can be attached to the root or to its OUs or accounts.</p><note>
+    /// <p>The types of policies that are currently enabled for the root and therefore can be attached to the root or to its OUs or accounts.</p> <note>
     /// <p>Even if a policy type is shown as available in the organization, you can separately enable and disable them at the root level by using <code>EnablePolicyType</code> and <code>DisablePolicyType</code>. Use <code>DescribeOrganization</code> to see the availability of the policy types in that organization.</p>
     /// </note>
     pub fn set_policy_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyTypeSummary>>) -> Self {
         self.policy_types = input;
         self
     }
-    /// <p>The types of policies that are currently enabled for the root and therefore can be attached to the root or to its OUs or accounts.</p><note>
+    /// <p>The types of policies that are currently enabled for the root and therefore can be attached to the root or to its OUs or accounts.</p> <note>
     /// <p>Even if a policy type is shown as available in the organization, you can separately enable and disable them at the root level by using <code>EnablePolicyType</code> and <code>DisablePolicyType</code>. Use <code>DescribeOrganization</code> to see the availability of the policy types in that organization.</p>
     /// </note>
     pub fn get_policy_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyTypeSummary>> {

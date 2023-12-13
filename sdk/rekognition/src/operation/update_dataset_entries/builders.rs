@@ -25,12 +25,12 @@ impl UpdateDatasetEntriesInputBuilder {
 /// <note>
 /// <p>This operation applies only to Amazon Rekognition Custom Labels.</p>
 /// </note>
-/// <p>Adds or updates one or more entries (images) in a dataset. An entry is a JSON Line which contains the information for a single image, including the image location, assigned labels, and object location bounding boxes. For more information, see Image-Level labels in manifest files and Object localization in manifest files in the <i>Amazon Rekognition Custom Labels Developer Guide</i>.</p>
-/// <p>If the <code>source-ref</code> field in the JSON line references an existing image, the existing image in the dataset is updated. If <code>source-ref</code> field doesn't reference an existing image, the image is added as a new image to the dataset.</p>
+/// <p>Adds or updates one or more entries (images) in a dataset. An entry is a JSON Line which contains the information for a single image, including the image location, assigned labels, and object location bounding boxes. For more information, see Image-Level labels in manifest files and Object localization in manifest files in the <i>Amazon Rekognition Custom Labels Developer Guide</i>. </p>
+/// <p>If the <code>source-ref</code> field in the JSON line references an existing image, the existing image in the dataset is updated. If <code>source-ref</code> field doesn't reference an existing image, the image is added as a new image to the dataset. </p>
 /// <p>You specify the changes that you want to make in the <code>Changes</code> input parameter. There isn't a limit to the number JSON Lines that you can change, but the size of <code>Changes</code> must be less than 5MB.</p>
-/// <p><code>UpdateDatasetEntries</code> returns immediatly, but the dataset update might take a while to complete. Use <code>DescribeDataset</code> to check the current status. The dataset updated successfully if the value of <code>Status</code> is <code>UPDATE_COMPLETE</code>.</p>
+/// <p> <code>UpdateDatasetEntries</code> returns immediatly, but the dataset update might take a while to complete. Use <code>DescribeDataset</code> to check the current status. The dataset updated successfully if the value of <code>Status</code> is <code>UPDATE_COMPLETE</code>. </p>
 /// <p>To check if any non-terminal errors occured, call <code>ListDatasetEntries</code> and check for the presence of <code>errors</code> lists in the JSON Lines.</p>
-/// <p>Dataset update fails if a terminal error occurs (<code>Status</code> = <code>UPDATE_FAILED</code>). Currently, you can't access the terminal error information from the Amazon Rekognition Custom Labels SDK.</p>
+/// <p>Dataset update fails if a terminal error occurs (<code>Status</code> = <code>UPDATE_FAILED</code>). Currently, you can't access the terminal error information from the Amazon Rekognition Custom Labels SDK. </p>
 /// <p>This operation requires permissions to perform the <code>rekognition:UpdateDatasetEntries</code> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDatasetEntriesFluentBuilder {
@@ -117,31 +117,31 @@ impl UpdateDatasetEntriesFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the dataset that you want to update.</p>
+    /// <p> The Amazon Resource Name (ARN) of the dataset that you want to update. </p>
     pub fn dataset_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dataset_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the dataset that you want to update.</p>
+    /// <p> The Amazon Resource Name (ARN) of the dataset that you want to update. </p>
     pub fn set_dataset_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dataset_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the dataset that you want to update.</p>
+    /// <p> The Amazon Resource Name (ARN) of the dataset that you want to update. </p>
     pub fn get_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_dataset_arn()
     }
-    /// <p>The changes that you want to make to the dataset.</p>
+    /// <p> The changes that you want to make to the dataset. </p>
     pub fn changes(mut self, input: crate::types::DatasetChanges) -> Self {
         self.inner = self.inner.changes(input);
         self
     }
-    /// <p>The changes that you want to make to the dataset.</p>
+    /// <p> The changes that you want to make to the dataset. </p>
     pub fn set_changes(mut self, input: ::std::option::Option<crate::types::DatasetChanges>) -> Self {
         self.inner = self.inner.set_changes(input);
         self
     }
-    /// <p>The changes that you want to make to the dataset.</p>
+    /// <p> The changes that you want to make to the dataset. </p>
     pub fn get_changes(&self) -> &::std::option::Option<crate::types::DatasetChanges> {
         self.inner.get_changes()
     }

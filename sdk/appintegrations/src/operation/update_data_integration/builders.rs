@@ -22,7 +22,7 @@ impl UpdateDataIntegrationInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateDataIntegration`.
 ///
-/// <p>Updates the description of a DataIntegration.</p><note>
+/// <p>Updates the description of a DataIntegration.</p> <note>
 /// <p>You cannot create a DataIntegration association for a DataIntegration that has been previously associated. Use a different DataIntegration, or recreate the DataIntegration using the <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">CreateDataIntegration</a> API.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

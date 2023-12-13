@@ -7,15 +7,14 @@ pub struct DescribeDbClusterParametersInput {
     /// <p>The name of a specific cluster parameter group to return parameter details for.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>If provided, must match the name of an existing <code>DBClusterParameterGroup</code>.</p></li>
+    /// <li> <p>If provided, must match the name of an existing <code>DBClusterParameterGroup</code>.</p> </li>
     /// </ul>
     pub db_cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
-    /// <p>A value that indicates to return only parameters for a specific source. Parameter sources can be <code>engine</code>, <code>service</code>, or <code>customer</code>.</p>
+    /// <p> A value that indicates to return only parameters for a specific source. Parameter sources can be <code>engine</code>, <code>service</code>, or <code>customer</code>. </p>
     pub source: ::std::option::Option<::std::string::String>,
     /// <p>This parameter is not currently supported.</p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub max_records: ::std::option::Option<i32>,
@@ -26,13 +25,12 @@ impl DescribeDbClusterParametersInput {
     /// <p>The name of a specific cluster parameter group to return parameter details for.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>If provided, must match the name of an existing <code>DBClusterParameterGroup</code>.</p></li>
+    /// <li> <p>If provided, must match the name of an existing <code>DBClusterParameterGroup</code>.</p> </li>
     /// </ul>
     pub fn db_cluster_parameter_group_name(&self) -> ::std::option::Option<&str> {
         self.db_cluster_parameter_group_name.as_deref()
     }
-    /// <p>A value that indicates to return only parameters for a specific source. Parameter sources can be <code>engine</code>, <code>service</code>, or <code>customer</code>.</p>
+    /// <p> A value that indicates to return only parameters for a specific source. Parameter sources can be <code>engine</code>, <code>service</code>, or <code>customer</code>. </p>
     pub fn source(&self) -> ::std::option::Option<&str> {
         self.source.as_deref()
     }
@@ -42,7 +40,7 @@ impl DescribeDbClusterParametersInput {
     pub fn filters(&self) -> &[crate::types::Filter] {
         self.filters.as_deref().unwrap_or_default()
     }
-    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn max_records(&self) -> ::std::option::Option<i32> {
@@ -74,8 +72,7 @@ impl DescribeDbClusterParametersInputBuilder {
     /// <p>The name of a specific cluster parameter group to return parameter details for.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>If provided, must match the name of an existing <code>DBClusterParameterGroup</code>.</p></li>
+    /// <li> <p>If provided, must match the name of an existing <code>DBClusterParameterGroup</code>.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn db_cluster_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -85,8 +82,7 @@ impl DescribeDbClusterParametersInputBuilder {
     /// <p>The name of a specific cluster parameter group to return parameter details for.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>If provided, must match the name of an existing <code>DBClusterParameterGroup</code>.</p></li>
+    /// <li> <p>If provided, must match the name of an existing <code>DBClusterParameterGroup</code>.</p> </li>
     /// </ul>
     pub fn set_db_cluster_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_cluster_parameter_group_name = input;
@@ -95,23 +91,22 @@ impl DescribeDbClusterParametersInputBuilder {
     /// <p>The name of a specific cluster parameter group to return parameter details for.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>If provided, must match the name of an existing <code>DBClusterParameterGroup</code>.</p></li>
+    /// <li> <p>If provided, must match the name of an existing <code>DBClusterParameterGroup</code>.</p> </li>
     /// </ul>
     pub fn get_db_cluster_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_cluster_parameter_group_name
     }
-    /// <p>A value that indicates to return only parameters for a specific source. Parameter sources can be <code>engine</code>, <code>service</code>, or <code>customer</code>.</p>
+    /// <p> A value that indicates to return only parameters for a specific source. Parameter sources can be <code>engine</code>, <code>service</code>, or <code>customer</code>. </p>
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A value that indicates to return only parameters for a specific source. Parameter sources can be <code>engine</code>, <code>service</code>, or <code>customer</code>.</p>
+    /// <p> A value that indicates to return only parameters for a specific source. Parameter sources can be <code>engine</code>, <code>service</code>, or <code>customer</code>. </p>
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source = input;
         self
     }
-    /// <p>A value that indicates to return only parameters for a specific source. Parameter sources can be <code>engine</code>, <code>service</code>, or <code>customer</code>.</p>
+    /// <p> A value that indicates to return only parameters for a specific source. Parameter sources can be <code>engine</code>, <code>service</code>, or <code>customer</code>. </p>
     pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
         &self.source
     }
@@ -135,21 +130,21 @@ impl DescribeDbClusterParametersInputBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters
     }
-    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.max_records = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_records = input;
         self
     }
-    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn get_max_records(&self) -> &::std::option::Option<i32> {

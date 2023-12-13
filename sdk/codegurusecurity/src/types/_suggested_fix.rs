@@ -4,17 +4,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SuggestedFix {
-    /// <p>A description of the suggested code fix and why it is being suggested.</p>
+    /// <p>A description of the suggested code fix and why it is being suggested. </p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The suggested code to add to your file.</p>
+    /// <p>The suggested code to add to your file. </p>
     pub code: ::std::option::Option<::std::string::String>,
 }
 impl SuggestedFix {
-    /// <p>A description of the suggested code fix and why it is being suggested.</p>
+    /// <p>A description of the suggested code fix and why it is being suggested. </p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The suggested code to add to your file.</p>
+    /// <p>The suggested code to add to your file. </p>
     pub fn code(&self) -> ::std::option::Option<&str> {
         self.code.as_deref()
     }
@@ -34,31 +34,31 @@ pub struct SuggestedFixBuilder {
     pub(crate) code: ::std::option::Option<::std::string::String>,
 }
 impl SuggestedFixBuilder {
-    /// <p>A description of the suggested code fix and why it is being suggested.</p>
+    /// <p>A description of the suggested code fix and why it is being suggested. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A description of the suggested code fix and why it is being suggested.</p>
+    /// <p>A description of the suggested code fix and why it is being suggested. </p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>A description of the suggested code fix and why it is being suggested.</p>
+    /// <p>A description of the suggested code fix and why it is being suggested. </p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The suggested code to add to your file.</p>
+    /// <p>The suggested code to add to your file. </p>
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The suggested code to add to your file.</p>
+    /// <p>The suggested code to add to your file. </p>
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.code = input;
         self
     }
-    /// <p>The suggested code to add to your file.</p>
+    /// <p>The suggested code to add to your file. </p>
     pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.code
     }

@@ -16,10 +16,8 @@ pub struct QuickResponseSearchResultData {
     pub name: ::std::string::String,
     /// <p>The media type of the quick response content.</p>
     /// <ul>
-    /// <li>
-    /// <p>Use <code>application/x.quickresponse;format=plain</code> for quick response written in plain text.</p></li>
-    /// <li>
-    /// <p>Use <code>application/x.quickresponse;format=markdown</code> for quick response written in richtext.</p></li>
+    /// <li> <p>Use <code>application/x.quickresponse;format=plain</code> for quick response written in plain text.</p> </li>
+    /// <li> <p>Use <code>application/x.quickresponse;format=markdown</code> for quick response written in richtext.</p> </li>
     /// </ul>
     pub content_type: ::std::string::String,
     /// <p>The resource status of the quick response.</p>
@@ -79,10 +77,8 @@ impl QuickResponseSearchResultData {
     }
     /// <p>The media type of the quick response content.</p>
     /// <ul>
-    /// <li>
-    /// <p>Use <code>application/x.quickresponse;format=plain</code> for quick response written in plain text.</p></li>
-    /// <li>
-    /// <p>Use <code>application/x.quickresponse;format=markdown</code> for quick response written in richtext.</p></li>
+    /// <li> <p>Use <code>application/x.quickresponse;format=plain</code> for quick response written in plain text.</p> </li>
+    /// <li> <p>Use <code>application/x.quickresponse;format=markdown</code> for quick response written in richtext.</p> </li>
     /// </ul>
     pub fn content_type(&self) -> &str {
         use std::ops::Deref;
@@ -287,10 +283,8 @@ impl QuickResponseSearchResultDataBuilder {
     }
     /// <p>The media type of the quick response content.</p>
     /// <ul>
-    /// <li>
-    /// <p>Use <code>application/x.quickresponse;format=plain</code> for quick response written in plain text.</p></li>
-    /// <li>
-    /// <p>Use <code>application/x.quickresponse;format=markdown</code> for quick response written in richtext.</p></li>
+    /// <li> <p>Use <code>application/x.quickresponse;format=plain</code> for quick response written in plain text.</p> </li>
+    /// <li> <p>Use <code>application/x.quickresponse;format=markdown</code> for quick response written in richtext.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -299,10 +293,8 @@ impl QuickResponseSearchResultDataBuilder {
     }
     /// <p>The media type of the quick response content.</p>
     /// <ul>
-    /// <li>
-    /// <p>Use <code>application/x.quickresponse;format=plain</code> for quick response written in plain text.</p></li>
-    /// <li>
-    /// <p>Use <code>application/x.quickresponse;format=markdown</code> for quick response written in richtext.</p></li>
+    /// <li> <p>Use <code>application/x.quickresponse;format=plain</code> for quick response written in plain text.</p> </li>
+    /// <li> <p>Use <code>application/x.quickresponse;format=markdown</code> for quick response written in richtext.</p> </li>
     /// </ul>
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_type = input;
@@ -310,10 +302,8 @@ impl QuickResponseSearchResultDataBuilder {
     }
     /// <p>The media type of the quick response content.</p>
     /// <ul>
-    /// <li>
-    /// <p>Use <code>application/x.quickresponse;format=plain</code> for quick response written in plain text.</p></li>
-    /// <li>
-    /// <p>Use <code>application/x.quickresponse;format=markdown</code> for quick response written in richtext.</p></li>
+    /// <li> <p>Use <code>application/x.quickresponse;format=plain</code> for quick response written in plain text.</p> </li>
+    /// <li> <p>Use <code>application/x.quickresponse;format=markdown</code> for quick response written in richtext.</p> </li>
     /// </ul>
     pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.content_type

@@ -17,7 +17,7 @@ pub struct CreateAppInput {
     pub r#type: ::std::option::Option<crate::types::AppType>,
     /// <p>A <code>Source</code> object that specifies the app repository.</p>
     pub app_source: ::std::option::Option<crate::types::Source>,
-    /// <p>The app virtual host settings, with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code></p>
+    /// <p>The app virtual host settings, with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code> </p>
     pub domains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Whether to enable SSL for the app.</p>
     pub enable_ssl: ::std::option::Option<bool>,
@@ -26,7 +26,7 @@ pub struct CreateAppInput {
     /// <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
     pub attributes: ::std::option::Option<::std::collections::HashMap<crate::types::AppAttributesKeys, ::std::string::String>>,
     /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the app. After you deploy the app, these variables are defined on the associated app server instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>.</p>
-    /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 20KB)."</p><note>
+    /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 20KB)."</p> <note>
     /// <p>If you have specified one or more environment variables, you cannot modify the stack's Chef version.</p>
     /// </note>
     pub environment: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>>,
@@ -62,7 +62,7 @@ impl CreateAppInput {
     pub fn app_source(&self) -> ::std::option::Option<&crate::types::Source> {
         self.app_source.as_ref()
     }
-    /// <p>The app virtual host settings, with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code></p>
+    /// <p>The app virtual host settings, with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code> </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domains.is_none()`.
     pub fn domains(&self) -> &[::std::string::String] {
@@ -81,7 +81,7 @@ impl CreateAppInput {
         self.attributes.as_ref()
     }
     /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the app. After you deploy the app, these variables are defined on the associated app server instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>.</p>
-    /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 20KB)."</p><note>
+    /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 20KB)."</p> <note>
     /// <p>If you have specified one or more environment variables, you cannot modify the stack's Chef version.</p>
     /// </note>
     ///
@@ -226,19 +226,19 @@ impl CreateAppInputBuilder {
     ///
     /// To override the contents of this collection use [`set_domains`](Self::set_domains).
     ///
-    /// <p>The app virtual host settings, with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code></p>
+    /// <p>The app virtual host settings, with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code> </p>
     pub fn domains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.domains.unwrap_or_default();
         v.push(input.into());
         self.domains = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The app virtual host settings, with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code></p>
+    /// <p>The app virtual host settings, with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code> </p>
     pub fn set_domains(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.domains = input;
         self
     }
-    /// <p>The app virtual host settings, with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code></p>
+    /// <p>The app virtual host settings, with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code> </p>
     pub fn get_domains(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.domains
     }
@@ -298,7 +298,7 @@ impl CreateAppInputBuilder {
     /// To override the contents of this collection use [`set_environment`](Self::set_environment).
     ///
     /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the app. After you deploy the app, these variables are defined on the associated app server instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>.</p>
-    /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 20KB)."</p><note>
+    /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 20KB)."</p> <note>
     /// <p>If you have specified one or more environment variables, you cannot modify the stack's Chef version.</p>
     /// </note>
     pub fn environment(mut self, input: crate::types::EnvironmentVariable) -> Self {
@@ -308,7 +308,7 @@ impl CreateAppInputBuilder {
         self
     }
     /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the app. After you deploy the app, these variables are defined on the associated app server instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>.</p>
-    /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 20KB)."</p><note>
+    /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 20KB)."</p> <note>
     /// <p>If you have specified one or more environment variables, you cannot modify the stack's Chef version.</p>
     /// </note>
     pub fn set_environment(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>>) -> Self {
@@ -316,7 +316,7 @@ impl CreateAppInputBuilder {
         self
     }
     /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the app. After you deploy the app, these variables are defined on the associated app server instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>.</p>
-    /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 20KB)."</p><note>
+    /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 20KB)."</p> <note>
     /// <p>If you have specified one or more environment variables, you cannot modify the stack's Chef version.</p>
     /// </note>
     pub fn get_environment(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>> {

@@ -3,15 +3,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteObjectOutput {
-    /// <p>Indicates whether the specified object version that was permanently deleted was (true) or was not (false) a delete marker before deletion. In a simple DELETE, this header indicates whether (true) or not (false) the current version of the object is a delete marker.</p><note>
+    /// <p>Indicates whether the specified object version that was permanently deleted was (true) or was not (false) a delete marker before deletion. In a simple DELETE, this header indicates whether (true) or not (false) the current version of the object is a delete marker.</p> <note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub delete_marker: ::std::option::Option<bool>,
-    /// <p>Returns the version ID of the delete marker created as a result of the DELETE operation.</p><note>
+    /// <p>Returns the version ID of the delete marker created as a result of the DELETE operation.</p> <note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub version_id: ::std::option::Option<::std::string::String>,
-    /// <p>If present, indicates that the requester was successfully charged for the request.</p><note>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p> <note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub request_charged: ::std::option::Option<crate::types::RequestCharged>,
@@ -19,19 +19,19 @@ pub struct DeleteObjectOutput {
     _request_id: Option<String>,
 }
 impl DeleteObjectOutput {
-    /// <p>Indicates whether the specified object version that was permanently deleted was (true) or was not (false) a delete marker before deletion. In a simple DELETE, this header indicates whether (true) or not (false) the current version of the object is a delete marker.</p><note>
+    /// <p>Indicates whether the specified object version that was permanently deleted was (true) or was not (false) a delete marker before deletion. In a simple DELETE, this header indicates whether (true) or not (false) the current version of the object is a delete marker.</p> <note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn delete_marker(&self) -> ::std::option::Option<bool> {
         self.delete_marker
     }
-    /// <p>Returns the version ID of the delete marker created as a result of the DELETE operation.</p><note>
+    /// <p>Returns the version ID of the delete marker created as a result of the DELETE operation.</p> <note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn version_id(&self) -> ::std::option::Option<&str> {
         self.version_id.as_deref()
     }
-    /// <p>If present, indicates that the requester was successfully charged for the request.</p><note>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p> <note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn request_charged(&self) -> ::std::option::Option<&crate::types::RequestCharged> {
@@ -66,61 +66,61 @@ pub struct DeleteObjectOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteObjectOutputBuilder {
-    /// <p>Indicates whether the specified object version that was permanently deleted was (true) or was not (false) a delete marker before deletion. In a simple DELETE, this header indicates whether (true) or not (false) the current version of the object is a delete marker.</p><note>
+    /// <p>Indicates whether the specified object version that was permanently deleted was (true) or was not (false) a delete marker before deletion. In a simple DELETE, this header indicates whether (true) or not (false) the current version of the object is a delete marker.</p> <note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn delete_marker(mut self, input: bool) -> Self {
         self.delete_marker = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether the specified object version that was permanently deleted was (true) or was not (false) a delete marker before deletion. In a simple DELETE, this header indicates whether (true) or not (false) the current version of the object is a delete marker.</p><note>
+    /// <p>Indicates whether the specified object version that was permanently deleted was (true) or was not (false) a delete marker before deletion. In a simple DELETE, this header indicates whether (true) or not (false) the current version of the object is a delete marker.</p> <note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_delete_marker(mut self, input: ::std::option::Option<bool>) -> Self {
         self.delete_marker = input;
         self
     }
-    /// <p>Indicates whether the specified object version that was permanently deleted was (true) or was not (false) a delete marker before deletion. In a simple DELETE, this header indicates whether (true) or not (false) the current version of the object is a delete marker.</p><note>
+    /// <p>Indicates whether the specified object version that was permanently deleted was (true) or was not (false) a delete marker before deletion. In a simple DELETE, this header indicates whether (true) or not (false) the current version of the object is a delete marker.</p> <note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn get_delete_marker(&self) -> &::std::option::Option<bool> {
         &self.delete_marker
     }
-    /// <p>Returns the version ID of the delete marker created as a result of the DELETE operation.</p><note>
+    /// <p>Returns the version ID of the delete marker created as a result of the DELETE operation.</p> <note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Returns the version ID of the delete marker created as a result of the DELETE operation.</p><note>
+    /// <p>Returns the version ID of the delete marker created as a result of the DELETE operation.</p> <note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_id = input;
         self
     }
-    /// <p>Returns the version ID of the delete marker created as a result of the DELETE operation.</p><note>
+    /// <p>Returns the version ID of the delete marker created as a result of the DELETE operation.</p> <note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.version_id
     }
-    /// <p>If present, indicates that the requester was successfully charged for the request.</p><note>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p> <note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn request_charged(mut self, input: crate::types::RequestCharged) -> Self {
         self.request_charged = ::std::option::Option::Some(input);
         self
     }
-    /// <p>If present, indicates that the requester was successfully charged for the request.</p><note>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p> <note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_request_charged(mut self, input: ::std::option::Option<crate::types::RequestCharged>) -> Self {
         self.request_charged = input;
         self
     }
-    /// <p>If present, indicates that the requester was successfully charged for the request.</p><note>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p> <note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn get_request_charged(&self) -> &::std::option::Option<crate::types::RequestCharged> {

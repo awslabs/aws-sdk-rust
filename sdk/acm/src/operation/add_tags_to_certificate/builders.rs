@@ -22,9 +22,9 @@ impl AddTagsToCertificateInputBuilder {
 }
 /// Fluent builder constructing a request to `AddTagsToCertificate`.
 ///
-/// <p>Adds one or more tags to an ACM certificate. Tags are labels that you can use to identify and organize your Amazon Web Services resources. Each tag consists of a <code>key</code> and an optional <code>value</code>. You specify the certificate on input by its Amazon Resource Name (ARN). You specify the tag by using a key-value pair.</p>
-/// <p>You can apply a tag to just one certificate if you want to identify a specific characteristic of that certificate, or you can apply the same tag to multiple certificates if you want to filter for a common relationship among those certificates. Similarly, you can apply the same tag to multiple resources if you want to specify a relationship among those resources. For example, you can add the same tag to an ACM certificate and an Elastic Load Balancing load balancer to indicate that they are both used by the same website. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/tags.html">Tagging ACM certificates</a>.</p>
-/// <p>To remove one or more tags, use the <code>RemoveTagsFromCertificate</code> action. To view all of the tags that have been applied to the certificate, use the <code>ListTagsForCertificate</code> action.</p>
+/// <p>Adds one or more tags to an ACM certificate. Tags are labels that you can use to identify and organize your Amazon Web Services resources. Each tag consists of a <code>key</code> and an optional <code>value</code>. You specify the certificate on input by its Amazon Resource Name (ARN). You specify the tag by using a key-value pair. </p>
+/// <p>You can apply a tag to just one certificate if you want to identify a specific characteristic of that certificate, or you can apply the same tag to multiple certificates if you want to filter for a common relationship among those certificates. Similarly, you can apply the same tag to multiple resources if you want to specify a relationship among those resources. For example, you can add the same tag to an ACM certificate and an Elastic Load Balancing load balancer to indicate that they are both used by the same website. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/tags.html">Tagging ACM certificates</a>. </p>
+/// <p>To remove one or more tags, use the <code>RemoveTagsFromCertificate</code> action. To view all of the tags that have been applied to the certificate, use the <code>ListTagsForCertificate</code> action. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AddTagsToCertificateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -111,21 +111,21 @@ impl AddTagsToCertificateFluentBuilder {
         self
     }
     /// <p>String that contains the ARN of the ACM certificate to which the tag is to be applied. This must be of the form:</p>
-    /// <p><code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code></p>
+    /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
     pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_arn(input.into());
         self
     }
     /// <p>String that contains the ARN of the ACM certificate to which the tag is to be applied. This must be of the form:</p>
-    /// <p><code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code></p>
+    /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
     pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate_arn(input);
         self
     }
     /// <p>String that contains the ARN of the ACM certificate to which the tag is to be applied. This must be of the form:</p>
-    /// <p><code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code></p>
+    /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
     pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_certificate_arn()

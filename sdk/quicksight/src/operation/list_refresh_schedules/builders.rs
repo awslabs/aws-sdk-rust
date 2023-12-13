@@ -22,7 +22,7 @@ impl ListRefreshSchedulesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListRefreshSchedules`.
 ///
-/// <p>Lists the refresh schedules of a dataset. Each dataset can have up to 5 schedules.</p>
+/// <p>Lists the refresh schedules of a dataset. Each dataset can have up to 5 schedules. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListRefreshSchedulesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

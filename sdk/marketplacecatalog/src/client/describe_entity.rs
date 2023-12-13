@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeEntity`](crate::operation::describe_entity::builders::DescribeEntityFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`catalog(impl Into<String>)`](crate::operation::describe_entity::builders::DescribeEntityFluentBuilder::catalog) / [`set_catalog(Option<String>)`](crate::operation::describe_entity::builders::DescribeEntityFluentBuilder::set_catalog):<br>required: **true**<br><p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code></p><br>
+    ///   - [`catalog(impl Into<String>)`](crate::operation::describe_entity::builders::DescribeEntityFluentBuilder::catalog) / [`set_catalog(Option<String>)`](crate::operation::describe_entity::builders::DescribeEntityFluentBuilder::set_catalog):<br>required: **true**<br><p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p><br>
     ///   - [`entity_id(impl Into<String>)`](crate::operation::describe_entity::builders::DescribeEntityFluentBuilder::entity_id) / [`set_entity_id(Option<String>)`](crate::operation::describe_entity::builders::DescribeEntityFluentBuilder::set_entity_id):<br>required: **true**<br><p>Required. The unique ID of the entity to describe.</p><br>
     /// - On success, responds with [`DescribeEntityOutput`](crate::operation::describe_entity::DescribeEntityOutput) with field(s):
     ///   - [`entity_type(Option<String>)`](crate::operation::describe_entity::DescribeEntityOutput::entity_type): <p>The named type of the entity, in the format of <code>EntityType@Version</code>.</p>

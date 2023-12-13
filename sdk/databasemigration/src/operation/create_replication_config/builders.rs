@@ -167,12 +167,9 @@ impl CreateReplicationConfigFluentBuilder {
     /// <p>The type of DMS Serverless replication to provision using this replication configuration.</p>
     /// <p>Possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>"full-load"</code></p></li>
-    /// <li>
-    /// <p><code>"cdc"</code></p></li>
-    /// <li>
-    /// <p><code>"full-load-and-cdc"</code></p></li>
+    /// <li> <p> <code>"full-load"</code> </p> </li>
+    /// <li> <p> <code>"cdc"</code> </p> </li>
+    /// <li> <p> <code>"full-load-and-cdc"</code> </p> </li>
     /// </ul>
     pub fn replication_type(mut self, input: crate::types::MigrationTypeValue) -> Self {
         self.inner = self.inner.replication_type(input);
@@ -181,12 +178,9 @@ impl CreateReplicationConfigFluentBuilder {
     /// <p>The type of DMS Serverless replication to provision using this replication configuration.</p>
     /// <p>Possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>"full-load"</code></p></li>
-    /// <li>
-    /// <p><code>"cdc"</code></p></li>
-    /// <li>
-    /// <p><code>"full-load-and-cdc"</code></p></li>
+    /// <li> <p> <code>"full-load"</code> </p> </li>
+    /// <li> <p> <code>"cdc"</code> </p> </li>
+    /// <li> <p> <code>"full-load-and-cdc"</code> </p> </li>
     /// </ul>
     pub fn set_replication_type(mut self, input: ::std::option::Option<crate::types::MigrationTypeValue>) -> Self {
         self.inner = self.inner.set_replication_type(input);
@@ -195,12 +189,9 @@ impl CreateReplicationConfigFluentBuilder {
     /// <p>The type of DMS Serverless replication to provision using this replication configuration.</p>
     /// <p>Possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>"full-load"</code></p></li>
-    /// <li>
-    /// <p><code>"cdc"</code></p></li>
-    /// <li>
-    /// <p><code>"full-load-and-cdc"</code></p></li>
+    /// <li> <p> <code>"full-load"</code> </p> </li>
+    /// <li> <p> <code>"cdc"</code> </p> </li>
+    /// <li> <p> <code>"full-load-and-cdc"</code> </p> </li>
     /// </ul>
     pub fn get_replication_type(&self) -> &::std::option::Option<crate::types::MigrationTypeValue> {
         self.inner.get_replication_type()

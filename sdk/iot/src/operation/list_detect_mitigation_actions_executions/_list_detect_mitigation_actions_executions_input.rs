@@ -3,47 +3,47 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDetectMitigationActionsExecutionsInput {
-    /// <p>The unique identifier of the task.</p>
+    /// <p> The unique identifier of the task. </p>
     pub task_id: ::std::option::Option<::std::string::String>,
-    /// <p>The unique identifier of the violation.</p>
+    /// <p> The unique identifier of the violation. </p>
     pub violation_id: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the thing whose mitigation actions are listed.</p>
+    /// <p> The name of the thing whose mitigation actions are listed. </p>
     pub thing_name: ::std::option::Option<::std::string::String>,
-    /// <p>A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both.</p>
+    /// <p> A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both. </p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The end of the time period for which ML Detect mitigation actions executions are returned.</p>
+    /// <p> The end of the time period for which ML Detect mitigation actions executions are returned. </p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The maximum number of results to return at one time. The default is 25.</p>
+    /// <p> The maximum number of results to return at one time. The default is 25. </p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>The token for the next set of results.</p>
+    /// <p> The token for the next set of results. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListDetectMitigationActionsExecutionsInput {
-    /// <p>The unique identifier of the task.</p>
+    /// <p> The unique identifier of the task. </p>
     pub fn task_id(&self) -> ::std::option::Option<&str> {
         self.task_id.as_deref()
     }
-    /// <p>The unique identifier of the violation.</p>
+    /// <p> The unique identifier of the violation. </p>
     pub fn violation_id(&self) -> ::std::option::Option<&str> {
         self.violation_id.as_deref()
     }
-    /// <p>The name of the thing whose mitigation actions are listed.</p>
+    /// <p> The name of the thing whose mitigation actions are listed. </p>
     pub fn thing_name(&self) -> ::std::option::Option<&str> {
         self.thing_name.as_deref()
     }
-    /// <p>A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both.</p>
+    /// <p> A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both. </p>
     pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>The end of the time period for which ML Detect mitigation actions executions are returned.</p>
+    /// <p> The end of the time period for which ML Detect mitigation actions executions are returned. </p>
     pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
-    /// <p>The maximum number of results to return at one time. The default is 25.</p>
+    /// <p> The maximum number of results to return at one time. The default is 25. </p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The token for the next set of results.</p>
+    /// <p> The token for the next set of results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -68,101 +68,101 @@ pub struct ListDetectMitigationActionsExecutionsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListDetectMitigationActionsExecutionsInputBuilder {
-    /// <p>The unique identifier of the task.</p>
+    /// <p> The unique identifier of the task. </p>
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the task.</p>
+    /// <p> The unique identifier of the task. </p>
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_id = input;
         self
     }
-    /// <p>The unique identifier of the task.</p>
+    /// <p> The unique identifier of the task. </p>
     pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.task_id
     }
-    /// <p>The unique identifier of the violation.</p>
+    /// <p> The unique identifier of the violation. </p>
     pub fn violation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.violation_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the violation.</p>
+    /// <p> The unique identifier of the violation. </p>
     pub fn set_violation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.violation_id = input;
         self
     }
-    /// <p>The unique identifier of the violation.</p>
+    /// <p> The unique identifier of the violation. </p>
     pub fn get_violation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.violation_id
     }
-    /// <p>The name of the thing whose mitigation actions are listed.</p>
+    /// <p> The name of the thing whose mitigation actions are listed. </p>
     pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the thing whose mitigation actions are listed.</p>
+    /// <p> The name of the thing whose mitigation actions are listed. </p>
     pub fn set_thing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_name = input;
         self
     }
-    /// <p>The name of the thing whose mitigation actions are listed.</p>
+    /// <p> The name of the thing whose mitigation actions are listed. </p>
     pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.thing_name
     }
-    /// <p>A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both.</p>
+    /// <p> A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both. </p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both.</p>
+    /// <p> A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both. </p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
-    /// <p>A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both.</p>
+    /// <p> A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both. </p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.start_time
     }
-    /// <p>The end of the time period for which ML Detect mitigation actions executions are returned.</p>
+    /// <p> The end of the time period for which ML Detect mitigation actions executions are returned. </p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The end of the time period for which ML Detect mitigation actions executions are returned.</p>
+    /// <p> The end of the time period for which ML Detect mitigation actions executions are returned. </p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
-    /// <p>The end of the time period for which ML Detect mitigation actions executions are returned.</p>
+    /// <p> The end of the time period for which ML Detect mitigation actions executions are returned. </p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_time
     }
-    /// <p>The maximum number of results to return at one time. The default is 25.</p>
+    /// <p> The maximum number of results to return at one time. The default is 25. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of results to return at one time. The default is 25.</p>
+    /// <p> The maximum number of results to return at one time. The default is 25. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of results to return at one time. The default is 25.</p>
+    /// <p> The maximum number of results to return at one time. The default is 25. </p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p>The token for the next set of results.</p>
+    /// <p> The token for the next set of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token for the next set of results.</p>
+    /// <p> The token for the next set of results. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The token for the next set of results.</p>
+    /// <p> The token for the next set of results. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

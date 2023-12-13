@@ -22,7 +22,7 @@ impl DeleteFirewallPolicyInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteFirewallPolicy`.
 ///
-/// <p>Deletes the specified <code>FirewallPolicy</code>.</p>
+/// <p>Deletes the specified <code>FirewallPolicy</code>. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteFirewallPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -109,36 +109,36 @@ impl DeleteFirewallPolicyFluentBuilder {
         self
     }
     /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub fn firewall_policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.firewall_policy_name(input.into());
         self
     }
     /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub fn set_firewall_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_firewall_policy_name(input);
         self
     }
     /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub fn get_firewall_policy_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_firewall_policy_name()
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub fn firewall_policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.firewall_policy_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub fn set_firewall_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_firewall_policy_arn(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub fn get_firewall_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_firewall_policy_arn()
     }

@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetFreeTrialInfoOutput {
-    /// <p>An array of objects that provide Amazon Inspector free trial details for each of the requested accounts.</p>
+    /// <p>An array of objects that provide Amazon Inspector free trial details for each of the requested accounts. </p>
     pub accounts: ::std::vec::Vec<crate::types::FreeTrialAccountInfo>,
     /// <p>An array of objects detailing any accounts that free trial data could not be returned for.</p>
     pub failed_accounts: ::std::vec::Vec<crate::types::FreeTrialInfoError>,
     _request_id: Option<String>,
 }
 impl BatchGetFreeTrialInfoOutput {
-    /// <p>An array of objects that provide Amazon Inspector free trial details for each of the requested accounts.</p>
+    /// <p>An array of objects that provide Amazon Inspector free trial details for each of the requested accounts. </p>
     pub fn accounts(&self) -> &[crate::types::FreeTrialAccountInfo] {
         use std::ops::Deref;
         self.accounts.deref()
@@ -46,19 +46,19 @@ impl BatchGetFreeTrialInfoOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_accounts`](Self::set_accounts).
     ///
-    /// <p>An array of objects that provide Amazon Inspector free trial details for each of the requested accounts.</p>
+    /// <p>An array of objects that provide Amazon Inspector free trial details for each of the requested accounts. </p>
     pub fn accounts(mut self, input: crate::types::FreeTrialAccountInfo) -> Self {
         let mut v = self.accounts.unwrap_or_default();
         v.push(input);
         self.accounts = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of objects that provide Amazon Inspector free trial details for each of the requested accounts.</p>
+    /// <p>An array of objects that provide Amazon Inspector free trial details for each of the requested accounts. </p>
     pub fn set_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FreeTrialAccountInfo>>) -> Self {
         self.accounts = input;
         self
     }
-    /// <p>An array of objects that provide Amazon Inspector free trial details for each of the requested accounts.</p>
+    /// <p>An array of objects that provide Amazon Inspector free trial details for each of the requested accounts. </p>
     pub fn get_accounts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FreeTrialAccountInfo>> {
         &self.accounts
     }

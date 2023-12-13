@@ -8,7 +8,7 @@ pub struct PredictorMonitorEvaluation {
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the monitor resource.</p>
     pub monitor_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The timestamp that indicates when the monitor evaluation was started.</p>
+    /// <p>The timestamp that indicates when the monitor evaluation was started. </p>
     pub evaluation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the monitor evaluation. The state can be <code>SUCCESS</code> or <code>FAILURE</code>.</p>
     pub evaluation_state: ::std::option::Option<::std::string::String>,
@@ -36,7 +36,7 @@ impl PredictorMonitorEvaluation {
     pub fn monitor_arn(&self) -> ::std::option::Option<&str> {
         self.monitor_arn.as_deref()
     }
-    /// <p>The timestamp that indicates when the monitor evaluation was started.</p>
+    /// <p>The timestamp that indicates when the monitor evaluation was started. </p>
     pub fn evaluation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.evaluation_time.as_ref()
     }
@@ -127,17 +127,17 @@ impl PredictorMonitorEvaluationBuilder {
     pub fn get_monitor_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.monitor_arn
     }
-    /// <p>The timestamp that indicates when the monitor evaluation was started.</p>
+    /// <p>The timestamp that indicates when the monitor evaluation was started. </p>
     pub fn evaluation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.evaluation_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The timestamp that indicates when the monitor evaluation was started.</p>
+    /// <p>The timestamp that indicates when the monitor evaluation was started. </p>
     pub fn set_evaluation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.evaluation_time = input;
         self
     }
-    /// <p>The timestamp that indicates when the monitor evaluation was started.</p>
+    /// <p>The timestamp that indicates when the monitor evaluation was started. </p>
     pub fn get_evaluation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.evaluation_time
     }

@@ -150,17 +150,17 @@ impl UpdateIPSetFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>The updated URI of the file that contains the IPSet.</p>
+    /// <p>The updated URI of the file that contains the IPSet. </p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.location(input.into());
         self
     }
-    /// <p>The updated URI of the file that contains the IPSet.</p>
+    /// <p>The updated URI of the file that contains the IPSet. </p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_location(input);
         self
     }
-    /// <p>The updated URI of the file that contains the IPSet.</p>
+    /// <p>The updated URI of the file that contains the IPSet. </p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_location()
     }

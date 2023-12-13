@@ -22,8 +22,8 @@ impl TagResourceInputBuilder {
 }
 /// Fluent builder constructing a request to `TagResource`.
 ///
-/// <p>Adds one or more key-value tags to an Amazon Rekognition collection, stream processor, or Custom Labels model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.</p>
-/// <p>This operation requires permissions to perform the <code>rekognition:TagResource</code> action.</p>
+/// <p> Adds one or more key-value tags to an Amazon Rekognition collection, stream processor, or Custom Labels model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>. </p>
+/// <p>This operation requires permissions to perform the <code>rekognition:TagResource</code> action. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TagResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -109,17 +109,17 @@ impl TagResourceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Amazon Resource Name (ARN) of the model, collection, or stream processor that you want to assign the tags to.</p>
+    /// <p> Amazon Resource Name (ARN) of the model, collection, or stream processor that you want to assign the tags to. </p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());
         self
     }
-    /// <p>Amazon Resource Name (ARN) of the model, collection, or stream processor that you want to assign the tags to.</p>
+    /// <p> Amazon Resource Name (ARN) of the model, collection, or stream processor that you want to assign the tags to. </p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
-    /// <p>Amazon Resource Name (ARN) of the model, collection, or stream processor that you want to assign the tags to.</p>
+    /// <p> Amazon Resource Name (ARN) of the model, collection, or stream processor that you want to assign the tags to. </p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_arn()
     }
@@ -127,17 +127,17 @@ impl TagResourceFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The key-value tags to assign to the resource.</p>
+    /// <p> The key-value tags to assign to the resource. </p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
-    /// <p>The key-value tags to assign to the resource.</p>
+    /// <p> The key-value tags to assign to the resource. </p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>The key-value tags to assign to the resource.</p>
+    /// <p> The key-value tags to assign to the resource. </p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }

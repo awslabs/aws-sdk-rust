@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEvidenceFoldersByAssessmentOutput {
-    /// <p>The list of evidence folders that the <code>GetEvidenceFoldersByAssessment</code> API returned.</p>
+    /// <p> The list of evidence folders that the <code>GetEvidenceFoldersByAssessment</code> API returned. </p>
     pub evidence_folders: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentEvidenceFolder>>,
-    /// <p>The pagination token that's used to fetch the next set of results.</p>
+    /// <p> The pagination token that's used to fetch the next set of results. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetEvidenceFoldersByAssessmentOutput {
-    /// <p>The list of evidence folders that the <code>GetEvidenceFoldersByAssessment</code> API returned.</p>
+    /// <p> The list of evidence folders that the <code>GetEvidenceFoldersByAssessment</code> API returned. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.evidence_folders.is_none()`.
     pub fn evidence_folders(&self) -> &[crate::types::AssessmentEvidenceFolder] {
         self.evidence_folders.as_deref().unwrap_or_default()
     }
-    /// <p>The pagination token that's used to fetch the next set of results.</p>
+    /// <p> The pagination token that's used to fetch the next set of results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -46,33 +46,33 @@ impl GetEvidenceFoldersByAssessmentOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_evidence_folders`](Self::set_evidence_folders).
     ///
-    /// <p>The list of evidence folders that the <code>GetEvidenceFoldersByAssessment</code> API returned.</p>
+    /// <p> The list of evidence folders that the <code>GetEvidenceFoldersByAssessment</code> API returned. </p>
     pub fn evidence_folders(mut self, input: crate::types::AssessmentEvidenceFolder) -> Self {
         let mut v = self.evidence_folders.unwrap_or_default();
         v.push(input);
         self.evidence_folders = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of evidence folders that the <code>GetEvidenceFoldersByAssessment</code> API returned.</p>
+    /// <p> The list of evidence folders that the <code>GetEvidenceFoldersByAssessment</code> API returned. </p>
     pub fn set_evidence_folders(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentEvidenceFolder>>) -> Self {
         self.evidence_folders = input;
         self
     }
-    /// <p>The list of evidence folders that the <code>GetEvidenceFoldersByAssessment</code> API returned.</p>
+    /// <p> The list of evidence folders that the <code>GetEvidenceFoldersByAssessment</code> API returned. </p>
     pub fn get_evidence_folders(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssessmentEvidenceFolder>> {
         &self.evidence_folders
     }
-    /// <p>The pagination token that's used to fetch the next set of results.</p>
+    /// <p> The pagination token that's used to fetch the next set of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The pagination token that's used to fetch the next set of results.</p>
+    /// <p> The pagination token that's used to fetch the next set of results. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The pagination token that's used to fetch the next set of results.</p>
+    /// <p> The pagination token that's used to fetch the next set of results. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

@@ -22,7 +22,7 @@ impl DeleteNamespaceInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteNamespace`.
 ///
-/// <p>Deletes a namespace and the users and groups that are associated with the namespace. This is an asynchronous process. Assets including dashboards, analyses, datasets and data sources are not deleted. To delete these assets, you use the API operations for the relevant asset.</p>
+/// <p>Deletes a namespace and the users and groups that are associated with the namespace. This is an asynchronous process. Assets including dashboards, analyses, datasets and data sources are not deleted. To delete these assets, you use the API operations for the relevant asset. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteNamespaceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

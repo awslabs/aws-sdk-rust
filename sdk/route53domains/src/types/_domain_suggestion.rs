@@ -6,7 +6,7 @@
 pub struct DomainSuggestion {
     /// <p>A suggested domain name.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
-    /// <p>Whether the domain name is available for registering.</p><note>
+    /// <p>Whether the domain name is available for registering.</p> <note>
     /// <p>You can register only the domains that are designated as <code>AVAILABLE</code>.</p>
     /// </note>
     /// <p>Valid values:</p>
@@ -73,7 +73,7 @@ impl DomainSuggestion {
     pub fn domain_name(&self) -> ::std::option::Option<&str> {
         self.domain_name.as_deref()
     }
-    /// <p>Whether the domain name is available for registering.</p><note>
+    /// <p>Whether the domain name is available for registering.</p> <note>
     /// <p>You can register only the domains that are designated as <code>AVAILABLE</code>.</p>
     /// </note>
     /// <p>Valid values:</p>
@@ -166,7 +166,7 @@ impl DomainSuggestionBuilder {
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_name
     }
-    /// <p>Whether the domain name is available for registering.</p><note>
+    /// <p>Whether the domain name is available for registering.</p> <note>
     /// <p>You can register only the domains that are designated as <code>AVAILABLE</code>.</p>
     /// </note>
     /// <p>Valid values:</p>
@@ -230,7 +230,7 @@ impl DomainSuggestionBuilder {
         self.availability = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Whether the domain name is available for registering.</p><note>
+    /// <p>Whether the domain name is available for registering.</p> <note>
     /// <p>You can register only the domains that are designated as <code>AVAILABLE</code>.</p>
     /// </note>
     /// <p>Valid values:</p>
@@ -294,7 +294,7 @@ impl DomainSuggestionBuilder {
         self.availability = input;
         self
     }
-    /// <p>Whether the domain name is available for registering.</p><note>
+    /// <p>Whether the domain name is available for registering.</p> <note>
     /// <p>You can register only the domains that are designated as <code>AVAILABLE</code>.</p>
     /// </note>
     /// <p>Valid values:</p>

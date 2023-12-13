@@ -22,7 +22,7 @@ impl DeleteSchemaInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteSchema`.
 ///
-/// <p>Deletes a given schema. Schemas in a development and published state can only be deleted.</p>
+/// <p>Deletes a given schema. Schemas in a development and published state can only be deleted. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteSchemaFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

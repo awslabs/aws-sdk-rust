@@ -11,12 +11,9 @@ pub struct StartCallAnalyticsStreamTranscriptionInput {
     pub media_sample_rate_hertz: ::std::option::Option<i32>,
     /// <p>Specify the encoding of your input audio. Supported formats are:</p>
     /// <ul>
-    /// <li>
-    /// <p>FLAC</p></li>
-    /// <li>
-    /// <p>OPUS-encoded audio in an Ogg container</p></li>
-    /// <li>
-    /// <p>PCM (only signed 16-bit little-endian audio formats, which does not include WAV)</p></li>
+    /// <li> <p>FLAC</p> </li>
+    /// <li> <p>OPUS-encoded audio in an Ogg container</p> </li>
+    /// <li> <p>PCM (only signed 16-bit little-endian audio formats, which does not include WAV)</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a>.</p>
     pub media_encoding: ::std::option::Option<crate::types::MediaEncoding>,
@@ -77,12 +74,9 @@ impl StartCallAnalyticsStreamTranscriptionInput {
     }
     /// <p>Specify the encoding of your input audio. Supported formats are:</p>
     /// <ul>
-    /// <li>
-    /// <p>FLAC</p></li>
-    /// <li>
-    /// <p>OPUS-encoded audio in an Ogg container</p></li>
-    /// <li>
-    /// <p>PCM (only signed 16-bit little-endian audio formats, which does not include WAV)</p></li>
+    /// <li> <p>FLAC</p> </li>
+    /// <li> <p>OPUS-encoded audio in an Ogg container</p> </li>
+    /// <li> <p>PCM (only signed 16-bit little-endian audio formats, which does not include WAV)</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a>.</p>
     pub fn media_encoding(&self) -> ::std::option::Option<&crate::types::MediaEncoding> {
@@ -222,12 +216,9 @@ impl StartCallAnalyticsStreamTranscriptionInputBuilder {
     }
     /// <p>Specify the encoding of your input audio. Supported formats are:</p>
     /// <ul>
-    /// <li>
-    /// <p>FLAC</p></li>
-    /// <li>
-    /// <p>OPUS-encoded audio in an Ogg container</p></li>
-    /// <li>
-    /// <p>PCM (only signed 16-bit little-endian audio formats, which does not include WAV)</p></li>
+    /// <li> <p>FLAC</p> </li>
+    /// <li> <p>OPUS-encoded audio in an Ogg container</p> </li>
+    /// <li> <p>PCM (only signed 16-bit little-endian audio formats, which does not include WAV)</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a>.</p>
     /// This field is required.
@@ -237,12 +228,9 @@ impl StartCallAnalyticsStreamTranscriptionInputBuilder {
     }
     /// <p>Specify the encoding of your input audio. Supported formats are:</p>
     /// <ul>
-    /// <li>
-    /// <p>FLAC</p></li>
-    /// <li>
-    /// <p>OPUS-encoded audio in an Ogg container</p></li>
-    /// <li>
-    /// <p>PCM (only signed 16-bit little-endian audio formats, which does not include WAV)</p></li>
+    /// <li> <p>FLAC</p> </li>
+    /// <li> <p>OPUS-encoded audio in an Ogg container</p> </li>
+    /// <li> <p>PCM (only signed 16-bit little-endian audio formats, which does not include WAV)</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a>.</p>
     pub fn set_media_encoding(mut self, input: ::std::option::Option<crate::types::MediaEncoding>) -> Self {
@@ -251,12 +239,9 @@ impl StartCallAnalyticsStreamTranscriptionInputBuilder {
     }
     /// <p>Specify the encoding of your input audio. Supported formats are:</p>
     /// <ul>
-    /// <li>
-    /// <p>FLAC</p></li>
-    /// <li>
-    /// <p>OPUS-encoded audio in an Ogg container</p></li>
-    /// <li>
-    /// <p>PCM (only signed 16-bit little-endian audio formats, which does not include WAV)</p></li>
+    /// <li> <p>FLAC</p> </li>
+    /// <li> <p>OPUS-encoded audio in an Ogg container</p> </li>
+    /// <li> <p>PCM (only signed 16-bit little-endian audio formats, which does not include WAV)</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a>.</p>
     pub fn get_media_encoding(&self) -> &::std::option::Option<crate::types::MediaEncoding> {

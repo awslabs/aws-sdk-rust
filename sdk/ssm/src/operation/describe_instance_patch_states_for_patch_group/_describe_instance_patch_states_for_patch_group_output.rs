@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeInstancePatchStatesForPatchGroupOutput {
-    /// <p>The high-level patch state for the requested managed nodes.</p>
+    /// <p>The high-level patch state for the requested managed nodes. </p>
     pub instance_patch_states: ::std::option::Option<::std::vec::Vec<crate::types::InstancePatchState>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeInstancePatchStatesForPatchGroupOutput {
-    /// <p>The high-level patch state for the requested managed nodes.</p>
+    /// <p>The high-level patch state for the requested managed nodes. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_patch_states.is_none()`.
     pub fn instance_patch_states(&self) -> &[crate::types::InstancePatchState] {
@@ -47,19 +47,19 @@ impl DescribeInstancePatchStatesForPatchGroupOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_instance_patch_states`](Self::set_instance_patch_states).
     ///
-    /// <p>The high-level patch state for the requested managed nodes.</p>
+    /// <p>The high-level patch state for the requested managed nodes. </p>
     pub fn instance_patch_states(mut self, input: crate::types::InstancePatchState) -> Self {
         let mut v = self.instance_patch_states.unwrap_or_default();
         v.push(input);
         self.instance_patch_states = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The high-level patch state for the requested managed nodes.</p>
+    /// <p>The high-level patch state for the requested managed nodes. </p>
     pub fn set_instance_patch_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstancePatchState>>) -> Self {
         self.instance_patch_states = input;
         self
     }
-    /// <p>The high-level patch state for the requested managed nodes.</p>
+    /// <p>The high-level patch state for the requested managed nodes. </p>
     pub fn get_instance_patch_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstancePatchState>> {
         &self.instance_patch_states
     }

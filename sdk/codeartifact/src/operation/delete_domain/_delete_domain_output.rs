@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDomainOutput {
-    /// <p>Contains information about the deleted domain after processing the request.</p>
+    /// <p> Contains information about the deleted domain after processing the request. </p>
     pub domain: ::std::option::Option<crate::types::DomainDescription>,
     _request_id: Option<String>,
 }
 impl DeleteDomainOutput {
-    /// <p>Contains information about the deleted domain after processing the request.</p>
+    /// <p> Contains information about the deleted domain after processing the request. </p>
     pub fn domain(&self) -> ::std::option::Option<&crate::types::DomainDescription> {
         self.domain.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct DeleteDomainOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteDomainOutputBuilder {
-    /// <p>Contains information about the deleted domain after processing the request.</p>
+    /// <p> Contains information about the deleted domain after processing the request. </p>
     pub fn domain(mut self, input: crate::types::DomainDescription) -> Self {
         self.domain = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Contains information about the deleted domain after processing the request.</p>
+    /// <p> Contains information about the deleted domain after processing the request. </p>
     pub fn set_domain(mut self, input: ::std::option::Option<crate::types::DomainDescription>) -> Self {
         self.domain = input;
         self
     }
-    /// <p>Contains information about the deleted domain after processing the request.</p>
+    /// <p> Contains information about the deleted domain after processing the request. </p>
     pub fn get_domain(&self) -> &::std::option::Option<crate::types::DomainDescription> {
         &self.domain
     }

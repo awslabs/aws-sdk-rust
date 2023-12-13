@@ -22,7 +22,7 @@ impl DisassociateProductFromPortfolioInputBuilder {
 }
 /// Fluent builder constructing a request to `DisassociateProductFromPortfolio`.
 ///
-/// <p>Disassociates the specified product from the specified portfolio.</p>
+/// <p>Disassociates the specified product from the specified portfolio. </p>
 /// <p>A delegated admin is authorized to invoke this command.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateProductFromPortfolioFluentBuilder {
@@ -111,10 +111,8 @@ impl DisassociateProductFromPortfolioFluentBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>jp</code> - Japanese</p></li>
-    /// <li>
-    /// <p><code>zh</code> - Chinese</p></li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accept_language(input.into());
@@ -122,10 +120,8 @@ impl DisassociateProductFromPortfolioFluentBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>jp</code> - Japanese</p></li>
-    /// <li>
-    /// <p><code>zh</code> - Chinese</p></li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_accept_language(input);
@@ -133,10 +129,8 @@ impl DisassociateProductFromPortfolioFluentBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>jp</code> - Japanese</p></li>
-    /// <li>
-    /// <p><code>zh</code> - Chinese</p></li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_accept_language()

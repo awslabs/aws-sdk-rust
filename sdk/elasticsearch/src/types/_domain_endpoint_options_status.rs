@@ -6,7 +6,7 @@
 pub struct DomainEndpointOptionsStatus {
     /// <p>Options to configure endpoint for the Elasticsearch domain.</p>
     pub options: ::std::option::Option<crate::types::DomainEndpointOptions>,
-    /// <p>The status of the endpoint options for the Elasticsearch domain. See <code>OptionStatus</code> for the status information that's included.</p>
+    /// <p>The status of the endpoint options for the Elasticsearch domain. See <code>OptionStatus</code> for the status information that's included. </p>
     pub status: ::std::option::Option<crate::types::OptionStatus>,
 }
 impl DomainEndpointOptionsStatus {
@@ -14,7 +14,7 @@ impl DomainEndpointOptionsStatus {
     pub fn options(&self) -> ::std::option::Option<&crate::types::DomainEndpointOptions> {
         self.options.as_ref()
     }
-    /// <p>The status of the endpoint options for the Elasticsearch domain. See <code>OptionStatus</code> for the status information that's included.</p>
+    /// <p>The status of the endpoint options for the Elasticsearch domain. See <code>OptionStatus</code> for the status information that's included. </p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::OptionStatus> {
         self.status.as_ref()
     }
@@ -49,18 +49,18 @@ impl DomainEndpointOptionsStatusBuilder {
     pub fn get_options(&self) -> &::std::option::Option<crate::types::DomainEndpointOptions> {
         &self.options
     }
-    /// <p>The status of the endpoint options for the Elasticsearch domain. See <code>OptionStatus</code> for the status information that's included.</p>
+    /// <p>The status of the endpoint options for the Elasticsearch domain. See <code>OptionStatus</code> for the status information that's included. </p>
     /// This field is required.
     pub fn status(mut self, input: crate::types::OptionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the endpoint options for the Elasticsearch domain. See <code>OptionStatus</code> for the status information that's included.</p>
+    /// <p>The status of the endpoint options for the Elasticsearch domain. See <code>OptionStatus</code> for the status information that's included. </p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::OptionStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of the endpoint options for the Elasticsearch domain. See <code>OptionStatus</code> for the status information that's included.</p>
+    /// <p>The status of the endpoint options for the Elasticsearch domain. See <code>OptionStatus</code> for the status information that's included. </p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::OptionStatus> {
         &self.status
     }

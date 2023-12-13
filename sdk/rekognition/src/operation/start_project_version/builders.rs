@@ -25,8 +25,8 @@ impl StartProjectVersionInputBuilder {
 /// <note>
 /// <p>This operation applies only to Amazon Rekognition Custom Labels.</p>
 /// </note>
-/// <p>Starts the running of the version of a model. Starting a model takes a while to complete. To check the current state of the model, use <code>DescribeProjectVersions</code>.</p>
-/// <p>Once the model is running, you can detect custom labels in new images by calling <code>DetectCustomLabels</code>.</p><note>
+/// <p>Starts the running of the version of a model. Starting a model takes a while to complete. To check the current state of the model, use <code>DescribeProjectVersions</code>. </p>
+/// <p>Once the model is running, you can detect custom labels in new images by calling <code>DetectCustomLabels</code>.</p> <note>
 /// <p>You are charged for the amount of time that the model is running. To stop a running model, call <code>StopProjectVersion</code>.</p>
 /// </note>
 /// <p>This operation requires permissions to perform the <code>rekognition:StartProjectVersion</code> action.</p>
@@ -129,20 +129,20 @@ impl StartProjectVersionFluentBuilder {
     pub fn get_project_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_project_version_arn()
     }
-    /// <p>The minimum number of inference units to use. A single inference unit represents 1 hour of processing.</p>
-    /// <p>Use a higher number to increase the TPS throughput of your model. You are charged for the number of inference units that you use.</p>
+    /// <p>The minimum number of inference units to use. A single inference unit represents 1 hour of processing. </p>
+    /// <p>Use a higher number to increase the TPS throughput of your model. You are charged for the number of inference units that you use. </p>
     pub fn min_inference_units(mut self, input: i32) -> Self {
         self.inner = self.inner.min_inference_units(input);
         self
     }
-    /// <p>The minimum number of inference units to use. A single inference unit represents 1 hour of processing.</p>
-    /// <p>Use a higher number to increase the TPS throughput of your model. You are charged for the number of inference units that you use.</p>
+    /// <p>The minimum number of inference units to use. A single inference unit represents 1 hour of processing. </p>
+    /// <p>Use a higher number to increase the TPS throughput of your model. You are charged for the number of inference units that you use. </p>
     pub fn set_min_inference_units(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_min_inference_units(input);
         self
     }
-    /// <p>The minimum number of inference units to use. A single inference unit represents 1 hour of processing.</p>
-    /// <p>Use a higher number to increase the TPS throughput of your model. You are charged for the number of inference units that you use.</p>
+    /// <p>The minimum number of inference units to use. A single inference unit represents 1 hour of processing. </p>
+    /// <p>Use a higher number to increase the TPS throughput of your model. You are charged for the number of inference units that you use. </p>
     pub fn get_min_inference_units(&self) -> &::std::option::Option<i32> {
         self.inner.get_min_inference_units()
     }

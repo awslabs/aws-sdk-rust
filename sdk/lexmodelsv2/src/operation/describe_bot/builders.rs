@@ -22,7 +22,7 @@ impl DescribeBotInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeBot`.
 ///
-/// <p>Provides metadata information about a bot.</p>
+/// <p>Provides metadata information about a bot. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeBotFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

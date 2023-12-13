@@ -12,7 +12,6 @@
 #![allow(clippy::result_large_err)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
-#![cfg_attr(docsrs, feature(doc_auto_cfg))]
 //! Amazon Transcribe streaming offers three main types of real-time transcription: __Standard__, __Medical__, and __Call Analytics__.
 //!   - __Standard transcriptions__ are the most common option. Refer to for details.
 //!   - __Medical transcriptions__ are tailored to medical professionals and incorporate medical terms. A common use case for this service is transcribing doctor-patient dialogue in real time, so doctors can focus on their patient instead of taking notes. Refer to for details.
@@ -29,8 +28,8 @@
 //!
 //! ```toml
 //! [dependencies]
-//! aws-config = { version = "1.1.0", features = ["behavior-version-latest"] }
-//! aws-sdk-transcribestreaming = "1.5.0"
+//! aws-config = { version = "1.0.3", features = ["behavior-version-latest"] }
+//! aws-sdk-transcribestreaming = "1.6.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -186,8 +185,6 @@ pub mod types;
 
 mod auth_plugin;
 
-mod event_receiver;
-
 mod event_stream_serde;
 
 pub(crate) mod protocol_serde;
@@ -195,6 +192,8 @@ pub(crate) mod protocol_serde;
 mod serialization_settings;
 
 mod endpoint_lib;
+
+mod event_receiver;
 
 mod json_errors;
 

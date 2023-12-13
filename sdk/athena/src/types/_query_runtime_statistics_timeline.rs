@@ -6,7 +6,7 @@
 pub struct QueryRuntimeStatisticsTimeline {
     /// <p>The number of milliseconds that the query was in your query queue waiting for resources. Note that if transient errors occur, Athena might automatically add the query back to the queue.</p>
     pub query_queue_time_in_millis: ::std::option::Option<i64>,
-    /// <p>The number of milliseconds that Athena spends on preprocessing before it submits the query to the engine.</p>
+    /// <p> The number of milliseconds that Athena spends on preprocessing before it submits the query to the engine. </p>
     pub service_pre_processing_time_in_millis: ::std::option::Option<i64>,
     /// <p>The number of milliseconds that Athena took to plan the query processing flow. This includes the time spent retrieving table partitions from the data source. Note that because the query engine performs the query planning, query planning time is a subset of engine processing time.</p>
     pub query_planning_time_in_millis: ::std::option::Option<i64>,
@@ -22,7 +22,7 @@ impl QueryRuntimeStatisticsTimeline {
     pub fn query_queue_time_in_millis(&self) -> ::std::option::Option<i64> {
         self.query_queue_time_in_millis
     }
-    /// <p>The number of milliseconds that Athena spends on preprocessing before it submits the query to the engine.</p>
+    /// <p> The number of milliseconds that Athena spends on preprocessing before it submits the query to the engine. </p>
     pub fn service_pre_processing_time_in_millis(&self) -> ::std::option::Option<i64> {
         self.service_pre_processing_time_in_millis
     }
@@ -76,17 +76,17 @@ impl QueryRuntimeStatisticsTimelineBuilder {
     pub fn get_query_queue_time_in_millis(&self) -> &::std::option::Option<i64> {
         &self.query_queue_time_in_millis
     }
-    /// <p>The number of milliseconds that Athena spends on preprocessing before it submits the query to the engine.</p>
+    /// <p> The number of milliseconds that Athena spends on preprocessing before it submits the query to the engine. </p>
     pub fn service_pre_processing_time_in_millis(mut self, input: i64) -> Self {
         self.service_pre_processing_time_in_millis = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of milliseconds that Athena spends on preprocessing before it submits the query to the engine.</p>
+    /// <p> The number of milliseconds that Athena spends on preprocessing before it submits the query to the engine. </p>
     pub fn set_service_pre_processing_time_in_millis(mut self, input: ::std::option::Option<i64>) -> Self {
         self.service_pre_processing_time_in_millis = input;
         self
     }
-    /// <p>The number of milliseconds that Athena spends on preprocessing before it submits the query to the engine.</p>
+    /// <p> The number of milliseconds that Athena spends on preprocessing before it submits the query to the engine. </p>
     pub fn get_service_pre_processing_time_in_millis(&self) -> &::std::option::Option<i64> {
         &self.service_pre_processing_time_in_millis
     }

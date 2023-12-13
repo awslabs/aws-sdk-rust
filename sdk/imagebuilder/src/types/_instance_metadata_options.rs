@@ -6,10 +6,8 @@
 pub struct InstanceMetadataOptions {
     /// <p>Indicates whether a signed token header is required for instance metadata retrieval requests. The values affect the response as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><b>required</b> – When you retrieve the IAM role credentials, version 2.0 credentials are returned in all cases.</p></li>
-    /// <li>
-    /// <p><b>optional</b> – You can include a signed token header in your request to retrieve instance metadata, or you can leave it out. If you include it, version 2.0 credentials are returned for the IAM role. Otherwise, version 1.0 credentials are returned.</p></li>
+    /// <li> <p> <b>required</b> – When you retrieve the IAM role credentials, version 2.0 credentials are returned in all cases.</p> </li>
+    /// <li> <p> <b>optional</b> – You can include a signed token header in your request to retrieve instance metadata, or you can leave it out. If you include it, version 2.0 credentials are returned for the IAM role. Otherwise, version 1.0 credentials are returned.</p> </li>
     /// </ul>
     /// <p>The default setting is <b>optional</b>.</p>
     pub http_tokens: ::std::option::Option<::std::string::String>,
@@ -19,10 +17,8 @@ pub struct InstanceMetadataOptions {
 impl InstanceMetadataOptions {
     /// <p>Indicates whether a signed token header is required for instance metadata retrieval requests. The values affect the response as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><b>required</b> – When you retrieve the IAM role credentials, version 2.0 credentials are returned in all cases.</p></li>
-    /// <li>
-    /// <p><b>optional</b> – You can include a signed token header in your request to retrieve instance metadata, or you can leave it out. If you include it, version 2.0 credentials are returned for the IAM role. Otherwise, version 1.0 credentials are returned.</p></li>
+    /// <li> <p> <b>required</b> – When you retrieve the IAM role credentials, version 2.0 credentials are returned in all cases.</p> </li>
+    /// <li> <p> <b>optional</b> – You can include a signed token header in your request to retrieve instance metadata, or you can leave it out. If you include it, version 2.0 credentials are returned for the IAM role. Otherwise, version 1.0 credentials are returned.</p> </li>
     /// </ul>
     /// <p>The default setting is <b>optional</b>.</p>
     pub fn http_tokens(&self) -> ::std::option::Option<&str> {
@@ -50,10 +46,8 @@ pub struct InstanceMetadataOptionsBuilder {
 impl InstanceMetadataOptionsBuilder {
     /// <p>Indicates whether a signed token header is required for instance metadata retrieval requests. The values affect the response as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><b>required</b> – When you retrieve the IAM role credentials, version 2.0 credentials are returned in all cases.</p></li>
-    /// <li>
-    /// <p><b>optional</b> – You can include a signed token header in your request to retrieve instance metadata, or you can leave it out. If you include it, version 2.0 credentials are returned for the IAM role. Otherwise, version 1.0 credentials are returned.</p></li>
+    /// <li> <p> <b>required</b> – When you retrieve the IAM role credentials, version 2.0 credentials are returned in all cases.</p> </li>
+    /// <li> <p> <b>optional</b> – You can include a signed token header in your request to retrieve instance metadata, or you can leave it out. If you include it, version 2.0 credentials are returned for the IAM role. Otherwise, version 1.0 credentials are returned.</p> </li>
     /// </ul>
     /// <p>The default setting is <b>optional</b>.</p>
     pub fn http_tokens(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -62,10 +56,8 @@ impl InstanceMetadataOptionsBuilder {
     }
     /// <p>Indicates whether a signed token header is required for instance metadata retrieval requests. The values affect the response as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><b>required</b> – When you retrieve the IAM role credentials, version 2.0 credentials are returned in all cases.</p></li>
-    /// <li>
-    /// <p><b>optional</b> – You can include a signed token header in your request to retrieve instance metadata, or you can leave it out. If you include it, version 2.0 credentials are returned for the IAM role. Otherwise, version 1.0 credentials are returned.</p></li>
+    /// <li> <p> <b>required</b> – When you retrieve the IAM role credentials, version 2.0 credentials are returned in all cases.</p> </li>
+    /// <li> <p> <b>optional</b> – You can include a signed token header in your request to retrieve instance metadata, or you can leave it out. If you include it, version 2.0 credentials are returned for the IAM role. Otherwise, version 1.0 credentials are returned.</p> </li>
     /// </ul>
     /// <p>The default setting is <b>optional</b>.</p>
     pub fn set_http_tokens(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -74,10 +66,8 @@ impl InstanceMetadataOptionsBuilder {
     }
     /// <p>Indicates whether a signed token header is required for instance metadata retrieval requests. The values affect the response as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><b>required</b> – When you retrieve the IAM role credentials, version 2.0 credentials are returned in all cases.</p></li>
-    /// <li>
-    /// <p><b>optional</b> – You can include a signed token header in your request to retrieve instance metadata, or you can leave it out. If you include it, version 2.0 credentials are returned for the IAM role. Otherwise, version 1.0 credentials are returned.</p></li>
+    /// <li> <p> <b>required</b> – When you retrieve the IAM role credentials, version 2.0 credentials are returned in all cases.</p> </li>
+    /// <li> <p> <b>optional</b> – You can include a signed token header in your request to retrieve instance metadata, or you can leave it out. If you include it, version 2.0 credentials are returned for the IAM role. Otherwise, version 1.0 credentials are returned.</p> </li>
     /// </ul>
     /// <p>The default setting is <b>optional</b>.</p>
     pub fn get_http_tokens(&self) -> &::std::option::Option<::std::string::String> {

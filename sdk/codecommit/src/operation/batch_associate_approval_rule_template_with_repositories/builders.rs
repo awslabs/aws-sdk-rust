@@ -22,7 +22,7 @@ impl BatchAssociateApprovalRuleTemplateWithRepositoriesInputBuilder {
 }
 /// Fluent builder constructing a request to `BatchAssociateApprovalRuleTemplateWithRepositories`.
 ///
-/// <p>Creates an association between an approval rule template and one or more specified repositories.</p>
+/// <p>Creates an association between an approval rule template and one or more specified repositories. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchAssociateApprovalRuleTemplateWithRepositoriesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -130,21 +130,21 @@ impl BatchAssociateApprovalRuleTemplateWithRepositoriesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_repository_names`](Self::set_repository_names).
     ///
-    /// <p>The names of the repositories you want to associate with the template.</p><note>
+    /// <p>The names of the repositories you want to associate with the template.</p> <note>
     /// <p>The length constraint limit is for each string in the array. The array itself can be empty.</p>
     /// </note>
     pub fn repository_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository_names(input.into());
         self
     }
-    /// <p>The names of the repositories you want to associate with the template.</p><note>
+    /// <p>The names of the repositories you want to associate with the template.</p> <note>
     /// <p>The length constraint limit is for each string in the array. The array itself can be empty.</p>
     /// </note>
     pub fn set_repository_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_repository_names(input);
         self
     }
-    /// <p>The names of the repositories you want to associate with the template.</p><note>
+    /// <p>The names of the repositories you want to associate with the template.</p> <note>
     /// <p>The length constraint limit is for each string in the array. The array itself can be empty.</p>
     /// </note>
     pub fn get_repository_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {

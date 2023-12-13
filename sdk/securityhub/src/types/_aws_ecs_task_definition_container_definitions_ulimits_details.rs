@@ -8,36 +8,21 @@ pub struct AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails {
     pub hard_limit: ::std::option::Option<i32>,
     /// <p>The type of the ulimit. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>core</code></p></li>
-    /// <li>
-    /// <p><code>cpu</code></p></li>
-    /// <li>
-    /// <p><code>data</code></p></li>
-    /// <li>
-    /// <p><code>fsize</code></p></li>
-    /// <li>
-    /// <p><code>locks</code></p></li>
-    /// <li>
-    /// <p><code>memlock</code></p></li>
-    /// <li>
-    /// <p><code>msgqueue</code></p></li>
-    /// <li>
-    /// <p><code>nice</code></p></li>
-    /// <li>
-    /// <p><code>nofile</code></p></li>
-    /// <li>
-    /// <p><code>nproc</code></p></li>
-    /// <li>
-    /// <p><code>rss</code></p></li>
-    /// <li>
-    /// <p><code>rtprio</code></p></li>
-    /// <li>
-    /// <p><code>rttime</code></p></li>
-    /// <li>
-    /// <p><code>sigpending</code></p></li>
-    /// <li>
-    /// <p><code>stack</code></p></li>
+    /// <li> <p> <code>core</code> </p> </li>
+    /// <li> <p> <code>cpu</code> </p> </li>
+    /// <li> <p> <code>data</code> </p> </li>
+    /// <li> <p> <code>fsize</code> </p> </li>
+    /// <li> <p> <code>locks</code> </p> </li>
+    /// <li> <p> <code>memlock</code> </p> </li>
+    /// <li> <p> <code>msgqueue</code> </p> </li>
+    /// <li> <p> <code>nice</code> </p> </li>
+    /// <li> <p> <code>nofile</code> </p> </li>
+    /// <li> <p> <code>nproc</code> </p> </li>
+    /// <li> <p> <code>rss</code> </p> </li>
+    /// <li> <p> <code>rtprio</code> </p> </li>
+    /// <li> <p> <code>rttime</code> </p> </li>
+    /// <li> <p> <code>sigpending</code> </p> </li>
+    /// <li> <p> <code>stack</code> </p> </li>
     /// </ul>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The soft limit for the ulimit type.</p>
@@ -50,36 +35,21 @@ impl AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails {
     }
     /// <p>The type of the ulimit. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>core</code></p></li>
-    /// <li>
-    /// <p><code>cpu</code></p></li>
-    /// <li>
-    /// <p><code>data</code></p></li>
-    /// <li>
-    /// <p><code>fsize</code></p></li>
-    /// <li>
-    /// <p><code>locks</code></p></li>
-    /// <li>
-    /// <p><code>memlock</code></p></li>
-    /// <li>
-    /// <p><code>msgqueue</code></p></li>
-    /// <li>
-    /// <p><code>nice</code></p></li>
-    /// <li>
-    /// <p><code>nofile</code></p></li>
-    /// <li>
-    /// <p><code>nproc</code></p></li>
-    /// <li>
-    /// <p><code>rss</code></p></li>
-    /// <li>
-    /// <p><code>rtprio</code></p></li>
-    /// <li>
-    /// <p><code>rttime</code></p></li>
-    /// <li>
-    /// <p><code>sigpending</code></p></li>
-    /// <li>
-    /// <p><code>stack</code></p></li>
+    /// <li> <p> <code>core</code> </p> </li>
+    /// <li> <p> <code>cpu</code> </p> </li>
+    /// <li> <p> <code>data</code> </p> </li>
+    /// <li> <p> <code>fsize</code> </p> </li>
+    /// <li> <p> <code>locks</code> </p> </li>
+    /// <li> <p> <code>memlock</code> </p> </li>
+    /// <li> <p> <code>msgqueue</code> </p> </li>
+    /// <li> <p> <code>nice</code> </p> </li>
+    /// <li> <p> <code>nofile</code> </p> </li>
+    /// <li> <p> <code>nproc</code> </p> </li>
+    /// <li> <p> <code>rss</code> </p> </li>
+    /// <li> <p> <code>rtprio</code> </p> </li>
+    /// <li> <p> <code>rttime</code> </p> </li>
+    /// <li> <p> <code>sigpending</code> </p> </li>
+    /// <li> <p> <code>stack</code> </p> </li>
     /// </ul>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
@@ -121,36 +91,21 @@ impl AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetailsBuilder {
     }
     /// <p>The type of the ulimit. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>core</code></p></li>
-    /// <li>
-    /// <p><code>cpu</code></p></li>
-    /// <li>
-    /// <p><code>data</code></p></li>
-    /// <li>
-    /// <p><code>fsize</code></p></li>
-    /// <li>
-    /// <p><code>locks</code></p></li>
-    /// <li>
-    /// <p><code>memlock</code></p></li>
-    /// <li>
-    /// <p><code>msgqueue</code></p></li>
-    /// <li>
-    /// <p><code>nice</code></p></li>
-    /// <li>
-    /// <p><code>nofile</code></p></li>
-    /// <li>
-    /// <p><code>nproc</code></p></li>
-    /// <li>
-    /// <p><code>rss</code></p></li>
-    /// <li>
-    /// <p><code>rtprio</code></p></li>
-    /// <li>
-    /// <p><code>rttime</code></p></li>
-    /// <li>
-    /// <p><code>sigpending</code></p></li>
-    /// <li>
-    /// <p><code>stack</code></p></li>
+    /// <li> <p> <code>core</code> </p> </li>
+    /// <li> <p> <code>cpu</code> </p> </li>
+    /// <li> <p> <code>data</code> </p> </li>
+    /// <li> <p> <code>fsize</code> </p> </li>
+    /// <li> <p> <code>locks</code> </p> </li>
+    /// <li> <p> <code>memlock</code> </p> </li>
+    /// <li> <p> <code>msgqueue</code> </p> </li>
+    /// <li> <p> <code>nice</code> </p> </li>
+    /// <li> <p> <code>nofile</code> </p> </li>
+    /// <li> <p> <code>nproc</code> </p> </li>
+    /// <li> <p> <code>rss</code> </p> </li>
+    /// <li> <p> <code>rtprio</code> </p> </li>
+    /// <li> <p> <code>rttime</code> </p> </li>
+    /// <li> <p> <code>sigpending</code> </p> </li>
+    /// <li> <p> <code>stack</code> </p> </li>
     /// </ul>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -158,36 +113,21 @@ impl AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetailsBuilder {
     }
     /// <p>The type of the ulimit. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>core</code></p></li>
-    /// <li>
-    /// <p><code>cpu</code></p></li>
-    /// <li>
-    /// <p><code>data</code></p></li>
-    /// <li>
-    /// <p><code>fsize</code></p></li>
-    /// <li>
-    /// <p><code>locks</code></p></li>
-    /// <li>
-    /// <p><code>memlock</code></p></li>
-    /// <li>
-    /// <p><code>msgqueue</code></p></li>
-    /// <li>
-    /// <p><code>nice</code></p></li>
-    /// <li>
-    /// <p><code>nofile</code></p></li>
-    /// <li>
-    /// <p><code>nproc</code></p></li>
-    /// <li>
-    /// <p><code>rss</code></p></li>
-    /// <li>
-    /// <p><code>rtprio</code></p></li>
-    /// <li>
-    /// <p><code>rttime</code></p></li>
-    /// <li>
-    /// <p><code>sigpending</code></p></li>
-    /// <li>
-    /// <p><code>stack</code></p></li>
+    /// <li> <p> <code>core</code> </p> </li>
+    /// <li> <p> <code>cpu</code> </p> </li>
+    /// <li> <p> <code>data</code> </p> </li>
+    /// <li> <p> <code>fsize</code> </p> </li>
+    /// <li> <p> <code>locks</code> </p> </li>
+    /// <li> <p> <code>memlock</code> </p> </li>
+    /// <li> <p> <code>msgqueue</code> </p> </li>
+    /// <li> <p> <code>nice</code> </p> </li>
+    /// <li> <p> <code>nofile</code> </p> </li>
+    /// <li> <p> <code>nproc</code> </p> </li>
+    /// <li> <p> <code>rss</code> </p> </li>
+    /// <li> <p> <code>rtprio</code> </p> </li>
+    /// <li> <p> <code>rttime</code> </p> </li>
+    /// <li> <p> <code>sigpending</code> </p> </li>
+    /// <li> <p> <code>stack</code> </p> </li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
@@ -195,36 +135,21 @@ impl AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetailsBuilder {
     }
     /// <p>The type of the ulimit. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>core</code></p></li>
-    /// <li>
-    /// <p><code>cpu</code></p></li>
-    /// <li>
-    /// <p><code>data</code></p></li>
-    /// <li>
-    /// <p><code>fsize</code></p></li>
-    /// <li>
-    /// <p><code>locks</code></p></li>
-    /// <li>
-    /// <p><code>memlock</code></p></li>
-    /// <li>
-    /// <p><code>msgqueue</code></p></li>
-    /// <li>
-    /// <p><code>nice</code></p></li>
-    /// <li>
-    /// <p><code>nofile</code></p></li>
-    /// <li>
-    /// <p><code>nproc</code></p></li>
-    /// <li>
-    /// <p><code>rss</code></p></li>
-    /// <li>
-    /// <p><code>rtprio</code></p></li>
-    /// <li>
-    /// <p><code>rttime</code></p></li>
-    /// <li>
-    /// <p><code>sigpending</code></p></li>
-    /// <li>
-    /// <p><code>stack</code></p></li>
+    /// <li> <p> <code>core</code> </p> </li>
+    /// <li> <p> <code>cpu</code> </p> </li>
+    /// <li> <p> <code>data</code> </p> </li>
+    /// <li> <p> <code>fsize</code> </p> </li>
+    /// <li> <p> <code>locks</code> </p> </li>
+    /// <li> <p> <code>memlock</code> </p> </li>
+    /// <li> <p> <code>msgqueue</code> </p> </li>
+    /// <li> <p> <code>nice</code> </p> </li>
+    /// <li> <p> <code>nofile</code> </p> </li>
+    /// <li> <p> <code>nproc</code> </p> </li>
+    /// <li> <p> <code>rss</code> </p> </li>
+    /// <li> <p> <code>rtprio</code> </p> </li>
+    /// <li> <p> <code>rttime</code> </p> </li>
+    /// <li> <p> <code>sigpending</code> </p> </li>
+    /// <li> <p> <code>stack</code> </p> </li>
     /// </ul>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name

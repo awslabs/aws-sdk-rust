@@ -6,13 +6,13 @@
 pub struct UpdateFileSystemOntapConfiguration {
     /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>30</code>.</p>
     pub automatic_backup_retention_days: ::std::option::Option<i32>,
-    /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily.</p>
+    /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily. </p>
     pub daily_automatic_backup_start_time: ::std::option::Option<::std::string::String>,
     /// <p>Update the password for the <code>fsxadmin</code> user by entering a new password. You use the <code>fsxadmin</code> user to access the NetApp ONTAP CLI and REST API to manage your file system resources. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-resources-ontap-apps.html">Managing resources using NetApp Applicaton</a>.</p>
     pub fsx_admin_password: ::std::option::Option<::std::string::String>,
-    /// <p>A recurring weekly time, in the format <code>D:HH:MM</code>.</p>
-    /// <p><code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p>
-    /// <p><code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour.</p>
+    /// <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p>
+    /// <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p>
+    /// <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p>
     /// <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
     pub weekly_maintenance_start_time: ::std::option::Option<::std::string::String>,
     /// <p>The SSD IOPS (input output operations per second) configuration for an Amazon FSx for NetApp ONTAP file system. The default is 3 IOPS per GB of storage capacity, but you can provision additional IOPS per GB of storage. The configuration consists of an IOPS mode (<code>AUTOMATIC</code> or <code>USER_PROVISIONED</code>), and in the case of <code>USER_PROVISIONED</code> IOPS, the total number of SSD IOPS provisioned. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/increase-primary-storage.html">Updating SSD storage capacity and IOPS</a>.</p>
@@ -20,24 +20,20 @@ pub struct UpdateFileSystemOntapConfiguration {
     /// <p>Enter a new value to change the amount of throughput capacity for the file system in megabytes per second (MBps). For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-throughput-capacity.html">Managing throughput capacity</a> in the FSx for ONTAP User Guide.</p>
     /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
     /// <ul>
-    /// <li>
-    /// <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value.</p></li>
-    /// <li>
-    /// <p>The value of <code>ThroughputCapacity</code> when divided by the value of <code>HAPairs</code> is outside of the valid range for <code>ThroughputCapacity</code>.</p></li>
+    /// <li> <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value.</p> </li>
+    /// <li> <p>The value of <code>ThroughputCapacity</code> when divided by the value of <code>HAPairs</code> is outside of the valid range for <code>ThroughputCapacity</code>.</p> </li>
     /// </ul>
     pub throughput_capacity: ::std::option::Option<i32>,
     /// <p>(Multi-AZ only) A list of IDs of new virtual private cloud (VPC) route tables to associate (add) with your Amazon FSx for NetApp ONTAP file system.</p>
     pub add_route_table_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>(Multi-AZ only) A list of IDs of existing virtual private cloud (VPC) route tables to disassociate (remove) from your Amazon FSx for NetApp ONTAP file system. You can use the API operation to retrieve the list of VPC route table IDs for a file system.</p>
     pub remove_route_table_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Use to choose the throughput capacity per HA pair, rather than the total throughput for the file system.</p>
+    /// <p>Use to choose the throughput capacity per HA pair, rather than the total throughput for the file system. </p>
     /// <p>This field and <code>ThroughputCapacity</code> cannot be defined in the same API call, but one is required.</p>
     /// <p>This field and <code>ThroughputCapacity</code> are the same for file systems with one HA pair.</p>
     /// <ul>
-    /// <li>
-    /// <p>For <code>SINGLE_AZ_1</code> and <code>MULTI_AZ_1</code>, valid values are 128, 256, 512, 1024, 2048, or 4096 MBps.</p></li>
-    /// <li>
-    /// <p>For <code>SINGLE_AZ_2</code>, valid values are 3072 or 6144 MBps.</p></li>
+    /// <li> <p>For <code>SINGLE_AZ_1</code> and <code>MULTI_AZ_1</code>, valid values are 128, 256, 512, 1024, 2048, or 4096 MBps.</p> </li>
+    /// <li> <p>For <code>SINGLE_AZ_2</code>, valid values are 3072 or 6144 MBps.</p> </li>
     /// </ul>
     /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
     /// <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value.</p>
@@ -49,7 +45,7 @@ impl UpdateFileSystemOntapConfiguration {
     pub fn automatic_backup_retention_days(&self) -> ::std::option::Option<i32> {
         self.automatic_backup_retention_days
     }
-    /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily.</p>
+    /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily. </p>
     pub fn daily_automatic_backup_start_time(&self) -> ::std::option::Option<&str> {
         self.daily_automatic_backup_start_time.as_deref()
     }
@@ -57,9 +53,9 @@ impl UpdateFileSystemOntapConfiguration {
     pub fn fsx_admin_password(&self) -> ::std::option::Option<&str> {
         self.fsx_admin_password.as_deref()
     }
-    /// <p>A recurring weekly time, in the format <code>D:HH:MM</code>.</p>
-    /// <p><code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p>
-    /// <p><code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour.</p>
+    /// <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p>
+    /// <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p>
+    /// <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p>
     /// <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
     pub fn weekly_maintenance_start_time(&self) -> ::std::option::Option<&str> {
         self.weekly_maintenance_start_time.as_deref()
@@ -71,10 +67,8 @@ impl UpdateFileSystemOntapConfiguration {
     /// <p>Enter a new value to change the amount of throughput capacity for the file system in megabytes per second (MBps). For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-throughput-capacity.html">Managing throughput capacity</a> in the FSx for ONTAP User Guide.</p>
     /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
     /// <ul>
-    /// <li>
-    /// <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value.</p></li>
-    /// <li>
-    /// <p>The value of <code>ThroughputCapacity</code> when divided by the value of <code>HAPairs</code> is outside of the valid range for <code>ThroughputCapacity</code>.</p></li>
+    /// <li> <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value.</p> </li>
+    /// <li> <p>The value of <code>ThroughputCapacity</code> when divided by the value of <code>HAPairs</code> is outside of the valid range for <code>ThroughputCapacity</code>.</p> </li>
     /// </ul>
     pub fn throughput_capacity(&self) -> ::std::option::Option<i32> {
         self.throughput_capacity
@@ -91,14 +85,12 @@ impl UpdateFileSystemOntapConfiguration {
     pub fn remove_route_table_ids(&self) -> &[::std::string::String] {
         self.remove_route_table_ids.as_deref().unwrap_or_default()
     }
-    /// <p>Use to choose the throughput capacity per HA pair, rather than the total throughput for the file system.</p>
+    /// <p>Use to choose the throughput capacity per HA pair, rather than the total throughput for the file system. </p>
     /// <p>This field and <code>ThroughputCapacity</code> cannot be defined in the same API call, but one is required.</p>
     /// <p>This field and <code>ThroughputCapacity</code> are the same for file systems with one HA pair.</p>
     /// <ul>
-    /// <li>
-    /// <p>For <code>SINGLE_AZ_1</code> and <code>MULTI_AZ_1</code>, valid values are 128, 256, 512, 1024, 2048, or 4096 MBps.</p></li>
-    /// <li>
-    /// <p>For <code>SINGLE_AZ_2</code>, valid values are 3072 or 6144 MBps.</p></li>
+    /// <li> <p>For <code>SINGLE_AZ_1</code> and <code>MULTI_AZ_1</code>, valid values are 128, 256, 512, 1024, 2048, or 4096 MBps.</p> </li>
+    /// <li> <p>For <code>SINGLE_AZ_2</code>, valid values are 3072 or 6144 MBps.</p> </li>
     /// </ul>
     /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
     /// <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value.</p>
@@ -158,17 +150,17 @@ impl UpdateFileSystemOntapConfigurationBuilder {
     pub fn get_automatic_backup_retention_days(&self) -> &::std::option::Option<i32> {
         &self.automatic_backup_retention_days
     }
-    /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily.</p>
+    /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily. </p>
     pub fn daily_automatic_backup_start_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.daily_automatic_backup_start_time = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily.</p>
+    /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily. </p>
     pub fn set_daily_automatic_backup_start_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.daily_automatic_backup_start_time = input;
         self
     }
-    /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily.</p>
+    /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily. </p>
     pub fn get_daily_automatic_backup_start_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.daily_automatic_backup_start_time
     }
@@ -186,25 +178,25 @@ impl UpdateFileSystemOntapConfigurationBuilder {
     pub fn get_fsx_admin_password(&self) -> &::std::option::Option<::std::string::String> {
         &self.fsx_admin_password
     }
-    /// <p>A recurring weekly time, in the format <code>D:HH:MM</code>.</p>
-    /// <p><code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p>
-    /// <p><code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour.</p>
+    /// <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p>
+    /// <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p>
+    /// <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p>
     /// <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
     pub fn weekly_maintenance_start_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.weekly_maintenance_start_time = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A recurring weekly time, in the format <code>D:HH:MM</code>.</p>
-    /// <p><code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p>
-    /// <p><code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour.</p>
+    /// <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p>
+    /// <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p>
+    /// <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p>
     /// <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
     pub fn set_weekly_maintenance_start_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.weekly_maintenance_start_time = input;
         self
     }
-    /// <p>A recurring weekly time, in the format <code>D:HH:MM</code>.</p>
-    /// <p><code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p>
-    /// <p><code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour.</p>
+    /// <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p>
+    /// <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p>
+    /// <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p>
     /// <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
     pub fn get_weekly_maintenance_start_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.weekly_maintenance_start_time
@@ -226,10 +218,8 @@ impl UpdateFileSystemOntapConfigurationBuilder {
     /// <p>Enter a new value to change the amount of throughput capacity for the file system in megabytes per second (MBps). For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-throughput-capacity.html">Managing throughput capacity</a> in the FSx for ONTAP User Guide.</p>
     /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
     /// <ul>
-    /// <li>
-    /// <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value.</p></li>
-    /// <li>
-    /// <p>The value of <code>ThroughputCapacity</code> when divided by the value of <code>HAPairs</code> is outside of the valid range for <code>ThroughputCapacity</code>.</p></li>
+    /// <li> <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value.</p> </li>
+    /// <li> <p>The value of <code>ThroughputCapacity</code> when divided by the value of <code>HAPairs</code> is outside of the valid range for <code>ThroughputCapacity</code>.</p> </li>
     /// </ul>
     pub fn throughput_capacity(mut self, input: i32) -> Self {
         self.throughput_capacity = ::std::option::Option::Some(input);
@@ -238,10 +228,8 @@ impl UpdateFileSystemOntapConfigurationBuilder {
     /// <p>Enter a new value to change the amount of throughput capacity for the file system in megabytes per second (MBps). For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-throughput-capacity.html">Managing throughput capacity</a> in the FSx for ONTAP User Guide.</p>
     /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
     /// <ul>
-    /// <li>
-    /// <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value.</p></li>
-    /// <li>
-    /// <p>The value of <code>ThroughputCapacity</code> when divided by the value of <code>HAPairs</code> is outside of the valid range for <code>ThroughputCapacity</code>.</p></li>
+    /// <li> <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value.</p> </li>
+    /// <li> <p>The value of <code>ThroughputCapacity</code> when divided by the value of <code>HAPairs</code> is outside of the valid range for <code>ThroughputCapacity</code>.</p> </li>
     /// </ul>
     pub fn set_throughput_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.throughput_capacity = input;
@@ -250,10 +238,8 @@ impl UpdateFileSystemOntapConfigurationBuilder {
     /// <p>Enter a new value to change the amount of throughput capacity for the file system in megabytes per second (MBps). For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-throughput-capacity.html">Managing throughput capacity</a> in the FSx for ONTAP User Guide.</p>
     /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
     /// <ul>
-    /// <li>
-    /// <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value.</p></li>
-    /// <li>
-    /// <p>The value of <code>ThroughputCapacity</code> when divided by the value of <code>HAPairs</code> is outside of the valid range for <code>ThroughputCapacity</code>.</p></li>
+    /// <li> <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value.</p> </li>
+    /// <li> <p>The value of <code>ThroughputCapacity</code> when divided by the value of <code>HAPairs</code> is outside of the valid range for <code>ThroughputCapacity</code>.</p> </li>
     /// </ul>
     pub fn get_throughput_capacity(&self) -> &::std::option::Option<i32> {
         &self.throughput_capacity
@@ -298,14 +284,12 @@ impl UpdateFileSystemOntapConfigurationBuilder {
     pub fn get_remove_route_table_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.remove_route_table_ids
     }
-    /// <p>Use to choose the throughput capacity per HA pair, rather than the total throughput for the file system.</p>
+    /// <p>Use to choose the throughput capacity per HA pair, rather than the total throughput for the file system. </p>
     /// <p>This field and <code>ThroughputCapacity</code> cannot be defined in the same API call, but one is required.</p>
     /// <p>This field and <code>ThroughputCapacity</code> are the same for file systems with one HA pair.</p>
     /// <ul>
-    /// <li>
-    /// <p>For <code>SINGLE_AZ_1</code> and <code>MULTI_AZ_1</code>, valid values are 128, 256, 512, 1024, 2048, or 4096 MBps.</p></li>
-    /// <li>
-    /// <p>For <code>SINGLE_AZ_2</code>, valid values are 3072 or 6144 MBps.</p></li>
+    /// <li> <p>For <code>SINGLE_AZ_1</code> and <code>MULTI_AZ_1</code>, valid values are 128, 256, 512, 1024, 2048, or 4096 MBps.</p> </li>
+    /// <li> <p>For <code>SINGLE_AZ_2</code>, valid values are 3072 or 6144 MBps.</p> </li>
     /// </ul>
     /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
     /// <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value.</p>
@@ -314,14 +298,12 @@ impl UpdateFileSystemOntapConfigurationBuilder {
         self.throughput_capacity_per_ha_pair = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Use to choose the throughput capacity per HA pair, rather than the total throughput for the file system.</p>
+    /// <p>Use to choose the throughput capacity per HA pair, rather than the total throughput for the file system. </p>
     /// <p>This field and <code>ThroughputCapacity</code> cannot be defined in the same API call, but one is required.</p>
     /// <p>This field and <code>ThroughputCapacity</code> are the same for file systems with one HA pair.</p>
     /// <ul>
-    /// <li>
-    /// <p>For <code>SINGLE_AZ_1</code> and <code>MULTI_AZ_1</code>, valid values are 128, 256, 512, 1024, 2048, or 4096 MBps.</p></li>
-    /// <li>
-    /// <p>For <code>SINGLE_AZ_2</code>, valid values are 3072 or 6144 MBps.</p></li>
+    /// <li> <p>For <code>SINGLE_AZ_1</code> and <code>MULTI_AZ_1</code>, valid values are 128, 256, 512, 1024, 2048, or 4096 MBps.</p> </li>
+    /// <li> <p>For <code>SINGLE_AZ_2</code>, valid values are 3072 or 6144 MBps.</p> </li>
     /// </ul>
     /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
     /// <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value.</p>
@@ -330,14 +312,12 @@ impl UpdateFileSystemOntapConfigurationBuilder {
         self.throughput_capacity_per_ha_pair = input;
         self
     }
-    /// <p>Use to choose the throughput capacity per HA pair, rather than the total throughput for the file system.</p>
+    /// <p>Use to choose the throughput capacity per HA pair, rather than the total throughput for the file system. </p>
     /// <p>This field and <code>ThroughputCapacity</code> cannot be defined in the same API call, but one is required.</p>
     /// <p>This field and <code>ThroughputCapacity</code> are the same for file systems with one HA pair.</p>
     /// <ul>
-    /// <li>
-    /// <p>For <code>SINGLE_AZ_1</code> and <code>MULTI_AZ_1</code>, valid values are 128, 256, 512, 1024, 2048, or 4096 MBps.</p></li>
-    /// <li>
-    /// <p>For <code>SINGLE_AZ_2</code>, valid values are 3072 or 6144 MBps.</p></li>
+    /// <li> <p>For <code>SINGLE_AZ_1</code> and <code>MULTI_AZ_1</code>, valid values are 128, 256, 512, 1024, 2048, or 4096 MBps.</p> </li>
+    /// <li> <p>For <code>SINGLE_AZ_2</code>, valid values are 3072 or 6144 MBps.</p> </li>
     /// </ul>
     /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
     /// <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value.</p>

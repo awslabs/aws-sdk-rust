@@ -8,8 +8,8 @@ pub struct StartImportTaskInput {
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>A descriptive name for this request. You can use this name to filter future requests related to this import task, such as identifying applications and servers that were included in this import task. We recommend that you use a meaningful name for each import task.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The URL for your import file that you've uploaded to Amazon S3.</p><note>
-    /// <p>If you're using the Amazon Web Services CLI, this URL is structured as follows: <code>s3://BucketName/ImportFileName.CSV</code></p>
+    /// <p>The URL for your import file that you've uploaded to Amazon S3.</p> <note>
+    /// <p>If you're using the Amazon Web Services CLI, this URL is structured as follows: <code>s3://BucketName/ImportFileName.CSV</code> </p>
     /// </note>
     pub import_url: ::std::option::Option<::std::string::String>,
 }
@@ -23,8 +23,8 @@ impl StartImportTaskInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The URL for your import file that you've uploaded to Amazon S3.</p><note>
-    /// <p>If you're using the Amazon Web Services CLI, this URL is structured as follows: <code>s3://BucketName/ImportFileName.CSV</code></p>
+    /// <p>The URL for your import file that you've uploaded to Amazon S3.</p> <note>
+    /// <p>If you're using the Amazon Web Services CLI, this URL is structured as follows: <code>s3://BucketName/ImportFileName.CSV</code> </p>
     /// </note>
     pub fn import_url(&self) -> ::std::option::Option<&str> {
         self.import_url.as_deref()
@@ -78,23 +78,23 @@ impl StartImportTaskInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The URL for your import file that you've uploaded to Amazon S3.</p><note>
-    /// <p>If you're using the Amazon Web Services CLI, this URL is structured as follows: <code>s3://BucketName/ImportFileName.CSV</code></p>
+    /// <p>The URL for your import file that you've uploaded to Amazon S3.</p> <note>
+    /// <p>If you're using the Amazon Web Services CLI, this URL is structured as follows: <code>s3://BucketName/ImportFileName.CSV</code> </p>
     /// </note>
     /// This field is required.
     pub fn import_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.import_url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The URL for your import file that you've uploaded to Amazon S3.</p><note>
-    /// <p>If you're using the Amazon Web Services CLI, this URL is structured as follows: <code>s3://BucketName/ImportFileName.CSV</code></p>
+    /// <p>The URL for your import file that you've uploaded to Amazon S3.</p> <note>
+    /// <p>If you're using the Amazon Web Services CLI, this URL is structured as follows: <code>s3://BucketName/ImportFileName.CSV</code> </p>
     /// </note>
     pub fn set_import_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.import_url = input;
         self
     }
-    /// <p>The URL for your import file that you've uploaded to Amazon S3.</p><note>
-    /// <p>If you're using the Amazon Web Services CLI, this URL is structured as follows: <code>s3://BucketName/ImportFileName.CSV</code></p>
+    /// <p>The URL for your import file that you've uploaded to Amazon S3.</p> <note>
+    /// <p>If you're using the Amazon Web Services CLI, this URL is structured as follows: <code>s3://BucketName/ImportFileName.CSV</code> </p>
     /// </note>
     pub fn get_import_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.import_url

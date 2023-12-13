@@ -26,16 +26,14 @@ impl CreateUserPoolInputBuilder {
 /// <p>This action might generate an SMS text message. Starting June 1, 2021, US telecom carriers require you to register an origination phone number before you can send SMS messages to US phone numbers. If you use SMS text messages in Amazon Cognito, you must register a phone number with <a href="https://console.aws.amazon.com/pinpoint/home/">Amazon Pinpoint</a>. Amazon Cognito uses the registered number automatically. Otherwise, Amazon Cognito users who must receive SMS messages might not be able to sign up, activate their accounts, or sign in.</p>
 /// <p>If you have never used SMS text messages with Amazon Cognito or any other Amazon Web Service, Amazon Simple Notification Service might place your account in the SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox mode</a> </i>, you can send messages only to verified phone numbers. After you test your app while in the sandbox environment, you can move out of the sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html"> SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
 /// </note>
-/// <p>Creates a new Amazon Cognito user pool and sets the password policy for the pool.</p><important>
+/// <p>Creates a new Amazon Cognito user pool and sets the password policy for the pool.</p> <important>
 /// <p>If you don't provide a value for an attribute, Amazon Cognito sets it to its default value.</p>
 /// </important> <note>
 /// <p>Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.</p>
-/// <p class="title"><b>Learn more</b></p>
+/// <p class="title"> <b>Learn more</b> </p>
 /// <ul>
-/// <li>
-/// <p><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing Amazon Web Services API Requests</a></p></li>
-/// <li>
-/// <p><a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using the Amazon Cognito user pools API and user pool endpoints</a></p></li>
+/// <li> <p> <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing Amazon Web Services API Requests</a> </p> </li>
+/// <li> <p> <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using the Amazon Cognito user pools API and user pool endpoints</a> </p> </li>
 /// </ul>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -168,30 +166,30 @@ impl CreateUserPoolFluentBuilder {
     pub fn get_deletion_protection(&self) -> &::std::option::Option<crate::types::DeletionProtectionType> {
         self.inner.get_deletion_protection()
     }
-    /// <p>The Lambda trigger configuration information for the new user pool.</p><note>
+    /// <p>The Lambda trigger configuration information for the new user pool.</p> <note>
     /// <p>In a push model, event sources (such as Amazon S3 and custom applications) need permission to invoke a function. So you must make an extra call to add permission for these event sources to invoke your Lambda function.</p>
     /// <p></p>
-    /// <p>For more information on using the Lambda API to add permission, see<a href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html"> AddPermission </a>.</p>
+    /// <p>For more information on using the Lambda API to add permission, see<a href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html"> AddPermission </a>. </p>
     /// <p>For adding permission using the CLI, see<a href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html"> add-permission </a>.</p>
     /// </note>
     pub fn lambda_config(mut self, input: crate::types::LambdaConfigType) -> Self {
         self.inner = self.inner.lambda_config(input);
         self
     }
-    /// <p>The Lambda trigger configuration information for the new user pool.</p><note>
+    /// <p>The Lambda trigger configuration information for the new user pool.</p> <note>
     /// <p>In a push model, event sources (such as Amazon S3 and custom applications) need permission to invoke a function. So you must make an extra call to add permission for these event sources to invoke your Lambda function.</p>
     /// <p></p>
-    /// <p>For more information on using the Lambda API to add permission, see<a href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html"> AddPermission </a>.</p>
+    /// <p>For more information on using the Lambda API to add permission, see<a href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html"> AddPermission </a>. </p>
     /// <p>For adding permission using the CLI, see<a href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html"> add-permission </a>.</p>
     /// </note>
     pub fn set_lambda_config(mut self, input: ::std::option::Option<crate::types::LambdaConfigType>) -> Self {
         self.inner = self.inner.set_lambda_config(input);
         self
     }
-    /// <p>The Lambda trigger configuration information for the new user pool.</p><note>
+    /// <p>The Lambda trigger configuration information for the new user pool.</p> <note>
     /// <p>In a push model, event sources (such as Amazon S3 and custom applications) need permission to invoke a function. So you must make an extra call to add permission for these event sources to invoke your Lambda function.</p>
     /// <p></p>
-    /// <p>For more information on using the Lambda API to add permission, see<a href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html"> AddPermission </a>.</p>
+    /// <p>For more information on using the Lambda API to add permission, see<a href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html"> AddPermission </a>. </p>
     /// <p>For adding permission using the CLI, see<a href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html"> add-permission </a>.</p>
     /// </note>
     pub fn get_lambda_config(&self) -> &::std::option::Option<crate::types::LambdaConfigType> {
@@ -349,21 +347,21 @@ impl CreateUserPoolFluentBuilder {
     pub fn get_user_attribute_update_settings(&self) -> &::std::option::Option<crate::types::UserAttributeUpdateSettingsType> {
         self.inner.get_user_attribute_update_settings()
     }
-    /// <p>The device-remembering configuration for a user pool. A null value indicates that you have deactivated device remembering in your user pool.</p><note>
+    /// <p>The device-remembering configuration for a user pool. A null value indicates that you have deactivated device remembering in your user pool.</p> <note>
     /// <p>When you provide a value for any <code>DeviceConfiguration</code> field, you activate the Amazon Cognito device-remembering feature.</p>
     /// </note>
     pub fn device_configuration(mut self, input: crate::types::DeviceConfigurationType) -> Self {
         self.inner = self.inner.device_configuration(input);
         self
     }
-    /// <p>The device-remembering configuration for a user pool. A null value indicates that you have deactivated device remembering in your user pool.</p><note>
+    /// <p>The device-remembering configuration for a user pool. A null value indicates that you have deactivated device remembering in your user pool.</p> <note>
     /// <p>When you provide a value for any <code>DeviceConfiguration</code> field, you activate the Amazon Cognito device-remembering feature.</p>
     /// </note>
     pub fn set_device_configuration(mut self, input: ::std::option::Option<crate::types::DeviceConfigurationType>) -> Self {
         self.inner = self.inner.set_device_configuration(input);
         self
     }
-    /// <p>The device-remembering configuration for a user pool. A null value indicates that you have deactivated device remembering in your user pool.</p><note>
+    /// <p>The device-remembering configuration for a user pool. A null value indicates that you have deactivated device remembering in your user pool.</p> <note>
     /// <p>When you provide a value for any <code>DeviceConfiguration</code> field, you activate the Amazon Cognito device-remembering feature.</p>
     /// </note>
     pub fn get_device_configuration(&self) -> &::std::option::Option<crate::types::DeviceConfigurationType> {

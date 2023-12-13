@@ -9,9 +9,9 @@ pub struct DescribeChangeSetOutput {
     pub change_set_arn: ::std::option::Option<::std::string::String>,
     /// <p>The optional name provided in the <code>StartChangeSet</code> request. If you do not provide a name, one is set by default.</p>
     pub change_set_name: ::std::option::Option<::std::string::String>,
-    /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request started.</p>
+    /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request started. </p>
     pub start_time: ::std::option::Option<::std::string::String>,
-    /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request transitioned to a terminal state. The change cannot transition to a different state. Null if the request is not in a terminal state.</p>
+    /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request transitioned to a terminal state. The change cannot transition to a different state. Null if the request is not in a terminal state. </p>
     pub end_time: ::std::option::Option<::std::string::String>,
     /// <p>The status of the change request.</p>
     pub status: ::std::option::Option<crate::types::ChangeStatus>,
@@ -36,11 +36,11 @@ impl DescribeChangeSetOutput {
     pub fn change_set_name(&self) -> ::std::option::Option<&str> {
         self.change_set_name.as_deref()
     }
-    /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request started.</p>
+    /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request started. </p>
     pub fn start_time(&self) -> ::std::option::Option<&str> {
         self.start_time.as_deref()
     }
-    /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request transitioned to a terminal state. The change cannot transition to a different state. Null if the request is not in a terminal state.</p>
+    /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request transitioned to a terminal state. The change cannot transition to a different state. Null if the request is not in a terminal state. </p>
     pub fn end_time(&self) -> ::std::option::Option<&str> {
         self.end_time.as_deref()
     }
@@ -133,31 +133,31 @@ impl DescribeChangeSetOutputBuilder {
     pub fn get_change_set_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.change_set_name
     }
-    /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request started.</p>
+    /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request started. </p>
     pub fn start_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.start_time = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request started.</p>
+    /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request started. </p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.start_time = input;
         self
     }
-    /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request started.</p>
+    /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request started. </p>
     pub fn get_start_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.start_time
     }
-    /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request transitioned to a terminal state. The change cannot transition to a different state. Null if the request is not in a terminal state.</p>
+    /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request transitioned to a terminal state. The change cannot transition to a different state. Null if the request is not in a terminal state. </p>
     pub fn end_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.end_time = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request transitioned to a terminal state. The change cannot transition to a different state. Null if the request is not in a terminal state.</p>
+    /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request transitioned to a terminal state. The change cannot transition to a different state. Null if the request is not in a terminal state. </p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.end_time = input;
         self
     }
-    /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request transitioned to a terminal state. The change cannot transition to a different state. Null if the request is not in a terminal state.</p>
+    /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request transitioned to a terminal state. The change cannot transition to a different state. Null if the request is not in a terminal state. </p>
     pub fn get_end_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.end_time
     }

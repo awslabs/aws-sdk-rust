@@ -13,10 +13,8 @@ pub struct ListTimeSeriesInput {
     pub alias_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The type of the time series. The time series type can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ASSOCIATED</code> – The time series is associated with an asset property.</p></li>
-    /// <li>
-    /// <p><code>DISASSOCIATED</code> – The time series isn't associated with any asset property.</p></li>
+    /// <li> <p> <code>ASSOCIATED</code> – The time series is associated with an asset property.</p> </li>
+    /// <li> <p> <code>DISASSOCIATED</code> – The time series isn't associated with any asset property.</p> </li>
     /// </ul>
     pub time_series_type: ::std::option::Option<crate::types::ListTimeSeriesType>,
 }
@@ -39,10 +37,8 @@ impl ListTimeSeriesInput {
     }
     /// <p>The type of the time series. The time series type can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ASSOCIATED</code> – The time series is associated with an asset property.</p></li>
-    /// <li>
-    /// <p><code>DISASSOCIATED</code> – The time series isn't associated with any asset property.</p></li>
+    /// <li> <p> <code>ASSOCIATED</code> – The time series is associated with an asset property.</p> </li>
+    /// <li> <p> <code>DISASSOCIATED</code> – The time series isn't associated with any asset property.</p> </li>
     /// </ul>
     pub fn time_series_type(&self) -> ::std::option::Option<&crate::types::ListTimeSeriesType> {
         self.time_series_type.as_ref()
@@ -124,10 +120,8 @@ impl ListTimeSeriesInputBuilder {
     }
     /// <p>The type of the time series. The time series type can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ASSOCIATED</code> – The time series is associated with an asset property.</p></li>
-    /// <li>
-    /// <p><code>DISASSOCIATED</code> – The time series isn't associated with any asset property.</p></li>
+    /// <li> <p> <code>ASSOCIATED</code> – The time series is associated with an asset property.</p> </li>
+    /// <li> <p> <code>DISASSOCIATED</code> – The time series isn't associated with any asset property.</p> </li>
     /// </ul>
     pub fn time_series_type(mut self, input: crate::types::ListTimeSeriesType) -> Self {
         self.time_series_type = ::std::option::Option::Some(input);
@@ -135,10 +129,8 @@ impl ListTimeSeriesInputBuilder {
     }
     /// <p>The type of the time series. The time series type can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ASSOCIATED</code> – The time series is associated with an asset property.</p></li>
-    /// <li>
-    /// <p><code>DISASSOCIATED</code> – The time series isn't associated with any asset property.</p></li>
+    /// <li> <p> <code>ASSOCIATED</code> – The time series is associated with an asset property.</p> </li>
+    /// <li> <p> <code>DISASSOCIATED</code> – The time series isn't associated with any asset property.</p> </li>
     /// </ul>
     pub fn set_time_series_type(mut self, input: ::std::option::Option<crate::types::ListTimeSeriesType>) -> Self {
         self.time_series_type = input;
@@ -146,10 +138,8 @@ impl ListTimeSeriesInputBuilder {
     }
     /// <p>The type of the time series. The time series type can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ASSOCIATED</code> – The time series is associated with an asset property.</p></li>
-    /// <li>
-    /// <p><code>DISASSOCIATED</code> – The time series isn't associated with any asset property.</p></li>
+    /// <li> <p> <code>ASSOCIATED</code> – The time series is associated with an asset property.</p> </li>
+    /// <li> <p> <code>DISASSOCIATED</code> – The time series isn't associated with any asset property.</p> </li>
     /// </ul>
     pub fn get_time_series_type(&self) -> &::std::option::Option<crate::types::ListTimeSeriesType> {
         &self.time_series_type

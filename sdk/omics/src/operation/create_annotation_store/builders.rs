@@ -168,17 +168,17 @@ impl CreateAnnotationStoreFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
-    /// <p>The name given to an annotation store version to distinguish it from other versions.</p>
+    /// <p> The name given to an annotation store version to distinguish it from other versions. </p>
     pub fn version_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.version_name(input.into());
         self
     }
-    /// <p>The name given to an annotation store version to distinguish it from other versions.</p>
+    /// <p> The name given to an annotation store version to distinguish it from other versions. </p>
     pub fn set_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_version_name(input);
         self
     }
-    /// <p>The name given to an annotation store version to distinguish it from other versions.</p>
+    /// <p> The name given to an annotation store version to distinguish it from other versions. </p>
     pub fn get_version_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_version_name()
     }

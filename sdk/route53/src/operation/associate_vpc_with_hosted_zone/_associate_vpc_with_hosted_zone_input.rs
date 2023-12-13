@@ -9,7 +9,7 @@ pub struct AssociateVpcWithHostedZoneInput {
     pub hosted_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>A complex type that contains information about the VPC that you want to associate with a private hosted zone.</p>
     pub vpc: ::std::option::Option<crate::types::Vpc>,
-    /// <p><i>Optional:</i> A comment about the association request.</p>
+    /// <p> <i>Optional:</i> A comment about the association request.</p>
     pub comment: ::std::option::Option<::std::string::String>,
 }
 impl AssociateVpcWithHostedZoneInput {
@@ -22,7 +22,7 @@ impl AssociateVpcWithHostedZoneInput {
     pub fn vpc(&self) -> ::std::option::Option<&crate::types::Vpc> {
         self.vpc.as_ref()
     }
-    /// <p><i>Optional:</i> A comment about the association request.</p>
+    /// <p> <i>Optional:</i> A comment about the association request.</p>
     pub fn comment(&self) -> ::std::option::Option<&str> {
         self.comment.as_deref()
     }
@@ -76,17 +76,17 @@ impl AssociateVpcWithHostedZoneInputBuilder {
     pub fn get_vpc(&self) -> &::std::option::Option<crate::types::Vpc> {
         &self.vpc
     }
-    /// <p><i>Optional:</i> A comment about the association request.</p>
+    /// <p> <i>Optional:</i> A comment about the association request.</p>
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comment = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p><i>Optional:</i> A comment about the association request.</p>
+    /// <p> <i>Optional:</i> A comment about the association request.</p>
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.comment = input;
         self
     }
-    /// <p><i>Optional:</i> A comment about the association request.</p>
+    /// <p> <i>Optional:</i> A comment about the association request.</p>
     pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
         &self.comment
     }

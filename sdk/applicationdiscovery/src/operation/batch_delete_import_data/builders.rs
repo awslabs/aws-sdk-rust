@@ -22,7 +22,7 @@ impl BatchDeleteImportDataInputBuilder {
 }
 /// Fluent builder constructing a request to `BatchDeleteImportData`.
 ///
-/// <p>Deletes one or more import tasks, each identified by their import ID. Each import task has a number of records that can identify servers or applications.</p>
+/// <p>Deletes one or more import tasks, each identified by their import ID. Each import task has a number of records that can identify servers or applications. </p>
 /// <p>Amazon Web Services Application Discovery Service has built-in matching logic that will identify when discovered servers match existing entries that you've previously discovered, the information for the already-existing discovered server is updated. When you delete an import task that contains records that were used to match, the information in those matched records that comes from the deleted records will also be deleted.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchDeleteImportDataFluentBuilder {
@@ -127,17 +127,17 @@ impl BatchDeleteImportDataFluentBuilder {
     pub fn get_import_task_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_import_task_ids()
     }
-    /// <p>Set to <code>true</code> to remove the deleted import task from <code>DescribeImportTasks</code>.</p>
+    /// <p> Set to <code>true</code> to remove the deleted import task from <code>DescribeImportTasks</code>. </p>
     pub fn delete_history(mut self, input: bool) -> Self {
         self.inner = self.inner.delete_history(input);
         self
     }
-    /// <p>Set to <code>true</code> to remove the deleted import task from <code>DescribeImportTasks</code>.</p>
+    /// <p> Set to <code>true</code> to remove the deleted import task from <code>DescribeImportTasks</code>. </p>
     pub fn set_delete_history(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_delete_history(input);
         self
     }
-    /// <p>Set to <code>true</code> to remove the deleted import task from <code>DescribeImportTasks</code>.</p>
+    /// <p> Set to <code>true</code> to remove the deleted import task from <code>DescribeImportTasks</code>. </p>
     pub fn get_delete_history(&self) -> &::std::option::Option<bool> {
         self.inner.get_delete_history()
     }

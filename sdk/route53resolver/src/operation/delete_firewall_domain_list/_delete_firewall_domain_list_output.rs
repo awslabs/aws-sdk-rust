@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFirewallDomainListOutput {
-    /// <p>The domain list that you just deleted.</p>
+    /// <p>The domain list that you just deleted. </p>
     pub firewall_domain_list: ::std::option::Option<crate::types::FirewallDomainList>,
     _request_id: Option<String>,
 }
 impl DeleteFirewallDomainListOutput {
-    /// <p>The domain list that you just deleted.</p>
+    /// <p>The domain list that you just deleted. </p>
     pub fn firewall_domain_list(&self) -> ::std::option::Option<&crate::types::FirewallDomainList> {
         self.firewall_domain_list.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct DeleteFirewallDomainListOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteFirewallDomainListOutputBuilder {
-    /// <p>The domain list that you just deleted.</p>
+    /// <p>The domain list that you just deleted. </p>
     pub fn firewall_domain_list(mut self, input: crate::types::FirewallDomainList) -> Self {
         self.firewall_domain_list = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The domain list that you just deleted.</p>
+    /// <p>The domain list that you just deleted. </p>
     pub fn set_firewall_domain_list(mut self, input: ::std::option::Option<crate::types::FirewallDomainList>) -> Self {
         self.firewall_domain_list = input;
         self
     }
-    /// <p>The domain list that you just deleted.</p>
+    /// <p>The domain list that you just deleted. </p>
     pub fn get_firewall_domain_list(&self) -> &::std::option::Option<crate::types::FirewallDomainList> {
         &self.firewall_domain_list
     }

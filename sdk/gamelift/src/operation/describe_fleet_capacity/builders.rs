@@ -23,20 +23,18 @@ impl DescribeFleetCapacityInputBuilder {
 /// Fluent builder constructing a request to `DescribeFleetCapacity`.
 ///
 /// <p>Retrieves the resource capacity settings for one or more fleets. The data returned includes the current fleet capacity (number of EC2 instances), and settings that can control how capacity scaling. For fleets with remote locations, this operation retrieves data for the fleet's home Region only.</p>
-/// <p>This operation can be used in the following ways:</p>
+/// <p>This operation can be used in the following ways: </p>
 /// <ul>
-/// <li>
-/// <p>To get capacity data for one or more specific fleets, provide a list of fleet IDs or fleet ARNs.</p></li>
-/// <li>
-/// <p>To get capacity data for all fleets, do not provide a fleet identifier.</p></li>
+/// <li> <p>To get capacity data for one or more specific fleets, provide a list of fleet IDs or fleet ARNs. </p> </li>
+/// <li> <p>To get capacity data for all fleets, do not provide a fleet identifier. </p> </li>
 /// </ul>
-/// <p>When requesting multiple fleets, use the pagination parameters to retrieve results as a set of sequential pages.</p>
-/// <p>If successful, a <code>FleetCapacity</code> object is returned for each requested fleet ID. Each FleetCapacity object includes a <code>Location</code> property, which is set to the fleet's home Region. When a list of fleet IDs is provided, attribute objects are returned only for fleets that currently exist.</p><note>
+/// <p>When requesting multiple fleets, use the pagination parameters to retrieve results as a set of sequential pages. </p>
+/// <p>If successful, a <code>FleetCapacity</code> object is returned for each requested fleet ID. Each FleetCapacity object includes a <code>Location</code> property, which is set to the fleet's home Region. When a list of fleet IDs is provided, attribute objects are returned only for fleets that currently exist.</p> <note>
 /// <p>Some API operations may limit the number of fleet IDs that are allowed in one request. If a request exceeds this limit, the request fails and the error message includes the maximum allowed.</p>
 /// </note>
-/// <p><b>Learn more</b></p>
-/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up Amazon GameLift fleets</a></p>
-/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html#gamelift-metrics-fleet">GameLift metrics for fleets</a></p>
+/// <p> <b>Learn more</b> </p>
+/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up Amazon GameLift fleets</a> </p>
+/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html#gamelift-metrics-fleet">GameLift metrics for fleets</a> </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeFleetCapacityFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -26,13 +26,11 @@ impl DeleteBucketOwnershipControlsInputBuilder {
 /// <p>This operation is not supported by directory buckets.</p>
 /// </note>
 /// <p>Removes <code>OwnershipControls</code> for an Amazon S3 bucket. To use this operation, you must have the <code>s3:PutBucketOwnershipControls</code> permission. For more information about Amazon S3 permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying Permissions in a Policy</a>.</p>
-/// <p>For information about Amazon S3 Object Ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/about-object-ownership.html">Using Object Ownership</a>.</p>
+/// <p>For information about Amazon S3 Object Ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/about-object-ownership.html">Using Object Ownership</a>. </p>
 /// <p>The following operations are related to <code>DeleteBucketOwnershipControls</code>:</p>
 /// <ul>
-/// <li>
-/// <p><code>GetBucketOwnershipControls</code></p></li>
-/// <li>
-/// <p><code>PutBucketOwnershipControls</code></p></li>
+/// <li> <p> <code>GetBucketOwnershipControls</code> </p> </li>
+/// <li> <p> <code>PutBucketOwnershipControls</code> </p> </li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteBucketOwnershipControlsFluentBuilder {
@@ -119,17 +117,17 @@ impl DeleteBucketOwnershipControlsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The Amazon S3 bucket whose <code>OwnershipControls</code> you want to delete.</p>
+    /// <p>The Amazon S3 bucket whose <code>OwnershipControls</code> you want to delete. </p>
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bucket(input.into());
         self
     }
-    /// <p>The Amazon S3 bucket whose <code>OwnershipControls</code> you want to delete.</p>
+    /// <p>The Amazon S3 bucket whose <code>OwnershipControls</code> you want to delete. </p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bucket(input);
         self
     }
-    /// <p>The Amazon S3 bucket whose <code>OwnershipControls</code> you want to delete.</p>
+    /// <p>The Amazon S3 bucket whose <code>OwnershipControls</code> you want to delete. </p>
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_bucket()
     }

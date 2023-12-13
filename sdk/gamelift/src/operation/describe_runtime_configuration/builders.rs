@@ -23,11 +23,11 @@ impl DescribeRuntimeConfigurationInputBuilder {
 /// Fluent builder constructing a request to `DescribeRuntimeConfiguration`.
 ///
 /// <p>Retrieves a fleet's runtime configuration settings. The runtime configuration tells Amazon GameLift which server processes to run (and how) on each instance in the fleet.</p>
-/// <p>To get the runtime configuration that is currently in forces for a fleet, provide the fleet ID.</p>
+/// <p>To get the runtime configuration that is currently in forces for a fleet, provide the fleet ID. </p>
 /// <p>If successful, a <code>RuntimeConfiguration</code> object is returned for the requested fleet. If the requested fleet has been deleted, the result set is empty.</p>
-/// <p><b>Learn more</b></p>
-/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up Amazon GameLift fleets</a></p>
-/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-multiprocess.html">Running multiple processes on a fleet</a></p>
+/// <p> <b>Learn more</b> </p>
+/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up Amazon GameLift fleets</a> </p>
+/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-multiprocess.html">Running multiple processes on a fleet</a> </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeRuntimeConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

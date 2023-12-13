@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeServiceIntegrationOutput {
-    /// <p>Information about the integration of DevOps Guru with another Amazon Web Services service, such as Amazon Web Services Systems Manager.</p>
+    /// <p> Information about the integration of DevOps Guru with another Amazon Web Services service, such as Amazon Web Services Systems Manager. </p>
     pub service_integration: ::std::option::Option<crate::types::ServiceIntegrationConfig>,
     _request_id: Option<String>,
 }
 impl DescribeServiceIntegrationOutput {
-    /// <p>Information about the integration of DevOps Guru with another Amazon Web Services service, such as Amazon Web Services Systems Manager.</p>
+    /// <p> Information about the integration of DevOps Guru with another Amazon Web Services service, such as Amazon Web Services Systems Manager. </p>
     pub fn service_integration(&self) -> ::std::option::Option<&crate::types::ServiceIntegrationConfig> {
         self.service_integration.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct DescribeServiceIntegrationOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeServiceIntegrationOutputBuilder {
-    /// <p>Information about the integration of DevOps Guru with another Amazon Web Services service, such as Amazon Web Services Systems Manager.</p>
+    /// <p> Information about the integration of DevOps Guru with another Amazon Web Services service, such as Amazon Web Services Systems Manager. </p>
     pub fn service_integration(mut self, input: crate::types::ServiceIntegrationConfig) -> Self {
         self.service_integration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Information about the integration of DevOps Guru with another Amazon Web Services service, such as Amazon Web Services Systems Manager.</p>
+    /// <p> Information about the integration of DevOps Guru with another Amazon Web Services service, such as Amazon Web Services Systems Manager. </p>
     pub fn set_service_integration(mut self, input: ::std::option::Option<crate::types::ServiceIntegrationConfig>) -> Self {
         self.service_integration = input;
         self
     }
-    /// <p>Information about the integration of DevOps Guru with another Amazon Web Services service, such as Amazon Web Services Systems Manager.</p>
+    /// <p> Information about the integration of DevOps Guru with another Amazon Web Services service, such as Amazon Web Services Systems Manager. </p>
     pub fn get_service_integration(&self) -> &::std::option::Option<crate::types::ServiceIntegrationConfig> {
         &self.service_integration
     }

@@ -23,7 +23,7 @@ impl DescribeGlobalClustersInputBuilder {
 /// Fluent builder constructing a request to `DescribeGlobalClusters`.
 ///
 /// <p>Returns information about Aurora global database clusters. This API supports pagination.</p>
-/// <p>For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.</p><note>
+/// <p>For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.</p> <note>
 /// <p>This action only applies to Aurora DB clusters.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -120,8 +120,7 @@ impl DescribeGlobalClustersFluentBuilder {
     /// <p>The user-supplied DB cluster identifier. If this parameter is specified, information from only the specific DB cluster is returned. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>If supplied, must match an existing DBClusterIdentifier.</p></li>
+    /// <li> <p>If supplied, must match an existing DBClusterIdentifier.</p> </li>
     /// </ul>
     pub fn global_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.global_cluster_identifier(input.into());
@@ -130,8 +129,7 @@ impl DescribeGlobalClustersFluentBuilder {
     /// <p>The user-supplied DB cluster identifier. If this parameter is specified, information from only the specific DB cluster is returned. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>If supplied, must match an existing DBClusterIdentifier.</p></li>
+    /// <li> <p>If supplied, must match an existing DBClusterIdentifier.</p> </li>
     /// </ul>
     pub fn set_global_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_global_cluster_identifier(input);
@@ -140,8 +138,7 @@ impl DescribeGlobalClustersFluentBuilder {
     /// <p>The user-supplied DB cluster identifier. If this parameter is specified, information from only the specific DB cluster is returned. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>If supplied, must match an existing DBClusterIdentifier.</p></li>
+    /// <li> <p>If supplied, must match an existing DBClusterIdentifier.</p> </li>
     /// </ul>
     pub fn get_global_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_global_cluster_identifier()

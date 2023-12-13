@@ -125,16 +125,12 @@ impl DecreaseReplicaCountFluentBuilder {
     /// <p>The number of read replica nodes you want at the completion of this operation. For Redis (cluster mode disabled) replication groups, this is the number of replica nodes in the replication group. For Redis (cluster mode enabled) replication groups, this is the number of replica nodes in each of the replication group's node groups.</p>
     /// <p>The minimum number of replicas in a shard or replication group is:</p>
     /// <ul>
-    /// <li>
-    /// <p>Redis (cluster mode disabled)</p>
+    /// <li> <p>Redis (cluster mode disabled)</p>
     /// <ul>
-    /// <li>
-    /// <p>If Multi-AZ is enabled: 1</p></li>
-    /// <li>
-    /// <p>If Multi-AZ is not enabled: 0</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p>Redis (cluster mode enabled): 0 (though you will not be able to failover to a replica if your primary node fails)</p></li>
+    /// <li> <p>If Multi-AZ is enabled: 1</p> </li>
+    /// <li> <p>If Multi-AZ is not enabled: 0</p> </li>
+    /// </ul> </li>
+    /// <li> <p>Redis (cluster mode enabled): 0 (though you will not be able to failover to a replica if your primary node fails)</p> </li>
     /// </ul>
     pub fn new_replica_count(mut self, input: i32) -> Self {
         self.inner = self.inner.new_replica_count(input);
@@ -143,16 +139,12 @@ impl DecreaseReplicaCountFluentBuilder {
     /// <p>The number of read replica nodes you want at the completion of this operation. For Redis (cluster mode disabled) replication groups, this is the number of replica nodes in the replication group. For Redis (cluster mode enabled) replication groups, this is the number of replica nodes in each of the replication group's node groups.</p>
     /// <p>The minimum number of replicas in a shard or replication group is:</p>
     /// <ul>
-    /// <li>
-    /// <p>Redis (cluster mode disabled)</p>
+    /// <li> <p>Redis (cluster mode disabled)</p>
     /// <ul>
-    /// <li>
-    /// <p>If Multi-AZ is enabled: 1</p></li>
-    /// <li>
-    /// <p>If Multi-AZ is not enabled: 0</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p>Redis (cluster mode enabled): 0 (though you will not be able to failover to a replica if your primary node fails)</p></li>
+    /// <li> <p>If Multi-AZ is enabled: 1</p> </li>
+    /// <li> <p>If Multi-AZ is not enabled: 0</p> </li>
+    /// </ul> </li>
+    /// <li> <p>Redis (cluster mode enabled): 0 (though you will not be able to failover to a replica if your primary node fails)</p> </li>
     /// </ul>
     pub fn set_new_replica_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_new_replica_count(input);
@@ -161,16 +153,12 @@ impl DecreaseReplicaCountFluentBuilder {
     /// <p>The number of read replica nodes you want at the completion of this operation. For Redis (cluster mode disabled) replication groups, this is the number of replica nodes in the replication group. For Redis (cluster mode enabled) replication groups, this is the number of replica nodes in each of the replication group's node groups.</p>
     /// <p>The minimum number of replicas in a shard or replication group is:</p>
     /// <ul>
-    /// <li>
-    /// <p>Redis (cluster mode disabled)</p>
+    /// <li> <p>Redis (cluster mode disabled)</p>
     /// <ul>
-    /// <li>
-    /// <p>If Multi-AZ is enabled: 1</p></li>
-    /// <li>
-    /// <p>If Multi-AZ is not enabled: 0</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p>Redis (cluster mode enabled): 0 (though you will not be able to failover to a replica if your primary node fails)</p></li>
+    /// <li> <p>If Multi-AZ is enabled: 1</p> </li>
+    /// <li> <p>If Multi-AZ is not enabled: 0</p> </li>
+    /// </ul> </li>
+    /// <li> <p>Redis (cluster mode enabled): 0 (though you will not be able to failover to a replica if your primary node fails)</p> </li>
     /// </ul>
     pub fn get_new_replica_count(&self) -> &::std::option::Option<i32> {
         self.inner.get_new_replica_count()

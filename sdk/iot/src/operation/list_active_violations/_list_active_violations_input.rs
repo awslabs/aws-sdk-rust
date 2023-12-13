@@ -7,9 +7,9 @@ pub struct ListActiveViolationsInput {
     pub thing_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Device Defender security profile for which violations are listed.</p>
     pub security_profile_name: ::std::option::Option<::std::string::String>,
-    /// <p>The criteria for a behavior.</p>
+    /// <p> The criteria for a behavior. </p>
     pub behavior_criteria_type: ::std::option::Option<crate::types::BehaviorCriteriaType>,
-    /// <p>A list of all suppressed alerts.</p>
+    /// <p> A list of all suppressed alerts. </p>
     pub list_suppressed_alerts: ::std::option::Option<bool>,
     /// <p>The verification state of the violation (detect alarm).</p>
     pub verification_state: ::std::option::Option<crate::types::VerificationState>,
@@ -27,11 +27,11 @@ impl ListActiveViolationsInput {
     pub fn security_profile_name(&self) -> ::std::option::Option<&str> {
         self.security_profile_name.as_deref()
     }
-    /// <p>The criteria for a behavior.</p>
+    /// <p> The criteria for a behavior. </p>
     pub fn behavior_criteria_type(&self) -> ::std::option::Option<&crate::types::BehaviorCriteriaType> {
         self.behavior_criteria_type.as_ref()
     }
-    /// <p>A list of all suppressed alerts.</p>
+    /// <p> A list of all suppressed alerts. </p>
     pub fn list_suppressed_alerts(&self) -> ::std::option::Option<bool> {
         self.list_suppressed_alerts
     }
@@ -96,31 +96,31 @@ impl ListActiveViolationsInputBuilder {
     pub fn get_security_profile_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.security_profile_name
     }
-    /// <p>The criteria for a behavior.</p>
+    /// <p> The criteria for a behavior. </p>
     pub fn behavior_criteria_type(mut self, input: crate::types::BehaviorCriteriaType) -> Self {
         self.behavior_criteria_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The criteria for a behavior.</p>
+    /// <p> The criteria for a behavior. </p>
     pub fn set_behavior_criteria_type(mut self, input: ::std::option::Option<crate::types::BehaviorCriteriaType>) -> Self {
         self.behavior_criteria_type = input;
         self
     }
-    /// <p>The criteria for a behavior.</p>
+    /// <p> The criteria for a behavior. </p>
     pub fn get_behavior_criteria_type(&self) -> &::std::option::Option<crate::types::BehaviorCriteriaType> {
         &self.behavior_criteria_type
     }
-    /// <p>A list of all suppressed alerts.</p>
+    /// <p> A list of all suppressed alerts. </p>
     pub fn list_suppressed_alerts(mut self, input: bool) -> Self {
         self.list_suppressed_alerts = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A list of all suppressed alerts.</p>
+    /// <p> A list of all suppressed alerts. </p>
     pub fn set_list_suppressed_alerts(mut self, input: ::std::option::Option<bool>) -> Self {
         self.list_suppressed_alerts = input;
         self
     }
-    /// <p>A list of all suppressed alerts.</p>
+    /// <p> A list of all suppressed alerts. </p>
     pub fn get_list_suppressed_alerts(&self) -> &::std::option::Option<bool> {
         &self.list_suppressed_alerts
     }

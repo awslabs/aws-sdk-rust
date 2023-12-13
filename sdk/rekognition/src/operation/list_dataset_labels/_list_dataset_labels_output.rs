@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDatasetLabelsOutput {
-    /// <p>A list of the labels in the dataset.</p>
+    /// <p> A list of the labels in the dataset. </p>
     pub dataset_label_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::DatasetLabelDescription>>,
-    /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.</p>
+    /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListDatasetLabelsOutput {
-    /// <p>A list of the labels in the dataset.</p>
+    /// <p> A list of the labels in the dataset. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dataset_label_descriptions.is_none()`.
     pub fn dataset_label_descriptions(&self) -> &[crate::types::DatasetLabelDescription] {
         self.dataset_label_descriptions.as_deref().unwrap_or_default()
     }
-    /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.</p>
+    /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -46,33 +46,33 @@ impl ListDatasetLabelsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_dataset_label_descriptions`](Self::set_dataset_label_descriptions).
     ///
-    /// <p>A list of the labels in the dataset.</p>
+    /// <p> A list of the labels in the dataset. </p>
     pub fn dataset_label_descriptions(mut self, input: crate::types::DatasetLabelDescription) -> Self {
         let mut v = self.dataset_label_descriptions.unwrap_or_default();
         v.push(input);
         self.dataset_label_descriptions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of the labels in the dataset.</p>
+    /// <p> A list of the labels in the dataset. </p>
     pub fn set_dataset_label_descriptions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DatasetLabelDescription>>) -> Self {
         self.dataset_label_descriptions = input;
         self
     }
-    /// <p>A list of the labels in the dataset.</p>
+    /// <p> A list of the labels in the dataset. </p>
     pub fn get_dataset_label_descriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetLabelDescription>> {
         &self.dataset_label_descriptions
     }
-    /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.</p>
+    /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.</p>
+    /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.</p>
+    /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

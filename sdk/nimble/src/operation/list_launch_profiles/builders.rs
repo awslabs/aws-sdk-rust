@@ -142,17 +142,17 @@ impl ListLaunchProfilesFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>The principal ID. This currently supports a IAM Identity Center UserId.</p>
+    /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
     pub fn principal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.principal_id(input.into());
         self
     }
-    /// <p>The principal ID. This currently supports a IAM Identity Center UserId.</p>
+    /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
     pub fn set_principal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_principal_id(input);
         self
     }
-    /// <p>The principal ID. This currently supports a IAM Identity Center UserId.</p>
+    /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
     pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_principal_id()
     }
@@ -174,17 +174,17 @@ impl ListLaunchProfilesFluentBuilder {
     pub fn get_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchProfileState>> {
         self.inner.get_states()
     }
-    /// <p>The studio ID.</p>
+    /// <p>The studio ID. </p>
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.studio_id(input.into());
         self
     }
-    /// <p>The studio ID.</p>
+    /// <p>The studio ID. </p>
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_studio_id(input);
         self
     }
-    /// <p>The studio ID.</p>
+    /// <p>The studio ID. </p>
     pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_studio_id()
     }

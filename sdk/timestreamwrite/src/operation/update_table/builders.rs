@@ -22,7 +22,7 @@ impl UpdateTableInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateTable`.
 ///
-/// <p>Modifies the retention duration of the memory store and magnetic store for your Timestream table. Note that the change in retention duration takes effect immediately. For example, if the retention period of the memory store was initially set to 2 hours and then changed to 24 hours, the memory store will be capable of holding 24 hours of data, but will be populated with 24 hours of data 22 hours after this change was made. Timestream does not retrieve data from the magnetic store to populate the memory store.</p>
+/// <p>Modifies the retention duration of the memory store and magnetic store for your Timestream table. Note that the change in retention duration takes effect immediately. For example, if the retention period of the memory store was initially set to 2 hours and then changed to 24 hours, the memory store will be capable of holding 24 hours of data, but will be populated with 24 hours of data 22 hours after this change was made. Timestream does not retrieve data from the magnetic store to populate the memory store. </p>
 /// <p>See <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.update-table.html">code sample</a> for details.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateTableFluentBuilder {
@@ -165,17 +165,17 @@ impl UpdateTableFluentBuilder {
     pub fn get_magnetic_store_write_properties(&self) -> &::std::option::Option<crate::types::MagneticStoreWriteProperties> {
         self.inner.get_magnetic_store_write_properties()
     }
-    /// <p>The schema of the table.</p>
+    /// <p> The schema of the table. </p>
     pub fn schema(mut self, input: crate::types::Schema) -> Self {
         self.inner = self.inner.schema(input);
         self
     }
-    /// <p>The schema of the table.</p>
+    /// <p> The schema of the table. </p>
     pub fn set_schema(mut self, input: ::std::option::Option<crate::types::Schema>) -> Self {
         self.inner = self.inner.set_schema(input);
         self
     }
-    /// <p>The schema of the table.</p>
+    /// <p> The schema of the table. </p>
     pub fn get_schema(&self) -> &::std::option::Option<crate::types::Schema> {
         self.inner.get_schema()
     }

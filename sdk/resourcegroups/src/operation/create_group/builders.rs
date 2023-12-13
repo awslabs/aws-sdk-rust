@@ -23,11 +23,10 @@ impl CreateGroupInputBuilder {
 /// Fluent builder constructing a request to `CreateGroup`.
 ///
 /// <p>Creates a resource group with the specified name and description. You can optionally include either a resource query or a service configuration. For more information about constructing a resource query, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/getting_started-query.html">Build queries and groups in Resource Groups</a> in the <i>Resource Groups User Guide</i>. For more information about service-linked groups and service configurations, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p>
-/// <p><b>Minimum permissions</b></p>
+/// <p> <b>Minimum permissions</b> </p>
 /// <p>To run this command, you must have the following permissions:</p>
 /// <ul>
-/// <li>
-/// <p><code>resource-groups:CreateGroup</code></p></li>
+/// <li> <p> <code>resource-groups:CreateGroup</code> </p> </li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateGroupFluentBuilder {
@@ -142,21 +141,21 @@ impl CreateGroupFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p>The resource query that determines which Amazon Web Services resources are members of this group. For more information about resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create a tag-based group in Resource Groups</a>.</p><note>
+    /// <p>The resource query that determines which Amazon Web Services resources are members of this group. For more information about resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create a tag-based group in Resource Groups</a>. </p> <note>
     /// <p>A resource group can contain either a <code>ResourceQuery</code> or a <code>Configuration</code>, but not both.</p>
     /// </note>
     pub fn resource_query(mut self, input: crate::types::ResourceQuery) -> Self {
         self.inner = self.inner.resource_query(input);
         self
     }
-    /// <p>The resource query that determines which Amazon Web Services resources are members of this group. For more information about resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create a tag-based group in Resource Groups</a>.</p><note>
+    /// <p>The resource query that determines which Amazon Web Services resources are members of this group. For more information about resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create a tag-based group in Resource Groups</a>. </p> <note>
     /// <p>A resource group can contain either a <code>ResourceQuery</code> or a <code>Configuration</code>, but not both.</p>
     /// </note>
     pub fn set_resource_query(mut self, input: ::std::option::Option<crate::types::ResourceQuery>) -> Self {
         self.inner = self.inner.set_resource_query(input);
         self
     }
-    /// <p>The resource query that determines which Amazon Web Services resources are members of this group. For more information about resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create a tag-based group in Resource Groups</a>.</p><note>
+    /// <p>The resource query that determines which Amazon Web Services resources are members of this group. For more information about resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create a tag-based group in Resource Groups</a>. </p> <note>
     /// <p>A resource group can contain either a <code>ResourceQuery</code> or a <code>Configuration</code>, but not both.</p>
     /// </note>
     pub fn get_resource_query(&self) -> &::std::option::Option<crate::types::ResourceQuery> {
@@ -184,21 +183,21 @@ impl CreateGroupFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_configuration`](Self::set_configuration).
     ///
-    /// <p>A configuration associates the resource group with an Amazon Web Services service and specifies how the service can interact with the resources in the group. A configuration is an array of <code>GroupConfigurationItem</code> elements. For details about the syntax of service configurations, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p><note>
+    /// <p>A configuration associates the resource group with an Amazon Web Services service and specifies how the service can interact with the resources in the group. A configuration is an array of <code>GroupConfigurationItem</code> elements. For details about the syntax of service configurations, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p> <note>
     /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
     /// </note>
     pub fn configuration(mut self, input: crate::types::GroupConfigurationItem) -> Self {
         self.inner = self.inner.configuration(input);
         self
     }
-    /// <p>A configuration associates the resource group with an Amazon Web Services service and specifies how the service can interact with the resources in the group. A configuration is an array of <code>GroupConfigurationItem</code> elements. For details about the syntax of service configurations, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p><note>
+    /// <p>A configuration associates the resource group with an Amazon Web Services service and specifies how the service can interact with the resources in the group. A configuration is an array of <code>GroupConfigurationItem</code> elements. For details about the syntax of service configurations, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p> <note>
     /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
     /// </note>
     pub fn set_configuration(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GroupConfigurationItem>>) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
     }
-    /// <p>A configuration associates the resource group with an Amazon Web Services service and specifies how the service can interact with the resources in the group. A configuration is an array of <code>GroupConfigurationItem</code> elements. For details about the syntax of service configurations, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p><note>
+    /// <p>A configuration associates the resource group with an Amazon Web Services service and specifies how the service can interact with the resources in the group. A configuration is an array of <code>GroupConfigurationItem</code> elements. For details about the syntax of service configurations, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p> <note>
     /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
     /// </note>
     pub fn get_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupConfigurationItem>> {

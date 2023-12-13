@@ -7,14 +7,10 @@ pub struct GetFindingStatisticsInput {
     pub finding_criteria: ::std::option::Option<crate::types::FindingCriteria>,
     /// <p>The finding property to use to group the query results. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>classificationDetails.jobId - The unique identifier for the classification job that produced the finding.</p></li>
-    /// <li>
-    /// <p>resourcesAffected.s3Bucket.name - The name of the S3 bucket that the finding applies to.</p></li>
-    /// <li>
-    /// <p>severity.description - The severity level of the finding, such as High or Medium.</p></li>
-    /// <li>
-    /// <p>type - The type of finding, such as Policy:IAMUser/S3BucketPublic and SensitiveData:S3Object/Personal.</p></li>
+    /// <li><p>classificationDetails.jobId - The unique identifier for the classification job that produced the finding.</p></li>
+    /// <li><p>resourcesAffected.s3Bucket.name - The name of the S3 bucket that the finding applies to.</p></li>
+    /// <li><p>severity.description - The severity level of the finding, such as High or Medium.</p></li>
+    /// <li><p>type - The type of finding, such as Policy:IAMUser/S3BucketPublic and SensitiveData:S3Object/Personal.</p></li>
     /// </ul>
     pub group_by: ::std::option::Option<crate::types::GroupBy>,
     /// <p>The maximum number of items to include in each page of the response.</p>
@@ -29,14 +25,10 @@ impl GetFindingStatisticsInput {
     }
     /// <p>The finding property to use to group the query results. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>classificationDetails.jobId - The unique identifier for the classification job that produced the finding.</p></li>
-    /// <li>
-    /// <p>resourcesAffected.s3Bucket.name - The name of the S3 bucket that the finding applies to.</p></li>
-    /// <li>
-    /// <p>severity.description - The severity level of the finding, such as High or Medium.</p></li>
-    /// <li>
-    /// <p>type - The type of finding, such as Policy:IAMUser/S3BucketPublic and SensitiveData:S3Object/Personal.</p></li>
+    /// <li><p>classificationDetails.jobId - The unique identifier for the classification job that produced the finding.</p></li>
+    /// <li><p>resourcesAffected.s3Bucket.name - The name of the S3 bucket that the finding applies to.</p></li>
+    /// <li><p>severity.description - The severity level of the finding, such as High or Medium.</p></li>
+    /// <li><p>type - The type of finding, such as Policy:IAMUser/S3BucketPublic and SensitiveData:S3Object/Personal.</p></li>
     /// </ul>
     pub fn group_by(&self) -> ::std::option::Option<&crate::types::GroupBy> {
         self.group_by.as_ref()
@@ -83,14 +75,10 @@ impl GetFindingStatisticsInputBuilder {
     }
     /// <p>The finding property to use to group the query results. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>classificationDetails.jobId - The unique identifier for the classification job that produced the finding.</p></li>
-    /// <li>
-    /// <p>resourcesAffected.s3Bucket.name - The name of the S3 bucket that the finding applies to.</p></li>
-    /// <li>
-    /// <p>severity.description - The severity level of the finding, such as High or Medium.</p></li>
-    /// <li>
-    /// <p>type - The type of finding, such as Policy:IAMUser/S3BucketPublic and SensitiveData:S3Object/Personal.</p></li>
+    /// <li><p>classificationDetails.jobId - The unique identifier for the classification job that produced the finding.</p></li>
+    /// <li><p>resourcesAffected.s3Bucket.name - The name of the S3 bucket that the finding applies to.</p></li>
+    /// <li><p>severity.description - The severity level of the finding, such as High or Medium.</p></li>
+    /// <li><p>type - The type of finding, such as Policy:IAMUser/S3BucketPublic and SensitiveData:S3Object/Personal.</p></li>
     /// </ul>
     /// This field is required.
     pub fn group_by(mut self, input: crate::types::GroupBy) -> Self {
@@ -99,14 +87,10 @@ impl GetFindingStatisticsInputBuilder {
     }
     /// <p>The finding property to use to group the query results. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>classificationDetails.jobId - The unique identifier for the classification job that produced the finding.</p></li>
-    /// <li>
-    /// <p>resourcesAffected.s3Bucket.name - The name of the S3 bucket that the finding applies to.</p></li>
-    /// <li>
-    /// <p>severity.description - The severity level of the finding, such as High or Medium.</p></li>
-    /// <li>
-    /// <p>type - The type of finding, such as Policy:IAMUser/S3BucketPublic and SensitiveData:S3Object/Personal.</p></li>
+    /// <li><p>classificationDetails.jobId - The unique identifier for the classification job that produced the finding.</p></li>
+    /// <li><p>resourcesAffected.s3Bucket.name - The name of the S3 bucket that the finding applies to.</p></li>
+    /// <li><p>severity.description - The severity level of the finding, such as High or Medium.</p></li>
+    /// <li><p>type - The type of finding, such as Policy:IAMUser/S3BucketPublic and SensitiveData:S3Object/Personal.</p></li>
     /// </ul>
     pub fn set_group_by(mut self, input: ::std::option::Option<crate::types::GroupBy>) -> Self {
         self.group_by = input;
@@ -114,14 +98,10 @@ impl GetFindingStatisticsInputBuilder {
     }
     /// <p>The finding property to use to group the query results. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>classificationDetails.jobId - The unique identifier for the classification job that produced the finding.</p></li>
-    /// <li>
-    /// <p>resourcesAffected.s3Bucket.name - The name of the S3 bucket that the finding applies to.</p></li>
-    /// <li>
-    /// <p>severity.description - The severity level of the finding, such as High or Medium.</p></li>
-    /// <li>
-    /// <p>type - The type of finding, such as Policy:IAMUser/S3BucketPublic and SensitiveData:S3Object/Personal.</p></li>
+    /// <li><p>classificationDetails.jobId - The unique identifier for the classification job that produced the finding.</p></li>
+    /// <li><p>resourcesAffected.s3Bucket.name - The name of the S3 bucket that the finding applies to.</p></li>
+    /// <li><p>severity.description - The severity level of the finding, such as High or Medium.</p></li>
+    /// <li><p>type - The type of finding, such as Policy:IAMUser/S3BucketPublic and SensitiveData:S3Object/Personal.</p></li>
     /// </ul>
     pub fn get_group_by(&self) -> &::std::option::Option<crate::types::GroupBy> {
         &self.group_by

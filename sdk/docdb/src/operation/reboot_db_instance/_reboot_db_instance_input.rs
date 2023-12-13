@@ -7,11 +7,10 @@ pub struct RebootDbInstanceInput {
     /// <p>The instance identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must match the identifier of an existing <code>DBInstance</code>.</p></li>
+    /// <li> <p>Must match the identifier of an existing <code>DBInstance</code>.</p> </li>
     /// </ul>
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>When <code>true</code>, the reboot is conducted through a Multi-AZ failover.</p>
+    /// <p> When <code>true</code>, the reboot is conducted through a Multi-AZ failover. </p>
     /// <p>Constraint: You can't specify <code>true</code> if the instance is not configured for Multi-AZ.</p>
     pub force_failover: ::std::option::Option<bool>,
 }
@@ -19,13 +18,12 @@ impl RebootDbInstanceInput {
     /// <p>The instance identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must match the identifier of an existing <code>DBInstance</code>.</p></li>
+    /// <li> <p>Must match the identifier of an existing <code>DBInstance</code>.</p> </li>
     /// </ul>
     pub fn db_instance_identifier(&self) -> ::std::option::Option<&str> {
         self.db_instance_identifier.as_deref()
     }
-    /// <p>When <code>true</code>, the reboot is conducted through a Multi-AZ failover.</p>
+    /// <p> When <code>true</code>, the reboot is conducted through a Multi-AZ failover. </p>
     /// <p>Constraint: You can't specify <code>true</code> if the instance is not configured for Multi-AZ.</p>
     pub fn force_failover(&self) -> ::std::option::Option<bool> {
         self.force_failover
@@ -49,8 +47,7 @@ impl RebootDbInstanceInputBuilder {
     /// <p>The instance identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must match the identifier of an existing <code>DBInstance</code>.</p></li>
+    /// <li> <p>Must match the identifier of an existing <code>DBInstance</code>.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -60,8 +57,7 @@ impl RebootDbInstanceInputBuilder {
     /// <p>The instance identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must match the identifier of an existing <code>DBInstance</code>.</p></li>
+    /// <li> <p>Must match the identifier of an existing <code>DBInstance</code>.</p> </li>
     /// </ul>
     pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_instance_identifier = input;
@@ -70,25 +66,24 @@ impl RebootDbInstanceInputBuilder {
     /// <p>The instance identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must match the identifier of an existing <code>DBInstance</code>.</p></li>
+    /// <li> <p>Must match the identifier of an existing <code>DBInstance</code>.</p> </li>
     /// </ul>
     pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_instance_identifier
     }
-    /// <p>When <code>true</code>, the reboot is conducted through a Multi-AZ failover.</p>
+    /// <p> When <code>true</code>, the reboot is conducted through a Multi-AZ failover. </p>
     /// <p>Constraint: You can't specify <code>true</code> if the instance is not configured for Multi-AZ.</p>
     pub fn force_failover(mut self, input: bool) -> Self {
         self.force_failover = ::std::option::Option::Some(input);
         self
     }
-    /// <p>When <code>true</code>, the reboot is conducted through a Multi-AZ failover.</p>
+    /// <p> When <code>true</code>, the reboot is conducted through a Multi-AZ failover. </p>
     /// <p>Constraint: You can't specify <code>true</code> if the instance is not configured for Multi-AZ.</p>
     pub fn set_force_failover(mut self, input: ::std::option::Option<bool>) -> Self {
         self.force_failover = input;
         self
     }
-    /// <p>When <code>true</code>, the reboot is conducted through a Multi-AZ failover.</p>
+    /// <p> When <code>true</code>, the reboot is conducted through a Multi-AZ failover. </p>
     /// <p>Constraint: You can't specify <code>true</code> if the instance is not configured for Multi-AZ.</p>
     pub fn get_force_failover(&self) -> &::std::option::Option<bool> {
         &self.force_failover

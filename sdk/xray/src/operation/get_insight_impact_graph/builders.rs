@@ -136,31 +136,31 @@ impl GetInsightImpactGraphFluentBuilder {
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_start_time()
     }
-    /// <p>The estimated end time of the insight, in Unix time seconds. The EndTime is exclusive of the value provided. The time range between the start time and end time can't be more than six hours.</p>
+    /// <p>The estimated end time of the insight, in Unix time seconds. The EndTime is exclusive of the value provided. The time range between the start time and end time can't be more than six hours. </p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.end_time(input);
         self
     }
-    /// <p>The estimated end time of the insight, in Unix time seconds. The EndTime is exclusive of the value provided. The time range between the start time and end time can't be more than six hours.</p>
+    /// <p>The estimated end time of the insight, in Unix time seconds. The EndTime is exclusive of the value provided. The time range between the start time and end time can't be more than six hours. </p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }
-    /// <p>The estimated end time of the insight, in Unix time seconds. The EndTime is exclusive of the value provided. The time range between the start time and end time can't be more than six hours.</p>
+    /// <p>The estimated end time of the insight, in Unix time seconds. The EndTime is exclusive of the value provided. The time range between the start time and end time can't be more than six hours. </p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_end_time()
     }
-    /// <p>Specify the pagination token returned by a previous request to retrieve the next page of results.</p>
+    /// <p>Specify the pagination token returned by a previous request to retrieve the next page of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>Specify the pagination token returned by a previous request to retrieve the next page of results.</p>
+    /// <p>Specify the pagination token returned by a previous request to retrieve the next page of results. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>Specify the pagination token returned by a previous request to retrieve the next page of results.</p>
+    /// <p>Specify the pagination token returned by a previous request to retrieve the next page of results. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

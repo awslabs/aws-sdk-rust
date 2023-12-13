@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SpotMarketOptions {
-    /// <p>The maximum hourly price that you're willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p><important>
+    /// <p>The maximum hourly price that you're willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p> <important>
     /// <p>If you specify a maximum price, your Spot Instances will be interrupted more frequently than if you do not specify this parameter.</p>
     /// </important>
     pub max_price: ::std::option::Option<::std::string::String>,
@@ -14,10 +14,8 @@ pub struct SpotMarketOptions {
     pub block_duration_minutes: ::std::option::Option<i32>,
     /// <p>The end date of the request, in UTC format (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). Supported only for persistent requests.</p>
     /// <ul>
-    /// <li>
-    /// <p>For a persistent request, the request remains active until the <code>ValidUntil</code> date and time is reached. Otherwise, the request remains active until you cancel it.</p></li>
-    /// <li>
-    /// <p>For a one-time request, <code>ValidUntil</code> is not supported. The request remains active until all instances launch or you cancel the request.</p></li>
+    /// <li> <p>For a persistent request, the request remains active until the <code>ValidUntil</code> date and time is reached. Otherwise, the request remains active until you cancel it.</p> </li>
+    /// <li> <p>For a one-time request, <code>ValidUntil</code> is not supported. The request remains active until all instances launch or you cancel the request.</p> </li>
     /// </ul>
     pub valid_until: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The behavior when a Spot Instance is interrupted.</p>
@@ -27,7 +25,7 @@ pub struct SpotMarketOptions {
     pub instance_interruption_behavior: ::std::option::Option<crate::types::InstanceInterruptionBehavior>,
 }
 impl SpotMarketOptions {
-    /// <p>The maximum hourly price that you're willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p><important>
+    /// <p>The maximum hourly price that you're willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p> <important>
     /// <p>If you specify a maximum price, your Spot Instances will be interrupted more frequently than if you do not specify this parameter.</p>
     /// </important>
     pub fn max_price(&self) -> ::std::option::Option<&str> {
@@ -43,10 +41,8 @@ impl SpotMarketOptions {
     }
     /// <p>The end date of the request, in UTC format (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). Supported only for persistent requests.</p>
     /// <ul>
-    /// <li>
-    /// <p>For a persistent request, the request remains active until the <code>ValidUntil</code> date and time is reached. Otherwise, the request remains active until you cancel it.</p></li>
-    /// <li>
-    /// <p>For a one-time request, <code>ValidUntil</code> is not supported. The request remains active until all instances launch or you cancel the request.</p></li>
+    /// <li> <p>For a persistent request, the request remains active until the <code>ValidUntil</code> date and time is reached. Otherwise, the request remains active until you cancel it.</p> </li>
+    /// <li> <p>For a one-time request, <code>ValidUntil</code> is not supported. The request remains active until all instances launch or you cancel the request.</p> </li>
     /// </ul>
     pub fn valid_until(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.valid_until.as_ref()
@@ -77,21 +73,21 @@ pub struct SpotMarketOptionsBuilder {
     pub(crate) instance_interruption_behavior: ::std::option::Option<crate::types::InstanceInterruptionBehavior>,
 }
 impl SpotMarketOptionsBuilder {
-    /// <p>The maximum hourly price that you're willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p><important>
+    /// <p>The maximum hourly price that you're willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p> <important>
     /// <p>If you specify a maximum price, your Spot Instances will be interrupted more frequently than if you do not specify this parameter.</p>
     /// </important>
     pub fn max_price(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.max_price = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The maximum hourly price that you're willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p><important>
+    /// <p>The maximum hourly price that you're willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p> <important>
     /// <p>If you specify a maximum price, your Spot Instances will be interrupted more frequently than if you do not specify this parameter.</p>
     /// </important>
     pub fn set_max_price(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.max_price = input;
         self
     }
-    /// <p>The maximum hourly price that you're willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p><important>
+    /// <p>The maximum hourly price that you're willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p> <important>
     /// <p>If you specify a maximum price, your Spot Instances will be interrupted more frequently than if you do not specify this parameter.</p>
     /// </important>
     pub fn get_max_price(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,10 +123,8 @@ impl SpotMarketOptionsBuilder {
     }
     /// <p>The end date of the request, in UTC format (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). Supported only for persistent requests.</p>
     /// <ul>
-    /// <li>
-    /// <p>For a persistent request, the request remains active until the <code>ValidUntil</code> date and time is reached. Otherwise, the request remains active until you cancel it.</p></li>
-    /// <li>
-    /// <p>For a one-time request, <code>ValidUntil</code> is not supported. The request remains active until all instances launch or you cancel the request.</p></li>
+    /// <li> <p>For a persistent request, the request remains active until the <code>ValidUntil</code> date and time is reached. Otherwise, the request remains active until you cancel it.</p> </li>
+    /// <li> <p>For a one-time request, <code>ValidUntil</code> is not supported. The request remains active until all instances launch or you cancel the request.</p> </li>
     /// </ul>
     pub fn valid_until(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.valid_until = ::std::option::Option::Some(input);
@@ -138,10 +132,8 @@ impl SpotMarketOptionsBuilder {
     }
     /// <p>The end date of the request, in UTC format (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). Supported only for persistent requests.</p>
     /// <ul>
-    /// <li>
-    /// <p>For a persistent request, the request remains active until the <code>ValidUntil</code> date and time is reached. Otherwise, the request remains active until you cancel it.</p></li>
-    /// <li>
-    /// <p>For a one-time request, <code>ValidUntil</code> is not supported. The request remains active until all instances launch or you cancel the request.</p></li>
+    /// <li> <p>For a persistent request, the request remains active until the <code>ValidUntil</code> date and time is reached. Otherwise, the request remains active until you cancel it.</p> </li>
+    /// <li> <p>For a one-time request, <code>ValidUntil</code> is not supported. The request remains active until all instances launch or you cancel the request.</p> </li>
     /// </ul>
     pub fn set_valid_until(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.valid_until = input;
@@ -149,10 +141,8 @@ impl SpotMarketOptionsBuilder {
     }
     /// <p>The end date of the request, in UTC format (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). Supported only for persistent requests.</p>
     /// <ul>
-    /// <li>
-    /// <p>For a persistent request, the request remains active until the <code>ValidUntil</code> date and time is reached. Otherwise, the request remains active until you cancel it.</p></li>
-    /// <li>
-    /// <p>For a one-time request, <code>ValidUntil</code> is not supported. The request remains active until all instances launch or you cancel the request.</p></li>
+    /// <li> <p>For a persistent request, the request remains active until the <code>ValidUntil</code> date and time is reached. Otherwise, the request remains active until you cancel it.</p> </li>
+    /// <li> <p>For a one-time request, <code>ValidUntil</code> is not supported. The request remains active until all instances launch or you cancel the request.</p> </li>
     /// </ul>
     pub fn get_valid_until(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.valid_until

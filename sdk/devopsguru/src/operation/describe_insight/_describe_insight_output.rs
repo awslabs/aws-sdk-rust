@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeInsightOutput {
-    /// <p>A <code>ProactiveInsight</code> object that represents the requested insight.</p>
+    /// <p> A <code>ProactiveInsight</code> object that represents the requested insight. </p>
     pub proactive_insight: ::std::option::Option<crate::types::ProactiveInsight>,
-    /// <p>A <code>ReactiveInsight</code> object that represents the requested insight.</p>
+    /// <p> A <code>ReactiveInsight</code> object that represents the requested insight. </p>
     pub reactive_insight: ::std::option::Option<crate::types::ReactiveInsight>,
     _request_id: Option<String>,
 }
 impl DescribeInsightOutput {
-    /// <p>A <code>ProactiveInsight</code> object that represents the requested insight.</p>
+    /// <p> A <code>ProactiveInsight</code> object that represents the requested insight. </p>
     pub fn proactive_insight(&self) -> ::std::option::Option<&crate::types::ProactiveInsight> {
         self.proactive_insight.as_ref()
     }
-    /// <p>A <code>ReactiveInsight</code> object that represents the requested insight.</p>
+    /// <p> A <code>ReactiveInsight</code> object that represents the requested insight. </p>
     pub fn reactive_insight(&self) -> ::std::option::Option<&crate::types::ReactiveInsight> {
         self.reactive_insight.as_ref()
     }
@@ -40,31 +40,31 @@ pub struct DescribeInsightOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeInsightOutputBuilder {
-    /// <p>A <code>ProactiveInsight</code> object that represents the requested insight.</p>
+    /// <p> A <code>ProactiveInsight</code> object that represents the requested insight. </p>
     pub fn proactive_insight(mut self, input: crate::types::ProactiveInsight) -> Self {
         self.proactive_insight = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A <code>ProactiveInsight</code> object that represents the requested insight.</p>
+    /// <p> A <code>ProactiveInsight</code> object that represents the requested insight. </p>
     pub fn set_proactive_insight(mut self, input: ::std::option::Option<crate::types::ProactiveInsight>) -> Self {
         self.proactive_insight = input;
         self
     }
-    /// <p>A <code>ProactiveInsight</code> object that represents the requested insight.</p>
+    /// <p> A <code>ProactiveInsight</code> object that represents the requested insight. </p>
     pub fn get_proactive_insight(&self) -> &::std::option::Option<crate::types::ProactiveInsight> {
         &self.proactive_insight
     }
-    /// <p>A <code>ReactiveInsight</code> object that represents the requested insight.</p>
+    /// <p> A <code>ReactiveInsight</code> object that represents the requested insight. </p>
     pub fn reactive_insight(mut self, input: crate::types::ReactiveInsight) -> Self {
         self.reactive_insight = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A <code>ReactiveInsight</code> object that represents the requested insight.</p>
+    /// <p> A <code>ReactiveInsight</code> object that represents the requested insight. </p>
     pub fn set_reactive_insight(mut self, input: ::std::option::Option<crate::types::ReactiveInsight>) -> Self {
         self.reactive_insight = input;
         self
     }
-    /// <p>A <code>ReactiveInsight</code> object that represents the requested insight.</p>
+    /// <p> A <code>ReactiveInsight</code> object that represents the requested insight. </p>
     pub fn get_reactive_insight(&self) -> &::std::option::Option<crate::types::ReactiveInsight> {
         &self.reactive_insight
     }

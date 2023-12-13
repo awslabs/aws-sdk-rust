@@ -245,7 +245,7 @@ pub enum TagResourceError {
     ConcurrentModificationException(crate::types::error::ConcurrentModificationException),
     /// <p>One of the AWS CodeStar Notifications limits has been exceeded. Limits apply to accounts, notification rules, notifications, resources, and targets. For more information, see Limits.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
-    /// <p>AWS CodeStar Notifications can't find a resource that matches the provided ARN.</p>
+    /// <p>AWS CodeStar Notifications can't find a resource that matches the provided ARN. </p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>One or more parameter values are not valid.</p>
     ValidationException(crate::types::error::ValidationException),

@@ -11,11 +11,11 @@ pub struct NotificationSettingDetail {
     pub event: crate::types::NotificationEvent,
     /// <p>The number of days before a notification event.</p>
     pub threshold: ::std::option::Option<i32>,
-    /// <p>The specified channel of notification. IAM Roles Anywhere uses CloudWatch metrics, EventBridge, and Health Dashboard to notify for an event.</p><note>
+    /// <p>The specified channel of notification. IAM Roles Anywhere uses CloudWatch metrics, EventBridge, and Health Dashboard to notify for an event.</p> <note>
     /// <p>In the absence of a specific channel, IAM Roles Anywhere applies this setting to 'ALL' channels.</p>
     /// </note>
     pub channel: ::std::option::Option<crate::types::NotificationChannel>,
-    /// <p>The principal that configured the notification setting. For default settings configured by IAM Roles Anywhere, the value is <code>rolesanywhere.amazonaws.com</code>, and for customized notifications settings, it is the respective account ID.</p>
+    /// <p>The principal that configured the notification setting. For default settings configured by IAM Roles Anywhere, the value is <code>rolesanywhere.amazonaws.com</code>, and for customized notifications settings, it is the respective account ID. </p>
     pub configured_by: ::std::option::Option<::std::string::String>,
 }
 impl NotificationSettingDetail {
@@ -31,13 +31,13 @@ impl NotificationSettingDetail {
     pub fn threshold(&self) -> ::std::option::Option<i32> {
         self.threshold
     }
-    /// <p>The specified channel of notification. IAM Roles Anywhere uses CloudWatch metrics, EventBridge, and Health Dashboard to notify for an event.</p><note>
+    /// <p>The specified channel of notification. IAM Roles Anywhere uses CloudWatch metrics, EventBridge, and Health Dashboard to notify for an event.</p> <note>
     /// <p>In the absence of a specific channel, IAM Roles Anywhere applies this setting to 'ALL' channels.</p>
     /// </note>
     pub fn channel(&self) -> ::std::option::Option<&crate::types::NotificationChannel> {
         self.channel.as_ref()
     }
-    /// <p>The principal that configured the notification setting. For default settings configured by IAM Roles Anywhere, the value is <code>rolesanywhere.amazonaws.com</code>, and for customized notifications settings, it is the respective account ID.</p>
+    /// <p>The principal that configured the notification setting. For default settings configured by IAM Roles Anywhere, the value is <code>rolesanywhere.amazonaws.com</code>, and for customized notifications settings, it is the respective account ID. </p>
     pub fn configured_by(&self) -> ::std::option::Option<&str> {
         self.configured_by.as_deref()
     }
@@ -104,37 +104,37 @@ impl NotificationSettingDetailBuilder {
     pub fn get_threshold(&self) -> &::std::option::Option<i32> {
         &self.threshold
     }
-    /// <p>The specified channel of notification. IAM Roles Anywhere uses CloudWatch metrics, EventBridge, and Health Dashboard to notify for an event.</p><note>
+    /// <p>The specified channel of notification. IAM Roles Anywhere uses CloudWatch metrics, EventBridge, and Health Dashboard to notify for an event.</p> <note>
     /// <p>In the absence of a specific channel, IAM Roles Anywhere applies this setting to 'ALL' channels.</p>
     /// </note>
     pub fn channel(mut self, input: crate::types::NotificationChannel) -> Self {
         self.channel = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The specified channel of notification. IAM Roles Anywhere uses CloudWatch metrics, EventBridge, and Health Dashboard to notify for an event.</p><note>
+    /// <p>The specified channel of notification. IAM Roles Anywhere uses CloudWatch metrics, EventBridge, and Health Dashboard to notify for an event.</p> <note>
     /// <p>In the absence of a specific channel, IAM Roles Anywhere applies this setting to 'ALL' channels.</p>
     /// </note>
     pub fn set_channel(mut self, input: ::std::option::Option<crate::types::NotificationChannel>) -> Self {
         self.channel = input;
         self
     }
-    /// <p>The specified channel of notification. IAM Roles Anywhere uses CloudWatch metrics, EventBridge, and Health Dashboard to notify for an event.</p><note>
+    /// <p>The specified channel of notification. IAM Roles Anywhere uses CloudWatch metrics, EventBridge, and Health Dashboard to notify for an event.</p> <note>
     /// <p>In the absence of a specific channel, IAM Roles Anywhere applies this setting to 'ALL' channels.</p>
     /// </note>
     pub fn get_channel(&self) -> &::std::option::Option<crate::types::NotificationChannel> {
         &self.channel
     }
-    /// <p>The principal that configured the notification setting. For default settings configured by IAM Roles Anywhere, the value is <code>rolesanywhere.amazonaws.com</code>, and for customized notifications settings, it is the respective account ID.</p>
+    /// <p>The principal that configured the notification setting. For default settings configured by IAM Roles Anywhere, the value is <code>rolesanywhere.amazonaws.com</code>, and for customized notifications settings, it is the respective account ID. </p>
     pub fn configured_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configured_by = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The principal that configured the notification setting. For default settings configured by IAM Roles Anywhere, the value is <code>rolesanywhere.amazonaws.com</code>, and for customized notifications settings, it is the respective account ID.</p>
+    /// <p>The principal that configured the notification setting. For default settings configured by IAM Roles Anywhere, the value is <code>rolesanywhere.amazonaws.com</code>, and for customized notifications settings, it is the respective account ID. </p>
     pub fn set_configured_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configured_by = input;
         self
     }
-    /// <p>The principal that configured the notification setting. For default settings configured by IAM Roles Anywhere, the value is <code>rolesanywhere.amazonaws.com</code>, and for customized notifications settings, it is the respective account ID.</p>
+    /// <p>The principal that configured the notification setting. For default settings configured by IAM Roles Anywhere, the value is <code>rolesanywhere.amazonaws.com</code>, and for customized notifications settings, it is the respective account ID. </p>
     pub fn get_configured_by(&self) -> &::std::option::Option<::std::string::String> {
         &self.configured_by
     }

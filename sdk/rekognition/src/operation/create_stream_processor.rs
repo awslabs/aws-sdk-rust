@@ -254,14 +254,14 @@ pub enum CreateStreamProcessorError {
     InternalServerError(crate::types::error::InternalServerError),
     /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::types::error::InvalidParameterException),
-    /// <p>An Amazon Rekognition service limit was exceeded. For example, if you start too many jobs concurrently, subsequent calls to start operations (ex: <code>StartLabelDetection</code>) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently running jobs is below the Amazon Rekognition service limit.</p>
+    /// <p>An Amazon Rekognition service limit was exceeded. For example, if you start too many jobs concurrently, subsequent calls to start operations (ex: <code>StartLabelDetection</code>) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently running jobs is below the Amazon Rekognition service limit. </p>
     LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::types::error::ProvisionedThroughputExceededException),
     /// <p>The specified resource is already being used.</p>
     ResourceInUseException(crate::types::error::ResourceInUseException),
     /// <p></p>
-    /// <p>The size of the collection exceeds the allowed limit. For more information, see Guidelines and quotas in Amazon Rekognition in the Amazon Rekognition Developer Guide.</p>
+    /// <p>The size of the collection exceeds the allowed limit. For more information, see Guidelines and quotas in Amazon Rekognition in the Amazon Rekognition Developer Guide. </p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::types::error::ThrottlingException),

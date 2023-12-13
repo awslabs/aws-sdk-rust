@@ -3,11 +3,11 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateWebhook`](crate::operation::update_webhook::builders::UpdateWebhookFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`webhook_id(impl Into<String>)`](crate::operation::update_webhook::builders::UpdateWebhookFluentBuilder::webhook_id) / [`set_webhook_id(Option<String>)`](crate::operation::update_webhook::builders::UpdateWebhookFluentBuilder::set_webhook_id):<br>required: **true**<br><p>The unique ID for a webhook.</p><br>
-    ///   - [`branch_name(impl Into<String>)`](crate::operation::update_webhook::builders::UpdateWebhookFluentBuilder::branch_name) / [`set_branch_name(Option<String>)`](crate::operation::update_webhook::builders::UpdateWebhookFluentBuilder::set_branch_name):<br>required: **false**<br><p>The name for a branch that is part of an Amplify app.</p><br>
-    ///   - [`description(impl Into<String>)`](crate::operation::update_webhook::builders::UpdateWebhookFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_webhook::builders::UpdateWebhookFluentBuilder::set_description):<br>required: **false**<br><p>The description for a webhook.</p><br>
+    ///   - [`webhook_id(impl Into<String>)`](crate::operation::update_webhook::builders::UpdateWebhookFluentBuilder::webhook_id) / [`set_webhook_id(Option<String>)`](crate::operation::update_webhook::builders::UpdateWebhookFluentBuilder::set_webhook_id):<br>required: **true**<br><p>The unique ID for a webhook. </p><br>
+    ///   - [`branch_name(impl Into<String>)`](crate::operation::update_webhook::builders::UpdateWebhookFluentBuilder::branch_name) / [`set_branch_name(Option<String>)`](crate::operation::update_webhook::builders::UpdateWebhookFluentBuilder::set_branch_name):<br>required: **false**<br><p>The name for a branch that is part of an Amplify app. </p><br>
+    ///   - [`description(impl Into<String>)`](crate::operation::update_webhook::builders::UpdateWebhookFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_webhook::builders::UpdateWebhookFluentBuilder::set_description):<br>required: **false**<br><p>The description for a webhook. </p><br>
     /// - On success, responds with [`UpdateWebhookOutput`](crate::operation::update_webhook::UpdateWebhookOutput) with field(s):
-    ///   - [`webhook(Option<Webhook>)`](crate::operation::update_webhook::UpdateWebhookOutput::webhook): <p>Describes a webhook that connects repository events to an Amplify app.</p>
+    ///   - [`webhook(Option<Webhook>)`](crate::operation::update_webhook::UpdateWebhookOutput::webhook): <p>Describes a webhook that connects repository events to an Amplify app. </p>
     /// - On failure, responds with [`SdkError<UpdateWebhookError>`](crate::operation::update_webhook::UpdateWebhookError)
     pub fn update_webhook(&self) -> crate::operation::update_webhook::builders::UpdateWebhookFluentBuilder {
         crate::operation::update_webhook::builders::UpdateWebhookFluentBuilder::new(self.handle.clone())

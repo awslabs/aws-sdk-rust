@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OtherName {
-    /// <p>Specifies an OID.</p>
+    /// <p>Specifies an OID. </p>
     pub type_id: ::std::string::String,
     /// <p>Specifies an OID value.</p>
     pub value: ::std::string::String,
 }
 impl OtherName {
-    /// <p>Specifies an OID.</p>
+    /// <p>Specifies an OID. </p>
     pub fn type_id(&self) -> &str {
         use std::ops::Deref;
         self.type_id.deref()
@@ -36,18 +36,18 @@ pub struct OtherNameBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
 }
 impl OtherNameBuilder {
-    /// <p>Specifies an OID.</p>
+    /// <p>Specifies an OID. </p>
     /// This field is required.
     pub fn type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.type_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies an OID.</p>
+    /// <p>Specifies an OID. </p>
     pub fn set_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.type_id = input;
         self
     }
-    /// <p>Specifies an OID.</p>
+    /// <p>Specifies an OID. </p>
     pub fn get_type_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.type_id
     }

@@ -12,9 +12,9 @@ pub struct RoomSummary {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Configuration information for optional review of messages.</p>
     pub message_review_handler: ::std::option::Option<crate::types::MessageReviewHandler>,
-    /// <p>Time when the room was created. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
+    /// <p>Time when the room was created. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. </p>
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Time of the room’s last update. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
+    /// <p>Time of the room’s last update. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. </p>
     pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond what is documented there.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -38,11 +38,11 @@ impl RoomSummary {
     pub fn message_review_handler(&self) -> ::std::option::Option<&crate::types::MessageReviewHandler> {
         self.message_review_handler.as_ref()
     }
-    /// <p>Time when the room was created. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
+    /// <p>Time when the room was created. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. </p>
     pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
-    /// <p>Time of the room’s last update. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
+    /// <p>Time of the room’s last update. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. </p>
     pub fn update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
@@ -134,31 +134,31 @@ impl RoomSummaryBuilder {
     pub fn get_message_review_handler(&self) -> &::std::option::Option<crate::types::MessageReviewHandler> {
         &self.message_review_handler
     }
-    /// <p>Time when the room was created. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
+    /// <p>Time when the room was created. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. </p>
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Time when the room was created. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
+    /// <p>Time when the room was created. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. </p>
     pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_time = input;
         self
     }
-    /// <p>Time when the room was created. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
+    /// <p>Time when the room was created. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. </p>
     pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.create_time
     }
-    /// <p>Time of the room’s last update. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
+    /// <p>Time of the room’s last update. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. </p>
     pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Time of the room’s last update. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
+    /// <p>Time of the room’s last update. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. </p>
     pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_time = input;
         self
     }
-    /// <p>Time of the room’s last update. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
+    /// <p>Time of the room’s last update. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. </p>
     pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.update_time
     }

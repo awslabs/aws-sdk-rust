@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateIamPolicyAssignmentInput {
-    /// <p>The ID of the Amazon Web Services account that contains the IAM policy assignment.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the IAM policy assignment. </p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the assignment, also called a rule. The name must be unique within the Amazon Web Services account.</p>
     pub assignment_name: ::std::option::Option<::std::string::String>,
@@ -11,12 +11,9 @@ pub struct UpdateIamPolicyAssignmentInput {
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The status of the assignment. Possible values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p></li>
-    /// <li>
-    /// <p><code>DISABLED</code> - This assignment isn't used when creating the data source.</p></li>
-    /// <li>
-    /// <p><code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p></li>
+    /// <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li>
+    /// <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li>
     /// </ul>
     pub assignment_status: ::std::option::Option<crate::types::AssignmentStatus>,
     /// <p>The ARN for the IAM policy to apply to the Amazon QuickSight users and groups specified in this assignment.</p>
@@ -25,7 +22,7 @@ pub struct UpdateIamPolicyAssignmentInput {
     pub identities: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
 }
 impl UpdateIamPolicyAssignmentInput {
-    /// <p>The ID of the Amazon Web Services account that contains the IAM policy assignment.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the IAM policy assignment. </p>
     pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
@@ -39,12 +36,9 @@ impl UpdateIamPolicyAssignmentInput {
     }
     /// <p>The status of the assignment. Possible values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p></li>
-    /// <li>
-    /// <p><code>DISABLED</code> - This assignment isn't used when creating the data source.</p></li>
-    /// <li>
-    /// <p><code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p></li>
+    /// <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li>
+    /// <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li>
     /// </ul>
     pub fn assignment_status(&self) -> ::std::option::Option<&crate::types::AssignmentStatus> {
         self.assignment_status.as_ref()
@@ -77,18 +71,18 @@ pub struct UpdateIamPolicyAssignmentInputBuilder {
     pub(crate) identities: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
 }
 impl UpdateIamPolicyAssignmentInputBuilder {
-    /// <p>The ID of the Amazon Web Services account that contains the IAM policy assignment.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the IAM policy assignment. </p>
     /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the Amazon Web Services account that contains the IAM policy assignment.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the IAM policy assignment. </p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
-    /// <p>The ID of the Amazon Web Services account that contains the IAM policy assignment.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the IAM policy assignment. </p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.aws_account_id
     }
@@ -124,12 +118,9 @@ impl UpdateIamPolicyAssignmentInputBuilder {
     }
     /// <p>The status of the assignment. Possible values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p></li>
-    /// <li>
-    /// <p><code>DISABLED</code> - This assignment isn't used when creating the data source.</p></li>
-    /// <li>
-    /// <p><code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p></li>
+    /// <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li>
+    /// <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li>
     /// </ul>
     pub fn assignment_status(mut self, input: crate::types::AssignmentStatus) -> Self {
         self.assignment_status = ::std::option::Option::Some(input);
@@ -137,12 +128,9 @@ impl UpdateIamPolicyAssignmentInputBuilder {
     }
     /// <p>The status of the assignment. Possible values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p></li>
-    /// <li>
-    /// <p><code>DISABLED</code> - This assignment isn't used when creating the data source.</p></li>
-    /// <li>
-    /// <p><code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p></li>
+    /// <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li>
+    /// <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li>
     /// </ul>
     pub fn set_assignment_status(mut self, input: ::std::option::Option<crate::types::AssignmentStatus>) -> Self {
         self.assignment_status = input;
@@ -150,12 +138,9 @@ impl UpdateIamPolicyAssignmentInputBuilder {
     }
     /// <p>The status of the assignment. Possible values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p></li>
-    /// <li>
-    /// <p><code>DISABLED</code> - This assignment isn't used when creating the data source.</p></li>
-    /// <li>
-    /// <p><code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p></li>
+    /// <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li>
+    /// <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li>
     /// </ul>
     pub fn get_assignment_status(&self) -> &::std::option::Option<crate::types::AssignmentStatus> {
         &self.assignment_status

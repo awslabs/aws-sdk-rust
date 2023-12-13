@@ -13,7 +13,7 @@ pub struct AccountLevel {
     pub advanced_cost_optimization_metrics: ::std::option::Option<crate::types::AdvancedCostOptimizationMetrics>,
     /// <p>A container for S3 Storage Lens advanced data-protection metrics.</p>
     pub advanced_data_protection_metrics: ::std::option::Option<crate::types::AdvancedDataProtectionMetrics>,
-    /// <p>A container for detailed status code metrics.</p>
+    /// <p>A container for detailed status code metrics. </p>
     pub detailed_status_codes_metrics: ::std::option::Option<crate::types::DetailedStatusCodesMetrics>,
 }
 impl AccountLevel {
@@ -33,7 +33,7 @@ impl AccountLevel {
     pub fn advanced_data_protection_metrics(&self) -> ::std::option::Option<&crate::types::AdvancedDataProtectionMetrics> {
         self.advanced_data_protection_metrics.as_ref()
     }
-    /// <p>A container for detailed status code metrics.</p>
+    /// <p>A container for detailed status code metrics. </p>
     pub fn detailed_status_codes_metrics(&self) -> ::std::option::Option<&crate::types::DetailedStatusCodesMetrics> {
         self.detailed_status_codes_metrics.as_ref()
     }
@@ -113,17 +113,17 @@ impl AccountLevelBuilder {
     pub fn get_advanced_data_protection_metrics(&self) -> &::std::option::Option<crate::types::AdvancedDataProtectionMetrics> {
         &self.advanced_data_protection_metrics
     }
-    /// <p>A container for detailed status code metrics.</p>
+    /// <p>A container for detailed status code metrics. </p>
     pub fn detailed_status_codes_metrics(mut self, input: crate::types::DetailedStatusCodesMetrics) -> Self {
         self.detailed_status_codes_metrics = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A container for detailed status code metrics.</p>
+    /// <p>A container for detailed status code metrics. </p>
     pub fn set_detailed_status_codes_metrics(mut self, input: ::std::option::Option<crate::types::DetailedStatusCodesMetrics>) -> Self {
         self.detailed_status_codes_metrics = input;
         self
     }
-    /// <p>A container for detailed status code metrics.</p>
+    /// <p>A container for detailed status code metrics. </p>
     pub fn get_detailed_status_codes_metrics(&self) -> &::std::option::Option<crate::types::DetailedStatusCodesMetrics> {
         &self.detailed_status_codes_metrics
     }

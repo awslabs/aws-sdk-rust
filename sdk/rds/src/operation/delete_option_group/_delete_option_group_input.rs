@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteOptionGroupInput {
-    /// <p>The name of the option group to be deleted.</p><note>
+    /// <p>The name of the option group to be deleted.</p> <note>
     /// <p>You can't delete default option groups.</p>
     /// </note>
     pub option_group_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteOptionGroupInput {
-    /// <p>The name of the option group to be deleted.</p><note>
+    /// <p>The name of the option group to be deleted.</p> <note>
     /// <p>You can't delete default option groups.</p>
     /// </note>
     pub fn option_group_name(&self) -> ::std::option::Option<&str> {
@@ -31,7 +31,7 @@ pub struct DeleteOptionGroupInputBuilder {
     pub(crate) option_group_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteOptionGroupInputBuilder {
-    /// <p>The name of the option group to be deleted.</p><note>
+    /// <p>The name of the option group to be deleted.</p> <note>
     /// <p>You can't delete default option groups.</p>
     /// </note>
     /// This field is required.
@@ -39,14 +39,14 @@ impl DeleteOptionGroupInputBuilder {
         self.option_group_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the option group to be deleted.</p><note>
+    /// <p>The name of the option group to be deleted.</p> <note>
     /// <p>You can't delete default option groups.</p>
     /// </note>
     pub fn set_option_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.option_group_name = input;
         self
     }
-    /// <p>The name of the option group to be deleted.</p><note>
+    /// <p>The name of the option group to be deleted.</p> <note>
     /// <p>You can't delete default option groups.</p>
     /// </note>
     pub fn get_option_group_name(&self) -> &::std::option::Option<::std::string::String> {

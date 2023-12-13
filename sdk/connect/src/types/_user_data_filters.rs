@@ -6,7 +6,7 @@
 pub struct UserDataFilters {
     /// <p>A list of up to 100 queues or ARNs.</p>
     pub queues: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>A filter for the user data based on the contact information that is associated to the user. It contains a list of contact states.</p>
+    /// <p>A filter for the user data based on the contact information that is associated to the user. It contains a list of contact states. </p>
     pub contact_filter: ::std::option::Option<crate::types::ContactFilter>,
     /// <p>A list of up to 100 routing profile IDs or ARNs.</p>
     pub routing_profiles: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -22,7 +22,7 @@ impl UserDataFilters {
     pub fn queues(&self) -> &[::std::string::String] {
         self.queues.as_deref().unwrap_or_default()
     }
-    /// <p>A filter for the user data based on the contact information that is associated to the user. It contains a list of contact states.</p>
+    /// <p>A filter for the user data based on the contact information that is associated to the user. It contains a list of contact states. </p>
     pub fn contact_filter(&self) -> ::std::option::Option<&crate::types::ContactFilter> {
         self.contact_filter.as_ref()
     }
@@ -83,17 +83,17 @@ impl UserDataFiltersBuilder {
     pub fn get_queues(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.queues
     }
-    /// <p>A filter for the user data based on the contact information that is associated to the user. It contains a list of contact states.</p>
+    /// <p>A filter for the user data based on the contact information that is associated to the user. It contains a list of contact states. </p>
     pub fn contact_filter(mut self, input: crate::types::ContactFilter) -> Self {
         self.contact_filter = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A filter for the user data based on the contact information that is associated to the user. It contains a list of contact states.</p>
+    /// <p>A filter for the user data based on the contact information that is associated to the user. It contains a list of contact states. </p>
     pub fn set_contact_filter(mut self, input: ::std::option::Option<crate::types::ContactFilter>) -> Self {
         self.contact_filter = input;
         self
     }
-    /// <p>A filter for the user data based on the contact information that is associated to the user. It contains a list of contact states.</p>
+    /// <p>A filter for the user data based on the contact information that is associated to the user. It contains a list of contact states. </p>
     pub fn get_contact_filter(&self) -> &::std::option::Option<crate::types::ContactFilter> {
         &self.contact_filter
     }

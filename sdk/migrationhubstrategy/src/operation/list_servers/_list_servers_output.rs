@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListServersOutput {
-    /// <p>The list of servers with detailed information about each server.</p>
+    /// <p> The list of servers with detailed information about each server. </p>
     pub server_infos: ::std::option::Option<::std::vec::Vec<crate::types::ServerDetail>>,
-    /// <p>The token you use to retrieve the next set of results, or null if there are no more results.</p>
+    /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListServersOutput {
-    /// <p>The list of servers with detailed information about each server.</p>
+    /// <p> The list of servers with detailed information about each server. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.server_infos.is_none()`.
     pub fn server_infos(&self) -> &[crate::types::ServerDetail] {
         self.server_infos.as_deref().unwrap_or_default()
     }
-    /// <p>The token you use to retrieve the next set of results, or null if there are no more results.</p>
+    /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -46,33 +46,33 @@ impl ListServersOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_server_infos`](Self::set_server_infos).
     ///
-    /// <p>The list of servers with detailed information about each server.</p>
+    /// <p> The list of servers with detailed information about each server. </p>
     pub fn server_infos(mut self, input: crate::types::ServerDetail) -> Self {
         let mut v = self.server_infos.unwrap_or_default();
         v.push(input);
         self.server_infos = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of servers with detailed information about each server.</p>
+    /// <p> The list of servers with detailed information about each server. </p>
     pub fn set_server_infos(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServerDetail>>) -> Self {
         self.server_infos = input;
         self
     }
-    /// <p>The list of servers with detailed information about each server.</p>
+    /// <p> The list of servers with detailed information about each server. </p>
     pub fn get_server_infos(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerDetail>> {
         &self.server_infos
     }
-    /// <p>The token you use to retrieve the next set of results, or null if there are no more results.</p>
+    /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token you use to retrieve the next set of results, or null if there are no more results.</p>
+    /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The token you use to retrieve the next set of results, or null if there are no more results.</p>
+    /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

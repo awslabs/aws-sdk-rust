@@ -109,19 +109,19 @@ impl CreateCapacityReservationFleetFluentBuilder {
         self
     }
     /// <p>The strategy used by the Capacity Reservation Fleet to determine which of the specified instance types to use. Currently, only the <code>prioritized</code> allocation strategy is supported. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#allocation-strategy"> Allocation strategy</a> in the Amazon EC2 User Guide.</p>
-    /// <p>Valid values: <code>prioritized</code></p>
+    /// <p>Valid values: <code>prioritized</code> </p>
     pub fn allocation_strategy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.allocation_strategy(input.into());
         self
     }
     /// <p>The strategy used by the Capacity Reservation Fleet to determine which of the specified instance types to use. Currently, only the <code>prioritized</code> allocation strategy is supported. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#allocation-strategy"> Allocation strategy</a> in the Amazon EC2 User Guide.</p>
-    /// <p>Valid values: <code>prioritized</code></p>
+    /// <p>Valid values: <code>prioritized</code> </p>
     pub fn set_allocation_strategy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_allocation_strategy(input);
         self
     }
     /// <p>The strategy used by the Capacity Reservation Fleet to determine which of the specified instance types to use. Currently, only the <code>prioritized</code> allocation strategy is supported. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#allocation-strategy"> Allocation strategy</a> in the Amazon EC2 User Guide.</p>
-    /// <p>Valid values: <code>prioritized</code></p>
+    /// <p>Valid values: <code>prioritized</code> </p>
     pub fn get_allocation_strategy(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_allocation_strategy()
     }
@@ -162,10 +162,8 @@ impl CreateCapacityReservationFleetFluentBuilder {
     }
     /// <p>Indicates the tenancy of the Capacity Reservation Fleet. All Capacity Reservations in the Fleet inherit this tenancy. The Capacity Reservation Fleet can have one of the following tenancy settings:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>default</code> - The Capacity Reservation Fleet is created on hardware that is shared with other Amazon Web Services accounts.</p></li>
-    /// <li>
-    /// <p><code>dedicated</code> - The Capacity Reservations are created on single-tenant hardware that is dedicated to a single Amazon Web Services account.</p></li>
+    /// <li> <p> <code>default</code> - The Capacity Reservation Fleet is created on hardware that is shared with other Amazon Web Services accounts.</p> </li>
+    /// <li> <p> <code>dedicated</code> - The Capacity Reservations are created on single-tenant hardware that is dedicated to a single Amazon Web Services account.</p> </li>
     /// </ul>
     pub fn tenancy(mut self, input: crate::types::FleetCapacityReservationTenancy) -> Self {
         self.inner = self.inner.tenancy(input);
@@ -173,10 +171,8 @@ impl CreateCapacityReservationFleetFluentBuilder {
     }
     /// <p>Indicates the tenancy of the Capacity Reservation Fleet. All Capacity Reservations in the Fleet inherit this tenancy. The Capacity Reservation Fleet can have one of the following tenancy settings:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>default</code> - The Capacity Reservation Fleet is created on hardware that is shared with other Amazon Web Services accounts.</p></li>
-    /// <li>
-    /// <p><code>dedicated</code> - The Capacity Reservations are created on single-tenant hardware that is dedicated to a single Amazon Web Services account.</p></li>
+    /// <li> <p> <code>default</code> - The Capacity Reservation Fleet is created on hardware that is shared with other Amazon Web Services accounts.</p> </li>
+    /// <li> <p> <code>dedicated</code> - The Capacity Reservations are created on single-tenant hardware that is dedicated to a single Amazon Web Services account.</p> </li>
     /// </ul>
     pub fn set_tenancy(mut self, input: ::std::option::Option<crate::types::FleetCapacityReservationTenancy>) -> Self {
         self.inner = self.inner.set_tenancy(input);
@@ -184,10 +180,8 @@ impl CreateCapacityReservationFleetFluentBuilder {
     }
     /// <p>Indicates the tenancy of the Capacity Reservation Fleet. All Capacity Reservations in the Fleet inherit this tenancy. The Capacity Reservation Fleet can have one of the following tenancy settings:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>default</code> - The Capacity Reservation Fleet is created on hardware that is shared with other Amazon Web Services accounts.</p></li>
-    /// <li>
-    /// <p><code>dedicated</code> - The Capacity Reservations are created on single-tenant hardware that is dedicated to a single Amazon Web Services account.</p></li>
+    /// <li> <p> <code>default</code> - The Capacity Reservation Fleet is created on hardware that is shared with other Amazon Web Services accounts.</p> </li>
+    /// <li> <p> <code>dedicated</code> - The Capacity Reservations are created on single-tenant hardware that is dedicated to a single Amazon Web Services account.</p> </li>
     /// </ul>
     pub fn get_tenancy(&self) -> &::std::option::Option<crate::types::FleetCapacityReservationTenancy> {
         self.inner.get_tenancy()
@@ -207,19 +201,19 @@ impl CreateCapacityReservationFleetFluentBuilder {
         self.inner.get_total_target_capacity()
     }
     /// <p>The date and time at which the Capacity Reservation Fleet expires. When the Capacity Reservation Fleet expires, its state changes to <code>expired</code> and all of the Capacity Reservations in the Fleet expire.</p>
-    /// <p>The Capacity Reservation Fleet expires within an hour after the specified time. For example, if you specify <code>5/31/2019</code>, <code>13:30:55</code>, the Capacity Reservation Fleet is guaranteed to expire between <code>13:30:55</code> and <code>14:30:55</code> on <code>5/31/2019</code>.</p>
+    /// <p>The Capacity Reservation Fleet expires within an hour after the specified time. For example, if you specify <code>5/31/2019</code>, <code>13:30:55</code>, the Capacity Reservation Fleet is guaranteed to expire between <code>13:30:55</code> and <code>14:30:55</code> on <code>5/31/2019</code>. </p>
     pub fn end_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.end_date(input);
         self
     }
     /// <p>The date and time at which the Capacity Reservation Fleet expires. When the Capacity Reservation Fleet expires, its state changes to <code>expired</code> and all of the Capacity Reservations in the Fleet expire.</p>
-    /// <p>The Capacity Reservation Fleet expires within an hour after the specified time. For example, if you specify <code>5/31/2019</code>, <code>13:30:55</code>, the Capacity Reservation Fleet is guaranteed to expire between <code>13:30:55</code> and <code>14:30:55</code> on <code>5/31/2019</code>.</p>
+    /// <p>The Capacity Reservation Fleet expires within an hour after the specified time. For example, if you specify <code>5/31/2019</code>, <code>13:30:55</code>, the Capacity Reservation Fleet is guaranteed to expire between <code>13:30:55</code> and <code>14:30:55</code> on <code>5/31/2019</code>. </p>
     pub fn set_end_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_date(input);
         self
     }
     /// <p>The date and time at which the Capacity Reservation Fleet expires. When the Capacity Reservation Fleet expires, its state changes to <code>expired</code> and all of the Capacity Reservations in the Fleet expire.</p>
-    /// <p>The Capacity Reservation Fleet expires within an hour after the specified time. For example, if you specify <code>5/31/2019</code>, <code>13:30:55</code>, the Capacity Reservation Fleet is guaranteed to expire between <code>13:30:55</code> and <code>14:30:55</code> on <code>5/31/2019</code>.</p>
+    /// <p>The Capacity Reservation Fleet expires within an hour after the specified time. For example, if you specify <code>5/31/2019</code>, <code>13:30:55</code>, the Capacity Reservation Fleet is guaranteed to expire between <code>13:30:55</code> and <code>14:30:55</code> on <code>5/31/2019</code>. </p>
     pub fn get_end_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_end_date()
     }

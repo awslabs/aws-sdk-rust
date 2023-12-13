@@ -23,208 +23,116 @@ pub struct HumanLoopConfig {
     pub task_time_limit_in_seconds: ::std::option::Option<i32>,
     /// <p>Keywords used to describe the task so that workers can discover the task.</p>
     pub task_keywords: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Defines the amount of money paid to an Amazon Mechanical Turk worker for each task performed.</p>
+    /// <p>Defines the amount of money paid to an Amazon Mechanical Turk worker for each task performed. </p>
     /// <p>Use one of the following prices for bounding box tasks. Prices are in US dollars and should be based on the complexity of the task; the longer it takes in your initial testing, the more you should offer.</p>
     /// <ul>
-    /// <li>
-    /// <p>0.036</p></li>
-    /// <li>
-    /// <p>0.048</p></li>
-    /// <li>
-    /// <p>0.060</p></li>
-    /// <li>
-    /// <p>0.072</p></li>
-    /// <li>
-    /// <p>0.120</p></li>
-    /// <li>
-    /// <p>0.240</p></li>
-    /// <li>
-    /// <p>0.360</p></li>
-    /// <li>
-    /// <p>0.480</p></li>
-    /// <li>
-    /// <p>0.600</p></li>
-    /// <li>
-    /// <p>0.720</p></li>
-    /// <li>
-    /// <p>0.840</p></li>
-    /// <li>
-    /// <p>0.960</p></li>
-    /// <li>
-    /// <p>1.080</p></li>
-    /// <li>
-    /// <p>1.200</p></li>
+    /// <li> <p>0.036</p> </li>
+    /// <li> <p>0.048</p> </li>
+    /// <li> <p>0.060</p> </li>
+    /// <li> <p>0.072</p> </li>
+    /// <li> <p>0.120</p> </li>
+    /// <li> <p>0.240</p> </li>
+    /// <li> <p>0.360</p> </li>
+    /// <li> <p>0.480</p> </li>
+    /// <li> <p>0.600</p> </li>
+    /// <li> <p>0.720</p> </li>
+    /// <li> <p>0.840</p> </li>
+    /// <li> <p>0.960</p> </li>
+    /// <li> <p>1.080</p> </li>
+    /// <li> <p>1.200</p> </li>
     /// </ul>
     /// <p>Use one of the following prices for image classification, text classification, and custom tasks. Prices are in US dollars.</p>
     /// <ul>
-    /// <li>
-    /// <p>0.012</p></li>
-    /// <li>
-    /// <p>0.024</p></li>
-    /// <li>
-    /// <p>0.036</p></li>
-    /// <li>
-    /// <p>0.048</p></li>
-    /// <li>
-    /// <p>0.060</p></li>
-    /// <li>
-    /// <p>0.072</p></li>
-    /// <li>
-    /// <p>0.120</p></li>
-    /// <li>
-    /// <p>0.240</p></li>
-    /// <li>
-    /// <p>0.360</p></li>
-    /// <li>
-    /// <p>0.480</p></li>
-    /// <li>
-    /// <p>0.600</p></li>
-    /// <li>
-    /// <p>0.720</p></li>
-    /// <li>
-    /// <p>0.840</p></li>
-    /// <li>
-    /// <p>0.960</p></li>
-    /// <li>
-    /// <p>1.080</p></li>
-    /// <li>
-    /// <p>1.200</p></li>
+    /// <li> <p>0.012</p> </li>
+    /// <li> <p>0.024</p> </li>
+    /// <li> <p>0.036</p> </li>
+    /// <li> <p>0.048</p> </li>
+    /// <li> <p>0.060</p> </li>
+    /// <li> <p>0.072</p> </li>
+    /// <li> <p>0.120</p> </li>
+    /// <li> <p>0.240</p> </li>
+    /// <li> <p>0.360</p> </li>
+    /// <li> <p>0.480</p> </li>
+    /// <li> <p>0.600</p> </li>
+    /// <li> <p>0.720</p> </li>
+    /// <li> <p>0.840</p> </li>
+    /// <li> <p>0.960</p> </li>
+    /// <li> <p>1.080</p> </li>
+    /// <li> <p>1.200</p> </li>
     /// </ul>
     /// <p>Use one of the following prices for semantic segmentation tasks. Prices are in US dollars.</p>
     /// <ul>
-    /// <li>
-    /// <p>0.840</p></li>
-    /// <li>
-    /// <p>0.960</p></li>
-    /// <li>
-    /// <p>1.080</p></li>
-    /// <li>
-    /// <p>1.200</p></li>
+    /// <li> <p>0.840</p> </li>
+    /// <li> <p>0.960</p> </li>
+    /// <li> <p>1.080</p> </li>
+    /// <li> <p>1.200</p> </li>
     /// </ul>
     /// <p>Use one of the following prices for Textract AnalyzeDocument Important Form Key Amazon Augmented AI review tasks. Prices are in US dollars.</p>
     /// <ul>
-    /// <li>
-    /// <p>2.400</p></li>
-    /// <li>
-    /// <p>2.280</p></li>
-    /// <li>
-    /// <p>2.160</p></li>
-    /// <li>
-    /// <p>2.040</p></li>
-    /// <li>
-    /// <p>1.920</p></li>
-    /// <li>
-    /// <p>1.800</p></li>
-    /// <li>
-    /// <p>1.680</p></li>
-    /// <li>
-    /// <p>1.560</p></li>
-    /// <li>
-    /// <p>1.440</p></li>
-    /// <li>
-    /// <p>1.320</p></li>
-    /// <li>
-    /// <p>1.200</p></li>
-    /// <li>
-    /// <p>1.080</p></li>
-    /// <li>
-    /// <p>0.960</p></li>
-    /// <li>
-    /// <p>0.840</p></li>
-    /// <li>
-    /// <p>0.720</p></li>
-    /// <li>
-    /// <p>0.600</p></li>
-    /// <li>
-    /// <p>0.480</p></li>
-    /// <li>
-    /// <p>0.360</p></li>
-    /// <li>
-    /// <p>0.240</p></li>
-    /// <li>
-    /// <p>0.120</p></li>
-    /// <li>
-    /// <p>0.072</p></li>
-    /// <li>
-    /// <p>0.060</p></li>
-    /// <li>
-    /// <p>0.048</p></li>
-    /// <li>
-    /// <p>0.036</p></li>
-    /// <li>
-    /// <p>0.024</p></li>
-    /// <li>
-    /// <p>0.012</p></li>
+    /// <li> <p>2.400 </p> </li>
+    /// <li> <p>2.280 </p> </li>
+    /// <li> <p>2.160 </p> </li>
+    /// <li> <p>2.040 </p> </li>
+    /// <li> <p>1.920 </p> </li>
+    /// <li> <p>1.800 </p> </li>
+    /// <li> <p>1.680 </p> </li>
+    /// <li> <p>1.560 </p> </li>
+    /// <li> <p>1.440 </p> </li>
+    /// <li> <p>1.320 </p> </li>
+    /// <li> <p>1.200 </p> </li>
+    /// <li> <p>1.080 </p> </li>
+    /// <li> <p>0.960 </p> </li>
+    /// <li> <p>0.840 </p> </li>
+    /// <li> <p>0.720 </p> </li>
+    /// <li> <p>0.600 </p> </li>
+    /// <li> <p>0.480 </p> </li>
+    /// <li> <p>0.360 </p> </li>
+    /// <li> <p>0.240 </p> </li>
+    /// <li> <p>0.120 </p> </li>
+    /// <li> <p>0.072 </p> </li>
+    /// <li> <p>0.060 </p> </li>
+    /// <li> <p>0.048 </p> </li>
+    /// <li> <p>0.036 </p> </li>
+    /// <li> <p>0.024 </p> </li>
+    /// <li> <p>0.012 </p> </li>
     /// </ul>
     /// <p>Use one of the following prices for Rekognition DetectModerationLabels Amazon Augmented AI review tasks. Prices are in US dollars.</p>
     /// <ul>
-    /// <li>
-    /// <p>1.200</p></li>
-    /// <li>
-    /// <p>1.080</p></li>
-    /// <li>
-    /// <p>0.960</p></li>
-    /// <li>
-    /// <p>0.840</p></li>
-    /// <li>
-    /// <p>0.720</p></li>
-    /// <li>
-    /// <p>0.600</p></li>
-    /// <li>
-    /// <p>0.480</p></li>
-    /// <li>
-    /// <p>0.360</p></li>
-    /// <li>
-    /// <p>0.240</p></li>
-    /// <li>
-    /// <p>0.120</p></li>
-    /// <li>
-    /// <p>0.072</p></li>
-    /// <li>
-    /// <p>0.060</p></li>
-    /// <li>
-    /// <p>0.048</p></li>
-    /// <li>
-    /// <p>0.036</p></li>
-    /// <li>
-    /// <p>0.024</p></li>
-    /// <li>
-    /// <p>0.012</p></li>
+    /// <li> <p>1.200 </p> </li>
+    /// <li> <p>1.080 </p> </li>
+    /// <li> <p>0.960 </p> </li>
+    /// <li> <p>0.840 </p> </li>
+    /// <li> <p>0.720 </p> </li>
+    /// <li> <p>0.600 </p> </li>
+    /// <li> <p>0.480 </p> </li>
+    /// <li> <p>0.360 </p> </li>
+    /// <li> <p>0.240 </p> </li>
+    /// <li> <p>0.120 </p> </li>
+    /// <li> <p>0.072 </p> </li>
+    /// <li> <p>0.060 </p> </li>
+    /// <li> <p>0.048 </p> </li>
+    /// <li> <p>0.036 </p> </li>
+    /// <li> <p>0.024 </p> </li>
+    /// <li> <p>0.012 </p> </li>
     /// </ul>
     /// <p>Use one of the following prices for Amazon Augmented AI custom human review tasks. Prices are in US dollars.</p>
     /// <ul>
-    /// <li>
-    /// <p>1.200</p></li>
-    /// <li>
-    /// <p>1.080</p></li>
-    /// <li>
-    /// <p>0.960</p></li>
-    /// <li>
-    /// <p>0.840</p></li>
-    /// <li>
-    /// <p>0.720</p></li>
-    /// <li>
-    /// <p>0.600</p></li>
-    /// <li>
-    /// <p>0.480</p></li>
-    /// <li>
-    /// <p>0.360</p></li>
-    /// <li>
-    /// <p>0.240</p></li>
-    /// <li>
-    /// <p>0.120</p></li>
-    /// <li>
-    /// <p>0.072</p></li>
-    /// <li>
-    /// <p>0.060</p></li>
-    /// <li>
-    /// <p>0.048</p></li>
-    /// <li>
-    /// <p>0.036</p></li>
-    /// <li>
-    /// <p>0.024</p></li>
-    /// <li>
-    /// <p>0.012</p></li>
+    /// <li> <p>1.200 </p> </li>
+    /// <li> <p>1.080 </p> </li>
+    /// <li> <p>0.960 </p> </li>
+    /// <li> <p>0.840 </p> </li>
+    /// <li> <p>0.720 </p> </li>
+    /// <li> <p>0.600 </p> </li>
+    /// <li> <p>0.480 </p> </li>
+    /// <li> <p>0.360 </p> </li>
+    /// <li> <p>0.240 </p> </li>
+    /// <li> <p>0.120 </p> </li>
+    /// <li> <p>0.072 </p> </li>
+    /// <li> <p>0.060 </p> </li>
+    /// <li> <p>0.048 </p> </li>
+    /// <li> <p>0.036 </p> </li>
+    /// <li> <p>0.024 </p> </li>
+    /// <li> <p>0.012 </p> </li>
     /// </ul>
     pub public_workforce_task_price: ::std::option::Option<crate::types::PublicWorkforceTaskPrice>,
 }
@@ -266,208 +174,116 @@ impl HumanLoopConfig {
     pub fn task_keywords(&self) -> &[::std::string::String] {
         self.task_keywords.as_deref().unwrap_or_default()
     }
-    /// <p>Defines the amount of money paid to an Amazon Mechanical Turk worker for each task performed.</p>
+    /// <p>Defines the amount of money paid to an Amazon Mechanical Turk worker for each task performed. </p>
     /// <p>Use one of the following prices for bounding box tasks. Prices are in US dollars and should be based on the complexity of the task; the longer it takes in your initial testing, the more you should offer.</p>
     /// <ul>
-    /// <li>
-    /// <p>0.036</p></li>
-    /// <li>
-    /// <p>0.048</p></li>
-    /// <li>
-    /// <p>0.060</p></li>
-    /// <li>
-    /// <p>0.072</p></li>
-    /// <li>
-    /// <p>0.120</p></li>
-    /// <li>
-    /// <p>0.240</p></li>
-    /// <li>
-    /// <p>0.360</p></li>
-    /// <li>
-    /// <p>0.480</p></li>
-    /// <li>
-    /// <p>0.600</p></li>
-    /// <li>
-    /// <p>0.720</p></li>
-    /// <li>
-    /// <p>0.840</p></li>
-    /// <li>
-    /// <p>0.960</p></li>
-    /// <li>
-    /// <p>1.080</p></li>
-    /// <li>
-    /// <p>1.200</p></li>
+    /// <li> <p>0.036</p> </li>
+    /// <li> <p>0.048</p> </li>
+    /// <li> <p>0.060</p> </li>
+    /// <li> <p>0.072</p> </li>
+    /// <li> <p>0.120</p> </li>
+    /// <li> <p>0.240</p> </li>
+    /// <li> <p>0.360</p> </li>
+    /// <li> <p>0.480</p> </li>
+    /// <li> <p>0.600</p> </li>
+    /// <li> <p>0.720</p> </li>
+    /// <li> <p>0.840</p> </li>
+    /// <li> <p>0.960</p> </li>
+    /// <li> <p>1.080</p> </li>
+    /// <li> <p>1.200</p> </li>
     /// </ul>
     /// <p>Use one of the following prices for image classification, text classification, and custom tasks. Prices are in US dollars.</p>
     /// <ul>
-    /// <li>
-    /// <p>0.012</p></li>
-    /// <li>
-    /// <p>0.024</p></li>
-    /// <li>
-    /// <p>0.036</p></li>
-    /// <li>
-    /// <p>0.048</p></li>
-    /// <li>
-    /// <p>0.060</p></li>
-    /// <li>
-    /// <p>0.072</p></li>
-    /// <li>
-    /// <p>0.120</p></li>
-    /// <li>
-    /// <p>0.240</p></li>
-    /// <li>
-    /// <p>0.360</p></li>
-    /// <li>
-    /// <p>0.480</p></li>
-    /// <li>
-    /// <p>0.600</p></li>
-    /// <li>
-    /// <p>0.720</p></li>
-    /// <li>
-    /// <p>0.840</p></li>
-    /// <li>
-    /// <p>0.960</p></li>
-    /// <li>
-    /// <p>1.080</p></li>
-    /// <li>
-    /// <p>1.200</p></li>
+    /// <li> <p>0.012</p> </li>
+    /// <li> <p>0.024</p> </li>
+    /// <li> <p>0.036</p> </li>
+    /// <li> <p>0.048</p> </li>
+    /// <li> <p>0.060</p> </li>
+    /// <li> <p>0.072</p> </li>
+    /// <li> <p>0.120</p> </li>
+    /// <li> <p>0.240</p> </li>
+    /// <li> <p>0.360</p> </li>
+    /// <li> <p>0.480</p> </li>
+    /// <li> <p>0.600</p> </li>
+    /// <li> <p>0.720</p> </li>
+    /// <li> <p>0.840</p> </li>
+    /// <li> <p>0.960</p> </li>
+    /// <li> <p>1.080</p> </li>
+    /// <li> <p>1.200</p> </li>
     /// </ul>
     /// <p>Use one of the following prices for semantic segmentation tasks. Prices are in US dollars.</p>
     /// <ul>
-    /// <li>
-    /// <p>0.840</p></li>
-    /// <li>
-    /// <p>0.960</p></li>
-    /// <li>
-    /// <p>1.080</p></li>
-    /// <li>
-    /// <p>1.200</p></li>
+    /// <li> <p>0.840</p> </li>
+    /// <li> <p>0.960</p> </li>
+    /// <li> <p>1.080</p> </li>
+    /// <li> <p>1.200</p> </li>
     /// </ul>
     /// <p>Use one of the following prices for Textract AnalyzeDocument Important Form Key Amazon Augmented AI review tasks. Prices are in US dollars.</p>
     /// <ul>
-    /// <li>
-    /// <p>2.400</p></li>
-    /// <li>
-    /// <p>2.280</p></li>
-    /// <li>
-    /// <p>2.160</p></li>
-    /// <li>
-    /// <p>2.040</p></li>
-    /// <li>
-    /// <p>1.920</p></li>
-    /// <li>
-    /// <p>1.800</p></li>
-    /// <li>
-    /// <p>1.680</p></li>
-    /// <li>
-    /// <p>1.560</p></li>
-    /// <li>
-    /// <p>1.440</p></li>
-    /// <li>
-    /// <p>1.320</p></li>
-    /// <li>
-    /// <p>1.200</p></li>
-    /// <li>
-    /// <p>1.080</p></li>
-    /// <li>
-    /// <p>0.960</p></li>
-    /// <li>
-    /// <p>0.840</p></li>
-    /// <li>
-    /// <p>0.720</p></li>
-    /// <li>
-    /// <p>0.600</p></li>
-    /// <li>
-    /// <p>0.480</p></li>
-    /// <li>
-    /// <p>0.360</p></li>
-    /// <li>
-    /// <p>0.240</p></li>
-    /// <li>
-    /// <p>0.120</p></li>
-    /// <li>
-    /// <p>0.072</p></li>
-    /// <li>
-    /// <p>0.060</p></li>
-    /// <li>
-    /// <p>0.048</p></li>
-    /// <li>
-    /// <p>0.036</p></li>
-    /// <li>
-    /// <p>0.024</p></li>
-    /// <li>
-    /// <p>0.012</p></li>
+    /// <li> <p>2.400 </p> </li>
+    /// <li> <p>2.280 </p> </li>
+    /// <li> <p>2.160 </p> </li>
+    /// <li> <p>2.040 </p> </li>
+    /// <li> <p>1.920 </p> </li>
+    /// <li> <p>1.800 </p> </li>
+    /// <li> <p>1.680 </p> </li>
+    /// <li> <p>1.560 </p> </li>
+    /// <li> <p>1.440 </p> </li>
+    /// <li> <p>1.320 </p> </li>
+    /// <li> <p>1.200 </p> </li>
+    /// <li> <p>1.080 </p> </li>
+    /// <li> <p>0.960 </p> </li>
+    /// <li> <p>0.840 </p> </li>
+    /// <li> <p>0.720 </p> </li>
+    /// <li> <p>0.600 </p> </li>
+    /// <li> <p>0.480 </p> </li>
+    /// <li> <p>0.360 </p> </li>
+    /// <li> <p>0.240 </p> </li>
+    /// <li> <p>0.120 </p> </li>
+    /// <li> <p>0.072 </p> </li>
+    /// <li> <p>0.060 </p> </li>
+    /// <li> <p>0.048 </p> </li>
+    /// <li> <p>0.036 </p> </li>
+    /// <li> <p>0.024 </p> </li>
+    /// <li> <p>0.012 </p> </li>
     /// </ul>
     /// <p>Use one of the following prices for Rekognition DetectModerationLabels Amazon Augmented AI review tasks. Prices are in US dollars.</p>
     /// <ul>
-    /// <li>
-    /// <p>1.200</p></li>
-    /// <li>
-    /// <p>1.080</p></li>
-    /// <li>
-    /// <p>0.960</p></li>
-    /// <li>
-    /// <p>0.840</p></li>
-    /// <li>
-    /// <p>0.720</p></li>
-    /// <li>
-    /// <p>0.600</p></li>
-    /// <li>
-    /// <p>0.480</p></li>
-    /// <li>
-    /// <p>0.360</p></li>
-    /// <li>
-    /// <p>0.240</p></li>
-    /// <li>
-    /// <p>0.120</p></li>
-    /// <li>
-    /// <p>0.072</p></li>
-    /// <li>
-    /// <p>0.060</p></li>
-    /// <li>
-    /// <p>0.048</p></li>
-    /// <li>
-    /// <p>0.036</p></li>
-    /// <li>
-    /// <p>0.024</p></li>
-    /// <li>
-    /// <p>0.012</p></li>
+    /// <li> <p>1.200 </p> </li>
+    /// <li> <p>1.080 </p> </li>
+    /// <li> <p>0.960 </p> </li>
+    /// <li> <p>0.840 </p> </li>
+    /// <li> <p>0.720 </p> </li>
+    /// <li> <p>0.600 </p> </li>
+    /// <li> <p>0.480 </p> </li>
+    /// <li> <p>0.360 </p> </li>
+    /// <li> <p>0.240 </p> </li>
+    /// <li> <p>0.120 </p> </li>
+    /// <li> <p>0.072 </p> </li>
+    /// <li> <p>0.060 </p> </li>
+    /// <li> <p>0.048 </p> </li>
+    /// <li> <p>0.036 </p> </li>
+    /// <li> <p>0.024 </p> </li>
+    /// <li> <p>0.012 </p> </li>
     /// </ul>
     /// <p>Use one of the following prices for Amazon Augmented AI custom human review tasks. Prices are in US dollars.</p>
     /// <ul>
-    /// <li>
-    /// <p>1.200</p></li>
-    /// <li>
-    /// <p>1.080</p></li>
-    /// <li>
-    /// <p>0.960</p></li>
-    /// <li>
-    /// <p>0.840</p></li>
-    /// <li>
-    /// <p>0.720</p></li>
-    /// <li>
-    /// <p>0.600</p></li>
-    /// <li>
-    /// <p>0.480</p></li>
-    /// <li>
-    /// <p>0.360</p></li>
-    /// <li>
-    /// <p>0.240</p></li>
-    /// <li>
-    /// <p>0.120</p></li>
-    /// <li>
-    /// <p>0.072</p></li>
-    /// <li>
-    /// <p>0.060</p></li>
-    /// <li>
-    /// <p>0.048</p></li>
-    /// <li>
-    /// <p>0.036</p></li>
-    /// <li>
-    /// <p>0.024</p></li>
-    /// <li>
-    /// <p>0.012</p></li>
+    /// <li> <p>1.200 </p> </li>
+    /// <li> <p>1.080 </p> </li>
+    /// <li> <p>0.960 </p> </li>
+    /// <li> <p>0.840 </p> </li>
+    /// <li> <p>0.720 </p> </li>
+    /// <li> <p>0.600 </p> </li>
+    /// <li> <p>0.480 </p> </li>
+    /// <li> <p>0.360 </p> </li>
+    /// <li> <p>0.240 </p> </li>
+    /// <li> <p>0.120 </p> </li>
+    /// <li> <p>0.072 </p> </li>
+    /// <li> <p>0.060 </p> </li>
+    /// <li> <p>0.048 </p> </li>
+    /// <li> <p>0.036 </p> </li>
+    /// <li> <p>0.024 </p> </li>
+    /// <li> <p>0.012 </p> </li>
     /// </ul>
     pub fn public_workforce_task_price(&self) -> ::std::option::Option<&crate::types::PublicWorkforceTaskPrice> {
         self.public_workforce_task_price.as_ref()
@@ -627,622 +443,346 @@ impl HumanLoopConfigBuilder {
     pub fn get_task_keywords(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.task_keywords
     }
-    /// <p>Defines the amount of money paid to an Amazon Mechanical Turk worker for each task performed.</p>
+    /// <p>Defines the amount of money paid to an Amazon Mechanical Turk worker for each task performed. </p>
     /// <p>Use one of the following prices for bounding box tasks. Prices are in US dollars and should be based on the complexity of the task; the longer it takes in your initial testing, the more you should offer.</p>
     /// <ul>
-    /// <li>
-    /// <p>0.036</p></li>
-    /// <li>
-    /// <p>0.048</p></li>
-    /// <li>
-    /// <p>0.060</p></li>
-    /// <li>
-    /// <p>0.072</p></li>
-    /// <li>
-    /// <p>0.120</p></li>
-    /// <li>
-    /// <p>0.240</p></li>
-    /// <li>
-    /// <p>0.360</p></li>
-    /// <li>
-    /// <p>0.480</p></li>
-    /// <li>
-    /// <p>0.600</p></li>
-    /// <li>
-    /// <p>0.720</p></li>
-    /// <li>
-    /// <p>0.840</p></li>
-    /// <li>
-    /// <p>0.960</p></li>
-    /// <li>
-    /// <p>1.080</p></li>
-    /// <li>
-    /// <p>1.200</p></li>
+    /// <li> <p>0.036</p> </li>
+    /// <li> <p>0.048</p> </li>
+    /// <li> <p>0.060</p> </li>
+    /// <li> <p>0.072</p> </li>
+    /// <li> <p>0.120</p> </li>
+    /// <li> <p>0.240</p> </li>
+    /// <li> <p>0.360</p> </li>
+    /// <li> <p>0.480</p> </li>
+    /// <li> <p>0.600</p> </li>
+    /// <li> <p>0.720</p> </li>
+    /// <li> <p>0.840</p> </li>
+    /// <li> <p>0.960</p> </li>
+    /// <li> <p>1.080</p> </li>
+    /// <li> <p>1.200</p> </li>
     /// </ul>
     /// <p>Use one of the following prices for image classification, text classification, and custom tasks. Prices are in US dollars.</p>
     /// <ul>
-    /// <li>
-    /// <p>0.012</p></li>
-    /// <li>
-    /// <p>0.024</p></li>
-    /// <li>
-    /// <p>0.036</p></li>
-    /// <li>
-    /// <p>0.048</p></li>
-    /// <li>
-    /// <p>0.060</p></li>
-    /// <li>
-    /// <p>0.072</p></li>
-    /// <li>
-    /// <p>0.120</p></li>
-    /// <li>
-    /// <p>0.240</p></li>
-    /// <li>
-    /// <p>0.360</p></li>
-    /// <li>
-    /// <p>0.480</p></li>
-    /// <li>
-    /// <p>0.600</p></li>
-    /// <li>
-    /// <p>0.720</p></li>
-    /// <li>
-    /// <p>0.840</p></li>
-    /// <li>
-    /// <p>0.960</p></li>
-    /// <li>
-    /// <p>1.080</p></li>
-    /// <li>
-    /// <p>1.200</p></li>
+    /// <li> <p>0.012</p> </li>
+    /// <li> <p>0.024</p> </li>
+    /// <li> <p>0.036</p> </li>
+    /// <li> <p>0.048</p> </li>
+    /// <li> <p>0.060</p> </li>
+    /// <li> <p>0.072</p> </li>
+    /// <li> <p>0.120</p> </li>
+    /// <li> <p>0.240</p> </li>
+    /// <li> <p>0.360</p> </li>
+    /// <li> <p>0.480</p> </li>
+    /// <li> <p>0.600</p> </li>
+    /// <li> <p>0.720</p> </li>
+    /// <li> <p>0.840</p> </li>
+    /// <li> <p>0.960</p> </li>
+    /// <li> <p>1.080</p> </li>
+    /// <li> <p>1.200</p> </li>
     /// </ul>
     /// <p>Use one of the following prices for semantic segmentation tasks. Prices are in US dollars.</p>
     /// <ul>
-    /// <li>
-    /// <p>0.840</p></li>
-    /// <li>
-    /// <p>0.960</p></li>
-    /// <li>
-    /// <p>1.080</p></li>
-    /// <li>
-    /// <p>1.200</p></li>
+    /// <li> <p>0.840</p> </li>
+    /// <li> <p>0.960</p> </li>
+    /// <li> <p>1.080</p> </li>
+    /// <li> <p>1.200</p> </li>
     /// </ul>
     /// <p>Use one of the following prices for Textract AnalyzeDocument Important Form Key Amazon Augmented AI review tasks. Prices are in US dollars.</p>
     /// <ul>
-    /// <li>
-    /// <p>2.400</p></li>
-    /// <li>
-    /// <p>2.280</p></li>
-    /// <li>
-    /// <p>2.160</p></li>
-    /// <li>
-    /// <p>2.040</p></li>
-    /// <li>
-    /// <p>1.920</p></li>
-    /// <li>
-    /// <p>1.800</p></li>
-    /// <li>
-    /// <p>1.680</p></li>
-    /// <li>
-    /// <p>1.560</p></li>
-    /// <li>
-    /// <p>1.440</p></li>
-    /// <li>
-    /// <p>1.320</p></li>
-    /// <li>
-    /// <p>1.200</p></li>
-    /// <li>
-    /// <p>1.080</p></li>
-    /// <li>
-    /// <p>0.960</p></li>
-    /// <li>
-    /// <p>0.840</p></li>
-    /// <li>
-    /// <p>0.720</p></li>
-    /// <li>
-    /// <p>0.600</p></li>
-    /// <li>
-    /// <p>0.480</p></li>
-    /// <li>
-    /// <p>0.360</p></li>
-    /// <li>
-    /// <p>0.240</p></li>
-    /// <li>
-    /// <p>0.120</p></li>
-    /// <li>
-    /// <p>0.072</p></li>
-    /// <li>
-    /// <p>0.060</p></li>
-    /// <li>
-    /// <p>0.048</p></li>
-    /// <li>
-    /// <p>0.036</p></li>
-    /// <li>
-    /// <p>0.024</p></li>
-    /// <li>
-    /// <p>0.012</p></li>
+    /// <li> <p>2.400 </p> </li>
+    /// <li> <p>2.280 </p> </li>
+    /// <li> <p>2.160 </p> </li>
+    /// <li> <p>2.040 </p> </li>
+    /// <li> <p>1.920 </p> </li>
+    /// <li> <p>1.800 </p> </li>
+    /// <li> <p>1.680 </p> </li>
+    /// <li> <p>1.560 </p> </li>
+    /// <li> <p>1.440 </p> </li>
+    /// <li> <p>1.320 </p> </li>
+    /// <li> <p>1.200 </p> </li>
+    /// <li> <p>1.080 </p> </li>
+    /// <li> <p>0.960 </p> </li>
+    /// <li> <p>0.840 </p> </li>
+    /// <li> <p>0.720 </p> </li>
+    /// <li> <p>0.600 </p> </li>
+    /// <li> <p>0.480 </p> </li>
+    /// <li> <p>0.360 </p> </li>
+    /// <li> <p>0.240 </p> </li>
+    /// <li> <p>0.120 </p> </li>
+    /// <li> <p>0.072 </p> </li>
+    /// <li> <p>0.060 </p> </li>
+    /// <li> <p>0.048 </p> </li>
+    /// <li> <p>0.036 </p> </li>
+    /// <li> <p>0.024 </p> </li>
+    /// <li> <p>0.012 </p> </li>
     /// </ul>
     /// <p>Use one of the following prices for Rekognition DetectModerationLabels Amazon Augmented AI review tasks. Prices are in US dollars.</p>
     /// <ul>
-    /// <li>
-    /// <p>1.200</p></li>
-    /// <li>
-    /// <p>1.080</p></li>
-    /// <li>
-    /// <p>0.960</p></li>
-    /// <li>
-    /// <p>0.840</p></li>
-    /// <li>
-    /// <p>0.720</p></li>
-    /// <li>
-    /// <p>0.600</p></li>
-    /// <li>
-    /// <p>0.480</p></li>
-    /// <li>
-    /// <p>0.360</p></li>
-    /// <li>
-    /// <p>0.240</p></li>
-    /// <li>
-    /// <p>0.120</p></li>
-    /// <li>
-    /// <p>0.072</p></li>
-    /// <li>
-    /// <p>0.060</p></li>
-    /// <li>
-    /// <p>0.048</p></li>
-    /// <li>
-    /// <p>0.036</p></li>
-    /// <li>
-    /// <p>0.024</p></li>
-    /// <li>
-    /// <p>0.012</p></li>
+    /// <li> <p>1.200 </p> </li>
+    /// <li> <p>1.080 </p> </li>
+    /// <li> <p>0.960 </p> </li>
+    /// <li> <p>0.840 </p> </li>
+    /// <li> <p>0.720 </p> </li>
+    /// <li> <p>0.600 </p> </li>
+    /// <li> <p>0.480 </p> </li>
+    /// <li> <p>0.360 </p> </li>
+    /// <li> <p>0.240 </p> </li>
+    /// <li> <p>0.120 </p> </li>
+    /// <li> <p>0.072 </p> </li>
+    /// <li> <p>0.060 </p> </li>
+    /// <li> <p>0.048 </p> </li>
+    /// <li> <p>0.036 </p> </li>
+    /// <li> <p>0.024 </p> </li>
+    /// <li> <p>0.012 </p> </li>
     /// </ul>
     /// <p>Use one of the following prices for Amazon Augmented AI custom human review tasks. Prices are in US dollars.</p>
     /// <ul>
-    /// <li>
-    /// <p>1.200</p></li>
-    /// <li>
-    /// <p>1.080</p></li>
-    /// <li>
-    /// <p>0.960</p></li>
-    /// <li>
-    /// <p>0.840</p></li>
-    /// <li>
-    /// <p>0.720</p></li>
-    /// <li>
-    /// <p>0.600</p></li>
-    /// <li>
-    /// <p>0.480</p></li>
-    /// <li>
-    /// <p>0.360</p></li>
-    /// <li>
-    /// <p>0.240</p></li>
-    /// <li>
-    /// <p>0.120</p></li>
-    /// <li>
-    /// <p>0.072</p></li>
-    /// <li>
-    /// <p>0.060</p></li>
-    /// <li>
-    /// <p>0.048</p></li>
-    /// <li>
-    /// <p>0.036</p></li>
-    /// <li>
-    /// <p>0.024</p></li>
-    /// <li>
-    /// <p>0.012</p></li>
+    /// <li> <p>1.200 </p> </li>
+    /// <li> <p>1.080 </p> </li>
+    /// <li> <p>0.960 </p> </li>
+    /// <li> <p>0.840 </p> </li>
+    /// <li> <p>0.720 </p> </li>
+    /// <li> <p>0.600 </p> </li>
+    /// <li> <p>0.480 </p> </li>
+    /// <li> <p>0.360 </p> </li>
+    /// <li> <p>0.240 </p> </li>
+    /// <li> <p>0.120 </p> </li>
+    /// <li> <p>0.072 </p> </li>
+    /// <li> <p>0.060 </p> </li>
+    /// <li> <p>0.048 </p> </li>
+    /// <li> <p>0.036 </p> </li>
+    /// <li> <p>0.024 </p> </li>
+    /// <li> <p>0.012 </p> </li>
     /// </ul>
     pub fn public_workforce_task_price(mut self, input: crate::types::PublicWorkforceTaskPrice) -> Self {
         self.public_workforce_task_price = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Defines the amount of money paid to an Amazon Mechanical Turk worker for each task performed.</p>
+    /// <p>Defines the amount of money paid to an Amazon Mechanical Turk worker for each task performed. </p>
     /// <p>Use one of the following prices for bounding box tasks. Prices are in US dollars and should be based on the complexity of the task; the longer it takes in your initial testing, the more you should offer.</p>
     /// <ul>
-    /// <li>
-    /// <p>0.036</p></li>
-    /// <li>
-    /// <p>0.048</p></li>
-    /// <li>
-    /// <p>0.060</p></li>
-    /// <li>
-    /// <p>0.072</p></li>
-    /// <li>
-    /// <p>0.120</p></li>
-    /// <li>
-    /// <p>0.240</p></li>
-    /// <li>
-    /// <p>0.360</p></li>
-    /// <li>
-    /// <p>0.480</p></li>
-    /// <li>
-    /// <p>0.600</p></li>
-    /// <li>
-    /// <p>0.720</p></li>
-    /// <li>
-    /// <p>0.840</p></li>
-    /// <li>
-    /// <p>0.960</p></li>
-    /// <li>
-    /// <p>1.080</p></li>
-    /// <li>
-    /// <p>1.200</p></li>
+    /// <li> <p>0.036</p> </li>
+    /// <li> <p>0.048</p> </li>
+    /// <li> <p>0.060</p> </li>
+    /// <li> <p>0.072</p> </li>
+    /// <li> <p>0.120</p> </li>
+    /// <li> <p>0.240</p> </li>
+    /// <li> <p>0.360</p> </li>
+    /// <li> <p>0.480</p> </li>
+    /// <li> <p>0.600</p> </li>
+    /// <li> <p>0.720</p> </li>
+    /// <li> <p>0.840</p> </li>
+    /// <li> <p>0.960</p> </li>
+    /// <li> <p>1.080</p> </li>
+    /// <li> <p>1.200</p> </li>
     /// </ul>
     /// <p>Use one of the following prices for image classification, text classification, and custom tasks. Prices are in US dollars.</p>
     /// <ul>
-    /// <li>
-    /// <p>0.012</p></li>
-    /// <li>
-    /// <p>0.024</p></li>
-    /// <li>
-    /// <p>0.036</p></li>
-    /// <li>
-    /// <p>0.048</p></li>
-    /// <li>
-    /// <p>0.060</p></li>
-    /// <li>
-    /// <p>0.072</p></li>
-    /// <li>
-    /// <p>0.120</p></li>
-    /// <li>
-    /// <p>0.240</p></li>
-    /// <li>
-    /// <p>0.360</p></li>
-    /// <li>
-    /// <p>0.480</p></li>
-    /// <li>
-    /// <p>0.600</p></li>
-    /// <li>
-    /// <p>0.720</p></li>
-    /// <li>
-    /// <p>0.840</p></li>
-    /// <li>
-    /// <p>0.960</p></li>
-    /// <li>
-    /// <p>1.080</p></li>
-    /// <li>
-    /// <p>1.200</p></li>
+    /// <li> <p>0.012</p> </li>
+    /// <li> <p>0.024</p> </li>
+    /// <li> <p>0.036</p> </li>
+    /// <li> <p>0.048</p> </li>
+    /// <li> <p>0.060</p> </li>
+    /// <li> <p>0.072</p> </li>
+    /// <li> <p>0.120</p> </li>
+    /// <li> <p>0.240</p> </li>
+    /// <li> <p>0.360</p> </li>
+    /// <li> <p>0.480</p> </li>
+    /// <li> <p>0.600</p> </li>
+    /// <li> <p>0.720</p> </li>
+    /// <li> <p>0.840</p> </li>
+    /// <li> <p>0.960</p> </li>
+    /// <li> <p>1.080</p> </li>
+    /// <li> <p>1.200</p> </li>
     /// </ul>
     /// <p>Use one of the following prices for semantic segmentation tasks. Prices are in US dollars.</p>
     /// <ul>
-    /// <li>
-    /// <p>0.840</p></li>
-    /// <li>
-    /// <p>0.960</p></li>
-    /// <li>
-    /// <p>1.080</p></li>
-    /// <li>
-    /// <p>1.200</p></li>
+    /// <li> <p>0.840</p> </li>
+    /// <li> <p>0.960</p> </li>
+    /// <li> <p>1.080</p> </li>
+    /// <li> <p>1.200</p> </li>
     /// </ul>
     /// <p>Use one of the following prices for Textract AnalyzeDocument Important Form Key Amazon Augmented AI review tasks. Prices are in US dollars.</p>
     /// <ul>
-    /// <li>
-    /// <p>2.400</p></li>
-    /// <li>
-    /// <p>2.280</p></li>
-    /// <li>
-    /// <p>2.160</p></li>
-    /// <li>
-    /// <p>2.040</p></li>
-    /// <li>
-    /// <p>1.920</p></li>
-    /// <li>
-    /// <p>1.800</p></li>
-    /// <li>
-    /// <p>1.680</p></li>
-    /// <li>
-    /// <p>1.560</p></li>
-    /// <li>
-    /// <p>1.440</p></li>
-    /// <li>
-    /// <p>1.320</p></li>
-    /// <li>
-    /// <p>1.200</p></li>
-    /// <li>
-    /// <p>1.080</p></li>
-    /// <li>
-    /// <p>0.960</p></li>
-    /// <li>
-    /// <p>0.840</p></li>
-    /// <li>
-    /// <p>0.720</p></li>
-    /// <li>
-    /// <p>0.600</p></li>
-    /// <li>
-    /// <p>0.480</p></li>
-    /// <li>
-    /// <p>0.360</p></li>
-    /// <li>
-    /// <p>0.240</p></li>
-    /// <li>
-    /// <p>0.120</p></li>
-    /// <li>
-    /// <p>0.072</p></li>
-    /// <li>
-    /// <p>0.060</p></li>
-    /// <li>
-    /// <p>0.048</p></li>
-    /// <li>
-    /// <p>0.036</p></li>
-    /// <li>
-    /// <p>0.024</p></li>
-    /// <li>
-    /// <p>0.012</p></li>
+    /// <li> <p>2.400 </p> </li>
+    /// <li> <p>2.280 </p> </li>
+    /// <li> <p>2.160 </p> </li>
+    /// <li> <p>2.040 </p> </li>
+    /// <li> <p>1.920 </p> </li>
+    /// <li> <p>1.800 </p> </li>
+    /// <li> <p>1.680 </p> </li>
+    /// <li> <p>1.560 </p> </li>
+    /// <li> <p>1.440 </p> </li>
+    /// <li> <p>1.320 </p> </li>
+    /// <li> <p>1.200 </p> </li>
+    /// <li> <p>1.080 </p> </li>
+    /// <li> <p>0.960 </p> </li>
+    /// <li> <p>0.840 </p> </li>
+    /// <li> <p>0.720 </p> </li>
+    /// <li> <p>0.600 </p> </li>
+    /// <li> <p>0.480 </p> </li>
+    /// <li> <p>0.360 </p> </li>
+    /// <li> <p>0.240 </p> </li>
+    /// <li> <p>0.120 </p> </li>
+    /// <li> <p>0.072 </p> </li>
+    /// <li> <p>0.060 </p> </li>
+    /// <li> <p>0.048 </p> </li>
+    /// <li> <p>0.036 </p> </li>
+    /// <li> <p>0.024 </p> </li>
+    /// <li> <p>0.012 </p> </li>
     /// </ul>
     /// <p>Use one of the following prices for Rekognition DetectModerationLabels Amazon Augmented AI review tasks. Prices are in US dollars.</p>
     /// <ul>
-    /// <li>
-    /// <p>1.200</p></li>
-    /// <li>
-    /// <p>1.080</p></li>
-    /// <li>
-    /// <p>0.960</p></li>
-    /// <li>
-    /// <p>0.840</p></li>
-    /// <li>
-    /// <p>0.720</p></li>
-    /// <li>
-    /// <p>0.600</p></li>
-    /// <li>
-    /// <p>0.480</p></li>
-    /// <li>
-    /// <p>0.360</p></li>
-    /// <li>
-    /// <p>0.240</p></li>
-    /// <li>
-    /// <p>0.120</p></li>
-    /// <li>
-    /// <p>0.072</p></li>
-    /// <li>
-    /// <p>0.060</p></li>
-    /// <li>
-    /// <p>0.048</p></li>
-    /// <li>
-    /// <p>0.036</p></li>
-    /// <li>
-    /// <p>0.024</p></li>
-    /// <li>
-    /// <p>0.012</p></li>
+    /// <li> <p>1.200 </p> </li>
+    /// <li> <p>1.080 </p> </li>
+    /// <li> <p>0.960 </p> </li>
+    /// <li> <p>0.840 </p> </li>
+    /// <li> <p>0.720 </p> </li>
+    /// <li> <p>0.600 </p> </li>
+    /// <li> <p>0.480 </p> </li>
+    /// <li> <p>0.360 </p> </li>
+    /// <li> <p>0.240 </p> </li>
+    /// <li> <p>0.120 </p> </li>
+    /// <li> <p>0.072 </p> </li>
+    /// <li> <p>0.060 </p> </li>
+    /// <li> <p>0.048 </p> </li>
+    /// <li> <p>0.036 </p> </li>
+    /// <li> <p>0.024 </p> </li>
+    /// <li> <p>0.012 </p> </li>
     /// </ul>
     /// <p>Use one of the following prices for Amazon Augmented AI custom human review tasks. Prices are in US dollars.</p>
     /// <ul>
-    /// <li>
-    /// <p>1.200</p></li>
-    /// <li>
-    /// <p>1.080</p></li>
-    /// <li>
-    /// <p>0.960</p></li>
-    /// <li>
-    /// <p>0.840</p></li>
-    /// <li>
-    /// <p>0.720</p></li>
-    /// <li>
-    /// <p>0.600</p></li>
-    /// <li>
-    /// <p>0.480</p></li>
-    /// <li>
-    /// <p>0.360</p></li>
-    /// <li>
-    /// <p>0.240</p></li>
-    /// <li>
-    /// <p>0.120</p></li>
-    /// <li>
-    /// <p>0.072</p></li>
-    /// <li>
-    /// <p>0.060</p></li>
-    /// <li>
-    /// <p>0.048</p></li>
-    /// <li>
-    /// <p>0.036</p></li>
-    /// <li>
-    /// <p>0.024</p></li>
-    /// <li>
-    /// <p>0.012</p></li>
+    /// <li> <p>1.200 </p> </li>
+    /// <li> <p>1.080 </p> </li>
+    /// <li> <p>0.960 </p> </li>
+    /// <li> <p>0.840 </p> </li>
+    /// <li> <p>0.720 </p> </li>
+    /// <li> <p>0.600 </p> </li>
+    /// <li> <p>0.480 </p> </li>
+    /// <li> <p>0.360 </p> </li>
+    /// <li> <p>0.240 </p> </li>
+    /// <li> <p>0.120 </p> </li>
+    /// <li> <p>0.072 </p> </li>
+    /// <li> <p>0.060 </p> </li>
+    /// <li> <p>0.048 </p> </li>
+    /// <li> <p>0.036 </p> </li>
+    /// <li> <p>0.024 </p> </li>
+    /// <li> <p>0.012 </p> </li>
     /// </ul>
     pub fn set_public_workforce_task_price(mut self, input: ::std::option::Option<crate::types::PublicWorkforceTaskPrice>) -> Self {
         self.public_workforce_task_price = input;
         self
     }
-    /// <p>Defines the amount of money paid to an Amazon Mechanical Turk worker for each task performed.</p>
+    /// <p>Defines the amount of money paid to an Amazon Mechanical Turk worker for each task performed. </p>
     /// <p>Use one of the following prices for bounding box tasks. Prices are in US dollars and should be based on the complexity of the task; the longer it takes in your initial testing, the more you should offer.</p>
     /// <ul>
-    /// <li>
-    /// <p>0.036</p></li>
-    /// <li>
-    /// <p>0.048</p></li>
-    /// <li>
-    /// <p>0.060</p></li>
-    /// <li>
-    /// <p>0.072</p></li>
-    /// <li>
-    /// <p>0.120</p></li>
-    /// <li>
-    /// <p>0.240</p></li>
-    /// <li>
-    /// <p>0.360</p></li>
-    /// <li>
-    /// <p>0.480</p></li>
-    /// <li>
-    /// <p>0.600</p></li>
-    /// <li>
-    /// <p>0.720</p></li>
-    /// <li>
-    /// <p>0.840</p></li>
-    /// <li>
-    /// <p>0.960</p></li>
-    /// <li>
-    /// <p>1.080</p></li>
-    /// <li>
-    /// <p>1.200</p></li>
+    /// <li> <p>0.036</p> </li>
+    /// <li> <p>0.048</p> </li>
+    /// <li> <p>0.060</p> </li>
+    /// <li> <p>0.072</p> </li>
+    /// <li> <p>0.120</p> </li>
+    /// <li> <p>0.240</p> </li>
+    /// <li> <p>0.360</p> </li>
+    /// <li> <p>0.480</p> </li>
+    /// <li> <p>0.600</p> </li>
+    /// <li> <p>0.720</p> </li>
+    /// <li> <p>0.840</p> </li>
+    /// <li> <p>0.960</p> </li>
+    /// <li> <p>1.080</p> </li>
+    /// <li> <p>1.200</p> </li>
     /// </ul>
     /// <p>Use one of the following prices for image classification, text classification, and custom tasks. Prices are in US dollars.</p>
     /// <ul>
-    /// <li>
-    /// <p>0.012</p></li>
-    /// <li>
-    /// <p>0.024</p></li>
-    /// <li>
-    /// <p>0.036</p></li>
-    /// <li>
-    /// <p>0.048</p></li>
-    /// <li>
-    /// <p>0.060</p></li>
-    /// <li>
-    /// <p>0.072</p></li>
-    /// <li>
-    /// <p>0.120</p></li>
-    /// <li>
-    /// <p>0.240</p></li>
-    /// <li>
-    /// <p>0.360</p></li>
-    /// <li>
-    /// <p>0.480</p></li>
-    /// <li>
-    /// <p>0.600</p></li>
-    /// <li>
-    /// <p>0.720</p></li>
-    /// <li>
-    /// <p>0.840</p></li>
-    /// <li>
-    /// <p>0.960</p></li>
-    /// <li>
-    /// <p>1.080</p></li>
-    /// <li>
-    /// <p>1.200</p></li>
+    /// <li> <p>0.012</p> </li>
+    /// <li> <p>0.024</p> </li>
+    /// <li> <p>0.036</p> </li>
+    /// <li> <p>0.048</p> </li>
+    /// <li> <p>0.060</p> </li>
+    /// <li> <p>0.072</p> </li>
+    /// <li> <p>0.120</p> </li>
+    /// <li> <p>0.240</p> </li>
+    /// <li> <p>0.360</p> </li>
+    /// <li> <p>0.480</p> </li>
+    /// <li> <p>0.600</p> </li>
+    /// <li> <p>0.720</p> </li>
+    /// <li> <p>0.840</p> </li>
+    /// <li> <p>0.960</p> </li>
+    /// <li> <p>1.080</p> </li>
+    /// <li> <p>1.200</p> </li>
     /// </ul>
     /// <p>Use one of the following prices for semantic segmentation tasks. Prices are in US dollars.</p>
     /// <ul>
-    /// <li>
-    /// <p>0.840</p></li>
-    /// <li>
-    /// <p>0.960</p></li>
-    /// <li>
-    /// <p>1.080</p></li>
-    /// <li>
-    /// <p>1.200</p></li>
+    /// <li> <p>0.840</p> </li>
+    /// <li> <p>0.960</p> </li>
+    /// <li> <p>1.080</p> </li>
+    /// <li> <p>1.200</p> </li>
     /// </ul>
     /// <p>Use one of the following prices for Textract AnalyzeDocument Important Form Key Amazon Augmented AI review tasks. Prices are in US dollars.</p>
     /// <ul>
-    /// <li>
-    /// <p>2.400</p></li>
-    /// <li>
-    /// <p>2.280</p></li>
-    /// <li>
-    /// <p>2.160</p></li>
-    /// <li>
-    /// <p>2.040</p></li>
-    /// <li>
-    /// <p>1.920</p></li>
-    /// <li>
-    /// <p>1.800</p></li>
-    /// <li>
-    /// <p>1.680</p></li>
-    /// <li>
-    /// <p>1.560</p></li>
-    /// <li>
-    /// <p>1.440</p></li>
-    /// <li>
-    /// <p>1.320</p></li>
-    /// <li>
-    /// <p>1.200</p></li>
-    /// <li>
-    /// <p>1.080</p></li>
-    /// <li>
-    /// <p>0.960</p></li>
-    /// <li>
-    /// <p>0.840</p></li>
-    /// <li>
-    /// <p>0.720</p></li>
-    /// <li>
-    /// <p>0.600</p></li>
-    /// <li>
-    /// <p>0.480</p></li>
-    /// <li>
-    /// <p>0.360</p></li>
-    /// <li>
-    /// <p>0.240</p></li>
-    /// <li>
-    /// <p>0.120</p></li>
-    /// <li>
-    /// <p>0.072</p></li>
-    /// <li>
-    /// <p>0.060</p></li>
-    /// <li>
-    /// <p>0.048</p></li>
-    /// <li>
-    /// <p>0.036</p></li>
-    /// <li>
-    /// <p>0.024</p></li>
-    /// <li>
-    /// <p>0.012</p></li>
+    /// <li> <p>2.400 </p> </li>
+    /// <li> <p>2.280 </p> </li>
+    /// <li> <p>2.160 </p> </li>
+    /// <li> <p>2.040 </p> </li>
+    /// <li> <p>1.920 </p> </li>
+    /// <li> <p>1.800 </p> </li>
+    /// <li> <p>1.680 </p> </li>
+    /// <li> <p>1.560 </p> </li>
+    /// <li> <p>1.440 </p> </li>
+    /// <li> <p>1.320 </p> </li>
+    /// <li> <p>1.200 </p> </li>
+    /// <li> <p>1.080 </p> </li>
+    /// <li> <p>0.960 </p> </li>
+    /// <li> <p>0.840 </p> </li>
+    /// <li> <p>0.720 </p> </li>
+    /// <li> <p>0.600 </p> </li>
+    /// <li> <p>0.480 </p> </li>
+    /// <li> <p>0.360 </p> </li>
+    /// <li> <p>0.240 </p> </li>
+    /// <li> <p>0.120 </p> </li>
+    /// <li> <p>0.072 </p> </li>
+    /// <li> <p>0.060 </p> </li>
+    /// <li> <p>0.048 </p> </li>
+    /// <li> <p>0.036 </p> </li>
+    /// <li> <p>0.024 </p> </li>
+    /// <li> <p>0.012 </p> </li>
     /// </ul>
     /// <p>Use one of the following prices for Rekognition DetectModerationLabels Amazon Augmented AI review tasks. Prices are in US dollars.</p>
     /// <ul>
-    /// <li>
-    /// <p>1.200</p></li>
-    /// <li>
-    /// <p>1.080</p></li>
-    /// <li>
-    /// <p>0.960</p></li>
-    /// <li>
-    /// <p>0.840</p></li>
-    /// <li>
-    /// <p>0.720</p></li>
-    /// <li>
-    /// <p>0.600</p></li>
-    /// <li>
-    /// <p>0.480</p></li>
-    /// <li>
-    /// <p>0.360</p></li>
-    /// <li>
-    /// <p>0.240</p></li>
-    /// <li>
-    /// <p>0.120</p></li>
-    /// <li>
-    /// <p>0.072</p></li>
-    /// <li>
-    /// <p>0.060</p></li>
-    /// <li>
-    /// <p>0.048</p></li>
-    /// <li>
-    /// <p>0.036</p></li>
-    /// <li>
-    /// <p>0.024</p></li>
-    /// <li>
-    /// <p>0.012</p></li>
+    /// <li> <p>1.200 </p> </li>
+    /// <li> <p>1.080 </p> </li>
+    /// <li> <p>0.960 </p> </li>
+    /// <li> <p>0.840 </p> </li>
+    /// <li> <p>0.720 </p> </li>
+    /// <li> <p>0.600 </p> </li>
+    /// <li> <p>0.480 </p> </li>
+    /// <li> <p>0.360 </p> </li>
+    /// <li> <p>0.240 </p> </li>
+    /// <li> <p>0.120 </p> </li>
+    /// <li> <p>0.072 </p> </li>
+    /// <li> <p>0.060 </p> </li>
+    /// <li> <p>0.048 </p> </li>
+    /// <li> <p>0.036 </p> </li>
+    /// <li> <p>0.024 </p> </li>
+    /// <li> <p>0.012 </p> </li>
     /// </ul>
     /// <p>Use one of the following prices for Amazon Augmented AI custom human review tasks. Prices are in US dollars.</p>
     /// <ul>
-    /// <li>
-    /// <p>1.200</p></li>
-    /// <li>
-    /// <p>1.080</p></li>
-    /// <li>
-    /// <p>0.960</p></li>
-    /// <li>
-    /// <p>0.840</p></li>
-    /// <li>
-    /// <p>0.720</p></li>
-    /// <li>
-    /// <p>0.600</p></li>
-    /// <li>
-    /// <p>0.480</p></li>
-    /// <li>
-    /// <p>0.360</p></li>
-    /// <li>
-    /// <p>0.240</p></li>
-    /// <li>
-    /// <p>0.120</p></li>
-    /// <li>
-    /// <p>0.072</p></li>
-    /// <li>
-    /// <p>0.060</p></li>
-    /// <li>
-    /// <p>0.048</p></li>
-    /// <li>
-    /// <p>0.036</p></li>
-    /// <li>
-    /// <p>0.024</p></li>
-    /// <li>
-    /// <p>0.012</p></li>
+    /// <li> <p>1.200 </p> </li>
+    /// <li> <p>1.080 </p> </li>
+    /// <li> <p>0.960 </p> </li>
+    /// <li> <p>0.840 </p> </li>
+    /// <li> <p>0.720 </p> </li>
+    /// <li> <p>0.600 </p> </li>
+    /// <li> <p>0.480 </p> </li>
+    /// <li> <p>0.360 </p> </li>
+    /// <li> <p>0.240 </p> </li>
+    /// <li> <p>0.120 </p> </li>
+    /// <li> <p>0.072 </p> </li>
+    /// <li> <p>0.060 </p> </li>
+    /// <li> <p>0.048 </p> </li>
+    /// <li> <p>0.036 </p> </li>
+    /// <li> <p>0.024 </p> </li>
+    /// <li> <p>0.012 </p> </li>
     /// </ul>
     pub fn get_public_workforce_task_price(&self) -> &::std::option::Option<crate::types::PublicWorkforceTaskPrice> {
         &self.public_workforce_task_price

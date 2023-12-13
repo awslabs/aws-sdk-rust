@@ -14,7 +14,7 @@ pub struct TimestreamAction {
     pub dimensions: ::std::vec::Vec<crate::types::TimestreamDimension>,
     /// <p>Specifies an application-defined value to replace the default value assigned to the Timestream record's timestamp in the <code>time</code> column.</p>
     /// <p>You can use this property to specify the value and the precision of the Timestream record's timestamp. You can specify a value from the message payload or a value computed by a substitution template.</p>
-    /// <p>If omitted, the topic rule action assigns the timestamp, in milliseconds, at the time it processed the rule.</p>
+    /// <p>If omitted, the topic rule action assigns the timestamp, in milliseconds, at the time it processed the rule. </p>
     pub timestamp: ::std::option::Option<crate::types::TimestreamTimestamp>,
 }
 impl TimestreamAction {
@@ -40,7 +40,7 @@ impl TimestreamAction {
     }
     /// <p>Specifies an application-defined value to replace the default value assigned to the Timestream record's timestamp in the <code>time</code> column.</p>
     /// <p>You can use this property to specify the value and the precision of the Timestream record's timestamp. You can specify a value from the message payload or a value computed by a substitution template.</p>
-    /// <p>If omitted, the topic rule action assigns the timestamp, in milliseconds, at the time it processed the rule.</p>
+    /// <p>If omitted, the topic rule action assigns the timestamp, in milliseconds, at the time it processed the rule. </p>
     pub fn timestamp(&self) -> ::std::option::Option<&crate::types::TimestreamTimestamp> {
         self.timestamp.as_ref()
     }
@@ -130,21 +130,21 @@ impl TimestreamActionBuilder {
     }
     /// <p>Specifies an application-defined value to replace the default value assigned to the Timestream record's timestamp in the <code>time</code> column.</p>
     /// <p>You can use this property to specify the value and the precision of the Timestream record's timestamp. You can specify a value from the message payload or a value computed by a substitution template.</p>
-    /// <p>If omitted, the topic rule action assigns the timestamp, in milliseconds, at the time it processed the rule.</p>
+    /// <p>If omitted, the topic rule action assigns the timestamp, in milliseconds, at the time it processed the rule. </p>
     pub fn timestamp(mut self, input: crate::types::TimestreamTimestamp) -> Self {
         self.timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies an application-defined value to replace the default value assigned to the Timestream record's timestamp in the <code>time</code> column.</p>
     /// <p>You can use this property to specify the value and the precision of the Timestream record's timestamp. You can specify a value from the message payload or a value computed by a substitution template.</p>
-    /// <p>If omitted, the topic rule action assigns the timestamp, in milliseconds, at the time it processed the rule.</p>
+    /// <p>If omitted, the topic rule action assigns the timestamp, in milliseconds, at the time it processed the rule. </p>
     pub fn set_timestamp(mut self, input: ::std::option::Option<crate::types::TimestreamTimestamp>) -> Self {
         self.timestamp = input;
         self
     }
     /// <p>Specifies an application-defined value to replace the default value assigned to the Timestream record's timestamp in the <code>time</code> column.</p>
     /// <p>You can use this property to specify the value and the precision of the Timestream record's timestamp. You can specify a value from the message payload or a value computed by a substitution template.</p>
-    /// <p>If omitted, the topic rule action assigns the timestamp, in milliseconds, at the time it processed the rule.</p>
+    /// <p>If omitted, the topic rule action assigns the timestamp, in milliseconds, at the time it processed the rule. </p>
     pub fn get_timestamp(&self) -> &::std::option::Option<crate::types::TimestreamTimestamp> {
         &self.timestamp
     }

@@ -5,15 +5,15 @@
 pub struct ListReviewPolicyResultsForHitOutput {
     /// <p>The HITId of the HIT for which results have been returned.</p>
     pub hit_id: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the Assignment-level Review Policy. This contains only the PolicyName element.</p>
+    /// <p> The name of the Assignment-level Review Policy. This contains only the PolicyName element. </p>
     pub assignment_review_policy: ::std::option::Option<crate::types::ReviewPolicy>,
     /// <p>The name of the HIT-level Review Policy. This contains only the PolicyName element.</p>
     pub hit_review_policy: ::std::option::Option<crate::types::ReviewPolicy>,
-    /// <p>Contains both ReviewResult and ReviewAction elements for an Assignment.</p>
+    /// <p> Contains both ReviewResult and ReviewAction elements for an Assignment. </p>
     pub assignment_review_report: ::std::option::Option<crate::types::ReviewReport>,
-    /// <p>Contains both ReviewResult and ReviewAction elements for a particular HIT.</p>
+    /// <p>Contains both ReviewResult and ReviewAction elements for a particular HIT. </p>
     pub hit_review_report: ::std::option::Option<crate::types::ReviewReport>,
-    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.</p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -22,7 +22,7 @@ impl ListReviewPolicyResultsForHitOutput {
     pub fn hit_id(&self) -> ::std::option::Option<&str> {
         self.hit_id.as_deref()
     }
-    /// <p>The name of the Assignment-level Review Policy. This contains only the PolicyName element.</p>
+    /// <p> The name of the Assignment-level Review Policy. This contains only the PolicyName element. </p>
     pub fn assignment_review_policy(&self) -> ::std::option::Option<&crate::types::ReviewPolicy> {
         self.assignment_review_policy.as_ref()
     }
@@ -30,15 +30,15 @@ impl ListReviewPolicyResultsForHitOutput {
     pub fn hit_review_policy(&self) -> ::std::option::Option<&crate::types::ReviewPolicy> {
         self.hit_review_policy.as_ref()
     }
-    /// <p>Contains both ReviewResult and ReviewAction elements for an Assignment.</p>
+    /// <p> Contains both ReviewResult and ReviewAction elements for an Assignment. </p>
     pub fn assignment_review_report(&self) -> ::std::option::Option<&crate::types::ReviewReport> {
         self.assignment_review_report.as_ref()
     }
-    /// <p>Contains both ReviewResult and ReviewAction elements for a particular HIT.</p>
+    /// <p>Contains both ReviewResult and ReviewAction elements for a particular HIT. </p>
     pub fn hit_review_report(&self) -> ::std::option::Option<&crate::types::ReviewReport> {
         self.hit_review_report.as_ref()
     }
-    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.</p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -82,17 +82,17 @@ impl ListReviewPolicyResultsForHitOutputBuilder {
     pub fn get_hit_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.hit_id
     }
-    /// <p>The name of the Assignment-level Review Policy. This contains only the PolicyName element.</p>
+    /// <p> The name of the Assignment-level Review Policy. This contains only the PolicyName element. </p>
     pub fn assignment_review_policy(mut self, input: crate::types::ReviewPolicy) -> Self {
         self.assignment_review_policy = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The name of the Assignment-level Review Policy. This contains only the PolicyName element.</p>
+    /// <p> The name of the Assignment-level Review Policy. This contains only the PolicyName element. </p>
     pub fn set_assignment_review_policy(mut self, input: ::std::option::Option<crate::types::ReviewPolicy>) -> Self {
         self.assignment_review_policy = input;
         self
     }
-    /// <p>The name of the Assignment-level Review Policy. This contains only the PolicyName element.</p>
+    /// <p> The name of the Assignment-level Review Policy. This contains only the PolicyName element. </p>
     pub fn get_assignment_review_policy(&self) -> &::std::option::Option<crate::types::ReviewPolicy> {
         &self.assignment_review_policy
     }
@@ -110,45 +110,45 @@ impl ListReviewPolicyResultsForHitOutputBuilder {
     pub fn get_hit_review_policy(&self) -> &::std::option::Option<crate::types::ReviewPolicy> {
         &self.hit_review_policy
     }
-    /// <p>Contains both ReviewResult and ReviewAction elements for an Assignment.</p>
+    /// <p> Contains both ReviewResult and ReviewAction elements for an Assignment. </p>
     pub fn assignment_review_report(mut self, input: crate::types::ReviewReport) -> Self {
         self.assignment_review_report = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Contains both ReviewResult and ReviewAction elements for an Assignment.</p>
+    /// <p> Contains both ReviewResult and ReviewAction elements for an Assignment. </p>
     pub fn set_assignment_review_report(mut self, input: ::std::option::Option<crate::types::ReviewReport>) -> Self {
         self.assignment_review_report = input;
         self
     }
-    /// <p>Contains both ReviewResult and ReviewAction elements for an Assignment.</p>
+    /// <p> Contains both ReviewResult and ReviewAction elements for an Assignment. </p>
     pub fn get_assignment_review_report(&self) -> &::std::option::Option<crate::types::ReviewReport> {
         &self.assignment_review_report
     }
-    /// <p>Contains both ReviewResult and ReviewAction elements for a particular HIT.</p>
+    /// <p>Contains both ReviewResult and ReviewAction elements for a particular HIT. </p>
     pub fn hit_review_report(mut self, input: crate::types::ReviewReport) -> Self {
         self.hit_review_report = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Contains both ReviewResult and ReviewAction elements for a particular HIT.</p>
+    /// <p>Contains both ReviewResult and ReviewAction elements for a particular HIT. </p>
     pub fn set_hit_review_report(mut self, input: ::std::option::Option<crate::types::ReviewReport>) -> Self {
         self.hit_review_report = input;
         self
     }
-    /// <p>Contains both ReviewResult and ReviewAction elements for a particular HIT.</p>
+    /// <p>Contains both ReviewResult and ReviewAction elements for a particular HIT. </p>
     pub fn get_hit_review_report(&self) -> &::std::option::Option<crate::types::ReviewReport> {
         &self.hit_review_report
     }
-    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.</p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.</p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.</p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

@@ -5,7 +5,7 @@
 pub struct CreateCampaignOutput {
     /// <p>The name of the created campaign.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The ARN of the created campaign.</p>
+    /// <p> The ARN of the created campaign. </p>
     pub arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -14,7 +14,7 @@ impl CreateCampaignOutput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The ARN of the created campaign.</p>
+    /// <p> The ARN of the created campaign. </p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -54,17 +54,17 @@ impl CreateCampaignOutputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The ARN of the created campaign.</p>
+    /// <p> The ARN of the created campaign. </p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the created campaign.</p>
+    /// <p> The ARN of the created campaign. </p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>The ARN of the created campaign.</p>
+    /// <p> The ARN of the created campaign. </p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }

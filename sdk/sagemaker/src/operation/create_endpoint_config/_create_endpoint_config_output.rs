@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateEndpointConfigOutput {
-    /// <p>The Amazon Resource Name (ARN) of the endpoint configuration.</p>
+    /// <p>The Amazon Resource Name (ARN) of the endpoint configuration. </p>
     pub endpoint_config_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateEndpointConfigOutput {
-    /// <p>The Amazon Resource Name (ARN) of the endpoint configuration.</p>
+    /// <p>The Amazon Resource Name (ARN) of the endpoint configuration. </p>
     pub fn endpoint_config_arn(&self) -> ::std::option::Option<&str> {
         self.endpoint_config_arn.as_deref()
     }
@@ -33,18 +33,18 @@ pub struct CreateEndpointConfigOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateEndpointConfigOutputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the endpoint configuration.</p>
+    /// <p>The Amazon Resource Name (ARN) of the endpoint configuration. </p>
     /// This field is required.
     pub fn endpoint_config_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_config_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the endpoint configuration.</p>
+    /// <p>The Amazon Resource Name (ARN) of the endpoint configuration. </p>
     pub fn set_endpoint_config_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_config_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the endpoint configuration.</p>
+    /// <p>The Amazon Resource Name (ARN) of the endpoint configuration. </p>
     pub fn get_endpoint_config_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.endpoint_config_arn
     }

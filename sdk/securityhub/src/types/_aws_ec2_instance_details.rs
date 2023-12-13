@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2InstanceDetails {
-    /// <p>The instance type of the instance.</p>
+    /// <p>The instance type of the instance. </p>
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Machine Image (AMI) ID of the instance.</p>
     pub image_id: ::std::option::Option<::std::string::String>,
@@ -25,15 +25,15 @@ pub struct AwsEc2InstanceDetails {
     pub launched_at: ::std::option::Option<::std::string::String>,
     /// <p>The identifiers of the network interfaces for the EC2 instance. The details for each network interface are in a corresponding <code>AwsEc2NetworkInterfacesDetails</code> object.</p>
     pub network_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2InstanceNetworkInterfacesDetails>>,
-    /// <p>The virtualization type of the Amazon Machine Image (AMI) required to launch the instance.</p>
+    /// <p>The virtualization type of the Amazon Machine Image (AMI) required to launch the instance. </p>
     pub virtualization_type: ::std::option::Option<::std::string::String>,
-    /// <p>Details about the metadata options for the Amazon EC2 instance.</p>
+    /// <p>Details about the metadata options for the Amazon EC2 instance. </p>
     pub metadata_options: ::std::option::Option<crate::types::AwsEc2InstanceMetadataOptions>,
-    /// <p>Describes the type of monitoring that’s turned on for an instance.</p>
+    /// <p> Describes the type of monitoring that’s turned on for an instance. </p>
     pub monitoring: ::std::option::Option<crate::types::AwsEc2InstanceMonitoringDetails>,
 }
 impl AwsEc2InstanceDetails {
-    /// <p>The instance type of the instance.</p>
+    /// <p>The instance type of the instance. </p>
     pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
@@ -80,15 +80,15 @@ impl AwsEc2InstanceDetails {
     pub fn network_interfaces(&self) -> &[crate::types::AwsEc2InstanceNetworkInterfacesDetails] {
         self.network_interfaces.as_deref().unwrap_or_default()
     }
-    /// <p>The virtualization type of the Amazon Machine Image (AMI) required to launch the instance.</p>
+    /// <p>The virtualization type of the Amazon Machine Image (AMI) required to launch the instance. </p>
     pub fn virtualization_type(&self) -> ::std::option::Option<&str> {
         self.virtualization_type.as_deref()
     }
-    /// <p>Details about the metadata options for the Amazon EC2 instance.</p>
+    /// <p>Details about the metadata options for the Amazon EC2 instance. </p>
     pub fn metadata_options(&self) -> ::std::option::Option<&crate::types::AwsEc2InstanceMetadataOptions> {
         self.metadata_options.as_ref()
     }
-    /// <p>Describes the type of monitoring that’s turned on for an instance.</p>
+    /// <p> Describes the type of monitoring that’s turned on for an instance. </p>
     pub fn monitoring(&self) -> ::std::option::Option<&crate::types::AwsEc2InstanceMonitoringDetails> {
         self.monitoring.as_ref()
     }
@@ -119,17 +119,17 @@ pub struct AwsEc2InstanceDetailsBuilder {
     pub(crate) monitoring: ::std::option::Option<crate::types::AwsEc2InstanceMonitoringDetails>,
 }
 impl AwsEc2InstanceDetailsBuilder {
-    /// <p>The instance type of the instance.</p>
+    /// <p>The instance type of the instance. </p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The instance type of the instance.</p>
+    /// <p>The instance type of the instance. </p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The instance type of the instance.</p>
+    /// <p>The instance type of the instance. </p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.r#type
     }
@@ -283,45 +283,45 @@ impl AwsEc2InstanceDetailsBuilder {
     pub fn get_network_interfaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEc2InstanceNetworkInterfacesDetails>> {
         &self.network_interfaces
     }
-    /// <p>The virtualization type of the Amazon Machine Image (AMI) required to launch the instance.</p>
+    /// <p>The virtualization type of the Amazon Machine Image (AMI) required to launch the instance. </p>
     pub fn virtualization_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtualization_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The virtualization type of the Amazon Machine Image (AMI) required to launch the instance.</p>
+    /// <p>The virtualization type of the Amazon Machine Image (AMI) required to launch the instance. </p>
     pub fn set_virtualization_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.virtualization_type = input;
         self
     }
-    /// <p>The virtualization type of the Amazon Machine Image (AMI) required to launch the instance.</p>
+    /// <p>The virtualization type of the Amazon Machine Image (AMI) required to launch the instance. </p>
     pub fn get_virtualization_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.virtualization_type
     }
-    /// <p>Details about the metadata options for the Amazon EC2 instance.</p>
+    /// <p>Details about the metadata options for the Amazon EC2 instance. </p>
     pub fn metadata_options(mut self, input: crate::types::AwsEc2InstanceMetadataOptions) -> Self {
         self.metadata_options = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Details about the metadata options for the Amazon EC2 instance.</p>
+    /// <p>Details about the metadata options for the Amazon EC2 instance. </p>
     pub fn set_metadata_options(mut self, input: ::std::option::Option<crate::types::AwsEc2InstanceMetadataOptions>) -> Self {
         self.metadata_options = input;
         self
     }
-    /// <p>Details about the metadata options for the Amazon EC2 instance.</p>
+    /// <p>Details about the metadata options for the Amazon EC2 instance. </p>
     pub fn get_metadata_options(&self) -> &::std::option::Option<crate::types::AwsEc2InstanceMetadataOptions> {
         &self.metadata_options
     }
-    /// <p>Describes the type of monitoring that’s turned on for an instance.</p>
+    /// <p> Describes the type of monitoring that’s turned on for an instance. </p>
     pub fn monitoring(mut self, input: crate::types::AwsEc2InstanceMonitoringDetails) -> Self {
         self.monitoring = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Describes the type of monitoring that’s turned on for an instance.</p>
+    /// <p> Describes the type of monitoring that’s turned on for an instance. </p>
     pub fn set_monitoring(mut self, input: ::std::option::Option<crate::types::AwsEc2InstanceMonitoringDetails>) -> Self {
         self.monitoring = input;
         self
     }
-    /// <p>Describes the type of monitoring that’s turned on for an instance.</p>
+    /// <p> Describes the type of monitoring that’s turned on for an instance. </p>
     pub fn get_monitoring(&self) -> &::std::option::Option<crate::types::AwsEc2InstanceMonitoringDetails> {
         &self.monitoring
     }

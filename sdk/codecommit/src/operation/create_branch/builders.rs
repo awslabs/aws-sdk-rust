@@ -22,7 +22,7 @@ impl CreateBranchInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateBranch`.
 ///
-/// <p>Creates a branch in a repository and points the branch to a commit.</p><note>
+/// <p>Creates a branch in a repository and points the branch to a commit.</p> <note>
 /// <p>Calling the create branch operation does not set a repository's default branch. To do this, call the update default branch operation.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

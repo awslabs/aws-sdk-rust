@@ -5,7 +5,7 @@
 pub struct ListTrackerConsumersOutput {
     /// <p>Contains the list of geofence collection ARNs associated to the tracker resource.</p>
     pub consumer_arns: ::std::vec::Vec<::std::string::String>,
-    /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results.</p>
+    /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -15,7 +15,7 @@ impl ListTrackerConsumersOutput {
         use std::ops::Deref;
         self.consumer_arns.deref()
     }
-    /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results.</p>
+    /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -61,17 +61,17 @@ impl ListTrackerConsumersOutputBuilder {
     pub fn get_consumer_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.consumer_arns
     }
-    /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results.</p>
+    /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results.</p>
+    /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results.</p>
+    /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

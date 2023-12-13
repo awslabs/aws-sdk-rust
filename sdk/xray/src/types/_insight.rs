@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Insight {
-    /// <p>The insights unique identifier.</p>
+    /// <p>The insights unique identifier. </p>
     pub insight_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the group that the insight belongs to.</p>
     pub group_arn: ::std::option::Option<::std::string::String>,
@@ -30,7 +30,7 @@ pub struct Insight {
     pub top_anomalous_services: ::std::option::Option<::std::vec::Vec<crate::types::AnomalousService>>,
 }
 impl Insight {
-    /// <p>The insights unique identifier.</p>
+    /// <p>The insights unique identifier. </p>
     pub fn insight_id(&self) -> ::std::option::Option<&str> {
         self.insight_id.as_deref()
     }
@@ -108,17 +108,17 @@ pub struct InsightBuilder {
     pub(crate) top_anomalous_services: ::std::option::Option<::std::vec::Vec<crate::types::AnomalousService>>,
 }
 impl InsightBuilder {
-    /// <p>The insights unique identifier.</p>
+    /// <p>The insights unique identifier. </p>
     pub fn insight_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.insight_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The insights unique identifier.</p>
+    /// <p>The insights unique identifier. </p>
     pub fn set_insight_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.insight_id = input;
         self
     }
-    /// <p>The insights unique identifier.</p>
+    /// <p>The insights unique identifier. </p>
     pub fn get_insight_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.insight_id
     }

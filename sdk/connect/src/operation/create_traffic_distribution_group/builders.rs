@@ -22,10 +22,10 @@ impl CreateTrafficDistributionGroupInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateTrafficDistributionGroup`.
 ///
-/// <p>Creates a traffic distribution group given an Amazon Connect instance that has been replicated.</p><note>
+/// <p>Creates a traffic distribution group given an Amazon Connect instance that has been replicated. </p> <note>
 /// <p>The <code>SignInConfig</code> distribution is available only on a default <code>TrafficDistributionGroup</code> (see the <code>IsDefault</code> parameter in the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_TrafficDistributionGroup.html">TrafficDistributionGroup</a> data type). If you call <code>UpdateTrafficDistribution</code> with a modified <code>SignInConfig</code> and a non-default <code>TrafficDistributionGroup</code>, an <code>InvalidRequestException</code> is returned.</p>
 /// </note>
-/// <p>For more information about creating traffic distribution groups, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-traffic-distribution-groups.html">Set up traffic distribution groups</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+/// <p>For more information about creating traffic distribution groups, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-traffic-distribution-groups.html">Set up traffic distribution groups</a> in the <i>Amazon Connect Administrator Guide</i>. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateTrafficDistributionGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -111,17 +111,17 @@ impl CreateTrafficDistributionGroupFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name for the traffic distribution group.</p>
+    /// <p>The name for the traffic distribution group. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name for the traffic distribution group.</p>
+    /// <p>The name for the traffic distribution group. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name for the traffic distribution group.</p>
+    /// <p>The name for the traffic distribution group. </p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }

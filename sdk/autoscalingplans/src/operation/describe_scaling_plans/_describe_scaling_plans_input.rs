@@ -5,7 +5,7 @@
 pub struct DescribeScalingPlansInput {
     /// <p>The names of the scaling plans (up to 10). If you specify application sources, you cannot specify scaling plan names.</p>
     pub scaling_plan_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p><note>
+    /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p> <note>
     /// <p>If you specify a scaling plan version, you must also specify a scaling plan name.</p>
     /// </note>
     pub scaling_plan_version: ::std::option::Option<i64>,
@@ -23,7 +23,7 @@ impl DescribeScalingPlansInput {
     pub fn scaling_plan_names(&self) -> &[::std::string::String] {
         self.scaling_plan_names.as_deref().unwrap_or_default()
     }
-    /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p><note>
+    /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p> <note>
     /// <p>If you specify a scaling plan version, you must also specify a scaling plan name.</p>
     /// </note>
     pub fn scaling_plan_version(&self) -> ::std::option::Option<i64> {
@@ -82,21 +82,21 @@ impl DescribeScalingPlansInputBuilder {
     pub fn get_scaling_plan_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.scaling_plan_names
     }
-    /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p><note>
+    /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p> <note>
     /// <p>If you specify a scaling plan version, you must also specify a scaling plan name.</p>
     /// </note>
     pub fn scaling_plan_version(mut self, input: i64) -> Self {
         self.scaling_plan_version = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p><note>
+    /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p> <note>
     /// <p>If you specify a scaling plan version, you must also specify a scaling plan name.</p>
     /// </note>
     pub fn set_scaling_plan_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.scaling_plan_version = input;
         self
     }
-    /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p><note>
+    /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p> <note>
     /// <p>If you specify a scaling plan version, you must also specify a scaling plan name.</p>
     /// </note>
     pub fn get_scaling_plan_version(&self) -> &::std::option::Option<i64> {

@@ -3,16 +3,16 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportEcsServiceRecommendationsOutput {
-    /// <p>The identification number of the export job.</p>
-    /// <p>To view the status of an export job, use the <code>DescribeRecommendationExportJobs</code> action and specify the job ID.</p>
+    /// <p> The identification number of the export job. </p>
+    /// <p>To view the status of an export job, use the <code>DescribeRecommendationExportJobs</code> action and specify the job ID. </p>
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and object keys of a recommendations export file, and its associated metadata file.</p>
     pub s3_destination: ::std::option::Option<crate::types::S3Destination>,
     _request_id: Option<String>,
 }
 impl ExportEcsServiceRecommendationsOutput {
-    /// <p>The identification number of the export job.</p>
-    /// <p>To view the status of an export job, use the <code>DescribeRecommendationExportJobs</code> action and specify the job ID.</p>
+    /// <p> The identification number of the export job. </p>
+    /// <p>To view the status of an export job, use the <code>DescribeRecommendationExportJobs</code> action and specify the job ID. </p>
     pub fn job_id(&self) -> ::std::option::Option<&str> {
         self.job_id.as_deref()
     }
@@ -42,20 +42,20 @@ pub struct ExportEcsServiceRecommendationsOutputBuilder {
     _request_id: Option<String>,
 }
 impl ExportEcsServiceRecommendationsOutputBuilder {
-    /// <p>The identification number of the export job.</p>
-    /// <p>To view the status of an export job, use the <code>DescribeRecommendationExportJobs</code> action and specify the job ID.</p>
+    /// <p> The identification number of the export job. </p>
+    /// <p>To view the status of an export job, use the <code>DescribeRecommendationExportJobs</code> action and specify the job ID. </p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identification number of the export job.</p>
-    /// <p>To view the status of an export job, use the <code>DescribeRecommendationExportJobs</code> action and specify the job ID.</p>
+    /// <p> The identification number of the export job. </p>
+    /// <p>To view the status of an export job, use the <code>DescribeRecommendationExportJobs</code> action and specify the job ID. </p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_id = input;
         self
     }
-    /// <p>The identification number of the export job.</p>
-    /// <p>To view the status of an export job, use the <code>DescribeRecommendationExportJobs</code> action and specify the job ID.</p>
+    /// <p> The identification number of the export job. </p>
+    /// <p>To view the status of an export job, use the <code>DescribeRecommendationExportJobs</code> action and specify the job ID. </p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_id
     }

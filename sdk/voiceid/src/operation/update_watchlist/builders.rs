@@ -22,7 +22,7 @@ impl UpdateWatchlistInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateWatchlist`.
 ///
-/// <p>Updates the specified watchlist. Every domain has a default watchlist which cannot be updated.</p>
+/// <p>Updates the specified watchlist. Every domain has a default watchlist which cannot be updated. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateWatchlistFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

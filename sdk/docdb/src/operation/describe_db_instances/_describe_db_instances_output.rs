@@ -6,7 +6,7 @@
 pub struct DescribeDbInstancesOutput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: ::std::option::Option<::std::string::String>,
-    /// <p>Detailed information about one or more instances.</p>
+    /// <p>Detailed information about one or more instances. </p>
     pub db_instances: ::std::option::Option<::std::vec::Vec<crate::types::DbInstance>>,
     _request_id: Option<String>,
 }
@@ -15,7 +15,7 @@ impl DescribeDbInstancesOutput {
     pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
-    /// <p>Detailed information about one or more instances.</p>
+    /// <p>Detailed information about one or more instances. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.db_instances.is_none()`.
     pub fn db_instances(&self) -> &[crate::types::DbInstance] {
@@ -61,19 +61,19 @@ impl DescribeDbInstancesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_db_instances`](Self::set_db_instances).
     ///
-    /// <p>Detailed information about one or more instances.</p>
+    /// <p>Detailed information about one or more instances. </p>
     pub fn db_instances(mut self, input: crate::types::DbInstance) -> Self {
         let mut v = self.db_instances.unwrap_or_default();
         v.push(input);
         self.db_instances = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Detailed information about one or more instances.</p>
+    /// <p>Detailed information about one or more instances. </p>
     pub fn set_db_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DbInstance>>) -> Self {
         self.db_instances = input;
         self
     }
-    /// <p>Detailed information about one or more instances.</p>
+    /// <p>Detailed information about one or more instances. </p>
     pub fn get_db_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DbInstance>> {
         &self.db_instances
     }

@@ -114,17 +114,17 @@ impl DescribeCodeCoveragesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_code_coverages::paginator::DescribeCodeCoveragesPaginator {
         crate::operation::describe_code_coverages::paginator::DescribeCodeCoveragesPaginator::new(self.handle, self.inner)
     }
-    /// <p>The ARN of the report for which test cases are returned.</p>
+    /// <p> The ARN of the report for which test cases are returned. </p>
     pub fn report_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.report_arn(input.into());
         self
     }
-    /// <p>The ARN of the report for which test cases are returned.</p>
+    /// <p> The ARN of the report for which test cases are returned. </p>
     pub fn set_report_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_report_arn(input);
         self
     }
-    /// <p>The ARN of the report for which test cases are returned.</p>
+    /// <p> The ARN of the report for which test cases are returned. </p>
     pub fn get_report_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_report_arn()
     }

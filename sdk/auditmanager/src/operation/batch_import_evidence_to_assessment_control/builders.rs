@@ -22,18 +22,14 @@ impl BatchImportEvidenceToAssessmentControlInputBuilder {
 }
 /// Fluent builder constructing a request to `BatchImportEvidenceToAssessmentControl`.
 ///
-/// <p>Adds one or more pieces of evidence to a control in an Audit Manager assessment.</p>
-/// <p>You can import manual evidence from any S3 bucket by specifying the S3 URI of the object. You can also upload a file from your browser, or enter plain text in response to a risk assessment question.</p>
+/// <p>Adds one or more pieces of evidence to a control in an Audit Manager assessment. </p>
+/// <p>You can import manual evidence from any S3 bucket by specifying the S3 URI of the object. You can also upload a file from your browser, or enter plain text in response to a risk assessment question. </p>
 /// <p>The following restrictions apply to this action:</p>
 /// <ul>
-/// <li>
-/// <p><code>manualEvidence</code> can be only one of the following: <code>evidenceFileName</code>, <code>s3ResourcePath</code>, or <code>textResponse</code></p></li>
-/// <li>
-/// <p>Maximum size of an individual evidence file: 100 MB</p></li>
-/// <li>
-/// <p>Number of daily manual evidence uploads per control: 100</p></li>
-/// <li>
-/// <p>Supported file formats: See <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#supported-manual-evidence-files">Supported file types for manual evidence</a> in the <i>Audit Manager User Guide</i></p></li>
+/// <li> <p> <code>manualEvidence</code> can be only one of the following: <code>evidenceFileName</code>, <code>s3ResourcePath</code>, or <code>textResponse</code> </p> </li>
+/// <li> <p>Maximum size of an individual evidence file: 100 MB</p> </li>
+/// <li> <p>Number of daily manual evidence uploads per control: 100</p> </li>
+/// <li> <p>Supported file formats: See <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#supported-manual-evidence-files">Supported file types for manual evidence</a> in the <i>Audit Manager User Guide</i> </p> </li>
 /// </ul>
 /// <p>For more information about Audit Manager service restrictions, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/service-quotas.html">Quotas and restrictions for Audit Manager</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -125,45 +121,45 @@ impl BatchImportEvidenceToAssessmentControlFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier for the assessment.</p>
+    /// <p> The identifier for the assessment. </p>
     pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_id(input.into());
         self
     }
-    /// <p>The identifier for the assessment.</p>
+    /// <p> The identifier for the assessment. </p>
     pub fn set_assessment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assessment_id(input);
         self
     }
-    /// <p>The identifier for the assessment.</p>
+    /// <p> The identifier for the assessment. </p>
     pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_assessment_id()
     }
-    /// <p>The identifier for the control set.</p>
+    /// <p> The identifier for the control set. </p>
     pub fn control_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.control_set_id(input.into());
         self
     }
-    /// <p>The identifier for the control set.</p>
+    /// <p> The identifier for the control set. </p>
     pub fn set_control_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_control_set_id(input);
         self
     }
-    /// <p>The identifier for the control set.</p>
+    /// <p> The identifier for the control set. </p>
     pub fn get_control_set_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_control_set_id()
     }
-    /// <p>The identifier for the control.</p>
+    /// <p> The identifier for the control. </p>
     pub fn control_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.control_id(input.into());
         self
     }
-    /// <p>The identifier for the control.</p>
+    /// <p> The identifier for the control. </p>
     pub fn set_control_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_control_id(input);
         self
     }
-    /// <p>The identifier for the control.</p>
+    /// <p> The identifier for the control. </p>
     pub fn get_control_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_control_id()
     }
@@ -171,17 +167,17 @@ impl BatchImportEvidenceToAssessmentControlFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_manual_evidence`](Self::set_manual_evidence).
     ///
-    /// <p>The list of manual evidence objects.</p>
+    /// <p> The list of manual evidence objects. </p>
     pub fn manual_evidence(mut self, input: crate::types::ManualEvidence) -> Self {
         self.inner = self.inner.manual_evidence(input);
         self
     }
-    /// <p>The list of manual evidence objects.</p>
+    /// <p> The list of manual evidence objects. </p>
     pub fn set_manual_evidence(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ManualEvidence>>) -> Self {
         self.inner = self.inner.set_manual_evidence(input);
         self
     }
-    /// <p>The list of manual evidence objects.</p>
+    /// <p> The list of manual evidence objects. </p>
     pub fn get_manual_evidence(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ManualEvidence>> {
         self.inner.get_manual_evidence()
     }

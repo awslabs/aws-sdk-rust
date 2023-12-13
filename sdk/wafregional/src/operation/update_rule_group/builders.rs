@@ -24,21 +24,17 @@ impl UpdateRuleGroupInputBuilder {
 ///
 /// <note>
 /// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p><b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use.</p>
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
 /// </note>
 /// <p>Inserts or deletes <code>ActivatedRule</code> objects in a <code>RuleGroup</code>.</p>
 /// <p>You can only insert <code>REGULAR</code> rules into a rule group.</p>
 /// <p>You can have a maximum of ten rules per rule group.</p>
 /// <p>To create and configure a <code>RuleGroup</code>, perform the following steps:</p>
 /// <ol>
-/// <li>
-/// <p>Create and update the <code>Rules</code> that you want to include in the <code>RuleGroup</code>. See <code>CreateRule</code>.</p></li>
-/// <li>
-/// <p>Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code> parameter of an <code>UpdateRuleGroup</code> request.</p></li>
-/// <li>
-/// <p>Submit an <code>UpdateRuleGroup</code> request to add <code>Rules</code> to the <code>RuleGroup</code>.</p></li>
-/// <li>
-/// <p>Create and update a <code>WebACL</code> that contains the <code>RuleGroup</code>. See <code>CreateWebACL</code>.</p></li>
+/// <li> <p>Create and update the <code>Rules</code> that you want to include in the <code>RuleGroup</code>. See <code>CreateRule</code>.</p> </li>
+/// <li> <p>Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code> parameter of an <code>UpdateRuleGroup</code> request.</p> </li>
+/// <li> <p>Submit an <code>UpdateRuleGroup</code> request to add <code>Rules</code> to the <code>RuleGroup</code>.</p> </li>
+/// <li> <p>Create and update a <code>WebACL</code> that contains the <code>RuleGroup</code>. See <code>CreateWebACL</code>.</p> </li>
 /// </ol>
 /// <p>If you want to replace one <code>Rule</code> with another, you delete the existing one and add the new one.</p>
 /// <p>For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.</p>
@@ -147,21 +143,21 @@ impl UpdateRuleGroupFluentBuilder {
     ///
     /// <p>An array of <code>RuleGroupUpdate</code> objects that you want to insert into or delete from a <code>RuleGroup</code>.</p>
     /// <p>You can only insert <code>REGULAR</code> rules into a rule group.</p>
-    /// <p><code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.</p>
+    /// <p> <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.</p>
     pub fn updates(mut self, input: crate::types::RuleGroupUpdate) -> Self {
         self.inner = self.inner.updates(input);
         self
     }
     /// <p>An array of <code>RuleGroupUpdate</code> objects that you want to insert into or delete from a <code>RuleGroup</code>.</p>
     /// <p>You can only insert <code>REGULAR</code> rules into a rule group.</p>
-    /// <p><code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.</p>
+    /// <p> <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.</p>
     pub fn set_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RuleGroupUpdate>>) -> Self {
         self.inner = self.inner.set_updates(input);
         self
     }
     /// <p>An array of <code>RuleGroupUpdate</code> objects that you want to insert into or delete from a <code>RuleGroup</code>.</p>
     /// <p>You can only insert <code>REGULAR</code> rules into a rule group.</p>
-    /// <p><code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.</p>
+    /// <p> <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.</p>
     pub fn get_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleGroupUpdate>> {
         self.inner.get_updates()
     }

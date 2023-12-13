@@ -24,7 +24,7 @@ impl RestoreFromClusterSnapshotInputBuilder {
 ///
 /// <p>Creates a new cluster from a snapshot. By default, Amazon Redshift creates the resulting cluster with the same configuration as the original cluster from which the snapshot was created, except that the new cluster is created with the default cluster security and parameter groups. After Amazon Redshift creates the cluster, you can use the <code>ModifyCluster</code> API to associate a different security group and different parameter group with the restored cluster. If you are using a DS node type, you can also choose to change to another DS node type of the same size during restore.</p>
 /// <p>If you restore a cluster into a VPC, you must provide a cluster subnet group where you want the cluster restored.</p>
-/// <p>For more information about working with snapshots, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+/// <p> For more information about working with snapshots, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RestoreFromClusterSnapshotFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -113,16 +113,11 @@ impl RestoreFromClusterSnapshotFluentBuilder {
     /// <p>The identifier of the cluster that will be created from restoring the snapshot.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p></li>
-    /// <li>
-    /// <p>Alphabetic characters must be lowercase.</p></li>
-    /// <li>
-    /// <p>First character must be a letter.</p></li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
-    /// <li>
-    /// <p>Must be unique for all clusters within an Amazon Web Services account.</p></li>
+    /// <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li>
+    /// <li> <p>Alphabetic characters must be lowercase.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li> <p>Must be unique for all clusters within an Amazon Web Services account.</p> </li>
     /// </ul>
     pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_identifier(input.into());
@@ -131,16 +126,11 @@ impl RestoreFromClusterSnapshotFluentBuilder {
     /// <p>The identifier of the cluster that will be created from restoring the snapshot.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p></li>
-    /// <li>
-    /// <p>Alphabetic characters must be lowercase.</p></li>
-    /// <li>
-    /// <p>First character must be a letter.</p></li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
-    /// <li>
-    /// <p>Must be unique for all clusters within an Amazon Web Services account.</p></li>
+    /// <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li>
+    /// <li> <p>Alphabetic characters must be lowercase.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li> <p>Must be unique for all clusters within an Amazon Web Services account.</p> </li>
     /// </ul>
     pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_identifier(input);
@@ -149,34 +139,29 @@ impl RestoreFromClusterSnapshotFluentBuilder {
     /// <p>The identifier of the cluster that will be created from restoring the snapshot.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p></li>
-    /// <li>
-    /// <p>Alphabetic characters must be lowercase.</p></li>
-    /// <li>
-    /// <p>First character must be a letter.</p></li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
-    /// <li>
-    /// <p>Must be unique for all clusters within an Amazon Web Services account.</p></li>
+    /// <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li>
+    /// <li> <p>Alphabetic characters must be lowercase.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li> <p>Must be unique for all clusters within an Amazon Web Services account.</p> </li>
     /// </ul>
     pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cluster_identifier()
     }
     /// <p>The name of the snapshot from which to create the new cluster. This parameter isn't case sensitive. You must specify this parameter or <code>snapshotArn</code>, but not both.</p>
-    /// <p>Example: <code>my-snapshot-id</code></p>
+    /// <p>Example: <code>my-snapshot-id</code> </p>
     pub fn snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.snapshot_identifier(input.into());
         self
     }
     /// <p>The name of the snapshot from which to create the new cluster. This parameter isn't case sensitive. You must specify this parameter or <code>snapshotArn</code>, but not both.</p>
-    /// <p>Example: <code>my-snapshot-id</code></p>
+    /// <p>Example: <code>my-snapshot-id</code> </p>
     pub fn set_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_snapshot_identifier(input);
         self
     }
     /// <p>The name of the snapshot from which to create the new cluster. This parameter isn't case sensitive. You must specify this parameter or <code>snapshotArn</code>, but not both.</p>
-    /// <p>Example: <code>my-snapshot-id</code></p>
+    /// <p>Example: <code>my-snapshot-id</code> </p>
     pub fn get_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_snapshot_identifier()
     }
@@ -230,38 +215,38 @@ impl RestoreFromClusterSnapshotFluentBuilder {
     }
     /// <p>The Amazon EC2 Availability Zone in which to restore the cluster.</p>
     /// <p>Default: A random, system-chosen Availability Zone.</p>
-    /// <p>Example: <code>us-east-2a</code></p>
+    /// <p>Example: <code>us-east-2a</code> </p>
     pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.availability_zone(input.into());
         self
     }
     /// <p>The Amazon EC2 Availability Zone in which to restore the cluster.</p>
     /// <p>Default: A random, system-chosen Availability Zone.</p>
-    /// <p>Example: <code>us-east-2a</code></p>
+    /// <p>Example: <code>us-east-2a</code> </p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_availability_zone(input);
         self
     }
     /// <p>The Amazon EC2 Availability Zone in which to restore the cluster.</p>
     /// <p>Default: A random, system-chosen Availability Zone.</p>
-    /// <p>Example: <code>us-east-2a</code></p>
+    /// <p>Example: <code>us-east-2a</code> </p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_availability_zone()
     }
-    /// <p>If <code>true</code>, major version upgrades can be applied during the maintenance window to the Amazon Redshift engine that is running on the cluster.</p>
-    /// <p>Default: <code>true</code></p>
+    /// <p>If <code>true</code>, major version upgrades can be applied during the maintenance window to the Amazon Redshift engine that is running on the cluster. </p>
+    /// <p>Default: <code>true</code> </p>
     pub fn allow_version_upgrade(mut self, input: bool) -> Self {
         self.inner = self.inner.allow_version_upgrade(input);
         self
     }
-    /// <p>If <code>true</code>, major version upgrades can be applied during the maintenance window to the Amazon Redshift engine that is running on the cluster.</p>
-    /// <p>Default: <code>true</code></p>
+    /// <p>If <code>true</code>, major version upgrades can be applied during the maintenance window to the Amazon Redshift engine that is running on the cluster. </p>
+    /// <p>Default: <code>true</code> </p>
     pub fn set_allow_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_allow_version_upgrade(input);
         self
     }
-    /// <p>If <code>true</code>, major version upgrades can be applied during the maintenance window to the Amazon Redshift engine that is running on the cluster.</p>
-    /// <p>Default: <code>true</code></p>
+    /// <p>If <code>true</code>, major version upgrades can be applied during the maintenance window to the Amazon Redshift engine that is running on the cluster. </p>
+    /// <p>Default: <code>true</code> </p>
     pub fn get_allow_version_upgrade(&self) -> &::std::option::Option<bool> {
         self.inner.get_allow_version_upgrade()
     }
@@ -282,17 +267,17 @@ impl RestoreFromClusterSnapshotFluentBuilder {
     pub fn get_cluster_subnet_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cluster_subnet_group_name()
     }
-    /// <p>If <code>true</code>, the cluster can be accessed from a public network.</p>
+    /// <p>If <code>true</code>, the cluster can be accessed from a public network. </p>
     pub fn publicly_accessible(mut self, input: bool) -> Self {
         self.inner = self.inner.publicly_accessible(input);
         self
     }
-    /// <p>If <code>true</code>, the cluster can be accessed from a public network.</p>
+    /// <p>If <code>true</code>, the cluster can be accessed from a public network. </p>
     pub fn set_publicly_accessible(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_publicly_accessible(input);
         self
     }
-    /// <p>If <code>true</code>, the cluster can be accessed from a public network.</p>
+    /// <p>If <code>true</code>, the cluster can be accessed from a public network. </p>
     pub fn get_publicly_accessible(&self) -> &::std::option::Option<bool> {
         self.inner.get_publicly_accessible()
     }
@@ -356,12 +341,9 @@ impl RestoreFromClusterSnapshotFluentBuilder {
     /// <p>Default: The default Amazon Redshift cluster parameter group. For information about the default parameter group, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working with Amazon Redshift Parameter Groups</a>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be 1 to 255 alphanumeric characters or hyphens.</p></li>
-    /// <li>
-    /// <p>First character must be a letter.</p></li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li> <p>Must be 1 to 255 alphanumeric characters or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     pub fn cluster_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_parameter_group_name(input.into());
@@ -371,12 +353,9 @@ impl RestoreFromClusterSnapshotFluentBuilder {
     /// <p>Default: The default Amazon Redshift cluster parameter group. For information about the default parameter group, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working with Amazon Redshift Parameter Groups</a>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be 1 to 255 alphanumeric characters or hyphens.</p></li>
-    /// <li>
-    /// <p>First character must be a letter.</p></li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li> <p>Must be 1 to 255 alphanumeric characters or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     pub fn set_cluster_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_parameter_group_name(input);
@@ -386,12 +365,9 @@ impl RestoreFromClusterSnapshotFluentBuilder {
     /// <p>Default: The default Amazon Redshift cluster parameter group. For information about the default parameter group, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working with Amazon Redshift Parameter Groups</a>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be 1 to 255 alphanumeric characters or hyphens.</p></li>
-    /// <li>
-    /// <p>First character must be a letter.</p></li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li> <p>Must be 1 to 255 alphanumeric characters or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     pub fn get_cluster_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cluster_parameter_group_name()
@@ -445,8 +421,8 @@ impl RestoreFromClusterSnapshotFluentBuilder {
         self.inner.get_vpc_security_group_ids()
     }
     /// <p>The weekly time range (in UTC) during which automated cluster maintenance can occur.</p>
-    /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code></p>
-    /// <p>Default: The value selected for the cluster from which the snapshot was taken. For more information about the time blocks for each region, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance Windows</a> in Amazon Redshift Cluster Management Guide.</p>
+    /// <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
+    /// <p> Default: The value selected for the cluster from which the snapshot was taken. For more information about the time blocks for each region, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance Windows</a> in Amazon Redshift Cluster Management Guide. </p>
     /// <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
     pub fn preferred_maintenance_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -454,8 +430,8 @@ impl RestoreFromClusterSnapshotFluentBuilder {
         self
     }
     /// <p>The weekly time range (in UTC) during which automated cluster maintenance can occur.</p>
-    /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code></p>
-    /// <p>Default: The value selected for the cluster from which the snapshot was taken. For more information about the time blocks for each region, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance Windows</a> in Amazon Redshift Cluster Management Guide.</p>
+    /// <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
+    /// <p> Default: The value selected for the cluster from which the snapshot was taken. For more information about the time blocks for each region, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance Windows</a> in Amazon Redshift Cluster Management Guide. </p>
     /// <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
     pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -463,14 +439,14 @@ impl RestoreFromClusterSnapshotFluentBuilder {
         self
     }
     /// <p>The weekly time range (in UTC) during which automated cluster maintenance can occur.</p>
-    /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code></p>
-    /// <p>Default: The value selected for the cluster from which the snapshot was taken. For more information about the time blocks for each region, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance Windows</a> in Amazon Redshift Cluster Management Guide.</p>
+    /// <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
+    /// <p> Default: The value selected for the cluster from which the snapshot was taken. For more information about the time blocks for each region, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance Windows</a> in Amazon Redshift Cluster Management Guide. </p>
     /// <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
     pub fn get_preferred_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_preferred_maintenance_window()
     }
-    /// <p>The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want with <code>CreateClusterSnapshot</code>.</p>
+    /// <p>The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want with <code>CreateClusterSnapshot</code>. </p>
     /// <p>You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35 days.</p>
     /// <p>Default: The value selected for the cluster from which the snapshot was taken.</p>
     /// <p>Constraints: Must be a value from 0 to 35.</p>
@@ -478,7 +454,7 @@ impl RestoreFromClusterSnapshotFluentBuilder {
         self.inner = self.inner.automated_snapshot_retention_period(input);
         self
     }
-    /// <p>The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want with <code>CreateClusterSnapshot</code>.</p>
+    /// <p>The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want with <code>CreateClusterSnapshot</code>. </p>
     /// <p>You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35 days.</p>
     /// <p>Default: The value selected for the cluster from which the snapshot was taken.</p>
     /// <p>Constraints: Must be a value from 0 to 35.</p>
@@ -486,7 +462,7 @@ impl RestoreFromClusterSnapshotFluentBuilder {
         self.inner = self.inner.set_automated_snapshot_retention_period(input);
         self
     }
-    /// <p>The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want with <code>CreateClusterSnapshot</code>.</p>
+    /// <p>The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want with <code>CreateClusterSnapshot</code>. </p>
     /// <p>You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35 days.</p>
     /// <p>Default: The value selected for the cluster from which the snapshot was taken.</p>
     /// <p>Constraints: Must be a value from 0 to 35.</p>
@@ -525,38 +501,38 @@ impl RestoreFromClusterSnapshotFluentBuilder {
         self.inner.get_kms_key_id()
     }
     /// <p>The node type that the restored cluster will be provisioned with.</p>
-    /// <p>Default: The node type of the cluster from which the snapshot was taken. You can modify this if you are using any DS node type. In that case, you can choose to restore into another DS node type of the same size. For example, you can restore ds1.8xlarge into ds2.8xlarge, or ds1.xlarge into ds2.xlarge. If you have a DC instance type, you must restore into that same instance type and size. In other words, you can only restore a dc1.large instance type into another dc1.large instance type or dc2.large instance type. You can't restore dc1.8xlarge to dc2.8xlarge. First restore to a dc1.8xlarge cluster, then resize to a dc2.8large cluster. For more information about node types, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes"> About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+    /// <p>Default: The node type of the cluster from which the snapshot was taken. You can modify this if you are using any DS node type. In that case, you can choose to restore into another DS node type of the same size. For example, you can restore ds1.8xlarge into ds2.8xlarge, or ds1.xlarge into ds2.xlarge. If you have a DC instance type, you must restore into that same instance type and size. In other words, you can only restore a dc1.large instance type into another dc1.large instance type or dc2.large instance type. You can't restore dc1.8xlarge to dc2.8xlarge. First restore to a dc1.8xlarge cluster, then resize to a dc2.8large cluster. For more information about node types, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes"> About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
     pub fn node_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.node_type(input.into());
         self
     }
     /// <p>The node type that the restored cluster will be provisioned with.</p>
-    /// <p>Default: The node type of the cluster from which the snapshot was taken. You can modify this if you are using any DS node type. In that case, you can choose to restore into another DS node type of the same size. For example, you can restore ds1.8xlarge into ds2.8xlarge, or ds1.xlarge into ds2.xlarge. If you have a DC instance type, you must restore into that same instance type and size. In other words, you can only restore a dc1.large instance type into another dc1.large instance type or dc2.large instance type. You can't restore dc1.8xlarge to dc2.8xlarge. First restore to a dc1.8xlarge cluster, then resize to a dc2.8large cluster. For more information about node types, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes"> About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+    /// <p>Default: The node type of the cluster from which the snapshot was taken. You can modify this if you are using any DS node type. In that case, you can choose to restore into another DS node type of the same size. For example, you can restore ds1.8xlarge into ds2.8xlarge, or ds1.xlarge into ds2.xlarge. If you have a DC instance type, you must restore into that same instance type and size. In other words, you can only restore a dc1.large instance type into another dc1.large instance type or dc2.large instance type. You can't restore dc1.8xlarge to dc2.8xlarge. First restore to a dc1.8xlarge cluster, then resize to a dc2.8large cluster. For more information about node types, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes"> About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
     pub fn set_node_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_node_type(input);
         self
     }
     /// <p>The node type that the restored cluster will be provisioned with.</p>
-    /// <p>Default: The node type of the cluster from which the snapshot was taken. You can modify this if you are using any DS node type. In that case, you can choose to restore into another DS node type of the same size. For example, you can restore ds1.8xlarge into ds2.8xlarge, or ds1.xlarge into ds2.xlarge. If you have a DC instance type, you must restore into that same instance type and size. In other words, you can only restore a dc1.large instance type into another dc1.large instance type or dc2.large instance type. You can't restore dc1.8xlarge to dc2.8xlarge. First restore to a dc1.8xlarge cluster, then resize to a dc2.8large cluster. For more information about node types, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes"> About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+    /// <p>Default: The node type of the cluster from which the snapshot was taken. You can modify this if you are using any DS node type. In that case, you can choose to restore into another DS node type of the same size. For example, you can restore ds1.8xlarge into ds2.8xlarge, or ds1.xlarge into ds2.xlarge. If you have a DC instance type, you must restore into that same instance type and size. In other words, you can only restore a dc1.large instance type into another dc1.large instance type or dc2.large instance type. You can't restore dc1.8xlarge to dc2.8xlarge. First restore to a dc1.8xlarge cluster, then resize to a dc2.8large cluster. For more information about node types, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes"> About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
     pub fn get_node_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_node_type()
     }
     /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
-    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled.</p>
+    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>
     /// <p>Default: false</p>
     pub fn enhanced_vpc_routing(mut self, input: bool) -> Self {
         self.inner = self.inner.enhanced_vpc_routing(input);
         self
     }
     /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
-    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled.</p>
+    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>
     /// <p>Default: false</p>
     pub fn set_enhanced_vpc_routing(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enhanced_vpc_routing(input);
         self
     }
     /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
-    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled.</p>
+    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>
     /// <p>Default: false</p>
     pub fn get_enhanced_vpc_routing(&self) -> &::std::option::Option<bool> {
         self.inner.get_enhanced_vpc_routing()
@@ -579,19 +555,19 @@ impl RestoreFromClusterSnapshotFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_iam_roles`](Self::set_iam_roles).
     ///
-    /// <p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format.</p>
+    /// <p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. </p>
     /// <p>The maximum number of IAM roles that you can associate is subject to a quota. For more information, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
     pub fn iam_roles(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.iam_roles(input.into());
         self
     }
-    /// <p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format.</p>
+    /// <p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. </p>
     /// <p>The maximum number of IAM roles that you can associate is subject to a quota. For more information, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
     pub fn set_iam_roles(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_iam_roles(input);
         self
     }
-    /// <p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format.</p>
+    /// <p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. </p>
     /// <p>The maximum number of IAM roles that you can associate is subject to a quota. For more information, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
     pub fn get_iam_roles(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_iam_roles()

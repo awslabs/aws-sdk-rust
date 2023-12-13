@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteIamPolicyAssignmentOutput {
-    /// <p>The name of the assignment.</p>
+    /// <p>The name of the assignment. </p>
     pub assignment_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct DeleteIamPolicyAssignmentOutput {
     _request_id: Option<String>,
 }
 impl DeleteIamPolicyAssignmentOutput {
-    /// <p>The name of the assignment.</p>
+    /// <p>The name of the assignment. </p>
     pub fn assignment_name(&self) -> ::std::option::Option<&str> {
         self.assignment_name.as_deref()
     }
@@ -47,17 +47,17 @@ pub struct DeleteIamPolicyAssignmentOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteIamPolicyAssignmentOutputBuilder {
-    /// <p>The name of the assignment.</p>
+    /// <p>The name of the assignment. </p>
     pub fn assignment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assignment_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the assignment.</p>
+    /// <p>The name of the assignment. </p>
     pub fn set_assignment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assignment_name = input;
         self
     }
-    /// <p>The name of the assignment.</p>
+    /// <p>The name of the assignment. </p>
     pub fn get_assignment_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.assignment_name
     }

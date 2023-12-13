@@ -22,7 +22,7 @@ impl PutActionsInputBuilder {
 }
 /// Fluent builder constructing a request to `PutActions`.
 ///
-/// <p>Adds one or more actions to an Actions dataset. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/importing-actions.html">Importing actions individually</a>.</p>
+/// <p>Adds one or more actions to an Actions dataset. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/importing-actions.html">Importing actions individually</a>. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutActionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

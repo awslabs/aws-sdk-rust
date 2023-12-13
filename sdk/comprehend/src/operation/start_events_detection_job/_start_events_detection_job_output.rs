@@ -6,7 +6,8 @@ pub struct StartEventsDetectionJobOutput {
     /// <p>An unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the events detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
-    /// <p><code>arn:<partition>
+    /// <p> <code>arn:
+    /// <partition>
     /// :comprehend:
     /// <region>
     /// :
@@ -15,9 +16,9 @@ pub struct StartEventsDetectionJobOutput {
     /// <job-id></job-id>
     /// </account-id>
     /// </region>
-    /// </partition></code></p>
+    /// </partition></code> </p>
     /// <p>The following is an example job ARN:</p>
-    /// <p><code>arn:aws:comprehend:us-west-2:111122223333:events-detection-job/1234abcd12ab34cd56ef1234567890ab</code></p>
+    /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:events-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
     pub job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the events detection job.</p>
     pub job_status: ::std::option::Option<crate::types::JobStatus>,
@@ -29,7 +30,8 @@ impl StartEventsDetectionJobOutput {
         self.job_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the events detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
-    /// <p><code>arn:<partition>
+    /// <p> <code>arn:
+    /// <partition>
     /// :comprehend:
     /// <region>
     /// :
@@ -38,9 +40,9 @@ impl StartEventsDetectionJobOutput {
     /// <job-id></job-id>
     /// </account-id>
     /// </region>
-    /// </partition></code></p>
+    /// </partition></code> </p>
     /// <p>The following is an example job ARN:</p>
-    /// <p><code>arn:aws:comprehend:us-west-2:111122223333:events-detection-job/1234abcd12ab34cd56ef1234567890ab</code></p>
+    /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:events-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
     pub fn job_arn(&self) -> ::std::option::Option<&str> {
         self.job_arn.as_deref()
     }
@@ -86,7 +88,8 @@ impl StartEventsDetectionJobOutputBuilder {
         &self.job_id
     }
     /// <p>The Amazon Resource Name (ARN) of the events detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
-    /// <p><code>arn:<partition>
+    /// <p> <code>arn:
+    /// <partition>
     /// :comprehend:
     /// <region>
     /// :
@@ -95,15 +98,16 @@ impl StartEventsDetectionJobOutputBuilder {
     /// <job-id></job-id>
     /// </account-id>
     /// </region>
-    /// </partition></code></p>
+    /// </partition></code> </p>
     /// <p>The following is an example job ARN:</p>
-    /// <p><code>arn:aws:comprehend:us-west-2:111122223333:events-detection-job/1234abcd12ab34cd56ef1234567890ab</code></p>
+    /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:events-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
     pub fn job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the events detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
-    /// <p><code>arn:<partition>
+    /// <p> <code>arn:
+    /// <partition>
     /// :comprehend:
     /// <region>
     /// :
@@ -112,15 +116,16 @@ impl StartEventsDetectionJobOutputBuilder {
     /// <job-id></job-id>
     /// </account-id>
     /// </region>
-    /// </partition></code></p>
+    /// </partition></code> </p>
     /// <p>The following is an example job ARN:</p>
-    /// <p><code>arn:aws:comprehend:us-west-2:111122223333:events-detection-job/1234abcd12ab34cd56ef1234567890ab</code></p>
+    /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:events-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
     pub fn set_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the events detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
-    /// <p><code>arn:<partition>
+    /// <p> <code>arn:
+    /// <partition>
     /// :comprehend:
     /// <region>
     /// :
@@ -129,9 +134,9 @@ impl StartEventsDetectionJobOutputBuilder {
     /// <job-id></job-id>
     /// </account-id>
     /// </region>
-    /// </partition></code></p>
+    /// </partition></code> </p>
     /// <p>The following is an example job ARN:</p>
-    /// <p><code>arn:aws:comprehend:us-west-2:111122223333:events-detection-job/1234abcd12ab34cd56ef1234567890ab</code></p>
+    /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:events-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
     pub fn get_job_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_arn
     }

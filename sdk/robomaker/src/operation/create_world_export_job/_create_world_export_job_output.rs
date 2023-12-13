@@ -17,19 +17,19 @@ pub struct CreateWorldExportJobOutput {
     /// Running
     /// </dt>
     /// <dd>
-    /// <p>The world export job is running.</p>
+    /// <p>The world export job is running. </p>
     /// </dd>
     /// <dt>
     /// Completed
     /// </dt>
     /// <dd>
-    /// <p>The world export job completed.</p>
+    /// <p>The world export job completed. </p>
     /// </dd>
     /// <dt>
     /// Failed
     /// </dt>
     /// <dd>
-    /// <p>The world export job failed. See <code>failureCode</code> for more information.</p>
+    /// <p>The world export job failed. See <code>failureCode</code> for more information. </p>
     /// </dd>
     /// <dt>
     /// Canceled
@@ -59,13 +59,13 @@ pub struct CreateWorldExportJobOutput {
     /// LimitExceeded
     /// </dt>
     /// <dd>
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed.</p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
     /// </dd>
     /// <dt>
     /// ResourceNotFound
     /// </dt>
     /// <dd>
-    /// <p>The specified resource could not be found.</p>
+    /// <p>The specified resource could not be found. </p>
     /// </dd>
     /// <dt>
     /// RequestThrottled
@@ -83,16 +83,16 @@ pub struct CreateWorldExportJobOutput {
     /// AllWorldGenerationFailed
     /// </dt>
     /// <dd>
-    /// <p>All of the worlds in the world generation job failed. This can happen if your <code>worldCount</code> is greater than 50 or less than 1.</p>
+    /// <p>All of the worlds in the world generation job failed. This can happen if your <code>worldCount</code> is greater than 50 or less than 1. </p>
     /// </dd>
     /// </dl>
-    /// <p>For more information about troubleshooting WorldForge, see <a href="https://docs.aws.amazon.com/robomaker/latest/dg/troubleshooting-worldforge.html">Troubleshooting Simulation WorldForge</a>.</p>
+    /// <p>For more information about troubleshooting WorldForge, see <a href="https://docs.aws.amazon.com/robomaker/latest/dg/troubleshooting-worldforge.html">Troubleshooting Simulation WorldForge</a>. </p>
     pub failure_code: ::std::option::Option<crate::types::WorldExportJobErrorCode>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The output location.</p>
     pub output_location: ::std::option::Option<crate::types::OutputLocation>,
-    /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put the export.</p>
+    /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put the export. </p>
     pub iam_role: ::std::option::Option<::std::string::String>,
     /// <p>A map that contains tag keys and tag values that are attached to the world export job.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -115,19 +115,19 @@ impl CreateWorldExportJobOutput {
     /// Running
     /// </dt>
     /// <dd>
-    /// <p>The world export job is running.</p>
+    /// <p>The world export job is running. </p>
     /// </dd>
     /// <dt>
     /// Completed
     /// </dt>
     /// <dd>
-    /// <p>The world export job completed.</p>
+    /// <p>The world export job completed. </p>
     /// </dd>
     /// <dt>
     /// Failed
     /// </dt>
     /// <dd>
-    /// <p>The world export job failed. See <code>failureCode</code> for more information.</p>
+    /// <p>The world export job failed. See <code>failureCode</code> for more information. </p>
     /// </dd>
     /// <dt>
     /// Canceled
@@ -161,13 +161,13 @@ impl CreateWorldExportJobOutput {
     /// LimitExceeded
     /// </dt>
     /// <dd>
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed.</p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
     /// </dd>
     /// <dt>
     /// ResourceNotFound
     /// </dt>
     /// <dd>
-    /// <p>The specified resource could not be found.</p>
+    /// <p>The specified resource could not be found. </p>
     /// </dd>
     /// <dt>
     /// RequestThrottled
@@ -185,10 +185,10 @@ impl CreateWorldExportJobOutput {
     /// AllWorldGenerationFailed
     /// </dt>
     /// <dd>
-    /// <p>All of the worlds in the world generation job failed. This can happen if your <code>worldCount</code> is greater than 50 or less than 1.</p>
+    /// <p>All of the worlds in the world generation job failed. This can happen if your <code>worldCount</code> is greater than 50 or less than 1. </p>
     /// </dd>
     /// </dl>
-    /// <p>For more information about troubleshooting WorldForge, see <a href="https://docs.aws.amazon.com/robomaker/latest/dg/troubleshooting-worldforge.html">Troubleshooting Simulation WorldForge</a>.</p>
+    /// <p>For more information about troubleshooting WorldForge, see <a href="https://docs.aws.amazon.com/robomaker/latest/dg/troubleshooting-worldforge.html">Troubleshooting Simulation WorldForge</a>. </p>
     pub fn failure_code(&self) -> ::std::option::Option<&crate::types::WorldExportJobErrorCode> {
         self.failure_code.as_ref()
     }
@@ -200,7 +200,7 @@ impl CreateWorldExportJobOutput {
     pub fn output_location(&self) -> ::std::option::Option<&crate::types::OutputLocation> {
         self.output_location.as_ref()
     }
-    /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put the export.</p>
+    /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put the export. </p>
     pub fn iam_role(&self) -> ::std::option::Option<&str> {
         self.iam_role.as_deref()
     }
@@ -262,19 +262,19 @@ impl CreateWorldExportJobOutputBuilder {
     /// Running
     /// </dt>
     /// <dd>
-    /// <p>The world export job is running.</p>
+    /// <p>The world export job is running. </p>
     /// </dd>
     /// <dt>
     /// Completed
     /// </dt>
     /// <dd>
-    /// <p>The world export job completed.</p>
+    /// <p>The world export job completed. </p>
     /// </dd>
     /// <dt>
     /// Failed
     /// </dt>
     /// <dd>
-    /// <p>The world export job failed. See <code>failureCode</code> for more information.</p>
+    /// <p>The world export job failed. See <code>failureCode</code> for more information. </p>
     /// </dd>
     /// <dt>
     /// Canceled
@@ -305,19 +305,19 @@ impl CreateWorldExportJobOutputBuilder {
     /// Running
     /// </dt>
     /// <dd>
-    /// <p>The world export job is running.</p>
+    /// <p>The world export job is running. </p>
     /// </dd>
     /// <dt>
     /// Completed
     /// </dt>
     /// <dd>
-    /// <p>The world export job completed.</p>
+    /// <p>The world export job completed. </p>
     /// </dd>
     /// <dt>
     /// Failed
     /// </dt>
     /// <dd>
-    /// <p>The world export job failed. See <code>failureCode</code> for more information.</p>
+    /// <p>The world export job failed. See <code>failureCode</code> for more information. </p>
     /// </dd>
     /// <dt>
     /// Canceled
@@ -348,19 +348,19 @@ impl CreateWorldExportJobOutputBuilder {
     /// Running
     /// </dt>
     /// <dd>
-    /// <p>The world export job is running.</p>
+    /// <p>The world export job is running. </p>
     /// </dd>
     /// <dt>
     /// Completed
     /// </dt>
     /// <dd>
-    /// <p>The world export job completed.</p>
+    /// <p>The world export job completed. </p>
     /// </dd>
     /// <dt>
     /// Failed
     /// </dt>
     /// <dd>
-    /// <p>The world export job failed. See <code>failureCode</code> for more information.</p>
+    /// <p>The world export job failed. See <code>failureCode</code> for more information. </p>
     /// </dd>
     /// <dt>
     /// Canceled
@@ -404,13 +404,13 @@ impl CreateWorldExportJobOutputBuilder {
     /// LimitExceeded
     /// </dt>
     /// <dd>
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed.</p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
     /// </dd>
     /// <dt>
     /// ResourceNotFound
     /// </dt>
     /// <dd>
-    /// <p>The specified resource could not be found.</p>
+    /// <p>The specified resource could not be found. </p>
     /// </dd>
     /// <dt>
     /// RequestThrottled
@@ -428,10 +428,10 @@ impl CreateWorldExportJobOutputBuilder {
     /// AllWorldGenerationFailed
     /// </dt>
     /// <dd>
-    /// <p>All of the worlds in the world generation job failed. This can happen if your <code>worldCount</code> is greater than 50 or less than 1.</p>
+    /// <p>All of the worlds in the world generation job failed. This can happen if your <code>worldCount</code> is greater than 50 or less than 1. </p>
     /// </dd>
     /// </dl>
-    /// <p>For more information about troubleshooting WorldForge, see <a href="https://docs.aws.amazon.com/robomaker/latest/dg/troubleshooting-worldforge.html">Troubleshooting Simulation WorldForge</a>.</p>
+    /// <p>For more information about troubleshooting WorldForge, see <a href="https://docs.aws.amazon.com/robomaker/latest/dg/troubleshooting-worldforge.html">Troubleshooting Simulation WorldForge</a>. </p>
     pub fn failure_code(mut self, input: crate::types::WorldExportJobErrorCode) -> Self {
         self.failure_code = ::std::option::Option::Some(input);
         self
@@ -448,13 +448,13 @@ impl CreateWorldExportJobOutputBuilder {
     /// LimitExceeded
     /// </dt>
     /// <dd>
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed.</p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
     /// </dd>
     /// <dt>
     /// ResourceNotFound
     /// </dt>
     /// <dd>
-    /// <p>The specified resource could not be found.</p>
+    /// <p>The specified resource could not be found. </p>
     /// </dd>
     /// <dt>
     /// RequestThrottled
@@ -472,10 +472,10 @@ impl CreateWorldExportJobOutputBuilder {
     /// AllWorldGenerationFailed
     /// </dt>
     /// <dd>
-    /// <p>All of the worlds in the world generation job failed. This can happen if your <code>worldCount</code> is greater than 50 or less than 1.</p>
+    /// <p>All of the worlds in the world generation job failed. This can happen if your <code>worldCount</code> is greater than 50 or less than 1. </p>
     /// </dd>
     /// </dl>
-    /// <p>For more information about troubleshooting WorldForge, see <a href="https://docs.aws.amazon.com/robomaker/latest/dg/troubleshooting-worldforge.html">Troubleshooting Simulation WorldForge</a>.</p>
+    /// <p>For more information about troubleshooting WorldForge, see <a href="https://docs.aws.amazon.com/robomaker/latest/dg/troubleshooting-worldforge.html">Troubleshooting Simulation WorldForge</a>. </p>
     pub fn set_failure_code(mut self, input: ::std::option::Option<crate::types::WorldExportJobErrorCode>) -> Self {
         self.failure_code = input;
         self
@@ -492,13 +492,13 @@ impl CreateWorldExportJobOutputBuilder {
     /// LimitExceeded
     /// </dt>
     /// <dd>
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed.</p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
     /// </dd>
     /// <dt>
     /// ResourceNotFound
     /// </dt>
     /// <dd>
-    /// <p>The specified resource could not be found.</p>
+    /// <p>The specified resource could not be found. </p>
     /// </dd>
     /// <dt>
     /// RequestThrottled
@@ -516,10 +516,10 @@ impl CreateWorldExportJobOutputBuilder {
     /// AllWorldGenerationFailed
     /// </dt>
     /// <dd>
-    /// <p>All of the worlds in the world generation job failed. This can happen if your <code>worldCount</code> is greater than 50 or less than 1.</p>
+    /// <p>All of the worlds in the world generation job failed. This can happen if your <code>worldCount</code> is greater than 50 or less than 1. </p>
     /// </dd>
     /// </dl>
-    /// <p>For more information about troubleshooting WorldForge, see <a href="https://docs.aws.amazon.com/robomaker/latest/dg/troubleshooting-worldforge.html">Troubleshooting Simulation WorldForge</a>.</p>
+    /// <p>For more information about troubleshooting WorldForge, see <a href="https://docs.aws.amazon.com/robomaker/latest/dg/troubleshooting-worldforge.html">Troubleshooting Simulation WorldForge</a>. </p>
     pub fn get_failure_code(&self) -> &::std::option::Option<crate::types::WorldExportJobErrorCode> {
         &self.failure_code
     }
@@ -551,17 +551,17 @@ impl CreateWorldExportJobOutputBuilder {
     pub fn get_output_location(&self) -> &::std::option::Option<crate::types::OutputLocation> {
         &self.output_location
     }
-    /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put the export.</p>
+    /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put the export. </p>
     pub fn iam_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_role = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put the export.</p>
+    /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put the export. </p>
     pub fn set_iam_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iam_role = input;
         self
     }
-    /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put the export.</p>
+    /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put the export. </p>
     pub fn get_iam_role(&self) -> &::std::option::Option<::std::string::String> {
         &self.iam_role
     }

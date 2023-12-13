@@ -7,7 +7,7 @@ pub struct OrderableReplicationInstance {
     /// <p>The version of the replication engine.</p>
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The compute and memory capacity of the replication instance as defined for the specified replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
-    /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>.</p>
+    /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>. </p>
     pub replication_instance_class: ::std::option::Option<::std::string::String>,
     /// <p>The type of storage used by the replication instance.</p>
     pub storage_type: ::std::option::Option<::std::string::String>,
@@ -21,7 +21,7 @@ pub struct OrderableReplicationInstance {
     pub included_allocated_storage: i32,
     /// <p>List of Availability Zones for this replication instance.</p>
     pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The value returned when the specified <code>EngineVersion</code> of the replication instance is in Beta or test mode. This indicates some features might not work as expected.</p><note>
+    /// <p>The value returned when the specified <code>EngineVersion</code> of the replication instance is in Beta or test mode. This indicates some features might not work as expected.</p> <note>
     /// <p>DMS supports the <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.</p>
     /// </note>
     pub release_status: ::std::option::Option<crate::types::ReleaseStatusValues>,
@@ -32,7 +32,7 @@ impl OrderableReplicationInstance {
         self.engine_version.as_deref()
     }
     /// <p>The compute and memory capacity of the replication instance as defined for the specified replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
-    /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>.</p>
+    /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>. </p>
     pub fn replication_instance_class(&self) -> ::std::option::Option<&str> {
         self.replication_instance_class.as_deref()
     }
@@ -62,7 +62,7 @@ impl OrderableReplicationInstance {
     pub fn availability_zones(&self) -> &[::std::string::String] {
         self.availability_zones.as_deref().unwrap_or_default()
     }
-    /// <p>The value returned when the specified <code>EngineVersion</code> of the replication instance is in Beta or test mode. This indicates some features might not work as expected.</p><note>
+    /// <p>The value returned when the specified <code>EngineVersion</code> of the replication instance is in Beta or test mode. This indicates some features might not work as expected.</p> <note>
     /// <p>DMS supports the <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.</p>
     /// </note>
     pub fn release_status(&self) -> ::std::option::Option<&crate::types::ReleaseStatusValues> {
@@ -106,19 +106,19 @@ impl OrderableReplicationInstanceBuilder {
         &self.engine_version
     }
     /// <p>The compute and memory capacity of the replication instance as defined for the specified replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
-    /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>.</p>
+    /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>. </p>
     pub fn replication_instance_class(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_instance_class = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The compute and memory capacity of the replication instance as defined for the specified replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
-    /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>.</p>
+    /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>. </p>
     pub fn set_replication_instance_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_instance_class = input;
         self
     }
     /// <p>The compute and memory capacity of the replication instance as defined for the specified replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
-    /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>.</p>
+    /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>. </p>
     pub fn get_replication_instance_class(&self) -> &::std::option::Option<::std::string::String> {
         &self.replication_instance_class
     }
@@ -212,21 +212,21 @@ impl OrderableReplicationInstanceBuilder {
     pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.availability_zones
     }
-    /// <p>The value returned when the specified <code>EngineVersion</code> of the replication instance is in Beta or test mode. This indicates some features might not work as expected.</p><note>
+    /// <p>The value returned when the specified <code>EngineVersion</code> of the replication instance is in Beta or test mode. This indicates some features might not work as expected.</p> <note>
     /// <p>DMS supports the <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.</p>
     /// </note>
     pub fn release_status(mut self, input: crate::types::ReleaseStatusValues) -> Self {
         self.release_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The value returned when the specified <code>EngineVersion</code> of the replication instance is in Beta or test mode. This indicates some features might not work as expected.</p><note>
+    /// <p>The value returned when the specified <code>EngineVersion</code> of the replication instance is in Beta or test mode. This indicates some features might not work as expected.</p> <note>
     /// <p>DMS supports the <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.</p>
     /// </note>
     pub fn set_release_status(mut self, input: ::std::option::Option<crate::types::ReleaseStatusValues>) -> Self {
         self.release_status = input;
         self
     }
-    /// <p>The value returned when the specified <code>EngineVersion</code> of the replication instance is in Beta or test mode. This indicates some features might not work as expected.</p><note>
+    /// <p>The value returned when the specified <code>EngineVersion</code> of the replication instance is in Beta or test mode. This indicates some features might not work as expected.</p> <note>
     /// <p>DMS supports the <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.</p>
     /// </note>
     pub fn get_release_status(&self) -> &::std::option::Option<crate::types::ReleaseStatusValues> {

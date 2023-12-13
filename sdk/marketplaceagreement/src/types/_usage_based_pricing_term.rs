@@ -6,7 +6,7 @@
 pub struct UsageBasedPricingTerm {
     /// <p>Category of the term.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
-    /// <p>Defines the currency for the prices mentioned in the term.</p>
+    /// <p>Defines the currency for the prices mentioned in the term. </p>
     pub currency_code: ::std::option::Option<::std::string::String>,
     /// <p>List of rate cards.</p>
     pub rate_cards: ::std::option::Option<::std::vec::Vec<crate::types::UsageBasedRateCardItem>>,
@@ -16,7 +16,7 @@ impl UsageBasedPricingTerm {
     pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
-    /// <p>Defines the currency for the prices mentioned in the term.</p>
+    /// <p>Defines the currency for the prices mentioned in the term. </p>
     pub fn currency_code(&self) -> ::std::option::Option<&str> {
         self.currency_code.as_deref()
     }
@@ -57,17 +57,17 @@ impl UsageBasedPricingTermBuilder {
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.r#type
     }
-    /// <p>Defines the currency for the prices mentioned in the term.</p>
+    /// <p>Defines the currency for the prices mentioned in the term. </p>
     pub fn currency_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.currency_code = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Defines the currency for the prices mentioned in the term.</p>
+    /// <p>Defines the currency for the prices mentioned in the term. </p>
     pub fn set_currency_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.currency_code = input;
         self
     }
-    /// <p>Defines the currency for the prices mentioned in the term.</p>
+    /// <p>Defines the currency for the prices mentioned in the term. </p>
     pub fn get_currency_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.currency_code
     }

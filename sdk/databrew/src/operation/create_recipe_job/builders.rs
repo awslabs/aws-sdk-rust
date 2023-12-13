@@ -138,10 +138,8 @@ impl CreateRecipeJobFluentBuilder {
     }
     /// <p>The encryption mode for the job, which can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p></li>
-    /// <li>
-    /// <p><code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p></li>
+    /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
+    /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
     /// </ul>
     pub fn encryption_mode(mut self, input: crate::types::EncryptionMode) -> Self {
         self.inner = self.inner.encryption_mode(input);
@@ -149,10 +147,8 @@ impl CreateRecipeJobFluentBuilder {
     }
     /// <p>The encryption mode for the job, which can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p></li>
-    /// <li>
-    /// <p><code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p></li>
+    /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
+    /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
     /// </ul>
     pub fn set_encryption_mode(mut self, input: ::std::option::Option<crate::types::EncryptionMode>) -> Self {
         self.inner = self.inner.set_encryption_mode(input);
@@ -160,10 +156,8 @@ impl CreateRecipeJobFluentBuilder {
     }
     /// <p>The encryption mode for the job, which can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p></li>
-    /// <li>
-    /// <p><code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p></li>
+    /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
+    /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
     /// </ul>
     pub fn get_encryption_mode(&self) -> &::std::option::Option<crate::types::EncryptionMode> {
         self.inner.get_encryption_mode()
@@ -264,17 +258,17 @@ impl CreateRecipeJobFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_database_outputs`](Self::set_database_outputs).
     ///
-    /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write to.</p>
+    /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write to. </p>
     pub fn database_outputs(mut self, input: crate::types::DatabaseOutput) -> Self {
         self.inner = self.inner.database_outputs(input);
         self
     }
-    /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write to.</p>
+    /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write to. </p>
     pub fn set_database_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DatabaseOutput>>) -> Self {
         self.inner = self.inner.set_database_outputs(input);
         self
     }
-    /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write to.</p>
+    /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write to. </p>
     pub fn get_database_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DatabaseOutput>> {
         self.inner.get_database_outputs()
     }

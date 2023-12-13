@@ -4,14 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) to which you want to add the tags. For example:</p>
-    /// <p><code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code></p>
+    /// <p> <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code> </p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The key-value pairs to add as tags to the specified QLDB resource. Tag keys are case sensitive. If you specify a key that already exists for the resource, your request fails and returns an error. Tag values are case sensitive and can be null.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
 }
 impl TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) to which you want to add the tags. For example:</p>
-    /// <p><code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code></p>
+    /// <p> <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code> </p>
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -36,20 +36,20 @@ pub struct TagResourceInputBuilder {
 }
 impl TagResourceInputBuilder {
     /// <p>The Amazon Resource Name (ARN) to which you want to add the tags. For example:</p>
-    /// <p><code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code></p>
+    /// <p> <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code> </p>
     /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) to which you want to add the tags. For example:</p>
-    /// <p><code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code></p>
+    /// <p> <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code> </p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) to which you want to add the tags. For example:</p>
-    /// <p><code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code></p>
+    /// <p> <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code> </p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }

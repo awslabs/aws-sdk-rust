@@ -22,7 +22,7 @@ impl CreateVoiceProfileInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateVoiceProfile`.
 ///
-/// <p>Creates a voice profile, which consists of an enrolled user and their latest voice print.</p><important>
+/// <p>Creates a voice profile, which consists of an enrolled user and their latest voice print.</p> <important>
 /// <p>Before creating any voice profiles, you must provide all notices and obtain all consents from the speaker as required under applicable privacy and biometrics laws, and as required under the <a href="https://aws.amazon.com/service-terms/">AWS service terms</a> for the Amazon Chime SDK.</p>
 /// </important>
 /// <p>For more information about voice profiles and voice analytics, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/pstn-voice-analytics.html">Using Amazon Chime SDK Voice Analytics</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p>

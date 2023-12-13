@@ -22,7 +22,7 @@ impl DescribeBundleInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeBundle`.
 ///
-/// <p>Get the bundle details for the requested bundle id.</p>
+/// <p> Get the bundle details for the requested bundle id. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeBundleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DescribeBundleFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Unique bundle identifier.</p>
+    /// <p> Unique bundle identifier. </p>
     pub fn bundle_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bundle_id(input.into());
         self
     }
-    /// <p>Unique bundle identifier.</p>
+    /// <p> Unique bundle identifier. </p>
     pub fn set_bundle_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bundle_id(input);
         self
     }
-    /// <p>Unique bundle identifier.</p>
+    /// <p> Unique bundle identifier. </p>
     pub fn get_bundle_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_bundle_id()
     }

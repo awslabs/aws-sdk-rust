@@ -5,17 +5,17 @@
 pub enum Error {
     /// <p>You are not authorized to perform the action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>A User with the same Id already exists within the collection, or the update or deletion of the User caused an inconsistent state. **</p>
+    /// <p> A User with the same Id already exists within the collection, or the update or deletion of the User caused an inconsistent state. ** </p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>The number of in-progress human reviews you have has exceeded the number allowed.</p>
     HumanLoopQuotaExceededException(crate::types::error::HumanLoopQuotaExceededException),
     /// <p>A <code>ClientRequestToken</code> input parameter was reused with an operation, but at least one of the other input parameters is different from the previous call to the operation.</p>
     IdempotentParameterMismatchException(crate::types::error::IdempotentParameterMismatchException),
-    /// <p>The input image size exceeds the allowed limit. If you are calling DetectProtectiveEquipment, the image size or resolution exceeds the allowed limit. For more information, see Guidelines and quotas in Amazon Rekognition in the Amazon Rekognition Developer Guide.</p>
+    /// <p>The input image size exceeds the allowed limit. If you are calling DetectProtectiveEquipment, the image size or resolution exceeds the allowed limit. For more information, see Guidelines and quotas in Amazon Rekognition in the Amazon Rekognition Developer Guide. </p>
     ImageTooLargeException(crate::types::error::ImageTooLargeException),
     /// <p>Amazon Rekognition experienced a service issue. Try your call again.</p>
     InternalServerError(crate::types::error::InternalServerError),
-    /// <p>The provided image format is not supported.</p>
+    /// <p>The provided image format is not supported. </p>
     InvalidImageFormatException(crate::types::error::InvalidImageFormatException),
     /// <p>Indicates that a provided manifest file is empty or larger than the allowed limit.</p>
     InvalidManifestException(crate::types::error::InvalidManifestException),
@@ -27,9 +27,9 @@ pub enum Error {
     InvalidPolicyRevisionIdException(crate::types::error::InvalidPolicyRevisionIdException),
     /// <p>Amazon Rekognition is unable to access the S3 object specified in the request.</p>
     InvalidS3ObjectException(crate::types::error::InvalidS3ObjectException),
-    /// <p>An Amazon Rekognition service limit was exceeded. For example, if you start too many jobs concurrently, subsequent calls to start operations (ex: <code>StartLabelDetection</code>) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently running jobs is below the Amazon Rekognition service limit.</p>
+    /// <p>An Amazon Rekognition service limit was exceeded. For example, if you start too many jobs concurrently, subsequent calls to start operations (ex: <code>StartLabelDetection</code>) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently running jobs is below the Amazon Rekognition service limit. </p>
     LimitExceededException(crate::types::error::LimitExceededException),
-    /// <p>The format of the project policy document that you supplied to <code>PutProjectPolicy</code> is incorrect.</p>
+    /// <p>The format of the project policy document that you supplied to <code>PutProjectPolicy</code> is incorrect. </p>
     MalformedPolicyDocumentException(crate::types::error::MalformedPolicyDocumentException),
     /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::types::error::ProvisionedThroughputExceededException),
@@ -39,16 +39,16 @@ pub enum Error {
     ResourceInUseException(crate::types::error::ResourceInUseException),
     /// <p>The resource specified in the request cannot be found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>The requested resource isn't ready. For example, this exception occurs when you call <code>DetectCustomLabels</code> with a model version that isn't deployed.</p>
+    /// <p>The requested resource isn't ready. For example, this exception occurs when you call <code>DetectCustomLabels</code> with a model version that isn't deployed. </p>
     ResourceNotReadyException(crate::types::error::ResourceNotReadyException),
     /// <p></p>
-    /// <p>The size of the collection exceeds the allowed limit. For more information, see Guidelines and quotas in Amazon Rekognition in the Amazon Rekognition Developer Guide.</p>
+    /// <p>The size of the collection exceeds the allowed limit. For more information, see Guidelines and quotas in Amazon Rekognition in the Amazon Rekognition Developer Guide. </p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>Occurs when a given sessionId is not found.</p>
     SessionNotFoundException(crate::types::error::SessionNotFoundException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
-    /// <p>The file size or duration of the supplied media is too large. The maximum file size is 10GB. The maximum duration is 6 hours.</p>
+    /// <p>The file size or duration of the supplied media is too large. The maximum file size is 10GB. The maximum duration is 6 hours. </p>
     VideoTooLargeException(crate::types::error::VideoTooLargeException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

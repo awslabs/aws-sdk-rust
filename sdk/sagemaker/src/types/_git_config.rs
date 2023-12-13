@@ -9,7 +9,7 @@ pub struct GitConfig {
     /// <p>The default branch for the Git repository.</p>
     pub branch: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the git repository. The secret must have a staging label of <code>AWSCURRENT</code> and must be in the following format:</p>
-    /// <p><code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code></p>
+    /// <p> <code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code> </p>
     pub secret_arn: ::std::option::Option<::std::string::String>,
 }
 impl GitConfig {
@@ -22,7 +22,7 @@ impl GitConfig {
         self.branch.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the git repository. The secret must have a staging label of <code>AWSCURRENT</code> and must be in the following format:</p>
-    /// <p><code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code></p>
+    /// <p> <code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code> </p>
     pub fn secret_arn(&self) -> ::std::option::Option<&str> {
         self.secret_arn.as_deref()
     }
@@ -73,19 +73,19 @@ impl GitConfigBuilder {
         &self.branch
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the git repository. The secret must have a staging label of <code>AWSCURRENT</code> and must be in the following format:</p>
-    /// <p><code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code></p>
+    /// <p> <code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code> </p>
     pub fn secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the git repository. The secret must have a staging label of <code>AWSCURRENT</code> and must be in the following format:</p>
-    /// <p><code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code></p>
+    /// <p> <code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code> </p>
     pub fn set_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the git repository. The secret must have a staging label of <code>AWSCURRENT</code> and must be in the following format:</p>
-    /// <p><code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code></p>
+    /// <p> <code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code> </p>
     pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.secret_arn
     }

@@ -245,13 +245,13 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CancelFlowExe
 pub enum CancelFlowExecutionsError {
     /// <p>AppFlow/Requester has invalid or missing permissions.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>An internal service error occurred during the processing of your request. Try again later.</p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p>The resource specified in the request (such as the source or destination connector profile) is not found.</p>
+    /// <p> The resource specified in the request (such as the source or destination connector profile) is not found. </p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>API calls have exceeded the maximum allowed API request rate per account and per Region.</p>
+    /// <p>API calls have exceeded the maximum allowed API request rate per account and per Region. </p>
     ThrottlingException(crate::types::error::ThrottlingException),
-    /// <p>The request has invalid or missing parameters.</p>
+    /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

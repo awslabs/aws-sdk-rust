@@ -14,14 +14,10 @@ pub struct ModelCard {
     pub content: ::std::option::Option<::std::string::String>,
     /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Draft</code>: The model card is a work in progress.</p></li>
-    /// <li>
-    /// <p><code>PendingReview</code>: The model card is pending review.</p></li>
-    /// <li>
-    /// <p><code>Approved</code>: The model card is approved.</p></li>
-    /// <li>
-    /// <p><code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p></li>
+    /// <li> <p> <code>Draft</code>: The model card is a work in progress.</p> </li>
+    /// <li> <p> <code>PendingReview</code>: The model card is pending review.</p> </li>
+    /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li>
+    /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li>
     /// </ul>
     pub model_card_status: ::std::option::Option<crate::types::ModelCardStatus>,
     /// <p>The security configuration used to protect model card data.</p>
@@ -40,7 +36,7 @@ pub struct ModelCard {
     pub model_id: ::std::option::Option<::std::string::String>,
     /// <p>The risk rating of the model. Different organizations might have different criteria for model card risk ratings. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards-risk-rating.html">Risk ratings</a>.</p>
     pub risk_rating: ::std::option::Option<::std::string::String>,
-    /// <p>The model package group that contains the model package. Only relevant for model cards created for model packages in the Amazon SageMaker Model Registry.</p>
+    /// <p>The model package group that contains the model package. Only relevant for model cards created for model packages in the Amazon SageMaker Model Registry. </p>
     pub model_package_group_name: ::std::option::Option<::std::string::String>,
 }
 impl ModelCard {
@@ -62,14 +58,10 @@ impl ModelCard {
     }
     /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Draft</code>: The model card is a work in progress.</p></li>
-    /// <li>
-    /// <p><code>PendingReview</code>: The model card is pending review.</p></li>
-    /// <li>
-    /// <p><code>Approved</code>: The model card is approved.</p></li>
-    /// <li>
-    /// <p><code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p></li>
+    /// <li> <p> <code>Draft</code>: The model card is a work in progress.</p> </li>
+    /// <li> <p> <code>PendingReview</code>: The model card is pending review.</p> </li>
+    /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li>
+    /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li>
     /// </ul>
     pub fn model_card_status(&self) -> ::std::option::Option<&crate::types::ModelCardStatus> {
         self.model_card_status.as_ref()
@@ -108,7 +100,7 @@ impl ModelCard {
     pub fn risk_rating(&self) -> ::std::option::Option<&str> {
         self.risk_rating.as_deref()
     }
-    /// <p>The model package group that contains the model package. Only relevant for model cards created for model packages in the Amazon SageMaker Model Registry.</p>
+    /// <p>The model package group that contains the model package. Only relevant for model cards created for model packages in the Amazon SageMaker Model Registry. </p>
     pub fn model_package_group_name(&self) -> ::std::option::Option<&str> {
         self.model_package_group_name.as_deref()
     }
@@ -218,14 +210,10 @@ impl ModelCardBuilder {
     }
     /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Draft</code>: The model card is a work in progress.</p></li>
-    /// <li>
-    /// <p><code>PendingReview</code>: The model card is pending review.</p></li>
-    /// <li>
-    /// <p><code>Approved</code>: The model card is approved.</p></li>
-    /// <li>
-    /// <p><code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p></li>
+    /// <li> <p> <code>Draft</code>: The model card is a work in progress.</p> </li>
+    /// <li> <p> <code>PendingReview</code>: The model card is pending review.</p> </li>
+    /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li>
+    /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li>
     /// </ul>
     pub fn model_card_status(mut self, input: crate::types::ModelCardStatus) -> Self {
         self.model_card_status = ::std::option::Option::Some(input);
@@ -233,14 +221,10 @@ impl ModelCardBuilder {
     }
     /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Draft</code>: The model card is a work in progress.</p></li>
-    /// <li>
-    /// <p><code>PendingReview</code>: The model card is pending review.</p></li>
-    /// <li>
-    /// <p><code>Approved</code>: The model card is approved.</p></li>
-    /// <li>
-    /// <p><code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p></li>
+    /// <li> <p> <code>Draft</code>: The model card is a work in progress.</p> </li>
+    /// <li> <p> <code>PendingReview</code>: The model card is pending review.</p> </li>
+    /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li>
+    /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li>
     /// </ul>
     pub fn set_model_card_status(mut self, input: ::std::option::Option<crate::types::ModelCardStatus>) -> Self {
         self.model_card_status = input;
@@ -248,14 +232,10 @@ impl ModelCardBuilder {
     }
     /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Draft</code>: The model card is a work in progress.</p></li>
-    /// <li>
-    /// <p><code>PendingReview</code>: The model card is pending review.</p></li>
-    /// <li>
-    /// <p><code>Approved</code>: The model card is approved.</p></li>
-    /// <li>
-    /// <p><code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p></li>
+    /// <li> <p> <code>Draft</code>: The model card is a work in progress.</p> </li>
+    /// <li> <p> <code>PendingReview</code>: The model card is pending review.</p> </li>
+    /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li>
+    /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li>
     /// </ul>
     pub fn get_model_card_status(&self) -> &::std::option::Option<crate::types::ModelCardStatus> {
         &self.model_card_status
@@ -378,17 +358,17 @@ impl ModelCardBuilder {
     pub fn get_risk_rating(&self) -> &::std::option::Option<::std::string::String> {
         &self.risk_rating
     }
-    /// <p>The model package group that contains the model package. Only relevant for model cards created for model packages in the Amazon SageMaker Model Registry.</p>
+    /// <p>The model package group that contains the model package. Only relevant for model cards created for model packages in the Amazon SageMaker Model Registry. </p>
     pub fn model_package_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_package_group_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The model package group that contains the model package. Only relevant for model cards created for model packages in the Amazon SageMaker Model Registry.</p>
+    /// <p>The model package group that contains the model package. Only relevant for model cards created for model packages in the Amazon SageMaker Model Registry. </p>
     pub fn set_model_package_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_package_group_name = input;
         self
     }
-    /// <p>The model package group that contains the model package. Only relevant for model cards created for model packages in the Amazon SageMaker Model Registry.</p>
+    /// <p>The model package group that contains the model package. Only relevant for model cards created for model packages in the Amazon SageMaker Model Registry. </p>
     pub fn get_model_package_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_package_group_name
     }

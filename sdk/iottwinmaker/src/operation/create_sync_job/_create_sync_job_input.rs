@@ -5,7 +5,7 @@
 pub struct CreateSyncJobInput {
     /// <p>The workspace ID.</p>
     pub workspace_id: ::std::option::Option<::std::string::String>,
-    /// <p>The sync source.</p><note>
+    /// <p>The sync source.</p> <note>
     /// <p>Currently the only supported syncSoource is <code>SITEWISE </code>.</p>
     /// </note>
     pub sync_source: ::std::option::Option<::std::string::String>,
@@ -19,7 +19,7 @@ impl CreateSyncJobInput {
     pub fn workspace_id(&self) -> ::std::option::Option<&str> {
         self.workspace_id.as_deref()
     }
-    /// <p>The sync source.</p><note>
+    /// <p>The sync source.</p> <note>
     /// <p>Currently the only supported syncSoource is <code>SITEWISE </code>.</p>
     /// </note>
     pub fn sync_source(&self) -> ::std::option::Option<&str> {
@@ -66,7 +66,7 @@ impl CreateSyncJobInputBuilder {
     pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.workspace_id
     }
-    /// <p>The sync source.</p><note>
+    /// <p>The sync source.</p> <note>
     /// <p>Currently the only supported syncSoource is <code>SITEWISE </code>.</p>
     /// </note>
     /// This field is required.
@@ -74,14 +74,14 @@ impl CreateSyncJobInputBuilder {
         self.sync_source = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The sync source.</p><note>
+    /// <p>The sync source.</p> <note>
     /// <p>Currently the only supported syncSoource is <code>SITEWISE </code>.</p>
     /// </note>
     pub fn set_sync_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sync_source = input;
         self
     }
-    /// <p>The sync source.</p><note>
+    /// <p>The sync source.</p> <note>
     /// <p>Currently the only supported syncSoource is <code>SITEWISE </code>.</p>
     /// </note>
     pub fn get_sync_source(&self) -> &::std::option::Option<::std::string::String> {

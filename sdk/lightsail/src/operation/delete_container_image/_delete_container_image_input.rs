@@ -6,7 +6,7 @@ pub struct DeleteContainerImageInput {
     /// <p>The name of the container service for which to delete a registered container image.</p>
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the container image to delete from the container service.</p>
-    /// <p>Use the <code>GetContainerImages</code> action to get the name of the container images that are registered to a container service.</p><note>
+    /// <p>Use the <code>GetContainerImages</code> action to get the name of the container images that are registered to a container service.</p> <note>
     /// <p>Container images sourced from your Lightsail container service, that are registered and stored on your service, start with a colon (<code>:</code>). For example, <code>:container-service-1.mystaticwebsite.1</code>. Container images sourced from a public registry like Docker Hub don't start with a colon. For example, <code>nginx:latest</code> or <code>nginx</code>.</p>
     /// </note>
     pub image: ::std::option::Option<::std::string::String>,
@@ -17,7 +17,7 @@ impl DeleteContainerImageInput {
         self.service_name.as_deref()
     }
     /// <p>The name of the container image to delete from the container service.</p>
-    /// <p>Use the <code>GetContainerImages</code> action to get the name of the container images that are registered to a container service.</p><note>
+    /// <p>Use the <code>GetContainerImages</code> action to get the name of the container images that are registered to a container service.</p> <note>
     /// <p>Container images sourced from your Lightsail container service, that are registered and stored on your service, start with a colon (<code>:</code>). For example, <code>:container-service-1.mystaticwebsite.1</code>. Container images sourced from a public registry like Docker Hub don't start with a colon. For example, <code>nginx:latest</code> or <code>nginx</code>.</p>
     /// </note>
     pub fn image(&self) -> ::std::option::Option<&str> {
@@ -55,7 +55,7 @@ impl DeleteContainerImageInputBuilder {
         &self.service_name
     }
     /// <p>The name of the container image to delete from the container service.</p>
-    /// <p>Use the <code>GetContainerImages</code> action to get the name of the container images that are registered to a container service.</p><note>
+    /// <p>Use the <code>GetContainerImages</code> action to get the name of the container images that are registered to a container service.</p> <note>
     /// <p>Container images sourced from your Lightsail container service, that are registered and stored on your service, start with a colon (<code>:</code>). For example, <code>:container-service-1.mystaticwebsite.1</code>. Container images sourced from a public registry like Docker Hub don't start with a colon. For example, <code>nginx:latest</code> or <code>nginx</code>.</p>
     /// </note>
     /// This field is required.
@@ -64,7 +64,7 @@ impl DeleteContainerImageInputBuilder {
         self
     }
     /// <p>The name of the container image to delete from the container service.</p>
-    /// <p>Use the <code>GetContainerImages</code> action to get the name of the container images that are registered to a container service.</p><note>
+    /// <p>Use the <code>GetContainerImages</code> action to get the name of the container images that are registered to a container service.</p> <note>
     /// <p>Container images sourced from your Lightsail container service, that are registered and stored on your service, start with a colon (<code>:</code>). For example, <code>:container-service-1.mystaticwebsite.1</code>. Container images sourced from a public registry like Docker Hub don't start with a colon. For example, <code>nginx:latest</code> or <code>nginx</code>.</p>
     /// </note>
     pub fn set_image(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -72,7 +72,7 @@ impl DeleteContainerImageInputBuilder {
         self
     }
     /// <p>The name of the container image to delete from the container service.</p>
-    /// <p>Use the <code>GetContainerImages</code> action to get the name of the container images that are registered to a container service.</p><note>
+    /// <p>Use the <code>GetContainerImages</code> action to get the name of the container images that are registered to a container service.</p> <note>
     /// <p>Container images sourced from your Lightsail container service, that are registered and stored on your service, start with a colon (<code>:</code>). For example, <code>:container-service-1.mystaticwebsite.1</code>. Container images sourced from a public registry like Docker Hub don't start with a colon. For example, <code>nginx:latest</code> or <code>nginx</code>.</p>
     /// </note>
     pub fn get_image(&self) -> &::std::option::Option<::std::string::String> {

@@ -6,28 +6,17 @@
 pub struct NumericalAggregationFunction {
     /// <p>Built-in aggregation functions for numerical values.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SUM</code>: The sum of a dimension or measure.</p></li>
-    /// <li>
-    /// <p><code>AVERAGE</code>: The average of a dimension or measure.</p></li>
-    /// <li>
-    /// <p><code>MIN</code>: The minimum value of a dimension or measure.</p></li>
-    /// <li>
-    /// <p><code>MAX</code>: The maximum value of a dimension or measure.</p></li>
-    /// <li>
-    /// <p><code>COUNT</code>: The count of a dimension or measure.</p></li>
-    /// <li>
-    /// <p><code>DISTINCT_COUNT</code>: The count of distinct values in a dimension or measure.</p></li>
-    /// <li>
-    /// <p><code>VAR</code>: The variance of a dimension or measure.</p></li>
-    /// <li>
-    /// <p><code>VARP</code>: The partitioned variance of a dimension or measure.</p></li>
-    /// <li>
-    /// <p><code>STDEV</code>: The standard deviation of a dimension or measure.</p></li>
-    /// <li>
-    /// <p><code>STDEVP</code>: The partitioned standard deviation of a dimension or measure.</p></li>
-    /// <li>
-    /// <p><code>MEDIAN</code>: The median value of a dimension or measure.</p></li>
+    /// <li> <p> <code>SUM</code>: The sum of a dimension or measure. </p> </li>
+    /// <li> <p> <code>AVERAGE</code>: The average of a dimension or measure.</p> </li>
+    /// <li> <p> <code>MIN</code>: The minimum value of a dimension or measure.</p> </li>
+    /// <li> <p> <code>MAX</code>: The maximum value of a dimension or measure.</p> </li>
+    /// <li> <p> <code>COUNT</code>: The count of a dimension or measure.</p> </li>
+    /// <li> <p> <code>DISTINCT_COUNT</code>: The count of distinct values in a dimension or measure.</p> </li>
+    /// <li> <p> <code>VAR</code>: The variance of a dimension or measure.</p> </li>
+    /// <li> <p> <code>VARP</code>: The partitioned variance of a dimension or measure.</p> </li>
+    /// <li> <p> <code>STDEV</code>: The standard deviation of a dimension or measure.</p> </li>
+    /// <li> <p> <code>STDEVP</code>: The partitioned standard deviation of a dimension or measure.</p> </li>
+    /// <li> <p> <code>MEDIAN</code>: The median value of a dimension or measure.</p> </li>
     /// </ul>
     pub simple_numerical_aggregation: ::std::option::Option<crate::types::SimpleNumericalAggregationFunction>,
     /// <p>An aggregation based on the percentile of values in a dimension or measure.</p>
@@ -36,28 +25,17 @@ pub struct NumericalAggregationFunction {
 impl NumericalAggregationFunction {
     /// <p>Built-in aggregation functions for numerical values.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SUM</code>: The sum of a dimension or measure.</p></li>
-    /// <li>
-    /// <p><code>AVERAGE</code>: The average of a dimension or measure.</p></li>
-    /// <li>
-    /// <p><code>MIN</code>: The minimum value of a dimension or measure.</p></li>
-    /// <li>
-    /// <p><code>MAX</code>: The maximum value of a dimension or measure.</p></li>
-    /// <li>
-    /// <p><code>COUNT</code>: The count of a dimension or measure.</p></li>
-    /// <li>
-    /// <p><code>DISTINCT_COUNT</code>: The count of distinct values in a dimension or measure.</p></li>
-    /// <li>
-    /// <p><code>VAR</code>: The variance of a dimension or measure.</p></li>
-    /// <li>
-    /// <p><code>VARP</code>: The partitioned variance of a dimension or measure.</p></li>
-    /// <li>
-    /// <p><code>STDEV</code>: The standard deviation of a dimension or measure.</p></li>
-    /// <li>
-    /// <p><code>STDEVP</code>: The partitioned standard deviation of a dimension or measure.</p></li>
-    /// <li>
-    /// <p><code>MEDIAN</code>: The median value of a dimension or measure.</p></li>
+    /// <li> <p> <code>SUM</code>: The sum of a dimension or measure. </p> </li>
+    /// <li> <p> <code>AVERAGE</code>: The average of a dimension or measure.</p> </li>
+    /// <li> <p> <code>MIN</code>: The minimum value of a dimension or measure.</p> </li>
+    /// <li> <p> <code>MAX</code>: The maximum value of a dimension or measure.</p> </li>
+    /// <li> <p> <code>COUNT</code>: The count of a dimension or measure.</p> </li>
+    /// <li> <p> <code>DISTINCT_COUNT</code>: The count of distinct values in a dimension or measure.</p> </li>
+    /// <li> <p> <code>VAR</code>: The variance of a dimension or measure.</p> </li>
+    /// <li> <p> <code>VARP</code>: The partitioned variance of a dimension or measure.</p> </li>
+    /// <li> <p> <code>STDEV</code>: The standard deviation of a dimension or measure.</p> </li>
+    /// <li> <p> <code>STDEVP</code>: The partitioned standard deviation of a dimension or measure.</p> </li>
+    /// <li> <p> <code>MEDIAN</code>: The median value of a dimension or measure.</p> </li>
     /// </ul>
     pub fn simple_numerical_aggregation(&self) -> ::std::option::Option<&crate::types::SimpleNumericalAggregationFunction> {
         self.simple_numerical_aggregation.as_ref()
@@ -84,28 +62,17 @@ pub struct NumericalAggregationFunctionBuilder {
 impl NumericalAggregationFunctionBuilder {
     /// <p>Built-in aggregation functions for numerical values.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SUM</code>: The sum of a dimension or measure.</p></li>
-    /// <li>
-    /// <p><code>AVERAGE</code>: The average of a dimension or measure.</p></li>
-    /// <li>
-    /// <p><code>MIN</code>: The minimum value of a dimension or measure.</p></li>
-    /// <li>
-    /// <p><code>MAX</code>: The maximum value of a dimension or measure.</p></li>
-    /// <li>
-    /// <p><code>COUNT</code>: The count of a dimension or measure.</p></li>
-    /// <li>
-    /// <p><code>DISTINCT_COUNT</code>: The count of distinct values in a dimension or measure.</p></li>
-    /// <li>
-    /// <p><code>VAR</code>: The variance of a dimension or measure.</p></li>
-    /// <li>
-    /// <p><code>VARP</code>: The partitioned variance of a dimension or measure.</p></li>
-    /// <li>
-    /// <p><code>STDEV</code>: The standard deviation of a dimension or measure.</p></li>
-    /// <li>
-    /// <p><code>STDEVP</code>: The partitioned standard deviation of a dimension or measure.</p></li>
-    /// <li>
-    /// <p><code>MEDIAN</code>: The median value of a dimension or measure.</p></li>
+    /// <li> <p> <code>SUM</code>: The sum of a dimension or measure. </p> </li>
+    /// <li> <p> <code>AVERAGE</code>: The average of a dimension or measure.</p> </li>
+    /// <li> <p> <code>MIN</code>: The minimum value of a dimension or measure.</p> </li>
+    /// <li> <p> <code>MAX</code>: The maximum value of a dimension or measure.</p> </li>
+    /// <li> <p> <code>COUNT</code>: The count of a dimension or measure.</p> </li>
+    /// <li> <p> <code>DISTINCT_COUNT</code>: The count of distinct values in a dimension or measure.</p> </li>
+    /// <li> <p> <code>VAR</code>: The variance of a dimension or measure.</p> </li>
+    /// <li> <p> <code>VARP</code>: The partitioned variance of a dimension or measure.</p> </li>
+    /// <li> <p> <code>STDEV</code>: The standard deviation of a dimension or measure.</p> </li>
+    /// <li> <p> <code>STDEVP</code>: The partitioned standard deviation of a dimension or measure.</p> </li>
+    /// <li> <p> <code>MEDIAN</code>: The median value of a dimension or measure.</p> </li>
     /// </ul>
     pub fn simple_numerical_aggregation(mut self, input: crate::types::SimpleNumericalAggregationFunction) -> Self {
         self.simple_numerical_aggregation = ::std::option::Option::Some(input);
@@ -113,28 +80,17 @@ impl NumericalAggregationFunctionBuilder {
     }
     /// <p>Built-in aggregation functions for numerical values.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SUM</code>: The sum of a dimension or measure.</p></li>
-    /// <li>
-    /// <p><code>AVERAGE</code>: The average of a dimension or measure.</p></li>
-    /// <li>
-    /// <p><code>MIN</code>: The minimum value of a dimension or measure.</p></li>
-    /// <li>
-    /// <p><code>MAX</code>: The maximum value of a dimension or measure.</p></li>
-    /// <li>
-    /// <p><code>COUNT</code>: The count of a dimension or measure.</p></li>
-    /// <li>
-    /// <p><code>DISTINCT_COUNT</code>: The count of distinct values in a dimension or measure.</p></li>
-    /// <li>
-    /// <p><code>VAR</code>: The variance of a dimension or measure.</p></li>
-    /// <li>
-    /// <p><code>VARP</code>: The partitioned variance of a dimension or measure.</p></li>
-    /// <li>
-    /// <p><code>STDEV</code>: The standard deviation of a dimension or measure.</p></li>
-    /// <li>
-    /// <p><code>STDEVP</code>: The partitioned standard deviation of a dimension or measure.</p></li>
-    /// <li>
-    /// <p><code>MEDIAN</code>: The median value of a dimension or measure.</p></li>
+    /// <li> <p> <code>SUM</code>: The sum of a dimension or measure. </p> </li>
+    /// <li> <p> <code>AVERAGE</code>: The average of a dimension or measure.</p> </li>
+    /// <li> <p> <code>MIN</code>: The minimum value of a dimension or measure.</p> </li>
+    /// <li> <p> <code>MAX</code>: The maximum value of a dimension or measure.</p> </li>
+    /// <li> <p> <code>COUNT</code>: The count of a dimension or measure.</p> </li>
+    /// <li> <p> <code>DISTINCT_COUNT</code>: The count of distinct values in a dimension or measure.</p> </li>
+    /// <li> <p> <code>VAR</code>: The variance of a dimension or measure.</p> </li>
+    /// <li> <p> <code>VARP</code>: The partitioned variance of a dimension or measure.</p> </li>
+    /// <li> <p> <code>STDEV</code>: The standard deviation of a dimension or measure.</p> </li>
+    /// <li> <p> <code>STDEVP</code>: The partitioned standard deviation of a dimension or measure.</p> </li>
+    /// <li> <p> <code>MEDIAN</code>: The median value of a dimension or measure.</p> </li>
     /// </ul>
     pub fn set_simple_numerical_aggregation(mut self, input: ::std::option::Option<crate::types::SimpleNumericalAggregationFunction>) -> Self {
         self.simple_numerical_aggregation = input;
@@ -142,28 +98,17 @@ impl NumericalAggregationFunctionBuilder {
     }
     /// <p>Built-in aggregation functions for numerical values.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SUM</code>: The sum of a dimension or measure.</p></li>
-    /// <li>
-    /// <p><code>AVERAGE</code>: The average of a dimension or measure.</p></li>
-    /// <li>
-    /// <p><code>MIN</code>: The minimum value of a dimension or measure.</p></li>
-    /// <li>
-    /// <p><code>MAX</code>: The maximum value of a dimension or measure.</p></li>
-    /// <li>
-    /// <p><code>COUNT</code>: The count of a dimension or measure.</p></li>
-    /// <li>
-    /// <p><code>DISTINCT_COUNT</code>: The count of distinct values in a dimension or measure.</p></li>
-    /// <li>
-    /// <p><code>VAR</code>: The variance of a dimension or measure.</p></li>
-    /// <li>
-    /// <p><code>VARP</code>: The partitioned variance of a dimension or measure.</p></li>
-    /// <li>
-    /// <p><code>STDEV</code>: The standard deviation of a dimension or measure.</p></li>
-    /// <li>
-    /// <p><code>STDEVP</code>: The partitioned standard deviation of a dimension or measure.</p></li>
-    /// <li>
-    /// <p><code>MEDIAN</code>: The median value of a dimension or measure.</p></li>
+    /// <li> <p> <code>SUM</code>: The sum of a dimension or measure. </p> </li>
+    /// <li> <p> <code>AVERAGE</code>: The average of a dimension or measure.</p> </li>
+    /// <li> <p> <code>MIN</code>: The minimum value of a dimension or measure.</p> </li>
+    /// <li> <p> <code>MAX</code>: The maximum value of a dimension or measure.</p> </li>
+    /// <li> <p> <code>COUNT</code>: The count of a dimension or measure.</p> </li>
+    /// <li> <p> <code>DISTINCT_COUNT</code>: The count of distinct values in a dimension or measure.</p> </li>
+    /// <li> <p> <code>VAR</code>: The variance of a dimension or measure.</p> </li>
+    /// <li> <p> <code>VARP</code>: The partitioned variance of a dimension or measure.</p> </li>
+    /// <li> <p> <code>STDEV</code>: The standard deviation of a dimension or measure.</p> </li>
+    /// <li> <p> <code>STDEVP</code>: The partitioned standard deviation of a dimension or measure.</p> </li>
+    /// <li> <p> <code>MEDIAN</code>: The median value of a dimension or measure.</p> </li>
     /// </ul>
     pub fn get_simple_numerical_aggregation(&self) -> &::std::option::Option<crate::types::SimpleNumericalAggregationFunction> {
         &self.simple_numerical_aggregation

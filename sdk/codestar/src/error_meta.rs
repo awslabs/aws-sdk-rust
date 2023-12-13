@@ -23,7 +23,7 @@ pub enum Error {
     TeamMemberAlreadyAssociatedException(crate::types::error::TeamMemberAlreadyAssociatedException),
     /// <p>The specified team member was not found.</p>
     TeamMemberNotFoundException(crate::types::error::TeamMemberNotFoundException),
-    /// <p>A user profile with that name already exists in this region for the AWS account. AWS CodeStar user profile names must be unique within a region for the AWS account.</p>
+    /// <p>A user profile with that name already exists in this region for the AWS account. AWS CodeStar user profile names must be unique within a region for the AWS account. </p>
     UserProfileAlreadyExistsException(crate::types::error::UserProfileAlreadyExistsException),
     /// <p>The user profile was not found.</p>
     UserProfileNotFoundException(crate::types::error::UserProfileNotFoundException),

@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Data {
-    /// <p>This field determines the Performance Insights metric to render for the insight. The <code>name</code> field refers to a Performance Insights metric.</p>
+    /// <p>This field determines the Performance Insights metric to render for the insight. The <code>name</code> field refers to a Performance Insights metric. </p>
     pub performance_insights_metric: ::std::option::Option<crate::types::PerformanceInsightsMetric>,
 }
 impl Data {
-    /// <p>This field determines the Performance Insights metric to render for the insight. The <code>name</code> field refers to a Performance Insights metric.</p>
+    /// <p>This field determines the Performance Insights metric to render for the insight. The <code>name</code> field refers to a Performance Insights metric. </p>
     pub fn performance_insights_metric(&self) -> ::std::option::Option<&crate::types::PerformanceInsightsMetric> {
         self.performance_insights_metric.as_ref()
     }
@@ -27,17 +27,17 @@ pub struct DataBuilder {
     pub(crate) performance_insights_metric: ::std::option::Option<crate::types::PerformanceInsightsMetric>,
 }
 impl DataBuilder {
-    /// <p>This field determines the Performance Insights metric to render for the insight. The <code>name</code> field refers to a Performance Insights metric.</p>
+    /// <p>This field determines the Performance Insights metric to render for the insight. The <code>name</code> field refers to a Performance Insights metric. </p>
     pub fn performance_insights_metric(mut self, input: crate::types::PerformanceInsightsMetric) -> Self {
         self.performance_insights_metric = ::std::option::Option::Some(input);
         self
     }
-    /// <p>This field determines the Performance Insights metric to render for the insight. The <code>name</code> field refers to a Performance Insights metric.</p>
+    /// <p>This field determines the Performance Insights metric to render for the insight. The <code>name</code> field refers to a Performance Insights metric. </p>
     pub fn set_performance_insights_metric(mut self, input: ::std::option::Option<crate::types::PerformanceInsightsMetric>) -> Self {
         self.performance_insights_metric = input;
         self
     }
-    /// <p>This field determines the Performance Insights metric to render for the insight. The <code>name</code> field refers to a Performance Insights metric.</p>
+    /// <p>This field determines the Performance Insights metric to render for the insight. The <code>name</code> field refers to a Performance Insights metric. </p>
     pub fn get_performance_insights_metric(&self) -> &::std::option::Option<crate::types::PerformanceInsightsMetric> {
         &self.performance_insights_metric
     }

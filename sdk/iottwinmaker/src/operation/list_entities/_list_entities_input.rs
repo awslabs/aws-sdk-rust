@@ -5,7 +5,7 @@
 pub struct ListEntitiesInput {
     /// <p>The ID of the workspace.</p>
     pub workspace_id: ::std::option::Option<::std::string::String>,
-    /// <p>A list of objects that filter the request.</p><note>
+    /// <p>A list of objects that filter the request.</p> <note>
     /// <p>Only one object is accepted as a valid input.</p>
     /// </note>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::ListEntitiesFilter>>,
@@ -20,7 +20,7 @@ impl ListEntitiesInput {
     pub fn workspace_id(&self) -> ::std::option::Option<&str> {
         self.workspace_id.as_deref()
     }
-    /// <p>A list of objects that filter the request.</p><note>
+    /// <p>A list of objects that filter the request.</p> <note>
     /// <p>Only one object is accepted as a valid input.</p>
     /// </note>
     ///
@@ -74,7 +74,7 @@ impl ListEntitiesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>A list of objects that filter the request.</p><note>
+    /// <p>A list of objects that filter the request.</p> <note>
     /// <p>Only one object is accepted as a valid input.</p>
     /// </note>
     pub fn filters(mut self, input: crate::types::ListEntitiesFilter) -> Self {
@@ -83,14 +83,14 @@ impl ListEntitiesInputBuilder {
         self.filters = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of objects that filter the request.</p><note>
+    /// <p>A list of objects that filter the request.</p> <note>
     /// <p>Only one object is accepted as a valid input.</p>
     /// </note>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListEntitiesFilter>>) -> Self {
         self.filters = input;
         self
     }
-    /// <p>A list of objects that filter the request.</p><note>
+    /// <p>A list of objects that filter the request.</p> <note>
     /// <p>Only one object is accepted as a valid input.</p>
     /// </note>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListEntitiesFilter>> {

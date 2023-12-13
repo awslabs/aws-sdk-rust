@@ -6,7 +6,7 @@
 pub struct DurationSinceLastAccess {
     /// <p>The unit of time used by the <code>Value</code> parameter to determine if a file can be released, based on when it was last accessed. <code>DAYS</code> is the only supported value. This is a required parameter.</p>
     pub unit: ::std::option::Option<crate::types::Unit>,
-    /// <p>An integer that represents the minimum amount of time (in days) since a file was last accessed in the file system. Only exported files with a <code>MAX(atime, ctime, mtime)</code> timestamp that is more than this amount of time in the past (relative to the task create time) will be released. The default of <code>Value</code> is <code>0</code>. This is a required parameter.</p><note>
+    /// <p>An integer that represents the minimum amount of time (in days) since a file was last accessed in the file system. Only exported files with a <code>MAX(atime, ctime, mtime)</code> timestamp that is more than this amount of time in the past (relative to the task create time) will be released. The default of <code>Value</code> is <code>0</code>. This is a required parameter.</p> <note>
     /// <p>If an exported file meets the last accessed time criteria, its file or directory path must also be specified in the <code>Paths</code> parameter of the operation in order for the file to be released.</p>
     /// </note>
     pub value: ::std::option::Option<i64>,
@@ -16,7 +16,7 @@ impl DurationSinceLastAccess {
     pub fn unit(&self) -> ::std::option::Option<&crate::types::Unit> {
         self.unit.as_ref()
     }
-    /// <p>An integer that represents the minimum amount of time (in days) since a file was last accessed in the file system. Only exported files with a <code>MAX(atime, ctime, mtime)</code> timestamp that is more than this amount of time in the past (relative to the task create time) will be released. The default of <code>Value</code> is <code>0</code>. This is a required parameter.</p><note>
+    /// <p>An integer that represents the minimum amount of time (in days) since a file was last accessed in the file system. Only exported files with a <code>MAX(atime, ctime, mtime)</code> timestamp that is more than this amount of time in the past (relative to the task create time) will be released. The default of <code>Value</code> is <code>0</code>. This is a required parameter.</p> <note>
     /// <p>If an exported file meets the last accessed time criteria, its file or directory path must also be specified in the <code>Paths</code> parameter of the operation in order for the file to be released.</p>
     /// </note>
     pub fn value(&self) -> ::std::option::Option<i64> {
@@ -52,21 +52,21 @@ impl DurationSinceLastAccessBuilder {
     pub fn get_unit(&self) -> &::std::option::Option<crate::types::Unit> {
         &self.unit
     }
-    /// <p>An integer that represents the minimum amount of time (in days) since a file was last accessed in the file system. Only exported files with a <code>MAX(atime, ctime, mtime)</code> timestamp that is more than this amount of time in the past (relative to the task create time) will be released. The default of <code>Value</code> is <code>0</code>. This is a required parameter.</p><note>
+    /// <p>An integer that represents the minimum amount of time (in days) since a file was last accessed in the file system. Only exported files with a <code>MAX(atime, ctime, mtime)</code> timestamp that is more than this amount of time in the past (relative to the task create time) will be released. The default of <code>Value</code> is <code>0</code>. This is a required parameter.</p> <note>
     /// <p>If an exported file meets the last accessed time criteria, its file or directory path must also be specified in the <code>Paths</code> parameter of the operation in order for the file to be released.</p>
     /// </note>
     pub fn value(mut self, input: i64) -> Self {
         self.value = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An integer that represents the minimum amount of time (in days) since a file was last accessed in the file system. Only exported files with a <code>MAX(atime, ctime, mtime)</code> timestamp that is more than this amount of time in the past (relative to the task create time) will be released. The default of <code>Value</code> is <code>0</code>. This is a required parameter.</p><note>
+    /// <p>An integer that represents the minimum amount of time (in days) since a file was last accessed in the file system. Only exported files with a <code>MAX(atime, ctime, mtime)</code> timestamp that is more than this amount of time in the past (relative to the task create time) will be released. The default of <code>Value</code> is <code>0</code>. This is a required parameter.</p> <note>
     /// <p>If an exported file meets the last accessed time criteria, its file or directory path must also be specified in the <code>Paths</code> parameter of the operation in order for the file to be released.</p>
     /// </note>
     pub fn set_value(mut self, input: ::std::option::Option<i64>) -> Self {
         self.value = input;
         self
     }
-    /// <p>An integer that represents the minimum amount of time (in days) since a file was last accessed in the file system. Only exported files with a <code>MAX(atime, ctime, mtime)</code> timestamp that is more than this amount of time in the past (relative to the task create time) will be released. The default of <code>Value</code> is <code>0</code>. This is a required parameter.</p><note>
+    /// <p>An integer that represents the minimum amount of time (in days) since a file was last accessed in the file system. Only exported files with a <code>MAX(atime, ctime, mtime)</code> timestamp that is more than this amount of time in the past (relative to the task create time) will be released. The default of <code>Value</code> is <code>0</code>. This is a required parameter.</p> <note>
     /// <p>If an exported file meets the last accessed time criteria, its file or directory path must also be specified in the <code>Paths</code> parameter of the operation in order for the file to be released.</p>
     /// </note>
     pub fn get_value(&self) -> &::std::option::Option<i64> {

@@ -248,19 +248,19 @@ pub enum ModifyDBInstanceError {
     #[allow(missing_docs)] // documentation missing in model
     #[deprecated(note = "Please avoid using this fault")]
     BackupPolicyNotFoundFault(crate::types::error::BackupPolicyNotFoundFault),
-    /// <p><code>CertificateIdentifier</code> doesn't refer to an existing certificate.</p>
+    /// <p> <code>CertificateIdentifier</code> doesn't refer to an existing certificate.</p>
     CertificateNotFoundFault(crate::types::error::CertificateNotFoundFault),
     /// <p>The user already has a DB instance with the given identifier.</p>
     DbInstanceAlreadyExistsFault(crate::types::error::DbInstanceAlreadyExistsFault),
-    /// <p><code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
+    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
     DbInstanceNotFoundFault(crate::types::error::DbInstanceNotFoundFault),
-    /// <p><code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.</p>
+    /// <p> <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.</p>
     DbParameterGroupNotFoundFault(crate::types::error::DbParameterGroupNotFoundFault),
-    /// <p><code>DBSecurityGroupName</code> doesn't refer to an existing DB security group.</p>
+    /// <p> <code>DBSecurityGroupName</code> doesn't refer to an existing DB security group.</p>
     DbSecurityGroupNotFoundFault(crate::types::error::DbSecurityGroupNotFoundFault),
     /// <p>The DB upgrade failed because a resource the DB depends on can't be modified.</p>
     DbUpgradeDependencyFailureFault(crate::types::error::DbUpgradeDependencyFailureFault),
-    /// <p><code>Domain</code> doesn't refer to an existing Active Directory domain.</p>
+    /// <p> <code>Domain</code> doesn't refer to an existing Active Directory domain.</p>
     DomainNotFoundFault(crate::types::error::DomainNotFoundFault),
     /// <p>The specified DB instance class isn't available in the specified Availability Zone.</p>
     InsufficientDbInstanceCapacityFault(crate::types::error::InsufficientDbInstanceCapacityFault),

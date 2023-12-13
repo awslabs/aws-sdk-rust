@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ForwardingConfig {
-    /// <p>The forwarding state for the given property.</p>
+    /// <p>The forwarding state for the given property. </p>
     pub state: crate::types::ForwardingConfigState,
 }
 impl ForwardingConfig {
-    /// <p>The forwarding state for the given property.</p>
+    /// <p>The forwarding state for the given property. </p>
     pub fn state(&self) -> &crate::types::ForwardingConfigState {
         &self.state
     }
@@ -27,18 +27,18 @@ pub struct ForwardingConfigBuilder {
     pub(crate) state: ::std::option::Option<crate::types::ForwardingConfigState>,
 }
 impl ForwardingConfigBuilder {
-    /// <p>The forwarding state for the given property.</p>
+    /// <p>The forwarding state for the given property. </p>
     /// This field is required.
     pub fn state(mut self, input: crate::types::ForwardingConfigState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The forwarding state for the given property.</p>
+    /// <p>The forwarding state for the given property. </p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ForwardingConfigState>) -> Self {
         self.state = input;
         self
     }
-    /// <p>The forwarding state for the given property.</p>
+    /// <p>The forwarding state for the given property. </p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ForwardingConfigState> {
         &self.state
     }

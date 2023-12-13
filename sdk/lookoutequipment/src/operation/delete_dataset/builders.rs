@@ -22,7 +22,7 @@ impl DeleteDatasetInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteDataset`.
 ///
-/// <p>Deletes a dataset and associated artifacts. The operation will check to see if any inference scheduler or data ingestion job is currently using the dataset, and if there isn't, the dataset, its metadata, and any associated data stored in S3 will be deleted. This does not affect any models that used this dataset for training and evaluation, but does prevent it from being used in the future.</p>
+/// <p> Deletes a dataset and associated artifacts. The operation will check to see if any inference scheduler or data ingestion job is currently using the dataset, and if there isn't, the dataset, its metadata, and any associated data stored in S3 will be deleted. This does not affect any models that used this dataset for training and evaluation, but does prevent it from being used in the future. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteDatasetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DeleteDatasetFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the dataset to be deleted.</p>
+    /// <p>The name of the dataset to be deleted. </p>
     pub fn dataset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dataset_name(input.into());
         self
     }
-    /// <p>The name of the dataset to be deleted.</p>
+    /// <p>The name of the dataset to be deleted. </p>
     pub fn set_dataset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dataset_name(input);
         self
     }
-    /// <p>The name of the dataset to be deleted.</p>
+    /// <p>The name of the dataset to be deleted. </p>
     pub fn get_dataset_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_dataset_name()
     }

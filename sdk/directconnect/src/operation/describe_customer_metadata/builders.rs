@@ -22,7 +22,7 @@ impl DescribeCustomerMetadataInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeCustomerMetadata`.
 ///
-/// <p>Get and view a list of customer agreements, along with their signed status and whether the customer is an NNIPartner, NNIPartnerV2, or a nonPartner.</p>
+/// <p>Get and view a list of customer agreements, along with their signed status and whether the customer is an NNIPartner, NNIPartnerV2, or a nonPartner. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeCustomerMetadataFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

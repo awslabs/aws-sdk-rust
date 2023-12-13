@@ -22,7 +22,7 @@ impl DescribeApplicationVersionInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeApplicationVersion`.
 ///
-/// <p>Provides a detailed description of a specified version of the application. To see a list of all the versions of an application, invoke the <code>ListApplicationVersions</code> operation.</p><note>
+/// <p>Provides a detailed description of a specified version of the application. To see a list of all the versions of an application, invoke the <code>ListApplicationVersions</code> operation.</p> <note>
 /// <p>This operation is supported only for Amazon Kinesis Data Analytics for Apache Flink.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

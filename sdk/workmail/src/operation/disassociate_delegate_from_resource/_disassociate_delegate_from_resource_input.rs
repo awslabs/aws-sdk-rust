@@ -5,26 +5,20 @@
 pub struct DisassociateDelegateFromResourceInput {
     /// <p>The identifier for the organization under which the resource exists.</p>
     pub organization_id: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of the resource from which delegates' set members are removed.</p>
+    /// <p>The identifier of the resource from which delegates' set members are removed. </p>
     /// <p>The identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>. The following identity formats are available:</p>
     /// <ul>
-    /// <li>
-    /// <p>Resource ID: r-0123456789a0123456789b0123456789</p></li>
-    /// <li>
-    /// <p>Email address: resource@domain.tld</p></li>
-    /// <li>
-    /// <p>Resource name: resource</p></li>
+    /// <li> <p>Resource ID: r-0123456789a0123456789b0123456789</p> </li>
+    /// <li> <p>Email address: resource@domain.tld</p> </li>
+    /// <li> <p>Resource name: resource</p> </li>
     /// </ul>
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the member (user, group) to be removed from the resource's delegates.</p>
     /// <p>The entity ID can accept <i>UserId or GroupID</i>, <i>Username or Groupname</i>, or <i>email</i>.</p>
     /// <ul>
-    /// <li>
-    /// <p>Entity: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p></li>
-    /// <li>
-    /// <p>Email address: entity@domain.tld</p></li>
-    /// <li>
-    /// <p>Entity: entity</p></li>
+    /// <li> <p>Entity: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p> </li>
+    /// <li> <p>Email address: entity@domain.tld</p> </li>
+    /// <li> <p>Entity: entity</p> </li>
     /// </ul>
     pub entity_id: ::std::option::Option<::std::string::String>,
 }
@@ -33,15 +27,12 @@ impl DisassociateDelegateFromResourceInput {
     pub fn organization_id(&self) -> ::std::option::Option<&str> {
         self.organization_id.as_deref()
     }
-    /// <p>The identifier of the resource from which delegates' set members are removed.</p>
+    /// <p>The identifier of the resource from which delegates' set members are removed. </p>
     /// <p>The identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>. The following identity formats are available:</p>
     /// <ul>
-    /// <li>
-    /// <p>Resource ID: r-0123456789a0123456789b0123456789</p></li>
-    /// <li>
-    /// <p>Email address: resource@domain.tld</p></li>
-    /// <li>
-    /// <p>Resource name: resource</p></li>
+    /// <li> <p>Resource ID: r-0123456789a0123456789b0123456789</p> </li>
+    /// <li> <p>Email address: resource@domain.tld</p> </li>
+    /// <li> <p>Resource name: resource</p> </li>
     /// </ul>
     pub fn resource_id(&self) -> ::std::option::Option<&str> {
         self.resource_id.as_deref()
@@ -49,12 +40,9 @@ impl DisassociateDelegateFromResourceInput {
     /// <p>The identifier for the member (user, group) to be removed from the resource's delegates.</p>
     /// <p>The entity ID can accept <i>UserId or GroupID</i>, <i>Username or Groupname</i>, or <i>email</i>.</p>
     /// <ul>
-    /// <li>
-    /// <p>Entity: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p></li>
-    /// <li>
-    /// <p>Email address: entity@domain.tld</p></li>
-    /// <li>
-    /// <p>Entity: entity</p></li>
+    /// <li> <p>Entity: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p> </li>
+    /// <li> <p>Email address: entity@domain.tld</p> </li>
+    /// <li> <p>Entity: entity</p> </li>
     /// </ul>
     pub fn entity_id(&self) -> ::std::option::Option<&str> {
         self.entity_id.as_deref()
@@ -91,44 +79,35 @@ impl DisassociateDelegateFromResourceInputBuilder {
     pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.organization_id
     }
-    /// <p>The identifier of the resource from which delegates' set members are removed.</p>
+    /// <p>The identifier of the resource from which delegates' set members are removed. </p>
     /// <p>The identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>. The following identity formats are available:</p>
     /// <ul>
-    /// <li>
-    /// <p>Resource ID: r-0123456789a0123456789b0123456789</p></li>
-    /// <li>
-    /// <p>Email address: resource@domain.tld</p></li>
-    /// <li>
-    /// <p>Resource name: resource</p></li>
+    /// <li> <p>Resource ID: r-0123456789a0123456789b0123456789</p> </li>
+    /// <li> <p>Email address: resource@domain.tld</p> </li>
+    /// <li> <p>Resource name: resource</p> </li>
     /// </ul>
     /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the resource from which delegates' set members are removed.</p>
+    /// <p>The identifier of the resource from which delegates' set members are removed. </p>
     /// <p>The identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>. The following identity formats are available:</p>
     /// <ul>
-    /// <li>
-    /// <p>Resource ID: r-0123456789a0123456789b0123456789</p></li>
-    /// <li>
-    /// <p>Email address: resource@domain.tld</p></li>
-    /// <li>
-    /// <p>Resource name: resource</p></li>
+    /// <li> <p>Resource ID: r-0123456789a0123456789b0123456789</p> </li>
+    /// <li> <p>Email address: resource@domain.tld</p> </li>
+    /// <li> <p>Resource name: resource</p> </li>
     /// </ul>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
     }
-    /// <p>The identifier of the resource from which delegates' set members are removed.</p>
+    /// <p>The identifier of the resource from which delegates' set members are removed. </p>
     /// <p>The identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>. The following identity formats are available:</p>
     /// <ul>
-    /// <li>
-    /// <p>Resource ID: r-0123456789a0123456789b0123456789</p></li>
-    /// <li>
-    /// <p>Email address: resource@domain.tld</p></li>
-    /// <li>
-    /// <p>Resource name: resource</p></li>
+    /// <li> <p>Resource ID: r-0123456789a0123456789b0123456789</p> </li>
+    /// <li> <p>Email address: resource@domain.tld</p> </li>
+    /// <li> <p>Resource name: resource</p> </li>
     /// </ul>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_id
@@ -136,12 +115,9 @@ impl DisassociateDelegateFromResourceInputBuilder {
     /// <p>The identifier for the member (user, group) to be removed from the resource's delegates.</p>
     /// <p>The entity ID can accept <i>UserId or GroupID</i>, <i>Username or Groupname</i>, or <i>email</i>.</p>
     /// <ul>
-    /// <li>
-    /// <p>Entity: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p></li>
-    /// <li>
-    /// <p>Email address: entity@domain.tld</p></li>
-    /// <li>
-    /// <p>Entity: entity</p></li>
+    /// <li> <p>Entity: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p> </li>
+    /// <li> <p>Email address: entity@domain.tld</p> </li>
+    /// <li> <p>Entity: entity</p> </li>
     /// </ul>
     /// This field is required.
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -151,12 +127,9 @@ impl DisassociateDelegateFromResourceInputBuilder {
     /// <p>The identifier for the member (user, group) to be removed from the resource's delegates.</p>
     /// <p>The entity ID can accept <i>UserId or GroupID</i>, <i>Username or Groupname</i>, or <i>email</i>.</p>
     /// <ul>
-    /// <li>
-    /// <p>Entity: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p></li>
-    /// <li>
-    /// <p>Email address: entity@domain.tld</p></li>
-    /// <li>
-    /// <p>Entity: entity</p></li>
+    /// <li> <p>Entity: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p> </li>
+    /// <li> <p>Email address: entity@domain.tld</p> </li>
+    /// <li> <p>Entity: entity</p> </li>
     /// </ul>
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.entity_id = input;
@@ -165,12 +138,9 @@ impl DisassociateDelegateFromResourceInputBuilder {
     /// <p>The identifier for the member (user, group) to be removed from the resource's delegates.</p>
     /// <p>The entity ID can accept <i>UserId or GroupID</i>, <i>Username or Groupname</i>, or <i>email</i>.</p>
     /// <ul>
-    /// <li>
-    /// <p>Entity: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p></li>
-    /// <li>
-    /// <p>Email address: entity@domain.tld</p></li>
-    /// <li>
-    /// <p>Entity: entity</p></li>
+    /// <li> <p>Entity: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p> </li>
+    /// <li> <p>Email address: entity@domain.tld</p> </li>
+    /// <li> <p>Entity: entity</p> </li>
     /// </ul>
     pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.entity_id

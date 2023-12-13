@@ -3,43 +3,43 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartImportFileTaskInput {
-    /// <p>A descriptive name for the request.</p>
+    /// <p> A descriptive name for the request. </p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The S3 bucket where the import file is located. The bucket name is required to begin with <code>migrationhub-strategy-</code>.</p>
+    /// <p> The S3 bucket where the import file is located. The bucket name is required to begin with <code>migrationhub-strategy-</code>.</p>
     pub s3_bucket: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon S3 key name of the import file.</p>
+    /// <p> The Amazon S3 key name of the import file. </p>
     pub s3_key: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the source that the servers are coming from. By default, Strategy Recommendations assumes that the servers specified in the import file are available in AWS Application Discovery Service.</p>
+    /// <p>Specifies the source that the servers are coming from. By default, Strategy Recommendations assumes that the servers specified in the import file are available in AWS Application Discovery Service. </p>
     pub data_source_type: ::std::option::Option<crate::types::DataSourceType>,
-    /// <p>Groups the resources in the import file together with a unique name. This ID can be as filter in <code>ListApplicationComponents</code> and <code>ListServers</code>.</p>
+    /// <p>Groups the resources in the import file together with a unique name. This ID can be as filter in <code>ListApplicationComponents</code> and <code>ListServers</code>. </p>
     pub group_id: ::std::option::Option<::std::vec::Vec<crate::types::Group>>,
-    /// <p>The S3 bucket where Strategy Recommendations uploads import results. The bucket name is required to begin with migrationhub-strategy-.</p>
+    /// <p> The S3 bucket where Strategy Recommendations uploads import results. The bucket name is required to begin with migrationhub-strategy-. </p>
     pub s3bucket_for_report_data: ::std::option::Option<::std::string::String>,
 }
 impl StartImportFileTaskInput {
-    /// <p>A descriptive name for the request.</p>
+    /// <p> A descriptive name for the request. </p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The S3 bucket where the import file is located. The bucket name is required to begin with <code>migrationhub-strategy-</code>.</p>
+    /// <p> The S3 bucket where the import file is located. The bucket name is required to begin with <code>migrationhub-strategy-</code>.</p>
     pub fn s3_bucket(&self) -> ::std::option::Option<&str> {
         self.s3_bucket.as_deref()
     }
-    /// <p>The Amazon S3 key name of the import file.</p>
+    /// <p> The Amazon S3 key name of the import file. </p>
     pub fn s3_key(&self) -> ::std::option::Option<&str> {
         self.s3_key.as_deref()
     }
-    /// <p>Specifies the source that the servers are coming from. By default, Strategy Recommendations assumes that the servers specified in the import file are available in AWS Application Discovery Service.</p>
+    /// <p>Specifies the source that the servers are coming from. By default, Strategy Recommendations assumes that the servers specified in the import file are available in AWS Application Discovery Service. </p>
     pub fn data_source_type(&self) -> ::std::option::Option<&crate::types::DataSourceType> {
         self.data_source_type.as_ref()
     }
-    /// <p>Groups the resources in the import file together with a unique name. This ID can be as filter in <code>ListApplicationComponents</code> and <code>ListServers</code>.</p>
+    /// <p>Groups the resources in the import file together with a unique name. This ID can be as filter in <code>ListApplicationComponents</code> and <code>ListServers</code>. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.group_id.is_none()`.
     pub fn group_id(&self) -> &[crate::types::Group] {
         self.group_id.as_deref().unwrap_or_default()
     }
-    /// <p>The S3 bucket where Strategy Recommendations uploads import results. The bucket name is required to begin with migrationhub-strategy-.</p>
+    /// <p> The S3 bucket where Strategy Recommendations uploads import results. The bucket name is required to begin with migrationhub-strategy-. </p>
     pub fn s3bucket_for_report_data(&self) -> ::std::option::Option<&str> {
         self.s3bucket_for_report_data.as_deref()
     }
@@ -63,62 +63,62 @@ pub struct StartImportFileTaskInputBuilder {
     pub(crate) s3bucket_for_report_data: ::std::option::Option<::std::string::String>,
 }
 impl StartImportFileTaskInputBuilder {
-    /// <p>A descriptive name for the request.</p>
+    /// <p> A descriptive name for the request. </p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A descriptive name for the request.</p>
+    /// <p> A descriptive name for the request. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>A descriptive name for the request.</p>
+    /// <p> A descriptive name for the request. </p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The S3 bucket where the import file is located. The bucket name is required to begin with <code>migrationhub-strategy-</code>.</p>
+    /// <p> The S3 bucket where the import file is located. The bucket name is required to begin with <code>migrationhub-strategy-</code>.</p>
     /// This field is required.
     pub fn s3_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The S3 bucket where the import file is located. The bucket name is required to begin with <code>migrationhub-strategy-</code>.</p>
+    /// <p> The S3 bucket where the import file is located. The bucket name is required to begin with <code>migrationhub-strategy-</code>.</p>
     pub fn set_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_bucket = input;
         self
     }
-    /// <p>The S3 bucket where the import file is located. The bucket name is required to begin with <code>migrationhub-strategy-</code>.</p>
+    /// <p> The S3 bucket where the import file is located. The bucket name is required to begin with <code>migrationhub-strategy-</code>.</p>
     pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3_bucket
     }
-    /// <p>The Amazon S3 key name of the import file.</p>
+    /// <p> The Amazon S3 key name of the import file. </p>
     /// This field is required.
     pub fn s3_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_key = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon S3 key name of the import file.</p>
+    /// <p> The Amazon S3 key name of the import file. </p>
     pub fn set_s3_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_key = input;
         self
     }
-    /// <p>The Amazon S3 key name of the import file.</p>
+    /// <p> The Amazon S3 key name of the import file. </p>
     pub fn get_s3_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3_key
     }
-    /// <p>Specifies the source that the servers are coming from. By default, Strategy Recommendations assumes that the servers specified in the import file are available in AWS Application Discovery Service.</p>
+    /// <p>Specifies the source that the servers are coming from. By default, Strategy Recommendations assumes that the servers specified in the import file are available in AWS Application Discovery Service. </p>
     pub fn data_source_type(mut self, input: crate::types::DataSourceType) -> Self {
         self.data_source_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the source that the servers are coming from. By default, Strategy Recommendations assumes that the servers specified in the import file are available in AWS Application Discovery Service.</p>
+    /// <p>Specifies the source that the servers are coming from. By default, Strategy Recommendations assumes that the servers specified in the import file are available in AWS Application Discovery Service. </p>
     pub fn set_data_source_type(mut self, input: ::std::option::Option<crate::types::DataSourceType>) -> Self {
         self.data_source_type = input;
         self
     }
-    /// <p>Specifies the source that the servers are coming from. By default, Strategy Recommendations assumes that the servers specified in the import file are available in AWS Application Discovery Service.</p>
+    /// <p>Specifies the source that the servers are coming from. By default, Strategy Recommendations assumes that the servers specified in the import file are available in AWS Application Discovery Service. </p>
     pub fn get_data_source_type(&self) -> &::std::option::Option<crate::types::DataSourceType> {
         &self.data_source_type
     }
@@ -126,33 +126,33 @@ impl StartImportFileTaskInputBuilder {
     ///
     /// To override the contents of this collection use [`set_group_id`](Self::set_group_id).
     ///
-    /// <p>Groups the resources in the import file together with a unique name. This ID can be as filter in <code>ListApplicationComponents</code> and <code>ListServers</code>.</p>
+    /// <p>Groups the resources in the import file together with a unique name. This ID can be as filter in <code>ListApplicationComponents</code> and <code>ListServers</code>. </p>
     pub fn group_id(mut self, input: crate::types::Group) -> Self {
         let mut v = self.group_id.unwrap_or_default();
         v.push(input);
         self.group_id = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Groups the resources in the import file together with a unique name. This ID can be as filter in <code>ListApplicationComponents</code> and <code>ListServers</code>.</p>
+    /// <p>Groups the resources in the import file together with a unique name. This ID can be as filter in <code>ListApplicationComponents</code> and <code>ListServers</code>. </p>
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Group>>) -> Self {
         self.group_id = input;
         self
     }
-    /// <p>Groups the resources in the import file together with a unique name. This ID can be as filter in <code>ListApplicationComponents</code> and <code>ListServers</code>.</p>
+    /// <p>Groups the resources in the import file together with a unique name. This ID can be as filter in <code>ListApplicationComponents</code> and <code>ListServers</code>. </p>
     pub fn get_group_id(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Group>> {
         &self.group_id
     }
-    /// <p>The S3 bucket where Strategy Recommendations uploads import results. The bucket name is required to begin with migrationhub-strategy-.</p>
+    /// <p> The S3 bucket where Strategy Recommendations uploads import results. The bucket name is required to begin with migrationhub-strategy-. </p>
     pub fn s3bucket_for_report_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3bucket_for_report_data = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The S3 bucket where Strategy Recommendations uploads import results. The bucket name is required to begin with migrationhub-strategy-.</p>
+    /// <p> The S3 bucket where Strategy Recommendations uploads import results. The bucket name is required to begin with migrationhub-strategy-. </p>
     pub fn set_s3bucket_for_report_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3bucket_for_report_data = input;
         self
     }
-    /// <p>The S3 bucket where Strategy Recommendations uploads import results. The bucket name is required to begin with migrationhub-strategy-.</p>
+    /// <p> The S3 bucket where Strategy Recommendations uploads import results. The bucket name is required to begin with migrationhub-strategy-. </p>
     pub fn get_s3bucket_for_report_data(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3bucket_for_report_data
     }

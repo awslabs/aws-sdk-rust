@@ -3,31 +3,31 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListInferenceSchedulersInput {
-    /// <p>An opaque pagination token indicating where to continue the listing of inference schedulers.</p>
+    /// <p> An opaque pagination token indicating where to continue the listing of inference schedulers. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the maximum number of inference schedulers to list.</p>
+    /// <p> Specifies the maximum number of inference schedulers to list. </p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>The beginning of the name of the inference schedulers to be listed.</p>
+    /// <p>The beginning of the name of the inference schedulers to be listed. </p>
     pub inference_scheduler_name_begins_with: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the machine learning model used by the inference scheduler to be listed.</p>
+    /// <p>The name of the machine learning model used by the inference scheduler to be listed. </p>
     pub model_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the current status of the inference schedulers.</p>
     pub status: ::std::option::Option<crate::types::InferenceSchedulerStatus>,
 }
 impl ListInferenceSchedulersInput {
-    /// <p>An opaque pagination token indicating where to continue the listing of inference schedulers.</p>
+    /// <p> An opaque pagination token indicating where to continue the listing of inference schedulers. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Specifies the maximum number of inference schedulers to list.</p>
+    /// <p> Specifies the maximum number of inference schedulers to list. </p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The beginning of the name of the inference schedulers to be listed.</p>
+    /// <p>The beginning of the name of the inference schedulers to be listed. </p>
     pub fn inference_scheduler_name_begins_with(&self) -> ::std::option::Option<&str> {
         self.inference_scheduler_name_begins_with.as_deref()
     }
-    /// <p>The name of the machine learning model used by the inference scheduler to be listed.</p>
+    /// <p>The name of the machine learning model used by the inference scheduler to be listed. </p>
     pub fn model_name(&self) -> ::std::option::Option<&str> {
         self.model_name.as_deref()
     }
@@ -54,59 +54,59 @@ pub struct ListInferenceSchedulersInputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::InferenceSchedulerStatus>,
 }
 impl ListInferenceSchedulersInputBuilder {
-    /// <p>An opaque pagination token indicating where to continue the listing of inference schedulers.</p>
+    /// <p> An opaque pagination token indicating where to continue the listing of inference schedulers. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An opaque pagination token indicating where to continue the listing of inference schedulers.</p>
+    /// <p> An opaque pagination token indicating where to continue the listing of inference schedulers. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>An opaque pagination token indicating where to continue the listing of inference schedulers.</p>
+    /// <p> An opaque pagination token indicating where to continue the listing of inference schedulers. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>Specifies the maximum number of inference schedulers to list.</p>
+    /// <p> Specifies the maximum number of inference schedulers to list. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the maximum number of inference schedulers to list.</p>
+    /// <p> Specifies the maximum number of inference schedulers to list. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>Specifies the maximum number of inference schedulers to list.</p>
+    /// <p> Specifies the maximum number of inference schedulers to list. </p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p>The beginning of the name of the inference schedulers to be listed.</p>
+    /// <p>The beginning of the name of the inference schedulers to be listed. </p>
     pub fn inference_scheduler_name_begins_with(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inference_scheduler_name_begins_with = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The beginning of the name of the inference schedulers to be listed.</p>
+    /// <p>The beginning of the name of the inference schedulers to be listed. </p>
     pub fn set_inference_scheduler_name_begins_with(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inference_scheduler_name_begins_with = input;
         self
     }
-    /// <p>The beginning of the name of the inference schedulers to be listed.</p>
+    /// <p>The beginning of the name of the inference schedulers to be listed. </p>
     pub fn get_inference_scheduler_name_begins_with(&self) -> &::std::option::Option<::std::string::String> {
         &self.inference_scheduler_name_begins_with
     }
-    /// <p>The name of the machine learning model used by the inference scheduler to be listed.</p>
+    /// <p>The name of the machine learning model used by the inference scheduler to be listed. </p>
     pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the machine learning model used by the inference scheduler to be listed.</p>
+    /// <p>The name of the machine learning model used by the inference scheduler to be listed. </p>
     pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_name = input;
         self
     }
-    /// <p>The name of the machine learning model used by the inference scheduler to be listed.</p>
+    /// <p>The name of the machine learning model used by the inference scheduler to be listed. </p>
     pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_name
     }

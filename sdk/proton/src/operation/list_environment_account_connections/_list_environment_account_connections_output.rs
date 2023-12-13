@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEnvironmentAccountConnectionsOutput {
-    /// <p>An array of environment account connections with details that's returned by Proton.</p>
+    /// <p>An array of environment account connections with details that's returned by Proton. </p>
     pub environment_account_connections: ::std::vec::Vec<crate::types::EnvironmentAccountConnectionSummary>,
     /// <p>A token that indicates the location of the next environment account connection in the array of environment account connections, after the current requested list of environment account connections.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListEnvironmentAccountConnectionsOutput {
-    /// <p>An array of environment account connections with details that's returned by Proton.</p>
+    /// <p>An array of environment account connections with details that's returned by Proton. </p>
     pub fn environment_account_connections(&self) -> &[crate::types::EnvironmentAccountConnectionSummary] {
         use std::ops::Deref;
         self.environment_account_connections.deref()
@@ -45,14 +45,14 @@ impl ListEnvironmentAccountConnectionsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_environment_account_connections`](Self::set_environment_account_connections).
     ///
-    /// <p>An array of environment account connections with details that's returned by Proton.</p>
+    /// <p>An array of environment account connections with details that's returned by Proton. </p>
     pub fn environment_account_connections(mut self, input: crate::types::EnvironmentAccountConnectionSummary) -> Self {
         let mut v = self.environment_account_connections.unwrap_or_default();
         v.push(input);
         self.environment_account_connections = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of environment account connections with details that's returned by Proton.</p>
+    /// <p>An array of environment account connections with details that's returned by Proton. </p>
     pub fn set_environment_account_connections(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentAccountConnectionSummary>>,
@@ -60,7 +60,7 @@ impl ListEnvironmentAccountConnectionsOutputBuilder {
         self.environment_account_connections = input;
         self
     }
-    /// <p>An array of environment account connections with details that's returned by Proton.</p>
+    /// <p>An array of environment account connections with details that's returned by Proton. </p>
     pub fn get_environment_account_connections(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentAccountConnectionSummary>> {
         &self.environment_account_connections
     }

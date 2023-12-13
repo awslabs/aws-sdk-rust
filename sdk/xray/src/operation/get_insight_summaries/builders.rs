@@ -118,17 +118,17 @@ impl GetInsightSummariesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_states`](Self::set_states).
     ///
-    /// <p>The list of insight states.</p>
+    /// <p>The list of insight states. </p>
     pub fn states(mut self, input: crate::types::InsightState) -> Self {
         self.inner = self.inner.states(input);
         self
     }
-    /// <p>The list of insight states.</p>
+    /// <p>The list of insight states. </p>
     pub fn set_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InsightState>>) -> Self {
         self.inner = self.inner.set_states(input);
         self
     }
-    /// <p>The list of insight states.</p>
+    /// <p>The list of insight states. </p>
     pub fn get_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InsightState>> {
         self.inner.get_states()
     }

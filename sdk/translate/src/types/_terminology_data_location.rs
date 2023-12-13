@@ -6,8 +6,8 @@
 pub struct TerminologyDataLocation {
     /// <p>The repository type for the custom terminology data.</p>
     pub repository_type: ::std::string::String,
-    /// <p>The Amazon S3 location of the most recent custom terminology input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration .</p><important>
-    /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks.</p>
+    /// <p>The Amazon S3 location of the most recent custom terminology input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration .</p> <important>
+    /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>
     /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>
     /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
     /// </important>
@@ -19,8 +19,8 @@ impl TerminologyDataLocation {
         use std::ops::Deref;
         self.repository_type.deref()
     }
-    /// <p>The Amazon S3 location of the most recent custom terminology input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration .</p><important>
-    /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks.</p>
+    /// <p>The Amazon S3 location of the most recent custom terminology input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration .</p> <important>
+    /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>
     /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>
     /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
     /// </important>
@@ -59,8 +59,8 @@ impl TerminologyDataLocationBuilder {
     pub fn get_repository_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.repository_type
     }
-    /// <p>The Amazon S3 location of the most recent custom terminology input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration .</p><important>
-    /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks.</p>
+    /// <p>The Amazon S3 location of the most recent custom terminology input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration .</p> <important>
+    /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>
     /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>
     /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
     /// </important>
@@ -69,8 +69,8 @@ impl TerminologyDataLocationBuilder {
         self.location = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon S3 location of the most recent custom terminology input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration .</p><important>
-    /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks.</p>
+    /// <p>The Amazon S3 location of the most recent custom terminology input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration .</p> <important>
+    /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>
     /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>
     /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
     /// </important>
@@ -78,8 +78,8 @@ impl TerminologyDataLocationBuilder {
         self.location = input;
         self
     }
-    /// <p>The Amazon S3 location of the most recent custom terminology input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration .</p><important>
-    /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks.</p>
+    /// <p>The Amazon S3 location of the most recent custom terminology input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration .</p> <important>
+    /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>
     /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>
     /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
     /// </important>

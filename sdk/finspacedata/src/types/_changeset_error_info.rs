@@ -8,22 +8,14 @@ pub struct ChangesetErrorInfo {
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>The category of the error.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>VALIDATION</code> – The inputs to this request are invalid.</p></li>
-    /// <li>
-    /// <p><code>SERVICE_QUOTA_EXCEEDED</code> – Service quotas have been exceeded. Please contact AWS support to increase quotas.</p></li>
-    /// <li>
-    /// <p><code>ACCESS_DENIED</code> – Missing required permission to perform this request.</p></li>
-    /// <li>
-    /// <p><code>RESOURCE_NOT_FOUND</code> – One or more inputs to this request were not found.</p></li>
-    /// <li>
-    /// <p><code>THROTTLING</code> – The system temporarily lacks sufficient resources to process the request.</p></li>
-    /// <li>
-    /// <p><code>INTERNAL_SERVICE_EXCEPTION</code> – An internal service error has occurred.</p></li>
-    /// <li>
-    /// <p><code>CANCELLED</code> – Cancelled.</p></li>
-    /// <li>
-    /// <p><code>USER_RECOVERABLE</code> – A user recoverable error has occurred.</p></li>
+    /// <li> <p> <code>VALIDATION</code> – The inputs to this request are invalid.</p> </li>
+    /// <li> <p> <code>SERVICE_QUOTA_EXCEEDED</code> – Service quotas have been exceeded. Please contact AWS support to increase quotas.</p> </li>
+    /// <li> <p> <code>ACCESS_DENIED</code> – Missing required permission to perform this request.</p> </li>
+    /// <li> <p> <code>RESOURCE_NOT_FOUND</code> – One or more inputs to this request were not found.</p> </li>
+    /// <li> <p> <code>THROTTLING</code> – The system temporarily lacks sufficient resources to process the request.</p> </li>
+    /// <li> <p> <code>INTERNAL_SERVICE_EXCEPTION</code> – An internal service error has occurred.</p> </li>
+    /// <li> <p> <code>CANCELLED</code> – Cancelled.</p> </li>
+    /// <li> <p> <code>USER_RECOVERABLE</code> – A user recoverable error has occurred.</p> </li>
     /// </ul>
     pub error_category: ::std::option::Option<crate::types::ErrorCategory>,
 }
@@ -34,22 +26,14 @@ impl ChangesetErrorInfo {
     }
     /// <p>The category of the error.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>VALIDATION</code> – The inputs to this request are invalid.</p></li>
-    /// <li>
-    /// <p><code>SERVICE_QUOTA_EXCEEDED</code> – Service quotas have been exceeded. Please contact AWS support to increase quotas.</p></li>
-    /// <li>
-    /// <p><code>ACCESS_DENIED</code> – Missing required permission to perform this request.</p></li>
-    /// <li>
-    /// <p><code>RESOURCE_NOT_FOUND</code> – One or more inputs to this request were not found.</p></li>
-    /// <li>
-    /// <p><code>THROTTLING</code> – The system temporarily lacks sufficient resources to process the request.</p></li>
-    /// <li>
-    /// <p><code>INTERNAL_SERVICE_EXCEPTION</code> – An internal service error has occurred.</p></li>
-    /// <li>
-    /// <p><code>CANCELLED</code> – Cancelled.</p></li>
-    /// <li>
-    /// <p><code>USER_RECOVERABLE</code> – A user recoverable error has occurred.</p></li>
+    /// <li> <p> <code>VALIDATION</code> – The inputs to this request are invalid.</p> </li>
+    /// <li> <p> <code>SERVICE_QUOTA_EXCEEDED</code> – Service quotas have been exceeded. Please contact AWS support to increase quotas.</p> </li>
+    /// <li> <p> <code>ACCESS_DENIED</code> – Missing required permission to perform this request.</p> </li>
+    /// <li> <p> <code>RESOURCE_NOT_FOUND</code> – One or more inputs to this request were not found.</p> </li>
+    /// <li> <p> <code>THROTTLING</code> – The system temporarily lacks sufficient resources to process the request.</p> </li>
+    /// <li> <p> <code>INTERNAL_SERVICE_EXCEPTION</code> – An internal service error has occurred.</p> </li>
+    /// <li> <p> <code>CANCELLED</code> – Cancelled.</p> </li>
+    /// <li> <p> <code>USER_RECOVERABLE</code> – A user recoverable error has occurred.</p> </li>
     /// </ul>
     pub fn error_category(&self) -> ::std::option::Option<&crate::types::ErrorCategory> {
         self.error_category.as_ref()
@@ -86,22 +70,14 @@ impl ChangesetErrorInfoBuilder {
     }
     /// <p>The category of the error.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>VALIDATION</code> – The inputs to this request are invalid.</p></li>
-    /// <li>
-    /// <p><code>SERVICE_QUOTA_EXCEEDED</code> – Service quotas have been exceeded. Please contact AWS support to increase quotas.</p></li>
-    /// <li>
-    /// <p><code>ACCESS_DENIED</code> – Missing required permission to perform this request.</p></li>
-    /// <li>
-    /// <p><code>RESOURCE_NOT_FOUND</code> – One or more inputs to this request were not found.</p></li>
-    /// <li>
-    /// <p><code>THROTTLING</code> – The system temporarily lacks sufficient resources to process the request.</p></li>
-    /// <li>
-    /// <p><code>INTERNAL_SERVICE_EXCEPTION</code> – An internal service error has occurred.</p></li>
-    /// <li>
-    /// <p><code>CANCELLED</code> – Cancelled.</p></li>
-    /// <li>
-    /// <p><code>USER_RECOVERABLE</code> – A user recoverable error has occurred.</p></li>
+    /// <li> <p> <code>VALIDATION</code> – The inputs to this request are invalid.</p> </li>
+    /// <li> <p> <code>SERVICE_QUOTA_EXCEEDED</code> – Service quotas have been exceeded. Please contact AWS support to increase quotas.</p> </li>
+    /// <li> <p> <code>ACCESS_DENIED</code> – Missing required permission to perform this request.</p> </li>
+    /// <li> <p> <code>RESOURCE_NOT_FOUND</code> – One or more inputs to this request were not found.</p> </li>
+    /// <li> <p> <code>THROTTLING</code> – The system temporarily lacks sufficient resources to process the request.</p> </li>
+    /// <li> <p> <code>INTERNAL_SERVICE_EXCEPTION</code> – An internal service error has occurred.</p> </li>
+    /// <li> <p> <code>CANCELLED</code> – Cancelled.</p> </li>
+    /// <li> <p> <code>USER_RECOVERABLE</code> – A user recoverable error has occurred.</p> </li>
     /// </ul>
     pub fn error_category(mut self, input: crate::types::ErrorCategory) -> Self {
         self.error_category = ::std::option::Option::Some(input);
@@ -109,22 +85,14 @@ impl ChangesetErrorInfoBuilder {
     }
     /// <p>The category of the error.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>VALIDATION</code> – The inputs to this request are invalid.</p></li>
-    /// <li>
-    /// <p><code>SERVICE_QUOTA_EXCEEDED</code> – Service quotas have been exceeded. Please contact AWS support to increase quotas.</p></li>
-    /// <li>
-    /// <p><code>ACCESS_DENIED</code> – Missing required permission to perform this request.</p></li>
-    /// <li>
-    /// <p><code>RESOURCE_NOT_FOUND</code> – One or more inputs to this request were not found.</p></li>
-    /// <li>
-    /// <p><code>THROTTLING</code> – The system temporarily lacks sufficient resources to process the request.</p></li>
-    /// <li>
-    /// <p><code>INTERNAL_SERVICE_EXCEPTION</code> – An internal service error has occurred.</p></li>
-    /// <li>
-    /// <p><code>CANCELLED</code> – Cancelled.</p></li>
-    /// <li>
-    /// <p><code>USER_RECOVERABLE</code> – A user recoverable error has occurred.</p></li>
+    /// <li> <p> <code>VALIDATION</code> – The inputs to this request are invalid.</p> </li>
+    /// <li> <p> <code>SERVICE_QUOTA_EXCEEDED</code> – Service quotas have been exceeded. Please contact AWS support to increase quotas.</p> </li>
+    /// <li> <p> <code>ACCESS_DENIED</code> – Missing required permission to perform this request.</p> </li>
+    /// <li> <p> <code>RESOURCE_NOT_FOUND</code> – One or more inputs to this request were not found.</p> </li>
+    /// <li> <p> <code>THROTTLING</code> – The system temporarily lacks sufficient resources to process the request.</p> </li>
+    /// <li> <p> <code>INTERNAL_SERVICE_EXCEPTION</code> – An internal service error has occurred.</p> </li>
+    /// <li> <p> <code>CANCELLED</code> – Cancelled.</p> </li>
+    /// <li> <p> <code>USER_RECOVERABLE</code> – A user recoverable error has occurred.</p> </li>
     /// </ul>
     pub fn set_error_category(mut self, input: ::std::option::Option<crate::types::ErrorCategory>) -> Self {
         self.error_category = input;
@@ -132,22 +100,14 @@ impl ChangesetErrorInfoBuilder {
     }
     /// <p>The category of the error.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>VALIDATION</code> – The inputs to this request are invalid.</p></li>
-    /// <li>
-    /// <p><code>SERVICE_QUOTA_EXCEEDED</code> – Service quotas have been exceeded. Please contact AWS support to increase quotas.</p></li>
-    /// <li>
-    /// <p><code>ACCESS_DENIED</code> – Missing required permission to perform this request.</p></li>
-    /// <li>
-    /// <p><code>RESOURCE_NOT_FOUND</code> – One or more inputs to this request were not found.</p></li>
-    /// <li>
-    /// <p><code>THROTTLING</code> – The system temporarily lacks sufficient resources to process the request.</p></li>
-    /// <li>
-    /// <p><code>INTERNAL_SERVICE_EXCEPTION</code> – An internal service error has occurred.</p></li>
-    /// <li>
-    /// <p><code>CANCELLED</code> – Cancelled.</p></li>
-    /// <li>
-    /// <p><code>USER_RECOVERABLE</code> – A user recoverable error has occurred.</p></li>
+    /// <li> <p> <code>VALIDATION</code> – The inputs to this request are invalid.</p> </li>
+    /// <li> <p> <code>SERVICE_QUOTA_EXCEEDED</code> – Service quotas have been exceeded. Please contact AWS support to increase quotas.</p> </li>
+    /// <li> <p> <code>ACCESS_DENIED</code> – Missing required permission to perform this request.</p> </li>
+    /// <li> <p> <code>RESOURCE_NOT_FOUND</code> – One or more inputs to this request were not found.</p> </li>
+    /// <li> <p> <code>THROTTLING</code> – The system temporarily lacks sufficient resources to process the request.</p> </li>
+    /// <li> <p> <code>INTERNAL_SERVICE_EXCEPTION</code> – An internal service error has occurred.</p> </li>
+    /// <li> <p> <code>CANCELLED</code> – Cancelled.</p> </li>
+    /// <li> <p> <code>USER_RECOVERABLE</code> – A user recoverable error has occurred.</p> </li>
     /// </ul>
     pub fn get_error_category(&self) -> &::std::option::Option<crate::types::ErrorCategory> {
         &self.error_category

@@ -136,31 +136,31 @@ impl CreateAnalysisFluentBuilder {
     pub fn get_analysis_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_analysis_id()
     }
-    /// <p>A descriptive name for the analysis that you're creating. This name displays for the analysis in the Amazon QuickSight console.</p>
+    /// <p>A descriptive name for the analysis that you're creating. This name displays for the analysis in the Amazon QuickSight console. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>A descriptive name for the analysis that you're creating. This name displays for the analysis in the Amazon QuickSight console.</p>
+    /// <p>A descriptive name for the analysis that you're creating. This name displays for the analysis in the Amazon QuickSight console. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>A descriptive name for the analysis that you're creating. This name displays for the analysis in the Amazon QuickSight console.</p>
+    /// <p>A descriptive name for the analysis that you're creating. This name displays for the analysis in the Amazon QuickSight console. </p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>The parameter names and override values that you want to use. An analysis can have any parameter type, and some parameters might accept multiple values.</p>
+    /// <p>The parameter names and override values that you want to use. An analysis can have any parameter type, and some parameters might accept multiple values. </p>
     pub fn parameters(mut self, input: crate::types::Parameters) -> Self {
         self.inner = self.inner.parameters(input);
         self
     }
-    /// <p>The parameter names and override values that you want to use. An analysis can have any parameter type, and some parameters might accept multiple values.</p>
+    /// <p>The parameter names and override values that you want to use. An analysis can have any parameter type, and some parameters might accept multiple values. </p>
     pub fn set_parameters(mut self, input: ::std::option::Option<crate::types::Parameters>) -> Self {
         self.inner = self.inner.set_parameters(input);
         self
     }
-    /// <p>The parameter names and override values that you want to use. An analysis can have any parameter type, and some parameters might accept multiple values.</p>
+    /// <p>The parameter names and override values that you want to use. An analysis can have any parameter type, and some parameters might accept multiple values. </p>
     pub fn get_parameters(&self) -> &::std::option::Option<crate::types::Parameters> {
         self.inner.get_parameters()
     }
@@ -168,19 +168,19 @@ impl CreateAnalysisFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
     ///
-    /// <p>A structure that describes the principals and the resource-level permissions on an analysis. You can use the <code>Permissions</code> structure to grant permissions by providing a list of Identity and Access Management (IAM) action information for each principal listed by Amazon Resource Name (ARN).</p>
+    /// <p>A structure that describes the principals and the resource-level permissions on an analysis. You can use the <code>Permissions</code> structure to grant permissions by providing a list of Identity and Access Management (IAM) action information for each principal listed by Amazon Resource Name (ARN). </p>
     /// <p>To specify no permissions, omit <code>Permissions</code>.</p>
     pub fn permissions(mut self, input: crate::types::ResourcePermission) -> Self {
         self.inner = self.inner.permissions(input);
         self
     }
-    /// <p>A structure that describes the principals and the resource-level permissions on an analysis. You can use the <code>Permissions</code> structure to grant permissions by providing a list of Identity and Access Management (IAM) action information for each principal listed by Amazon Resource Name (ARN).</p>
+    /// <p>A structure that describes the principals and the resource-level permissions on an analysis. You can use the <code>Permissions</code> structure to grant permissions by providing a list of Identity and Access Management (IAM) action information for each principal listed by Amazon Resource Name (ARN). </p>
     /// <p>To specify no permissions, omit <code>Permissions</code>.</p>
     pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
         self.inner = self.inner.set_permissions(input);
         self
     }
-    /// <p>A structure that describes the principals and the resource-level permissions on an analysis. You can use the <code>Permissions</code> structure to grant permissions by providing a list of Identity and Access Management (IAM) action information for each principal listed by Amazon Resource Name (ARN).</p>
+    /// <p>A structure that describes the principals and the resource-level permissions on an analysis. You can use the <code>Permissions</code> structure to grant permissions by providing a list of Identity and Access Management (IAM) action information for each principal listed by Amazon Resource Name (ARN). </p>
     /// <p>To specify no permissions, omit <code>Permissions</code>.</p>
     pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
         self.inner.get_permissions()

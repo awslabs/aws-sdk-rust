@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`target(impl Into<String>)`](crate::operation::get_connection_status::builders::GetConnectionStatusFluentBuilder::target) / [`set_target(Option<String>)`](crate::operation::get_connection_status::builders::GetConnectionStatusFluentBuilder::set_target):<br>required: **true**<br><p>The managed node ID.</p><br>
     /// - On success, responds with [`GetConnectionStatusOutput`](crate::operation::get_connection_status::GetConnectionStatusOutput) with field(s):
-    ///   - [`target(Option<String>)`](crate::operation::get_connection_status::GetConnectionStatusOutput::target): <p>The ID of the managed node to check connection status.</p>
+    ///   - [`target(Option<String>)`](crate::operation::get_connection_status::GetConnectionStatusOutput::target): <p>The ID of the managed node to check connection status. </p>
     ///   - [`status(Option<ConnectionStatus>)`](crate::operation::get_connection_status::GetConnectionStatusOutput::status): <p>The status of the connection to the managed node. For example, 'Connected' or 'Not Connected'.</p>
     /// - On failure, responds with [`SdkError<GetConnectionStatusError>`](crate::operation::get_connection_status::GetConnectionStatusError)
     pub fn get_connection_status(&self) -> crate::operation::get_connection_status::builders::GetConnectionStatusFluentBuilder {

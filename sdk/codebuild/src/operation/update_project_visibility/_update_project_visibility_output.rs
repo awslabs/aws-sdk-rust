@@ -5,7 +5,7 @@
 pub struct UpdateProjectVisibilityOutput {
     /// <p>The Amazon Resource Name (ARN) of the build project.</p>
     pub project_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Contains the project identifier used with the public build APIs.</p>
+    /// <p>Contains the project identifier used with the public build APIs. </p>
     pub public_project_alias: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the visibility of the project's builds. Possible values are:</p>
     /// <dl>
@@ -30,7 +30,7 @@ impl UpdateProjectVisibilityOutput {
     pub fn project_arn(&self) -> ::std::option::Option<&str> {
         self.project_arn.as_deref()
     }
-    /// <p>Contains the project identifier used with the public build APIs.</p>
+    /// <p>Contains the project identifier used with the public build APIs. </p>
     pub fn public_project_alias(&self) -> ::std::option::Option<&str> {
         self.public_project_alias.as_deref()
     }
@@ -89,17 +89,17 @@ impl UpdateProjectVisibilityOutputBuilder {
     pub fn get_project_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.project_arn
     }
-    /// <p>Contains the project identifier used with the public build APIs.</p>
+    /// <p>Contains the project identifier used with the public build APIs. </p>
     pub fn public_project_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.public_project_alias = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Contains the project identifier used with the public build APIs.</p>
+    /// <p>Contains the project identifier used with the public build APIs. </p>
     pub fn set_public_project_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.public_project_alias = input;
         self
     }
-    /// <p>Contains the project identifier used with the public build APIs.</p>
+    /// <p>Contains the project identifier used with the public build APIs. </p>
     pub fn get_public_project_alias(&self) -> &::std::option::Option<::std::string::String> {
         &self.public_project_alias
     }

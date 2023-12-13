@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QuickConnectConfig {
-    /// <p>The type of quick connect. In the Amazon Connect admin website, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
+    /// <p>The type of quick connect. In the Amazon Connect admin website, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE). </p>
     pub quick_connect_type: crate::types::QuickConnectType,
     /// <p>The user configuration. This is required only if QuickConnectType is USER.</p>
     pub user_config: ::std::option::Option<crate::types::UserQuickConnectConfig>,
@@ -14,7 +14,7 @@ pub struct QuickConnectConfig {
     pub phone_config: ::std::option::Option<crate::types::PhoneNumberQuickConnectConfig>,
 }
 impl QuickConnectConfig {
-    /// <p>The type of quick connect. In the Amazon Connect admin website, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
+    /// <p>The type of quick connect. In the Amazon Connect admin website, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE). </p>
     pub fn quick_connect_type(&self) -> &crate::types::QuickConnectType {
         &self.quick_connect_type
     }
@@ -48,18 +48,18 @@ pub struct QuickConnectConfigBuilder {
     pub(crate) phone_config: ::std::option::Option<crate::types::PhoneNumberQuickConnectConfig>,
 }
 impl QuickConnectConfigBuilder {
-    /// <p>The type of quick connect. In the Amazon Connect admin website, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
+    /// <p>The type of quick connect. In the Amazon Connect admin website, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE). </p>
     /// This field is required.
     pub fn quick_connect_type(mut self, input: crate::types::QuickConnectType) -> Self {
         self.quick_connect_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of quick connect. In the Amazon Connect admin website, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
+    /// <p>The type of quick connect. In the Amazon Connect admin website, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE). </p>
     pub fn set_quick_connect_type(mut self, input: ::std::option::Option<crate::types::QuickConnectType>) -> Self {
         self.quick_connect_type = input;
         self
     }
-    /// <p>The type of quick connect. In the Amazon Connect admin website, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
+    /// <p>The type of quick connect. In the Amazon Connect admin website, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE). </p>
     pub fn get_quick_connect_type(&self) -> &::std::option::Option<crate::types::QuickConnectType> {
         &self.quick_connect_type
     }

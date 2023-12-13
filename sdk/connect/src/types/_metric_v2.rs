@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricV2 {
-    /// <p>The name of the metric.</p><important>
+    /// <p>The name of the metric.</p> <important>
     /// <p>This parameter is required. The following Required = No is incorrect.</p>
     /// </important>
     pub name: ::std::option::Option<::std::string::String>,
@@ -14,7 +14,7 @@ pub struct MetricV2 {
     pub metric_filters: ::std::option::Option<::std::vec::Vec<crate::types::MetricFilterV2>>,
 }
 impl MetricV2 {
-    /// <p>The name of the metric.</p><important>
+    /// <p>The name of the metric.</p> <important>
     /// <p>This parameter is required. The following Required = No is incorrect.</p>
     /// </important>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -49,21 +49,21 @@ pub struct MetricV2Builder {
     pub(crate) metric_filters: ::std::option::Option<::std::vec::Vec<crate::types::MetricFilterV2>>,
 }
 impl MetricV2Builder {
-    /// <p>The name of the metric.</p><important>
+    /// <p>The name of the metric.</p> <important>
     /// <p>This parameter is required. The following Required = No is incorrect.</p>
     /// </important>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the metric.</p><important>
+    /// <p>The name of the metric.</p> <important>
     /// <p>This parameter is required. The following Required = No is incorrect.</p>
     /// </important>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the metric.</p><important>
+    /// <p>The name of the metric.</p> <important>
     /// <p>This parameter is required. The following Required = No is incorrect.</p>
     /// </important>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {

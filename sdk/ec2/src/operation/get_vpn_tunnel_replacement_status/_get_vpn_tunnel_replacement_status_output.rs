@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetVpnTunnelReplacementStatusOutput {
-    /// <p>The ID of the Site-to-Site VPN connection.</p>
+    /// <p>The ID of the Site-to-Site VPN connection. </p>
     pub vpn_connection_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the transit gateway associated with the VPN connection.</p>
     pub transit_gateway_id: ::std::option::Option<::std::string::String>,
@@ -18,7 +18,7 @@ pub struct GetVpnTunnelReplacementStatusOutput {
     _request_id: Option<String>,
 }
 impl GetVpnTunnelReplacementStatusOutput {
-    /// <p>The ID of the Site-to-Site VPN connection.</p>
+    /// <p>The ID of the Site-to-Site VPN connection. </p>
     pub fn vpn_connection_id(&self) -> ::std::option::Option<&str> {
         self.vpn_connection_id.as_deref()
     }
@@ -68,17 +68,17 @@ pub struct GetVpnTunnelReplacementStatusOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetVpnTunnelReplacementStatusOutputBuilder {
-    /// <p>The ID of the Site-to-Site VPN connection.</p>
+    /// <p>The ID of the Site-to-Site VPN connection. </p>
     pub fn vpn_connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpn_connection_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the Site-to-Site VPN connection.</p>
+    /// <p>The ID of the Site-to-Site VPN connection. </p>
     pub fn set_vpn_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpn_connection_id = input;
         self
     }
-    /// <p>The ID of the Site-to-Site VPN connection.</p>
+    /// <p>The ID of the Site-to-Site VPN connection. </p>
     pub fn get_vpn_connection_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpn_connection_id
     }

@@ -108,17 +108,17 @@ impl DeleteProtectionGroupFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it.</p>
+    /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
     pub fn protection_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.protection_group_id(input.into());
         self
     }
-    /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it.</p>
+    /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
     pub fn set_protection_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_protection_group_id(input);
         self
     }
-    /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it.</p>
+    /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
     pub fn get_protection_group_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_protection_group_id()
     }

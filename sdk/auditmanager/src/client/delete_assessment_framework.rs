@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteAssessmentFramework`](crate::operation::delete_assessment_framework::builders::DeleteAssessmentFrameworkFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`framework_id(impl Into<String>)`](crate::operation::delete_assessment_framework::builders::DeleteAssessmentFrameworkFluentBuilder::framework_id) / [`set_framework_id(Option<String>)`](crate::operation::delete_assessment_framework::builders::DeleteAssessmentFrameworkFluentBuilder::set_framework_id):<br>required: **true**<br><p>The identifier for the custom framework.</p><br>
+    ///   - [`framework_id(impl Into<String>)`](crate::operation::delete_assessment_framework::builders::DeleteAssessmentFrameworkFluentBuilder::framework_id) / [`set_framework_id(Option<String>)`](crate::operation::delete_assessment_framework::builders::DeleteAssessmentFrameworkFluentBuilder::set_framework_id):<br>required: **true**<br><p> The identifier for the custom framework. </p><br>
     /// - On success, responds with [`DeleteAssessmentFrameworkOutput`](crate::operation::delete_assessment_framework::DeleteAssessmentFrameworkOutput)
     /// - On failure, responds with [`SdkError<DeleteAssessmentFrameworkError>`](crate::operation::delete_assessment_framework::DeleteAssessmentFrameworkError)
     pub fn delete_assessment_framework(&self) -> crate::operation::delete_assessment_framework::builders::DeleteAssessmentFrameworkFluentBuilder {

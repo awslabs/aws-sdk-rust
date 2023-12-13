@@ -11,7 +11,7 @@ pub struct GetTrainingDatasetOutput {
     pub training_dataset_arn: ::std::string::String,
     /// <p>The name of the training dataset.</p>
     pub name: ::std::string::String,
-    /// <p>Metadata about the requested training data.</p>
+    /// <p>Metadata about the requested training data. </p>
     pub training_data: ::std::vec::Vec<crate::types::Dataset>,
     /// <p>The status of the training dataset.</p>
     pub status: crate::types::TrainingDatasetStatus,
@@ -42,7 +42,7 @@ impl GetTrainingDatasetOutput {
         use std::ops::Deref;
         self.name.deref()
     }
-    /// <p>Metadata about the requested training data.</p>
+    /// <p>Metadata about the requested training data. </p>
     pub fn training_data(&self) -> &[crate::types::Dataset] {
         use std::ops::Deref;
         self.training_data.deref()
@@ -157,19 +157,19 @@ impl GetTrainingDatasetOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_training_data`](Self::set_training_data).
     ///
-    /// <p>Metadata about the requested training data.</p>
+    /// <p>Metadata about the requested training data. </p>
     pub fn training_data(mut self, input: crate::types::Dataset) -> Self {
         let mut v = self.training_data.unwrap_or_default();
         v.push(input);
         self.training_data = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Metadata about the requested training data.</p>
+    /// <p>Metadata about the requested training data. </p>
     pub fn set_training_data(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Dataset>>) -> Self {
         self.training_data = input;
         self
     }
-    /// <p>Metadata about the requested training data.</p>
+    /// <p>Metadata about the requested training data. </p>
     pub fn get_training_data(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Dataset>> {
         &self.training_data
     }

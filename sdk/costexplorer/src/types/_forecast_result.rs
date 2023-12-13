@@ -8,9 +8,9 @@ pub struct ForecastResult {
     pub time_period: ::std::option::Option<crate::types::DateInterval>,
     /// <p>The mean value of the forecast.</p>
     pub mean_value: ::std::option::Option<::std::string::String>,
-    /// <p>The lower limit for the prediction interval.</p>
+    /// <p>The lower limit for the prediction interval. </p>
     pub prediction_interval_lower_bound: ::std::option::Option<::std::string::String>,
-    /// <p>The upper limit for the prediction interval.</p>
+    /// <p>The upper limit for the prediction interval. </p>
     pub prediction_interval_upper_bound: ::std::option::Option<::std::string::String>,
 }
 impl ForecastResult {
@@ -22,11 +22,11 @@ impl ForecastResult {
     pub fn mean_value(&self) -> ::std::option::Option<&str> {
         self.mean_value.as_deref()
     }
-    /// <p>The lower limit for the prediction interval.</p>
+    /// <p>The lower limit for the prediction interval. </p>
     pub fn prediction_interval_lower_bound(&self) -> ::std::option::Option<&str> {
         self.prediction_interval_lower_bound.as_deref()
     }
-    /// <p>The upper limit for the prediction interval.</p>
+    /// <p>The upper limit for the prediction interval. </p>
     pub fn prediction_interval_upper_bound(&self) -> ::std::option::Option<&str> {
         self.prediction_interval_upper_bound.as_deref()
     }
@@ -76,31 +76,31 @@ impl ForecastResultBuilder {
     pub fn get_mean_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.mean_value
     }
-    /// <p>The lower limit for the prediction interval.</p>
+    /// <p>The lower limit for the prediction interval. </p>
     pub fn prediction_interval_lower_bound(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prediction_interval_lower_bound = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The lower limit for the prediction interval.</p>
+    /// <p>The lower limit for the prediction interval. </p>
     pub fn set_prediction_interval_lower_bound(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prediction_interval_lower_bound = input;
         self
     }
-    /// <p>The lower limit for the prediction interval.</p>
+    /// <p>The lower limit for the prediction interval. </p>
     pub fn get_prediction_interval_lower_bound(&self) -> &::std::option::Option<::std::string::String> {
         &self.prediction_interval_lower_bound
     }
-    /// <p>The upper limit for the prediction interval.</p>
+    /// <p>The upper limit for the prediction interval. </p>
     pub fn prediction_interval_upper_bound(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prediction_interval_upper_bound = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The upper limit for the prediction interval.</p>
+    /// <p>The upper limit for the prediction interval. </p>
     pub fn set_prediction_interval_upper_bound(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prediction_interval_upper_bound = input;
         self
     }
-    /// <p>The upper limit for the prediction interval.</p>
+    /// <p>The upper limit for the prediction interval. </p>
     pub fn get_prediction_interval_upper_bound(&self) -> &::std::option::Option<::std::string::String> {
         &self.prediction_interval_upper_bound
     }

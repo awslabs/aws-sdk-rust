@@ -22,7 +22,7 @@ impl RegisterCertificateWithoutCaInputBuilder {
 }
 /// Fluent builder constructing a request to `RegisterCertificateWithoutCA`.
 ///
-/// <p>Register a certificate that does not have a certificate authority (CA). For supported certificates, consult <a href="https://docs.aws.amazon.com/iot/latest/developerguide/x509-client-certs.html#x509-cert-algorithms"> Certificate signing algorithms supported by IoT</a>.</p>
+/// <p>Register a certificate that does not have a certificate authority (CA). For supported certificates, consult <a href="https://docs.aws.amazon.com/iot/latest/developerguide/x509-client-certs.html#x509-cert-algorithms"> Certificate signing algorithms supported by IoT</a>. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RegisterCertificateWithoutCAFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

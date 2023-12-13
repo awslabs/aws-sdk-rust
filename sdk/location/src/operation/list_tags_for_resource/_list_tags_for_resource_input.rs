@@ -5,16 +5,14 @@
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource whose tags you want to retrieve.</p>
     /// <ul>
-    /// <li>
-    /// <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code></p></li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code> </p> </li>
     /// </ul>
     pub resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource whose tags you want to retrieve.</p>
     /// <ul>
-    /// <li>
-    /// <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code></p></li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code> </p> </li>
     /// </ul>
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
@@ -36,8 +34,7 @@ pub struct ListTagsForResourceInputBuilder {
 impl ListTagsForResourceInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the resource whose tags you want to retrieve.</p>
     /// <ul>
-    /// <li>
-    /// <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code></p></li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code> </p> </li>
     /// </ul>
     /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -46,8 +43,7 @@ impl ListTagsForResourceInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the resource whose tags you want to retrieve.</p>
     /// <ul>
-    /// <li>
-    /// <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code></p></li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code> </p> </li>
     /// </ul>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
@@ -55,8 +51,7 @@ impl ListTagsForResourceInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the resource whose tags you want to retrieve.</p>
     /// <ul>
-    /// <li>
-    /// <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code></p></li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code> </p> </li>
     /// </ul>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn

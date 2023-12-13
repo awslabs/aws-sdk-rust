@@ -22,8 +22,8 @@ impl ValidateE911AddressInputBuilder {
 }
 /// Fluent builder constructing a request to `ValidateE911Address`.
 ///
-/// <p>Validates an address to be used for 911 calls made with Amazon Chime Voice Connectors. You can use validated addresses in a Presence Information Data Format Location Object file that you include in SIP requests. That helps ensure that addresses are routed to the appropriate Public Safety Answering Point.</p><important>
-/// <p><b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_ValidateE911Address.html">ValidateE911Address</a>, in the Amazon Chime SDK.</p>
+/// <p>Validates an address to be used for 911 calls made with Amazon Chime Voice Connectors. You can use validated addresses in a Presence Information Data Format Location Object file that you include in SIP requests. That helps ensure that addresses are routed to the appropriate Public Safety Answering Point.</p> <important>
+/// <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_ValidateE911Address.html">ValidateE911Address</a>, in the Amazon Chime SDK.</p>
 /// <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p>
 /// </important>
 #[deprecated(note = "Replaced by ValidateE911Address in the Amazon Chime SDK Voice Namespace")]
@@ -182,17 +182,17 @@ impl ValidateE911AddressFluentBuilder {
     pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_state()
     }
-    /// <p>The address country, such as <code>US</code>.</p>
+    /// <p>The address country, such as <code>US</code>. </p>
     pub fn country(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.country(input.into());
         self
     }
-    /// <p>The address country, such as <code>US</code>.</p>
+    /// <p>The address country, such as <code>US</code>. </p>
     pub fn set_country(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_country(input);
         self
     }
-    /// <p>The address country, such as <code>US</code>.</p>
+    /// <p>The address country, such as <code>US</code>. </p>
     pub fn get_country(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_country()
     }

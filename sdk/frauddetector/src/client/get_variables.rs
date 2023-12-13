@@ -4,12 +4,12 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_variables::builders::GetVariablesFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::get_variables::builders::GetVariablesFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_variables::builders::GetVariablesFluentBuilder::set_name):<br>required: **false**<br><p>The name of the variable.</p><br>
-    ///   - [`next_token(impl Into<String>)`](crate::operation::get_variables::builders::GetVariablesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_variables::builders::GetVariablesFluentBuilder::set_next_token):<br>required: **false**<br><p>The next page token of the get variable request.</p><br>
-    ///   - [`max_results(i32)`](crate::operation::get_variables::builders::GetVariablesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_variables::builders::GetVariablesFluentBuilder::set_max_results):<br>required: **false**<br><p>The max size per page determined for the get variable request.</p><br>
+    ///   - [`name(impl Into<String>)`](crate::operation::get_variables::builders::GetVariablesFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_variables::builders::GetVariablesFluentBuilder::set_name):<br>required: **false**<br><p>The name of the variable. </p><br>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::get_variables::builders::GetVariablesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_variables::builders::GetVariablesFluentBuilder::set_next_token):<br>required: **false**<br><p>The next page token of the get variable request. </p><br>
+    ///   - [`max_results(i32)`](crate::operation::get_variables::builders::GetVariablesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_variables::builders::GetVariablesFluentBuilder::set_max_results):<br>required: **false**<br><p>The max size per page determined for the get variable request. </p><br>
     /// - On success, responds with [`GetVariablesOutput`](crate::operation::get_variables::GetVariablesOutput) with field(s):
-    ///   - [`variables(Option<Vec::<Variable>>)`](crate::operation::get_variables::GetVariablesOutput::variables): <p>The names of the variables returned.</p>
-    ///   - [`next_token(Option<String>)`](crate::operation::get_variables::GetVariablesOutput::next_token): <p>The next page token to be used in subsequent requests.</p>
+    ///   - [`variables(Option<Vec::<Variable>>)`](crate::operation::get_variables::GetVariablesOutput::variables): <p>The names of the variables returned. </p>
+    ///   - [`next_token(Option<String>)`](crate::operation::get_variables::GetVariablesOutput::next_token): <p>The next page token to be used in subsequent requests. </p>
     /// - On failure, responds with [`SdkError<GetVariablesError>`](crate::operation::get_variables::GetVariablesError)
     pub fn get_variables(&self) -> crate::operation::get_variables::builders::GetVariablesFluentBuilder {
         crate::operation::get_variables::builders::GetVariablesFluentBuilder::new(self.handle.clone())

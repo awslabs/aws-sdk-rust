@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::describe_ip_groups::builders::DescribeIpGroupsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_ip_groups::builders::DescribeIpGroupsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to return.</p><br>
     /// - On success, responds with [`DescribeIpGroupsOutput`](crate::operation::describe_ip_groups::DescribeIpGroupsOutput) with field(s):
     ///   - [`result(Option<Vec::<WorkspacesIpGroup>>)`](crate::operation::describe_ip_groups::DescribeIpGroupsOutput::result): <p>Information about the IP access control groups.</p>
-    ///   - [`next_token(Option<String>)`](crate::operation::describe_ip_groups::DescribeIpGroupsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
+    ///   - [`next_token(Option<String>)`](crate::operation::describe_ip_groups::DescribeIpGroupsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
     /// - On failure, responds with [`SdkError<DescribeIpGroupsError>`](crate::operation::describe_ip_groups::DescribeIpGroupsError)
     pub fn describe_ip_groups(&self) -> crate::operation::describe_ip_groups::builders::DescribeIpGroupsFluentBuilder {
         crate::operation::describe_ip_groups::builders::DescribeIpGroupsFluentBuilder::new(self.handle.clone())

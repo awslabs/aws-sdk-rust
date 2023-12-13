@@ -12,15 +12,15 @@ pub struct ProactiveOrganizationInsightSummary {
     pub organizational_unit_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the insight summary.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>An array of severity values used to search for insights. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
+    /// <p> An array of severity values used to search for insights. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
     pub severity: ::std::option::Option<crate::types::InsightSeverity>,
-    /// <p>An array of status values used to search for insights.</p>
+    /// <p> An array of status values used to search for insights. </p>
     pub status: ::std::option::Option<crate::types::InsightStatus>,
-    /// <p>A time ranged that specifies when the observed behavior in an insight started and ended.</p>
+    /// <p> A time ranged that specifies when the observed behavior in an insight started and ended. </p>
     pub insight_time_range: ::std::option::Option<crate::types::InsightTimeRange>,
-    /// <p>The time range during which anomalous behavior in a proactive anomaly or an insight is expected to occur.</p>
+    /// <p> The time range during which anomalous behavior in a proactive anomaly or an insight is expected to occur. </p>
     pub prediction_time_range: ::std::option::Option<crate::types::PredictionTimeRange>,
-    /// <p>A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks.</p>
+    /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
     pub resource_collection: ::std::option::Option<crate::types::ResourceCollection>,
     /// <p>A collection of the names of Amazon Web Services services.</p>
     pub service_collection: ::std::option::Option<crate::types::ServiceCollection>,
@@ -42,23 +42,23 @@ impl ProactiveOrganizationInsightSummary {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>An array of severity values used to search for insights. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
+    /// <p> An array of severity values used to search for insights. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
     pub fn severity(&self) -> ::std::option::Option<&crate::types::InsightSeverity> {
         self.severity.as_ref()
     }
-    /// <p>An array of status values used to search for insights.</p>
+    /// <p> An array of status values used to search for insights. </p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::InsightStatus> {
         self.status.as_ref()
     }
-    /// <p>A time ranged that specifies when the observed behavior in an insight started and ended.</p>
+    /// <p> A time ranged that specifies when the observed behavior in an insight started and ended. </p>
     pub fn insight_time_range(&self) -> ::std::option::Option<&crate::types::InsightTimeRange> {
         self.insight_time_range.as_ref()
     }
-    /// <p>The time range during which anomalous behavior in a proactive anomaly or an insight is expected to occur.</p>
+    /// <p> The time range during which anomalous behavior in a proactive anomaly or an insight is expected to occur. </p>
     pub fn prediction_time_range(&self) -> ::std::option::Option<&crate::types::PredictionTimeRange> {
         self.prediction_time_range.as_ref()
     }
-    /// <p>A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks.</p>
+    /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
     pub fn resource_collection(&self) -> ::std::option::Option<&crate::types::ResourceCollection> {
         self.resource_collection.as_ref()
     }
@@ -146,73 +146,73 @@ impl ProactiveOrganizationInsightSummaryBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>An array of severity values used to search for insights. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
+    /// <p> An array of severity values used to search for insights. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
     pub fn severity(mut self, input: crate::types::InsightSeverity) -> Self {
         self.severity = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An array of severity values used to search for insights. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
+    /// <p> An array of severity values used to search for insights. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
     pub fn set_severity(mut self, input: ::std::option::Option<crate::types::InsightSeverity>) -> Self {
         self.severity = input;
         self
     }
-    /// <p>An array of severity values used to search for insights. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
+    /// <p> An array of severity values used to search for insights. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
     pub fn get_severity(&self) -> &::std::option::Option<crate::types::InsightSeverity> {
         &self.severity
     }
-    /// <p>An array of status values used to search for insights.</p>
+    /// <p> An array of status values used to search for insights. </p>
     pub fn status(mut self, input: crate::types::InsightStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An array of status values used to search for insights.</p>
+    /// <p> An array of status values used to search for insights. </p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::InsightStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>An array of status values used to search for insights.</p>
+    /// <p> An array of status values used to search for insights. </p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::InsightStatus> {
         &self.status
     }
-    /// <p>A time ranged that specifies when the observed behavior in an insight started and ended.</p>
+    /// <p> A time ranged that specifies when the observed behavior in an insight started and ended. </p>
     pub fn insight_time_range(mut self, input: crate::types::InsightTimeRange) -> Self {
         self.insight_time_range = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A time ranged that specifies when the observed behavior in an insight started and ended.</p>
+    /// <p> A time ranged that specifies when the observed behavior in an insight started and ended. </p>
     pub fn set_insight_time_range(mut self, input: ::std::option::Option<crate::types::InsightTimeRange>) -> Self {
         self.insight_time_range = input;
         self
     }
-    /// <p>A time ranged that specifies when the observed behavior in an insight started and ended.</p>
+    /// <p> A time ranged that specifies when the observed behavior in an insight started and ended. </p>
     pub fn get_insight_time_range(&self) -> &::std::option::Option<crate::types::InsightTimeRange> {
         &self.insight_time_range
     }
-    /// <p>The time range during which anomalous behavior in a proactive anomaly or an insight is expected to occur.</p>
+    /// <p> The time range during which anomalous behavior in a proactive anomaly or an insight is expected to occur. </p>
     pub fn prediction_time_range(mut self, input: crate::types::PredictionTimeRange) -> Self {
         self.prediction_time_range = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time range during which anomalous behavior in a proactive anomaly or an insight is expected to occur.</p>
+    /// <p> The time range during which anomalous behavior in a proactive anomaly or an insight is expected to occur. </p>
     pub fn set_prediction_time_range(mut self, input: ::std::option::Option<crate::types::PredictionTimeRange>) -> Self {
         self.prediction_time_range = input;
         self
     }
-    /// <p>The time range during which anomalous behavior in a proactive anomaly or an insight is expected to occur.</p>
+    /// <p> The time range during which anomalous behavior in a proactive anomaly or an insight is expected to occur. </p>
     pub fn get_prediction_time_range(&self) -> &::std::option::Option<crate::types::PredictionTimeRange> {
         &self.prediction_time_range
     }
-    /// <p>A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks.</p>
+    /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
     pub fn resource_collection(mut self, input: crate::types::ResourceCollection) -> Self {
         self.resource_collection = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks.</p>
+    /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
     pub fn set_resource_collection(mut self, input: ::std::option::Option<crate::types::ResourceCollection>) -> Self {
         self.resource_collection = input;
         self
     }
-    /// <p>A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks.</p>
+    /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
     pub fn get_resource_collection(&self) -> &::std::option::Option<crate::types::ResourceCollection> {
         &self.resource_collection
     }

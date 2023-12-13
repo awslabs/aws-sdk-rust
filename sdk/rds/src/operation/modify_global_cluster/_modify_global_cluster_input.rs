@@ -6,29 +6,25 @@ pub struct ModifyGlobalClusterInput {
     /// <p>The cluster identifier for the global cluster to modify. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must match the identifier of an existing global database cluster.</p></li>
+    /// <li> <p>Must match the identifier of an existing global database cluster.</p> </li>
     /// </ul>
     pub global_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The new cluster identifier for the global database cluster. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li>
-    /// <p>The first character must be a letter.</p></li>
-    /// <li>
-    /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>The first character must be a letter.</p> </li>
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
-    /// <p>Example: <code>my-cluster2</code></p>
+    /// <p>Example: <code>my-cluster2</code> </p>
     pub new_global_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to enable deletion protection for the global database cluster. The global database cluster can't be deleted when deletion protection is enabled.</p>
     pub deletion_protection: ::std::option::Option<bool>,
-    /// <p>The version number of the database engine to which you want to upgrade.</p>
+    /// <p>The version number of the database engine to which you want to upgrade. </p>
     /// <p>To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL-based Aurora global databases), use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine aurora-mysql --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code></p>
+    /// <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code> </p>
     /// <p>To list all of the available engine versions for <code>aurora-postgresql</code> (for PostgreSQL-based Aurora global databases), use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine aurora-postgresql --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code></p>
+    /// <p> <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code> </p>
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to allow major version upgrades.</p>
     /// <p>Constraints: Must be enabled if you specify a value for the <code>EngineVersion</code> parameter that's a different major version than the global cluster's current version.</p>
@@ -39,8 +35,7 @@ impl ModifyGlobalClusterInput {
     /// <p>The cluster identifier for the global cluster to modify. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must match the identifier of an existing global database cluster.</p></li>
+    /// <li> <p>Must match the identifier of an existing global database cluster.</p> </li>
     /// </ul>
     pub fn global_cluster_identifier(&self) -> ::std::option::Option<&str> {
         self.global_cluster_identifier.as_deref()
@@ -48,14 +43,11 @@ impl ModifyGlobalClusterInput {
     /// <p>The new cluster identifier for the global database cluster. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li>
-    /// <p>The first character must be a letter.</p></li>
-    /// <li>
-    /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>The first character must be a letter.</p> </li>
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
-    /// <p>Example: <code>my-cluster2</code></p>
+    /// <p>Example: <code>my-cluster2</code> </p>
     pub fn new_global_cluster_identifier(&self) -> ::std::option::Option<&str> {
         self.new_global_cluster_identifier.as_deref()
     }
@@ -63,11 +55,11 @@ impl ModifyGlobalClusterInput {
     pub fn deletion_protection(&self) -> ::std::option::Option<bool> {
         self.deletion_protection
     }
-    /// <p>The version number of the database engine to which you want to upgrade.</p>
+    /// <p>The version number of the database engine to which you want to upgrade. </p>
     /// <p>To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL-based Aurora global databases), use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine aurora-mysql --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code></p>
+    /// <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code> </p>
     /// <p>To list all of the available engine versions for <code>aurora-postgresql</code> (for PostgreSQL-based Aurora global databases), use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine aurora-postgresql --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code></p>
+    /// <p> <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code> </p>
     pub fn engine_version(&self) -> ::std::option::Option<&str> {
         self.engine_version.as_deref()
     }
@@ -99,8 +91,7 @@ impl ModifyGlobalClusterInputBuilder {
     /// <p>The cluster identifier for the global cluster to modify. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must match the identifier of an existing global database cluster.</p></li>
+    /// <li> <p>Must match the identifier of an existing global database cluster.</p> </li>
     /// </ul>
     pub fn global_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_cluster_identifier = ::std::option::Option::Some(input.into());
@@ -109,8 +100,7 @@ impl ModifyGlobalClusterInputBuilder {
     /// <p>The cluster identifier for the global cluster to modify. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must match the identifier of an existing global database cluster.</p></li>
+    /// <li> <p>Must match the identifier of an existing global database cluster.</p> </li>
     /// </ul>
     pub fn set_global_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.global_cluster_identifier = input;
@@ -119,8 +109,7 @@ impl ModifyGlobalClusterInputBuilder {
     /// <p>The cluster identifier for the global cluster to modify. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must match the identifier of an existing global database cluster.</p></li>
+    /// <li> <p>Must match the identifier of an existing global database cluster.</p> </li>
     /// </ul>
     pub fn get_global_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.global_cluster_identifier
@@ -128,14 +117,11 @@ impl ModifyGlobalClusterInputBuilder {
     /// <p>The new cluster identifier for the global database cluster. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li>
-    /// <p>The first character must be a letter.</p></li>
-    /// <li>
-    /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>The first character must be a letter.</p> </li>
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
-    /// <p>Example: <code>my-cluster2</code></p>
+    /// <p>Example: <code>my-cluster2</code> </p>
     pub fn new_global_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.new_global_cluster_identifier = ::std::option::Option::Some(input.into());
         self
@@ -143,14 +129,11 @@ impl ModifyGlobalClusterInputBuilder {
     /// <p>The new cluster identifier for the global database cluster. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li>
-    /// <p>The first character must be a letter.</p></li>
-    /// <li>
-    /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>The first character must be a letter.</p> </li>
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
-    /// <p>Example: <code>my-cluster2</code></p>
+    /// <p>Example: <code>my-cluster2</code> </p>
     pub fn set_new_global_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.new_global_cluster_identifier = input;
         self
@@ -158,14 +141,11 @@ impl ModifyGlobalClusterInputBuilder {
     /// <p>The new cluster identifier for the global database cluster. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li>
-    /// <p>The first character must be a letter.</p></li>
-    /// <li>
-    /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>The first character must be a letter.</p> </li>
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
-    /// <p>Example: <code>my-cluster2</code></p>
+    /// <p>Example: <code>my-cluster2</code> </p>
     pub fn get_new_global_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.new_global_cluster_identifier
     }
@@ -183,29 +163,29 @@ impl ModifyGlobalClusterInputBuilder {
     pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
         &self.deletion_protection
     }
-    /// <p>The version number of the database engine to which you want to upgrade.</p>
+    /// <p>The version number of the database engine to which you want to upgrade. </p>
     /// <p>To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL-based Aurora global databases), use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine aurora-mysql --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code></p>
+    /// <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code> </p>
     /// <p>To list all of the available engine versions for <code>aurora-postgresql</code> (for PostgreSQL-based Aurora global databases), use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine aurora-postgresql --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code></p>
+    /// <p> <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code> </p>
     pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The version number of the database engine to which you want to upgrade.</p>
+    /// <p>The version number of the database engine to which you want to upgrade. </p>
     /// <p>To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL-based Aurora global databases), use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine aurora-mysql --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code></p>
+    /// <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code> </p>
     /// <p>To list all of the available engine versions for <code>aurora-postgresql</code> (for PostgreSQL-based Aurora global databases), use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine aurora-postgresql --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code></p>
+    /// <p> <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code> </p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_version = input;
         self
     }
-    /// <p>The version number of the database engine to which you want to upgrade.</p>
+    /// <p>The version number of the database engine to which you want to upgrade. </p>
     /// <p>To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL-based Aurora global databases), use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine aurora-mysql --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code></p>
+    /// <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code> </p>
     /// <p>To list all of the available engine versions for <code>aurora-postgresql</code> (for PostgreSQL-based Aurora global databases), use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine aurora-postgresql --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code></p>
+    /// <p> <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code> </p>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine_version
     }

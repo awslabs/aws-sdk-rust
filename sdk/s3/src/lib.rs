@@ -12,7 +12,6 @@
 #![allow(clippy::result_large_err)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
-#![cfg_attr(docsrs, feature(doc_auto_cfg))]
 //! ## Getting Started
 //!
 //! > Examples are available for many services and operations, check out the
@@ -24,8 +23,8 @@
 //!
 //! ```toml
 //! [dependencies]
-//! aws-config = { version = "1.1.0", features = ["behavior-version-latest"] }
-//! aws-sdk-s3 = "1.6.0"
+//! aws-config = { version = "1.0.3", features = ["behavior-version-latest"] }
+//! aws-sdk-s3 = "1.7.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -181,8 +180,6 @@ pub mod types;
 
 mod auth_plugin;
 
-mod event_receiver;
-
 ///
 pub(crate) mod http_request_checksum;
 
@@ -204,11 +201,13 @@ mod s3_request_id;
 
 mod serialization_settings;
 
-mod endpoint_lib;
-
 mod lens;
 
 mod serde_util;
+
+mod endpoint_lib;
+
+mod event_receiver;
 
 mod event_stream_serde;
 

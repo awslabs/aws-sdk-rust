@@ -131,17 +131,17 @@ impl SetIdentityHeadersInNotificationsEnabledFluentBuilder {
     pub fn get_identity(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_identity()
     }
-    /// <p>The notification type for which to enable or disable headers in notifications.</p>
+    /// <p>The notification type for which to enable or disable headers in notifications. </p>
     pub fn notification_type(mut self, input: crate::types::NotificationType) -> Self {
         self.inner = self.inner.notification_type(input);
         self
     }
-    /// <p>The notification type for which to enable or disable headers in notifications.</p>
+    /// <p>The notification type for which to enable or disable headers in notifications. </p>
     pub fn set_notification_type(mut self, input: ::std::option::Option<crate::types::NotificationType>) -> Self {
         self.inner = self.inner.set_notification_type(input);
         self
     }
-    /// <p>The notification type for which to enable or disable headers in notifications.</p>
+    /// <p>The notification type for which to enable or disable headers in notifications. </p>
     pub fn get_notification_type(&self) -> &::std::option::Option<crate::types::NotificationType> {
         self.inner.get_notification_type()
     }

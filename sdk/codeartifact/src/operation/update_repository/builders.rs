@@ -22,7 +22,7 @@ impl UpdateRepositoryInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateRepository`.
 ///
-/// <p>Update the properties of a repository.</p>
+/// <p> Update the properties of a repository. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateRepositoryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,59 +108,59 @@ impl UpdateRepositoryFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the domain associated with the repository to update.</p>
+    /// <p> The name of the domain associated with the repository to update. </p>
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain(input.into());
         self
     }
-    /// <p>The name of the domain associated with the repository to update.</p>
+    /// <p> The name of the domain associated with the repository to update. </p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain(input);
         self
     }
-    /// <p>The name of the domain associated with the repository to update.</p>
+    /// <p> The name of the domain associated with the repository to update. </p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain()
     }
-    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_owner(input.into());
         self
     }
-    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn set_domain_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_owner(input);
         self
     }
-    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn get_domain_owner(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_owner()
     }
-    /// <p>The name of the repository to update.</p>
+    /// <p> The name of the repository to update. </p>
     pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository(input.into());
         self
     }
-    /// <p>The name of the repository to update.</p>
+    /// <p> The name of the repository to update. </p>
     pub fn set_repository(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository(input);
         self
     }
-    /// <p>The name of the repository to update.</p>
+    /// <p> The name of the repository to update. </p>
     pub fn get_repository(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_repository()
     }
-    /// <p>An updated repository description.</p>
+    /// <p> An updated repository description. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>An updated repository description.</p>
+    /// <p> An updated repository description. </p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>An updated repository description.</p>
+    /// <p> An updated repository description. </p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
@@ -168,17 +168,17 @@ impl UpdateRepositoryFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_upstreams`](Self::set_upstreams).
     ///
-    /// <p>A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>.</p>
+    /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
     pub fn upstreams(mut self, input: crate::types::UpstreamRepository) -> Self {
         self.inner = self.inner.upstreams(input);
         self
     }
-    /// <p>A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>.</p>
+    /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
     pub fn set_upstreams(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpstreamRepository>>) -> Self {
         self.inner = self.inner.set_upstreams(input);
         self
     }
-    /// <p>A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>.</p>
+    /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
     pub fn get_upstreams(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpstreamRepository>> {
         self.inner.get_upstreams()
     }

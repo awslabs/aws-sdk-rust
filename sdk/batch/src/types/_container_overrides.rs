@@ -11,15 +11,15 @@ pub struct ContainerOverrides {
     /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to override the memory requirements specified in the job definition. It's not supported for jobs running on Fargate resources. For jobs that run on EC2 resources, it overrides the <code>memory</code> parameter set in the job definition, but doesn't override any memory requirement that's specified in the <code>resourceRequirements</code> structure in the job definition. To override memory requirements that are specified in the <code>resourceRequirements</code> structure in the job definition, <code>resourceRequirements</code> must be specified in the <code>SubmitJob</code> request, with <code>type</code> set to <code>MEMORY</code> and <code>value</code> set to the new value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#override-resource-requirements">Can't override job definition resource requirements</a> in the <i>Batch User Guide</i>.</p>
     #[deprecated(note = "This field is deprecated, use resourceRequirements instead.")]
     pub memory: ::std::option::Option<i32>,
-    /// <p>The command to send to the container that overrides the default command from the Docker image or the job definition.</p><note>
+    /// <p>The command to send to the container that overrides the default command from the Docker image or the job definition.</p> <note>
     /// <p>This parameter can't contain an empty string.</p>
     /// </note>
     pub command: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The instance type to use for a multi-node parallel job.</p><note>
+    /// <p>The instance type to use for a multi-node parallel job.</p> <note>
     /// <p>This parameter isn't applicable to single-node container jobs or jobs that run on Fargate resources, and shouldn't be provided.</p>
     /// </note>
     pub instance_type: ::std::option::Option<::std::string::String>,
-    /// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch, or you can override the existing environment variables from the Docker image or the job definition.</p><note>
+    /// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch, or you can override the existing environment variables from the Docker image or the job definition.</p> <note>
     /// <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for variables that Batch sets.</p>
     /// </note>
     pub environment: ::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>>,
@@ -37,7 +37,7 @@ impl ContainerOverrides {
     pub fn memory(&self) -> ::std::option::Option<i32> {
         self.memory
     }
-    /// <p>The command to send to the container that overrides the default command from the Docker image or the job definition.</p><note>
+    /// <p>The command to send to the container that overrides the default command from the Docker image or the job definition.</p> <note>
     /// <p>This parameter can't contain an empty string.</p>
     /// </note>
     ///
@@ -45,13 +45,13 @@ impl ContainerOverrides {
     pub fn command(&self) -> &[::std::string::String] {
         self.command.as_deref().unwrap_or_default()
     }
-    /// <p>The instance type to use for a multi-node parallel job.</p><note>
+    /// <p>The instance type to use for a multi-node parallel job.</p> <note>
     /// <p>This parameter isn't applicable to single-node container jobs or jobs that run on Fargate resources, and shouldn't be provided.</p>
     /// </note>
     pub fn instance_type(&self) -> ::std::option::Option<&str> {
         self.instance_type.as_deref()
     }
-    /// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch, or you can override the existing environment variables from the Docker image or the job definition.</p><note>
+    /// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch, or you can override the existing environment variables from the Docker image or the job definition.</p> <note>
     /// <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for variables that Batch sets.</p>
     /// </note>
     ///
@@ -123,7 +123,7 @@ impl ContainerOverridesBuilder {
     ///
     /// To override the contents of this collection use [`set_command`](Self::set_command).
     ///
-    /// <p>The command to send to the container that overrides the default command from the Docker image or the job definition.</p><note>
+    /// <p>The command to send to the container that overrides the default command from the Docker image or the job definition.</p> <note>
     /// <p>This parameter can't contain an empty string.</p>
     /// </note>
     pub fn command(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -132,34 +132,34 @@ impl ContainerOverridesBuilder {
         self.command = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The command to send to the container that overrides the default command from the Docker image or the job definition.</p><note>
+    /// <p>The command to send to the container that overrides the default command from the Docker image or the job definition.</p> <note>
     /// <p>This parameter can't contain an empty string.</p>
     /// </note>
     pub fn set_command(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.command = input;
         self
     }
-    /// <p>The command to send to the container that overrides the default command from the Docker image or the job definition.</p><note>
+    /// <p>The command to send to the container that overrides the default command from the Docker image or the job definition.</p> <note>
     /// <p>This parameter can't contain an empty string.</p>
     /// </note>
     pub fn get_command(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.command
     }
-    /// <p>The instance type to use for a multi-node parallel job.</p><note>
+    /// <p>The instance type to use for a multi-node parallel job.</p> <note>
     /// <p>This parameter isn't applicable to single-node container jobs or jobs that run on Fargate resources, and shouldn't be provided.</p>
     /// </note>
     pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The instance type to use for a multi-node parallel job.</p><note>
+    /// <p>The instance type to use for a multi-node parallel job.</p> <note>
     /// <p>This parameter isn't applicable to single-node container jobs or jobs that run on Fargate resources, and shouldn't be provided.</p>
     /// </note>
     pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_type = input;
         self
     }
-    /// <p>The instance type to use for a multi-node parallel job.</p><note>
+    /// <p>The instance type to use for a multi-node parallel job.</p> <note>
     /// <p>This parameter isn't applicable to single-node container jobs or jobs that run on Fargate resources, and shouldn't be provided.</p>
     /// </note>
     pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -169,7 +169,7 @@ impl ContainerOverridesBuilder {
     ///
     /// To override the contents of this collection use [`set_environment`](Self::set_environment).
     ///
-    /// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch, or you can override the existing environment variables from the Docker image or the job definition.</p><note>
+    /// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch, or you can override the existing environment variables from the Docker image or the job definition.</p> <note>
     /// <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for variables that Batch sets.</p>
     /// </note>
     pub fn environment(mut self, input: crate::types::KeyValuePair) -> Self {
@@ -178,14 +178,14 @@ impl ContainerOverridesBuilder {
         self.environment = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch, or you can override the existing environment variables from the Docker image or the job definition.</p><note>
+    /// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch, or you can override the existing environment variables from the Docker image or the job definition.</p> <note>
     /// <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for variables that Batch sets.</p>
     /// </note>
     pub fn set_environment(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>>) -> Self {
         self.environment = input;
         self
     }
-    /// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch, or you can override the existing environment variables from the Docker image or the job definition.</p><note>
+    /// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch, or you can override the existing environment variables from the Docker image or the job definition.</p> <note>
     /// <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for variables that Batch sets.</p>
     /// </note>
     pub fn get_environment(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>> {

@@ -22,9 +22,9 @@ impl UpdateServerEngineAttributesInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateServerEngineAttributes`.
 ///
-/// <p>Updates engine-specific attributes on a specified server. The server enters the <code>MODIFYING</code> state when this operation is in progress. Only one update can occur at a time. You can use this command to reset a Chef server's public key (<code>CHEF_PIVOTAL_KEY</code>) or a Puppet server's admin password (<code>PUPPET_ADMIN_PASSWORD</code>).</p>
-/// <p>This operation is asynchronous.</p>
-/// <p>This operation can only be called for servers in <code>HEALTHY</code> or <code>UNHEALTHY</code> states. Otherwise, an <code>InvalidStateException</code> is raised. A <code>ResourceNotFoundException</code> is thrown when the server does not exist. A <code>ValidationException</code> is raised when parameters of the request are not valid.</p>
+/// <p> Updates engine-specific attributes on a specified server. The server enters the <code>MODIFYING</code> state when this operation is in progress. Only one update can occur at a time. You can use this command to reset a Chef server's public key (<code>CHEF_PIVOTAL_KEY</code>) or a Puppet server's admin password (<code>PUPPET_ADMIN_PASSWORD</code>). </p>
+/// <p> This operation is asynchronous. </p>
+/// <p> This operation can only be called for servers in <code>HEALTHY</code> or <code>UNHEALTHY</code> states. Otherwise, an <code>InvalidStateException</code> is raised. A <code>ResourceNotFoundException</code> is thrown when the server does not exist. A <code>ValidationException</code> is raised when parameters of the request are not valid. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateServerEngineAttributesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -110,45 +110,45 @@ impl UpdateServerEngineAttributesFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the server to update.</p>
+    /// <p>The name of the server to update. </p>
     pub fn server_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.server_name(input.into());
         self
     }
-    /// <p>The name of the server to update.</p>
+    /// <p>The name of the server to update. </p>
     pub fn set_server_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_server_name(input);
         self
     }
-    /// <p>The name of the server to update.</p>
+    /// <p>The name of the server to update. </p>
     pub fn get_server_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_server_name()
     }
-    /// <p>The name of the engine attribute to update.</p>
+    /// <p>The name of the engine attribute to update. </p>
     pub fn attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attribute_name(input.into());
         self
     }
-    /// <p>The name of the engine attribute to update.</p>
+    /// <p>The name of the engine attribute to update. </p>
     pub fn set_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_attribute_name(input);
         self
     }
-    /// <p>The name of the engine attribute to update.</p>
+    /// <p>The name of the engine attribute to update. </p>
     pub fn get_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_attribute_name()
     }
-    /// <p>The value to set for the attribute.</p>
+    /// <p>The value to set for the attribute. </p>
     pub fn attribute_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attribute_value(input.into());
         self
     }
-    /// <p>The value to set for the attribute.</p>
+    /// <p>The value to set for the attribute. </p>
     pub fn set_attribute_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_attribute_value(input);
         self
     }
-    /// <p>The value to set for the attribute.</p>
+    /// <p>The value to set for the attribute. </p>
     pub fn get_attribute_value(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_attribute_value()
     }

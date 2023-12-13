@@ -158,17 +158,17 @@ impl UpdateAppFluentBuilder {
     pub fn get_clear_resiliency_policy_arn(&self) -> &::std::option::Option<bool> {
         self.inner.get_clear_resiliency_policy_arn()
     }
-    /// <p>Assessment execution schedule with 'Daily' or 'Disabled' values.</p>
+    /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
     pub fn assessment_schedule(mut self, input: crate::types::AppAssessmentScheduleType) -> Self {
         self.inner = self.inner.assessment_schedule(input);
         self
     }
-    /// <p>Assessment execution schedule with 'Daily' or 'Disabled' values.</p>
+    /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
     pub fn set_assessment_schedule(mut self, input: ::std::option::Option<crate::types::AppAssessmentScheduleType>) -> Self {
         self.inner = self.inner.set_assessment_schedule(input);
         self
     }
-    /// <p>Assessment execution schedule with 'Daily' or 'Disabled' values.</p>
+    /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
     pub fn get_assessment_schedule(&self) -> &::std::option::Option<crate::types::AppAssessmentScheduleType> {
         self.inner.get_assessment_schedule()
     }

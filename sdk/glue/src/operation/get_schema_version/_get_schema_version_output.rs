@@ -13,7 +13,7 @@ pub struct GetSchemaVersionOutput {
     pub schema_arn: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the schema.</p>
     pub version_number: ::std::option::Option<i64>,
-    /// <p>The status of the schema version.</p>
+    /// <p>The status of the schema version. </p>
     pub status: ::std::option::Option<crate::types::SchemaVersionStatus>,
     /// <p>The date and time the schema version was created.</p>
     pub created_time: ::std::option::Option<::std::string::String>,
@@ -40,7 +40,7 @@ impl GetSchemaVersionOutput {
     pub fn version_number(&self) -> ::std::option::Option<i64> {
         self.version_number
     }
-    /// <p>The status of the schema version.</p>
+    /// <p>The status of the schema version. </p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::SchemaVersionStatus> {
         self.status.as_ref()
     }
@@ -145,17 +145,17 @@ impl GetSchemaVersionOutputBuilder {
     pub fn get_version_number(&self) -> &::std::option::Option<i64> {
         &self.version_number
     }
-    /// <p>The status of the schema version.</p>
+    /// <p>The status of the schema version. </p>
     pub fn status(mut self, input: crate::types::SchemaVersionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the schema version.</p>
+    /// <p>The status of the schema version. </p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::SchemaVersionStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of the schema version.</p>
+    /// <p>The status of the schema version. </p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::SchemaVersionStatus> {
         &self.status
     }

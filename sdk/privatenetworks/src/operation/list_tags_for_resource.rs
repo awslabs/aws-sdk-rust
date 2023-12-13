@@ -261,7 +261,7 @@ pub enum ListTagsForResourceError {
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The resource was not found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>The request was denied due to request throttling.</p>
+    /// <p> The request was denied due to request throttling. </p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>The request failed validation.</p>
     ValidationException(crate::types::error::ValidationException),

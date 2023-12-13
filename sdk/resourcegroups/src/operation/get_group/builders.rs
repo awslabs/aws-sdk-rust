@@ -23,11 +23,10 @@ impl GetGroupInputBuilder {
 /// Fluent builder constructing a request to `GetGroup`.
 ///
 /// <p>Returns information about a specified resource group.</p>
-/// <p><b>Minimum permissions</b></p>
+/// <p> <b>Minimum permissions</b> </p>
 /// <p>To run this command, you must have the following permissions:</p>
 /// <ul>
-/// <li>
-/// <p><code>resource-groups:GetGroup</code></p></li>
+/// <li> <p> <code>resource-groups:GetGroup</code> </p> </li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetGroupFluentBuilder {

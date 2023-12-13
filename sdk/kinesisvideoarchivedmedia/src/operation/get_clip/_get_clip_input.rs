@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetClipInput {
-    /// <p>The name of the stream for which to retrieve the media clip.</p>
-    /// <p>You must specify either the StreamName or the StreamARN.</p>
+    /// <p>The name of the stream for which to retrieve the media clip. </p>
+    /// <p>You must specify either the StreamName or the StreamARN. </p>
     pub stream_name: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the media clip.</p>
-    /// <p>You must specify either the StreamName or the StreamARN.</p>
+    /// <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the media clip. </p>
+    /// <p>You must specify either the StreamName or the StreamARN. </p>
     pub stream_arn: ::std::option::Option<::std::string::String>,
     /// <p>The time range of the requested clip and the source of the timestamps.</p>
     pub clip_fragment_selector: ::std::option::Option<crate::types::ClipFragmentSelector>,
 }
 impl GetClipInput {
-    /// <p>The name of the stream for which to retrieve the media clip.</p>
-    /// <p>You must specify either the StreamName or the StreamARN.</p>
+    /// <p>The name of the stream for which to retrieve the media clip. </p>
+    /// <p>You must specify either the StreamName or the StreamARN. </p>
     pub fn stream_name(&self) -> ::std::option::Option<&str> {
         self.stream_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the media clip.</p>
-    /// <p>You must specify either the StreamName or the StreamARN.</p>
+    /// <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the media clip. </p>
+    /// <p>You must specify either the StreamName or the StreamARN. </p>
     pub fn stream_arn(&self) -> ::std::option::Option<&str> {
         self.stream_arn.as_deref()
     }
@@ -44,37 +44,37 @@ pub struct GetClipInputBuilder {
     pub(crate) clip_fragment_selector: ::std::option::Option<crate::types::ClipFragmentSelector>,
 }
 impl GetClipInputBuilder {
-    /// <p>The name of the stream for which to retrieve the media clip.</p>
-    /// <p>You must specify either the StreamName or the StreamARN.</p>
+    /// <p>The name of the stream for which to retrieve the media clip. </p>
+    /// <p>You must specify either the StreamName or the StreamARN. </p>
     pub fn stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the stream for which to retrieve the media clip.</p>
-    /// <p>You must specify either the StreamName or the StreamARN.</p>
+    /// <p>The name of the stream for which to retrieve the media clip. </p>
+    /// <p>You must specify either the StreamName or the StreamARN. </p>
     pub fn set_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_name = input;
         self
     }
-    /// <p>The name of the stream for which to retrieve the media clip.</p>
-    /// <p>You must specify either the StreamName or the StreamARN.</p>
+    /// <p>The name of the stream for which to retrieve the media clip. </p>
+    /// <p>You must specify either the StreamName or the StreamARN. </p>
     pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.stream_name
     }
-    /// <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the media clip.</p>
-    /// <p>You must specify either the StreamName or the StreamARN.</p>
+    /// <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the media clip. </p>
+    /// <p>You must specify either the StreamName or the StreamARN. </p>
     pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the media clip.</p>
-    /// <p>You must specify either the StreamName or the StreamARN.</p>
+    /// <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the media clip. </p>
+    /// <p>You must specify either the StreamName or the StreamARN. </p>
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the media clip.</p>
-    /// <p>You must specify either the StreamName or the StreamARN.</p>
+    /// <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the media clip. </p>
+    /// <p>You must specify either the StreamName or the StreamARN. </p>
     pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.stream_arn
     }

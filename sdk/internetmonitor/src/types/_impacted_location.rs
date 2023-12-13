@@ -22,9 +22,9 @@ pub struct ImpactedLocation {
     pub latitude: ::std::option::Option<f64>,
     /// <p>The longitude where the health event is located.</p>
     pub longitude: ::std::option::Option<f64>,
-    /// <p>The country code where the health event is located. The ISO 3166-2 codes for the country is provided, when available.</p>
+    /// <p>The country code where the health event is located. The ISO 3166-2 codes for the country is provided, when available. </p>
     pub country_code: ::std::option::Option<::std::string::String>,
-    /// <p>The subdivision code where the health event is located. The ISO 3166-2 codes for country subdivisions is provided, when available.</p>
+    /// <p>The subdivision code where the health event is located. The ISO 3166-2 codes for country subdivisions is provided, when available. </p>
     pub subdivision_code: ::std::option::Option<::std::string::String>,
     /// <p>The service location where the health event is located.</p>
     pub service_location: ::std::option::Option<::std::string::String>,
@@ -71,11 +71,11 @@ impl ImpactedLocation {
     pub fn longitude(&self) -> ::std::option::Option<f64> {
         self.longitude
     }
-    /// <p>The country code where the health event is located. The ISO 3166-2 codes for the country is provided, when available.</p>
+    /// <p>The country code where the health event is located. The ISO 3166-2 codes for the country is provided, when available. </p>
     pub fn country_code(&self) -> ::std::option::Option<&str> {
         self.country_code.as_deref()
     }
-    /// <p>The subdivision code where the health event is located. The ISO 3166-2 codes for country subdivisions is provided, when available.</p>
+    /// <p>The subdivision code where the health event is located. The ISO 3166-2 codes for country subdivisions is provided, when available. </p>
     pub fn subdivision_code(&self) -> ::std::option::Option<&str> {
         self.subdivision_code.as_deref()
     }
@@ -241,31 +241,31 @@ impl ImpactedLocationBuilder {
     pub fn get_longitude(&self) -> &::std::option::Option<f64> {
         &self.longitude
     }
-    /// <p>The country code where the health event is located. The ISO 3166-2 codes for the country is provided, when available.</p>
+    /// <p>The country code where the health event is located. The ISO 3166-2 codes for the country is provided, when available. </p>
     pub fn country_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.country_code = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The country code where the health event is located. The ISO 3166-2 codes for the country is provided, when available.</p>
+    /// <p>The country code where the health event is located. The ISO 3166-2 codes for the country is provided, when available. </p>
     pub fn set_country_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.country_code = input;
         self
     }
-    /// <p>The country code where the health event is located. The ISO 3166-2 codes for the country is provided, when available.</p>
+    /// <p>The country code where the health event is located. The ISO 3166-2 codes for the country is provided, when available. </p>
     pub fn get_country_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.country_code
     }
-    /// <p>The subdivision code where the health event is located. The ISO 3166-2 codes for country subdivisions is provided, when available.</p>
+    /// <p>The subdivision code where the health event is located. The ISO 3166-2 codes for country subdivisions is provided, when available. </p>
     pub fn subdivision_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subdivision_code = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The subdivision code where the health event is located. The ISO 3166-2 codes for country subdivisions is provided, when available.</p>
+    /// <p>The subdivision code where the health event is located. The ISO 3166-2 codes for country subdivisions is provided, when available. </p>
     pub fn set_subdivision_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subdivision_code = input;
         self
     }
-    /// <p>The subdivision code where the health event is located. The ISO 3166-2 codes for country subdivisions is provided, when available.</p>
+    /// <p>The subdivision code where the health event is located. The ISO 3166-2 codes for country subdivisions is provided, when available. </p>
     pub fn get_subdivision_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.subdivision_code
     }

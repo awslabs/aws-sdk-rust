@@ -23,7 +23,7 @@ impl CreateFeatureInputBuilder {
 /// Fluent builder constructing a request to `CreateFeature`.
 ///
 /// <p>Creates an Evidently <i>feature</i> that you want to launch or test. You can define up to five variations of a feature, and use these variations in your launches and experiments. A feature must be created in a project. For information about creating a project, see <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateProject.html">CreateProject</a>.</p>
-/// <p>Don't use this operation to update an existing feature. Instead, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_UpdateFeature.html">UpdateFeature</a>.</p>
+/// <p>Don't use this operation to update an existing feature. Instead, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_UpdateFeature.html">UpdateFeature</a>. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateFeatureFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

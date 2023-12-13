@@ -22,7 +22,7 @@ impl ValidateAssessmentReportIntegrityInputBuilder {
 }
 /// Fluent builder constructing a request to `ValidateAssessmentReportIntegrity`.
 ///
-/// <p>Validates the integrity of an assessment report in Audit Manager.</p>
+/// <p> Validates the integrity of an assessment report in Audit Manager. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ValidateAssessmentReportIntegrityFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl ValidateAssessmentReportIntegrityFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The relative path of the Amazon S3 bucket that the assessment report is stored in.</p>
+    /// <p> The relative path of the Amazon S3 bucket that the assessment report is stored in. </p>
     pub fn s3_relative_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.s3_relative_path(input.into());
         self
     }
-    /// <p>The relative path of the Amazon S3 bucket that the assessment report is stored in.</p>
+    /// <p> The relative path of the Amazon S3 bucket that the assessment report is stored in. </p>
     pub fn set_s3_relative_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_s3_relative_path(input);
         self
     }
-    /// <p>The relative path of the Amazon S3 bucket that the assessment report is stored in.</p>
+    /// <p> The relative path of the Amazon S3 bucket that the assessment report is stored in. </p>
     pub fn get_s3_relative_path(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_s3_relative_path()
     }

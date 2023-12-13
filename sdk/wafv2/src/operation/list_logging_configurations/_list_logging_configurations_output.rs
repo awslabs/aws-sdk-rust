@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListLoggingConfigurationsOutput {
-    /// <p>Array of logging configurations. If you specified a <code>Limit</code> in your request, this might not be the full list.</p>
+    /// <p>Array of logging configurations. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
     pub logging_configurations: ::std::option::Option<::std::vec::Vec<crate::types::LoggingConfiguration>>,
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     pub next_marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListLoggingConfigurationsOutput {
-    /// <p>Array of logging configurations. If you specified a <code>Limit</code> in your request, this might not be the full list.</p>
+    /// <p>Array of logging configurations. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.logging_configurations.is_none()`.
     pub fn logging_configurations(&self) -> &[crate::types::LoggingConfiguration] {
@@ -46,19 +46,19 @@ impl ListLoggingConfigurationsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_logging_configurations`](Self::set_logging_configurations).
     ///
-    /// <p>Array of logging configurations. If you specified a <code>Limit</code> in your request, this might not be the full list.</p>
+    /// <p>Array of logging configurations. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
     pub fn logging_configurations(mut self, input: crate::types::LoggingConfiguration) -> Self {
         let mut v = self.logging_configurations.unwrap_or_default();
         v.push(input);
         self.logging_configurations = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Array of logging configurations. If you specified a <code>Limit</code> in your request, this might not be the full list.</p>
+    /// <p>Array of logging configurations. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
     pub fn set_logging_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LoggingConfiguration>>) -> Self {
         self.logging_configurations = input;
         self
     }
-    /// <p>Array of logging configurations. If you specified a <code>Limit</code> in your request, this might not be the full list.</p>
+    /// <p>Array of logging configurations. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
     pub fn get_logging_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LoggingConfiguration>> {
         &self.logging_configurations
     }

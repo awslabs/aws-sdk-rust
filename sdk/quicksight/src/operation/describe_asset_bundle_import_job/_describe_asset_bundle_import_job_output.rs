@@ -6,14 +6,10 @@ pub struct DescribeAssetBundleImportJobOutput {
     /// <p>Indicates the status of a job through its queuing and execution.</p>
     /// <p>Poll the <code>DescribeAssetBundleImport</code> API until <code>JobStatus</code> returns one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SUCCESSFUL</code></p></li>
-    /// <li>
-    /// <p><code>FAILED</code></p></li>
-    /// <li>
-    /// <p><code>FAILED_ROLLBACK_COMPLETED</code></p></li>
-    /// <li>
-    /// <p><code>FAILED_ROLLBACK_ERROR</code></p></li>
+    /// <li> <p> <code>SUCCESSFUL</code> </p> </li>
+    /// <li> <p> <code>FAILED</code> </p> </li>
+    /// <li> <p> <code>FAILED_ROLLBACK_COMPLETED</code> </p> </li>
+    /// <li> <p> <code>FAILED_ROLLBACK_ERROR</code> </p> </li>
     /// </ul>
     pub job_status: ::std::option::Option<crate::types::AssetBundleImportJobStatus>,
     /// <p>An array of error records that describes any failures that occurred during the export job processing.</p>
@@ -28,7 +24,7 @@ pub struct DescribeAssetBundleImportJobOutput {
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ID of the job. The job ID is set when you start a new job with a <code>StartAssetBundleImportJob</code> API call.</p>
     pub asset_bundle_import_job_id: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the Amazon Web Services account the import job was executed in.</p>
+    /// <p>The ID of the Amazon Web Services account the import job was executed in. </p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The source of the asset bundle zip file that contains the data that is imported by the job.</p>
     pub asset_bundle_import_source: ::std::option::Option<crate::types::AssetBundleImportSourceDescription>,
@@ -52,14 +48,10 @@ impl DescribeAssetBundleImportJobOutput {
     /// <p>Indicates the status of a job through its queuing and execution.</p>
     /// <p>Poll the <code>DescribeAssetBundleImport</code> API until <code>JobStatus</code> returns one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SUCCESSFUL</code></p></li>
-    /// <li>
-    /// <p><code>FAILED</code></p></li>
-    /// <li>
-    /// <p><code>FAILED_ROLLBACK_COMPLETED</code></p></li>
-    /// <li>
-    /// <p><code>FAILED_ROLLBACK_ERROR</code></p></li>
+    /// <li> <p> <code>SUCCESSFUL</code> </p> </li>
+    /// <li> <p> <code>FAILED</code> </p> </li>
+    /// <li> <p> <code>FAILED_ROLLBACK_COMPLETED</code> </p> </li>
+    /// <li> <p> <code>FAILED_ROLLBACK_ERROR</code> </p> </li>
     /// </ul>
     pub fn job_status(&self) -> ::std::option::Option<&crate::types::AssetBundleImportJobStatus> {
         self.job_status.as_ref()
@@ -90,7 +82,7 @@ impl DescribeAssetBundleImportJobOutput {
     pub fn asset_bundle_import_job_id(&self) -> ::std::option::Option<&str> {
         self.asset_bundle_import_job_id.as_deref()
     }
-    /// <p>The ID of the Amazon Web Services account the import job was executed in.</p>
+    /// <p>The ID of the Amazon Web Services account the import job was executed in. </p>
     pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
@@ -164,14 +156,10 @@ impl DescribeAssetBundleImportJobOutputBuilder {
     /// <p>Indicates the status of a job through its queuing and execution.</p>
     /// <p>Poll the <code>DescribeAssetBundleImport</code> API until <code>JobStatus</code> returns one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SUCCESSFUL</code></p></li>
-    /// <li>
-    /// <p><code>FAILED</code></p></li>
-    /// <li>
-    /// <p><code>FAILED_ROLLBACK_COMPLETED</code></p></li>
-    /// <li>
-    /// <p><code>FAILED_ROLLBACK_ERROR</code></p></li>
+    /// <li> <p> <code>SUCCESSFUL</code> </p> </li>
+    /// <li> <p> <code>FAILED</code> </p> </li>
+    /// <li> <p> <code>FAILED_ROLLBACK_COMPLETED</code> </p> </li>
+    /// <li> <p> <code>FAILED_ROLLBACK_ERROR</code> </p> </li>
     /// </ul>
     pub fn job_status(mut self, input: crate::types::AssetBundleImportJobStatus) -> Self {
         self.job_status = ::std::option::Option::Some(input);
@@ -180,14 +168,10 @@ impl DescribeAssetBundleImportJobOutputBuilder {
     /// <p>Indicates the status of a job through its queuing and execution.</p>
     /// <p>Poll the <code>DescribeAssetBundleImport</code> API until <code>JobStatus</code> returns one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SUCCESSFUL</code></p></li>
-    /// <li>
-    /// <p><code>FAILED</code></p></li>
-    /// <li>
-    /// <p><code>FAILED_ROLLBACK_COMPLETED</code></p></li>
-    /// <li>
-    /// <p><code>FAILED_ROLLBACK_ERROR</code></p></li>
+    /// <li> <p> <code>SUCCESSFUL</code> </p> </li>
+    /// <li> <p> <code>FAILED</code> </p> </li>
+    /// <li> <p> <code>FAILED_ROLLBACK_COMPLETED</code> </p> </li>
+    /// <li> <p> <code>FAILED_ROLLBACK_ERROR</code> </p> </li>
     /// </ul>
     pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::AssetBundleImportJobStatus>) -> Self {
         self.job_status = input;
@@ -196,14 +180,10 @@ impl DescribeAssetBundleImportJobOutputBuilder {
     /// <p>Indicates the status of a job through its queuing and execution.</p>
     /// <p>Poll the <code>DescribeAssetBundleImport</code> API until <code>JobStatus</code> returns one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SUCCESSFUL</code></p></li>
-    /// <li>
-    /// <p><code>FAILED</code></p></li>
-    /// <li>
-    /// <p><code>FAILED_ROLLBACK_COMPLETED</code></p></li>
-    /// <li>
-    /// <p><code>FAILED_ROLLBACK_ERROR</code></p></li>
+    /// <li> <p> <code>SUCCESSFUL</code> </p> </li>
+    /// <li> <p> <code>FAILED</code> </p> </li>
+    /// <li> <p> <code>FAILED_ROLLBACK_COMPLETED</code> </p> </li>
+    /// <li> <p> <code>FAILED_ROLLBACK_ERROR</code> </p> </li>
     /// </ul>
     pub fn get_job_status(&self) -> &::std::option::Option<crate::types::AssetBundleImportJobStatus> {
         &self.job_status
@@ -296,17 +276,17 @@ impl DescribeAssetBundleImportJobOutputBuilder {
     pub fn get_asset_bundle_import_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.asset_bundle_import_job_id
     }
-    /// <p>The ID of the Amazon Web Services account the import job was executed in.</p>
+    /// <p>The ID of the Amazon Web Services account the import job was executed in. </p>
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the Amazon Web Services account the import job was executed in.</p>
+    /// <p>The ID of the Amazon Web Services account the import job was executed in. </p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
-    /// <p>The ID of the Amazon Web Services account the import job was executed in.</p>
+    /// <p>The ID of the Amazon Web Services account the import job was executed in. </p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.aws_account_id
     }

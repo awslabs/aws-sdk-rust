@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAnomalyOutput {
-    /// <p>A <code>ProactiveAnomaly</code> object that represents the requested anomaly.</p>
+    /// <p> A <code>ProactiveAnomaly</code> object that represents the requested anomaly. </p>
     pub proactive_anomaly: ::std::option::Option<crate::types::ProactiveAnomaly>,
-    /// <p>A <code>ReactiveAnomaly</code> object that represents the requested anomaly.</p>
+    /// <p> A <code>ReactiveAnomaly</code> object that represents the requested anomaly. </p>
     pub reactive_anomaly: ::std::option::Option<crate::types::ReactiveAnomaly>,
     _request_id: Option<String>,
 }
 impl DescribeAnomalyOutput {
-    /// <p>A <code>ProactiveAnomaly</code> object that represents the requested anomaly.</p>
+    /// <p> A <code>ProactiveAnomaly</code> object that represents the requested anomaly. </p>
     pub fn proactive_anomaly(&self) -> ::std::option::Option<&crate::types::ProactiveAnomaly> {
         self.proactive_anomaly.as_ref()
     }
-    /// <p>A <code>ReactiveAnomaly</code> object that represents the requested anomaly.</p>
+    /// <p> A <code>ReactiveAnomaly</code> object that represents the requested anomaly. </p>
     pub fn reactive_anomaly(&self) -> ::std::option::Option<&crate::types::ReactiveAnomaly> {
         self.reactive_anomaly.as_ref()
     }
@@ -40,31 +40,31 @@ pub struct DescribeAnomalyOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeAnomalyOutputBuilder {
-    /// <p>A <code>ProactiveAnomaly</code> object that represents the requested anomaly.</p>
+    /// <p> A <code>ProactiveAnomaly</code> object that represents the requested anomaly. </p>
     pub fn proactive_anomaly(mut self, input: crate::types::ProactiveAnomaly) -> Self {
         self.proactive_anomaly = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A <code>ProactiveAnomaly</code> object that represents the requested anomaly.</p>
+    /// <p> A <code>ProactiveAnomaly</code> object that represents the requested anomaly. </p>
     pub fn set_proactive_anomaly(mut self, input: ::std::option::Option<crate::types::ProactiveAnomaly>) -> Self {
         self.proactive_anomaly = input;
         self
     }
-    /// <p>A <code>ProactiveAnomaly</code> object that represents the requested anomaly.</p>
+    /// <p> A <code>ProactiveAnomaly</code> object that represents the requested anomaly. </p>
     pub fn get_proactive_anomaly(&self) -> &::std::option::Option<crate::types::ProactiveAnomaly> {
         &self.proactive_anomaly
     }
-    /// <p>A <code>ReactiveAnomaly</code> object that represents the requested anomaly.</p>
+    /// <p> A <code>ReactiveAnomaly</code> object that represents the requested anomaly. </p>
     pub fn reactive_anomaly(mut self, input: crate::types::ReactiveAnomaly) -> Self {
         self.reactive_anomaly = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A <code>ReactiveAnomaly</code> object that represents the requested anomaly.</p>
+    /// <p> A <code>ReactiveAnomaly</code> object that represents the requested anomaly. </p>
     pub fn set_reactive_anomaly(mut self, input: ::std::option::Option<crate::types::ReactiveAnomaly>) -> Self {
         self.reactive_anomaly = input;
         self
     }
-    /// <p>A <code>ReactiveAnomaly</code> object that represents the requested anomaly.</p>
+    /// <p> A <code>ReactiveAnomaly</code> object that represents the requested anomaly. </p>
     pub fn get_reactive_anomaly(&self) -> &::std::option::Option<crate::types::ReactiveAnomaly> {
         &self.reactive_anomaly
     }

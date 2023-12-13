@@ -242,11 +242,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListTagsForRe
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum ListTagsForResourceError {
-    /// <p><code>DBClusterIdentifier</code> doesn't refer to an existing cluster.</p>
+    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing cluster. </p>
     DbClusterNotFoundFault(crate::types::error::DbClusterNotFoundFault),
-    /// <p><code>DBInstanceIdentifier</code> doesn't refer to an existing instance.</p>
+    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing instance. </p>
     DbInstanceNotFoundFault(crate::types::error::DbInstanceNotFoundFault),
-    /// <p><code>DBSnapshotIdentifier</code> doesn't refer to an existing snapshot.</p>
+    /// <p> <code>DBSnapshotIdentifier</code> doesn't refer to an existing snapshot. </p>
     DbSnapshotNotFoundFault(crate::types::error::DbSnapshotNotFoundFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

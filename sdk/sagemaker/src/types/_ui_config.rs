@@ -10,35 +10,30 @@ pub struct UiConfig {
     pub ui_template_s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the worker task template used to render the worker UI and tools for labeling job tasks.</p>
     /// <p>Use this parameter when you are creating a labeling job for named entity recognition, 3D point cloud and video frame labeling jobs. Use your labeling job task type to select one of the following ARNs and use it with this parameter when you create a labeling job. Replace <code>aws-region</code> with the Amazon Web Services Region you are creating your labeling job in. For example, replace <code>aws-region</code> with <code>us-west-1</code> if you create a labeling job in US West (N. California).</p>
-    /// <p><b>Named Entity Recognition</b></p>
+    /// <p> <b>Named Entity Recognition</b> </p>
     /// <p>Use the following <code>HumanTaskUiArn</code> for named entity recognition labeling jobs:</p>
-    /// <p><code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/NamedEntityRecognition</code></p>
-    /// <p><b>3D Point Cloud HumanTaskUiArns</b></p>
-    /// <p>Use this <code>HumanTaskUiArn</code> for 3D point cloud object detection and 3D point cloud object detection adjustment labeling jobs.</p>
+    /// <p> <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/NamedEntityRecognition</code> </p>
+    /// <p> <b>3D Point Cloud HumanTaskUiArns</b> </p>
+    /// <p>Use this <code>HumanTaskUiArn</code> for 3D point cloud object detection and 3D point cloud object detection adjustment labeling jobs. </p>
     /// <ul>
-    /// <li>
-    /// <p><code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudObjectDetection</code></p></li>
+    /// <li> <p> <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudObjectDetection</code> </p> </li>
     /// </ul>
-    /// <p>Use this <code>HumanTaskUiArn</code> for 3D point cloud object tracking and 3D point cloud object tracking adjustment labeling jobs.</p>
+    /// <p> Use this <code>HumanTaskUiArn</code> for 3D point cloud object tracking and 3D point cloud object tracking adjustment labeling jobs. </p>
     /// <ul>
-    /// <li>
-    /// <p><code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudObjectTracking</code></p></li>
+    /// <li> <p> <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudObjectTracking</code> </p> </li>
     /// </ul>
-    /// <p>Use this <code>HumanTaskUiArn</code> for 3D point cloud semantic segmentation and 3D point cloud semantic segmentation adjustment labeling jobs.</p>
+    /// <p> Use this <code>HumanTaskUiArn</code> for 3D point cloud semantic segmentation and 3D point cloud semantic segmentation adjustment labeling jobs.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudSemanticSegmentation</code></p></li>
+    /// <li> <p> <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudSemanticSegmentation</code> </p> </li>
     /// </ul>
-    /// <p><b>Video Frame HumanTaskUiArns</b></p>
-    /// <p>Use this <code>HumanTaskUiArn</code> for video frame object detection and video frame object detection adjustment labeling jobs.</p>
+    /// <p> <b>Video Frame HumanTaskUiArns</b> </p>
+    /// <p>Use this <code>HumanTaskUiArn</code> for video frame object detection and video frame object detection adjustment labeling jobs. </p>
     /// <ul>
-    /// <li>
-    /// <p><code>arn:aws:sagemaker:region:394669845002:human-task-ui/VideoObjectDetection</code></p></li>
+    /// <li> <p> <code>arn:aws:sagemaker:region:394669845002:human-task-ui/VideoObjectDetection</code> </p> </li>
     /// </ul>
-    /// <p>Use this <code>HumanTaskUiArn</code> for video frame object tracking and video frame object tracking adjustment labeling jobs.</p>
+    /// <p> Use this <code>HumanTaskUiArn</code> for video frame object tracking and video frame object tracking adjustment labeling jobs. </p>
     /// <ul>
-    /// <li>
-    /// <p><code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/VideoObjectTracking</code></p></li>
+    /// <li> <p> <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/VideoObjectTracking</code> </p> </li>
     /// </ul>
     pub human_task_ui_arn: ::std::option::Option<::std::string::String>,
 }
@@ -49,35 +44,30 @@ impl UiConfig {
     }
     /// <p>The ARN of the worker task template used to render the worker UI and tools for labeling job tasks.</p>
     /// <p>Use this parameter when you are creating a labeling job for named entity recognition, 3D point cloud and video frame labeling jobs. Use your labeling job task type to select one of the following ARNs and use it with this parameter when you create a labeling job. Replace <code>aws-region</code> with the Amazon Web Services Region you are creating your labeling job in. For example, replace <code>aws-region</code> with <code>us-west-1</code> if you create a labeling job in US West (N. California).</p>
-    /// <p><b>Named Entity Recognition</b></p>
+    /// <p> <b>Named Entity Recognition</b> </p>
     /// <p>Use the following <code>HumanTaskUiArn</code> for named entity recognition labeling jobs:</p>
-    /// <p><code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/NamedEntityRecognition</code></p>
-    /// <p><b>3D Point Cloud HumanTaskUiArns</b></p>
-    /// <p>Use this <code>HumanTaskUiArn</code> for 3D point cloud object detection and 3D point cloud object detection adjustment labeling jobs.</p>
+    /// <p> <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/NamedEntityRecognition</code> </p>
+    /// <p> <b>3D Point Cloud HumanTaskUiArns</b> </p>
+    /// <p>Use this <code>HumanTaskUiArn</code> for 3D point cloud object detection and 3D point cloud object detection adjustment labeling jobs. </p>
     /// <ul>
-    /// <li>
-    /// <p><code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudObjectDetection</code></p></li>
+    /// <li> <p> <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudObjectDetection</code> </p> </li>
     /// </ul>
-    /// <p>Use this <code>HumanTaskUiArn</code> for 3D point cloud object tracking and 3D point cloud object tracking adjustment labeling jobs.</p>
+    /// <p> Use this <code>HumanTaskUiArn</code> for 3D point cloud object tracking and 3D point cloud object tracking adjustment labeling jobs. </p>
     /// <ul>
-    /// <li>
-    /// <p><code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudObjectTracking</code></p></li>
+    /// <li> <p> <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudObjectTracking</code> </p> </li>
     /// </ul>
-    /// <p>Use this <code>HumanTaskUiArn</code> for 3D point cloud semantic segmentation and 3D point cloud semantic segmentation adjustment labeling jobs.</p>
+    /// <p> Use this <code>HumanTaskUiArn</code> for 3D point cloud semantic segmentation and 3D point cloud semantic segmentation adjustment labeling jobs.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudSemanticSegmentation</code></p></li>
+    /// <li> <p> <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudSemanticSegmentation</code> </p> </li>
     /// </ul>
-    /// <p><b>Video Frame HumanTaskUiArns</b></p>
-    /// <p>Use this <code>HumanTaskUiArn</code> for video frame object detection and video frame object detection adjustment labeling jobs.</p>
+    /// <p> <b>Video Frame HumanTaskUiArns</b> </p>
+    /// <p>Use this <code>HumanTaskUiArn</code> for video frame object detection and video frame object detection adjustment labeling jobs. </p>
     /// <ul>
-    /// <li>
-    /// <p><code>arn:aws:sagemaker:region:394669845002:human-task-ui/VideoObjectDetection</code></p></li>
+    /// <li> <p> <code>arn:aws:sagemaker:region:394669845002:human-task-ui/VideoObjectDetection</code> </p> </li>
     /// </ul>
-    /// <p>Use this <code>HumanTaskUiArn</code> for video frame object tracking and video frame object tracking adjustment labeling jobs.</p>
+    /// <p> Use this <code>HumanTaskUiArn</code> for video frame object tracking and video frame object tracking adjustment labeling jobs. </p>
     /// <ul>
-    /// <li>
-    /// <p><code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/VideoObjectTracking</code></p></li>
+    /// <li> <p> <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/VideoObjectTracking</code> </p> </li>
     /// </ul>
     pub fn human_task_ui_arn(&self) -> ::std::option::Option<&str> {
         self.human_task_ui_arn.as_deref()
@@ -114,35 +104,30 @@ impl UiConfigBuilder {
     }
     /// <p>The ARN of the worker task template used to render the worker UI and tools for labeling job tasks.</p>
     /// <p>Use this parameter when you are creating a labeling job for named entity recognition, 3D point cloud and video frame labeling jobs. Use your labeling job task type to select one of the following ARNs and use it with this parameter when you create a labeling job. Replace <code>aws-region</code> with the Amazon Web Services Region you are creating your labeling job in. For example, replace <code>aws-region</code> with <code>us-west-1</code> if you create a labeling job in US West (N. California).</p>
-    /// <p><b>Named Entity Recognition</b></p>
+    /// <p> <b>Named Entity Recognition</b> </p>
     /// <p>Use the following <code>HumanTaskUiArn</code> for named entity recognition labeling jobs:</p>
-    /// <p><code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/NamedEntityRecognition</code></p>
-    /// <p><b>3D Point Cloud HumanTaskUiArns</b></p>
-    /// <p>Use this <code>HumanTaskUiArn</code> for 3D point cloud object detection and 3D point cloud object detection adjustment labeling jobs.</p>
+    /// <p> <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/NamedEntityRecognition</code> </p>
+    /// <p> <b>3D Point Cloud HumanTaskUiArns</b> </p>
+    /// <p>Use this <code>HumanTaskUiArn</code> for 3D point cloud object detection and 3D point cloud object detection adjustment labeling jobs. </p>
     /// <ul>
-    /// <li>
-    /// <p><code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudObjectDetection</code></p></li>
+    /// <li> <p> <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudObjectDetection</code> </p> </li>
     /// </ul>
-    /// <p>Use this <code>HumanTaskUiArn</code> for 3D point cloud object tracking and 3D point cloud object tracking adjustment labeling jobs.</p>
+    /// <p> Use this <code>HumanTaskUiArn</code> for 3D point cloud object tracking and 3D point cloud object tracking adjustment labeling jobs. </p>
     /// <ul>
-    /// <li>
-    /// <p><code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudObjectTracking</code></p></li>
+    /// <li> <p> <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudObjectTracking</code> </p> </li>
     /// </ul>
-    /// <p>Use this <code>HumanTaskUiArn</code> for 3D point cloud semantic segmentation and 3D point cloud semantic segmentation adjustment labeling jobs.</p>
+    /// <p> Use this <code>HumanTaskUiArn</code> for 3D point cloud semantic segmentation and 3D point cloud semantic segmentation adjustment labeling jobs.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudSemanticSegmentation</code></p></li>
+    /// <li> <p> <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudSemanticSegmentation</code> </p> </li>
     /// </ul>
-    /// <p><b>Video Frame HumanTaskUiArns</b></p>
-    /// <p>Use this <code>HumanTaskUiArn</code> for video frame object detection and video frame object detection adjustment labeling jobs.</p>
+    /// <p> <b>Video Frame HumanTaskUiArns</b> </p>
+    /// <p>Use this <code>HumanTaskUiArn</code> for video frame object detection and video frame object detection adjustment labeling jobs. </p>
     /// <ul>
-    /// <li>
-    /// <p><code>arn:aws:sagemaker:region:394669845002:human-task-ui/VideoObjectDetection</code></p></li>
+    /// <li> <p> <code>arn:aws:sagemaker:region:394669845002:human-task-ui/VideoObjectDetection</code> </p> </li>
     /// </ul>
-    /// <p>Use this <code>HumanTaskUiArn</code> for video frame object tracking and video frame object tracking adjustment labeling jobs.</p>
+    /// <p> Use this <code>HumanTaskUiArn</code> for video frame object tracking and video frame object tracking adjustment labeling jobs. </p>
     /// <ul>
-    /// <li>
-    /// <p><code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/VideoObjectTracking</code></p></li>
+    /// <li> <p> <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/VideoObjectTracking</code> </p> </li>
     /// </ul>
     pub fn human_task_ui_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.human_task_ui_arn = ::std::option::Option::Some(input.into());
@@ -150,35 +135,30 @@ impl UiConfigBuilder {
     }
     /// <p>The ARN of the worker task template used to render the worker UI and tools for labeling job tasks.</p>
     /// <p>Use this parameter when you are creating a labeling job for named entity recognition, 3D point cloud and video frame labeling jobs. Use your labeling job task type to select one of the following ARNs and use it with this parameter when you create a labeling job. Replace <code>aws-region</code> with the Amazon Web Services Region you are creating your labeling job in. For example, replace <code>aws-region</code> with <code>us-west-1</code> if you create a labeling job in US West (N. California).</p>
-    /// <p><b>Named Entity Recognition</b></p>
+    /// <p> <b>Named Entity Recognition</b> </p>
     /// <p>Use the following <code>HumanTaskUiArn</code> for named entity recognition labeling jobs:</p>
-    /// <p><code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/NamedEntityRecognition</code></p>
-    /// <p><b>3D Point Cloud HumanTaskUiArns</b></p>
-    /// <p>Use this <code>HumanTaskUiArn</code> for 3D point cloud object detection and 3D point cloud object detection adjustment labeling jobs.</p>
+    /// <p> <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/NamedEntityRecognition</code> </p>
+    /// <p> <b>3D Point Cloud HumanTaskUiArns</b> </p>
+    /// <p>Use this <code>HumanTaskUiArn</code> for 3D point cloud object detection and 3D point cloud object detection adjustment labeling jobs. </p>
     /// <ul>
-    /// <li>
-    /// <p><code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudObjectDetection</code></p></li>
+    /// <li> <p> <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudObjectDetection</code> </p> </li>
     /// </ul>
-    /// <p>Use this <code>HumanTaskUiArn</code> for 3D point cloud object tracking and 3D point cloud object tracking adjustment labeling jobs.</p>
+    /// <p> Use this <code>HumanTaskUiArn</code> for 3D point cloud object tracking and 3D point cloud object tracking adjustment labeling jobs. </p>
     /// <ul>
-    /// <li>
-    /// <p><code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudObjectTracking</code></p></li>
+    /// <li> <p> <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudObjectTracking</code> </p> </li>
     /// </ul>
-    /// <p>Use this <code>HumanTaskUiArn</code> for 3D point cloud semantic segmentation and 3D point cloud semantic segmentation adjustment labeling jobs.</p>
+    /// <p> Use this <code>HumanTaskUiArn</code> for 3D point cloud semantic segmentation and 3D point cloud semantic segmentation adjustment labeling jobs.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudSemanticSegmentation</code></p></li>
+    /// <li> <p> <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudSemanticSegmentation</code> </p> </li>
     /// </ul>
-    /// <p><b>Video Frame HumanTaskUiArns</b></p>
-    /// <p>Use this <code>HumanTaskUiArn</code> for video frame object detection and video frame object detection adjustment labeling jobs.</p>
+    /// <p> <b>Video Frame HumanTaskUiArns</b> </p>
+    /// <p>Use this <code>HumanTaskUiArn</code> for video frame object detection and video frame object detection adjustment labeling jobs. </p>
     /// <ul>
-    /// <li>
-    /// <p><code>arn:aws:sagemaker:region:394669845002:human-task-ui/VideoObjectDetection</code></p></li>
+    /// <li> <p> <code>arn:aws:sagemaker:region:394669845002:human-task-ui/VideoObjectDetection</code> </p> </li>
     /// </ul>
-    /// <p>Use this <code>HumanTaskUiArn</code> for video frame object tracking and video frame object tracking adjustment labeling jobs.</p>
+    /// <p> Use this <code>HumanTaskUiArn</code> for video frame object tracking and video frame object tracking adjustment labeling jobs. </p>
     /// <ul>
-    /// <li>
-    /// <p><code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/VideoObjectTracking</code></p></li>
+    /// <li> <p> <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/VideoObjectTracking</code> </p> </li>
     /// </ul>
     pub fn set_human_task_ui_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.human_task_ui_arn = input;
@@ -186,35 +166,30 @@ impl UiConfigBuilder {
     }
     /// <p>The ARN of the worker task template used to render the worker UI and tools for labeling job tasks.</p>
     /// <p>Use this parameter when you are creating a labeling job for named entity recognition, 3D point cloud and video frame labeling jobs. Use your labeling job task type to select one of the following ARNs and use it with this parameter when you create a labeling job. Replace <code>aws-region</code> with the Amazon Web Services Region you are creating your labeling job in. For example, replace <code>aws-region</code> with <code>us-west-1</code> if you create a labeling job in US West (N. California).</p>
-    /// <p><b>Named Entity Recognition</b></p>
+    /// <p> <b>Named Entity Recognition</b> </p>
     /// <p>Use the following <code>HumanTaskUiArn</code> for named entity recognition labeling jobs:</p>
-    /// <p><code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/NamedEntityRecognition</code></p>
-    /// <p><b>3D Point Cloud HumanTaskUiArns</b></p>
-    /// <p>Use this <code>HumanTaskUiArn</code> for 3D point cloud object detection and 3D point cloud object detection adjustment labeling jobs.</p>
+    /// <p> <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/NamedEntityRecognition</code> </p>
+    /// <p> <b>3D Point Cloud HumanTaskUiArns</b> </p>
+    /// <p>Use this <code>HumanTaskUiArn</code> for 3D point cloud object detection and 3D point cloud object detection adjustment labeling jobs. </p>
     /// <ul>
-    /// <li>
-    /// <p><code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudObjectDetection</code></p></li>
+    /// <li> <p> <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudObjectDetection</code> </p> </li>
     /// </ul>
-    /// <p>Use this <code>HumanTaskUiArn</code> for 3D point cloud object tracking and 3D point cloud object tracking adjustment labeling jobs.</p>
+    /// <p> Use this <code>HumanTaskUiArn</code> for 3D point cloud object tracking and 3D point cloud object tracking adjustment labeling jobs. </p>
     /// <ul>
-    /// <li>
-    /// <p><code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudObjectTracking</code></p></li>
+    /// <li> <p> <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudObjectTracking</code> </p> </li>
     /// </ul>
-    /// <p>Use this <code>HumanTaskUiArn</code> for 3D point cloud semantic segmentation and 3D point cloud semantic segmentation adjustment labeling jobs.</p>
+    /// <p> Use this <code>HumanTaskUiArn</code> for 3D point cloud semantic segmentation and 3D point cloud semantic segmentation adjustment labeling jobs.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudSemanticSegmentation</code></p></li>
+    /// <li> <p> <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudSemanticSegmentation</code> </p> </li>
     /// </ul>
-    /// <p><b>Video Frame HumanTaskUiArns</b></p>
-    /// <p>Use this <code>HumanTaskUiArn</code> for video frame object detection and video frame object detection adjustment labeling jobs.</p>
+    /// <p> <b>Video Frame HumanTaskUiArns</b> </p>
+    /// <p>Use this <code>HumanTaskUiArn</code> for video frame object detection and video frame object detection adjustment labeling jobs. </p>
     /// <ul>
-    /// <li>
-    /// <p><code>arn:aws:sagemaker:region:394669845002:human-task-ui/VideoObjectDetection</code></p></li>
+    /// <li> <p> <code>arn:aws:sagemaker:region:394669845002:human-task-ui/VideoObjectDetection</code> </p> </li>
     /// </ul>
-    /// <p>Use this <code>HumanTaskUiArn</code> for video frame object tracking and video frame object tracking adjustment labeling jobs.</p>
+    /// <p> Use this <code>HumanTaskUiArn</code> for video frame object tracking and video frame object tracking adjustment labeling jobs. </p>
     /// <ul>
-    /// <li>
-    /// <p><code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/VideoObjectTracking</code></p></li>
+    /// <li> <p> <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/VideoObjectTracking</code> </p> </li>
     /// </ul>
     pub fn get_human_task_ui_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.human_task_ui_arn

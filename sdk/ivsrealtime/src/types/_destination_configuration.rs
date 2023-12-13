@@ -6,7 +6,7 @@
 pub struct DestinationConfiguration {
     /// <p>Name that can be specified to help identify the destination.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>An IVS channel to be used for broadcasting, for server-side composition. Either a <code>channel</code> or an <code>s3</code> must be specified.</p>
+    /// <p>An IVS channel to be used for broadcasting, for server-side composition. Either a <code>channel</code> or an <code>s3</code> must be specified. </p>
     pub channel: ::std::option::Option<crate::types::ChannelDestinationConfiguration>,
     /// <p>An S3 storage configuration to be used for recording video data. Either a <code>channel</code> or an <code>s3</code> must be specified.</p>
     pub s3: ::std::option::Option<crate::types::S3DestinationConfiguration>,
@@ -16,7 +16,7 @@ impl DestinationConfiguration {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>An IVS channel to be used for broadcasting, for server-side composition. Either a <code>channel</code> or an <code>s3</code> must be specified.</p>
+    /// <p>An IVS channel to be used for broadcasting, for server-side composition. Either a <code>channel</code> or an <code>s3</code> must be specified. </p>
     pub fn channel(&self) -> ::std::option::Option<&crate::types::ChannelDestinationConfiguration> {
         self.channel.as_ref()
     }
@@ -55,17 +55,17 @@ impl DestinationConfigurationBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>An IVS channel to be used for broadcasting, for server-side composition. Either a <code>channel</code> or an <code>s3</code> must be specified.</p>
+    /// <p>An IVS channel to be used for broadcasting, for server-side composition. Either a <code>channel</code> or an <code>s3</code> must be specified. </p>
     pub fn channel(mut self, input: crate::types::ChannelDestinationConfiguration) -> Self {
         self.channel = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An IVS channel to be used for broadcasting, for server-side composition. Either a <code>channel</code> or an <code>s3</code> must be specified.</p>
+    /// <p>An IVS channel to be used for broadcasting, for server-side composition. Either a <code>channel</code> or an <code>s3</code> must be specified. </p>
     pub fn set_channel(mut self, input: ::std::option::Option<crate::types::ChannelDestinationConfiguration>) -> Self {
         self.channel = input;
         self
     }
-    /// <p>An IVS channel to be used for broadcasting, for server-side composition. Either a <code>channel</code> or an <code>s3</code> must be specified.</p>
+    /// <p>An IVS channel to be used for broadcasting, for server-side composition. Either a <code>channel</code> or an <code>s3</code> must be specified. </p>
     pub fn get_channel(&self) -> &::std::option::Option<crate::types::ChannelDestinationConfiguration> {
         &self.channel
     }

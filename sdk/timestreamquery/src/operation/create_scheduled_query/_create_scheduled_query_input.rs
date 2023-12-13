@@ -10,26 +10,24 @@ pub struct CreateScheduledQueryInput {
     pub query_string: ::std::option::Option<::std::string::String>,
     /// <p>The schedule configuration for the query.</p>
     pub schedule_configuration: ::std::option::Option<crate::types::ScheduleConfiguration>,
-    /// <p>Notification configuration for the scheduled query. A notification is sent by Timestream when a query run finishes, when the state is updated or when you delete it.</p>
+    /// <p>Notification configuration for the scheduled query. A notification is sent by Timestream when a query run finishes, when the state is updated or when you delete it. </p>
     pub notification_configuration: ::std::option::Option<crate::types::NotificationConfiguration>,
     /// <p>Configuration used for writing the result of a query.</p>
     pub target_configuration: ::std::option::Option<crate::types::TargetConfiguration>,
-    /// <p>Using a ClientToken makes the call to CreateScheduledQuery idempotent, in other words, making the same request repeatedly will produce the same result. Making multiple identical CreateScheduledQuery requests has the same effect as making a single request.</p>
+    /// <p>Using a ClientToken makes the call to CreateScheduledQuery idempotent, in other words, making the same request repeatedly will produce the same result. Making multiple identical CreateScheduledQuery requests has the same effect as making a single request. </p>
     /// <ul>
-    /// <li>
-    /// <p>If CreateScheduledQuery is called without a <code>ClientToken</code>, the Query SDK generates a <code>ClientToken</code> on your behalf.</p></li>
-    /// <li>
-    /// <p>After 8 hours, any request with the same <code>ClientToken</code> is treated as a new request.</p></li>
+    /// <li> <p> If CreateScheduledQuery is called without a <code>ClientToken</code>, the Query SDK generates a <code>ClientToken</code> on your behalf.</p> </li>
+    /// <li> <p> After 8 hours, any request with the same <code>ClientToken</code> is treated as a new request. </p> </li>
     /// </ul>
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// <p>The ARN for the IAM role that Timestream will assume when running the scheduled query.</p>
+    /// <p>The ARN for the IAM role that Timestream will assume when running the scheduled query. </p>
     pub scheduled_query_execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of key-value pairs to label the scheduled query.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    /// <p>The Amazon KMS key used to encrypt the scheduled query resource, at-rest. If the Amazon KMS key is not specified, the scheduled query resource will be encrypted with a Timestream owned Amazon KMS key. To specify a KMS key, use the key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix the name with <i>alias/</i></p>
+    /// <p>The Amazon KMS key used to encrypt the scheduled query resource, at-rest. If the Amazon KMS key is not specified, the scheduled query resource will be encrypted with a Timestream owned Amazon KMS key. To specify a KMS key, use the key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix the name with <i>alias/</i> </p>
     /// <p>If ErrorReportConfiguration uses <code>SSE_KMS</code> as encryption type, the same KmsKeyId is used to encrypt the error report at rest.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
-    /// <p>Configuration for error reporting. Error reports will be generated when a problem is encountered when writing the query results.</p>
+    /// <p>Configuration for error reporting. Error reports will be generated when a problem is encountered when writing the query results. </p>
     pub error_report_configuration: ::std::option::Option<crate::types::ErrorReportConfiguration>,
 }
 impl CreateScheduledQueryInput {
@@ -46,7 +44,7 @@ impl CreateScheduledQueryInput {
     pub fn schedule_configuration(&self) -> ::std::option::Option<&crate::types::ScheduleConfiguration> {
         self.schedule_configuration.as_ref()
     }
-    /// <p>Notification configuration for the scheduled query. A notification is sent by Timestream when a query run finishes, when the state is updated or when you delete it.</p>
+    /// <p>Notification configuration for the scheduled query. A notification is sent by Timestream when a query run finishes, when the state is updated or when you delete it. </p>
     pub fn notification_configuration(&self) -> ::std::option::Option<&crate::types::NotificationConfiguration> {
         self.notification_configuration.as_ref()
     }
@@ -54,17 +52,15 @@ impl CreateScheduledQueryInput {
     pub fn target_configuration(&self) -> ::std::option::Option<&crate::types::TargetConfiguration> {
         self.target_configuration.as_ref()
     }
-    /// <p>Using a ClientToken makes the call to CreateScheduledQuery idempotent, in other words, making the same request repeatedly will produce the same result. Making multiple identical CreateScheduledQuery requests has the same effect as making a single request.</p>
+    /// <p>Using a ClientToken makes the call to CreateScheduledQuery idempotent, in other words, making the same request repeatedly will produce the same result. Making multiple identical CreateScheduledQuery requests has the same effect as making a single request. </p>
     /// <ul>
-    /// <li>
-    /// <p>If CreateScheduledQuery is called without a <code>ClientToken</code>, the Query SDK generates a <code>ClientToken</code> on your behalf.</p></li>
-    /// <li>
-    /// <p>After 8 hours, any request with the same <code>ClientToken</code> is treated as a new request.</p></li>
+    /// <li> <p> If CreateScheduledQuery is called without a <code>ClientToken</code>, the Query SDK generates a <code>ClientToken</code> on your behalf.</p> </li>
+    /// <li> <p> After 8 hours, any request with the same <code>ClientToken</code> is treated as a new request. </p> </li>
     /// </ul>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The ARN for the IAM role that Timestream will assume when running the scheduled query.</p>
+    /// <p>The ARN for the IAM role that Timestream will assume when running the scheduled query. </p>
     pub fn scheduled_query_execution_role_arn(&self) -> ::std::option::Option<&str> {
         self.scheduled_query_execution_role_arn.as_deref()
     }
@@ -74,12 +70,12 @@ impl CreateScheduledQueryInput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
-    /// <p>The Amazon KMS key used to encrypt the scheduled query resource, at-rest. If the Amazon KMS key is not specified, the scheduled query resource will be encrypted with a Timestream owned Amazon KMS key. To specify a KMS key, use the key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix the name with <i>alias/</i></p>
+    /// <p>The Amazon KMS key used to encrypt the scheduled query resource, at-rest. If the Amazon KMS key is not specified, the scheduled query resource will be encrypted with a Timestream owned Amazon KMS key. To specify a KMS key, use the key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix the name with <i>alias/</i> </p>
     /// <p>If ErrorReportConfiguration uses <code>SSE_KMS</code> as encryption type, the same KmsKeyId is used to encrypt the error report at rest.</p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
-    /// <p>Configuration for error reporting. Error reports will be generated when a problem is encountered when writing the query results.</p>
+    /// <p>Configuration for error reporting. Error reports will be generated when a problem is encountered when writing the query results. </p>
     pub fn error_report_configuration(&self) -> ::std::option::Option<&crate::types::ErrorReportConfiguration> {
         self.error_report_configuration.as_ref()
     }
@@ -171,18 +167,18 @@ impl CreateScheduledQueryInputBuilder {
     pub fn get_schedule_configuration(&self) -> &::std::option::Option<crate::types::ScheduleConfiguration> {
         &self.schedule_configuration
     }
-    /// <p>Notification configuration for the scheduled query. A notification is sent by Timestream when a query run finishes, when the state is updated or when you delete it.</p>
+    /// <p>Notification configuration for the scheduled query. A notification is sent by Timestream when a query run finishes, when the state is updated or when you delete it. </p>
     /// This field is required.
     pub fn notification_configuration(mut self, input: crate::types::NotificationConfiguration) -> Self {
         self.notification_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Notification configuration for the scheduled query. A notification is sent by Timestream when a query run finishes, when the state is updated or when you delete it.</p>
+    /// <p>Notification configuration for the scheduled query. A notification is sent by Timestream when a query run finishes, when the state is updated or when you delete it. </p>
     pub fn set_notification_configuration(mut self, input: ::std::option::Option<crate::types::NotificationConfiguration>) -> Self {
         self.notification_configuration = input;
         self
     }
-    /// <p>Notification configuration for the scheduled query. A notification is sent by Timestream when a query run finishes, when the state is updated or when you delete it.</p>
+    /// <p>Notification configuration for the scheduled query. A notification is sent by Timestream when a query run finishes, when the state is updated or when you delete it. </p>
     pub fn get_notification_configuration(&self) -> &::std::option::Option<crate::types::NotificationConfiguration> {
         &self.notification_configuration
     }
@@ -200,50 +196,44 @@ impl CreateScheduledQueryInputBuilder {
     pub fn get_target_configuration(&self) -> &::std::option::Option<crate::types::TargetConfiguration> {
         &self.target_configuration
     }
-    /// <p>Using a ClientToken makes the call to CreateScheduledQuery idempotent, in other words, making the same request repeatedly will produce the same result. Making multiple identical CreateScheduledQuery requests has the same effect as making a single request.</p>
+    /// <p>Using a ClientToken makes the call to CreateScheduledQuery idempotent, in other words, making the same request repeatedly will produce the same result. Making multiple identical CreateScheduledQuery requests has the same effect as making a single request. </p>
     /// <ul>
-    /// <li>
-    /// <p>If CreateScheduledQuery is called without a <code>ClientToken</code>, the Query SDK generates a <code>ClientToken</code> on your behalf.</p></li>
-    /// <li>
-    /// <p>After 8 hours, any request with the same <code>ClientToken</code> is treated as a new request.</p></li>
+    /// <li> <p> If CreateScheduledQuery is called without a <code>ClientToken</code>, the Query SDK generates a <code>ClientToken</code> on your behalf.</p> </li>
+    /// <li> <p> After 8 hours, any request with the same <code>ClientToken</code> is treated as a new request. </p> </li>
     /// </ul>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Using a ClientToken makes the call to CreateScheduledQuery idempotent, in other words, making the same request repeatedly will produce the same result. Making multiple identical CreateScheduledQuery requests has the same effect as making a single request.</p>
+    /// <p>Using a ClientToken makes the call to CreateScheduledQuery idempotent, in other words, making the same request repeatedly will produce the same result. Making multiple identical CreateScheduledQuery requests has the same effect as making a single request. </p>
     /// <ul>
-    /// <li>
-    /// <p>If CreateScheduledQuery is called without a <code>ClientToken</code>, the Query SDK generates a <code>ClientToken</code> on your behalf.</p></li>
-    /// <li>
-    /// <p>After 8 hours, any request with the same <code>ClientToken</code> is treated as a new request.</p></li>
+    /// <li> <p> If CreateScheduledQuery is called without a <code>ClientToken</code>, the Query SDK generates a <code>ClientToken</code> on your behalf.</p> </li>
+    /// <li> <p> After 8 hours, any request with the same <code>ClientToken</code> is treated as a new request. </p> </li>
     /// </ul>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p>Using a ClientToken makes the call to CreateScheduledQuery idempotent, in other words, making the same request repeatedly will produce the same result. Making multiple identical CreateScheduledQuery requests has the same effect as making a single request.</p>
+    /// <p>Using a ClientToken makes the call to CreateScheduledQuery idempotent, in other words, making the same request repeatedly will produce the same result. Making multiple identical CreateScheduledQuery requests has the same effect as making a single request. </p>
     /// <ul>
-    /// <li>
-    /// <p>If CreateScheduledQuery is called without a <code>ClientToken</code>, the Query SDK generates a <code>ClientToken</code> on your behalf.</p></li>
-    /// <li>
-    /// <p>After 8 hours, any request with the same <code>ClientToken</code> is treated as a new request.</p></li>
+    /// <li> <p> If CreateScheduledQuery is called without a <code>ClientToken</code>, the Query SDK generates a <code>ClientToken</code> on your behalf.</p> </li>
+    /// <li> <p> After 8 hours, any request with the same <code>ClientToken</code> is treated as a new request. </p> </li>
     /// </ul>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
-    /// <p>The ARN for the IAM role that Timestream will assume when running the scheduled query.</p>
+    /// <p>The ARN for the IAM role that Timestream will assume when running the scheduled query. </p>
     /// This field is required.
     pub fn scheduled_query_execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scheduled_query_execution_role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN for the IAM role that Timestream will assume when running the scheduled query.</p>
+    /// <p>The ARN for the IAM role that Timestream will assume when running the scheduled query. </p>
     pub fn set_scheduled_query_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scheduled_query_execution_role_arn = input;
         self
     }
-    /// <p>The ARN for the IAM role that Timestream will assume when running the scheduled query.</p>
+    /// <p>The ARN for the IAM role that Timestream will assume when running the scheduled query. </p>
     pub fn get_scheduled_query_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.scheduled_query_execution_role_arn
     }
@@ -267,35 +257,35 @@ impl CreateScheduledQueryInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
-    /// <p>The Amazon KMS key used to encrypt the scheduled query resource, at-rest. If the Amazon KMS key is not specified, the scheduled query resource will be encrypted with a Timestream owned Amazon KMS key. To specify a KMS key, use the key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix the name with <i>alias/</i></p>
+    /// <p>The Amazon KMS key used to encrypt the scheduled query resource, at-rest. If the Amazon KMS key is not specified, the scheduled query resource will be encrypted with a Timestream owned Amazon KMS key. To specify a KMS key, use the key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix the name with <i>alias/</i> </p>
     /// <p>If ErrorReportConfiguration uses <code>SSE_KMS</code> as encryption type, the same KmsKeyId is used to encrypt the error report at rest.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon KMS key used to encrypt the scheduled query resource, at-rest. If the Amazon KMS key is not specified, the scheduled query resource will be encrypted with a Timestream owned Amazon KMS key. To specify a KMS key, use the key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix the name with <i>alias/</i></p>
+    /// <p>The Amazon KMS key used to encrypt the scheduled query resource, at-rest. If the Amazon KMS key is not specified, the scheduled query resource will be encrypted with a Timestream owned Amazon KMS key. To specify a KMS key, use the key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix the name with <i>alias/</i> </p>
     /// <p>If ErrorReportConfiguration uses <code>SSE_KMS</code> as encryption type, the same KmsKeyId is used to encrypt the error report at rest.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
     }
-    /// <p>The Amazon KMS key used to encrypt the scheduled query resource, at-rest. If the Amazon KMS key is not specified, the scheduled query resource will be encrypted with a Timestream owned Amazon KMS key. To specify a KMS key, use the key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix the name with <i>alias/</i></p>
+    /// <p>The Amazon KMS key used to encrypt the scheduled query resource, at-rest. If the Amazon KMS key is not specified, the scheduled query resource will be encrypted with a Timestream owned Amazon KMS key. To specify a KMS key, use the key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix the name with <i>alias/</i> </p>
     /// <p>If ErrorReportConfiguration uses <code>SSE_KMS</code> as encryption type, the same KmsKeyId is used to encrypt the error report at rest.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id
     }
-    /// <p>Configuration for error reporting. Error reports will be generated when a problem is encountered when writing the query results.</p>
+    /// <p>Configuration for error reporting. Error reports will be generated when a problem is encountered when writing the query results. </p>
     /// This field is required.
     pub fn error_report_configuration(mut self, input: crate::types::ErrorReportConfiguration) -> Self {
         self.error_report_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Configuration for error reporting. Error reports will be generated when a problem is encountered when writing the query results.</p>
+    /// <p>Configuration for error reporting. Error reports will be generated when a problem is encountered when writing the query results. </p>
     pub fn set_error_report_configuration(mut self, input: ::std::option::Option<crate::types::ErrorReportConfiguration>) -> Self {
         self.error_report_configuration = input;
         self
     }
-    /// <p>Configuration for error reporting. Error reports will be generated when a problem is encountered when writing the query results.</p>
+    /// <p>Configuration for error reporting. Error reports will be generated when a problem is encountered when writing the query results. </p>
     pub fn get_error_report_configuration(&self) -> &::std::option::Option<crate::types::ErrorReportConfiguration> {
         &self.error_report_configuration
     }

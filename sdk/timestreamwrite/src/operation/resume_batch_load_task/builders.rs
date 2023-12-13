@@ -22,7 +22,7 @@ impl ResumeBatchLoadTaskInputBuilder {
 }
 /// Fluent builder constructing a request to `ResumeBatchLoadTask`.
 ///
-/// <p></p>
+/// <p> </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ResumeBatchLoadTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

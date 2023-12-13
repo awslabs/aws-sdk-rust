@@ -22,14 +22,12 @@ impl GetIntentsInputBuilder {
 }
 /// Fluent builder constructing a request to `GetIntents`.
 ///
-/// <p>Returns intent information as follows:</p>
+/// <p>Returns intent information as follows: </p>
 /// <ul>
-/// <li>
-/// <p>If you specify the <code>nameContains</code> field, returns the <code>$LATEST</code> version of all intents that contain the specified string.</p></li>
-/// <li>
-/// <p>If you don't specify the <code>nameContains</code> field, returns information about the <code>$LATEST</code> version of all intents.</p></li>
+/// <li> <p>If you specify the <code>nameContains</code> field, returns the <code>$LATEST</code> version of all intents that contain the specified string.</p> </li>
+/// <li> <p> If you don't specify the <code>nameContains</code> field, returns information about the <code>$LATEST</code> version of all intents. </p> </li>
 /// </ul>
-/// <p>The operation requires permission for the <code>lex:GetIntents</code> action.</p>
+/// <p> The operation requires permission for the <code>lex:GetIntents</code> action. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetIntentsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -121,17 +119,17 @@ impl GetIntentsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::get_intents::paginator::GetIntentsPaginator {
         crate::operation::get_intents::paginator::GetIntentsPaginator::new(self.handle, self.inner)
     }
-    /// <p>A pagination token that fetches the next page of intents. If the response to this API call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of intents, specify the pagination token in the next request.</p>
+    /// <p>A pagination token that fetches the next page of intents. If the response to this API call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of intents, specify the pagination token in the next request. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>A pagination token that fetches the next page of intents. If the response to this API call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of intents, specify the pagination token in the next request.</p>
+    /// <p>A pagination token that fetches the next page of intents. If the response to this API call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of intents, specify the pagination token in the next request. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>A pagination token that fetches the next page of intents. If the response to this API call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of intents, specify the pagination token in the next request.</p>
+    /// <p>A pagination token that fetches the next page of intents. If the response to this API call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of intents, specify the pagination token in the next request. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

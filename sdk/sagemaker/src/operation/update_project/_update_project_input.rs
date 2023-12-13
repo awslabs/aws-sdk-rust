@@ -7,7 +7,7 @@ pub struct UpdateProjectInput {
     pub project_name: ::std::option::Option<::std::string::String>,
     /// <p>The description for the project.</p>
     pub project_description: ::std::option::Option<::std::string::String>,
-    /// <p>The product ID and provisioning artifact ID to provision a service catalog. The provisioning artifact ID will default to the latest provisioning artifact ID of the product, if you don't provide the provisioning artifact ID. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>.</p>
+    /// <p>The product ID and provisioning artifact ID to provision a service catalog. The provisioning artifact ID will default to the latest provisioning artifact ID of the product, if you don't provide the provisioning artifact ID. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>. </p>
     pub service_catalog_provisioning_update_details: ::std::option::Option<crate::types::ServiceCatalogProvisioningUpdateDetails>,
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>. In addition, the project must have tag update constraints set in order to include this parameter in the request. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/constraints-resourceupdate.html">Amazon Web Services Service Catalog Tag Update Constraints</a>.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -21,7 +21,7 @@ impl UpdateProjectInput {
     pub fn project_description(&self) -> ::std::option::Option<&str> {
         self.project_description.as_deref()
     }
-    /// <p>The product ID and provisioning artifact ID to provision a service catalog. The provisioning artifact ID will default to the latest provisioning artifact ID of the product, if you don't provide the provisioning artifact ID. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>.</p>
+    /// <p>The product ID and provisioning artifact ID to provision a service catalog. The provisioning artifact ID will default to the latest provisioning artifact ID of the product, if you don't provide the provisioning artifact ID. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>. </p>
     pub fn service_catalog_provisioning_update_details(&self) -> ::std::option::Option<&crate::types::ServiceCatalogProvisioningUpdateDetails> {
         self.service_catalog_provisioning_update_details.as_ref()
     }
@@ -78,12 +78,12 @@ impl UpdateProjectInputBuilder {
     pub fn get_project_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.project_description
     }
-    /// <p>The product ID and provisioning artifact ID to provision a service catalog. The provisioning artifact ID will default to the latest provisioning artifact ID of the product, if you don't provide the provisioning artifact ID. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>.</p>
+    /// <p>The product ID and provisioning artifact ID to provision a service catalog. The provisioning artifact ID will default to the latest provisioning artifact ID of the product, if you don't provide the provisioning artifact ID. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>. </p>
     pub fn service_catalog_provisioning_update_details(mut self, input: crate::types::ServiceCatalogProvisioningUpdateDetails) -> Self {
         self.service_catalog_provisioning_update_details = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The product ID and provisioning artifact ID to provision a service catalog. The provisioning artifact ID will default to the latest provisioning artifact ID of the product, if you don't provide the provisioning artifact ID. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>.</p>
+    /// <p>The product ID and provisioning artifact ID to provision a service catalog. The provisioning artifact ID will default to the latest provisioning artifact ID of the product, if you don't provide the provisioning artifact ID. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>. </p>
     pub fn set_service_catalog_provisioning_update_details(
         mut self,
         input: ::std::option::Option<crate::types::ServiceCatalogProvisioningUpdateDetails>,
@@ -91,7 +91,7 @@ impl UpdateProjectInputBuilder {
         self.service_catalog_provisioning_update_details = input;
         self
     }
-    /// <p>The product ID and provisioning artifact ID to provision a service catalog. The provisioning artifact ID will default to the latest provisioning artifact ID of the product, if you don't provide the provisioning artifact ID. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>.</p>
+    /// <p>The product ID and provisioning artifact ID to provision a service catalog. The provisioning artifact ID will default to the latest provisioning artifact ID of the product, if you don't provide the provisioning artifact ID. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>. </p>
     pub fn get_service_catalog_provisioning_update_details(&self) -> &::std::option::Option<crate::types::ServiceCatalogProvisioningUpdateDetails> {
         &self.service_catalog_provisioning_update_details
     }

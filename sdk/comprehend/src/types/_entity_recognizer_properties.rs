@@ -6,11 +6,11 @@
 pub struct EntityRecognizerProperties {
     /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
     pub entity_recognizer_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The language of the input documents. All documents must be in the same language. Only English ("en") is currently supported.</p>
+    /// <p> The language of the input documents. All documents must be in the same language. Only English ("en") is currently supported.</p>
     pub language_code: ::std::option::Option<crate::types::LanguageCode>,
     /// <p>Provides the status of the entity recognizer.</p>
     pub status: ::std::option::Option<crate::types::ModelStatus>,
-    /// <p>A description of the status of the recognizer.</p>
+    /// <p> A description of the status of the recognizer.</p>
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The time that the recognizer was submitted for processing.</p>
     pub submit_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -22,26 +22,22 @@ pub struct EntityRecognizerProperties {
     pub training_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The input data properties of an entity recognizer.</p>
     pub input_data_config: ::std::option::Option<crate::types::EntityRecognizerInputDataConfig>,
-    /// <p>Provides information about an entity recognizer.</p>
+    /// <p> Provides information about an entity recognizer.</p>
     pub recognizer_metadata: ::std::option::Option<crate::types::EntityRecognizerMetadata>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
+    /// <p> The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
     pub data_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
     /// <ul>
-    /// <li>
-    /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
-    /// <li>
-    /// <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
+    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
     pub volume_kms_key_id: ::std::option::Option<::std::string::String>,
-    /// <p>Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for your custom entity recognizer. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.</p>
+    /// <p> Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for your custom entity recognizer. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
     pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     /// <p>ID for the KMS key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either of the following formats:</p>
     /// <ul>
-    /// <li>
-    /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
-    /// <li>
-    /// <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
+    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
     pub model_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The version name you assigned to the entity recognizer.</p>
@@ -58,7 +54,7 @@ impl EntityRecognizerProperties {
     pub fn entity_recognizer_arn(&self) -> ::std::option::Option<&str> {
         self.entity_recognizer_arn.as_deref()
     }
-    /// <p>The language of the input documents. All documents must be in the same language. Only English ("en") is currently supported.</p>
+    /// <p> The language of the input documents. All documents must be in the same language. Only English ("en") is currently supported.</p>
     pub fn language_code(&self) -> ::std::option::Option<&crate::types::LanguageCode> {
         self.language_code.as_ref()
     }
@@ -66,7 +62,7 @@ impl EntityRecognizerProperties {
     pub fn status(&self) -> ::std::option::Option<&crate::types::ModelStatus> {
         self.status.as_ref()
     }
-    /// <p>A description of the status of the recognizer.</p>
+    /// <p> A description of the status of the recognizer.</p>
     pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
@@ -90,34 +86,30 @@ impl EntityRecognizerProperties {
     pub fn input_data_config(&self) -> ::std::option::Option<&crate::types::EntityRecognizerInputDataConfig> {
         self.input_data_config.as_ref()
     }
-    /// <p>Provides information about an entity recognizer.</p>
+    /// <p> Provides information about an entity recognizer.</p>
     pub fn recognizer_metadata(&self) -> ::std::option::Option<&crate::types::EntityRecognizerMetadata> {
         self.recognizer_metadata.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
+    /// <p> The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
     pub fn data_access_role_arn(&self) -> ::std::option::Option<&str> {
         self.data_access_role_arn.as_deref()
     }
     /// <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
     /// <ul>
-    /// <li>
-    /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
-    /// <li>
-    /// <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
+    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
     pub fn volume_kms_key_id(&self) -> ::std::option::Option<&str> {
         self.volume_kms_key_id.as_deref()
     }
-    /// <p>Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for your custom entity recognizer. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.</p>
+    /// <p> Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for your custom entity recognizer. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
     pub fn vpc_config(&self) -> ::std::option::Option<&crate::types::VpcConfig> {
         self.vpc_config.as_ref()
     }
     /// <p>ID for the KMS key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either of the following formats:</p>
     /// <ul>
-    /// <li>
-    /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
-    /// <li>
-    /// <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
+    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
     pub fn model_kms_key_id(&self) -> ::std::option::Option<&str> {
         self.model_kms_key_id.as_deref()
@@ -208,17 +200,17 @@ impl EntityRecognizerPropertiesBuilder {
     pub fn get_entity_recognizer_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.entity_recognizer_arn
     }
-    /// <p>The language of the input documents. All documents must be in the same language. Only English ("en") is currently supported.</p>
+    /// <p> The language of the input documents. All documents must be in the same language. Only English ("en") is currently supported.</p>
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
         self.language_code = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The language of the input documents. All documents must be in the same language. Only English ("en") is currently supported.</p>
+    /// <p> The language of the input documents. All documents must be in the same language. Only English ("en") is currently supported.</p>
     pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.language_code = input;
         self
     }
-    /// <p>The language of the input documents. All documents must be in the same language. Only English ("en") is currently supported.</p>
+    /// <p> The language of the input documents. All documents must be in the same language. Only English ("en") is currently supported.</p>
     pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
         &self.language_code
     }
@@ -236,17 +228,17 @@ impl EntityRecognizerPropertiesBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ModelStatus> {
         &self.status
     }
-    /// <p>A description of the status of the recognizer.</p>
+    /// <p> A description of the status of the recognizer.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A description of the status of the recognizer.</p>
+    /// <p> A description of the status of the recognizer.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
-    /// <p>A description of the status of the recognizer.</p>
+    /// <p> A description of the status of the recognizer.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
@@ -320,40 +312,38 @@ impl EntityRecognizerPropertiesBuilder {
     pub fn get_input_data_config(&self) -> &::std::option::Option<crate::types::EntityRecognizerInputDataConfig> {
         &self.input_data_config
     }
-    /// <p>Provides information about an entity recognizer.</p>
+    /// <p> Provides information about an entity recognizer.</p>
     pub fn recognizer_metadata(mut self, input: crate::types::EntityRecognizerMetadata) -> Self {
         self.recognizer_metadata = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Provides information about an entity recognizer.</p>
+    /// <p> Provides information about an entity recognizer.</p>
     pub fn set_recognizer_metadata(mut self, input: ::std::option::Option<crate::types::EntityRecognizerMetadata>) -> Self {
         self.recognizer_metadata = input;
         self
     }
-    /// <p>Provides information about an entity recognizer.</p>
+    /// <p> Provides information about an entity recognizer.</p>
     pub fn get_recognizer_metadata(&self) -> &::std::option::Option<crate::types::EntityRecognizerMetadata> {
         &self.recognizer_metadata
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
+    /// <p> The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
     pub fn data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_access_role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
+    /// <p> The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
     pub fn set_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_access_role_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
+    /// <p> The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
     pub fn get_data_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_access_role_arn
     }
     /// <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
     /// <ul>
-    /// <li>
-    /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
-    /// <li>
-    /// <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
+    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
     pub fn volume_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_kms_key_id = ::std::option::Option::Some(input.into());
@@ -361,10 +351,8 @@ impl EntityRecognizerPropertiesBuilder {
     }
     /// <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
     /// <ul>
-    /// <li>
-    /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
-    /// <li>
-    /// <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
+    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
     pub fn set_volume_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_kms_key_id = input;
@@ -372,34 +360,30 @@ impl EntityRecognizerPropertiesBuilder {
     }
     /// <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
     /// <ul>
-    /// <li>
-    /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
-    /// <li>
-    /// <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
+    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
     pub fn get_volume_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.volume_kms_key_id
     }
-    /// <p>Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for your custom entity recognizer. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.</p>
+    /// <p> Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for your custom entity recognizer. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
     pub fn vpc_config(mut self, input: crate::types::VpcConfig) -> Self {
         self.vpc_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for your custom entity recognizer. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.</p>
+    /// <p> Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for your custom entity recognizer. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
     pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfig>) -> Self {
         self.vpc_config = input;
         self
     }
-    /// <p>Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for your custom entity recognizer. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.</p>
+    /// <p> Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for your custom entity recognizer. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
     pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
         &self.vpc_config
     }
     /// <p>ID for the KMS key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either of the following formats:</p>
     /// <ul>
-    /// <li>
-    /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
-    /// <li>
-    /// <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
+    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
     pub fn model_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_kms_key_id = ::std::option::Option::Some(input.into());
@@ -407,10 +391,8 @@ impl EntityRecognizerPropertiesBuilder {
     }
     /// <p>ID for the KMS key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either of the following formats:</p>
     /// <ul>
-    /// <li>
-    /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
-    /// <li>
-    /// <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
+    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
     pub fn set_model_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_kms_key_id = input;
@@ -418,10 +400,8 @@ impl EntityRecognizerPropertiesBuilder {
     }
     /// <p>ID for the KMS key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either of the following formats:</p>
     /// <ul>
-    /// <li>
-    /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
-    /// <li>
-    /// <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
+    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
     pub fn get_model_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_kms_key_id

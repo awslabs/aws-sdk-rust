@@ -63,7 +63,7 @@ pub struct AutomationExecution {
     pub automation_subtype: ::std::option::Option<crate::types::AutomationSubtype>,
     /// <p>The date and time the Automation operation is scheduled to start.</p>
     pub scheduled_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Information about the Automation runbooks that are run as part of a runbook workflow.</p><note>
+    /// <p>Information about the Automation runbooks that are run as part of a runbook workflow.</p> <note>
     /// <p>The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change request have been received.</p>
     /// </note>
     pub runbooks: ::std::option::Option<::std::vec::Vec<crate::types::Runbook>>,
@@ -203,7 +203,7 @@ impl AutomationExecution {
     pub fn scheduled_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.scheduled_time.as_ref()
     }
-    /// <p>Information about the Automation runbooks that are run as part of a runbook workflow.</p><note>
+    /// <p>Information about the Automation runbooks that are run as part of a runbook workflow.</p> <note>
     /// <p>The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change request have been received.</p>
     /// </note>
     ///
@@ -741,7 +741,7 @@ impl AutomationExecutionBuilder {
     ///
     /// To override the contents of this collection use [`set_runbooks`](Self::set_runbooks).
     ///
-    /// <p>Information about the Automation runbooks that are run as part of a runbook workflow.</p><note>
+    /// <p>Information about the Automation runbooks that are run as part of a runbook workflow.</p> <note>
     /// <p>The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change request have been received.</p>
     /// </note>
     pub fn runbooks(mut self, input: crate::types::Runbook) -> Self {
@@ -750,14 +750,14 @@ impl AutomationExecutionBuilder {
         self.runbooks = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Information about the Automation runbooks that are run as part of a runbook workflow.</p><note>
+    /// <p>Information about the Automation runbooks that are run as part of a runbook workflow.</p> <note>
     /// <p>The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change request have been received.</p>
     /// </note>
     pub fn set_runbooks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Runbook>>) -> Self {
         self.runbooks = input;
         self
     }
-    /// <p>Information about the Automation runbooks that are run as part of a runbook workflow.</p><note>
+    /// <p>Information about the Automation runbooks that are run as part of a runbook workflow.</p> <note>
     /// <p>The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change request have been received.</p>
     /// </note>
     pub fn get_runbooks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Runbook>> {

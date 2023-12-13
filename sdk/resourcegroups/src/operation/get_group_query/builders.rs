@@ -23,11 +23,10 @@ impl GetGroupQueryInputBuilder {
 /// Fluent builder constructing a request to `GetGroupQuery`.
 ///
 /// <p>Retrieves the resource query associated with the specified resource group. For more information about resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create a tag-based group in Resource Groups</a>.</p>
-/// <p><b>Minimum permissions</b></p>
+/// <p> <b>Minimum permissions</b> </p>
 /// <p>To run this command, you must have the following permissions:</p>
 /// <ul>
-/// <li>
-/// <p><code>resource-groups:GetGroupQuery</code></p></li>
+/// <li> <p> <code>resource-groups:GetGroupQuery</code> </p> </li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetGroupQueryFluentBuilder {

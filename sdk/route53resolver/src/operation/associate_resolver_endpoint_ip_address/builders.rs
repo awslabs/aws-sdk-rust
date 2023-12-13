@@ -23,7 +23,7 @@ impl AssociateResolverEndpointIpAddressInputBuilder {
 /// Fluent builder constructing a request to `AssociateResolverEndpointIpAddress`.
 ///
 /// <p>Adds IP addresses to an inbound or an outbound Resolver endpoint. If you want to add more than one IP address, submit one <code>AssociateResolverEndpointIpAddress</code> request for each IP address.</p>
-/// <p>To remove an IP address from an endpoint, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverEndpointIpAddress.html">DisassociateResolverEndpointIpAddress</a>.</p>
+/// <p>To remove an IP address from an endpoint, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverEndpointIpAddress.html">DisassociateResolverEndpointIpAddress</a>. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateResolverEndpointIpAddressFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

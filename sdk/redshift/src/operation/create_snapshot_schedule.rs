@@ -249,9 +249,9 @@ pub enum CreateSnapshotScheduleError {
     InvalidTagFault(crate::types::error::InvalidTagFault),
     /// <p>The definition you submitted is not supported.</p>
     ScheduleDefinitionTypeUnsupportedFault(crate::types::error::ScheduleDefinitionTypeUnsupportedFault),
-    /// <p>The specified snapshot schedule already exists.</p>
+    /// <p>The specified snapshot schedule already exists. </p>
     SnapshotScheduleAlreadyExistsFault(crate::types::error::SnapshotScheduleAlreadyExistsFault),
-    /// <p>You have exceeded the quota of snapshot schedules.</p>
+    /// <p>You have exceeded the quota of snapshot schedules. </p>
     SnapshotScheduleQuotaExceededFault(crate::types::error::SnapshotScheduleQuotaExceededFault),
     /// <p>You have exceeded the number of tags allowed.</p>
     TagLimitExceededFault(crate::types::error::TagLimitExceededFault),

@@ -22,25 +22,19 @@ impl FailoverGlobalClusterInputBuilder {
 }
 /// Fluent builder constructing a request to `FailoverGlobalCluster`.
 ///
-/// <p>Promotes the specified secondary DB cluster to be the primary DB cluster in the global database cluster to fail over or switch over a global database. Switchover operations were previously called "managed planned failovers."</p><note>
+/// <p>Promotes the specified secondary DB cluster to be the primary DB cluster in the global database cluster to fail over or switch over a global database. Switchover operations were previously called "managed planned failovers."</p> <note>
 /// <p>Although this operation can be used either to fail over or to switch over a global database cluster, its intended use is for global database failover. To switch over a global database cluster, we recommend that you use the <code>SwitchoverGlobalCluster</code> operation instead.</p>
 /// </note>
 /// <p>How you use this operation depends on whether you are failing over or switching over your global database cluster:</p>
 /// <ul>
-/// <li>
-/// <p>Failing over - Specify the <code>AllowDataLoss</code> parameter and don't specify the <code>Switchover</code> parameter.</p></li>
-/// <li>
-/// <p>Switching over - Specify the <code>Switchover</code> parameter or omit it, but don't specify the <code>AllowDataLoss</code> parameter.</p></li>
+/// <li> <p>Failing over - Specify the <code>AllowDataLoss</code> parameter and don't specify the <code>Switchover</code> parameter.</p> </li>
+/// <li> <p>Switching over - Specify the <code>Switchover</code> parameter or omit it, but don't specify the <code>AllowDataLoss</code> parameter.</p> </li>
 /// </ul>
-/// <p><b>About failing over and switching over</b></p>
+/// <p> <b>About failing over and switching over</b> </p>
 /// <p>While failing over and switching over a global database cluster both change the primary DB cluster, you use these operations for different reasons:</p>
 /// <ul>
-/// <li>
-/// <p><i>Failing over</i> - Use this operation to respond to an unplanned event, such as a Regional disaster in the primary Region. Failing over can result in a loss of write transaction data that wasn't replicated to the chosen secondary before the failover event occurred. However, the recovery process that promotes a DB instance on the chosen seconday DB cluster to be the primary writer DB instance guarantees that the data is in a transactionally consistent state.</p>
-/// <p>For more information about failing over an Amazon Aurora global database, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.html#aurora-global-database-failover.managed-unplanned">Performing managed failovers for Aurora global databases</a> in the <i>Amazon Aurora User Guide</i>.</p></li>
-/// <li>
-/// <p><i>Switching over</i> - Use this operation on a healthy global database cluster for planned events, such as Regional rotation or to fail back to the original primary DB cluster after a failover operation. With this operation, there is no data loss.</p>
-/// <p>For more information about switching over an Amazon Aurora global database, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.html#aurora-global-database-disaster-recovery.managed-failover">Performing switchovers for Aurora global databases</a> in the <i>Amazon Aurora User Guide</i>.</p></li>
+/// <li> <p> <i>Failing over</i> - Use this operation to respond to an unplanned event, such as a Regional disaster in the primary Region. Failing over can result in a loss of write transaction data that wasn't replicated to the chosen secondary before the failover event occurred. However, the recovery process that promotes a DB instance on the chosen seconday DB cluster to be the primary writer DB instance guarantees that the data is in a transactionally consistent state.</p> <p>For more information about failing over an Amazon Aurora global database, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.html#aurora-global-database-failover.managed-unplanned">Performing managed failovers for Aurora global databases</a> in the <i>Amazon Aurora User Guide</i>.</p> </li>
+/// <li> <p> <i>Switching over</i> - Use this operation on a healthy global database cluster for planned events, such as Regional rotation or to fail back to the original primary DB cluster after a failover operation. With this operation, there is no data loss.</p> <p>For more information about switching over an Amazon Aurora global database, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.html#aurora-global-database-disaster-recovery.managed-failover">Performing switchovers for Aurora global databases</a> in the <i>Amazon Aurora User Guide</i>.</p> </li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct FailoverGlobalClusterFluentBuilder {
@@ -130,8 +124,7 @@ impl FailoverGlobalClusterFluentBuilder {
     /// <p>The identifier of the global database cluster (Aurora global database) this operation should apply to. The identifier is the unique key assigned by the user when the Aurora global database is created. In other words, it's the name of the Aurora global database.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must match the identifier of an existing global database cluster.</p></li>
+    /// <li> <p>Must match the identifier of an existing global database cluster.</p> </li>
     /// </ul>
     pub fn global_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.global_cluster_identifier(input.into());
@@ -140,8 +133,7 @@ impl FailoverGlobalClusterFluentBuilder {
     /// <p>The identifier of the global database cluster (Aurora global database) this operation should apply to. The identifier is the unique key assigned by the user when the Aurora global database is created. In other words, it's the name of the Aurora global database.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must match the identifier of an existing global database cluster.</p></li>
+    /// <li> <p>Must match the identifier of an existing global database cluster.</p> </li>
     /// </ul>
     pub fn set_global_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_global_cluster_identifier(input);
@@ -150,8 +142,7 @@ impl FailoverGlobalClusterFluentBuilder {
     /// <p>The identifier of the global database cluster (Aurora global database) this operation should apply to. The identifier is the unique key assigned by the user when the Aurora global database is created. In other words, it's the name of the Aurora global database.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must match the identifier of an existing global database cluster.</p></li>
+    /// <li> <p>Must match the identifier of an existing global database cluster.</p> </li>
     /// </ul>
     pub fn get_global_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_global_cluster_identifier()
@@ -174,8 +165,7 @@ impl FailoverGlobalClusterFluentBuilder {
     /// <p>If you don't specify <code>AllowDataLoss</code>, the global database cluster operation defaults to a switchover.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Can't be specified together with the <code>Switchover</code> parameter.</p></li>
+    /// <li> <p>Can't be specified together with the <code>Switchover</code> parameter.</p> </li>
     /// </ul>
     pub fn allow_data_loss(mut self, input: bool) -> Self {
         self.inner = self.inner.allow_data_loss(input);
@@ -185,8 +175,7 @@ impl FailoverGlobalClusterFluentBuilder {
     /// <p>If you don't specify <code>AllowDataLoss</code>, the global database cluster operation defaults to a switchover.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Can't be specified together with the <code>Switchover</code> parameter.</p></li>
+    /// <li> <p>Can't be specified together with the <code>Switchover</code> parameter.</p> </li>
     /// </ul>
     pub fn set_allow_data_loss(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_allow_data_loss(input);
@@ -196,8 +185,7 @@ impl FailoverGlobalClusterFluentBuilder {
     /// <p>If you don't specify <code>AllowDataLoss</code>, the global database cluster operation defaults to a switchover.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Can't be specified together with the <code>Switchover</code> parameter.</p></li>
+    /// <li> <p>Can't be specified together with the <code>Switchover</code> parameter.</p> </li>
     /// </ul>
     pub fn get_allow_data_loss(&self) -> &::std::option::Option<bool> {
         self.inner.get_allow_data_loss()
@@ -205,8 +193,7 @@ impl FailoverGlobalClusterFluentBuilder {
     /// <p>Specifies whether to switch over this global database cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Can't be specified together with the <code>AllowDataLoss</code> parameter.</p></li>
+    /// <li> <p>Can't be specified together with the <code>AllowDataLoss</code> parameter.</p> </li>
     /// </ul>
     pub fn switchover(mut self, input: bool) -> Self {
         self.inner = self.inner.switchover(input);
@@ -215,8 +202,7 @@ impl FailoverGlobalClusterFluentBuilder {
     /// <p>Specifies whether to switch over this global database cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Can't be specified together with the <code>AllowDataLoss</code> parameter.</p></li>
+    /// <li> <p>Can't be specified together with the <code>AllowDataLoss</code> parameter.</p> </li>
     /// </ul>
     pub fn set_switchover(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_switchover(input);
@@ -225,8 +211,7 @@ impl FailoverGlobalClusterFluentBuilder {
     /// <p>Specifies whether to switch over this global database cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Can't be specified together with the <code>AllowDataLoss</code> parameter.</p></li>
+    /// <li> <p>Can't be specified together with the <code>AllowDataLoss</code> parameter.</p> </li>
     /// </ul>
     pub fn get_switchover(&self) -> &::std::option::Option<bool> {
         self.inner.get_switchover()

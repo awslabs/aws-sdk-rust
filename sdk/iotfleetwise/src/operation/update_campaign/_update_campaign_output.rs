@@ -3,26 +3,22 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateCampaignOutput {
-    /// <p>The Amazon Resource Name (ARN) of the campaign.</p>
+    /// <p> The Amazon Resource Name (ARN) of the campaign. </p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the updated campaign.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The state of a campaign. The status can be one of:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATING</code> - Amazon Web Services IoT FleetWise is processing your request to create the campaign.</p></li>
-    /// <li>
-    /// <p><code>WAITING_FOR_APPROVAL</code> - After a campaign is created, it enters the <code>WAITING_FOR_APPROVAL</code> state. To allow Amazon Web Services IoT FleetWise to deploy the campaign to the target vehicle or fleet, use the API operation to approve the campaign.</p></li>
-    /// <li>
-    /// <p><code>RUNNING</code> - The campaign is active.</p></li>
-    /// <li>
-    /// <p><code>SUSPENDED</code> - The campaign is suspended. To resume the campaign, use the API operation.</p></li>
+    /// <li> <p> <code>CREATING</code> - Amazon Web Services IoT FleetWise is processing your request to create the campaign. </p> </li>
+    /// <li> <p> <code>WAITING_FOR_APPROVAL</code> - After a campaign is created, it enters the <code>WAITING_FOR_APPROVAL</code> state. To allow Amazon Web Services IoT FleetWise to deploy the campaign to the target vehicle or fleet, use the API operation to approve the campaign. </p> </li>
+    /// <li> <p> <code>RUNNING</code> - The campaign is active. </p> </li>
+    /// <li> <p> <code>SUSPENDED</code> - The campaign is suspended. To resume the campaign, use the API operation. </p> </li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::CampaignStatus>,
     _request_id: Option<String>,
 }
 impl UpdateCampaignOutput {
-    /// <p>The Amazon Resource Name (ARN) of the campaign.</p>
+    /// <p> The Amazon Resource Name (ARN) of the campaign. </p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -32,14 +28,10 @@ impl UpdateCampaignOutput {
     }
     /// <p>The state of a campaign. The status can be one of:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATING</code> - Amazon Web Services IoT FleetWise is processing your request to create the campaign.</p></li>
-    /// <li>
-    /// <p><code>WAITING_FOR_APPROVAL</code> - After a campaign is created, it enters the <code>WAITING_FOR_APPROVAL</code> state. To allow Amazon Web Services IoT FleetWise to deploy the campaign to the target vehicle or fleet, use the API operation to approve the campaign.</p></li>
-    /// <li>
-    /// <p><code>RUNNING</code> - The campaign is active.</p></li>
-    /// <li>
-    /// <p><code>SUSPENDED</code> - The campaign is suspended. To resume the campaign, use the API operation.</p></li>
+    /// <li> <p> <code>CREATING</code> - Amazon Web Services IoT FleetWise is processing your request to create the campaign. </p> </li>
+    /// <li> <p> <code>WAITING_FOR_APPROVAL</code> - After a campaign is created, it enters the <code>WAITING_FOR_APPROVAL</code> state. To allow Amazon Web Services IoT FleetWise to deploy the campaign to the target vehicle or fleet, use the API operation to approve the campaign. </p> </li>
+    /// <li> <p> <code>RUNNING</code> - The campaign is active. </p> </li>
+    /// <li> <p> <code>SUSPENDED</code> - The campaign is suspended. To resume the campaign, use the API operation. </p> </li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::CampaignStatus> {
         self.status.as_ref()
@@ -67,17 +59,17 @@ pub struct UpdateCampaignOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateCampaignOutputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the campaign.</p>
+    /// <p> The Amazon Resource Name (ARN) of the campaign. </p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the campaign.</p>
+    /// <p> The Amazon Resource Name (ARN) of the campaign. </p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the campaign.</p>
+    /// <p> The Amazon Resource Name (ARN) of the campaign. </p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
@@ -97,14 +89,10 @@ impl UpdateCampaignOutputBuilder {
     }
     /// <p>The state of a campaign. The status can be one of:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATING</code> - Amazon Web Services IoT FleetWise is processing your request to create the campaign.</p></li>
-    /// <li>
-    /// <p><code>WAITING_FOR_APPROVAL</code> - After a campaign is created, it enters the <code>WAITING_FOR_APPROVAL</code> state. To allow Amazon Web Services IoT FleetWise to deploy the campaign to the target vehicle or fleet, use the API operation to approve the campaign.</p></li>
-    /// <li>
-    /// <p><code>RUNNING</code> - The campaign is active.</p></li>
-    /// <li>
-    /// <p><code>SUSPENDED</code> - The campaign is suspended. To resume the campaign, use the API operation.</p></li>
+    /// <li> <p> <code>CREATING</code> - Amazon Web Services IoT FleetWise is processing your request to create the campaign. </p> </li>
+    /// <li> <p> <code>WAITING_FOR_APPROVAL</code> - After a campaign is created, it enters the <code>WAITING_FOR_APPROVAL</code> state. To allow Amazon Web Services IoT FleetWise to deploy the campaign to the target vehicle or fleet, use the API operation to approve the campaign. </p> </li>
+    /// <li> <p> <code>RUNNING</code> - The campaign is active. </p> </li>
+    /// <li> <p> <code>SUSPENDED</code> - The campaign is suspended. To resume the campaign, use the API operation. </p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::CampaignStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -112,14 +100,10 @@ impl UpdateCampaignOutputBuilder {
     }
     /// <p>The state of a campaign. The status can be one of:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATING</code> - Amazon Web Services IoT FleetWise is processing your request to create the campaign.</p></li>
-    /// <li>
-    /// <p><code>WAITING_FOR_APPROVAL</code> - After a campaign is created, it enters the <code>WAITING_FOR_APPROVAL</code> state. To allow Amazon Web Services IoT FleetWise to deploy the campaign to the target vehicle or fleet, use the API operation to approve the campaign.</p></li>
-    /// <li>
-    /// <p><code>RUNNING</code> - The campaign is active.</p></li>
-    /// <li>
-    /// <p><code>SUSPENDED</code> - The campaign is suspended. To resume the campaign, use the API operation.</p></li>
+    /// <li> <p> <code>CREATING</code> - Amazon Web Services IoT FleetWise is processing your request to create the campaign. </p> </li>
+    /// <li> <p> <code>WAITING_FOR_APPROVAL</code> - After a campaign is created, it enters the <code>WAITING_FOR_APPROVAL</code> state. To allow Amazon Web Services IoT FleetWise to deploy the campaign to the target vehicle or fleet, use the API operation to approve the campaign. </p> </li>
+    /// <li> <p> <code>RUNNING</code> - The campaign is active. </p> </li>
+    /// <li> <p> <code>SUSPENDED</code> - The campaign is suspended. To resume the campaign, use the API operation. </p> </li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::CampaignStatus>) -> Self {
         self.status = input;
@@ -127,14 +111,10 @@ impl UpdateCampaignOutputBuilder {
     }
     /// <p>The state of a campaign. The status can be one of:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATING</code> - Amazon Web Services IoT FleetWise is processing your request to create the campaign.</p></li>
-    /// <li>
-    /// <p><code>WAITING_FOR_APPROVAL</code> - After a campaign is created, it enters the <code>WAITING_FOR_APPROVAL</code> state. To allow Amazon Web Services IoT FleetWise to deploy the campaign to the target vehicle or fleet, use the API operation to approve the campaign.</p></li>
-    /// <li>
-    /// <p><code>RUNNING</code> - The campaign is active.</p></li>
-    /// <li>
-    /// <p><code>SUSPENDED</code> - The campaign is suspended. To resume the campaign, use the API operation.</p></li>
+    /// <li> <p> <code>CREATING</code> - Amazon Web Services IoT FleetWise is processing your request to create the campaign. </p> </li>
+    /// <li> <p> <code>WAITING_FOR_APPROVAL</code> - After a campaign is created, it enters the <code>WAITING_FOR_APPROVAL</code> state. To allow Amazon Web Services IoT FleetWise to deploy the campaign to the target vehicle or fleet, use the API operation to approve the campaign. </p> </li>
+    /// <li> <p> <code>RUNNING</code> - The campaign is active. </p> </li>
+    /// <li> <p> <code>SUSPENDED</code> - The campaign is suspended. To resume the campaign, use the API operation. </p> </li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::CampaignStatus> {
         &self.status

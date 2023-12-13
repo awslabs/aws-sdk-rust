@@ -129,21 +129,21 @@ impl GetRelationalDatabaseMasterUserPasswordFluentBuilder {
     }
     /// <p>The password version to return.</p>
     /// <p>Specifying <code>CURRENT</code> or <code>PREVIOUS</code> returns the current or previous passwords respectively. Specifying <code>PENDING</code> returns the newest version of the password that will rotate to <code>CURRENT</code>. After the <code>PENDING</code> password rotates to <code>CURRENT</code>, the <code>PENDING</code> password is no longer available.</p>
-    /// <p>Default: <code>CURRENT</code></p>
+    /// <p>Default: <code>CURRENT</code> </p>
     pub fn password_version(mut self, input: crate::types::RelationalDatabasePasswordVersion) -> Self {
         self.inner = self.inner.password_version(input);
         self
     }
     /// <p>The password version to return.</p>
     /// <p>Specifying <code>CURRENT</code> or <code>PREVIOUS</code> returns the current or previous passwords respectively. Specifying <code>PENDING</code> returns the newest version of the password that will rotate to <code>CURRENT</code>. After the <code>PENDING</code> password rotates to <code>CURRENT</code>, the <code>PENDING</code> password is no longer available.</p>
-    /// <p>Default: <code>CURRENT</code></p>
+    /// <p>Default: <code>CURRENT</code> </p>
     pub fn set_password_version(mut self, input: ::std::option::Option<crate::types::RelationalDatabasePasswordVersion>) -> Self {
         self.inner = self.inner.set_password_version(input);
         self
     }
     /// <p>The password version to return.</p>
     /// <p>Specifying <code>CURRENT</code> or <code>PREVIOUS</code> returns the current or previous passwords respectively. Specifying <code>PENDING</code> returns the newest version of the password that will rotate to <code>CURRENT</code>. After the <code>PENDING</code> password rotates to <code>CURRENT</code>, the <code>PENDING</code> password is no longer available.</p>
-    /// <p>Default: <code>CURRENT</code></p>
+    /// <p>Default: <code>CURRENT</code> </p>
     pub fn get_password_version(&self) -> &::std::option::Option<crate::types::RelationalDatabasePasswordVersion> {
         self.inner.get_password_version()
     }

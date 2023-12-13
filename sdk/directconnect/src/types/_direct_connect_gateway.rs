@@ -14,14 +14,10 @@ pub struct DirectConnectGateway {
     pub owner_account: ::std::option::Option<::std::string::String>,
     /// <p>The state of the Direct Connect gateway. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>pending</code>: The initial state after calling <code>CreateDirectConnectGateway</code>.</p></li>
-    /// <li>
-    /// <p><code>available</code>: The Direct Connect gateway is ready for use.</p></li>
-    /// <li>
-    /// <p><code>deleting</code>: The initial state after calling <code>DeleteDirectConnectGateway</code>.</p></li>
-    /// <li>
-    /// <p><code>deleted</code>: The Direct Connect gateway is deleted and cannot pass traffic.</p></li>
+    /// <li> <p> <code>pending</code>: The initial state after calling <code>CreateDirectConnectGateway</code>.</p> </li>
+    /// <li> <p> <code>available</code>: The Direct Connect gateway is ready for use.</p> </li>
+    /// <li> <p> <code>deleting</code>: The initial state after calling <code>DeleteDirectConnectGateway</code>.</p> </li>
+    /// <li> <p> <code>deleted</code>: The Direct Connect gateway is deleted and cannot pass traffic.</p> </li>
     /// </ul>
     pub direct_connect_gateway_state: ::std::option::Option<crate::types::DirectConnectGatewayState>,
     /// <p>The error message if the state of an object failed to advance.</p>
@@ -46,14 +42,10 @@ impl DirectConnectGateway {
     }
     /// <p>The state of the Direct Connect gateway. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>pending</code>: The initial state after calling <code>CreateDirectConnectGateway</code>.</p></li>
-    /// <li>
-    /// <p><code>available</code>: The Direct Connect gateway is ready for use.</p></li>
-    /// <li>
-    /// <p><code>deleting</code>: The initial state after calling <code>DeleteDirectConnectGateway</code>.</p></li>
-    /// <li>
-    /// <p><code>deleted</code>: The Direct Connect gateway is deleted and cannot pass traffic.</p></li>
+    /// <li> <p> <code>pending</code>: The initial state after calling <code>CreateDirectConnectGateway</code>.</p> </li>
+    /// <li> <p> <code>available</code>: The Direct Connect gateway is ready for use.</p> </li>
+    /// <li> <p> <code>deleting</code>: The initial state after calling <code>DeleteDirectConnectGateway</code>.</p> </li>
+    /// <li> <p> <code>deleted</code>: The Direct Connect gateway is deleted and cannot pass traffic.</p> </li>
     /// </ul>
     pub fn direct_connect_gateway_state(&self) -> ::std::option::Option<&crate::types::DirectConnectGatewayState> {
         self.direct_connect_gateway_state.as_ref()
@@ -140,14 +132,10 @@ impl DirectConnectGatewayBuilder {
     }
     /// <p>The state of the Direct Connect gateway. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>pending</code>: The initial state after calling <code>CreateDirectConnectGateway</code>.</p></li>
-    /// <li>
-    /// <p><code>available</code>: The Direct Connect gateway is ready for use.</p></li>
-    /// <li>
-    /// <p><code>deleting</code>: The initial state after calling <code>DeleteDirectConnectGateway</code>.</p></li>
-    /// <li>
-    /// <p><code>deleted</code>: The Direct Connect gateway is deleted and cannot pass traffic.</p></li>
+    /// <li> <p> <code>pending</code>: The initial state after calling <code>CreateDirectConnectGateway</code>.</p> </li>
+    /// <li> <p> <code>available</code>: The Direct Connect gateway is ready for use.</p> </li>
+    /// <li> <p> <code>deleting</code>: The initial state after calling <code>DeleteDirectConnectGateway</code>.</p> </li>
+    /// <li> <p> <code>deleted</code>: The Direct Connect gateway is deleted and cannot pass traffic.</p> </li>
     /// </ul>
     pub fn direct_connect_gateway_state(mut self, input: crate::types::DirectConnectGatewayState) -> Self {
         self.direct_connect_gateway_state = ::std::option::Option::Some(input);
@@ -155,14 +143,10 @@ impl DirectConnectGatewayBuilder {
     }
     /// <p>The state of the Direct Connect gateway. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>pending</code>: The initial state after calling <code>CreateDirectConnectGateway</code>.</p></li>
-    /// <li>
-    /// <p><code>available</code>: The Direct Connect gateway is ready for use.</p></li>
-    /// <li>
-    /// <p><code>deleting</code>: The initial state after calling <code>DeleteDirectConnectGateway</code>.</p></li>
-    /// <li>
-    /// <p><code>deleted</code>: The Direct Connect gateway is deleted and cannot pass traffic.</p></li>
+    /// <li> <p> <code>pending</code>: The initial state after calling <code>CreateDirectConnectGateway</code>.</p> </li>
+    /// <li> <p> <code>available</code>: The Direct Connect gateway is ready for use.</p> </li>
+    /// <li> <p> <code>deleting</code>: The initial state after calling <code>DeleteDirectConnectGateway</code>.</p> </li>
+    /// <li> <p> <code>deleted</code>: The Direct Connect gateway is deleted and cannot pass traffic.</p> </li>
     /// </ul>
     pub fn set_direct_connect_gateway_state(mut self, input: ::std::option::Option<crate::types::DirectConnectGatewayState>) -> Self {
         self.direct_connect_gateway_state = input;
@@ -170,14 +154,10 @@ impl DirectConnectGatewayBuilder {
     }
     /// <p>The state of the Direct Connect gateway. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>pending</code>: The initial state after calling <code>CreateDirectConnectGateway</code>.</p></li>
-    /// <li>
-    /// <p><code>available</code>: The Direct Connect gateway is ready for use.</p></li>
-    /// <li>
-    /// <p><code>deleting</code>: The initial state after calling <code>DeleteDirectConnectGateway</code>.</p></li>
-    /// <li>
-    /// <p><code>deleted</code>: The Direct Connect gateway is deleted and cannot pass traffic.</p></li>
+    /// <li> <p> <code>pending</code>: The initial state after calling <code>CreateDirectConnectGateway</code>.</p> </li>
+    /// <li> <p> <code>available</code>: The Direct Connect gateway is ready for use.</p> </li>
+    /// <li> <p> <code>deleting</code>: The initial state after calling <code>DeleteDirectConnectGateway</code>.</p> </li>
+    /// <li> <p> <code>deleted</code>: The Direct Connect gateway is deleted and cannot pass traffic.</p> </li>
     /// </ul>
     pub fn get_direct_connect_gateway_state(&self) -> &::std::option::Option<crate::types::DirectConnectGatewayState> {
         &self.direct_connect_gateway_state

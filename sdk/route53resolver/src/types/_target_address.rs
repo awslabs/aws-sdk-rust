@@ -8,7 +8,7 @@ pub struct TargetAddress {
     pub ip: ::std::option::Option<::std::string::String>,
     /// <p>The port at <code>Ip</code> that you want to forward DNS queries to.</p>
     pub port: ::std::option::Option<i32>,
-    /// <p>One IPv6 address that you want to forward DNS queries to.</p>
+    /// <p> One IPv6 address that you want to forward DNS queries to. </p>
     pub ipv6: ::std::option::Option<::std::string::String>,
 }
 impl TargetAddress {
@@ -20,7 +20,7 @@ impl TargetAddress {
     pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
     }
-    /// <p>One IPv6 address that you want to forward DNS queries to.</p>
+    /// <p> One IPv6 address that you want to forward DNS queries to. </p>
     pub fn ipv6(&self) -> ::std::option::Option<&str> {
         self.ipv6.as_deref()
     }
@@ -69,17 +69,17 @@ impl TargetAddressBuilder {
     pub fn get_port(&self) -> &::std::option::Option<i32> {
         &self.port
     }
-    /// <p>One IPv6 address that you want to forward DNS queries to.</p>
+    /// <p> One IPv6 address that you want to forward DNS queries to. </p>
     pub fn ipv6(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipv6 = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>One IPv6 address that you want to forward DNS queries to.</p>
+    /// <p> One IPv6 address that you want to forward DNS queries to. </p>
     pub fn set_ipv6(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipv6 = input;
         self
     }
-    /// <p>One IPv6 address that you want to forward DNS queries to.</p>
+    /// <p> One IPv6 address that you want to forward DNS queries to. </p>
     pub fn get_ipv6(&self) -> &::std::option::Option<::std::string::String> {
         &self.ipv6
     }

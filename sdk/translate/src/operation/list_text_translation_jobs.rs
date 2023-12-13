@@ -252,9 +252,9 @@ pub enum ListTextTranslationJobsError {
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The filter specified for the operation is not valid. Specify a different filter.</p>
     InvalidFilterException(crate::types::error::InvalidFilterException),
-    /// <p>The request that you made is not valid. Check your request to determine why it's not valid and then retry the request.</p>
+    /// <p> The request that you made is not valid. Check your request to determine why it's not valid and then retry the request. </p>
     InvalidRequestException(crate::types::error::InvalidRequestException),
-    /// <p>You have made too many requests within a short period of time. Wait for a short time and then try your request again.</p>
+    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again.</p>
     TooManyRequestsException(crate::types::error::TooManyRequestsException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

@@ -251,7 +251,7 @@ pub enum AuthorizeSnapshotAccessError {
     ClusterSnapshotNotFoundFault(crate::types::error::ClusterSnapshotNotFoundFault),
     /// <p>The request cannot be completed because a dependent service is throttling requests made by Amazon Redshift on your behalf. Wait and retry the request.</p>
     DependentServiceRequestThrottlingFault(crate::types::error::DependentServiceRequestThrottlingFault),
-    /// <p>The specified cluster snapshot is not in the <code>available</code> state, or other accounts are authorized to access the snapshot.</p>
+    /// <p>The specified cluster snapshot is not in the <code>available</code> state, or other accounts are authorized to access the snapshot. </p>
     InvalidClusterSnapshotStateFault(crate::types::error::InvalidClusterSnapshotStateFault),
     /// <p>The encryption key has exceeded its grant limit in Amazon Web Services KMS.</p>
     LimitExceededFault(crate::types::error::LimitExceededFault),

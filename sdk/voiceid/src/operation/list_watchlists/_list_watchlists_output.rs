@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListWatchlistsOutput {
-    /// <p>A list that contains details about each watchlist in the Amazon Web Services account.</p>
+    /// <p>A list that contains details about each watchlist in the Amazon Web Services account. </p>
     pub watchlist_summaries: ::std::option::Option<::std::vec::Vec<crate::types::WatchlistSummary>>,
-    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.</p>
+    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListWatchlistsOutput {
-    /// <p>A list that contains details about each watchlist in the Amazon Web Services account.</p>
+    /// <p>A list that contains details about each watchlist in the Amazon Web Services account. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.watchlist_summaries.is_none()`.
     pub fn watchlist_summaries(&self) -> &[crate::types::WatchlistSummary] {
         self.watchlist_summaries.as_deref().unwrap_or_default()
     }
-    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.</p>
+    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -46,33 +46,33 @@ impl ListWatchlistsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_watchlist_summaries`](Self::set_watchlist_summaries).
     ///
-    /// <p>A list that contains details about each watchlist in the Amazon Web Services account.</p>
+    /// <p>A list that contains details about each watchlist in the Amazon Web Services account. </p>
     pub fn watchlist_summaries(mut self, input: crate::types::WatchlistSummary) -> Self {
         let mut v = self.watchlist_summaries.unwrap_or_default();
         v.push(input);
         self.watchlist_summaries = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list that contains details about each watchlist in the Amazon Web Services account.</p>
+    /// <p>A list that contains details about each watchlist in the Amazon Web Services account. </p>
     pub fn set_watchlist_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WatchlistSummary>>) -> Self {
         self.watchlist_summaries = input;
         self
     }
-    /// <p>A list that contains details about each watchlist in the Amazon Web Services account.</p>
+    /// <p>A list that contains details about each watchlist in the Amazon Web Services account. </p>
     pub fn get_watchlist_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WatchlistSummary>> {
         &self.watchlist_summaries
     }
-    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.</p>
+    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.</p>
+    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.</p>
+    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

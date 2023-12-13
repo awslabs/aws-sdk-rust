@@ -8,7 +8,7 @@ pub struct ConversationLogsDataSourceFilterBy {
     pub start_time: ::aws_smithy_types::DateTime,
     /// <p>The end time for the conversation log.</p>
     pub end_time: ::aws_smithy_types::DateTime,
-    /// <p>The selection to filter by input mode for the conversation logs.</p>
+    /// <p>The selection to filter by input mode for the conversation logs. </p>
     pub input_mode: crate::types::ConversationLogsInputModeFilter,
 }
 impl ConversationLogsDataSourceFilterBy {
@@ -20,7 +20,7 @@ impl ConversationLogsDataSourceFilterBy {
     pub fn end_time(&self) -> &::aws_smithy_types::DateTime {
         &self.end_time
     }
-    /// <p>The selection to filter by input mode for the conversation logs.</p>
+    /// <p>The selection to filter by input mode for the conversation logs. </p>
     pub fn input_mode(&self) -> &crate::types::ConversationLogsInputModeFilter {
         &self.input_mode
     }
@@ -71,18 +71,18 @@ impl ConversationLogsDataSourceFilterByBuilder {
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_time
     }
-    /// <p>The selection to filter by input mode for the conversation logs.</p>
+    /// <p>The selection to filter by input mode for the conversation logs. </p>
     /// This field is required.
     pub fn input_mode(mut self, input: crate::types::ConversationLogsInputModeFilter) -> Self {
         self.input_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The selection to filter by input mode for the conversation logs.</p>
+    /// <p>The selection to filter by input mode for the conversation logs. </p>
     pub fn set_input_mode(mut self, input: ::std::option::Option<crate::types::ConversationLogsInputModeFilter>) -> Self {
         self.input_mode = input;
         self
     }
-    /// <p>The selection to filter by input mode for the conversation logs.</p>
+    /// <p>The selection to filter by input mode for the conversation logs. </p>
     pub fn get_input_mode(&self) -> &::std::option::Option<crate::types::ConversationLogsInputModeFilter> {
         &self.input_mode
     }

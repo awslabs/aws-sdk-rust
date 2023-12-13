@@ -8,7 +8,7 @@ pub struct AsyncInferenceNotificationConfig {
     pub success_topic: ::std::option::Option<::std::string::String>,
     /// <p>Amazon SNS topic to post a notification to when inference fails. If no topic is provided, no notification is sent on failure.</p>
     pub error_topic: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon SNS topics where you want the inference response to be included.</p><note>
+    /// <p>The Amazon SNS topics where you want the inference response to be included.</p> <note>
     /// <p>The inference response is included only if the response size is less than or equal to 128 KB.</p>
     /// </note>
     pub include_inference_response_in: ::std::option::Option<::std::vec::Vec<crate::types::AsyncNotificationTopicTypes>>,
@@ -22,7 +22,7 @@ impl AsyncInferenceNotificationConfig {
     pub fn error_topic(&self) -> ::std::option::Option<&str> {
         self.error_topic.as_deref()
     }
-    /// <p>The Amazon SNS topics where you want the inference response to be included.</p><note>
+    /// <p>The Amazon SNS topics where you want the inference response to be included.</p> <note>
     /// <p>The inference response is included only if the response size is less than or equal to 128 KB.</p>
     /// </note>
     ///
@@ -79,7 +79,7 @@ impl AsyncInferenceNotificationConfigBuilder {
     ///
     /// To override the contents of this collection use [`set_include_inference_response_in`](Self::set_include_inference_response_in).
     ///
-    /// <p>The Amazon SNS topics where you want the inference response to be included.</p><note>
+    /// <p>The Amazon SNS topics where you want the inference response to be included.</p> <note>
     /// <p>The inference response is included only if the response size is less than or equal to 128 KB.</p>
     /// </note>
     pub fn include_inference_response_in(mut self, input: crate::types::AsyncNotificationTopicTypes) -> Self {
@@ -88,7 +88,7 @@ impl AsyncInferenceNotificationConfigBuilder {
         self.include_inference_response_in = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The Amazon SNS topics where you want the inference response to be included.</p><note>
+    /// <p>The Amazon SNS topics where you want the inference response to be included.</p> <note>
     /// <p>The inference response is included only if the response size is less than or equal to 128 KB.</p>
     /// </note>
     pub fn set_include_inference_response_in(
@@ -98,7 +98,7 @@ impl AsyncInferenceNotificationConfigBuilder {
         self.include_inference_response_in = input;
         self
     }
-    /// <p>The Amazon SNS topics where you want the inference response to be included.</p><note>
+    /// <p>The Amazon SNS topics where you want the inference response to be included.</p> <note>
     /// <p>The inference response is included only if the response size is less than or equal to 128 KB.</p>
     /// </note>
     pub fn get_include_inference_response_in(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AsyncNotificationTopicTypes>> {

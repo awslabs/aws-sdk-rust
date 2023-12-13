@@ -22,7 +22,7 @@ impl CreateKxDataviewInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateKxDataview`.
 ///
-/// <p>Creates a snapshot of kdb database with tiered storage capabilities and a pre-warmed cache, ready for mounting on kdb clusters. Dataviews are only available for clusters running on a scaling group. They are not supported on dedicated clusters.</p>
+/// <p> Creates a snapshot of kdb database with tiered storage capabilities and a pre-warmed cache, ready for mounting on kdb clusters. Dataviews are only available for clusters running on a scaling group. They are not supported on dedicated clusters. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateKxDataviewFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl CreateKxDataviewFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>A unique identifier for the kdb environment, where you want to create the dataview.</p>
+    /// <p>A unique identifier for the kdb environment, where you want to create the dataview. </p>
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_id(input.into());
         self
     }
-    /// <p>A unique identifier for the kdb environment, where you want to create the dataview.</p>
+    /// <p>A unique identifier for the kdb environment, where you want to create the dataview. </p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_id(input);
         self
     }
-    /// <p>A unique identifier for the kdb environment, where you want to create the dataview.</p>
+    /// <p>A unique identifier for the kdb environment, where you want to create the dataview. </p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_environment_id()
     }
-    /// <p>The name of the database where you want to create a dataview.</p>
+    /// <p> The name of the database where you want to create a dataview. </p>
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.database_name(input.into());
         self
     }
-    /// <p>The name of the database where you want to create a dataview.</p>
+    /// <p> The name of the database where you want to create a dataview. </p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_database_name(input);
         self
     }
-    /// <p>The name of the database where you want to create a dataview.</p>
+    /// <p> The name of the database where you want to create a dataview. </p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_database_name()
     }
@@ -150,63 +150,57 @@ impl CreateKxDataviewFluentBuilder {
     pub fn get_dataview_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_dataview_name()
     }
-    /// <p>The number of availability zones you want to assign per cluster. This can be one of the following</p>
+    /// <p>The number of availability zones you want to assign per cluster. This can be one of the following </p>
     /// <ul>
-    /// <li>
-    /// <p><code>SINGLE</code> – Assigns one availability zone per cluster.</p></li>
-    /// <li>
-    /// <p><code>MULTI</code> – Assigns all the availability zones per cluster.</p></li>
+    /// <li> <p> <code>SINGLE</code> – Assigns one availability zone per cluster.</p> </li>
+    /// <li> <p> <code>MULTI</code> – Assigns all the availability zones per cluster.</p> </li>
     /// </ul>
     pub fn az_mode(mut self, input: crate::types::KxAzMode) -> Self {
         self.inner = self.inner.az_mode(input);
         self
     }
-    /// <p>The number of availability zones you want to assign per cluster. This can be one of the following</p>
+    /// <p>The number of availability zones you want to assign per cluster. This can be one of the following </p>
     /// <ul>
-    /// <li>
-    /// <p><code>SINGLE</code> – Assigns one availability zone per cluster.</p></li>
-    /// <li>
-    /// <p><code>MULTI</code> – Assigns all the availability zones per cluster.</p></li>
+    /// <li> <p> <code>SINGLE</code> – Assigns one availability zone per cluster.</p> </li>
+    /// <li> <p> <code>MULTI</code> – Assigns all the availability zones per cluster.</p> </li>
     /// </ul>
     pub fn set_az_mode(mut self, input: ::std::option::Option<crate::types::KxAzMode>) -> Self {
         self.inner = self.inner.set_az_mode(input);
         self
     }
-    /// <p>The number of availability zones you want to assign per cluster. This can be one of the following</p>
+    /// <p>The number of availability zones you want to assign per cluster. This can be one of the following </p>
     /// <ul>
-    /// <li>
-    /// <p><code>SINGLE</code> – Assigns one availability zone per cluster.</p></li>
-    /// <li>
-    /// <p><code>MULTI</code> – Assigns all the availability zones per cluster.</p></li>
+    /// <li> <p> <code>SINGLE</code> – Assigns one availability zone per cluster.</p> </li>
+    /// <li> <p> <code>MULTI</code> – Assigns all the availability zones per cluster.</p> </li>
     /// </ul>
     pub fn get_az_mode(&self) -> &::std::option::Option<crate::types::KxAzMode> {
         self.inner.get_az_mode()
     }
-    /// <p>The identifier of the availability zones.</p>
+    /// <p> The identifier of the availability zones. </p>
     pub fn availability_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.availability_zone_id(input.into());
         self
     }
-    /// <p>The identifier of the availability zones.</p>
+    /// <p> The identifier of the availability zones. </p>
     pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_availability_zone_id(input);
         self
     }
-    /// <p>The identifier of the availability zones.</p>
+    /// <p> The identifier of the availability zones. </p>
     pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_availability_zone_id()
     }
-    /// <p>A unique identifier of the changeset that you want to use to ingest data.</p>
+    /// <p> A unique identifier of the changeset that you want to use to ingest data. </p>
     pub fn changeset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.changeset_id(input.into());
         self
     }
-    /// <p>A unique identifier of the changeset that you want to use to ingest data.</p>
+    /// <p> A unique identifier of the changeset that you want to use to ingest data. </p>
     pub fn set_changeset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_changeset_id(input);
         self
     }
-    /// <p>A unique identifier of the changeset that you want to use to ingest data.</p>
+    /// <p> A unique identifier of the changeset that you want to use to ingest data. </p>
     pub fn get_changeset_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_changeset_id()
     }
@@ -214,17 +208,17 @@ impl CreateKxDataviewFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_segment_configurations`](Self::set_segment_configurations).
     ///
-    /// <p>The configuration that contains the database path of the data that you want to place on each selected volume. Each segment must have a unique database path for each volume. If you do not explicitly specify any database path for a volume, they are accessible from the cluster through the default S3/object store segment.</p>
+    /// <p> The configuration that contains the database path of the data that you want to place on each selected volume. Each segment must have a unique database path for each volume. If you do not explicitly specify any database path for a volume, they are accessible from the cluster through the default S3/object store segment. </p>
     pub fn segment_configurations(mut self, input: crate::types::KxDataviewSegmentConfiguration) -> Self {
         self.inner = self.inner.segment_configurations(input);
         self
     }
-    /// <p>The configuration that contains the database path of the data that you want to place on each selected volume. Each segment must have a unique database path for each volume. If you do not explicitly specify any database path for a volume, they are accessible from the cluster through the default S3/object store segment.</p>
+    /// <p> The configuration that contains the database path of the data that you want to place on each selected volume. Each segment must have a unique database path for each volume. If you do not explicitly specify any database path for a volume, they are accessible from the cluster through the default S3/object store segment. </p>
     pub fn set_segment_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KxDataviewSegmentConfiguration>>) -> Self {
         self.inner = self.inner.set_segment_configurations(input);
         self
     }
-    /// <p>The configuration that contains the database path of the data that you want to place on each selected volume. Each segment must have a unique database path for each volume. If you do not explicitly specify any database path for a volume, they are accessible from the cluster through the default S3/object store segment.</p>
+    /// <p> The configuration that contains the database path of the data that you want to place on each selected volume. Each segment must have a unique database path for each volume. If you do not explicitly specify any database path for a volume, they are accessible from the cluster through the default S3/object store segment. </p>
     pub fn get_segment_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KxDataviewSegmentConfiguration>> {
         self.inner.get_segment_configurations()
     }
@@ -260,17 +254,17 @@ impl CreateKxDataviewFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A list of key-value pairs to label the dataview. You can add up to 50 tags to a dataview.</p>
+    /// <p> A list of key-value pairs to label the dataview. You can add up to 50 tags to a dataview. </p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
-    /// <p>A list of key-value pairs to label the dataview. You can add up to 50 tags to a dataview.</p>
+    /// <p> A list of key-value pairs to label the dataview. You can add up to 50 tags to a dataview. </p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>A list of key-value pairs to label the dataview. You can add up to 50 tags to a dataview.</p>
+    /// <p> A list of key-value pairs to label the dataview. You can add up to 50 tags to a dataview. </p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }

@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VolumeInfo {
     /// <p>The Amazon Resource Name (ARN) for the storage volume. For example, the following is a valid ARN:</p>
-    /// <p><code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB</code></p>
+    /// <p> <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB</code> </p>
     /// <p>Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).</p>
     pub volume_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier assigned to the volume. This ID becomes part of the volume Amazon Resource Name (ARN), which you use as input for other operations.</p>
@@ -26,7 +26,7 @@ pub struct VolumeInfo {
 }
 impl VolumeInfo {
     /// <p>The Amazon Resource Name (ARN) for the storage volume. For example, the following is a valid ARN:</p>
-    /// <p><code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB</code></p>
+    /// <p> <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB</code> </p>
     /// <p>Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).</p>
     pub fn volume_arn(&self) -> ::std::option::Option<&str> {
         self.volume_arn.as_deref()
@@ -80,21 +80,21 @@ pub struct VolumeInfoBuilder {
 }
 impl VolumeInfoBuilder {
     /// <p>The Amazon Resource Name (ARN) for the storage volume. For example, the following is a valid ARN:</p>
-    /// <p><code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB</code></p>
+    /// <p> <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB</code> </p>
     /// <p>Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).</p>
     pub fn volume_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the storage volume. For example, the following is a valid ARN:</p>
-    /// <p><code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB</code></p>
+    /// <p> <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB</code> </p>
     /// <p>Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).</p>
     pub fn set_volume_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the storage volume. For example, the following is a valid ARN:</p>
-    /// <p><code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB</code></p>
+    /// <p> <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB</code> </p>
     /// <p>Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).</p>
     pub fn get_volume_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.volume_arn

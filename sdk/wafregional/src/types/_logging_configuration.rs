@@ -2,7 +2,7 @@
 
 /// <note>
 /// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p><b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use.</p>
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
 /// </note>
 /// <p>The Amazon Kinesis Data Firehose, <code>RedactedFields</code> information, and the web ACL Amazon Resource Name (ARN).</p>
 #[non_exhaustive]
@@ -12,7 +12,7 @@ pub struct LoggingConfiguration {
     pub resource_arn: ::std::string::String,
     /// <p>An array of Amazon Kinesis Data Firehose ARNs.</p>
     pub log_destination_configs: ::std::vec::Vec<::std::string::String>,
-    /// <p>The parts of the request that you want redacted from the logs. For example, if you redact the cookie field, the cookie field in the firehose will be <code>xxx</code>.</p>
+    /// <p>The parts of the request that you want redacted from the logs. For example, if you redact the cookie field, the cookie field in the firehose will be <code>xxx</code>. </p>
     pub redacted_fields: ::std::option::Option<::std::vec::Vec<crate::types::FieldToMatch>>,
 }
 impl LoggingConfiguration {
@@ -26,7 +26,7 @@ impl LoggingConfiguration {
         use std::ops::Deref;
         self.log_destination_configs.deref()
     }
-    /// <p>The parts of the request that you want redacted from the logs. For example, if you redact the cookie field, the cookie field in the firehose will be <code>xxx</code>.</p>
+    /// <p>The parts of the request that you want redacted from the logs. For example, if you redact the cookie field, the cookie field in the firehose will be <code>xxx</code>. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.redacted_fields.is_none()`.
     pub fn redacted_fields(&self) -> &[crate::types::FieldToMatch] {
@@ -88,19 +88,19 @@ impl LoggingConfigurationBuilder {
     ///
     /// To override the contents of this collection use [`set_redacted_fields`](Self::set_redacted_fields).
     ///
-    /// <p>The parts of the request that you want redacted from the logs. For example, if you redact the cookie field, the cookie field in the firehose will be <code>xxx</code>.</p>
+    /// <p>The parts of the request that you want redacted from the logs. For example, if you redact the cookie field, the cookie field in the firehose will be <code>xxx</code>. </p>
     pub fn redacted_fields(mut self, input: crate::types::FieldToMatch) -> Self {
         let mut v = self.redacted_fields.unwrap_or_default();
         v.push(input);
         self.redacted_fields = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The parts of the request that you want redacted from the logs. For example, if you redact the cookie field, the cookie field in the firehose will be <code>xxx</code>.</p>
+    /// <p>The parts of the request that you want redacted from the logs. For example, if you redact the cookie field, the cookie field in the firehose will be <code>xxx</code>. </p>
     pub fn set_redacted_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FieldToMatch>>) -> Self {
         self.redacted_fields = input;
         self
     }
-    /// <p>The parts of the request that you want redacted from the logs. For example, if you redact the cookie field, the cookie field in the firehose will be <code>xxx</code>.</p>
+    /// <p>The parts of the request that you want redacted from the logs. For example, if you redact the cookie field, the cookie field in the firehose will be <code>xxx</code>. </p>
     pub fn get_redacted_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldToMatch>> {
         &self.redacted_fields
     }

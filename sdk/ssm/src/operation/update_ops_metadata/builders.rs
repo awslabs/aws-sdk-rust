@@ -147,17 +147,17 @@ impl UpdateOpsMetadataFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_keys_to_delete`](Self::set_keys_to_delete).
     ///
-    /// <p>The metadata keys to delete from the OpsMetadata object.</p>
+    /// <p>The metadata keys to delete from the OpsMetadata object. </p>
     pub fn keys_to_delete(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.keys_to_delete(input.into());
         self
     }
-    /// <p>The metadata keys to delete from the OpsMetadata object.</p>
+    /// <p>The metadata keys to delete from the OpsMetadata object. </p>
     pub fn set_keys_to_delete(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_keys_to_delete(input);
         self
     }
-    /// <p>The metadata keys to delete from the OpsMetadata object.</p>
+    /// <p>The metadata keys to delete from the OpsMetadata object. </p>
     pub fn get_keys_to_delete(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_keys_to_delete()
     }

@@ -23,20 +23,17 @@ impl CreateAccessPointInputBuilder {
 /// Fluent builder constructing a request to `CreateAccessPoint`.
 ///
 /// <p>Creates an access point and associates it with the specified bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing Data Access with Amazon S3 Access Points</a> in the <i>Amazon S3 User Guide</i>.</p>
-/// <p></p><note>
-/// <p>S3 on Outposts only supports VPC-style access points.</p>
+/// <p></p> <note>
+/// <p>S3 on Outposts only supports VPC-style access points. </p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html"> Accessing Amazon S3 on Outposts using virtual private cloud (VPC) only access points</a> in the <i>Amazon S3 User Guide</i>.</p>
 /// </note>
 /// <p>All Amazon S3 on Outposts REST API requests for this action require an additional parameter of <code>x-amz-outpost-id</code> to be passed with the request. In addition, you must use an S3 on Outposts endpoint hostname prefix instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived by using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessPoint.html#API_control_CreateAccessPoint_Examples">Examples</a> section.</p>
 /// <p></p>
 /// <p>The following actions are related to <code>CreateAccessPoint</code>:</p>
 /// <ul>
-/// <li>
-/// <p><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPoint.html">GetAccessPoint</a></p></li>
-/// <li>
-/// <p><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPoint.html">DeleteAccessPoint</a></p></li>
-/// <li>
-/// <p><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessPoints.html">ListAccessPoints</a></p></li>
+/// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPoint.html">GetAccessPoint</a> </p> </li>
+/// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPoint.html">DeleteAccessPoint</a> </p> </li>
+/// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessPoints.html">ListAccessPoints</a> </p> </li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateAccessPointFluentBuilder {
@@ -153,7 +150,8 @@ impl CreateAccessPointFluentBuilder {
     }
     /// <p>The name of the bucket that you want to associate this access point with.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<region>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
+    /// <region>
     /// :
     /// <account-id>
     /// :outpost/
@@ -162,14 +160,15 @@ impl CreateAccessPointFluentBuilder {
     /// <my-bucket-name></my-bucket-name>
     /// </outpost-id>
     /// </account-id>
-    /// </region></code>. For example, to access the bucket <code>reports</code> through Outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.</p>
+    /// </region></code>. For example, to access the bucket <code>reports</code> through Outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bucket(input.into());
         self
     }
     /// <p>The name of the bucket that you want to associate this access point with.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<region>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
+    /// <region>
     /// :
     /// <account-id>
     /// :outpost/
@@ -178,14 +177,15 @@ impl CreateAccessPointFluentBuilder {
     /// <my-bucket-name></my-bucket-name>
     /// </outpost-id>
     /// </account-id>
-    /// </region></code>. For example, to access the bucket <code>reports</code> through Outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.</p>
+    /// </region></code>. For example, to access the bucket <code>reports</code> through Outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bucket(input);
         self
     }
     /// <p>The name of the bucket that you want to associate this access point with.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<region>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
+    /// <region>
     /// :
     /// <account-id>
     /// :outpost/
@@ -194,41 +194,41 @@ impl CreateAccessPointFluentBuilder {
     /// <my-bucket-name></my-bucket-name>
     /// </outpost-id>
     /// </account-id>
-    /// </region></code>. For example, to access the bucket <code>reports</code> through Outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.</p>
+    /// </region></code>. For example, to access the bucket <code>reports</code> through Outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_bucket()
     }
-    /// <p>If you include this field, Amazon S3 restricts access to this access point to requests from the specified virtual private cloud (VPC).</p><note>
+    /// <p>If you include this field, Amazon S3 restricts access to this access point to requests from the specified virtual private cloud (VPC).</p> <note>
     /// <p>This is required for creating an access point for Amazon S3 on Outposts buckets.</p>
     /// </note>
     pub fn vpc_configuration(mut self, input: crate::types::VpcConfiguration) -> Self {
         self.inner = self.inner.vpc_configuration(input);
         self
     }
-    /// <p>If you include this field, Amazon S3 restricts access to this access point to requests from the specified virtual private cloud (VPC).</p><note>
+    /// <p>If you include this field, Amazon S3 restricts access to this access point to requests from the specified virtual private cloud (VPC).</p> <note>
     /// <p>This is required for creating an access point for Amazon S3 on Outposts buckets.</p>
     /// </note>
     pub fn set_vpc_configuration(mut self, input: ::std::option::Option<crate::types::VpcConfiguration>) -> Self {
         self.inner = self.inner.set_vpc_configuration(input);
         self
     }
-    /// <p>If you include this field, Amazon S3 restricts access to this access point to requests from the specified virtual private cloud (VPC).</p><note>
+    /// <p>If you include this field, Amazon S3 restricts access to this access point to requests from the specified virtual private cloud (VPC).</p> <note>
     /// <p>This is required for creating an access point for Amazon S3 on Outposts buckets.</p>
     /// </note>
     pub fn get_vpc_configuration(&self) -> &::std::option::Option<crate::types::VpcConfiguration> {
         self.inner.get_vpc_configuration()
     }
-    /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to the access point.</p>
+    /// <p> The <code>PublicAccessBlock</code> configuration that you want to apply to the access point. </p>
     pub fn public_access_block_configuration(mut self, input: crate::types::PublicAccessBlockConfiguration) -> Self {
         self.inner = self.inner.public_access_block_configuration(input);
         self
     }
-    /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to the access point.</p>
+    /// <p> The <code>PublicAccessBlock</code> configuration that you want to apply to the access point. </p>
     pub fn set_public_access_block_configuration(mut self, input: ::std::option::Option<crate::types::PublicAccessBlockConfiguration>) -> Self {
         self.inner = self.inner.set_public_access_block_configuration(input);
         self
     }
-    /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to the access point.</p>
+    /// <p> The <code>PublicAccessBlock</code> configuration that you want to apply to the access point. </p>
     pub fn get_public_access_block_configuration(&self) -> &::std::option::Option<crate::types::PublicAccessBlockConfiguration> {
         self.inner.get_public_access_block_configuration()
     }

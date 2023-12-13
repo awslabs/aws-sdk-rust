@@ -24,7 +24,7 @@ impl CreateExportInputBuilder {
 ///
 /// <p>Creates a zip archive containing the contents of a bot or a bot locale. The archive contains a directory structure that contains JSON files that define the bot.</p>
 /// <p>You can create an archive that contains the complete definition of a bot, or you can specify that the archive contain only the definition of a single bot locale.</p>
-/// <p>For more information about exporting bots, and about the structure of the export archive, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/importing-exporting.html"> Importing and exporting bots </a></p>
+/// <p>For more information about exporting bots, and about the structure of the export archive, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/importing-exporting.html"> Importing and exporting bots </a> </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateExportFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCollectionsInput {
-    /// <p>A list of filter names and values that you can use for requests.</p>
+    /// <p> A list of filter names and values that you can use for requests.</p>
     pub collection_filters: ::std::option::Option<crate::types::CollectionFilters>,
     /// <p>If your initial <code>ListCollections</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListCollections</code> operations, which returns results in the next page.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -11,7 +11,7 @@ pub struct ListCollectionsInput {
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListCollectionsInput {
-    /// <p>A list of filter names and values that you can use for requests.</p>
+    /// <p> A list of filter names and values that you can use for requests.</p>
     pub fn collection_filters(&self) -> ::std::option::Option<&crate::types::CollectionFilters> {
         self.collection_filters.as_ref()
     }
@@ -40,17 +40,17 @@ pub struct ListCollectionsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ListCollectionsInputBuilder {
-    /// <p>A list of filter names and values that you can use for requests.</p>
+    /// <p> A list of filter names and values that you can use for requests.</p>
     pub fn collection_filters(mut self, input: crate::types::CollectionFilters) -> Self {
         self.collection_filters = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A list of filter names and values that you can use for requests.</p>
+    /// <p> A list of filter names and values that you can use for requests.</p>
     pub fn set_collection_filters(mut self, input: ::std::option::Option<crate::types::CollectionFilters>) -> Self {
         self.collection_filters = input;
         self
     }
-    /// <p>A list of filter names and values that you can use for requests.</p>
+    /// <p> A list of filter names and values that you can use for requests.</p>
     pub fn get_collection_filters(&self) -> &::std::option::Option<crate::types::CollectionFilters> {
         &self.collection_filters
     }

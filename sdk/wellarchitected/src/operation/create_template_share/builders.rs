@@ -23,10 +23,10 @@ impl CreateTemplateShareInputBuilder {
 /// Fluent builder constructing a request to `CreateTemplateShare`.
 ///
 /// <p>Create a review template share.</p>
-/// <p>The owner of a review template can share it with other Amazon Web Services accounts, users, an organization, and organizational units (OUs) in the same Amazon Web Services Region.</p>
-/// <p>Shared access to a review template is not removed until the review template share invitation is deleted.</p>
-/// <p>If you share a review template with an organization or OU, all accounts in the organization or OU are granted access to the review template.</p><note>
-/// <p><b>Disclaimer</b></p>
+/// <p>The owner of a review template can share it with other Amazon Web Services accounts, users, an organization, and organizational units (OUs) in the same Amazon Web Services Region. </p>
+/// <p> Shared access to a review template is not removed until the review template share invitation is deleted.</p>
+/// <p>If you share a review template with an organization or OU, all accounts in the organization or OU are granted access to the review template.</p> <note>
+/// <p> <b>Disclaimer</b> </p>
 /// <p>By sharing your review template with other Amazon Web Services accounts, you acknowledge that Amazon Web Services will make your review template available to those other accounts.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -143,7 +143,7 @@ impl CreateTemplateShareFluentBuilder {
         self.inner.get_shared_with()
     }
     /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
-    /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p><important>
+    /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
     /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -151,7 +151,7 @@ impl CreateTemplateShareFluentBuilder {
         self
     }
     /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
-    /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p><important>
+    /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
     /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -159,7 +159,7 @@ impl CreateTemplateShareFluentBuilder {
         self
     }
     /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
-    /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p><important>
+    /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
     /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {

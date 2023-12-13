@@ -16,7 +16,7 @@ pub struct AppSummary {
     pub compliance_status: ::std::option::Option<crate::types::AppComplianceStatusType>,
     /// <p>The current resiliency score for the application.</p>
     pub resiliency_score: f64,
-    /// <p>Assessment execution schedule with 'Daily' or 'Disabled' values.</p>
+    /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
     pub assessment_schedule: ::std::option::Option<crate::types::AppAssessmentScheduleType>,
     /// <p>Status of the application.</p>
     pub status: ::std::option::Option<crate::types::AppStatusType>,
@@ -56,7 +56,7 @@ impl AppSummary {
     pub fn resiliency_score(&self) -> f64 {
         self.resiliency_score
     }
-    /// <p>Assessment execution schedule with 'Daily' or 'Disabled' values.</p>
+    /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
     pub fn assessment_schedule(&self) -> ::std::option::Option<&crate::types::AppAssessmentScheduleType> {
         self.assessment_schedule.as_ref()
     }
@@ -193,17 +193,17 @@ impl AppSummaryBuilder {
     pub fn get_resiliency_score(&self) -> &::std::option::Option<f64> {
         &self.resiliency_score
     }
-    /// <p>Assessment execution schedule with 'Daily' or 'Disabled' values.</p>
+    /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
     pub fn assessment_schedule(mut self, input: crate::types::AppAssessmentScheduleType) -> Self {
         self.assessment_schedule = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Assessment execution schedule with 'Daily' or 'Disabled' values.</p>
+    /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
     pub fn set_assessment_schedule(mut self, input: ::std::option::Option<crate::types::AppAssessmentScheduleType>) -> Self {
         self.assessment_schedule = input;
         self
     }
-    /// <p>Assessment execution schedule with 'Daily' or 'Disabled' values.</p>
+    /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
     pub fn get_assessment_schedule(&self) -> &::std::option::Option<crate::types::AppAssessmentScheduleType> {
         &self.assessment_schedule
     }

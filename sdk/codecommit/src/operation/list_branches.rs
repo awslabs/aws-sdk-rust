@@ -257,7 +257,7 @@ pub enum ListBranchesError {
     EncryptionKeyUnavailableException(crate::types::error::EncryptionKeyUnavailableException),
     /// <p>The specified continuation token is not valid.</p>
     InvalidContinuationTokenException(crate::types::error::InvalidContinuationTokenException),
-    /// <p>A specified repository name is not valid.</p><note>
+    /// <p>A specified repository name is not valid.</p> <note>
     /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::types::error::InvalidRepositoryNameException),

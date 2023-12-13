@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListResourcesOutput {
-    /// <p>An array of resources associated with the project.</p>
+    /// <p>An array of resources associated with the project. </p>
     pub resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
     /// <p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListResourcesOutput {
-    /// <p>An array of resources associated with the project.</p>
+    /// <p>An array of resources associated with the project. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources.is_none()`.
     pub fn resources(&self) -> &[crate::types::Resource] {
@@ -46,19 +46,19 @@ impl ListResourcesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_resources`](Self::set_resources).
     ///
-    /// <p>An array of resources associated with the project.</p>
+    /// <p>An array of resources associated with the project. </p>
     pub fn resources(mut self, input: crate::types::Resource) -> Self {
         let mut v = self.resources.unwrap_or_default();
         v.push(input);
         self.resources = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of resources associated with the project.</p>
+    /// <p>An array of resources associated with the project. </p>
     pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>) -> Self {
         self.resources = input;
         self
     }
-    /// <p>An array of resources associated with the project.</p>
+    /// <p>An array of resources associated with the project. </p>
     pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Resource>> {
         &self.resources
     }

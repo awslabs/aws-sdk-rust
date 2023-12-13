@@ -2,14 +2,14 @@
 
 /// <note>
 /// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p><b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use.</p>
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
 /// </note>
 /// <p>Contains one or more countries that AWS WAF will search for.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GeoMatchSet {
     /// <p>The <code>GeoMatchSetId</code> for an <code>GeoMatchSet</code>. You use <code>GeoMatchSetId</code> to get information about a <code>GeoMatchSet</code> (see <code>GeoMatchSet</code>), update a <code>GeoMatchSet</code> (see <code>UpdateGeoMatchSet</code>), insert a <code>GeoMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>GeoMatchSet</code> from AWS WAF (see <code>DeleteGeoMatchSet</code>).</p>
-    /// <p><code>GeoMatchSetId</code> is returned by <code>CreateGeoMatchSet</code> and by <code>ListGeoMatchSets</code>.</p>
+    /// <p> <code>GeoMatchSetId</code> is returned by <code>CreateGeoMatchSet</code> and by <code>ListGeoMatchSets</code>.</p>
     pub geo_match_set_id: ::std::string::String,
     /// <p>A friendly name or description of the <code>GeoMatchSet</code>. You can't change the name of an <code>GeoMatchSet</code> after you create it.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -18,7 +18,7 @@ pub struct GeoMatchSet {
 }
 impl GeoMatchSet {
     /// <p>The <code>GeoMatchSetId</code> for an <code>GeoMatchSet</code>. You use <code>GeoMatchSetId</code> to get information about a <code>GeoMatchSet</code> (see <code>GeoMatchSet</code>), update a <code>GeoMatchSet</code> (see <code>UpdateGeoMatchSet</code>), insert a <code>GeoMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>GeoMatchSet</code> from AWS WAF (see <code>DeleteGeoMatchSet</code>).</p>
-    /// <p><code>GeoMatchSetId</code> is returned by <code>CreateGeoMatchSet</code> and by <code>ListGeoMatchSets</code>.</p>
+    /// <p> <code>GeoMatchSetId</code> is returned by <code>CreateGeoMatchSet</code> and by <code>ListGeoMatchSets</code>.</p>
     pub fn geo_match_set_id(&self) -> &str {
         use std::ops::Deref;
         self.geo_match_set_id.deref()
@@ -50,20 +50,20 @@ pub struct GeoMatchSetBuilder {
 }
 impl GeoMatchSetBuilder {
     /// <p>The <code>GeoMatchSetId</code> for an <code>GeoMatchSet</code>. You use <code>GeoMatchSetId</code> to get information about a <code>GeoMatchSet</code> (see <code>GeoMatchSet</code>), update a <code>GeoMatchSet</code> (see <code>UpdateGeoMatchSet</code>), insert a <code>GeoMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>GeoMatchSet</code> from AWS WAF (see <code>DeleteGeoMatchSet</code>).</p>
-    /// <p><code>GeoMatchSetId</code> is returned by <code>CreateGeoMatchSet</code> and by <code>ListGeoMatchSets</code>.</p>
+    /// <p> <code>GeoMatchSetId</code> is returned by <code>CreateGeoMatchSet</code> and by <code>ListGeoMatchSets</code>.</p>
     /// This field is required.
     pub fn geo_match_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.geo_match_set_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>GeoMatchSetId</code> for an <code>GeoMatchSet</code>. You use <code>GeoMatchSetId</code> to get information about a <code>GeoMatchSet</code> (see <code>GeoMatchSet</code>), update a <code>GeoMatchSet</code> (see <code>UpdateGeoMatchSet</code>), insert a <code>GeoMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>GeoMatchSet</code> from AWS WAF (see <code>DeleteGeoMatchSet</code>).</p>
-    /// <p><code>GeoMatchSetId</code> is returned by <code>CreateGeoMatchSet</code> and by <code>ListGeoMatchSets</code>.</p>
+    /// <p> <code>GeoMatchSetId</code> is returned by <code>CreateGeoMatchSet</code> and by <code>ListGeoMatchSets</code>.</p>
     pub fn set_geo_match_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.geo_match_set_id = input;
         self
     }
     /// <p>The <code>GeoMatchSetId</code> for an <code>GeoMatchSet</code>. You use <code>GeoMatchSetId</code> to get information about a <code>GeoMatchSet</code> (see <code>GeoMatchSet</code>), update a <code>GeoMatchSet</code> (see <code>UpdateGeoMatchSet</code>), insert a <code>GeoMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>GeoMatchSet</code> from AWS WAF (see <code>DeleteGeoMatchSet</code>).</p>
-    /// <p><code>GeoMatchSetId</code> is returned by <code>CreateGeoMatchSet</code> and by <code>ListGeoMatchSets</code>.</p>
+    /// <p> <code>GeoMatchSetId</code> is returned by <code>CreateGeoMatchSet</code> and by <code>ListGeoMatchSets</code>.</p>
     pub fn get_geo_match_set_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.geo_match_set_id
     }

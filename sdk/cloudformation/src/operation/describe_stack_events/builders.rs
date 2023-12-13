@@ -22,7 +22,7 @@ impl DescribeStackEventsInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeStackEvents`.
 ///
-/// <p>Returns all stack related events for a specified stack in reverse chronological order. For more information about a stack's event history, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/concept-stack.html">Stacks</a> in the <i>CloudFormation User Guide</i>.</p><note>
+/// <p>Returns all stack related events for a specified stack in reverse chronological order. For more information about a stack's event history, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/concept-stack.html">Stacks</a> in the <i>CloudFormation User Guide</i>.</p> <note>
 /// <p>You can list events for stacks that have failed to create or have been deleted by specifying the unique stack identifier (stack ID).</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -118,10 +118,8 @@ impl DescribeStackEventsFluentBuilder {
     }
     /// <p>The name or the unique stack ID that's associated with the stack, which aren't always interchangeable:</p>
     /// <ul>
-    /// <li>
-    /// <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p></li>
-    /// <li>
-    /// <p>Deleted stacks: You must specify the unique stack ID.</p></li>
+    /// <li> <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p> </li>
+    /// <li> <p>Deleted stacks: You must specify the unique stack ID.</p> </li>
     /// </ul>
     /// <p>Default: There is no default value.</p>
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -130,10 +128,8 @@ impl DescribeStackEventsFluentBuilder {
     }
     /// <p>The name or the unique stack ID that's associated with the stack, which aren't always interchangeable:</p>
     /// <ul>
-    /// <li>
-    /// <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p></li>
-    /// <li>
-    /// <p>Deleted stacks: You must specify the unique stack ID.</p></li>
+    /// <li> <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p> </li>
+    /// <li> <p>Deleted stacks: You must specify the unique stack ID.</p> </li>
     /// </ul>
     /// <p>Default: There is no default value.</p>
     pub fn set_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -142,10 +138,8 @@ impl DescribeStackEventsFluentBuilder {
     }
     /// <p>The name or the unique stack ID that's associated with the stack, which aren't always interchangeable:</p>
     /// <ul>
-    /// <li>
-    /// <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p></li>
-    /// <li>
-    /// <p>Deleted stacks: You must specify the unique stack ID.</p></li>
+    /// <li> <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p> </li>
+    /// <li> <p>Deleted stacks: You must specify the unique stack ID.</p> </li>
     /// </ul>
     /// <p>Default: There is no default value.</p>
     pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {

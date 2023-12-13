@@ -4,12 +4,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTagsOutput {
-    /// <p>List of <code>Tag</code> for the requested Elasticsearch domain.</p>
+    /// <p> List of <code>Tag</code> for the requested Elasticsearch domain.</p>
     pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     _request_id: Option<String>,
 }
 impl ListTagsOutput {
-    /// <p>List of <code>Tag</code> for the requested Elasticsearch domain.</p>
+    /// <p> List of <code>Tag</code> for the requested Elasticsearch domain.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_list.is_none()`.
     pub fn tag_list(&self) -> &[crate::types::Tag] {
@@ -40,19 +40,19 @@ impl ListTagsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
     ///
-    /// <p>List of <code>Tag</code> for the requested Elasticsearch domain.</p>
+    /// <p> List of <code>Tag</code> for the requested Elasticsearch domain.</p>
     pub fn tag_list(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tag_list.unwrap_or_default();
         v.push(input);
         self.tag_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p>List of <code>Tag</code> for the requested Elasticsearch domain.</p>
+    /// <p> List of <code>Tag</code> for the requested Elasticsearch domain.</p>
     pub fn set_tag_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tag_list = input;
         self
     }
-    /// <p>List of <code>Tag</code> for the requested Elasticsearch domain.</p>
+    /// <p> List of <code>Tag</code> for the requested Elasticsearch domain.</p>
     pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tag_list
     }

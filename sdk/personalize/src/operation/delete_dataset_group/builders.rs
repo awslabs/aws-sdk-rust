@@ -24,12 +24,9 @@ impl DeleteDatasetGroupInputBuilder {
 ///
 /// <p>Deletes a dataset group. Before you delete a dataset group, you must delete the following:</p>
 /// <ul>
-/// <li>
-/// <p>All associated event trackers.</p></li>
-/// <li>
-/// <p>All associated solutions.</p></li>
-/// <li>
-/// <p>All datasets in the dataset group.</p></li>
+/// <li> <p>All associated event trackers.</p> </li>
+/// <li> <p>All associated solutions.</p> </li>
+/// <li> <p>All datasets in the dataset group.</p> </li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteDatasetGroupFluentBuilder {

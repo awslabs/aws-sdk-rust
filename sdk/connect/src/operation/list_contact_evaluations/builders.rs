@@ -128,35 +128,35 @@ impl ListContactEvaluationsFluentBuilder {
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_id()
     }
-    /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
+    /// <p>The identifier of the contact in this instance of Amazon Connect. </p>
     pub fn contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.contact_id(input.into());
         self
     }
-    /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
+    /// <p>The identifier of the contact in this instance of Amazon Connect. </p>
     pub fn set_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_contact_id(input);
         self
     }
-    /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
+    /// <p>The identifier of the contact in this instance of Amazon Connect. </p>
     pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_contact_id()
     }
-    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p><important>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p> <important>
     /// <p>This is not expected to be set because the value returned in the previous response is always null.</p>
     /// </important>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p><important>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p> <important>
     /// <p>This is not expected to be set because the value returned in the previous response is always null.</p>
     /// </important>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p><important>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p> <important>
     /// <p>This is not expected to be set because the value returned in the previous response is always null.</p>
     /// </important>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {

@@ -3,28 +3,22 @@
 /// <p>An error corresponding to the calculation of a route between the <code>DeparturePosition</code> and <code>DestinationPosition</code>.</p>
 /// <p>The error code can be one of the following:</p>
 /// <ul>
-/// <li>
-/// <p><code>RouteNotFound</code> - Unable to find a valid route with the given parameters.</p></li>
+/// <li> <p> <code>RouteNotFound</code> - Unable to find a valid route with the given parameters.</p> </li>
 /// </ul>
 /// <ul>
-/// <li>
-/// <p><code>RouteTooLong</code> - Route calculation went beyond the maximum size of a route and was terminated before completion.</p></li>
+/// <li> <p> <code>RouteTooLong</code> - Route calculation went beyond the maximum size of a route and was terminated before completion.</p> </li>
 /// </ul>
 /// <ul>
-/// <li>
-/// <p><code>PositionsNotFound</code> - One or more of the input positions were not found on the route network.</p></li>
+/// <li> <p> <code>PositionsNotFound</code> - One or more of the input positions were not found on the route network.</p> </li>
 /// </ul>
 /// <ul>
-/// <li>
-/// <p><code>DestinationPositionNotFound</code> - The destination position was not found on the route network.</p></li>
+/// <li> <p> <code>DestinationPositionNotFound</code> - The destination position was not found on the route network.</p> </li>
 /// </ul>
 /// <ul>
-/// <li>
-/// <p><code>DeparturePositionNotFound</code> - The departure position was not found on the route network.</p></li>
+/// <li> <p> <code>DeparturePositionNotFound</code> - The departure position was not found on the route network.</p> </li>
 /// </ul>
 /// <ul>
-/// <li>
-/// <p><code>OtherValidationError</code> - The given inputs were not valid or a route was not found. More information is given in the error <code>Message</code></p></li>
+/// <li> <p> <code>OtherValidationError</code> - The given inputs were not valid or a route was not found. More information is given in the error <code>Message</code> </p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]

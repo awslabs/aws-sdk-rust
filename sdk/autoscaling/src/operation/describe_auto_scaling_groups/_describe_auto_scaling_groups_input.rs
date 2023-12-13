@@ -10,7 +10,7 @@ pub struct DescribeAutoScalingGroupsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
     pub max_records: ::std::option::Option<i32>,
-    /// <p>One or more filters to limit the results based on specific tags.</p>
+    /// <p>One or more filters to limit the results based on specific tags. </p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
 }
 impl DescribeAutoScalingGroupsInput {
@@ -29,7 +29,7 @@ impl DescribeAutoScalingGroupsInput {
     pub fn max_records(&self) -> ::std::option::Option<i32> {
         self.max_records
     }
-    /// <p>One or more filters to limit the results based on specific tags.</p>
+    /// <p>One or more filters to limit the results based on specific tags. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
     pub fn filters(&self) -> &[crate::types::Filter] {
@@ -108,19 +108,19 @@ impl DescribeAutoScalingGroupsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>One or more filters to limit the results based on specific tags.</p>
+    /// <p>One or more filters to limit the results based on specific tags. </p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
         v.push(input);
         self.filters = ::std::option::Option::Some(v);
         self
     }
-    /// <p>One or more filters to limit the results based on specific tags.</p>
+    /// <p>One or more filters to limit the results based on specific tags. </p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
-    /// <p>One or more filters to limit the results based on specific tags.</p>
+    /// <p>One or more filters to limit the results based on specific tags. </p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters
     }

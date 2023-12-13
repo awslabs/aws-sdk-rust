@@ -13,7 +13,7 @@ pub struct GetUnfilteredPartitionMetadataInput {
     pub partition_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A structure containing Lake Formation audit context information.</p>
     pub audit_context: ::std::option::Option<crate::types::AuditContext>,
-    /// <p>(Required) A list of supported permission types.</p>
+    /// <p>(Required) A list of supported permission types. </p>
     pub supported_permission_types: ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>,
 }
 impl GetUnfilteredPartitionMetadataInput {
@@ -39,7 +39,7 @@ impl GetUnfilteredPartitionMetadataInput {
     pub fn audit_context(&self) -> ::std::option::Option<&crate::types::AuditContext> {
         self.audit_context.as_ref()
     }
-    /// <p>(Required) A list of supported permission types.</p>
+    /// <p>(Required) A list of supported permission types. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_permission_types.is_none()`.
     pub fn supported_permission_types(&self) -> &[crate::types::PermissionType] {
@@ -148,19 +148,19 @@ impl GetUnfilteredPartitionMetadataInputBuilder {
     ///
     /// To override the contents of this collection use [`set_supported_permission_types`](Self::set_supported_permission_types).
     ///
-    /// <p>(Required) A list of supported permission types.</p>
+    /// <p>(Required) A list of supported permission types. </p>
     pub fn supported_permission_types(mut self, input: crate::types::PermissionType) -> Self {
         let mut v = self.supported_permission_types.unwrap_or_default();
         v.push(input);
         self.supported_permission_types = ::std::option::Option::Some(v);
         self
     }
-    /// <p>(Required) A list of supported permission types.</p>
+    /// <p>(Required) A list of supported permission types. </p>
     pub fn set_supported_permission_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>) -> Self {
         self.supported_permission_types = input;
         self
     }
-    /// <p>(Required) A list of supported permission types.</p>
+    /// <p>(Required) A list of supported permission types. </p>
     pub fn get_supported_permission_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PermissionType>> {
         &self.supported_permission_types
     }

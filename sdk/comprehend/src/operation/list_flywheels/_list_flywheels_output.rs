@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFlywheelsOutput {
-    /// <p>A list of flywheel properties retrieved by the service in response to the request.</p>
+    /// <p>A list of flywheel properties retrieved by the service in response to the request. </p>
     pub flywheel_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::FlywheelSummary>>,
     /// <p>Identifies the next page of results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListFlywheelsOutput {
-    /// <p>A list of flywheel properties retrieved by the service in response to the request.</p>
+    /// <p>A list of flywheel properties retrieved by the service in response to the request. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.flywheel_summary_list.is_none()`.
     pub fn flywheel_summary_list(&self) -> &[crate::types::FlywheelSummary] {
@@ -46,19 +46,19 @@ impl ListFlywheelsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_flywheel_summary_list`](Self::set_flywheel_summary_list).
     ///
-    /// <p>A list of flywheel properties retrieved by the service in response to the request.</p>
+    /// <p>A list of flywheel properties retrieved by the service in response to the request. </p>
     pub fn flywheel_summary_list(mut self, input: crate::types::FlywheelSummary) -> Self {
         let mut v = self.flywheel_summary_list.unwrap_or_default();
         v.push(input);
         self.flywheel_summary_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of flywheel properties retrieved by the service in response to the request.</p>
+    /// <p>A list of flywheel properties retrieved by the service in response to the request. </p>
     pub fn set_flywheel_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FlywheelSummary>>) -> Self {
         self.flywheel_summary_list = input;
         self
     }
-    /// <p>A list of flywheel properties retrieved by the service in response to the request.</p>
+    /// <p>A list of flywheel properties retrieved by the service in response to the request. </p>
     pub fn get_flywheel_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FlywheelSummary>> {
         &self.flywheel_summary_list
     }

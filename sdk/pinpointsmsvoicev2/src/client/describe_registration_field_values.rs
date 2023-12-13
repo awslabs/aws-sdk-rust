@@ -14,7 +14,7 @@ impl super::Client {
     ///   - [`registration_arn(String)`](crate::operation::describe_registration_field_values::DescribeRegistrationFieldValuesOutput::registration_arn): <p>The Amazon Resource Name (ARN) for the registration.</p>
     ///   - [`registration_id(String)`](crate::operation::describe_registration_field_values::DescribeRegistrationFieldValuesOutput::registration_id): <p>The unique identifier for the registration.</p>
     ///   - [`version_number(i64)`](crate::operation::describe_registration_field_values::DescribeRegistrationFieldValuesOutput::version_number): <p>The current version of the registration.</p>
-    ///   - [`registration_field_values(Vec::<RegistrationFieldValueInformation>)`](crate::operation::describe_registration_field_values::DescribeRegistrationFieldValuesOutput::registration_field_values): <p>An array of RegistrationFieldValues objects that contain the values for the requested registration.</p>
+    ///   - [`registration_field_values(Vec::<RegistrationFieldValueInformation>)`](crate::operation::describe_registration_field_values::DescribeRegistrationFieldValuesOutput::registration_field_values): <p>An array of RegistrationFieldValues objects that contain the values for the requested registration. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_registration_field_values::DescribeRegistrationFieldValuesOutput::next_token): <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     /// - On failure, responds with [`SdkError<DescribeRegistrationFieldValuesError>`](crate::operation::describe_registration_field_values::DescribeRegistrationFieldValuesError)
     pub fn describe_registration_field_values(

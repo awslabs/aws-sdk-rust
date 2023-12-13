@@ -8,13 +8,13 @@ pub struct Database {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Timestream database.</p>
     pub database_name: ::std::option::Option<::std::string::String>,
-    /// <p>The total number of tables found within a Timestream database.</p>
+    /// <p>The total number of tables found within a Timestream database. </p>
     pub table_count: i64,
     /// <p>The identifier of the KMS key used to encrypt the data stored in the database.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The time when the database was created, calculated from the Unix epoch time.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The last time that this database was updated.</p>
+    /// <p> The last time that this database was updated. </p>
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Database {
@@ -26,7 +26,7 @@ impl Database {
     pub fn database_name(&self) -> ::std::option::Option<&str> {
         self.database_name.as_deref()
     }
-    /// <p>The total number of tables found within a Timestream database.</p>
+    /// <p>The total number of tables found within a Timestream database. </p>
     pub fn table_count(&self) -> i64 {
         self.table_count
     }
@@ -38,7 +38,7 @@ impl Database {
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>The last time that this database was updated.</p>
+    /// <p> The last time that this database was updated. </p>
     pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
@@ -90,17 +90,17 @@ impl DatabaseBuilder {
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.database_name
     }
-    /// <p>The total number of tables found within a Timestream database.</p>
+    /// <p>The total number of tables found within a Timestream database. </p>
     pub fn table_count(mut self, input: i64) -> Self {
         self.table_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The total number of tables found within a Timestream database.</p>
+    /// <p>The total number of tables found within a Timestream database. </p>
     pub fn set_table_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.table_count = input;
         self
     }
-    /// <p>The total number of tables found within a Timestream database.</p>
+    /// <p>The total number of tables found within a Timestream database. </p>
     pub fn get_table_count(&self) -> &::std::option::Option<i64> {
         &self.table_count
     }
@@ -132,17 +132,17 @@ impl DatabaseBuilder {
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }
-    /// <p>The last time that this database was updated.</p>
+    /// <p> The last time that this database was updated. </p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The last time that this database was updated.</p>
+    /// <p> The last time that this database was updated. </p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_time = input;
         self
     }
-    /// <p>The last time that this database was updated.</p>
+    /// <p> The last time that this database was updated. </p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_time
     }

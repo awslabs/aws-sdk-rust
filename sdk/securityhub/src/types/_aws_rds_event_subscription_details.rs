@@ -21,7 +21,7 @@ pub struct AwsRdsEventSubscriptionDetails {
     /// <p>The source type for the event notification subscription.</p>
     pub source_type: ::std::option::Option<::std::string::String>,
     /// <p>The status of the event notification subscription.</p>
-    /// <p>Valid values: <code>creating</code> | <code>modifying</code> | <code>deleting</code> | <code>active</code> | <code>no-permission</code> | <code>topic-not-exist</code></p>
+    /// <p>Valid values: <code>creating</code> | <code>modifying</code> | <code>deleting</code> | <code>active</code> | <code>no-permission</code> | <code>topic-not-exist</code> </p>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The datetime when the event notification subscription was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
@@ -65,7 +65,7 @@ impl AwsRdsEventSubscriptionDetails {
         self.source_type.as_deref()
     }
     /// <p>The status of the event notification subscription.</p>
-    /// <p>Valid values: <code>creating</code> | <code>modifying</code> | <code>deleting</code> | <code>active</code> | <code>no-permission</code> | <code>topic-not-exist</code></p>
+    /// <p>Valid values: <code>creating</code> | <code>modifying</code> | <code>deleting</code> | <code>active</code> | <code>no-permission</code> | <code>topic-not-exist</code> </p>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
@@ -223,19 +223,19 @@ impl AwsRdsEventSubscriptionDetailsBuilder {
         &self.source_type
     }
     /// <p>The status of the event notification subscription.</p>
-    /// <p>Valid values: <code>creating</code> | <code>modifying</code> | <code>deleting</code> | <code>active</code> | <code>no-permission</code> | <code>topic-not-exist</code></p>
+    /// <p>Valid values: <code>creating</code> | <code>modifying</code> | <code>deleting</code> | <code>active</code> | <code>no-permission</code> | <code>topic-not-exist</code> </p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the event notification subscription.</p>
-    /// <p>Valid values: <code>creating</code> | <code>modifying</code> | <code>deleting</code> | <code>active</code> | <code>no-permission</code> | <code>topic-not-exist</code></p>
+    /// <p>Valid values: <code>creating</code> | <code>modifying</code> | <code>deleting</code> | <code>active</code> | <code>no-permission</code> | <code>topic-not-exist</code> </p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
     /// <p>The status of the event notification subscription.</p>
-    /// <p>Valid values: <code>creating</code> | <code>modifying</code> | <code>deleting</code> | <code>active</code> | <code>no-permission</code> | <code>topic-not-exist</code></p>
+    /// <p>Valid values: <code>creating</code> | <code>modifying</code> | <code>deleting</code> | <code>active</code> | <code>no-permission</code> | <code>topic-not-exist</code> </p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status
     }

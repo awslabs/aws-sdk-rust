@@ -5,7 +5,7 @@
 pub struct GetDataEndpointInput {
     /// <p>The name of the stream that you want to get the endpoint for. You must specify either this parameter or a <code>StreamARN</code> in the request.</p>
     pub stream_name: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the stream that you want to get the endpoint for. You must specify either this parameter or a <code>StreamName</code> in the request.</p>
+    /// <p>The Amazon Resource Name (ARN) of the stream that you want to get the endpoint for. You must specify either this parameter or a <code>StreamName</code> in the request. </p>
     pub stream_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the API action for which to get an endpoint.</p>
     pub api_name: ::std::option::Option<crate::types::ApiName>,
@@ -15,7 +15,7 @@ impl GetDataEndpointInput {
     pub fn stream_name(&self) -> ::std::option::Option<&str> {
         self.stream_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the stream that you want to get the endpoint for. You must specify either this parameter or a <code>StreamName</code> in the request.</p>
+    /// <p>The Amazon Resource Name (ARN) of the stream that you want to get the endpoint for. You must specify either this parameter or a <code>StreamName</code> in the request. </p>
     pub fn stream_arn(&self) -> ::std::option::Option<&str> {
         self.stream_arn.as_deref()
     }
@@ -54,17 +54,17 @@ impl GetDataEndpointInputBuilder {
     pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.stream_name
     }
-    /// <p>The Amazon Resource Name (ARN) of the stream that you want to get the endpoint for. You must specify either this parameter or a <code>StreamName</code> in the request.</p>
+    /// <p>The Amazon Resource Name (ARN) of the stream that you want to get the endpoint for. You must specify either this parameter or a <code>StreamName</code> in the request. </p>
     pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the stream that you want to get the endpoint for. You must specify either this parameter or a <code>StreamName</code> in the request.</p>
+    /// <p>The Amazon Resource Name (ARN) of the stream that you want to get the endpoint for. You must specify either this parameter or a <code>StreamName</code> in the request. </p>
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the stream that you want to get the endpoint for. You must specify either this parameter or a <code>StreamName</code> in the request.</p>
+    /// <p>The Amazon Resource Name (ARN) of the stream that you want to get the endpoint for. You must specify either this parameter or a <code>StreamName</code> in the request. </p>
     pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.stream_arn
     }

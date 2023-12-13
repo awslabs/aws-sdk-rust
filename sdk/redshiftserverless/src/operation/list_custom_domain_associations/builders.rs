@@ -22,7 +22,7 @@ impl ListCustomDomainAssociationsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListCustomDomainAssociations`.
 ///
-/// <p>Lists custom domain associations for Amazon Redshift Serverless.</p>
+/// <p> Lists custom domain associations for Amazon Redshift Serverless.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListCustomDomainAssociationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

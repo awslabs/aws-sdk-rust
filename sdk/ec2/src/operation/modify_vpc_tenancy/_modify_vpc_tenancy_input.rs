@@ -5,7 +5,7 @@
 pub struct ModifyVpcTenancyInput {
     /// <p>The ID of the VPC.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
-    /// <p>The instance tenancy attribute for the VPC.</p>
+    /// <p>The instance tenancy attribute for the VPC. </p>
     pub instance_tenancy: ::std::option::Option<crate::types::VpcTenancy>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
@@ -15,7 +15,7 @@ impl ModifyVpcTenancyInput {
     pub fn vpc_id(&self) -> ::std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
-    /// <p>The instance tenancy attribute for the VPC.</p>
+    /// <p>The instance tenancy attribute for the VPC. </p>
     pub fn instance_tenancy(&self) -> ::std::option::Option<&crate::types::VpcTenancy> {
         self.instance_tenancy.as_ref()
     }
@@ -55,18 +55,18 @@ impl ModifyVpcTenancyInputBuilder {
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_id
     }
-    /// <p>The instance tenancy attribute for the VPC.</p>
+    /// <p>The instance tenancy attribute for the VPC. </p>
     /// This field is required.
     pub fn instance_tenancy(mut self, input: crate::types::VpcTenancy) -> Self {
         self.instance_tenancy = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The instance tenancy attribute for the VPC.</p>
+    /// <p>The instance tenancy attribute for the VPC. </p>
     pub fn set_instance_tenancy(mut self, input: ::std::option::Option<crate::types::VpcTenancy>) -> Self {
         self.instance_tenancy = input;
         self
     }
-    /// <p>The instance tenancy attribute for the VPC.</p>
+    /// <p>The instance tenancy attribute for the VPC. </p>
     pub fn get_instance_tenancy(&self) -> &::std::option::Option<crate::types::VpcTenancy> {
         &self.instance_tenancy
     }

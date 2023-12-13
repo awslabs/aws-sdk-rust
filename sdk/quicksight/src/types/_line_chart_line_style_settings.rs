@@ -8,22 +8,16 @@ pub struct LineChartLineStyleSettings {
     pub line_visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>Interpolation style for line series.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>LINEAR</code>: Show as default, linear style.</p></li>
-    /// <li>
-    /// <p><code>SMOOTH</code>: Show as a smooth curve.</p></li>
-    /// <li>
-    /// <p><code>STEPPED</code>: Show steps in line.</p></li>
+    /// <li> <p> <code>LINEAR</code>: Show as default, linear style.</p> </li>
+    /// <li> <p> <code>SMOOTH</code>: Show as a smooth curve.</p> </li>
+    /// <li> <p> <code>STEPPED</code>: Show steps in line.</p> </li>
     /// </ul>
     pub line_interpolation: ::std::option::Option<crate::types::LineInterpolation>,
     /// <p>Line style for line series.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SOLID</code>: Show as a solid line.</p></li>
-    /// <li>
-    /// <p><code>DOTTED</code>: Show as a dotted line.</p></li>
-    /// <li>
-    /// <p><code>DASHED</code>: Show as a dashed line.</p></li>
+    /// <li> <p> <code>SOLID</code>: Show as a solid line.</p> </li>
+    /// <li> <p> <code>DOTTED</code>: Show as a dotted line.</p> </li>
+    /// <li> <p> <code>DASHED</code>: Show as a dashed line.</p> </li>
     /// </ul>
     pub line_style: ::std::option::Option<crate::types::LineChartLineStyle>,
     /// <p>Width that determines the line thickness.</p>
@@ -36,24 +30,18 @@ impl LineChartLineStyleSettings {
     }
     /// <p>Interpolation style for line series.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>LINEAR</code>: Show as default, linear style.</p></li>
-    /// <li>
-    /// <p><code>SMOOTH</code>: Show as a smooth curve.</p></li>
-    /// <li>
-    /// <p><code>STEPPED</code>: Show steps in line.</p></li>
+    /// <li> <p> <code>LINEAR</code>: Show as default, linear style.</p> </li>
+    /// <li> <p> <code>SMOOTH</code>: Show as a smooth curve.</p> </li>
+    /// <li> <p> <code>STEPPED</code>: Show steps in line.</p> </li>
     /// </ul>
     pub fn line_interpolation(&self) -> ::std::option::Option<&crate::types::LineInterpolation> {
         self.line_interpolation.as_ref()
     }
     /// <p>Line style for line series.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SOLID</code>: Show as a solid line.</p></li>
-    /// <li>
-    /// <p><code>DOTTED</code>: Show as a dotted line.</p></li>
-    /// <li>
-    /// <p><code>DASHED</code>: Show as a dashed line.</p></li>
+    /// <li> <p> <code>SOLID</code>: Show as a solid line.</p> </li>
+    /// <li> <p> <code>DOTTED</code>: Show as a dotted line.</p> </li>
+    /// <li> <p> <code>DASHED</code>: Show as a dashed line.</p> </li>
     /// </ul>
     pub fn line_style(&self) -> ::std::option::Option<&crate::types::LineChartLineStyle> {
         self.line_style.as_ref()
@@ -96,12 +84,9 @@ impl LineChartLineStyleSettingsBuilder {
     }
     /// <p>Interpolation style for line series.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>LINEAR</code>: Show as default, linear style.</p></li>
-    /// <li>
-    /// <p><code>SMOOTH</code>: Show as a smooth curve.</p></li>
-    /// <li>
-    /// <p><code>STEPPED</code>: Show steps in line.</p></li>
+    /// <li> <p> <code>LINEAR</code>: Show as default, linear style.</p> </li>
+    /// <li> <p> <code>SMOOTH</code>: Show as a smooth curve.</p> </li>
+    /// <li> <p> <code>STEPPED</code>: Show steps in line.</p> </li>
     /// </ul>
     pub fn line_interpolation(mut self, input: crate::types::LineInterpolation) -> Self {
         self.line_interpolation = ::std::option::Option::Some(input);
@@ -109,12 +94,9 @@ impl LineChartLineStyleSettingsBuilder {
     }
     /// <p>Interpolation style for line series.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>LINEAR</code>: Show as default, linear style.</p></li>
-    /// <li>
-    /// <p><code>SMOOTH</code>: Show as a smooth curve.</p></li>
-    /// <li>
-    /// <p><code>STEPPED</code>: Show steps in line.</p></li>
+    /// <li> <p> <code>LINEAR</code>: Show as default, linear style.</p> </li>
+    /// <li> <p> <code>SMOOTH</code>: Show as a smooth curve.</p> </li>
+    /// <li> <p> <code>STEPPED</code>: Show steps in line.</p> </li>
     /// </ul>
     pub fn set_line_interpolation(mut self, input: ::std::option::Option<crate::types::LineInterpolation>) -> Self {
         self.line_interpolation = input;
@@ -122,24 +104,18 @@ impl LineChartLineStyleSettingsBuilder {
     }
     /// <p>Interpolation style for line series.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>LINEAR</code>: Show as default, linear style.</p></li>
-    /// <li>
-    /// <p><code>SMOOTH</code>: Show as a smooth curve.</p></li>
-    /// <li>
-    /// <p><code>STEPPED</code>: Show steps in line.</p></li>
+    /// <li> <p> <code>LINEAR</code>: Show as default, linear style.</p> </li>
+    /// <li> <p> <code>SMOOTH</code>: Show as a smooth curve.</p> </li>
+    /// <li> <p> <code>STEPPED</code>: Show steps in line.</p> </li>
     /// </ul>
     pub fn get_line_interpolation(&self) -> &::std::option::Option<crate::types::LineInterpolation> {
         &self.line_interpolation
     }
     /// <p>Line style for line series.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SOLID</code>: Show as a solid line.</p></li>
-    /// <li>
-    /// <p><code>DOTTED</code>: Show as a dotted line.</p></li>
-    /// <li>
-    /// <p><code>DASHED</code>: Show as a dashed line.</p></li>
+    /// <li> <p> <code>SOLID</code>: Show as a solid line.</p> </li>
+    /// <li> <p> <code>DOTTED</code>: Show as a dotted line.</p> </li>
+    /// <li> <p> <code>DASHED</code>: Show as a dashed line.</p> </li>
     /// </ul>
     pub fn line_style(mut self, input: crate::types::LineChartLineStyle) -> Self {
         self.line_style = ::std::option::Option::Some(input);
@@ -147,12 +123,9 @@ impl LineChartLineStyleSettingsBuilder {
     }
     /// <p>Line style for line series.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SOLID</code>: Show as a solid line.</p></li>
-    /// <li>
-    /// <p><code>DOTTED</code>: Show as a dotted line.</p></li>
-    /// <li>
-    /// <p><code>DASHED</code>: Show as a dashed line.</p></li>
+    /// <li> <p> <code>SOLID</code>: Show as a solid line.</p> </li>
+    /// <li> <p> <code>DOTTED</code>: Show as a dotted line.</p> </li>
+    /// <li> <p> <code>DASHED</code>: Show as a dashed line.</p> </li>
     /// </ul>
     pub fn set_line_style(mut self, input: ::std::option::Option<crate::types::LineChartLineStyle>) -> Self {
         self.line_style = input;
@@ -160,12 +133,9 @@ impl LineChartLineStyleSettingsBuilder {
     }
     /// <p>Line style for line series.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SOLID</code>: Show as a solid line.</p></li>
-    /// <li>
-    /// <p><code>DOTTED</code>: Show as a dotted line.</p></li>
-    /// <li>
-    /// <p><code>DASHED</code>: Show as a dashed line.</p></li>
+    /// <li> <p> <code>SOLID</code>: Show as a solid line.</p> </li>
+    /// <li> <p> <code>DOTTED</code>: Show as a dotted line.</p> </li>
+    /// <li> <p> <code>DASHED</code>: Show as a dashed line.</p> </li>
     /// </ul>
     pub fn get_line_style(&self) -> &::std::option::Option<crate::types::LineChartLineStyle> {
         &self.line_style

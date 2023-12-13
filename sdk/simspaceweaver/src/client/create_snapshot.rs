@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`simulation(impl Into<String>)`](crate::operation::create_snapshot::builders::CreateSnapshotFluentBuilder::simulation) / [`set_simulation(Option<String>)`](crate::operation::create_snapshot::builders::CreateSnapshotFluentBuilder::set_simulation):<br>required: **true**<br><p>The name of the simulation.</p><br>
-    ///   - [`destination(S3Destination)`](crate::operation::create_snapshot::builders::CreateSnapshotFluentBuilder::destination) / [`set_destination(Option<S3Destination>)`](crate::operation::create_snapshot::builders::CreateSnapshotFluentBuilder::set_destination):<br>required: **true**<br><p>The Amazon S3 bucket and optional folder (object key prefix) where SimSpace Weaver creates the snapshot file.</p> <p>The Amazon S3 bucket must be in the same Amazon Web Services Region as the simulation.</p><br>
+    ///   - [`destination(S3Destination)`](crate::operation::create_snapshot::builders::CreateSnapshotFluentBuilder::destination) / [`set_destination(Option<S3Destination>)`](crate::operation::create_snapshot::builders::CreateSnapshotFluentBuilder::set_destination):<br>required: **true**<br><p>The Amazon S3 bucket and optional folder (object key prefix) where SimSpace Weaver creates the snapshot file.</p>  <p>The Amazon S3 bucket must be in the same Amazon Web Services Region as the simulation.</p><br>
     /// - On success, responds with [`CreateSnapshotOutput`](crate::operation::create_snapshot::CreateSnapshotOutput)
     /// - On failure, responds with [`SdkError<CreateSnapshotError>`](crate::operation::create_snapshot::CreateSnapshotError)
     pub fn create_snapshot(&self) -> crate::operation::create_snapshot::builders::CreateSnapshotFluentBuilder {

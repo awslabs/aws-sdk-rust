@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegistrationAssociationMetadata {
-    /// <p>The Amazon Resource Name (ARN) of the origination identity that is associated with the registration.</p>
+    /// <p>The Amazon Resource Name (ARN) of the origination identity that is associated with the registration. </p>
     pub resource_arn: ::std::string::String,
     /// <p>The unique identifier for the origination identity. For example this could be a <b>PhoneNumberId</b> or <b>SenderId</b>.</p>
     pub resource_id: ::std::string::String,
@@ -16,7 +16,7 @@ pub struct RegistrationAssociationMetadata {
     pub phone_number: ::std::option::Option<::std::string::String>,
 }
 impl RegistrationAssociationMetadata {
-    /// <p>The Amazon Resource Name (ARN) of the origination identity that is associated with the registration.</p>
+    /// <p>The Amazon Resource Name (ARN) of the origination identity that is associated with the registration. </p>
     pub fn resource_arn(&self) -> &str {
         use std::ops::Deref;
         self.resource_arn.deref()
@@ -58,18 +58,18 @@ pub struct RegistrationAssociationMetadataBuilder {
     pub(crate) phone_number: ::std::option::Option<::std::string::String>,
 }
 impl RegistrationAssociationMetadataBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the origination identity that is associated with the registration.</p>
+    /// <p>The Amazon Resource Name (ARN) of the origination identity that is associated with the registration. </p>
     /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the origination identity that is associated with the registration.</p>
+    /// <p>The Amazon Resource Name (ARN) of the origination identity that is associated with the registration. </p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the origination identity that is associated with the registration.</p>
+    /// <p>The Amazon Resource Name (ARN) of the origination identity that is associated with the registration. </p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }

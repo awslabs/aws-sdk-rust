@@ -25,11 +25,11 @@ impl GetGeoLocationInputBuilder {
 /// <p>Gets information about whether a specified geographic location is supported for Amazon Route 53 geolocation resource record sets.</p>
 /// <p>Route 53 does not perform authorization for this API because it retrieves information that is already available to the public.</p>
 /// <p>Use the following syntax to determine whether a continent is supported for geolocation:</p>
-/// <p><code>GET /2013-04-01/geolocation?continentcode=<i>two-letter abbreviation for a continent</i> </code></p>
+/// <p> <code>GET /2013-04-01/geolocation?continentcode=<i>two-letter abbreviation for a continent</i> </code> </p>
 /// <p>Use the following syntax to determine whether a country is supported for geolocation:</p>
-/// <p><code>GET /2013-04-01/geolocation?countrycode=<i>two-character country code</i> </code></p>
+/// <p> <code>GET /2013-04-01/geolocation?countrycode=<i>two-character country code</i> </code> </p>
 /// <p>Use the following syntax to determine whether a subdivision of a country is supported for geolocation:</p>
-/// <p><code>GET /2013-04-01/geolocation?countrycode=<i>two-character country code</i>&amp;subdivisioncode=<i>subdivision code</i> </code></p>
+/// <p> <code>GET /2013-04-01/geolocation?countrycode=<i>two-character country code</i>&amp;subdivisioncode=<i>subdivision code</i> </code> </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetGeoLocationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -117,20 +117,13 @@ impl GetGeoLocationFluentBuilder {
     }
     /// <p>For geolocation resource record sets, a two-letter abbreviation that identifies a continent. Amazon Route 53 supports the following continent codes:</p>
     /// <ul>
-    /// <li>
-    /// <p><b>AF</b>: Africa</p></li>
-    /// <li>
-    /// <p><b>AN</b>: Antarctica</p></li>
-    /// <li>
-    /// <p><b>AS</b>: Asia</p></li>
-    /// <li>
-    /// <p><b>EU</b>: Europe</p></li>
-    /// <li>
-    /// <p><b>OC</b>: Oceania</p></li>
-    /// <li>
-    /// <p><b>NA</b>: North America</p></li>
-    /// <li>
-    /// <p><b>SA</b>: South America</p></li>
+    /// <li> <p> <b>AF</b>: Africa</p> </li>
+    /// <li> <p> <b>AN</b>: Antarctica</p> </li>
+    /// <li> <p> <b>AS</b>: Asia</p> </li>
+    /// <li> <p> <b>EU</b>: Europe</p> </li>
+    /// <li> <p> <b>OC</b>: Oceania</p> </li>
+    /// <li> <p> <b>NA</b>: North America</p> </li>
+    /// <li> <p> <b>SA</b>: South America</p> </li>
     /// </ul>
     pub fn continent_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.continent_code(input.into());
@@ -138,20 +131,13 @@ impl GetGeoLocationFluentBuilder {
     }
     /// <p>For geolocation resource record sets, a two-letter abbreviation that identifies a continent. Amazon Route 53 supports the following continent codes:</p>
     /// <ul>
-    /// <li>
-    /// <p><b>AF</b>: Africa</p></li>
-    /// <li>
-    /// <p><b>AN</b>: Antarctica</p></li>
-    /// <li>
-    /// <p><b>AS</b>: Asia</p></li>
-    /// <li>
-    /// <p><b>EU</b>: Europe</p></li>
-    /// <li>
-    /// <p><b>OC</b>: Oceania</p></li>
-    /// <li>
-    /// <p><b>NA</b>: North America</p></li>
-    /// <li>
-    /// <p><b>SA</b>: South America</p></li>
+    /// <li> <p> <b>AF</b>: Africa</p> </li>
+    /// <li> <p> <b>AN</b>: Antarctica</p> </li>
+    /// <li> <p> <b>AS</b>: Asia</p> </li>
+    /// <li> <p> <b>EU</b>: Europe</p> </li>
+    /// <li> <p> <b>OC</b>: Oceania</p> </li>
+    /// <li> <p> <b>NA</b>: North America</p> </li>
+    /// <li> <p> <b>SA</b>: South America</p> </li>
     /// </ul>
     pub fn set_continent_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_continent_code(input);
@@ -159,20 +145,13 @@ impl GetGeoLocationFluentBuilder {
     }
     /// <p>For geolocation resource record sets, a two-letter abbreviation that identifies a continent. Amazon Route 53 supports the following continent codes:</p>
     /// <ul>
-    /// <li>
-    /// <p><b>AF</b>: Africa</p></li>
-    /// <li>
-    /// <p><b>AN</b>: Antarctica</p></li>
-    /// <li>
-    /// <p><b>AS</b>: Asia</p></li>
-    /// <li>
-    /// <p><b>EU</b>: Europe</p></li>
-    /// <li>
-    /// <p><b>OC</b>: Oceania</p></li>
-    /// <li>
-    /// <p><b>NA</b>: North America</p></li>
-    /// <li>
-    /// <p><b>SA</b>: South America</p></li>
+    /// <li> <p> <b>AF</b>: Africa</p> </li>
+    /// <li> <p> <b>AN</b>: Antarctica</p> </li>
+    /// <li> <p> <b>AS</b>: Asia</p> </li>
+    /// <li> <p> <b>EU</b>: Europe</p> </li>
+    /// <li> <p> <b>OC</b>: Oceania</p> </li>
+    /// <li> <p> <b>NA</b>: North America</p> </li>
+    /// <li> <p> <b>SA</b>: South America</p> </li>
     /// </ul>
     pub fn get_continent_code(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_continent_code()

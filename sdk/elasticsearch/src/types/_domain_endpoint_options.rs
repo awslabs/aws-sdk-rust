@@ -6,8 +6,7 @@
 pub struct DomainEndpointOptions {
     /// <p>Specify if only HTTPS endpoint should be enabled for the Elasticsearch domain.</p>
     pub enforce_https: ::std::option::Option<bool>,
-    /// <p>Specify the TLS security policy that needs to be applied to the HTTPS endpoint of Elasticsearch domain. <br><br>
-    /// It can be one of the following values:</p>
+    /// <p>Specify the TLS security policy that needs to be applied to the HTTPS endpoint of Elasticsearch domain. <br><br> It can be one of the following values: </p>
     /// <ul>
     /// <li><b>Policy-Min-TLS-1-0-2019-07: </b> TLS security policy which supports TLSv1.0 and higher.</li>
     /// <li><b>Policy-Min-TLS-1-2-2019-07: </b> TLS security policy which supports only TLSv1.2</li>
@@ -26,8 +25,7 @@ impl DomainEndpointOptions {
     pub fn enforce_https(&self) -> ::std::option::Option<bool> {
         self.enforce_https
     }
-    /// <p>Specify the TLS security policy that needs to be applied to the HTTPS endpoint of Elasticsearch domain. <br><br>
-    /// It can be one of the following values:</p>
+    /// <p>Specify the TLS security policy that needs to be applied to the HTTPS endpoint of Elasticsearch domain. <br><br> It can be one of the following values: </p>
     /// <ul>
     /// <li><b>Policy-Min-TLS-1-0-2019-07: </b> TLS security policy which supports TLSv1.0 and higher.</li>
     /// <li><b>Policy-Min-TLS-1-2-2019-07: </b> TLS security policy which supports only TLSv1.2</li>
@@ -81,8 +79,7 @@ impl DomainEndpointOptionsBuilder {
     pub fn get_enforce_https(&self) -> &::std::option::Option<bool> {
         &self.enforce_https
     }
-    /// <p>Specify the TLS security policy that needs to be applied to the HTTPS endpoint of Elasticsearch domain. <br><br>
-    /// It can be one of the following values:</p>
+    /// <p>Specify the TLS security policy that needs to be applied to the HTTPS endpoint of Elasticsearch domain. <br><br> It can be one of the following values: </p>
     /// <ul>
     /// <li><b>Policy-Min-TLS-1-0-2019-07: </b> TLS security policy which supports TLSv1.0 and higher.</li>
     /// <li><b>Policy-Min-TLS-1-2-2019-07: </b> TLS security policy which supports only TLSv1.2</li>
@@ -92,8 +89,7 @@ impl DomainEndpointOptionsBuilder {
         self.tls_security_policy = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specify the TLS security policy that needs to be applied to the HTTPS endpoint of Elasticsearch domain. <br><br>
-    /// It can be one of the following values:</p>
+    /// <p>Specify the TLS security policy that needs to be applied to the HTTPS endpoint of Elasticsearch domain. <br><br> It can be one of the following values: </p>
     /// <ul>
     /// <li><b>Policy-Min-TLS-1-0-2019-07: </b> TLS security policy which supports TLSv1.0 and higher.</li>
     /// <li><b>Policy-Min-TLS-1-2-2019-07: </b> TLS security policy which supports only TLSv1.2</li>
@@ -103,8 +99,7 @@ impl DomainEndpointOptionsBuilder {
         self.tls_security_policy = input;
         self
     }
-    /// <p>Specify the TLS security policy that needs to be applied to the HTTPS endpoint of Elasticsearch domain. <br><br>
-    /// It can be one of the following values:</p>
+    /// <p>Specify the TLS security policy that needs to be applied to the HTTPS endpoint of Elasticsearch domain. <br><br> It can be one of the following values: </p>
     /// <ul>
     /// <li><b>Policy-Min-TLS-1-0-2019-07: </b> TLS security policy which supports TLSv1.0 and higher.</li>
     /// <li><b>Policy-Min-TLS-1-2-2019-07: </b> TLS security policy which supports only TLSv1.2</li>

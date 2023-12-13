@@ -23,10 +23,11 @@ impl UpdateAssociationInputBuilder {
 /// Fluent builder constructing a request to `UpdateAssociation`.
 ///
 /// <p>Updates an association. You can update the association name and version, the document version, schedule, parameters, and Amazon Simple Storage Service (Amazon S3) output. When you call <code>UpdateAssociation</code>, the system removes all optional parameters from the request and overwrites the association with null values for those parameters. This is by design. You must specify all optional parameters in the call, even if you are not changing the parameters. This includes the <code>Name</code> parameter. Before calling this API action, we recommend that you call the <code>DescribeAssociation</code> API operation and make a note of all optional parameters required for your <code>UpdateAssociation</code> call.</p>
-/// <p>In order to call this API operation, a user, group, or role must be granted permission to call the <code>DescribeAssociation</code> API operation. If you don't have permission to call <code>DescribeAssociation</code>, then you receive the following error: <code>An error occurred (AccessDeniedException) when calling the UpdateAssociation operation: User: <user_arn>
+/// <p>In order to call this API operation, a user, group, or role must be granted permission to call the <code>DescribeAssociation</code> API operation. If you don't have permission to call <code>DescribeAssociation</code>, then you receive the following error: <code>An error occurred (AccessDeniedException) when calling the UpdateAssociation operation: User:
+/// <user_arn>
 /// isn't authorized to perform: ssm:DescribeAssociation on resource:
 /// <resource_arn></resource_arn>
-/// </user_arn></code></p><important>
+/// </user_arn></code> </p> <important>
 /// <p>When you update an association, the association immediately runs against the specified targets. You can add the <code>ApplyOnlyAtCronInterval</code> parameter to run the association during the next schedule run.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -114,17 +115,17 @@ impl UpdateAssociationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the association you want to update.</p>
+    /// <p>The ID of the association you want to update. </p>
     pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.association_id(input.into());
         self
     }
-    /// <p>The ID of the association you want to update.</p>
+    /// <p>The ID of the association you want to update. </p>
     pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_association_id(input);
         self
     }
-    /// <p>The ID of the association you want to update.</p>
+    /// <p>The ID of the association you want to update. </p>
     pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_association_id()
     }
@@ -151,21 +152,21 @@ impl UpdateAssociationFluentBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.inner.get_parameters()
     }
-    /// <p>The document version you want update for the association.</p><important>
+    /// <p>The document version you want update for the association. </p> <important>
     /// <p>State Manager doesn't support running associations that use a new version of a document if that document is shared from another account. State Manager always runs the <code>default</code> version of a document if shared from another account, even though the Systems Manager console shows that a new version was processed. If you want to run an association using a new version of a document shared form another account, you must set the document version to <code>default</code>.</p>
     /// </important>
     pub fn document_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.document_version(input.into());
         self
     }
-    /// <p>The document version you want update for the association.</p><important>
+    /// <p>The document version you want update for the association. </p> <important>
     /// <p>State Manager doesn't support running associations that use a new version of a document if that document is shared from another account. State Manager always runs the <code>default</code> version of a document if shared from another account, even though the Systems Manager console shows that a new version was processed. If you want to run an association using a new version of a document shared form another account, you must set the document version to <code>default</code>.</p>
     /// </important>
     pub fn set_document_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_document_version(input);
         self
     }
-    /// <p>The document version you want update for the association.</p><important>
+    /// <p>The document version you want update for the association. </p> <important>
     /// <p>State Manager doesn't support running associations that use a new version of a document if that document is shared from another account. State Manager always runs the <code>default</code> version of a document if shared from another account, even though the Systems Manager console shows that a new version was processed. If you want to run an association using a new version of a document shared form another account, you must set the document version to <code>default</code>.</p>
     /// </important>
     pub fn get_document_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -202,9 +203,9 @@ impl UpdateAssociationFluentBuilder {
     /// <p>The name of the SSM Command document or Automation runbook that contains the configuration information for the managed node.</p>
     /// <p>You can specify Amazon Web Services-predefined documents, documents you created, or a document that is shared with you from another account.</p>
     /// <p>For Systems Manager document (SSM document) that are shared with you from other Amazon Web Services accounts, you must specify the complete SSM document ARN, in the following format:</p>
-    /// <p><code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i> </code></p>
+    /// <p> <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i> </code> </p>
     /// <p>For example:</p>
-    /// <p><code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code></p>
+    /// <p> <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code> </p>
     /// <p>For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -213,9 +214,9 @@ impl UpdateAssociationFluentBuilder {
     /// <p>The name of the SSM Command document or Automation runbook that contains the configuration information for the managed node.</p>
     /// <p>You can specify Amazon Web Services-predefined documents, documents you created, or a document that is shared with you from another account.</p>
     /// <p>For Systems Manager document (SSM document) that are shared with you from other Amazon Web Services accounts, you must specify the complete SSM document ARN, in the following format:</p>
-    /// <p><code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i> </code></p>
+    /// <p> <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i> </code> </p>
     /// <p>For example:</p>
-    /// <p><code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code></p>
+    /// <p> <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code> </p>
     /// <p>For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
@@ -224,9 +225,9 @@ impl UpdateAssociationFluentBuilder {
     /// <p>The name of the SSM Command document or Automation runbook that contains the configuration information for the managed node.</p>
     /// <p>You can specify Amazon Web Services-predefined documents, documents you created, or a document that is shared with you from another account.</p>
     /// <p>For Systems Manager document (SSM document) that are shared with you from other Amazon Web Services accounts, you must specify the complete SSM document ARN, in the following format:</p>
-    /// <p><code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i> </code></p>
+    /// <p> <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i> </code> </p>
     /// <p>For example:</p>
-    /// <p><code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code></p>
+    /// <p> <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code> </p>
     /// <p>For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
@@ -415,22 +416,22 @@ impl UpdateAssociationFluentBuilder {
     pub fn get_target_locations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetLocation>> {
         self.inner.get_target_locations()
     }
-    /// <p>Number of days to wait after the scheduled day to run an association. For example, if you specified a cron schedule of <code>cron(0 0 ? * THU#2 *)</code>, you could specify an offset of 3 to run the association each Sunday after the second Thursday of the month. For more information about cron schedules for associations, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/reference-cron-and-rate-expressions.html">Reference: Cron and rate expressions for Systems Manager</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p><note>
-    /// <p>To use offsets, you must specify the <code>ApplyOnlyAtCronInterval</code> parameter. This option tells the system not to run an association immediately after you create it.</p>
+    /// <p>Number of days to wait after the scheduled day to run an association. For example, if you specified a cron schedule of <code>cron(0 0 ? * THU#2 *)</code>, you could specify an offset of 3 to run the association each Sunday after the second Thursday of the month. For more information about cron schedules for associations, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/reference-cron-and-rate-expressions.html">Reference: Cron and rate expressions for Systems Manager</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p> <note>
+    /// <p>To use offsets, you must specify the <code>ApplyOnlyAtCronInterval</code> parameter. This option tells the system not to run an association immediately after you create it. </p>
     /// </note>
     pub fn schedule_offset(mut self, input: i32) -> Self {
         self.inner = self.inner.schedule_offset(input);
         self
     }
-    /// <p>Number of days to wait after the scheduled day to run an association. For example, if you specified a cron schedule of <code>cron(0 0 ? * THU#2 *)</code>, you could specify an offset of 3 to run the association each Sunday after the second Thursday of the month. For more information about cron schedules for associations, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/reference-cron-and-rate-expressions.html">Reference: Cron and rate expressions for Systems Manager</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p><note>
-    /// <p>To use offsets, you must specify the <code>ApplyOnlyAtCronInterval</code> parameter. This option tells the system not to run an association immediately after you create it.</p>
+    /// <p>Number of days to wait after the scheduled day to run an association. For example, if you specified a cron schedule of <code>cron(0 0 ? * THU#2 *)</code>, you could specify an offset of 3 to run the association each Sunday after the second Thursday of the month. For more information about cron schedules for associations, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/reference-cron-and-rate-expressions.html">Reference: Cron and rate expressions for Systems Manager</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p> <note>
+    /// <p>To use offsets, you must specify the <code>ApplyOnlyAtCronInterval</code> parameter. This option tells the system not to run an association immediately after you create it. </p>
     /// </note>
     pub fn set_schedule_offset(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_schedule_offset(input);
         self
     }
-    /// <p>Number of days to wait after the scheduled day to run an association. For example, if you specified a cron schedule of <code>cron(0 0 ? * THU#2 *)</code>, you could specify an offset of 3 to run the association each Sunday after the second Thursday of the month. For more information about cron schedules for associations, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/reference-cron-and-rate-expressions.html">Reference: Cron and rate expressions for Systems Manager</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p><note>
-    /// <p>To use offsets, you must specify the <code>ApplyOnlyAtCronInterval</code> parameter. This option tells the system not to run an association immediately after you create it.</p>
+    /// <p>Number of days to wait after the scheduled day to run an association. For example, if you specified a cron schedule of <code>cron(0 0 ? * THU#2 *)</code>, you could specify an offset of 3 to run the association each Sunday after the second Thursday of the month. For more information about cron schedules for associations, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/reference-cron-and-rate-expressions.html">Reference: Cron and rate expressions for Systems Manager</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p> <note>
+    /// <p>To use offsets, you must specify the <code>ApplyOnlyAtCronInterval</code> parameter. This option tells the system not to run an association immediately after you create it. </p>
     /// </note>
     pub fn get_schedule_offset(&self) -> &::std::option::Option<i32> {
         self.inner.get_schedule_offset()

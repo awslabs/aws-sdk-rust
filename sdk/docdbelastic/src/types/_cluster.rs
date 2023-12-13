@@ -27,7 +27,7 @@ pub struct Cluster {
     /// <p>The Amazon EC2 subnet IDs for the Elastic DocumentDB cluster.</p>
     pub subnet_ids: ::std::vec::Vec<::std::string::String>,
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
-    /// <p><i>Format</i>: <code>ddd:hh24:mi-ddd:hh24:mi</code></p>
+    /// <p> <i>Format</i>: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
     pub preferred_maintenance_window: ::std::string::String,
     /// <p>The KMS key identifier to use to encrypt the Elastic DocumentDB cluster.</p>
     pub kms_key_id: ::std::string::String,
@@ -85,7 +85,7 @@ impl Cluster {
         self.subnet_ids.deref()
     }
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
-    /// <p><i>Format</i>: <code>ddd:hh24:mi-ddd:hh24:mi</code></p>
+    /// <p> <i>Format</i>: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
     pub fn preferred_maintenance_window(&self) -> &str {
         use std::ops::Deref;
         self.preferred_maintenance_window.deref()
@@ -298,20 +298,20 @@ impl ClusterBuilder {
         &self.subnet_ids
     }
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
-    /// <p><i>Format</i>: <code>ddd:hh24:mi-ddd:hh24:mi</code></p>
+    /// <p> <i>Format</i>: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
     /// This field is required.
     pub fn preferred_maintenance_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_maintenance_window = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
-    /// <p><i>Format</i>: <code>ddd:hh24:mi-ddd:hh24:mi</code></p>
+    /// <p> <i>Format</i>: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
     pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_maintenance_window = input;
         self
     }
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
-    /// <p><i>Format</i>: <code>ddd:hh24:mi-ddd:hh24:mi</code></p>
+    /// <p> <i>Format</i>: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
     pub fn get_preferred_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
         &self.preferred_maintenance_window
     }

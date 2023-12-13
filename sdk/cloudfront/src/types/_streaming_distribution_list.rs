@@ -10,9 +10,9 @@ pub struct StreamingDistributionList {
     pub next_marker: ::std::option::Option<::std::string::String>,
     /// <p>The value you provided for the <code>MaxItems</code> request parameter.</p>
     pub max_items: i32,
-    /// <p>A flag that indicates whether more streaming distributions remain to be listed. If your results were truncated, you can make a follow-up pagination request using the <code>Marker</code> request parameter to retrieve more distributions in the list.</p>
+    /// <p>A flag that indicates whether more streaming distributions remain to be listed. If your results were truncated, you can make a follow-up pagination request using the <code>Marker</code> request parameter to retrieve more distributions in the list. </p>
     pub is_truncated: bool,
-    /// <p>The number of streaming distributions that were created by the current Amazon Web Services account.</p>
+    /// <p>The number of streaming distributions that were created by the current Amazon Web Services account. </p>
     pub quantity: i32,
     /// <p>A complex type that contains one <code>StreamingDistributionSummary</code> element for each distribution that was created by the current Amazon Web Services account.</p>
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::StreamingDistributionSummary>>,
@@ -31,11 +31,11 @@ impl StreamingDistributionList {
     pub fn max_items(&self) -> i32 {
         self.max_items
     }
-    /// <p>A flag that indicates whether more streaming distributions remain to be listed. If your results were truncated, you can make a follow-up pagination request using the <code>Marker</code> request parameter to retrieve more distributions in the list.</p>
+    /// <p>A flag that indicates whether more streaming distributions remain to be listed. If your results were truncated, you can make a follow-up pagination request using the <code>Marker</code> request parameter to retrieve more distributions in the list. </p>
     pub fn is_truncated(&self) -> bool {
         self.is_truncated
     }
-    /// <p>The number of streaming distributions that were created by the current Amazon Web Services account.</p>
+    /// <p>The number of streaming distributions that were created by the current Amazon Web Services account. </p>
     pub fn quantity(&self) -> i32 {
         self.quantity
     }
@@ -109,33 +109,33 @@ impl StreamingDistributionListBuilder {
     pub fn get_max_items(&self) -> &::std::option::Option<i32> {
         &self.max_items
     }
-    /// <p>A flag that indicates whether more streaming distributions remain to be listed. If your results were truncated, you can make a follow-up pagination request using the <code>Marker</code> request parameter to retrieve more distributions in the list.</p>
+    /// <p>A flag that indicates whether more streaming distributions remain to be listed. If your results were truncated, you can make a follow-up pagination request using the <code>Marker</code> request parameter to retrieve more distributions in the list. </p>
     /// This field is required.
     pub fn is_truncated(mut self, input: bool) -> Self {
         self.is_truncated = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A flag that indicates whether more streaming distributions remain to be listed. If your results were truncated, you can make a follow-up pagination request using the <code>Marker</code> request parameter to retrieve more distributions in the list.</p>
+    /// <p>A flag that indicates whether more streaming distributions remain to be listed. If your results were truncated, you can make a follow-up pagination request using the <code>Marker</code> request parameter to retrieve more distributions in the list. </p>
     pub fn set_is_truncated(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_truncated = input;
         self
     }
-    /// <p>A flag that indicates whether more streaming distributions remain to be listed. If your results were truncated, you can make a follow-up pagination request using the <code>Marker</code> request parameter to retrieve more distributions in the list.</p>
+    /// <p>A flag that indicates whether more streaming distributions remain to be listed. If your results were truncated, you can make a follow-up pagination request using the <code>Marker</code> request parameter to retrieve more distributions in the list. </p>
     pub fn get_is_truncated(&self) -> &::std::option::Option<bool> {
         &self.is_truncated
     }
-    /// <p>The number of streaming distributions that were created by the current Amazon Web Services account.</p>
+    /// <p>The number of streaming distributions that were created by the current Amazon Web Services account. </p>
     /// This field is required.
     pub fn quantity(mut self, input: i32) -> Self {
         self.quantity = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of streaming distributions that were created by the current Amazon Web Services account.</p>
+    /// <p>The number of streaming distributions that were created by the current Amazon Web Services account. </p>
     pub fn set_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.quantity = input;
         self
     }
-    /// <p>The number of streaming distributions that were created by the current Amazon Web Services account.</p>
+    /// <p>The number of streaming distributions that were created by the current Amazon Web Services account. </p>
     pub fn get_quantity(&self) -> &::std::option::Option<i32> {
         &self.quantity
     }

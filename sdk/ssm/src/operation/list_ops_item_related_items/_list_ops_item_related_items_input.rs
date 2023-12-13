@@ -5,7 +5,7 @@
 pub struct ListOpsItemRelatedItemsInput {
     /// <p>The ID of the OpsItem for which you want to list all related-item resources.</p>
     pub ops_item_id: ::std::option::Option<::std::string::String>,
-    /// <p>One or more OpsItem filters. Use a filter to return a more specific list of results.</p>
+    /// <p>One or more OpsItem filters. Use a filter to return a more specific list of results. </p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::OpsItemRelatedItemsFilter>>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -17,7 +17,7 @@ impl ListOpsItemRelatedItemsInput {
     pub fn ops_item_id(&self) -> ::std::option::Option<&str> {
         self.ops_item_id.as_deref()
     }
-    /// <p>One or more OpsItem filters. Use a filter to return a more specific list of results.</p>
+    /// <p>One or more OpsItem filters. Use a filter to return a more specific list of results. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
     pub fn filters(&self) -> &[crate::types::OpsItemRelatedItemsFilter] {
@@ -67,19 +67,19 @@ impl ListOpsItemRelatedItemsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>One or more OpsItem filters. Use a filter to return a more specific list of results.</p>
+    /// <p>One or more OpsItem filters. Use a filter to return a more specific list of results. </p>
     pub fn filters(mut self, input: crate::types::OpsItemRelatedItemsFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
         v.push(input);
         self.filters = ::std::option::Option::Some(v);
         self
     }
-    /// <p>One or more OpsItem filters. Use a filter to return a more specific list of results.</p>
+    /// <p>One or more OpsItem filters. Use a filter to return a more specific list of results. </p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OpsItemRelatedItemsFilter>>) -> Self {
         self.filters = input;
         self
     }
-    /// <p>One or more OpsItem filters. Use a filter to return a more specific list of results.</p>
+    /// <p>One or more OpsItem filters. Use a filter to return a more specific list of results. </p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OpsItemRelatedItemsFilter>> {
         &self.filters
     }

@@ -12,12 +12,9 @@ pub struct UpdateOpenZfsVolumeConfiguration {
     pub record_size_kib: ::std::option::Option<i32>,
     /// <p>Specifies the method used to compress the data on the volume. The compression type is <code>NONE</code> by default.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>NONE</code> - Doesn't compress the data on the volume. <code>NONE</code> is the default.</p></li>
-    /// <li>
-    /// <p><code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD) compression algorithm. Compared to LZ4, Z-Standard provides a better compression ratio to minimize on-disk storage utilization.</p></li>
-    /// <li>
-    /// <p><code>LZ4</code> - Compresses the data in the volume using the LZ4 compression algorithm. Compared to Z-Standard, LZ4 is less compute-intensive and delivers higher write throughput speeds.</p></li>
+    /// <li> <p> <code>NONE</code> - Doesn't compress the data on the volume. <code>NONE</code> is the default.</p> </li>
+    /// <li> <p> <code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD) compression algorithm. Compared to LZ4, Z-Standard provides a better compression ratio to minimize on-disk storage utilization.</p> </li>
+    /// <li> <p> <code>LZ4</code> - Compresses the data in the volume using the LZ4 compression algorithm. Compared to Z-Standard, LZ4 is less compute-intensive and delivers higher write throughput speeds.</p> </li>
     /// </ul>
     pub data_compression_type: ::std::option::Option<crate::types::OpenZfsDataCompressionType>,
     /// <p>The configuration object for mounting a Network File System (NFS) file system.</p>
@@ -42,12 +39,9 @@ impl UpdateOpenZfsVolumeConfiguration {
     }
     /// <p>Specifies the method used to compress the data on the volume. The compression type is <code>NONE</code> by default.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>NONE</code> - Doesn't compress the data on the volume. <code>NONE</code> is the default.</p></li>
-    /// <li>
-    /// <p><code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD) compression algorithm. Compared to LZ4, Z-Standard provides a better compression ratio to minimize on-disk storage utilization.</p></li>
-    /// <li>
-    /// <p><code>LZ4</code> - Compresses the data in the volume using the LZ4 compression algorithm. Compared to Z-Standard, LZ4 is less compute-intensive and delivers higher write throughput speeds.</p></li>
+    /// <li> <p> <code>NONE</code> - Doesn't compress the data on the volume. <code>NONE</code> is the default.</p> </li>
+    /// <li> <p> <code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD) compression algorithm. Compared to LZ4, Z-Standard provides a better compression ratio to minimize on-disk storage utilization.</p> </li>
+    /// <li> <p> <code>LZ4</code> - Compresses the data in the volume using the LZ4 compression algorithm. Compared to Z-Standard, LZ4 is less compute-intensive and delivers higher write throughput speeds.</p> </li>
     /// </ul>
     pub fn data_compression_type(&self) -> ::std::option::Option<&crate::types::OpenZfsDataCompressionType> {
         self.data_compression_type.as_ref()
@@ -133,12 +127,9 @@ impl UpdateOpenZfsVolumeConfigurationBuilder {
     }
     /// <p>Specifies the method used to compress the data on the volume. The compression type is <code>NONE</code> by default.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>NONE</code> - Doesn't compress the data on the volume. <code>NONE</code> is the default.</p></li>
-    /// <li>
-    /// <p><code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD) compression algorithm. Compared to LZ4, Z-Standard provides a better compression ratio to minimize on-disk storage utilization.</p></li>
-    /// <li>
-    /// <p><code>LZ4</code> - Compresses the data in the volume using the LZ4 compression algorithm. Compared to Z-Standard, LZ4 is less compute-intensive and delivers higher write throughput speeds.</p></li>
+    /// <li> <p> <code>NONE</code> - Doesn't compress the data on the volume. <code>NONE</code> is the default.</p> </li>
+    /// <li> <p> <code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD) compression algorithm. Compared to LZ4, Z-Standard provides a better compression ratio to minimize on-disk storage utilization.</p> </li>
+    /// <li> <p> <code>LZ4</code> - Compresses the data in the volume using the LZ4 compression algorithm. Compared to Z-Standard, LZ4 is less compute-intensive and delivers higher write throughput speeds.</p> </li>
     /// </ul>
     pub fn data_compression_type(mut self, input: crate::types::OpenZfsDataCompressionType) -> Self {
         self.data_compression_type = ::std::option::Option::Some(input);
@@ -146,12 +137,9 @@ impl UpdateOpenZfsVolumeConfigurationBuilder {
     }
     /// <p>Specifies the method used to compress the data on the volume. The compression type is <code>NONE</code> by default.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>NONE</code> - Doesn't compress the data on the volume. <code>NONE</code> is the default.</p></li>
-    /// <li>
-    /// <p><code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD) compression algorithm. Compared to LZ4, Z-Standard provides a better compression ratio to minimize on-disk storage utilization.</p></li>
-    /// <li>
-    /// <p><code>LZ4</code> - Compresses the data in the volume using the LZ4 compression algorithm. Compared to Z-Standard, LZ4 is less compute-intensive and delivers higher write throughput speeds.</p></li>
+    /// <li> <p> <code>NONE</code> - Doesn't compress the data on the volume. <code>NONE</code> is the default.</p> </li>
+    /// <li> <p> <code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD) compression algorithm. Compared to LZ4, Z-Standard provides a better compression ratio to minimize on-disk storage utilization.</p> </li>
+    /// <li> <p> <code>LZ4</code> - Compresses the data in the volume using the LZ4 compression algorithm. Compared to Z-Standard, LZ4 is less compute-intensive and delivers higher write throughput speeds.</p> </li>
     /// </ul>
     pub fn set_data_compression_type(mut self, input: ::std::option::Option<crate::types::OpenZfsDataCompressionType>) -> Self {
         self.data_compression_type = input;
@@ -159,12 +147,9 @@ impl UpdateOpenZfsVolumeConfigurationBuilder {
     }
     /// <p>Specifies the method used to compress the data on the volume. The compression type is <code>NONE</code> by default.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>NONE</code> - Doesn't compress the data on the volume. <code>NONE</code> is the default.</p></li>
-    /// <li>
-    /// <p><code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD) compression algorithm. Compared to LZ4, Z-Standard provides a better compression ratio to minimize on-disk storage utilization.</p></li>
-    /// <li>
-    /// <p><code>LZ4</code> - Compresses the data in the volume using the LZ4 compression algorithm. Compared to Z-Standard, LZ4 is less compute-intensive and delivers higher write throughput speeds.</p></li>
+    /// <li> <p> <code>NONE</code> - Doesn't compress the data on the volume. <code>NONE</code> is the default.</p> </li>
+    /// <li> <p> <code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD) compression algorithm. Compared to LZ4, Z-Standard provides a better compression ratio to minimize on-disk storage utilization.</p> </li>
+    /// <li> <p> <code>LZ4</code> - Compresses the data in the volume using the LZ4 compression algorithm. Compared to Z-Standard, LZ4 is less compute-intensive and delivers higher write throughput speeds.</p> </li>
     /// </ul>
     pub fn get_data_compression_type(&self) -> &::std::option::Option<crate::types::OpenZfsDataCompressionType> {
         &self.data_compression_type

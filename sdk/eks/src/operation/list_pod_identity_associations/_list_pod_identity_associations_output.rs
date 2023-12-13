@@ -6,17 +6,13 @@ pub struct ListPodIdentityAssociationsOutput {
     /// <p>The list of summarized descriptions of the associations that are in the cluster and match any filters that you provided.</p>
     /// <p>Each summary is simplified by removing these fields compared to the full <code> <code>PodIdentityAssociation</code> </code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>The IAM role: <code>roleArn</code></p></li>
-    /// <li>
-    /// <p>The timestamp that the association was created at: <code>createdAt</code></p></li>
-    /// <li>
-    /// <p>The most recent timestamp that the association was modified at:. <code>modifiedAt</code></p></li>
-    /// <li>
-    /// <p>The tags on the association: <code>tags</code></p></li>
+    /// <li> <p>The IAM role: <code>roleArn</code> </p> </li>
+    /// <li> <p>The timestamp that the association was created at: <code>createdAt</code> </p> </li>
+    /// <li> <p>The most recent timestamp that the association was modified at:. <code>modifiedAt</code> </p> </li>
+    /// <li> <p>The tags on the association: <code>tags</code> </p> </li>
     /// </ul>
     pub associations: ::std::option::Option<::std::vec::Vec<crate::types::PodIdentityAssociationSummary>>,
-    /// <p>The <code>nextToken</code> value to include in a future <code>ListPodIdentityAssociations</code> request. When the results of a <code>ListPodIdentityAssociations</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p><note>
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListPodIdentityAssociations</code> request. When the results of a <code>ListPodIdentityAssociations</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p> <note>
     /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -26,21 +22,17 @@ impl ListPodIdentityAssociationsOutput {
     /// <p>The list of summarized descriptions of the associations that are in the cluster and match any filters that you provided.</p>
     /// <p>Each summary is simplified by removing these fields compared to the full <code> <code>PodIdentityAssociation</code> </code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>The IAM role: <code>roleArn</code></p></li>
-    /// <li>
-    /// <p>The timestamp that the association was created at: <code>createdAt</code></p></li>
-    /// <li>
-    /// <p>The most recent timestamp that the association was modified at:. <code>modifiedAt</code></p></li>
-    /// <li>
-    /// <p>The tags on the association: <code>tags</code></p></li>
+    /// <li> <p>The IAM role: <code>roleArn</code> </p> </li>
+    /// <li> <p>The timestamp that the association was created at: <code>createdAt</code> </p> </li>
+    /// <li> <p>The most recent timestamp that the association was modified at:. <code>modifiedAt</code> </p> </li>
+    /// <li> <p>The tags on the association: <code>tags</code> </p> </li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associations.is_none()`.
     pub fn associations(&self) -> &[crate::types::PodIdentityAssociationSummary] {
         self.associations.as_deref().unwrap_or_default()
     }
-    /// <p>The <code>nextToken</code> value to include in a future <code>ListPodIdentityAssociations</code> request. When the results of a <code>ListPodIdentityAssociations</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p><note>
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListPodIdentityAssociations</code> request. When the results of a <code>ListPodIdentityAssociations</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p> <note>
     /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -75,14 +67,10 @@ impl ListPodIdentityAssociationsOutputBuilder {
     /// <p>The list of summarized descriptions of the associations that are in the cluster and match any filters that you provided.</p>
     /// <p>Each summary is simplified by removing these fields compared to the full <code> <code>PodIdentityAssociation</code> </code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>The IAM role: <code>roleArn</code></p></li>
-    /// <li>
-    /// <p>The timestamp that the association was created at: <code>createdAt</code></p></li>
-    /// <li>
-    /// <p>The most recent timestamp that the association was modified at:. <code>modifiedAt</code></p></li>
-    /// <li>
-    /// <p>The tags on the association: <code>tags</code></p></li>
+    /// <li> <p>The IAM role: <code>roleArn</code> </p> </li>
+    /// <li> <p>The timestamp that the association was created at: <code>createdAt</code> </p> </li>
+    /// <li> <p>The most recent timestamp that the association was modified at:. <code>modifiedAt</code> </p> </li>
+    /// <li> <p>The tags on the association: <code>tags</code> </p> </li>
     /// </ul>
     pub fn associations(mut self, input: crate::types::PodIdentityAssociationSummary) -> Self {
         let mut v = self.associations.unwrap_or_default();
@@ -93,14 +81,10 @@ impl ListPodIdentityAssociationsOutputBuilder {
     /// <p>The list of summarized descriptions of the associations that are in the cluster and match any filters that you provided.</p>
     /// <p>Each summary is simplified by removing these fields compared to the full <code> <code>PodIdentityAssociation</code> </code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>The IAM role: <code>roleArn</code></p></li>
-    /// <li>
-    /// <p>The timestamp that the association was created at: <code>createdAt</code></p></li>
-    /// <li>
-    /// <p>The most recent timestamp that the association was modified at:. <code>modifiedAt</code></p></li>
-    /// <li>
-    /// <p>The tags on the association: <code>tags</code></p></li>
+    /// <li> <p>The IAM role: <code>roleArn</code> </p> </li>
+    /// <li> <p>The timestamp that the association was created at: <code>createdAt</code> </p> </li>
+    /// <li> <p>The most recent timestamp that the association was modified at:. <code>modifiedAt</code> </p> </li>
+    /// <li> <p>The tags on the association: <code>tags</code> </p> </li>
     /// </ul>
     pub fn set_associations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PodIdentityAssociationSummary>>) -> Self {
         self.associations = input;
@@ -109,33 +93,29 @@ impl ListPodIdentityAssociationsOutputBuilder {
     /// <p>The list of summarized descriptions of the associations that are in the cluster and match any filters that you provided.</p>
     /// <p>Each summary is simplified by removing these fields compared to the full <code> <code>PodIdentityAssociation</code> </code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>The IAM role: <code>roleArn</code></p></li>
-    /// <li>
-    /// <p>The timestamp that the association was created at: <code>createdAt</code></p></li>
-    /// <li>
-    /// <p>The most recent timestamp that the association was modified at:. <code>modifiedAt</code></p></li>
-    /// <li>
-    /// <p>The tags on the association: <code>tags</code></p></li>
+    /// <li> <p>The IAM role: <code>roleArn</code> </p> </li>
+    /// <li> <p>The timestamp that the association was created at: <code>createdAt</code> </p> </li>
+    /// <li> <p>The most recent timestamp that the association was modified at:. <code>modifiedAt</code> </p> </li>
+    /// <li> <p>The tags on the association: <code>tags</code> </p> </li>
     /// </ul>
     pub fn get_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PodIdentityAssociationSummary>> {
         &self.associations
     }
-    /// <p>The <code>nextToken</code> value to include in a future <code>ListPodIdentityAssociations</code> request. When the results of a <code>ListPodIdentityAssociations</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p><note>
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListPodIdentityAssociations</code> request. When the results of a <code>ListPodIdentityAssociations</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p> <note>
     /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The <code>nextToken</code> value to include in a future <code>ListPodIdentityAssociations</code> request. When the results of a <code>ListPodIdentityAssociations</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p><note>
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListPodIdentityAssociations</code> request. When the results of a <code>ListPodIdentityAssociations</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p> <note>
     /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The <code>nextToken</code> value to include in a future <code>ListPodIdentityAssociations</code> request. When the results of a <code>ListPodIdentityAssociations</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p><note>
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListPodIdentityAssociations</code> request. When the results of a <code>ListPodIdentityAssociations</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p> <note>
     /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {

@@ -8,14 +8,10 @@ pub struct HistoryRecord {
     pub event_information: ::std::option::Option<crate::types::EventInformation>,
     /// <p>The event type.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>error</code> - An error with the Spot Fleet request.</p></li>
-    /// <li>
-    /// <p><code>fleetRequestChange</code> - A change in the status or configuration of the Spot Fleet request.</p></li>
-    /// <li>
-    /// <p><code>instanceChange</code> - An instance was launched or terminated.</p></li>
-    /// <li>
-    /// <p><code>Information</code> - An informational event.</p></li>
+    /// <li> <p> <code>error</code> - An error with the Spot Fleet request.</p> </li>
+    /// <li> <p> <code>fleetRequestChange</code> - A change in the status or configuration of the Spot Fleet request.</p> </li>
+    /// <li> <p> <code>instanceChange</code> - An instance was launched or terminated.</p> </li>
+    /// <li> <p> <code>Information</code> - An informational event.</p> </li>
     /// </ul>
     pub event_type: ::std::option::Option<crate::types::EventType>,
     /// <p>The date and time of the event, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
@@ -28,14 +24,10 @@ impl HistoryRecord {
     }
     /// <p>The event type.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>error</code> - An error with the Spot Fleet request.</p></li>
-    /// <li>
-    /// <p><code>fleetRequestChange</code> - A change in the status or configuration of the Spot Fleet request.</p></li>
-    /// <li>
-    /// <p><code>instanceChange</code> - An instance was launched or terminated.</p></li>
-    /// <li>
-    /// <p><code>Information</code> - An informational event.</p></li>
+    /// <li> <p> <code>error</code> - An error with the Spot Fleet request.</p> </li>
+    /// <li> <p> <code>fleetRequestChange</code> - A change in the status or configuration of the Spot Fleet request.</p> </li>
+    /// <li> <p> <code>instanceChange</code> - An instance was launched or terminated.</p> </li>
+    /// <li> <p> <code>Information</code> - An informational event.</p> </li>
     /// </ul>
     pub fn event_type(&self) -> ::std::option::Option<&crate::types::EventType> {
         self.event_type.as_ref()
@@ -77,14 +69,10 @@ impl HistoryRecordBuilder {
     }
     /// <p>The event type.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>error</code> - An error with the Spot Fleet request.</p></li>
-    /// <li>
-    /// <p><code>fleetRequestChange</code> - A change in the status or configuration of the Spot Fleet request.</p></li>
-    /// <li>
-    /// <p><code>instanceChange</code> - An instance was launched or terminated.</p></li>
-    /// <li>
-    /// <p><code>Information</code> - An informational event.</p></li>
+    /// <li> <p> <code>error</code> - An error with the Spot Fleet request.</p> </li>
+    /// <li> <p> <code>fleetRequestChange</code> - A change in the status or configuration of the Spot Fleet request.</p> </li>
+    /// <li> <p> <code>instanceChange</code> - An instance was launched or terminated.</p> </li>
+    /// <li> <p> <code>Information</code> - An informational event.</p> </li>
     /// </ul>
     pub fn event_type(mut self, input: crate::types::EventType) -> Self {
         self.event_type = ::std::option::Option::Some(input);
@@ -92,14 +80,10 @@ impl HistoryRecordBuilder {
     }
     /// <p>The event type.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>error</code> - An error with the Spot Fleet request.</p></li>
-    /// <li>
-    /// <p><code>fleetRequestChange</code> - A change in the status or configuration of the Spot Fleet request.</p></li>
-    /// <li>
-    /// <p><code>instanceChange</code> - An instance was launched or terminated.</p></li>
-    /// <li>
-    /// <p><code>Information</code> - An informational event.</p></li>
+    /// <li> <p> <code>error</code> - An error with the Spot Fleet request.</p> </li>
+    /// <li> <p> <code>fleetRequestChange</code> - A change in the status or configuration of the Spot Fleet request.</p> </li>
+    /// <li> <p> <code>instanceChange</code> - An instance was launched or terminated.</p> </li>
+    /// <li> <p> <code>Information</code> - An informational event.</p> </li>
     /// </ul>
     pub fn set_event_type(mut self, input: ::std::option::Option<crate::types::EventType>) -> Self {
         self.event_type = input;
@@ -107,14 +91,10 @@ impl HistoryRecordBuilder {
     }
     /// <p>The event type.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>error</code> - An error with the Spot Fleet request.</p></li>
-    /// <li>
-    /// <p><code>fleetRequestChange</code> - A change in the status or configuration of the Spot Fleet request.</p></li>
-    /// <li>
-    /// <p><code>instanceChange</code> - An instance was launched or terminated.</p></li>
-    /// <li>
-    /// <p><code>Information</code> - An informational event.</p></li>
+    /// <li> <p> <code>error</code> - An error with the Spot Fleet request.</p> </li>
+    /// <li> <p> <code>fleetRequestChange</code> - A change in the status or configuration of the Spot Fleet request.</p> </li>
+    /// <li> <p> <code>instanceChange</code> - An instance was launched or terminated.</p> </li>
+    /// <li> <p> <code>Information</code> - An informational event.</p> </li>
     /// </ul>
     pub fn get_event_type(&self) -> &::std::option::Option<crate::types::EventType> {
         &self.event_type

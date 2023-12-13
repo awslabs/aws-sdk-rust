@@ -22,7 +22,7 @@ impl StopSnomedctInferenceJobInputBuilder {
 }
 /// Fluent builder constructing a request to `StopSNOMEDCTInferenceJob`.
 ///
-/// <p>Stops an InferSNOMEDCT inference job in progress.</p>
+/// <p> Stops an InferSNOMEDCT inference job in progress. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopSNOMEDCTInferenceJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl StopSNOMEDCTInferenceJobFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The job id of the asynchronous InferSNOMEDCT job to be stopped.</p>
+    /// <p> The job id of the asynchronous InferSNOMEDCT job to be stopped. </p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_id(input.into());
         self
     }
-    /// <p>The job id of the asynchronous InferSNOMEDCT job to be stopped.</p>
+    /// <p> The job id of the asynchronous InferSNOMEDCT job to be stopped. </p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_id(input);
         self
     }
-    /// <p>The job id of the asynchronous InferSNOMEDCT job to be stopped.</p>
+    /// <p> The job id of the asynchronous InferSNOMEDCT job to be stopped. </p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_job_id()
     }

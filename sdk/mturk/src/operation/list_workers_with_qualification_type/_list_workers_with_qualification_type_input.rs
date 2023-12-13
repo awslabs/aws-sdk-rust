@@ -5,11 +5,11 @@
 pub struct ListWorkersWithQualificationTypeInput {
     /// <p>The ID of the Qualification type of the Qualifications to return.</p>
     pub qualification_type_id: ::std::option::Option<::std::string::String>,
-    /// <p>The status of the Qualifications to return. Can be <code>Granted | Revoked</code>.</p>
+    /// <p> The status of the Qualifications to return. Can be <code>Granted | Revoked</code>. </p>
     pub status: ::std::option::Option<crate::types::QualificationStatus>,
     /// <p>Pagination Token</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>Limit the number of results returned.</p>
+    /// <p> Limit the number of results returned. </p>
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListWorkersWithQualificationTypeInput {
@@ -17,7 +17,7 @@ impl ListWorkersWithQualificationTypeInput {
     pub fn qualification_type_id(&self) -> ::std::option::Option<&str> {
         self.qualification_type_id.as_deref()
     }
-    /// <p>The status of the Qualifications to return. Can be <code>Granted | Revoked</code>.</p>
+    /// <p> The status of the Qualifications to return. Can be <code>Granted | Revoked</code>. </p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::QualificationStatus> {
         self.status.as_ref()
     }
@@ -25,7 +25,7 @@ impl ListWorkersWithQualificationTypeInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Limit the number of results returned.</p>
+    /// <p> Limit the number of results returned. </p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -62,17 +62,17 @@ impl ListWorkersWithQualificationTypeInputBuilder {
     pub fn get_qualification_type_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.qualification_type_id
     }
-    /// <p>The status of the Qualifications to return. Can be <code>Granted | Revoked</code>.</p>
+    /// <p> The status of the Qualifications to return. Can be <code>Granted | Revoked</code>. </p>
     pub fn status(mut self, input: crate::types::QualificationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the Qualifications to return. Can be <code>Granted | Revoked</code>.</p>
+    /// <p> The status of the Qualifications to return. Can be <code>Granted | Revoked</code>. </p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::QualificationStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of the Qualifications to return. Can be <code>Granted | Revoked</code>.</p>
+    /// <p> The status of the Qualifications to return. Can be <code>Granted | Revoked</code>. </p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::QualificationStatus> {
         &self.status
     }
@@ -90,17 +90,17 @@ impl ListWorkersWithQualificationTypeInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>Limit the number of results returned.</p>
+    /// <p> Limit the number of results returned. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Limit the number of results returned.</p>
+    /// <p> Limit the number of results returned. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>Limit the number of results returned.</p>
+    /// <p> Limit the number of results returned. </p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

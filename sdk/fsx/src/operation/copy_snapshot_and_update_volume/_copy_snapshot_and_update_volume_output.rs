@@ -5,7 +5,7 @@
 pub struct CopySnapshotAndUpdateVolumeOutput {
     /// <p>The ID of the volume that you copied the snapshot to.</p>
     pub volume_id: ::std::option::Option<::std::string::String>,
-    /// <p>The lifecycle state of the destination volume.</p>
+    /// <p>The lifecycle state of the destination volume. </p>
     pub lifecycle: ::std::option::Option<crate::types::VolumeLifecycle>,
     /// <p>A list of administrative actions for the file system that are in process or waiting to be processed. Administrative actions describe changes to the Amazon FSx system.</p>
     pub administrative_actions: ::std::option::Option<::std::vec::Vec<crate::types::AdministrativeAction>>,
@@ -16,7 +16,7 @@ impl CopySnapshotAndUpdateVolumeOutput {
     pub fn volume_id(&self) -> ::std::option::Option<&str> {
         self.volume_id.as_deref()
     }
-    /// <p>The lifecycle state of the destination volume.</p>
+    /// <p>The lifecycle state of the destination volume. </p>
     pub fn lifecycle(&self) -> ::std::option::Option<&crate::types::VolumeLifecycle> {
         self.lifecycle.as_ref()
     }
@@ -63,17 +63,17 @@ impl CopySnapshotAndUpdateVolumeOutputBuilder {
     pub fn get_volume_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.volume_id
     }
-    /// <p>The lifecycle state of the destination volume.</p>
+    /// <p>The lifecycle state of the destination volume. </p>
     pub fn lifecycle(mut self, input: crate::types::VolumeLifecycle) -> Self {
         self.lifecycle = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The lifecycle state of the destination volume.</p>
+    /// <p>The lifecycle state of the destination volume. </p>
     pub fn set_lifecycle(mut self, input: ::std::option::Option<crate::types::VolumeLifecycle>) -> Self {
         self.lifecycle = input;
         self
     }
-    /// <p>The lifecycle state of the destination volume.</p>
+    /// <p>The lifecycle state of the destination volume. </p>
     pub fn get_lifecycle(&self) -> &::std::option::Option<crate::types::VolumeLifecycle> {
         &self.lifecycle
     }

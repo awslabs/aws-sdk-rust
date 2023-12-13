@@ -22,7 +22,7 @@ impl DescribeTimeToLiveInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeTimeToLive`.
 ///
-/// <p>Gives a description of the Time to Live (TTL) status on the specified table.</p>
+/// <p>Gives a description of the Time to Live (TTL) status on the specified table. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeTimeToLiveFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

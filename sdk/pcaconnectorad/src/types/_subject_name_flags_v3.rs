@@ -20,7 +20,7 @@ pub struct SubjectNameFlagsV3 {
     pub require_dns_as_cn: ::std::option::Option<bool>,
     /// <p>Include the subject's email in the subject name.</p>
     pub require_email: ::std::option::Option<bool>,
-    /// <p>Include the common name in the subject name.</p>
+    /// <p>Include the common name in the subject name. </p>
     pub require_common_name: ::std::option::Option<bool>,
     /// <p>Include the directory path in the subject name.</p>
     pub require_directory_path: ::std::option::Option<bool>,
@@ -58,7 +58,7 @@ impl SubjectNameFlagsV3 {
     pub fn require_email(&self) -> ::std::option::Option<bool> {
         self.require_email
     }
-    /// <p>Include the common name in the subject name.</p>
+    /// <p>Include the common name in the subject name. </p>
     pub fn require_common_name(&self) -> ::std::option::Option<bool> {
         self.require_common_name
     }
@@ -202,17 +202,17 @@ impl SubjectNameFlagsV3Builder {
     pub fn get_require_email(&self) -> &::std::option::Option<bool> {
         &self.require_email
     }
-    /// <p>Include the common name in the subject name.</p>
+    /// <p>Include the common name in the subject name. </p>
     pub fn require_common_name(mut self, input: bool) -> Self {
         self.require_common_name = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Include the common name in the subject name.</p>
+    /// <p>Include the common name in the subject name. </p>
     pub fn set_require_common_name(mut self, input: ::std::option::Option<bool>) -> Self {
         self.require_common_name = input;
         self
     }
-    /// <p>Include the common name in the subject name.</p>
+    /// <p>Include the common name in the subject name. </p>
     pub fn get_require_common_name(&self) -> &::std::option::Option<bool> {
         &self.require_common_name
     }

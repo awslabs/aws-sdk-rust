@@ -23,7 +23,7 @@ impl DeleteIpamScopeInputBuilder {
 /// Fluent builder constructing a request to `DeleteIpamScope`.
 ///
 /// <p>Delete the scope for an IPAM. You cannot delete the default scopes.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/delete-scope-ipam.html">Delete a scope</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/delete-scope-ipam.html">Delete a scope</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteIpamScopeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

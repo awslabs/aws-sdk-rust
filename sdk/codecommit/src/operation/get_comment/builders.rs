@@ -22,7 +22,7 @@ impl GetCommentInputBuilder {
 }
 /// Fluent builder constructing a request to `GetComment`.
 ///
-/// <p>Returns the content of a comment made on a change, file, or commit in a repository.</p><note>
+/// <p>Returns the content of a comment made on a change, file, or commit in a repository. </p> <note>
 /// <p>Reaction counts might include numbers from user identities who were deleted after the reaction was made. For a count of reactions from active identities, use GetCommentReactions.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

@@ -109,17 +109,17 @@ impl TagResourceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ARN of the resource to which to add metadata tags. Required.</p>
+    /// <p>The ARN of the resource to which to add metadata tags. Required. </p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.arn(input.into());
         self
     }
-    /// <p>The ARN of the resource to which to add metadata tags. Required.</p>
+    /// <p>The ARN of the resource to which to add metadata tags. Required. </p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_arn(input);
         self
     }
-    /// <p>The ARN of the resource to which to add metadata tags. Required.</p>
+    /// <p>The ARN of the resource to which to add metadata tags. Required. </p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_arn()
     }
@@ -127,17 +127,17 @@ impl TagResourceFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The tags to be added to the specified resource. Do not provide system tags. Required.</p>
+    /// <p>The tags to be added to the specified resource. Do not provide system tags. Required. </p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
-    /// <p>The tags to be added to the specified resource. Do not provide system tags. Required.</p>
+    /// <p>The tags to be added to the specified resource. Do not provide system tags. Required. </p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>The tags to be added to the specified resource. Do not provide system tags. Required.</p>
+    /// <p>The tags to be added to the specified resource. Do not provide system tags. Required. </p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }

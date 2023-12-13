@@ -9,7 +9,7 @@ pub struct PutStorageLensConfigurationInput {
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The S3 Storage Lens configuration.</p>
     pub storage_lens_configuration: ::std::option::Option<crate::types::StorageLensConfiguration>,
-    /// <p>The tag set of the S3 Storage Lens configuration.</p><note>
+    /// <p>The tag set of the S3 Storage Lens configuration.</p> <note>
     /// <p>You can set up to a maximum of 50 tags.</p>
     /// </note>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::StorageLensTag>>,
@@ -27,7 +27,7 @@ impl PutStorageLensConfigurationInput {
     pub fn storage_lens_configuration(&self) -> ::std::option::Option<&crate::types::StorageLensConfiguration> {
         self.storage_lens_configuration.as_ref()
     }
-    /// <p>The tag set of the S3 Storage Lens configuration.</p><note>
+    /// <p>The tag set of the S3 Storage Lens configuration.</p> <note>
     /// <p>You can set up to a maximum of 50 tags.</p>
     /// </note>
     ///
@@ -102,7 +102,7 @@ impl PutStorageLensConfigurationInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The tag set of the S3 Storage Lens configuration.</p><note>
+    /// <p>The tag set of the S3 Storage Lens configuration.</p> <note>
     /// <p>You can set up to a maximum of 50 tags.</p>
     /// </note>
     pub fn tags(mut self, input: crate::types::StorageLensTag) -> Self {
@@ -111,14 +111,14 @@ impl PutStorageLensConfigurationInputBuilder {
         self.tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The tag set of the S3 Storage Lens configuration.</p><note>
+    /// <p>The tag set of the S3 Storage Lens configuration.</p> <note>
     /// <p>You can set up to a maximum of 50 tags.</p>
     /// </note>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StorageLensTag>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>The tag set of the S3 Storage Lens configuration.</p><note>
+    /// <p>The tag set of the S3 Storage Lens configuration.</p> <note>
     /// <p>You can set up to a maximum of 50 tags.</p>
     /// </note>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StorageLensTag>> {

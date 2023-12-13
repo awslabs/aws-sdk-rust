@@ -23,7 +23,7 @@ impl CreateProfileInputBuilder {
 /// Fluent builder constructing a request to `CreateProfile`.
 ///
 /// <p>Creates a <i>profile</i>, a list of the roles that Roles Anywhere service is trusted to assume. You use profiles to intersect permissions with IAM managed policies.</p>
-/// <p><b>Required permissions: </b> <code>rolesanywhere:CreateProfile</code>.</p>
+/// <p> <b>Required permissions: </b> <code>rolesanywhere:CreateProfile</code>. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateProfileFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -123,31 +123,31 @@ impl CreateProfileFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>Specifies whether instance properties are required in temporary credential requests with this profile.</p>
+    /// <p>Specifies whether instance properties are required in temporary credential requests with this profile. </p>
     pub fn require_instance_properties(mut self, input: bool) -> Self {
         self.inner = self.inner.require_instance_properties(input);
         self
     }
-    /// <p>Specifies whether instance properties are required in temporary credential requests with this profile.</p>
+    /// <p>Specifies whether instance properties are required in temporary credential requests with this profile. </p>
     pub fn set_require_instance_properties(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_require_instance_properties(input);
         self
     }
-    /// <p>Specifies whether instance properties are required in temporary credential requests with this profile.</p>
+    /// <p>Specifies whether instance properties are required in temporary credential requests with this profile. </p>
     pub fn get_require_instance_properties(&self) -> &::std::option::Option<bool> {
         self.inner.get_require_instance_properties()
     }
-    /// <p>A session policy that applies to the trust boundary of the vended session credentials.</p>
+    /// <p>A session policy that applies to the trust boundary of the vended session credentials. </p>
     pub fn session_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.session_policy(input.into());
         self
     }
-    /// <p>A session policy that applies to the trust boundary of the vended session credentials.</p>
+    /// <p>A session policy that applies to the trust boundary of the vended session credentials. </p>
     pub fn set_session_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_session_policy(input);
         self
     }
-    /// <p>A session policy that applies to the trust boundary of the vended session credentials.</p>
+    /// <p>A session policy that applies to the trust boundary of the vended session credentials. </p>
     pub fn get_session_policy(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_session_policy()
     }
@@ -173,31 +173,31 @@ impl CreateProfileFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_managed_policy_arns`](Self::set_managed_policy_arns).
     ///
-    /// <p>A list of managed policy ARNs that apply to the vended session credentials.</p>
+    /// <p>A list of managed policy ARNs that apply to the vended session credentials. </p>
     pub fn managed_policy_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.managed_policy_arns(input.into());
         self
     }
-    /// <p>A list of managed policy ARNs that apply to the vended session credentials.</p>
+    /// <p>A list of managed policy ARNs that apply to the vended session credentials. </p>
     pub fn set_managed_policy_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_managed_policy_arns(input);
         self
     }
-    /// <p>A list of managed policy ARNs that apply to the vended session credentials.</p>
+    /// <p>A list of managed policy ARNs that apply to the vended session credentials. </p>
     pub fn get_managed_policy_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_managed_policy_arns()
     }
-    /// <p>The number of seconds the vended session credentials are valid for.</p>
+    /// <p> The number of seconds the vended session credentials are valid for. </p>
     pub fn duration_seconds(mut self, input: i32) -> Self {
         self.inner = self.inner.duration_seconds(input);
         self
     }
-    /// <p>The number of seconds the vended session credentials are valid for.</p>
+    /// <p> The number of seconds the vended session credentials are valid for. </p>
     pub fn set_duration_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_duration_seconds(input);
         self
     }
-    /// <p>The number of seconds the vended session credentials are valid for.</p>
+    /// <p> The number of seconds the vended session credentials are valid for. </p>
     pub fn get_duration_seconds(&self) -> &::std::option::Option<i32> {
         self.inner.get_duration_seconds()
     }

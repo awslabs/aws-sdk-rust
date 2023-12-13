@@ -140,17 +140,17 @@ impl StartPipelineExecutionFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_pipeline_parameters`](Self::set_pipeline_parameters).
     ///
-    /// <p>Contains a list of pipeline parameters. This list can be empty.</p>
+    /// <p>Contains a list of pipeline parameters. This list can be empty. </p>
     pub fn pipeline_parameters(mut self, input: crate::types::Parameter) -> Self {
         self.inner = self.inner.pipeline_parameters(input);
         self
     }
-    /// <p>Contains a list of pipeline parameters. This list can be empty.</p>
+    /// <p>Contains a list of pipeline parameters. This list can be empty. </p>
     pub fn set_pipeline_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>) -> Self {
         self.inner = self.inner.set_pipeline_parameters(input);
         self
     }
-    /// <p>Contains a list of pipeline parameters. This list can be empty.</p>
+    /// <p>Contains a list of pipeline parameters. This list can be empty. </p>
     pub fn get_pipeline_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
         self.inner.get_pipeline_parameters()
     }

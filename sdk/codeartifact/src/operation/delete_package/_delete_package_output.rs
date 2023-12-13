@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeletePackageOutput {
-    /// <p>Details about a package, including its format, namespace, and name.</p>
+    /// <p> Details about a package, including its format, namespace, and name. </p>
     pub deleted_package: ::std::option::Option<crate::types::PackageSummary>,
     _request_id: Option<String>,
 }
 impl DeletePackageOutput {
-    /// <p>Details about a package, including its format, namespace, and name.</p>
+    /// <p> Details about a package, including its format, namespace, and name. </p>
     pub fn deleted_package(&self) -> ::std::option::Option<&crate::types::PackageSummary> {
         self.deleted_package.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct DeletePackageOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeletePackageOutputBuilder {
-    /// <p>Details about a package, including its format, namespace, and name.</p>
+    /// <p> Details about a package, including its format, namespace, and name. </p>
     pub fn deleted_package(mut self, input: crate::types::PackageSummary) -> Self {
         self.deleted_package = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Details about a package, including its format, namespace, and name.</p>
+    /// <p> Details about a package, including its format, namespace, and name. </p>
     pub fn set_deleted_package(mut self, input: ::std::option::Option<crate::types::PackageSummary>) -> Self {
         self.deleted_package = input;
         self
     }
-    /// <p>Details about a package, including its format, namespace, and name.</p>
+    /// <p> Details about a package, including its format, namespace, and name. </p>
     pub fn get_deleted_package(&self) -> &::std::option::Option<crate::types::PackageSummary> {
         &self.deleted_package
     }

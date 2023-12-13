@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetServerDetailsInput {
-    /// <p>The ID of the server.</p>
+    /// <p> The ID of the server. </p>
     pub server_id: ::std::option::Option<::std::string::String>,
-    /// <p>The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10.</p>
+    /// <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum number of items to include in the response. The maximum value is 100.</p>
+    /// <p> The maximum number of items to include in the response. The maximum value is 100. </p>
     pub max_results: ::std::option::Option<i32>,
 }
 impl GetServerDetailsInput {
-    /// <p>The ID of the server.</p>
+    /// <p> The ID of the server. </p>
     pub fn server_id(&self) -> ::std::option::Option<&str> {
         self.server_id.as_deref()
     }
-    /// <p>The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10.</p>
+    /// <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of items to include in the response. The maximum value is 100.</p>
+    /// <p> The maximum number of items to include in the response. The maximum value is 100. </p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -40,46 +40,46 @@ pub struct GetServerDetailsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl GetServerDetailsInputBuilder {
-    /// <p>The ID of the server.</p>
+    /// <p> The ID of the server. </p>
     /// This field is required.
     pub fn server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the server.</p>
+    /// <p> The ID of the server. </p>
     pub fn set_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_id = input;
         self
     }
-    /// <p>The ID of the server.</p>
+    /// <p> The ID of the server. </p>
     pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.server_id
     }
-    /// <p>The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10.</p>
+    /// <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10.</p>
+    /// <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10.</p>
+    /// <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>The maximum number of items to include in the response. The maximum value is 100.</p>
+    /// <p> The maximum number of items to include in the response. The maximum value is 100. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of items to include in the response. The maximum value is 100.</p>
+    /// <p> The maximum number of items to include in the response. The maximum value is 100. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of items to include in the response. The maximum value is 100.</p>
+    /// <p> The maximum number of items to include in the response. The maximum value is 100. </p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

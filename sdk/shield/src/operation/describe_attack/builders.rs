@@ -22,7 +22,7 @@ impl DescribeAttackInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeAttack`.
 ///
-/// <p>Describes the details of a DDoS attack.</p>
+/// <p>Describes the details of a DDoS attack. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAttackFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

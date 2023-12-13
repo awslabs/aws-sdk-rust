@@ -261,7 +261,7 @@ pub enum ListQueriesError {
     InvalidParameterException(crate::types::error::InvalidParameterException),
     /// <p>The query status is not valid for the operation.</p>
     InvalidQueryStatusException(crate::types::error::InvalidQueryStatusException),
-    /// <p>This exception is thrown when the management account does not have a service-linked role.</p>
+    /// <p> This exception is thrown when the management account does not have a service-linked role. </p>
     NoManagementAccountSlrExistsException(crate::types::error::NoManagementAccountSlrExistsException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
     OperationNotPermittedException(crate::types::error::OperationNotPermittedException),

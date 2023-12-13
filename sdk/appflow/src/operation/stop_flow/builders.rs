@@ -22,7 +22,7 @@ impl StopFlowInputBuilder {
 }
 /// Fluent builder constructing a request to `StopFlow`.
 ///
-/// <p>Deactivates the existing flow. For on-demand flows, this operation returns an <code>unsupportedOperationException</code> error message. For schedule and event-triggered flows, this operation deactivates the flow.</p>
+/// <p> Deactivates the existing flow. For on-demand flows, this operation returns an <code>unsupportedOperationException</code> error message. For schedule and event-triggered flows, this operation deactivates the flow. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopFlowFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -99,17 +99,17 @@ impl StopFlowFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only.</p>
+    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     pub fn flow_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.flow_name(input.into());
         self
     }
-    /// <p>The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only.</p>
+    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     pub fn set_flow_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_flow_name(input);
         self
     }
-    /// <p>The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only.</p>
+    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     pub fn get_flow_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_flow_name()
     }

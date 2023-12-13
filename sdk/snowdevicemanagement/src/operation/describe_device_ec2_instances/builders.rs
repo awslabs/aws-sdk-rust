@@ -22,7 +22,7 @@ impl DescribeDeviceEc2InstancesInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeDeviceEc2Instances`.
 ///
-/// <p>Checks the current state of the Amazon EC2 instances. The output is similar to <code>describeDevice</code>, but the results are sourced from the device cache in the Amazon Web Services Cloud and include a subset of the available fields.</p>
+/// <p>Checks the current state of the Amazon EC2 instances. The output is similar to <code>describeDevice</code>, but the results are sourced from the device cache in the Amazon Web Services Cloud and include a subset of the available fields. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeDeviceEc2InstancesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

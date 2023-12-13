@@ -3,35 +3,35 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAnnotationStoreVersionInput {
-    /// <p>The name of an annotation store version from which versions are being created.</p>
+    /// <p> The name of an annotation store version from which versions are being created. </p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The name given to an annotation store version to distinguish it from other versions.</p>
+    /// <p> The name given to an annotation store version to distinguish it from other versions. </p>
     pub version_name: ::std::option::Option<::std::string::String>,
-    /// <p>The description of an annotation store version.</p>
+    /// <p> The description of an annotation store version. </p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The options for an annotation store version.</p>
+    /// <p> The options for an annotation store version. </p>
     pub version_options: ::std::option::Option<crate::types::VersionOptions>,
-    /// <p>Any tags added to annotation store version.</p>
+    /// <p> Any tags added to annotation store version. </p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateAnnotationStoreVersionInput {
-    /// <p>The name of an annotation store version from which versions are being created.</p>
+    /// <p> The name of an annotation store version from which versions are being created. </p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The name given to an annotation store version to distinguish it from other versions.</p>
+    /// <p> The name given to an annotation store version to distinguish it from other versions. </p>
     pub fn version_name(&self) -> ::std::option::Option<&str> {
         self.version_name.as_deref()
     }
-    /// <p>The description of an annotation store version.</p>
+    /// <p> The description of an annotation store version. </p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The options for an annotation store version.</p>
+    /// <p> The options for an annotation store version. </p>
     pub fn version_options(&self) -> ::std::option::Option<&crate::types::VersionOptions> {
         self.version_options.as_ref()
     }
-    /// <p>Any tags added to annotation store version.</p>
+    /// <p> Any tags added to annotation store version. </p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
@@ -54,61 +54,61 @@ pub struct CreateAnnotationStoreVersionInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateAnnotationStoreVersionInputBuilder {
-    /// <p>The name of an annotation store version from which versions are being created.</p>
+    /// <p> The name of an annotation store version from which versions are being created. </p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of an annotation store version from which versions are being created.</p>
+    /// <p> The name of an annotation store version from which versions are being created. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of an annotation store version from which versions are being created.</p>
+    /// <p> The name of an annotation store version from which versions are being created. </p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The name given to an annotation store version to distinguish it from other versions.</p>
+    /// <p> The name given to an annotation store version to distinguish it from other versions. </p>
     /// This field is required.
     pub fn version_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name given to an annotation store version to distinguish it from other versions.</p>
+    /// <p> The name given to an annotation store version to distinguish it from other versions. </p>
     pub fn set_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_name = input;
         self
     }
-    /// <p>The name given to an annotation store version to distinguish it from other versions.</p>
+    /// <p> The name given to an annotation store version to distinguish it from other versions. </p>
     pub fn get_version_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.version_name
     }
-    /// <p>The description of an annotation store version.</p>
+    /// <p> The description of an annotation store version. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The description of an annotation store version.</p>
+    /// <p> The description of an annotation store version. </p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>The description of an annotation store version.</p>
+    /// <p> The description of an annotation store version. </p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The options for an annotation store version.</p>
+    /// <p> The options for an annotation store version. </p>
     pub fn version_options(mut self, input: crate::types::VersionOptions) -> Self {
         self.version_options = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The options for an annotation store version.</p>
+    /// <p> The options for an annotation store version. </p>
     pub fn set_version_options(mut self, input: ::std::option::Option<crate::types::VersionOptions>) -> Self {
         self.version_options = input;
         self
     }
-    /// <p>The options for an annotation store version.</p>
+    /// <p> The options for an annotation store version. </p>
     pub fn get_version_options(&self) -> &::std::option::Option<crate::types::VersionOptions> {
         &self.version_options
     }
@@ -116,19 +116,19 @@ impl CreateAnnotationStoreVersionInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>Any tags added to annotation store version.</p>
+    /// <p> Any tags added to annotation store version. </p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>Any tags added to annotation store version.</p>
+    /// <p> Any tags added to annotation store version. </p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>Any tags added to annotation store version.</p>
+    /// <p> Any tags added to annotation store version. </p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }

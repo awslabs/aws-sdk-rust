@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDisassociateAssessmentReportEvidenceOutput {
-    /// <p>The identifier for the evidence.</p>
+    /// <p> The identifier for the evidence. </p>
     pub evidence_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>A list of errors that the <code>BatchDisassociateAssessmentReportEvidence</code> API returned.</p>
+    /// <p> A list of errors that the <code>BatchDisassociateAssessmentReportEvidence</code> API returned. </p>
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentReportEvidenceError>>,
     _request_id: Option<String>,
 }
 impl BatchDisassociateAssessmentReportEvidenceOutput {
-    /// <p>The identifier for the evidence.</p>
+    /// <p> The identifier for the evidence. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.evidence_ids.is_none()`.
     pub fn evidence_ids(&self) -> &[::std::string::String] {
         self.evidence_ids.as_deref().unwrap_or_default()
     }
-    /// <p>A list of errors that the <code>BatchDisassociateAssessmentReportEvidence</code> API returned.</p>
+    /// <p> A list of errors that the <code>BatchDisassociateAssessmentReportEvidence</code> API returned. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
     pub fn errors(&self) -> &[crate::types::AssessmentReportEvidenceError] {
@@ -49,19 +49,19 @@ impl BatchDisassociateAssessmentReportEvidenceOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_evidence_ids`](Self::set_evidence_ids).
     ///
-    /// <p>The identifier for the evidence.</p>
+    /// <p> The identifier for the evidence. </p>
     pub fn evidence_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.evidence_ids.unwrap_or_default();
         v.push(input.into());
         self.evidence_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The identifier for the evidence.</p>
+    /// <p> The identifier for the evidence. </p>
     pub fn set_evidence_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.evidence_ids = input;
         self
     }
-    /// <p>The identifier for the evidence.</p>
+    /// <p> The identifier for the evidence. </p>
     pub fn get_evidence_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.evidence_ids
     }
@@ -69,19 +69,19 @@ impl BatchDisassociateAssessmentReportEvidenceOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
     ///
-    /// <p>A list of errors that the <code>BatchDisassociateAssessmentReportEvidence</code> API returned.</p>
+    /// <p> A list of errors that the <code>BatchDisassociateAssessmentReportEvidence</code> API returned. </p>
     pub fn errors(mut self, input: crate::types::AssessmentReportEvidenceError) -> Self {
         let mut v = self.errors.unwrap_or_default();
         v.push(input);
         self.errors = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of errors that the <code>BatchDisassociateAssessmentReportEvidence</code> API returned.</p>
+    /// <p> A list of errors that the <code>BatchDisassociateAssessmentReportEvidence</code> API returned. </p>
     pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentReportEvidenceError>>) -> Self {
         self.errors = input;
         self
     }
-    /// <p>A list of errors that the <code>BatchDisassociateAssessmentReportEvidence</code> API returned.</p>
+    /// <p> A list of errors that the <code>BatchDisassociateAssessmentReportEvidence</code> API returned. </p>
     pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssessmentReportEvidenceError>> {
         &self.errors
     }

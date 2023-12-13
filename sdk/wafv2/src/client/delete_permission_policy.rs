@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeletePermissionPolicy`](crate::operation::delete_permission_policy::builders::DeletePermissionPolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::operation::delete_permission_policy::builders::DeletePermissionPolicyFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::delete_permission_policy::builders::DeletePermissionPolicyFluentBuilder::set_resource_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the rule group from which you want to delete the policy.</p> <p>You must be the owner of the rule group to perform this operation.</p><br>
+    ///   - [`resource_arn(impl Into<String>)`](crate::operation::delete_permission_policy::builders::DeletePermissionPolicyFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::delete_permission_policy::builders::DeletePermissionPolicyFluentBuilder::set_resource_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the rule group from which you want to delete the policy.</p>  <p>You must be the owner of the rule group to perform this operation.</p><br>
     /// - On success, responds with [`DeletePermissionPolicyOutput`](crate::operation::delete_permission_policy::DeletePermissionPolicyOutput)
     /// - On failure, responds with [`SdkError<DeletePermissionPolicyError>`](crate::operation::delete_permission_policy::DeletePermissionPolicyError)
     pub fn delete_permission_policy(&self) -> crate::operation::delete_permission_policy::builders::DeletePermissionPolicyFluentBuilder {

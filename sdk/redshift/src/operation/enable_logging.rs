@@ -244,11 +244,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for EnableLogging
 pub enum EnableLoggingError {
     /// <p>Could not find the specified S3 bucket.</p>
     BucketNotFoundFault(crate::types::error::BucketNotFoundFault),
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.</p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
     ClusterNotFoundFault(crate::types::error::ClusterNotFoundFault),
     /// <p>The cluster does not have read bucket or put object permissions on the S3 bucket specified when enabling logging.</p>
     InsufficientS3BucketPolicyFault(crate::types::error::InsufficientS3BucketPolicyFault),
-    /// <p>The specified cluster is not in the <code>available</code> state.</p>
+    /// <p>The specified cluster is not in the <code>available</code> state. </p>
     InvalidClusterStateFault(crate::types::error::InvalidClusterStateFault),
     /// <p>The S3 bucket name is invalid. For more information about naming rules, go to <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket Restrictions and Limitations</a> in the Amazon Simple Storage Service (S3) Developer Guide.</p>
     InvalidS3BucketNameFault(crate::types::error::InvalidS3BucketNameFault),

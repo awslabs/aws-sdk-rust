@@ -5,7 +5,7 @@
 pub struct SearchThingsInput {
     /// <p>The ID of the entity to which the things are associated.</p>
     /// <p>The IDs should be in the following format.</p>
-    /// <p><code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code></p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
     pub entity_id: ::std::option::Option<::std::string::String>,
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -17,7 +17,7 @@ pub struct SearchThingsInput {
 impl SearchThingsInput {
     /// <p>The ID of the entity to which the things are associated.</p>
     /// <p>The IDs should be in the following format.</p>
-    /// <p><code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code></p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
     pub fn entity_id(&self) -> ::std::option::Option<&str> {
         self.entity_id.as_deref()
     }
@@ -53,7 +53,7 @@ pub struct SearchThingsInputBuilder {
 impl SearchThingsInputBuilder {
     /// <p>The ID of the entity to which the things are associated.</p>
     /// <p>The IDs should be in the following format.</p>
-    /// <p><code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code></p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
     /// This field is required.
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_id = ::std::option::Option::Some(input.into());
@@ -61,14 +61,14 @@ impl SearchThingsInputBuilder {
     }
     /// <p>The ID of the entity to which the things are associated.</p>
     /// <p>The IDs should be in the following format.</p>
-    /// <p><code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code></p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.entity_id = input;
         self
     }
     /// <p>The ID of the entity to which the things are associated.</p>
     /// <p>The IDs should be in the following format.</p>
-    /// <p><code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code></p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
     pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.entity_id
     }

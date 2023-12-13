@@ -4,36 +4,36 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KxScalingGroupConfiguration {
-    /// <p>A unique identifier for the kdb scaling group.</p>
+    /// <p>A unique identifier for the kdb scaling group. </p>
     pub scaling_group_name: ::std::string::String,
-    /// <p>An optional hard limit on the amount of memory a kdb cluster can use.</p>
+    /// <p> An optional hard limit on the amount of memory a kdb cluster can use. </p>
     pub memory_limit: ::std::option::Option<i32>,
-    /// <p>A reservation of the minimum amount of memory that should be available on the scaling group for a kdb cluster to be successfully placed in a scaling group.</p>
+    /// <p> A reservation of the minimum amount of memory that should be available on the scaling group for a kdb cluster to be successfully placed in a scaling group. </p>
     pub memory_reservation: i32,
-    /// <p>The number of kdb cluster nodes.</p>
+    /// <p> The number of kdb cluster nodes. </p>
     pub node_count: i32,
-    /// <p>The number of vCPUs that you want to reserve for each node of this kdb cluster on the scaling group host.</p>
+    /// <p> The number of vCPUs that you want to reserve for each node of this kdb cluster on the scaling group host. </p>
     pub cpu: ::std::option::Option<f64>,
 }
 impl KxScalingGroupConfiguration {
-    /// <p>A unique identifier for the kdb scaling group.</p>
+    /// <p>A unique identifier for the kdb scaling group. </p>
     pub fn scaling_group_name(&self) -> &str {
         use std::ops::Deref;
         self.scaling_group_name.deref()
     }
-    /// <p>An optional hard limit on the amount of memory a kdb cluster can use.</p>
+    /// <p> An optional hard limit on the amount of memory a kdb cluster can use. </p>
     pub fn memory_limit(&self) -> ::std::option::Option<i32> {
         self.memory_limit
     }
-    /// <p>A reservation of the minimum amount of memory that should be available on the scaling group for a kdb cluster to be successfully placed in a scaling group.</p>
+    /// <p> A reservation of the minimum amount of memory that should be available on the scaling group for a kdb cluster to be successfully placed in a scaling group. </p>
     pub fn memory_reservation(&self) -> i32 {
         self.memory_reservation
     }
-    /// <p>The number of kdb cluster nodes.</p>
+    /// <p> The number of kdb cluster nodes. </p>
     pub fn node_count(&self) -> i32 {
         self.node_count
     }
-    /// <p>The number of vCPUs that you want to reserve for each node of this kdb cluster on the scaling group host.</p>
+    /// <p> The number of vCPUs that you want to reserve for each node of this kdb cluster on the scaling group host. </p>
     pub fn cpu(&self) -> ::std::option::Option<f64> {
         self.cpu
     }
@@ -56,76 +56,76 @@ pub struct KxScalingGroupConfigurationBuilder {
     pub(crate) cpu: ::std::option::Option<f64>,
 }
 impl KxScalingGroupConfigurationBuilder {
-    /// <p>A unique identifier for the kdb scaling group.</p>
+    /// <p>A unique identifier for the kdb scaling group. </p>
     /// This field is required.
     pub fn scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scaling_group_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique identifier for the kdb scaling group.</p>
+    /// <p>A unique identifier for the kdb scaling group. </p>
     pub fn set_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scaling_group_name = input;
         self
     }
-    /// <p>A unique identifier for the kdb scaling group.</p>
+    /// <p>A unique identifier for the kdb scaling group. </p>
     pub fn get_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.scaling_group_name
     }
-    /// <p>An optional hard limit on the amount of memory a kdb cluster can use.</p>
+    /// <p> An optional hard limit on the amount of memory a kdb cluster can use. </p>
     pub fn memory_limit(mut self, input: i32) -> Self {
         self.memory_limit = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An optional hard limit on the amount of memory a kdb cluster can use.</p>
+    /// <p> An optional hard limit on the amount of memory a kdb cluster can use. </p>
     pub fn set_memory_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.memory_limit = input;
         self
     }
-    /// <p>An optional hard limit on the amount of memory a kdb cluster can use.</p>
+    /// <p> An optional hard limit on the amount of memory a kdb cluster can use. </p>
     pub fn get_memory_limit(&self) -> &::std::option::Option<i32> {
         &self.memory_limit
     }
-    /// <p>A reservation of the minimum amount of memory that should be available on the scaling group for a kdb cluster to be successfully placed in a scaling group.</p>
+    /// <p> A reservation of the minimum amount of memory that should be available on the scaling group for a kdb cluster to be successfully placed in a scaling group. </p>
     /// This field is required.
     pub fn memory_reservation(mut self, input: i32) -> Self {
         self.memory_reservation = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A reservation of the minimum amount of memory that should be available on the scaling group for a kdb cluster to be successfully placed in a scaling group.</p>
+    /// <p> A reservation of the minimum amount of memory that should be available on the scaling group for a kdb cluster to be successfully placed in a scaling group. </p>
     pub fn set_memory_reservation(mut self, input: ::std::option::Option<i32>) -> Self {
         self.memory_reservation = input;
         self
     }
-    /// <p>A reservation of the minimum amount of memory that should be available on the scaling group for a kdb cluster to be successfully placed in a scaling group.</p>
+    /// <p> A reservation of the minimum amount of memory that should be available on the scaling group for a kdb cluster to be successfully placed in a scaling group. </p>
     pub fn get_memory_reservation(&self) -> &::std::option::Option<i32> {
         &self.memory_reservation
     }
-    /// <p>The number of kdb cluster nodes.</p>
+    /// <p> The number of kdb cluster nodes. </p>
     /// This field is required.
     pub fn node_count(mut self, input: i32) -> Self {
         self.node_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of kdb cluster nodes.</p>
+    /// <p> The number of kdb cluster nodes. </p>
     pub fn set_node_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.node_count = input;
         self
     }
-    /// <p>The number of kdb cluster nodes.</p>
+    /// <p> The number of kdb cluster nodes. </p>
     pub fn get_node_count(&self) -> &::std::option::Option<i32> {
         &self.node_count
     }
-    /// <p>The number of vCPUs that you want to reserve for each node of this kdb cluster on the scaling group host.</p>
+    /// <p> The number of vCPUs that you want to reserve for each node of this kdb cluster on the scaling group host. </p>
     pub fn cpu(mut self, input: f64) -> Self {
         self.cpu = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of vCPUs that you want to reserve for each node of this kdb cluster on the scaling group host.</p>
+    /// <p> The number of vCPUs that you want to reserve for each node of this kdb cluster on the scaling group host. </p>
     pub fn set_cpu(mut self, input: ::std::option::Option<f64>) -> Self {
         self.cpu = input;
         self
     }
-    /// <p>The number of vCPUs that you want to reserve for each node of this kdb cluster on the scaling group host.</p>
+    /// <p> The number of vCPUs that you want to reserve for each node of this kdb cluster on the scaling group host. </p>
     pub fn get_cpu(&self) -> &::std::option::Option<f64> {
         &self.cpu
     }

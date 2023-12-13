@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListOpenCypherQueriesInput {
-    /// <p>When set to <code>TRUE</code> and other parameters are not present, causes status information to be returned for waiting queries as well as for running queries.</p>
+    /// <p> When set to <code>TRUE</code> and other parameters are not present, causes status information to be returned for waiting queries as well as for running queries.</p>
     pub include_waiting: ::std::option::Option<bool>,
 }
 impl ListOpenCypherQueriesInput {
-    /// <p>When set to <code>TRUE</code> and other parameters are not present, causes status information to be returned for waiting queries as well as for running queries.</p>
+    /// <p> When set to <code>TRUE</code> and other parameters are not present, causes status information to be returned for waiting queries as well as for running queries.</p>
     pub fn include_waiting(&self) -> ::std::option::Option<bool> {
         self.include_waiting
     }
@@ -26,17 +26,17 @@ pub struct ListOpenCypherQueriesInputBuilder {
     pub(crate) include_waiting: ::std::option::Option<bool>,
 }
 impl ListOpenCypherQueriesInputBuilder {
-    /// <p>When set to <code>TRUE</code> and other parameters are not present, causes status information to be returned for waiting queries as well as for running queries.</p>
+    /// <p> When set to <code>TRUE</code> and other parameters are not present, causes status information to be returned for waiting queries as well as for running queries.</p>
     pub fn include_waiting(mut self, input: bool) -> Self {
         self.include_waiting = ::std::option::Option::Some(input);
         self
     }
-    /// <p>When set to <code>TRUE</code> and other parameters are not present, causes status information to be returned for waiting queries as well as for running queries.</p>
+    /// <p> When set to <code>TRUE</code> and other parameters are not present, causes status information to be returned for waiting queries as well as for running queries.</p>
     pub fn set_include_waiting(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_waiting = input;
         self
     }
-    /// <p>When set to <code>TRUE</code> and other parameters are not present, causes status information to be returned for waiting queries as well as for running queries.</p>
+    /// <p> When set to <code>TRUE</code> and other parameters are not present, causes status information to be returned for waiting queries as well as for running queries.</p>
     pub fn get_include_waiting(&self) -> &::std::option::Option<bool> {
         &self.include_waiting
     }

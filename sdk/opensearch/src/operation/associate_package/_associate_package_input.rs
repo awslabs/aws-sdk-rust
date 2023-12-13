@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociatePackageInput {
-    /// <p>Internal ID of the package to associate with a domain. Use <code>DescribePackages</code> to find this value.</p>
+    /// <p>Internal ID of the package to associate with a domain. Use <code>DescribePackages</code> to find this value. </p>
     pub package_id: ::std::option::Option<::std::string::String>,
     /// <p>Name of the domain to associate the package with.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
 }
 impl AssociatePackageInput {
-    /// <p>Internal ID of the package to associate with a domain. Use <code>DescribePackages</code> to find this value.</p>
+    /// <p>Internal ID of the package to associate with a domain. Use <code>DescribePackages</code> to find this value. </p>
     pub fn package_id(&self) -> ::std::option::Option<&str> {
         self.package_id.as_deref()
     }
@@ -34,18 +34,18 @@ pub struct AssociatePackageInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
 }
 impl AssociatePackageInputBuilder {
-    /// <p>Internal ID of the package to associate with a domain. Use <code>DescribePackages</code> to find this value.</p>
+    /// <p>Internal ID of the package to associate with a domain. Use <code>DescribePackages</code> to find this value. </p>
     /// This field is required.
     pub fn package_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Internal ID of the package to associate with a domain. Use <code>DescribePackages</code> to find this value.</p>
+    /// <p>Internal ID of the package to associate with a domain. Use <code>DescribePackages</code> to find this value. </p>
     pub fn set_package_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.package_id = input;
         self
     }
-    /// <p>Internal ID of the package to associate with a domain. Use <code>DescribePackages</code> to find this value.</p>
+    /// <p>Internal ID of the package to associate with a domain. Use <code>DescribePackages</code> to find this value. </p>
     pub fn get_package_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.package_id
     }

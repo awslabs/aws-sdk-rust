@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`db_cluster_identifier(impl Into<String>)`](crate::operation::stop_db_cluster::builders::StopDBClusterFluentBuilder::db_cluster_identifier) / [`set_db_cluster_identifier(Option<String>)`](crate::operation::stop_db_cluster::builders::StopDBClusterFluentBuilder::set_db_cluster_identifier):<br>required: **true**<br><p>The DB cluster identifier of the Neptune DB cluster to be stopped. This parameter is stored as a lowercase string.</p><br>
     /// - On success, responds with [`StopDbClusterOutput`](crate::operation::stop_db_cluster::StopDbClusterOutput) with field(s):
-    ///   - [`db_cluster(Option<DbCluster>)`](crate::operation::stop_db_cluster::StopDbClusterOutput::db_cluster): <p>Contains the details of an Amazon Neptune DB cluster.</p> <p>This data type is used as a response element in the <code>DescribeDBClusters</code>.</p>
+    ///   - [`db_cluster(Option<DbCluster>)`](crate::operation::stop_db_cluster::StopDbClusterOutput::db_cluster): <p>Contains the details of an Amazon Neptune DB cluster.</p>  <p>This data type is used as a response element in the <code>DescribeDBClusters</code>.</p>
     /// - On failure, responds with [`SdkError<StopDBClusterError>`](crate::operation::stop_db_cluster::StopDBClusterError)
     pub fn stop_db_cluster(&self) -> crate::operation::stop_db_cluster::builders::StopDBClusterFluentBuilder {
         crate::operation::stop_db_cluster::builders::StopDBClusterFluentBuilder::new(self.handle.clone())

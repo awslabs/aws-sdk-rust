@@ -22,8 +22,8 @@ impl PutDedicatedIpPoolScalingAttributesInputBuilder {
 }
 /// Fluent builder constructing a request to `PutDedicatedIpPoolScalingAttributes`.
 ///
-/// <p>Used to convert a dedicated IP pool to a different scaling mode.</p><note>
-/// <p><code>MANAGED</code> pools cannot be converted to <code>STANDARD</code> scaling mode.</p>
+/// <p>Used to convert a dedicated IP pool to a different scaling mode.</p> <note>
+/// <p> <code>MANAGED</code> pools cannot be converted to <code>STANDARD</code> scaling mode.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutDedicatedIpPoolScalingAttributesFluentBuilder {
@@ -125,21 +125,21 @@ impl PutDedicatedIpPoolScalingAttributesFluentBuilder {
     pub fn get_pool_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_pool_name()
     }
-    /// <p>The scaling mode to apply to the dedicated IP pool.</p><note>
+    /// <p>The scaling mode to apply to the dedicated IP pool.</p> <note>
     /// <p>Changing the scaling mode from <code>MANAGED</code> to <code>STANDARD</code> is not supported.</p>
     /// </note>
     pub fn scaling_mode(mut self, input: crate::types::ScalingMode) -> Self {
         self.inner = self.inner.scaling_mode(input);
         self
     }
-    /// <p>The scaling mode to apply to the dedicated IP pool.</p><note>
+    /// <p>The scaling mode to apply to the dedicated IP pool.</p> <note>
     /// <p>Changing the scaling mode from <code>MANAGED</code> to <code>STANDARD</code> is not supported.</p>
     /// </note>
     pub fn set_scaling_mode(mut self, input: ::std::option::Option<crate::types::ScalingMode>) -> Self {
         self.inner = self.inner.set_scaling_mode(input);
         self
     }
-    /// <p>The scaling mode to apply to the dedicated IP pool.</p><note>
+    /// <p>The scaling mode to apply to the dedicated IP pool.</p> <note>
     /// <p>Changing the scaling mode from <code>MANAGED</code> to <code>STANDARD</code> is not supported.</p>
     /// </note>
     pub fn get_scaling_mode(&self) -> &::std::option::Option<crate::types::ScalingMode> {

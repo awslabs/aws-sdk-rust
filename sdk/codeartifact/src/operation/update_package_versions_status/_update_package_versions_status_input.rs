@@ -3,87 +3,79 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePackageVersionsStatusInput {
-    /// <p>The name of the domain that contains the repository that contains the package versions with a status to be updated.</p>
+    /// <p> The name of the domain that contains the repository that contains the package versions with a status to be updated. </p>
     pub domain: ::std::option::Option<::std::string::String>,
-    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub domain_owner: ::std::option::Option<::std::string::String>,
-    /// <p>The repository that contains the package versions with the status you want to update.</p>
+    /// <p> The repository that contains the package versions with the status you want to update. </p>
     pub repository: ::std::option::Option<::std::string::String>,
-    /// <p>A format that specifies the type of the package with the statuses to update.</p>
+    /// <p> A format that specifies the type of the package with the statuses to update. </p>
     pub format: ::std::option::Option<crate::types::PackageFormat>,
     /// <p>The namespace of the package version to be updated. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>The namespace of a Maven package version is its <code>groupId</code>.</p></li>
-    /// <li>
-    /// <p>The namespace of an npm package version is its <code>scope</code>.</p></li>
-    /// <li>
-    /// <p>Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace.</p></li>
-    /// <li>
-    /// <p>The namespace of a generic package is its <code>namespace</code>.</p></li>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
+    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
     /// </ul>
     pub namespace: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the package with the version statuses to update.</p>
+    /// <p> The name of the package with the version statuses to update. </p>
     pub package: ::std::option::Option<::std::string::String>,
-    /// <p>An array of strings that specify the versions of the package with the statuses to update.</p>
+    /// <p> An array of strings that specify the versions of the package with the statuses to update. </p>
     pub versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>A map of package versions and package version revisions. The map <code>key</code> is the package version (for example, <code>3.5.2</code>), and the map <code>value</code> is the package version revision.</p>
+    /// <p> A map of package versions and package version revisions. The map <code>key</code> is the package version (for example, <code>3.5.2</code>), and the map <code>value</code> is the package version revision. </p>
     pub version_revisions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>The package version’s expected status before it is updated. If <code>expectedStatus</code> is provided, the package version's status is updated only if its status at the time <code>UpdatePackageVersionsStatus</code> is called matches <code>expectedStatus</code>.</p>
+    /// <p> The package version’s expected status before it is updated. If <code>expectedStatus</code> is provided, the package version's status is updated only if its status at the time <code>UpdatePackageVersionsStatus</code> is called matches <code>expectedStatus</code>. </p>
     pub expected_status: ::std::option::Option<crate::types::PackageVersionStatus>,
-    /// <p>The status you want to change the package version status to.</p>
+    /// <p> The status you want to change the package version status to. </p>
     pub target_status: ::std::option::Option<crate::types::PackageVersionStatus>,
 }
 impl UpdatePackageVersionsStatusInput {
-    /// <p>The name of the domain that contains the repository that contains the package versions with a status to be updated.</p>
+    /// <p> The name of the domain that contains the repository that contains the package versions with a status to be updated. </p>
     pub fn domain(&self) -> ::std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(&self) -> ::std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
-    /// <p>The repository that contains the package versions with the status you want to update.</p>
+    /// <p> The repository that contains the package versions with the status you want to update. </p>
     pub fn repository(&self) -> ::std::option::Option<&str> {
         self.repository.as_deref()
     }
-    /// <p>A format that specifies the type of the package with the statuses to update.</p>
+    /// <p> A format that specifies the type of the package with the statuses to update. </p>
     pub fn format(&self) -> ::std::option::Option<&crate::types::PackageFormat> {
         self.format.as_ref()
     }
     /// <p>The namespace of the package version to be updated. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>The namespace of a Maven package version is its <code>groupId</code>.</p></li>
-    /// <li>
-    /// <p>The namespace of an npm package version is its <code>scope</code>.</p></li>
-    /// <li>
-    /// <p>Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace.</p></li>
-    /// <li>
-    /// <p>The namespace of a generic package is its <code>namespace</code>.</p></li>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
+    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
     /// </ul>
     pub fn namespace(&self) -> ::std::option::Option<&str> {
         self.namespace.as_deref()
     }
-    /// <p>The name of the package with the version statuses to update.</p>
+    /// <p> The name of the package with the version statuses to update. </p>
     pub fn package(&self) -> ::std::option::Option<&str> {
         self.package.as_deref()
     }
-    /// <p>An array of strings that specify the versions of the package with the statuses to update.</p>
+    /// <p> An array of strings that specify the versions of the package with the statuses to update. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.versions.is_none()`.
     pub fn versions(&self) -> &[::std::string::String] {
         self.versions.as_deref().unwrap_or_default()
     }
-    /// <p>A map of package versions and package version revisions. The map <code>key</code> is the package version (for example, <code>3.5.2</code>), and the map <code>value</code> is the package version revision.</p>
+    /// <p> A map of package versions and package version revisions. The map <code>key</code> is the package version (for example, <code>3.5.2</code>), and the map <code>value</code> is the package version revision. </p>
     pub fn version_revisions(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.version_revisions.as_ref()
     }
-    /// <p>The package version’s expected status before it is updated. If <code>expectedStatus</code> is provided, the package version's status is updated only if its status at the time <code>UpdatePackageVersionsStatus</code> is called matches <code>expectedStatus</code>.</p>
+    /// <p> The package version’s expected status before it is updated. If <code>expectedStatus</code> is provided, the package version's status is updated only if its status at the time <code>UpdatePackageVersionsStatus</code> is called matches <code>expectedStatus</code>. </p>
     pub fn expected_status(&self) -> ::std::option::Option<&crate::types::PackageVersionStatus> {
         self.expected_status.as_ref()
     }
-    /// <p>The status you want to change the package version status to.</p>
+    /// <p> The status you want to change the package version status to. </p>
     pub fn target_status(&self) -> ::std::option::Option<&crate::types::PackageVersionStatus> {
         self.target_status.as_ref()
     }
@@ -111,75 +103,71 @@ pub struct UpdatePackageVersionsStatusInputBuilder {
     pub(crate) target_status: ::std::option::Option<crate::types::PackageVersionStatus>,
 }
 impl UpdatePackageVersionsStatusInputBuilder {
-    /// <p>The name of the domain that contains the repository that contains the package versions with a status to be updated.</p>
+    /// <p> The name of the domain that contains the repository that contains the package versions with a status to be updated. </p>
     /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the domain that contains the repository that contains the package versions with a status to be updated.</p>
+    /// <p> The name of the domain that contains the repository that contains the package versions with a status to be updated. </p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain = input;
         self
     }
-    /// <p>The name of the domain that contains the repository that contains the package versions with a status to be updated.</p>
+    /// <p> The name of the domain that contains the repository that contains the package versions with a status to be updated. </p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain
     }
-    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_owner = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn set_domain_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_owner = input;
         self
     }
-    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn get_domain_owner(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_owner
     }
-    /// <p>The repository that contains the package versions with the status you want to update.</p>
+    /// <p> The repository that contains the package versions with the status you want to update. </p>
     /// This field is required.
     pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The repository that contains the package versions with the status you want to update.</p>
+    /// <p> The repository that contains the package versions with the status you want to update. </p>
     pub fn set_repository(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository = input;
         self
     }
-    /// <p>The repository that contains the package versions with the status you want to update.</p>
+    /// <p> The repository that contains the package versions with the status you want to update. </p>
     pub fn get_repository(&self) -> &::std::option::Option<::std::string::String> {
         &self.repository
     }
-    /// <p>A format that specifies the type of the package with the statuses to update.</p>
+    /// <p> A format that specifies the type of the package with the statuses to update. </p>
     /// This field is required.
     pub fn format(mut self, input: crate::types::PackageFormat) -> Self {
         self.format = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A format that specifies the type of the package with the statuses to update.</p>
+    /// <p> A format that specifies the type of the package with the statuses to update. </p>
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::PackageFormat>) -> Self {
         self.format = input;
         self
     }
-    /// <p>A format that specifies the type of the package with the statuses to update.</p>
+    /// <p> A format that specifies the type of the package with the statuses to update. </p>
     pub fn get_format(&self) -> &::std::option::Option<crate::types::PackageFormat> {
         &self.format
     }
     /// <p>The namespace of the package version to be updated. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>The namespace of a Maven package version is its <code>groupId</code>.</p></li>
-    /// <li>
-    /// <p>The namespace of an npm package version is its <code>scope</code>.</p></li>
-    /// <li>
-    /// <p>Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace.</p></li>
-    /// <li>
-    /// <p>The namespace of a generic package is its <code>namespace</code>.</p></li>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
+    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
     /// </ul>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
@@ -187,14 +175,10 @@ impl UpdatePackageVersionsStatusInputBuilder {
     }
     /// <p>The namespace of the package version to be updated. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>The namespace of a Maven package version is its <code>groupId</code>.</p></li>
-    /// <li>
-    /// <p>The namespace of an npm package version is its <code>scope</code>.</p></li>
-    /// <li>
-    /// <p>Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace.</p></li>
-    /// <li>
-    /// <p>The namespace of a generic package is its <code>namespace</code>.</p></li>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
+    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
     /// </ul>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace = input;
@@ -202,30 +186,26 @@ impl UpdatePackageVersionsStatusInputBuilder {
     }
     /// <p>The namespace of the package version to be updated. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>The namespace of a Maven package version is its <code>groupId</code>.</p></li>
-    /// <li>
-    /// <p>The namespace of an npm package version is its <code>scope</code>.</p></li>
-    /// <li>
-    /// <p>Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace.</p></li>
-    /// <li>
-    /// <p>The namespace of a generic package is its <code>namespace</code>.</p></li>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
+    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
     /// </ul>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         &self.namespace
     }
-    /// <p>The name of the package with the version statuses to update.</p>
+    /// <p> The name of the package with the version statuses to update. </p>
     /// This field is required.
     pub fn package(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the package with the version statuses to update.</p>
+    /// <p> The name of the package with the version statuses to update. </p>
     pub fn set_package(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.package = input;
         self
     }
-    /// <p>The name of the package with the version statuses to update.</p>
+    /// <p> The name of the package with the version statuses to update. </p>
     pub fn get_package(&self) -> &::std::option::Option<::std::string::String> {
         &self.package
     }
@@ -233,19 +213,19 @@ impl UpdatePackageVersionsStatusInputBuilder {
     ///
     /// To override the contents of this collection use [`set_versions`](Self::set_versions).
     ///
-    /// <p>An array of strings that specify the versions of the package with the statuses to update.</p>
+    /// <p> An array of strings that specify the versions of the package with the statuses to update. </p>
     pub fn versions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.versions.unwrap_or_default();
         v.push(input.into());
         self.versions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of strings that specify the versions of the package with the statuses to update.</p>
+    /// <p> An array of strings that specify the versions of the package with the statuses to update. </p>
     pub fn set_versions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.versions = input;
         self
     }
-    /// <p>An array of strings that specify the versions of the package with the statuses to update.</p>
+    /// <p> An array of strings that specify the versions of the package with the statuses to update. </p>
     pub fn get_versions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.versions
     }
@@ -253,7 +233,7 @@ impl UpdatePackageVersionsStatusInputBuilder {
     ///
     /// To override the contents of this collection use [`set_version_revisions`](Self::set_version_revisions).
     ///
-    /// <p>A map of package versions and package version revisions. The map <code>key</code> is the package version (for example, <code>3.5.2</code>), and the map <code>value</code> is the package version revision.</p>
+    /// <p> A map of package versions and package version revisions. The map <code>key</code> is the package version (for example, <code>3.5.2</code>), and the map <code>value</code> is the package version revision. </p>
     pub fn version_revisions(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -264,7 +244,7 @@ impl UpdatePackageVersionsStatusInputBuilder {
         self.version_revisions = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>A map of package versions and package version revisions. The map <code>key</code> is the package version (for example, <code>3.5.2</code>), and the map <code>value</code> is the package version revision.</p>
+    /// <p> A map of package versions and package version revisions. The map <code>key</code> is the package version (for example, <code>3.5.2</code>), and the map <code>value</code> is the package version revision. </p>
     pub fn set_version_revisions(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -272,36 +252,36 @@ impl UpdatePackageVersionsStatusInputBuilder {
         self.version_revisions = input;
         self
     }
-    /// <p>A map of package versions and package version revisions. The map <code>key</code> is the package version (for example, <code>3.5.2</code>), and the map <code>value</code> is the package version revision.</p>
+    /// <p> A map of package versions and package version revisions. The map <code>key</code> is the package version (for example, <code>3.5.2</code>), and the map <code>value</code> is the package version revision. </p>
     pub fn get_version_revisions(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.version_revisions
     }
-    /// <p>The package version’s expected status before it is updated. If <code>expectedStatus</code> is provided, the package version's status is updated only if its status at the time <code>UpdatePackageVersionsStatus</code> is called matches <code>expectedStatus</code>.</p>
+    /// <p> The package version’s expected status before it is updated. If <code>expectedStatus</code> is provided, the package version's status is updated only if its status at the time <code>UpdatePackageVersionsStatus</code> is called matches <code>expectedStatus</code>. </p>
     pub fn expected_status(mut self, input: crate::types::PackageVersionStatus) -> Self {
         self.expected_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The package version’s expected status before it is updated. If <code>expectedStatus</code> is provided, the package version's status is updated only if its status at the time <code>UpdatePackageVersionsStatus</code> is called matches <code>expectedStatus</code>.</p>
+    /// <p> The package version’s expected status before it is updated. If <code>expectedStatus</code> is provided, the package version's status is updated only if its status at the time <code>UpdatePackageVersionsStatus</code> is called matches <code>expectedStatus</code>. </p>
     pub fn set_expected_status(mut self, input: ::std::option::Option<crate::types::PackageVersionStatus>) -> Self {
         self.expected_status = input;
         self
     }
-    /// <p>The package version’s expected status before it is updated. If <code>expectedStatus</code> is provided, the package version's status is updated only if its status at the time <code>UpdatePackageVersionsStatus</code> is called matches <code>expectedStatus</code>.</p>
+    /// <p> The package version’s expected status before it is updated. If <code>expectedStatus</code> is provided, the package version's status is updated only if its status at the time <code>UpdatePackageVersionsStatus</code> is called matches <code>expectedStatus</code>. </p>
     pub fn get_expected_status(&self) -> &::std::option::Option<crate::types::PackageVersionStatus> {
         &self.expected_status
     }
-    /// <p>The status you want to change the package version status to.</p>
+    /// <p> The status you want to change the package version status to. </p>
     /// This field is required.
     pub fn target_status(mut self, input: crate::types::PackageVersionStatus) -> Self {
         self.target_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status you want to change the package version status to.</p>
+    /// <p> The status you want to change the package version status to. </p>
     pub fn set_target_status(mut self, input: ::std::option::Option<crate::types::PackageVersionStatus>) -> Self {
         self.target_status = input;
         self
     }
-    /// <p>The status you want to change the package version status to.</p>
+    /// <p> The status you want to change the package version status to. </p>
     pub fn get_target_status(&self) -> &::std::option::Option<crate::types::PackageVersionStatus> {
         &self.target_status
     }

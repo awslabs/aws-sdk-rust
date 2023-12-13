@@ -6,7 +6,7 @@
 pub struct ReplicationStatusType {
     /// <p>The Region where replication occurs.</p>
     pub region: ::std::option::Option<::std::string::String>,
-    /// <p>Can be an <code>ARN</code>, <code>Key ID</code>, or <code>Alias</code>.</p>
+    /// <p>Can be an <code>ARN</code>, <code>Key ID</code>, or <code>Alias</code>. </p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The status can be <code>InProgress</code>, <code>Failed</code>, or <code>InSync</code>.</p>
     pub status: ::std::option::Option<crate::types::StatusType>,
@@ -20,7 +20,7 @@ impl ReplicationStatusType {
     pub fn region(&self) -> ::std::option::Option<&str> {
         self.region.as_deref()
     }
-    /// <p>Can be an <code>ARN</code>, <code>Key ID</code>, or <code>Alias</code>.</p>
+    /// <p>Can be an <code>ARN</code>, <code>Key ID</code>, or <code>Alias</code>. </p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -69,17 +69,17 @@ impl ReplicationStatusTypeBuilder {
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.region
     }
-    /// <p>Can be an <code>ARN</code>, <code>Key ID</code>, or <code>Alias</code>.</p>
+    /// <p>Can be an <code>ARN</code>, <code>Key ID</code>, or <code>Alias</code>. </p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Can be an <code>ARN</code>, <code>Key ID</code>, or <code>Alias</code>.</p>
+    /// <p>Can be an <code>ARN</code>, <code>Key ID</code>, or <code>Alias</code>. </p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
     }
-    /// <p>Can be an <code>ARN</code>, <code>Key ID</code>, or <code>Alias</code>.</p>
+    /// <p>Can be an <code>ARN</code>, <code>Key ID</code>, or <code>Alias</code>. </p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id
     }

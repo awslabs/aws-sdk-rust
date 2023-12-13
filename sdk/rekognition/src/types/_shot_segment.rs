@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ShotSegment {
-    /// <p>An Identifier for a shot detection segment detected in a video.</p>
+    /// <p>An Identifier for a shot detection segment detected in a video. </p>
     pub index: ::std::option::Option<i64>,
     /// <p>The confidence that Amazon Rekognition Video has in the accuracy of the detected segment.</p>
     pub confidence: ::std::option::Option<f32>,
 }
 impl ShotSegment {
-    /// <p>An Identifier for a shot detection segment detected in a video.</p>
+    /// <p>An Identifier for a shot detection segment detected in a video. </p>
     pub fn index(&self) -> ::std::option::Option<i64> {
         self.index
     }
@@ -34,17 +34,17 @@ pub struct ShotSegmentBuilder {
     pub(crate) confidence: ::std::option::Option<f32>,
 }
 impl ShotSegmentBuilder {
-    /// <p>An Identifier for a shot detection segment detected in a video.</p>
+    /// <p>An Identifier for a shot detection segment detected in a video. </p>
     pub fn index(mut self, input: i64) -> Self {
         self.index = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An Identifier for a shot detection segment detected in a video.</p>
+    /// <p>An Identifier for a shot detection segment detected in a video. </p>
     pub fn set_index(mut self, input: ::std::option::Option<i64>) -> Self {
         self.index = input;
         self
     }
-    /// <p>An Identifier for a shot detection segment detected in a video.</p>
+    /// <p>An Identifier for a shot detection segment detected in a video. </p>
     pub fn get_index(&self) -> &::std::option::Option<i64> {
         &self.index
     }

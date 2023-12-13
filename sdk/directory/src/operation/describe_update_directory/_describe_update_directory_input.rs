@@ -3,29 +3,29 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeUpdateDirectoryInput {
-    /// <p>The unique identifier of the directory.</p>
+    /// <p> The unique identifier of the directory. </p>
     pub directory_id: ::std::option::Option<::std::string::String>,
-    /// <p>The type of updates you want to describe for the directory.</p>
+    /// <p> The type of updates you want to describe for the directory. </p>
     pub update_type: ::std::option::Option<crate::types::UpdateType>,
-    /// <p>The name of the Region.</p>
+    /// <p> The name of the Region. </p>
     pub region_name: ::std::option::Option<::std::string::String>,
-    /// <p>The <code>DescribeUpdateDirectoryResult</code>. NextToken value from a previous call to <code>DescribeUpdateDirectory</code>. Pass null if this is the first call.</p>
+    /// <p> The <code>DescribeUpdateDirectoryResult</code>. NextToken value from a previous call to <code>DescribeUpdateDirectory</code>. Pass null if this is the first call. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeUpdateDirectoryInput {
-    /// <p>The unique identifier of the directory.</p>
+    /// <p> The unique identifier of the directory. </p>
     pub fn directory_id(&self) -> ::std::option::Option<&str> {
         self.directory_id.as_deref()
     }
-    /// <p>The type of updates you want to describe for the directory.</p>
+    /// <p> The type of updates you want to describe for the directory. </p>
     pub fn update_type(&self) -> ::std::option::Option<&crate::types::UpdateType> {
         self.update_type.as_ref()
     }
-    /// <p>The name of the Region.</p>
+    /// <p> The name of the Region. </p>
     pub fn region_name(&self) -> ::std::option::Option<&str> {
         self.region_name.as_deref()
     }
-    /// <p>The <code>DescribeUpdateDirectoryResult</code>. NextToken value from a previous call to <code>DescribeUpdateDirectory</code>. Pass null if this is the first call.</p>
+    /// <p> The <code>DescribeUpdateDirectoryResult</code>. NextToken value from a previous call to <code>DescribeUpdateDirectory</code>. Pass null if this is the first call. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -47,61 +47,61 @@ pub struct DescribeUpdateDirectoryInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeUpdateDirectoryInputBuilder {
-    /// <p>The unique identifier of the directory.</p>
+    /// <p> The unique identifier of the directory. </p>
     /// This field is required.
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the directory.</p>
+    /// <p> The unique identifier of the directory. </p>
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.directory_id = input;
         self
     }
-    /// <p>The unique identifier of the directory.</p>
+    /// <p> The unique identifier of the directory. </p>
     pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.directory_id
     }
-    /// <p>The type of updates you want to describe for the directory.</p>
+    /// <p> The type of updates you want to describe for the directory. </p>
     /// This field is required.
     pub fn update_type(mut self, input: crate::types::UpdateType) -> Self {
         self.update_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of updates you want to describe for the directory.</p>
+    /// <p> The type of updates you want to describe for the directory. </p>
     pub fn set_update_type(mut self, input: ::std::option::Option<crate::types::UpdateType>) -> Self {
         self.update_type = input;
         self
     }
-    /// <p>The type of updates you want to describe for the directory.</p>
+    /// <p> The type of updates you want to describe for the directory. </p>
     pub fn get_update_type(&self) -> &::std::option::Option<crate::types::UpdateType> {
         &self.update_type
     }
-    /// <p>The name of the Region.</p>
+    /// <p> The name of the Region. </p>
     pub fn region_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the Region.</p>
+    /// <p> The name of the Region. </p>
     pub fn set_region_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region_name = input;
         self
     }
-    /// <p>The name of the Region.</p>
+    /// <p> The name of the Region. </p>
     pub fn get_region_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.region_name
     }
-    /// <p>The <code>DescribeUpdateDirectoryResult</code>. NextToken value from a previous call to <code>DescribeUpdateDirectory</code>. Pass null if this is the first call.</p>
+    /// <p> The <code>DescribeUpdateDirectoryResult</code>. NextToken value from a previous call to <code>DescribeUpdateDirectory</code>. Pass null if this is the first call. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The <code>DescribeUpdateDirectoryResult</code>. NextToken value from a previous call to <code>DescribeUpdateDirectory</code>. Pass null if this is the first call.</p>
+    /// <p> The <code>DescribeUpdateDirectoryResult</code>. NextToken value from a previous call to <code>DescribeUpdateDirectory</code>. Pass null if this is the first call. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The <code>DescribeUpdateDirectoryResult</code>. NextToken value from a previous call to <code>DescribeUpdateDirectory</code>. Pass null if this is the first call.</p>
+    /// <p> The <code>DescribeUpdateDirectoryResult</code>. NextToken value from a previous call to <code>DescribeUpdateDirectory</code>. Pass null if this is the first call. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

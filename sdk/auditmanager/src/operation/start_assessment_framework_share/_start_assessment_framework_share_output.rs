@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartAssessmentFrameworkShareOutput {
-    /// <p>The share request that's created by the <code>StartAssessmentFrameworkShare</code> API.</p>
+    /// <p> The share request that's created by the <code>StartAssessmentFrameworkShare</code> API. </p>
     pub assessment_framework_share_request: ::std::option::Option<crate::types::AssessmentFrameworkShareRequest>,
     _request_id: Option<String>,
 }
 impl StartAssessmentFrameworkShareOutput {
-    /// <p>The share request that's created by the <code>StartAssessmentFrameworkShare</code> API.</p>
+    /// <p> The share request that's created by the <code>StartAssessmentFrameworkShare</code> API. </p>
     pub fn assessment_framework_share_request(&self) -> ::std::option::Option<&crate::types::AssessmentFrameworkShareRequest> {
         self.assessment_framework_share_request.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct StartAssessmentFrameworkShareOutputBuilder {
     _request_id: Option<String>,
 }
 impl StartAssessmentFrameworkShareOutputBuilder {
-    /// <p>The share request that's created by the <code>StartAssessmentFrameworkShare</code> API.</p>
+    /// <p> The share request that's created by the <code>StartAssessmentFrameworkShare</code> API. </p>
     pub fn assessment_framework_share_request(mut self, input: crate::types::AssessmentFrameworkShareRequest) -> Self {
         self.assessment_framework_share_request = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The share request that's created by the <code>StartAssessmentFrameworkShare</code> API.</p>
+    /// <p> The share request that's created by the <code>StartAssessmentFrameworkShare</code> API. </p>
     pub fn set_assessment_framework_share_request(mut self, input: ::std::option::Option<crate::types::AssessmentFrameworkShareRequest>) -> Self {
         self.assessment_framework_share_request = input;
         self
     }
-    /// <p>The share request that's created by the <code>StartAssessmentFrameworkShare</code> API.</p>
+    /// <p> The share request that's created by the <code>StartAssessmentFrameworkShare</code> API. </p>
     pub fn get_assessment_framework_share_request(&self) -> &::std::option::Option<crate::types::AssessmentFrameworkShareRequest> {
         &self.assessment_framework_share_request
     }

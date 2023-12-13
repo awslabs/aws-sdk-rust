@@ -3,29 +3,29 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEvidenceInput {
-    /// <p>The unique identifier for the assessment.</p>
+    /// <p> The unique identifier for the assessment. </p>
     pub assessment_id: ::std::option::Option<::std::string::String>,
-    /// <p>The unique identifier for the control set.</p>
+    /// <p> The unique identifier for the control set. </p>
     pub control_set_id: ::std::option::Option<::std::string::String>,
-    /// <p>The unique identifier for the folder that the evidence is stored in.</p>
+    /// <p> The unique identifier for the folder that the evidence is stored in. </p>
     pub evidence_folder_id: ::std::option::Option<::std::string::String>,
-    /// <p>The unique identifier for the evidence.</p>
+    /// <p> The unique identifier for the evidence. </p>
     pub evidence_id: ::std::option::Option<::std::string::String>,
 }
 impl GetEvidenceInput {
-    /// <p>The unique identifier for the assessment.</p>
+    /// <p> The unique identifier for the assessment. </p>
     pub fn assessment_id(&self) -> ::std::option::Option<&str> {
         self.assessment_id.as_deref()
     }
-    /// <p>The unique identifier for the control set.</p>
+    /// <p> The unique identifier for the control set. </p>
     pub fn control_set_id(&self) -> ::std::option::Option<&str> {
         self.control_set_id.as_deref()
     }
-    /// <p>The unique identifier for the folder that the evidence is stored in.</p>
+    /// <p> The unique identifier for the folder that the evidence is stored in. </p>
     pub fn evidence_folder_id(&self) -> ::std::option::Option<&str> {
         self.evidence_folder_id.as_deref()
     }
-    /// <p>The unique identifier for the evidence.</p>
+    /// <p> The unique identifier for the evidence. </p>
     pub fn evidence_id(&self) -> ::std::option::Option<&str> {
         self.evidence_id.as_deref()
     }
@@ -47,63 +47,63 @@ pub struct GetEvidenceInputBuilder {
     pub(crate) evidence_id: ::std::option::Option<::std::string::String>,
 }
 impl GetEvidenceInputBuilder {
-    /// <p>The unique identifier for the assessment.</p>
+    /// <p> The unique identifier for the assessment. </p>
     /// This field is required.
     pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier for the assessment.</p>
+    /// <p> The unique identifier for the assessment. </p>
     pub fn set_assessment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assessment_id = input;
         self
     }
-    /// <p>The unique identifier for the assessment.</p>
+    /// <p> The unique identifier for the assessment. </p>
     pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.assessment_id
     }
-    /// <p>The unique identifier for the control set.</p>
+    /// <p> The unique identifier for the control set. </p>
     /// This field is required.
     pub fn control_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control_set_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier for the control set.</p>
+    /// <p> The unique identifier for the control set. </p>
     pub fn set_control_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.control_set_id = input;
         self
     }
-    /// <p>The unique identifier for the control set.</p>
+    /// <p> The unique identifier for the control set. </p>
     pub fn get_control_set_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.control_set_id
     }
-    /// <p>The unique identifier for the folder that the evidence is stored in.</p>
+    /// <p> The unique identifier for the folder that the evidence is stored in. </p>
     /// This field is required.
     pub fn evidence_folder_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evidence_folder_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier for the folder that the evidence is stored in.</p>
+    /// <p> The unique identifier for the folder that the evidence is stored in. </p>
     pub fn set_evidence_folder_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.evidence_folder_id = input;
         self
     }
-    /// <p>The unique identifier for the folder that the evidence is stored in.</p>
+    /// <p> The unique identifier for the folder that the evidence is stored in. </p>
     pub fn get_evidence_folder_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.evidence_folder_id
     }
-    /// <p>The unique identifier for the evidence.</p>
+    /// <p> The unique identifier for the evidence. </p>
     /// This field is required.
     pub fn evidence_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evidence_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier for the evidence.</p>
+    /// <p> The unique identifier for the evidence. </p>
     pub fn set_evidence_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.evidence_id = input;
         self
     }
-    /// <p>The unique identifier for the evidence.</p>
+    /// <p> The unique identifier for the evidence. </p>
     pub fn get_evidence_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.evidence_id
     }

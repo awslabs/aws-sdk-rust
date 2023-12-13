@@ -5,7 +5,7 @@
 pub struct CreateServerlessCacheInput {
     /// <p>User-provided identifier for the serverless cache. This parameter is stored as a lowercase string.</p>
     pub serverless_cache_name: ::std::option::Option<::std::string::String>,
-    /// <p>User-provided description for the serverless cache. The default is NULL, i.e. if no description is provided then an empty string will be returned. The maximum length is 255 characters.</p>
+    /// <p>User-provided description for the serverless cache. The default is NULL, i.e. if no description is provided then an empty string will be returned. The maximum length is 255 characters. </p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The name of the cache engine to be used for creating the serverless cache.</p>
     pub engine: ::std::option::Option<::std::string::String>,
@@ -35,7 +35,7 @@ impl CreateServerlessCacheInput {
     pub fn serverless_cache_name(&self) -> ::std::option::Option<&str> {
         self.serverless_cache_name.as_deref()
     }
-    /// <p>User-provided description for the serverless cache. The default is NULL, i.e. if no description is provided then an empty string will be returned. The maximum length is 255 characters.</p>
+    /// <p>User-provided description for the serverless cache. The default is NULL, i.e. if no description is provided then an empty string will be returned. The maximum length is 255 characters. </p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -133,17 +133,17 @@ impl CreateServerlessCacheInputBuilder {
     pub fn get_serverless_cache_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.serverless_cache_name
     }
-    /// <p>User-provided description for the serverless cache. The default is NULL, i.e. if no description is provided then an empty string will be returned. The maximum length is 255 characters.</p>
+    /// <p>User-provided description for the serverless cache. The default is NULL, i.e. if no description is provided then an empty string will be returned. The maximum length is 255 characters. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>User-provided description for the serverless cache. The default is NULL, i.e. if no description is provided then an empty string will be returned. The maximum length is 255 characters.</p>
+    /// <p>User-provided description for the serverless cache. The default is NULL, i.e. if no description is provided then an empty string will be returned. The maximum length is 255 characters. </p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>User-provided description for the serverless cache. The default is NULL, i.e. if no description is provided then an empty string will be returned. The maximum length is 255 characters.</p>
+    /// <p>User-provided description for the serverless cache. The default is NULL, i.e. if no description is provided then an empty string will be returned. The maximum length is 255 characters. </p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }

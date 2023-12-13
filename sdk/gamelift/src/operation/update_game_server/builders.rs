@@ -22,20 +22,17 @@ impl UpdateGameServerInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateGameServer`.
 ///
-/// <p><b>This operation is used with the Amazon GameLift FleetIQ solution and game server groups.</b></p>
-/// <p>Updates information about a registered game server to help Amazon GameLift FleetIQ track game server availability. This operation is called by a game server process that is running on an instance in a game server group.</p>
+/// <p> <b>This operation is used with the Amazon GameLift FleetIQ solution and game server groups.</b> </p>
+/// <p>Updates information about a registered game server to help Amazon GameLift FleetIQ track game server availability. This operation is called by a game server process that is running on an instance in a game server group. </p>
 /// <p>Use this operation to update the following types of game server information. You can make all three types of updates in the same request:</p>
 /// <ul>
-/// <li>
-/// <p>To update the game server's utilization status from <code>AVAILABLE</code> (when the game server is available to be claimed) to <code>UTILIZED</code> (when the game server is currently hosting games). Identify the game server and game server group and specify the new utilization status. You can't change the status from to <code>UTILIZED</code> to <code>AVAILABLE</code> .</p></li>
-/// <li>
-/// <p>To report health status, identify the game server and game server group and set health check to <code>HEALTHY</code>. If a game server does not report health status for a certain length of time, the game server is no longer considered healthy. As a result, it will be eventually deregistered from the game server group to avoid affecting utilization metrics. The best practice is to report health every 60 seconds.</p></li>
-/// <li>
-/// <p>To change game server metadata, provide updated game server data.</p></li>
+/// <li> <p>To update the game server's utilization status from <code>AVAILABLE</code> (when the game server is available to be claimed) to <code>UTILIZED</code> (when the game server is currently hosting games). Identify the game server and game server group and specify the new utilization status. You can't change the status from to <code>UTILIZED</code> to <code>AVAILABLE</code> .</p> </li>
+/// <li> <p>To report health status, identify the game server and game server group and set health check to <code>HEALTHY</code>. If a game server does not report health status for a certain length of time, the game server is no longer considered healthy. As a result, it will be eventually deregistered from the game server group to avoid affecting utilization metrics. The best practice is to report health every 60 seconds.</p> </li>
+/// <li> <p>To change game server metadata, provide updated game server data.</p> </li>
 /// </ul>
 /// <p>Once a game server is successfully updated, the relevant statuses and timestamps are updated.</p>
-/// <p><b>Learn more</b></p>
-/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">Amazon GameLift FleetIQ Guide</a></p>
+/// <p> <b>Learn more</b> </p>
+/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">Amazon GameLift FleetIQ Guide</a> </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateGameServerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -149,17 +146,17 @@ impl UpdateGameServerFluentBuilder {
     pub fn get_game_server_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_game_server_id()
     }
-    /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers.</p>
+    /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers. </p>
     pub fn game_server_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.game_server_data(input.into());
         self
     }
-    /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers.</p>
+    /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers. </p>
     pub fn set_game_server_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_game_server_data(input);
         self
     }
-    /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers.</p>
+    /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers. </p>
     pub fn get_game_server_data(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_game_server_data()
     }
@@ -177,17 +174,17 @@ impl UpdateGameServerFluentBuilder {
     pub fn get_utilization_status(&self) -> &::std::option::Option<crate::types::GameServerUtilizationStatus> {
         self.inner.get_utilization_status()
     }
-    /// <p>Indicates health status of the game server. A request that includes this parameter updates the game server's <i>LastHealthCheckTime</i> timestamp.</p>
+    /// <p>Indicates health status of the game server. A request that includes this parameter updates the game server's <i>LastHealthCheckTime</i> timestamp. </p>
     pub fn health_check(mut self, input: crate::types::GameServerHealthCheck) -> Self {
         self.inner = self.inner.health_check(input);
         self
     }
-    /// <p>Indicates health status of the game server. A request that includes this parameter updates the game server's <i>LastHealthCheckTime</i> timestamp.</p>
+    /// <p>Indicates health status of the game server. A request that includes this parameter updates the game server's <i>LastHealthCheckTime</i> timestamp. </p>
     pub fn set_health_check(mut self, input: ::std::option::Option<crate::types::GameServerHealthCheck>) -> Self {
         self.inner = self.inner.set_health_check(input);
         self
     }
-    /// <p>Indicates health status of the game server. A request that includes this parameter updates the game server's <i>LastHealthCheckTime</i> timestamp.</p>
+    /// <p>Indicates health status of the game server. A request that includes this parameter updates the game server's <i>LastHealthCheckTime</i> timestamp. </p>
     pub fn get_health_check(&self) -> &::std::option::Option<crate::types::GameServerHealthCheck> {
         self.inner.get_health_check()
     }

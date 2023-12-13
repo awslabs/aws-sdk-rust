@@ -22,7 +22,7 @@ impl CancelJobInputBuilder {
 }
 /// Fluent builder constructing a request to `CancelJob`.
 ///
-/// <p>The CancelJob operation cancels an unfinished job.</p><note>
+/// <p>The CancelJob operation cancels an unfinished job.</p> <note>
 /// <p>You can only cancel a job that has a status of <code>Submitted</code>. To prevent a pipeline from starting to process a job while you're getting the job identifier, use <code>UpdatePipelineStatus</code> to temporarily pause the pipeline.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

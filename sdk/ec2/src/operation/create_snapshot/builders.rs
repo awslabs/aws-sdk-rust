@@ -131,12 +131,9 @@ impl CreateSnapshotFluentBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Outpost on which to create a local snapshot.</p>
     /// <ul>
-    /// <li>
-    /// <p>To create a snapshot of a volume in a Region, omit this parameter. The snapshot is created in the same Region as the volume.</p></li>
-    /// <li>
-    /// <p>To create a snapshot of a volume on an Outpost and store the snapshot in the Region, omit this parameter. The snapshot is created in the Region for the Outpost.</p></li>
-    /// <li>
-    /// <p>To create a snapshot of a volume on an Outpost and store the snapshot on an Outpost, specify the ARN of the destination Outpost. The snapshot must be created on the same Outpost as the volume.</p></li>
+    /// <li> <p>To create a snapshot of a volume in a Region, omit this parameter. The snapshot is created in the same Region as the volume.</p> </li>
+    /// <li> <p>To create a snapshot of a volume on an Outpost and store the snapshot in the Region, omit this parameter. The snapshot is created in the Region for the Outpost.</p> </li>
+    /// <li> <p>To create a snapshot of a volume on an Outpost and store the snapshot on an Outpost, specify the ARN of the destination Outpost. The snapshot must be created on the same Outpost as the volume.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-snapshot">Create local snapshots from volumes on an Outpost</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub fn outpost_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -145,12 +142,9 @@ impl CreateSnapshotFluentBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Outpost on which to create a local snapshot.</p>
     /// <ul>
-    /// <li>
-    /// <p>To create a snapshot of a volume in a Region, omit this parameter. The snapshot is created in the same Region as the volume.</p></li>
-    /// <li>
-    /// <p>To create a snapshot of a volume on an Outpost and store the snapshot in the Region, omit this parameter. The snapshot is created in the Region for the Outpost.</p></li>
-    /// <li>
-    /// <p>To create a snapshot of a volume on an Outpost and store the snapshot on an Outpost, specify the ARN of the destination Outpost. The snapshot must be created on the same Outpost as the volume.</p></li>
+    /// <li> <p>To create a snapshot of a volume in a Region, omit this parameter. The snapshot is created in the same Region as the volume.</p> </li>
+    /// <li> <p>To create a snapshot of a volume on an Outpost and store the snapshot in the Region, omit this parameter. The snapshot is created in the Region for the Outpost.</p> </li>
+    /// <li> <p>To create a snapshot of a volume on an Outpost and store the snapshot on an Outpost, specify the ARN of the destination Outpost. The snapshot must be created on the same Outpost as the volume.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-snapshot">Create local snapshots from volumes on an Outpost</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub fn set_outpost_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -159,12 +153,9 @@ impl CreateSnapshotFluentBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Outpost on which to create a local snapshot.</p>
     /// <ul>
-    /// <li>
-    /// <p>To create a snapshot of a volume in a Region, omit this parameter. The snapshot is created in the same Region as the volume.</p></li>
-    /// <li>
-    /// <p>To create a snapshot of a volume on an Outpost and store the snapshot in the Region, omit this parameter. The snapshot is created in the Region for the Outpost.</p></li>
-    /// <li>
-    /// <p>To create a snapshot of a volume on an Outpost and store the snapshot on an Outpost, specify the ARN of the destination Outpost. The snapshot must be created on the same Outpost as the volume.</p></li>
+    /// <li> <p>To create a snapshot of a volume in a Region, omit this parameter. The snapshot is created in the same Region as the volume.</p> </li>
+    /// <li> <p>To create a snapshot of a volume on an Outpost and store the snapshot in the Region, omit this parameter. The snapshot is created in the Region for the Outpost.</p> </li>
+    /// <li> <p>To create a snapshot of a volume on an Outpost and store the snapshot on an Outpost, specify the ARN of the destination Outpost. The snapshot must be created on the same Outpost as the volume.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-snapshot">Create local snapshots from volumes on an Outpost</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub fn get_outpost_arn(&self) -> &::std::option::Option<::std::string::String> {

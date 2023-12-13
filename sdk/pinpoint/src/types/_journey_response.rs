@@ -22,12 +22,9 @@ pub struct JourneyResponse {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The quiet time settings for the journey. Quiet time is a specific time range when a journey doesn't send messages to participants, if all the following conditions are met:</p>
     /// <ul>
-    /// <li>
-    /// <p>The EndpointDemographic.Timezone property of the endpoint for the participant is set to a valid value.</p></li>
-    /// <li>
-    /// <p>The current time in the participant's time zone is later than or equal to the time specified by the QuietTime.Start property for the journey.</p></li>
-    /// <li>
-    /// <p>The current time in the participant's time zone is earlier than or equal to the time specified by the QuietTime.End property for the journey.</p></li>
+    /// <li><p>The EndpointDemographic.Timezone property of the endpoint for the participant is set to a valid value.</p></li>
+    /// <li><p>The current time in the participant's time zone is later than or equal to the time specified by the QuietTime.Start property for the journey.</p></li>
+    /// <li><p>The current time in the participant's time zone is earlier than or equal to the time specified by the QuietTime.End property for the journey.</p></li>
     /// </ul>
     /// <p>If any of the preceding conditions isn't met, the participant will receive messages from the journey, even if quiet time is enabled.</p>
     pub quiet_time: ::std::option::Option<crate::types::QuietTime>,
@@ -41,16 +38,11 @@ pub struct JourneyResponse {
     pub start_condition: ::std::option::Option<crate::types::StartCondition>,
     /// <p>The current status of the journey. Possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>DRAFT - The journey is being developed and hasn't been published yet.</p></li>
-    /// <li>
-    /// <p>ACTIVE - The journey has been developed and published. Depending on the journey's schedule, the journey may currently be running or scheduled to start running at a later time. If a journey's status is ACTIVE, you can't add, change, or remove activities from it.</p></li>
-    /// <li>
-    /// <p>COMPLETED - The journey has been published and has finished running. All participants have entered the journey and no participants are waiting to complete the journey or any activities in the journey.</p></li>
-    /// <li>
-    /// <p>CANCELLED - The journey has been stopped. If a journey's status is CANCELLED, you can't add, change, or remove activities or segment settings from the journey.</p></li>
-    /// <li>
-    /// <p>CLOSED - The journey has been published and has started running. It may have also passed its scheduled end time, or passed its scheduled start time and a refresh frequency hasn't been specified for it. If a journey's status is CLOSED, you can't add participants to it, and no existing participants can enter the journey for the first time. However, any existing participants who are currently waiting to start an activity may continue the journey.</p></li>
+    /// <li><p>DRAFT - The journey is being developed and hasn't been published yet.</p></li>
+    /// <li><p>ACTIVE - The journey has been developed and published. Depending on the journey's schedule, the journey may currently be running or scheduled to start running at a later time. If a journey's status is ACTIVE, you can't add, change, or remove activities from it.</p></li>
+    /// <li><p>COMPLETED - The journey has been published and has finished running. All participants have entered the journey and no participants are waiting to complete the journey or any activities in the journey.</p></li>
+    /// <li><p>CANCELLED - The journey has been stopped. If a journey's status is CANCELLED, you can't add, change, or remove activities or segment settings from the journey.</p></li>
+    /// <li><p>CLOSED - The journey has been published and has started running. It may have also passed its scheduled end time, or passed its scheduled start time and a refresh frequency hasn't been specified for it. If a journey's status is CLOSED, you can't add participants to it, and no existing participants can enter the journey for the first time. However, any existing participants who are currently waiting to start an activity may continue the journey.</p></li>
     /// </ul>
     pub state: ::std::option::Option<crate::types::State>,
     /// <p>This object is not used or supported.</p>
@@ -69,10 +61,8 @@ pub struct JourneyResponse {
     pub closed_days: ::std::option::Option<crate::types::ClosedDays>,
     /// <p>An array of time zone estimation methods, if any, to use for determining an <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html">Endpoints</a> time zone if the Endpoint does not have a value for the Demographic.Timezone attribute.</p>
     /// <ul>
-    /// <li>
-    /// <p>PHONE_NUMBER - A time zone is determined based on the Endpoint.Address and Endpoint.Location.Country.</p></li>
-    /// <li>
-    /// <p>POSTAL_CODE - A time zone is determined based on the Endpoint.Location.PostalCode and Endpoint.Location.Country.</p><note>
+    /// <li><p>PHONE_NUMBER - A time zone is determined based on the Endpoint.Address and Endpoint.Location.Country.</p></li>
+    /// <li><p>POSTAL_CODE - A time zone is determined based on the Endpoint.Location.PostalCode and Endpoint.Location.Country.</p> <note>
     /// <p>POSTAL_CODE detection is only supported in the United States, United Kingdom, Australia, New Zealand, Canada, France, Italy, Spain, Germany and in regions where Amazon Pinpoint is available.</p>
     /// </note></li>
     /// </ul>
@@ -113,12 +103,9 @@ impl JourneyResponse {
     }
     /// <p>The quiet time settings for the journey. Quiet time is a specific time range when a journey doesn't send messages to participants, if all the following conditions are met:</p>
     /// <ul>
-    /// <li>
-    /// <p>The EndpointDemographic.Timezone property of the endpoint for the participant is set to a valid value.</p></li>
-    /// <li>
-    /// <p>The current time in the participant's time zone is later than or equal to the time specified by the QuietTime.Start property for the journey.</p></li>
-    /// <li>
-    /// <p>The current time in the participant's time zone is earlier than or equal to the time specified by the QuietTime.End property for the journey.</p></li>
+    /// <li><p>The EndpointDemographic.Timezone property of the endpoint for the participant is set to a valid value.</p></li>
+    /// <li><p>The current time in the participant's time zone is later than or equal to the time specified by the QuietTime.Start property for the journey.</p></li>
+    /// <li><p>The current time in the participant's time zone is earlier than or equal to the time specified by the QuietTime.End property for the journey.</p></li>
     /// </ul>
     /// <p>If any of the preceding conditions isn't met, the participant will receive messages from the journey, even if quiet time is enabled.</p>
     pub fn quiet_time(&self) -> ::std::option::Option<&crate::types::QuietTime> {
@@ -142,16 +129,11 @@ impl JourneyResponse {
     }
     /// <p>The current status of the journey. Possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>DRAFT - The journey is being developed and hasn't been published yet.</p></li>
-    /// <li>
-    /// <p>ACTIVE - The journey has been developed and published. Depending on the journey's schedule, the journey may currently be running or scheduled to start running at a later time. If a journey's status is ACTIVE, you can't add, change, or remove activities from it.</p></li>
-    /// <li>
-    /// <p>COMPLETED - The journey has been published and has finished running. All participants have entered the journey and no participants are waiting to complete the journey or any activities in the journey.</p></li>
-    /// <li>
-    /// <p>CANCELLED - The journey has been stopped. If a journey's status is CANCELLED, you can't add, change, or remove activities or segment settings from the journey.</p></li>
-    /// <li>
-    /// <p>CLOSED - The journey has been published and has started running. It may have also passed its scheduled end time, or passed its scheduled start time and a refresh frequency hasn't been specified for it. If a journey's status is CLOSED, you can't add participants to it, and no existing participants can enter the journey for the first time. However, any existing participants who are currently waiting to start an activity may continue the journey.</p></li>
+    /// <li><p>DRAFT - The journey is being developed and hasn't been published yet.</p></li>
+    /// <li><p>ACTIVE - The journey has been developed and published. Depending on the journey's schedule, the journey may currently be running or scheduled to start running at a later time. If a journey's status is ACTIVE, you can't add, change, or remove activities from it.</p></li>
+    /// <li><p>COMPLETED - The journey has been published and has finished running. All participants have entered the journey and no participants are waiting to complete the journey or any activities in the journey.</p></li>
+    /// <li><p>CANCELLED - The journey has been stopped. If a journey's status is CANCELLED, you can't add, change, or remove activities or segment settings from the journey.</p></li>
+    /// <li><p>CLOSED - The journey has been published and has started running. It may have also passed its scheduled end time, or passed its scheduled start time and a refresh frequency hasn't been specified for it. If a journey's status is CLOSED, you can't add participants to it, and no existing participants can enter the journey for the first time. However, any existing participants who are currently waiting to start an activity may continue the journey.</p></li>
     /// </ul>
     pub fn state(&self) -> ::std::option::Option<&crate::types::State> {
         self.state.as_ref()
@@ -186,10 +168,8 @@ impl JourneyResponse {
     }
     /// <p>An array of time zone estimation methods, if any, to use for determining an <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html">Endpoints</a> time zone if the Endpoint does not have a value for the Demographic.Timezone attribute.</p>
     /// <ul>
-    /// <li>
-    /// <p>PHONE_NUMBER - A time zone is determined based on the Endpoint.Address and Endpoint.Location.Country.</p></li>
-    /// <li>
-    /// <p>POSTAL_CODE - A time zone is determined based on the Endpoint.Location.PostalCode and Endpoint.Location.Country.</p><note>
+    /// <li><p>PHONE_NUMBER - A time zone is determined based on the Endpoint.Address and Endpoint.Location.Country.</p></li>
+    /// <li><p>POSTAL_CODE - A time zone is determined based on the Endpoint.Location.PostalCode and Endpoint.Location.Country.</p> <note>
     /// <p>POSTAL_CODE detection is only supported in the United States, United Kingdom, Australia, New Zealand, Canada, France, Italy, Spain, Germany and in regions where Amazon Pinpoint is available.</p>
     /// </note></li>
     /// </ul>
@@ -360,12 +340,9 @@ impl JourneyResponseBuilder {
     }
     /// <p>The quiet time settings for the journey. Quiet time is a specific time range when a journey doesn't send messages to participants, if all the following conditions are met:</p>
     /// <ul>
-    /// <li>
-    /// <p>The EndpointDemographic.Timezone property of the endpoint for the participant is set to a valid value.</p></li>
-    /// <li>
-    /// <p>The current time in the participant's time zone is later than or equal to the time specified by the QuietTime.Start property for the journey.</p></li>
-    /// <li>
-    /// <p>The current time in the participant's time zone is earlier than or equal to the time specified by the QuietTime.End property for the journey.</p></li>
+    /// <li><p>The EndpointDemographic.Timezone property of the endpoint for the participant is set to a valid value.</p></li>
+    /// <li><p>The current time in the participant's time zone is later than or equal to the time specified by the QuietTime.Start property for the journey.</p></li>
+    /// <li><p>The current time in the participant's time zone is earlier than or equal to the time specified by the QuietTime.End property for the journey.</p></li>
     /// </ul>
     /// <p>If any of the preceding conditions isn't met, the participant will receive messages from the journey, even if quiet time is enabled.</p>
     pub fn quiet_time(mut self, input: crate::types::QuietTime) -> Self {
@@ -374,12 +351,9 @@ impl JourneyResponseBuilder {
     }
     /// <p>The quiet time settings for the journey. Quiet time is a specific time range when a journey doesn't send messages to participants, if all the following conditions are met:</p>
     /// <ul>
-    /// <li>
-    /// <p>The EndpointDemographic.Timezone property of the endpoint for the participant is set to a valid value.</p></li>
-    /// <li>
-    /// <p>The current time in the participant's time zone is later than or equal to the time specified by the QuietTime.Start property for the journey.</p></li>
-    /// <li>
-    /// <p>The current time in the participant's time zone is earlier than or equal to the time specified by the QuietTime.End property for the journey.</p></li>
+    /// <li><p>The EndpointDemographic.Timezone property of the endpoint for the participant is set to a valid value.</p></li>
+    /// <li><p>The current time in the participant's time zone is later than or equal to the time specified by the QuietTime.Start property for the journey.</p></li>
+    /// <li><p>The current time in the participant's time zone is earlier than or equal to the time specified by the QuietTime.End property for the journey.</p></li>
     /// </ul>
     /// <p>If any of the preceding conditions isn't met, the participant will receive messages from the journey, even if quiet time is enabled.</p>
     pub fn set_quiet_time(mut self, input: ::std::option::Option<crate::types::QuietTime>) -> Self {
@@ -388,12 +362,9 @@ impl JourneyResponseBuilder {
     }
     /// <p>The quiet time settings for the journey. Quiet time is a specific time range when a journey doesn't send messages to participants, if all the following conditions are met:</p>
     /// <ul>
-    /// <li>
-    /// <p>The EndpointDemographic.Timezone property of the endpoint for the participant is set to a valid value.</p></li>
-    /// <li>
-    /// <p>The current time in the participant's time zone is later than or equal to the time specified by the QuietTime.Start property for the journey.</p></li>
-    /// <li>
-    /// <p>The current time in the participant's time zone is earlier than or equal to the time specified by the QuietTime.End property for the journey.</p></li>
+    /// <li><p>The EndpointDemographic.Timezone property of the endpoint for the participant is set to a valid value.</p></li>
+    /// <li><p>The current time in the participant's time zone is later than or equal to the time specified by the QuietTime.Start property for the journey.</p></li>
+    /// <li><p>The current time in the participant's time zone is earlier than or equal to the time specified by the QuietTime.End property for the journey.</p></li>
     /// </ul>
     /// <p>If any of the preceding conditions isn't met, the participant will receive messages from the journey, even if quiet time is enabled.</p>
     pub fn get_quiet_time(&self) -> &::std::option::Option<crate::types::QuietTime> {
@@ -457,16 +428,11 @@ impl JourneyResponseBuilder {
     }
     /// <p>The current status of the journey. Possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>DRAFT - The journey is being developed and hasn't been published yet.</p></li>
-    /// <li>
-    /// <p>ACTIVE - The journey has been developed and published. Depending on the journey's schedule, the journey may currently be running or scheduled to start running at a later time. If a journey's status is ACTIVE, you can't add, change, or remove activities from it.</p></li>
-    /// <li>
-    /// <p>COMPLETED - The journey has been published and has finished running. All participants have entered the journey and no participants are waiting to complete the journey or any activities in the journey.</p></li>
-    /// <li>
-    /// <p>CANCELLED - The journey has been stopped. If a journey's status is CANCELLED, you can't add, change, or remove activities or segment settings from the journey.</p></li>
-    /// <li>
-    /// <p>CLOSED - The journey has been published and has started running. It may have also passed its scheduled end time, or passed its scheduled start time and a refresh frequency hasn't been specified for it. If a journey's status is CLOSED, you can't add participants to it, and no existing participants can enter the journey for the first time. However, any existing participants who are currently waiting to start an activity may continue the journey.</p></li>
+    /// <li><p>DRAFT - The journey is being developed and hasn't been published yet.</p></li>
+    /// <li><p>ACTIVE - The journey has been developed and published. Depending on the journey's schedule, the journey may currently be running or scheduled to start running at a later time. If a journey's status is ACTIVE, you can't add, change, or remove activities from it.</p></li>
+    /// <li><p>COMPLETED - The journey has been published and has finished running. All participants have entered the journey and no participants are waiting to complete the journey or any activities in the journey.</p></li>
+    /// <li><p>CANCELLED - The journey has been stopped. If a journey's status is CANCELLED, you can't add, change, or remove activities or segment settings from the journey.</p></li>
+    /// <li><p>CLOSED - The journey has been published and has started running. It may have also passed its scheduled end time, or passed its scheduled start time and a refresh frequency hasn't been specified for it. If a journey's status is CLOSED, you can't add participants to it, and no existing participants can enter the journey for the first time. However, any existing participants who are currently waiting to start an activity may continue the journey.</p></li>
     /// </ul>
     pub fn state(mut self, input: crate::types::State) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -474,16 +440,11 @@ impl JourneyResponseBuilder {
     }
     /// <p>The current status of the journey. Possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>DRAFT - The journey is being developed and hasn't been published yet.</p></li>
-    /// <li>
-    /// <p>ACTIVE - The journey has been developed and published. Depending on the journey's schedule, the journey may currently be running or scheduled to start running at a later time. If a journey's status is ACTIVE, you can't add, change, or remove activities from it.</p></li>
-    /// <li>
-    /// <p>COMPLETED - The journey has been published and has finished running. All participants have entered the journey and no participants are waiting to complete the journey or any activities in the journey.</p></li>
-    /// <li>
-    /// <p>CANCELLED - The journey has been stopped. If a journey's status is CANCELLED, you can't add, change, or remove activities or segment settings from the journey.</p></li>
-    /// <li>
-    /// <p>CLOSED - The journey has been published and has started running. It may have also passed its scheduled end time, or passed its scheduled start time and a refresh frequency hasn't been specified for it. If a journey's status is CLOSED, you can't add participants to it, and no existing participants can enter the journey for the first time. However, any existing participants who are currently waiting to start an activity may continue the journey.</p></li>
+    /// <li><p>DRAFT - The journey is being developed and hasn't been published yet.</p></li>
+    /// <li><p>ACTIVE - The journey has been developed and published. Depending on the journey's schedule, the journey may currently be running or scheduled to start running at a later time. If a journey's status is ACTIVE, you can't add, change, or remove activities from it.</p></li>
+    /// <li><p>COMPLETED - The journey has been published and has finished running. All participants have entered the journey and no participants are waiting to complete the journey or any activities in the journey.</p></li>
+    /// <li><p>CANCELLED - The journey has been stopped. If a journey's status is CANCELLED, you can't add, change, or remove activities or segment settings from the journey.</p></li>
+    /// <li><p>CLOSED - The journey has been published and has started running. It may have also passed its scheduled end time, or passed its scheduled start time and a refresh frequency hasn't been specified for it. If a journey's status is CLOSED, you can't add participants to it, and no existing participants can enter the journey for the first time. However, any existing participants who are currently waiting to start an activity may continue the journey.</p></li>
     /// </ul>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::State>) -> Self {
         self.state = input;
@@ -491,16 +452,11 @@ impl JourneyResponseBuilder {
     }
     /// <p>The current status of the journey. Possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>DRAFT - The journey is being developed and hasn't been published yet.</p></li>
-    /// <li>
-    /// <p>ACTIVE - The journey has been developed and published. Depending on the journey's schedule, the journey may currently be running or scheduled to start running at a later time. If a journey's status is ACTIVE, you can't add, change, or remove activities from it.</p></li>
-    /// <li>
-    /// <p>COMPLETED - The journey has been published and has finished running. All participants have entered the journey and no participants are waiting to complete the journey or any activities in the journey.</p></li>
-    /// <li>
-    /// <p>CANCELLED - The journey has been stopped. If a journey's status is CANCELLED, you can't add, change, or remove activities or segment settings from the journey.</p></li>
-    /// <li>
-    /// <p>CLOSED - The journey has been published and has started running. It may have also passed its scheduled end time, or passed its scheduled start time and a refresh frequency hasn't been specified for it. If a journey's status is CLOSED, you can't add participants to it, and no existing participants can enter the journey for the first time. However, any existing participants who are currently waiting to start an activity may continue the journey.</p></li>
+    /// <li><p>DRAFT - The journey is being developed and hasn't been published yet.</p></li>
+    /// <li><p>ACTIVE - The journey has been developed and published. Depending on the journey's schedule, the journey may currently be running or scheduled to start running at a later time. If a journey's status is ACTIVE, you can't add, change, or remove activities from it.</p></li>
+    /// <li><p>COMPLETED - The journey has been published and has finished running. All participants have entered the journey and no participants are waiting to complete the journey or any activities in the journey.</p></li>
+    /// <li><p>CANCELLED - The journey has been stopped. If a journey's status is CANCELLED, you can't add, change, or remove activities or segment settings from the journey.</p></li>
+    /// <li><p>CLOSED - The journey has been published and has started running. It may have also passed its scheduled end time, or passed its scheduled start time and a refresh frequency hasn't been specified for it. If a journey's status is CLOSED, you can't add participants to it, and no existing participants can enter the journey for the first time. However, any existing participants who are currently waiting to start an activity may continue the journey.</p></li>
     /// </ul>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::State> {
         &self.state
@@ -615,10 +571,8 @@ impl JourneyResponseBuilder {
     ///
     /// <p>An array of time zone estimation methods, if any, to use for determining an <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html">Endpoints</a> time zone if the Endpoint does not have a value for the Demographic.Timezone attribute.</p>
     /// <ul>
-    /// <li>
-    /// <p>PHONE_NUMBER - A time zone is determined based on the Endpoint.Address and Endpoint.Location.Country.</p></li>
-    /// <li>
-    /// <p>POSTAL_CODE - A time zone is determined based on the Endpoint.Location.PostalCode and Endpoint.Location.Country.</p><note>
+    /// <li><p>PHONE_NUMBER - A time zone is determined based on the Endpoint.Address and Endpoint.Location.Country.</p></li>
+    /// <li><p>POSTAL_CODE - A time zone is determined based on the Endpoint.Location.PostalCode and Endpoint.Location.Country.</p> <note>
     /// <p>POSTAL_CODE detection is only supported in the United States, United Kingdom, Australia, New Zealand, Canada, France, Italy, Spain, Germany and in regions where Amazon Pinpoint is available.</p>
     /// </note></li>
     /// </ul>
@@ -630,10 +584,8 @@ impl JourneyResponseBuilder {
     }
     /// <p>An array of time zone estimation methods, if any, to use for determining an <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html">Endpoints</a> time zone if the Endpoint does not have a value for the Demographic.Timezone attribute.</p>
     /// <ul>
-    /// <li>
-    /// <p>PHONE_NUMBER - A time zone is determined based on the Endpoint.Address and Endpoint.Location.Country.</p></li>
-    /// <li>
-    /// <p>POSTAL_CODE - A time zone is determined based on the Endpoint.Location.PostalCode and Endpoint.Location.Country.</p><note>
+    /// <li><p>PHONE_NUMBER - A time zone is determined based on the Endpoint.Address and Endpoint.Location.Country.</p></li>
+    /// <li><p>POSTAL_CODE - A time zone is determined based on the Endpoint.Location.PostalCode and Endpoint.Location.Country.</p> <note>
     /// <p>POSTAL_CODE detection is only supported in the United States, United Kingdom, Australia, New Zealand, Canada, France, Italy, Spain, Germany and in regions where Amazon Pinpoint is available.</p>
     /// </note></li>
     /// </ul>
@@ -646,10 +598,8 @@ impl JourneyResponseBuilder {
     }
     /// <p>An array of time zone estimation methods, if any, to use for determining an <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html">Endpoints</a> time zone if the Endpoint does not have a value for the Demographic.Timezone attribute.</p>
     /// <ul>
-    /// <li>
-    /// <p>PHONE_NUMBER - A time zone is determined based on the Endpoint.Address and Endpoint.Location.Country.</p></li>
-    /// <li>
-    /// <p>POSTAL_CODE - A time zone is determined based on the Endpoint.Location.PostalCode and Endpoint.Location.Country.</p><note>
+    /// <li><p>PHONE_NUMBER - A time zone is determined based on the Endpoint.Address and Endpoint.Location.Country.</p></li>
+    /// <li><p>POSTAL_CODE - A time zone is determined based on the Endpoint.Location.PostalCode and Endpoint.Location.Country.</p> <note>
     /// <p>POSTAL_CODE detection is only supported in the United States, United Kingdom, Australia, New Zealand, Canada, France, Italy, Spain, Germany and in regions where Amazon Pinpoint is available.</p>
     /// </note></li>
     /// </ul>

@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateControlOutput {
-    /// <p>The name of the updated control set that the <code>UpdateControl</code> API returned.</p>
+    /// <p> The name of the updated control set that the <code>UpdateControl</code> API returned. </p>
     pub control: ::std::option::Option<crate::types::Control>,
     _request_id: Option<String>,
 }
 impl UpdateControlOutput {
-    /// <p>The name of the updated control set that the <code>UpdateControl</code> API returned.</p>
+    /// <p> The name of the updated control set that the <code>UpdateControl</code> API returned. </p>
     pub fn control(&self) -> ::std::option::Option<&crate::types::Control> {
         self.control.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct UpdateControlOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateControlOutputBuilder {
-    /// <p>The name of the updated control set that the <code>UpdateControl</code> API returned.</p>
+    /// <p> The name of the updated control set that the <code>UpdateControl</code> API returned. </p>
     pub fn control(mut self, input: crate::types::Control) -> Self {
         self.control = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The name of the updated control set that the <code>UpdateControl</code> API returned.</p>
+    /// <p> The name of the updated control set that the <code>UpdateControl</code> API returned. </p>
     pub fn set_control(mut self, input: ::std::option::Option<crate::types::Control>) -> Self {
         self.control = input;
         self
     }
-    /// <p>The name of the updated control set that the <code>UpdateControl</code> API returned.</p>
+    /// <p> The name of the updated control set that the <code>UpdateControl</code> API returned. </p>
     pub fn get_control(&self) -> &::std::option::Option<crate::types::Control> {
         &self.control
     }

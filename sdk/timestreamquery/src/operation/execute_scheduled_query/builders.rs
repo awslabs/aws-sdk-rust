@@ -22,7 +22,7 @@ impl ExecuteScheduledQueryInputBuilder {
 }
 /// Fluent builder constructing a request to `ExecuteScheduledQuery`.
 ///
-/// <p>You can use this API to run a scheduled query manually.</p>
+/// <p> You can use this API to run a scheduled query manually. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ExecuteScheduledQueryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -122,31 +122,31 @@ impl ExecuteScheduledQueryFluentBuilder {
     pub fn get_scheduled_query_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_scheduled_query_arn()
     }
-    /// <p>The timestamp in UTC. Query will be run as if it was invoked at this timestamp.</p>
+    /// <p>The timestamp in UTC. Query will be run as if it was invoked at this timestamp. </p>
     pub fn invocation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.invocation_time(input);
         self
     }
-    /// <p>The timestamp in UTC. Query will be run as if it was invoked at this timestamp.</p>
+    /// <p>The timestamp in UTC. Query will be run as if it was invoked at this timestamp. </p>
     pub fn set_invocation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_invocation_time(input);
         self
     }
-    /// <p>The timestamp in UTC. Query will be run as if it was invoked at this timestamp.</p>
+    /// <p>The timestamp in UTC. Query will be run as if it was invoked at this timestamp. </p>
     pub fn get_invocation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_invocation_time()
     }
-    /// <p>Not used.</p>
+    /// <p>Not used. </p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p>Not used.</p>
+    /// <p>Not used. </p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p>Not used.</p>
+    /// <p>Not used. </p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }

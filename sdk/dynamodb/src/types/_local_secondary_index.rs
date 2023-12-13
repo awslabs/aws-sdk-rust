@@ -8,16 +8,14 @@ pub struct LocalSecondaryIndex {
     pub index_name: ::std::string::String,
     /// <p>The complete key schema for the local secondary index, consisting of one or more pairs of attribute names and key types:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>HASH</code> - partition key</p></li>
-    /// <li>
-    /// <p><code>RANGE</code> - sort key</p></li>
-    /// </ul><note>
+    /// <li> <p> <code>HASH</code> - partition key</p> </li>
+    /// <li> <p> <code>RANGE</code> - sort key</p> </li>
+    /// </ul> <note>
     /// <p>The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB's usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values.</p>
     /// <p>The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value.</p>
     /// </note>
     pub key_schema: ::std::vec::Vec<crate::types::KeySchemaElement>,
-    /// <p>Represents attributes that are copied (projected) from the table into the local secondary index. These are in addition to the primary key attributes and index key attributes, which are automatically projected.</p>
+    /// <p>Represents attributes that are copied (projected) from the table into the local secondary index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. </p>
     pub projection: ::std::option::Option<crate::types::Projection>,
 }
 impl LocalSecondaryIndex {
@@ -28,11 +26,9 @@ impl LocalSecondaryIndex {
     }
     /// <p>The complete key schema for the local secondary index, consisting of one or more pairs of attribute names and key types:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>HASH</code> - partition key</p></li>
-    /// <li>
-    /// <p><code>RANGE</code> - sort key</p></li>
-    /// </ul><note>
+    /// <li> <p> <code>HASH</code> - partition key</p> </li>
+    /// <li> <p> <code>RANGE</code> - sort key</p> </li>
+    /// </ul> <note>
     /// <p>The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB's usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values.</p>
     /// <p>The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value.</p>
     /// </note>
@@ -40,7 +36,7 @@ impl LocalSecondaryIndex {
         use std::ops::Deref;
         self.key_schema.deref()
     }
-    /// <p>Represents attributes that are copied (projected) from the table into the local secondary index. These are in addition to the primary key attributes and index key attributes, which are automatically projected.</p>
+    /// <p>Represents attributes that are copied (projected) from the table into the local secondary index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. </p>
     pub fn projection(&self) -> ::std::option::Option<&crate::types::Projection> {
         self.projection.as_ref()
     }
@@ -82,11 +78,9 @@ impl LocalSecondaryIndexBuilder {
     ///
     /// <p>The complete key schema for the local secondary index, consisting of one or more pairs of attribute names and key types:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>HASH</code> - partition key</p></li>
-    /// <li>
-    /// <p><code>RANGE</code> - sort key</p></li>
-    /// </ul><note>
+    /// <li> <p> <code>HASH</code> - partition key</p> </li>
+    /// <li> <p> <code>RANGE</code> - sort key</p> </li>
+    /// </ul> <note>
     /// <p>The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB's usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values.</p>
     /// <p>The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value.</p>
     /// </note>
@@ -98,11 +92,9 @@ impl LocalSecondaryIndexBuilder {
     }
     /// <p>The complete key schema for the local secondary index, consisting of one or more pairs of attribute names and key types:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>HASH</code> - partition key</p></li>
-    /// <li>
-    /// <p><code>RANGE</code> - sort key</p></li>
-    /// </ul><note>
+    /// <li> <p> <code>HASH</code> - partition key</p> </li>
+    /// <li> <p> <code>RANGE</code> - sort key</p> </li>
+    /// </ul> <note>
     /// <p>The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB's usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values.</p>
     /// <p>The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value.</p>
     /// </note>
@@ -112,29 +104,27 @@ impl LocalSecondaryIndexBuilder {
     }
     /// <p>The complete key schema for the local secondary index, consisting of one or more pairs of attribute names and key types:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>HASH</code> - partition key</p></li>
-    /// <li>
-    /// <p><code>RANGE</code> - sort key</p></li>
-    /// </ul><note>
+    /// <li> <p> <code>HASH</code> - partition key</p> </li>
+    /// <li> <p> <code>RANGE</code> - sort key</p> </li>
+    /// </ul> <note>
     /// <p>The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB's usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values.</p>
     /// <p>The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value.</p>
     /// </note>
     pub fn get_key_schema(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KeySchemaElement>> {
         &self.key_schema
     }
-    /// <p>Represents attributes that are copied (projected) from the table into the local secondary index. These are in addition to the primary key attributes and index key attributes, which are automatically projected.</p>
+    /// <p>Represents attributes that are copied (projected) from the table into the local secondary index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. </p>
     /// This field is required.
     pub fn projection(mut self, input: crate::types::Projection) -> Self {
         self.projection = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Represents attributes that are copied (projected) from the table into the local secondary index. These are in addition to the primary key attributes and index key attributes, which are automatically projected.</p>
+    /// <p>Represents attributes that are copied (projected) from the table into the local secondary index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. </p>
     pub fn set_projection(mut self, input: ::std::option::Option<crate::types::Projection>) -> Self {
         self.projection = input;
         self
     }
-    /// <p>Represents attributes that are copied (projected) from the table into the local secondary index. These are in addition to the primary key attributes and index key attributes, which are automatically projected.</p>
+    /// <p>Represents attributes that are copied (projected) from the table into the local secondary index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. </p>
     pub fn get_projection(&self) -> &::std::option::Option<crate::types::Projection> {
         &self.projection
     }

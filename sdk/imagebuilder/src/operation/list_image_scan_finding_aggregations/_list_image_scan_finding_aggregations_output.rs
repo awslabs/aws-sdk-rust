@@ -6,16 +6,12 @@ pub struct ListImageScanFindingAggregationsOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The aggregation type specifies what type of key is used to group the image scan findings. Image Builder returns results based on the request filter. If you didn't specify a filter in the request, the type defaults to <code>accountId</code>.</p>
-    /// <p class="title"><b>Aggregation types</b></p>
+    /// <p class="title"> <b>Aggregation types</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>accountId</p></li>
-    /// <li>
-    /// <p>imageBuildVersionArn</p></li>
-    /// <li>
-    /// <p>imagePipelineArn</p></li>
-    /// <li>
-    /// <p>vulnerabilityId</p></li>
+    /// <li> <p>accountId</p> </li>
+    /// <li> <p>imageBuildVersionArn</p> </li>
+    /// <li> <p>imagePipelineArn</p> </li>
+    /// <li> <p>vulnerabilityId</p> </li>
     /// </ul>
     /// <p>Each aggregation includes counts by severity level for medium severity and higher level findings, plus a total for all of the findings for each key value.</p>
     pub aggregation_type: ::std::option::Option<::std::string::String>,
@@ -31,16 +27,12 @@ impl ListImageScanFindingAggregationsOutput {
         self.request_id.as_deref()
     }
     /// <p>The aggregation type specifies what type of key is used to group the image scan findings. Image Builder returns results based on the request filter. If you didn't specify a filter in the request, the type defaults to <code>accountId</code>.</p>
-    /// <p class="title"><b>Aggregation types</b></p>
+    /// <p class="title"> <b>Aggregation types</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>accountId</p></li>
-    /// <li>
-    /// <p>imageBuildVersionArn</p></li>
-    /// <li>
-    /// <p>imagePipelineArn</p></li>
-    /// <li>
-    /// <p>vulnerabilityId</p></li>
+    /// <li> <p>accountId</p> </li>
+    /// <li> <p>imageBuildVersionArn</p> </li>
+    /// <li> <p>imagePipelineArn</p> </li>
+    /// <li> <p>vulnerabilityId</p> </li>
     /// </ul>
     /// <p>Each aggregation includes counts by severity level for medium severity and higher level findings, plus a total for all of the findings for each key value.</p>
     pub fn aggregation_type(&self) -> ::std::option::Option<&str> {
@@ -95,16 +87,12 @@ impl ListImageScanFindingAggregationsOutputBuilder {
         &self.request_id
     }
     /// <p>The aggregation type specifies what type of key is used to group the image scan findings. Image Builder returns results based on the request filter. If you didn't specify a filter in the request, the type defaults to <code>accountId</code>.</p>
-    /// <p class="title"><b>Aggregation types</b></p>
+    /// <p class="title"> <b>Aggregation types</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>accountId</p></li>
-    /// <li>
-    /// <p>imageBuildVersionArn</p></li>
-    /// <li>
-    /// <p>imagePipelineArn</p></li>
-    /// <li>
-    /// <p>vulnerabilityId</p></li>
+    /// <li> <p>accountId</p> </li>
+    /// <li> <p>imageBuildVersionArn</p> </li>
+    /// <li> <p>imagePipelineArn</p> </li>
+    /// <li> <p>vulnerabilityId</p> </li>
     /// </ul>
     /// <p>Each aggregation includes counts by severity level for medium severity and higher level findings, plus a total for all of the findings for each key value.</p>
     pub fn aggregation_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -112,16 +100,12 @@ impl ListImageScanFindingAggregationsOutputBuilder {
         self
     }
     /// <p>The aggregation type specifies what type of key is used to group the image scan findings. Image Builder returns results based on the request filter. If you didn't specify a filter in the request, the type defaults to <code>accountId</code>.</p>
-    /// <p class="title"><b>Aggregation types</b></p>
+    /// <p class="title"> <b>Aggregation types</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>accountId</p></li>
-    /// <li>
-    /// <p>imageBuildVersionArn</p></li>
-    /// <li>
-    /// <p>imagePipelineArn</p></li>
-    /// <li>
-    /// <p>vulnerabilityId</p></li>
+    /// <li> <p>accountId</p> </li>
+    /// <li> <p>imageBuildVersionArn</p> </li>
+    /// <li> <p>imagePipelineArn</p> </li>
+    /// <li> <p>vulnerabilityId</p> </li>
     /// </ul>
     /// <p>Each aggregation includes counts by severity level for medium severity and higher level findings, plus a total for all of the findings for each key value.</p>
     pub fn set_aggregation_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -129,16 +113,12 @@ impl ListImageScanFindingAggregationsOutputBuilder {
         self
     }
     /// <p>The aggregation type specifies what type of key is used to group the image scan findings. Image Builder returns results based on the request filter. If you didn't specify a filter in the request, the type defaults to <code>accountId</code>.</p>
-    /// <p class="title"><b>Aggregation types</b></p>
+    /// <p class="title"> <b>Aggregation types</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>accountId</p></li>
-    /// <li>
-    /// <p>imageBuildVersionArn</p></li>
-    /// <li>
-    /// <p>imagePipelineArn</p></li>
-    /// <li>
-    /// <p>vulnerabilityId</p></li>
+    /// <li> <p>accountId</p> </li>
+    /// <li> <p>imageBuildVersionArn</p> </li>
+    /// <li> <p>imagePipelineArn</p> </li>
+    /// <li> <p>vulnerabilityId</p> </li>
     /// </ul>
     /// <p>Each aggregation includes counts by severity level for medium severity and higher level findings, plus a total for all of the findings for each key value.</p>
     pub fn get_aggregation_type(&self) -> &::std::option::Option<::std::string::String> {

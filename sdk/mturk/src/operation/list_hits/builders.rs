@@ -22,7 +22,7 @@ impl ListHiTsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListHITs`.
 ///
-/// <p>The <code>ListHITs</code> operation returns all of a Requester's HITs. The operation returns HITs of any status, except for HITs that have been deleted of with the DeleteHIT operation or that have been auto-deleted.</p>
+/// <p> The <code>ListHITs</code> operation returns all of a Requester's HITs. The operation returns HITs of any status, except for HITs that have been deleted of with the DeleteHIT operation or that have been auto-deleted. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListHITsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

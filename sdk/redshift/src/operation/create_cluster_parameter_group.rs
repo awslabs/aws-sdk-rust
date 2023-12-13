@@ -251,7 +251,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateCluster
 pub enum CreateClusterParameterGroupError {
     /// <p>A cluster parameter group with the same name already exists.</p>
     ClusterParameterGroupAlreadyExistsFault(crate::types::error::ClusterParameterGroupAlreadyExistsFault),
-    /// <p>The request would result in the user exceeding the allowed number of cluster parameter groups. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+    /// <p>The request would result in the user exceeding the allowed number of cluster parameter groups. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
     ClusterParameterGroupQuotaExceededFault(crate::types::error::ClusterParameterGroupQuotaExceededFault),
     /// <p>The tag is invalid.</p>
     InvalidTagFault(crate::types::error::InvalidTagFault),

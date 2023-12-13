@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetListsMetadataOutput {
-    /// <p>The metadata of the specified list or all lists under the account.</p>
+    /// <p> The metadata of the specified list or all lists under the account. </p>
     pub lists: ::std::option::Option<::std::vec::Vec<crate::types::AllowDenyList>>,
-    /// <p>The next page token.</p>
+    /// <p> The next page token. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetListsMetadataOutput {
-    /// <p>The metadata of the specified list or all lists under the account.</p>
+    /// <p> The metadata of the specified list or all lists under the account. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lists.is_none()`.
     pub fn lists(&self) -> &[crate::types::AllowDenyList] {
         self.lists.as_deref().unwrap_or_default()
     }
-    /// <p>The next page token.</p>
+    /// <p> The next page token. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -46,33 +46,33 @@ impl GetListsMetadataOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_lists`](Self::set_lists).
     ///
-    /// <p>The metadata of the specified list or all lists under the account.</p>
+    /// <p> The metadata of the specified list or all lists under the account. </p>
     pub fn lists(mut self, input: crate::types::AllowDenyList) -> Self {
         let mut v = self.lists.unwrap_or_default();
         v.push(input);
         self.lists = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The metadata of the specified list or all lists under the account.</p>
+    /// <p> The metadata of the specified list or all lists under the account. </p>
     pub fn set_lists(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AllowDenyList>>) -> Self {
         self.lists = input;
         self
     }
-    /// <p>The metadata of the specified list or all lists under the account.</p>
+    /// <p> The metadata of the specified list or all lists under the account. </p>
     pub fn get_lists(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AllowDenyList>> {
         &self.lists
     }
-    /// <p>The next page token.</p>
+    /// <p> The next page token. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The next page token.</p>
+    /// <p> The next page token. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The next page token.</p>
+    /// <p> The next page token. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

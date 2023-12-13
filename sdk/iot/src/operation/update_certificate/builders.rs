@@ -126,22 +126,22 @@ impl UpdateCertificateFluentBuilder {
         self.inner.get_certificate_id()
     }
     /// <p>The new status.</p>
-    /// <p><b>Note:</b> Setting the status to PENDING_TRANSFER or PENDING_ACTIVATION will result in an exception being thrown. PENDING_TRANSFER and PENDING_ACTIVATION are statuses used internally by IoT. They are not intended for developer use.</p>
-    /// <p><b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
+    /// <p> <b>Note:</b> Setting the status to PENDING_TRANSFER or PENDING_ACTIVATION will result in an exception being thrown. PENDING_TRANSFER and PENDING_ACTIVATION are statuses used internally by IoT. They are not intended for developer use.</p>
+    /// <p> <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
     pub fn new_status(mut self, input: crate::types::CertificateStatus) -> Self {
         self.inner = self.inner.new_status(input);
         self
     }
     /// <p>The new status.</p>
-    /// <p><b>Note:</b> Setting the status to PENDING_TRANSFER or PENDING_ACTIVATION will result in an exception being thrown. PENDING_TRANSFER and PENDING_ACTIVATION are statuses used internally by IoT. They are not intended for developer use.</p>
-    /// <p><b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
+    /// <p> <b>Note:</b> Setting the status to PENDING_TRANSFER or PENDING_ACTIVATION will result in an exception being thrown. PENDING_TRANSFER and PENDING_ACTIVATION are statuses used internally by IoT. They are not intended for developer use.</p>
+    /// <p> <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
     pub fn set_new_status(mut self, input: ::std::option::Option<crate::types::CertificateStatus>) -> Self {
         self.inner = self.inner.set_new_status(input);
         self
     }
     /// <p>The new status.</p>
-    /// <p><b>Note:</b> Setting the status to PENDING_TRANSFER or PENDING_ACTIVATION will result in an exception being thrown. PENDING_TRANSFER and PENDING_ACTIVATION are statuses used internally by IoT. They are not intended for developer use.</p>
-    /// <p><b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
+    /// <p> <b>Note:</b> Setting the status to PENDING_TRANSFER or PENDING_ACTIVATION will result in an exception being thrown. PENDING_TRANSFER and PENDING_ACTIVATION are statuses used internally by IoT. They are not intended for developer use.</p>
+    /// <p> <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
     pub fn get_new_status(&self) -> &::std::option::Option<crate::types::CertificateStatus> {
         self.inner.get_new_status()
     }

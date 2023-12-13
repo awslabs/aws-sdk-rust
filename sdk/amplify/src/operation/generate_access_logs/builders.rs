@@ -22,7 +22,7 @@ impl GenerateAccessLogsInputBuilder {
 }
 /// Fluent builder constructing a request to `GenerateAccessLogs`.
 ///
-/// <p>Returns the website access logs for a specific time range using a presigned URL.</p>
+/// <p>Returns the website access logs for a specific time range using a presigned URL. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GenerateAccessLogsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,59 +108,59 @@ impl GenerateAccessLogsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The time at which the logs should start. The time range specified is inclusive of the start time.</p>
+    /// <p>The time at which the logs should start. The time range specified is inclusive of the start time. </p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_time(input);
         self
     }
-    /// <p>The time at which the logs should start. The time range specified is inclusive of the start time.</p>
+    /// <p>The time at which the logs should start. The time range specified is inclusive of the start time. </p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
-    /// <p>The time at which the logs should start. The time range specified is inclusive of the start time.</p>
+    /// <p>The time at which the logs should start. The time range specified is inclusive of the start time. </p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_start_time()
     }
-    /// <p>The time at which the logs should end. The time range specified is inclusive of the end time.</p>
+    /// <p>The time at which the logs should end. The time range specified is inclusive of the end time. </p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.end_time(input);
         self
     }
-    /// <p>The time at which the logs should end. The time range specified is inclusive of the end time.</p>
+    /// <p>The time at which the logs should end. The time range specified is inclusive of the end time. </p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }
-    /// <p>The time at which the logs should end. The time range specified is inclusive of the end time.</p>
+    /// <p>The time at which the logs should end. The time range specified is inclusive of the end time. </p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_end_time()
     }
-    /// <p>The name of the domain.</p>
+    /// <p>The name of the domain. </p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_name(input.into());
         self
     }
-    /// <p>The name of the domain.</p>
+    /// <p>The name of the domain. </p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_name(input);
         self
     }
-    /// <p>The name of the domain.</p>
+    /// <p>The name of the domain. </p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_name()
     }
-    /// <p>The unique ID for an Amplify app.</p>
+    /// <p>The unique ID for an Amplify app. </p>
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_id(input.into());
         self
     }
-    /// <p>The unique ID for an Amplify app.</p>
+    /// <p>The unique ID for an Amplify app. </p>
     pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_id(input);
         self
     }
-    /// <p>The unique ID for an Amplify app.</p>
+    /// <p>The unique ID for an Amplify app. </p>
     pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_app_id()
     }

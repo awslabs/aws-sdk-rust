@@ -24,32 +24,20 @@ impl GetReservationCoverageInputBuilder {
 ///
 /// <p>Retrieves the reservation coverage for your account, which you can use to see how much of your Amazon Elastic Compute Cloud, Amazon ElastiCache, Amazon Relational Database Service, or Amazon Redshift usage is covered by a reservation. An organization's management account can see the coverage of the associated member accounts. This supports dimensions, Cost Categories, and nested expressions. For any time period, you can filter data about reservation usage by the following dimensions:</p>
 /// <ul>
-/// <li>
-/// <p>AZ</p></li>
-/// <li>
-/// <p>CACHE_ENGINE</p></li>
-/// <li>
-/// <p>DATABASE_ENGINE</p></li>
-/// <li>
-/// <p>DEPLOYMENT_OPTION</p></li>
-/// <li>
-/// <p>INSTANCE_TYPE</p></li>
-/// <li>
-/// <p>LINKED_ACCOUNT</p></li>
-/// <li>
-/// <p>OPERATING_SYSTEM</p></li>
-/// <li>
-/// <p>PLATFORM</p></li>
-/// <li>
-/// <p>REGION</p></li>
-/// <li>
-/// <p>SERVICE</p></li>
-/// <li>
-/// <p>TAG</p></li>
-/// <li>
-/// <p>TENANCY</p></li>
+/// <li> <p>AZ</p> </li>
+/// <li> <p>CACHE_ENGINE</p> </li>
+/// <li> <p>DATABASE_ENGINE</p> </li>
+/// <li> <p>DEPLOYMENT_OPTION</p> </li>
+/// <li> <p>INSTANCE_TYPE</p> </li>
+/// <li> <p>LINKED_ACCOUNT</p> </li>
+/// <li> <p>OPERATING_SYSTEM</p> </li>
+/// <li> <p>PLATFORM</p> </li>
+/// <li> <p>REGION</p> </li>
+/// <li> <p>SERVICE</p> </li>
+/// <li> <p>TAG</p> </li>
+/// <li> <p>TENANCY</p> </li>
 /// </ul>
-/// <p>To determine valid values for a dimension, use the <code>GetDimensionValues</code> operation.</p>
+/// <p>To determine valid values for a dimension, use the <code>GetDimensionValues</code> operation. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetReservationCoverageFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -135,17 +123,17 @@ impl GetReservationCoverageFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The start and end dates of the period that you want to retrieve data about reservation coverage for. You can retrieve data for a maximum of 13 months: the last 12 months and the current month. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
+    /// <p>The start and end dates of the period that you want to retrieve data about reservation coverage for. You can retrieve data for a maximum of 13 months: the last 12 months and the current month. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. </p>
     pub fn time_period(mut self, input: crate::types::DateInterval) -> Self {
         self.inner = self.inner.time_period(input);
         self
     }
-    /// <p>The start and end dates of the period that you want to retrieve data about reservation coverage for. You can retrieve data for a maximum of 13 months: the last 12 months and the current month. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
+    /// <p>The start and end dates of the period that you want to retrieve data about reservation coverage for. You can retrieve data for a maximum of 13 months: the last 12 months and the current month. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. </p>
     pub fn set_time_period(mut self, input: ::std::option::Option<crate::types::DateInterval>) -> Self {
         self.inner = self.inner.set_time_period(input);
         self
     }
-    /// <p>The start and end dates of the period that you want to retrieve data about reservation coverage for. You can retrieve data for a maximum of 13 months: the last 12 months and the current month. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
+    /// <p>The start and end dates of the period that you want to retrieve data about reservation coverage for. You can retrieve data for a maximum of 13 months: the last 12 months and the current month. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. </p>
     pub fn get_time_period(&self) -> &::std::option::Option<crate::types::DateInterval> {
         self.inner.get_time_period()
     }
@@ -155,28 +143,17 @@ impl GetReservationCoverageFluentBuilder {
     ///
     /// <p>You can group the data by the following attributes:</p>
     /// <ul>
-    /// <li>
-    /// <p>AZ</p></li>
-    /// <li>
-    /// <p>CACHE_ENGINE</p></li>
-    /// <li>
-    /// <p>DATABASE_ENGINE</p></li>
-    /// <li>
-    /// <p>DEPLOYMENT_OPTION</p></li>
-    /// <li>
-    /// <p>INSTANCE_TYPE</p></li>
-    /// <li>
-    /// <p>INVOICING_ENTITY</p></li>
-    /// <li>
-    /// <p>LINKED_ACCOUNT</p></li>
-    /// <li>
-    /// <p>OPERATING_SYSTEM</p></li>
-    /// <li>
-    /// <p>PLATFORM</p></li>
-    /// <li>
-    /// <p>REGION</p></li>
-    /// <li>
-    /// <p>TENANCY</p></li>
+    /// <li> <p>AZ</p> </li>
+    /// <li> <p>CACHE_ENGINE</p> </li>
+    /// <li> <p>DATABASE_ENGINE</p> </li>
+    /// <li> <p>DEPLOYMENT_OPTION</p> </li>
+    /// <li> <p>INSTANCE_TYPE</p> </li>
+    /// <li> <p>INVOICING_ENTITY</p> </li>
+    /// <li> <p>LINKED_ACCOUNT</p> </li>
+    /// <li> <p>OPERATING_SYSTEM</p> </li>
+    /// <li> <p>PLATFORM</p> </li>
+    /// <li> <p>REGION</p> </li>
+    /// <li> <p>TENANCY</p> </li>
     /// </ul>
     pub fn group_by(mut self, input: crate::types::GroupDefinition) -> Self {
         self.inner = self.inner.group_by(input);
@@ -184,28 +161,17 @@ impl GetReservationCoverageFluentBuilder {
     }
     /// <p>You can group the data by the following attributes:</p>
     /// <ul>
-    /// <li>
-    /// <p>AZ</p></li>
-    /// <li>
-    /// <p>CACHE_ENGINE</p></li>
-    /// <li>
-    /// <p>DATABASE_ENGINE</p></li>
-    /// <li>
-    /// <p>DEPLOYMENT_OPTION</p></li>
-    /// <li>
-    /// <p>INSTANCE_TYPE</p></li>
-    /// <li>
-    /// <p>INVOICING_ENTITY</p></li>
-    /// <li>
-    /// <p>LINKED_ACCOUNT</p></li>
-    /// <li>
-    /// <p>OPERATING_SYSTEM</p></li>
-    /// <li>
-    /// <p>PLATFORM</p></li>
-    /// <li>
-    /// <p>REGION</p></li>
-    /// <li>
-    /// <p>TENANCY</p></li>
+    /// <li> <p>AZ</p> </li>
+    /// <li> <p>CACHE_ENGINE</p> </li>
+    /// <li> <p>DATABASE_ENGINE</p> </li>
+    /// <li> <p>DEPLOYMENT_OPTION</p> </li>
+    /// <li> <p>INSTANCE_TYPE</p> </li>
+    /// <li> <p>INVOICING_ENTITY</p> </li>
+    /// <li> <p>LINKED_ACCOUNT</p> </li>
+    /// <li> <p>OPERATING_SYSTEM</p> </li>
+    /// <li> <p>PLATFORM</p> </li>
+    /// <li> <p>REGION</p> </li>
+    /// <li> <p>TENANCY</p> </li>
     /// </ul>
     pub fn set_group_by(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GroupDefinition>>) -> Self {
         self.inner = self.inner.set_group_by(input);
@@ -213,28 +179,17 @@ impl GetReservationCoverageFluentBuilder {
     }
     /// <p>You can group the data by the following attributes:</p>
     /// <ul>
-    /// <li>
-    /// <p>AZ</p></li>
-    /// <li>
-    /// <p>CACHE_ENGINE</p></li>
-    /// <li>
-    /// <p>DATABASE_ENGINE</p></li>
-    /// <li>
-    /// <p>DEPLOYMENT_OPTION</p></li>
-    /// <li>
-    /// <p>INSTANCE_TYPE</p></li>
-    /// <li>
-    /// <p>INVOICING_ENTITY</p></li>
-    /// <li>
-    /// <p>LINKED_ACCOUNT</p></li>
-    /// <li>
-    /// <p>OPERATING_SYSTEM</p></li>
-    /// <li>
-    /// <p>PLATFORM</p></li>
-    /// <li>
-    /// <p>REGION</p></li>
-    /// <li>
-    /// <p>TENANCY</p></li>
+    /// <li> <p>AZ</p> </li>
+    /// <li> <p>CACHE_ENGINE</p> </li>
+    /// <li> <p>DATABASE_ENGINE</p> </li>
+    /// <li> <p>DEPLOYMENT_OPTION</p> </li>
+    /// <li> <p>INSTANCE_TYPE</p> </li>
+    /// <li> <p>INVOICING_ENTITY</p> </li>
+    /// <li> <p>LINKED_ACCOUNT</p> </li>
+    /// <li> <p>OPERATING_SYSTEM</p> </li>
+    /// <li> <p>PLATFORM</p> </li>
+    /// <li> <p>REGION</p> </li>
+    /// <li> <p>TENANCY</p> </li>
     /// </ul>
     pub fn get_group_by(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupDefinition>> {
         self.inner.get_group_by()
@@ -261,32 +216,20 @@ impl GetReservationCoverageFluentBuilder {
     }
     /// <p>Filters utilization data by dimensions. You can filter by the following dimensions:</p>
     /// <ul>
-    /// <li>
-    /// <p>AZ</p></li>
-    /// <li>
-    /// <p>CACHE_ENGINE</p></li>
-    /// <li>
-    /// <p>DATABASE_ENGINE</p></li>
-    /// <li>
-    /// <p>DEPLOYMENT_OPTION</p></li>
-    /// <li>
-    /// <p>INSTANCE_TYPE</p></li>
-    /// <li>
-    /// <p>LINKED_ACCOUNT</p></li>
-    /// <li>
-    /// <p>OPERATING_SYSTEM</p></li>
-    /// <li>
-    /// <p>PLATFORM</p></li>
-    /// <li>
-    /// <p>REGION</p></li>
-    /// <li>
-    /// <p>SERVICE</p></li>
-    /// <li>
-    /// <p>TAG</p></li>
-    /// <li>
-    /// <p>TENANCY</p></li>
+    /// <li> <p>AZ</p> </li>
+    /// <li> <p>CACHE_ENGINE</p> </li>
+    /// <li> <p>DATABASE_ENGINE</p> </li>
+    /// <li> <p>DEPLOYMENT_OPTION</p> </li>
+    /// <li> <p>INSTANCE_TYPE</p> </li>
+    /// <li> <p>LINKED_ACCOUNT</p> </li>
+    /// <li> <p>OPERATING_SYSTEM</p> </li>
+    /// <li> <p>PLATFORM</p> </li>
+    /// <li> <p>REGION</p> </li>
+    /// <li> <p>SERVICE</p> </li>
+    /// <li> <p>TAG</p> </li>
+    /// <li> <p>TENANCY</p> </li>
     /// </ul>
-    /// <p><code>GetReservationCoverage</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension. You can nest only one level deep. If there are multiple values for a dimension, they are OR'd together.</p>
+    /// <p> <code>GetReservationCoverage</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension. You can nest only one level deep. If there are multiple values for a dimension, they are OR'd together.</p>
     /// <p>If you don't provide a <code>SERVICE</code> filter, Cost Explorer defaults to EC2.</p>
     /// <p>Cost category is also supported.</p>
     pub fn filter(mut self, input: crate::types::Expression) -> Self {
@@ -295,32 +238,20 @@ impl GetReservationCoverageFluentBuilder {
     }
     /// <p>Filters utilization data by dimensions. You can filter by the following dimensions:</p>
     /// <ul>
-    /// <li>
-    /// <p>AZ</p></li>
-    /// <li>
-    /// <p>CACHE_ENGINE</p></li>
-    /// <li>
-    /// <p>DATABASE_ENGINE</p></li>
-    /// <li>
-    /// <p>DEPLOYMENT_OPTION</p></li>
-    /// <li>
-    /// <p>INSTANCE_TYPE</p></li>
-    /// <li>
-    /// <p>LINKED_ACCOUNT</p></li>
-    /// <li>
-    /// <p>OPERATING_SYSTEM</p></li>
-    /// <li>
-    /// <p>PLATFORM</p></li>
-    /// <li>
-    /// <p>REGION</p></li>
-    /// <li>
-    /// <p>SERVICE</p></li>
-    /// <li>
-    /// <p>TAG</p></li>
-    /// <li>
-    /// <p>TENANCY</p></li>
+    /// <li> <p>AZ</p> </li>
+    /// <li> <p>CACHE_ENGINE</p> </li>
+    /// <li> <p>DATABASE_ENGINE</p> </li>
+    /// <li> <p>DEPLOYMENT_OPTION</p> </li>
+    /// <li> <p>INSTANCE_TYPE</p> </li>
+    /// <li> <p>LINKED_ACCOUNT</p> </li>
+    /// <li> <p>OPERATING_SYSTEM</p> </li>
+    /// <li> <p>PLATFORM</p> </li>
+    /// <li> <p>REGION</p> </li>
+    /// <li> <p>SERVICE</p> </li>
+    /// <li> <p>TAG</p> </li>
+    /// <li> <p>TENANCY</p> </li>
     /// </ul>
-    /// <p><code>GetReservationCoverage</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension. You can nest only one level deep. If there are multiple values for a dimension, they are OR'd together.</p>
+    /// <p> <code>GetReservationCoverage</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension. You can nest only one level deep. If there are multiple values for a dimension, they are OR'd together.</p>
     /// <p>If you don't provide a <code>SERVICE</code> filter, Cost Explorer defaults to EC2.</p>
     /// <p>Cost category is also supported.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::Expression>) -> Self {
@@ -329,32 +260,20 @@ impl GetReservationCoverageFluentBuilder {
     }
     /// <p>Filters utilization data by dimensions. You can filter by the following dimensions:</p>
     /// <ul>
-    /// <li>
-    /// <p>AZ</p></li>
-    /// <li>
-    /// <p>CACHE_ENGINE</p></li>
-    /// <li>
-    /// <p>DATABASE_ENGINE</p></li>
-    /// <li>
-    /// <p>DEPLOYMENT_OPTION</p></li>
-    /// <li>
-    /// <p>INSTANCE_TYPE</p></li>
-    /// <li>
-    /// <p>LINKED_ACCOUNT</p></li>
-    /// <li>
-    /// <p>OPERATING_SYSTEM</p></li>
-    /// <li>
-    /// <p>PLATFORM</p></li>
-    /// <li>
-    /// <p>REGION</p></li>
-    /// <li>
-    /// <p>SERVICE</p></li>
-    /// <li>
-    /// <p>TAG</p></li>
-    /// <li>
-    /// <p>TENANCY</p></li>
+    /// <li> <p>AZ</p> </li>
+    /// <li> <p>CACHE_ENGINE</p> </li>
+    /// <li> <p>DATABASE_ENGINE</p> </li>
+    /// <li> <p>DEPLOYMENT_OPTION</p> </li>
+    /// <li> <p>INSTANCE_TYPE</p> </li>
+    /// <li> <p>LINKED_ACCOUNT</p> </li>
+    /// <li> <p>OPERATING_SYSTEM</p> </li>
+    /// <li> <p>PLATFORM</p> </li>
+    /// <li> <p>REGION</p> </li>
+    /// <li> <p>SERVICE</p> </li>
+    /// <li> <p>TAG</p> </li>
+    /// <li> <p>TENANCY</p> </li>
     /// </ul>
-    /// <p><code>GetReservationCoverage</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension. You can nest only one level deep. If there are multiple values for a dimension, they are OR'd together.</p>
+    /// <p> <code>GetReservationCoverage</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension. You can nest only one level deep. If there are multiple values for a dimension, they are OR'd together.</p>
     /// <p>If you don't provide a <code>SERVICE</code> filter, Cost Explorer defaults to EC2.</p>
     /// <p>Cost category is also supported.</p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::Expression> {
@@ -398,26 +317,16 @@ impl GetReservationCoverageFluentBuilder {
     /// <p>The value by which you want to sort the data.</p>
     /// <p>The following values are supported for <code>Key</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>OnDemandCost</code></p></li>
-    /// <li>
-    /// <p><code>CoverageHoursPercentage</code></p></li>
-    /// <li>
-    /// <p><code>OnDemandHours</code></p></li>
-    /// <li>
-    /// <p><code>ReservedHours</code></p></li>
-    /// <li>
-    /// <p><code>TotalRunningHours</code></p></li>
-    /// <li>
-    /// <p><code>CoverageNormalizedUnitsPercentage</code></p></li>
-    /// <li>
-    /// <p><code>OnDemandNormalizedUnits</code></p></li>
-    /// <li>
-    /// <p><code>ReservedNormalizedUnits</code></p></li>
-    /// <li>
-    /// <p><code>TotalRunningNormalizedUnits</code></p></li>
-    /// <li>
-    /// <p><code>Time</code></p></li>
+    /// <li> <p> <code>OnDemandCost</code> </p> </li>
+    /// <li> <p> <code>CoverageHoursPercentage</code> </p> </li>
+    /// <li> <p> <code>OnDemandHours</code> </p> </li>
+    /// <li> <p> <code>ReservedHours</code> </p> </li>
+    /// <li> <p> <code>TotalRunningHours</code> </p> </li>
+    /// <li> <p> <code>CoverageNormalizedUnitsPercentage</code> </p> </li>
+    /// <li> <p> <code>OnDemandNormalizedUnits</code> </p> </li>
+    /// <li> <p> <code>ReservedNormalizedUnits</code> </p> </li>
+    /// <li> <p> <code>TotalRunningNormalizedUnits</code> </p> </li>
+    /// <li> <p> <code>Time</code> </p> </li>
     /// </ul>
     /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
     pub fn sort_by(mut self, input: crate::types::SortDefinition) -> Self {
@@ -427,26 +336,16 @@ impl GetReservationCoverageFluentBuilder {
     /// <p>The value by which you want to sort the data.</p>
     /// <p>The following values are supported for <code>Key</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>OnDemandCost</code></p></li>
-    /// <li>
-    /// <p><code>CoverageHoursPercentage</code></p></li>
-    /// <li>
-    /// <p><code>OnDemandHours</code></p></li>
-    /// <li>
-    /// <p><code>ReservedHours</code></p></li>
-    /// <li>
-    /// <p><code>TotalRunningHours</code></p></li>
-    /// <li>
-    /// <p><code>CoverageNormalizedUnitsPercentage</code></p></li>
-    /// <li>
-    /// <p><code>OnDemandNormalizedUnits</code></p></li>
-    /// <li>
-    /// <p><code>ReservedNormalizedUnits</code></p></li>
-    /// <li>
-    /// <p><code>TotalRunningNormalizedUnits</code></p></li>
-    /// <li>
-    /// <p><code>Time</code></p></li>
+    /// <li> <p> <code>OnDemandCost</code> </p> </li>
+    /// <li> <p> <code>CoverageHoursPercentage</code> </p> </li>
+    /// <li> <p> <code>OnDemandHours</code> </p> </li>
+    /// <li> <p> <code>ReservedHours</code> </p> </li>
+    /// <li> <p> <code>TotalRunningHours</code> </p> </li>
+    /// <li> <p> <code>CoverageNormalizedUnitsPercentage</code> </p> </li>
+    /// <li> <p> <code>OnDemandNormalizedUnits</code> </p> </li>
+    /// <li> <p> <code>ReservedNormalizedUnits</code> </p> </li>
+    /// <li> <p> <code>TotalRunningNormalizedUnits</code> </p> </li>
+    /// <li> <p> <code>Time</code> </p> </li>
     /// </ul>
     /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::SortDefinition>) -> Self {
@@ -456,26 +355,16 @@ impl GetReservationCoverageFluentBuilder {
     /// <p>The value by which you want to sort the data.</p>
     /// <p>The following values are supported for <code>Key</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>OnDemandCost</code></p></li>
-    /// <li>
-    /// <p><code>CoverageHoursPercentage</code></p></li>
-    /// <li>
-    /// <p><code>OnDemandHours</code></p></li>
-    /// <li>
-    /// <p><code>ReservedHours</code></p></li>
-    /// <li>
-    /// <p><code>TotalRunningHours</code></p></li>
-    /// <li>
-    /// <p><code>CoverageNormalizedUnitsPercentage</code></p></li>
-    /// <li>
-    /// <p><code>OnDemandNormalizedUnits</code></p></li>
-    /// <li>
-    /// <p><code>ReservedNormalizedUnits</code></p></li>
-    /// <li>
-    /// <p><code>TotalRunningNormalizedUnits</code></p></li>
-    /// <li>
-    /// <p><code>Time</code></p></li>
+    /// <li> <p> <code>OnDemandCost</code> </p> </li>
+    /// <li> <p> <code>CoverageHoursPercentage</code> </p> </li>
+    /// <li> <p> <code>OnDemandHours</code> </p> </li>
+    /// <li> <p> <code>ReservedHours</code> </p> </li>
+    /// <li> <p> <code>TotalRunningHours</code> </p> </li>
+    /// <li> <p> <code>CoverageNormalizedUnitsPercentage</code> </p> </li>
+    /// <li> <p> <code>OnDemandNormalizedUnits</code> </p> </li>
+    /// <li> <p> <code>ReservedNormalizedUnits</code> </p> </li>
+    /// <li> <p> <code>TotalRunningNormalizedUnits</code> </p> </li>
+    /// <li> <p> <code>Time</code> </p> </li>
     /// </ul>
     /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::SortDefinition> {

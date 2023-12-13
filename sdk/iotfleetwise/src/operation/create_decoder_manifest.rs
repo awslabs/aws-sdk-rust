@@ -260,7 +260,7 @@ pub enum CreateDecoderManifestError {
     ConflictException(crate::types::error::ConflictException),
     /// <p>The request couldn't be completed because it contains signal decoders with one or more validation errors.</p>
     DecoderManifestValidationException(crate::types::error::DecoderManifestValidationException),
-    /// <p>A service quota was exceeded.</p>
+    /// <p>A service quota was exceeded. </p>
     LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>The resource wasn't found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),

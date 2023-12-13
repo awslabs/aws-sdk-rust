@@ -23,8 +23,8 @@ impl CreateKeyInputBuilder {
 /// Fluent builder constructing a request to `CreateKey`.
 ///
 /// <p>Creates a unique customer managed <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#kms-keys">KMS key</a> in your Amazon Web Services account and Region. You can use a KMS key in cryptographic operations, such as encryption and signing. Some Amazon Web Services services let you use KMS keys that you create and manage to protect your service resources.</p>
-/// <p>A KMS key is a logical representation of a cryptographic key. In addition to the key material used in cryptographic operations, a KMS key includes metadata, such as the key ID, key policy, creation date, description, and key state. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/getting-started.html">Managing keys</a> in the <i>Key Management Service Developer Guide</i></p>
-/// <p>Use the parameters of <code>CreateKey</code> to specify the type of KMS key, the source of its key material, its key policy, description, tags, and other properties.</p><note>
+/// <p>A KMS key is a logical representation of a cryptographic key. In addition to the key material used in cryptographic operations, a KMS key includes metadata, such as the key ID, key policy, creation date, description, and key state. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/getting-started.html">Managing keys</a> in the <i>Key Management Service Developer Guide</i> </p>
+/// <p>Use the parameters of <code>CreateKey</code> to specify the type of KMS key, the source of its key material, its key policy, description, tags, and other properties.</p> <note>
 /// <p>KMS has replaced the term <i>customer master key (CMK)</i> with <i>KMS key</i> and <i>KMS key</i>. The concept has not changed. To prevent breaking changes, KMS is keeping some variations of this term.</p>
 /// </note>
 /// <p>To create different types of KMS keys, use the following guidance:</p>
@@ -36,7 +36,7 @@ impl CreateKeyInputBuilder {
 /// <p>By default, <code>CreateKey</code> creates a symmetric encryption KMS key with key material that KMS generates. This is the basic and most widely used type of KMS key, and provides the best performance.</p>
 /// <p>To create a symmetric encryption KMS key, you don't need to specify any parameters. The default value for <code>KeySpec</code>, <code>SYMMETRIC_DEFAULT</code>, the default value for <code>KeyUsage</code>, <code>ENCRYPT_DECRYPT</code>, and the default value for <code>Origin</code>, <code>AWS_KMS</code>, create a symmetric encryption KMS key with KMS key material.</p>
 /// <p>If you need a key for basic encryption and decryption or you are creating a KMS key to protect your resources in an Amazon Web Services service, create a symmetric encryption KMS key. The key material in a symmetric encryption key never leaves KMS unencrypted. You can use a symmetric encryption KMS key to encrypt and decrypt data up to 4,096 bytes, but they are typically used to generate data keys and data keys pairs. For details, see <code>GenerateDataKey</code> and <code>GenerateDataKeyPair</code>.</p>
-/// <p></p>
+/// <p> </p>
 /// </dd>
 /// <dt>
 /// Asymmetric KMS keys
@@ -44,7 +44,7 @@ impl CreateKeyInputBuilder {
 /// <dd>
 /// <p>To create an asymmetric KMS key, use the <code>KeySpec</code> parameter to specify the type of key material in the KMS key. Then, use the <code>KeyUsage</code> parameter to determine whether the KMS key will be used to encrypt and decrypt or sign and verify. You can't change these properties after the KMS key is created.</p>
 /// <p>Asymmetric KMS keys contain an RSA key pair, Elliptic Curve (ECC) key pair, or an SM2 key pair (China Regions only). The private key in an asymmetric KMS key never leaves KMS unencrypted. However, you can use the <code>GetPublicKey</code> operation to download the public key so it can be used outside of KMS. KMS keys with RSA or SM2 key pairs can be used to encrypt or decrypt data or sign and verify messages (but not both). KMS keys with ECC key pairs can be used only to sign and verify messages. For information about asymmetric KMS keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
-/// <p></p>
+/// <p> </p>
 /// </dd>
 /// <dt>
 /// HMAC KMS key
@@ -52,7 +52,7 @@ impl CreateKeyInputBuilder {
 /// <dd>
 /// <p>To create an HMAC KMS key, set the <code>KeySpec</code> parameter to a key spec value for HMAC KMS keys. Then set the <code>KeyUsage</code> parameter to <code>GENERATE_VERIFY_MAC</code>. You must set the key usage even though <code>GENERATE_VERIFY_MAC</code> is the only valid key usage value for HMAC KMS keys. You can't change these properties after the KMS key is created.</p>
 /// <p>HMAC KMS keys are symmetric keys that never leave KMS unencrypted. You can use HMAC keys to generate (<code>GenerateMac</code>) and verify (<code>VerifyMac</code>) HMAC codes for messages up to 4096 bytes.</p>
-/// <p></p>
+/// <p> </p>
 /// </dd>
 /// <dt>
 /// Multi-Region primary keys
@@ -64,40 +64,37 @@ impl CreateKeyInputBuilder {
 /// <p>To create a multi-Region <i>primary key</i> in the local Amazon Web Services Region, use the <code>MultiRegion</code> parameter with a value of <code>True</code>. To create a multi-Region <i>replica key</i>, that is, a KMS key with the same key ID and key material as a primary key, but in a different Amazon Web Services Region, use the <code>ReplicateKey</code> operation. To change a replica key to a primary key, and its primary key to a replica key, use the <code>UpdatePrimaryRegion</code> operation.</p>
 /// <p>You can create multi-Region KMS keys for all supported KMS key types: symmetric encryption KMS keys, HMAC KMS keys, asymmetric encryption KMS keys, and asymmetric signing KMS keys. You can also create multi-Region keys with imported key material. However, you can't create multi-Region keys in a custom key store.</p>
 /// <p>This operation supports <i>multi-Region keys</i>, an KMS feature that lets you create multiple interoperable KMS keys in different Amazon Web Services Regions. Because these KMS keys have the same key ID, key material, and other metadata, you can use them interchangeably to encrypt data in one Amazon Web Services Region and decrypt it in a different Amazon Web Services Region without re-encrypting the data or making a cross-Region call. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Multi-Region keys in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
-/// <p></p>
+/// <p> </p>
 /// </dd>
 /// <dd>
 /// <p>To import your own key material into a KMS key, begin by creating a KMS key with no key material. To do this, use the <code>Origin</code> parameter of <code>CreateKey</code> with a value of <code>EXTERNAL</code>. Next, use <code>GetParametersForImport</code> operation to get a public key and import token. Use the wrapping public key to encrypt your key material. Then, use <code>ImportKeyMaterial</code> with your import token to import the key material. For step-by-step instructions, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing Key Material</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
 /// <p>You can import key material into KMS keys of all supported KMS key types: symmetric encryption KMS keys, HMAC KMS keys, asymmetric encryption KMS keys, and asymmetric signing KMS keys. You can also create multi-Region keys with imported key material. However, you can't import key material into a KMS key in a custom key store.</p>
 /// <p>To create a multi-Region primary key with imported key material, use the <code>Origin</code> parameter of <code>CreateKey</code> with a value of <code>EXTERNAL</code> and the <code>MultiRegion</code> parameter with a value of <code>True</code>. To create replicas of the multi-Region primary key, use the <code>ReplicateKey</code> operation. For instructions, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-import.html ">Importing key material into multi-Region keys</a>. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Multi-Region keys in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
-/// <p></p>
+/// <p> </p>
 /// </dd>
 /// <dt>
 /// Custom key store
 /// </dt>
 /// <dd>
 /// <p>A <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a> lets you protect your Amazon Web Services resources using keys in a backing key store that you own and manage. When you request a cryptographic operation with a KMS key in a custom key store, the operation is performed in the backing key store using its cryptographic keys.</p>
-/// <p>KMS supports <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-cloudhsm.html">CloudHSM key stores</a> backed by an CloudHSM cluster and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html">external key stores</a> backed by an external key manager outside of Amazon Web Services. When you create a KMS key in an CloudHSM key store, KMS generates an encryption key in the CloudHSM cluster and associates it with the KMS key. When you create a KMS key in an external key store, you specify an existing encryption key in the external key manager.</p><note>
+/// <p>KMS supports <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-cloudhsm.html">CloudHSM key stores</a> backed by an CloudHSM cluster and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html">external key stores</a> backed by an external key manager outside of Amazon Web Services. When you create a KMS key in an CloudHSM key store, KMS generates an encryption key in the CloudHSM cluster and associates it with the KMS key. When you create a KMS key in an external key store, you specify an existing encryption key in the external key manager.</p> <note>
 /// <p>Some external key managers provide a simpler method for creating a KMS key in an external key store. For details, see your external key manager documentation.</p>
 /// </note>
 /// <p>Before you create a KMS key in a custom key store, the <code>ConnectionState</code> of the key store must be <code>CONNECTED</code>. To connect the custom key store, use the <code>ConnectCustomKeyStore</code> operation. To find the <code>ConnectionState</code>, use the <code>DescribeCustomKeyStores</code> operation.</p>
 /// <p>To create a KMS key in a custom key store, use the <code>CustomKeyStoreId</code>. Use the default <code>KeySpec</code> value, <code>SYMMETRIC_DEFAULT</code>, and the default <code>KeyUsage</code> value, <code>ENCRYPT_DECRYPT</code> to create a symmetric encryption key. No other key type is supported in a custom key store.</p>
 /// <p>To create a KMS key in an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-cloudhsm.html">CloudHSM key store</a>, use the <code>Origin</code> parameter with a value of <code>AWS_CLOUDHSM</code>. The CloudHSM cluster that is associated with the custom key store must have at least two active HSMs in different Availability Zones in the Amazon Web Services Region.</p>
-/// <p>To create a KMS key in an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html">external key store</a>, use the <code>Origin</code> parameter with a value of <code>EXTERNAL_KEY_STORE</code> and an <code>XksKeyId</code> parameter that identifies an existing external key.</p><note>
+/// <p>To create a KMS key in an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html">external key store</a>, use the <code>Origin</code> parameter with a value of <code>EXTERNAL_KEY_STORE</code> and an <code>XksKeyId</code> parameter that identifies an existing external key.</p> <note>
 /// <p>Some external key managers provide a simpler method for creating a KMS key in an external key store. For details, see your external key manager documentation.</p>
 /// </note>
 /// </dd>
 /// </dl>
-/// <p><b>Cross-account use</b>: No. You cannot use this operation to create a KMS key in a different Amazon Web Services account.</p>
-/// <p><b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:CreateKey</a> (IAM policy). To use the <code>Tags</code> parameter, <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a> (IAM policy). For examples and information about related permissions, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/iam-policies.html#iam-policy-example-create-key">Allow a user to create KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
-/// <p><b>Related operations:</b></p>
+/// <p> <b>Cross-account use</b>: No. You cannot use this operation to create a KMS key in a different Amazon Web Services account.</p>
+/// <p> <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:CreateKey</a> (IAM policy). To use the <code>Tags</code> parameter, <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a> (IAM policy). For examples and information about related permissions, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/iam-policies.html#iam-policy-example-create-key">Allow a user to create KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+/// <p> <b>Related operations:</b> </p>
 /// <ul>
-/// <li>
-/// <p><code>DescribeKey</code></p></li>
-/// <li>
-/// <p><code>ListKeys</code></p></li>
-/// <li>
-/// <p><code>ScheduleKeyDeletion</code></p></li>
+/// <li> <p> <code>DescribeKey</code> </p> </li>
+/// <li> <p> <code>ListKeys</code> </p> </li>
+/// <li> <p> <code>ScheduleKeyDeletion</code> </p> </li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateKeyFluentBuilder {
@@ -181,12 +178,10 @@ impl CreateKeyFluentBuilder {
     /// <p>The key policy to attach to the KMS key.</p>
     /// <p>If you provide a key policy, it must meet the following criteria:</p>
     /// <ul>
-    /// <li>
-    /// <p>The key policy must allow the calling principal to make a subsequent <code>PutKeyPolicy</code> request on the KMS key. This reduces the risk that the KMS key becomes unmanageable. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-default.html#prevent-unmanageable-key">Default key policy</a> in the <i>Key Management Service Developer Guide</i>. (To omit this condition, set <code>BypassPolicyLockoutSafetyCheck</code> to true.)</p></li>
-    /// <li>
-    /// <p>Each statement in the key policy must contain one or more principals. The principals in the key policy must exist and be visible to KMS. When you create a new Amazon Web Services principal, you might need to enforce a delay before including the new principal in a key policy because the new principal might not be immediately visible to KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p></li>
+    /// <li> <p>The key policy must allow the calling principal to make a subsequent <code>PutKeyPolicy</code> request on the KMS key. This reduces the risk that the KMS key becomes unmanageable. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-default.html#prevent-unmanageable-key">Default key policy</a> in the <i>Key Management Service Developer Guide</i>. (To omit this condition, set <code>BypassPolicyLockoutSafetyCheck</code> to true.)</p> </li>
+    /// <li> <p>Each statement in the key policy must contain one or more principals. The principals in the key policy must exist and be visible to KMS. When you create a new Amazon Web Services principal, you might need to enforce a delay before including the new principal in a key policy because the new principal might not be immediately visible to KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p> </li>
     /// </ul>
-    /// <p>If you do not provide a key policy, KMS attaches a default key policy to the KMS key. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default key policy</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>If you do not provide a key policy, KMS attaches a default key policy to the KMS key. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default key policy</a> in the <i>Key Management Service Developer Guide</i>. </p>
     /// <p>The key policy size quota is 32 kilobytes (32768 bytes).</p>
     /// <p>For help writing and formatting a JSON policy document, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy Reference</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</p>
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -196,12 +191,10 @@ impl CreateKeyFluentBuilder {
     /// <p>The key policy to attach to the KMS key.</p>
     /// <p>If you provide a key policy, it must meet the following criteria:</p>
     /// <ul>
-    /// <li>
-    /// <p>The key policy must allow the calling principal to make a subsequent <code>PutKeyPolicy</code> request on the KMS key. This reduces the risk that the KMS key becomes unmanageable. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-default.html#prevent-unmanageable-key">Default key policy</a> in the <i>Key Management Service Developer Guide</i>. (To omit this condition, set <code>BypassPolicyLockoutSafetyCheck</code> to true.)</p></li>
-    /// <li>
-    /// <p>Each statement in the key policy must contain one or more principals. The principals in the key policy must exist and be visible to KMS. When you create a new Amazon Web Services principal, you might need to enforce a delay before including the new principal in a key policy because the new principal might not be immediately visible to KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p></li>
+    /// <li> <p>The key policy must allow the calling principal to make a subsequent <code>PutKeyPolicy</code> request on the KMS key. This reduces the risk that the KMS key becomes unmanageable. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-default.html#prevent-unmanageable-key">Default key policy</a> in the <i>Key Management Service Developer Guide</i>. (To omit this condition, set <code>BypassPolicyLockoutSafetyCheck</code> to true.)</p> </li>
+    /// <li> <p>Each statement in the key policy must contain one or more principals. The principals in the key policy must exist and be visible to KMS. When you create a new Amazon Web Services principal, you might need to enforce a delay before including the new principal in a key policy because the new principal might not be immediately visible to KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p> </li>
     /// </ul>
-    /// <p>If you do not provide a key policy, KMS attaches a default key policy to the KMS key. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default key policy</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>If you do not provide a key policy, KMS attaches a default key policy to the KMS key. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default key policy</a> in the <i>Key Management Service Developer Guide</i>. </p>
     /// <p>The key policy size quota is 32 kilobytes (32768 bytes).</p>
     /// <p>For help writing and formatting a JSON policy document, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy Reference</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</p>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -211,18 +204,16 @@ impl CreateKeyFluentBuilder {
     /// <p>The key policy to attach to the KMS key.</p>
     /// <p>If you provide a key policy, it must meet the following criteria:</p>
     /// <ul>
-    /// <li>
-    /// <p>The key policy must allow the calling principal to make a subsequent <code>PutKeyPolicy</code> request on the KMS key. This reduces the risk that the KMS key becomes unmanageable. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-default.html#prevent-unmanageable-key">Default key policy</a> in the <i>Key Management Service Developer Guide</i>. (To omit this condition, set <code>BypassPolicyLockoutSafetyCheck</code> to true.)</p></li>
-    /// <li>
-    /// <p>Each statement in the key policy must contain one or more principals. The principals in the key policy must exist and be visible to KMS. When you create a new Amazon Web Services principal, you might need to enforce a delay before including the new principal in a key policy because the new principal might not be immediately visible to KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p></li>
+    /// <li> <p>The key policy must allow the calling principal to make a subsequent <code>PutKeyPolicy</code> request on the KMS key. This reduces the risk that the KMS key becomes unmanageable. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-default.html#prevent-unmanageable-key">Default key policy</a> in the <i>Key Management Service Developer Guide</i>. (To omit this condition, set <code>BypassPolicyLockoutSafetyCheck</code> to true.)</p> </li>
+    /// <li> <p>Each statement in the key policy must contain one or more principals. The principals in the key policy must exist and be visible to KMS. When you create a new Amazon Web Services principal, you might need to enforce a delay before including the new principal in a key policy because the new principal might not be immediately visible to KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p> </li>
     /// </ul>
-    /// <p>If you do not provide a key policy, KMS attaches a default key policy to the KMS key. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default key policy</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>If you do not provide a key policy, KMS attaches a default key policy to the KMS key. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default key policy</a> in the <i>Key Management Service Developer Guide</i>. </p>
     /// <p>The key policy size quota is 32 kilobytes (32768 bytes).</p>
     /// <p>For help writing and formatting a JSON policy document, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy Reference</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</p>
     pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_policy()
     }
-    /// <p>A description of the KMS key. Use a description that helps you decide whether the KMS key is appropriate for a task. The default value is an empty string (no description).</p><important>
+    /// <p>A description of the KMS key. Use a description that helps you decide whether the KMS key is appropriate for a task. The default value is an empty string (no description).</p> <important>
     /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
     /// </important>
     /// <p>To set or change the description after the key is created, use <code>UpdateKeyDescription</code>.</p>
@@ -230,7 +221,7 @@ impl CreateKeyFluentBuilder {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>A description of the KMS key. Use a description that helps you decide whether the KMS key is appropriate for a task. The default value is an empty string (no description).</p><important>
+    /// <p>A description of the KMS key. Use a description that helps you decide whether the KMS key is appropriate for a task. The default value is an empty string (no description).</p> <important>
     /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
     /// </important>
     /// <p>To set or change the description after the key is created, use <code>UpdateKeyDescription</code>.</p>
@@ -238,7 +229,7 @@ impl CreateKeyFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>A description of the KMS key. Use a description that helps you decide whether the KMS key is appropriate for a task. The default value is an empty string (no description).</p><important>
+    /// <p>A description of the KMS key. Use a description that helps you decide whether the KMS key is appropriate for a task. The default value is an empty string (no description).</p> <important>
     /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
     /// </important>
     /// <p>To set or change the description after the key is created, use <code>UpdateKeyDescription</code>.</p>
@@ -248,16 +239,11 @@ impl CreateKeyFluentBuilder {
     /// <p>Determines the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> for which you can use the KMS key. The default value is <code>ENCRYPT_DECRYPT</code>. This parameter is optional when you are creating a symmetric encryption KMS key; otherwise, it is required. You can't change the <code>KeyUsage</code> value after the KMS key is created.</p>
     /// <p>Select only one valid value.</p>
     /// <ul>
-    /// <li>
-    /// <p>For symmetric encryption KMS keys, omit the parameter or specify <code>ENCRYPT_DECRYPT</code>.</p></li>
-    /// <li>
-    /// <p>For HMAC KMS keys (symmetric), specify <code>GENERATE_VERIFY_MAC</code>.</p></li>
-    /// <li>
-    /// <p>For asymmetric KMS keys with RSA key material, specify <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p></li>
-    /// <li>
-    /// <p>For asymmetric KMS keys with ECC key material, specify <code>SIGN_VERIFY</code>.</p></li>
-    /// <li>
-    /// <p>For asymmetric KMS keys with SM2 key material (China Regions only), specify <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p></li>
+    /// <li> <p>For symmetric encryption KMS keys, omit the parameter or specify <code>ENCRYPT_DECRYPT</code>.</p> </li>
+    /// <li> <p>For HMAC KMS keys (symmetric), specify <code>GENERATE_VERIFY_MAC</code>.</p> </li>
+    /// <li> <p>For asymmetric KMS keys with RSA key material, specify <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p> </li>
+    /// <li> <p>For asymmetric KMS keys with ECC key material, specify <code>SIGN_VERIFY</code>.</p> </li>
+    /// <li> <p>For asymmetric KMS keys with SM2 key material (China Regions only), specify <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p> </li>
     /// </ul>
     pub fn key_usage(mut self, input: crate::types::KeyUsageType) -> Self {
         self.inner = self.inner.key_usage(input);
@@ -266,16 +252,11 @@ impl CreateKeyFluentBuilder {
     /// <p>Determines the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> for which you can use the KMS key. The default value is <code>ENCRYPT_DECRYPT</code>. This parameter is optional when you are creating a symmetric encryption KMS key; otherwise, it is required. You can't change the <code>KeyUsage</code> value after the KMS key is created.</p>
     /// <p>Select only one valid value.</p>
     /// <ul>
-    /// <li>
-    /// <p>For symmetric encryption KMS keys, omit the parameter or specify <code>ENCRYPT_DECRYPT</code>.</p></li>
-    /// <li>
-    /// <p>For HMAC KMS keys (symmetric), specify <code>GENERATE_VERIFY_MAC</code>.</p></li>
-    /// <li>
-    /// <p>For asymmetric KMS keys with RSA key material, specify <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p></li>
-    /// <li>
-    /// <p>For asymmetric KMS keys with ECC key material, specify <code>SIGN_VERIFY</code>.</p></li>
-    /// <li>
-    /// <p>For asymmetric KMS keys with SM2 key material (China Regions only), specify <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p></li>
+    /// <li> <p>For symmetric encryption KMS keys, omit the parameter or specify <code>ENCRYPT_DECRYPT</code>.</p> </li>
+    /// <li> <p>For HMAC KMS keys (symmetric), specify <code>GENERATE_VERIFY_MAC</code>.</p> </li>
+    /// <li> <p>For asymmetric KMS keys with RSA key material, specify <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p> </li>
+    /// <li> <p>For asymmetric KMS keys with ECC key material, specify <code>SIGN_VERIFY</code>.</p> </li>
+    /// <li> <p>For asymmetric KMS keys with SM2 key material (China Regions only), specify <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p> </li>
     /// </ul>
     pub fn set_key_usage(mut self, input: ::std::option::Option<crate::types::KeyUsageType>) -> Self {
         self.inner = self.inner.set_key_usage(input);
@@ -284,16 +265,11 @@ impl CreateKeyFluentBuilder {
     /// <p>Determines the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> for which you can use the KMS key. The default value is <code>ENCRYPT_DECRYPT</code>. This parameter is optional when you are creating a symmetric encryption KMS key; otherwise, it is required. You can't change the <code>KeyUsage</code> value after the KMS key is created.</p>
     /// <p>Select only one valid value.</p>
     /// <ul>
-    /// <li>
-    /// <p>For symmetric encryption KMS keys, omit the parameter or specify <code>ENCRYPT_DECRYPT</code>.</p></li>
-    /// <li>
-    /// <p>For HMAC KMS keys (symmetric), specify <code>GENERATE_VERIFY_MAC</code>.</p></li>
-    /// <li>
-    /// <p>For asymmetric KMS keys with RSA key material, specify <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p></li>
-    /// <li>
-    /// <p>For asymmetric KMS keys with ECC key material, specify <code>SIGN_VERIFY</code>.</p></li>
-    /// <li>
-    /// <p>For asymmetric KMS keys with SM2 key material (China Regions only), specify <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p></li>
+    /// <li> <p>For symmetric encryption KMS keys, omit the parameter or specify <code>ENCRYPT_DECRYPT</code>.</p> </li>
+    /// <li> <p>For HMAC KMS keys (symmetric), specify <code>GENERATE_VERIFY_MAC</code>.</p> </li>
+    /// <li> <p>For asymmetric KMS keys with RSA key material, specify <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p> </li>
+    /// <li> <p>For asymmetric KMS keys with ECC key material, specify <code>SIGN_VERIFY</code>.</p> </li>
+    /// <li> <p>For asymmetric KMS keys with SM2 key material (China Regions only), specify <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p> </li>
     /// </ul>
     pub fn get_key_usage(&self) -> &::std::option::Option<crate::types::KeyUsageType> {
         self.inner.get_key_usage()
@@ -319,183 +295,126 @@ impl CreateKeyFluentBuilder {
         self.inner.get_customer_master_key_spec()
     }
     /// <p>Specifies the type of KMS key to create. The default value, <code>SYMMETRIC_DEFAULT</code>, creates a KMS key with a 256-bit AES-GCM key that is used for encryption and decryption, except in China Regions, where it creates a 128-bit symmetric key that uses SM4 encryption. For help choosing a key spec for your KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-types.html#symm-asymm-choose">Choosing a KMS key type</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
-    /// <p>The <code>KeySpec</code> determines whether the KMS key contains a symmetric key or an asymmetric key pair. It also determines the algorithms that the KMS key supports. You can't change the <code>KeySpec</code> after the KMS key is created. To further restrict the algorithms that can be used with the KMS key, use a condition key in its key policy or IAM policy. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-algorithm">kms:EncryptionAlgorithm</a>, <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-mac-algorithm">kms:MacAlgorithm</a> or <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-signing-algorithm">kms:Signing Algorithm</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p><important>
-    /// <p><a href="http://aws.amazon.com/kms/features/#AWS_Service_Integration">Amazon Web Services services that are integrated with KMS</a> use symmetric encryption KMS keys to protect your data. These services do not support asymmetric KMS keys or HMAC KMS keys.</p>
+    /// <p>The <code>KeySpec</code> determines whether the KMS key contains a symmetric key or an asymmetric key pair. It also determines the algorithms that the KMS key supports. You can't change the <code>KeySpec</code> after the KMS key is created. To further restrict the algorithms that can be used with the KMS key, use a condition key in its key policy or IAM policy. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-algorithm">kms:EncryptionAlgorithm</a>, <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-mac-algorithm">kms:MacAlgorithm</a> or <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-signing-algorithm">kms:Signing Algorithm</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> <important>
+    /// <p> <a href="http://aws.amazon.com/kms/features/#AWS_Service_Integration">Amazon Web Services services that are integrated with KMS</a> use symmetric encryption KMS keys to protect your data. These services do not support asymmetric KMS keys or HMAC KMS keys.</p>
     /// </important>
     /// <p>KMS supports the following key specs for KMS keys:</p>
     /// <ul>
-    /// <li>
-    /// <p>Symmetric encryption key (default)</p>
+    /// <li> <p>Symmetric encryption key (default)</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SYMMETRIC_DEFAULT</code></p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p>HMAC keys (symmetric)</p>
+    /// <li> <p> <code>SYMMETRIC_DEFAULT</code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p>HMAC keys (symmetric)</p>
     /// <ul>
-    /// <li>
-    /// <p><code>HMAC_224</code></p></li>
-    /// <li>
-    /// <p><code>HMAC_256</code></p></li>
-    /// <li>
-    /// <p><code>HMAC_384</code></p></li>
-    /// <li>
-    /// <p><code>HMAC_512</code></p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p>Asymmetric RSA key pairs</p>
+    /// <li> <p> <code>HMAC_224</code> </p> </li>
+    /// <li> <p> <code>HMAC_256</code> </p> </li>
+    /// <li> <p> <code>HMAC_384</code> </p> </li>
+    /// <li> <p> <code>HMAC_512</code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p>Asymmetric RSA key pairs</p>
     /// <ul>
-    /// <li>
-    /// <p><code>RSA_2048</code></p></li>
-    /// <li>
-    /// <p><code>RSA_3072</code></p></li>
-    /// <li>
-    /// <p><code>RSA_4096</code></p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p>Asymmetric NIST-recommended elliptic curve key pairs</p>
+    /// <li> <p> <code>RSA_2048</code> </p> </li>
+    /// <li> <p> <code>RSA_3072</code> </p> </li>
+    /// <li> <p> <code>RSA_4096</code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p>Asymmetric NIST-recommended elliptic curve key pairs</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ECC_NIST_P256</code> (secp256r1)</p></li>
-    /// <li>
-    /// <p><code>ECC_NIST_P384</code> (secp384r1)</p></li>
-    /// <li>
-    /// <p><code>ECC_NIST_P521</code> (secp521r1)</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p>Other asymmetric elliptic curve key pairs</p>
+    /// <li> <p> <code>ECC_NIST_P256</code> (secp256r1)</p> </li>
+    /// <li> <p> <code>ECC_NIST_P384</code> (secp384r1)</p> </li>
+    /// <li> <p> <code>ECC_NIST_P521</code> (secp521r1)</p> </li>
+    /// </ul> </li>
+    /// <li> <p>Other asymmetric elliptic curve key pairs</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ECC_SECG_P256K1</code> (secp256k1), commonly used for cryptocurrencies.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p>SM2 key pairs (China Regions only)</p>
+    /// <li> <p> <code>ECC_SECG_P256K1</code> (secp256k1), commonly used for cryptocurrencies.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>SM2 key pairs (China Regions only)</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SM2</code></p></li>
-    /// </ul></li>
+    /// <li> <p> <code>SM2</code> </p> </li>
+    /// </ul> </li>
     /// </ul>
     pub fn key_spec(mut self, input: crate::types::KeySpec) -> Self {
         self.inner = self.inner.key_spec(input);
         self
     }
     /// <p>Specifies the type of KMS key to create. The default value, <code>SYMMETRIC_DEFAULT</code>, creates a KMS key with a 256-bit AES-GCM key that is used for encryption and decryption, except in China Regions, where it creates a 128-bit symmetric key that uses SM4 encryption. For help choosing a key spec for your KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-types.html#symm-asymm-choose">Choosing a KMS key type</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
-    /// <p>The <code>KeySpec</code> determines whether the KMS key contains a symmetric key or an asymmetric key pair. It also determines the algorithms that the KMS key supports. You can't change the <code>KeySpec</code> after the KMS key is created. To further restrict the algorithms that can be used with the KMS key, use a condition key in its key policy or IAM policy. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-algorithm">kms:EncryptionAlgorithm</a>, <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-mac-algorithm">kms:MacAlgorithm</a> or <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-signing-algorithm">kms:Signing Algorithm</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p><important>
-    /// <p><a href="http://aws.amazon.com/kms/features/#AWS_Service_Integration">Amazon Web Services services that are integrated with KMS</a> use symmetric encryption KMS keys to protect your data. These services do not support asymmetric KMS keys or HMAC KMS keys.</p>
+    /// <p>The <code>KeySpec</code> determines whether the KMS key contains a symmetric key or an asymmetric key pair. It also determines the algorithms that the KMS key supports. You can't change the <code>KeySpec</code> after the KMS key is created. To further restrict the algorithms that can be used with the KMS key, use a condition key in its key policy or IAM policy. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-algorithm">kms:EncryptionAlgorithm</a>, <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-mac-algorithm">kms:MacAlgorithm</a> or <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-signing-algorithm">kms:Signing Algorithm</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> <important>
+    /// <p> <a href="http://aws.amazon.com/kms/features/#AWS_Service_Integration">Amazon Web Services services that are integrated with KMS</a> use symmetric encryption KMS keys to protect your data. These services do not support asymmetric KMS keys or HMAC KMS keys.</p>
     /// </important>
     /// <p>KMS supports the following key specs for KMS keys:</p>
     /// <ul>
-    /// <li>
-    /// <p>Symmetric encryption key (default)</p>
+    /// <li> <p>Symmetric encryption key (default)</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SYMMETRIC_DEFAULT</code></p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p>HMAC keys (symmetric)</p>
+    /// <li> <p> <code>SYMMETRIC_DEFAULT</code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p>HMAC keys (symmetric)</p>
     /// <ul>
-    /// <li>
-    /// <p><code>HMAC_224</code></p></li>
-    /// <li>
-    /// <p><code>HMAC_256</code></p></li>
-    /// <li>
-    /// <p><code>HMAC_384</code></p></li>
-    /// <li>
-    /// <p><code>HMAC_512</code></p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p>Asymmetric RSA key pairs</p>
+    /// <li> <p> <code>HMAC_224</code> </p> </li>
+    /// <li> <p> <code>HMAC_256</code> </p> </li>
+    /// <li> <p> <code>HMAC_384</code> </p> </li>
+    /// <li> <p> <code>HMAC_512</code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p>Asymmetric RSA key pairs</p>
     /// <ul>
-    /// <li>
-    /// <p><code>RSA_2048</code></p></li>
-    /// <li>
-    /// <p><code>RSA_3072</code></p></li>
-    /// <li>
-    /// <p><code>RSA_4096</code></p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p>Asymmetric NIST-recommended elliptic curve key pairs</p>
+    /// <li> <p> <code>RSA_2048</code> </p> </li>
+    /// <li> <p> <code>RSA_3072</code> </p> </li>
+    /// <li> <p> <code>RSA_4096</code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p>Asymmetric NIST-recommended elliptic curve key pairs</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ECC_NIST_P256</code> (secp256r1)</p></li>
-    /// <li>
-    /// <p><code>ECC_NIST_P384</code> (secp384r1)</p></li>
-    /// <li>
-    /// <p><code>ECC_NIST_P521</code> (secp521r1)</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p>Other asymmetric elliptic curve key pairs</p>
+    /// <li> <p> <code>ECC_NIST_P256</code> (secp256r1)</p> </li>
+    /// <li> <p> <code>ECC_NIST_P384</code> (secp384r1)</p> </li>
+    /// <li> <p> <code>ECC_NIST_P521</code> (secp521r1)</p> </li>
+    /// </ul> </li>
+    /// <li> <p>Other asymmetric elliptic curve key pairs</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ECC_SECG_P256K1</code> (secp256k1), commonly used for cryptocurrencies.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p>SM2 key pairs (China Regions only)</p>
+    /// <li> <p> <code>ECC_SECG_P256K1</code> (secp256k1), commonly used for cryptocurrencies.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>SM2 key pairs (China Regions only)</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SM2</code></p></li>
-    /// </ul></li>
+    /// <li> <p> <code>SM2</code> </p> </li>
+    /// </ul> </li>
     /// </ul>
     pub fn set_key_spec(mut self, input: ::std::option::Option<crate::types::KeySpec>) -> Self {
         self.inner = self.inner.set_key_spec(input);
         self
     }
     /// <p>Specifies the type of KMS key to create. The default value, <code>SYMMETRIC_DEFAULT</code>, creates a KMS key with a 256-bit AES-GCM key that is used for encryption and decryption, except in China Regions, where it creates a 128-bit symmetric key that uses SM4 encryption. For help choosing a key spec for your KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-types.html#symm-asymm-choose">Choosing a KMS key type</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
-    /// <p>The <code>KeySpec</code> determines whether the KMS key contains a symmetric key or an asymmetric key pair. It also determines the algorithms that the KMS key supports. You can't change the <code>KeySpec</code> after the KMS key is created. To further restrict the algorithms that can be used with the KMS key, use a condition key in its key policy or IAM policy. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-algorithm">kms:EncryptionAlgorithm</a>, <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-mac-algorithm">kms:MacAlgorithm</a> or <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-signing-algorithm">kms:Signing Algorithm</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p><important>
-    /// <p><a href="http://aws.amazon.com/kms/features/#AWS_Service_Integration">Amazon Web Services services that are integrated with KMS</a> use symmetric encryption KMS keys to protect your data. These services do not support asymmetric KMS keys or HMAC KMS keys.</p>
+    /// <p>The <code>KeySpec</code> determines whether the KMS key contains a symmetric key or an asymmetric key pair. It also determines the algorithms that the KMS key supports. You can't change the <code>KeySpec</code> after the KMS key is created. To further restrict the algorithms that can be used with the KMS key, use a condition key in its key policy or IAM policy. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-algorithm">kms:EncryptionAlgorithm</a>, <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-mac-algorithm">kms:MacAlgorithm</a> or <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-signing-algorithm">kms:Signing Algorithm</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> <important>
+    /// <p> <a href="http://aws.amazon.com/kms/features/#AWS_Service_Integration">Amazon Web Services services that are integrated with KMS</a> use symmetric encryption KMS keys to protect your data. These services do not support asymmetric KMS keys or HMAC KMS keys.</p>
     /// </important>
     /// <p>KMS supports the following key specs for KMS keys:</p>
     /// <ul>
-    /// <li>
-    /// <p>Symmetric encryption key (default)</p>
+    /// <li> <p>Symmetric encryption key (default)</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SYMMETRIC_DEFAULT</code></p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p>HMAC keys (symmetric)</p>
+    /// <li> <p> <code>SYMMETRIC_DEFAULT</code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p>HMAC keys (symmetric)</p>
     /// <ul>
-    /// <li>
-    /// <p><code>HMAC_224</code></p></li>
-    /// <li>
-    /// <p><code>HMAC_256</code></p></li>
-    /// <li>
-    /// <p><code>HMAC_384</code></p></li>
-    /// <li>
-    /// <p><code>HMAC_512</code></p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p>Asymmetric RSA key pairs</p>
+    /// <li> <p> <code>HMAC_224</code> </p> </li>
+    /// <li> <p> <code>HMAC_256</code> </p> </li>
+    /// <li> <p> <code>HMAC_384</code> </p> </li>
+    /// <li> <p> <code>HMAC_512</code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p>Asymmetric RSA key pairs</p>
     /// <ul>
-    /// <li>
-    /// <p><code>RSA_2048</code></p></li>
-    /// <li>
-    /// <p><code>RSA_3072</code></p></li>
-    /// <li>
-    /// <p><code>RSA_4096</code></p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p>Asymmetric NIST-recommended elliptic curve key pairs</p>
+    /// <li> <p> <code>RSA_2048</code> </p> </li>
+    /// <li> <p> <code>RSA_3072</code> </p> </li>
+    /// <li> <p> <code>RSA_4096</code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p>Asymmetric NIST-recommended elliptic curve key pairs</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ECC_NIST_P256</code> (secp256r1)</p></li>
-    /// <li>
-    /// <p><code>ECC_NIST_P384</code> (secp384r1)</p></li>
-    /// <li>
-    /// <p><code>ECC_NIST_P521</code> (secp521r1)</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p>Other asymmetric elliptic curve key pairs</p>
+    /// <li> <p> <code>ECC_NIST_P256</code> (secp256r1)</p> </li>
+    /// <li> <p> <code>ECC_NIST_P384</code> (secp384r1)</p> </li>
+    /// <li> <p> <code>ECC_NIST_P521</code> (secp521r1)</p> </li>
+    /// </ul> </li>
+    /// <li> <p>Other asymmetric elliptic curve key pairs</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ECC_SECG_P256K1</code> (secp256k1), commonly used for cryptocurrencies.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p>SM2 key pairs (China Regions only)</p>
+    /// <li> <p> <code>ECC_SECG_P256K1</code> (secp256k1), commonly used for cryptocurrencies.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>SM2 key pairs (China Regions only)</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SM2</code></p></li>
-    /// </ul></li>
+    /// <li> <p> <code>SM2</code> </p> </li>
+    /// </ul> </li>
     /// </ul>
     pub fn get_key_spec(&self) -> &::std::option::Option<crate::types::KeySpec> {
         self.inner.get_key_spec()
@@ -543,7 +462,7 @@ impl CreateKeyFluentBuilder {
     pub fn get_custom_key_store_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_custom_key_store_id()
     }
-    /// <p>Skips ("bypasses") the key policy lockout safety check. The default value is false.</p><important>
+    /// <p>Skips ("bypasses") the key policy lockout safety check. The default value is false.</p> <important>
     /// <p>Setting this value to true increases the risk that the KMS key becomes unmanageable. Do not set this value to true indiscriminately.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-default.html#prevent-unmanageable-key">Default key policy</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// </important>
@@ -552,7 +471,7 @@ impl CreateKeyFluentBuilder {
         self.inner = self.inner.bypass_policy_lockout_safety_check(input);
         self
     }
-    /// <p>Skips ("bypasses") the key policy lockout safety check. The default value is false.</p><important>
+    /// <p>Skips ("bypasses") the key policy lockout safety check. The default value is false.</p> <important>
     /// <p>Setting this value to true increases the risk that the KMS key becomes unmanageable. Do not set this value to true indiscriminately.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-default.html#prevent-unmanageable-key">Default key policy</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// </important>
@@ -561,7 +480,7 @@ impl CreateKeyFluentBuilder {
         self.inner = self.inner.set_bypass_policy_lockout_safety_check(input);
         self
     }
-    /// <p>Skips ("bypasses") the key policy lockout safety check. The default value is false.</p><important>
+    /// <p>Skips ("bypasses") the key policy lockout safety check. The default value is false.</p> <important>
     /// <p>Setting this value to true increases the risk that the KMS key becomes unmanageable. Do not set this value to true indiscriminately.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-default.html#prevent-unmanageable-key">Default key policy</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// </important>
@@ -573,7 +492,7 @@ impl CreateKeyFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>Assigns one or more tags to the KMS key. Use this parameter to tag the KMS key when it is created. To tag an existing KMS key, use the <code>TagResource</code> operation.</p><important>
+    /// <p>Assigns one or more tags to the KMS key. Use this parameter to tag the KMS key when it is created. To tag an existing KMS key, use the <code>TagResource</code> operation.</p> <important>
     /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
     /// </important> <note>
     /// <p>Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
@@ -585,7 +504,7 @@ impl CreateKeyFluentBuilder {
         self.inner = self.inner.tags(input);
         self
     }
-    /// <p>Assigns one or more tags to the KMS key. Use this parameter to tag the KMS key when it is created. To tag an existing KMS key, use the <code>TagResource</code> operation.</p><important>
+    /// <p>Assigns one or more tags to the KMS key. Use this parameter to tag the KMS key when it is created. To tag an existing KMS key, use the <code>TagResource</code> operation.</p> <important>
     /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
     /// </important> <note>
     /// <p>Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
@@ -597,7 +516,7 @@ impl CreateKeyFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>Assigns one or more tags to the KMS key. Use this parameter to tag the KMS key when it is created. To tag an existing KMS key, use the <code>TagResource</code> operation.</p><important>
+    /// <p>Assigns one or more tags to the KMS key. Use this parameter to tag the KMS key when it is created. To tag an existing KMS key, use the <code>TagResource</code> operation.</p> <important>
     /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
     /// </important> <note>
     /// <p>Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
@@ -608,28 +527,28 @@ impl CreateKeyFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
-    /// <p>Creates a multi-Region primary key that you can replicate into other Amazon Web Services Regions. You cannot change this value after you create the KMS key.</p>
+    /// <p>Creates a multi-Region primary key that you can replicate into other Amazon Web Services Regions. You cannot change this value after you create the KMS key. </p>
     /// <p>For a multi-Region key, set this parameter to <code>True</code>. For a single-Region KMS key, omit this parameter or set it to <code>False</code>. The default value is <code>False</code>.</p>
     /// <p>This operation supports <i>multi-Region keys</i>, an KMS feature that lets you create multiple interoperable KMS keys in different Amazon Web Services Regions. Because these KMS keys have the same key ID, key material, and other metadata, you can use them interchangeably to encrypt data in one Amazon Web Services Region and decrypt it in a different Amazon Web Services Region without re-encrypting the data or making a cross-Region call. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Multi-Region keys in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
-    /// <p>This value creates a <i>primary key</i>, not a replica. To create a <i>replica key</i>, use the <code>ReplicateKey</code> operation.</p>
+    /// <p>This value creates a <i>primary key</i>, not a replica. To create a <i>replica key</i>, use the <code>ReplicateKey</code> operation. </p>
     /// <p>You can create a symmetric or asymmetric multi-Region key, and you can create a multi-Region key with imported key material. However, you cannot create a multi-Region key in a custom key store.</p>
     pub fn multi_region(mut self, input: bool) -> Self {
         self.inner = self.inner.multi_region(input);
         self
     }
-    /// <p>Creates a multi-Region primary key that you can replicate into other Amazon Web Services Regions. You cannot change this value after you create the KMS key.</p>
+    /// <p>Creates a multi-Region primary key that you can replicate into other Amazon Web Services Regions. You cannot change this value after you create the KMS key. </p>
     /// <p>For a multi-Region key, set this parameter to <code>True</code>. For a single-Region KMS key, omit this parameter or set it to <code>False</code>. The default value is <code>False</code>.</p>
     /// <p>This operation supports <i>multi-Region keys</i>, an KMS feature that lets you create multiple interoperable KMS keys in different Amazon Web Services Regions. Because these KMS keys have the same key ID, key material, and other metadata, you can use them interchangeably to encrypt data in one Amazon Web Services Region and decrypt it in a different Amazon Web Services Region without re-encrypting the data or making a cross-Region call. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Multi-Region keys in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
-    /// <p>This value creates a <i>primary key</i>, not a replica. To create a <i>replica key</i>, use the <code>ReplicateKey</code> operation.</p>
+    /// <p>This value creates a <i>primary key</i>, not a replica. To create a <i>replica key</i>, use the <code>ReplicateKey</code> operation. </p>
     /// <p>You can create a symmetric or asymmetric multi-Region key, and you can create a multi-Region key with imported key material. However, you cannot create a multi-Region key in a custom key store.</p>
     pub fn set_multi_region(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_multi_region(input);
         self
     }
-    /// <p>Creates a multi-Region primary key that you can replicate into other Amazon Web Services Regions. You cannot change this value after you create the KMS key.</p>
+    /// <p>Creates a multi-Region primary key that you can replicate into other Amazon Web Services Regions. You cannot change this value after you create the KMS key. </p>
     /// <p>For a multi-Region key, set this parameter to <code>True</code>. For a single-Region KMS key, omit this parameter or set it to <code>False</code>. The default value is <code>False</code>.</p>
     /// <p>This operation supports <i>multi-Region keys</i>, an KMS feature that lets you create multiple interoperable KMS keys in different Amazon Web Services Regions. Because these KMS keys have the same key ID, key material, and other metadata, you can use them interchangeably to encrypt data in one Amazon Web Services Region and decrypt it in a different Amazon Web Services Region without re-encrypting the data or making a cross-Region call. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Multi-Region keys in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
-    /// <p>This value creates a <i>primary key</i>, not a replica. To create a <i>replica key</i>, use the <code>ReplicateKey</code> operation.</p>
+    /// <p>This value creates a <i>primary key</i>, not a replica. To create a <i>replica key</i>, use the <code>ReplicateKey</code> operation. </p>
     /// <p>You can create a symmetric or asymmetric multi-Region key, and you can create a multi-Region key with imported key material. However, you cannot create a multi-Region key in a custom key store.</p>
     pub fn get_multi_region(&self) -> &::std::option::Option<bool> {
         self.inner.get_multi_region()

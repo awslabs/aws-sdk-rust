@@ -44,7 +44,7 @@ pub struct StudioComponent {
     pub updated_by: ::std::option::Option<::std::string::String>,
     /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to Amazon Web Services resources when the system initialization script runs.</p>
     pub secure_initialization_role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running.</p>
+    /// <p>An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running. </p>
     pub runtime_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl StudioComponent {
@@ -130,7 +130,7 @@ impl StudioComponent {
     pub fn secure_initialization_role_arn(&self) -> ::std::option::Option<&str> {
         self.secure_initialization_role_arn.as_deref()
     }
-    /// <p>An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running.</p>
+    /// <p>An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running. </p>
     pub fn runtime_role_arn(&self) -> ::std::option::Option<&str> {
         self.runtime_role_arn.as_deref()
     }
@@ -487,17 +487,17 @@ impl StudioComponentBuilder {
     pub fn get_secure_initialization_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.secure_initialization_role_arn
     }
-    /// <p>An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running.</p>
+    /// <p>An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running. </p>
     pub fn runtime_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.runtime_role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running.</p>
+    /// <p>An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running. </p>
     pub fn set_runtime_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.runtime_role_arn = input;
         self
     }
-    /// <p>An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running.</p>
+    /// <p>An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running. </p>
     pub fn get_runtime_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.runtime_role_arn
     }

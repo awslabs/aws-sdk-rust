@@ -8,9 +8,9 @@ pub struct BotImportSpecification {
     pub bot_name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the IAM role used to build and run the bot.</p>
     pub role_arn: ::std::string::String,
-    /// <p>By default, data stored by Amazon Lex is encrypted. The <code>DataPrivacy</code> structure provides settings that determine how Amazon Lex handles special cases of securing the data for your bot.</p>
+    /// <p>By default, data stored by Amazon Lex is encrypted. The <code>DataPrivacy</code> structure provides settings that determine how Amazon Lex handles special cases of securing the data for your bot. </p>
     pub data_privacy: ::std::option::Option<crate::types::DataPrivacy>,
-    /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot.</p>
+    /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot. </p>
     /// <p>A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p>
     /// <p>You can specify between 60 (1 minute) and 86,400 (24 hours) seconds.</p>
     pub idle_session_ttl_in_seconds: ::std::option::Option<i32>,
@@ -30,11 +30,11 @@ impl BotImportSpecification {
         use std::ops::Deref;
         self.role_arn.deref()
     }
-    /// <p>By default, data stored by Amazon Lex is encrypted. The <code>DataPrivacy</code> structure provides settings that determine how Amazon Lex handles special cases of securing the data for your bot.</p>
+    /// <p>By default, data stored by Amazon Lex is encrypted. The <code>DataPrivacy</code> structure provides settings that determine how Amazon Lex handles special cases of securing the data for your bot. </p>
     pub fn data_privacy(&self) -> ::std::option::Option<&crate::types::DataPrivacy> {
         self.data_privacy.as_ref()
     }
-    /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot.</p>
+    /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot. </p>
     /// <p>A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p>
     /// <p>You can specify between 60 (1 minute) and 86,400 (24 hours) seconds.</p>
     pub fn idle_session_ttl_in_seconds(&self) -> ::std::option::Option<i32> {
@@ -98,36 +98,36 @@ impl BotImportSpecificationBuilder {
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
-    /// <p>By default, data stored by Amazon Lex is encrypted. The <code>DataPrivacy</code> structure provides settings that determine how Amazon Lex handles special cases of securing the data for your bot.</p>
+    /// <p>By default, data stored by Amazon Lex is encrypted. The <code>DataPrivacy</code> structure provides settings that determine how Amazon Lex handles special cases of securing the data for your bot. </p>
     /// This field is required.
     pub fn data_privacy(mut self, input: crate::types::DataPrivacy) -> Self {
         self.data_privacy = ::std::option::Option::Some(input);
         self
     }
-    /// <p>By default, data stored by Amazon Lex is encrypted. The <code>DataPrivacy</code> structure provides settings that determine how Amazon Lex handles special cases of securing the data for your bot.</p>
+    /// <p>By default, data stored by Amazon Lex is encrypted. The <code>DataPrivacy</code> structure provides settings that determine how Amazon Lex handles special cases of securing the data for your bot. </p>
     pub fn set_data_privacy(mut self, input: ::std::option::Option<crate::types::DataPrivacy>) -> Self {
         self.data_privacy = input;
         self
     }
-    /// <p>By default, data stored by Amazon Lex is encrypted. The <code>DataPrivacy</code> structure provides settings that determine how Amazon Lex handles special cases of securing the data for your bot.</p>
+    /// <p>By default, data stored by Amazon Lex is encrypted. The <code>DataPrivacy</code> structure provides settings that determine how Amazon Lex handles special cases of securing the data for your bot. </p>
     pub fn get_data_privacy(&self) -> &::std::option::Option<crate::types::DataPrivacy> {
         &self.data_privacy
     }
-    /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot.</p>
+    /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot. </p>
     /// <p>A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p>
     /// <p>You can specify between 60 (1 minute) and 86,400 (24 hours) seconds.</p>
     pub fn idle_session_ttl_in_seconds(mut self, input: i32) -> Self {
         self.idle_session_ttl_in_seconds = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot.</p>
+    /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot. </p>
     /// <p>A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p>
     /// <p>You can specify between 60 (1 minute) and 86,400 (24 hours) seconds.</p>
     pub fn set_idle_session_ttl_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.idle_session_ttl_in_seconds = input;
         self
     }
-    /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot.</p>
+    /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot. </p>
     /// <p>A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p>
     /// <p>You can specify between 60 (1 minute) and 86,400 (24 hours) seconds.</p>
     pub fn get_idle_session_ttl_in_seconds(&self) -> &::std::option::Option<i32> {

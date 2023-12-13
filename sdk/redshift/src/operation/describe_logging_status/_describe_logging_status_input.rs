@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLoggingStatusInput {
     /// <p>The identifier of the cluster from which to get the logging status.</p>
-    /// <p>Example: <code>examplecluster</code></p>
+    /// <p>Example: <code>examplecluster</code> </p>
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DescribeLoggingStatusInput {
     /// <p>The identifier of the cluster from which to get the logging status.</p>
-    /// <p>Example: <code>examplecluster</code></p>
+    /// <p>Example: <code>examplecluster</code> </p>
     pub fn cluster_identifier(&self) -> ::std::option::Option<&str> {
         self.cluster_identifier.as_deref()
     }
@@ -30,20 +30,20 @@ pub struct DescribeLoggingStatusInputBuilder {
 }
 impl DescribeLoggingStatusInputBuilder {
     /// <p>The identifier of the cluster from which to get the logging status.</p>
-    /// <p>Example: <code>examplecluster</code></p>
+    /// <p>Example: <code>examplecluster</code> </p>
     /// This field is required.
     pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the cluster from which to get the logging status.</p>
-    /// <p>Example: <code>examplecluster</code></p>
+    /// <p>Example: <code>examplecluster</code> </p>
     pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_identifier = input;
         self
     }
     /// <p>The identifier of the cluster from which to get the logging status.</p>
-    /// <p>Example: <code>examplecluster</code></p>
+    /// <p>Example: <code>examplecluster</code> </p>
     pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_identifier
     }

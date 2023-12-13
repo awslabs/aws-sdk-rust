@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetVirtualMachineOutput {
-    /// <p>This object contains the basic attributes of <code>VirtualMachine</code> contained by the output of <code>GetVirtualMachine</code></p>
+    /// <p>This object contains the basic attributes of <code>VirtualMachine</code> contained by the output of <code>GetVirtualMachine</code> </p>
     pub virtual_machine: ::std::option::Option<crate::types::VirtualMachineDetails>,
     _request_id: Option<String>,
 }
 impl GetVirtualMachineOutput {
-    /// <p>This object contains the basic attributes of <code>VirtualMachine</code> contained by the output of <code>GetVirtualMachine</code></p>
+    /// <p>This object contains the basic attributes of <code>VirtualMachine</code> contained by the output of <code>GetVirtualMachine</code> </p>
     pub fn virtual_machine(&self) -> ::std::option::Option<&crate::types::VirtualMachineDetails> {
         self.virtual_machine.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct GetVirtualMachineOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetVirtualMachineOutputBuilder {
-    /// <p>This object contains the basic attributes of <code>VirtualMachine</code> contained by the output of <code>GetVirtualMachine</code></p>
+    /// <p>This object contains the basic attributes of <code>VirtualMachine</code> contained by the output of <code>GetVirtualMachine</code> </p>
     pub fn virtual_machine(mut self, input: crate::types::VirtualMachineDetails) -> Self {
         self.virtual_machine = ::std::option::Option::Some(input);
         self
     }
-    /// <p>This object contains the basic attributes of <code>VirtualMachine</code> contained by the output of <code>GetVirtualMachine</code></p>
+    /// <p>This object contains the basic attributes of <code>VirtualMachine</code> contained by the output of <code>GetVirtualMachine</code> </p>
     pub fn set_virtual_machine(mut self, input: ::std::option::Option<crate::types::VirtualMachineDetails>) -> Self {
         self.virtual_machine = input;
         self
     }
-    /// <p>This object contains the basic attributes of <code>VirtualMachine</code> contained by the output of <code>GetVirtualMachine</code></p>
+    /// <p>This object contains the basic attributes of <code>VirtualMachine</code> contained by the output of <code>GetVirtualMachine</code> </p>
     pub fn get_virtual_machine(&self) -> &::std::option::Option<crate::types::VirtualMachineDetails> {
         &self.virtual_machine
     }

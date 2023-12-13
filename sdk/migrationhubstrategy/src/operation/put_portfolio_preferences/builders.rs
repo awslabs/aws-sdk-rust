@@ -22,7 +22,7 @@ impl PutPortfolioPreferencesInputBuilder {
 }
 /// Fluent builder constructing a request to `PutPortfolioPreferences`.
 ///
-/// <p>Saves the specified migration and modernization preferences.</p>
+/// <p> Saves the specified migration and modernization preferences. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutPortfolioPreferencesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,45 +108,45 @@ impl PutPortfolioPreferencesFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The rank of the business goals based on priority.</p>
+    /// <p> The rank of the business goals based on priority. </p>
     pub fn prioritize_business_goals(mut self, input: crate::types::PrioritizeBusinessGoals) -> Self {
         self.inner = self.inner.prioritize_business_goals(input);
         self
     }
-    /// <p>The rank of the business goals based on priority.</p>
+    /// <p> The rank of the business goals based on priority. </p>
     pub fn set_prioritize_business_goals(mut self, input: ::std::option::Option<crate::types::PrioritizeBusinessGoals>) -> Self {
         self.inner = self.inner.set_prioritize_business_goals(input);
         self
     }
-    /// <p>The rank of the business goals based on priority.</p>
+    /// <p> The rank of the business goals based on priority. </p>
     pub fn get_prioritize_business_goals(&self) -> &::std::option::Option<crate::types::PrioritizeBusinessGoals> {
         self.inner.get_prioritize_business_goals()
     }
-    /// <p>The transformation preferences for non-database applications.</p>
+    /// <p> The transformation preferences for non-database applications. </p>
     pub fn application_preferences(mut self, input: crate::types::ApplicationPreferences) -> Self {
         self.inner = self.inner.application_preferences(input);
         self
     }
-    /// <p>The transformation preferences for non-database applications.</p>
+    /// <p> The transformation preferences for non-database applications. </p>
     pub fn set_application_preferences(mut self, input: ::std::option::Option<crate::types::ApplicationPreferences>) -> Self {
         self.inner = self.inner.set_application_preferences(input);
         self
     }
-    /// <p>The transformation preferences for non-database applications.</p>
+    /// <p> The transformation preferences for non-database applications. </p>
     pub fn get_application_preferences(&self) -> &::std::option::Option<crate::types::ApplicationPreferences> {
         self.inner.get_application_preferences()
     }
-    /// <p>The transformation preferences for database applications.</p>
+    /// <p> The transformation preferences for database applications. </p>
     pub fn database_preferences(mut self, input: crate::types::DatabasePreferences) -> Self {
         self.inner = self.inner.database_preferences(input);
         self
     }
-    /// <p>The transformation preferences for database applications.</p>
+    /// <p> The transformation preferences for database applications. </p>
     pub fn set_database_preferences(mut self, input: ::std::option::Option<crate::types::DatabasePreferences>) -> Self {
         self.inner = self.inner.set_database_preferences(input);
         self
     }
-    /// <p>The transformation preferences for database applications.</p>
+    /// <p> The transformation preferences for database applications. </p>
     pub fn get_database_preferences(&self) -> &::std::option::Option<crate::types::DatabasePreferences> {
         self.inner.get_database_preferences()
     }

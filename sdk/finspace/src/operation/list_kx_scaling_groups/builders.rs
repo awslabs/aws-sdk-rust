@@ -22,7 +22,7 @@ impl ListKxScalingGroupsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListKxScalingGroups`.
 ///
-/// <p>Returns a list of scaling groups in a kdb environment.</p>
+/// <p> Returns a list of scaling groups in a kdb environment.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListKxScalingGroupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -142,17 +142,17 @@ impl ListKxScalingGroupsFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p>A token that indicates where a results page should begin.</p>
+    /// <p> A token that indicates where a results page should begin. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>A token that indicates where a results page should begin.</p>
+    /// <p> A token that indicates where a results page should begin. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>A token that indicates where a results page should begin.</p>
+    /// <p> A token that indicates where a results page should begin. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

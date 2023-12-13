@@ -4,46 +4,42 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkFirewallPolicyDescription {
-    /// <p>The stateless rule groups that are used in the Network Firewall firewall policy.</p>
+    /// <p>The stateless rule groups that are used in the Network Firewall firewall policy. </p>
     pub stateless_rule_groups: ::std::option::Option<::std::vec::Vec<crate::types::StatelessRuleGroup>>,
-    /// <p>The actions to take on packets that don't match any of the stateless rule groups.</p>
+    /// <p>The actions to take on packets that don't match any of the stateless rule groups. </p>
     pub stateless_default_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The actions to take on packet fragments that don't match any of the stateless rule groups.</p>
+    /// <p>The actions to take on packet fragments that don't match any of the stateless rule groups. </p>
     pub stateless_fragment_default_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Names of custom actions that are available for use in the stateless default actions settings.</p>
     pub stateless_custom_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The stateful rule groups that are used in the Network Firewall firewall policy.</p>
+    /// <p>The stateful rule groups that are used in the Network Firewall firewall policy. </p>
     pub stateful_rule_groups: ::std::option::Option<::std::vec::Vec<crate::types::StatefulRuleGroup>>,
     /// <p>The default actions to take on a packet that doesn't match any stateful rules. The stateful default action is optional, and is only valid when using the strict rule order.</p>
-    /// <p>Valid values of the stateful default action:</p>
+    /// <p> Valid values of the stateful default action: </p>
     /// <ul>
-    /// <li>
-    /// <p>aws:drop_strict</p></li>
-    /// <li>
-    /// <p>aws:drop_established</p></li>
-    /// <li>
-    /// <p>aws:alert_strict</p></li>
-    /// <li>
-    /// <p>aws:alert_established</p></li>
+    /// <li> <p>aws:drop_strict</p> </li>
+    /// <li> <p>aws:drop_established</p> </li>
+    /// <li> <p>aws:alert_strict</p> </li>
+    /// <li> <p>aws:alert_established</p> </li>
     /// </ul>
     pub stateful_default_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Additional options governing how Network Firewall handles stateful rules. The stateful rule groups that you use in your policy must have stateful rule options settings that are compatible with these settings.</p>
     pub stateful_engine_options: ::std::option::Option<crate::types::StatefulEngineOptions>,
 }
 impl NetworkFirewallPolicyDescription {
-    /// <p>The stateless rule groups that are used in the Network Firewall firewall policy.</p>
+    /// <p>The stateless rule groups that are used in the Network Firewall firewall policy. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stateless_rule_groups.is_none()`.
     pub fn stateless_rule_groups(&self) -> &[crate::types::StatelessRuleGroup] {
         self.stateless_rule_groups.as_deref().unwrap_or_default()
     }
-    /// <p>The actions to take on packets that don't match any of the stateless rule groups.</p>
+    /// <p>The actions to take on packets that don't match any of the stateless rule groups. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stateless_default_actions.is_none()`.
     pub fn stateless_default_actions(&self) -> &[::std::string::String] {
         self.stateless_default_actions.as_deref().unwrap_or_default()
     }
-    /// <p>The actions to take on packet fragments that don't match any of the stateless rule groups.</p>
+    /// <p>The actions to take on packet fragments that don't match any of the stateless rule groups. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stateless_fragment_default_actions.is_none()`.
     pub fn stateless_fragment_default_actions(&self) -> &[::std::string::String] {
@@ -55,23 +51,19 @@ impl NetworkFirewallPolicyDescription {
     pub fn stateless_custom_actions(&self) -> &[::std::string::String] {
         self.stateless_custom_actions.as_deref().unwrap_or_default()
     }
-    /// <p>The stateful rule groups that are used in the Network Firewall firewall policy.</p>
+    /// <p>The stateful rule groups that are used in the Network Firewall firewall policy. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stateful_rule_groups.is_none()`.
     pub fn stateful_rule_groups(&self) -> &[crate::types::StatefulRuleGroup] {
         self.stateful_rule_groups.as_deref().unwrap_or_default()
     }
     /// <p>The default actions to take on a packet that doesn't match any stateful rules. The stateful default action is optional, and is only valid when using the strict rule order.</p>
-    /// <p>Valid values of the stateful default action:</p>
+    /// <p> Valid values of the stateful default action: </p>
     /// <ul>
-    /// <li>
-    /// <p>aws:drop_strict</p></li>
-    /// <li>
-    /// <p>aws:drop_established</p></li>
-    /// <li>
-    /// <p>aws:alert_strict</p></li>
-    /// <li>
-    /// <p>aws:alert_established</p></li>
+    /// <li> <p>aws:drop_strict</p> </li>
+    /// <li> <p>aws:drop_established</p> </li>
+    /// <li> <p>aws:alert_strict</p> </li>
+    /// <li> <p>aws:alert_established</p> </li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stateful_default_actions.is_none()`.
@@ -107,19 +99,19 @@ impl NetworkFirewallPolicyDescriptionBuilder {
     ///
     /// To override the contents of this collection use [`set_stateless_rule_groups`](Self::set_stateless_rule_groups).
     ///
-    /// <p>The stateless rule groups that are used in the Network Firewall firewall policy.</p>
+    /// <p>The stateless rule groups that are used in the Network Firewall firewall policy. </p>
     pub fn stateless_rule_groups(mut self, input: crate::types::StatelessRuleGroup) -> Self {
         let mut v = self.stateless_rule_groups.unwrap_or_default();
         v.push(input);
         self.stateless_rule_groups = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The stateless rule groups that are used in the Network Firewall firewall policy.</p>
+    /// <p>The stateless rule groups that are used in the Network Firewall firewall policy. </p>
     pub fn set_stateless_rule_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StatelessRuleGroup>>) -> Self {
         self.stateless_rule_groups = input;
         self
     }
-    /// <p>The stateless rule groups that are used in the Network Firewall firewall policy.</p>
+    /// <p>The stateless rule groups that are used in the Network Firewall firewall policy. </p>
     pub fn get_stateless_rule_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StatelessRuleGroup>> {
         &self.stateless_rule_groups
     }
@@ -127,19 +119,19 @@ impl NetworkFirewallPolicyDescriptionBuilder {
     ///
     /// To override the contents of this collection use [`set_stateless_default_actions`](Self::set_stateless_default_actions).
     ///
-    /// <p>The actions to take on packets that don't match any of the stateless rule groups.</p>
+    /// <p>The actions to take on packets that don't match any of the stateless rule groups. </p>
     pub fn stateless_default_actions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.stateless_default_actions.unwrap_or_default();
         v.push(input.into());
         self.stateless_default_actions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The actions to take on packets that don't match any of the stateless rule groups.</p>
+    /// <p>The actions to take on packets that don't match any of the stateless rule groups. </p>
     pub fn set_stateless_default_actions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.stateless_default_actions = input;
         self
     }
-    /// <p>The actions to take on packets that don't match any of the stateless rule groups.</p>
+    /// <p>The actions to take on packets that don't match any of the stateless rule groups. </p>
     pub fn get_stateless_default_actions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.stateless_default_actions
     }
@@ -147,19 +139,19 @@ impl NetworkFirewallPolicyDescriptionBuilder {
     ///
     /// To override the contents of this collection use [`set_stateless_fragment_default_actions`](Self::set_stateless_fragment_default_actions).
     ///
-    /// <p>The actions to take on packet fragments that don't match any of the stateless rule groups.</p>
+    /// <p>The actions to take on packet fragments that don't match any of the stateless rule groups. </p>
     pub fn stateless_fragment_default_actions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.stateless_fragment_default_actions.unwrap_or_default();
         v.push(input.into());
         self.stateless_fragment_default_actions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The actions to take on packet fragments that don't match any of the stateless rule groups.</p>
+    /// <p>The actions to take on packet fragments that don't match any of the stateless rule groups. </p>
     pub fn set_stateless_fragment_default_actions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.stateless_fragment_default_actions = input;
         self
     }
-    /// <p>The actions to take on packet fragments that don't match any of the stateless rule groups.</p>
+    /// <p>The actions to take on packet fragments that don't match any of the stateless rule groups. </p>
     pub fn get_stateless_fragment_default_actions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.stateless_fragment_default_actions
     }
@@ -187,19 +179,19 @@ impl NetworkFirewallPolicyDescriptionBuilder {
     ///
     /// To override the contents of this collection use [`set_stateful_rule_groups`](Self::set_stateful_rule_groups).
     ///
-    /// <p>The stateful rule groups that are used in the Network Firewall firewall policy.</p>
+    /// <p>The stateful rule groups that are used in the Network Firewall firewall policy. </p>
     pub fn stateful_rule_groups(mut self, input: crate::types::StatefulRuleGroup) -> Self {
         let mut v = self.stateful_rule_groups.unwrap_or_default();
         v.push(input);
         self.stateful_rule_groups = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The stateful rule groups that are used in the Network Firewall firewall policy.</p>
+    /// <p>The stateful rule groups that are used in the Network Firewall firewall policy. </p>
     pub fn set_stateful_rule_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StatefulRuleGroup>>) -> Self {
         self.stateful_rule_groups = input;
         self
     }
-    /// <p>The stateful rule groups that are used in the Network Firewall firewall policy.</p>
+    /// <p>The stateful rule groups that are used in the Network Firewall firewall policy. </p>
     pub fn get_stateful_rule_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StatefulRuleGroup>> {
         &self.stateful_rule_groups
     }
@@ -208,16 +200,12 @@ impl NetworkFirewallPolicyDescriptionBuilder {
     /// To override the contents of this collection use [`set_stateful_default_actions`](Self::set_stateful_default_actions).
     ///
     /// <p>The default actions to take on a packet that doesn't match any stateful rules. The stateful default action is optional, and is only valid when using the strict rule order.</p>
-    /// <p>Valid values of the stateful default action:</p>
+    /// <p> Valid values of the stateful default action: </p>
     /// <ul>
-    /// <li>
-    /// <p>aws:drop_strict</p></li>
-    /// <li>
-    /// <p>aws:drop_established</p></li>
-    /// <li>
-    /// <p>aws:alert_strict</p></li>
-    /// <li>
-    /// <p>aws:alert_established</p></li>
+    /// <li> <p>aws:drop_strict</p> </li>
+    /// <li> <p>aws:drop_established</p> </li>
+    /// <li> <p>aws:alert_strict</p> </li>
+    /// <li> <p>aws:alert_established</p> </li>
     /// </ul>
     pub fn stateful_default_actions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.stateful_default_actions.unwrap_or_default();
@@ -226,32 +214,24 @@ impl NetworkFirewallPolicyDescriptionBuilder {
         self
     }
     /// <p>The default actions to take on a packet that doesn't match any stateful rules. The stateful default action is optional, and is only valid when using the strict rule order.</p>
-    /// <p>Valid values of the stateful default action:</p>
+    /// <p> Valid values of the stateful default action: </p>
     /// <ul>
-    /// <li>
-    /// <p>aws:drop_strict</p></li>
-    /// <li>
-    /// <p>aws:drop_established</p></li>
-    /// <li>
-    /// <p>aws:alert_strict</p></li>
-    /// <li>
-    /// <p>aws:alert_established</p></li>
+    /// <li> <p>aws:drop_strict</p> </li>
+    /// <li> <p>aws:drop_established</p> </li>
+    /// <li> <p>aws:alert_strict</p> </li>
+    /// <li> <p>aws:alert_established</p> </li>
     /// </ul>
     pub fn set_stateful_default_actions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.stateful_default_actions = input;
         self
     }
     /// <p>The default actions to take on a packet that doesn't match any stateful rules. The stateful default action is optional, and is only valid when using the strict rule order.</p>
-    /// <p>Valid values of the stateful default action:</p>
+    /// <p> Valid values of the stateful default action: </p>
     /// <ul>
-    /// <li>
-    /// <p>aws:drop_strict</p></li>
-    /// <li>
-    /// <p>aws:drop_established</p></li>
-    /// <li>
-    /// <p>aws:alert_strict</p></li>
-    /// <li>
-    /// <p>aws:alert_established</p></li>
+    /// <li> <p>aws:drop_strict</p> </li>
+    /// <li> <p>aws:drop_established</p> </li>
+    /// <li> <p>aws:alert_strict</p> </li>
+    /// <li> <p>aws:alert_established</p> </li>
     /// </ul>
     pub fn get_stateful_default_actions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.stateful_default_actions

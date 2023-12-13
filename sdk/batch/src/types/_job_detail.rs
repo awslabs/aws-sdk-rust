@@ -12,7 +12,7 @@ pub struct JobDetail {
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the job queue that the job is associated with.</p>
     pub job_queue: ::std::option::Option<::std::string::String>,
-    /// <p>The current status for the job.</p><note>
+    /// <p>The current status for the job.</p> <note>
     /// <p>If your jobs don't progress to <code>STARTING</code>, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs stuck in RUNNABLE status</a> in the troubleshooting section of the <i>Batch User Guide</i>.</p>
     /// </note>
     pub status: ::std::option::Option<crate::types::JobStatus>,
@@ -42,7 +42,7 @@ pub struct JobDetail {
     pub container: ::std::option::Option<crate::types::ContainerDetail>,
     /// <p>An object that represents the details of a node that's associated with a multi-node parallel job.</p>
     pub node_details: ::std::option::Option<crate::types::NodeDetails>,
-    /// <p>An object that represents the node properties of a multi-node parallel job.</p><note>
+    /// <p>An object that represents the node properties of a multi-node parallel job.</p> <note>
     /// <p>This isn't applicable to jobs that are running on Fargate resources.</p>
     /// </note>
     pub node_properties: ::std::option::Option<crate::types::NodeProperties>,
@@ -82,7 +82,7 @@ impl JobDetail {
     pub fn job_queue(&self) -> ::std::option::Option<&str> {
         self.job_queue.as_deref()
     }
-    /// <p>The current status for the job.</p><note>
+    /// <p>The current status for the job.</p> <note>
     /// <p>If your jobs don't progress to <code>STARTING</code>, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs stuck in RUNNABLE status</a> in the troubleshooting section of the <i>Batch User Guide</i>.</p>
     /// </note>
     pub fn status(&self) -> ::std::option::Option<&crate::types::JobStatus> {
@@ -144,7 +144,7 @@ impl JobDetail {
     pub fn node_details(&self) -> ::std::option::Option<&crate::types::NodeDetails> {
         self.node_details.as_ref()
     }
-    /// <p>An object that represents the node properties of a multi-node parallel job.</p><note>
+    /// <p>An object that represents the node properties of a multi-node parallel job.</p> <note>
     /// <p>This isn't applicable to jobs that are running on Fargate resources.</p>
     /// </note>
     pub fn node_properties(&self) -> ::std::option::Option<&crate::types::NodeProperties> {
@@ -291,7 +291,7 @@ impl JobDetailBuilder {
     pub fn get_job_queue(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_queue
     }
-    /// <p>The current status for the job.</p><note>
+    /// <p>The current status for the job.</p> <note>
     /// <p>If your jobs don't progress to <code>STARTING</code>, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs stuck in RUNNABLE status</a> in the troubleshooting section of the <i>Batch User Guide</i>.</p>
     /// </note>
     /// This field is required.
@@ -299,14 +299,14 @@ impl JobDetailBuilder {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current status for the job.</p><note>
+    /// <p>The current status for the job.</p> <note>
     /// <p>If your jobs don't progress to <code>STARTING</code>, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs stuck in RUNNABLE status</a> in the troubleshooting section of the <i>Batch User Guide</i>.</p>
     /// </note>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The current status for the job.</p><note>
+    /// <p>The current status for the job.</p> <note>
     /// <p>If your jobs don't progress to <code>STARTING</code>, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs stuck in RUNNABLE status</a> in the troubleshooting section of the <i>Batch User Guide</i>.</p>
     /// </note>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
@@ -514,21 +514,21 @@ impl JobDetailBuilder {
     pub fn get_node_details(&self) -> &::std::option::Option<crate::types::NodeDetails> {
         &self.node_details
     }
-    /// <p>An object that represents the node properties of a multi-node parallel job.</p><note>
+    /// <p>An object that represents the node properties of a multi-node parallel job.</p> <note>
     /// <p>This isn't applicable to jobs that are running on Fargate resources.</p>
     /// </note>
     pub fn node_properties(mut self, input: crate::types::NodeProperties) -> Self {
         self.node_properties = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An object that represents the node properties of a multi-node parallel job.</p><note>
+    /// <p>An object that represents the node properties of a multi-node parallel job.</p> <note>
     /// <p>This isn't applicable to jobs that are running on Fargate resources.</p>
     /// </note>
     pub fn set_node_properties(mut self, input: ::std::option::Option<crate::types::NodeProperties>) -> Self {
         self.node_properties = input;
         self
     }
-    /// <p>An object that represents the node properties of a multi-node parallel job.</p><note>
+    /// <p>An object that represents the node properties of a multi-node parallel job.</p> <note>
     /// <p>This isn't applicable to jobs that are running on Fargate resources.</p>
     /// </note>
     pub fn get_node_properties(&self) -> &::std::option::Option<crate::types::NodeProperties> {

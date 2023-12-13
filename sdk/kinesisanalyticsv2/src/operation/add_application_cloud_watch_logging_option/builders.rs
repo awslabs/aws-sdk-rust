@@ -140,17 +140,17 @@ impl AddApplicationCloudWatchLoggingOptionFluentBuilder {
     pub fn get_current_application_version_id(&self) -> &::std::option::Option<i64> {
         self.inner.get_current_application_version_id()
     }
-    /// <p>Provides the Amazon CloudWatch log stream Amazon Resource Name (ARN).</p>
+    /// <p>Provides the Amazon CloudWatch log stream Amazon Resource Name (ARN). </p>
     pub fn cloud_watch_logging_option(mut self, input: crate::types::CloudWatchLoggingOption) -> Self {
         self.inner = self.inner.cloud_watch_logging_option(input);
         self
     }
-    /// <p>Provides the Amazon CloudWatch log stream Amazon Resource Name (ARN).</p>
+    /// <p>Provides the Amazon CloudWatch log stream Amazon Resource Name (ARN). </p>
     pub fn set_cloud_watch_logging_option(mut self, input: ::std::option::Option<crate::types::CloudWatchLoggingOption>) -> Self {
         self.inner = self.inner.set_cloud_watch_logging_option(input);
         self
     }
-    /// <p>Provides the Amazon CloudWatch log stream Amazon Resource Name (ARN).</p>
+    /// <p>Provides the Amazon CloudWatch log stream Amazon Resource Name (ARN). </p>
     pub fn get_cloud_watch_logging_option(&self) -> &::std::option::Option<crate::types::CloudWatchLoggingOption> {
         self.inner.get_cloud_watch_logging_option()
     }

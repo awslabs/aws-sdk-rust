@@ -109,21 +109,21 @@ impl ResetInstanceAttributeFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The attribute to reset.</p><important>
+    /// <p>The attribute to reset.</p> <important>
     /// <p>You can only reset the following attributes: <code>kernel</code> | <code>ramdisk</code> | <code>sourceDestCheck</code>.</p>
     /// </important>
     pub fn attribute(mut self, input: crate::types::InstanceAttributeName) -> Self {
         self.inner = self.inner.attribute(input);
         self
     }
-    /// <p>The attribute to reset.</p><important>
+    /// <p>The attribute to reset.</p> <important>
     /// <p>You can only reset the following attributes: <code>kernel</code> | <code>ramdisk</code> | <code>sourceDestCheck</code>.</p>
     /// </important>
     pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::InstanceAttributeName>) -> Self {
         self.inner = self.inner.set_attribute(input);
         self
     }
-    /// <p>The attribute to reset.</p><important>
+    /// <p>The attribute to reset.</p> <important>
     /// <p>You can only reset the following attributes: <code>kernel</code> | <code>ramdisk</code> | <code>sourceDestCheck</code>.</p>
     /// </important>
     pub fn get_attribute(&self) -> &::std::option::Option<crate::types::InstanceAttributeName> {

@@ -11,16 +11,11 @@ pub struct AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails {
     pub days: ::std::option::Option<i32>,
     /// <p>The storage class to transition the object to. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>DEEP_ARCHIVE</code></p></li>
-    /// <li>
-    /// <p><code>GLACIER</code></p></li>
-    /// <li>
-    /// <p><code>INTELLIGENT_TIERING</code></p></li>
-    /// <li>
-    /// <p><code>ONEZONE_IA</code></p></li>
-    /// <li>
-    /// <p><code>STANDARD_IA</code></p></li>
+    /// <li> <p> <code>DEEP_ARCHIVE</code> </p> </li>
+    /// <li> <p> <code>GLACIER</code> </p> </li>
+    /// <li> <p> <code>INTELLIGENT_TIERING</code> </p> </li>
+    /// <li> <p> <code>ONEZONE_IA</code> </p> </li>
+    /// <li> <p> <code>STANDARD_IA</code> </p> </li>
     /// </ul>
     pub storage_class: ::std::option::Option<::std::string::String>,
 }
@@ -36,16 +31,11 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails {
     }
     /// <p>The storage class to transition the object to. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>DEEP_ARCHIVE</code></p></li>
-    /// <li>
-    /// <p><code>GLACIER</code></p></li>
-    /// <li>
-    /// <p><code>INTELLIGENT_TIERING</code></p></li>
-    /// <li>
-    /// <p><code>ONEZONE_IA</code></p></li>
-    /// <li>
-    /// <p><code>STANDARD_IA</code></p></li>
+    /// <li> <p> <code>DEEP_ARCHIVE</code> </p> </li>
+    /// <li> <p> <code>GLACIER</code> </p> </li>
+    /// <li> <p> <code>INTELLIGENT_TIERING</code> </p> </li>
+    /// <li> <p> <code>ONEZONE_IA</code> </p> </li>
+    /// <li> <p> <code>STANDARD_IA</code> </p> </li>
     /// </ul>
     pub fn storage_class(&self) -> ::std::option::Option<&str> {
         self.storage_class.as_deref()
@@ -100,16 +90,11 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetailsBuilder {
     }
     /// <p>The storage class to transition the object to. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>DEEP_ARCHIVE</code></p></li>
-    /// <li>
-    /// <p><code>GLACIER</code></p></li>
-    /// <li>
-    /// <p><code>INTELLIGENT_TIERING</code></p></li>
-    /// <li>
-    /// <p><code>ONEZONE_IA</code></p></li>
-    /// <li>
-    /// <p><code>STANDARD_IA</code></p></li>
+    /// <li> <p> <code>DEEP_ARCHIVE</code> </p> </li>
+    /// <li> <p> <code>GLACIER</code> </p> </li>
+    /// <li> <p> <code>INTELLIGENT_TIERING</code> </p> </li>
+    /// <li> <p> <code>ONEZONE_IA</code> </p> </li>
+    /// <li> <p> <code>STANDARD_IA</code> </p> </li>
     /// </ul>
     pub fn storage_class(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_class = ::std::option::Option::Some(input.into());
@@ -117,16 +102,11 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetailsBuilder {
     }
     /// <p>The storage class to transition the object to. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>DEEP_ARCHIVE</code></p></li>
-    /// <li>
-    /// <p><code>GLACIER</code></p></li>
-    /// <li>
-    /// <p><code>INTELLIGENT_TIERING</code></p></li>
-    /// <li>
-    /// <p><code>ONEZONE_IA</code></p></li>
-    /// <li>
-    /// <p><code>STANDARD_IA</code></p></li>
+    /// <li> <p> <code>DEEP_ARCHIVE</code> </p> </li>
+    /// <li> <p> <code>GLACIER</code> </p> </li>
+    /// <li> <p> <code>INTELLIGENT_TIERING</code> </p> </li>
+    /// <li> <p> <code>ONEZONE_IA</code> </p> </li>
+    /// <li> <p> <code>STANDARD_IA</code> </p> </li>
     /// </ul>
     pub fn set_storage_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_class = input;
@@ -134,16 +114,11 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetailsBuilder {
     }
     /// <p>The storage class to transition the object to. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>DEEP_ARCHIVE</code></p></li>
-    /// <li>
-    /// <p><code>GLACIER</code></p></li>
-    /// <li>
-    /// <p><code>INTELLIGENT_TIERING</code></p></li>
-    /// <li>
-    /// <p><code>ONEZONE_IA</code></p></li>
-    /// <li>
-    /// <p><code>STANDARD_IA</code></p></li>
+    /// <li> <p> <code>DEEP_ARCHIVE</code> </p> </li>
+    /// <li> <p> <code>GLACIER</code> </p> </li>
+    /// <li> <p> <code>INTELLIGENT_TIERING</code> </p> </li>
+    /// <li> <p> <code>ONEZONE_IA</code> </p> </li>
+    /// <li> <p> <code>STANDARD_IA</code> </p> </li>
     /// </ul>
     pub fn get_storage_class(&self) -> &::std::option::Option<::std::string::String> {
         &self.storage_class

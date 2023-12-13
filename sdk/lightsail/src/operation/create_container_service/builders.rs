@@ -110,7 +110,8 @@ impl CreateContainerServiceFluentBuilder {
         self
     }
     /// <p>The name for the container service.</p>
-    /// <p>The name that you specify for your container service will make up part of its default domain. The default domain of a container service is typically <code>https://<servicename>
+    /// <p>The name that you specify for your container service will make up part of its default domain. The default domain of a container service is typically <code>https://
+    /// <servicename>
     /// .
     /// <randomguid>
     /// .
@@ -118,24 +119,21 @@ impl CreateContainerServiceFluentBuilder {
     /// .cs.amazonlightsail.com
     /// </awsregion>
     /// </randomguid>
-    /// </servicename></code>. If the name of your container service is <code>container-service-1</code>, and it's located in the US East (Ohio) Amazon Web Services Region (<code>us-east-2</code>), then the domain for your container service will be like the following example: <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code></p>
+    /// </servicename></code>. If the name of your container service is <code>container-service-1</code>, and it's located in the US East (Ohio) Amazon Web Services Region (<code>us-east-2</code>), then the domain for your container service will be like the following example: <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code> </p>
     /// <p>The following are the requirements for container service names:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be unique within each Amazon Web Services Region in your Lightsail account.</p></li>
-    /// <li>
-    /// <p>Must contain 1 to 63 characters.</p></li>
-    /// <li>
-    /// <p>Must contain only alphanumeric characters and hyphens.</p></li>
-    /// <li>
-    /// <p>A hyphen (-) can separate words but cannot be at the start or end of the name.</p></li>
+    /// <li> <p>Must be unique within each Amazon Web Services Region in your Lightsail account.</p> </li>
+    /// <li> <p>Must contain 1 to 63 characters.</p> </li>
+    /// <li> <p>Must contain only alphanumeric characters and hyphens.</p> </li>
+    /// <li> <p>A hyphen (-) can separate words but cannot be at the start or end of the name.</p> </li>
     /// </ul>
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_name(input.into());
         self
     }
     /// <p>The name for the container service.</p>
-    /// <p>The name that you specify for your container service will make up part of its default domain. The default domain of a container service is typically <code>https://<servicename>
+    /// <p>The name that you specify for your container service will make up part of its default domain. The default domain of a container service is typically <code>https://
+    /// <servicename>
     /// .
     /// <randomguid>
     /// .
@@ -143,24 +141,21 @@ impl CreateContainerServiceFluentBuilder {
     /// .cs.amazonlightsail.com
     /// </awsregion>
     /// </randomguid>
-    /// </servicename></code>. If the name of your container service is <code>container-service-1</code>, and it's located in the US East (Ohio) Amazon Web Services Region (<code>us-east-2</code>), then the domain for your container service will be like the following example: <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code></p>
+    /// </servicename></code>. If the name of your container service is <code>container-service-1</code>, and it's located in the US East (Ohio) Amazon Web Services Region (<code>us-east-2</code>), then the domain for your container service will be like the following example: <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code> </p>
     /// <p>The following are the requirements for container service names:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be unique within each Amazon Web Services Region in your Lightsail account.</p></li>
-    /// <li>
-    /// <p>Must contain 1 to 63 characters.</p></li>
-    /// <li>
-    /// <p>Must contain only alphanumeric characters and hyphens.</p></li>
-    /// <li>
-    /// <p>A hyphen (-) can separate words but cannot be at the start or end of the name.</p></li>
+    /// <li> <p>Must be unique within each Amazon Web Services Region in your Lightsail account.</p> </li>
+    /// <li> <p>Must contain 1 to 63 characters.</p> </li>
+    /// <li> <p>Must contain only alphanumeric characters and hyphens.</p> </li>
+    /// <li> <p>A hyphen (-) can separate words but cannot be at the start or end of the name.</p> </li>
     /// </ul>
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_name(input);
         self
     }
     /// <p>The name for the container service.</p>
-    /// <p>The name that you specify for your container service will make up part of its default domain. The default domain of a container service is typically <code>https://<servicename>
+    /// <p>The name that you specify for your container service will make up part of its default domain. The default domain of a container service is typically <code>https://
+    /// <servicename>
     /// .
     /// <randomguid>
     /// .
@@ -168,17 +163,13 @@ impl CreateContainerServiceFluentBuilder {
     /// .cs.amazonlightsail.com
     /// </awsregion>
     /// </randomguid>
-    /// </servicename></code>. If the name of your container service is <code>container-service-1</code>, and it's located in the US East (Ohio) Amazon Web Services Region (<code>us-east-2</code>), then the domain for your container service will be like the following example: <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code></p>
+    /// </servicename></code>. If the name of your container service is <code>container-service-1</code>, and it's located in the US East (Ohio) Amazon Web Services Region (<code>us-east-2</code>), then the domain for your container service will be like the following example: <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code> </p>
     /// <p>The following are the requirements for container service names:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be unique within each Amazon Web Services Region in your Lightsail account.</p></li>
-    /// <li>
-    /// <p>Must contain 1 to 63 characters.</p></li>
-    /// <li>
-    /// <p>Must contain only alphanumeric characters and hyphens.</p></li>
-    /// <li>
-    /// <p>A hyphen (-) can separate words but cannot be at the start or end of the name.</p></li>
+    /// <li> <p>Must be unique within each Amazon Web Services Region in your Lightsail account.</p> </li>
+    /// <li> <p>Must contain 1 to 63 characters.</p> </li>
+    /// <li> <p>Must contain only alphanumeric characters and hyphens.</p> </li>
+    /// <li> <p>A hyphen (-) can separate words but cannot be at the start or end of the name.</p> </li>
     /// </ul>
     pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_service_name()
@@ -250,7 +241,7 @@ impl CreateContainerServiceFluentBuilder {
     ///
     /// <p>The public domain names to use with the container service, such as <code>example.com</code> and <code>www.example.com</code>.</p>
     /// <p>You can specify up to four public domain names for a container service. The domain names that you specify are used when you create a deployment with a container configured as the public endpoint of your container service.</p>
-    /// <p>If you don't specify public domain names, then you can use the default domain of the container service.</p><important>
+    /// <p>If you don't specify public domain names, then you can use the default domain of the container service.</p> <important>
     /// <p>You must create and validate an SSL/TLS certificate before you can use public domain names with your container service. Use the <code>CreateCertificate</code> action to create a certificate for the public domain names you want to use with your container service.</p>
     /// </important>
     /// <p>You can specify public domain names using a string to array map as shown in the example later on this page.</p>
@@ -260,7 +251,7 @@ impl CreateContainerServiceFluentBuilder {
     }
     /// <p>The public domain names to use with the container service, such as <code>example.com</code> and <code>www.example.com</code>.</p>
     /// <p>You can specify up to four public domain names for a container service. The domain names that you specify are used when you create a deployment with a container configured as the public endpoint of your container service.</p>
-    /// <p>If you don't specify public domain names, then you can use the default domain of the container service.</p><important>
+    /// <p>If you don't specify public domain names, then you can use the default domain of the container service.</p> <important>
     /// <p>You must create and validate an SSL/TLS certificate before you can use public domain names with your container service. Use the <code>CreateCertificate</code> action to create a certificate for the public domain names you want to use with your container service.</p>
     /// </important>
     /// <p>You can specify public domain names using a string to array map as shown in the example later on this page.</p>
@@ -273,7 +264,7 @@ impl CreateContainerServiceFluentBuilder {
     }
     /// <p>The public domain names to use with the container service, such as <code>example.com</code> and <code>www.example.com</code>.</p>
     /// <p>You can specify up to four public domain names for a container service. The domain names that you specify are used when you create a deployment with a container configured as the public endpoint of your container service.</p>
-    /// <p>If you don't specify public domain names, then you can use the default domain of the container service.</p><important>
+    /// <p>If you don't specify public domain names, then you can use the default domain of the container service.</p> <important>
     /// <p>You must create and validate an SSL/TLS certificate before you can use public domain names with your container service. Use the <code>CreateCertificate</code> action to create a certificate for the public domain names you want to use with your container service.</p>
     /// </important>
     /// <p>You can specify public domain names using a string to array map as shown in the example later on this page.</p>

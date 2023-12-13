@@ -5,7 +5,7 @@
 pub struct SearchCasesOutput {
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>A list of case documents where each case contains the properties <code>CaseId</code> and <code>Fields</code> where each field is a complex union structure.</p>
+    /// <p>A list of case documents where each case contains the properties <code>CaseId</code> and <code>Fields</code> where each field is a complex union structure. </p>
     pub cases: ::std::vec::Vec<::std::option::Option<crate::types::SearchCasesResponseItem>>,
     _request_id: Option<String>,
 }
@@ -14,7 +14,7 @@ impl SearchCasesOutput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>A list of case documents where each case contains the properties <code>CaseId</code> and <code>Fields</code> where each field is a complex union structure.</p>
+    /// <p>A list of case documents where each case contains the properties <code>CaseId</code> and <code>Fields</code> where each field is a complex union structure. </p>
     pub fn cases(&self) -> &[::std::option::Option<crate::types::SearchCasesResponseItem>] {
         use std::ops::Deref;
         self.cases.deref()
@@ -59,19 +59,19 @@ impl SearchCasesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_cases`](Self::set_cases).
     ///
-    /// <p>A list of case documents where each case contains the properties <code>CaseId</code> and <code>Fields</code> where each field is a complex union structure.</p>
+    /// <p>A list of case documents where each case contains the properties <code>CaseId</code> and <code>Fields</code> where each field is a complex union structure. </p>
     pub fn cases(mut self, input: ::std::option::Option<crate::types::SearchCasesResponseItem>) -> Self {
         let mut v = self.cases.unwrap_or_default();
         v.push(input);
         self.cases = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of case documents where each case contains the properties <code>CaseId</code> and <code>Fields</code> where each field is a complex union structure.</p>
+    /// <p>A list of case documents where each case contains the properties <code>CaseId</code> and <code>Fields</code> where each field is a complex union structure. </p>
     pub fn set_cases(mut self, input: ::std::option::Option<::std::vec::Vec<::std::option::Option<crate::types::SearchCasesResponseItem>>>) -> Self {
         self.cases = input;
         self
     }
-    /// <p>A list of case documents where each case contains the properties <code>CaseId</code> and <code>Fields</code> where each field is a complex union structure.</p>
+    /// <p>A list of case documents where each case contains the properties <code>CaseId</code> and <code>Fields</code> where each field is a complex union structure. </p>
     pub fn get_cases(&self) -> &::std::option::Option<::std::vec::Vec<::std::option::Option<crate::types::SearchCasesResponseItem>>> {
         &self.cases
     }

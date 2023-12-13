@@ -155,12 +155,9 @@ impl UpdateSiteFluentBuilder {
     }
     /// <p>The site location:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Address</code>: The physical address of the site.</p></li>
-    /// <li>
-    /// <p><code>Latitude</code>: The latitude of the site.</p></li>
-    /// <li>
-    /// <p><code>Longitude</code>: The longitude of the site.</p></li>
+    /// <li> <p> <code>Address</code>: The physical address of the site.</p> </li>
+    /// <li> <p> <code>Latitude</code>: The latitude of the site. </p> </li>
+    /// <li> <p> <code>Longitude</code>: The longitude of the site.</p> </li>
     /// </ul>
     pub fn location(mut self, input: crate::types::Location) -> Self {
         self.inner = self.inner.location(input);
@@ -168,12 +165,9 @@ impl UpdateSiteFluentBuilder {
     }
     /// <p>The site location:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Address</code>: The physical address of the site.</p></li>
-    /// <li>
-    /// <p><code>Latitude</code>: The latitude of the site.</p></li>
-    /// <li>
-    /// <p><code>Longitude</code>: The longitude of the site.</p></li>
+    /// <li> <p> <code>Address</code>: The physical address of the site.</p> </li>
+    /// <li> <p> <code>Latitude</code>: The latitude of the site. </p> </li>
+    /// <li> <p> <code>Longitude</code>: The longitude of the site.</p> </li>
     /// </ul>
     pub fn set_location(mut self, input: ::std::option::Option<crate::types::Location>) -> Self {
         self.inner = self.inner.set_location(input);
@@ -181,12 +175,9 @@ impl UpdateSiteFluentBuilder {
     }
     /// <p>The site location:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Address</code>: The physical address of the site.</p></li>
-    /// <li>
-    /// <p><code>Latitude</code>: The latitude of the site.</p></li>
-    /// <li>
-    /// <p><code>Longitude</code>: The longitude of the site.</p></li>
+    /// <li> <p> <code>Address</code>: The physical address of the site.</p> </li>
+    /// <li> <p> <code>Latitude</code>: The latitude of the site. </p> </li>
+    /// <li> <p> <code>Longitude</code>: The longitude of the site.</p> </li>
     /// </ul>
     pub fn get_location(&self) -> &::std::option::Option<crate::types::Location> {
         self.inner.get_location()

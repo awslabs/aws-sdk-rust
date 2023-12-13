@@ -5,7 +5,7 @@
 pub struct DeleteProjectInput {
     /// <p>The ID of the project to be deleted in AWS CodeStar.</p>
     pub id: ::std::option::Option<::std::string::String>,
-    /// <p>A user- or system-generated token that identifies the entity that requested project deletion. This token can be used to repeat the request.</p>
+    /// <p>A user- or system-generated token that identifies the entity that requested project deletion. This token can be used to repeat the request. </p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>Whether to send a delete request for the primary stack in AWS CloudFormation originally used to generate the project and its resources. This option will delete all AWS resources for the project (except for any buckets in Amazon S3) as well as deleting the project itself. Recommended for most use cases.</p>
     pub delete_stack: ::std::option::Option<bool>,
@@ -15,7 +15,7 @@ impl DeleteProjectInput {
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>A user- or system-generated token that identifies the entity that requested project deletion. This token can be used to repeat the request.</p>
+    /// <p>A user- or system-generated token that identifies the entity that requested project deletion. This token can be used to repeat the request. </p>
     pub fn client_request_token(&self) -> ::std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -55,17 +55,17 @@ impl DeleteProjectInputBuilder {
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
-    /// <p>A user- or system-generated token that identifies the entity that requested project deletion. This token can be used to repeat the request.</p>
+    /// <p>A user- or system-generated token that identifies the entity that requested project deletion. This token can be used to repeat the request. </p>
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A user- or system-generated token that identifies the entity that requested project deletion. This token can be used to repeat the request.</p>
+    /// <p>A user- or system-generated token that identifies the entity that requested project deletion. This token can be used to repeat the request. </p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
-    /// <p>A user- or system-generated token that identifies the entity that requested project deletion. This token can be used to repeat the request.</p>
+    /// <p>A user- or system-generated token that identifies the entity that requested project deletion. This token can be used to repeat the request. </p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_request_token
     }

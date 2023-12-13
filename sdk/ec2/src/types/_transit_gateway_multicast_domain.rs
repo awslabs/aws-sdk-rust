@@ -10,7 +10,7 @@ pub struct TransitGatewayMulticastDomain {
     pub transit_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the transit gateway multicast domain.</p>
     pub transit_gateway_multicast_domain_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the Amazon Web Services account that owns the transit gateway multicast domain.</p>
+    /// <p> The ID of the Amazon Web Services account that owns the transit gateway multicast domain.</p>
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The options for the transit gateway multicast domain.</p>
     pub options: ::std::option::Option<crate::types::TransitGatewayMulticastDomainOptions>,
@@ -34,7 +34,7 @@ impl TransitGatewayMulticastDomain {
     pub fn transit_gateway_multicast_domain_arn(&self) -> ::std::option::Option<&str> {
         self.transit_gateway_multicast_domain_arn.as_deref()
     }
-    /// <p>The ID of the Amazon Web Services account that owns the transit gateway multicast domain.</p>
+    /// <p> The ID of the Amazon Web Services account that owns the transit gateway multicast domain.</p>
     pub fn owner_id(&self) -> ::std::option::Option<&str> {
         self.owner_id.as_deref()
     }
@@ -120,17 +120,17 @@ impl TransitGatewayMulticastDomainBuilder {
     pub fn get_transit_gateway_multicast_domain_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.transit_gateway_multicast_domain_arn
     }
-    /// <p>The ID of the Amazon Web Services account that owns the transit gateway multicast domain.</p>
+    /// <p> The ID of the Amazon Web Services account that owns the transit gateway multicast domain.</p>
     pub fn owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the Amazon Web Services account that owns the transit gateway multicast domain.</p>
+    /// <p> The ID of the Amazon Web Services account that owns the transit gateway multicast domain.</p>
     pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_id = input;
         self
     }
-    /// <p>The ID of the Amazon Web Services account that owns the transit gateway multicast domain.</p>
+    /// <p> The ID of the Amazon Web Services account that owns the transit gateway multicast domain.</p>
     pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.owner_id
     }

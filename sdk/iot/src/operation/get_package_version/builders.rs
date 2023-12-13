@@ -22,7 +22,7 @@ impl GetPackageVersionInputBuilder {
 }
 /// Fluent builder constructing a request to `GetPackageVersion`.
 ///
-/// <p>Gets information about the specified package version.</p>
+/// <p>Gets information about the specified package version. </p>
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetPackageVersion</a> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetPackageVersionFluentBuilder {

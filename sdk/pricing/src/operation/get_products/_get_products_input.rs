@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetProductsInput {
-    /// <p>The code for the service whose products you want to retrieve.</p>
+    /// <p>The code for the service whose products you want to retrieve. </p>
     pub service_code: ::std::option::Option<::std::string::String>,
     /// <p>The list of filters that limit the returned products. only products that match all filters are returned.</p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The format version that you want the response to be in.</p>
-    /// <p>Valid values are: <code>aws_v1</code></p>
+    /// <p>Valid values are: <code>aws_v1</code> </p>
     pub format_version: ::std::option::Option<::std::string::String>,
     /// <p>The pagination token that indicates the next set of results that you want to retrieve.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ pub struct GetProductsInput {
     pub max_results: ::std::option::Option<i32>,
 }
 impl GetProductsInput {
-    /// <p>The code for the service whose products you want to retrieve.</p>
+    /// <p>The code for the service whose products you want to retrieve. </p>
     pub fn service_code(&self) -> ::std::option::Option<&str> {
         self.service_code.as_deref()
     }
@@ -27,7 +27,7 @@ impl GetProductsInput {
         self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The format version that you want the response to be in.</p>
-    /// <p>Valid values are: <code>aws_v1</code></p>
+    /// <p>Valid values are: <code>aws_v1</code> </p>
     pub fn format_version(&self) -> ::std::option::Option<&str> {
         self.format_version.as_deref()
     }
@@ -58,18 +58,18 @@ pub struct GetProductsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl GetProductsInputBuilder {
-    /// <p>The code for the service whose products you want to retrieve.</p>
+    /// <p>The code for the service whose products you want to retrieve. </p>
     /// This field is required.
     pub fn service_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_code = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The code for the service whose products you want to retrieve.</p>
+    /// <p>The code for the service whose products you want to retrieve. </p>
     pub fn set_service_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_code = input;
         self
     }
-    /// <p>The code for the service whose products you want to retrieve.</p>
+    /// <p>The code for the service whose products you want to retrieve. </p>
     pub fn get_service_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_code
     }
@@ -94,19 +94,19 @@ impl GetProductsInputBuilder {
         &self.filters
     }
     /// <p>The format version that you want the response to be in.</p>
-    /// <p>Valid values are: <code>aws_v1</code></p>
+    /// <p>Valid values are: <code>aws_v1</code> </p>
     pub fn format_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.format_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The format version that you want the response to be in.</p>
-    /// <p>Valid values are: <code>aws_v1</code></p>
+    /// <p>Valid values are: <code>aws_v1</code> </p>
     pub fn set_format_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.format_version = input;
         self
     }
     /// <p>The format version that you want the response to be in.</p>
-    /// <p>Valid values are: <code>aws_v1</code></p>
+    /// <p>Valid values are: <code>aws_v1</code> </p>
     pub fn get_format_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.format_version
     }

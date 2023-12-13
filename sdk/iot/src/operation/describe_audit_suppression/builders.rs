@@ -22,7 +22,7 @@ impl DescribeAuditSuppressionInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeAuditSuppression`.
 ///
-/// <p>Gets information about a Device Defender audit suppression.</p>
+/// <p> Gets information about a Device Defender audit suppression. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAuditSuppressionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

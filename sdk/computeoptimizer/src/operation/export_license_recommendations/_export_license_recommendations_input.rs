@@ -9,7 +9,7 @@ pub struct ExportLicenseRecommendationsInput {
     /// <p>If this parameter is omitted, recommendations for member accounts aren't included in the export.</p>
     /// <p>You can specify multiple account IDs per request.</p>
     pub account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>An array of objects to specify a filter that exports a more specific set of license recommendations.</p>
+    /// <p> An array of objects to specify a filter that exports a more specific set of license recommendations. </p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::LicenseRecommendationFilter>>,
     /// <p>The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported files</a> in the <i>Compute Optimizer User Guide</i>.</p>
     pub fields_to_export: ::std::option::Option<::std::vec::Vec<crate::types::ExportableLicenseField>>,
@@ -36,7 +36,7 @@ impl ExportLicenseRecommendationsInput {
     pub fn account_ids(&self) -> &[::std::string::String] {
         self.account_ids.as_deref().unwrap_or_default()
     }
-    /// <p>An array of objects to specify a filter that exports a more specific set of license recommendations.</p>
+    /// <p> An array of objects to specify a filter that exports a more specific set of license recommendations. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
     pub fn filters(&self) -> &[crate::types::LicenseRecommendationFilter] {
@@ -121,19 +121,19 @@ impl ExportLicenseRecommendationsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>An array of objects to specify a filter that exports a more specific set of license recommendations.</p>
+    /// <p> An array of objects to specify a filter that exports a more specific set of license recommendations. </p>
     pub fn filters(mut self, input: crate::types::LicenseRecommendationFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
         v.push(input);
         self.filters = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of objects to specify a filter that exports a more specific set of license recommendations.</p>
+    /// <p> An array of objects to specify a filter that exports a more specific set of license recommendations. </p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LicenseRecommendationFilter>>) -> Self {
         self.filters = input;
         self
     }
-    /// <p>An array of objects to specify a filter that exports a more specific set of license recommendations.</p>
+    /// <p> An array of objects to specify a filter that exports a more specific set of license recommendations. </p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LicenseRecommendationFilter>> {
         &self.filters
     }

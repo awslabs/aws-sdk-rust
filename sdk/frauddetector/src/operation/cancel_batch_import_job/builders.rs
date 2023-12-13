@@ -22,7 +22,7 @@ impl CancelBatchImportJobInputBuilder {
 }
 /// Fluent builder constructing a request to `CancelBatchImportJob`.
 ///
-/// <p>Cancels an in-progress batch import job.</p>
+/// <p> Cancels an in-progress batch import job.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CancelBatchImportJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,19 +108,19 @@ impl CancelBatchImportJobFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of an in-progress batch import job to cancel.</p>
+    /// <p> The ID of an in-progress batch import job to cancel. </p>
     /// <p>Amazon Fraud Detector will throw an error if the batch import job is in <code>FAILED</code>, <code>CANCELED</code>, or <code>COMPLETED</code> state.</p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_id(input.into());
         self
     }
-    /// <p>The ID of an in-progress batch import job to cancel.</p>
+    /// <p> The ID of an in-progress batch import job to cancel. </p>
     /// <p>Amazon Fraud Detector will throw an error if the batch import job is in <code>FAILED</code>, <code>CANCELED</code>, or <code>COMPLETED</code> state.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_id(input);
         self
     }
-    /// <p>The ID of an in-progress batch import job to cancel.</p>
+    /// <p> The ID of an in-progress batch import job to cancel. </p>
     /// <p>Amazon Fraud Detector will throw an error if the batch import job is in <code>FAILED</code>, <code>CANCELED</code>, or <code>COMPLETED</code> state.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_job_id()

@@ -4,27 +4,27 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BudgetPerformanceHistory {
-    /// <p>A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
+    /// <p> A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
     pub budget_name: ::std::option::Option<::std::string::String>,
-    /// <p>The type of a budget. It must be one of the following types:</p>
-    /// <p><code>COST</code>, <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, or <code>SAVINGS_PLANS_COVERAGE</code>.</p>
+    /// <p> The type of a budget. It must be one of the following types: </p>
+    /// <p> <code>COST</code>, <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, or <code>SAVINGS_PLANS_COVERAGE</code>.</p>
     pub budget_type: ::std::option::Option<crate::types::BudgetType>,
     /// <p>The history of the cost filters for a budget during the specified time period.</p>
     pub cost_filters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>The history of the cost types for a budget during the specified time period.</p>
     pub cost_types: ::std::option::Option<crate::types::CostTypes>,
-    /// <p>The time unit of the budget, such as MONTHLY or QUARTERLY.</p>
+    /// <p> The time unit of the budget, such as MONTHLY or QUARTERLY.</p>
     pub time_unit: ::std::option::Option<crate::types::TimeUnit>,
     /// <p>A list of amounts of cost or usage that you created budgets for, which are compared to your actual costs or usage.</p>
     pub budgeted_and_actual_amounts_list: ::std::option::Option<::std::vec::Vec<crate::types::BudgetedAndActualAmounts>>,
 }
 impl BudgetPerformanceHistory {
-    /// <p>A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
+    /// <p> A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
     pub fn budget_name(&self) -> ::std::option::Option<&str> {
         self.budget_name.as_deref()
     }
-    /// <p>The type of a budget. It must be one of the following types:</p>
-    /// <p><code>COST</code>, <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, or <code>SAVINGS_PLANS_COVERAGE</code>.</p>
+    /// <p> The type of a budget. It must be one of the following types: </p>
+    /// <p> <code>COST</code>, <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, or <code>SAVINGS_PLANS_COVERAGE</code>.</p>
     pub fn budget_type(&self) -> ::std::option::Option<&crate::types::BudgetType> {
         self.budget_type.as_ref()
     }
@@ -36,7 +36,7 @@ impl BudgetPerformanceHistory {
     pub fn cost_types(&self) -> ::std::option::Option<&crate::types::CostTypes> {
         self.cost_types.as_ref()
     }
-    /// <p>The time unit of the budget, such as MONTHLY or QUARTERLY.</p>
+    /// <p> The time unit of the budget, such as MONTHLY or QUARTERLY.</p>
     pub fn time_unit(&self) -> ::std::option::Option<&crate::types::TimeUnit> {
         self.time_unit.as_ref()
     }
@@ -66,34 +66,34 @@ pub struct BudgetPerformanceHistoryBuilder {
     pub(crate) budgeted_and_actual_amounts_list: ::std::option::Option<::std::vec::Vec<crate::types::BudgetedAndActualAmounts>>,
 }
 impl BudgetPerformanceHistoryBuilder {
-    /// <p>A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
+    /// <p> A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
     pub fn budget_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.budget_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
+    /// <p> A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
     pub fn set_budget_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.budget_name = input;
         self
     }
-    /// <p>A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
+    /// <p> A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
     pub fn get_budget_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.budget_name
     }
-    /// <p>The type of a budget. It must be one of the following types:</p>
-    /// <p><code>COST</code>, <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, or <code>SAVINGS_PLANS_COVERAGE</code>.</p>
+    /// <p> The type of a budget. It must be one of the following types: </p>
+    /// <p> <code>COST</code>, <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, or <code>SAVINGS_PLANS_COVERAGE</code>.</p>
     pub fn budget_type(mut self, input: crate::types::BudgetType) -> Self {
         self.budget_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of a budget. It must be one of the following types:</p>
-    /// <p><code>COST</code>, <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, or <code>SAVINGS_PLANS_COVERAGE</code>.</p>
+    /// <p> The type of a budget. It must be one of the following types: </p>
+    /// <p> <code>COST</code>, <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, or <code>SAVINGS_PLANS_COVERAGE</code>.</p>
     pub fn set_budget_type(mut self, input: ::std::option::Option<crate::types::BudgetType>) -> Self {
         self.budget_type = input;
         self
     }
-    /// <p>The type of a budget. It must be one of the following types:</p>
-    /// <p><code>COST</code>, <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, or <code>SAVINGS_PLANS_COVERAGE</code>.</p>
+    /// <p> The type of a budget. It must be one of the following types: </p>
+    /// <p> <code>COST</code>, <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, or <code>SAVINGS_PLANS_COVERAGE</code>.</p>
     pub fn get_budget_type(&self) -> &::std::option::Option<crate::types::BudgetType> {
         &self.budget_type
     }
@@ -136,17 +136,17 @@ impl BudgetPerformanceHistoryBuilder {
     pub fn get_cost_types(&self) -> &::std::option::Option<crate::types::CostTypes> {
         &self.cost_types
     }
-    /// <p>The time unit of the budget, such as MONTHLY or QUARTERLY.</p>
+    /// <p> The time unit of the budget, such as MONTHLY or QUARTERLY.</p>
     pub fn time_unit(mut self, input: crate::types::TimeUnit) -> Self {
         self.time_unit = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time unit of the budget, such as MONTHLY or QUARTERLY.</p>
+    /// <p> The time unit of the budget, such as MONTHLY or QUARTERLY.</p>
     pub fn set_time_unit(mut self, input: ::std::option::Option<crate::types::TimeUnit>) -> Self {
         self.time_unit = input;
         self
     }
-    /// <p>The time unit of the budget, such as MONTHLY or QUARTERLY.</p>
+    /// <p> The time unit of the budget, such as MONTHLY or QUARTERLY.</p>
     pub fn get_time_unit(&self) -> &::std::option::Option<crate::types::TimeUnit> {
         &self.time_unit
     }

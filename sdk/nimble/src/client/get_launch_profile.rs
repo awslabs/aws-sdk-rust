@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`launch_profile_id(impl Into<String>)`](crate::operation::get_launch_profile::builders::GetLaunchProfileFluentBuilder::launch_profile_id) / [`set_launch_profile_id(Option<String>)`](crate::operation::get_launch_profile::builders::GetLaunchProfileFluentBuilder::set_launch_profile_id):<br>required: **true**<br><p>The ID of the launch profile used to control access from the streaming session.</p><br>
-    ///   - [`studio_id(impl Into<String>)`](crate::operation::get_launch_profile::builders::GetLaunchProfileFluentBuilder::studio_id) / [`set_studio_id(Option<String>)`](crate::operation::get_launch_profile::builders::GetLaunchProfileFluentBuilder::set_studio_id):<br>required: **true**<br><p>The studio ID.</p><br>
+    ///   - [`studio_id(impl Into<String>)`](crate::operation::get_launch_profile::builders::GetLaunchProfileFluentBuilder::studio_id) / [`set_studio_id(Option<String>)`](crate::operation::get_launch_profile::builders::GetLaunchProfileFluentBuilder::set_studio_id):<br>required: **true**<br><p>The studio ID. </p><br>
     /// - On success, responds with [`GetLaunchProfileOutput`](crate::operation::get_launch_profile::GetLaunchProfileOutput) with field(s):
     ///   - [`launch_profile(Option<LaunchProfile>)`](crate::operation::get_launch_profile::GetLaunchProfileOutput::launch_profile): <p>The launch profile.</p>
     /// - On failure, responds with [`SdkError<GetLaunchProfileError>`](crate::operation::get_launch_profile::GetLaunchProfileError)

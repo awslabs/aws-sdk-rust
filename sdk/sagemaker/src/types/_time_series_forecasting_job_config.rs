@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimeSeriesForecastingJobConfig {
     /// <p>A URL to the Amazon S3 data source containing additional selected features that complement the target, itemID, timestamp, and grouped columns set in <code>TimeSeriesConfig</code>. When not provided, the AutoML job V2 includes all the columns from the original dataset that are not already declared in <code>TimeSeriesConfig</code>. If provided, the AutoML job V2 only considers these additional columns as a complement to the ones declared in <code>TimeSeriesConfig</code>.</p>
-    /// <p>You can input <code>FeatureAttributeNames</code> (optional) in JSON format as shown below:</p>
-    /// <p><code>{ "FeatureAttributeNames":["col1", "col2", ...] }</code>.</p>
+    /// <p>You can input <code>FeatureAttributeNames</code> (optional) in JSON format as shown below: </p>
+    /// <p> <code>{ "FeatureAttributeNames":["col1", "col2", ...] }</code>.</p>
     /// <p>You can also specify the data type of the feature (optional) in the format shown below:</p>
-    /// <p><code>{ "FeatureDataTypes":{"col1":"numeric", "col2":"categorical" ... } }</code></p>
-    /// <p>Autopilot supports the following data types: <code>numeric</code>, <code>categorical</code>, <code>text</code>, and <code>datetime</code>.</p><note>
+    /// <p> <code>{ "FeatureDataTypes":{"col1":"numeric", "col2":"categorical" ... } }</code> </p>
+    /// <p>Autopilot supports the following data types: <code>numeric</code>, <code>categorical</code>, <code>text</code>, and <code>datetime</code>.</p> <note>
     /// <p>These column keys must not include any column set in <code>TimeSeriesConfig</code>.</p>
     /// </note>
     pub feature_specification_s3_uri: ::std::option::Option<::std::string::String>,
@@ -19,18 +19,12 @@ pub struct TimeSeriesForecastingJobConfig {
     /// <p>Valid intervals are an integer followed by Y (Year), M (Month), W (Week), D (Day), H (Hour), and min (Minute). For example, <code>1D</code> indicates every day and <code>15min</code> indicates every 15 minutes. The value of a frequency must not overlap with the next larger frequency. For example, you must use a frequency of <code>1H</code> instead of <code>60min</code>.</p>
     /// <p>The valid values for each frequency are the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>Minute - 1-59</p></li>
-    /// <li>
-    /// <p>Hour - 1-23</p></li>
-    /// <li>
-    /// <p>Day - 1-6</p></li>
-    /// <li>
-    /// <p>Week - 1-4</p></li>
-    /// <li>
-    /// <p>Month - 1-11</p></li>
-    /// <li>
-    /// <p>Year - 1</p></li>
+    /// <li> <p>Minute - 1-59</p> </li>
+    /// <li> <p>Hour - 1-23</p> </li>
+    /// <li> <p>Day - 1-6</p> </li>
+    /// <li> <p>Week - 1-4</p> </li>
+    /// <li> <p>Month - 1-11</p> </li>
+    /// <li> <p>Year - 1</p> </li>
     /// </ul>
     pub forecast_frequency: ::std::option::Option<::std::string::String>,
     /// <p>The number of time-steps that the model predicts. The forecast horizon is also called the prediction length. The maximum forecast horizon is the lesser of 500 time-steps or 1/4 of the time-steps in the dataset.</p>
@@ -46,11 +40,11 @@ pub struct TimeSeriesForecastingJobConfig {
 }
 impl TimeSeriesForecastingJobConfig {
     /// <p>A URL to the Amazon S3 data source containing additional selected features that complement the target, itemID, timestamp, and grouped columns set in <code>TimeSeriesConfig</code>. When not provided, the AutoML job V2 includes all the columns from the original dataset that are not already declared in <code>TimeSeriesConfig</code>. If provided, the AutoML job V2 only considers these additional columns as a complement to the ones declared in <code>TimeSeriesConfig</code>.</p>
-    /// <p>You can input <code>FeatureAttributeNames</code> (optional) in JSON format as shown below:</p>
-    /// <p><code>{ "FeatureAttributeNames":["col1", "col2", ...] }</code>.</p>
+    /// <p>You can input <code>FeatureAttributeNames</code> (optional) in JSON format as shown below: </p>
+    /// <p> <code>{ "FeatureAttributeNames":["col1", "col2", ...] }</code>.</p>
     /// <p>You can also specify the data type of the feature (optional) in the format shown below:</p>
-    /// <p><code>{ "FeatureDataTypes":{"col1":"numeric", "col2":"categorical" ... } }</code></p>
-    /// <p>Autopilot supports the following data types: <code>numeric</code>, <code>categorical</code>, <code>text</code>, and <code>datetime</code>.</p><note>
+    /// <p> <code>{ "FeatureDataTypes":{"col1":"numeric", "col2":"categorical" ... } }</code> </p>
+    /// <p>Autopilot supports the following data types: <code>numeric</code>, <code>categorical</code>, <code>text</code>, and <code>datetime</code>.</p> <note>
     /// <p>These column keys must not include any column set in <code>TimeSeriesConfig</code>.</p>
     /// </note>
     pub fn feature_specification_s3_uri(&self) -> ::std::option::Option<&str> {
@@ -64,18 +58,12 @@ impl TimeSeriesForecastingJobConfig {
     /// <p>Valid intervals are an integer followed by Y (Year), M (Month), W (Week), D (Day), H (Hour), and min (Minute). For example, <code>1D</code> indicates every day and <code>15min</code> indicates every 15 minutes. The value of a frequency must not overlap with the next larger frequency. For example, you must use a frequency of <code>1H</code> instead of <code>60min</code>.</p>
     /// <p>The valid values for each frequency are the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>Minute - 1-59</p></li>
-    /// <li>
-    /// <p>Hour - 1-23</p></li>
-    /// <li>
-    /// <p>Day - 1-6</p></li>
-    /// <li>
-    /// <p>Week - 1-4</p></li>
-    /// <li>
-    /// <p>Month - 1-11</p></li>
-    /// <li>
-    /// <p>Year - 1</p></li>
+    /// <li> <p>Minute - 1-59</p> </li>
+    /// <li> <p>Hour - 1-23</p> </li>
+    /// <li> <p>Day - 1-6</p> </li>
+    /// <li> <p>Week - 1-4</p> </li>
+    /// <li> <p>Month - 1-11</p> </li>
+    /// <li> <p>Year - 1</p> </li>
     /// </ul>
     pub fn forecast_frequency(&self) -> ::std::option::Option<&str> {
         self.forecast_frequency.as_deref()
@@ -127,11 +115,11 @@ pub struct TimeSeriesForecastingJobConfigBuilder {
 }
 impl TimeSeriesForecastingJobConfigBuilder {
     /// <p>A URL to the Amazon S3 data source containing additional selected features that complement the target, itemID, timestamp, and grouped columns set in <code>TimeSeriesConfig</code>. When not provided, the AutoML job V2 includes all the columns from the original dataset that are not already declared in <code>TimeSeriesConfig</code>. If provided, the AutoML job V2 only considers these additional columns as a complement to the ones declared in <code>TimeSeriesConfig</code>.</p>
-    /// <p>You can input <code>FeatureAttributeNames</code> (optional) in JSON format as shown below:</p>
-    /// <p><code>{ "FeatureAttributeNames":["col1", "col2", ...] }</code>.</p>
+    /// <p>You can input <code>FeatureAttributeNames</code> (optional) in JSON format as shown below: </p>
+    /// <p> <code>{ "FeatureAttributeNames":["col1", "col2", ...] }</code>.</p>
     /// <p>You can also specify the data type of the feature (optional) in the format shown below:</p>
-    /// <p><code>{ "FeatureDataTypes":{"col1":"numeric", "col2":"categorical" ... } }</code></p>
-    /// <p>Autopilot supports the following data types: <code>numeric</code>, <code>categorical</code>, <code>text</code>, and <code>datetime</code>.</p><note>
+    /// <p> <code>{ "FeatureDataTypes":{"col1":"numeric", "col2":"categorical" ... } }</code> </p>
+    /// <p>Autopilot supports the following data types: <code>numeric</code>, <code>categorical</code>, <code>text</code>, and <code>datetime</code>.</p> <note>
     /// <p>These column keys must not include any column set in <code>TimeSeriesConfig</code>.</p>
     /// </note>
     pub fn feature_specification_s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -139,11 +127,11 @@ impl TimeSeriesForecastingJobConfigBuilder {
         self
     }
     /// <p>A URL to the Amazon S3 data source containing additional selected features that complement the target, itemID, timestamp, and grouped columns set in <code>TimeSeriesConfig</code>. When not provided, the AutoML job V2 includes all the columns from the original dataset that are not already declared in <code>TimeSeriesConfig</code>. If provided, the AutoML job V2 only considers these additional columns as a complement to the ones declared in <code>TimeSeriesConfig</code>.</p>
-    /// <p>You can input <code>FeatureAttributeNames</code> (optional) in JSON format as shown below:</p>
-    /// <p><code>{ "FeatureAttributeNames":["col1", "col2", ...] }</code>.</p>
+    /// <p>You can input <code>FeatureAttributeNames</code> (optional) in JSON format as shown below: </p>
+    /// <p> <code>{ "FeatureAttributeNames":["col1", "col2", ...] }</code>.</p>
     /// <p>You can also specify the data type of the feature (optional) in the format shown below:</p>
-    /// <p><code>{ "FeatureDataTypes":{"col1":"numeric", "col2":"categorical" ... } }</code></p>
-    /// <p>Autopilot supports the following data types: <code>numeric</code>, <code>categorical</code>, <code>text</code>, and <code>datetime</code>.</p><note>
+    /// <p> <code>{ "FeatureDataTypes":{"col1":"numeric", "col2":"categorical" ... } }</code> </p>
+    /// <p>Autopilot supports the following data types: <code>numeric</code>, <code>categorical</code>, <code>text</code>, and <code>datetime</code>.</p> <note>
     /// <p>These column keys must not include any column set in <code>TimeSeriesConfig</code>.</p>
     /// </note>
     pub fn set_feature_specification_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -151,11 +139,11 @@ impl TimeSeriesForecastingJobConfigBuilder {
         self
     }
     /// <p>A URL to the Amazon S3 data source containing additional selected features that complement the target, itemID, timestamp, and grouped columns set in <code>TimeSeriesConfig</code>. When not provided, the AutoML job V2 includes all the columns from the original dataset that are not already declared in <code>TimeSeriesConfig</code>. If provided, the AutoML job V2 only considers these additional columns as a complement to the ones declared in <code>TimeSeriesConfig</code>.</p>
-    /// <p>You can input <code>FeatureAttributeNames</code> (optional) in JSON format as shown below:</p>
-    /// <p><code>{ "FeatureAttributeNames":["col1", "col2", ...] }</code>.</p>
+    /// <p>You can input <code>FeatureAttributeNames</code> (optional) in JSON format as shown below: </p>
+    /// <p> <code>{ "FeatureAttributeNames":["col1", "col2", ...] }</code>.</p>
     /// <p>You can also specify the data type of the feature (optional) in the format shown below:</p>
-    /// <p><code>{ "FeatureDataTypes":{"col1":"numeric", "col2":"categorical" ... } }</code></p>
-    /// <p>Autopilot supports the following data types: <code>numeric</code>, <code>categorical</code>, <code>text</code>, and <code>datetime</code>.</p><note>
+    /// <p> <code>{ "FeatureDataTypes":{"col1":"numeric", "col2":"categorical" ... } }</code> </p>
+    /// <p>Autopilot supports the following data types: <code>numeric</code>, <code>categorical</code>, <code>text</code>, and <code>datetime</code>.</p> <note>
     /// <p>These column keys must not include any column set in <code>TimeSeriesConfig</code>.</p>
     /// </note>
     pub fn get_feature_specification_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -179,18 +167,12 @@ impl TimeSeriesForecastingJobConfigBuilder {
     /// <p>Valid intervals are an integer followed by Y (Year), M (Month), W (Week), D (Day), H (Hour), and min (Minute). For example, <code>1D</code> indicates every day and <code>15min</code> indicates every 15 minutes. The value of a frequency must not overlap with the next larger frequency. For example, you must use a frequency of <code>1H</code> instead of <code>60min</code>.</p>
     /// <p>The valid values for each frequency are the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>Minute - 1-59</p></li>
-    /// <li>
-    /// <p>Hour - 1-23</p></li>
-    /// <li>
-    /// <p>Day - 1-6</p></li>
-    /// <li>
-    /// <p>Week - 1-4</p></li>
-    /// <li>
-    /// <p>Month - 1-11</p></li>
-    /// <li>
-    /// <p>Year - 1</p></li>
+    /// <li> <p>Minute - 1-59</p> </li>
+    /// <li> <p>Hour - 1-23</p> </li>
+    /// <li> <p>Day - 1-6</p> </li>
+    /// <li> <p>Week - 1-4</p> </li>
+    /// <li> <p>Month - 1-11</p> </li>
+    /// <li> <p>Year - 1</p> </li>
     /// </ul>
     /// This field is required.
     pub fn forecast_frequency(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -201,18 +183,12 @@ impl TimeSeriesForecastingJobConfigBuilder {
     /// <p>Valid intervals are an integer followed by Y (Year), M (Month), W (Week), D (Day), H (Hour), and min (Minute). For example, <code>1D</code> indicates every day and <code>15min</code> indicates every 15 minutes. The value of a frequency must not overlap with the next larger frequency. For example, you must use a frequency of <code>1H</code> instead of <code>60min</code>.</p>
     /// <p>The valid values for each frequency are the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>Minute - 1-59</p></li>
-    /// <li>
-    /// <p>Hour - 1-23</p></li>
-    /// <li>
-    /// <p>Day - 1-6</p></li>
-    /// <li>
-    /// <p>Week - 1-4</p></li>
-    /// <li>
-    /// <p>Month - 1-11</p></li>
-    /// <li>
-    /// <p>Year - 1</p></li>
+    /// <li> <p>Minute - 1-59</p> </li>
+    /// <li> <p>Hour - 1-23</p> </li>
+    /// <li> <p>Day - 1-6</p> </li>
+    /// <li> <p>Week - 1-4</p> </li>
+    /// <li> <p>Month - 1-11</p> </li>
+    /// <li> <p>Year - 1</p> </li>
     /// </ul>
     pub fn set_forecast_frequency(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.forecast_frequency = input;
@@ -222,18 +198,12 @@ impl TimeSeriesForecastingJobConfigBuilder {
     /// <p>Valid intervals are an integer followed by Y (Year), M (Month), W (Week), D (Day), H (Hour), and min (Minute). For example, <code>1D</code> indicates every day and <code>15min</code> indicates every 15 minutes. The value of a frequency must not overlap with the next larger frequency. For example, you must use a frequency of <code>1H</code> instead of <code>60min</code>.</p>
     /// <p>The valid values for each frequency are the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>Minute - 1-59</p></li>
-    /// <li>
-    /// <p>Hour - 1-23</p></li>
-    /// <li>
-    /// <p>Day - 1-6</p></li>
-    /// <li>
-    /// <p>Week - 1-4</p></li>
-    /// <li>
-    /// <p>Month - 1-11</p></li>
-    /// <li>
-    /// <p>Year - 1</p></li>
+    /// <li> <p>Minute - 1-59</p> </li>
+    /// <li> <p>Hour - 1-23</p> </li>
+    /// <li> <p>Day - 1-6</p> </li>
+    /// <li> <p>Week - 1-4</p> </li>
+    /// <li> <p>Month - 1-11</p> </li>
+    /// <li> <p>Year - 1</p> </li>
     /// </ul>
     pub fn get_forecast_frequency(&self) -> &::std::option::Option<::std::string::String> {
         &self.forecast_frequency

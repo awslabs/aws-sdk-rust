@@ -14,7 +14,7 @@ pub struct S3DataAccessAsset {
     pub s3_access_point_alias: ::std::option::Option<::std::string::String>,
     /// <p>The ARN for your Amazon S3 Access Point. Customers can also access their entitled data using the S3 Access Point ARN.</p>
     pub s3_access_point_arn: ::std::option::Option<::std::string::String>,
-    /// <p>List of AWS KMS CMKs (Key Management System Customer Managed Keys) and ARNs used to encrypt S3 objects being shared in this S3 Data Access asset. Providers must include all AWS KMS keys used to encrypt these shared S3 objects.</p>
+    /// <p> List of AWS KMS CMKs (Key Management System Customer Managed Keys) and ARNs used to encrypt S3 objects being shared in this S3 Data Access asset. Providers must include all AWS KMS keys used to encrypt these shared S3 objects.</p>
     pub kms_keys_to_grant: ::std::option::Option<::std::vec::Vec<crate::types::KmsKeyToGrant>>,
 }
 impl S3DataAccessAsset {
@@ -43,7 +43,7 @@ impl S3DataAccessAsset {
     pub fn s3_access_point_arn(&self) -> ::std::option::Option<&str> {
         self.s3_access_point_arn.as_deref()
     }
-    /// <p>List of AWS KMS CMKs (Key Management System Customer Managed Keys) and ARNs used to encrypt S3 objects being shared in this S3 Data Access asset. Providers must include all AWS KMS keys used to encrypt these shared S3 objects.</p>
+    /// <p> List of AWS KMS CMKs (Key Management System Customer Managed Keys) and ARNs used to encrypt S3 objects being shared in this S3 Data Access asset. Providers must include all AWS KMS keys used to encrypt these shared S3 objects.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.kms_keys_to_grant.is_none()`.
     pub fn kms_keys_to_grant(&self) -> &[crate::types::KmsKeyToGrant] {
@@ -156,19 +156,19 @@ impl S3DataAccessAssetBuilder {
     ///
     /// To override the contents of this collection use [`set_kms_keys_to_grant`](Self::set_kms_keys_to_grant).
     ///
-    /// <p>List of AWS KMS CMKs (Key Management System Customer Managed Keys) and ARNs used to encrypt S3 objects being shared in this S3 Data Access asset. Providers must include all AWS KMS keys used to encrypt these shared S3 objects.</p>
+    /// <p> List of AWS KMS CMKs (Key Management System Customer Managed Keys) and ARNs used to encrypt S3 objects being shared in this S3 Data Access asset. Providers must include all AWS KMS keys used to encrypt these shared S3 objects.</p>
     pub fn kms_keys_to_grant(mut self, input: crate::types::KmsKeyToGrant) -> Self {
         let mut v = self.kms_keys_to_grant.unwrap_or_default();
         v.push(input);
         self.kms_keys_to_grant = ::std::option::Option::Some(v);
         self
     }
-    /// <p>List of AWS KMS CMKs (Key Management System Customer Managed Keys) and ARNs used to encrypt S3 objects being shared in this S3 Data Access asset. Providers must include all AWS KMS keys used to encrypt these shared S3 objects.</p>
+    /// <p> List of AWS KMS CMKs (Key Management System Customer Managed Keys) and ARNs used to encrypt S3 objects being shared in this S3 Data Access asset. Providers must include all AWS KMS keys used to encrypt these shared S3 objects.</p>
     pub fn set_kms_keys_to_grant(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KmsKeyToGrant>>) -> Self {
         self.kms_keys_to_grant = input;
         self
     }
-    /// <p>List of AWS KMS CMKs (Key Management System Customer Managed Keys) and ARNs used to encrypt S3 objects being shared in this S3 Data Access asset. Providers must include all AWS KMS keys used to encrypt these shared S3 objects.</p>
+    /// <p> List of AWS KMS CMKs (Key Management System Customer Managed Keys) and ARNs used to encrypt S3 objects being shared in this S3 Data Access asset. Providers must include all AWS KMS keys used to encrypt these shared S3 objects.</p>
     pub fn get_kms_keys_to_grant(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KmsKeyToGrant>> {
         &self.kms_keys_to_grant
     }

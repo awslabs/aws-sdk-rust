@@ -256,7 +256,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateUnrefer
 pub enum CreateUnreferencedMergeCommitError {
     /// <p>The specified commit does not exist or no commit was specified, and the specified repository has no default branch.</p>
     CommitDoesNotExistException(crate::types::error::CommitDoesNotExistException),
-    /// <p>The commit message is too long. Provide a shorter string.</p>
+    /// <p>The commit message is too long. Provide a shorter string. </p>
     CommitMessageLengthExceededException(crate::types::error::CommitMessageLengthExceededException),
     /// <p>A commit was not specified.</p>
     CommitRequiredException(crate::types::error::CommitRequiredException),
@@ -288,17 +288,17 @@ pub enum CreateUnreferencedMergeCommitError {
     InvalidConflictResolutionStrategyException(crate::types::error::InvalidConflictResolutionStrategyException),
     /// <p>The specified email address either contains one or more characters that are not allowed, or it exceeds the maximum number of characters allowed for an email address.</p>
     InvalidEmailException(crate::types::error::InvalidEmailException),
-    /// <p>The specified file mode permission is not valid. For a list of valid file mode permissions, see <code>PutFile</code>.</p>
+    /// <p>The specified file mode permission is not valid. For a list of valid file mode permissions, see <code>PutFile</code>. </p>
     InvalidFileModeException(crate::types::error::InvalidFileModeException),
     /// <p>The specified merge option is not valid for this operation. Not all merge strategies are supported for all operations.</p>
     InvalidMergeOptionException(crate::types::error::InvalidMergeOptionException),
     /// <p>The specified path is not valid.</p>
     InvalidPathException(crate::types::error::InvalidPathException),
-    /// <p>Automerge was specified for resolving the conflict, but the replacement type is not valid or content is missing.</p>
+    /// <p>Automerge was specified for resolving the conflict, but the replacement type is not valid or content is missing. </p>
     InvalidReplacementContentException(crate::types::error::InvalidReplacementContentException),
     /// <p>Automerge was specified for resolving the conflict, but the specified replacement type is not valid.</p>
     InvalidReplacementTypeException(crate::types::error::InvalidReplacementTypeException),
-    /// <p>A specified repository name is not valid.</p><note>
+    /// <p>A specified repository name is not valid.</p> <note>
     /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::types::error::InvalidRepositoryNameException),
@@ -314,7 +314,7 @@ pub enum CreateUnreferencedMergeCommitError {
     MergeOptionRequiredException(crate::types::error::MergeOptionRequiredException),
     /// <p>More than one conflict resolution entries exists for the conflict. A conflict can have only one conflict resolution entry.</p>
     MultipleConflictResolutionEntriesException(crate::types::error::MultipleConflictResolutionEntriesException),
-    /// <p>The user name is not valid because it has exceeded the character limit for author names.</p>
+    /// <p>The user name is not valid because it has exceeded the character limit for author names. </p>
     NameLengthExceededException(crate::types::error::NameLengthExceededException),
     /// <p>The folderPath for a location cannot be null.</p>
     PathRequiredException(crate::types::error::PathRequiredException),

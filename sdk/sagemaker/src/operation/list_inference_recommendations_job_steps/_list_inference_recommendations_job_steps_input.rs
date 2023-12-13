@@ -8,7 +8,7 @@ pub struct ListInferenceRecommendationsJobStepsInput {
     /// <p>A filter to return benchmarks of a specified status. If this field is left empty, then all benchmarks are returned.</p>
     pub status: ::std::option::Option<crate::types::RecommendationJobStatus>,
     /// <p>A filter to return details about the specified type of subtask.</p>
-    /// <p><code>BENCHMARK</code>: Evaluate the performance of your model on different instance types.</p>
+    /// <p> <code>BENCHMARK</code>: Evaluate the performance of your model on different instance types.</p>
     pub step_type: ::std::option::Option<crate::types::RecommendationStepType>,
     /// <p>The maximum number of results to return.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -25,7 +25,7 @@ impl ListInferenceRecommendationsJobStepsInput {
         self.status.as_ref()
     }
     /// <p>A filter to return details about the specified type of subtask.</p>
-    /// <p><code>BENCHMARK</code>: Evaluate the performance of your model on different instance types.</p>
+    /// <p> <code>BENCHMARK</code>: Evaluate the performance of your model on different instance types.</p>
     pub fn step_type(&self) -> ::std::option::Option<&crate::types::RecommendationStepType> {
         self.step_type.as_ref()
     }
@@ -86,19 +86,19 @@ impl ListInferenceRecommendationsJobStepsInputBuilder {
         &self.status
     }
     /// <p>A filter to return details about the specified type of subtask.</p>
-    /// <p><code>BENCHMARK</code>: Evaluate the performance of your model on different instance types.</p>
+    /// <p> <code>BENCHMARK</code>: Evaluate the performance of your model on different instance types.</p>
     pub fn step_type(mut self, input: crate::types::RecommendationStepType) -> Self {
         self.step_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>A filter to return details about the specified type of subtask.</p>
-    /// <p><code>BENCHMARK</code>: Evaluate the performance of your model on different instance types.</p>
+    /// <p> <code>BENCHMARK</code>: Evaluate the performance of your model on different instance types.</p>
     pub fn set_step_type(mut self, input: ::std::option::Option<crate::types::RecommendationStepType>) -> Self {
         self.step_type = input;
         self
     }
     /// <p>A filter to return details about the specified type of subtask.</p>
-    /// <p><code>BENCHMARK</code>: Evaluate the performance of your model on different instance types.</p>
+    /// <p> <code>BENCHMARK</code>: Evaluate the performance of your model on different instance types.</p>
     pub fn get_step_type(&self) -> &::std::option::Option<crate::types::RecommendationStepType> {
         &self.step_type
     }

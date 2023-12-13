@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeProblemOutput {
-    /// <p>Information about the problem.</p>
+    /// <p>Information about the problem. </p>
     pub problem: ::std::option::Option<crate::types::Problem>,
     _request_id: Option<String>,
 }
 impl DescribeProblemOutput {
-    /// <p>Information about the problem.</p>
+    /// <p>Information about the problem. </p>
     pub fn problem(&self) -> ::std::option::Option<&crate::types::Problem> {
         self.problem.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct DescribeProblemOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeProblemOutputBuilder {
-    /// <p>Information about the problem.</p>
+    /// <p>Information about the problem. </p>
     pub fn problem(mut self, input: crate::types::Problem) -> Self {
         self.problem = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Information about the problem.</p>
+    /// <p>Information about the problem. </p>
     pub fn set_problem(mut self, input: ::std::option::Option<crate::types::Problem>) -> Self {
         self.problem = input;
         self
     }
-    /// <p>Information about the problem.</p>
+    /// <p>Information about the problem. </p>
     pub fn get_problem(&self) -> &::std::option::Option<crate::types::Problem> {
         &self.problem
     }

@@ -7,10 +7,8 @@ pub struct UpdateUserInput {
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>The option to indicate the type of user.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SUPER_USER</code>– A user with permission to all the functionality and data in FinSpace.</p></li>
-    /// <li>
-    /// <p><code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permission group.</p></li>
+    /// <li> <p> <code>SUPER_USER</code>– A user with permission to all the functionality and data in FinSpace.</p> </li>
+    /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permission group.</p> </li>
     /// </ul>
     pub r#type: ::std::option::Option<crate::types::UserType>,
     /// <p>The first name of the user.</p>
@@ -19,10 +17,8 @@ pub struct UpdateUserInput {
     pub last_name: ::std::option::Option<::std::string::String>,
     /// <p>The option to indicate whether the user can use the <code>GetProgrammaticAccessCredentials</code> API to obtain credentials that can then be used to access other FinSpace Data API operations.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ENABLED</code> – The user has permissions to use the APIs.</p></li>
-    /// <li>
-    /// <p><code>DISABLED</code> – The user does not have permissions to use any APIs.</p></li>
+    /// <li> <p> <code>ENABLED</code> – The user has permissions to use the APIs.</p> </li>
+    /// <li> <p> <code>DISABLED</code> – The user does not have permissions to use any APIs.</p> </li>
     /// </ul>
     pub api_access: ::std::option::Option<crate::types::ApiAccess>,
     /// <p>The ARN identifier of an AWS user or role that is allowed to call the <code>GetProgrammaticAccessCredentials</code> API to obtain a credentials token for a specific FinSpace user. This must be an IAM role within your FinSpace account.</p>
@@ -37,10 +33,8 @@ impl UpdateUserInput {
     }
     /// <p>The option to indicate the type of user.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SUPER_USER</code>– A user with permission to all the functionality and data in FinSpace.</p></li>
-    /// <li>
-    /// <p><code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permission group.</p></li>
+    /// <li> <p> <code>SUPER_USER</code>– A user with permission to all the functionality and data in FinSpace.</p> </li>
+    /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permission group.</p> </li>
     /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::UserType> {
         self.r#type.as_ref()
@@ -55,10 +49,8 @@ impl UpdateUserInput {
     }
     /// <p>The option to indicate whether the user can use the <code>GetProgrammaticAccessCredentials</code> API to obtain credentials that can then be used to access other FinSpace Data API operations.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ENABLED</code> – The user has permissions to use the APIs.</p></li>
-    /// <li>
-    /// <p><code>DISABLED</code> – The user does not have permissions to use any APIs.</p></li>
+    /// <li> <p> <code>ENABLED</code> – The user has permissions to use the APIs.</p> </li>
+    /// <li> <p> <code>DISABLED</code> – The user does not have permissions to use any APIs.</p> </li>
     /// </ul>
     pub fn api_access(&self) -> ::std::option::Option<&crate::types::ApiAccess> {
         self.api_access.as_ref()
@@ -122,10 +114,8 @@ impl UpdateUserInputBuilder {
     }
     /// <p>The option to indicate the type of user.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SUPER_USER</code>– A user with permission to all the functionality and data in FinSpace.</p></li>
-    /// <li>
-    /// <p><code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permission group.</p></li>
+    /// <li> <p> <code>SUPER_USER</code>– A user with permission to all the functionality and data in FinSpace.</p> </li>
+    /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permission group.</p> </li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::UserType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -133,10 +123,8 @@ impl UpdateUserInputBuilder {
     }
     /// <p>The option to indicate the type of user.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SUPER_USER</code>– A user with permission to all the functionality and data in FinSpace.</p></li>
-    /// <li>
-    /// <p><code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permission group.</p></li>
+    /// <li> <p> <code>SUPER_USER</code>– A user with permission to all the functionality and data in FinSpace.</p> </li>
+    /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permission group.</p> </li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::UserType>) -> Self {
         self.r#type = input;
@@ -144,10 +132,8 @@ impl UpdateUserInputBuilder {
     }
     /// <p>The option to indicate the type of user.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SUPER_USER</code>– A user with permission to all the functionality and data in FinSpace.</p></li>
-    /// <li>
-    /// <p><code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permission group.</p></li>
+    /// <li> <p> <code>SUPER_USER</code>– A user with permission to all the functionality and data in FinSpace.</p> </li>
+    /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permission group.</p> </li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::UserType> {
         &self.r#type
@@ -182,10 +168,8 @@ impl UpdateUserInputBuilder {
     }
     /// <p>The option to indicate whether the user can use the <code>GetProgrammaticAccessCredentials</code> API to obtain credentials that can then be used to access other FinSpace Data API operations.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ENABLED</code> – The user has permissions to use the APIs.</p></li>
-    /// <li>
-    /// <p><code>DISABLED</code> – The user does not have permissions to use any APIs.</p></li>
+    /// <li> <p> <code>ENABLED</code> – The user has permissions to use the APIs.</p> </li>
+    /// <li> <p> <code>DISABLED</code> – The user does not have permissions to use any APIs.</p> </li>
     /// </ul>
     pub fn api_access(mut self, input: crate::types::ApiAccess) -> Self {
         self.api_access = ::std::option::Option::Some(input);
@@ -193,10 +177,8 @@ impl UpdateUserInputBuilder {
     }
     /// <p>The option to indicate whether the user can use the <code>GetProgrammaticAccessCredentials</code> API to obtain credentials that can then be used to access other FinSpace Data API operations.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ENABLED</code> – The user has permissions to use the APIs.</p></li>
-    /// <li>
-    /// <p><code>DISABLED</code> – The user does not have permissions to use any APIs.</p></li>
+    /// <li> <p> <code>ENABLED</code> – The user has permissions to use the APIs.</p> </li>
+    /// <li> <p> <code>DISABLED</code> – The user does not have permissions to use any APIs.</p> </li>
     /// </ul>
     pub fn set_api_access(mut self, input: ::std::option::Option<crate::types::ApiAccess>) -> Self {
         self.api_access = input;
@@ -204,10 +186,8 @@ impl UpdateUserInputBuilder {
     }
     /// <p>The option to indicate whether the user can use the <code>GetProgrammaticAccessCredentials</code> API to obtain credentials that can then be used to access other FinSpace Data API operations.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ENABLED</code> – The user has permissions to use the APIs.</p></li>
-    /// <li>
-    /// <p><code>DISABLED</code> – The user does not have permissions to use any APIs.</p></li>
+    /// <li> <p> <code>ENABLED</code> – The user has permissions to use the APIs.</p> </li>
+    /// <li> <p> <code>DISABLED</code> – The user does not have permissions to use any APIs.</p> </li>
     /// </ul>
     pub fn get_api_access(&self) -> &::std::option::Option<crate::types::ApiAccess> {
         &self.api_access

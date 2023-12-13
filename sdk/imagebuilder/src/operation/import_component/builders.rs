@@ -122,7 +122,7 @@ impl ImportComponentFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>The semantic version of the component. This version follows the semantic version syntax.</p><note>
+    /// <p>The semantic version of the component. This version follows the semantic version syntax.</p> <note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -135,13 +135,13 @@ impl ImportComponentFluentBuilder {
     /// </patch>
     /// </minor>
     /// </major></p>
-    /// <p><b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
+    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
     /// </note>
     pub fn semantic_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.semantic_version(input.into());
         self
     }
-    /// <p>The semantic version of the component. This version follows the semantic version syntax.</p><note>
+    /// <p>The semantic version of the component. This version follows the semantic version syntax.</p> <note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -154,13 +154,13 @@ impl ImportComponentFluentBuilder {
     /// </patch>
     /// </minor>
     /// </major></p>
-    /// <p><b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
+    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
     /// </note>
     pub fn set_semantic_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_semantic_version(input);
         self
     }
-    /// <p>The semantic version of the component. This version follows the semantic version syntax.</p><note>
+    /// <p>The semantic version of the component. This version follows the semantic version syntax.</p> <note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -173,7 +173,7 @@ impl ImportComponentFluentBuilder {
     /// </patch>
     /// </minor>
     /// </major></p>
-    /// <p><b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
+    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
     /// </note>
     pub fn get_semantic_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_semantic_version()

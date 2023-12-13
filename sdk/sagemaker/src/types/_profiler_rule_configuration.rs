@@ -6,7 +6,7 @@
 pub struct ProfilerRuleConfiguration {
     /// <p>The name of the rule configuration. It must be unique relative to other rule configuration names.</p>
     pub rule_configuration_name: ::std::option::Option<::std::string::String>,
-    /// <p>Path to local storage location for output of rules. Defaults to <code>/opt/ml/processing/output/rule/</code>.</p>
+    /// <p>Path to local storage location for output of rules. Defaults to <code>/opt/ml/processing/output/rule/</code>. </p>
     pub local_path: ::std::option::Option<::std::string::String>,
     /// <p>Path to Amazon S3 storage location for rules.</p>
     pub s3_output_path: ::std::option::Option<::std::string::String>,
@@ -24,7 +24,7 @@ impl ProfilerRuleConfiguration {
     pub fn rule_configuration_name(&self) -> ::std::option::Option<&str> {
         self.rule_configuration_name.as_deref()
     }
-    /// <p>Path to local storage location for output of rules. Defaults to <code>/opt/ml/processing/output/rule/</code>.</p>
+    /// <p>Path to local storage location for output of rules. Defaults to <code>/opt/ml/processing/output/rule/</code>. </p>
     pub fn local_path(&self) -> ::std::option::Option<&str> {
         self.local_path.as_deref()
     }
@@ -84,17 +84,17 @@ impl ProfilerRuleConfigurationBuilder {
     pub fn get_rule_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.rule_configuration_name
     }
-    /// <p>Path to local storage location for output of rules. Defaults to <code>/opt/ml/processing/output/rule/</code>.</p>
+    /// <p>Path to local storage location for output of rules. Defaults to <code>/opt/ml/processing/output/rule/</code>. </p>
     pub fn local_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.local_path = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Path to local storage location for output of rules. Defaults to <code>/opt/ml/processing/output/rule/</code>.</p>
+    /// <p>Path to local storage location for output of rules. Defaults to <code>/opt/ml/processing/output/rule/</code>. </p>
     pub fn set_local_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.local_path = input;
         self
     }
-    /// <p>Path to local storage location for output of rules. Defaults to <code>/opt/ml/processing/output/rule/</code>.</p>
+    /// <p>Path to local storage location for output of rules. Defaults to <code>/opt/ml/processing/output/rule/</code>. </p>
     pub fn get_local_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.local_path
     }

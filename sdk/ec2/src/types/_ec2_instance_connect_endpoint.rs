@@ -30,12 +30,10 @@ pub struct Ec2InstanceConnectEndpoint {
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether your client's IP address is preserved as the source. The value is <code>true</code> or <code>false</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p>If <code>true</code>, your client's IP address is used when you connect to a resource.</p></li>
-    /// <li>
-    /// <p>If <code>false</code>, the elastic network interface IP address is used when you connect to a resource.</p></li>
+    /// <li> <p>If <code>true</code>, your client's IP address is used when you connect to a resource.</p> </li>
+    /// <li> <p>If <code>false</code>, the elastic network interface IP address is used when you connect to a resource.</p> </li>
     /// </ul>
-    /// <p>Default: <code>true</code></p>
+    /// <p>Default: <code>true</code> </p>
     pub preserve_client_ip: ::std::option::Option<bool>,
     /// <p>The security groups associated with the endpoint. If you didn't specify a security group, the default security group for your VPC is associated with the endpoint.</p>
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -95,12 +93,10 @@ impl Ec2InstanceConnectEndpoint {
     }
     /// <p>Indicates whether your client's IP address is preserved as the source. The value is <code>true</code> or <code>false</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p>If <code>true</code>, your client's IP address is used when you connect to a resource.</p></li>
-    /// <li>
-    /// <p>If <code>false</code>, the elastic network interface IP address is used when you connect to a resource.</p></li>
+    /// <li> <p>If <code>true</code>, your client's IP address is used when you connect to a resource.</p> </li>
+    /// <li> <p>If <code>false</code>, the elastic network interface IP address is used when you connect to a resource.</p> </li>
     /// </ul>
-    /// <p>Default: <code>true</code></p>
+    /// <p>Default: <code>true</code> </p>
     pub fn preserve_client_ip(&self) -> ::std::option::Option<bool> {
         self.preserve_client_ip
     }
@@ -321,36 +317,30 @@ impl Ec2InstanceConnectEndpointBuilder {
     }
     /// <p>Indicates whether your client's IP address is preserved as the source. The value is <code>true</code> or <code>false</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p>If <code>true</code>, your client's IP address is used when you connect to a resource.</p></li>
-    /// <li>
-    /// <p>If <code>false</code>, the elastic network interface IP address is used when you connect to a resource.</p></li>
+    /// <li> <p>If <code>true</code>, your client's IP address is used when you connect to a resource.</p> </li>
+    /// <li> <p>If <code>false</code>, the elastic network interface IP address is used when you connect to a resource.</p> </li>
     /// </ul>
-    /// <p>Default: <code>true</code></p>
+    /// <p>Default: <code>true</code> </p>
     pub fn preserve_client_ip(mut self, input: bool) -> Self {
         self.preserve_client_ip = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether your client's IP address is preserved as the source. The value is <code>true</code> or <code>false</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p>If <code>true</code>, your client's IP address is used when you connect to a resource.</p></li>
-    /// <li>
-    /// <p>If <code>false</code>, the elastic network interface IP address is used when you connect to a resource.</p></li>
+    /// <li> <p>If <code>true</code>, your client's IP address is used when you connect to a resource.</p> </li>
+    /// <li> <p>If <code>false</code>, the elastic network interface IP address is used when you connect to a resource.</p> </li>
     /// </ul>
-    /// <p>Default: <code>true</code></p>
+    /// <p>Default: <code>true</code> </p>
     pub fn set_preserve_client_ip(mut self, input: ::std::option::Option<bool>) -> Self {
         self.preserve_client_ip = input;
         self
     }
     /// <p>Indicates whether your client's IP address is preserved as the source. The value is <code>true</code> or <code>false</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p>If <code>true</code>, your client's IP address is used when you connect to a resource.</p></li>
-    /// <li>
-    /// <p>If <code>false</code>, the elastic network interface IP address is used when you connect to a resource.</p></li>
+    /// <li> <p>If <code>true</code>, your client's IP address is used when you connect to a resource.</p> </li>
+    /// <li> <p>If <code>false</code>, the elastic network interface IP address is used when you connect to a resource.</p> </li>
     /// </ul>
-    /// <p>Default: <code>true</code></p>
+    /// <p>Default: <code>true</code> </p>
     pub fn get_preserve_client_ip(&self) -> &::std::option::Option<bool> {
         &self.preserve_client_ip
     }

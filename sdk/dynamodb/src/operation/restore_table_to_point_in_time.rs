@@ -260,8 +260,8 @@ pub enum RestoreTableToPointInTimeError {
     InvalidEndpointException(crate::types::error::InvalidEndpointException),
     /// <p>An invalid restore time was specified. RestoreDateTime must be between EarliestRestorableDateTime and LatestRestorableDateTime.</p>
     InvalidRestoreTimeException(crate::types::error::InvalidRestoreTimeException),
-    /// <p>There is no limit to the number of daily on-demand backups that can be taken.</p>
-    /// <p>For most purposes, up to 500 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>.</p>
+    /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p>
+    /// <p>For most purposes, up to 500 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
     /// <p>When you are creating a table with one or more secondary indexes, you can have up to 250 such requests running at a time. However, if the table or index specifications are complex, then DynamoDB might temporarily reduce the number of concurrent operations.</p>
     /// <p>When importing into DynamoDB, up to 50 simultaneous import table operations are allowed per account.</p>
     /// <p>There is a soft account quota of 2,500 tables.</p>
@@ -270,9 +270,9 @@ pub enum RestoreTableToPointInTimeError {
     LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>Point in time recovery has not yet been enabled for this source table.</p>
     PointInTimeRecoveryUnavailableException(crate::types::error::PointInTimeRecoveryUnavailableException),
-    /// <p>A target table with the specified name already exists.</p>
+    /// <p>A target table with the specified name already exists. </p>
     TableAlreadyExistsException(crate::types::error::TableAlreadyExistsException),
-    /// <p>A target table with the specified name is either being created or deleted.</p>
+    /// <p>A target table with the specified name is either being created or deleted. </p>
     TableInUseException(crate::types::error::TableInUseException),
     /// <p>A source table with the name <code>TableName</code> does not currently exist within the subscriber's account or the subscriber is operating in the wrong Amazon Web Services Region.</p>
     TableNotFoundException(crate::types::error::TableNotFoundException),

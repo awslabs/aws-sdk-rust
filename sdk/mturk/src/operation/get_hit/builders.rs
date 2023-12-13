@@ -22,7 +22,7 @@ impl GetHitInputBuilder {
 }
 /// Fluent builder constructing a request to `GetHIT`.
 ///
-/// <p>The <code>GetHIT</code> operation retrieves the details of the specified HIT.</p>
+/// <p> The <code>GetHIT</code> operation retrieves the details of the specified HIT. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetHITFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

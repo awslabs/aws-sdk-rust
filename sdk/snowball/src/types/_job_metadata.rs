@@ -41,7 +41,7 @@ pub struct JobMetadata {
     pub forwarding_address_id: ::std::option::Option<::std::string::String>,
     /// <p>The metadata associated with the tax documents required in your Amazon Web Services Region.</p>
     pub tax_documents: ::std::option::Option<crate::types::TaxDocuments>,
-    /// <p>The container for <code>SnowconeDeviceConfiguration</code>.</p>
+    /// <p>The container for <code>SnowconeDeviceConfiguration</code>. </p>
     pub device_configuration: ::std::option::Option<crate::types::DeviceConfiguration>,
     /// <p>Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.</p>
     pub remote_management: ::std::option::Option<crate::types::RemoteManagement>,
@@ -130,7 +130,7 @@ impl JobMetadata {
     pub fn tax_documents(&self) -> ::std::option::Option<&crate::types::TaxDocuments> {
         self.tax_documents.as_ref()
     }
-    /// <p>The container for <code>SnowconeDeviceConfiguration</code>.</p>
+    /// <p>The container for <code>SnowconeDeviceConfiguration</code>. </p>
     pub fn device_configuration(&self) -> ::std::option::Option<&crate::types::DeviceConfiguration> {
         self.device_configuration.as_ref()
     }
@@ -452,17 +452,17 @@ impl JobMetadataBuilder {
     pub fn get_tax_documents(&self) -> &::std::option::Option<crate::types::TaxDocuments> {
         &self.tax_documents
     }
-    /// <p>The container for <code>SnowconeDeviceConfiguration</code>.</p>
+    /// <p>The container for <code>SnowconeDeviceConfiguration</code>. </p>
     pub fn device_configuration(mut self, input: crate::types::DeviceConfiguration) -> Self {
         self.device_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The container for <code>SnowconeDeviceConfiguration</code>.</p>
+    /// <p>The container for <code>SnowconeDeviceConfiguration</code>. </p>
     pub fn set_device_configuration(mut self, input: ::std::option::Option<crate::types::DeviceConfiguration>) -> Self {
         self.device_configuration = input;
         self
     }
-    /// <p>The container for <code>SnowconeDeviceConfiguration</code>.</p>
+    /// <p>The container for <code>SnowconeDeviceConfiguration</code>. </p>
     pub fn get_device_configuration(&self) -> &::std::option::Option<crate::types::DeviceConfiguration> {
         &self.device_configuration
     }

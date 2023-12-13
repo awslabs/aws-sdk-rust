@@ -6,14 +6,10 @@
 pub struct LustreLogConfiguration {
     /// <p>The data repository events that are logged by Amazon FSx.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>WARN_ONLY</code> - only warning events are logged.</p></li>
-    /// <li>
-    /// <p><code>ERROR_ONLY</code> - only error events are logged.</p></li>
-    /// <li>
-    /// <p><code>WARN_ERROR</code> - both warning events and error events are logged.</p></li>
-    /// <li>
-    /// <p><code>DISABLED</code> - logging of data repository events is turned off.</p></li>
+    /// <li> <p> <code>WARN_ONLY</code> - only warning events are logged.</p> </li>
+    /// <li> <p> <code>ERROR_ONLY</code> - only error events are logged.</p> </li>
+    /// <li> <p> <code>WARN_ERROR</code> - both warning events and error events are logged.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - logging of data repository events is turned off.</p> </li>
     /// </ul>
     /// <p>Note that Amazon File Cache uses a default setting of <code>WARN_ERROR</code>, which can't be changed.</p>
     pub level: ::std::option::Option<crate::types::LustreAccessAuditLogLevel>,
@@ -23,14 +19,10 @@ pub struct LustreLogConfiguration {
 impl LustreLogConfiguration {
     /// <p>The data repository events that are logged by Amazon FSx.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>WARN_ONLY</code> - only warning events are logged.</p></li>
-    /// <li>
-    /// <p><code>ERROR_ONLY</code> - only error events are logged.</p></li>
-    /// <li>
-    /// <p><code>WARN_ERROR</code> - both warning events and error events are logged.</p></li>
-    /// <li>
-    /// <p><code>DISABLED</code> - logging of data repository events is turned off.</p></li>
+    /// <li> <p> <code>WARN_ONLY</code> - only warning events are logged.</p> </li>
+    /// <li> <p> <code>ERROR_ONLY</code> - only error events are logged.</p> </li>
+    /// <li> <p> <code>WARN_ERROR</code> - both warning events and error events are logged.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - logging of data repository events is turned off.</p> </li>
     /// </ul>
     /// <p>Note that Amazon File Cache uses a default setting of <code>WARN_ERROR</code>, which can't be changed.</p>
     pub fn level(&self) -> ::std::option::Option<&crate::types::LustreAccessAuditLogLevel> {
@@ -58,14 +50,10 @@ pub struct LustreLogConfigurationBuilder {
 impl LustreLogConfigurationBuilder {
     /// <p>The data repository events that are logged by Amazon FSx.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>WARN_ONLY</code> - only warning events are logged.</p></li>
-    /// <li>
-    /// <p><code>ERROR_ONLY</code> - only error events are logged.</p></li>
-    /// <li>
-    /// <p><code>WARN_ERROR</code> - both warning events and error events are logged.</p></li>
-    /// <li>
-    /// <p><code>DISABLED</code> - logging of data repository events is turned off.</p></li>
+    /// <li> <p> <code>WARN_ONLY</code> - only warning events are logged.</p> </li>
+    /// <li> <p> <code>ERROR_ONLY</code> - only error events are logged.</p> </li>
+    /// <li> <p> <code>WARN_ERROR</code> - both warning events and error events are logged.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - logging of data repository events is turned off.</p> </li>
     /// </ul>
     /// <p>Note that Amazon File Cache uses a default setting of <code>WARN_ERROR</code>, which can't be changed.</p>
     /// This field is required.
@@ -75,14 +63,10 @@ impl LustreLogConfigurationBuilder {
     }
     /// <p>The data repository events that are logged by Amazon FSx.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>WARN_ONLY</code> - only warning events are logged.</p></li>
-    /// <li>
-    /// <p><code>ERROR_ONLY</code> - only error events are logged.</p></li>
-    /// <li>
-    /// <p><code>WARN_ERROR</code> - both warning events and error events are logged.</p></li>
-    /// <li>
-    /// <p><code>DISABLED</code> - logging of data repository events is turned off.</p></li>
+    /// <li> <p> <code>WARN_ONLY</code> - only warning events are logged.</p> </li>
+    /// <li> <p> <code>ERROR_ONLY</code> - only error events are logged.</p> </li>
+    /// <li> <p> <code>WARN_ERROR</code> - both warning events and error events are logged.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - logging of data repository events is turned off.</p> </li>
     /// </ul>
     /// <p>Note that Amazon File Cache uses a default setting of <code>WARN_ERROR</code>, which can't be changed.</p>
     pub fn set_level(mut self, input: ::std::option::Option<crate::types::LustreAccessAuditLogLevel>) -> Self {
@@ -91,14 +75,10 @@ impl LustreLogConfigurationBuilder {
     }
     /// <p>The data repository events that are logged by Amazon FSx.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>WARN_ONLY</code> - only warning events are logged.</p></li>
-    /// <li>
-    /// <p><code>ERROR_ONLY</code> - only error events are logged.</p></li>
-    /// <li>
-    /// <p><code>WARN_ERROR</code> - both warning events and error events are logged.</p></li>
-    /// <li>
-    /// <p><code>DISABLED</code> - logging of data repository events is turned off.</p></li>
+    /// <li> <p> <code>WARN_ONLY</code> - only warning events are logged.</p> </li>
+    /// <li> <p> <code>ERROR_ONLY</code> - only error events are logged.</p> </li>
+    /// <li> <p> <code>WARN_ERROR</code> - both warning events and error events are logged.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - logging of data repository events is turned off.</p> </li>
     /// </ul>
     /// <p>Note that Amazon File Cache uses a default setting of <code>WARN_ERROR</code>, which can't be changed.</p>
     pub fn get_level(&self) -> &::std::option::Option<crate::types::LustreAccessAuditLogLevel> {

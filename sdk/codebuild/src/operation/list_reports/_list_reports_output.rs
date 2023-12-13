@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListReportsOutput {
-    /// <p>During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
+    /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>The list of returned ARNs for the reports in the current Amazon Web Services account.</p>
+    /// <p> The list of returned ARNs for the reports in the current Amazon Web Services account. </p>
     pub reports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl ListReportsOutput {
-    /// <p>During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
+    /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The list of returned ARNs for the reports in the current Amazon Web Services account.</p>
+    /// <p> The list of returned ARNs for the reports in the current Amazon Web Services account. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reports.is_none()`.
     pub fn reports(&self) -> &[::std::string::String] {
@@ -42,17 +42,17 @@ pub struct ListReportsOutputBuilder {
     _request_id: Option<String>,
 }
 impl ListReportsOutputBuilder {
-    /// <p>During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
+    /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
+    /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
+    /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
@@ -60,19 +60,19 @@ impl ListReportsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_reports`](Self::set_reports).
     ///
-    /// <p>The list of returned ARNs for the reports in the current Amazon Web Services account.</p>
+    /// <p> The list of returned ARNs for the reports in the current Amazon Web Services account. </p>
     pub fn reports(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.reports.unwrap_or_default();
         v.push(input.into());
         self.reports = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of returned ARNs for the reports in the current Amazon Web Services account.</p>
+    /// <p> The list of returned ARNs for the reports in the current Amazon Web Services account. </p>
     pub fn set_reports(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.reports = input;
         self
     }
-    /// <p>The list of returned ARNs for the reports in the current Amazon Web Services account.</p>
+    /// <p> The list of returned ARNs for the reports in the current Amazon Web Services account. </p>
     pub fn get_reports(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.reports
     }

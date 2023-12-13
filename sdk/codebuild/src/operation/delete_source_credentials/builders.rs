@@ -22,7 +22,7 @@ impl DeleteSourceCredentialsInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteSourceCredentials`.
 ///
-/// <p>Deletes a set of GitHub, GitHub Enterprise, or Bitbucket source credentials.</p>
+/// <p> Deletes a set of GitHub, GitHub Enterprise, or Bitbucket source credentials. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteSourceCredentialsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DeleteSourceCredentialsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the token.</p>
+    /// <p> The Amazon Resource Name (ARN) of the token.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the token.</p>
+    /// <p> The Amazon Resource Name (ARN) of the token.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the token.</p>
+    /// <p> The Amazon Resource Name (ARN) of the token.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_arn()
     }

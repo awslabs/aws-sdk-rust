@@ -24,14 +24,10 @@ impl DisassociateClientVpnTargetNetworkInputBuilder {
 ///
 /// <p>Disassociates a target network from the specified Client VPN endpoint. When you disassociate the last target network from a Client VPN, the following happens:</p>
 /// <ul>
-/// <li>
-/// <p>The route that was automatically added for the VPC is deleted</p></li>
-/// <li>
-/// <p>All active client connections are terminated</p></li>
-/// <li>
-/// <p>New client connections are disallowed</p></li>
-/// <li>
-/// <p>The Client VPN endpoint's status changes to <code>pending-associate</code></p></li>
+/// <li> <p>The route that was automatically added for the VPC is deleted</p> </li>
+/// <li> <p>All active client connections are terminated</p> </li>
+/// <li> <p>New client connections are disallowed</p> </li>
+/// <li> <p>The Client VPN endpoint's status changes to <code>pending-associate</code> </p> </li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateClientVpnTargetNetworkFluentBuilder {

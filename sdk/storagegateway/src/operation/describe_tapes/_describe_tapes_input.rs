@@ -11,7 +11,7 @@ pub struct DescribeTapesInput {
     /// <p>A marker value, obtained in a previous call to <code>DescribeTapes</code>. This marker indicates which page of results to retrieve.</p>
     /// <p>If not specified, the first page of results is retrieved.</p>
     pub marker: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies that the number of virtual tapes described be limited to the specified number.</p><note>
+    /// <p>Specifies that the number of virtual tapes described be limited to the specified number.</p> <note>
     /// <p>Amazon Web Services may impose its own limit, if this field is not set.</p>
     /// </note>
     pub limit: ::std::option::Option<i32>,
@@ -32,7 +32,7 @@ impl DescribeTapesInput {
     pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
-    /// <p>Specifies that the number of virtual tapes described be limited to the specified number.</p><note>
+    /// <p>Specifies that the number of virtual tapes described be limited to the specified number.</p> <note>
     /// <p>Amazon Web Services may impose its own limit, if this field is not set.</p>
     /// </note>
     pub fn limit(&self) -> ::std::option::Option<i32> {
@@ -108,21 +108,21 @@ impl DescribeTapesInputBuilder {
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }
-    /// <p>Specifies that the number of virtual tapes described be limited to the specified number.</p><note>
+    /// <p>Specifies that the number of virtual tapes described be limited to the specified number.</p> <note>
     /// <p>Amazon Web Services may impose its own limit, if this field is not set.</p>
     /// </note>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies that the number of virtual tapes described be limited to the specified number.</p><note>
+    /// <p>Specifies that the number of virtual tapes described be limited to the specified number.</p> <note>
     /// <p>Amazon Web Services may impose its own limit, if this field is not set.</p>
     /// </note>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
     }
-    /// <p>Specifies that the number of virtual tapes described be limited to the specified number.</p><note>
+    /// <p>Specifies that the number of virtual tapes described be limited to the specified number.</p> <note>
     /// <p>Amazon Web Services may impose its own limit, if this field is not set.</p>
     /// </note>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {

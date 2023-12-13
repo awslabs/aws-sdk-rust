@@ -143,10 +143,8 @@ impl ModifySamlPropertiesFluentBuilder {
     /// <p>The SAML properties to delete as part of your request.</p>
     /// <p>Specify one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SAML_PROPERTIES_USER_ACCESS_URL</code> to delete the user access URL.</p></li>
-    /// <li>
-    /// <p><code>SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME</code> to delete the relay state parameter name.</p></li>
+    /// <li> <p> <code>SAML_PROPERTIES_USER_ACCESS_URL</code> to delete the user access URL.</p> </li>
+    /// <li> <p> <code>SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME</code> to delete the relay state parameter name.</p> </li>
     /// </ul>
     pub fn properties_to_delete(mut self, input: crate::types::DeletableSamlProperty) -> Self {
         self.inner = self.inner.properties_to_delete(input);
@@ -155,10 +153,8 @@ impl ModifySamlPropertiesFluentBuilder {
     /// <p>The SAML properties to delete as part of your request.</p>
     /// <p>Specify one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SAML_PROPERTIES_USER_ACCESS_URL</code> to delete the user access URL.</p></li>
-    /// <li>
-    /// <p><code>SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME</code> to delete the relay state parameter name.</p></li>
+    /// <li> <p> <code>SAML_PROPERTIES_USER_ACCESS_URL</code> to delete the user access URL.</p> </li>
+    /// <li> <p> <code>SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME</code> to delete the relay state parameter name.</p> </li>
     /// </ul>
     pub fn set_properties_to_delete(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeletableSamlProperty>>) -> Self {
         self.inner = self.inner.set_properties_to_delete(input);
@@ -167,10 +163,8 @@ impl ModifySamlPropertiesFluentBuilder {
     /// <p>The SAML properties to delete as part of your request.</p>
     /// <p>Specify one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SAML_PROPERTIES_USER_ACCESS_URL</code> to delete the user access URL.</p></li>
-    /// <li>
-    /// <p><code>SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME</code> to delete the relay state parameter name.</p></li>
+    /// <li> <p> <code>SAML_PROPERTIES_USER_ACCESS_URL</code> to delete the user access URL.</p> </li>
+    /// <li> <p> <code>SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME</code> to delete the relay state parameter name.</p> </li>
     /// </ul>
     pub fn get_properties_to_delete(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeletableSamlProperty>> {
         self.inner.get_properties_to_delete()

@@ -108,21 +108,21 @@ impl PutAccountSendingAttributesFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Enables or disables your account's ability to send email. Set to <code>true</code> to enable email sending, or set to <code>false</code> to disable email sending.</p><note>
+    /// <p>Enables or disables your account's ability to send email. Set to <code>true</code> to enable email sending, or set to <code>false</code> to disable email sending.</p> <note>
     /// <p>If Amazon Web Services paused your account's ability to send email, you can't use this operation to resume your account's ability to send email.</p>
     /// </note>
     pub fn sending_enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.sending_enabled(input);
         self
     }
-    /// <p>Enables or disables your account's ability to send email. Set to <code>true</code> to enable email sending, or set to <code>false</code> to disable email sending.</p><note>
+    /// <p>Enables or disables your account's ability to send email. Set to <code>true</code> to enable email sending, or set to <code>false</code> to disable email sending.</p> <note>
     /// <p>If Amazon Web Services paused your account's ability to send email, you can't use this operation to resume your account's ability to send email.</p>
     /// </note>
     pub fn set_sending_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_sending_enabled(input);
         self
     }
-    /// <p>Enables or disables your account's ability to send email. Set to <code>true</code> to enable email sending, or set to <code>false</code> to disable email sending.</p><note>
+    /// <p>Enables or disables your account's ability to send email. Set to <code>true</code> to enable email sending, or set to <code>false</code> to disable email sending.</p> <note>
     /// <p>If Amazon Web Services paused your account's ability to send email, you can't use this operation to resume your account's ability to send email.</p>
     /// </note>
     pub fn get_sending_enabled(&self) -> &::std::option::Option<bool> {

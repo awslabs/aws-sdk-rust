@@ -23,7 +23,7 @@ impl ListFunctionsInputBuilder {
 /// Fluent builder constructing a request to `ListFunctions`.
 ///
 /// <p>Returns a list of Lambda functions, with the version-specific configuration of each. Lambda returns up to 50 functions per call.</p>
-/// <p>Set <code>FunctionVersion</code> to <code>ALL</code> to include all published versions of each function in addition to the unpublished version.</p><note>
+/// <p>Set <code>FunctionVersion</code> to <code>ALL</code> to include all published versions of each function in addition to the unpublished version.</p> <note>
 /// <p>The <code>ListFunctions</code> operation returns a subset of the <code>FunctionConfiguration</code> fields. To get the additional fields (State, StateReasonCode, StateReason, LastUpdateStatus, LastUpdateStatusReason, LastUpdateStatusReasonCode, RuntimeVersionConfig) for a function or version, use <code>GetFunction</code>.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

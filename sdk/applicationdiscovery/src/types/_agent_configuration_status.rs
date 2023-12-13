@@ -6,7 +6,7 @@
 pub struct AgentConfigurationStatus {
     /// <p>The agent ID.</p>
     pub agent_id: ::std::option::Option<::std::string::String>,
-    /// <p>Information about the status of the <code>StartDataCollection</code> and <code>StopDataCollection</code> operations. The system has recorded the data collection operation. The agent receives this command the next time it polls for a new command.</p>
+    /// <p>Information about the status of the <code>StartDataCollection</code> and <code>StopDataCollection</code> operations. The system has recorded the data collection operation. The agent receives this command the next time it polls for a new command. </p>
     pub operation_succeeded: bool,
     /// <p>A description of the operation performed.</p>
     pub description: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ impl AgentConfigurationStatus {
     pub fn agent_id(&self) -> ::std::option::Option<&str> {
         self.agent_id.as_deref()
     }
-    /// <p>Information about the status of the <code>StartDataCollection</code> and <code>StopDataCollection</code> operations. The system has recorded the data collection operation. The agent receives this command the next time it polls for a new command.</p>
+    /// <p>Information about the status of the <code>StartDataCollection</code> and <code>StopDataCollection</code> operations. The system has recorded the data collection operation. The agent receives this command the next time it polls for a new command. </p>
     pub fn operation_succeeded(&self) -> bool {
         self.operation_succeeded
     }
@@ -55,17 +55,17 @@ impl AgentConfigurationStatusBuilder {
     pub fn get_agent_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.agent_id
     }
-    /// <p>Information about the status of the <code>StartDataCollection</code> and <code>StopDataCollection</code> operations. The system has recorded the data collection operation. The agent receives this command the next time it polls for a new command.</p>
+    /// <p>Information about the status of the <code>StartDataCollection</code> and <code>StopDataCollection</code> operations. The system has recorded the data collection operation. The agent receives this command the next time it polls for a new command. </p>
     pub fn operation_succeeded(mut self, input: bool) -> Self {
         self.operation_succeeded = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Information about the status of the <code>StartDataCollection</code> and <code>StopDataCollection</code> operations. The system has recorded the data collection operation. The agent receives this command the next time it polls for a new command.</p>
+    /// <p>Information about the status of the <code>StartDataCollection</code> and <code>StopDataCollection</code> operations. The system has recorded the data collection operation. The agent receives this command the next time it polls for a new command. </p>
     pub fn set_operation_succeeded(mut self, input: ::std::option::Option<bool>) -> Self {
         self.operation_succeeded = input;
         self
     }
-    /// <p>Information about the status of the <code>StartDataCollection</code> and <code>StopDataCollection</code> operations. The system has recorded the data collection operation. The agent receives this command the next time it polls for a new command.</p>
+    /// <p>Information about the status of the <code>StartDataCollection</code> and <code>StopDataCollection</code> operations. The system has recorded the data collection operation. The agent receives this command the next time it polls for a new command. </p>
     pub fn get_operation_succeeded(&self) -> &::std::option::Option<bool> {
         &self.operation_succeeded
     }

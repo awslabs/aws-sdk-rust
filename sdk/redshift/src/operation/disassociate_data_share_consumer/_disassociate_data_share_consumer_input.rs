@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateDataShareConsumerInput {
-    /// <p>The Amazon Resource Name (ARN) of the datashare to remove association for.</p>
+    /// <p>The Amazon Resource Name (ARN) of the datashare to remove association for. </p>
     pub data_share_arn: ::std::option::Option<::std::string::String>,
     /// <p>A value that specifies whether association for the datashare is removed from the entire account.</p>
     pub disassociate_entire_account: ::std::option::Option<bool>,
@@ -13,7 +13,7 @@ pub struct DisassociateDataShareConsumerInput {
     pub consumer_region: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateDataShareConsumerInput {
-    /// <p>The Amazon Resource Name (ARN) of the datashare to remove association for.</p>
+    /// <p>The Amazon Resource Name (ARN) of the datashare to remove association for. </p>
     pub fn data_share_arn(&self) -> ::std::option::Option<&str> {
         self.data_share_arn.as_deref()
     }
@@ -47,18 +47,18 @@ pub struct DisassociateDataShareConsumerInputBuilder {
     pub(crate) consumer_region: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateDataShareConsumerInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the datashare to remove association for.</p>
+    /// <p>The Amazon Resource Name (ARN) of the datashare to remove association for. </p>
     /// This field is required.
     pub fn data_share_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_share_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the datashare to remove association for.</p>
+    /// <p>The Amazon Resource Name (ARN) of the datashare to remove association for. </p>
     pub fn set_data_share_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_share_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the datashare to remove association for.</p>
+    /// <p>The Amazon Resource Name (ARN) of the datashare to remove association for. </p>
     pub fn get_data_share_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_share_arn
     }

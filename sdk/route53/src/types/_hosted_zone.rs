@@ -15,7 +15,7 @@ pub struct HostedZone {
     pub config: ::std::option::Option<crate::types::HostedZoneConfig>,
     /// <p>The number of resource record sets in the hosted zone.</p>
     pub resource_record_set_count: ::std::option::Option<i64>,
-    /// <p>If the hosted zone was created by another service, the service that created the hosted zone. When a hosted zone is created by another service, you can't edit or delete it using Route 53.</p>
+    /// <p>If the hosted zone was created by another service, the service that created the hosted zone. When a hosted zone is created by another service, you can't edit or delete it using Route 53. </p>
     pub linked_service: ::std::option::Option<crate::types::LinkedService>,
 }
 impl HostedZone {
@@ -43,7 +43,7 @@ impl HostedZone {
     pub fn resource_record_set_count(&self) -> ::std::option::Option<i64> {
         self.resource_record_set_count
     }
-    /// <p>If the hosted zone was created by another service, the service that created the hosted zone. When a hosted zone is created by another service, you can't edit or delete it using Route 53.</p>
+    /// <p>If the hosted zone was created by another service, the service that created the hosted zone. When a hosted zone is created by another service, you can't edit or delete it using Route 53. </p>
     pub fn linked_service(&self) -> ::std::option::Option<&crate::types::LinkedService> {
         self.linked_service.as_ref()
     }
@@ -143,17 +143,17 @@ impl HostedZoneBuilder {
     pub fn get_resource_record_set_count(&self) -> &::std::option::Option<i64> {
         &self.resource_record_set_count
     }
-    /// <p>If the hosted zone was created by another service, the service that created the hosted zone. When a hosted zone is created by another service, you can't edit or delete it using Route 53.</p>
+    /// <p>If the hosted zone was created by another service, the service that created the hosted zone. When a hosted zone is created by another service, you can't edit or delete it using Route 53. </p>
     pub fn linked_service(mut self, input: crate::types::LinkedService) -> Self {
         self.linked_service = ::std::option::Option::Some(input);
         self
     }
-    /// <p>If the hosted zone was created by another service, the service that created the hosted zone. When a hosted zone is created by another service, you can't edit or delete it using Route 53.</p>
+    /// <p>If the hosted zone was created by another service, the service that created the hosted zone. When a hosted zone is created by another service, you can't edit or delete it using Route 53. </p>
     pub fn set_linked_service(mut self, input: ::std::option::Option<crate::types::LinkedService>) -> Self {
         self.linked_service = input;
         self
     }
-    /// <p>If the hosted zone was created by another service, the service that created the hosted zone. When a hosted zone is created by another service, you can't edit or delete it using Route 53.</p>
+    /// <p>If the hosted zone was created by another service, the service that created the hosted zone. When a hosted zone is created by another service, you can't edit or delete it using Route 53. </p>
     pub fn get_linked_service(&self) -> &::std::option::Option<crate::types::LinkedService> {
         &self.linked_service
     }

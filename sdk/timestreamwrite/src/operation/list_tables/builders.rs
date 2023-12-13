@@ -22,7 +22,7 @@ impl ListTablesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListTables`.
 ///
-/// <p>Provides a list of tables, along with the name, status, and retention properties of each table. See <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.list-table.html">code sample</a> for details.</p>
+/// <p>Provides a list of tables, along with the name, status, and retention properties of each table. See <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.list-table.html">code sample</a> for details. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTablesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

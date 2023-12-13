@@ -23,7 +23,7 @@ impl DescribeEventsInputBuilder {
 /// Fluent builder constructing a request to `DescribeEvents`.
 ///
 /// <p>Returns events related to DB instances, DB clusters, DB parameter groups, DB security groups, DB snapshots, DB cluster snapshots, and RDS Proxies for the past 14 days. Events specific to a particular DB instance, DB cluster, DB parameter group, DB security group, DB snapshot, DB cluster snapshot group, or RDS Proxy can be obtained by providing the name as a parameter.</p>
-/// <p>For more information on working with events, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/working-with-events.html">Monitoring Amazon RDS events</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/working-with-events.html">Monitoring Amazon Aurora events</a> in the <i>Amazon Aurora User Guide</i>.</p><note>
+/// <p>For more information on working with events, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/working-with-events.html">Monitoring Amazon RDS events</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/working-with-events.html">Monitoring Amazon Aurora events</a> in the <i>Amazon Aurora User Guide</i>.</p> <note>
 /// <p>By default, RDS returns events that were generated in the past hour.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -120,24 +120,15 @@ impl DescribeEventsFluentBuilder {
     /// <p>The identifier of the event source for which events are returned. If not specified, then all sources are included in the response.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>If <code>SourceIdentifier</code> is supplied, <code>SourceType</code> must also be provided.</p></li>
-    /// <li>
-    /// <p>If the source type is a DB instance, a <code>DBInstanceIdentifier</code> value must be supplied.</p></li>
-    /// <li>
-    /// <p>If the source type is a DB cluster, a <code>DBClusterIdentifier</code> value must be supplied.</p></li>
-    /// <li>
-    /// <p>If the source type is a DB parameter group, a <code>DBParameterGroupName</code> value must be supplied.</p></li>
-    /// <li>
-    /// <p>If the source type is a DB security group, a <code>DBSecurityGroupName</code> value must be supplied.</p></li>
-    /// <li>
-    /// <p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> value must be supplied.</p></li>
-    /// <li>
-    /// <p>If the source type is a DB cluster snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be supplied.</p></li>
-    /// <li>
-    /// <p>If the source type is an RDS Proxy, a <code>DBProxyName</code> value must be supplied.</p></li>
-    /// <li>
-    /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li> <p>If <code>SourceIdentifier</code> is supplied, <code>SourceType</code> must also be provided.</p> </li>
+    /// <li> <p>If the source type is a DB instance, a <code>DBInstanceIdentifier</code> value must be supplied.</p> </li>
+    /// <li> <p>If the source type is a DB cluster, a <code>DBClusterIdentifier</code> value must be supplied.</p> </li>
+    /// <li> <p>If the source type is a DB parameter group, a <code>DBParameterGroupName</code> value must be supplied.</p> </li>
+    /// <li> <p>If the source type is a DB security group, a <code>DBSecurityGroupName</code> value must be supplied.</p> </li>
+    /// <li> <p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> value must be supplied.</p> </li>
+    /// <li> <p>If the source type is a DB cluster snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be supplied.</p> </li>
+    /// <li> <p>If the source type is an RDS Proxy, a <code>DBProxyName</code> value must be supplied.</p> </li>
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     pub fn source_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_identifier(input.into());
@@ -146,24 +137,15 @@ impl DescribeEventsFluentBuilder {
     /// <p>The identifier of the event source for which events are returned. If not specified, then all sources are included in the response.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>If <code>SourceIdentifier</code> is supplied, <code>SourceType</code> must also be provided.</p></li>
-    /// <li>
-    /// <p>If the source type is a DB instance, a <code>DBInstanceIdentifier</code> value must be supplied.</p></li>
-    /// <li>
-    /// <p>If the source type is a DB cluster, a <code>DBClusterIdentifier</code> value must be supplied.</p></li>
-    /// <li>
-    /// <p>If the source type is a DB parameter group, a <code>DBParameterGroupName</code> value must be supplied.</p></li>
-    /// <li>
-    /// <p>If the source type is a DB security group, a <code>DBSecurityGroupName</code> value must be supplied.</p></li>
-    /// <li>
-    /// <p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> value must be supplied.</p></li>
-    /// <li>
-    /// <p>If the source type is a DB cluster snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be supplied.</p></li>
-    /// <li>
-    /// <p>If the source type is an RDS Proxy, a <code>DBProxyName</code> value must be supplied.</p></li>
-    /// <li>
-    /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li> <p>If <code>SourceIdentifier</code> is supplied, <code>SourceType</code> must also be provided.</p> </li>
+    /// <li> <p>If the source type is a DB instance, a <code>DBInstanceIdentifier</code> value must be supplied.</p> </li>
+    /// <li> <p>If the source type is a DB cluster, a <code>DBClusterIdentifier</code> value must be supplied.</p> </li>
+    /// <li> <p>If the source type is a DB parameter group, a <code>DBParameterGroupName</code> value must be supplied.</p> </li>
+    /// <li> <p>If the source type is a DB security group, a <code>DBSecurityGroupName</code> value must be supplied.</p> </li>
+    /// <li> <p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> value must be supplied.</p> </li>
+    /// <li> <p>If the source type is a DB cluster snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be supplied.</p> </li>
+    /// <li> <p>If the source type is an RDS Proxy, a <code>DBProxyName</code> value must be supplied.</p> </li>
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     pub fn set_source_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_identifier(input);
@@ -172,24 +154,15 @@ impl DescribeEventsFluentBuilder {
     /// <p>The identifier of the event source for which events are returned. If not specified, then all sources are included in the response.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>If <code>SourceIdentifier</code> is supplied, <code>SourceType</code> must also be provided.</p></li>
-    /// <li>
-    /// <p>If the source type is a DB instance, a <code>DBInstanceIdentifier</code> value must be supplied.</p></li>
-    /// <li>
-    /// <p>If the source type is a DB cluster, a <code>DBClusterIdentifier</code> value must be supplied.</p></li>
-    /// <li>
-    /// <p>If the source type is a DB parameter group, a <code>DBParameterGroupName</code> value must be supplied.</p></li>
-    /// <li>
-    /// <p>If the source type is a DB security group, a <code>DBSecurityGroupName</code> value must be supplied.</p></li>
-    /// <li>
-    /// <p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> value must be supplied.</p></li>
-    /// <li>
-    /// <p>If the source type is a DB cluster snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be supplied.</p></li>
-    /// <li>
-    /// <p>If the source type is an RDS Proxy, a <code>DBProxyName</code> value must be supplied.</p></li>
-    /// <li>
-    /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li> <p>If <code>SourceIdentifier</code> is supplied, <code>SourceType</code> must also be provided.</p> </li>
+    /// <li> <p>If the source type is a DB instance, a <code>DBInstanceIdentifier</code> value must be supplied.</p> </li>
+    /// <li> <p>If the source type is a DB cluster, a <code>DBClusterIdentifier</code> value must be supplied.</p> </li>
+    /// <li> <p>If the source type is a DB parameter group, a <code>DBParameterGroupName</code> value must be supplied.</p> </li>
+    /// <li> <p>If the source type is a DB security group, a <code>DBSecurityGroupName</code> value must be supplied.</p> </li>
+    /// <li> <p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> value must be supplied.</p> </li>
+    /// <li> <p>If the source type is a DB cluster snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be supplied.</p> </li>
+    /// <li> <p>If the source type is an RDS Proxy, a <code>DBProxyName</code> value must be supplied.</p> </li>
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     pub fn get_source_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_identifier()
@@ -208,36 +181,36 @@ impl DescribeEventsFluentBuilder {
     pub fn get_source_type(&self) -> &::std::option::Option<crate::types::SourceType> {
         self.inner.get_source_type()
     }
-    /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a></p>
+    /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
     /// <p>Example: 2009-07-08T18:00Z</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_time(input);
         self
     }
-    /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a></p>
+    /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
     /// <p>Example: 2009-07-08T18:00Z</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
-    /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a></p>
+    /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
     /// <p>Example: 2009-07-08T18:00Z</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_start_time()
     }
-    /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a></p>
+    /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
     /// <p>Example: 2009-07-08T18:00Z</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.end_time(input);
         self
     }
-    /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a></p>
+    /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
     /// <p>Example: 2009-07-08T18:00Z</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }
-    /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a></p>
+    /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
     /// <p>Example: 2009-07-08T18:00Z</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_end_time()

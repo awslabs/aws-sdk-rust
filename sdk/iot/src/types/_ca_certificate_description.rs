@@ -26,7 +26,7 @@ pub struct CaCertificateDescription {
     pub generation_id: ::std::option::Option<::std::string::String>,
     /// <p>When the CA certificate is valid.</p>
     pub validity: ::std::option::Option<crate::types::CertificateValidity>,
-    /// <p>The mode of the CA.</p>
+    /// <p>The mode of the CA. </p>
     /// <p>All the device certificates that are registered using this CA will be registered in the same mode as the CA. For more information about certificate mode for device certificates, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode">certificate mode</a>.</p>
     pub certificate_mode: ::std::option::Option<crate::types::CertificateMode>,
 }
@@ -75,7 +75,7 @@ impl CaCertificateDescription {
     pub fn validity(&self) -> ::std::option::Option<&crate::types::CertificateValidity> {
         self.validity.as_ref()
     }
-    /// <p>The mode of the CA.</p>
+    /// <p>The mode of the CA. </p>
     /// <p>All the device certificates that are registered using this CA will be registered in the same mode as the CA. For more information about certificate mode for device certificates, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode">certificate mode</a>.</p>
     pub fn certificate_mode(&self) -> ::std::option::Option<&crate::types::CertificateMode> {
         self.certificate_mode.as_ref()
@@ -260,19 +260,19 @@ impl CaCertificateDescriptionBuilder {
     pub fn get_validity(&self) -> &::std::option::Option<crate::types::CertificateValidity> {
         &self.validity
     }
-    /// <p>The mode of the CA.</p>
+    /// <p>The mode of the CA. </p>
     /// <p>All the device certificates that are registered using this CA will be registered in the same mode as the CA. For more information about certificate mode for device certificates, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode">certificate mode</a>.</p>
     pub fn certificate_mode(mut self, input: crate::types::CertificateMode) -> Self {
         self.certificate_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The mode of the CA.</p>
+    /// <p>The mode of the CA. </p>
     /// <p>All the device certificates that are registered using this CA will be registered in the same mode as the CA. For more information about certificate mode for device certificates, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode">certificate mode</a>.</p>
     pub fn set_certificate_mode(mut self, input: ::std::option::Option<crate::types::CertificateMode>) -> Self {
         self.certificate_mode = input;
         self
     }
-    /// <p>The mode of the CA.</p>
+    /// <p>The mode of the CA. </p>
     /// <p>All the device certificates that are registered using this CA will be registered in the same mode as the CA. For more information about certificate mode for device certificates, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode">certificate mode</a>.</p>
     pub fn get_certificate_mode(&self) -> &::std::option::Option<crate::types::CertificateMode> {
         &self.certificate_mode

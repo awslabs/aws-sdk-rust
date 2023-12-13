@@ -6,7 +6,7 @@
 pub struct S3DestinationConfiguration {
     /// <p>ARN of the <code>StorageConfiguration</code> where recorded videos will be stored.</p>
     pub storage_configuration_arn: ::std::string::String,
-    /// <p>ARNs of the <code>EncoderConfiguration</code> resource. The encoder configuration and stage resources must be in the same AWS account and region.</p>
+    /// <p>ARNs of the <code>EncoderConfiguration</code> resource. The encoder configuration and stage resources must be in the same AWS account and region. </p>
     pub encoder_configuration_arns: ::std::vec::Vec<::std::string::String>,
     /// <p>Array of maps, each of the form <code>string:string (key:value)</code>. This is an optional customer specification, currently used only to specify the recording format for storing a recording in Amazon S3.</p>
     pub recording_configuration: ::std::option::Option<crate::types::RecordingConfiguration>,
@@ -17,7 +17,7 @@ impl S3DestinationConfiguration {
         use std::ops::Deref;
         self.storage_configuration_arn.deref()
     }
-    /// <p>ARNs of the <code>EncoderConfiguration</code> resource. The encoder configuration and stage resources must be in the same AWS account and region.</p>
+    /// <p>ARNs of the <code>EncoderConfiguration</code> resource. The encoder configuration and stage resources must be in the same AWS account and region. </p>
     pub fn encoder_configuration_arns(&self) -> &[::std::string::String] {
         use std::ops::Deref;
         self.encoder_configuration_arns.deref()
@@ -62,19 +62,19 @@ impl S3DestinationConfigurationBuilder {
     ///
     /// To override the contents of this collection use [`set_encoder_configuration_arns`](Self::set_encoder_configuration_arns).
     ///
-    /// <p>ARNs of the <code>EncoderConfiguration</code> resource. The encoder configuration and stage resources must be in the same AWS account and region.</p>
+    /// <p>ARNs of the <code>EncoderConfiguration</code> resource. The encoder configuration and stage resources must be in the same AWS account and region. </p>
     pub fn encoder_configuration_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.encoder_configuration_arns.unwrap_or_default();
         v.push(input.into());
         self.encoder_configuration_arns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>ARNs of the <code>EncoderConfiguration</code> resource. The encoder configuration and stage resources must be in the same AWS account and region.</p>
+    /// <p>ARNs of the <code>EncoderConfiguration</code> resource. The encoder configuration and stage resources must be in the same AWS account and region. </p>
     pub fn set_encoder_configuration_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.encoder_configuration_arns = input;
         self
     }
-    /// <p>ARNs of the <code>EncoderConfiguration</code> resource. The encoder configuration and stage resources must be in the same AWS account and region.</p>
+    /// <p>ARNs of the <code>EncoderConfiguration</code> resource. The encoder configuration and stage resources must be in the same AWS account and region. </p>
     pub fn get_encoder_configuration_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.encoder_configuration_arns
     }

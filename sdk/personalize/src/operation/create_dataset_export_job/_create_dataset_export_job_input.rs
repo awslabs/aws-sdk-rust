@@ -7,7 +7,7 @@ pub struct CreateDatasetExportJobInput {
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset that contains the data to export.</p>
     pub dataset_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The data to export, based on how you imported the data. You can choose to export only <code>BULK</code> data that you imported using a dataset import job, only <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code> for both types. The default value is <code>PUT</code>.</p>
+    /// <p>The data to export, based on how you imported the data. You can choose to export only <code>BULK</code> data that you imported using a dataset import job, only <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code> for both types. The default value is <code>PUT</code>. </p>
     pub ingestion_mode: ::std::option::Option<crate::types::IngestionMode>,
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your output Amazon S3 bucket.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
@@ -25,7 +25,7 @@ impl CreateDatasetExportJobInput {
     pub fn dataset_arn(&self) -> ::std::option::Option<&str> {
         self.dataset_arn.as_deref()
     }
-    /// <p>The data to export, based on how you imported the data. You can choose to export only <code>BULK</code> data that you imported using a dataset import job, only <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code> for both types. The default value is <code>PUT</code>.</p>
+    /// <p>The data to export, based on how you imported the data. You can choose to export only <code>BULK</code> data that you imported using a dataset import job, only <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code> for both types. The default value is <code>PUT</code>. </p>
     pub fn ingestion_mode(&self) -> ::std::option::Option<&crate::types::IngestionMode> {
         self.ingestion_mode.as_ref()
     }
@@ -93,17 +93,17 @@ impl CreateDatasetExportJobInputBuilder {
     pub fn get_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.dataset_arn
     }
-    /// <p>The data to export, based on how you imported the data. You can choose to export only <code>BULK</code> data that you imported using a dataset import job, only <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code> for both types. The default value is <code>PUT</code>.</p>
+    /// <p>The data to export, based on how you imported the data. You can choose to export only <code>BULK</code> data that you imported using a dataset import job, only <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code> for both types. The default value is <code>PUT</code>. </p>
     pub fn ingestion_mode(mut self, input: crate::types::IngestionMode) -> Self {
         self.ingestion_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The data to export, based on how you imported the data. You can choose to export only <code>BULK</code> data that you imported using a dataset import job, only <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code> for both types. The default value is <code>PUT</code>.</p>
+    /// <p>The data to export, based on how you imported the data. You can choose to export only <code>BULK</code> data that you imported using a dataset import job, only <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code> for both types. The default value is <code>PUT</code>. </p>
     pub fn set_ingestion_mode(mut self, input: ::std::option::Option<crate::types::IngestionMode>) -> Self {
         self.ingestion_mode = input;
         self
     }
-    /// <p>The data to export, based on how you imported the data. You can choose to export only <code>BULK</code> data that you imported using a dataset import job, only <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code> for both types. The default value is <code>PUT</code>.</p>
+    /// <p>The data to export, based on how you imported the data. You can choose to export only <code>BULK</code> data that you imported using a dataset import job, only <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code> for both types. The default value is <code>PUT</code>. </p>
     pub fn get_ingestion_mode(&self) -> &::std::option::Option<crate::types::IngestionMode> {
         &self.ingestion_mode
     }

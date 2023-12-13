@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SnapshotJobS3Result {
-    /// <p>A list of Amazon S3 bucket configurations that are provided when you make a <code>StartDashboardSnapshotJob</code> API call.</p>
+    /// <p>A list of Amazon S3 bucket configurations that are provided when you make a <code>StartDashboardSnapshotJob</code> API call. </p>
     pub s3_destination_configuration: ::std::option::Option<crate::types::SnapshotS3DestinationConfiguration>,
     /// <p>The Amazon S3 Uri.</p>
     pub s3_uri: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct SnapshotJobS3Result {
     pub error_info: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotJobResultErrorInfo>>,
 }
 impl SnapshotJobS3Result {
-    /// <p>A list of Amazon S3 bucket configurations that are provided when you make a <code>StartDashboardSnapshotJob</code> API call.</p>
+    /// <p>A list of Amazon S3 bucket configurations that are provided when you make a <code>StartDashboardSnapshotJob</code> API call. </p>
     pub fn s3_destination_configuration(&self) -> ::std::option::Option<&crate::types::SnapshotS3DestinationConfiguration> {
         self.s3_destination_configuration.as_ref()
     }
@@ -52,17 +52,17 @@ pub struct SnapshotJobS3ResultBuilder {
     pub(crate) error_info: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotJobResultErrorInfo>>,
 }
 impl SnapshotJobS3ResultBuilder {
-    /// <p>A list of Amazon S3 bucket configurations that are provided when you make a <code>StartDashboardSnapshotJob</code> API call.</p>
+    /// <p>A list of Amazon S3 bucket configurations that are provided when you make a <code>StartDashboardSnapshotJob</code> API call. </p>
     pub fn s3_destination_configuration(mut self, input: crate::types::SnapshotS3DestinationConfiguration) -> Self {
         self.s3_destination_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A list of Amazon S3 bucket configurations that are provided when you make a <code>StartDashboardSnapshotJob</code> API call.</p>
+    /// <p>A list of Amazon S3 bucket configurations that are provided when you make a <code>StartDashboardSnapshotJob</code> API call. </p>
     pub fn set_s3_destination_configuration(mut self, input: ::std::option::Option<crate::types::SnapshotS3DestinationConfiguration>) -> Self {
         self.s3_destination_configuration = input;
         self
     }
-    /// <p>A list of Amazon S3 bucket configurations that are provided when you make a <code>StartDashboardSnapshotJob</code> API call.</p>
+    /// <p>A list of Amazon S3 bucket configurations that are provided when you make a <code>StartDashboardSnapshotJob</code> API call. </p>
     pub fn get_s3_destination_configuration(&self) -> &::std::option::Option<crate::types::SnapshotS3DestinationConfiguration> {
         &self.s3_destination_configuration
     }

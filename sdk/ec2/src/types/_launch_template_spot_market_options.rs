@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LaunchTemplateSpotMarketOptions {
-    /// <p>The maximum hourly price you're willing to pay for the Spot Instances. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p><important>
+    /// <p>The maximum hourly price you're willing to pay for the Spot Instances. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p> <important>
     /// <p>If you specify a maximum price, your Spot Instances will be interrupted more frequently than if you do not specify this parameter.</p>
     /// </important>
     pub max_price: ::std::option::Option<::std::string::String>,
@@ -18,7 +18,7 @@ pub struct LaunchTemplateSpotMarketOptions {
     pub instance_interruption_behavior: ::std::option::Option<crate::types::InstanceInterruptionBehavior>,
 }
 impl LaunchTemplateSpotMarketOptions {
-    /// <p>The maximum hourly price you're willing to pay for the Spot Instances. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p><important>
+    /// <p>The maximum hourly price you're willing to pay for the Spot Instances. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p> <important>
     /// <p>If you specify a maximum price, your Spot Instances will be interrupted more frequently than if you do not specify this parameter.</p>
     /// </important>
     pub fn max_price(&self) -> ::std::option::Option<&str> {
@@ -59,21 +59,21 @@ pub struct LaunchTemplateSpotMarketOptionsBuilder {
     pub(crate) instance_interruption_behavior: ::std::option::Option<crate::types::InstanceInterruptionBehavior>,
 }
 impl LaunchTemplateSpotMarketOptionsBuilder {
-    /// <p>The maximum hourly price you're willing to pay for the Spot Instances. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p><important>
+    /// <p>The maximum hourly price you're willing to pay for the Spot Instances. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p> <important>
     /// <p>If you specify a maximum price, your Spot Instances will be interrupted more frequently than if you do not specify this parameter.</p>
     /// </important>
     pub fn max_price(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.max_price = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The maximum hourly price you're willing to pay for the Spot Instances. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p><important>
+    /// <p>The maximum hourly price you're willing to pay for the Spot Instances. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p> <important>
     /// <p>If you specify a maximum price, your Spot Instances will be interrupted more frequently than if you do not specify this parameter.</p>
     /// </important>
     pub fn set_max_price(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.max_price = input;
         self
     }
-    /// <p>The maximum hourly price you're willing to pay for the Spot Instances. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p><important>
+    /// <p>The maximum hourly price you're willing to pay for the Spot Instances. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p> <important>
     /// <p>If you specify a maximum price, your Spot Instances will be interrupted more frequently than if you do not specify this parameter.</p>
     /// </important>
     pub fn get_max_price(&self) -> &::std::option::Option<::std::string::String> {

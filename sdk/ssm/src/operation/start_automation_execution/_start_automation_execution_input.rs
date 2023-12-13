@@ -25,15 +25,13 @@ pub struct StartAutomationExecutionInput {
     /// <p>The number of errors that are allowed before the system stops running the automation on additional targets. You can specify either an absolute number of errors, for example 10, or a percentage of the target set, for example 10%. If you specify 3, for example, the system stops running the automation when the fourth error is received. If you specify 0, then the system stops running the automation on additional targets after the first error result is returned. If you run an automation on 50 resources and set max-errors to 10%, then the system stops running the automation on additional targets when the sixth error is received.</p>
     /// <p>Executions that are already running an automation when max-errors is reached are allowed to complete, but some of these executions may fail as well. If you need to ensure that there won't be more than max-errors failed executions, set max-concurrency to 1 so the executions proceed one at a time.</p>
     pub max_errors: ::std::option::Option<::std::string::String>,
-    /// <p>A location is a combination of Amazon Web Services Regions and/or Amazon Web Services accounts where you want to run the automation. Use this operation to start an automation in multiple Amazon Web Services Regions and multiple Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Amazon Web Services Regions and Amazon Web Services accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>A location is a combination of Amazon Web Services Regions and/or Amazon Web Services accounts where you want to run the automation. Use this operation to start an automation in multiple Amazon Web Services Regions and multiple Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Amazon Web Services Regions and Amazon Web Services accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
     pub target_locations: ::std::option::Option<::std::vec::Vec<crate::types::TargetLocation>>,
     /// <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for an automation. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an automation to identify an environment or operating system. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Key=environment,Value=test</code></p></li>
-    /// <li>
-    /// <p><code>Key=OS,Value=Windows</code></p></li>
-    /// </ul><note>
+    /// <li> <p> <code>Key=environment,Value=test</code> </p> </li>
+    /// <li> <p> <code>Key=OS,Value=Windows</code> </p> </li>
+    /// </ul> <note>
     /// <p>To add tags to an existing automation, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -86,7 +84,7 @@ impl StartAutomationExecutionInput {
     pub fn max_errors(&self) -> ::std::option::Option<&str> {
         self.max_errors.as_deref()
     }
-    /// <p>A location is a combination of Amazon Web Services Regions and/or Amazon Web Services accounts where you want to run the automation. Use this operation to start an automation in multiple Amazon Web Services Regions and multiple Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Amazon Web Services Regions and Amazon Web Services accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>A location is a combination of Amazon Web Services Regions and/or Amazon Web Services accounts where you want to run the automation. Use this operation to start an automation in multiple Amazon Web Services Regions and multiple Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Amazon Web Services Regions and Amazon Web Services accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_locations.is_none()`.
     pub fn target_locations(&self) -> &[crate::types::TargetLocation] {
@@ -94,11 +92,9 @@ impl StartAutomationExecutionInput {
     }
     /// <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for an automation. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an automation to identify an environment or operating system. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Key=environment,Value=test</code></p></li>
-    /// <li>
-    /// <p><code>Key=OS,Value=Windows</code></p></li>
-    /// </ul><note>
+    /// <li> <p> <code>Key=environment,Value=test</code> </p> </li>
+    /// <li> <p> <code>Key=OS,Value=Windows</code> </p> </li>
+    /// </ul> <note>
     /// <p>To add tags to an existing automation, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
     ///
@@ -314,19 +310,19 @@ impl StartAutomationExecutionInputBuilder {
     ///
     /// To override the contents of this collection use [`set_target_locations`](Self::set_target_locations).
     ///
-    /// <p>A location is a combination of Amazon Web Services Regions and/or Amazon Web Services accounts where you want to run the automation. Use this operation to start an automation in multiple Amazon Web Services Regions and multiple Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Amazon Web Services Regions and Amazon Web Services accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>A location is a combination of Amazon Web Services Regions and/or Amazon Web Services accounts where you want to run the automation. Use this operation to start an automation in multiple Amazon Web Services Regions and multiple Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Amazon Web Services Regions and Amazon Web Services accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
     pub fn target_locations(mut self, input: crate::types::TargetLocation) -> Self {
         let mut v = self.target_locations.unwrap_or_default();
         v.push(input);
         self.target_locations = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A location is a combination of Amazon Web Services Regions and/or Amazon Web Services accounts where you want to run the automation. Use this operation to start an automation in multiple Amazon Web Services Regions and multiple Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Amazon Web Services Regions and Amazon Web Services accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>A location is a combination of Amazon Web Services Regions and/or Amazon Web Services accounts where you want to run the automation. Use this operation to start an automation in multiple Amazon Web Services Regions and multiple Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Amazon Web Services Regions and Amazon Web Services accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
     pub fn set_target_locations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetLocation>>) -> Self {
         self.target_locations = input;
         self
     }
-    /// <p>A location is a combination of Amazon Web Services Regions and/or Amazon Web Services accounts where you want to run the automation. Use this operation to start an automation in multiple Amazon Web Services Regions and multiple Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Amazon Web Services Regions and Amazon Web Services accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>A location is a combination of Amazon Web Services Regions and/or Amazon Web Services accounts where you want to run the automation. Use this operation to start an automation in multiple Amazon Web Services Regions and multiple Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Amazon Web Services Regions and Amazon Web Services accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
     pub fn get_target_locations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetLocation>> {
         &self.target_locations
     }
@@ -336,11 +332,9 @@ impl StartAutomationExecutionInputBuilder {
     ///
     /// <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for an automation. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an automation to identify an environment or operating system. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Key=environment,Value=test</code></p></li>
-    /// <li>
-    /// <p><code>Key=OS,Value=Windows</code></p></li>
-    /// </ul><note>
+    /// <li> <p> <code>Key=environment,Value=test</code> </p> </li>
+    /// <li> <p> <code>Key=OS,Value=Windows</code> </p> </li>
+    /// </ul> <note>
     /// <p>To add tags to an existing automation, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
@@ -351,11 +345,9 @@ impl StartAutomationExecutionInputBuilder {
     }
     /// <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for an automation. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an automation to identify an environment or operating system. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Key=environment,Value=test</code></p></li>
-    /// <li>
-    /// <p><code>Key=OS,Value=Windows</code></p></li>
-    /// </ul><note>
+    /// <li> <p> <code>Key=environment,Value=test</code> </p> </li>
+    /// <li> <p> <code>Key=OS,Value=Windows</code> </p> </li>
+    /// </ul> <note>
     /// <p>To add tags to an existing automation, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
@@ -364,11 +356,9 @@ impl StartAutomationExecutionInputBuilder {
     }
     /// <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for an automation. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an automation to identify an environment or operating system. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Key=environment,Value=test</code></p></li>
-    /// <li>
-    /// <p><code>Key=OS,Value=Windows</code></p></li>
-    /// </ul><note>
+    /// <li> <p> <code>Key=environment,Value=test</code> </p> </li>
+    /// <li> <p> <code>Key=OS,Value=Windows</code> </p> </li>
+    /// </ul> <note>
     /// <p>To add tags to an existing automation, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {

@@ -5,7 +5,7 @@
 pub struct CreateApplicationPresignedUrlInput {
     /// <p>The name of the application.</p>
     pub application_name: ::std::option::Option<::std::string::String>,
-    /// <p>The type of the extension for which to create and return a URL. Currently, the only valid extension URL type is <code>FLINK_DASHBOARD_URL</code>.</p>
+    /// <p>The type of the extension for which to create and return a URL. Currently, the only valid extension URL type is <code>FLINK_DASHBOARD_URL</code>. </p>
     pub url_type: ::std::option::Option<crate::types::UrlType>,
     /// <p>The duration in seconds for which the returned URL will be valid.</p>
     pub session_expiration_duration_in_seconds: ::std::option::Option<i64>,
@@ -15,7 +15,7 @@ impl CreateApplicationPresignedUrlInput {
     pub fn application_name(&self) -> ::std::option::Option<&str> {
         self.application_name.as_deref()
     }
-    /// <p>The type of the extension for which to create and return a URL. Currently, the only valid extension URL type is <code>FLINK_DASHBOARD_URL</code>.</p>
+    /// <p>The type of the extension for which to create and return a URL. Currently, the only valid extension URL type is <code>FLINK_DASHBOARD_URL</code>. </p>
     pub fn url_type(&self) -> ::std::option::Option<&crate::types::UrlType> {
         self.url_type.as_ref()
     }
@@ -55,18 +55,18 @@ impl CreateApplicationPresignedUrlInputBuilder {
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_name
     }
-    /// <p>The type of the extension for which to create and return a URL. Currently, the only valid extension URL type is <code>FLINK_DASHBOARD_URL</code>.</p>
+    /// <p>The type of the extension for which to create and return a URL. Currently, the only valid extension URL type is <code>FLINK_DASHBOARD_URL</code>. </p>
     /// This field is required.
     pub fn url_type(mut self, input: crate::types::UrlType) -> Self {
         self.url_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of the extension for which to create and return a URL. Currently, the only valid extension URL type is <code>FLINK_DASHBOARD_URL</code>.</p>
+    /// <p>The type of the extension for which to create and return a URL. Currently, the only valid extension URL type is <code>FLINK_DASHBOARD_URL</code>. </p>
     pub fn set_url_type(mut self, input: ::std::option::Option<crate::types::UrlType>) -> Self {
         self.url_type = input;
         self
     }
-    /// <p>The type of the extension for which to create and return a URL. Currently, the only valid extension URL type is <code>FLINK_DASHBOARD_URL</code>.</p>
+    /// <p>The type of the extension for which to create and return a URL. Currently, the only valid extension URL type is <code>FLINK_DASHBOARD_URL</code>. </p>
     pub fn get_url_type(&self) -> &::std::option::Option<crate::types::UrlType> {
         &self.url_type
     }

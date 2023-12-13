@@ -22,7 +22,7 @@ impl DisableUserInputBuilder {
 }
 /// Fluent builder constructing a request to `DisableUser`.
 ///
-/// <p>Disables the specified user in the user pool. Users can't sign in to AppStream 2.0 until they are re-enabled. This action does not delete the user.</p>
+/// <p>Disables the specified user in the user pool. Users can't sign in to AppStream 2.0 until they are re-enabled. This action does not delete the user. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisableUserFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,21 +108,21 @@ impl DisableUserFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The email address of the user.</p><note>
+    /// <p>The email address of the user.</p> <note>
     /// <p>Users' email addresses are case-sensitive.</p>
     /// </note>
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_name(input.into());
         self
     }
-    /// <p>The email address of the user.</p><note>
+    /// <p>The email address of the user.</p> <note>
     /// <p>Users' email addresses are case-sensitive.</p>
     /// </note>
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_name(input);
         self
     }
-    /// <p>The email address of the user.</p><note>
+    /// <p>The email address of the user.</p> <note>
     /// <p>Users' email addresses are case-sensitive.</p>
     /// </note>
     pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {

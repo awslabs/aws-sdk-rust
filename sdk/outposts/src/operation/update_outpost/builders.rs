@@ -22,7 +22,7 @@ impl UpdateOutpostInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateOutpost`.
 ///
-/// <p>Updates an Outpost.</p>
+/// <p> Updates an Outpost. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateOutpostFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl UpdateOutpostFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID or the Amazon Resource Name (ARN) of the Outpost.</p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
     pub fn outpost_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.outpost_id(input.into());
         self
     }
-    /// <p>The ID or the Amazon Resource Name (ARN) of the Outpost.</p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
     pub fn set_outpost_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_outpost_id(input);
         self
     }
-    /// <p>The ID or the Amazon Resource Name (ARN) of the Outpost.</p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
     pub fn get_outpost_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_outpost_id()
     }
@@ -150,17 +150,17 @@ impl UpdateOutpostFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p>The type of hardware for this Outpost.</p>
+    /// <p> The type of hardware for this Outpost. </p>
     pub fn supported_hardware_type(mut self, input: crate::types::SupportedHardwareType) -> Self {
         self.inner = self.inner.supported_hardware_type(input);
         self
     }
-    /// <p>The type of hardware for this Outpost.</p>
+    /// <p> The type of hardware for this Outpost. </p>
     pub fn set_supported_hardware_type(mut self, input: ::std::option::Option<crate::types::SupportedHardwareType>) -> Self {
         self.inner = self.inner.set_supported_hardware_type(input);
         self
     }
-    /// <p>The type of hardware for this Outpost.</p>
+    /// <p> The type of hardware for this Outpost. </p>
     pub fn get_supported_hardware_type(&self) -> &::std::option::Option<crate::types::SupportedHardwareType> {
         self.inner.get_supported_hardware_type()
     }

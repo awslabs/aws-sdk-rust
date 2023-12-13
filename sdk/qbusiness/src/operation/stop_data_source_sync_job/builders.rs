@@ -108,17 +108,17 @@ impl StopDataSourceSyncJobFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier of the data source connector.</p>
+    /// <p> The identifier of the data source connector. </p>
     pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data_source_id(input.into());
         self
     }
-    /// <p>The identifier of the data source connector.</p>
+    /// <p> The identifier of the data source connector. </p>
     pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_data_source_id(input);
         self
     }
-    /// <p>The identifier of the data source connector.</p>
+    /// <p> The identifier of the data source connector. </p>
     pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_data_source_id()
     }

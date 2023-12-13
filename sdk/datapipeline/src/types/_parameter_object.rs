@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParameterObject {
-    /// <p>The ID of the parameter object.</p>
+    /// <p>The ID of the parameter object. </p>
     pub id: ::std::string::String,
     /// <p>The attributes of the parameter object.</p>
     pub attributes: ::std::vec::Vec<crate::types::ParameterAttribute>,
 }
 impl ParameterObject {
-    /// <p>The ID of the parameter object.</p>
+    /// <p>The ID of the parameter object. </p>
     pub fn id(&self) -> &str {
         use std::ops::Deref;
         self.id.deref()
@@ -36,18 +36,18 @@ pub struct ParameterObjectBuilder {
     pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::ParameterAttribute>>,
 }
 impl ParameterObjectBuilder {
-    /// <p>The ID of the parameter object.</p>
+    /// <p>The ID of the parameter object. </p>
     /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the parameter object.</p>
+    /// <p>The ID of the parameter object. </p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// <p>The ID of the parameter object.</p>
+    /// <p>The ID of the parameter object. </p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }

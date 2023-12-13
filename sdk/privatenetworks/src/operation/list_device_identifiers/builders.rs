@@ -121,12 +121,9 @@ impl ListDeviceIdentifiersFluentBuilder {
     ///
     /// <p>The filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ORDER</code> - The Amazon Resource Name (ARN) of the order.</p></li>
-    /// <li>
-    /// <p><code>STATUS</code> - The status (<code>ACTIVE</code> | <code>INACTIVE</code>).</p></li>
-    /// <li>
-    /// <p><code>TRAFFIC_GROUP</code> - The Amazon Resource Name (ARN) of the traffic group.</p></li>
+    /// <li> <p> <code>ORDER</code> - The Amazon Resource Name (ARN) of the order.</p> </li>
+    /// <li> <p> <code>STATUS</code> - The status (<code>ACTIVE</code> | <code>INACTIVE</code>).</p> </li>
+    /// <li> <p> <code>TRAFFIC_GROUP</code> - The Amazon Resource Name (ARN) of the traffic group.</p> </li>
     /// </ul>
     /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
     pub fn filters(mut self, k: crate::types::DeviceIdentifierFilterKeys, v: ::std::vec::Vec<::std::string::String>) -> Self {
@@ -135,12 +132,9 @@ impl ListDeviceIdentifiersFluentBuilder {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ORDER</code> - The Amazon Resource Name (ARN) of the order.</p></li>
-    /// <li>
-    /// <p><code>STATUS</code> - The status (<code>ACTIVE</code> | <code>INACTIVE</code>).</p></li>
-    /// <li>
-    /// <p><code>TRAFFIC_GROUP</code> - The Amazon Resource Name (ARN) of the traffic group.</p></li>
+    /// <li> <p> <code>ORDER</code> - The Amazon Resource Name (ARN) of the order.</p> </li>
+    /// <li> <p> <code>STATUS</code> - The status (<code>ACTIVE</code> | <code>INACTIVE</code>).</p> </li>
+    /// <li> <p> <code>TRAFFIC_GROUP</code> - The Amazon Resource Name (ARN) of the traffic group.</p> </li>
     /// </ul>
     /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
     pub fn set_filters(
@@ -152,12 +146,9 @@ impl ListDeviceIdentifiersFluentBuilder {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ORDER</code> - The Amazon Resource Name (ARN) of the order.</p></li>
-    /// <li>
-    /// <p><code>STATUS</code> - The status (<code>ACTIVE</code> | <code>INACTIVE</code>).</p></li>
-    /// <li>
-    /// <p><code>TRAFFIC_GROUP</code> - The Amazon Resource Name (ARN) of the traffic group.</p></li>
+    /// <li> <p> <code>ORDER</code> - The Amazon Resource Name (ARN) of the order.</p> </li>
+    /// <li> <p> <code>STATUS</code> - The status (<code>ACTIVE</code> | <code>INACTIVE</code>).</p> </li>
+    /// <li> <p> <code>TRAFFIC_GROUP</code> - The Amazon Resource Name (ARN) of the traffic group.</p> </li>
     /// </ul>
     /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
     pub fn get_filters(

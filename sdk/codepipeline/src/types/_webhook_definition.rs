@@ -14,12 +14,9 @@ pub struct WebhookDefinition {
     pub filters: ::std::vec::Vec<crate::types::WebhookFilterRule>,
     /// <p>Supported options are GITHUB_HMAC, IP, and UNAUTHENTICATED.</p>
     /// <ul>
-    /// <li>
-    /// <p>For information about the authentication scheme implemented by GITHUB_HMAC, see <a href="https://developer.github.com/webhooks/securing/">Securing your webhooks</a> on the GitHub Developer website.</p></li>
-    /// <li>
-    /// <p>IP rejects webhooks trigger requests unless they originate from an IP address in the IP range whitelisted in the authentication configuration.</p></li>
-    /// <li>
-    /// <p>UNAUTHENTICATED accepts all webhook trigger requests regardless of origin.</p></li>
+    /// <li> <p>For information about the authentication scheme implemented by GITHUB_HMAC, see <a href="https://developer.github.com/webhooks/securing/">Securing your webhooks</a> on the GitHub Developer website.</p> </li>
+    /// <li> <p> IP rejects webhooks trigger requests unless they originate from an IP address in the IP range whitelisted in the authentication configuration.</p> </li>
+    /// <li> <p> UNAUTHENTICATED accepts all webhook trigger requests regardless of origin.</p> </li>
     /// </ul>
     pub authentication: crate::types::WebhookAuthenticationType,
     /// <p>Properties that configure the authentication applied to incoming webhook trigger requests. The required properties depend on the authentication type. For GITHUB_HMAC, only the <code>SecretToken </code>property must be set. For IP, only the <code>AllowedIPRange </code>property must be set to a valid CIDR range. For UNAUTHENTICATED, no properties can be set.</p>
@@ -48,12 +45,9 @@ impl WebhookDefinition {
     }
     /// <p>Supported options are GITHUB_HMAC, IP, and UNAUTHENTICATED.</p>
     /// <ul>
-    /// <li>
-    /// <p>For information about the authentication scheme implemented by GITHUB_HMAC, see <a href="https://developer.github.com/webhooks/securing/">Securing your webhooks</a> on the GitHub Developer website.</p></li>
-    /// <li>
-    /// <p>IP rejects webhooks trigger requests unless they originate from an IP address in the IP range whitelisted in the authentication configuration.</p></li>
-    /// <li>
-    /// <p>UNAUTHENTICATED accepts all webhook trigger requests regardless of origin.</p></li>
+    /// <li> <p>For information about the authentication scheme implemented by GITHUB_HMAC, see <a href="https://developer.github.com/webhooks/securing/">Securing your webhooks</a> on the GitHub Developer website.</p> </li>
+    /// <li> <p> IP rejects webhooks trigger requests unless they originate from an IP address in the IP range whitelisted in the authentication configuration.</p> </li>
+    /// <li> <p> UNAUTHENTICATED accepts all webhook trigger requests regardless of origin.</p> </li>
     /// </ul>
     pub fn authentication(&self) -> &crate::types::WebhookAuthenticationType {
         &self.authentication
@@ -149,12 +143,9 @@ impl WebhookDefinitionBuilder {
     }
     /// <p>Supported options are GITHUB_HMAC, IP, and UNAUTHENTICATED.</p>
     /// <ul>
-    /// <li>
-    /// <p>For information about the authentication scheme implemented by GITHUB_HMAC, see <a href="https://developer.github.com/webhooks/securing/">Securing your webhooks</a> on the GitHub Developer website.</p></li>
-    /// <li>
-    /// <p>IP rejects webhooks trigger requests unless they originate from an IP address in the IP range whitelisted in the authentication configuration.</p></li>
-    /// <li>
-    /// <p>UNAUTHENTICATED accepts all webhook trigger requests regardless of origin.</p></li>
+    /// <li> <p>For information about the authentication scheme implemented by GITHUB_HMAC, see <a href="https://developer.github.com/webhooks/securing/">Securing your webhooks</a> on the GitHub Developer website.</p> </li>
+    /// <li> <p> IP rejects webhooks trigger requests unless they originate from an IP address in the IP range whitelisted in the authentication configuration.</p> </li>
+    /// <li> <p> UNAUTHENTICATED accepts all webhook trigger requests regardless of origin.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn authentication(mut self, input: crate::types::WebhookAuthenticationType) -> Self {
@@ -163,12 +154,9 @@ impl WebhookDefinitionBuilder {
     }
     /// <p>Supported options are GITHUB_HMAC, IP, and UNAUTHENTICATED.</p>
     /// <ul>
-    /// <li>
-    /// <p>For information about the authentication scheme implemented by GITHUB_HMAC, see <a href="https://developer.github.com/webhooks/securing/">Securing your webhooks</a> on the GitHub Developer website.</p></li>
-    /// <li>
-    /// <p>IP rejects webhooks trigger requests unless they originate from an IP address in the IP range whitelisted in the authentication configuration.</p></li>
-    /// <li>
-    /// <p>UNAUTHENTICATED accepts all webhook trigger requests regardless of origin.</p></li>
+    /// <li> <p>For information about the authentication scheme implemented by GITHUB_HMAC, see <a href="https://developer.github.com/webhooks/securing/">Securing your webhooks</a> on the GitHub Developer website.</p> </li>
+    /// <li> <p> IP rejects webhooks trigger requests unless they originate from an IP address in the IP range whitelisted in the authentication configuration.</p> </li>
+    /// <li> <p> UNAUTHENTICATED accepts all webhook trigger requests regardless of origin.</p> </li>
     /// </ul>
     pub fn set_authentication(mut self, input: ::std::option::Option<crate::types::WebhookAuthenticationType>) -> Self {
         self.authentication = input;
@@ -176,12 +164,9 @@ impl WebhookDefinitionBuilder {
     }
     /// <p>Supported options are GITHUB_HMAC, IP, and UNAUTHENTICATED.</p>
     /// <ul>
-    /// <li>
-    /// <p>For information about the authentication scheme implemented by GITHUB_HMAC, see <a href="https://developer.github.com/webhooks/securing/">Securing your webhooks</a> on the GitHub Developer website.</p></li>
-    /// <li>
-    /// <p>IP rejects webhooks trigger requests unless they originate from an IP address in the IP range whitelisted in the authentication configuration.</p></li>
-    /// <li>
-    /// <p>UNAUTHENTICATED accepts all webhook trigger requests regardless of origin.</p></li>
+    /// <li> <p>For information about the authentication scheme implemented by GITHUB_HMAC, see <a href="https://developer.github.com/webhooks/securing/">Securing your webhooks</a> on the GitHub Developer website.</p> </li>
+    /// <li> <p> IP rejects webhooks trigger requests unless they originate from an IP address in the IP range whitelisted in the authentication configuration.</p> </li>
+    /// <li> <p> UNAUTHENTICATED accepts all webhook trigger requests regardless of origin.</p> </li>
     /// </ul>
     pub fn get_authentication(&self) -> &::std::option::Option<crate::types::WebhookAuthenticationType> {
         &self.authentication

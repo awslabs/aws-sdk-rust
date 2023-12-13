@@ -17,7 +17,7 @@ pub struct AnalysisDefinition {
     /// <p>Filter definitions for an analysis.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/adding-a-filter.html">Filtering Data in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     pub filter_groups: ::std::option::Option<::std::vec::Vec<crate::types::FilterGroup>>,
-    /// <p>An array of analysis-level column configurations. Column configurations can be used to set default formatting for a column to be used throughout an analysis.</p>
+    /// <p> An array of analysis-level column configurations. Column configurations can be used to set default formatting for a column to be used throughout an analysis. </p>
     pub column_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ColumnConfiguration>>,
     /// <p>The configuration for default analysis settings.</p>
     pub analysis_defaults: ::std::option::Option<crate::types::AnalysisDefaults>,
@@ -57,7 +57,7 @@ impl AnalysisDefinition {
     pub fn filter_groups(&self) -> &[crate::types::FilterGroup] {
         self.filter_groups.as_deref().unwrap_or_default()
     }
-    /// <p>An array of analysis-level column configurations. Column configurations can be used to set default formatting for a column to be used throughout an analysis.</p>
+    /// <p> An array of analysis-level column configurations. Column configurations can be used to set default formatting for a column to be used throughout an analysis. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.column_configurations.is_none()`.
     pub fn column_configurations(&self) -> &[crate::types::ColumnConfiguration] {
@@ -209,19 +209,19 @@ impl AnalysisDefinitionBuilder {
     ///
     /// To override the contents of this collection use [`set_column_configurations`](Self::set_column_configurations).
     ///
-    /// <p>An array of analysis-level column configurations. Column configurations can be used to set default formatting for a column to be used throughout an analysis.</p>
+    /// <p> An array of analysis-level column configurations. Column configurations can be used to set default formatting for a column to be used throughout an analysis. </p>
     pub fn column_configurations(mut self, input: crate::types::ColumnConfiguration) -> Self {
         let mut v = self.column_configurations.unwrap_or_default();
         v.push(input);
         self.column_configurations = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of analysis-level column configurations. Column configurations can be used to set default formatting for a column to be used throughout an analysis.</p>
+    /// <p> An array of analysis-level column configurations. Column configurations can be used to set default formatting for a column to be used throughout an analysis. </p>
     pub fn set_column_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnConfiguration>>) -> Self {
         self.column_configurations = input;
         self
     }
-    /// <p>An array of analysis-level column configurations. Column configurations can be used to set default formatting for a column to be used throughout an analysis.</p>
+    /// <p> An array of analysis-level column configurations. Column configurations can be used to set default formatting for a column to be used throughout an analysis. </p>
     pub fn get_column_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnConfiguration>> {
         &self.column_configurations
     }

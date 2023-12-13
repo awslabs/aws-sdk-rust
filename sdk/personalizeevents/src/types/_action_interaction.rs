@@ -8,36 +8,30 @@ pub struct ActionInteraction {
     pub action_id: ::std::string::String,
     /// <p>The ID of the user who interacted with the action. This corresponds to the <code>USER_ID</code> field of the Action interaction schema.</p>
     pub user_id: ::std::option::Option<::std::string::String>,
-    /// <p>The ID associated with the user's visit. Your application generates a unique <code>sessionId</code> when a user first visits your website or uses your application.</p>
+    /// <p>The ID associated with the user's visit. Your application generates a unique <code>sessionId</code> when a user first visits your website or uses your application. </p>
     pub session_id: ::std::string::String,
     /// <p>The timestamp for when the action interaction event occurred. Timestamps must be in Unix epoch time format, in seconds.</p>
     pub timestamp: ::aws_smithy_types::DateTime,
-    /// <p>The type of action interaction event. You can specify <code>Viewed</code>, <code>Taken</code>, and <code>Not Taken</code> event types. For more information about action interaction event type data, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/action-interaction-event-type-data.html">Event type data</a>.</p>
+    /// <p>The type of action interaction event. You can specify <code>Viewed</code>, <code>Taken</code>, and <code>Not Taken</code> event types. For more information about action interaction event type data, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/action-interaction-event-type-data.html">Event type data</a>. </p>
     pub event_type: ::std::string::String,
     /// <p>An ID associated with the event. If an event ID is not provided, Amazon Personalize generates a unique ID for the event. An event ID is not used as an input to the model. Amazon Personalize uses the event ID to distinguish unique events. Any subsequent events after the first with the same event ID are not used in model training.</p>
     pub event_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the list of recommendations that contains the action the user interacted with.</p>
     pub recommendation_id: ::std::option::Option<::std::string::String>,
-    /// <p>A list of action IDs that represents the sequence of actions you have shown the user. For example, <code>["actionId1", "actionId2", "actionId3"]</code>. Amazon Personalize doesn't use impressions data from action interaction events. Instead, record multiple events for each action and use the <code>Viewed</code> event type.</p>
+    /// <p>A list of action IDs that represents the sequence of actions you have shown the user. For example, <code>["actionId1", "actionId2", "actionId3"]</code>. Amazon Personalize doesn't use impressions data from action interaction events. Instead, record multiple events for each action and use the <code>Viewed</code> event type. </p>
     pub impression: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A string map of event-specific data that you might choose to record. For example, if a user takes an action, other than the action ID, you might also send the number of actions taken by the user.</p>
     /// <p>Each item in the map consists of a key-value pair. For example,</p>
-    /// <p><code>{"numberOfActions": "12"}</code></p>
+    /// <p> <code>{"numberOfActions": "12"}</code> </p>
     /// <p>The keys use camel case names that match the fields in the Action interactions schema. In the above example, the <code>numberOfActions</code> would match the 'NUMBER_OF_ACTIONS' field defined in the Action interactions schema.</p>
-    /// <p>The following can't be included as a keyword for properties (case insensitive).</p>
+    /// <p> The following can't be included as a keyword for properties (case insensitive). </p>
     /// <ul>
-    /// <li>
-    /// <p>userId</p></li>
-    /// <li>
-    /// <p>sessionId</p></li>
-    /// <li>
-    /// <p>eventType</p></li>
-    /// <li>
-    /// <p>timestamp</p></li>
-    /// <li>
-    /// <p>recommendationId</p></li>
-    /// <li>
-    /// <p>impression</p></li>
+    /// <li> <p> userId </p> </li>
+    /// <li> <p> sessionId </p> </li>
+    /// <li> <p>eventType</p> </li>
+    /// <li> <p>timestamp</p> </li>
+    /// <li> <p>recommendationId</p> </li>
+    /// <li> <p>impression</p> </li>
     /// </ul>
     pub properties: ::std::option::Option<::std::string::String>,
 }
@@ -51,7 +45,7 @@ impl ActionInteraction {
     pub fn user_id(&self) -> ::std::option::Option<&str> {
         self.user_id.as_deref()
     }
-    /// <p>The ID associated with the user's visit. Your application generates a unique <code>sessionId</code> when a user first visits your website or uses your application.</p>
+    /// <p>The ID associated with the user's visit. Your application generates a unique <code>sessionId</code> when a user first visits your website or uses your application. </p>
     pub fn session_id(&self) -> &str {
         use std::ops::Deref;
         self.session_id.deref()
@@ -60,7 +54,7 @@ impl ActionInteraction {
     pub fn timestamp(&self) -> &::aws_smithy_types::DateTime {
         &self.timestamp
     }
-    /// <p>The type of action interaction event. You can specify <code>Viewed</code>, <code>Taken</code>, and <code>Not Taken</code> event types. For more information about action interaction event type data, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/action-interaction-event-type-data.html">Event type data</a>.</p>
+    /// <p>The type of action interaction event. You can specify <code>Viewed</code>, <code>Taken</code>, and <code>Not Taken</code> event types. For more information about action interaction event type data, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/action-interaction-event-type-data.html">Event type data</a>. </p>
     pub fn event_type(&self) -> &str {
         use std::ops::Deref;
         self.event_type.deref()
@@ -73,7 +67,7 @@ impl ActionInteraction {
     pub fn recommendation_id(&self) -> ::std::option::Option<&str> {
         self.recommendation_id.as_deref()
     }
-    /// <p>A list of action IDs that represents the sequence of actions you have shown the user. For example, <code>["actionId1", "actionId2", "actionId3"]</code>. Amazon Personalize doesn't use impressions data from action interaction events. Instead, record multiple events for each action and use the <code>Viewed</code> event type.</p>
+    /// <p>A list of action IDs that represents the sequence of actions you have shown the user. For example, <code>["actionId1", "actionId2", "actionId3"]</code>. Amazon Personalize doesn't use impressions data from action interaction events. Instead, record multiple events for each action and use the <code>Viewed</code> event type. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.impression.is_none()`.
     pub fn impression(&self) -> &[::std::string::String] {
@@ -81,22 +75,16 @@ impl ActionInteraction {
     }
     /// <p>A string map of event-specific data that you might choose to record. For example, if a user takes an action, other than the action ID, you might also send the number of actions taken by the user.</p>
     /// <p>Each item in the map consists of a key-value pair. For example,</p>
-    /// <p><code>{"numberOfActions": "12"}</code></p>
+    /// <p> <code>{"numberOfActions": "12"}</code> </p>
     /// <p>The keys use camel case names that match the fields in the Action interactions schema. In the above example, the <code>numberOfActions</code> would match the 'NUMBER_OF_ACTIONS' field defined in the Action interactions schema.</p>
-    /// <p>The following can't be included as a keyword for properties (case insensitive).</p>
+    /// <p> The following can't be included as a keyword for properties (case insensitive). </p>
     /// <ul>
-    /// <li>
-    /// <p>userId</p></li>
-    /// <li>
-    /// <p>sessionId</p></li>
-    /// <li>
-    /// <p>eventType</p></li>
-    /// <li>
-    /// <p>timestamp</p></li>
-    /// <li>
-    /// <p>recommendationId</p></li>
-    /// <li>
-    /// <p>impression</p></li>
+    /// <li> <p> userId </p> </li>
+    /// <li> <p> sessionId </p> </li>
+    /// <li> <p>eventType</p> </li>
+    /// <li> <p>timestamp</p> </li>
+    /// <li> <p>recommendationId</p> </li>
+    /// <li> <p>impression</p> </li>
     /// </ul>
     pub fn properties(&self) -> ::std::option::Option<&str> {
         self.properties.as_deref()
@@ -168,18 +156,18 @@ impl ActionInteractionBuilder {
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_id
     }
-    /// <p>The ID associated with the user's visit. Your application generates a unique <code>sessionId</code> when a user first visits your website or uses your application.</p>
+    /// <p>The ID associated with the user's visit. Your application generates a unique <code>sessionId</code> when a user first visits your website or uses your application. </p>
     /// This field is required.
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID associated with the user's visit. Your application generates a unique <code>sessionId</code> when a user first visits your website or uses your application.</p>
+    /// <p>The ID associated with the user's visit. Your application generates a unique <code>sessionId</code> when a user first visits your website or uses your application. </p>
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session_id = input;
         self
     }
-    /// <p>The ID associated with the user's visit. Your application generates a unique <code>sessionId</code> when a user first visits your website or uses your application.</p>
+    /// <p>The ID associated with the user's visit. Your application generates a unique <code>sessionId</code> when a user first visits your website or uses your application. </p>
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.session_id
     }
@@ -198,18 +186,18 @@ impl ActionInteractionBuilder {
     pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.timestamp
     }
-    /// <p>The type of action interaction event. You can specify <code>Viewed</code>, <code>Taken</code>, and <code>Not Taken</code> event types. For more information about action interaction event type data, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/action-interaction-event-type-data.html">Event type data</a>.</p>
+    /// <p>The type of action interaction event. You can specify <code>Viewed</code>, <code>Taken</code>, and <code>Not Taken</code> event types. For more information about action interaction event type data, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/action-interaction-event-type-data.html">Event type data</a>. </p>
     /// This field is required.
     pub fn event_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The type of action interaction event. You can specify <code>Viewed</code>, <code>Taken</code>, and <code>Not Taken</code> event types. For more information about action interaction event type data, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/action-interaction-event-type-data.html">Event type data</a>.</p>
+    /// <p>The type of action interaction event. You can specify <code>Viewed</code>, <code>Taken</code>, and <code>Not Taken</code> event types. For more information about action interaction event type data, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/action-interaction-event-type-data.html">Event type data</a>. </p>
     pub fn set_event_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_type = input;
         self
     }
-    /// <p>The type of action interaction event. You can specify <code>Viewed</code>, <code>Taken</code>, and <code>Not Taken</code> event types. For more information about action interaction event type data, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/action-interaction-event-type-data.html">Event type data</a>.</p>
+    /// <p>The type of action interaction event. You can specify <code>Viewed</code>, <code>Taken</code>, and <code>Not Taken</code> event types. For more information about action interaction event type data, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/action-interaction-event-type-data.html">Event type data</a>. </p>
     pub fn get_event_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_type
     }
@@ -245,40 +233,34 @@ impl ActionInteractionBuilder {
     ///
     /// To override the contents of this collection use [`set_impression`](Self::set_impression).
     ///
-    /// <p>A list of action IDs that represents the sequence of actions you have shown the user. For example, <code>["actionId1", "actionId2", "actionId3"]</code>. Amazon Personalize doesn't use impressions data from action interaction events. Instead, record multiple events for each action and use the <code>Viewed</code> event type.</p>
+    /// <p>A list of action IDs that represents the sequence of actions you have shown the user. For example, <code>["actionId1", "actionId2", "actionId3"]</code>. Amazon Personalize doesn't use impressions data from action interaction events. Instead, record multiple events for each action and use the <code>Viewed</code> event type. </p>
     pub fn impression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.impression.unwrap_or_default();
         v.push(input.into());
         self.impression = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of action IDs that represents the sequence of actions you have shown the user. For example, <code>["actionId1", "actionId2", "actionId3"]</code>. Amazon Personalize doesn't use impressions data from action interaction events. Instead, record multiple events for each action and use the <code>Viewed</code> event type.</p>
+    /// <p>A list of action IDs that represents the sequence of actions you have shown the user. For example, <code>["actionId1", "actionId2", "actionId3"]</code>. Amazon Personalize doesn't use impressions data from action interaction events. Instead, record multiple events for each action and use the <code>Viewed</code> event type. </p>
     pub fn set_impression(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.impression = input;
         self
     }
-    /// <p>A list of action IDs that represents the sequence of actions you have shown the user. For example, <code>["actionId1", "actionId2", "actionId3"]</code>. Amazon Personalize doesn't use impressions data from action interaction events. Instead, record multiple events for each action and use the <code>Viewed</code> event type.</p>
+    /// <p>A list of action IDs that represents the sequence of actions you have shown the user. For example, <code>["actionId1", "actionId2", "actionId3"]</code>. Amazon Personalize doesn't use impressions data from action interaction events. Instead, record multiple events for each action and use the <code>Viewed</code> event type. </p>
     pub fn get_impression(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.impression
     }
     /// <p>A string map of event-specific data that you might choose to record. For example, if a user takes an action, other than the action ID, you might also send the number of actions taken by the user.</p>
     /// <p>Each item in the map consists of a key-value pair. For example,</p>
-    /// <p><code>{"numberOfActions": "12"}</code></p>
+    /// <p> <code>{"numberOfActions": "12"}</code> </p>
     /// <p>The keys use camel case names that match the fields in the Action interactions schema. In the above example, the <code>numberOfActions</code> would match the 'NUMBER_OF_ACTIONS' field defined in the Action interactions schema.</p>
-    /// <p>The following can't be included as a keyword for properties (case insensitive).</p>
+    /// <p> The following can't be included as a keyword for properties (case insensitive). </p>
     /// <ul>
-    /// <li>
-    /// <p>userId</p></li>
-    /// <li>
-    /// <p>sessionId</p></li>
-    /// <li>
-    /// <p>eventType</p></li>
-    /// <li>
-    /// <p>timestamp</p></li>
-    /// <li>
-    /// <p>recommendationId</p></li>
-    /// <li>
-    /// <p>impression</p></li>
+    /// <li> <p> userId </p> </li>
+    /// <li> <p> sessionId </p> </li>
+    /// <li> <p>eventType</p> </li>
+    /// <li> <p>timestamp</p> </li>
+    /// <li> <p>recommendationId</p> </li>
+    /// <li> <p>impression</p> </li>
     /// </ul>
     pub fn properties(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.properties = ::std::option::Option::Some(input.into());
@@ -286,22 +268,16 @@ impl ActionInteractionBuilder {
     }
     /// <p>A string map of event-specific data that you might choose to record. For example, if a user takes an action, other than the action ID, you might also send the number of actions taken by the user.</p>
     /// <p>Each item in the map consists of a key-value pair. For example,</p>
-    /// <p><code>{"numberOfActions": "12"}</code></p>
+    /// <p> <code>{"numberOfActions": "12"}</code> </p>
     /// <p>The keys use camel case names that match the fields in the Action interactions schema. In the above example, the <code>numberOfActions</code> would match the 'NUMBER_OF_ACTIONS' field defined in the Action interactions schema.</p>
-    /// <p>The following can't be included as a keyword for properties (case insensitive).</p>
+    /// <p> The following can't be included as a keyword for properties (case insensitive). </p>
     /// <ul>
-    /// <li>
-    /// <p>userId</p></li>
-    /// <li>
-    /// <p>sessionId</p></li>
-    /// <li>
-    /// <p>eventType</p></li>
-    /// <li>
-    /// <p>timestamp</p></li>
-    /// <li>
-    /// <p>recommendationId</p></li>
-    /// <li>
-    /// <p>impression</p></li>
+    /// <li> <p> userId </p> </li>
+    /// <li> <p> sessionId </p> </li>
+    /// <li> <p>eventType</p> </li>
+    /// <li> <p>timestamp</p> </li>
+    /// <li> <p>recommendationId</p> </li>
+    /// <li> <p>impression</p> </li>
     /// </ul>
     pub fn set_properties(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.properties = input;
@@ -309,22 +285,16 @@ impl ActionInteractionBuilder {
     }
     /// <p>A string map of event-specific data that you might choose to record. For example, if a user takes an action, other than the action ID, you might also send the number of actions taken by the user.</p>
     /// <p>Each item in the map consists of a key-value pair. For example,</p>
-    /// <p><code>{"numberOfActions": "12"}</code></p>
+    /// <p> <code>{"numberOfActions": "12"}</code> </p>
     /// <p>The keys use camel case names that match the fields in the Action interactions schema. In the above example, the <code>numberOfActions</code> would match the 'NUMBER_OF_ACTIONS' field defined in the Action interactions schema.</p>
-    /// <p>The following can't be included as a keyword for properties (case insensitive).</p>
+    /// <p> The following can't be included as a keyword for properties (case insensitive). </p>
     /// <ul>
-    /// <li>
-    /// <p>userId</p></li>
-    /// <li>
-    /// <p>sessionId</p></li>
-    /// <li>
-    /// <p>eventType</p></li>
-    /// <li>
-    /// <p>timestamp</p></li>
-    /// <li>
-    /// <p>recommendationId</p></li>
-    /// <li>
-    /// <p>impression</p></li>
+    /// <li> <p> userId </p> </li>
+    /// <li> <p> sessionId </p> </li>
+    /// <li> <p>eventType</p> </li>
+    /// <li> <p>timestamp</p> </li>
+    /// <li> <p>recommendationId</p> </li>
+    /// <li> <p>impression</p> </li>
     /// </ul>
     pub fn get_properties(&self) -> &::std::option::Option<::std::string::String> {
         &self.properties

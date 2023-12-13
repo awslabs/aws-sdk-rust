@@ -22,7 +22,7 @@ impl BatchUpdateStandardsControlAssociationsInputBuilder {
 }
 /// Fluent builder constructing a request to `BatchUpdateStandardsControlAssociations`.
 ///
-/// <p>For a batch of security controls and standards, this operation updates the enablement status of a control in a standard.</p>
+/// <p> For a batch of security controls and standards, this operation updates the enablement status of a control in a standard. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchUpdateStandardsControlAssociationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -116,12 +116,12 @@ impl BatchUpdateStandardsControlAssociationsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_standards_control_association_updates`](Self::set_standards_control_association_updates).
     ///
-    /// <p>Updates the enablement status of a security control in a specified standard.</p>
+    /// <p> Updates the enablement status of a security control in a specified standard. </p>
     pub fn standards_control_association_updates(mut self, input: crate::types::StandardsControlAssociationUpdate) -> Self {
         self.inner = self.inner.standards_control_association_updates(input);
         self
     }
-    /// <p>Updates the enablement status of a security control in a specified standard.</p>
+    /// <p> Updates the enablement status of a security control in a specified standard. </p>
     pub fn set_standards_control_association_updates(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::StandardsControlAssociationUpdate>>,
@@ -129,7 +129,7 @@ impl BatchUpdateStandardsControlAssociationsFluentBuilder {
         self.inner = self.inner.set_standards_control_association_updates(input);
         self
     }
-    /// <p>Updates the enablement status of a security control in a specified standard.</p>
+    /// <p> Updates the enablement status of a security control in a specified standard. </p>
     pub fn get_standards_control_association_updates(
         &self,
     ) -> &::std::option::Option<::std::vec::Vec<crate::types::StandardsControlAssociationUpdate>> {

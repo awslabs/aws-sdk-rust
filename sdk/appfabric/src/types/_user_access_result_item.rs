@@ -15,14 +15,10 @@ pub struct UserAccessResultItem {
     /// <p>The status of the user access result item.</p>
     /// <p>The following states are possible:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>IN_PROGRESS</code>: The user access task is in progress.</p></li>
-    /// <li>
-    /// <p><code>COMPLETED</code>: The user access task completed successfully.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code>: The user access task failed.</p></li>
-    /// <li>
-    /// <p><code>EXPIRED</code>: The user access task expired.</p></li>
+    /// <li> <p> <code>IN_PROGRESS</code>: The user access task is in progress.</p> </li>
+    /// <li> <p> <code>COMPLETED</code>: The user access task completed successfully.</p> </li>
+    /// <li> <p> <code>FAILED</code>: The user access task failed.</p> </li>
+    /// <li> <p> <code>EXPIRED</code>: The user access task expired.</p> </li>
     /// </ul>
     pub result_status: ::std::option::Option<crate::types::ResultStatus>,
     /// <p>The email address of the target user.</p>
@@ -60,14 +56,10 @@ impl UserAccessResultItem {
     /// <p>The status of the user access result item.</p>
     /// <p>The following states are possible:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>IN_PROGRESS</code>: The user access task is in progress.</p></li>
-    /// <li>
-    /// <p><code>COMPLETED</code>: The user access task completed successfully.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code>: The user access task failed.</p></li>
-    /// <li>
-    /// <p><code>EXPIRED</code>: The user access task expired.</p></li>
+    /// <li> <p> <code>IN_PROGRESS</code>: The user access task is in progress.</p> </li>
+    /// <li> <p> <code>COMPLETED</code>: The user access task completed successfully.</p> </li>
+    /// <li> <p> <code>FAILED</code>: The user access task failed.</p> </li>
+    /// <li> <p> <code>EXPIRED</code>: The user access task expired.</p> </li>
     /// </ul>
     pub fn result_status(&self) -> ::std::option::Option<&crate::types::ResultStatus> {
         self.result_status.as_ref()
@@ -203,14 +195,10 @@ impl UserAccessResultItemBuilder {
     /// <p>The status of the user access result item.</p>
     /// <p>The following states are possible:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>IN_PROGRESS</code>: The user access task is in progress.</p></li>
-    /// <li>
-    /// <p><code>COMPLETED</code>: The user access task completed successfully.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code>: The user access task failed.</p></li>
-    /// <li>
-    /// <p><code>EXPIRED</code>: The user access task expired.</p></li>
+    /// <li> <p> <code>IN_PROGRESS</code>: The user access task is in progress.</p> </li>
+    /// <li> <p> <code>COMPLETED</code>: The user access task completed successfully.</p> </li>
+    /// <li> <p> <code>FAILED</code>: The user access task failed.</p> </li>
+    /// <li> <p> <code>EXPIRED</code>: The user access task expired.</p> </li>
     /// </ul>
     pub fn result_status(mut self, input: crate::types::ResultStatus) -> Self {
         self.result_status = ::std::option::Option::Some(input);
@@ -219,14 +207,10 @@ impl UserAccessResultItemBuilder {
     /// <p>The status of the user access result item.</p>
     /// <p>The following states are possible:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>IN_PROGRESS</code>: The user access task is in progress.</p></li>
-    /// <li>
-    /// <p><code>COMPLETED</code>: The user access task completed successfully.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code>: The user access task failed.</p></li>
-    /// <li>
-    /// <p><code>EXPIRED</code>: The user access task expired.</p></li>
+    /// <li> <p> <code>IN_PROGRESS</code>: The user access task is in progress.</p> </li>
+    /// <li> <p> <code>COMPLETED</code>: The user access task completed successfully.</p> </li>
+    /// <li> <p> <code>FAILED</code>: The user access task failed.</p> </li>
+    /// <li> <p> <code>EXPIRED</code>: The user access task expired.</p> </li>
     /// </ul>
     pub fn set_result_status(mut self, input: ::std::option::Option<crate::types::ResultStatus>) -> Self {
         self.result_status = input;
@@ -235,14 +219,10 @@ impl UserAccessResultItemBuilder {
     /// <p>The status of the user access result item.</p>
     /// <p>The following states are possible:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>IN_PROGRESS</code>: The user access task is in progress.</p></li>
-    /// <li>
-    /// <p><code>COMPLETED</code>: The user access task completed successfully.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code>: The user access task failed.</p></li>
-    /// <li>
-    /// <p><code>EXPIRED</code>: The user access task expired.</p></li>
+    /// <li> <p> <code>IN_PROGRESS</code>: The user access task is in progress.</p> </li>
+    /// <li> <p> <code>COMPLETED</code>: The user access task completed successfully.</p> </li>
+    /// <li> <p> <code>FAILED</code>: The user access task failed.</p> </li>
+    /// <li> <p> <code>EXPIRED</code>: The user access task expired.</p> </li>
     /// </ul>
     pub fn get_result_status(&self) -> &::std::option::Option<crate::types::ResultStatus> {
         &self.result_status

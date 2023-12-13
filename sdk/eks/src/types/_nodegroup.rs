@@ -34,7 +34,7 @@ pub struct Nodegroup {
     pub ami_type: ::std::option::Option<crate::types::AmiTypes>,
     /// <p>The IAM role associated with your node group. The Amazon EKS node <code>kubelet</code> daemon makes calls to Amazon Web Services APIs on your behalf. Nodes receive permissions for these API calls through an IAM instance profile and associated policies.</p>
     pub node_role: ::std::option::Option<::std::string::String>,
-    /// <p>The Kubernetes labels applied to the nodes in the node group.</p><note>
+    /// <p>The Kubernetes labels applied to the nodes in the node group.</p> <note>
     /// <p>Only labels that are applied with the Amazon EKS API are shown here. There may be other Kubernetes labels applied to the nodes in this group.</p>
     /// </note>
     pub labels: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -50,7 +50,7 @@ pub struct Nodegroup {
     pub update_config: ::std::option::Option<crate::types::NodegroupUpdateConfig>,
     /// <p>If a launch template was used to create the node group, then this is the launch template that was used.</p>
     pub launch_template: ::std::option::Option<crate::types::LaunchTemplateSpecification>,
-    /// <p>The metadata applied to the node group to assist with categorization and organization. Each tag consists of a key and an optional value. You define both. Node group tags do not propagate to any other resources associated with the node group, such as the Amazon EC2 instances or subnets.</p>
+    /// <p>The metadata applied to the node group to assist with categorization and organization. Each tag consists of a key and an optional value. You define both. Node group tags do not propagate to any other resources associated with the node group, such as the Amazon EC2 instances or subnets. </p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl Nodegroup {
@@ -118,7 +118,7 @@ impl Nodegroup {
     pub fn node_role(&self) -> ::std::option::Option<&str> {
         self.node_role.as_deref()
     }
-    /// <p>The Kubernetes labels applied to the nodes in the node group.</p><note>
+    /// <p>The Kubernetes labels applied to the nodes in the node group.</p> <note>
     /// <p>Only labels that are applied with the Amazon EKS API are shown here. There may be other Kubernetes labels applied to the nodes in this group.</p>
     /// </note>
     pub fn labels(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -150,7 +150,7 @@ impl Nodegroup {
     pub fn launch_template(&self) -> ::std::option::Option<&crate::types::LaunchTemplateSpecification> {
         self.launch_template.as_ref()
     }
-    /// <p>The metadata applied to the node group to assist with categorization and organization. Each tag consists of a key and an optional value. You define both. Node group tags do not propagate to any other resources associated with the node group, such as the Amazon EC2 instances or subnets.</p>
+    /// <p>The metadata applied to the node group to assist with categorization and organization. Each tag consists of a key and an optional value. You define both. Node group tags do not propagate to any other resources associated with the node group, such as the Amazon EC2 instances or subnets. </p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
@@ -417,7 +417,7 @@ impl NodegroupBuilder {
     ///
     /// To override the contents of this collection use [`set_labels`](Self::set_labels).
     ///
-    /// <p>The Kubernetes labels applied to the nodes in the node group.</p><note>
+    /// <p>The Kubernetes labels applied to the nodes in the node group.</p> <note>
     /// <p>Only labels that are applied with the Amazon EKS API are shown here. There may be other Kubernetes labels applied to the nodes in this group.</p>
     /// </note>
     pub fn labels(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -426,14 +426,14 @@ impl NodegroupBuilder {
         self.labels = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The Kubernetes labels applied to the nodes in the node group.</p><note>
+    /// <p>The Kubernetes labels applied to the nodes in the node group.</p> <note>
     /// <p>Only labels that are applied with the Amazon EKS API are shown here. There may be other Kubernetes labels applied to the nodes in this group.</p>
     /// </note>
     pub fn set_labels(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.labels = input;
         self
     }
-    /// <p>The Kubernetes labels applied to the nodes in the node group.</p><note>
+    /// <p>The Kubernetes labels applied to the nodes in the node group.</p> <note>
     /// <p>Only labels that are applied with the Amazon EKS API are shown here. There may be other Kubernetes labels applied to the nodes in this group.</p>
     /// </note>
     pub fn get_labels(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -533,19 +533,19 @@ impl NodegroupBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The metadata applied to the node group to assist with categorization and organization. Each tag consists of a key and an optional value. You define both. Node group tags do not propagate to any other resources associated with the node group, such as the Amazon EC2 instances or subnets.</p>
+    /// <p>The metadata applied to the node group to assist with categorization and organization. Each tag consists of a key and an optional value. You define both. Node group tags do not propagate to any other resources associated with the node group, such as the Amazon EC2 instances or subnets. </p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The metadata applied to the node group to assist with categorization and organization. Each tag consists of a key and an optional value. You define both. Node group tags do not propagate to any other resources associated with the node group, such as the Amazon EC2 instances or subnets.</p>
+    /// <p>The metadata applied to the node group to assist with categorization and organization. Each tag consists of a key and an optional value. You define both. Node group tags do not propagate to any other resources associated with the node group, such as the Amazon EC2 instances or subnets. </p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>The metadata applied to the node group to assist with categorization and organization. Each tag consists of a key and an optional value. You define both. Node group tags do not propagate to any other resources associated with the node group, such as the Amazon EC2 instances or subnets.</p>
+    /// <p>The metadata applied to the node group to assist with categorization and organization. Each tag consists of a key and an optional value. You define both. Node group tags do not propagate to any other resources associated with the node group, such as the Amazon EC2 instances or subnets. </p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }

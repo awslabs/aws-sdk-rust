@@ -122,17 +122,17 @@ impl UpdateDeletionProtectionFluentBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_arn()
     }
-    /// <p>Specifies if deletion protection is turned on or off in your account.</p>
+    /// <p>Specifies if deletion protection is turned on or off in your account. </p>
     pub fn deletion_protected(mut self, input: bool) -> Self {
         self.inner = self.inner.deletion_protected(input);
         self
     }
-    /// <p>Specifies if deletion protection is turned on or off in your account.</p>
+    /// <p>Specifies if deletion protection is turned on or off in your account. </p>
     pub fn set_deletion_protected(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_deletion_protected(input);
         self
     }
-    /// <p>Specifies if deletion protection is turned on or off in your account.</p>
+    /// <p>Specifies if deletion protection is turned on or off in your account. </p>
     pub fn get_deletion_protected(&self) -> &::std::option::Option<bool> {
         self.inner.get_deletion_protected()
     }

@@ -22,7 +22,7 @@ impl ListTrafficPolicyInstancesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListTrafficPolicyInstances`.
 ///
-/// <p>Gets information about the traffic policy instances that you created by using the current Amazon Web Services account.</p><note>
+/// <p>Gets information about the traffic policy instances that you created by using the current Amazon Web Services account.</p> <note>
 /// <p>After you submit an <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while Amazon Route 53 creates the resource record sets that are specified in the traffic policy definition. For more information, see the <code>State</code> response element.</p>
 /// </note>
 /// <p>Route 53 returns a maximum of 100 items in each response. If you have a lot of traffic policy instances, you can use the <code>MaxItems</code> parameter to list them in groups of up to 100.</p>

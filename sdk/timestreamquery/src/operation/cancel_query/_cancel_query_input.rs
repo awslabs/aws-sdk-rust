@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelQueryInput {
-    /// <p>The ID of the query that needs to be cancelled. <code>QueryID</code> is returned as part of the query result.</p>
+    /// <p> The ID of the query that needs to be cancelled. <code>QueryID</code> is returned as part of the query result. </p>
     pub query_id: ::std::option::Option<::std::string::String>,
 }
 impl CancelQueryInput {
-    /// <p>The ID of the query that needs to be cancelled. <code>QueryID</code> is returned as part of the query result.</p>
+    /// <p> The ID of the query that needs to be cancelled. <code>QueryID</code> is returned as part of the query result. </p>
     pub fn query_id(&self) -> ::std::option::Option<&str> {
         self.query_id.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct CancelQueryInputBuilder {
     pub(crate) query_id: ::std::option::Option<::std::string::String>,
 }
 impl CancelQueryInputBuilder {
-    /// <p>The ID of the query that needs to be cancelled. <code>QueryID</code> is returned as part of the query result.</p>
+    /// <p> The ID of the query that needs to be cancelled. <code>QueryID</code> is returned as part of the query result. </p>
     /// This field is required.
     pub fn query_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the query that needs to be cancelled. <code>QueryID</code> is returned as part of the query result.</p>
+    /// <p> The ID of the query that needs to be cancelled. <code>QueryID</code> is returned as part of the query result. </p>
     pub fn set_query_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_id = input;
         self
     }
-    /// <p>The ID of the query that needs to be cancelled. <code>QueryID</code> is returned as part of the query result.</p>
+    /// <p> The ID of the query that needs to be cancelled. <code>QueryID</code> is returned as part of the query result. </p>
     pub fn get_query_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.query_id
     }

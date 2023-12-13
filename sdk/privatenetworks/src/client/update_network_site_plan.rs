@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`client_token(impl Into<String>)`](crate::operation::update_network_site_plan::builders::UpdateNetworkSitePlanFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::update_network_site_plan::builders::UpdateNetworkSitePlanFluentBuilder::set_client_token):<br>required: **false**<br><p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p><br>
     /// - On success, responds with [`UpdateNetworkSitePlanOutput`](crate::operation::update_network_site_plan::UpdateNetworkSitePlanOutput) with field(s):
     ///   - [`network_site(Option<NetworkSite>)`](crate::operation::update_network_site_plan::UpdateNetworkSitePlanOutput::network_site): <p>Information about the network site.</p>
-    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::update_network_site_plan::UpdateNetworkSitePlanOutput::tags): <p>The network site tags.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::update_network_site_plan::UpdateNetworkSitePlanOutput::tags): <p> The network site tags. </p>
     /// - On failure, responds with [`SdkError<UpdateNetworkSitePlanError>`](crate::operation::update_network_site_plan::UpdateNetworkSitePlanError)
     pub fn update_network_site_plan(&self) -> crate::operation::update_network_site_plan::builders::UpdateNetworkSitePlanFluentBuilder {
         crate::operation::update_network_site_plan::builders::UpdateNetworkSitePlanFluentBuilder::new(self.handle.clone())

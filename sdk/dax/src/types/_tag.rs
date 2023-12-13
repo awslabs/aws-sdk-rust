@@ -8,7 +8,7 @@
 pub struct Tag {
     /// <p>The key for the tag. Tag keys are case sensitive. Every DAX cluster can only have one tag with the same key. If you try to add an existing tag (same key), the existing tag value will be updated to the new value.</p>
     pub key: ::std::option::Option<::std::string::String>,
-    /// <p>The value of the tag. Tag values are case-sensitive and can be null.</p>
+    /// <p>The value of the tag. Tag values are case-sensitive and can be null. </p>
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl Tag {
@@ -16,7 +16,7 @@ impl Tag {
     pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
     }
-    /// <p>The value of the tag. Tag values are case-sensitive and can be null.</p>
+    /// <p>The value of the tag. Tag values are case-sensitive and can be null. </p>
     pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
@@ -50,17 +50,17 @@ impl TagBuilder {
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.key
     }
-    /// <p>The value of the tag. Tag values are case-sensitive and can be null.</p>
+    /// <p>The value of the tag. Tag values are case-sensitive and can be null. </p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The value of the tag. Tag values are case-sensitive and can be null.</p>
+    /// <p>The value of the tag. Tag values are case-sensitive and can be null. </p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }
-    /// <p>The value of the tag. Tag values are case-sensitive and can be null.</p>
+    /// <p>The value of the tag. Tag values are case-sensitive and can be null. </p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.value
     }

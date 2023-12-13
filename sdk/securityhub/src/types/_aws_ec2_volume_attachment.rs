@@ -12,16 +12,11 @@ pub struct AwsEc2VolumeAttachment {
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The attachment state of the volume. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>attaching</code></p></li>
-    /// <li>
-    /// <p><code>attached</code></p></li>
-    /// <li>
-    /// <p><code>busy</code></p></li>
-    /// <li>
-    /// <p><code>detaching</code></p></li>
-    /// <li>
-    /// <p><code>detached</code></p></li>
+    /// <li> <p> <code>attaching</code> </p> </li>
+    /// <li> <p> <code>attached</code> </p> </li>
+    /// <li> <p> <code>busy</code> </p> </li>
+    /// <li> <p> <code>detaching</code> </p> </li>
+    /// <li> <p> <code>detached</code> </p> </li>
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
 }
@@ -40,16 +35,11 @@ impl AwsEc2VolumeAttachment {
     }
     /// <p>The attachment state of the volume. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>attaching</code></p></li>
-    /// <li>
-    /// <p><code>attached</code></p></li>
-    /// <li>
-    /// <p><code>busy</code></p></li>
-    /// <li>
-    /// <p><code>detaching</code></p></li>
-    /// <li>
-    /// <p><code>detached</code></p></li>
+    /// <li> <p> <code>attaching</code> </p> </li>
+    /// <li> <p> <code>attached</code> </p> </li>
+    /// <li> <p> <code>busy</code> </p> </li>
+    /// <li> <p> <code>detaching</code> </p> </li>
+    /// <li> <p> <code>detached</code> </p> </li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
@@ -116,16 +106,11 @@ impl AwsEc2VolumeAttachmentBuilder {
     }
     /// <p>The attachment state of the volume. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>attaching</code></p></li>
-    /// <li>
-    /// <p><code>attached</code></p></li>
-    /// <li>
-    /// <p><code>busy</code></p></li>
-    /// <li>
-    /// <p><code>detaching</code></p></li>
-    /// <li>
-    /// <p><code>detached</code></p></li>
+    /// <li> <p> <code>attaching</code> </p> </li>
+    /// <li> <p> <code>attached</code> </p> </li>
+    /// <li> <p> <code>busy</code> </p> </li>
+    /// <li> <p> <code>detaching</code> </p> </li>
+    /// <li> <p> <code>detached</code> </p> </li>
     /// </ul>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -133,16 +118,11 @@ impl AwsEc2VolumeAttachmentBuilder {
     }
     /// <p>The attachment state of the volume. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>attaching</code></p></li>
-    /// <li>
-    /// <p><code>attached</code></p></li>
-    /// <li>
-    /// <p><code>busy</code></p></li>
-    /// <li>
-    /// <p><code>detaching</code></p></li>
-    /// <li>
-    /// <p><code>detached</code></p></li>
+    /// <li> <p> <code>attaching</code> </p> </li>
+    /// <li> <p> <code>attached</code> </p> </li>
+    /// <li> <p> <code>busy</code> </p> </li>
+    /// <li> <p> <code>detaching</code> </p> </li>
+    /// <li> <p> <code>detached</code> </p> </li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
@@ -150,16 +130,11 @@ impl AwsEc2VolumeAttachmentBuilder {
     }
     /// <p>The attachment state of the volume. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>attaching</code></p></li>
-    /// <li>
-    /// <p><code>attached</code></p></li>
-    /// <li>
-    /// <p><code>busy</code></p></li>
-    /// <li>
-    /// <p><code>detaching</code></p></li>
-    /// <li>
-    /// <p><code>detached</code></p></li>
+    /// <li> <p> <code>attaching</code> </p> </li>
+    /// <li> <p> <code>attached</code> </p> </li>
+    /// <li> <p> <code>busy</code> </p> </li>
+    /// <li> <p> <code>detaching</code> </p> </li>
+    /// <li> <p> <code>detached</code> </p> </li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status

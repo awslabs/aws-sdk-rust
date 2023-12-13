@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HpoConfig {
-    /// <p>The metric to optimize during HPO.</p><note>
+    /// <p>The metric to optimize during HPO.</p> <note>
     /// <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this time.</p>
     /// </note>
     pub hpo_objective: ::std::option::Option<crate::types::HpoObjective>,
@@ -14,7 +14,7 @@ pub struct HpoConfig {
     pub algorithm_hyper_parameter_ranges: ::std::option::Option<crate::types::HyperParameterRanges>,
 }
 impl HpoConfig {
-    /// <p>The metric to optimize during HPO.</p><note>
+    /// <p>The metric to optimize during HPO.</p> <note>
     /// <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this time.</p>
     /// </note>
     pub fn hpo_objective(&self) -> ::std::option::Option<&crate::types::HpoObjective> {
@@ -45,21 +45,21 @@ pub struct HpoConfigBuilder {
     pub(crate) algorithm_hyper_parameter_ranges: ::std::option::Option<crate::types::HyperParameterRanges>,
 }
 impl HpoConfigBuilder {
-    /// <p>The metric to optimize during HPO.</p><note>
+    /// <p>The metric to optimize during HPO.</p> <note>
     /// <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this time.</p>
     /// </note>
     pub fn hpo_objective(mut self, input: crate::types::HpoObjective) -> Self {
         self.hpo_objective = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The metric to optimize during HPO.</p><note>
+    /// <p>The metric to optimize during HPO.</p> <note>
     /// <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this time.</p>
     /// </note>
     pub fn set_hpo_objective(mut self, input: ::std::option::Option<crate::types::HpoObjective>) -> Self {
         self.hpo_objective = input;
         self
     }
-    /// <p>The metric to optimize during HPO.</p><note>
+    /// <p>The metric to optimize during HPO.</p> <note>
     /// <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this time.</p>
     /// </note>
     pub fn get_hpo_objective(&self) -> &::std::option::Option<crate::types::HpoObjective> {

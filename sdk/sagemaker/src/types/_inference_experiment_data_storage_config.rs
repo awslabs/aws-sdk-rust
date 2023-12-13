@@ -4,19 +4,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InferenceExperimentDataStorageConfig {
-    /// <p>The Amazon S3 bucket where the inference request and response data is stored.</p>
+    /// <p>The Amazon S3 bucket where the inference request and response data is stored. </p>
     pub destination: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Web Services Key Management Service key that Amazon SageMaker uses to encrypt captured data at rest using Amazon S3 server-side encryption.</p>
+    /// <p> The Amazon Web Services Key Management Service key that Amazon SageMaker uses to encrypt captured data at rest using Amazon S3 server-side encryption. </p>
     pub kms_key: ::std::option::Option<::std::string::String>,
     /// <p>Configuration specifying how to treat different headers. If no headers are specified Amazon SageMaker will by default base64 encode when capturing the data.</p>
     pub content_type: ::std::option::Option<crate::types::CaptureContentTypeHeader>,
 }
 impl InferenceExperimentDataStorageConfig {
-    /// <p>The Amazon S3 bucket where the inference request and response data is stored.</p>
+    /// <p>The Amazon S3 bucket where the inference request and response data is stored. </p>
     pub fn destination(&self) -> ::std::option::Option<&str> {
         self.destination.as_deref()
     }
-    /// <p>The Amazon Web Services Key Management Service key that Amazon SageMaker uses to encrypt captured data at rest using Amazon S3 server-side encryption.</p>
+    /// <p> The Amazon Web Services Key Management Service key that Amazon SageMaker uses to encrypt captured data at rest using Amazon S3 server-side encryption. </p>
     pub fn kms_key(&self) -> ::std::option::Option<&str> {
         self.kms_key.as_deref()
     }
@@ -41,32 +41,32 @@ pub struct InferenceExperimentDataStorageConfigBuilder {
     pub(crate) content_type: ::std::option::Option<crate::types::CaptureContentTypeHeader>,
 }
 impl InferenceExperimentDataStorageConfigBuilder {
-    /// <p>The Amazon S3 bucket where the inference request and response data is stored.</p>
+    /// <p>The Amazon S3 bucket where the inference request and response data is stored. </p>
     /// This field is required.
     pub fn destination(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon S3 bucket where the inference request and response data is stored.</p>
+    /// <p>The Amazon S3 bucket where the inference request and response data is stored. </p>
     pub fn set_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination = input;
         self
     }
-    /// <p>The Amazon S3 bucket where the inference request and response data is stored.</p>
+    /// <p>The Amazon S3 bucket where the inference request and response data is stored. </p>
     pub fn get_destination(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination
     }
-    /// <p>The Amazon Web Services Key Management Service key that Amazon SageMaker uses to encrypt captured data at rest using Amazon S3 server-side encryption.</p>
+    /// <p> The Amazon Web Services Key Management Service key that Amazon SageMaker uses to encrypt captured data at rest using Amazon S3 server-side encryption. </p>
     pub fn kms_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Web Services Key Management Service key that Amazon SageMaker uses to encrypt captured data at rest using Amazon S3 server-side encryption.</p>
+    /// <p> The Amazon Web Services Key Management Service key that Amazon SageMaker uses to encrypt captured data at rest using Amazon S3 server-side encryption. </p>
     pub fn set_kms_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key = input;
         self
     }
-    /// <p>The Amazon Web Services Key Management Service key that Amazon SageMaker uses to encrypt captured data at rest using Amazon S3 server-side encryption.</p>
+    /// <p> The Amazon Web Services Key Management Service key that Amazon SageMaker uses to encrypt captured data at rest using Amazon S3 server-side encryption. </p>
     pub fn get_kms_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key
     }

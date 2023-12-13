@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListInferenceEventsOutput {
-    /// <p>An opaque pagination token indicating where to continue the listing of inference executions.</p>
+    /// <p>An opaque pagination token indicating where to continue the listing of inference executions. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>Provides an array of information about the individual inference events returned from the <code>ListInferenceEvents</code> operation, including scheduler used, event start time, event end time, diagnostics, and so on.</p>
+    /// <p>Provides an array of information about the individual inference events returned from the <code>ListInferenceEvents</code> operation, including scheduler used, event start time, event end time, diagnostics, and so on. </p>
     pub inference_event_summaries: ::std::option::Option<::std::vec::Vec<crate::types::InferenceEventSummary>>,
     _request_id: Option<String>,
 }
 impl ListInferenceEventsOutput {
-    /// <p>An opaque pagination token indicating where to continue the listing of inference executions.</p>
+    /// <p>An opaque pagination token indicating where to continue the listing of inference executions. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Provides an array of information about the individual inference events returned from the <code>ListInferenceEvents</code> operation, including scheduler used, event start time, event end time, diagnostics, and so on.</p>
+    /// <p>Provides an array of information about the individual inference events returned from the <code>ListInferenceEvents</code> operation, including scheduler used, event start time, event end time, diagnostics, and so on. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inference_event_summaries.is_none()`.
     pub fn inference_event_summaries(&self) -> &[crate::types::InferenceEventSummary] {
@@ -42,17 +42,17 @@ pub struct ListInferenceEventsOutputBuilder {
     _request_id: Option<String>,
 }
 impl ListInferenceEventsOutputBuilder {
-    /// <p>An opaque pagination token indicating where to continue the listing of inference executions.</p>
+    /// <p>An opaque pagination token indicating where to continue the listing of inference executions. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An opaque pagination token indicating where to continue the listing of inference executions.</p>
+    /// <p>An opaque pagination token indicating where to continue the listing of inference executions. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>An opaque pagination token indicating where to continue the listing of inference executions.</p>
+    /// <p>An opaque pagination token indicating where to continue the listing of inference executions. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
@@ -60,19 +60,19 @@ impl ListInferenceEventsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_inference_event_summaries`](Self::set_inference_event_summaries).
     ///
-    /// <p>Provides an array of information about the individual inference events returned from the <code>ListInferenceEvents</code> operation, including scheduler used, event start time, event end time, diagnostics, and so on.</p>
+    /// <p>Provides an array of information about the individual inference events returned from the <code>ListInferenceEvents</code> operation, including scheduler used, event start time, event end time, diagnostics, and so on. </p>
     pub fn inference_event_summaries(mut self, input: crate::types::InferenceEventSummary) -> Self {
         let mut v = self.inference_event_summaries.unwrap_or_default();
         v.push(input);
         self.inference_event_summaries = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Provides an array of information about the individual inference events returned from the <code>ListInferenceEvents</code> operation, including scheduler used, event start time, event end time, diagnostics, and so on.</p>
+    /// <p>Provides an array of information about the individual inference events returned from the <code>ListInferenceEvents</code> operation, including scheduler used, event start time, event end time, diagnostics, and so on. </p>
     pub fn set_inference_event_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InferenceEventSummary>>) -> Self {
         self.inference_event_summaries = input;
         self
     }
-    /// <p>Provides an array of information about the individual inference events returned from the <code>ListInferenceEvents</code> operation, including scheduler used, event start time, event end time, diagnostics, and so on.</p>
+    /// <p>Provides an array of information about the individual inference events returned from the <code>ListInferenceEvents</code> operation, including scheduler used, event start time, event end time, diagnostics, and so on. </p>
     pub fn get_inference_event_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InferenceEventSummary>> {
         &self.inference_event_summaries
     }

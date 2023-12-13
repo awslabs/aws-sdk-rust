@@ -27,7 +27,7 @@ pub enum Error {
     EventDestinationAlreadyExistsException(crate::types::error::EventDestinationAlreadyExistsException),
     /// <p>Indicates that the event destination does not exist.</p>
     EventDestinationDoesNotExistException(crate::types::error::EventDestinationDoesNotExistException),
-    /// <p>Indicates that the sender address specified for a custom verification email is not verified, and is therefore not eligible to send the custom verification email.</p>
+    /// <p>Indicates that the sender address specified for a custom verification email is not verified, and is therefore not eligible to send the custom verification email. </p>
     FromEmailAddressNotVerifiedException(crate::types::error::FromEmailAddressNotVerifiedException),
     /// <p>Indicates that the Amazon CloudWatch destination is invalid. See the error message for details.</p>
     InvalidCloudWatchDestinationException(crate::types::error::InvalidCloudWatchDestinationException),
@@ -53,15 +53,13 @@ pub enum Error {
     InvalidTemplateException(crate::types::error::InvalidTemplateException),
     /// <p>Indicates that the custom domain to be used for open and click tracking redirects is invalid. This error appears most often in the following situations:</p>
     /// <ul>
-    /// <li>
-    /// <p>When the tracking domain you specified is not verified in Amazon SES.</p></li>
-    /// <li>
-    /// <p>When the tracking domain you specified is not a valid domain or subdomain.</p></li>
+    /// <li> <p>When the tracking domain you specified is not verified in Amazon SES.</p> </li>
+    /// <li> <p>When the tracking domain you specified is not a valid domain or subdomain.</p> </li>
     /// </ul>
     InvalidTrackingOptionsException(crate::types::error::InvalidTrackingOptionsException),
     /// <p>Indicates that a resource could not be created because of service limits. For a list of Amazon SES limits, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES Developer Guide</a>.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
-    /// <p>Indicates that the message could not be sent because Amazon SES could not read the MX record required to use the specified MAIL FROM domain. For information about editing the custom MAIL FROM domain settings for an identity, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-edit.html">Amazon SES Developer Guide</a>.</p>
+    /// <p> Indicates that the message could not be sent because Amazon SES could not read the MX record required to use the specified MAIL FROM domain. For information about editing the custom MAIL FROM domain settings for an identity, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-edit.html">Amazon SES Developer Guide</a>.</p>
     MailFromDomainNotVerifiedException(crate::types::error::MailFromDomainNotVerifiedException),
     /// <p>Indicates that the action failed, and the message could not be sent. Check the error stack for more information about what caused the error.</p>
     MessageRejected(crate::types::error::MessageRejected),

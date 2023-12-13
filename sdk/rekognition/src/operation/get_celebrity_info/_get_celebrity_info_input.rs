@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCelebrityInfoInput {
-    /// <p>The ID for the celebrity. You get the celebrity ID from a call to the <code>RecognizeCelebrities</code> operation, which recognizes celebrities in an image.</p>
+    /// <p>The ID for the celebrity. You get the celebrity ID from a call to the <code>RecognizeCelebrities</code> operation, which recognizes celebrities in an image. </p>
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl GetCelebrityInfoInput {
-    /// <p>The ID for the celebrity. You get the celebrity ID from a call to the <code>RecognizeCelebrities</code> operation, which recognizes celebrities in an image.</p>
+    /// <p>The ID for the celebrity. You get the celebrity ID from a call to the <code>RecognizeCelebrities</code> operation, which recognizes celebrities in an image. </p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct GetCelebrityInfoInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
 impl GetCelebrityInfoInputBuilder {
-    /// <p>The ID for the celebrity. You get the celebrity ID from a call to the <code>RecognizeCelebrities</code> operation, which recognizes celebrities in an image.</p>
+    /// <p>The ID for the celebrity. You get the celebrity ID from a call to the <code>RecognizeCelebrities</code> operation, which recognizes celebrities in an image. </p>
     /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID for the celebrity. You get the celebrity ID from a call to the <code>RecognizeCelebrities</code> operation, which recognizes celebrities in an image.</p>
+    /// <p>The ID for the celebrity. You get the celebrity ID from a call to the <code>RecognizeCelebrities</code> operation, which recognizes celebrities in an image. </p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// <p>The ID for the celebrity. You get the celebrity ID from a call to the <code>RecognizeCelebrities</code> operation, which recognizes celebrities in an image.</p>
+    /// <p>The ID for the celebrity. You get the celebrity ID from a call to the <code>RecognizeCelebrities</code> operation, which recognizes celebrities in an image. </p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }

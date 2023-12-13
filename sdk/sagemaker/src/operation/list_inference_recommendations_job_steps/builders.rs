@@ -152,19 +152,19 @@ impl ListInferenceRecommendationsJobStepsFluentBuilder {
         self.inner.get_status()
     }
     /// <p>A filter to return details about the specified type of subtask.</p>
-    /// <p><code>BENCHMARK</code>: Evaluate the performance of your model on different instance types.</p>
+    /// <p> <code>BENCHMARK</code>: Evaluate the performance of your model on different instance types.</p>
     pub fn step_type(mut self, input: crate::types::RecommendationStepType) -> Self {
         self.inner = self.inner.step_type(input);
         self
     }
     /// <p>A filter to return details about the specified type of subtask.</p>
-    /// <p><code>BENCHMARK</code>: Evaluate the performance of your model on different instance types.</p>
+    /// <p> <code>BENCHMARK</code>: Evaluate the performance of your model on different instance types.</p>
     pub fn set_step_type(mut self, input: ::std::option::Option<crate::types::RecommendationStepType>) -> Self {
         self.inner = self.inner.set_step_type(input);
         self
     }
     /// <p>A filter to return details about the specified type of subtask.</p>
-    /// <p><code>BENCHMARK</code>: Evaluate the performance of your model on different instance types.</p>
+    /// <p> <code>BENCHMARK</code>: Evaluate the performance of your model on different instance types.</p>
     pub fn get_step_type(&self) -> &::std::option::Option<crate::types::RecommendationStepType> {
         self.inner.get_step_type()
     }

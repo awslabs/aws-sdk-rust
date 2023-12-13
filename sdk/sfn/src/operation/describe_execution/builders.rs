@@ -23,7 +23,7 @@ impl DescribeExecutionInputBuilder {
 /// Fluent builder constructing a request to `DescribeExecution`.
 ///
 /// <p>Provides information about a state machine execution, such as the state machine associated with the execution, the execution input and output, and relevant execution metadata. If you've <a href="https://docs.aws.amazon.com/step-functions/latest/dg/redrive-executions.html">redriven</a> an execution, you can use this API action to return information about the redrives of that execution. In addition, you can use this API action to return the Map Run Amazon Resource Name (ARN) if the execution was dispatched by a Map Run.</p>
-/// <p>If you specify a version or alias ARN when you call the <code>StartExecution</code> API action, <code>DescribeExecution</code> returns that ARN.</p><note>
+/// <p>If you specify a version or alias ARN when you call the <code>StartExecution</code> API action, <code>DescribeExecution</code> returns that ARN.</p> <note>
 /// <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p>
 /// </note>
 /// <p>Executions of an <code>EXPRESS</code> state machine aren't supported by <code>DescribeExecution</code> unless a Map Run dispatched them.</p>

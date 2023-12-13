@@ -108,17 +108,17 @@ impl PutReportDefinitionFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information.</p>
+    /// <p>Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information. </p>
     pub fn report_definition(mut self, input: crate::types::ReportDefinition) -> Self {
         self.inner = self.inner.report_definition(input);
         self
     }
-    /// <p>Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information.</p>
+    /// <p>Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information. </p>
     pub fn set_report_definition(mut self, input: ::std::option::Option<crate::types::ReportDefinition>) -> Self {
         self.inner = self.inner.set_report_definition(input);
         self
     }
-    /// <p>Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information.</p>
+    /// <p>Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information. </p>
     pub fn get_report_definition(&self) -> &::std::option::Option<crate::types::ReportDefinition> {
         self.inner.get_report_definition()
     }

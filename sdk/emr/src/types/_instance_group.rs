@@ -31,7 +31,7 @@ pub struct InstanceGroup {
     pub configurations_version: ::std::option::Option<i64>,
     /// <p>A list of configurations that were successfully applied for an instance group last time.</p>
     pub last_successfully_applied_configurations: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
-    /// <p>The version number of a configuration specification that was successfully applied for an instance group last time.</p>
+    /// <p>The version number of a configuration specification that was successfully applied for an instance group last time. </p>
     pub last_successfully_applied_configurations_version: ::std::option::Option<i64>,
     /// <p>The EBS block devices that are mapped to this instance group.</p>
     pub ebs_block_devices: ::std::option::Option<::std::vec::Vec<crate::types::EbsBlockDevice>>,
@@ -100,7 +100,7 @@ impl InstanceGroup {
     pub fn last_successfully_applied_configurations(&self) -> &[crate::types::Configuration] {
         self.last_successfully_applied_configurations.as_deref().unwrap_or_default()
     }
-    /// <p>The version number of a configuration specification that was successfully applied for an instance group last time.</p>
+    /// <p>The version number of a configuration specification that was successfully applied for an instance group last time. </p>
     pub fn last_successfully_applied_configurations_version(&self) -> ::std::option::Option<i64> {
         self.last_successfully_applied_configurations_version
     }
@@ -350,17 +350,17 @@ impl InstanceGroupBuilder {
     pub fn get_last_successfully_applied_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Configuration>> {
         &self.last_successfully_applied_configurations
     }
-    /// <p>The version number of a configuration specification that was successfully applied for an instance group last time.</p>
+    /// <p>The version number of a configuration specification that was successfully applied for an instance group last time. </p>
     pub fn last_successfully_applied_configurations_version(mut self, input: i64) -> Self {
         self.last_successfully_applied_configurations_version = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The version number of a configuration specification that was successfully applied for an instance group last time.</p>
+    /// <p>The version number of a configuration specification that was successfully applied for an instance group last time. </p>
     pub fn set_last_successfully_applied_configurations_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.last_successfully_applied_configurations_version = input;
         self
     }
-    /// <p>The version number of a configuration specification that was successfully applied for an instance group last time.</p>
+    /// <p>The version number of a configuration specification that was successfully applied for an instance group last time. </p>
     pub fn get_last_successfully_applied_configurations_version(&self) -> &::std::option::Option<i64> {
         &self.last_successfully_applied_configurations_version
     }

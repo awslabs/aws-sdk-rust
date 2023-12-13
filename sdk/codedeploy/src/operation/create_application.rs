@@ -256,7 +256,7 @@ pub enum CreateApplicationError {
     InvalidApplicationNameException(crate::types::error::InvalidApplicationNameException),
     /// <p>The computePlatform is invalid. The computePlatform should be <code>Lambda</code>, <code>Server</code>, or <code>ECS</code>.</p>
     InvalidComputePlatformException(crate::types::error::InvalidComputePlatformException),
-    /// <p>The specified tags are not valid.</p>
+    /// <p> The specified tags are not valid. </p>
     InvalidTagsToAddException(crate::types::error::InvalidTagsToAddException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

@@ -25,10 +25,8 @@ impl ListAssociatedAssetsInputBuilder {
 /// <p>Retrieves a paginated list of associated assets.</p>
 /// <p>You can use this operation to do the following:</p>
 /// <ul>
-/// <li>
-/// <p>List child assets associated to a parent asset by a hierarchy that you specify.</p></li>
-/// <li>
-/// <p>List an asset's parent asset.</p></li>
+/// <li> <p>List child assets associated to a parent asset by a hierarchy that you specify.</p> </li>
+/// <li> <p>List an asset's parent asset.</p> </li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAssociatedAssetsFluentBuilder {
@@ -154,36 +152,30 @@ impl ListAssociatedAssetsFluentBuilder {
     }
     /// <p>The direction to list associated assets. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CHILD</code> – The list includes all child assets associated to the asset. The <code>hierarchyId</code> parameter is required if you choose <code>CHILD</code>.</p></li>
-    /// <li>
-    /// <p><code>PARENT</code> – The list includes the asset's parent asset.</p></li>
+    /// <li> <p> <code>CHILD</code> – The list includes all child assets associated to the asset. The <code>hierarchyId</code> parameter is required if you choose <code>CHILD</code>.</p> </li>
+    /// <li> <p> <code>PARENT</code> – The list includes the asset's parent asset.</p> </li>
     /// </ul>
-    /// <p>Default: <code>CHILD</code></p>
+    /// <p>Default: <code>CHILD</code> </p>
     pub fn traversal_direction(mut self, input: crate::types::TraversalDirection) -> Self {
         self.inner = self.inner.traversal_direction(input);
         self
     }
     /// <p>The direction to list associated assets. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CHILD</code> – The list includes all child assets associated to the asset. The <code>hierarchyId</code> parameter is required if you choose <code>CHILD</code>.</p></li>
-    /// <li>
-    /// <p><code>PARENT</code> – The list includes the asset's parent asset.</p></li>
+    /// <li> <p> <code>CHILD</code> – The list includes all child assets associated to the asset. The <code>hierarchyId</code> parameter is required if you choose <code>CHILD</code>.</p> </li>
+    /// <li> <p> <code>PARENT</code> – The list includes the asset's parent asset.</p> </li>
     /// </ul>
-    /// <p>Default: <code>CHILD</code></p>
+    /// <p>Default: <code>CHILD</code> </p>
     pub fn set_traversal_direction(mut self, input: ::std::option::Option<crate::types::TraversalDirection>) -> Self {
         self.inner = self.inner.set_traversal_direction(input);
         self
     }
     /// <p>The direction to list associated assets. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CHILD</code> – The list includes all child assets associated to the asset. The <code>hierarchyId</code> parameter is required if you choose <code>CHILD</code>.</p></li>
-    /// <li>
-    /// <p><code>PARENT</code> – The list includes the asset's parent asset.</p></li>
+    /// <li> <p> <code>CHILD</code> – The list includes all child assets associated to the asset. The <code>hierarchyId</code> parameter is required if you choose <code>CHILD</code>.</p> </li>
+    /// <li> <p> <code>PARENT</code> – The list includes the asset's parent asset.</p> </li>
     /// </ul>
-    /// <p>Default: <code>CHILD</code></p>
+    /// <p>Default: <code>CHILD</code> </p>
     pub fn get_traversal_direction(&self) -> &::std::option::Option<crate::types::TraversalDirection> {
         self.inner.get_traversal_direction()
     }

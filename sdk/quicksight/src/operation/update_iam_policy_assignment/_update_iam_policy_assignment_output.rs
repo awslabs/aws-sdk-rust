@@ -13,12 +13,9 @@ pub struct UpdateIamPolicyAssignmentOutput {
     pub identities: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>The status of the assignment. Possible values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p></li>
-    /// <li>
-    /// <p><code>DISABLED</code> - This assignment isn't used when creating the data source.</p></li>
-    /// <li>
-    /// <p><code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p></li>
+    /// <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li>
+    /// <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li>
     /// </ul>
     pub assignment_status: ::std::option::Option<crate::types::AssignmentStatus>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
@@ -46,12 +43,9 @@ impl UpdateIamPolicyAssignmentOutput {
     }
     /// <p>The status of the assignment. Possible values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p></li>
-    /// <li>
-    /// <p><code>DISABLED</code> - This assignment isn't used when creating the data source.</p></li>
-    /// <li>
-    /// <p><code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p></li>
+    /// <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li>
+    /// <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li>
     /// </ul>
     pub fn assignment_status(&self) -> ::std::option::Option<&crate::types::AssignmentStatus> {
         self.assignment_status.as_ref()
@@ -160,12 +154,9 @@ impl UpdateIamPolicyAssignmentOutputBuilder {
     }
     /// <p>The status of the assignment. Possible values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p></li>
-    /// <li>
-    /// <p><code>DISABLED</code> - This assignment isn't used when creating the data source.</p></li>
-    /// <li>
-    /// <p><code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p></li>
+    /// <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li>
+    /// <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li>
     /// </ul>
     pub fn assignment_status(mut self, input: crate::types::AssignmentStatus) -> Self {
         self.assignment_status = ::std::option::Option::Some(input);
@@ -173,12 +164,9 @@ impl UpdateIamPolicyAssignmentOutputBuilder {
     }
     /// <p>The status of the assignment. Possible values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p></li>
-    /// <li>
-    /// <p><code>DISABLED</code> - This assignment isn't used when creating the data source.</p></li>
-    /// <li>
-    /// <p><code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p></li>
+    /// <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li>
+    /// <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li>
     /// </ul>
     pub fn set_assignment_status(mut self, input: ::std::option::Option<crate::types::AssignmentStatus>) -> Self {
         self.assignment_status = input;
@@ -186,12 +174,9 @@ impl UpdateIamPolicyAssignmentOutputBuilder {
     }
     /// <p>The status of the assignment. Possible values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p></li>
-    /// <li>
-    /// <p><code>DISABLED</code> - This assignment isn't used when creating the data source.</p></li>
-    /// <li>
-    /// <p><code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p></li>
+    /// <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li>
+    /// <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li>
     /// </ul>
     pub fn get_assignment_status(&self) -> &::std::option::Option<crate::types::AssignmentStatus> {
         &self.assignment_status

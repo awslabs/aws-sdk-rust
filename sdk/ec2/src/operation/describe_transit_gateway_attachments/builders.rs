@@ -138,24 +138,15 @@ impl DescribeTransitGatewayAttachmentsFluentBuilder {
     ///
     /// <p>One or more filters. The possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>association.state</code> - The state of the association (<code>associating</code> | <code>associated</code> | <code>disassociating</code>).</p></li>
-    /// <li>
-    /// <p><code>association.transit-gateway-route-table-id</code> - The ID of the route table for the transit gateway.</p></li>
-    /// <li>
-    /// <p><code>resource-id</code> - The ID of the resource.</p></li>
-    /// <li>
-    /// <p><code>resource-owner-id</code> - The ID of the Amazon Web Services account that owns the resource.</p></li>
-    /// <li>
-    /// <p><code>resource-type</code> - The resource type. Valid values are <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> | <code>peering</code> | <code>connect</code>.</p></li>
-    /// <li>
-    /// <p><code>state</code> - The state of the attachment. Valid values are <code>available</code> | <code>deleted</code> | <code>deleting</code> | <code>failed</code> | <code>failing</code> | <code>initiatingRequest</code> | <code>modifying</code> | <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>.</p></li>
-    /// <li>
-    /// <p><code>transit-gateway-attachment-id</code> - The ID of the attachment.</p></li>
-    /// <li>
-    /// <p><code>transit-gateway-id</code> - The ID of the transit gateway.</p></li>
-    /// <li>
-    /// <p><code>transit-gateway-owner-id</code> - The ID of the Amazon Web Services account that owns the transit gateway.</p></li>
+    /// <li> <p> <code>association.state</code> - The state of the association (<code>associating</code> | <code>associated</code> | <code>disassociating</code>).</p> </li>
+    /// <li> <p> <code>association.transit-gateway-route-table-id</code> - The ID of the route table for the transit gateway.</p> </li>
+    /// <li> <p> <code>resource-id</code> - The ID of the resource.</p> </li>
+    /// <li> <p> <code>resource-owner-id</code> - The ID of the Amazon Web Services account that owns the resource.</p> </li>
+    /// <li> <p> <code>resource-type</code> - The resource type. Valid values are <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> | <code>peering</code> | <code>connect</code>.</p> </li>
+    /// <li> <p> <code>state</code> - The state of the attachment. Valid values are <code>available</code> | <code>deleted</code> | <code>deleting</code> | <code>failed</code> | <code>failing</code> | <code>initiatingRequest</code> | <code>modifying</code> | <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>.</p> </li>
+    /// <li> <p> <code>transit-gateway-attachment-id</code> - The ID of the attachment.</p> </li>
+    /// <li> <p> <code>transit-gateway-id</code> - The ID of the transit gateway.</p> </li>
+    /// <li> <p> <code>transit-gateway-owner-id</code> - The ID of the Amazon Web Services account that owns the transit gateway.</p> </li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
@@ -163,24 +154,15 @@ impl DescribeTransitGatewayAttachmentsFluentBuilder {
     }
     /// <p>One or more filters. The possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>association.state</code> - The state of the association (<code>associating</code> | <code>associated</code> | <code>disassociating</code>).</p></li>
-    /// <li>
-    /// <p><code>association.transit-gateway-route-table-id</code> - The ID of the route table for the transit gateway.</p></li>
-    /// <li>
-    /// <p><code>resource-id</code> - The ID of the resource.</p></li>
-    /// <li>
-    /// <p><code>resource-owner-id</code> - The ID of the Amazon Web Services account that owns the resource.</p></li>
-    /// <li>
-    /// <p><code>resource-type</code> - The resource type. Valid values are <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> | <code>peering</code> | <code>connect</code>.</p></li>
-    /// <li>
-    /// <p><code>state</code> - The state of the attachment. Valid values are <code>available</code> | <code>deleted</code> | <code>deleting</code> | <code>failed</code> | <code>failing</code> | <code>initiatingRequest</code> | <code>modifying</code> | <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>.</p></li>
-    /// <li>
-    /// <p><code>transit-gateway-attachment-id</code> - The ID of the attachment.</p></li>
-    /// <li>
-    /// <p><code>transit-gateway-id</code> - The ID of the transit gateway.</p></li>
-    /// <li>
-    /// <p><code>transit-gateway-owner-id</code> - The ID of the Amazon Web Services account that owns the transit gateway.</p></li>
+    /// <li> <p> <code>association.state</code> - The state of the association (<code>associating</code> | <code>associated</code> | <code>disassociating</code>).</p> </li>
+    /// <li> <p> <code>association.transit-gateway-route-table-id</code> - The ID of the route table for the transit gateway.</p> </li>
+    /// <li> <p> <code>resource-id</code> - The ID of the resource.</p> </li>
+    /// <li> <p> <code>resource-owner-id</code> - The ID of the Amazon Web Services account that owns the resource.</p> </li>
+    /// <li> <p> <code>resource-type</code> - The resource type. Valid values are <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> | <code>peering</code> | <code>connect</code>.</p> </li>
+    /// <li> <p> <code>state</code> - The state of the attachment. Valid values are <code>available</code> | <code>deleted</code> | <code>deleting</code> | <code>failed</code> | <code>failing</code> | <code>initiatingRequest</code> | <code>modifying</code> | <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>.</p> </li>
+    /// <li> <p> <code>transit-gateway-attachment-id</code> - The ID of the attachment.</p> </li>
+    /// <li> <p> <code>transit-gateway-id</code> - The ID of the transit gateway.</p> </li>
+    /// <li> <p> <code>transit-gateway-owner-id</code> - The ID of the Amazon Web Services account that owns the transit gateway.</p> </li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
@@ -188,24 +170,15 @@ impl DescribeTransitGatewayAttachmentsFluentBuilder {
     }
     /// <p>One or more filters. The possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>association.state</code> - The state of the association (<code>associating</code> | <code>associated</code> | <code>disassociating</code>).</p></li>
-    /// <li>
-    /// <p><code>association.transit-gateway-route-table-id</code> - The ID of the route table for the transit gateway.</p></li>
-    /// <li>
-    /// <p><code>resource-id</code> - The ID of the resource.</p></li>
-    /// <li>
-    /// <p><code>resource-owner-id</code> - The ID of the Amazon Web Services account that owns the resource.</p></li>
-    /// <li>
-    /// <p><code>resource-type</code> - The resource type. Valid values are <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> | <code>peering</code> | <code>connect</code>.</p></li>
-    /// <li>
-    /// <p><code>state</code> - The state of the attachment. Valid values are <code>available</code> | <code>deleted</code> | <code>deleting</code> | <code>failed</code> | <code>failing</code> | <code>initiatingRequest</code> | <code>modifying</code> | <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>.</p></li>
-    /// <li>
-    /// <p><code>transit-gateway-attachment-id</code> - The ID of the attachment.</p></li>
-    /// <li>
-    /// <p><code>transit-gateway-id</code> - The ID of the transit gateway.</p></li>
-    /// <li>
-    /// <p><code>transit-gateway-owner-id</code> - The ID of the Amazon Web Services account that owns the transit gateway.</p></li>
+    /// <li> <p> <code>association.state</code> - The state of the association (<code>associating</code> | <code>associated</code> | <code>disassociating</code>).</p> </li>
+    /// <li> <p> <code>association.transit-gateway-route-table-id</code> - The ID of the route table for the transit gateway.</p> </li>
+    /// <li> <p> <code>resource-id</code> - The ID of the resource.</p> </li>
+    /// <li> <p> <code>resource-owner-id</code> - The ID of the Amazon Web Services account that owns the resource.</p> </li>
+    /// <li> <p> <code>resource-type</code> - The resource type. Valid values are <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> | <code>peering</code> | <code>connect</code>.</p> </li>
+    /// <li> <p> <code>state</code> - The state of the attachment. Valid values are <code>available</code> | <code>deleted</code> | <code>deleting</code> | <code>failed</code> | <code>failing</code> | <code>initiatingRequest</code> | <code>modifying</code> | <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>.</p> </li>
+    /// <li> <p> <code>transit-gateway-attachment-id</code> - The ID of the attachment.</p> </li>
+    /// <li> <p> <code>transit-gateway-id</code> - The ID of the transit gateway.</p> </li>
+    /// <li> <p> <code>transit-gateway-owner-id</code> - The ID of the Amazon Web Services account that owns the transit gateway.</p> </li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()

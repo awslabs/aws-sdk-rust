@@ -138,16 +138,11 @@ impl DescribeTransitGatewayRouteTablesFluentBuilder {
     ///
     /// <p>One or more filters. The possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>default-association-route-table</code> - Indicates whether this is the default association route table for the transit gateway (<code>true</code> | <code>false</code>).</p></li>
-    /// <li>
-    /// <p><code>default-propagation-route-table</code> - Indicates whether this is the default propagation route table for the transit gateway (<code>true</code> | <code>false</code>).</p></li>
-    /// <li>
-    /// <p><code>state</code> - The state of the route table (<code>available</code> | <code>deleting</code> | <code>deleted</code> | <code>pending</code>).</p></li>
-    /// <li>
-    /// <p><code>transit-gateway-id</code> - The ID of the transit gateway.</p></li>
-    /// <li>
-    /// <p><code>transit-gateway-route-table-id</code> - The ID of the transit gateway route table.</p></li>
+    /// <li> <p> <code>default-association-route-table</code> - Indicates whether this is the default association route table for the transit gateway (<code>true</code> | <code>false</code>).</p> </li>
+    /// <li> <p> <code>default-propagation-route-table</code> - Indicates whether this is the default propagation route table for the transit gateway (<code>true</code> | <code>false</code>).</p> </li>
+    /// <li> <p> <code>state</code> - The state of the route table (<code>available</code> | <code>deleting</code> | <code>deleted</code> | <code>pending</code>).</p> </li>
+    /// <li> <p> <code>transit-gateway-id</code> - The ID of the transit gateway.</p> </li>
+    /// <li> <p> <code>transit-gateway-route-table-id</code> - The ID of the transit gateway route table.</p> </li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
@@ -155,16 +150,11 @@ impl DescribeTransitGatewayRouteTablesFluentBuilder {
     }
     /// <p>One or more filters. The possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>default-association-route-table</code> - Indicates whether this is the default association route table for the transit gateway (<code>true</code> | <code>false</code>).</p></li>
-    /// <li>
-    /// <p><code>default-propagation-route-table</code> - Indicates whether this is the default propagation route table for the transit gateway (<code>true</code> | <code>false</code>).</p></li>
-    /// <li>
-    /// <p><code>state</code> - The state of the route table (<code>available</code> | <code>deleting</code> | <code>deleted</code> | <code>pending</code>).</p></li>
-    /// <li>
-    /// <p><code>transit-gateway-id</code> - The ID of the transit gateway.</p></li>
-    /// <li>
-    /// <p><code>transit-gateway-route-table-id</code> - The ID of the transit gateway route table.</p></li>
+    /// <li> <p> <code>default-association-route-table</code> - Indicates whether this is the default association route table for the transit gateway (<code>true</code> | <code>false</code>).</p> </li>
+    /// <li> <p> <code>default-propagation-route-table</code> - Indicates whether this is the default propagation route table for the transit gateway (<code>true</code> | <code>false</code>).</p> </li>
+    /// <li> <p> <code>state</code> - The state of the route table (<code>available</code> | <code>deleting</code> | <code>deleted</code> | <code>pending</code>).</p> </li>
+    /// <li> <p> <code>transit-gateway-id</code> - The ID of the transit gateway.</p> </li>
+    /// <li> <p> <code>transit-gateway-route-table-id</code> - The ID of the transit gateway route table.</p> </li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
@@ -172,16 +162,11 @@ impl DescribeTransitGatewayRouteTablesFluentBuilder {
     }
     /// <p>One or more filters. The possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>default-association-route-table</code> - Indicates whether this is the default association route table for the transit gateway (<code>true</code> | <code>false</code>).</p></li>
-    /// <li>
-    /// <p><code>default-propagation-route-table</code> - Indicates whether this is the default propagation route table for the transit gateway (<code>true</code> | <code>false</code>).</p></li>
-    /// <li>
-    /// <p><code>state</code> - The state of the route table (<code>available</code> | <code>deleting</code> | <code>deleted</code> | <code>pending</code>).</p></li>
-    /// <li>
-    /// <p><code>transit-gateway-id</code> - The ID of the transit gateway.</p></li>
-    /// <li>
-    /// <p><code>transit-gateway-route-table-id</code> - The ID of the transit gateway route table.</p></li>
+    /// <li> <p> <code>default-association-route-table</code> - Indicates whether this is the default association route table for the transit gateway (<code>true</code> | <code>false</code>).</p> </li>
+    /// <li> <p> <code>default-propagation-route-table</code> - Indicates whether this is the default propagation route table for the transit gateway (<code>true</code> | <code>false</code>).</p> </li>
+    /// <li> <p> <code>state</code> - The state of the route table (<code>available</code> | <code>deleting</code> | <code>deleted</code> | <code>pending</code>).</p> </li>
+    /// <li> <p> <code>transit-gateway-id</code> - The ID of the transit gateway.</p> </li>
+    /// <li> <p> <code>transit-gateway-route-table-id</code> - The ID of the transit gateway route table.</p> </li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()

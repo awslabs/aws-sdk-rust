@@ -253,7 +253,7 @@ pub enum UpdateSecurityControlError {
     InvalidInputException(crate::types::error::InvalidInputException),
     /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
-    /// <p>The request was rejected because it conflicts with the resource's availability. For example, you tried to update a security control that's currently in the <code>UPDATING</code> state.</p>
+    /// <p> The request was rejected because it conflicts with the resource's availability. For example, you tried to update a security control that's currently in the <code>UPDATING</code> state. </p>
     ResourceInUseException(crate::types::error::ResourceInUseException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),

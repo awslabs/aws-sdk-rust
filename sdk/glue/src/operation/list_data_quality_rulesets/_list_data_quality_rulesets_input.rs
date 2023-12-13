@@ -7,7 +7,7 @@ pub struct ListDataQualityRulesetsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>The filter criteria.</p>
+    /// <p>The filter criteria. </p>
     pub filter: ::std::option::Option<crate::types::DataQualityRulesetFilterCriteria>,
     /// <p>A list of key-value pair tags.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -21,7 +21,7 @@ impl ListDataQualityRulesetsInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The filter criteria.</p>
+    /// <p>The filter criteria. </p>
     pub fn filter(&self) -> ::std::option::Option<&crate::types::DataQualityRulesetFilterCriteria> {
         self.filter.as_ref()
     }
@@ -75,17 +75,17 @@ impl ListDataQualityRulesetsInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p>The filter criteria.</p>
+    /// <p>The filter criteria. </p>
     pub fn filter(mut self, input: crate::types::DataQualityRulesetFilterCriteria) -> Self {
         self.filter = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The filter criteria.</p>
+    /// <p>The filter criteria. </p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::DataQualityRulesetFilterCriteria>) -> Self {
         self.filter = input;
         self
     }
-    /// <p>The filter criteria.</p>
+    /// <p>The filter criteria. </p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::DataQualityRulesetFilterCriteria> {
         &self.filter
     }

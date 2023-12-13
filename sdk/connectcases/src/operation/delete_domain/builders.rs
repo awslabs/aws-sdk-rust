@@ -22,7 +22,7 @@ impl DeleteDomainInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteDomain`.
 ///
-/// <p>Deletes a Cases domain.</p><note>
+/// <p>Deletes a Cases domain.</p> <note>
 /// <p>After deleting your domain you must disassociate the deleted domain from your Amazon Connect instance with another API call before being able to use Cases again with this Amazon Connect instance. See <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteIntegrationAssociation.html">DeleteIntegrationAssociation</a>.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -110,17 +110,17 @@ impl DeleteDomainFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier of the Cases domain.</p>
+    /// <p>The unique identifier of the Cases domain. </p>
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_id(input.into());
         self
     }
-    /// <p>The unique identifier of the Cases domain.</p>
+    /// <p>The unique identifier of the Cases domain. </p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_id(input);
         self
     }
-    /// <p>The unique identifier of the Cases domain.</p>
+    /// <p>The unique identifier of the Cases domain. </p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_id()
     }

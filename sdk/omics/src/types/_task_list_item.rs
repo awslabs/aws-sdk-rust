@@ -20,9 +20,9 @@ pub struct TaskListItem {
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>When the task stopped.</p>
     pub stop_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The number of Graphics Processing Units (GPU) specified for the task.</p>
+    /// <p> The number of Graphics Processing Units (GPU) specified for the task. </p>
     pub gpus: ::std::option::Option<i32>,
-    /// <p>The instance type for a task.</p>
+    /// <p> The instance type for a task. </p>
     pub instance_type: ::std::option::Option<::std::string::String>,
 }
 impl TaskListItem {
@@ -58,11 +58,11 @@ impl TaskListItem {
     pub fn stop_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.stop_time.as_ref()
     }
-    /// <p>The number of Graphics Processing Units (GPU) specified for the task.</p>
+    /// <p> The number of Graphics Processing Units (GPU) specified for the task. </p>
     pub fn gpus(&self) -> ::std::option::Option<i32> {
         self.gpus
     }
-    /// <p>The instance type for a task.</p>
+    /// <p> The instance type for a task. </p>
     pub fn instance_type(&self) -> ::std::option::Option<&str> {
         self.instance_type.as_deref()
     }
@@ -202,31 +202,31 @@ impl TaskListItemBuilder {
     pub fn get_stop_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.stop_time
     }
-    /// <p>The number of Graphics Processing Units (GPU) specified for the task.</p>
+    /// <p> The number of Graphics Processing Units (GPU) specified for the task. </p>
     pub fn gpus(mut self, input: i32) -> Self {
         self.gpus = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of Graphics Processing Units (GPU) specified for the task.</p>
+    /// <p> The number of Graphics Processing Units (GPU) specified for the task. </p>
     pub fn set_gpus(mut self, input: ::std::option::Option<i32>) -> Self {
         self.gpus = input;
         self
     }
-    /// <p>The number of Graphics Processing Units (GPU) specified for the task.</p>
+    /// <p> The number of Graphics Processing Units (GPU) specified for the task. </p>
     pub fn get_gpus(&self) -> &::std::option::Option<i32> {
         &self.gpus
     }
-    /// <p>The instance type for a task.</p>
+    /// <p> The instance type for a task. </p>
     pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The instance type for a task.</p>
+    /// <p> The instance type for a task. </p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_type = input;
         self
     }
-    /// <p>The instance type for a task.</p>
+    /// <p> The instance type for a task. </p>
     pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_type
     }

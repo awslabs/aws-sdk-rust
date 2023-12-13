@@ -245,14 +245,14 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PutLogEventsE
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum PutLogEventsError {
-    /// <p>The event was already logged.</p><important>
-    /// <p><code>PutLogEvents</code> actions are now always accepted and never return <code>DataAlreadyAcceptedException</code> regardless of whether a given batch of log events has already been accepted.</p>
+    /// <p>The event was already logged.</p> <important>
+    /// <p> <code>PutLogEvents</code> actions are now always accepted and never return <code>DataAlreadyAcceptedException</code> regardless of whether a given batch of log events has already been accepted. </p>
     /// </important>
     DataAlreadyAcceptedException(crate::types::error::DataAlreadyAcceptedException),
     /// <p>A parameter is specified incorrectly.</p>
     InvalidParameterException(crate::types::error::InvalidParameterException),
-    /// <p>The sequence token is not valid. You can get the correct sequence token in the <code>expectedSequenceToken</code> field in the <code>InvalidSequenceTokenException</code> message.</p><important>
-    /// <p><code>PutLogEvents</code> actions are now always accepted and never return <code>InvalidSequenceTokenException</code> regardless of receiving an invalid sequence token.</p>
+    /// <p>The sequence token is not valid. You can get the correct sequence token in the <code>expectedSequenceToken</code> field in the <code>InvalidSequenceTokenException</code> message. </p> <important>
+    /// <p> <code>PutLogEvents</code> actions are now always accepted and never return <code>InvalidSequenceTokenException</code> regardless of receiving an invalid sequence token. </p>
     /// </important>
     InvalidSequenceTokenException(crate::types::error::InvalidSequenceTokenException),
     /// <p>The specified resource does not exist.</p>

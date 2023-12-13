@@ -34,17 +34,17 @@ pub struct Disk {
     pub attached_to: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value indicating whether the disk is attached.</p>
     pub is_attached: ::std::option::Option<bool>,
-    /// <p>(Deprecated) The attachment state of the disk.</p><note>
+    /// <p>(Deprecated) The attachment state of the disk.</p> <note>
     /// <p>In releases prior to November 14, 2017, this parameter returned <code>attached</code> for system disks in the API response. It is now deprecated, but still included in the response. Use <code>isAttached</code> instead.</p>
     /// </note>
     #[deprecated]
     pub attachment_state: ::std::option::Option<::std::string::String>,
-    /// <p>(Deprecated) The number of GB in use by the disk.</p><note>
+    /// <p>(Deprecated) The number of GB in use by the disk.</p> <note>
     /// <p>In releases prior to November 14, 2017, this parameter was not included in the API response. It is now deprecated.</p>
     /// </note>
     #[deprecated]
     pub gb_in_use: ::std::option::Option<i32>,
-    /// <p>The status of automatically mounting a storage disk to a virtual computer.</p><important>
+    /// <p>The status of automatically mounting a storage disk to a virtual computer.</p> <important>
     /// <p>This parameter only applies to Lightsail for Research resources.</p>
     /// </important>
     pub auto_mount_status: ::std::option::Option<crate::types::AutoMountStatus>,
@@ -114,21 +114,21 @@ impl Disk {
     pub fn is_attached(&self) -> ::std::option::Option<bool> {
         self.is_attached
     }
-    /// <p>(Deprecated) The attachment state of the disk.</p><note>
+    /// <p>(Deprecated) The attachment state of the disk.</p> <note>
     /// <p>In releases prior to November 14, 2017, this parameter returned <code>attached</code> for system disks in the API response. It is now deprecated, but still included in the response. Use <code>isAttached</code> instead.</p>
     /// </note>
     #[deprecated]
     pub fn attachment_state(&self) -> ::std::option::Option<&str> {
         self.attachment_state.as_deref()
     }
-    /// <p>(Deprecated) The number of GB in use by the disk.</p><note>
+    /// <p>(Deprecated) The number of GB in use by the disk.</p> <note>
     /// <p>In releases prior to November 14, 2017, this parameter was not included in the API response. It is now deprecated.</p>
     /// </note>
     #[deprecated]
     pub fn gb_in_use(&self) -> ::std::option::Option<i32> {
         self.gb_in_use
     }
-    /// <p>The status of automatically mounting a storage disk to a virtual computer.</p><important>
+    /// <p>The status of automatically mounting a storage disk to a virtual computer.</p> <important>
     /// <p>This parameter only applies to Lightsail for Research resources.</p>
     /// </important>
     pub fn auto_mount_status(&self) -> ::std::option::Option<&crate::types::AutoMountStatus> {
@@ -388,7 +388,7 @@ impl DiskBuilder {
     pub fn get_is_attached(&self) -> &::std::option::Option<bool> {
         &self.is_attached
     }
-    /// <p>(Deprecated) The attachment state of the disk.</p><note>
+    /// <p>(Deprecated) The attachment state of the disk.</p> <note>
     /// <p>In releases prior to November 14, 2017, this parameter returned <code>attached</code> for system disks in the API response. It is now deprecated, but still included in the response. Use <code>isAttached</code> instead.</p>
     /// </note>
     #[deprecated]
@@ -396,7 +396,7 @@ impl DiskBuilder {
         self.attachment_state = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>(Deprecated) The attachment state of the disk.</p><note>
+    /// <p>(Deprecated) The attachment state of the disk.</p> <note>
     /// <p>In releases prior to November 14, 2017, this parameter returned <code>attached</code> for system disks in the API response. It is now deprecated, but still included in the response. Use <code>isAttached</code> instead.</p>
     /// </note>
     #[deprecated]
@@ -404,14 +404,14 @@ impl DiskBuilder {
         self.attachment_state = input;
         self
     }
-    /// <p>(Deprecated) The attachment state of the disk.</p><note>
+    /// <p>(Deprecated) The attachment state of the disk.</p> <note>
     /// <p>In releases prior to November 14, 2017, this parameter returned <code>attached</code> for system disks in the API response. It is now deprecated, but still included in the response. Use <code>isAttached</code> instead.</p>
     /// </note>
     #[deprecated]
     pub fn get_attachment_state(&self) -> &::std::option::Option<::std::string::String> {
         &self.attachment_state
     }
-    /// <p>(Deprecated) The number of GB in use by the disk.</p><note>
+    /// <p>(Deprecated) The number of GB in use by the disk.</p> <note>
     /// <p>In releases prior to November 14, 2017, this parameter was not included in the API response. It is now deprecated.</p>
     /// </note>
     #[deprecated]
@@ -419,7 +419,7 @@ impl DiskBuilder {
         self.gb_in_use = ::std::option::Option::Some(input);
         self
     }
-    /// <p>(Deprecated) The number of GB in use by the disk.</p><note>
+    /// <p>(Deprecated) The number of GB in use by the disk.</p> <note>
     /// <p>In releases prior to November 14, 2017, this parameter was not included in the API response. It is now deprecated.</p>
     /// </note>
     #[deprecated]
@@ -427,28 +427,28 @@ impl DiskBuilder {
         self.gb_in_use = input;
         self
     }
-    /// <p>(Deprecated) The number of GB in use by the disk.</p><note>
+    /// <p>(Deprecated) The number of GB in use by the disk.</p> <note>
     /// <p>In releases prior to November 14, 2017, this parameter was not included in the API response. It is now deprecated.</p>
     /// </note>
     #[deprecated]
     pub fn get_gb_in_use(&self) -> &::std::option::Option<i32> {
         &self.gb_in_use
     }
-    /// <p>The status of automatically mounting a storage disk to a virtual computer.</p><important>
+    /// <p>The status of automatically mounting a storage disk to a virtual computer.</p> <important>
     /// <p>This parameter only applies to Lightsail for Research resources.</p>
     /// </important>
     pub fn auto_mount_status(mut self, input: crate::types::AutoMountStatus) -> Self {
         self.auto_mount_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of automatically mounting a storage disk to a virtual computer.</p><important>
+    /// <p>The status of automatically mounting a storage disk to a virtual computer.</p> <important>
     /// <p>This parameter only applies to Lightsail for Research resources.</p>
     /// </important>
     pub fn set_auto_mount_status(mut self, input: ::std::option::Option<crate::types::AutoMountStatus>) -> Self {
         self.auto_mount_status = input;
         self
     }
-    /// <p>The status of automatically mounting a storage disk to a virtual computer.</p><important>
+    /// <p>The status of automatically mounting a storage disk to a virtual computer.</p> <important>
     /// <p>This parameter only applies to Lightsail for Research resources.</p>
     /// </important>
     pub fn get_auto_mount_status(&self) -> &::std::option::Option<crate::types::AutoMountStatus> {

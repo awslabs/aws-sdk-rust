@@ -9,7 +9,7 @@ pub struct PlayReadyDrm {
     /// <p>The type of DRM, if any, that you want Elastic Transcoder to apply to the output files associated with this playlist.</p>
     pub format: ::std::option::Option<::std::string::String>,
     /// <p>The DRM key for your file, provided by your DRM license provider. The key must be base64-encoded, and it must be one of the following bit lengths before being base64-encoded:</p>
-    /// <p><code>128</code>, <code>192</code>, or <code>256</code>.</p>
+    /// <p> <code>128</code>, <code>192</code>, or <code>256</code>. </p>
     /// <p>The key must also be encrypted by using AWS KMS.</p>
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The MD5 digest of the key used for DRM on your file, and that you want Elastic Transcoder to use as a checksum to make sure your key was not corrupted in transit. The key MD5 must be base64-encoded, and it must be exactly 16 bytes before being base64-encoded.</p>
@@ -19,7 +19,7 @@ pub struct PlayReadyDrm {
     pub key_id: ::std::option::Option<::std::string::String>,
     /// <p>The series of random bits created by a random bit generator, unique for every encryption operation, that you want Elastic Transcoder to use to encrypt your files. The initialization vector must be base64-encoded, and it must be exactly 8 bytes long before being base64-encoded. If no initialization vector is provided, Elastic Transcoder generates one for you.</p>
     pub initialization_vector: ::std::option::Option<::std::string::String>,
-    /// <p>The location of the license key required to play DRM content. The URL must be an absolute path, and is referenced by the PlayReady header. The PlayReady header is referenced in the protection header of the client manifest for Smooth Streaming outputs, and in the EXT-X-DXDRM and EXT-XDXDRMINFO metadata tags for HLS playlist outputs. An example URL looks like this: <code>https://www.example.com/exampleKey/</code></p>
+    /// <p>The location of the license key required to play DRM content. The URL must be an absolute path, and is referenced by the PlayReady header. The PlayReady header is referenced in the protection header of the client manifest for Smooth Streaming outputs, and in the EXT-X-DXDRM and EXT-XDXDRMINFO metadata tags for HLS playlist outputs. An example URL looks like this: <code>https://www.example.com/exampleKey/</code> </p>
     pub license_acquisition_url: ::std::option::Option<::std::string::String>,
 }
 impl PlayReadyDrm {
@@ -28,7 +28,7 @@ impl PlayReadyDrm {
         self.format.as_deref()
     }
     /// <p>The DRM key for your file, provided by your DRM license provider. The key must be base64-encoded, and it must be one of the following bit lengths before being base64-encoded:</p>
-    /// <p><code>128</code>, <code>192</code>, or <code>256</code>.</p>
+    /// <p> <code>128</code>, <code>192</code>, or <code>256</code>. </p>
     /// <p>The key must also be encrypted by using AWS KMS.</p>
     pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
@@ -46,7 +46,7 @@ impl PlayReadyDrm {
     pub fn initialization_vector(&self) -> ::std::option::Option<&str> {
         self.initialization_vector.as_deref()
     }
-    /// <p>The location of the license key required to play DRM content. The URL must be an absolute path, and is referenced by the PlayReady header. The PlayReady header is referenced in the protection header of the client manifest for Smooth Streaming outputs, and in the EXT-X-DXDRM and EXT-XDXDRMINFO metadata tags for HLS playlist outputs. An example URL looks like this: <code>https://www.example.com/exampleKey/</code></p>
+    /// <p>The location of the license key required to play DRM content. The URL must be an absolute path, and is referenced by the PlayReady header. The PlayReady header is referenced in the protection header of the client manifest for Smooth Streaming outputs, and in the EXT-X-DXDRM and EXT-XDXDRMINFO metadata tags for HLS playlist outputs. An example URL looks like this: <code>https://www.example.com/exampleKey/</code> </p>
     pub fn license_acquisition_url(&self) -> ::std::option::Option<&str> {
         self.license_acquisition_url.as_deref()
     }
@@ -85,21 +85,21 @@ impl PlayReadyDrmBuilder {
         &self.format
     }
     /// <p>The DRM key for your file, provided by your DRM license provider. The key must be base64-encoded, and it must be one of the following bit lengths before being base64-encoded:</p>
-    /// <p><code>128</code>, <code>192</code>, or <code>256</code>.</p>
+    /// <p> <code>128</code>, <code>192</code>, or <code>256</code>. </p>
     /// <p>The key must also be encrypted by using AWS KMS.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The DRM key for your file, provided by your DRM license provider. The key must be base64-encoded, and it must be one of the following bit lengths before being base64-encoded:</p>
-    /// <p><code>128</code>, <code>192</code>, or <code>256</code>.</p>
+    /// <p> <code>128</code>, <code>192</code>, or <code>256</code>. </p>
     /// <p>The key must also be encrypted by using AWS KMS.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
     }
     /// <p>The DRM key for your file, provided by your DRM license provider. The key must be base64-encoded, and it must be one of the following bit lengths before being base64-encoded:</p>
-    /// <p><code>128</code>, <code>192</code>, or <code>256</code>.</p>
+    /// <p> <code>128</code>, <code>192</code>, or <code>256</code>. </p>
     /// <p>The key must also be encrypted by using AWS KMS.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.key
@@ -149,17 +149,17 @@ impl PlayReadyDrmBuilder {
     pub fn get_initialization_vector(&self) -> &::std::option::Option<::std::string::String> {
         &self.initialization_vector
     }
-    /// <p>The location of the license key required to play DRM content. The URL must be an absolute path, and is referenced by the PlayReady header. The PlayReady header is referenced in the protection header of the client manifest for Smooth Streaming outputs, and in the EXT-X-DXDRM and EXT-XDXDRMINFO metadata tags for HLS playlist outputs. An example URL looks like this: <code>https://www.example.com/exampleKey/</code></p>
+    /// <p>The location of the license key required to play DRM content. The URL must be an absolute path, and is referenced by the PlayReady header. The PlayReady header is referenced in the protection header of the client manifest for Smooth Streaming outputs, and in the EXT-X-DXDRM and EXT-XDXDRMINFO metadata tags for HLS playlist outputs. An example URL looks like this: <code>https://www.example.com/exampleKey/</code> </p>
     pub fn license_acquisition_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_acquisition_url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The location of the license key required to play DRM content. The URL must be an absolute path, and is referenced by the PlayReady header. The PlayReady header is referenced in the protection header of the client manifest for Smooth Streaming outputs, and in the EXT-X-DXDRM and EXT-XDXDRMINFO metadata tags for HLS playlist outputs. An example URL looks like this: <code>https://www.example.com/exampleKey/</code></p>
+    /// <p>The location of the license key required to play DRM content. The URL must be an absolute path, and is referenced by the PlayReady header. The PlayReady header is referenced in the protection header of the client manifest for Smooth Streaming outputs, and in the EXT-X-DXDRM and EXT-XDXDRMINFO metadata tags for HLS playlist outputs. An example URL looks like this: <code>https://www.example.com/exampleKey/</code> </p>
     pub fn set_license_acquisition_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.license_acquisition_url = input;
         self
     }
-    /// <p>The location of the license key required to play DRM content. The URL must be an absolute path, and is referenced by the PlayReady header. The PlayReady header is referenced in the protection header of the client manifest for Smooth Streaming outputs, and in the EXT-X-DXDRM and EXT-XDXDRMINFO metadata tags for HLS playlist outputs. An example URL looks like this: <code>https://www.example.com/exampleKey/</code></p>
+    /// <p>The location of the license key required to play DRM content. The URL must be an absolute path, and is referenced by the PlayReady header. The PlayReady header is referenced in the protection header of the client manifest for Smooth Streaming outputs, and in the EXT-X-DXDRM and EXT-XDXDRMINFO metadata tags for HLS playlist outputs. An example URL looks like this: <code>https://www.example.com/exampleKey/</code> </p>
     pub fn get_license_acquisition_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.license_acquisition_url
     }

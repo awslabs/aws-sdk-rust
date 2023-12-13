@@ -7,7 +7,7 @@ pub struct DeleteFileShareInput {
     /// <p>The Amazon Resource Name (ARN) of the file share to be deleted.</p>
     pub file_share_arn: ::std::option::Option<::std::string::String>,
     /// <p>If this value is set to <code>true</code>, the operation deletes a file share immediately and aborts all data uploads to Amazon Web Services. Otherwise, the file share is not deleted until all data is uploaded to Amazon Web Services. This process aborts the data upload process, and the file share enters the <code>FORCE_DELETING</code> status.</p>
-    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub force_delete: ::std::option::Option<bool>,
 }
 impl DeleteFileShareInput {
@@ -16,7 +16,7 @@ impl DeleteFileShareInput {
         self.file_share_arn.as_deref()
     }
     /// <p>If this value is set to <code>true</code>, the operation deletes a file share immediately and aborts all data uploads to Amazon Web Services. Otherwise, the file share is not deleted until all data is uploaded to Amazon Web Services. This process aborts the data upload process, and the file share enters the <code>FORCE_DELETING</code> status.</p>
-    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub fn force_delete(&self) -> ::std::option::Option<bool> {
         self.force_delete
     }
@@ -52,19 +52,19 @@ impl DeleteFileShareInputBuilder {
         &self.file_share_arn
     }
     /// <p>If this value is set to <code>true</code>, the operation deletes a file share immediately and aborts all data uploads to Amazon Web Services. Otherwise, the file share is not deleted until all data is uploaded to Amazon Web Services. This process aborts the data upload process, and the file share enters the <code>FORCE_DELETING</code> status.</p>
-    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub fn force_delete(mut self, input: bool) -> Self {
         self.force_delete = ::std::option::Option::Some(input);
         self
     }
     /// <p>If this value is set to <code>true</code>, the operation deletes a file share immediately and aborts all data uploads to Amazon Web Services. Otherwise, the file share is not deleted until all data is uploaded to Amazon Web Services. This process aborts the data upload process, and the file share enters the <code>FORCE_DELETING</code> status.</p>
-    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub fn set_force_delete(mut self, input: ::std::option::Option<bool>) -> Self {
         self.force_delete = input;
         self
     }
     /// <p>If this value is set to <code>true</code>, the operation deletes a file share immediately and aborts all data uploads to Amazon Web Services. Otherwise, the file share is not deleted until all data is uploaded to Amazon Web Services. This process aborts the data upload process, and the file share enters the <code>FORCE_DELETING</code> status.</p>
-    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub fn get_force_delete(&self) -> &::std::option::Option<bool> {
         &self.force_delete
     }

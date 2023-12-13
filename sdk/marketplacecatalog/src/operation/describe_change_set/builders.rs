@@ -108,17 +108,17 @@ impl DescribeChangeSetFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code></p>
+    /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
     pub fn catalog(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.catalog(input.into());
         self
     }
-    /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code></p>
+    /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
     pub fn set_catalog(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_catalog(input);
         self
     }
-    /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code></p>
+    /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
     pub fn get_catalog(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_catalog()
     }

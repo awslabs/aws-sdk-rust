@@ -5,9 +5,9 @@
 pub struct DeleteApplicationOutputInput {
     /// <p>The application name.</p>
     pub application_name: ::std::option::Option<::std::string::String>,
-    /// <p>The application version. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
+    /// <p>The application version. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. </p>
     pub current_application_version_id: ::std::option::Option<i64>,
-    /// <p>The ID of the configuration to delete. Each output configuration that is added to the application (either when the application is created or later) using the <code>AddApplicationOutput</code> operation has a unique ID. You need to provide the ID to uniquely identify the output configuration that you want to delete from the application configuration. You can use the <code>DescribeApplication</code> operation to get the specific <code>OutputId</code>.</p>
+    /// <p>The ID of the configuration to delete. Each output configuration that is added to the application (either when the application is created or later) using the <code>AddApplicationOutput</code> operation has a unique ID. You need to provide the ID to uniquely identify the output configuration that you want to delete from the application configuration. You can use the <code>DescribeApplication</code> operation to get the specific <code>OutputId</code>. </p>
     pub output_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteApplicationOutputInput {
@@ -15,11 +15,11 @@ impl DeleteApplicationOutputInput {
     pub fn application_name(&self) -> ::std::option::Option<&str> {
         self.application_name.as_deref()
     }
-    /// <p>The application version. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
+    /// <p>The application version. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. </p>
     pub fn current_application_version_id(&self) -> ::std::option::Option<i64> {
         self.current_application_version_id
     }
-    /// <p>The ID of the configuration to delete. Each output configuration that is added to the application (either when the application is created or later) using the <code>AddApplicationOutput</code> operation has a unique ID. You need to provide the ID to uniquely identify the output configuration that you want to delete from the application configuration. You can use the <code>DescribeApplication</code> operation to get the specific <code>OutputId</code>.</p>
+    /// <p>The ID of the configuration to delete. Each output configuration that is added to the application (either when the application is created or later) using the <code>AddApplicationOutput</code> operation has a unique ID. You need to provide the ID to uniquely identify the output configuration that you want to delete from the application configuration. You can use the <code>DescribeApplication</code> operation to get the specific <code>OutputId</code>. </p>
     pub fn output_id(&self) -> ::std::option::Option<&str> {
         self.output_id.as_deref()
     }
@@ -55,33 +55,33 @@ impl DeleteApplicationOutputInputBuilder {
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_name
     }
-    /// <p>The application version. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
+    /// <p>The application version. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. </p>
     /// This field is required.
     pub fn current_application_version_id(mut self, input: i64) -> Self {
         self.current_application_version_id = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The application version. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
+    /// <p>The application version. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. </p>
     pub fn set_current_application_version_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.current_application_version_id = input;
         self
     }
-    /// <p>The application version. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
+    /// <p>The application version. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. </p>
     pub fn get_current_application_version_id(&self) -> &::std::option::Option<i64> {
         &self.current_application_version_id
     }
-    /// <p>The ID of the configuration to delete. Each output configuration that is added to the application (either when the application is created or later) using the <code>AddApplicationOutput</code> operation has a unique ID. You need to provide the ID to uniquely identify the output configuration that you want to delete from the application configuration. You can use the <code>DescribeApplication</code> operation to get the specific <code>OutputId</code>.</p>
+    /// <p>The ID of the configuration to delete. Each output configuration that is added to the application (either when the application is created or later) using the <code>AddApplicationOutput</code> operation has a unique ID. You need to provide the ID to uniquely identify the output configuration that you want to delete from the application configuration. You can use the <code>DescribeApplication</code> operation to get the specific <code>OutputId</code>. </p>
     /// This field is required.
     pub fn output_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the configuration to delete. Each output configuration that is added to the application (either when the application is created or later) using the <code>AddApplicationOutput</code> operation has a unique ID. You need to provide the ID to uniquely identify the output configuration that you want to delete from the application configuration. You can use the <code>DescribeApplication</code> operation to get the specific <code>OutputId</code>.</p>
+    /// <p>The ID of the configuration to delete. Each output configuration that is added to the application (either when the application is created or later) using the <code>AddApplicationOutput</code> operation has a unique ID. You need to provide the ID to uniquely identify the output configuration that you want to delete from the application configuration. You can use the <code>DescribeApplication</code> operation to get the specific <code>OutputId</code>. </p>
     pub fn set_output_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_id = input;
         self
     }
-    /// <p>The ID of the configuration to delete. Each output configuration that is added to the application (either when the application is created or later) using the <code>AddApplicationOutput</code> operation has a unique ID. You need to provide the ID to uniquely identify the output configuration that you want to delete from the application configuration. You can use the <code>DescribeApplication</code> operation to get the specific <code>OutputId</code>.</p>
+    /// <p>The ID of the configuration to delete. Each output configuration that is added to the application (either when the application is created or later) using the <code>AddApplicationOutput</code> operation has a unique ID. You need to provide the ID to uniquely identify the output configuration that you want to delete from the application configuration. You can use the <code>DescribeApplication</code> operation to get the specific <code>OutputId</code>. </p>
     pub fn get_output_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.output_id
     }

@@ -136,17 +136,17 @@ impl DeleteRepositoryFluentBuilder {
     pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_repository_name()
     }
-    /// <p>The force option can be used to delete a repository that contains images. If the force option is not used, the repository must be empty prior to deletion.</p>
+    /// <p> The force option can be used to delete a repository that contains images. If the force option is not used, the repository must be empty prior to deletion.</p>
     pub fn force(mut self, input: bool) -> Self {
         self.inner = self.inner.force(input);
         self
     }
-    /// <p>The force option can be used to delete a repository that contains images. If the force option is not used, the repository must be empty prior to deletion.</p>
+    /// <p> The force option can be used to delete a repository that contains images. If the force option is not used, the repository must be empty prior to deletion.</p>
     pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_force(input);
         self
     }
-    /// <p>The force option can be used to delete a repository that contains images. If the force option is not used, the repository must be empty prior to deletion.</p>
+    /// <p> The force option can be used to delete a repository that contains images. If the force option is not used, the repository must be empty prior to deletion.</p>
     pub fn get_force(&self) -> &::std::option::Option<bool> {
         self.inner.get_force()
     }

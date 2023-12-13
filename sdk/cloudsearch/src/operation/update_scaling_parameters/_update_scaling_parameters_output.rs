@@ -4,12 +4,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateScalingParametersOutput {
-    /// <p>The status and configuration of a search domain's scaling parameters.</p>
+    /// <p>The status and configuration of a search domain's scaling parameters. </p>
     pub scaling_parameters: ::std::option::Option<crate::types::ScalingParametersStatus>,
     _request_id: Option<String>,
 }
 impl UpdateScalingParametersOutput {
-    /// <p>The status and configuration of a search domain's scaling parameters.</p>
+    /// <p>The status and configuration of a search domain's scaling parameters. </p>
     pub fn scaling_parameters(&self) -> ::std::option::Option<&crate::types::ScalingParametersStatus> {
         self.scaling_parameters.as_ref()
     }
@@ -34,18 +34,18 @@ pub struct UpdateScalingParametersOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateScalingParametersOutputBuilder {
-    /// <p>The status and configuration of a search domain's scaling parameters.</p>
+    /// <p>The status and configuration of a search domain's scaling parameters. </p>
     /// This field is required.
     pub fn scaling_parameters(mut self, input: crate::types::ScalingParametersStatus) -> Self {
         self.scaling_parameters = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status and configuration of a search domain's scaling parameters.</p>
+    /// <p>The status and configuration of a search domain's scaling parameters. </p>
     pub fn set_scaling_parameters(mut self, input: ::std::option::Option<crate::types::ScalingParametersStatus>) -> Self {
         self.scaling_parameters = input;
         self
     }
-    /// <p>The status and configuration of a search domain's scaling parameters.</p>
+    /// <p>The status and configuration of a search domain's scaling parameters. </p>
     pub fn get_scaling_parameters(&self) -> &::std::option::Option<crate::types::ScalingParametersStatus> {
         &self.scaling_parameters
     }

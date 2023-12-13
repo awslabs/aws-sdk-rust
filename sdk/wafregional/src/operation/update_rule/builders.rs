@@ -24,28 +24,21 @@ impl UpdateRuleInputBuilder {
 ///
 /// <note>
 /// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p><b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use.</p>
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
 /// </note>
-/// <p>Inserts or deletes <code>Predicate</code> objects in a <code>Rule</code>. Each <code>Predicate</code> object identifies a predicate, such as a <code>ByteMatchSet</code> or an <code>IPSet</code>, that specifies the web requests that you want to allow, block, or count. If you add more than one predicate to a <code>Rule</code>, a request must match all of the specifications to be allowed, blocked, or counted. For example, suppose that you add the following to a <code>Rule</code>:</p>
+/// <p>Inserts or deletes <code>Predicate</code> objects in a <code>Rule</code>. Each <code>Predicate</code> object identifies a predicate, such as a <code>ByteMatchSet</code> or an <code>IPSet</code>, that specifies the web requests that you want to allow, block, or count. If you add more than one predicate to a <code>Rule</code>, a request must match all of the specifications to be allowed, blocked, or counted. For example, suppose that you add the following to a <code>Rule</code>: </p>
 /// <ul>
-/// <li>
-/// <p>A <code>ByteMatchSet</code> that matches the value <code>BadBot</code> in the <code>User-Agent</code> header</p></li>
-/// <li>
-/// <p>An <code>IPSet</code> that matches the IP address <code>192.0.2.44</code></p></li>
+/// <li> <p>A <code>ByteMatchSet</code> that matches the value <code>BadBot</code> in the <code>User-Agent</code> header</p> </li>
+/// <li> <p>An <code>IPSet</code> that matches the IP address <code>192.0.2.44</code> </p> </li>
 /// </ul>
 /// <p>You then add the <code>Rule</code> to a <code>WebACL</code> and specify that you want to block requests that satisfy the <code>Rule</code>. For a request to be blocked, the <code>User-Agent</code> header in the request must contain the value <code>BadBot</code> <i>and</i> the request must originate from the IP address 192.0.2.44.</p>
 /// <p>To create and configure a <code>Rule</code>, perform the following steps:</p>
 /// <ol>
-/// <li>
-/// <p>Create and update the predicates that you want to include in the <code>Rule</code>.</p></li>
-/// <li>
-/// <p>Create the <code>Rule</code>. See <code>CreateRule</code>.</p></li>
-/// <li>
-/// <p>Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code> parameter of an <code>UpdateRule</code> request.</p></li>
-/// <li>
-/// <p>Submit an <code>UpdateRule</code> request to add predicates to the <code>Rule</code>.</p></li>
-/// <li>
-/// <p>Create and update a <code>WebACL</code> that contains the <code>Rule</code>. See <code>CreateWebACL</code>.</p></li>
+/// <li> <p>Create and update the predicates that you want to include in the <code>Rule</code>.</p> </li>
+/// <li> <p>Create the <code>Rule</code>. See <code>CreateRule</code>.</p> </li>
+/// <li> <p>Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code> parameter of an <code>UpdateRule</code> request.</p> </li>
+/// <li> <p>Submit an <code>UpdateRule</code> request to add predicates to the <code>Rule</code>.</p> </li>
+/// <li> <p>Create and update a <code>WebACL</code> that contains the <code>Rule</code>. See <code>CreateWebACL</code>.</p> </li>
 /// </ol>
 /// <p>If you want to replace one <code>ByteMatchSet</code> or <code>IPSet</code> with another, you delete the existing one and add the new one.</p>
 /// <p>For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.</p>
@@ -168,12 +161,9 @@ impl UpdateRuleFluentBuilder {
     ///
     /// <p>An array of <code>RuleUpdate</code> objects that you want to insert into or delete from a <code>Rule</code>. For more information, see the applicable data types:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>RuleUpdate</code>: Contains <code>Action</code> and <code>Predicate</code></p></li>
-    /// <li>
-    /// <p><code>Predicate</code>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code></p></li>
-    /// <li>
-    /// <p><code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code></p></li>
+    /// <li> <p> <code>RuleUpdate</code>: Contains <code>Action</code> and <code>Predicate</code> </p> </li>
+    /// <li> <p> <code>Predicate</code>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code> </p> </li>
+    /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
     pub fn updates(mut self, input: crate::types::RuleUpdate) -> Self {
         self.inner = self.inner.updates(input);
@@ -181,12 +171,9 @@ impl UpdateRuleFluentBuilder {
     }
     /// <p>An array of <code>RuleUpdate</code> objects that you want to insert into or delete from a <code>Rule</code>. For more information, see the applicable data types:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>RuleUpdate</code>: Contains <code>Action</code> and <code>Predicate</code></p></li>
-    /// <li>
-    /// <p><code>Predicate</code>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code></p></li>
-    /// <li>
-    /// <p><code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code></p></li>
+    /// <li> <p> <code>RuleUpdate</code>: Contains <code>Action</code> and <code>Predicate</code> </p> </li>
+    /// <li> <p> <code>Predicate</code>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code> </p> </li>
+    /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
     pub fn set_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RuleUpdate>>) -> Self {
         self.inner = self.inner.set_updates(input);
@@ -194,12 +181,9 @@ impl UpdateRuleFluentBuilder {
     }
     /// <p>An array of <code>RuleUpdate</code> objects that you want to insert into or delete from a <code>Rule</code>. For more information, see the applicable data types:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>RuleUpdate</code>: Contains <code>Action</code> and <code>Predicate</code></p></li>
-    /// <li>
-    /// <p><code>Predicate</code>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code></p></li>
-    /// <li>
-    /// <p><code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code></p></li>
+    /// <li> <p> <code>RuleUpdate</code>: Contains <code>Action</code> and <code>Predicate</code> </p> </li>
+    /// <li> <p> <code>Predicate</code>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code> </p> </li>
+    /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
     pub fn get_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleUpdate>> {
         self.inner.get_updates()

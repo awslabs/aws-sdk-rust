@@ -22,7 +22,7 @@ impl AbortMultipartReadSetUploadInputBuilder {
 }
 /// Fluent builder constructing a request to `AbortMultipartReadSetUpload`.
 ///
-/// <p>Stops a multipart upload.</p>
+/// <p> Stops a multipart upload. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AbortMultipartReadSetUploadFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl AbortMultipartReadSetUploadFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The sequence store ID for the store involved in the multipart upload.</p>
+    /// <p> The sequence store ID for the store involved in the multipart upload. </p>
     pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sequence_store_id(input.into());
         self
     }
-    /// <p>The sequence store ID for the store involved in the multipart upload.</p>
+    /// <p> The sequence store ID for the store involved in the multipart upload. </p>
     pub fn set_sequence_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sequence_store_id(input);
         self
     }
-    /// <p>The sequence store ID for the store involved in the multipart upload.</p>
+    /// <p> The sequence store ID for the store involved in the multipart upload. </p>
     pub fn get_sequence_store_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_sequence_store_id()
     }
-    /// <p>The ID for the multipart upload.</p>
+    /// <p> The ID for the multipart upload. </p>
     pub fn upload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.upload_id(input.into());
         self
     }
-    /// <p>The ID for the multipart upload.</p>
+    /// <p> The ID for the multipart upload. </p>
     pub fn set_upload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_upload_id(input);
         self
     }
-    /// <p>The ID for the multipart upload.</p>
+    /// <p> The ID for the multipart upload. </p>
     pub fn get_upload_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_upload_id()
     }

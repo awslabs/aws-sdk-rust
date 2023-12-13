@@ -22,7 +22,7 @@ impl DescribeCustomRoutingAcceleratorAttributesInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeCustomRoutingAcceleratorAttributes`.
 ///
-/// <p>Describe the attributes of a custom routing accelerator.</p>
+/// <p>Describe the attributes of a custom routing accelerator. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeCustomRoutingAcceleratorAttributesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

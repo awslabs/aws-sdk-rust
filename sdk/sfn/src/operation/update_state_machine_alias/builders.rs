@@ -23,21 +23,17 @@ impl UpdateStateMachineAliasInputBuilder {
 /// Fluent builder constructing a request to `UpdateStateMachineAlias`.
 ///
 /// <p>Updates the configuration of an existing state machine <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a> by modifying its <code>description</code> or <code>routingConfiguration</code>.</p>
-/// <p>You must specify at least one of the <code>description</code> or <code>routingConfiguration</code> parameters to update a state machine alias.</p><note>
-/// <p><code>UpdateStateMachineAlias</code> is an idempotent API. Step Functions bases the idempotency check on the <code>stateMachineAliasArn</code>, <code>description</code>, and <code>routingConfiguration</code> parameters. Requests with the same parameters return an idempotent response.</p>
+/// <p>You must specify at least one of the <code>description</code> or <code>routingConfiguration</code> parameters to update a state machine alias.</p> <note>
+/// <p> <code>UpdateStateMachineAlias</code> is an idempotent API. Step Functions bases the idempotency check on the <code>stateMachineAliasArn</code>, <code>description</code>, and <code>routingConfiguration</code> parameters. Requests with the same parameters return an idempotent response.</p>
 /// </note> <note>
 /// <p>This operation is eventually consistent. All <code>StartExecution</code> requests made within a few seconds use the latest alias configuration. Executions started immediately after calling <code>UpdateStateMachineAlias</code> may use the previous routing configuration.</p>
 /// </note>
-/// <p><b>Related operations:</b></p>
+/// <p> <b>Related operations:</b> </p>
 /// <ul>
-/// <li>
-/// <p><code>CreateStateMachineAlias</code></p></li>
-/// <li>
-/// <p><code>DescribeStateMachineAlias</code></p></li>
-/// <li>
-/// <p><code>ListStateMachineAliases</code></p></li>
-/// <li>
-/// <p><code>DeleteStateMachineAlias</code></p></li>
+/// <li> <p> <code>CreateStateMachineAlias</code> </p> </li>
+/// <li> <p> <code>DescribeStateMachineAlias</code> </p> </li>
+/// <li> <p> <code>ListStateMachineAliases</code> </p> </li>
+/// <li> <p> <code>DeleteStateMachineAlias</code> </p> </li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateStateMachineAliasFluentBuilder {

@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTagsForResourceOutput {
-    /// <p>A list of tag key value pairs that are associated with the resource.</p>
+    /// <p>A list of tag key value pairs that are associated with the resource. </p>
     pub resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>,
     _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
-    /// <p>A list of tag key value pairs that are associated with the resource.</p>
+    /// <p>A list of tag key value pairs that are associated with the resource. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_tags.is_none()`.
     pub fn resource_tags(&self) -> &[crate::types::ResourceTag] {
@@ -39,19 +39,19 @@ impl ListTagsForResourceOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
     ///
-    /// <p>A list of tag key value pairs that are associated with the resource.</p>
+    /// <p>A list of tag key value pairs that are associated with the resource. </p>
     pub fn resource_tags(mut self, input: crate::types::ResourceTag) -> Self {
         let mut v = self.resource_tags.unwrap_or_default();
         v.push(input);
         self.resource_tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of tag key value pairs that are associated with the resource.</p>
+    /// <p>A list of tag key value pairs that are associated with the resource. </p>
     pub fn set_resource_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>) -> Self {
         self.resource_tags = input;
         self
     }
-    /// <p>A list of tag key value pairs that are associated with the resource.</p>
+    /// <p>A list of tag key value pairs that are associated with the resource. </p>
     pub fn get_resource_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>> {
         &self.resource_tags
     }

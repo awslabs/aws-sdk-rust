@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::describe_connect_client_add_ins::builders::DescribeConnectClientAddInsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_connect_client_add_ins::builders::DescribeConnectClientAddInsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to return.</p><br>
     /// - On success, responds with [`DescribeConnectClientAddInsOutput`](crate::operation::describe_connect_client_add_ins::DescribeConnectClientAddInsOutput) with field(s):
     ///   - [`add_ins(Option<Vec::<ConnectClientAddIn>>)`](crate::operation::describe_connect_client_add_ins::DescribeConnectClientAddInsOutput::add_ins): <p>Information about client add-ins.</p>
-    ///   - [`next_token(Option<String>)`](crate::operation::describe_connect_client_add_ins::DescribeConnectClientAddInsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
+    ///   - [`next_token(Option<String>)`](crate::operation::describe_connect_client_add_ins::DescribeConnectClientAddInsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
     /// - On failure, responds with [`SdkError<DescribeConnectClientAddInsError>`](crate::operation::describe_connect_client_add_ins::DescribeConnectClientAddInsError)
     pub fn describe_connect_client_add_ins(
         &self,

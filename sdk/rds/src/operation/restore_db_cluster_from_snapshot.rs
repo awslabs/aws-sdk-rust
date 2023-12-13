@@ -245,19 +245,19 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for RestoreDBClus
 pub enum RestoreDBClusterFromSnapshotError {
     /// <p>The user already has a DB cluster with the given identifier.</p>
     DbClusterAlreadyExistsFault(crate::types::error::DbClusterAlreadyExistsFault),
-    /// <p><code>DBClusterParameterGroupName</code> doesn't refer to an existing DB cluster parameter group.</p>
+    /// <p> <code>DBClusterParameterGroupName</code> doesn't refer to an existing DB cluster parameter group.</p>
     DbClusterParameterGroupNotFoundFault(crate::types::error::DbClusterParameterGroupNotFoundFault),
     /// <p>The user attempted to create a new DB cluster and the user has already reached the maximum allowed DB cluster quota.</p>
     DbClusterQuotaExceededFault(crate::types::error::DbClusterQuotaExceededFault),
-    /// <p><code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing DB cluster snapshot.</p>
+    /// <p> <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing DB cluster snapshot.</p>
     DbClusterSnapshotNotFoundFault(crate::types::error::DbClusterSnapshotNotFoundFault),
-    /// <p><code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.</p>
+    /// <p> <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.</p>
     DbSnapshotNotFoundFault(crate::types::error::DbSnapshotNotFoundFault),
     /// <p>Subnets in the DB subnet group should cover at least two Availability Zones unless there is only one Availability Zone.</p>
     DbSubnetGroupDoesNotCoverEnoughAZs(crate::types::error::DbSubnetGroupDoesNotCoverEnoughAZs),
-    /// <p><code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.</p>
+    /// <p> <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.</p>
     DbSubnetGroupNotFoundFault(crate::types::error::DbSubnetGroupNotFoundFault),
-    /// <p><code>Domain</code> doesn't refer to an existing Active Directory domain.</p>
+    /// <p> <code>Domain</code> doesn't refer to an existing Active Directory domain.</p>
     DomainNotFoundFault(crate::types::error::DomainNotFoundFault),
     /// <p>The DB cluster doesn't have enough capacity for the current operation.</p>
     InsufficientDbClusterCapacityFault(crate::types::error::InsufficientDbClusterCapacityFault),

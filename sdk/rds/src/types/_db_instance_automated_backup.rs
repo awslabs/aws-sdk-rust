@@ -18,17 +18,14 @@ pub struct DbInstanceAutomatedBackup {
     pub allocated_storage: ::std::option::Option<i32>,
     /// <p>A list of status information for an automated backup:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>active</code> - Automated backups for current instances.</p></li>
-    /// <li>
-    /// <p><code>retained</code> - Automated backups for deleted instances.</p></li>
-    /// <li>
-    /// <p><code>creating</code> - Automated backups that are waiting for the first automated snapshot to be available.</p></li>
+    /// <li> <p> <code>active</code> - Automated backups for current instances.</p> </li>
+    /// <li> <p> <code>retained</code> - Automated backups for deleted instances.</p> </li>
+    /// <li> <p> <code>creating</code> - Automated backups that are waiting for the first automated snapshot to be available.</p> </li>
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The port number that the automated backup used for connections.</p>
     /// <p>Default: Inherits from the source DB instance</p>
-    /// <p>Valid Values: <code>1150-65535</code></p>
+    /// <p>Valid Values: <code>1150-65535</code> </p>
     pub port: ::std::option::Option<i32>,
     /// <p>The Availability Zone that the automated backup was created in. For information on Amazon Web Services Regions and Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions and Availability Zones</a>.</p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
@@ -75,7 +72,7 @@ pub struct DbInstanceAutomatedBackup {
     pub aws_backup_recovery_point_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
     pub dedicated_log_volume: ::std::option::Option<bool>,
-    /// <p>Specifies whether the automatic backup is for a DB instance in the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).</p>
+    /// <p>Specifies whether the automatic backup is for a DB instance in the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE). </p>
     pub multi_tenant: ::std::option::Option<bool>,
 }
 impl DbInstanceAutomatedBackup {
@@ -105,19 +102,16 @@ impl DbInstanceAutomatedBackup {
     }
     /// <p>A list of status information for an automated backup:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>active</code> - Automated backups for current instances.</p></li>
-    /// <li>
-    /// <p><code>retained</code> - Automated backups for deleted instances.</p></li>
-    /// <li>
-    /// <p><code>creating</code> - Automated backups that are waiting for the first automated snapshot to be available.</p></li>
+    /// <li> <p> <code>active</code> - Automated backups for current instances.</p> </li>
+    /// <li> <p> <code>retained</code> - Automated backups for deleted instances.</p> </li>
+    /// <li> <p> <code>creating</code> - Automated backups that are waiting for the first automated snapshot to be available.</p> </li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
     /// <p>The port number that the automated backup used for connections.</p>
     /// <p>Default: Inherits from the source DB instance</p>
-    /// <p>Valid Values: <code>1150-65535</code></p>
+    /// <p>Valid Values: <code>1150-65535</code> </p>
     pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
     }
@@ -212,7 +206,7 @@ impl DbInstanceAutomatedBackup {
     pub fn dedicated_log_volume(&self) -> ::std::option::Option<bool> {
         self.dedicated_log_volume
     }
-    /// <p>Specifies whether the automatic backup is for a DB instance in the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).</p>
+    /// <p>Specifies whether the automatic backup is for a DB instance in the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE). </p>
     pub fn multi_tenant(&self) -> ::std::option::Option<bool> {
         self.multi_tenant
     }
@@ -348,12 +342,9 @@ impl DbInstanceAutomatedBackupBuilder {
     }
     /// <p>A list of status information for an automated backup:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>active</code> - Automated backups for current instances.</p></li>
-    /// <li>
-    /// <p><code>retained</code> - Automated backups for deleted instances.</p></li>
-    /// <li>
-    /// <p><code>creating</code> - Automated backups that are waiting for the first automated snapshot to be available.</p></li>
+    /// <li> <p> <code>active</code> - Automated backups for current instances.</p> </li>
+    /// <li> <p> <code>retained</code> - Automated backups for deleted instances.</p> </li>
+    /// <li> <p> <code>creating</code> - Automated backups that are waiting for the first automated snapshot to be available.</p> </li>
     /// </ul>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -361,12 +352,9 @@ impl DbInstanceAutomatedBackupBuilder {
     }
     /// <p>A list of status information for an automated backup:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>active</code> - Automated backups for current instances.</p></li>
-    /// <li>
-    /// <p><code>retained</code> - Automated backups for deleted instances.</p></li>
-    /// <li>
-    /// <p><code>creating</code> - Automated backups that are waiting for the first automated snapshot to be available.</p></li>
+    /// <li> <p> <code>active</code> - Automated backups for current instances.</p> </li>
+    /// <li> <p> <code>retained</code> - Automated backups for deleted instances.</p> </li>
+    /// <li> <p> <code>creating</code> - Automated backups that are waiting for the first automated snapshot to be available.</p> </li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
@@ -374,33 +362,30 @@ impl DbInstanceAutomatedBackupBuilder {
     }
     /// <p>A list of status information for an automated backup:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>active</code> - Automated backups for current instances.</p></li>
-    /// <li>
-    /// <p><code>retained</code> - Automated backups for deleted instances.</p></li>
-    /// <li>
-    /// <p><code>creating</code> - Automated backups that are waiting for the first automated snapshot to be available.</p></li>
+    /// <li> <p> <code>active</code> - Automated backups for current instances.</p> </li>
+    /// <li> <p> <code>retained</code> - Automated backups for deleted instances.</p> </li>
+    /// <li> <p> <code>creating</code> - Automated backups that are waiting for the first automated snapshot to be available.</p> </li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status
     }
     /// <p>The port number that the automated backup used for connections.</p>
     /// <p>Default: Inherits from the source DB instance</p>
-    /// <p>Valid Values: <code>1150-65535</code></p>
+    /// <p>Valid Values: <code>1150-65535</code> </p>
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
         self
     }
     /// <p>The port number that the automated backup used for connections.</p>
     /// <p>Default: Inherits from the source DB instance</p>
-    /// <p>Valid Values: <code>1150-65535</code></p>
+    /// <p>Valid Values: <code>1150-65535</code> </p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
     }
     /// <p>The port number that the automated backup used for connections.</p>
     /// <p>Default: Inherits from the source DB instance</p>
-    /// <p>Valid Values: <code>1150-65535</code></p>
+    /// <p>Valid Values: <code>1150-65535</code> </p>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
         &self.port
     }
@@ -726,17 +711,17 @@ impl DbInstanceAutomatedBackupBuilder {
     pub fn get_dedicated_log_volume(&self) -> &::std::option::Option<bool> {
         &self.dedicated_log_volume
     }
-    /// <p>Specifies whether the automatic backup is for a DB instance in the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).</p>
+    /// <p>Specifies whether the automatic backup is for a DB instance in the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE). </p>
     pub fn multi_tenant(mut self, input: bool) -> Self {
         self.multi_tenant = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether the automatic backup is for a DB instance in the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).</p>
+    /// <p>Specifies whether the automatic backup is for a DB instance in the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE). </p>
     pub fn set_multi_tenant(mut self, input: ::std::option::Option<bool>) -> Self {
         self.multi_tenant = input;
         self
     }
-    /// <p>Specifies whether the automatic backup is for a DB instance in the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).</p>
+    /// <p>Specifies whether the automatic backup is for a DB instance in the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE). </p>
     pub fn get_multi_tenant(&self) -> &::std::option::Option<bool> {
         &self.multi_tenant
     }

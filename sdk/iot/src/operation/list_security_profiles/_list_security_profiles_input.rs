@@ -7,9 +7,9 @@ pub struct ListSecurityProfilesInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return at one time.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>A filter to limit results to the security profiles that use the defined dimension. Cannot be used with <code>metricName</code></p>
+    /// <p>A filter to limit results to the security profiles that use the defined dimension. Cannot be used with <code>metricName</code> </p>
     pub dimension_name: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the custom metric. Cannot be used with <code>dimensionName</code>.</p>
+    /// <p> The name of the custom metric. Cannot be used with <code>dimensionName</code>. </p>
     pub metric_name: ::std::option::Option<::std::string::String>,
 }
 impl ListSecurityProfilesInput {
@@ -21,11 +21,11 @@ impl ListSecurityProfilesInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>A filter to limit results to the security profiles that use the defined dimension. Cannot be used with <code>metricName</code></p>
+    /// <p>A filter to limit results to the security profiles that use the defined dimension. Cannot be used with <code>metricName</code> </p>
     pub fn dimension_name(&self) -> ::std::option::Option<&str> {
         self.dimension_name.as_deref()
     }
-    /// <p>The name of the custom metric. Cannot be used with <code>dimensionName</code>.</p>
+    /// <p> The name of the custom metric. Cannot be used with <code>dimensionName</code>. </p>
     pub fn metric_name(&self) -> ::std::option::Option<&str> {
         self.metric_name.as_deref()
     }
@@ -75,31 +75,31 @@ impl ListSecurityProfilesInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p>A filter to limit results to the security profiles that use the defined dimension. Cannot be used with <code>metricName</code></p>
+    /// <p>A filter to limit results to the security profiles that use the defined dimension. Cannot be used with <code>metricName</code> </p>
     pub fn dimension_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dimension_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A filter to limit results to the security profiles that use the defined dimension. Cannot be used with <code>metricName</code></p>
+    /// <p>A filter to limit results to the security profiles that use the defined dimension. Cannot be used with <code>metricName</code> </p>
     pub fn set_dimension_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dimension_name = input;
         self
     }
-    /// <p>A filter to limit results to the security profiles that use the defined dimension. Cannot be used with <code>metricName</code></p>
+    /// <p>A filter to limit results to the security profiles that use the defined dimension. Cannot be used with <code>metricName</code> </p>
     pub fn get_dimension_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.dimension_name
     }
-    /// <p>The name of the custom metric. Cannot be used with <code>dimensionName</code>.</p>
+    /// <p> The name of the custom metric. Cannot be used with <code>dimensionName</code>. </p>
     pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the custom metric. Cannot be used with <code>dimensionName</code>.</p>
+    /// <p> The name of the custom metric. Cannot be used with <code>dimensionName</code>. </p>
     pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric_name = input;
         self
     }
-    /// <p>The name of the custom metric. Cannot be used with <code>dimensionName</code>.</p>
+    /// <p> The name of the custom metric. Cannot be used with <code>dimensionName</code>. </p>
     pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.metric_name
     }

@@ -12,7 +12,7 @@ pub struct TransitGatewayMulticastDomainAssociations {
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of resource, for example a VPC attachment.</p>
     pub resource_type: ::std::option::Option<crate::types::TransitGatewayAttachmentResourceType>,
-    /// <p>The ID of the Amazon Web Services account that owns the resource.</p>
+    /// <p> The ID of the Amazon Web Services account that owns the resource.</p>
     pub resource_owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The subnets associated with the multicast domain.</p>
     pub subnets: ::std::option::Option<::std::vec::Vec<crate::types::SubnetAssociation>>,
@@ -34,7 +34,7 @@ impl TransitGatewayMulticastDomainAssociations {
     pub fn resource_type(&self) -> ::std::option::Option<&crate::types::TransitGatewayAttachmentResourceType> {
         self.resource_type.as_ref()
     }
-    /// <p>The ID of the Amazon Web Services account that owns the resource.</p>
+    /// <p> The ID of the Amazon Web Services account that owns the resource.</p>
     pub fn resource_owner_id(&self) -> ::std::option::Option<&str> {
         self.resource_owner_id.as_deref()
     }
@@ -120,17 +120,17 @@ impl TransitGatewayMulticastDomainAssociationsBuilder {
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::TransitGatewayAttachmentResourceType> {
         &self.resource_type
     }
-    /// <p>The ID of the Amazon Web Services account that owns the resource.</p>
+    /// <p> The ID of the Amazon Web Services account that owns the resource.</p>
     pub fn resource_owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_owner_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the Amazon Web Services account that owns the resource.</p>
+    /// <p> The ID of the Amazon Web Services account that owns the resource.</p>
     pub fn set_resource_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_owner_id = input;
         self
     }
-    /// <p>The ID of the Amazon Web Services account that owns the resource.</p>
+    /// <p> The ID of the Amazon Web Services account that owns the resource.</p>
     pub fn get_resource_owner_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_owner_id
     }

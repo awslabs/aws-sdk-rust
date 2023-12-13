@@ -22,8 +22,8 @@ impl RegisterClusterInputBuilder {
 }
 /// Fluent builder constructing a request to `RegisterCluster`.
 ///
-/// <p>Connects a Kubernetes cluster to the Amazon EKS control plane.</p>
-/// <p>Any Kubernetes cluster can be connected to the Amazon EKS control plane to view current information about the cluster and its nodes.</p>
+/// <p>Connects a Kubernetes cluster to the Amazon EKS control plane. </p>
+/// <p>Any Kubernetes cluster can be connected to the Amazon EKS control plane to view current information about the cluster and its nodes. </p>
 /// <p>Cluster connection requires two steps. First, send a <code> <code>RegisterClusterRequest</code> </code> to add it to the Amazon EKS control plane.</p>
 /// <p>Second, a <a href="https://amazon-eks.s3.us-west-2.amazonaws.com/eks-connector/manifests/eks-connector/latest/eks-connector.yaml">Manifest</a> containing the <code>activationID</code> and <code>activationCode</code> must be applied to the Kubernetes cluster through it's native provider to provide visibility.</p>
 /// <p>After the Manifest is updated and applied, then the connected cluster is visible to the Amazon EKS control plane. If the Manifest is not applied within three days, then the connected cluster will no longer be visible and must be deregistered. See <code>DeregisterCluster</code>.</p>

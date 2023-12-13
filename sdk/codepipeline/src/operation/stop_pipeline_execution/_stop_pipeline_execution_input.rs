@@ -7,7 +7,7 @@ pub struct StopPipelineExecutionInput {
     pub pipeline_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the pipeline execution to be stopped in the current stage. Use the <code>GetPipelineState</code> action to retrieve the current pipelineExecutionId.</p>
     pub pipeline_execution_id: ::std::option::Option<::std::string::String>,
-    /// <p>Use this option to stop the pipeline execution by abandoning, rather than finishing, in-progress actions.</p><note>
+    /// <p>Use this option to stop the pipeline execution by abandoning, rather than finishing, in-progress actions.</p> <note>
     /// <p>This option can lead to failed or out-of-sequence tasks.</p>
     /// </note>
     pub abandon: ::std::option::Option<bool>,
@@ -23,7 +23,7 @@ impl StopPipelineExecutionInput {
     pub fn pipeline_execution_id(&self) -> ::std::option::Option<&str> {
         self.pipeline_execution_id.as_deref()
     }
-    /// <p>Use this option to stop the pipeline execution by abandoning, rather than finishing, in-progress actions.</p><note>
+    /// <p>Use this option to stop the pipeline execution by abandoning, rather than finishing, in-progress actions.</p> <note>
     /// <p>This option can lead to failed or out-of-sequence tasks.</p>
     /// </note>
     pub fn abandon(&self) -> ::std::option::Option<bool> {
@@ -81,21 +81,21 @@ impl StopPipelineExecutionInputBuilder {
     pub fn get_pipeline_execution_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.pipeline_execution_id
     }
-    /// <p>Use this option to stop the pipeline execution by abandoning, rather than finishing, in-progress actions.</p><note>
+    /// <p>Use this option to stop the pipeline execution by abandoning, rather than finishing, in-progress actions.</p> <note>
     /// <p>This option can lead to failed or out-of-sequence tasks.</p>
     /// </note>
     pub fn abandon(mut self, input: bool) -> Self {
         self.abandon = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Use this option to stop the pipeline execution by abandoning, rather than finishing, in-progress actions.</p><note>
+    /// <p>Use this option to stop the pipeline execution by abandoning, rather than finishing, in-progress actions.</p> <note>
     /// <p>This option can lead to failed or out-of-sequence tasks.</p>
     /// </note>
     pub fn set_abandon(mut self, input: ::std::option::Option<bool>) -> Self {
         self.abandon = input;
         self
     }
-    /// <p>Use this option to stop the pipeline execution by abandoning, rather than finishing, in-progress actions.</p><note>
+    /// <p>Use this option to stop the pipeline execution by abandoning, rather than finishing, in-progress actions.</p> <note>
     /// <p>This option can lead to failed or out-of-sequence tasks.</p>
     /// </note>
     pub fn get_abandon(&self) -> &::std::option::Option<bool> {

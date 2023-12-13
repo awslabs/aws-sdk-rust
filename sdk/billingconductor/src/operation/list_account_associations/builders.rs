@@ -22,7 +22,7 @@ impl ListAccountAssociationsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListAccountAssociations`.
 ///
-/// <p>This is a paginated call to list linked accounts that are linked to the payer account for the specified time period. If no information is provided, the current billing period is used. The response will optionally include the billing group that's associated with the linked account.</p>
+/// <p> This is a paginated call to list linked accounts that are linked to the payer account for the specified time period. If no information is provided, the current billing period is used. The response will optionally include the billing group that's associated with the linked account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAccountAssociationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,54 +114,54 @@ impl ListAccountAssociationsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_account_associations::paginator::ListAccountAssociationsPaginator {
         crate::operation::list_account_associations::paginator::ListAccountAssociationsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The preferred billing period to get account associations.</p>
+    /// <p> The preferred billing period to get account associations. </p>
     pub fn billing_period(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.billing_period(input.into());
         self
     }
-    /// <p>The preferred billing period to get account associations.</p>
+    /// <p> The preferred billing period to get account associations. </p>
     pub fn set_billing_period(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_billing_period(input);
         self
     }
-    /// <p>The preferred billing period to get account associations.</p>
+    /// <p> The preferred billing period to get account associations. </p>
     pub fn get_billing_period(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_billing_period()
     }
     /// <p>The filter on the account ID of the linked account, or any of the following:</p>
-    /// <p><code>MONITORED</code>: linked accounts that are associated to billing groups.</p>
-    /// <p><code>UNMONITORED</code>: linked accounts that aren't associated to billing groups.</p>
-    /// <p><code>Billing Group Arn</code>: linked accounts that are associated to the provided billing group Arn.</p>
+    /// <p> <code>MONITORED</code>: linked accounts that are associated to billing groups.</p>
+    /// <p> <code>UNMONITORED</code>: linked accounts that aren't associated to billing groups.</p>
+    /// <p> <code>Billing Group Arn</code>: linked accounts that are associated to the provided billing group Arn. </p>
     pub fn filters(mut self, input: crate::types::ListAccountAssociationsFilter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
     /// <p>The filter on the account ID of the linked account, or any of the following:</p>
-    /// <p><code>MONITORED</code>: linked accounts that are associated to billing groups.</p>
-    /// <p><code>UNMONITORED</code>: linked accounts that aren't associated to billing groups.</p>
-    /// <p><code>Billing Group Arn</code>: linked accounts that are associated to the provided billing group Arn.</p>
+    /// <p> <code>MONITORED</code>: linked accounts that are associated to billing groups.</p>
+    /// <p> <code>UNMONITORED</code>: linked accounts that aren't associated to billing groups.</p>
+    /// <p> <code>Billing Group Arn</code>: linked accounts that are associated to the provided billing group Arn. </p>
     pub fn set_filters(mut self, input: ::std::option::Option<crate::types::ListAccountAssociationsFilter>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>The filter on the account ID of the linked account, or any of the following:</p>
-    /// <p><code>MONITORED</code>: linked accounts that are associated to billing groups.</p>
-    /// <p><code>UNMONITORED</code>: linked accounts that aren't associated to billing groups.</p>
-    /// <p><code>Billing Group Arn</code>: linked accounts that are associated to the provided billing group Arn.</p>
+    /// <p> <code>MONITORED</code>: linked accounts that are associated to billing groups.</p>
+    /// <p> <code>UNMONITORED</code>: linked accounts that aren't associated to billing groups.</p>
+    /// <p> <code>Billing Group Arn</code>: linked accounts that are associated to the provided billing group Arn. </p>
     pub fn get_filters(&self) -> &::std::option::Option<crate::types::ListAccountAssociationsFilter> {
         self.inner.get_filters()
     }
-    /// <p>The pagination token that's used on subsequent calls to retrieve accounts.</p>
+    /// <p> The pagination token that's used on subsequent calls to retrieve accounts. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>The pagination token that's used on subsequent calls to retrieve accounts.</p>
+    /// <p> The pagination token that's used on subsequent calls to retrieve accounts. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>The pagination token that's used on subsequent calls to retrieve accounts.</p>
+    /// <p> The pagination token that's used on subsequent calls to retrieve accounts. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

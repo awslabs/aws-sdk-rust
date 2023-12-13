@@ -243,13 +243,13 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ModifyEndpoin
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum ModifyEndpointAccessError {
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.</p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
     ClusterNotFoundFault(crate::types::error::ClusterNotFoundFault),
     /// <p>The endpoint name doesn't refer to an existing endpoint.</p>
     EndpointNotFoundFault(crate::types::error::EndpointNotFoundFault),
-    /// <p>The state of the cluster security group is not <code>available</code>.</p>
+    /// <p>The state of the cluster security group is not <code>available</code>. </p>
     InvalidClusterSecurityGroupStateFault(crate::types::error::InvalidClusterSecurityGroupStateFault),
-    /// <p>The specified cluster is not in the <code>available</code> state.</p>
+    /// <p>The specified cluster is not in the <code>available</code> state. </p>
     InvalidClusterStateFault(crate::types::error::InvalidClusterStateFault),
     /// <p>The status of the endpoint is not valid.</p>
     InvalidEndpointStateFault(crate::types::error::InvalidEndpointStateFault),

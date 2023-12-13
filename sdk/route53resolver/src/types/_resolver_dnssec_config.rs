@@ -12,14 +12,10 @@ pub struct ResolverDnssecConfig {
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The validation status for a DNSSEC configuration. The status can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><b>ENABLING:</b> DNSSEC validation is being enabled but is not complete.</p></li>
-    /// <li>
-    /// <p><b>ENABLED:</b> DNSSEC validation is enabled.</p></li>
-    /// <li>
-    /// <p><b>DISABLING:</b> DNSSEC validation is being disabled but is not complete.</p></li>
-    /// <li>
-    /// <p><b>DISABLED</b> DNSSEC validation is disabled.</p></li>
+    /// <li> <p> <b>ENABLING:</b> DNSSEC validation is being enabled but is not complete.</p> </li>
+    /// <li> <p> <b>ENABLED:</b> DNSSEC validation is enabled.</p> </li>
+    /// <li> <p> <b>DISABLING:</b> DNSSEC validation is being disabled but is not complete.</p> </li>
+    /// <li> <p> <b>DISABLED</b> DNSSEC validation is disabled.</p> </li>
     /// </ul>
     pub validation_status: ::std::option::Option<crate::types::ResolverDnssecValidationStatus>,
 }
@@ -38,14 +34,10 @@ impl ResolverDnssecConfig {
     }
     /// <p>The validation status for a DNSSEC configuration. The status can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><b>ENABLING:</b> DNSSEC validation is being enabled but is not complete.</p></li>
-    /// <li>
-    /// <p><b>ENABLED:</b> DNSSEC validation is enabled.</p></li>
-    /// <li>
-    /// <p><b>DISABLING:</b> DNSSEC validation is being disabled but is not complete.</p></li>
-    /// <li>
-    /// <p><b>DISABLED</b> DNSSEC validation is disabled.</p></li>
+    /// <li> <p> <b>ENABLING:</b> DNSSEC validation is being enabled but is not complete.</p> </li>
+    /// <li> <p> <b>ENABLED:</b> DNSSEC validation is enabled.</p> </li>
+    /// <li> <p> <b>DISABLING:</b> DNSSEC validation is being disabled but is not complete.</p> </li>
+    /// <li> <p> <b>DISABLED</b> DNSSEC validation is disabled.</p> </li>
     /// </ul>
     pub fn validation_status(&self) -> ::std::option::Option<&crate::types::ResolverDnssecValidationStatus> {
         self.validation_status.as_ref()
@@ -112,14 +104,10 @@ impl ResolverDnssecConfigBuilder {
     }
     /// <p>The validation status for a DNSSEC configuration. The status can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><b>ENABLING:</b> DNSSEC validation is being enabled but is not complete.</p></li>
-    /// <li>
-    /// <p><b>ENABLED:</b> DNSSEC validation is enabled.</p></li>
-    /// <li>
-    /// <p><b>DISABLING:</b> DNSSEC validation is being disabled but is not complete.</p></li>
-    /// <li>
-    /// <p><b>DISABLED</b> DNSSEC validation is disabled.</p></li>
+    /// <li> <p> <b>ENABLING:</b> DNSSEC validation is being enabled but is not complete.</p> </li>
+    /// <li> <p> <b>ENABLED:</b> DNSSEC validation is enabled.</p> </li>
+    /// <li> <p> <b>DISABLING:</b> DNSSEC validation is being disabled but is not complete.</p> </li>
+    /// <li> <p> <b>DISABLED</b> DNSSEC validation is disabled.</p> </li>
     /// </ul>
     pub fn validation_status(mut self, input: crate::types::ResolverDnssecValidationStatus) -> Self {
         self.validation_status = ::std::option::Option::Some(input);
@@ -127,14 +115,10 @@ impl ResolverDnssecConfigBuilder {
     }
     /// <p>The validation status for a DNSSEC configuration. The status can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><b>ENABLING:</b> DNSSEC validation is being enabled but is not complete.</p></li>
-    /// <li>
-    /// <p><b>ENABLED:</b> DNSSEC validation is enabled.</p></li>
-    /// <li>
-    /// <p><b>DISABLING:</b> DNSSEC validation is being disabled but is not complete.</p></li>
-    /// <li>
-    /// <p><b>DISABLED</b> DNSSEC validation is disabled.</p></li>
+    /// <li> <p> <b>ENABLING:</b> DNSSEC validation is being enabled but is not complete.</p> </li>
+    /// <li> <p> <b>ENABLED:</b> DNSSEC validation is enabled.</p> </li>
+    /// <li> <p> <b>DISABLING:</b> DNSSEC validation is being disabled but is not complete.</p> </li>
+    /// <li> <p> <b>DISABLED</b> DNSSEC validation is disabled.</p> </li>
     /// </ul>
     pub fn set_validation_status(mut self, input: ::std::option::Option<crate::types::ResolverDnssecValidationStatus>) -> Self {
         self.validation_status = input;
@@ -142,14 +126,10 @@ impl ResolverDnssecConfigBuilder {
     }
     /// <p>The validation status for a DNSSEC configuration. The status can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><b>ENABLING:</b> DNSSEC validation is being enabled but is not complete.</p></li>
-    /// <li>
-    /// <p><b>ENABLED:</b> DNSSEC validation is enabled.</p></li>
-    /// <li>
-    /// <p><b>DISABLING:</b> DNSSEC validation is being disabled but is not complete.</p></li>
-    /// <li>
-    /// <p><b>DISABLED</b> DNSSEC validation is disabled.</p></li>
+    /// <li> <p> <b>ENABLING:</b> DNSSEC validation is being enabled but is not complete.</p> </li>
+    /// <li> <p> <b>ENABLED:</b> DNSSEC validation is enabled.</p> </li>
+    /// <li> <p> <b>DISABLING:</b> DNSSEC validation is being disabled but is not complete.</p> </li>
+    /// <li> <p> <b>DISABLED</b> DNSSEC validation is disabled.</p> </li>
     /// </ul>
     pub fn get_validation_status(&self) -> &::std::option::Option<crate::types::ResolverDnssecValidationStatus> {
         &self.validation_status

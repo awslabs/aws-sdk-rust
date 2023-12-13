@@ -24,7 +24,7 @@ impl DescribeProductsInputBuilder {
 ///
 /// <p>Returns information about product integrations in Security Hub.</p>
 /// <p>You can optionally provide an integration ARN. If you provide an integration ARN, then the results only include that integration.</p>
-/// <p>If you do not provide an integration ARN, then the results include all of the available product integrations.</p>
+/// <p>If you do not provide an integration ARN, then the results include all of the available product integrations. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeProductsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

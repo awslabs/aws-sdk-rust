@@ -22,7 +22,7 @@ impl BatchDetectSyntaxInputBuilder {
 }
 /// Fluent builder constructing a request to `BatchDetectSyntax`.
 ///
-/// <p>Inspects the text of a batch of documents for the syntax and part of speech of the words in the document and returns information about them. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer Guide.</p>
+/// <p>Inspects the text of a batch of documents for the syntax and part of speech of the words in the document and returns information about them. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer Guide. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchDetectSyntaxFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

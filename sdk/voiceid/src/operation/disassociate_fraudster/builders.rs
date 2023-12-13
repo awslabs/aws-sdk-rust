@@ -22,7 +22,7 @@ impl DisassociateFraudsterInputBuilder {
 }
 /// Fluent builder constructing a request to `DisassociateFraudster`.
 ///
-/// <p>Disassociates the fraudsters from the watchlist specified. Voice ID always expects a fraudster to be a part of at least one watchlist. If you try to disassociate a fraudster from its only watchlist, a <code>ValidationException</code> is thrown.</p>
+/// <p>Disassociates the fraudsters from the watchlist specified. Voice ID always expects a fraudster to be a part of at least one watchlist. If you try to disassociate a fraudster from its only watchlist, a <code>ValidationException</code> is thrown. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateFraudsterFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

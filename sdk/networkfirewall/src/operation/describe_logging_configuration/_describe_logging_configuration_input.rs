@@ -4,20 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLoggingConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub firewall_arn: ::std::option::Option<::std::string::String>,
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub firewall_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeLoggingConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub fn firewall_arn(&self) -> ::std::option::Option<&str> {
         self.firewall_arn.as_deref()
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub fn firewall_name(&self) -> ::std::option::Option<&str> {
         self.firewall_name.as_deref()
     }
@@ -38,36 +38,36 @@ pub struct DescribeLoggingConfigurationInputBuilder {
 }
 impl DescribeLoggingConfigurationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub fn firewall_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub fn set_firewall_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub fn get_firewall_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.firewall_arn
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub fn firewall_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub fn set_firewall_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_name = input;
         self
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub fn get_firewall_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.firewall_name
     }

@@ -22,7 +22,7 @@ impl TagAttendeeInputBuilder {
 }
 /// Fluent builder constructing a request to `TagAttendee`.
 ///
-/// <p>Applies the specified tags to the specified Amazon Chime attendee.</p><important>
+/// <p>Applies the specified tags to the specified Amazon Chime attendee.</p> <important>
 /// <p>TagAttendee is not supported in the Amazon Chime SDK Meetings Namespace. Update your application to remove calls to this API.</p>
 /// </important>
 #[deprecated(

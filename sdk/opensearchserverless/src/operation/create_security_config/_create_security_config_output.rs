@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSecurityConfigOutput {
-    /// <p>Details about the created security configuration.</p>
+    /// <p>Details about the created security configuration. </p>
     pub security_config_detail: ::std::option::Option<crate::types::SecurityConfigDetail>,
     _request_id: Option<String>,
 }
 impl CreateSecurityConfigOutput {
-    /// <p>Details about the created security configuration.</p>
+    /// <p>Details about the created security configuration. </p>
     pub fn security_config_detail(&self) -> ::std::option::Option<&crate::types::SecurityConfigDetail> {
         self.security_config_detail.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct CreateSecurityConfigOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateSecurityConfigOutputBuilder {
-    /// <p>Details about the created security configuration.</p>
+    /// <p>Details about the created security configuration. </p>
     pub fn security_config_detail(mut self, input: crate::types::SecurityConfigDetail) -> Self {
         self.security_config_detail = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Details about the created security configuration.</p>
+    /// <p>Details about the created security configuration. </p>
     pub fn set_security_config_detail(mut self, input: ::std::option::Option<crate::types::SecurityConfigDetail>) -> Self {
         self.security_config_detail = input;
         self
     }
-    /// <p>Details about the created security configuration.</p>
+    /// <p>Details about the created security configuration. </p>
     pub fn get_security_config_detail(&self) -> &::std::option::Option<crate::types::SecurityConfigDetail> {
         &self.security_config_detail
     }

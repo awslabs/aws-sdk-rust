@@ -14,7 +14,7 @@ pub enum FieldFilter {
     GreaterThanOrEqualTo(crate::types::FieldValue),
     /// <p>Object containing field identifier and value information.</p>
     LessThan(crate::types::FieldValue),
-    /// <p>Object containing field identifier and value information.</p>
+    /// <p>Object containing field identifier and value information. </p>
     LessThanOrEqualTo(crate::types::FieldValue),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant

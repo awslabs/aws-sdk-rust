@@ -252,7 +252,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for BatchGetToken
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum BatchGetTokenBalanceError {
-    /// <p>The Amazon Web Services account doesn’t have access to this resource.</p>
+    /// <p>The Amazon Web Services account doesn’t have access to this resource. </p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>The request processing has failed because of an internal error in the service.</p>
     InternalServerException(crate::types::error::InternalServerException),

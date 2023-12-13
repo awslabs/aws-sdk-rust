@@ -111,10 +111,9 @@ impl PromoteReadReplicaDBClusterFluentBuilder {
     /// <p>The identifier of the DB cluster read replica to promote. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must match the identifier of an existing DB cluster read replica.</p></li>
+    /// <li> <p>Must match the identifier of an existing DB cluster read replica.</p> </li>
     /// </ul>
-    /// <p>Example: <code>my-cluster-replica1</code></p>
+    /// <p>Example: <code>my-cluster-replica1</code> </p>
     pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_cluster_identifier(input.into());
         self
@@ -122,10 +121,9 @@ impl PromoteReadReplicaDBClusterFluentBuilder {
     /// <p>The identifier of the DB cluster read replica to promote. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must match the identifier of an existing DB cluster read replica.</p></li>
+    /// <li> <p>Must match the identifier of an existing DB cluster read replica.</p> </li>
     /// </ul>
-    /// <p>Example: <code>my-cluster-replica1</code></p>
+    /// <p>Example: <code>my-cluster-replica1</code> </p>
     pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_cluster_identifier(input);
         self
@@ -133,10 +131,9 @@ impl PromoteReadReplicaDBClusterFluentBuilder {
     /// <p>The identifier of the DB cluster read replica to promote. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must match the identifier of an existing DB cluster read replica.</p></li>
+    /// <li> <p>Must match the identifier of an existing DB cluster read replica.</p> </li>
     /// </ul>
-    /// <p>Example: <code>my-cluster-replica1</code></p>
+    /// <p>Example: <code>my-cluster-replica1</code> </p>
     pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_cluster_identifier()
     }

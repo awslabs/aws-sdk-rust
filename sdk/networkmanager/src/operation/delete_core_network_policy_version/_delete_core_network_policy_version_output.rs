@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteCoreNetworkPolicyVersionOutput {
-    /// <p>Returns information about the deleted policy version.</p>
+    /// <p>Returns information about the deleted policy version. </p>
     pub core_network_policy: ::std::option::Option<crate::types::CoreNetworkPolicy>,
     _request_id: Option<String>,
 }
 impl DeleteCoreNetworkPolicyVersionOutput {
-    /// <p>Returns information about the deleted policy version.</p>
+    /// <p>Returns information about the deleted policy version. </p>
     pub fn core_network_policy(&self) -> ::std::option::Option<&crate::types::CoreNetworkPolicy> {
         self.core_network_policy.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct DeleteCoreNetworkPolicyVersionOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteCoreNetworkPolicyVersionOutputBuilder {
-    /// <p>Returns information about the deleted policy version.</p>
+    /// <p>Returns information about the deleted policy version. </p>
     pub fn core_network_policy(mut self, input: crate::types::CoreNetworkPolicy) -> Self {
         self.core_network_policy = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Returns information about the deleted policy version.</p>
+    /// <p>Returns information about the deleted policy version. </p>
     pub fn set_core_network_policy(mut self, input: ::std::option::Option<crate::types::CoreNetworkPolicy>) -> Self {
         self.core_network_policy = input;
         self
     }
-    /// <p>Returns information about the deleted policy version.</p>
+    /// <p>Returns information about the deleted policy version. </p>
     pub fn get_core_network_policy(&self) -> &::std::option::Option<crate::types::CoreNetworkPolicy> {
         &self.core_network_policy
     }

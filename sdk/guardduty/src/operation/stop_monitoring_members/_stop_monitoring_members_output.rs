@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopMonitoringMembersOutput {
-    /// <p>A list of objects that contain an accountId for each account that could not be processed, and a result string that indicates why the account was not processed.</p>
+    /// <p>A list of objects that contain an accountId for each account that could not be processed, and a result string that indicates why the account was not processed. </p>
     pub unprocessed_accounts: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>>,
     _request_id: Option<String>,
 }
 impl StopMonitoringMembersOutput {
-    /// <p>A list of objects that contain an accountId for each account that could not be processed, and a result string that indicates why the account was not processed.</p>
+    /// <p>A list of objects that contain an accountId for each account that could not be processed, and a result string that indicates why the account was not processed. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unprocessed_accounts.is_none()`.
     pub fn unprocessed_accounts(&self) -> &[crate::types::UnprocessedAccount] {
@@ -39,19 +39,19 @@ impl StopMonitoringMembersOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_unprocessed_accounts`](Self::set_unprocessed_accounts).
     ///
-    /// <p>A list of objects that contain an accountId for each account that could not be processed, and a result string that indicates why the account was not processed.</p>
+    /// <p>A list of objects that contain an accountId for each account that could not be processed, and a result string that indicates why the account was not processed. </p>
     pub fn unprocessed_accounts(mut self, input: crate::types::UnprocessedAccount) -> Self {
         let mut v = self.unprocessed_accounts.unwrap_or_default();
         v.push(input);
         self.unprocessed_accounts = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of objects that contain an accountId for each account that could not be processed, and a result string that indicates why the account was not processed.</p>
+    /// <p>A list of objects that contain an accountId for each account that could not be processed, and a result string that indicates why the account was not processed. </p>
     pub fn set_unprocessed_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>>) -> Self {
         self.unprocessed_accounts = input;
         self
     }
-    /// <p>A list of objects that contain an accountId for each account that could not be processed, and a result string that indicates why the account was not processed.</p>
+    /// <p>A list of objects that contain an accountId for each account that could not be processed, and a result string that indicates why the account was not processed. </p>
     pub fn get_unprocessed_accounts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>> {
         &self.unprocessed_accounts
     }

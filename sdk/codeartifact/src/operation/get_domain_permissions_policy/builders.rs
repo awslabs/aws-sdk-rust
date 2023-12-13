@@ -22,8 +22,8 @@ impl GetDomainPermissionsPolicyInputBuilder {
 }
 /// Fluent builder constructing a request to `GetDomainPermissionsPolicy`.
 ///
-/// <p>Returns the resource policy attached to the specified domain.</p><note>
-/// <p>The policy is a resource-based policy, not an identity-based policy. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_identity-vs-resource.html">Identity-based policies and resource-based policies </a> in the <i>IAM User Guide</i>.</p>
+/// <p> Returns the resource policy attached to the specified domain. </p> <note>
+/// <p> The policy is a resource-based policy, not an identity-based policy. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_identity-vs-resource.html">Identity-based policies and resource-based policies </a> in the <i>IAM User Guide</i>. </p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDomainPermissionsPolicyFluentBuilder {
@@ -110,31 +110,31 @@ impl GetDomainPermissionsPolicyFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the domain to which the resource policy is attached.</p>
+    /// <p> The name of the domain to which the resource policy is attached. </p>
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain(input.into());
         self
     }
-    /// <p>The name of the domain to which the resource policy is attached.</p>
+    /// <p> The name of the domain to which the resource policy is attached. </p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain(input);
         self
     }
-    /// <p>The name of the domain to which the resource policy is attached.</p>
+    /// <p> The name of the domain to which the resource policy is attached. </p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain()
     }
-    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_owner(input.into());
         self
     }
-    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn set_domain_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_owner(input);
         self
     }
-    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn get_domain_owner(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_owner()
     }

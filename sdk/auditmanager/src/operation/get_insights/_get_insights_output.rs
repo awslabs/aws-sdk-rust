@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetInsightsOutput {
-    /// <p>The analytics data that the <code>GetInsights</code> API returned.</p>
+    /// <p>The analytics data that the <code>GetInsights</code> API returned. </p>
     pub insights: ::std::option::Option<crate::types::Insights>,
     _request_id: Option<String>,
 }
 impl GetInsightsOutput {
-    /// <p>The analytics data that the <code>GetInsights</code> API returned.</p>
+    /// <p>The analytics data that the <code>GetInsights</code> API returned. </p>
     pub fn insights(&self) -> ::std::option::Option<&crate::types::Insights> {
         self.insights.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct GetInsightsOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetInsightsOutputBuilder {
-    /// <p>The analytics data that the <code>GetInsights</code> API returned.</p>
+    /// <p>The analytics data that the <code>GetInsights</code> API returned. </p>
     pub fn insights(mut self, input: crate::types::Insights) -> Self {
         self.insights = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The analytics data that the <code>GetInsights</code> API returned.</p>
+    /// <p>The analytics data that the <code>GetInsights</code> API returned. </p>
     pub fn set_insights(mut self, input: ::std::option::Option<crate::types::Insights>) -> Self {
         self.insights = input;
         self
     }
-    /// <p>The analytics data that the <code>GetInsights</code> API returned.</p>
+    /// <p>The analytics data that the <code>GetInsights</code> API returned. </p>
     pub fn get_insights(&self) -> &::std::option::Option<crate::types::Insights> {
         &self.insights
     }

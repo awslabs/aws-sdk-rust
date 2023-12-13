@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RealTimeContactAnalysisPointOfInterest {
-    /// <p>List of the transcript items (segments) that are associated with a given point of interest.</p>
+    /// <p>List of the transcript items (segments) that are associated with a given point of interest. </p>
     pub transcript_items: ::std::option::Option<::std::vec::Vec<crate::types::RealTimeContactAnalysisTranscriptItemWithCharacterOffsets>>,
 }
 impl RealTimeContactAnalysisPointOfInterest {
-    /// <p>List of the transcript items (segments) that are associated with a given point of interest.</p>
+    /// <p>List of the transcript items (segments) that are associated with a given point of interest. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.transcript_items.is_none()`.
     pub fn transcript_items(&self) -> &[crate::types::RealTimeContactAnalysisTranscriptItemWithCharacterOffsets] {
@@ -33,14 +33,14 @@ impl RealTimeContactAnalysisPointOfInterestBuilder {
     ///
     /// To override the contents of this collection use [`set_transcript_items`](Self::set_transcript_items).
     ///
-    /// <p>List of the transcript items (segments) that are associated with a given point of interest.</p>
+    /// <p>List of the transcript items (segments) that are associated with a given point of interest. </p>
     pub fn transcript_items(mut self, input: crate::types::RealTimeContactAnalysisTranscriptItemWithCharacterOffsets) -> Self {
         let mut v = self.transcript_items.unwrap_or_default();
         v.push(input);
         self.transcript_items = ::std::option::Option::Some(v);
         self
     }
-    /// <p>List of the transcript items (segments) that are associated with a given point of interest.</p>
+    /// <p>List of the transcript items (segments) that are associated with a given point of interest. </p>
     pub fn set_transcript_items(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::RealTimeContactAnalysisTranscriptItemWithCharacterOffsets>>,
@@ -48,7 +48,7 @@ impl RealTimeContactAnalysisPointOfInterestBuilder {
         self.transcript_items = input;
         self
     }
-    /// <p>List of the transcript items (segments) that are associated with a given point of interest.</p>
+    /// <p>List of the transcript items (segments) that are associated with a given point of interest. </p>
     pub fn get_transcript_items(
         &self,
     ) -> &::std::option::Option<::std::vec::Vec<crate::types::RealTimeContactAnalysisTranscriptItemWithCharacterOffsets>> {

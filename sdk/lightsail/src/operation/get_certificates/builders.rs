@@ -22,7 +22,7 @@ impl GetCertificatesInputBuilder {
 }
 /// Fluent builder constructing a request to `GetCertificates`.
 ///
-/// <p>Returns information about one or more Amazon Lightsail SSL/TLS certificates.</p><note>
+/// <p>Returns information about one or more Amazon Lightsail SSL/TLS certificates.</p> <note>
 /// <p>To get a summary of a certificate, omit <code>includeCertificateDetails</code> from your request. The response will include only the certificate Amazon Resource Name (ARN), certificate name, domain name, and tags.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

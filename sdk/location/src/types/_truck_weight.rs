@@ -4,27 +4,25 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TruckWeight {
-    /// <p>The total weight of the truck.</p>
+    /// <p>The total weight of the truck. </p>
     /// <ul>
-    /// <li>
-    /// <p>For example, <code>3500</code>.</p></li>
+    /// <li> <p>For example, <code>3500</code>.</p> </li>
     /// </ul>
     pub total: ::std::option::Option<f64>,
     /// <p>The unit of measurement to use for the truck weight.</p>
-    /// <p>Default Value: <code>Kilograms</code></p>
+    /// <p>Default Value: <code>Kilograms</code> </p>
     pub unit: ::std::option::Option<crate::types::VehicleWeightUnit>,
 }
 impl TruckWeight {
-    /// <p>The total weight of the truck.</p>
+    /// <p>The total weight of the truck. </p>
     /// <ul>
-    /// <li>
-    /// <p>For example, <code>3500</code>.</p></li>
+    /// <li> <p>For example, <code>3500</code>.</p> </li>
     /// </ul>
     pub fn total(&self) -> ::std::option::Option<f64> {
         self.total
     }
     /// <p>The unit of measurement to use for the truck weight.</p>
-    /// <p>Default Value: <code>Kilograms</code></p>
+    /// <p>Default Value: <code>Kilograms</code> </p>
     pub fn unit(&self) -> ::std::option::Option<&crate::types::VehicleWeightUnit> {
         self.unit.as_ref()
     }
@@ -44,46 +42,43 @@ pub struct TruckWeightBuilder {
     pub(crate) unit: ::std::option::Option<crate::types::VehicleWeightUnit>,
 }
 impl TruckWeightBuilder {
-    /// <p>The total weight of the truck.</p>
+    /// <p>The total weight of the truck. </p>
     /// <ul>
-    /// <li>
-    /// <p>For example, <code>3500</code>.</p></li>
+    /// <li> <p>For example, <code>3500</code>.</p> </li>
     /// </ul>
     pub fn total(mut self, input: f64) -> Self {
         self.total = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The total weight of the truck.</p>
+    /// <p>The total weight of the truck. </p>
     /// <ul>
-    /// <li>
-    /// <p>For example, <code>3500</code>.</p></li>
+    /// <li> <p>For example, <code>3500</code>.</p> </li>
     /// </ul>
     pub fn set_total(mut self, input: ::std::option::Option<f64>) -> Self {
         self.total = input;
         self
     }
-    /// <p>The total weight of the truck.</p>
+    /// <p>The total weight of the truck. </p>
     /// <ul>
-    /// <li>
-    /// <p>For example, <code>3500</code>.</p></li>
+    /// <li> <p>For example, <code>3500</code>.</p> </li>
     /// </ul>
     pub fn get_total(&self) -> &::std::option::Option<f64> {
         &self.total
     }
     /// <p>The unit of measurement to use for the truck weight.</p>
-    /// <p>Default Value: <code>Kilograms</code></p>
+    /// <p>Default Value: <code>Kilograms</code> </p>
     pub fn unit(mut self, input: crate::types::VehicleWeightUnit) -> Self {
         self.unit = ::std::option::Option::Some(input);
         self
     }
     /// <p>The unit of measurement to use for the truck weight.</p>
-    /// <p>Default Value: <code>Kilograms</code></p>
+    /// <p>Default Value: <code>Kilograms</code> </p>
     pub fn set_unit(mut self, input: ::std::option::Option<crate::types::VehicleWeightUnit>) -> Self {
         self.unit = input;
         self
     }
     /// <p>The unit of measurement to use for the truck weight.</p>
-    /// <p>Default Value: <code>Kilograms</code></p>
+    /// <p>Default Value: <code>Kilograms</code> </p>
     pub fn get_unit(&self) -> &::std::option::Option<crate::types::VehicleWeightUnit> {
         &self.unit
     }

@@ -5,7 +5,7 @@
 pub struct CreateTimelineEventOutput {
     /// <p>The ARN of the incident record that you added the event to.</p>
     pub incident_record_arn: ::std::string::String,
-    /// <p>The ID of the event for easy reference later.</p>
+    /// <p>The ID of the event for easy reference later. </p>
     pub event_id: ::std::string::String,
     _request_id: Option<String>,
 }
@@ -15,7 +15,7 @@ impl CreateTimelineEventOutput {
         use std::ops::Deref;
         self.incident_record_arn.deref()
     }
-    /// <p>The ID of the event for easy reference later.</p>
+    /// <p>The ID of the event for easy reference later. </p>
     pub fn event_id(&self) -> &str {
         use std::ops::Deref;
         self.event_id.deref()
@@ -57,18 +57,18 @@ impl CreateTimelineEventOutputBuilder {
     pub fn get_incident_record_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.incident_record_arn
     }
-    /// <p>The ID of the event for easy reference later.</p>
+    /// <p>The ID of the event for easy reference later. </p>
     /// This field is required.
     pub fn event_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the event for easy reference later.</p>
+    /// <p>The ID of the event for easy reference later. </p>
     pub fn set_event_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_id = input;
         self
     }
-    /// <p>The ID of the event for easy reference later.</p>
+    /// <p>The ID of the event for easy reference later. </p>
     pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_id
     }

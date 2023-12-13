@@ -8,14 +8,10 @@ pub struct NameServersUpdateState {
     /// <p>The status code for the name servers update.</p>
     /// <p>Following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SUCCEEDED</code> - The name server records were successfully updated.</p></li>
-    /// <li>
-    /// <p><code>PENDING</code> - The name server record update is in progress.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - The name server record update failed.</p></li>
-    /// <li>
-    /// <p><code>STARTED</code> - The automatic name server record update started.</p></li>
+    /// <li> <p> <code>SUCCEEDED</code> - The name server records were successfully updated.</p> </li>
+    /// <li> <p> <code>PENDING</code> - The name server record update is in progress.</p> </li>
+    /// <li> <p> <code>FAILED</code> - The name server record update failed.</p> </li>
+    /// <li> <p> <code>STARTED</code> - The automatic name server record update started.</p> </li>
     /// </ul>
     pub code: ::std::option::Option<crate::types::NameServersUpdateStateCode>,
     /// <p>The message that describes the reason for the status code.</p>
@@ -25,14 +21,10 @@ impl NameServersUpdateState {
     /// <p>The status code for the name servers update.</p>
     /// <p>Following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SUCCEEDED</code> - The name server records were successfully updated.</p></li>
-    /// <li>
-    /// <p><code>PENDING</code> - The name server record update is in progress.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - The name server record update failed.</p></li>
-    /// <li>
-    /// <p><code>STARTED</code> - The automatic name server record update started.</p></li>
+    /// <li> <p> <code>SUCCEEDED</code> - The name server records were successfully updated.</p> </li>
+    /// <li> <p> <code>PENDING</code> - The name server record update is in progress.</p> </li>
+    /// <li> <p> <code>FAILED</code> - The name server record update failed.</p> </li>
+    /// <li> <p> <code>STARTED</code> - The automatic name server record update started.</p> </li>
     /// </ul>
     pub fn code(&self) -> ::std::option::Option<&crate::types::NameServersUpdateStateCode> {
         self.code.as_ref()
@@ -60,14 +52,10 @@ impl NameServersUpdateStateBuilder {
     /// <p>The status code for the name servers update.</p>
     /// <p>Following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SUCCEEDED</code> - The name server records were successfully updated.</p></li>
-    /// <li>
-    /// <p><code>PENDING</code> - The name server record update is in progress.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - The name server record update failed.</p></li>
-    /// <li>
-    /// <p><code>STARTED</code> - The automatic name server record update started.</p></li>
+    /// <li> <p> <code>SUCCEEDED</code> - The name server records were successfully updated.</p> </li>
+    /// <li> <p> <code>PENDING</code> - The name server record update is in progress.</p> </li>
+    /// <li> <p> <code>FAILED</code> - The name server record update failed.</p> </li>
+    /// <li> <p> <code>STARTED</code> - The automatic name server record update started.</p> </li>
     /// </ul>
     pub fn code(mut self, input: crate::types::NameServersUpdateStateCode) -> Self {
         self.code = ::std::option::Option::Some(input);
@@ -76,14 +64,10 @@ impl NameServersUpdateStateBuilder {
     /// <p>The status code for the name servers update.</p>
     /// <p>Following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SUCCEEDED</code> - The name server records were successfully updated.</p></li>
-    /// <li>
-    /// <p><code>PENDING</code> - The name server record update is in progress.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - The name server record update failed.</p></li>
-    /// <li>
-    /// <p><code>STARTED</code> - The automatic name server record update started.</p></li>
+    /// <li> <p> <code>SUCCEEDED</code> - The name server records were successfully updated.</p> </li>
+    /// <li> <p> <code>PENDING</code> - The name server record update is in progress.</p> </li>
+    /// <li> <p> <code>FAILED</code> - The name server record update failed.</p> </li>
+    /// <li> <p> <code>STARTED</code> - The automatic name server record update started.</p> </li>
     /// </ul>
     pub fn set_code(mut self, input: ::std::option::Option<crate::types::NameServersUpdateStateCode>) -> Self {
         self.code = input;
@@ -92,14 +76,10 @@ impl NameServersUpdateStateBuilder {
     /// <p>The status code for the name servers update.</p>
     /// <p>Following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SUCCEEDED</code> - The name server records were successfully updated.</p></li>
-    /// <li>
-    /// <p><code>PENDING</code> - The name server record update is in progress.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - The name server record update failed.</p></li>
-    /// <li>
-    /// <p><code>STARTED</code> - The automatic name server record update started.</p></li>
+    /// <li> <p> <code>SUCCEEDED</code> - The name server records were successfully updated.</p> </li>
+    /// <li> <p> <code>PENDING</code> - The name server record update is in progress.</p> </li>
+    /// <li> <p> <code>FAILED</code> - The name server record update failed.</p> </li>
+    /// <li> <p> <code>STARTED</code> - The automatic name server record update started.</p> </li>
     /// </ul>
     pub fn get_code(&self) -> &::std::option::Option<crate::types::NameServersUpdateStateCode> {
         &self.code

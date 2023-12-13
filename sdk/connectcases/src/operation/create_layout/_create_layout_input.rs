@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLayoutInput {
-    /// <p>The unique identifier of the Cases domain.</p>
+    /// <p>The unique identifier of the Cases domain. </p>
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the layout. It must be unique for the Cases domain.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -11,7 +11,7 @@ pub struct CreateLayoutInput {
     pub content: ::std::option::Option<crate::types::LayoutContent>,
 }
 impl CreateLayoutInput {
-    /// <p>The unique identifier of the Cases domain.</p>
+    /// <p>The unique identifier of the Cases domain. </p>
     pub fn domain_id(&self) -> ::std::option::Option<&str> {
         self.domain_id.as_deref()
     }
@@ -40,18 +40,18 @@ pub struct CreateLayoutInputBuilder {
     pub(crate) content: ::std::option::Option<crate::types::LayoutContent>,
 }
 impl CreateLayoutInputBuilder {
-    /// <p>The unique identifier of the Cases domain.</p>
+    /// <p>The unique identifier of the Cases domain. </p>
     /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the Cases domain.</p>
+    /// <p>The unique identifier of the Cases domain. </p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_id = input;
         self
     }
-    /// <p>The unique identifier of the Cases domain.</p>
+    /// <p>The unique identifier of the Cases domain. </p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_id
     }

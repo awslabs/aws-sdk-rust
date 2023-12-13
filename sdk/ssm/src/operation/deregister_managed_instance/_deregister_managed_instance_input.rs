@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeregisterManagedInstanceInput {
-    /// <p>The ID assigned to the managed node when you registered it using the activation process.</p>
+    /// <p>The ID assigned to the managed node when you registered it using the activation process. </p>
     pub instance_id: ::std::option::Option<::std::string::String>,
 }
 impl DeregisterManagedInstanceInput {
-    /// <p>The ID assigned to the managed node when you registered it using the activation process.</p>
+    /// <p>The ID assigned to the managed node when you registered it using the activation process. </p>
     pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct DeregisterManagedInstanceInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
 }
 impl DeregisterManagedInstanceInputBuilder {
-    /// <p>The ID assigned to the managed node when you registered it using the activation process.</p>
+    /// <p>The ID assigned to the managed node when you registered it using the activation process. </p>
     /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID assigned to the managed node when you registered it using the activation process.</p>
+    /// <p>The ID assigned to the managed node when you registered it using the activation process. </p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
     }
-    /// <p>The ID assigned to the managed node when you registered it using the activation process.</p>
+    /// <p>The ID assigned to the managed node when you registered it using the activation process. </p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_id
     }

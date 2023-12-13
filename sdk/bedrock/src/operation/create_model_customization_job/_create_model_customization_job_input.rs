@@ -7,7 +7,7 @@ pub struct CreateModelCustomizationJobInput {
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>Enter a name for the custom model.</p>
     pub custom_model_name: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Bedrock can assume to perform tasks on your behalf. For example, during model training, Amazon Bedrock needs your permission to read input data from an S3 bucket, write model artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Bedrock can assume to perform tasks on your behalf. For example, during model training, Amazon Bedrock needs your permission to read input data from an S3 bucket, write model artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller of this API must have the <code>iam:PassRole</code> permission. </p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Unique token value that you can provide. The GetModelCustomizationJob response includes the same token value.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
@@ -23,7 +23,7 @@ pub struct CreateModelCustomizationJobInput {
     pub custom_model_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Information about the training dataset.</p>
     pub training_data_config: ::std::option::Option<crate::types::TrainingDataConfig>,
-    /// <p>Information about the validation dataset.</p>
+    /// <p>Information about the validation dataset. </p>
     pub validation_data_config: ::std::option::Option<crate::types::ValidationDataConfig>,
     /// <p>S3 location for the output data.</p>
     pub output_data_config: ::std::option::Option<crate::types::OutputDataConfig>,
@@ -41,7 +41,7 @@ impl CreateModelCustomizationJobInput {
     pub fn custom_model_name(&self) -> ::std::option::Option<&str> {
         self.custom_model_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Bedrock can assume to perform tasks on your behalf. For example, during model training, Amazon Bedrock needs your permission to read input data from an S3 bucket, write model artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Bedrock can assume to perform tasks on your behalf. For example, during model training, Amazon Bedrock needs your permission to read input data from an S3 bucket, write model artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller of this API must have the <code>iam:PassRole</code> permission. </p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -77,7 +77,7 @@ impl CreateModelCustomizationJobInput {
     pub fn training_data_config(&self) -> ::std::option::Option<&crate::types::TrainingDataConfig> {
         self.training_data_config.as_ref()
     }
-    /// <p>Information about the validation dataset.</p>
+    /// <p>Information about the validation dataset. </p>
     pub fn validation_data_config(&self) -> ::std::option::Option<&crate::types::ValidationDataConfig> {
         self.validation_data_config.as_ref()
     }
@@ -151,18 +151,18 @@ impl CreateModelCustomizationJobInputBuilder {
     pub fn get_custom_model_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.custom_model_name
     }
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Bedrock can assume to perform tasks on your behalf. For example, during model training, Amazon Bedrock needs your permission to read input data from an S3 bucket, write model artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Bedrock can assume to perform tasks on your behalf. For example, during model training, Amazon Bedrock needs your permission to read input data from an S3 bucket, write model artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller of this API must have the <code>iam:PassRole</code> permission. </p>
     /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Bedrock can assume to perform tasks on your behalf. For example, during model training, Amazon Bedrock needs your permission to read input data from an S3 bucket, write model artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Bedrock can assume to perform tasks on your behalf. For example, during model training, Amazon Bedrock needs your permission to read input data from an S3 bucket, write model artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller of this API must have the <code>iam:PassRole</code> permission. </p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Bedrock can assume to perform tasks on your behalf. For example, during model training, Amazon Bedrock needs your permission to read input data from an S3 bucket, write model artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Bedrock can assume to perform tasks on your behalf. For example, during model training, Amazon Bedrock needs your permission to read input data from an S3 bucket, write model artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller of this API must have the <code>iam:PassRole</code> permission. </p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
@@ -278,17 +278,17 @@ impl CreateModelCustomizationJobInputBuilder {
     pub fn get_training_data_config(&self) -> &::std::option::Option<crate::types::TrainingDataConfig> {
         &self.training_data_config
     }
-    /// <p>Information about the validation dataset.</p>
+    /// <p>Information about the validation dataset. </p>
     pub fn validation_data_config(mut self, input: crate::types::ValidationDataConfig) -> Self {
         self.validation_data_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Information about the validation dataset.</p>
+    /// <p>Information about the validation dataset. </p>
     pub fn set_validation_data_config(mut self, input: ::std::option::Option<crate::types::ValidationDataConfig>) -> Self {
         self.validation_data_config = input;
         self
     }
-    /// <p>Information about the validation dataset.</p>
+    /// <p>Information about the validation dataset. </p>
     pub fn get_validation_data_config(&self) -> &::std::option::Option<crate::types::ValidationDataConfig> {
         &self.validation_data_config
     }

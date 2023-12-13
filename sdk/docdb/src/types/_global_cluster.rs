@@ -4,15 +4,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GlobalCluster {
-    /// <p>Contains a user-supplied global cluster identifier. This identifier is the unique key that identifies a global cluster.</p>
+    /// <p>Contains a user-supplied global cluster identifier. This identifier is the unique key that identifies a global cluster. </p>
     pub global_cluster_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Web Services Region-unique, immutable identifier for the global database cluster. This identifier is found in CloudTrail log entries whenever the KMS customer master key (CMK) for the cluster is accessed.</p>
+    /// <p>The Amazon Web Services Region-unique, immutable identifier for the global database cluster. This identifier is found in CloudTrail log entries whenever the KMS customer master key (CMK) for the cluster is accessed. </p>
     pub global_cluster_resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the global cluster.</p>
     pub global_cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the current state of this global cluster.</p>
     pub status: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon DocumentDB database engine used by the global cluster.</p>
+    /// <p>The Amazon DocumentDB database engine used by the global cluster. </p>
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the database engine version.</p>
     pub engine_version: ::std::option::Option<::std::string::String>,
@@ -22,15 +22,15 @@ pub struct GlobalCluster {
     pub storage_encrypted: ::std::option::Option<bool>,
     /// <p>The deletion protection setting for the new global cluster.</p>
     pub deletion_protection: ::std::option::Option<bool>,
-    /// <p>The list of cluster IDs for secondary clusters within the global cluster. Currently limited to one item.</p>
+    /// <p>The list of cluster IDs for secondary clusters within the global cluster. Currently limited to one item. </p>
     pub global_cluster_members: ::std::option::Option<::std::vec::Vec<crate::types::GlobalClusterMember>>,
 }
 impl GlobalCluster {
-    /// <p>Contains a user-supplied global cluster identifier. This identifier is the unique key that identifies a global cluster.</p>
+    /// <p>Contains a user-supplied global cluster identifier. This identifier is the unique key that identifies a global cluster. </p>
     pub fn global_cluster_identifier(&self) -> ::std::option::Option<&str> {
         self.global_cluster_identifier.as_deref()
     }
-    /// <p>The Amazon Web Services Region-unique, immutable identifier for the global database cluster. This identifier is found in CloudTrail log entries whenever the KMS customer master key (CMK) for the cluster is accessed.</p>
+    /// <p>The Amazon Web Services Region-unique, immutable identifier for the global database cluster. This identifier is found in CloudTrail log entries whenever the KMS customer master key (CMK) for the cluster is accessed. </p>
     pub fn global_cluster_resource_id(&self) -> ::std::option::Option<&str> {
         self.global_cluster_resource_id.as_deref()
     }
@@ -42,7 +42,7 @@ impl GlobalCluster {
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
-    /// <p>The Amazon DocumentDB database engine used by the global cluster.</p>
+    /// <p>The Amazon DocumentDB database engine used by the global cluster. </p>
     pub fn engine(&self) -> ::std::option::Option<&str> {
         self.engine.as_deref()
     }
@@ -62,7 +62,7 @@ impl GlobalCluster {
     pub fn deletion_protection(&self) -> ::std::option::Option<bool> {
         self.deletion_protection
     }
-    /// <p>The list of cluster IDs for secondary clusters within the global cluster. Currently limited to one item.</p>
+    /// <p>The list of cluster IDs for secondary clusters within the global cluster. Currently limited to one item. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.global_cluster_members.is_none()`.
     pub fn global_cluster_members(&self) -> &[crate::types::GlobalClusterMember] {
@@ -92,31 +92,31 @@ pub struct GlobalClusterBuilder {
     pub(crate) global_cluster_members: ::std::option::Option<::std::vec::Vec<crate::types::GlobalClusterMember>>,
 }
 impl GlobalClusterBuilder {
-    /// <p>Contains a user-supplied global cluster identifier. This identifier is the unique key that identifies a global cluster.</p>
+    /// <p>Contains a user-supplied global cluster identifier. This identifier is the unique key that identifies a global cluster. </p>
     pub fn global_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Contains a user-supplied global cluster identifier. This identifier is the unique key that identifies a global cluster.</p>
+    /// <p>Contains a user-supplied global cluster identifier. This identifier is the unique key that identifies a global cluster. </p>
     pub fn set_global_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.global_cluster_identifier = input;
         self
     }
-    /// <p>Contains a user-supplied global cluster identifier. This identifier is the unique key that identifies a global cluster.</p>
+    /// <p>Contains a user-supplied global cluster identifier. This identifier is the unique key that identifies a global cluster. </p>
     pub fn get_global_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.global_cluster_identifier
     }
-    /// <p>The Amazon Web Services Region-unique, immutable identifier for the global database cluster. This identifier is found in CloudTrail log entries whenever the KMS customer master key (CMK) for the cluster is accessed.</p>
+    /// <p>The Amazon Web Services Region-unique, immutable identifier for the global database cluster. This identifier is found in CloudTrail log entries whenever the KMS customer master key (CMK) for the cluster is accessed. </p>
     pub fn global_cluster_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_cluster_resource_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Web Services Region-unique, immutable identifier for the global database cluster. This identifier is found in CloudTrail log entries whenever the KMS customer master key (CMK) for the cluster is accessed.</p>
+    /// <p>The Amazon Web Services Region-unique, immutable identifier for the global database cluster. This identifier is found in CloudTrail log entries whenever the KMS customer master key (CMK) for the cluster is accessed. </p>
     pub fn set_global_cluster_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.global_cluster_resource_id = input;
         self
     }
-    /// <p>The Amazon Web Services Region-unique, immutable identifier for the global database cluster. This identifier is found in CloudTrail log entries whenever the KMS customer master key (CMK) for the cluster is accessed.</p>
+    /// <p>The Amazon Web Services Region-unique, immutable identifier for the global database cluster. This identifier is found in CloudTrail log entries whenever the KMS customer master key (CMK) for the cluster is accessed. </p>
     pub fn get_global_cluster_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.global_cluster_resource_id
     }
@@ -148,17 +148,17 @@ impl GlobalClusterBuilder {
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status
     }
-    /// <p>The Amazon DocumentDB database engine used by the global cluster.</p>
+    /// <p>The Amazon DocumentDB database engine used by the global cluster. </p>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon DocumentDB database engine used by the global cluster.</p>
+    /// <p>The Amazon DocumentDB database engine used by the global cluster. </p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine = input;
         self
     }
-    /// <p>The Amazon DocumentDB database engine used by the global cluster.</p>
+    /// <p>The Amazon DocumentDB database engine used by the global cluster. </p>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine
     }
@@ -222,19 +222,19 @@ impl GlobalClusterBuilder {
     ///
     /// To override the contents of this collection use [`set_global_cluster_members`](Self::set_global_cluster_members).
     ///
-    /// <p>The list of cluster IDs for secondary clusters within the global cluster. Currently limited to one item.</p>
+    /// <p>The list of cluster IDs for secondary clusters within the global cluster. Currently limited to one item. </p>
     pub fn global_cluster_members(mut self, input: crate::types::GlobalClusterMember) -> Self {
         let mut v = self.global_cluster_members.unwrap_or_default();
         v.push(input);
         self.global_cluster_members = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of cluster IDs for secondary clusters within the global cluster. Currently limited to one item.</p>
+    /// <p>The list of cluster IDs for secondary clusters within the global cluster. Currently limited to one item. </p>
     pub fn set_global_cluster_members(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GlobalClusterMember>>) -> Self {
         self.global_cluster_members = input;
         self
     }
-    /// <p>The list of cluster IDs for secondary clusters within the global cluster. Currently limited to one item.</p>
+    /// <p>The list of cluster IDs for secondary clusters within the global cluster. Currently limited to one item. </p>
     pub fn get_global_cluster_members(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GlobalClusterMember>> {
         &self.global_cluster_members
     }

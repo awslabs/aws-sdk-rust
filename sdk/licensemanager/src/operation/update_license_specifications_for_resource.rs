@@ -267,7 +267,7 @@ pub enum UpdateLicenseSpecificationsForResourceError {
     AuthorizationException(crate::types::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
-    /// <p>License Manager cannot allocate a license to a resource because of its state.</p>
+    /// <p>License Manager cannot allocate a license to a resource because of its state. </p>
     /// <p>For example, you cannot allocate a license to an instance in the process of shutting down.</p>
     InvalidResourceStateException(crate::types::error::InvalidResourceStateException),
     /// <p>You do not have enough licenses available to support a new resource launch.</p>

@@ -7,12 +7,9 @@ pub struct DescribeCustomerMetadataOutput {
     pub agreements: ::std::option::Option<::std::vec::Vec<crate::types::CustomerAgreement>>,
     /// <p>The type of network-to-network interface (NNI) partner. The partner type will be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>V1: This partner can only allocate 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps subgigabit connections.</p></li>
-    /// <li>
-    /// <p>V2: This partner can only allocate 1GB, 2GB, 5GB, or 10GB hosted connections.</p></li>
-    /// <li>
-    /// <p>nonPartner: The customer is not a partner.</p></li>
+    /// <li> <p>V1: This partner can only allocate 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps subgigabit connections.</p> </li>
+    /// <li> <p>V2: This partner can only allocate 1GB, 2GB, 5GB, or 10GB hosted connections.</p> </li>
+    /// <li> <p>nonPartner: The customer is not a partner.</p> </li>
     /// </ul>
     pub nni_partner_type: ::std::option::Option<crate::types::NniPartnerType>,
     _request_id: Option<String>,
@@ -26,12 +23,9 @@ impl DescribeCustomerMetadataOutput {
     }
     /// <p>The type of network-to-network interface (NNI) partner. The partner type will be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>V1: This partner can only allocate 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps subgigabit connections.</p></li>
-    /// <li>
-    /// <p>V2: This partner can only allocate 1GB, 2GB, 5GB, or 10GB hosted connections.</p></li>
-    /// <li>
-    /// <p>nonPartner: The customer is not a partner.</p></li>
+    /// <li> <p>V1: This partner can only allocate 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps subgigabit connections.</p> </li>
+    /// <li> <p>V2: This partner can only allocate 1GB, 2GB, 5GB, or 10GB hosted connections.</p> </li>
+    /// <li> <p>nonPartner: The customer is not a partner.</p> </li>
     /// </ul>
     pub fn nni_partner_type(&self) -> ::std::option::Option<&crate::types::NniPartnerType> {
         self.nni_partner_type.as_ref()
@@ -80,12 +74,9 @@ impl DescribeCustomerMetadataOutputBuilder {
     }
     /// <p>The type of network-to-network interface (NNI) partner. The partner type will be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>V1: This partner can only allocate 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps subgigabit connections.</p></li>
-    /// <li>
-    /// <p>V2: This partner can only allocate 1GB, 2GB, 5GB, or 10GB hosted connections.</p></li>
-    /// <li>
-    /// <p>nonPartner: The customer is not a partner.</p></li>
+    /// <li> <p>V1: This partner can only allocate 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps subgigabit connections.</p> </li>
+    /// <li> <p>V2: This partner can only allocate 1GB, 2GB, 5GB, or 10GB hosted connections.</p> </li>
+    /// <li> <p>nonPartner: The customer is not a partner.</p> </li>
     /// </ul>
     pub fn nni_partner_type(mut self, input: crate::types::NniPartnerType) -> Self {
         self.nni_partner_type = ::std::option::Option::Some(input);
@@ -93,12 +84,9 @@ impl DescribeCustomerMetadataOutputBuilder {
     }
     /// <p>The type of network-to-network interface (NNI) partner. The partner type will be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>V1: This partner can only allocate 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps subgigabit connections.</p></li>
-    /// <li>
-    /// <p>V2: This partner can only allocate 1GB, 2GB, 5GB, or 10GB hosted connections.</p></li>
-    /// <li>
-    /// <p>nonPartner: The customer is not a partner.</p></li>
+    /// <li> <p>V1: This partner can only allocate 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps subgigabit connections.</p> </li>
+    /// <li> <p>V2: This partner can only allocate 1GB, 2GB, 5GB, or 10GB hosted connections.</p> </li>
+    /// <li> <p>nonPartner: The customer is not a partner.</p> </li>
     /// </ul>
     pub fn set_nni_partner_type(mut self, input: ::std::option::Option<crate::types::NniPartnerType>) -> Self {
         self.nni_partner_type = input;
@@ -106,12 +94,9 @@ impl DescribeCustomerMetadataOutputBuilder {
     }
     /// <p>The type of network-to-network interface (NNI) partner. The partner type will be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>V1: This partner can only allocate 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps subgigabit connections.</p></li>
-    /// <li>
-    /// <p>V2: This partner can only allocate 1GB, 2GB, 5GB, or 10GB hosted connections.</p></li>
-    /// <li>
-    /// <p>nonPartner: The customer is not a partner.</p></li>
+    /// <li> <p>V1: This partner can only allocate 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps subgigabit connections.</p> </li>
+    /// <li> <p>V2: This partner can only allocate 1GB, 2GB, 5GB, or 10GB hosted connections.</p> </li>
+    /// <li> <p>nonPartner: The customer is not a partner.</p> </li>
     /// </ul>
     pub fn get_nni_partner_type(&self) -> &::std::option::Option<crate::types::NniPartnerType> {
         &self.nni_partner_type

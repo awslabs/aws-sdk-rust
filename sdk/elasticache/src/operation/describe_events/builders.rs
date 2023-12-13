@@ -144,36 +144,36 @@ impl DescribeEventsFluentBuilder {
         self.inner.get_source_type()
     }
     /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format.</p>
-    /// <p><b>Example:</b> 2017-03-30T07:03:49.555Z</p>
+    /// <p> <b>Example:</b> 2017-03-30T07:03:49.555Z</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_time(input);
         self
     }
     /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format.</p>
-    /// <p><b>Example:</b> 2017-03-30T07:03:49.555Z</p>
+    /// <p> <b>Example:</b> 2017-03-30T07:03:49.555Z</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
     /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format.</p>
-    /// <p><b>Example:</b> 2017-03-30T07:03:49.555Z</p>
+    /// <p> <b>Example:</b> 2017-03-30T07:03:49.555Z</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_start_time()
     }
     /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format.</p>
-    /// <p><b>Example:</b> 2017-03-30T07:03:49.555Z</p>
+    /// <p> <b>Example:</b> 2017-03-30T07:03:49.555Z</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.end_time(input);
         self
     }
     /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format.</p>
-    /// <p><b>Example:</b> 2017-03-30T07:03:49.555Z</p>
+    /// <p> <b>Example:</b> 2017-03-30T07:03:49.555Z</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }
     /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format.</p>
-    /// <p><b>Example:</b> 2017-03-30T07:03:49.555Z</p>
+    /// <p> <b>Example:</b> 2017-03-30T07:03:49.555Z</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_end_time()
     }

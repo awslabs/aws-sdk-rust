@@ -16,22 +16,16 @@ pub struct StackSetSummary {
     pub auto_deployment: ::std::option::Option<crate::types::AutoDeployment>,
     /// <p>Describes how the IAM roles required for stack set operations are created.</p>
     /// <ul>
-    /// <li>
-    /// <p>With <code>self-managed</code> permissions, you must create the administrator and execution roles required to deploy to target accounts. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant Self-Managed Stack Set Permissions</a>.</p></li>
-    /// <li>
-    /// <p>With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to deploy to accounts managed by Organizations. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant Service-Managed Stack Set Permissions</a>.</p></li>
+    /// <li> <p>With <code>self-managed</code> permissions, you must create the administrator and execution roles required to deploy to target accounts. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant Self-Managed Stack Set Permissions</a>.</p> </li>
+    /// <li> <p>With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to deploy to accounts managed by Organizations. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant Service-Managed Stack Set Permissions</a>.</p> </li>
     /// </ul>
     pub permission_model: ::std::option::Option<crate::types::PermissionModels>,
     /// <p>Status of the stack set's actual configuration compared to its expected template and parameter configuration. A stack set is considered to have drifted if one or more of its stack instances have drifted from their expected template and parameter configuration.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>DRIFTED</code>: One or more of the stack instances belonging to the stack set stack differs from the expected template and parameter configuration. A stack instance is considered to have drifted if one or more of the resources in the associated stack have drifted.</p></li>
-    /// <li>
-    /// <p><code>NOT_CHECKED</code>: CloudFormation hasn't checked the stack set for drift.</p></li>
-    /// <li>
-    /// <p><code>IN_SYNC</code>: All the stack instances belonging to the stack set stack match from the expected template and parameter configuration.</p></li>
-    /// <li>
-    /// <p><code>UNKNOWN</code>: This value is reserved for future use.</p></li>
+    /// <li> <p> <code>DRIFTED</code>: One or more of the stack instances belonging to the stack set stack differs from the expected template and parameter configuration. A stack instance is considered to have drifted if one or more of the resources in the associated stack have drifted.</p> </li>
+    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation hasn't checked the stack set for drift.</p> </li>
+    /// <li> <p> <code>IN_SYNC</code>: All the stack instances belonging to the stack set stack match from the expected template and parameter configuration.</p> </li>
+    /// <li> <p> <code>UNKNOWN</code>: This value is reserved for future use.</p> </li>
     /// </ul>
     pub drift_status: ::std::option::Option<crate::types::StackDriftStatus>,
     /// <p>Most recent time when CloudFormation performed a drift detection operation on the stack set. This value will be <code>NULL</code> for any stack set on which drift detection hasn't yet been performed.</p>
@@ -62,24 +56,18 @@ impl StackSetSummary {
     }
     /// <p>Describes how the IAM roles required for stack set operations are created.</p>
     /// <ul>
-    /// <li>
-    /// <p>With <code>self-managed</code> permissions, you must create the administrator and execution roles required to deploy to target accounts. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant Self-Managed Stack Set Permissions</a>.</p></li>
-    /// <li>
-    /// <p>With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to deploy to accounts managed by Organizations. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant Service-Managed Stack Set Permissions</a>.</p></li>
+    /// <li> <p>With <code>self-managed</code> permissions, you must create the administrator and execution roles required to deploy to target accounts. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant Self-Managed Stack Set Permissions</a>.</p> </li>
+    /// <li> <p>With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to deploy to accounts managed by Organizations. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant Service-Managed Stack Set Permissions</a>.</p> </li>
     /// </ul>
     pub fn permission_model(&self) -> ::std::option::Option<&crate::types::PermissionModels> {
         self.permission_model.as_ref()
     }
     /// <p>Status of the stack set's actual configuration compared to its expected template and parameter configuration. A stack set is considered to have drifted if one or more of its stack instances have drifted from their expected template and parameter configuration.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>DRIFTED</code>: One or more of the stack instances belonging to the stack set stack differs from the expected template and parameter configuration. A stack instance is considered to have drifted if one or more of the resources in the associated stack have drifted.</p></li>
-    /// <li>
-    /// <p><code>NOT_CHECKED</code>: CloudFormation hasn't checked the stack set for drift.</p></li>
-    /// <li>
-    /// <p><code>IN_SYNC</code>: All the stack instances belonging to the stack set stack match from the expected template and parameter configuration.</p></li>
-    /// <li>
-    /// <p><code>UNKNOWN</code>: This value is reserved for future use.</p></li>
+    /// <li> <p> <code>DRIFTED</code>: One or more of the stack instances belonging to the stack set stack differs from the expected template and parameter configuration. A stack instance is considered to have drifted if one or more of the resources in the associated stack have drifted.</p> </li>
+    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation hasn't checked the stack set for drift.</p> </li>
+    /// <li> <p> <code>IN_SYNC</code>: All the stack instances belonging to the stack set stack match from the expected template and parameter configuration.</p> </li>
+    /// <li> <p> <code>UNKNOWN</code>: This value is reserved for future use.</p> </li>
     /// </ul>
     pub fn drift_status(&self) -> ::std::option::Option<&crate::types::StackDriftStatus> {
         self.drift_status.as_ref()
@@ -187,10 +175,8 @@ impl StackSetSummaryBuilder {
     }
     /// <p>Describes how the IAM roles required for stack set operations are created.</p>
     /// <ul>
-    /// <li>
-    /// <p>With <code>self-managed</code> permissions, you must create the administrator and execution roles required to deploy to target accounts. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant Self-Managed Stack Set Permissions</a>.</p></li>
-    /// <li>
-    /// <p>With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to deploy to accounts managed by Organizations. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant Service-Managed Stack Set Permissions</a>.</p></li>
+    /// <li> <p>With <code>self-managed</code> permissions, you must create the administrator and execution roles required to deploy to target accounts. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant Self-Managed Stack Set Permissions</a>.</p> </li>
+    /// <li> <p>With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to deploy to accounts managed by Organizations. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant Service-Managed Stack Set Permissions</a>.</p> </li>
     /// </ul>
     pub fn permission_model(mut self, input: crate::types::PermissionModels) -> Self {
         self.permission_model = ::std::option::Option::Some(input);
@@ -198,10 +184,8 @@ impl StackSetSummaryBuilder {
     }
     /// <p>Describes how the IAM roles required for stack set operations are created.</p>
     /// <ul>
-    /// <li>
-    /// <p>With <code>self-managed</code> permissions, you must create the administrator and execution roles required to deploy to target accounts. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant Self-Managed Stack Set Permissions</a>.</p></li>
-    /// <li>
-    /// <p>With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to deploy to accounts managed by Organizations. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant Service-Managed Stack Set Permissions</a>.</p></li>
+    /// <li> <p>With <code>self-managed</code> permissions, you must create the administrator and execution roles required to deploy to target accounts. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant Self-Managed Stack Set Permissions</a>.</p> </li>
+    /// <li> <p>With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to deploy to accounts managed by Organizations. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant Service-Managed Stack Set Permissions</a>.</p> </li>
     /// </ul>
     pub fn set_permission_model(mut self, input: ::std::option::Option<crate::types::PermissionModels>) -> Self {
         self.permission_model = input;
@@ -209,24 +193,18 @@ impl StackSetSummaryBuilder {
     }
     /// <p>Describes how the IAM roles required for stack set operations are created.</p>
     /// <ul>
-    /// <li>
-    /// <p>With <code>self-managed</code> permissions, you must create the administrator and execution roles required to deploy to target accounts. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant Self-Managed Stack Set Permissions</a>.</p></li>
-    /// <li>
-    /// <p>With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to deploy to accounts managed by Organizations. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant Service-Managed Stack Set Permissions</a>.</p></li>
+    /// <li> <p>With <code>self-managed</code> permissions, you must create the administrator and execution roles required to deploy to target accounts. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant Self-Managed Stack Set Permissions</a>.</p> </li>
+    /// <li> <p>With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to deploy to accounts managed by Organizations. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant Service-Managed Stack Set Permissions</a>.</p> </li>
     /// </ul>
     pub fn get_permission_model(&self) -> &::std::option::Option<crate::types::PermissionModels> {
         &self.permission_model
     }
     /// <p>Status of the stack set's actual configuration compared to its expected template and parameter configuration. A stack set is considered to have drifted if one or more of its stack instances have drifted from their expected template and parameter configuration.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>DRIFTED</code>: One or more of the stack instances belonging to the stack set stack differs from the expected template and parameter configuration. A stack instance is considered to have drifted if one or more of the resources in the associated stack have drifted.</p></li>
-    /// <li>
-    /// <p><code>NOT_CHECKED</code>: CloudFormation hasn't checked the stack set for drift.</p></li>
-    /// <li>
-    /// <p><code>IN_SYNC</code>: All the stack instances belonging to the stack set stack match from the expected template and parameter configuration.</p></li>
-    /// <li>
-    /// <p><code>UNKNOWN</code>: This value is reserved for future use.</p></li>
+    /// <li> <p> <code>DRIFTED</code>: One or more of the stack instances belonging to the stack set stack differs from the expected template and parameter configuration. A stack instance is considered to have drifted if one or more of the resources in the associated stack have drifted.</p> </li>
+    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation hasn't checked the stack set for drift.</p> </li>
+    /// <li> <p> <code>IN_SYNC</code>: All the stack instances belonging to the stack set stack match from the expected template and parameter configuration.</p> </li>
+    /// <li> <p> <code>UNKNOWN</code>: This value is reserved for future use.</p> </li>
     /// </ul>
     pub fn drift_status(mut self, input: crate::types::StackDriftStatus) -> Self {
         self.drift_status = ::std::option::Option::Some(input);
@@ -234,14 +212,10 @@ impl StackSetSummaryBuilder {
     }
     /// <p>Status of the stack set's actual configuration compared to its expected template and parameter configuration. A stack set is considered to have drifted if one or more of its stack instances have drifted from their expected template and parameter configuration.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>DRIFTED</code>: One or more of the stack instances belonging to the stack set stack differs from the expected template and parameter configuration. A stack instance is considered to have drifted if one or more of the resources in the associated stack have drifted.</p></li>
-    /// <li>
-    /// <p><code>NOT_CHECKED</code>: CloudFormation hasn't checked the stack set for drift.</p></li>
-    /// <li>
-    /// <p><code>IN_SYNC</code>: All the stack instances belonging to the stack set stack match from the expected template and parameter configuration.</p></li>
-    /// <li>
-    /// <p><code>UNKNOWN</code>: This value is reserved for future use.</p></li>
+    /// <li> <p> <code>DRIFTED</code>: One or more of the stack instances belonging to the stack set stack differs from the expected template and parameter configuration. A stack instance is considered to have drifted if one or more of the resources in the associated stack have drifted.</p> </li>
+    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation hasn't checked the stack set for drift.</p> </li>
+    /// <li> <p> <code>IN_SYNC</code>: All the stack instances belonging to the stack set stack match from the expected template and parameter configuration.</p> </li>
+    /// <li> <p> <code>UNKNOWN</code>: This value is reserved for future use.</p> </li>
     /// </ul>
     pub fn set_drift_status(mut self, input: ::std::option::Option<crate::types::StackDriftStatus>) -> Self {
         self.drift_status = input;
@@ -249,14 +223,10 @@ impl StackSetSummaryBuilder {
     }
     /// <p>Status of the stack set's actual configuration compared to its expected template and parameter configuration. A stack set is considered to have drifted if one or more of its stack instances have drifted from their expected template and parameter configuration.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>DRIFTED</code>: One or more of the stack instances belonging to the stack set stack differs from the expected template and parameter configuration. A stack instance is considered to have drifted if one or more of the resources in the associated stack have drifted.</p></li>
-    /// <li>
-    /// <p><code>NOT_CHECKED</code>: CloudFormation hasn't checked the stack set for drift.</p></li>
-    /// <li>
-    /// <p><code>IN_SYNC</code>: All the stack instances belonging to the stack set stack match from the expected template and parameter configuration.</p></li>
-    /// <li>
-    /// <p><code>UNKNOWN</code>: This value is reserved for future use.</p></li>
+    /// <li> <p> <code>DRIFTED</code>: One or more of the stack instances belonging to the stack set stack differs from the expected template and parameter configuration. A stack instance is considered to have drifted if one or more of the resources in the associated stack have drifted.</p> </li>
+    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation hasn't checked the stack set for drift.</p> </li>
+    /// <li> <p> <code>IN_SYNC</code>: All the stack instances belonging to the stack set stack match from the expected template and parameter configuration.</p> </li>
+    /// <li> <p> <code>UNKNOWN</code>: This value is reserved for future use.</p> </li>
     /// </ul>
     pub fn get_drift_status(&self) -> &::std::option::Option<crate::types::StackDriftStatus> {
         &self.drift_status

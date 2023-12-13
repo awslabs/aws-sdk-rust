@@ -10,7 +10,7 @@ pub struct ActiveContext {
     /// <p>Indicates the number of turns or seconds that the context is active. Once the time to live expires, the context is no longer returned in a response.</p>
     pub time_to_live: ::std::option::Option<crate::types::ActiveContextTimeToLive>,
     /// <p>A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by including the context in the request.</p>
-    /// <p>If you don't specify a list of contexts, Amazon Lex V2 will use the current list of contexts for the session. If you specify an empty list, all contexts for the session are cleared.</p>
+    /// <p>If you don't specify a list of contexts, Amazon Lex V2 will use the current list of contexts for the session. If you specify an empty list, all contexts for the session are cleared. </p>
     pub context_attributes: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
 }
 impl ActiveContext {
@@ -24,7 +24,7 @@ impl ActiveContext {
         self.time_to_live.as_ref()
     }
     /// <p>A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by including the context in the request.</p>
-    /// <p>If you don't specify a list of contexts, Amazon Lex V2 will use the current list of contexts for the session. If you specify an empty list, all contexts for the session are cleared.</p>
+    /// <p>If you don't specify a list of contexts, Amazon Lex V2 will use the current list of contexts for the session. If you specify an empty list, all contexts for the session are cleared. </p>
     pub fn context_attributes(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
         &self.context_attributes
     }
@@ -80,7 +80,7 @@ impl ActiveContextBuilder {
     /// To override the contents of this collection use [`set_context_attributes`](Self::set_context_attributes).
     ///
     /// <p>A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by including the context in the request.</p>
-    /// <p>If you don't specify a list of contexts, Amazon Lex V2 will use the current list of contexts for the session. If you specify an empty list, all contexts for the session are cleared.</p>
+    /// <p>If you don't specify a list of contexts, Amazon Lex V2 will use the current list of contexts for the session. If you specify an empty list, all contexts for the session are cleared. </p>
     pub fn context_attributes(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -92,7 +92,7 @@ impl ActiveContextBuilder {
         self
     }
     /// <p>A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by including the context in the request.</p>
-    /// <p>If you don't specify a list of contexts, Amazon Lex V2 will use the current list of contexts for the session. If you specify an empty list, all contexts for the session are cleared.</p>
+    /// <p>If you don't specify a list of contexts, Amazon Lex V2 will use the current list of contexts for the session. If you specify an empty list, all contexts for the session are cleared. </p>
     pub fn set_context_attributes(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -101,7 +101,7 @@ impl ActiveContextBuilder {
         self
     }
     /// <p>A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by including the context in the request.</p>
-    /// <p>If you don't specify a list of contexts, Amazon Lex V2 will use the current list of contexts for the session. If you specify an empty list, all contexts for the session are cleared.</p>
+    /// <p>If you don't specify a list of contexts, Amazon Lex V2 will use the current list of contexts for the session. If you specify an empty list, all contexts for the session are cleared. </p>
     pub fn get_context_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.context_attributes
     }

@@ -6,12 +6,9 @@
 pub struct BucketPublicAccess {
     /// <p>Specifies whether the bucket is publicly accessible due to the combination of permissions settings that apply to the bucket. Possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>NOT_PUBLIC - The bucket isn't publicly accessible.</p></li>
-    /// <li>
-    /// <p>PUBLIC - The bucket is publicly accessible.</p></li>
-    /// <li>
-    /// <p>UNKNOWN - Amazon Macie can't determine whether the bucket is publicly accessible.</p></li>
+    /// <li><p>NOT_PUBLIC - The bucket isn't publicly accessible.</p></li>
+    /// <li><p>PUBLIC - The bucket is publicly accessible.</p></li>
+    /// <li><p>UNKNOWN - Amazon Macie can't determine whether the bucket is publicly accessible.</p></li>
     /// </ul>
     pub effective_permission: ::std::option::Option<crate::types::EffectivePermission>,
     /// <p>The account-level and bucket-level permissions settings for the bucket.</p>
@@ -20,12 +17,9 @@ pub struct BucketPublicAccess {
 impl BucketPublicAccess {
     /// <p>Specifies whether the bucket is publicly accessible due to the combination of permissions settings that apply to the bucket. Possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>NOT_PUBLIC - The bucket isn't publicly accessible.</p></li>
-    /// <li>
-    /// <p>PUBLIC - The bucket is publicly accessible.</p></li>
-    /// <li>
-    /// <p>UNKNOWN - Amazon Macie can't determine whether the bucket is publicly accessible.</p></li>
+    /// <li><p>NOT_PUBLIC - The bucket isn't publicly accessible.</p></li>
+    /// <li><p>PUBLIC - The bucket is publicly accessible.</p></li>
+    /// <li><p>UNKNOWN - Amazon Macie can't determine whether the bucket is publicly accessible.</p></li>
     /// </ul>
     pub fn effective_permission(&self) -> ::std::option::Option<&crate::types::EffectivePermission> {
         self.effective_permission.as_ref()
@@ -52,12 +46,9 @@ pub struct BucketPublicAccessBuilder {
 impl BucketPublicAccessBuilder {
     /// <p>Specifies whether the bucket is publicly accessible due to the combination of permissions settings that apply to the bucket. Possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>NOT_PUBLIC - The bucket isn't publicly accessible.</p></li>
-    /// <li>
-    /// <p>PUBLIC - The bucket is publicly accessible.</p></li>
-    /// <li>
-    /// <p>UNKNOWN - Amazon Macie can't determine whether the bucket is publicly accessible.</p></li>
+    /// <li><p>NOT_PUBLIC - The bucket isn't publicly accessible.</p></li>
+    /// <li><p>PUBLIC - The bucket is publicly accessible.</p></li>
+    /// <li><p>UNKNOWN - Amazon Macie can't determine whether the bucket is publicly accessible.</p></li>
     /// </ul>
     pub fn effective_permission(mut self, input: crate::types::EffectivePermission) -> Self {
         self.effective_permission = ::std::option::Option::Some(input);
@@ -65,12 +56,9 @@ impl BucketPublicAccessBuilder {
     }
     /// <p>Specifies whether the bucket is publicly accessible due to the combination of permissions settings that apply to the bucket. Possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>NOT_PUBLIC - The bucket isn't publicly accessible.</p></li>
-    /// <li>
-    /// <p>PUBLIC - The bucket is publicly accessible.</p></li>
-    /// <li>
-    /// <p>UNKNOWN - Amazon Macie can't determine whether the bucket is publicly accessible.</p></li>
+    /// <li><p>NOT_PUBLIC - The bucket isn't publicly accessible.</p></li>
+    /// <li><p>PUBLIC - The bucket is publicly accessible.</p></li>
+    /// <li><p>UNKNOWN - Amazon Macie can't determine whether the bucket is publicly accessible.</p></li>
     /// </ul>
     pub fn set_effective_permission(mut self, input: ::std::option::Option<crate::types::EffectivePermission>) -> Self {
         self.effective_permission = input;
@@ -78,12 +66,9 @@ impl BucketPublicAccessBuilder {
     }
     /// <p>Specifies whether the bucket is publicly accessible due to the combination of permissions settings that apply to the bucket. Possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>NOT_PUBLIC - The bucket isn't publicly accessible.</p></li>
-    /// <li>
-    /// <p>PUBLIC - The bucket is publicly accessible.</p></li>
-    /// <li>
-    /// <p>UNKNOWN - Amazon Macie can't determine whether the bucket is publicly accessible.</p></li>
+    /// <li><p>NOT_PUBLIC - The bucket isn't publicly accessible.</p></li>
+    /// <li><p>PUBLIC - The bucket is publicly accessible.</p></li>
+    /// <li><p>UNKNOWN - Amazon Macie can't determine whether the bucket is publicly accessible.</p></li>
     /// </ul>
     pub fn get_effective_permission(&self) -> &::std::option::Option<crate::types::EffectivePermission> {
         &self.effective_permission

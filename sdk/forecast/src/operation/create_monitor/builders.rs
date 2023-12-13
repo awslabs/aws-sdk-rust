@@ -22,7 +22,7 @@ impl CreateMonitorInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateMonitor`.
 ///
-/// <p>Creates a predictor monitor resource for an existing auto predictor. Predictor monitoring allows you to see how your predictor's performance changes over time. For more information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring.html">Predictor Monitoring</a>.</p>
+/// <p>Creates a predictor monitor resource for an existing auto predictor. Predictor monitoring allows you to see how your predictor's performance changes over time. For more information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring.html">Predictor Monitoring</a>. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateMonitorFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

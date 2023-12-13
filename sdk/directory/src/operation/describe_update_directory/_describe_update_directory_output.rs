@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeUpdateDirectoryOutput {
-    /// <p>The list of update activities on a directory for the requested update type.</p>
+    /// <p> The list of update activities on a directory for the requested update type. </p>
     pub update_activities: ::std::option::Option<::std::vec::Vec<crate::types::UpdateInfoEntry>>,
-    /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter.</p>
+    /// <p> If not null, more results are available. Pass this value for the <code>NextToken</code> parameter. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeUpdateDirectoryOutput {
-    /// <p>The list of update activities on a directory for the requested update type.</p>
+    /// <p> The list of update activities on a directory for the requested update type. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.update_activities.is_none()`.
     pub fn update_activities(&self) -> &[crate::types::UpdateInfoEntry] {
         self.update_activities.as_deref().unwrap_or_default()
     }
-    /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter.</p>
+    /// <p> If not null, more results are available. Pass this value for the <code>NextToken</code> parameter. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -46,33 +46,33 @@ impl DescribeUpdateDirectoryOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_update_activities`](Self::set_update_activities).
     ///
-    /// <p>The list of update activities on a directory for the requested update type.</p>
+    /// <p> The list of update activities on a directory for the requested update type. </p>
     pub fn update_activities(mut self, input: crate::types::UpdateInfoEntry) -> Self {
         let mut v = self.update_activities.unwrap_or_default();
         v.push(input);
         self.update_activities = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of update activities on a directory for the requested update type.</p>
+    /// <p> The list of update activities on a directory for the requested update type. </p>
     pub fn set_update_activities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateInfoEntry>>) -> Self {
         self.update_activities = input;
         self
     }
-    /// <p>The list of update activities on a directory for the requested update type.</p>
+    /// <p> The list of update activities on a directory for the requested update type. </p>
     pub fn get_update_activities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateInfoEntry>> {
         &self.update_activities
     }
-    /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter.</p>
+    /// <p> If not null, more results are available. Pass this value for the <code>NextToken</code> parameter. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter.</p>
+    /// <p> If not null, more results are available. Pass this value for the <code>NextToken</code> parameter. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter.</p>
+    /// <p> If not null, more results are available. Pass this value for the <code>NextToken</code> parameter. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

@@ -187,17 +187,17 @@ impl GetUnfilteredPartitionMetadataFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_supported_permission_types`](Self::set_supported_permission_types).
     ///
-    /// <p>(Required) A list of supported permission types.</p>
+    /// <p>(Required) A list of supported permission types. </p>
     pub fn supported_permission_types(mut self, input: crate::types::PermissionType) -> Self {
         self.inner = self.inner.supported_permission_types(input);
         self
     }
-    /// <p>(Required) A list of supported permission types.</p>
+    /// <p>(Required) A list of supported permission types. </p>
     pub fn set_supported_permission_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>) -> Self {
         self.inner = self.inner.set_supported_permission_types(input);
         self
     }
-    /// <p>(Required) A list of supported permission types.</p>
+    /// <p>(Required) A list of supported permission types. </p>
     pub fn get_supported_permission_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PermissionType>> {
         self.inner.get_supported_permission_types()
     }

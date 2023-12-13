@@ -8,7 +8,7 @@ pub struct DeleteDetectorRequest {
     pub message_id: ::std::string::String,
     /// <p>The name of the detector model that was used to create the detector instance.</p>
     pub detector_model_name: ::std::string::String,
-    /// <p>The value of the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateDetectorModel.html#iotevents-CreateDetectorModel-request-key">key</a> used to identify the detector.</p>
+    /// <p>The value of the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateDetectorModel.html#iotevents-CreateDetectorModel-request-key">key</a> used to identify the detector. </p>
     pub key_value: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDetectorRequest {
@@ -22,7 +22,7 @@ impl DeleteDetectorRequest {
         use std::ops::Deref;
         self.detector_model_name.deref()
     }
-    /// <p>The value of the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateDetectorModel.html#iotevents-CreateDetectorModel-request-key">key</a> used to identify the detector.</p>
+    /// <p>The value of the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateDetectorModel.html#iotevents-CreateDetectorModel-request-key">key</a> used to identify the detector. </p>
     pub fn key_value(&self) -> ::std::option::Option<&str> {
         self.key_value.as_deref()
     }
@@ -73,17 +73,17 @@ impl DeleteDetectorRequestBuilder {
     pub fn get_detector_model_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.detector_model_name
     }
-    /// <p>The value of the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateDetectorModel.html#iotevents-CreateDetectorModel-request-key">key</a> used to identify the detector.</p>
+    /// <p>The value of the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateDetectorModel.html#iotevents-CreateDetectorModel-request-key">key</a> used to identify the detector. </p>
     pub fn key_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_value = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The value of the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateDetectorModel.html#iotevents-CreateDetectorModel-request-key">key</a> used to identify the detector.</p>
+    /// <p>The value of the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateDetectorModel.html#iotevents-CreateDetectorModel-request-key">key</a> used to identify the detector. </p>
     pub fn set_key_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_value = input;
         self
     }
-    /// <p>The value of the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateDetectorModel.html#iotevents-CreateDetectorModel-request-key">key</a> used to identify the detector.</p>
+    /// <p>The value of the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateDetectorModel.html#iotevents-CreateDetectorModel-request-key">key</a> used to identify the detector. </p>
     pub fn get_key_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.key_value
     }

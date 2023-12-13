@@ -25,12 +25,9 @@ impl DescribeRecipeInputBuilder {
 /// <p>Describes a recipe.</p>
 /// <p>A recipe contains three items:</p>
 /// <ul>
-/// <li>
-/// <p>An algorithm that trains a model.</p></li>
-/// <li>
-/// <p>Hyperparameters that govern the training.</p></li>
-/// <li>
-/// <p>Feature transformation information for modifying the input data before training.</p></li>
+/// <li> <p>An algorithm that trains a model.</p> </li>
+/// <li> <p>Hyperparameters that govern the training.</p> </li>
+/// <li> <p>Feature transformation information for modifying the input data before training.</p> </li>
 /// </ul>
 /// <p>Amazon Personalize provides a set of predefined recipes. You specify a recipe when you create a solution with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a> API. <code>CreateSolution</code> trains a model by using the algorithm in the specified recipe and a training dataset. The solution, when deployed as a campaign, can provide recommendations using the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a> API.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

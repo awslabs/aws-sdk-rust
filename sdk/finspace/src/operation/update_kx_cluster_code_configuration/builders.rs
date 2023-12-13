@@ -22,7 +22,7 @@ impl UpdateKxClusterCodeConfigurationInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateKxClusterCodeConfiguration`.
 ///
-/// <p>Allows you to update code configuration on a running cluster. By using this API you can update the code, the initialization script path, and the command line arguments for a specific cluster. The configuration that you want to update will override any existing configurations on the cluster.</p>
+/// <p> Allows you to update code configuration on a running cluster. By using this API you can update the code, the initialization script path, and the command line arguments for a specific cluster. The configuration that you want to update will override any existing configurations on the cluster. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateKxClusterCodeConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl UpdateKxClusterCodeConfigurationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>A unique identifier of the kdb environment.</p>
+    /// <p> A unique identifier of the kdb environment. </p>
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_id(input.into());
         self
     }
-    /// <p>A unique identifier of the kdb environment.</p>
+    /// <p> A unique identifier of the kdb environment. </p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_id(input);
         self
     }
-    /// <p>A unique identifier of the kdb environment.</p>
+    /// <p> A unique identifier of the kdb environment. </p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_environment_id()
     }
@@ -202,17 +202,17 @@ impl UpdateKxClusterCodeConfigurationFluentBuilder {
     pub fn get_command_line_arguments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KxCommandLineArgument>> {
         self.inner.get_command_line_arguments()
     }
-    /// <p>The configuration that allows you to choose how you want to update the code on a cluster.</p>
+    /// <p> The configuration that allows you to choose how you want to update the code on a cluster. </p>
     pub fn deployment_configuration(mut self, input: crate::types::KxClusterCodeDeploymentConfiguration) -> Self {
         self.inner = self.inner.deployment_configuration(input);
         self
     }
-    /// <p>The configuration that allows you to choose how you want to update the code on a cluster.</p>
+    /// <p> The configuration that allows you to choose how you want to update the code on a cluster. </p>
     pub fn set_deployment_configuration(mut self, input: ::std::option::Option<crate::types::KxClusterCodeDeploymentConfiguration>) -> Self {
         self.inner = self.inner.set_deployment_configuration(input);
         self
     }
-    /// <p>The configuration that allows you to choose how you want to update the code on a cluster.</p>
+    /// <p> The configuration that allows you to choose how you want to update the code on a cluster. </p>
     pub fn get_deployment_configuration(&self) -> &::std::option::Option<crate::types::KxClusterCodeDeploymentConfiguration> {
         self.inner.get_deployment_configuration()
     }

@@ -5,7 +5,7 @@
 pub struct UpdateWorkloadInput {
     /// <p>The name of the resource group.</p>
     pub resource_group_name: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the component.</p>
+    /// <p> The name of the component. </p>
     pub component_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the workload.</p>
     pub workload_id: ::std::option::Option<::std::string::String>,
@@ -17,7 +17,7 @@ impl UpdateWorkloadInput {
     pub fn resource_group_name(&self) -> ::std::option::Option<&str> {
         self.resource_group_name.as_deref()
     }
-    /// <p>The name of the component.</p>
+    /// <p> The name of the component. </p>
     pub fn component_name(&self) -> ::std::option::Option<&str> {
         self.component_name.as_deref()
     }
@@ -62,18 +62,18 @@ impl UpdateWorkloadInputBuilder {
     pub fn get_resource_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_group_name
     }
-    /// <p>The name of the component.</p>
+    /// <p> The name of the component. </p>
     /// This field is required.
     pub fn component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the component.</p>
+    /// <p> The name of the component. </p>
     pub fn set_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.component_name = input;
         self
     }
-    /// <p>The name of the component.</p>
+    /// <p> The name of the component. </p>
     pub fn get_component_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.component_name
     }

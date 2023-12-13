@@ -5,7 +5,7 @@
 pub enum Error {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>Exception thrown as a result of concurrent modification to an application. For example, two individuals attempting to edit the same application at the same time.</p>
+    /// <p>Exception thrown as a result of concurrent modification to an application. For example, two individuals attempting to edit the same application at the same time. </p>
     ConcurrentModificationException(crate::types::error::ConcurrentModificationException),
     /// <p>The conditional check failed. Try again later.</p>
     ConditionalCheckFailedException(crate::types::error::ConditionalCheckFailedException),

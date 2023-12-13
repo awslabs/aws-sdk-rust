@@ -6,7 +6,7 @@
 pub struct ServiceResourceCost {
     /// <p>The type of the Amazon Web Services resource.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
-    /// <p>The state of the resource. The resource is <code>ACTIVE</code> if it produces metrics, events, or logs within an hour, otherwise it is <code>INACTIVE</code>. You pay for the number of active Amazon Web Services resource hours analyzed for each resource. Inactive resources are not charged.</p>
+    /// <p>The state of the resource. The resource is <code>ACTIVE</code> if it produces metrics, events, or logs within an hour, otherwise it is <code>INACTIVE</code>. You pay for the number of active Amazon Web Services resource hours analyzed for each resource. Inactive resources are not charged. </p>
     pub state: ::std::option::Option<crate::types::CostEstimationServiceResourceState>,
     /// <p>The number of active resources analyzed for this service to create a monthly cost estimate.</p>
     pub count: i32,
@@ -20,7 +20,7 @@ impl ServiceResourceCost {
     pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
-    /// <p>The state of the resource. The resource is <code>ACTIVE</code> if it produces metrics, events, or logs within an hour, otherwise it is <code>INACTIVE</code>. You pay for the number of active Amazon Web Services resource hours analyzed for each resource. Inactive resources are not charged.</p>
+    /// <p>The state of the resource. The resource is <code>ACTIVE</code> if it produces metrics, events, or logs within an hour, otherwise it is <code>INACTIVE</code>. You pay for the number of active Amazon Web Services resource hours analyzed for each resource. Inactive resources are not charged. </p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::CostEstimationServiceResourceState> {
         self.state.as_ref()
     }
@@ -69,17 +69,17 @@ impl ServiceResourceCostBuilder {
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.r#type
     }
-    /// <p>The state of the resource. The resource is <code>ACTIVE</code> if it produces metrics, events, or logs within an hour, otherwise it is <code>INACTIVE</code>. You pay for the number of active Amazon Web Services resource hours analyzed for each resource. Inactive resources are not charged.</p>
+    /// <p>The state of the resource. The resource is <code>ACTIVE</code> if it produces metrics, events, or logs within an hour, otherwise it is <code>INACTIVE</code>. You pay for the number of active Amazon Web Services resource hours analyzed for each resource. Inactive resources are not charged. </p>
     pub fn state(mut self, input: crate::types::CostEstimationServiceResourceState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The state of the resource. The resource is <code>ACTIVE</code> if it produces metrics, events, or logs within an hour, otherwise it is <code>INACTIVE</code>. You pay for the number of active Amazon Web Services resource hours analyzed for each resource. Inactive resources are not charged.</p>
+    /// <p>The state of the resource. The resource is <code>ACTIVE</code> if it produces metrics, events, or logs within an hour, otherwise it is <code>INACTIVE</code>. You pay for the number of active Amazon Web Services resource hours analyzed for each resource. Inactive resources are not charged. </p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::CostEstimationServiceResourceState>) -> Self {
         self.state = input;
         self
     }
-    /// <p>The state of the resource. The resource is <code>ACTIVE</code> if it produces metrics, events, or logs within an hour, otherwise it is <code>INACTIVE</code>. You pay for the number of active Amazon Web Services resource hours analyzed for each resource. Inactive resources are not charged.</p>
+    /// <p>The state of the resource. The resource is <code>ACTIVE</code> if it produces metrics, events, or logs within an hour, otherwise it is <code>INACTIVE</code>. You pay for the number of active Amazon Web Services resource hours analyzed for each resource. Inactive resources are not charged. </p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::CostEstimationServiceResourceState> {
         &self.state
     }

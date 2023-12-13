@@ -22,7 +22,7 @@ impl GetHostedZoneLimitInputBuilder {
 }
 /// Fluent builder constructing a request to `GetHostedZoneLimit`.
 ///
-/// <p>Gets the specified limit for a specified hosted zone, for example, the maximum number of records that you can create in the hosted zone.</p>
+/// <p>Gets the specified limit for a specified hosted zone, for example, the maximum number of records that you can create in the hosted zone. </p>
 /// <p>For the default limit, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a> in the <i>Amazon Route 53 Developer Guide</i>. To request a higher limit, <a href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-route53">open a case</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetHostedZoneLimitFluentBuilder {
@@ -111,10 +111,8 @@ impl GetHostedZoneLimitFluentBuilder {
     }
     /// <p>The limit that you want to get. Valid values include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><b>MAX_RRSETS_BY_ZONE</b>: The maximum number of records that you can create in the specified hosted zone.</p></li>
-    /// <li>
-    /// <p><b>MAX_VPCS_ASSOCIATED_BY_ZONE</b>: The maximum number of Amazon VPCs that you can associate with the specified private hosted zone.</p></li>
+    /// <li> <p> <b>MAX_RRSETS_BY_ZONE</b>: The maximum number of records that you can create in the specified hosted zone.</p> </li>
+    /// <li> <p> <b>MAX_VPCS_ASSOCIATED_BY_ZONE</b>: The maximum number of Amazon VPCs that you can associate with the specified private hosted zone.</p> </li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::HostedZoneLimitType) -> Self {
         self.inner = self.inner.r#type(input);
@@ -122,10 +120,8 @@ impl GetHostedZoneLimitFluentBuilder {
     }
     /// <p>The limit that you want to get. Valid values include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><b>MAX_RRSETS_BY_ZONE</b>: The maximum number of records that you can create in the specified hosted zone.</p></li>
-    /// <li>
-    /// <p><b>MAX_VPCS_ASSOCIATED_BY_ZONE</b>: The maximum number of Amazon VPCs that you can associate with the specified private hosted zone.</p></li>
+    /// <li> <p> <b>MAX_RRSETS_BY_ZONE</b>: The maximum number of records that you can create in the specified hosted zone.</p> </li>
+    /// <li> <p> <b>MAX_VPCS_ASSOCIATED_BY_ZONE</b>: The maximum number of Amazon VPCs that you can associate with the specified private hosted zone.</p> </li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::HostedZoneLimitType>) -> Self {
         self.inner = self.inner.set_type(input);
@@ -133,10 +129,8 @@ impl GetHostedZoneLimitFluentBuilder {
     }
     /// <p>The limit that you want to get. Valid values include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><b>MAX_RRSETS_BY_ZONE</b>: The maximum number of records that you can create in the specified hosted zone.</p></li>
-    /// <li>
-    /// <p><b>MAX_VPCS_ASSOCIATED_BY_ZONE</b>: The maximum number of Amazon VPCs that you can associate with the specified private hosted zone.</p></li>
+    /// <li> <p> <b>MAX_RRSETS_BY_ZONE</b>: The maximum number of records that you can create in the specified hosted zone.</p> </li>
+    /// <li> <p> <b>MAX_VPCS_ASSOCIATED_BY_ZONE</b>: The maximum number of Amazon VPCs that you can associate with the specified private hosted zone.</p> </li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::HostedZoneLimitType> {
         self.inner.get_type()

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetOutpostInstanceTypesInput {
-    /// <p>The ID or the Amazon Resource Name (ARN) of the Outpost.</p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
     pub outpost_id: ::std::option::Option<::std::string::String>,
     /// <p>The pagination token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -11,7 +11,7 @@ pub struct GetOutpostInstanceTypesInput {
     pub max_results: ::std::option::Option<i32>,
 }
 impl GetOutpostInstanceTypesInput {
-    /// <p>The ID or the Amazon Resource Name (ARN) of the Outpost.</p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
     pub fn outpost_id(&self) -> ::std::option::Option<&str> {
         self.outpost_id.as_deref()
     }
@@ -40,18 +40,18 @@ pub struct GetOutpostInstanceTypesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl GetOutpostInstanceTypesInputBuilder {
-    /// <p>The ID or the Amazon Resource Name (ARN) of the Outpost.</p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
     /// This field is required.
     pub fn outpost_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outpost_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID or the Amazon Resource Name (ARN) of the Outpost.</p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
     pub fn set_outpost_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outpost_id = input;
         self
     }
-    /// <p>The ID or the Amazon Resource Name (ARN) of the Outpost.</p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
     pub fn get_outpost_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.outpost_id
     }

@@ -6,7 +6,7 @@
 pub struct LineItemGroup {
     /// <p>The number used to identify a specific table in a document. The first table encountered will have a LineItemGroupIndex of 1, the second 2, etc.</p>
     pub line_item_group_index: ::std::option::Option<i32>,
-    /// <p>The breakdown of information on a particular line of a table.</p>
+    /// <p>The breakdown of information on a particular line of a table. </p>
     pub line_items: ::std::option::Option<::std::vec::Vec<crate::types::LineItemFields>>,
 }
 impl LineItemGroup {
@@ -14,7 +14,7 @@ impl LineItemGroup {
     pub fn line_item_group_index(&self) -> ::std::option::Option<i32> {
         self.line_item_group_index
     }
-    /// <p>The breakdown of information on a particular line of a table.</p>
+    /// <p>The breakdown of information on a particular line of a table. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.line_items.is_none()`.
     pub fn line_items(&self) -> &[crate::types::LineItemFields] {
@@ -54,19 +54,19 @@ impl LineItemGroupBuilder {
     ///
     /// To override the contents of this collection use [`set_line_items`](Self::set_line_items).
     ///
-    /// <p>The breakdown of information on a particular line of a table.</p>
+    /// <p>The breakdown of information on a particular line of a table. </p>
     pub fn line_items(mut self, input: crate::types::LineItemFields) -> Self {
         let mut v = self.line_items.unwrap_or_default();
         v.push(input);
         self.line_items = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The breakdown of information on a particular line of a table.</p>
+    /// <p>The breakdown of information on a particular line of a table. </p>
     pub fn set_line_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LineItemFields>>) -> Self {
         self.line_items = input;
         self
     }
-    /// <p>The breakdown of information on a particular line of a table.</p>
+    /// <p>The breakdown of information on a particular line of a table. </p>
     pub fn get_line_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LineItemFields>> {
         &self.line_items
     }

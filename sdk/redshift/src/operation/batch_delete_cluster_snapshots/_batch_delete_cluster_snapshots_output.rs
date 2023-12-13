@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDeleteClusterSnapshotsOutput {
-    /// <p>A list of the snapshot identifiers that were deleted.</p>
+    /// <p>A list of the snapshot identifiers that were deleted. </p>
     pub resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of any errors returned.</p>
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotErrorMessage>>,
     _request_id: Option<String>,
 }
 impl BatchDeleteClusterSnapshotsOutput {
-    /// <p>A list of the snapshot identifiers that were deleted.</p>
+    /// <p>A list of the snapshot identifiers that were deleted. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources.is_none()`.
     pub fn resources(&self) -> &[::std::string::String] {
@@ -48,19 +48,19 @@ impl BatchDeleteClusterSnapshotsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_resources`](Self::set_resources).
     ///
-    /// <p>A list of the snapshot identifiers that were deleted.</p>
+    /// <p>A list of the snapshot identifiers that were deleted. </p>
     pub fn resources(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resources.unwrap_or_default();
         v.push(input.into());
         self.resources = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of the snapshot identifiers that were deleted.</p>
+    /// <p>A list of the snapshot identifiers that were deleted. </p>
     pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resources = input;
         self
     }
-    /// <p>A list of the snapshot identifiers that were deleted.</p>
+    /// <p>A list of the snapshot identifiers that were deleted. </p>
     pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.resources
     }

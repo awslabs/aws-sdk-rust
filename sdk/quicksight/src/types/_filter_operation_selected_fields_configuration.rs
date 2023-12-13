@@ -10,8 +10,7 @@ pub struct FilterOperationSelectedFieldsConfiguration {
     /// <p>A structure that contains the options that choose which fields are filtered in the <code>CustomActionFilterOperation</code>.</p>
     /// <p>Valid values are defined as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ALL_FIELDS</code>: Applies the filter operation to all fields.</p></li>
+    /// <li> <p> <code>ALL_FIELDS</code>: Applies the filter operation to all fields.</p> </li>
     /// </ul>
     pub selected_field_options: ::std::option::Option<crate::types::SelectedFieldOptions>,
     /// <p>The selected columns of a dataset.</p>
@@ -27,8 +26,7 @@ impl FilterOperationSelectedFieldsConfiguration {
     /// <p>A structure that contains the options that choose which fields are filtered in the <code>CustomActionFilterOperation</code>.</p>
     /// <p>Valid values are defined as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ALL_FIELDS</code>: Applies the filter operation to all fields.</p></li>
+    /// <li> <p> <code>ALL_FIELDS</code>: Applies the filter operation to all fields.</p> </li>
     /// </ul>
     pub fn selected_field_options(&self) -> ::std::option::Option<&crate::types::SelectedFieldOptions> {
         self.selected_field_options.as_ref()
@@ -79,8 +77,7 @@ impl FilterOperationSelectedFieldsConfigurationBuilder {
     /// <p>A structure that contains the options that choose which fields are filtered in the <code>CustomActionFilterOperation</code>.</p>
     /// <p>Valid values are defined as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ALL_FIELDS</code>: Applies the filter operation to all fields.</p></li>
+    /// <li> <p> <code>ALL_FIELDS</code>: Applies the filter operation to all fields.</p> </li>
     /// </ul>
     pub fn selected_field_options(mut self, input: crate::types::SelectedFieldOptions) -> Self {
         self.selected_field_options = ::std::option::Option::Some(input);
@@ -89,8 +86,7 @@ impl FilterOperationSelectedFieldsConfigurationBuilder {
     /// <p>A structure that contains the options that choose which fields are filtered in the <code>CustomActionFilterOperation</code>.</p>
     /// <p>Valid values are defined as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ALL_FIELDS</code>: Applies the filter operation to all fields.</p></li>
+    /// <li> <p> <code>ALL_FIELDS</code>: Applies the filter operation to all fields.</p> </li>
     /// </ul>
     pub fn set_selected_field_options(mut self, input: ::std::option::Option<crate::types::SelectedFieldOptions>) -> Self {
         self.selected_field_options = input;
@@ -99,8 +95,7 @@ impl FilterOperationSelectedFieldsConfigurationBuilder {
     /// <p>A structure that contains the options that choose which fields are filtered in the <code>CustomActionFilterOperation</code>.</p>
     /// <p>Valid values are defined as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ALL_FIELDS</code>: Applies the filter operation to all fields.</p></li>
+    /// <li> <p> <code>ALL_FIELDS</code>: Applies the filter operation to all fields.</p> </li>
     /// </ul>
     pub fn get_selected_field_options(&self) -> &::std::option::Option<crate::types::SelectedFieldOptions> {
         &self.selected_field_options

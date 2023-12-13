@@ -30,8 +30,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = { version = "1.1.0", features = ["behavior-version-latest"] }
-aws-sdk-storagegateway = "1.5.0"
+aws-config = { version = "1.0.3", features = ["behavior-version-latest"] }
+aws-sdk-storagegateway = "1.6.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

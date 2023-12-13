@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateVehicleFleetInput {
-    /// <p>The unique ID of the vehicle to associate with the fleet.</p>
+    /// <p> The unique ID of the vehicle to associate with the fleet. </p>
     pub vehicle_name: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of a fleet.</p>
+    /// <p> The ID of a fleet. </p>
     pub fleet_id: ::std::option::Option<::std::string::String>,
 }
 impl AssociateVehicleFleetInput {
-    /// <p>The unique ID of the vehicle to associate with the fleet.</p>
+    /// <p> The unique ID of the vehicle to associate with the fleet. </p>
     pub fn vehicle_name(&self) -> ::std::option::Option<&str> {
         self.vehicle_name.as_deref()
     }
-    /// <p>The ID of a fleet.</p>
+    /// <p> The ID of a fleet. </p>
     pub fn fleet_id(&self) -> ::std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
@@ -33,33 +33,33 @@ pub struct AssociateVehicleFleetInputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
 }
 impl AssociateVehicleFleetInputBuilder {
-    /// <p>The unique ID of the vehicle to associate with the fleet.</p>
+    /// <p> The unique ID of the vehicle to associate with the fleet. </p>
     /// This field is required.
     pub fn vehicle_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vehicle_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique ID of the vehicle to associate with the fleet.</p>
+    /// <p> The unique ID of the vehicle to associate with the fleet. </p>
     pub fn set_vehicle_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vehicle_name = input;
         self
     }
-    /// <p>The unique ID of the vehicle to associate with the fleet.</p>
+    /// <p> The unique ID of the vehicle to associate with the fleet. </p>
     pub fn get_vehicle_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.vehicle_name
     }
-    /// <p>The ID of a fleet.</p>
+    /// <p> The ID of a fleet. </p>
     /// This field is required.
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of a fleet.</p>
+    /// <p> The ID of a fleet. </p>
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fleet_id = input;
         self
     }
-    /// <p>The ID of a fleet.</p>
+    /// <p> The ID of a fleet. </p>
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.fleet_id
     }

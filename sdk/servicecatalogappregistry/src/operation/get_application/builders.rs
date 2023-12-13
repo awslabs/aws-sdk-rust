@@ -22,7 +22,7 @@ impl GetApplicationInputBuilder {
 }
 /// Fluent builder constructing a request to `GetApplication`.
 ///
-/// <p>Retrieves metadata information about one of your applications. The application can be specified by its ARN, ID, or name (which is unique within one account in one region at a given point in time). Specify by ARN or ID in automated workflows if you want to make sure that the exact same application is returned or a <code>ResourceNotFoundException</code> is thrown, avoiding the ABA addressing problem.</p>
+/// <p> Retrieves metadata information about one of your applications. The application can be specified by its ARN, ID, or name (which is unique within one account in one region at a given point in time). Specify by ARN or ID in automated workflows if you want to make sure that the exact same application is returned or a <code>ResourceNotFoundException</code> is thrown, avoiding the ABA addressing problem. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetApplicationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl GetApplicationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name, ID, or ARN of the application.</p>
+    /// <p> The name, ID, or ARN of the application. </p>
     pub fn application(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application(input.into());
         self
     }
-    /// <p>The name, ID, or ARN of the application.</p>
+    /// <p> The name, ID, or ARN of the application. </p>
     pub fn set_application(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application(input);
         self
     }
-    /// <p>The name, ID, or ARN of the application.</p>
+    /// <p> The name, ID, or ARN of the application. </p>
     pub fn get_application(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application()
     }

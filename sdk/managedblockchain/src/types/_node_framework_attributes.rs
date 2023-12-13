@@ -6,7 +6,7 @@
 pub struct NodeFrameworkAttributes {
     /// <p>Attributes of Hyperledger Fabric for a peer node on a Managed Blockchain network that uses Hyperledger Fabric.</p>
     pub fabric: ::std::option::Option<crate::types::NodeFabricAttributes>,
-    /// <p>Attributes of Ethereum for a node on a Managed Blockchain network that uses Ethereum.</p>
+    /// <p>Attributes of Ethereum for a node on a Managed Blockchain network that uses Ethereum. </p>
     pub ethereum: ::std::option::Option<crate::types::NodeEthereumAttributes>,
 }
 impl NodeFrameworkAttributes {
@@ -14,7 +14,7 @@ impl NodeFrameworkAttributes {
     pub fn fabric(&self) -> ::std::option::Option<&crate::types::NodeFabricAttributes> {
         self.fabric.as_ref()
     }
-    /// <p>Attributes of Ethereum for a node on a Managed Blockchain network that uses Ethereum.</p>
+    /// <p>Attributes of Ethereum for a node on a Managed Blockchain network that uses Ethereum. </p>
     pub fn ethereum(&self) -> ::std::option::Option<&crate::types::NodeEthereumAttributes> {
         self.ethereum.as_ref()
     }
@@ -48,17 +48,17 @@ impl NodeFrameworkAttributesBuilder {
     pub fn get_fabric(&self) -> &::std::option::Option<crate::types::NodeFabricAttributes> {
         &self.fabric
     }
-    /// <p>Attributes of Ethereum for a node on a Managed Blockchain network that uses Ethereum.</p>
+    /// <p>Attributes of Ethereum for a node on a Managed Blockchain network that uses Ethereum. </p>
     pub fn ethereum(mut self, input: crate::types::NodeEthereumAttributes) -> Self {
         self.ethereum = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Attributes of Ethereum for a node on a Managed Blockchain network that uses Ethereum.</p>
+    /// <p>Attributes of Ethereum for a node on a Managed Blockchain network that uses Ethereum. </p>
     pub fn set_ethereum(mut self, input: ::std::option::Option<crate::types::NodeEthereumAttributes>) -> Self {
         self.ethereum = input;
         self
     }
-    /// <p>Attributes of Ethereum for a node on a Managed Blockchain network that uses Ethereum.</p>
+    /// <p>Attributes of Ethereum for a node on a Managed Blockchain network that uses Ethereum. </p>
     pub fn get_ethereum(&self) -> &::std::option::Option<crate::types::NodeEthereumAttributes> {
         &self.ethereum
     }

@@ -22,7 +22,7 @@ impl ListAnomalousLogGroupsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListAnomalousLogGroups`.
 ///
-/// <p>Returns the list of log groups that contain log anomalies.</p>
+/// <p> Returns the list of log groups that contain log anomalies. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAnomalousLogGroupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,17 +114,17 @@ impl ListAnomalousLogGroupsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_anomalous_log_groups::paginator::ListAnomalousLogGroupsPaginator {
         crate::operation::list_anomalous_log_groups::paginator::ListAnomalousLogGroupsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The ID of the insight containing the log groups.</p>
+    /// <p> The ID of the insight containing the log groups. </p>
     pub fn insight_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.insight_id(input.into());
         self
     }
-    /// <p>The ID of the insight containing the log groups.</p>
+    /// <p> The ID of the insight containing the log groups. </p>
     pub fn set_insight_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_insight_id(input);
         self
     }
-    /// <p>The ID of the insight containing the log groups.</p>
+    /// <p> The ID of the insight containing the log groups. </p>
     pub fn get_insight_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_insight_id()
     }

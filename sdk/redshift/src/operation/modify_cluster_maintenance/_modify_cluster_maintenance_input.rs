@@ -5,7 +5,7 @@
 pub struct ModifyClusterMaintenanceInput {
     /// <p>A unique identifier for the cluster.</p>
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>A boolean indicating whether to enable the deferred maintenance window.</p>
+    /// <p>A boolean indicating whether to enable the deferred maintenance window. </p>
     pub defer_maintenance: ::std::option::Option<bool>,
     /// <p>A unique identifier for the deferred maintenance window.</p>
     pub defer_maintenance_identifier: ::std::option::Option<::std::string::String>,
@@ -21,7 +21,7 @@ impl ModifyClusterMaintenanceInput {
     pub fn cluster_identifier(&self) -> ::std::option::Option<&str> {
         self.cluster_identifier.as_deref()
     }
-    /// <p>A boolean indicating whether to enable the deferred maintenance window.</p>
+    /// <p>A boolean indicating whether to enable the deferred maintenance window. </p>
     pub fn defer_maintenance(&self) -> ::std::option::Option<bool> {
         self.defer_maintenance
     }
@@ -76,17 +76,17 @@ impl ModifyClusterMaintenanceInputBuilder {
     pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_identifier
     }
-    /// <p>A boolean indicating whether to enable the deferred maintenance window.</p>
+    /// <p>A boolean indicating whether to enable the deferred maintenance window. </p>
     pub fn defer_maintenance(mut self, input: bool) -> Self {
         self.defer_maintenance = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A boolean indicating whether to enable the deferred maintenance window.</p>
+    /// <p>A boolean indicating whether to enable the deferred maintenance window. </p>
     pub fn set_defer_maintenance(mut self, input: ::std::option::Option<bool>) -> Self {
         self.defer_maintenance = input;
         self
     }
-    /// <p>A boolean indicating whether to enable the deferred maintenance window.</p>
+    /// <p>A boolean indicating whether to enable the deferred maintenance window. </p>
     pub fn get_defer_maintenance(&self) -> &::std::option::Option<bool> {
         &self.defer_maintenance
     }

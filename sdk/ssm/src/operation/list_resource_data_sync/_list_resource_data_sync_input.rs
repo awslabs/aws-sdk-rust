@@ -5,7 +5,7 @@
 pub struct ListResourceDataSyncInput {
     /// <p>View a list of resource data syncs according to the sync type. Specify <code>SyncToDestination</code> to view resource data syncs that synchronize data to an Amazon S3 bucket. Specify <code>SyncFromSource</code> to view resource data syncs from Organizations or from multiple Amazon Web Services Regions.</p>
     pub sync_type: ::std::option::Option<::std::string::String>,
-    /// <p>A token to start the list. Use this token to get the next set of results.</p>
+    /// <p>A token to start the list. Use this token to get the next set of results. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -15,7 +15,7 @@ impl ListResourceDataSyncInput {
     pub fn sync_type(&self) -> ::std::option::Option<&str> {
         self.sync_type.as_deref()
     }
-    /// <p>A token to start the list. Use this token to get the next set of results.</p>
+    /// <p>A token to start the list. Use this token to get the next set of results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -54,17 +54,17 @@ impl ListResourceDataSyncInputBuilder {
     pub fn get_sync_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.sync_type
     }
-    /// <p>A token to start the list. Use this token to get the next set of results.</p>
+    /// <p>A token to start the list. Use this token to get the next set of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A token to start the list. Use this token to get the next set of results.</p>
+    /// <p>A token to start the list. Use this token to get the next set of results. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>A token to start the list. Use this token to get the next set of results.</p>
+    /// <p>A token to start the list. Use this token to get the next set of results. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

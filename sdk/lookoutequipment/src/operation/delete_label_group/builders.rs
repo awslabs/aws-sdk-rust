@@ -22,7 +22,7 @@ impl DeleteLabelGroupInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteLabelGroup`.
 ///
-/// <p>Deletes a group of labels.</p>
+/// <p> Deletes a group of labels. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteLabelGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DeleteLabelGroupFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the label group that you want to delete. Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
+    /// <p> The name of the label group that you want to delete. Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
     pub fn label_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.label_group_name(input.into());
         self
     }
-    /// <p>The name of the label group that you want to delete. Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
+    /// <p> The name of the label group that you want to delete. Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
     pub fn set_label_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_label_group_name(input);
         self
     }
-    /// <p>The name of the label group that you want to delete. Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
+    /// <p> The name of the label group that you want to delete. Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
     pub fn get_label_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_label_group_name()
     }

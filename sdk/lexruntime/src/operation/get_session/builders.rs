@@ -136,33 +136,33 @@ impl GetSessionFluentBuilder {
     pub fn get_bot_alias(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_bot_alias()
     }
-    /// <p>The ID of the client application user. Amazon Lex uses this to identify a user's conversation with your bot.</p>
+    /// <p>The ID of the client application user. Amazon Lex uses this to identify a user's conversation with your bot. </p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_id(input.into());
         self
     }
-    /// <p>The ID of the client application user. Amazon Lex uses this to identify a user's conversation with your bot.</p>
+    /// <p>The ID of the client application user. Amazon Lex uses this to identify a user's conversation with your bot. </p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_id(input);
         self
     }
-    /// <p>The ID of the client application user. Amazon Lex uses this to identify a user's conversation with your bot.</p>
+    /// <p>The ID of the client application user. Amazon Lex uses this to identify a user's conversation with your bot. </p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_id()
     }
-    /// <p>A string used to filter the intents returned in the <code>recentIntentSummaryView</code> structure.</p>
+    /// <p>A string used to filter the intents returned in the <code>recentIntentSummaryView</code> structure. </p>
     /// <p>When you specify a filter, only intents with their <code>checkpointLabel</code> field set to that string are returned.</p>
     pub fn checkpoint_label_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.checkpoint_label_filter(input.into());
         self
     }
-    /// <p>A string used to filter the intents returned in the <code>recentIntentSummaryView</code> structure.</p>
+    /// <p>A string used to filter the intents returned in the <code>recentIntentSummaryView</code> structure. </p>
     /// <p>When you specify a filter, only intents with their <code>checkpointLabel</code> field set to that string are returned.</p>
     pub fn set_checkpoint_label_filter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_checkpoint_label_filter(input);
         self
     }
-    /// <p>A string used to filter the intents returned in the <code>recentIntentSummaryView</code> structure.</p>
+    /// <p>A string used to filter the intents returned in the <code>recentIntentSummaryView</code> structure. </p>
     /// <p>When you specify a filter, only intents with their <code>checkpointLabel</code> field set to that string are returned.</p>
     pub fn get_checkpoint_label_filter(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_checkpoint_label_filter()

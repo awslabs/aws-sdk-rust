@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAssessmentFrameworkOutput {
-    /// <p>The name of the new framework that the <code>CreateAssessmentFramework</code> API returned.</p>
+    /// <p> The name of the new framework that the <code>CreateAssessmentFramework</code> API returned. </p>
     pub framework: ::std::option::Option<crate::types::Framework>,
     _request_id: Option<String>,
 }
 impl CreateAssessmentFrameworkOutput {
-    /// <p>The name of the new framework that the <code>CreateAssessmentFramework</code> API returned.</p>
+    /// <p> The name of the new framework that the <code>CreateAssessmentFramework</code> API returned. </p>
     pub fn framework(&self) -> ::std::option::Option<&crate::types::Framework> {
         self.framework.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct CreateAssessmentFrameworkOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateAssessmentFrameworkOutputBuilder {
-    /// <p>The name of the new framework that the <code>CreateAssessmentFramework</code> API returned.</p>
+    /// <p> The name of the new framework that the <code>CreateAssessmentFramework</code> API returned. </p>
     pub fn framework(mut self, input: crate::types::Framework) -> Self {
         self.framework = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The name of the new framework that the <code>CreateAssessmentFramework</code> API returned.</p>
+    /// <p> The name of the new framework that the <code>CreateAssessmentFramework</code> API returned. </p>
     pub fn set_framework(mut self, input: ::std::option::Option<crate::types::Framework>) -> Self {
         self.framework = input;
         self
     }
-    /// <p>The name of the new framework that the <code>CreateAssessmentFramework</code> API returned.</p>
+    /// <p> The name of the new framework that the <code>CreateAssessmentFramework</code> API returned. </p>
     pub fn get_framework(&self) -> &::std::option::Option<crate::types::Framework> {
         &self.framework
     }

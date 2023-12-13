@@ -198,17 +198,17 @@ impl ListProblemsFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>The name of the component.</p>
+    /// <p> The name of the component. </p>
     pub fn component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.component_name(input.into());
         self
     }
-    /// <p>The name of the component.</p>
+    /// <p> The name of the component. </p>
     pub fn set_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_component_name(input);
         self
     }
-    /// <p>The name of the component.</p>
+    /// <p> The name of the component. </p>
     pub fn get_component_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_component_name()
     }

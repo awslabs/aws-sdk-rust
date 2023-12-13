@@ -257,7 +257,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateMainten
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreateMaintenanceWindowError {
-    /// <p>Error returned when an idempotent operation is retried and the parameters don't match the original call to the API with the same idempotency token.</p>
+    /// <p>Error returned when an idempotent operation is retried and the parameters don't match the original call to the API with the same idempotency token. </p>
     IdempotentParameterMismatch(crate::types::error::IdempotentParameterMismatch),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::types::error::InternalServerError),

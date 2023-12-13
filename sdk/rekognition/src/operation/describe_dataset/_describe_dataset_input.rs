@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDatasetInput {
-    /// <p>The Amazon Resource Name (ARN) of the dataset that you want to describe.</p>
+    /// <p> The Amazon Resource Name (ARN) of the dataset that you want to describe. </p>
     pub dataset_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDatasetInput {
-    /// <p>The Amazon Resource Name (ARN) of the dataset that you want to describe.</p>
+    /// <p> The Amazon Resource Name (ARN) of the dataset that you want to describe. </p>
     pub fn dataset_arn(&self) -> ::std::option::Option<&str> {
         self.dataset_arn.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct DescribeDatasetInputBuilder {
     pub(crate) dataset_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDatasetInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the dataset that you want to describe.</p>
+    /// <p> The Amazon Resource Name (ARN) of the dataset that you want to describe. </p>
     /// This field is required.
     pub fn dataset_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the dataset that you want to describe.</p>
+    /// <p> The Amazon Resource Name (ARN) of the dataset that you want to describe. </p>
     pub fn set_dataset_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the dataset that you want to describe.</p>
+    /// <p> The Amazon Resource Name (ARN) of the dataset that you want to describe. </p>
     pub fn get_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.dataset_arn
     }

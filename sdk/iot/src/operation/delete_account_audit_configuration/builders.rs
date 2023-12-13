@@ -22,7 +22,7 @@ impl DeleteAccountAuditConfigurationInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteAccountAuditConfiguration`.
 ///
-/// <p>Restores the default settings for Device Defender audits for this account. Any configuration data you entered is deleted and all audit checks are reset to disabled.</p>
+/// <p>Restores the default settings for Device Defender audits for this account. Any configuration data you entered is deleted and all audit checks are reset to disabled. </p>
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteAccountAuditConfiguration</a> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAccountAuditConfigurationFluentBuilder {

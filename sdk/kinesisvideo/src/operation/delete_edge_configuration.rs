@@ -257,7 +257,7 @@ pub enum DeleteEdgeConfigurationError {
     InvalidArgumentException(crate::types::error::InvalidArgumentException),
     /// <p>Amazon Kinesis Video Streams can't find the stream that you specified.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>The Exception rendered when the Amazon Kinesis Video Stream can't find a stream's edge configuration that you specified.</p>
+    /// <p>The Exception rendered when the Amazon Kinesis Video Stream can't find a stream's edge configuration that you specified. </p>
     StreamEdgeConfigurationNotFoundException(crate::types::error::StreamEdgeConfigurationNotFoundException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

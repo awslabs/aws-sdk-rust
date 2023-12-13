@@ -22,7 +22,7 @@ impl ListComponentBuildVersionsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListComponentBuildVersions`.
 ///
-/// <p>Returns the list of component build versions for the specified semantic version.</p><note>
+/// <p>Returns the list of component build versions for the specified semantic version.</p> <note>
 /// <p>The semantic version has four nodes: <major>
 /// .
 /// <minor>
@@ -35,7 +35,7 @@ impl ListComponentBuildVersionsInputBuilder {
 /// </patch>
 /// </minor>
 /// </major></p>
-/// <p><b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
+/// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListComponentBuildVersionsFluentBuilder {

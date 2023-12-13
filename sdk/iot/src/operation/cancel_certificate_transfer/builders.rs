@@ -23,7 +23,7 @@ impl CancelCertificateTransferInputBuilder {
 /// Fluent builder constructing a request to `CancelCertificateTransfer`.
 ///
 /// <p>Cancels a pending transfer for the specified certificate.</p>
-/// <p><b>Note</b> Only the transfer source account can use this operation to cancel a transfer. (Transfer destinations can use <code>RejectCertificateTransfer</code> instead.) After transfer, IoT returns the certificate to the source account in the INACTIVE state. After the destination account has accepted the transfer, the transfer cannot be cancelled.</p>
+/// <p> <b>Note</b> Only the transfer source account can use this operation to cancel a transfer. (Transfer destinations can use <code>RejectCertificateTransfer</code> instead.) After transfer, IoT returns the certificate to the source account in the INACTIVE state. After the destination account has accepted the transfer, the transfer cannot be cancelled.</p>
 /// <p>After a certificate transfer is cancelled, the status of the certificate changes from PENDING_TRANSFER to INACTIVE.</p>
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CancelCertificateTransfer</a> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

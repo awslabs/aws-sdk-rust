@@ -5,22 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttributePayload {
     /// <p>A JSON string containing up to three key-value pair in JSON format. For example:</p>
-    /// <p><code>{\"attributes\":{\"string1\":\"string2\"}}</code></p>
+    /// <p> <code>{\"attributes\":{\"string1\":\"string2\"}}</code> </p>
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Specifies whether the list of attributes provided in the <code>AttributePayload</code> is merged with the attributes stored in the registry, instead of overwriting them.</p>
-    /// <p>To remove an attribute, call <code>UpdateThing</code> with an empty attribute value.</p><note>
+    /// <p>To remove an attribute, call <code>UpdateThing</code> with an empty attribute value.</p> <note>
     /// <p>The <code>merge</code> attribute is only valid when calling <code>UpdateThing</code> or <code>UpdateThingGroup</code>.</p>
     /// </note>
     pub merge: bool,
 }
 impl AttributePayload {
     /// <p>A JSON string containing up to three key-value pair in JSON format. For example:</p>
-    /// <p><code>{\"attributes\":{\"string1\":\"string2\"}}</code></p>
+    /// <p> <code>{\"attributes\":{\"string1\":\"string2\"}}</code> </p>
     pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
     }
     /// <p>Specifies whether the list of attributes provided in the <code>AttributePayload</code> is merged with the attributes stored in the registry, instead of overwriting them.</p>
-    /// <p>To remove an attribute, call <code>UpdateThing</code> with an empty attribute value.</p><note>
+    /// <p>To remove an attribute, call <code>UpdateThing</code> with an empty attribute value.</p> <note>
     /// <p>The <code>merge</code> attribute is only valid when calling <code>UpdateThing</code> or <code>UpdateThingGroup</code>.</p>
     /// </note>
     pub fn merge(&self) -> bool {
@@ -47,7 +47,7 @@ impl AttributePayloadBuilder {
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
     /// <p>A JSON string containing up to three key-value pair in JSON format. For example:</p>
-    /// <p><code>{\"attributes\":{\"string1\":\"string2\"}}</code></p>
+    /// <p> <code>{\"attributes\":{\"string1\":\"string2\"}}</code> </p>
     pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
@@ -55,18 +55,18 @@ impl AttributePayloadBuilder {
         self
     }
     /// <p>A JSON string containing up to three key-value pair in JSON format. For example:</p>
-    /// <p><code>{\"attributes\":{\"string1\":\"string2\"}}</code></p>
+    /// <p> <code>{\"attributes\":{\"string1\":\"string2\"}}</code> </p>
     pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.attributes = input;
         self
     }
     /// <p>A JSON string containing up to three key-value pair in JSON format. For example:</p>
-    /// <p><code>{\"attributes\":{\"string1\":\"string2\"}}</code></p>
+    /// <p> <code>{\"attributes\":{\"string1\":\"string2\"}}</code> </p>
     pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.attributes
     }
     /// <p>Specifies whether the list of attributes provided in the <code>AttributePayload</code> is merged with the attributes stored in the registry, instead of overwriting them.</p>
-    /// <p>To remove an attribute, call <code>UpdateThing</code> with an empty attribute value.</p><note>
+    /// <p>To remove an attribute, call <code>UpdateThing</code> with an empty attribute value.</p> <note>
     /// <p>The <code>merge</code> attribute is only valid when calling <code>UpdateThing</code> or <code>UpdateThingGroup</code>.</p>
     /// </note>
     pub fn merge(mut self, input: bool) -> Self {
@@ -74,7 +74,7 @@ impl AttributePayloadBuilder {
         self
     }
     /// <p>Specifies whether the list of attributes provided in the <code>AttributePayload</code> is merged with the attributes stored in the registry, instead of overwriting them.</p>
-    /// <p>To remove an attribute, call <code>UpdateThing</code> with an empty attribute value.</p><note>
+    /// <p>To remove an attribute, call <code>UpdateThing</code> with an empty attribute value.</p> <note>
     /// <p>The <code>merge</code> attribute is only valid when calling <code>UpdateThing</code> or <code>UpdateThingGroup</code>.</p>
     /// </note>
     pub fn set_merge(mut self, input: ::std::option::Option<bool>) -> Self {
@@ -82,7 +82,7 @@ impl AttributePayloadBuilder {
         self
     }
     /// <p>Specifies whether the list of attributes provided in the <code>AttributePayload</code> is merged with the attributes stored in the registry, instead of overwriting them.</p>
-    /// <p>To remove an attribute, call <code>UpdateThing</code> with an empty attribute value.</p><note>
+    /// <p>To remove an attribute, call <code>UpdateThing</code> with an empty attribute value.</p> <note>
     /// <p>The <code>merge</code> attribute is only valid when calling <code>UpdateThing</code> or <code>UpdateThingGroup</code>.</p>
     /// </note>
     pub fn get_merge(&self) -> &::std::option::Option<bool> {

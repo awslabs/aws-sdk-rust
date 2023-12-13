@@ -3,64 +3,58 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPackageVersionAssetsOutput {
-    /// <p>The format of the package that contains the requested package version assets.</p>
+    /// <p> The format of the package that contains the requested package version assets. </p>
     pub format: ::std::option::Option<crate::types::PackageFormat>,
     /// <p>The namespace of the package version that contains the requested package version assets. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>The namespace of a Maven package version is its <code>groupId</code>.</p></li>
-    /// <li>
-    /// <p>The namespace of an npm package version is its <code>scope</code>.</p></li>
-    /// <li>
-    /// <p>Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace.</p></li>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
     pub namespace: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the package that contains the requested package version assets.</p>
+    /// <p> The name of the package that contains the requested package version assets. </p>
     pub package: ::std::option::Option<::std::string::String>,
-    /// <p>The version of the package associated with the requested assets.</p>
+    /// <p> The version of the package associated with the requested assets. </p>
     pub version: ::std::option::Option<::std::string::String>,
-    /// <p>The current revision associated with the package version.</p>
+    /// <p> The current revision associated with the package version. </p>
     pub version_revision: ::std::option::Option<::std::string::String>,
-    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    /// <p> If there are additional results, this is the token for the next set of results. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a> objects.</p>
+    /// <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a> objects. </p>
     pub assets: ::std::option::Option<::std::vec::Vec<crate::types::AssetSummary>>,
     _request_id: Option<String>,
 }
 impl ListPackageVersionAssetsOutput {
-    /// <p>The format of the package that contains the requested package version assets.</p>
+    /// <p> The format of the package that contains the requested package version assets. </p>
     pub fn format(&self) -> ::std::option::Option<&crate::types::PackageFormat> {
         self.format.as_ref()
     }
     /// <p>The namespace of the package version that contains the requested package version assets. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>The namespace of a Maven package version is its <code>groupId</code>.</p></li>
-    /// <li>
-    /// <p>The namespace of an npm package version is its <code>scope</code>.</p></li>
-    /// <li>
-    /// <p>Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace.</p></li>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
     pub fn namespace(&self) -> ::std::option::Option<&str> {
         self.namespace.as_deref()
     }
-    /// <p>The name of the package that contains the requested package version assets.</p>
+    /// <p> The name of the package that contains the requested package version assets. </p>
     pub fn package(&self) -> ::std::option::Option<&str> {
         self.package.as_deref()
     }
-    /// <p>The version of the package associated with the requested assets.</p>
+    /// <p> The version of the package associated with the requested assets. </p>
     pub fn version(&self) -> ::std::option::Option<&str> {
         self.version.as_deref()
     }
-    /// <p>The current revision associated with the package version.</p>
+    /// <p> The current revision associated with the package version. </p>
     pub fn version_revision(&self) -> ::std::option::Option<&str> {
         self.version_revision.as_deref()
     }
-    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    /// <p> If there are additional results, this is the token for the next set of results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a> objects.</p>
+    /// <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a> objects. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.assets.is_none()`.
     pub fn assets(&self) -> &[crate::types::AssetSummary] {
@@ -93,28 +87,25 @@ pub struct ListPackageVersionAssetsOutputBuilder {
     _request_id: Option<String>,
 }
 impl ListPackageVersionAssetsOutputBuilder {
-    /// <p>The format of the package that contains the requested package version assets.</p>
+    /// <p> The format of the package that contains the requested package version assets. </p>
     pub fn format(mut self, input: crate::types::PackageFormat) -> Self {
         self.format = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The format of the package that contains the requested package version assets.</p>
+    /// <p> The format of the package that contains the requested package version assets. </p>
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::PackageFormat>) -> Self {
         self.format = input;
         self
     }
-    /// <p>The format of the package that contains the requested package version assets.</p>
+    /// <p> The format of the package that contains the requested package version assets. </p>
     pub fn get_format(&self) -> &::std::option::Option<crate::types::PackageFormat> {
         &self.format
     }
     /// <p>The namespace of the package version that contains the requested package version assets. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>The namespace of a Maven package version is its <code>groupId</code>.</p></li>
-    /// <li>
-    /// <p>The namespace of an npm package version is its <code>scope</code>.</p></li>
-    /// <li>
-    /// <p>Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace.</p></li>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
@@ -122,12 +113,9 @@ impl ListPackageVersionAssetsOutputBuilder {
     }
     /// <p>The namespace of the package version that contains the requested package version assets. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>The namespace of a Maven package version is its <code>groupId</code>.</p></li>
-    /// <li>
-    /// <p>The namespace of an npm package version is its <code>scope</code>.</p></li>
-    /// <li>
-    /// <p>Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace.</p></li>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace = input;
@@ -135,69 +123,66 @@ impl ListPackageVersionAssetsOutputBuilder {
     }
     /// <p>The namespace of the package version that contains the requested package version assets. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>The namespace of a Maven package version is its <code>groupId</code>.</p></li>
-    /// <li>
-    /// <p>The namespace of an npm package version is its <code>scope</code>.</p></li>
-    /// <li>
-    /// <p>Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace.</p></li>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         &self.namespace
     }
-    /// <p>The name of the package that contains the requested package version assets.</p>
+    /// <p> The name of the package that contains the requested package version assets. </p>
     pub fn package(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the package that contains the requested package version assets.</p>
+    /// <p> The name of the package that contains the requested package version assets. </p>
     pub fn set_package(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.package = input;
         self
     }
-    /// <p>The name of the package that contains the requested package version assets.</p>
+    /// <p> The name of the package that contains the requested package version assets. </p>
     pub fn get_package(&self) -> &::std::option::Option<::std::string::String> {
         &self.package
     }
-    /// <p>The version of the package associated with the requested assets.</p>
+    /// <p> The version of the package associated with the requested assets. </p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The version of the package associated with the requested assets.</p>
+    /// <p> The version of the package associated with the requested assets. </p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
     }
-    /// <p>The version of the package associated with the requested assets.</p>
+    /// <p> The version of the package associated with the requested assets. </p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.version
     }
-    /// <p>The current revision associated with the package version.</p>
+    /// <p> The current revision associated with the package version. </p>
     pub fn version_revision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_revision = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The current revision associated with the package version.</p>
+    /// <p> The current revision associated with the package version. </p>
     pub fn set_version_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_revision = input;
         self
     }
-    /// <p>The current revision associated with the package version.</p>
+    /// <p> The current revision associated with the package version. </p>
     pub fn get_version_revision(&self) -> &::std::option::Option<::std::string::String> {
         &self.version_revision
     }
-    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    /// <p> If there are additional results, this is the token for the next set of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    /// <p> If there are additional results, this is the token for the next set of results. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    /// <p> If there are additional results, this is the token for the next set of results. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
@@ -205,19 +190,19 @@ impl ListPackageVersionAssetsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_assets`](Self::set_assets).
     ///
-    /// <p>The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a> objects.</p>
+    /// <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a> objects. </p>
     pub fn assets(mut self, input: crate::types::AssetSummary) -> Self {
         let mut v = self.assets.unwrap_or_default();
         v.push(input);
         self.assets = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a> objects.</p>
+    /// <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a> objects. </p>
     pub fn set_assets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetSummary>>) -> Self {
         self.assets = input;
         self
     }
-    /// <p>The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a> objects.</p>
+    /// <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a> objects. </p>
     pub fn get_assets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetSummary>> {
         &self.assets
     }

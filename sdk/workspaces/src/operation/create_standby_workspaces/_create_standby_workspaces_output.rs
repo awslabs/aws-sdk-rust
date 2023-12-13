@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateStandbyWorkspacesOutput {
-    /// <p>Information about the standby WorkSpace that could not be created.</p>
+    /// <p>Information about the standby WorkSpace that could not be created. </p>
     pub failed_standby_requests: ::std::option::Option<::std::vec::Vec<crate::types::FailedCreateStandbyWorkspacesRequest>>,
     /// <p>Information about the standby WorkSpace that was created.</p>
     pub pending_standby_requests: ::std::option::Option<::std::vec::Vec<crate::types::PendingCreateStandbyWorkspacesRequest>>,
     _request_id: Option<String>,
 }
 impl CreateStandbyWorkspacesOutput {
-    /// <p>Information about the standby WorkSpace that could not be created.</p>
+    /// <p>Information about the standby WorkSpace that could not be created. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed_standby_requests.is_none()`.
     pub fn failed_standby_requests(&self) -> &[crate::types::FailedCreateStandbyWorkspacesRequest] {
@@ -48,14 +48,14 @@ impl CreateStandbyWorkspacesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_failed_standby_requests`](Self::set_failed_standby_requests).
     ///
-    /// <p>Information about the standby WorkSpace that could not be created.</p>
+    /// <p>Information about the standby WorkSpace that could not be created. </p>
     pub fn failed_standby_requests(mut self, input: crate::types::FailedCreateStandbyWorkspacesRequest) -> Self {
         let mut v = self.failed_standby_requests.unwrap_or_default();
         v.push(input);
         self.failed_standby_requests = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Information about the standby WorkSpace that could not be created.</p>
+    /// <p>Information about the standby WorkSpace that could not be created. </p>
     pub fn set_failed_standby_requests(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::FailedCreateStandbyWorkspacesRequest>>,
@@ -63,7 +63,7 @@ impl CreateStandbyWorkspacesOutputBuilder {
         self.failed_standby_requests = input;
         self
     }
-    /// <p>Information about the standby WorkSpace that could not be created.</p>
+    /// <p>Information about the standby WorkSpace that could not be created. </p>
     pub fn get_failed_standby_requests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedCreateStandbyWorkspacesRequest>> {
         &self.failed_standby_requests
     }

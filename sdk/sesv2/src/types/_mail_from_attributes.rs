@@ -8,14 +8,10 @@ pub struct MailFromAttributes {
     pub mail_from_domain: ::std::string::String,
     /// <p>The status of the MAIL FROM domain. This status can have the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PENDING</code> – Amazon SES hasn't started searching for the MX record yet.</p></li>
-    /// <li>
-    /// <p><code>SUCCESS</code> – Amazon SES detected the required MX record for the MAIL FROM domain.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> – Amazon SES can't find the required MX record, or the record no longer exists.</p></li>
-    /// <li>
-    /// <p><code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon SES from determining the status of the MAIL FROM domain.</p></li>
+    /// <li> <p> <code>PENDING</code> – Amazon SES hasn't started searching for the MX record yet.</p> </li>
+    /// <li> <p> <code>SUCCESS</code> – Amazon SES detected the required MX record for the MAIL FROM domain.</p> </li>
+    /// <li> <p> <code>FAILED</code> – Amazon SES can't find the required MX record, or the record no longer exists.</p> </li>
+    /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon SES from determining the status of the MAIL FROM domain.</p> </li>
     /// </ul>
     pub mail_from_domain_status: crate::types::MailFromDomainStatus,
     /// <p>The action to take if the required MX record can't be found when you send an email. When you set this value to <code>USE_DEFAULT_VALUE</code>, the mail is sent using <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>REJECT_MESSAGE</code>, the Amazon SES API v2 returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p>
@@ -30,14 +26,10 @@ impl MailFromAttributes {
     }
     /// <p>The status of the MAIL FROM domain. This status can have the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PENDING</code> – Amazon SES hasn't started searching for the MX record yet.</p></li>
-    /// <li>
-    /// <p><code>SUCCESS</code> – Amazon SES detected the required MX record for the MAIL FROM domain.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> – Amazon SES can't find the required MX record, or the record no longer exists.</p></li>
-    /// <li>
-    /// <p><code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon SES from determining the status of the MAIL FROM domain.</p></li>
+    /// <li> <p> <code>PENDING</code> – Amazon SES hasn't started searching for the MX record yet.</p> </li>
+    /// <li> <p> <code>SUCCESS</code> – Amazon SES detected the required MX record for the MAIL FROM domain.</p> </li>
+    /// <li> <p> <code>FAILED</code> – Amazon SES can't find the required MX record, or the record no longer exists.</p> </li>
+    /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon SES from determining the status of the MAIL FROM domain.</p> </li>
     /// </ul>
     pub fn mail_from_domain_status(&self) -> &crate::types::MailFromDomainStatus {
         &self.mail_from_domain_status
@@ -81,14 +73,10 @@ impl MailFromAttributesBuilder {
     }
     /// <p>The status of the MAIL FROM domain. This status can have the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PENDING</code> – Amazon SES hasn't started searching for the MX record yet.</p></li>
-    /// <li>
-    /// <p><code>SUCCESS</code> – Amazon SES detected the required MX record for the MAIL FROM domain.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> – Amazon SES can't find the required MX record, or the record no longer exists.</p></li>
-    /// <li>
-    /// <p><code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon SES from determining the status of the MAIL FROM domain.</p></li>
+    /// <li> <p> <code>PENDING</code> – Amazon SES hasn't started searching for the MX record yet.</p> </li>
+    /// <li> <p> <code>SUCCESS</code> – Amazon SES detected the required MX record for the MAIL FROM domain.</p> </li>
+    /// <li> <p> <code>FAILED</code> – Amazon SES can't find the required MX record, or the record no longer exists.</p> </li>
+    /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon SES from determining the status of the MAIL FROM domain.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn mail_from_domain_status(mut self, input: crate::types::MailFromDomainStatus) -> Self {
@@ -97,14 +85,10 @@ impl MailFromAttributesBuilder {
     }
     /// <p>The status of the MAIL FROM domain. This status can have the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PENDING</code> – Amazon SES hasn't started searching for the MX record yet.</p></li>
-    /// <li>
-    /// <p><code>SUCCESS</code> – Amazon SES detected the required MX record for the MAIL FROM domain.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> – Amazon SES can't find the required MX record, or the record no longer exists.</p></li>
-    /// <li>
-    /// <p><code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon SES from determining the status of the MAIL FROM domain.</p></li>
+    /// <li> <p> <code>PENDING</code> – Amazon SES hasn't started searching for the MX record yet.</p> </li>
+    /// <li> <p> <code>SUCCESS</code> – Amazon SES detected the required MX record for the MAIL FROM domain.</p> </li>
+    /// <li> <p> <code>FAILED</code> – Amazon SES can't find the required MX record, or the record no longer exists.</p> </li>
+    /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon SES from determining the status of the MAIL FROM domain.</p> </li>
     /// </ul>
     pub fn set_mail_from_domain_status(mut self, input: ::std::option::Option<crate::types::MailFromDomainStatus>) -> Self {
         self.mail_from_domain_status = input;
@@ -112,14 +96,10 @@ impl MailFromAttributesBuilder {
     }
     /// <p>The status of the MAIL FROM domain. This status can have the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PENDING</code> – Amazon SES hasn't started searching for the MX record yet.</p></li>
-    /// <li>
-    /// <p><code>SUCCESS</code> – Amazon SES detected the required MX record for the MAIL FROM domain.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> – Amazon SES can't find the required MX record, or the record no longer exists.</p></li>
-    /// <li>
-    /// <p><code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon SES from determining the status of the MAIL FROM domain.</p></li>
+    /// <li> <p> <code>PENDING</code> – Amazon SES hasn't started searching for the MX record yet.</p> </li>
+    /// <li> <p> <code>SUCCESS</code> – Amazon SES detected the required MX record for the MAIL FROM domain.</p> </li>
+    /// <li> <p> <code>FAILED</code> – Amazon SES can't find the required MX record, or the record no longer exists.</p> </li>
+    /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon SES from determining the status of the MAIL FROM domain.</p> </li>
     /// </ul>
     pub fn get_mail_from_domain_status(&self) -> &::std::option::Option<crate::types::MailFromDomainStatus> {
         &self.mail_from_domain_status

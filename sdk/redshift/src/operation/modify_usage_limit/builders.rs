@@ -122,31 +122,31 @@ impl ModifyUsageLimitFluentBuilder {
     pub fn get_usage_limit_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_usage_limit_id()
     }
-    /// <p>The new limit amount. For more information about this parameter, see <code>UsageLimit</code>.</p>
+    /// <p>The new limit amount. For more information about this parameter, see <code>UsageLimit</code>. </p>
     pub fn amount(mut self, input: i64) -> Self {
         self.inner = self.inner.amount(input);
         self
     }
-    /// <p>The new limit amount. For more information about this parameter, see <code>UsageLimit</code>.</p>
+    /// <p>The new limit amount. For more information about this parameter, see <code>UsageLimit</code>. </p>
     pub fn set_amount(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_amount(input);
         self
     }
-    /// <p>The new limit amount. For more information about this parameter, see <code>UsageLimit</code>.</p>
+    /// <p>The new limit amount. For more information about this parameter, see <code>UsageLimit</code>. </p>
     pub fn get_amount(&self) -> &::std::option::Option<i64> {
         self.inner.get_amount()
     }
-    /// <p>The new action that Amazon Redshift takes when the limit is reached. For more information about this parameter, see <code>UsageLimit</code>.</p>
+    /// <p>The new action that Amazon Redshift takes when the limit is reached. For more information about this parameter, see <code>UsageLimit</code>. </p>
     pub fn breach_action(mut self, input: crate::types::UsageLimitBreachAction) -> Self {
         self.inner = self.inner.breach_action(input);
         self
     }
-    /// <p>The new action that Amazon Redshift takes when the limit is reached. For more information about this parameter, see <code>UsageLimit</code>.</p>
+    /// <p>The new action that Amazon Redshift takes when the limit is reached. For more information about this parameter, see <code>UsageLimit</code>. </p>
     pub fn set_breach_action(mut self, input: ::std::option::Option<crate::types::UsageLimitBreachAction>) -> Self {
         self.inner = self.inner.set_breach_action(input);
         self
     }
-    /// <p>The new action that Amazon Redshift takes when the limit is reached. For more information about this parameter, see <code>UsageLimit</code>.</p>
+    /// <p>The new action that Amazon Redshift takes when the limit is reached. For more information about this parameter, see <code>UsageLimit</code>. </p>
     pub fn get_breach_action(&self) -> &::std::option::Option<crate::types::UsageLimitBreachAction> {
         self.inner.get_breach_action()
     }

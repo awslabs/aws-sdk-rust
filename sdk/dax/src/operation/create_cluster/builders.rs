@@ -109,42 +109,33 @@ impl CreateClusterFluentBuilder {
         self
     }
     /// <p>The cluster identifier. This parameter is stored as a lowercase string.</p>
-    /// <p><b>Constraints:</b></p>
+    /// <p> <b>Constraints:</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>A name must contain from 1 to 20 alphanumeric characters or hyphens.</p></li>
-    /// <li>
-    /// <p>The first character must be a letter.</p></li>
-    /// <li>
-    /// <p>A name cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li> <p>A name must contain from 1 to 20 alphanumeric characters or hyphens.</p> </li>
+    /// <li> <p>The first character must be a letter.</p> </li>
+    /// <li> <p>A name cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_name(input.into());
         self
     }
     /// <p>The cluster identifier. This parameter is stored as a lowercase string.</p>
-    /// <p><b>Constraints:</b></p>
+    /// <p> <b>Constraints:</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>A name must contain from 1 to 20 alphanumeric characters or hyphens.</p></li>
-    /// <li>
-    /// <p>The first character must be a letter.</p></li>
-    /// <li>
-    /// <p>A name cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li> <p>A name must contain from 1 to 20 alphanumeric characters or hyphens.</p> </li>
+    /// <li> <p>The first character must be a letter.</p> </li>
+    /// <li> <p>A name cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_name(input);
         self
     }
     /// <p>The cluster identifier. This parameter is stored as a lowercase string.</p>
-    /// <p><b>Constraints:</b></p>
+    /// <p> <b>Constraints:</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>A name must contain from 1 to 20 alphanumeric characters or hyphens.</p></li>
-    /// <li>
-    /// <p>The first character must be a letter.</p></li>
-    /// <li>
-    /// <p>A name cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li> <p>A name must contain from 1 to 20 alphanumeric characters or hyphens.</p> </li>
+    /// <li> <p>The first character must be a letter.</p> </li>
+    /// <li> <p>A name cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cluster_name()
@@ -177,21 +168,21 @@ impl CreateClusterFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p>The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <code>ReplicationFactor</code> to a number between 3 (one primary and two read replicas) and 10 (one primary and nine read replicas). <code>If the AvailabilityZones</code> parameter is provided, its length must equal the <code>ReplicationFactor</code>.</p><note>
+    /// <p>The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <code>ReplicationFactor</code> to a number between 3 (one primary and two read replicas) and 10 (one primary and nine read replicas). <code>If the AvailabilityZones</code> parameter is provided, its length must equal the <code>ReplicationFactor</code>.</p> <note>
     /// <p>AWS recommends that you have at least two read replicas per cluster.</p>
     /// </note>
     pub fn replication_factor(mut self, input: i32) -> Self {
         self.inner = self.inner.replication_factor(input);
         self
     }
-    /// <p>The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <code>ReplicationFactor</code> to a number between 3 (one primary and two read replicas) and 10 (one primary and nine read replicas). <code>If the AvailabilityZones</code> parameter is provided, its length must equal the <code>ReplicationFactor</code>.</p><note>
+    /// <p>The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <code>ReplicationFactor</code> to a number between 3 (one primary and two read replicas) and 10 (one primary and nine read replicas). <code>If the AvailabilityZones</code> parameter is provided, its length must equal the <code>ReplicationFactor</code>.</p> <note>
     /// <p>AWS recommends that you have at least two read replicas per cluster.</p>
     /// </note>
     pub fn set_replication_factor(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_replication_factor(input);
         self
     }
-    /// <p>The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <code>ReplicationFactor</code> to a number between 3 (one primary and two read replicas) and 10 (one primary and nine read replicas). <code>If the AvailabilityZones</code> parameter is provided, its length must equal the <code>ReplicationFactor</code>.</p><note>
+    /// <p>The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <code>ReplicationFactor</code> to a number between 3 (one primary and two read replicas) and 10 (one primary and nine read replicas). <code>If the AvailabilityZones</code> parameter is provided, its length must equal the <code>ReplicationFactor</code>.</p> <note>
     /// <p>AWS recommends that you have at least two read replicas per cluster.</p>
     /// </note>
     pub fn get_replication_factor(&self) -> &::std::option::Option<i32> {
@@ -215,21 +206,21 @@ impl CreateClusterFluentBuilder {
     pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_availability_zones()
     }
-    /// <p>The name of the subnet group to be used for the replication group.</p><important>
+    /// <p>The name of the subnet group to be used for the replication group.</p> <important>
     /// <p>DAX clusters can only run in an Amazon VPC environment. All of the subnets that you specify in a subnet group must exist in the same VPC.</p>
     /// </important>
     pub fn subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subnet_group_name(input.into());
         self
     }
-    /// <p>The name of the subnet group to be used for the replication group.</p><important>
+    /// <p>The name of the subnet group to be used for the replication group.</p> <important>
     /// <p>DAX clusters can only run in an Amazon VPC environment. All of the subnets that you specify in a subnet group must exist in the same VPC.</p>
     /// </important>
     pub fn set_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_subnet_group_name(input);
         self
     }
-    /// <p>The name of the subnet group to be used for the replication group.</p><important>
+    /// <p>The name of the subnet group to be used for the replication group.</p> <important>
     /// <p>DAX clusters can only run in an Amazon VPC environment. All of the subnets that you specify in a subnet group must exist in the same VPC.</p>
     /// </important>
     pub fn get_subnet_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -258,22 +249,15 @@ impl CreateClusterFluentBuilder {
     }
     /// <p>Specifies the weekly time range during which maintenance on the DAX cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period. Valid values for <code>ddd</code> are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>sun</code></p></li>
-    /// <li>
-    /// <p><code>mon</code></p></li>
-    /// <li>
-    /// <p><code>tue</code></p></li>
-    /// <li>
-    /// <p><code>wed</code></p></li>
-    /// <li>
-    /// <p><code>thu</code></p></li>
-    /// <li>
-    /// <p><code>fri</code></p></li>
-    /// <li>
-    /// <p><code>sat</code></p></li>
+    /// <li> <p> <code>sun</code> </p> </li>
+    /// <li> <p> <code>mon</code> </p> </li>
+    /// <li> <p> <code>tue</code> </p> </li>
+    /// <li> <p> <code>wed</code> </p> </li>
+    /// <li> <p> <code>thu</code> </p> </li>
+    /// <li> <p> <code>fri</code> </p> </li>
+    /// <li> <p> <code>sat</code> </p> </li>
     /// </ul>
-    /// <p>Example: <code>sun:05:00-sun:09:00</code></p><note>
+    /// <p>Example: <code>sun:05:00-sun:09:00</code> </p> <note>
     /// <p>If you don't specify a preferred maintenance window when you create or modify a cache cluster, DAX assigns a 60-minute maintenance window on a randomly selected day of the week.</p>
     /// </note>
     pub fn preferred_maintenance_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -282,22 +266,15 @@ impl CreateClusterFluentBuilder {
     }
     /// <p>Specifies the weekly time range during which maintenance on the DAX cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period. Valid values for <code>ddd</code> are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>sun</code></p></li>
-    /// <li>
-    /// <p><code>mon</code></p></li>
-    /// <li>
-    /// <p><code>tue</code></p></li>
-    /// <li>
-    /// <p><code>wed</code></p></li>
-    /// <li>
-    /// <p><code>thu</code></p></li>
-    /// <li>
-    /// <p><code>fri</code></p></li>
-    /// <li>
-    /// <p><code>sat</code></p></li>
+    /// <li> <p> <code>sun</code> </p> </li>
+    /// <li> <p> <code>mon</code> </p> </li>
+    /// <li> <p> <code>tue</code> </p> </li>
+    /// <li> <p> <code>wed</code> </p> </li>
+    /// <li> <p> <code>thu</code> </p> </li>
+    /// <li> <p> <code>fri</code> </p> </li>
+    /// <li> <p> <code>sat</code> </p> </li>
     /// </ul>
-    /// <p>Example: <code>sun:05:00-sun:09:00</code></p><note>
+    /// <p>Example: <code>sun:05:00-sun:09:00</code> </p> <note>
     /// <p>If you don't specify a preferred maintenance window when you create or modify a cache cluster, DAX assigns a 60-minute maintenance window on a randomly selected day of the week.</p>
     /// </note>
     pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -306,42 +283,35 @@ impl CreateClusterFluentBuilder {
     }
     /// <p>Specifies the weekly time range during which maintenance on the DAX cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period. Valid values for <code>ddd</code> are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>sun</code></p></li>
-    /// <li>
-    /// <p><code>mon</code></p></li>
-    /// <li>
-    /// <p><code>tue</code></p></li>
-    /// <li>
-    /// <p><code>wed</code></p></li>
-    /// <li>
-    /// <p><code>thu</code></p></li>
-    /// <li>
-    /// <p><code>fri</code></p></li>
-    /// <li>
-    /// <p><code>sat</code></p></li>
+    /// <li> <p> <code>sun</code> </p> </li>
+    /// <li> <p> <code>mon</code> </p> </li>
+    /// <li> <p> <code>tue</code> </p> </li>
+    /// <li> <p> <code>wed</code> </p> </li>
+    /// <li> <p> <code>thu</code> </p> </li>
+    /// <li> <p> <code>fri</code> </p> </li>
+    /// <li> <p> <code>sat</code> </p> </li>
     /// </ul>
-    /// <p>Example: <code>sun:05:00-sun:09:00</code></p><note>
+    /// <p>Example: <code>sun:05:00-sun:09:00</code> </p> <note>
     /// <p>If you don't specify a preferred maintenance window when you create or modify a cache cluster, DAX assigns a 60-minute maintenance window on a randomly selected day of the week.</p>
     /// </note>
     pub fn get_preferred_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_preferred_maintenance_window()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications will be sent.</p><note>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications will be sent.</p> <note>
     /// <p>The Amazon SNS topic owner must be same as the DAX cluster owner.</p>
     /// </note>
     pub fn notification_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.notification_topic_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications will be sent.</p><note>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications will be sent.</p> <note>
     /// <p>The Amazon SNS topic owner must be same as the DAX cluster owner.</p>
     /// </note>
     pub fn set_notification_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_notification_topic_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications will be sent.</p><note>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications will be sent.</p> <note>
     /// <p>The Amazon SNS topic owner must be same as the DAX cluster owner.</p>
     /// </note>
     pub fn get_notification_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -379,17 +349,17 @@ impl CreateClusterFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A set of tags to associate with the DAX cluster.</p>
+    /// <p>A set of tags to associate with the DAX cluster. </p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
-    /// <p>A set of tags to associate with the DAX cluster.</p>
+    /// <p>A set of tags to associate with the DAX cluster. </p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>A set of tags to associate with the DAX cluster.</p>
+    /// <p>A set of tags to associate with the DAX cluster. </p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
@@ -409,10 +379,8 @@ impl CreateClusterFluentBuilder {
     }
     /// <p>The type of encryption the cluster's endpoint should support. Values are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>NONE</code> for no encryption</p></li>
-    /// <li>
-    /// <p><code>TLS</code> for Transport Layer Security</p></li>
+    /// <li> <p> <code>NONE</code> for no encryption</p> </li>
+    /// <li> <p> <code>TLS</code> for Transport Layer Security</p> </li>
     /// </ul>
     pub fn cluster_endpoint_encryption_type(mut self, input: crate::types::ClusterEndpointEncryptionType) -> Self {
         self.inner = self.inner.cluster_endpoint_encryption_type(input);
@@ -420,10 +388,8 @@ impl CreateClusterFluentBuilder {
     }
     /// <p>The type of encryption the cluster's endpoint should support. Values are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>NONE</code> for no encryption</p></li>
-    /// <li>
-    /// <p><code>TLS</code> for Transport Layer Security</p></li>
+    /// <li> <p> <code>NONE</code> for no encryption</p> </li>
+    /// <li> <p> <code>TLS</code> for Transport Layer Security</p> </li>
     /// </ul>
     pub fn set_cluster_endpoint_encryption_type(mut self, input: ::std::option::Option<crate::types::ClusterEndpointEncryptionType>) -> Self {
         self.inner = self.inner.set_cluster_endpoint_encryption_type(input);
@@ -431,10 +397,8 @@ impl CreateClusterFluentBuilder {
     }
     /// <p>The type of encryption the cluster's endpoint should support. Values are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>NONE</code> for no encryption</p></li>
-    /// <li>
-    /// <p><code>TLS</code> for Transport Layer Security</p></li>
+    /// <li> <p> <code>NONE</code> for no encryption</p> </li>
+    /// <li> <p> <code>TLS</code> for Transport Layer Security</p> </li>
     /// </ul>
     pub fn get_cluster_endpoint_encryption_type(&self) -> &::std::option::Option<crate::types::ClusterEndpointEncryptionType> {
         self.inner.get_cluster_endpoint_encryption_type()

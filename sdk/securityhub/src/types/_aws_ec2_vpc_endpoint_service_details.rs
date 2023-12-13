@@ -24,16 +24,11 @@ pub struct AwsEc2VpcEndpointServiceDetails {
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the service. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Available</code></p></li>
-    /// <li>
-    /// <p><code>Deleted</code></p></li>
-    /// <li>
-    /// <p><code>Deleting</code></p></li>
-    /// <li>
-    /// <p><code>Failed</code></p></li>
-    /// <li>
-    /// <p><code>Pending</code></p></li>
+    /// <li> <p> <code>Available</code> </p> </li>
+    /// <li> <p> <code>Deleted</code> </p> </li>
+    /// <li> <p> <code>Deleting</code> </p> </li>
+    /// <li> <p> <code>Failed</code> </p> </li>
+    /// <li> <p> <code>Pending</code> </p> </li>
     /// </ul>
     pub service_state: ::std::option::Option<::std::string::String>,
     /// <p>The types for the service.</p>
@@ -86,16 +81,11 @@ impl AwsEc2VpcEndpointServiceDetails {
     }
     /// <p>The current state of the service. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Available</code></p></li>
-    /// <li>
-    /// <p><code>Deleted</code></p></li>
-    /// <li>
-    /// <p><code>Deleting</code></p></li>
-    /// <li>
-    /// <p><code>Failed</code></p></li>
-    /// <li>
-    /// <p><code>Pending</code></p></li>
+    /// <li> <p> <code>Available</code> </p> </li>
+    /// <li> <p> <code>Deleted</code> </p> </li>
+    /// <li> <p> <code>Deleting</code> </p> </li>
+    /// <li> <p> <code>Failed</code> </p> </li>
+    /// <li> <p> <code>Pending</code> </p> </li>
     /// </ul>
     pub fn service_state(&self) -> ::std::option::Option<&str> {
         self.service_state.as_deref()
@@ -283,16 +273,11 @@ impl AwsEc2VpcEndpointServiceDetailsBuilder {
     }
     /// <p>The current state of the service. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Available</code></p></li>
-    /// <li>
-    /// <p><code>Deleted</code></p></li>
-    /// <li>
-    /// <p><code>Deleting</code></p></li>
-    /// <li>
-    /// <p><code>Failed</code></p></li>
-    /// <li>
-    /// <p><code>Pending</code></p></li>
+    /// <li> <p> <code>Available</code> </p> </li>
+    /// <li> <p> <code>Deleted</code> </p> </li>
+    /// <li> <p> <code>Deleting</code> </p> </li>
+    /// <li> <p> <code>Failed</code> </p> </li>
+    /// <li> <p> <code>Pending</code> </p> </li>
     /// </ul>
     pub fn service_state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_state = ::std::option::Option::Some(input.into());
@@ -300,16 +285,11 @@ impl AwsEc2VpcEndpointServiceDetailsBuilder {
     }
     /// <p>The current state of the service. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Available</code></p></li>
-    /// <li>
-    /// <p><code>Deleted</code></p></li>
-    /// <li>
-    /// <p><code>Deleting</code></p></li>
-    /// <li>
-    /// <p><code>Failed</code></p></li>
-    /// <li>
-    /// <p><code>Pending</code></p></li>
+    /// <li> <p> <code>Available</code> </p> </li>
+    /// <li> <p> <code>Deleted</code> </p> </li>
+    /// <li> <p> <code>Deleting</code> </p> </li>
+    /// <li> <p> <code>Failed</code> </p> </li>
+    /// <li> <p> <code>Pending</code> </p> </li>
     /// </ul>
     pub fn set_service_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_state = input;
@@ -317,16 +297,11 @@ impl AwsEc2VpcEndpointServiceDetailsBuilder {
     }
     /// <p>The current state of the service. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Available</code></p></li>
-    /// <li>
-    /// <p><code>Deleted</code></p></li>
-    /// <li>
-    /// <p><code>Deleting</code></p></li>
-    /// <li>
-    /// <p><code>Failed</code></p></li>
-    /// <li>
-    /// <p><code>Pending</code></p></li>
+    /// <li> <p> <code>Available</code> </p> </li>
+    /// <li> <p> <code>Deleted</code> </p> </li>
+    /// <li> <p> <code>Deleting</code> </p> </li>
+    /// <li> <p> <code>Failed</code> </p> </li>
+    /// <li> <p> <code>Pending</code> </p> </li>
     /// </ul>
     pub fn get_service_state(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_state

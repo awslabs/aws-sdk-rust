@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchPlaceIndexForTextOutput {
-    /// <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>, <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>, and <code>Text</code>. Also includes the <code>DataSource</code> of the place index and the bounding box, <code>ResultBBox</code>, which surrounds the search results.</p>
+    /// <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>, <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>, and <code>Text</code>. Also includes the <code>DataSource</code> of the place index and the bounding box, <code>ResultBBox</code>, which surrounds the search results. </p>
     pub summary: ::std::option::Option<crate::types::SearchPlaceIndexForTextSummary>,
-    /// <p>A list of Places matching the input text. Each result contains additional information about the specific point of interest.</p>
+    /// <p>A list of Places matching the input text. Each result contains additional information about the specific point of interest. </p>
     /// <p>Not all response properties are included with all responses. Some properties may only be returned by specific data partners.</p>
     pub results: ::std::vec::Vec<crate::types::SearchForTextResult>,
     _request_id: Option<String>,
 }
 impl SearchPlaceIndexForTextOutput {
-    /// <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>, <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>, and <code>Text</code>. Also includes the <code>DataSource</code> of the place index and the bounding box, <code>ResultBBox</code>, which surrounds the search results.</p>
+    /// <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>, <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>, and <code>Text</code>. Also includes the <code>DataSource</code> of the place index and the bounding box, <code>ResultBBox</code>, which surrounds the search results. </p>
     pub fn summary(&self) -> ::std::option::Option<&crate::types::SearchPlaceIndexForTextSummary> {
         self.summary.as_ref()
     }
-    /// <p>A list of Places matching the input text. Each result contains additional information about the specific point of interest.</p>
+    /// <p>A list of Places matching the input text. Each result contains additional information about the specific point of interest. </p>
     /// <p>Not all response properties are included with all responses. Some properties may only be returned by specific data partners.</p>
     pub fn results(&self) -> &[crate::types::SearchForTextResult] {
         use std::ops::Deref;
@@ -43,18 +43,18 @@ pub struct SearchPlaceIndexForTextOutputBuilder {
     _request_id: Option<String>,
 }
 impl SearchPlaceIndexForTextOutputBuilder {
-    /// <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>, <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>, and <code>Text</code>. Also includes the <code>DataSource</code> of the place index and the bounding box, <code>ResultBBox</code>, which surrounds the search results.</p>
+    /// <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>, <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>, and <code>Text</code>. Also includes the <code>DataSource</code> of the place index and the bounding box, <code>ResultBBox</code>, which surrounds the search results. </p>
     /// This field is required.
     pub fn summary(mut self, input: crate::types::SearchPlaceIndexForTextSummary) -> Self {
         self.summary = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>, <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>, and <code>Text</code>. Also includes the <code>DataSource</code> of the place index and the bounding box, <code>ResultBBox</code>, which surrounds the search results.</p>
+    /// <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>, <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>, and <code>Text</code>. Also includes the <code>DataSource</code> of the place index and the bounding box, <code>ResultBBox</code>, which surrounds the search results. </p>
     pub fn set_summary(mut self, input: ::std::option::Option<crate::types::SearchPlaceIndexForTextSummary>) -> Self {
         self.summary = input;
         self
     }
-    /// <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>, <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>, and <code>Text</code>. Also includes the <code>DataSource</code> of the place index and the bounding box, <code>ResultBBox</code>, which surrounds the search results.</p>
+    /// <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>, <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>, and <code>Text</code>. Also includes the <code>DataSource</code> of the place index and the bounding box, <code>ResultBBox</code>, which surrounds the search results. </p>
     pub fn get_summary(&self) -> &::std::option::Option<crate::types::SearchPlaceIndexForTextSummary> {
         &self.summary
     }
@@ -62,7 +62,7 @@ impl SearchPlaceIndexForTextOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_results`](Self::set_results).
     ///
-    /// <p>A list of Places matching the input text. Each result contains additional information about the specific point of interest.</p>
+    /// <p>A list of Places matching the input text. Each result contains additional information about the specific point of interest. </p>
     /// <p>Not all response properties are included with all responses. Some properties may only be returned by specific data partners.</p>
     pub fn results(mut self, input: crate::types::SearchForTextResult) -> Self {
         let mut v = self.results.unwrap_or_default();
@@ -70,13 +70,13 @@ impl SearchPlaceIndexForTextOutputBuilder {
         self.results = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of Places matching the input text. Each result contains additional information about the specific point of interest.</p>
+    /// <p>A list of Places matching the input text. Each result contains additional information about the specific point of interest. </p>
     /// <p>Not all response properties are included with all responses. Some properties may only be returned by specific data partners.</p>
     pub fn set_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SearchForTextResult>>) -> Self {
         self.results = input;
         self
     }
-    /// <p>A list of Places matching the input text. Each result contains additional information about the specific point of interest.</p>
+    /// <p>A list of Places matching the input text. Each result contains additional information about the specific point of interest. </p>
     /// <p>Not all response properties are included with all responses. Some properties may only be returned by specific data partners.</p>
     pub fn get_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchForTextResult>> {
         &self.results

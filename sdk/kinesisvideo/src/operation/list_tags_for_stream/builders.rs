@@ -23,7 +23,7 @@ impl ListTagsForStreamInputBuilder {
 /// Fluent builder constructing a request to `ListTagsForStream`.
 ///
 /// <p>Returns a list of tags associated with the specified stream.</p>
-/// <p>In the request, you must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
+/// <p>In the request, you must specify either the <code>StreamName</code> or the <code>StreamARN</code>. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTagsForStreamFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

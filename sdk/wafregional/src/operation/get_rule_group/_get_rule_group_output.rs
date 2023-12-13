@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRuleGroupOutput {
-    /// <p>Information about the <code>RuleGroup</code> that you specified in the <code>GetRuleGroup</code> request.</p>
+    /// <p>Information about the <code>RuleGroup</code> that you specified in the <code>GetRuleGroup</code> request. </p>
     pub rule_group: ::std::option::Option<crate::types::RuleGroup>,
     _request_id: Option<String>,
 }
 impl GetRuleGroupOutput {
-    /// <p>Information about the <code>RuleGroup</code> that you specified in the <code>GetRuleGroup</code> request.</p>
+    /// <p>Information about the <code>RuleGroup</code> that you specified in the <code>GetRuleGroup</code> request. </p>
     pub fn rule_group(&self) -> ::std::option::Option<&crate::types::RuleGroup> {
         self.rule_group.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct GetRuleGroupOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetRuleGroupOutputBuilder {
-    /// <p>Information about the <code>RuleGroup</code> that you specified in the <code>GetRuleGroup</code> request.</p>
+    /// <p>Information about the <code>RuleGroup</code> that you specified in the <code>GetRuleGroup</code> request. </p>
     pub fn rule_group(mut self, input: crate::types::RuleGroup) -> Self {
         self.rule_group = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Information about the <code>RuleGroup</code> that you specified in the <code>GetRuleGroup</code> request.</p>
+    /// <p>Information about the <code>RuleGroup</code> that you specified in the <code>GetRuleGroup</code> request. </p>
     pub fn set_rule_group(mut self, input: ::std::option::Option<crate::types::RuleGroup>) -> Self {
         self.rule_group = input;
         self
     }
-    /// <p>Information about the <code>RuleGroup</code> that you specified in the <code>GetRuleGroup</code> request.</p>
+    /// <p>Information about the <code>RuleGroup</code> that you specified in the <code>GetRuleGroup</code> request. </p>
     pub fn get_rule_group(&self) -> &::std::option::Option<crate::types::RuleGroup> {
         &self.rule_group
     }

@@ -16,10 +16,8 @@ pub struct CreateClassificationJobInput {
     pub initial_run: ::std::option::Option<bool>,
     /// <p>The schedule for running the job. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>ONE_TIME - Run the job only once. If you specify this value, don't specify a value for the scheduleFrequency property.</p></li>
-    /// <li>
-    /// <p>SCHEDULED - Run the job on a daily, weekly, or monthly basis. If you specify this value, use the scheduleFrequency property to define the recurrence pattern for the job.</p></li>
+    /// <li><p>ONE_TIME - Run the job only once. If you specify this value, don't specify a value for the scheduleFrequency property.</p></li>
+    /// <li><p>SCHEDULED - Run the job on a daily, weekly, or monthly basis. If you specify this value, use the scheduleFrequency property to define the recurrence pattern for the job.</p></li>
     /// </ul>
     pub job_type: ::std::option::Option<crate::types::JobType>,
     /// <p>An array of unique identifiers, one for each managed data identifier for the job to include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data identifier selection type that you specify for the job (managedDataIdentifierSelector).</p>
@@ -27,16 +25,11 @@ pub struct CreateClassificationJobInput {
     pub managed_data_identifier_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The selection type to apply when determining which managed data identifiers the job uses to analyze data. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>ALL - Use all managed data identifiers. If you specify this value, don't specify any values for the managedDataIdentifierIds property.</p></li>
-    /// <li>
-    /// <p>EXCLUDE - Use all managed data identifiers except the ones specified by the managedDataIdentifierIds property.</p></li>
-    /// <li>
-    /// <p>INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.</p></li>
-    /// <li>
-    /// <p>NONE - Don't use any managed data identifiers. If you specify this value, specify at least one value for the customDataIdentifierIds property and don't specify any values for the managedDataIdentifierIds property.</p></li>
-    /// <li>
-    /// <p>RECOMMENDED (default) - Use the recommended set of managed data identifiers. If you specify this value, don't specify any values for the managedDataIdentifierIds property.</p></li>
+    /// <li><p>ALL - Use all managed data identifiers. If you specify this value, don't specify any values for the managedDataIdentifierIds property.</p></li>
+    /// <li><p>EXCLUDE - Use all managed data identifiers except the ones specified by the managedDataIdentifierIds property.</p></li>
+    /// <li><p>INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.</p></li>
+    /// <li><p>NONE - Don't use any managed data identifiers. If you specify this value, specify at least one value for the customDataIdentifierIds property and don't specify any values for the managedDataIdentifierIds property.</p></li>
+    /// <li><p>RECOMMENDED (default) - Use the recommended set of managed data identifiers. If you specify this value, don't specify any values for the managedDataIdentifierIds property.</p></li>
     /// </ul>
     /// <p>If you don't specify a value for this property, the job uses the recommended set of managed data identifiers.</p>
     /// <p>If the job is a recurring job and you specify ALL or EXCLUDE, each job run automatically uses new managed data identifiers that are released. If you don't specify a value for this property or you specify RECOMMENDED for a recurring job, each job run automatically uses all the managed data identifiers that are in the recommended set when the run starts.</p>
@@ -82,10 +75,8 @@ impl CreateClassificationJobInput {
     }
     /// <p>The schedule for running the job. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>ONE_TIME - Run the job only once. If you specify this value, don't specify a value for the scheduleFrequency property.</p></li>
-    /// <li>
-    /// <p>SCHEDULED - Run the job on a daily, weekly, or monthly basis. If you specify this value, use the scheduleFrequency property to define the recurrence pattern for the job.</p></li>
+    /// <li><p>ONE_TIME - Run the job only once. If you specify this value, don't specify a value for the scheduleFrequency property.</p></li>
+    /// <li><p>SCHEDULED - Run the job on a daily, weekly, or monthly basis. If you specify this value, use the scheduleFrequency property to define the recurrence pattern for the job.</p></li>
     /// </ul>
     pub fn job_type(&self) -> ::std::option::Option<&crate::types::JobType> {
         self.job_type.as_ref()
@@ -99,16 +90,11 @@ impl CreateClassificationJobInput {
     }
     /// <p>The selection type to apply when determining which managed data identifiers the job uses to analyze data. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>ALL - Use all managed data identifiers. If you specify this value, don't specify any values for the managedDataIdentifierIds property.</p></li>
-    /// <li>
-    /// <p>EXCLUDE - Use all managed data identifiers except the ones specified by the managedDataIdentifierIds property.</p></li>
-    /// <li>
-    /// <p>INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.</p></li>
-    /// <li>
-    /// <p>NONE - Don't use any managed data identifiers. If you specify this value, specify at least one value for the customDataIdentifierIds property and don't specify any values for the managedDataIdentifierIds property.</p></li>
-    /// <li>
-    /// <p>RECOMMENDED (default) - Use the recommended set of managed data identifiers. If you specify this value, don't specify any values for the managedDataIdentifierIds property.</p></li>
+    /// <li><p>ALL - Use all managed data identifiers. If you specify this value, don't specify any values for the managedDataIdentifierIds property.</p></li>
+    /// <li><p>EXCLUDE - Use all managed data identifiers except the ones specified by the managedDataIdentifierIds property.</p></li>
+    /// <li><p>INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.</p></li>
+    /// <li><p>NONE - Don't use any managed data identifiers. If you specify this value, specify at least one value for the customDataIdentifierIds property and don't specify any values for the managedDataIdentifierIds property.</p></li>
+    /// <li><p>RECOMMENDED (default) - Use the recommended set of managed data identifiers. If you specify this value, don't specify any values for the managedDataIdentifierIds property.</p></li>
     /// </ul>
     /// <p>If you don't specify a value for this property, the job uses the recommended set of managed data identifiers.</p>
     /// <p>If the job is a recurring job and you specify ALL or EXCLUDE, each job run automatically uses new managed data identifiers that are released. If you don't specify a value for this property or you specify RECOMMENDED for a recurring job, each job run automatically uses all the managed data identifiers that are in the recommended set when the run starts.</p>
@@ -252,10 +238,8 @@ impl CreateClassificationJobInputBuilder {
     }
     /// <p>The schedule for running the job. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>ONE_TIME - Run the job only once. If you specify this value, don't specify a value for the scheduleFrequency property.</p></li>
-    /// <li>
-    /// <p>SCHEDULED - Run the job on a daily, weekly, or monthly basis. If you specify this value, use the scheduleFrequency property to define the recurrence pattern for the job.</p></li>
+    /// <li><p>ONE_TIME - Run the job only once. If you specify this value, don't specify a value for the scheduleFrequency property.</p></li>
+    /// <li><p>SCHEDULED - Run the job on a daily, weekly, or monthly basis. If you specify this value, use the scheduleFrequency property to define the recurrence pattern for the job.</p></li>
     /// </ul>
     /// This field is required.
     pub fn job_type(mut self, input: crate::types::JobType) -> Self {
@@ -264,10 +248,8 @@ impl CreateClassificationJobInputBuilder {
     }
     /// <p>The schedule for running the job. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>ONE_TIME - Run the job only once. If you specify this value, don't specify a value for the scheduleFrequency property.</p></li>
-    /// <li>
-    /// <p>SCHEDULED - Run the job on a daily, weekly, or monthly basis. If you specify this value, use the scheduleFrequency property to define the recurrence pattern for the job.</p></li>
+    /// <li><p>ONE_TIME - Run the job only once. If you specify this value, don't specify a value for the scheduleFrequency property.</p></li>
+    /// <li><p>SCHEDULED - Run the job on a daily, weekly, or monthly basis. If you specify this value, use the scheduleFrequency property to define the recurrence pattern for the job.</p></li>
     /// </ul>
     pub fn set_job_type(mut self, input: ::std::option::Option<crate::types::JobType>) -> Self {
         self.job_type = input;
@@ -275,10 +257,8 @@ impl CreateClassificationJobInputBuilder {
     }
     /// <p>The schedule for running the job. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>ONE_TIME - Run the job only once. If you specify this value, don't specify a value for the scheduleFrequency property.</p></li>
-    /// <li>
-    /// <p>SCHEDULED - Run the job on a daily, weekly, or monthly basis. If you specify this value, use the scheduleFrequency property to define the recurrence pattern for the job.</p></li>
+    /// <li><p>ONE_TIME - Run the job only once. If you specify this value, don't specify a value for the scheduleFrequency property.</p></li>
+    /// <li><p>SCHEDULED - Run the job on a daily, weekly, or monthly basis. If you specify this value, use the scheduleFrequency property to define the recurrence pattern for the job.</p></li>
     /// </ul>
     pub fn get_job_type(&self) -> &::std::option::Option<crate::types::JobType> {
         &self.job_type
@@ -308,16 +288,11 @@ impl CreateClassificationJobInputBuilder {
     }
     /// <p>The selection type to apply when determining which managed data identifiers the job uses to analyze data. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>ALL - Use all managed data identifiers. If you specify this value, don't specify any values for the managedDataIdentifierIds property.</p></li>
-    /// <li>
-    /// <p>EXCLUDE - Use all managed data identifiers except the ones specified by the managedDataIdentifierIds property.</p></li>
-    /// <li>
-    /// <p>INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.</p></li>
-    /// <li>
-    /// <p>NONE - Don't use any managed data identifiers. If you specify this value, specify at least one value for the customDataIdentifierIds property and don't specify any values for the managedDataIdentifierIds property.</p></li>
-    /// <li>
-    /// <p>RECOMMENDED (default) - Use the recommended set of managed data identifiers. If you specify this value, don't specify any values for the managedDataIdentifierIds property.</p></li>
+    /// <li><p>ALL - Use all managed data identifiers. If you specify this value, don't specify any values for the managedDataIdentifierIds property.</p></li>
+    /// <li><p>EXCLUDE - Use all managed data identifiers except the ones specified by the managedDataIdentifierIds property.</p></li>
+    /// <li><p>INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.</p></li>
+    /// <li><p>NONE - Don't use any managed data identifiers. If you specify this value, specify at least one value for the customDataIdentifierIds property and don't specify any values for the managedDataIdentifierIds property.</p></li>
+    /// <li><p>RECOMMENDED (default) - Use the recommended set of managed data identifiers. If you specify this value, don't specify any values for the managedDataIdentifierIds property.</p></li>
     /// </ul>
     /// <p>If you don't specify a value for this property, the job uses the recommended set of managed data identifiers.</p>
     /// <p>If the job is a recurring job and you specify ALL or EXCLUDE, each job run automatically uses new managed data identifiers that are released. If you don't specify a value for this property or you specify RECOMMENDED for a recurring job, each job run automatically uses all the managed data identifiers that are in the recommended set when the run starts.</p>
@@ -328,16 +303,11 @@ impl CreateClassificationJobInputBuilder {
     }
     /// <p>The selection type to apply when determining which managed data identifiers the job uses to analyze data. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>ALL - Use all managed data identifiers. If you specify this value, don't specify any values for the managedDataIdentifierIds property.</p></li>
-    /// <li>
-    /// <p>EXCLUDE - Use all managed data identifiers except the ones specified by the managedDataIdentifierIds property.</p></li>
-    /// <li>
-    /// <p>INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.</p></li>
-    /// <li>
-    /// <p>NONE - Don't use any managed data identifiers. If you specify this value, specify at least one value for the customDataIdentifierIds property and don't specify any values for the managedDataIdentifierIds property.</p></li>
-    /// <li>
-    /// <p>RECOMMENDED (default) - Use the recommended set of managed data identifiers. If you specify this value, don't specify any values for the managedDataIdentifierIds property.</p></li>
+    /// <li><p>ALL - Use all managed data identifiers. If you specify this value, don't specify any values for the managedDataIdentifierIds property.</p></li>
+    /// <li><p>EXCLUDE - Use all managed data identifiers except the ones specified by the managedDataIdentifierIds property.</p></li>
+    /// <li><p>INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.</p></li>
+    /// <li><p>NONE - Don't use any managed data identifiers. If you specify this value, specify at least one value for the customDataIdentifierIds property and don't specify any values for the managedDataIdentifierIds property.</p></li>
+    /// <li><p>RECOMMENDED (default) - Use the recommended set of managed data identifiers. If you specify this value, don't specify any values for the managedDataIdentifierIds property.</p></li>
     /// </ul>
     /// <p>If you don't specify a value for this property, the job uses the recommended set of managed data identifiers.</p>
     /// <p>If the job is a recurring job and you specify ALL or EXCLUDE, each job run automatically uses new managed data identifiers that are released. If you don't specify a value for this property or you specify RECOMMENDED for a recurring job, each job run automatically uses all the managed data identifiers that are in the recommended set when the run starts.</p>
@@ -348,16 +318,11 @@ impl CreateClassificationJobInputBuilder {
     }
     /// <p>The selection type to apply when determining which managed data identifiers the job uses to analyze data. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>ALL - Use all managed data identifiers. If you specify this value, don't specify any values for the managedDataIdentifierIds property.</p></li>
-    /// <li>
-    /// <p>EXCLUDE - Use all managed data identifiers except the ones specified by the managedDataIdentifierIds property.</p></li>
-    /// <li>
-    /// <p>INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.</p></li>
-    /// <li>
-    /// <p>NONE - Don't use any managed data identifiers. If you specify this value, specify at least one value for the customDataIdentifierIds property and don't specify any values for the managedDataIdentifierIds property.</p></li>
-    /// <li>
-    /// <p>RECOMMENDED (default) - Use the recommended set of managed data identifiers. If you specify this value, don't specify any values for the managedDataIdentifierIds property.</p></li>
+    /// <li><p>ALL - Use all managed data identifiers. If you specify this value, don't specify any values for the managedDataIdentifierIds property.</p></li>
+    /// <li><p>EXCLUDE - Use all managed data identifiers except the ones specified by the managedDataIdentifierIds property.</p></li>
+    /// <li><p>INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.</p></li>
+    /// <li><p>NONE - Don't use any managed data identifiers. If you specify this value, specify at least one value for the customDataIdentifierIds property and don't specify any values for the managedDataIdentifierIds property.</p></li>
+    /// <li><p>RECOMMENDED (default) - Use the recommended set of managed data identifiers. If you specify this value, don't specify any values for the managedDataIdentifierIds property.</p></li>
     /// </ul>
     /// <p>If you don't specify a value for this property, the job uses the recommended set of managed data identifiers.</p>
     /// <p>If the job is a recurring job and you specify ALL or EXCLUDE, each job run automatically uses new managed data identifiers that are released. If you don't specify a value for this property or you specify RECOMMENDED for a recurring job, each job run automatically uses all the managed data identifiers that are in the recommended set when the run starts.</p>

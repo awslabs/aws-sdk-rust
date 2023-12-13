@@ -22,7 +22,7 @@ impl DisassociateTrackerConsumerInputBuilder {
 }
 /// Fluent builder constructing a request to `DisassociateTrackerConsumer`.
 ///
-/// <p>Removes the association between a tracker resource and a geofence collection.</p><note>
+/// <p>Removes the association between a tracker resource and a geofence collection.</p> <note>
 /// <p>Once you unlink a tracker resource from a geofence collection, the tracker positions will no longer be automatically evaluated against geofences.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -124,28 +124,25 @@ impl DisassociateTrackerConsumerFluentBuilder {
     pub fn get_tracker_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_tracker_name()
     }
-    /// <p>The Amazon Resource Name (ARN) for the geofence collection to be disassociated from the tracker resource. Used when you need to specify a resource across all Amazon Web Services.</p>
+    /// <p>The Amazon Resource Name (ARN) for the geofence collection to be disassociated from the tracker resource. Used when you need to specify a resource across all Amazon Web Services. </p>
     /// <ul>
-    /// <li>
-    /// <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code></p></li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code> </p> </li>
     /// </ul>
     pub fn consumer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.consumer_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the geofence collection to be disassociated from the tracker resource. Used when you need to specify a resource across all Amazon Web Services.</p>
+    /// <p>The Amazon Resource Name (ARN) for the geofence collection to be disassociated from the tracker resource. Used when you need to specify a resource across all Amazon Web Services. </p>
     /// <ul>
-    /// <li>
-    /// <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code></p></li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code> </p> </li>
     /// </ul>
     pub fn set_consumer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_consumer_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the geofence collection to be disassociated from the tracker resource. Used when you need to specify a resource across all Amazon Web Services.</p>
+    /// <p>The Amazon Resource Name (ARN) for the geofence collection to be disassociated from the tracker resource. Used when you need to specify a resource across all Amazon Web Services. </p>
     /// <ul>
-    /// <li>
-    /// <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code></p></li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code> </p> </li>
     /// </ul>
     pub fn get_consumer_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_consumer_arn()

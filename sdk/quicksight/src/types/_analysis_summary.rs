@@ -8,7 +8,7 @@ pub struct AnalysisSummary {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the analysis. This ID displays in the URL.</p>
     pub analysis_id: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the analysis. This name is displayed in the Amazon QuickSight console.</p>
+    /// <p>The name of the analysis. This name is displayed in the Amazon QuickSight console. </p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The last known status for the analysis.</p>
     pub status: ::std::option::Option<crate::types::ResourceStatus>,
@@ -26,7 +26,7 @@ impl AnalysisSummary {
     pub fn analysis_id(&self) -> ::std::option::Option<&str> {
         self.analysis_id.as_deref()
     }
-    /// <p>The name of the analysis. This name is displayed in the Amazon QuickSight console.</p>
+    /// <p>The name of the analysis. This name is displayed in the Amazon QuickSight console. </p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -90,17 +90,17 @@ impl AnalysisSummaryBuilder {
     pub fn get_analysis_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.analysis_id
     }
-    /// <p>The name of the analysis. This name is displayed in the Amazon QuickSight console.</p>
+    /// <p>The name of the analysis. This name is displayed in the Amazon QuickSight console. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the analysis. This name is displayed in the Amazon QuickSight console.</p>
+    /// <p>The name of the analysis. This name is displayed in the Amazon QuickSight console. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the analysis. This name is displayed in the Amazon QuickSight console.</p>
+    /// <p>The name of the analysis. This name is displayed in the Amazon QuickSight console. </p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

@@ -9,10 +9,10 @@ pub struct DescribeResizeOutput {
     /// <p>The number of nodes that the cluster will have after the resize operation is complete.</p>
     pub target_number_of_nodes: ::std::option::Option<i32>,
     /// <p>The cluster type after the resize operation is complete.</p>
-    /// <p>Valid Values: <code>multi-node</code> | <code>single-node</code></p>
+    /// <p>Valid Values: <code>multi-node</code> | <code>single-node</code> </p>
     pub target_cluster_type: ::std::option::Option<::std::string::String>,
     /// <p>The status of the resize operation.</p>
-    /// <p>Valid Values: <code>NONE</code> | <code>IN_PROGRESS</code> | <code>FAILED</code> | <code>SUCCEEDED</code> | <code>CANCELLING</code></p>
+    /// <p>Valid Values: <code>NONE</code> | <code>IN_PROGRESS</code> | <code>FAILED</code> | <code>SUCCEEDED</code> | <code>CANCELLING</code> </p>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The names of tables that have been completely imported .</p>
     /// <p>Valid Values: List of table names.</p>
@@ -33,12 +33,12 @@ pub struct DescribeResizeOutput {
     pub elapsed_time_in_seconds: ::std::option::Option<i64>,
     /// <p>The estimated time remaining, in seconds, until the resize operation is complete. This value is calculated based on the average resize rate and the estimated amount of data remaining to be processed. Once the resize operation is complete, this value will be 0.</p>
     pub estimated_time_to_completion_in_seconds: ::std::option::Option<i64>,
-    /// <p>An enum with possible values of <code>ClassicResize</code> and <code>ElasticResize</code>. These values describe the type of resize operation being performed.</p>
+    /// <p>An enum with possible values of <code>ClassicResize</code> and <code>ElasticResize</code>. These values describe the type of resize operation being performed. </p>
     pub resize_type: ::std::option::Option<::std::string::String>,
     /// <p>An optional string to provide additional details about the resize action.</p>
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The type of encryption for the cluster after the resize is complete.</p>
-    /// <p>Possible values are <code>KMS</code> and <code>None</code>.</p>
+    /// <p>Possible values are <code>KMS</code> and <code>None</code>. </p>
     pub target_encryption_type: ::std::option::Option<::std::string::String>,
     /// <p>The percent of data transferred from source cluster to target cluster.</p>
     pub data_transfer_progress_percent: ::std::option::Option<f64>,
@@ -54,12 +54,12 @@ impl DescribeResizeOutput {
         self.target_number_of_nodes
     }
     /// <p>The cluster type after the resize operation is complete.</p>
-    /// <p>Valid Values: <code>multi-node</code> | <code>single-node</code></p>
+    /// <p>Valid Values: <code>multi-node</code> | <code>single-node</code> </p>
     pub fn target_cluster_type(&self) -> ::std::option::Option<&str> {
         self.target_cluster_type.as_deref()
     }
     /// <p>The status of the resize operation.</p>
-    /// <p>Valid Values: <code>NONE</code> | <code>IN_PROGRESS</code> | <code>FAILED</code> | <code>SUCCEEDED</code> | <code>CANCELLING</code></p>
+    /// <p>Valid Values: <code>NONE</code> | <code>IN_PROGRESS</code> | <code>FAILED</code> | <code>SUCCEEDED</code> | <code>CANCELLING</code> </p>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
@@ -104,7 +104,7 @@ impl DescribeResizeOutput {
     pub fn estimated_time_to_completion_in_seconds(&self) -> ::std::option::Option<i64> {
         self.estimated_time_to_completion_in_seconds
     }
-    /// <p>An enum with possible values of <code>ClassicResize</code> and <code>ElasticResize</code>. These values describe the type of resize operation being performed.</p>
+    /// <p>An enum with possible values of <code>ClassicResize</code> and <code>ElasticResize</code>. These values describe the type of resize operation being performed. </p>
     pub fn resize_type(&self) -> ::std::option::Option<&str> {
         self.resize_type.as_deref()
     }
@@ -113,7 +113,7 @@ impl DescribeResizeOutput {
         self.message.as_deref()
     }
     /// <p>The type of encryption for the cluster after the resize is complete.</p>
-    /// <p>Possible values are <code>KMS</code> and <code>None</code>.</p>
+    /// <p>Possible values are <code>KMS</code> and <code>None</code>. </p>
     pub fn target_encryption_type(&self) -> ::std::option::Option<&str> {
         self.target_encryption_type.as_deref()
     }
@@ -186,36 +186,36 @@ impl DescribeResizeOutputBuilder {
         &self.target_number_of_nodes
     }
     /// <p>The cluster type after the resize operation is complete.</p>
-    /// <p>Valid Values: <code>multi-node</code> | <code>single-node</code></p>
+    /// <p>Valid Values: <code>multi-node</code> | <code>single-node</code> </p>
     pub fn target_cluster_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_cluster_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The cluster type after the resize operation is complete.</p>
-    /// <p>Valid Values: <code>multi-node</code> | <code>single-node</code></p>
+    /// <p>Valid Values: <code>multi-node</code> | <code>single-node</code> </p>
     pub fn set_target_cluster_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_cluster_type = input;
         self
     }
     /// <p>The cluster type after the resize operation is complete.</p>
-    /// <p>Valid Values: <code>multi-node</code> | <code>single-node</code></p>
+    /// <p>Valid Values: <code>multi-node</code> | <code>single-node</code> </p>
     pub fn get_target_cluster_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_cluster_type
     }
     /// <p>The status of the resize operation.</p>
-    /// <p>Valid Values: <code>NONE</code> | <code>IN_PROGRESS</code> | <code>FAILED</code> | <code>SUCCEEDED</code> | <code>CANCELLING</code></p>
+    /// <p>Valid Values: <code>NONE</code> | <code>IN_PROGRESS</code> | <code>FAILED</code> | <code>SUCCEEDED</code> | <code>CANCELLING</code> </p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the resize operation.</p>
-    /// <p>Valid Values: <code>NONE</code> | <code>IN_PROGRESS</code> | <code>FAILED</code> | <code>SUCCEEDED</code> | <code>CANCELLING</code></p>
+    /// <p>Valid Values: <code>NONE</code> | <code>IN_PROGRESS</code> | <code>FAILED</code> | <code>SUCCEEDED</code> | <code>CANCELLING</code> </p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
     /// <p>The status of the resize operation.</p>
-    /// <p>Valid Values: <code>NONE</code> | <code>IN_PROGRESS</code> | <code>FAILED</code> | <code>SUCCEEDED</code> | <code>CANCELLING</code></p>
+    /// <p>Valid Values: <code>NONE</code> | <code>IN_PROGRESS</code> | <code>FAILED</code> | <code>SUCCEEDED</code> | <code>CANCELLING</code> </p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status
     }
@@ -358,17 +358,17 @@ impl DescribeResizeOutputBuilder {
     pub fn get_estimated_time_to_completion_in_seconds(&self) -> &::std::option::Option<i64> {
         &self.estimated_time_to_completion_in_seconds
     }
-    /// <p>An enum with possible values of <code>ClassicResize</code> and <code>ElasticResize</code>. These values describe the type of resize operation being performed.</p>
+    /// <p>An enum with possible values of <code>ClassicResize</code> and <code>ElasticResize</code>. These values describe the type of resize operation being performed. </p>
     pub fn resize_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resize_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An enum with possible values of <code>ClassicResize</code> and <code>ElasticResize</code>. These values describe the type of resize operation being performed.</p>
+    /// <p>An enum with possible values of <code>ClassicResize</code> and <code>ElasticResize</code>. These values describe the type of resize operation being performed. </p>
     pub fn set_resize_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resize_type = input;
         self
     }
-    /// <p>An enum with possible values of <code>ClassicResize</code> and <code>ElasticResize</code>. These values describe the type of resize operation being performed.</p>
+    /// <p>An enum with possible values of <code>ClassicResize</code> and <code>ElasticResize</code>. These values describe the type of resize operation being performed. </p>
     pub fn get_resize_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.resize_type
     }
@@ -387,19 +387,19 @@ impl DescribeResizeOutputBuilder {
         &self.message
     }
     /// <p>The type of encryption for the cluster after the resize is complete.</p>
-    /// <p>Possible values are <code>KMS</code> and <code>None</code>.</p>
+    /// <p>Possible values are <code>KMS</code> and <code>None</code>. </p>
     pub fn target_encryption_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_encryption_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of encryption for the cluster after the resize is complete.</p>
-    /// <p>Possible values are <code>KMS</code> and <code>None</code>.</p>
+    /// <p>Possible values are <code>KMS</code> and <code>None</code>. </p>
     pub fn set_target_encryption_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_encryption_type = input;
         self
     }
     /// <p>The type of encryption for the cluster after the resize is complete.</p>
-    /// <p>Possible values are <code>KMS</code> and <code>None</code>.</p>
+    /// <p>Possible values are <code>KMS</code> and <code>None</code>. </p>
     pub fn get_target_encryption_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_encryption_type
     }

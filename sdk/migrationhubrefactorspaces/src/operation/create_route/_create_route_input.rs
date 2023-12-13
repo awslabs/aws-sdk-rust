@@ -11,11 +11,11 @@ pub struct CreateRouteInput {
     pub service_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The route type of the route. <code>DEFAULT</code> indicates that all traffic that does not match another route is forwarded to the default route. Applications must have a default route before any other routes can be created. <code>URI_PATH</code> indicates a route that is based on a URI path.</p>
     pub route_type: ::std::option::Option<crate::types::RouteType>,
-    /// <p>Configuration for the default route type.</p>
+    /// <p> Configuration for the default route type. </p>
     pub default_route: ::std::option::Option<crate::types::DefaultRouteInput>,
-    /// <p>The configuration for the URI path route type.</p>
+    /// <p>The configuration for the URI path route type. </p>
     pub uri_path_route: ::std::option::Option<crate::types::UriPathRouteInput>,
-    /// <p>The tags to assign to the route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair..</p>
+    /// <p>The tags to assign to the route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.. </p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -37,15 +37,15 @@ impl CreateRouteInput {
     pub fn route_type(&self) -> ::std::option::Option<&crate::types::RouteType> {
         self.route_type.as_ref()
     }
-    /// <p>Configuration for the default route type.</p>
+    /// <p> Configuration for the default route type. </p>
     pub fn default_route(&self) -> ::std::option::Option<&crate::types::DefaultRouteInput> {
         self.default_route.as_ref()
     }
-    /// <p>The configuration for the URI path route type.</p>
+    /// <p>The configuration for the URI path route type. </p>
     pub fn uri_path_route(&self) -> ::std::option::Option<&crate::types::UriPathRouteInput> {
         self.uri_path_route.as_ref()
     }
-    /// <p>The tags to assign to the route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair..</p>
+    /// <p>The tags to assign to the route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.. </p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
@@ -149,31 +149,31 @@ impl CreateRouteInputBuilder {
     pub fn get_route_type(&self) -> &::std::option::Option<crate::types::RouteType> {
         &self.route_type
     }
-    /// <p>Configuration for the default route type.</p>
+    /// <p> Configuration for the default route type. </p>
     pub fn default_route(mut self, input: crate::types::DefaultRouteInput) -> Self {
         self.default_route = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Configuration for the default route type.</p>
+    /// <p> Configuration for the default route type. </p>
     pub fn set_default_route(mut self, input: ::std::option::Option<crate::types::DefaultRouteInput>) -> Self {
         self.default_route = input;
         self
     }
-    /// <p>Configuration for the default route type.</p>
+    /// <p> Configuration for the default route type. </p>
     pub fn get_default_route(&self) -> &::std::option::Option<crate::types::DefaultRouteInput> {
         &self.default_route
     }
-    /// <p>The configuration for the URI path route type.</p>
+    /// <p>The configuration for the URI path route type. </p>
     pub fn uri_path_route(mut self, input: crate::types::UriPathRouteInput) -> Self {
         self.uri_path_route = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The configuration for the URI path route type.</p>
+    /// <p>The configuration for the URI path route type. </p>
     pub fn set_uri_path_route(mut self, input: ::std::option::Option<crate::types::UriPathRouteInput>) -> Self {
         self.uri_path_route = input;
         self
     }
-    /// <p>The configuration for the URI path route type.</p>
+    /// <p>The configuration for the URI path route type. </p>
     pub fn get_uri_path_route(&self) -> &::std::option::Option<crate::types::UriPathRouteInput> {
         &self.uri_path_route
     }
@@ -181,19 +181,19 @@ impl CreateRouteInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The tags to assign to the route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair..</p>
+    /// <p>The tags to assign to the route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.. </p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The tags to assign to the route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair..</p>
+    /// <p>The tags to assign to the route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.. </p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>The tags to assign to the route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair..</p>
+    /// <p>The tags to assign to the route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.. </p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }

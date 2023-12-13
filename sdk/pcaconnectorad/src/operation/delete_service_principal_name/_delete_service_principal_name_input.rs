@@ -5,7 +5,7 @@
 pub struct DeleteServicePrincipalNameInput {
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateDirectoryRegistration.html">CreateDirectoryRegistration</a>.</p>
     pub directory_registration_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html">CreateConnector</a>.</p>
+    /// <p> The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html">CreateConnector</a>.</p>
     pub connector_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteServicePrincipalNameInput {
@@ -13,7 +13,7 @@ impl DeleteServicePrincipalNameInput {
     pub fn directory_registration_arn(&self) -> ::std::option::Option<&str> {
         self.directory_registration_arn.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html">CreateConnector</a>.</p>
+    /// <p> The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html">CreateConnector</a>.</p>
     pub fn connector_arn(&self) -> ::std::option::Option<&str> {
         self.connector_arn.as_deref()
     }
@@ -48,18 +48,18 @@ impl DeleteServicePrincipalNameInputBuilder {
     pub fn get_directory_registration_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.directory_registration_arn
     }
-    /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html">CreateConnector</a>.</p>
+    /// <p> The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html">CreateConnector</a>.</p>
     /// This field is required.
     pub fn connector_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html">CreateConnector</a>.</p>
+    /// <p> The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html">CreateConnector</a>.</p>
     pub fn set_connector_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connector_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html">CreateConnector</a>.</p>
+    /// <p> The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html">CreateConnector</a>.</p>
     pub fn get_connector_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.connector_arn
     }

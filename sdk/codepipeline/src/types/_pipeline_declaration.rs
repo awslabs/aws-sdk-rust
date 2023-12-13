@@ -8,11 +8,11 @@ pub struct PipelineDeclaration {
     pub name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) for CodePipeline to use to either perform actions with no <code>actionRoleArn</code>, or to use to assume roles for actions with an <code>actionRoleArn</code>.</p>
     pub role_arn: ::std::string::String,
-    /// <p>Represents information about the S3 bucket where artifacts are stored for the pipeline.</p><note>
+    /// <p>Represents information about the S3 bucket where artifacts are stored for the pipeline.</p> <note>
     /// <p>You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.</p>
     /// </note>
     pub artifact_store: ::std::option::Option<crate::types::ArtifactStore>,
-    /// <p>A mapping of <code>artifactStore</code> objects and their corresponding Amazon Web Services Regions. There must be an artifact store for the pipeline Region and for each cross-region action in the pipeline.</p><note>
+    /// <p>A mapping of <code>artifactStore</code> objects and their corresponding Amazon Web Services Regions. There must be an artifact store for the pipeline Region and for each cross-region action in the pipeline.</p> <note>
     /// <p>You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.</p>
     /// </note>
     pub artifact_stores: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ArtifactStore>>,
@@ -22,19 +22,17 @@ pub struct PipelineDeclaration {
     pub version: ::std::option::Option<i32>,
     /// <p>CodePipeline provides the following pipeline types, which differ in characteristics and price, so that you can tailor your pipeline features and cost to the needs of your applications.</p>
     /// <ul>
-    /// <li>
-    /// <p>V1 type pipelines have a JSON structure that contains standard pipeline, stage, and action-level parameters.</p></li>
-    /// <li>
-    /// <p>V2 type pipelines have the same structure as a V1 type, along with additional parameters for release safety and trigger configuration.</p></li>
-    /// </ul><important>
+    /// <li> <p>V1 type pipelines have a JSON structure that contains standard pipeline, stage, and action-level parameters.</p> </li>
+    /// <li> <p>V2 type pipelines have the same structure as a V1 type, along with additional parameters for release safety and trigger configuration.</p> </li>
+    /// </ul> <important>
     /// <p>Including V2 parameters, such as triggers on Git tags, in the pipeline JSON when creating or updating a pipeline will result in the pipeline having the V2 type of pipeline and the associated costs.</p>
     /// </important>
     /// <p>For information about pricing for CodePipeline, see <a href="https://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p>
-    /// <p>For information about which type of pipeline to choose, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What type of pipeline is right for me?</a>.</p><note>
+    /// <p> For information about which type of pipeline to choose, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What type of pipeline is right for me?</a>.</p> <note>
     /// <p>V2 type pipelines, along with triggers on Git tags and pipeline-level variables, are not currently supported for CloudFormation and CDK resources in CodePipeline. For more information about V2 type pipelines, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types.html">Pipeline types</a> in the <i>CodePipeline User Guide</i>.</p>
     /// </note>
     pub pipeline_type: ::std::option::Option<crate::types::PipelineType>,
-    /// <p>The trigger configuration specifying a type of event, such as Git tags, that starts the pipeline.</p><note>
+    /// <p>The trigger configuration specifying a type of event, such as Git tags, that starts the pipeline.</p> <note>
     /// <p>When a trigger configuration is specified, default change detection for repository and branch commits is disabled.</p>
     /// </note>
     pub triggers: ::std::option::Option<::std::vec::Vec<crate::types::PipelineTriggerDeclaration>>,
@@ -52,13 +50,13 @@ impl PipelineDeclaration {
         use std::ops::Deref;
         self.role_arn.deref()
     }
-    /// <p>Represents information about the S3 bucket where artifacts are stored for the pipeline.</p><note>
+    /// <p>Represents information about the S3 bucket where artifacts are stored for the pipeline.</p> <note>
     /// <p>You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.</p>
     /// </note>
     pub fn artifact_store(&self) -> ::std::option::Option<&crate::types::ArtifactStore> {
         self.artifact_store.as_ref()
     }
-    /// <p>A mapping of <code>artifactStore</code> objects and their corresponding Amazon Web Services Regions. There must be an artifact store for the pipeline Region and for each cross-region action in the pipeline.</p><note>
+    /// <p>A mapping of <code>artifactStore</code> objects and their corresponding Amazon Web Services Regions. There must be an artifact store for the pipeline Region and for each cross-region action in the pipeline.</p> <note>
     /// <p>You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.</p>
     /// </note>
     pub fn artifact_stores(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ArtifactStore>> {
@@ -75,21 +73,19 @@ impl PipelineDeclaration {
     }
     /// <p>CodePipeline provides the following pipeline types, which differ in characteristics and price, so that you can tailor your pipeline features and cost to the needs of your applications.</p>
     /// <ul>
-    /// <li>
-    /// <p>V1 type pipelines have a JSON structure that contains standard pipeline, stage, and action-level parameters.</p></li>
-    /// <li>
-    /// <p>V2 type pipelines have the same structure as a V1 type, along with additional parameters for release safety and trigger configuration.</p></li>
-    /// </ul><important>
+    /// <li> <p>V1 type pipelines have a JSON structure that contains standard pipeline, stage, and action-level parameters.</p> </li>
+    /// <li> <p>V2 type pipelines have the same structure as a V1 type, along with additional parameters for release safety and trigger configuration.</p> </li>
+    /// </ul> <important>
     /// <p>Including V2 parameters, such as triggers on Git tags, in the pipeline JSON when creating or updating a pipeline will result in the pipeline having the V2 type of pipeline and the associated costs.</p>
     /// </important>
     /// <p>For information about pricing for CodePipeline, see <a href="https://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p>
-    /// <p>For information about which type of pipeline to choose, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What type of pipeline is right for me?</a>.</p><note>
+    /// <p> For information about which type of pipeline to choose, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What type of pipeline is right for me?</a>.</p> <note>
     /// <p>V2 type pipelines, along with triggers on Git tags and pipeline-level variables, are not currently supported for CloudFormation and CDK resources in CodePipeline. For more information about V2 type pipelines, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types.html">Pipeline types</a> in the <i>CodePipeline User Guide</i>.</p>
     /// </note>
     pub fn pipeline_type(&self) -> ::std::option::Option<&crate::types::PipelineType> {
         self.pipeline_type.as_ref()
     }
-    /// <p>The trigger configuration specifying a type of event, such as Git tags, that starts the pipeline.</p><note>
+    /// <p>The trigger configuration specifying a type of event, such as Git tags, that starts the pipeline.</p> <note>
     /// <p>When a trigger configuration is specified, default change detection for repository and branch commits is disabled.</p>
     /// </note>
     ///
@@ -156,21 +152,21 @@ impl PipelineDeclarationBuilder {
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
-    /// <p>Represents information about the S3 bucket where artifacts are stored for the pipeline.</p><note>
+    /// <p>Represents information about the S3 bucket where artifacts are stored for the pipeline.</p> <note>
     /// <p>You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.</p>
     /// </note>
     pub fn artifact_store(mut self, input: crate::types::ArtifactStore) -> Self {
         self.artifact_store = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Represents information about the S3 bucket where artifacts are stored for the pipeline.</p><note>
+    /// <p>Represents information about the S3 bucket where artifacts are stored for the pipeline.</p> <note>
     /// <p>You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.</p>
     /// </note>
     pub fn set_artifact_store(mut self, input: ::std::option::Option<crate::types::ArtifactStore>) -> Self {
         self.artifact_store = input;
         self
     }
-    /// <p>Represents information about the S3 bucket where artifacts are stored for the pipeline.</p><note>
+    /// <p>Represents information about the S3 bucket where artifacts are stored for the pipeline.</p> <note>
     /// <p>You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.</p>
     /// </note>
     pub fn get_artifact_store(&self) -> &::std::option::Option<crate::types::ArtifactStore> {
@@ -180,7 +176,7 @@ impl PipelineDeclarationBuilder {
     ///
     /// To override the contents of this collection use [`set_artifact_stores`](Self::set_artifact_stores).
     ///
-    /// <p>A mapping of <code>artifactStore</code> objects and their corresponding Amazon Web Services Regions. There must be an artifact store for the pipeline Region and for each cross-region action in the pipeline.</p><note>
+    /// <p>A mapping of <code>artifactStore</code> objects and their corresponding Amazon Web Services Regions. There must be an artifact store for the pipeline Region and for each cross-region action in the pipeline.</p> <note>
     /// <p>You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.</p>
     /// </note>
     pub fn artifact_stores(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ArtifactStore) -> Self {
@@ -189,7 +185,7 @@ impl PipelineDeclarationBuilder {
         self.artifact_stores = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>A mapping of <code>artifactStore</code> objects and their corresponding Amazon Web Services Regions. There must be an artifact store for the pipeline Region and for each cross-region action in the pipeline.</p><note>
+    /// <p>A mapping of <code>artifactStore</code> objects and their corresponding Amazon Web Services Regions. There must be an artifact store for the pipeline Region and for each cross-region action in the pipeline.</p> <note>
     /// <p>You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.</p>
     /// </note>
     pub fn set_artifact_stores(
@@ -199,7 +195,7 @@ impl PipelineDeclarationBuilder {
         self.artifact_stores = input;
         self
     }
-    /// <p>A mapping of <code>artifactStore</code> objects and their corresponding Amazon Web Services Regions. There must be an artifact store for the pipeline Region and for each cross-region action in the pipeline.</p><note>
+    /// <p>A mapping of <code>artifactStore</code> objects and their corresponding Amazon Web Services Regions. There must be an artifact store for the pipeline Region and for each cross-region action in the pipeline.</p> <note>
     /// <p>You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.</p>
     /// </note>
     pub fn get_artifact_stores(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ArtifactStore>> {
@@ -241,15 +237,13 @@ impl PipelineDeclarationBuilder {
     }
     /// <p>CodePipeline provides the following pipeline types, which differ in characteristics and price, so that you can tailor your pipeline features and cost to the needs of your applications.</p>
     /// <ul>
-    /// <li>
-    /// <p>V1 type pipelines have a JSON structure that contains standard pipeline, stage, and action-level parameters.</p></li>
-    /// <li>
-    /// <p>V2 type pipelines have the same structure as a V1 type, along with additional parameters for release safety and trigger configuration.</p></li>
-    /// </ul><important>
+    /// <li> <p>V1 type pipelines have a JSON structure that contains standard pipeline, stage, and action-level parameters.</p> </li>
+    /// <li> <p>V2 type pipelines have the same structure as a V1 type, along with additional parameters for release safety and trigger configuration.</p> </li>
+    /// </ul> <important>
     /// <p>Including V2 parameters, such as triggers on Git tags, in the pipeline JSON when creating or updating a pipeline will result in the pipeline having the V2 type of pipeline and the associated costs.</p>
     /// </important>
     /// <p>For information about pricing for CodePipeline, see <a href="https://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p>
-    /// <p>For information about which type of pipeline to choose, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What type of pipeline is right for me?</a>.</p><note>
+    /// <p> For information about which type of pipeline to choose, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What type of pipeline is right for me?</a>.</p> <note>
     /// <p>V2 type pipelines, along with triggers on Git tags and pipeline-level variables, are not currently supported for CloudFormation and CDK resources in CodePipeline. For more information about V2 type pipelines, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types.html">Pipeline types</a> in the <i>CodePipeline User Guide</i>.</p>
     /// </note>
     pub fn pipeline_type(mut self, input: crate::types::PipelineType) -> Self {
@@ -258,15 +252,13 @@ impl PipelineDeclarationBuilder {
     }
     /// <p>CodePipeline provides the following pipeline types, which differ in characteristics and price, so that you can tailor your pipeline features and cost to the needs of your applications.</p>
     /// <ul>
-    /// <li>
-    /// <p>V1 type pipelines have a JSON structure that contains standard pipeline, stage, and action-level parameters.</p></li>
-    /// <li>
-    /// <p>V2 type pipelines have the same structure as a V1 type, along with additional parameters for release safety and trigger configuration.</p></li>
-    /// </ul><important>
+    /// <li> <p>V1 type pipelines have a JSON structure that contains standard pipeline, stage, and action-level parameters.</p> </li>
+    /// <li> <p>V2 type pipelines have the same structure as a V1 type, along with additional parameters for release safety and trigger configuration.</p> </li>
+    /// </ul> <important>
     /// <p>Including V2 parameters, such as triggers on Git tags, in the pipeline JSON when creating or updating a pipeline will result in the pipeline having the V2 type of pipeline and the associated costs.</p>
     /// </important>
     /// <p>For information about pricing for CodePipeline, see <a href="https://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p>
-    /// <p>For information about which type of pipeline to choose, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What type of pipeline is right for me?</a>.</p><note>
+    /// <p> For information about which type of pipeline to choose, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What type of pipeline is right for me?</a>.</p> <note>
     /// <p>V2 type pipelines, along with triggers on Git tags and pipeline-level variables, are not currently supported for CloudFormation and CDK resources in CodePipeline. For more information about V2 type pipelines, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types.html">Pipeline types</a> in the <i>CodePipeline User Guide</i>.</p>
     /// </note>
     pub fn set_pipeline_type(mut self, input: ::std::option::Option<crate::types::PipelineType>) -> Self {
@@ -275,15 +267,13 @@ impl PipelineDeclarationBuilder {
     }
     /// <p>CodePipeline provides the following pipeline types, which differ in characteristics and price, so that you can tailor your pipeline features and cost to the needs of your applications.</p>
     /// <ul>
-    /// <li>
-    /// <p>V1 type pipelines have a JSON structure that contains standard pipeline, stage, and action-level parameters.</p></li>
-    /// <li>
-    /// <p>V2 type pipelines have the same structure as a V1 type, along with additional parameters for release safety and trigger configuration.</p></li>
-    /// </ul><important>
+    /// <li> <p>V1 type pipelines have a JSON structure that contains standard pipeline, stage, and action-level parameters.</p> </li>
+    /// <li> <p>V2 type pipelines have the same structure as a V1 type, along with additional parameters for release safety and trigger configuration.</p> </li>
+    /// </ul> <important>
     /// <p>Including V2 parameters, such as triggers on Git tags, in the pipeline JSON when creating or updating a pipeline will result in the pipeline having the V2 type of pipeline and the associated costs.</p>
     /// </important>
     /// <p>For information about pricing for CodePipeline, see <a href="https://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p>
-    /// <p>For information about which type of pipeline to choose, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What type of pipeline is right for me?</a>.</p><note>
+    /// <p> For information about which type of pipeline to choose, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What type of pipeline is right for me?</a>.</p> <note>
     /// <p>V2 type pipelines, along with triggers on Git tags and pipeline-level variables, are not currently supported for CloudFormation and CDK resources in CodePipeline. For more information about V2 type pipelines, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types.html">Pipeline types</a> in the <i>CodePipeline User Guide</i>.</p>
     /// </note>
     pub fn get_pipeline_type(&self) -> &::std::option::Option<crate::types::PipelineType> {
@@ -293,7 +283,7 @@ impl PipelineDeclarationBuilder {
     ///
     /// To override the contents of this collection use [`set_triggers`](Self::set_triggers).
     ///
-    /// <p>The trigger configuration specifying a type of event, such as Git tags, that starts the pipeline.</p><note>
+    /// <p>The trigger configuration specifying a type of event, such as Git tags, that starts the pipeline.</p> <note>
     /// <p>When a trigger configuration is specified, default change detection for repository and branch commits is disabled.</p>
     /// </note>
     pub fn triggers(mut self, input: crate::types::PipelineTriggerDeclaration) -> Self {
@@ -302,14 +292,14 @@ impl PipelineDeclarationBuilder {
         self.triggers = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The trigger configuration specifying a type of event, such as Git tags, that starts the pipeline.</p><note>
+    /// <p>The trigger configuration specifying a type of event, such as Git tags, that starts the pipeline.</p> <note>
     /// <p>When a trigger configuration is specified, default change detection for repository and branch commits is disabled.</p>
     /// </note>
     pub fn set_triggers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PipelineTriggerDeclaration>>) -> Self {
         self.triggers = input;
         self
     }
-    /// <p>The trigger configuration specifying a type of event, such as Git tags, that starts the pipeline.</p><note>
+    /// <p>The trigger configuration specifying a type of event, such as Git tags, that starts the pipeline.</p> <note>
     /// <p>When a trigger configuration is specified, default change detection for repository and branch commits is disabled.</p>
     /// </note>
     pub fn get_triggers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelineTriggerDeclaration>> {

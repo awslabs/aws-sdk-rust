@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDbClusterOutput {
-    /// <p>Detailed information about a cluster.</p>
+    /// <p>Detailed information about a cluster. </p>
     pub db_cluster: ::std::option::Option<crate::types::DbCluster>,
     _request_id: Option<String>,
 }
 impl CreateDbClusterOutput {
-    /// <p>Detailed information about a cluster.</p>
+    /// <p>Detailed information about a cluster. </p>
     pub fn db_cluster(&self) -> ::std::option::Option<&crate::types::DbCluster> {
         self.db_cluster.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct CreateDbClusterOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateDbClusterOutputBuilder {
-    /// <p>Detailed information about a cluster.</p>
+    /// <p>Detailed information about a cluster. </p>
     pub fn db_cluster(mut self, input: crate::types::DbCluster) -> Self {
         self.db_cluster = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Detailed information about a cluster.</p>
+    /// <p>Detailed information about a cluster. </p>
     pub fn set_db_cluster(mut self, input: ::std::option::Option<crate::types::DbCluster>) -> Self {
         self.db_cluster = input;
         self
     }
-    /// <p>Detailed information about a cluster.</p>
+    /// <p>Detailed information about a cluster. </p>
     pub fn get_db_cluster(&self) -> &::std::option::Option<crate::types::DbCluster> {
         &self.db_cluster
     }

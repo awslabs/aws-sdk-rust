@@ -15,7 +15,7 @@ pub struct CreateVocabularyFilterInput {
     /// <p>Each language has a character set that contains all allowed characters for that specific language. If you use unsupported characters, your custom vocabulary filter request fails. Refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a> to get the character set for your language.</p>
     pub words: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon S3 location of the text file that contains your custom vocabulary filter terms. The URI must be located in the same Amazon Web Services Region as the resource you're calling.</p>
-    /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-filter-file.txt</code></p>
+    /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-filter-file.txt</code> </p>
     /// <p>Note that if you include <code>VocabularyFilterFileUri</code> in your request, you cannot use <code>Words</code>; you must choose one or the other.</p>
     pub vocabulary_filter_file_uri: ::std::option::Option<::std::string::String>,
     /// <p>Adds one or more custom tags, each in the form of a key:value pair, to a new custom vocabulary filter at the time you create this new vocabulary filter.</p>
@@ -47,7 +47,7 @@ impl CreateVocabularyFilterInput {
         self.words.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon S3 location of the text file that contains your custom vocabulary filter terms. The URI must be located in the same Amazon Web Services Region as the resource you're calling.</p>
-    /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-filter-file.txt</code></p>
+    /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-filter-file.txt</code> </p>
     /// <p>Note that if you include <code>VocabularyFilterFileUri</code> in your request, you cannot use <code>Words</code>; you must choose one or the other.</p>
     pub fn vocabulary_filter_file_uri(&self) -> ::std::option::Option<&str> {
         self.vocabulary_filter_file_uri.as_deref()
@@ -151,21 +151,21 @@ impl CreateVocabularyFilterInputBuilder {
         &self.words
     }
     /// <p>The Amazon S3 location of the text file that contains your custom vocabulary filter terms. The URI must be located in the same Amazon Web Services Region as the resource you're calling.</p>
-    /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-filter-file.txt</code></p>
+    /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-filter-file.txt</code> </p>
     /// <p>Note that if you include <code>VocabularyFilterFileUri</code> in your request, you cannot use <code>Words</code>; you must choose one or the other.</p>
     pub fn vocabulary_filter_file_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vocabulary_filter_file_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 location of the text file that contains your custom vocabulary filter terms. The URI must be located in the same Amazon Web Services Region as the resource you're calling.</p>
-    /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-filter-file.txt</code></p>
+    /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-filter-file.txt</code> </p>
     /// <p>Note that if you include <code>VocabularyFilterFileUri</code> in your request, you cannot use <code>Words</code>; you must choose one or the other.</p>
     pub fn set_vocabulary_filter_file_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vocabulary_filter_file_uri = input;
         self
     }
     /// <p>The Amazon S3 location of the text file that contains your custom vocabulary filter terms. The URI must be located in the same Amazon Web Services Region as the resource you're calling.</p>
-    /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-filter-file.txt</code></p>
+    /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-filter-file.txt</code> </p>
     /// <p>Note that if you include <code>VocabularyFilterFileUri</code> in your request, you cannot use <code>Words</code>; you must choose one or the other.</p>
     pub fn get_vocabulary_filter_file_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.vocabulary_filter_file_uri

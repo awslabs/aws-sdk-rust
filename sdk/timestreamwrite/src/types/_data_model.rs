@@ -6,7 +6,7 @@
 pub struct DataModel {
     /// <p>Source column to be mapped to time.</p>
     pub time_column: ::std::option::Option<::std::string::String>,
-    /// <p>The granularity of the timestamp unit. It indicates if the time value is in seconds, milliseconds, nanoseconds, or other supported values. Default is <code>MILLISECONDS</code>.</p>
+    /// <p> The granularity of the timestamp unit. It indicates if the time value is in seconds, milliseconds, nanoseconds, or other supported values. Default is <code>MILLISECONDS</code>. </p>
     pub time_unit: ::std::option::Option<crate::types::TimeUnit>,
     /// <p>Source to target mappings for dimensions.</p>
     pub dimension_mappings: ::std::vec::Vec<crate::types::DimensionMapping>,
@@ -22,7 +22,7 @@ impl DataModel {
     pub fn time_column(&self) -> ::std::option::Option<&str> {
         self.time_column.as_deref()
     }
-    /// <p>The granularity of the timestamp unit. It indicates if the time value is in seconds, milliseconds, nanoseconds, or other supported values. Default is <code>MILLISECONDS</code>.</p>
+    /// <p> The granularity of the timestamp unit. It indicates if the time value is in seconds, milliseconds, nanoseconds, or other supported values. Default is <code>MILLISECONDS</code>. </p>
     pub fn time_unit(&self) -> ::std::option::Option<&crate::types::TimeUnit> {
         self.time_unit.as_ref()
     }
@@ -79,17 +79,17 @@ impl DataModelBuilder {
     pub fn get_time_column(&self) -> &::std::option::Option<::std::string::String> {
         &self.time_column
     }
-    /// <p>The granularity of the timestamp unit. It indicates if the time value is in seconds, milliseconds, nanoseconds, or other supported values. Default is <code>MILLISECONDS</code>.</p>
+    /// <p> The granularity of the timestamp unit. It indicates if the time value is in seconds, milliseconds, nanoseconds, or other supported values. Default is <code>MILLISECONDS</code>. </p>
     pub fn time_unit(mut self, input: crate::types::TimeUnit) -> Self {
         self.time_unit = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The granularity of the timestamp unit. It indicates if the time value is in seconds, milliseconds, nanoseconds, or other supported values. Default is <code>MILLISECONDS</code>.</p>
+    /// <p> The granularity of the timestamp unit. It indicates if the time value is in seconds, milliseconds, nanoseconds, or other supported values. Default is <code>MILLISECONDS</code>. </p>
     pub fn set_time_unit(mut self, input: ::std::option::Option<crate::types::TimeUnit>) -> Self {
         self.time_unit = input;
         self
     }
-    /// <p>The granularity of the timestamp unit. It indicates if the time value is in seconds, milliseconds, nanoseconds, or other supported values. Default is <code>MILLISECONDS</code>.</p>
+    /// <p> The granularity of the timestamp unit. It indicates if the time value is in seconds, milliseconds, nanoseconds, or other supported values. Default is <code>MILLISECONDS</code>. </p>
     pub fn get_time_unit(&self) -> &::std::option::Option<crate::types::TimeUnit> {
         &self.time_unit
     }

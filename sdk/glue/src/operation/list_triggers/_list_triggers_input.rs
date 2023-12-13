@@ -5,7 +5,7 @@
 pub struct ListTriggersInput {
     /// <p>A continuation token, if this is a continuation request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the job for which to retrieve triggers. The trigger that can start this job is returned. If there is no such trigger, all triggers are returned.</p>
+    /// <p> The name of the job for which to retrieve triggers. The trigger that can start this job is returned. If there is no such trigger, all triggers are returned.</p>
     pub dependent_job_name: ::std::option::Option<::std::string::String>,
     /// <p>The maximum size of a list to return.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -17,7 +17,7 @@ impl ListTriggersInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The name of the job for which to retrieve triggers. The trigger that can start this job is returned. If there is no such trigger, all triggers are returned.</p>
+    /// <p> The name of the job for which to retrieve triggers. The trigger that can start this job is returned. If there is no such trigger, all triggers are returned.</p>
     pub fn dependent_job_name(&self) -> ::std::option::Option<&str> {
         self.dependent_job_name.as_deref()
     }
@@ -61,17 +61,17 @@ impl ListTriggersInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>The name of the job for which to retrieve triggers. The trigger that can start this job is returned. If there is no such trigger, all triggers are returned.</p>
+    /// <p> The name of the job for which to retrieve triggers. The trigger that can start this job is returned. If there is no such trigger, all triggers are returned.</p>
     pub fn dependent_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dependent_job_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the job for which to retrieve triggers. The trigger that can start this job is returned. If there is no such trigger, all triggers are returned.</p>
+    /// <p> The name of the job for which to retrieve triggers. The trigger that can start this job is returned. If there is no such trigger, all triggers are returned.</p>
     pub fn set_dependent_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dependent_job_name = input;
         self
     }
-    /// <p>The name of the job for which to retrieve triggers. The trigger that can start this job is returned. If there is no such trigger, all triggers are returned.</p>
+    /// <p> The name of the job for which to retrieve triggers. The trigger that can start this job is returned. If there is no such trigger, all triggers are returned.</p>
     pub fn get_dependent_job_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.dependent_job_name
     }

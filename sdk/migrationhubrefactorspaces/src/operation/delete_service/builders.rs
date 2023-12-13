@@ -22,7 +22,7 @@ impl DeleteServiceInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteService`.
 ///
-/// <p>Deletes an Amazon Web Services Migration Hub Refactor Spaces service.</p>
+/// <p>Deletes an Amazon Web Services Migration Hub Refactor Spaces service. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteServiceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -122,21 +122,21 @@ impl DeleteServiceFluentBuilder {
     pub fn get_environment_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_environment_identifier()
     }
-    /// <p>Deletes a Refactor Spaces service.</p><note>
+    /// <p>Deletes a Refactor Spaces service.</p> <note>
     /// <p>The <code>RefactorSpacesSecurityGroup</code> security group must be removed from all Amazon Web Services resources in the virtual private cloud (VPC) prior to deleting a service with a URL endpoint in a VPC.</p>
     /// </note>
     pub fn application_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_identifier(input.into());
         self
     }
-    /// <p>Deletes a Refactor Spaces service.</p><note>
+    /// <p>Deletes a Refactor Spaces service.</p> <note>
     /// <p>The <code>RefactorSpacesSecurityGroup</code> security group must be removed from all Amazon Web Services resources in the virtual private cloud (VPC) prior to deleting a service with a URL endpoint in a VPC.</p>
     /// </note>
     pub fn set_application_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_identifier(input);
         self
     }
-    /// <p>Deletes a Refactor Spaces service.</p><note>
+    /// <p>Deletes a Refactor Spaces service.</p> <note>
     /// <p>The <code>RefactorSpacesSecurityGroup</code> security group must be removed from all Amazon Web Services resources in the virtual private cloud (VPC) prior to deleting a service with a URL endpoint in a VPC.</p>
     /// </note>
     pub fn get_application_identifier(&self) -> &::std::option::Option<::std::string::String> {

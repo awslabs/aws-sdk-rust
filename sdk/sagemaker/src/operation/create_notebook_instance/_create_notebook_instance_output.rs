@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateNotebookInstanceOutput {
-    /// <p>The Amazon Resource Name (ARN) of the notebook instance.</p>
+    /// <p>The Amazon Resource Name (ARN) of the notebook instance. </p>
     pub notebook_instance_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateNotebookInstanceOutput {
-    /// <p>The Amazon Resource Name (ARN) of the notebook instance.</p>
+    /// <p>The Amazon Resource Name (ARN) of the notebook instance. </p>
     pub fn notebook_instance_arn(&self) -> ::std::option::Option<&str> {
         self.notebook_instance_arn.as_deref()
     }
@@ -33,17 +33,17 @@ pub struct CreateNotebookInstanceOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateNotebookInstanceOutputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the notebook instance.</p>
+    /// <p>The Amazon Resource Name (ARN) of the notebook instance. </p>
     pub fn notebook_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notebook_instance_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the notebook instance.</p>
+    /// <p>The Amazon Resource Name (ARN) of the notebook instance. </p>
     pub fn set_notebook_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notebook_instance_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the notebook instance.</p>
+    /// <p>The Amazon Resource Name (ARN) of the notebook instance. </p>
     pub fn get_notebook_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.notebook_instance_arn
     }

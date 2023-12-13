@@ -15,7 +15,7 @@ pub struct CreateWebExperienceInput {
     pub sample_prompts_control_mode: ::std::option::Option<crate::types::WebExperienceSamplePromptsControlMode>,
     /// <p>A list of key-value pairs that identify or categorize your Amazon Q web experience. You can also use tags to help control access to the web experience. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    /// <p>A token you provide to identify a request to create an Amazon Q web experience.</p>
+    /// <p>A token you provide to identify a request to create an Amazon Q web experience. </p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateWebExperienceInput {
@@ -45,7 +45,7 @@ impl CreateWebExperienceInput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
-    /// <p>A token you provide to identify a request to create an Amazon Q web experience.</p>
+    /// <p>A token you provide to identify a request to create an Amazon Q web experience. </p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -161,17 +161,17 @@ impl CreateWebExperienceInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
-    /// <p>A token you provide to identify a request to create an Amazon Q web experience.</p>
+    /// <p>A token you provide to identify a request to create an Amazon Q web experience. </p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A token you provide to identify a request to create an Amazon Q web experience.</p>
+    /// <p>A token you provide to identify a request to create an Amazon Q web experience. </p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p>A token you provide to identify a request to create an Amazon Q web experience.</p>
+    /// <p>A token you provide to identify a request to create an Amazon Q web experience. </p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }

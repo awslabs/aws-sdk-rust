@@ -15,10 +15,10 @@ pub struct ThingDocument {
     /// <p>The attributes.</p>
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The unnamed shadow and named shadow.</p>
-    /// <p>For more information about shadows, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">IoT Device Shadow service.</a></p>
+    /// <p>For more information about shadows, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">IoT Device Shadow service.</a> </p>
     pub shadow: ::std::option::Option<::std::string::String>,
     /// <p>Contains Device Defender data.</p>
-    /// <p>For more information about Device Defender, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender.html">Device Defender</a>.</p>
+    /// <p>For more information about Device Defender, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender.html">Device Defender</a>. </p>
     pub device_defender: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the thing is connected to the Amazon Web Services IoT Core service.</p>
     pub connectivity: ::std::option::Option<crate::types::ThingConnectivity>,
@@ -47,12 +47,12 @@ impl ThingDocument {
         self.attributes.as_ref()
     }
     /// <p>The unnamed shadow and named shadow.</p>
-    /// <p>For more information about shadows, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">IoT Device Shadow service.</a></p>
+    /// <p>For more information about shadows, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">IoT Device Shadow service.</a> </p>
     pub fn shadow(&self) -> ::std::option::Option<&str> {
         self.shadow.as_deref()
     }
     /// <p>Contains Device Defender data.</p>
-    /// <p>For more information about Device Defender, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender.html">Device Defender</a>.</p>
+    /// <p>For more information about Device Defender, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender.html">Device Defender</a>. </p>
     pub fn device_defender(&self) -> ::std::option::Option<&str> {
         self.device_defender.as_deref()
     }
@@ -165,36 +165,36 @@ impl ThingDocumentBuilder {
         &self.attributes
     }
     /// <p>The unnamed shadow and named shadow.</p>
-    /// <p>For more information about shadows, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">IoT Device Shadow service.</a></p>
+    /// <p>For more information about shadows, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">IoT Device Shadow service.</a> </p>
     pub fn shadow(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shadow = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unnamed shadow and named shadow.</p>
-    /// <p>For more information about shadows, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">IoT Device Shadow service.</a></p>
+    /// <p>For more information about shadows, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">IoT Device Shadow service.</a> </p>
     pub fn set_shadow(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.shadow = input;
         self
     }
     /// <p>The unnamed shadow and named shadow.</p>
-    /// <p>For more information about shadows, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">IoT Device Shadow service.</a></p>
+    /// <p>For more information about shadows, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">IoT Device Shadow service.</a> </p>
     pub fn get_shadow(&self) -> &::std::option::Option<::std::string::String> {
         &self.shadow
     }
     /// <p>Contains Device Defender data.</p>
-    /// <p>For more information about Device Defender, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender.html">Device Defender</a>.</p>
+    /// <p>For more information about Device Defender, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender.html">Device Defender</a>. </p>
     pub fn device_defender(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_defender = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Contains Device Defender data.</p>
-    /// <p>For more information about Device Defender, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender.html">Device Defender</a>.</p>
+    /// <p>For more information about Device Defender, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender.html">Device Defender</a>. </p>
     pub fn set_device_defender(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_defender = input;
         self
     }
     /// <p>Contains Device Defender data.</p>
-    /// <p>For more information about Device Defender, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender.html">Device Defender</a>.</p>
+    /// <p>For more information about Device Defender, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender.html">Device Defender</a>. </p>
     pub fn get_device_defender(&self) -> &::std::option::Option<::std::string::String> {
         &self.device_defender
     }

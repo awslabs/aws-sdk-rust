@@ -5,7 +5,7 @@
 pub struct ImportFirewallDomainsOutput {
     /// <p>The Id of the firewall domain list that DNS Firewall just updated.</p>
     pub id: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the domain list.</p>
+    /// <p>The name of the domain list. </p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Status of the import request.</p>
     pub status: ::std::option::Option<crate::types::FirewallDomainListStatus>,
@@ -18,7 +18,7 @@ impl ImportFirewallDomainsOutput {
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The name of the domain list.</p>
+    /// <p>The name of the domain list. </p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -68,17 +68,17 @@ impl ImportFirewallDomainsOutputBuilder {
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
-    /// <p>The name of the domain list.</p>
+    /// <p>The name of the domain list. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the domain list.</p>
+    /// <p>The name of the domain list. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the domain list.</p>
+    /// <p>The name of the domain list. </p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

@@ -9,12 +9,12 @@ pub struct SmbFileShareInfo {
     /// <p>The ID of the file share.</p>
     pub file_share_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the file share.</p>
-    /// <p>Valid Values: <code>CREATING</code> | <code>UPDATING</code> | <code>AVAILABLE</code> | <code>DELETING</code></p>
+    /// <p>Valid Values: <code>CREATING</code> | <code>UPDATING</code> | <code>AVAILABLE</code> | <code>DELETING</code> </p>
     pub file_share_status: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
-    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub kms_encrypted: bool,
     /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
     pub kms_key: ::std::option::Option<::std::string::String>,
@@ -22,32 +22,32 @@ pub struct SmbFileShareInfo {
     pub path: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the IAM role that an S3 File Gateway assumes when it accesses the underlying storage.</p>
     pub role: ::std::option::Option<::std::string::String>,
-    /// <p>A custom ARN for the backend storage used for storing data for file shares. It includes a resource ARN with an optional prefix concatenation. The prefix must end with a forward slash (/).</p><note>
+    /// <p>A custom ARN for the backend storage used for storing data for file shares. It includes a resource ARN with an optional prefix concatenation. The prefix must end with a forward slash (/).</p> <note>
     /// <p>You can specify LocationARN as a bucket ARN, access point ARN or access point alias, as shown in the following examples.</p>
     /// <p>Bucket ARN:</p>
-    /// <p><code>arn:aws:s3:::my-bucket/prefix/</code></p>
+    /// <p> <code>arn:aws:s3:::my-bucket/prefix/</code> </p>
     /// <p>Access point ARN:</p>
-    /// <p><code>arn:aws:s3:region:account-id:accesspoint/access-point-name/prefix/</code></p>
+    /// <p> <code>arn:aws:s3:region:account-id:accesspoint/access-point-name/prefix/</code> </p>
     /// <p>If you specify an access point, the bucket policy must be configured to delegate access control to the access point. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>Access point alias:</p>
-    /// <p><code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code></p>
+    /// <p> <code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code> </p>
     /// </note>
     pub location_arn: ::std::option::Option<::std::string::String>,
     /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
-    /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code></p>
+    /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
     pub default_storage_class: ::std::option::Option<::std::string::String>,
     /// <p>A value that sets the access control list (ACL) permission for objects in the S3 bucket that an S3 File Gateway puts objects into. The default value is <code>private</code>.</p>
     pub object_acl: ::std::option::Option<crate::types::ObjectAcl>,
     /// <p>A value that sets the write status of a file share. Set this value to <code>true</code> to set the write status to read-only, otherwise set to <code>false</code>.</p>
-    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub read_only: ::std::option::Option<bool>,
     /// <p>A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to <code>true</code> to enable MIME type guessing, otherwise set to <code>false</code>. The default value is <code>true</code>.</p>
-    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub guess_mime_type_enabled: ::std::option::Option<bool>,
-    /// <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p><note>
-    /// <p><code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure that the configuration on the file share is the same as the S3 bucket configuration.</p>
+    /// <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p> <note>
+    /// <p> <code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure that the configuration on the file share is the same as the S3 bucket configuration.</p>
     /// </note>
-    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub requester_pays: ::std::option::Option<bool>,
     /// <p>If this value is set to <code>true</code>, it indicates that access control list (ACL) is enabled on the SMB file share. If it is set to <code>false</code>, it indicates that file and directory permissions are mapped to the POSIX permission.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html">Using Microsoft Windows ACLs to control access to an SMB file share</a> in the <i>Storage Gateway User Guide</i>.</p>
@@ -63,38 +63,38 @@ pub struct SmbFileShareInfo {
     /// <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
     pub audit_destination_arn: ::std::option::Option<::std::string::String>,
     /// <p>The authentication method of the file share. The default is <code>ActiveDirectory</code>.</p>
-    /// <p>Valid Values: <code>ActiveDirectory</code> | <code>GuestAccess</code></p>
+    /// <p>Valid Values: <code>ActiveDirectory</code> | <code>GuestAccess</code> </p>
     pub authentication: ::std::option::Option<::std::string::String>,
     /// <p>The case of an object name in an Amazon S3 bucket. For <code>ClientSpecified</code>, the client determines the case sensitivity. For <code>CaseSensitive</code>, the gateway determines the case sensitivity. The default value is <code>ClientSpecified</code>.</p>
     pub case_sensitivity: ::std::option::Option<crate::types::CaseSensitivity>,
     /// <p>A list of up to 50 tags assigned to the SMB file share, sorted alphabetically by key name. Each tag is a key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the <code>ListTagsForResource</code> API operation.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    /// <p>The name of the file share. Optional.</p><note>
-    /// <p><code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
+    /// <p>The name of the file share. Optional.</p> <note>
+    /// <p> <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
     /// </note>
     pub file_share_name: ::std::option::Option<::std::string::String>,
     /// <p>Refresh cache information for the file share.</p>
     pub cache_attributes: ::std::option::Option<crate::types::CacheAttributes>,
-    /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p><note>
-    /// <p><code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only the timing of the notification.</p>
+    /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p> <note>
+    /// <p> <code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only the timing of the notification.</p>
     /// </note>
     /// <p>The following example sets <code>NotificationPolicy</code> on with <code>SettlingTimeInSeconds</code> set to 60.</p>
-    /// <p><code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code></p>
+    /// <p> <code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code> </p>
     /// <p>The following example sets <code>NotificationPolicy</code> off.</p>
-    /// <p><code>{}</code></p>
+    /// <p> <code>{}</code> </p>
     pub notification_policy: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the DNS name for the VPC endpoint that the SMB file share uses to connect to Amazon S3.</p><note>
+    /// <p>Specifies the DNS name for the VPC endpoint that the SMB file share uses to connect to Amazon S3.</p> <note>
     /// <p>This parameter is required for SMB file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
     /// </note>
     pub vpc_endpoint_dns_name: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the Region of the S3 bucket where the SMB file share stores files.</p><note>
+    /// <p>Specifies the Region of the S3 bucket where the SMB file share stores files.</p> <note>
     /// <p>This parameter is required for SMB file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
     /// </note>
     pub bucket_region: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies whether opportunistic locking is enabled for the SMB file share.</p><note>
+    /// <p>Specifies whether opportunistic locking is enabled for the SMB file share.</p> <note>
     /// <p>Enabling opportunistic locking on case-sensitive shares is not recommended for workloads that involve access to files with the same name in different case.</p>
     /// </note>
-    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub oplocks_enabled: ::std::option::Option<bool>,
 }
 impl SmbFileShareInfo {
@@ -107,7 +107,7 @@ impl SmbFileShareInfo {
         self.file_share_id.as_deref()
     }
     /// <p>The status of the file share.</p>
-    /// <p>Valid Values: <code>CREATING</code> | <code>UPDATING</code> | <code>AVAILABLE</code> | <code>DELETING</code></p>
+    /// <p>Valid Values: <code>CREATING</code> | <code>UPDATING</code> | <code>AVAILABLE</code> | <code>DELETING</code> </p>
     pub fn file_share_status(&self) -> ::std::option::Option<&str> {
         self.file_share_status.as_deref()
     }
@@ -116,7 +116,7 @@ impl SmbFileShareInfo {
         self.gateway_arn.as_deref()
     }
     /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
-    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub fn kms_encrypted(&self) -> bool {
         self.kms_encrypted
     }
@@ -132,21 +132,21 @@ impl SmbFileShareInfo {
     pub fn role(&self) -> ::std::option::Option<&str> {
         self.role.as_deref()
     }
-    /// <p>A custom ARN for the backend storage used for storing data for file shares. It includes a resource ARN with an optional prefix concatenation. The prefix must end with a forward slash (/).</p><note>
+    /// <p>A custom ARN for the backend storage used for storing data for file shares. It includes a resource ARN with an optional prefix concatenation. The prefix must end with a forward slash (/).</p> <note>
     /// <p>You can specify LocationARN as a bucket ARN, access point ARN or access point alias, as shown in the following examples.</p>
     /// <p>Bucket ARN:</p>
-    /// <p><code>arn:aws:s3:::my-bucket/prefix/</code></p>
+    /// <p> <code>arn:aws:s3:::my-bucket/prefix/</code> </p>
     /// <p>Access point ARN:</p>
-    /// <p><code>arn:aws:s3:region:account-id:accesspoint/access-point-name/prefix/</code></p>
+    /// <p> <code>arn:aws:s3:region:account-id:accesspoint/access-point-name/prefix/</code> </p>
     /// <p>If you specify an access point, the bucket policy must be configured to delegate access control to the access point. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>Access point alias:</p>
-    /// <p><code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code></p>
+    /// <p> <code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code> </p>
     /// </note>
     pub fn location_arn(&self) -> ::std::option::Option<&str> {
         self.location_arn.as_deref()
     }
     /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
-    /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code></p>
+    /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
     pub fn default_storage_class(&self) -> ::std::option::Option<&str> {
         self.default_storage_class.as_deref()
     }
@@ -155,19 +155,19 @@ impl SmbFileShareInfo {
         self.object_acl.as_ref()
     }
     /// <p>A value that sets the write status of a file share. Set this value to <code>true</code> to set the write status to read-only, otherwise set to <code>false</code>.</p>
-    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub fn read_only(&self) -> ::std::option::Option<bool> {
         self.read_only
     }
     /// <p>A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to <code>true</code> to enable MIME type guessing, otherwise set to <code>false</code>. The default value is <code>true</code>.</p>
-    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub fn guess_mime_type_enabled(&self) -> ::std::option::Option<bool> {
         self.guess_mime_type_enabled
     }
-    /// <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p><note>
-    /// <p><code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure that the configuration on the file share is the same as the S3 bucket configuration.</p>
+    /// <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p> <note>
+    /// <p> <code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure that the configuration on the file share is the same as the S3 bucket configuration.</p>
     /// </note>
-    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub fn requester_pays(&self) -> ::std::option::Option<bool> {
         self.requester_pays
     }
@@ -203,7 +203,7 @@ impl SmbFileShareInfo {
         self.audit_destination_arn.as_deref()
     }
     /// <p>The authentication method of the file share. The default is <code>ActiveDirectory</code>.</p>
-    /// <p>Valid Values: <code>ActiveDirectory</code> | <code>GuestAccess</code></p>
+    /// <p>Valid Values: <code>ActiveDirectory</code> | <code>GuestAccess</code> </p>
     pub fn authentication(&self) -> ::std::option::Option<&str> {
         self.authentication.as_deref()
     }
@@ -217,8 +217,8 @@ impl SmbFileShareInfo {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
-    /// <p>The name of the file share. Optional.</p><note>
-    /// <p><code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
+    /// <p>The name of the file share. Optional.</p> <note>
+    /// <p> <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
     /// </note>
     pub fn file_share_name(&self) -> ::std::option::Option<&str> {
         self.file_share_name.as_deref()
@@ -227,32 +227,32 @@ impl SmbFileShareInfo {
     pub fn cache_attributes(&self) -> ::std::option::Option<&crate::types::CacheAttributes> {
         self.cache_attributes.as_ref()
     }
-    /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p><note>
-    /// <p><code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only the timing of the notification.</p>
+    /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p> <note>
+    /// <p> <code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only the timing of the notification.</p>
     /// </note>
     /// <p>The following example sets <code>NotificationPolicy</code> on with <code>SettlingTimeInSeconds</code> set to 60.</p>
-    /// <p><code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code></p>
+    /// <p> <code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code> </p>
     /// <p>The following example sets <code>NotificationPolicy</code> off.</p>
-    /// <p><code>{}</code></p>
+    /// <p> <code>{}</code> </p>
     pub fn notification_policy(&self) -> ::std::option::Option<&str> {
         self.notification_policy.as_deref()
     }
-    /// <p>Specifies the DNS name for the VPC endpoint that the SMB file share uses to connect to Amazon S3.</p><note>
+    /// <p>Specifies the DNS name for the VPC endpoint that the SMB file share uses to connect to Amazon S3.</p> <note>
     /// <p>This parameter is required for SMB file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
     /// </note>
     pub fn vpc_endpoint_dns_name(&self) -> ::std::option::Option<&str> {
         self.vpc_endpoint_dns_name.as_deref()
     }
-    /// <p>Specifies the Region of the S3 bucket where the SMB file share stores files.</p><note>
+    /// <p>Specifies the Region of the S3 bucket where the SMB file share stores files.</p> <note>
     /// <p>This parameter is required for SMB file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
     /// </note>
     pub fn bucket_region(&self) -> ::std::option::Option<&str> {
         self.bucket_region.as_deref()
     }
-    /// <p>Specifies whether opportunistic locking is enabled for the SMB file share.</p><note>
+    /// <p>Specifies whether opportunistic locking is enabled for the SMB file share.</p> <note>
     /// <p>Enabling opportunistic locking on case-sensitive shares is not recommended for workloads that involve access to files with the same name in different case.</p>
     /// </note>
-    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub fn oplocks_enabled(&self) -> ::std::option::Option<bool> {
         self.oplocks_enabled
     }
@@ -328,19 +328,19 @@ impl SmbFileShareInfoBuilder {
         &self.file_share_id
     }
     /// <p>The status of the file share.</p>
-    /// <p>Valid Values: <code>CREATING</code> | <code>UPDATING</code> | <code>AVAILABLE</code> | <code>DELETING</code></p>
+    /// <p>Valid Values: <code>CREATING</code> | <code>UPDATING</code> | <code>AVAILABLE</code> | <code>DELETING</code> </p>
     pub fn file_share_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_share_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the file share.</p>
-    /// <p>Valid Values: <code>CREATING</code> | <code>UPDATING</code> | <code>AVAILABLE</code> | <code>DELETING</code></p>
+    /// <p>Valid Values: <code>CREATING</code> | <code>UPDATING</code> | <code>AVAILABLE</code> | <code>DELETING</code> </p>
     pub fn set_file_share_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_share_status = input;
         self
     }
     /// <p>The status of the file share.</p>
-    /// <p>Valid Values: <code>CREATING</code> | <code>UPDATING</code> | <code>AVAILABLE</code> | <code>DELETING</code></p>
+    /// <p>Valid Values: <code>CREATING</code> | <code>UPDATING</code> | <code>AVAILABLE</code> | <code>DELETING</code> </p>
     pub fn get_file_share_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.file_share_status
     }
@@ -359,19 +359,19 @@ impl SmbFileShareInfoBuilder {
         &self.gateway_arn
     }
     /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
-    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub fn kms_encrypted(mut self, input: bool) -> Self {
         self.kms_encrypted = ::std::option::Option::Some(input);
         self
     }
     /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
-    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub fn set_kms_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.kms_encrypted = input;
         self
     }
     /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
-    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub fn get_kms_encrypted(&self) -> &::std::option::Option<bool> {
         &self.kms_encrypted
     }
@@ -417,61 +417,61 @@ impl SmbFileShareInfoBuilder {
     pub fn get_role(&self) -> &::std::option::Option<::std::string::String> {
         &self.role
     }
-    /// <p>A custom ARN for the backend storage used for storing data for file shares. It includes a resource ARN with an optional prefix concatenation. The prefix must end with a forward slash (/).</p><note>
+    /// <p>A custom ARN for the backend storage used for storing data for file shares. It includes a resource ARN with an optional prefix concatenation. The prefix must end with a forward slash (/).</p> <note>
     /// <p>You can specify LocationARN as a bucket ARN, access point ARN or access point alias, as shown in the following examples.</p>
     /// <p>Bucket ARN:</p>
-    /// <p><code>arn:aws:s3:::my-bucket/prefix/</code></p>
+    /// <p> <code>arn:aws:s3:::my-bucket/prefix/</code> </p>
     /// <p>Access point ARN:</p>
-    /// <p><code>arn:aws:s3:region:account-id:accesspoint/access-point-name/prefix/</code></p>
+    /// <p> <code>arn:aws:s3:region:account-id:accesspoint/access-point-name/prefix/</code> </p>
     /// <p>If you specify an access point, the bucket policy must be configured to delegate access control to the access point. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>Access point alias:</p>
-    /// <p><code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code></p>
+    /// <p> <code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code> </p>
     /// </note>
     pub fn location_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A custom ARN for the backend storage used for storing data for file shares. It includes a resource ARN with an optional prefix concatenation. The prefix must end with a forward slash (/).</p><note>
+    /// <p>A custom ARN for the backend storage used for storing data for file shares. It includes a resource ARN with an optional prefix concatenation. The prefix must end with a forward slash (/).</p> <note>
     /// <p>You can specify LocationARN as a bucket ARN, access point ARN or access point alias, as shown in the following examples.</p>
     /// <p>Bucket ARN:</p>
-    /// <p><code>arn:aws:s3:::my-bucket/prefix/</code></p>
+    /// <p> <code>arn:aws:s3:::my-bucket/prefix/</code> </p>
     /// <p>Access point ARN:</p>
-    /// <p><code>arn:aws:s3:region:account-id:accesspoint/access-point-name/prefix/</code></p>
+    /// <p> <code>arn:aws:s3:region:account-id:accesspoint/access-point-name/prefix/</code> </p>
     /// <p>If you specify an access point, the bucket policy must be configured to delegate access control to the access point. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>Access point alias:</p>
-    /// <p><code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code></p>
+    /// <p> <code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code> </p>
     /// </note>
     pub fn set_location_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location_arn = input;
         self
     }
-    /// <p>A custom ARN for the backend storage used for storing data for file shares. It includes a resource ARN with an optional prefix concatenation. The prefix must end with a forward slash (/).</p><note>
+    /// <p>A custom ARN for the backend storage used for storing data for file shares. It includes a resource ARN with an optional prefix concatenation. The prefix must end with a forward slash (/).</p> <note>
     /// <p>You can specify LocationARN as a bucket ARN, access point ARN or access point alias, as shown in the following examples.</p>
     /// <p>Bucket ARN:</p>
-    /// <p><code>arn:aws:s3:::my-bucket/prefix/</code></p>
+    /// <p> <code>arn:aws:s3:::my-bucket/prefix/</code> </p>
     /// <p>Access point ARN:</p>
-    /// <p><code>arn:aws:s3:region:account-id:accesspoint/access-point-name/prefix/</code></p>
+    /// <p> <code>arn:aws:s3:region:account-id:accesspoint/access-point-name/prefix/</code> </p>
     /// <p>If you specify an access point, the bucket policy must be configured to delegate access control to the access point. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>Access point alias:</p>
-    /// <p><code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code></p>
+    /// <p> <code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code> </p>
     /// </note>
     pub fn get_location_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.location_arn
     }
     /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
-    /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code></p>
+    /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
     pub fn default_storage_class(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_storage_class = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
-    /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code></p>
+    /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
     pub fn set_default_storage_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_storage_class = input;
         self
     }
     /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
-    /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code></p>
+    /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
     pub fn get_default_storage_class(&self) -> &::std::option::Option<::std::string::String> {
         &self.default_storage_class
     }
@@ -490,59 +490,59 @@ impl SmbFileShareInfoBuilder {
         &self.object_acl
     }
     /// <p>A value that sets the write status of a file share. Set this value to <code>true</code> to set the write status to read-only, otherwise set to <code>false</code>.</p>
-    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub fn read_only(mut self, input: bool) -> Self {
         self.read_only = ::std::option::Option::Some(input);
         self
     }
     /// <p>A value that sets the write status of a file share. Set this value to <code>true</code> to set the write status to read-only, otherwise set to <code>false</code>.</p>
-    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub fn set_read_only(mut self, input: ::std::option::Option<bool>) -> Self {
         self.read_only = input;
         self
     }
     /// <p>A value that sets the write status of a file share. Set this value to <code>true</code> to set the write status to read-only, otherwise set to <code>false</code>.</p>
-    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub fn get_read_only(&self) -> &::std::option::Option<bool> {
         &self.read_only
     }
     /// <p>A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to <code>true</code> to enable MIME type guessing, otherwise set to <code>false</code>. The default value is <code>true</code>.</p>
-    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub fn guess_mime_type_enabled(mut self, input: bool) -> Self {
         self.guess_mime_type_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to <code>true</code> to enable MIME type guessing, otherwise set to <code>false</code>. The default value is <code>true</code>.</p>
-    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub fn set_guess_mime_type_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.guess_mime_type_enabled = input;
         self
     }
     /// <p>A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to <code>true</code> to enable MIME type guessing, otherwise set to <code>false</code>. The default value is <code>true</code>.</p>
-    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub fn get_guess_mime_type_enabled(&self) -> &::std::option::Option<bool> {
         &self.guess_mime_type_enabled
     }
-    /// <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p><note>
-    /// <p><code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure that the configuration on the file share is the same as the S3 bucket configuration.</p>
+    /// <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p> <note>
+    /// <p> <code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure that the configuration on the file share is the same as the S3 bucket configuration.</p>
     /// </note>
-    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub fn requester_pays(mut self, input: bool) -> Self {
         self.requester_pays = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p><note>
-    /// <p><code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure that the configuration on the file share is the same as the S3 bucket configuration.</p>
+    /// <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p> <note>
+    /// <p> <code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure that the configuration on the file share is the same as the S3 bucket configuration.</p>
     /// </note>
-    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub fn set_requester_pays(mut self, input: ::std::option::Option<bool>) -> Self {
         self.requester_pays = input;
         self
     }
-    /// <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p><note>
-    /// <p><code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure that the configuration on the file share is the same as the S3 bucket configuration.</p>
+    /// <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p> <note>
+    /// <p> <code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure that the configuration on the file share is the same as the S3 bucket configuration.</p>
     /// </note>
-    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub fn get_requester_pays(&self) -> &::std::option::Option<bool> {
         &self.requester_pays
     }
@@ -652,19 +652,19 @@ impl SmbFileShareInfoBuilder {
         &self.audit_destination_arn
     }
     /// <p>The authentication method of the file share. The default is <code>ActiveDirectory</code>.</p>
-    /// <p>Valid Values: <code>ActiveDirectory</code> | <code>GuestAccess</code></p>
+    /// <p>Valid Values: <code>ActiveDirectory</code> | <code>GuestAccess</code> </p>
     pub fn authentication(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authentication = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The authentication method of the file share. The default is <code>ActiveDirectory</code>.</p>
-    /// <p>Valid Values: <code>ActiveDirectory</code> | <code>GuestAccess</code></p>
+    /// <p>Valid Values: <code>ActiveDirectory</code> | <code>GuestAccess</code> </p>
     pub fn set_authentication(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authentication = input;
         self
     }
     /// <p>The authentication method of the file share. The default is <code>ActiveDirectory</code>.</p>
-    /// <p>Valid Values: <code>ActiveDirectory</code> | <code>GuestAccess</code></p>
+    /// <p>Valid Values: <code>ActiveDirectory</code> | <code>GuestAccess</code> </p>
     pub fn get_authentication(&self) -> &::std::option::Option<::std::string::String> {
         &self.authentication
     }
@@ -702,22 +702,22 @@ impl SmbFileShareInfoBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
-    /// <p>The name of the file share. Optional.</p><note>
-    /// <p><code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
+    /// <p>The name of the file share. Optional.</p> <note>
+    /// <p> <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
     /// </note>
     pub fn file_share_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_share_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the file share. Optional.</p><note>
-    /// <p><code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
+    /// <p>The name of the file share. Optional.</p> <note>
+    /// <p> <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
     /// </note>
     pub fn set_file_share_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_share_name = input;
         self
     }
-    /// <p>The name of the file share. Optional.</p><note>
-    /// <p><code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
+    /// <p>The name of the file share. Optional.</p> <note>
+    /// <p> <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
     /// </note>
     pub fn get_file_share_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.file_share_name
@@ -736,98 +736,98 @@ impl SmbFileShareInfoBuilder {
     pub fn get_cache_attributes(&self) -> &::std::option::Option<crate::types::CacheAttributes> {
         &self.cache_attributes
     }
-    /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p><note>
-    /// <p><code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only the timing of the notification.</p>
+    /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p> <note>
+    /// <p> <code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only the timing of the notification.</p>
     /// </note>
     /// <p>The following example sets <code>NotificationPolicy</code> on with <code>SettlingTimeInSeconds</code> set to 60.</p>
-    /// <p><code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code></p>
+    /// <p> <code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code> </p>
     /// <p>The following example sets <code>NotificationPolicy</code> off.</p>
-    /// <p><code>{}</code></p>
+    /// <p> <code>{}</code> </p>
     pub fn notification_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notification_policy = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p><note>
-    /// <p><code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only the timing of the notification.</p>
+    /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p> <note>
+    /// <p> <code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only the timing of the notification.</p>
     /// </note>
     /// <p>The following example sets <code>NotificationPolicy</code> on with <code>SettlingTimeInSeconds</code> set to 60.</p>
-    /// <p><code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code></p>
+    /// <p> <code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code> </p>
     /// <p>The following example sets <code>NotificationPolicy</code> off.</p>
-    /// <p><code>{}</code></p>
+    /// <p> <code>{}</code> </p>
     pub fn set_notification_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notification_policy = input;
         self
     }
-    /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p><note>
-    /// <p><code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only the timing of the notification.</p>
+    /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p> <note>
+    /// <p> <code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only the timing of the notification.</p>
     /// </note>
     /// <p>The following example sets <code>NotificationPolicy</code> on with <code>SettlingTimeInSeconds</code> set to 60.</p>
-    /// <p><code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code></p>
+    /// <p> <code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code> </p>
     /// <p>The following example sets <code>NotificationPolicy</code> off.</p>
-    /// <p><code>{}</code></p>
+    /// <p> <code>{}</code> </p>
     pub fn get_notification_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.notification_policy
     }
-    /// <p>Specifies the DNS name for the VPC endpoint that the SMB file share uses to connect to Amazon S3.</p><note>
+    /// <p>Specifies the DNS name for the VPC endpoint that the SMB file share uses to connect to Amazon S3.</p> <note>
     /// <p>This parameter is required for SMB file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
     /// </note>
     pub fn vpc_endpoint_dns_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_endpoint_dns_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the DNS name for the VPC endpoint that the SMB file share uses to connect to Amazon S3.</p><note>
+    /// <p>Specifies the DNS name for the VPC endpoint that the SMB file share uses to connect to Amazon S3.</p> <note>
     /// <p>This parameter is required for SMB file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
     /// </note>
     pub fn set_vpc_endpoint_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_endpoint_dns_name = input;
         self
     }
-    /// <p>Specifies the DNS name for the VPC endpoint that the SMB file share uses to connect to Amazon S3.</p><note>
+    /// <p>Specifies the DNS name for the VPC endpoint that the SMB file share uses to connect to Amazon S3.</p> <note>
     /// <p>This parameter is required for SMB file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
     /// </note>
     pub fn get_vpc_endpoint_dns_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_endpoint_dns_name
     }
-    /// <p>Specifies the Region of the S3 bucket where the SMB file share stores files.</p><note>
+    /// <p>Specifies the Region of the S3 bucket where the SMB file share stores files.</p> <note>
     /// <p>This parameter is required for SMB file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
     /// </note>
     pub fn bucket_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_region = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the Region of the S3 bucket where the SMB file share stores files.</p><note>
+    /// <p>Specifies the Region of the S3 bucket where the SMB file share stores files.</p> <note>
     /// <p>This parameter is required for SMB file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
     /// </note>
     pub fn set_bucket_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket_region = input;
         self
     }
-    /// <p>Specifies the Region of the S3 bucket where the SMB file share stores files.</p><note>
+    /// <p>Specifies the Region of the S3 bucket where the SMB file share stores files.</p> <note>
     /// <p>This parameter is required for SMB file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
     /// </note>
     pub fn get_bucket_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.bucket_region
     }
-    /// <p>Specifies whether opportunistic locking is enabled for the SMB file share.</p><note>
+    /// <p>Specifies whether opportunistic locking is enabled for the SMB file share.</p> <note>
     /// <p>Enabling opportunistic locking on case-sensitive shares is not recommended for workloads that involve access to files with the same name in different case.</p>
     /// </note>
-    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub fn oplocks_enabled(mut self, input: bool) -> Self {
         self.oplocks_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether opportunistic locking is enabled for the SMB file share.</p><note>
+    /// <p>Specifies whether opportunistic locking is enabled for the SMB file share.</p> <note>
     /// <p>Enabling opportunistic locking on case-sensitive shares is not recommended for workloads that involve access to files with the same name in different case.</p>
     /// </note>
-    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub fn set_oplocks_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.oplocks_enabled = input;
         self
     }
-    /// <p>Specifies whether opportunistic locking is enabled for the SMB file share.</p><note>
+    /// <p>Specifies whether opportunistic locking is enabled for the SMB file share.</p> <note>
     /// <p>Enabling opportunistic locking on case-sensitive shares is not recommended for workloads that involve access to files with the same name in different case.</p>
     /// </note>
-    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub fn get_oplocks_enabled(&self) -> &::std::option::Option<bool> {
         &self.oplocks_enabled
     }

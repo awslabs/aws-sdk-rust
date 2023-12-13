@@ -16,18 +16,13 @@ pub struct StackInstance {
     pub parameter_overrides: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
     /// <p>The status of the stack instance, in terms of its synchronization with its associated stack set.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed and left the stack in an unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You might need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to <code>true</code>, to delete the stack instance, and then delete the stack manually.</p></li>
-    /// <li>
-    /// <p><code>OUTDATED</code>: The stack isn't currently up to date with the stack set because:</p>
+    /// <li> <p> <code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed and left the stack in an unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You might need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to <code>true</code>, to delete the stack instance, and then delete the stack manually.</p> </li>
+    /// <li> <p> <code>OUTDATED</code>: The stack isn't currently up to date with the stack set because:</p>
     /// <ul>
-    /// <li>
-    /// <p>The associated stack failed during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation.</p></li>
-    /// <li>
-    /// <p>The stack was part of a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation that failed or was stopped before the stack was created or updated.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p><code>CURRENT</code>: The stack is currently up to date with the stack set.</p></li>
+    /// <li> <p>The associated stack failed during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation.</p> </li>
+    /// <li> <p>The stack was part of a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation that failed or was stopped before the stack was created or updated.</p> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>CURRENT</code>: The stack is currently up to date with the stack set.</p> </li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::StackInstanceStatus>,
     /// <p>The detailed status of the stack instance.</p>
@@ -38,14 +33,10 @@ pub struct StackInstance {
     pub organizational_unit_id: ::std::option::Option<::std::string::String>,
     /// <p>Status of the stack instance's actual configuration compared to the expected template and parameter configuration of the stack set to which it belongs.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>DRIFTED</code>: The stack differs from the expected template and parameter configuration of the stack set to which it belongs. A stack instance is considered to have drifted if one or more of the resources in the associated stack have drifted.</p></li>
-    /// <li>
-    /// <p><code>NOT_CHECKED</code>: CloudFormation hasn't checked if the stack instance differs from its expected stack set configuration.</p></li>
-    /// <li>
-    /// <p><code>IN_SYNC</code>: The stack instance's actual configuration matches its expected stack set configuration.</p></li>
-    /// <li>
-    /// <p><code>UNKNOWN</code>: This value is reserved for future use.</p></li>
+    /// <li> <p> <code>DRIFTED</code>: The stack differs from the expected template and parameter configuration of the stack set to which it belongs. A stack instance is considered to have drifted if one or more of the resources in the associated stack have drifted.</p> </li>
+    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation hasn't checked if the stack instance differs from its expected stack set configuration.</p> </li>
+    /// <li> <p> <code>IN_SYNC</code>: The stack instance's actual configuration matches its expected stack set configuration.</p> </li>
+    /// <li> <p> <code>UNKNOWN</code>: This value is reserved for future use.</p> </li>
     /// </ul>
     pub drift_status: ::std::option::Option<crate::types::StackDriftStatus>,
     /// <p>Most recent time when CloudFormation performed a drift detection operation on the stack instance. This value will be <code>NULL</code> for any stack instance on which drift detection hasn't yet been performed.</p>
@@ -78,18 +69,13 @@ impl StackInstance {
     }
     /// <p>The status of the stack instance, in terms of its synchronization with its associated stack set.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed and left the stack in an unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You might need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to <code>true</code>, to delete the stack instance, and then delete the stack manually.</p></li>
-    /// <li>
-    /// <p><code>OUTDATED</code>: The stack isn't currently up to date with the stack set because:</p>
+    /// <li> <p> <code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed and left the stack in an unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You might need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to <code>true</code>, to delete the stack instance, and then delete the stack manually.</p> </li>
+    /// <li> <p> <code>OUTDATED</code>: The stack isn't currently up to date with the stack set because:</p>
     /// <ul>
-    /// <li>
-    /// <p>The associated stack failed during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation.</p></li>
-    /// <li>
-    /// <p>The stack was part of a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation that failed or was stopped before the stack was created or updated.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p><code>CURRENT</code>: The stack is currently up to date with the stack set.</p></li>
+    /// <li> <p>The associated stack failed during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation.</p> </li>
+    /// <li> <p>The stack was part of a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation that failed or was stopped before the stack was created or updated.</p> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>CURRENT</code>: The stack is currently up to date with the stack set.</p> </li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::StackInstanceStatus> {
         self.status.as_ref()
@@ -108,14 +94,10 @@ impl StackInstance {
     }
     /// <p>Status of the stack instance's actual configuration compared to the expected template and parameter configuration of the stack set to which it belongs.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>DRIFTED</code>: The stack differs from the expected template and parameter configuration of the stack set to which it belongs. A stack instance is considered to have drifted if one or more of the resources in the associated stack have drifted.</p></li>
-    /// <li>
-    /// <p><code>NOT_CHECKED</code>: CloudFormation hasn't checked if the stack instance differs from its expected stack set configuration.</p></li>
-    /// <li>
-    /// <p><code>IN_SYNC</code>: The stack instance's actual configuration matches its expected stack set configuration.</p></li>
-    /// <li>
-    /// <p><code>UNKNOWN</code>: This value is reserved for future use.</p></li>
+    /// <li> <p> <code>DRIFTED</code>: The stack differs from the expected template and parameter configuration of the stack set to which it belongs. A stack instance is considered to have drifted if one or more of the resources in the associated stack have drifted.</p> </li>
+    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation hasn't checked if the stack instance differs from its expected stack set configuration.</p> </li>
+    /// <li> <p> <code>IN_SYNC</code>: The stack instance's actual configuration matches its expected stack set configuration.</p> </li>
+    /// <li> <p> <code>UNKNOWN</code>: This value is reserved for future use.</p> </li>
     /// </ul>
     pub fn drift_status(&self) -> ::std::option::Option<&crate::types::StackDriftStatus> {
         self.drift_status.as_ref()
@@ -232,18 +214,13 @@ impl StackInstanceBuilder {
     }
     /// <p>The status of the stack instance, in terms of its synchronization with its associated stack set.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed and left the stack in an unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You might need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to <code>true</code>, to delete the stack instance, and then delete the stack manually.</p></li>
-    /// <li>
-    /// <p><code>OUTDATED</code>: The stack isn't currently up to date with the stack set because:</p>
+    /// <li> <p> <code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed and left the stack in an unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You might need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to <code>true</code>, to delete the stack instance, and then delete the stack manually.</p> </li>
+    /// <li> <p> <code>OUTDATED</code>: The stack isn't currently up to date with the stack set because:</p>
     /// <ul>
-    /// <li>
-    /// <p>The associated stack failed during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation.</p></li>
-    /// <li>
-    /// <p>The stack was part of a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation that failed or was stopped before the stack was created or updated.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p><code>CURRENT</code>: The stack is currently up to date with the stack set.</p></li>
+    /// <li> <p>The associated stack failed during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation.</p> </li>
+    /// <li> <p>The stack was part of a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation that failed or was stopped before the stack was created or updated.</p> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>CURRENT</code>: The stack is currently up to date with the stack set.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::StackInstanceStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -251,18 +228,13 @@ impl StackInstanceBuilder {
     }
     /// <p>The status of the stack instance, in terms of its synchronization with its associated stack set.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed and left the stack in an unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You might need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to <code>true</code>, to delete the stack instance, and then delete the stack manually.</p></li>
-    /// <li>
-    /// <p><code>OUTDATED</code>: The stack isn't currently up to date with the stack set because:</p>
+    /// <li> <p> <code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed and left the stack in an unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You might need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to <code>true</code>, to delete the stack instance, and then delete the stack manually.</p> </li>
+    /// <li> <p> <code>OUTDATED</code>: The stack isn't currently up to date with the stack set because:</p>
     /// <ul>
-    /// <li>
-    /// <p>The associated stack failed during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation.</p></li>
-    /// <li>
-    /// <p>The stack was part of a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation that failed or was stopped before the stack was created or updated.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p><code>CURRENT</code>: The stack is currently up to date with the stack set.</p></li>
+    /// <li> <p>The associated stack failed during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation.</p> </li>
+    /// <li> <p>The stack was part of a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation that failed or was stopped before the stack was created or updated.</p> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>CURRENT</code>: The stack is currently up to date with the stack set.</p> </li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::StackInstanceStatus>) -> Self {
         self.status = input;
@@ -270,18 +242,13 @@ impl StackInstanceBuilder {
     }
     /// <p>The status of the stack instance, in terms of its synchronization with its associated stack set.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed and left the stack in an unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You might need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to <code>true</code>, to delete the stack instance, and then delete the stack manually.</p></li>
-    /// <li>
-    /// <p><code>OUTDATED</code>: The stack isn't currently up to date with the stack set because:</p>
+    /// <li> <p> <code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed and left the stack in an unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You might need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to <code>true</code>, to delete the stack instance, and then delete the stack manually.</p> </li>
+    /// <li> <p> <code>OUTDATED</code>: The stack isn't currently up to date with the stack set because:</p>
     /// <ul>
-    /// <li>
-    /// <p>The associated stack failed during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation.</p></li>
-    /// <li>
-    /// <p>The stack was part of a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation that failed or was stopped before the stack was created or updated.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p><code>CURRENT</code>: The stack is currently up to date with the stack set.</p></li>
+    /// <li> <p>The associated stack failed during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation.</p> </li>
+    /// <li> <p>The stack was part of a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation that failed or was stopped before the stack was created or updated.</p> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>CURRENT</code>: The stack is currently up to date with the stack set.</p> </li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::StackInstanceStatus> {
         &self.status
@@ -330,14 +297,10 @@ impl StackInstanceBuilder {
     }
     /// <p>Status of the stack instance's actual configuration compared to the expected template and parameter configuration of the stack set to which it belongs.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>DRIFTED</code>: The stack differs from the expected template and parameter configuration of the stack set to which it belongs. A stack instance is considered to have drifted if one or more of the resources in the associated stack have drifted.</p></li>
-    /// <li>
-    /// <p><code>NOT_CHECKED</code>: CloudFormation hasn't checked if the stack instance differs from its expected stack set configuration.</p></li>
-    /// <li>
-    /// <p><code>IN_SYNC</code>: The stack instance's actual configuration matches its expected stack set configuration.</p></li>
-    /// <li>
-    /// <p><code>UNKNOWN</code>: This value is reserved for future use.</p></li>
+    /// <li> <p> <code>DRIFTED</code>: The stack differs from the expected template and parameter configuration of the stack set to which it belongs. A stack instance is considered to have drifted if one or more of the resources in the associated stack have drifted.</p> </li>
+    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation hasn't checked if the stack instance differs from its expected stack set configuration.</p> </li>
+    /// <li> <p> <code>IN_SYNC</code>: The stack instance's actual configuration matches its expected stack set configuration.</p> </li>
+    /// <li> <p> <code>UNKNOWN</code>: This value is reserved for future use.</p> </li>
     /// </ul>
     pub fn drift_status(mut self, input: crate::types::StackDriftStatus) -> Self {
         self.drift_status = ::std::option::Option::Some(input);
@@ -345,14 +308,10 @@ impl StackInstanceBuilder {
     }
     /// <p>Status of the stack instance's actual configuration compared to the expected template and parameter configuration of the stack set to which it belongs.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>DRIFTED</code>: The stack differs from the expected template and parameter configuration of the stack set to which it belongs. A stack instance is considered to have drifted if one or more of the resources in the associated stack have drifted.</p></li>
-    /// <li>
-    /// <p><code>NOT_CHECKED</code>: CloudFormation hasn't checked if the stack instance differs from its expected stack set configuration.</p></li>
-    /// <li>
-    /// <p><code>IN_SYNC</code>: The stack instance's actual configuration matches its expected stack set configuration.</p></li>
-    /// <li>
-    /// <p><code>UNKNOWN</code>: This value is reserved for future use.</p></li>
+    /// <li> <p> <code>DRIFTED</code>: The stack differs from the expected template and parameter configuration of the stack set to which it belongs. A stack instance is considered to have drifted if one or more of the resources in the associated stack have drifted.</p> </li>
+    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation hasn't checked if the stack instance differs from its expected stack set configuration.</p> </li>
+    /// <li> <p> <code>IN_SYNC</code>: The stack instance's actual configuration matches its expected stack set configuration.</p> </li>
+    /// <li> <p> <code>UNKNOWN</code>: This value is reserved for future use.</p> </li>
     /// </ul>
     pub fn set_drift_status(mut self, input: ::std::option::Option<crate::types::StackDriftStatus>) -> Self {
         self.drift_status = input;
@@ -360,14 +319,10 @@ impl StackInstanceBuilder {
     }
     /// <p>Status of the stack instance's actual configuration compared to the expected template and parameter configuration of the stack set to which it belongs.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>DRIFTED</code>: The stack differs from the expected template and parameter configuration of the stack set to which it belongs. A stack instance is considered to have drifted if one or more of the resources in the associated stack have drifted.</p></li>
-    /// <li>
-    /// <p><code>NOT_CHECKED</code>: CloudFormation hasn't checked if the stack instance differs from its expected stack set configuration.</p></li>
-    /// <li>
-    /// <p><code>IN_SYNC</code>: The stack instance's actual configuration matches its expected stack set configuration.</p></li>
-    /// <li>
-    /// <p><code>UNKNOWN</code>: This value is reserved for future use.</p></li>
+    /// <li> <p> <code>DRIFTED</code>: The stack differs from the expected template and parameter configuration of the stack set to which it belongs. A stack instance is considered to have drifted if one or more of the resources in the associated stack have drifted.</p> </li>
+    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation hasn't checked if the stack instance differs from its expected stack set configuration.</p> </li>
+    /// <li> <p> <code>IN_SYNC</code>: The stack instance's actual configuration matches its expected stack set configuration.</p> </li>
+    /// <li> <p> <code>UNKNOWN</code>: This value is reserved for future use.</p> </li>
     /// </ul>
     pub fn get_drift_status(&self) -> &::std::option::Option<crate::types::StackDriftStatus> {
         &self.drift_status

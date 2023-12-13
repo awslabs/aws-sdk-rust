@@ -5,7 +5,7 @@
 pub struct CreateSystemInstanceInput {
     /// <p>Metadata, consisting of key-value pairs, that can be used to categorize your system instances.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    /// <p>A document that defines an entity.</p>
+    /// <p>A document that defines an entity. </p>
     pub definition: ::std::option::Option<crate::types::DefinitionDocument>,
     /// <p>The target type of the deployment. Valid values are <code>GREENGRASS</code> and <code>CLOUD</code>.</p>
     pub target: ::std::option::Option<crate::types::DeploymentTarget>,
@@ -25,7 +25,7 @@ impl CreateSystemInstanceInput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
-    /// <p>A document that defines an entity.</p>
+    /// <p>A document that defines an entity. </p>
     pub fn definition(&self) -> ::std::option::Option<&crate::types::DefinitionDocument> {
         self.definition.as_ref()
     }
@@ -90,18 +90,18 @@ impl CreateSystemInstanceInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
-    /// <p>A document that defines an entity.</p>
+    /// <p>A document that defines an entity. </p>
     /// This field is required.
     pub fn definition(mut self, input: crate::types::DefinitionDocument) -> Self {
         self.definition = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A document that defines an entity.</p>
+    /// <p>A document that defines an entity. </p>
     pub fn set_definition(mut self, input: ::std::option::Option<crate::types::DefinitionDocument>) -> Self {
         self.definition = input;
         self
     }
-    /// <p>A document that defines an entity.</p>
+    /// <p>A document that defines an entity. </p>
     pub fn get_definition(&self) -> &::std::option::Option<crate::types::DefinitionDocument> {
         &self.definition
     }

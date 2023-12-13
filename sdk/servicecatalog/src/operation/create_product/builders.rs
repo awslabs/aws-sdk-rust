@@ -112,10 +112,8 @@ impl CreateProductFluentBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>jp</code> - Japanese</p></li>
-    /// <li>
-    /// <p><code>zh</code> - Chinese</p></li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accept_language(input.into());
@@ -123,10 +121,8 @@ impl CreateProductFluentBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>jp</code> - Japanese</p></li>
-    /// <li>
-    /// <p><code>zh</code> - Chinese</p></li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_accept_language(input);
@@ -134,10 +130,8 @@ impl CreateProductFluentBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>jp</code> - Japanese</p></li>
-    /// <li>
-    /// <p><code>zh</code> - Chinese</p></li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_accept_language()
@@ -227,19 +221,19 @@ impl CreateProductFluentBuilder {
         self.inner.get_support_email()
     }
     /// <p>The contact URL for product support.</p>
-    /// <p><code>^https?:\/\// </code>/ is the pattern used to validate SupportUrl.</p>
+    /// <p> <code>^https?:\/\// </code>/ is the pattern used to validate SupportUrl.</p>
     pub fn support_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.support_url(input.into());
         self
     }
     /// <p>The contact URL for product support.</p>
-    /// <p><code>^https?:\/\// </code>/ is the pattern used to validate SupportUrl.</p>
+    /// <p> <code>^https?:\/\// </code>/ is the pattern used to validate SupportUrl.</p>
     pub fn set_support_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_support_url(input);
         self
     }
     /// <p>The contact URL for product support.</p>
-    /// <p><code>^https?:\/\// </code>/ is the pattern used to validate SupportUrl.</p>
+    /// <p> <code>^https?:\/\// </code>/ is the pattern used to validate SupportUrl.</p>
     pub fn get_support_url(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_support_url()
     }
@@ -275,17 +269,17 @@ impl CreateProductFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
-    /// <p>The configuration of the provisioning artifact.</p>
+    /// <p>The configuration of the provisioning artifact. </p>
     pub fn provisioning_artifact_parameters(mut self, input: crate::types::ProvisioningArtifactProperties) -> Self {
         self.inner = self.inner.provisioning_artifact_parameters(input);
         self
     }
-    /// <p>The configuration of the provisioning artifact.</p>
+    /// <p>The configuration of the provisioning artifact. </p>
     pub fn set_provisioning_artifact_parameters(mut self, input: ::std::option::Option<crate::types::ProvisioningArtifactProperties>) -> Self {
         self.inner = self.inner.set_provisioning_artifact_parameters(input);
         self
     }
-    /// <p>The configuration of the provisioning artifact.</p>
+    /// <p>The configuration of the provisioning artifact. </p>
     pub fn get_provisioning_artifact_parameters(&self) -> &::std::option::Option<crate::types::ProvisioningArtifactProperties> {
         self.inner.get_provisioning_artifact_parameters()
     }
@@ -305,10 +299,8 @@ impl CreateProductFluentBuilder {
     }
     /// <p>Specifies connection details for the created product and syncs the product to the connection source artifact. This automatically manages the product's artifacts based on changes to the source. The <code>SourceConnection</code> parameter consists of the following sub-fields.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Type</code></p></li>
-    /// <li>
-    /// <p><code>ConnectionParamters</code></p></li>
+    /// <li> <p> <code>Type</code> </p> </li>
+    /// <li> <p> <code>ConnectionParamters</code> </p> </li>
     /// </ul>
     pub fn source_connection(mut self, input: crate::types::SourceConnection) -> Self {
         self.inner = self.inner.source_connection(input);
@@ -316,10 +308,8 @@ impl CreateProductFluentBuilder {
     }
     /// <p>Specifies connection details for the created product and syncs the product to the connection source artifact. This automatically manages the product's artifacts based on changes to the source. The <code>SourceConnection</code> parameter consists of the following sub-fields.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Type</code></p></li>
-    /// <li>
-    /// <p><code>ConnectionParamters</code></p></li>
+    /// <li> <p> <code>Type</code> </p> </li>
+    /// <li> <p> <code>ConnectionParamters</code> </p> </li>
     /// </ul>
     pub fn set_source_connection(mut self, input: ::std::option::Option<crate::types::SourceConnection>) -> Self {
         self.inner = self.inner.set_source_connection(input);
@@ -327,10 +317,8 @@ impl CreateProductFluentBuilder {
     }
     /// <p>Specifies connection details for the created product and syncs the product to the connection source artifact. This automatically manages the product's artifacts based on changes to the source. The <code>SourceConnection</code> parameter consists of the following sub-fields.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Type</code></p></li>
-    /// <li>
-    /// <p><code>ConnectionParamters</code></p></li>
+    /// <li> <p> <code>Type</code> </p> </li>
+    /// <li> <p> <code>ConnectionParamters</code> </p> </li>
     /// </ul>
     pub fn get_source_connection(&self) -> &::std::option::Option<crate::types::SourceConnection> {
         self.inner.get_source_connection()

@@ -20,15 +20,10 @@ pub struct DescribeTypeOutput {
     /// <p>The contract test status of the registered extension version. To return the extension test status of a specific extension version, you must specify <code>VersionId</code>.</p>
     /// <p>This applies only to registered private extension versions. CloudFormation doesn't return this information for public extensions, whether they are activated in your account.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PASSED</code>: The extension has passed all its contract tests.</p>
-    /// <p>An extension must have a test status of <code>PASSED</code> before it can be published. For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-publish.html">Publishing extensions to make them available for public use</a> in the <i>CloudFormation Command Line Interface User Guide</i>.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code>: The extension has failed one or more contract tests.</p></li>
-    /// <li>
-    /// <p><code>IN_PROGRESS</code>: Contract tests are currently being performed on the extension.</p></li>
-    /// <li>
-    /// <p><code>NOT_TESTED</code>: Contract tests haven't been performed on the extension.</p></li>
+    /// <li> <p> <code>PASSED</code>: The extension has passed all its contract tests.</p> <p>An extension must have a test status of <code>PASSED</code> before it can be published. For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-publish.html">Publishing extensions to make them available for public use</a> in the <i>CloudFormation Command Line Interface User Guide</i>.</p> </li>
+    /// <li> <p> <code>FAILED</code>: The extension has failed one or more contract tests.</p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code>: Contract tests are currently being performed on the extension.</p> </li>
+    /// <li> <p> <code>NOT_TESTED</code>: Contract tests haven't been performed on the extension.</p> </li>
     /// </ul>
     pub type_tests_status: ::std::option::Option<crate::types::TypeTestsStatus>,
     /// <p>The description of the test status. To return the extension test status of a specific extension version, you must specify <code>VersionId</code>.</p>
@@ -42,29 +37,21 @@ pub struct DescribeTypeOutput {
     /// <p>For resource type extensions, the provisioning behavior of the resource type. CloudFormation determines the provisioning type during registration, based on the types of handlers in the schema handler package submitted.</p>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>FULLY_MUTABLE</code>: The resource type includes an update handler to process updates to the type during stack update operations.</p></li>
-    /// <li>
-    /// <p><code>IMMUTABLE</code>: The resource type doesn't include an update handler, so the type can't be updated and must instead be replaced during stack update operations.</p></li>
-    /// <li>
-    /// <p><code>NON_PROVISIONABLE</code>: The resource type doesn't include all the following handlers, and therefore can't actually be provisioned.</p>
+    /// <li> <p> <code>FULLY_MUTABLE</code>: The resource type includes an update handler to process updates to the type during stack update operations.</p> </li>
+    /// <li> <p> <code>IMMUTABLE</code>: The resource type doesn't include an update handler, so the type can't be updated and must instead be replaced during stack update operations.</p> </li>
+    /// <li> <p> <code>NON_PROVISIONABLE</code>: The resource type doesn't include all the following handlers, and therefore can't actually be provisioned.</p>
     /// <ul>
-    /// <li>
-    /// <p>create</p></li>
-    /// <li>
-    /// <p>read</p></li>
-    /// <li>
-    /// <p>delete</p></li>
-    /// </ul></li>
+    /// <li> <p>create</p> </li>
+    /// <li> <p>read</p> </li>
+    /// <li> <p>delete</p> </li>
+    /// </ul> </li>
     /// </ul>
     pub provisioning_type: ::std::option::Option<crate::types::ProvisioningType>,
     /// <p>The deprecation status of the extension version.</p>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>LIVE</code>: The extension is activated or registered and can be used in CloudFormation operations, dependent on its provisioning behavior and visibility scope.</p></li>
-    /// <li>
-    /// <p><code>DEPRECATED</code>: The extension has been deactivated or deregistered and can no longer be used in CloudFormation operations.</p></li>
+    /// <li> <p> <code>LIVE</code>: The extension is activated or registered and can be used in CloudFormation operations, dependent on its provisioning behavior and visibility scope.</p> </li>
+    /// <li> <p> <code>DEPRECATED</code>: The extension has been deactivated or deregistered and can no longer be used in CloudFormation operations.</p> </li>
     /// </ul>
     /// <p>For public third-party extensions, CloudFormation returns <code>null</code>.</p>
     pub deprecated_status: ::std::option::Option<crate::types::DeprecatedStatus>,
@@ -78,10 +65,8 @@ pub struct DescribeTypeOutput {
     /// <p>The scope at which the extension is visible and usable in CloudFormation operations.</p>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PRIVATE</code>: The extension is only visible and usable within the account in which it is registered. CloudFormation marks any extensions you register as <code>PRIVATE</code>.</p></li>
-    /// <li>
-    /// <p><code>PUBLIC</code>: The extension is publicly visible and usable within any Amazon Web Services account.</p></li>
+    /// <li> <p> <code>PRIVATE</code>: The extension is only visible and usable within the account in which it is registered. CloudFormation marks any extensions you register as <code>PRIVATE</code>.</p> </li>
+    /// <li> <p> <code>PUBLIC</code>: The extension is publicly visible and usable within any Amazon Web Services account.</p> </li>
     /// </ul>
     pub visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>The URL of the source code for the extension.</p>
@@ -90,10 +75,8 @@ pub struct DescribeTypeOutput {
     pub documentation_url: ::std::option::Option<::std::string::String>,
     /// <p>When the specified extension version was registered. This applies only to:</p>
     /// <ul>
-    /// <li>
-    /// <p>Private extensions you have registered in your account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p></li>
-    /// <li>
-    /// <p>Public extensions you have activated in your account with auto-update specified. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p></li>
+    /// <li> <p>Private extensions you have registered in your account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p> </li>
+    /// <li> <p>Public extensions you have activated in your account with auto-update specified. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p> </li>
     /// </ul>
     pub last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>When the specified private extension version was registered or activated in your account.</p>
@@ -150,15 +133,10 @@ impl DescribeTypeOutput {
     /// <p>The contract test status of the registered extension version. To return the extension test status of a specific extension version, you must specify <code>VersionId</code>.</p>
     /// <p>This applies only to registered private extension versions. CloudFormation doesn't return this information for public extensions, whether they are activated in your account.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PASSED</code>: The extension has passed all its contract tests.</p>
-    /// <p>An extension must have a test status of <code>PASSED</code> before it can be published. For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-publish.html">Publishing extensions to make them available for public use</a> in the <i>CloudFormation Command Line Interface User Guide</i>.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code>: The extension has failed one or more contract tests.</p></li>
-    /// <li>
-    /// <p><code>IN_PROGRESS</code>: Contract tests are currently being performed on the extension.</p></li>
-    /// <li>
-    /// <p><code>NOT_TESTED</code>: Contract tests haven't been performed on the extension.</p></li>
+    /// <li> <p> <code>PASSED</code>: The extension has passed all its contract tests.</p> <p>An extension must have a test status of <code>PASSED</code> before it can be published. For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-publish.html">Publishing extensions to make them available for public use</a> in the <i>CloudFormation Command Line Interface User Guide</i>.</p> </li>
+    /// <li> <p> <code>FAILED</code>: The extension has failed one or more contract tests.</p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code>: Contract tests are currently being performed on the extension.</p> </li>
+    /// <li> <p> <code>NOT_TESTED</code>: Contract tests haven't been performed on the extension.</p> </li>
     /// </ul>
     pub fn type_tests_status(&self) -> ::std::option::Option<&crate::types::TypeTestsStatus> {
         self.type_tests_status.as_ref()
@@ -180,20 +158,14 @@ impl DescribeTypeOutput {
     /// <p>For resource type extensions, the provisioning behavior of the resource type. CloudFormation determines the provisioning type during registration, based on the types of handlers in the schema handler package submitted.</p>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>FULLY_MUTABLE</code>: The resource type includes an update handler to process updates to the type during stack update operations.</p></li>
-    /// <li>
-    /// <p><code>IMMUTABLE</code>: The resource type doesn't include an update handler, so the type can't be updated and must instead be replaced during stack update operations.</p></li>
-    /// <li>
-    /// <p><code>NON_PROVISIONABLE</code>: The resource type doesn't include all the following handlers, and therefore can't actually be provisioned.</p>
+    /// <li> <p> <code>FULLY_MUTABLE</code>: The resource type includes an update handler to process updates to the type during stack update operations.</p> </li>
+    /// <li> <p> <code>IMMUTABLE</code>: The resource type doesn't include an update handler, so the type can't be updated and must instead be replaced during stack update operations.</p> </li>
+    /// <li> <p> <code>NON_PROVISIONABLE</code>: The resource type doesn't include all the following handlers, and therefore can't actually be provisioned.</p>
     /// <ul>
-    /// <li>
-    /// <p>create</p></li>
-    /// <li>
-    /// <p>read</p></li>
-    /// <li>
-    /// <p>delete</p></li>
-    /// </ul></li>
+    /// <li> <p>create</p> </li>
+    /// <li> <p>read</p> </li>
+    /// <li> <p>delete</p> </li>
+    /// </ul> </li>
     /// </ul>
     pub fn provisioning_type(&self) -> ::std::option::Option<&crate::types::ProvisioningType> {
         self.provisioning_type.as_ref()
@@ -201,10 +173,8 @@ impl DescribeTypeOutput {
     /// <p>The deprecation status of the extension version.</p>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>LIVE</code>: The extension is activated or registered and can be used in CloudFormation operations, dependent on its provisioning behavior and visibility scope.</p></li>
-    /// <li>
-    /// <p><code>DEPRECATED</code>: The extension has been deactivated or deregistered and can no longer be used in CloudFormation operations.</p></li>
+    /// <li> <p> <code>LIVE</code>: The extension is activated or registered and can be used in CloudFormation operations, dependent on its provisioning behavior and visibility scope.</p> </li>
+    /// <li> <p> <code>DEPRECATED</code>: The extension has been deactivated or deregistered and can no longer be used in CloudFormation operations.</p> </li>
     /// </ul>
     /// <p>For public third-party extensions, CloudFormation returns <code>null</code>.</p>
     pub fn deprecated_status(&self) -> ::std::option::Option<&crate::types::DeprecatedStatus> {
@@ -228,10 +198,8 @@ impl DescribeTypeOutput {
     /// <p>The scope at which the extension is visible and usable in CloudFormation operations.</p>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PRIVATE</code>: The extension is only visible and usable within the account in which it is registered. CloudFormation marks any extensions you register as <code>PRIVATE</code>.</p></li>
-    /// <li>
-    /// <p><code>PUBLIC</code>: The extension is publicly visible and usable within any Amazon Web Services account.</p></li>
+    /// <li> <p> <code>PRIVATE</code>: The extension is only visible and usable within the account in which it is registered. CloudFormation marks any extensions you register as <code>PRIVATE</code>.</p> </li>
+    /// <li> <p> <code>PUBLIC</code>: The extension is publicly visible and usable within any Amazon Web Services account.</p> </li>
     /// </ul>
     pub fn visibility(&self) -> ::std::option::Option<&crate::types::Visibility> {
         self.visibility.as_ref()
@@ -246,10 +214,8 @@ impl DescribeTypeOutput {
     }
     /// <p>When the specified extension version was registered. This applies only to:</p>
     /// <ul>
-    /// <li>
-    /// <p>Private extensions you have registered in your account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p></li>
-    /// <li>
-    /// <p>Public extensions you have activated in your account with auto-update specified. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p></li>
+    /// <li> <p>Private extensions you have registered in your account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p> </li>
+    /// <li> <p>Public extensions you have activated in your account with auto-update specified. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p> </li>
     /// </ul>
     pub fn last_updated(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
@@ -428,15 +394,10 @@ impl DescribeTypeOutputBuilder {
     /// <p>The contract test status of the registered extension version. To return the extension test status of a specific extension version, you must specify <code>VersionId</code>.</p>
     /// <p>This applies only to registered private extension versions. CloudFormation doesn't return this information for public extensions, whether they are activated in your account.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PASSED</code>: The extension has passed all its contract tests.</p>
-    /// <p>An extension must have a test status of <code>PASSED</code> before it can be published. For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-publish.html">Publishing extensions to make them available for public use</a> in the <i>CloudFormation Command Line Interface User Guide</i>.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code>: The extension has failed one or more contract tests.</p></li>
-    /// <li>
-    /// <p><code>IN_PROGRESS</code>: Contract tests are currently being performed on the extension.</p></li>
-    /// <li>
-    /// <p><code>NOT_TESTED</code>: Contract tests haven't been performed on the extension.</p></li>
+    /// <li> <p> <code>PASSED</code>: The extension has passed all its contract tests.</p> <p>An extension must have a test status of <code>PASSED</code> before it can be published. For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-publish.html">Publishing extensions to make them available for public use</a> in the <i>CloudFormation Command Line Interface User Guide</i>.</p> </li>
+    /// <li> <p> <code>FAILED</code>: The extension has failed one or more contract tests.</p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code>: Contract tests are currently being performed on the extension.</p> </li>
+    /// <li> <p> <code>NOT_TESTED</code>: Contract tests haven't been performed on the extension.</p> </li>
     /// </ul>
     pub fn type_tests_status(mut self, input: crate::types::TypeTestsStatus) -> Self {
         self.type_tests_status = ::std::option::Option::Some(input);
@@ -445,15 +406,10 @@ impl DescribeTypeOutputBuilder {
     /// <p>The contract test status of the registered extension version. To return the extension test status of a specific extension version, you must specify <code>VersionId</code>.</p>
     /// <p>This applies only to registered private extension versions. CloudFormation doesn't return this information for public extensions, whether they are activated in your account.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PASSED</code>: The extension has passed all its contract tests.</p>
-    /// <p>An extension must have a test status of <code>PASSED</code> before it can be published. For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-publish.html">Publishing extensions to make them available for public use</a> in the <i>CloudFormation Command Line Interface User Guide</i>.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code>: The extension has failed one or more contract tests.</p></li>
-    /// <li>
-    /// <p><code>IN_PROGRESS</code>: Contract tests are currently being performed on the extension.</p></li>
-    /// <li>
-    /// <p><code>NOT_TESTED</code>: Contract tests haven't been performed on the extension.</p></li>
+    /// <li> <p> <code>PASSED</code>: The extension has passed all its contract tests.</p> <p>An extension must have a test status of <code>PASSED</code> before it can be published. For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-publish.html">Publishing extensions to make them available for public use</a> in the <i>CloudFormation Command Line Interface User Guide</i>.</p> </li>
+    /// <li> <p> <code>FAILED</code>: The extension has failed one or more contract tests.</p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code>: Contract tests are currently being performed on the extension.</p> </li>
+    /// <li> <p> <code>NOT_TESTED</code>: Contract tests haven't been performed on the extension.</p> </li>
     /// </ul>
     pub fn set_type_tests_status(mut self, input: ::std::option::Option<crate::types::TypeTestsStatus>) -> Self {
         self.type_tests_status = input;
@@ -462,15 +418,10 @@ impl DescribeTypeOutputBuilder {
     /// <p>The contract test status of the registered extension version. To return the extension test status of a specific extension version, you must specify <code>VersionId</code>.</p>
     /// <p>This applies only to registered private extension versions. CloudFormation doesn't return this information for public extensions, whether they are activated in your account.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PASSED</code>: The extension has passed all its contract tests.</p>
-    /// <p>An extension must have a test status of <code>PASSED</code> before it can be published. For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-publish.html">Publishing extensions to make them available for public use</a> in the <i>CloudFormation Command Line Interface User Guide</i>.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code>: The extension has failed one or more contract tests.</p></li>
-    /// <li>
-    /// <p><code>IN_PROGRESS</code>: Contract tests are currently being performed on the extension.</p></li>
-    /// <li>
-    /// <p><code>NOT_TESTED</code>: Contract tests haven't been performed on the extension.</p></li>
+    /// <li> <p> <code>PASSED</code>: The extension has passed all its contract tests.</p> <p>An extension must have a test status of <code>PASSED</code> before it can be published. For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-publish.html">Publishing extensions to make them available for public use</a> in the <i>CloudFormation Command Line Interface User Guide</i>.</p> </li>
+    /// <li> <p> <code>FAILED</code>: The extension has failed one or more contract tests.</p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code>: Contract tests are currently being performed on the extension.</p> </li>
+    /// <li> <p> <code>NOT_TESTED</code>: Contract tests haven't been performed on the extension.</p> </li>
     /// </ul>
     pub fn get_type_tests_status(&self) -> &::std::option::Option<crate::types::TypeTestsStatus> {
         &self.type_tests_status
@@ -526,20 +477,14 @@ impl DescribeTypeOutputBuilder {
     /// <p>For resource type extensions, the provisioning behavior of the resource type. CloudFormation determines the provisioning type during registration, based on the types of handlers in the schema handler package submitted.</p>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>FULLY_MUTABLE</code>: The resource type includes an update handler to process updates to the type during stack update operations.</p></li>
-    /// <li>
-    /// <p><code>IMMUTABLE</code>: The resource type doesn't include an update handler, so the type can't be updated and must instead be replaced during stack update operations.</p></li>
-    /// <li>
-    /// <p><code>NON_PROVISIONABLE</code>: The resource type doesn't include all the following handlers, and therefore can't actually be provisioned.</p>
+    /// <li> <p> <code>FULLY_MUTABLE</code>: The resource type includes an update handler to process updates to the type during stack update operations.</p> </li>
+    /// <li> <p> <code>IMMUTABLE</code>: The resource type doesn't include an update handler, so the type can't be updated and must instead be replaced during stack update operations.</p> </li>
+    /// <li> <p> <code>NON_PROVISIONABLE</code>: The resource type doesn't include all the following handlers, and therefore can't actually be provisioned.</p>
     /// <ul>
-    /// <li>
-    /// <p>create</p></li>
-    /// <li>
-    /// <p>read</p></li>
-    /// <li>
-    /// <p>delete</p></li>
-    /// </ul></li>
+    /// <li> <p>create</p> </li>
+    /// <li> <p>read</p> </li>
+    /// <li> <p>delete</p> </li>
+    /// </ul> </li>
     /// </ul>
     pub fn provisioning_type(mut self, input: crate::types::ProvisioningType) -> Self {
         self.provisioning_type = ::std::option::Option::Some(input);
@@ -548,20 +493,14 @@ impl DescribeTypeOutputBuilder {
     /// <p>For resource type extensions, the provisioning behavior of the resource type. CloudFormation determines the provisioning type during registration, based on the types of handlers in the schema handler package submitted.</p>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>FULLY_MUTABLE</code>: The resource type includes an update handler to process updates to the type during stack update operations.</p></li>
-    /// <li>
-    /// <p><code>IMMUTABLE</code>: The resource type doesn't include an update handler, so the type can't be updated and must instead be replaced during stack update operations.</p></li>
-    /// <li>
-    /// <p><code>NON_PROVISIONABLE</code>: The resource type doesn't include all the following handlers, and therefore can't actually be provisioned.</p>
+    /// <li> <p> <code>FULLY_MUTABLE</code>: The resource type includes an update handler to process updates to the type during stack update operations.</p> </li>
+    /// <li> <p> <code>IMMUTABLE</code>: The resource type doesn't include an update handler, so the type can't be updated and must instead be replaced during stack update operations.</p> </li>
+    /// <li> <p> <code>NON_PROVISIONABLE</code>: The resource type doesn't include all the following handlers, and therefore can't actually be provisioned.</p>
     /// <ul>
-    /// <li>
-    /// <p>create</p></li>
-    /// <li>
-    /// <p>read</p></li>
-    /// <li>
-    /// <p>delete</p></li>
-    /// </ul></li>
+    /// <li> <p>create</p> </li>
+    /// <li> <p>read</p> </li>
+    /// <li> <p>delete</p> </li>
+    /// </ul> </li>
     /// </ul>
     pub fn set_provisioning_type(mut self, input: ::std::option::Option<crate::types::ProvisioningType>) -> Self {
         self.provisioning_type = input;
@@ -570,20 +509,14 @@ impl DescribeTypeOutputBuilder {
     /// <p>For resource type extensions, the provisioning behavior of the resource type. CloudFormation determines the provisioning type during registration, based on the types of handlers in the schema handler package submitted.</p>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>FULLY_MUTABLE</code>: The resource type includes an update handler to process updates to the type during stack update operations.</p></li>
-    /// <li>
-    /// <p><code>IMMUTABLE</code>: The resource type doesn't include an update handler, so the type can't be updated and must instead be replaced during stack update operations.</p></li>
-    /// <li>
-    /// <p><code>NON_PROVISIONABLE</code>: The resource type doesn't include all the following handlers, and therefore can't actually be provisioned.</p>
+    /// <li> <p> <code>FULLY_MUTABLE</code>: The resource type includes an update handler to process updates to the type during stack update operations.</p> </li>
+    /// <li> <p> <code>IMMUTABLE</code>: The resource type doesn't include an update handler, so the type can't be updated and must instead be replaced during stack update operations.</p> </li>
+    /// <li> <p> <code>NON_PROVISIONABLE</code>: The resource type doesn't include all the following handlers, and therefore can't actually be provisioned.</p>
     /// <ul>
-    /// <li>
-    /// <p>create</p></li>
-    /// <li>
-    /// <p>read</p></li>
-    /// <li>
-    /// <p>delete</p></li>
-    /// </ul></li>
+    /// <li> <p>create</p> </li>
+    /// <li> <p>read</p> </li>
+    /// <li> <p>delete</p> </li>
+    /// </ul> </li>
     /// </ul>
     pub fn get_provisioning_type(&self) -> &::std::option::Option<crate::types::ProvisioningType> {
         &self.provisioning_type
@@ -591,10 +524,8 @@ impl DescribeTypeOutputBuilder {
     /// <p>The deprecation status of the extension version.</p>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>LIVE</code>: The extension is activated or registered and can be used in CloudFormation operations, dependent on its provisioning behavior and visibility scope.</p></li>
-    /// <li>
-    /// <p><code>DEPRECATED</code>: The extension has been deactivated or deregistered and can no longer be used in CloudFormation operations.</p></li>
+    /// <li> <p> <code>LIVE</code>: The extension is activated or registered and can be used in CloudFormation operations, dependent on its provisioning behavior and visibility scope.</p> </li>
+    /// <li> <p> <code>DEPRECATED</code>: The extension has been deactivated or deregistered and can no longer be used in CloudFormation operations.</p> </li>
     /// </ul>
     /// <p>For public third-party extensions, CloudFormation returns <code>null</code>.</p>
     pub fn deprecated_status(mut self, input: crate::types::DeprecatedStatus) -> Self {
@@ -604,10 +535,8 @@ impl DescribeTypeOutputBuilder {
     /// <p>The deprecation status of the extension version.</p>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>LIVE</code>: The extension is activated or registered and can be used in CloudFormation operations, dependent on its provisioning behavior and visibility scope.</p></li>
-    /// <li>
-    /// <p><code>DEPRECATED</code>: The extension has been deactivated or deregistered and can no longer be used in CloudFormation operations.</p></li>
+    /// <li> <p> <code>LIVE</code>: The extension is activated or registered and can be used in CloudFormation operations, dependent on its provisioning behavior and visibility scope.</p> </li>
+    /// <li> <p> <code>DEPRECATED</code>: The extension has been deactivated or deregistered and can no longer be used in CloudFormation operations.</p> </li>
     /// </ul>
     /// <p>For public third-party extensions, CloudFormation returns <code>null</code>.</p>
     pub fn set_deprecated_status(mut self, input: ::std::option::Option<crate::types::DeprecatedStatus>) -> Self {
@@ -617,10 +546,8 @@ impl DescribeTypeOutputBuilder {
     /// <p>The deprecation status of the extension version.</p>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>LIVE</code>: The extension is activated or registered and can be used in CloudFormation operations, dependent on its provisioning behavior and visibility scope.</p></li>
-    /// <li>
-    /// <p><code>DEPRECATED</code>: The extension has been deactivated or deregistered and can no longer be used in CloudFormation operations.</p></li>
+    /// <li> <p> <code>LIVE</code>: The extension is activated or registered and can be used in CloudFormation operations, dependent on its provisioning behavior and visibility scope.</p> </li>
+    /// <li> <p> <code>DEPRECATED</code>: The extension has been deactivated or deregistered and can no longer be used in CloudFormation operations.</p> </li>
     /// </ul>
     /// <p>For public third-party extensions, CloudFormation returns <code>null</code>.</p>
     pub fn get_deprecated_status(&self) -> &::std::option::Option<crate::types::DeprecatedStatus> {
@@ -680,10 +607,8 @@ impl DescribeTypeOutputBuilder {
     /// <p>The scope at which the extension is visible and usable in CloudFormation operations.</p>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PRIVATE</code>: The extension is only visible and usable within the account in which it is registered. CloudFormation marks any extensions you register as <code>PRIVATE</code>.</p></li>
-    /// <li>
-    /// <p><code>PUBLIC</code>: The extension is publicly visible and usable within any Amazon Web Services account.</p></li>
+    /// <li> <p> <code>PRIVATE</code>: The extension is only visible and usable within the account in which it is registered. CloudFormation marks any extensions you register as <code>PRIVATE</code>.</p> </li>
+    /// <li> <p> <code>PUBLIC</code>: The extension is publicly visible and usable within any Amazon Web Services account.</p> </li>
     /// </ul>
     pub fn visibility(mut self, input: crate::types::Visibility) -> Self {
         self.visibility = ::std::option::Option::Some(input);
@@ -692,10 +617,8 @@ impl DescribeTypeOutputBuilder {
     /// <p>The scope at which the extension is visible and usable in CloudFormation operations.</p>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PRIVATE</code>: The extension is only visible and usable within the account in which it is registered. CloudFormation marks any extensions you register as <code>PRIVATE</code>.</p></li>
-    /// <li>
-    /// <p><code>PUBLIC</code>: The extension is publicly visible and usable within any Amazon Web Services account.</p></li>
+    /// <li> <p> <code>PRIVATE</code>: The extension is only visible and usable within the account in which it is registered. CloudFormation marks any extensions you register as <code>PRIVATE</code>.</p> </li>
+    /// <li> <p> <code>PUBLIC</code>: The extension is publicly visible and usable within any Amazon Web Services account.</p> </li>
     /// </ul>
     pub fn set_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
         self.visibility = input;
@@ -704,10 +627,8 @@ impl DescribeTypeOutputBuilder {
     /// <p>The scope at which the extension is visible and usable in CloudFormation operations.</p>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PRIVATE</code>: The extension is only visible and usable within the account in which it is registered. CloudFormation marks any extensions you register as <code>PRIVATE</code>.</p></li>
-    /// <li>
-    /// <p><code>PUBLIC</code>: The extension is publicly visible and usable within any Amazon Web Services account.</p></li>
+    /// <li> <p> <code>PRIVATE</code>: The extension is only visible and usable within the account in which it is registered. CloudFormation marks any extensions you register as <code>PRIVATE</code>.</p> </li>
+    /// <li> <p> <code>PUBLIC</code>: The extension is publicly visible and usable within any Amazon Web Services account.</p> </li>
     /// </ul>
     pub fn get_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
         &self.visibility
@@ -742,10 +663,8 @@ impl DescribeTypeOutputBuilder {
     }
     /// <p>When the specified extension version was registered. This applies only to:</p>
     /// <ul>
-    /// <li>
-    /// <p>Private extensions you have registered in your account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p></li>
-    /// <li>
-    /// <p>Public extensions you have activated in your account with auto-update specified. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p></li>
+    /// <li> <p>Private extensions you have registered in your account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p> </li>
+    /// <li> <p>Public extensions you have activated in your account with auto-update specified. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p> </li>
     /// </ul>
     pub fn last_updated(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated = ::std::option::Option::Some(input);
@@ -753,10 +672,8 @@ impl DescribeTypeOutputBuilder {
     }
     /// <p>When the specified extension version was registered. This applies only to:</p>
     /// <ul>
-    /// <li>
-    /// <p>Private extensions you have registered in your account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p></li>
-    /// <li>
-    /// <p>Public extensions you have activated in your account with auto-update specified. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p></li>
+    /// <li> <p>Private extensions you have registered in your account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p> </li>
+    /// <li> <p>Public extensions you have activated in your account with auto-update specified. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p> </li>
     /// </ul>
     pub fn set_last_updated(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated = input;
@@ -764,10 +681,8 @@ impl DescribeTypeOutputBuilder {
     }
     /// <p>When the specified extension version was registered. This applies only to:</p>
     /// <ul>
-    /// <li>
-    /// <p>Private extensions you have registered in your account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p></li>
-    /// <li>
-    /// <p>Public extensions you have activated in your account with auto-update specified. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p></li>
+    /// <li> <p>Private extensions you have registered in your account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p> </li>
+    /// <li> <p>Public extensions you have activated in your account with auto-update specified. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p> </li>
     /// </ul>
     pub fn get_last_updated(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated

@@ -6,12 +6,9 @@
 pub struct ReferenceLineStyleConfiguration {
     /// <p>The pattern type of the line style. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SOLID</code></p></li>
-    /// <li>
-    /// <p><code>DASHED</code></p></li>
-    /// <li>
-    /// <p><code>DOTTED</code></p></li>
+    /// <li> <p> <code>SOLID</code> </p> </li>
+    /// <li> <p> <code>DASHED</code> </p> </li>
+    /// <li> <p> <code>DOTTED</code> </p> </li>
     /// </ul>
     pub pattern: ::std::option::Option<crate::types::ReferenceLinePatternType>,
     /// <p>The hex color of the reference line.</p>
@@ -20,12 +17,9 @@ pub struct ReferenceLineStyleConfiguration {
 impl ReferenceLineStyleConfiguration {
     /// <p>The pattern type of the line style. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SOLID</code></p></li>
-    /// <li>
-    /// <p><code>DASHED</code></p></li>
-    /// <li>
-    /// <p><code>DOTTED</code></p></li>
+    /// <li> <p> <code>SOLID</code> </p> </li>
+    /// <li> <p> <code>DASHED</code> </p> </li>
+    /// <li> <p> <code>DOTTED</code> </p> </li>
     /// </ul>
     pub fn pattern(&self) -> ::std::option::Option<&crate::types::ReferenceLinePatternType> {
         self.pattern.as_ref()
@@ -52,12 +46,9 @@ pub struct ReferenceLineStyleConfigurationBuilder {
 impl ReferenceLineStyleConfigurationBuilder {
     /// <p>The pattern type of the line style. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SOLID</code></p></li>
-    /// <li>
-    /// <p><code>DASHED</code></p></li>
-    /// <li>
-    /// <p><code>DOTTED</code></p></li>
+    /// <li> <p> <code>SOLID</code> </p> </li>
+    /// <li> <p> <code>DASHED</code> </p> </li>
+    /// <li> <p> <code>DOTTED</code> </p> </li>
     /// </ul>
     pub fn pattern(mut self, input: crate::types::ReferenceLinePatternType) -> Self {
         self.pattern = ::std::option::Option::Some(input);
@@ -65,12 +56,9 @@ impl ReferenceLineStyleConfigurationBuilder {
     }
     /// <p>The pattern type of the line style. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SOLID</code></p></li>
-    /// <li>
-    /// <p><code>DASHED</code></p></li>
-    /// <li>
-    /// <p><code>DOTTED</code></p></li>
+    /// <li> <p> <code>SOLID</code> </p> </li>
+    /// <li> <p> <code>DASHED</code> </p> </li>
+    /// <li> <p> <code>DOTTED</code> </p> </li>
     /// </ul>
     pub fn set_pattern(mut self, input: ::std::option::Option<crate::types::ReferenceLinePatternType>) -> Self {
         self.pattern = input;
@@ -78,12 +66,9 @@ impl ReferenceLineStyleConfigurationBuilder {
     }
     /// <p>The pattern type of the line style. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SOLID</code></p></li>
-    /// <li>
-    /// <p><code>DASHED</code></p></li>
-    /// <li>
-    /// <p><code>DOTTED</code></p></li>
+    /// <li> <p> <code>SOLID</code> </p> </li>
+    /// <li> <p> <code>DASHED</code> </p> </li>
+    /// <li> <p> <code>DOTTED</code> </p> </li>
     /// </ul>
     pub fn get_pattern(&self) -> &::std::option::Option<crate::types::ReferenceLinePatternType> {
         &self.pattern

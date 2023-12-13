@@ -6,7 +6,7 @@
 pub struct ListAvailableSolutionStacksOutput {
     /// <p>A list of available solution stacks.</p>
     pub solution_stacks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>A list of available solution stacks and their <code>SolutionStackDescription</code>.</p>
+    /// <p> A list of available solution stacks and their <code>SolutionStackDescription</code>. </p>
     pub solution_stack_details: ::std::option::Option<::std::vec::Vec<crate::types::SolutionStackDescription>>,
     _request_id: Option<String>,
 }
@@ -17,7 +17,7 @@ impl ListAvailableSolutionStacksOutput {
     pub fn solution_stacks(&self) -> &[::std::string::String] {
         self.solution_stacks.as_deref().unwrap_or_default()
     }
-    /// <p>A list of available solution stacks and their <code>SolutionStackDescription</code>.</p>
+    /// <p> A list of available solution stacks and their <code>SolutionStackDescription</code>. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.solution_stack_details.is_none()`.
     pub fn solution_stack_details(&self) -> &[crate::types::SolutionStackDescription] {
@@ -69,19 +69,19 @@ impl ListAvailableSolutionStacksOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_solution_stack_details`](Self::set_solution_stack_details).
     ///
-    /// <p>A list of available solution stacks and their <code>SolutionStackDescription</code>.</p>
+    /// <p> A list of available solution stacks and their <code>SolutionStackDescription</code>. </p>
     pub fn solution_stack_details(mut self, input: crate::types::SolutionStackDescription) -> Self {
         let mut v = self.solution_stack_details.unwrap_or_default();
         v.push(input);
         self.solution_stack_details = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of available solution stacks and their <code>SolutionStackDescription</code>.</p>
+    /// <p> A list of available solution stacks and their <code>SolutionStackDescription</code>. </p>
     pub fn set_solution_stack_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SolutionStackDescription>>) -> Self {
         self.solution_stack_details = input;
         self
     }
-    /// <p>A list of available solution stacks and their <code>SolutionStackDescription</code>.</p>
+    /// <p> A list of available solution stacks and their <code>SolutionStackDescription</code>. </p>
     pub fn get_solution_stack_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SolutionStackDescription>> {
         &self.solution_stack_details
     }

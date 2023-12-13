@@ -22,7 +22,7 @@ impl DeletePricingRuleInputBuilder {
 }
 /// Fluent builder constructing a request to `DeletePricingRule`.
 ///
-/// <p>Deletes the pricing rule that's identified by the input Amazon Resource Name (ARN).</p>
+/// <p> Deletes the pricing rule that's identified by the input Amazon Resource Name (ARN). </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeletePricingRuleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DeletePricingRuleFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the pricing rule that you are deleting.</p>
+    /// <p> The Amazon Resource Name (ARN) of the pricing rule that you are deleting. </p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the pricing rule that you are deleting.</p>
+    /// <p> The Amazon Resource Name (ARN) of the pricing rule that you are deleting. </p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the pricing rule that you are deleting.</p>
+    /// <p> The Amazon Resource Name (ARN) of the pricing rule that you are deleting. </p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_arn()
     }

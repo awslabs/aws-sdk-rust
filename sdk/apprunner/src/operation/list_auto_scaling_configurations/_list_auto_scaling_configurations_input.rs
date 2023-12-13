@@ -7,7 +7,7 @@ pub struct ListAutoScalingConfigurationsInput {
     pub auto_scaling_configuration_name: ::std::option::Option<::std::string::String>,
     /// <p>Set to <code>true</code> to list only the latest revision for each requested configuration name.</p>
     /// <p>Set to <code>false</code> to list all revisions for each requested configuration name.</p>
-    /// <p>Default: <code>true</code></p>
+    /// <p>Default: <code>true</code> </p>
     pub latest_only: ::std::option::Option<bool>,
     /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>
     /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
@@ -23,7 +23,7 @@ impl ListAutoScalingConfigurationsInput {
     }
     /// <p>Set to <code>true</code> to list only the latest revision for each requested configuration name.</p>
     /// <p>Set to <code>false</code> to list all revisions for each requested configuration name.</p>
-    /// <p>Default: <code>true</code></p>
+    /// <p>Default: <code>true</code> </p>
     pub fn latest_only(&self) -> ::std::option::Option<bool> {
         self.latest_only
     }
@@ -71,21 +71,21 @@ impl ListAutoScalingConfigurationsInputBuilder {
     }
     /// <p>Set to <code>true</code> to list only the latest revision for each requested configuration name.</p>
     /// <p>Set to <code>false</code> to list all revisions for each requested configuration name.</p>
-    /// <p>Default: <code>true</code></p>
+    /// <p>Default: <code>true</code> </p>
     pub fn latest_only(mut self, input: bool) -> Self {
         self.latest_only = ::std::option::Option::Some(input);
         self
     }
     /// <p>Set to <code>true</code> to list only the latest revision for each requested configuration name.</p>
     /// <p>Set to <code>false</code> to list all revisions for each requested configuration name.</p>
-    /// <p>Default: <code>true</code></p>
+    /// <p>Default: <code>true</code> </p>
     pub fn set_latest_only(mut self, input: ::std::option::Option<bool>) -> Self {
         self.latest_only = input;
         self
     }
     /// <p>Set to <code>true</code> to list only the latest revision for each requested configuration name.</p>
     /// <p>Set to <code>false</code> to list all revisions for each requested configuration name.</p>
-    /// <p>Default: <code>true</code></p>
+    /// <p>Default: <code>true</code> </p>
     pub fn get_latest_only(&self) -> &::std::option::Option<bool> {
         &self.latest_only
     }

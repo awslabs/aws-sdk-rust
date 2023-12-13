@@ -4,12 +4,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateElasticsearchDomainOutput {
-    /// <p>The status of the newly created Elasticsearch domain.</p>
+    /// <p>The status of the newly created Elasticsearch domain. </p>
     pub domain_status: ::std::option::Option<crate::types::ElasticsearchDomainStatus>,
     _request_id: Option<String>,
 }
 impl CreateElasticsearchDomainOutput {
-    /// <p>The status of the newly created Elasticsearch domain.</p>
+    /// <p>The status of the newly created Elasticsearch domain. </p>
     pub fn domain_status(&self) -> ::std::option::Option<&crate::types::ElasticsearchDomainStatus> {
         self.domain_status.as_ref()
     }
@@ -34,17 +34,17 @@ pub struct CreateElasticsearchDomainOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateElasticsearchDomainOutputBuilder {
-    /// <p>The status of the newly created Elasticsearch domain.</p>
+    /// <p>The status of the newly created Elasticsearch domain. </p>
     pub fn domain_status(mut self, input: crate::types::ElasticsearchDomainStatus) -> Self {
         self.domain_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the newly created Elasticsearch domain.</p>
+    /// <p>The status of the newly created Elasticsearch domain. </p>
     pub fn set_domain_status(mut self, input: ::std::option::Option<crate::types::ElasticsearchDomainStatus>) -> Self {
         self.domain_status = input;
         self
     }
-    /// <p>The status of the newly created Elasticsearch domain.</p>
+    /// <p>The status of the newly created Elasticsearch domain. </p>
     pub fn get_domain_status(&self) -> &::std::option::Option<crate::types::ElasticsearchDomainStatus> {
         &self.domain_status
     }

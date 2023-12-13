@@ -5,7 +5,7 @@
 pub struct PutPublicAccessBlockInput {
     /// <p>The name of the Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you want to set.</p>
     pub bucket: ::std::option::Option<::std::string::String>,
-    /// <p>The MD5 hash of the <code>PutPublicAccessBlock</code> request body.</p>
+    /// <p>The MD5 hash of the <code>PutPublicAccessBlock</code> request body. </p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
     pub content_md5: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the algorithm used to create the checksum for the object when you use the SDK. This header will not provide any additional functionality if you don't use the SDK. When you send this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -21,7 +21,7 @@ impl PutPublicAccessBlockInput {
     pub fn bucket(&self) -> ::std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>The MD5 hash of the <code>PutPublicAccessBlock</code> request body.</p>
+    /// <p>The MD5 hash of the <code>PutPublicAccessBlock</code> request body. </p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
     pub fn content_md5(&self) -> ::std::option::Option<&str> {
         self.content_md5.as_deref()
@@ -73,19 +73,19 @@ impl PutPublicAccessBlockInputBuilder {
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
         &self.bucket
     }
-    /// <p>The MD5 hash of the <code>PutPublicAccessBlock</code> request body.</p>
+    /// <p>The MD5 hash of the <code>PutPublicAccessBlock</code> request body. </p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
     pub fn content_md5(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_md5 = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The MD5 hash of the <code>PutPublicAccessBlock</code> request body.</p>
+    /// <p>The MD5 hash of the <code>PutPublicAccessBlock</code> request body. </p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
     pub fn set_content_md5(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_md5 = input;
         self
     }
-    /// <p>The MD5 hash of the <code>PutPublicAccessBlock</code> request body.</p>
+    /// <p>The MD5 hash of the <code>PutPublicAccessBlock</code> request body. </p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
     pub fn get_content_md5(&self) -> &::std::option::Option<::std::string::String> {
         &self.content_md5

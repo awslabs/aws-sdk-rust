@@ -3,27 +3,27 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSharedDirectoriesInput {
-    /// <p>Returns the identifier of the directory in the directory owner account.</p>
+    /// <p>Returns the identifier of the directory in the directory owner account. </p>
     pub owner_directory_id: ::std::option::Option<::std::string::String>,
-    /// <p>A list of identifiers of all shared directories in your account.</p>
+    /// <p>A list of identifiers of all shared directories in your account. </p>
     pub shared_directory_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The <code>DescribeSharedDirectoriesResult.NextToken</code> value from a previous call to <code>DescribeSharedDirectories</code>. Pass null if this is the first call.</p>
+    /// <p>The <code>DescribeSharedDirectoriesResult.NextToken</code> value from a previous call to <code>DescribeSharedDirectories</code>. Pass null if this is the first call. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The number of shared directories to return in the response object.</p>
     pub limit: ::std::option::Option<i32>,
 }
 impl DescribeSharedDirectoriesInput {
-    /// <p>Returns the identifier of the directory in the directory owner account.</p>
+    /// <p>Returns the identifier of the directory in the directory owner account. </p>
     pub fn owner_directory_id(&self) -> ::std::option::Option<&str> {
         self.owner_directory_id.as_deref()
     }
-    /// <p>A list of identifiers of all shared directories in your account.</p>
+    /// <p>A list of identifiers of all shared directories in your account. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.shared_directory_ids.is_none()`.
     pub fn shared_directory_ids(&self) -> &[::std::string::String] {
         self.shared_directory_ids.as_deref().unwrap_or_default()
     }
-    /// <p>The <code>DescribeSharedDirectoriesResult.NextToken</code> value from a previous call to <code>DescribeSharedDirectories</code>. Pass null if this is the first call.</p>
+    /// <p>The <code>DescribeSharedDirectoriesResult.NextToken</code> value from a previous call to <code>DescribeSharedDirectories</code>. Pass null if this is the first call. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -49,18 +49,18 @@ pub struct DescribeSharedDirectoriesInputBuilder {
     pub(crate) limit: ::std::option::Option<i32>,
 }
 impl DescribeSharedDirectoriesInputBuilder {
-    /// <p>Returns the identifier of the directory in the directory owner account.</p>
+    /// <p>Returns the identifier of the directory in the directory owner account. </p>
     /// This field is required.
     pub fn owner_directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_directory_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Returns the identifier of the directory in the directory owner account.</p>
+    /// <p>Returns the identifier of the directory in the directory owner account. </p>
     pub fn set_owner_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_directory_id = input;
         self
     }
-    /// <p>Returns the identifier of the directory in the directory owner account.</p>
+    /// <p>Returns the identifier of the directory in the directory owner account. </p>
     pub fn get_owner_directory_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.owner_directory_id
     }
@@ -68,33 +68,33 @@ impl DescribeSharedDirectoriesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_shared_directory_ids`](Self::set_shared_directory_ids).
     ///
-    /// <p>A list of identifiers of all shared directories in your account.</p>
+    /// <p>A list of identifiers of all shared directories in your account. </p>
     pub fn shared_directory_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.shared_directory_ids.unwrap_or_default();
         v.push(input.into());
         self.shared_directory_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of identifiers of all shared directories in your account.</p>
+    /// <p>A list of identifiers of all shared directories in your account. </p>
     pub fn set_shared_directory_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.shared_directory_ids = input;
         self
     }
-    /// <p>A list of identifiers of all shared directories in your account.</p>
+    /// <p>A list of identifiers of all shared directories in your account. </p>
     pub fn get_shared_directory_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.shared_directory_ids
     }
-    /// <p>The <code>DescribeSharedDirectoriesResult.NextToken</code> value from a previous call to <code>DescribeSharedDirectories</code>. Pass null if this is the first call.</p>
+    /// <p>The <code>DescribeSharedDirectoriesResult.NextToken</code> value from a previous call to <code>DescribeSharedDirectories</code>. Pass null if this is the first call. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The <code>DescribeSharedDirectoriesResult.NextToken</code> value from a previous call to <code>DescribeSharedDirectories</code>. Pass null if this is the first call.</p>
+    /// <p>The <code>DescribeSharedDirectoriesResult.NextToken</code> value from a previous call to <code>DescribeSharedDirectories</code>. Pass null if this is the first call. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The <code>DescribeSharedDirectoriesResult.NextToken</code> value from a previous call to <code>DescribeSharedDirectories</code>. Pass null if this is the first call.</p>
+    /// <p>The <code>DescribeSharedDirectoriesResult.NextToken</code> value from a previous call to <code>DescribeSharedDirectories</code>. Pass null if this is the first call. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

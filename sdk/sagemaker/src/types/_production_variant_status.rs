@@ -6,16 +6,11 @@
 pub struct ProductionVariantStatus {
     /// <p>The endpoint variant status which describes the current deployment stage status or operational status.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Creating</code>: Creating inference resources for the production variant.</p></li>
-    /// <li>
-    /// <p><code>Deleting</code>: Terminating inference resources for the production variant.</p></li>
-    /// <li>
-    /// <p><code>Updating</code>: Updating capacity for the production variant.</p></li>
-    /// <li>
-    /// <p><code>ActivatingTraffic</code>: Turning on traffic for the production variant.</p></li>
-    /// <li>
-    /// <p><code>Baking</code>: Waiting period to monitor the CloudWatch alarms in the automatic rollback configuration.</p></li>
+    /// <li> <p> <code>Creating</code>: Creating inference resources for the production variant.</p> </li>
+    /// <li> <p> <code>Deleting</code>: Terminating inference resources for the production variant.</p> </li>
+    /// <li> <p> <code>Updating</code>: Updating capacity for the production variant.</p> </li>
+    /// <li> <p> <code>ActivatingTraffic</code>: Turning on traffic for the production variant.</p> </li>
+    /// <li> <p> <code>Baking</code>: Waiting period to monitor the CloudWatch alarms in the automatic rollback configuration.</p> </li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::VariantStatus>,
     /// <p>A message that describes the status of the production variant.</p>
@@ -26,16 +21,11 @@ pub struct ProductionVariantStatus {
 impl ProductionVariantStatus {
     /// <p>The endpoint variant status which describes the current deployment stage status or operational status.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Creating</code>: Creating inference resources for the production variant.</p></li>
-    /// <li>
-    /// <p><code>Deleting</code>: Terminating inference resources for the production variant.</p></li>
-    /// <li>
-    /// <p><code>Updating</code>: Updating capacity for the production variant.</p></li>
-    /// <li>
-    /// <p><code>ActivatingTraffic</code>: Turning on traffic for the production variant.</p></li>
-    /// <li>
-    /// <p><code>Baking</code>: Waiting period to monitor the CloudWatch alarms in the automatic rollback configuration.</p></li>
+    /// <li> <p> <code>Creating</code>: Creating inference resources for the production variant.</p> </li>
+    /// <li> <p> <code>Deleting</code>: Terminating inference resources for the production variant.</p> </li>
+    /// <li> <p> <code>Updating</code>: Updating capacity for the production variant.</p> </li>
+    /// <li> <p> <code>ActivatingTraffic</code>: Turning on traffic for the production variant.</p> </li>
+    /// <li> <p> <code>Baking</code>: Waiting period to monitor the CloudWatch alarms in the automatic rollback configuration.</p> </li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::VariantStatus> {
         self.status.as_ref()
@@ -67,16 +57,11 @@ pub struct ProductionVariantStatusBuilder {
 impl ProductionVariantStatusBuilder {
     /// <p>The endpoint variant status which describes the current deployment stage status or operational status.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Creating</code>: Creating inference resources for the production variant.</p></li>
-    /// <li>
-    /// <p><code>Deleting</code>: Terminating inference resources for the production variant.</p></li>
-    /// <li>
-    /// <p><code>Updating</code>: Updating capacity for the production variant.</p></li>
-    /// <li>
-    /// <p><code>ActivatingTraffic</code>: Turning on traffic for the production variant.</p></li>
-    /// <li>
-    /// <p><code>Baking</code>: Waiting period to monitor the CloudWatch alarms in the automatic rollback configuration.</p></li>
+    /// <li> <p> <code>Creating</code>: Creating inference resources for the production variant.</p> </li>
+    /// <li> <p> <code>Deleting</code>: Terminating inference resources for the production variant.</p> </li>
+    /// <li> <p> <code>Updating</code>: Updating capacity for the production variant.</p> </li>
+    /// <li> <p> <code>ActivatingTraffic</code>: Turning on traffic for the production variant.</p> </li>
+    /// <li> <p> <code>Baking</code>: Waiting period to monitor the CloudWatch alarms in the automatic rollback configuration.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn status(mut self, input: crate::types::VariantStatus) -> Self {
@@ -85,16 +70,11 @@ impl ProductionVariantStatusBuilder {
     }
     /// <p>The endpoint variant status which describes the current deployment stage status or operational status.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Creating</code>: Creating inference resources for the production variant.</p></li>
-    /// <li>
-    /// <p><code>Deleting</code>: Terminating inference resources for the production variant.</p></li>
-    /// <li>
-    /// <p><code>Updating</code>: Updating capacity for the production variant.</p></li>
-    /// <li>
-    /// <p><code>ActivatingTraffic</code>: Turning on traffic for the production variant.</p></li>
-    /// <li>
-    /// <p><code>Baking</code>: Waiting period to monitor the CloudWatch alarms in the automatic rollback configuration.</p></li>
+    /// <li> <p> <code>Creating</code>: Creating inference resources for the production variant.</p> </li>
+    /// <li> <p> <code>Deleting</code>: Terminating inference resources for the production variant.</p> </li>
+    /// <li> <p> <code>Updating</code>: Updating capacity for the production variant.</p> </li>
+    /// <li> <p> <code>ActivatingTraffic</code>: Turning on traffic for the production variant.</p> </li>
+    /// <li> <p> <code>Baking</code>: Waiting period to monitor the CloudWatch alarms in the automatic rollback configuration.</p> </li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::VariantStatus>) -> Self {
         self.status = input;
@@ -102,16 +82,11 @@ impl ProductionVariantStatusBuilder {
     }
     /// <p>The endpoint variant status which describes the current deployment stage status or operational status.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Creating</code>: Creating inference resources for the production variant.</p></li>
-    /// <li>
-    /// <p><code>Deleting</code>: Terminating inference resources for the production variant.</p></li>
-    /// <li>
-    /// <p><code>Updating</code>: Updating capacity for the production variant.</p></li>
-    /// <li>
-    /// <p><code>ActivatingTraffic</code>: Turning on traffic for the production variant.</p></li>
-    /// <li>
-    /// <p><code>Baking</code>: Waiting period to monitor the CloudWatch alarms in the automatic rollback configuration.</p></li>
+    /// <li> <p> <code>Creating</code>: Creating inference resources for the production variant.</p> </li>
+    /// <li> <p> <code>Deleting</code>: Terminating inference resources for the production variant.</p> </li>
+    /// <li> <p> <code>Updating</code>: Updating capacity for the production variant.</p> </li>
+    /// <li> <p> <code>ActivatingTraffic</code>: Turning on traffic for the production variant.</p> </li>
+    /// <li> <p> <code>Baking</code>: Waiting period to monitor the CloudWatch alarms in the automatic rollback configuration.</p> </li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::VariantStatus> {
         &self.status

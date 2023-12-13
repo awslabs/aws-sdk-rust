@@ -9,14 +9,9 @@ pub struct LedgerEncryptionDescription {
     pub kms_key_arn: ::std::string::String,
     /// <p>The current state of encryption at rest for the ledger. This can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ENABLED</code>: Encryption is fully enabled using the specified key.</p></li>
-    /// <li>
-    /// <p><code>UPDATING</code>: The ledger is actively processing the specified key change.</p>
-    /// <p>Key changes in QLDB are asynchronous. The ledger is fully accessible without any performance impact while the key change is being processed. The amount of time it takes to update a key varies depending on the ledger size.</p></li>
-    /// <li>
-    /// <p><code>KMS_KEY_INACCESSIBLE</code>: The specified customer managed KMS key is not accessible, and the ledger is impaired. Either the key was disabled or deleted, or the grants on the key were revoked. When a ledger is impaired, it is not accessible and does not accept any read or write requests.</p>
-    /// <p>An impaired ledger automatically returns to an active state after you restore the grants on the key, or re-enable the key that was disabled. However, deleting a customer managed KMS key is irreversible. After a key is deleted, you can no longer access the ledgers that are protected with that key, and the data becomes unrecoverable permanently.</p></li>
+    /// <li> <p> <code>ENABLED</code>: Encryption is fully enabled using the specified key.</p> </li>
+    /// <li> <p> <code>UPDATING</code>: The ledger is actively processing the specified key change.</p> <p>Key changes in QLDB are asynchronous. The ledger is fully accessible without any performance impact while the key change is being processed. The amount of time it takes to update a key varies depending on the ledger size.</p> </li>
+    /// <li> <p> <code>KMS_KEY_INACCESSIBLE</code>: The specified customer managed KMS key is not accessible, and the ledger is impaired. Either the key was disabled or deleted, or the grants on the key were revoked. When a ledger is impaired, it is not accessible and does not accept any read or write requests.</p> <p>An impaired ledger automatically returns to an active state after you restore the grants on the key, or re-enable the key that was disabled. However, deleting a customer managed KMS key is irreversible. After a key is deleted, you can no longer access the ledgers that are protected with that key, and the data becomes unrecoverable permanently.</p> </li>
     /// </ul>
     pub encryption_status: crate::types::EncryptionStatus,
     /// <p>The date and time, in epoch time format, when the KMS key first became inaccessible, in the case of an error. (Epoch time format is the number of seconds that have elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
@@ -31,14 +26,9 @@ impl LedgerEncryptionDescription {
     }
     /// <p>The current state of encryption at rest for the ledger. This can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ENABLED</code>: Encryption is fully enabled using the specified key.</p></li>
-    /// <li>
-    /// <p><code>UPDATING</code>: The ledger is actively processing the specified key change.</p>
-    /// <p>Key changes in QLDB are asynchronous. The ledger is fully accessible without any performance impact while the key change is being processed. The amount of time it takes to update a key varies depending on the ledger size.</p></li>
-    /// <li>
-    /// <p><code>KMS_KEY_INACCESSIBLE</code>: The specified customer managed KMS key is not accessible, and the ledger is impaired. Either the key was disabled or deleted, or the grants on the key were revoked. When a ledger is impaired, it is not accessible and does not accept any read or write requests.</p>
-    /// <p>An impaired ledger automatically returns to an active state after you restore the grants on the key, or re-enable the key that was disabled. However, deleting a customer managed KMS key is irreversible. After a key is deleted, you can no longer access the ledgers that are protected with that key, and the data becomes unrecoverable permanently.</p></li>
+    /// <li> <p> <code>ENABLED</code>: Encryption is fully enabled using the specified key.</p> </li>
+    /// <li> <p> <code>UPDATING</code>: The ledger is actively processing the specified key change.</p> <p>Key changes in QLDB are asynchronous. The ledger is fully accessible without any performance impact while the key change is being processed. The amount of time it takes to update a key varies depending on the ledger size.</p> </li>
+    /// <li> <p> <code>KMS_KEY_INACCESSIBLE</code>: The specified customer managed KMS key is not accessible, and the ledger is impaired. Either the key was disabled or deleted, or the grants on the key were revoked. When a ledger is impaired, it is not accessible and does not accept any read or write requests.</p> <p>An impaired ledger automatically returns to an active state after you restore the grants on the key, or re-enable the key that was disabled. However, deleting a customer managed KMS key is irreversible. After a key is deleted, you can no longer access the ledgers that are protected with that key, and the data becomes unrecoverable permanently.</p> </li>
     /// </ul>
     pub fn encryption_status(&self) -> &crate::types::EncryptionStatus {
         &self.encryption_status
@@ -82,14 +72,9 @@ impl LedgerEncryptionDescriptionBuilder {
     }
     /// <p>The current state of encryption at rest for the ledger. This can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ENABLED</code>: Encryption is fully enabled using the specified key.</p></li>
-    /// <li>
-    /// <p><code>UPDATING</code>: The ledger is actively processing the specified key change.</p>
-    /// <p>Key changes in QLDB are asynchronous. The ledger is fully accessible without any performance impact while the key change is being processed. The amount of time it takes to update a key varies depending on the ledger size.</p></li>
-    /// <li>
-    /// <p><code>KMS_KEY_INACCESSIBLE</code>: The specified customer managed KMS key is not accessible, and the ledger is impaired. Either the key was disabled or deleted, or the grants on the key were revoked. When a ledger is impaired, it is not accessible and does not accept any read or write requests.</p>
-    /// <p>An impaired ledger automatically returns to an active state after you restore the grants on the key, or re-enable the key that was disabled. However, deleting a customer managed KMS key is irreversible. After a key is deleted, you can no longer access the ledgers that are protected with that key, and the data becomes unrecoverable permanently.</p></li>
+    /// <li> <p> <code>ENABLED</code>: Encryption is fully enabled using the specified key.</p> </li>
+    /// <li> <p> <code>UPDATING</code>: The ledger is actively processing the specified key change.</p> <p>Key changes in QLDB are asynchronous. The ledger is fully accessible without any performance impact while the key change is being processed. The amount of time it takes to update a key varies depending on the ledger size.</p> </li>
+    /// <li> <p> <code>KMS_KEY_INACCESSIBLE</code>: The specified customer managed KMS key is not accessible, and the ledger is impaired. Either the key was disabled or deleted, or the grants on the key were revoked. When a ledger is impaired, it is not accessible and does not accept any read or write requests.</p> <p>An impaired ledger automatically returns to an active state after you restore the grants on the key, or re-enable the key that was disabled. However, deleting a customer managed KMS key is irreversible. After a key is deleted, you can no longer access the ledgers that are protected with that key, and the data becomes unrecoverable permanently.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn encryption_status(mut self, input: crate::types::EncryptionStatus) -> Self {
@@ -98,14 +83,9 @@ impl LedgerEncryptionDescriptionBuilder {
     }
     /// <p>The current state of encryption at rest for the ledger. This can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ENABLED</code>: Encryption is fully enabled using the specified key.</p></li>
-    /// <li>
-    /// <p><code>UPDATING</code>: The ledger is actively processing the specified key change.</p>
-    /// <p>Key changes in QLDB are asynchronous. The ledger is fully accessible without any performance impact while the key change is being processed. The amount of time it takes to update a key varies depending on the ledger size.</p></li>
-    /// <li>
-    /// <p><code>KMS_KEY_INACCESSIBLE</code>: The specified customer managed KMS key is not accessible, and the ledger is impaired. Either the key was disabled or deleted, or the grants on the key were revoked. When a ledger is impaired, it is not accessible and does not accept any read or write requests.</p>
-    /// <p>An impaired ledger automatically returns to an active state after you restore the grants on the key, or re-enable the key that was disabled. However, deleting a customer managed KMS key is irreversible. After a key is deleted, you can no longer access the ledgers that are protected with that key, and the data becomes unrecoverable permanently.</p></li>
+    /// <li> <p> <code>ENABLED</code>: Encryption is fully enabled using the specified key.</p> </li>
+    /// <li> <p> <code>UPDATING</code>: The ledger is actively processing the specified key change.</p> <p>Key changes in QLDB are asynchronous. The ledger is fully accessible without any performance impact while the key change is being processed. The amount of time it takes to update a key varies depending on the ledger size.</p> </li>
+    /// <li> <p> <code>KMS_KEY_INACCESSIBLE</code>: The specified customer managed KMS key is not accessible, and the ledger is impaired. Either the key was disabled or deleted, or the grants on the key were revoked. When a ledger is impaired, it is not accessible and does not accept any read or write requests.</p> <p>An impaired ledger automatically returns to an active state after you restore the grants on the key, or re-enable the key that was disabled. However, deleting a customer managed KMS key is irreversible. After a key is deleted, you can no longer access the ledgers that are protected with that key, and the data becomes unrecoverable permanently.</p> </li>
     /// </ul>
     pub fn set_encryption_status(mut self, input: ::std::option::Option<crate::types::EncryptionStatus>) -> Self {
         self.encryption_status = input;
@@ -113,14 +93,9 @@ impl LedgerEncryptionDescriptionBuilder {
     }
     /// <p>The current state of encryption at rest for the ledger. This can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ENABLED</code>: Encryption is fully enabled using the specified key.</p></li>
-    /// <li>
-    /// <p><code>UPDATING</code>: The ledger is actively processing the specified key change.</p>
-    /// <p>Key changes in QLDB are asynchronous. The ledger is fully accessible without any performance impact while the key change is being processed. The amount of time it takes to update a key varies depending on the ledger size.</p></li>
-    /// <li>
-    /// <p><code>KMS_KEY_INACCESSIBLE</code>: The specified customer managed KMS key is not accessible, and the ledger is impaired. Either the key was disabled or deleted, or the grants on the key were revoked. When a ledger is impaired, it is not accessible and does not accept any read or write requests.</p>
-    /// <p>An impaired ledger automatically returns to an active state after you restore the grants on the key, or re-enable the key that was disabled. However, deleting a customer managed KMS key is irreversible. After a key is deleted, you can no longer access the ledgers that are protected with that key, and the data becomes unrecoverable permanently.</p></li>
+    /// <li> <p> <code>ENABLED</code>: Encryption is fully enabled using the specified key.</p> </li>
+    /// <li> <p> <code>UPDATING</code>: The ledger is actively processing the specified key change.</p> <p>Key changes in QLDB are asynchronous. The ledger is fully accessible without any performance impact while the key change is being processed. The amount of time it takes to update a key varies depending on the ledger size.</p> </li>
+    /// <li> <p> <code>KMS_KEY_INACCESSIBLE</code>: The specified customer managed KMS key is not accessible, and the ledger is impaired. Either the key was disabled or deleted, or the grants on the key were revoked. When a ledger is impaired, it is not accessible and does not accept any read or write requests.</p> <p>An impaired ledger automatically returns to an active state after you restore the grants on the key, or re-enable the key that was disabled. However, deleting a customer managed KMS key is irreversible. After a key is deleted, you can no longer access the ledgers that are protected with that key, and the data becomes unrecoverable permanently.</p> </li>
     /// </ul>
     pub fn get_encryption_status(&self) -> &::std::option::Option<crate::types::EncryptionStatus> {
         &self.encryption_status

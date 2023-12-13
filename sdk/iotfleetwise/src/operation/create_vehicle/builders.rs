@@ -22,8 +22,8 @@ impl CreateVehicleInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateVehicle`.
 ///
-/// <p>Creates a vehicle, which is an instance of a vehicle model (model manifest). Vehicles created from the same vehicle model consist of the same signals inherited from the vehicle model.</p><note>
-/// <p>If you have an existing Amazon Web Services IoT thing, you can use Amazon Web Services IoT FleetWise to create a vehicle and collect data from your thing.</p>
+/// <p> Creates a vehicle, which is an instance of a vehicle model (model manifest). Vehicles created from the same vehicle model consist of the same signals inherited from the vehicle model.</p> <note>
+/// <p> If you have an existing Amazon Web Services IoT thing, you can use Amazon Web Services IoT FleetWise to create a vehicle and collect data from your thing. </p>
 /// </note>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/create-vehicle-cli.html">Create a vehicle (AWS CLI)</a> in the <i>Amazon Web Services IoT FleetWise Developer Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -111,45 +111,45 @@ impl CreateVehicleFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique ID of the vehicle to create.</p>
+    /// <p> The unique ID of the vehicle to create. </p>
     pub fn vehicle_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vehicle_name(input.into());
         self
     }
-    /// <p>The unique ID of the vehicle to create.</p>
+    /// <p> The unique ID of the vehicle to create. </p>
     pub fn set_vehicle_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vehicle_name(input);
         self
     }
-    /// <p>The unique ID of the vehicle to create.</p>
+    /// <p> The unique ID of the vehicle to create. </p>
     pub fn get_vehicle_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_vehicle_name()
     }
-    /// <p>The Amazon Resource Name ARN of a vehicle model.</p>
+    /// <p> The Amazon Resource Name ARN of a vehicle model. </p>
     pub fn model_manifest_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.model_manifest_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name ARN of a vehicle model.</p>
+    /// <p> The Amazon Resource Name ARN of a vehicle model. </p>
     pub fn set_model_manifest_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_model_manifest_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name ARN of a vehicle model.</p>
+    /// <p> The Amazon Resource Name ARN of a vehicle model. </p>
     pub fn get_model_manifest_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_model_manifest_arn()
     }
-    /// <p>The ARN of a decoder manifest.</p>
+    /// <p> The ARN of a decoder manifest. </p>
     pub fn decoder_manifest_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.decoder_manifest_arn(input.into());
         self
     }
-    /// <p>The ARN of a decoder manifest.</p>
+    /// <p> The ARN of a decoder manifest. </p>
     pub fn set_decoder_manifest_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_decoder_manifest_arn(input);
         self
     }
-    /// <p>The ARN of a decoder manifest.</p>
+    /// <p> The ARN of a decoder manifest. </p>
     pub fn get_decoder_manifest_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_decoder_manifest_arn()
     }
@@ -157,37 +157,37 @@ impl CreateVehicleFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
-    /// <p>Static information about a vehicle in a key-value pair. For example: <code>"engineType"</code> : <code>"1.3 L R2"</code></p>
+    /// <p>Static information about a vehicle in a key-value pair. For example: <code>"engineType"</code> : <code>"1.3 L R2"</code> </p>
     /// <p>A campaign must include the keys (attribute names) in <code>dataExtraDimensions</code> for them to display in Amazon Timestream.</p>
     pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attributes(k.into(), v.into());
         self
     }
-    /// <p>Static information about a vehicle in a key-value pair. For example: <code>"engineType"</code> : <code>"1.3 L R2"</code></p>
+    /// <p>Static information about a vehicle in a key-value pair. For example: <code>"engineType"</code> : <code>"1.3 L R2"</code> </p>
     /// <p>A campaign must include the keys (attribute names) in <code>dataExtraDimensions</code> for them to display in Amazon Timestream.</p>
     pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
     }
-    /// <p>Static information about a vehicle in a key-value pair. For example: <code>"engineType"</code> : <code>"1.3 L R2"</code></p>
+    /// <p>Static information about a vehicle in a key-value pair. For example: <code>"engineType"</code> : <code>"1.3 L R2"</code> </p>
     /// <p>A campaign must include the keys (attribute names) in <code>dataExtraDimensions</code> for them to display in Amazon Timestream.</p>
     pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_attributes()
     }
-    /// <p>An option to create a new Amazon Web Services IoT thing when creating a vehicle, or to validate an existing Amazon Web Services IoT thing as a vehicle.</p>
-    /// <p>Default: <code></code></p>
+    /// <p> An option to create a new Amazon Web Services IoT thing when creating a vehicle, or to validate an existing Amazon Web Services IoT thing as a vehicle. </p>
+    /// <p>Default: <code></code> </p>
     pub fn association_behavior(mut self, input: crate::types::VehicleAssociationBehavior) -> Self {
         self.inner = self.inner.association_behavior(input);
         self
     }
-    /// <p>An option to create a new Amazon Web Services IoT thing when creating a vehicle, or to validate an existing Amazon Web Services IoT thing as a vehicle.</p>
-    /// <p>Default: <code></code></p>
+    /// <p> An option to create a new Amazon Web Services IoT thing when creating a vehicle, or to validate an existing Amazon Web Services IoT thing as a vehicle. </p>
+    /// <p>Default: <code></code> </p>
     pub fn set_association_behavior(mut self, input: ::std::option::Option<crate::types::VehicleAssociationBehavior>) -> Self {
         self.inner = self.inner.set_association_behavior(input);
         self
     }
-    /// <p>An option to create a new Amazon Web Services IoT thing when creating a vehicle, or to validate an existing Amazon Web Services IoT thing as a vehicle.</p>
-    /// <p>Default: <code></code></p>
+    /// <p> An option to create a new Amazon Web Services IoT thing when creating a vehicle, or to validate an existing Amazon Web Services IoT thing as a vehicle. </p>
+    /// <p>Default: <code></code> </p>
     pub fn get_association_behavior(&self) -> &::std::option::Option<crate::types::VehicleAssociationBehavior> {
         self.inner.get_association_behavior()
     }

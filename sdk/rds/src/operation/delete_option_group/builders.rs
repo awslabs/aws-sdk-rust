@@ -108,21 +108,21 @@ impl DeleteOptionGroupFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the option group to be deleted.</p><note>
+    /// <p>The name of the option group to be deleted.</p> <note>
     /// <p>You can't delete default option groups.</p>
     /// </note>
     pub fn option_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.option_group_name(input.into());
         self
     }
-    /// <p>The name of the option group to be deleted.</p><note>
+    /// <p>The name of the option group to be deleted.</p> <note>
     /// <p>You can't delete default option groups.</p>
     /// </note>
     pub fn set_option_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_option_group_name(input);
         self
     }
-    /// <p>The name of the option group to be deleted.</p><note>
+    /// <p>The name of the option group to be deleted.</p> <note>
     /// <p>You can't delete default option groups.</p>
     /// </note>
     pub fn get_option_group_name(&self) -> &::std::option::Option<::std::string::String> {

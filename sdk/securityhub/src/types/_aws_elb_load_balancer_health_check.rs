@@ -10,9 +10,14 @@ pub struct AwsElbLoadBalancerHealthCheck {
     pub interval: ::std::option::Option<i32>,
     /// <p>The instance that is being checked. The target specifies the protocol and port. The available protocols are TCP, SSL, HTTP, and HTTPS. The range of valid ports is 1 through 65535.</p>
     /// <p>For the HTTP and HTTPS protocols, the target also specifies the ping path.</p>
-    /// <p>For the TCP protocol, the target is specified as <code>TCP: <i><port></port></i> </code>.</p>
-    /// <p>For the SSL protocol, the target is specified as <code>SSL.<i><port></port></i> </code>.</p>
-    /// <p>For the HTTP and HTTPS protocols, the target is specified as <code> <i><protocol></protocol></i>:<i><port></port></i>/<i><path to ping></path></i> </code>.</p>
+    /// <p>For the TCP protocol, the target is specified as <code>TCP: <i>
+    /// <port></port></i> </code>.</p>
+    /// <p>For the SSL protocol, the target is specified as <code>SSL.<i>
+    /// <port></port></i> </code>.</p>
+    /// <p>For the HTTP and HTTPS protocols, the target is specified as <code> <i>
+    /// <protocol></protocol></i>:<i>
+    /// <port></port></i>/<i>
+    /// <path to ping></path></i> </code>.</p>
     pub target: ::std::option::Option<::std::string::String>,
     /// <p>The amount of time, in seconds, during which no response means a failed health check.</p>
     pub timeout: ::std::option::Option<i32>,
@@ -30,9 +35,14 @@ impl AwsElbLoadBalancerHealthCheck {
     }
     /// <p>The instance that is being checked. The target specifies the protocol and port. The available protocols are TCP, SSL, HTTP, and HTTPS. The range of valid ports is 1 through 65535.</p>
     /// <p>For the HTTP and HTTPS protocols, the target also specifies the ping path.</p>
-    /// <p>For the TCP protocol, the target is specified as <code>TCP: <i><port></port></i> </code>.</p>
-    /// <p>For the SSL protocol, the target is specified as <code>SSL.<i><port></port></i> </code>.</p>
-    /// <p>For the HTTP and HTTPS protocols, the target is specified as <code> <i><protocol></protocol></i>:<i><port></port></i>/<i><path to ping></path></i> </code>.</p>
+    /// <p>For the TCP protocol, the target is specified as <code>TCP: <i>
+    /// <port></port></i> </code>.</p>
+    /// <p>For the SSL protocol, the target is specified as <code>SSL.<i>
+    /// <port></port></i> </code>.</p>
+    /// <p>For the HTTP and HTTPS protocols, the target is specified as <code> <i>
+    /// <protocol></protocol></i>:<i>
+    /// <port></port></i>/<i>
+    /// <path to ping></path></i> </code>.</p>
     pub fn target(&self) -> ::std::option::Option<&str> {
         self.target.as_deref()
     }
@@ -93,27 +103,42 @@ impl AwsElbLoadBalancerHealthCheckBuilder {
     }
     /// <p>The instance that is being checked. The target specifies the protocol and port. The available protocols are TCP, SSL, HTTP, and HTTPS. The range of valid ports is 1 through 65535.</p>
     /// <p>For the HTTP and HTTPS protocols, the target also specifies the ping path.</p>
-    /// <p>For the TCP protocol, the target is specified as <code>TCP: <i><port></port></i> </code>.</p>
-    /// <p>For the SSL protocol, the target is specified as <code>SSL.<i><port></port></i> </code>.</p>
-    /// <p>For the HTTP and HTTPS protocols, the target is specified as <code> <i><protocol></protocol></i>:<i><port></port></i>/<i><path to ping></path></i> </code>.</p>
+    /// <p>For the TCP protocol, the target is specified as <code>TCP: <i>
+    /// <port></port></i> </code>.</p>
+    /// <p>For the SSL protocol, the target is specified as <code>SSL.<i>
+    /// <port></port></i> </code>.</p>
+    /// <p>For the HTTP and HTTPS protocols, the target is specified as <code> <i>
+    /// <protocol></protocol></i>:<i>
+    /// <port></port></i>/<i>
+    /// <path to ping></path></i> </code>.</p>
     pub fn target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The instance that is being checked. The target specifies the protocol and port. The available protocols are TCP, SSL, HTTP, and HTTPS. The range of valid ports is 1 through 65535.</p>
     /// <p>For the HTTP and HTTPS protocols, the target also specifies the ping path.</p>
-    /// <p>For the TCP protocol, the target is specified as <code>TCP: <i><port></port></i> </code>.</p>
-    /// <p>For the SSL protocol, the target is specified as <code>SSL.<i><port></port></i> </code>.</p>
-    /// <p>For the HTTP and HTTPS protocols, the target is specified as <code> <i><protocol></protocol></i>:<i><port></port></i>/<i><path to ping></path></i> </code>.</p>
+    /// <p>For the TCP protocol, the target is specified as <code>TCP: <i>
+    /// <port></port></i> </code>.</p>
+    /// <p>For the SSL protocol, the target is specified as <code>SSL.<i>
+    /// <port></port></i> </code>.</p>
+    /// <p>For the HTTP and HTTPS protocols, the target is specified as <code> <i>
+    /// <protocol></protocol></i>:<i>
+    /// <port></port></i>/<i>
+    /// <path to ping></path></i> </code>.</p>
     pub fn set_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target = input;
         self
     }
     /// <p>The instance that is being checked. The target specifies the protocol and port. The available protocols are TCP, SSL, HTTP, and HTTPS. The range of valid ports is 1 through 65535.</p>
     /// <p>For the HTTP and HTTPS protocols, the target also specifies the ping path.</p>
-    /// <p>For the TCP protocol, the target is specified as <code>TCP: <i><port></port></i> </code>.</p>
-    /// <p>For the SSL protocol, the target is specified as <code>SSL.<i><port></port></i> </code>.</p>
-    /// <p>For the HTTP and HTTPS protocols, the target is specified as <code> <i><protocol></protocol></i>:<i><port></port></i>/<i><path to ping></path></i> </code>.</p>
+    /// <p>For the TCP protocol, the target is specified as <code>TCP: <i>
+    /// <port></port></i> </code>.</p>
+    /// <p>For the SSL protocol, the target is specified as <code>SSL.<i>
+    /// <port></port></i> </code>.</p>
+    /// <p>For the HTTP and HTTPS protocols, the target is specified as <code> <i>
+    /// <protocol></protocol></i>:<i>
+    /// <port></port></i>/<i>
+    /// <path to ping></path></i> </code>.</p>
     pub fn get_target(&self) -> &::std::option::Option<::std::string::String> {
         &self.target
     }

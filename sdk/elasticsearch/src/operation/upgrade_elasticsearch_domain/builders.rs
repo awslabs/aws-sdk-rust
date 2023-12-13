@@ -136,17 +136,17 @@ impl UpgradeElasticsearchDomainFluentBuilder {
     pub fn get_target_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_target_version()
     }
-    /// <p>This flag, when set to True, indicates that an Upgrade Eligibility Check needs to be performed. This will not actually perform the Upgrade.</p>
+    /// <p> This flag, when set to True, indicates that an Upgrade Eligibility Check needs to be performed. This will not actually perform the Upgrade. </p>
     pub fn perform_check_only(mut self, input: bool) -> Self {
         self.inner = self.inner.perform_check_only(input);
         self
     }
-    /// <p>This flag, when set to True, indicates that an Upgrade Eligibility Check needs to be performed. This will not actually perform the Upgrade.</p>
+    /// <p> This flag, when set to True, indicates that an Upgrade Eligibility Check needs to be performed. This will not actually perform the Upgrade. </p>
     pub fn set_perform_check_only(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_perform_check_only(input);
         self
     }
-    /// <p>This flag, when set to True, indicates that an Upgrade Eligibility Check needs to be performed. This will not actually perform the Upgrade.</p>
+    /// <p> This flag, when set to True, indicates that an Upgrade Eligibility Check needs to be performed. This will not actually perform the Upgrade. </p>
     pub fn get_perform_check_only(&self) -> &::std::option::Option<bool> {
         self.inner.get_perform_check_only()
     }

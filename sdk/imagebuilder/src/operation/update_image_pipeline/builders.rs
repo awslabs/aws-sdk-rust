@@ -22,7 +22,7 @@ impl UpdateImagePipelineInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateImagePipeline`.
 ///
-/// <p>Updates an image pipeline. Image pipelines enable you to automate the creation and distribution of images. You must specify exactly one recipe for your image, using either a <code>containerRecipeArn</code> or an <code>imageRecipeArn</code>.</p><note>
+/// <p>Updates an image pipeline. Image pipelines enable you to automate the creation and distribution of images. You must specify exactly one recipe for your image, using either a <code>containerRecipeArn</code> or an <code>imageRecipeArn</code>.</p> <note>
 /// <p>UpdateImagePipeline does not support selective updates for the pipeline. You must specify all of the required properties in the update request, not just the properties that have changed.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

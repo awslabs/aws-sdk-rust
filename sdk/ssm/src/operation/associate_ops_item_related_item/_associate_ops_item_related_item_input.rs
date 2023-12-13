@@ -8,8 +8,8 @@ pub struct AssociateOpsItemRelatedItemInput {
     /// <p>The type of association that you want to create between an OpsItem and a resource. OpsCenter supports <code>IsParentOf</code> and <code>RelatesTo</code> association types.</p>
     pub association_type: ::std::option::Option<::std::string::String>,
     /// <p>The type of resource that you want to associate with an OpsItem. OpsCenter supports the following types:</p>
-    /// <p><code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident.</p>
-    /// <p><code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.</p>
+    /// <p> <code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident. </p>
+    /// <p> <code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.</p>
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services resource that you want to associate with the OpsItem.</p>
     pub resource_uri: ::std::option::Option<::std::string::String>,
@@ -24,8 +24,8 @@ impl AssociateOpsItemRelatedItemInput {
         self.association_type.as_deref()
     }
     /// <p>The type of resource that you want to associate with an OpsItem. OpsCenter supports the following types:</p>
-    /// <p><code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident.</p>
-    /// <p><code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.</p>
+    /// <p> <code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident. </p>
+    /// <p> <code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.</p>
     pub fn resource_type(&self) -> ::std::option::Option<&str> {
         self.resource_type.as_deref()
     }
@@ -82,23 +82,23 @@ impl AssociateOpsItemRelatedItemInputBuilder {
         &self.association_type
     }
     /// <p>The type of resource that you want to associate with an OpsItem. OpsCenter supports the following types:</p>
-    /// <p><code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident.</p>
-    /// <p><code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.</p>
+    /// <p> <code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident. </p>
+    /// <p> <code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.</p>
     /// This field is required.
     pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of resource that you want to associate with an OpsItem. OpsCenter supports the following types:</p>
-    /// <p><code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident.</p>
-    /// <p><code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.</p>
+    /// <p> <code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident. </p>
+    /// <p> <code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
         self
     }
     /// <p>The type of resource that you want to associate with an OpsItem. OpsCenter supports the following types:</p>
-    /// <p><code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident.</p>
-    /// <p><code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.</p>
+    /// <p> <code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident. </p>
+    /// <p> <code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_type
     }

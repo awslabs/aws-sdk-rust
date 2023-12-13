@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAssignmentOutput {
-    /// <p>The assignment. The response includes one Assignment element.</p>
+    /// <p> The assignment. The response includes one Assignment element. </p>
     pub assignment: ::std::option::Option<crate::types::Assignment>,
-    /// <p>The HIT associated with this assignment. The response includes one HIT element.</p>
+    /// <p> The HIT associated with this assignment. The response includes one HIT element.</p>
     pub hit: ::std::option::Option<crate::types::Hit>,
     _request_id: Option<String>,
 }
 impl GetAssignmentOutput {
-    /// <p>The assignment. The response includes one Assignment element.</p>
+    /// <p> The assignment. The response includes one Assignment element. </p>
     pub fn assignment(&self) -> ::std::option::Option<&crate::types::Assignment> {
         self.assignment.as_ref()
     }
-    /// <p>The HIT associated with this assignment. The response includes one HIT element.</p>
+    /// <p> The HIT associated with this assignment. The response includes one HIT element.</p>
     pub fn hit(&self) -> ::std::option::Option<&crate::types::Hit> {
         self.hit.as_ref()
     }
@@ -40,31 +40,31 @@ pub struct GetAssignmentOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetAssignmentOutputBuilder {
-    /// <p>The assignment. The response includes one Assignment element.</p>
+    /// <p> The assignment. The response includes one Assignment element. </p>
     pub fn assignment(mut self, input: crate::types::Assignment) -> Self {
         self.assignment = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The assignment. The response includes one Assignment element.</p>
+    /// <p> The assignment. The response includes one Assignment element. </p>
     pub fn set_assignment(mut self, input: ::std::option::Option<crate::types::Assignment>) -> Self {
         self.assignment = input;
         self
     }
-    /// <p>The assignment. The response includes one Assignment element.</p>
+    /// <p> The assignment. The response includes one Assignment element. </p>
     pub fn get_assignment(&self) -> &::std::option::Option<crate::types::Assignment> {
         &self.assignment
     }
-    /// <p>The HIT associated with this assignment. The response includes one HIT element.</p>
+    /// <p> The HIT associated with this assignment. The response includes one HIT element.</p>
     pub fn hit(mut self, input: crate::types::Hit) -> Self {
         self.hit = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The HIT associated with this assignment. The response includes one HIT element.</p>
+    /// <p> The HIT associated with this assignment. The response includes one HIT element.</p>
     pub fn set_hit(mut self, input: ::std::option::Option<crate::types::Hit>) -> Self {
         self.hit = input;
         self
     }
-    /// <p>The HIT associated with this assignment. The response includes one HIT element.</p>
+    /// <p> The HIT associated with this assignment. The response includes one HIT element.</p>
     pub fn get_hit(&self) -> &::std::option::Option<crate::types::Hit> {
         &self.hit
     }

@@ -16,10 +16,8 @@ pub struct TimeBasedForecastProperties {
     pub prediction_interval: ::std::option::Option<i32>,
     /// <p>The seasonality setup of a forecast computation. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>NULL</code>: The input is set to <code>NULL</code>.</p></li>
-    /// <li>
-    /// <p><code>NON_NULL</code>: The input is set to a custom value.</p></li>
+    /// <li> <p> <code>NULL</code>: The input is set to <code>NULL</code>.</p> </li>
+    /// <li> <p> <code>NON_NULL</code>: The input is set to a custom value.</p> </li>
     /// </ul>
     pub seasonality: ::std::option::Option<i32>,
 }
@@ -46,10 +44,8 @@ impl TimeBasedForecastProperties {
     }
     /// <p>The seasonality setup of a forecast computation. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>NULL</code>: The input is set to <code>NULL</code>.</p></li>
-    /// <li>
-    /// <p><code>NON_NULL</code>: The input is set to a custom value.</p></li>
+    /// <li> <p> <code>NULL</code>: The input is set to <code>NULL</code>.</p> </li>
+    /// <li> <p> <code>NON_NULL</code>: The input is set to a custom value.</p> </li>
     /// </ul>
     pub fn seasonality(&self) -> ::std::option::Option<i32> {
         self.seasonality
@@ -146,10 +142,8 @@ impl TimeBasedForecastPropertiesBuilder {
     }
     /// <p>The seasonality setup of a forecast computation. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>NULL</code>: The input is set to <code>NULL</code>.</p></li>
-    /// <li>
-    /// <p><code>NON_NULL</code>: The input is set to a custom value.</p></li>
+    /// <li> <p> <code>NULL</code>: The input is set to <code>NULL</code>.</p> </li>
+    /// <li> <p> <code>NON_NULL</code>: The input is set to a custom value.</p> </li>
     /// </ul>
     pub fn seasonality(mut self, input: i32) -> Self {
         self.seasonality = ::std::option::Option::Some(input);
@@ -157,10 +151,8 @@ impl TimeBasedForecastPropertiesBuilder {
     }
     /// <p>The seasonality setup of a forecast computation. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>NULL</code>: The input is set to <code>NULL</code>.</p></li>
-    /// <li>
-    /// <p><code>NON_NULL</code>: The input is set to a custom value.</p></li>
+    /// <li> <p> <code>NULL</code>: The input is set to <code>NULL</code>.</p> </li>
+    /// <li> <p> <code>NON_NULL</code>: The input is set to a custom value.</p> </li>
     /// </ul>
     pub fn set_seasonality(mut self, input: ::std::option::Option<i32>) -> Self {
         self.seasonality = input;
@@ -168,10 +160,8 @@ impl TimeBasedForecastPropertiesBuilder {
     }
     /// <p>The seasonality setup of a forecast computation. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>NULL</code>: The input is set to <code>NULL</code>.</p></li>
-    /// <li>
-    /// <p><code>NON_NULL</code>: The input is set to a custom value.</p></li>
+    /// <li> <p> <code>NULL</code>: The input is set to <code>NULL</code>.</p> </li>
+    /// <li> <p> <code>NON_NULL</code>: The input is set to a custom value.</p> </li>
     /// </ul>
     pub fn get_seasonality(&self) -> &::std::option::Option<i32> {
         &self.seasonality

@@ -13,7 +13,7 @@ pub struct RegisterComputeInput {
     pub dns_name: ::std::option::Option<::std::string::String>,
     /// <p>The IP address of the compute resource. Amazon GameLift requires either a DNS name or IP address.</p>
     pub ip_address: ::std::option::Option<::std::string::String>,
-    /// <p>The name of a custom location to associate with the compute resource being registered.</p>
+    /// <p>The name of a custom location to associate with the compute resource being registered. </p>
     pub location: ::std::option::Option<::std::string::String>,
 }
 impl RegisterComputeInput {
@@ -37,7 +37,7 @@ impl RegisterComputeInput {
     pub fn ip_address(&self) -> ::std::option::Option<&str> {
         self.ip_address.as_deref()
     }
-    /// <p>The name of a custom location to associate with the compute resource being registered.</p>
+    /// <p>The name of a custom location to associate with the compute resource being registered. </p>
     pub fn location(&self) -> ::std::option::Option<&str> {
         self.location.as_deref()
     }
@@ -145,17 +145,17 @@ impl RegisterComputeInputBuilder {
     pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.ip_address
     }
-    /// <p>The name of a custom location to associate with the compute resource being registered.</p>
+    /// <p>The name of a custom location to associate with the compute resource being registered. </p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of a custom location to associate with the compute resource being registered.</p>
+    /// <p>The name of a custom location to associate with the compute resource being registered. </p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location = input;
         self
     }
-    /// <p>The name of a custom location to associate with the compute resource being registered.</p>
+    /// <p>The name of a custom location to associate with the compute resource being registered. </p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.location
     }

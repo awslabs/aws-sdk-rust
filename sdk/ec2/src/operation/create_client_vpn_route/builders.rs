@@ -124,14 +124,10 @@ impl CreateClientVpnRouteFluentBuilder {
     }
     /// <p>The IPv4 address range, in CIDR notation, of the route destination. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>To add a route for Internet access, enter <code>0.0.0.0/0</code></p></li>
-    /// <li>
-    /// <p>To add a route for a peered VPC, enter the peered VPC's IPv4 CIDR range</p></li>
-    /// <li>
-    /// <p>To add a route for an on-premises network, enter the Amazon Web Services Site-to-Site VPN connection's IPv4 CIDR range</p></li>
-    /// <li>
-    /// <p>To add a route for the local network, enter the client CIDR range</p></li>
+    /// <li> <p>To add a route for Internet access, enter <code>0.0.0.0/0</code> </p> </li>
+    /// <li> <p>To add a route for a peered VPC, enter the peered VPC's IPv4 CIDR range</p> </li>
+    /// <li> <p>To add a route for an on-premises network, enter the Amazon Web Services Site-to-Site VPN connection's IPv4 CIDR range</p> </li>
+    /// <li> <p>To add a route for the local network, enter the client CIDR range</p> </li>
     /// </ul>
     pub fn destination_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_cidr_block(input.into());
@@ -139,14 +135,10 @@ impl CreateClientVpnRouteFluentBuilder {
     }
     /// <p>The IPv4 address range, in CIDR notation, of the route destination. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>To add a route for Internet access, enter <code>0.0.0.0/0</code></p></li>
-    /// <li>
-    /// <p>To add a route for a peered VPC, enter the peered VPC's IPv4 CIDR range</p></li>
-    /// <li>
-    /// <p>To add a route for an on-premises network, enter the Amazon Web Services Site-to-Site VPN connection's IPv4 CIDR range</p></li>
-    /// <li>
-    /// <p>To add a route for the local network, enter the client CIDR range</p></li>
+    /// <li> <p>To add a route for Internet access, enter <code>0.0.0.0/0</code> </p> </li>
+    /// <li> <p>To add a route for a peered VPC, enter the peered VPC's IPv4 CIDR range</p> </li>
+    /// <li> <p>To add a route for an on-premises network, enter the Amazon Web Services Site-to-Site VPN connection's IPv4 CIDR range</p> </li>
+    /// <li> <p>To add a route for the local network, enter the client CIDR range</p> </li>
     /// </ul>
     pub fn set_destination_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_cidr_block(input);
@@ -154,14 +146,10 @@ impl CreateClientVpnRouteFluentBuilder {
     }
     /// <p>The IPv4 address range, in CIDR notation, of the route destination. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>To add a route for Internet access, enter <code>0.0.0.0/0</code></p></li>
-    /// <li>
-    /// <p>To add a route for a peered VPC, enter the peered VPC's IPv4 CIDR range</p></li>
-    /// <li>
-    /// <p>To add a route for an on-premises network, enter the Amazon Web Services Site-to-Site VPN connection's IPv4 CIDR range</p></li>
-    /// <li>
-    /// <p>To add a route for the local network, enter the client CIDR range</p></li>
+    /// <li> <p>To add a route for Internet access, enter <code>0.0.0.0/0</code> </p> </li>
+    /// <li> <p>To add a route for a peered VPC, enter the peered VPC's IPv4 CIDR range</p> </li>
+    /// <li> <p>To add a route for an on-premises network, enter the Amazon Web Services Site-to-Site VPN connection's IPv4 CIDR range</p> </li>
+    /// <li> <p>To add a route for the local network, enter the client CIDR range</p> </li>
     /// </ul>
     pub fn get_destination_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_destination_cidr_block()

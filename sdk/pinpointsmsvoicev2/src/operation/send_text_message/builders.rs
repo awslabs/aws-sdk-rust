@@ -243,7 +243,7 @@ impl SendTextMessageFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_destination_country_parameters`](Self::set_destination_country_parameters).
     ///
-    /// <p>This field is used for any country-specific registration requirements. Currently, this setting is only used when you send messages to recipients in India using a sender ID. For more information see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-senderid-india.html">Special requirements for sending SMS messages to recipients in India</a>.</p>
+    /// <p>This field is used for any country-specific registration requirements. Currently, this setting is only used when you send messages to recipients in India using a sender ID. For more information see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-senderid-india.html">Special requirements for sending SMS messages to recipients in India</a>. </p>
     pub fn destination_country_parameters(
         mut self,
         k: crate::types::DestinationCountryParameterKey,
@@ -252,7 +252,7 @@ impl SendTextMessageFluentBuilder {
         self.inner = self.inner.destination_country_parameters(k, v.into());
         self
     }
-    /// <p>This field is used for any country-specific registration requirements. Currently, this setting is only used when you send messages to recipients in India using a sender ID. For more information see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-senderid-india.html">Special requirements for sending SMS messages to recipients in India</a>.</p>
+    /// <p>This field is used for any country-specific registration requirements. Currently, this setting is only used when you send messages to recipients in India using a sender ID. For more information see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-senderid-india.html">Special requirements for sending SMS messages to recipients in India</a>. </p>
     pub fn set_destination_country_parameters(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<crate::types::DestinationCountryParameterKey, ::std::string::String>>,
@@ -260,7 +260,7 @@ impl SendTextMessageFluentBuilder {
         self.inner = self.inner.set_destination_country_parameters(input);
         self
     }
-    /// <p>This field is used for any country-specific registration requirements. Currently, this setting is only used when you send messages to recipients in India using a sender ID. For more information see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-senderid-india.html">Special requirements for sending SMS messages to recipients in India</a>.</p>
+    /// <p>This field is used for any country-specific registration requirements. Currently, this setting is only used when you send messages to recipients in India using a sender ID. For more information see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-senderid-india.html">Special requirements for sending SMS messages to recipients in India</a>. </p>
     pub fn get_destination_country_parameters(
         &self,
     ) -> &::std::option::Option<::std::collections::HashMap<crate::types::DestinationCountryParameterKey, ::std::string::String>> {

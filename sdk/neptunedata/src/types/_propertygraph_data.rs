@@ -8,14 +8,10 @@ pub struct PropertygraphData {
     pub id: ::std::string::String,
     /// <p>The type of this Gremlin or openCypher element. Must be one of:</p>
     /// <ul>
-    /// <li>
-    /// <p><b> <code>v1</code> </b> &nbsp; - &nbsp; Vertex label for Gremlin, or node label for openCypher.</p></li>
-    /// <li>
-    /// <p><b> <code>vp</code> </b> &nbsp; - &nbsp; Vertex properties for Gremlin, or node properties for openCypher.</p></li>
-    /// <li>
-    /// <p><b> <code>e</code> </b> &nbsp; - &nbsp; Edge and edge label for Gremlin, or relationship and relationship type for openCypher.</p></li>
-    /// <li>
-    /// <p><b> <code>ep</code> </b> &nbsp; - &nbsp; Edge properties for Gremlin, or relationship properties for openCypher.</p></li>
+    /// <li> <p> <b> <code>v1</code> </b> &nbsp; - &nbsp; Vertex label for Gremlin, or node label for openCypher.</p> </li>
+    /// <li> <p> <b> <code>vp</code> </b> &nbsp; - &nbsp; Vertex properties for Gremlin, or node properties for openCypher.</p> </li>
+    /// <li> <p> <b> <code>e</code> </b> &nbsp; - &nbsp; Edge and edge label for Gremlin, or relationship and relationship type for openCypher.</p> </li>
+    /// <li> <p> <b> <code>ep</code> </b> &nbsp; - &nbsp; Edge properties for Gremlin, or relationship properties for openCypher.</p> </li>
     /// </ul>
     pub r#type: ::std::string::String,
     /// <p>The property name. For element labels, this is <code>label</code>.</p>
@@ -35,14 +31,10 @@ impl PropertygraphData {
     }
     /// <p>The type of this Gremlin or openCypher element. Must be one of:</p>
     /// <ul>
-    /// <li>
-    /// <p><b> <code>v1</code> </b> &nbsp; - &nbsp; Vertex label for Gremlin, or node label for openCypher.</p></li>
-    /// <li>
-    /// <p><b> <code>vp</code> </b> &nbsp; - &nbsp; Vertex properties for Gremlin, or node properties for openCypher.</p></li>
-    /// <li>
-    /// <p><b> <code>e</code> </b> &nbsp; - &nbsp; Edge and edge label for Gremlin, or relationship and relationship type for openCypher.</p></li>
-    /// <li>
-    /// <p><b> <code>ep</code> </b> &nbsp; - &nbsp; Edge properties for Gremlin, or relationship properties for openCypher.</p></li>
+    /// <li> <p> <b> <code>v1</code> </b> &nbsp; - &nbsp; Vertex label for Gremlin, or node label for openCypher.</p> </li>
+    /// <li> <p> <b> <code>vp</code> </b> &nbsp; - &nbsp; Vertex properties for Gremlin, or node properties for openCypher.</p> </li>
+    /// <li> <p> <b> <code>e</code> </b> &nbsp; - &nbsp; Edge and edge label for Gremlin, or relationship and relationship type for openCypher.</p> </li>
+    /// <li> <p> <b> <code>ep</code> </b> &nbsp; - &nbsp; Edge properties for Gremlin, or relationship properties for openCypher.</p> </li>
     /// </ul>
     pub fn r#type(&self) -> &str {
         use std::ops::Deref;
@@ -102,14 +94,10 @@ impl PropertygraphDataBuilder {
     }
     /// <p>The type of this Gremlin or openCypher element. Must be one of:</p>
     /// <ul>
-    /// <li>
-    /// <p><b> <code>v1</code> </b> &nbsp; - &nbsp; Vertex label for Gremlin, or node label for openCypher.</p></li>
-    /// <li>
-    /// <p><b> <code>vp</code> </b> &nbsp; - &nbsp; Vertex properties for Gremlin, or node properties for openCypher.</p></li>
-    /// <li>
-    /// <p><b> <code>e</code> </b> &nbsp; - &nbsp; Edge and edge label for Gremlin, or relationship and relationship type for openCypher.</p></li>
-    /// <li>
-    /// <p><b> <code>ep</code> </b> &nbsp; - &nbsp; Edge properties for Gremlin, or relationship properties for openCypher.</p></li>
+    /// <li> <p> <b> <code>v1</code> </b> &nbsp; - &nbsp; Vertex label for Gremlin, or node label for openCypher.</p> </li>
+    /// <li> <p> <b> <code>vp</code> </b> &nbsp; - &nbsp; Vertex properties for Gremlin, or node properties for openCypher.</p> </li>
+    /// <li> <p> <b> <code>e</code> </b> &nbsp; - &nbsp; Edge and edge label for Gremlin, or relationship and relationship type for openCypher.</p> </li>
+    /// <li> <p> <b> <code>ep</code> </b> &nbsp; - &nbsp; Edge properties for Gremlin, or relationship properties for openCypher.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -118,14 +106,10 @@ impl PropertygraphDataBuilder {
     }
     /// <p>The type of this Gremlin or openCypher element. Must be one of:</p>
     /// <ul>
-    /// <li>
-    /// <p><b> <code>v1</code> </b> &nbsp; - &nbsp; Vertex label for Gremlin, or node label for openCypher.</p></li>
-    /// <li>
-    /// <p><b> <code>vp</code> </b> &nbsp; - &nbsp; Vertex properties for Gremlin, or node properties for openCypher.</p></li>
-    /// <li>
-    /// <p><b> <code>e</code> </b> &nbsp; - &nbsp; Edge and edge label for Gremlin, or relationship and relationship type for openCypher.</p></li>
-    /// <li>
-    /// <p><b> <code>ep</code> </b> &nbsp; - &nbsp; Edge properties for Gremlin, or relationship properties for openCypher.</p></li>
+    /// <li> <p> <b> <code>v1</code> </b> &nbsp; - &nbsp; Vertex label for Gremlin, or node label for openCypher.</p> </li>
+    /// <li> <p> <b> <code>vp</code> </b> &nbsp; - &nbsp; Vertex properties for Gremlin, or node properties for openCypher.</p> </li>
+    /// <li> <p> <b> <code>e</code> </b> &nbsp; - &nbsp; Edge and edge label for Gremlin, or relationship and relationship type for openCypher.</p> </li>
+    /// <li> <p> <b> <code>ep</code> </b> &nbsp; - &nbsp; Edge properties for Gremlin, or relationship properties for openCypher.</p> </li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
@@ -133,14 +117,10 @@ impl PropertygraphDataBuilder {
     }
     /// <p>The type of this Gremlin or openCypher element. Must be one of:</p>
     /// <ul>
-    /// <li>
-    /// <p><b> <code>v1</code> </b> &nbsp; - &nbsp; Vertex label for Gremlin, or node label for openCypher.</p></li>
-    /// <li>
-    /// <p><b> <code>vp</code> </b> &nbsp; - &nbsp; Vertex properties for Gremlin, or node properties for openCypher.</p></li>
-    /// <li>
-    /// <p><b> <code>e</code> </b> &nbsp; - &nbsp; Edge and edge label for Gremlin, or relationship and relationship type for openCypher.</p></li>
-    /// <li>
-    /// <p><b> <code>ep</code> </b> &nbsp; - &nbsp; Edge properties for Gremlin, or relationship properties for openCypher.</p></li>
+    /// <li> <p> <b> <code>v1</code> </b> &nbsp; - &nbsp; Vertex label for Gremlin, or node label for openCypher.</p> </li>
+    /// <li> <p> <b> <code>vp</code> </b> &nbsp; - &nbsp; Vertex properties for Gremlin, or node properties for openCypher.</p> </li>
+    /// <li> <p> <b> <code>e</code> </b> &nbsp; - &nbsp; Edge and edge label for Gremlin, or relationship and relationship type for openCypher.</p> </li>
+    /// <li> <p> <b> <code>ep</code> </b> &nbsp; - &nbsp; Edge properties for Gremlin, or relationship properties for openCypher.</p> </li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.r#type

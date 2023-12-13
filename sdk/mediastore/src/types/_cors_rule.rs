@@ -10,7 +10,7 @@ pub struct CorsRule {
     /// <p>Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p>
     /// <p>Each CORS rule must contain at least one <code>AllowedMethods</code> and one <code>AllowedOrigins</code> element.</p>
     pub allowed_methods: ::std::option::Option<::std::vec::Vec<crate::types::MethodName>>,
-    /// <p>Specifies which headers are allowed in a preflight <code>OPTIONS</code> request through the <code>Access-Control-Request-Headers</code> header. Each header name that is specified in <code>Access-Control-Request-Headers</code> must have a corresponding entry in the rule. Only the headers that were requested are sent back.</p>
+    /// <p>Specifies which headers are allowed in a preflight <code>OPTIONS</code> request through the <code>Access-Control-Request-Headers</code> header. Each header name that is specified in <code>Access-Control-Request-Headers</code> must have a corresponding entry in the rule. Only the headers that were requested are sent back. </p>
     /// <p>This element can contain only one wildcard character (*).</p>
     pub allowed_headers: ::std::vec::Vec<::std::string::String>,
     /// <p>The time in seconds that your browser caches the preflight response for the specified resource.</p>
@@ -34,7 +34,7 @@ impl CorsRule {
     pub fn allowed_methods(&self) -> &[crate::types::MethodName] {
         self.allowed_methods.as_deref().unwrap_or_default()
     }
-    /// <p>Specifies which headers are allowed in a preflight <code>OPTIONS</code> request through the <code>Access-Control-Request-Headers</code> header. Each header name that is specified in <code>Access-Control-Request-Headers</code> must have a corresponding entry in the rule. Only the headers that were requested are sent back.</p>
+    /// <p>Specifies which headers are allowed in a preflight <code>OPTIONS</code> request through the <code>Access-Control-Request-Headers</code> header. Each header name that is specified in <code>Access-Control-Request-Headers</code> must have a corresponding entry in the rule. Only the headers that were requested are sent back. </p>
     /// <p>This element can contain only one wildcard character (*).</p>
     pub fn allowed_headers(&self) -> &[::std::string::String] {
         use std::ops::Deref;
@@ -121,7 +121,7 @@ impl CorsRuleBuilder {
     ///
     /// To override the contents of this collection use [`set_allowed_headers`](Self::set_allowed_headers).
     ///
-    /// <p>Specifies which headers are allowed in a preflight <code>OPTIONS</code> request through the <code>Access-Control-Request-Headers</code> header. Each header name that is specified in <code>Access-Control-Request-Headers</code> must have a corresponding entry in the rule. Only the headers that were requested are sent back.</p>
+    /// <p>Specifies which headers are allowed in a preflight <code>OPTIONS</code> request through the <code>Access-Control-Request-Headers</code> header. Each header name that is specified in <code>Access-Control-Request-Headers</code> must have a corresponding entry in the rule. Only the headers that were requested are sent back. </p>
     /// <p>This element can contain only one wildcard character (*).</p>
     pub fn allowed_headers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.allowed_headers.unwrap_or_default();
@@ -129,13 +129,13 @@ impl CorsRuleBuilder {
         self.allowed_headers = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Specifies which headers are allowed in a preflight <code>OPTIONS</code> request through the <code>Access-Control-Request-Headers</code> header. Each header name that is specified in <code>Access-Control-Request-Headers</code> must have a corresponding entry in the rule. Only the headers that were requested are sent back.</p>
+    /// <p>Specifies which headers are allowed in a preflight <code>OPTIONS</code> request through the <code>Access-Control-Request-Headers</code> header. Each header name that is specified in <code>Access-Control-Request-Headers</code> must have a corresponding entry in the rule. Only the headers that were requested are sent back. </p>
     /// <p>This element can contain only one wildcard character (*).</p>
     pub fn set_allowed_headers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.allowed_headers = input;
         self
     }
-    /// <p>Specifies which headers are allowed in a preflight <code>OPTIONS</code> request through the <code>Access-Control-Request-Headers</code> header. Each header name that is specified in <code>Access-Control-Request-Headers</code> must have a corresponding entry in the rule. Only the headers that were requested are sent back.</p>
+    /// <p>Specifies which headers are allowed in a preflight <code>OPTIONS</code> request through the <code>Access-Control-Request-Headers</code> header. Each header name that is specified in <code>Access-Control-Request-Headers</code> must have a corresponding entry in the rule. Only the headers that were requested are sent back. </p>
     /// <p>This element can contain only one wildcard character (*).</p>
     pub fn get_allowed_headers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.allowed_headers

@@ -144,17 +144,17 @@ impl ImportResourcesToDraftAppVersionFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_terraform_sources`](Self::set_terraform_sources).
     ///
-    /// <p>A list of terraform file s3 URLs you need to import.</p>
+    /// <p> A list of terraform file s3 URLs you need to import. </p>
     pub fn terraform_sources(mut self, input: crate::types::TerraformSource) -> Self {
         self.inner = self.inner.terraform_sources(input);
         self
     }
-    /// <p>A list of terraform file s3 URLs you need to import.</p>
+    /// <p> A list of terraform file s3 URLs you need to import. </p>
     pub fn set_terraform_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TerraformSource>>) -> Self {
         self.inner = self.inner.set_terraform_sources(input);
         self
     }
-    /// <p>A list of terraform file s3 URLs you need to import.</p>
+    /// <p> A list of terraform file s3 URLs you need to import. </p>
     pub fn get_terraform_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TerraformSource>> {
         self.inner.get_terraform_sources()
     }

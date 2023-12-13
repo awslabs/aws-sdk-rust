@@ -24,7 +24,7 @@ impl ReplacePermissionAssociationsInputBuilder {
 ///
 /// <p>Updates all resource shares that use a managed permission to a different managed permission. This operation always applies the default version of the target managed permission. You can optionally specify that the update applies to only resource shares that currently use a specified version. This enables you to update to the latest version, without changing the which managed permission is used.</p>
 /// <p>You can use this operation to update all of your resource shares to use the current default version of the permission by specifying the same value for the <code>fromPermissionArn</code> and <code>toPermissionArn</code> parameters.</p>
-/// <p>You can use the optional <code>fromPermissionVersion</code> parameter to update only those resources that use a specified version of the managed permission to the new managed permission.</p><important>
+/// <p>You can use the optional <code>fromPermissionVersion</code> parameter to update only those resources that use a specified version of the managed permission to the new managed permission.</p> <important>
 /// <p>To successfully perform this operation, you must have permission to update the resource-based policy on all affected resource types.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

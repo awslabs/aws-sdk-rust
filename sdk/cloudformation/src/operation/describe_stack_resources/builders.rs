@@ -22,11 +22,11 @@ impl DescribeStackResourcesInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeStackResources`.
 ///
-/// <p>Returns Amazon Web Services resource descriptions for running and deleted stacks. If <code>StackName</code> is specified, all the associated resources that are part of the stack are returned. If <code>PhysicalResourceId</code> is specified, the associated resources of the stack that the resource belongs to are returned.</p><note>
+/// <p>Returns Amazon Web Services resource descriptions for running and deleted stacks. If <code>StackName</code> is specified, all the associated resources that are part of the stack are returned. If <code>PhysicalResourceId</code> is specified, the associated resources of the stack that the resource belongs to are returned.</p> <note>
 /// <p>Only the first 100 resources will be returned. If your stack has more resources than this, you should use <code>ListStackResources</code> instead.</p>
 /// </note>
 /// <p>For deleted stacks, <code>DescribeStackResources</code> returns resource information for up to 90 days after the stack has been deleted.</p>
-/// <p>You must specify either <code>StackName</code> or <code>PhysicalResourceId</code>, but not both. In addition, you can specify <code>LogicalResourceId</code> to filter the returned result. For more information about resources, the <code>LogicalResourceId</code> and <code>PhysicalResourceId</code>, go to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/">CloudFormation User Guide</a>.</p><note>
+/// <p>You must specify either <code>StackName</code> or <code>PhysicalResourceId</code>, but not both. In addition, you can specify <code>LogicalResourceId</code> to filter the returned result. For more information about resources, the <code>LogicalResourceId</code> and <code>PhysicalResourceId</code>, go to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/">CloudFormation User Guide</a>.</p> <note>
 /// <p>A <code>ValidationError</code> is returned if you specify both <code>StackName</code> and <code>PhysicalResourceId</code> in the same request.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -116,10 +116,8 @@ impl DescribeStackResourcesFluentBuilder {
     }
     /// <p>The name or the unique stack ID that is associated with the stack, which aren't always interchangeable:</p>
     /// <ul>
-    /// <li>
-    /// <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p></li>
-    /// <li>
-    /// <p>Deleted stacks: You must specify the unique stack ID.</p></li>
+    /// <li> <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p> </li>
+    /// <li> <p>Deleted stacks: You must specify the unique stack ID.</p> </li>
     /// </ul>
     /// <p>Default: There is no default value.</p>
     /// <p>Required: Conditional. If you don't specify <code>StackName</code>, you must specify <code>PhysicalResourceId</code>.</p>
@@ -129,10 +127,8 @@ impl DescribeStackResourcesFluentBuilder {
     }
     /// <p>The name or the unique stack ID that is associated with the stack, which aren't always interchangeable:</p>
     /// <ul>
-    /// <li>
-    /// <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p></li>
-    /// <li>
-    /// <p>Deleted stacks: You must specify the unique stack ID.</p></li>
+    /// <li> <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p> </li>
+    /// <li> <p>Deleted stacks: You must specify the unique stack ID.</p> </li>
     /// </ul>
     /// <p>Default: There is no default value.</p>
     /// <p>Required: Conditional. If you don't specify <code>StackName</code>, you must specify <code>PhysicalResourceId</code>.</p>
@@ -142,10 +138,8 @@ impl DescribeStackResourcesFluentBuilder {
     }
     /// <p>The name or the unique stack ID that is associated with the stack, which aren't always interchangeable:</p>
     /// <ul>
-    /// <li>
-    /// <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p></li>
-    /// <li>
-    /// <p>Deleted stacks: You must specify the unique stack ID.</p></li>
+    /// <li> <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p> </li>
+    /// <li> <p>Deleted stacks: You must specify the unique stack ID.</p> </li>
     /// </ul>
     /// <p>Default: There is no default value.</p>
     /// <p>Required: Conditional. If you don't specify <code>StackName</code>, you must specify <code>PhysicalResourceId</code>.</p>

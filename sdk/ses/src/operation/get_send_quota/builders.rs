@@ -22,7 +22,7 @@ impl GetSendQuotaInputBuilder {
 }
 /// Fluent builder constructing a request to `GetSendQuota`.
 ///
-/// <p>Provides the sending limits for the Amazon SES account.</p>
+/// <p>Provides the sending limits for the Amazon SES account. </p>
 /// <p>You can execute this operation no more than once per second.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetSendQuotaFluentBuilder {

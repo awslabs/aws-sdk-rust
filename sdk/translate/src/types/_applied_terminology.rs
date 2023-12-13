@@ -6,7 +6,7 @@
 pub struct AppliedTerminology {
     /// <p>The name of the custom terminology applied to the input text by Amazon Translate for the translated text response.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The specific terms of the custom terminology applied to the input text by Amazon Translate for the translated text response. A maximum of 250 terms will be returned, and the specific terms applied will be the first 250 terms in the source text.</p>
+    /// <p>The specific terms of the custom terminology applied to the input text by Amazon Translate for the translated text response. A maximum of 250 terms will be returned, and the specific terms applied will be the first 250 terms in the source text. </p>
     pub terms: ::std::option::Option<::std::vec::Vec<crate::types::Term>>,
 }
 impl AppliedTerminology {
@@ -14,7 +14,7 @@ impl AppliedTerminology {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The specific terms of the custom terminology applied to the input text by Amazon Translate for the translated text response. A maximum of 250 terms will be returned, and the specific terms applied will be the first 250 terms in the source text.</p>
+    /// <p>The specific terms of the custom terminology applied to the input text by Amazon Translate for the translated text response. A maximum of 250 terms will be returned, and the specific terms applied will be the first 250 terms in the source text. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.terms.is_none()`.
     pub fn terms(&self) -> &[crate::types::Term] {
@@ -54,19 +54,19 @@ impl AppliedTerminologyBuilder {
     ///
     /// To override the contents of this collection use [`set_terms`](Self::set_terms).
     ///
-    /// <p>The specific terms of the custom terminology applied to the input text by Amazon Translate for the translated text response. A maximum of 250 terms will be returned, and the specific terms applied will be the first 250 terms in the source text.</p>
+    /// <p>The specific terms of the custom terminology applied to the input text by Amazon Translate for the translated text response. A maximum of 250 terms will be returned, and the specific terms applied will be the first 250 terms in the source text. </p>
     pub fn terms(mut self, input: crate::types::Term) -> Self {
         let mut v = self.terms.unwrap_or_default();
         v.push(input);
         self.terms = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The specific terms of the custom terminology applied to the input text by Amazon Translate for the translated text response. A maximum of 250 terms will be returned, and the specific terms applied will be the first 250 terms in the source text.</p>
+    /// <p>The specific terms of the custom terminology applied to the input text by Amazon Translate for the translated text response. A maximum of 250 terms will be returned, and the specific terms applied will be the first 250 terms in the source text. </p>
     pub fn set_terms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Term>>) -> Self {
         self.terms = input;
         self
     }
-    /// <p>The specific terms of the custom terminology applied to the input text by Amazon Translate for the translated text response. A maximum of 250 terms will be returned, and the specific terms applied will be the first 250 terms in the source text.</p>
+    /// <p>The specific terms of the custom terminology applied to the input text by Amazon Translate for the translated text response. A maximum of 250 terms will be returned, and the specific terms applied will be the first 250 terms in the source text. </p>
     pub fn get_terms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Term>> {
         &self.terms
     }

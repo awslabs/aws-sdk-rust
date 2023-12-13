@@ -8,7 +8,7 @@ pub struct CreateGlobalClusterInput {
     /// <p>(<i>Optional</i>) The Amazon Resource Name (ARN) of an existing Neptune DB cluster to use as the primary cluster of the new global database.</p>
     pub source_db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database engine to be used in the global database.</p>
-    /// <p>Valid values: <code>neptune</code></p>
+    /// <p>Valid values: <code>neptune</code> </p>
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The Neptune engine version to be used by the global database.</p>
     /// <p>Valid values: <code>1.2.0.0</code> or above.</p>
@@ -28,7 +28,7 @@ impl CreateGlobalClusterInput {
         self.source_db_cluster_identifier.as_deref()
     }
     /// <p>The name of the database engine to be used in the global database.</p>
-    /// <p>Valid values: <code>neptune</code></p>
+    /// <p>Valid values: <code>neptune</code> </p>
     pub fn engine(&self) -> ::std::option::Option<&str> {
         self.engine.as_deref()
     }
@@ -95,19 +95,19 @@ impl CreateGlobalClusterInputBuilder {
         &self.source_db_cluster_identifier
     }
     /// <p>The name of the database engine to be used in the global database.</p>
-    /// <p>Valid values: <code>neptune</code></p>
+    /// <p>Valid values: <code>neptune</code> </p>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the database engine to be used in the global database.</p>
-    /// <p>Valid values: <code>neptune</code></p>
+    /// <p>Valid values: <code>neptune</code> </p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine = input;
         self
     }
     /// <p>The name of the database engine to be used in the global database.</p>
-    /// <p>Valid values: <code>neptune</code></p>
+    /// <p>Valid values: <code>neptune</code> </p>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine
     }

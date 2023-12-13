@@ -10,7 +10,7 @@ pub struct CreateLocationObjectStorageInput {
     pub server_port: ::std::option::Option<i32>,
     /// <p>Specifies the protocol that your object storage server uses to communicate.</p>
     pub server_protocol: ::std::option::Option<crate::types::ObjectStorageServerProtocol>,
-    /// <p>Specifies the object prefix for your object storage server. If this is a source location, DataSync only copies objects with this prefix. If this is a destination location, DataSync writes all objects with this prefix.</p>
+    /// <p>Specifies the object prefix for your object storage server. If this is a source location, DataSync only copies objects with this prefix. If this is a destination location, DataSync writes all objects with this prefix. </p>
     pub subdirectory: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the name of the object storage bucket involved in the transfer.</p>
     pub bucket_name: ::std::option::Option<::std::string::String>,
@@ -24,14 +24,10 @@ pub struct CreateLocationObjectStorageInput {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
     /// <p>Specifies a file with the certificates that are used to sign the object storage server's certificate (for example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The file you specify must include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>The certificate of the signing certificate authority (CA)</p></li>
-    /// <li>
-    /// <p>Any intermediate certificates</p></li>
-    /// <li>
-    /// <p>base64 encoding</p></li>
-    /// <li>
-    /// <p>A <code>.pem</code> extension</p></li>
+    /// <li> <p>The certificate of the signing certificate authority (CA)</p> </li>
+    /// <li> <p>Any intermediate certificates</p> </li>
+    /// <li> <p>base64 encoding</p> </li>
+    /// <li> <p>A <code>.pem</code> extension</p> </li>
     /// </ul>
     /// <p>The file can be up to 32768 bytes (before base64 encoding).</p>
     /// <p>To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
@@ -50,7 +46,7 @@ impl CreateLocationObjectStorageInput {
     pub fn server_protocol(&self) -> ::std::option::Option<&crate::types::ObjectStorageServerProtocol> {
         self.server_protocol.as_ref()
     }
-    /// <p>Specifies the object prefix for your object storage server. If this is a source location, DataSync only copies objects with this prefix. If this is a destination location, DataSync writes all objects with this prefix.</p>
+    /// <p>Specifies the object prefix for your object storage server. If this is a source location, DataSync only copies objects with this prefix. If this is a destination location, DataSync writes all objects with this prefix. </p>
     pub fn subdirectory(&self) -> ::std::option::Option<&str> {
         self.subdirectory.as_deref()
     }
@@ -80,14 +76,10 @@ impl CreateLocationObjectStorageInput {
     }
     /// <p>Specifies a file with the certificates that are used to sign the object storage server's certificate (for example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The file you specify must include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>The certificate of the signing certificate authority (CA)</p></li>
-    /// <li>
-    /// <p>Any intermediate certificates</p></li>
-    /// <li>
-    /// <p>base64 encoding</p></li>
-    /// <li>
-    /// <p>A <code>.pem</code> extension</p></li>
+    /// <li> <p>The certificate of the signing certificate authority (CA)</p> </li>
+    /// <li> <p>Any intermediate certificates</p> </li>
+    /// <li> <p>base64 encoding</p> </li>
+    /// <li> <p>A <code>.pem</code> extension</p> </li>
     /// </ul>
     /// <p>The file can be up to 32768 bytes (before base64 encoding).</p>
     /// <p>To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
@@ -177,17 +169,17 @@ impl CreateLocationObjectStorageInputBuilder {
     pub fn get_server_protocol(&self) -> &::std::option::Option<crate::types::ObjectStorageServerProtocol> {
         &self.server_protocol
     }
-    /// <p>Specifies the object prefix for your object storage server. If this is a source location, DataSync only copies objects with this prefix. If this is a destination location, DataSync writes all objects with this prefix.</p>
+    /// <p>Specifies the object prefix for your object storage server. If this is a source location, DataSync only copies objects with this prefix. If this is a destination location, DataSync writes all objects with this prefix. </p>
     pub fn subdirectory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subdirectory = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the object prefix for your object storage server. If this is a source location, DataSync only copies objects with this prefix. If this is a destination location, DataSync writes all objects with this prefix.</p>
+    /// <p>Specifies the object prefix for your object storage server. If this is a source location, DataSync only copies objects with this prefix. If this is a destination location, DataSync writes all objects with this prefix. </p>
     pub fn set_subdirectory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subdirectory = input;
         self
     }
-    /// <p>Specifies the object prefix for your object storage server. If this is a source location, DataSync only copies objects with this prefix. If this is a destination location, DataSync writes all objects with this prefix.</p>
+    /// <p>Specifies the object prefix for your object storage server. If this is a source location, DataSync only copies objects with this prefix. If this is a destination location, DataSync writes all objects with this prefix. </p>
     pub fn get_subdirectory(&self) -> &::std::option::Option<::std::string::String> {
         &self.subdirectory
     }
@@ -276,14 +268,10 @@ impl CreateLocationObjectStorageInputBuilder {
     }
     /// <p>Specifies a file with the certificates that are used to sign the object storage server's certificate (for example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The file you specify must include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>The certificate of the signing certificate authority (CA)</p></li>
-    /// <li>
-    /// <p>Any intermediate certificates</p></li>
-    /// <li>
-    /// <p>base64 encoding</p></li>
-    /// <li>
-    /// <p>A <code>.pem</code> extension</p></li>
+    /// <li> <p>The certificate of the signing certificate authority (CA)</p> </li>
+    /// <li> <p>Any intermediate certificates</p> </li>
+    /// <li> <p>base64 encoding</p> </li>
+    /// <li> <p>A <code>.pem</code> extension</p> </li>
     /// </ul>
     /// <p>The file can be up to 32768 bytes (before base64 encoding).</p>
     /// <p>To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
@@ -293,14 +281,10 @@ impl CreateLocationObjectStorageInputBuilder {
     }
     /// <p>Specifies a file with the certificates that are used to sign the object storage server's certificate (for example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The file you specify must include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>The certificate of the signing certificate authority (CA)</p></li>
-    /// <li>
-    /// <p>Any intermediate certificates</p></li>
-    /// <li>
-    /// <p>base64 encoding</p></li>
-    /// <li>
-    /// <p>A <code>.pem</code> extension</p></li>
+    /// <li> <p>The certificate of the signing certificate authority (CA)</p> </li>
+    /// <li> <p>Any intermediate certificates</p> </li>
+    /// <li> <p>base64 encoding</p> </li>
+    /// <li> <p>A <code>.pem</code> extension</p> </li>
     /// </ul>
     /// <p>The file can be up to 32768 bytes (before base64 encoding).</p>
     /// <p>To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
@@ -310,14 +294,10 @@ impl CreateLocationObjectStorageInputBuilder {
     }
     /// <p>Specifies a file with the certificates that are used to sign the object storage server's certificate (for example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The file you specify must include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>The certificate of the signing certificate authority (CA)</p></li>
-    /// <li>
-    /// <p>Any intermediate certificates</p></li>
-    /// <li>
-    /// <p>base64 encoding</p></li>
-    /// <li>
-    /// <p>A <code>.pem</code> extension</p></li>
+    /// <li> <p>The certificate of the signing certificate authority (CA)</p> </li>
+    /// <li> <p>Any intermediate certificates</p> </li>
+    /// <li> <p>base64 encoding</p> </li>
+    /// <li> <p>A <code>.pem</code> extension</p> </li>
     /// </ul>
     /// <p>The file can be up to 32768 bytes (before base64 encoding).</p>
     /// <p>To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>

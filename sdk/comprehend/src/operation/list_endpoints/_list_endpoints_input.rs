@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEndpointsInput {
-    /// <p>Filters the endpoints that are returned. You can filter endpoints on their name, model, status, or the date and time that they were created. You can only set one filter at a time.</p>
+    /// <p>Filters the endpoints that are returned. You can filter endpoints on their name, model, status, or the date and time that they were created. You can only set one filter at a time. </p>
     pub filter: ::std::option::Option<crate::types::EndpointFilter>,
     /// <p>Identifies the next page of results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -11,7 +11,7 @@ pub struct ListEndpointsInput {
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListEndpointsInput {
-    /// <p>Filters the endpoints that are returned. You can filter endpoints on their name, model, status, or the date and time that they were created. You can only set one filter at a time.</p>
+    /// <p>Filters the endpoints that are returned. You can filter endpoints on their name, model, status, or the date and time that they were created. You can only set one filter at a time. </p>
     pub fn filter(&self) -> ::std::option::Option<&crate::types::EndpointFilter> {
         self.filter.as_ref()
     }
@@ -40,17 +40,17 @@ pub struct ListEndpointsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ListEndpointsInputBuilder {
-    /// <p>Filters the endpoints that are returned. You can filter endpoints on their name, model, status, or the date and time that they were created. You can only set one filter at a time.</p>
+    /// <p>Filters the endpoints that are returned. You can filter endpoints on their name, model, status, or the date and time that they were created. You can only set one filter at a time. </p>
     pub fn filter(mut self, input: crate::types::EndpointFilter) -> Self {
         self.filter = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Filters the endpoints that are returned. You can filter endpoints on their name, model, status, or the date and time that they were created. You can only set one filter at a time.</p>
+    /// <p>Filters the endpoints that are returned. You can filter endpoints on their name, model, status, or the date and time that they were created. You can only set one filter at a time. </p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::EndpointFilter>) -> Self {
         self.filter = input;
         self
     }
-    /// <p>Filters the endpoints that are returned. You can filter endpoints on their name, model, status, or the date and time that they were created. You can only set one filter at a time.</p>
+    /// <p>Filters the endpoints that are returned. You can filter endpoints on their name, model, status, or the date and time that they were created. You can only set one filter at a time. </p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::EndpointFilter> {
         &self.filter
     }

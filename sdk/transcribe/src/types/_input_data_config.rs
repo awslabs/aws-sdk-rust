@@ -6,10 +6,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputDataConfig {
     /// <p>The Amazon S3 location (URI) of the text files you want to use to train your custom language model.</p>
-    /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-model-training-data/</code></p>
+    /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-model-training-data/</code> </p>
     pub s3_uri: ::std::string::String,
     /// <p>The Amazon S3 location (URI) of the text files you want to use to tune your custom language model.</p>
-    /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-model-tuning-data/</code></p>
+    /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-model-tuning-data/</code> </p>
     pub tuning_data_s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files. If the role that you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p>
     /// <p>IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example: <code>arn:aws:iam::111122223333:role/Admin</code>.</p>
@@ -18,13 +18,13 @@ pub struct InputDataConfig {
 }
 impl InputDataConfig {
     /// <p>The Amazon S3 location (URI) of the text files you want to use to train your custom language model.</p>
-    /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-model-training-data/</code></p>
+    /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-model-training-data/</code> </p>
     pub fn s3_uri(&self) -> &str {
         use std::ops::Deref;
         self.s3_uri.deref()
     }
     /// <p>The Amazon S3 location (URI) of the text files you want to use to tune your custom language model.</p>
-    /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-model-tuning-data/</code></p>
+    /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-model-tuning-data/</code> </p>
     pub fn tuning_data_s3_uri(&self) -> ::std::option::Option<&str> {
         self.tuning_data_s3_uri.as_deref()
     }
@@ -53,37 +53,37 @@ pub struct InputDataConfigBuilder {
 }
 impl InputDataConfigBuilder {
     /// <p>The Amazon S3 location (URI) of the text files you want to use to train your custom language model.</p>
-    /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-model-training-data/</code></p>
+    /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-model-training-data/</code> </p>
     /// This field is required.
     pub fn s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 location (URI) of the text files you want to use to train your custom language model.</p>
-    /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-model-training-data/</code></p>
+    /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-model-training-data/</code> </p>
     pub fn set_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_uri = input;
         self
     }
     /// <p>The Amazon S3 location (URI) of the text files you want to use to train your custom language model.</p>
-    /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-model-training-data/</code></p>
+    /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-model-training-data/</code> </p>
     pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3_uri
     }
     /// <p>The Amazon S3 location (URI) of the text files you want to use to tune your custom language model.</p>
-    /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-model-tuning-data/</code></p>
+    /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-model-tuning-data/</code> </p>
     pub fn tuning_data_s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tuning_data_s3_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 location (URI) of the text files you want to use to tune your custom language model.</p>
-    /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-model-tuning-data/</code></p>
+    /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-model-tuning-data/</code> </p>
     pub fn set_tuning_data_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tuning_data_s3_uri = input;
         self
     }
     /// <p>The Amazon S3 location (URI) of the text files you want to use to tune your custom language model.</p>
-    /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-model-tuning-data/</code></p>
+    /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-model-tuning-data/</code> </p>
     pub fn get_tuning_data_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.tuning_data_s3_uri
     }

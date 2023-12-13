@@ -5,7 +5,7 @@
 pub struct StartRemediationExecutionInput {
     /// <p>The list of names of Config rules that you want to run remediation execution for.</p>
     pub config_rule_name: ::std::option::Option<::std::string::String>,
-    /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID.</p>
+    /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID. </p>
     pub resource_keys: ::std::option::Option<::std::vec::Vec<crate::types::ResourceKey>>,
 }
 impl StartRemediationExecutionInput {
@@ -13,7 +13,7 @@ impl StartRemediationExecutionInput {
     pub fn config_rule_name(&self) -> ::std::option::Option<&str> {
         self.config_rule_name.as_deref()
     }
-    /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID.</p>
+    /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_keys.is_none()`.
     pub fn resource_keys(&self) -> &[crate::types::ResourceKey] {
@@ -54,19 +54,19 @@ impl StartRemediationExecutionInputBuilder {
     ///
     /// To override the contents of this collection use [`set_resource_keys`](Self::set_resource_keys).
     ///
-    /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID.</p>
+    /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID. </p>
     pub fn resource_keys(mut self, input: crate::types::ResourceKey) -> Self {
         let mut v = self.resource_keys.unwrap_or_default();
         v.push(input);
         self.resource_keys = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID.</p>
+    /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID. </p>
     pub fn set_resource_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceKey>>) -> Self {
         self.resource_keys = input;
         self
     }
-    /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID.</p>
+    /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID. </p>
     pub fn get_resource_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceKey>> {
         &self.resource_keys
     }

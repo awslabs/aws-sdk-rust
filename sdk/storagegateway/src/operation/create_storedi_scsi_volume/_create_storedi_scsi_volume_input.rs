@@ -2,16 +2,11 @@
 
 /// <p>A JSON object containing one or more of the following fields:</p>
 /// <ul>
-/// <li>
-/// <p><code>CreateStorediSCSIVolumeInput$DiskId</code></p></li>
-/// <li>
-/// <p><code>CreateStorediSCSIVolumeInput$NetworkInterfaceId</code></p></li>
-/// <li>
-/// <p><code>CreateStorediSCSIVolumeInput$PreserveExistingData</code></p></li>
-/// <li>
-/// <p><code>CreateStorediSCSIVolumeInput$SnapshotId</code></p></li>
-/// <li>
-/// <p><code>CreateStorediSCSIVolumeInput$TargetName</code></p></li>
+/// <li> <p> <code>CreateStorediSCSIVolumeInput$DiskId</code> </p> </li>
+/// <li> <p> <code>CreateStorediSCSIVolumeInput$NetworkInterfaceId</code> </p> </li>
+/// <li> <p> <code>CreateStorediSCSIVolumeInput$PreserveExistingData</code> </p> </li>
+/// <li> <p> <code>CreateStorediSCSIVolumeInput$SnapshotId</code> </p> </li>
+/// <li> <p> <code>CreateStorediSCSIVolumeInput$TargetName</code> </p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
@@ -23,7 +18,7 @@ pub struct CreateStorediScsiVolumeInput {
     /// <p>The snapshot ID (e.g., "snap-1122aabb") of the snapshot to restore as the new stored volume. Specify this field if you want to create the iSCSI storage volume from a snapshot; otherwise, do not include this field. To list snapshots for your account use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a> in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p>
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>Set to <code>true</code> if you want to preserve the data on the local disk. Otherwise, set to <code>false</code> to create an empty volume.</p>
-    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub preserve_existing_data: ::std::option::Option<bool>,
     /// <p>The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>. The target name must be unique across all volumes on a gateway.</p>
     /// <p>If you don't specify a value, Storage Gateway uses the value that was previously used for this volume as the new target name.</p>
@@ -32,11 +27,11 @@ pub struct CreateStorediScsiVolumeInput {
     /// <p>Valid Values: A valid IP address.</p>
     pub network_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
-    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub kms_encrypted: ::std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
     pub kms_key: ::std::option::Option<::std::string::String>,
-    /// <p>A list of up to 50 tags that can be assigned to a stored volume. Each tag is a key-value pair.</p><note>
+    /// <p>A list of up to 50 tags that can be assigned to a stored volume. Each tag is a key-value pair.</p> <note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -55,7 +50,7 @@ impl CreateStorediScsiVolumeInput {
         self.snapshot_id.as_deref()
     }
     /// <p>Set to <code>true</code> if you want to preserve the data on the local disk. Otherwise, set to <code>false</code> to create an empty volume.</p>
-    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub fn preserve_existing_data(&self) -> ::std::option::Option<bool> {
         self.preserve_existing_data
     }
@@ -70,7 +65,7 @@ impl CreateStorediScsiVolumeInput {
         self.network_interface_id.as_deref()
     }
     /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
-    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub fn kms_encrypted(&self) -> ::std::option::Option<bool> {
         self.kms_encrypted
     }
@@ -78,7 +73,7 @@ impl CreateStorediScsiVolumeInput {
     pub fn kms_key(&self) -> ::std::option::Option<&str> {
         self.kms_key.as_deref()
     }
-    /// <p>A list of up to 50 tags that can be assigned to a stored volume. Each tag is a key-value pair.</p><note>
+    /// <p>A list of up to 50 tags that can be assigned to a stored volume. Each tag is a key-value pair.</p> <note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
     ///
@@ -154,20 +149,20 @@ impl CreateStorediScsiVolumeInputBuilder {
         &self.snapshot_id
     }
     /// <p>Set to <code>true</code> if you want to preserve the data on the local disk. Otherwise, set to <code>false</code> to create an empty volume.</p>
-    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     /// This field is required.
     pub fn preserve_existing_data(mut self, input: bool) -> Self {
         self.preserve_existing_data = ::std::option::Option::Some(input);
         self
     }
     /// <p>Set to <code>true</code> if you want to preserve the data on the local disk. Otherwise, set to <code>false</code> to create an empty volume.</p>
-    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub fn set_preserve_existing_data(mut self, input: ::std::option::Option<bool>) -> Self {
         self.preserve_existing_data = input;
         self
     }
     /// <p>Set to <code>true</code> if you want to preserve the data on the local disk. Otherwise, set to <code>false</code> to create an empty volume.</p>
-    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub fn get_preserve_existing_data(&self) -> &::std::option::Option<bool> {
         &self.preserve_existing_data
     }
@@ -208,19 +203,19 @@ impl CreateStorediScsiVolumeInputBuilder {
         &self.network_interface_id
     }
     /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
-    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub fn kms_encrypted(mut self, input: bool) -> Self {
         self.kms_encrypted = ::std::option::Option::Some(input);
         self
     }
     /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
-    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub fn set_kms_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.kms_encrypted = input;
         self
     }
     /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
-    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub fn get_kms_encrypted(&self) -> &::std::option::Option<bool> {
         &self.kms_encrypted
     }
@@ -242,7 +237,7 @@ impl CreateStorediScsiVolumeInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A list of up to 50 tags that can be assigned to a stored volume. Each tag is a key-value pair.</p><note>
+    /// <p>A list of up to 50 tags that can be assigned to a stored volume. Each tag is a key-value pair.</p> <note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
@@ -251,14 +246,14 @@ impl CreateStorediScsiVolumeInputBuilder {
         self.tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of up to 50 tags that can be assigned to a stored volume. Each tag is a key-value pair.</p><note>
+    /// <p>A list of up to 50 tags that can be assigned to a stored volume. Each tag is a key-value pair.</p> <note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>A list of up to 50 tags that can be assigned to a stored volume. Each tag is a key-value pair.</p><note>
+    /// <p>A list of up to 50 tags that can be assigned to a stored volume. Each tag is a key-value pair.</p> <note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {

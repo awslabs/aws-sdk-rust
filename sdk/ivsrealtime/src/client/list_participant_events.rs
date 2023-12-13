@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_participant_events::builders::ListParticipantEventsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_participant_events::builders::ListParticipantEventsFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum number of results to return. Default: 50.</p><br>
     /// - On success, responds with [`ListParticipantEventsOutput`](crate::operation::list_participant_events::ListParticipantEventsOutput) with field(s):
     ///   - [`events(Vec::<Event>)`](crate::operation::list_participant_events::ListParticipantEventsOutput::events): <p>List of the matching events.</p>
-    ///   - [`next_token(Option<String>)`](crate::operation::list_participant_events::ListParticipantEventsOutput::next_token): <p>If there are more events than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
+    ///   - [`next_token(Option<String>)`](crate::operation::list_participant_events::ListParticipantEventsOutput::next_token): <p>If there are more events than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set. </p>
     /// - On failure, responds with [`SdkError<ListParticipantEventsError>`](crate::operation::list_participant_events::ListParticipantEventsError)
     pub fn list_participant_events(&self) -> crate::operation::list_participant_events::builders::ListParticipantEventsFluentBuilder {
         crate::operation::list_participant_events::builders::ListParticipantEventsFluentBuilder::new(self.handle.clone())

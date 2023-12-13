@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociatePricingRulesInput {
-    /// <p>The pricing plan Amazon Resource Name (ARN) to disassociate pricing rules from.</p>
+    /// <p> The pricing plan Amazon Resource Name (ARN) to disassociate pricing rules from. </p>
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p>A list containing the Amazon Resource Name (ARN) of the pricing rules that will be disassociated.</p>
+    /// <p> A list containing the Amazon Resource Name (ARN) of the pricing rules that will be disassociated. </p>
     pub pricing_rule_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DisassociatePricingRulesInput {
-    /// <p>The pricing plan Amazon Resource Name (ARN) to disassociate pricing rules from.</p>
+    /// <p> The pricing plan Amazon Resource Name (ARN) to disassociate pricing rules from. </p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>A list containing the Amazon Resource Name (ARN) of the pricing rules that will be disassociated.</p>
+    /// <p> A list containing the Amazon Resource Name (ARN) of the pricing rules that will be disassociated. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pricing_rule_arns.is_none()`.
     pub fn pricing_rule_arns(&self) -> &[::std::string::String] {
@@ -35,18 +35,18 @@ pub struct DisassociatePricingRulesInputBuilder {
     pub(crate) pricing_rule_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DisassociatePricingRulesInputBuilder {
-    /// <p>The pricing plan Amazon Resource Name (ARN) to disassociate pricing rules from.</p>
+    /// <p> The pricing plan Amazon Resource Name (ARN) to disassociate pricing rules from. </p>
     /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The pricing plan Amazon Resource Name (ARN) to disassociate pricing rules from.</p>
+    /// <p> The pricing plan Amazon Resource Name (ARN) to disassociate pricing rules from. </p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>The pricing plan Amazon Resource Name (ARN) to disassociate pricing rules from.</p>
+    /// <p> The pricing plan Amazon Resource Name (ARN) to disassociate pricing rules from. </p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
@@ -54,19 +54,19 @@ impl DisassociatePricingRulesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_pricing_rule_arns`](Self::set_pricing_rule_arns).
     ///
-    /// <p>A list containing the Amazon Resource Name (ARN) of the pricing rules that will be disassociated.</p>
+    /// <p> A list containing the Amazon Resource Name (ARN) of the pricing rules that will be disassociated. </p>
     pub fn pricing_rule_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.pricing_rule_arns.unwrap_or_default();
         v.push(input.into());
         self.pricing_rule_arns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list containing the Amazon Resource Name (ARN) of the pricing rules that will be disassociated.</p>
+    /// <p> A list containing the Amazon Resource Name (ARN) of the pricing rules that will be disassociated. </p>
     pub fn set_pricing_rule_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.pricing_rule_arns = input;
         self
     }
-    /// <p>A list containing the Amazon Resource Name (ARN) of the pricing rules that will be disassociated.</p>
+    /// <p> A list containing the Amazon Resource Name (ARN) of the pricing rules that will be disassociated. </p>
     pub fn get_pricing_rule_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.pricing_rule_arns
     }

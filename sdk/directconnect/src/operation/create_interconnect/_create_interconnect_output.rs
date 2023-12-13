@@ -10,20 +10,13 @@ pub struct CreateInterconnectOutput {
     pub interconnect_name: ::std::option::Option<::std::string::String>,
     /// <p>The state of the interconnect. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>requested</code>: The initial state of an interconnect. The interconnect stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p></li>
-    /// <li>
-    /// <p><code>pending</code>: The interconnect is approved, and is being initialized.</p></li>
-    /// <li>
-    /// <p><code>available</code>: The network link is up, and the interconnect is ready for use.</p></li>
-    /// <li>
-    /// <p><code>down</code>: The network link is down.</p></li>
-    /// <li>
-    /// <p><code>deleting</code>: The interconnect is being deleted.</p></li>
-    /// <li>
-    /// <p><code>deleted</code>: The interconnect is deleted.</p></li>
-    /// <li>
-    /// <p><code>unknown</code>: The state of the interconnect is not available.</p></li>
+    /// <li> <p> <code>requested</code>: The initial state of an interconnect. The interconnect stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+    /// <li> <p> <code>pending</code>: The interconnect is approved, and is being initialized.</p> </li>
+    /// <li> <p> <code>available</code>: The network link is up, and the interconnect is ready for use.</p> </li>
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+    /// <li> <p> <code>deleting</code>: The interconnect is being deleted.</p> </li>
+    /// <li> <p> <code>deleted</code>: The interconnect is deleted.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the interconnect is not available.</p> </li>
     /// </ul>
     pub interconnect_state: ::std::option::Option<crate::types::InterconnectState>,
     /// <p>The Amazon Web Services Region where the connection is located.</p>
@@ -63,20 +56,13 @@ impl CreateInterconnectOutput {
     }
     /// <p>The state of the interconnect. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>requested</code>: The initial state of an interconnect. The interconnect stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p></li>
-    /// <li>
-    /// <p><code>pending</code>: The interconnect is approved, and is being initialized.</p></li>
-    /// <li>
-    /// <p><code>available</code>: The network link is up, and the interconnect is ready for use.</p></li>
-    /// <li>
-    /// <p><code>down</code>: The network link is down.</p></li>
-    /// <li>
-    /// <p><code>deleting</code>: The interconnect is being deleted.</p></li>
-    /// <li>
-    /// <p><code>deleted</code>: The interconnect is deleted.</p></li>
-    /// <li>
-    /// <p><code>unknown</code>: The state of the interconnect is not available.</p></li>
+    /// <li> <p> <code>requested</code>: The initial state of an interconnect. The interconnect stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+    /// <li> <p> <code>pending</code>: The interconnect is approved, and is being initialized.</p> </li>
+    /// <li> <p> <code>available</code>: The network link is up, and the interconnect is ready for use.</p> </li>
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+    /// <li> <p> <code>deleting</code>: The interconnect is being deleted.</p> </li>
+    /// <li> <p> <code>deleted</code>: The interconnect is deleted.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the interconnect is not available.</p> </li>
     /// </ul>
     pub fn interconnect_state(&self) -> ::std::option::Option<&crate::types::InterconnectState> {
         self.interconnect_state.as_ref()
@@ -196,20 +182,13 @@ impl CreateInterconnectOutputBuilder {
     }
     /// <p>The state of the interconnect. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>requested</code>: The initial state of an interconnect. The interconnect stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p></li>
-    /// <li>
-    /// <p><code>pending</code>: The interconnect is approved, and is being initialized.</p></li>
-    /// <li>
-    /// <p><code>available</code>: The network link is up, and the interconnect is ready for use.</p></li>
-    /// <li>
-    /// <p><code>down</code>: The network link is down.</p></li>
-    /// <li>
-    /// <p><code>deleting</code>: The interconnect is being deleted.</p></li>
-    /// <li>
-    /// <p><code>deleted</code>: The interconnect is deleted.</p></li>
-    /// <li>
-    /// <p><code>unknown</code>: The state of the interconnect is not available.</p></li>
+    /// <li> <p> <code>requested</code>: The initial state of an interconnect. The interconnect stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+    /// <li> <p> <code>pending</code>: The interconnect is approved, and is being initialized.</p> </li>
+    /// <li> <p> <code>available</code>: The network link is up, and the interconnect is ready for use.</p> </li>
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+    /// <li> <p> <code>deleting</code>: The interconnect is being deleted.</p> </li>
+    /// <li> <p> <code>deleted</code>: The interconnect is deleted.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the interconnect is not available.</p> </li>
     /// </ul>
     pub fn interconnect_state(mut self, input: crate::types::InterconnectState) -> Self {
         self.interconnect_state = ::std::option::Option::Some(input);
@@ -217,20 +196,13 @@ impl CreateInterconnectOutputBuilder {
     }
     /// <p>The state of the interconnect. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>requested</code>: The initial state of an interconnect. The interconnect stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p></li>
-    /// <li>
-    /// <p><code>pending</code>: The interconnect is approved, and is being initialized.</p></li>
-    /// <li>
-    /// <p><code>available</code>: The network link is up, and the interconnect is ready for use.</p></li>
-    /// <li>
-    /// <p><code>down</code>: The network link is down.</p></li>
-    /// <li>
-    /// <p><code>deleting</code>: The interconnect is being deleted.</p></li>
-    /// <li>
-    /// <p><code>deleted</code>: The interconnect is deleted.</p></li>
-    /// <li>
-    /// <p><code>unknown</code>: The state of the interconnect is not available.</p></li>
+    /// <li> <p> <code>requested</code>: The initial state of an interconnect. The interconnect stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+    /// <li> <p> <code>pending</code>: The interconnect is approved, and is being initialized.</p> </li>
+    /// <li> <p> <code>available</code>: The network link is up, and the interconnect is ready for use.</p> </li>
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+    /// <li> <p> <code>deleting</code>: The interconnect is being deleted.</p> </li>
+    /// <li> <p> <code>deleted</code>: The interconnect is deleted.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the interconnect is not available.</p> </li>
     /// </ul>
     pub fn set_interconnect_state(mut self, input: ::std::option::Option<crate::types::InterconnectState>) -> Self {
         self.interconnect_state = input;
@@ -238,20 +210,13 @@ impl CreateInterconnectOutputBuilder {
     }
     /// <p>The state of the interconnect. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>requested</code>: The initial state of an interconnect. The interconnect stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p></li>
-    /// <li>
-    /// <p><code>pending</code>: The interconnect is approved, and is being initialized.</p></li>
-    /// <li>
-    /// <p><code>available</code>: The network link is up, and the interconnect is ready for use.</p></li>
-    /// <li>
-    /// <p><code>down</code>: The network link is down.</p></li>
-    /// <li>
-    /// <p><code>deleting</code>: The interconnect is being deleted.</p></li>
-    /// <li>
-    /// <p><code>deleted</code>: The interconnect is deleted.</p></li>
-    /// <li>
-    /// <p><code>unknown</code>: The state of the interconnect is not available.</p></li>
+    /// <li> <p> <code>requested</code>: The initial state of an interconnect. The interconnect stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+    /// <li> <p> <code>pending</code>: The interconnect is approved, and is being initialized.</p> </li>
+    /// <li> <p> <code>available</code>: The network link is up, and the interconnect is ready for use.</p> </li>
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+    /// <li> <p> <code>deleting</code>: The interconnect is being deleted.</p> </li>
+    /// <li> <p> <code>deleted</code>: The interconnect is deleted.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the interconnect is not available.</p> </li>
     /// </ul>
     pub fn get_interconnect_state(&self) -> &::std::option::Option<crate::types::InterconnectState> {
         &self.interconnect_state

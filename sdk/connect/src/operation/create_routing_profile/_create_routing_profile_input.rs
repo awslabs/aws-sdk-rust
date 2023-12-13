@@ -12,13 +12,13 @@ pub struct CreateRoutingProfileInput {
     /// <p>The default outbound queue for the routing profile.</p>
     pub default_outbound_queue_id: ::std::option::Option<::std::string::String>,
     /// <p>The inbound queues associated with the routing profile. If no queue is added, the agent can make only outbound calls.</p>
-    /// <p>The limit of 10 array members applies to the maximum number of <code>RoutingProfileQueueConfig</code> objects that can be passed during a CreateRoutingProfile API request. It is different from the quota of 50 queues per routing profile per instance that is listed in <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon Connect service quotas</a>.</p>
+    /// <p>The limit of 10 array members applies to the maximum number of <code>RoutingProfileQueueConfig</code> objects that can be passed during a CreateRoutingProfile API request. It is different from the quota of 50 queues per routing profile per instance that is listed in <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon Connect service quotas</a>. </p>
     pub queue_configs: ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueConfig>>,
     /// <p>The channels that agents can handle in the Contact Control Panel (CCP) for this routing profile.</p>
     pub media_concurrencies: ::std::option::Option<::std::vec::Vec<crate::types::MediaConcurrency>>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>Whether agents with this routing profile will have their routing order calculated based on <i>longest idle time</i> or <i>time since their last inbound contact</i>.</p>
+    /// <p>Whether agents with this routing profile will have their routing order calculated based on <i>longest idle time</i> or <i>time since their last inbound contact</i>. </p>
     pub agent_availability_timer: ::std::option::Option<crate::types::AgentAvailabilityTimer>,
 }
 impl CreateRoutingProfileInput {
@@ -39,7 +39,7 @@ impl CreateRoutingProfileInput {
         self.default_outbound_queue_id.as_deref()
     }
     /// <p>The inbound queues associated with the routing profile. If no queue is added, the agent can make only outbound calls.</p>
-    /// <p>The limit of 10 array members applies to the maximum number of <code>RoutingProfileQueueConfig</code> objects that can be passed during a CreateRoutingProfile API request. It is different from the quota of 50 queues per routing profile per instance that is listed in <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon Connect service quotas</a>.</p>
+    /// <p>The limit of 10 array members applies to the maximum number of <code>RoutingProfileQueueConfig</code> objects that can be passed during a CreateRoutingProfile API request. It is different from the quota of 50 queues per routing profile per instance that is listed in <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon Connect service quotas</a>. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.queue_configs.is_none()`.
     pub fn queue_configs(&self) -> &[crate::types::RoutingProfileQueueConfig] {
@@ -55,7 +55,7 @@ impl CreateRoutingProfileInput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
-    /// <p>Whether agents with this routing profile will have their routing order calculated based on <i>longest idle time</i> or <i>time since their last inbound contact</i>.</p>
+    /// <p>Whether agents with this routing profile will have their routing order calculated based on <i>longest idle time</i> or <i>time since their last inbound contact</i>. </p>
     pub fn agent_availability_timer(&self) -> ::std::option::Option<&crate::types::AgentAvailabilityTimer> {
         self.agent_availability_timer.as_ref()
     }
@@ -146,7 +146,7 @@ impl CreateRoutingProfileInputBuilder {
     /// To override the contents of this collection use [`set_queue_configs`](Self::set_queue_configs).
     ///
     /// <p>The inbound queues associated with the routing profile. If no queue is added, the agent can make only outbound calls.</p>
-    /// <p>The limit of 10 array members applies to the maximum number of <code>RoutingProfileQueueConfig</code> objects that can be passed during a CreateRoutingProfile API request. It is different from the quota of 50 queues per routing profile per instance that is listed in <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon Connect service quotas</a>.</p>
+    /// <p>The limit of 10 array members applies to the maximum number of <code>RoutingProfileQueueConfig</code> objects that can be passed during a CreateRoutingProfile API request. It is different from the quota of 50 queues per routing profile per instance that is listed in <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon Connect service quotas</a>. </p>
     pub fn queue_configs(mut self, input: crate::types::RoutingProfileQueueConfig) -> Self {
         let mut v = self.queue_configs.unwrap_or_default();
         v.push(input);
@@ -154,13 +154,13 @@ impl CreateRoutingProfileInputBuilder {
         self
     }
     /// <p>The inbound queues associated with the routing profile. If no queue is added, the agent can make only outbound calls.</p>
-    /// <p>The limit of 10 array members applies to the maximum number of <code>RoutingProfileQueueConfig</code> objects that can be passed during a CreateRoutingProfile API request. It is different from the quota of 50 queues per routing profile per instance that is listed in <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon Connect service quotas</a>.</p>
+    /// <p>The limit of 10 array members applies to the maximum number of <code>RoutingProfileQueueConfig</code> objects that can be passed during a CreateRoutingProfile API request. It is different from the quota of 50 queues per routing profile per instance that is listed in <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon Connect service quotas</a>. </p>
     pub fn set_queue_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueConfig>>) -> Self {
         self.queue_configs = input;
         self
     }
     /// <p>The inbound queues associated with the routing profile. If no queue is added, the agent can make only outbound calls.</p>
-    /// <p>The limit of 10 array members applies to the maximum number of <code>RoutingProfileQueueConfig</code> objects that can be passed during a CreateRoutingProfile API request. It is different from the quota of 50 queues per routing profile per instance that is listed in <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon Connect service quotas</a>.</p>
+    /// <p>The limit of 10 array members applies to the maximum number of <code>RoutingProfileQueueConfig</code> objects that can be passed during a CreateRoutingProfile API request. It is different from the quota of 50 queues per routing profile per instance that is listed in <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon Connect service quotas</a>. </p>
     pub fn get_queue_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueConfig>> {
         &self.queue_configs
     }
@@ -204,17 +204,17 @@ impl CreateRoutingProfileInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
-    /// <p>Whether agents with this routing profile will have their routing order calculated based on <i>longest idle time</i> or <i>time since their last inbound contact</i>.</p>
+    /// <p>Whether agents with this routing profile will have their routing order calculated based on <i>longest idle time</i> or <i>time since their last inbound contact</i>. </p>
     pub fn agent_availability_timer(mut self, input: crate::types::AgentAvailabilityTimer) -> Self {
         self.agent_availability_timer = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Whether agents with this routing profile will have their routing order calculated based on <i>longest idle time</i> or <i>time since their last inbound contact</i>.</p>
+    /// <p>Whether agents with this routing profile will have their routing order calculated based on <i>longest idle time</i> or <i>time since their last inbound contact</i>. </p>
     pub fn set_agent_availability_timer(mut self, input: ::std::option::Option<crate::types::AgentAvailabilityTimer>) -> Self {
         self.agent_availability_timer = input;
         self
     }
-    /// <p>Whether agents with this routing profile will have their routing order calculated based on <i>longest idle time</i> or <i>time since their last inbound contact</i>.</p>
+    /// <p>Whether agents with this routing profile will have their routing order calculated based on <i>longest idle time</i> or <i>time since their last inbound contact</i>. </p>
     pub fn get_agent_availability_timer(&self) -> &::std::option::Option<crate::types::AgentAvailabilityTimer> {
         &self.agent_availability_timer
     }

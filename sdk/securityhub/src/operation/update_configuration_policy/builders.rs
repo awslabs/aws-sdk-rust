@@ -22,7 +22,7 @@ impl UpdateConfigurationPolicyInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateConfigurationPolicy`.
 ///
-/// <p>Updates a configuration policy. Only the Security Hub delegated administrator can invoke this operation from the home Region.</p>
+/// <p> Updates a configuration policy. Only the Security Hub delegated administrator can invoke this operation from the home Region. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateConfigurationPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,75 +108,75 @@ impl UpdateConfigurationPolicyFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) or universally unique identifier (UUID) of the configuration policy.</p>
+    /// <p> The Amazon Resource Name (ARN) or universally unique identifier (UUID) of the configuration policy. </p>
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identifier(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) or universally unique identifier (UUID) of the configuration policy.</p>
+    /// <p> The Amazon Resource Name (ARN) or universally unique identifier (UUID) of the configuration policy. </p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identifier(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) or universally unique identifier (UUID) of the configuration policy.</p>
+    /// <p> The Amazon Resource Name (ARN) or universally unique identifier (UUID) of the configuration policy. </p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_identifier()
     }
-    /// <p>The name of the configuration policy. Alphanumeric characters and the following ASCII characters are permitted: <code>-, ., !, *, /</code>.</p>
+    /// <p> The name of the configuration policy. Alphanumeric characters and the following ASCII characters are permitted: <code>-, ., !, *, /</code>. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of the configuration policy. Alphanumeric characters and the following ASCII characters are permitted: <code>-, ., !, *, /</code>.</p>
+    /// <p> The name of the configuration policy. Alphanumeric characters and the following ASCII characters are permitted: <code>-, ., !, *, /</code>. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name of the configuration policy. Alphanumeric characters and the following ASCII characters are permitted: <code>-, ., !, *, /</code>.</p>
+    /// <p> The name of the configuration policy. Alphanumeric characters and the following ASCII characters are permitted: <code>-, ., !, *, /</code>. </p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>The description of the configuration policy.</p>
+    /// <p> The description of the configuration policy. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>The description of the configuration policy.</p>
+    /// <p> The description of the configuration policy. </p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>The description of the configuration policy.</p>
+    /// <p> The description of the configuration policy. </p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p>The reason for updating the configuration policy.</p>
+    /// <p> The reason for updating the configuration policy. </p>
     pub fn updated_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.updated_reason(input.into());
         self
     }
-    /// <p>The reason for updating the configuration policy.</p>
+    /// <p> The reason for updating the configuration policy. </p>
     pub fn set_updated_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_updated_reason(input);
         self
     }
-    /// <p>The reason for updating the configuration policy.</p>
+    /// <p> The reason for updating the configuration policy. </p>
     pub fn get_updated_reason(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_updated_reason()
     }
-    /// <p>An object that defines how Security Hub is configured. It includes whether Security Hub is enabled or disabled, a list of enabled security standards, a list of enabled or disabled security controls, and a list of custom parameter values for specified controls. If you provide a list of security controls that are enabled in the configuration policy, Security Hub disables all other controls (including newly released controls). If you provide a list of security controls that are disabled in the configuration policy, Security Hub enables all other controls (including newly released controls).</p>
+    /// <p> An object that defines how Security Hub is configured. It includes whether Security Hub is enabled or disabled, a list of enabled security standards, a list of enabled or disabled security controls, and a list of custom parameter values for specified controls. If you provide a list of security controls that are enabled in the configuration policy, Security Hub disables all other controls (including newly released controls). If you provide a list of security controls that are disabled in the configuration policy, Security Hub enables all other controls (including newly released controls). </p>
     /// <p>When updating a configuration policy, provide a complete list of standards that you want to enable and a complete list of controls that you want to enable or disable. The updated configuration replaces the current configuration.</p>
     pub fn configuration_policy(mut self, input: crate::types::Policy) -> Self {
         self.inner = self.inner.configuration_policy(input);
         self
     }
-    /// <p>An object that defines how Security Hub is configured. It includes whether Security Hub is enabled or disabled, a list of enabled security standards, a list of enabled or disabled security controls, and a list of custom parameter values for specified controls. If you provide a list of security controls that are enabled in the configuration policy, Security Hub disables all other controls (including newly released controls). If you provide a list of security controls that are disabled in the configuration policy, Security Hub enables all other controls (including newly released controls).</p>
+    /// <p> An object that defines how Security Hub is configured. It includes whether Security Hub is enabled or disabled, a list of enabled security standards, a list of enabled or disabled security controls, and a list of custom parameter values for specified controls. If you provide a list of security controls that are enabled in the configuration policy, Security Hub disables all other controls (including newly released controls). If you provide a list of security controls that are disabled in the configuration policy, Security Hub enables all other controls (including newly released controls). </p>
     /// <p>When updating a configuration policy, provide a complete list of standards that you want to enable and a complete list of controls that you want to enable or disable. The updated configuration replaces the current configuration.</p>
     pub fn set_configuration_policy(mut self, input: ::std::option::Option<crate::types::Policy>) -> Self {
         self.inner = self.inner.set_configuration_policy(input);
         self
     }
-    /// <p>An object that defines how Security Hub is configured. It includes whether Security Hub is enabled or disabled, a list of enabled security standards, a list of enabled or disabled security controls, and a list of custom parameter values for specified controls. If you provide a list of security controls that are enabled in the configuration policy, Security Hub disables all other controls (including newly released controls). If you provide a list of security controls that are disabled in the configuration policy, Security Hub enables all other controls (including newly released controls).</p>
+    /// <p> An object that defines how Security Hub is configured. It includes whether Security Hub is enabled or disabled, a list of enabled security standards, a list of enabled or disabled security controls, and a list of custom parameter values for specified controls. If you provide a list of security controls that are enabled in the configuration policy, Security Hub disables all other controls (including newly released controls). If you provide a list of security controls that are disabled in the configuration policy, Security Hub enables all other controls (including newly released controls). </p>
     /// <p>When updating a configuration policy, provide a complete list of standards that you want to enable and a complete list of controls that you want to enable or disable. The updated configuration replaces the current configuration.</p>
     pub fn get_configuration_policy(&self) -> &::std::option::Option<crate::types::Policy> {
         self.inner.get_configuration_policy()

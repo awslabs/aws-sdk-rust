@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3LogsConfiguration {
-    /// <p>The status of S3 data event logs as a data source.</p>
+    /// <p> The status of S3 data event logs as a data source.</p>
     pub enable: ::std::option::Option<bool>,
 }
 impl S3LogsConfiguration {
-    /// <p>The status of S3 data event logs as a data source.</p>
+    /// <p> The status of S3 data event logs as a data source.</p>
     pub fn enable(&self) -> ::std::option::Option<bool> {
         self.enable
     }
@@ -27,18 +27,18 @@ pub struct S3LogsConfigurationBuilder {
     pub(crate) enable: ::std::option::Option<bool>,
 }
 impl S3LogsConfigurationBuilder {
-    /// <p>The status of S3 data event logs as a data source.</p>
+    /// <p> The status of S3 data event logs as a data source.</p>
     /// This field is required.
     pub fn enable(mut self, input: bool) -> Self {
         self.enable = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of S3 data event logs as a data source.</p>
+    /// <p> The status of S3 data event logs as a data source.</p>
     pub fn set_enable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable = input;
         self
     }
-    /// <p>The status of S3 data event logs as a data source.</p>
+    /// <p> The status of S3 data event logs as a data source.</p>
     pub fn get_enable(&self) -> &::std::option::Option<bool> {
         &self.enable
     }

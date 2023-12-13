@@ -8,16 +8,11 @@ pub struct DomainValidationOption {
     pub domain_name: ::std::string::String,
     /// <p>The domain name that you want ACM to use to send you validation emails. This domain name is the suffix of the email addresses that you want ACM to use. This must be the same as the <code>DomainName</code> value or a superdomain of the <code>DomainName</code> value. For example, if you request a certificate for <code>testing.example.com</code>, you can specify <code>example.com</code> for this value. In that case, ACM sends domain validation emails to the following five addresses:</p>
     /// <ul>
-    /// <li>
-    /// <p>admin@example.com</p></li>
-    /// <li>
-    /// <p>administrator@example.com</p></li>
-    /// <li>
-    /// <p>hostmaster@example.com</p></li>
-    /// <li>
-    /// <p>postmaster@example.com</p></li>
-    /// <li>
-    /// <p>webmaster@example.com</p></li>
+    /// <li> <p>admin@example.com</p> </li>
+    /// <li> <p>administrator@example.com</p> </li>
+    /// <li> <p>hostmaster@example.com</p> </li>
+    /// <li> <p>postmaster@example.com</p> </li>
+    /// <li> <p>webmaster@example.com</p> </li>
     /// </ul>
     pub validation_domain: ::std::string::String,
 }
@@ -29,16 +24,11 @@ impl DomainValidationOption {
     }
     /// <p>The domain name that you want ACM to use to send you validation emails. This domain name is the suffix of the email addresses that you want ACM to use. This must be the same as the <code>DomainName</code> value or a superdomain of the <code>DomainName</code> value. For example, if you request a certificate for <code>testing.example.com</code>, you can specify <code>example.com</code> for this value. In that case, ACM sends domain validation emails to the following five addresses:</p>
     /// <ul>
-    /// <li>
-    /// <p>admin@example.com</p></li>
-    /// <li>
-    /// <p>administrator@example.com</p></li>
-    /// <li>
-    /// <p>hostmaster@example.com</p></li>
-    /// <li>
-    /// <p>postmaster@example.com</p></li>
-    /// <li>
-    /// <p>webmaster@example.com</p></li>
+    /// <li> <p>admin@example.com</p> </li>
+    /// <li> <p>administrator@example.com</p> </li>
+    /// <li> <p>hostmaster@example.com</p> </li>
+    /// <li> <p>postmaster@example.com</p> </li>
+    /// <li> <p>webmaster@example.com</p> </li>
     /// </ul>
     pub fn validation_domain(&self) -> &str {
         use std::ops::Deref;
@@ -77,16 +67,11 @@ impl DomainValidationOptionBuilder {
     }
     /// <p>The domain name that you want ACM to use to send you validation emails. This domain name is the suffix of the email addresses that you want ACM to use. This must be the same as the <code>DomainName</code> value or a superdomain of the <code>DomainName</code> value. For example, if you request a certificate for <code>testing.example.com</code>, you can specify <code>example.com</code> for this value. In that case, ACM sends domain validation emails to the following five addresses:</p>
     /// <ul>
-    /// <li>
-    /// <p>admin@example.com</p></li>
-    /// <li>
-    /// <p>administrator@example.com</p></li>
-    /// <li>
-    /// <p>hostmaster@example.com</p></li>
-    /// <li>
-    /// <p>postmaster@example.com</p></li>
-    /// <li>
-    /// <p>webmaster@example.com</p></li>
+    /// <li> <p>admin@example.com</p> </li>
+    /// <li> <p>administrator@example.com</p> </li>
+    /// <li> <p>hostmaster@example.com</p> </li>
+    /// <li> <p>postmaster@example.com</p> </li>
+    /// <li> <p>webmaster@example.com</p> </li>
     /// </ul>
     /// This field is required.
     pub fn validation_domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -95,16 +80,11 @@ impl DomainValidationOptionBuilder {
     }
     /// <p>The domain name that you want ACM to use to send you validation emails. This domain name is the suffix of the email addresses that you want ACM to use. This must be the same as the <code>DomainName</code> value or a superdomain of the <code>DomainName</code> value. For example, if you request a certificate for <code>testing.example.com</code>, you can specify <code>example.com</code> for this value. In that case, ACM sends domain validation emails to the following five addresses:</p>
     /// <ul>
-    /// <li>
-    /// <p>admin@example.com</p></li>
-    /// <li>
-    /// <p>administrator@example.com</p></li>
-    /// <li>
-    /// <p>hostmaster@example.com</p></li>
-    /// <li>
-    /// <p>postmaster@example.com</p></li>
-    /// <li>
-    /// <p>webmaster@example.com</p></li>
+    /// <li> <p>admin@example.com</p> </li>
+    /// <li> <p>administrator@example.com</p> </li>
+    /// <li> <p>hostmaster@example.com</p> </li>
+    /// <li> <p>postmaster@example.com</p> </li>
+    /// <li> <p>webmaster@example.com</p> </li>
     /// </ul>
     pub fn set_validation_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.validation_domain = input;
@@ -112,16 +92,11 @@ impl DomainValidationOptionBuilder {
     }
     /// <p>The domain name that you want ACM to use to send you validation emails. This domain name is the suffix of the email addresses that you want ACM to use. This must be the same as the <code>DomainName</code> value or a superdomain of the <code>DomainName</code> value. For example, if you request a certificate for <code>testing.example.com</code>, you can specify <code>example.com</code> for this value. In that case, ACM sends domain validation emails to the following five addresses:</p>
     /// <ul>
-    /// <li>
-    /// <p>admin@example.com</p></li>
-    /// <li>
-    /// <p>administrator@example.com</p></li>
-    /// <li>
-    /// <p>hostmaster@example.com</p></li>
-    /// <li>
-    /// <p>postmaster@example.com</p></li>
-    /// <li>
-    /// <p>webmaster@example.com</p></li>
+    /// <li> <p>admin@example.com</p> </li>
+    /// <li> <p>administrator@example.com</p> </li>
+    /// <li> <p>hostmaster@example.com</p> </li>
+    /// <li> <p>postmaster@example.com</p> </li>
+    /// <li> <p>webmaster@example.com</p> </li>
     /// </ul>
     pub fn get_validation_domain(&self) -> &::std::option::Option<::std::string::String> {
         &self.validation_domain

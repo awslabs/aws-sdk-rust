@@ -22,10 +22,10 @@ impl BatchUpdateVehicleInputBuilder {
 }
 /// Fluent builder constructing a request to `BatchUpdateVehicle`.
 ///
-/// <p>Updates a group, or batch, of vehicles.</p><note>
-/// <p>You must specify a decoder manifest and a vehicle model (model manifest) for each vehicle.</p>
+/// <p> Updates a group, or batch, of vehicles.</p> <note>
+/// <p> You must specify a decoder manifest and a vehicle model (model manifest) for each vehicle. </p>
 /// </note>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/update-vehicles-cli.html">Update multiple vehicles (AWS CLI)</a> in the <i>Amazon Web Services IoT FleetWise Developer Guide</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/update-vehicles-cli.html">Update multiple vehicles (AWS CLI)</a> in the <i>Amazon Web Services IoT FleetWise Developer Guide</i>. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchUpdateVehicleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -115,17 +115,17 @@ impl BatchUpdateVehicleFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_vehicles`](Self::set_vehicles).
     ///
-    /// <p>A list of information about the vehicles to update. For more information, see the API data type.</p>
+    /// <p> A list of information about the vehicles to update. For more information, see the API data type.</p>
     pub fn vehicles(mut self, input: crate::types::UpdateVehicleRequestItem) -> Self {
         self.inner = self.inner.vehicles(input);
         self
     }
-    /// <p>A list of information about the vehicles to update. For more information, see the API data type.</p>
+    /// <p> A list of information about the vehicles to update. For more information, see the API data type.</p>
     pub fn set_vehicles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateVehicleRequestItem>>) -> Self {
         self.inner = self.inner.set_vehicles(input);
         self
     }
-    /// <p>A list of information about the vehicles to update. For more information, see the API data type.</p>
+    /// <p> A list of information about the vehicles to update. For more information, see the API data type.</p>
     pub fn get_vehicles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateVehicleRequestItem>> {
         self.inner.get_vehicles()
     }

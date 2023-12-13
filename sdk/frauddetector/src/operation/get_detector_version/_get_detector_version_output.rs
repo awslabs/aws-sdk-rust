@@ -11,19 +11,19 @@ pub struct GetDetectorVersionOutput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon SageMaker model endpoints included in the detector version.</p>
     pub external_model_endpoints: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The model versions included in the detector version.</p>
+    /// <p>The model versions included in the detector version. </p>
     pub model_versions: ::std::option::Option<::std::vec::Vec<crate::types::ModelVersion>>,
     /// <p>The rules included in the detector version.</p>
     pub rules: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
     /// <p>The status of the detector version.</p>
     pub status: ::std::option::Option<crate::types::DetectorVersionStatus>,
-    /// <p>The timestamp when the detector version was last updated.</p>
+    /// <p>The timestamp when the detector version was last updated. </p>
     pub last_updated_time: ::std::option::Option<::std::string::String>,
-    /// <p>The timestamp when the detector version was created.</p>
+    /// <p>The timestamp when the detector version was created. </p>
     pub created_time: ::std::option::Option<::std::string::String>,
     /// <p>The execution mode of the rule in the dectector</p>
-    /// <p><code>FIRST_MATCHED</code> indicates that Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p>
-    /// <p><code>ALL_MATCHED</code> indicates that Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules. You can define and edit the rule mode at the detector version level, when it is in draft status.</p>
+    /// <p> <code>FIRST_MATCHED</code> indicates that Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p>
+    /// <p> <code>ALL_MATCHED</code> indicates that Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules. You can define and edit the rule mode at the detector version level, when it is in draft status.</p>
     pub rule_execution_mode: ::std::option::Option<crate::types::RuleExecutionMode>,
     /// <p>The detector version ARN.</p>
     pub arn: ::std::option::Option<::std::string::String>,
@@ -48,7 +48,7 @@ impl GetDetectorVersionOutput {
     pub fn external_model_endpoints(&self) -> &[::std::string::String] {
         self.external_model_endpoints.as_deref().unwrap_or_default()
     }
-    /// <p>The model versions included in the detector version.</p>
+    /// <p>The model versions included in the detector version. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.model_versions.is_none()`.
     pub fn model_versions(&self) -> &[crate::types::ModelVersion] {
@@ -64,17 +64,17 @@ impl GetDetectorVersionOutput {
     pub fn status(&self) -> ::std::option::Option<&crate::types::DetectorVersionStatus> {
         self.status.as_ref()
     }
-    /// <p>The timestamp when the detector version was last updated.</p>
+    /// <p>The timestamp when the detector version was last updated. </p>
     pub fn last_updated_time(&self) -> ::std::option::Option<&str> {
         self.last_updated_time.as_deref()
     }
-    /// <p>The timestamp when the detector version was created.</p>
+    /// <p>The timestamp when the detector version was created. </p>
     pub fn created_time(&self) -> ::std::option::Option<&str> {
         self.created_time.as_deref()
     }
     /// <p>The execution mode of the rule in the dectector</p>
-    /// <p><code>FIRST_MATCHED</code> indicates that Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p>
-    /// <p><code>ALL_MATCHED</code> indicates that Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules. You can define and edit the rule mode at the detector version level, when it is in draft status.</p>
+    /// <p> <code>FIRST_MATCHED</code> indicates that Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p>
+    /// <p> <code>ALL_MATCHED</code> indicates that Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules. You can define and edit the rule mode at the detector version level, when it is in draft status.</p>
     pub fn rule_execution_mode(&self) -> ::std::option::Option<&crate::types::RuleExecutionMode> {
         self.rule_execution_mode.as_ref()
     }
@@ -179,19 +179,19 @@ impl GetDetectorVersionOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_model_versions`](Self::set_model_versions).
     ///
-    /// <p>The model versions included in the detector version.</p>
+    /// <p>The model versions included in the detector version. </p>
     pub fn model_versions(mut self, input: crate::types::ModelVersion) -> Self {
         let mut v = self.model_versions.unwrap_or_default();
         v.push(input);
         self.model_versions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The model versions included in the detector version.</p>
+    /// <p>The model versions included in the detector version. </p>
     pub fn set_model_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ModelVersion>>) -> Self {
         self.model_versions = input;
         self
     }
-    /// <p>The model versions included in the detector version.</p>
+    /// <p>The model versions included in the detector version. </p>
     pub fn get_model_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelVersion>> {
         &self.model_versions
     }
@@ -229,51 +229,51 @@ impl GetDetectorVersionOutputBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::DetectorVersionStatus> {
         &self.status
     }
-    /// <p>The timestamp when the detector version was last updated.</p>
+    /// <p>The timestamp when the detector version was last updated. </p>
     pub fn last_updated_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The timestamp when the detector version was last updated.</p>
+    /// <p>The timestamp when the detector version was last updated. </p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_updated_time = input;
         self
     }
-    /// <p>The timestamp when the detector version was last updated.</p>
+    /// <p>The timestamp when the detector version was last updated. </p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_updated_time
     }
-    /// <p>The timestamp when the detector version was created.</p>
+    /// <p>The timestamp when the detector version was created. </p>
     pub fn created_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_time = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The timestamp when the detector version was created.</p>
+    /// <p>The timestamp when the detector version was created. </p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_time = input;
         self
     }
-    /// <p>The timestamp when the detector version was created.</p>
+    /// <p>The timestamp when the detector version was created. </p>
     pub fn get_created_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.created_time
     }
     /// <p>The execution mode of the rule in the dectector</p>
-    /// <p><code>FIRST_MATCHED</code> indicates that Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p>
-    /// <p><code>ALL_MATCHED</code> indicates that Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules. You can define and edit the rule mode at the detector version level, when it is in draft status.</p>
+    /// <p> <code>FIRST_MATCHED</code> indicates that Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p>
+    /// <p> <code>ALL_MATCHED</code> indicates that Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules. You can define and edit the rule mode at the detector version level, when it is in draft status.</p>
     pub fn rule_execution_mode(mut self, input: crate::types::RuleExecutionMode) -> Self {
         self.rule_execution_mode = ::std::option::Option::Some(input);
         self
     }
     /// <p>The execution mode of the rule in the dectector</p>
-    /// <p><code>FIRST_MATCHED</code> indicates that Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p>
-    /// <p><code>ALL_MATCHED</code> indicates that Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules. You can define and edit the rule mode at the detector version level, when it is in draft status.</p>
+    /// <p> <code>FIRST_MATCHED</code> indicates that Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p>
+    /// <p> <code>ALL_MATCHED</code> indicates that Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules. You can define and edit the rule mode at the detector version level, when it is in draft status.</p>
     pub fn set_rule_execution_mode(mut self, input: ::std::option::Option<crate::types::RuleExecutionMode>) -> Self {
         self.rule_execution_mode = input;
         self
     }
     /// <p>The execution mode of the rule in the dectector</p>
-    /// <p><code>FIRST_MATCHED</code> indicates that Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p>
-    /// <p><code>ALL_MATCHED</code> indicates that Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules. You can define and edit the rule mode at the detector version level, when it is in draft status.</p>
+    /// <p> <code>FIRST_MATCHED</code> indicates that Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p>
+    /// <p> <code>ALL_MATCHED</code> indicates that Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules. You can define and edit the rule mode at the detector version level, when it is in draft status.</p>
     pub fn get_rule_execution_mode(&self) -> &::std::option::Option<crate::types::RuleExecutionMode> {
         &self.rule_execution_mode
     }

@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTrafficPolicyInstancesByHostedZoneOutput {
-    /// <p>A list that contains one <code>TrafficPolicyInstance</code> element for each traffic policy instance that matches the elements in the request.</p>
+    /// <p>A list that contains one <code>TrafficPolicyInstance</code> element for each traffic policy instance that matches the elements in the request. </p>
     pub traffic_policy_instances: ::std::vec::Vec<crate::types::TrafficPolicyInstance>,
     /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceNameMarker</code> is the name of the first traffic policy instance in the next group of traffic policy instances.</p>
     pub traffic_policy_instance_name_marker: ::std::option::Option<::std::string::String>,
@@ -17,7 +17,7 @@ pub struct ListTrafficPolicyInstancesByHostedZoneOutput {
     _request_id: Option<String>,
 }
 impl ListTrafficPolicyInstancesByHostedZoneOutput {
-    /// <p>A list that contains one <code>TrafficPolicyInstance</code> element for each traffic policy instance that matches the elements in the request.</p>
+    /// <p>A list that contains one <code>TrafficPolicyInstance</code> element for each traffic policy instance that matches the elements in the request. </p>
     pub fn traffic_policy_instances(&self) -> &[crate::types::TrafficPolicyInstance] {
         use std::ops::Deref;
         self.traffic_policy_instances.deref()
@@ -68,19 +68,19 @@ impl ListTrafficPolicyInstancesByHostedZoneOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_traffic_policy_instances`](Self::set_traffic_policy_instances).
     ///
-    /// <p>A list that contains one <code>TrafficPolicyInstance</code> element for each traffic policy instance that matches the elements in the request.</p>
+    /// <p>A list that contains one <code>TrafficPolicyInstance</code> element for each traffic policy instance that matches the elements in the request. </p>
     pub fn traffic_policy_instances(mut self, input: crate::types::TrafficPolicyInstance) -> Self {
         let mut v = self.traffic_policy_instances.unwrap_or_default();
         v.push(input);
         self.traffic_policy_instances = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list that contains one <code>TrafficPolicyInstance</code> element for each traffic policy instance that matches the elements in the request.</p>
+    /// <p>A list that contains one <code>TrafficPolicyInstance</code> element for each traffic policy instance that matches the elements in the request. </p>
     pub fn set_traffic_policy_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TrafficPolicyInstance>>) -> Self {
         self.traffic_policy_instances = input;
         self
     }
-    /// <p>A list that contains one <code>TrafficPolicyInstance</code> element for each traffic policy instance that matches the elements in the request.</p>
+    /// <p>A list that contains one <code>TrafficPolicyInstance</code> element for each traffic policy instance that matches the elements in the request. </p>
     pub fn get_traffic_policy_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TrafficPolicyInstance>> {
         &self.traffic_policy_instances
     }

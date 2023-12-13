@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeProfilingGroupInput {
-    /// <p>The name of the profiling group to get information about.</p>
+    /// <p> The name of the profiling group to get information about. </p>
     pub profiling_group_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeProfilingGroupInput {
-    /// <p>The name of the profiling group to get information about.</p>
+    /// <p> The name of the profiling group to get information about. </p>
     pub fn profiling_group_name(&self) -> ::std::option::Option<&str> {
         self.profiling_group_name.as_deref()
     }
@@ -27,18 +27,18 @@ pub struct DescribeProfilingGroupInputBuilder {
     pub(crate) profiling_group_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeProfilingGroupInputBuilder {
-    /// <p>The name of the profiling group to get information about.</p>
+    /// <p> The name of the profiling group to get information about. </p>
     /// This field is required.
     pub fn profiling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profiling_group_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the profiling group to get information about.</p>
+    /// <p> The name of the profiling group to get information about. </p>
     pub fn set_profiling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.profiling_group_name = input;
         self
     }
-    /// <p>The name of the profiling group to get information about.</p>
+    /// <p> The name of the profiling group to get information about. </p>
     pub fn get_profiling_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.profiling_group_name
     }

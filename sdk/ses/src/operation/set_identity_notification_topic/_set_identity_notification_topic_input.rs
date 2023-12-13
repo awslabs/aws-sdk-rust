@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SetIdentityNotificationTopicInput {
-    /// <p>The identity (email address or domain) for the Amazon SNS topic.</p><important>
+    /// <p>The identity (email address or domain) for the Amazon SNS topic.</p> <important>
     /// <p>You can only specify a verified identity for this parameter.</p>
     /// </important>
     /// <p>You can specify an identity by using its name or by using its Amazon Resource Name (ARN). The following examples are all valid identities: <code>sender@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
@@ -15,7 +15,7 @@ pub struct SetIdentityNotificationTopicInput {
     pub sns_topic: ::std::option::Option<::std::string::String>,
 }
 impl SetIdentityNotificationTopicInput {
-    /// <p>The identity (email address or domain) for the Amazon SNS topic.</p><important>
+    /// <p>The identity (email address or domain) for the Amazon SNS topic.</p> <important>
     /// <p>You can only specify a verified identity for this parameter.</p>
     /// </important>
     /// <p>You can specify an identity by using its name or by using its Amazon Resource Name (ARN). The following examples are all valid identities: <code>sender@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
@@ -47,7 +47,7 @@ pub struct SetIdentityNotificationTopicInputBuilder {
     pub(crate) sns_topic: ::std::option::Option<::std::string::String>,
 }
 impl SetIdentityNotificationTopicInputBuilder {
-    /// <p>The identity (email address or domain) for the Amazon SNS topic.</p><important>
+    /// <p>The identity (email address or domain) for the Amazon SNS topic.</p> <important>
     /// <p>You can only specify a verified identity for this parameter.</p>
     /// </important>
     /// <p>You can specify an identity by using its name or by using its Amazon Resource Name (ARN). The following examples are all valid identities: <code>sender@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
@@ -56,7 +56,7 @@ impl SetIdentityNotificationTopicInputBuilder {
         self.identity = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identity (email address or domain) for the Amazon SNS topic.</p><important>
+    /// <p>The identity (email address or domain) for the Amazon SNS topic.</p> <important>
     /// <p>You can only specify a verified identity for this parameter.</p>
     /// </important>
     /// <p>You can specify an identity by using its name or by using its Amazon Resource Name (ARN). The following examples are all valid identities: <code>sender@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
@@ -64,7 +64,7 @@ impl SetIdentityNotificationTopicInputBuilder {
         self.identity = input;
         self
     }
-    /// <p>The identity (email address or domain) for the Amazon SNS topic.</p><important>
+    /// <p>The identity (email address or domain) for the Amazon SNS topic.</p> <important>
     /// <p>You can only specify a verified identity for this parameter.</p>
     /// </important>
     /// <p>You can specify an identity by using its name or by using its Amazon Resource Name (ARN). The following examples are all valid identities: <code>sender@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>

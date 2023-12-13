@@ -23,18 +23,13 @@ impl UpdateRestoreTestingPlanInputBuilder {
 /// Fluent builder constructing a request to `UpdateRestoreTestingPlan`.
 ///
 /// <p>This request will send changes to your specified restore testing plan. <code>RestoreTestingPlanName</code> cannot be updated after it is created.</p>
-/// <p><code>RecoveryPointSelection</code> can contain:</p>
+/// <p> <code>RecoveryPointSelection</code> can contain:</p>
 /// <ul>
-/// <li>
-/// <p><code>Algorithm</code></p></li>
-/// <li>
-/// <p><code>ExcludeVaults</code></p></li>
-/// <li>
-/// <p><code>IncludeVaults</code></p></li>
-/// <li>
-/// <p><code>RecoveryPointTypes</code></p></li>
-/// <li>
-/// <p><code>SelectionWindowDays</code></p></li>
+/// <li> <p> <code>Algorithm</code> </p> </li>
+/// <li> <p> <code>ExcludeVaults</code> </p> </li>
+/// <li> <p> <code>IncludeVaults</code> </p> </li>
+/// <li> <p> <code>RecoveryPointTypes</code> </p> </li>
+/// <li> <p> <code>SelectionWindowDays</code> </p> </li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateRestoreTestingPlanFluentBuilder {

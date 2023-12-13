@@ -9,9 +9,9 @@ pub struct GetPersonTrackingOutput {
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition Video operation.</p>
     pub video_metadata: ::std::option::Option<crate::types::VideoMetadata>,
-    /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of persons.</p>
+    /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of persons. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>An array of the persons detected in the video and the time(s) their path was tracked throughout the video. An array element will exist for each time a person's path is tracked.</p>
+    /// <p>An array of the persons detected in the video and the time(s) their path was tracked throughout the video. An array element will exist for each time a person's path is tracked. </p>
     pub persons: ::std::option::Option<::std::vec::Vec<crate::types::PersonDetection>>,
     /// <p>Job identifier for the person tracking operation for which you want to obtain results. The job identifer is returned by an initial call to StartPersonTracking.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
@@ -34,11 +34,11 @@ impl GetPersonTrackingOutput {
     pub fn video_metadata(&self) -> ::std::option::Option<&crate::types::VideoMetadata> {
         self.video_metadata.as_ref()
     }
-    /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of persons.</p>
+    /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of persons. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>An array of the persons detected in the video and the time(s) their path was tracked throughout the video. An array element will exist for each time a person's path is tracked.</p>
+    /// <p>An array of the persons detected in the video and the time(s) their path was tracked throughout the video. An array element will exist for each time a person's path is tracked. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.persons.is_none()`.
     pub fn persons(&self) -> &[crate::types::PersonDetection] {
@@ -126,17 +126,17 @@ impl GetPersonTrackingOutputBuilder {
     pub fn get_video_metadata(&self) -> &::std::option::Option<crate::types::VideoMetadata> {
         &self.video_metadata
     }
-    /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of persons.</p>
+    /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of persons. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of persons.</p>
+    /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of persons. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of persons.</p>
+    /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of persons. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
@@ -144,19 +144,19 @@ impl GetPersonTrackingOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_persons`](Self::set_persons).
     ///
-    /// <p>An array of the persons detected in the video and the time(s) their path was tracked throughout the video. An array element will exist for each time a person's path is tracked.</p>
+    /// <p>An array of the persons detected in the video and the time(s) their path was tracked throughout the video. An array element will exist for each time a person's path is tracked. </p>
     pub fn persons(mut self, input: crate::types::PersonDetection) -> Self {
         let mut v = self.persons.unwrap_or_default();
         v.push(input);
         self.persons = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of the persons detected in the video and the time(s) their path was tracked throughout the video. An array element will exist for each time a person's path is tracked.</p>
+    /// <p>An array of the persons detected in the video and the time(s) their path was tracked throughout the video. An array element will exist for each time a person's path is tracked. </p>
     pub fn set_persons(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PersonDetection>>) -> Self {
         self.persons = input;
         self
     }
-    /// <p>An array of the persons detected in the video and the time(s) their path was tracked throughout the video. An array element will exist for each time a person's path is tracked.</p>
+    /// <p>An array of the persons detected in the video and the time(s) their path was tracked throughout the video. An array element will exist for each time a person's path is tracked. </p>
     pub fn get_persons(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PersonDetection>> {
         &self.persons
     }

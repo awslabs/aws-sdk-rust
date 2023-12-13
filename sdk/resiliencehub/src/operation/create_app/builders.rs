@@ -177,17 +177,17 @@ impl CreateAppFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
-    /// <p>Assessment execution schedule with 'Daily' or 'Disabled' values.</p>
+    /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
     pub fn assessment_schedule(mut self, input: crate::types::AppAssessmentScheduleType) -> Self {
         self.inner = self.inner.assessment_schedule(input);
         self
     }
-    /// <p>Assessment execution schedule with 'Daily' or 'Disabled' values.</p>
+    /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
     pub fn set_assessment_schedule(mut self, input: ::std::option::Option<crate::types::AppAssessmentScheduleType>) -> Self {
         self.inner = self.inner.set_assessment_schedule(input);
         self
     }
-    /// <p>Assessment execution schedule with 'Daily' or 'Disabled' values.</p>
+    /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
     pub fn get_assessment_schedule(&self) -> &::std::option::Option<crate::types::AppAssessmentScheduleType> {
         self.inner.get_assessment_schedule()
     }

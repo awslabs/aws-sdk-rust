@@ -12,7 +12,7 @@ pub enum Error {
     /// <p>Updating or deleting a resource can cause an inconsistent state. This error occurs when there're concurrent requests for <code>DeleteStateMachineVersion</code>, <code>PublishStateMachineVersion</code>, or <code>UpdateStateMachine</code> with the <code>publish</code> parameter set to <code>true</code>.</p>
     /// <p>HTTP Status Code: 409</p>
     ConflictException(crate::types::error::ConflictException),
-    /// <p>The execution has the same <code>name</code> as another execution (but a different <code>input</code>).</p><note>
+    /// <p>The execution has the same <code>name</code> as another execution (but a different <code>input</code>).</p> <note>
     /// <p>Executions with the same <code>name</code> and <code>input</code> are considered idempotent.</p>
     /// </note>
     ExecutionAlreadyExists(crate::types::error::ExecutionAlreadyExists),

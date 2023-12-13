@@ -22,7 +22,7 @@ impl UpdatePhoneNumberMetadataInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdatePhoneNumberMetadata`.
 ///
-/// <p>Updates a phone number’s metadata.</p><important>
+/// <p>Updates a phone number’s metadata.</p> <important>
 /// <p>To verify the status of a previous UpdatePhoneNumberMetadata operation, call the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePhoneNumber.html">DescribePhoneNumber</a> API.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

@@ -4,15 +4,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AmazonopensearchserviceDestinationDescription {
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. </p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the Amazon OpenSearch Service domain.</p>
     pub domain_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses either this ClusterEndpoint or the DomainARN field to send data to Amazon OpenSearch Service.</p>
+    /// <p>The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses either this ClusterEndpoint or the DomainARN field to send data to Amazon OpenSearch Service. </p>
     pub cluster_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon OpenSearch Service index name.</p>
     pub index_name: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon OpenSearch Service type name. This applies to Elasticsearch 6.x and lower versions. For Elasticsearch 7.x and OpenSearch Service 1.x, there's no value for TypeName.</p>
+    /// <p>The Amazon OpenSearch Service type name. This applies to Elasticsearch 6.x and lower versions. For Elasticsearch 7.x and OpenSearch Service 1.x, there's no value for TypeName. </p>
     pub type_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon OpenSearch Service index rotation period</p>
     pub index_rotation_period: ::std::option::Option<crate::types::AmazonopensearchserviceIndexRotationPeriod>,
@@ -34,7 +34,7 @@ pub struct AmazonopensearchserviceDestinationDescription {
     pub document_id_options: ::std::option::Option<crate::types::DocumentIdOptions>,
 }
 impl AmazonopensearchserviceDestinationDescription {
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. </p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -42,7 +42,7 @@ impl AmazonopensearchserviceDestinationDescription {
     pub fn domain_arn(&self) -> ::std::option::Option<&str> {
         self.domain_arn.as_deref()
     }
-    /// <p>The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses either this ClusterEndpoint or the DomainARN field to send data to Amazon OpenSearch Service.</p>
+    /// <p>The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses either this ClusterEndpoint or the DomainARN field to send data to Amazon OpenSearch Service. </p>
     pub fn cluster_endpoint(&self) -> ::std::option::Option<&str> {
         self.cluster_endpoint.as_deref()
     }
@@ -50,7 +50,7 @@ impl AmazonopensearchserviceDestinationDescription {
     pub fn index_name(&self) -> ::std::option::Option<&str> {
         self.index_name.as_deref()
     }
-    /// <p>The Amazon OpenSearch Service type name. This applies to Elasticsearch 6.x and lower versions. For Elasticsearch 7.x and OpenSearch Service 1.x, there's no value for TypeName.</p>
+    /// <p>The Amazon OpenSearch Service type name. This applies to Elasticsearch 6.x and lower versions. For Elasticsearch 7.x and OpenSearch Service 1.x, there's no value for TypeName. </p>
     pub fn type_name(&self) -> ::std::option::Option<&str> {
         self.type_name.as_deref()
     }
@@ -118,17 +118,17 @@ pub struct AmazonopensearchserviceDestinationDescriptionBuilder {
     pub(crate) document_id_options: ::std::option::Option<crate::types::DocumentIdOptions>,
 }
 impl AmazonopensearchserviceDestinationDescriptionBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. </p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. </p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. </p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
@@ -146,17 +146,17 @@ impl AmazonopensearchserviceDestinationDescriptionBuilder {
     pub fn get_domain_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_arn
     }
-    /// <p>The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses either this ClusterEndpoint or the DomainARN field to send data to Amazon OpenSearch Service.</p>
+    /// <p>The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses either this ClusterEndpoint or the DomainARN field to send data to Amazon OpenSearch Service. </p>
     pub fn cluster_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_endpoint = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses either this ClusterEndpoint or the DomainARN field to send data to Amazon OpenSearch Service.</p>
+    /// <p>The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses either this ClusterEndpoint or the DomainARN field to send data to Amazon OpenSearch Service. </p>
     pub fn set_cluster_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_endpoint = input;
         self
     }
-    /// <p>The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses either this ClusterEndpoint or the DomainARN field to send data to Amazon OpenSearch Service.</p>
+    /// <p>The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses either this ClusterEndpoint or the DomainARN field to send data to Amazon OpenSearch Service. </p>
     pub fn get_cluster_endpoint(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_endpoint
     }
@@ -174,17 +174,17 @@ impl AmazonopensearchserviceDestinationDescriptionBuilder {
     pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.index_name
     }
-    /// <p>The Amazon OpenSearch Service type name. This applies to Elasticsearch 6.x and lower versions. For Elasticsearch 7.x and OpenSearch Service 1.x, there's no value for TypeName.</p>
+    /// <p>The Amazon OpenSearch Service type name. This applies to Elasticsearch 6.x and lower versions. For Elasticsearch 7.x and OpenSearch Service 1.x, there's no value for TypeName. </p>
     pub fn type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.type_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon OpenSearch Service type name. This applies to Elasticsearch 6.x and lower versions. For Elasticsearch 7.x and OpenSearch Service 1.x, there's no value for TypeName.</p>
+    /// <p>The Amazon OpenSearch Service type name. This applies to Elasticsearch 6.x and lower versions. For Elasticsearch 7.x and OpenSearch Service 1.x, there's no value for TypeName. </p>
     pub fn set_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.type_name = input;
         self
     }
-    /// <p>The Amazon OpenSearch Service type name. This applies to Elasticsearch 6.x and lower versions. For Elasticsearch 7.x and OpenSearch Service 1.x, there's no value for TypeName.</p>
+    /// <p>The Amazon OpenSearch Service type name. This applies to Elasticsearch 6.x and lower versions. For Elasticsearch 7.x and OpenSearch Service 1.x, there's no value for TypeName. </p>
     pub fn get_type_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.type_name
     }

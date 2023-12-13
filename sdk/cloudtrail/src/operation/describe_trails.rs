@@ -247,19 +247,14 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeTrail
 pub enum DescribeTrailsError {
     /// <p>This exception is thrown when the provided trail name is not valid. Trail names must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p></li>
-    /// <li>
-    /// <p>Start with a letter or number, and end with a letter or number</p></li>
-    /// <li>
-    /// <p>Be between 3 and 128 characters</p></li>
-    /// <li>
-    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p></li>
-    /// <li>
-    /// <p>Not be in IP address format (for example, 192.168.5.4)</p></li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+    /// <li> <p>Be between 3 and 128 characters</p> </li>
+    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     InvalidTrailNameException(crate::types::error::InvalidTrailNameException),
-    /// <p>This exception is thrown when the management account does not have a service-linked role.</p>
+    /// <p> This exception is thrown when the management account does not have a service-linked role. </p>
     NoManagementAccountSlrExistsException(crate::types::error::NoManagementAccountSlrExistsException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
     OperationNotPermittedException(crate::types::error::OperationNotPermittedException),

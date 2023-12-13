@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplyPendingMaintenanceActionOutput {
-    /// <p>Represents the output of <code>ApplyPendingMaintenanceAction</code>.</p>
+    /// <p>Represents the output of <code>ApplyPendingMaintenanceAction</code>. </p>
     pub resource_pending_maintenance_actions: ::std::option::Option<crate::types::ResourcePendingMaintenanceActions>,
     _request_id: Option<String>,
 }
 impl ApplyPendingMaintenanceActionOutput {
-    /// <p>Represents the output of <code>ApplyPendingMaintenanceAction</code>.</p>
+    /// <p>Represents the output of <code>ApplyPendingMaintenanceAction</code>. </p>
     pub fn resource_pending_maintenance_actions(&self) -> ::std::option::Option<&crate::types::ResourcePendingMaintenanceActions> {
         self.resource_pending_maintenance_actions.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct ApplyPendingMaintenanceActionOutputBuilder {
     _request_id: Option<String>,
 }
 impl ApplyPendingMaintenanceActionOutputBuilder {
-    /// <p>Represents the output of <code>ApplyPendingMaintenanceAction</code>.</p>
+    /// <p>Represents the output of <code>ApplyPendingMaintenanceAction</code>. </p>
     pub fn resource_pending_maintenance_actions(mut self, input: crate::types::ResourcePendingMaintenanceActions) -> Self {
         self.resource_pending_maintenance_actions = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Represents the output of <code>ApplyPendingMaintenanceAction</code>.</p>
+    /// <p>Represents the output of <code>ApplyPendingMaintenanceAction</code>. </p>
     pub fn set_resource_pending_maintenance_actions(mut self, input: ::std::option::Option<crate::types::ResourcePendingMaintenanceActions>) -> Self {
         self.resource_pending_maintenance_actions = input;
         self
     }
-    /// <p>Represents the output of <code>ApplyPendingMaintenanceAction</code>.</p>
+    /// <p>Represents the output of <code>ApplyPendingMaintenanceAction</code>. </p>
     pub fn get_resource_pending_maintenance_actions(&self) -> &::std::option::Option<crate::types::ResourcePendingMaintenanceActions> {
         &self.resource_pending_maintenance_actions
     }

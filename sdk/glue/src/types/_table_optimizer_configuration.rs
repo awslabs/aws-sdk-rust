@@ -6,7 +6,7 @@
 pub struct TableOptimizerConfiguration {
     /// <p>A role passed by the caller which gives the service permission to update the resources associated with the optimizer on the caller's behalf.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Whether table optimization is enabled.</p>
+    /// <p>Whether table optimization is enabled. </p>
     pub enabled: ::std::option::Option<bool>,
 }
 impl TableOptimizerConfiguration {
@@ -14,7 +14,7 @@ impl TableOptimizerConfiguration {
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>Whether table optimization is enabled.</p>
+    /// <p>Whether table optimization is enabled. </p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
@@ -48,17 +48,17 @@ impl TableOptimizerConfigurationBuilder {
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
-    /// <p>Whether table optimization is enabled.</p>
+    /// <p>Whether table optimization is enabled. </p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Whether table optimization is enabled.</p>
+    /// <p>Whether table optimization is enabled. </p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }
-    /// <p>Whether table optimization is enabled.</p>
+    /// <p>Whether table optimization is enabled. </p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
         &self.enabled
     }

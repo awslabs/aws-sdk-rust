@@ -13,8 +13,8 @@ pub struct CoverageEksClusterDetails {
     /// <p>Information about the installed EKS add-on.</p>
     pub addon_details: ::std::option::Option<crate::types::AddonDetails>,
     /// <p>Indicates how the Amazon EKS add-on GuardDuty agent is managed for this EKS cluster.</p>
-    /// <p><code>AUTO_MANAGED</code> indicates GuardDuty deploys and manages updates for this resource.</p>
-    /// <p><code>MANUAL</code> indicates that you are responsible to deploy, update, and manage the Amazon EKS add-on GuardDuty agent for this resource.</p>
+    /// <p> <code>AUTO_MANAGED</code> indicates GuardDuty deploys and manages updates for this resource.</p>
+    /// <p> <code>MANUAL</code> indicates that you are responsible to deploy, update, and manage the Amazon EKS add-on GuardDuty agent for this resource.</p>
     pub management_type: ::std::option::Option<crate::types::ManagementType>,
 }
 impl CoverageEksClusterDetails {
@@ -35,8 +35,8 @@ impl CoverageEksClusterDetails {
         self.addon_details.as_ref()
     }
     /// <p>Indicates how the Amazon EKS add-on GuardDuty agent is managed for this EKS cluster.</p>
-    /// <p><code>AUTO_MANAGED</code> indicates GuardDuty deploys and manages updates for this resource.</p>
-    /// <p><code>MANUAL</code> indicates that you are responsible to deploy, update, and manage the Amazon EKS add-on GuardDuty agent for this resource.</p>
+    /// <p> <code>AUTO_MANAGED</code> indicates GuardDuty deploys and manages updates for this resource.</p>
+    /// <p> <code>MANUAL</code> indicates that you are responsible to deploy, update, and manage the Amazon EKS add-on GuardDuty agent for this resource.</p>
     pub fn management_type(&self) -> ::std::option::Option<&crate::types::ManagementType> {
         self.management_type.as_ref()
     }
@@ -116,22 +116,22 @@ impl CoverageEksClusterDetailsBuilder {
         &self.addon_details
     }
     /// <p>Indicates how the Amazon EKS add-on GuardDuty agent is managed for this EKS cluster.</p>
-    /// <p><code>AUTO_MANAGED</code> indicates GuardDuty deploys and manages updates for this resource.</p>
-    /// <p><code>MANUAL</code> indicates that you are responsible to deploy, update, and manage the Amazon EKS add-on GuardDuty agent for this resource.</p>
+    /// <p> <code>AUTO_MANAGED</code> indicates GuardDuty deploys and manages updates for this resource.</p>
+    /// <p> <code>MANUAL</code> indicates that you are responsible to deploy, update, and manage the Amazon EKS add-on GuardDuty agent for this resource.</p>
     pub fn management_type(mut self, input: crate::types::ManagementType) -> Self {
         self.management_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates how the Amazon EKS add-on GuardDuty agent is managed for this EKS cluster.</p>
-    /// <p><code>AUTO_MANAGED</code> indicates GuardDuty deploys and manages updates for this resource.</p>
-    /// <p><code>MANUAL</code> indicates that you are responsible to deploy, update, and manage the Amazon EKS add-on GuardDuty agent for this resource.</p>
+    /// <p> <code>AUTO_MANAGED</code> indicates GuardDuty deploys and manages updates for this resource.</p>
+    /// <p> <code>MANUAL</code> indicates that you are responsible to deploy, update, and manage the Amazon EKS add-on GuardDuty agent for this resource.</p>
     pub fn set_management_type(mut self, input: ::std::option::Option<crate::types::ManagementType>) -> Self {
         self.management_type = input;
         self
     }
     /// <p>Indicates how the Amazon EKS add-on GuardDuty agent is managed for this EKS cluster.</p>
-    /// <p><code>AUTO_MANAGED</code> indicates GuardDuty deploys and manages updates for this resource.</p>
-    /// <p><code>MANUAL</code> indicates that you are responsible to deploy, update, and manage the Amazon EKS add-on GuardDuty agent for this resource.</p>
+    /// <p> <code>AUTO_MANAGED</code> indicates GuardDuty deploys and manages updates for this resource.</p>
+    /// <p> <code>MANUAL</code> indicates that you are responsible to deploy, update, and manage the Amazon EKS add-on GuardDuty agent for this resource.</p>
     pub fn get_management_type(&self) -> &::std::option::Option<crate::types::ManagementType> {
         &self.management_type
     }

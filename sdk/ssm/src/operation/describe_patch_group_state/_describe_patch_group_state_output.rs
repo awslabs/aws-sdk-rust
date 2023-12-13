@@ -11,7 +11,7 @@ pub struct DescribePatchGroupStateOutput {
     pub instances_with_installed_other_patches: i32,
     /// <p>The number of managed nodes with patches installed by Patch Manager that haven't been rebooted after the patch installation. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
     pub instances_with_installed_pending_reboot_patches: ::std::option::Option<i32>,
-    /// <p>The number of managed nodes with patches installed that are specified in a <code>RejectedPatches</code> list. Patches with a status of <code>INSTALLED_REJECTED</code> were typically installed before they were added to a <code>RejectedPatches</code> list.</p><note>
+    /// <p>The number of managed nodes with patches installed that are specified in a <code>RejectedPatches</code> list. Patches with a status of <code>INSTALLED_REJECTED</code> were typically installed before they were added to a <code>RejectedPatches</code> list.</p> <note>
     /// <p>If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for <code>RejectedPatchesAction</code>, the value of <code>InstancesWithInstalledRejectedPatches</code> will always be <code>0</code> (zero).</p>
     /// </note>
     pub instances_with_installed_rejected_patches: ::std::option::Option<i32>,
@@ -48,7 +48,7 @@ impl DescribePatchGroupStateOutput {
     pub fn instances_with_installed_pending_reboot_patches(&self) -> ::std::option::Option<i32> {
         self.instances_with_installed_pending_reboot_patches
     }
-    /// <p>The number of managed nodes with patches installed that are specified in a <code>RejectedPatches</code> list. Patches with a status of <code>INSTALLED_REJECTED</code> were typically installed before they were added to a <code>RejectedPatches</code> list.</p><note>
+    /// <p>The number of managed nodes with patches installed that are specified in a <code>RejectedPatches</code> list. Patches with a status of <code>INSTALLED_REJECTED</code> were typically installed before they were added to a <code>RejectedPatches</code> list.</p> <note>
     /// <p>If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for <code>RejectedPatchesAction</code>, the value of <code>InstancesWithInstalledRejectedPatches</code> will always be <code>0</code> (zero).</p>
     /// </note>
     pub fn instances_with_installed_rejected_patches(&self) -> ::std::option::Option<i32> {
@@ -170,21 +170,21 @@ impl DescribePatchGroupStateOutputBuilder {
     pub fn get_instances_with_installed_pending_reboot_patches(&self) -> &::std::option::Option<i32> {
         &self.instances_with_installed_pending_reboot_patches
     }
-    /// <p>The number of managed nodes with patches installed that are specified in a <code>RejectedPatches</code> list. Patches with a status of <code>INSTALLED_REJECTED</code> were typically installed before they were added to a <code>RejectedPatches</code> list.</p><note>
+    /// <p>The number of managed nodes with patches installed that are specified in a <code>RejectedPatches</code> list. Patches with a status of <code>INSTALLED_REJECTED</code> were typically installed before they were added to a <code>RejectedPatches</code> list.</p> <note>
     /// <p>If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for <code>RejectedPatchesAction</code>, the value of <code>InstancesWithInstalledRejectedPatches</code> will always be <code>0</code> (zero).</p>
     /// </note>
     pub fn instances_with_installed_rejected_patches(mut self, input: i32) -> Self {
         self.instances_with_installed_rejected_patches = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of managed nodes with patches installed that are specified in a <code>RejectedPatches</code> list. Patches with a status of <code>INSTALLED_REJECTED</code> were typically installed before they were added to a <code>RejectedPatches</code> list.</p><note>
+    /// <p>The number of managed nodes with patches installed that are specified in a <code>RejectedPatches</code> list. Patches with a status of <code>INSTALLED_REJECTED</code> were typically installed before they were added to a <code>RejectedPatches</code> list.</p> <note>
     /// <p>If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for <code>RejectedPatchesAction</code>, the value of <code>InstancesWithInstalledRejectedPatches</code> will always be <code>0</code> (zero).</p>
     /// </note>
     pub fn set_instances_with_installed_rejected_patches(mut self, input: ::std::option::Option<i32>) -> Self {
         self.instances_with_installed_rejected_patches = input;
         self
     }
-    /// <p>The number of managed nodes with patches installed that are specified in a <code>RejectedPatches</code> list. Patches with a status of <code>INSTALLED_REJECTED</code> were typically installed before they were added to a <code>RejectedPatches</code> list.</p><note>
+    /// <p>The number of managed nodes with patches installed that are specified in a <code>RejectedPatches</code> list. Patches with a status of <code>INSTALLED_REJECTED</code> were typically installed before they were added to a <code>RejectedPatches</code> list.</p> <note>
     /// <p>If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for <code>RejectedPatchesAction</code>, the value of <code>InstancesWithInstalledRejectedPatches</code> will always be <code>0</code> (zero).</p>
     /// </note>
     pub fn get_instances_with_installed_rejected_patches(&self) -> &::std::option::Option<i32> {

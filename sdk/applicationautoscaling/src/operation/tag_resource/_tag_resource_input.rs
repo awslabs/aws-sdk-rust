@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>Identifies the Application Auto Scaling scalable target that you want to apply tags to.</p>
-    /// <p>For example: <code>arn:aws:application-autoscaling:us-east-1:123456789012:scalable-target/1234abcd56ab78cd901ef1234567890ab123</code></p>
+    /// <p>For example: <code>arn:aws:application-autoscaling:us-east-1:123456789012:scalable-target/1234abcd56ab78cd901ef1234567890ab123</code> </p>
     /// <p>To get the ARN for a scalable target, use <code>DescribeScalableTargets</code>.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource.</p>
@@ -15,7 +15,7 @@ pub struct TagResourceInput {
 }
 impl TagResourceInput {
     /// <p>Identifies the Application Auto Scaling scalable target that you want to apply tags to.</p>
-    /// <p>For example: <code>arn:aws:application-autoscaling:us-east-1:123456789012:scalable-target/1234abcd56ab78cd901ef1234567890ab123</code></p>
+    /// <p>For example: <code>arn:aws:application-autoscaling:us-east-1:123456789012:scalable-target/1234abcd56ab78cd901ef1234567890ab123</code> </p>
     /// <p>To get the ARN for a scalable target, use <code>DescribeScalableTargets</code>.</p>
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
@@ -44,7 +44,7 @@ pub struct TagResourceInputBuilder {
 }
 impl TagResourceInputBuilder {
     /// <p>Identifies the Application Auto Scaling scalable target that you want to apply tags to.</p>
-    /// <p>For example: <code>arn:aws:application-autoscaling:us-east-1:123456789012:scalable-target/1234abcd56ab78cd901ef1234567890ab123</code></p>
+    /// <p>For example: <code>arn:aws:application-autoscaling:us-east-1:123456789012:scalable-target/1234abcd56ab78cd901ef1234567890ab123</code> </p>
     /// <p>To get the ARN for a scalable target, use <code>DescribeScalableTargets</code>.</p>
     /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -52,14 +52,14 @@ impl TagResourceInputBuilder {
         self
     }
     /// <p>Identifies the Application Auto Scaling scalable target that you want to apply tags to.</p>
-    /// <p>For example: <code>arn:aws:application-autoscaling:us-east-1:123456789012:scalable-target/1234abcd56ab78cd901ef1234567890ab123</code></p>
+    /// <p>For example: <code>arn:aws:application-autoscaling:us-east-1:123456789012:scalable-target/1234abcd56ab78cd901ef1234567890ab123</code> </p>
     /// <p>To get the ARN for a scalable target, use <code>DescribeScalableTargets</code>.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
     }
     /// <p>Identifies the Application Auto Scaling scalable target that you want to apply tags to.</p>
-    /// <p>For example: <code>arn:aws:application-autoscaling:us-east-1:123456789012:scalable-target/1234abcd56ab78cd901ef1234567890ab123</code></p>
+    /// <p>For example: <code>arn:aws:application-autoscaling:us-east-1:123456789012:scalable-target/1234abcd56ab78cd901ef1234567890ab123</code> </p>
     /// <p>To get the ARN for a scalable target, use <code>DescribeScalableTargets</code>.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn

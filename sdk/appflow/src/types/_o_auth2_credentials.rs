@@ -12,7 +12,7 @@ pub struct OAuth2Credentials {
     pub access_token: ::std::option::Option<::std::string::String>,
     /// <p>The refresh token used to refresh an expired access token.</p>
     pub refresh_token: ::std::option::Option<::std::string::String>,
-    /// <p>Used by select connectors for which the OAuth workflow is supported, such as Salesforce, Google Analytics, Marketo, Zendesk, and Slack.</p>
+    /// <p> Used by select connectors for which the OAuth workflow is supported, such as Salesforce, Google Analytics, Marketo, Zendesk, and Slack. </p>
     pub o_auth_request: ::std::option::Option<crate::types::ConnectorOAuthRequest>,
 }
 impl OAuth2Credentials {
@@ -32,7 +32,7 @@ impl OAuth2Credentials {
     pub fn refresh_token(&self) -> ::std::option::Option<&str> {
         self.refresh_token.as_deref()
     }
-    /// <p>Used by select connectors for which the OAuth workflow is supported, such as Salesforce, Google Analytics, Marketo, Zendesk, and Slack.</p>
+    /// <p> Used by select connectors for which the OAuth workflow is supported, such as Salesforce, Google Analytics, Marketo, Zendesk, and Slack. </p>
     pub fn o_auth_request(&self) -> ::std::option::Option<&crate::types::ConnectorOAuthRequest> {
         self.o_auth_request.as_ref()
     }
@@ -122,17 +122,17 @@ impl OAuth2CredentialsBuilder {
     pub fn get_refresh_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.refresh_token
     }
-    /// <p>Used by select connectors for which the OAuth workflow is supported, such as Salesforce, Google Analytics, Marketo, Zendesk, and Slack.</p>
+    /// <p> Used by select connectors for which the OAuth workflow is supported, such as Salesforce, Google Analytics, Marketo, Zendesk, and Slack. </p>
     pub fn o_auth_request(mut self, input: crate::types::ConnectorOAuthRequest) -> Self {
         self.o_auth_request = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Used by select connectors for which the OAuth workflow is supported, such as Salesforce, Google Analytics, Marketo, Zendesk, and Slack.</p>
+    /// <p> Used by select connectors for which the OAuth workflow is supported, such as Salesforce, Google Analytics, Marketo, Zendesk, and Slack. </p>
     pub fn set_o_auth_request(mut self, input: ::std::option::Option<crate::types::ConnectorOAuthRequest>) -> Self {
         self.o_auth_request = input;
         self
     }
-    /// <p>Used by select connectors for which the OAuth workflow is supported, such as Salesforce, Google Analytics, Marketo, Zendesk, and Slack.</p>
+    /// <p> Used by select connectors for which the OAuth workflow is supported, such as Salesforce, Google Analytics, Marketo, Zendesk, and Slack. </p>
     pub fn get_o_auth_request(&self) -> &::std::option::Option<crate::types::ConnectorOAuthRequest> {
         &self.o_auth_request
     }

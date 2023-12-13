@@ -17,10 +17,8 @@ pub struct CreateHsmInput {
     pub external_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the type of subscription for the HSM.</p>
     /// <ul>
-    /// <li>
-    /// <p><b>PRODUCTION</b> - The HSM is being used in a production environment.</p></li>
-    /// <li>
-    /// <p><b>TRIAL</b> - The HSM is being used in a product trial.</p></li>
+    /// <li> <p> <b>PRODUCTION</b> - The HSM is being used in a production environment.</p> </li>
+    /// <li> <p> <b>TRIAL</b> - The HSM is being used in a product trial.</p> </li>
     /// </ul>
     pub subscription_type: ::std::option::Option<crate::types::SubscriptionType>,
     /// <p>A user-defined token to ensure idempotence. Subsequent calls to this operation with the same token will be ignored.</p>
@@ -52,10 +50,8 @@ impl CreateHsmInput {
     }
     /// <p>Specifies the type of subscription for the HSM.</p>
     /// <ul>
-    /// <li>
-    /// <p><b>PRODUCTION</b> - The HSM is being used in a production environment.</p></li>
-    /// <li>
-    /// <p><b>TRIAL</b> - The HSM is being used in a product trial.</p></li>
+    /// <li> <p> <b>PRODUCTION</b> - The HSM is being used in a production environment.</p> </li>
+    /// <li> <p> <b>TRIAL</b> - The HSM is being used in a product trial.</p> </li>
     /// </ul>
     pub fn subscription_type(&self) -> ::std::option::Option<&crate::types::SubscriptionType> {
         self.subscription_type.as_ref()
@@ -168,10 +164,8 @@ impl CreateHsmInputBuilder {
     }
     /// <p>Specifies the type of subscription for the HSM.</p>
     /// <ul>
-    /// <li>
-    /// <p><b>PRODUCTION</b> - The HSM is being used in a production environment.</p></li>
-    /// <li>
-    /// <p><b>TRIAL</b> - The HSM is being used in a product trial.</p></li>
+    /// <li> <p> <b>PRODUCTION</b> - The HSM is being used in a production environment.</p> </li>
+    /// <li> <p> <b>TRIAL</b> - The HSM is being used in a product trial.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn subscription_type(mut self, input: crate::types::SubscriptionType) -> Self {
@@ -180,10 +174,8 @@ impl CreateHsmInputBuilder {
     }
     /// <p>Specifies the type of subscription for the HSM.</p>
     /// <ul>
-    /// <li>
-    /// <p><b>PRODUCTION</b> - The HSM is being used in a production environment.</p></li>
-    /// <li>
-    /// <p><b>TRIAL</b> - The HSM is being used in a product trial.</p></li>
+    /// <li> <p> <b>PRODUCTION</b> - The HSM is being used in a production environment.</p> </li>
+    /// <li> <p> <b>TRIAL</b> - The HSM is being used in a product trial.</p> </li>
     /// </ul>
     pub fn set_subscription_type(mut self, input: ::std::option::Option<crate::types::SubscriptionType>) -> Self {
         self.subscription_type = input;
@@ -191,10 +183,8 @@ impl CreateHsmInputBuilder {
     }
     /// <p>Specifies the type of subscription for the HSM.</p>
     /// <ul>
-    /// <li>
-    /// <p><b>PRODUCTION</b> - The HSM is being used in a production environment.</p></li>
-    /// <li>
-    /// <p><b>TRIAL</b> - The HSM is being used in a product trial.</p></li>
+    /// <li> <p> <b>PRODUCTION</b> - The HSM is being used in a production environment.</p> </li>
+    /// <li> <p> <b>TRIAL</b> - The HSM is being used in a product trial.</p> </li>
     /// </ul>
     pub fn get_subscription_type(&self) -> &::std::option::Option<crate::types::SubscriptionType> {
         &self.subscription_type

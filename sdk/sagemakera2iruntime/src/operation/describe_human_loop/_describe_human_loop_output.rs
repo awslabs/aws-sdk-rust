@@ -8,9 +8,9 @@ pub struct DescribeHumanLoopOutput {
     /// <p>The reason why a human loop failed. The failure reason is returned when the status of the human loop is <code>Failed</code>.</p>
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>A failure code that identifies the type of failure.</p>
-    /// <p>Possible values: <code>ValidationError</code>, <code>Expired</code>, <code>InternalError</code></p>
+    /// <p>Possible values: <code>ValidationError</code>, <code>Expired</code>, <code>InternalError</code> </p>
     pub failure_code: ::std::option::Option<::std::string::String>,
-    /// <p>The status of the human loop.</p>
+    /// <p>The status of the human loop. </p>
     pub human_loop_status: ::std::option::Option<crate::types::HumanLoopStatus>,
     /// <p>The name of the human loop. The name must be lowercase, unique within the Region in your account, and can have up to 63 characters. Valid characters: a-z, 0-9, and - (hyphen).</p>
     pub human_loop_name: ::std::option::Option<::std::string::String>,
@@ -32,11 +32,11 @@ impl DescribeHumanLoopOutput {
         self.failure_reason.as_deref()
     }
     /// <p>A failure code that identifies the type of failure.</p>
-    /// <p>Possible values: <code>ValidationError</code>, <code>Expired</code>, <code>InternalError</code></p>
+    /// <p>Possible values: <code>ValidationError</code>, <code>Expired</code>, <code>InternalError</code> </p>
     pub fn failure_code(&self) -> ::std::option::Option<&str> {
         self.failure_code.as_deref()
     }
-    /// <p>The status of the human loop.</p>
+    /// <p>The status of the human loop. </p>
     pub fn human_loop_status(&self) -> ::std::option::Option<&crate::types::HumanLoopStatus> {
         self.human_loop_status.as_ref()
     }
@@ -114,34 +114,34 @@ impl DescribeHumanLoopOutputBuilder {
         &self.failure_reason
     }
     /// <p>A failure code that identifies the type of failure.</p>
-    /// <p>Possible values: <code>ValidationError</code>, <code>Expired</code>, <code>InternalError</code></p>
+    /// <p>Possible values: <code>ValidationError</code>, <code>Expired</code>, <code>InternalError</code> </p>
     pub fn failure_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A failure code that identifies the type of failure.</p>
-    /// <p>Possible values: <code>ValidationError</code>, <code>Expired</code>, <code>InternalError</code></p>
+    /// <p>Possible values: <code>ValidationError</code>, <code>Expired</code>, <code>InternalError</code> </p>
     pub fn set_failure_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_code = input;
         self
     }
     /// <p>A failure code that identifies the type of failure.</p>
-    /// <p>Possible values: <code>ValidationError</code>, <code>Expired</code>, <code>InternalError</code></p>
+    /// <p>Possible values: <code>ValidationError</code>, <code>Expired</code>, <code>InternalError</code> </p>
     pub fn get_failure_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.failure_code
     }
-    /// <p>The status of the human loop.</p>
+    /// <p>The status of the human loop. </p>
     /// This field is required.
     pub fn human_loop_status(mut self, input: crate::types::HumanLoopStatus) -> Self {
         self.human_loop_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the human loop.</p>
+    /// <p>The status of the human loop. </p>
     pub fn set_human_loop_status(mut self, input: ::std::option::Option<crate::types::HumanLoopStatus>) -> Self {
         self.human_loop_status = input;
         self
     }
-    /// <p>The status of the human loop.</p>
+    /// <p>The status of the human loop. </p>
     pub fn get_human_loop_status(&self) -> &::std::option::Option<crate::types::HumanLoopStatus> {
         &self.human_loop_status
     }

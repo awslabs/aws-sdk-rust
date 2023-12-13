@@ -8,16 +8,11 @@ pub struct LoadBalancerState {
     pub load_balancer_name: ::std::option::Option<::std::string::String>,
     /// <p>One of the following load balancer states:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Adding</code> - The Auto Scaling instances are being registered with the load balancer.</p></li>
-    /// <li>
-    /// <p><code>Added</code> - All Auto Scaling instances are registered with the load balancer.</p></li>
-    /// <li>
-    /// <p><code>InService</code> - At least one Auto Scaling instance passed an <code>ELB</code> health check.</p></li>
-    /// <li>
-    /// <p><code>Removing</code> - The Auto Scaling instances are being deregistered from the load balancer. If connection draining is enabled, Elastic Load Balancing waits for in-flight requests to complete before deregistering the instances.</p></li>
-    /// <li>
-    /// <p><code>Removed</code> - All Auto Scaling instances are deregistered from the load balancer.</p></li>
+    /// <li> <p> <code>Adding</code> - The Auto Scaling instances are being registered with the load balancer.</p> </li>
+    /// <li> <p> <code>Added</code> - All Auto Scaling instances are registered with the load balancer.</p> </li>
+    /// <li> <p> <code>InService</code> - At least one Auto Scaling instance passed an <code>ELB</code> health check.</p> </li>
+    /// <li> <p> <code>Removing</code> - The Auto Scaling instances are being deregistered from the load balancer. If connection draining is enabled, Elastic Load Balancing waits for in-flight requests to complete before deregistering the instances.</p> </li>
+    /// <li> <p> <code>Removed</code> - All Auto Scaling instances are deregistered from the load balancer.</p> </li>
     /// </ul>
     pub state: ::std::option::Option<::std::string::String>,
 }
@@ -28,16 +23,11 @@ impl LoadBalancerState {
     }
     /// <p>One of the following load balancer states:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Adding</code> - The Auto Scaling instances are being registered with the load balancer.</p></li>
-    /// <li>
-    /// <p><code>Added</code> - All Auto Scaling instances are registered with the load balancer.</p></li>
-    /// <li>
-    /// <p><code>InService</code> - At least one Auto Scaling instance passed an <code>ELB</code> health check.</p></li>
-    /// <li>
-    /// <p><code>Removing</code> - The Auto Scaling instances are being deregistered from the load balancer. If connection draining is enabled, Elastic Load Balancing waits for in-flight requests to complete before deregistering the instances.</p></li>
-    /// <li>
-    /// <p><code>Removed</code> - All Auto Scaling instances are deregistered from the load balancer.</p></li>
+    /// <li> <p> <code>Adding</code> - The Auto Scaling instances are being registered with the load balancer.</p> </li>
+    /// <li> <p> <code>Added</code> - All Auto Scaling instances are registered with the load balancer.</p> </li>
+    /// <li> <p> <code>InService</code> - At least one Auto Scaling instance passed an <code>ELB</code> health check.</p> </li>
+    /// <li> <p> <code>Removing</code> - The Auto Scaling instances are being deregistered from the load balancer. If connection draining is enabled, Elastic Load Balancing waits for in-flight requests to complete before deregistering the instances.</p> </li>
+    /// <li> <p> <code>Removed</code> - All Auto Scaling instances are deregistered from the load balancer.</p> </li>
     /// </ul>
     pub fn state(&self) -> ::std::option::Option<&str> {
         self.state.as_deref()
@@ -74,16 +64,11 @@ impl LoadBalancerStateBuilder {
     }
     /// <p>One of the following load balancer states:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Adding</code> - The Auto Scaling instances are being registered with the load balancer.</p></li>
-    /// <li>
-    /// <p><code>Added</code> - All Auto Scaling instances are registered with the load balancer.</p></li>
-    /// <li>
-    /// <p><code>InService</code> - At least one Auto Scaling instance passed an <code>ELB</code> health check.</p></li>
-    /// <li>
-    /// <p><code>Removing</code> - The Auto Scaling instances are being deregistered from the load balancer. If connection draining is enabled, Elastic Load Balancing waits for in-flight requests to complete before deregistering the instances.</p></li>
-    /// <li>
-    /// <p><code>Removed</code> - All Auto Scaling instances are deregistered from the load balancer.</p></li>
+    /// <li> <p> <code>Adding</code> - The Auto Scaling instances are being registered with the load balancer.</p> </li>
+    /// <li> <p> <code>Added</code> - All Auto Scaling instances are registered with the load balancer.</p> </li>
+    /// <li> <p> <code>InService</code> - At least one Auto Scaling instance passed an <code>ELB</code> health check.</p> </li>
+    /// <li> <p> <code>Removing</code> - The Auto Scaling instances are being deregistered from the load balancer. If connection draining is enabled, Elastic Load Balancing waits for in-flight requests to complete before deregistering the instances.</p> </li>
+    /// <li> <p> <code>Removed</code> - All Auto Scaling instances are deregistered from the load balancer.</p> </li>
     /// </ul>
     pub fn state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state = ::std::option::Option::Some(input.into());
@@ -91,16 +76,11 @@ impl LoadBalancerStateBuilder {
     }
     /// <p>One of the following load balancer states:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Adding</code> - The Auto Scaling instances are being registered with the load balancer.</p></li>
-    /// <li>
-    /// <p><code>Added</code> - All Auto Scaling instances are registered with the load balancer.</p></li>
-    /// <li>
-    /// <p><code>InService</code> - At least one Auto Scaling instance passed an <code>ELB</code> health check.</p></li>
-    /// <li>
-    /// <p><code>Removing</code> - The Auto Scaling instances are being deregistered from the load balancer. If connection draining is enabled, Elastic Load Balancing waits for in-flight requests to complete before deregistering the instances.</p></li>
-    /// <li>
-    /// <p><code>Removed</code> - All Auto Scaling instances are deregistered from the load balancer.</p></li>
+    /// <li> <p> <code>Adding</code> - The Auto Scaling instances are being registered with the load balancer.</p> </li>
+    /// <li> <p> <code>Added</code> - All Auto Scaling instances are registered with the load balancer.</p> </li>
+    /// <li> <p> <code>InService</code> - At least one Auto Scaling instance passed an <code>ELB</code> health check.</p> </li>
+    /// <li> <p> <code>Removing</code> - The Auto Scaling instances are being deregistered from the load balancer. If connection draining is enabled, Elastic Load Balancing waits for in-flight requests to complete before deregistering the instances.</p> </li>
+    /// <li> <p> <code>Removed</code> - All Auto Scaling instances are deregistered from the load balancer.</p> </li>
     /// </ul>
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state = input;
@@ -108,16 +88,11 @@ impl LoadBalancerStateBuilder {
     }
     /// <p>One of the following load balancer states:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Adding</code> - The Auto Scaling instances are being registered with the load balancer.</p></li>
-    /// <li>
-    /// <p><code>Added</code> - All Auto Scaling instances are registered with the load balancer.</p></li>
-    /// <li>
-    /// <p><code>InService</code> - At least one Auto Scaling instance passed an <code>ELB</code> health check.</p></li>
-    /// <li>
-    /// <p><code>Removing</code> - The Auto Scaling instances are being deregistered from the load balancer. If connection draining is enabled, Elastic Load Balancing waits for in-flight requests to complete before deregistering the instances.</p></li>
-    /// <li>
-    /// <p><code>Removed</code> - All Auto Scaling instances are deregistered from the load balancer.</p></li>
+    /// <li> <p> <code>Adding</code> - The Auto Scaling instances are being registered with the load balancer.</p> </li>
+    /// <li> <p> <code>Added</code> - All Auto Scaling instances are registered with the load balancer.</p> </li>
+    /// <li> <p> <code>InService</code> - At least one Auto Scaling instance passed an <code>ELB</code> health check.</p> </li>
+    /// <li> <p> <code>Removing</code> - The Auto Scaling instances are being deregistered from the load balancer. If connection draining is enabled, Elastic Load Balancing waits for in-flight requests to complete before deregistering the instances.</p> </li>
+    /// <li> <p> <code>Removed</code> - All Auto Scaling instances are deregistered from the load balancer.</p> </li>
     /// </ul>
     pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
         &self.state

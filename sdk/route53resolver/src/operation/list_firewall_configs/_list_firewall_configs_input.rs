@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFirewallConfigsInput {
     /// <p>The maximum number of objects that you want Resolver to return for this request. If more objects are available, in the response, Resolver provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
-    /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects.</p>
+    /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>For the first call to this list request, omit this value.</p>
     /// <p>When you request a list of objects, Resolver returns at most the number of objects specified in <code>MaxResults</code>. If more objects are available for retrieval, Resolver returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token that was returned for the prior request in your next request.</p>
@@ -12,7 +12,7 @@ pub struct ListFirewallConfigsInput {
 }
 impl ListFirewallConfigsInput {
     /// <p>The maximum number of objects that you want Resolver to return for this request. If more objects are available, in the response, Resolver provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
-    /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects.</p>
+    /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -38,19 +38,19 @@ pub struct ListFirewallConfigsInputBuilder {
 }
 impl ListFirewallConfigsInputBuilder {
     /// <p>The maximum number of objects that you want Resolver to return for this request. If more objects are available, in the response, Resolver provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
-    /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects.</p>
+    /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of objects that you want Resolver to return for this request. If more objects are available, in the response, Resolver provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
-    /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects.</p>
+    /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
     /// <p>The maximum number of objects that you want Resolver to return for this request. If more objects are available, in the response, Resolver provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
-    /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects.</p>
+    /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

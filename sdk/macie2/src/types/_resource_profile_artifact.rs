@@ -8,12 +8,9 @@ pub struct ResourceProfileArtifact {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the analysis. Possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>COMPLETE - Amazon Macie successfully completed its analysis of the object.</p></li>
-    /// <li>
-    /// <p>PARTIAL - Macie analyzed only a subset of data in the object. For example, the object is an archive file that contains files in an unsupported format.</p></li>
-    /// <li>
-    /// <p>SKIPPED - Macie wasn't able to analyze the object. For example, the object is a malformed file.</p></li>
+    /// <li><p>COMPLETE - Amazon Macie successfully completed its analysis of the object.</p></li>
+    /// <li><p>PARTIAL - Macie analyzed only a subset of data in the object. For example, the object is an archive file that contains files in an unsupported format.</p></li>
+    /// <li><p>SKIPPED - Macie wasn't able to analyze the object. For example, the object is a malformed file.</p></li>
     /// </ul>
     pub classification_result_status: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether Amazon Macie found sensitive data in the object.</p>
@@ -26,12 +23,9 @@ impl ResourceProfileArtifact {
     }
     /// <p>The status of the analysis. Possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>COMPLETE - Amazon Macie successfully completed its analysis of the object.</p></li>
-    /// <li>
-    /// <p>PARTIAL - Macie analyzed only a subset of data in the object. For example, the object is an archive file that contains files in an unsupported format.</p></li>
-    /// <li>
-    /// <p>SKIPPED - Macie wasn't able to analyze the object. For example, the object is a malformed file.</p></li>
+    /// <li><p>COMPLETE - Amazon Macie successfully completed its analysis of the object.</p></li>
+    /// <li><p>PARTIAL - Macie analyzed only a subset of data in the object. For example, the object is an archive file that contains files in an unsupported format.</p></li>
+    /// <li><p>SKIPPED - Macie wasn't able to analyze the object. For example, the object is a malformed file.</p></li>
     /// </ul>
     pub fn classification_result_status(&self) -> ::std::option::Option<&str> {
         self.classification_result_status.as_deref()
@@ -74,12 +68,9 @@ impl ResourceProfileArtifactBuilder {
     }
     /// <p>The status of the analysis. Possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>COMPLETE - Amazon Macie successfully completed its analysis of the object.</p></li>
-    /// <li>
-    /// <p>PARTIAL - Macie analyzed only a subset of data in the object. For example, the object is an archive file that contains files in an unsupported format.</p></li>
-    /// <li>
-    /// <p>SKIPPED - Macie wasn't able to analyze the object. For example, the object is a malformed file.</p></li>
+    /// <li><p>COMPLETE - Amazon Macie successfully completed its analysis of the object.</p></li>
+    /// <li><p>PARTIAL - Macie analyzed only a subset of data in the object. For example, the object is an archive file that contains files in an unsupported format.</p></li>
+    /// <li><p>SKIPPED - Macie wasn't able to analyze the object. For example, the object is a malformed file.</p></li>
     /// </ul>
     /// This field is required.
     pub fn classification_result_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -88,12 +79,9 @@ impl ResourceProfileArtifactBuilder {
     }
     /// <p>The status of the analysis. Possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>COMPLETE - Amazon Macie successfully completed its analysis of the object.</p></li>
-    /// <li>
-    /// <p>PARTIAL - Macie analyzed only a subset of data in the object. For example, the object is an archive file that contains files in an unsupported format.</p></li>
-    /// <li>
-    /// <p>SKIPPED - Macie wasn't able to analyze the object. For example, the object is a malformed file.</p></li>
+    /// <li><p>COMPLETE - Amazon Macie successfully completed its analysis of the object.</p></li>
+    /// <li><p>PARTIAL - Macie analyzed only a subset of data in the object. For example, the object is an archive file that contains files in an unsupported format.</p></li>
+    /// <li><p>SKIPPED - Macie wasn't able to analyze the object. For example, the object is a malformed file.</p></li>
     /// </ul>
     pub fn set_classification_result_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.classification_result_status = input;
@@ -101,12 +89,9 @@ impl ResourceProfileArtifactBuilder {
     }
     /// <p>The status of the analysis. Possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>COMPLETE - Amazon Macie successfully completed its analysis of the object.</p></li>
-    /// <li>
-    /// <p>PARTIAL - Macie analyzed only a subset of data in the object. For example, the object is an archive file that contains files in an unsupported format.</p></li>
-    /// <li>
-    /// <p>SKIPPED - Macie wasn't able to analyze the object. For example, the object is a malformed file.</p></li>
+    /// <li><p>COMPLETE - Amazon Macie successfully completed its analysis of the object.</p></li>
+    /// <li><p>PARTIAL - Macie analyzed only a subset of data in the object. For example, the object is an archive file that contains files in an unsupported format.</p></li>
+    /// <li><p>SKIPPED - Macie wasn't able to analyze the object. For example, the object is a malformed file.</p></li>
     /// </ul>
     pub fn get_classification_result_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.classification_result_status

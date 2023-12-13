@@ -22,7 +22,7 @@ impl UpdateRecommenderInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateRecommender`.
 ///
-/// <p>Updates the recommender to modify the recommender configuration. If you update the recommender to modify the columns used in training, Amazon Personalize automatically starts a full retraining of the models backing your recommender. While the update completes, you can still get recommendations from the recommender. The recommender uses the previous configuration until the update completes. To track the status of this update, use the <code>latestRecommenderUpdate</code> returned in the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeRecommender.html">DescribeRecommender</a> operation.</p>
+/// <p>Updates the recommender to modify the recommender configuration. If you update the recommender to modify the columns used in training, Amazon Personalize automatically starts a full retraining of the models backing your recommender. While the update completes, you can still get recommendations from the recommender. The recommender uses the previous configuration until the update completes. To track the status of this update, use the <code>latestRecommenderUpdate</code> returned in the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeRecommender.html">DescribeRecommender</a> operation. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateRecommenderFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

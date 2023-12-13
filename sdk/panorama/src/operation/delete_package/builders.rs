@@ -22,7 +22,7 @@ impl DeletePackageInputBuilder {
 }
 /// Fluent builder constructing a request to `DeletePackage`.
 ///
-/// <p>Deletes a package.</p><note>
+/// <p>Deletes a package.</p> <note>
 /// <p>To delete a package, you need permission to call <code>s3:DeleteObject</code> in addition to permissions for the AWS Panorama API.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

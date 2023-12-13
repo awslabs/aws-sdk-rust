@@ -115,45 +115,45 @@ impl ListModelCustomizationJobsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_model_customization_jobs::paginator::ListModelCustomizationJobsPaginator {
         crate::operation::list_model_customization_jobs::paginator::ListModelCustomizationJobsPaginator::new(self.handle, self.inner)
     }
-    /// <p>Return customization jobs created after the specified time.</p>
+    /// <p>Return customization jobs created after the specified time. </p>
     pub fn creation_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.creation_time_after(input);
         self
     }
-    /// <p>Return customization jobs created after the specified time.</p>
+    /// <p>Return customization jobs created after the specified time. </p>
     pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_after(input);
         self
     }
-    /// <p>Return customization jobs created after the specified time.</p>
+    /// <p>Return customization jobs created after the specified time. </p>
     pub fn get_creation_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_creation_time_after()
     }
-    /// <p>Return customization jobs created before the specified time.</p>
+    /// <p>Return customization jobs created before the specified time. </p>
     pub fn creation_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.creation_time_before(input);
         self
     }
-    /// <p>Return customization jobs created before the specified time.</p>
+    /// <p>Return customization jobs created before the specified time. </p>
     pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_before(input);
         self
     }
-    /// <p>Return customization jobs created before the specified time.</p>
+    /// <p>Return customization jobs created before the specified time. </p>
     pub fn get_creation_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_creation_time_before()
     }
-    /// <p>Return customization jobs with the specified status.</p>
+    /// <p>Return customization jobs with the specified status. </p>
     pub fn status_equals(mut self, input: crate::types::FineTuningJobStatus) -> Self {
         self.inner = self.inner.status_equals(input);
         self
     }
-    /// <p>Return customization jobs with the specified status.</p>
+    /// <p>Return customization jobs with the specified status. </p>
     pub fn set_status_equals(mut self, input: ::std::option::Option<crate::types::FineTuningJobStatus>) -> Self {
         self.inner = self.inner.set_status_equals(input);
         self
     }
-    /// <p>Return customization jobs with the specified status.</p>
+    /// <p>Return customization jobs with the specified status. </p>
     pub fn get_status_equals(&self) -> &::std::option::Option<crate::types::FineTuningJobStatus> {
         self.inner.get_status_equals()
     }

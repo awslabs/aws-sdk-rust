@@ -18,7 +18,7 @@ pub struct AnomalyDetector {
     pub stat: ::std::option::Option<::std::string::String>,
     /// <p>The configuration specifies details about how the anomaly detection model is to be trained, including time ranges to exclude from use for training the model, and the time zone to use for the metric.</p>
     pub configuration: ::std::option::Option<crate::types::AnomalyDetectorConfiguration>,
-    /// <p>The current status of the anomaly detector's training. The possible values are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code></p>
+    /// <p>The current status of the anomaly detector's training. The possible values are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code> </p>
     pub state_value: ::std::option::Option<crate::types::AnomalyDetectorStateValue>,
     /// <p>The CloudWatch metric and statistic for this anomaly detector.</p>
     pub single_metric_anomaly_detector: ::std::option::Option<crate::types::SingleMetricAnomalyDetector>,
@@ -52,7 +52,7 @@ impl AnomalyDetector {
     pub fn configuration(&self) -> ::std::option::Option<&crate::types::AnomalyDetectorConfiguration> {
         self.configuration.as_ref()
     }
-    /// <p>The current status of the anomaly detector's training. The possible values are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code></p>
+    /// <p>The current status of the anomaly detector's training. The possible values are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code> </p>
     pub fn state_value(&self) -> ::std::option::Option<&crate::types::AnomalyDetectorStateValue> {
         self.state_value.as_ref()
     }
@@ -174,17 +174,17 @@ impl AnomalyDetectorBuilder {
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::AnomalyDetectorConfiguration> {
         &self.configuration
     }
-    /// <p>The current status of the anomaly detector's training. The possible values are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code></p>
+    /// <p>The current status of the anomaly detector's training. The possible values are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code> </p>
     pub fn state_value(mut self, input: crate::types::AnomalyDetectorStateValue) -> Self {
         self.state_value = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current status of the anomaly detector's training. The possible values are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code></p>
+    /// <p>The current status of the anomaly detector's training. The possible values are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code> </p>
     pub fn set_state_value(mut self, input: ::std::option::Option<crate::types::AnomalyDetectorStateValue>) -> Self {
         self.state_value = input;
         self
     }
-    /// <p>The current status of the anomaly detector's training. The possible values are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code></p>
+    /// <p>The current status of the anomaly detector's training. The possible values are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code> </p>
     pub fn get_state_value(&self) -> &::std::option::Option<crate::types::AnomalyDetectorStateValue> {
         &self.state_value
     }

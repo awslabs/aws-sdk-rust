@@ -24,7 +24,8 @@ impl DescribeDashboardSnapshotJobResultInputBuilder {
 ///
 /// <p>Describes the result of an existing snapshot job that has finished running.</p>
 /// <p>A finished snapshot job will return a <code>COMPLETED</code> or <code>FAILED</code> status when you poll the job with a <code>DescribeDashboardSnapshotJob</code> API call.</p>
-/// <p>If the job has not finished running, this operation returns a message that says <code>Dashboard Snapshot Job with id <snapshotjobid>
+/// <p>If the job has not finished running, this operation returns a message that says <code>Dashboard Snapshot Job with id
+/// <snapshotjobid>
 /// has not reached a terminal state.
 /// </snapshotjobid></code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

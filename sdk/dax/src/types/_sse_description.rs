@@ -6,28 +6,20 @@
 pub struct SseDescription {
     /// <p>The current state of server-side encryption:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ENABLING</code> - Server-side encryption is being enabled.</p></li>
-    /// <li>
-    /// <p><code>ENABLED</code> - Server-side encryption is enabled.</p></li>
-    /// <li>
-    /// <p><code>DISABLING</code> - Server-side encryption is being disabled.</p></li>
-    /// <li>
-    /// <p><code>DISABLED</code> - Server-side encryption is disabled.</p></li>
+    /// <li> <p> <code>ENABLING</code> - Server-side encryption is being enabled.</p> </li>
+    /// <li> <p> <code>ENABLED</code> - Server-side encryption is enabled.</p> </li>
+    /// <li> <p> <code>DISABLING</code> - Server-side encryption is being disabled.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - Server-side encryption is disabled.</p> </li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::SseStatus>,
 }
 impl SseDescription {
     /// <p>The current state of server-side encryption:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ENABLING</code> - Server-side encryption is being enabled.</p></li>
-    /// <li>
-    /// <p><code>ENABLED</code> - Server-side encryption is enabled.</p></li>
-    /// <li>
-    /// <p><code>DISABLING</code> - Server-side encryption is being disabled.</p></li>
-    /// <li>
-    /// <p><code>DISABLED</code> - Server-side encryption is disabled.</p></li>
+    /// <li> <p> <code>ENABLING</code> - Server-side encryption is being enabled.</p> </li>
+    /// <li> <p> <code>ENABLED</code> - Server-side encryption is enabled.</p> </li>
+    /// <li> <p> <code>DISABLING</code> - Server-side encryption is being disabled.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - Server-side encryption is disabled.</p> </li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::SseStatus> {
         self.status.as_ref()
@@ -49,14 +41,10 @@ pub struct SseDescriptionBuilder {
 impl SseDescriptionBuilder {
     /// <p>The current state of server-side encryption:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ENABLING</code> - Server-side encryption is being enabled.</p></li>
-    /// <li>
-    /// <p><code>ENABLED</code> - Server-side encryption is enabled.</p></li>
-    /// <li>
-    /// <p><code>DISABLING</code> - Server-side encryption is being disabled.</p></li>
-    /// <li>
-    /// <p><code>DISABLED</code> - Server-side encryption is disabled.</p></li>
+    /// <li> <p> <code>ENABLING</code> - Server-side encryption is being enabled.</p> </li>
+    /// <li> <p> <code>ENABLED</code> - Server-side encryption is enabled.</p> </li>
+    /// <li> <p> <code>DISABLING</code> - Server-side encryption is being disabled.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - Server-side encryption is disabled.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::SseStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -64,14 +52,10 @@ impl SseDescriptionBuilder {
     }
     /// <p>The current state of server-side encryption:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ENABLING</code> - Server-side encryption is being enabled.</p></li>
-    /// <li>
-    /// <p><code>ENABLED</code> - Server-side encryption is enabled.</p></li>
-    /// <li>
-    /// <p><code>DISABLING</code> - Server-side encryption is being disabled.</p></li>
-    /// <li>
-    /// <p><code>DISABLED</code> - Server-side encryption is disabled.</p></li>
+    /// <li> <p> <code>ENABLING</code> - Server-side encryption is being enabled.</p> </li>
+    /// <li> <p> <code>ENABLED</code> - Server-side encryption is enabled.</p> </li>
+    /// <li> <p> <code>DISABLING</code> - Server-side encryption is being disabled.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - Server-side encryption is disabled.</p> </li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::SseStatus>) -> Self {
         self.status = input;
@@ -79,14 +63,10 @@ impl SseDescriptionBuilder {
     }
     /// <p>The current state of server-side encryption:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ENABLING</code> - Server-side encryption is being enabled.</p></li>
-    /// <li>
-    /// <p><code>ENABLED</code> - Server-side encryption is enabled.</p></li>
-    /// <li>
-    /// <p><code>DISABLING</code> - Server-side encryption is being disabled.</p></li>
-    /// <li>
-    /// <p><code>DISABLED</code> - Server-side encryption is disabled.</p></li>
+    /// <li> <p> <code>ENABLING</code> - Server-side encryption is being enabled.</p> </li>
+    /// <li> <p> <code>ENABLED</code> - Server-side encryption is enabled.</p> </li>
+    /// <li> <p> <code>DISABLING</code> - Server-side encryption is being disabled.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - Server-side encryption is disabled.</p> </li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::SseStatus> {
         &self.status

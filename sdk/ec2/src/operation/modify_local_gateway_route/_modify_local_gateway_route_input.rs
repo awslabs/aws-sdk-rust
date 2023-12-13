@@ -7,13 +7,13 @@ pub struct ModifyLocalGatewayRouteInput {
     pub destination_cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the local gateway route table.</p>
     pub local_gateway_route_table_id: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the virtual interface group.</p>
+    /// <p> The ID of the virtual interface group. </p>
     pub local_gateway_virtual_interface_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the network interface.</p>
     pub network_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
-    /// <p>The ID of the prefix list. Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request.</p>
+    /// <p> The ID of the prefix list. Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request. </p>
     pub destination_prefix_list_id: ::std::option::Option<::std::string::String>,
 }
 impl ModifyLocalGatewayRouteInput {
@@ -25,7 +25,7 @@ impl ModifyLocalGatewayRouteInput {
     pub fn local_gateway_route_table_id(&self) -> ::std::option::Option<&str> {
         self.local_gateway_route_table_id.as_deref()
     }
-    /// <p>The ID of the virtual interface group.</p>
+    /// <p> The ID of the virtual interface group. </p>
     pub fn local_gateway_virtual_interface_group_id(&self) -> ::std::option::Option<&str> {
         self.local_gateway_virtual_interface_group_id.as_deref()
     }
@@ -37,7 +37,7 @@ impl ModifyLocalGatewayRouteInput {
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
-    /// <p>The ID of the prefix list. Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request.</p>
+    /// <p> The ID of the prefix list. Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request. </p>
     pub fn destination_prefix_list_id(&self) -> ::std::option::Option<&str> {
         self.destination_prefix_list_id.as_deref()
     }
@@ -90,17 +90,17 @@ impl ModifyLocalGatewayRouteInputBuilder {
     pub fn get_local_gateway_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.local_gateway_route_table_id
     }
-    /// <p>The ID of the virtual interface group.</p>
+    /// <p> The ID of the virtual interface group. </p>
     pub fn local_gateway_virtual_interface_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.local_gateway_virtual_interface_group_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the virtual interface group.</p>
+    /// <p> The ID of the virtual interface group. </p>
     pub fn set_local_gateway_virtual_interface_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.local_gateway_virtual_interface_group_id = input;
         self
     }
-    /// <p>The ID of the virtual interface group.</p>
+    /// <p> The ID of the virtual interface group. </p>
     pub fn get_local_gateway_virtual_interface_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.local_gateway_virtual_interface_group_id
     }
@@ -132,17 +132,17 @@ impl ModifyLocalGatewayRouteInputBuilder {
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
-    /// <p>The ID of the prefix list. Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request.</p>
+    /// <p> The ID of the prefix list. Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request. </p>
     pub fn destination_prefix_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_prefix_list_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the prefix list. Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request.</p>
+    /// <p> The ID of the prefix list. Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request. </p>
     pub fn set_destination_prefix_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_prefix_list_id = input;
         self
     }
-    /// <p>The ID of the prefix list. Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request.</p>
+    /// <p> The ID of the prefix list. Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request. </p>
     pub fn get_destination_prefix_list_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination_prefix_list_id
     }

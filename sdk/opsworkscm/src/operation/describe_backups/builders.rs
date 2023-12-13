@@ -22,9 +22,9 @@ impl DescribeBackupsInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeBackups`.
 ///
-/// <p>Describes backups. The results are ordered by time, with newest backups first. If you do not specify a BackupId or ServerName, the command returns all backups.</p>
-/// <p>This operation is synchronous.</p>
-/// <p>A <code>ResourceNotFoundException</code> is thrown when the backup does not exist. A <code>ValidationException</code> is raised when parameters of the request are not valid.</p>
+/// <p> Describes backups. The results are ordered by time, with newest backups first. If you do not specify a BackupId or ServerName, the command returns all backups. </p>
+/// <p> This operation is synchronous. </p>
+/// <p> A <code>ResourceNotFoundException</code> is thrown when the backup does not exist. A <code>ValidationException</code> is raised when parameters of the request are not valid. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeBackupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -116,31 +116,31 @@ impl DescribeBackupsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_backups::paginator::DescribeBackupsPaginator {
         crate::operation::describe_backups::paginator::DescribeBackupsPaginator::new(self.handle, self.inner)
     }
-    /// <p>Describes a single backup.</p>
+    /// <p>Describes a single backup. </p>
     pub fn backup_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.backup_id(input.into());
         self
     }
-    /// <p>Describes a single backup.</p>
+    /// <p>Describes a single backup. </p>
     pub fn set_backup_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_backup_id(input);
         self
     }
-    /// <p>Describes a single backup.</p>
+    /// <p>Describes a single backup. </p>
     pub fn get_backup_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_backup_id()
     }
-    /// <p>Returns backups for the server with the specified ServerName.</p>
+    /// <p>Returns backups for the server with the specified ServerName. </p>
     pub fn server_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.server_name(input.into());
         self
     }
-    /// <p>Returns backups for the server with the specified ServerName.</p>
+    /// <p>Returns backups for the server with the specified ServerName. </p>
     pub fn set_server_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_server_name(input);
         self
     }
-    /// <p>Returns backups for the server with the specified ServerName.</p>
+    /// <p>Returns backups for the server with the specified ServerName. </p>
     pub fn get_server_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_server_name()
     }

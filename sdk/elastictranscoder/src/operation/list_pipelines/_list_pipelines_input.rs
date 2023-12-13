@@ -6,7 +6,7 @@
 pub struct ListPipelinesInput {
     /// <p>To list pipelines in chronological order by the date and time that they were created, enter <code>true</code>. To list pipelines in reverse chronological order, enter <code>false</code>.</p>
     pub ascending: ::std::option::Option<::std::string::String>,
-    /// <p>When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results.</p>
+    /// <p>When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results. </p>
     pub page_token: ::std::option::Option<::std::string::String>,
 }
 impl ListPipelinesInput {
@@ -14,7 +14,7 @@ impl ListPipelinesInput {
     pub fn ascending(&self) -> ::std::option::Option<&str> {
         self.ascending.as_deref()
     }
-    /// <p>When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results.</p>
+    /// <p>When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results. </p>
     pub fn page_token(&self) -> ::std::option::Option<&str> {
         self.page_token.as_deref()
     }
@@ -48,17 +48,17 @@ impl ListPipelinesInputBuilder {
     pub fn get_ascending(&self) -> &::std::option::Option<::std::string::String> {
         &self.ascending
     }
-    /// <p>When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results.</p>
+    /// <p>When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results. </p>
     pub fn page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.page_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results.</p>
+    /// <p>When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results. </p>
     pub fn set_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.page_token = input;
         self
     }
-    /// <p>When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results.</p>
+    /// <p>When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results. </p>
     pub fn get_page_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.page_token
     }

@@ -22,7 +22,7 @@ impl ListTagsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListTags`.
 ///
-/// <p>Lists all tags currently on a named resource. A tag is a key-value pair where the key and value are case-sensitive. You can use tags to categorize and track your MemoryDB resources. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/Tagging-Resources.html">Tagging your MemoryDB resources</a></p>
+/// <p>Lists all tags currently on a named resource. A tag is a key-value pair where the key and value are case-sensitive. You can use tags to categorize and track your MemoryDB resources. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/Tagging-Resources.html">Tagging your MemoryDB resources</a> </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTagsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

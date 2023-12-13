@@ -22,7 +22,7 @@ impl DescribeHumanLoopInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeHumanLoop`.
 ///
-/// <p>Returns information about the specified human loop. If the human loop was deleted, this operation will return a <code>ResourceNotFoundException</code> error.</p>
+/// <p>Returns information about the specified human loop. If the human loop was deleted, this operation will return a <code>ResourceNotFoundException</code> error. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeHumanLoopFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

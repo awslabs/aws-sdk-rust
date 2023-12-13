@@ -22,7 +22,7 @@ impl CreateAcceleratorInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateAccelerator`.
 ///
-/// <p>Create an accelerator. An accelerator includes one or more listeners that process inbound connections and direct traffic to one or more endpoint groups, each of which includes endpoints, such as Network Load Balancers.</p><important>
+/// <p>Create an accelerator. An accelerator includes one or more listeners that process inbound connections and direct traffic to one or more endpoint groups, each of which includes endpoints, such as Network Load Balancers. </p> <important>
 /// <p>Global Accelerator is a global service that supports endpoints in multiple Amazon Web Services Regions but you must specify the US West (Oregon) Region to create, update, or otherwise work with accelerators. That is, for example, specify <code>--region us-west-2</code> on Amazon Web Services CLI commands.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -142,7 +142,7 @@ impl CreateAcceleratorFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_ip_addresses`](Self::set_ip_addresses).
     ///
-    /// <p>Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose an IPv4 address from your own pool to use for the accelerator's static IPv4 address when you create an accelerator.</p>
+    /// <p>Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose an IPv4 address from your own pool to use for the accelerator's static IPv4 address when you create an accelerator. </p>
     /// <p>After you bring an address range to Amazon Web Services, it appears in your account as an address pool. When you create an accelerator, you can assign one IPv4 address from your range to it. Global Accelerator assigns you a second static IPv4 address from an Amazon IP address range. If you bring two IPv4 address ranges to Amazon Web Services, you can assign one IPv4 address from each range to your accelerator. This restriction is because Global Accelerator assigns each address range to a different network zone, for high availability.</p>
     /// <p>You can specify one or two addresses, separated by a space. Do not include the /32 suffix.</p>
     /// <p>Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new accelerator with the new addresses.</p>
@@ -151,7 +151,7 @@ impl CreateAcceleratorFluentBuilder {
         self.inner = self.inner.ip_addresses(input.into());
         self
     }
-    /// <p>Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose an IPv4 address from your own pool to use for the accelerator's static IPv4 address when you create an accelerator.</p>
+    /// <p>Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose an IPv4 address from your own pool to use for the accelerator's static IPv4 address when you create an accelerator. </p>
     /// <p>After you bring an address range to Amazon Web Services, it appears in your account as an address pool. When you create an accelerator, you can assign one IPv4 address from your range to it. Global Accelerator assigns you a second static IPv4 address from an Amazon IP address range. If you bring two IPv4 address ranges to Amazon Web Services, you can assign one IPv4 address from each range to your accelerator. This restriction is because Global Accelerator assigns each address range to a different network zone, for high availability.</p>
     /// <p>You can specify one or two addresses, separated by a space. Do not include the /32 suffix.</p>
     /// <p>Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new accelerator with the new addresses.</p>
@@ -160,7 +160,7 @@ impl CreateAcceleratorFluentBuilder {
         self.inner = self.inner.set_ip_addresses(input);
         self
     }
-    /// <p>Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose an IPv4 address from your own pool to use for the accelerator's static IPv4 address when you create an accelerator.</p>
+    /// <p>Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose an IPv4 address from your own pool to use for the accelerator's static IPv4 address when you create an accelerator. </p>
     /// <p>After you bring an address range to Amazon Web Services, it appears in your account as an address pool. When you create an accelerator, you can assign one IPv4 address from your range to it. Global Accelerator assigns you a second static IPv4 address from an Amazon IP address range. If you bring two IPv4 address ranges to Amazon Web Services, you can assign one IPv4 address from each range to your accelerator. This restriction is because Global Accelerator assigns each address range to a different network zone, for high availability.</p>
     /// <p>You can specify one or two addresses, separated by a space. Do not include the /32 suffix.</p>
     /// <p>Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new accelerator with the new addresses.</p>
@@ -168,19 +168,19 @@ impl CreateAcceleratorFluentBuilder {
     pub fn get_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_ip_addresses()
     }
-    /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true.</p>
+    /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p>
     /// <p>If the value is set to true, an accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.enabled(input);
         self
     }
-    /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true.</p>
+    /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p>
     /// <p>If the value is set to true, an accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enabled(input);
         self
     }
-    /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true.</p>
+    /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p>
     /// <p>If the value is set to true, an accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_enabled()

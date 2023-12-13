@@ -11,42 +11,24 @@ pub struct Job {
     /// <p>The job's type.</p>
     /// <p>Allowed values include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>BUILTIN_FUZZ</p></li>
-    /// <li>
-    /// <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p></li>
-    /// <li>
-    /// <p>APPIUM_JAVA_JUNIT</p></li>
-    /// <li>
-    /// <p>APPIUM_JAVA_TESTNG</p></li>
-    /// <li>
-    /// <p>APPIUM_PYTHON</p></li>
-    /// <li>
-    /// <p>APPIUM_NODE</p></li>
-    /// <li>
-    /// <p>APPIUM_RUBY</p></li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_JUNIT</p></li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_TESTNG</p></li>
-    /// <li>
-    /// <p>APPIUM_WEB_PYTHON</p></li>
-    /// <li>
-    /// <p>APPIUM_WEB_NODE</p></li>
-    /// <li>
-    /// <p>APPIUM_WEB_RUBY</p></li>
-    /// <li>
-    /// <p>CALABASH</p></li>
-    /// <li>
-    /// <p>INSTRUMENTATION</p></li>
-    /// <li>
-    /// <p>UIAUTOMATION</p></li>
-    /// <li>
-    /// <p>UIAUTOMATOR</p></li>
-    /// <li>
-    /// <p>XCTEST</p></li>
-    /// <li>
-    /// <p>XCTEST_UI</p></li>
+    /// <li> <p>BUILTIN_FUZZ</p> </li>
+    /// <li> <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p> </li>
+    /// <li> <p>APPIUM_JAVA_JUNIT</p> </li>
+    /// <li> <p>APPIUM_JAVA_TESTNG</p> </li>
+    /// <li> <p>APPIUM_PYTHON</p> </li>
+    /// <li> <p>APPIUM_NODE</p> </li>
+    /// <li> <p>APPIUM_RUBY</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_JUNIT</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_TESTNG</p> </li>
+    /// <li> <p>APPIUM_WEB_PYTHON</p> </li>
+    /// <li> <p>APPIUM_WEB_NODE</p> </li>
+    /// <li> <p>APPIUM_WEB_RUBY</p> </li>
+    /// <li> <p>CALABASH</p> </li>
+    /// <li> <p>INSTRUMENTATION</p> </li>
+    /// <li> <p>UIAUTOMATION</p> </li>
+    /// <li> <p>UIAUTOMATOR</p> </li>
+    /// <li> <p>XCTEST</p> </li>
+    /// <li> <p>XCTEST_UI</p> </li>
     /// </ul>
     pub r#type: ::std::option::Option<crate::types::TestType>,
     /// <p>When the job was created.</p>
@@ -54,43 +36,27 @@ pub struct Job {
     /// <p>The job's status.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>PENDING</p></li>
-    /// <li>
-    /// <p>PENDING_CONCURRENCY</p></li>
-    /// <li>
-    /// <p>PENDING_DEVICE</p></li>
-    /// <li>
-    /// <p>PROCESSING</p></li>
-    /// <li>
-    /// <p>SCHEDULING</p></li>
-    /// <li>
-    /// <p>PREPARING</p></li>
-    /// <li>
-    /// <p>RUNNING</p></li>
-    /// <li>
-    /// <p>COMPLETED</p></li>
-    /// <li>
-    /// <p>STOPPING</p></li>
+    /// <li> <p>PENDING</p> </li>
+    /// <li> <p>PENDING_CONCURRENCY</p> </li>
+    /// <li> <p>PENDING_DEVICE</p> </li>
+    /// <li> <p>PROCESSING</p> </li>
+    /// <li> <p>SCHEDULING</p> </li>
+    /// <li> <p>PREPARING</p> </li>
+    /// <li> <p>RUNNING</p> </li>
+    /// <li> <p>COMPLETED</p> </li>
+    /// <li> <p>STOPPING</p> </li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::ExecutionStatus>,
     /// <p>The job's result.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>PENDING</p></li>
-    /// <li>
-    /// <p>PASSED</p></li>
-    /// <li>
-    /// <p>WARNED</p></li>
-    /// <li>
-    /// <p>FAILED</p></li>
-    /// <li>
-    /// <p>SKIPPED</p></li>
-    /// <li>
-    /// <p>ERRORED</p></li>
-    /// <li>
-    /// <p>STOPPED</p></li>
+    /// <li> <p>PENDING</p> </li>
+    /// <li> <p>PASSED</p> </li>
+    /// <li> <p>WARNED</p> </li>
+    /// <li> <p>FAILED</p> </li>
+    /// <li> <p>SKIPPED</p> </li>
+    /// <li> <p>ERRORED</p> </li>
+    /// <li> <p>STOPPED</p> </li>
     /// </ul>
     pub result: ::std::option::Option<crate::types::ExecutionResult>,
     /// <p>The job's start time.</p>
@@ -124,42 +90,24 @@ impl Job {
     /// <p>The job's type.</p>
     /// <p>Allowed values include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>BUILTIN_FUZZ</p></li>
-    /// <li>
-    /// <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p></li>
-    /// <li>
-    /// <p>APPIUM_JAVA_JUNIT</p></li>
-    /// <li>
-    /// <p>APPIUM_JAVA_TESTNG</p></li>
-    /// <li>
-    /// <p>APPIUM_PYTHON</p></li>
-    /// <li>
-    /// <p>APPIUM_NODE</p></li>
-    /// <li>
-    /// <p>APPIUM_RUBY</p></li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_JUNIT</p></li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_TESTNG</p></li>
-    /// <li>
-    /// <p>APPIUM_WEB_PYTHON</p></li>
-    /// <li>
-    /// <p>APPIUM_WEB_NODE</p></li>
-    /// <li>
-    /// <p>APPIUM_WEB_RUBY</p></li>
-    /// <li>
-    /// <p>CALABASH</p></li>
-    /// <li>
-    /// <p>INSTRUMENTATION</p></li>
-    /// <li>
-    /// <p>UIAUTOMATION</p></li>
-    /// <li>
-    /// <p>UIAUTOMATOR</p></li>
-    /// <li>
-    /// <p>XCTEST</p></li>
-    /// <li>
-    /// <p>XCTEST_UI</p></li>
+    /// <li> <p>BUILTIN_FUZZ</p> </li>
+    /// <li> <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p> </li>
+    /// <li> <p>APPIUM_JAVA_JUNIT</p> </li>
+    /// <li> <p>APPIUM_JAVA_TESTNG</p> </li>
+    /// <li> <p>APPIUM_PYTHON</p> </li>
+    /// <li> <p>APPIUM_NODE</p> </li>
+    /// <li> <p>APPIUM_RUBY</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_JUNIT</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_TESTNG</p> </li>
+    /// <li> <p>APPIUM_WEB_PYTHON</p> </li>
+    /// <li> <p>APPIUM_WEB_NODE</p> </li>
+    /// <li> <p>APPIUM_WEB_RUBY</p> </li>
+    /// <li> <p>CALABASH</p> </li>
+    /// <li> <p>INSTRUMENTATION</p> </li>
+    /// <li> <p>UIAUTOMATION</p> </li>
+    /// <li> <p>UIAUTOMATOR</p> </li>
+    /// <li> <p>XCTEST</p> </li>
+    /// <li> <p>XCTEST_UI</p> </li>
     /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::TestType> {
         self.r#type.as_ref()
@@ -171,24 +119,15 @@ impl Job {
     /// <p>The job's status.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>PENDING</p></li>
-    /// <li>
-    /// <p>PENDING_CONCURRENCY</p></li>
-    /// <li>
-    /// <p>PENDING_DEVICE</p></li>
-    /// <li>
-    /// <p>PROCESSING</p></li>
-    /// <li>
-    /// <p>SCHEDULING</p></li>
-    /// <li>
-    /// <p>PREPARING</p></li>
-    /// <li>
-    /// <p>RUNNING</p></li>
-    /// <li>
-    /// <p>COMPLETED</p></li>
-    /// <li>
-    /// <p>STOPPING</p></li>
+    /// <li> <p>PENDING</p> </li>
+    /// <li> <p>PENDING_CONCURRENCY</p> </li>
+    /// <li> <p>PENDING_DEVICE</p> </li>
+    /// <li> <p>PROCESSING</p> </li>
+    /// <li> <p>SCHEDULING</p> </li>
+    /// <li> <p>PREPARING</p> </li>
+    /// <li> <p>RUNNING</p> </li>
+    /// <li> <p>COMPLETED</p> </li>
+    /// <li> <p>STOPPING</p> </li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ExecutionStatus> {
         self.status.as_ref()
@@ -196,20 +135,13 @@ impl Job {
     /// <p>The job's result.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>PENDING</p></li>
-    /// <li>
-    /// <p>PASSED</p></li>
-    /// <li>
-    /// <p>WARNED</p></li>
-    /// <li>
-    /// <p>FAILED</p></li>
-    /// <li>
-    /// <p>SKIPPED</p></li>
-    /// <li>
-    /// <p>ERRORED</p></li>
-    /// <li>
-    /// <p>STOPPED</p></li>
+    /// <li> <p>PENDING</p> </li>
+    /// <li> <p>PASSED</p> </li>
+    /// <li> <p>WARNED</p> </li>
+    /// <li> <p>FAILED</p> </li>
+    /// <li> <p>SKIPPED</p> </li>
+    /// <li> <p>ERRORED</p> </li>
+    /// <li> <p>STOPPED</p> </li>
     /// </ul>
     pub fn result(&self) -> ::std::option::Option<&crate::types::ExecutionResult> {
         self.result.as_ref()
@@ -310,42 +242,24 @@ impl JobBuilder {
     /// <p>The job's type.</p>
     /// <p>Allowed values include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>BUILTIN_FUZZ</p></li>
-    /// <li>
-    /// <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p></li>
-    /// <li>
-    /// <p>APPIUM_JAVA_JUNIT</p></li>
-    /// <li>
-    /// <p>APPIUM_JAVA_TESTNG</p></li>
-    /// <li>
-    /// <p>APPIUM_PYTHON</p></li>
-    /// <li>
-    /// <p>APPIUM_NODE</p></li>
-    /// <li>
-    /// <p>APPIUM_RUBY</p></li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_JUNIT</p></li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_TESTNG</p></li>
-    /// <li>
-    /// <p>APPIUM_WEB_PYTHON</p></li>
-    /// <li>
-    /// <p>APPIUM_WEB_NODE</p></li>
-    /// <li>
-    /// <p>APPIUM_WEB_RUBY</p></li>
-    /// <li>
-    /// <p>CALABASH</p></li>
-    /// <li>
-    /// <p>INSTRUMENTATION</p></li>
-    /// <li>
-    /// <p>UIAUTOMATION</p></li>
-    /// <li>
-    /// <p>UIAUTOMATOR</p></li>
-    /// <li>
-    /// <p>XCTEST</p></li>
-    /// <li>
-    /// <p>XCTEST_UI</p></li>
+    /// <li> <p>BUILTIN_FUZZ</p> </li>
+    /// <li> <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p> </li>
+    /// <li> <p>APPIUM_JAVA_JUNIT</p> </li>
+    /// <li> <p>APPIUM_JAVA_TESTNG</p> </li>
+    /// <li> <p>APPIUM_PYTHON</p> </li>
+    /// <li> <p>APPIUM_NODE</p> </li>
+    /// <li> <p>APPIUM_RUBY</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_JUNIT</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_TESTNG</p> </li>
+    /// <li> <p>APPIUM_WEB_PYTHON</p> </li>
+    /// <li> <p>APPIUM_WEB_NODE</p> </li>
+    /// <li> <p>APPIUM_WEB_RUBY</p> </li>
+    /// <li> <p>CALABASH</p> </li>
+    /// <li> <p>INSTRUMENTATION</p> </li>
+    /// <li> <p>UIAUTOMATION</p> </li>
+    /// <li> <p>UIAUTOMATOR</p> </li>
+    /// <li> <p>XCTEST</p> </li>
+    /// <li> <p>XCTEST_UI</p> </li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::TestType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -354,42 +268,24 @@ impl JobBuilder {
     /// <p>The job's type.</p>
     /// <p>Allowed values include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>BUILTIN_FUZZ</p></li>
-    /// <li>
-    /// <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p></li>
-    /// <li>
-    /// <p>APPIUM_JAVA_JUNIT</p></li>
-    /// <li>
-    /// <p>APPIUM_JAVA_TESTNG</p></li>
-    /// <li>
-    /// <p>APPIUM_PYTHON</p></li>
-    /// <li>
-    /// <p>APPIUM_NODE</p></li>
-    /// <li>
-    /// <p>APPIUM_RUBY</p></li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_JUNIT</p></li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_TESTNG</p></li>
-    /// <li>
-    /// <p>APPIUM_WEB_PYTHON</p></li>
-    /// <li>
-    /// <p>APPIUM_WEB_NODE</p></li>
-    /// <li>
-    /// <p>APPIUM_WEB_RUBY</p></li>
-    /// <li>
-    /// <p>CALABASH</p></li>
-    /// <li>
-    /// <p>INSTRUMENTATION</p></li>
-    /// <li>
-    /// <p>UIAUTOMATION</p></li>
-    /// <li>
-    /// <p>UIAUTOMATOR</p></li>
-    /// <li>
-    /// <p>XCTEST</p></li>
-    /// <li>
-    /// <p>XCTEST_UI</p></li>
+    /// <li> <p>BUILTIN_FUZZ</p> </li>
+    /// <li> <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p> </li>
+    /// <li> <p>APPIUM_JAVA_JUNIT</p> </li>
+    /// <li> <p>APPIUM_JAVA_TESTNG</p> </li>
+    /// <li> <p>APPIUM_PYTHON</p> </li>
+    /// <li> <p>APPIUM_NODE</p> </li>
+    /// <li> <p>APPIUM_RUBY</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_JUNIT</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_TESTNG</p> </li>
+    /// <li> <p>APPIUM_WEB_PYTHON</p> </li>
+    /// <li> <p>APPIUM_WEB_NODE</p> </li>
+    /// <li> <p>APPIUM_WEB_RUBY</p> </li>
+    /// <li> <p>CALABASH</p> </li>
+    /// <li> <p>INSTRUMENTATION</p> </li>
+    /// <li> <p>UIAUTOMATION</p> </li>
+    /// <li> <p>UIAUTOMATOR</p> </li>
+    /// <li> <p>XCTEST</p> </li>
+    /// <li> <p>XCTEST_UI</p> </li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::TestType>) -> Self {
         self.r#type = input;
@@ -398,42 +294,24 @@ impl JobBuilder {
     /// <p>The job's type.</p>
     /// <p>Allowed values include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>BUILTIN_FUZZ</p></li>
-    /// <li>
-    /// <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p></li>
-    /// <li>
-    /// <p>APPIUM_JAVA_JUNIT</p></li>
-    /// <li>
-    /// <p>APPIUM_JAVA_TESTNG</p></li>
-    /// <li>
-    /// <p>APPIUM_PYTHON</p></li>
-    /// <li>
-    /// <p>APPIUM_NODE</p></li>
-    /// <li>
-    /// <p>APPIUM_RUBY</p></li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_JUNIT</p></li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_TESTNG</p></li>
-    /// <li>
-    /// <p>APPIUM_WEB_PYTHON</p></li>
-    /// <li>
-    /// <p>APPIUM_WEB_NODE</p></li>
-    /// <li>
-    /// <p>APPIUM_WEB_RUBY</p></li>
-    /// <li>
-    /// <p>CALABASH</p></li>
-    /// <li>
-    /// <p>INSTRUMENTATION</p></li>
-    /// <li>
-    /// <p>UIAUTOMATION</p></li>
-    /// <li>
-    /// <p>UIAUTOMATOR</p></li>
-    /// <li>
-    /// <p>XCTEST</p></li>
-    /// <li>
-    /// <p>XCTEST_UI</p></li>
+    /// <li> <p>BUILTIN_FUZZ</p> </li>
+    /// <li> <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p> </li>
+    /// <li> <p>APPIUM_JAVA_JUNIT</p> </li>
+    /// <li> <p>APPIUM_JAVA_TESTNG</p> </li>
+    /// <li> <p>APPIUM_PYTHON</p> </li>
+    /// <li> <p>APPIUM_NODE</p> </li>
+    /// <li> <p>APPIUM_RUBY</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_JUNIT</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_TESTNG</p> </li>
+    /// <li> <p>APPIUM_WEB_PYTHON</p> </li>
+    /// <li> <p>APPIUM_WEB_NODE</p> </li>
+    /// <li> <p>APPIUM_WEB_RUBY</p> </li>
+    /// <li> <p>CALABASH</p> </li>
+    /// <li> <p>INSTRUMENTATION</p> </li>
+    /// <li> <p>UIAUTOMATION</p> </li>
+    /// <li> <p>UIAUTOMATOR</p> </li>
+    /// <li> <p>XCTEST</p> </li>
+    /// <li> <p>XCTEST_UI</p> </li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::TestType> {
         &self.r#type
@@ -455,24 +333,15 @@ impl JobBuilder {
     /// <p>The job's status.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>PENDING</p></li>
-    /// <li>
-    /// <p>PENDING_CONCURRENCY</p></li>
-    /// <li>
-    /// <p>PENDING_DEVICE</p></li>
-    /// <li>
-    /// <p>PROCESSING</p></li>
-    /// <li>
-    /// <p>SCHEDULING</p></li>
-    /// <li>
-    /// <p>PREPARING</p></li>
-    /// <li>
-    /// <p>RUNNING</p></li>
-    /// <li>
-    /// <p>COMPLETED</p></li>
-    /// <li>
-    /// <p>STOPPING</p></li>
+    /// <li> <p>PENDING</p> </li>
+    /// <li> <p>PENDING_CONCURRENCY</p> </li>
+    /// <li> <p>PENDING_DEVICE</p> </li>
+    /// <li> <p>PROCESSING</p> </li>
+    /// <li> <p>SCHEDULING</p> </li>
+    /// <li> <p>PREPARING</p> </li>
+    /// <li> <p>RUNNING</p> </li>
+    /// <li> <p>COMPLETED</p> </li>
+    /// <li> <p>STOPPING</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::ExecutionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -481,24 +350,15 @@ impl JobBuilder {
     /// <p>The job's status.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>PENDING</p></li>
-    /// <li>
-    /// <p>PENDING_CONCURRENCY</p></li>
-    /// <li>
-    /// <p>PENDING_DEVICE</p></li>
-    /// <li>
-    /// <p>PROCESSING</p></li>
-    /// <li>
-    /// <p>SCHEDULING</p></li>
-    /// <li>
-    /// <p>PREPARING</p></li>
-    /// <li>
-    /// <p>RUNNING</p></li>
-    /// <li>
-    /// <p>COMPLETED</p></li>
-    /// <li>
-    /// <p>STOPPING</p></li>
+    /// <li> <p>PENDING</p> </li>
+    /// <li> <p>PENDING_CONCURRENCY</p> </li>
+    /// <li> <p>PENDING_DEVICE</p> </li>
+    /// <li> <p>PROCESSING</p> </li>
+    /// <li> <p>SCHEDULING</p> </li>
+    /// <li> <p>PREPARING</p> </li>
+    /// <li> <p>RUNNING</p> </li>
+    /// <li> <p>COMPLETED</p> </li>
+    /// <li> <p>STOPPING</p> </li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ExecutionStatus>) -> Self {
         self.status = input;
@@ -507,24 +367,15 @@ impl JobBuilder {
     /// <p>The job's status.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>PENDING</p></li>
-    /// <li>
-    /// <p>PENDING_CONCURRENCY</p></li>
-    /// <li>
-    /// <p>PENDING_DEVICE</p></li>
-    /// <li>
-    /// <p>PROCESSING</p></li>
-    /// <li>
-    /// <p>SCHEDULING</p></li>
-    /// <li>
-    /// <p>PREPARING</p></li>
-    /// <li>
-    /// <p>RUNNING</p></li>
-    /// <li>
-    /// <p>COMPLETED</p></li>
-    /// <li>
-    /// <p>STOPPING</p></li>
+    /// <li> <p>PENDING</p> </li>
+    /// <li> <p>PENDING_CONCURRENCY</p> </li>
+    /// <li> <p>PENDING_DEVICE</p> </li>
+    /// <li> <p>PROCESSING</p> </li>
+    /// <li> <p>SCHEDULING</p> </li>
+    /// <li> <p>PREPARING</p> </li>
+    /// <li> <p>RUNNING</p> </li>
+    /// <li> <p>COMPLETED</p> </li>
+    /// <li> <p>STOPPING</p> </li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ExecutionStatus> {
         &self.status
@@ -532,20 +383,13 @@ impl JobBuilder {
     /// <p>The job's result.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>PENDING</p></li>
-    /// <li>
-    /// <p>PASSED</p></li>
-    /// <li>
-    /// <p>WARNED</p></li>
-    /// <li>
-    /// <p>FAILED</p></li>
-    /// <li>
-    /// <p>SKIPPED</p></li>
-    /// <li>
-    /// <p>ERRORED</p></li>
-    /// <li>
-    /// <p>STOPPED</p></li>
+    /// <li> <p>PENDING</p> </li>
+    /// <li> <p>PASSED</p> </li>
+    /// <li> <p>WARNED</p> </li>
+    /// <li> <p>FAILED</p> </li>
+    /// <li> <p>SKIPPED</p> </li>
+    /// <li> <p>ERRORED</p> </li>
+    /// <li> <p>STOPPED</p> </li>
     /// </ul>
     pub fn result(mut self, input: crate::types::ExecutionResult) -> Self {
         self.result = ::std::option::Option::Some(input);
@@ -554,20 +398,13 @@ impl JobBuilder {
     /// <p>The job's result.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>PENDING</p></li>
-    /// <li>
-    /// <p>PASSED</p></li>
-    /// <li>
-    /// <p>WARNED</p></li>
-    /// <li>
-    /// <p>FAILED</p></li>
-    /// <li>
-    /// <p>SKIPPED</p></li>
-    /// <li>
-    /// <p>ERRORED</p></li>
-    /// <li>
-    /// <p>STOPPED</p></li>
+    /// <li> <p>PENDING</p> </li>
+    /// <li> <p>PASSED</p> </li>
+    /// <li> <p>WARNED</p> </li>
+    /// <li> <p>FAILED</p> </li>
+    /// <li> <p>SKIPPED</p> </li>
+    /// <li> <p>ERRORED</p> </li>
+    /// <li> <p>STOPPED</p> </li>
     /// </ul>
     pub fn set_result(mut self, input: ::std::option::Option<crate::types::ExecutionResult>) -> Self {
         self.result = input;
@@ -576,20 +413,13 @@ impl JobBuilder {
     /// <p>The job's result.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>PENDING</p></li>
-    /// <li>
-    /// <p>PASSED</p></li>
-    /// <li>
-    /// <p>WARNED</p></li>
-    /// <li>
-    /// <p>FAILED</p></li>
-    /// <li>
-    /// <p>SKIPPED</p></li>
-    /// <li>
-    /// <p>ERRORED</p></li>
-    /// <li>
-    /// <p>STOPPED</p></li>
+    /// <li> <p>PENDING</p> </li>
+    /// <li> <p>PASSED</p> </li>
+    /// <li> <p>WARNED</p> </li>
+    /// <li> <p>FAILED</p> </li>
+    /// <li> <p>SKIPPED</p> </li>
+    /// <li> <p>ERRORED</p> </li>
+    /// <li> <p>STOPPED</p> </li>
     /// </ul>
     pub fn get_result(&self) -> &::std::option::Option<crate::types::ExecutionResult> {
         &self.result

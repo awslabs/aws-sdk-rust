@@ -3,11 +3,11 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteFHIRDatastore`](crate::operation::delete_fhir_datastore::builders::DeleteFHIRDatastoreFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`datastore_id(impl Into<String>)`](crate::operation::delete_fhir_datastore::builders::DeleteFHIRDatastoreFluentBuilder::datastore_id) / [`set_datastore_id(Option<String>)`](crate::operation::delete_fhir_datastore::builders::DeleteFHIRDatastoreFluentBuilder::set_datastore_id):<br>required: **true**<br><p>The AWS-generated ID for the data store to be deleted.</p><br>
+    ///   - [`datastore_id(impl Into<String>)`](crate::operation::delete_fhir_datastore::builders::DeleteFHIRDatastoreFluentBuilder::datastore_id) / [`set_datastore_id(Option<String>)`](crate::operation::delete_fhir_datastore::builders::DeleteFHIRDatastoreFluentBuilder::set_datastore_id):<br>required: **true**<br><p> The AWS-generated ID for the data store to be deleted.</p><br>
     /// - On success, responds with [`DeleteFhirDatastoreOutput`](crate::operation::delete_fhir_datastore::DeleteFhirDatastoreOutput) with field(s):
     ///   - [`datastore_id(String)`](crate::operation::delete_fhir_datastore::DeleteFhirDatastoreOutput::datastore_id): <p>The AWS-generated ID for the data store to be deleted.</p>
     ///   - [`datastore_arn(String)`](crate::operation::delete_fhir_datastore::DeleteFhirDatastoreOutput::datastore_arn): <p>The Amazon Resource Name (ARN) that gives AWS HealthLake access permission.</p>
-    ///   - [`datastore_status(DatastoreStatus)`](crate::operation::delete_fhir_datastore::DeleteFhirDatastoreOutput::datastore_status): <p>The status of the data store that the user has requested to be deleted.</p>
+    ///   - [`datastore_status(DatastoreStatus)`](crate::operation::delete_fhir_datastore::DeleteFhirDatastoreOutput::datastore_status): <p>The status of the data store that the user has requested to be deleted. </p>
     ///   - [`datastore_endpoint(String)`](crate::operation::delete_fhir_datastore::DeleteFhirDatastoreOutput::datastore_endpoint): <p>The AWS endpoint for the data store the user has requested to be deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteFHIRDatastoreError>`](crate::operation::delete_fhir_datastore::DeleteFHIRDatastoreError)
     pub fn delete_fhir_datastore(&self) -> crate::operation::delete_fhir_datastore::builders::DeleteFHIRDatastoreFluentBuilder {

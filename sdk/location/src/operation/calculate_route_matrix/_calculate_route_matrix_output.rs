@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CalculateRouteMatrixOutput {
-    /// <p>The calculated route matrix containing the results for all pairs of <code>DeparturePositions</code> to <code>DestinationPositions</code>. Each row corresponds to one entry in <code>DeparturePositions</code>. Each entry in the row corresponds to the route from that entry in <code>DeparturePositions</code> to an entry in <code>DestinationPositions</code>.</p>
+    /// <p>The calculated route matrix containing the results for all pairs of <code>DeparturePositions</code> to <code>DestinationPositions</code>. Each row corresponds to one entry in <code>DeparturePositions</code>. Each entry in the row corresponds to the route from that entry in <code>DeparturePositions</code> to an entry in <code>DestinationPositions</code>. </p>
     pub route_matrix: ::std::vec::Vec<::std::vec::Vec<crate::types::RouteMatrixEntry>>,
     /// <p>For routes calculated using an Esri route calculator resource, departure positions are snapped to the closest road. For Esri route calculator resources, this returns the list of departure/origin positions used for calculation of the <code>RouteMatrix</code>.</p>
     pub snapped_departure_positions: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>>,
@@ -15,7 +15,7 @@ pub struct CalculateRouteMatrixOutput {
     _request_id: Option<String>,
 }
 impl CalculateRouteMatrixOutput {
-    /// <p>The calculated route matrix containing the results for all pairs of <code>DeparturePositions</code> to <code>DestinationPositions</code>. Each row corresponds to one entry in <code>DeparturePositions</code>. Each entry in the row corresponds to the route from that entry in <code>DeparturePositions</code> to an entry in <code>DestinationPositions</code>.</p>
+    /// <p>The calculated route matrix containing the results for all pairs of <code>DeparturePositions</code> to <code>DestinationPositions</code>. Each row corresponds to one entry in <code>DeparturePositions</code>. Each entry in the row corresponds to the route from that entry in <code>DeparturePositions</code> to an entry in <code>DestinationPositions</code>. </p>
     pub fn route_matrix(&self) -> &[::std::vec::Vec<crate::types::RouteMatrixEntry>] {
         use std::ops::Deref;
         self.route_matrix.deref()
@@ -64,19 +64,19 @@ impl CalculateRouteMatrixOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_route_matrix`](Self::set_route_matrix).
     ///
-    /// <p>The calculated route matrix containing the results for all pairs of <code>DeparturePositions</code> to <code>DestinationPositions</code>. Each row corresponds to one entry in <code>DeparturePositions</code>. Each entry in the row corresponds to the route from that entry in <code>DeparturePositions</code> to an entry in <code>DestinationPositions</code>.</p>
+    /// <p>The calculated route matrix containing the results for all pairs of <code>DeparturePositions</code> to <code>DestinationPositions</code>. Each row corresponds to one entry in <code>DeparturePositions</code>. Each entry in the row corresponds to the route from that entry in <code>DeparturePositions</code> to an entry in <code>DestinationPositions</code>. </p>
     pub fn route_matrix(mut self, input: ::std::vec::Vec<crate::types::RouteMatrixEntry>) -> Self {
         let mut v = self.route_matrix.unwrap_or_default();
         v.push(input);
         self.route_matrix = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The calculated route matrix containing the results for all pairs of <code>DeparturePositions</code> to <code>DestinationPositions</code>. Each row corresponds to one entry in <code>DeparturePositions</code>. Each entry in the row corresponds to the route from that entry in <code>DeparturePositions</code> to an entry in <code>DestinationPositions</code>.</p>
+    /// <p>The calculated route matrix containing the results for all pairs of <code>DeparturePositions</code> to <code>DestinationPositions</code>. Each row corresponds to one entry in <code>DeparturePositions</code>. Each entry in the row corresponds to the route from that entry in <code>DeparturePositions</code> to an entry in <code>DestinationPositions</code>. </p>
     pub fn set_route_matrix(mut self, input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::RouteMatrixEntry>>>) -> Self {
         self.route_matrix = input;
         self
     }
-    /// <p>The calculated route matrix containing the results for all pairs of <code>DeparturePositions</code> to <code>DestinationPositions</code>. Each row corresponds to one entry in <code>DeparturePositions</code>. Each entry in the row corresponds to the route from that entry in <code>DeparturePositions</code> to an entry in <code>DestinationPositions</code>.</p>
+    /// <p>The calculated route matrix containing the results for all pairs of <code>DeparturePositions</code> to <code>DestinationPositions</code>. Each row corresponds to one entry in <code>DeparturePositions</code>. Each entry in the row corresponds to the route from that entry in <code>DeparturePositions</code> to an entry in <code>DestinationPositions</code>. </p>
     pub fn get_route_matrix(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::RouteMatrixEntry>>> {
         &self.route_matrix
     }

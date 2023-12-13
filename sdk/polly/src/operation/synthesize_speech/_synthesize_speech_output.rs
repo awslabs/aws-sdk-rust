@@ -3,42 +3,34 @@
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub struct SynthesizeSpeechOutput {
-    /// <p>Stream containing the synthesized speech.</p>
+    /// <p> Stream containing the synthesized speech. </p>
     pub audio_stream: ::aws_smithy_types::byte_stream::ByteStream,
-    /// <p>Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request.</p>
+    /// <p> Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p>
     /// <ul>
-    /// <li>
-    /// <p>If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg.</p></li>
-    /// <li>
-    /// <p>If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg.</p></li>
-    /// <li>
-    /// <p>If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format.</p></li>
-    /// <li>
-    /// <p>If you request <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is application/x-json-stream.</p></li>
+    /// <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li>
+    /// <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li>
+    /// <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li>
+    /// <li> <p>If you request <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is application/x-json-stream.</p> </li>
     /// </ul>
-    /// <p></p>
+    /// <p> </p>
     pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>Number of characters synthesized.</p>
     pub request_characters: i32,
     _request_id: Option<String>,
 }
 impl SynthesizeSpeechOutput {
-    /// <p>Stream containing the synthesized speech.</p>
+    /// <p> Stream containing the synthesized speech. </p>
     pub fn audio_stream(&self) -> &::aws_smithy_types::byte_stream::ByteStream {
         &self.audio_stream
     }
-    /// <p>Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request.</p>
+    /// <p> Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p>
     /// <ul>
-    /// <li>
-    /// <p>If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg.</p></li>
-    /// <li>
-    /// <p>If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg.</p></li>
-    /// <li>
-    /// <p>If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format.</p></li>
-    /// <li>
-    /// <p>If you request <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is application/x-json-stream.</p></li>
+    /// <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li>
+    /// <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li>
+    /// <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li>
+    /// <li> <p>If you request <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is application/x-json-stream.</p> </li>
     /// </ul>
-    /// <p></p>
+    /// <p> </p>
     pub fn content_type(&self) -> ::std::option::Option<&str> {
         self.content_type.as_deref()
     }
@@ -69,64 +61,52 @@ pub struct SynthesizeSpeechOutputBuilder {
     _request_id: Option<String>,
 }
 impl SynthesizeSpeechOutputBuilder {
-    /// <p>Stream containing the synthesized speech.</p>
+    /// <p> Stream containing the synthesized speech. </p>
     pub fn audio_stream(mut self, input: ::aws_smithy_types::byte_stream::ByteStream) -> Self {
         self.audio_stream = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Stream containing the synthesized speech.</p>
+    /// <p> Stream containing the synthesized speech. </p>
     pub fn set_audio_stream(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
         self.audio_stream = input;
         self
     }
-    /// <p>Stream containing the synthesized speech.</p>
+    /// <p> Stream containing the synthesized speech. </p>
     pub fn get_audio_stream(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
         &self.audio_stream
     }
-    /// <p>Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request.</p>
+    /// <p> Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p>
     /// <ul>
-    /// <li>
-    /// <p>If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg.</p></li>
-    /// <li>
-    /// <p>If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg.</p></li>
-    /// <li>
-    /// <p>If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format.</p></li>
-    /// <li>
-    /// <p>If you request <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is application/x-json-stream.</p></li>
+    /// <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li>
+    /// <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li>
+    /// <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li>
+    /// <li> <p>If you request <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is application/x-json-stream.</p> </li>
     /// </ul>
-    /// <p></p>
+    /// <p> </p>
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request.</p>
+    /// <p> Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p>
     /// <ul>
-    /// <li>
-    /// <p>If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg.</p></li>
-    /// <li>
-    /// <p>If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg.</p></li>
-    /// <li>
-    /// <p>If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format.</p></li>
-    /// <li>
-    /// <p>If you request <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is application/x-json-stream.</p></li>
+    /// <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li>
+    /// <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li>
+    /// <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li>
+    /// <li> <p>If you request <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is application/x-json-stream.</p> </li>
     /// </ul>
-    /// <p></p>
+    /// <p> </p>
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_type = input;
         self
     }
-    /// <p>Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request.</p>
+    /// <p> Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p>
     /// <ul>
-    /// <li>
-    /// <p>If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg.</p></li>
-    /// <li>
-    /// <p>If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg.</p></li>
-    /// <li>
-    /// <p>If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format.</p></li>
-    /// <li>
-    /// <p>If you request <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is application/x-json-stream.</p></li>
+    /// <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li>
+    /// <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li>
+    /// <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li>
+    /// <li> <p>If you request <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is application/x-json-stream.</p> </li>
     /// </ul>
-    /// <p></p>
+    /// <p> </p>
     pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.content_type
     }

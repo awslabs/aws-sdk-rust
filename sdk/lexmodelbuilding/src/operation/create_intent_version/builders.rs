@@ -22,11 +22,11 @@ impl CreateIntentVersionInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateIntentVersion`.
 ///
-/// <p>Creates a new version of an intent based on the <code>$LATEST</code> version of the intent. If the <code>$LATEST</code> version of this intent hasn't changed since you last updated it, Amazon Lex doesn't create a new version. It returns the last version you created.</p><note>
+/// <p>Creates a new version of an intent based on the <code>$LATEST</code> version of the intent. If the <code>$LATEST</code> version of this intent hasn't changed since you last updated it, Amazon Lex doesn't create a new version. It returns the last version you created.</p> <note>
 /// <p>You can update only the <code>$LATEST</code> version of the intent. You can't update the numbered versions that you create with the <code>CreateIntentVersion</code> operation.</p>
 /// </note>
-/// <p>When you create a version of an intent, Amazon Lex sets the version to 1. Subsequent versions increment by 1. For more information, see <code>versioning-intro</code>.</p>
-/// <p>This operation requires permissions to perform the <code>lex:CreateIntentVersion</code> action.</p>
+/// <p> When you create a version of an intent, Amazon Lex sets the version to 1. Subsequent versions increment by 1. For more information, see <code>versioning-intro</code>. </p>
+/// <p>This operation requires permissions to perform the <code>lex:CreateIntentVersion</code> action. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateIntentVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -112,17 +112,17 @@ impl CreateIntentVersionFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the intent that you want to create a new version of. The name is case sensitive.</p>
+    /// <p>The name of the intent that you want to create a new version of. The name is case sensitive. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of the intent that you want to create a new version of. The name is case sensitive.</p>
+    /// <p>The name of the intent that you want to create a new version of. The name is case sensitive. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name of the intent that you want to create a new version of. The name is case sensitive.</p>
+    /// <p>The name of the intent that you want to create a new version of. The name is case sensitive. </p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }

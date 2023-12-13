@@ -5,7 +5,7 @@
 pub struct ResetNotificationSettingsInput {
     /// <p>The unique identifier of the trust anchor.</p>
     pub trust_anchor_id: ::std::option::Option<::std::string::String>,
-    /// <p>A list of notification setting keys to reset. A notification setting key includes the event and the channel.</p>
+    /// <p>A list of notification setting keys to reset. A notification setting key includes the event and the channel. </p>
     pub notification_setting_keys: ::std::option::Option<::std::vec::Vec<crate::types::NotificationSettingKey>>,
 }
 impl ResetNotificationSettingsInput {
@@ -13,7 +13,7 @@ impl ResetNotificationSettingsInput {
     pub fn trust_anchor_id(&self) -> ::std::option::Option<&str> {
         self.trust_anchor_id.as_deref()
     }
-    /// <p>A list of notification setting keys to reset. A notification setting key includes the event and the channel.</p>
+    /// <p>A list of notification setting keys to reset. A notification setting key includes the event and the channel. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.notification_setting_keys.is_none()`.
     pub fn notification_setting_keys(&self) -> &[crate::types::NotificationSettingKey] {
@@ -54,19 +54,19 @@ impl ResetNotificationSettingsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_notification_setting_keys`](Self::set_notification_setting_keys).
     ///
-    /// <p>A list of notification setting keys to reset. A notification setting key includes the event and the channel.</p>
+    /// <p>A list of notification setting keys to reset. A notification setting key includes the event and the channel. </p>
     pub fn notification_setting_keys(mut self, input: crate::types::NotificationSettingKey) -> Self {
         let mut v = self.notification_setting_keys.unwrap_or_default();
         v.push(input);
         self.notification_setting_keys = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of notification setting keys to reset. A notification setting key includes the event and the channel.</p>
+    /// <p>A list of notification setting keys to reset. A notification setting key includes the event and the channel. </p>
     pub fn set_notification_setting_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NotificationSettingKey>>) -> Self {
         self.notification_setting_keys = input;
         self
     }
-    /// <p>A list of notification setting keys to reset. A notification setting key includes the event and the channel.</p>
+    /// <p>A list of notification setting keys to reset. A notification setting key includes the event and the channel. </p>
     pub fn get_notification_setting_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationSettingKey>> {
         &self.notification_setting_keys
     }

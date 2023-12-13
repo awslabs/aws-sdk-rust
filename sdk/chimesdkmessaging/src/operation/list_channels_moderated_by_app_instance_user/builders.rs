@@ -22,7 +22,7 @@ impl ListChannelsModeratedByAppInstanceUserInputBuilder {
 }
 /// Fluent builder constructing a request to `ListChannelsModeratedByAppInstanceUser`.
 ///
-/// <p>A list of the channels moderated by an <code>AppInstanceUser</code>.</p><note>
+/// <p>A list of the channels moderated by an <code>AppInstanceUser</code>.</p> <note>
 /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveNotificationChannelInput {
-    /// <p>The ID of the notification channel to be removed.</p>
+    /// <p> The ID of the notification channel to be removed. </p>
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl RemoveNotificationChannelInput {
-    /// <p>The ID of the notification channel to be removed.</p>
+    /// <p> The ID of the notification channel to be removed. </p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct RemoveNotificationChannelInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
 impl RemoveNotificationChannelInputBuilder {
-    /// <p>The ID of the notification channel to be removed.</p>
+    /// <p> The ID of the notification channel to be removed. </p>
     /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the notification channel to be removed.</p>
+    /// <p> The ID of the notification channel to be removed. </p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// <p>The ID of the notification channel to be removed.</p>
+    /// <p> The ID of the notification channel to be removed. </p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }

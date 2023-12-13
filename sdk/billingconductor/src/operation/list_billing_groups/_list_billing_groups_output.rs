@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListBillingGroupsOutput {
-    /// <p>A list of <code>BillingGroupListElement</code> retrieved.</p>
+    /// <p>A list of <code>BillingGroupListElement</code> retrieved. </p>
     pub billing_groups: ::std::option::Option<::std::vec::Vec<crate::types::BillingGroupListElement>>,
-    /// <p>The pagination token that's used on subsequent calls to get billing groups.</p>
+    /// <p>The pagination token that's used on subsequent calls to get billing groups. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListBillingGroupsOutput {
-    /// <p>A list of <code>BillingGroupListElement</code> retrieved.</p>
+    /// <p>A list of <code>BillingGroupListElement</code> retrieved. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.billing_groups.is_none()`.
     pub fn billing_groups(&self) -> &[crate::types::BillingGroupListElement] {
         self.billing_groups.as_deref().unwrap_or_default()
     }
-    /// <p>The pagination token that's used on subsequent calls to get billing groups.</p>
+    /// <p>The pagination token that's used on subsequent calls to get billing groups. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -46,33 +46,33 @@ impl ListBillingGroupsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_billing_groups`](Self::set_billing_groups).
     ///
-    /// <p>A list of <code>BillingGroupListElement</code> retrieved.</p>
+    /// <p>A list of <code>BillingGroupListElement</code> retrieved. </p>
     pub fn billing_groups(mut self, input: crate::types::BillingGroupListElement) -> Self {
         let mut v = self.billing_groups.unwrap_or_default();
         v.push(input);
         self.billing_groups = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of <code>BillingGroupListElement</code> retrieved.</p>
+    /// <p>A list of <code>BillingGroupListElement</code> retrieved. </p>
     pub fn set_billing_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BillingGroupListElement>>) -> Self {
         self.billing_groups = input;
         self
     }
-    /// <p>A list of <code>BillingGroupListElement</code> retrieved.</p>
+    /// <p>A list of <code>BillingGroupListElement</code> retrieved. </p>
     pub fn get_billing_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BillingGroupListElement>> {
         &self.billing_groups
     }
-    /// <p>The pagination token that's used on subsequent calls to get billing groups.</p>
+    /// <p>The pagination token that's used on subsequent calls to get billing groups. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The pagination token that's used on subsequent calls to get billing groups.</p>
+    /// <p>The pagination token that's used on subsequent calls to get billing groups. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The pagination token that's used on subsequent calls to get billing groups.</p>
+    /// <p>The pagination token that's used on subsequent calls to get billing groups. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

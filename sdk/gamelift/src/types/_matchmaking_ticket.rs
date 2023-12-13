@@ -12,23 +12,15 @@ pub struct MatchmakingTicket {
     pub configuration_arn: ::std::option::Option<::std::string::String>,
     /// <p>Current status of the matchmaking request.</p>
     /// <ul>
-    /// <li>
-    /// <p><b>QUEUED</b> -- The matchmaking request has been received and is currently waiting to be processed.</p></li>
-    /// <li>
-    /// <p><b>SEARCHING</b> -- The matchmaking request is currently being processed.</p></li>
-    /// <li>
-    /// <p><b>REQUIRES_ACCEPTANCE</b> -- A match has been proposed and the players must accept the match. This status is used only with requests that use a matchmaking configuration with a player acceptance requirement.</p></li>
-    /// <li>
-    /// <p><b>PLACING</b> -- The FlexMatch engine has matched players and is in the process of placing a new game session for the match.</p></li>
-    /// <li>
-    /// <p><b>COMPLETED</b> -- Players have been matched and a game session is ready to host the players. A ticket in this state contains the necessary connection information for players.</p></li>
-    /// <li>
-    /// <p><b>FAILED</b> -- The matchmaking request was not completed.</p></li>
-    /// <li>
-    /// <p><b>CANCELLED</b> -- The matchmaking request was canceled. This may be the result of a <code>StopMatchmaking</code> operation or a proposed match that one or more players failed to accept.</p></li>
-    /// <li>
-    /// <p><b>TIMED_OUT</b> -- The matchmaking request was not successful within the duration specified in the matchmaking configuration.</p></li>
-    /// </ul><note>
+    /// <li> <p> <b>QUEUED</b> -- The matchmaking request has been received and is currently waiting to be processed.</p> </li>
+    /// <li> <p> <b>SEARCHING</b> -- The matchmaking request is currently being processed. </p> </li>
+    /// <li> <p> <b>REQUIRES_ACCEPTANCE</b> -- A match has been proposed and the players must accept the match. This status is used only with requests that use a matchmaking configuration with a player acceptance requirement.</p> </li>
+    /// <li> <p> <b>PLACING</b> -- The FlexMatch engine has matched players and is in the process of placing a new game session for the match.</p> </li>
+    /// <li> <p> <b>COMPLETED</b> -- Players have been matched and a game session is ready to host the players. A ticket in this state contains the necessary connection information for players.</p> </li>
+    /// <li> <p> <b>FAILED</b> -- The matchmaking request was not completed.</p> </li>
+    /// <li> <p> <b>CANCELLED</b> -- The matchmaking request was canceled. This may be the result of a <code>StopMatchmaking</code> operation or a proposed match that one or more players failed to accept.</p> </li>
+    /// <li> <p> <b>TIMED_OUT</b> -- The matchmaking request was not successful within the duration specified in the matchmaking configuration. </p> </li>
+    /// </ul> <note>
     /// <p>Matchmaking requests that fail to successfully complete (statuses FAILED, CANCELLED, TIMED_OUT) can be resubmitted as new requests with new ticket IDs.</p>
     /// </note>
     pub status: ::std::option::Option<crate::types::MatchmakingConfigurationStatus>,
@@ -62,23 +54,15 @@ impl MatchmakingTicket {
     }
     /// <p>Current status of the matchmaking request.</p>
     /// <ul>
-    /// <li>
-    /// <p><b>QUEUED</b> -- The matchmaking request has been received and is currently waiting to be processed.</p></li>
-    /// <li>
-    /// <p><b>SEARCHING</b> -- The matchmaking request is currently being processed.</p></li>
-    /// <li>
-    /// <p><b>REQUIRES_ACCEPTANCE</b> -- A match has been proposed and the players must accept the match. This status is used only with requests that use a matchmaking configuration with a player acceptance requirement.</p></li>
-    /// <li>
-    /// <p><b>PLACING</b> -- The FlexMatch engine has matched players and is in the process of placing a new game session for the match.</p></li>
-    /// <li>
-    /// <p><b>COMPLETED</b> -- Players have been matched and a game session is ready to host the players. A ticket in this state contains the necessary connection information for players.</p></li>
-    /// <li>
-    /// <p><b>FAILED</b> -- The matchmaking request was not completed.</p></li>
-    /// <li>
-    /// <p><b>CANCELLED</b> -- The matchmaking request was canceled. This may be the result of a <code>StopMatchmaking</code> operation or a proposed match that one or more players failed to accept.</p></li>
-    /// <li>
-    /// <p><b>TIMED_OUT</b> -- The matchmaking request was not successful within the duration specified in the matchmaking configuration.</p></li>
-    /// </ul><note>
+    /// <li> <p> <b>QUEUED</b> -- The matchmaking request has been received and is currently waiting to be processed.</p> </li>
+    /// <li> <p> <b>SEARCHING</b> -- The matchmaking request is currently being processed. </p> </li>
+    /// <li> <p> <b>REQUIRES_ACCEPTANCE</b> -- A match has been proposed and the players must accept the match. This status is used only with requests that use a matchmaking configuration with a player acceptance requirement.</p> </li>
+    /// <li> <p> <b>PLACING</b> -- The FlexMatch engine has matched players and is in the process of placing a new game session for the match.</p> </li>
+    /// <li> <p> <b>COMPLETED</b> -- Players have been matched and a game session is ready to host the players. A ticket in this state contains the necessary connection information for players.</p> </li>
+    /// <li> <p> <b>FAILED</b> -- The matchmaking request was not completed.</p> </li>
+    /// <li> <p> <b>CANCELLED</b> -- The matchmaking request was canceled. This may be the result of a <code>StopMatchmaking</code> operation or a proposed match that one or more players failed to accept.</p> </li>
+    /// <li> <p> <b>TIMED_OUT</b> -- The matchmaking request was not successful within the duration specified in the matchmaking configuration. </p> </li>
+    /// </ul> <note>
     /// <p>Matchmaking requests that fail to successfully complete (statuses FAILED, CANCELLED, TIMED_OUT) can be resubmitted as new requests with new ticket IDs.</p>
     /// </note>
     pub fn status(&self) -> ::std::option::Option<&crate::types::MatchmakingConfigurationStatus> {
@@ -183,23 +167,15 @@ impl MatchmakingTicketBuilder {
     }
     /// <p>Current status of the matchmaking request.</p>
     /// <ul>
-    /// <li>
-    /// <p><b>QUEUED</b> -- The matchmaking request has been received and is currently waiting to be processed.</p></li>
-    /// <li>
-    /// <p><b>SEARCHING</b> -- The matchmaking request is currently being processed.</p></li>
-    /// <li>
-    /// <p><b>REQUIRES_ACCEPTANCE</b> -- A match has been proposed and the players must accept the match. This status is used only with requests that use a matchmaking configuration with a player acceptance requirement.</p></li>
-    /// <li>
-    /// <p><b>PLACING</b> -- The FlexMatch engine has matched players and is in the process of placing a new game session for the match.</p></li>
-    /// <li>
-    /// <p><b>COMPLETED</b> -- Players have been matched and a game session is ready to host the players. A ticket in this state contains the necessary connection information for players.</p></li>
-    /// <li>
-    /// <p><b>FAILED</b> -- The matchmaking request was not completed.</p></li>
-    /// <li>
-    /// <p><b>CANCELLED</b> -- The matchmaking request was canceled. This may be the result of a <code>StopMatchmaking</code> operation or a proposed match that one or more players failed to accept.</p></li>
-    /// <li>
-    /// <p><b>TIMED_OUT</b> -- The matchmaking request was not successful within the duration specified in the matchmaking configuration.</p></li>
-    /// </ul><note>
+    /// <li> <p> <b>QUEUED</b> -- The matchmaking request has been received and is currently waiting to be processed.</p> </li>
+    /// <li> <p> <b>SEARCHING</b> -- The matchmaking request is currently being processed. </p> </li>
+    /// <li> <p> <b>REQUIRES_ACCEPTANCE</b> -- A match has been proposed and the players must accept the match. This status is used only with requests that use a matchmaking configuration with a player acceptance requirement.</p> </li>
+    /// <li> <p> <b>PLACING</b> -- The FlexMatch engine has matched players and is in the process of placing a new game session for the match.</p> </li>
+    /// <li> <p> <b>COMPLETED</b> -- Players have been matched and a game session is ready to host the players. A ticket in this state contains the necessary connection information for players.</p> </li>
+    /// <li> <p> <b>FAILED</b> -- The matchmaking request was not completed.</p> </li>
+    /// <li> <p> <b>CANCELLED</b> -- The matchmaking request was canceled. This may be the result of a <code>StopMatchmaking</code> operation or a proposed match that one or more players failed to accept.</p> </li>
+    /// <li> <p> <b>TIMED_OUT</b> -- The matchmaking request was not successful within the duration specified in the matchmaking configuration. </p> </li>
+    /// </ul> <note>
     /// <p>Matchmaking requests that fail to successfully complete (statuses FAILED, CANCELLED, TIMED_OUT) can be resubmitted as new requests with new ticket IDs.</p>
     /// </note>
     pub fn status(mut self, input: crate::types::MatchmakingConfigurationStatus) -> Self {
@@ -208,23 +184,15 @@ impl MatchmakingTicketBuilder {
     }
     /// <p>Current status of the matchmaking request.</p>
     /// <ul>
-    /// <li>
-    /// <p><b>QUEUED</b> -- The matchmaking request has been received and is currently waiting to be processed.</p></li>
-    /// <li>
-    /// <p><b>SEARCHING</b> -- The matchmaking request is currently being processed.</p></li>
-    /// <li>
-    /// <p><b>REQUIRES_ACCEPTANCE</b> -- A match has been proposed and the players must accept the match. This status is used only with requests that use a matchmaking configuration with a player acceptance requirement.</p></li>
-    /// <li>
-    /// <p><b>PLACING</b> -- The FlexMatch engine has matched players and is in the process of placing a new game session for the match.</p></li>
-    /// <li>
-    /// <p><b>COMPLETED</b> -- Players have been matched and a game session is ready to host the players. A ticket in this state contains the necessary connection information for players.</p></li>
-    /// <li>
-    /// <p><b>FAILED</b> -- The matchmaking request was not completed.</p></li>
-    /// <li>
-    /// <p><b>CANCELLED</b> -- The matchmaking request was canceled. This may be the result of a <code>StopMatchmaking</code> operation or a proposed match that one or more players failed to accept.</p></li>
-    /// <li>
-    /// <p><b>TIMED_OUT</b> -- The matchmaking request was not successful within the duration specified in the matchmaking configuration.</p></li>
-    /// </ul><note>
+    /// <li> <p> <b>QUEUED</b> -- The matchmaking request has been received and is currently waiting to be processed.</p> </li>
+    /// <li> <p> <b>SEARCHING</b> -- The matchmaking request is currently being processed. </p> </li>
+    /// <li> <p> <b>REQUIRES_ACCEPTANCE</b> -- A match has been proposed and the players must accept the match. This status is used only with requests that use a matchmaking configuration with a player acceptance requirement.</p> </li>
+    /// <li> <p> <b>PLACING</b> -- The FlexMatch engine has matched players and is in the process of placing a new game session for the match.</p> </li>
+    /// <li> <p> <b>COMPLETED</b> -- Players have been matched and a game session is ready to host the players. A ticket in this state contains the necessary connection information for players.</p> </li>
+    /// <li> <p> <b>FAILED</b> -- The matchmaking request was not completed.</p> </li>
+    /// <li> <p> <b>CANCELLED</b> -- The matchmaking request was canceled. This may be the result of a <code>StopMatchmaking</code> operation or a proposed match that one or more players failed to accept.</p> </li>
+    /// <li> <p> <b>TIMED_OUT</b> -- The matchmaking request was not successful within the duration specified in the matchmaking configuration. </p> </li>
+    /// </ul> <note>
     /// <p>Matchmaking requests that fail to successfully complete (statuses FAILED, CANCELLED, TIMED_OUT) can be resubmitted as new requests with new ticket IDs.</p>
     /// </note>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::MatchmakingConfigurationStatus>) -> Self {
@@ -233,23 +201,15 @@ impl MatchmakingTicketBuilder {
     }
     /// <p>Current status of the matchmaking request.</p>
     /// <ul>
-    /// <li>
-    /// <p><b>QUEUED</b> -- The matchmaking request has been received and is currently waiting to be processed.</p></li>
-    /// <li>
-    /// <p><b>SEARCHING</b> -- The matchmaking request is currently being processed.</p></li>
-    /// <li>
-    /// <p><b>REQUIRES_ACCEPTANCE</b> -- A match has been proposed and the players must accept the match. This status is used only with requests that use a matchmaking configuration with a player acceptance requirement.</p></li>
-    /// <li>
-    /// <p><b>PLACING</b> -- The FlexMatch engine has matched players and is in the process of placing a new game session for the match.</p></li>
-    /// <li>
-    /// <p><b>COMPLETED</b> -- Players have been matched and a game session is ready to host the players. A ticket in this state contains the necessary connection information for players.</p></li>
-    /// <li>
-    /// <p><b>FAILED</b> -- The matchmaking request was not completed.</p></li>
-    /// <li>
-    /// <p><b>CANCELLED</b> -- The matchmaking request was canceled. This may be the result of a <code>StopMatchmaking</code> operation or a proposed match that one or more players failed to accept.</p></li>
-    /// <li>
-    /// <p><b>TIMED_OUT</b> -- The matchmaking request was not successful within the duration specified in the matchmaking configuration.</p></li>
-    /// </ul><note>
+    /// <li> <p> <b>QUEUED</b> -- The matchmaking request has been received and is currently waiting to be processed.</p> </li>
+    /// <li> <p> <b>SEARCHING</b> -- The matchmaking request is currently being processed. </p> </li>
+    /// <li> <p> <b>REQUIRES_ACCEPTANCE</b> -- A match has been proposed and the players must accept the match. This status is used only with requests that use a matchmaking configuration with a player acceptance requirement.</p> </li>
+    /// <li> <p> <b>PLACING</b> -- The FlexMatch engine has matched players and is in the process of placing a new game session for the match.</p> </li>
+    /// <li> <p> <b>COMPLETED</b> -- Players have been matched and a game session is ready to host the players. A ticket in this state contains the necessary connection information for players.</p> </li>
+    /// <li> <p> <b>FAILED</b> -- The matchmaking request was not completed.</p> </li>
+    /// <li> <p> <b>CANCELLED</b> -- The matchmaking request was canceled. This may be the result of a <code>StopMatchmaking</code> operation or a proposed match that one or more players failed to accept.</p> </li>
+    /// <li> <p> <b>TIMED_OUT</b> -- The matchmaking request was not successful within the duration specified in the matchmaking configuration. </p> </li>
+    /// </ul> <note>
     /// <p>Matchmaking requests that fail to successfully complete (statuses FAILED, CANCELLED, TIMED_OUT) can be resubmitted as new requests with new ticket IDs.</p>
     /// </note>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::MatchmakingConfigurationStatus> {

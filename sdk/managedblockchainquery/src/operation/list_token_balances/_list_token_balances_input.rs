@@ -5,7 +5,7 @@
 pub struct ListTokenBalancesInput {
     /// <p>The contract or wallet address on the blockchain network by which to filter the request. You must specify the <code>address</code> property of the <code>ownerFilter</code> when listing balances of tokens owned by the address.</p>
     pub owner_filter: ::std::option::Option<crate::types::OwnerFilter>,
-    /// <p>The contract address or a token identifier on the blockchain network by which to filter the request. You must specify the <code>contractAddress</code> property of this container when listing tokens minted by a contract.</p><note>
+    /// <p>The contract address or a token identifier on the blockchain network by which to filter the request. You must specify the <code>contractAddress</code> property of this container when listing tokens minted by a contract.</p> <note>
     /// <p>You must always specify the network property of this container when using this operation.</p>
     /// </note>
     pub token_filter: ::std::option::Option<crate::types::TokenFilter>,
@@ -19,7 +19,7 @@ impl ListTokenBalancesInput {
     pub fn owner_filter(&self) -> ::std::option::Option<&crate::types::OwnerFilter> {
         self.owner_filter.as_ref()
     }
-    /// <p>The contract address or a token identifier on the blockchain network by which to filter the request. You must specify the <code>contractAddress</code> property of this container when listing tokens minted by a contract.</p><note>
+    /// <p>The contract address or a token identifier on the blockchain network by which to filter the request. You must specify the <code>contractAddress</code> property of this container when listing tokens minted by a contract.</p> <note>
     /// <p>You must always specify the network property of this container when using this operation.</p>
     /// </note>
     pub fn token_filter(&self) -> ::std::option::Option<&crate::types::TokenFilter> {
@@ -65,7 +65,7 @@ impl ListTokenBalancesInputBuilder {
     pub fn get_owner_filter(&self) -> &::std::option::Option<crate::types::OwnerFilter> {
         &self.owner_filter
     }
-    /// <p>The contract address or a token identifier on the blockchain network by which to filter the request. You must specify the <code>contractAddress</code> property of this container when listing tokens minted by a contract.</p><note>
+    /// <p>The contract address or a token identifier on the blockchain network by which to filter the request. You must specify the <code>contractAddress</code> property of this container when listing tokens minted by a contract.</p> <note>
     /// <p>You must always specify the network property of this container when using this operation.</p>
     /// </note>
     /// This field is required.
@@ -73,14 +73,14 @@ impl ListTokenBalancesInputBuilder {
         self.token_filter = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The contract address or a token identifier on the blockchain network by which to filter the request. You must specify the <code>contractAddress</code> property of this container when listing tokens minted by a contract.</p><note>
+    /// <p>The contract address or a token identifier on the blockchain network by which to filter the request. You must specify the <code>contractAddress</code> property of this container when listing tokens minted by a contract.</p> <note>
     /// <p>You must always specify the network property of this container when using this operation.</p>
     /// </note>
     pub fn set_token_filter(mut self, input: ::std::option::Option<crate::types::TokenFilter>) -> Self {
         self.token_filter = input;
         self
     }
-    /// <p>The contract address or a token identifier on the blockchain network by which to filter the request. You must specify the <code>contractAddress</code> property of this container when listing tokens minted by a contract.</p><note>
+    /// <p>The contract address or a token identifier on the blockchain network by which to filter the request. You must specify the <code>contractAddress</code> property of this container when listing tokens minted by a contract.</p> <note>
     /// <p>You must always specify the network property of this container when using this operation.</p>
     /// </note>
     pub fn get_token_filter(&self) -> &::std::option::Option<crate::types::TokenFilter> {

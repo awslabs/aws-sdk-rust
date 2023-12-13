@@ -118,14 +118,10 @@ impl DescribeReservedInstancesListingsFluentBuilder {
     ///
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>reserved-instances-id</code> - The ID of the Reserved Instances.</p></li>
-    /// <li>
-    /// <p><code>reserved-instances-listing-id</code> - The ID of the Reserved Instances listing.</p></li>
-    /// <li>
-    /// <p><code>status</code> - The status of the Reserved Instance listing (<code>pending</code> | <code>active</code> | <code>cancelled</code> | <code>closed</code>).</p></li>
-    /// <li>
-    /// <p><code>status-message</code> - The reason for the status.</p></li>
+    /// <li> <p> <code>reserved-instances-id</code> - The ID of the Reserved Instances.</p> </li>
+    /// <li> <p> <code>reserved-instances-listing-id</code> - The ID of the Reserved Instances listing.</p> </li>
+    /// <li> <p> <code>status</code> - The status of the Reserved Instance listing (<code>pending</code> | <code>active</code> | <code>cancelled</code> | <code>closed</code>).</p> </li>
+    /// <li> <p> <code>status-message</code> - The reason for the status.</p> </li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
@@ -133,14 +129,10 @@ impl DescribeReservedInstancesListingsFluentBuilder {
     }
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>reserved-instances-id</code> - The ID of the Reserved Instances.</p></li>
-    /// <li>
-    /// <p><code>reserved-instances-listing-id</code> - The ID of the Reserved Instances listing.</p></li>
-    /// <li>
-    /// <p><code>status</code> - The status of the Reserved Instance listing (<code>pending</code> | <code>active</code> | <code>cancelled</code> | <code>closed</code>).</p></li>
-    /// <li>
-    /// <p><code>status-message</code> - The reason for the status.</p></li>
+    /// <li> <p> <code>reserved-instances-id</code> - The ID of the Reserved Instances.</p> </li>
+    /// <li> <p> <code>reserved-instances-listing-id</code> - The ID of the Reserved Instances listing.</p> </li>
+    /// <li> <p> <code>status</code> - The status of the Reserved Instance listing (<code>pending</code> | <code>active</code> | <code>cancelled</code> | <code>closed</code>).</p> </li>
+    /// <li> <p> <code>status-message</code> - The reason for the status.</p> </li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
@@ -148,14 +140,10 @@ impl DescribeReservedInstancesListingsFluentBuilder {
     }
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>reserved-instances-id</code> - The ID of the Reserved Instances.</p></li>
-    /// <li>
-    /// <p><code>reserved-instances-listing-id</code> - The ID of the Reserved Instances listing.</p></li>
-    /// <li>
-    /// <p><code>status</code> - The status of the Reserved Instance listing (<code>pending</code> | <code>active</code> | <code>cancelled</code> | <code>closed</code>).</p></li>
-    /// <li>
-    /// <p><code>status-message</code> - The reason for the status.</p></li>
+    /// <li> <p> <code>reserved-instances-id</code> - The ID of the Reserved Instances.</p> </li>
+    /// <li> <p> <code>reserved-instances-listing-id</code> - The ID of the Reserved Instances listing.</p> </li>
+    /// <li> <p> <code>status</code> - The status of the Reserved Instance listing (<code>pending</code> | <code>active</code> | <code>cancelled</code> | <code>closed</code>).</p> </li>
+    /// <li> <p> <code>status-message</code> - The reason for the status.</p> </li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()

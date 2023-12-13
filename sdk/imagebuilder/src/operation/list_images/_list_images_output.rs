@@ -5,7 +5,7 @@
 pub struct ListImagesOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
     pub request_id: ::std::option::Option<::std::string::String>,
-    /// <p>The list of image semantic versions.</p><note>
+    /// <p>The list of image semantic versions.</p> <note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -18,7 +18,7 @@ pub struct ListImagesOutput {
     /// </patch>
     /// </minor>
     /// </major></p>
-    /// <p><b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
+    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
     /// </note>
     pub image_version_list: ::std::option::Option<::std::vec::Vec<crate::types::ImageVersion>>,
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service hasn't included in this request. Use this token with the next request to retrieve additional objects.</p>
@@ -30,7 +30,7 @@ impl ListImagesOutput {
     pub fn request_id(&self) -> ::std::option::Option<&str> {
         self.request_id.as_deref()
     }
-    /// <p>The list of image semantic versions.</p><note>
+    /// <p>The list of image semantic versions.</p> <note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -43,7 +43,7 @@ impl ListImagesOutput {
     /// </patch>
     /// </minor>
     /// </major></p>
-    /// <p><b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
+    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
     /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.image_version_list.is_none()`.
@@ -95,7 +95,7 @@ impl ListImagesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_image_version_list`](Self::set_image_version_list).
     ///
-    /// <p>The list of image semantic versions.</p><note>
+    /// <p>The list of image semantic versions.</p> <note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -108,7 +108,7 @@ impl ListImagesOutputBuilder {
     /// </patch>
     /// </minor>
     /// </major></p>
-    /// <p><b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
+    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
     /// </note>
     pub fn image_version_list(mut self, input: crate::types::ImageVersion) -> Self {
         let mut v = self.image_version_list.unwrap_or_default();
@@ -116,7 +116,7 @@ impl ListImagesOutputBuilder {
         self.image_version_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of image semantic versions.</p><note>
+    /// <p>The list of image semantic versions.</p> <note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -129,13 +129,13 @@ impl ListImagesOutputBuilder {
     /// </patch>
     /// </minor>
     /// </major></p>
-    /// <p><b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
+    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
     /// </note>
     pub fn set_image_version_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImageVersion>>) -> Self {
         self.image_version_list = input;
         self
     }
-    /// <p>The list of image semantic versions.</p><note>
+    /// <p>The list of image semantic versions.</p> <note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -148,7 +148,7 @@ impl ListImagesOutputBuilder {
     /// </patch>
     /// </minor>
     /// </major></p>
-    /// <p><b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
+    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
     /// </note>
     pub fn get_image_version_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageVersion>> {
         &self.image_version_list

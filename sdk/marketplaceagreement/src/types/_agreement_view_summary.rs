@@ -14,13 +14,13 @@ pub struct AgreementViewSummary {
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The type of agreement. Values are <code>PurchaseAgreement</code> or <code>VendorInsightsAgreement</code>.</p>
     pub agreement_type: ::std::option::Option<::std::string::String>,
-    /// <p>Details of the party accepting the agreement terms. This is commonly the buyer for <code>PurchaseAgreement.</code></p>
+    /// <p>Details of the party accepting the agreement terms. This is commonly the buyer for <code>PurchaseAgreement.</code> </p>
     pub acceptor: ::std::option::Option<crate::types::Acceptor>,
     /// <p>Details of the party proposing the agreement terms, most commonly the seller for <code>PurchaseAgreement</code>.</p>
     pub proposer: ::std::option::Option<crate::types::Proposer>,
     /// <p>A summary of the proposal</p>
     pub proposal_summary: ::std::option::Option<crate::types::ProposalSummary>,
-    /// <p>The current status of the agreement.</p>
+    /// <p>The current status of the agreement. </p>
     pub status: ::std::option::Option<crate::types::AgreementStatus>,
 }
 impl AgreementViewSummary {
@@ -44,7 +44,7 @@ impl AgreementViewSummary {
     pub fn agreement_type(&self) -> ::std::option::Option<&str> {
         self.agreement_type.as_deref()
     }
-    /// <p>Details of the party accepting the agreement terms. This is commonly the buyer for <code>PurchaseAgreement.</code></p>
+    /// <p>Details of the party accepting the agreement terms. This is commonly the buyer for <code>PurchaseAgreement.</code> </p>
     pub fn acceptor(&self) -> ::std::option::Option<&crate::types::Acceptor> {
         self.acceptor.as_ref()
     }
@@ -56,7 +56,7 @@ impl AgreementViewSummary {
     pub fn proposal_summary(&self) -> ::std::option::Option<&crate::types::ProposalSummary> {
         self.proposal_summary.as_ref()
     }
-    /// <p>The current status of the agreement.</p>
+    /// <p>The current status of the agreement. </p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::AgreementStatus> {
         self.status.as_ref()
     }
@@ -153,17 +153,17 @@ impl AgreementViewSummaryBuilder {
     pub fn get_agreement_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.agreement_type
     }
-    /// <p>Details of the party accepting the agreement terms. This is commonly the buyer for <code>PurchaseAgreement.</code></p>
+    /// <p>Details of the party accepting the agreement terms. This is commonly the buyer for <code>PurchaseAgreement.</code> </p>
     pub fn acceptor(mut self, input: crate::types::Acceptor) -> Self {
         self.acceptor = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Details of the party accepting the agreement terms. This is commonly the buyer for <code>PurchaseAgreement.</code></p>
+    /// <p>Details of the party accepting the agreement terms. This is commonly the buyer for <code>PurchaseAgreement.</code> </p>
     pub fn set_acceptor(mut self, input: ::std::option::Option<crate::types::Acceptor>) -> Self {
         self.acceptor = input;
         self
     }
-    /// <p>Details of the party accepting the agreement terms. This is commonly the buyer for <code>PurchaseAgreement.</code></p>
+    /// <p>Details of the party accepting the agreement terms. This is commonly the buyer for <code>PurchaseAgreement.</code> </p>
     pub fn get_acceptor(&self) -> &::std::option::Option<crate::types::Acceptor> {
         &self.acceptor
     }
@@ -195,17 +195,17 @@ impl AgreementViewSummaryBuilder {
     pub fn get_proposal_summary(&self) -> &::std::option::Option<crate::types::ProposalSummary> {
         &self.proposal_summary
     }
-    /// <p>The current status of the agreement.</p>
+    /// <p>The current status of the agreement. </p>
     pub fn status(mut self, input: crate::types::AgreementStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current status of the agreement.</p>
+    /// <p>The current status of the agreement. </p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AgreementStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The current status of the agreement.</p>
+    /// <p>The current status of the agreement. </p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AgreementStatus> {
         &self.status
     }

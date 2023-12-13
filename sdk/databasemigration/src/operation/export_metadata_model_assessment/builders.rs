@@ -22,7 +22,7 @@ impl ExportMetadataModelAssessmentInputBuilder {
 }
 /// Fluent builder constructing a request to `ExportMetadataModelAssessment`.
 ///
-/// <p>Saves a copy of a database migration assessment report to your Amazon S3 bucket. DMS can save your assessment report as a comma-separated value (CSV) or a PDF file.</p>
+/// <p>Saves a copy of a database migration assessment report to your Amazon S3 bucket. DMS can save your assessment report as a comma-separated value (CSV) or a PDF file. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ExportMetadataModelAssessmentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

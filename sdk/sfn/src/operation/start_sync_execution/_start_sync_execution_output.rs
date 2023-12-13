@@ -23,7 +23,7 @@ pub struct StartSyncExecutionOutput {
     pub input: ::std::option::Option<::std::string::String>,
     /// <p>Provides details about execution input or output.</p>
     pub input_details: ::std::option::Option<crate::types::CloudWatchEventsExecutionDataDetails>,
-    /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p><note>
+    /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p> <note>
     /// <p>This field is set only if the execution succeeds. If the execution fails, this field is null.</p>
     /// </note>
     pub output: ::std::option::Option<::std::string::String>,
@@ -77,7 +77,7 @@ impl StartSyncExecutionOutput {
     pub fn input_details(&self) -> ::std::option::Option<&crate::types::CloudWatchEventsExecutionDataDetails> {
         self.input_details.as_ref()
     }
-    /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p><note>
+    /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p> <note>
     /// <p>This field is set only if the execution succeeds. If the execution fails, this field is null.</p>
     /// </note>
     pub fn output(&self) -> ::std::option::Option<&str> {
@@ -294,21 +294,21 @@ impl StartSyncExecutionOutputBuilder {
     pub fn get_input_details(&self) -> &::std::option::Option<crate::types::CloudWatchEventsExecutionDataDetails> {
         &self.input_details
     }
-    /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p><note>
+    /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p> <note>
     /// <p>This field is set only if the execution succeeds. If the execution fails, this field is null.</p>
     /// </note>
     pub fn output(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p><note>
+    /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p> <note>
     /// <p>This field is set only if the execution succeeds. If the execution fails, this field is null.</p>
     /// </note>
     pub fn set_output(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output = input;
         self
     }
-    /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p><note>
+    /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p> <note>
     /// <p>This field is set only if the execution succeeds. If the execution fails, this field is null.</p>
     /// </note>
     pub fn get_output(&self) -> &::std::option::Option<::std::string::String> {

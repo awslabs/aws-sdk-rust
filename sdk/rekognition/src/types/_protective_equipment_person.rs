@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProtectiveEquipmentPerson {
-    /// <p>An array of body parts detected on a person's body (including body parts without PPE).</p>
+    /// <p>An array of body parts detected on a person's body (including body parts without PPE). </p>
     pub body_parts: ::std::option::Option<::std::vec::Vec<crate::types::ProtectiveEquipmentBodyPart>>,
     /// <p>A bounding box around the detected person.</p>
     pub bounding_box: ::std::option::Option<crate::types::BoundingBox>,
@@ -14,7 +14,7 @@ pub struct ProtectiveEquipmentPerson {
     pub id: ::std::option::Option<i32>,
 }
 impl ProtectiveEquipmentPerson {
-    /// <p>An array of body parts detected on a person's body (including body parts without PPE).</p>
+    /// <p>An array of body parts detected on a person's body (including body parts without PPE). </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.body_parts.is_none()`.
     pub fn body_parts(&self) -> &[crate::types::ProtectiveEquipmentBodyPart] {
@@ -54,19 +54,19 @@ impl ProtectiveEquipmentPersonBuilder {
     ///
     /// To override the contents of this collection use [`set_body_parts`](Self::set_body_parts).
     ///
-    /// <p>An array of body parts detected on a person's body (including body parts without PPE).</p>
+    /// <p>An array of body parts detected on a person's body (including body parts without PPE). </p>
     pub fn body_parts(mut self, input: crate::types::ProtectiveEquipmentBodyPart) -> Self {
         let mut v = self.body_parts.unwrap_or_default();
         v.push(input);
         self.body_parts = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of body parts detected on a person's body (including body parts without PPE).</p>
+    /// <p>An array of body parts detected on a person's body (including body parts without PPE). </p>
     pub fn set_body_parts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProtectiveEquipmentBodyPart>>) -> Self {
         self.body_parts = input;
         self
     }
-    /// <p>An array of body parts detected on a person's body (including body parts without PPE).</p>
+    /// <p>An array of body parts detected on a person's body (including body parts without PPE). </p>
     pub fn get_body_parts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProtectiveEquipmentBodyPart>> {
         &self.body_parts
     }

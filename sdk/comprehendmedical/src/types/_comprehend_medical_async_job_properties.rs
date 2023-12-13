@@ -28,7 +28,7 @@ pub struct ComprehendMedicalAsyncJobProperties {
     pub data_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The path to the file that describes the results of a batch job.</p>
     pub manifest_file_path: ::std::option::Option<::std::string::String>,
-    /// <p>The AWS Key Management Service key, if any, used to encrypt the output files.</p>
+    /// <p>The AWS Key Management Service key, if any, used to encrypt the output files. </p>
     pub kms_key: ::std::option::Option<::std::string::String>,
     /// <p>The version of the model used to analyze the documents. The version number looks like X.X.X. You can use this information to track the model used for a particular batch of documents.</p>
     pub model_version: ::std::option::Option<::std::string::String>,
@@ -82,7 +82,7 @@ impl ComprehendMedicalAsyncJobProperties {
     pub fn manifest_file_path(&self) -> ::std::option::Option<&str> {
         self.manifest_file_path.as_deref()
     }
-    /// <p>The AWS Key Management Service key, if any, used to encrypt the output files.</p>
+    /// <p>The AWS Key Management Service key, if any, used to encrypt the output files. </p>
     pub fn kms_key(&self) -> ::std::option::Option<&str> {
         self.kms_key.as_deref()
     }
@@ -286,17 +286,17 @@ impl ComprehendMedicalAsyncJobPropertiesBuilder {
     pub fn get_manifest_file_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.manifest_file_path
     }
-    /// <p>The AWS Key Management Service key, if any, used to encrypt the output files.</p>
+    /// <p>The AWS Key Management Service key, if any, used to encrypt the output files. </p>
     pub fn kms_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS Key Management Service key, if any, used to encrypt the output files.</p>
+    /// <p>The AWS Key Management Service key, if any, used to encrypt the output files. </p>
     pub fn set_kms_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key = input;
         self
     }
-    /// <p>The AWS Key Management Service key, if any, used to encrypt the output files.</p>
+    /// <p>The AWS Key Management Service key, if any, used to encrypt the output files. </p>
     pub fn get_kms_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key
     }

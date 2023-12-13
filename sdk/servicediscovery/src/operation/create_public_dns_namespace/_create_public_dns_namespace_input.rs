@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePublicDnsNamespaceInput {
-    /// <p>The name that you want to assign to this namespace.</p><note>
+    /// <p>The name that you want to assign to this namespace.</p> <note>
     /// <p>Do not include sensitive information in the name. The name is publicly available using DNS queries.</p>
     /// </note>
     pub name: ::std::option::Option<::std::string::String>,
@@ -17,7 +17,7 @@ pub struct CreatePublicDnsNamespaceInput {
     pub properties: ::std::option::Option<crate::types::PublicDnsNamespaceProperties>,
 }
 impl CreatePublicDnsNamespaceInput {
-    /// <p>The name that you want to assign to this namespace.</p><note>
+    /// <p>The name that you want to assign to this namespace.</p> <note>
     /// <p>Do not include sensitive information in the name. The name is publicly available using DNS queries.</p>
     /// </note>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -60,7 +60,7 @@ pub struct CreatePublicDnsNamespaceInputBuilder {
     pub(crate) properties: ::std::option::Option<crate::types::PublicDnsNamespaceProperties>,
 }
 impl CreatePublicDnsNamespaceInputBuilder {
-    /// <p>The name that you want to assign to this namespace.</p><note>
+    /// <p>The name that you want to assign to this namespace.</p> <note>
     /// <p>Do not include sensitive information in the name. The name is publicly available using DNS queries.</p>
     /// </note>
     /// This field is required.
@@ -68,14 +68,14 @@ impl CreatePublicDnsNamespaceInputBuilder {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name that you want to assign to this namespace.</p><note>
+    /// <p>The name that you want to assign to this namespace.</p> <note>
     /// <p>Do not include sensitive information in the name. The name is publicly available using DNS queries.</p>
     /// </note>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name that you want to assign to this namespace.</p><note>
+    /// <p>The name that you want to assign to this namespace.</p> <note>
     /// <p>Do not include sensitive information in the name. The name is publicly available using DNS queries.</p>
     /// </note>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {

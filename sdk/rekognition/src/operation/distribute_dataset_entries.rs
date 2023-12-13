@@ -264,7 +264,7 @@ pub enum DistributeDatasetEntriesError {
     ProvisionedThroughputExceededException(crate::types::error::ProvisionedThroughputExceededException),
     /// <p>The resource specified in the request cannot be found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>The requested resource isn't ready. For example, this exception occurs when you call <code>DetectCustomLabels</code> with a model version that isn't deployed.</p>
+    /// <p>The requested resource isn't ready. For example, this exception occurs when you call <code>DetectCustomLabels</code> with a model version that isn't deployed. </p>
     ResourceNotReadyException(crate::types::error::ResourceNotReadyException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::types::error::ThrottlingException),

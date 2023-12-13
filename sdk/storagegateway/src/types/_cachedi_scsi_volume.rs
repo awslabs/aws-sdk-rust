@@ -24,7 +24,7 @@ pub struct CachediScsiVolume {
     pub volumei_scsi_attributes: ::std::option::Option<crate::types::VolumeiScsiAttributes>,
     /// <p>The date the volume was created. Volumes created prior to March 28, 2017 don’t have this timestamp.</p>
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The size of the data stored on the volume in bytes. This value is calculated based on the number of blocks that are touched, instead of the actual amount of data written. This value can be useful for sequential write patterns but less accurate for random write patterns. <code>VolumeUsedInBytes</code> is different from the compressed size of the volume, which is the value that is used to calculate your bill.</p><note>
+    /// <p>The size of the data stored on the volume in bytes. This value is calculated based on the number of blocks that are touched, instead of the actual amount of data written. This value can be useful for sequential write patterns but less accurate for random write patterns. <code>VolumeUsedInBytes</code> is different from the compressed size of the volume, which is the value that is used to calculate your bill.</p> <note>
     /// <p>This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.</p>
     /// <p>If you use a delete tool that overwrites the data on your volume with random data, your usage will not be reduced. This is because the random data is not compressible. If you want to reduce the amount of billed storage on your volume, we recommend overwriting your files with zeros to compress the data to a negligible amount of actual storage.</p>
     /// </note>
@@ -76,7 +76,7 @@ impl CachediScsiVolume {
     pub fn created_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
-    /// <p>The size of the data stored on the volume in bytes. This value is calculated based on the number of blocks that are touched, instead of the actual amount of data written. This value can be useful for sequential write patterns but less accurate for random write patterns. <code>VolumeUsedInBytes</code> is different from the compressed size of the volume, which is the value that is used to calculate your bill.</p><note>
+    /// <p>The size of the data stored on the volume in bytes. This value is calculated based on the number of blocks that are touched, instead of the actual amount of data written. This value can be useful for sequential write patterns but less accurate for random write patterns. <code>VolumeUsedInBytes</code> is different from the compressed size of the volume, which is the value that is used to calculate your bill.</p> <note>
     /// <p>This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.</p>
     /// <p>If you use a delete tool that overwrites the data on your volume with random data, your usage will not be reduced. This is because the random data is not compressible. If you want to reduce the amount of billed storage on your volume, we recommend overwriting your files with zeros to compress the data to a negligible amount of actual storage.</p>
     /// </note>
@@ -259,7 +259,7 @@ impl CachediScsiVolumeBuilder {
     pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_date
     }
-    /// <p>The size of the data stored on the volume in bytes. This value is calculated based on the number of blocks that are touched, instead of the actual amount of data written. This value can be useful for sequential write patterns but less accurate for random write patterns. <code>VolumeUsedInBytes</code> is different from the compressed size of the volume, which is the value that is used to calculate your bill.</p><note>
+    /// <p>The size of the data stored on the volume in bytes. This value is calculated based on the number of blocks that are touched, instead of the actual amount of data written. This value can be useful for sequential write patterns but less accurate for random write patterns. <code>VolumeUsedInBytes</code> is different from the compressed size of the volume, which is the value that is used to calculate your bill.</p> <note>
     /// <p>This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.</p>
     /// <p>If you use a delete tool that overwrites the data on your volume with random data, your usage will not be reduced. This is because the random data is not compressible. If you want to reduce the amount of billed storage on your volume, we recommend overwriting your files with zeros to compress the data to a negligible amount of actual storage.</p>
     /// </note>
@@ -267,7 +267,7 @@ impl CachediScsiVolumeBuilder {
         self.volume_used_in_bytes = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The size of the data stored on the volume in bytes. This value is calculated based on the number of blocks that are touched, instead of the actual amount of data written. This value can be useful for sequential write patterns but less accurate for random write patterns. <code>VolumeUsedInBytes</code> is different from the compressed size of the volume, which is the value that is used to calculate your bill.</p><note>
+    /// <p>The size of the data stored on the volume in bytes. This value is calculated based on the number of blocks that are touched, instead of the actual amount of data written. This value can be useful for sequential write patterns but less accurate for random write patterns. <code>VolumeUsedInBytes</code> is different from the compressed size of the volume, which is the value that is used to calculate your bill.</p> <note>
     /// <p>This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.</p>
     /// <p>If you use a delete tool that overwrites the data on your volume with random data, your usage will not be reduced. This is because the random data is not compressible. If you want to reduce the amount of billed storage on your volume, we recommend overwriting your files with zeros to compress the data to a negligible amount of actual storage.</p>
     /// </note>
@@ -275,7 +275,7 @@ impl CachediScsiVolumeBuilder {
         self.volume_used_in_bytes = input;
         self
     }
-    /// <p>The size of the data stored on the volume in bytes. This value is calculated based on the number of blocks that are touched, instead of the actual amount of data written. This value can be useful for sequential write patterns but less accurate for random write patterns. <code>VolumeUsedInBytes</code> is different from the compressed size of the volume, which is the value that is used to calculate your bill.</p><note>
+    /// <p>The size of the data stored on the volume in bytes. This value is calculated based on the number of blocks that are touched, instead of the actual amount of data written. This value can be useful for sequential write patterns but less accurate for random write patterns. <code>VolumeUsedInBytes</code> is different from the compressed size of the volume, which is the value that is used to calculate your bill.</p> <note>
     /// <p>This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.</p>
     /// <p>If you use a delete tool that overwrites the data on your volume with random data, your usage will not be reduced. This is because the random data is not compressible. If you want to reduce the amount of billed storage on your volume, we recommend overwriting your files with zeros to compress the data to a negligible amount of actual storage.</p>
     /// </note>

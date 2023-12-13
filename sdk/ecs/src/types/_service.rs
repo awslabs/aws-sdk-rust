@@ -28,8 +28,8 @@ pub struct Service {
     pub capacity_provider_strategy: ::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>>,
     /// <p>The platform version to run your service on. A platform version is only specified for tasks that are hosted on Fargate. If one isn't specified, the <code>LATEST</code> platform version is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub platform_version: ::std::option::Option<::std::string::String>,
-    /// <p>The operating system that your tasks in the service run on. A platform family is specified only for tasks using the Fargate launch type.</p>
-    /// <p>All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service (for example, <code>LINUX</code>).</p>
+    /// <p>The operating system that your tasks in the service run on. A platform family is specified only for tasks using the Fargate launch type. </p>
+    /// <p> All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service (for example, <code>LINUX</code>).</p>
     pub platform_family: ::std::option::Option<::std::string::String>,
     /// <p>The task definition to use for tasks in the service. This value is specified when the service is created with <code>CreateService</code>, and it can be modified with <code>UpdateService</code>.</p>
     pub task_definition: ::std::option::Option<::std::string::String>,
@@ -56,33 +56,24 @@ pub struct Service {
     /// <p>The scheduling strategy to use for the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
     /// <p>There are two service scheduler strategies available.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>REPLICA</code>-The replica scheduling strategy places and maintains the desired number of tasks across your cluster. By default, the service scheduler spreads tasks across Availability Zones. You can use task placement strategies and constraints to customize task placement decisions.</p></li>
-    /// <li>
-    /// <p><code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container instance. This task meets all of the task placement constraints that you specify in your cluster. The service scheduler also evaluates the task placement constraints for running tasks. It stop tasks that don't meet the placement constraints.</p><note>
+    /// <li> <p> <code>REPLICA</code>-The replica scheduling strategy places and maintains the desired number of tasks across your cluster. By default, the service scheduler spreads tasks across Availability Zones. You can use task placement strategies and constraints to customize task placement decisions.</p> </li>
+    /// <li> <p> <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container instance. This task meets all of the task placement constraints that you specify in your cluster. The service scheduler also evaluates the task placement constraints for running tasks. It stop tasks that don't meet the placement constraints.</p> <note>
     /// <p>Fargate tasks don't support the <code>DAEMON</code> scheduling strategy.</p>
-    /// </note></li>
+    /// </note> </li>
     /// </ul>
     pub scheduling_strategy: ::std::option::Option<crate::types::SchedulingStrategy>,
-    /// <p>The deployment controller type the service is using.</p>
+    /// <p>The deployment controller type the service is using. </p>
     pub deployment_controller: ::std::option::Option<crate::types::DeploymentController>,
     /// <p>The metadata that you apply to the service to help you categorize and organize them. Each tag consists of a key and an optional value. You define bot the key and value.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
-    /// <li>
-    /// <p>Maximum number of tags per resource - 50</p></li>
-    /// <li>
-    /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p></li>
-    /// <li>
-    /// <p>Maximum key length - 128 Unicode characters in UTF-8</p></li>
-    /// <li>
-    /// <p>Maximum value length - 256 Unicode characters in UTF-8</p></li>
-    /// <li>
-    /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p></li>
-    /// <li>
-    /// <p>Tag keys and values are case-sensitive.</p></li>
-    /// <li>
-    /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
+    /// <li> <p>Maximum number of tags per resource - 50</p> </li>
+    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+    /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
+    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
     /// </ul>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The principal that created the service.</p>
@@ -149,8 +140,8 @@ impl Service {
     pub fn platform_version(&self) -> ::std::option::Option<&str> {
         self.platform_version.as_deref()
     }
-    /// <p>The operating system that your tasks in the service run on. A platform family is specified only for tasks using the Fargate launch type.</p>
-    /// <p>All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service (for example, <code>LINUX</code>).</p>
+    /// <p>The operating system that your tasks in the service run on. A platform family is specified only for tasks using the Fargate launch type. </p>
+    /// <p> All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service (for example, <code>LINUX</code>).</p>
     pub fn platform_family(&self) -> ::std::option::Option<&str> {
         self.platform_family.as_deref()
     }
@@ -211,37 +202,28 @@ impl Service {
     /// <p>The scheduling strategy to use for the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
     /// <p>There are two service scheduler strategies available.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>REPLICA</code>-The replica scheduling strategy places and maintains the desired number of tasks across your cluster. By default, the service scheduler spreads tasks across Availability Zones. You can use task placement strategies and constraints to customize task placement decisions.</p></li>
-    /// <li>
-    /// <p><code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container instance. This task meets all of the task placement constraints that you specify in your cluster. The service scheduler also evaluates the task placement constraints for running tasks. It stop tasks that don't meet the placement constraints.</p><note>
+    /// <li> <p> <code>REPLICA</code>-The replica scheduling strategy places and maintains the desired number of tasks across your cluster. By default, the service scheduler spreads tasks across Availability Zones. You can use task placement strategies and constraints to customize task placement decisions.</p> </li>
+    /// <li> <p> <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container instance. This task meets all of the task placement constraints that you specify in your cluster. The service scheduler also evaluates the task placement constraints for running tasks. It stop tasks that don't meet the placement constraints.</p> <note>
     /// <p>Fargate tasks don't support the <code>DAEMON</code> scheduling strategy.</p>
-    /// </note></li>
+    /// </note> </li>
     /// </ul>
     pub fn scheduling_strategy(&self) -> ::std::option::Option<&crate::types::SchedulingStrategy> {
         self.scheduling_strategy.as_ref()
     }
-    /// <p>The deployment controller type the service is using.</p>
+    /// <p>The deployment controller type the service is using. </p>
     pub fn deployment_controller(&self) -> ::std::option::Option<&crate::types::DeploymentController> {
         self.deployment_controller.as_ref()
     }
     /// <p>The metadata that you apply to the service to help you categorize and organize them. Each tag consists of a key and an optional value. You define bot the key and value.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
-    /// <li>
-    /// <p>Maximum number of tags per resource - 50</p></li>
-    /// <li>
-    /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p></li>
-    /// <li>
-    /// <p>Maximum key length - 128 Unicode characters in UTF-8</p></li>
-    /// <li>
-    /// <p>Maximum value length - 256 Unicode characters in UTF-8</p></li>
-    /// <li>
-    /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p></li>
-    /// <li>
-    /// <p>Tag keys and values are case-sensitive.</p></li>
-    /// <li>
-    /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
+    /// <li> <p>Maximum number of tags per resource - 50</p> </li>
+    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+    /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
+    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
@@ -498,20 +480,20 @@ impl ServiceBuilder {
     pub fn get_platform_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.platform_version
     }
-    /// <p>The operating system that your tasks in the service run on. A platform family is specified only for tasks using the Fargate launch type.</p>
-    /// <p>All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service (for example, <code>LINUX</code>).</p>
+    /// <p>The operating system that your tasks in the service run on. A platform family is specified only for tasks using the Fargate launch type. </p>
+    /// <p> All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service (for example, <code>LINUX</code>).</p>
     pub fn platform_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform_family = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The operating system that your tasks in the service run on. A platform family is specified only for tasks using the Fargate launch type.</p>
-    /// <p>All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service (for example, <code>LINUX</code>).</p>
+    /// <p>The operating system that your tasks in the service run on. A platform family is specified only for tasks using the Fargate launch type. </p>
+    /// <p> All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service (for example, <code>LINUX</code>).</p>
     pub fn set_platform_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.platform_family = input;
         self
     }
-    /// <p>The operating system that your tasks in the service run on. A platform family is specified only for tasks using the Fargate launch type.</p>
-    /// <p>All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service (for example, <code>LINUX</code>).</p>
+    /// <p>The operating system that your tasks in the service run on. A platform family is specified only for tasks using the Fargate launch type. </p>
+    /// <p> All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service (for example, <code>LINUX</code>).</p>
     pub fn get_platform_family(&self) -> &::std::option::Option<::std::string::String> {
         &self.platform_family
     }
@@ -702,12 +684,10 @@ impl ServiceBuilder {
     /// <p>The scheduling strategy to use for the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
     /// <p>There are two service scheduler strategies available.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>REPLICA</code>-The replica scheduling strategy places and maintains the desired number of tasks across your cluster. By default, the service scheduler spreads tasks across Availability Zones. You can use task placement strategies and constraints to customize task placement decisions.</p></li>
-    /// <li>
-    /// <p><code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container instance. This task meets all of the task placement constraints that you specify in your cluster. The service scheduler also evaluates the task placement constraints for running tasks. It stop tasks that don't meet the placement constraints.</p><note>
+    /// <li> <p> <code>REPLICA</code>-The replica scheduling strategy places and maintains the desired number of tasks across your cluster. By default, the service scheduler spreads tasks across Availability Zones. You can use task placement strategies and constraints to customize task placement decisions.</p> </li>
+    /// <li> <p> <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container instance. This task meets all of the task placement constraints that you specify in your cluster. The service scheduler also evaluates the task placement constraints for running tasks. It stop tasks that don't meet the placement constraints.</p> <note>
     /// <p>Fargate tasks don't support the <code>DAEMON</code> scheduling strategy.</p>
-    /// </note></li>
+    /// </note> </li>
     /// </ul>
     pub fn scheduling_strategy(mut self, input: crate::types::SchedulingStrategy) -> Self {
         self.scheduling_strategy = ::std::option::Option::Some(input);
@@ -716,12 +696,10 @@ impl ServiceBuilder {
     /// <p>The scheduling strategy to use for the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
     /// <p>There are two service scheduler strategies available.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>REPLICA</code>-The replica scheduling strategy places and maintains the desired number of tasks across your cluster. By default, the service scheduler spreads tasks across Availability Zones. You can use task placement strategies and constraints to customize task placement decisions.</p></li>
-    /// <li>
-    /// <p><code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container instance. This task meets all of the task placement constraints that you specify in your cluster. The service scheduler also evaluates the task placement constraints for running tasks. It stop tasks that don't meet the placement constraints.</p><note>
+    /// <li> <p> <code>REPLICA</code>-The replica scheduling strategy places and maintains the desired number of tasks across your cluster. By default, the service scheduler spreads tasks across Availability Zones. You can use task placement strategies and constraints to customize task placement decisions.</p> </li>
+    /// <li> <p> <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container instance. This task meets all of the task placement constraints that you specify in your cluster. The service scheduler also evaluates the task placement constraints for running tasks. It stop tasks that don't meet the placement constraints.</p> <note>
     /// <p>Fargate tasks don't support the <code>DAEMON</code> scheduling strategy.</p>
-    /// </note></li>
+    /// </note> </li>
     /// </ul>
     pub fn set_scheduling_strategy(mut self, input: ::std::option::Option<crate::types::SchedulingStrategy>) -> Self {
         self.scheduling_strategy = input;
@@ -730,27 +708,25 @@ impl ServiceBuilder {
     /// <p>The scheduling strategy to use for the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
     /// <p>There are two service scheduler strategies available.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>REPLICA</code>-The replica scheduling strategy places and maintains the desired number of tasks across your cluster. By default, the service scheduler spreads tasks across Availability Zones. You can use task placement strategies and constraints to customize task placement decisions.</p></li>
-    /// <li>
-    /// <p><code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container instance. This task meets all of the task placement constraints that you specify in your cluster. The service scheduler also evaluates the task placement constraints for running tasks. It stop tasks that don't meet the placement constraints.</p><note>
+    /// <li> <p> <code>REPLICA</code>-The replica scheduling strategy places and maintains the desired number of tasks across your cluster. By default, the service scheduler spreads tasks across Availability Zones. You can use task placement strategies and constraints to customize task placement decisions.</p> </li>
+    /// <li> <p> <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container instance. This task meets all of the task placement constraints that you specify in your cluster. The service scheduler also evaluates the task placement constraints for running tasks. It stop tasks that don't meet the placement constraints.</p> <note>
     /// <p>Fargate tasks don't support the <code>DAEMON</code> scheduling strategy.</p>
-    /// </note></li>
+    /// </note> </li>
     /// </ul>
     pub fn get_scheduling_strategy(&self) -> &::std::option::Option<crate::types::SchedulingStrategy> {
         &self.scheduling_strategy
     }
-    /// <p>The deployment controller type the service is using.</p>
+    /// <p>The deployment controller type the service is using. </p>
     pub fn deployment_controller(mut self, input: crate::types::DeploymentController) -> Self {
         self.deployment_controller = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The deployment controller type the service is using.</p>
+    /// <p>The deployment controller type the service is using. </p>
     pub fn set_deployment_controller(mut self, input: ::std::option::Option<crate::types::DeploymentController>) -> Self {
         self.deployment_controller = input;
         self
     }
-    /// <p>The deployment controller type the service is using.</p>
+    /// <p>The deployment controller type the service is using. </p>
     pub fn get_deployment_controller(&self) -> &::std::option::Option<crate::types::DeploymentController> {
         &self.deployment_controller
     }
@@ -761,20 +737,13 @@ impl ServiceBuilder {
     /// <p>The metadata that you apply to the service to help you categorize and organize them. Each tag consists of a key and an optional value. You define bot the key and value.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
-    /// <li>
-    /// <p>Maximum number of tags per resource - 50</p></li>
-    /// <li>
-    /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p></li>
-    /// <li>
-    /// <p>Maximum key length - 128 Unicode characters in UTF-8</p></li>
-    /// <li>
-    /// <p>Maximum value length - 256 Unicode characters in UTF-8</p></li>
-    /// <li>
-    /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p></li>
-    /// <li>
-    /// <p>Tag keys and values are case-sensitive.</p></li>
-    /// <li>
-    /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
+    /// <li> <p>Maximum number of tags per resource - 50</p> </li>
+    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+    /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
+    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
     /// </ul>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
@@ -785,20 +754,13 @@ impl ServiceBuilder {
     /// <p>The metadata that you apply to the service to help you categorize and organize them. Each tag consists of a key and an optional value. You define bot the key and value.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
-    /// <li>
-    /// <p>Maximum number of tags per resource - 50</p></li>
-    /// <li>
-    /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p></li>
-    /// <li>
-    /// <p>Maximum key length - 128 Unicode characters in UTF-8</p></li>
-    /// <li>
-    /// <p>Maximum value length - 256 Unicode characters in UTF-8</p></li>
-    /// <li>
-    /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p></li>
-    /// <li>
-    /// <p>Tag keys and values are case-sensitive.</p></li>
-    /// <li>
-    /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
+    /// <li> <p>Maximum number of tags per resource - 50</p> </li>
+    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+    /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
+    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
     /// </ul>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
@@ -807,20 +769,13 @@ impl ServiceBuilder {
     /// <p>The metadata that you apply to the service to help you categorize and organize them. Each tag consists of a key and an optional value. You define bot the key and value.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
-    /// <li>
-    /// <p>Maximum number of tags per resource - 50</p></li>
-    /// <li>
-    /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p></li>
-    /// <li>
-    /// <p>Maximum key length - 128 Unicode characters in UTF-8</p></li>
-    /// <li>
-    /// <p>Maximum value length - 256 Unicode characters in UTF-8</p></li>
-    /// <li>
-    /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p></li>
-    /// <li>
-    /// <p>Tag keys and values are case-sensitive.</p></li>
-    /// <li>
-    /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
+    /// <li> <p>Maximum number of tags per resource - 50</p> </li>
+    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+    /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
+    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
     /// </ul>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags

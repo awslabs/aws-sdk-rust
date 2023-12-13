@@ -23,7 +23,7 @@ impl DeleteCrlInputBuilder {
 /// Fluent builder constructing a request to `DeleteCrl`.
 ///
 /// <p>Deletes a certificate revocation list (CRL).</p>
-/// <p><b>Required permissions: </b> <code>rolesanywhere:DeleteCrl</code>.</p>
+/// <p> <b>Required permissions: </b> <code>rolesanywhere:DeleteCrl</code>. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteCrlFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

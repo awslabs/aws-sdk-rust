@@ -23,7 +23,7 @@ impl DeletePipelineInputBuilder {
 /// Fluent builder constructing a request to `DeletePipeline`.
 ///
 /// <p>The DeletePipeline operation removes a pipeline.</p>
-/// <p>You can only delete a pipeline that has never been used or that is not currently in use (doesn't contain any active jobs). If the pipeline is currently in use, <code>DeletePipeline</code> returns an error.</p>
+/// <p> You can only delete a pipeline that has never been used or that is not currently in use (doesn't contain any active jobs). If the pipeline is currently in use, <code>DeletePipeline</code> returns an error. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeletePipelineFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

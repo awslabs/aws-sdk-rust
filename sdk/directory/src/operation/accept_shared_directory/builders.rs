@@ -108,17 +108,17 @@ impl AcceptSharedDirectoryFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Identifier of the shared directory in the directory consumer account. This identifier is different for each directory owner account.</p>
+    /// <p>Identifier of the shared directory in the directory consumer account. This identifier is different for each directory owner account. </p>
     pub fn shared_directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.shared_directory_id(input.into());
         self
     }
-    /// <p>Identifier of the shared directory in the directory consumer account. This identifier is different for each directory owner account.</p>
+    /// <p>Identifier of the shared directory in the directory consumer account. This identifier is different for each directory owner account. </p>
     pub fn set_shared_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_shared_directory_id(input);
         self
     }
-    /// <p>Identifier of the shared directory in the directory consumer account. This identifier is different for each directory owner account.</p>
+    /// <p>Identifier of the shared directory in the directory consumer account. This identifier is different for each directory owner account. </p>
     pub fn get_shared_directory_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_shared_directory_id()
     }

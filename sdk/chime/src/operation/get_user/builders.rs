@@ -23,7 +23,7 @@ impl GetUserInputBuilder {
 /// Fluent builder constructing a request to `GetUser`.
 ///
 /// <p>Retrieves details for the specified user ID, such as primary email address, license type,and personal meeting PIN.</p>
-/// <p>To retrieve user details with an email address instead of a user ID, use the <code>ListUsers</code> action, and then filter by email address.</p>
+/// <p> To retrieve user details with an email address instead of a user ID, use the <code>ListUsers</code> action, and then filter by email address. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetUserFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

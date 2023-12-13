@@ -3,29 +3,29 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateAssessmentControlSetStatusInput {
-    /// <p>The unique identifier for the assessment.</p>
+    /// <p> The unique identifier for the assessment. </p>
     pub assessment_id: ::std::option::Option<::std::string::String>,
-    /// <p>The unique identifier for the control set.</p>
+    /// <p> The unique identifier for the control set. </p>
     pub control_set_id: ::std::option::Option<::std::string::String>,
-    /// <p>The status of the control set that's being updated.</p>
+    /// <p> The status of the control set that's being updated. </p>
     pub status: ::std::option::Option<crate::types::ControlSetStatus>,
-    /// <p>The comment that's related to the status update.</p>
+    /// <p> The comment that's related to the status update. </p>
     pub comment: ::std::option::Option<::std::string::String>,
 }
 impl UpdateAssessmentControlSetStatusInput {
-    /// <p>The unique identifier for the assessment.</p>
+    /// <p> The unique identifier for the assessment. </p>
     pub fn assessment_id(&self) -> ::std::option::Option<&str> {
         self.assessment_id.as_deref()
     }
-    /// <p>The unique identifier for the control set.</p>
+    /// <p> The unique identifier for the control set. </p>
     pub fn control_set_id(&self) -> ::std::option::Option<&str> {
         self.control_set_id.as_deref()
     }
-    /// <p>The status of the control set that's being updated.</p>
+    /// <p> The status of the control set that's being updated. </p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ControlSetStatus> {
         self.status.as_ref()
     }
-    /// <p>The comment that's related to the status update.</p>
+    /// <p> The comment that's related to the status update. </p>
     pub fn comment(&self) -> ::std::option::Option<&str> {
         self.comment.as_deref()
     }
@@ -57,63 +57,63 @@ pub struct UpdateAssessmentControlSetStatusInputBuilder {
     pub(crate) comment: ::std::option::Option<::std::string::String>,
 }
 impl UpdateAssessmentControlSetStatusInputBuilder {
-    /// <p>The unique identifier for the assessment.</p>
+    /// <p> The unique identifier for the assessment. </p>
     /// This field is required.
     pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier for the assessment.</p>
+    /// <p> The unique identifier for the assessment. </p>
     pub fn set_assessment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assessment_id = input;
         self
     }
-    /// <p>The unique identifier for the assessment.</p>
+    /// <p> The unique identifier for the assessment. </p>
     pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.assessment_id
     }
-    /// <p>The unique identifier for the control set.</p>
+    /// <p> The unique identifier for the control set. </p>
     /// This field is required.
     pub fn control_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control_set_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier for the control set.</p>
+    /// <p> The unique identifier for the control set. </p>
     pub fn set_control_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.control_set_id = input;
         self
     }
-    /// <p>The unique identifier for the control set.</p>
+    /// <p> The unique identifier for the control set. </p>
     pub fn get_control_set_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.control_set_id
     }
-    /// <p>The status of the control set that's being updated.</p>
+    /// <p> The status of the control set that's being updated. </p>
     /// This field is required.
     pub fn status(mut self, input: crate::types::ControlSetStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the control set that's being updated.</p>
+    /// <p> The status of the control set that's being updated. </p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ControlSetStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of the control set that's being updated.</p>
+    /// <p> The status of the control set that's being updated. </p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ControlSetStatus> {
         &self.status
     }
-    /// <p>The comment that's related to the status update.</p>
+    /// <p> The comment that's related to the status update. </p>
     /// This field is required.
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comment = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The comment that's related to the status update.</p>
+    /// <p> The comment that's related to the status update. </p>
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.comment = input;
         self
     }
-    /// <p>The comment that's related to the status update.</p>
+    /// <p> The comment that's related to the status update. </p>
     pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
         &self.comment
     }

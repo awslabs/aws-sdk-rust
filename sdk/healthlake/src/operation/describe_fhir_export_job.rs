@@ -250,9 +250,9 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeFHIRE
 pub enum DescribeFHIRExportJobError {
     /// <p>Unknown error occurs in the service.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p>The requested data store was not found.</p>
+    /// <p> The requested data store was not found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>The user has exceeded their maximum number of allowed calls to the given API.</p>
+    /// <p>The user has exceeded their maximum number of allowed calls to the given API. </p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>The user input parameter was invalid.</p>
     ValidationException(crate::types::error::ValidationException),

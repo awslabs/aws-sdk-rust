@@ -5,13 +5,13 @@
 pub struct UpdateDetectorVersionInput {
     /// <p>The parent detector ID for the detector version you want to update.</p>
     pub detector_id: ::std::option::Option<::std::string::String>,
-    /// <p>The detector version ID.</p>
+    /// <p>The detector version ID. </p>
     pub detector_version_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon SageMaker model endpoints to include in the detector version.</p>
     pub external_model_endpoints: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The rules to include in the detector version.</p>
     pub rules: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
-    /// <p>The detector version description.</p>
+    /// <p>The detector version description. </p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The model versions to include in the detector version.</p>
     pub model_versions: ::std::option::Option<::std::vec::Vec<crate::types::ModelVersion>>,
@@ -26,7 +26,7 @@ impl UpdateDetectorVersionInput {
     pub fn detector_id(&self) -> ::std::option::Option<&str> {
         self.detector_id.as_deref()
     }
-    /// <p>The detector version ID.</p>
+    /// <p>The detector version ID. </p>
     pub fn detector_version_id(&self) -> ::std::option::Option<&str> {
         self.detector_version_id.as_deref()
     }
@@ -42,7 +42,7 @@ impl UpdateDetectorVersionInput {
     pub fn rules(&self) -> &[crate::types::Rule] {
         self.rules.as_deref().unwrap_or_default()
     }
-    /// <p>The detector version description.</p>
+    /// <p>The detector version description. </p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -95,18 +95,18 @@ impl UpdateDetectorVersionInputBuilder {
     pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.detector_id
     }
-    /// <p>The detector version ID.</p>
+    /// <p>The detector version ID. </p>
     /// This field is required.
     pub fn detector_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_version_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The detector version ID.</p>
+    /// <p>The detector version ID. </p>
     pub fn set_detector_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detector_version_id = input;
         self
     }
-    /// <p>The detector version ID.</p>
+    /// <p>The detector version ID. </p>
     pub fn get_detector_version_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.detector_version_id
     }
@@ -150,17 +150,17 @@ impl UpdateDetectorVersionInputBuilder {
     pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Rule>> {
         &self.rules
     }
-    /// <p>The detector version description.</p>
+    /// <p>The detector version description. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The detector version description.</p>
+    /// <p>The detector version description. </p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>The detector version description.</p>
+    /// <p>The detector version description. </p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }

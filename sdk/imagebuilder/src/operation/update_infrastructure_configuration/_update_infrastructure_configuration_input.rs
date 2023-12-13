@@ -21,7 +21,7 @@ pub struct UpdateInfrastructureConfigurationInput {
     pub key_pair: ::std::option::Option<::std::string::String>,
     /// <p>The terminate instance on failure setting of the infrastructure configuration. Set to false if you want Image Builder to retain the instance used to configure your AMI if the build or test phase of your workflow fails.</p>
     pub terminate_instance_on_failure: ::std::option::Option<bool>,
-    /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p><note>
+    /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p> <note>
     /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p>
     /// </note>
     pub sns_topic_arn: ::std::option::Option<::std::string::String>,
@@ -31,10 +31,8 @@ pub struct UpdateInfrastructureConfigurationInput {
     pub resource_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The instance metadata options that you can set for the HTTP requests that pipeline builds use to launch EC2 build and test instances. For more information about instance metadata options, see one of the following links:</p>
     /// <ul>
-    /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 User Guide</i> </i> for Linux instances.</p></li>
-    /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 Windows Guide</i> </i> for Windows instances.</p></li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 User Guide</i> </i> for Linux instances.</p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 Windows Guide</i> </i> for Windows instances.</p> </li>
     /// </ul>
     pub instance_metadata_options: ::std::option::Option<crate::types::InstanceMetadataOptions>,
 }
@@ -79,7 +77,7 @@ impl UpdateInfrastructureConfigurationInput {
     pub fn terminate_instance_on_failure(&self) -> ::std::option::Option<bool> {
         self.terminate_instance_on_failure
     }
-    /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p><note>
+    /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p> <note>
     /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p>
     /// </note>
     pub fn sns_topic_arn(&self) -> ::std::option::Option<&str> {
@@ -95,10 +93,8 @@ impl UpdateInfrastructureConfigurationInput {
     }
     /// <p>The instance metadata options that you can set for the HTTP requests that pipeline builds use to launch EC2 build and test instances. For more information about instance metadata options, see one of the following links:</p>
     /// <ul>
-    /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 User Guide</i> </i> for Linux instances.</p></li>
-    /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 Windows Guide</i> </i> for Windows instances.</p></li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 User Guide</i> </i> for Linux instances.</p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 Windows Guide</i> </i> for Windows instances.</p> </li>
     /// </ul>
     pub fn instance_metadata_options(&self) -> ::std::option::Option<&crate::types::InstanceMetadataOptions> {
         self.instance_metadata_options.as_ref()
@@ -270,21 +266,21 @@ impl UpdateInfrastructureConfigurationInputBuilder {
     pub fn get_terminate_instance_on_failure(&self) -> &::std::option::Option<bool> {
         &self.terminate_instance_on_failure
     }
-    /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p><note>
+    /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p> <note>
     /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p>
     /// </note>
     pub fn sns_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sns_topic_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p><note>
+    /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p> <note>
     /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p>
     /// </note>
     pub fn set_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sns_topic_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p><note>
+    /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p> <note>
     /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p>
     /// </note>
     pub fn get_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -330,10 +326,8 @@ impl UpdateInfrastructureConfigurationInputBuilder {
     }
     /// <p>The instance metadata options that you can set for the HTTP requests that pipeline builds use to launch EC2 build and test instances. For more information about instance metadata options, see one of the following links:</p>
     /// <ul>
-    /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 User Guide</i> </i> for Linux instances.</p></li>
-    /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 Windows Guide</i> </i> for Windows instances.</p></li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 User Guide</i> </i> for Linux instances.</p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 Windows Guide</i> </i> for Windows instances.</p> </li>
     /// </ul>
     pub fn instance_metadata_options(mut self, input: crate::types::InstanceMetadataOptions) -> Self {
         self.instance_metadata_options = ::std::option::Option::Some(input);
@@ -341,10 +335,8 @@ impl UpdateInfrastructureConfigurationInputBuilder {
     }
     /// <p>The instance metadata options that you can set for the HTTP requests that pipeline builds use to launch EC2 build and test instances. For more information about instance metadata options, see one of the following links:</p>
     /// <ul>
-    /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 User Guide</i> </i> for Linux instances.</p></li>
-    /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 Windows Guide</i> </i> for Windows instances.</p></li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 User Guide</i> </i> for Linux instances.</p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 Windows Guide</i> </i> for Windows instances.</p> </li>
     /// </ul>
     pub fn set_instance_metadata_options(mut self, input: ::std::option::Option<crate::types::InstanceMetadataOptions>) -> Self {
         self.instance_metadata_options = input;
@@ -352,10 +344,8 @@ impl UpdateInfrastructureConfigurationInputBuilder {
     }
     /// <p>The instance metadata options that you can set for the HTTP requests that pipeline builds use to launch EC2 build and test instances. For more information about instance metadata options, see one of the following links:</p>
     /// <ul>
-    /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 User Guide</i> </i> for Linux instances.</p></li>
-    /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 Windows Guide</i> </i> for Windows instances.</p></li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 User Guide</i> </i> for Linux instances.</p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 Windows Guide</i> </i> for Windows instances.</p> </li>
     /// </ul>
     pub fn get_instance_metadata_options(&self) -> &::std::option::Option<crate::types::InstanceMetadataOptions> {
         &self.instance_metadata_options

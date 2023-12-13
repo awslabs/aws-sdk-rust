@@ -120,14 +120,10 @@ impl DescribeFastSnapshotRestoresFluentBuilder {
     ///
     /// <p>The filters. The possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>availability-zone</code>: The Availability Zone of the snapshot.</p></li>
-    /// <li>
-    /// <p><code>owner-id</code>: The ID of the Amazon Web Services account that enabled fast snapshot restore on the snapshot.</p></li>
-    /// <li>
-    /// <p><code>snapshot-id</code>: The ID of the snapshot.</p></li>
-    /// <li>
-    /// <p><code>state</code>: The state of fast snapshot restores for the snapshot (<code>enabling</code> | <code>optimizing</code> | <code>enabled</code> | <code>disabling</code> | <code>disabled</code>).</p></li>
+    /// <li> <p> <code>availability-zone</code>: The Availability Zone of the snapshot.</p> </li>
+    /// <li> <p> <code>owner-id</code>: The ID of the Amazon Web Services account that enabled fast snapshot restore on the snapshot.</p> </li>
+    /// <li> <p> <code>snapshot-id</code>: The ID of the snapshot.</p> </li>
+    /// <li> <p> <code>state</code>: The state of fast snapshot restores for the snapshot (<code>enabling</code> | <code>optimizing</code> | <code>enabled</code> | <code>disabling</code> | <code>disabled</code>).</p> </li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
@@ -135,14 +131,10 @@ impl DescribeFastSnapshotRestoresFluentBuilder {
     }
     /// <p>The filters. The possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>availability-zone</code>: The Availability Zone of the snapshot.</p></li>
-    /// <li>
-    /// <p><code>owner-id</code>: The ID of the Amazon Web Services account that enabled fast snapshot restore on the snapshot.</p></li>
-    /// <li>
-    /// <p><code>snapshot-id</code>: The ID of the snapshot.</p></li>
-    /// <li>
-    /// <p><code>state</code>: The state of fast snapshot restores for the snapshot (<code>enabling</code> | <code>optimizing</code> | <code>enabled</code> | <code>disabling</code> | <code>disabled</code>).</p></li>
+    /// <li> <p> <code>availability-zone</code>: The Availability Zone of the snapshot.</p> </li>
+    /// <li> <p> <code>owner-id</code>: The ID of the Amazon Web Services account that enabled fast snapshot restore on the snapshot.</p> </li>
+    /// <li> <p> <code>snapshot-id</code>: The ID of the snapshot.</p> </li>
+    /// <li> <p> <code>state</code>: The state of fast snapshot restores for the snapshot (<code>enabling</code> | <code>optimizing</code> | <code>enabled</code> | <code>disabling</code> | <code>disabled</code>).</p> </li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
@@ -150,14 +142,10 @@ impl DescribeFastSnapshotRestoresFluentBuilder {
     }
     /// <p>The filters. The possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>availability-zone</code>: The Availability Zone of the snapshot.</p></li>
-    /// <li>
-    /// <p><code>owner-id</code>: The ID of the Amazon Web Services account that enabled fast snapshot restore on the snapshot.</p></li>
-    /// <li>
-    /// <p><code>snapshot-id</code>: The ID of the snapshot.</p></li>
-    /// <li>
-    /// <p><code>state</code>: The state of fast snapshot restores for the snapshot (<code>enabling</code> | <code>optimizing</code> | <code>enabled</code> | <code>disabling</code> | <code>disabled</code>).</p></li>
+    /// <li> <p> <code>availability-zone</code>: The Availability Zone of the snapshot.</p> </li>
+    /// <li> <p> <code>owner-id</code>: The ID of the Amazon Web Services account that enabled fast snapshot restore on the snapshot.</p> </li>
+    /// <li> <p> <code>snapshot-id</code>: The ID of the snapshot.</p> </li>
+    /// <li> <p> <code>state</code>: The state of fast snapshot restores for the snapshot (<code>enabling</code> | <code>optimizing</code> | <code>enabled</code> | <code>disabling</code> | <code>disabled</code>).</p> </li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()

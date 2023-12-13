@@ -4,23 +4,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnsuccessfulFaceDisassociation {
-    /// <p>A unique identifier assigned to the face.</p>
+    /// <p>A unique identifier assigned to the face. </p>
     pub face_id: ::std::option::Option<::std::string::String>,
-    /// <p>A provided ID for the UserID. Unique within the collection.</p>
+    /// <p>A provided ID for the UserID. Unique within the collection. </p>
     pub user_id: ::std::option::Option<::std::string::String>,
-    /// <p>The reason why the deletion was unsuccessful.</p>
+    /// <p>The reason why the deletion was unsuccessful. </p>
     pub reasons: ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceDisassociationReason>>,
 }
 impl UnsuccessfulFaceDisassociation {
-    /// <p>A unique identifier assigned to the face.</p>
+    /// <p>A unique identifier assigned to the face. </p>
     pub fn face_id(&self) -> ::std::option::Option<&str> {
         self.face_id.as_deref()
     }
-    /// <p>A provided ID for the UserID. Unique within the collection.</p>
+    /// <p>A provided ID for the UserID. Unique within the collection. </p>
     pub fn user_id(&self) -> ::std::option::Option<&str> {
         self.user_id.as_deref()
     }
-    /// <p>The reason why the deletion was unsuccessful.</p>
+    /// <p>The reason why the deletion was unsuccessful. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reasons.is_none()`.
     pub fn reasons(&self) -> &[crate::types::UnsuccessfulFaceDisassociationReason] {
@@ -43,31 +43,31 @@ pub struct UnsuccessfulFaceDisassociationBuilder {
     pub(crate) reasons: ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceDisassociationReason>>,
 }
 impl UnsuccessfulFaceDisassociationBuilder {
-    /// <p>A unique identifier assigned to the face.</p>
+    /// <p>A unique identifier assigned to the face. </p>
     pub fn face_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.face_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique identifier assigned to the face.</p>
+    /// <p>A unique identifier assigned to the face. </p>
     pub fn set_face_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.face_id = input;
         self
     }
-    /// <p>A unique identifier assigned to the face.</p>
+    /// <p>A unique identifier assigned to the face. </p>
     pub fn get_face_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.face_id
     }
-    /// <p>A provided ID for the UserID. Unique within the collection.</p>
+    /// <p>A provided ID for the UserID. Unique within the collection. </p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A provided ID for the UserID. Unique within the collection.</p>
+    /// <p>A provided ID for the UserID. Unique within the collection. </p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_id = input;
         self
     }
-    /// <p>A provided ID for the UserID. Unique within the collection.</p>
+    /// <p>A provided ID for the UserID. Unique within the collection. </p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_id
     }
@@ -75,19 +75,19 @@ impl UnsuccessfulFaceDisassociationBuilder {
     ///
     /// To override the contents of this collection use [`set_reasons`](Self::set_reasons).
     ///
-    /// <p>The reason why the deletion was unsuccessful.</p>
+    /// <p>The reason why the deletion was unsuccessful. </p>
     pub fn reasons(mut self, input: crate::types::UnsuccessfulFaceDisassociationReason) -> Self {
         let mut v = self.reasons.unwrap_or_default();
         v.push(input);
         self.reasons = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The reason why the deletion was unsuccessful.</p>
+    /// <p>The reason why the deletion was unsuccessful. </p>
     pub fn set_reasons(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceDisassociationReason>>) -> Self {
         self.reasons = input;
         self
     }
-    /// <p>The reason why the deletion was unsuccessful.</p>
+    /// <p>The reason why the deletion was unsuccessful. </p>
     pub fn get_reasons(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceDisassociationReason>> {
         &self.reasons
     }

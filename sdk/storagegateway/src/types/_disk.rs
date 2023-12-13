@@ -15,7 +15,7 @@ pub struct Disk {
     /// <p>The local disk size in bytes.</p>
     pub disk_size_in_bytes: i64,
     /// <p>One of the <code>DiskAllocationType</code> enumeration values that identifies how a local disk is used.</p>
-    /// <p>Valid Values: <code>UPLOAD_BUFFER</code> | <code>CACHE_STORAGE</code></p>
+    /// <p>Valid Values: <code>UPLOAD_BUFFER</code> | <code>CACHE_STORAGE</code> </p>
     pub disk_allocation_type: ::std::option::Option<::std::string::String>,
     /// <p>The iSCSI qualified name (IQN) that is defined for a disk. This field is not included in the response if the local disk is not defined as an iSCSI target. The format of this field is <i>targetIqn::LUNNumber::region-volumeId</i>.</p>
     pub disk_allocation_resource: ::std::option::Option<::std::string::String>,
@@ -44,7 +44,7 @@ impl Disk {
         self.disk_size_in_bytes
     }
     /// <p>One of the <code>DiskAllocationType</code> enumeration values that identifies how a local disk is used.</p>
-    /// <p>Valid Values: <code>UPLOAD_BUFFER</code> | <code>CACHE_STORAGE</code></p>
+    /// <p>Valid Values: <code>UPLOAD_BUFFER</code> | <code>CACHE_STORAGE</code> </p>
     pub fn disk_allocation_type(&self) -> ::std::option::Option<&str> {
         self.disk_allocation_type.as_deref()
     }
@@ -151,19 +151,19 @@ impl DiskBuilder {
         &self.disk_size_in_bytes
     }
     /// <p>One of the <code>DiskAllocationType</code> enumeration values that identifies how a local disk is used.</p>
-    /// <p>Valid Values: <code>UPLOAD_BUFFER</code> | <code>CACHE_STORAGE</code></p>
+    /// <p>Valid Values: <code>UPLOAD_BUFFER</code> | <code>CACHE_STORAGE</code> </p>
     pub fn disk_allocation_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.disk_allocation_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>One of the <code>DiskAllocationType</code> enumeration values that identifies how a local disk is used.</p>
-    /// <p>Valid Values: <code>UPLOAD_BUFFER</code> | <code>CACHE_STORAGE</code></p>
+    /// <p>Valid Values: <code>UPLOAD_BUFFER</code> | <code>CACHE_STORAGE</code> </p>
     pub fn set_disk_allocation_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.disk_allocation_type = input;
         self
     }
     /// <p>One of the <code>DiskAllocationType</code> enumeration values that identifies how a local disk is used.</p>
-    /// <p>Valid Values: <code>UPLOAD_BUFFER</code> | <code>CACHE_STORAGE</code></p>
+    /// <p>Valid Values: <code>UPLOAD_BUFFER</code> | <code>CACHE_STORAGE</code> </p>
     pub fn get_disk_allocation_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.disk_allocation_type
     }

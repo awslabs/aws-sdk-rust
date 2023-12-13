@@ -12,42 +12,26 @@ pub struct RemoteAccessSession {
     pub created: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the remote access session. Can be any of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>PENDING.</p></li>
-    /// <li>
-    /// <p>PENDING_CONCURRENCY.</p></li>
-    /// <li>
-    /// <p>PENDING_DEVICE.</p></li>
-    /// <li>
-    /// <p>PROCESSING.</p></li>
-    /// <li>
-    /// <p>SCHEDULING.</p></li>
-    /// <li>
-    /// <p>PREPARING.</p></li>
-    /// <li>
-    /// <p>RUNNING.</p></li>
-    /// <li>
-    /// <p>COMPLETED.</p></li>
-    /// <li>
-    /// <p>STOPPING.</p></li>
+    /// <li> <p>PENDING.</p> </li>
+    /// <li> <p>PENDING_CONCURRENCY.</p> </li>
+    /// <li> <p>PENDING_DEVICE.</p> </li>
+    /// <li> <p>PROCESSING.</p> </li>
+    /// <li> <p>SCHEDULING.</p> </li>
+    /// <li> <p>PREPARING.</p> </li>
+    /// <li> <p>RUNNING.</p> </li>
+    /// <li> <p>COMPLETED.</p> </li>
+    /// <li> <p>STOPPING.</p> </li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::ExecutionStatus>,
     /// <p>The result of the remote access session. Can be any of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>PENDING.</p></li>
-    /// <li>
-    /// <p>PASSED.</p></li>
-    /// <li>
-    /// <p>WARNED.</p></li>
-    /// <li>
-    /// <p>FAILED.</p></li>
-    /// <li>
-    /// <p>SKIPPED.</p></li>
-    /// <li>
-    /// <p>ERRORED.</p></li>
-    /// <li>
-    /// <p>STOPPED.</p></li>
+    /// <li> <p>PENDING.</p> </li>
+    /// <li> <p>PASSED.</p> </li>
+    /// <li> <p>WARNED.</p> </li>
+    /// <li> <p>FAILED.</p> </li>
+    /// <li> <p>SKIPPED.</p> </li>
+    /// <li> <p>ERRORED.</p> </li>
+    /// <li> <p>STOPPED.</p> </li>
     /// </ul>
     pub result: ::std::option::Option<crate::types::ExecutionResult>,
     /// <p>A message about the remote access session.</p>
@@ -84,12 +68,9 @@ pub struct RemoteAccessSession {
     pub device_udid: ::std::option::Option<::std::string::String>,
     /// <p>The interaction mode of the remote access session. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You cannot run XCUITest framework-based tests in this mode.</p></li>
-    /// <li>
-    /// <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p></li>
-    /// <li>
-    /// <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p></li>
+    /// <li> <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You cannot run XCUITest framework-based tests in this mode.</p> </li>
+    /// <li> <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p> </li>
+    /// <li> <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p> </li>
     /// </ul>
     pub interaction_mode: ::std::option::Option<crate::types::InteractionMode>,
     /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
@@ -113,44 +94,28 @@ impl RemoteAccessSession {
     }
     /// <p>The status of the remote access session. Can be any of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>PENDING.</p></li>
-    /// <li>
-    /// <p>PENDING_CONCURRENCY.</p></li>
-    /// <li>
-    /// <p>PENDING_DEVICE.</p></li>
-    /// <li>
-    /// <p>PROCESSING.</p></li>
-    /// <li>
-    /// <p>SCHEDULING.</p></li>
-    /// <li>
-    /// <p>PREPARING.</p></li>
-    /// <li>
-    /// <p>RUNNING.</p></li>
-    /// <li>
-    /// <p>COMPLETED.</p></li>
-    /// <li>
-    /// <p>STOPPING.</p></li>
+    /// <li> <p>PENDING.</p> </li>
+    /// <li> <p>PENDING_CONCURRENCY.</p> </li>
+    /// <li> <p>PENDING_DEVICE.</p> </li>
+    /// <li> <p>PROCESSING.</p> </li>
+    /// <li> <p>SCHEDULING.</p> </li>
+    /// <li> <p>PREPARING.</p> </li>
+    /// <li> <p>RUNNING.</p> </li>
+    /// <li> <p>COMPLETED.</p> </li>
+    /// <li> <p>STOPPING.</p> </li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ExecutionStatus> {
         self.status.as_ref()
     }
     /// <p>The result of the remote access session. Can be any of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>PENDING.</p></li>
-    /// <li>
-    /// <p>PASSED.</p></li>
-    /// <li>
-    /// <p>WARNED.</p></li>
-    /// <li>
-    /// <p>FAILED.</p></li>
-    /// <li>
-    /// <p>SKIPPED.</p></li>
-    /// <li>
-    /// <p>ERRORED.</p></li>
-    /// <li>
-    /// <p>STOPPED.</p></li>
+    /// <li> <p>PENDING.</p> </li>
+    /// <li> <p>PASSED.</p> </li>
+    /// <li> <p>WARNED.</p> </li>
+    /// <li> <p>FAILED.</p> </li>
+    /// <li> <p>SKIPPED.</p> </li>
+    /// <li> <p>ERRORED.</p> </li>
+    /// <li> <p>STOPPED.</p> </li>
     /// </ul>
     pub fn result(&self) -> ::std::option::Option<&crate::types::ExecutionResult> {
         self.result.as_ref()
@@ -217,12 +182,9 @@ impl RemoteAccessSession {
     }
     /// <p>The interaction mode of the remote access session. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You cannot run XCUITest framework-based tests in this mode.</p></li>
-    /// <li>
-    /// <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p></li>
-    /// <li>
-    /// <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p></li>
+    /// <li> <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You cannot run XCUITest framework-based tests in this mode.</p> </li>
+    /// <li> <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p> </li>
+    /// <li> <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p> </li>
     /// </ul>
     pub fn interaction_mode(&self) -> ::std::option::Option<&crate::types::InteractionMode> {
         self.interaction_mode.as_ref()
@@ -316,24 +278,15 @@ impl RemoteAccessSessionBuilder {
     }
     /// <p>The status of the remote access session. Can be any of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>PENDING.</p></li>
-    /// <li>
-    /// <p>PENDING_CONCURRENCY.</p></li>
-    /// <li>
-    /// <p>PENDING_DEVICE.</p></li>
-    /// <li>
-    /// <p>PROCESSING.</p></li>
-    /// <li>
-    /// <p>SCHEDULING.</p></li>
-    /// <li>
-    /// <p>PREPARING.</p></li>
-    /// <li>
-    /// <p>RUNNING.</p></li>
-    /// <li>
-    /// <p>COMPLETED.</p></li>
-    /// <li>
-    /// <p>STOPPING.</p></li>
+    /// <li> <p>PENDING.</p> </li>
+    /// <li> <p>PENDING_CONCURRENCY.</p> </li>
+    /// <li> <p>PENDING_DEVICE.</p> </li>
+    /// <li> <p>PROCESSING.</p> </li>
+    /// <li> <p>SCHEDULING.</p> </li>
+    /// <li> <p>PREPARING.</p> </li>
+    /// <li> <p>RUNNING.</p> </li>
+    /// <li> <p>COMPLETED.</p> </li>
+    /// <li> <p>STOPPING.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::ExecutionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -341,24 +294,15 @@ impl RemoteAccessSessionBuilder {
     }
     /// <p>The status of the remote access session. Can be any of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>PENDING.</p></li>
-    /// <li>
-    /// <p>PENDING_CONCURRENCY.</p></li>
-    /// <li>
-    /// <p>PENDING_DEVICE.</p></li>
-    /// <li>
-    /// <p>PROCESSING.</p></li>
-    /// <li>
-    /// <p>SCHEDULING.</p></li>
-    /// <li>
-    /// <p>PREPARING.</p></li>
-    /// <li>
-    /// <p>RUNNING.</p></li>
-    /// <li>
-    /// <p>COMPLETED.</p></li>
-    /// <li>
-    /// <p>STOPPING.</p></li>
+    /// <li> <p>PENDING.</p> </li>
+    /// <li> <p>PENDING_CONCURRENCY.</p> </li>
+    /// <li> <p>PENDING_DEVICE.</p> </li>
+    /// <li> <p>PROCESSING.</p> </li>
+    /// <li> <p>SCHEDULING.</p> </li>
+    /// <li> <p>PREPARING.</p> </li>
+    /// <li> <p>RUNNING.</p> </li>
+    /// <li> <p>COMPLETED.</p> </li>
+    /// <li> <p>STOPPING.</p> </li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ExecutionStatus>) -> Self {
         self.status = input;
@@ -366,44 +310,28 @@ impl RemoteAccessSessionBuilder {
     }
     /// <p>The status of the remote access session. Can be any of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>PENDING.</p></li>
-    /// <li>
-    /// <p>PENDING_CONCURRENCY.</p></li>
-    /// <li>
-    /// <p>PENDING_DEVICE.</p></li>
-    /// <li>
-    /// <p>PROCESSING.</p></li>
-    /// <li>
-    /// <p>SCHEDULING.</p></li>
-    /// <li>
-    /// <p>PREPARING.</p></li>
-    /// <li>
-    /// <p>RUNNING.</p></li>
-    /// <li>
-    /// <p>COMPLETED.</p></li>
-    /// <li>
-    /// <p>STOPPING.</p></li>
+    /// <li> <p>PENDING.</p> </li>
+    /// <li> <p>PENDING_CONCURRENCY.</p> </li>
+    /// <li> <p>PENDING_DEVICE.</p> </li>
+    /// <li> <p>PROCESSING.</p> </li>
+    /// <li> <p>SCHEDULING.</p> </li>
+    /// <li> <p>PREPARING.</p> </li>
+    /// <li> <p>RUNNING.</p> </li>
+    /// <li> <p>COMPLETED.</p> </li>
+    /// <li> <p>STOPPING.</p> </li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ExecutionStatus> {
         &self.status
     }
     /// <p>The result of the remote access session. Can be any of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>PENDING.</p></li>
-    /// <li>
-    /// <p>PASSED.</p></li>
-    /// <li>
-    /// <p>WARNED.</p></li>
-    /// <li>
-    /// <p>FAILED.</p></li>
-    /// <li>
-    /// <p>SKIPPED.</p></li>
-    /// <li>
-    /// <p>ERRORED.</p></li>
-    /// <li>
-    /// <p>STOPPED.</p></li>
+    /// <li> <p>PENDING.</p> </li>
+    /// <li> <p>PASSED.</p> </li>
+    /// <li> <p>WARNED.</p> </li>
+    /// <li> <p>FAILED.</p> </li>
+    /// <li> <p>SKIPPED.</p> </li>
+    /// <li> <p>ERRORED.</p> </li>
+    /// <li> <p>STOPPED.</p> </li>
     /// </ul>
     pub fn result(mut self, input: crate::types::ExecutionResult) -> Self {
         self.result = ::std::option::Option::Some(input);
@@ -411,20 +339,13 @@ impl RemoteAccessSessionBuilder {
     }
     /// <p>The result of the remote access session. Can be any of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>PENDING.</p></li>
-    /// <li>
-    /// <p>PASSED.</p></li>
-    /// <li>
-    /// <p>WARNED.</p></li>
-    /// <li>
-    /// <p>FAILED.</p></li>
-    /// <li>
-    /// <p>SKIPPED.</p></li>
-    /// <li>
-    /// <p>ERRORED.</p></li>
-    /// <li>
-    /// <p>STOPPED.</p></li>
+    /// <li> <p>PENDING.</p> </li>
+    /// <li> <p>PASSED.</p> </li>
+    /// <li> <p>WARNED.</p> </li>
+    /// <li> <p>FAILED.</p> </li>
+    /// <li> <p>SKIPPED.</p> </li>
+    /// <li> <p>ERRORED.</p> </li>
+    /// <li> <p>STOPPED.</p> </li>
     /// </ul>
     pub fn set_result(mut self, input: ::std::option::Option<crate::types::ExecutionResult>) -> Self {
         self.result = input;
@@ -432,20 +353,13 @@ impl RemoteAccessSessionBuilder {
     }
     /// <p>The result of the remote access session. Can be any of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>PENDING.</p></li>
-    /// <li>
-    /// <p>PASSED.</p></li>
-    /// <li>
-    /// <p>WARNED.</p></li>
-    /// <li>
-    /// <p>FAILED.</p></li>
-    /// <li>
-    /// <p>SKIPPED.</p></li>
-    /// <li>
-    /// <p>ERRORED.</p></li>
-    /// <li>
-    /// <p>STOPPED.</p></li>
+    /// <li> <p>PENDING.</p> </li>
+    /// <li> <p>PASSED.</p> </li>
+    /// <li> <p>WARNED.</p> </li>
+    /// <li> <p>FAILED.</p> </li>
+    /// <li> <p>SKIPPED.</p> </li>
+    /// <li> <p>ERRORED.</p> </li>
+    /// <li> <p>STOPPED.</p> </li>
     /// </ul>
     pub fn get_result(&self) -> &::std::option::Option<crate::types::ExecutionResult> {
         &self.result
@@ -660,12 +574,9 @@ impl RemoteAccessSessionBuilder {
     }
     /// <p>The interaction mode of the remote access session. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You cannot run XCUITest framework-based tests in this mode.</p></li>
-    /// <li>
-    /// <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p></li>
-    /// <li>
-    /// <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p></li>
+    /// <li> <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You cannot run XCUITest framework-based tests in this mode.</p> </li>
+    /// <li> <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p> </li>
+    /// <li> <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p> </li>
     /// </ul>
     pub fn interaction_mode(mut self, input: crate::types::InteractionMode) -> Self {
         self.interaction_mode = ::std::option::Option::Some(input);
@@ -673,12 +584,9 @@ impl RemoteAccessSessionBuilder {
     }
     /// <p>The interaction mode of the remote access session. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You cannot run XCUITest framework-based tests in this mode.</p></li>
-    /// <li>
-    /// <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p></li>
-    /// <li>
-    /// <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p></li>
+    /// <li> <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You cannot run XCUITest framework-based tests in this mode.</p> </li>
+    /// <li> <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p> </li>
+    /// <li> <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p> </li>
     /// </ul>
     pub fn set_interaction_mode(mut self, input: ::std::option::Option<crate::types::InteractionMode>) -> Self {
         self.interaction_mode = input;
@@ -686,12 +594,9 @@ impl RemoteAccessSessionBuilder {
     }
     /// <p>The interaction mode of the remote access session. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You cannot run XCUITest framework-based tests in this mode.</p></li>
-    /// <li>
-    /// <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p></li>
-    /// <li>
-    /// <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p></li>
+    /// <li> <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You cannot run XCUITest framework-based tests in this mode.</p> </li>
+    /// <li> <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p> </li>
+    /// <li> <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p> </li>
     /// </ul>
     pub fn get_interaction_mode(&self) -> &::std::option::Option<crate::types::InteractionMode> {
         &self.interaction_mode

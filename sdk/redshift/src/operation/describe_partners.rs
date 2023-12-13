@@ -242,7 +242,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribePartn
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DescribePartnersError {
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.</p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
     ClusterNotFoundFault(crate::types::error::ClusterNotFoundFault),
     /// <p>The partner integration is not authorized.</p>
     UnauthorizedPartnerIntegrationFault(crate::types::error::UnauthorizedPartnerIntegrationFault),

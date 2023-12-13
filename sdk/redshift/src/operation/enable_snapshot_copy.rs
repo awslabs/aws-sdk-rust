@@ -243,7 +243,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for EnableSnapsho
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum EnableSnapshotCopyError {
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.</p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
     ClusterNotFoundFault(crate::types::error::ClusterNotFoundFault),
     /// <p>Cross-region snapshot copy was temporarily disabled. Try your request again.</p>
     CopyToRegionDisabledFault(crate::types::error::CopyToRegionDisabledFault),
@@ -251,7 +251,7 @@ pub enum EnableSnapshotCopyError {
     DependentServiceRequestThrottlingFault(crate::types::error::DependentServiceRequestThrottlingFault),
     /// <p>The specified options are incompatible.</p>
     IncompatibleOrderableOptions(crate::types::error::IncompatibleOrderableOptions),
-    /// <p>The specified cluster is not in the <code>available</code> state.</p>
+    /// <p>The specified cluster is not in the <code>available</code> state. </p>
     InvalidClusterStateFault(crate::types::error::InvalidClusterStateFault),
     /// <p>The retention period specified is either in the past or is not a valid value.</p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>

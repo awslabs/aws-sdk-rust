@@ -22,20 +22,13 @@ pub struct BlueGreenDeployment {
     /// <p>The status of the blue/green deployment.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PROVISIONING</code> - Resources are being created in the green environment.</p></li>
-    /// <li>
-    /// <p><code>AVAILABLE</code> - Resources are available in the green environment.</p></li>
-    /// <li>
-    /// <p><code>SWITCHOVER_IN_PROGRESS</code> - The deployment is being switched from the blue environment to the green environment.</p></li>
-    /// <li>
-    /// <p><code>SWITCHOVER_COMPLETED</code> - Switchover from the blue environment to the green environment is complete.</p></li>
-    /// <li>
-    /// <p><code>INVALID_CONFIGURATION</code> - Resources in the green environment are invalid, so switchover isn't possible.</p></li>
-    /// <li>
-    /// <p><code>SWITCHOVER_FAILED</code> - Switchover was attempted but failed.</p></li>
-    /// <li>
-    /// <p><code>DELETING</code> - The blue/green deployment is being deleted.</p></li>
+    /// <li> <p> <code>PROVISIONING</code> - Resources are being created in the green environment.</p> </li>
+    /// <li> <p> <code>AVAILABLE</code> - Resources are available in the green environment.</p> </li>
+    /// <li> <p> <code>SWITCHOVER_IN_PROGRESS</code> - The deployment is being switched from the blue environment to the green environment.</p> </li>
+    /// <li> <p> <code>SWITCHOVER_COMPLETED</code> - Switchover from the blue environment to the green environment is complete.</p> </li>
+    /// <li> <p> <code>INVALID_CONFIGURATION</code> - Resources in the green environment are invalid, so switchover isn't possible.</p> </li>
+    /// <li> <p> <code>SWITCHOVER_FAILED</code> - Switchover was attempted but failed.</p> </li>
+    /// <li> <p> <code>DELETING</code> - The blue/green deployment is being deleted.</p> </li>
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>Additional information about the status of the blue/green deployment.</p>
@@ -44,7 +37,7 @@ pub struct BlueGreenDeployment {
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the blue/green deployment was deleted, in Universal Coordinated Time (UTC).</p>
     pub delete_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl BlueGreenDeployment {
@@ -81,20 +74,13 @@ impl BlueGreenDeployment {
     /// <p>The status of the blue/green deployment.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PROVISIONING</code> - Resources are being created in the green environment.</p></li>
-    /// <li>
-    /// <p><code>AVAILABLE</code> - Resources are available in the green environment.</p></li>
-    /// <li>
-    /// <p><code>SWITCHOVER_IN_PROGRESS</code> - The deployment is being switched from the blue environment to the green environment.</p></li>
-    /// <li>
-    /// <p><code>SWITCHOVER_COMPLETED</code> - Switchover from the blue environment to the green environment is complete.</p></li>
-    /// <li>
-    /// <p><code>INVALID_CONFIGURATION</code> - Resources in the green environment are invalid, so switchover isn't possible.</p></li>
-    /// <li>
-    /// <p><code>SWITCHOVER_FAILED</code> - Switchover was attempted but failed.</p></li>
-    /// <li>
-    /// <p><code>DELETING</code> - The blue/green deployment is being deleted.</p></li>
+    /// <li> <p> <code>PROVISIONING</code> - Resources are being created in the green environment.</p> </li>
+    /// <li> <p> <code>AVAILABLE</code> - Resources are available in the green environment.</p> </li>
+    /// <li> <p> <code>SWITCHOVER_IN_PROGRESS</code> - The deployment is being switched from the blue environment to the green environment.</p> </li>
+    /// <li> <p> <code>SWITCHOVER_COMPLETED</code> - Switchover from the blue environment to the green environment is complete.</p> </li>
+    /// <li> <p> <code>INVALID_CONFIGURATION</code> - Resources in the green environment are invalid, so switchover isn't possible.</p> </li>
+    /// <li> <p> <code>SWITCHOVER_FAILED</code> - Switchover was attempted but failed.</p> </li>
+    /// <li> <p> <code>DELETING</code> - The blue/green deployment is being deleted.</p> </li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
@@ -111,7 +97,7 @@ impl BlueGreenDeployment {
     pub fn delete_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.delete_time.as_ref()
     }
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_list.is_none()`.
     pub fn tag_list(&self) -> &[crate::types::Tag] {
@@ -247,20 +233,13 @@ impl BlueGreenDeploymentBuilder {
     /// <p>The status of the blue/green deployment.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PROVISIONING</code> - Resources are being created in the green environment.</p></li>
-    /// <li>
-    /// <p><code>AVAILABLE</code> - Resources are available in the green environment.</p></li>
-    /// <li>
-    /// <p><code>SWITCHOVER_IN_PROGRESS</code> - The deployment is being switched from the blue environment to the green environment.</p></li>
-    /// <li>
-    /// <p><code>SWITCHOVER_COMPLETED</code> - Switchover from the blue environment to the green environment is complete.</p></li>
-    /// <li>
-    /// <p><code>INVALID_CONFIGURATION</code> - Resources in the green environment are invalid, so switchover isn't possible.</p></li>
-    /// <li>
-    /// <p><code>SWITCHOVER_FAILED</code> - Switchover was attempted but failed.</p></li>
-    /// <li>
-    /// <p><code>DELETING</code> - The blue/green deployment is being deleted.</p></li>
+    /// <li> <p> <code>PROVISIONING</code> - Resources are being created in the green environment.</p> </li>
+    /// <li> <p> <code>AVAILABLE</code> - Resources are available in the green environment.</p> </li>
+    /// <li> <p> <code>SWITCHOVER_IN_PROGRESS</code> - The deployment is being switched from the blue environment to the green environment.</p> </li>
+    /// <li> <p> <code>SWITCHOVER_COMPLETED</code> - Switchover from the blue environment to the green environment is complete.</p> </li>
+    /// <li> <p> <code>INVALID_CONFIGURATION</code> - Resources in the green environment are invalid, so switchover isn't possible.</p> </li>
+    /// <li> <p> <code>SWITCHOVER_FAILED</code> - Switchover was attempted but failed.</p> </li>
+    /// <li> <p> <code>DELETING</code> - The blue/green deployment is being deleted.</p> </li>
     /// </ul>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -269,20 +248,13 @@ impl BlueGreenDeploymentBuilder {
     /// <p>The status of the blue/green deployment.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PROVISIONING</code> - Resources are being created in the green environment.</p></li>
-    /// <li>
-    /// <p><code>AVAILABLE</code> - Resources are available in the green environment.</p></li>
-    /// <li>
-    /// <p><code>SWITCHOVER_IN_PROGRESS</code> - The deployment is being switched from the blue environment to the green environment.</p></li>
-    /// <li>
-    /// <p><code>SWITCHOVER_COMPLETED</code> - Switchover from the blue environment to the green environment is complete.</p></li>
-    /// <li>
-    /// <p><code>INVALID_CONFIGURATION</code> - Resources in the green environment are invalid, so switchover isn't possible.</p></li>
-    /// <li>
-    /// <p><code>SWITCHOVER_FAILED</code> - Switchover was attempted but failed.</p></li>
-    /// <li>
-    /// <p><code>DELETING</code> - The blue/green deployment is being deleted.</p></li>
+    /// <li> <p> <code>PROVISIONING</code> - Resources are being created in the green environment.</p> </li>
+    /// <li> <p> <code>AVAILABLE</code> - Resources are available in the green environment.</p> </li>
+    /// <li> <p> <code>SWITCHOVER_IN_PROGRESS</code> - The deployment is being switched from the blue environment to the green environment.</p> </li>
+    /// <li> <p> <code>SWITCHOVER_COMPLETED</code> - Switchover from the blue environment to the green environment is complete.</p> </li>
+    /// <li> <p> <code>INVALID_CONFIGURATION</code> - Resources in the green environment are invalid, so switchover isn't possible.</p> </li>
+    /// <li> <p> <code>SWITCHOVER_FAILED</code> - Switchover was attempted but failed.</p> </li>
+    /// <li> <p> <code>DELETING</code> - The blue/green deployment is being deleted.</p> </li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
@@ -291,20 +263,13 @@ impl BlueGreenDeploymentBuilder {
     /// <p>The status of the blue/green deployment.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PROVISIONING</code> - Resources are being created in the green environment.</p></li>
-    /// <li>
-    /// <p><code>AVAILABLE</code> - Resources are available in the green environment.</p></li>
-    /// <li>
-    /// <p><code>SWITCHOVER_IN_PROGRESS</code> - The deployment is being switched from the blue environment to the green environment.</p></li>
-    /// <li>
-    /// <p><code>SWITCHOVER_COMPLETED</code> - Switchover from the blue environment to the green environment is complete.</p></li>
-    /// <li>
-    /// <p><code>INVALID_CONFIGURATION</code> - Resources in the green environment are invalid, so switchover isn't possible.</p></li>
-    /// <li>
-    /// <p><code>SWITCHOVER_FAILED</code> - Switchover was attempted but failed.</p></li>
-    /// <li>
-    /// <p><code>DELETING</code> - The blue/green deployment is being deleted.</p></li>
+    /// <li> <p> <code>PROVISIONING</code> - Resources are being created in the green environment.</p> </li>
+    /// <li> <p> <code>AVAILABLE</code> - Resources are available in the green environment.</p> </li>
+    /// <li> <p> <code>SWITCHOVER_IN_PROGRESS</code> - The deployment is being switched from the blue environment to the green environment.</p> </li>
+    /// <li> <p> <code>SWITCHOVER_COMPLETED</code> - Switchover from the blue environment to the green environment is complete.</p> </li>
+    /// <li> <p> <code>INVALID_CONFIGURATION</code> - Resources in the green environment are invalid, so switchover isn't possible.</p> </li>
+    /// <li> <p> <code>SWITCHOVER_FAILED</code> - Switchover was attempted but failed.</p> </li>
+    /// <li> <p> <code>DELETING</code> - The blue/green deployment is being deleted.</p> </li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status
@@ -355,19 +320,19 @@ impl BlueGreenDeploymentBuilder {
     ///
     /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
     ///
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub fn tag_list(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tag_list.unwrap_or_default();
         v.push(input);
         self.tag_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub fn set_tag_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tag_list = input;
         self
     }
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tag_list
     }

@@ -23,19 +23,17 @@ impl DescribeFleetAttributesInputBuilder {
 /// Fluent builder constructing a request to `DescribeFleetAttributes`.
 ///
 /// <p>Retrieves core fleet-wide properties, including the computing hardware and deployment configuration for all instances in the fleet.</p>
-/// <p>This operation can be used in the following ways:</p>
+/// <p>This operation can be used in the following ways: </p>
 /// <ul>
-/// <li>
-/// <p>To get attributes for one or more specific fleets, provide a list of fleet IDs or fleet ARNs.</p></li>
-/// <li>
-/// <p>To get attributes for all fleets, do not provide a fleet identifier.</p></li>
+/// <li> <p>To get attributes for one or more specific fleets, provide a list of fleet IDs or fleet ARNs. </p> </li>
+/// <li> <p>To get attributes for all fleets, do not provide a fleet identifier. </p> </li>
 /// </ul>
-/// <p>When requesting attributes for multiple fleets, use the pagination parameters to retrieve results as a set of sequential pages.</p>
-/// <p>If successful, a <code>FleetAttributes</code> object is returned for each fleet requested, unless the fleet identifier is not found.</p><note>
+/// <p>When requesting attributes for multiple fleets, use the pagination parameters to retrieve results as a set of sequential pages. </p>
+/// <p>If successful, a <code>FleetAttributes</code> object is returned for each fleet requested, unless the fleet identifier is not found. </p> <note>
 /// <p>Some API operations limit the number of fleet IDs that allowed in one request. If a request exceeds this limit, the request fails and the error message contains the maximum allowed number.</p>
 /// </note>
-/// <p><b>Learn more</b></p>
-/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up Amazon GameLift fleets</a></p>
+/// <p> <b>Learn more</b> </p>
+/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up Amazon GameLift fleets</a> </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeFleetAttributesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -131,17 +129,17 @@ impl DescribeFleetAttributesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_fleet_ids`](Self::set_fleet_ids).
     ///
-    /// <p>A list of unique fleet identifiers to retrieve attributes for. You can use either the fleet ID or ARN value. To retrieve attributes for all current fleets, do not include this parameter.</p>
+    /// <p>A list of unique fleet identifiers to retrieve attributes for. You can use either the fleet ID or ARN value. To retrieve attributes for all current fleets, do not include this parameter. </p>
     pub fn fleet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fleet_ids(input.into());
         self
     }
-    /// <p>A list of unique fleet identifiers to retrieve attributes for. You can use either the fleet ID or ARN value. To retrieve attributes for all current fleets, do not include this parameter.</p>
+    /// <p>A list of unique fleet identifiers to retrieve attributes for. You can use either the fleet ID or ARN value. To retrieve attributes for all current fleets, do not include this parameter. </p>
     pub fn set_fleet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_fleet_ids(input);
         self
     }
-    /// <p>A list of unique fleet identifiers to retrieve attributes for. You can use either the fleet ID or ARN value. To retrieve attributes for all current fleets, do not include this parameter.</p>
+    /// <p>A list of unique fleet identifiers to retrieve attributes for. You can use either the fleet ID or ARN value. To retrieve attributes for all current fleets, do not include this parameter. </p>
     pub fn get_fleet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_fleet_ids()
     }

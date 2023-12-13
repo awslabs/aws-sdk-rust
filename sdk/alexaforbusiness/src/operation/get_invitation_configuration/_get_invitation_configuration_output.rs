@@ -5,7 +5,7 @@
 pub struct GetInvitationConfigurationOutput {
     /// <p>The name of the organization sending the enrollment invite to a user.</p>
     pub organization_name: ::std::option::Option<::std::string::String>,
-    /// <p>The email ID of the organization or individual contact that the enrolled user can use.</p>
+    /// <p>The email ID of the organization or individual contact that the enrolled user can use. </p>
     pub contact_email: ::std::option::Option<::std::string::String>,
     /// <p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>
     pub private_skill_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -16,7 +16,7 @@ impl GetInvitationConfigurationOutput {
     pub fn organization_name(&self) -> ::std::option::Option<&str> {
         self.organization_name.as_deref()
     }
-    /// <p>The email ID of the organization or individual contact that the enrolled user can use.</p>
+    /// <p>The email ID of the organization or individual contact that the enrolled user can use. </p>
     pub fn contact_email(&self) -> ::std::option::Option<&str> {
         self.contact_email.as_deref()
     }
@@ -63,17 +63,17 @@ impl GetInvitationConfigurationOutputBuilder {
     pub fn get_organization_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.organization_name
     }
-    /// <p>The email ID of the organization or individual contact that the enrolled user can use.</p>
+    /// <p>The email ID of the organization or individual contact that the enrolled user can use. </p>
     pub fn contact_email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_email = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The email ID of the organization or individual contact that the enrolled user can use.</p>
+    /// <p>The email ID of the organization or individual contact that the enrolled user can use. </p>
     pub fn set_contact_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.contact_email = input;
         self
     }
-    /// <p>The email ID of the organization or individual contact that the enrolled user can use.</p>
+    /// <p>The email ID of the organization or individual contact that the enrolled user can use. </p>
     pub fn get_contact_email(&self) -> &::std::option::Option<::std::string::String> {
         &self.contact_email
     }

@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Commit {
-    /// <p>The full SHA ID of the specified commit.</p>
+    /// <p>The full SHA ID of the specified commit. </p>
     pub commit_id: ::std::option::Option<::std::string::String>,
     /// <p>Tree information for the specified commit.</p>
     pub tree_id: ::std::option::Option<::std::string::String>,
@@ -21,7 +21,7 @@ pub struct Commit {
     pub additional_data: ::std::option::Option<::std::string::String>,
 }
 impl Commit {
-    /// <p>The full SHA ID of the specified commit.</p>
+    /// <p>The full SHA ID of the specified commit. </p>
     pub fn commit_id(&self) -> ::std::option::Option<&str> {
         self.commit_id.as_deref()
     }
@@ -73,17 +73,17 @@ pub struct CommitBuilder {
     pub(crate) additional_data: ::std::option::Option<::std::string::String>,
 }
 impl CommitBuilder {
-    /// <p>The full SHA ID of the specified commit.</p>
+    /// <p>The full SHA ID of the specified commit. </p>
     pub fn commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.commit_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The full SHA ID of the specified commit.</p>
+    /// <p>The full SHA ID of the specified commit. </p>
     pub fn set_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.commit_id = input;
         self
     }
-    /// <p>The full SHA ID of the specified commit.</p>
+    /// <p>The full SHA ID of the specified commit. </p>
     pub fn get_commit_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.commit_id
     }

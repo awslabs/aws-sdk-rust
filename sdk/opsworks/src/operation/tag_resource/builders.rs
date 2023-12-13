@@ -128,16 +128,11 @@ impl TagResourceFluentBuilder {
     ///
     /// <p>A map that contains tag keys and tag values that are attached to a stack or layer.</p>
     /// <ul>
-    /// <li>
-    /// <p>The key cannot be empty.</p></li>
-    /// <li>
-    /// <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code></p></li>
-    /// <li>
-    /// <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code></p></li>
-    /// <li>
-    /// <p>Leading and trailing white spaces are trimmed from both the key and value.</p></li>
-    /// <li>
-    /// <p>A maximum of 40 tags is allowed for any resource.</p></li>
+    /// <li> <p>The key cannot be empty.</p> </li>
+    /// <li> <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p> </li>
+    /// <li> <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p> </li>
+    /// <li> <p>Leading and trailing white spaces are trimmed from both the key and value.</p> </li>
+    /// <li> <p>A maximum of 40 tags is allowed for any resource.</p> </li>
     /// </ul>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
@@ -145,16 +140,11 @@ impl TagResourceFluentBuilder {
     }
     /// <p>A map that contains tag keys and tag values that are attached to a stack or layer.</p>
     /// <ul>
-    /// <li>
-    /// <p>The key cannot be empty.</p></li>
-    /// <li>
-    /// <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code></p></li>
-    /// <li>
-    /// <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code></p></li>
-    /// <li>
-    /// <p>Leading and trailing white spaces are trimmed from both the key and value.</p></li>
-    /// <li>
-    /// <p>A maximum of 40 tags is allowed for any resource.</p></li>
+    /// <li> <p>The key cannot be empty.</p> </li>
+    /// <li> <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p> </li>
+    /// <li> <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p> </li>
+    /// <li> <p>Leading and trailing white spaces are trimmed from both the key and value.</p> </li>
+    /// <li> <p>A maximum of 40 tags is allowed for any resource.</p> </li>
     /// </ul>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
@@ -162,16 +152,11 @@ impl TagResourceFluentBuilder {
     }
     /// <p>A map that contains tag keys and tag values that are attached to a stack or layer.</p>
     /// <ul>
-    /// <li>
-    /// <p>The key cannot be empty.</p></li>
-    /// <li>
-    /// <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code></p></li>
-    /// <li>
-    /// <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code></p></li>
-    /// <li>
-    /// <p>Leading and trailing white spaces are trimmed from both the key and value.</p></li>
-    /// <li>
-    /// <p>A maximum of 40 tags is allowed for any resource.</p></li>
+    /// <li> <p>The key cannot be empty.</p> </li>
+    /// <li> <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p> </li>
+    /// <li> <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p> </li>
+    /// <li> <p>Leading and trailing white spaces are trimmed from both the key and value.</p> </li>
+    /// <li> <p>A maximum of 40 tags is allowed for any resource.</p> </li>
     /// </ul>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()

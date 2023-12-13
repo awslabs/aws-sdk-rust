@@ -11,15 +11,15 @@ pub struct GetWebExperienceOutput {
     pub web_experience_arn: ::std::option::Option<::std::string::String>,
     /// <p>The endpoint of your Amazon Q web experience.</p>
     pub default_endpoint: ::std::option::Option<::std::string::String>,
-    /// <p>The current status of the Amazon Q web experience. When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a description of the error that caused the data source connector to fail.</p>
+    /// <p>The current status of the Amazon Q web experience. When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a description of the error that caused the data source connector to fail. </p>
     pub status: ::std::option::Option<crate::types::WebExperienceStatus>,
     /// <p>The Unix timestamp when the retriever was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Unix timestamp when the data source connector was last updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The title for your Amazon Q web experience.</p>
+    /// <p>The title for your Amazon Q web experience. </p>
     pub title: ::std::option::Option<::std::string::String>,
-    /// <p>The subtitle for your Amazon Q web experience.</p>
+    /// <p>The subtitle for your Amazon Q web experience. </p>
     pub subtitle: ::std::option::Option<::std::string::String>,
     /// <p>The customized welcome message for end users of an Amazon Q web experience.</p>
     pub welcome_message: ::std::option::Option<::std::string::String>,
@@ -48,7 +48,7 @@ impl GetWebExperienceOutput {
     pub fn default_endpoint(&self) -> ::std::option::Option<&str> {
         self.default_endpoint.as_deref()
     }
-    /// <p>The current status of the Amazon Q web experience. When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a description of the error that caused the data source connector to fail.</p>
+    /// <p>The current status of the Amazon Q web experience. When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a description of the error that caused the data source connector to fail. </p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::WebExperienceStatus> {
         self.status.as_ref()
     }
@@ -60,11 +60,11 @@ impl GetWebExperienceOutput {
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
-    /// <p>The title for your Amazon Q web experience.</p>
+    /// <p>The title for your Amazon Q web experience. </p>
     pub fn title(&self) -> ::std::option::Option<&str> {
         self.title.as_deref()
     }
-    /// <p>The subtitle for your Amazon Q web experience.</p>
+    /// <p>The subtitle for your Amazon Q web experience. </p>
     pub fn subtitle(&self) -> ::std::option::Option<&str> {
         self.subtitle.as_deref()
     }
@@ -173,17 +173,17 @@ impl GetWebExperienceOutputBuilder {
     pub fn get_default_endpoint(&self) -> &::std::option::Option<::std::string::String> {
         &self.default_endpoint
     }
-    /// <p>The current status of the Amazon Q web experience. When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a description of the error that caused the data source connector to fail.</p>
+    /// <p>The current status of the Amazon Q web experience. When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a description of the error that caused the data source connector to fail. </p>
     pub fn status(mut self, input: crate::types::WebExperienceStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current status of the Amazon Q web experience. When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a description of the error that caused the data source connector to fail.</p>
+    /// <p>The current status of the Amazon Q web experience. When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a description of the error that caused the data source connector to fail. </p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::WebExperienceStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The current status of the Amazon Q web experience. When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a description of the error that caused the data source connector to fail.</p>
+    /// <p>The current status of the Amazon Q web experience. When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a description of the error that caused the data source connector to fail. </p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::WebExperienceStatus> {
         &self.status
     }
@@ -215,31 +215,31 @@ impl GetWebExperienceOutputBuilder {
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }
-    /// <p>The title for your Amazon Q web experience.</p>
+    /// <p>The title for your Amazon Q web experience. </p>
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The title for your Amazon Q web experience.</p>
+    /// <p>The title for your Amazon Q web experience. </p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.title = input;
         self
     }
-    /// <p>The title for your Amazon Q web experience.</p>
+    /// <p>The title for your Amazon Q web experience. </p>
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
         &self.title
     }
-    /// <p>The subtitle for your Amazon Q web experience.</p>
+    /// <p>The subtitle for your Amazon Q web experience. </p>
     pub fn subtitle(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subtitle = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The subtitle for your Amazon Q web experience.</p>
+    /// <p>The subtitle for your Amazon Q web experience. </p>
     pub fn set_subtitle(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subtitle = input;
         self
     }
-    /// <p>The subtitle for your Amazon Q web experience.</p>
+    /// <p>The subtitle for your Amazon Q web experience. </p>
     pub fn get_subtitle(&self) -> &::std::option::Option<::std::string::String> {
         &self.subtitle
     }

@@ -14,7 +14,7 @@ pub struct ReplicationGroupPendingModifiedValues {
     pub auth_token_status: ::std::option::Option<crate::types::AuthTokenUpdateStatus>,
     /// <p>The user group being modified.</p>
     pub user_groups: ::std::option::Option<crate::types::UserGroupsUpdateStatus>,
-    /// <p>The log delivery configurations being modified</p>
+    /// <p>The log delivery configurations being modified </p>
     pub log_delivery_configurations: ::std::option::Option<::std::vec::Vec<crate::types::PendingLogDeliveryConfiguration>>,
     /// <p>A flag that enables in-transit encryption when set to true.</p>
     pub transit_encryption_enabled: ::std::option::Option<bool>,
@@ -44,7 +44,7 @@ impl ReplicationGroupPendingModifiedValues {
     pub fn user_groups(&self) -> ::std::option::Option<&crate::types::UserGroupsUpdateStatus> {
         self.user_groups.as_ref()
     }
-    /// <p>The log delivery configurations being modified</p>
+    /// <p>The log delivery configurations being modified </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_delivery_configurations.is_none()`.
     pub fn log_delivery_configurations(&self) -> &[crate::types::PendingLogDeliveryConfiguration] {
@@ -159,14 +159,14 @@ impl ReplicationGroupPendingModifiedValuesBuilder {
     ///
     /// To override the contents of this collection use [`set_log_delivery_configurations`](Self::set_log_delivery_configurations).
     ///
-    /// <p>The log delivery configurations being modified</p>
+    /// <p>The log delivery configurations being modified </p>
     pub fn log_delivery_configurations(mut self, input: crate::types::PendingLogDeliveryConfiguration) -> Self {
         let mut v = self.log_delivery_configurations.unwrap_or_default();
         v.push(input);
         self.log_delivery_configurations = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The log delivery configurations being modified</p>
+    /// <p>The log delivery configurations being modified </p>
     pub fn set_log_delivery_configurations(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::PendingLogDeliveryConfiguration>>,
@@ -174,7 +174,7 @@ impl ReplicationGroupPendingModifiedValuesBuilder {
         self.log_delivery_configurations = input;
         self
     }
-    /// <p>The log delivery configurations being modified</p>
+    /// <p>The log delivery configurations being modified </p>
     pub fn get_log_delivery_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PendingLogDeliveryConfiguration>> {
         &self.log_delivery_configurations
     }

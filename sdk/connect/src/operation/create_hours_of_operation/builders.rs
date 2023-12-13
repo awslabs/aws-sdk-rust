@@ -23,7 +23,7 @@ impl CreateHoursOfOperationInputBuilder {
 /// Fluent builder constructing a request to `CreateHoursOfOperation`.
 ///
 /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
-/// <p>Creates hours of operation.</p>
+/// <p>Creates hours of operation. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateHoursOfOperationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

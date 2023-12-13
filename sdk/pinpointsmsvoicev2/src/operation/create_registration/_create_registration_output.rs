@@ -11,22 +11,14 @@ pub struct CreateRegistrationOutput {
     pub registration_type: ::std::string::String,
     /// <p>The status of the registration.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATED</code>: Your registration is created but not submitted.</p></li>
-    /// <li>
-    /// <p><code>SUBMITTED</code>: Your registration has been submitted and is awaiting review.</p></li>
-    /// <li>
-    /// <p><code>REVIEWING</code>: Your registration has been accepted and is being reviewed.</p></li>
-    /// <li>
-    /// <p><code>PROVISIONING</code>: Your registration has been approved and your origination identity is being created.</p></li>
-    /// <li>
-    /// <p><code>COMPLETE</code>: Your registration has been approved and and your origination identity has been created.</p></li>
-    /// <li>
-    /// <p><code>REQUIRES_UPDATES</code>: You must fix your registration and resubmit it.</p></li>
-    /// <li>
-    /// <p><code>CLOSED</code>: The phone number or sender ID has been deleted and you must also delete the registration for the number.</p></li>
-    /// <li>
-    /// <p><code>DELETED</code>: The registration has been deleted.</p></li>
+    /// <li> <p> <code>CREATED</code>: Your registration is created but not submitted.</p> </li>
+    /// <li> <p> <code>SUBMITTED</code>: Your registration has been submitted and is awaiting review.</p> </li>
+    /// <li> <p> <code>REVIEWING</code>: Your registration has been accepted and is being reviewed.</p> </li>
+    /// <li> <p> <code>PROVISIONING</code>: Your registration has been approved and your origination identity is being created.</p> </li>
+    /// <li> <p> <code>COMPLETE</code>: Your registration has been approved and and your origination identity has been created.</p> </li>
+    /// <li> <p> <code>REQUIRES_UPDATES</code>: You must fix your registration and resubmit it.</p> </li>
+    /// <li> <p> <code>CLOSED</code>: The phone number or sender ID has been deleted and you must also delete the registration for the number.</p> </li>
+    /// <li> <p> <code>DELETED</code>: The registration has been deleted.</p> </li>
     /// </ul>
     pub registration_status: crate::types::RegistrationStatus,
     /// <p>The current version number of the registration.</p>
@@ -57,22 +49,14 @@ impl CreateRegistrationOutput {
     }
     /// <p>The status of the registration.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATED</code>: Your registration is created but not submitted.</p></li>
-    /// <li>
-    /// <p><code>SUBMITTED</code>: Your registration has been submitted and is awaiting review.</p></li>
-    /// <li>
-    /// <p><code>REVIEWING</code>: Your registration has been accepted and is being reviewed.</p></li>
-    /// <li>
-    /// <p><code>PROVISIONING</code>: Your registration has been approved and your origination identity is being created.</p></li>
-    /// <li>
-    /// <p><code>COMPLETE</code>: Your registration has been approved and and your origination identity has been created.</p></li>
-    /// <li>
-    /// <p><code>REQUIRES_UPDATES</code>: You must fix your registration and resubmit it.</p></li>
-    /// <li>
-    /// <p><code>CLOSED</code>: The phone number or sender ID has been deleted and you must also delete the registration for the number.</p></li>
-    /// <li>
-    /// <p><code>DELETED</code>: The registration has been deleted.</p></li>
+    /// <li> <p> <code>CREATED</code>: Your registration is created but not submitted.</p> </li>
+    /// <li> <p> <code>SUBMITTED</code>: Your registration has been submitted and is awaiting review.</p> </li>
+    /// <li> <p> <code>REVIEWING</code>: Your registration has been accepted and is being reviewed.</p> </li>
+    /// <li> <p> <code>PROVISIONING</code>: Your registration has been approved and your origination identity is being created.</p> </li>
+    /// <li> <p> <code>COMPLETE</code>: Your registration has been approved and and your origination identity has been created.</p> </li>
+    /// <li> <p> <code>REQUIRES_UPDATES</code>: You must fix your registration and resubmit it.</p> </li>
+    /// <li> <p> <code>CLOSED</code>: The phone number or sender ID has been deleted and you must also delete the registration for the number.</p> </li>
+    /// <li> <p> <code>DELETED</code>: The registration has been deleted.</p> </li>
     /// </ul>
     pub fn registration_status(&self) -> &crate::types::RegistrationStatus {
         &self.registration_status
@@ -170,22 +154,14 @@ impl CreateRegistrationOutputBuilder {
     }
     /// <p>The status of the registration.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATED</code>: Your registration is created but not submitted.</p></li>
-    /// <li>
-    /// <p><code>SUBMITTED</code>: Your registration has been submitted and is awaiting review.</p></li>
-    /// <li>
-    /// <p><code>REVIEWING</code>: Your registration has been accepted and is being reviewed.</p></li>
-    /// <li>
-    /// <p><code>PROVISIONING</code>: Your registration has been approved and your origination identity is being created.</p></li>
-    /// <li>
-    /// <p><code>COMPLETE</code>: Your registration has been approved and and your origination identity has been created.</p></li>
-    /// <li>
-    /// <p><code>REQUIRES_UPDATES</code>: You must fix your registration and resubmit it.</p></li>
-    /// <li>
-    /// <p><code>CLOSED</code>: The phone number or sender ID has been deleted and you must also delete the registration for the number.</p></li>
-    /// <li>
-    /// <p><code>DELETED</code>: The registration has been deleted.</p></li>
+    /// <li> <p> <code>CREATED</code>: Your registration is created but not submitted.</p> </li>
+    /// <li> <p> <code>SUBMITTED</code>: Your registration has been submitted and is awaiting review.</p> </li>
+    /// <li> <p> <code>REVIEWING</code>: Your registration has been accepted and is being reviewed.</p> </li>
+    /// <li> <p> <code>PROVISIONING</code>: Your registration has been approved and your origination identity is being created.</p> </li>
+    /// <li> <p> <code>COMPLETE</code>: Your registration has been approved and and your origination identity has been created.</p> </li>
+    /// <li> <p> <code>REQUIRES_UPDATES</code>: You must fix your registration and resubmit it.</p> </li>
+    /// <li> <p> <code>CLOSED</code>: The phone number or sender ID has been deleted and you must also delete the registration for the number.</p> </li>
+    /// <li> <p> <code>DELETED</code>: The registration has been deleted.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn registration_status(mut self, input: crate::types::RegistrationStatus) -> Self {
@@ -194,22 +170,14 @@ impl CreateRegistrationOutputBuilder {
     }
     /// <p>The status of the registration.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATED</code>: Your registration is created but not submitted.</p></li>
-    /// <li>
-    /// <p><code>SUBMITTED</code>: Your registration has been submitted and is awaiting review.</p></li>
-    /// <li>
-    /// <p><code>REVIEWING</code>: Your registration has been accepted and is being reviewed.</p></li>
-    /// <li>
-    /// <p><code>PROVISIONING</code>: Your registration has been approved and your origination identity is being created.</p></li>
-    /// <li>
-    /// <p><code>COMPLETE</code>: Your registration has been approved and and your origination identity has been created.</p></li>
-    /// <li>
-    /// <p><code>REQUIRES_UPDATES</code>: You must fix your registration and resubmit it.</p></li>
-    /// <li>
-    /// <p><code>CLOSED</code>: The phone number or sender ID has been deleted and you must also delete the registration for the number.</p></li>
-    /// <li>
-    /// <p><code>DELETED</code>: The registration has been deleted.</p></li>
+    /// <li> <p> <code>CREATED</code>: Your registration is created but not submitted.</p> </li>
+    /// <li> <p> <code>SUBMITTED</code>: Your registration has been submitted and is awaiting review.</p> </li>
+    /// <li> <p> <code>REVIEWING</code>: Your registration has been accepted and is being reviewed.</p> </li>
+    /// <li> <p> <code>PROVISIONING</code>: Your registration has been approved and your origination identity is being created.</p> </li>
+    /// <li> <p> <code>COMPLETE</code>: Your registration has been approved and and your origination identity has been created.</p> </li>
+    /// <li> <p> <code>REQUIRES_UPDATES</code>: You must fix your registration and resubmit it.</p> </li>
+    /// <li> <p> <code>CLOSED</code>: The phone number or sender ID has been deleted and you must also delete the registration for the number.</p> </li>
+    /// <li> <p> <code>DELETED</code>: The registration has been deleted.</p> </li>
     /// </ul>
     pub fn set_registration_status(mut self, input: ::std::option::Option<crate::types::RegistrationStatus>) -> Self {
         self.registration_status = input;
@@ -217,22 +185,14 @@ impl CreateRegistrationOutputBuilder {
     }
     /// <p>The status of the registration.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATED</code>: Your registration is created but not submitted.</p></li>
-    /// <li>
-    /// <p><code>SUBMITTED</code>: Your registration has been submitted and is awaiting review.</p></li>
-    /// <li>
-    /// <p><code>REVIEWING</code>: Your registration has been accepted and is being reviewed.</p></li>
-    /// <li>
-    /// <p><code>PROVISIONING</code>: Your registration has been approved and your origination identity is being created.</p></li>
-    /// <li>
-    /// <p><code>COMPLETE</code>: Your registration has been approved and and your origination identity has been created.</p></li>
-    /// <li>
-    /// <p><code>REQUIRES_UPDATES</code>: You must fix your registration and resubmit it.</p></li>
-    /// <li>
-    /// <p><code>CLOSED</code>: The phone number or sender ID has been deleted and you must also delete the registration for the number.</p></li>
-    /// <li>
-    /// <p><code>DELETED</code>: The registration has been deleted.</p></li>
+    /// <li> <p> <code>CREATED</code>: Your registration is created but not submitted.</p> </li>
+    /// <li> <p> <code>SUBMITTED</code>: Your registration has been submitted and is awaiting review.</p> </li>
+    /// <li> <p> <code>REVIEWING</code>: Your registration has been accepted and is being reviewed.</p> </li>
+    /// <li> <p> <code>PROVISIONING</code>: Your registration has been approved and your origination identity is being created.</p> </li>
+    /// <li> <p> <code>COMPLETE</code>: Your registration has been approved and and your origination identity has been created.</p> </li>
+    /// <li> <p> <code>REQUIRES_UPDATES</code>: You must fix your registration and resubmit it.</p> </li>
+    /// <li> <p> <code>CLOSED</code>: The phone number or sender ID has been deleted and you must also delete the registration for the number.</p> </li>
+    /// <li> <p> <code>DELETED</code>: The registration has been deleted.</p> </li>
     /// </ul>
     pub fn get_registration_status(&self) -> &::std::option::Option<crate::types::RegistrationStatus> {
         &self.registration_status

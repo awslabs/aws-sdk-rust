@@ -23,7 +23,7 @@ impl SwitchoverGlobalClusterInputBuilder {
 /// Fluent builder constructing a request to `SwitchoverGlobalCluster`.
 ///
 /// <p>Switches over the specified secondary DB cluster to be the new primary DB cluster in the global database cluster. Switchover operations were previously called "managed planned failovers."</p>
-/// <p>Aurora promotes the specified secondary cluster to assume full read/write capabilities and demotes the current primary cluster to a secondary (read-only) cluster, maintaining the orginal replication topology. All secondary clusters are synchronized with the primary at the beginning of the process so the new primary continues operations for the Aurora global database without losing any data. Your database is unavailable for a short time while the primary and selected secondary clusters are assuming their new roles. For more information about switching over an Aurora global database, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.html#aurora-global-database-disaster-recovery.managed-failover">Performing switchovers for Amazon Aurora global databases</a> in the <i>Amazon Aurora User Guide</i>.</p><note>
+/// <p>Aurora promotes the specified secondary cluster to assume full read/write capabilities and demotes the current primary cluster to a secondary (read-only) cluster, maintaining the orginal replication topology. All secondary clusters are synchronized with the primary at the beginning of the process so the new primary continues operations for the Aurora global database without losing any data. Your database is unavailable for a short time while the primary and selected secondary clusters are assuming their new roles. For more information about switching over an Aurora global database, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.html#aurora-global-database-disaster-recovery.managed-failover">Performing switchovers for Amazon Aurora global databases</a> in the <i>Amazon Aurora User Guide</i>.</p> <note>
 /// <p>This operation is intended for controlled environments, for operations such as "regional rotation" or to fall back to the original primary after a global database failover.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -114,8 +114,7 @@ impl SwitchoverGlobalClusterFluentBuilder {
     /// <p>The identifier of the global database cluster to switch over. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must match the identifier of an existing global database cluster (Aurora global database).</p></li>
+    /// <li> <p>Must match the identifier of an existing global database cluster (Aurora global database).</p> </li>
     /// </ul>
     pub fn global_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.global_cluster_identifier(input.into());
@@ -124,8 +123,7 @@ impl SwitchoverGlobalClusterFluentBuilder {
     /// <p>The identifier of the global database cluster to switch over. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must match the identifier of an existing global database cluster (Aurora global database).</p></li>
+    /// <li> <p>Must match the identifier of an existing global database cluster (Aurora global database).</p> </li>
     /// </ul>
     pub fn set_global_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_global_cluster_identifier(input);
@@ -134,8 +132,7 @@ impl SwitchoverGlobalClusterFluentBuilder {
     /// <p>The identifier of the global database cluster to switch over. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must match the identifier of an existing global database cluster (Aurora global database).</p></li>
+    /// <li> <p>Must match the identifier of an existing global database cluster (Aurora global database).</p> </li>
     /// </ul>
     pub fn get_global_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_global_cluster_identifier()

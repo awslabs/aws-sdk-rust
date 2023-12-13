@@ -22,7 +22,7 @@ impl GetShareInputBuilder {
 }
 /// Fluent builder constructing a request to `GetShare`.
 ///
-/// <p>Retrieves the metadata for a share.</p>
+/// <p> Retrieves the metadata for a share. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetShareFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -99,17 +99,17 @@ impl GetShareFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The generated ID for a share.</p>
+    /// <p> The generated ID for a share. </p>
     pub fn share_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.share_id(input.into());
         self
     }
-    /// <p>The generated ID for a share.</p>
+    /// <p> The generated ID for a share. </p>
     pub fn set_share_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_share_id(input);
         self
     }
-    /// <p>The generated ID for a share.</p>
+    /// <p> The generated ID for a share. </p>
     pub fn get_share_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_share_id()
     }

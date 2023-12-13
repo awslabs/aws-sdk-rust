@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Resource {
-    /// <p>The unique identifier of the resource.</p><note>
+    /// <p>The unique identifier of the resource.</p> <note>
     /// <p>We mention the term resource, which is most commonly a product, so a <code>resourceId</code> is also a <code>productId</code>.</p>
     /// </note>
     pub id: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct Resource {
     pub r#type: ::std::option::Option<::std::string::String>,
 }
 impl Resource {
-    /// <p>The unique identifier of the resource.</p><note>
+    /// <p>The unique identifier of the resource.</p> <note>
     /// <p>We mention the term resource, which is most commonly a product, so a <code>resourceId</code> is also a <code>productId</code>.</p>
     /// </note>
     pub fn id(&self) -> ::std::option::Option<&str> {
@@ -38,21 +38,21 @@ pub struct ResourceBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
 }
 impl ResourceBuilder {
-    /// <p>The unique identifier of the resource.</p><note>
+    /// <p>The unique identifier of the resource.</p> <note>
     /// <p>We mention the term resource, which is most commonly a product, so a <code>resourceId</code> is also a <code>productId</code>.</p>
     /// </note>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the resource.</p><note>
+    /// <p>The unique identifier of the resource.</p> <note>
     /// <p>We mention the term resource, which is most commonly a product, so a <code>resourceId</code> is also a <code>productId</code>.</p>
     /// </note>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// <p>The unique identifier of the resource.</p><note>
+    /// <p>The unique identifier of the resource.</p> <note>
     /// <p>We mention the term resource, which is most commonly a product, so a <code>resourceId</code> is also a <code>productId</code>.</p>
     /// </note>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {

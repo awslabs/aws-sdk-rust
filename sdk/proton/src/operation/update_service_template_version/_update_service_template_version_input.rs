@@ -15,7 +15,7 @@ pub struct UpdateServiceTemplateVersionInput {
     pub status: ::std::option::Option<crate::types::TemplateVersionStatus>,
     /// <p>An array of environment template objects that are compatible with this service template version. A service instance based on this service template version can run in environments based on compatible templates.</p>
     pub compatible_environment_templates: ::std::option::Option<::std::vec::Vec<crate::types::CompatibleEnvironmentTemplateInput>>,
-    /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p><note>
+    /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p> <note>
     /// <p>A change to <code>supportedComponentSources</code> doesn't impact existing component attachments to instances based on this template version. A change only affects later associations.</p>
     /// </note>
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
@@ -48,7 +48,7 @@ impl UpdateServiceTemplateVersionInput {
     pub fn compatible_environment_templates(&self) -> &[crate::types::CompatibleEnvironmentTemplateInput] {
         self.compatible_environment_templates.as_deref().unwrap_or_default()
     }
-    /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p><note>
+    /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p> <note>
     /// <p>A change to <code>supportedComponentSources</code> doesn't impact existing component attachments to instances based on this template version. A change only affects later associations.</p>
     /// </note>
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
@@ -191,7 +191,7 @@ impl UpdateServiceTemplateVersionInputBuilder {
     ///
     /// To override the contents of this collection use [`set_supported_component_sources`](Self::set_supported_component_sources).
     ///
-    /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p><note>
+    /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p> <note>
     /// <p>A change to <code>supportedComponentSources</code> doesn't impact existing component attachments to instances based on this template version. A change only affects later associations.</p>
     /// </note>
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
@@ -201,7 +201,7 @@ impl UpdateServiceTemplateVersionInputBuilder {
         self.supported_component_sources = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p><note>
+    /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p> <note>
     /// <p>A change to <code>supportedComponentSources</code> doesn't impact existing component attachments to instances based on this template version. A change only affects later associations.</p>
     /// </note>
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
@@ -212,7 +212,7 @@ impl UpdateServiceTemplateVersionInputBuilder {
         self.supported_component_sources = input;
         self
     }
-    /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p><note>
+    /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p> <note>
     /// <p>A change to <code>supportedComponentSources</code> doesn't impact existing component attachments to instances based on this template version. A change only affects later associations.</p>
     /// </note>
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>

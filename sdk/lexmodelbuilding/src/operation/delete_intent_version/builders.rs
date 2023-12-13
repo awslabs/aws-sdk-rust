@@ -22,7 +22,7 @@ impl DeleteIntentVersionInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteIntentVersion`.
 ///
-/// <p>Deletes a specific version of an intent. To delete all versions of a intent, use the <code>DeleteIntent</code> operation.</p>
+/// <p>Deletes a specific version of an intent. To delete all versions of a intent, use the <code>DeleteIntent</code> operation. </p>
 /// <p>This operation requires permissions for the <code>lex:DeleteIntentVersion</code> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteIntentVersionFluentBuilder {

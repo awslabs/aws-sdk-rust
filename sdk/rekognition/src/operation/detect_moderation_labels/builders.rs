@@ -25,7 +25,7 @@ impl DetectModerationLabelsInputBuilder {
 /// <p>Detects unsafe content in a specified JPEG or PNG format image. Use <code>DetectModerationLabels</code> to moderate images depending on your requirements. For example, you might want to filter images that contain nudity, but not images containing suggestive content.</p>
 /// <p>To filter images, use the labels returned by <code>DetectModerationLabels</code> to determine which types of content are appropriate.</p>
 /// <p>For information about moderation labels, see Detecting Unsafe Content in the Amazon Rekognition Developer Guide.</p>
-/// <p>You pass the input image either as base64-encoded image bytes or as a reference to an image in an Amazon S3 bucket. If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes is not supported. The image must be either a PNG or JPEG formatted file.</p>
+/// <p>You pass the input image either as base64-encoded image bytes or as a reference to an image in an Amazon S3 bucket. If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes is not supported. The image must be either a PNG or JPEG formatted file. </p>
 /// <p>You can specify an adapter to use when retrieving label predictions by providing a <code>ProjectVersionArn</code> to the <code>ProjectVersion</code> argument.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DetectModerationLabelsFluentBuilder {
@@ -112,19 +112,19 @@ impl DetectModerationLabelsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported.</p>
+    /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
     /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
     pub fn image(mut self, input: crate::types::Image) -> Self {
         self.inner = self.inner.image(input);
         self
     }
-    /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported.</p>
+    /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
     /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
     pub fn set_image(mut self, input: ::std::option::Option<crate::types::Image>) -> Self {
         self.inner = self.inner.set_image(input);
         self
     }
-    /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported.</p>
+    /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
     /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
     pub fn get_image(&self) -> &::std::option::Option<crate::types::Image> {
         self.inner.get_image()

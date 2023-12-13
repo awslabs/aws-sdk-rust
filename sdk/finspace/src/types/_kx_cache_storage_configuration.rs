@@ -4,14 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KxCacheStorageConfiguration {
-    /// <p>The type of cache storage. The valid values are:</p>
+    /// <p>The type of cache storage. The valid values are: </p>
     /// <ul>
-    /// <li>
-    /// <p>CACHE_1000 – This type provides at least 1000 MB/s disk access throughput.</p></li>
-    /// <li>
-    /// <p>CACHE_250 – This type provides at least 250 MB/s disk access throughput.</p></li>
-    /// <li>
-    /// <p>CACHE_12 – This type provides at least 12 MB/s disk access throughput.</p></li>
+    /// <li> <p>CACHE_1000 – This type provides at least 1000 MB/s disk access throughput. </p> </li>
+    /// <li> <p>CACHE_250 – This type provides at least 250 MB/s disk access throughput. </p> </li>
+    /// <li> <p>CACHE_12 – This type provides at least 12 MB/s disk access throughput. </p> </li>
     /// </ul>
     /// <p>For cache type <code>CACHE_1000</code> and <code>CACHE_250</code> you can select cache size as 1200 GB or increments of 2400 GB. For cache type <code>CACHE_12</code> you can select the cache size in increments of 6000 GB.</p>
     pub r#type: ::std::string::String,
@@ -19,14 +16,11 @@ pub struct KxCacheStorageConfiguration {
     pub size: i32,
 }
 impl KxCacheStorageConfiguration {
-    /// <p>The type of cache storage. The valid values are:</p>
+    /// <p>The type of cache storage. The valid values are: </p>
     /// <ul>
-    /// <li>
-    /// <p>CACHE_1000 – This type provides at least 1000 MB/s disk access throughput.</p></li>
-    /// <li>
-    /// <p>CACHE_250 – This type provides at least 250 MB/s disk access throughput.</p></li>
-    /// <li>
-    /// <p>CACHE_12 – This type provides at least 12 MB/s disk access throughput.</p></li>
+    /// <li> <p>CACHE_1000 – This type provides at least 1000 MB/s disk access throughput. </p> </li>
+    /// <li> <p>CACHE_250 – This type provides at least 250 MB/s disk access throughput. </p> </li>
+    /// <li> <p>CACHE_12 – This type provides at least 12 MB/s disk access throughput. </p> </li>
     /// </ul>
     /// <p>For cache type <code>CACHE_1000</code> and <code>CACHE_250</code> you can select cache size as 1200 GB or increments of 2400 GB. For cache type <code>CACHE_12</code> you can select the cache size in increments of 6000 GB.</p>
     pub fn r#type(&self) -> &str {
@@ -53,14 +47,11 @@ pub struct KxCacheStorageConfigurationBuilder {
     pub(crate) size: ::std::option::Option<i32>,
 }
 impl KxCacheStorageConfigurationBuilder {
-    /// <p>The type of cache storage. The valid values are:</p>
+    /// <p>The type of cache storage. The valid values are: </p>
     /// <ul>
-    /// <li>
-    /// <p>CACHE_1000 – This type provides at least 1000 MB/s disk access throughput.</p></li>
-    /// <li>
-    /// <p>CACHE_250 – This type provides at least 250 MB/s disk access throughput.</p></li>
-    /// <li>
-    /// <p>CACHE_12 – This type provides at least 12 MB/s disk access throughput.</p></li>
+    /// <li> <p>CACHE_1000 – This type provides at least 1000 MB/s disk access throughput. </p> </li>
+    /// <li> <p>CACHE_250 – This type provides at least 250 MB/s disk access throughput. </p> </li>
+    /// <li> <p>CACHE_12 – This type provides at least 12 MB/s disk access throughput. </p> </li>
     /// </ul>
     /// <p>For cache type <code>CACHE_1000</code> and <code>CACHE_250</code> you can select cache size as 1200 GB or increments of 2400 GB. For cache type <code>CACHE_12</code> you can select the cache size in increments of 6000 GB.</p>
     /// This field is required.
@@ -68,28 +59,22 @@ impl KxCacheStorageConfigurationBuilder {
         self.r#type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The type of cache storage. The valid values are:</p>
+    /// <p>The type of cache storage. The valid values are: </p>
     /// <ul>
-    /// <li>
-    /// <p>CACHE_1000 – This type provides at least 1000 MB/s disk access throughput.</p></li>
-    /// <li>
-    /// <p>CACHE_250 – This type provides at least 250 MB/s disk access throughput.</p></li>
-    /// <li>
-    /// <p>CACHE_12 – This type provides at least 12 MB/s disk access throughput.</p></li>
+    /// <li> <p>CACHE_1000 – This type provides at least 1000 MB/s disk access throughput. </p> </li>
+    /// <li> <p>CACHE_250 – This type provides at least 250 MB/s disk access throughput. </p> </li>
+    /// <li> <p>CACHE_12 – This type provides at least 12 MB/s disk access throughput. </p> </li>
     /// </ul>
     /// <p>For cache type <code>CACHE_1000</code> and <code>CACHE_250</code> you can select cache size as 1200 GB or increments of 2400 GB. For cache type <code>CACHE_12</code> you can select the cache size in increments of 6000 GB.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The type of cache storage. The valid values are:</p>
+    /// <p>The type of cache storage. The valid values are: </p>
     /// <ul>
-    /// <li>
-    /// <p>CACHE_1000 – This type provides at least 1000 MB/s disk access throughput.</p></li>
-    /// <li>
-    /// <p>CACHE_250 – This type provides at least 250 MB/s disk access throughput.</p></li>
-    /// <li>
-    /// <p>CACHE_12 – This type provides at least 12 MB/s disk access throughput.</p></li>
+    /// <li> <p>CACHE_1000 – This type provides at least 1000 MB/s disk access throughput. </p> </li>
+    /// <li> <p>CACHE_250 – This type provides at least 250 MB/s disk access throughput. </p> </li>
+    /// <li> <p>CACHE_12 – This type provides at least 12 MB/s disk access throughput. </p> </li>
     /// </ul>
     /// <p>For cache type <code>CACHE_1000</code> and <code>CACHE_250</code> you can select cache size as 1200 GB or increments of 2400 GB. For cache type <code>CACHE_12</code> you can select the cache size in increments of 6000 GB.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {

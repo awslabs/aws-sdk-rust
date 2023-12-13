@@ -277,9 +277,9 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteSession
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DeleteSessionError {
-    /// <p>Request validation failed, there is no usable message in the context, or the bot build failed, is still in progress, or contains unbuilt changes.</p>
+    /// <p> Request validation failed, there is no usable message in the context, or the bot build failed, is still in progress, or contains unbuilt changes. </p>
     BadRequestException(crate::types::error::BadRequestException),
-    /// <p>Two clients are using the same AWS account, Amazon Lex bot, and user ID.</p>
+    /// <p> Two clients are using the same AWS account, Amazon Lex bot, and user ID. </p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>Internal service error. Retry the call.</p>
     InternalFailureException(crate::types::error::InternalFailureException),

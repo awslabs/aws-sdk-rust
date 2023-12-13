@@ -11,7 +11,7 @@ pub struct UpdateServiceOutput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The custom domain name of the service.</p>
     pub custom_domain_name: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
+    /// <p>The Amazon Resource Name (ARN) of the certificate. </p>
     pub certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of IAM policy.</p>
     pub auth_type: ::std::option::Option<crate::types::AuthType>,
@@ -34,7 +34,7 @@ impl UpdateServiceOutput {
     pub fn custom_domain_name(&self) -> ::std::option::Option<&str> {
         self.custom_domain_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
+    /// <p>The Amazon Resource Name (ARN) of the certificate. </p>
     pub fn certificate_arn(&self) -> ::std::option::Option<&str> {
         self.certificate_arn.as_deref()
     }
@@ -124,17 +124,17 @@ impl UpdateServiceOutputBuilder {
     pub fn get_custom_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.custom_domain_name
     }
-    /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
+    /// <p>The Amazon Resource Name (ARN) of the certificate. </p>
     pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
+    /// <p>The Amazon Resource Name (ARN) of the certificate. </p>
     pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
+    /// <p>The Amazon Resource Name (ARN) of the certificate. </p>
     pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate_arn
     }

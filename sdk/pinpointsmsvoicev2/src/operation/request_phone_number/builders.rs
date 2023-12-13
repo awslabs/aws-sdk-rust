@@ -108,17 +108,17 @@ impl RequestPhoneNumberFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
+    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
     pub fn iso_country_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.iso_country_code(input.into());
         self
     }
-    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
+    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
     pub fn set_iso_country_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_iso_country_code(input);
         self
     }
-    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
+    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
     pub fn get_iso_country_code(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_iso_country_code()
     }
@@ -140,17 +140,17 @@ impl RequestPhoneNumberFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_number_capabilities`](Self::set_number_capabilities).
     ///
-    /// <p>Indicates if the phone number will be used for text messages, voice messages, or both.</p>
+    /// <p>Indicates if the phone number will be used for text messages, voice messages, or both. </p>
     pub fn number_capabilities(mut self, input: crate::types::NumberCapability) -> Self {
         self.inner = self.inner.number_capabilities(input);
         self
     }
-    /// <p>Indicates if the phone number will be used for text messages, voice messages, or both.</p>
+    /// <p>Indicates if the phone number will be used for text messages, voice messages, or both. </p>
     pub fn set_number_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NumberCapability>>) -> Self {
         self.inner = self.inner.set_number_capabilities(input);
         self
     }
-    /// <p>Indicates if the phone number will be used for text messages, voice messages, or both.</p>
+    /// <p>Indicates if the phone number will be used for text messages, voice messages, or both. </p>
     pub fn get_number_capabilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NumberCapability>> {
         self.inner.get_number_capabilities()
     }
@@ -182,17 +182,17 @@ impl RequestPhoneNumberFluentBuilder {
     pub fn get_opt_out_list_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_opt_out_list_name()
     }
-    /// <p>The pool to associated with the phone number. You can use the PoolId or PoolArn.</p>
+    /// <p>The pool to associated with the phone number. You can use the PoolId or PoolArn. </p>
     pub fn pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pool_id(input.into());
         self
     }
-    /// <p>The pool to associated with the phone number. You can use the PoolId or PoolArn.</p>
+    /// <p>The pool to associated with the phone number. You can use the PoolId or PoolArn. </p>
     pub fn set_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pool_id(input);
         self
     }
-    /// <p>The pool to associated with the phone number. You can use the PoolId or PoolArn.</p>
+    /// <p>The pool to associated with the phone number. You can use the PoolId or PoolArn. </p>
     pub fn get_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_pool_id()
     }
@@ -228,17 +228,17 @@ impl RequestPhoneNumberFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>An array of tags (key and value pairs) associate with the requested phone number.</p>
+    /// <p>An array of tags (key and value pairs) associate with the requested phone number. </p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
-    /// <p>An array of tags (key and value pairs) associate with the requested phone number.</p>
+    /// <p>An array of tags (key and value pairs) associate with the requested phone number. </p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>An array of tags (key and value pairs) associate with the requested phone number.</p>
+    /// <p>An array of tags (key and value pairs) associate with the requested phone number. </p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }

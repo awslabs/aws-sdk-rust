@@ -22,7 +22,7 @@ impl UntagResourceInputBuilder {
 }
 /// Fluent builder constructing a request to `UntagResource`.
 ///
-/// <p>Removes the specified tags (metadata) from the resource.</p><note>
+/// <p>Removes the specified tags (metadata) from the resource.</p> <note>
 /// <p>Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

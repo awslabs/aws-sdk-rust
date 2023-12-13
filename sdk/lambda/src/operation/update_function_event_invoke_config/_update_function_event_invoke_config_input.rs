@@ -4,14 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFunctionEventInvokeConfigInput {
     /// <p>The name of the Lambda function, version, or alias.</p>
-    /// <p class="title"><b>Name formats</b></p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p><b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p></li>
-    /// <li>
-    /// <p><b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p></li>
-    /// <li>
-    /// <p><b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p></li>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub function_name: ::std::option::Option<::std::string::String>,
@@ -22,29 +19,22 @@ pub struct UpdateFunctionEventInvokeConfigInput {
     /// <p>The maximum age of a request that Lambda sends to a function for processing.</p>
     pub maximum_event_age_in_seconds: ::std::option::Option<i32>,
     /// <p>A destination for events after they have been sent to a function for processing.</p>
-    /// <p class="title"><b>Destinations</b></p>
+    /// <p class="title"> <b>Destinations</b> </p>
     /// <ul>
-    /// <li>
-    /// <p><b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p></li>
-    /// <li>
-    /// <p><b>Queue</b> - The ARN of a standard SQS queue.</p></li>
-    /// <li>
-    /// <p><b>Topic</b> - The ARN of a standard SNS topic.</p></li>
-    /// <li>
-    /// <p><b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p></li>
+    /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
+    /// <li> <p> <b>Queue</b> - The ARN of a standard SQS queue.</p> </li>
+    /// <li> <p> <b>Topic</b> - The ARN of a standard SNS topic.</p> </li>
+    /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
     /// </ul>
     pub destination_config: ::std::option::Option<crate::types::DestinationConfig>,
 }
 impl UpdateFunctionEventInvokeConfigInput {
     /// <p>The name of the Lambda function, version, or alias.</p>
-    /// <p class="title"><b>Name formats</b></p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p><b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p></li>
-    /// <li>
-    /// <p><b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p></li>
-    /// <li>
-    /// <p><b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p></li>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn function_name(&self) -> ::std::option::Option<&str> {
@@ -63,16 +53,12 @@ impl UpdateFunctionEventInvokeConfigInput {
         self.maximum_event_age_in_seconds
     }
     /// <p>A destination for events after they have been sent to a function for processing.</p>
-    /// <p class="title"><b>Destinations</b></p>
+    /// <p class="title"> <b>Destinations</b> </p>
     /// <ul>
-    /// <li>
-    /// <p><b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p></li>
-    /// <li>
-    /// <p><b>Queue</b> - The ARN of a standard SQS queue.</p></li>
-    /// <li>
-    /// <p><b>Topic</b> - The ARN of a standard SNS topic.</p></li>
-    /// <li>
-    /// <p><b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p></li>
+    /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
+    /// <li> <p> <b>Queue</b> - The ARN of a standard SQS queue.</p> </li>
+    /// <li> <p> <b>Topic</b> - The ARN of a standard SNS topic.</p> </li>
+    /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
     /// </ul>
     pub fn destination_config(&self) -> ::std::option::Option<&crate::types::DestinationConfig> {
         self.destination_config.as_ref()
@@ -97,14 +83,11 @@ pub struct UpdateFunctionEventInvokeConfigInputBuilder {
 }
 impl UpdateFunctionEventInvokeConfigInputBuilder {
     /// <p>The name of the Lambda function, version, or alias.</p>
-    /// <p class="title"><b>Name formats</b></p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p><b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p></li>
-    /// <li>
-    /// <p><b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p></li>
-    /// <li>
-    /// <p><b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p></li>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     /// This field is required.
@@ -113,14 +96,11 @@ impl UpdateFunctionEventInvokeConfigInputBuilder {
         self
     }
     /// <p>The name of the Lambda function, version, or alias.</p>
-    /// <p class="title"><b>Name formats</b></p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p><b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p></li>
-    /// <li>
-    /// <p><b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p></li>
-    /// <li>
-    /// <p><b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p></li>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -128,14 +108,11 @@ impl UpdateFunctionEventInvokeConfigInputBuilder {
         self
     }
     /// <p>The name of the Lambda function, version, or alias.</p>
-    /// <p class="title"><b>Name formats</b></p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p><b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p></li>
-    /// <li>
-    /// <p><b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p></li>
-    /// <li>
-    /// <p><b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p></li>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn get_function_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -184,48 +161,36 @@ impl UpdateFunctionEventInvokeConfigInputBuilder {
         &self.maximum_event_age_in_seconds
     }
     /// <p>A destination for events after they have been sent to a function for processing.</p>
-    /// <p class="title"><b>Destinations</b></p>
+    /// <p class="title"> <b>Destinations</b> </p>
     /// <ul>
-    /// <li>
-    /// <p><b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p></li>
-    /// <li>
-    /// <p><b>Queue</b> - The ARN of a standard SQS queue.</p></li>
-    /// <li>
-    /// <p><b>Topic</b> - The ARN of a standard SNS topic.</p></li>
-    /// <li>
-    /// <p><b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p></li>
+    /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
+    /// <li> <p> <b>Queue</b> - The ARN of a standard SQS queue.</p> </li>
+    /// <li> <p> <b>Topic</b> - The ARN of a standard SNS topic.</p> </li>
+    /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
     /// </ul>
     pub fn destination_config(mut self, input: crate::types::DestinationConfig) -> Self {
         self.destination_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>A destination for events after they have been sent to a function for processing.</p>
-    /// <p class="title"><b>Destinations</b></p>
+    /// <p class="title"> <b>Destinations</b> </p>
     /// <ul>
-    /// <li>
-    /// <p><b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p></li>
-    /// <li>
-    /// <p><b>Queue</b> - The ARN of a standard SQS queue.</p></li>
-    /// <li>
-    /// <p><b>Topic</b> - The ARN of a standard SNS topic.</p></li>
-    /// <li>
-    /// <p><b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p></li>
+    /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
+    /// <li> <p> <b>Queue</b> - The ARN of a standard SQS queue.</p> </li>
+    /// <li> <p> <b>Topic</b> - The ARN of a standard SNS topic.</p> </li>
+    /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
     /// </ul>
     pub fn set_destination_config(mut self, input: ::std::option::Option<crate::types::DestinationConfig>) -> Self {
         self.destination_config = input;
         self
     }
     /// <p>A destination for events after they have been sent to a function for processing.</p>
-    /// <p class="title"><b>Destinations</b></p>
+    /// <p class="title"> <b>Destinations</b> </p>
     /// <ul>
-    /// <li>
-    /// <p><b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p></li>
-    /// <li>
-    /// <p><b>Queue</b> - The ARN of a standard SQS queue.</p></li>
-    /// <li>
-    /// <p><b>Topic</b> - The ARN of a standard SNS topic.</p></li>
-    /// <li>
-    /// <p><b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p></li>
+    /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
+    /// <li> <p> <b>Queue</b> - The ARN of a standard SQS queue.</p> </li>
+    /// <li> <p> <b>Topic</b> - The ARN of a standard SNS topic.</p> </li>
+    /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
     /// </ul>
     pub fn get_destination_config(&self) -> &::std::option::Option<crate::types::DestinationConfig> {
         &self.destination_config

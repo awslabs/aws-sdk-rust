@@ -12,12 +12,9 @@ pub struct PropertyDifference {
     pub actual_value: ::std::option::Option<::std::string::String>,
     /// <p>The type of property difference.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ADD</code>: A value has been added to a resource property that's an array or list data type.</p></li>
-    /// <li>
-    /// <p><code>REMOVE</code>: The property has been removed from the current resource configuration.</p></li>
-    /// <li>
-    /// <p><code>NOT_EQUAL</code>: The current property value differs from its expected value (as defined in the stack template and any values specified as template parameters).</p></li>
+    /// <li> <p> <code>ADD</code>: A value has been added to a resource property that's an array or list data type.</p> </li>
+    /// <li> <p> <code>REMOVE</code>: The property has been removed from the current resource configuration.</p> </li>
+    /// <li> <p> <code>NOT_EQUAL</code>: The current property value differs from its expected value (as defined in the stack template and any values specified as template parameters).</p> </li>
     /// </ul>
     pub difference_type: ::std::option::Option<crate::types::DifferenceType>,
 }
@@ -36,12 +33,9 @@ impl PropertyDifference {
     }
     /// <p>The type of property difference.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ADD</code>: A value has been added to a resource property that's an array or list data type.</p></li>
-    /// <li>
-    /// <p><code>REMOVE</code>: The property has been removed from the current resource configuration.</p></li>
-    /// <li>
-    /// <p><code>NOT_EQUAL</code>: The current property value differs from its expected value (as defined in the stack template and any values specified as template parameters).</p></li>
+    /// <li> <p> <code>ADD</code>: A value has been added to a resource property that's an array or list data type.</p> </li>
+    /// <li> <p> <code>REMOVE</code>: The property has been removed from the current resource configuration.</p> </li>
+    /// <li> <p> <code>NOT_EQUAL</code>: The current property value differs from its expected value (as defined in the stack template and any values specified as template parameters).</p> </li>
     /// </ul>
     pub fn difference_type(&self) -> ::std::option::Option<&crate::types::DifferenceType> {
         self.difference_type.as_ref()
@@ -111,12 +105,9 @@ impl PropertyDifferenceBuilder {
     }
     /// <p>The type of property difference.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ADD</code>: A value has been added to a resource property that's an array or list data type.</p></li>
-    /// <li>
-    /// <p><code>REMOVE</code>: The property has been removed from the current resource configuration.</p></li>
-    /// <li>
-    /// <p><code>NOT_EQUAL</code>: The current property value differs from its expected value (as defined in the stack template and any values specified as template parameters).</p></li>
+    /// <li> <p> <code>ADD</code>: A value has been added to a resource property that's an array or list data type.</p> </li>
+    /// <li> <p> <code>REMOVE</code>: The property has been removed from the current resource configuration.</p> </li>
+    /// <li> <p> <code>NOT_EQUAL</code>: The current property value differs from its expected value (as defined in the stack template and any values specified as template parameters).</p> </li>
     /// </ul>
     /// This field is required.
     pub fn difference_type(mut self, input: crate::types::DifferenceType) -> Self {
@@ -125,12 +116,9 @@ impl PropertyDifferenceBuilder {
     }
     /// <p>The type of property difference.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ADD</code>: A value has been added to a resource property that's an array or list data type.</p></li>
-    /// <li>
-    /// <p><code>REMOVE</code>: The property has been removed from the current resource configuration.</p></li>
-    /// <li>
-    /// <p><code>NOT_EQUAL</code>: The current property value differs from its expected value (as defined in the stack template and any values specified as template parameters).</p></li>
+    /// <li> <p> <code>ADD</code>: A value has been added to a resource property that's an array or list data type.</p> </li>
+    /// <li> <p> <code>REMOVE</code>: The property has been removed from the current resource configuration.</p> </li>
+    /// <li> <p> <code>NOT_EQUAL</code>: The current property value differs from its expected value (as defined in the stack template and any values specified as template parameters).</p> </li>
     /// </ul>
     pub fn set_difference_type(mut self, input: ::std::option::Option<crate::types::DifferenceType>) -> Self {
         self.difference_type = input;
@@ -138,12 +126,9 @@ impl PropertyDifferenceBuilder {
     }
     /// <p>The type of property difference.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ADD</code>: A value has been added to a resource property that's an array or list data type.</p></li>
-    /// <li>
-    /// <p><code>REMOVE</code>: The property has been removed from the current resource configuration.</p></li>
-    /// <li>
-    /// <p><code>NOT_EQUAL</code>: The current property value differs from its expected value (as defined in the stack template and any values specified as template parameters).</p></li>
+    /// <li> <p> <code>ADD</code>: A value has been added to a resource property that's an array or list data type.</p> </li>
+    /// <li> <p> <code>REMOVE</code>: The property has been removed from the current resource configuration.</p> </li>
+    /// <li> <p> <code>NOT_EQUAL</code>: The current property value differs from its expected value (as defined in the stack template and any values specified as template parameters).</p> </li>
     /// </ul>
     pub fn get_difference_type(&self) -> &::std::option::Option<crate::types::DifferenceType> {
         &self.difference_type

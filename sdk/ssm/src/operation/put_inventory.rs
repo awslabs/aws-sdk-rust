@@ -251,14 +251,10 @@ pub enum PutInventoryError {
     InternalServerError(crate::types::error::InternalServerError),
     /// <p>The following problems can cause this exception:</p>
     /// <ul>
-    /// <li>
-    /// <p>You don't have permission to access the managed node.</p></li>
-    /// <li>
-    /// <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is running.</p></li>
-    /// <li>
-    /// <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p></li>
-    /// <li>
-    /// <p>The managed node isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code> and <code>Terminated</code>.</p></li>
+    /// <li> <p>You don't have permission to access the managed node.</p> </li>
+    /// <li> <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is running.</p> </li>
+    /// <li> <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p> </li>
+    /// <li> <p>The managed node isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code> and <code>Terminated</code>.</p> </li>
     /// </ul>
     InvalidInstanceId(crate::types::error::InvalidInstanceId),
     /// <p>You specified invalid keys or values in the <code>Context</code> attribute for <code>InventoryItem</code>. Verify the keys and values, and try again.</p>
@@ -267,7 +263,7 @@ pub enum PutInventoryError {
     InvalidItemContentException(crate::types::error::InvalidItemContentException),
     /// <p>The parameter type name isn't valid.</p>
     InvalidTypeNameException(crate::types::error::InvalidTypeNameException),
-    /// <p>The inventory item has invalid content.</p>
+    /// <p>The inventory item has invalid content. </p>
     ItemContentMismatchException(crate::types::error::ItemContentMismatchException),
     /// <p>The inventory item size has exceeded the size limit.</p>
     ItemSizeLimitExceededException(crate::types::error::ItemSizeLimitExceededException),

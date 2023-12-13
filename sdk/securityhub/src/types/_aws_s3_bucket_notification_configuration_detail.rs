@@ -12,12 +12,9 @@ pub struct AwsS3BucketNotificationConfigurationDetail {
     pub destination: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the type of notification. Notifications can be generated using Lambda functions, Amazon SQS queues, or Amazon SNS topics, with corresponding valid values as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>LambdaConfiguration</code></p></li>
-    /// <li>
-    /// <p><code>QueueConfiguration</code></p></li>
-    /// <li>
-    /// <p><code>TopicConfiguration</code></p></li>
+    /// <li> <p> <code>LambdaConfiguration</code> </p> </li>
+    /// <li> <p> <code>QueueConfiguration</code> </p> </li>
+    /// <li> <p> <code>TopicConfiguration</code> </p> </li>
     /// </ul>
     pub r#type: ::std::option::Option<::std::string::String>,
 }
@@ -38,12 +35,9 @@ impl AwsS3BucketNotificationConfigurationDetail {
     }
     /// <p>Indicates the type of notification. Notifications can be generated using Lambda functions, Amazon SQS queues, or Amazon SNS topics, with corresponding valid values as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>LambdaConfiguration</code></p></li>
-    /// <li>
-    /// <p><code>QueueConfiguration</code></p></li>
-    /// <li>
-    /// <p><code>TopicConfiguration</code></p></li>
+    /// <li> <p> <code>LambdaConfiguration</code> </p> </li>
+    /// <li> <p> <code>QueueConfiguration</code> </p> </li>
+    /// <li> <p> <code>TopicConfiguration</code> </p> </li>
     /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
@@ -116,12 +110,9 @@ impl AwsS3BucketNotificationConfigurationDetailBuilder {
     }
     /// <p>Indicates the type of notification. Notifications can be generated using Lambda functions, Amazon SQS queues, or Amazon SNS topics, with corresponding valid values as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>LambdaConfiguration</code></p></li>
-    /// <li>
-    /// <p><code>QueueConfiguration</code></p></li>
-    /// <li>
-    /// <p><code>TopicConfiguration</code></p></li>
+    /// <li> <p> <code>LambdaConfiguration</code> </p> </li>
+    /// <li> <p> <code>QueueConfiguration</code> </p> </li>
+    /// <li> <p> <code>TopicConfiguration</code> </p> </li>
     /// </ul>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -129,12 +120,9 @@ impl AwsS3BucketNotificationConfigurationDetailBuilder {
     }
     /// <p>Indicates the type of notification. Notifications can be generated using Lambda functions, Amazon SQS queues, or Amazon SNS topics, with corresponding valid values as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>LambdaConfiguration</code></p></li>
-    /// <li>
-    /// <p><code>QueueConfiguration</code></p></li>
-    /// <li>
-    /// <p><code>TopicConfiguration</code></p></li>
+    /// <li> <p> <code>LambdaConfiguration</code> </p> </li>
+    /// <li> <p> <code>QueueConfiguration</code> </p> </li>
+    /// <li> <p> <code>TopicConfiguration</code> </p> </li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
@@ -142,12 +130,9 @@ impl AwsS3BucketNotificationConfigurationDetailBuilder {
     }
     /// <p>Indicates the type of notification. Notifications can be generated using Lambda functions, Amazon SQS queues, or Amazon SNS topics, with corresponding valid values as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>LambdaConfiguration</code></p></li>
-    /// <li>
-    /// <p><code>QueueConfiguration</code></p></li>
-    /// <li>
-    /// <p><code>TopicConfiguration</code></p></li>
+    /// <li> <p> <code>LambdaConfiguration</code> </p> </li>
+    /// <li> <p> <code>QueueConfiguration</code> </p> </li>
+    /// <li> <p> <code>TopicConfiguration</code> </p> </li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.r#type

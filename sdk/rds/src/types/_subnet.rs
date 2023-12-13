@@ -10,7 +10,7 @@ pub struct Subnet {
     /// <p>This data type is used as an element in the <code>OrderableDBInstanceOption</code> data type.</p>
     pub subnet_availability_zone: ::std::option::Option<crate::types::AvailabilityZone>,
     /// <p>If the subnet is associated with an Outpost, this value specifies the Outpost.</p>
-    /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub subnet_outpost: ::std::option::Option<crate::types::Outpost>,
     /// <p>The status of the subnet.</p>
     pub subnet_status: ::std::option::Option<::std::string::String>,
@@ -26,7 +26,7 @@ impl Subnet {
         self.subnet_availability_zone.as_ref()
     }
     /// <p>If the subnet is associated with an Outpost, this value specifies the Outpost.</p>
-    /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub fn subnet_outpost(&self) -> ::std::option::Option<&crate::types::Outpost> {
         self.subnet_outpost.as_ref()
     }
@@ -84,19 +84,19 @@ impl SubnetBuilder {
         &self.subnet_availability_zone
     }
     /// <p>If the subnet is associated with an Outpost, this value specifies the Outpost.</p>
-    /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub fn subnet_outpost(mut self, input: crate::types::Outpost) -> Self {
         self.subnet_outpost = ::std::option::Option::Some(input);
         self
     }
     /// <p>If the subnet is associated with an Outpost, this value specifies the Outpost.</p>
-    /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub fn set_subnet_outpost(mut self, input: ::std::option::Option<crate::types::Outpost>) -> Self {
         self.subnet_outpost = input;
         self
     }
     /// <p>If the subnet is associated with an Outpost, this value specifies the Outpost.</p>
-    /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub fn get_subnet_outpost(&self) -> &::std::option::Option<crate::types::Outpost> {
         &self.subnet_outpost
     }

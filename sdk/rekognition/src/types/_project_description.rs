@@ -10,11 +10,11 @@ pub struct ProjectDescription {
     pub creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current status of the project.</p>
     pub status: ::std::option::Option<crate::types::ProjectStatus>,
-    /// <p>Information about the training and test datasets in the project.</p>
+    /// <p> Information about the training and test datasets in the project. </p>
     pub datasets: ::std::option::Option<::std::vec::Vec<crate::types::DatasetMetadata>>,
     /// <p>Specifies the project that is being customized.</p>
     pub feature: ::std::option::Option<crate::types::CustomizationFeature>,
-    /// <p>Indicates whether automatic retraining will be attempted for the versions of the project. Applies only to adapters.</p>
+    /// <p>Indicates whether automatic retraining will be attempted for the versions of the project. Applies only to adapters. </p>
     pub auto_update: ::std::option::Option<crate::types::ProjectAutoUpdate>,
 }
 impl ProjectDescription {
@@ -30,7 +30,7 @@ impl ProjectDescription {
     pub fn status(&self) -> ::std::option::Option<&crate::types::ProjectStatus> {
         self.status.as_ref()
     }
-    /// <p>Information about the training and test datasets in the project.</p>
+    /// <p> Information about the training and test datasets in the project. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.datasets.is_none()`.
     pub fn datasets(&self) -> &[crate::types::DatasetMetadata] {
@@ -40,7 +40,7 @@ impl ProjectDescription {
     pub fn feature(&self) -> ::std::option::Option<&crate::types::CustomizationFeature> {
         self.feature.as_ref()
     }
-    /// <p>Indicates whether automatic retraining will be attempted for the versions of the project. Applies only to adapters.</p>
+    /// <p>Indicates whether automatic retraining will be attempted for the versions of the project. Applies only to adapters. </p>
     pub fn auto_update(&self) -> ::std::option::Option<&crate::types::ProjectAutoUpdate> {
         self.auto_update.as_ref()
     }
@@ -110,19 +110,19 @@ impl ProjectDescriptionBuilder {
     ///
     /// To override the contents of this collection use [`set_datasets`](Self::set_datasets).
     ///
-    /// <p>Information about the training and test datasets in the project.</p>
+    /// <p> Information about the training and test datasets in the project. </p>
     pub fn datasets(mut self, input: crate::types::DatasetMetadata) -> Self {
         let mut v = self.datasets.unwrap_or_default();
         v.push(input);
         self.datasets = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Information about the training and test datasets in the project.</p>
+    /// <p> Information about the training and test datasets in the project. </p>
     pub fn set_datasets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DatasetMetadata>>) -> Self {
         self.datasets = input;
         self
     }
-    /// <p>Information about the training and test datasets in the project.</p>
+    /// <p> Information about the training and test datasets in the project. </p>
     pub fn get_datasets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetMetadata>> {
         &self.datasets
     }
@@ -140,17 +140,17 @@ impl ProjectDescriptionBuilder {
     pub fn get_feature(&self) -> &::std::option::Option<crate::types::CustomizationFeature> {
         &self.feature
     }
-    /// <p>Indicates whether automatic retraining will be attempted for the versions of the project. Applies only to adapters.</p>
+    /// <p>Indicates whether automatic retraining will be attempted for the versions of the project. Applies only to adapters. </p>
     pub fn auto_update(mut self, input: crate::types::ProjectAutoUpdate) -> Self {
         self.auto_update = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether automatic retraining will be attempted for the versions of the project. Applies only to adapters.</p>
+    /// <p>Indicates whether automatic retraining will be attempted for the versions of the project. Applies only to adapters. </p>
     pub fn set_auto_update(mut self, input: ::std::option::Option<crate::types::ProjectAutoUpdate>) -> Self {
         self.auto_update = input;
         self
     }
-    /// <p>Indicates whether automatic retraining will be attempted for the versions of the project. Applies only to adapters.</p>
+    /// <p>Indicates whether automatic retraining will be attempted for the versions of the project. Applies only to adapters. </p>
     pub fn get_auto_update(&self) -> &::std::option::Option<crate::types::ProjectAutoUpdate> {
         &self.auto_update
     }

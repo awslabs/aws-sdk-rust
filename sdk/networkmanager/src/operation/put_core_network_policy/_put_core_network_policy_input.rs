@@ -9,7 +9,7 @@ pub struct PutCoreNetworkPolicyInput {
     pub policy_document: ::std::option::Option<::std::string::String>,
     /// <p>a core network policy description.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of a core network policy.</p>
+    /// <p>The ID of a core network policy. </p>
     pub latest_version_id: ::std::option::Option<i32>,
     /// <p>The client token associated with the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -27,7 +27,7 @@ impl PutCoreNetworkPolicyInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The ID of a core network policy.</p>
+    /// <p>The ID of a core network policy. </p>
     pub fn latest_version_id(&self) -> ::std::option::Option<i32> {
         self.latest_version_id
     }
@@ -98,17 +98,17 @@ impl PutCoreNetworkPolicyInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The ID of a core network policy.</p>
+    /// <p>The ID of a core network policy. </p>
     pub fn latest_version_id(mut self, input: i32) -> Self {
         self.latest_version_id = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The ID of a core network policy.</p>
+    /// <p>The ID of a core network policy. </p>
     pub fn set_latest_version_id(mut self, input: ::std::option::Option<i32>) -> Self {
         self.latest_version_id = input;
         self
     }
-    /// <p>The ID of a core network policy.</p>
+    /// <p>The ID of a core network policy. </p>
     pub fn get_latest_version_id(&self) -> &::std::option::Option<i32> {
         &self.latest_version_id
     }

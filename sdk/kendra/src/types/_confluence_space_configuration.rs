@@ -4,9 +4,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfluenceSpaceConfiguration {
-    /// <p><code>TRUE</code> to index personal spaces. You can add restrictions to items in personal spaces. If personal spaces are indexed, queries without user context information may return restricted items from a personal space in their results. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering on user context</a>.</p>
+    /// <p> <code>TRUE</code> to index personal spaces. You can add restrictions to items in personal spaces. If personal spaces are indexed, queries without user context information may return restricted items from a personal space in their results. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering on user context</a>.</p>
     pub crawl_personal_spaces: bool,
-    /// <p><code>TRUE</code> to index archived spaces.</p>
+    /// <p> <code>TRUE</code> to index archived spaces.</p>
     pub crawl_archived_spaces: bool,
     /// <p>A list of space keys for Confluence spaces. If you include a key, the blogs, documents, and attachments in the space are indexed. Spaces that aren't in the list aren't indexed. A space in the list must exist. Otherwise, Amazon Kendra logs an error when the data source is synchronized. If a space is in both the <code>IncludeSpaces</code> and the <code>ExcludeSpaces</code> list, the space is excluded.</p>
     pub include_spaces: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -17,11 +17,11 @@ pub struct ConfluenceSpaceConfiguration {
     pub space_field_mappings: ::std::option::Option<::std::vec::Vec<crate::types::ConfluenceSpaceToIndexFieldMapping>>,
 }
 impl ConfluenceSpaceConfiguration {
-    /// <p><code>TRUE</code> to index personal spaces. You can add restrictions to items in personal spaces. If personal spaces are indexed, queries without user context information may return restricted items from a personal space in their results. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering on user context</a>.</p>
+    /// <p> <code>TRUE</code> to index personal spaces. You can add restrictions to items in personal spaces. If personal spaces are indexed, queries without user context information may return restricted items from a personal space in their results. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering on user context</a>.</p>
     pub fn crawl_personal_spaces(&self) -> bool {
         self.crawl_personal_spaces
     }
-    /// <p><code>TRUE</code> to index archived spaces.</p>
+    /// <p> <code>TRUE</code> to index archived spaces.</p>
     pub fn crawl_archived_spaces(&self) -> bool {
         self.crawl_archived_spaces
     }
@@ -63,31 +63,31 @@ pub struct ConfluenceSpaceConfigurationBuilder {
     pub(crate) space_field_mappings: ::std::option::Option<::std::vec::Vec<crate::types::ConfluenceSpaceToIndexFieldMapping>>,
 }
 impl ConfluenceSpaceConfigurationBuilder {
-    /// <p><code>TRUE</code> to index personal spaces. You can add restrictions to items in personal spaces. If personal spaces are indexed, queries without user context information may return restricted items from a personal space in their results. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering on user context</a>.</p>
+    /// <p> <code>TRUE</code> to index personal spaces. You can add restrictions to items in personal spaces. If personal spaces are indexed, queries without user context information may return restricted items from a personal space in their results. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering on user context</a>.</p>
     pub fn crawl_personal_spaces(mut self, input: bool) -> Self {
         self.crawl_personal_spaces = ::std::option::Option::Some(input);
         self
     }
-    /// <p><code>TRUE</code> to index personal spaces. You can add restrictions to items in personal spaces. If personal spaces are indexed, queries without user context information may return restricted items from a personal space in their results. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering on user context</a>.</p>
+    /// <p> <code>TRUE</code> to index personal spaces. You can add restrictions to items in personal spaces. If personal spaces are indexed, queries without user context information may return restricted items from a personal space in their results. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering on user context</a>.</p>
     pub fn set_crawl_personal_spaces(mut self, input: ::std::option::Option<bool>) -> Self {
         self.crawl_personal_spaces = input;
         self
     }
-    /// <p><code>TRUE</code> to index personal spaces. You can add restrictions to items in personal spaces. If personal spaces are indexed, queries without user context information may return restricted items from a personal space in their results. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering on user context</a>.</p>
+    /// <p> <code>TRUE</code> to index personal spaces. You can add restrictions to items in personal spaces. If personal spaces are indexed, queries without user context information may return restricted items from a personal space in their results. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering on user context</a>.</p>
     pub fn get_crawl_personal_spaces(&self) -> &::std::option::Option<bool> {
         &self.crawl_personal_spaces
     }
-    /// <p><code>TRUE</code> to index archived spaces.</p>
+    /// <p> <code>TRUE</code> to index archived spaces.</p>
     pub fn crawl_archived_spaces(mut self, input: bool) -> Self {
         self.crawl_archived_spaces = ::std::option::Option::Some(input);
         self
     }
-    /// <p><code>TRUE</code> to index archived spaces.</p>
+    /// <p> <code>TRUE</code> to index archived spaces.</p>
     pub fn set_crawl_archived_spaces(mut self, input: ::std::option::Option<bool>) -> Self {
         self.crawl_archived_spaces = input;
         self
     }
-    /// <p><code>TRUE</code> to index archived spaces.</p>
+    /// <p> <code>TRUE</code> to index archived spaces.</p>
     pub fn get_crawl_archived_spaces(&self) -> &::std::option::Option<bool> {
         &self.crawl_archived_spaces
     }

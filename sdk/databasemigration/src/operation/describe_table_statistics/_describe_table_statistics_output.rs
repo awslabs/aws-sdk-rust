@@ -8,7 +8,7 @@ pub struct DescribeTableStatisticsOutput {
     pub replication_task_arn: ::std::option::Option<::std::string::String>,
     /// <p>The table statistics.</p>
     pub table_statistics: ::std::option::Option<::std::vec::Vec<crate::types::TableStatistics>>,
-    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -23,7 +23,7 @@ impl DescribeTableStatisticsOutput {
     pub fn table_statistics(&self) -> &[crate::types::TableStatistics] {
         self.table_statistics.as_deref().unwrap_or_default()
     }
-    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -84,17 +84,17 @@ impl DescribeTableStatisticsOutputBuilder {
     pub fn get_table_statistics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TableStatistics>> {
         &self.table_statistics
     }
-    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }
-    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }

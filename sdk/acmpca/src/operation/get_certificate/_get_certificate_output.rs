@@ -5,7 +5,7 @@
 pub struct GetCertificateOutput {
     /// <p>The base64 PEM-encoded certificate specified by the <code>CertificateArn</code> parameter.</p>
     pub certificate: ::std::option::Option<::std::string::String>,
-    /// <p>The base64 PEM-encoded certificate chain that chains up to the root CA certificate that you used to sign your private CA certificate.</p>
+    /// <p>The base64 PEM-encoded certificate chain that chains up to the root CA certificate that you used to sign your private CA certificate. </p>
     pub certificate_chain: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -14,7 +14,7 @@ impl GetCertificateOutput {
     pub fn certificate(&self) -> ::std::option::Option<&str> {
         self.certificate.as_deref()
     }
-    /// <p>The base64 PEM-encoded certificate chain that chains up to the root CA certificate that you used to sign your private CA certificate.</p>
+    /// <p>The base64 PEM-encoded certificate chain that chains up to the root CA certificate that you used to sign your private CA certificate. </p>
     pub fn certificate_chain(&self) -> ::std::option::Option<&str> {
         self.certificate_chain.as_deref()
     }
@@ -54,17 +54,17 @@ impl GetCertificateOutputBuilder {
     pub fn get_certificate(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate
     }
-    /// <p>The base64 PEM-encoded certificate chain that chains up to the root CA certificate that you used to sign your private CA certificate.</p>
+    /// <p>The base64 PEM-encoded certificate chain that chains up to the root CA certificate that you used to sign your private CA certificate. </p>
     pub fn certificate_chain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_chain = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The base64 PEM-encoded certificate chain that chains up to the root CA certificate that you used to sign your private CA certificate.</p>
+    /// <p>The base64 PEM-encoded certificate chain that chains up to the root CA certificate that you used to sign your private CA certificate. </p>
     pub fn set_certificate_chain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_chain = input;
         self
     }
-    /// <p>The base64 PEM-encoded certificate chain that chains up to the root CA certificate that you used to sign your private CA certificate.</p>
+    /// <p>The base64 PEM-encoded certificate chain that chains up to the root CA certificate that you used to sign your private CA certificate. </p>
     pub fn get_certificate_chain(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate_chain
     }

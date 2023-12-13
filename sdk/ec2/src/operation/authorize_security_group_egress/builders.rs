@@ -26,7 +26,7 @@ impl AuthorizeSecurityGroupEgressInputBuilder {
 /// <p>An outbound rule permits instances to send traffic to the specified IPv4 or IPv6 CIDR address ranges, or to the instances that are associated with the specified source security groups. When specifying an outbound rule for your security group in a VPC, the <code>IpPermissions</code> must include a destination for the traffic.</p>
 /// <p>You specify a protocol for each rule (for example, TCP). For the TCP and UDP protocols, you must also specify the destination port or port range. For the ICMP protocol, you must also specify the ICMP type and code. You can use -1 for the type or code to mean all types or all codes.</p>
 /// <p>Rule changes are propagated to affected instances as quickly as possible. However, a small delay might occur.</p>
-/// <p>For information about VPC security group quotas, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon VPC quotas</a>.</p><note>
+/// <p>For information about VPC security group quotas, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon VPC quotas</a>.</p> <note>
 /// <p>If you want to reference a security group across VPCs attached to a transit gateway using the <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-transit-gateways.html#create-tgw">security group referencing feature</a>, note that you can only reference security groups for ingress rules. You cannot reference a security group for egress rules.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

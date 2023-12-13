@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransformProcessingConfig {
-    /// <p>The compute location for the given transform property.</p>
+    /// <p>The compute location for the given transform property. </p>
     pub compute_location: crate::types::ComputeLocation,
     /// <p>The forwarding configuration for a given property.</p>
     pub forwarding_config: ::std::option::Option<crate::types::ForwardingConfig>,
 }
 impl TransformProcessingConfig {
-    /// <p>The compute location for the given transform property.</p>
+    /// <p>The compute location for the given transform property. </p>
     pub fn compute_location(&self) -> &crate::types::ComputeLocation {
         &self.compute_location
     }
@@ -34,18 +34,18 @@ pub struct TransformProcessingConfigBuilder {
     pub(crate) forwarding_config: ::std::option::Option<crate::types::ForwardingConfig>,
 }
 impl TransformProcessingConfigBuilder {
-    /// <p>The compute location for the given transform property.</p>
+    /// <p>The compute location for the given transform property. </p>
     /// This field is required.
     pub fn compute_location(mut self, input: crate::types::ComputeLocation) -> Self {
         self.compute_location = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The compute location for the given transform property.</p>
+    /// <p>The compute location for the given transform property. </p>
     pub fn set_compute_location(mut self, input: ::std::option::Option<crate::types::ComputeLocation>) -> Self {
         self.compute_location = input;
         self
     }
-    /// <p>The compute location for the given transform property.</p>
+    /// <p>The compute location for the given transform property. </p>
     pub fn get_compute_location(&self) -> &::std::option::Option<crate::types::ComputeLocation> {
         &self.compute_location
     }

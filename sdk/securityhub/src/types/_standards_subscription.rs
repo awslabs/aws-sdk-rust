@@ -13,16 +13,11 @@ pub struct StandardsSubscription {
     /// <p>The status of the standard subscription.</p>
     /// <p>The status values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PENDING</code> - Standard is in the process of being enabled.</p></li>
-    /// <li>
-    /// <p><code>READY</code> - Standard is enabled.</p></li>
-    /// <li>
-    /// <p><code>INCOMPLETE</code> - Standard could not be enabled completely. Some controls may not be available.</p></li>
-    /// <li>
-    /// <p><code>DELETING</code> - Standard is in the process of being disabled.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - Standard could not be disabled.</p></li>
+    /// <li> <p> <code>PENDING</code> - Standard is in the process of being enabled.</p> </li>
+    /// <li> <p> <code>READY</code> - Standard is enabled.</p> </li>
+    /// <li> <p> <code>INCOMPLETE</code> - Standard could not be enabled completely. Some controls may not be available.</p> </li>
+    /// <li> <p> <code>DELETING</code> - Standard is in the process of being disabled.</p> </li>
+    /// <li> <p> <code>FAILED</code> - Standard could not be disabled.</p> </li>
     /// </ul>
     pub standards_status: ::std::option::Option<crate::types::StandardsStatus>,
     /// <p>The reason for the current status.</p>
@@ -44,16 +39,11 @@ impl StandardsSubscription {
     /// <p>The status of the standard subscription.</p>
     /// <p>The status values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PENDING</code> - Standard is in the process of being enabled.</p></li>
-    /// <li>
-    /// <p><code>READY</code> - Standard is enabled.</p></li>
-    /// <li>
-    /// <p><code>INCOMPLETE</code> - Standard could not be enabled completely. Some controls may not be available.</p></li>
-    /// <li>
-    /// <p><code>DELETING</code> - Standard is in the process of being disabled.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - Standard could not be disabled.</p></li>
+    /// <li> <p> <code>PENDING</code> - Standard is in the process of being enabled.</p> </li>
+    /// <li> <p> <code>READY</code> - Standard is enabled.</p> </li>
+    /// <li> <p> <code>INCOMPLETE</code> - Standard could not be enabled completely. Some controls may not be available.</p> </li>
+    /// <li> <p> <code>DELETING</code> - Standard is in the process of being disabled.</p> </li>
+    /// <li> <p> <code>FAILED</code> - Standard could not be disabled.</p> </li>
     /// </ul>
     pub fn standards_status(&self) -> ::std::option::Option<&crate::types::StandardsStatus> {
         self.standards_status.as_ref()
@@ -141,16 +131,11 @@ impl StandardsSubscriptionBuilder {
     /// <p>The status of the standard subscription.</p>
     /// <p>The status values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PENDING</code> - Standard is in the process of being enabled.</p></li>
-    /// <li>
-    /// <p><code>READY</code> - Standard is enabled.</p></li>
-    /// <li>
-    /// <p><code>INCOMPLETE</code> - Standard could not be enabled completely. Some controls may not be available.</p></li>
-    /// <li>
-    /// <p><code>DELETING</code> - Standard is in the process of being disabled.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - Standard could not be disabled.</p></li>
+    /// <li> <p> <code>PENDING</code> - Standard is in the process of being enabled.</p> </li>
+    /// <li> <p> <code>READY</code> - Standard is enabled.</p> </li>
+    /// <li> <p> <code>INCOMPLETE</code> - Standard could not be enabled completely. Some controls may not be available.</p> </li>
+    /// <li> <p> <code>DELETING</code> - Standard is in the process of being disabled.</p> </li>
+    /// <li> <p> <code>FAILED</code> - Standard could not be disabled.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn standards_status(mut self, input: crate::types::StandardsStatus) -> Self {
@@ -160,16 +145,11 @@ impl StandardsSubscriptionBuilder {
     /// <p>The status of the standard subscription.</p>
     /// <p>The status values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PENDING</code> - Standard is in the process of being enabled.</p></li>
-    /// <li>
-    /// <p><code>READY</code> - Standard is enabled.</p></li>
-    /// <li>
-    /// <p><code>INCOMPLETE</code> - Standard could not be enabled completely. Some controls may not be available.</p></li>
-    /// <li>
-    /// <p><code>DELETING</code> - Standard is in the process of being disabled.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - Standard could not be disabled.</p></li>
+    /// <li> <p> <code>PENDING</code> - Standard is in the process of being enabled.</p> </li>
+    /// <li> <p> <code>READY</code> - Standard is enabled.</p> </li>
+    /// <li> <p> <code>INCOMPLETE</code> - Standard could not be enabled completely. Some controls may not be available.</p> </li>
+    /// <li> <p> <code>DELETING</code> - Standard is in the process of being disabled.</p> </li>
+    /// <li> <p> <code>FAILED</code> - Standard could not be disabled.</p> </li>
     /// </ul>
     pub fn set_standards_status(mut self, input: ::std::option::Option<crate::types::StandardsStatus>) -> Self {
         self.standards_status = input;
@@ -178,16 +158,11 @@ impl StandardsSubscriptionBuilder {
     /// <p>The status of the standard subscription.</p>
     /// <p>The status values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PENDING</code> - Standard is in the process of being enabled.</p></li>
-    /// <li>
-    /// <p><code>READY</code> - Standard is enabled.</p></li>
-    /// <li>
-    /// <p><code>INCOMPLETE</code> - Standard could not be enabled completely. Some controls may not be available.</p></li>
-    /// <li>
-    /// <p><code>DELETING</code> - Standard is in the process of being disabled.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - Standard could not be disabled.</p></li>
+    /// <li> <p> <code>PENDING</code> - Standard is in the process of being enabled.</p> </li>
+    /// <li> <p> <code>READY</code> - Standard is enabled.</p> </li>
+    /// <li> <p> <code>INCOMPLETE</code> - Standard could not be enabled completely. Some controls may not be available.</p> </li>
+    /// <li> <p> <code>DELETING</code> - Standard is in the process of being disabled.</p> </li>
+    /// <li> <p> <code>FAILED</code> - Standard could not be disabled.</p> </li>
     /// </ul>
     pub fn get_standards_status(&self) -> &::std::option::Option<crate::types::StandardsStatus> {
         &self.standards_status

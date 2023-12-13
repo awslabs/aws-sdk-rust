@@ -22,7 +22,7 @@ impl InferIcd10CmInputBuilder {
 }
 /// Fluent builder constructing a request to `InferICD10CM`.
 ///
-/// <p>InferICD10CM detects medical conditions as entities listed in a patient record and links those entities to normalized concept identifiers in the ICD-10-CM knowledge base from the Centers for Disease Control. Amazon Comprehend Medical only detects medical entities in English language texts.</p>
+/// <p>InferICD10CM detects medical conditions as entities listed in a patient record and links those entities to normalized concept identifiers in the ICD-10-CM knowledge base from the Centers for Disease Control. Amazon Comprehend Medical only detects medical entities in English language texts. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct InferICD10CMFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

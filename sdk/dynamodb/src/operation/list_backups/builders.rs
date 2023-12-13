@@ -25,7 +25,7 @@ impl ListBackupsInputBuilder {
 /// <p>List DynamoDB backups that are associated with an Amazon Web Services account and weren't made with Amazon Web Services Backup. To list these backups for a given table, specify <code>TableName</code>. <code>ListBackups</code> returns a paginated list of results with at most 1 MB worth of items in a page. You can also specify a maximum number of entries to be returned in a page.</p>
 /// <p>In the request, start time is inclusive, but end time is exclusive. Note that these boundaries are for the time at which the original backup was requested.</p>
 /// <p>You can call <code>ListBackups</code> a maximum of five times per second.</p>
-/// <p>If you want to retrieve the complete list of backups made with Amazon Web Services Backup, use the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListBackupJobs.html">Amazon Web Services Backup list API.</a></p>
+/// <p>If you want to retrieve the complete list of backups made with Amazon Web Services Backup, use the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListBackupJobs.html">Amazon Web Services Backup list API.</a> </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListBackupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -111,17 +111,17 @@ impl ListBackupsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The backups from the table specified by <code>TableName</code> are listed.</p>
+    /// <p>The backups from the table specified by <code>TableName</code> are listed. </p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.table_name(input.into());
         self
     }
-    /// <p>The backups from the table specified by <code>TableName</code> are listed.</p>
+    /// <p>The backups from the table specified by <code>TableName</code> are listed. </p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_table_name(input);
         self
     }
-    /// <p>The backups from the table specified by <code>TableName</code> are listed.</p>
+    /// <p>The backups from the table specified by <code>TableName</code> are listed. </p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_table_name()
     }
@@ -153,43 +153,40 @@ impl ListBackupsFluentBuilder {
     pub fn get_time_range_lower_bound(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_time_range_lower_bound()
     }
-    /// <p>Only backups created before this time are listed. <code>TimeRangeUpperBound</code> is exclusive.</p>
+    /// <p>Only backups created before this time are listed. <code>TimeRangeUpperBound</code> is exclusive. </p>
     pub fn time_range_upper_bound(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.time_range_upper_bound(input);
         self
     }
-    /// <p>Only backups created before this time are listed. <code>TimeRangeUpperBound</code> is exclusive.</p>
+    /// <p>Only backups created before this time are listed. <code>TimeRangeUpperBound</code> is exclusive. </p>
     pub fn set_time_range_upper_bound(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_time_range_upper_bound(input);
         self
     }
-    /// <p>Only backups created before this time are listed. <code>TimeRangeUpperBound</code> is exclusive.</p>
+    /// <p>Only backups created before this time are listed. <code>TimeRangeUpperBound</code> is exclusive. </p>
     pub fn get_time_range_upper_bound(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_time_range_upper_bound()
     }
-    /// <p><code>LastEvaluatedBackupArn</code> is the Amazon Resource Name (ARN) of the backup last evaluated when the current page of results was returned, inclusive of the current page of results. This value may be specified as the <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code> operation in order to fetch the next page of results.</p>
+    /// <p> <code>LastEvaluatedBackupArn</code> is the Amazon Resource Name (ARN) of the backup last evaluated when the current page of results was returned, inclusive of the current page of results. This value may be specified as the <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code> operation in order to fetch the next page of results. </p>
     pub fn exclusive_start_backup_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.exclusive_start_backup_arn(input.into());
         self
     }
-    /// <p><code>LastEvaluatedBackupArn</code> is the Amazon Resource Name (ARN) of the backup last evaluated when the current page of results was returned, inclusive of the current page of results. This value may be specified as the <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code> operation in order to fetch the next page of results.</p>
+    /// <p> <code>LastEvaluatedBackupArn</code> is the Amazon Resource Name (ARN) of the backup last evaluated when the current page of results was returned, inclusive of the current page of results. This value may be specified as the <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code> operation in order to fetch the next page of results. </p>
     pub fn set_exclusive_start_backup_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_exclusive_start_backup_arn(input);
         self
     }
-    /// <p><code>LastEvaluatedBackupArn</code> is the Amazon Resource Name (ARN) of the backup last evaluated when the current page of results was returned, inclusive of the current page of results. This value may be specified as the <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code> operation in order to fetch the next page of results.</p>
+    /// <p> <code>LastEvaluatedBackupArn</code> is the Amazon Resource Name (ARN) of the backup last evaluated when the current page of results was returned, inclusive of the current page of results. This value may be specified as the <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code> operation in order to fetch the next page of results. </p>
     pub fn get_exclusive_start_backup_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_exclusive_start_backup_arn()
     }
     /// <p>The backups from the table specified by <code>BackupType</code> are listed.</p>
     /// <p>Where <code>BackupType</code> can be:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>USER</code> - On-demand backup created by you. (The default setting if no other backup types are specified.)</p></li>
-    /// <li>
-    /// <p><code>SYSTEM</code> - On-demand backup automatically created by DynamoDB.</p></li>
-    /// <li>
-    /// <p><code>ALL</code> - All types of on-demand backups (USER and SYSTEM).</p></li>
+    /// <li> <p> <code>USER</code> - On-demand backup created by you. (The default setting if no other backup types are specified.)</p> </li>
+    /// <li> <p> <code>SYSTEM</code> - On-demand backup automatically created by DynamoDB.</p> </li>
+    /// <li> <p> <code>ALL</code> - All types of on-demand backups (USER and SYSTEM).</p> </li>
     /// </ul>
     pub fn backup_type(mut self, input: crate::types::BackupTypeFilter) -> Self {
         self.inner = self.inner.backup_type(input);
@@ -198,12 +195,9 @@ impl ListBackupsFluentBuilder {
     /// <p>The backups from the table specified by <code>BackupType</code> are listed.</p>
     /// <p>Where <code>BackupType</code> can be:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>USER</code> - On-demand backup created by you. (The default setting if no other backup types are specified.)</p></li>
-    /// <li>
-    /// <p><code>SYSTEM</code> - On-demand backup automatically created by DynamoDB.</p></li>
-    /// <li>
-    /// <p><code>ALL</code> - All types of on-demand backups (USER and SYSTEM).</p></li>
+    /// <li> <p> <code>USER</code> - On-demand backup created by you. (The default setting if no other backup types are specified.)</p> </li>
+    /// <li> <p> <code>SYSTEM</code> - On-demand backup automatically created by DynamoDB.</p> </li>
+    /// <li> <p> <code>ALL</code> - All types of on-demand backups (USER and SYSTEM).</p> </li>
     /// </ul>
     pub fn set_backup_type(mut self, input: ::std::option::Option<crate::types::BackupTypeFilter>) -> Self {
         self.inner = self.inner.set_backup_type(input);
@@ -212,12 +206,9 @@ impl ListBackupsFluentBuilder {
     /// <p>The backups from the table specified by <code>BackupType</code> are listed.</p>
     /// <p>Where <code>BackupType</code> can be:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>USER</code> - On-demand backup created by you. (The default setting if no other backup types are specified.)</p></li>
-    /// <li>
-    /// <p><code>SYSTEM</code> - On-demand backup automatically created by DynamoDB.</p></li>
-    /// <li>
-    /// <p><code>ALL</code> - All types of on-demand backups (USER and SYSTEM).</p></li>
+    /// <li> <p> <code>USER</code> - On-demand backup created by you. (The default setting if no other backup types are specified.)</p> </li>
+    /// <li> <p> <code>SYSTEM</code> - On-demand backup automatically created by DynamoDB.</p> </li>
+    /// <li> <p> <code>ALL</code> - All types of on-demand backups (USER and SYSTEM).</p> </li>
     /// </ul>
     pub fn get_backup_type(&self) -> &::std::option::Option<crate::types::BackupTypeFilter> {
         self.inner.get_backup_type()

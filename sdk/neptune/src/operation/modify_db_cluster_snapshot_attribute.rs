@@ -255,7 +255,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ModifyDBClust
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum ModifyDBClusterSnapshotAttributeError {
-    /// <p><i>DBClusterSnapshotIdentifier</i> does not refer to an existing DB cluster snapshot.</p>
+    /// <p> <i>DBClusterSnapshotIdentifier</i> does not refer to an existing DB cluster snapshot.</p>
     DbClusterSnapshotNotFoundFault(crate::types::error::DbClusterSnapshotNotFoundFault),
     /// <p>The supplied value is not a valid DB cluster snapshot state.</p>
     InvalidDbClusterSnapshotStateFault(crate::types::error::InvalidDbClusterSnapshotStateFault),

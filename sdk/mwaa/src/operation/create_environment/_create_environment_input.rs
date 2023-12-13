@@ -23,12 +23,12 @@ pub struct CreateEnvironmentInput {
     /// <p>The version of the <code>requirements.txt</code> file on your Amazon S3 bucket. You must specify a version each time a requirements.txt file is updated. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How S3 Versioning works</a>.</p>
     pub requirements_s3_object_version: ::std::option::Option<::std::string::String>,
     /// <p>The relative path to the startup shell script in your Amazon S3 bucket. For example, <code>s3://mwaa-environment/startup.sh</code>.</p>
-    /// <p>Amazon MWAA runs the script as your environment starts, and before running the Apache Airflow process. You can use this script to install dependencies, modify Apache Airflow configuration options, and set environment variables. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup script</a>.</p>
+    /// <p> Amazon MWAA runs the script as your environment starts, and before running the Apache Airflow process. You can use this script to install dependencies, modify Apache Airflow configuration options, and set environment variables. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup script</a>. </p>
     pub startup_script_s3_path: ::std::option::Option<::std::string::String>,
-    /// <p>The version of the startup shell script in your Amazon S3 bucket. You must specify the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version ID</a> that Amazon S3 assigns to the file every time you update the script.</p>
-    /// <p>Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are no more than 1,024 bytes long. The following is an example:</p>
-    /// <p><code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code></p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup script</a>.</p>
+    /// <p>The version of the startup shell script in your Amazon S3 bucket. You must specify the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version ID</a> that Amazon S3 assigns to the file every time you update the script. </p>
+    /// <p> Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are no more than 1,024 bytes long. The following is an example: </p>
+    /// <p> <code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code> </p>
+    /// <p> For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup script</a>. </p>
     pub startup_script_s3_object_version: ::std::option::Option<::std::string::String>,
     /// <p>A list of key-value pairs containing the Apache Airflow configuration options you want to attach to your environment. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-env-variables.html">Apache Airflow configuration options</a>.</p>
     pub airflow_configuration_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -39,7 +39,7 @@ pub struct CreateEnvironmentInput {
     /// <p>The Amazon Web Services Key Management Service (KMS) key to encrypt the data in your environment. You can use an Amazon Web Services owned CMK, or a Customer managed CMK (advanced). For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/create-environment.html">Create an Amazon MWAA environment</a>.</p>
     pub kms_key: ::std::option::Option<::std::string::String>,
     /// <p>The Apache Airflow version for your environment. If no value is specified, it defaults to the latest version. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache Airflow versions on Amazon Managed Workflows for Apache Airflow (MWAA)</a>.</p>
-    /// <p>Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, <code>2.4.3</code>, <code>2.5.1</code>, <code>2.6.3</code>, <code>2.7.2</code></p>
+    /// <p>Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, <code>2.4.3</code>, <code>2.5.1</code>, <code>2.6.3</code>, <code>2.7.2</code> </p>
     pub airflow_version: ::std::option::Option<::std::string::String>,
     /// <p>Defines the Apache Airflow logs to send to CloudWatch Logs.</p>
     pub logging_configuration: ::std::option::Option<crate::types::LoggingConfigurationInput>,
@@ -53,10 +53,8 @@ pub struct CreateEnvironmentInput {
     pub min_workers: ::std::option::Option<i32>,
     /// <p>The number of Apache Airflow schedulers to run in your environment. Valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p>v2 - Accepts between 2 to 5. Defaults to 2.</p></li>
-    /// <li>
-    /// <p>v1 - Accepts 1.</p></li>
+    /// <li> <p>v2 - Accepts between 2 to 5. Defaults to 2.</p> </li>
+    /// <li> <p>v1 - Accepts 1.</p> </li>
     /// </ul>
     pub schedulers: ::std::option::Option<i32>,
     /// <p>Defines whether the VPC endpoints configured for the environment are created, and managed, by the customer or by Amazon MWAA. If set to <code>SERVICE</code>, Amazon MWAA will create and manage the required VPC endpoints in your VPC. If set to <code>CUSTOMER</code>, you must create, and manage, the VPC endpoints for your VPC. If you choose to create an environment in a shared VPC, you must set this value to <code>CUSTOMER</code>. In a shared VPC deployment, the environment will remain in <code>PENDING</code> status until you create the VPC endpoints. If you do not take action to create the endpoints within 72 hours, the status will change to <code>CREATE_FAILED</code>. You can delete the failed environment and create a new one.</p>
@@ -100,14 +98,14 @@ impl CreateEnvironmentInput {
         self.requirements_s3_object_version.as_deref()
     }
     /// <p>The relative path to the startup shell script in your Amazon S3 bucket. For example, <code>s3://mwaa-environment/startup.sh</code>.</p>
-    /// <p>Amazon MWAA runs the script as your environment starts, and before running the Apache Airflow process. You can use this script to install dependencies, modify Apache Airflow configuration options, and set environment variables. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup script</a>.</p>
+    /// <p> Amazon MWAA runs the script as your environment starts, and before running the Apache Airflow process. You can use this script to install dependencies, modify Apache Airflow configuration options, and set environment variables. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup script</a>. </p>
     pub fn startup_script_s3_path(&self) -> ::std::option::Option<&str> {
         self.startup_script_s3_path.as_deref()
     }
-    /// <p>The version of the startup shell script in your Amazon S3 bucket. You must specify the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version ID</a> that Amazon S3 assigns to the file every time you update the script.</p>
-    /// <p>Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are no more than 1,024 bytes long. The following is an example:</p>
-    /// <p><code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code></p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup script</a>.</p>
+    /// <p>The version of the startup shell script in your Amazon S3 bucket. You must specify the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version ID</a> that Amazon S3 assigns to the file every time you update the script. </p>
+    /// <p> Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are no more than 1,024 bytes long. The following is an example: </p>
+    /// <p> <code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code> </p>
+    /// <p> For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup script</a>. </p>
     pub fn startup_script_s3_object_version(&self) -> ::std::option::Option<&str> {
         self.startup_script_s3_object_version.as_deref()
     }
@@ -128,7 +126,7 @@ impl CreateEnvironmentInput {
         self.kms_key.as_deref()
     }
     /// <p>The Apache Airflow version for your environment. If no value is specified, it defaults to the latest version. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache Airflow versions on Amazon Managed Workflows for Apache Airflow (MWAA)</a>.</p>
-    /// <p>Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, <code>2.4.3</code>, <code>2.5.1</code>, <code>2.6.3</code>, <code>2.7.2</code></p>
+    /// <p>Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, <code>2.4.3</code>, <code>2.5.1</code>, <code>2.6.3</code>, <code>2.7.2</code> </p>
     pub fn airflow_version(&self) -> ::std::option::Option<&str> {
         self.airflow_version.as_deref()
     }
@@ -154,10 +152,8 @@ impl CreateEnvironmentInput {
     }
     /// <p>The number of Apache Airflow schedulers to run in your environment. Valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p>v2 - Accepts between 2 to 5. Defaults to 2.</p></li>
-    /// <li>
-    /// <p>v1 - Accepts 1.</p></li>
+    /// <li> <p>v2 - Accepts between 2 to 5. Defaults to 2.</p> </li>
+    /// <li> <p>v1 - Accepts 1.</p> </li>
     /// </ul>
     pub fn schedulers(&self) -> ::std::option::Option<i32> {
         self.schedulers
@@ -364,42 +360,42 @@ impl CreateEnvironmentInputBuilder {
         &self.requirements_s3_object_version
     }
     /// <p>The relative path to the startup shell script in your Amazon S3 bucket. For example, <code>s3://mwaa-environment/startup.sh</code>.</p>
-    /// <p>Amazon MWAA runs the script as your environment starts, and before running the Apache Airflow process. You can use this script to install dependencies, modify Apache Airflow configuration options, and set environment variables. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup script</a>.</p>
+    /// <p> Amazon MWAA runs the script as your environment starts, and before running the Apache Airflow process. You can use this script to install dependencies, modify Apache Airflow configuration options, and set environment variables. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup script</a>. </p>
     pub fn startup_script_s3_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.startup_script_s3_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The relative path to the startup shell script in your Amazon S3 bucket. For example, <code>s3://mwaa-environment/startup.sh</code>.</p>
-    /// <p>Amazon MWAA runs the script as your environment starts, and before running the Apache Airflow process. You can use this script to install dependencies, modify Apache Airflow configuration options, and set environment variables. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup script</a>.</p>
+    /// <p> Amazon MWAA runs the script as your environment starts, and before running the Apache Airflow process. You can use this script to install dependencies, modify Apache Airflow configuration options, and set environment variables. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup script</a>. </p>
     pub fn set_startup_script_s3_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.startup_script_s3_path = input;
         self
     }
     /// <p>The relative path to the startup shell script in your Amazon S3 bucket. For example, <code>s3://mwaa-environment/startup.sh</code>.</p>
-    /// <p>Amazon MWAA runs the script as your environment starts, and before running the Apache Airflow process. You can use this script to install dependencies, modify Apache Airflow configuration options, and set environment variables. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup script</a>.</p>
+    /// <p> Amazon MWAA runs the script as your environment starts, and before running the Apache Airflow process. You can use this script to install dependencies, modify Apache Airflow configuration options, and set environment variables. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup script</a>. </p>
     pub fn get_startup_script_s3_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.startup_script_s3_path
     }
-    /// <p>The version of the startup shell script in your Amazon S3 bucket. You must specify the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version ID</a> that Amazon S3 assigns to the file every time you update the script.</p>
-    /// <p>Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are no more than 1,024 bytes long. The following is an example:</p>
-    /// <p><code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code></p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup script</a>.</p>
+    /// <p>The version of the startup shell script in your Amazon S3 bucket. You must specify the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version ID</a> that Amazon S3 assigns to the file every time you update the script. </p>
+    /// <p> Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are no more than 1,024 bytes long. The following is an example: </p>
+    /// <p> <code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code> </p>
+    /// <p> For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup script</a>. </p>
     pub fn startup_script_s3_object_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.startup_script_s3_object_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The version of the startup shell script in your Amazon S3 bucket. You must specify the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version ID</a> that Amazon S3 assigns to the file every time you update the script.</p>
-    /// <p>Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are no more than 1,024 bytes long. The following is an example:</p>
-    /// <p><code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code></p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup script</a>.</p>
+    /// <p>The version of the startup shell script in your Amazon S3 bucket. You must specify the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version ID</a> that Amazon S3 assigns to the file every time you update the script. </p>
+    /// <p> Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are no more than 1,024 bytes long. The following is an example: </p>
+    /// <p> <code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code> </p>
+    /// <p> For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup script</a>. </p>
     pub fn set_startup_script_s3_object_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.startup_script_s3_object_version = input;
         self
     }
-    /// <p>The version of the startup shell script in your Amazon S3 bucket. You must specify the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version ID</a> that Amazon S3 assigns to the file every time you update the script.</p>
-    /// <p>Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are no more than 1,024 bytes long. The following is an example:</p>
-    /// <p><code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code></p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup script</a>.</p>
+    /// <p>The version of the startup shell script in your Amazon S3 bucket. You must specify the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version ID</a> that Amazon S3 assigns to the file every time you update the script. </p>
+    /// <p> Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are no more than 1,024 bytes long. The following is an example: </p>
+    /// <p> <code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code> </p>
+    /// <p> For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup script</a>. </p>
     pub fn get_startup_script_s3_object_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.startup_script_s3_object_version
     }
@@ -475,19 +471,19 @@ impl CreateEnvironmentInputBuilder {
         &self.kms_key
     }
     /// <p>The Apache Airflow version for your environment. If no value is specified, it defaults to the latest version. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache Airflow versions on Amazon Managed Workflows for Apache Airflow (MWAA)</a>.</p>
-    /// <p>Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, <code>2.4.3</code>, <code>2.5.1</code>, <code>2.6.3</code>, <code>2.7.2</code></p>
+    /// <p>Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, <code>2.4.3</code>, <code>2.5.1</code>, <code>2.6.3</code>, <code>2.7.2</code> </p>
     pub fn airflow_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.airflow_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Apache Airflow version for your environment. If no value is specified, it defaults to the latest version. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache Airflow versions on Amazon Managed Workflows for Apache Airflow (MWAA)</a>.</p>
-    /// <p>Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, <code>2.4.3</code>, <code>2.5.1</code>, <code>2.6.3</code>, <code>2.7.2</code></p>
+    /// <p>Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, <code>2.4.3</code>, <code>2.5.1</code>, <code>2.6.3</code>, <code>2.7.2</code> </p>
     pub fn set_airflow_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.airflow_version = input;
         self
     }
     /// <p>The Apache Airflow version for your environment. If no value is specified, it defaults to the latest version. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache Airflow versions on Amazon Managed Workflows for Apache Airflow (MWAA)</a>.</p>
-    /// <p>Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, <code>2.4.3</code>, <code>2.5.1</code>, <code>2.6.3</code>, <code>2.7.2</code></p>
+    /// <p>Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, <code>2.4.3</code>, <code>2.5.1</code>, <code>2.6.3</code>, <code>2.7.2</code> </p>
     pub fn get_airflow_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.airflow_version
     }
@@ -569,10 +565,8 @@ impl CreateEnvironmentInputBuilder {
     }
     /// <p>The number of Apache Airflow schedulers to run in your environment. Valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p>v2 - Accepts between 2 to 5. Defaults to 2.</p></li>
-    /// <li>
-    /// <p>v1 - Accepts 1.</p></li>
+    /// <li> <p>v2 - Accepts between 2 to 5. Defaults to 2.</p> </li>
+    /// <li> <p>v1 - Accepts 1.</p> </li>
     /// </ul>
     pub fn schedulers(mut self, input: i32) -> Self {
         self.schedulers = ::std::option::Option::Some(input);
@@ -580,10 +574,8 @@ impl CreateEnvironmentInputBuilder {
     }
     /// <p>The number of Apache Airflow schedulers to run in your environment. Valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p>v2 - Accepts between 2 to 5. Defaults to 2.</p></li>
-    /// <li>
-    /// <p>v1 - Accepts 1.</p></li>
+    /// <li> <p>v2 - Accepts between 2 to 5. Defaults to 2.</p> </li>
+    /// <li> <p>v1 - Accepts 1.</p> </li>
     /// </ul>
     pub fn set_schedulers(mut self, input: ::std::option::Option<i32>) -> Self {
         self.schedulers = input;
@@ -591,10 +583,8 @@ impl CreateEnvironmentInputBuilder {
     }
     /// <p>The number of Apache Airflow schedulers to run in your environment. Valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p>v2 - Accepts between 2 to 5. Defaults to 2.</p></li>
-    /// <li>
-    /// <p>v1 - Accepts 1.</p></li>
+    /// <li> <p>v2 - Accepts between 2 to 5. Defaults to 2.</p> </li>
+    /// <li> <p>v1 - Accepts 1.</p> </li>
     /// </ul>
     pub fn get_schedulers(&self) -> &::std::option::Option<i32> {
         &self.schedulers

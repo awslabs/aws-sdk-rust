@@ -22,7 +22,7 @@ impl CreatePipelineInputBuilder {
 }
 /// Fluent builder constructing a request to `CreatePipeline`.
 ///
-/// <p>Creates a pipeline.</p><note>
+/// <p>Creates a pipeline.</p> <note>
 /// <p>In the pipeline structure, you must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -110,17 +110,17 @@ impl CreatePipelineFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Represents the structure of actions and stages to be performed in the pipeline.</p>
+    /// <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
     pub fn pipeline(mut self, input: crate::types::PipelineDeclaration) -> Self {
         self.inner = self.inner.pipeline(input);
         self
     }
-    /// <p>Represents the structure of actions and stages to be performed in the pipeline.</p>
+    /// <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
     pub fn set_pipeline(mut self, input: ::std::option::Option<crate::types::PipelineDeclaration>) -> Self {
         self.inner = self.inner.set_pipeline(input);
         self
     }
-    /// <p>Represents the structure of actions and stages to be performed in the pipeline.</p>
+    /// <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
     pub fn get_pipeline(&self) -> &::std::option::Option<crate::types::PipelineDeclaration> {
         self.inner.get_pipeline()
     }

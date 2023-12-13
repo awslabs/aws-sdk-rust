@@ -12,12 +12,9 @@ pub struct ContactChannel {
     pub name: ::std::string::String,
     /// <p>The type of the contact channel. Incident Manager supports three contact methods:</p>
     /// <ul>
-    /// <li>
-    /// <p>SMS</p></li>
-    /// <li>
-    /// <p>VOICE</p></li>
-    /// <li>
-    /// <p>EMAIL</p></li>
+    /// <li> <p>SMS</p> </li>
+    /// <li> <p>VOICE</p> </li>
+    /// <li> <p>EMAIL</p> </li>
     /// </ul>
     pub r#type: ::std::option::Option<crate::types::ChannelType>,
     /// <p>The details that Incident Manager uses when trying to engage the contact channel.</p>
@@ -43,12 +40,9 @@ impl ContactChannel {
     }
     /// <p>The type of the contact channel. Incident Manager supports three contact methods:</p>
     /// <ul>
-    /// <li>
-    /// <p>SMS</p></li>
-    /// <li>
-    /// <p>VOICE</p></li>
-    /// <li>
-    /// <p>EMAIL</p></li>
+    /// <li> <p>SMS</p> </li>
+    /// <li> <p>VOICE</p> </li>
+    /// <li> <p>EMAIL</p> </li>
     /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::ChannelType> {
         self.r#type.as_ref()
@@ -128,12 +122,9 @@ impl ContactChannelBuilder {
     }
     /// <p>The type of the contact channel. Incident Manager supports three contact methods:</p>
     /// <ul>
-    /// <li>
-    /// <p>SMS</p></li>
-    /// <li>
-    /// <p>VOICE</p></li>
-    /// <li>
-    /// <p>EMAIL</p></li>
+    /// <li> <p>SMS</p> </li>
+    /// <li> <p>VOICE</p> </li>
+    /// <li> <p>EMAIL</p> </li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::ChannelType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -141,12 +132,9 @@ impl ContactChannelBuilder {
     }
     /// <p>The type of the contact channel. Incident Manager supports three contact methods:</p>
     /// <ul>
-    /// <li>
-    /// <p>SMS</p></li>
-    /// <li>
-    /// <p>VOICE</p></li>
-    /// <li>
-    /// <p>EMAIL</p></li>
+    /// <li> <p>SMS</p> </li>
+    /// <li> <p>VOICE</p> </li>
+    /// <li> <p>EMAIL</p> </li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ChannelType>) -> Self {
         self.r#type = input;
@@ -154,12 +142,9 @@ impl ContactChannelBuilder {
     }
     /// <p>The type of the contact channel. Incident Manager supports three contact methods:</p>
     /// <ul>
-    /// <li>
-    /// <p>SMS</p></li>
-    /// <li>
-    /// <p>VOICE</p></li>
-    /// <li>
-    /// <p>EMAIL</p></li>
+    /// <li> <p>SMS</p> </li>
+    /// <li> <p>VOICE</p> </li>
+    /// <li> <p>EMAIL</p> </li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ChannelType> {
         &self.r#type

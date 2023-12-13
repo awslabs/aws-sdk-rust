@@ -168,21 +168,21 @@ impl CreateCustomActionTypeFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_configuration_properties`](Self::set_configuration_properties).
     ///
-    /// <p>The configuration properties for the custom action.</p><note>
+    /// <p>The configuration properties for the custom action.</p> <note>
     /// <p>You can refer to a name in the configuration properties of the custom action within the URL templates by following the format of {Config:name}, as long as the configuration property is both required and not secret. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a Custom Action for a Pipeline</a>.</p>
     /// </note>
     pub fn configuration_properties(mut self, input: crate::types::ActionConfigurationProperty) -> Self {
         self.inner = self.inner.configuration_properties(input);
         self
     }
-    /// <p>The configuration properties for the custom action.</p><note>
+    /// <p>The configuration properties for the custom action.</p> <note>
     /// <p>You can refer to a name in the configuration properties of the custom action within the URL templates by following the format of {Config:name}, as long as the configuration property is both required and not secret. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a Custom Action for a Pipeline</a>.</p>
     /// </note>
     pub fn set_configuration_properties(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ActionConfigurationProperty>>) -> Self {
         self.inner = self.inner.set_configuration_properties(input);
         self
     }
-    /// <p>The configuration properties for the custom action.</p><note>
+    /// <p>The configuration properties for the custom action.</p> <note>
     /// <p>You can refer to a name in the configuration properties of the custom action within the URL templates by following the format of {Config:name}, as long as the configuration property is both required and not secret. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a Custom Action for a Pipeline</a>.</p>
     /// </note>
     pub fn get_configuration_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ActionConfigurationProperty>> {

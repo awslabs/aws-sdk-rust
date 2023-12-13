@@ -22,7 +22,7 @@ impl DeleteApplicationInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteApplication`.
 ///
-/// <p>Deletes the specified application along with all associated versions and configurations. The application versions will not be deleted from your Amazon S3 bucket.</p><note>
+/// <p>Deletes the specified application along with all associated versions and configurations. The application versions will not be deleted from your Amazon S3 bucket.</p> <note>
 /// <p>You cannot delete an application that has a running environment.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

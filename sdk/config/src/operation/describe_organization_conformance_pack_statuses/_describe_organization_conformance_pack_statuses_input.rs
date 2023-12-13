@@ -3,25 +3,25 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeOrganizationConformancePackStatusesInput {
-    /// <p>The names of organization conformance packs for which you want status details. If you do not specify any names, Config returns details for all your organization conformance packs.</p>
+    /// <p>The names of organization conformance packs for which you want status details. If you do not specify any names, Config returns details for all your organization conformance packs. </p>
     pub organization_conformance_pack_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The maximum number of OrganizationConformancePackStatuses returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
+    /// <p>The maximum number of OrganizationConformancePackStatuses returned on each page. If you do no specify a number, Config uses the default. The default is 100. </p>
     pub limit: ::std::option::Option<i32>,
-    /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeOrganizationConformancePackStatusesInput {
-    /// <p>The names of organization conformance packs for which you want status details. If you do not specify any names, Config returns details for all your organization conformance packs.</p>
+    /// <p>The names of organization conformance packs for which you want status details. If you do not specify any names, Config returns details for all your organization conformance packs. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.organization_conformance_pack_names.is_none()`.
     pub fn organization_conformance_pack_names(&self) -> &[::std::string::String] {
         self.organization_conformance_pack_names.as_deref().unwrap_or_default()
     }
-    /// <p>The maximum number of OrganizationConformancePackStatuses returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
+    /// <p>The maximum number of OrganizationConformancePackStatuses returned on each page. If you do no specify a number, Config uses the default. The default is 100. </p>
     pub fn limit(&self) -> ::std::option::Option<i32> {
         self.limit
     }
-    /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -48,47 +48,47 @@ impl DescribeOrganizationConformancePackStatusesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_organization_conformance_pack_names`](Self::set_organization_conformance_pack_names).
     ///
-    /// <p>The names of organization conformance packs for which you want status details. If you do not specify any names, Config returns details for all your organization conformance packs.</p>
+    /// <p>The names of organization conformance packs for which you want status details. If you do not specify any names, Config returns details for all your organization conformance packs. </p>
     pub fn organization_conformance_pack_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.organization_conformance_pack_names.unwrap_or_default();
         v.push(input.into());
         self.organization_conformance_pack_names = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The names of organization conformance packs for which you want status details. If you do not specify any names, Config returns details for all your organization conformance packs.</p>
+    /// <p>The names of organization conformance packs for which you want status details. If you do not specify any names, Config returns details for all your organization conformance packs. </p>
     pub fn set_organization_conformance_pack_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.organization_conformance_pack_names = input;
         self
     }
-    /// <p>The names of organization conformance packs for which you want status details. If you do not specify any names, Config returns details for all your organization conformance packs.</p>
+    /// <p>The names of organization conformance packs for which you want status details. If you do not specify any names, Config returns details for all your organization conformance packs. </p>
     pub fn get_organization_conformance_pack_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.organization_conformance_pack_names
     }
-    /// <p>The maximum number of OrganizationConformancePackStatuses returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
+    /// <p>The maximum number of OrganizationConformancePackStatuses returned on each page. If you do no specify a number, Config uses the default. The default is 100. </p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of OrganizationConformancePackStatuses returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
+    /// <p>The maximum number of OrganizationConformancePackStatuses returned on each page. If you do no specify a number, Config uses the default. The default is 100. </p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
     }
-    /// <p>The maximum number of OrganizationConformancePackStatuses returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
+    /// <p>The maximum number of OrganizationConformancePackStatuses returned on each page. If you do no specify a number, Config uses the default. The default is 100. </p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
         &self.limit
     }
-    /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

@@ -7,7 +7,7 @@ pub struct UpdateEventDestinationOutput {
     pub configuration_set_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the configuration set.</p>
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
-    /// <p>An EventDestination object containing the details of where events will be logged.</p>
+    /// <p>An EventDestination object containing the details of where events will be logged. </p>
     pub event_destination: ::std::option::Option<crate::types::EventDestination>,
     _request_id: Option<String>,
 }
@@ -20,7 +20,7 @@ impl UpdateEventDestinationOutput {
     pub fn configuration_set_name(&self) -> ::std::option::Option<&str> {
         self.configuration_set_name.as_deref()
     }
-    /// <p>An EventDestination object containing the details of where events will be logged.</p>
+    /// <p>An EventDestination object containing the details of where events will be logged. </p>
     pub fn event_destination(&self) -> ::std::option::Option<&crate::types::EventDestination> {
         self.event_destination.as_ref()
     }
@@ -75,17 +75,17 @@ impl UpdateEventDestinationOutputBuilder {
     pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.configuration_set_name
     }
-    /// <p>An EventDestination object containing the details of where events will be logged.</p>
+    /// <p>An EventDestination object containing the details of where events will be logged. </p>
     pub fn event_destination(mut self, input: crate::types::EventDestination) -> Self {
         self.event_destination = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An EventDestination object containing the details of where events will be logged.</p>
+    /// <p>An EventDestination object containing the details of where events will be logged. </p>
     pub fn set_event_destination(mut self, input: ::std::option::Option<crate::types::EventDestination>) -> Self {
         self.event_destination = input;
         self
     }
-    /// <p>An EventDestination object containing the details of where events will be logged.</p>
+    /// <p>An EventDestination object containing the details of where events will be logged. </p>
     pub fn get_event_destination(&self) -> &::std::option::Option<crate::types::EventDestination> {
         &self.event_destination
     }

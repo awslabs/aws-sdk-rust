@@ -152,17 +152,17 @@ impl DeleteAnalysisFluentBuilder {
     pub fn get_recovery_window_in_days(&self) -> &::std::option::Option<i64> {
         self.inner.get_recovery_window_in_days()
     }
-    /// <p>This option defaults to the value <code>NoForceDeleteWithoutRecovery</code>. To immediately delete the analysis, add the <code>ForceDeleteWithoutRecovery</code> option. You can't restore an analysis after it's deleted.</p>
+    /// <p>This option defaults to the value <code>NoForceDeleteWithoutRecovery</code>. To immediately delete the analysis, add the <code>ForceDeleteWithoutRecovery</code> option. You can't restore an analysis after it's deleted. </p>
     pub fn force_delete_without_recovery(mut self, input: bool) -> Self {
         self.inner = self.inner.force_delete_without_recovery(input);
         self
     }
-    /// <p>This option defaults to the value <code>NoForceDeleteWithoutRecovery</code>. To immediately delete the analysis, add the <code>ForceDeleteWithoutRecovery</code> option. You can't restore an analysis after it's deleted.</p>
+    /// <p>This option defaults to the value <code>NoForceDeleteWithoutRecovery</code>. To immediately delete the analysis, add the <code>ForceDeleteWithoutRecovery</code> option. You can't restore an analysis after it's deleted. </p>
     pub fn set_force_delete_without_recovery(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_force_delete_without_recovery(input);
         self
     }
-    /// <p>This option defaults to the value <code>NoForceDeleteWithoutRecovery</code>. To immediately delete the analysis, add the <code>ForceDeleteWithoutRecovery</code> option. You can't restore an analysis after it's deleted.</p>
+    /// <p>This option defaults to the value <code>NoForceDeleteWithoutRecovery</code>. To immediately delete the analysis, add the <code>ForceDeleteWithoutRecovery</code> option. You can't restore an analysis after it's deleted. </p>
     pub fn get_force_delete_without_recovery(&self) -> &::std::option::Option<bool> {
         self.inner.get_force_delete_without_recovery()
     }

@@ -13,7 +13,7 @@ pub enum Error {
     DisabledOperationException(crate::types::error::DisabledOperationException),
     /// <p>The request processing has failed because of an unknown error, exception or failure (the failure is internal to the service) . Gives http status code of 500.</p>
     InternalException(crate::types::error::InternalException),
-    /// <p>The request processing has failed because of invalid pagination token provided by customer. Returns an HTTP status code of 400.</p>
+    /// <p>The request processing has failed because of invalid pagination token provided by customer. Returns an HTTP status code of 400. </p>
     InvalidPaginationTokenException(crate::types::error::InvalidPaginationTokenException),
     /// <p>An exception for trying to create or access sub-resource that is either invalid or not supported. Gives http status code of 409.</p>
     InvalidTypeException(crate::types::error::InvalidTypeException),

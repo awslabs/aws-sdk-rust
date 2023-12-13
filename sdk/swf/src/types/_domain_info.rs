@@ -8,10 +8,8 @@ pub struct DomainInfo {
     pub name: ::std::string::String,
     /// <p>The status of the domain:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>REGISTERED</code> – The domain is properly registered and available. You can use this domain for registering types and creating new workflow executions.</p></li>
-    /// <li>
-    /// <p><code>DEPRECATED</code> – The domain was deprecated using <code>DeprecateDomain</code>, but is still in use. You should not create new workflow executions in this domain.</p></li>
+    /// <li> <p> <code>REGISTERED</code> – The domain is properly registered and available. You can use this domain for registering types and creating new workflow executions. </p> </li>
+    /// <li> <p> <code>DEPRECATED</code> – The domain was deprecated using <code>DeprecateDomain</code>, but is still in use. You should not create new workflow executions in this domain. </p> </li>
     /// </ul>
     pub status: crate::types::RegistrationStatus,
     /// <p>The description of the domain provided through <code>RegisterDomain</code>.</p>
@@ -27,10 +25,8 @@ impl DomainInfo {
     }
     /// <p>The status of the domain:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>REGISTERED</code> – The domain is properly registered and available. You can use this domain for registering types and creating new workflow executions.</p></li>
-    /// <li>
-    /// <p><code>DEPRECATED</code> – The domain was deprecated using <code>DeprecateDomain</code>, but is still in use. You should not create new workflow executions in this domain.</p></li>
+    /// <li> <p> <code>REGISTERED</code> – The domain is properly registered and available. You can use this domain for registering types and creating new workflow executions. </p> </li>
+    /// <li> <p> <code>DEPRECATED</code> – The domain was deprecated using <code>DeprecateDomain</code>, but is still in use. You should not create new workflow executions in this domain. </p> </li>
     /// </ul>
     pub fn status(&self) -> &crate::types::RegistrationStatus {
         &self.status
@@ -78,10 +74,8 @@ impl DomainInfoBuilder {
     }
     /// <p>The status of the domain:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>REGISTERED</code> – The domain is properly registered and available. You can use this domain for registering types and creating new workflow executions.</p></li>
-    /// <li>
-    /// <p><code>DEPRECATED</code> – The domain was deprecated using <code>DeprecateDomain</code>, but is still in use. You should not create new workflow executions in this domain.</p></li>
+    /// <li> <p> <code>REGISTERED</code> – The domain is properly registered and available. You can use this domain for registering types and creating new workflow executions. </p> </li>
+    /// <li> <p> <code>DEPRECATED</code> – The domain was deprecated using <code>DeprecateDomain</code>, but is still in use. You should not create new workflow executions in this domain. </p> </li>
     /// </ul>
     /// This field is required.
     pub fn status(mut self, input: crate::types::RegistrationStatus) -> Self {
@@ -90,10 +84,8 @@ impl DomainInfoBuilder {
     }
     /// <p>The status of the domain:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>REGISTERED</code> – The domain is properly registered and available. You can use this domain for registering types and creating new workflow executions.</p></li>
-    /// <li>
-    /// <p><code>DEPRECATED</code> – The domain was deprecated using <code>DeprecateDomain</code>, but is still in use. You should not create new workflow executions in this domain.</p></li>
+    /// <li> <p> <code>REGISTERED</code> – The domain is properly registered and available. You can use this domain for registering types and creating new workflow executions. </p> </li>
+    /// <li> <p> <code>DEPRECATED</code> – The domain was deprecated using <code>DeprecateDomain</code>, but is still in use. You should not create new workflow executions in this domain. </p> </li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::RegistrationStatus>) -> Self {
         self.status = input;
@@ -101,10 +93,8 @@ impl DomainInfoBuilder {
     }
     /// <p>The status of the domain:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>REGISTERED</code> – The domain is properly registered and available. You can use this domain for registering types and creating new workflow executions.</p></li>
-    /// <li>
-    /// <p><code>DEPRECATED</code> – The domain was deprecated using <code>DeprecateDomain</code>, but is still in use. You should not create new workflow executions in this domain.</p></li>
+    /// <li> <p> <code>REGISTERED</code> – The domain is properly registered and available. You can use this domain for registering types and creating new workflow executions. </p> </li>
+    /// <li> <p> <code>DEPRECATED</code> – The domain was deprecated using <code>DeprecateDomain</code>, but is still in use. You should not create new workflow executions in this domain. </p> </li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::RegistrationStatus> {
         &self.status

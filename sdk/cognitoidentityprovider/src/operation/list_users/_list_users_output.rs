@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListUsersOutput {
-    /// <p>A list of the user pool users, and their attributes, that match your query.</p><note>
+    /// <p>A list of the user pool users, and their attributes, that match your query.</p> <note>
     /// <p>Amazon Cognito creates a profile in your user pool for each native user in your user pool, and each unique user ID from your third-party identity providers (IdPs). When you link users with the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminLinkProviderForUser.html">AdminLinkProviderForUser</a> API operation, the output of <code>ListUsers</code> displays both the IdP user and the native user that you linked. You can identify IdP users in the <code>Users</code> object of this API response by the IdP prefix that Amazon Cognito appends to <code>Username</code>.</p>
     /// </note>
     pub users: ::std::option::Option<::std::vec::Vec<crate::types::UserType>>,
@@ -13,7 +13,7 @@ pub struct ListUsersOutput {
     _request_id: Option<String>,
 }
 impl ListUsersOutput {
-    /// <p>A list of the user pool users, and their attributes, that match your query.</p><note>
+    /// <p>A list of the user pool users, and their attributes, that match your query.</p> <note>
     /// <p>Amazon Cognito creates a profile in your user pool for each native user in your user pool, and each unique user ID from your third-party identity providers (IdPs). When you link users with the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminLinkProviderForUser.html">AdminLinkProviderForUser</a> API operation, the output of <code>ListUsers</code> displays both the IdP user and the native user that you linked. You can identify IdP users in the <code>Users</code> object of this API response by the IdP prefix that Amazon Cognito appends to <code>Username</code>.</p>
     /// </note>
     ///
@@ -51,7 +51,7 @@ impl ListUsersOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_users`](Self::set_users).
     ///
-    /// <p>A list of the user pool users, and their attributes, that match your query.</p><note>
+    /// <p>A list of the user pool users, and their attributes, that match your query.</p> <note>
     /// <p>Amazon Cognito creates a profile in your user pool for each native user in your user pool, and each unique user ID from your third-party identity providers (IdPs). When you link users with the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminLinkProviderForUser.html">AdminLinkProviderForUser</a> API operation, the output of <code>ListUsers</code> displays both the IdP user and the native user that you linked. You can identify IdP users in the <code>Users</code> object of this API response by the IdP prefix that Amazon Cognito appends to <code>Username</code>.</p>
     /// </note>
     pub fn users(mut self, input: crate::types::UserType) -> Self {
@@ -60,14 +60,14 @@ impl ListUsersOutputBuilder {
         self.users = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of the user pool users, and their attributes, that match your query.</p><note>
+    /// <p>A list of the user pool users, and their attributes, that match your query.</p> <note>
     /// <p>Amazon Cognito creates a profile in your user pool for each native user in your user pool, and each unique user ID from your third-party identity providers (IdPs). When you link users with the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminLinkProviderForUser.html">AdminLinkProviderForUser</a> API operation, the output of <code>ListUsers</code> displays both the IdP user and the native user that you linked. You can identify IdP users in the <code>Users</code> object of this API response by the IdP prefix that Amazon Cognito appends to <code>Username</code>.</p>
     /// </note>
     pub fn set_users(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UserType>>) -> Self {
         self.users = input;
         self
     }
-    /// <p>A list of the user pool users, and their attributes, that match your query.</p><note>
+    /// <p>A list of the user pool users, and their attributes, that match your query.</p> <note>
     /// <p>Amazon Cognito creates a profile in your user pool for each native user in your user pool, and each unique user ID from your third-party identity providers (IdPs). When you link users with the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminLinkProviderForUser.html">AdminLinkProviderForUser</a> API operation, the output of <code>ListUsers</code> displays both the IdP user and the native user that you linked. You can identify IdP users in the <code>Users</code> object of this API response by the IdP prefix that Amazon Cognito appends to <code>Username</code>.</p>
     /// </note>
     pub fn get_users(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserType>> {

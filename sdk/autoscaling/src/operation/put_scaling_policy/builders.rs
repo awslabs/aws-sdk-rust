@@ -22,7 +22,7 @@ impl PutScalingPolicyInputBuilder {
 }
 /// Fluent builder constructing a request to `PutScalingPolicy`.
 ///
-/// <p>Creates or updates a scaling policy for an Auto Scaling group. Scaling policies are used to scale an Auto Scaling group based on configurable metrics. If no policies are defined, the dynamic scaling and predictive scaling features are not used.</p>
+/// <p>Creates or updates a scaling policy for an Auto Scaling group. Scaling policies are used to scale an Auto Scaling group based on configurable metrics. If no policies are defined, the dynamic scaling and predictive scaling features are not used. </p>
 /// <p>For more information about using dynamic scaling, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target tracking scaling policies</a> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step and simple scaling policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
 /// <p>For more information about using predictive scaling, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-predictive-scaling.html">Predictive scaling for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
 /// <p>You can view the scaling policies for an Auto Scaling group using the <code>DescribePolicies</code> API call. If you are no longer using a scaling policy, you can delete it by calling the <code>DeletePolicy</code> API.</p>
@@ -139,46 +139,34 @@ impl PutScalingPolicyFluentBuilder {
     pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_policy_name()
     }
-    /// <p>One of the following policy types:</p>
+    /// <p>One of the following policy types: </p>
     /// <ul>
-    /// <li>
-    /// <p><code>TargetTrackingScaling</code></p></li>
-    /// <li>
-    /// <p><code>StepScaling</code></p></li>
-    /// <li>
-    /// <p><code>SimpleScaling</code> (default)</p></li>
-    /// <li>
-    /// <p><code>PredictiveScaling</code></p></li>
+    /// <li> <p> <code>TargetTrackingScaling</code> </p> </li>
+    /// <li> <p> <code>StepScaling</code> </p> </li>
+    /// <li> <p> <code>SimpleScaling</code> (default)</p> </li>
+    /// <li> <p> <code>PredictiveScaling</code> </p> </li>
     /// </ul>
     pub fn policy_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_type(input.into());
         self
     }
-    /// <p>One of the following policy types:</p>
+    /// <p>One of the following policy types: </p>
     /// <ul>
-    /// <li>
-    /// <p><code>TargetTrackingScaling</code></p></li>
-    /// <li>
-    /// <p><code>StepScaling</code></p></li>
-    /// <li>
-    /// <p><code>SimpleScaling</code> (default)</p></li>
-    /// <li>
-    /// <p><code>PredictiveScaling</code></p></li>
+    /// <li> <p> <code>TargetTrackingScaling</code> </p> </li>
+    /// <li> <p> <code>StepScaling</code> </p> </li>
+    /// <li> <p> <code>SimpleScaling</code> (default)</p> </li>
+    /// <li> <p> <code>PredictiveScaling</code> </p> </li>
     /// </ul>
     pub fn set_policy_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_type(input);
         self
     }
-    /// <p>One of the following policy types:</p>
+    /// <p>One of the following policy types: </p>
     /// <ul>
-    /// <li>
-    /// <p><code>TargetTrackingScaling</code></p></li>
-    /// <li>
-    /// <p><code>StepScaling</code></p></li>
-    /// <li>
-    /// <p><code>SimpleScaling</code> (default)</p></li>
-    /// <li>
-    /// <p><code>PredictiveScaling</code></p></li>
+    /// <li> <p> <code>TargetTrackingScaling</code> </p> </li>
+    /// <li> <p> <code>StepScaling</code> </p> </li>
+    /// <li> <p> <code>SimpleScaling</code> (default)</p> </li>
+    /// <li> <p> <code>PredictiveScaling</code> </p> </li>
     /// </ul>
     pub fn get_policy_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_policy_type()
@@ -215,7 +203,7 @@ impl PutScalingPolicyFluentBuilder {
         self.inner.get_min_adjustment_step()
     }
     /// <p>The minimum value to scale by when the adjustment type is <code>PercentChangeInCapacity</code>. For example, suppose that you create a step scaling policy to scale out an Auto Scaling group by 25 percent and you specify a <code>MinAdjustmentMagnitude</code> of 2. If the group has 4 instances and the scaling policy is performed, 25 percent of 4 is 1. However, because you specified a <code>MinAdjustmentMagnitude</code> of 2, Amazon EC2 Auto Scaling scales out the group by 2 instances.</p>
-    /// <p>Valid only if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment">Scaling adjustment types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p><note>
+    /// <p>Valid only if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment">Scaling adjustment types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <note>
     /// <p>Some Auto Scaling groups use instance weights. In this case, set the <code>MinAdjustmentMagnitude</code> to a value that is at least as large as your largest instance weight.</p>
     /// </note>
     pub fn min_adjustment_magnitude(mut self, input: i32) -> Self {
@@ -223,7 +211,7 @@ impl PutScalingPolicyFluentBuilder {
         self
     }
     /// <p>The minimum value to scale by when the adjustment type is <code>PercentChangeInCapacity</code>. For example, suppose that you create a step scaling policy to scale out an Auto Scaling group by 25 percent and you specify a <code>MinAdjustmentMagnitude</code> of 2. If the group has 4 instances and the scaling policy is performed, 25 percent of 4 is 1. However, because you specified a <code>MinAdjustmentMagnitude</code> of 2, Amazon EC2 Auto Scaling scales out the group by 2 instances.</p>
-    /// <p>Valid only if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment">Scaling adjustment types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p><note>
+    /// <p>Valid only if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment">Scaling adjustment types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <note>
     /// <p>Some Auto Scaling groups use instance weights. In this case, set the <code>MinAdjustmentMagnitude</code> to a value that is at least as large as your largest instance weight.</p>
     /// </note>
     pub fn set_min_adjustment_magnitude(mut self, input: ::std::option::Option<i32>) -> Self {
@@ -231,26 +219,26 @@ impl PutScalingPolicyFluentBuilder {
         self
     }
     /// <p>The minimum value to scale by when the adjustment type is <code>PercentChangeInCapacity</code>. For example, suppose that you create a step scaling policy to scale out an Auto Scaling group by 25 percent and you specify a <code>MinAdjustmentMagnitude</code> of 2. If the group has 4 instances and the scaling policy is performed, 25 percent of 4 is 1. However, because you specified a <code>MinAdjustmentMagnitude</code> of 2, Amazon EC2 Auto Scaling scales out the group by 2 instances.</p>
-    /// <p>Valid only if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment">Scaling adjustment types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p><note>
+    /// <p>Valid only if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment">Scaling adjustment types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <note>
     /// <p>Some Auto Scaling groups use instance weights. In this case, set the <code>MinAdjustmentMagnitude</code> to a value that is at least as large as your largest instance weight.</p>
     /// </note>
     pub fn get_min_adjustment_magnitude(&self) -> &::std::option::Option<i32> {
         self.inner.get_min_adjustment_magnitude()
     }
     /// <p>The amount by which to scale, based on the specified adjustment type. A positive value adds to the current capacity while a negative number removes from the current capacity. For exact capacity, you must specify a non-negative value.</p>
-    /// <p>Required if the policy type is <code>SimpleScaling</code>. (Not used with any other policy type.)</p>
+    /// <p>Required if the policy type is <code>SimpleScaling</code>. (Not used with any other policy type.) </p>
     pub fn scaling_adjustment(mut self, input: i32) -> Self {
         self.inner = self.inner.scaling_adjustment(input);
         self
     }
     /// <p>The amount by which to scale, based on the specified adjustment type. A positive value adds to the current capacity while a negative number removes from the current capacity. For exact capacity, you must specify a non-negative value.</p>
-    /// <p>Required if the policy type is <code>SimpleScaling</code>. (Not used with any other policy type.)</p>
+    /// <p>Required if the policy type is <code>SimpleScaling</code>. (Not used with any other policy type.) </p>
     pub fn set_scaling_adjustment(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_scaling_adjustment(input);
         self
     }
     /// <p>The amount by which to scale, based on the specified adjustment type. A positive value adds to the current capacity while a negative number removes from the current capacity. For exact capacity, you must specify a non-negative value.</p>
-    /// <p>Required if the policy type is <code>SimpleScaling</code>. (Not used with any other policy type.)</p>
+    /// <p>Required if the policy type is <code>SimpleScaling</code>. (Not used with any other policy type.) </p>
     pub fn get_scaling_adjustment(&self) -> &::std::option::Option<i32> {
         self.inner.get_scaling_adjustment()
     }
@@ -296,43 +284,43 @@ impl PutScalingPolicyFluentBuilder {
     /// To override the contents of this collection use [`set_step_adjustments`](Self::set_step_adjustments).
     ///
     /// <p>A set of adjustments that enable you to scale based on the size of the alarm breach.</p>
-    /// <p>Required if the policy type is <code>StepScaling</code>. (Not used with any other policy type.)</p>
+    /// <p>Required if the policy type is <code>StepScaling</code>. (Not used with any other policy type.) </p>
     pub fn step_adjustments(mut self, input: crate::types::StepAdjustment) -> Self {
         self.inner = self.inner.step_adjustments(input);
         self
     }
     /// <p>A set of adjustments that enable you to scale based on the size of the alarm breach.</p>
-    /// <p>Required if the policy type is <code>StepScaling</code>. (Not used with any other policy type.)</p>
+    /// <p>Required if the policy type is <code>StepScaling</code>. (Not used with any other policy type.) </p>
     pub fn set_step_adjustments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StepAdjustment>>) -> Self {
         self.inner = self.inner.set_step_adjustments(input);
         self
     }
     /// <p>A set of adjustments that enable you to scale based on the size of the alarm breach.</p>
-    /// <p>Required if the policy type is <code>StepScaling</code>. (Not used with any other policy type.)</p>
+    /// <p>Required if the policy type is <code>StepScaling</code>. (Not used with any other policy type.) </p>
     pub fn get_step_adjustments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StepAdjustment>> {
         self.inner.get_step_adjustments()
     }
-    /// <p><i>Not needed if the default instance warmup is defined for the group.</i></p>
+    /// <p> <i>Not needed if the default instance warmup is defined for the group.</i> </p>
     /// <p>The estimated time, in seconds, until a newly launched instance can contribute to the CloudWatch metrics. This warm-up period applies to instances launched due to a specific target tracking or step scaling policy. When a warm-up period is specified here, it overrides the default instance warmup.</p>
-    /// <p>Valid only if the policy type is <code>TargetTrackingScaling</code> or <code>StepScaling</code>.</p><note>
+    /// <p>Valid only if the policy type is <code>TargetTrackingScaling</code> or <code>StepScaling</code>.</p> <note>
     /// <p>The default is to use the value for the default instance warmup defined for the group. If default instance warmup is null, then <code>EstimatedInstanceWarmup</code> falls back to the value of default cooldown.</p>
     /// </note>
     pub fn estimated_instance_warmup(mut self, input: i32) -> Self {
         self.inner = self.inner.estimated_instance_warmup(input);
         self
     }
-    /// <p><i>Not needed if the default instance warmup is defined for the group.</i></p>
+    /// <p> <i>Not needed if the default instance warmup is defined for the group.</i> </p>
     /// <p>The estimated time, in seconds, until a newly launched instance can contribute to the CloudWatch metrics. This warm-up period applies to instances launched due to a specific target tracking or step scaling policy. When a warm-up period is specified here, it overrides the default instance warmup.</p>
-    /// <p>Valid only if the policy type is <code>TargetTrackingScaling</code> or <code>StepScaling</code>.</p><note>
+    /// <p>Valid only if the policy type is <code>TargetTrackingScaling</code> or <code>StepScaling</code>.</p> <note>
     /// <p>The default is to use the value for the default instance warmup defined for the group. If default instance warmup is null, then <code>EstimatedInstanceWarmup</code> falls back to the value of default cooldown.</p>
     /// </note>
     pub fn set_estimated_instance_warmup(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_estimated_instance_warmup(input);
         self
     }
-    /// <p><i>Not needed if the default instance warmup is defined for the group.</i></p>
+    /// <p> <i>Not needed if the default instance warmup is defined for the group.</i> </p>
     /// <p>The estimated time, in seconds, until a newly launched instance can contribute to the CloudWatch metrics. This warm-up period applies to instances launched due to a specific target tracking or step scaling policy. When a warm-up period is specified here, it overrides the default instance warmup.</p>
-    /// <p>Valid only if the policy type is <code>TargetTrackingScaling</code> or <code>StepScaling</code>.</p><note>
+    /// <p>Valid only if the policy type is <code>TargetTrackingScaling</code> or <code>StepScaling</code>.</p> <note>
     /// <p>The default is to use the value for the default instance warmup defined for the group. If default instance warmup is null, then <code>EstimatedInstanceWarmup</code> falls back to the value of default cooldown.</p>
     /// </note>
     pub fn get_estimated_instance_warmup(&self) -> &::std::option::Option<i32> {
@@ -341,14 +329,10 @@ impl PutScalingPolicyFluentBuilder {
     /// <p>A target tracking scaling policy. Provides support for predefined or custom metrics.</p>
     /// <p>The following predefined metrics are available:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ASGAverageCPUUtilization</code></p></li>
-    /// <li>
-    /// <p><code>ASGAverageNetworkIn</code></p></li>
-    /// <li>
-    /// <p><code>ASGAverageNetworkOut</code></p></li>
-    /// <li>
-    /// <p><code>ALBRequestCountPerTarget</code></p></li>
+    /// <li> <p> <code>ASGAverageCPUUtilization</code> </p> </li>
+    /// <li> <p> <code>ASGAverageNetworkIn</code> </p> </li>
+    /// <li> <p> <code>ASGAverageNetworkOut</code> </p> </li>
+    /// <li> <p> <code>ALBRequestCountPerTarget</code> </p> </li>
     /// </ul>
     /// <p>If you specify <code>ALBRequestCountPerTarget</code> for the metric, you must specify the <code>ResourceLabel</code> property with the <code>PredefinedMetricSpecification</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_TargetTrackingConfiguration.html">TargetTrackingConfiguration</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
@@ -360,14 +344,10 @@ impl PutScalingPolicyFluentBuilder {
     /// <p>A target tracking scaling policy. Provides support for predefined or custom metrics.</p>
     /// <p>The following predefined metrics are available:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ASGAverageCPUUtilization</code></p></li>
-    /// <li>
-    /// <p><code>ASGAverageNetworkIn</code></p></li>
-    /// <li>
-    /// <p><code>ASGAverageNetworkOut</code></p></li>
-    /// <li>
-    /// <p><code>ALBRequestCountPerTarget</code></p></li>
+    /// <li> <p> <code>ASGAverageCPUUtilization</code> </p> </li>
+    /// <li> <p> <code>ASGAverageNetworkIn</code> </p> </li>
+    /// <li> <p> <code>ASGAverageNetworkOut</code> </p> </li>
+    /// <li> <p> <code>ALBRequestCountPerTarget</code> </p> </li>
     /// </ul>
     /// <p>If you specify <code>ALBRequestCountPerTarget</code> for the metric, you must specify the <code>ResourceLabel</code> property with the <code>PredefinedMetricSpecification</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_TargetTrackingConfiguration.html">TargetTrackingConfiguration</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
@@ -379,14 +359,10 @@ impl PutScalingPolicyFluentBuilder {
     /// <p>A target tracking scaling policy. Provides support for predefined or custom metrics.</p>
     /// <p>The following predefined metrics are available:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ASGAverageCPUUtilization</code></p></li>
-    /// <li>
-    /// <p><code>ASGAverageNetworkIn</code></p></li>
-    /// <li>
-    /// <p><code>ASGAverageNetworkOut</code></p></li>
-    /// <li>
-    /// <p><code>ALBRequestCountPerTarget</code></p></li>
+    /// <li> <p> <code>ASGAverageCPUUtilization</code> </p> </li>
+    /// <li> <p> <code>ASGAverageNetworkIn</code> </p> </li>
+    /// <li> <p> <code>ASGAverageNetworkOut</code> </p> </li>
+    /// <li> <p> <code>ALBRequestCountPerTarget</code> </p> </li>
     /// </ul>
     /// <p>If you specify <code>ALBRequestCountPerTarget</code> for the metric, you must specify the <code>ResourceLabel</code> property with the <code>PredefinedMetricSpecification</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_TargetTrackingConfiguration.html">TargetTrackingConfiguration</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>

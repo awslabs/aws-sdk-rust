@@ -7,12 +7,9 @@
 pub struct ReceiptFilter {
     /// <p>The name of the IP address filter. The name must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p></li>
-    /// <li>
-    /// <p>Start and end with a letter or number.</p></li>
-    /// <li>
-    /// <p>Contain 64 characters or fewer.</p></li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
+    /// <li> <p>Start and end with a letter or number.</p> </li>
+    /// <li> <p>Contain 64 characters or fewer.</p> </li>
     /// </ul>
     pub name: ::std::string::String,
     /// <p>A structure that provides the IP addresses to block or allow, and whether to block or allow incoming mail from them.</p>
@@ -21,12 +18,9 @@ pub struct ReceiptFilter {
 impl ReceiptFilter {
     /// <p>The name of the IP address filter. The name must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p></li>
-    /// <li>
-    /// <p>Start and end with a letter or number.</p></li>
-    /// <li>
-    /// <p>Contain 64 characters or fewer.</p></li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
+    /// <li> <p>Start and end with a letter or number.</p> </li>
+    /// <li> <p>Contain 64 characters or fewer.</p> </li>
     /// </ul>
     pub fn name(&self) -> &str {
         use std::ops::Deref;
@@ -54,12 +48,9 @@ pub struct ReceiptFilterBuilder {
 impl ReceiptFilterBuilder {
     /// <p>The name of the IP address filter. The name must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p></li>
-    /// <li>
-    /// <p>Start and end with a letter or number.</p></li>
-    /// <li>
-    /// <p>Contain 64 characters or fewer.</p></li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
+    /// <li> <p>Start and end with a letter or number.</p> </li>
+    /// <li> <p>Contain 64 characters or fewer.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -68,12 +59,9 @@ impl ReceiptFilterBuilder {
     }
     /// <p>The name of the IP address filter. The name must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p></li>
-    /// <li>
-    /// <p>Start and end with a letter or number.</p></li>
-    /// <li>
-    /// <p>Contain 64 characters or fewer.</p></li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
+    /// <li> <p>Start and end with a letter or number.</p> </li>
+    /// <li> <p>Contain 64 characters or fewer.</p> </li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
@@ -81,12 +69,9 @@ impl ReceiptFilterBuilder {
     }
     /// <p>The name of the IP address filter. The name must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p></li>
-    /// <li>
-    /// <p>Start and end with a letter or number.</p></li>
-    /// <li>
-    /// <p>Contain 64 characters or fewer.</p></li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
+    /// <li> <p>Start and end with a letter or number.</p> </li>
+    /// <li> <p>Contain 64 characters or fewer.</p> </li>
     /// </ul>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name

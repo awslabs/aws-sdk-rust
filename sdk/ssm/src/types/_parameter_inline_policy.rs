@@ -6,9 +6,9 @@
 pub struct ParameterInlinePolicy {
     /// <p>The JSON text of the policy.</p>
     pub policy_text: ::std::option::Option<::std::string::String>,
-    /// <p>The type of policy. Parameter Store, a capability of Amazon Web Services Systems Manager, supports the following policy types: Expiration, ExpirationNotification, and NoChangeNotification.</p>
+    /// <p>The type of policy. Parameter Store, a capability of Amazon Web Services Systems Manager, supports the following policy types: Expiration, ExpirationNotification, and NoChangeNotification. </p>
     pub policy_type: ::std::option::Option<::std::string::String>,
-    /// <p>The status of the policy. Policies report the following statuses: Pending (the policy hasn't been enforced or applied yet), Finished (the policy was applied), Failed (the policy wasn't applied), or InProgress (the policy is being applied now).</p>
+    /// <p>The status of the policy. Policies report the following statuses: Pending (the policy hasn't been enforced or applied yet), Finished (the policy was applied), Failed (the policy wasn't applied), or InProgress (the policy is being applied now). </p>
     pub policy_status: ::std::option::Option<::std::string::String>,
 }
 impl ParameterInlinePolicy {
@@ -16,11 +16,11 @@ impl ParameterInlinePolicy {
     pub fn policy_text(&self) -> ::std::option::Option<&str> {
         self.policy_text.as_deref()
     }
-    /// <p>The type of policy. Parameter Store, a capability of Amazon Web Services Systems Manager, supports the following policy types: Expiration, ExpirationNotification, and NoChangeNotification.</p>
+    /// <p>The type of policy. Parameter Store, a capability of Amazon Web Services Systems Manager, supports the following policy types: Expiration, ExpirationNotification, and NoChangeNotification. </p>
     pub fn policy_type(&self) -> ::std::option::Option<&str> {
         self.policy_type.as_deref()
     }
-    /// <p>The status of the policy. Policies report the following statuses: Pending (the policy hasn't been enforced or applied yet), Finished (the policy was applied), Failed (the policy wasn't applied), or InProgress (the policy is being applied now).</p>
+    /// <p>The status of the policy. Policies report the following statuses: Pending (the policy hasn't been enforced or applied yet), Finished (the policy was applied), Failed (the policy wasn't applied), or InProgress (the policy is being applied now). </p>
     pub fn policy_status(&self) -> ::std::option::Option<&str> {
         self.policy_status.as_deref()
     }
@@ -55,31 +55,31 @@ impl ParameterInlinePolicyBuilder {
     pub fn get_policy_text(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_text
     }
-    /// <p>The type of policy. Parameter Store, a capability of Amazon Web Services Systems Manager, supports the following policy types: Expiration, ExpirationNotification, and NoChangeNotification.</p>
+    /// <p>The type of policy. Parameter Store, a capability of Amazon Web Services Systems Manager, supports the following policy types: Expiration, ExpirationNotification, and NoChangeNotification. </p>
     pub fn policy_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The type of policy. Parameter Store, a capability of Amazon Web Services Systems Manager, supports the following policy types: Expiration, ExpirationNotification, and NoChangeNotification.</p>
+    /// <p>The type of policy. Parameter Store, a capability of Amazon Web Services Systems Manager, supports the following policy types: Expiration, ExpirationNotification, and NoChangeNotification. </p>
     pub fn set_policy_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_type = input;
         self
     }
-    /// <p>The type of policy. Parameter Store, a capability of Amazon Web Services Systems Manager, supports the following policy types: Expiration, ExpirationNotification, and NoChangeNotification.</p>
+    /// <p>The type of policy. Parameter Store, a capability of Amazon Web Services Systems Manager, supports the following policy types: Expiration, ExpirationNotification, and NoChangeNotification. </p>
     pub fn get_policy_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_type
     }
-    /// <p>The status of the policy. Policies report the following statuses: Pending (the policy hasn't been enforced or applied yet), Finished (the policy was applied), Failed (the policy wasn't applied), or InProgress (the policy is being applied now).</p>
+    /// <p>The status of the policy. Policies report the following statuses: Pending (the policy hasn't been enforced or applied yet), Finished (the policy was applied), Failed (the policy wasn't applied), or InProgress (the policy is being applied now). </p>
     pub fn policy_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_status = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The status of the policy. Policies report the following statuses: Pending (the policy hasn't been enforced or applied yet), Finished (the policy was applied), Failed (the policy wasn't applied), or InProgress (the policy is being applied now).</p>
+    /// <p>The status of the policy. Policies report the following statuses: Pending (the policy hasn't been enforced or applied yet), Finished (the policy was applied), Failed (the policy wasn't applied), or InProgress (the policy is being applied now). </p>
     pub fn set_policy_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_status = input;
         self
     }
-    /// <p>The status of the policy. Policies report the following statuses: Pending (the policy hasn't been enforced or applied yet), Finished (the policy was applied), Failed (the policy wasn't applied), or InProgress (the policy is being applied now).</p>
+    /// <p>The status of the policy. Policies report the following statuses: Pending (the policy hasn't been enforced or applied yet), Finished (the policy was applied), Failed (the policy wasn't applied), or InProgress (the policy is being applied now). </p>
     pub fn get_policy_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_status
     }

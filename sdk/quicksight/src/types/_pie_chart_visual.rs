@@ -4,10 +4,8 @@
 /// <p>The <code>PieChartVisual</code> structure describes a visual that is a member of the pie chart family.</p>
 /// <p>The following charts can be described by using this structure:</p>
 /// <ul>
-/// <li>
-/// <p>Pie charts</p></li>
-/// <li>
-/// <p>Donut charts</p></li>
+/// <li> <p>Pie charts</p> </li>
+/// <li> <p>Donut charts</p> </li>
 /// </ul>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/pie-chart.html">Using pie charts</a> in the <i>Amazon QuickSight User Guide</i>.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/donut-chart.html">Using donut charts</a> in the <i>Amazon QuickSight User Guide</i>.</p>

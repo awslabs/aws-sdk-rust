@@ -25,16 +25,11 @@ impl GetRecommendationSummariesInputBuilder {
 /// <p>Returns the optimization findings for an account.</p>
 /// <p>It returns the number of:</p>
 /// <ul>
-/// <li>
-/// <p>Amazon EC2 instances in an account that are <code>Underprovisioned</code>, <code>Overprovisioned</code>, or <code>Optimized</code>.</p></li>
-/// <li>
-/// <p>Auto Scaling groups in an account that are <code>NotOptimized</code>, or <code>Optimized</code>.</p></li>
-/// <li>
-/// <p>Amazon EBS volumes in an account that are <code>NotOptimized</code>, or <code>Optimized</code>.</p></li>
-/// <li>
-/// <p>Lambda functions in an account that are <code>NotOptimized</code>, or <code>Optimized</code>.</p></li>
-/// <li>
-/// <p>Amazon ECS services in an account that are <code>Underprovisioned</code>, <code>Overprovisioned</code>, or <code>Optimized</code>.</p></li>
+/// <li> <p>Amazon EC2 instances in an account that are <code>Underprovisioned</code>, <code>Overprovisioned</code>, or <code>Optimized</code>.</p> </li>
+/// <li> <p>Auto Scaling groups in an account that are <code>NotOptimized</code>, or <code>Optimized</code>.</p> </li>
+/// <li> <p>Amazon EBS volumes in an account that are <code>NotOptimized</code>, or <code>Optimized</code>.</p> </li>
+/// <li> <p>Lambda functions in an account that are <code>NotOptimized</code>, or <code>Optimized</code>.</p> </li>
+/// <li> <p>Amazon ECS services in an account that are <code>Underprovisioned</code>, <code>Overprovisioned</code>, or <code>Optimized</code>.</p> </li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetRecommendationSummariesFluentBuilder {

@@ -5,10 +5,8 @@
 pub struct ListNetworkResourcesInput {
     /// <p>The filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ORDER</code> - The Amazon Resource Name (ARN) of the order.</p></li>
-    /// <li>
-    /// <p><code>STATUS</code> - The status (<code>AVAILABLE</code> | <code>DELETED</code> | <code>DELETING</code> | <code>PENDING</code> | <code>PENDING_RETURN</code> | <code>PROVISIONING</code> | <code>SHIPPED</code>).</p></li>
+    /// <li> <p> <code>ORDER</code> - The Amazon Resource Name (ARN) of the order.</p> </li>
+    /// <li> <p> <code>STATUS</code> - The status (<code>AVAILABLE</code> | <code>DELETED</code> | <code>DELETING</code> | <code>PENDING</code> | <code>PENDING_RETURN</code> | <code>PROVISIONING</code> | <code>SHIPPED</code>).</p> </li>
     /// </ul>
     /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
     pub filters: ::std::option::Option<::std::collections::HashMap<crate::types::NetworkResourceFilterKeys, ::std::vec::Vec<::std::string::String>>>,
@@ -22,10 +20,8 @@ pub struct ListNetworkResourcesInput {
 impl ListNetworkResourcesInput {
     /// <p>The filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ORDER</code> - The Amazon Resource Name (ARN) of the order.</p></li>
-    /// <li>
-    /// <p><code>STATUS</code> - The status (<code>AVAILABLE</code> | <code>DELETED</code> | <code>DELETING</code> | <code>PENDING</code> | <code>PENDING_RETURN</code> | <code>PROVISIONING</code> | <code>SHIPPED</code>).</p></li>
+    /// <li> <p> <code>ORDER</code> - The Amazon Resource Name (ARN) of the order.</p> </li>
+    /// <li> <p> <code>STATUS</code> - The status (<code>AVAILABLE</code> | <code>DELETED</code> | <code>DELETING</code> | <code>PENDING</code> | <code>PENDING_RETURN</code> | <code>PROVISIONING</code> | <code>SHIPPED</code>).</p> </li>
     /// </ul>
     /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
     pub fn filters(
@@ -70,10 +66,8 @@ impl ListNetworkResourcesInputBuilder {
     ///
     /// <p>The filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ORDER</code> - The Amazon Resource Name (ARN) of the order.</p></li>
-    /// <li>
-    /// <p><code>STATUS</code> - The status (<code>AVAILABLE</code> | <code>DELETED</code> | <code>DELETING</code> | <code>PENDING</code> | <code>PENDING_RETURN</code> | <code>PROVISIONING</code> | <code>SHIPPED</code>).</p></li>
+    /// <li> <p> <code>ORDER</code> - The Amazon Resource Name (ARN) of the order.</p> </li>
+    /// <li> <p> <code>STATUS</code> - The status (<code>AVAILABLE</code> | <code>DELETED</code> | <code>DELETING</code> | <code>PENDING</code> | <code>PENDING_RETURN</code> | <code>PROVISIONING</code> | <code>SHIPPED</code>).</p> </li>
     /// </ul>
     /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
     pub fn filters(mut self, k: crate::types::NetworkResourceFilterKeys, v: ::std::vec::Vec<::std::string::String>) -> Self {
@@ -84,10 +78,8 @@ impl ListNetworkResourcesInputBuilder {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ORDER</code> - The Amazon Resource Name (ARN) of the order.</p></li>
-    /// <li>
-    /// <p><code>STATUS</code> - The status (<code>AVAILABLE</code> | <code>DELETED</code> | <code>DELETING</code> | <code>PENDING</code> | <code>PENDING_RETURN</code> | <code>PROVISIONING</code> | <code>SHIPPED</code>).</p></li>
+    /// <li> <p> <code>ORDER</code> - The Amazon Resource Name (ARN) of the order.</p> </li>
+    /// <li> <p> <code>STATUS</code> - The status (<code>AVAILABLE</code> | <code>DELETED</code> | <code>DELETING</code> | <code>PENDING</code> | <code>PENDING_RETURN</code> | <code>PROVISIONING</code> | <code>SHIPPED</code>).</p> </li>
     /// </ul>
     /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
     pub fn set_filters(
@@ -99,10 +91,8 @@ impl ListNetworkResourcesInputBuilder {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ORDER</code> - The Amazon Resource Name (ARN) of the order.</p></li>
-    /// <li>
-    /// <p><code>STATUS</code> - The status (<code>AVAILABLE</code> | <code>DELETED</code> | <code>DELETING</code> | <code>PENDING</code> | <code>PENDING_RETURN</code> | <code>PROVISIONING</code> | <code>SHIPPED</code>).</p></li>
+    /// <li> <p> <code>ORDER</code> - The Amazon Resource Name (ARN) of the order.</p> </li>
+    /// <li> <p> <code>STATUS</code> - The status (<code>AVAILABLE</code> | <code>DELETED</code> | <code>DELETING</code> | <code>PENDING</code> | <code>PENDING_RETURN</code> | <code>PROVISIONING</code> | <code>SHIPPED</code>).</p> </li>
     /// </ul>
     /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
     pub fn get_filters(

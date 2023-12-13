@@ -13,7 +13,7 @@ pub struct PutInsightSelectorsInput {
     /// <p>The ARN (or ID suffix of the ARN) of the source event data store for which you want to change or add Insights selectors. To enable Insights on an event data store, you must provide both the <code>EventDataStore</code> and <code>InsightsDestination</code> parameters.</p>
     /// <p>You cannot use this parameter with the <code>TrailName</code> parameter.</p>
     pub event_data_store: ::std::option::Option<::std::string::String>,
-    /// <p>The ARN (or ID suffix of the ARN) of the destination event data store that logs Insights events. To enable Insights on an event data store, you must provide both the <code>EventDataStore</code> and <code>InsightsDestination</code> parameters.</p>
+    /// <p> The ARN (or ID suffix of the ARN) of the destination event data store that logs Insights events. To enable Insights on an event data store, you must provide both the <code>EventDataStore</code> and <code>InsightsDestination</code> parameters. </p>
     /// <p>You cannot use this parameter with the <code>TrailName</code> parameter.</p>
     pub insights_destination: ::std::option::Option<::std::string::String>,
 }
@@ -36,7 +36,7 @@ impl PutInsightSelectorsInput {
     pub fn event_data_store(&self) -> ::std::option::Option<&str> {
         self.event_data_store.as_deref()
     }
-    /// <p>The ARN (or ID suffix of the ARN) of the destination event data store that logs Insights events. To enable Insights on an event data store, you must provide both the <code>EventDataStore</code> and <code>InsightsDestination</code> parameters.</p>
+    /// <p> The ARN (or ID suffix of the ARN) of the destination event data store that logs Insights events. To enable Insights on an event data store, you must provide both the <code>EventDataStore</code> and <code>InsightsDestination</code> parameters. </p>
     /// <p>You cannot use this parameter with the <code>TrailName</code> parameter.</p>
     pub fn insights_destination(&self) -> ::std::option::Option<&str> {
         self.insights_destination.as_deref()
@@ -119,19 +119,19 @@ impl PutInsightSelectorsInputBuilder {
     pub fn get_event_data_store(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_data_store
     }
-    /// <p>The ARN (or ID suffix of the ARN) of the destination event data store that logs Insights events. To enable Insights on an event data store, you must provide both the <code>EventDataStore</code> and <code>InsightsDestination</code> parameters.</p>
+    /// <p> The ARN (or ID suffix of the ARN) of the destination event data store that logs Insights events. To enable Insights on an event data store, you must provide both the <code>EventDataStore</code> and <code>InsightsDestination</code> parameters. </p>
     /// <p>You cannot use this parameter with the <code>TrailName</code> parameter.</p>
     pub fn insights_destination(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.insights_destination = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN (or ID suffix of the ARN) of the destination event data store that logs Insights events. To enable Insights on an event data store, you must provide both the <code>EventDataStore</code> and <code>InsightsDestination</code> parameters.</p>
+    /// <p> The ARN (or ID suffix of the ARN) of the destination event data store that logs Insights events. To enable Insights on an event data store, you must provide both the <code>EventDataStore</code> and <code>InsightsDestination</code> parameters. </p>
     /// <p>You cannot use this parameter with the <code>TrailName</code> parameter.</p>
     pub fn set_insights_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.insights_destination = input;
         self
     }
-    /// <p>The ARN (or ID suffix of the ARN) of the destination event data store that logs Insights events. To enable Insights on an event data store, you must provide both the <code>EventDataStore</code> and <code>InsightsDestination</code> parameters.</p>
+    /// <p> The ARN (or ID suffix of the ARN) of the destination event data store that logs Insights events. To enable Insights on an event data store, you must provide both the <code>EventDataStore</code> and <code>InsightsDestination</code> parameters. </p>
     /// <p>You cannot use this parameter with the <code>TrailName</code> parameter.</p>
     pub fn get_insights_destination(&self) -> &::std::option::Option<::std::string::String> {
         &self.insights_destination

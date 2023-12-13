@@ -7,7 +7,7 @@ pub struct ListOperationsInput {
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned nextToken value. If you do not specify a value for MaxResults, the request returns 50 items per page by default.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>The token for the next page of results.</p>
+    /// <p>The token for the next page of results. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The filters of an operation.</p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -21,7 +21,7 @@ impl ListOperationsInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The token for the next page of results.</p>
+    /// <p>The token for the next page of results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -78,17 +78,17 @@ impl ListOperationsInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p>The token for the next page of results.</p>
+    /// <p>The token for the next page of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token for the next page of results.</p>
+    /// <p>The token for the next page of results. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The token for the next page of results.</p>
+    /// <p>The token for the next page of results. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

@@ -256,7 +256,7 @@ pub enum PublishError {
     KmsNotFoundException(crate::types::error::KmsNotFoundException),
     /// <p>The Amazon Web Services access key ID needs a subscription for the service.</p>
     KmsOptInRequired(crate::types::error::KmsOptInRequired),
-    /// <p>The request was denied due to request throttling. For more information about throttling, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a> in the <i>Key Management Service Developer Guide.</i></p>
+    /// <p>The request was denied due to request throttling. For more information about throttling, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a> in the <i>Key Management Service Developer Guide.</i> </p>
     KmsThrottlingException(crate::types::error::KmsThrottlingException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::types::error::NotFoundException),

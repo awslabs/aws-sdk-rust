@@ -10,9 +10,9 @@ pub struct RuleSummary {
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the rule.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates whether this is the default rule. Listener rules are created when you create a listener. Each listener has a default rule for checking connection requests.</p>
+    /// <p>Indicates whether this is the default rule. Listener rules are created when you create a listener. Each listener has a default rule for checking connection requests. </p>
     pub is_default: ::std::option::Option<bool>,
-    /// <p>The priority of the rule.</p>
+    /// <p> The priority of the rule. </p>
     pub priority: ::std::option::Option<i32>,
     /// <p>The date and time that the listener rule was created, specified in ISO-8601 format.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -32,11 +32,11 @@ impl RuleSummary {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Indicates whether this is the default rule. Listener rules are created when you create a listener. Each listener has a default rule for checking connection requests.</p>
+    /// <p>Indicates whether this is the default rule. Listener rules are created when you create a listener. Each listener has a default rule for checking connection requests. </p>
     pub fn is_default(&self) -> ::std::option::Option<bool> {
         self.is_default
     }
-    /// <p>The priority of the rule.</p>
+    /// <p> The priority of the rule. </p>
     pub fn priority(&self) -> ::std::option::Option<i32> {
         self.priority
     }
@@ -111,31 +111,31 @@ impl RuleSummaryBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>Indicates whether this is the default rule. Listener rules are created when you create a listener. Each listener has a default rule for checking connection requests.</p>
+    /// <p>Indicates whether this is the default rule. Listener rules are created when you create a listener. Each listener has a default rule for checking connection requests. </p>
     pub fn is_default(mut self, input: bool) -> Self {
         self.is_default = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether this is the default rule. Listener rules are created when you create a listener. Each listener has a default rule for checking connection requests.</p>
+    /// <p>Indicates whether this is the default rule. Listener rules are created when you create a listener. Each listener has a default rule for checking connection requests. </p>
     pub fn set_is_default(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_default = input;
         self
     }
-    /// <p>Indicates whether this is the default rule. Listener rules are created when you create a listener. Each listener has a default rule for checking connection requests.</p>
+    /// <p>Indicates whether this is the default rule. Listener rules are created when you create a listener. Each listener has a default rule for checking connection requests. </p>
     pub fn get_is_default(&self) -> &::std::option::Option<bool> {
         &self.is_default
     }
-    /// <p>The priority of the rule.</p>
+    /// <p> The priority of the rule. </p>
     pub fn priority(mut self, input: i32) -> Self {
         self.priority = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The priority of the rule.</p>
+    /// <p> The priority of the rule. </p>
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.priority = input;
         self
     }
-    /// <p>The priority of the rule.</p>
+    /// <p> The priority of the rule. </p>
     pub fn get_priority(&self) -> &::std::option::Option<i32> {
         &self.priority
     }

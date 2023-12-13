@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StartTransaction`](crate::operation::start_transaction::builders::StartTransactionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`transaction_type(TransactionType)`](crate::operation::start_transaction::builders::StartTransactionFluentBuilder::transaction_type) / [`set_transaction_type(Option<TransactionType>)`](crate::operation::start_transaction::builders::StartTransactionFluentBuilder::set_transaction_type):<br>required: **false**<br><p>Indicates whether this transaction should be read only or read and write. Writes made using a read-only transaction ID will be rejected. Read-only transactions do not need to be committed.</p><br>
+    ///   - [`transaction_type(TransactionType)`](crate::operation::start_transaction::builders::StartTransactionFluentBuilder::transaction_type) / [`set_transaction_type(Option<TransactionType>)`](crate::operation::start_transaction::builders::StartTransactionFluentBuilder::set_transaction_type):<br>required: **false**<br><p>Indicates whether this transaction should be read only or read and write. Writes made using a read-only transaction ID will be rejected. Read-only transactions do not need to be committed. </p><br>
     /// - On success, responds with [`StartTransactionOutput`](crate::operation::start_transaction::StartTransactionOutput) with field(s):
     ///   - [`transaction_id(Option<String>)`](crate::operation::start_transaction::StartTransactionOutput::transaction_id): <p>An opaque identifier for the transaction.</p>
     /// - On failure, responds with [`SdkError<StartTransactionError>`](crate::operation::start_transaction::StartTransactionError)

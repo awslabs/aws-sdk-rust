@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FirewallRuleGroup {
-    /// <p>The ID of the rule group.</p>
+    /// <p>The ID of the rule group. </p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN (Amazon Resource Name) of the rule group.</p>
     pub arn: ::std::option::Option<::std::string::String>,
@@ -12,23 +12,23 @@ pub struct FirewallRuleGroup {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The number of rules in the rule group.</p>
     pub rule_count: ::std::option::Option<i32>,
-    /// <p>The status of the domain list.</p>
+    /// <p>The status of the domain list. </p>
     pub status: ::std::option::Option<crate::types::FirewallRuleGroupStatus>,
     /// <p>Additional information about the status of the rule group, if available.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Web Services account ID for the account that created the rule group. When a rule group is shared with your account, this is the account that has shared the rule group with you.</p>
+    /// <p>The Amazon Web Services account ID for the account that created the rule group. When a rule group is shared with your account, this is the account that has shared the rule group with you. </p>
     pub owner_id: ::std::option::Option<::std::string::String>,
-    /// <p>A unique string defined by you to identify the request. This allows you to retry failed requests without the risk of running the operation twice. This can be any unique string, for example, a timestamp.</p>
+    /// <p>A unique string defined by you to identify the request. This allows you to retry failed requests without the risk of running the operation twice. This can be any unique string, for example, a timestamp. </p>
     pub creator_request_id: ::std::option::Option<::std::string::String>,
     /// <p>Whether the rule group is shared with other Amazon Web Services accounts, or was shared with the current account by another Amazon Web Services account. Sharing is configured through Resource Access Manager (RAM).</p>
     pub share_status: ::std::option::Option<crate::types::ShareStatus>,
-    /// <p>The date and time that the rule group was created, in Unix time format and Coordinated Universal Time (UTC).</p>
+    /// <p>The date and time that the rule group was created, in Unix time format and Coordinated Universal Time (UTC). </p>
     pub creation_time: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the rule group was last modified, in Unix time format and Coordinated Universal Time (UTC).</p>
     pub modification_time: ::std::option::Option<::std::string::String>,
 }
 impl FirewallRuleGroup {
-    /// <p>The ID of the rule group.</p>
+    /// <p>The ID of the rule group. </p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -44,7 +44,7 @@ impl FirewallRuleGroup {
     pub fn rule_count(&self) -> ::std::option::Option<i32> {
         self.rule_count
     }
-    /// <p>The status of the domain list.</p>
+    /// <p>The status of the domain list. </p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::FirewallRuleGroupStatus> {
         self.status.as_ref()
     }
@@ -52,11 +52,11 @@ impl FirewallRuleGroup {
     pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
-    /// <p>The Amazon Web Services account ID for the account that created the rule group. When a rule group is shared with your account, this is the account that has shared the rule group with you.</p>
+    /// <p>The Amazon Web Services account ID for the account that created the rule group. When a rule group is shared with your account, this is the account that has shared the rule group with you. </p>
     pub fn owner_id(&self) -> ::std::option::Option<&str> {
         self.owner_id.as_deref()
     }
-    /// <p>A unique string defined by you to identify the request. This allows you to retry failed requests without the risk of running the operation twice. This can be any unique string, for example, a timestamp.</p>
+    /// <p>A unique string defined by you to identify the request. This allows you to retry failed requests without the risk of running the operation twice. This can be any unique string, for example, a timestamp. </p>
     pub fn creator_request_id(&self) -> ::std::option::Option<&str> {
         self.creator_request_id.as_deref()
     }
@@ -64,7 +64,7 @@ impl FirewallRuleGroup {
     pub fn share_status(&self) -> ::std::option::Option<&crate::types::ShareStatus> {
         self.share_status.as_ref()
     }
-    /// <p>The date and time that the rule group was created, in Unix time format and Coordinated Universal Time (UTC).</p>
+    /// <p>The date and time that the rule group was created, in Unix time format and Coordinated Universal Time (UTC). </p>
     pub fn creation_time(&self) -> ::std::option::Option<&str> {
         self.creation_time.as_deref()
     }
@@ -97,17 +97,17 @@ pub struct FirewallRuleGroupBuilder {
     pub(crate) modification_time: ::std::option::Option<::std::string::String>,
 }
 impl FirewallRuleGroupBuilder {
-    /// <p>The ID of the rule group.</p>
+    /// <p>The ID of the rule group. </p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the rule group.</p>
+    /// <p>The ID of the rule group. </p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// <p>The ID of the rule group.</p>
+    /// <p>The ID of the rule group. </p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
@@ -153,17 +153,17 @@ impl FirewallRuleGroupBuilder {
     pub fn get_rule_count(&self) -> &::std::option::Option<i32> {
         &self.rule_count
     }
-    /// <p>The status of the domain list.</p>
+    /// <p>The status of the domain list. </p>
     pub fn status(mut self, input: crate::types::FirewallRuleGroupStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the domain list.</p>
+    /// <p>The status of the domain list. </p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::FirewallRuleGroupStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of the domain list.</p>
+    /// <p>The status of the domain list. </p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::FirewallRuleGroupStatus> {
         &self.status
     }
@@ -181,31 +181,31 @@ impl FirewallRuleGroupBuilder {
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_message
     }
-    /// <p>The Amazon Web Services account ID for the account that created the rule group. When a rule group is shared with your account, this is the account that has shared the rule group with you.</p>
+    /// <p>The Amazon Web Services account ID for the account that created the rule group. When a rule group is shared with your account, this is the account that has shared the rule group with you. </p>
     pub fn owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Web Services account ID for the account that created the rule group. When a rule group is shared with your account, this is the account that has shared the rule group with you.</p>
+    /// <p>The Amazon Web Services account ID for the account that created the rule group. When a rule group is shared with your account, this is the account that has shared the rule group with you. </p>
     pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_id = input;
         self
     }
-    /// <p>The Amazon Web Services account ID for the account that created the rule group. When a rule group is shared with your account, this is the account that has shared the rule group with you.</p>
+    /// <p>The Amazon Web Services account ID for the account that created the rule group. When a rule group is shared with your account, this is the account that has shared the rule group with you. </p>
     pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.owner_id
     }
-    /// <p>A unique string defined by you to identify the request. This allows you to retry failed requests without the risk of running the operation twice. This can be any unique string, for example, a timestamp.</p>
+    /// <p>A unique string defined by you to identify the request. This allows you to retry failed requests without the risk of running the operation twice. This can be any unique string, for example, a timestamp. </p>
     pub fn creator_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creator_request_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique string defined by you to identify the request. This allows you to retry failed requests without the risk of running the operation twice. This can be any unique string, for example, a timestamp.</p>
+    /// <p>A unique string defined by you to identify the request. This allows you to retry failed requests without the risk of running the operation twice. This can be any unique string, for example, a timestamp. </p>
     pub fn set_creator_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creator_request_id = input;
         self
     }
-    /// <p>A unique string defined by you to identify the request. This allows you to retry failed requests without the risk of running the operation twice. This can be any unique string, for example, a timestamp.</p>
+    /// <p>A unique string defined by you to identify the request. This allows you to retry failed requests without the risk of running the operation twice. This can be any unique string, for example, a timestamp. </p>
     pub fn get_creator_request_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.creator_request_id
     }
@@ -223,17 +223,17 @@ impl FirewallRuleGroupBuilder {
     pub fn get_share_status(&self) -> &::std::option::Option<crate::types::ShareStatus> {
         &self.share_status
     }
-    /// <p>The date and time that the rule group was created, in Unix time format and Coordinated Universal Time (UTC).</p>
+    /// <p>The date and time that the rule group was created, in Unix time format and Coordinated Universal Time (UTC). </p>
     pub fn creation_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_time = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The date and time that the rule group was created, in Unix time format and Coordinated Universal Time (UTC).</p>
+    /// <p>The date and time that the rule group was created, in Unix time format and Coordinated Universal Time (UTC). </p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creation_time = input;
         self
     }
-    /// <p>The date and time that the rule group was created, in Unix time format and Coordinated Universal Time (UTC).</p>
+    /// <p>The date and time that the rule group was created, in Unix time format and Coordinated Universal Time (UTC). </p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.creation_time
     }

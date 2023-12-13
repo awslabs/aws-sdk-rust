@@ -2,7 +2,7 @@
 
 /// <p>Provides the configuration information for applying basic logic to alter document metadata and content when ingesting documents into Amazon Q.</p>
 /// <p>To apply advanced logic, to go beyond what you can do with basic logic, see <a href="https://docs.aws.amazon.com/enterpriseq/latest/APIReference/API_HookConfiguration.html"> <code>HookConfiguration</code> </a>.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/custom-document-enrichment.html">Custom document enrichment</a>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/custom-document-enrichment.html">Custom document enrichment</a>. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InlineDocumentEnrichmentConfiguration {
@@ -15,7 +15,7 @@ pub struct InlineDocumentEnrichmentConfiguration {
     /// <p>Amazon Q can't create a target field if it has not already been created as an index field. After you create your index field, you can create a document metadata field using <a href="https://docs.aws.amazon.com/enterpriseq/latest/APIReference/API_DocumentAttributeTarget.html"> <code>DocumentAttributeTarget</code> </a>. Amazon Q will then map your newly created document attribute to your index field.</p>
     /// <p>You can also use this with <a href="https://docs.aws.amazon.com/enterpriseq/latest/APIReference/API_DocumentAttributeCondition.html"> <code>DocumentAttributeCondition</code> </a>.</p>
     pub target: ::std::option::Option<crate::types::DocumentAttributeTarget>,
-    /// <p><code>TRUE</code> to delete content if the condition used for the target attribute is met.</p>
+    /// <p> <code>TRUE</code> to delete content if the condition used for the target attribute is met.</p>
     pub document_content_operator: ::std::option::Option<crate::types::DocumentContentOperator>,
 }
 impl InlineDocumentEnrichmentConfiguration {
@@ -32,7 +32,7 @@ impl InlineDocumentEnrichmentConfiguration {
     pub fn target(&self) -> ::std::option::Option<&crate::types::DocumentAttributeTarget> {
         self.target.as_ref()
     }
-    /// <p><code>TRUE</code> to delete content if the condition used for the target attribute is met.</p>
+    /// <p> <code>TRUE</code> to delete content if the condition used for the target attribute is met.</p>
     pub fn document_content_operator(&self) -> ::std::option::Option<&crate::types::DocumentContentOperator> {
         self.document_content_operator.as_ref()
     }
@@ -96,17 +96,17 @@ impl InlineDocumentEnrichmentConfigurationBuilder {
     pub fn get_target(&self) -> &::std::option::Option<crate::types::DocumentAttributeTarget> {
         &self.target
     }
-    /// <p><code>TRUE</code> to delete content if the condition used for the target attribute is met.</p>
+    /// <p> <code>TRUE</code> to delete content if the condition used for the target attribute is met.</p>
     pub fn document_content_operator(mut self, input: crate::types::DocumentContentOperator) -> Self {
         self.document_content_operator = ::std::option::Option::Some(input);
         self
     }
-    /// <p><code>TRUE</code> to delete content if the condition used for the target attribute is met.</p>
+    /// <p> <code>TRUE</code> to delete content if the condition used for the target attribute is met.</p>
     pub fn set_document_content_operator(mut self, input: ::std::option::Option<crate::types::DocumentContentOperator>) -> Self {
         self.document_content_operator = input;
         self
     }
-    /// <p><code>TRUE</code> to delete content if the condition used for the target attribute is met.</p>
+    /// <p> <code>TRUE</code> to delete content if the condition used for the target attribute is met.</p>
     pub fn get_document_content_operator(&self) -> &::std::option::Option<crate::types::DocumentContentOperator> {
         &self.document_content_operator
     }

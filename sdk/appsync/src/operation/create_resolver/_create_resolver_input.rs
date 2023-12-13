@@ -19,10 +19,8 @@ pub struct CreateResolverInput {
     pub response_mapping_template: ::std::option::Option<::std::string::String>,
     /// <p>The resolver type.</p>
     /// <ul>
-    /// <li>
-    /// <p><b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. You can use a UNIT resolver to run a GraphQL query against a single data source.</p></li>
-    /// <li>
-    /// <p><b>PIPELINE</b>: A PIPELINE resolver type. You can use a PIPELINE resolver to invoke a series of <code>Function</code> objects in a serial manner. You can use a pipeline resolver to run a GraphQL query against multiple data sources.</p></li>
+    /// <li> <p> <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. You can use a UNIT resolver to run a GraphQL query against a single data source.</p> </li>
+    /// <li> <p> <b>PIPELINE</b>: A PIPELINE resolver type. You can use a PIPELINE resolver to invoke a series of <code>Function</code> objects in a serial manner. You can use a pipeline resolver to run a GraphQL query against multiple data sources.</p> </li>
     /// </ul>
     pub kind: ::std::option::Option<crate::types::ResolverKind>,
     /// <p>The <code>PipelineConfig</code>.</p>
@@ -67,10 +65,8 @@ impl CreateResolverInput {
     }
     /// <p>The resolver type.</p>
     /// <ul>
-    /// <li>
-    /// <p><b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. You can use a UNIT resolver to run a GraphQL query against a single data source.</p></li>
-    /// <li>
-    /// <p><b>PIPELINE</b>: A PIPELINE resolver type. You can use a PIPELINE resolver to invoke a series of <code>Function</code> objects in a serial manner. You can use a pipeline resolver to run a GraphQL query against multiple data sources.</p></li>
+    /// <li> <p> <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. You can use a UNIT resolver to run a GraphQL query against a single data source.</p> </li>
+    /// <li> <p> <b>PIPELINE</b>: A PIPELINE resolver type. You can use a PIPELINE resolver to invoke a series of <code>Function</code> objects in a serial manner. You can use a pipeline resolver to run a GraphQL query against multiple data sources.</p> </li>
     /// </ul>
     pub fn kind(&self) -> ::std::option::Option<&crate::types::ResolverKind> {
         self.kind.as_ref()
@@ -221,10 +217,8 @@ impl CreateResolverInputBuilder {
     }
     /// <p>The resolver type.</p>
     /// <ul>
-    /// <li>
-    /// <p><b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. You can use a UNIT resolver to run a GraphQL query against a single data source.</p></li>
-    /// <li>
-    /// <p><b>PIPELINE</b>: A PIPELINE resolver type. You can use a PIPELINE resolver to invoke a series of <code>Function</code> objects in a serial manner. You can use a pipeline resolver to run a GraphQL query against multiple data sources.</p></li>
+    /// <li> <p> <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. You can use a UNIT resolver to run a GraphQL query against a single data source.</p> </li>
+    /// <li> <p> <b>PIPELINE</b>: A PIPELINE resolver type. You can use a PIPELINE resolver to invoke a series of <code>Function</code> objects in a serial manner. You can use a pipeline resolver to run a GraphQL query against multiple data sources.</p> </li>
     /// </ul>
     pub fn kind(mut self, input: crate::types::ResolverKind) -> Self {
         self.kind = ::std::option::Option::Some(input);
@@ -232,10 +226,8 @@ impl CreateResolverInputBuilder {
     }
     /// <p>The resolver type.</p>
     /// <ul>
-    /// <li>
-    /// <p><b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. You can use a UNIT resolver to run a GraphQL query against a single data source.</p></li>
-    /// <li>
-    /// <p><b>PIPELINE</b>: A PIPELINE resolver type. You can use a PIPELINE resolver to invoke a series of <code>Function</code> objects in a serial manner. You can use a pipeline resolver to run a GraphQL query against multiple data sources.</p></li>
+    /// <li> <p> <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. You can use a UNIT resolver to run a GraphQL query against a single data source.</p> </li>
+    /// <li> <p> <b>PIPELINE</b>: A PIPELINE resolver type. You can use a PIPELINE resolver to invoke a series of <code>Function</code> objects in a serial manner. You can use a pipeline resolver to run a GraphQL query against multiple data sources.</p> </li>
     /// </ul>
     pub fn set_kind(mut self, input: ::std::option::Option<crate::types::ResolverKind>) -> Self {
         self.kind = input;
@@ -243,10 +235,8 @@ impl CreateResolverInputBuilder {
     }
     /// <p>The resolver type.</p>
     /// <ul>
-    /// <li>
-    /// <p><b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. You can use a UNIT resolver to run a GraphQL query against a single data source.</p></li>
-    /// <li>
-    /// <p><b>PIPELINE</b>: A PIPELINE resolver type. You can use a PIPELINE resolver to invoke a series of <code>Function</code> objects in a serial manner. You can use a pipeline resolver to run a GraphQL query against multiple data sources.</p></li>
+    /// <li> <p> <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. You can use a UNIT resolver to run a GraphQL query against a single data source.</p> </li>
+    /// <li> <p> <b>PIPELINE</b>: A PIPELINE resolver type. You can use a PIPELINE resolver to invoke a series of <code>Function</code> objects in a serial manner. You can use a pipeline resolver to run a GraphQL query against multiple data sources.</p> </li>
     /// </ul>
     pub fn get_kind(&self) -> &::std::option::Option<crate::types::ResolverKind> {
         &self.kind

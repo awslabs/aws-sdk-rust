@@ -22,9 +22,9 @@ impl DetectDocumentTextInputBuilder {
 }
 /// Fluent builder constructing a request to `DetectDocumentText`.
 ///
-/// <p>Detects text in the input document. Amazon Textract can detect lines of text and the words that make up a line of text. The input document must be in one of the following image formats: JPEG, PNG, PDF, or TIFF. <code>DetectDocumentText</code> returns the detected text in an array of <code>Block</code> objects.</p>
+/// <p>Detects text in the input document. Amazon Textract can detect lines of text and the words that make up a line of text. The input document must be in one of the following image formats: JPEG, PNG, PDF, or TIFF. <code>DetectDocumentText</code> returns the detected text in an array of <code>Block</code> objects. </p>
 /// <p>Each document page has as an associated <code>Block</code> of type PAGE. Each PAGE <code>Block</code> object is the parent of LINE <code>Block</code> objects that represent the lines of detected text on a page. A LINE <code>Block</code> object is a parent for each word that makes up the line. Words are represented by <code>Block</code> objects of type WORD.</p>
-/// <p><code>DetectDocumentText</code> is a synchronous operation. To analyze documents asynchronously, use <code>StartDocumentTextDetection</code>.</p>
+/// <p> <code>DetectDocumentText</code> is a synchronous operation. To analyze documents asynchronously, use <code>StartDocumentTextDetection</code>.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works-detecting.html">Document Text Detection</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DetectDocumentTextFluentBuilder {
@@ -112,19 +112,19 @@ impl DetectDocumentTextFluentBuilder {
         self
     }
     /// <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The document must be an image in JPEG or PNG format.</p>
-    /// <p>If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes that are passed using the <code>Bytes</code> field.</p>
+    /// <p>If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes that are passed using the <code>Bytes</code> field. </p>
     pub fn document(mut self, input: crate::types::Document) -> Self {
         self.inner = self.inner.document(input);
         self
     }
     /// <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The document must be an image in JPEG or PNG format.</p>
-    /// <p>If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes that are passed using the <code>Bytes</code> field.</p>
+    /// <p>If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes that are passed using the <code>Bytes</code> field. </p>
     pub fn set_document(mut self, input: ::std::option::Option<crate::types::Document>) -> Self {
         self.inner = self.inner.set_document(input);
         self
     }
     /// <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The document must be an image in JPEG or PNG format.</p>
-    /// <p>If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes that are passed using the <code>Bytes</code> field.</p>
+    /// <p>If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes that are passed using the <code>Bytes</code> field. </p>
     pub fn get_document(&self) -> &::std::option::Option<crate::types::Document> {
         self.inner.get_document()
     }

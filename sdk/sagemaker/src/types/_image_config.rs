@@ -6,10 +6,8 @@
 pub struct ImageConfig {
     /// <p>Set this to one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Platform</code> - The model image is hosted in Amazon ECR.</p></li>
-    /// <li>
-    /// <p><code>Vpc</code> - The model image is hosted in a private Docker registry in your VPC.</p></li>
+    /// <li> <p> <code>Platform</code> - The model image is hosted in Amazon ECR.</p> </li>
+    /// <li> <p> <code>Vpc</code> - The model image is hosted in a private Docker registry in your VPC.</p> </li>
     /// </ul>
     pub repository_access_mode: ::std::option::Option<crate::types::RepositoryAccessMode>,
     /// <p>(Optional) Specifies an authentication configuration for the private docker registry where your model image is hosted. Specify a value for this property only if you specified <code>Vpc</code> as the value for the <code>RepositoryAccessMode</code> field, and the private Docker registry where the model image is hosted requires authentication.</p>
@@ -18,10 +16,8 @@ pub struct ImageConfig {
 impl ImageConfig {
     /// <p>Set this to one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Platform</code> - The model image is hosted in Amazon ECR.</p></li>
-    /// <li>
-    /// <p><code>Vpc</code> - The model image is hosted in a private Docker registry in your VPC.</p></li>
+    /// <li> <p> <code>Platform</code> - The model image is hosted in Amazon ECR.</p> </li>
+    /// <li> <p> <code>Vpc</code> - The model image is hosted in a private Docker registry in your VPC.</p> </li>
     /// </ul>
     pub fn repository_access_mode(&self) -> ::std::option::Option<&crate::types::RepositoryAccessMode> {
         self.repository_access_mode.as_ref()
@@ -48,10 +44,8 @@ pub struct ImageConfigBuilder {
 impl ImageConfigBuilder {
     /// <p>Set this to one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Platform</code> - The model image is hosted in Amazon ECR.</p></li>
-    /// <li>
-    /// <p><code>Vpc</code> - The model image is hosted in a private Docker registry in your VPC.</p></li>
+    /// <li> <p> <code>Platform</code> - The model image is hosted in Amazon ECR.</p> </li>
+    /// <li> <p> <code>Vpc</code> - The model image is hosted in a private Docker registry in your VPC.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn repository_access_mode(mut self, input: crate::types::RepositoryAccessMode) -> Self {
@@ -60,10 +54,8 @@ impl ImageConfigBuilder {
     }
     /// <p>Set this to one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Platform</code> - The model image is hosted in Amazon ECR.</p></li>
-    /// <li>
-    /// <p><code>Vpc</code> - The model image is hosted in a private Docker registry in your VPC.</p></li>
+    /// <li> <p> <code>Platform</code> - The model image is hosted in Amazon ECR.</p> </li>
+    /// <li> <p> <code>Vpc</code> - The model image is hosted in a private Docker registry in your VPC.</p> </li>
     /// </ul>
     pub fn set_repository_access_mode(mut self, input: ::std::option::Option<crate::types::RepositoryAccessMode>) -> Self {
         self.repository_access_mode = input;
@@ -71,10 +63,8 @@ impl ImageConfigBuilder {
     }
     /// <p>Set this to one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Platform</code> - The model image is hosted in Amazon ECR.</p></li>
-    /// <li>
-    /// <p><code>Vpc</code> - The model image is hosted in a private Docker registry in your VPC.</p></li>
+    /// <li> <p> <code>Platform</code> - The model image is hosted in Amazon ECR.</p> </li>
+    /// <li> <p> <code>Vpc</code> - The model image is hosted in a private Docker registry in your VPC.</p> </li>
     /// </ul>
     pub fn get_repository_access_mode(&self) -> &::std::option::Option<crate::types::RepositoryAccessMode> {
         &self.repository_access_mode

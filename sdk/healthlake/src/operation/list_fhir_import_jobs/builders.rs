@@ -22,7 +22,7 @@ impl ListFhirImportJobsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListFHIRImportJobs`.
 ///
-/// <p>Lists all FHIR import jobs associated with an account and their statuses.</p>
+/// <p> Lists all FHIR import jobs associated with an account and their statuses. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListFHIRImportJobsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,101 +114,101 @@ impl ListFHIRImportJobsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_fhir_import_jobs::paginator::ListFhirImportJobsPaginator {
         crate::operation::list_fhir_import_jobs::paginator::ListFhirImportJobsPaginator::new(self.handle, self.inner)
     }
-    /// <p>This parameter limits the response to the import job with the specified data store ID.</p>
+    /// <p> This parameter limits the response to the import job with the specified data store ID. </p>
     pub fn datastore_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.datastore_id(input.into());
         self
     }
-    /// <p>This parameter limits the response to the import job with the specified data store ID.</p>
+    /// <p> This parameter limits the response to the import job with the specified data store ID. </p>
     pub fn set_datastore_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_datastore_id(input);
         self
     }
-    /// <p>This parameter limits the response to the import job with the specified data store ID.</p>
+    /// <p> This parameter limits the response to the import job with the specified data store ID. </p>
     pub fn get_datastore_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_datastore_id()
     }
-    /// <p>A pagination token used to identify the next page of results to return for a ListFHIRImportJobs query.</p>
+    /// <p> A pagination token used to identify the next page of results to return for a ListFHIRImportJobs query. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>A pagination token used to identify the next page of results to return for a ListFHIRImportJobs query.</p>
+    /// <p> A pagination token used to identify the next page of results to return for a ListFHIRImportJobs query. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>A pagination token used to identify the next page of results to return for a ListFHIRImportJobs query.</p>
+    /// <p> A pagination token used to identify the next page of results to return for a ListFHIRImportJobs query. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>This parameter limits the number of results returned for a ListFHIRImportJobs to a maximum quantity specified by the user.</p>
+    /// <p> This parameter limits the number of results returned for a ListFHIRImportJobs to a maximum quantity specified by the user. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>This parameter limits the number of results returned for a ListFHIRImportJobs to a maximum quantity specified by the user.</p>
+    /// <p> This parameter limits the number of results returned for a ListFHIRImportJobs to a maximum quantity specified by the user. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>This parameter limits the number of results returned for a ListFHIRImportJobs to a maximum quantity specified by the user.</p>
+    /// <p> This parameter limits the number of results returned for a ListFHIRImportJobs to a maximum quantity specified by the user. </p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p>This parameter limits the response to the import job with the specified job name.</p>
+    /// <p> This parameter limits the response to the import job with the specified job name. </p>
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_name(input.into());
         self
     }
-    /// <p>This parameter limits the response to the import job with the specified job name.</p>
+    /// <p> This parameter limits the response to the import job with the specified job name. </p>
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_name(input);
         self
     }
-    /// <p>This parameter limits the response to the import job with the specified job name.</p>
+    /// <p> This parameter limits the response to the import job with the specified job name. </p>
     pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_job_name()
     }
-    /// <p>This parameter limits the response to the import job with the specified job status.</p>
+    /// <p> This parameter limits the response to the import job with the specified job status. </p>
     pub fn job_status(mut self, input: crate::types::JobStatus) -> Self {
         self.inner = self.inner.job_status(input);
         self
     }
-    /// <p>This parameter limits the response to the import job with the specified job status.</p>
+    /// <p> This parameter limits the response to the import job with the specified job status. </p>
     pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
         self.inner = self.inner.set_job_status(input);
         self
     }
-    /// <p>This parameter limits the response to the import job with the specified job status.</p>
+    /// <p> This parameter limits the response to the import job with the specified job status. </p>
     pub fn get_job_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
         self.inner.get_job_status()
     }
-    /// <p>This parameter limits the response to FHIR import jobs submitted before a user specified date.</p>
+    /// <p> This parameter limits the response to FHIR import jobs submitted before a user specified date. </p>
     pub fn submitted_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.submitted_before(input);
         self
     }
-    /// <p>This parameter limits the response to FHIR import jobs submitted before a user specified date.</p>
+    /// <p> This parameter limits the response to FHIR import jobs submitted before a user specified date. </p>
     pub fn set_submitted_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_submitted_before(input);
         self
     }
-    /// <p>This parameter limits the response to FHIR import jobs submitted before a user specified date.</p>
+    /// <p> This parameter limits the response to FHIR import jobs submitted before a user specified date. </p>
     pub fn get_submitted_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_submitted_before()
     }
-    /// <p>This parameter limits the response to FHIR import jobs submitted after a user specified date.</p>
+    /// <p> This parameter limits the response to FHIR import jobs submitted after a user specified date. </p>
     pub fn submitted_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.submitted_after(input);
         self
     }
-    /// <p>This parameter limits the response to FHIR import jobs submitted after a user specified date.</p>
+    /// <p> This parameter limits the response to FHIR import jobs submitted after a user specified date. </p>
     pub fn set_submitted_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_submitted_after(input);
         self
     }
-    /// <p>This parameter limits the response to FHIR import jobs submitted after a user specified date.</p>
+    /// <p> This parameter limits the response to FHIR import jobs submitted after a user specified date. </p>
     pub fn get_submitted_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_submitted_after()
     }

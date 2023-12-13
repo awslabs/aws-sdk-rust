@@ -6,7 +6,7 @@
 pub struct PerObjectStatus {
     /// <p>Indicates whether this object is in sync with the version indicated in the update token.</p>
     pub sync_status: ::std::option::Option<crate::types::PerObjectSyncStatus>,
-    /// <p>The current version of the object that is either in sync or pending synchronization.</p>
+    /// <p>The current version of the object that is either in sync or pending synchronization. </p>
     pub update_token: ::std::option::Option<::std::string::String>,
 }
 impl PerObjectStatus {
@@ -14,7 +14,7 @@ impl PerObjectStatus {
     pub fn sync_status(&self) -> ::std::option::Option<&crate::types::PerObjectSyncStatus> {
         self.sync_status.as_ref()
     }
-    /// <p>The current version of the object that is either in sync or pending synchronization.</p>
+    /// <p>The current version of the object that is either in sync or pending synchronization. </p>
     pub fn update_token(&self) -> ::std::option::Option<&str> {
         self.update_token.as_deref()
     }
@@ -48,17 +48,17 @@ impl PerObjectStatusBuilder {
     pub fn get_sync_status(&self) -> &::std::option::Option<crate::types::PerObjectSyncStatus> {
         &self.sync_status
     }
-    /// <p>The current version of the object that is either in sync or pending synchronization.</p>
+    /// <p>The current version of the object that is either in sync or pending synchronization. </p>
     pub fn update_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.update_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The current version of the object that is either in sync or pending synchronization.</p>
+    /// <p>The current version of the object that is either in sync or pending synchronization. </p>
     pub fn set_update_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.update_token = input;
         self
     }
-    /// <p>The current version of the object that is either in sync or pending synchronization.</p>
+    /// <p>The current version of the object that is either in sync or pending synchronization. </p>
     pub fn get_update_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.update_token
     }

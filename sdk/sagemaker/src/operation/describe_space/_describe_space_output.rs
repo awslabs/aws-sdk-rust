@@ -24,10 +24,8 @@ pub struct DescribeSpaceOutput {
     /// <p>Returns the URL of the space. If the space is created with Amazon Web Services IAM Identity Center (Successor to Amazon Web Services Single Sign-On) authentication, users can navigate to the URL after appending the respective redirect parameter for the application type to be federated through Amazon Web Services IAM Identity Center.</p>
     /// <p>The following application types are supported:</p>
     /// <ul>
-    /// <li>
-    /// <p>Studio Classic: <code>&amp;redirect=JupyterServer</code></p></li>
-    /// <li>
-    /// <p>JupyterLab: <code>&amp;redirect=JupyterLab</code></p></li>
+    /// <li> <p>Studio Classic: <code>&amp;redirect=JupyterServer</code> </p> </li>
+    /// <li> <p>JupyterLab: <code>&amp;redirect=JupyterLab</code> </p> </li>
     /// </ul>
     pub url: ::std::option::Option<::std::string::String>,
     /// <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
@@ -78,10 +76,8 @@ impl DescribeSpaceOutput {
     /// <p>Returns the URL of the space. If the space is created with Amazon Web Services IAM Identity Center (Successor to Amazon Web Services Single Sign-On) authentication, users can navigate to the URL after appending the respective redirect parameter for the application type to be federated through Amazon Web Services IAM Identity Center.</p>
     /// <p>The following application types are supported:</p>
     /// <ul>
-    /// <li>
-    /// <p>Studio Classic: <code>&amp;redirect=JupyterServer</code></p></li>
-    /// <li>
-    /// <p>JupyterLab: <code>&amp;redirect=JupyterLab</code></p></li>
+    /// <li> <p>Studio Classic: <code>&amp;redirect=JupyterServer</code> </p> </li>
+    /// <li> <p>JupyterLab: <code>&amp;redirect=JupyterLab</code> </p> </li>
     /// </ul>
     pub fn url(&self) -> ::std::option::Option<&str> {
         self.url.as_deref()
@@ -260,10 +256,8 @@ impl DescribeSpaceOutputBuilder {
     /// <p>Returns the URL of the space. If the space is created with Amazon Web Services IAM Identity Center (Successor to Amazon Web Services Single Sign-On) authentication, users can navigate to the URL after appending the respective redirect parameter for the application type to be federated through Amazon Web Services IAM Identity Center.</p>
     /// <p>The following application types are supported:</p>
     /// <ul>
-    /// <li>
-    /// <p>Studio Classic: <code>&amp;redirect=JupyterServer</code></p></li>
-    /// <li>
-    /// <p>JupyterLab: <code>&amp;redirect=JupyterLab</code></p></li>
+    /// <li> <p>Studio Classic: <code>&amp;redirect=JupyterServer</code> </p> </li>
+    /// <li> <p>JupyterLab: <code>&amp;redirect=JupyterLab</code> </p> </li>
     /// </ul>
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
@@ -272,10 +266,8 @@ impl DescribeSpaceOutputBuilder {
     /// <p>Returns the URL of the space. If the space is created with Amazon Web Services IAM Identity Center (Successor to Amazon Web Services Single Sign-On) authentication, users can navigate to the URL after appending the respective redirect parameter for the application type to be federated through Amazon Web Services IAM Identity Center.</p>
     /// <p>The following application types are supported:</p>
     /// <ul>
-    /// <li>
-    /// <p>Studio Classic: <code>&amp;redirect=JupyterServer</code></p></li>
-    /// <li>
-    /// <p>JupyterLab: <code>&amp;redirect=JupyterLab</code></p></li>
+    /// <li> <p>Studio Classic: <code>&amp;redirect=JupyterServer</code> </p> </li>
+    /// <li> <p>JupyterLab: <code>&amp;redirect=JupyterLab</code> </p> </li>
     /// </ul>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
@@ -284,10 +276,8 @@ impl DescribeSpaceOutputBuilder {
     /// <p>Returns the URL of the space. If the space is created with Amazon Web Services IAM Identity Center (Successor to Amazon Web Services Single Sign-On) authentication, users can navigate to the URL after appending the respective redirect parameter for the application type to be federated through Amazon Web Services IAM Identity Center.</p>
     /// <p>The following application types are supported:</p>
     /// <ul>
-    /// <li>
-    /// <p>Studio Classic: <code>&amp;redirect=JupyterServer</code></p></li>
-    /// <li>
-    /// <p>JupyterLab: <code>&amp;redirect=JupyterLab</code></p></li>
+    /// <li> <p>Studio Classic: <code>&amp;redirect=JupyterServer</code> </p> </li>
+    /// <li> <p>JupyterLab: <code>&amp;redirect=JupyterLab</code> </p> </li>
     /// </ul>
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.url

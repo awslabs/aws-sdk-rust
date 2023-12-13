@@ -6,10 +6,10 @@ pub struct CreateProvisioningArtifactOutput {
     /// <p>Information about the provisioning artifact.</p>
     pub provisioning_artifact_detail: ::std::option::Option<crate::types::ProvisioningArtifactDetail>,
     /// <p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].</p>
+    /// <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format. </p>
+    /// <p> <code>LoadTemplateFromURL</code> </p>
     /// <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
-    /// <p><code>LoadTemplateFromURL</code></p>
-    /// <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
-    /// <p><code>ImportFromPhysicalId</code></p>
+    /// <p> <code>ImportFromPhysicalId</code> </p>
     /// <p>Use the physical id of the resource that contains the template; currently supports CloudFormation stack ARN.</p>
     pub info: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The status of the current request.</p>
@@ -22,10 +22,10 @@ impl CreateProvisioningArtifactOutput {
         self.provisioning_artifact_detail.as_ref()
     }
     /// <p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].</p>
+    /// <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format. </p>
+    /// <p> <code>LoadTemplateFromURL</code> </p>
     /// <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
-    /// <p><code>LoadTemplateFromURL</code></p>
-    /// <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
-    /// <p><code>ImportFromPhysicalId</code></p>
+    /// <p> <code>ImportFromPhysicalId</code> </p>
     /// <p>Use the physical id of the resource that contains the template; currently supports CloudFormation stack ARN.</p>
     pub fn info(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.info.as_ref()
@@ -76,10 +76,10 @@ impl CreateProvisioningArtifactOutputBuilder {
     /// To override the contents of this collection use [`set_info`](Self::set_info).
     ///
     /// <p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].</p>
+    /// <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format. </p>
+    /// <p> <code>LoadTemplateFromURL</code> </p>
     /// <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
-    /// <p><code>LoadTemplateFromURL</code></p>
-    /// <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
-    /// <p><code>ImportFromPhysicalId</code></p>
+    /// <p> <code>ImportFromPhysicalId</code> </p>
     /// <p>Use the physical id of the resource that contains the template; currently supports CloudFormation stack ARN.</p>
     pub fn info(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.info.unwrap_or_default();
@@ -88,20 +88,20 @@ impl CreateProvisioningArtifactOutputBuilder {
         self
     }
     /// <p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].</p>
+    /// <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format. </p>
+    /// <p> <code>LoadTemplateFromURL</code> </p>
     /// <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
-    /// <p><code>LoadTemplateFromURL</code></p>
-    /// <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
-    /// <p><code>ImportFromPhysicalId</code></p>
+    /// <p> <code>ImportFromPhysicalId</code> </p>
     /// <p>Use the physical id of the resource that contains the template; currently supports CloudFormation stack ARN.</p>
     pub fn set_info(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.info = input;
         self
     }
     /// <p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].</p>
+    /// <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format. </p>
+    /// <p> <code>LoadTemplateFromURL</code> </p>
     /// <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
-    /// <p><code>LoadTemplateFromURL</code></p>
-    /// <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
-    /// <p><code>ImportFromPhysicalId</code></p>
+    /// <p> <code>ImportFromPhysicalId</code> </p>
     /// <p>Use the physical id of the resource that contains the template; currently supports CloudFormation stack ARN.</p>
     pub fn get_info(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.info

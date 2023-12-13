@@ -7,7 +7,7 @@ pub struct StopContactStreamingInput {
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the contact. This is the identifier of the contact that is associated with the first interaction with the contact center.</p>
     pub contact_id: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of the streaming configuration enabled.</p>
+    /// <p>The identifier of the streaming configuration enabled. </p>
     pub streaming_id: ::std::option::Option<::std::string::String>,
 }
 impl StopContactStreamingInput {
@@ -19,7 +19,7 @@ impl StopContactStreamingInput {
     pub fn contact_id(&self) -> ::std::option::Option<&str> {
         self.contact_id.as_deref()
     }
-    /// <p>The identifier of the streaming configuration enabled.</p>
+    /// <p>The identifier of the streaming configuration enabled. </p>
     pub fn streaming_id(&self) -> ::std::option::Option<&str> {
         self.streaming_id.as_deref()
     }
@@ -70,18 +70,18 @@ impl StopContactStreamingInputBuilder {
     pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.contact_id
     }
-    /// <p>The identifier of the streaming configuration enabled.</p>
+    /// <p>The identifier of the streaming configuration enabled. </p>
     /// This field is required.
     pub fn streaming_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.streaming_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the streaming configuration enabled.</p>
+    /// <p>The identifier of the streaming configuration enabled. </p>
     pub fn set_streaming_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.streaming_id = input;
         self
     }
-    /// <p>The identifier of the streaming configuration enabled.</p>
+    /// <p>The identifier of the streaming configuration enabled. </p>
     pub fn get_streaming_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.streaming_id
     }

@@ -22,7 +22,7 @@ impl DeleteGroupInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteGroup`.
 ///
-/// <p>Removes a user group from Amazon QuickSight.</p>
+/// <p>Removes a user group from Amazon QuickSight. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

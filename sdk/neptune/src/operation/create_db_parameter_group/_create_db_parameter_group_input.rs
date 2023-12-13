@@ -6,13 +6,10 @@ pub struct CreateDbParameterGroupInput {
     /// <p>The name of the DB parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
-    /// <li>
-    /// <p>First character must be a letter</p></li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
-    /// </ul><note>
+    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
     pub db_parameter_group_name: ::std::option::Option<::std::string::String>,
@@ -27,13 +24,10 @@ impl CreateDbParameterGroupInput {
     /// <p>The name of the DB parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
-    /// <li>
-    /// <p>First character must be a letter</p></li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
-    /// </ul><note>
+    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
     pub fn db_parameter_group_name(&self) -> ::std::option::Option<&str> {
@@ -74,13 +68,10 @@ impl CreateDbParameterGroupInputBuilder {
     /// <p>The name of the DB parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
-    /// <li>
-    /// <p>First character must be a letter</p></li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
-    /// </ul><note>
+    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
     /// This field is required.
@@ -91,13 +82,10 @@ impl CreateDbParameterGroupInputBuilder {
     /// <p>The name of the DB parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
-    /// <li>
-    /// <p>First character must be a letter</p></li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
-    /// </ul><note>
+    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
     pub fn set_db_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -107,13 +95,10 @@ impl CreateDbParameterGroupInputBuilder {
     /// <p>The name of the DB parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
-    /// <li>
-    /// <p>First character must be a letter</p></li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
-    /// </ul><note>
+    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
     pub fn get_db_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {

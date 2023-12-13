@@ -10,12 +10,9 @@ pub struct PermissionGroupByUser {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the status of the user within a permission group.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ADDITION_IN_PROGRESS</code> – The user is currently being added to the permission group.</p></li>
-    /// <li>
-    /// <p><code>ADDITION_SUCCESS</code> – The user is successfully added to the permission group.</p></li>
-    /// <li>
-    /// <p><code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.</p></li>
+    /// <li> <p> <code>ADDITION_IN_PROGRESS</code> – The user is currently being added to the permission group.</p> </li>
+    /// <li> <p> <code>ADDITION_SUCCESS</code> – The user is successfully added to the permission group.</p> </li>
+    /// <li> <p> <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.</p> </li>
     /// </ul>
     pub membership_status: ::std::option::Option<crate::types::PermissionGroupMembershipStatus>,
 }
@@ -30,12 +27,9 @@ impl PermissionGroupByUser {
     }
     /// <p>Indicates the status of the user within a permission group.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ADDITION_IN_PROGRESS</code> – The user is currently being added to the permission group.</p></li>
-    /// <li>
-    /// <p><code>ADDITION_SUCCESS</code> – The user is successfully added to the permission group.</p></li>
-    /// <li>
-    /// <p><code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.</p></li>
+    /// <li> <p> <code>ADDITION_IN_PROGRESS</code> – The user is currently being added to the permission group.</p> </li>
+    /// <li> <p> <code>ADDITION_SUCCESS</code> – The user is successfully added to the permission group.</p> </li>
+    /// <li> <p> <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.</p> </li>
     /// </ul>
     pub fn membership_status(&self) -> ::std::option::Option<&crate::types::PermissionGroupMembershipStatus> {
         self.membership_status.as_ref()
@@ -96,12 +90,9 @@ impl PermissionGroupByUserBuilder {
     }
     /// <p>Indicates the status of the user within a permission group.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ADDITION_IN_PROGRESS</code> – The user is currently being added to the permission group.</p></li>
-    /// <li>
-    /// <p><code>ADDITION_SUCCESS</code> – The user is successfully added to the permission group.</p></li>
-    /// <li>
-    /// <p><code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.</p></li>
+    /// <li> <p> <code>ADDITION_IN_PROGRESS</code> – The user is currently being added to the permission group.</p> </li>
+    /// <li> <p> <code>ADDITION_SUCCESS</code> – The user is successfully added to the permission group.</p> </li>
+    /// <li> <p> <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.</p> </li>
     /// </ul>
     pub fn membership_status(mut self, input: crate::types::PermissionGroupMembershipStatus) -> Self {
         self.membership_status = ::std::option::Option::Some(input);
@@ -109,12 +100,9 @@ impl PermissionGroupByUserBuilder {
     }
     /// <p>Indicates the status of the user within a permission group.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ADDITION_IN_PROGRESS</code> – The user is currently being added to the permission group.</p></li>
-    /// <li>
-    /// <p><code>ADDITION_SUCCESS</code> – The user is successfully added to the permission group.</p></li>
-    /// <li>
-    /// <p><code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.</p></li>
+    /// <li> <p> <code>ADDITION_IN_PROGRESS</code> – The user is currently being added to the permission group.</p> </li>
+    /// <li> <p> <code>ADDITION_SUCCESS</code> – The user is successfully added to the permission group.</p> </li>
+    /// <li> <p> <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.</p> </li>
     /// </ul>
     pub fn set_membership_status(mut self, input: ::std::option::Option<crate::types::PermissionGroupMembershipStatus>) -> Self {
         self.membership_status = input;
@@ -122,12 +110,9 @@ impl PermissionGroupByUserBuilder {
     }
     /// <p>Indicates the status of the user within a permission group.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ADDITION_IN_PROGRESS</code> – The user is currently being added to the permission group.</p></li>
-    /// <li>
-    /// <p><code>ADDITION_SUCCESS</code> – The user is successfully added to the permission group.</p></li>
-    /// <li>
-    /// <p><code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.</p></li>
+    /// <li> <p> <code>ADDITION_IN_PROGRESS</code> – The user is currently being added to the permission group.</p> </li>
+    /// <li> <p> <code>ADDITION_SUCCESS</code> – The user is successfully added to the permission group.</p> </li>
+    /// <li> <p> <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.</p> </li>
     /// </ul>
     pub fn get_membership_status(&self) -> &::std::option::Option<crate::types::PermissionGroupMembershipStatus> {
         &self.membership_status

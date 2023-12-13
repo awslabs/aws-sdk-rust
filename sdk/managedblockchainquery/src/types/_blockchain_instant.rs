@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BlockchainInstant {
-    /// <p>The container of the <code>Timestamp</code> of the blockchain instant.</p><note>
+    /// <p>The container of the <code>Timestamp</code> of the blockchain instant.</p> <note>
     /// <p>This <code>timestamp</code> will only be recorded up to the second.</p>
     /// </note>
     pub time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl BlockchainInstant {
-    /// <p>The container of the <code>Timestamp</code> of the blockchain instant.</p><note>
+    /// <p>The container of the <code>Timestamp</code> of the blockchain instant.</p> <note>
     /// <p>This <code>timestamp</code> will only be recorded up to the second.</p>
     /// </note>
     pub fn time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -31,21 +31,21 @@ pub struct BlockchainInstantBuilder {
     pub(crate) time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl BlockchainInstantBuilder {
-    /// <p>The container of the <code>Timestamp</code> of the blockchain instant.</p><note>
+    /// <p>The container of the <code>Timestamp</code> of the blockchain instant.</p> <note>
     /// <p>This <code>timestamp</code> will only be recorded up to the second.</p>
     /// </note>
     pub fn time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The container of the <code>Timestamp</code> of the blockchain instant.</p><note>
+    /// <p>The container of the <code>Timestamp</code> of the blockchain instant.</p> <note>
     /// <p>This <code>timestamp</code> will only be recorded up to the second.</p>
     /// </note>
     pub fn set_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.time = input;
         self
     }
-    /// <p>The container of the <code>Timestamp</code> of the blockchain instant.</p><note>
+    /// <p>The container of the <code>Timestamp</code> of the blockchain instant.</p> <note>
     /// <p>This <code>timestamp</code> will only be recorded up to the second.</p>
     /// </note>
     pub fn get_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {

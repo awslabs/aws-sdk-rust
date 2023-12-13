@@ -9,7 +9,7 @@ pub struct GetAppMonitorDataInput {
     pub time_range: ::std::option::Option<crate::types::TimeRange>,
     /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify.</p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::QueryFilter>>,
-    /// <p>The maximum number of results to return in one operation.</p>
+    /// <p>The maximum number of results to return in one operation. </p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>Use the token returned by the previous operation to request the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -29,7 +29,7 @@ impl GetAppMonitorDataInput {
     pub fn filters(&self) -> &[crate::types::QueryFilter] {
         self.filters.as_deref().unwrap_or_default()
     }
-    /// <p>The maximum number of results to return in one operation.</p>
+    /// <p>The maximum number of results to return in one operation. </p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -106,17 +106,17 @@ impl GetAppMonitorDataInputBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QueryFilter>> {
         &self.filters
     }
-    /// <p>The maximum number of results to return in one operation.</p>
+    /// <p>The maximum number of results to return in one operation. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of results to return in one operation.</p>
+    /// <p>The maximum number of results to return in one operation. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of results to return in one operation.</p>
+    /// <p>The maximum number of results to return in one operation. </p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

@@ -10,12 +10,9 @@ pub struct DeploymentEvent {
     pub triggered_by: ::std::option::Option<crate::types::TriggeredBy>,
     /// <p>A description of the deployment event. Descriptions include, but are not limited to, the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>The Amazon Web Services account or the Amazon CloudWatch alarm ARN that initiated a rollback.</p></li>
-    /// <li>
-    /// <p>The percentage of hosts that received the deployment.</p></li>
-    /// <li>
-    /// <p>A recommendation to attempt a new deployment (in the case of an internal error).</p></li>
+    /// <li> <p>The Amazon Web Services account or the Amazon CloudWatch alarm ARN that initiated a rollback.</p> </li>
+    /// <li> <p>The percentage of hosts that received the deployment.</p> </li>
+    /// <li> <p>A recommendation to attempt a new deployment (in the case of an internal error).</p> </li>
     /// </ul>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The list of extensions that were invoked as part of the deployment.</p>
@@ -34,12 +31,9 @@ impl DeploymentEvent {
     }
     /// <p>A description of the deployment event. Descriptions include, but are not limited to, the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>The Amazon Web Services account or the Amazon CloudWatch alarm ARN that initiated a rollback.</p></li>
-    /// <li>
-    /// <p>The percentage of hosts that received the deployment.</p></li>
-    /// <li>
-    /// <p>A recommendation to attempt a new deployment (in the case of an internal error).</p></li>
+    /// <li> <p>The Amazon Web Services account or the Amazon CloudWatch alarm ARN that initiated a rollback.</p> </li>
+    /// <li> <p>The percentage of hosts that received the deployment.</p> </li>
+    /// <li> <p>A recommendation to attempt a new deployment (in the case of an internal error).</p> </li>
     /// </ul>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
@@ -103,12 +97,9 @@ impl DeploymentEventBuilder {
     }
     /// <p>A description of the deployment event. Descriptions include, but are not limited to, the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>The Amazon Web Services account or the Amazon CloudWatch alarm ARN that initiated a rollback.</p></li>
-    /// <li>
-    /// <p>The percentage of hosts that received the deployment.</p></li>
-    /// <li>
-    /// <p>A recommendation to attempt a new deployment (in the case of an internal error).</p></li>
+    /// <li> <p>The Amazon Web Services account or the Amazon CloudWatch alarm ARN that initiated a rollback.</p> </li>
+    /// <li> <p>The percentage of hosts that received the deployment.</p> </li>
+    /// <li> <p>A recommendation to attempt a new deployment (in the case of an internal error).</p> </li>
     /// </ul>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -116,12 +107,9 @@ impl DeploymentEventBuilder {
     }
     /// <p>A description of the deployment event. Descriptions include, but are not limited to, the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>The Amazon Web Services account or the Amazon CloudWatch alarm ARN that initiated a rollback.</p></li>
-    /// <li>
-    /// <p>The percentage of hosts that received the deployment.</p></li>
-    /// <li>
-    /// <p>A recommendation to attempt a new deployment (in the case of an internal error).</p></li>
+    /// <li> <p>The Amazon Web Services account or the Amazon CloudWatch alarm ARN that initiated a rollback.</p> </li>
+    /// <li> <p>The percentage of hosts that received the deployment.</p> </li>
+    /// <li> <p>A recommendation to attempt a new deployment (in the case of an internal error).</p> </li>
     /// </ul>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
@@ -129,12 +117,9 @@ impl DeploymentEventBuilder {
     }
     /// <p>A description of the deployment event. Descriptions include, but are not limited to, the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>The Amazon Web Services account or the Amazon CloudWatch alarm ARN that initiated a rollback.</p></li>
-    /// <li>
-    /// <p>The percentage of hosts that received the deployment.</p></li>
-    /// <li>
-    /// <p>A recommendation to attempt a new deployment (in the case of an internal error).</p></li>
+    /// <li> <p>The Amazon Web Services account or the Amazon CloudWatch alarm ARN that initiated a rollback.</p> </li>
+    /// <li> <p>The percentage of hosts that received the deployment.</p> </li>
+    /// <li> <p>A recommendation to attempt a new deployment (in the case of an internal error).</p> </li>
     /// </ul>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description

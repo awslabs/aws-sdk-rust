@@ -4,37 +4,29 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateClusterInput {
     /// <p>The name of the new Elastic DocumentDB cluster. This parameter is stored as a lowercase string.</p>
-    /// <p><i>Constraints</i>:</p>
+    /// <p> <i>Constraints</i>:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li>
-    /// <p>The first character must be a letter.</p></li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>The first character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
-    /// <p><i>Example</i>: <code>my-cluster</code></p>
+    /// <p> <i>Example</i>: <code>my-cluster</code> </p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The authentication type for the Elastic DocumentDB cluster.</p>
     pub auth_type: ::std::option::Option<crate::types::Auth>,
     /// <p>The name of the Elastic DocumentDB cluster administrator.</p>
-    /// <p><i>Constraints</i>:</p>
+    /// <p> <i>Constraints</i>:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be from 1 to 63 letters or numbers.</p></li>
-    /// <li>
-    /// <p>The first character must be a letter.</p></li>
-    /// <li>
-    /// <p>Cannot be a reserved word.</p></li>
+    /// <li> <p>Must be from 1 to 63 letters or numbers.</p> </li>
+    /// <li> <p>The first character must be a letter.</p> </li>
+    /// <li> <p>Cannot be a reserved word.</p> </li>
     /// </ul>
     pub admin_user_name: ::std::option::Option<::std::string::String>,
     /// <p>The password for the Elastic DocumentDB cluster administrator and can contain any printable ASCII characters.</p>
-    /// <p><i>Constraints</i>:</p>
+    /// <p> <i>Constraints</i>:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must contain from 8 to 100 characters.</p></li>
-    /// <li>
-    /// <p>Cannot contain a forward slash (/), double quote ("), or the "at" symbol (@).</p></li>
+    /// <li> <p>Must contain from 8 to 100 characters.</p> </li>
+    /// <li> <p>Cannot contain a forward slash (/), double quote ("), or the "at" symbol (@).</p> </li>
     /// </ul>
     pub admin_user_password: ::std::option::Option<::std::string::String>,
     /// <p>The capacity of each shard in the new Elastic DocumentDB cluster.</p>
@@ -52,26 +44,23 @@ pub struct CreateClusterInput {
     /// <p>The client token for the Elastic DocumentDB cluster.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
-    /// <p><i>Format</i>: <code>ddd:hh24:mi-ddd:hh24:mi</code></p>
-    /// <p><i>Default</i>: a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>
-    /// <p><i>Valid days</i>: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
-    /// <p><i>Constraints</i>: Minimum 30-minute window.</p>
+    /// <p> <i>Format</i>: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
+    /// <p> <i>Default</i>: a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>
+    /// <p> <i>Valid days</i>: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
+    /// <p> <i>Constraints</i>: Minimum 30-minute window.</p>
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>The tags to be assigned to the new Elastic DocumentDB cluster.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateClusterInput {
     /// <p>The name of the new Elastic DocumentDB cluster. This parameter is stored as a lowercase string.</p>
-    /// <p><i>Constraints</i>:</p>
+    /// <p> <i>Constraints</i>:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li>
-    /// <p>The first character must be a letter.</p></li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>The first character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
-    /// <p><i>Example</i>: <code>my-cluster</code></p>
+    /// <p> <i>Example</i>: <code>my-cluster</code> </p>
     pub fn cluster_name(&self) -> ::std::option::Option<&str> {
         self.cluster_name.as_deref()
     }
@@ -80,25 +69,20 @@ impl CreateClusterInput {
         self.auth_type.as_ref()
     }
     /// <p>The name of the Elastic DocumentDB cluster administrator.</p>
-    /// <p><i>Constraints</i>:</p>
+    /// <p> <i>Constraints</i>:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be from 1 to 63 letters or numbers.</p></li>
-    /// <li>
-    /// <p>The first character must be a letter.</p></li>
-    /// <li>
-    /// <p>Cannot be a reserved word.</p></li>
+    /// <li> <p>Must be from 1 to 63 letters or numbers.</p> </li>
+    /// <li> <p>The first character must be a letter.</p> </li>
+    /// <li> <p>Cannot be a reserved word.</p> </li>
     /// </ul>
     pub fn admin_user_name(&self) -> ::std::option::Option<&str> {
         self.admin_user_name.as_deref()
     }
     /// <p>The password for the Elastic DocumentDB cluster administrator and can contain any printable ASCII characters.</p>
-    /// <p><i>Constraints</i>:</p>
+    /// <p> <i>Constraints</i>:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must contain from 8 to 100 characters.</p></li>
-    /// <li>
-    /// <p>Cannot contain a forward slash (/), double quote ("), or the "at" symbol (@).</p></li>
+    /// <li> <p>Must contain from 8 to 100 characters.</p> </li>
+    /// <li> <p>Cannot contain a forward slash (/), double quote ("), or the "at" symbol (@).</p> </li>
     /// </ul>
     pub fn admin_user_password(&self) -> ::std::option::Option<&str> {
         self.admin_user_password.as_deref()
@@ -134,10 +118,10 @@ impl CreateClusterInput {
         self.client_token.as_deref()
     }
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
-    /// <p><i>Format</i>: <code>ddd:hh24:mi-ddd:hh24:mi</code></p>
-    /// <p><i>Default</i>: a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>
-    /// <p><i>Valid days</i>: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
-    /// <p><i>Constraints</i>: Minimum 30-minute window.</p>
+    /// <p> <i>Format</i>: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
+    /// <p> <i>Default</i>: a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>
+    /// <p> <i>Valid days</i>: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
+    /// <p> <i>Constraints</i>: Minimum 30-minute window.</p>
     pub fn preferred_maintenance_window(&self) -> ::std::option::Option<&str> {
         self.preferred_maintenance_window.as_deref()
     }
@@ -190,47 +174,38 @@ pub struct CreateClusterInputBuilder {
 }
 impl CreateClusterInputBuilder {
     /// <p>The name of the new Elastic DocumentDB cluster. This parameter is stored as a lowercase string.</p>
-    /// <p><i>Constraints</i>:</p>
+    /// <p> <i>Constraints</i>:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li>
-    /// <p>The first character must be a letter.</p></li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>The first character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
-    /// <p><i>Example</i>: <code>my-cluster</code></p>
+    /// <p> <i>Example</i>: <code>my-cluster</code> </p>
     /// This field is required.
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the new Elastic DocumentDB cluster. This parameter is stored as a lowercase string.</p>
-    /// <p><i>Constraints</i>:</p>
+    /// <p> <i>Constraints</i>:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li>
-    /// <p>The first character must be a letter.</p></li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>The first character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
-    /// <p><i>Example</i>: <code>my-cluster</code></p>
+    /// <p> <i>Example</i>: <code>my-cluster</code> </p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_name = input;
         self
     }
     /// <p>The name of the new Elastic DocumentDB cluster. This parameter is stored as a lowercase string.</p>
-    /// <p><i>Constraints</i>:</p>
+    /// <p> <i>Constraints</i>:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li>
-    /// <p>The first character must be a letter.</p></li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>The first character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
-    /// <p><i>Example</i>: <code>my-cluster</code></p>
+    /// <p> <i>Example</i>: <code>my-cluster</code> </p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_name
     }
@@ -250,14 +225,11 @@ impl CreateClusterInputBuilder {
         &self.auth_type
     }
     /// <p>The name of the Elastic DocumentDB cluster administrator.</p>
-    /// <p><i>Constraints</i>:</p>
+    /// <p> <i>Constraints</i>:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be from 1 to 63 letters or numbers.</p></li>
-    /// <li>
-    /// <p>The first character must be a letter.</p></li>
-    /// <li>
-    /// <p>Cannot be a reserved word.</p></li>
+    /// <li> <p>Must be from 1 to 63 letters or numbers.</p> </li>
+    /// <li> <p>The first character must be a letter.</p> </li>
+    /// <li> <p>Cannot be a reserved word.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn admin_user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -265,39 +237,31 @@ impl CreateClusterInputBuilder {
         self
     }
     /// <p>The name of the Elastic DocumentDB cluster administrator.</p>
-    /// <p><i>Constraints</i>:</p>
+    /// <p> <i>Constraints</i>:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be from 1 to 63 letters or numbers.</p></li>
-    /// <li>
-    /// <p>The first character must be a letter.</p></li>
-    /// <li>
-    /// <p>Cannot be a reserved word.</p></li>
+    /// <li> <p>Must be from 1 to 63 letters or numbers.</p> </li>
+    /// <li> <p>The first character must be a letter.</p> </li>
+    /// <li> <p>Cannot be a reserved word.</p> </li>
     /// </ul>
     pub fn set_admin_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.admin_user_name = input;
         self
     }
     /// <p>The name of the Elastic DocumentDB cluster administrator.</p>
-    /// <p><i>Constraints</i>:</p>
+    /// <p> <i>Constraints</i>:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be from 1 to 63 letters or numbers.</p></li>
-    /// <li>
-    /// <p>The first character must be a letter.</p></li>
-    /// <li>
-    /// <p>Cannot be a reserved word.</p></li>
+    /// <li> <p>Must be from 1 to 63 letters or numbers.</p> </li>
+    /// <li> <p>The first character must be a letter.</p> </li>
+    /// <li> <p>Cannot be a reserved word.</p> </li>
     /// </ul>
     pub fn get_admin_user_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.admin_user_name
     }
     /// <p>The password for the Elastic DocumentDB cluster administrator and can contain any printable ASCII characters.</p>
-    /// <p><i>Constraints</i>:</p>
+    /// <p> <i>Constraints</i>:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must contain from 8 to 100 characters.</p></li>
-    /// <li>
-    /// <p>Cannot contain a forward slash (/), double quote ("), or the "at" symbol (@).</p></li>
+    /// <li> <p>Must contain from 8 to 100 characters.</p> </li>
+    /// <li> <p>Cannot contain a forward slash (/), double quote ("), or the "at" symbol (@).</p> </li>
     /// </ul>
     /// This field is required.
     pub fn admin_user_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -305,24 +269,20 @@ impl CreateClusterInputBuilder {
         self
     }
     /// <p>The password for the Elastic DocumentDB cluster administrator and can contain any printable ASCII characters.</p>
-    /// <p><i>Constraints</i>:</p>
+    /// <p> <i>Constraints</i>:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must contain from 8 to 100 characters.</p></li>
-    /// <li>
-    /// <p>Cannot contain a forward slash (/), double quote ("), or the "at" symbol (@).</p></li>
+    /// <li> <p>Must contain from 8 to 100 characters.</p> </li>
+    /// <li> <p>Cannot contain a forward slash (/), double quote ("), or the "at" symbol (@).</p> </li>
     /// </ul>
     pub fn set_admin_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.admin_user_password = input;
         self
     }
     /// <p>The password for the Elastic DocumentDB cluster administrator and can contain any printable ASCII characters.</p>
-    /// <p><i>Constraints</i>:</p>
+    /// <p> <i>Constraints</i>:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must contain from 8 to 100 characters.</p></li>
-    /// <li>
-    /// <p>Cannot contain a forward slash (/), double quote ("), or the "at" symbol (@).</p></li>
+    /// <li> <p>Must contain from 8 to 100 characters.</p> </li>
+    /// <li> <p>Cannot contain a forward slash (/), double quote ("), or the "at" symbol (@).</p> </li>
     /// </ul>
     pub fn get_admin_user_password(&self) -> &::std::option::Option<::std::string::String> {
         &self.admin_user_password
@@ -432,28 +392,28 @@ impl CreateClusterInputBuilder {
         &self.client_token
     }
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
-    /// <p><i>Format</i>: <code>ddd:hh24:mi-ddd:hh24:mi</code></p>
-    /// <p><i>Default</i>: a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>
-    /// <p><i>Valid days</i>: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
-    /// <p><i>Constraints</i>: Minimum 30-minute window.</p>
+    /// <p> <i>Format</i>: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
+    /// <p> <i>Default</i>: a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>
+    /// <p> <i>Valid days</i>: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
+    /// <p> <i>Constraints</i>: Minimum 30-minute window.</p>
     pub fn preferred_maintenance_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_maintenance_window = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
-    /// <p><i>Format</i>: <code>ddd:hh24:mi-ddd:hh24:mi</code></p>
-    /// <p><i>Default</i>: a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>
-    /// <p><i>Valid days</i>: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
-    /// <p><i>Constraints</i>: Minimum 30-minute window.</p>
+    /// <p> <i>Format</i>: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
+    /// <p> <i>Default</i>: a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>
+    /// <p> <i>Valid days</i>: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
+    /// <p> <i>Constraints</i>: Minimum 30-minute window.</p>
     pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_maintenance_window = input;
         self
     }
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
-    /// <p><i>Format</i>: <code>ddd:hh24:mi-ddd:hh24:mi</code></p>
-    /// <p><i>Default</i>: a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>
-    /// <p><i>Valid days</i>: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
-    /// <p><i>Constraints</i>: Minimum 30-minute window.</p>
+    /// <p> <i>Format</i>: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
+    /// <p> <i>Default</i>: a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>
+    /// <p> <i>Valid days</i>: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
+    /// <p> <i>Constraints</i>: Minimum 30-minute window.</p>
     pub fn get_preferred_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
         &self.preferred_maintenance_window
     }

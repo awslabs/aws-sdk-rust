@@ -250,11 +250,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteResourc
 pub enum DeleteResourcePolicyError {
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
     OperationNotPermittedException(crate::types::error::OperationNotPermittedException),
-    /// <p>This exception is thrown when the provided resource does not exist, or the ARN format of the resource is not valid. The following is the valid format for a resource ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/MyChannel</code>.</p>
+    /// <p> This exception is thrown when the provided resource does not exist, or the ARN format of the resource is not valid. The following is the valid format for a resource ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/MyChannel</code>. </p>
     ResourceArnNotValidException(crate::types::error::ResourceArnNotValidException),
     /// <p>This exception is thrown when the specified resource is not found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the specified resource policy is not found.</p>
+    /// <p> This exception is thrown when the specified resource policy is not found. </p>
     ResourcePolicyNotFoundException(crate::types::error::ResourcePolicyNotFoundException),
     /// <p>This exception is thrown when the specified resource type is not supported by CloudTrail.</p>
     ResourceTypeNotSupportedException(crate::types::error::ResourceTypeNotSupportedException),

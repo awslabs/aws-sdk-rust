@@ -23,17 +23,14 @@ impl GeneratePinDataInputBuilder {
 /// Fluent builder constructing a request to `GeneratePinData`.
 ///
 /// <p>Generates pin-related data such as PIN, PIN Verification Value (PVV), PIN Block, and PIN Offset during new card issuance or reissuance. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/generate-pin-data.html">Generate PIN data</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.</p>
-/// <p>PIN data is never transmitted in clear to or from Amazon Web Services Payment Cryptography. This operation generates PIN, PVV, or PIN Offset and then encrypts it using Pin Encryption Key (PEK) to create an <code>EncryptedPinBlock</code> for transmission from Amazon Web Services Payment Cryptography. This operation uses a separate Pin Verification Key (PVK) for VISA PVV generation.</p>
+/// <p>PIN data is never transmitted in clear to or from Amazon Web Services Payment Cryptography. This operation generates PIN, PVV, or PIN Offset and then encrypts it using Pin Encryption Key (PEK) to create an <code>EncryptedPinBlock</code> for transmission from Amazon Web Services Payment Cryptography. This operation uses a separate Pin Verification Key (PVK) for VISA PVV generation. </p>
 /// <p>For information about valid keys for this operation, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-validattributes.html">Understanding key attributes</a> and <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/crypto-ops-validkeys-ops.html">Key types for specific data operations</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.</p>
-/// <p><b>Cross-account use</b>: This operation can't be used across different Amazon Web Services accounts.</p>
-/// <p><b>Related operations:</b></p>
+/// <p> <b>Cross-account use</b>: This operation can't be used across different Amazon Web Services accounts.</p>
+/// <p> <b>Related operations:</b> </p>
 /// <ul>
-/// <li>
-/// <p><code>GenerateCardValidationData</code></p></li>
-/// <li>
-/// <p><code>TranslatePinData</code></p></li>
-/// <li>
-/// <p><code>VerifyPinData</code></p></li>
+/// <li> <p> <code>GenerateCardValidationData</code> </p> </li>
+/// <li> <p> <code>TranslatePinData</code> </p> </li>
+/// <li> <p> <code>VerifyPinData</code> </p> </li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GeneratePinDataFluentBuilder {

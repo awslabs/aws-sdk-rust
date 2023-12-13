@@ -22,7 +22,7 @@ impl GetDomainAssociationInputBuilder {
 }
 /// Fluent builder constructing a request to `GetDomainAssociation`.
 ///
-/// <p>Returns the domain information for an Amplify app.</p>
+/// <p> Returns the domain information for an Amplify app. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDomainAssociationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl GetDomainAssociationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique id for an Amplify app.</p>
+    /// <p> The unique id for an Amplify app. </p>
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_id(input.into());
         self
     }
-    /// <p>The unique id for an Amplify app.</p>
+    /// <p> The unique id for an Amplify app. </p>
     pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_id(input);
         self
     }
-    /// <p>The unique id for an Amplify app.</p>
+    /// <p> The unique id for an Amplify app. </p>
     pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_app_id()
     }
-    /// <p>The name of the domain.</p>
+    /// <p> The name of the domain. </p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_name(input.into());
         self
     }
-    /// <p>The name of the domain.</p>
+    /// <p> The name of the domain. </p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_name(input);
         self
     }
-    /// <p>The name of the domain.</p>
+    /// <p> The name of the domain. </p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_name()
     }

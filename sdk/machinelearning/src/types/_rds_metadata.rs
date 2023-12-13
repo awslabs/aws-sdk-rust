@@ -8,7 +8,7 @@ pub struct RdsMetadata {
     pub database: ::std::option::Option<crate::types::RdsDatabase>,
     /// <p>The username to be used by Amazon ML to connect to database on an Amazon RDS instance. The username should have sufficient permissions to execute an <code>RDSSelectSqlQuery</code> query.</p>
     pub database_user_name: ::std::option::Option<::std::string::String>,
-    /// <p>The SQL query that is supplied during <code>CreateDataSourceFromRDS</code>. Returns only if <code>Verbose</code> is true in <code>GetDataSourceInput</code>.</p>
+    /// <p>The SQL query that is supplied during <code>CreateDataSourceFromRDS</code>. Returns only if <code>Verbose</code> is true in <code>GetDataSourceInput</code>. </p>
     pub select_sql_query: ::std::option::Option<::std::string::String>,
     /// <p>The role (DataPipelineDefaultResourceRole) assumed by an Amazon EC2 instance to carry out the copy task from Amazon RDS to Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p>
     pub resource_role: ::std::option::Option<::std::string::String>,
@@ -26,7 +26,7 @@ impl RdsMetadata {
     pub fn database_user_name(&self) -> ::std::option::Option<&str> {
         self.database_user_name.as_deref()
     }
-    /// <p>The SQL query that is supplied during <code>CreateDataSourceFromRDS</code>. Returns only if <code>Verbose</code> is true in <code>GetDataSourceInput</code>.</p>
+    /// <p>The SQL query that is supplied during <code>CreateDataSourceFromRDS</code>. Returns only if <code>Verbose</code> is true in <code>GetDataSourceInput</code>. </p>
     pub fn select_sql_query(&self) -> ::std::option::Option<&str> {
         self.select_sql_query.as_deref()
     }
@@ -90,17 +90,17 @@ impl RdsMetadataBuilder {
     pub fn get_database_user_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.database_user_name
     }
-    /// <p>The SQL query that is supplied during <code>CreateDataSourceFromRDS</code>. Returns only if <code>Verbose</code> is true in <code>GetDataSourceInput</code>.</p>
+    /// <p>The SQL query that is supplied during <code>CreateDataSourceFromRDS</code>. Returns only if <code>Verbose</code> is true in <code>GetDataSourceInput</code>. </p>
     pub fn select_sql_query(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.select_sql_query = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The SQL query that is supplied during <code>CreateDataSourceFromRDS</code>. Returns only if <code>Verbose</code> is true in <code>GetDataSourceInput</code>.</p>
+    /// <p>The SQL query that is supplied during <code>CreateDataSourceFromRDS</code>. Returns only if <code>Verbose</code> is true in <code>GetDataSourceInput</code>. </p>
     pub fn set_select_sql_query(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.select_sql_query = input;
         self
     }
-    /// <p>The SQL query that is supplied during <code>CreateDataSourceFromRDS</code>. Returns only if <code>Verbose</code> is true in <code>GetDataSourceInput</code>.</p>
+    /// <p>The SQL query that is supplied during <code>CreateDataSourceFromRDS</code>. Returns only if <code>Verbose</code> is true in <code>GetDataSourceInput</code>. </p>
     pub fn get_select_sql_query(&self) -> &::std::option::Option<::std::string::String> {
         &self.select_sql_query
     }

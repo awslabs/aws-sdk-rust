@@ -3,19 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateStateMachineInput {
-    /// <p>The name of the state machine.</p>
+    /// <p>The name of the state machine. </p>
     /// <p>A name must <i>not</i> contain:</p>
     /// <ul>
-    /// <li>
-    /// <p>white space</p></li>
-    /// <li>
-    /// <p>brackets <code>&lt; &gt; { } [ ]</code></p></li>
-    /// <li>
-    /// <p>wildcard characters <code>? *</code></p></li>
-    /// <li>
-    /// <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code></p></li>
-    /// <li>
-    /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p></li>
+    /// <li> <p>white space</p> </li>
+    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
+    /// <li> <p>wildcard characters <code>? *</code> </p> </li>
+    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
+    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -25,7 +20,7 @@ pub struct CreateStateMachineInput {
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Determines whether a Standard or Express state machine is created. The default is <code>STANDARD</code>. You cannot update the <code>type</code> of a state machine once it has been created.</p>
     pub r#type: ::std::option::Option<crate::types::StateMachineType>,
-    /// <p>Defines what execution history events are logged and where they are logged.</p><note>
+    /// <p>Defines what execution history events are logged and where they are logged.</p> <note>
     /// <p>By default, the <code>level</code> is set to <code>OFF</code>. For more information see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log Levels</a> in the Step Functions User Guide.</p>
     /// </note>
     pub logging_configuration: ::std::option::Option<crate::types::LoggingConfiguration>,
@@ -41,19 +36,14 @@ pub struct CreateStateMachineInput {
     pub version_description: ::std::option::Option<::std::string::String>,
 }
 impl CreateStateMachineInput {
-    /// <p>The name of the state machine.</p>
+    /// <p>The name of the state machine. </p>
     /// <p>A name must <i>not</i> contain:</p>
     /// <ul>
-    /// <li>
-    /// <p>white space</p></li>
-    /// <li>
-    /// <p>brackets <code>&lt; &gt; { } [ ]</code></p></li>
-    /// <li>
-    /// <p>wildcard characters <code>? *</code></p></li>
-    /// <li>
-    /// <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code></p></li>
-    /// <li>
-    /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p></li>
+    /// <li> <p>white space</p> </li>
+    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
+    /// <li> <p>wildcard characters <code>? *</code> </p> </li>
+    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
+    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -71,7 +61,7 @@ impl CreateStateMachineInput {
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::StateMachineType> {
         self.r#type.as_ref()
     }
-    /// <p>Defines what execution history events are logged and where they are logged.</p><note>
+    /// <p>Defines what execution history events are logged and where they are logged.</p> <note>
     /// <p>By default, the <code>level</code> is set to <code>OFF</code>. For more information see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log Levels</a> in the Step Functions User Guide.</p>
     /// </note>
     pub fn logging_configuration(&self) -> ::std::option::Option<&crate::types::LoggingConfiguration> {
@@ -135,19 +125,14 @@ pub struct CreateStateMachineInputBuilder {
     pub(crate) version_description: ::std::option::Option<::std::string::String>,
 }
 impl CreateStateMachineInputBuilder {
-    /// <p>The name of the state machine.</p>
+    /// <p>The name of the state machine. </p>
     /// <p>A name must <i>not</i> contain:</p>
     /// <ul>
-    /// <li>
-    /// <p>white space</p></li>
-    /// <li>
-    /// <p>brackets <code>&lt; &gt; { } [ ]</code></p></li>
-    /// <li>
-    /// <p>wildcard characters <code>? *</code></p></li>
-    /// <li>
-    /// <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code></p></li>
-    /// <li>
-    /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p></li>
+    /// <li> <p>white space</p> </li>
+    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
+    /// <li> <p>wildcard characters <code>? *</code> </p> </li>
+    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
+    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     /// This field is required.
@@ -155,38 +140,28 @@ impl CreateStateMachineInputBuilder {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the state machine.</p>
+    /// <p>The name of the state machine. </p>
     /// <p>A name must <i>not</i> contain:</p>
     /// <ul>
-    /// <li>
-    /// <p>white space</p></li>
-    /// <li>
-    /// <p>brackets <code>&lt; &gt; { } [ ]</code></p></li>
-    /// <li>
-    /// <p>wildcard characters <code>? *</code></p></li>
-    /// <li>
-    /// <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code></p></li>
-    /// <li>
-    /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p></li>
+    /// <li> <p>white space</p> </li>
+    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
+    /// <li> <p>wildcard characters <code>? *</code> </p> </li>
+    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
+    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the state machine.</p>
+    /// <p>The name of the state machine. </p>
     /// <p>A name must <i>not</i> contain:</p>
     /// <ul>
-    /// <li>
-    /// <p>white space</p></li>
-    /// <li>
-    /// <p>brackets <code>&lt; &gt; { } [ ]</code></p></li>
-    /// <li>
-    /// <p>wildcard characters <code>? *</code></p></li>
-    /// <li>
-    /// <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code></p></li>
-    /// <li>
-    /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p></li>
+    /// <li> <p>white space</p> </li>
+    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
+    /// <li> <p>wildcard characters <code>? *</code> </p> </li>
+    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
+    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -236,21 +211,21 @@ impl CreateStateMachineInputBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::StateMachineType> {
         &self.r#type
     }
-    /// <p>Defines what execution history events are logged and where they are logged.</p><note>
+    /// <p>Defines what execution history events are logged and where they are logged.</p> <note>
     /// <p>By default, the <code>level</code> is set to <code>OFF</code>. For more information see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log Levels</a> in the Step Functions User Guide.</p>
     /// </note>
     pub fn logging_configuration(mut self, input: crate::types::LoggingConfiguration) -> Self {
         self.logging_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Defines what execution history events are logged and where they are logged.</p><note>
+    /// <p>Defines what execution history events are logged and where they are logged.</p> <note>
     /// <p>By default, the <code>level</code> is set to <code>OFF</code>. For more information see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log Levels</a> in the Step Functions User Guide.</p>
     /// </note>
     pub fn set_logging_configuration(mut self, input: ::std::option::Option<crate::types::LoggingConfiguration>) -> Self {
         self.logging_configuration = input;
         self
     }
-    /// <p>Defines what execution history events are logged and where they are logged.</p><note>
+    /// <p>Defines what execution history events are logged and where they are logged.</p> <note>
     /// <p>By default, the <code>level</code> is set to <code>OFF</code>. For more information see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log Levels</a> in the Step Functions User Guide.</p>
     /// </note>
     pub fn get_logging_configuration(&self) -> &::std::option::Option<crate::types::LoggingConfiguration> {

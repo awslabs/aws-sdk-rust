@@ -18,39 +18,29 @@ pub struct GetCommandInvocationOutput {
     /// <p>The error level response code for the plugin script. If the response code is <code>-1</code>, then the command hasn't started running on the managed node, or it wasn't received by the node.</p>
     pub response_code: i32,
     /// <p>The date and time the plugin started running. Date and time are written in ISO 8601 format. For example, June 7, 2017 is represented as 2017-06-7. The following sample Amazon Web Services CLI command uses the <code>InvokedBefore</code> filter.</p>
-    /// <p><code>aws ssm list-commands --filters key=InvokedBefore,value=2017-06-07T00:00:00Z</code></p>
+    /// <p> <code>aws ssm list-commands --filters key=InvokedBefore,value=2017-06-07T00:00:00Z</code> </p>
     /// <p>If the plugin hasn't started to run, the string is empty.</p>
     pub execution_start_date_time: ::std::option::Option<::std::string::String>,
     /// <p>Duration since <code>ExecutionStartDateTime</code>.</p>
     pub execution_elapsed_time: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the plugin finished running. Date and time are written in ISO 8601 format. For example, June 7, 2017 is represented as 2017-06-7. The following sample Amazon Web Services CLI command uses the <code>InvokedAfter</code> filter.</p>
-    /// <p><code>aws ssm list-commands --filters key=InvokedAfter,value=2017-06-07T00:00:00Z</code></p>
+    /// <p> <code>aws ssm list-commands --filters key=InvokedAfter,value=2017-06-07T00:00:00Z</code> </p>
     /// <p>If the plugin hasn't started to run, the string is empty.</p>
     pub execution_end_date_time: ::std::option::Option<::std::string::String>,
     /// <p>The status of this invocation plugin. This status can be different than <code>StatusDetails</code>.</p>
     pub status: ::std::option::Option<crate::types::CommandInvocationStatus>,
     /// <p>A detailed status of the command execution for an invocation. <code>StatusDetails</code> includes more information than <code>Status</code> because it includes states resulting from error and concurrency control parameters. <code>StatusDetails</code> can show different results than <code>Status</code>. For more information about these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. <code>StatusDetails</code> can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>Pending: The command hasn't been sent to the managed node.</p></li>
-    /// <li>
-    /// <p>In Progress: The command has been sent to the managed node but hasn't reached a terminal state.</p></li>
-    /// <li>
-    /// <p>Delayed: The system attempted to send the command to the target, but the target wasn't available. The managed node might not be available because of network issues, because the node was stopped, or for similar reasons. The system will try to send the command again.</p></li>
-    /// <li>
-    /// <p>Success: The command or plugin ran successfully. This is a terminal state.</p></li>
-    /// <li>
-    /// <p>Delivery Timed Out: The command wasn't delivered to the managed node before the delivery timeout expired. Delivery timeouts don't count against the parent command's <code>MaxErrors</code> limit, but they do contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p></li>
-    /// <li>
-    /// <p>Execution Timed Out: The command started to run on the managed node, but the execution wasn't complete before the timeout expired. Execution timeouts count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p></li>
-    /// <li>
-    /// <p>Failed: The command wasn't run successfully on the managed node. For a plugin, this indicates that the result code wasn't zero. For a command invocation, this indicates that the result code for one or more plugins wasn't zero. Invocation failures count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p></li>
-    /// <li>
-    /// <p>Cancelled: The command was terminated before it was completed. This is a terminal state.</p></li>
-    /// <li>
-    /// <p>Undeliverable: The command can't be delivered to the managed node. The node might not exist or might not be responding. Undeliverable invocations don't count against the parent command's <code>MaxErrors</code> limit and don't contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p></li>
-    /// <li>
-    /// <p>Terminated: The parent command exceeded its <code>MaxErrors</code> limit and subsequent command invocations were canceled by the system. This is a terminal state.</p></li>
+    /// <li> <p>Pending: The command hasn't been sent to the managed node.</p> </li>
+    /// <li> <p>In Progress: The command has been sent to the managed node but hasn't reached a terminal state.</p> </li>
+    /// <li> <p>Delayed: The system attempted to send the command to the target, but the target wasn't available. The managed node might not be available because of network issues, because the node was stopped, or for similar reasons. The system will try to send the command again.</p> </li>
+    /// <li> <p>Success: The command or plugin ran successfully. This is a terminal state.</p> </li>
+    /// <li> <p>Delivery Timed Out: The command wasn't delivered to the managed node before the delivery timeout expired. Delivery timeouts don't count against the parent command's <code>MaxErrors</code> limit, but they do contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li>
+    /// <li> <p>Execution Timed Out: The command started to run on the managed node, but the execution wasn't complete before the timeout expired. Execution timeouts count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p> </li>
+    /// <li> <p>Failed: The command wasn't run successfully on the managed node. For a plugin, this indicates that the result code wasn't zero. For a command invocation, this indicates that the result code for one or more plugins wasn't zero. Invocation failures count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p> </li>
+    /// <li> <p>Cancelled: The command was terminated before it was completed. This is a terminal state.</p> </li>
+    /// <li> <p>Undeliverable: The command can't be delivered to the managed node. The node might not exist or might not be responding. Undeliverable invocations don't count against the parent command's <code>MaxErrors</code> limit and don't contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li>
+    /// <li> <p>Terminated: The parent command exceeded its <code>MaxErrors</code> limit and subsequent command invocations were canceled by the system. This is a terminal state.</p> </li>
     /// </ul>
     pub status_details: ::std::option::Option<::std::string::String>,
     /// <p>The first 24,000 characters written by the plugin to <code>stdout</code>. If the command hasn't finished running, if <code>ExecutionStatus</code> is neither Succeeded nor Failed, then this string is empty.</p>
@@ -95,7 +85,7 @@ impl GetCommandInvocationOutput {
         self.response_code
     }
     /// <p>The date and time the plugin started running. Date and time are written in ISO 8601 format. For example, June 7, 2017 is represented as 2017-06-7. The following sample Amazon Web Services CLI command uses the <code>InvokedBefore</code> filter.</p>
-    /// <p><code>aws ssm list-commands --filters key=InvokedBefore,value=2017-06-07T00:00:00Z</code></p>
+    /// <p> <code>aws ssm list-commands --filters key=InvokedBefore,value=2017-06-07T00:00:00Z</code> </p>
     /// <p>If the plugin hasn't started to run, the string is empty.</p>
     pub fn execution_start_date_time(&self) -> ::std::option::Option<&str> {
         self.execution_start_date_time.as_deref()
@@ -105,7 +95,7 @@ impl GetCommandInvocationOutput {
         self.execution_elapsed_time.as_deref()
     }
     /// <p>The date and time the plugin finished running. Date and time are written in ISO 8601 format. For example, June 7, 2017 is represented as 2017-06-7. The following sample Amazon Web Services CLI command uses the <code>InvokedAfter</code> filter.</p>
-    /// <p><code>aws ssm list-commands --filters key=InvokedAfter,value=2017-06-07T00:00:00Z</code></p>
+    /// <p> <code>aws ssm list-commands --filters key=InvokedAfter,value=2017-06-07T00:00:00Z</code> </p>
     /// <p>If the plugin hasn't started to run, the string is empty.</p>
     pub fn execution_end_date_time(&self) -> ::std::option::Option<&str> {
         self.execution_end_date_time.as_deref()
@@ -116,26 +106,16 @@ impl GetCommandInvocationOutput {
     }
     /// <p>A detailed status of the command execution for an invocation. <code>StatusDetails</code> includes more information than <code>Status</code> because it includes states resulting from error and concurrency control parameters. <code>StatusDetails</code> can show different results than <code>Status</code>. For more information about these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. <code>StatusDetails</code> can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>Pending: The command hasn't been sent to the managed node.</p></li>
-    /// <li>
-    /// <p>In Progress: The command has been sent to the managed node but hasn't reached a terminal state.</p></li>
-    /// <li>
-    /// <p>Delayed: The system attempted to send the command to the target, but the target wasn't available. The managed node might not be available because of network issues, because the node was stopped, or for similar reasons. The system will try to send the command again.</p></li>
-    /// <li>
-    /// <p>Success: The command or plugin ran successfully. This is a terminal state.</p></li>
-    /// <li>
-    /// <p>Delivery Timed Out: The command wasn't delivered to the managed node before the delivery timeout expired. Delivery timeouts don't count against the parent command's <code>MaxErrors</code> limit, but they do contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p></li>
-    /// <li>
-    /// <p>Execution Timed Out: The command started to run on the managed node, but the execution wasn't complete before the timeout expired. Execution timeouts count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p></li>
-    /// <li>
-    /// <p>Failed: The command wasn't run successfully on the managed node. For a plugin, this indicates that the result code wasn't zero. For a command invocation, this indicates that the result code for one or more plugins wasn't zero. Invocation failures count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p></li>
-    /// <li>
-    /// <p>Cancelled: The command was terminated before it was completed. This is a terminal state.</p></li>
-    /// <li>
-    /// <p>Undeliverable: The command can't be delivered to the managed node. The node might not exist or might not be responding. Undeliverable invocations don't count against the parent command's <code>MaxErrors</code> limit and don't contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p></li>
-    /// <li>
-    /// <p>Terminated: The parent command exceeded its <code>MaxErrors</code> limit and subsequent command invocations were canceled by the system. This is a terminal state.</p></li>
+    /// <li> <p>Pending: The command hasn't been sent to the managed node.</p> </li>
+    /// <li> <p>In Progress: The command has been sent to the managed node but hasn't reached a terminal state.</p> </li>
+    /// <li> <p>Delayed: The system attempted to send the command to the target, but the target wasn't available. The managed node might not be available because of network issues, because the node was stopped, or for similar reasons. The system will try to send the command again.</p> </li>
+    /// <li> <p>Success: The command or plugin ran successfully. This is a terminal state.</p> </li>
+    /// <li> <p>Delivery Timed Out: The command wasn't delivered to the managed node before the delivery timeout expired. Delivery timeouts don't count against the parent command's <code>MaxErrors</code> limit, but they do contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li>
+    /// <li> <p>Execution Timed Out: The command started to run on the managed node, but the execution wasn't complete before the timeout expired. Execution timeouts count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p> </li>
+    /// <li> <p>Failed: The command wasn't run successfully on the managed node. For a plugin, this indicates that the result code wasn't zero. For a command invocation, this indicates that the result code for one or more plugins wasn't zero. Invocation failures count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p> </li>
+    /// <li> <p>Cancelled: The command was terminated before it was completed. This is a terminal state.</p> </li>
+    /// <li> <p>Undeliverable: The command can't be delivered to the managed node. The node might not exist or might not be responding. Undeliverable invocations don't count against the parent command's <code>MaxErrors</code> limit and don't contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li>
+    /// <li> <p>Terminated: The parent command exceeded its <code>MaxErrors</code> limit and subsequent command invocations were canceled by the system. This is a terminal state.</p> </li>
     /// </ul>
     pub fn status_details(&self) -> ::std::option::Option<&str> {
         self.status_details.as_deref()
@@ -296,21 +276,21 @@ impl GetCommandInvocationOutputBuilder {
         &self.response_code
     }
     /// <p>The date and time the plugin started running. Date and time are written in ISO 8601 format. For example, June 7, 2017 is represented as 2017-06-7. The following sample Amazon Web Services CLI command uses the <code>InvokedBefore</code> filter.</p>
-    /// <p><code>aws ssm list-commands --filters key=InvokedBefore,value=2017-06-07T00:00:00Z</code></p>
+    /// <p> <code>aws ssm list-commands --filters key=InvokedBefore,value=2017-06-07T00:00:00Z</code> </p>
     /// <p>If the plugin hasn't started to run, the string is empty.</p>
     pub fn execution_start_date_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_start_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time the plugin started running. Date and time are written in ISO 8601 format. For example, June 7, 2017 is represented as 2017-06-7. The following sample Amazon Web Services CLI command uses the <code>InvokedBefore</code> filter.</p>
-    /// <p><code>aws ssm list-commands --filters key=InvokedBefore,value=2017-06-07T00:00:00Z</code></p>
+    /// <p> <code>aws ssm list-commands --filters key=InvokedBefore,value=2017-06-07T00:00:00Z</code> </p>
     /// <p>If the plugin hasn't started to run, the string is empty.</p>
     pub fn set_execution_start_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_start_date_time = input;
         self
     }
     /// <p>The date and time the plugin started running. Date and time are written in ISO 8601 format. For example, June 7, 2017 is represented as 2017-06-7. The following sample Amazon Web Services CLI command uses the <code>InvokedBefore</code> filter.</p>
-    /// <p><code>aws ssm list-commands --filters key=InvokedBefore,value=2017-06-07T00:00:00Z</code></p>
+    /// <p> <code>aws ssm list-commands --filters key=InvokedBefore,value=2017-06-07T00:00:00Z</code> </p>
     /// <p>If the plugin hasn't started to run, the string is empty.</p>
     pub fn get_execution_start_date_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.execution_start_date_time
@@ -330,21 +310,21 @@ impl GetCommandInvocationOutputBuilder {
         &self.execution_elapsed_time
     }
     /// <p>The date and time the plugin finished running. Date and time are written in ISO 8601 format. For example, June 7, 2017 is represented as 2017-06-7. The following sample Amazon Web Services CLI command uses the <code>InvokedAfter</code> filter.</p>
-    /// <p><code>aws ssm list-commands --filters key=InvokedAfter,value=2017-06-07T00:00:00Z</code></p>
+    /// <p> <code>aws ssm list-commands --filters key=InvokedAfter,value=2017-06-07T00:00:00Z</code> </p>
     /// <p>If the plugin hasn't started to run, the string is empty.</p>
     pub fn execution_end_date_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_end_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time the plugin finished running. Date and time are written in ISO 8601 format. For example, June 7, 2017 is represented as 2017-06-7. The following sample Amazon Web Services CLI command uses the <code>InvokedAfter</code> filter.</p>
-    /// <p><code>aws ssm list-commands --filters key=InvokedAfter,value=2017-06-07T00:00:00Z</code></p>
+    /// <p> <code>aws ssm list-commands --filters key=InvokedAfter,value=2017-06-07T00:00:00Z</code> </p>
     /// <p>If the plugin hasn't started to run, the string is empty.</p>
     pub fn set_execution_end_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_end_date_time = input;
         self
     }
     /// <p>The date and time the plugin finished running. Date and time are written in ISO 8601 format. For example, June 7, 2017 is represented as 2017-06-7. The following sample Amazon Web Services CLI command uses the <code>InvokedAfter</code> filter.</p>
-    /// <p><code>aws ssm list-commands --filters key=InvokedAfter,value=2017-06-07T00:00:00Z</code></p>
+    /// <p> <code>aws ssm list-commands --filters key=InvokedAfter,value=2017-06-07T00:00:00Z</code> </p>
     /// <p>If the plugin hasn't started to run, the string is empty.</p>
     pub fn get_execution_end_date_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.execution_end_date_time
@@ -365,26 +345,16 @@ impl GetCommandInvocationOutputBuilder {
     }
     /// <p>A detailed status of the command execution for an invocation. <code>StatusDetails</code> includes more information than <code>Status</code> because it includes states resulting from error and concurrency control parameters. <code>StatusDetails</code> can show different results than <code>Status</code>. For more information about these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. <code>StatusDetails</code> can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>Pending: The command hasn't been sent to the managed node.</p></li>
-    /// <li>
-    /// <p>In Progress: The command has been sent to the managed node but hasn't reached a terminal state.</p></li>
-    /// <li>
-    /// <p>Delayed: The system attempted to send the command to the target, but the target wasn't available. The managed node might not be available because of network issues, because the node was stopped, or for similar reasons. The system will try to send the command again.</p></li>
-    /// <li>
-    /// <p>Success: The command or plugin ran successfully. This is a terminal state.</p></li>
-    /// <li>
-    /// <p>Delivery Timed Out: The command wasn't delivered to the managed node before the delivery timeout expired. Delivery timeouts don't count against the parent command's <code>MaxErrors</code> limit, but they do contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p></li>
-    /// <li>
-    /// <p>Execution Timed Out: The command started to run on the managed node, but the execution wasn't complete before the timeout expired. Execution timeouts count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p></li>
-    /// <li>
-    /// <p>Failed: The command wasn't run successfully on the managed node. For a plugin, this indicates that the result code wasn't zero. For a command invocation, this indicates that the result code for one or more plugins wasn't zero. Invocation failures count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p></li>
-    /// <li>
-    /// <p>Cancelled: The command was terminated before it was completed. This is a terminal state.</p></li>
-    /// <li>
-    /// <p>Undeliverable: The command can't be delivered to the managed node. The node might not exist or might not be responding. Undeliverable invocations don't count against the parent command's <code>MaxErrors</code> limit and don't contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p></li>
-    /// <li>
-    /// <p>Terminated: The parent command exceeded its <code>MaxErrors</code> limit and subsequent command invocations were canceled by the system. This is a terminal state.</p></li>
+    /// <li> <p>Pending: The command hasn't been sent to the managed node.</p> </li>
+    /// <li> <p>In Progress: The command has been sent to the managed node but hasn't reached a terminal state.</p> </li>
+    /// <li> <p>Delayed: The system attempted to send the command to the target, but the target wasn't available. The managed node might not be available because of network issues, because the node was stopped, or for similar reasons. The system will try to send the command again.</p> </li>
+    /// <li> <p>Success: The command or plugin ran successfully. This is a terminal state.</p> </li>
+    /// <li> <p>Delivery Timed Out: The command wasn't delivered to the managed node before the delivery timeout expired. Delivery timeouts don't count against the parent command's <code>MaxErrors</code> limit, but they do contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li>
+    /// <li> <p>Execution Timed Out: The command started to run on the managed node, but the execution wasn't complete before the timeout expired. Execution timeouts count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p> </li>
+    /// <li> <p>Failed: The command wasn't run successfully on the managed node. For a plugin, this indicates that the result code wasn't zero. For a command invocation, this indicates that the result code for one or more plugins wasn't zero. Invocation failures count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p> </li>
+    /// <li> <p>Cancelled: The command was terminated before it was completed. This is a terminal state.</p> </li>
+    /// <li> <p>Undeliverable: The command can't be delivered to the managed node. The node might not exist or might not be responding. Undeliverable invocations don't count against the parent command's <code>MaxErrors</code> limit and don't contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li>
+    /// <li> <p>Terminated: The parent command exceeded its <code>MaxErrors</code> limit and subsequent command invocations were canceled by the system. This is a terminal state.</p> </li>
     /// </ul>
     pub fn status_details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_details = ::std::option::Option::Some(input.into());
@@ -392,26 +362,16 @@ impl GetCommandInvocationOutputBuilder {
     }
     /// <p>A detailed status of the command execution for an invocation. <code>StatusDetails</code> includes more information than <code>Status</code> because it includes states resulting from error and concurrency control parameters. <code>StatusDetails</code> can show different results than <code>Status</code>. For more information about these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. <code>StatusDetails</code> can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>Pending: The command hasn't been sent to the managed node.</p></li>
-    /// <li>
-    /// <p>In Progress: The command has been sent to the managed node but hasn't reached a terminal state.</p></li>
-    /// <li>
-    /// <p>Delayed: The system attempted to send the command to the target, but the target wasn't available. The managed node might not be available because of network issues, because the node was stopped, or for similar reasons. The system will try to send the command again.</p></li>
-    /// <li>
-    /// <p>Success: The command or plugin ran successfully. This is a terminal state.</p></li>
-    /// <li>
-    /// <p>Delivery Timed Out: The command wasn't delivered to the managed node before the delivery timeout expired. Delivery timeouts don't count against the parent command's <code>MaxErrors</code> limit, but they do contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p></li>
-    /// <li>
-    /// <p>Execution Timed Out: The command started to run on the managed node, but the execution wasn't complete before the timeout expired. Execution timeouts count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p></li>
-    /// <li>
-    /// <p>Failed: The command wasn't run successfully on the managed node. For a plugin, this indicates that the result code wasn't zero. For a command invocation, this indicates that the result code for one or more plugins wasn't zero. Invocation failures count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p></li>
-    /// <li>
-    /// <p>Cancelled: The command was terminated before it was completed. This is a terminal state.</p></li>
-    /// <li>
-    /// <p>Undeliverable: The command can't be delivered to the managed node. The node might not exist or might not be responding. Undeliverable invocations don't count against the parent command's <code>MaxErrors</code> limit and don't contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p></li>
-    /// <li>
-    /// <p>Terminated: The parent command exceeded its <code>MaxErrors</code> limit and subsequent command invocations were canceled by the system. This is a terminal state.</p></li>
+    /// <li> <p>Pending: The command hasn't been sent to the managed node.</p> </li>
+    /// <li> <p>In Progress: The command has been sent to the managed node but hasn't reached a terminal state.</p> </li>
+    /// <li> <p>Delayed: The system attempted to send the command to the target, but the target wasn't available. The managed node might not be available because of network issues, because the node was stopped, or for similar reasons. The system will try to send the command again.</p> </li>
+    /// <li> <p>Success: The command or plugin ran successfully. This is a terminal state.</p> </li>
+    /// <li> <p>Delivery Timed Out: The command wasn't delivered to the managed node before the delivery timeout expired. Delivery timeouts don't count against the parent command's <code>MaxErrors</code> limit, but they do contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li>
+    /// <li> <p>Execution Timed Out: The command started to run on the managed node, but the execution wasn't complete before the timeout expired. Execution timeouts count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p> </li>
+    /// <li> <p>Failed: The command wasn't run successfully on the managed node. For a plugin, this indicates that the result code wasn't zero. For a command invocation, this indicates that the result code for one or more plugins wasn't zero. Invocation failures count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p> </li>
+    /// <li> <p>Cancelled: The command was terminated before it was completed. This is a terminal state.</p> </li>
+    /// <li> <p>Undeliverable: The command can't be delivered to the managed node. The node might not exist or might not be responding. Undeliverable invocations don't count against the parent command's <code>MaxErrors</code> limit and don't contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li>
+    /// <li> <p>Terminated: The parent command exceeded its <code>MaxErrors</code> limit and subsequent command invocations were canceled by the system. This is a terminal state.</p> </li>
     /// </ul>
     pub fn set_status_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_details = input;
@@ -419,26 +379,16 @@ impl GetCommandInvocationOutputBuilder {
     }
     /// <p>A detailed status of the command execution for an invocation. <code>StatusDetails</code> includes more information than <code>Status</code> because it includes states resulting from error and concurrency control parameters. <code>StatusDetails</code> can show different results than <code>Status</code>. For more information about these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. <code>StatusDetails</code> can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>Pending: The command hasn't been sent to the managed node.</p></li>
-    /// <li>
-    /// <p>In Progress: The command has been sent to the managed node but hasn't reached a terminal state.</p></li>
-    /// <li>
-    /// <p>Delayed: The system attempted to send the command to the target, but the target wasn't available. The managed node might not be available because of network issues, because the node was stopped, or for similar reasons. The system will try to send the command again.</p></li>
-    /// <li>
-    /// <p>Success: The command or plugin ran successfully. This is a terminal state.</p></li>
-    /// <li>
-    /// <p>Delivery Timed Out: The command wasn't delivered to the managed node before the delivery timeout expired. Delivery timeouts don't count against the parent command's <code>MaxErrors</code> limit, but they do contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p></li>
-    /// <li>
-    /// <p>Execution Timed Out: The command started to run on the managed node, but the execution wasn't complete before the timeout expired. Execution timeouts count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p></li>
-    /// <li>
-    /// <p>Failed: The command wasn't run successfully on the managed node. For a plugin, this indicates that the result code wasn't zero. For a command invocation, this indicates that the result code for one or more plugins wasn't zero. Invocation failures count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p></li>
-    /// <li>
-    /// <p>Cancelled: The command was terminated before it was completed. This is a terminal state.</p></li>
-    /// <li>
-    /// <p>Undeliverable: The command can't be delivered to the managed node. The node might not exist or might not be responding. Undeliverable invocations don't count against the parent command's <code>MaxErrors</code> limit and don't contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p></li>
-    /// <li>
-    /// <p>Terminated: The parent command exceeded its <code>MaxErrors</code> limit and subsequent command invocations were canceled by the system. This is a terminal state.</p></li>
+    /// <li> <p>Pending: The command hasn't been sent to the managed node.</p> </li>
+    /// <li> <p>In Progress: The command has been sent to the managed node but hasn't reached a terminal state.</p> </li>
+    /// <li> <p>Delayed: The system attempted to send the command to the target, but the target wasn't available. The managed node might not be available because of network issues, because the node was stopped, or for similar reasons. The system will try to send the command again.</p> </li>
+    /// <li> <p>Success: The command or plugin ran successfully. This is a terminal state.</p> </li>
+    /// <li> <p>Delivery Timed Out: The command wasn't delivered to the managed node before the delivery timeout expired. Delivery timeouts don't count against the parent command's <code>MaxErrors</code> limit, but they do contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li>
+    /// <li> <p>Execution Timed Out: The command started to run on the managed node, but the execution wasn't complete before the timeout expired. Execution timeouts count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p> </li>
+    /// <li> <p>Failed: The command wasn't run successfully on the managed node. For a plugin, this indicates that the result code wasn't zero. For a command invocation, this indicates that the result code for one or more plugins wasn't zero. Invocation failures count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p> </li>
+    /// <li> <p>Cancelled: The command was terminated before it was completed. This is a terminal state.</p> </li>
+    /// <li> <p>Undeliverable: The command can't be delivered to the managed node. The node might not exist or might not be responding. Undeliverable invocations don't count against the parent command's <code>MaxErrors</code> limit and don't contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li>
+    /// <li> <p>Terminated: The parent command exceeded its <code>MaxErrors</code> limit and subsequent command invocations were canceled by the system. This is a terminal state.</p> </li>
     /// </ul>
     pub fn get_status_details(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_details

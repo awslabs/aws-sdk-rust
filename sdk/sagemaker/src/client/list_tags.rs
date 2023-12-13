@@ -5,11 +5,11 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`resource_arn(impl Into<String>)`](crate::operation::list_tags::builders::ListTagsFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::list_tags::builders::ListTagsFluentBuilder::set_resource_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the resource whose tags you want to retrieve.</p><br>
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_tags::builders::ListTagsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_tags::builders::ListTagsFluentBuilder::set_next_token):<br>required: **false**<br><p>If the response to the previous <code>ListTags</code> request is truncated, SageMaker returns this token. To retrieve the next set of tags, use it in the subsequent request.</p><br>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_tags::builders::ListTagsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_tags::builders::ListTagsFluentBuilder::set_next_token):<br>required: **false**<br><p> If the response to the previous <code>ListTags</code> request is truncated, SageMaker returns this token. To retrieve the next set of tags, use it in the subsequent request. </p><br>
     ///   - [`max_results(i32)`](crate::operation::list_tags::builders::ListTagsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_tags::builders::ListTagsFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum number of tags to return.</p><br>
     /// - On success, responds with [`ListTagsOutput`](crate::operation::list_tags::ListTagsOutput) with field(s):
     ///   - [`tags(Option<Vec::<Tag>>)`](crate::operation::list_tags::ListTagsOutput::tags): <p>An array of <code>Tag</code> objects, each with a tag key and a value.</p>
-    ///   - [`next_token(Option<String>)`](crate::operation::list_tags::ListTagsOutput::next_token): <p>If response is truncated, SageMaker includes a token in the response. You can use this token in your subsequent request to fetch next set of tokens.</p>
+    ///   - [`next_token(Option<String>)`](crate::operation::list_tags::ListTagsOutput::next_token): <p> If response is truncated, SageMaker includes a token in the response. You can use this token in your subsequent request to fetch next set of tokens. </p>
     /// - On failure, responds with [`SdkError<ListTagsError>`](crate::operation::list_tags::ListTagsError)
     pub fn list_tags(&self) -> crate::operation::list_tags::builders::ListTagsFluentBuilder {
         crate::operation::list_tags::builders::ListTagsFluentBuilder::new(self.handle.clone())

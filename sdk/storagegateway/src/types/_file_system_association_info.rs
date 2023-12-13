@@ -8,7 +8,7 @@ pub struct FileSystemAssociationInfo {
     pub file_system_association_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the backend Amazon FSx file system used for storing file data. For information, see <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_FileSystem.html">FileSystem</a> in the <i>Amazon FSx API Reference</i>.</p>
     pub location_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The status of the file system association. Valid Values: <code>AVAILABLE</code> | <code>CREATING</code> | <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code></p>
+    /// <p>The status of the file system association. Valid Values: <code>AVAILABLE</code> | <code>CREATING</code> | <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code> </p>
     pub file_system_association_status: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the storage used for the audit logs.</p>
     pub audit_destination_arn: ::std::option::Option<::std::string::String>,
@@ -18,7 +18,7 @@ pub struct FileSystemAssociationInfo {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The refresh cache information for the file share or FSx file systems.</p>
     pub cache_attributes: ::std::option::Option<crate::types::CacheAttributes>,
-    /// <p>Specifies network configuration information for the gateway associated with the Amazon FSx file system.</p><note>
+    /// <p>Specifies network configuration information for the gateway associated with the Amazon FSx file system.</p> <note>
     /// <p>If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code> field is required.</p>
     /// </note>
     pub endpoint_network_configuration: ::std::option::Option<crate::types::EndpointNetworkConfiguration>,
@@ -34,7 +34,7 @@ impl FileSystemAssociationInfo {
     pub fn location_arn(&self) -> ::std::option::Option<&str> {
         self.location_arn.as_deref()
     }
-    /// <p>The status of the file system association. Valid Values: <code>AVAILABLE</code> | <code>CREATING</code> | <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code></p>
+    /// <p>The status of the file system association. Valid Values: <code>AVAILABLE</code> | <code>CREATING</code> | <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code> </p>
     pub fn file_system_association_status(&self) -> ::std::option::Option<&str> {
         self.file_system_association_status.as_deref()
     }
@@ -56,7 +56,7 @@ impl FileSystemAssociationInfo {
     pub fn cache_attributes(&self) -> ::std::option::Option<&crate::types::CacheAttributes> {
         self.cache_attributes.as_ref()
     }
-    /// <p>Specifies network configuration information for the gateway associated with the Amazon FSx file system.</p><note>
+    /// <p>Specifies network configuration information for the gateway associated with the Amazon FSx file system.</p> <note>
     /// <p>If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code> field is required.</p>
     /// </note>
     pub fn endpoint_network_configuration(&self) -> ::std::option::Option<&crate::types::EndpointNetworkConfiguration> {
@@ -119,17 +119,17 @@ impl FileSystemAssociationInfoBuilder {
     pub fn get_location_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.location_arn
     }
-    /// <p>The status of the file system association. Valid Values: <code>AVAILABLE</code> | <code>CREATING</code> | <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code></p>
+    /// <p>The status of the file system association. Valid Values: <code>AVAILABLE</code> | <code>CREATING</code> | <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code> </p>
     pub fn file_system_association_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_association_status = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The status of the file system association. Valid Values: <code>AVAILABLE</code> | <code>CREATING</code> | <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code></p>
+    /// <p>The status of the file system association. Valid Values: <code>AVAILABLE</code> | <code>CREATING</code> | <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code> </p>
     pub fn set_file_system_association_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_system_association_status = input;
         self
     }
-    /// <p>The status of the file system association. Valid Values: <code>AVAILABLE</code> | <code>CREATING</code> | <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code></p>
+    /// <p>The status of the file system association. Valid Values: <code>AVAILABLE</code> | <code>CREATING</code> | <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code> </p>
     pub fn get_file_system_association_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.file_system_association_status
     }
@@ -195,21 +195,21 @@ impl FileSystemAssociationInfoBuilder {
     pub fn get_cache_attributes(&self) -> &::std::option::Option<crate::types::CacheAttributes> {
         &self.cache_attributes
     }
-    /// <p>Specifies network configuration information for the gateway associated with the Amazon FSx file system.</p><note>
+    /// <p>Specifies network configuration information for the gateway associated with the Amazon FSx file system.</p> <note>
     /// <p>If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code> field is required.</p>
     /// </note>
     pub fn endpoint_network_configuration(mut self, input: crate::types::EndpointNetworkConfiguration) -> Self {
         self.endpoint_network_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies network configuration information for the gateway associated with the Amazon FSx file system.</p><note>
+    /// <p>Specifies network configuration information for the gateway associated with the Amazon FSx file system.</p> <note>
     /// <p>If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code> field is required.</p>
     /// </note>
     pub fn set_endpoint_network_configuration(mut self, input: ::std::option::Option<crate::types::EndpointNetworkConfiguration>) -> Self {
         self.endpoint_network_configuration = input;
         self
     }
-    /// <p>Specifies network configuration information for the gateway associated with the Amazon FSx file system.</p><note>
+    /// <p>Specifies network configuration information for the gateway associated with the Amazon FSx file system.</p> <note>
     /// <p>If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code> field is required.</p>
     /// </note>
     pub fn get_endpoint_network_configuration(&self) -> &::std::option::Option<crate::types::EndpointNetworkConfiguration> {

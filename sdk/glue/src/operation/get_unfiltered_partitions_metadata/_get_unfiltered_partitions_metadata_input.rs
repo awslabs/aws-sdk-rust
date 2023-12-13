@@ -3,22 +3,22 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetUnfilteredPartitionsMetadataInput {
-    /// <p>The ID of the Data Catalog where the partitions in question reside. If none is provided, the AWS account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog where the partitions in question reside. If none is provided, the AWS account ID is used by default. </p>
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the catalog database where the partitions reside.</p>
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the table that contains the partition.</p>
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>An expression that filters the partitions to be returned.</p>
-    /// <p>The expression uses SQL syntax similar to the SQL <code>WHERE</code> filter clause. The SQL statement parser <a href="http://jsqlparser.sourceforge.net/home.php">JSQLParser</a> parses the expression.</p>
-    /// <p><i>Operators</i>: The following are the operators that you can use in the <code>Expression</code> API call:</p>
+    /// <p>The expression uses SQL syntax similar to the SQL <code>WHERE</code> filter clause. The SQL statement parser <a href="http://jsqlparser.sourceforge.net/home.php">JSQLParser</a> parses the expression. </p>
+    /// <p> <i>Operators</i>: The following are the operators that you can use in the <code>Expression</code> API call:</p>
     /// <dl>
     /// <dt>
     /// =
     /// </dt>
     /// <dd>
     /// <p>Checks whether the values of the two operands are equal; if yes, then the condition becomes true.</p>
-    /// <p>Example: Assume 'variable a' holds 10 and 'variable b' holds 20.</p>
+    /// <p>Example: Assume 'variable a' holds 10 and 'variable b' holds 20. </p>
     /// <p>(a = b) is not true.</p>
     /// </dd>
     /// <dt>
@@ -63,32 +63,23 @@ pub struct GetUnfilteredPartitionsMetadataInput {
     /// <p>Logical operators.</p>
     /// </dd>
     /// </dl>
-    /// <p><i>Supported Partition Key Types</i>: The following are the supported partition keys.</p>
+    /// <p> <i>Supported Partition Key Types</i>: The following are the supported partition keys.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>string</code></p></li>
-    /// <li>
-    /// <p><code>date</code></p></li>
-    /// <li>
-    /// <p><code>timestamp</code></p></li>
-    /// <li>
-    /// <p><code>int</code></p></li>
-    /// <li>
-    /// <p><code>bigint</code></p></li>
-    /// <li>
-    /// <p><code>long</code></p></li>
-    /// <li>
-    /// <p><code>tinyint</code></p></li>
-    /// <li>
-    /// <p><code>smallint</code></p></li>
-    /// <li>
-    /// <p><code>decimal</code></p></li>
+    /// <li> <p> <code>string</code> </p> </li>
+    /// <li> <p> <code>date</code> </p> </li>
+    /// <li> <p> <code>timestamp</code> </p> </li>
+    /// <li> <p> <code>int</code> </p> </li>
+    /// <li> <p> <code>bigint</code> </p> </li>
+    /// <li> <p> <code>long</code> </p> </li>
+    /// <li> <p> <code>tinyint</code> </p> </li>
+    /// <li> <p> <code>smallint</code> </p> </li>
+    /// <li> <p> <code>decimal</code> </p> </li>
     /// </ul>
-    /// <p>If an type is encountered that is not valid, an exception is thrown.</p>
+    /// <p>If an type is encountered that is not valid, an exception is thrown. </p>
     pub expression: ::std::option::Option<::std::string::String>,
     /// <p>A structure containing Lake Formation audit context information.</p>
     pub audit_context: ::std::option::Option<crate::types::AuditContext>,
-    /// <p>A list of supported permission types.</p>
+    /// <p>A list of supported permission types. </p>
     pub supported_permission_types: ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>,
     /// <p>A continuation token, if this is not the first call to retrieve these partitions.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -98,7 +89,7 @@ pub struct GetUnfilteredPartitionsMetadataInput {
     pub max_results: ::std::option::Option<i32>,
 }
 impl GetUnfilteredPartitionsMetadataInput {
-    /// <p>The ID of the Data Catalog where the partitions in question reside. If none is provided, the AWS account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog where the partitions in question reside. If none is provided, the AWS account ID is used by default. </p>
     pub fn catalog_id(&self) -> ::std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
@@ -111,15 +102,15 @@ impl GetUnfilteredPartitionsMetadataInput {
         self.table_name.as_deref()
     }
     /// <p>An expression that filters the partitions to be returned.</p>
-    /// <p>The expression uses SQL syntax similar to the SQL <code>WHERE</code> filter clause. The SQL statement parser <a href="http://jsqlparser.sourceforge.net/home.php">JSQLParser</a> parses the expression.</p>
-    /// <p><i>Operators</i>: The following are the operators that you can use in the <code>Expression</code> API call:</p>
+    /// <p>The expression uses SQL syntax similar to the SQL <code>WHERE</code> filter clause. The SQL statement parser <a href="http://jsqlparser.sourceforge.net/home.php">JSQLParser</a> parses the expression. </p>
+    /// <p> <i>Operators</i>: The following are the operators that you can use in the <code>Expression</code> API call:</p>
     /// <dl>
     /// <dt>
     /// =
     /// </dt>
     /// <dd>
     /// <p>Checks whether the values of the two operands are equal; if yes, then the condition becomes true.</p>
-    /// <p>Example: Assume 'variable a' holds 10 and 'variable b' holds 20.</p>
+    /// <p>Example: Assume 'variable a' holds 10 and 'variable b' holds 20. </p>
     /// <p>(a = b) is not true.</p>
     /// </dd>
     /// <dt>
@@ -164,28 +155,19 @@ impl GetUnfilteredPartitionsMetadataInput {
     /// <p>Logical operators.</p>
     /// </dd>
     /// </dl>
-    /// <p><i>Supported Partition Key Types</i>: The following are the supported partition keys.</p>
+    /// <p> <i>Supported Partition Key Types</i>: The following are the supported partition keys.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>string</code></p></li>
-    /// <li>
-    /// <p><code>date</code></p></li>
-    /// <li>
-    /// <p><code>timestamp</code></p></li>
-    /// <li>
-    /// <p><code>int</code></p></li>
-    /// <li>
-    /// <p><code>bigint</code></p></li>
-    /// <li>
-    /// <p><code>long</code></p></li>
-    /// <li>
-    /// <p><code>tinyint</code></p></li>
-    /// <li>
-    /// <p><code>smallint</code></p></li>
-    /// <li>
-    /// <p><code>decimal</code></p></li>
+    /// <li> <p> <code>string</code> </p> </li>
+    /// <li> <p> <code>date</code> </p> </li>
+    /// <li> <p> <code>timestamp</code> </p> </li>
+    /// <li> <p> <code>int</code> </p> </li>
+    /// <li> <p> <code>bigint</code> </p> </li>
+    /// <li> <p> <code>long</code> </p> </li>
+    /// <li> <p> <code>tinyint</code> </p> </li>
+    /// <li> <p> <code>smallint</code> </p> </li>
+    /// <li> <p> <code>decimal</code> </p> </li>
     /// </ul>
-    /// <p>If an type is encountered that is not valid, an exception is thrown.</p>
+    /// <p>If an type is encountered that is not valid, an exception is thrown. </p>
     pub fn expression(&self) -> ::std::option::Option<&str> {
         self.expression.as_deref()
     }
@@ -193,7 +175,7 @@ impl GetUnfilteredPartitionsMetadataInput {
     pub fn audit_context(&self) -> ::std::option::Option<&crate::types::AuditContext> {
         self.audit_context.as_ref()
     }
-    /// <p>A list of supported permission types.</p>
+    /// <p>A list of supported permission types. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_permission_types.is_none()`.
     pub fn supported_permission_types(&self) -> &[crate::types::PermissionType] {
@@ -234,18 +216,18 @@ pub struct GetUnfilteredPartitionsMetadataInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl GetUnfilteredPartitionsMetadataInputBuilder {
-    /// <p>The ID of the Data Catalog where the partitions in question reside. If none is provided, the AWS account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog where the partitions in question reside. If none is provided, the AWS account ID is used by default. </p>
     /// This field is required.
     pub fn catalog_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.catalog_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the Data Catalog where the partitions in question reside. If none is provided, the AWS account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog where the partitions in question reside. If none is provided, the AWS account ID is used by default. </p>
     pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.catalog_id = input;
         self
     }
-    /// <p>The ID of the Data Catalog where the partitions in question reside. If none is provided, the AWS account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog where the partitions in question reside. If none is provided, the AWS account ID is used by default. </p>
     pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.catalog_id
     }
@@ -280,15 +262,15 @@ impl GetUnfilteredPartitionsMetadataInputBuilder {
         &self.table_name
     }
     /// <p>An expression that filters the partitions to be returned.</p>
-    /// <p>The expression uses SQL syntax similar to the SQL <code>WHERE</code> filter clause. The SQL statement parser <a href="http://jsqlparser.sourceforge.net/home.php">JSQLParser</a> parses the expression.</p>
-    /// <p><i>Operators</i>: The following are the operators that you can use in the <code>Expression</code> API call:</p>
+    /// <p>The expression uses SQL syntax similar to the SQL <code>WHERE</code> filter clause. The SQL statement parser <a href="http://jsqlparser.sourceforge.net/home.php">JSQLParser</a> parses the expression. </p>
+    /// <p> <i>Operators</i>: The following are the operators that you can use in the <code>Expression</code> API call:</p>
     /// <dl>
     /// <dt>
     /// =
     /// </dt>
     /// <dd>
     /// <p>Checks whether the values of the two operands are equal; if yes, then the condition becomes true.</p>
-    /// <p>Example: Assume 'variable a' holds 10 and 'variable b' holds 20.</p>
+    /// <p>Example: Assume 'variable a' holds 10 and 'variable b' holds 20. </p>
     /// <p>(a = b) is not true.</p>
     /// </dd>
     /// <dt>
@@ -333,42 +315,33 @@ impl GetUnfilteredPartitionsMetadataInputBuilder {
     /// <p>Logical operators.</p>
     /// </dd>
     /// </dl>
-    /// <p><i>Supported Partition Key Types</i>: The following are the supported partition keys.</p>
+    /// <p> <i>Supported Partition Key Types</i>: The following are the supported partition keys.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>string</code></p></li>
-    /// <li>
-    /// <p><code>date</code></p></li>
-    /// <li>
-    /// <p><code>timestamp</code></p></li>
-    /// <li>
-    /// <p><code>int</code></p></li>
-    /// <li>
-    /// <p><code>bigint</code></p></li>
-    /// <li>
-    /// <p><code>long</code></p></li>
-    /// <li>
-    /// <p><code>tinyint</code></p></li>
-    /// <li>
-    /// <p><code>smallint</code></p></li>
-    /// <li>
-    /// <p><code>decimal</code></p></li>
+    /// <li> <p> <code>string</code> </p> </li>
+    /// <li> <p> <code>date</code> </p> </li>
+    /// <li> <p> <code>timestamp</code> </p> </li>
+    /// <li> <p> <code>int</code> </p> </li>
+    /// <li> <p> <code>bigint</code> </p> </li>
+    /// <li> <p> <code>long</code> </p> </li>
+    /// <li> <p> <code>tinyint</code> </p> </li>
+    /// <li> <p> <code>smallint</code> </p> </li>
+    /// <li> <p> <code>decimal</code> </p> </li>
     /// </ul>
-    /// <p>If an type is encountered that is not valid, an exception is thrown.</p>
+    /// <p>If an type is encountered that is not valid, an exception is thrown. </p>
     pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expression = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An expression that filters the partitions to be returned.</p>
-    /// <p>The expression uses SQL syntax similar to the SQL <code>WHERE</code> filter clause. The SQL statement parser <a href="http://jsqlparser.sourceforge.net/home.php">JSQLParser</a> parses the expression.</p>
-    /// <p><i>Operators</i>: The following are the operators that you can use in the <code>Expression</code> API call:</p>
+    /// <p>The expression uses SQL syntax similar to the SQL <code>WHERE</code> filter clause. The SQL statement parser <a href="http://jsqlparser.sourceforge.net/home.php">JSQLParser</a> parses the expression. </p>
+    /// <p> <i>Operators</i>: The following are the operators that you can use in the <code>Expression</code> API call:</p>
     /// <dl>
     /// <dt>
     /// =
     /// </dt>
     /// <dd>
     /// <p>Checks whether the values of the two operands are equal; if yes, then the condition becomes true.</p>
-    /// <p>Example: Assume 'variable a' holds 10 and 'variable b' holds 20.</p>
+    /// <p>Example: Assume 'variable a' holds 10 and 'variable b' holds 20. </p>
     /// <p>(a = b) is not true.</p>
     /// </dd>
     /// <dt>
@@ -413,42 +386,33 @@ impl GetUnfilteredPartitionsMetadataInputBuilder {
     /// <p>Logical operators.</p>
     /// </dd>
     /// </dl>
-    /// <p><i>Supported Partition Key Types</i>: The following are the supported partition keys.</p>
+    /// <p> <i>Supported Partition Key Types</i>: The following are the supported partition keys.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>string</code></p></li>
-    /// <li>
-    /// <p><code>date</code></p></li>
-    /// <li>
-    /// <p><code>timestamp</code></p></li>
-    /// <li>
-    /// <p><code>int</code></p></li>
-    /// <li>
-    /// <p><code>bigint</code></p></li>
-    /// <li>
-    /// <p><code>long</code></p></li>
-    /// <li>
-    /// <p><code>tinyint</code></p></li>
-    /// <li>
-    /// <p><code>smallint</code></p></li>
-    /// <li>
-    /// <p><code>decimal</code></p></li>
+    /// <li> <p> <code>string</code> </p> </li>
+    /// <li> <p> <code>date</code> </p> </li>
+    /// <li> <p> <code>timestamp</code> </p> </li>
+    /// <li> <p> <code>int</code> </p> </li>
+    /// <li> <p> <code>bigint</code> </p> </li>
+    /// <li> <p> <code>long</code> </p> </li>
+    /// <li> <p> <code>tinyint</code> </p> </li>
+    /// <li> <p> <code>smallint</code> </p> </li>
+    /// <li> <p> <code>decimal</code> </p> </li>
     /// </ul>
-    /// <p>If an type is encountered that is not valid, an exception is thrown.</p>
+    /// <p>If an type is encountered that is not valid, an exception is thrown. </p>
     pub fn set_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expression = input;
         self
     }
     /// <p>An expression that filters the partitions to be returned.</p>
-    /// <p>The expression uses SQL syntax similar to the SQL <code>WHERE</code> filter clause. The SQL statement parser <a href="http://jsqlparser.sourceforge.net/home.php">JSQLParser</a> parses the expression.</p>
-    /// <p><i>Operators</i>: The following are the operators that you can use in the <code>Expression</code> API call:</p>
+    /// <p>The expression uses SQL syntax similar to the SQL <code>WHERE</code> filter clause. The SQL statement parser <a href="http://jsqlparser.sourceforge.net/home.php">JSQLParser</a> parses the expression. </p>
+    /// <p> <i>Operators</i>: The following are the operators that you can use in the <code>Expression</code> API call:</p>
     /// <dl>
     /// <dt>
     /// =
     /// </dt>
     /// <dd>
     /// <p>Checks whether the values of the two operands are equal; if yes, then the condition becomes true.</p>
-    /// <p>Example: Assume 'variable a' holds 10 and 'variable b' holds 20.</p>
+    /// <p>Example: Assume 'variable a' holds 10 and 'variable b' holds 20. </p>
     /// <p>(a = b) is not true.</p>
     /// </dd>
     /// <dt>
@@ -493,28 +457,19 @@ impl GetUnfilteredPartitionsMetadataInputBuilder {
     /// <p>Logical operators.</p>
     /// </dd>
     /// </dl>
-    /// <p><i>Supported Partition Key Types</i>: The following are the supported partition keys.</p>
+    /// <p> <i>Supported Partition Key Types</i>: The following are the supported partition keys.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>string</code></p></li>
-    /// <li>
-    /// <p><code>date</code></p></li>
-    /// <li>
-    /// <p><code>timestamp</code></p></li>
-    /// <li>
-    /// <p><code>int</code></p></li>
-    /// <li>
-    /// <p><code>bigint</code></p></li>
-    /// <li>
-    /// <p><code>long</code></p></li>
-    /// <li>
-    /// <p><code>tinyint</code></p></li>
-    /// <li>
-    /// <p><code>smallint</code></p></li>
-    /// <li>
-    /// <p><code>decimal</code></p></li>
+    /// <li> <p> <code>string</code> </p> </li>
+    /// <li> <p> <code>date</code> </p> </li>
+    /// <li> <p> <code>timestamp</code> </p> </li>
+    /// <li> <p> <code>int</code> </p> </li>
+    /// <li> <p> <code>bigint</code> </p> </li>
+    /// <li> <p> <code>long</code> </p> </li>
+    /// <li> <p> <code>tinyint</code> </p> </li>
+    /// <li> <p> <code>smallint</code> </p> </li>
+    /// <li> <p> <code>decimal</code> </p> </li>
     /// </ul>
-    /// <p>If an type is encountered that is not valid, an exception is thrown.</p>
+    /// <p>If an type is encountered that is not valid, an exception is thrown. </p>
     pub fn get_expression(&self) -> &::std::option::Option<::std::string::String> {
         &self.expression
     }
@@ -536,19 +491,19 @@ impl GetUnfilteredPartitionsMetadataInputBuilder {
     ///
     /// To override the contents of this collection use [`set_supported_permission_types`](Self::set_supported_permission_types).
     ///
-    /// <p>A list of supported permission types.</p>
+    /// <p>A list of supported permission types. </p>
     pub fn supported_permission_types(mut self, input: crate::types::PermissionType) -> Self {
         let mut v = self.supported_permission_types.unwrap_or_default();
         v.push(input);
         self.supported_permission_types = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of supported permission types.</p>
+    /// <p>A list of supported permission types. </p>
     pub fn set_supported_permission_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>) -> Self {
         self.supported_permission_types = input;
         self
     }
-    /// <p>A list of supported permission types.</p>
+    /// <p>A list of supported permission types. </p>
     pub fn get_supported_permission_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PermissionType>> {
         &self.supported_permission_types
     }

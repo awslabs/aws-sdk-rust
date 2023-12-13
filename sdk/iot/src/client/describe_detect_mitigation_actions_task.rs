@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeDetectMitigationActionsTask`](crate::operation::describe_detect_mitigation_actions_task::builders::DescribeDetectMitigationActionsTaskFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`task_id(impl Into<String>)`](crate::operation::describe_detect_mitigation_actions_task::builders::DescribeDetectMitigationActionsTaskFluentBuilder::task_id) / [`set_task_id(Option<String>)`](crate::operation::describe_detect_mitigation_actions_task::builders::DescribeDetectMitigationActionsTaskFluentBuilder::set_task_id):<br>required: **true**<br><p>The unique identifier of the task.</p><br>
+    ///   - [`task_id(impl Into<String>)`](crate::operation::describe_detect_mitigation_actions_task::builders::DescribeDetectMitigationActionsTaskFluentBuilder::task_id) / [`set_task_id(Option<String>)`](crate::operation::describe_detect_mitigation_actions_task::builders::DescribeDetectMitigationActionsTaskFluentBuilder::set_task_id):<br>required: **true**<br><p> The unique identifier of the task. </p><br>
     /// - On success, responds with [`DescribeDetectMitigationActionsTaskOutput`](crate::operation::describe_detect_mitigation_actions_task::DescribeDetectMitigationActionsTaskOutput) with field(s):
-    ///   - [`task_summary(Option<DetectMitigationActionsTaskSummary>)`](crate::operation::describe_detect_mitigation_actions_task::DescribeDetectMitigationActionsTaskOutput::task_summary): <p>The description of a task.</p>
+    ///   - [`task_summary(Option<DetectMitigationActionsTaskSummary>)`](crate::operation::describe_detect_mitigation_actions_task::DescribeDetectMitigationActionsTaskOutput::task_summary): <p> The description of a task. </p>
     /// - On failure, responds with [`SdkError<DescribeDetectMitigationActionsTaskError>`](crate::operation::describe_detect_mitigation_actions_task::DescribeDetectMitigationActionsTaskError)
     pub fn describe_detect_mitigation_actions_task(
         &self,

@@ -251,7 +251,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ApplyPendingM
 pub enum ApplyPendingMaintenanceActionError {
     /// <p>The cluster isn't in a valid state.</p>
     InvalidDbClusterStateFault(crate::types::error::InvalidDbClusterStateFault),
-    /// <p>The specified instance isn't in the <i>available</i> state.</p>
+    /// <p> The specified instance isn't in the <i>available</i> state. </p>
     InvalidDbInstanceStateFault(crate::types::error::InvalidDbInstanceStateFault),
     /// <p>The specified resource ID was not found.</p>
     ResourceNotFoundFault(crate::types::error::ResourceNotFoundFault),

@@ -3,16 +3,16 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectFacesOutput {
-    /// <p>Details of each face found in the image.</p>
+    /// <p>Details of each face found in the image. </p>
     pub face_details: ::std::option::Option<::std::vec::Vec<crate::types::FaceDetail>>,
     /// <p>The value of <code>OrientationCorrection</code> is always null.</p>
     /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction. The bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata.</p>
-    /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated.</p>
+    /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated. </p>
     pub orientation_correction: ::std::option::Option<crate::types::OrientationCorrection>,
     _request_id: Option<String>,
 }
 impl DetectFacesOutput {
-    /// <p>Details of each face found in the image.</p>
+    /// <p>Details of each face found in the image. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.face_details.is_none()`.
     pub fn face_details(&self) -> &[crate::types::FaceDetail] {
@@ -20,7 +20,7 @@ impl DetectFacesOutput {
     }
     /// <p>The value of <code>OrientationCorrection</code> is always null.</p>
     /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction. The bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata.</p>
-    /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated.</p>
+    /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated. </p>
     pub fn orientation_correction(&self) -> ::std::option::Option<&crate::types::OrientationCorrection> {
         self.orientation_correction.as_ref()
     }
@@ -50,39 +50,39 @@ impl DetectFacesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_face_details`](Self::set_face_details).
     ///
-    /// <p>Details of each face found in the image.</p>
+    /// <p>Details of each face found in the image. </p>
     pub fn face_details(mut self, input: crate::types::FaceDetail) -> Self {
         let mut v = self.face_details.unwrap_or_default();
         v.push(input);
         self.face_details = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Details of each face found in the image.</p>
+    /// <p>Details of each face found in the image. </p>
     pub fn set_face_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FaceDetail>>) -> Self {
         self.face_details = input;
         self
     }
-    /// <p>Details of each face found in the image.</p>
+    /// <p>Details of each face found in the image. </p>
     pub fn get_face_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FaceDetail>> {
         &self.face_details
     }
     /// <p>The value of <code>OrientationCorrection</code> is always null.</p>
     /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction. The bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata.</p>
-    /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated.</p>
+    /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated. </p>
     pub fn orientation_correction(mut self, input: crate::types::OrientationCorrection) -> Self {
         self.orientation_correction = ::std::option::Option::Some(input);
         self
     }
     /// <p>The value of <code>OrientationCorrection</code> is always null.</p>
     /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction. The bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata.</p>
-    /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated.</p>
+    /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated. </p>
     pub fn set_orientation_correction(mut self, input: ::std::option::Option<crate::types::OrientationCorrection>) -> Self {
         self.orientation_correction = input;
         self
     }
     /// <p>The value of <code>OrientationCorrection</code> is always null.</p>
     /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction. The bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata.</p>
-    /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated.</p>
+    /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated. </p>
     pub fn get_orientation_correction(&self) -> &::std::option::Option<crate::types::OrientationCorrection> {
         &self.orientation_correction
     }

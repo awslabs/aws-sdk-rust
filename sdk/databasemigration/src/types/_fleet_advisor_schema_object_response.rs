@@ -8,14 +8,10 @@ pub struct FleetAdvisorSchemaObjectResponse {
     pub schema_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of the schema object, as reported by the database engine. Examples include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>function</code></p></li>
-    /// <li>
-    /// <p><code>trigger</code></p></li>
-    /// <li>
-    /// <p><code>SYSTEM_TABLE</code></p></li>
-    /// <li>
-    /// <p><code>QUEUE</code></p></li>
+    /// <li> <p> <code>function</code> </p> </li>
+    /// <li> <p> <code>trigger</code> </p> </li>
+    /// <li> <p> <code>SYSTEM_TABLE</code> </p> </li>
+    /// <li> <p> <code>QUEUE</code> </p> </li>
     /// </ul>
     pub object_type: ::std::option::Option<::std::string::String>,
     /// <p>The number of objects in a schema object in a Fleet Advisor collector inventory.</p>
@@ -32,14 +28,10 @@ impl FleetAdvisorSchemaObjectResponse {
     }
     /// <p>The type of the schema object, as reported by the database engine. Examples include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>function</code></p></li>
-    /// <li>
-    /// <p><code>trigger</code></p></li>
-    /// <li>
-    /// <p><code>SYSTEM_TABLE</code></p></li>
-    /// <li>
-    /// <p><code>QUEUE</code></p></li>
+    /// <li> <p> <code>function</code> </p> </li>
+    /// <li> <p> <code>trigger</code> </p> </li>
+    /// <li> <p> <code>SYSTEM_TABLE</code> </p> </li>
+    /// <li> <p> <code>QUEUE</code> </p> </li>
     /// </ul>
     pub fn object_type(&self) -> ::std::option::Option<&str> {
         self.object_type.as_deref()
@@ -91,14 +83,10 @@ impl FleetAdvisorSchemaObjectResponseBuilder {
     }
     /// <p>The type of the schema object, as reported by the database engine. Examples include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>function</code></p></li>
-    /// <li>
-    /// <p><code>trigger</code></p></li>
-    /// <li>
-    /// <p><code>SYSTEM_TABLE</code></p></li>
-    /// <li>
-    /// <p><code>QUEUE</code></p></li>
+    /// <li> <p> <code>function</code> </p> </li>
+    /// <li> <p> <code>trigger</code> </p> </li>
+    /// <li> <p> <code>SYSTEM_TABLE</code> </p> </li>
+    /// <li> <p> <code>QUEUE</code> </p> </li>
     /// </ul>
     pub fn object_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_type = ::std::option::Option::Some(input.into());
@@ -106,14 +94,10 @@ impl FleetAdvisorSchemaObjectResponseBuilder {
     }
     /// <p>The type of the schema object, as reported by the database engine. Examples include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>function</code></p></li>
-    /// <li>
-    /// <p><code>trigger</code></p></li>
-    /// <li>
-    /// <p><code>SYSTEM_TABLE</code></p></li>
-    /// <li>
-    /// <p><code>QUEUE</code></p></li>
+    /// <li> <p> <code>function</code> </p> </li>
+    /// <li> <p> <code>trigger</code> </p> </li>
+    /// <li> <p> <code>SYSTEM_TABLE</code> </p> </li>
+    /// <li> <p> <code>QUEUE</code> </p> </li>
     /// </ul>
     pub fn set_object_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.object_type = input;
@@ -121,14 +105,10 @@ impl FleetAdvisorSchemaObjectResponseBuilder {
     }
     /// <p>The type of the schema object, as reported by the database engine. Examples include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>function</code></p></li>
-    /// <li>
-    /// <p><code>trigger</code></p></li>
-    /// <li>
-    /// <p><code>SYSTEM_TABLE</code></p></li>
-    /// <li>
-    /// <p><code>QUEUE</code></p></li>
+    /// <li> <p> <code>function</code> </p> </li>
+    /// <li> <p> <code>trigger</code> </p> </li>
+    /// <li> <p> <code>SYSTEM_TABLE</code> </p> </li>
+    /// <li> <p> <code>QUEUE</code> </p> </li>
     /// </ul>
     pub fn get_object_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.object_type

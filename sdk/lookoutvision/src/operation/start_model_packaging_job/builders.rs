@@ -22,27 +22,20 @@ impl StartModelPackagingJobInputBuilder {
 }
 /// Fluent builder constructing a request to `StartModelPackagingJob`.
 ///
-/// <p>Starts an Amazon Lookout for Vision model packaging job. A model packaging job creates an AWS IoT Greengrass component for a Lookout for Vision model. You can use the component to deploy your model to an edge device managed by Greengrass.</p>
+/// <p>Starts an Amazon Lookout for Vision model packaging job. A model packaging job creates an AWS IoT Greengrass component for a Lookout for Vision model. You can use the component to deploy your model to an edge device managed by Greengrass. </p>
 /// <p>Use the <code>DescribeModelPackagingJob</code> API to determine the current status of the job. The model packaging job is complete if the value of <code>Status</code> is <code>SUCCEEDED</code>.</p>
 /// <p>To deploy the component to the target device, use the component name and component version with the AWS IoT Greengrass <a href="https://docs.aws.amazon.com/greengrass/v2/APIReference/API_CreateDeployment.html">CreateDeployment</a> API.</p>
 /// <p>This operation requires the following permissions:</p>
 /// <ul>
-/// <li>
-/// <p><code>lookoutvision:StartModelPackagingJob</code></p></li>
-/// <li>
-/// <p><code>s3:PutObject</code></p></li>
-/// <li>
-/// <p><code>s3:GetBucketLocation</code></p></li>
-/// <li>
-/// <p><code>kms:GenerateDataKey</code></p></li>
-/// <li>
-/// <p><code>greengrass:CreateComponentVersion</code></p></li>
-/// <li>
-/// <p><code>greengrass:DescribeComponent</code></p></li>
-/// <li>
-/// <p>(Optional) <code>greengrass:TagResource</code>. Only required if you want to tag the component.</p></li>
+/// <li> <p> <code>lookoutvision:StartModelPackagingJob</code> </p> </li>
+/// <li> <p> <code>s3:PutObject</code> </p> </li>
+/// <li> <p> <code>s3:GetBucketLocation</code> </p> </li>
+/// <li> <p> <code>kms:GenerateDataKey</code> </p> </li>
+/// <li> <p> <code>greengrass:CreateComponentVersion</code> </p> </li>
+/// <li> <p> <code>greengrass:DescribeComponent</code> </p> </li>
+/// <li> <p>(Optional) <code>greengrass:TagResource</code>. Only required if you want to tag the component.</p> </li>
 /// </ul>
-/// <p>For more information, see <i>Using your Amazon Lookout for Vision model on an edge device</i> in the Amazon Lookout for Vision Developer Guide.</p>
+/// <p>For more information, see <i>Using your Amazon Lookout for Vision model on an edge device</i> in the Amazon Lookout for Vision Developer Guide. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartModelPackagingJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -128,93 +121,93 @@ impl StartModelPackagingJobFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the project which contains the version of the model that you want to package.</p>
+    /// <p> The name of the project which contains the version of the model that you want to package. </p>
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.project_name(input.into());
         self
     }
-    /// <p>The name of the project which contains the version of the model that you want to package.</p>
+    /// <p> The name of the project which contains the version of the model that you want to package. </p>
     pub fn set_project_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_project_name(input);
         self
     }
-    /// <p>The name of the project which contains the version of the model that you want to package.</p>
+    /// <p> The name of the project which contains the version of the model that you want to package. </p>
     pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_project_name()
     }
-    /// <p>The version of the model within the project that you want to package.</p>
+    /// <p> The version of the model within the project that you want to package. </p>
     pub fn model_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.model_version(input.into());
         self
     }
-    /// <p>The version of the model within the project that you want to package.</p>
+    /// <p> The version of the model within the project that you want to package. </p>
     pub fn set_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_model_version(input);
         self
     }
-    /// <p>The version of the model within the project that you want to package.</p>
+    /// <p> The version of the model within the project that you want to package. </p>
     pub fn get_model_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_model_version()
     }
-    /// <p>A name for the model packaging job. If you don't supply a value, the service creates a job name for you.</p>
+    /// <p>A name for the model packaging job. If you don't supply a value, the service creates a job name for you. </p>
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_name(input.into());
         self
     }
-    /// <p>A name for the model packaging job. If you don't supply a value, the service creates a job name for you.</p>
+    /// <p>A name for the model packaging job. If you don't supply a value, the service creates a job name for you. </p>
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_name(input);
         self
     }
-    /// <p>A name for the model packaging job. If you don't supply a value, the service creates a job name for you.</p>
+    /// <p>A name for the model packaging job. If you don't supply a value, the service creates a job name for you. </p>
     pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_job_name()
     }
-    /// <p>The configuration for the model packaging job.</p>
+    /// <p>The configuration for the model packaging job. </p>
     pub fn configuration(mut self, input: crate::types::ModelPackagingConfiguration) -> Self {
         self.inner = self.inner.configuration(input);
         self
     }
-    /// <p>The configuration for the model packaging job.</p>
+    /// <p>The configuration for the model packaging job. </p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::ModelPackagingConfiguration>) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
     }
-    /// <p>The configuration for the model packaging job.</p>
+    /// <p>The configuration for the model packaging job. </p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::ModelPackagingConfiguration> {
         self.inner.get_configuration()
     }
-    /// <p>A description for the model packaging job.</p>
+    /// <p>A description for the model packaging job. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>A description for the model packaging job.</p>
+    /// <p>A description for the model packaging job. </p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>A description for the model packaging job.</p>
+    /// <p>A description for the model packaging job. </p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
     /// <p>ClientToken is an idempotency token that ensures a call to <code>StartModelPackagingJob</code> completes only once. You choose the value to pass. For example, An issue might prevent you from getting a response from <code>StartModelPackagingJob</code>. In this case, safely retry your call to <code>StartModelPackagingJob</code> by using the same <code>ClientToken</code> parameter value.</p>
-    /// <p>If you don't supply a value for <code>ClientToken</code>, the AWS SDK you are using inserts a value for you. This prevents retries after a network error from making multiple dataset creation requests. You'll need to provide your own value for other use cases.</p>
-    /// <p>An error occurs if the other input parameters are not the same as in the first request. Using a different value for <code>ClientToken</code> is considered a new call to <code>StartModelPackagingJob</code>. An idempotency token is active for 8 hours.</p>
+    /// <p>If you don't supply a value for <code>ClientToken</code>, the AWS SDK you are using inserts a value for you. This prevents retries after a network error from making multiple dataset creation requests. You'll need to provide your own value for other use cases. </p>
+    /// <p>An error occurs if the other input parameters are not the same as in the first request. Using a different value for <code>ClientToken</code> is considered a new call to <code>StartModelPackagingJob</code>. An idempotency token is active for 8 hours. </p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
     /// <p>ClientToken is an idempotency token that ensures a call to <code>StartModelPackagingJob</code> completes only once. You choose the value to pass. For example, An issue might prevent you from getting a response from <code>StartModelPackagingJob</code>. In this case, safely retry your call to <code>StartModelPackagingJob</code> by using the same <code>ClientToken</code> parameter value.</p>
-    /// <p>If you don't supply a value for <code>ClientToken</code>, the AWS SDK you are using inserts a value for you. This prevents retries after a network error from making multiple dataset creation requests. You'll need to provide your own value for other use cases.</p>
-    /// <p>An error occurs if the other input parameters are not the same as in the first request. Using a different value for <code>ClientToken</code> is considered a new call to <code>StartModelPackagingJob</code>. An idempotency token is active for 8 hours.</p>
+    /// <p>If you don't supply a value for <code>ClientToken</code>, the AWS SDK you are using inserts a value for you. This prevents retries after a network error from making multiple dataset creation requests. You'll need to provide your own value for other use cases. </p>
+    /// <p>An error occurs if the other input parameters are not the same as in the first request. Using a different value for <code>ClientToken</code> is considered a new call to <code>StartModelPackagingJob</code>. An idempotency token is active for 8 hours. </p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
     /// <p>ClientToken is an idempotency token that ensures a call to <code>StartModelPackagingJob</code> completes only once. You choose the value to pass. For example, An issue might prevent you from getting a response from <code>StartModelPackagingJob</code>. In this case, safely retry your call to <code>StartModelPackagingJob</code> by using the same <code>ClientToken</code> parameter value.</p>
-    /// <p>If you don't supply a value for <code>ClientToken</code>, the AWS SDK you are using inserts a value for you. This prevents retries after a network error from making multiple dataset creation requests. You'll need to provide your own value for other use cases.</p>
-    /// <p>An error occurs if the other input parameters are not the same as in the first request. Using a different value for <code>ClientToken</code> is considered a new call to <code>StartModelPackagingJob</code>. An idempotency token is active for 8 hours.</p>
+    /// <p>If you don't supply a value for <code>ClientToken</code>, the AWS SDK you are using inserts a value for you. This prevents retries after a network error from making multiple dataset creation requests. You'll need to provide your own value for other use cases. </p>
+    /// <p>An error occurs if the other input parameters are not the same as in the first request. Using a different value for <code>ClientToken</code> is considered a new call to <code>StartModelPackagingJob</code>. An idempotency token is active for 8 hours. </p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }

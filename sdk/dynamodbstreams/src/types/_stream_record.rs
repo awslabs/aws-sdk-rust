@@ -18,14 +18,10 @@ pub struct StreamRecord {
     pub size_bytes: ::std::option::Option<i64>,
     /// <p>The type of data from the modified DynamoDB item that was captured in this stream record:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>KEYS_ONLY</code> - only the key attributes of the modified item.</p></li>
-    /// <li>
-    /// <p><code>NEW_IMAGE</code> - the entire item, as it appeared after it was modified.</p></li>
-    /// <li>
-    /// <p><code>OLD_IMAGE</code> - the entire item, as it appeared before it was modified.</p></li>
-    /// <li>
-    /// <p><code>NEW_AND_OLD_IMAGES</code> - both the new and the old item images of the item.</p></li>
+    /// <li> <p> <code>KEYS_ONLY</code> - only the key attributes of the modified item.</p> </li>
+    /// <li> <p> <code>NEW_IMAGE</code> - the entire item, as it appeared after it was modified.</p> </li>
+    /// <li> <p> <code>OLD_IMAGE</code> - the entire item, as it appeared before it was modified.</p> </li>
+    /// <li> <p> <code>NEW_AND_OLD_IMAGES</code> - both the new and the old item images of the item.</p> </li>
     /// </ul>
     pub stream_view_type: ::std::option::Option<crate::types::StreamViewType>,
 }
@@ -56,14 +52,10 @@ impl StreamRecord {
     }
     /// <p>The type of data from the modified DynamoDB item that was captured in this stream record:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>KEYS_ONLY</code> - only the key attributes of the modified item.</p></li>
-    /// <li>
-    /// <p><code>NEW_IMAGE</code> - the entire item, as it appeared after it was modified.</p></li>
-    /// <li>
-    /// <p><code>OLD_IMAGE</code> - the entire item, as it appeared before it was modified.</p></li>
-    /// <li>
-    /// <p><code>NEW_AND_OLD_IMAGES</code> - both the new and the old item images of the item.</p></li>
+    /// <li> <p> <code>KEYS_ONLY</code> - only the key attributes of the modified item.</p> </li>
+    /// <li> <p> <code>NEW_IMAGE</code> - the entire item, as it appeared after it was modified.</p> </li>
+    /// <li> <p> <code>OLD_IMAGE</code> - the entire item, as it appeared before it was modified.</p> </li>
+    /// <li> <p> <code>NEW_AND_OLD_IMAGES</code> - both the new and the old item images of the item.</p> </li>
     /// </ul>
     pub fn stream_view_type(&self) -> ::std::option::Option<&crate::types::StreamViewType> {
         self.stream_view_type.as_ref()
@@ -202,14 +194,10 @@ impl StreamRecordBuilder {
     }
     /// <p>The type of data from the modified DynamoDB item that was captured in this stream record:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>KEYS_ONLY</code> - only the key attributes of the modified item.</p></li>
-    /// <li>
-    /// <p><code>NEW_IMAGE</code> - the entire item, as it appeared after it was modified.</p></li>
-    /// <li>
-    /// <p><code>OLD_IMAGE</code> - the entire item, as it appeared before it was modified.</p></li>
-    /// <li>
-    /// <p><code>NEW_AND_OLD_IMAGES</code> - both the new and the old item images of the item.</p></li>
+    /// <li> <p> <code>KEYS_ONLY</code> - only the key attributes of the modified item.</p> </li>
+    /// <li> <p> <code>NEW_IMAGE</code> - the entire item, as it appeared after it was modified.</p> </li>
+    /// <li> <p> <code>OLD_IMAGE</code> - the entire item, as it appeared before it was modified.</p> </li>
+    /// <li> <p> <code>NEW_AND_OLD_IMAGES</code> - both the new and the old item images of the item.</p> </li>
     /// </ul>
     pub fn stream_view_type(mut self, input: crate::types::StreamViewType) -> Self {
         self.stream_view_type = ::std::option::Option::Some(input);
@@ -217,14 +205,10 @@ impl StreamRecordBuilder {
     }
     /// <p>The type of data from the modified DynamoDB item that was captured in this stream record:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>KEYS_ONLY</code> - only the key attributes of the modified item.</p></li>
-    /// <li>
-    /// <p><code>NEW_IMAGE</code> - the entire item, as it appeared after it was modified.</p></li>
-    /// <li>
-    /// <p><code>OLD_IMAGE</code> - the entire item, as it appeared before it was modified.</p></li>
-    /// <li>
-    /// <p><code>NEW_AND_OLD_IMAGES</code> - both the new and the old item images of the item.</p></li>
+    /// <li> <p> <code>KEYS_ONLY</code> - only the key attributes of the modified item.</p> </li>
+    /// <li> <p> <code>NEW_IMAGE</code> - the entire item, as it appeared after it was modified.</p> </li>
+    /// <li> <p> <code>OLD_IMAGE</code> - the entire item, as it appeared before it was modified.</p> </li>
+    /// <li> <p> <code>NEW_AND_OLD_IMAGES</code> - both the new and the old item images of the item.</p> </li>
     /// </ul>
     pub fn set_stream_view_type(mut self, input: ::std::option::Option<crate::types::StreamViewType>) -> Self {
         self.stream_view_type = input;
@@ -232,14 +216,10 @@ impl StreamRecordBuilder {
     }
     /// <p>The type of data from the modified DynamoDB item that was captured in this stream record:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>KEYS_ONLY</code> - only the key attributes of the modified item.</p></li>
-    /// <li>
-    /// <p><code>NEW_IMAGE</code> - the entire item, as it appeared after it was modified.</p></li>
-    /// <li>
-    /// <p><code>OLD_IMAGE</code> - the entire item, as it appeared before it was modified.</p></li>
-    /// <li>
-    /// <p><code>NEW_AND_OLD_IMAGES</code> - both the new and the old item images of the item.</p></li>
+    /// <li> <p> <code>KEYS_ONLY</code> - only the key attributes of the modified item.</p> </li>
+    /// <li> <p> <code>NEW_IMAGE</code> - the entire item, as it appeared after it was modified.</p> </li>
+    /// <li> <p> <code>OLD_IMAGE</code> - the entire item, as it appeared before it was modified.</p> </li>
+    /// <li> <p> <code>NEW_AND_OLD_IMAGES</code> - both the new and the old item images of the item.</p> </li>
     /// </ul>
     pub fn get_stream_view_type(&self) -> &::std::option::Option<crate::types::StreamViewType> {
         &self.stream_view_type

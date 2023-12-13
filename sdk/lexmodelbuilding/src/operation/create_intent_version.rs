@@ -265,7 +265,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateIntentV
 pub enum CreateIntentVersionError {
     /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again.</p>
     BadRequestException(crate::types::error::BadRequestException),
-    /// <p>There was a conflict processing the request. Try your request again.</p>
+    /// <p> There was a conflict processing the request. Try your request again. </p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>An internal Amazon Lex error occurred. Try your request again.</p>
     InternalFailureException(crate::types::error::InternalFailureException),
@@ -273,7 +273,7 @@ pub enum CreateIntentVersionError {
     LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>The resource specified in the request was not found. Check the resource and try again.</p>
     NotFoundException(crate::types::error::NotFoundException),
-    /// <p>The checksum of the resource that you are trying to change does not match the checksum in the request. Check the resource's checksum and try again.</p>
+    /// <p> The checksum of the resource that you are trying to change does not match the checksum in the request. Check the resource's checksum and try again.</p>
     PreconditionFailedException(crate::types::error::PreconditionFailedException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

@@ -8,7 +8,7 @@ pub struct UpgradeHistory {
     pub upgrade_name: ::std::option::Option<::std::string::String>,
     /// <p>UTC Timestamp at which the Upgrade API call was made in "yyyy-MM-ddTHH:mm:ssZ" format.</p>
     pub start_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The overall status of the update. The status can take one of the following values:</p>
+    /// <p> The overall status of the update. The status can take one of the following values: </p>
     /// <ul>
     /// <li>In Progress</li>
     /// <li>Succeeded</li>
@@ -17,7 +17,7 @@ pub struct UpgradeHistory {
     /// </ul>
     /// <p></p>
     pub upgrade_status: ::std::option::Option<crate::types::UpgradeStatus>,
-    /// <p>A list of <code> <code>UpgradeStepItem</code> </code> s representing information about each step performed as pard of a specific Upgrade or Upgrade Eligibility Check.</p>
+    /// <p> A list of <code> <code>UpgradeStepItem</code> </code> s representing information about each step performed as pard of a specific Upgrade or Upgrade Eligibility Check. </p>
     pub steps_list: ::std::option::Option<::std::vec::Vec<crate::types::UpgradeStepItem>>,
 }
 impl UpgradeHistory {
@@ -29,7 +29,7 @@ impl UpgradeHistory {
     pub fn start_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_timestamp.as_ref()
     }
-    /// <p>The overall status of the update. The status can take one of the following values:</p>
+    /// <p> The overall status of the update. The status can take one of the following values: </p>
     /// <ul>
     /// <li>In Progress</li>
     /// <li>Succeeded</li>
@@ -40,7 +40,7 @@ impl UpgradeHistory {
     pub fn upgrade_status(&self) -> ::std::option::Option<&crate::types::UpgradeStatus> {
         self.upgrade_status.as_ref()
     }
-    /// <p>A list of <code> <code>UpgradeStepItem</code> </code> s representing information about each step performed as pard of a specific Upgrade or Upgrade Eligibility Check.</p>
+    /// <p> A list of <code> <code>UpgradeStepItem</code> </code> s representing information about each step performed as pard of a specific Upgrade or Upgrade Eligibility Check. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.steps_list.is_none()`.
     pub fn steps_list(&self) -> &[crate::types::UpgradeStepItem] {
@@ -92,7 +92,7 @@ impl UpgradeHistoryBuilder {
     pub fn get_start_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.start_timestamp
     }
-    /// <p>The overall status of the update. The status can take one of the following values:</p>
+    /// <p> The overall status of the update. The status can take one of the following values: </p>
     /// <ul>
     /// <li>In Progress</li>
     /// <li>Succeeded</li>
@@ -104,7 +104,7 @@ impl UpgradeHistoryBuilder {
         self.upgrade_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The overall status of the update. The status can take one of the following values:</p>
+    /// <p> The overall status of the update. The status can take one of the following values: </p>
     /// <ul>
     /// <li>In Progress</li>
     /// <li>Succeeded</li>
@@ -116,7 +116,7 @@ impl UpgradeHistoryBuilder {
         self.upgrade_status = input;
         self
     }
-    /// <p>The overall status of the update. The status can take one of the following values:</p>
+    /// <p> The overall status of the update. The status can take one of the following values: </p>
     /// <ul>
     /// <li>In Progress</li>
     /// <li>Succeeded</li>
@@ -131,19 +131,19 @@ impl UpgradeHistoryBuilder {
     ///
     /// To override the contents of this collection use [`set_steps_list`](Self::set_steps_list).
     ///
-    /// <p>A list of <code> <code>UpgradeStepItem</code> </code> s representing information about each step performed as pard of a specific Upgrade or Upgrade Eligibility Check.</p>
+    /// <p> A list of <code> <code>UpgradeStepItem</code> </code> s representing information about each step performed as pard of a specific Upgrade or Upgrade Eligibility Check. </p>
     pub fn steps_list(mut self, input: crate::types::UpgradeStepItem) -> Self {
         let mut v = self.steps_list.unwrap_or_default();
         v.push(input);
         self.steps_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of <code> <code>UpgradeStepItem</code> </code> s representing information about each step performed as pard of a specific Upgrade or Upgrade Eligibility Check.</p>
+    /// <p> A list of <code> <code>UpgradeStepItem</code> </code> s representing information about each step performed as pard of a specific Upgrade or Upgrade Eligibility Check. </p>
     pub fn set_steps_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpgradeStepItem>>) -> Self {
         self.steps_list = input;
         self
     }
-    /// <p>A list of <code> <code>UpgradeStepItem</code> </code> s representing information about each step performed as pard of a specific Upgrade or Upgrade Eligibility Check.</p>
+    /// <p> A list of <code> <code>UpgradeStepItem</code> </code> s representing information about each step performed as pard of a specific Upgrade or Upgrade Eligibility Check. </p>
     pub fn get_steps_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpgradeStepItem>> {
         &self.steps_list
     }

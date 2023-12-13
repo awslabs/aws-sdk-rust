@@ -8,14 +8,10 @@ pub struct ConstraintDetail {
     pub constraint_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of constraint.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>LAUNCH</code></p></li>
-    /// <li>
-    /// <p><code>NOTIFICATION</code></p></li>
-    /// <li>
-    /// <p>STACKSET</p></li>
-    /// <li>
-    /// <p><code>TEMPLATE</code></p></li>
+    /// <li> <p> <code>LAUNCH</code> </p> </li>
+    /// <li> <p> <code>NOTIFICATION</code> </p> </li>
+    /// <li> <p>STACKSET</p> </li>
+    /// <li> <p> <code>TEMPLATE</code> </p> </li>
     /// </ul>
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The description of the constraint.</p>
@@ -34,14 +30,10 @@ impl ConstraintDetail {
     }
     /// <p>The type of constraint.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>LAUNCH</code></p></li>
-    /// <li>
-    /// <p><code>NOTIFICATION</code></p></li>
-    /// <li>
-    /// <p>STACKSET</p></li>
-    /// <li>
-    /// <p><code>TEMPLATE</code></p></li>
+    /// <li> <p> <code>LAUNCH</code> </p> </li>
+    /// <li> <p> <code>NOTIFICATION</code> </p> </li>
+    /// <li> <p>STACKSET</p> </li>
+    /// <li> <p> <code>TEMPLATE</code> </p> </li>
     /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
@@ -98,14 +90,10 @@ impl ConstraintDetailBuilder {
     }
     /// <p>The type of constraint.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>LAUNCH</code></p></li>
-    /// <li>
-    /// <p><code>NOTIFICATION</code></p></li>
-    /// <li>
-    /// <p>STACKSET</p></li>
-    /// <li>
-    /// <p><code>TEMPLATE</code></p></li>
+    /// <li> <p> <code>LAUNCH</code> </p> </li>
+    /// <li> <p> <code>NOTIFICATION</code> </p> </li>
+    /// <li> <p>STACKSET</p> </li>
+    /// <li> <p> <code>TEMPLATE</code> </p> </li>
     /// </ul>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -113,14 +101,10 @@ impl ConstraintDetailBuilder {
     }
     /// <p>The type of constraint.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>LAUNCH</code></p></li>
-    /// <li>
-    /// <p><code>NOTIFICATION</code></p></li>
-    /// <li>
-    /// <p>STACKSET</p></li>
-    /// <li>
-    /// <p><code>TEMPLATE</code></p></li>
+    /// <li> <p> <code>LAUNCH</code> </p> </li>
+    /// <li> <p> <code>NOTIFICATION</code> </p> </li>
+    /// <li> <p>STACKSET</p> </li>
+    /// <li> <p> <code>TEMPLATE</code> </p> </li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
@@ -128,14 +112,10 @@ impl ConstraintDetailBuilder {
     }
     /// <p>The type of constraint.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>LAUNCH</code></p></li>
-    /// <li>
-    /// <p><code>NOTIFICATION</code></p></li>
-    /// <li>
-    /// <p>STACKSET</p></li>
-    /// <li>
-    /// <p><code>TEMPLATE</code></p></li>
+    /// <li> <p> <code>LAUNCH</code> </p> </li>
+    /// <li> <p> <code>NOTIFICATION</code> </p> </li>
+    /// <li> <p>STACKSET</p> </li>
+    /// <li> <p> <code>TEMPLATE</code> </p> </li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.r#type

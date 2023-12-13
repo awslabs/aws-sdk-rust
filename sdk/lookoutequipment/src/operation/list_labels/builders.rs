@@ -22,7 +22,7 @@ impl ListLabelsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListLabels`.
 ///
-/// <p>Provides a list of labels.</p>
+/// <p> Provides a list of labels. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListLabelsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,101 +114,101 @@ impl ListLabelsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_labels::paginator::ListLabelsPaginator {
         crate::operation::list_labels::paginator::ListLabelsPaginator::new(self.handle, self.inner)
     }
-    /// <p>Retruns the name of the label group.</p>
+    /// <p> Retruns the name of the label group. </p>
     pub fn label_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.label_group_name(input.into());
         self
     }
-    /// <p>Retruns the name of the label group.</p>
+    /// <p> Retruns the name of the label group. </p>
     pub fn set_label_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_label_group_name(input);
         self
     }
-    /// <p>Retruns the name of the label group.</p>
+    /// <p> Retruns the name of the label group. </p>
     pub fn get_label_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_label_group_name()
     }
-    /// <p>Returns all the labels with a end time equal to or later than the start time given.</p>
+    /// <p> Returns all the labels with a end time equal to or later than the start time given. </p>
     pub fn interval_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.interval_start_time(input);
         self
     }
-    /// <p>Returns all the labels with a end time equal to or later than the start time given.</p>
+    /// <p> Returns all the labels with a end time equal to or later than the start time given. </p>
     pub fn set_interval_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_interval_start_time(input);
         self
     }
-    /// <p>Returns all the labels with a end time equal to or later than the start time given.</p>
+    /// <p> Returns all the labels with a end time equal to or later than the start time given. </p>
     pub fn get_interval_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_interval_start_time()
     }
-    /// <p>Returns all labels with a start time earlier than the end time given.</p>
+    /// <p> Returns all labels with a start time earlier than the end time given. </p>
     pub fn interval_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.interval_end_time(input);
         self
     }
-    /// <p>Returns all labels with a start time earlier than the end time given.</p>
+    /// <p> Returns all labels with a start time earlier than the end time given. </p>
     pub fn set_interval_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_interval_end_time(input);
         self
     }
-    /// <p>Returns all labels with a start time earlier than the end time given.</p>
+    /// <p> Returns all labels with a start time earlier than the end time given. </p>
     pub fn get_interval_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_interval_end_time()
     }
-    /// <p>Returns labels with a particular fault code.</p>
+    /// <p> Returns labels with a particular fault code. </p>
     pub fn fault_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fault_code(input.into());
         self
     }
-    /// <p>Returns labels with a particular fault code.</p>
+    /// <p> Returns labels with a particular fault code. </p>
     pub fn set_fault_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_fault_code(input);
         self
     }
-    /// <p>Returns labels with a particular fault code.</p>
+    /// <p> Returns labels with a particular fault code. </p>
     pub fn get_fault_code(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_fault_code()
     }
-    /// <p>Lists the labels that pertain to a particular piece of equipment.</p>
+    /// <p> Lists the labels that pertain to a particular piece of equipment. </p>
     pub fn equipment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.equipment(input.into());
         self
     }
-    /// <p>Lists the labels that pertain to a particular piece of equipment.</p>
+    /// <p> Lists the labels that pertain to a particular piece of equipment. </p>
     pub fn set_equipment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_equipment(input);
         self
     }
-    /// <p>Lists the labels that pertain to a particular piece of equipment.</p>
+    /// <p> Lists the labels that pertain to a particular piece of equipment. </p>
     pub fn get_equipment(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_equipment()
     }
-    /// <p>An opaque pagination token indicating where to continue the listing of label groups.</p>
+    /// <p> An opaque pagination token indicating where to continue the listing of label groups. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>An opaque pagination token indicating where to continue the listing of label groups.</p>
+    /// <p> An opaque pagination token indicating where to continue the listing of label groups. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>An opaque pagination token indicating where to continue the listing of label groups.</p>
+    /// <p> An opaque pagination token indicating where to continue the listing of label groups. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>Specifies the maximum number of labels to list.</p>
+    /// <p> Specifies the maximum number of labels to list. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>Specifies the maximum number of labels to list.</p>
+    /// <p> Specifies the maximum number of labels to list. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>Specifies the maximum number of labels to list.</p>
+    /// <p> Specifies the maximum number of labels to list. </p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

@@ -19,7 +19,7 @@ pub struct DescribeHyperParameterTuningJobOutput {
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the tuning job ended.</p>
     pub hyper_parameter_tuning_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The date and time that the status of the tuning job was modified.</p>
+    /// <p>The date and time that the status of the tuning job was modified. </p>
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobStatusCounters.html">TrainingJobStatusCounters</a> object that specifies the number of training jobs, categorized by status, that this tuning job launched.</p>
     pub training_job_status_counters: ::std::option::Option<crate::types::TrainingJobStatusCounters>,
@@ -76,7 +76,7 @@ impl DescribeHyperParameterTuningJobOutput {
     pub fn hyper_parameter_tuning_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.hyper_parameter_tuning_end_time.as_ref()
     }
-    /// <p>The date and time that the status of the tuning job was modified.</p>
+    /// <p>The date and time that the status of the tuning job was modified. </p>
     pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
@@ -280,17 +280,17 @@ impl DescribeHyperParameterTuningJobOutputBuilder {
     pub fn get_hyper_parameter_tuning_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.hyper_parameter_tuning_end_time
     }
-    /// <p>The date and time that the status of the tuning job was modified.</p>
+    /// <p>The date and time that the status of the tuning job was modified. </p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time that the status of the tuning job was modified.</p>
+    /// <p>The date and time that the status of the tuning job was modified. </p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
-    /// <p>The date and time that the status of the tuning job was modified.</p>
+    /// <p>The date and time that the status of the tuning job was modified. </p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_time
     }

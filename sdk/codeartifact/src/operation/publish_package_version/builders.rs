@@ -23,7 +23,7 @@ impl PublishPackageVersionInputBuilder {
 /// Fluent builder constructing a request to `PublishPackageVersion`.
 ///
 /// <p>Creates a new package version containing one or more assets (or files).</p>
-/// <p>The <code>unfinished</code> flag can be used to keep the package version in the <code>Unfinished</code> state until all of its assets have been uploaded (see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/packages-overview.html#package-version-status.html#package-version-status">Package version status</a> in the <i>CodeArtifact user guide</i>). To set the package version’s status to <code>Published</code>, omit the <code>unfinished</code> flag when uploading the final asset, or set the status using <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdatePackageVersionsStatus.html">UpdatePackageVersionStatus</a>. Once a package version’s status is set to <code>Published</code>, it cannot change back to <code>Unfinished</code>.</p><note>
+/// <p>The <code>unfinished</code> flag can be used to keep the package version in the <code>Unfinished</code> state until all of its assets have been uploaded (see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/packages-overview.html#package-version-status.html#package-version-status">Package version status</a> in the <i>CodeArtifact user guide</i>). To set the package version’s status to <code>Published</code>, omit the <code>unfinished</code> flag when uploading the final asset, or set the status using <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdatePackageVersionsStatus.html">UpdatePackageVersionStatus</a>. Once a package version’s status is set to <code>Published</code>, it cannot change back to <code>Unfinished</code>.</p> <note>
 /// <p>Only generic packages can be published using this API. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-generic.html">Using generic packages</a> in the <i>CodeArtifact User Guide</i>.</p>
 /// </note>
 #[derive(::std::fmt::Debug)]
@@ -226,17 +226,17 @@ impl PublishPackageVersionFluentBuilder {
     pub fn get_asset_content(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
         self.inner.get_asset_content()
     }
-    /// <p>The name of the asset to publish. Asset names can include Unicode letters and numbers, and the following special characters: <code>~ ! @ ^ &amp; ( ) - ` _ + [ ] { } ; , . `</code></p>
+    /// <p>The name of the asset to publish. Asset names can include Unicode letters and numbers, and the following special characters: <code>~ ! @ ^ &amp; ( ) - ` _ + [ ] { } ; , . `</code> </p>
     pub fn asset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.asset_name(input.into());
         self
     }
-    /// <p>The name of the asset to publish. Asset names can include Unicode letters and numbers, and the following special characters: <code>~ ! @ ^ &amp; ( ) - ` _ + [ ] { } ; , . `</code></p>
+    /// <p>The name of the asset to publish. Asset names can include Unicode letters and numbers, and the following special characters: <code>~ ! @ ^ &amp; ( ) - ` _ + [ ] { } ; , . `</code> </p>
     pub fn set_asset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_asset_name(input);
         self
     }
-    /// <p>The name of the asset to publish. Asset names can include Unicode letters and numbers, and the following special characters: <code>~ ! @ ^ &amp; ( ) - ` _ + [ ] { } ; , . `</code></p>
+    /// <p>The name of the asset to publish. Asset names can include Unicode letters and numbers, and the following special characters: <code>~ ! @ ^ &amp; ( ) - ` _ + [ ] { } ; , . `</code> </p>
     pub fn get_asset_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_asset_name()
     }
@@ -258,19 +258,19 @@ impl PublishPackageVersionFluentBuilder {
         self.inner.get_asset_sha256()
     }
     /// <p>Specifies whether the package version should remain in the <code>unfinished</code> state. If omitted, the package version status will be set to <code>Published</code> (see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/packages-overview.html#package-version-status">Package version status</a> in the <i>CodeArtifact User Guide</i>).</p>
-    /// <p>Valid values: <code>unfinished</code></p>
+    /// <p>Valid values: <code>unfinished</code> </p>
     pub fn unfinished(mut self, input: bool) -> Self {
         self.inner = self.inner.unfinished(input);
         self
     }
     /// <p>Specifies whether the package version should remain in the <code>unfinished</code> state. If omitted, the package version status will be set to <code>Published</code> (see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/packages-overview.html#package-version-status">Package version status</a> in the <i>CodeArtifact User Guide</i>).</p>
-    /// <p>Valid values: <code>unfinished</code></p>
+    /// <p>Valid values: <code>unfinished</code> </p>
     pub fn set_unfinished(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_unfinished(input);
         self
     }
     /// <p>Specifies whether the package version should remain in the <code>unfinished</code> state. If omitted, the package version status will be set to <code>Published</code> (see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/packages-overview.html#package-version-status">Package version status</a> in the <i>CodeArtifact User Guide</i>).</p>
-    /// <p>Valid values: <code>unfinished</code></p>
+    /// <p>Valid values: <code>unfinished</code> </p>
     pub fn get_unfinished(&self) -> &::std::option::Option<bool> {
         self.inner.get_unfinished()
     }

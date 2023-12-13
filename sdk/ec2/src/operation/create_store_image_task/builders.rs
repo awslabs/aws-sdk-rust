@@ -124,17 +124,17 @@ impl CreateStoreImageTaskFluentBuilder {
     pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_image_id()
     }
-    /// <p>The name of the Amazon S3 bucket in which the AMI object will be stored. The bucket must be in the Region in which the request is being made. The AMI object appears in the bucket only after the upload task has completed.</p>
+    /// <p>The name of the Amazon S3 bucket in which the AMI object will be stored. The bucket must be in the Region in which the request is being made. The AMI object appears in the bucket only after the upload task has completed. </p>
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bucket(input.into());
         self
     }
-    /// <p>The name of the Amazon S3 bucket in which the AMI object will be stored. The bucket must be in the Region in which the request is being made. The AMI object appears in the bucket only after the upload task has completed.</p>
+    /// <p>The name of the Amazon S3 bucket in which the AMI object will be stored. The bucket must be in the Region in which the request is being made. The AMI object appears in the bucket only after the upload task has completed. </p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bucket(input);
         self
     }
-    /// <p>The name of the Amazon S3 bucket in which the AMI object will be stored. The bucket must be in the Region in which the request is being made. The AMI object appears in the bucket only after the upload task has completed.</p>
+    /// <p>The name of the Amazon S3 bucket in which the AMI object will be stored. The bucket must be in the Region in which the request is being made. The AMI object appears in the bucket only after the upload task has completed. </p>
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_bucket()
     }
@@ -142,17 +142,17 @@ impl CreateStoreImageTaskFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_s3_object_tags`](Self::set_s3_object_tags).
     ///
-    /// <p>The tags to apply to the AMI object that will be stored in the Amazon S3 bucket.</p>
+    /// <p>The tags to apply to the AMI object that will be stored in the Amazon S3 bucket. </p>
     pub fn s3_object_tags(mut self, input: crate::types::S3ObjectTag) -> Self {
         self.inner = self.inner.s3_object_tags(input);
         self
     }
-    /// <p>The tags to apply to the AMI object that will be stored in the Amazon S3 bucket.</p>
+    /// <p>The tags to apply to the AMI object that will be stored in the Amazon S3 bucket. </p>
     pub fn set_s3_object_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::S3ObjectTag>>) -> Self {
         self.inner = self.inner.set_s3_object_tags(input);
         self
     }
-    /// <p>The tags to apply to the AMI object that will be stored in the Amazon S3 bucket.</p>
+    /// <p>The tags to apply to the AMI object that will be stored in the Amazon S3 bucket. </p>
     pub fn get_s3_object_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::S3ObjectTag>> {
         self.inner.get_s3_object_tags()
     }

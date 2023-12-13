@@ -192,17 +192,17 @@ impl CreateTaskTemplateFluentBuilder {
     pub fn get_defaults(&self) -> &::std::option::Option<crate::types::TaskTemplateDefaults> {
         self.inner.get_defaults()
     }
-    /// <p>Marks a template as <code>ACTIVE</code> or <code>INACTIVE</code> for a task to refer to it. Tasks can only be created from <code>ACTIVE</code> templates. If a template is marked as <code>INACTIVE</code>, then a task that refers to this template cannot be created.</p>
+    /// <p>Marks a template as <code>ACTIVE</code> or <code>INACTIVE</code> for a task to refer to it. Tasks can only be created from <code>ACTIVE</code> templates. If a template is marked as <code>INACTIVE</code>, then a task that refers to this template cannot be created. </p>
     pub fn status(mut self, input: crate::types::TaskTemplateStatus) -> Self {
         self.inner = self.inner.status(input);
         self
     }
-    /// <p>Marks a template as <code>ACTIVE</code> or <code>INACTIVE</code> for a task to refer to it. Tasks can only be created from <code>ACTIVE</code> templates. If a template is marked as <code>INACTIVE</code>, then a task that refers to this template cannot be created.</p>
+    /// <p>Marks a template as <code>ACTIVE</code> or <code>INACTIVE</code> for a task to refer to it. Tasks can only be created from <code>ACTIVE</code> templates. If a template is marked as <code>INACTIVE</code>, then a task that refers to this template cannot be created. </p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::TaskTemplateStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
-    /// <p>Marks a template as <code>ACTIVE</code> or <code>INACTIVE</code> for a task to refer to it. Tasks can only be created from <code>ACTIVE</code> templates. If a template is marked as <code>INACTIVE</code>, then a task that refers to this template cannot be created.</p>
+    /// <p>Marks a template as <code>ACTIVE</code> or <code>INACTIVE</code> for a task to refer to it. Tasks can only be created from <code>ACTIVE</code> templates. If a template is marked as <code>INACTIVE</code>, then a task that refers to this template cannot be created. </p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::TaskTemplateStatus> {
         self.inner.get_status()
     }

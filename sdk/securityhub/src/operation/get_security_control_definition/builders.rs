@@ -22,7 +22,7 @@ impl GetSecurityControlDefinitionInputBuilder {
 }
 /// Fluent builder constructing a request to `GetSecurityControlDefinition`.
 ///
-/// <p>Retrieves the definition of a security control. The definition includes the control title, description, Region availability, parameter definitions, and other details.</p>
+/// <p> Retrieves the definition of a security control. The definition includes the control title, description, Region availability, parameter definitions, and other details. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetSecurityControlDefinitionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl GetSecurityControlDefinitionFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the security control to retrieve the definition for. This field doesn’t accept an Amazon Resource Name (ARN).</p>
+    /// <p> The ID of the security control to retrieve the definition for. This field doesn’t accept an Amazon Resource Name (ARN). </p>
     pub fn security_control_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.security_control_id(input.into());
         self
     }
-    /// <p>The ID of the security control to retrieve the definition for. This field doesn’t accept an Amazon Resource Name (ARN).</p>
+    /// <p> The ID of the security control to retrieve the definition for. This field doesn’t accept an Amazon Resource Name (ARN). </p>
     pub fn set_security_control_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_security_control_id(input);
         self
     }
-    /// <p>The ID of the security control to retrieve the definition for. This field doesn’t accept an Amazon Resource Name (ARN).</p>
+    /// <p> The ID of the security control to retrieve the definition for. This field doesn’t accept an Amazon Resource Name (ARN). </p>
     pub fn get_security_control_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_security_control_id()
     }

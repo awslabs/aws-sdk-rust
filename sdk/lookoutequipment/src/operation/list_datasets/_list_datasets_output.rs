@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDatasetsOutput {
-    /// <p>An opaque pagination token indicating where to continue the listing of datasets.</p>
+    /// <p> An opaque pagination token indicating where to continue the listing of datasets. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>Provides information about the specified dataset, including creation time, dataset ARN, and status.</p>
+    /// <p>Provides information about the specified dataset, including creation time, dataset ARN, and status. </p>
     pub dataset_summaries: ::std::option::Option<::std::vec::Vec<crate::types::DatasetSummary>>,
     _request_id: Option<String>,
 }
 impl ListDatasetsOutput {
-    /// <p>An opaque pagination token indicating where to continue the listing of datasets.</p>
+    /// <p> An opaque pagination token indicating where to continue the listing of datasets. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Provides information about the specified dataset, including creation time, dataset ARN, and status.</p>
+    /// <p>Provides information about the specified dataset, including creation time, dataset ARN, and status. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dataset_summaries.is_none()`.
     pub fn dataset_summaries(&self) -> &[crate::types::DatasetSummary] {
@@ -42,17 +42,17 @@ pub struct ListDatasetsOutputBuilder {
     _request_id: Option<String>,
 }
 impl ListDatasetsOutputBuilder {
-    /// <p>An opaque pagination token indicating where to continue the listing of datasets.</p>
+    /// <p> An opaque pagination token indicating where to continue the listing of datasets. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An opaque pagination token indicating where to continue the listing of datasets.</p>
+    /// <p> An opaque pagination token indicating where to continue the listing of datasets. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>An opaque pagination token indicating where to continue the listing of datasets.</p>
+    /// <p> An opaque pagination token indicating where to continue the listing of datasets. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
@@ -60,19 +60,19 @@ impl ListDatasetsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_dataset_summaries`](Self::set_dataset_summaries).
     ///
-    /// <p>Provides information about the specified dataset, including creation time, dataset ARN, and status.</p>
+    /// <p>Provides information about the specified dataset, including creation time, dataset ARN, and status. </p>
     pub fn dataset_summaries(mut self, input: crate::types::DatasetSummary) -> Self {
         let mut v = self.dataset_summaries.unwrap_or_default();
         v.push(input);
         self.dataset_summaries = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Provides information about the specified dataset, including creation time, dataset ARN, and status.</p>
+    /// <p>Provides information about the specified dataset, including creation time, dataset ARN, and status. </p>
     pub fn set_dataset_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DatasetSummary>>) -> Self {
         self.dataset_summaries = input;
         self
     }
-    /// <p>Provides information about the specified dataset, including creation time, dataset ARN, and status.</p>
+    /// <p>Provides information about the specified dataset, including creation time, dataset ARN, and status. </p>
     pub fn get_dataset_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetSummary>> {
         &self.dataset_summaries
     }

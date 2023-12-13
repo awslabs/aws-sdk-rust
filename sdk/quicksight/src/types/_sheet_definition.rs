@@ -29,10 +29,8 @@ pub struct SheetDefinition {
     pub sheet_control_layouts: ::std::option::Option<::std::vec::Vec<crate::types::SheetControlLayout>>,
     /// <p>The layout content type of the sheet. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PAGINATED</code>: Creates a sheet for a paginated report.</p></li>
-    /// <li>
-    /// <p><code>INTERACTIVE</code>: Creates a sheet for an interactive dashboard.</p></li>
+    /// <li> <p> <code>PAGINATED</code>: Creates a sheet for a paginated report.</p> </li>
+    /// <li> <p> <code>INTERACTIVE</code>: Creates a sheet for an interactive dashboard.</p> </li>
     /// </ul>
     pub content_type: ::std::option::Option<crate::types::SheetContentType>,
 }
@@ -95,10 +93,8 @@ impl SheetDefinition {
     }
     /// <p>The layout content type of the sheet. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PAGINATED</code>: Creates a sheet for a paginated report.</p></li>
-    /// <li>
-    /// <p><code>INTERACTIVE</code>: Creates a sheet for an interactive dashboard.</p></li>
+    /// <li> <p> <code>PAGINATED</code>: Creates a sheet for a paginated report.</p> </li>
+    /// <li> <p> <code>INTERACTIVE</code>: Creates a sheet for an interactive dashboard.</p> </li>
     /// </ul>
     pub fn content_type(&self) -> ::std::option::Option<&crate::types::SheetContentType> {
         self.content_type.as_ref()
@@ -316,10 +312,8 @@ impl SheetDefinitionBuilder {
     }
     /// <p>The layout content type of the sheet. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PAGINATED</code>: Creates a sheet for a paginated report.</p></li>
-    /// <li>
-    /// <p><code>INTERACTIVE</code>: Creates a sheet for an interactive dashboard.</p></li>
+    /// <li> <p> <code>PAGINATED</code>: Creates a sheet for a paginated report.</p> </li>
+    /// <li> <p> <code>INTERACTIVE</code>: Creates a sheet for an interactive dashboard.</p> </li>
     /// </ul>
     pub fn content_type(mut self, input: crate::types::SheetContentType) -> Self {
         self.content_type = ::std::option::Option::Some(input);
@@ -327,10 +321,8 @@ impl SheetDefinitionBuilder {
     }
     /// <p>The layout content type of the sheet. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PAGINATED</code>: Creates a sheet for a paginated report.</p></li>
-    /// <li>
-    /// <p><code>INTERACTIVE</code>: Creates a sheet for an interactive dashboard.</p></li>
+    /// <li> <p> <code>PAGINATED</code>: Creates a sheet for a paginated report.</p> </li>
+    /// <li> <p> <code>INTERACTIVE</code>: Creates a sheet for an interactive dashboard.</p> </li>
     /// </ul>
     pub fn set_content_type(mut self, input: ::std::option::Option<crate::types::SheetContentType>) -> Self {
         self.content_type = input;
@@ -338,10 +330,8 @@ impl SheetDefinitionBuilder {
     }
     /// <p>The layout content type of the sheet. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PAGINATED</code>: Creates a sheet for a paginated report.</p></li>
-    /// <li>
-    /// <p><code>INTERACTIVE</code>: Creates a sheet for an interactive dashboard.</p></li>
+    /// <li> <p> <code>PAGINATED</code>: Creates a sheet for a paginated report.</p> </li>
+    /// <li> <p> <code>INTERACTIVE</code>: Creates a sheet for an interactive dashboard.</p> </li>
     /// </ul>
     pub fn get_content_type(&self) -> &::std::option::Option<crate::types::SheetContentType> {
         &self.content_type

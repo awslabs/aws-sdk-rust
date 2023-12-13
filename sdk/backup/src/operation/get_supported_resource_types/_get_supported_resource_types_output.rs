@@ -5,26 +5,16 @@
 pub struct GetSupportedResourceTypesOutput {
     /// <p>Contains a string with the supported Amazon Web Services resource types:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Aurora</code> for Amazon Aurora</p></li>
-    /// <li>
-    /// <p><code>DynamoDB</code> for Amazon DynamoDB</p></li>
-    /// <li>
-    /// <p><code>EBS</code> for Amazon Elastic Block Store</p></li>
-    /// <li>
-    /// <p><code>EC2</code> for Amazon Elastic Compute Cloud</p></li>
-    /// <li>
-    /// <p><code>EFS</code> for Amazon Elastic File System</p></li>
-    /// <li>
-    /// <p><code>FSX</code> for Amazon FSx</p></li>
-    /// <li>
-    /// <p><code>RDS</code> for Amazon Relational Database Service</p></li>
-    /// <li>
-    /// <p><code>Storage Gateway</code> for Storage Gateway</p></li>
-    /// <li>
-    /// <p><code>DocDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p></li>
-    /// <li>
-    /// <p><code>Neptune</code> for Amazon Neptune</p></li>
+    /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+    /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
+    /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
+    /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
+    /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
+    /// <li> <p> <code>FSX</code> for Amazon FSx</p> </li>
+    /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+    /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
+    /// <li> <p> <code>DocDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
+    /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>
     /// </ul>
     pub resource_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
@@ -32,26 +22,16 @@ pub struct GetSupportedResourceTypesOutput {
 impl GetSupportedResourceTypesOutput {
     /// <p>Contains a string with the supported Amazon Web Services resource types:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Aurora</code> for Amazon Aurora</p></li>
-    /// <li>
-    /// <p><code>DynamoDB</code> for Amazon DynamoDB</p></li>
-    /// <li>
-    /// <p><code>EBS</code> for Amazon Elastic Block Store</p></li>
-    /// <li>
-    /// <p><code>EC2</code> for Amazon Elastic Compute Cloud</p></li>
-    /// <li>
-    /// <p><code>EFS</code> for Amazon Elastic File System</p></li>
-    /// <li>
-    /// <p><code>FSX</code> for Amazon FSx</p></li>
-    /// <li>
-    /// <p><code>RDS</code> for Amazon Relational Database Service</p></li>
-    /// <li>
-    /// <p><code>Storage Gateway</code> for Storage Gateway</p></li>
-    /// <li>
-    /// <p><code>DocDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p></li>
-    /// <li>
-    /// <p><code>Neptune</code> for Amazon Neptune</p></li>
+    /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+    /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
+    /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
+    /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
+    /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
+    /// <li> <p> <code>FSX</code> for Amazon FSx</p> </li>
+    /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+    /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
+    /// <li> <p> <code>DocDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
+    /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_types.is_none()`.
@@ -85,26 +65,16 @@ impl GetSupportedResourceTypesOutputBuilder {
     ///
     /// <p>Contains a string with the supported Amazon Web Services resource types:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Aurora</code> for Amazon Aurora</p></li>
-    /// <li>
-    /// <p><code>DynamoDB</code> for Amazon DynamoDB</p></li>
-    /// <li>
-    /// <p><code>EBS</code> for Amazon Elastic Block Store</p></li>
-    /// <li>
-    /// <p><code>EC2</code> for Amazon Elastic Compute Cloud</p></li>
-    /// <li>
-    /// <p><code>EFS</code> for Amazon Elastic File System</p></li>
-    /// <li>
-    /// <p><code>FSX</code> for Amazon FSx</p></li>
-    /// <li>
-    /// <p><code>RDS</code> for Amazon Relational Database Service</p></li>
-    /// <li>
-    /// <p><code>Storage Gateway</code> for Storage Gateway</p></li>
-    /// <li>
-    /// <p><code>DocDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p></li>
-    /// <li>
-    /// <p><code>Neptune</code> for Amazon Neptune</p></li>
+    /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+    /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
+    /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
+    /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
+    /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
+    /// <li> <p> <code>FSX</code> for Amazon FSx</p> </li>
+    /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+    /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
+    /// <li> <p> <code>DocDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
+    /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>
     /// </ul>
     pub fn resource_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_types.unwrap_or_default();
@@ -114,26 +84,16 @@ impl GetSupportedResourceTypesOutputBuilder {
     }
     /// <p>Contains a string with the supported Amazon Web Services resource types:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Aurora</code> for Amazon Aurora</p></li>
-    /// <li>
-    /// <p><code>DynamoDB</code> for Amazon DynamoDB</p></li>
-    /// <li>
-    /// <p><code>EBS</code> for Amazon Elastic Block Store</p></li>
-    /// <li>
-    /// <p><code>EC2</code> for Amazon Elastic Compute Cloud</p></li>
-    /// <li>
-    /// <p><code>EFS</code> for Amazon Elastic File System</p></li>
-    /// <li>
-    /// <p><code>FSX</code> for Amazon FSx</p></li>
-    /// <li>
-    /// <p><code>RDS</code> for Amazon Relational Database Service</p></li>
-    /// <li>
-    /// <p><code>Storage Gateway</code> for Storage Gateway</p></li>
-    /// <li>
-    /// <p><code>DocDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p></li>
-    /// <li>
-    /// <p><code>Neptune</code> for Amazon Neptune</p></li>
+    /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+    /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
+    /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
+    /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
+    /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
+    /// <li> <p> <code>FSX</code> for Amazon FSx</p> </li>
+    /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+    /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
+    /// <li> <p> <code>DocDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
+    /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>
     /// </ul>
     pub fn set_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resource_types = input;
@@ -141,26 +101,16 @@ impl GetSupportedResourceTypesOutputBuilder {
     }
     /// <p>Contains a string with the supported Amazon Web Services resource types:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Aurora</code> for Amazon Aurora</p></li>
-    /// <li>
-    /// <p><code>DynamoDB</code> for Amazon DynamoDB</p></li>
-    /// <li>
-    /// <p><code>EBS</code> for Amazon Elastic Block Store</p></li>
-    /// <li>
-    /// <p><code>EC2</code> for Amazon Elastic Compute Cloud</p></li>
-    /// <li>
-    /// <p><code>EFS</code> for Amazon Elastic File System</p></li>
-    /// <li>
-    /// <p><code>FSX</code> for Amazon FSx</p></li>
-    /// <li>
-    /// <p><code>RDS</code> for Amazon Relational Database Service</p></li>
-    /// <li>
-    /// <p><code>Storage Gateway</code> for Storage Gateway</p></li>
-    /// <li>
-    /// <p><code>DocDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p></li>
-    /// <li>
-    /// <p><code>Neptune</code> for Amazon Neptune</p></li>
+    /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+    /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
+    /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
+    /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
+    /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
+    /// <li> <p> <code>FSX</code> for Amazon FSx</p> </li>
+    /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+    /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
+    /// <li> <p> <code>DocDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
+    /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>
     /// </ul>
     pub fn get_resource_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.resource_types

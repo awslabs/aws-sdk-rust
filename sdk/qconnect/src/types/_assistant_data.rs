@@ -18,13 +18,13 @@ pub struct AssistantData {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>The configuration information for the customer managed key used for encryption.</p>
-    /// <p>This KMS key must have a policy that allows <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>, <code>kms:Decrypt</code>, and <code>kms:GenerateDataKey*</code> permissions to the IAM identity using the key to invoke Amazon Q. To use Amazon Q with chat, the key policy must also allow <code>kms:Decrypt</code>, <code>kms:GenerateDataKey*</code>, and <code>kms:DescribeKey</code> permissions to the <code>connect.amazonaws.com</code> service principal.</p>
+    /// <p>The configuration information for the customer managed key used for encryption. </p>
+    /// <p>This KMS key must have a policy that allows <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>, <code>kms:Decrypt</code>, and <code>kms:GenerateDataKey*</code> permissions to the IAM identity using the key to invoke Amazon Q. To use Amazon Q with chat, the key policy must also allow <code>kms:Decrypt</code>, <code>kms:GenerateDataKey*</code>, and <code>kms:DescribeKey</code> permissions to the <code>connect.amazonaws.com</code> service principal. </p>
     /// <p>For more information about setting up a customer managed key for Amazon Q, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-q.html">Enable Amazon Q in Connect for your instance</a>.</p>
     pub server_side_encryption_configuration: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
     /// <p>The configuration information for the Amazon Q assistant integration.</p>
     pub integration_configuration: ::std::option::Option<crate::types::AssistantIntegrationConfiguration>,
-    /// <p>The configuration information for the Amazon Q assistant capability.</p>
+    /// <p>The configuration information for the Amazon Q assistant capability. </p>
     pub capability_configuration: ::std::option::Option<crate::types::AssistantCapabilityConfiguration>,
 }
 impl AssistantData {
@@ -59,8 +59,8 @@ impl AssistantData {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
-    /// <p>The configuration information for the customer managed key used for encryption.</p>
-    /// <p>This KMS key must have a policy that allows <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>, <code>kms:Decrypt</code>, and <code>kms:GenerateDataKey*</code> permissions to the IAM identity using the key to invoke Amazon Q. To use Amazon Q with chat, the key policy must also allow <code>kms:Decrypt</code>, <code>kms:GenerateDataKey*</code>, and <code>kms:DescribeKey</code> permissions to the <code>connect.amazonaws.com</code> service principal.</p>
+    /// <p>The configuration information for the customer managed key used for encryption. </p>
+    /// <p>This KMS key must have a policy that allows <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>, <code>kms:Decrypt</code>, and <code>kms:GenerateDataKey*</code> permissions to the IAM identity using the key to invoke Amazon Q. To use Amazon Q with chat, the key policy must also allow <code>kms:Decrypt</code>, <code>kms:GenerateDataKey*</code>, and <code>kms:DescribeKey</code> permissions to the <code>connect.amazonaws.com</code> service principal. </p>
     /// <p>For more information about setting up a customer managed key for Amazon Q, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-q.html">Enable Amazon Q in Connect for your instance</a>.</p>
     pub fn server_side_encryption_configuration(&self) -> ::std::option::Option<&crate::types::ServerSideEncryptionConfiguration> {
         self.server_side_encryption_configuration.as_ref()
@@ -69,7 +69,7 @@ impl AssistantData {
     pub fn integration_configuration(&self) -> ::std::option::Option<&crate::types::AssistantIntegrationConfiguration> {
         self.integration_configuration.as_ref()
     }
-    /// <p>The configuration information for the Amazon Q assistant capability.</p>
+    /// <p>The configuration information for the Amazon Q assistant capability. </p>
     pub fn capability_configuration(&self) -> ::std::option::Option<&crate::types::AssistantCapabilityConfiguration> {
         self.capability_configuration.as_ref()
     }
@@ -206,22 +206,22 @@ impl AssistantDataBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
-    /// <p>The configuration information for the customer managed key used for encryption.</p>
-    /// <p>This KMS key must have a policy that allows <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>, <code>kms:Decrypt</code>, and <code>kms:GenerateDataKey*</code> permissions to the IAM identity using the key to invoke Amazon Q. To use Amazon Q with chat, the key policy must also allow <code>kms:Decrypt</code>, <code>kms:GenerateDataKey*</code>, and <code>kms:DescribeKey</code> permissions to the <code>connect.amazonaws.com</code> service principal.</p>
+    /// <p>The configuration information for the customer managed key used for encryption. </p>
+    /// <p>This KMS key must have a policy that allows <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>, <code>kms:Decrypt</code>, and <code>kms:GenerateDataKey*</code> permissions to the IAM identity using the key to invoke Amazon Q. To use Amazon Q with chat, the key policy must also allow <code>kms:Decrypt</code>, <code>kms:GenerateDataKey*</code>, and <code>kms:DescribeKey</code> permissions to the <code>connect.amazonaws.com</code> service principal. </p>
     /// <p>For more information about setting up a customer managed key for Amazon Q, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-q.html">Enable Amazon Q in Connect for your instance</a>.</p>
     pub fn server_side_encryption_configuration(mut self, input: crate::types::ServerSideEncryptionConfiguration) -> Self {
         self.server_side_encryption_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The configuration information for the customer managed key used for encryption.</p>
-    /// <p>This KMS key must have a policy that allows <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>, <code>kms:Decrypt</code>, and <code>kms:GenerateDataKey*</code> permissions to the IAM identity using the key to invoke Amazon Q. To use Amazon Q with chat, the key policy must also allow <code>kms:Decrypt</code>, <code>kms:GenerateDataKey*</code>, and <code>kms:DescribeKey</code> permissions to the <code>connect.amazonaws.com</code> service principal.</p>
+    /// <p>The configuration information for the customer managed key used for encryption. </p>
+    /// <p>This KMS key must have a policy that allows <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>, <code>kms:Decrypt</code>, and <code>kms:GenerateDataKey*</code> permissions to the IAM identity using the key to invoke Amazon Q. To use Amazon Q with chat, the key policy must also allow <code>kms:Decrypt</code>, <code>kms:GenerateDataKey*</code>, and <code>kms:DescribeKey</code> permissions to the <code>connect.amazonaws.com</code> service principal. </p>
     /// <p>For more information about setting up a customer managed key for Amazon Q, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-q.html">Enable Amazon Q in Connect for your instance</a>.</p>
     pub fn set_server_side_encryption_configuration(mut self, input: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>) -> Self {
         self.server_side_encryption_configuration = input;
         self
     }
-    /// <p>The configuration information for the customer managed key used for encryption.</p>
-    /// <p>This KMS key must have a policy that allows <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>, <code>kms:Decrypt</code>, and <code>kms:GenerateDataKey*</code> permissions to the IAM identity using the key to invoke Amazon Q. To use Amazon Q with chat, the key policy must also allow <code>kms:Decrypt</code>, <code>kms:GenerateDataKey*</code>, and <code>kms:DescribeKey</code> permissions to the <code>connect.amazonaws.com</code> service principal.</p>
+    /// <p>The configuration information for the customer managed key used for encryption. </p>
+    /// <p>This KMS key must have a policy that allows <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>, <code>kms:Decrypt</code>, and <code>kms:GenerateDataKey*</code> permissions to the IAM identity using the key to invoke Amazon Q. To use Amazon Q with chat, the key policy must also allow <code>kms:Decrypt</code>, <code>kms:GenerateDataKey*</code>, and <code>kms:DescribeKey</code> permissions to the <code>connect.amazonaws.com</code> service principal. </p>
     /// <p>For more information about setting up a customer managed key for Amazon Q, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-q.html">Enable Amazon Q in Connect for your instance</a>.</p>
     pub fn get_server_side_encryption_configuration(&self) -> &::std::option::Option<crate::types::ServerSideEncryptionConfiguration> {
         &self.server_side_encryption_configuration
@@ -240,17 +240,17 @@ impl AssistantDataBuilder {
     pub fn get_integration_configuration(&self) -> &::std::option::Option<crate::types::AssistantIntegrationConfiguration> {
         &self.integration_configuration
     }
-    /// <p>The configuration information for the Amazon Q assistant capability.</p>
+    /// <p>The configuration information for the Amazon Q assistant capability. </p>
     pub fn capability_configuration(mut self, input: crate::types::AssistantCapabilityConfiguration) -> Self {
         self.capability_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The configuration information for the Amazon Q assistant capability.</p>
+    /// <p>The configuration information for the Amazon Q assistant capability. </p>
     pub fn set_capability_configuration(mut self, input: ::std::option::Option<crate::types::AssistantCapabilityConfiguration>) -> Self {
         self.capability_configuration = input;
         self
     }
-    /// <p>The configuration information for the Amazon Q assistant capability.</p>
+    /// <p>The configuration information for the Amazon Q assistant capability. </p>
     pub fn get_capability_configuration(&self) -> &::std::option::Option<crate::types::AssistantCapabilityConfiguration> {
         &self.capability_configuration
     }

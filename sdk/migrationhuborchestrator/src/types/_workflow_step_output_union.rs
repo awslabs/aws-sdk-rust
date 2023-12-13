@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum WorkflowStepOutputUnion {
-    /// <p>The integer value.</p>
+    /// <p>The integer value. </p>
     IntegerValue(i32),
     /// <p>The list of string value.</p>
     ListOfStringValue(::std::vec::Vec<::std::string::String>),

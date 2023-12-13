@@ -7,7 +7,7 @@ pub struct DeleteTemplateInput {
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>An ID for the template you want to delete.</p>
     pub template_id: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the version of the template that you want to delete. If you don't provide a version number, <code>DeleteTemplate</code> deletes all versions of the template.</p>
+    /// <p>Specifies the version of the template that you want to delete. If you don't provide a version number, <code>DeleteTemplate</code> deletes all versions of the template. </p>
     pub version_number: ::std::option::Option<i64>,
 }
 impl DeleteTemplateInput {
@@ -19,7 +19,7 @@ impl DeleteTemplateInput {
     pub fn template_id(&self) -> ::std::option::Option<&str> {
         self.template_id.as_deref()
     }
-    /// <p>Specifies the version of the template that you want to delete. If you don't provide a version number, <code>DeleteTemplate</code> deletes all versions of the template.</p>
+    /// <p>Specifies the version of the template that you want to delete. If you don't provide a version number, <code>DeleteTemplate</code> deletes all versions of the template. </p>
     pub fn version_number(&self) -> ::std::option::Option<i64> {
         self.version_number
     }
@@ -70,17 +70,17 @@ impl DeleteTemplateInputBuilder {
     pub fn get_template_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.template_id
     }
-    /// <p>Specifies the version of the template that you want to delete. If you don't provide a version number, <code>DeleteTemplate</code> deletes all versions of the template.</p>
+    /// <p>Specifies the version of the template that you want to delete. If you don't provide a version number, <code>DeleteTemplate</code> deletes all versions of the template. </p>
     pub fn version_number(mut self, input: i64) -> Self {
         self.version_number = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the version of the template that you want to delete. If you don't provide a version number, <code>DeleteTemplate</code> deletes all versions of the template.</p>
+    /// <p>Specifies the version of the template that you want to delete. If you don't provide a version number, <code>DeleteTemplate</code> deletes all versions of the template. </p>
     pub fn set_version_number(mut self, input: ::std::option::Option<i64>) -> Self {
         self.version_number = input;
         self
     }
-    /// <p>Specifies the version of the template that you want to delete. If you don't provide a version number, <code>DeleteTemplate</code> deletes all versions of the template.</p>
+    /// <p>Specifies the version of the template that you want to delete. If you don't provide a version number, <code>DeleteTemplate</code> deletes all versions of the template. </p>
     pub fn get_version_number(&self) -> &::std::option::Option<i64> {
         &self.version_number
     }

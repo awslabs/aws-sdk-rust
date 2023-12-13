@@ -22,9 +22,9 @@ impl DeleteOrganizationConformancePackInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteOrganizationConformancePack`.
 ///
-/// <p>Deletes the specified organization conformance pack and all of the Config rules and remediation actions from all member accounts in that organization.</p>
-/// <p>Only a management account or a delegated administrator account can delete an organization conformance pack. When calling this API with a delegated administrator, you must ensure Organizations <code>ListDelegatedAdministrator</code> permissions are added.</p>
-/// <p>Config sets the state of a conformance pack to DELETE_IN_PROGRESS until the deletion is complete. You cannot update a conformance pack while it is in this state.</p>
+/// <p>Deletes the specified organization conformance pack and all of the Config rules and remediation actions from all member accounts in that organization. </p>
+/// <p> Only a management account or a delegated administrator account can delete an organization conformance pack. When calling this API with a delegated administrator, you must ensure Organizations <code>ListDelegatedAdministrator</code> permissions are added.</p>
+/// <p>Config sets the state of a conformance pack to DELETE_IN_PROGRESS until the deletion is complete. You cannot update a conformance pack while it is in this state. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteOrganizationConformancePackFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -7,7 +7,7 @@ pub struct CreateDatabaseInput {
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The KMS key for the database. If the KMS key is not specified, the database will be encrypted with a Timestream managed KMS key located in your account. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon Web Services managed keys</a>.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
-    /// <p>A list of key-value pairs to label the table.</p>
+    /// <p> A list of key-value pairs to label the table. </p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateDatabaseInput {
@@ -19,7 +19,7 @@ impl CreateDatabaseInput {
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
-    /// <p>A list of key-value pairs to label the table.</p>
+    /// <p> A list of key-value pairs to label the table. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
     pub fn tags(&self) -> &[crate::types::Tag] {
@@ -75,19 +75,19 @@ impl CreateDatabaseInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A list of key-value pairs to label the table.</p>
+    /// <p> A list of key-value pairs to label the table. </p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
         self.tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of key-value pairs to label the table.</p>
+    /// <p> A list of key-value pairs to label the table. </p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>A list of key-value pairs to label the table.</p>
+    /// <p> A list of key-value pairs to label the table. </p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }

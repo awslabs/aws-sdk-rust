@@ -24,7 +24,7 @@ impl DeleteProjectVersionInputBuilder {
 ///
 /// <p>Deletes a Rekognition project model or project version, like a Amazon Rekognition Custom Labels model or a custom adapter.</p>
 /// <p>You can't delete a project version if it is running or if it is training. To check the status of a project version, use the Status field returned from <code>DescribeProjectVersions</code>. To stop a project version call <code>StopProjectVersion</code>. If the project version is training, wait until it finishes.</p>
-/// <p>This operation requires permissions to perform the <code>rekognition:DeleteProjectVersion</code> action.</p>
+/// <p>This operation requires permissions to perform the <code>rekognition:DeleteProjectVersion</code> action. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteProjectVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -22,7 +22,7 @@ impl ListInputRoutingsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListInputRoutings`.
 ///
-/// <p>Lists one or more input routings.</p>
+/// <p> Lists one or more input routings. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListInputRoutingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,45 +108,45 @@ impl ListInputRoutingsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifer of the routed input.</p>
+    /// <p> The identifer of the routed input. </p>
     pub fn input_identifier(mut self, input: crate::types::InputIdentifier) -> Self {
         self.inner = self.inner.input_identifier(input);
         self
     }
-    /// <p>The identifer of the routed input.</p>
+    /// <p> The identifer of the routed input. </p>
     pub fn set_input_identifier(mut self, input: ::std::option::Option<crate::types::InputIdentifier>) -> Self {
         self.inner = self.inner.set_input_identifier(input);
         self
     }
-    /// <p>The identifer of the routed input.</p>
+    /// <p> The identifer of the routed input. </p>
     pub fn get_input_identifier(&self) -> &::std::option::Option<crate::types::InputIdentifier> {
         self.inner.get_input_identifier()
     }
-    /// <p>The maximum number of results to be returned per request.</p>
+    /// <p> The maximum number of results to be returned per request. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of results to be returned per request.</p>
+    /// <p> The maximum number of results to be returned per request. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The maximum number of results to be returned per request.</p>
+    /// <p> The maximum number of results to be returned per request. </p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p>The token that you can use to return the next set of results.</p>
+    /// <p> The token that you can use to return the next set of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>The token that you can use to return the next set of results.</p>
+    /// <p> The token that you can use to return the next set of results. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>The token that you can use to return the next set of results.</p>
+    /// <p> The token that you can use to return the next set of results. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

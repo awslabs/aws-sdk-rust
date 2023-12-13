@@ -11,7 +11,7 @@ pub struct BackupVaultListMember {
     /// <p>The date and time a resource backup is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A server-side encryption key you can specify to encrypt your backups from services that support full Backup management; for example, <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>. If you specify a key, you must specify its ARN, not its alias. If you do not specify a key, Backup creates a KMS key for you by default.</p>
-    /// <p>To learn which Backup services support full Backup management and how Backup handles encryption for backups from services that do not yet support full Backup, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/encryption.html"> Encryption for backups in Backup</a></p>
+    /// <p>To learn which Backup services support full Backup management and how Backup handles encryption for backups from services that do not yet support full Backup, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/encryption.html"> Encryption for backups in Backup</a> </p>
     pub encryption_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice. This parameter is optional.</p>
     /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
@@ -45,7 +45,7 @@ impl BackupVaultListMember {
         self.creation_date.as_ref()
     }
     /// <p>A server-side encryption key you can specify to encrypt your backups from services that support full Backup management; for example, <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>. If you specify a key, you must specify its ARN, not its alias. If you do not specify a key, Backup creates a KMS key for you by default.</p>
-    /// <p>To learn which Backup services support full Backup management and how Backup handles encryption for backups from services that do not yet support full Backup, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/encryption.html"> Encryption for backups in Backup</a></p>
+    /// <p>To learn which Backup services support full Backup management and how Backup handles encryption for backups from services that do not yet support full Backup, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/encryption.html"> Encryption for backups in Backup</a> </p>
     pub fn encryption_key_arn(&self) -> ::std::option::Option<&str> {
         self.encryption_key_arn.as_deref()
     }
@@ -145,19 +145,19 @@ impl BackupVaultListMemberBuilder {
         &self.creation_date
     }
     /// <p>A server-side encryption key you can specify to encrypt your backups from services that support full Backup management; for example, <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>. If you specify a key, you must specify its ARN, not its alias. If you do not specify a key, Backup creates a KMS key for you by default.</p>
-    /// <p>To learn which Backup services support full Backup management and how Backup handles encryption for backups from services that do not yet support full Backup, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/encryption.html"> Encryption for backups in Backup</a></p>
+    /// <p>To learn which Backup services support full Backup management and how Backup handles encryption for backups from services that do not yet support full Backup, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/encryption.html"> Encryption for backups in Backup</a> </p>
     pub fn encryption_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.encryption_key_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A server-side encryption key you can specify to encrypt your backups from services that support full Backup management; for example, <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>. If you specify a key, you must specify its ARN, not its alias. If you do not specify a key, Backup creates a KMS key for you by default.</p>
-    /// <p>To learn which Backup services support full Backup management and how Backup handles encryption for backups from services that do not yet support full Backup, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/encryption.html"> Encryption for backups in Backup</a></p>
+    /// <p>To learn which Backup services support full Backup management and how Backup handles encryption for backups from services that do not yet support full Backup, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/encryption.html"> Encryption for backups in Backup</a> </p>
     pub fn set_encryption_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.encryption_key_arn = input;
         self
     }
     /// <p>A server-side encryption key you can specify to encrypt your backups from services that support full Backup management; for example, <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>. If you specify a key, you must specify its ARN, not its alias. If you do not specify a key, Backup creates a KMS key for you by default.</p>
-    /// <p>To learn which Backup services support full Backup management and how Backup handles encryption for backups from services that do not yet support full Backup, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/encryption.html"> Encryption for backups in Backup</a></p>
+    /// <p>To learn which Backup services support full Backup management and how Backup handles encryption for backups from services that do not yet support full Backup, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/encryption.html"> Encryption for backups in Backup</a> </p>
     pub fn get_encryption_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.encryption_key_arn
     }

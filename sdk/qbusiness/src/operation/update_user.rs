@@ -265,13 +265,13 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateUserEnd
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum UpdateUserError {
-    /// <p>You don't have access to perform this action. Make sure you have the required permission policies and user accounts and try again.</p>
+    /// <p> You don't have access to perform this action. Make sure you have the required permission policies and user accounts and try again.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>An issue occurred with the internal server used for your Amazon Q service. Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a> for help.</p>
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The resource you want to use doesn’t exist. Make sure you have provided the correct resource and try again.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>You have exceeded the set limits for your Amazon Q service.</p>
+    /// <p>You have exceeded the set limits for your Amazon Q service. </p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to throttling. Reduce the number of requests and try again.</p>
     ThrottlingException(crate::types::error::ThrottlingException),

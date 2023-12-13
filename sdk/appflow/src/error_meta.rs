@@ -5,23 +5,23 @@
 pub enum Error {
     /// <p>AppFlow/Requester has invalid or missing permissions.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>There was a conflict when processing the request (for example, a flow with the given name already exists within the account. Check for conflicting resource names and try again.</p>
+    /// <p> There was a conflict when processing the request (for example, a flow with the given name already exists within the account. Check for conflicting resource names and try again. </p>
     ConflictException(crate::types::error::ConflictException),
-    /// <p>An error occurred when authenticating with the connector endpoint.</p>
+    /// <p> An error occurred when authenticating with the connector endpoint. </p>
     ConnectorAuthenticationException(crate::types::error::ConnectorAuthenticationException),
-    /// <p>An error occurred when retrieving data from the connector endpoint.</p>
+    /// <p> An error occurred when retrieving data from the connector endpoint. </p>
     ConnectorServerException(crate::types::error::ConnectorServerException),
-    /// <p>An internal service error occurred during the processing of your request. Try again later.</p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p>The resource specified in the request (such as the source or destination connector profile) is not found.</p>
+    /// <p> The resource specified in the request (such as the source or destination connector profile) is not found. </p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>The request would cause a service quota (such as the number of flows) to be exceeded.</p>
+    /// <p> The request would cause a service quota (such as the number of flows) to be exceeded. </p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
-    /// <p>API calls have exceeded the maximum allowed API request rate per account and per Region.</p>
+    /// <p>API calls have exceeded the maximum allowed API request rate per account and per Region. </p>
     ThrottlingException(crate::types::error::ThrottlingException),
-    /// <p>The requested operation is not supported for the current flow.</p>
+    /// <p> The requested operation is not supported for the current flow. </p>
     UnsupportedOperationException(crate::types::error::UnsupportedOperationException),
-    /// <p>The request has invalid or missing parameters.</p>
+    /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

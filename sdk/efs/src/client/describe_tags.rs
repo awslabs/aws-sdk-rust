@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`file_system_id(impl Into<String>)`](crate::operation::describe_tags::builders::DescribeTagsFluentBuilder::file_system_id) / [`set_file_system_id(Option<String>)`](crate::operation::describe_tags::builders::DescribeTagsFluentBuilder::set_file_system_id):<br>required: **true**<br><p>The ID of the file system whose tag set you want to retrieve.</p><br>
     /// - On success, responds with [`DescribeTagsOutput`](crate::operation::describe_tags::DescribeTagsOutput) with field(s):
     ///   - [`marker(Option<String>)`](crate::operation::describe_tags::DescribeTagsOutput::marker): <p>If the request included a <code>Marker</code>, the response returns that value in this field.</p>
-    ///   - [`tags(Vec::<Tag>)`](crate::operation::describe_tags::DescribeTagsOutput::tags): <p>Returns tags associated with the file system as an array of <code>Tag</code> objects.</p>
+    ///   - [`tags(Vec::<Tag>)`](crate::operation::describe_tags::DescribeTagsOutput::tags): <p>Returns tags associated with the file system as an array of <code>Tag</code> objects. </p>
     ///   - [`next_marker(Option<String>)`](crate::operation::describe_tags::DescribeTagsOutput::next_marker): <p>If a value is present, there are more tags to return. In a subsequent request, you can provide the value of <code>NextMarker</code> as the value of the <code>Marker</code> parameter in your next request to retrieve the next set of tags.</p>
     /// - On failure, responds with [`SdkError<DescribeTagsError>`](crate::operation::describe_tags::DescribeTagsError)
     #[deprecated(note = "Use ListTagsForResource.")]

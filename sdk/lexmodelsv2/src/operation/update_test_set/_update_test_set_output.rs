@@ -21,7 +21,7 @@ pub struct UpdateTestSetOutput {
     pub storage_location: ::std::option::Option<crate::types::TestSetStorageLocation>,
     /// <p>The creation date and time for the updated test set.</p>
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The date and time of the last update for the updated test set.</p>
+    /// <p> The date and time of the last update for the updated test set.</p>
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
@@ -62,7 +62,7 @@ impl UpdateTestSetOutput {
     pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
-    /// <p>The date and time of the last update for the updated test set.</p>
+    /// <p> The date and time of the last update for the updated test set.</p>
     pub fn last_updated_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
@@ -222,17 +222,17 @@ impl UpdateTestSetOutputBuilder {
     pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_date_time
     }
-    /// <p>The date and time of the last update for the updated test set.</p>
+    /// <p> The date and time of the last update for the updated test set.</p>
     pub fn last_updated_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_date_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time of the last update for the updated test set.</p>
+    /// <p> The date and time of the last update for the updated test set.</p>
     pub fn set_last_updated_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_date_time = input;
         self
     }
-    /// <p>The date and time of the last update for the updated test set.</p>
+    /// <p> The date and time of the last update for the updated test set.</p>
     pub fn get_last_updated_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_date_time
     }

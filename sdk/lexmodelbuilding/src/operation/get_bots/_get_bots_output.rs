@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBotsOutput {
-    /// <p>An array of <code>botMetadata</code> objects, with one entry for each bot.</p>
+    /// <p>An array of <code>botMetadata</code> objects, with one entry for each bot. </p>
     pub bots: ::std::option::Option<::std::vec::Vec<crate::types::BotMetadata>>,
-    /// <p>If the response is truncated, it includes a pagination token that you can specify in your next request to fetch the next page of bots.</p>
+    /// <p>If the response is truncated, it includes a pagination token that you can specify in your next request to fetch the next page of bots. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetBotsOutput {
-    /// <p>An array of <code>botMetadata</code> objects, with one entry for each bot.</p>
+    /// <p>An array of <code>botMetadata</code> objects, with one entry for each bot. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bots.is_none()`.
     pub fn bots(&self) -> &[crate::types::BotMetadata] {
         self.bots.as_deref().unwrap_or_default()
     }
-    /// <p>If the response is truncated, it includes a pagination token that you can specify in your next request to fetch the next page of bots.</p>
+    /// <p>If the response is truncated, it includes a pagination token that you can specify in your next request to fetch the next page of bots. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -46,33 +46,33 @@ impl GetBotsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_bots`](Self::set_bots).
     ///
-    /// <p>An array of <code>botMetadata</code> objects, with one entry for each bot.</p>
+    /// <p>An array of <code>botMetadata</code> objects, with one entry for each bot. </p>
     pub fn bots(mut self, input: crate::types::BotMetadata) -> Self {
         let mut v = self.bots.unwrap_or_default();
         v.push(input);
         self.bots = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of <code>botMetadata</code> objects, with one entry for each bot.</p>
+    /// <p>An array of <code>botMetadata</code> objects, with one entry for each bot. </p>
     pub fn set_bots(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BotMetadata>>) -> Self {
         self.bots = input;
         self
     }
-    /// <p>An array of <code>botMetadata</code> objects, with one entry for each bot.</p>
+    /// <p>An array of <code>botMetadata</code> objects, with one entry for each bot. </p>
     pub fn get_bots(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BotMetadata>> {
         &self.bots
     }
-    /// <p>If the response is truncated, it includes a pagination token that you can specify in your next request to fetch the next page of bots.</p>
+    /// <p>If the response is truncated, it includes a pagination token that you can specify in your next request to fetch the next page of bots. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If the response is truncated, it includes a pagination token that you can specify in your next request to fetch the next page of bots.</p>
+    /// <p>If the response is truncated, it includes a pagination token that you can specify in your next request to fetch the next page of bots. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>If the response is truncated, it includes a pagination token that you can specify in your next request to fetch the next page of bots.</p>
+    /// <p>If the response is truncated, it includes a pagination token that you can specify in your next request to fetch the next page of bots. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

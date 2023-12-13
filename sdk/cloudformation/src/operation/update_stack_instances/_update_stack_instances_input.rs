@@ -16,14 +16,10 @@ pub struct UpdateStackInstancesInput {
     /// <p>A list of input parameters whose values you want to update for the specified stack instances.</p>
     /// <p>Any overridden parameter values will be applied to all stack instances in the specified accounts and Amazon Web Services Regions. When specifying parameters and their values, be aware of how CloudFormation sets parameter values during stack instance update operations:</p>
     /// <ul>
-    /// <li>
-    /// <p>To override the current value for a parameter, include the parameter and specify its value.</p></li>
-    /// <li>
-    /// <p>To leave an overridden parameter set to its present value, include the parameter and specify <code>UsePreviousValue</code> as <code>true</code>. (You can't specify both a value and set <code>UsePreviousValue</code> to <code>true</code>.)</p></li>
-    /// <li>
-    /// <p>To set an overridden parameter back to the value specified in the stack set, specify a parameter list but don't include the parameter in the list.</p></li>
-    /// <li>
-    /// <p>To leave all parameters set to their present values, don't specify this property at all.</p></li>
+    /// <li> <p>To override the current value for a parameter, include the parameter and specify its value.</p> </li>
+    /// <li> <p>To leave an overridden parameter set to its present value, include the parameter and specify <code>UsePreviousValue</code> as <code>true</code>. (You can't specify both a value and set <code>UsePreviousValue</code> to <code>true</code>.)</p> </li>
+    /// <li> <p>To set an overridden parameter back to the value specified in the stack set, specify a parameter list but don't include the parameter in the list.</p> </li>
+    /// <li> <p>To leave all parameters set to their present values, don't specify this property at all.</p> </li>
     /// </ul>
     /// <p>During stack set updates, any parameter values overridden for a stack instance aren't updated, but retain their overridden value.</p>
     /// <p>You can only override the parameter <i>values</i> that are specified in the stack set; to add or delete a parameter itself, use <code>UpdateStackSet</code> to update the stack set template. If you add a parameter to a template, before you can override the parameter value specified in the stack set you must first use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a> to update all stack instances with the updated template and parameter value specified in the stack set. Once a stack instance has been updated with the new parameter, you can then override the parameter value using <code>UpdateStackInstances</code>.</p>
@@ -37,11 +33,8 @@ pub struct UpdateStackInstancesInput {
     /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
     /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
     /// <ul>
-    /// <li>
-    /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p></li>
-    /// <li>
-    /// <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p>
-    /// <p>Your Amazon Web Services account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p></li>
+    /// <li> <p>If you are signed in to the management account, specify <code>SELF</code>.</p> </li>
+    /// <li> <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon Web Services account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
     /// </ul>
     pub call_as: ::std::option::Option<crate::types::CallAs>,
 }
@@ -71,14 +64,10 @@ impl UpdateStackInstancesInput {
     /// <p>A list of input parameters whose values you want to update for the specified stack instances.</p>
     /// <p>Any overridden parameter values will be applied to all stack instances in the specified accounts and Amazon Web Services Regions. When specifying parameters and their values, be aware of how CloudFormation sets parameter values during stack instance update operations:</p>
     /// <ul>
-    /// <li>
-    /// <p>To override the current value for a parameter, include the parameter and specify its value.</p></li>
-    /// <li>
-    /// <p>To leave an overridden parameter set to its present value, include the parameter and specify <code>UsePreviousValue</code> as <code>true</code>. (You can't specify both a value and set <code>UsePreviousValue</code> to <code>true</code>.)</p></li>
-    /// <li>
-    /// <p>To set an overridden parameter back to the value specified in the stack set, specify a parameter list but don't include the parameter in the list.</p></li>
-    /// <li>
-    /// <p>To leave all parameters set to their present values, don't specify this property at all.</p></li>
+    /// <li> <p>To override the current value for a parameter, include the parameter and specify its value.</p> </li>
+    /// <li> <p>To leave an overridden parameter set to its present value, include the parameter and specify <code>UsePreviousValue</code> as <code>true</code>. (You can't specify both a value and set <code>UsePreviousValue</code> to <code>true</code>.)</p> </li>
+    /// <li> <p>To set an overridden parameter back to the value specified in the stack set, specify a parameter list but don't include the parameter in the list.</p> </li>
+    /// <li> <p>To leave all parameters set to their present values, don't specify this property at all.</p> </li>
     /// </ul>
     /// <p>During stack set updates, any parameter values overridden for a stack instance aren't updated, but retain their overridden value.</p>
     /// <p>You can only override the parameter <i>values</i> that are specified in the stack set; to add or delete a parameter itself, use <code>UpdateStackSet</code> to update the stack set template. If you add a parameter to a template, before you can override the parameter value specified in the stack set you must first use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a> to update all stack instances with the updated template and parameter value specified in the stack set. Once a stack instance has been updated with the new parameter, you can then override the parameter value using <code>UpdateStackInstances</code>.</p>
@@ -100,11 +89,8 @@ impl UpdateStackInstancesInput {
     /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
     /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
     /// <ul>
-    /// <li>
-    /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p></li>
-    /// <li>
-    /// <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p>
-    /// <p>Your Amazon Web Services account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p></li>
+    /// <li> <p>If you are signed in to the management account, specify <code>SELF</code>.</p> </li>
+    /// <li> <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon Web Services account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
     /// </ul>
     pub fn call_as(&self) -> ::std::option::Option<&crate::types::CallAs> {
         self.call_as.as_ref()
@@ -213,14 +199,10 @@ impl UpdateStackInstancesInputBuilder {
     /// <p>A list of input parameters whose values you want to update for the specified stack instances.</p>
     /// <p>Any overridden parameter values will be applied to all stack instances in the specified accounts and Amazon Web Services Regions. When specifying parameters and their values, be aware of how CloudFormation sets parameter values during stack instance update operations:</p>
     /// <ul>
-    /// <li>
-    /// <p>To override the current value for a parameter, include the parameter and specify its value.</p></li>
-    /// <li>
-    /// <p>To leave an overridden parameter set to its present value, include the parameter and specify <code>UsePreviousValue</code> as <code>true</code>. (You can't specify both a value and set <code>UsePreviousValue</code> to <code>true</code>.)</p></li>
-    /// <li>
-    /// <p>To set an overridden parameter back to the value specified in the stack set, specify a parameter list but don't include the parameter in the list.</p></li>
-    /// <li>
-    /// <p>To leave all parameters set to their present values, don't specify this property at all.</p></li>
+    /// <li> <p>To override the current value for a parameter, include the parameter and specify its value.</p> </li>
+    /// <li> <p>To leave an overridden parameter set to its present value, include the parameter and specify <code>UsePreviousValue</code> as <code>true</code>. (You can't specify both a value and set <code>UsePreviousValue</code> to <code>true</code>.)</p> </li>
+    /// <li> <p>To set an overridden parameter back to the value specified in the stack set, specify a parameter list but don't include the parameter in the list.</p> </li>
+    /// <li> <p>To leave all parameters set to their present values, don't specify this property at all.</p> </li>
     /// </ul>
     /// <p>During stack set updates, any parameter values overridden for a stack instance aren't updated, but retain their overridden value.</p>
     /// <p>You can only override the parameter <i>values</i> that are specified in the stack set; to add or delete a parameter itself, use <code>UpdateStackSet</code> to update the stack set template. If you add a parameter to a template, before you can override the parameter value specified in the stack set you must first use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a> to update all stack instances with the updated template and parameter value specified in the stack set. Once a stack instance has been updated with the new parameter, you can then override the parameter value using <code>UpdateStackInstances</code>.</p>
@@ -233,14 +215,10 @@ impl UpdateStackInstancesInputBuilder {
     /// <p>A list of input parameters whose values you want to update for the specified stack instances.</p>
     /// <p>Any overridden parameter values will be applied to all stack instances in the specified accounts and Amazon Web Services Regions. When specifying parameters and their values, be aware of how CloudFormation sets parameter values during stack instance update operations:</p>
     /// <ul>
-    /// <li>
-    /// <p>To override the current value for a parameter, include the parameter and specify its value.</p></li>
-    /// <li>
-    /// <p>To leave an overridden parameter set to its present value, include the parameter and specify <code>UsePreviousValue</code> as <code>true</code>. (You can't specify both a value and set <code>UsePreviousValue</code> to <code>true</code>.)</p></li>
-    /// <li>
-    /// <p>To set an overridden parameter back to the value specified in the stack set, specify a parameter list but don't include the parameter in the list.</p></li>
-    /// <li>
-    /// <p>To leave all parameters set to their present values, don't specify this property at all.</p></li>
+    /// <li> <p>To override the current value for a parameter, include the parameter and specify its value.</p> </li>
+    /// <li> <p>To leave an overridden parameter set to its present value, include the parameter and specify <code>UsePreviousValue</code> as <code>true</code>. (You can't specify both a value and set <code>UsePreviousValue</code> to <code>true</code>.)</p> </li>
+    /// <li> <p>To set an overridden parameter back to the value specified in the stack set, specify a parameter list but don't include the parameter in the list.</p> </li>
+    /// <li> <p>To leave all parameters set to their present values, don't specify this property at all.</p> </li>
     /// </ul>
     /// <p>During stack set updates, any parameter values overridden for a stack instance aren't updated, but retain their overridden value.</p>
     /// <p>You can only override the parameter <i>values</i> that are specified in the stack set; to add or delete a parameter itself, use <code>UpdateStackSet</code> to update the stack set template. If you add a parameter to a template, before you can override the parameter value specified in the stack set you must first use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a> to update all stack instances with the updated template and parameter value specified in the stack set. Once a stack instance has been updated with the new parameter, you can then override the parameter value using <code>UpdateStackInstances</code>.</p>
@@ -251,14 +229,10 @@ impl UpdateStackInstancesInputBuilder {
     /// <p>A list of input parameters whose values you want to update for the specified stack instances.</p>
     /// <p>Any overridden parameter values will be applied to all stack instances in the specified accounts and Amazon Web Services Regions. When specifying parameters and their values, be aware of how CloudFormation sets parameter values during stack instance update operations:</p>
     /// <ul>
-    /// <li>
-    /// <p>To override the current value for a parameter, include the parameter and specify its value.</p></li>
-    /// <li>
-    /// <p>To leave an overridden parameter set to its present value, include the parameter and specify <code>UsePreviousValue</code> as <code>true</code>. (You can't specify both a value and set <code>UsePreviousValue</code> to <code>true</code>.)</p></li>
-    /// <li>
-    /// <p>To set an overridden parameter back to the value specified in the stack set, specify a parameter list but don't include the parameter in the list.</p></li>
-    /// <li>
-    /// <p>To leave all parameters set to their present values, don't specify this property at all.</p></li>
+    /// <li> <p>To override the current value for a parameter, include the parameter and specify its value.</p> </li>
+    /// <li> <p>To leave an overridden parameter set to its present value, include the parameter and specify <code>UsePreviousValue</code> as <code>true</code>. (You can't specify both a value and set <code>UsePreviousValue</code> to <code>true</code>.)</p> </li>
+    /// <li> <p>To set an overridden parameter back to the value specified in the stack set, specify a parameter list but don't include the parameter in the list.</p> </li>
+    /// <li> <p>To leave all parameters set to their present values, don't specify this property at all.</p> </li>
     /// </ul>
     /// <p>During stack set updates, any parameter values overridden for a stack instance aren't updated, but retain their overridden value.</p>
     /// <p>You can only override the parameter <i>values</i> that are specified in the stack set; to add or delete a parameter itself, use <code>UpdateStackSet</code> to update the stack set template. If you add a parameter to a template, before you can override the parameter value specified in the stack set you must first use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a> to update all stack instances with the updated template and parameter value specified in the stack set. Once a stack instance has been updated with the new parameter, you can then override the parameter value using <code>UpdateStackInstances</code>.</p>
@@ -302,11 +276,8 @@ impl UpdateStackInstancesInputBuilder {
     /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
     /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
     /// <ul>
-    /// <li>
-    /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p></li>
-    /// <li>
-    /// <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p>
-    /// <p>Your Amazon Web Services account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p></li>
+    /// <li> <p>If you are signed in to the management account, specify <code>SELF</code>.</p> </li>
+    /// <li> <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon Web Services account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
     /// </ul>
     pub fn call_as(mut self, input: crate::types::CallAs) -> Self {
         self.call_as = ::std::option::Option::Some(input);
@@ -315,11 +286,8 @@ impl UpdateStackInstancesInputBuilder {
     /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
     /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
     /// <ul>
-    /// <li>
-    /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p></li>
-    /// <li>
-    /// <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p>
-    /// <p>Your Amazon Web Services account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p></li>
+    /// <li> <p>If you are signed in to the management account, specify <code>SELF</code>.</p> </li>
+    /// <li> <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon Web Services account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
     /// </ul>
     pub fn set_call_as(mut self, input: ::std::option::Option<crate::types::CallAs>) -> Self {
         self.call_as = input;
@@ -328,11 +296,8 @@ impl UpdateStackInstancesInputBuilder {
     /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
     /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
     /// <ul>
-    /// <li>
-    /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p></li>
-    /// <li>
-    /// <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p>
-    /// <p>Your Amazon Web Services account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p></li>
+    /// <li> <p>If you are signed in to the management account, specify <code>SELF</code>.</p> </li>
+    /// <li> <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon Web Services account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
     /// </ul>
     pub fn get_call_as(&self) -> &::std::option::Option<crate::types::CallAs> {
         &self.call_as

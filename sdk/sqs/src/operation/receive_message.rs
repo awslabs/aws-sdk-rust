@@ -255,15 +255,13 @@ pub enum ReceiveMessageError {
     KmsDisabled(crate::types::error::KmsDisabled),
     /// <p>The request was rejected for one of the following reasons:</p>
     /// <ul>
-    /// <li>
-    /// <p>The KeyUsage value of the KMS key is incompatible with the API operation.</p></li>
-    /// <li>
-    /// <p>The encryption algorithm or signing algorithm specified for the operation is incompatible with the type of key material in the KMS key (KeySpec).</p></li>
+    /// <li> <p>The KeyUsage value of the KMS key is incompatible with the API operation.</p> </li>
+    /// <li> <p>The encryption algorithm or signing algorithm specified for the operation is incompatible with the type of key material in the KMS key (KeySpec).</p> </li>
     /// </ul>
     KmsInvalidKeyUsage(crate::types::error::KmsInvalidKeyUsage),
     /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
     KmsInvalidState(crate::types::error::KmsInvalidState),
-    /// <p>The request was rejected because the specified entity or resource could not be found.</p>
+    /// <p>The request was rejected because the specified entity or resource could not be found. </p>
     KmsNotFound(crate::types::error::KmsNotFound),
     /// <p>The request was rejected because the specified key policy isn't syntactically or semantically correct.</p>
     KmsOptInRequired(crate::types::error::KmsOptInRequired),
@@ -275,12 +273,9 @@ pub enum ReceiveMessageError {
     QueueDoesNotExist(crate::types::error::QueueDoesNotExist),
     /// <p>The request was denied due to request throttling.</p>
     /// <ul>
-    /// <li>
-    /// <p>The rate of requests per second exceeds the Amazon Web Services KMS request quota for an account and Region.</p></li>
-    /// <li>
-    /// <p>A burst or sustained high rate of requests to change the state of the same KMS key. This condition is often known as a "hot key."</p></li>
-    /// <li>
-    /// <p>Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster associated with the Amazon Web Services CloudHSM key store is processing numerous commands, including those unrelated to the Amazon Web Services CloudHSM key store.</p></li>
+    /// <li> <p>The rate of requests per second exceeds the Amazon Web Services KMS request quota for an account and Region. </p> </li>
+    /// <li> <p>A burst or sustained high rate of requests to change the state of the same KMS key. This condition is often known as a "hot key."</p> </li>
+    /// <li> <p>Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster associated with the Amazon Web Services CloudHSM key store is processing numerous commands, including those unrelated to the Amazon Web Services CloudHSM key store.</p> </li>
     /// </ul>
     RequestThrottled(crate::types::error::RequestThrottled),
     /// <p>Error code 400. Unsupported operation.</p>

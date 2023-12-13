@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAuthorizationTokenInput {
-    /// <p>The name of the domain that is in scope for the generated authorization token.</p>
+    /// <p> The name of the domain that is in scope for the generated authorization token. </p>
     pub domain: ::std::option::Option<::std::string::String>,
-    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub domain_owner: ::std::option::Option<::std::string::String>,
     /// <p>The time, in seconds, that the generated authorization token is valid. Valid values are <code>0</code> and any number between <code>900</code> (15 minutes) and <code>43200</code> (12 hours). A value of <code>0</code> will set the expiration of the authorization token to the same expiration of the user's role's temporary credentials.</p>
     pub duration_seconds: ::std::option::Option<i64>,
 }
 impl GetAuthorizationTokenInput {
-    /// <p>The name of the domain that is in scope for the generated authorization token.</p>
+    /// <p> The name of the domain that is in scope for the generated authorization token. </p>
     pub fn domain(&self) -> ::std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(&self) -> ::std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
@@ -40,32 +40,32 @@ pub struct GetAuthorizationTokenInputBuilder {
     pub(crate) duration_seconds: ::std::option::Option<i64>,
 }
 impl GetAuthorizationTokenInputBuilder {
-    /// <p>The name of the domain that is in scope for the generated authorization token.</p>
+    /// <p> The name of the domain that is in scope for the generated authorization token. </p>
     /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the domain that is in scope for the generated authorization token.</p>
+    /// <p> The name of the domain that is in scope for the generated authorization token. </p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain = input;
         self
     }
-    /// <p>The name of the domain that is in scope for the generated authorization token.</p>
+    /// <p> The name of the domain that is in scope for the generated authorization token. </p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain
     }
-    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_owner = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn set_domain_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_owner = input;
         self
     }
-    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn get_domain_owner(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_owner
     }

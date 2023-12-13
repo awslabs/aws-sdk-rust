@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAnomalyMonitorInput {
-    /// <p>Cost anomaly monitor Amazon Resource Names (ARNs).</p>
+    /// <p>Cost anomaly monitor Amazon Resource Names (ARNs). </p>
     pub monitor_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The new name for the cost anomaly monitor.</p>
+    /// <p>The new name for the cost anomaly monitor. </p>
     pub monitor_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateAnomalyMonitorInput {
-    /// <p>Cost anomaly monitor Amazon Resource Names (ARNs).</p>
+    /// <p>Cost anomaly monitor Amazon Resource Names (ARNs). </p>
     pub fn monitor_arn(&self) -> ::std::option::Option<&str> {
         self.monitor_arn.as_deref()
     }
-    /// <p>The new name for the cost anomaly monitor.</p>
+    /// <p>The new name for the cost anomaly monitor. </p>
     pub fn monitor_name(&self) -> ::std::option::Option<&str> {
         self.monitor_name.as_deref()
     }
@@ -33,32 +33,32 @@ pub struct UpdateAnomalyMonitorInputBuilder {
     pub(crate) monitor_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateAnomalyMonitorInputBuilder {
-    /// <p>Cost anomaly monitor Amazon Resource Names (ARNs).</p>
+    /// <p>Cost anomaly monitor Amazon Resource Names (ARNs). </p>
     /// This field is required.
     pub fn monitor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitor_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Cost anomaly monitor Amazon Resource Names (ARNs).</p>
+    /// <p>Cost anomaly monitor Amazon Resource Names (ARNs). </p>
     pub fn set_monitor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.monitor_arn = input;
         self
     }
-    /// <p>Cost anomaly monitor Amazon Resource Names (ARNs).</p>
+    /// <p>Cost anomaly monitor Amazon Resource Names (ARNs). </p>
     pub fn get_monitor_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.monitor_arn
     }
-    /// <p>The new name for the cost anomaly monitor.</p>
+    /// <p>The new name for the cost anomaly monitor. </p>
     pub fn monitor_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitor_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The new name for the cost anomaly monitor.</p>
+    /// <p>The new name for the cost anomaly monitor. </p>
     pub fn set_monitor_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.monitor_name = input;
         self
     }
-    /// <p>The new name for the cost anomaly monitor.</p>
+    /// <p>The new name for the cost anomaly monitor. </p>
     pub fn get_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.monitor_name
     }

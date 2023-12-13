@@ -23,7 +23,7 @@ impl DeleteHumanTaskUiInputBuilder {
 /// Fluent builder constructing a request to `DeleteHumanTaskUi`.
 ///
 /// <p>Use this operation to delete a human task user interface (worker task template).</p>
-/// <p>To see a list of human task user interfaces (work task templates) in your account, use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListHumanTaskUis.html">ListHumanTaskUis</a>. When you delete a worker task template, it no longer appears when you call <code>ListHumanTaskUis</code>.</p>
+/// <p> To see a list of human task user interfaces (work task templates) in your account, use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListHumanTaskUis.html">ListHumanTaskUis</a>. When you delete a worker task template, it no longer appears when you call <code>ListHumanTaskUis</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteHumanTaskUiFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

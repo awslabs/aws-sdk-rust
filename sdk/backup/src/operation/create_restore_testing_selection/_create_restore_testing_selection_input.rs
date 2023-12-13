@@ -9,10 +9,8 @@ pub struct CreateRestoreTestingSelectionInput {
     pub restore_testing_plan_name: ::std::option::Option<::std::string::String>,
     /// <p>This consists of <code>RestoreTestingSelectionName</code>, <code>ProtectedResourceType</code>, and one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ProtectedResourceArns</code></p></li>
-    /// <li>
-    /// <p><code>ProtectedResourceConditions</code></p></li>
+    /// <li> <p> <code>ProtectedResourceArns</code> </p> </li>
+    /// <li> <p> <code>ProtectedResourceConditions</code> </p> </li>
     /// </ul>
     /// <p>Each protected resource type can have one single value.</p>
     /// <p>A restore testing selection can include a wildcard value ("*") for <code>ProtectedResourceArns</code> along with <code>ProtectedResourceConditions</code>. Alternatively, you can include up to 30 specific protected resource ARNs in <code>ProtectedResourceArns</code>.</p>
@@ -29,10 +27,8 @@ impl CreateRestoreTestingSelectionInput {
     }
     /// <p>This consists of <code>RestoreTestingSelectionName</code>, <code>ProtectedResourceType</code>, and one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ProtectedResourceArns</code></p></li>
-    /// <li>
-    /// <p><code>ProtectedResourceConditions</code></p></li>
+    /// <li> <p> <code>ProtectedResourceArns</code> </p> </li>
+    /// <li> <p> <code>ProtectedResourceConditions</code> </p> </li>
     /// </ul>
     /// <p>Each protected resource type can have one single value.</p>
     /// <p>A restore testing selection can include a wildcard value ("*") for <code>ProtectedResourceArns</code> along with <code>ProtectedResourceConditions</code>. Alternatively, you can include up to 30 specific protected resource ARNs in <code>ProtectedResourceArns</code>.</p>
@@ -87,10 +83,8 @@ impl CreateRestoreTestingSelectionInputBuilder {
     }
     /// <p>This consists of <code>RestoreTestingSelectionName</code>, <code>ProtectedResourceType</code>, and one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ProtectedResourceArns</code></p></li>
-    /// <li>
-    /// <p><code>ProtectedResourceConditions</code></p></li>
+    /// <li> <p> <code>ProtectedResourceArns</code> </p> </li>
+    /// <li> <p> <code>ProtectedResourceConditions</code> </p> </li>
     /// </ul>
     /// <p>Each protected resource type can have one single value.</p>
     /// <p>A restore testing selection can include a wildcard value ("*") for <code>ProtectedResourceArns</code> along with <code>ProtectedResourceConditions</code>. Alternatively, you can include up to 30 specific protected resource ARNs in <code>ProtectedResourceArns</code>.</p>
@@ -101,10 +95,8 @@ impl CreateRestoreTestingSelectionInputBuilder {
     }
     /// <p>This consists of <code>RestoreTestingSelectionName</code>, <code>ProtectedResourceType</code>, and one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ProtectedResourceArns</code></p></li>
-    /// <li>
-    /// <p><code>ProtectedResourceConditions</code></p></li>
+    /// <li> <p> <code>ProtectedResourceArns</code> </p> </li>
+    /// <li> <p> <code>ProtectedResourceConditions</code> </p> </li>
     /// </ul>
     /// <p>Each protected resource type can have one single value.</p>
     /// <p>A restore testing selection can include a wildcard value ("*") for <code>ProtectedResourceArns</code> along with <code>ProtectedResourceConditions</code>. Alternatively, you can include up to 30 specific protected resource ARNs in <code>ProtectedResourceArns</code>.</p>
@@ -114,10 +106,8 @@ impl CreateRestoreTestingSelectionInputBuilder {
     }
     /// <p>This consists of <code>RestoreTestingSelectionName</code>, <code>ProtectedResourceType</code>, and one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ProtectedResourceArns</code></p></li>
-    /// <li>
-    /// <p><code>ProtectedResourceConditions</code></p></li>
+    /// <li> <p> <code>ProtectedResourceArns</code> </p> </li>
+    /// <li> <p> <code>ProtectedResourceConditions</code> </p> </li>
     /// </ul>
     /// <p>Each protected resource type can have one single value.</p>
     /// <p>A restore testing selection can include a wildcard value ("*") for <code>ProtectedResourceArns</code> along with <code>ProtectedResourceConditions</code>. Alternatively, you can include up to 30 specific protected resource ARNs in <code>ProtectedResourceArns</code>.</p>

@@ -5,7 +5,7 @@
 pub struct CreateDetectorVersionOutput {
     /// <p>The ID for the created version's parent detector.</p>
     pub detector_id: ::std::option::Option<::std::string::String>,
-    /// <p>The ID for the created detector.</p>
+    /// <p>The ID for the created detector. </p>
     pub detector_version_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the detector version.</p>
     pub status: ::std::option::Option<crate::types::DetectorVersionStatus>,
@@ -16,7 +16,7 @@ impl CreateDetectorVersionOutput {
     pub fn detector_id(&self) -> ::std::option::Option<&str> {
         self.detector_id.as_deref()
     }
-    /// <p>The ID for the created detector.</p>
+    /// <p>The ID for the created detector. </p>
     pub fn detector_version_id(&self) -> ::std::option::Option<&str> {
         self.detector_version_id.as_deref()
     }
@@ -61,17 +61,17 @@ impl CreateDetectorVersionOutputBuilder {
     pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.detector_id
     }
-    /// <p>The ID for the created detector.</p>
+    /// <p>The ID for the created detector. </p>
     pub fn detector_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_version_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID for the created detector.</p>
+    /// <p>The ID for the created detector. </p>
     pub fn set_detector_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detector_version_id = input;
         self
     }
-    /// <p>The ID for the created detector.</p>
+    /// <p>The ID for the created detector. </p>
     pub fn get_detector_version_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.detector_version_id
     }

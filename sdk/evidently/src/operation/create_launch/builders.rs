@@ -24,7 +24,7 @@ impl CreateLaunchInputBuilder {
 ///
 /// <p>Creates a <i>launch</i> of a given feature. Before you create a launch, you must create the feature to use for the launch.</p>
 /// <p>You can use a launch to safely validate new features by serving them to a specified percentage of your users while you roll out the feature. You can monitor the performance of the new feature to help you decide when to ramp up traffic to more users. This helps you reduce risk and identify unintended consequences before you fully launch the feature.</p>
-/// <p>Don't use this operation to update an existing launch. Instead, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_UpdateLaunch.html">UpdateLaunch</a>.</p>
+/// <p>Don't use this operation to update an existing launch. Instead, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_UpdateLaunch.html">UpdateLaunch</a>. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateLaunchFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

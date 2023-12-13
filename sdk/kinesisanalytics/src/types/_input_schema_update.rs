@@ -8,7 +8,7 @@ pub struct InputSchemaUpdate {
     pub record_format_update: ::std::option::Option<crate::types::RecordFormat>,
     /// <p>Specifies the encoding of the records in the streaming source. For example, UTF-8.</p>
     pub record_encoding_update: ::std::option::Option<::std::string::String>,
-    /// <p>A list of <code>RecordColumn</code> objects. Each object describes the mapping of the streaming source element to the corresponding column in the in-application stream.</p>
+    /// <p>A list of <code>RecordColumn</code> objects. Each object describes the mapping of the streaming source element to the corresponding column in the in-application stream. </p>
     pub record_column_updates: ::std::option::Option<::std::vec::Vec<crate::types::RecordColumn>>,
 }
 impl InputSchemaUpdate {
@@ -20,7 +20,7 @@ impl InputSchemaUpdate {
     pub fn record_encoding_update(&self) -> ::std::option::Option<&str> {
         self.record_encoding_update.as_deref()
     }
-    /// <p>A list of <code>RecordColumn</code> objects. Each object describes the mapping of the streaming source element to the corresponding column in the in-application stream.</p>
+    /// <p>A list of <code>RecordColumn</code> objects. Each object describes the mapping of the streaming source element to the corresponding column in the in-application stream. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.record_column_updates.is_none()`.
     pub fn record_column_updates(&self) -> &[crate::types::RecordColumn] {
@@ -75,19 +75,19 @@ impl InputSchemaUpdateBuilder {
     ///
     /// To override the contents of this collection use [`set_record_column_updates`](Self::set_record_column_updates).
     ///
-    /// <p>A list of <code>RecordColumn</code> objects. Each object describes the mapping of the streaming source element to the corresponding column in the in-application stream.</p>
+    /// <p>A list of <code>RecordColumn</code> objects. Each object describes the mapping of the streaming source element to the corresponding column in the in-application stream. </p>
     pub fn record_column_updates(mut self, input: crate::types::RecordColumn) -> Self {
         let mut v = self.record_column_updates.unwrap_or_default();
         v.push(input);
         self.record_column_updates = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of <code>RecordColumn</code> objects. Each object describes the mapping of the streaming source element to the corresponding column in the in-application stream.</p>
+    /// <p>A list of <code>RecordColumn</code> objects. Each object describes the mapping of the streaming source element to the corresponding column in the in-application stream. </p>
     pub fn set_record_column_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecordColumn>>) -> Self {
         self.record_column_updates = input;
         self
     }
-    /// <p>A list of <code>RecordColumn</code> objects. Each object describes the mapping of the streaming source element to the corresponding column in the in-application stream.</p>
+    /// <p>A list of <code>RecordColumn</code> objects. Each object describes the mapping of the streaming source element to the corresponding column in the in-application stream. </p>
     pub fn get_record_column_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecordColumn>> {
         &self.record_column_updates
     }

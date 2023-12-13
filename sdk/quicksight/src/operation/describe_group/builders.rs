@@ -22,7 +22,7 @@ impl DescribeGroupInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeGroup`.
 ///
-/// <p>Returns an Amazon QuickSight group's description and Amazon Resource Name (ARN).</p>
+/// <p>Returns an Amazon QuickSight group's description and Amazon Resource Name (ARN). </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

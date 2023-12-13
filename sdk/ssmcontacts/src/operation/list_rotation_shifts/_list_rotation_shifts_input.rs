@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRotationShiftsInput {
-    /// <p>The Amazon Resource Name (ARN) of the rotation to retrieve shift information about.</p>
+    /// <p>The Amazon Resource Name (ARN) of the rotation to retrieve shift information about. </p>
     pub rotation_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time for the beginning of the time range to list shifts for.</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -15,7 +15,7 @@ pub struct ListRotationShiftsInput {
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListRotationShiftsInput {
-    /// <p>The Amazon Resource Name (ARN) of the rotation to retrieve shift information about.</p>
+    /// <p>The Amazon Resource Name (ARN) of the rotation to retrieve shift information about. </p>
     pub fn rotation_id(&self) -> ::std::option::Option<&str> {
         self.rotation_id.as_deref()
     }
@@ -54,18 +54,18 @@ pub struct ListRotationShiftsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ListRotationShiftsInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the rotation to retrieve shift information about.</p>
+    /// <p>The Amazon Resource Name (ARN) of the rotation to retrieve shift information about. </p>
     /// This field is required.
     pub fn rotation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rotation_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the rotation to retrieve shift information about.</p>
+    /// <p>The Amazon Resource Name (ARN) of the rotation to retrieve shift information about. </p>
     pub fn set_rotation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rotation_id = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the rotation to retrieve shift information about.</p>
+    /// <p>The Amazon Resource Name (ARN) of the rotation to retrieve shift information about. </p>
     pub fn get_rotation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.rotation_id
     }

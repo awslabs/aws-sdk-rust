@@ -115,22 +115,17 @@ impl DescribeKeyPairsFluentBuilder {
     ///
     /// <p>The filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>key-pair-id</code> - The ID of the key pair.</p></li>
-    /// <li>
-    /// <p><code>fingerprint</code> - The fingerprint of the key pair.</p></li>
-    /// <li>
-    /// <p><code>key-name</code> - The name of the key pair.</p></li>
-    /// <li>
-    /// <p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
-    /// <li>
-    /// <p><code>tag</code>:<key>
+    /// <li> <p> <code>key-pair-id</code> - The ID of the key pair.</p> </li>
+    /// <li> <p> <code>fingerprint</code> - The fingerprint of the key pair.</p> </li>
+    /// <li> <p> <code>key-name</code> - The name of the key pair.</p> </li>
+    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
+    /// <li> <p> <code>tag</code>:<key>
     /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
     /// <code>Owner</code> and the value
     /// <code>TeamA</code>, specify
     /// <code>tag:Owner</code> for the filter name and
     /// <code>TeamA</code> for the filter value.
-    /// </key></p></li>
+    /// </key></p> </li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
@@ -138,22 +133,17 @@ impl DescribeKeyPairsFluentBuilder {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>key-pair-id</code> - The ID of the key pair.</p></li>
-    /// <li>
-    /// <p><code>fingerprint</code> - The fingerprint of the key pair.</p></li>
-    /// <li>
-    /// <p><code>key-name</code> - The name of the key pair.</p></li>
-    /// <li>
-    /// <p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
-    /// <li>
-    /// <p><code>tag</code>:<key>
+    /// <li> <p> <code>key-pair-id</code> - The ID of the key pair.</p> </li>
+    /// <li> <p> <code>fingerprint</code> - The fingerprint of the key pair.</p> </li>
+    /// <li> <p> <code>key-name</code> - The name of the key pair.</p> </li>
+    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
+    /// <li> <p> <code>tag</code>:<key>
     /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
     /// <code>Owner</code> and the value
     /// <code>TeamA</code>, specify
     /// <code>tag:Owner</code> for the filter name and
     /// <code>TeamA</code> for the filter value.
-    /// </key></p></li>
+    /// </key></p> </li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
@@ -161,22 +151,17 @@ impl DescribeKeyPairsFluentBuilder {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>key-pair-id</code> - The ID of the key pair.</p></li>
-    /// <li>
-    /// <p><code>fingerprint</code> - The fingerprint of the key pair.</p></li>
-    /// <li>
-    /// <p><code>key-name</code> - The name of the key pair.</p></li>
-    /// <li>
-    /// <p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
-    /// <li>
-    /// <p><code>tag</code>:<key>
+    /// <li> <p> <code>key-pair-id</code> - The ID of the key pair.</p> </li>
+    /// <li> <p> <code>fingerprint</code> - The fingerprint of the key pair.</p> </li>
+    /// <li> <p> <code>key-name</code> - The name of the key pair.</p> </li>
+    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
+    /// <li> <p> <code>tag</code>:<key>
     /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
     /// <code>Owner</code> and the value
     /// <code>TeamA</code>, specify
     /// <code>tag:Owner</code> for the filter name and
     /// <code>TeamA</code> for the filter value.
-    /// </key></p></li>
+    /// </key></p> </li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()
@@ -235,19 +220,19 @@ impl DescribeKeyPairsFluentBuilder {
         self.inner.get_dry_run()
     }
     /// <p>If <code>true</code>, the public key material is included in the response.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p>Default: <code>false</code> </p>
     pub fn include_public_key(mut self, input: bool) -> Self {
         self.inner = self.inner.include_public_key(input);
         self
     }
     /// <p>If <code>true</code>, the public key material is included in the response.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p>Default: <code>false</code> </p>
     pub fn set_include_public_key(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_public_key(input);
         self
     }
     /// <p>If <code>true</code>, the public key material is included in the response.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p>Default: <code>false</code> </p>
     pub fn get_include_public_key(&self) -> &::std::option::Option<bool> {
         self.inner.get_include_public_key()
     }

@@ -8,7 +8,7 @@ pub struct ServiceHealth {
     pub service_name: ::std::option::Option<crate::types::ServiceName>,
     /// <p>Represents the health of an Amazon Web Services service. This is a <code>ServiceInsightHealth</code> that contains the number of open proactive and reactive insights for this service.</p>
     pub insight: ::std::option::Option<crate::types::ServiceInsightHealth>,
-    /// <p>Number of resources that DevOps Guru is monitoring in an analyzed Amazon Web Services service.</p>
+    /// <p> Number of resources that DevOps Guru is monitoring in an analyzed Amazon Web Services service. </p>
     pub analyzed_resource_count: ::std::option::Option<i64>,
 }
 impl ServiceHealth {
@@ -20,7 +20,7 @@ impl ServiceHealth {
     pub fn insight(&self) -> ::std::option::Option<&crate::types::ServiceInsightHealth> {
         self.insight.as_ref()
     }
-    /// <p>Number of resources that DevOps Guru is monitoring in an analyzed Amazon Web Services service.</p>
+    /// <p> Number of resources that DevOps Guru is monitoring in an analyzed Amazon Web Services service. </p>
     pub fn analyzed_resource_count(&self) -> ::std::option::Option<i64> {
         self.analyzed_resource_count
     }
@@ -69,17 +69,17 @@ impl ServiceHealthBuilder {
     pub fn get_insight(&self) -> &::std::option::Option<crate::types::ServiceInsightHealth> {
         &self.insight
     }
-    /// <p>Number of resources that DevOps Guru is monitoring in an analyzed Amazon Web Services service.</p>
+    /// <p> Number of resources that DevOps Guru is monitoring in an analyzed Amazon Web Services service. </p>
     pub fn analyzed_resource_count(mut self, input: i64) -> Self {
         self.analyzed_resource_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Number of resources that DevOps Guru is monitoring in an analyzed Amazon Web Services service.</p>
+    /// <p> Number of resources that DevOps Guru is monitoring in an analyzed Amazon Web Services service. </p>
     pub fn set_analyzed_resource_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.analyzed_resource_count = input;
         self
     }
-    /// <p>Number of resources that DevOps Guru is monitoring in an analyzed Amazon Web Services service.</p>
+    /// <p> Number of resources that DevOps Guru is monitoring in an analyzed Amazon Web Services service. </p>
     pub fn get_analyzed_resource_count(&self) -> &::std::option::Option<i64> {
         &self.analyzed_resource_count
     }

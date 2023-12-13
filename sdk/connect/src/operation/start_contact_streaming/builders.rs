@@ -22,8 +22,8 @@ impl StartContactStreamingInputBuilder {
 }
 /// Fluent builder constructing a request to `StartContactStreaming`.
 ///
-/// <p>Initiates real-time message streaming for a new chat contact.</p>
-/// <p>For more information about message streaming, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-message-streaming.html">Enable real-time chat message streaming</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+/// <p> Initiates real-time message streaming for a new chat contact.</p>
+/// <p> For more information about message streaming, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-message-streaming.html">Enable real-time chat message streaming</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartContactStreamingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

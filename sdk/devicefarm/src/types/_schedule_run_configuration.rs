@@ -20,7 +20,7 @@ pub struct ScheduleRunConfiguration {
     pub radios: ::std::option::Option<crate::types::Radios>,
     /// <p>A list of upload ARNs for app packages to be installed with your app.</p>
     pub auxiliary_apps: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is not specified, the default value is <code>metered</code>.</p><note>
+    /// <p>Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is not specified, the default value is <code>metered</code>.</p> <note>
     /// <p>If you have purchased unmetered device slots, you must set this parameter to <code>unmetered</code> to make use of them. Otherwise, your run counts against your metered time.</p>
     /// </note>
     pub billing_method: ::std::option::Option<crate::types::BillingMethod>,
@@ -62,7 +62,7 @@ impl ScheduleRunConfiguration {
     pub fn auxiliary_apps(&self) -> &[::std::string::String] {
         self.auxiliary_apps.as_deref().unwrap_or_default()
     }
-    /// <p>Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is not specified, the default value is <code>metered</code>.</p><note>
+    /// <p>Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is not specified, the default value is <code>metered</code>.</p> <note>
     /// <p>If you have purchased unmetered device slots, you must set this parameter to <code>unmetered</code> to make use of them. Otherwise, your run counts against your metered time.</p>
     /// </note>
     pub fn billing_method(&self) -> ::std::option::Option<&crate::types::BillingMethod> {
@@ -215,21 +215,21 @@ impl ScheduleRunConfigurationBuilder {
     pub fn get_auxiliary_apps(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.auxiliary_apps
     }
-    /// <p>Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is not specified, the default value is <code>metered</code>.</p><note>
+    /// <p>Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is not specified, the default value is <code>metered</code>.</p> <note>
     /// <p>If you have purchased unmetered device slots, you must set this parameter to <code>unmetered</code> to make use of them. Otherwise, your run counts against your metered time.</p>
     /// </note>
     pub fn billing_method(mut self, input: crate::types::BillingMethod) -> Self {
         self.billing_method = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is not specified, the default value is <code>metered</code>.</p><note>
+    /// <p>Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is not specified, the default value is <code>metered</code>.</p> <note>
     /// <p>If you have purchased unmetered device slots, you must set this parameter to <code>unmetered</code> to make use of them. Otherwise, your run counts against your metered time.</p>
     /// </note>
     pub fn set_billing_method(mut self, input: ::std::option::Option<crate::types::BillingMethod>) -> Self {
         self.billing_method = input;
         self
     }
-    /// <p>Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is not specified, the default value is <code>metered</code>.</p><note>
+    /// <p>Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is not specified, the default value is <code>metered</code>.</p> <note>
     /// <p>If you have purchased unmetered device slots, you must set this parameter to <code>unmetered</code> to make use of them. Otherwise, your run counts against your metered time.</p>
     /// </note>
     pub fn get_billing_method(&self) -> &::std::option::Option<crate::types::BillingMethod> {

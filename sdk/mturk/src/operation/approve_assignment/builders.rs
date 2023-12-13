@@ -22,16 +22,14 @@ impl ApproveAssignmentInputBuilder {
 }
 /// Fluent builder constructing a request to `ApproveAssignment`.
 ///
-/// <p>The <code>ApproveAssignment</code> operation approves the results of a completed assignment.</p>
-/// <p>Approving an assignment initiates two payments from the Requester's Amazon.com account</p>
+/// <p> The <code>ApproveAssignment</code> operation approves the results of a completed assignment. </p>
+/// <p> Approving an assignment initiates two payments from the Requester's Amazon.com account </p>
 /// <ul>
-/// <li>
-/// <p>The Worker who submitted the results is paid the reward specified in the HIT.</p></li>
-/// <li>
-/// <p>Amazon Mechanical Turk fees are debited.</p></li>
+/// <li> <p> The Worker who submitted the results is paid the reward specified in the HIT. </p> </li>
+/// <li> <p> Amazon Mechanical Turk fees are debited. </p> </li>
 /// </ul>
-/// <p>If the Requester's account does not have adequate funds for these payments, the call to ApproveAssignment returns an exception, and the approval is not processed. You can include an optional feedback message with the approval, which the Worker can see in the Status section of the web site.</p>
-/// <p>You can also call this operation for assignments that were previous rejected and approve them by explicitly overriding the previous rejection. This only works on rejected assignments that were submitted within the previous 30 days and only if the assignment's related HIT has not been deleted.</p>
+/// <p> If the Requester's account does not have adequate funds for these payments, the call to ApproveAssignment returns an exception, and the approval is not processed. You can include an optional feedback message with the approval, which the Worker can see in the Status section of the web site. </p>
+/// <p> You can also call this operation for assignments that were previous rejected and approve them by explicitly overriding the previous rejection. This only works on rejected assignments that were submitted within the previous 30 days and only if the assignment's related HIT has not been deleted. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ApproveAssignmentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -117,45 +115,45 @@ impl ApproveAssignmentFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the assignment. The assignment must correspond to a HIT created by the Requester.</p>
+    /// <p> The ID of the assignment. The assignment must correspond to a HIT created by the Requester. </p>
     pub fn assignment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assignment_id(input.into());
         self
     }
-    /// <p>The ID of the assignment. The assignment must correspond to a HIT created by the Requester.</p>
+    /// <p> The ID of the assignment. The assignment must correspond to a HIT created by the Requester. </p>
     pub fn set_assignment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assignment_id(input);
         self
     }
-    /// <p>The ID of the assignment. The assignment must correspond to a HIT created by the Requester.</p>
+    /// <p> The ID of the assignment. The assignment must correspond to a HIT created by the Requester. </p>
     pub fn get_assignment_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_assignment_id()
     }
-    /// <p>A message for the Worker, which the Worker can see in the Status section of the web site.</p>
+    /// <p> A message for the Worker, which the Worker can see in the Status section of the web site. </p>
     pub fn requester_feedback(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.requester_feedback(input.into());
         self
     }
-    /// <p>A message for the Worker, which the Worker can see in the Status section of the web site.</p>
+    /// <p> A message for the Worker, which the Worker can see in the Status section of the web site. </p>
     pub fn set_requester_feedback(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_requester_feedback(input);
         self
     }
-    /// <p>A message for the Worker, which the Worker can see in the Status section of the web site.</p>
+    /// <p> A message for the Worker, which the Worker can see in the Status section of the web site. </p>
     pub fn get_requester_feedback(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_requester_feedback()
     }
-    /// <p>A flag indicating that an assignment should be approved even if it was previously rejected. Defaults to <code>False</code>.</p>
+    /// <p> A flag indicating that an assignment should be approved even if it was previously rejected. Defaults to <code>False</code>. </p>
     pub fn override_rejection(mut self, input: bool) -> Self {
         self.inner = self.inner.override_rejection(input);
         self
     }
-    /// <p>A flag indicating that an assignment should be approved even if it was previously rejected. Defaults to <code>False</code>.</p>
+    /// <p> A flag indicating that an assignment should be approved even if it was previously rejected. Defaults to <code>False</code>. </p>
     pub fn set_override_rejection(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_override_rejection(input);
         self
     }
-    /// <p>A flag indicating that an assignment should be approved even if it was previously rejected. Defaults to <code>False</code>.</p>
+    /// <p> A flag indicating that an assignment should be approved even if it was previously rejected. Defaults to <code>False</code>. </p>
     pub fn get_override_rejection(&self) -> &::std::option::Option<bool> {
         self.inner.get_override_rejection()
     }

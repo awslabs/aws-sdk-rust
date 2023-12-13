@@ -6,10 +6,8 @@
 pub struct SignInOptions {
     /// <p>This determines how IAM Identity Center navigates the user to the target application. It can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>APPLICATION</code>: IAM Identity Center redirects the customer to the configured <code>ApplicationUrl</code>.</p></li>
-    /// <li>
-    /// <p><code>IDENTITY_CENTER</code>: IAM Identity Center uses SAML identity-provider initiated authentication to sign the customer directly into a SAML-based application.</p></li>
+    /// <li> <p> <code>APPLICATION</code>: IAM Identity Center redirects the customer to the configured <code>ApplicationUrl</code>.</p> </li>
+    /// <li> <p> <code>IDENTITY_CENTER</code>: IAM Identity Center uses SAML identity-provider initiated authentication to sign the customer directly into a SAML-based application.</p> </li>
     /// </ul>
     pub origin: crate::types::SignInOrigin,
     /// <p>The URL that accepts authentication requests for an application. This is a required parameter if the <code>Origin</code> parameter is <code>APPLICATION</code>.</p>
@@ -18,10 +16,8 @@ pub struct SignInOptions {
 impl SignInOptions {
     /// <p>This determines how IAM Identity Center navigates the user to the target application. It can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>APPLICATION</code>: IAM Identity Center redirects the customer to the configured <code>ApplicationUrl</code>.</p></li>
-    /// <li>
-    /// <p><code>IDENTITY_CENTER</code>: IAM Identity Center uses SAML identity-provider initiated authentication to sign the customer directly into a SAML-based application.</p></li>
+    /// <li> <p> <code>APPLICATION</code>: IAM Identity Center redirects the customer to the configured <code>ApplicationUrl</code>.</p> </li>
+    /// <li> <p> <code>IDENTITY_CENTER</code>: IAM Identity Center uses SAML identity-provider initiated authentication to sign the customer directly into a SAML-based application.</p> </li>
     /// </ul>
     pub fn origin(&self) -> &crate::types::SignInOrigin {
         &self.origin
@@ -48,10 +44,8 @@ pub struct SignInOptionsBuilder {
 impl SignInOptionsBuilder {
     /// <p>This determines how IAM Identity Center navigates the user to the target application. It can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>APPLICATION</code>: IAM Identity Center redirects the customer to the configured <code>ApplicationUrl</code>.</p></li>
-    /// <li>
-    /// <p><code>IDENTITY_CENTER</code>: IAM Identity Center uses SAML identity-provider initiated authentication to sign the customer directly into a SAML-based application.</p></li>
+    /// <li> <p> <code>APPLICATION</code>: IAM Identity Center redirects the customer to the configured <code>ApplicationUrl</code>.</p> </li>
+    /// <li> <p> <code>IDENTITY_CENTER</code>: IAM Identity Center uses SAML identity-provider initiated authentication to sign the customer directly into a SAML-based application.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn origin(mut self, input: crate::types::SignInOrigin) -> Self {
@@ -60,10 +54,8 @@ impl SignInOptionsBuilder {
     }
     /// <p>This determines how IAM Identity Center navigates the user to the target application. It can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>APPLICATION</code>: IAM Identity Center redirects the customer to the configured <code>ApplicationUrl</code>.</p></li>
-    /// <li>
-    /// <p><code>IDENTITY_CENTER</code>: IAM Identity Center uses SAML identity-provider initiated authentication to sign the customer directly into a SAML-based application.</p></li>
+    /// <li> <p> <code>APPLICATION</code>: IAM Identity Center redirects the customer to the configured <code>ApplicationUrl</code>.</p> </li>
+    /// <li> <p> <code>IDENTITY_CENTER</code>: IAM Identity Center uses SAML identity-provider initiated authentication to sign the customer directly into a SAML-based application.</p> </li>
     /// </ul>
     pub fn set_origin(mut self, input: ::std::option::Option<crate::types::SignInOrigin>) -> Self {
         self.origin = input;
@@ -71,10 +63,8 @@ impl SignInOptionsBuilder {
     }
     /// <p>This determines how IAM Identity Center navigates the user to the target application. It can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>APPLICATION</code>: IAM Identity Center redirects the customer to the configured <code>ApplicationUrl</code>.</p></li>
-    /// <li>
-    /// <p><code>IDENTITY_CENTER</code>: IAM Identity Center uses SAML identity-provider initiated authentication to sign the customer directly into a SAML-based application.</p></li>
+    /// <li> <p> <code>APPLICATION</code>: IAM Identity Center redirects the customer to the configured <code>ApplicationUrl</code>.</p> </li>
+    /// <li> <p> <code>IDENTITY_CENTER</code>: IAM Identity Center uses SAML identity-provider initiated authentication to sign the customer directly into a SAML-based application.</p> </li>
     /// </ul>
     pub fn get_origin(&self) -> &::std::option::Option<crate::types::SignInOrigin> {
         &self.origin

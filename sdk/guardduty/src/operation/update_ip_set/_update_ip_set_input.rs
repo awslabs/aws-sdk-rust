@@ -9,7 +9,7 @@ pub struct UpdateIpSetInput {
     pub ip_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID that specifies the IPSet that you want to update.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The updated URI of the file that contains the IPSet.</p>
+    /// <p>The updated URI of the file that contains the IPSet. </p>
     pub location: ::std::option::Option<::std::string::String>,
     /// <p>The updated Boolean value that specifies whether the IPSet is active or not.</p>
     pub activate: ::std::option::Option<bool>,
@@ -27,7 +27,7 @@ impl UpdateIpSetInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The updated URI of the file that contains the IPSet.</p>
+    /// <p>The updated URI of the file that contains the IPSet. </p>
     pub fn location(&self) -> ::std::option::Option<&str> {
         self.location.as_deref()
     }
@@ -98,17 +98,17 @@ impl UpdateIpSetInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The updated URI of the file that contains the IPSet.</p>
+    /// <p>The updated URI of the file that contains the IPSet. </p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The updated URI of the file that contains the IPSet.</p>
+    /// <p>The updated URI of the file that contains the IPSet. </p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location = input;
         self
     }
-    /// <p>The updated URI of the file that contains the IPSet.</p>
+    /// <p>The updated URI of the file that contains the IPSet. </p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.location
     }

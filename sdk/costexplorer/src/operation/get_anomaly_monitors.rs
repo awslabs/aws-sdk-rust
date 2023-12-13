@@ -251,7 +251,7 @@ pub enum GetAnomalyMonitorsError {
     InvalidNextTokenException(crate::types::error::InvalidNextTokenException),
     /// <p>You made too many calls in a short period of time. Try again later.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
-    /// <p>The cost anomaly monitor does not exist for the account.</p>
+    /// <p>The cost anomaly monitor does not exist for the account. </p>
     UnknownMonitorException(crate::types::error::UnknownMonitorException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteContainerInput {
-    /// <p>The name of the container to delete.</p>
+    /// <p>The name of the container to delete. </p>
     pub container_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteContainerInput {
-    /// <p>The name of the container to delete.</p>
+    /// <p>The name of the container to delete. </p>
     pub fn container_name(&self) -> ::std::option::Option<&str> {
         self.container_name.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct DeleteContainerInputBuilder {
     pub(crate) container_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteContainerInputBuilder {
-    /// <p>The name of the container to delete.</p>
+    /// <p>The name of the container to delete. </p>
     /// This field is required.
     pub fn container_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the container to delete.</p>
+    /// <p>The name of the container to delete. </p>
     pub fn set_container_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.container_name = input;
         self
     }
-    /// <p>The name of the container to delete.</p>
+    /// <p>The name of the container to delete. </p>
     pub fn get_container_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.container_name
     }

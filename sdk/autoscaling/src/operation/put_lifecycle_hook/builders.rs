@@ -26,18 +26,12 @@ impl PutLifecycleHookInputBuilder {
 /// <p>Lifecycle hooks let you create solutions that are aware of events in the Auto Scaling instance lifecycle, and then perform a custom action on instances when the corresponding lifecycle event occurs.</p>
 /// <p>This step is a part of the procedure for adding a lifecycle hook to an Auto Scaling group:</p>
 /// <ol>
-/// <li>
-/// <p>(Optional) Create a launch template or launch configuration with a user data script that runs while an instance is in a wait state due to a lifecycle hook.</p></li>
-/// <li>
-/// <p>(Optional) Create a Lambda function and a rule that allows Amazon EventBridge to invoke your Lambda function when an instance is put into a wait state due to a lifecycle hook.</p></li>
-/// <li>
-/// <p>(Optional) Create a notification target and an IAM role. The target can be either an Amazon SQS queue or an Amazon SNS topic. The role allows Amazon EC2 Auto Scaling to publish lifecycle notifications to the target.</p></li>
-/// <li>
-/// <p><b>Create the lifecycle hook. Specify whether the hook is used when the instances launch or terminate.</b></p></li>
-/// <li>
-/// <p>If you need more time, record the lifecycle action heartbeat to keep the instance in a wait state using the <code>RecordLifecycleActionHeartbeat</code> API call.</p></li>
-/// <li>
-/// <p>If you finish before the timeout period ends, send a callback by using the <code>CompleteLifecycleAction</code> API call.</p></li>
+/// <li> <p>(Optional) Create a launch template or launch configuration with a user data script that runs while an instance is in a wait state due to a lifecycle hook.</p> </li>
+/// <li> <p>(Optional) Create a Lambda function and a rule that allows Amazon EventBridge to invoke your Lambda function when an instance is put into a wait state due to a lifecycle hook.</p> </li>
+/// <li> <p>(Optional) Create a notification target and an IAM role. The target can be either an Amazon SQS queue or an Amazon SNS topic. The role allows Amazon EC2 Auto Scaling to publish lifecycle notifications to the target.</p> </li>
+/// <li> <p> <b>Create the lifecycle hook. Specify whether the hook is used when the instances launch or terminate.</b> </p> </li>
+/// <li> <p>If you need more time, record the lifecycle action heartbeat to keep the instance in a wait state using the <code>RecordLifecycleActionHeartbeat</code> API call.</p> </li>
+/// <li> <p>If you finish before the timeout period ends, send a callback by using the <code>CompleteLifecycleAction</code> API call.</p> </li>
 /// </ol>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Amazon EC2 Auto Scaling lifecycle hooks</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
 /// <p>If you exceed your maximum limit of lifecycle hooks, which by default is 50 per Auto Scaling group, the call fails.</p>
@@ -157,10 +151,8 @@ impl PutLifecycleHookFluentBuilder {
     }
     /// <p>The lifecycle transition. For Auto Scaling groups, there are two major lifecycle transitions.</p>
     /// <ul>
-    /// <li>
-    /// <p>To create a lifecycle hook for scale-out events, specify <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>.</p></li>
-    /// <li>
-    /// <p>To create a lifecycle hook for scale-in events, specify <code>autoscaling:EC2_INSTANCE_TERMINATING</code>.</p></li>
+    /// <li> <p>To create a lifecycle hook for scale-out events, specify <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>.</p> </li>
+    /// <li> <p>To create a lifecycle hook for scale-in events, specify <code>autoscaling:EC2_INSTANCE_TERMINATING</code>.</p> </li>
     /// </ul>
     /// <p>Required for new lifecycle hooks, but optional when updating existing hooks.</p>
     pub fn lifecycle_transition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -169,10 +161,8 @@ impl PutLifecycleHookFluentBuilder {
     }
     /// <p>The lifecycle transition. For Auto Scaling groups, there are two major lifecycle transitions.</p>
     /// <ul>
-    /// <li>
-    /// <p>To create a lifecycle hook for scale-out events, specify <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>.</p></li>
-    /// <li>
-    /// <p>To create a lifecycle hook for scale-in events, specify <code>autoscaling:EC2_INSTANCE_TERMINATING</code>.</p></li>
+    /// <li> <p>To create a lifecycle hook for scale-out events, specify <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>.</p> </li>
+    /// <li> <p>To create a lifecycle hook for scale-in events, specify <code>autoscaling:EC2_INSTANCE_TERMINATING</code>.</p> </li>
     /// </ul>
     /// <p>Required for new lifecycle hooks, but optional when updating existing hooks.</p>
     pub fn set_lifecycle_transition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -181,10 +171,8 @@ impl PutLifecycleHookFluentBuilder {
     }
     /// <p>The lifecycle transition. For Auto Scaling groups, there are two major lifecycle transitions.</p>
     /// <ul>
-    /// <li>
-    /// <p>To create a lifecycle hook for scale-out events, specify <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>.</p></li>
-    /// <li>
-    /// <p>To create a lifecycle hook for scale-in events, specify <code>autoscaling:EC2_INSTANCE_TERMINATING</code>.</p></li>
+    /// <li> <p>To create a lifecycle hook for scale-out events, specify <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>.</p> </li>
+    /// <li> <p>To create a lifecycle hook for scale-in events, specify <code>autoscaling:EC2_INSTANCE_TERMINATING</code>.</p> </li>
     /// </ul>
     /// <p>Required for new lifecycle hooks, but optional when updating existing hooks.</p>
     pub fn get_lifecycle_transition(&self) -> &::std::option::Option<::std::string::String> {
@@ -259,19 +247,19 @@ impl PutLifecycleHookFluentBuilder {
         self.inner.get_heartbeat_timeout()
     }
     /// <p>The action the Auto Scaling group takes when the lifecycle hook timeout elapses or if an unexpected failure occurs. The default value is <code>ABANDON</code>.</p>
-    /// <p>Valid values: <code>CONTINUE</code> | <code>ABANDON</code></p>
+    /// <p>Valid values: <code>CONTINUE</code> | <code>ABANDON</code> </p>
     pub fn default_result(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.default_result(input.into());
         self
     }
     /// <p>The action the Auto Scaling group takes when the lifecycle hook timeout elapses or if an unexpected failure occurs. The default value is <code>ABANDON</code>.</p>
-    /// <p>Valid values: <code>CONTINUE</code> | <code>ABANDON</code></p>
+    /// <p>Valid values: <code>CONTINUE</code> | <code>ABANDON</code> </p>
     pub fn set_default_result(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_default_result(input);
         self
     }
     /// <p>The action the Auto Scaling group takes when the lifecycle hook timeout elapses or if an unexpected failure occurs. The default value is <code>ABANDON</code>.</p>
-    /// <p>Valid values: <code>CONTINUE</code> | <code>ABANDON</code></p>
+    /// <p>Valid values: <code>CONTINUE</code> | <code>ABANDON</code> </p>
     pub fn get_default_result(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_default_result()
     }

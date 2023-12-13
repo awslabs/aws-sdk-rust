@@ -22,7 +22,7 @@ pub struct Address {
     pub postal_code: ::std::option::Option<::std::string::String>,
     /// <p>The Zip + 4 or postal code + 4 of an address.</p>
     pub postal_code_plus4: ::std::option::Option<::std::string::String>,
-    /// <p>The country of an address.</p>
+    /// <p>The country of an address. </p>
     pub country: ::std::option::Option<::std::string::String>,
 }
 impl Address {
@@ -62,7 +62,7 @@ impl Address {
     pub fn postal_code_plus4(&self) -> ::std::option::Option<&str> {
         self.postal_code_plus4.as_deref()
     }
-    /// <p>The country of an address.</p>
+    /// <p>The country of an address. </p>
     pub fn country(&self) -> ::std::option::Option<&str> {
         self.country.as_deref()
     }
@@ -232,17 +232,17 @@ impl AddressBuilder {
     pub fn get_postal_code_plus4(&self) -> &::std::option::Option<::std::string::String> {
         &self.postal_code_plus4
     }
-    /// <p>The country of an address.</p>
+    /// <p>The country of an address. </p>
     pub fn country(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.country = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The country of an address.</p>
+    /// <p>The country of an address. </p>
     pub fn set_country(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.country = input;
         self
     }
-    /// <p>The country of an address.</p>
+    /// <p>The country of an address. </p>
     pub fn get_country(&self) -> &::std::option::Option<::std::string::String> {
         &self.country
     }

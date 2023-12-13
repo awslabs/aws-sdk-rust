@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateJobInput {
-    /// <p>Defines the type of job that you're creating.</p>
+    /// <p>Defines the type of job that you're creating. </p>
     pub job_type: ::std::option::Option<crate::types::JobType>,
     /// <p>Defines the Amazon S3 buckets associated with this job.</p>
     /// <p>With <code>IMPORT</code> jobs, you specify the bucket or buckets that your transferred data will be imported into.</p>
@@ -24,21 +24,17 @@ pub struct CreateJobInput {
     pub snowball_capacity_preference: ::std::option::Option<crate::types::SnowballCapacity>,
     /// <p>The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snow device, rather it represents how quickly the Snow device moves to its destination while in transit. Regional shipping speeds are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p></li>
-    /// <li>
-    /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p></li>
-    /// <li>
-    /// <p>In India, Snow devices are delivered in one to seven days.</p></li>
-    /// <li>
-    /// <p>In the US, you have access to one-day shipping and two-day shipping.</p></li>
+    /// <li> <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p> </li>
+    /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li>
+    /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
+    /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li>
     /// </ul>
     pub shipping_option: ::std::option::Option<crate::types::ShippingOption>,
     /// <p>Defines the Amazon Simple Notification Service (Amazon SNS) notification settings for this job.</p>
     pub notification: ::std::option::Option<crate::types::Notification>,
     /// <p>The ID of a cluster. If you're creating a job for a node in a cluster, you need to provide only this <code>clusterId</code> value. The other job attributes are inherited from the cluster.</p>
     pub cluster_id: ::std::option::Option<::std::string::String>,
-    /// <p>The type of Snow Family devices to use for this job.</p><note>
+    /// <p>The type of Snow Family devices to use for this job. </p> <note>
     /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
     /// </note>
     /// <p>The type of Amazon Web Services Snow device to use for this job. Currently, the only supported device type for cluster jobs is <code>EDGE</code>.</p>
@@ -52,7 +48,7 @@ pub struct CreateJobInput {
     /// <p>Defines the device configuration for an Snowcone job.</p>
     /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
     pub device_configuration: ::std::option::Option<crate::types::DeviceConfiguration>,
-    /// <p>Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device arrives at your location. Otherwise, you need to use the Snowball Edge client to manage the device. When set to <code>NOT_INSTALLED</code>, remote management will not be available on the device.</p>
+    /// <p>Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device arrives at your location. Otherwise, you need to use the Snowball Edge client to manage the device. When set to <code>NOT_INSTALLED</code>, remote management will not be available on the device. </p>
     pub remote_management: ::std::option::Option<crate::types::RemoteManagement>,
     /// <p>The ID of the long-term pricing type for the device.</p>
     pub long_term_pricing_id: ::std::option::Option<::std::string::String>,
@@ -62,7 +58,7 @@ pub struct CreateJobInput {
     pub pickup_details: ::std::option::Option<crate::types::PickupDetails>,
 }
 impl CreateJobInput {
-    /// <p>Defines the type of job that you're creating.</p>
+    /// <p>Defines the type of job that you're creating. </p>
     pub fn job_type(&self) -> ::std::option::Option<&crate::types::JobType> {
         self.job_type.as_ref()
     }
@@ -99,14 +95,10 @@ impl CreateJobInput {
     }
     /// <p>The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snow device, rather it represents how quickly the Snow device moves to its destination while in transit. Regional shipping speeds are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p></li>
-    /// <li>
-    /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p></li>
-    /// <li>
-    /// <p>In India, Snow devices are delivered in one to seven days.</p></li>
-    /// <li>
-    /// <p>In the US, you have access to one-day shipping and two-day shipping.</p></li>
+    /// <li> <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p> </li>
+    /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li>
+    /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
+    /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li>
     /// </ul>
     pub fn shipping_option(&self) -> ::std::option::Option<&crate::types::ShippingOption> {
         self.shipping_option.as_ref()
@@ -119,7 +111,7 @@ impl CreateJobInput {
     pub fn cluster_id(&self) -> ::std::option::Option<&str> {
         self.cluster_id.as_deref()
     }
-    /// <p>The type of Snow Family devices to use for this job.</p><note>
+    /// <p>The type of Snow Family devices to use for this job. </p> <note>
     /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
     /// </note>
     /// <p>The type of Amazon Web Services Snow device to use for this job. Currently, the only supported device type for cluster jobs is <code>EDGE</code>.</p>
@@ -141,7 +133,7 @@ impl CreateJobInput {
     pub fn device_configuration(&self) -> ::std::option::Option<&crate::types::DeviceConfiguration> {
         self.device_configuration.as_ref()
     }
-    /// <p>Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device arrives at your location. Otherwise, you need to use the Snowball Edge client to manage the device. When set to <code>NOT_INSTALLED</code>, remote management will not be available on the device.</p>
+    /// <p>Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device arrives at your location. Otherwise, you need to use the Snowball Edge client to manage the device. When set to <code>NOT_INSTALLED</code>, remote management will not be available on the device. </p>
     pub fn remote_management(&self) -> ::std::option::Option<&crate::types::RemoteManagement> {
         self.remote_management.as_ref()
     }
@@ -190,17 +182,17 @@ pub struct CreateJobInputBuilder {
     pub(crate) pickup_details: ::std::option::Option<crate::types::PickupDetails>,
 }
 impl CreateJobInputBuilder {
-    /// <p>Defines the type of job that you're creating.</p>
+    /// <p>Defines the type of job that you're creating. </p>
     pub fn job_type(mut self, input: crate::types::JobType) -> Self {
         self.job_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Defines the type of job that you're creating.</p>
+    /// <p>Defines the type of job that you're creating. </p>
     pub fn set_job_type(mut self, input: ::std::option::Option<crate::types::JobType>) -> Self {
         self.job_type = input;
         self
     }
-    /// <p>Defines the type of job that you're creating.</p>
+    /// <p>Defines the type of job that you're creating. </p>
     pub fn get_job_type(&self) -> &::std::option::Option<crate::types::JobType> {
         &self.job_type
     }
@@ -313,14 +305,10 @@ impl CreateJobInputBuilder {
     }
     /// <p>The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snow device, rather it represents how quickly the Snow device moves to its destination while in transit. Regional shipping speeds are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p></li>
-    /// <li>
-    /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p></li>
-    /// <li>
-    /// <p>In India, Snow devices are delivered in one to seven days.</p></li>
-    /// <li>
-    /// <p>In the US, you have access to one-day shipping and two-day shipping.</p></li>
+    /// <li> <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p> </li>
+    /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li>
+    /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
+    /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li>
     /// </ul>
     pub fn shipping_option(mut self, input: crate::types::ShippingOption) -> Self {
         self.shipping_option = ::std::option::Option::Some(input);
@@ -328,14 +316,10 @@ impl CreateJobInputBuilder {
     }
     /// <p>The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snow device, rather it represents how quickly the Snow device moves to its destination while in transit. Regional shipping speeds are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p></li>
-    /// <li>
-    /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p></li>
-    /// <li>
-    /// <p>In India, Snow devices are delivered in one to seven days.</p></li>
-    /// <li>
-    /// <p>In the US, you have access to one-day shipping and two-day shipping.</p></li>
+    /// <li> <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p> </li>
+    /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li>
+    /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
+    /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li>
     /// </ul>
     pub fn set_shipping_option(mut self, input: ::std::option::Option<crate::types::ShippingOption>) -> Self {
         self.shipping_option = input;
@@ -343,14 +327,10 @@ impl CreateJobInputBuilder {
     }
     /// <p>The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snow device, rather it represents how quickly the Snow device moves to its destination while in transit. Regional shipping speeds are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p></li>
-    /// <li>
-    /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p></li>
-    /// <li>
-    /// <p>In India, Snow devices are delivered in one to seven days.</p></li>
-    /// <li>
-    /// <p>In the US, you have access to one-day shipping and two-day shipping.</p></li>
+    /// <li> <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p> </li>
+    /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li>
+    /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
+    /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li>
     /// </ul>
     pub fn get_shipping_option(&self) -> &::std::option::Option<crate::types::ShippingOption> {
         &self.shipping_option
@@ -383,7 +363,7 @@ impl CreateJobInputBuilder {
     pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_id
     }
-    /// <p>The type of Snow Family devices to use for this job.</p><note>
+    /// <p>The type of Snow Family devices to use for this job. </p> <note>
     /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
     /// </note>
     /// <p>The type of Amazon Web Services Snow device to use for this job. Currently, the only supported device type for cluster jobs is <code>EDGE</code>.</p>
@@ -393,7 +373,7 @@ impl CreateJobInputBuilder {
         self.snowball_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of Snow Family devices to use for this job.</p><note>
+    /// <p>The type of Snow Family devices to use for this job. </p> <note>
     /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
     /// </note>
     /// <p>The type of Amazon Web Services Snow device to use for this job. Currently, the only supported device type for cluster jobs is <code>EDGE</code>.</p>
@@ -403,7 +383,7 @@ impl CreateJobInputBuilder {
         self.snowball_type = input;
         self
     }
-    /// <p>The type of Snow Family devices to use for this job.</p><note>
+    /// <p>The type of Snow Family devices to use for this job. </p> <note>
     /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
     /// </note>
     /// <p>The type of Amazon Web Services Snow device to use for this job. Currently, the only supported device type for cluster jobs is <code>EDGE</code>.</p>
@@ -457,17 +437,17 @@ impl CreateJobInputBuilder {
     pub fn get_device_configuration(&self) -> &::std::option::Option<crate::types::DeviceConfiguration> {
         &self.device_configuration
     }
-    /// <p>Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device arrives at your location. Otherwise, you need to use the Snowball Edge client to manage the device. When set to <code>NOT_INSTALLED</code>, remote management will not be available on the device.</p>
+    /// <p>Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device arrives at your location. Otherwise, you need to use the Snowball Edge client to manage the device. When set to <code>NOT_INSTALLED</code>, remote management will not be available on the device. </p>
     pub fn remote_management(mut self, input: crate::types::RemoteManagement) -> Self {
         self.remote_management = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device arrives at your location. Otherwise, you need to use the Snowball Edge client to manage the device. When set to <code>NOT_INSTALLED</code>, remote management will not be available on the device.</p>
+    /// <p>Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device arrives at your location. Otherwise, you need to use the Snowball Edge client to manage the device. When set to <code>NOT_INSTALLED</code>, remote management will not be available on the device. </p>
     pub fn set_remote_management(mut self, input: ::std::option::Option<crate::types::RemoteManagement>) -> Self {
         self.remote_management = input;
         self
     }
-    /// <p>Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device arrives at your location. Otherwise, you need to use the Snowball Edge client to manage the device. When set to <code>NOT_INSTALLED</code>, remote management will not be available on the device.</p>
+    /// <p>Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device arrives at your location. Otherwise, you need to use the Snowball Edge client to manage the device. When set to <code>NOT_INSTALLED</code>, remote management will not be available on the device. </p>
     pub fn get_remote_management(&self) -> &::std::option::Option<crate::types::RemoteManagement> {
         &self.remote_management
     }

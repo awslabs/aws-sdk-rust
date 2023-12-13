@@ -5,7 +5,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_portals::builders::ListPortalsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_portals::builders::ListPortalsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to be used for the next set of paginated results.</p><br>
-    ///   - [`max_results(i32)`](crate::operation::list_portals::builders::ListPortalsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_portals::builders::ListPortalsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return for each paginated request.</p> <p>Default: 50</p><br>
+    ///   - [`max_results(i32)`](crate::operation::list_portals::builders::ListPortalsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_portals::builders::ListPortalsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return for each paginated request.</p>  <p>Default: 50</p><br>
     /// - On success, responds with [`ListPortalsOutput`](crate::operation::list_portals::ListPortalsOutput) with field(s):
     ///   - [`portal_summaries(Option<Vec::<PortalSummary>>)`](crate::operation::list_portals::ListPortalsOutput::portal_summaries): <p>A list that summarizes each portal.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_portals::ListPortalsOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>

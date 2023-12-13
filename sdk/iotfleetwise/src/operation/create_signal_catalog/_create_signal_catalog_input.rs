@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSignalCatalogInput {
-    /// <p>The name of the signal catalog to create.</p>
+    /// <p> The name of the signal catalog to create. </p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A brief description of the signal catalog.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>A list of information about nodes, which are a general abstraction of signals. For more information, see the API data type.</p>
+    /// <p> A list of information about nodes, which are a general abstraction of signals. For more information, see the API data type.</p>
     pub nodes: ::std::option::Option<::std::vec::Vec<crate::types::Node>>,
     /// <p>Metadata that can be used to manage the signal catalog.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateSignalCatalogInput {
-    /// <p>The name of the signal catalog to create.</p>
+    /// <p> The name of the signal catalog to create. </p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -21,7 +21,7 @@ impl CreateSignalCatalogInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>A list of information about nodes, which are a general abstraction of signals. For more information, see the API data type.</p>
+    /// <p> A list of information about nodes, which are a general abstraction of signals. For more information, see the API data type.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.nodes.is_none()`.
     pub fn nodes(&self) -> &[crate::types::Node] {
@@ -51,18 +51,18 @@ pub struct CreateSignalCatalogInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateSignalCatalogInputBuilder {
-    /// <p>The name of the signal catalog to create.</p>
+    /// <p> The name of the signal catalog to create. </p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the signal catalog to create.</p>
+    /// <p> The name of the signal catalog to create. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the signal catalog to create.</p>
+    /// <p> The name of the signal catalog to create. </p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
@@ -84,19 +84,19 @@ impl CreateSignalCatalogInputBuilder {
     ///
     /// To override the contents of this collection use [`set_nodes`](Self::set_nodes).
     ///
-    /// <p>A list of information about nodes, which are a general abstraction of signals. For more information, see the API data type.</p>
+    /// <p> A list of information about nodes, which are a general abstraction of signals. For more information, see the API data type.</p>
     pub fn nodes(mut self, input: crate::types::Node) -> Self {
         let mut v = self.nodes.unwrap_or_default();
         v.push(input);
         self.nodes = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of information about nodes, which are a general abstraction of signals. For more information, see the API data type.</p>
+    /// <p> A list of information about nodes, which are a general abstraction of signals. For more information, see the API data type.</p>
     pub fn set_nodes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Node>>) -> Self {
         self.nodes = input;
         self
     }
-    /// <p>A list of information about nodes, which are a general abstraction of signals. For more information, see the API data type.</p>
+    /// <p> A list of information about nodes, which are a general abstraction of signals. For more information, see the API data type.</p>
     pub fn get_nodes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Node>> {
         &self.nodes
     }

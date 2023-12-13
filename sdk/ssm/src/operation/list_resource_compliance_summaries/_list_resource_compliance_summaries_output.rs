@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListResourceComplianceSummariesOutput {
-    /// <p>A summary count for specified or targeted managed nodes. Summary count includes information about compliant and non-compliant State Manager associations, patch status, or custom items according to the filter criteria that you specify.</p>
+    /// <p>A summary count for specified or targeted managed nodes. Summary count includes information about compliant and non-compliant State Manager associations, patch status, or custom items according to the filter criteria that you specify. </p>
     pub resource_compliance_summary_items: ::std::option::Option<::std::vec::Vec<crate::types::ResourceComplianceSummaryItem>>,
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListResourceComplianceSummariesOutput {
-    /// <p>A summary count for specified or targeted managed nodes. Summary count includes information about compliant and non-compliant State Manager associations, patch status, or custom items according to the filter criteria that you specify.</p>
+    /// <p>A summary count for specified or targeted managed nodes. Summary count includes information about compliant and non-compliant State Manager associations, patch status, or custom items according to the filter criteria that you specify. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_compliance_summary_items.is_none()`.
     pub fn resource_compliance_summary_items(&self) -> &[crate::types::ResourceComplianceSummaryItem] {
@@ -46,14 +46,14 @@ impl ListResourceComplianceSummariesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_resource_compliance_summary_items`](Self::set_resource_compliance_summary_items).
     ///
-    /// <p>A summary count for specified or targeted managed nodes. Summary count includes information about compliant and non-compliant State Manager associations, patch status, or custom items according to the filter criteria that you specify.</p>
+    /// <p>A summary count for specified or targeted managed nodes. Summary count includes information about compliant and non-compliant State Manager associations, patch status, or custom items according to the filter criteria that you specify. </p>
     pub fn resource_compliance_summary_items(mut self, input: crate::types::ResourceComplianceSummaryItem) -> Self {
         let mut v = self.resource_compliance_summary_items.unwrap_or_default();
         v.push(input);
         self.resource_compliance_summary_items = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A summary count for specified or targeted managed nodes. Summary count includes information about compliant and non-compliant State Manager associations, patch status, or custom items according to the filter criteria that you specify.</p>
+    /// <p>A summary count for specified or targeted managed nodes. Summary count includes information about compliant and non-compliant State Manager associations, patch status, or custom items according to the filter criteria that you specify. </p>
     pub fn set_resource_compliance_summary_items(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceComplianceSummaryItem>>,
@@ -61,7 +61,7 @@ impl ListResourceComplianceSummariesOutputBuilder {
         self.resource_compliance_summary_items = input;
         self
     }
-    /// <p>A summary count for specified or targeted managed nodes. Summary count includes information about compliant and non-compliant State Manager associations, patch status, or custom items according to the filter criteria that you specify.</p>
+    /// <p>A summary count for specified or targeted managed nodes. Summary count includes information about compliant and non-compliant State Manager associations, patch status, or custom items according to the filter criteria that you specify. </p>
     pub fn get_resource_compliance_summary_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceComplianceSummaryItem>> {
         &self.resource_compliance_summary_items
     }

@@ -6,7 +6,7 @@
 pub struct UserDetails {
     /// <p>A unique string that identifies a Transfer Family user associated with a server.</p>
     pub user_name: ::std::string::String,
-    /// <p>The system-assigned unique identifier for a Transfer server instance.</p>
+    /// <p>The system-assigned unique identifier for a Transfer server instance. </p>
     pub server_id: ::std::string::String,
     /// <p>The system-assigned unique identifier for a session that corresponds to the workflow.</p>
     pub session_id: ::std::option::Option<::std::string::String>,
@@ -17,7 +17,7 @@ impl UserDetails {
         use std::ops::Deref;
         self.user_name.deref()
     }
-    /// <p>The system-assigned unique identifier for a Transfer server instance.</p>
+    /// <p>The system-assigned unique identifier for a Transfer server instance. </p>
     pub fn server_id(&self) -> &str {
         use std::ops::Deref;
         self.server_id.deref()
@@ -58,18 +58,18 @@ impl UserDetailsBuilder {
     pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_name
     }
-    /// <p>The system-assigned unique identifier for a Transfer server instance.</p>
+    /// <p>The system-assigned unique identifier for a Transfer server instance. </p>
     /// This field is required.
     pub fn server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The system-assigned unique identifier for a Transfer server instance.</p>
+    /// <p>The system-assigned unique identifier for a Transfer server instance. </p>
     pub fn set_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_id = input;
         self
     }
-    /// <p>The system-assigned unique identifier for a Transfer server instance.</p>
+    /// <p>The system-assigned unique identifier for a Transfer server instance. </p>
     pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.server_id
     }

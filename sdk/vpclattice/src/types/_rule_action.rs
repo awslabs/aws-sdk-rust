@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum RuleAction {
-    /// <p>Describes the rule action that returns a custom HTTP response.</p>
+    /// <p> Describes the rule action that returns a custom HTTP response. </p>
     FixedResponse(crate::types::FixedResponseAction),
     /// <p>The forward action. Traffic that matches the rule is forwarded to the specified target groups.</p>
     Forward(crate::types::ForwardAction),

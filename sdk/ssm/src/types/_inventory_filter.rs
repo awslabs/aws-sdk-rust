@@ -6,9 +6,9 @@
 pub struct InventoryFilter {
     /// <p>The name of the filter key.</p>
     pub key: ::std::string::String,
-    /// <p>Inventory filter values. Example: inventory filter where managed node IDs are specified as values <code>Key=AWS:InstanceInformation.InstanceId,Values= i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal</code>.</p>
+    /// <p>Inventory filter values. Example: inventory filter where managed node IDs are specified as values <code>Key=AWS:InstanceInformation.InstanceId,Values= i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal</code>. </p>
     pub values: ::std::vec::Vec<::std::string::String>,
-    /// <p>The type of filter.</p><note>
+    /// <p>The type of filter.</p> <note>
     /// <p>The <code>Exists</code> filter must be used with aggregators. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-aggregate.html">Aggregating inventory data</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     /// </note>
     pub r#type: ::std::option::Option<crate::types::InventoryQueryOperatorType>,
@@ -19,12 +19,12 @@ impl InventoryFilter {
         use std::ops::Deref;
         self.key.deref()
     }
-    /// <p>Inventory filter values. Example: inventory filter where managed node IDs are specified as values <code>Key=AWS:InstanceInformation.InstanceId,Values= i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal</code>.</p>
+    /// <p>Inventory filter values. Example: inventory filter where managed node IDs are specified as values <code>Key=AWS:InstanceInformation.InstanceId,Values= i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal</code>. </p>
     pub fn values(&self) -> &[::std::string::String] {
         use std::ops::Deref;
         self.values.deref()
     }
-    /// <p>The type of filter.</p><note>
+    /// <p>The type of filter.</p> <note>
     /// <p>The <code>Exists</code> filter must be used with aggregators. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-aggregate.html">Aggregating inventory data</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     /// </note>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::InventoryQueryOperatorType> {
@@ -66,37 +66,37 @@ impl InventoryFilterBuilder {
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
     ///
-    /// <p>Inventory filter values. Example: inventory filter where managed node IDs are specified as values <code>Key=AWS:InstanceInformation.InstanceId,Values= i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal</code>.</p>
+    /// <p>Inventory filter values. Example: inventory filter where managed node IDs are specified as values <code>Key=AWS:InstanceInformation.InstanceId,Values= i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal</code>. </p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
         v.push(input.into());
         self.values = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Inventory filter values. Example: inventory filter where managed node IDs are specified as values <code>Key=AWS:InstanceInformation.InstanceId,Values= i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal</code>.</p>
+    /// <p>Inventory filter values. Example: inventory filter where managed node IDs are specified as values <code>Key=AWS:InstanceInformation.InstanceId,Values= i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal</code>. </p>
     pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }
-    /// <p>Inventory filter values. Example: inventory filter where managed node IDs are specified as values <code>Key=AWS:InstanceInformation.InstanceId,Values= i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal</code>.</p>
+    /// <p>Inventory filter values. Example: inventory filter where managed node IDs are specified as values <code>Key=AWS:InstanceInformation.InstanceId,Values= i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal</code>. </p>
     pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.values
     }
-    /// <p>The type of filter.</p><note>
+    /// <p>The type of filter.</p> <note>
     /// <p>The <code>Exists</code> filter must be used with aggregators. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-aggregate.html">Aggregating inventory data</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     /// </note>
     pub fn r#type(mut self, input: crate::types::InventoryQueryOperatorType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of filter.</p><note>
+    /// <p>The type of filter.</p> <note>
     /// <p>The <code>Exists</code> filter must be used with aggregators. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-aggregate.html">Aggregating inventory data</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     /// </note>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::InventoryQueryOperatorType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The type of filter.</p><note>
+    /// <p>The type of filter.</p> <note>
     /// <p>The <code>Exists</code> filter must be used with aggregators. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-aggregate.html">Aggregating inventory data</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     /// </note>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::InventoryQueryOperatorType> {

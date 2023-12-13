@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`owner_account_id(Option<String>)`](crate::operation::describe_instance::DescribeInstanceOutput::owner_account_id): <p>The identifier of the Amazon Web Services account for which the instance was created.</p>
     ///   - [`name(Option<String>)`](crate::operation::describe_instance::DescribeInstanceOutput::name): <p>Specifies the instance name.</p>
     ///   - [`created_date(Option<DateTime>)`](crate::operation::describe_instance::DescribeInstanceOutput::created_date): <p>The date the instance was created.</p>
-    ///   - [`status(Option<InstanceStatus>)`](crate::operation::describe_instance::DescribeInstanceOutput::status): <p>The status of the instance.</p>
+    ///   - [`status(Option<InstanceStatus>)`](crate::operation::describe_instance::DescribeInstanceOutput::status): <p>The status of the instance. </p>
     /// - On failure, responds with [`SdkError<DescribeInstanceError>`](crate::operation::describe_instance::DescribeInstanceError)
     pub fn describe_instance(&self) -> crate::operation::describe_instance::builders::DescribeInstanceFluentBuilder {
         crate::operation::describe_instance::builders::DescribeInstanceFluentBuilder::new(self.handle.clone())

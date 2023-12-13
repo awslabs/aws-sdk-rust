@@ -3,49 +3,49 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotifyProvisionProductEngineWorkflowResultInput {
-    /// <p>The encrypted contents of the provisioning engine execution payload that Service Catalog sends after the Terraform product provisioning workflow starts.</p>
+    /// <p> The encrypted contents of the provisioning engine execution payload that Service Catalog sends after the Terraform product provisioning workflow starts. </p>
     pub workflow_token: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of the record.</p>
+    /// <p> The identifier of the record. </p>
     pub record_id: ::std::option::Option<::std::string::String>,
-    /// <p>The status of the provisioning engine execution.</p>
+    /// <p> The status of the provisioning engine execution. </p>
     pub status: ::std::option::Option<crate::types::EngineWorkflowStatus>,
-    /// <p>The reason why the provisioning engine execution failed.</p>
+    /// <p> The reason why the provisioning engine execution failed. </p>
     pub failure_reason: ::std::option::Option<::std::string::String>,
-    /// <p>The ID for the provisioned product resources that are part of a resource group.</p>
+    /// <p> The ID for the provisioned product resources that are part of a resource group. </p>
     pub resource_identifier: ::std::option::Option<crate::types::EngineWorkflowResourceIdentifier>,
-    /// <p>The output of the provisioning engine execution.</p>
+    /// <p> The output of the provisioning engine execution. </p>
     pub outputs: ::std::option::Option<::std::vec::Vec<crate::types::RecordOutput>>,
-    /// <p>The idempotency token that identifies the provisioning engine execution.</p>
+    /// <p> The idempotency token that identifies the provisioning engine execution. </p>
     pub idempotency_token: ::std::option::Option<::std::string::String>,
 }
 impl NotifyProvisionProductEngineWorkflowResultInput {
-    /// <p>The encrypted contents of the provisioning engine execution payload that Service Catalog sends after the Terraform product provisioning workflow starts.</p>
+    /// <p> The encrypted contents of the provisioning engine execution payload that Service Catalog sends after the Terraform product provisioning workflow starts. </p>
     pub fn workflow_token(&self) -> ::std::option::Option<&str> {
         self.workflow_token.as_deref()
     }
-    /// <p>The identifier of the record.</p>
+    /// <p> The identifier of the record. </p>
     pub fn record_id(&self) -> ::std::option::Option<&str> {
         self.record_id.as_deref()
     }
-    /// <p>The status of the provisioning engine execution.</p>
+    /// <p> The status of the provisioning engine execution. </p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::EngineWorkflowStatus> {
         self.status.as_ref()
     }
-    /// <p>The reason why the provisioning engine execution failed.</p>
+    /// <p> The reason why the provisioning engine execution failed. </p>
     pub fn failure_reason(&self) -> ::std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
-    /// <p>The ID for the provisioned product resources that are part of a resource group.</p>
+    /// <p> The ID for the provisioned product resources that are part of a resource group. </p>
     pub fn resource_identifier(&self) -> ::std::option::Option<&crate::types::EngineWorkflowResourceIdentifier> {
         self.resource_identifier.as_ref()
     }
-    /// <p>The output of the provisioning engine execution.</p>
+    /// <p> The output of the provisioning engine execution. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outputs.is_none()`.
     pub fn outputs(&self) -> &[crate::types::RecordOutput] {
         self.outputs.as_deref().unwrap_or_default()
     }
-    /// <p>The idempotency token that identifies the provisioning engine execution.</p>
+    /// <p> The idempotency token that identifies the provisioning engine execution. </p>
     pub fn idempotency_token(&self) -> ::std::option::Option<&str> {
         self.idempotency_token.as_deref()
     }
@@ -71,76 +71,76 @@ pub struct NotifyProvisionProductEngineWorkflowResultInputBuilder {
     pub(crate) idempotency_token: ::std::option::Option<::std::string::String>,
 }
 impl NotifyProvisionProductEngineWorkflowResultInputBuilder {
-    /// <p>The encrypted contents of the provisioning engine execution payload that Service Catalog sends after the Terraform product provisioning workflow starts.</p>
+    /// <p> The encrypted contents of the provisioning engine execution payload that Service Catalog sends after the Terraform product provisioning workflow starts. </p>
     /// This field is required.
     pub fn workflow_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The encrypted contents of the provisioning engine execution payload that Service Catalog sends after the Terraform product provisioning workflow starts.</p>
+    /// <p> The encrypted contents of the provisioning engine execution payload that Service Catalog sends after the Terraform product provisioning workflow starts. </p>
     pub fn set_workflow_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workflow_token = input;
         self
     }
-    /// <p>The encrypted contents of the provisioning engine execution payload that Service Catalog sends after the Terraform product provisioning workflow starts.</p>
+    /// <p> The encrypted contents of the provisioning engine execution payload that Service Catalog sends after the Terraform product provisioning workflow starts. </p>
     pub fn get_workflow_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.workflow_token
     }
-    /// <p>The identifier of the record.</p>
+    /// <p> The identifier of the record. </p>
     /// This field is required.
     pub fn record_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.record_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the record.</p>
+    /// <p> The identifier of the record. </p>
     pub fn set_record_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.record_id = input;
         self
     }
-    /// <p>The identifier of the record.</p>
+    /// <p> The identifier of the record. </p>
     pub fn get_record_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.record_id
     }
-    /// <p>The status of the provisioning engine execution.</p>
+    /// <p> The status of the provisioning engine execution. </p>
     /// This field is required.
     pub fn status(mut self, input: crate::types::EngineWorkflowStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the provisioning engine execution.</p>
+    /// <p> The status of the provisioning engine execution. </p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::EngineWorkflowStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of the provisioning engine execution.</p>
+    /// <p> The status of the provisioning engine execution. </p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::EngineWorkflowStatus> {
         &self.status
     }
-    /// <p>The reason why the provisioning engine execution failed.</p>
+    /// <p> The reason why the provisioning engine execution failed. </p>
     pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The reason why the provisioning engine execution failed.</p>
+    /// <p> The reason why the provisioning engine execution failed. </p>
     pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }
-    /// <p>The reason why the provisioning engine execution failed.</p>
+    /// <p> The reason why the provisioning engine execution failed. </p>
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.failure_reason
     }
-    /// <p>The ID for the provisioned product resources that are part of a resource group.</p>
+    /// <p> The ID for the provisioned product resources that are part of a resource group. </p>
     pub fn resource_identifier(mut self, input: crate::types::EngineWorkflowResourceIdentifier) -> Self {
         self.resource_identifier = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The ID for the provisioned product resources that are part of a resource group.</p>
+    /// <p> The ID for the provisioned product resources that are part of a resource group. </p>
     pub fn set_resource_identifier(mut self, input: ::std::option::Option<crate::types::EngineWorkflowResourceIdentifier>) -> Self {
         self.resource_identifier = input;
         self
     }
-    /// <p>The ID for the provisioned product resources that are part of a resource group.</p>
+    /// <p> The ID for the provisioned product resources that are part of a resource group. </p>
     pub fn get_resource_identifier(&self) -> &::std::option::Option<crate::types::EngineWorkflowResourceIdentifier> {
         &self.resource_identifier
     }
@@ -148,34 +148,34 @@ impl NotifyProvisionProductEngineWorkflowResultInputBuilder {
     ///
     /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
     ///
-    /// <p>The output of the provisioning engine execution.</p>
+    /// <p> The output of the provisioning engine execution. </p>
     pub fn outputs(mut self, input: crate::types::RecordOutput) -> Self {
         let mut v = self.outputs.unwrap_or_default();
         v.push(input);
         self.outputs = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The output of the provisioning engine execution.</p>
+    /// <p> The output of the provisioning engine execution. </p>
     pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecordOutput>>) -> Self {
         self.outputs = input;
         self
     }
-    /// <p>The output of the provisioning engine execution.</p>
+    /// <p> The output of the provisioning engine execution. </p>
     pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecordOutput>> {
         &self.outputs
     }
-    /// <p>The idempotency token that identifies the provisioning engine execution.</p>
+    /// <p> The idempotency token that identifies the provisioning engine execution. </p>
     /// This field is required.
     pub fn idempotency_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.idempotency_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The idempotency token that identifies the provisioning engine execution.</p>
+    /// <p> The idempotency token that identifies the provisioning engine execution. </p>
     pub fn set_idempotency_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.idempotency_token = input;
         self
     }
-    /// <p>The idempotency token that identifies the provisioning engine execution.</p>
+    /// <p> The idempotency token that identifies the provisioning engine execution. </p>
     pub fn get_idempotency_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.idempotency_token
     }

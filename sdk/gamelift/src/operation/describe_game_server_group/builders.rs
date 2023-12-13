@@ -22,11 +22,11 @@ impl DescribeGameServerGroupInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeGameServerGroup`.
 ///
-/// <p><b>This operation is used with the Amazon GameLift FleetIQ solution and game server groups.</b></p>
+/// <p> <b>This operation is used with the Amazon GameLift FleetIQ solution and game server groups.</b> </p>
 /// <p>Retrieves information on a game server group. This operation returns only properties related to Amazon GameLift FleetIQ. To view or update properties for the corresponding Auto Scaling group, such as launch template, auto scaling policies, and maximum/minimum group size, access the Auto Scaling group directly.</p>
 /// <p>To get attributes for a game server group, provide a group name or ARN value. If successful, a <code>GameServerGroup</code> object is returned.</p>
-/// <p><b>Learn more</b></p>
-/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">Amazon GameLift FleetIQ Guide</a></p>
+/// <p> <b>Learn more</b> </p>
+/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">Amazon GameLift FleetIQ Guide</a> </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeGameServerGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

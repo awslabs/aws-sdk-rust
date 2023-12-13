@@ -261,7 +261,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateInstanc
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum UpdateInstanceCustomHealthStatusError {
-    /// <p>The health check for the instance that's specified by <code>ServiceId</code> and <code>InstanceId</code> isn't a custom health check.</p>
+    /// <p>The health check for the instance that's specified by <code>ServiceId</code> and <code>InstanceId</code> isn't a custom health check. </p>
     CustomHealthNotFound(crate::types::error::CustomHealthNotFound),
     /// <p>No instance exists with the specified ID, or the instance was recently registered, and information about the instance hasn't propagated yet.</p>
     InstanceNotFound(crate::types::error::InstanceNotFound),

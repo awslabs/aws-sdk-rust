@@ -22,7 +22,7 @@ impl PutGeofenceInputBuilder {
 }
 /// Fluent builder constructing a request to `PutGeofence`.
 ///
-/// <p>Stores a geofence geometry in a given geofence collection, or updates the geometry of an existing geofence if a geofence ID is included in the request.</p>
+/// <p>Stores a geofence geometry in a given geofence collection, or updates the geometry of an existing geofence if a geofence ID is included in the request. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutGeofenceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -136,21 +136,21 @@ impl PutGeofenceFluentBuilder {
     pub fn get_geofence_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_geofence_id()
     }
-    /// <p>Contains the details to specify the position of the geofence. Can be either a polygon or a circle. Including both will return a validation error.</p><note>
+    /// <p>Contains the details to specify the position of the geofence. Can be either a polygon or a circle. Including both will return a validation error.</p> <note>
     /// <p>Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html"> geofence polygon</a> can have a maximum of 1,000 vertices.</p>
     /// </note>
     pub fn geometry(mut self, input: crate::types::GeofenceGeometry) -> Self {
         self.inner = self.inner.geometry(input);
         self
     }
-    /// <p>Contains the details to specify the position of the geofence. Can be either a polygon or a circle. Including both will return a validation error.</p><note>
+    /// <p>Contains the details to specify the position of the geofence. Can be either a polygon or a circle. Including both will return a validation error.</p> <note>
     /// <p>Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html"> geofence polygon</a> can have a maximum of 1,000 vertices.</p>
     /// </note>
     pub fn set_geometry(mut self, input: ::std::option::Option<crate::types::GeofenceGeometry>) -> Self {
         self.inner = self.inner.set_geometry(input);
         self
     }
-    /// <p>Contains the details to specify the position of the geofence. Can be either a polygon or a circle. Including both will return a validation error.</p><note>
+    /// <p>Contains the details to specify the position of the geofence. Can be either a polygon or a circle. Including both will return a validation error.</p> <note>
     /// <p>Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html"> geofence polygon</a> can have a maximum of 1,000 vertices.</p>
     /// </note>
     pub fn get_geometry(&self) -> &::std::option::Option<crate::types::GeofenceGeometry> {
@@ -161,7 +161,7 @@ impl PutGeofenceFluentBuilder {
     /// To override the contents of this collection use [`set_geofence_properties`](Self::set_geofence_properties).
     ///
     /// <p>Associates one of more properties with the geofence. A property is a key-value pair stored with the geofence and added to any geofence event triggered with that geofence.</p>
-    /// <p>Format: <code>"key" : "value"</code></p>
+    /// <p>Format: <code>"key" : "value"</code> </p>
     pub fn geofence_properties(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -171,7 +171,7 @@ impl PutGeofenceFluentBuilder {
         self
     }
     /// <p>Associates one of more properties with the geofence. A property is a key-value pair stored with the geofence and added to any geofence event triggered with that geofence.</p>
-    /// <p>Format: <code>"key" : "value"</code></p>
+    /// <p>Format: <code>"key" : "value"</code> </p>
     pub fn set_geofence_properties(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -180,7 +180,7 @@ impl PutGeofenceFluentBuilder {
         self
     }
     /// <p>Associates one of more properties with the geofence. A property is a key-value pair stored with the geofence and added to any geofence event triggered with that geofence.</p>
-    /// <p>Format: <code>"key" : "value"</code></p>
+    /// <p>Format: <code>"key" : "value"</code> </p>
     pub fn get_geofence_properties(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_geofence_properties()
     }

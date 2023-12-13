@@ -2,10 +2,8 @@
 
 /// <p>Represents the output of one of the following actions:</p>
 /// <ul>
-/// <li>
-/// <p><i>CreateSubnetGroup</i></p></li>
-/// <li>
-/// <p><i>ModifySubnetGroup</i></p></li>
+/// <li> <p> <i>CreateSubnetGroup</i> </p> </li>
+/// <li> <p> <i>ModifySubnetGroup</i> </p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
@@ -16,7 +14,7 @@ pub struct SubnetGroup {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Virtual Private Cloud identifier (VPC ID) of the subnet group.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
-    /// <p>A list of subnets associated with the subnet group.</p>
+    /// <p>A list of subnets associated with the subnet group. </p>
     pub subnets: ::std::option::Option<::std::vec::Vec<crate::types::Subnet>>,
 }
 impl SubnetGroup {
@@ -32,7 +30,7 @@ impl SubnetGroup {
     pub fn vpc_id(&self) -> ::std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
-    /// <p>A list of subnets associated with the subnet group.</p>
+    /// <p>A list of subnets associated with the subnet group. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnets.is_none()`.
     pub fn subnets(&self) -> &[crate::types::Subnet] {
@@ -102,19 +100,19 @@ impl SubnetGroupBuilder {
     ///
     /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
     ///
-    /// <p>A list of subnets associated with the subnet group.</p>
+    /// <p>A list of subnets associated with the subnet group. </p>
     pub fn subnets(mut self, input: crate::types::Subnet) -> Self {
         let mut v = self.subnets.unwrap_or_default();
         v.push(input);
         self.subnets = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of subnets associated with the subnet group.</p>
+    /// <p>A list of subnets associated with the subnet group. </p>
     pub fn set_subnets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Subnet>>) -> Self {
         self.subnets = input;
         self
     }
-    /// <p>A list of subnets associated with the subnet group.</p>
+    /// <p>A list of subnets associated with the subnet group. </p>
     pub fn get_subnets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Subnet>> {
         &self.subnets
     }

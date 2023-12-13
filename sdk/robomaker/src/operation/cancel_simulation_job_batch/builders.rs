@@ -22,7 +22,7 @@ impl CancelSimulationJobBatchInputBuilder {
 }
 /// Fluent builder constructing a request to `CancelSimulationJobBatch`.
 ///
-/// <p>Cancels a simulation job batch. When you cancel a simulation job batch, you are also cancelling all of the active simulation jobs created as part of the batch.</p>
+/// <p>Cancels a simulation job batch. When you cancel a simulation job batch, you are also cancelling all of the active simulation jobs created as part of the batch. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CancelSimulationJobBatchFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

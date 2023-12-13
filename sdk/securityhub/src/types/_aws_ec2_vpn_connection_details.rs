@@ -8,14 +8,10 @@ pub struct AwsEc2VpnConnectionDetails {
     pub vpn_connection_id: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the VPN connection. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>available</code></p></li>
-    /// <li>
-    /// <p><code>deleted</code></p></li>
-    /// <li>
-    /// <p><code>deleting</code></p></li>
-    /// <li>
-    /// <p><code>pending</code></p></li>
+    /// <li> <p> <code>available</code> </p> </li>
+    /// <li> <p> <code>deleted</code> </p> </li>
+    /// <li> <p> <code>deleting</code> </p> </li>
+    /// <li> <p> <code>pending</code> </p> </li>
     /// </ul>
     pub state: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the customer gateway that is at your end of the VPN connection.</p>
@@ -44,14 +40,10 @@ impl AwsEc2VpnConnectionDetails {
     }
     /// <p>The current state of the VPN connection. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>available</code></p></li>
-    /// <li>
-    /// <p><code>deleted</code></p></li>
-    /// <li>
-    /// <p><code>deleting</code></p></li>
-    /// <li>
-    /// <p><code>pending</code></p></li>
+    /// <li> <p> <code>available</code> </p> </li>
+    /// <li> <p> <code>deleted</code> </p> </li>
+    /// <li> <p> <code>deleting</code> </p> </li>
+    /// <li> <p> <code>pending</code> </p> </li>
     /// </ul>
     pub fn state(&self) -> ::std::option::Option<&str> {
         self.state.as_deref()
@@ -137,14 +129,10 @@ impl AwsEc2VpnConnectionDetailsBuilder {
     }
     /// <p>The current state of the VPN connection. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>available</code></p></li>
-    /// <li>
-    /// <p><code>deleted</code></p></li>
-    /// <li>
-    /// <p><code>deleting</code></p></li>
-    /// <li>
-    /// <p><code>pending</code></p></li>
+    /// <li> <p> <code>available</code> </p> </li>
+    /// <li> <p> <code>deleted</code> </p> </li>
+    /// <li> <p> <code>deleting</code> </p> </li>
+    /// <li> <p> <code>pending</code> </p> </li>
     /// </ul>
     pub fn state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state = ::std::option::Option::Some(input.into());
@@ -152,14 +140,10 @@ impl AwsEc2VpnConnectionDetailsBuilder {
     }
     /// <p>The current state of the VPN connection. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>available</code></p></li>
-    /// <li>
-    /// <p><code>deleted</code></p></li>
-    /// <li>
-    /// <p><code>deleting</code></p></li>
-    /// <li>
-    /// <p><code>pending</code></p></li>
+    /// <li> <p> <code>available</code> </p> </li>
+    /// <li> <p> <code>deleted</code> </p> </li>
+    /// <li> <p> <code>deleting</code> </p> </li>
+    /// <li> <p> <code>pending</code> </p> </li>
     /// </ul>
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state = input;
@@ -167,14 +151,10 @@ impl AwsEc2VpnConnectionDetailsBuilder {
     }
     /// <p>The current state of the VPN connection. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>available</code></p></li>
-    /// <li>
-    /// <p><code>deleted</code></p></li>
-    /// <li>
-    /// <p><code>deleting</code></p></li>
-    /// <li>
-    /// <p><code>pending</code></p></li>
+    /// <li> <p> <code>available</code> </p> </li>
+    /// <li> <p> <code>deleted</code> </p> </li>
+    /// <li> <p> <code>deleting</code> </p> </li>
+    /// <li> <p> <code>pending</code> </p> </li>
     /// </ul>
     pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
         &self.state

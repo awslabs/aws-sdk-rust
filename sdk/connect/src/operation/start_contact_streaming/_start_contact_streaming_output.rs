@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartContactStreamingOutput {
-    /// <p>The identifier of the streaming configuration enabled.</p>
+    /// <p>The identifier of the streaming configuration enabled. </p>
     pub streaming_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl StartContactStreamingOutput {
-    /// <p>The identifier of the streaming configuration enabled.</p>
+    /// <p>The identifier of the streaming configuration enabled. </p>
     pub fn streaming_id(&self) -> &str {
         use std::ops::Deref;
         self.streaming_id.deref()
@@ -34,18 +34,18 @@ pub struct StartContactStreamingOutputBuilder {
     _request_id: Option<String>,
 }
 impl StartContactStreamingOutputBuilder {
-    /// <p>The identifier of the streaming configuration enabled.</p>
+    /// <p>The identifier of the streaming configuration enabled. </p>
     /// This field is required.
     pub fn streaming_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.streaming_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the streaming configuration enabled.</p>
+    /// <p>The identifier of the streaming configuration enabled. </p>
     pub fn set_streaming_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.streaming_id = input;
         self
     }
-    /// <p>The identifier of the streaming configuration enabled.</p>
+    /// <p>The identifier of the streaming configuration enabled. </p>
     pub fn get_streaming_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.streaming_id
     }

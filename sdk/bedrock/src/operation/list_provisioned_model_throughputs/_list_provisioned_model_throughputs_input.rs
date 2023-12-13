@@ -3,9 +3,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListProvisionedModelThroughputsInput {
-    /// <p>Return provisioned capacities created after the specified time.</p>
+    /// <p>Return provisioned capacities created after the specified time. </p>
     pub creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Return provisioned capacities created before the specified time.</p>
+    /// <p>Return provisioned capacities created before the specified time. </p>
     pub creation_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Return the list of provisioned capacities that match the specified status.</p>
     pub status_equals: ::std::option::Option<crate::types::ProvisionedModelStatus>,
@@ -23,11 +23,11 @@ pub struct ListProvisionedModelThroughputsInput {
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
 }
 impl ListProvisionedModelThroughputsInput {
-    /// <p>Return provisioned capacities created after the specified time.</p>
+    /// <p>Return provisioned capacities created after the specified time. </p>
     pub fn creation_time_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time_after.as_ref()
     }
-    /// <p>Return provisioned capacities created before the specified time.</p>
+    /// <p>Return provisioned capacities created before the specified time. </p>
     pub fn creation_time_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time_before.as_ref()
     }
@@ -82,31 +82,31 @@ pub struct ListProvisionedModelThroughputsInputBuilder {
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,
 }
 impl ListProvisionedModelThroughputsInputBuilder {
-    /// <p>Return provisioned capacities created after the specified time.</p>
+    /// <p>Return provisioned capacities created after the specified time. </p>
     pub fn creation_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time_after = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Return provisioned capacities created after the specified time.</p>
+    /// <p>Return provisioned capacities created after the specified time. </p>
     pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time_after = input;
         self
     }
-    /// <p>Return provisioned capacities created after the specified time.</p>
+    /// <p>Return provisioned capacities created after the specified time. </p>
     pub fn get_creation_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time_after
     }
-    /// <p>Return provisioned capacities created before the specified time.</p>
+    /// <p>Return provisioned capacities created before the specified time. </p>
     pub fn creation_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time_before = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Return provisioned capacities created before the specified time.</p>
+    /// <p>Return provisioned capacities created before the specified time. </p>
     pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time_before = input;
         self
     }
-    /// <p>Return provisioned capacities created before the specified time.</p>
+    /// <p>Return provisioned capacities created before the specified time. </p>
     pub fn get_creation_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time_before
     }

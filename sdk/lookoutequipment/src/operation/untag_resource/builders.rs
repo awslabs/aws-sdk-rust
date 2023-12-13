@@ -22,7 +22,7 @@ impl UntagResourceInputBuilder {
 }
 /// Fluent builder constructing a request to `UntagResource`.
 ///
-/// <p>Removes a specific tag from a given resource. The tag is specified by its key.</p>
+/// <p>Removes a specific tag from a given resource. The tag is specified by its key. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UntagResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl UntagResourceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the resource to which the tag is currently associated.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource to which the tag is currently associated. </p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the resource to which the tag is currently associated.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource to which the tag is currently associated. </p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the resource to which the tag is currently associated.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource to which the tag is currently associated. </p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_arn()
     }
@@ -126,17 +126,17 @@ impl UntagResourceFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
     ///
-    /// <p>Specifies the key of the tag to be removed from a specified resource.</p>
+    /// <p>Specifies the key of the tag to be removed from a specified resource. </p>
     pub fn tag_keys(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tag_keys(input.into());
         self
     }
-    /// <p>Specifies the key of the tag to be removed from a specified resource.</p>
+    /// <p>Specifies the key of the tag to be removed from a specified resource. </p>
     pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_tag_keys(input);
         self
     }
-    /// <p>Specifies the key of the tag to be removed from a specified resource.</p>
+    /// <p>Specifies the key of the tag to be removed from a specified resource. </p>
     pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_tag_keys()
     }

@@ -15,16 +15,11 @@ pub struct AwsKmsKeyDetails {
     pub key_manager: ::std::option::Option<::std::string::String>,
     /// <p>The state of the KMS key. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Disabled</code></p></li>
-    /// <li>
-    /// <p><code>Enabled</code></p></li>
-    /// <li>
-    /// <p><code>PendingDeletion</code></p></li>
-    /// <li>
-    /// <p><code>PendingImport</code></p></li>
-    /// <li>
-    /// <p><code>Unavailable</code></p></li>
+    /// <li> <p> <code>Disabled</code> </p> </li>
+    /// <li> <p> <code>Enabled</code> </p> </li>
+    /// <li> <p> <code>PendingDeletion</code> </p> </li>
+    /// <li> <p> <code>PendingImport</code> </p> </li>
+    /// <li> <p> <code>Unavailable</code> </p> </li>
     /// </ul>
     pub key_state: ::std::option::Option<::std::string::String>,
     /// <p>The source of the KMS key material.</p>
@@ -57,16 +52,11 @@ impl AwsKmsKeyDetails {
     }
     /// <p>The state of the KMS key. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Disabled</code></p></li>
-    /// <li>
-    /// <p><code>Enabled</code></p></li>
-    /// <li>
-    /// <p><code>PendingDeletion</code></p></li>
-    /// <li>
-    /// <p><code>PendingImport</code></p></li>
-    /// <li>
-    /// <p><code>Unavailable</code></p></li>
+    /// <li> <p> <code>Disabled</code> </p> </li>
+    /// <li> <p> <code>Enabled</code> </p> </li>
+    /// <li> <p> <code>PendingDeletion</code> </p> </li>
+    /// <li> <p> <code>PendingImport</code> </p> </li>
+    /// <li> <p> <code>Unavailable</code> </p> </li>
     /// </ul>
     pub fn key_state(&self) -> ::std::option::Option<&str> {
         self.key_state.as_deref()
@@ -169,16 +159,11 @@ impl AwsKmsKeyDetailsBuilder {
     }
     /// <p>The state of the KMS key. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Disabled</code></p></li>
-    /// <li>
-    /// <p><code>Enabled</code></p></li>
-    /// <li>
-    /// <p><code>PendingDeletion</code></p></li>
-    /// <li>
-    /// <p><code>PendingImport</code></p></li>
-    /// <li>
-    /// <p><code>Unavailable</code></p></li>
+    /// <li> <p> <code>Disabled</code> </p> </li>
+    /// <li> <p> <code>Enabled</code> </p> </li>
+    /// <li> <p> <code>PendingDeletion</code> </p> </li>
+    /// <li> <p> <code>PendingImport</code> </p> </li>
+    /// <li> <p> <code>Unavailable</code> </p> </li>
     /// </ul>
     pub fn key_state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_state = ::std::option::Option::Some(input.into());
@@ -186,16 +171,11 @@ impl AwsKmsKeyDetailsBuilder {
     }
     /// <p>The state of the KMS key. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Disabled</code></p></li>
-    /// <li>
-    /// <p><code>Enabled</code></p></li>
-    /// <li>
-    /// <p><code>PendingDeletion</code></p></li>
-    /// <li>
-    /// <p><code>PendingImport</code></p></li>
-    /// <li>
-    /// <p><code>Unavailable</code></p></li>
+    /// <li> <p> <code>Disabled</code> </p> </li>
+    /// <li> <p> <code>Enabled</code> </p> </li>
+    /// <li> <p> <code>PendingDeletion</code> </p> </li>
+    /// <li> <p> <code>PendingImport</code> </p> </li>
+    /// <li> <p> <code>Unavailable</code> </p> </li>
     /// </ul>
     pub fn set_key_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_state = input;
@@ -203,16 +183,11 @@ impl AwsKmsKeyDetailsBuilder {
     }
     /// <p>The state of the KMS key. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Disabled</code></p></li>
-    /// <li>
-    /// <p><code>Enabled</code></p></li>
-    /// <li>
-    /// <p><code>PendingDeletion</code></p></li>
-    /// <li>
-    /// <p><code>PendingImport</code></p></li>
-    /// <li>
-    /// <p><code>Unavailable</code></p></li>
+    /// <li> <p> <code>Disabled</code> </p> </li>
+    /// <li> <p> <code>Enabled</code> </p> </li>
+    /// <li> <p> <code>PendingDeletion</code> </p> </li>
+    /// <li> <p> <code>PendingImport</code> </p> </li>
+    /// <li> <p> <code>Unavailable</code> </p> </li>
     /// </ul>
     pub fn get_key_state(&self) -> &::std::option::Option<::std::string::String> {
         &self.key_state

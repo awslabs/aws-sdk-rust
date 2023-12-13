@@ -6,11 +6,11 @@
 pub struct ListTrafficPolicyInstancesOutput {
     /// <p>A list that contains one <code>TrafficPolicyInstance</code> element for each traffic policy instance that matches the elements in the request.</p>
     pub traffic_policy_instances: ::std::vec::Vec<crate::types::TrafficPolicyInstance>,
-    /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>HostedZoneIdMarker</code> is the ID of the hosted zone of the first traffic policy instance that Route 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request.</p>
+    /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>HostedZoneIdMarker</code> is the ID of the hosted zone of the first traffic policy instance that Route 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request. </p>
     pub hosted_zone_id_marker: ::std::option::Option<::std::string::String>,
-    /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceNameMarker</code> is the name of the first traffic policy instance that Route 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request.</p>
+    /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceNameMarker</code> is the name of the first traffic policy instance that Route 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request. </p>
     pub traffic_policy_instance_name_marker: ::std::option::Option<::std::string::String>,
-    /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceTypeMarker</code> is the DNS type of the resource record sets that are associated with the first traffic policy instance that Amazon Route 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request.</p>
+    /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceTypeMarker</code> is the DNS type of the resource record sets that are associated with the first traffic policy instance that Amazon Route 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request. </p>
     pub traffic_policy_instance_type_marker: ::std::option::Option<crate::types::RrType>,
     /// <p>A flag that indicates whether there are more traffic policy instances to be listed. If the response was truncated, you can get more traffic policy instances by calling <code>ListTrafficPolicyInstances</code> again and specifying the values of the <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and <code>TrafficPolicyInstanceTypeMarker</code> in the corresponding request parameters.</p>
     pub is_truncated: bool,
@@ -24,15 +24,15 @@ impl ListTrafficPolicyInstancesOutput {
         use std::ops::Deref;
         self.traffic_policy_instances.deref()
     }
-    /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>HostedZoneIdMarker</code> is the ID of the hosted zone of the first traffic policy instance that Route 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request.</p>
+    /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>HostedZoneIdMarker</code> is the ID of the hosted zone of the first traffic policy instance that Route 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request. </p>
     pub fn hosted_zone_id_marker(&self) -> ::std::option::Option<&str> {
         self.hosted_zone_id_marker.as_deref()
     }
-    /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceNameMarker</code> is the name of the first traffic policy instance that Route 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request.</p>
+    /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceNameMarker</code> is the name of the first traffic policy instance that Route 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request. </p>
     pub fn traffic_policy_instance_name_marker(&self) -> ::std::option::Option<&str> {
         self.traffic_policy_instance_name_marker.as_deref()
     }
-    /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceTypeMarker</code> is the DNS type of the resource record sets that are associated with the first traffic policy instance that Amazon Route 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request.</p>
+    /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceTypeMarker</code> is the DNS type of the resource record sets that are associated with the first traffic policy instance that Amazon Route 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request. </p>
     pub fn traffic_policy_instance_type_marker(&self) -> ::std::option::Option<&crate::types::RrType> {
         self.traffic_policy_instance_type_marker.as_ref()
     }
@@ -90,45 +90,45 @@ impl ListTrafficPolicyInstancesOutputBuilder {
     pub fn get_traffic_policy_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TrafficPolicyInstance>> {
         &self.traffic_policy_instances
     }
-    /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>HostedZoneIdMarker</code> is the ID of the hosted zone of the first traffic policy instance that Route 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request.</p>
+    /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>HostedZoneIdMarker</code> is the ID of the hosted zone of the first traffic policy instance that Route 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request. </p>
     pub fn hosted_zone_id_marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hosted_zone_id_marker = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>HostedZoneIdMarker</code> is the ID of the hosted zone of the first traffic policy instance that Route 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request.</p>
+    /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>HostedZoneIdMarker</code> is the ID of the hosted zone of the first traffic policy instance that Route 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request. </p>
     pub fn set_hosted_zone_id_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hosted_zone_id_marker = input;
         self
     }
-    /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>HostedZoneIdMarker</code> is the ID of the hosted zone of the first traffic policy instance that Route 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request.</p>
+    /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>HostedZoneIdMarker</code> is the ID of the hosted zone of the first traffic policy instance that Route 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request. </p>
     pub fn get_hosted_zone_id_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.hosted_zone_id_marker
     }
-    /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceNameMarker</code> is the name of the first traffic policy instance that Route 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request.</p>
+    /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceNameMarker</code> is the name of the first traffic policy instance that Route 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request. </p>
     pub fn traffic_policy_instance_name_marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.traffic_policy_instance_name_marker = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceNameMarker</code> is the name of the first traffic policy instance that Route 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request.</p>
+    /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceNameMarker</code> is the name of the first traffic policy instance that Route 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request. </p>
     pub fn set_traffic_policy_instance_name_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.traffic_policy_instance_name_marker = input;
         self
     }
-    /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceNameMarker</code> is the name of the first traffic policy instance that Route 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request.</p>
+    /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceNameMarker</code> is the name of the first traffic policy instance that Route 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request. </p>
     pub fn get_traffic_policy_instance_name_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.traffic_policy_instance_name_marker
     }
-    /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceTypeMarker</code> is the DNS type of the resource record sets that are associated with the first traffic policy instance that Amazon Route 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request.</p>
+    /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceTypeMarker</code> is the DNS type of the resource record sets that are associated with the first traffic policy instance that Amazon Route 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request. </p>
     pub fn traffic_policy_instance_type_marker(mut self, input: crate::types::RrType) -> Self {
         self.traffic_policy_instance_type_marker = ::std::option::Option::Some(input);
         self
     }
-    /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceTypeMarker</code> is the DNS type of the resource record sets that are associated with the first traffic policy instance that Amazon Route 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request.</p>
+    /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceTypeMarker</code> is the DNS type of the resource record sets that are associated with the first traffic policy instance that Amazon Route 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request. </p>
     pub fn set_traffic_policy_instance_type_marker(mut self, input: ::std::option::Option<crate::types::RrType>) -> Self {
         self.traffic_policy_instance_type_marker = input;
         self
     }
-    /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceTypeMarker</code> is the DNS type of the resource record sets that are associated with the first traffic policy instance that Amazon Route 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request.</p>
+    /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceTypeMarker</code> is the DNS type of the resource record sets that are associated with the first traffic policy instance that Amazon Route 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request. </p>
     pub fn get_traffic_policy_instance_type_marker(&self) -> &::std::option::Option<crate::types::RrType> {
         &self.traffic_policy_instance_type_marker
     }

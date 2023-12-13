@@ -11,7 +11,7 @@ pub struct DescribeIpRestrictionOutput {
     pub enabled: ::std::option::Option<bool>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: ::std::option::Option<::std::string::String>,
-    /// <p>The HTTP status of the request.</p>
+    /// <p>The HTTP status of the request. </p>
     pub status: i32,
     _request_id: Option<String>,
 }
@@ -32,7 +32,7 @@ impl DescribeIpRestrictionOutput {
     pub fn request_id(&self) -> ::std::option::Option<&str> {
         self.request_id.as_deref()
     }
-    /// <p>The HTTP status of the request.</p>
+    /// <p>The HTTP status of the request. </p>
     pub fn status(&self) -> i32 {
         self.status
     }
@@ -130,17 +130,17 @@ impl DescribeIpRestrictionOutputBuilder {
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.request_id
     }
-    /// <p>The HTTP status of the request.</p>
+    /// <p>The HTTP status of the request. </p>
     pub fn status(mut self, input: i32) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The HTTP status of the request.</p>
+    /// <p>The HTTP status of the request. </p>
     pub fn set_status(mut self, input: ::std::option::Option<i32>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The HTTP status of the request.</p>
+    /// <p>The HTTP status of the request. </p>
     pub fn get_status(&self) -> &::std::option::Option<i32> {
         &self.status
     }

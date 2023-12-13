@@ -8,7 +8,7 @@ pub struct ConfirmSubscriptionInput {
     pub topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>Short-lived token sent to an endpoint during the <code>Subscribe</code> action.</p>
     pub token: ::std::option::Option<::std::string::String>,
-    /// <p>Disallows unauthenticated unsubscribes of the subscription. If the value of this parameter is <code>true</code> and the request has an Amazon Web Services signature, then only the topic owner and the subscription owner can unsubscribe the endpoint. The unsubscribe action requires Amazon Web Services authentication.</p>
+    /// <p>Disallows unauthenticated unsubscribes of the subscription. If the value of this parameter is <code>true</code> and the request has an Amazon Web Services signature, then only the topic owner and the subscription owner can unsubscribe the endpoint. The unsubscribe action requires Amazon Web Services authentication. </p>
     pub authenticate_on_unsubscribe: ::std::option::Option<::std::string::String>,
 }
 impl ConfirmSubscriptionInput {
@@ -20,7 +20,7 @@ impl ConfirmSubscriptionInput {
     pub fn token(&self) -> ::std::option::Option<&str> {
         self.token.as_deref()
     }
-    /// <p>Disallows unauthenticated unsubscribes of the subscription. If the value of this parameter is <code>true</code> and the request has an Amazon Web Services signature, then only the topic owner and the subscription owner can unsubscribe the endpoint. The unsubscribe action requires Amazon Web Services authentication.</p>
+    /// <p>Disallows unauthenticated unsubscribes of the subscription. If the value of this parameter is <code>true</code> and the request has an Amazon Web Services signature, then only the topic owner and the subscription owner can unsubscribe the endpoint. The unsubscribe action requires Amazon Web Services authentication. </p>
     pub fn authenticate_on_unsubscribe(&self) -> ::std::option::Option<&str> {
         self.authenticate_on_unsubscribe.as_deref()
     }
@@ -71,17 +71,17 @@ impl ConfirmSubscriptionInputBuilder {
     pub fn get_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.token
     }
-    /// <p>Disallows unauthenticated unsubscribes of the subscription. If the value of this parameter is <code>true</code> and the request has an Amazon Web Services signature, then only the topic owner and the subscription owner can unsubscribe the endpoint. The unsubscribe action requires Amazon Web Services authentication.</p>
+    /// <p>Disallows unauthenticated unsubscribes of the subscription. If the value of this parameter is <code>true</code> and the request has an Amazon Web Services signature, then only the topic owner and the subscription owner can unsubscribe the endpoint. The unsubscribe action requires Amazon Web Services authentication. </p>
     pub fn authenticate_on_unsubscribe(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authenticate_on_unsubscribe = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Disallows unauthenticated unsubscribes of the subscription. If the value of this parameter is <code>true</code> and the request has an Amazon Web Services signature, then only the topic owner and the subscription owner can unsubscribe the endpoint. The unsubscribe action requires Amazon Web Services authentication.</p>
+    /// <p>Disallows unauthenticated unsubscribes of the subscription. If the value of this parameter is <code>true</code> and the request has an Amazon Web Services signature, then only the topic owner and the subscription owner can unsubscribe the endpoint. The unsubscribe action requires Amazon Web Services authentication. </p>
     pub fn set_authenticate_on_unsubscribe(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authenticate_on_unsubscribe = input;
         self
     }
-    /// <p>Disallows unauthenticated unsubscribes of the subscription. If the value of this parameter is <code>true</code> and the request has an Amazon Web Services signature, then only the topic owner and the subscription owner can unsubscribe the endpoint. The unsubscribe action requires Amazon Web Services authentication.</p>
+    /// <p>Disallows unauthenticated unsubscribes of the subscription. If the value of this parameter is <code>true</code> and the request has an Amazon Web Services signature, then only the topic owner and the subscription owner can unsubscribe the endpoint. The unsubscribe action requires Amazon Web Services authentication. </p>
     pub fn get_authenticate_on_unsubscribe(&self) -> &::std::option::Option<::std::string::String> {
         &self.authenticate_on_unsubscribe
     }

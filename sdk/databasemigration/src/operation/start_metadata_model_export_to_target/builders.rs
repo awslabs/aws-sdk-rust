@@ -22,7 +22,7 @@ impl StartMetadataModelExportToTargetInputBuilder {
 }
 /// Fluent builder constructing a request to `StartMetadataModelExportToTarget`.
 ///
-/// <p>Applies converted database objects to your target database.</p>
+/// <p>Applies converted database objects to your target database. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartMetadataModelExportToTargetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

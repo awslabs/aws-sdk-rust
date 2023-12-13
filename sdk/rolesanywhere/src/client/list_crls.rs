@@ -5,10 +5,10 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_crls::builders::ListCrlsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_crls::builders::ListCrlsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.</p><br>
-    ///   - [`page_size(i32)`](crate::operation::list_crls::builders::ListCrlsFluentBuilder::page_size) / [`set_page_size(Option<i32>)`](crate::operation::list_crls::builders::ListCrlsFluentBuilder::set_page_size):<br>required: **false**<br><p>The number of resources in the paginated list.</p><br>
+    ///   - [`page_size(i32)`](crate::operation::list_crls::builders::ListCrlsFluentBuilder::page_size) / [`set_page_size(Option<i32>)`](crate::operation::list_crls::builders::ListCrlsFluentBuilder::set_page_size):<br>required: **false**<br><p>The number of resources in the paginated list. </p><br>
     /// - On success, responds with [`ListCrlsOutput`](crate::operation::list_crls::ListCrlsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_crls::ListCrlsOutput::next_token): <p>A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.</p>
-    ///   - [`crls(Option<Vec::<CrlDetail>>)`](crate::operation::list_crls::ListCrlsOutput::crls): <p>A list of certificate revocation lists (CRL).</p>
+    ///   - [`crls(Option<Vec::<CrlDetail>>)`](crate::operation::list_crls::ListCrlsOutput::crls): <p>A list of certificate revocation lists (CRL). </p>
     /// - On failure, responds with [`SdkError<ListCrlsError>`](crate::operation::list_crls::ListCrlsError)
     pub fn list_crls(&self) -> crate::operation::list_crls::builders::ListCrlsFluentBuilder {
         crate::operation::list_crls::builders::ListCrlsFluentBuilder::new(self.handle.clone())

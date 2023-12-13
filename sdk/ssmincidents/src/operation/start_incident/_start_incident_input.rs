@@ -5,28 +5,23 @@
 pub struct StartIncidentInput {
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the response plan that pre-defines summary, chat channels, Amazon SNS topics, runbooks, title, and impact of the incident.</p>
+    /// <p>The Amazon Resource Name (ARN) of the response plan that pre-defines summary, chat channels, Amazon SNS topics, runbooks, title, and impact of the incident. </p>
     pub response_plan_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Provide a title for the incident. Providing a title overwrites the title provided by the response plan.</p>
+    /// <p>Provide a title for the incident. Providing a title overwrites the title provided by the response plan. </p>
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>Defines the impact to the customers. Providing an impact overwrites the impact provided by a response plan.</p>
-    /// <p class="title"><b>Supported impact codes</b></p>
+    /// <p class="title"> <b>Supported impact codes</b> </p>
     /// <ul>
-    /// <li>
-    /// <p><code>1</code> - Critical</p></li>
-    /// <li>
-    /// <p><code>2</code> - High</p></li>
-    /// <li>
-    /// <p><code>3</code> - Medium</p></li>
-    /// <li>
-    /// <p><code>4</code> - Low</p></li>
-    /// <li>
-    /// <p><code>5</code> - No Impact</p></li>
+    /// <li> <p> <code>1</code> - Critical</p> </li>
+    /// <li> <p> <code>2</code> - High</p> </li>
+    /// <li> <p> <code>3</code> - Medium</p> </li>
+    /// <li> <p> <code>4</code> - Low</p> </li>
+    /// <li> <p> <code>5</code> - No Impact</p> </li>
     /// </ul>
     pub impact: ::std::option::Option<i32>,
     /// <p>Details of what created the incident record in Incident Manager.</p>
     pub trigger_details: ::std::option::Option<crate::types::TriggerDetails>,
-    /// <p>Add related items to the incident for other responders to use. Related items are Amazon Web Services resources, external links, or files uploaded to an Amazon S3 bucket.</p>
+    /// <p>Add related items to the incident for other responders to use. Related items are Amazon Web Services resources, external links, or files uploaded to an Amazon S3 bucket. </p>
     pub related_items: ::std::option::Option<::std::vec::Vec<crate::types::RelatedItem>>,
 }
 impl StartIncidentInput {
@@ -34,27 +29,22 @@ impl StartIncidentInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the response plan that pre-defines summary, chat channels, Amazon SNS topics, runbooks, title, and impact of the incident.</p>
+    /// <p>The Amazon Resource Name (ARN) of the response plan that pre-defines summary, chat channels, Amazon SNS topics, runbooks, title, and impact of the incident. </p>
     pub fn response_plan_arn(&self) -> ::std::option::Option<&str> {
         self.response_plan_arn.as_deref()
     }
-    /// <p>Provide a title for the incident. Providing a title overwrites the title provided by the response plan.</p>
+    /// <p>Provide a title for the incident. Providing a title overwrites the title provided by the response plan. </p>
     pub fn title(&self) -> ::std::option::Option<&str> {
         self.title.as_deref()
     }
     /// <p>Defines the impact to the customers. Providing an impact overwrites the impact provided by a response plan.</p>
-    /// <p class="title"><b>Supported impact codes</b></p>
+    /// <p class="title"> <b>Supported impact codes</b> </p>
     /// <ul>
-    /// <li>
-    /// <p><code>1</code> - Critical</p></li>
-    /// <li>
-    /// <p><code>2</code> - High</p></li>
-    /// <li>
-    /// <p><code>3</code> - Medium</p></li>
-    /// <li>
-    /// <p><code>4</code> - Low</p></li>
-    /// <li>
-    /// <p><code>5</code> - No Impact</p></li>
+    /// <li> <p> <code>1</code> - Critical</p> </li>
+    /// <li> <p> <code>2</code> - High</p> </li>
+    /// <li> <p> <code>3</code> - Medium</p> </li>
+    /// <li> <p> <code>4</code> - Low</p> </li>
+    /// <li> <p> <code>5</code> - No Impact</p> </li>
     /// </ul>
     pub fn impact(&self) -> ::std::option::Option<i32> {
         self.impact
@@ -63,7 +53,7 @@ impl StartIncidentInput {
     pub fn trigger_details(&self) -> ::std::option::Option<&crate::types::TriggerDetails> {
         self.trigger_details.as_ref()
     }
-    /// <p>Add related items to the incident for other responders to use. Related items are Amazon Web Services resources, external links, or files uploaded to an Amazon S3 bucket.</p>
+    /// <p>Add related items to the incident for other responders to use. Related items are Amazon Web Services resources, external links, or files uploaded to an Amazon S3 bucket. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.related_items.is_none()`.
     pub fn related_items(&self) -> &[crate::types::RelatedItem] {
@@ -103,84 +93,69 @@ impl StartIncidentInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
-    /// <p>The Amazon Resource Name (ARN) of the response plan that pre-defines summary, chat channels, Amazon SNS topics, runbooks, title, and impact of the incident.</p>
+    /// <p>The Amazon Resource Name (ARN) of the response plan that pre-defines summary, chat channels, Amazon SNS topics, runbooks, title, and impact of the incident. </p>
     /// This field is required.
     pub fn response_plan_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.response_plan_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the response plan that pre-defines summary, chat channels, Amazon SNS topics, runbooks, title, and impact of the incident.</p>
+    /// <p>The Amazon Resource Name (ARN) of the response plan that pre-defines summary, chat channels, Amazon SNS topics, runbooks, title, and impact of the incident. </p>
     pub fn set_response_plan_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.response_plan_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the response plan that pre-defines summary, chat channels, Amazon SNS topics, runbooks, title, and impact of the incident.</p>
+    /// <p>The Amazon Resource Name (ARN) of the response plan that pre-defines summary, chat channels, Amazon SNS topics, runbooks, title, and impact of the incident. </p>
     pub fn get_response_plan_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.response_plan_arn
     }
-    /// <p>Provide a title for the incident. Providing a title overwrites the title provided by the response plan.</p>
+    /// <p>Provide a title for the incident. Providing a title overwrites the title provided by the response plan. </p>
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Provide a title for the incident. Providing a title overwrites the title provided by the response plan.</p>
+    /// <p>Provide a title for the incident. Providing a title overwrites the title provided by the response plan. </p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.title = input;
         self
     }
-    /// <p>Provide a title for the incident. Providing a title overwrites the title provided by the response plan.</p>
+    /// <p>Provide a title for the incident. Providing a title overwrites the title provided by the response plan. </p>
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
         &self.title
     }
     /// <p>Defines the impact to the customers. Providing an impact overwrites the impact provided by a response plan.</p>
-    /// <p class="title"><b>Supported impact codes</b></p>
+    /// <p class="title"> <b>Supported impact codes</b> </p>
     /// <ul>
-    /// <li>
-    /// <p><code>1</code> - Critical</p></li>
-    /// <li>
-    /// <p><code>2</code> - High</p></li>
-    /// <li>
-    /// <p><code>3</code> - Medium</p></li>
-    /// <li>
-    /// <p><code>4</code> - Low</p></li>
-    /// <li>
-    /// <p><code>5</code> - No Impact</p></li>
+    /// <li> <p> <code>1</code> - Critical</p> </li>
+    /// <li> <p> <code>2</code> - High</p> </li>
+    /// <li> <p> <code>3</code> - Medium</p> </li>
+    /// <li> <p> <code>4</code> - Low</p> </li>
+    /// <li> <p> <code>5</code> - No Impact</p> </li>
     /// </ul>
     pub fn impact(mut self, input: i32) -> Self {
         self.impact = ::std::option::Option::Some(input);
         self
     }
     /// <p>Defines the impact to the customers. Providing an impact overwrites the impact provided by a response plan.</p>
-    /// <p class="title"><b>Supported impact codes</b></p>
+    /// <p class="title"> <b>Supported impact codes</b> </p>
     /// <ul>
-    /// <li>
-    /// <p><code>1</code> - Critical</p></li>
-    /// <li>
-    /// <p><code>2</code> - High</p></li>
-    /// <li>
-    /// <p><code>3</code> - Medium</p></li>
-    /// <li>
-    /// <p><code>4</code> - Low</p></li>
-    /// <li>
-    /// <p><code>5</code> - No Impact</p></li>
+    /// <li> <p> <code>1</code> - Critical</p> </li>
+    /// <li> <p> <code>2</code> - High</p> </li>
+    /// <li> <p> <code>3</code> - Medium</p> </li>
+    /// <li> <p> <code>4</code> - Low</p> </li>
+    /// <li> <p> <code>5</code> - No Impact</p> </li>
     /// </ul>
     pub fn set_impact(mut self, input: ::std::option::Option<i32>) -> Self {
         self.impact = input;
         self
     }
     /// <p>Defines the impact to the customers. Providing an impact overwrites the impact provided by a response plan.</p>
-    /// <p class="title"><b>Supported impact codes</b></p>
+    /// <p class="title"> <b>Supported impact codes</b> </p>
     /// <ul>
-    /// <li>
-    /// <p><code>1</code> - Critical</p></li>
-    /// <li>
-    /// <p><code>2</code> - High</p></li>
-    /// <li>
-    /// <p><code>3</code> - Medium</p></li>
-    /// <li>
-    /// <p><code>4</code> - Low</p></li>
-    /// <li>
-    /// <p><code>5</code> - No Impact</p></li>
+    /// <li> <p> <code>1</code> - Critical</p> </li>
+    /// <li> <p> <code>2</code> - High</p> </li>
+    /// <li> <p> <code>3</code> - Medium</p> </li>
+    /// <li> <p> <code>4</code> - Low</p> </li>
+    /// <li> <p> <code>5</code> - No Impact</p> </li>
     /// </ul>
     pub fn get_impact(&self) -> &::std::option::Option<i32> {
         &self.impact
@@ -203,19 +178,19 @@ impl StartIncidentInputBuilder {
     ///
     /// To override the contents of this collection use [`set_related_items`](Self::set_related_items).
     ///
-    /// <p>Add related items to the incident for other responders to use. Related items are Amazon Web Services resources, external links, or files uploaded to an Amazon S3 bucket.</p>
+    /// <p>Add related items to the incident for other responders to use. Related items are Amazon Web Services resources, external links, or files uploaded to an Amazon S3 bucket. </p>
     pub fn related_items(mut self, input: crate::types::RelatedItem) -> Self {
         let mut v = self.related_items.unwrap_or_default();
         v.push(input);
         self.related_items = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Add related items to the incident for other responders to use. Related items are Amazon Web Services resources, external links, or files uploaded to an Amazon S3 bucket.</p>
+    /// <p>Add related items to the incident for other responders to use. Related items are Amazon Web Services resources, external links, or files uploaded to an Amazon S3 bucket. </p>
     pub fn set_related_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RelatedItem>>) -> Self {
         self.related_items = input;
         self
     }
-    /// <p>Add related items to the incident for other responders to use. Related items are Amazon Web Services resources, external links, or files uploaded to an Amazon S3 bucket.</p>
+    /// <p>Add related items to the incident for other responders to use. Related items are Amazon Web Services resources, external links, or files uploaded to an Amazon S3 bucket. </p>
     pub fn get_related_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RelatedItem>> {
         &self.related_items
     }

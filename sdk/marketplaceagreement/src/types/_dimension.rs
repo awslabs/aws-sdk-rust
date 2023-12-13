@@ -6,7 +6,7 @@
 pub struct Dimension {
     /// <p>The name of key value of the dimension.</p>
     pub dimension_key: ::std::string::String,
-    /// <p>The number of units of the dimension the acceptor has purchased.</p><note>
+    /// <p>The number of units of the dimension the acceptor has purchased.</p> <note>
     /// <p>For Agreements with <code>ConfigurableUpfrontPricingTerm</code>, the <code>RateCard</code> section will define the prices and dimensions defined by the seller (proposer), whereas the <code>Configuration</code> section will define the actual dimensions, prices, and units the buyer has chosen to accept.</p>
     /// </note>
     pub dimension_value: i32,
@@ -17,7 +17,7 @@ impl Dimension {
         use std::ops::Deref;
         self.dimension_key.deref()
     }
-    /// <p>The number of units of the dimension the acceptor has purchased.</p><note>
+    /// <p>The number of units of the dimension the acceptor has purchased.</p> <note>
     /// <p>For Agreements with <code>ConfigurableUpfrontPricingTerm</code>, the <code>RateCard</code> section will define the prices and dimensions defined by the seller (proposer), whereas the <code>Configuration</code> section will define the actual dimensions, prices, and units the buyer has chosen to accept.</p>
     /// </note>
     pub fn dimension_value(&self) -> i32 {
@@ -54,7 +54,7 @@ impl DimensionBuilder {
     pub fn get_dimension_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.dimension_key
     }
-    /// <p>The number of units of the dimension the acceptor has purchased.</p><note>
+    /// <p>The number of units of the dimension the acceptor has purchased.</p> <note>
     /// <p>For Agreements with <code>ConfigurableUpfrontPricingTerm</code>, the <code>RateCard</code> section will define the prices and dimensions defined by the seller (proposer), whereas the <code>Configuration</code> section will define the actual dimensions, prices, and units the buyer has chosen to accept.</p>
     /// </note>
     /// This field is required.
@@ -62,14 +62,14 @@ impl DimensionBuilder {
         self.dimension_value = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of units of the dimension the acceptor has purchased.</p><note>
+    /// <p>The number of units of the dimension the acceptor has purchased.</p> <note>
     /// <p>For Agreements with <code>ConfigurableUpfrontPricingTerm</code>, the <code>RateCard</code> section will define the prices and dimensions defined by the seller (proposer), whereas the <code>Configuration</code> section will define the actual dimensions, prices, and units the buyer has chosen to accept.</p>
     /// </note>
     pub fn set_dimension_value(mut self, input: ::std::option::Option<i32>) -> Self {
         self.dimension_value = input;
         self
     }
-    /// <p>The number of units of the dimension the acceptor has purchased.</p><note>
+    /// <p>The number of units of the dimension the acceptor has purchased.</p> <note>
     /// <p>For Agreements with <code>ConfigurableUpfrontPricingTerm</code>, the <code>RateCard</code> section will define the prices and dimensions defined by the seller (proposer), whereas the <code>Configuration</code> section will define the actual dimensions, prices, and units the buyer has chosen to accept.</p>
     /// </note>
     pub fn get_dimension_value(&self) -> &::std::option::Option<i32> {

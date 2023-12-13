@@ -22,7 +22,7 @@ impl DescribeEntityInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeEntity`.
 ///
-/// <p>Returns basic details about an entity in WorkMail.</p>
+/// <p>Returns basic details about an entity in WorkMail. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeEntityFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -11,7 +11,7 @@ pub struct UpdateMatchingWorkflowOutput {
     pub input_source_config: ::std::vec::Vec<crate::types::InputSource>,
     /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>OutputS3Path</code>, <code>ApplyNormalization</code>, and <code>Output</code>.</p>
     pub output_source_config: ::std::vec::Vec<crate::types::OutputSource>,
-    /// <p>An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code></p>
+    /// <p>An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code> </p>
     pub resolution_techniques: ::std::option::Option<crate::types::ResolutionTechniques>,
     /// <p>An object which defines an incremental run type and has only <code>incrementalRunType</code> as a field.</p>
     pub incremental_run_config: ::std::option::Option<crate::types::IncrementalRunConfig>,
@@ -39,7 +39,7 @@ impl UpdateMatchingWorkflowOutput {
         use std::ops::Deref;
         self.output_source_config.deref()
     }
-    /// <p>An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code></p>
+    /// <p>An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code> </p>
     pub fn resolution_techniques(&self) -> ::std::option::Option<&crate::types::ResolutionTechniques> {
         self.resolution_techniques.as_ref()
     }
@@ -148,18 +148,18 @@ impl UpdateMatchingWorkflowOutputBuilder {
     pub fn get_output_source_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputSource>> {
         &self.output_source_config
     }
-    /// <p>An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code></p>
+    /// <p>An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code> </p>
     /// This field is required.
     pub fn resolution_techniques(mut self, input: crate::types::ResolutionTechniques) -> Self {
         self.resolution_techniques = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code></p>
+    /// <p>An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code> </p>
     pub fn set_resolution_techniques(mut self, input: ::std::option::Option<crate::types::ResolutionTechniques>) -> Self {
         self.resolution_techniques = input;
         self
     }
-    /// <p>An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code></p>
+    /// <p>An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code> </p>
     pub fn get_resolution_techniques(&self) -> &::std::option::Option<crate::types::ResolutionTechniques> {
         &self.resolution_techniques
     }

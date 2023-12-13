@@ -6,7 +6,7 @@
 pub struct Usd {
     /// <p>The whole number of dollars in the amount.</p>
     pub dollars: ::std::option::Option<i32>,
-    /// <p>The fractional portion, in cents, of the amount.</p>
+    /// <p>The fractional portion, in cents, of the amount. </p>
     pub cents: ::std::option::Option<i32>,
     /// <p>Fractions of a cent, in tenths.</p>
     pub tenth_fractions_of_a_cent: ::std::option::Option<i32>,
@@ -16,7 +16,7 @@ impl Usd {
     pub fn dollars(&self) -> ::std::option::Option<i32> {
         self.dollars
     }
-    /// <p>The fractional portion, in cents, of the amount.</p>
+    /// <p>The fractional portion, in cents, of the amount. </p>
     pub fn cents(&self) -> ::std::option::Option<i32> {
         self.cents
     }
@@ -55,17 +55,17 @@ impl UsdBuilder {
     pub fn get_dollars(&self) -> &::std::option::Option<i32> {
         &self.dollars
     }
-    /// <p>The fractional portion, in cents, of the amount.</p>
+    /// <p>The fractional portion, in cents, of the amount. </p>
     pub fn cents(mut self, input: i32) -> Self {
         self.cents = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The fractional portion, in cents, of the amount.</p>
+    /// <p>The fractional portion, in cents, of the amount. </p>
     pub fn set_cents(mut self, input: ::std::option::Option<i32>) -> Self {
         self.cents = input;
         self
     }
-    /// <p>The fractional portion, in cents, of the amount.</p>
+    /// <p>The fractional portion, in cents, of the amount. </p>
     pub fn get_cents(&self) -> &::std::option::Option<i32> {
         &self.cents
     }

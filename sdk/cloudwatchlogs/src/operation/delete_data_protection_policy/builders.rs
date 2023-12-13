@@ -22,7 +22,7 @@ impl DeleteDataProtectionPolicyInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteDataProtectionPolicy`.
 ///
-/// <p>Deletes the data protection policy from the specified log group.</p>
+/// <p>Deletes the data protection policy from the specified log group. </p>
 /// <p>For more information about data protection policies, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html">PutDataProtectionPolicy</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteDataProtectionPolicyFluentBuilder {

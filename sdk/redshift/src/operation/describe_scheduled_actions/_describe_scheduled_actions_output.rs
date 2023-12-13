@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeScheduledActionsOutput {
-    /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeScheduledActions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>
+    /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeScheduledActions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
     pub marker: ::std::option::Option<::std::string::String>,
-    /// <p>List of retrieved scheduled actions.</p>
+    /// <p>List of retrieved scheduled actions. </p>
     pub scheduled_actions: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledAction>>,
     _request_id: Option<String>,
 }
 impl DescribeScheduledActionsOutput {
-    /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeScheduledActions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>
+    /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeScheduledActions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
     pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
-    /// <p>List of retrieved scheduled actions.</p>
+    /// <p>List of retrieved scheduled actions. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scheduled_actions.is_none()`.
     pub fn scheduled_actions(&self) -> &[crate::types::ScheduledAction] {
@@ -42,17 +42,17 @@ pub struct DescribeScheduledActionsOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeScheduledActionsOutputBuilder {
-    /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeScheduledActions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>
+    /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeScheduledActions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeScheduledActions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>
+    /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeScheduledActions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }
-    /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeScheduledActions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>
+    /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeScheduledActions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }
@@ -60,19 +60,19 @@ impl DescribeScheduledActionsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_scheduled_actions`](Self::set_scheduled_actions).
     ///
-    /// <p>List of retrieved scheduled actions.</p>
+    /// <p>List of retrieved scheduled actions. </p>
     pub fn scheduled_actions(mut self, input: crate::types::ScheduledAction) -> Self {
         let mut v = self.scheduled_actions.unwrap_or_default();
         v.push(input);
         self.scheduled_actions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>List of retrieved scheduled actions.</p>
+    /// <p>List of retrieved scheduled actions. </p>
     pub fn set_scheduled_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledAction>>) -> Self {
         self.scheduled_actions = input;
         self
     }
-    /// <p>List of retrieved scheduled actions.</p>
+    /// <p>List of retrieved scheduled actions. </p>
     pub fn get_scheduled_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduledAction>> {
         &self.scheduled_actions
     }

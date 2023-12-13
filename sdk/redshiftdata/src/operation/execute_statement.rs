@@ -259,7 +259,7 @@ pub enum ExecuteStatementError {
     ActiveStatementsExceededException(crate::types::error::ActiveStatementsExceededException),
     /// <p>The SQL statement encountered an environmental error while running.</p>
     ExecuteStatementException(crate::types::error::ExecuteStatementException),
-    /// <p>The Amazon Redshift Data API operation failed due to invalid input.</p>
+    /// <p>The Amazon Redshift Data API operation failed due to invalid input. </p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

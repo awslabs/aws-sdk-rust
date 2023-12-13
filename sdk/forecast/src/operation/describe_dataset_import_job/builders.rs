@@ -25,18 +25,12 @@ impl DescribeDatasetImportJobInputBuilder {
 /// <p>Describes a dataset import job created using the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a> operation.</p>
 /// <p>In addition to listing the parameters provided in the <code>CreateDatasetImportJob</code> request, this operation includes the following properties:</p>
 /// <ul>
-/// <li>
-/// <p><code>CreationTime</code></p></li>
-/// <li>
-/// <p><code>LastModificationTime</code></p></li>
-/// <li>
-/// <p><code>DataSize</code></p></li>
-/// <li>
-/// <p><code>FieldStatistics</code></p></li>
-/// <li>
-/// <p><code>Status</code></p></li>
-/// <li>
-/// <p><code>Message</code> - If an error occurred, information about the error.</p></li>
+/// <li> <p> <code>CreationTime</code> </p> </li>
+/// <li> <p> <code>LastModificationTime</code> </p> </li>
+/// <li> <p> <code>DataSize</code> </p> </li>
+/// <li> <p> <code>FieldStatistics</code> </p> </li>
+/// <li> <p> <code>Status</code> </p> </li>
+/// <li> <p> <code>Message</code> - If an error occurred, information about the error.</p> </li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeDatasetImportJobFluentBuilder {

@@ -2,25 +2,23 @@
 
 /// <note>
 /// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p><b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use.</p>
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
 /// </note>
-/// <p>The response from a <code>GetSampledRequests</code> request includes an <code>HTTPRequest</code> complex type that appears as <code>Request</code> in the response syntax. <code>HTTPRequest</code> contains information about one of the web requests that were returned by <code>GetSampledRequests</code>.</p>
+/// <p>The response from a <code>GetSampledRequests</code> request includes an <code>HTTPRequest</code> complex type that appears as <code>Request</code> in the response syntax. <code>HTTPRequest</code> contains information about one of the web requests that were returned by <code>GetSampledRequests</code>. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HttpRequest {
     /// <p>The IP address that the request originated from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p></li>
-    /// <li>
-    /// <p><code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p></li>
+    /// <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li>
+    /// <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li>
     /// </ul>
     pub client_ip: ::std::option::Option<::std::string::String>,
     /// <p>The two-letter country code for the country that the request originated from. For a current list of country codes, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166-1 alpha-2</a>.</p>
     pub country: ::std::option::Option<::std::string::String>,
     /// <p>The part of a web request that identifies the resource, for example, <code>/images/daily-ad.jpg</code>.</p>
     pub uri: ::std::option::Option<::std::string::String>,
-    /// <p>The HTTP method specified in the sampled web request. CloudFront supports the following methods: <code>DELETE</code>, <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>, <code>PATCH</code>, <code>POST</code>, and <code>PUT</code>.</p>
+    /// <p>The HTTP method specified in the sampled web request. CloudFront supports the following methods: <code>DELETE</code>, <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>, <code>PATCH</code>, <code>POST</code>, and <code>PUT</code>. </p>
     pub method: ::std::option::Option<::std::string::String>,
     /// <p>The HTTP version specified in the sampled web request, for example, <code>HTTP/1.1</code>.</p>
     pub http_version: ::std::option::Option<::std::string::String>,
@@ -30,10 +28,8 @@ pub struct HttpRequest {
 impl HttpRequest {
     /// <p>The IP address that the request originated from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p></li>
-    /// <li>
-    /// <p><code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p></li>
+    /// <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li>
+    /// <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li>
     /// </ul>
     pub fn client_ip(&self) -> ::std::option::Option<&str> {
         self.client_ip.as_deref()
@@ -46,7 +42,7 @@ impl HttpRequest {
     pub fn uri(&self) -> ::std::option::Option<&str> {
         self.uri.as_deref()
     }
-    /// <p>The HTTP method specified in the sampled web request. CloudFront supports the following methods: <code>DELETE</code>, <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>, <code>PATCH</code>, <code>POST</code>, and <code>PUT</code>.</p>
+    /// <p>The HTTP method specified in the sampled web request. CloudFront supports the following methods: <code>DELETE</code>, <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>, <code>PATCH</code>, <code>POST</code>, and <code>PUT</code>. </p>
     pub fn method(&self) -> ::std::option::Option<&str> {
         self.method.as_deref()
     }
@@ -82,10 +78,8 @@ pub struct HttpRequestBuilder {
 impl HttpRequestBuilder {
     /// <p>The IP address that the request originated from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p></li>
-    /// <li>
-    /// <p><code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p></li>
+    /// <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li>
+    /// <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li>
     /// </ul>
     pub fn client_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_ip = ::std::option::Option::Some(input.into());
@@ -93,10 +87,8 @@ impl HttpRequestBuilder {
     }
     /// <p>The IP address that the request originated from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p></li>
-    /// <li>
-    /// <p><code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p></li>
+    /// <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li>
+    /// <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li>
     /// </ul>
     pub fn set_client_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_ip = input;
@@ -104,10 +96,8 @@ impl HttpRequestBuilder {
     }
     /// <p>The IP address that the request originated from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p></li>
-    /// <li>
-    /// <p><code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p></li>
+    /// <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li>
+    /// <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li>
     /// </ul>
     pub fn get_client_ip(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_ip
@@ -140,17 +130,17 @@ impl HttpRequestBuilder {
     pub fn get_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.uri
     }
-    /// <p>The HTTP method specified in the sampled web request. CloudFront supports the following methods: <code>DELETE</code>, <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>, <code>PATCH</code>, <code>POST</code>, and <code>PUT</code>.</p>
+    /// <p>The HTTP method specified in the sampled web request. CloudFront supports the following methods: <code>DELETE</code>, <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>, <code>PATCH</code>, <code>POST</code>, and <code>PUT</code>. </p>
     pub fn method(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.method = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The HTTP method specified in the sampled web request. CloudFront supports the following methods: <code>DELETE</code>, <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>, <code>PATCH</code>, <code>POST</code>, and <code>PUT</code>.</p>
+    /// <p>The HTTP method specified in the sampled web request. CloudFront supports the following methods: <code>DELETE</code>, <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>, <code>PATCH</code>, <code>POST</code>, and <code>PUT</code>. </p>
     pub fn set_method(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.method = input;
         self
     }
-    /// <p>The HTTP method specified in the sampled web request. CloudFront supports the following methods: <code>DELETE</code>, <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>, <code>PATCH</code>, <code>POST</code>, and <code>PUT</code>.</p>
+    /// <p>The HTTP method specified in the sampled web request. CloudFront supports the following methods: <code>DELETE</code>, <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>, <code>PATCH</code>, <code>POST</code>, and <code>PUT</code>. </p>
     pub fn get_method(&self) -> &::std::option::Option<::std::string::String> {
         &self.method
     }

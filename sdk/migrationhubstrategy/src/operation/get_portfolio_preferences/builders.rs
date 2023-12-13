@@ -22,7 +22,7 @@ impl GetPortfolioPreferencesInputBuilder {
 }
 /// Fluent builder constructing a request to `GetPortfolioPreferences`.
 ///
-/// <p>Retrieves your migration and modernization preferences.</p>
+/// <p> Retrieves your migration and modernization preferences. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetPortfolioPreferencesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

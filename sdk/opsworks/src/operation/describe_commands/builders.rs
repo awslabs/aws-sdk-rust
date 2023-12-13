@@ -22,10 +22,10 @@ impl DescribeCommandsInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeCommands`.
 ///
-/// <p>Describes the results of specified commands.</p><note>
+/// <p>Describes the results of specified commands.</p> <note>
 /// <p>This call accepts only one resource-identifying parameter.</p>
 /// </note>
-/// <p><b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+/// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeCommandsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

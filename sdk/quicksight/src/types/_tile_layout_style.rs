@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TileLayoutStyle {
-    /// <p>The gutter settings that apply between tiles.</p>
+    /// <p>The gutter settings that apply between tiles. </p>
     pub gutter: ::std::option::Option<crate::types::GutterStyle>,
     /// <p>The margin settings that apply around the outside edge of sheets.</p>
     pub margin: ::std::option::Option<crate::types::MarginStyle>,
 }
 impl TileLayoutStyle {
-    /// <p>The gutter settings that apply between tiles.</p>
+    /// <p>The gutter settings that apply between tiles. </p>
     pub fn gutter(&self) -> ::std::option::Option<&crate::types::GutterStyle> {
         self.gutter.as_ref()
     }
@@ -34,17 +34,17 @@ pub struct TileLayoutStyleBuilder {
     pub(crate) margin: ::std::option::Option<crate::types::MarginStyle>,
 }
 impl TileLayoutStyleBuilder {
-    /// <p>The gutter settings that apply between tiles.</p>
+    /// <p>The gutter settings that apply between tiles. </p>
     pub fn gutter(mut self, input: crate::types::GutterStyle) -> Self {
         self.gutter = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The gutter settings that apply between tiles.</p>
+    /// <p>The gutter settings that apply between tiles. </p>
     pub fn set_gutter(mut self, input: ::std::option::Option<crate::types::GutterStyle>) -> Self {
         self.gutter = input;
         self
     }
-    /// <p>The gutter settings that apply between tiles.</p>
+    /// <p>The gutter settings that apply between tiles. </p>
     pub fn get_gutter(&self) -> &::std::option::Option<crate::types::GutterStyle> {
         &self.gutter
     }

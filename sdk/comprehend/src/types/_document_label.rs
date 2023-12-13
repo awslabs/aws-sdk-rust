@@ -8,7 +8,7 @@ pub struct DocumentLabel {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The confidence score that Amazon Comprehend has this label correctly attributed.</p>
     pub score: ::std::option::Option<f32>,
-    /// <p>Page number where the label occurs. This field is present in the response only if your request includes the <code>Byte</code> parameter.</p>
+    /// <p>Page number where the label occurs. This field is present in the response only if your request includes the <code>Byte</code> parameter. </p>
     pub page: ::std::option::Option<i32>,
 }
 impl DocumentLabel {
@@ -20,7 +20,7 @@ impl DocumentLabel {
     pub fn score(&self) -> ::std::option::Option<f32> {
         self.score
     }
-    /// <p>Page number where the label occurs. This field is present in the response only if your request includes the <code>Byte</code> parameter.</p>
+    /// <p>Page number where the label occurs. This field is present in the response only if your request includes the <code>Byte</code> parameter. </p>
     pub fn page(&self) -> ::std::option::Option<i32> {
         self.page
     }
@@ -69,17 +69,17 @@ impl DocumentLabelBuilder {
     pub fn get_score(&self) -> &::std::option::Option<f32> {
         &self.score
     }
-    /// <p>Page number where the label occurs. This field is present in the response only if your request includes the <code>Byte</code> parameter.</p>
+    /// <p>Page number where the label occurs. This field is present in the response only if your request includes the <code>Byte</code> parameter. </p>
     pub fn page(mut self, input: i32) -> Self {
         self.page = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Page number where the label occurs. This field is present in the response only if your request includes the <code>Byte</code> parameter.</p>
+    /// <p>Page number where the label occurs. This field is present in the response only if your request includes the <code>Byte</code> parameter. </p>
     pub fn set_page(mut self, input: ::std::option::Option<i32>) -> Self {
         self.page = input;
         self
     }
-    /// <p>Page number where the label occurs. This field is present in the response only if your request includes the <code>Byte</code> parameter.</p>
+    /// <p>Page number where the label occurs. This field is present in the response only if your request includes the <code>Byte</code> parameter. </p>
     pub fn get_page(&self) -> &::std::option::Option<i32> {
         &self.page
     }

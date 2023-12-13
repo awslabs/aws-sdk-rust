@@ -23,7 +23,7 @@ impl ListGroupsInputBuilder {
 /// Fluent builder constructing a request to `ListGroups`.
 ///
 /// <p>Lists the IAM groups that have the specified path prefix.</p>
-/// <p>You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters.</p>
+/// <p> You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListGroupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -115,19 +115,19 @@ impl ListGroupsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_groups::paginator::ListGroupsPaginator {
         crate::operation::list_groups::paginator::ListGroupsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The path prefix for filtering the results. For example, the prefix <code>/division_abc/subdivision_xyz/</code> gets all groups whose path starts with <code>/division_abc/subdivision_xyz/</code>.</p>
+    /// <p> The path prefix for filtering the results. For example, the prefix <code>/division_abc/subdivision_xyz/</code> gets all groups whose path starts with <code>/division_abc/subdivision_xyz/</code>.</p>
     /// <p>This parameter is optional. If it is not included, it defaults to a slash (/), listing all groups. This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including most punctuation characters, digits, and upper and lowercased letters.</p>
     pub fn path_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.path_prefix(input.into());
         self
     }
-    /// <p>The path prefix for filtering the results. For example, the prefix <code>/division_abc/subdivision_xyz/</code> gets all groups whose path starts with <code>/division_abc/subdivision_xyz/</code>.</p>
+    /// <p> The path prefix for filtering the results. For example, the prefix <code>/division_abc/subdivision_xyz/</code> gets all groups whose path starts with <code>/division_abc/subdivision_xyz/</code>.</p>
     /// <p>This parameter is optional. If it is not included, it defaults to a slash (/), listing all groups. This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including most punctuation characters, digits, and upper and lowercased letters.</p>
     pub fn set_path_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_path_prefix(input);
         self
     }
-    /// <p>The path prefix for filtering the results. For example, the prefix <code>/division_abc/subdivision_xyz/</code> gets all groups whose path starts with <code>/division_abc/subdivision_xyz/</code>.</p>
+    /// <p> The path prefix for filtering the results. For example, the prefix <code>/division_abc/subdivision_xyz/</code> gets all groups whose path starts with <code>/division_abc/subdivision_xyz/</code>.</p>
     /// <p>This parameter is optional. If it is not included, it defaults to a slash (/), listing all groups. This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including most punctuation characters, digits, and upper and lowercased letters.</p>
     pub fn get_path_prefix(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_path_prefix()

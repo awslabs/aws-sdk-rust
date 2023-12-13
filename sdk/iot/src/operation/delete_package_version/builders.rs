@@ -23,7 +23,7 @@ impl DeletePackageVersionInputBuilder {
 /// Fluent builder constructing a request to `DeletePackageVersion`.
 ///
 /// <p>Deletes a specific version from a software package.</p>
-/// <p><b>Note:</b> If a package version is designated as default, you must remove the designation from the software package using the <code>UpdatePackage</code> action.</p>
+/// <p> <b>Note:</b> If a package version is designated as default, you must remove the designation from the software package using the <code>UpdatePackage</code> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeletePackageVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

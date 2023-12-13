@@ -13,7 +13,7 @@ pub struct UpdateComponentConfigurationInput {
     pub tier: ::std::option::Option<crate::types::Tier>,
     /// <p>The configuration settings of the component. The value is the escaped JSON of the configuration. For more information about the JSON format, see <a href="https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/working-with-json.html">Working with JSON</a>. You can send a request to <code>DescribeComponentConfigurationRecommendation</code> to see the recommended configuration for a component. For the complete format of the component configuration file, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/component-config.html">Component Configuration</a>.</p>
     pub component_configuration: ::std::option::Option<::std::string::String>,
-    /// <p>Automatically configures the component by applying the recommended configurations.</p>
+    /// <p> Automatically configures the component by applying the recommended configurations. </p>
     pub auto_config_enabled: ::std::option::Option<bool>,
 }
 impl UpdateComponentConfigurationInput {
@@ -37,7 +37,7 @@ impl UpdateComponentConfigurationInput {
     pub fn component_configuration(&self) -> ::std::option::Option<&str> {
         self.component_configuration.as_deref()
     }
-    /// <p>Automatically configures the component by applying the recommended configurations.</p>
+    /// <p> Automatically configures the component by applying the recommended configurations. </p>
     pub fn auto_config_enabled(&self) -> ::std::option::Option<bool> {
         self.auto_config_enabled
     }
@@ -133,17 +133,17 @@ impl UpdateComponentConfigurationInputBuilder {
     pub fn get_component_configuration(&self) -> &::std::option::Option<::std::string::String> {
         &self.component_configuration
     }
-    /// <p>Automatically configures the component by applying the recommended configurations.</p>
+    /// <p> Automatically configures the component by applying the recommended configurations. </p>
     pub fn auto_config_enabled(mut self, input: bool) -> Self {
         self.auto_config_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Automatically configures the component by applying the recommended configurations.</p>
+    /// <p> Automatically configures the component by applying the recommended configurations. </p>
     pub fn set_auto_config_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_config_enabled = input;
         self
     }
-    /// <p>Automatically configures the component by applying the recommended configurations.</p>
+    /// <p> Automatically configures the component by applying the recommended configurations. </p>
     pub fn get_auto_config_enabled(&self) -> &::std::option::Option<bool> {
         &self.auto_config_enabled
     }

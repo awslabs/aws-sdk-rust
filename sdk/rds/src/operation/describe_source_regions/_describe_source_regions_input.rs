@@ -7,8 +7,7 @@ pub struct DescribeSourceRegionsInput {
     /// <p>The source Amazon Web Services Region name. For example, <code>us-east-1</code>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must specify a valid Amazon Web Services Region name.</p></li>
+    /// <li> <p>Must specify a valid Amazon Web Services Region name.</p> </li>
     /// </ul>
     pub region_name: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
@@ -24,8 +23,7 @@ impl DescribeSourceRegionsInput {
     /// <p>The source Amazon Web Services Region name. For example, <code>us-east-1</code>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must specify a valid Amazon Web Services Region name.</p></li>
+    /// <li> <p>Must specify a valid Amazon Web Services Region name.</p> </li>
     /// </ul>
     pub fn region_name(&self) -> ::std::option::Option<&str> {
         self.region_name.as_deref()
@@ -67,8 +65,7 @@ impl DescribeSourceRegionsInputBuilder {
     /// <p>The source Amazon Web Services Region name. For example, <code>us-east-1</code>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must specify a valid Amazon Web Services Region name.</p></li>
+    /// <li> <p>Must specify a valid Amazon Web Services Region name.</p> </li>
     /// </ul>
     pub fn region_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region_name = ::std::option::Option::Some(input.into());
@@ -77,8 +74,7 @@ impl DescribeSourceRegionsInputBuilder {
     /// <p>The source Amazon Web Services Region name. For example, <code>us-east-1</code>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must specify a valid Amazon Web Services Region name.</p></li>
+    /// <li> <p>Must specify a valid Amazon Web Services Region name.</p> </li>
     /// </ul>
     pub fn set_region_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region_name = input;
@@ -87,8 +83,7 @@ impl DescribeSourceRegionsInputBuilder {
     /// <p>The source Amazon Web Services Region name. For example, <code>us-east-1</code>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must specify a valid Amazon Web Services Region name.</p></li>
+    /// <li> <p>Must specify a valid Amazon Web Services Region name.</p> </li>
     /// </ul>
     pub fn get_region_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.region_name

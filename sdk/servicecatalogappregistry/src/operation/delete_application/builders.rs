@@ -108,17 +108,17 @@ impl DeleteApplicationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name, ID, or ARN of the application.</p>
+    /// <p> The name, ID, or ARN of the application. </p>
     pub fn application(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application(input.into());
         self
     }
-    /// <p>The name, ID, or ARN of the application.</p>
+    /// <p> The name, ID, or ARN of the application. </p>
     pub fn set_application(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application(input);
         self
     }
-    /// <p>The name, ID, or ARN of the application.</p>
+    /// <p> The name, ID, or ARN of the application. </p>
     pub fn get_application(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application()
     }

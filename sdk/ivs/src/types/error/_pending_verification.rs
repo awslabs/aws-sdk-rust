@@ -4,14 +4,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PendingVerification {
-    /// <p>Your account is pending verification.</p>
+    /// <p> Your account is pending verification. </p>
     pub exception_message: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl PendingVerification {
-    /// <p>Your account is pending verification.</p>
+    /// <p> Your account is pending verification. </p>
     pub fn exception_message(&self) -> ::std::option::Option<&str> {
         self.exception_message.as_deref()
     }
@@ -61,17 +61,17 @@ pub struct PendingVerificationBuilder {
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl PendingVerificationBuilder {
-    /// <p>Your account is pending verification.</p>
+    /// <p> Your account is pending verification. </p>
     pub fn exception_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.exception_message = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Your account is pending verification.</p>
+    /// <p> Your account is pending verification. </p>
     pub fn set_exception_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.exception_message = input;
         self
     }
-    /// <p>Your account is pending verification.</p>
+    /// <p> Your account is pending verification. </p>
     pub fn get_exception_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.exception_message
     }

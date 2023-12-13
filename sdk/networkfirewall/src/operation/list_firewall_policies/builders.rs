@@ -22,7 +22,7 @@ impl ListFirewallPoliciesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListFirewallPolicies`.
 ///
-/// <p>Retrieves the metadata for the firewall policies that you have defined. Depending on your setting for max results and the number of firewall policies, a single call might not return the full list.</p>
+/// <p>Retrieves the metadata for the firewall policies that you have defined. Depending on your setting for max results and the number of firewall policies, a single call might not return the full list. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListFirewallPoliciesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

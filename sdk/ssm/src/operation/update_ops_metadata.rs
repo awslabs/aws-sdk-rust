@@ -247,11 +247,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateOpsMeta
 pub enum UpdateOpsMetadataError {
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::types::error::InternalServerError),
-    /// <p>One of the arguments passed is invalid.</p>
+    /// <p>One of the arguments passed is invalid. </p>
     OpsMetadataInvalidArgumentException(crate::types::error::OpsMetadataInvalidArgumentException),
     /// <p>The OpsMetadata object exceeds the maximum number of OpsMetadata keys that you can assign to an application in Application Manager.</p>
     OpsMetadataKeyLimitExceededException(crate::types::error::OpsMetadataKeyLimitExceededException),
-    /// <p>The OpsMetadata object doesn't exist.</p>
+    /// <p>The OpsMetadata object doesn't exist. </p>
     OpsMetadataNotFoundException(crate::types::error::OpsMetadataNotFoundException),
     /// <p>The system is processing too many concurrent updates. Wait a few moments and try again.</p>
     OpsMetadataTooManyUpdatesException(crate::types::error::OpsMetadataTooManyUpdatesException),

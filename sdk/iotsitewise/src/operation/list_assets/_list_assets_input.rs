@@ -12,12 +12,10 @@ pub struct ListAssetsInput {
     pub asset_model_id: ::std::option::Option<::std::string::String>,
     /// <p>The filter for the requested list of assets. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ALL</code> – The list includes all assets for a given asset model ID. The <code>assetModelId</code> parameter is required if you filter by <code>ALL</code>.</p></li>
-    /// <li>
-    /// <p><code>TOP_LEVEL</code> – The list includes only top-level assets in the asset hierarchy tree.</p></li>
+    /// <li> <p> <code>ALL</code> – The list includes all assets for a given asset model ID. The <code>assetModelId</code> parameter is required if you filter by <code>ALL</code>.</p> </li>
+    /// <li> <p> <code>TOP_LEVEL</code> – The list includes only top-level assets in the asset hierarchy tree.</p> </li>
     /// </ul>
-    /// <p>Default: <code>ALL</code></p>
+    /// <p>Default: <code>ALL</code> </p>
     pub filter: ::std::option::Option<crate::types::ListAssetsFilter>,
 }
 impl ListAssetsInput {
@@ -36,12 +34,10 @@ impl ListAssetsInput {
     }
     /// <p>The filter for the requested list of assets. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ALL</code> – The list includes all assets for a given asset model ID. The <code>assetModelId</code> parameter is required if you filter by <code>ALL</code>.</p></li>
-    /// <li>
-    /// <p><code>TOP_LEVEL</code> – The list includes only top-level assets in the asset hierarchy tree.</p></li>
+    /// <li> <p> <code>ALL</code> – The list includes all assets for a given asset model ID. The <code>assetModelId</code> parameter is required if you filter by <code>ALL</code>.</p> </li>
+    /// <li> <p> <code>TOP_LEVEL</code> – The list includes only top-level assets in the asset hierarchy tree.</p> </li>
     /// </ul>
-    /// <p>Default: <code>ALL</code></p>
+    /// <p>Default: <code>ALL</code> </p>
     pub fn filter(&self) -> ::std::option::Option<&crate::types::ListAssetsFilter> {
         self.filter.as_ref()
     }
@@ -110,36 +106,30 @@ impl ListAssetsInputBuilder {
     }
     /// <p>The filter for the requested list of assets. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ALL</code> – The list includes all assets for a given asset model ID. The <code>assetModelId</code> parameter is required if you filter by <code>ALL</code>.</p></li>
-    /// <li>
-    /// <p><code>TOP_LEVEL</code> – The list includes only top-level assets in the asset hierarchy tree.</p></li>
+    /// <li> <p> <code>ALL</code> – The list includes all assets for a given asset model ID. The <code>assetModelId</code> parameter is required if you filter by <code>ALL</code>.</p> </li>
+    /// <li> <p> <code>TOP_LEVEL</code> – The list includes only top-level assets in the asset hierarchy tree.</p> </li>
     /// </ul>
-    /// <p>Default: <code>ALL</code></p>
+    /// <p>Default: <code>ALL</code> </p>
     pub fn filter(mut self, input: crate::types::ListAssetsFilter) -> Self {
         self.filter = ::std::option::Option::Some(input);
         self
     }
     /// <p>The filter for the requested list of assets. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ALL</code> – The list includes all assets for a given asset model ID. The <code>assetModelId</code> parameter is required if you filter by <code>ALL</code>.</p></li>
-    /// <li>
-    /// <p><code>TOP_LEVEL</code> – The list includes only top-level assets in the asset hierarchy tree.</p></li>
+    /// <li> <p> <code>ALL</code> – The list includes all assets for a given asset model ID. The <code>assetModelId</code> parameter is required if you filter by <code>ALL</code>.</p> </li>
+    /// <li> <p> <code>TOP_LEVEL</code> – The list includes only top-level assets in the asset hierarchy tree.</p> </li>
     /// </ul>
-    /// <p>Default: <code>ALL</code></p>
+    /// <p>Default: <code>ALL</code> </p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::ListAssetsFilter>) -> Self {
         self.filter = input;
         self
     }
     /// <p>The filter for the requested list of assets. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ALL</code> – The list includes all assets for a given asset model ID. The <code>assetModelId</code> parameter is required if you filter by <code>ALL</code>.</p></li>
-    /// <li>
-    /// <p><code>TOP_LEVEL</code> – The list includes only top-level assets in the asset hierarchy tree.</p></li>
+    /// <li> <p> <code>ALL</code> – The list includes all assets for a given asset model ID. The <code>assetModelId</code> parameter is required if you filter by <code>ALL</code>.</p> </li>
+    /// <li> <p> <code>TOP_LEVEL</code> – The list includes only top-level assets in the asset hierarchy tree.</p> </li>
     /// </ul>
-    /// <p>Default: <code>ALL</code></p>
+    /// <p>Default: <code>ALL</code> </p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::ListAssetsFilter> {
         &self.filter
     }

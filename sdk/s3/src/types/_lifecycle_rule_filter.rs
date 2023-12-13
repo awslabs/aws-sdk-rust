@@ -10,7 +10,7 @@ pub enum LifecycleRuleFilter {
     ObjectSizeGreaterThan(i64),
     /// <p>Maximum object size to which the rule applies.</p>
     ObjectSizeLessThan(i64),
-    /// <p>Prefix identifying one or more objects to which the rule applies.</p><important>
+    /// <p>Prefix identifying one or more objects to which the rule applies.</p> <important>
     /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
     Prefix(::std::string::String),

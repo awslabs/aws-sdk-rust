@@ -22,7 +22,7 @@ impl ReloadTablesInputBuilder {
 }
 /// Fluent builder constructing a request to `ReloadTables`.
 ///
-/// <p>Reloads the target database table with the source data.</p>
+/// <p>Reloads the target database table with the source data. </p>
 /// <p>You can only use this operation with a task in the <code>RUNNING</code> state, otherwise the service will throw an <code>InvalidResourceStateFault</code> exception.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ReloadTablesFluentBuilder {
@@ -109,17 +109,17 @@ impl ReloadTablesFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
+    /// <p>The Amazon Resource Name (ARN) of the replication task. </p>
     pub fn replication_task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.replication_task_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
+    /// <p>The Amazon Resource Name (ARN) of the replication task. </p>
     pub fn set_replication_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_replication_task_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
+    /// <p>The Amazon Resource Name (ARN) of the replication task. </p>
     pub fn get_replication_task_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_replication_task_arn()
     }
@@ -127,35 +127,35 @@ impl ReloadTablesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tables_to_reload`](Self::set_tables_to_reload).
     ///
-    /// <p>The name and schema of the table to be reloaded.</p>
+    /// <p>The name and schema of the table to be reloaded. </p>
     pub fn tables_to_reload(mut self, input: crate::types::TableToReload) -> Self {
         self.inner = self.inner.tables_to_reload(input);
         self
     }
-    /// <p>The name and schema of the table to be reloaded.</p>
+    /// <p>The name and schema of the table to be reloaded. </p>
     pub fn set_tables_to_reload(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TableToReload>>) -> Self {
         self.inner = self.inner.set_tables_to_reload(input);
         self
     }
-    /// <p>The name and schema of the table to be reloaded.</p>
+    /// <p>The name and schema of the table to be reloaded. </p>
     pub fn get_tables_to_reload(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TableToReload>> {
         self.inner.get_tables_to_reload()
     }
-    /// <p>Options for reload. Specify <code>data-reload</code> to reload the data and re-validate it if validation is enabled. Specify <code>validate-only</code> to re-validate the table. This option applies only when validation is enabled for the task.</p>
+    /// <p>Options for reload. Specify <code>data-reload</code> to reload the data and re-validate it if validation is enabled. Specify <code>validate-only</code> to re-validate the table. This option applies only when validation is enabled for the task. </p>
     /// <p>Valid values: data-reload, validate-only</p>
     /// <p>Default value is data-reload.</p>
     pub fn reload_option(mut self, input: crate::types::ReloadOptionValue) -> Self {
         self.inner = self.inner.reload_option(input);
         self
     }
-    /// <p>Options for reload. Specify <code>data-reload</code> to reload the data and re-validate it if validation is enabled. Specify <code>validate-only</code> to re-validate the table. This option applies only when validation is enabled for the task.</p>
+    /// <p>Options for reload. Specify <code>data-reload</code> to reload the data and re-validate it if validation is enabled. Specify <code>validate-only</code> to re-validate the table. This option applies only when validation is enabled for the task. </p>
     /// <p>Valid values: data-reload, validate-only</p>
     /// <p>Default value is data-reload.</p>
     pub fn set_reload_option(mut self, input: ::std::option::Option<crate::types::ReloadOptionValue>) -> Self {
         self.inner = self.inner.set_reload_option(input);
         self
     }
-    /// <p>Options for reload. Specify <code>data-reload</code> to reload the data and re-validate it if validation is enabled. Specify <code>validate-only</code> to re-validate the table. This option applies only when validation is enabled for the task.</p>
+    /// <p>Options for reload. Specify <code>data-reload</code> to reload the data and re-validate it if validation is enabled. Specify <code>validate-only</code> to re-validate the table. This option applies only when validation is enabled for the task. </p>
     /// <p>Valid values: data-reload, validate-only</p>
     /// <p>Default value is data-reload.</p>
     pub fn get_reload_option(&self) -> &::std::option::Option<crate::types::ReloadOptionValue> {

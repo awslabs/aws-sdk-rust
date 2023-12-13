@@ -13,7 +13,7 @@ pub struct Standard {
     /// <p>Whether the standard is enabled by default. When Security Hub is enabled from the console, if a standard is enabled by default, the check box for that standard is selected by default.</p>
     /// <p>When Security Hub is enabled using the <code>EnableSecurityHub</code> API operation, the standard is enabled by default unless <code>EnableDefaultStandards</code> is set to <code>false</code>.</p>
     pub enabled_by_default: ::std::option::Option<bool>,
-    /// <p>Provides details about the management of a standard.</p>
+    /// <p>Provides details about the management of a standard. </p>
     pub standards_managed_by: ::std::option::Option<crate::types::StandardsManagedBy>,
 }
 impl Standard {
@@ -34,7 +34,7 @@ impl Standard {
     pub fn enabled_by_default(&self) -> ::std::option::Option<bool> {
         self.enabled_by_default
     }
-    /// <p>Provides details about the management of a standard.</p>
+    /// <p>Provides details about the management of a standard. </p>
     pub fn standards_managed_by(&self) -> ::std::option::Option<&crate::types::StandardsManagedBy> {
         self.standards_managed_by.as_ref()
     }
@@ -116,17 +116,17 @@ impl StandardBuilder {
     pub fn get_enabled_by_default(&self) -> &::std::option::Option<bool> {
         &self.enabled_by_default
     }
-    /// <p>Provides details about the management of a standard.</p>
+    /// <p>Provides details about the management of a standard. </p>
     pub fn standards_managed_by(mut self, input: crate::types::StandardsManagedBy) -> Self {
         self.standards_managed_by = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Provides details about the management of a standard.</p>
+    /// <p>Provides details about the management of a standard. </p>
     pub fn set_standards_managed_by(mut self, input: ::std::option::Option<crate::types::StandardsManagedBy>) -> Self {
         self.standards_managed_by = input;
         self
     }
-    /// <p>Provides details about the management of a standard.</p>
+    /// <p>Provides details about the management of a standard. </p>
     pub fn get_standards_managed_by(&self) -> &::std::option::Option<crate::types::StandardsManagedBy> {
         &self.standards_managed_by
     }

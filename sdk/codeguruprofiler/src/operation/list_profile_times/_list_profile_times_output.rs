@@ -4,19 +4,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListProfileTimesOutput {
-    /// <p>The list of start times of the available profiles for the aggregation period in the specified time range.</p>
+    /// <p>The list of start times of the available profiles for the aggregation period in the specified time range. </p>
     pub profile_times: ::std::vec::Vec<crate::types::ProfileTime>,
-    /// <p>The <code>nextToken</code> value to include in a future <code>ListProfileTimes</code> request. When the results of a <code>ListProfileTimes</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListProfileTimes</code> request. When the results of a <code>ListProfileTimes</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListProfileTimesOutput {
-    /// <p>The list of start times of the available profiles for the aggregation period in the specified time range.</p>
+    /// <p>The list of start times of the available profiles for the aggregation period in the specified time range. </p>
     pub fn profile_times(&self) -> &[crate::types::ProfileTime] {
         use std::ops::Deref;
         self.profile_times.deref()
     }
-    /// <p>The <code>nextToken</code> value to include in a future <code>ListProfileTimes</code> request. When the results of a <code>ListProfileTimes</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListProfileTimes</code> request. When the results of a <code>ListProfileTimes</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -46,33 +46,33 @@ impl ListProfileTimesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_profile_times`](Self::set_profile_times).
     ///
-    /// <p>The list of start times of the available profiles for the aggregation period in the specified time range.</p>
+    /// <p>The list of start times of the available profiles for the aggregation period in the specified time range. </p>
     pub fn profile_times(mut self, input: crate::types::ProfileTime) -> Self {
         let mut v = self.profile_times.unwrap_or_default();
         v.push(input);
         self.profile_times = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of start times of the available profiles for the aggregation period in the specified time range.</p>
+    /// <p>The list of start times of the available profiles for the aggregation period in the specified time range. </p>
     pub fn set_profile_times(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProfileTime>>) -> Self {
         self.profile_times = input;
         self
     }
-    /// <p>The list of start times of the available profiles for the aggregation period in the specified time range.</p>
+    /// <p>The list of start times of the available profiles for the aggregation period in the specified time range. </p>
     pub fn get_profile_times(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProfileTime>> {
         &self.profile_times
     }
-    /// <p>The <code>nextToken</code> value to include in a future <code>ListProfileTimes</code> request. When the results of a <code>ListProfileTimes</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListProfileTimes</code> request. When the results of a <code>ListProfileTimes</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The <code>nextToken</code> value to include in a future <code>ListProfileTimes</code> request. When the results of a <code>ListProfileTimes</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListProfileTimes</code> request. When the results of a <code>ListProfileTimes</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The <code>nextToken</code> value to include in a future <code>ListProfileTimes</code> request. When the results of a <code>ListProfileTimes</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListProfileTimes</code> request. When the results of a <code>ListProfileTimes</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

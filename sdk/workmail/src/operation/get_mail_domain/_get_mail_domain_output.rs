@@ -9,7 +9,7 @@ pub struct GetMailDomainOutput {
     pub is_test_domain: bool,
     /// <p>Specifies whether the domain is the default domain for your organization.</p>
     pub is_default: bool,
-    /// <p>Indicates the status of the domain ownership verification.</p>
+    /// <p> Indicates the status of the domain ownership verification.</p>
     pub ownership_verification_status: ::std::option::Option<crate::types::DnsRecordVerificationStatus>,
     /// <p>Indicates the status of a DKIM verification.</p>
     pub dkim_verification_status: ::std::option::Option<crate::types::DnsRecordVerificationStatus>,
@@ -30,7 +30,7 @@ impl GetMailDomainOutput {
     pub fn is_default(&self) -> bool {
         self.is_default
     }
-    /// <p>Indicates the status of the domain ownership verification.</p>
+    /// <p> Indicates the status of the domain ownership verification.</p>
     pub fn ownership_verification_status(&self) -> ::std::option::Option<&crate::types::DnsRecordVerificationStatus> {
         self.ownership_verification_status.as_ref()
     }
@@ -111,17 +111,17 @@ impl GetMailDomainOutputBuilder {
     pub fn get_is_default(&self) -> &::std::option::Option<bool> {
         &self.is_default
     }
-    /// <p>Indicates the status of the domain ownership verification.</p>
+    /// <p> Indicates the status of the domain ownership verification.</p>
     pub fn ownership_verification_status(mut self, input: crate::types::DnsRecordVerificationStatus) -> Self {
         self.ownership_verification_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates the status of the domain ownership verification.</p>
+    /// <p> Indicates the status of the domain ownership verification.</p>
     pub fn set_ownership_verification_status(mut self, input: ::std::option::Option<crate::types::DnsRecordVerificationStatus>) -> Self {
         self.ownership_verification_status = input;
         self
     }
-    /// <p>Indicates the status of the domain ownership verification.</p>
+    /// <p> Indicates the status of the domain ownership verification.</p>
     pub fn get_ownership_verification_status(&self) -> &::std::option::Option<crate::types::DnsRecordVerificationStatus> {
         &self.ownership_verification_status
     }

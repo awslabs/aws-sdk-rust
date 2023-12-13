@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteCacheSecurityGroupInput {
-    /// <p>The name of the cache security group to delete.</p><note>
+    /// <p>The name of the cache security group to delete.</p> <note>
     /// <p>You cannot delete the default security group.</p>
     /// </note>
     pub cache_security_group_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteCacheSecurityGroupInput {
-    /// <p>The name of the cache security group to delete.</p><note>
+    /// <p>The name of the cache security group to delete.</p> <note>
     /// <p>You cannot delete the default security group.</p>
     /// </note>
     pub fn cache_security_group_name(&self) -> ::std::option::Option<&str> {
@@ -31,7 +31,7 @@ pub struct DeleteCacheSecurityGroupInputBuilder {
     pub(crate) cache_security_group_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteCacheSecurityGroupInputBuilder {
-    /// <p>The name of the cache security group to delete.</p><note>
+    /// <p>The name of the cache security group to delete.</p> <note>
     /// <p>You cannot delete the default security group.</p>
     /// </note>
     /// This field is required.
@@ -39,14 +39,14 @@ impl DeleteCacheSecurityGroupInputBuilder {
         self.cache_security_group_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the cache security group to delete.</p><note>
+    /// <p>The name of the cache security group to delete.</p> <note>
     /// <p>You cannot delete the default security group.</p>
     /// </note>
     pub fn set_cache_security_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cache_security_group_name = input;
         self
     }
-    /// <p>The name of the cache security group to delete.</p><note>
+    /// <p>The name of the cache security group to delete.</p> <note>
     /// <p>You cannot delete the default security group.</p>
     /// </note>
     pub fn get_cache_security_group_name(&self) -> &::std::option::Option<::std::string::String> {

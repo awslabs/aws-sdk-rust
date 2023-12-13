@@ -13,7 +13,7 @@ pub struct RobotApplicationConfig {
     /// <p>The upload configurations for the robot application.</p>
     pub upload_configurations: ::std::option::Option<::std::vec::Vec<crate::types::UploadConfiguration>>,
     /// <p>A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be recorded.</p>
-    /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p><important>
+    /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p> <important>
     /// <p>This API is no longer supported and will throw an error if used.</p>
     /// </important>
     #[deprecated(
@@ -22,7 +22,7 @@ pub struct RobotApplicationConfig {
     pub use_default_upload_configurations: ::std::option::Option<bool>,
     /// <p>Information about tools configured for the robot application.</p>
     pub tools: ::std::option::Option<::std::vec::Vec<crate::types::Tool>>,
-    /// <p>A Boolean indicating whether to use default robot application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p><important>
+    /// <p>A Boolean indicating whether to use default robot application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p> <important>
     /// <p>This API is no longer supported and will throw an error if used.</p>
     /// </important>
     #[deprecated(
@@ -51,7 +51,7 @@ impl RobotApplicationConfig {
         self.upload_configurations.as_deref().unwrap_or_default()
     }
     /// <p>A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be recorded.</p>
-    /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p><important>
+    /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p> <important>
     /// <p>This API is no longer supported and will throw an error if used.</p>
     /// </important>
     #[deprecated(
@@ -66,7 +66,7 @@ impl RobotApplicationConfig {
     pub fn tools(&self) -> &[crate::types::Tool] {
         self.tools.as_deref().unwrap_or_default()
     }
-    /// <p>A Boolean indicating whether to use default robot application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p><important>
+    /// <p>A Boolean indicating whether to use default robot application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p> <important>
     /// <p>This API is no longer supported and will throw an error if used.</p>
     /// </important>
     #[deprecated(
@@ -161,7 +161,7 @@ impl RobotApplicationConfigBuilder {
         &self.upload_configurations
     }
     /// <p>A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be recorded.</p>
-    /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p><important>
+    /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p> <important>
     /// <p>This API is no longer supported and will throw an error if used.</p>
     /// </important>
     #[deprecated(
@@ -172,7 +172,7 @@ impl RobotApplicationConfigBuilder {
         self
     }
     /// <p>A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be recorded.</p>
-    /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p><important>
+    /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p> <important>
     /// <p>This API is no longer supported and will throw an error if used.</p>
     /// </important>
     #[deprecated(
@@ -183,7 +183,7 @@ impl RobotApplicationConfigBuilder {
         self
     }
     /// <p>A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be recorded.</p>
-    /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p><important>
+    /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p> <important>
     /// <p>This API is no longer supported and will throw an error if used.</p>
     /// </important>
     #[deprecated(
@@ -212,7 +212,7 @@ impl RobotApplicationConfigBuilder {
     pub fn get_tools(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tool>> {
         &self.tools
     }
-    /// <p>A Boolean indicating whether to use default robot application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p><important>
+    /// <p>A Boolean indicating whether to use default robot application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p> <important>
     /// <p>This API is no longer supported and will throw an error if used.</p>
     /// </important>
     #[deprecated(
@@ -222,7 +222,7 @@ impl RobotApplicationConfigBuilder {
         self.use_default_tools = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A Boolean indicating whether to use default robot application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p><important>
+    /// <p>A Boolean indicating whether to use default robot application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p> <important>
     /// <p>This API is no longer supported and will throw an error if used.</p>
     /// </important>
     #[deprecated(
@@ -232,7 +232,7 @@ impl RobotApplicationConfigBuilder {
         self.use_default_tools = input;
         self
     }
-    /// <p>A Boolean indicating whether to use default robot application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p><important>
+    /// <p>A Boolean indicating whether to use default robot application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p> <important>
     /// <p>This API is no longer supported and will throw an error if used.</p>
     /// </important>
     #[deprecated(

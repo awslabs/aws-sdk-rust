@@ -4,17 +4,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IpAddressUpdate {
-    /// <p><i>Only when removing an IP address from a Resolver endpoint</i>: The ID of the IP address that you want to remove. To get this ID, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>.</p>
+    /// <p> <i>Only when removing an IP address from a Resolver endpoint</i>: The ID of the IP address that you want to remove. To get this ID, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>.</p>
     pub ip_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the subnet that includes the IP address that you want to update. To get this ID, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>.</p>
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The new IPv4 address.</p>
     pub ip: ::std::option::Option<::std::string::String>,
-    /// <p>The new IPv6 address.</p>
+    /// <p> The new IPv6 address. </p>
     pub ipv6: ::std::option::Option<::std::string::String>,
 }
 impl IpAddressUpdate {
-    /// <p><i>Only when removing an IP address from a Resolver endpoint</i>: The ID of the IP address that you want to remove. To get this ID, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>.</p>
+    /// <p> <i>Only when removing an IP address from a Resolver endpoint</i>: The ID of the IP address that you want to remove. To get this ID, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>.</p>
     pub fn ip_id(&self) -> ::std::option::Option<&str> {
         self.ip_id.as_deref()
     }
@@ -26,7 +26,7 @@ impl IpAddressUpdate {
     pub fn ip(&self) -> ::std::option::Option<&str> {
         self.ip.as_deref()
     }
-    /// <p>The new IPv6 address.</p>
+    /// <p> The new IPv6 address. </p>
     pub fn ipv6(&self) -> ::std::option::Option<&str> {
         self.ipv6.as_deref()
     }
@@ -48,17 +48,17 @@ pub struct IpAddressUpdateBuilder {
     pub(crate) ipv6: ::std::option::Option<::std::string::String>,
 }
 impl IpAddressUpdateBuilder {
-    /// <p><i>Only when removing an IP address from a Resolver endpoint</i>: The ID of the IP address that you want to remove. To get this ID, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>.</p>
+    /// <p> <i>Only when removing an IP address from a Resolver endpoint</i>: The ID of the IP address that you want to remove. To get this ID, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>.</p>
     pub fn ip_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p><i>Only when removing an IP address from a Resolver endpoint</i>: The ID of the IP address that you want to remove. To get this ID, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>.</p>
+    /// <p> <i>Only when removing an IP address from a Resolver endpoint</i>: The ID of the IP address that you want to remove. To get this ID, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>.</p>
     pub fn set_ip_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_id = input;
         self
     }
-    /// <p><i>Only when removing an IP address from a Resolver endpoint</i>: The ID of the IP address that you want to remove. To get this ID, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>.</p>
+    /// <p> <i>Only when removing an IP address from a Resolver endpoint</i>: The ID of the IP address that you want to remove. To get this ID, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>.</p>
     pub fn get_ip_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.ip_id
     }
@@ -90,17 +90,17 @@ impl IpAddressUpdateBuilder {
     pub fn get_ip(&self) -> &::std::option::Option<::std::string::String> {
         &self.ip
     }
-    /// <p>The new IPv6 address.</p>
+    /// <p> The new IPv6 address. </p>
     pub fn ipv6(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipv6 = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The new IPv6 address.</p>
+    /// <p> The new IPv6 address. </p>
     pub fn set_ipv6(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipv6 = input;
         self
     }
-    /// <p>The new IPv6 address.</p>
+    /// <p> The new IPv6 address. </p>
     pub fn get_ipv6(&self) -> &::std::option::Option<::std::string::String> {
         &self.ipv6
     }

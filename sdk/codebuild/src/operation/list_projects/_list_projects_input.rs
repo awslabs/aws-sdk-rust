@@ -5,21 +5,16 @@
 pub struct ListProjectsInput {
     /// <p>The criterion to be used to list build project names. Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATED_TIME</code>: List based on when each build project was created.</p></li>
-    /// <li>
-    /// <p><code>LAST_MODIFIED_TIME</code>: List based on when information about each build project was last changed.</p></li>
-    /// <li>
-    /// <p><code>NAME</code>: List based on each build project's name.</p></li>
+    /// <li> <p> <code>CREATED_TIME</code>: List based on when each build project was created.</p> </li>
+    /// <li> <p> <code>LAST_MODIFIED_TIME</code>: List based on when information about each build project was last changed.</p> </li>
+    /// <li> <p> <code>NAME</code>: List based on each build project's name.</p> </li>
     /// </ul>
     /// <p>Use <code>sortOrder</code> to specify in what order to list the build project names based on the preceding criteria.</p>
     pub sort_by: ::std::option::Option<crate::types::ProjectSortByType>,
     /// <p>The order in which to list build projects. Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ASCENDING</code>: List in ascending order.</p></li>
-    /// <li>
-    /// <p><code>DESCENDING</code>: List in descending order.</p></li>
+    /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li>
+    /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li>
     /// </ul>
     /// <p>Use <code>sortBy</code> to specify the criterion to be used to list build project names.</p>
     pub sort_order: ::std::option::Option<crate::types::SortOrderType>,
@@ -29,12 +24,9 @@ pub struct ListProjectsInput {
 impl ListProjectsInput {
     /// <p>The criterion to be used to list build project names. Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATED_TIME</code>: List based on when each build project was created.</p></li>
-    /// <li>
-    /// <p><code>LAST_MODIFIED_TIME</code>: List based on when information about each build project was last changed.</p></li>
-    /// <li>
-    /// <p><code>NAME</code>: List based on each build project's name.</p></li>
+    /// <li> <p> <code>CREATED_TIME</code>: List based on when each build project was created.</p> </li>
+    /// <li> <p> <code>LAST_MODIFIED_TIME</code>: List based on when information about each build project was last changed.</p> </li>
+    /// <li> <p> <code>NAME</code>: List based on each build project's name.</p> </li>
     /// </ul>
     /// <p>Use <code>sortOrder</code> to specify in what order to list the build project names based on the preceding criteria.</p>
     pub fn sort_by(&self) -> ::std::option::Option<&crate::types::ProjectSortByType> {
@@ -42,10 +34,8 @@ impl ListProjectsInput {
     }
     /// <p>The order in which to list build projects. Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ASCENDING</code>: List in ascending order.</p></li>
-    /// <li>
-    /// <p><code>DESCENDING</code>: List in descending order.</p></li>
+    /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li>
+    /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li>
     /// </ul>
     /// <p>Use <code>sortBy</code> to specify the criterion to be used to list build project names.</p>
     pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrderType> {
@@ -74,12 +64,9 @@ pub struct ListProjectsInputBuilder {
 impl ListProjectsInputBuilder {
     /// <p>The criterion to be used to list build project names. Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATED_TIME</code>: List based on when each build project was created.</p></li>
-    /// <li>
-    /// <p><code>LAST_MODIFIED_TIME</code>: List based on when information about each build project was last changed.</p></li>
-    /// <li>
-    /// <p><code>NAME</code>: List based on each build project's name.</p></li>
+    /// <li> <p> <code>CREATED_TIME</code>: List based on when each build project was created.</p> </li>
+    /// <li> <p> <code>LAST_MODIFIED_TIME</code>: List based on when information about each build project was last changed.</p> </li>
+    /// <li> <p> <code>NAME</code>: List based on each build project's name.</p> </li>
     /// </ul>
     /// <p>Use <code>sortOrder</code> to specify in what order to list the build project names based on the preceding criteria.</p>
     pub fn sort_by(mut self, input: crate::types::ProjectSortByType) -> Self {
@@ -88,12 +75,9 @@ impl ListProjectsInputBuilder {
     }
     /// <p>The criterion to be used to list build project names. Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATED_TIME</code>: List based on when each build project was created.</p></li>
-    /// <li>
-    /// <p><code>LAST_MODIFIED_TIME</code>: List based on when information about each build project was last changed.</p></li>
-    /// <li>
-    /// <p><code>NAME</code>: List based on each build project's name.</p></li>
+    /// <li> <p> <code>CREATED_TIME</code>: List based on when each build project was created.</p> </li>
+    /// <li> <p> <code>LAST_MODIFIED_TIME</code>: List based on when information about each build project was last changed.</p> </li>
+    /// <li> <p> <code>NAME</code>: List based on each build project's name.</p> </li>
     /// </ul>
     /// <p>Use <code>sortOrder</code> to specify in what order to list the build project names based on the preceding criteria.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ProjectSortByType>) -> Self {
@@ -102,12 +86,9 @@ impl ListProjectsInputBuilder {
     }
     /// <p>The criterion to be used to list build project names. Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATED_TIME</code>: List based on when each build project was created.</p></li>
-    /// <li>
-    /// <p><code>LAST_MODIFIED_TIME</code>: List based on when information about each build project was last changed.</p></li>
-    /// <li>
-    /// <p><code>NAME</code>: List based on each build project's name.</p></li>
+    /// <li> <p> <code>CREATED_TIME</code>: List based on when each build project was created.</p> </li>
+    /// <li> <p> <code>LAST_MODIFIED_TIME</code>: List based on when information about each build project was last changed.</p> </li>
+    /// <li> <p> <code>NAME</code>: List based on each build project's name.</p> </li>
     /// </ul>
     /// <p>Use <code>sortOrder</code> to specify in what order to list the build project names based on the preceding criteria.</p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::ProjectSortByType> {
@@ -115,10 +96,8 @@ impl ListProjectsInputBuilder {
     }
     /// <p>The order in which to list build projects. Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ASCENDING</code>: List in ascending order.</p></li>
-    /// <li>
-    /// <p><code>DESCENDING</code>: List in descending order.</p></li>
+    /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li>
+    /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li>
     /// </ul>
     /// <p>Use <code>sortBy</code> to specify the criterion to be used to list build project names.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrderType) -> Self {
@@ -127,10 +106,8 @@ impl ListProjectsInputBuilder {
     }
     /// <p>The order in which to list build projects. Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ASCENDING</code>: List in ascending order.</p></li>
-    /// <li>
-    /// <p><code>DESCENDING</code>: List in descending order.</p></li>
+    /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li>
+    /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li>
     /// </ul>
     /// <p>Use <code>sortBy</code> to specify the criterion to be used to list build project names.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrderType>) -> Self {
@@ -139,10 +116,8 @@ impl ListProjectsInputBuilder {
     }
     /// <p>The order in which to list build projects. Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ASCENDING</code>: List in ascending order.</p></li>
-    /// <li>
-    /// <p><code>DESCENDING</code>: List in descending order.</p></li>
+    /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li>
+    /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li>
     /// </ul>
     /// <p>Use <code>sortBy</code> to specify the criterion to be used to list build project names.</p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrderType> {

@@ -7,7 +7,7 @@ pub struct GetInsightEventsInput {
     pub insight_id: ::std::option::Option<::std::string::String>,
     /// <p>Used to retrieve at most the specified value of events.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>Specify the pagination token returned by a previous request to retrieve the next page of events.</p>
+    /// <p>Specify the pagination token returned by a previous request to retrieve the next page of events. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl GetInsightEventsInput {
@@ -19,7 +19,7 @@ impl GetInsightEventsInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>Specify the pagination token returned by a previous request to retrieve the next page of events.</p>
+    /// <p>Specify the pagination token returned by a previous request to retrieve the next page of events. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -69,17 +69,17 @@ impl GetInsightEventsInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p>Specify the pagination token returned by a previous request to retrieve the next page of events.</p>
+    /// <p>Specify the pagination token returned by a previous request to retrieve the next page of events. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specify the pagination token returned by a previous request to retrieve the next page of events.</p>
+    /// <p>Specify the pagination token returned by a previous request to retrieve the next page of events. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>Specify the pagination token returned by a previous request to retrieve the next page of events.</p>
+    /// <p>Specify the pagination token returned by a previous request to retrieve the next page of events. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

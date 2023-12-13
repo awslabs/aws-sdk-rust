@@ -11,20 +11,13 @@ pub struct DescribeTemplateDefinitionOutput {
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::TemplateError>>,
     /// <p>Status associated with the template.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATION_IN_PROGRESS</code></p></li>
-    /// <li>
-    /// <p><code>CREATION_SUCCESSFUL</code></p></li>
-    /// <li>
-    /// <p><code>CREATION_FAILED</code></p></li>
-    /// <li>
-    /// <p><code>UPDATE_IN_PROGRESS</code></p></li>
-    /// <li>
-    /// <p><code>UPDATE_SUCCESSFUL</code></p></li>
-    /// <li>
-    /// <p><code>UPDATE_FAILED</code></p></li>
-    /// <li>
-    /// <p><code>DELETED</code></p></li>
+    /// <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li>
+    /// <li> <p> <code>CREATION_FAILED</code> </p> </li>
+    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li>
+    /// <li> <p> <code>UPDATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>DELETED</code> </p> </li>
     /// </ul>
     pub resource_status: ::std::option::Option<crate::types::ResourceStatus>,
     /// <p>The ARN of the theme of the template.</p>
@@ -55,20 +48,13 @@ impl DescribeTemplateDefinitionOutput {
     }
     /// <p>Status associated with the template.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATION_IN_PROGRESS</code></p></li>
-    /// <li>
-    /// <p><code>CREATION_SUCCESSFUL</code></p></li>
-    /// <li>
-    /// <p><code>CREATION_FAILED</code></p></li>
-    /// <li>
-    /// <p><code>UPDATE_IN_PROGRESS</code></p></li>
-    /// <li>
-    /// <p><code>UPDATE_SUCCESSFUL</code></p></li>
-    /// <li>
-    /// <p><code>UPDATE_FAILED</code></p></li>
-    /// <li>
-    /// <p><code>DELETED</code></p></li>
+    /// <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li>
+    /// <li> <p> <code>CREATION_FAILED</code> </p> </li>
+    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li>
+    /// <li> <p> <code>UPDATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>DELETED</code> </p> </li>
     /// </ul>
     pub fn resource_status(&self) -> ::std::option::Option<&crate::types::ResourceStatus> {
         self.resource_status.as_ref()
@@ -168,20 +154,13 @@ impl DescribeTemplateDefinitionOutputBuilder {
     }
     /// <p>Status associated with the template.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATION_IN_PROGRESS</code></p></li>
-    /// <li>
-    /// <p><code>CREATION_SUCCESSFUL</code></p></li>
-    /// <li>
-    /// <p><code>CREATION_FAILED</code></p></li>
-    /// <li>
-    /// <p><code>UPDATE_IN_PROGRESS</code></p></li>
-    /// <li>
-    /// <p><code>UPDATE_SUCCESSFUL</code></p></li>
-    /// <li>
-    /// <p><code>UPDATE_FAILED</code></p></li>
-    /// <li>
-    /// <p><code>DELETED</code></p></li>
+    /// <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li>
+    /// <li> <p> <code>CREATION_FAILED</code> </p> </li>
+    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li>
+    /// <li> <p> <code>UPDATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>DELETED</code> </p> </li>
     /// </ul>
     pub fn resource_status(mut self, input: crate::types::ResourceStatus) -> Self {
         self.resource_status = ::std::option::Option::Some(input);
@@ -189,20 +168,13 @@ impl DescribeTemplateDefinitionOutputBuilder {
     }
     /// <p>Status associated with the template.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATION_IN_PROGRESS</code></p></li>
-    /// <li>
-    /// <p><code>CREATION_SUCCESSFUL</code></p></li>
-    /// <li>
-    /// <p><code>CREATION_FAILED</code></p></li>
-    /// <li>
-    /// <p><code>UPDATE_IN_PROGRESS</code></p></li>
-    /// <li>
-    /// <p><code>UPDATE_SUCCESSFUL</code></p></li>
-    /// <li>
-    /// <p><code>UPDATE_FAILED</code></p></li>
-    /// <li>
-    /// <p><code>DELETED</code></p></li>
+    /// <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li>
+    /// <li> <p> <code>CREATION_FAILED</code> </p> </li>
+    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li>
+    /// <li> <p> <code>UPDATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>DELETED</code> </p> </li>
     /// </ul>
     pub fn set_resource_status(mut self, input: ::std::option::Option<crate::types::ResourceStatus>) -> Self {
         self.resource_status = input;
@@ -210,20 +182,13 @@ impl DescribeTemplateDefinitionOutputBuilder {
     }
     /// <p>Status associated with the template.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATION_IN_PROGRESS</code></p></li>
-    /// <li>
-    /// <p><code>CREATION_SUCCESSFUL</code></p></li>
-    /// <li>
-    /// <p><code>CREATION_FAILED</code></p></li>
-    /// <li>
-    /// <p><code>UPDATE_IN_PROGRESS</code></p></li>
-    /// <li>
-    /// <p><code>UPDATE_SUCCESSFUL</code></p></li>
-    /// <li>
-    /// <p><code>UPDATE_FAILED</code></p></li>
-    /// <li>
-    /// <p><code>DELETED</code></p></li>
+    /// <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li>
+    /// <li> <p> <code>CREATION_FAILED</code> </p> </li>
+    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li>
+    /// <li> <p> <code>UPDATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>DELETED</code> </p> </li>
     /// </ul>
     pub fn get_resource_status(&self) -> &::std::option::Option<crate::types::ResourceStatus> {
         &self.resource_status

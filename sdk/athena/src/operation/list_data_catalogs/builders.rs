@@ -22,7 +22,7 @@ impl ListDataCatalogsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListDataCatalogs`.
 ///
-/// <p>Lists the data catalogs in the current Amazon Web Services account.</p><note>
+/// <p>Lists the data catalogs in the current Amazon Web Services account.</p> <note>
 /// <p>In the Athena console, data catalogs are listed as "data sources" on the <b>Data sources</b> page under the <b>Data source name</b> column.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

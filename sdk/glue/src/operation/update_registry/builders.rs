@@ -22,7 +22,7 @@ impl UpdateRegistryInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateRegistry`.
 ///
-/// <p>Updates an existing registry which is used to hold a collection of schemas. The updated properties relate to the registry, and do not modify any of the schemas within the registry.</p>
+/// <p>Updates an existing registry which is used to hold a collection of schemas. The updated properties relate to the registry, and do not modify any of the schemas within the registry. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateRegistryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

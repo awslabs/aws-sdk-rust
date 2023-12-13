@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAggregateDiscoveredResourcesInput {
-    /// <p>The name of the configuration aggregator.</p>
+    /// <p>The name of the configuration aggregator. </p>
     pub configuration_aggregator_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of resources that you want Config to list in the response.</p>
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
@@ -15,7 +15,7 @@ pub struct ListAggregateDiscoveredResourcesInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListAggregateDiscoveredResourcesInput {
-    /// <p>The name of the configuration aggregator.</p>
+    /// <p>The name of the configuration aggregator. </p>
     pub fn configuration_aggregator_name(&self) -> ::std::option::Option<&str> {
         self.configuration_aggregator_name.as_deref()
     }
@@ -54,18 +54,18 @@ pub struct ListAggregateDiscoveredResourcesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListAggregateDiscoveredResourcesInputBuilder {
-    /// <p>The name of the configuration aggregator.</p>
+    /// <p>The name of the configuration aggregator. </p>
     /// This field is required.
     pub fn configuration_aggregator_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_aggregator_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the configuration aggregator.</p>
+    /// <p>The name of the configuration aggregator. </p>
     pub fn set_configuration_aggregator_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_aggregator_name = input;
         self
     }
-    /// <p>The name of the configuration aggregator.</p>
+    /// <p>The name of the configuration aggregator. </p>
     pub fn get_configuration_aggregator_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.configuration_aggregator_name
     }

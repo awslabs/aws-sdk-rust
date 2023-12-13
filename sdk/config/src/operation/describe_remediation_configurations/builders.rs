@@ -112,17 +112,17 @@ impl DescribeRemediationConfigurationsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_config_rule_names`](Self::set_config_rule_names).
     ///
-    /// <p>A list of Config rule names of remediation configurations for which you want details.</p>
+    /// <p>A list of Config rule names of remediation configurations for which you want details. </p>
     pub fn config_rule_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.config_rule_names(input.into());
         self
     }
-    /// <p>A list of Config rule names of remediation configurations for which you want details.</p>
+    /// <p>A list of Config rule names of remediation configurations for which you want details. </p>
     pub fn set_config_rule_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_config_rule_names(input);
         self
     }
-    /// <p>A list of Config rule names of remediation configurations for which you want details.</p>
+    /// <p>A list of Config rule names of remediation configurations for which you want details. </p>
     pub fn get_config_rule_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_config_rule_names()
     }

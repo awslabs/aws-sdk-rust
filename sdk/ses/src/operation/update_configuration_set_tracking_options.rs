@@ -258,10 +258,8 @@ pub enum UpdateConfigurationSetTrackingOptionsError {
     ConfigurationSetDoesNotExistException(crate::types::error::ConfigurationSetDoesNotExistException),
     /// <p>Indicates that the custom domain to be used for open and click tracking redirects is invalid. This error appears most often in the following situations:</p>
     /// <ul>
-    /// <li>
-    /// <p>When the tracking domain you specified is not verified in Amazon SES.</p></li>
-    /// <li>
-    /// <p>When the tracking domain you specified is not a valid domain or subdomain.</p></li>
+    /// <li> <p>When the tracking domain you specified is not verified in Amazon SES.</p> </li>
+    /// <li> <p>When the tracking domain you specified is not a valid domain or subdomain.</p> </li>
     /// </ul>
     InvalidTrackingOptionsException(crate::types::error::InvalidTrackingOptionsException),
     /// <p>Indicates that the TrackingOptions object you specified does not exist.</p>

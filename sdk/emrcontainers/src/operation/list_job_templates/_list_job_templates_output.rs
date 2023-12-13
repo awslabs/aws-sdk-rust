@@ -5,7 +5,7 @@
 pub struct ListJobTemplatesOutput {
     /// <p>This output lists information about the specified job templates.</p>
     pub templates: ::std::option::Option<::std::vec::Vec<crate::types::JobTemplate>>,
-    /// <p>This output displays the token for the next set of job templates.</p>
+    /// <p> This output displays the token for the next set of job templates.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -16,7 +16,7 @@ impl ListJobTemplatesOutput {
     pub fn templates(&self) -> &[crate::types::JobTemplate] {
         self.templates.as_deref().unwrap_or_default()
     }
-    /// <p>This output displays the token for the next set of job templates.</p>
+    /// <p> This output displays the token for the next set of job templates.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -62,17 +62,17 @@ impl ListJobTemplatesOutputBuilder {
     pub fn get_templates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobTemplate>> {
         &self.templates
     }
-    /// <p>This output displays the token for the next set of job templates.</p>
+    /// <p> This output displays the token for the next set of job templates.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>This output displays the token for the next set of job templates.</p>
+    /// <p> This output displays the token for the next set of job templates.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>This output displays the token for the next set of job templates.</p>
+    /// <p> This output displays the token for the next set of job templates.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

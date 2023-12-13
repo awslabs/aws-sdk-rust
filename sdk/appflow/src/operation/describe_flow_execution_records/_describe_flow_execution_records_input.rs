@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFlowExecutionRecordsInput {
-    /// <p>The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only.</p>
+    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     pub flow_name: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the maximum number of items that should be returned in the result set. The default for <code>maxResults</code> is 20 (for all paginated API operations).</p>
+    /// <p> Specifies the maximum number of items that should be returned in the result set. The default for <code>maxResults</code> is 20 (for all paginated API operations). </p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>The pagination token for the next page of data.</p>
+    /// <p> The pagination token for the next page of data. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeFlowExecutionRecordsInput {
-    /// <p>The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only.</p>
+    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     pub fn flow_name(&self) -> ::std::option::Option<&str> {
         self.flow_name.as_deref()
     }
-    /// <p>Specifies the maximum number of items that should be returned in the result set. The default for <code>maxResults</code> is 20 (for all paginated API operations).</p>
+    /// <p> Specifies the maximum number of items that should be returned in the result set. The default for <code>maxResults</code> is 20 (for all paginated API operations). </p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The pagination token for the next page of data.</p>
+    /// <p> The pagination token for the next page of data. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -40,46 +40,46 @@ pub struct DescribeFlowExecutionRecordsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeFlowExecutionRecordsInputBuilder {
-    /// <p>The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only.</p>
+    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     /// This field is required.
     pub fn flow_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only.</p>
+    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     pub fn set_flow_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.flow_name = input;
         self
     }
-    /// <p>The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only.</p>
+    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     pub fn get_flow_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.flow_name
     }
-    /// <p>Specifies the maximum number of items that should be returned in the result set. The default for <code>maxResults</code> is 20 (for all paginated API operations).</p>
+    /// <p> Specifies the maximum number of items that should be returned in the result set. The default for <code>maxResults</code> is 20 (for all paginated API operations). </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the maximum number of items that should be returned in the result set. The default for <code>maxResults</code> is 20 (for all paginated API operations).</p>
+    /// <p> Specifies the maximum number of items that should be returned in the result set. The default for <code>maxResults</code> is 20 (for all paginated API operations). </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>Specifies the maximum number of items that should be returned in the result set. The default for <code>maxResults</code> is 20 (for all paginated API operations).</p>
+    /// <p> Specifies the maximum number of items that should be returned in the result set. The default for <code>maxResults</code> is 20 (for all paginated API operations). </p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p>The pagination token for the next page of data.</p>
+    /// <p> The pagination token for the next page of data. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The pagination token for the next page of data.</p>
+    /// <p> The pagination token for the next page of data. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The pagination token for the next page of data.</p>
+    /// <p> The pagination token for the next page of data. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

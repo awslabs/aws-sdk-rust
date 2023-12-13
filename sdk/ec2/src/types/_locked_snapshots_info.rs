@@ -10,14 +10,10 @@ pub struct LockedSnapshotsInfo {
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>The state of the snapshot lock. Valid states include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>compliance-cooloff</code> - The snapshot has been locked in compliance mode but it is still within the cooling-off period. The snapshot can't be deleted, but it can be unlocked and the lock settings can be modified by users with appropriate permissions.</p></li>
-    /// <li>
-    /// <p><code>governance</code> - The snapshot is locked in governance mode. The snapshot can't be deleted, but it can be unlocked and the lock settings can be modified by users with appropriate permissions.</p></li>
-    /// <li>
-    /// <p><code>compliance</code> - The snapshot is locked in compliance mode and the cooling-off period has expired. The snapshot can't be unlocked or deleted. The lock duration can only be increased by users with appropriate permissions.</p></li>
-    /// <li>
-    /// <p><code>expired</code> - The snapshot was locked in compliance or governance mode but the lock duration has expired. The snapshot is not locked and can be deleted.</p></li>
+    /// <li> <p> <code>compliance-cooloff</code> - The snapshot has been locked in compliance mode but it is still within the cooling-off period. The snapshot can't be deleted, but it can be unlocked and the lock settings can be modified by users with appropriate permissions.</p> </li>
+    /// <li> <p> <code>governance</code> - The snapshot is locked in governance mode. The snapshot can't be deleted, but it can be unlocked and the lock settings can be modified by users with appropriate permissions.</p> </li>
+    /// <li> <p> <code>compliance</code> - The snapshot is locked in compliance mode and the cooling-off period has expired. The snapshot can't be unlocked or deleted. The lock duration can only be increased by users with appropriate permissions.</p> </li>
+    /// <li> <p> <code>expired</code> - The snapshot was locked in compliance or governance mode but the lock duration has expired. The snapshot is not locked and can be deleted.</p> </li>
     /// </ul>
     pub lock_state: ::std::option::Option<crate::types::LockState>,
     /// <p>The period of time for which the snapshot is locked, in days.</p>
@@ -45,14 +41,10 @@ impl LockedSnapshotsInfo {
     }
     /// <p>The state of the snapshot lock. Valid states include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>compliance-cooloff</code> - The snapshot has been locked in compliance mode but it is still within the cooling-off period. The snapshot can't be deleted, but it can be unlocked and the lock settings can be modified by users with appropriate permissions.</p></li>
-    /// <li>
-    /// <p><code>governance</code> - The snapshot is locked in governance mode. The snapshot can't be deleted, but it can be unlocked and the lock settings can be modified by users with appropriate permissions.</p></li>
-    /// <li>
-    /// <p><code>compliance</code> - The snapshot is locked in compliance mode and the cooling-off period has expired. The snapshot can't be unlocked or deleted. The lock duration can only be increased by users with appropriate permissions.</p></li>
-    /// <li>
-    /// <p><code>expired</code> - The snapshot was locked in compliance or governance mode but the lock duration has expired. The snapshot is not locked and can be deleted.</p></li>
+    /// <li> <p> <code>compliance-cooloff</code> - The snapshot has been locked in compliance mode but it is still within the cooling-off period. The snapshot can't be deleted, but it can be unlocked and the lock settings can be modified by users with appropriate permissions.</p> </li>
+    /// <li> <p> <code>governance</code> - The snapshot is locked in governance mode. The snapshot can't be deleted, but it can be unlocked and the lock settings can be modified by users with appropriate permissions.</p> </li>
+    /// <li> <p> <code>compliance</code> - The snapshot is locked in compliance mode and the cooling-off period has expired. The snapshot can't be unlocked or deleted. The lock duration can only be increased by users with appropriate permissions.</p> </li>
+    /// <li> <p> <code>expired</code> - The snapshot was locked in compliance or governance mode but the lock duration has expired. The snapshot is not locked and can be deleted.</p> </li>
     /// </ul>
     pub fn lock_state(&self) -> ::std::option::Option<&crate::types::LockState> {
         self.lock_state.as_ref()
@@ -135,14 +127,10 @@ impl LockedSnapshotsInfoBuilder {
     }
     /// <p>The state of the snapshot lock. Valid states include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>compliance-cooloff</code> - The snapshot has been locked in compliance mode but it is still within the cooling-off period. The snapshot can't be deleted, but it can be unlocked and the lock settings can be modified by users with appropriate permissions.</p></li>
-    /// <li>
-    /// <p><code>governance</code> - The snapshot is locked in governance mode. The snapshot can't be deleted, but it can be unlocked and the lock settings can be modified by users with appropriate permissions.</p></li>
-    /// <li>
-    /// <p><code>compliance</code> - The snapshot is locked in compliance mode and the cooling-off period has expired. The snapshot can't be unlocked or deleted. The lock duration can only be increased by users with appropriate permissions.</p></li>
-    /// <li>
-    /// <p><code>expired</code> - The snapshot was locked in compliance or governance mode but the lock duration has expired. The snapshot is not locked and can be deleted.</p></li>
+    /// <li> <p> <code>compliance-cooloff</code> - The snapshot has been locked in compliance mode but it is still within the cooling-off period. The snapshot can't be deleted, but it can be unlocked and the lock settings can be modified by users with appropriate permissions.</p> </li>
+    /// <li> <p> <code>governance</code> - The snapshot is locked in governance mode. The snapshot can't be deleted, but it can be unlocked and the lock settings can be modified by users with appropriate permissions.</p> </li>
+    /// <li> <p> <code>compliance</code> - The snapshot is locked in compliance mode and the cooling-off period has expired. The snapshot can't be unlocked or deleted. The lock duration can only be increased by users with appropriate permissions.</p> </li>
+    /// <li> <p> <code>expired</code> - The snapshot was locked in compliance or governance mode but the lock duration has expired. The snapshot is not locked and can be deleted.</p> </li>
     /// </ul>
     pub fn lock_state(mut self, input: crate::types::LockState) -> Self {
         self.lock_state = ::std::option::Option::Some(input);
@@ -150,14 +138,10 @@ impl LockedSnapshotsInfoBuilder {
     }
     /// <p>The state of the snapshot lock. Valid states include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>compliance-cooloff</code> - The snapshot has been locked in compliance mode but it is still within the cooling-off period. The snapshot can't be deleted, but it can be unlocked and the lock settings can be modified by users with appropriate permissions.</p></li>
-    /// <li>
-    /// <p><code>governance</code> - The snapshot is locked in governance mode. The snapshot can't be deleted, but it can be unlocked and the lock settings can be modified by users with appropriate permissions.</p></li>
-    /// <li>
-    /// <p><code>compliance</code> - The snapshot is locked in compliance mode and the cooling-off period has expired. The snapshot can't be unlocked or deleted. The lock duration can only be increased by users with appropriate permissions.</p></li>
-    /// <li>
-    /// <p><code>expired</code> - The snapshot was locked in compliance or governance mode but the lock duration has expired. The snapshot is not locked and can be deleted.</p></li>
+    /// <li> <p> <code>compliance-cooloff</code> - The snapshot has been locked in compliance mode but it is still within the cooling-off period. The snapshot can't be deleted, but it can be unlocked and the lock settings can be modified by users with appropriate permissions.</p> </li>
+    /// <li> <p> <code>governance</code> - The snapshot is locked in governance mode. The snapshot can't be deleted, but it can be unlocked and the lock settings can be modified by users with appropriate permissions.</p> </li>
+    /// <li> <p> <code>compliance</code> - The snapshot is locked in compliance mode and the cooling-off period has expired. The snapshot can't be unlocked or deleted. The lock duration can only be increased by users with appropriate permissions.</p> </li>
+    /// <li> <p> <code>expired</code> - The snapshot was locked in compliance or governance mode but the lock duration has expired. The snapshot is not locked and can be deleted.</p> </li>
     /// </ul>
     pub fn set_lock_state(mut self, input: ::std::option::Option<crate::types::LockState>) -> Self {
         self.lock_state = input;
@@ -165,14 +149,10 @@ impl LockedSnapshotsInfoBuilder {
     }
     /// <p>The state of the snapshot lock. Valid states include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>compliance-cooloff</code> - The snapshot has been locked in compliance mode but it is still within the cooling-off period. The snapshot can't be deleted, but it can be unlocked and the lock settings can be modified by users with appropriate permissions.</p></li>
-    /// <li>
-    /// <p><code>governance</code> - The snapshot is locked in governance mode. The snapshot can't be deleted, but it can be unlocked and the lock settings can be modified by users with appropriate permissions.</p></li>
-    /// <li>
-    /// <p><code>compliance</code> - The snapshot is locked in compliance mode and the cooling-off period has expired. The snapshot can't be unlocked or deleted. The lock duration can only be increased by users with appropriate permissions.</p></li>
-    /// <li>
-    /// <p><code>expired</code> - The snapshot was locked in compliance or governance mode but the lock duration has expired. The snapshot is not locked and can be deleted.</p></li>
+    /// <li> <p> <code>compliance-cooloff</code> - The snapshot has been locked in compliance mode but it is still within the cooling-off period. The snapshot can't be deleted, but it can be unlocked and the lock settings can be modified by users with appropriate permissions.</p> </li>
+    /// <li> <p> <code>governance</code> - The snapshot is locked in governance mode. The snapshot can't be deleted, but it can be unlocked and the lock settings can be modified by users with appropriate permissions.</p> </li>
+    /// <li> <p> <code>compliance</code> - The snapshot is locked in compliance mode and the cooling-off period has expired. The snapshot can't be unlocked or deleted. The lock duration can only be increased by users with appropriate permissions.</p> </li>
+    /// <li> <p> <code>expired</code> - The snapshot was locked in compliance or governance mode but the lock duration has expired. The snapshot is not locked and can be deleted.</p> </li>
     /// </ul>
     pub fn get_lock_state(&self) -> &::std::option::Option<crate::types::LockState> {
         &self.lock_state

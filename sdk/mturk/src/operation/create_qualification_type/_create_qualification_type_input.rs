@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateQualificationTypeInput {
-    /// <p>The name you give to the Qualification type. The type name is used to represent the Qualification to Workers, and to find the type using a Qualification type search. It must be unique across all of your Qualification types.</p>
+    /// <p> The name you give to the Qualification type. The type name is used to represent the Qualification to Workers, and to find the type using a Qualification type search. It must be unique across all of your Qualification types.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>One or more words or phrases that describe the Qualification type, separated by commas. The keywords of a type make the type easier to find during a search.</p>
     pub keywords: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ pub struct CreateQualificationTypeInput {
     /// <p>The number of seconds that a Worker must wait after requesting a Qualification of the Qualification type before the worker can retry the Qualification request.</p>
     /// <p>Constraints: None. If not specified, retries are disabled and Workers can request a Qualification of this type only once, even if the Worker has not been granted the Qualification. It is not possible to disable retries for a Qualification type after it has been created with retries enabled. If you want to disable retries, you must delete existing retry-enabled Qualification type and then create a new Qualification type with retries disabled.</p>
     pub retry_delay_in_seconds: ::std::option::Option<i64>,
-    /// <p>The questions for the Qualification test a Worker must answer correctly to obtain a Qualification of this type. If this parameter is specified, <code>TestDurationInSeconds</code> must also be specified.</p>
+    /// <p> The questions for the Qualification test a Worker must answer correctly to obtain a Qualification of this type. If this parameter is specified, <code>TestDurationInSeconds</code> must also be specified. </p>
     /// <p>Constraints: Must not be longer than 65535 bytes. Must be a QuestionForm data structure. This parameter cannot be specified if AutoGranted is true.</p>
     /// <p>Constraints: None. If not specified, the Worker may request the Qualification without answering any questions.</p>
     pub test: ::std::option::Option<::std::string::String>,
@@ -32,7 +32,7 @@ pub struct CreateQualificationTypeInput {
     pub auto_granted_value: ::std::option::Option<i32>,
 }
 impl CreateQualificationTypeInput {
-    /// <p>The name you give to the Qualification type. The type name is used to represent the Qualification to Workers, and to find the type using a Qualification type search. It must be unique across all of your Qualification types.</p>
+    /// <p> The name you give to the Qualification type. The type name is used to represent the Qualification to Workers, and to find the type using a Qualification type search. It must be unique across all of your Qualification types.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -54,7 +54,7 @@ impl CreateQualificationTypeInput {
     pub fn retry_delay_in_seconds(&self) -> ::std::option::Option<i64> {
         self.retry_delay_in_seconds
     }
-    /// <p>The questions for the Qualification test a Worker must answer correctly to obtain a Qualification of this type. If this parameter is specified, <code>TestDurationInSeconds</code> must also be specified.</p>
+    /// <p> The questions for the Qualification test a Worker must answer correctly to obtain a Qualification of this type. If this parameter is specified, <code>TestDurationInSeconds</code> must also be specified. </p>
     /// <p>Constraints: Must not be longer than 65535 bytes. Must be a QuestionForm data structure. This parameter cannot be specified if AutoGranted is true.</p>
     /// <p>Constraints: None. If not specified, the Worker may request the Qualification without answering any questions.</p>
     pub fn test(&self) -> ::std::option::Option<&str> {
@@ -103,18 +103,18 @@ pub struct CreateQualificationTypeInputBuilder {
     pub(crate) auto_granted_value: ::std::option::Option<i32>,
 }
 impl CreateQualificationTypeInputBuilder {
-    /// <p>The name you give to the Qualification type. The type name is used to represent the Qualification to Workers, and to find the type using a Qualification type search. It must be unique across all of your Qualification types.</p>
+    /// <p> The name you give to the Qualification type. The type name is used to represent the Qualification to Workers, and to find the type using a Qualification type search. It must be unique across all of your Qualification types.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name you give to the Qualification type. The type name is used to represent the Qualification to Workers, and to find the type using a Qualification type search. It must be unique across all of your Qualification types.</p>
+    /// <p> The name you give to the Qualification type. The type name is used to represent the Qualification to Workers, and to find the type using a Qualification type search. It must be unique across all of your Qualification types.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name you give to the Qualification type. The type name is used to represent the Qualification to Workers, and to find the type using a Qualification type search. It must be unique across all of your Qualification types.</p>
+    /// <p> The name you give to the Qualification type. The type name is used to represent the Qualification to Workers, and to find the type using a Qualification type search. It must be unique across all of your Qualification types.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
@@ -182,21 +182,21 @@ impl CreateQualificationTypeInputBuilder {
     pub fn get_retry_delay_in_seconds(&self) -> &::std::option::Option<i64> {
         &self.retry_delay_in_seconds
     }
-    /// <p>The questions for the Qualification test a Worker must answer correctly to obtain a Qualification of this type. If this parameter is specified, <code>TestDurationInSeconds</code> must also be specified.</p>
+    /// <p> The questions for the Qualification test a Worker must answer correctly to obtain a Qualification of this type. If this parameter is specified, <code>TestDurationInSeconds</code> must also be specified. </p>
     /// <p>Constraints: Must not be longer than 65535 bytes. Must be a QuestionForm data structure. This parameter cannot be specified if AutoGranted is true.</p>
     /// <p>Constraints: None. If not specified, the Worker may request the Qualification without answering any questions.</p>
     pub fn test(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.test = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The questions for the Qualification test a Worker must answer correctly to obtain a Qualification of this type. If this parameter is specified, <code>TestDurationInSeconds</code> must also be specified.</p>
+    /// <p> The questions for the Qualification test a Worker must answer correctly to obtain a Qualification of this type. If this parameter is specified, <code>TestDurationInSeconds</code> must also be specified. </p>
     /// <p>Constraints: Must not be longer than 65535 bytes. Must be a QuestionForm data structure. This parameter cannot be specified if AutoGranted is true.</p>
     /// <p>Constraints: None. If not specified, the Worker may request the Qualification without answering any questions.</p>
     pub fn set_test(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.test = input;
         self
     }
-    /// <p>The questions for the Qualification test a Worker must answer correctly to obtain a Qualification of this type. If this parameter is specified, <code>TestDurationInSeconds</code> must also be specified.</p>
+    /// <p> The questions for the Qualification test a Worker must answer correctly to obtain a Qualification of this type. If this parameter is specified, <code>TestDurationInSeconds</code> must also be specified. </p>
     /// <p>Constraints: Must not be longer than 65535 bytes. Must be a QuestionForm data structure. This parameter cannot be specified if AutoGranted is true.</p>
     /// <p>Constraints: None. If not specified, the Worker may request the Qualification without answering any questions.</p>
     pub fn get_test(&self) -> &::std::option::Option<::std::string::String> {

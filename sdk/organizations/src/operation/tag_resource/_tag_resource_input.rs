@@ -6,18 +6,14 @@ pub struct TagResourceInput {
     /// <p>The ID of the resource to add a tag to.</p>
     /// <p>You can specify any of the following taggable resources.</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon Web Services account – specify the account ID number.</p></li>
-    /// <li>
-    /// <p>Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to: <code>ou-<i>1a2b-34uvwxyz</i> </code></p></li>
-    /// <li>
-    /// <p>Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code></p></li>
-    /// <li>
-    /// <p>Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to: <code>p-<i>12abcdefg3</i> </code></p></li>
+    /// <li> <p>Amazon Web Services account – specify the account ID number.</p> </li>
+    /// <li> <p>Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to: <code>ou-<i>1a2b-34uvwxyz</i> </code> </p> </li>
+    /// <li> <p>Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code> </p> </li>
+    /// <li> <p>Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to: <code>p-<i>12abcdefg3</i> </code> </p> </li>
     /// </ul>
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags to add to the specified resource.</p>
-    /// <p>For each tag in the list, you must specify both a tag key and a value. The value can be an empty string, but you can't set it to <code>null</code>.</p><note>
+    /// <p>For each tag in the list, you must specify both a tag key and a value. The value can be an empty string, but you can't set it to <code>null</code>.</p> <note>
     /// <p>If any one of the tags is not valid or if you exceed the maximum allowed number of tags for a resource, then the entire request fails.</p>
     /// </note>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -26,20 +22,16 @@ impl TagResourceInput {
     /// <p>The ID of the resource to add a tag to.</p>
     /// <p>You can specify any of the following taggable resources.</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon Web Services account – specify the account ID number.</p></li>
-    /// <li>
-    /// <p>Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to: <code>ou-<i>1a2b-34uvwxyz</i> </code></p></li>
-    /// <li>
-    /// <p>Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code></p></li>
-    /// <li>
-    /// <p>Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to: <code>p-<i>12abcdefg3</i> </code></p></li>
+    /// <li> <p>Amazon Web Services account – specify the account ID number.</p> </li>
+    /// <li> <p>Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to: <code>ou-<i>1a2b-34uvwxyz</i> </code> </p> </li>
+    /// <li> <p>Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code> </p> </li>
+    /// <li> <p>Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to: <code>p-<i>12abcdefg3</i> </code> </p> </li>
     /// </ul>
     pub fn resource_id(&self) -> ::std::option::Option<&str> {
         self.resource_id.as_deref()
     }
     /// <p>A list of tags to add to the specified resource.</p>
-    /// <p>For each tag in the list, you must specify both a tag key and a value. The value can be an empty string, but you can't set it to <code>null</code>.</p><note>
+    /// <p>For each tag in the list, you must specify both a tag key and a value. The value can be an empty string, but you can't set it to <code>null</code>.</p> <note>
     /// <p>If any one of the tags is not valid or if you exceed the maximum allowed number of tags for a resource, then the entire request fails.</p>
     /// </note>
     ///
@@ -66,14 +58,10 @@ impl TagResourceInputBuilder {
     /// <p>The ID of the resource to add a tag to.</p>
     /// <p>You can specify any of the following taggable resources.</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon Web Services account – specify the account ID number.</p></li>
-    /// <li>
-    /// <p>Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to: <code>ou-<i>1a2b-34uvwxyz</i> </code></p></li>
-    /// <li>
-    /// <p>Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code></p></li>
-    /// <li>
-    /// <p>Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to: <code>p-<i>12abcdefg3</i> </code></p></li>
+    /// <li> <p>Amazon Web Services account – specify the account ID number.</p> </li>
+    /// <li> <p>Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to: <code>ou-<i>1a2b-34uvwxyz</i> </code> </p> </li>
+    /// <li> <p>Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code> </p> </li>
+    /// <li> <p>Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to: <code>p-<i>12abcdefg3</i> </code> </p> </li>
     /// </ul>
     /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -83,14 +71,10 @@ impl TagResourceInputBuilder {
     /// <p>The ID of the resource to add a tag to.</p>
     /// <p>You can specify any of the following taggable resources.</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon Web Services account – specify the account ID number.</p></li>
-    /// <li>
-    /// <p>Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to: <code>ou-<i>1a2b-34uvwxyz</i> </code></p></li>
-    /// <li>
-    /// <p>Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code></p></li>
-    /// <li>
-    /// <p>Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to: <code>p-<i>12abcdefg3</i> </code></p></li>
+    /// <li> <p>Amazon Web Services account – specify the account ID number.</p> </li>
+    /// <li> <p>Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to: <code>ou-<i>1a2b-34uvwxyz</i> </code> </p> </li>
+    /// <li> <p>Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code> </p> </li>
+    /// <li> <p>Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to: <code>p-<i>12abcdefg3</i> </code> </p> </li>
     /// </ul>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
@@ -99,14 +83,10 @@ impl TagResourceInputBuilder {
     /// <p>The ID of the resource to add a tag to.</p>
     /// <p>You can specify any of the following taggable resources.</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon Web Services account – specify the account ID number.</p></li>
-    /// <li>
-    /// <p>Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to: <code>ou-<i>1a2b-34uvwxyz</i> </code></p></li>
-    /// <li>
-    /// <p>Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code></p></li>
-    /// <li>
-    /// <p>Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to: <code>p-<i>12abcdefg3</i> </code></p></li>
+    /// <li> <p>Amazon Web Services account – specify the account ID number.</p> </li>
+    /// <li> <p>Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to: <code>ou-<i>1a2b-34uvwxyz</i> </code> </p> </li>
+    /// <li> <p>Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code> </p> </li>
+    /// <li> <p>Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to: <code>p-<i>12abcdefg3</i> </code> </p> </li>
     /// </ul>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_id
@@ -116,7 +96,7 @@ impl TagResourceInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A list of tags to add to the specified resource.</p>
-    /// <p>For each tag in the list, you must specify both a tag key and a value. The value can be an empty string, but you can't set it to <code>null</code>.</p><note>
+    /// <p>For each tag in the list, you must specify both a tag key and a value. The value can be an empty string, but you can't set it to <code>null</code>.</p> <note>
     /// <p>If any one of the tags is not valid or if you exceed the maximum allowed number of tags for a resource, then the entire request fails.</p>
     /// </note>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
@@ -126,7 +106,7 @@ impl TagResourceInputBuilder {
         self
     }
     /// <p>A list of tags to add to the specified resource.</p>
-    /// <p>For each tag in the list, you must specify both a tag key and a value. The value can be an empty string, but you can't set it to <code>null</code>.</p><note>
+    /// <p>For each tag in the list, you must specify both a tag key and a value. The value can be an empty string, but you can't set it to <code>null</code>.</p> <note>
     /// <p>If any one of the tags is not valid or if you exceed the maximum allowed number of tags for a resource, then the entire request fails.</p>
     /// </note>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
@@ -134,7 +114,7 @@ impl TagResourceInputBuilder {
         self
     }
     /// <p>A list of tags to add to the specified resource.</p>
-    /// <p>For each tag in the list, you must specify both a tag key and a value. The value can be an empty string, but you can't set it to <code>null</code>.</p><note>
+    /// <p>For each tag in the list, you must specify both a tag key and a value. The value can be an empty string, but you can't set it to <code>null</code>.</p> <note>
     /// <p>If any one of the tags is not valid or if you exceed the maximum allowed number of tags for a resource, then the entire request fails.</p>
     /// </note>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {

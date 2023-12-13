@@ -22,7 +22,7 @@ impl DeleteWhatIfAnalysisInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteWhatIfAnalysis`.
 ///
-/// <p>Deletes a what-if analysis created using the <code>CreateWhatIfAnalysis</code> operation. You can delete only what-if analyses that have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>. To get the status, use the <code>DescribeWhatIfAnalysis</code> operation.</p>
+/// <p>Deletes a what-if analysis created using the <code>CreateWhatIfAnalysis</code> operation. You can delete only what-if analyses that have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>. To get the status, use the <code>DescribeWhatIfAnalysis</code> operation. </p>
 /// <p>You can't delete a what-if analysis while any of its forecasts are being exported.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteWhatIfAnalysisFluentBuilder {

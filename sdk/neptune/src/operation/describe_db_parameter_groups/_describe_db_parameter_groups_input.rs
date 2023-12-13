@@ -6,8 +6,7 @@ pub struct DescribeDbParameterGroupsInput {
     /// <p>The name of a specific DB parameter group to return details for.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
+    /// <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li>
     /// </ul>
     pub db_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>This parameter is not currently supported.</p>
@@ -23,8 +22,7 @@ impl DescribeDbParameterGroupsInput {
     /// <p>The name of a specific DB parameter group to return details for.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
+    /// <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li>
     /// </ul>
     pub fn db_parameter_group_name(&self) -> ::std::option::Option<&str> {
         self.db_parameter_group_name.as_deref()
@@ -66,8 +64,7 @@ impl DescribeDbParameterGroupsInputBuilder {
     /// <p>The name of a specific DB parameter group to return details for.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
+    /// <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li>
     /// </ul>
     pub fn db_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_parameter_group_name = ::std::option::Option::Some(input.into());
@@ -76,8 +73,7 @@ impl DescribeDbParameterGroupsInputBuilder {
     /// <p>The name of a specific DB parameter group to return details for.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
+    /// <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li>
     /// </ul>
     pub fn set_db_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_parameter_group_name = input;
@@ -86,8 +82,7 @@ impl DescribeDbParameterGroupsInputBuilder {
     /// <p>The name of a specific DB parameter group to return details for.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
+    /// <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li>
     /// </ul>
     pub fn get_db_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_parameter_group_name

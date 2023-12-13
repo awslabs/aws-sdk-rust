@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SkipWaitTimeForInstanceTerminationInput {
-    /// <p>The unique ID of a blue/green deployment for which you want to skip the instance termination wait time.</p>
+    /// <p> The unique ID of a blue/green deployment for which you want to skip the instance termination wait time. </p>
     pub deployment_id: ::std::option::Option<::std::string::String>,
 }
 impl SkipWaitTimeForInstanceTerminationInput {
-    /// <p>The unique ID of a blue/green deployment for which you want to skip the instance termination wait time.</p>
+    /// <p> The unique ID of a blue/green deployment for which you want to skip the instance termination wait time. </p>
     pub fn deployment_id(&self) -> ::std::option::Option<&str> {
         self.deployment_id.as_deref()
     }
@@ -26,17 +26,17 @@ pub struct SkipWaitTimeForInstanceTerminationInputBuilder {
     pub(crate) deployment_id: ::std::option::Option<::std::string::String>,
 }
 impl SkipWaitTimeForInstanceTerminationInputBuilder {
-    /// <p>The unique ID of a blue/green deployment for which you want to skip the instance termination wait time.</p>
+    /// <p> The unique ID of a blue/green deployment for which you want to skip the instance termination wait time. </p>
     pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique ID of a blue/green deployment for which you want to skip the instance termination wait time.</p>
+    /// <p> The unique ID of a blue/green deployment for which you want to skip the instance termination wait time. </p>
     pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_id = input;
         self
     }
-    /// <p>The unique ID of a blue/green deployment for which you want to skip the instance termination wait time.</p>
+    /// <p> The unique ID of a blue/green deployment for which you want to skip the instance termination wait time. </p>
     pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.deployment_id
     }

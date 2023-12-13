@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTransitGatewayRouteTableAttachmentInput {
-    /// <p>The ID of the peer for the</p>
+    /// <p>The ID of the peer for the </p>
     pub peering_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the transit gateway route table for the attachment request. For example, <code>"TransitGatewayRouteTableArn": "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"</code>.</p>
     pub transit_gateway_route_table_arn: ::std::option::Option<::std::string::String>,
@@ -13,7 +13,7 @@ pub struct CreateTransitGatewayRouteTableAttachmentInput {
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateTransitGatewayRouteTableAttachmentInput {
-    /// <p>The ID of the peer for the</p>
+    /// <p>The ID of the peer for the </p>
     pub fn peering_id(&self) -> ::std::option::Option<&str> {
         self.peering_id.as_deref()
     }
@@ -50,18 +50,18 @@ pub struct CreateTransitGatewayRouteTableAttachmentInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateTransitGatewayRouteTableAttachmentInputBuilder {
-    /// <p>The ID of the peer for the</p>
+    /// <p>The ID of the peer for the </p>
     /// This field is required.
     pub fn peering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.peering_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the peer for the</p>
+    /// <p>The ID of the peer for the </p>
     pub fn set_peering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.peering_id = input;
         self
     }
-    /// <p>The ID of the peer for the</p>
+    /// <p>The ID of the peer for the </p>
     pub fn get_peering_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.peering_id
     }

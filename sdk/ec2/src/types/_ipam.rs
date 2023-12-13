@@ -16,7 +16,7 @@ pub struct Ipam {
     pub public_default_scope_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the IPAM's default private scope.</p>
     pub private_default_scope_id: ::std::option::Option<::std::string::String>,
-    /// <p>The number of scopes in the IPAM. The scope quota is 5. For more information on quotas, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas in IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+    /// <p>The number of scopes in the IPAM. The scope quota is 5. For more information on quotas, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas in IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
     pub scope_count: ::std::option::Option<i32>,
     /// <p>The description for the IPAM.</p>
     pub description: ::std::option::Option<::std::string::String>,
@@ -63,7 +63,7 @@ impl Ipam {
     pub fn private_default_scope_id(&self) -> ::std::option::Option<&str> {
         self.private_default_scope_id.as_deref()
     }
-    /// <p>The number of scopes in the IPAM. The scope quota is 5. For more information on quotas, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas in IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+    /// <p>The number of scopes in the IPAM. The scope quota is 5. For more information on quotas, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas in IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
     pub fn scope_count(&self) -> ::std::option::Option<i32> {
         self.scope_count
     }
@@ -222,17 +222,17 @@ impl IpamBuilder {
     pub fn get_private_default_scope_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.private_default_scope_id
     }
-    /// <p>The number of scopes in the IPAM. The scope quota is 5. For more information on quotas, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas in IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+    /// <p>The number of scopes in the IPAM. The scope quota is 5. For more information on quotas, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas in IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
     pub fn scope_count(mut self, input: i32) -> Self {
         self.scope_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of scopes in the IPAM. The scope quota is 5. For more information on quotas, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas in IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+    /// <p>The number of scopes in the IPAM. The scope quota is 5. For more information on quotas, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas in IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
     pub fn set_scope_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.scope_count = input;
         self
     }
-    /// <p>The number of scopes in the IPAM. The scope quota is 5. For more information on quotas, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas in IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+    /// <p>The number of scopes in the IPAM. The scope quota is 5. For more information on quotas, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas in IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
     pub fn get_scope_count(&self) -> &::std::option::Option<i32> {
         &self.scope_count
     }

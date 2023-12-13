@@ -22,7 +22,7 @@ impl ListS3ResourcesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListS3Resources`.
 ///
-/// <p>(Discontinued) Lists all the S3 resources associated with Amazon Macie Classic. If <code>memberAccountId</code> isn't specified, the action lists the S3 resources associated with Macie Classic for the current Macie Classic administrator account. If <code>memberAccountId</code> is specified, the action lists the S3 resources associated with Macie Classic for the specified member account.</p>
+/// <p>(Discontinued) Lists all the S3 resources associated with Amazon Macie Classic. If <code>memberAccountId</code> isn't specified, the action lists the S3 resources associated with Macie Classic for the current Macie Classic administrator account. If <code>memberAccountId</code> is specified, the action lists the S3 resources associated with Macie Classic for the specified member account. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListS3ResourcesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,45 +114,45 @@ impl ListS3ResourcesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_s3_resources::paginator::ListS3ResourcesPaginator {
         crate::operation::list_s3_resources::paginator::ListS3ResourcesPaginator::new(self.handle, self.inner)
     }
-    /// <p>(Discontinued) The Amazon Macie Classic member account ID whose associated S3 resources you want to list.</p>
+    /// <p>(Discontinued) The Amazon Macie Classic member account ID whose associated S3 resources you want to list. </p>
     pub fn member_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.member_account_id(input.into());
         self
     }
-    /// <p>(Discontinued) The Amazon Macie Classic member account ID whose associated S3 resources you want to list.</p>
+    /// <p>(Discontinued) The Amazon Macie Classic member account ID whose associated S3 resources you want to list. </p>
     pub fn set_member_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_member_account_id(input);
         self
     }
-    /// <p>(Discontinued) The Amazon Macie Classic member account ID whose associated S3 resources you want to list.</p>
+    /// <p>(Discontinued) The Amazon Macie Classic member account ID whose associated S3 resources you want to list. </p>
     pub fn get_member_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_member_account_id()
     }
-    /// <p>(Discontinued) Use this parameter when paginating results. Set its value to null on your first call to the <code>ListS3Resources</code> action. Subsequent calls to the action fill <code>nextToken</code> in the request with the value of <code>nextToken</code> from the previous response to continue listing data.</p>
+    /// <p>(Discontinued) Use this parameter when paginating results. Set its value to null on your first call to the <code>ListS3Resources</code> action. Subsequent calls to the action fill <code>nextToken</code> in the request with the value of <code>nextToken</code> from the previous response to continue listing data. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>(Discontinued) Use this parameter when paginating results. Set its value to null on your first call to the <code>ListS3Resources</code> action. Subsequent calls to the action fill <code>nextToken</code> in the request with the value of <code>nextToken</code> from the previous response to continue listing data.</p>
+    /// <p>(Discontinued) Use this parameter when paginating results. Set its value to null on your first call to the <code>ListS3Resources</code> action. Subsequent calls to the action fill <code>nextToken</code> in the request with the value of <code>nextToken</code> from the previous response to continue listing data. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>(Discontinued) Use this parameter when paginating results. Set its value to null on your first call to the <code>ListS3Resources</code> action. Subsequent calls to the action fill <code>nextToken</code> in the request with the value of <code>nextToken</code> from the previous response to continue listing data.</p>
+    /// <p>(Discontinued) Use this parameter when paginating results. Set its value to null on your first call to the <code>ListS3Resources</code> action. Subsequent calls to the action fill <code>nextToken</code> in the request with the value of <code>nextToken</code> from the previous response to continue listing data. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>(Discontinued) Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250.</p>
+    /// <p>(Discontinued) Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>(Discontinued) Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250.</p>
+    /// <p>(Discontinued) Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>(Discontinued) Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250.</p>
+    /// <p>(Discontinued) Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250. </p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ControlPlanePlacementRequest {
-    /// <p>The name of the placement group for the Kubernetes control plane instances. This setting can't be changed after cluster creation.</p>
+    /// <p>The name of the placement group for the Kubernetes control plane instances. This setting can't be changed after cluster creation. </p>
     pub group_name: ::std::option::Option<::std::string::String>,
 }
 impl ControlPlanePlacementRequest {
-    /// <p>The name of the placement group for the Kubernetes control plane instances. This setting can't be changed after cluster creation.</p>
+    /// <p>The name of the placement group for the Kubernetes control plane instances. This setting can't be changed after cluster creation. </p>
     pub fn group_name(&self) -> ::std::option::Option<&str> {
         self.group_name.as_deref()
     }
@@ -27,17 +27,17 @@ pub struct ControlPlanePlacementRequestBuilder {
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
 }
 impl ControlPlanePlacementRequestBuilder {
-    /// <p>The name of the placement group for the Kubernetes control plane instances. This setting can't be changed after cluster creation.</p>
+    /// <p>The name of the placement group for the Kubernetes control plane instances. This setting can't be changed after cluster creation. </p>
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the placement group for the Kubernetes control plane instances. This setting can't be changed after cluster creation.</p>
+    /// <p>The name of the placement group for the Kubernetes control plane instances. This setting can't be changed after cluster creation. </p>
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_name = input;
         self
     }
-    /// <p>The name of the placement group for the Kubernetes control plane instances. This setting can't be changed after cluster creation.</p>
+    /// <p>The name of the placement group for the Kubernetes control plane instances. This setting can't be changed after cluster creation. </p>
     pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.group_name
     }

@@ -26,7 +26,7 @@ pub struct UpdateStackInput {
     pub application_settings: ::std::option::Option<crate::types::ApplicationSettings>,
     /// <p>The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to AppStream 2.0 only through the specified endpoints.</p>
     pub access_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>,
-    /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions.</p>
+    /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions. </p>
     pub embed_host_domains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.</p>
     pub streaming_experience_settings: ::std::option::Option<crate::types::StreamingExperienceSettings>,
@@ -85,7 +85,7 @@ impl UpdateStackInput {
     pub fn access_endpoints(&self) -> &[crate::types::AccessEndpoint] {
         self.access_endpoints.as_deref().unwrap_or_default()
     }
-    /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions.</p>
+    /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.embed_host_domains.is_none()`.
     pub fn embed_host_domains(&self) -> &[::std::string::String] {
@@ -308,19 +308,19 @@ impl UpdateStackInputBuilder {
     ///
     /// To override the contents of this collection use [`set_embed_host_domains`](Self::set_embed_host_domains).
     ///
-    /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions.</p>
+    /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions. </p>
     pub fn embed_host_domains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.embed_host_domains.unwrap_or_default();
         v.push(input.into());
         self.embed_host_domains = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions.</p>
+    /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions. </p>
     pub fn set_embed_host_domains(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.embed_host_domains = input;
         self
     }
-    /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions.</p>
+    /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions. </p>
     pub fn get_embed_host_domains(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.embed_host_domains
     }

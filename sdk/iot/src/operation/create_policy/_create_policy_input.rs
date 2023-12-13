@@ -8,7 +8,7 @@ pub struct CreatePolicyInput {
     pub policy_name: ::std::option::Option<::std::string::String>,
     /// <p>The JSON document that describes the policy. <b>policyDocument</b> must have a minimum length of 1, with a maximum length of 2048, excluding whitespace.</p>
     pub policy_document: ::std::option::Option<::std::string::String>,
-    /// <p>Metadata which can be used to manage the policy.</p><note>
+    /// <p>Metadata which can be used to manage the policy.</p> <note>
     /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
     /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
@@ -24,7 +24,7 @@ impl CreatePolicyInput {
     pub fn policy_document(&self) -> ::std::option::Option<&str> {
         self.policy_document.as_deref()
     }
-    /// <p>Metadata which can be used to manage the policy.</p><note>
+    /// <p>Metadata which can be used to manage the policy.</p> <note>
     /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
     /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
@@ -85,7 +85,7 @@ impl CreatePolicyInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>Metadata which can be used to manage the policy.</p><note>
+    /// <p>Metadata which can be used to manage the policy.</p> <note>
     /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
     /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
@@ -96,7 +96,7 @@ impl CreatePolicyInputBuilder {
         self.tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Metadata which can be used to manage the policy.</p><note>
+    /// <p>Metadata which can be used to manage the policy.</p> <note>
     /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
     /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
@@ -105,7 +105,7 @@ impl CreatePolicyInputBuilder {
         self.tags = input;
         self
     }
-    /// <p>Metadata which can be used to manage the policy.</p><note>
+    /// <p>Metadata which can be used to manage the policy.</p> <note>
     /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
     /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>

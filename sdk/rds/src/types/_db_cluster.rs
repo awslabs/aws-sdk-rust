@@ -3,8 +3,8 @@
 /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p>
 /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
 /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
-/// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i></p>
-/// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i></p>
+/// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>
+/// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DbCluster {
@@ -93,7 +93,7 @@ pub struct DbCluster {
     /// <p>The number of change records stored for Backtrack.</p>
     pub backtrack_consumed_change_records: ::std::option::Option<i64>,
     /// <p>A list of log types that this DB cluster is configured to export to CloudWatch Logs.</p>
-    /// <p>Log types vary by DB engine. For information about the log types for each DB engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon RDS Database Log Files</a> in the <i>Amazon Aurora User Guide.</i></p>
+    /// <p>Log types vary by DB engine. For information about the log types for each DB engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon RDS Database Log Files</a> in the <i>Amazon Aurora User Guide.</i> </p>
     pub enabled_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The current capacity of an Aurora Serverless v1 DB cluster. The capacity is <code>0</code> (zero) when the cluster is paused.</p>
     /// <p>For more information about Aurora Serverless v1, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.</p>
@@ -127,7 +127,7 @@ pub struct DbCluster {
     pub cross_account_clone: ::std::option::Option<bool>,
     /// <p>The Active Directory Domain membership records associated with the DB cluster.</p>
     pub domain_memberships: ::std::option::Option<::std::vec::Vec<crate::types::DomainMembership>>,
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The status of write forwarding for a secondary cluster in an Aurora global database.</p>
     pub global_write_forwarding_status: ::std::option::Option<crate::types::WriteForwardingStatus>,
@@ -169,12 +169,9 @@ pub struct DbCluster {
     /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>7</code></p></li>
-    /// <li>
-    /// <p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p></li>
-    /// <li>
-    /// <p><code>731</code></p></li>
+    /// <li> <p> <code>7</code> </p> </li>
+    /// <li> <p> <i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p> </li>
+    /// <li> <p> <code>731</code> </p> </li>
     /// </ul>
     /// <p>Default: <code>7</code> days</p>
     pub performance_insights_retention_period: ::std::option::Option<i32>,
@@ -183,14 +180,14 @@ pub struct DbCluster {
     pub serverless_v2_scaling_configuration: ::std::option::Option<crate::types::ServerlessV2ScalingConfigurationInfo>,
     /// <p>The network type of the DB instance.</p>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
     /// <p>This setting is only for Aurora DB clusters.</p>
-    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
+    /// <p>Valid Values: <code>IPV4 | DUAL</code> </p>
     pub network_type: ::std::option::Option<::std::string::String>,
     /// <p>Reserved for future use.</p>
     pub db_system_id: ::std::option::Option<::std::string::String>,
     /// <p>The secret managed by RDS in Amazon Web Services Secrets Manager for the master user password.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i></p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
     pub master_user_secret: ::std::option::Option<crate::types::MasterUserSecret>,
     /// <p>The next time you can modify the DB cluster to use the <code>aurora-iopt1</code> storage type.</p>
     /// <p>This setting is only for Aurora DB clusters.</p>
@@ -384,7 +381,7 @@ impl DbCluster {
         self.backtrack_consumed_change_records
     }
     /// <p>A list of log types that this DB cluster is configured to export to CloudWatch Logs.</p>
-    /// <p>Log types vary by DB engine. For information about the log types for each DB engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon RDS Database Log Files</a> in the <i>Amazon Aurora User Guide.</i></p>
+    /// <p>Log types vary by DB engine. For information about the log types for each DB engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon RDS Database Log Files</a> in the <i>Amazon Aurora User Guide.</i> </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.enabled_cloudwatch_logs_exports.is_none()`.
     pub fn enabled_cloudwatch_logs_exports(&self) -> &[::std::string::String] {
@@ -450,7 +447,7 @@ impl DbCluster {
     pub fn domain_memberships(&self) -> &[crate::types::DomainMembership] {
         self.domain_memberships.as_deref().unwrap_or_default()
     }
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_list.is_none()`.
     pub fn tag_list(&self) -> &[crate::types::Tag] {
@@ -520,12 +517,9 @@ impl DbCluster {
     /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>7</code></p></li>
-    /// <li>
-    /// <p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p></li>
-    /// <li>
-    /// <p><code>731</code></p></li>
+    /// <li> <p> <code>7</code> </p> </li>
+    /// <li> <p> <i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p> </li>
+    /// <li> <p> <code>731</code> </p> </li>
     /// </ul>
     /// <p>Default: <code>7</code> days</p>
     pub fn performance_insights_retention_period(&self) -> ::std::option::Option<i32> {
@@ -538,9 +532,9 @@ impl DbCluster {
     }
     /// <p>The network type of the DB instance.</p>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
     /// <p>This setting is only for Aurora DB clusters.</p>
-    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
+    /// <p>Valid Values: <code>IPV4 | DUAL</code> </p>
     pub fn network_type(&self) -> ::std::option::Option<&str> {
         self.network_type.as_deref()
     }
@@ -549,7 +543,7 @@ impl DbCluster {
         self.db_system_id.as_deref()
     }
     /// <p>The secret managed by RDS in Amazon Web Services Secrets Manager for the master user password.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i></p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
     pub fn master_user_secret(&self) -> ::std::option::Option<&crate::types::MasterUserSecret> {
         self.master_user_secret.as_ref()
     }
@@ -1292,7 +1286,7 @@ impl DbClusterBuilder {
     /// To override the contents of this collection use [`set_enabled_cloudwatch_logs_exports`](Self::set_enabled_cloudwatch_logs_exports).
     ///
     /// <p>A list of log types that this DB cluster is configured to export to CloudWatch Logs.</p>
-    /// <p>Log types vary by DB engine. For information about the log types for each DB engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon RDS Database Log Files</a> in the <i>Amazon Aurora User Guide.</i></p>
+    /// <p>Log types vary by DB engine. For information about the log types for each DB engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon RDS Database Log Files</a> in the <i>Amazon Aurora User Guide.</i> </p>
     pub fn enabled_cloudwatch_logs_exports(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.enabled_cloudwatch_logs_exports.unwrap_or_default();
         v.push(input.into());
@@ -1300,13 +1294,13 @@ impl DbClusterBuilder {
         self
     }
     /// <p>A list of log types that this DB cluster is configured to export to CloudWatch Logs.</p>
-    /// <p>Log types vary by DB engine. For information about the log types for each DB engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon RDS Database Log Files</a> in the <i>Amazon Aurora User Guide.</i></p>
+    /// <p>Log types vary by DB engine. For information about the log types for each DB engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon RDS Database Log Files</a> in the <i>Amazon Aurora User Guide.</i> </p>
     pub fn set_enabled_cloudwatch_logs_exports(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.enabled_cloudwatch_logs_exports = input;
         self
     }
     /// <p>A list of log types that this DB cluster is configured to export to CloudWatch Logs.</p>
-    /// <p>Log types vary by DB engine. For information about the log types for each DB engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon RDS Database Log Files</a> in the <i>Amazon Aurora User Guide.</i></p>
+    /// <p>Log types vary by DB engine. For information about the log types for each DB engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon RDS Database Log Files</a> in the <i>Amazon Aurora User Guide.</i> </p>
     pub fn get_enabled_cloudwatch_logs_exports(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.enabled_cloudwatch_logs_exports
     }
@@ -1520,19 +1514,19 @@ impl DbClusterBuilder {
     ///
     /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
     ///
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub fn tag_list(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tag_list.unwrap_or_default();
         v.push(input);
         self.tag_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub fn set_tag_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tag_list = input;
         self
     }
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tag_list
     }
@@ -1744,12 +1738,9 @@ impl DbClusterBuilder {
     /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>7</code></p></li>
-    /// <li>
-    /// <p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p></li>
-    /// <li>
-    /// <p><code>731</code></p></li>
+    /// <li> <p> <code>7</code> </p> </li>
+    /// <li> <p> <i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p> </li>
+    /// <li> <p> <code>731</code> </p> </li>
     /// </ul>
     /// <p>Default: <code>7</code> days</p>
     pub fn performance_insights_retention_period(mut self, input: i32) -> Self {
@@ -1760,12 +1751,9 @@ impl DbClusterBuilder {
     /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>7</code></p></li>
-    /// <li>
-    /// <p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p></li>
-    /// <li>
-    /// <p><code>731</code></p></li>
+    /// <li> <p> <code>7</code> </p> </li>
+    /// <li> <p> <i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p> </li>
+    /// <li> <p> <code>731</code> </p> </li>
     /// </ul>
     /// <p>Default: <code>7</code> days</p>
     pub fn set_performance_insights_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
@@ -1776,12 +1764,9 @@ impl DbClusterBuilder {
     /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>7</code></p></li>
-    /// <li>
-    /// <p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p></li>
-    /// <li>
-    /// <p><code>731</code></p></li>
+    /// <li> <p> <code>7</code> </p> </li>
+    /// <li> <p> <i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p> </li>
+    /// <li> <p> <code>731</code> </p> </li>
     /// </ul>
     /// <p>Default: <code>7</code> days</p>
     pub fn get_performance_insights_retention_period(&self) -> &::std::option::Option<i32> {
@@ -1809,27 +1794,27 @@ impl DbClusterBuilder {
     }
     /// <p>The network type of the DB instance.</p>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
     /// <p>This setting is only for Aurora DB clusters.</p>
-    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
+    /// <p>Valid Values: <code>IPV4 | DUAL</code> </p>
     pub fn network_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The network type of the DB instance.</p>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
     /// <p>This setting is only for Aurora DB clusters.</p>
-    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
+    /// <p>Valid Values: <code>IPV4 | DUAL</code> </p>
     pub fn set_network_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_type = input;
         self
     }
     /// <p>The network type of the DB instance.</p>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
     /// <p>This setting is only for Aurora DB clusters.</p>
-    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
+    /// <p>Valid Values: <code>IPV4 | DUAL</code> </p>
     pub fn get_network_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.network_type
     }
@@ -1848,19 +1833,19 @@ impl DbClusterBuilder {
         &self.db_system_id
     }
     /// <p>The secret managed by RDS in Amazon Web Services Secrets Manager for the master user password.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i></p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
     pub fn master_user_secret(mut self, input: crate::types::MasterUserSecret) -> Self {
         self.master_user_secret = ::std::option::Option::Some(input);
         self
     }
     /// <p>The secret managed by RDS in Amazon Web Services Secrets Manager for the master user password.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i></p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
     pub fn set_master_user_secret(mut self, input: ::std::option::Option<crate::types::MasterUserSecret>) -> Self {
         self.master_user_secret = input;
         self
     }
     /// <p>The secret managed by RDS in Amazon Web Services Secrets Manager for the master user password.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i></p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
     pub fn get_master_user_secret(&self) -> &::std::option::Option<crate::types::MasterUserSecret> {
         &self.master_user_secret
     }

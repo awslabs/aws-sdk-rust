@@ -22,7 +22,7 @@ impl CreateDbClusterEndpointInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateDBClusterEndpoint`.
 ///
-/// <p>Creates a new custom endpoint and associates it with an Amazon Aurora DB cluster.</p><note>
+/// <p>Creates a new custom endpoint and associates it with an Amazon Aurora DB cluster.</p> <note>
 /// <p>This action applies only to Aurora DB clusters.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

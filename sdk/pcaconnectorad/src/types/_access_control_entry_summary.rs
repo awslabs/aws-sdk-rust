@@ -10,7 +10,7 @@ pub struct AccessControlEntrySummary {
     pub group_security_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Allow or deny an Active Directory group from enrolling and autoenrolling certificates issued against a template.</p>
     pub access_rights: ::std::option::Option<crate::types::AccessRights>,
-    /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>. </p>
     pub template_arn: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the Access Control Entry was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -30,7 +30,7 @@ impl AccessControlEntrySummary {
     pub fn access_rights(&self) -> ::std::option::Option<&crate::types::AccessRights> {
         self.access_rights.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>. </p>
     pub fn template_arn(&self) -> ::std::option::Option<&str> {
         self.template_arn.as_deref()
     }
@@ -104,17 +104,17 @@ impl AccessControlEntrySummaryBuilder {
     pub fn get_access_rights(&self) -> &::std::option::Option<crate::types::AccessRights> {
         &self.access_rights
     }
-    /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>. </p>
     pub fn template_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>. </p>
     pub fn set_template_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>. </p>
     pub fn get_template_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.template_arn
     }

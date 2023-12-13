@@ -22,7 +22,7 @@ impl GetSettingsInputBuilder {
 }
 /// Fluent builder constructing a request to `GetSettings`.
 ///
-/// <p>Gets the settings for a specified Amazon Web Services account.</p>
+/// <p> Gets the settings for a specified Amazon Web Services account. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetSettingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl GetSettingsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The list of setting attribute enum values.</p>
+    /// <p> The list of setting attribute enum values. </p>
     pub fn attribute(mut self, input: crate::types::SettingAttribute) -> Self {
         self.inner = self.inner.attribute(input);
         self
     }
-    /// <p>The list of setting attribute enum values.</p>
+    /// <p> The list of setting attribute enum values. </p>
     pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::SettingAttribute>) -> Self {
         self.inner = self.inner.set_attribute(input);
         self
     }
-    /// <p>The list of setting attribute enum values.</p>
+    /// <p> The list of setting attribute enum values. </p>
     pub fn get_attribute(&self) -> &::std::option::Option<crate::types::SettingAttribute> {
         self.inner.get_attribute()
     }

@@ -5,7 +5,7 @@
 pub struct CreateDimensionInput {
     /// <p>A unique identifier for the dimension. Choose something that describes the type and value to make it easy to remember what it does.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the type of dimension. Supported types: <code>TOPIC_FILTER.</code></p>
+    /// <p>Specifies the type of dimension. Supported types: <code>TOPIC_FILTER.</code> </p>
     pub r#type: ::std::option::Option<crate::types::DimensionType>,
     /// <p>Specifies the value or list of values for the dimension. For <code>TOPIC_FILTER</code> dimensions, this is a pattern used to match the MQTT topic (for example, "admin/#").</p>
     pub string_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -19,7 +19,7 @@ impl CreateDimensionInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Specifies the type of dimension. Supported types: <code>TOPIC_FILTER.</code></p>
+    /// <p>Specifies the type of dimension. Supported types: <code>TOPIC_FILTER.</code> </p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::DimensionType> {
         self.r#type.as_ref()
     }
@@ -73,18 +73,18 @@ impl CreateDimensionInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>Specifies the type of dimension. Supported types: <code>TOPIC_FILTER.</code></p>
+    /// <p>Specifies the type of dimension. Supported types: <code>TOPIC_FILTER.</code> </p>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::DimensionType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the type of dimension. Supported types: <code>TOPIC_FILTER.</code></p>
+    /// <p>Specifies the type of dimension. Supported types: <code>TOPIC_FILTER.</code> </p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::DimensionType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>Specifies the type of dimension. Supported types: <code>TOPIC_FILTER.</code></p>
+    /// <p>Specifies the type of dimension. Supported types: <code>TOPIC_FILTER.</code> </p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::DimensionType> {
         &self.r#type
     }

@@ -13,7 +13,7 @@ pub struct CreateAppInput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// <p>Assessment execution schedule with 'Daily' or 'Disabled' values.</p>
+    /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
     pub assessment_schedule: ::std::option::Option<crate::types::AppAssessmentScheduleType>,
     /// <p>Defines the roles and credentials that Resilience Hub would use while creating the application, importing its resources, and running an assessment.</p>
     pub permission_model: ::std::option::Option<crate::types::PermissionModel>,
@@ -41,7 +41,7 @@ impl CreateAppInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>Assessment execution schedule with 'Daily' or 'Disabled' values.</p>
+    /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
     pub fn assessment_schedule(&self) -> ::std::option::Option<&crate::types::AppAssessmentScheduleType> {
         self.assessment_schedule.as_ref()
     }
@@ -168,17 +168,17 @@ impl CreateAppInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
-    /// <p>Assessment execution schedule with 'Daily' or 'Disabled' values.</p>
+    /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
     pub fn assessment_schedule(mut self, input: crate::types::AppAssessmentScheduleType) -> Self {
         self.assessment_schedule = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Assessment execution schedule with 'Daily' or 'Disabled' values.</p>
+    /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
     pub fn set_assessment_schedule(mut self, input: ::std::option::Option<crate::types::AppAssessmentScheduleType>) -> Self {
         self.assessment_schedule = input;
         self
     }
-    /// <p>Assessment execution schedule with 'Daily' or 'Disabled' values.</p>
+    /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
     pub fn get_assessment_schedule(&self) -> &::std::option::Option<crate::types::AppAssessmentScheduleType> {
         &self.assessment_schedule
     }

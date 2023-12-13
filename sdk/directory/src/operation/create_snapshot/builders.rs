@@ -22,7 +22,7 @@ impl CreateSnapshotInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateSnapshot`.
 ///
-/// <p>Creates a snapshot of a Simple AD or Microsoft AD directory in the Amazon Web Services cloud.</p><note>
+/// <p>Creates a snapshot of a Simple AD or Microsoft AD directory in the Amazon Web Services cloud.</p> <note>
 /// <p>You cannot take snapshots of AD Connector directories.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

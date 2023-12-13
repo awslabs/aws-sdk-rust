@@ -108,21 +108,21 @@ impl CreateLocationEfsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Specifies a mount path for your Amazon EFS file system. This is where DataSync reads or writes data (depending on if this is a source or destination location). By default, DataSync uses the root directory, but you can also include subdirectories.</p><note>
+    /// <p>Specifies a mount path for your Amazon EFS file system. This is where DataSync reads or writes data (depending on if this is a source or destination location). By default, DataSync uses the root directory, but you can also include subdirectories.</p> <note>
     /// <p>You must specify a value with forward slashes (for example, <code>/path/to/folder</code>).</p>
     /// </note>
     pub fn subdirectory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subdirectory(input.into());
         self
     }
-    /// <p>Specifies a mount path for your Amazon EFS file system. This is where DataSync reads or writes data (depending on if this is a source or destination location). By default, DataSync uses the root directory, but you can also include subdirectories.</p><note>
+    /// <p>Specifies a mount path for your Amazon EFS file system. This is where DataSync reads or writes data (depending on if this is a source or destination location). By default, DataSync uses the root directory, but you can also include subdirectories.</p> <note>
     /// <p>You must specify a value with forward slashes (for example, <code>/path/to/folder</code>).</p>
     /// </note>
     pub fn set_subdirectory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_subdirectory(input);
         self
     }
-    /// <p>Specifies a mount path for your Amazon EFS file system. This is where DataSync reads or writes data (depending on if this is a source or destination location). By default, DataSync uses the root directory, but you can also include subdirectories.</p><note>
+    /// <p>Specifies a mount path for your Amazon EFS file system. This is where DataSync reads or writes data (depending on if this is a source or destination location). By default, DataSync uses the root directory, but you can also include subdirectories.</p> <note>
     /// <p>You must specify a value with forward slashes (for example, <code>/path/to/folder</code>).</p>
     /// </note>
     pub fn get_subdirectory(&self) -> &::std::option::Option<::std::string::String> {

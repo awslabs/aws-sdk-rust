@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSubscriptionRequestsOutput {
-    /// <p>The results of the <code>ListSubscriptionRequests</code> action.</p>
+    /// <p>The results of the <code>ListSubscriptionRequests</code> action. </p>
     pub items: ::std::vec::Vec<crate::types::SubscriptionRequestSummary>,
     /// <p>When the number of subscription requests is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of subscription requests, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListSubscriptionRequests</code> to list the next set of subscription requests.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListSubscriptionRequestsOutput {
-    /// <p>The results of the <code>ListSubscriptionRequests</code> action.</p>
+    /// <p>The results of the <code>ListSubscriptionRequests</code> action. </p>
     pub fn items(&self) -> &[crate::types::SubscriptionRequestSummary] {
         use std::ops::Deref;
         self.items.deref()
@@ -45,19 +45,19 @@ impl ListSubscriptionRequestsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_items`](Self::set_items).
     ///
-    /// <p>The results of the <code>ListSubscriptionRequests</code> action.</p>
+    /// <p>The results of the <code>ListSubscriptionRequests</code> action. </p>
     pub fn items(mut self, input: crate::types::SubscriptionRequestSummary) -> Self {
         let mut v = self.items.unwrap_or_default();
         v.push(input);
         self.items = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The results of the <code>ListSubscriptionRequests</code> action.</p>
+    /// <p>The results of the <code>ListSubscriptionRequests</code> action. </p>
     pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SubscriptionRequestSummary>>) -> Self {
         self.items = input;
         self
     }
-    /// <p>The results of the <code>ListSubscriptionRequests</code> action.</p>
+    /// <p>The results of the <code>ListSubscriptionRequests</code> action. </p>
     pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubscriptionRequestSummary>> {
         &self.items
     }

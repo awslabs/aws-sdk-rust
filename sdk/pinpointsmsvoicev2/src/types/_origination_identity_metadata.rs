@@ -8,7 +8,7 @@ pub struct OriginationIdentityMetadata {
     pub origination_identity_arn: ::std::string::String,
     /// <p>The unique identifier of the origination identity.</p>
     pub origination_identity: ::std::string::String,
-    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
+    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
     pub iso_country_code: ::std::string::String,
     /// <p>Describes if the origination identity can be used for text messages, voice calls or both.</p>
     pub number_capabilities: ::std::vec::Vec<crate::types::NumberCapability>,
@@ -26,7 +26,7 @@ impl OriginationIdentityMetadata {
         use std::ops::Deref;
         self.origination_identity.deref()
     }
-    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
+    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
     pub fn iso_country_code(&self) -> &str {
         use std::ops::Deref;
         self.iso_country_code.deref()
@@ -89,18 +89,18 @@ impl OriginationIdentityMetadataBuilder {
     pub fn get_origination_identity(&self) -> &::std::option::Option<::std::string::String> {
         &self.origination_identity
     }
-    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
+    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
     /// This field is required.
     pub fn iso_country_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iso_country_code = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
+    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
     pub fn set_iso_country_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iso_country_code = input;
         self
     }
-    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
+    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
     pub fn get_iso_country_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.iso_country_code
     }

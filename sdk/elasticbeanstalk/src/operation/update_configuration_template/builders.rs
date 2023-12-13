@@ -22,13 +22,12 @@ impl UpdateConfigurationTemplateInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateConfigurationTemplate`.
 ///
-/// <p>Updates the specified configuration template to have the specified properties or configuration option values.</p><note>
+/// <p>Updates the specified configuration template to have the specified properties or configuration option values.</p> <note>
 /// <p>If a property (for example, <code>ApplicationName</code>) is not provided, its value remains unchanged. To clear such properties, specify an empty string.</p>
 /// </note>
 /// <p>Related Topics</p>
 /// <ul>
-/// <li>
-/// <p><code>DescribeConfigurationOptions</code></p></li>
+/// <li> <p> <code>DescribeConfigurationOptions</code> </p> </li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateConfigurationTemplateFluentBuilder {
@@ -116,36 +115,36 @@ impl UpdateConfigurationTemplateFluentBuilder {
         self
     }
     /// <p>The name of the application associated with the configuration template to update.</p>
-    /// <p>If no application is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error.</p>
+    /// <p> If no application is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </p>
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_name(input.into());
         self
     }
     /// <p>The name of the application associated with the configuration template to update.</p>
-    /// <p>If no application is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error.</p>
+    /// <p> If no application is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </p>
     pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_name(input);
         self
     }
     /// <p>The name of the application associated with the configuration template to update.</p>
-    /// <p>If no application is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error.</p>
+    /// <p> If no application is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </p>
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_name()
     }
     /// <p>The name of the configuration template to update.</p>
-    /// <p>If no configuration template is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error.</p>
+    /// <p> If no configuration template is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </p>
     pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_name(input.into());
         self
     }
     /// <p>The name of the configuration template to update.</p>
-    /// <p>If no configuration template is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error.</p>
+    /// <p> If no configuration template is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </p>
     pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_name(input);
         self
     }
     /// <p>The name of the configuration template to update.</p>
-    /// <p>If no configuration template is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error.</p>
+    /// <p> If no configuration template is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </p>
     pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_template_name()
     }
@@ -186,19 +185,19 @@ impl UpdateConfigurationTemplateFluentBuilder {
     /// To override the contents of this collection use [`set_options_to_remove`](Self::set_options_to_remove).
     ///
     /// <p>A list of configuration options to remove from the configuration set.</p>
-    /// <p>Constraint: You can remove only <code>UserDefined</code> configuration options.</p>
+    /// <p> Constraint: You can remove only <code>UserDefined</code> configuration options. </p>
     pub fn options_to_remove(mut self, input: crate::types::OptionSpecification) -> Self {
         self.inner = self.inner.options_to_remove(input);
         self
     }
     /// <p>A list of configuration options to remove from the configuration set.</p>
-    /// <p>Constraint: You can remove only <code>UserDefined</code> configuration options.</p>
+    /// <p> Constraint: You can remove only <code>UserDefined</code> configuration options. </p>
     pub fn set_options_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OptionSpecification>>) -> Self {
         self.inner = self.inner.set_options_to_remove(input);
         self
     }
     /// <p>A list of configuration options to remove from the configuration set.</p>
-    /// <p>Constraint: You can remove only <code>UserDefined</code> configuration options.</p>
+    /// <p> Constraint: You can remove only <code>UserDefined</code> configuration options. </p>
     pub fn get_options_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OptionSpecification>> {
         self.inner.get_options_to_remove()
     }

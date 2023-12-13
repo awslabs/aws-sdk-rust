@@ -108,17 +108,17 @@ impl CreateSubnetGroupFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>A name for the subnet group. This value is stored as a lowercase string.</p>
+    /// <p>A name for the subnet group. This value is stored as a lowercase string. </p>
     pub fn subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subnet_group_name(input.into());
         self
     }
-    /// <p>A name for the subnet group. This value is stored as a lowercase string.</p>
+    /// <p>A name for the subnet group. This value is stored as a lowercase string. </p>
     pub fn set_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_subnet_group_name(input);
         self
     }
-    /// <p>A name for the subnet group. This value is stored as a lowercase string.</p>
+    /// <p>A name for the subnet group. This value is stored as a lowercase string. </p>
     pub fn get_subnet_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_subnet_group_name()
     }

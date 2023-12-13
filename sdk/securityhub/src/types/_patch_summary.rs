@@ -26,7 +26,7 @@ pub struct PatchSummary {
     pub operation_end_time: ::std::option::Option<::std::string::String>,
     /// <p>The reboot option specified for the instance.</p>
     pub reboot_option: ::std::option::Option<::std::string::String>,
-    /// <p>The type of patch operation performed. For Patch Manager, the values are <code>SCAN</code> and <code>INSTALL</code>.</p>
+    /// <p>The type of patch operation performed. For Patch Manager, the values are <code>SCAN</code> and <code>INSTALL</code>. </p>
     pub operation: ::std::option::Option<::std::string::String>,
 }
 impl PatchSummary {
@@ -72,7 +72,7 @@ impl PatchSummary {
     pub fn reboot_option(&self) -> ::std::option::Option<&str> {
         self.reboot_option.as_deref()
     }
-    /// <p>The type of patch operation performed. For Patch Manager, the values are <code>SCAN</code> and <code>INSTALL</code>.</p>
+    /// <p>The type of patch operation performed. For Patch Manager, the values are <code>SCAN</code> and <code>INSTALL</code>. </p>
     pub fn operation(&self) -> ::std::option::Option<&str> {
         self.operation.as_deref()
     }
@@ -248,17 +248,17 @@ impl PatchSummaryBuilder {
     pub fn get_reboot_option(&self) -> &::std::option::Option<::std::string::String> {
         &self.reboot_option
     }
-    /// <p>The type of patch operation performed. For Patch Manager, the values are <code>SCAN</code> and <code>INSTALL</code>.</p>
+    /// <p>The type of patch operation performed. For Patch Manager, the values are <code>SCAN</code> and <code>INSTALL</code>. </p>
     pub fn operation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.operation = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The type of patch operation performed. For Patch Manager, the values are <code>SCAN</code> and <code>INSTALL</code>.</p>
+    /// <p>The type of patch operation performed. For Patch Manager, the values are <code>SCAN</code> and <code>INSTALL</code>. </p>
     pub fn set_operation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.operation = input;
         self
     }
-    /// <p>The type of patch operation performed. For Patch Manager, the values are <code>SCAN</code> and <code>INSTALL</code>.</p>
+    /// <p>The type of patch operation performed. For Patch Manager, the values are <code>SCAN</code> and <code>INSTALL</code>. </p>
     pub fn get_operation(&self) -> &::std::option::Option<::std::string::String> {
         &self.operation
     }

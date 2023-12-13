@@ -22,7 +22,7 @@ impl CreateKxVolumeInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateKxVolume`.
 ///
-/// <p>Creates a new volume with a specific amount of throughput and storage capacity.</p>
+/// <p> Creates a new volume with a specific amount of throughput and storage capacity. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateKxVolumeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -122,31 +122,31 @@ impl CreateKxVolumeFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
-    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume.</p>
+    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume. </p>
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_id(input.into());
         self
     }
-    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume.</p>
+    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume. </p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_id(input);
         self
     }
-    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume.</p>
+    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume. </p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_environment_id()
     }
-    /// <p>The type of file system volume. Currently, FinSpace only supports <code>NAS_1</code> volume type. When you select <code>NAS_1</code> volume type, you must also provide <code>nas1Configuration</code>.</p>
+    /// <p> The type of file system volume. Currently, FinSpace only supports <code>NAS_1</code> volume type. When you select <code>NAS_1</code> volume type, you must also provide <code>nas1Configuration</code>. </p>
     pub fn volume_type(mut self, input: crate::types::KxVolumeType) -> Self {
         self.inner = self.inner.volume_type(input);
         self
     }
-    /// <p>The type of file system volume. Currently, FinSpace only supports <code>NAS_1</code> volume type. When you select <code>NAS_1</code> volume type, you must also provide <code>nas1Configuration</code>.</p>
+    /// <p> The type of file system volume. Currently, FinSpace only supports <code>NAS_1</code> volume type. When you select <code>NAS_1</code> volume type, you must also provide <code>nas1Configuration</code>. </p>
     pub fn set_volume_type(mut self, input: ::std::option::Option<crate::types::KxVolumeType>) -> Self {
         self.inner = self.inner.set_volume_type(input);
         self
     }
-    /// <p>The type of file system volume. Currently, FinSpace only supports <code>NAS_1</code> volume type. When you select <code>NAS_1</code> volume type, you must also provide <code>nas1Configuration</code>.</p>
+    /// <p> The type of file system volume. Currently, FinSpace only supports <code>NAS_1</code> volume type. When you select <code>NAS_1</code> volume type, you must also provide <code>nas1Configuration</code>. </p>
     pub fn get_volume_type(&self) -> &::std::option::Option<crate::types::KxVolumeType> {
         self.inner.get_volume_type()
     }
@@ -164,31 +164,31 @@ impl CreateKxVolumeFluentBuilder {
     pub fn get_volume_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_volume_name()
     }
-    /// <p>A description of the volume.</p>
+    /// <p> A description of the volume. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>A description of the volume.</p>
+    /// <p> A description of the volume. </p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>A description of the volume.</p>
+    /// <p> A description of the volume. </p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p>Specifies the configuration for the Network attached storage (NAS_1) file system volume. This parameter is required when you choose <code>volumeType</code> as <i>NAS_1</i>.</p>
+    /// <p> Specifies the configuration for the Network attached storage (NAS_1) file system volume. This parameter is required when you choose <code>volumeType</code> as <i>NAS_1</i>.</p>
     pub fn nas1_configuration(mut self, input: crate::types::KxNas1Configuration) -> Self {
         self.inner = self.inner.nas1_configuration(input);
         self
     }
-    /// <p>Specifies the configuration for the Network attached storage (NAS_1) file system volume. This parameter is required when you choose <code>volumeType</code> as <i>NAS_1</i>.</p>
+    /// <p> Specifies the configuration for the Network attached storage (NAS_1) file system volume. This parameter is required when you choose <code>volumeType</code> as <i>NAS_1</i>.</p>
     pub fn set_nas1_configuration(mut self, input: ::std::option::Option<crate::types::KxNas1Configuration>) -> Self {
         self.inner = self.inner.set_nas1_configuration(input);
         self
     }
-    /// <p>Specifies the configuration for the Network attached storage (NAS_1) file system volume. This parameter is required when you choose <code>volumeType</code> as <i>NAS_1</i>.</p>
+    /// <p> Specifies the configuration for the Network attached storage (NAS_1) file system volume. This parameter is required when you choose <code>volumeType</code> as <i>NAS_1</i>.</p>
     pub fn get_nas1_configuration(&self) -> &::std::option::Option<crate::types::KxNas1Configuration> {
         self.inner.get_nas1_configuration()
     }
@@ -228,17 +228,17 @@ impl CreateKxVolumeFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A list of key-value pairs to label the volume. You can add up to 50 tags to a volume.</p>
+    /// <p> A list of key-value pairs to label the volume. You can add up to 50 tags to a volume. </p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
-    /// <p>A list of key-value pairs to label the volume. You can add up to 50 tags to a volume.</p>
+    /// <p> A list of key-value pairs to label the volume. You can add up to 50 tags to a volume. </p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>A list of key-value pairs to label the volume. You can add up to 50 tags to a volume.</p>
+    /// <p> A list of key-value pairs to label the volume. You can add up to 50 tags to a volume. </p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }

@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetControlInput {
-    /// <p>The identifier for the control.</p>
+    /// <p> The identifier for the control. </p>
     pub control_id: ::std::option::Option<::std::string::String>,
 }
 impl GetControlInput {
-    /// <p>The identifier for the control.</p>
+    /// <p> The identifier for the control. </p>
     pub fn control_id(&self) -> ::std::option::Option<&str> {
         self.control_id.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct GetControlInputBuilder {
     pub(crate) control_id: ::std::option::Option<::std::string::String>,
 }
 impl GetControlInputBuilder {
-    /// <p>The identifier for the control.</p>
+    /// <p> The identifier for the control. </p>
     /// This field is required.
     pub fn control_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier for the control.</p>
+    /// <p> The identifier for the control. </p>
     pub fn set_control_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.control_id = input;
         self
     }
-    /// <p>The identifier for the control.</p>
+    /// <p> The identifier for the control. </p>
     pub fn get_control_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.control_id
     }

@@ -3,28 +3,28 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddTagsToResourceInput {
-    /// <p>Specifies the type of resource you are tagging.</p><note>
+    /// <p>Specifies the type of resource you are tagging.</p> <note>
     /// <p>The <code>ManagedInstance</code> type for this API operation is for on-premises managed nodes. You must specify the name of the managed node in the following format: <code>mi-<i>ID_number</i> </code>. For example, <code>mi-1a2b3c4d5e6f</code>.</p>
     /// </note>
     pub resource_type: ::std::option::Option<crate::types::ResourceTypeForTagging>,
     /// <p>The resource ID you want to tag.</p>
     /// <p>Use the ID of the resource. Here are some examples:</p>
-    /// <p><code>MaintenanceWindow</code>: <code>mw-012345abcde</code></p>
-    /// <p><code>PatchBaseline</code>: <code>pb-012345abcde</code></p>
-    /// <p><code>Automation</code>: <code>example-c160-4567-8519-012345abcde</code></p>
-    /// <p><code>OpsMetadata</code> object: <code>ResourceID</code> for tagging is created from the Amazon Resource Name (ARN) for the object. Specifically, <code>ResourceID</code> is created from the strings that come after the word <code>opsmetadata</code> in the ARN. For example, an OpsMetadata object with an ARN of <code>arn:aws:ssm:us-east-2:1234567890:opsmetadata/aws/ssm/MyGroup/appmanager</code> has a <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code> or <code>/aws/ssm/MyGroup/appmanager</code>.</p>
+    /// <p> <code>MaintenanceWindow</code>: <code>mw-012345abcde</code> </p>
+    /// <p> <code>PatchBaseline</code>: <code>pb-012345abcde</code> </p>
+    /// <p> <code>Automation</code>: <code>example-c160-4567-8519-012345abcde</code> </p>
+    /// <p> <code>OpsMetadata</code> object: <code>ResourceID</code> for tagging is created from the Amazon Resource Name (ARN) for the object. Specifically, <code>ResourceID</code> is created from the strings that come after the word <code>opsmetadata</code> in the ARN. For example, an OpsMetadata object with an ARN of <code>arn:aws:ssm:us-east-2:1234567890:opsmetadata/aws/ssm/MyGroup/appmanager</code> has a <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code> or <code>/aws/ssm/MyGroup/appmanager</code>.</p>
     /// <p>For the <code>Document</code> and <code>Parameter</code> values, use the name of the resource. If you're tagging a shared document, you must use the full ARN of the document.</p>
-    /// <p><code>ManagedInstance</code>: <code>mi-012345abcde</code></p><note>
+    /// <p> <code>ManagedInstance</code>: <code>mi-012345abcde</code> </p> <note>
     /// <p>The <code>ManagedInstance</code> type for this API operation is only for on-premises managed nodes. You must specify the name of the managed node in the following format: <code>mi-<i>ID_number</i> </code>. For example, <code>mi-1a2b3c4d5e6f</code>.</p>
     /// </note>
     pub resource_id: ::std::option::Option<::std::string::String>,
-    /// <p>One or more tags. The value parameter is required.</p><important>
+    /// <p>One or more tags. The value parameter is required.</p> <important>
     /// <p>Don't enter personally identifiable information in this field.</p>
     /// </important>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl AddTagsToResourceInput {
-    /// <p>Specifies the type of resource you are tagging.</p><note>
+    /// <p>Specifies the type of resource you are tagging.</p> <note>
     /// <p>The <code>ManagedInstance</code> type for this API operation is for on-premises managed nodes. You must specify the name of the managed node in the following format: <code>mi-<i>ID_number</i> </code>. For example, <code>mi-1a2b3c4d5e6f</code>.</p>
     /// </note>
     pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceTypeForTagging> {
@@ -32,18 +32,18 @@ impl AddTagsToResourceInput {
     }
     /// <p>The resource ID you want to tag.</p>
     /// <p>Use the ID of the resource. Here are some examples:</p>
-    /// <p><code>MaintenanceWindow</code>: <code>mw-012345abcde</code></p>
-    /// <p><code>PatchBaseline</code>: <code>pb-012345abcde</code></p>
-    /// <p><code>Automation</code>: <code>example-c160-4567-8519-012345abcde</code></p>
-    /// <p><code>OpsMetadata</code> object: <code>ResourceID</code> for tagging is created from the Amazon Resource Name (ARN) for the object. Specifically, <code>ResourceID</code> is created from the strings that come after the word <code>opsmetadata</code> in the ARN. For example, an OpsMetadata object with an ARN of <code>arn:aws:ssm:us-east-2:1234567890:opsmetadata/aws/ssm/MyGroup/appmanager</code> has a <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code> or <code>/aws/ssm/MyGroup/appmanager</code>.</p>
+    /// <p> <code>MaintenanceWindow</code>: <code>mw-012345abcde</code> </p>
+    /// <p> <code>PatchBaseline</code>: <code>pb-012345abcde</code> </p>
+    /// <p> <code>Automation</code>: <code>example-c160-4567-8519-012345abcde</code> </p>
+    /// <p> <code>OpsMetadata</code> object: <code>ResourceID</code> for tagging is created from the Amazon Resource Name (ARN) for the object. Specifically, <code>ResourceID</code> is created from the strings that come after the word <code>opsmetadata</code> in the ARN. For example, an OpsMetadata object with an ARN of <code>arn:aws:ssm:us-east-2:1234567890:opsmetadata/aws/ssm/MyGroup/appmanager</code> has a <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code> or <code>/aws/ssm/MyGroup/appmanager</code>.</p>
     /// <p>For the <code>Document</code> and <code>Parameter</code> values, use the name of the resource. If you're tagging a shared document, you must use the full ARN of the document.</p>
-    /// <p><code>ManagedInstance</code>: <code>mi-012345abcde</code></p><note>
+    /// <p> <code>ManagedInstance</code>: <code>mi-012345abcde</code> </p> <note>
     /// <p>The <code>ManagedInstance</code> type for this API operation is only for on-premises managed nodes. You must specify the name of the managed node in the following format: <code>mi-<i>ID_number</i> </code>. For example, <code>mi-1a2b3c4d5e6f</code>.</p>
     /// </note>
     pub fn resource_id(&self) -> ::std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// <p>One or more tags. The value parameter is required.</p><important>
+    /// <p>One or more tags. The value parameter is required.</p> <important>
     /// <p>Don't enter personally identifiable information in this field.</p>
     /// </important>
     ///
@@ -68,7 +68,7 @@ pub struct AddTagsToResourceInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl AddTagsToResourceInputBuilder {
-    /// <p>Specifies the type of resource you are tagging.</p><note>
+    /// <p>Specifies the type of resource you are tagging.</p> <note>
     /// <p>The <code>ManagedInstance</code> type for this API operation is for on-premises managed nodes. You must specify the name of the managed node in the following format: <code>mi-<i>ID_number</i> </code>. For example, <code>mi-1a2b3c4d5e6f</code>.</p>
     /// </note>
     /// This field is required.
@@ -76,14 +76,14 @@ impl AddTagsToResourceInputBuilder {
         self.resource_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the type of resource you are tagging.</p><note>
+    /// <p>Specifies the type of resource you are tagging.</p> <note>
     /// <p>The <code>ManagedInstance</code> type for this API operation is for on-premises managed nodes. You must specify the name of the managed node in the following format: <code>mi-<i>ID_number</i> </code>. For example, <code>mi-1a2b3c4d5e6f</code>.</p>
     /// </note>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceTypeForTagging>) -> Self {
         self.resource_type = input;
         self
     }
-    /// <p>Specifies the type of resource you are tagging.</p><note>
+    /// <p>Specifies the type of resource you are tagging.</p> <note>
     /// <p>The <code>ManagedInstance</code> type for this API operation is for on-premises managed nodes. You must specify the name of the managed node in the following format: <code>mi-<i>ID_number</i> </code>. For example, <code>mi-1a2b3c4d5e6f</code>.</p>
     /// </note>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceTypeForTagging> {
@@ -91,12 +91,12 @@ impl AddTagsToResourceInputBuilder {
     }
     /// <p>The resource ID you want to tag.</p>
     /// <p>Use the ID of the resource. Here are some examples:</p>
-    /// <p><code>MaintenanceWindow</code>: <code>mw-012345abcde</code></p>
-    /// <p><code>PatchBaseline</code>: <code>pb-012345abcde</code></p>
-    /// <p><code>Automation</code>: <code>example-c160-4567-8519-012345abcde</code></p>
-    /// <p><code>OpsMetadata</code> object: <code>ResourceID</code> for tagging is created from the Amazon Resource Name (ARN) for the object. Specifically, <code>ResourceID</code> is created from the strings that come after the word <code>opsmetadata</code> in the ARN. For example, an OpsMetadata object with an ARN of <code>arn:aws:ssm:us-east-2:1234567890:opsmetadata/aws/ssm/MyGroup/appmanager</code> has a <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code> or <code>/aws/ssm/MyGroup/appmanager</code>.</p>
+    /// <p> <code>MaintenanceWindow</code>: <code>mw-012345abcde</code> </p>
+    /// <p> <code>PatchBaseline</code>: <code>pb-012345abcde</code> </p>
+    /// <p> <code>Automation</code>: <code>example-c160-4567-8519-012345abcde</code> </p>
+    /// <p> <code>OpsMetadata</code> object: <code>ResourceID</code> for tagging is created from the Amazon Resource Name (ARN) for the object. Specifically, <code>ResourceID</code> is created from the strings that come after the word <code>opsmetadata</code> in the ARN. For example, an OpsMetadata object with an ARN of <code>arn:aws:ssm:us-east-2:1234567890:opsmetadata/aws/ssm/MyGroup/appmanager</code> has a <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code> or <code>/aws/ssm/MyGroup/appmanager</code>.</p>
     /// <p>For the <code>Document</code> and <code>Parameter</code> values, use the name of the resource. If you're tagging a shared document, you must use the full ARN of the document.</p>
-    /// <p><code>ManagedInstance</code>: <code>mi-012345abcde</code></p><note>
+    /// <p> <code>ManagedInstance</code>: <code>mi-012345abcde</code> </p> <note>
     /// <p>The <code>ManagedInstance</code> type for this API operation is only for on-premises managed nodes. You must specify the name of the managed node in the following format: <code>mi-<i>ID_number</i> </code>. For example, <code>mi-1a2b3c4d5e6f</code>.</p>
     /// </note>
     /// This field is required.
@@ -106,12 +106,12 @@ impl AddTagsToResourceInputBuilder {
     }
     /// <p>The resource ID you want to tag.</p>
     /// <p>Use the ID of the resource. Here are some examples:</p>
-    /// <p><code>MaintenanceWindow</code>: <code>mw-012345abcde</code></p>
-    /// <p><code>PatchBaseline</code>: <code>pb-012345abcde</code></p>
-    /// <p><code>Automation</code>: <code>example-c160-4567-8519-012345abcde</code></p>
-    /// <p><code>OpsMetadata</code> object: <code>ResourceID</code> for tagging is created from the Amazon Resource Name (ARN) for the object. Specifically, <code>ResourceID</code> is created from the strings that come after the word <code>opsmetadata</code> in the ARN. For example, an OpsMetadata object with an ARN of <code>arn:aws:ssm:us-east-2:1234567890:opsmetadata/aws/ssm/MyGroup/appmanager</code> has a <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code> or <code>/aws/ssm/MyGroup/appmanager</code>.</p>
+    /// <p> <code>MaintenanceWindow</code>: <code>mw-012345abcde</code> </p>
+    /// <p> <code>PatchBaseline</code>: <code>pb-012345abcde</code> </p>
+    /// <p> <code>Automation</code>: <code>example-c160-4567-8519-012345abcde</code> </p>
+    /// <p> <code>OpsMetadata</code> object: <code>ResourceID</code> for tagging is created from the Amazon Resource Name (ARN) for the object. Specifically, <code>ResourceID</code> is created from the strings that come after the word <code>opsmetadata</code> in the ARN. For example, an OpsMetadata object with an ARN of <code>arn:aws:ssm:us-east-2:1234567890:opsmetadata/aws/ssm/MyGroup/appmanager</code> has a <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code> or <code>/aws/ssm/MyGroup/appmanager</code>.</p>
     /// <p>For the <code>Document</code> and <code>Parameter</code> values, use the name of the resource. If you're tagging a shared document, you must use the full ARN of the document.</p>
-    /// <p><code>ManagedInstance</code>: <code>mi-012345abcde</code></p><note>
+    /// <p> <code>ManagedInstance</code>: <code>mi-012345abcde</code> </p> <note>
     /// <p>The <code>ManagedInstance</code> type for this API operation is only for on-premises managed nodes. You must specify the name of the managed node in the following format: <code>mi-<i>ID_number</i> </code>. For example, <code>mi-1a2b3c4d5e6f</code>.</p>
     /// </note>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -120,12 +120,12 @@ impl AddTagsToResourceInputBuilder {
     }
     /// <p>The resource ID you want to tag.</p>
     /// <p>Use the ID of the resource. Here are some examples:</p>
-    /// <p><code>MaintenanceWindow</code>: <code>mw-012345abcde</code></p>
-    /// <p><code>PatchBaseline</code>: <code>pb-012345abcde</code></p>
-    /// <p><code>Automation</code>: <code>example-c160-4567-8519-012345abcde</code></p>
-    /// <p><code>OpsMetadata</code> object: <code>ResourceID</code> for tagging is created from the Amazon Resource Name (ARN) for the object. Specifically, <code>ResourceID</code> is created from the strings that come after the word <code>opsmetadata</code> in the ARN. For example, an OpsMetadata object with an ARN of <code>arn:aws:ssm:us-east-2:1234567890:opsmetadata/aws/ssm/MyGroup/appmanager</code> has a <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code> or <code>/aws/ssm/MyGroup/appmanager</code>.</p>
+    /// <p> <code>MaintenanceWindow</code>: <code>mw-012345abcde</code> </p>
+    /// <p> <code>PatchBaseline</code>: <code>pb-012345abcde</code> </p>
+    /// <p> <code>Automation</code>: <code>example-c160-4567-8519-012345abcde</code> </p>
+    /// <p> <code>OpsMetadata</code> object: <code>ResourceID</code> for tagging is created from the Amazon Resource Name (ARN) for the object. Specifically, <code>ResourceID</code> is created from the strings that come after the word <code>opsmetadata</code> in the ARN. For example, an OpsMetadata object with an ARN of <code>arn:aws:ssm:us-east-2:1234567890:opsmetadata/aws/ssm/MyGroup/appmanager</code> has a <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code> or <code>/aws/ssm/MyGroup/appmanager</code>.</p>
     /// <p>For the <code>Document</code> and <code>Parameter</code> values, use the name of the resource. If you're tagging a shared document, you must use the full ARN of the document.</p>
-    /// <p><code>ManagedInstance</code>: <code>mi-012345abcde</code></p><note>
+    /// <p> <code>ManagedInstance</code>: <code>mi-012345abcde</code> </p> <note>
     /// <p>The <code>ManagedInstance</code> type for this API operation is only for on-premises managed nodes. You must specify the name of the managed node in the following format: <code>mi-<i>ID_number</i> </code>. For example, <code>mi-1a2b3c4d5e6f</code>.</p>
     /// </note>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,7 +135,7 @@ impl AddTagsToResourceInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>One or more tags. The value parameter is required.</p><important>
+    /// <p>One or more tags. The value parameter is required.</p> <important>
     /// <p>Don't enter personally identifiable information in this field.</p>
     /// </important>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
@@ -144,14 +144,14 @@ impl AddTagsToResourceInputBuilder {
         self.tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>One or more tags. The value parameter is required.</p><important>
+    /// <p>One or more tags. The value parameter is required.</p> <important>
     /// <p>Don't enter personally identifiable information in this field.</p>
     /// </important>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>One or more tags. The value parameter is required.</p><important>
+    /// <p>One or more tags. The value parameter is required.</p> <important>
     /// <p>Don't enter personally identifiable information in this field.</p>
     /// </important>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {

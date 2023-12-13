@@ -19,22 +19,22 @@ pub struct UpdateEnvironmentInput {
     /// <dl>
     /// <dt></dt>
     /// <dd>
-    /// <p><code>NONE</code></p>
+    /// <p> <code>NONE</code> </p>
     /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>
     /// </dd>
     /// <dt></dt>
     /// <dd>
-    /// <p><code>CURRENT_VERSION</code></p>
+    /// <p> <code>CURRENT_VERSION</code> </p>
     /// <p>In this mode, the environment is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include major or minor version parameters when you use this <code>deployment-type</code>.</p>
     /// </dd>
     /// <dt></dt>
     /// <dd>
-    /// <p><code>MINOR_VERSION</code></p>
+    /// <p> <code>MINOR_VERSION</code> </p>
     /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) minor version of the current major version in use, by default. You can also specify a different minor version of the current major version in use.</p>
     /// </dd>
     /// <dt></dt>
     /// <dd>
-    /// <p><code>MAJOR_VERSION</code></p>
+    /// <p> <code>MAJOR_VERSION</code> </p>
     /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can also specify a different major version that is higher than the major version in use and a minor version (optional).</p>
     /// </dd>
     /// </dl>
@@ -80,22 +80,22 @@ impl UpdateEnvironmentInput {
     /// <dl>
     /// <dt></dt>
     /// <dd>
-    /// <p><code>NONE</code></p>
+    /// <p> <code>NONE</code> </p>
     /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>
     /// </dd>
     /// <dt></dt>
     /// <dd>
-    /// <p><code>CURRENT_VERSION</code></p>
+    /// <p> <code>CURRENT_VERSION</code> </p>
     /// <p>In this mode, the environment is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include major or minor version parameters when you use this <code>deployment-type</code>.</p>
     /// </dd>
     /// <dt></dt>
     /// <dd>
-    /// <p><code>MINOR_VERSION</code></p>
+    /// <p> <code>MINOR_VERSION</code> </p>
     /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) minor version of the current major version in use, by default. You can also specify a different minor version of the current major version in use.</p>
     /// </dd>
     /// <dt></dt>
     /// <dd>
-    /// <p><code>MAJOR_VERSION</code></p>
+    /// <p> <code>MAJOR_VERSION</code> </p>
     /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can also specify a different major version that is higher than the major version in use and a minor version (optional).</p>
     /// </dd>
     /// </dl>
@@ -252,22 +252,22 @@ impl UpdateEnvironmentInputBuilder {
     /// <dl>
     /// <dt></dt>
     /// <dd>
-    /// <p><code>NONE</code></p>
+    /// <p> <code>NONE</code> </p>
     /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>
     /// </dd>
     /// <dt></dt>
     /// <dd>
-    /// <p><code>CURRENT_VERSION</code></p>
+    /// <p> <code>CURRENT_VERSION</code> </p>
     /// <p>In this mode, the environment is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include major or minor version parameters when you use this <code>deployment-type</code>.</p>
     /// </dd>
     /// <dt></dt>
     /// <dd>
-    /// <p><code>MINOR_VERSION</code></p>
+    /// <p> <code>MINOR_VERSION</code> </p>
     /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) minor version of the current major version in use, by default. You can also specify a different minor version of the current major version in use.</p>
     /// </dd>
     /// <dt></dt>
     /// <dd>
-    /// <p><code>MAJOR_VERSION</code></p>
+    /// <p> <code>MAJOR_VERSION</code> </p>
     /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can also specify a different major version that is higher than the major version in use and a minor version (optional).</p>
     /// </dd>
     /// </dl>
@@ -280,22 +280,22 @@ impl UpdateEnvironmentInputBuilder {
     /// <dl>
     /// <dt></dt>
     /// <dd>
-    /// <p><code>NONE</code></p>
+    /// <p> <code>NONE</code> </p>
     /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>
     /// </dd>
     /// <dt></dt>
     /// <dd>
-    /// <p><code>CURRENT_VERSION</code></p>
+    /// <p> <code>CURRENT_VERSION</code> </p>
     /// <p>In this mode, the environment is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include major or minor version parameters when you use this <code>deployment-type</code>.</p>
     /// </dd>
     /// <dt></dt>
     /// <dd>
-    /// <p><code>MINOR_VERSION</code></p>
+    /// <p> <code>MINOR_VERSION</code> </p>
     /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) minor version of the current major version in use, by default. You can also specify a different minor version of the current major version in use.</p>
     /// </dd>
     /// <dt></dt>
     /// <dd>
-    /// <p><code>MAJOR_VERSION</code></p>
+    /// <p> <code>MAJOR_VERSION</code> </p>
     /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can also specify a different major version that is higher than the major version in use and a minor version (optional).</p>
     /// </dd>
     /// </dl>
@@ -307,22 +307,22 @@ impl UpdateEnvironmentInputBuilder {
     /// <dl>
     /// <dt></dt>
     /// <dd>
-    /// <p><code>NONE</code></p>
+    /// <p> <code>NONE</code> </p>
     /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>
     /// </dd>
     /// <dt></dt>
     /// <dd>
-    /// <p><code>CURRENT_VERSION</code></p>
+    /// <p> <code>CURRENT_VERSION</code> </p>
     /// <p>In this mode, the environment is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include major or minor version parameters when you use this <code>deployment-type</code>.</p>
     /// </dd>
     /// <dt></dt>
     /// <dd>
-    /// <p><code>MINOR_VERSION</code></p>
+    /// <p> <code>MINOR_VERSION</code> </p>
     /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) minor version of the current major version in use, by default. You can also specify a different minor version of the current major version in use.</p>
     /// </dd>
     /// <dt></dt>
     /// <dd>
-    /// <p><code>MAJOR_VERSION</code></p>
+    /// <p> <code>MAJOR_VERSION</code> </p>
     /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can also specify a different major version that is higher than the major version in use and a minor version (optional).</p>
     /// </dd>
     /// </dl>

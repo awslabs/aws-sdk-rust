@@ -53,7 +53,7 @@ pub enum Error {
     ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
     /// <p>The Rule-SQL expression can't be parsed correctly.</p>
     SqlParseException(crate::types::error::SqlParseException),
-    /// <p>This exception occurs if you attempt to start a task with the same task-id as an existing task but with a different clientRequestToken.</p>
+    /// <p> This exception occurs if you attempt to start a task with the same task-id as an existing task but with a different clientRequestToken. </p>
     TaskAlreadyExistsException(crate::types::error::TaskAlreadyExistsException),
     /// <p>The rate exceeds the limit.</p>
     ThrottlingException(crate::types::error::ThrottlingException),

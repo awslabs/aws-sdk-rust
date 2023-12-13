@@ -110,17 +110,17 @@ impl StartAssetBundleImportJobFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the Amazon Web Services account to import assets into.</p>
+    /// <p>The ID of the Amazon Web Services account to import assets into. </p>
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
-    /// <p>The ID of the Amazon Web Services account to import assets into.</p>
+    /// <p>The ID of the Amazon Web Services account to import assets into. </p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
-    /// <p>The ID of the Amazon Web Services account to import assets into.</p>
+    /// <p>The ID of the Amazon Web Services account to import assets into. </p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_aws_account_id()
     }
@@ -138,17 +138,17 @@ impl StartAssetBundleImportJobFluentBuilder {
     pub fn get_asset_bundle_import_job_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_asset_bundle_import_job_id()
     }
-    /// <p>The source of the asset bundle zip file that contains the data that you want to import. The file must be in <code>QUICKSIGHT_JSON</code> format.</p>
+    /// <p>The source of the asset bundle zip file that contains the data that you want to import. The file must be in <code>QUICKSIGHT_JSON</code> format. </p>
     pub fn asset_bundle_import_source(mut self, input: crate::types::AssetBundleImportSource) -> Self {
         self.inner = self.inner.asset_bundle_import_source(input);
         self
     }
-    /// <p>The source of the asset bundle zip file that contains the data that you want to import. The file must be in <code>QUICKSIGHT_JSON</code> format.</p>
+    /// <p>The source of the asset bundle zip file that contains the data that you want to import. The file must be in <code>QUICKSIGHT_JSON</code> format. </p>
     pub fn set_asset_bundle_import_source(mut self, input: ::std::option::Option<crate::types::AssetBundleImportSource>) -> Self {
         self.inner = self.inner.set_asset_bundle_import_source(input);
         self
     }
-    /// <p>The source of the asset bundle zip file that contains the data that you want to import. The file must be in <code>QUICKSIGHT_JSON</code> format.</p>
+    /// <p>The source of the asset bundle zip file that contains the data that you want to import. The file must be in <code>QUICKSIGHT_JSON</code> format. </p>
     pub fn get_asset_bundle_import_source(&self) -> &::std::option::Option<crate::types::AssetBundleImportSource> {
         self.inner.get_asset_bundle_import_source()
     }
@@ -214,12 +214,12 @@ impl StartAssetBundleImportJobFluentBuilder {
     pub fn get_override_tags(&self) -> &::std::option::Option<crate::types::AssetBundleImportJobOverrideTags> {
         self.inner.get_override_tags()
     }
-    /// <p>An optional validation strategy override for all analyses and dashboards that is applied to the resource configuration before import.</p>
+    /// <p>An optional validation strategy override for all analyses and dashboards that is applied to the resource configuration before import. </p>
     pub fn override_validation_strategy(mut self, input: crate::types::AssetBundleImportJobOverrideValidationStrategy) -> Self {
         self.inner = self.inner.override_validation_strategy(input);
         self
     }
-    /// <p>An optional validation strategy override for all analyses and dashboards that is applied to the resource configuration before import.</p>
+    /// <p>An optional validation strategy override for all analyses and dashboards that is applied to the resource configuration before import. </p>
     pub fn set_override_validation_strategy(
         mut self,
         input: ::std::option::Option<crate::types::AssetBundleImportJobOverrideValidationStrategy>,
@@ -227,7 +227,7 @@ impl StartAssetBundleImportJobFluentBuilder {
         self.inner = self.inner.set_override_validation_strategy(input);
         self
     }
-    /// <p>An optional validation strategy override for all analyses and dashboards that is applied to the resource configuration before import.</p>
+    /// <p>An optional validation strategy override for all analyses and dashboards that is applied to the resource configuration before import. </p>
     pub fn get_override_validation_strategy(&self) -> &::std::option::Option<crate::types::AssetBundleImportJobOverrideValidationStrategy> {
         self.inner.get_override_validation_strategy()
     }

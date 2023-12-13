@@ -22,7 +22,7 @@ impl GetDetectorVersionInputBuilder {
 }
 /// Fluent builder constructing a request to `GetDetectorVersion`.
 ///
-/// <p>Gets a particular detector version.</p>
+/// <p>Gets a particular detector version. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDetectorVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

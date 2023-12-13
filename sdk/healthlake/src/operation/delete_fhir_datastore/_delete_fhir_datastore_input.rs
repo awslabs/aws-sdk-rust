@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFhirDatastoreInput {
-    /// <p>The AWS-generated ID for the data store to be deleted.</p>
+    /// <p> The AWS-generated ID for the data store to be deleted.</p>
     pub datastore_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteFhirDatastoreInput {
-    /// <p>The AWS-generated ID for the data store to be deleted.</p>
+    /// <p> The AWS-generated ID for the data store to be deleted.</p>
     pub fn datastore_id(&self) -> ::std::option::Option<&str> {
         self.datastore_id.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct DeleteFhirDatastoreInputBuilder {
     pub(crate) datastore_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteFhirDatastoreInputBuilder {
-    /// <p>The AWS-generated ID for the data store to be deleted.</p>
+    /// <p> The AWS-generated ID for the data store to be deleted.</p>
     /// This field is required.
     pub fn datastore_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS-generated ID for the data store to be deleted.</p>
+    /// <p> The AWS-generated ID for the data store to be deleted.</p>
     pub fn set_datastore_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.datastore_id = input;
         self
     }
-    /// <p>The AWS-generated ID for the data store to be deleted.</p>
+    /// <p> The AWS-generated ID for the data store to be deleted.</p>
     pub fn get_datastore_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.datastore_id
     }

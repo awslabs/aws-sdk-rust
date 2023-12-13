@@ -11,7 +11,7 @@ pub struct GetTimeSeriesServiceStatisticsInput {
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the group for which to pull statistics from.</p>
     pub group_arn: ::std::option::Option<::std::string::String>,
-    /// <p>A filter expression defining entities that will be aggregated for statistics. Supports ID, service, and edge functions. If no selector expression is specified, edge statistics are returned.</p>
+    /// <p>A filter expression defining entities that will be aggregated for statistics. Supports ID, service, and edge functions. If no selector expression is specified, edge statistics are returned. </p>
     pub entity_selector_expression: ::std::option::Option<::std::string::String>,
     /// <p>Aggregation period in seconds.</p>
     pub period: ::std::option::Option<i32>,
@@ -37,7 +37,7 @@ impl GetTimeSeriesServiceStatisticsInput {
     pub fn group_arn(&self) -> ::std::option::Option<&str> {
         self.group_arn.as_deref()
     }
-    /// <p>A filter expression defining entities that will be aggregated for statistics. Supports ID, service, and edge functions. If no selector expression is specified, edge statistics are returned.</p>
+    /// <p>A filter expression defining entities that will be aggregated for statistics. Supports ID, service, and edge functions. If no selector expression is specified, edge statistics are returned. </p>
     pub fn entity_selector_expression(&self) -> ::std::option::Option<&str> {
         self.entity_selector_expression.as_deref()
     }
@@ -133,17 +133,17 @@ impl GetTimeSeriesServiceStatisticsInputBuilder {
     pub fn get_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.group_arn
     }
-    /// <p>A filter expression defining entities that will be aggregated for statistics. Supports ID, service, and edge functions. If no selector expression is specified, edge statistics are returned.</p>
+    /// <p>A filter expression defining entities that will be aggregated for statistics. Supports ID, service, and edge functions. If no selector expression is specified, edge statistics are returned. </p>
     pub fn entity_selector_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_selector_expression = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A filter expression defining entities that will be aggregated for statistics. Supports ID, service, and edge functions. If no selector expression is specified, edge statistics are returned.</p>
+    /// <p>A filter expression defining entities that will be aggregated for statistics. Supports ID, service, and edge functions. If no selector expression is specified, edge statistics are returned. </p>
     pub fn set_entity_selector_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.entity_selector_expression = input;
         self
     }
-    /// <p>A filter expression defining entities that will be aggregated for statistics. Supports ID, service, and edge functions. If no selector expression is specified, edge statistics are returned.</p>
+    /// <p>A filter expression defining entities that will be aggregated for statistics. Supports ID, service, and edge functions. If no selector expression is specified, edge statistics are returned. </p>
     pub fn get_entity_selector_expression(&self) -> &::std::option::Option<::std::string::String> {
         &self.entity_selector_expression
     }

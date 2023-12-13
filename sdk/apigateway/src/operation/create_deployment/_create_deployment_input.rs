@@ -18,7 +18,7 @@ pub struct CreateDeploymentInput {
     pub cache_cluster_size: ::std::option::Option<crate::types::CacheClusterSize>,
     /// <p>A map that defines the stage variables for the Stage resource that is associated with the new deployment. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
     pub variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>The input configuration for the canary deployment when the deployment is a canary release deployment.</p>
+    /// <p>The input configuration for the canary deployment when the deployment is a canary release deployment. </p>
     pub canary_settings: ::std::option::Option<crate::types::DeploymentCanarySettings>,
     /// <p>Specifies whether active tracing with X-ray is enabled for the Stage.</p>
     pub tracing_enabled: ::std::option::Option<bool>,
@@ -52,7 +52,7 @@ impl CreateDeploymentInput {
     pub fn variables(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.variables.as_ref()
     }
-    /// <p>The input configuration for the canary deployment when the deployment is a canary release deployment.</p>
+    /// <p>The input configuration for the canary deployment when the deployment is a canary release deployment. </p>
     pub fn canary_settings(&self) -> ::std::option::Option<&crate::types::DeploymentCanarySettings> {
         self.canary_settings.as_ref()
     }
@@ -188,17 +188,17 @@ impl CreateDeploymentInputBuilder {
     pub fn get_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.variables
     }
-    /// <p>The input configuration for the canary deployment when the deployment is a canary release deployment.</p>
+    /// <p>The input configuration for the canary deployment when the deployment is a canary release deployment. </p>
     pub fn canary_settings(mut self, input: crate::types::DeploymentCanarySettings) -> Self {
         self.canary_settings = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The input configuration for the canary deployment when the deployment is a canary release deployment.</p>
+    /// <p>The input configuration for the canary deployment when the deployment is a canary release deployment. </p>
     pub fn set_canary_settings(mut self, input: ::std::option::Option<crate::types::DeploymentCanarySettings>) -> Self {
         self.canary_settings = input;
         self
     }
-    /// <p>The input configuration for the canary deployment when the deployment is a canary release deployment.</p>
+    /// <p>The input configuration for the canary deployment when the deployment is a canary release deployment. </p>
     pub fn get_canary_settings(&self) -> &::std::option::Option<crate::types::DeploymentCanarySettings> {
         &self.canary_settings
     }

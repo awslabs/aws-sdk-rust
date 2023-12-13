@@ -136,37 +136,37 @@ impl CreateConnectionFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p>The type of authorization to use for the connection.</p><note>
+    /// <p>The type of authorization to use for the connection.</p> <note>
     /// <p>OAUTH tokens are refreshed when a 401 or 407 response is returned.</p>
     /// </note>
     pub fn authorization_type(mut self, input: crate::types::ConnectionAuthorizationType) -> Self {
         self.inner = self.inner.authorization_type(input);
         self
     }
-    /// <p>The type of authorization to use for the connection.</p><note>
+    /// <p>The type of authorization to use for the connection.</p> <note>
     /// <p>OAUTH tokens are refreshed when a 401 or 407 response is returned.</p>
     /// </note>
     pub fn set_authorization_type(mut self, input: ::std::option::Option<crate::types::ConnectionAuthorizationType>) -> Self {
         self.inner = self.inner.set_authorization_type(input);
         self
     }
-    /// <p>The type of authorization to use for the connection.</p><note>
+    /// <p>The type of authorization to use for the connection.</p> <note>
     /// <p>OAUTH tokens are refreshed when a 401 or 407 response is returned.</p>
     /// </note>
     pub fn get_authorization_type(&self) -> &::std::option::Option<crate::types::ConnectionAuthorizationType> {
         self.inner.get_authorization_type()
     }
-    /// <p>A <code>CreateConnectionAuthRequestParameters</code> object that contains the authorization parameters to use to authorize with the endpoint.</p>
+    /// <p>A <code>CreateConnectionAuthRequestParameters</code> object that contains the authorization parameters to use to authorize with the endpoint. </p>
     pub fn auth_parameters(mut self, input: crate::types::CreateConnectionAuthRequestParameters) -> Self {
         self.inner = self.inner.auth_parameters(input);
         self
     }
-    /// <p>A <code>CreateConnectionAuthRequestParameters</code> object that contains the authorization parameters to use to authorize with the endpoint.</p>
+    /// <p>A <code>CreateConnectionAuthRequestParameters</code> object that contains the authorization parameters to use to authorize with the endpoint. </p>
     pub fn set_auth_parameters(mut self, input: ::std::option::Option<crate::types::CreateConnectionAuthRequestParameters>) -> Self {
         self.inner = self.inner.set_auth_parameters(input);
         self
     }
-    /// <p>A <code>CreateConnectionAuthRequestParameters</code> object that contains the authorization parameters to use to authorize with the endpoint.</p>
+    /// <p>A <code>CreateConnectionAuthRequestParameters</code> object that contains the authorization parameters to use to authorize with the endpoint. </p>
     pub fn get_auth_parameters(&self) -> &::std::option::Option<crate::types::CreateConnectionAuthRequestParameters> {
         self.inner.get_auth_parameters()
     }

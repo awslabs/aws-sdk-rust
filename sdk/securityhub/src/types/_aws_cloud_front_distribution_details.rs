@@ -8,7 +8,7 @@ pub struct AwsCloudFrontDistributionDetails {
     pub cache_behaviors: ::std::option::Option<crate::types::AwsCloudFrontDistributionCacheBehaviors>,
     /// <p>The default cache behavior for the configuration.</p>
     pub default_cache_behavior: ::std::option::Option<crate::types::AwsCloudFrontDistributionDefaultCacheBehavior>,
-    /// <p>The object that CloudFront sends in response to requests from the origin (for example, index.html) when a viewer requests the root URL for the distribution (http://www.example.com) instead of an object in your distribution (http://www.example.com/product-description.html).</p>
+    /// <p>The object that CloudFront sends in response to requests from the origin (for example, index.html) when a viewer requests the root URL for the distribution (http://www.example.com) instead of an object in your distribution (http://www.example.com/product-description.html). </p>
     pub default_root_object: ::std::option::Option<::std::string::String>,
     /// <p>The domain name corresponding to the distribution.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
@@ -39,7 +39,7 @@ impl AwsCloudFrontDistributionDetails {
     pub fn default_cache_behavior(&self) -> ::std::option::Option<&crate::types::AwsCloudFrontDistributionDefaultCacheBehavior> {
         self.default_cache_behavior.as_ref()
     }
-    /// <p>The object that CloudFront sends in response to requests from the origin (for example, index.html) when a viewer requests the root URL for the distribution (http://www.example.com) instead of an object in your distribution (http://www.example.com/product-description.html).</p>
+    /// <p>The object that CloudFront sends in response to requests from the origin (for example, index.html) when a viewer requests the root URL for the distribution (http://www.example.com) instead of an object in your distribution (http://www.example.com/product-description.html). </p>
     pub fn default_root_object(&self) -> ::std::option::Option<&str> {
         self.default_root_object.as_deref()
     }
@@ -134,17 +134,17 @@ impl AwsCloudFrontDistributionDetailsBuilder {
     pub fn get_default_cache_behavior(&self) -> &::std::option::Option<crate::types::AwsCloudFrontDistributionDefaultCacheBehavior> {
         &self.default_cache_behavior
     }
-    /// <p>The object that CloudFront sends in response to requests from the origin (for example, index.html) when a viewer requests the root URL for the distribution (http://www.example.com) instead of an object in your distribution (http://www.example.com/product-description.html).</p>
+    /// <p>The object that CloudFront sends in response to requests from the origin (for example, index.html) when a viewer requests the root URL for the distribution (http://www.example.com) instead of an object in your distribution (http://www.example.com/product-description.html). </p>
     pub fn default_root_object(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_root_object = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The object that CloudFront sends in response to requests from the origin (for example, index.html) when a viewer requests the root URL for the distribution (http://www.example.com) instead of an object in your distribution (http://www.example.com/product-description.html).</p>
+    /// <p>The object that CloudFront sends in response to requests from the origin (for example, index.html) when a viewer requests the root URL for the distribution (http://www.example.com) instead of an object in your distribution (http://www.example.com/product-description.html). </p>
     pub fn set_default_root_object(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_root_object = input;
         self
     }
-    /// <p>The object that CloudFront sends in response to requests from the origin (for example, index.html) when a viewer requests the root URL for the distribution (http://www.example.com) instead of an object in your distribution (http://www.example.com/product-description.html).</p>
+    /// <p>The object that CloudFront sends in response to requests from the origin (for example, index.html) when a viewer requests the root URL for the distribution (http://www.example.com) instead of an object in your distribution (http://www.example.com/product-description.html). </p>
     pub fn get_default_root_object(&self) -> &::std::option::Option<::std::string::String> {
         &self.default_root_object
     }

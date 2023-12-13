@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateServerEngineAttributesInput {
-    /// <p>The name of the server to update.</p>
+    /// <p>The name of the server to update. </p>
     pub server_name: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the engine attribute to update.</p>
+    /// <p>The name of the engine attribute to update. </p>
     pub attribute_name: ::std::option::Option<::std::string::String>,
-    /// <p>The value to set for the attribute.</p>
+    /// <p>The value to set for the attribute. </p>
     pub attribute_value: ::std::option::Option<::std::string::String>,
 }
 impl UpdateServerEngineAttributesInput {
-    /// <p>The name of the server to update.</p>
+    /// <p>The name of the server to update. </p>
     pub fn server_name(&self) -> ::std::option::Option<&str> {
         self.server_name.as_deref()
     }
-    /// <p>The name of the engine attribute to update.</p>
+    /// <p>The name of the engine attribute to update. </p>
     pub fn attribute_name(&self) -> ::std::option::Option<&str> {
         self.attribute_name.as_deref()
     }
-    /// <p>The value to set for the attribute.</p>
+    /// <p>The value to set for the attribute. </p>
     pub fn attribute_value(&self) -> ::std::option::Option<&str> {
         self.attribute_value.as_deref()
     }
@@ -40,47 +40,47 @@ pub struct UpdateServerEngineAttributesInputBuilder {
     pub(crate) attribute_value: ::std::option::Option<::std::string::String>,
 }
 impl UpdateServerEngineAttributesInputBuilder {
-    /// <p>The name of the server to update.</p>
+    /// <p>The name of the server to update. </p>
     /// This field is required.
     pub fn server_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the server to update.</p>
+    /// <p>The name of the server to update. </p>
     pub fn set_server_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_name = input;
         self
     }
-    /// <p>The name of the server to update.</p>
+    /// <p>The name of the server to update. </p>
     pub fn get_server_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.server_name
     }
-    /// <p>The name of the engine attribute to update.</p>
+    /// <p>The name of the engine attribute to update. </p>
     /// This field is required.
     pub fn attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the engine attribute to update.</p>
+    /// <p>The name of the engine attribute to update. </p>
     pub fn set_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attribute_name = input;
         self
     }
-    /// <p>The name of the engine attribute to update.</p>
+    /// <p>The name of the engine attribute to update. </p>
     pub fn get_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.attribute_name
     }
-    /// <p>The value to set for the attribute.</p>
+    /// <p>The value to set for the attribute. </p>
     pub fn attribute_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_value = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The value to set for the attribute.</p>
+    /// <p>The value to set for the attribute. </p>
     pub fn set_attribute_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attribute_value = input;
         self
     }
-    /// <p>The value to set for the attribute.</p>
+    /// <p>The value to set for the attribute. </p>
     pub fn get_attribute_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.attribute_value
     }

@@ -7,7 +7,7 @@ pub struct DescribeDeviceOutput {
     pub last_reached_out_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>When the device last pushed an update to the Amazon Web Services Cloud. Indicates when the device cache was refreshed.</p>
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
+    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment. </p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The ID of the device that you checked the information for.</p>
     pub managed_device_id: ::std::option::Option<::std::string::String>,
@@ -21,7 +21,7 @@ pub struct DescribeDeviceOutput {
     pub device_state: ::std::option::Option<crate::types::UnlockState>,
     /// <p>The network interfaces available on the device.</p>
     pub physical_network_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::PhysicalNetworkInterface>>,
-    /// <p>The hardware specifications of the device.</p>
+    /// <p>The hardware specifications of the device. </p>
     pub device_capacities: ::std::option::Option<::std::vec::Vec<crate::types::Capacity>>,
     /// <p>The software installed on the device.</p>
     pub software: ::std::option::Option<crate::types::SoftwareInformation>,
@@ -36,7 +36,7 @@ impl DescribeDeviceOutput {
     pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
-    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
+    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment. </p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
@@ -66,7 +66,7 @@ impl DescribeDeviceOutput {
     pub fn physical_network_interfaces(&self) -> &[crate::types::PhysicalNetworkInterface] {
         self.physical_network_interfaces.as_deref().unwrap_or_default()
     }
-    /// <p>The hardware specifications of the device.</p>
+    /// <p>The hardware specifications of the device. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.device_capacities.is_none()`.
     pub fn device_capacities(&self) -> &[crate::types::Capacity] {
@@ -139,19 +139,19 @@ impl DescribeDeviceOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
+    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment. </p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
+    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment. </p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
+    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment. </p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
@@ -249,19 +249,19 @@ impl DescribeDeviceOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_device_capacities`](Self::set_device_capacities).
     ///
-    /// <p>The hardware specifications of the device.</p>
+    /// <p>The hardware specifications of the device. </p>
     pub fn device_capacities(mut self, input: crate::types::Capacity) -> Self {
         let mut v = self.device_capacities.unwrap_or_default();
         v.push(input);
         self.device_capacities = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The hardware specifications of the device.</p>
+    /// <p>The hardware specifications of the device. </p>
     pub fn set_device_capacities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Capacity>>) -> Self {
         self.device_capacities = input;
         self
     }
-    /// <p>The hardware specifications of the device.</p>
+    /// <p>The hardware specifications of the device. </p>
     pub fn get_device_capacities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Capacity>> {
         &self.device_capacities
     }

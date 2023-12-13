@@ -5,7 +5,7 @@
 pub struct ListConversationsInput {
     /// <p>The identifier of the Amazon Q application.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of the user involved in the Amazon Q web experience conversation.</p>
+    /// <p>The identifier of the user involved in the Amazon Q web experience conversation. </p>
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q conversations.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -17,7 +17,7 @@ impl ListConversationsInput {
     pub fn application_id(&self) -> ::std::option::Option<&str> {
         self.application_id.as_deref()
     }
-    /// <p>The identifier of the user involved in the Amazon Q web experience conversation.</p>
+    /// <p>The identifier of the user involved in the Amazon Q web experience conversation. </p>
     pub fn user_id(&self) -> ::std::option::Option<&str> {
         self.user_id.as_deref()
     }
@@ -62,18 +62,18 @@ impl ListConversationsInputBuilder {
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_id
     }
-    /// <p>The identifier of the user involved in the Amazon Q web experience conversation.</p>
+    /// <p>The identifier of the user involved in the Amazon Q web experience conversation. </p>
     /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the user involved in the Amazon Q web experience conversation.</p>
+    /// <p>The identifier of the user involved in the Amazon Q web experience conversation. </p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_id = input;
         self
     }
-    /// <p>The identifier of the user involved in the Amazon Q web experience conversation.</p>
+    /// <p>The identifier of the user involved in the Amazon Q web experience conversation. </p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_id
     }

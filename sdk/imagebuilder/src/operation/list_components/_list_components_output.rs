@@ -5,7 +5,7 @@
 pub struct ListComponentsOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
     pub request_id: ::std::option::Option<::std::string::String>,
-    /// <p>The list of component semantic versions.</p><note>
+    /// <p>The list of component semantic versions.</p> <note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -29,7 +29,7 @@ impl ListComponentsOutput {
     pub fn request_id(&self) -> ::std::option::Option<&str> {
         self.request_id.as_deref()
     }
-    /// <p>The list of component semantic versions.</p><note>
+    /// <p>The list of component semantic versions.</p> <note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -93,7 +93,7 @@ impl ListComponentsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_component_version_list`](Self::set_component_version_list).
     ///
-    /// <p>The list of component semantic versions.</p><note>
+    /// <p>The list of component semantic versions.</p> <note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -113,7 +113,7 @@ impl ListComponentsOutputBuilder {
         self.component_version_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of component semantic versions.</p><note>
+    /// <p>The list of component semantic versions.</p> <note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -131,7 +131,7 @@ impl ListComponentsOutputBuilder {
         self.component_version_list = input;
         self
     }
-    /// <p>The list of component semantic versions.</p><note>
+    /// <p>The list of component semantic versions.</p> <note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>

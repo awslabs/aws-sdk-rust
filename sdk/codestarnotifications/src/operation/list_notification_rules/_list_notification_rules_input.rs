@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListNotificationRulesInput {
-    /// <p>The filters to use to return information by service or resource type. For valid values, see <code>ListNotificationRulesFilter</code>.</p><note>
+    /// <p>The filters to use to return information by service or resource type. For valid values, see <code>ListNotificationRulesFilter</code>.</p> <note>
     /// <p>A filter with the same name can appear more than once when used with OR statements. Filters with different names should be applied with AND statements.</p>
     /// </note>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::ListNotificationRulesFilter>>,
@@ -13,7 +13,7 @@ pub struct ListNotificationRulesInput {
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListNotificationRulesInput {
-    /// <p>The filters to use to return information by service or resource type. For valid values, see <code>ListNotificationRulesFilter</code>.</p><note>
+    /// <p>The filters to use to return information by service or resource type. For valid values, see <code>ListNotificationRulesFilter</code>.</p> <note>
     /// <p>A filter with the same name can appear more than once when used with OR statements. Filters with different names should be applied with AND statements.</p>
     /// </note>
     ///
@@ -50,7 +50,7 @@ impl ListNotificationRulesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>The filters to use to return information by service or resource type. For valid values, see <code>ListNotificationRulesFilter</code>.</p><note>
+    /// <p>The filters to use to return information by service or resource type. For valid values, see <code>ListNotificationRulesFilter</code>.</p> <note>
     /// <p>A filter with the same name can appear more than once when used with OR statements. Filters with different names should be applied with AND statements.</p>
     /// </note>
     pub fn filters(mut self, input: crate::types::ListNotificationRulesFilter) -> Self {
@@ -59,14 +59,14 @@ impl ListNotificationRulesInputBuilder {
         self.filters = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The filters to use to return information by service or resource type. For valid values, see <code>ListNotificationRulesFilter</code>.</p><note>
+    /// <p>The filters to use to return information by service or resource type. For valid values, see <code>ListNotificationRulesFilter</code>.</p> <note>
     /// <p>A filter with the same name can appear more than once when used with OR statements. Filters with different names should be applied with AND statements.</p>
     /// </note>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListNotificationRulesFilter>>) -> Self {
         self.filters = input;
         self
     }
-    /// <p>The filters to use to return information by service or resource type. For valid values, see <code>ListNotificationRulesFilter</code>.</p><note>
+    /// <p>The filters to use to return information by service or resource type. For valid values, see <code>ListNotificationRulesFilter</code>.</p> <note>
     /// <p>A filter with the same name can appear more than once when used with OR statements. Filters with different names should be applied with AND statements.</p>
     /// </note>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListNotificationRulesFilter>> {

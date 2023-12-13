@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCaseOutput {
-    /// <p>A list of detailed field information.</p>
+    /// <p>A list of detailed field information. </p>
     pub fields: ::std::vec::Vec<crate::types::FieldValue>,
     /// <p>A unique identifier of a template.</p>
     pub template_id: ::std::string::String,
@@ -14,7 +14,7 @@ pub struct GetCaseOutput {
     _request_id: Option<String>,
 }
 impl GetCaseOutput {
-    /// <p>A list of detailed field information.</p>
+    /// <p>A list of detailed field information. </p>
     pub fn fields(&self) -> &[crate::types::FieldValue] {
         use std::ops::Deref;
         self.fields.deref()
@@ -60,19 +60,19 @@ impl GetCaseOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_fields`](Self::set_fields).
     ///
-    /// <p>A list of detailed field information.</p>
+    /// <p>A list of detailed field information. </p>
     pub fn fields(mut self, input: crate::types::FieldValue) -> Self {
         let mut v = self.fields.unwrap_or_default();
         v.push(input);
         self.fields = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of detailed field information.</p>
+    /// <p>A list of detailed field information. </p>
     pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FieldValue>>) -> Self {
         self.fields = input;
         self
     }
-    /// <p>A list of detailed field information.</p>
+    /// <p>A list of detailed field information. </p>
     pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldValue>> {
         &self.fields
     }

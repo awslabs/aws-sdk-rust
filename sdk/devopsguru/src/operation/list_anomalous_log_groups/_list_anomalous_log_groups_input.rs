@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAnomalousLogGroupsInput {
-    /// <p>The ID of the insight containing the log groups.</p>
+    /// <p> The ID of the insight containing the log groups. </p>
     pub insight_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -11,7 +11,7 @@ pub struct ListAnomalousLogGroupsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListAnomalousLogGroupsInput {
-    /// <p>The ID of the insight containing the log groups.</p>
+    /// <p> The ID of the insight containing the log groups. </p>
     pub fn insight_id(&self) -> ::std::option::Option<&str> {
         self.insight_id.as_deref()
     }
@@ -40,18 +40,18 @@ pub struct ListAnomalousLogGroupsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListAnomalousLogGroupsInputBuilder {
-    /// <p>The ID of the insight containing the log groups.</p>
+    /// <p> The ID of the insight containing the log groups. </p>
     /// This field is required.
     pub fn insight_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.insight_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the insight containing the log groups.</p>
+    /// <p> The ID of the insight containing the log groups. </p>
     pub fn set_insight_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.insight_id = input;
         self
     }
-    /// <p>The ID of the insight containing the log groups.</p>
+    /// <p> The ID of the insight containing the log groups. </p>
     pub fn get_insight_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.insight_id
     }

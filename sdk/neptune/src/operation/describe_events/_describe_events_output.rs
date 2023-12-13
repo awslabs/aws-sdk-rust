@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEventsOutput {
-    /// <p>An optional pagination token provided by a previous Events request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
+    /// <p> An optional pagination token provided by a previous Events request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
     pub marker: ::std::option::Option<::std::string::String>,
-    /// <p>A list of <code>Event</code> instances.</p>
+    /// <p> A list of <code>Event</code> instances.</p>
     pub events: ::std::option::Option<::std::vec::Vec<crate::types::Event>>,
     _request_id: Option<String>,
 }
 impl DescribeEventsOutput {
-    /// <p>An optional pagination token provided by a previous Events request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
+    /// <p> An optional pagination token provided by a previous Events request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
-    /// <p>A list of <code>Event</code> instances.</p>
+    /// <p> A list of <code>Event</code> instances.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.events.is_none()`.
     pub fn events(&self) -> &[crate::types::Event] {
@@ -42,17 +42,17 @@ pub struct DescribeEventsOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeEventsOutputBuilder {
-    /// <p>An optional pagination token provided by a previous Events request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
+    /// <p> An optional pagination token provided by a previous Events request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An optional pagination token provided by a previous Events request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
+    /// <p> An optional pagination token provided by a previous Events request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }
-    /// <p>An optional pagination token provided by a previous Events request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
+    /// <p> An optional pagination token provided by a previous Events request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }
@@ -60,19 +60,19 @@ impl DescribeEventsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_events`](Self::set_events).
     ///
-    /// <p>A list of <code>Event</code> instances.</p>
+    /// <p> A list of <code>Event</code> instances.</p>
     pub fn events(mut self, input: crate::types::Event) -> Self {
         let mut v = self.events.unwrap_or_default();
         v.push(input);
         self.events = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of <code>Event</code> instances.</p>
+    /// <p> A list of <code>Event</code> instances.</p>
     pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Event>>) -> Self {
         self.events = input;
         self
     }
-    /// <p>A list of <code>Event</code> instances.</p>
+    /// <p> A list of <code>Event</code> instances.</p>
     pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Event>> {
         &self.events
     }

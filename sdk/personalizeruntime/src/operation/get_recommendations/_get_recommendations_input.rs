@@ -18,7 +18,7 @@ pub struct GetRecommendationsInput {
     /// <p>The ARN of the filter to apply to the returned recommendations. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering Recommendations</a>.</p>
     /// <p>When using this parameter, be sure the filter resource is <code>ACTIVE</code>.</p>
     pub filter_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The values to use when filtering recommendations. For each placeholder parameter in your filter expression, provide the parameter name (in matching case) as a key and the filter value(s) as the corresponding value. Separate multiple values for one parameter with a comma.</p>
+    /// <p>The values to use when filtering recommendations. For each placeholder parameter in your filter expression, provide the parameter name (in matching case) as a key and the filter value(s) as the corresponding value. Separate multiple values for one parameter with a comma. </p>
     /// <p>For filter expressions that use an <code>INCLUDE</code> element to include items, you must provide values for all parameters that are defined in the expression. For filters with expressions that use an <code>EXCLUDE</code> element to exclude items, you can omit the <code>filter-values</code>.In this case, Amazon Personalize doesn't use that portion of the expression to filter recommendations.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering recommendations and user segments</a>.</p>
     pub filter_values: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -27,7 +27,7 @@ pub struct GetRecommendationsInput {
     /// <p>The promotions to apply to the recommendation request. A promotion defines additional business rules that apply to a configurable subset of recommended items.</p>
     pub promotions: ::std::option::Option<::std::vec::Vec<crate::types::Promotion>>,
     /// <p>If you enabled metadata in recommendations when you created or updated the campaign or recommender, specify the metadata columns from your Items dataset to include in item recommendations. The map key is <code>ITEMS</code> and the value is a list of column names from your Items dataset. The maximum number of columns you can provide is 10.</p>
-    /// <p>For information about enabling metadata for a campaign, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/create-campaign-return-metadata.html">Enabling metadata in recommendations for a campaign</a>. For information about enabling metadata for a recommender, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/create-recommender-return-metadata.html">Enabling metadata in recommendations for a recommender</a>.</p>
+    /// <p> For information about enabling metadata for a campaign, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/create-campaign-return-metadata.html">Enabling metadata in recommendations for a campaign</a>. For information about enabling metadata for a recommender, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/create-recommender-return-metadata.html">Enabling metadata in recommendations for a recommender</a>. </p>
     pub metadata_columns: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
 }
 impl GetRecommendationsInput {
@@ -58,7 +58,7 @@ impl GetRecommendationsInput {
     pub fn filter_arn(&self) -> ::std::option::Option<&str> {
         self.filter_arn.as_deref()
     }
-    /// <p>The values to use when filtering recommendations. For each placeholder parameter in your filter expression, provide the parameter name (in matching case) as a key and the filter value(s) as the corresponding value. Separate multiple values for one parameter with a comma.</p>
+    /// <p>The values to use when filtering recommendations. For each placeholder parameter in your filter expression, provide the parameter name (in matching case) as a key and the filter value(s) as the corresponding value. Separate multiple values for one parameter with a comma. </p>
     /// <p>For filter expressions that use an <code>INCLUDE</code> element to include items, you must provide values for all parameters that are defined in the expression. For filters with expressions that use an <code>EXCLUDE</code> element to exclude items, you can omit the <code>filter-values</code>.In this case, Amazon Personalize doesn't use that portion of the expression to filter recommendations.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering recommendations and user segments</a>.</p>
     pub fn filter_values(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -75,7 +75,7 @@ impl GetRecommendationsInput {
         self.promotions.as_deref().unwrap_or_default()
     }
     /// <p>If you enabled metadata in recommendations when you created or updated the campaign or recommender, specify the metadata columns from your Items dataset to include in item recommendations. The map key is <code>ITEMS</code> and the value is a list of column names from your Items dataset. The maximum number of columns you can provide is 10.</p>
-    /// <p>For information about enabling metadata for a campaign, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/create-campaign-return-metadata.html">Enabling metadata in recommendations for a campaign</a>. For information about enabling metadata for a recommender, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/create-recommender-return-metadata.html">Enabling metadata in recommendations for a recommender</a>.</p>
+    /// <p> For information about enabling metadata for a campaign, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/create-campaign-return-metadata.html">Enabling metadata in recommendations for a campaign</a>. For information about enabling metadata for a recommender, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/create-recommender-return-metadata.html">Enabling metadata in recommendations for a recommender</a>. </p>
     pub fn metadata_columns(
         &self,
     ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
@@ -208,7 +208,7 @@ impl GetRecommendationsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filter_values`](Self::set_filter_values).
     ///
-    /// <p>The values to use when filtering recommendations. For each placeholder parameter in your filter expression, provide the parameter name (in matching case) as a key and the filter value(s) as the corresponding value. Separate multiple values for one parameter with a comma.</p>
+    /// <p>The values to use when filtering recommendations. For each placeholder parameter in your filter expression, provide the parameter name (in matching case) as a key and the filter value(s) as the corresponding value. Separate multiple values for one parameter with a comma. </p>
     /// <p>For filter expressions that use an <code>INCLUDE</code> element to include items, you must provide values for all parameters that are defined in the expression. For filters with expressions that use an <code>EXCLUDE</code> element to exclude items, you can omit the <code>filter-values</code>.In this case, Amazon Personalize doesn't use that portion of the expression to filter recommendations.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering recommendations and user segments</a>.</p>
     pub fn filter_values(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -217,7 +217,7 @@ impl GetRecommendationsInputBuilder {
         self.filter_values = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The values to use when filtering recommendations. For each placeholder parameter in your filter expression, provide the parameter name (in matching case) as a key and the filter value(s) as the corresponding value. Separate multiple values for one parameter with a comma.</p>
+    /// <p>The values to use when filtering recommendations. For each placeholder parameter in your filter expression, provide the parameter name (in matching case) as a key and the filter value(s) as the corresponding value. Separate multiple values for one parameter with a comma. </p>
     /// <p>For filter expressions that use an <code>INCLUDE</code> element to include items, you must provide values for all parameters that are defined in the expression. For filters with expressions that use an <code>EXCLUDE</code> element to exclude items, you can omit the <code>filter-values</code>.In this case, Amazon Personalize doesn't use that portion of the expression to filter recommendations.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering recommendations and user segments</a>.</p>
     pub fn set_filter_values(
@@ -227,7 +227,7 @@ impl GetRecommendationsInputBuilder {
         self.filter_values = input;
         self
     }
-    /// <p>The values to use when filtering recommendations. For each placeholder parameter in your filter expression, provide the parameter name (in matching case) as a key and the filter value(s) as the corresponding value. Separate multiple values for one parameter with a comma.</p>
+    /// <p>The values to use when filtering recommendations. For each placeholder parameter in your filter expression, provide the parameter name (in matching case) as a key and the filter value(s) as the corresponding value. Separate multiple values for one parameter with a comma. </p>
     /// <p>For filter expressions that use an <code>INCLUDE</code> element to include items, you must provide values for all parameters that are defined in the expression. For filters with expressions that use an <code>EXCLUDE</code> element to exclude items, you can omit the <code>filter-values</code>.In this case, Amazon Personalize doesn't use that portion of the expression to filter recommendations.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering recommendations and user segments</a>.</p>
     pub fn get_filter_values(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -272,7 +272,7 @@ impl GetRecommendationsInputBuilder {
     /// To override the contents of this collection use [`set_metadata_columns`](Self::set_metadata_columns).
     ///
     /// <p>If you enabled metadata in recommendations when you created or updated the campaign or recommender, specify the metadata columns from your Items dataset to include in item recommendations. The map key is <code>ITEMS</code> and the value is a list of column names from your Items dataset. The maximum number of columns you can provide is 10.</p>
-    /// <p>For information about enabling metadata for a campaign, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/create-campaign-return-metadata.html">Enabling metadata in recommendations for a campaign</a>. For information about enabling metadata for a recommender, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/create-recommender-return-metadata.html">Enabling metadata in recommendations for a recommender</a>.</p>
+    /// <p> For information about enabling metadata for a campaign, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/create-campaign-return-metadata.html">Enabling metadata in recommendations for a campaign</a>. For information about enabling metadata for a recommender, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/create-recommender-return-metadata.html">Enabling metadata in recommendations for a recommender</a>. </p>
     pub fn metadata_columns(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.metadata_columns.unwrap_or_default();
         hash_map.insert(k.into(), v);
@@ -280,7 +280,7 @@ impl GetRecommendationsInputBuilder {
         self
     }
     /// <p>If you enabled metadata in recommendations when you created or updated the campaign or recommender, specify the metadata columns from your Items dataset to include in item recommendations. The map key is <code>ITEMS</code> and the value is a list of column names from your Items dataset. The maximum number of columns you can provide is 10.</p>
-    /// <p>For information about enabling metadata for a campaign, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/create-campaign-return-metadata.html">Enabling metadata in recommendations for a campaign</a>. For information about enabling metadata for a recommender, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/create-recommender-return-metadata.html">Enabling metadata in recommendations for a recommender</a>.</p>
+    /// <p> For information about enabling metadata for a campaign, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/create-campaign-return-metadata.html">Enabling metadata in recommendations for a campaign</a>. For information about enabling metadata for a recommender, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/create-recommender-return-metadata.html">Enabling metadata in recommendations for a recommender</a>. </p>
     pub fn set_metadata_columns(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
@@ -289,7 +289,7 @@ impl GetRecommendationsInputBuilder {
         self
     }
     /// <p>If you enabled metadata in recommendations when you created or updated the campaign or recommender, specify the metadata columns from your Items dataset to include in item recommendations. The map key is <code>ITEMS</code> and the value is a list of column names from your Items dataset. The maximum number of columns you can provide is 10.</p>
-    /// <p>For information about enabling metadata for a campaign, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/create-campaign-return-metadata.html">Enabling metadata in recommendations for a campaign</a>. For information about enabling metadata for a recommender, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/create-recommender-return-metadata.html">Enabling metadata in recommendations for a recommender</a>.</p>
+    /// <p> For information about enabling metadata for a campaign, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/create-campaign-return-metadata.html">Enabling metadata in recommendations for a campaign</a>. For information about enabling metadata for a recommender, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/create-recommender-return-metadata.html">Enabling metadata in recommendations for a recommender</a>. </p>
     pub fn get_metadata_columns(
         &self,
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {

@@ -21,7 +21,7 @@ pub struct AwsAutoScalingAutoScalingGroupDetails {
     pub availability_zones: ::std::option::Option<::std::vec::Vec<crate::types::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails>>,
     /// <p>The launch template to use.</p>
     pub launch_template: ::std::option::Option<crate::types::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification>,
-    /// <p>Indicates whether capacity rebalancing is enabled.</p>
+    /// <p>Indicates whether capacity rebalancing is enabled. </p>
     pub capacity_rebalance: ::std::option::Option<bool>,
 }
 impl AwsAutoScalingAutoScalingGroupDetails {
@@ -62,7 +62,7 @@ impl AwsAutoScalingAutoScalingGroupDetails {
     pub fn launch_template(&self) -> ::std::option::Option<&crate::types::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification> {
         self.launch_template.as_ref()
     }
-    /// <p>Indicates whether capacity rebalancing is enabled.</p>
+    /// <p>Indicates whether capacity rebalancing is enabled. </p>
     pub fn capacity_rebalance(&self) -> ::std::option::Option<bool> {
         self.capacity_rebalance
     }
@@ -229,17 +229,17 @@ impl AwsAutoScalingAutoScalingGroupDetailsBuilder {
     ) -> &::std::option::Option<crate::types::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification> {
         &self.launch_template
     }
-    /// <p>Indicates whether capacity rebalancing is enabled.</p>
+    /// <p>Indicates whether capacity rebalancing is enabled. </p>
     pub fn capacity_rebalance(mut self, input: bool) -> Self {
         self.capacity_rebalance = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether capacity rebalancing is enabled.</p>
+    /// <p>Indicates whether capacity rebalancing is enabled. </p>
     pub fn set_capacity_rebalance(mut self, input: ::std::option::Option<bool>) -> Self {
         self.capacity_rebalance = input;
         self
     }
-    /// <p>Indicates whether capacity rebalancing is enabled.</p>
+    /// <p>Indicates whether capacity rebalancing is enabled. </p>
     pub fn get_capacity_rebalance(&self) -> &::std::option::Option<bool> {
         &self.capacity_rebalance
     }

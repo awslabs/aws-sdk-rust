@@ -16,7 +16,7 @@ pub struct CreateDeploymentInput {
     /// <p>A user-defined comment.</p>
     pub comment: ::std::option::Option<::std::string::String>,
     /// <p>A string that contains user-defined, custom JSON. You can use this parameter to override some corresponding default stack configuration JSON values. The string should be in the following format:</p>
-    /// <p><code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code></p>
+    /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
     /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">Overriding Attributes With Custom JSON</a>.</p>
     pub custom_json: ::std::option::Option<::std::string::String>,
 }
@@ -50,7 +50,7 @@ impl CreateDeploymentInput {
         self.comment.as_deref()
     }
     /// <p>A string that contains user-defined, custom JSON. You can use this parameter to override some corresponding default stack configuration JSON values. The string should be in the following format:</p>
-    /// <p><code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code></p>
+    /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
     /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">Overriding Attributes With Custom JSON</a>.</p>
     pub fn custom_json(&self) -> ::std::option::Option<&str> {
         self.custom_json.as_deref()
@@ -175,21 +175,21 @@ impl CreateDeploymentInputBuilder {
         &self.comment
     }
     /// <p>A string that contains user-defined, custom JSON. You can use this parameter to override some corresponding default stack configuration JSON values. The string should be in the following format:</p>
-    /// <p><code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code></p>
+    /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
     /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">Overriding Attributes With Custom JSON</a>.</p>
     pub fn custom_json(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_json = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string that contains user-defined, custom JSON. You can use this parameter to override some corresponding default stack configuration JSON values. The string should be in the following format:</p>
-    /// <p><code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code></p>
+    /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
     /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">Overriding Attributes With Custom JSON</a>.</p>
     pub fn set_custom_json(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_json = input;
         self
     }
     /// <p>A string that contains user-defined, custom JSON. You can use this parameter to override some corresponding default stack configuration JSON values. The string should be in the following format:</p>
-    /// <p><code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code></p>
+    /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
     /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">Overriding Attributes With Custom JSON</a>.</p>
     pub fn get_custom_json(&self) -> &::std::option::Option<::std::string::String> {
         &self.custom_json

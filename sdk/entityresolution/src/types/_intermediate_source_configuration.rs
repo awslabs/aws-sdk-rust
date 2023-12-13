@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IntermediateSourceConfiguration {
-    /// <p>The Amazon S3 location (bucket and prefix). For example: <code>s3://provider_bucket/DOC-EXAMPLE-BUCKET</code></p>
+    /// <p>The Amazon S3 location (bucket and prefix). For example: <code>s3://provider_bucket/DOC-EXAMPLE-BUCKET</code> </p>
     pub intermediate_s3_path: ::std::string::String,
 }
 impl IntermediateSourceConfiguration {
-    /// <p>The Amazon S3 location (bucket and prefix). For example: <code>s3://provider_bucket/DOC-EXAMPLE-BUCKET</code></p>
+    /// <p>The Amazon S3 location (bucket and prefix). For example: <code>s3://provider_bucket/DOC-EXAMPLE-BUCKET</code> </p>
     pub fn intermediate_s3_path(&self) -> &str {
         use std::ops::Deref;
         self.intermediate_s3_path.deref()
@@ -28,18 +28,18 @@ pub struct IntermediateSourceConfigurationBuilder {
     pub(crate) intermediate_s3_path: ::std::option::Option<::std::string::String>,
 }
 impl IntermediateSourceConfigurationBuilder {
-    /// <p>The Amazon S3 location (bucket and prefix). For example: <code>s3://provider_bucket/DOC-EXAMPLE-BUCKET</code></p>
+    /// <p>The Amazon S3 location (bucket and prefix). For example: <code>s3://provider_bucket/DOC-EXAMPLE-BUCKET</code> </p>
     /// This field is required.
     pub fn intermediate_s3_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.intermediate_s3_path = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon S3 location (bucket and prefix). For example: <code>s3://provider_bucket/DOC-EXAMPLE-BUCKET</code></p>
+    /// <p>The Amazon S3 location (bucket and prefix). For example: <code>s3://provider_bucket/DOC-EXAMPLE-BUCKET</code> </p>
     pub fn set_intermediate_s3_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.intermediate_s3_path = input;
         self
     }
-    /// <p>The Amazon S3 location (bucket and prefix). For example: <code>s3://provider_bucket/DOC-EXAMPLE-BUCKET</code></p>
+    /// <p>The Amazon S3 location (bucket and prefix). For example: <code>s3://provider_bucket/DOC-EXAMPLE-BUCKET</code> </p>
     pub fn get_intermediate_s3_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.intermediate_s3_path
     }

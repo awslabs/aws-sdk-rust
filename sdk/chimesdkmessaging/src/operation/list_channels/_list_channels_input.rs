@@ -5,7 +5,7 @@
 pub struct ListChannelsInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
     pub app_instance_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code> can retrieve private channels.</p>
+    /// <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code> can retrieve private channels. </p>
     pub privacy: ::std::option::Option<crate::types::ChannelPrivacy>,
     /// <p>The maximum number of channels that you want to return.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -19,7 +19,7 @@ impl ListChannelsInput {
     pub fn app_instance_arn(&self) -> ::std::option::Option<&str> {
         self.app_instance_arn.as_deref()
     }
-    /// <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code> can retrieve private channels.</p>
+    /// <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code> can retrieve private channels. </p>
     pub fn privacy(&self) -> ::std::option::Option<&crate::types::ChannelPrivacy> {
         self.privacy.as_ref()
     }
@@ -80,17 +80,17 @@ impl ListChannelsInputBuilder {
     pub fn get_app_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.app_instance_arn
     }
-    /// <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code> can retrieve private channels.</p>
+    /// <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code> can retrieve private channels. </p>
     pub fn privacy(mut self, input: crate::types::ChannelPrivacy) -> Self {
         self.privacy = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code> can retrieve private channels.</p>
+    /// <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code> can retrieve private channels. </p>
     pub fn set_privacy(mut self, input: ::std::option::Option<crate::types::ChannelPrivacy>) -> Self {
         self.privacy = input;
         self
     }
-    /// <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code> can retrieve private channels.</p>
+    /// <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code> can retrieve private channels. </p>
     pub fn get_privacy(&self) -> &::std::option::Option<crate::types::ChannelPrivacy> {
         &self.privacy
     }

@@ -169,21 +169,21 @@ impl ListEntitiesForPolicyFluentBuilder {
     }
     /// <p>The policy usage method to use for filtering the results.</p>
     /// <p>To list only permissions policies, set&nbsp;<code>PolicyUsageFilter</code>&nbsp;to&nbsp;<code>PermissionsPolicy</code>. To list only the policies used to set permissions boundaries, set&nbsp;the value to&nbsp;<code>PermissionsBoundary</code>.</p>
-    /// <p>This parameter is optional. If it is not included, all policies are returned.</p>
+    /// <p>This parameter is optional. If it is not included, all policies are returned. </p>
     pub fn policy_usage_filter(mut self, input: crate::types::PolicyUsageType) -> Self {
         self.inner = self.inner.policy_usage_filter(input);
         self
     }
     /// <p>The policy usage method to use for filtering the results.</p>
     /// <p>To list only permissions policies, set&nbsp;<code>PolicyUsageFilter</code>&nbsp;to&nbsp;<code>PermissionsPolicy</code>. To list only the policies used to set permissions boundaries, set&nbsp;the value to&nbsp;<code>PermissionsBoundary</code>.</p>
-    /// <p>This parameter is optional. If it is not included, all policies are returned.</p>
+    /// <p>This parameter is optional. If it is not included, all policies are returned. </p>
     pub fn set_policy_usage_filter(mut self, input: ::std::option::Option<crate::types::PolicyUsageType>) -> Self {
         self.inner = self.inner.set_policy_usage_filter(input);
         self
     }
     /// <p>The policy usage method to use for filtering the results.</p>
     /// <p>To list only permissions policies, set&nbsp;<code>PolicyUsageFilter</code>&nbsp;to&nbsp;<code>PermissionsPolicy</code>. To list only the policies used to set permissions boundaries, set&nbsp;the value to&nbsp;<code>PermissionsBoundary</code>.</p>
-    /// <p>This parameter is optional. If it is not included, all policies are returned.</p>
+    /// <p>This parameter is optional. If it is not included, all policies are returned. </p>
     pub fn get_policy_usage_filter(&self) -> &::std::option::Option<crate::types::PolicyUsageType> {
         self.inner.get_policy_usage_filter()
     }

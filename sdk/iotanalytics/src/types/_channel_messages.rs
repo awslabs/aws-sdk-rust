@@ -6,13 +6,13 @@
 pub struct ChannelMessages {
     /// <p>Specifies one or more keys that identify the Amazon Simple Storage Service (Amazon S3) objects that save your channel messages.</p>
     /// <p>You must use the full path for the key.</p>
-    /// <p>Example path: <code>channel/mychannel/__dt=2020-02-29 00:00:00/1582940490000_1582940520000_123456789012_mychannel_0_2118.0.json.gz</code></p>
+    /// <p>Example path: <code>channel/mychannel/__dt=2020-02-29 00:00:00/1582940490000_1582940520000_123456789012_mychannel_0_2118.0.json.gz</code> </p>
     pub s3_paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ChannelMessages {
     /// <p>Specifies one or more keys that identify the Amazon Simple Storage Service (Amazon S3) objects that save your channel messages.</p>
     /// <p>You must use the full path for the key.</p>
-    /// <p>Example path: <code>channel/mychannel/__dt=2020-02-29 00:00:00/1582940490000_1582940520000_123456789012_mychannel_0_2118.0.json.gz</code></p>
+    /// <p>Example path: <code>channel/mychannel/__dt=2020-02-29 00:00:00/1582940490000_1582940520000_123456789012_mychannel_0_2118.0.json.gz</code> </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.s3_paths.is_none()`.
     pub fn s3_paths(&self) -> &[::std::string::String] {
@@ -39,7 +39,7 @@ impl ChannelMessagesBuilder {
     ///
     /// <p>Specifies one or more keys that identify the Amazon Simple Storage Service (Amazon S3) objects that save your channel messages.</p>
     /// <p>You must use the full path for the key.</p>
-    /// <p>Example path: <code>channel/mychannel/__dt=2020-02-29 00:00:00/1582940490000_1582940520000_123456789012_mychannel_0_2118.0.json.gz</code></p>
+    /// <p>Example path: <code>channel/mychannel/__dt=2020-02-29 00:00:00/1582940490000_1582940520000_123456789012_mychannel_0_2118.0.json.gz</code> </p>
     pub fn s3_paths(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.s3_paths.unwrap_or_default();
         v.push(input.into());
@@ -48,14 +48,14 @@ impl ChannelMessagesBuilder {
     }
     /// <p>Specifies one or more keys that identify the Amazon Simple Storage Service (Amazon S3) objects that save your channel messages.</p>
     /// <p>You must use the full path for the key.</p>
-    /// <p>Example path: <code>channel/mychannel/__dt=2020-02-29 00:00:00/1582940490000_1582940520000_123456789012_mychannel_0_2118.0.json.gz</code></p>
+    /// <p>Example path: <code>channel/mychannel/__dt=2020-02-29 00:00:00/1582940490000_1582940520000_123456789012_mychannel_0_2118.0.json.gz</code> </p>
     pub fn set_s3_paths(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.s3_paths = input;
         self
     }
     /// <p>Specifies one or more keys that identify the Amazon Simple Storage Service (Amazon S3) objects that save your channel messages.</p>
     /// <p>You must use the full path for the key.</p>
-    /// <p>Example path: <code>channel/mychannel/__dt=2020-02-29 00:00:00/1582940490000_1582940520000_123456789012_mychannel_0_2118.0.json.gz</code></p>
+    /// <p>Example path: <code>channel/mychannel/__dt=2020-02-29 00:00:00/1582940490000_1582940520000_123456789012_mychannel_0_2118.0.json.gz</code> </p>
     pub fn get_s3_paths(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.s3_paths
     }

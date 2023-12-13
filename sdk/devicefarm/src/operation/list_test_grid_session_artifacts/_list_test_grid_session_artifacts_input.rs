@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTestGridSessionArtifactsInput {
-    /// <p>The ARN of a <code>TestGridSession</code>.</p>
+    /// <p>The ARN of a <code>TestGridSession</code>. </p>
     pub session_arn: ::std::option::Option<::std::string::String>,
     /// <p>Limit results to a specified type of artifact.</p>
     pub r#type: ::std::option::Option<crate::types::TestGridSessionArtifactCategory>,
@@ -13,7 +13,7 @@ pub struct ListTestGridSessionArtifactsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListTestGridSessionArtifactsInput {
-    /// <p>The ARN of a <code>TestGridSession</code>.</p>
+    /// <p>The ARN of a <code>TestGridSession</code>. </p>
     pub fn session_arn(&self) -> ::std::option::Option<&str> {
         self.session_arn.as_deref()
     }
@@ -47,18 +47,18 @@ pub struct ListTestGridSessionArtifactsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListTestGridSessionArtifactsInputBuilder {
-    /// <p>The ARN of a <code>TestGridSession</code>.</p>
+    /// <p>The ARN of a <code>TestGridSession</code>. </p>
     /// This field is required.
     pub fn session_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of a <code>TestGridSession</code>.</p>
+    /// <p>The ARN of a <code>TestGridSession</code>. </p>
     pub fn set_session_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session_arn = input;
         self
     }
-    /// <p>The ARN of a <code>TestGridSession</code>.</p>
+    /// <p>The ARN of a <code>TestGridSession</code>. </p>
     pub fn get_session_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.session_arn
     }

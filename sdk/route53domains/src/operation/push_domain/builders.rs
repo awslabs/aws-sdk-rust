@@ -22,11 +22,10 @@ impl PushDomainInputBuilder {
 }
 /// Fluent builder constructing a request to `PushDomain`.
 ///
-/// <p>Moves a domain from Amazon Web Services to another registrar.</p>
+/// <p> Moves a domain from Amazon Web Services to another registrar. </p>
 /// <p>Supported actions:</p>
 /// <ul>
-/// <li>
-/// <p>Changes the IPS tags of a .uk domain, and pushes it to transit. Transit means that the domain is ready to be transferred to another registrar.</p></li>
+/// <li> <p>Changes the IPS tags of a .uk domain, and pushes it to transit. Transit means that the domain is ready to be transferred to another registrar.</p> </li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PushDomainFluentBuilder {
@@ -113,31 +112,31 @@ impl PushDomainFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Name of the domain.</p>
+    /// <p> Name of the domain. </p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_name(input.into());
         self
     }
-    /// <p>Name of the domain.</p>
+    /// <p> Name of the domain. </p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_name(input);
         self
     }
-    /// <p>Name of the domain.</p>
+    /// <p> Name of the domain. </p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_name()
     }
-    /// <p>New IPS tag for the domain.</p>
+    /// <p> New IPS tag for the domain. </p>
     pub fn target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target(input.into());
         self
     }
-    /// <p>New IPS tag for the domain.</p>
+    /// <p> New IPS tag for the domain. </p>
     pub fn set_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target(input);
         self
     }
-    /// <p>New IPS tag for the domain.</p>
+    /// <p> New IPS tag for the domain. </p>
     pub fn get_target(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_target()
     }

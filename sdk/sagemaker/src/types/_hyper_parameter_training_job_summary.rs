@@ -22,22 +22,19 @@ pub struct HyperParameterTrainingJobSummary {
     pub training_job_status: ::std::option::Option<crate::types::TrainingJobStatus>,
     /// <p>A list of the hyperparameters for which you specified ranges to search.</p>
     pub tuned_hyper_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>The reason that the training job failed.</p>
+    /// <p>The reason that the training job failed. </p>
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_FinalHyperParameterTuningJobObjectiveMetric.html">FinalHyperParameterTuningJobObjectiveMetric</a> object that specifies the value of the objective metric of the tuning job that launched this training job.</p>
     pub final_hyper_parameter_tuning_job_objective_metric: ::std::option::Option<crate::types::FinalHyperParameterTuningJobObjectiveMetric>,
     /// <p>The status of the objective metric for the training job:</p>
     /// <ul>
-    /// <li>
-    /// <p>Succeeded: The final objective metric for the training job was evaluated by the hyperparameter tuning job and used in the hyperparameter tuning process.</p></li>
+    /// <li> <p>Succeeded: The final objective metric for the training job was evaluated by the hyperparameter tuning job and used in the hyperparameter tuning process.</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p>Pending: The training job is in progress and evaluation of its final objective metric is pending.</p></li>
+    /// <li> <p>Pending: The training job is in progress and evaluation of its final objective metric is pending.</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p>Failed: The final objective metric for the training job was not evaluated, and was not used in the hyperparameter tuning process. This typically occurs when the training job failed or did not emit an objective metric.</p></li>
+    /// <li> <p>Failed: The final objective metric for the training job was not evaluated, and was not used in the hyperparameter tuning process. This typically occurs when the training job failed or did not emit an objective metric.</p> </li>
     /// </ul>
     pub objective_status: ::std::option::Option<crate::types::ObjectiveStatus>,
 }
@@ -78,7 +75,7 @@ impl HyperParameterTrainingJobSummary {
     pub fn tuned_hyper_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tuned_hyper_parameters.as_ref()
     }
-    /// <p>The reason that the training job failed.</p>
+    /// <p>The reason that the training job failed. </p>
     pub fn failure_reason(&self) -> ::std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
@@ -90,16 +87,13 @@ impl HyperParameterTrainingJobSummary {
     }
     /// <p>The status of the objective metric for the training job:</p>
     /// <ul>
-    /// <li>
-    /// <p>Succeeded: The final objective metric for the training job was evaluated by the hyperparameter tuning job and used in the hyperparameter tuning process.</p></li>
+    /// <li> <p>Succeeded: The final objective metric for the training job was evaluated by the hyperparameter tuning job and used in the hyperparameter tuning process.</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p>Pending: The training job is in progress and evaluation of its final objective metric is pending.</p></li>
+    /// <li> <p>Pending: The training job is in progress and evaluation of its final objective metric is pending.</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p>Failed: The final objective metric for the training job was not evaluated, and was not used in the hyperparameter tuning process. This typically occurs when the training job failed or did not emit an objective metric.</p></li>
+    /// <li> <p>Failed: The final objective metric for the training job was not evaluated, and was not used in the hyperparameter tuning process. This typically occurs when the training job failed or did not emit an objective metric.</p> </li>
     /// </ul>
     pub fn objective_status(&self) -> ::std::option::Option<&crate::types::ObjectiveStatus> {
         self.objective_status.as_ref()
@@ -273,17 +267,17 @@ impl HyperParameterTrainingJobSummaryBuilder {
     pub fn get_tuned_hyper_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tuned_hyper_parameters
     }
-    /// <p>The reason that the training job failed.</p>
+    /// <p>The reason that the training job failed. </p>
     pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The reason that the training job failed.</p>
+    /// <p>The reason that the training job failed. </p>
     pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }
-    /// <p>The reason that the training job failed.</p>
+    /// <p>The reason that the training job failed. </p>
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.failure_reason
     }
@@ -308,16 +302,13 @@ impl HyperParameterTrainingJobSummaryBuilder {
     }
     /// <p>The status of the objective metric for the training job:</p>
     /// <ul>
-    /// <li>
-    /// <p>Succeeded: The final objective metric for the training job was evaluated by the hyperparameter tuning job and used in the hyperparameter tuning process.</p></li>
+    /// <li> <p>Succeeded: The final objective metric for the training job was evaluated by the hyperparameter tuning job and used in the hyperparameter tuning process.</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p>Pending: The training job is in progress and evaluation of its final objective metric is pending.</p></li>
+    /// <li> <p>Pending: The training job is in progress and evaluation of its final objective metric is pending.</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p>Failed: The final objective metric for the training job was not evaluated, and was not used in the hyperparameter tuning process. This typically occurs when the training job failed or did not emit an objective metric.</p></li>
+    /// <li> <p>Failed: The final objective metric for the training job was not evaluated, and was not used in the hyperparameter tuning process. This typically occurs when the training job failed or did not emit an objective metric.</p> </li>
     /// </ul>
     pub fn objective_status(mut self, input: crate::types::ObjectiveStatus) -> Self {
         self.objective_status = ::std::option::Option::Some(input);
@@ -325,16 +316,13 @@ impl HyperParameterTrainingJobSummaryBuilder {
     }
     /// <p>The status of the objective metric for the training job:</p>
     /// <ul>
-    /// <li>
-    /// <p>Succeeded: The final objective metric for the training job was evaluated by the hyperparameter tuning job and used in the hyperparameter tuning process.</p></li>
+    /// <li> <p>Succeeded: The final objective metric for the training job was evaluated by the hyperparameter tuning job and used in the hyperparameter tuning process.</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p>Pending: The training job is in progress and evaluation of its final objective metric is pending.</p></li>
+    /// <li> <p>Pending: The training job is in progress and evaluation of its final objective metric is pending.</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p>Failed: The final objective metric for the training job was not evaluated, and was not used in the hyperparameter tuning process. This typically occurs when the training job failed or did not emit an objective metric.</p></li>
+    /// <li> <p>Failed: The final objective metric for the training job was not evaluated, and was not used in the hyperparameter tuning process. This typically occurs when the training job failed or did not emit an objective metric.</p> </li>
     /// </ul>
     pub fn set_objective_status(mut self, input: ::std::option::Option<crate::types::ObjectiveStatus>) -> Self {
         self.objective_status = input;
@@ -342,16 +330,13 @@ impl HyperParameterTrainingJobSummaryBuilder {
     }
     /// <p>The status of the objective metric for the training job:</p>
     /// <ul>
-    /// <li>
-    /// <p>Succeeded: The final objective metric for the training job was evaluated by the hyperparameter tuning job and used in the hyperparameter tuning process.</p></li>
+    /// <li> <p>Succeeded: The final objective metric for the training job was evaluated by the hyperparameter tuning job and used in the hyperparameter tuning process.</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p>Pending: The training job is in progress and evaluation of its final objective metric is pending.</p></li>
+    /// <li> <p>Pending: The training job is in progress and evaluation of its final objective metric is pending.</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p>Failed: The final objective metric for the training job was not evaluated, and was not used in the hyperparameter tuning process. This typically occurs when the training job failed or did not emit an objective metric.</p></li>
+    /// <li> <p>Failed: The final objective metric for the training job was not evaluated, and was not used in the hyperparameter tuning process. This typically occurs when the training job failed or did not emit an objective metric.</p> </li>
     /// </ul>
     pub fn get_objective_status(&self) -> &::std::option::Option<crate::types::ObjectiveStatus> {
         &self.objective_status

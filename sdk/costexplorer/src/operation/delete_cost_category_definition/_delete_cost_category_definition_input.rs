@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteCostCategoryDefinitionInput {
-    /// <p>The unique identifier for your Cost Category.</p>
+    /// <p>The unique identifier for your Cost Category. </p>
     pub cost_category_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteCostCategoryDefinitionInput {
-    /// <p>The unique identifier for your Cost Category.</p>
+    /// <p>The unique identifier for your Cost Category. </p>
     pub fn cost_category_arn(&self) -> ::std::option::Option<&str> {
         self.cost_category_arn.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct DeleteCostCategoryDefinitionInputBuilder {
     pub(crate) cost_category_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteCostCategoryDefinitionInputBuilder {
-    /// <p>The unique identifier for your Cost Category.</p>
+    /// <p>The unique identifier for your Cost Category. </p>
     /// This field is required.
     pub fn cost_category_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cost_category_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier for your Cost Category.</p>
+    /// <p>The unique identifier for your Cost Category. </p>
     pub fn set_cost_category_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cost_category_arn = input;
         self
     }
-    /// <p>The unique identifier for your Cost Category.</p>
+    /// <p>The unique identifier for your Cost Category. </p>
     pub fn get_cost_category_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.cost_category_arn
     }

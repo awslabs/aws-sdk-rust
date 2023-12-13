@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetSite`](crate::operation::get_site::builders::GetSiteFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`site_id(impl Into<String>)`](crate::operation::get_site::builders::GetSiteFluentBuilder::site_id) / [`set_site_id(Option<String>)`](crate::operation::get_site::builders::GetSiteFluentBuilder::set_site_id):<br>required: **true**<br><p>The ID or the Amazon Resource Name (ARN) of the site.</p><br>
+    ///   - [`site_id(impl Into<String>)`](crate::operation::get_site::builders::GetSiteFluentBuilder::site_id) / [`set_site_id(Option<String>)`](crate::operation::get_site::builders::GetSiteFluentBuilder::set_site_id):<br>required: **true**<br><p> The ID or the Amazon Resource Name (ARN) of the site. </p><br>
     /// - On success, responds with [`GetSiteOutput`](crate::operation::get_site::GetSiteOutput) with field(s):
     ///   - [`site(Option<Site>)`](crate::operation::get_site::GetSiteOutput::site): <p>Information about a site.</p>
     /// - On failure, responds with [`SdkError<GetSiteError>`](crate::operation::get_site::GetSiteError)

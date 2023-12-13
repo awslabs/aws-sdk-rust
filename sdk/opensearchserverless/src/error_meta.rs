@@ -7,7 +7,7 @@ pub enum Error {
     ConflictException(crate::types::error::ConflictException),
     /// <p>Thrown when an error internal to the service occurs while processing a request.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p>Thrown when the collection you're attempting to create results in a number of search or indexing OCUs that exceeds the account limit.</p>
+    /// <p>Thrown when the collection you're attempting to create results in a number of search or indexing OCUs that exceeds the account limit. </p>
     OcuLimitExceededException(crate::types::error::OcuLimitExceededException),
     /// <p>Thrown when accessing or deleting a resource that does not exist.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),

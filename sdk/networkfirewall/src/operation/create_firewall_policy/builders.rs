@@ -22,8 +22,8 @@ impl CreateFirewallPolicyInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateFirewallPolicy`.
 ///
-/// <p>Creates the firewall policy for the firewall according to the specifications.</p>
-/// <p>An Network Firewall firewall policy defines the behavior of a firewall, in a collection of stateless and stateful rule groups and other settings. You can use one firewall policy for multiple firewalls.</p>
+/// <p>Creates the firewall policy for the firewall according to the specifications. </p>
+/// <p>An Network Firewall firewall policy defines the behavior of a firewall, in a collection of stateless and stateful rule groups and other settings. You can use one firewall policy for multiple firewalls. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateFirewallPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -169,23 +169,23 @@ impl CreateFirewallPolicyFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
-    /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request.</p>
-    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid.</p>
-    /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources.</p>
+    /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
+    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
+    /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
         self
     }
-    /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request.</p>
-    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid.</p>
-    /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources.</p>
+    /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
+    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
+    /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
     }
-    /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request.</p>
-    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid.</p>
-    /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources.</p>
+    /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
+    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
+    /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         self.inner.get_dry_run()
     }

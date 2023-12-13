@@ -22,7 +22,7 @@ impl InferRxNormInputBuilder {
 }
 /// Fluent builder constructing a request to `InferRxNorm`.
 ///
-/// <p>InferRxNorm detects medications as entities listed in a patient record and links to the normalized concept identifiers in the RxNorm database from the National Library of Medicine. Amazon Comprehend Medical only detects medical entities in English language texts.</p>
+/// <p>InferRxNorm detects medications as entities listed in a patient record and links to the normalized concept identifiers in the RxNorm database from the National Library of Medicine. Amazon Comprehend Medical only detects medical entities in English language texts. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct InferRxNormFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -9,15 +9,12 @@ pub struct S3DestinationConfiguration {
     /// <p>The key of the dataset contents object in an S3 bucket. Each object has a key that is a unique identifier. Each object has exactly one key.</p>
     /// <p>You can create a unique key with the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p>Use <code>!{iotanalytics:scheduleTime}</code> to insert the time of a scheduled SQL query run.</p></li>
-    /// <li>
-    /// <p>Use <code>!{iotanalytics:versionId}</code> to insert a unique hash that identifies a dataset content.</p></li>
-    /// <li>
-    /// <p>Use <code>!{iotanalytics:creationTime}</code> to insert the creation time of a dataset content.</p></li>
+    /// <li> <p>Use <code>!{iotanalytics:scheduleTime}</code> to insert the time of a scheduled SQL query run.</p> </li>
+    /// <li> <p>Use <code>!{iotanalytics:versionId}</code> to insert a unique hash that identifies a dataset content.</p> </li>
+    /// <li> <p>Use <code>!{iotanalytics:creationTime}</code> to insert the creation time of a dataset content.</p> </li>
     /// </ul>
-    /// <p>The following example creates a unique key for a CSV file: <code>dataset/mydataset/!{iotanalytics:scheduleTime}/!{iotanalytics:versionId}.csv</code></p><note>
-    /// <p>If you don't use <code>!{iotanalytics:versionId}</code> to specify the key, you might get duplicate keys. For example, you might have two dataset contents with the same <code>scheduleTime</code> but different <code>versionId</code>s. This means that one dataset content overwrites the other.</p>
+    /// <p>The following example creates a unique key for a CSV file: <code>dataset/mydataset/!{iotanalytics:scheduleTime}/!{iotanalytics:versionId}.csv</code> </p> <note>
+    /// <p>If you don't use <code>!{iotanalytics:versionId}</code> to specify the key, you might get duplicate keys. For example, you might have two dataset contents with the same <code>scheduleTime</code> but different <code>versionId</code>s. This means that one dataset content overwrites the other. </p>
     /// </note>
     pub key: ::std::string::String,
     /// <p>Configuration information for coordination with Glue, a fully managed extract, transform and load (ETL) service.</p>
@@ -34,15 +31,12 @@ impl S3DestinationConfiguration {
     /// <p>The key of the dataset contents object in an S3 bucket. Each object has a key that is a unique identifier. Each object has exactly one key.</p>
     /// <p>You can create a unique key with the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p>Use <code>!{iotanalytics:scheduleTime}</code> to insert the time of a scheduled SQL query run.</p></li>
-    /// <li>
-    /// <p>Use <code>!{iotanalytics:versionId}</code> to insert a unique hash that identifies a dataset content.</p></li>
-    /// <li>
-    /// <p>Use <code>!{iotanalytics:creationTime}</code> to insert the creation time of a dataset content.</p></li>
+    /// <li> <p>Use <code>!{iotanalytics:scheduleTime}</code> to insert the time of a scheduled SQL query run.</p> </li>
+    /// <li> <p>Use <code>!{iotanalytics:versionId}</code> to insert a unique hash that identifies a dataset content.</p> </li>
+    /// <li> <p>Use <code>!{iotanalytics:creationTime}</code> to insert the creation time of a dataset content.</p> </li>
     /// </ul>
-    /// <p>The following example creates a unique key for a CSV file: <code>dataset/mydataset/!{iotanalytics:scheduleTime}/!{iotanalytics:versionId}.csv</code></p><note>
-    /// <p>If you don't use <code>!{iotanalytics:versionId}</code> to specify the key, you might get duplicate keys. For example, you might have two dataset contents with the same <code>scheduleTime</code> but different <code>versionId</code>s. This means that one dataset content overwrites the other.</p>
+    /// <p>The following example creates a unique key for a CSV file: <code>dataset/mydataset/!{iotanalytics:scheduleTime}/!{iotanalytics:versionId}.csv</code> </p> <note>
+    /// <p>If you don't use <code>!{iotanalytics:versionId}</code> to specify the key, you might get duplicate keys. For example, you might have two dataset contents with the same <code>scheduleTime</code> but different <code>versionId</code>s. This means that one dataset content overwrites the other. </p>
     /// </note>
     pub fn key(&self) -> &str {
         use std::ops::Deref;
@@ -93,15 +87,12 @@ impl S3DestinationConfigurationBuilder {
     /// <p>The key of the dataset contents object in an S3 bucket. Each object has a key that is a unique identifier. Each object has exactly one key.</p>
     /// <p>You can create a unique key with the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p>Use <code>!{iotanalytics:scheduleTime}</code> to insert the time of a scheduled SQL query run.</p></li>
-    /// <li>
-    /// <p>Use <code>!{iotanalytics:versionId}</code> to insert a unique hash that identifies a dataset content.</p></li>
-    /// <li>
-    /// <p>Use <code>!{iotanalytics:creationTime}</code> to insert the creation time of a dataset content.</p></li>
+    /// <li> <p>Use <code>!{iotanalytics:scheduleTime}</code> to insert the time of a scheduled SQL query run.</p> </li>
+    /// <li> <p>Use <code>!{iotanalytics:versionId}</code> to insert a unique hash that identifies a dataset content.</p> </li>
+    /// <li> <p>Use <code>!{iotanalytics:creationTime}</code> to insert the creation time of a dataset content.</p> </li>
     /// </ul>
-    /// <p>The following example creates a unique key for a CSV file: <code>dataset/mydataset/!{iotanalytics:scheduleTime}/!{iotanalytics:versionId}.csv</code></p><note>
-    /// <p>If you don't use <code>!{iotanalytics:versionId}</code> to specify the key, you might get duplicate keys. For example, you might have two dataset contents with the same <code>scheduleTime</code> but different <code>versionId</code>s. This means that one dataset content overwrites the other.</p>
+    /// <p>The following example creates a unique key for a CSV file: <code>dataset/mydataset/!{iotanalytics:scheduleTime}/!{iotanalytics:versionId}.csv</code> </p> <note>
+    /// <p>If you don't use <code>!{iotanalytics:versionId}</code> to specify the key, you might get duplicate keys. For example, you might have two dataset contents with the same <code>scheduleTime</code> but different <code>versionId</code>s. This means that one dataset content overwrites the other. </p>
     /// </note>
     /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -111,15 +102,12 @@ impl S3DestinationConfigurationBuilder {
     /// <p>The key of the dataset contents object in an S3 bucket. Each object has a key that is a unique identifier. Each object has exactly one key.</p>
     /// <p>You can create a unique key with the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p>Use <code>!{iotanalytics:scheduleTime}</code> to insert the time of a scheduled SQL query run.</p></li>
-    /// <li>
-    /// <p>Use <code>!{iotanalytics:versionId}</code> to insert a unique hash that identifies a dataset content.</p></li>
-    /// <li>
-    /// <p>Use <code>!{iotanalytics:creationTime}</code> to insert the creation time of a dataset content.</p></li>
+    /// <li> <p>Use <code>!{iotanalytics:scheduleTime}</code> to insert the time of a scheduled SQL query run.</p> </li>
+    /// <li> <p>Use <code>!{iotanalytics:versionId}</code> to insert a unique hash that identifies a dataset content.</p> </li>
+    /// <li> <p>Use <code>!{iotanalytics:creationTime}</code> to insert the creation time of a dataset content.</p> </li>
     /// </ul>
-    /// <p>The following example creates a unique key for a CSV file: <code>dataset/mydataset/!{iotanalytics:scheduleTime}/!{iotanalytics:versionId}.csv</code></p><note>
-    /// <p>If you don't use <code>!{iotanalytics:versionId}</code> to specify the key, you might get duplicate keys. For example, you might have two dataset contents with the same <code>scheduleTime</code> but different <code>versionId</code>s. This means that one dataset content overwrites the other.</p>
+    /// <p>The following example creates a unique key for a CSV file: <code>dataset/mydataset/!{iotanalytics:scheduleTime}/!{iotanalytics:versionId}.csv</code> </p> <note>
+    /// <p>If you don't use <code>!{iotanalytics:versionId}</code> to specify the key, you might get duplicate keys. For example, you might have two dataset contents with the same <code>scheduleTime</code> but different <code>versionId</code>s. This means that one dataset content overwrites the other. </p>
     /// </note>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
@@ -128,15 +116,12 @@ impl S3DestinationConfigurationBuilder {
     /// <p>The key of the dataset contents object in an S3 bucket. Each object has a key that is a unique identifier. Each object has exactly one key.</p>
     /// <p>You can create a unique key with the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p>Use <code>!{iotanalytics:scheduleTime}</code> to insert the time of a scheduled SQL query run.</p></li>
-    /// <li>
-    /// <p>Use <code>!{iotanalytics:versionId}</code> to insert a unique hash that identifies a dataset content.</p></li>
-    /// <li>
-    /// <p>Use <code>!{iotanalytics:creationTime}</code> to insert the creation time of a dataset content.</p></li>
+    /// <li> <p>Use <code>!{iotanalytics:scheduleTime}</code> to insert the time of a scheduled SQL query run.</p> </li>
+    /// <li> <p>Use <code>!{iotanalytics:versionId}</code> to insert a unique hash that identifies a dataset content.</p> </li>
+    /// <li> <p>Use <code>!{iotanalytics:creationTime}</code> to insert the creation time of a dataset content.</p> </li>
     /// </ul>
-    /// <p>The following example creates a unique key for a CSV file: <code>dataset/mydataset/!{iotanalytics:scheduleTime}/!{iotanalytics:versionId}.csv</code></p><note>
-    /// <p>If you don't use <code>!{iotanalytics:versionId}</code> to specify the key, you might get duplicate keys. For example, you might have two dataset contents with the same <code>scheduleTime</code> but different <code>versionId</code>s. This means that one dataset content overwrites the other.</p>
+    /// <p>The following example creates a unique key for a CSV file: <code>dataset/mydataset/!{iotanalytics:scheduleTime}/!{iotanalytics:versionId}.csv</code> </p> <note>
+    /// <p>If you don't use <code>!{iotanalytics:versionId}</code> to specify the key, you might get duplicate keys. For example, you might have two dataset contents with the same <code>scheduleTime</code> but different <code>versionId</code>s. This means that one dataset content overwrites the other. </p>
     /// </note>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.key

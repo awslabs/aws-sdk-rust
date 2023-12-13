@@ -22,7 +22,7 @@ impl DeleteSessionInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteSession`.
 ///
-/// <p>Removes session information for a specified bot, alias, and user ID.</p>
+/// <p>Removes session information for a specified bot, alias, and user ID. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteSessionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

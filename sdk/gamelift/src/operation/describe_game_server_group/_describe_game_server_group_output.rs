@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeGameServerGroupOutput {
-    /// <p>An object with the property settings for the requested game server group resource.</p>
+    /// <p>An object with the property settings for the requested game server group resource. </p>
     pub game_server_group: ::std::option::Option<crate::types::GameServerGroup>,
     _request_id: Option<String>,
 }
 impl DescribeGameServerGroupOutput {
-    /// <p>An object with the property settings for the requested game server group resource.</p>
+    /// <p>An object with the property settings for the requested game server group resource. </p>
     pub fn game_server_group(&self) -> ::std::option::Option<&crate::types::GameServerGroup> {
         self.game_server_group.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct DescribeGameServerGroupOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeGameServerGroupOutputBuilder {
-    /// <p>An object with the property settings for the requested game server group resource.</p>
+    /// <p>An object with the property settings for the requested game server group resource. </p>
     pub fn game_server_group(mut self, input: crate::types::GameServerGroup) -> Self {
         self.game_server_group = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An object with the property settings for the requested game server group resource.</p>
+    /// <p>An object with the property settings for the requested game server group resource. </p>
     pub fn set_game_server_group(mut self, input: ::std::option::Option<crate::types::GameServerGroup>) -> Self {
         self.game_server_group = input;
         self
     }
-    /// <p>An object with the property settings for the requested game server group resource.</p>
+    /// <p>An object with the property settings for the requested game server group resource. </p>
     pub fn get_game_server_group(&self) -> &::std::option::Option<crate::types::GameServerGroup> {
         &self.game_server_group
     }

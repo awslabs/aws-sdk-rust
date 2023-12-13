@@ -13,12 +13,9 @@ pub struct DescribeClientVpnTargetNetworksInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>One or more filters. Filter names and values are case-sensitive.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>association-id</code> - The ID of the association.</p></li>
-    /// <li>
-    /// <p><code>target-network-id</code> - The ID of the subnet specified as the target network.</p></li>
-    /// <li>
-    /// <p><code>vpc-id</code> - The ID of the VPC in which the target network is located.</p></li>
+    /// <li> <p> <code>association-id</code> - The ID of the association.</p> </li>
+    /// <li> <p> <code>target-network-id</code> - The ID of the subnet specified as the target network.</p> </li>
+    /// <li> <p> <code>vpc-id</code> - The ID of the VPC in which the target network is located.</p> </li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -45,12 +42,9 @@ impl DescribeClientVpnTargetNetworksInput {
     }
     /// <p>One or more filters. Filter names and values are case-sensitive.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>association-id</code> - The ID of the association.</p></li>
-    /// <li>
-    /// <p><code>target-network-id</code> - The ID of the subnet specified as the target network.</p></li>
-    /// <li>
-    /// <p><code>vpc-id</code> - The ID of the VPC in which the target network is located.</p></li>
+    /// <li> <p> <code>association-id</code> - The ID of the association.</p> </li>
+    /// <li> <p> <code>target-network-id</code> - The ID of the subnet specified as the target network.</p> </li>
+    /// <li> <p> <code>vpc-id</code> - The ID of the VPC in which the target network is located.</p> </li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
@@ -150,12 +144,9 @@ impl DescribeClientVpnTargetNetworksInputBuilder {
     ///
     /// <p>One or more filters. Filter names and values are case-sensitive.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>association-id</code> - The ID of the association.</p></li>
-    /// <li>
-    /// <p><code>target-network-id</code> - The ID of the subnet specified as the target network.</p></li>
-    /// <li>
-    /// <p><code>vpc-id</code> - The ID of the VPC in which the target network is located.</p></li>
+    /// <li> <p> <code>association-id</code> - The ID of the association.</p> </li>
+    /// <li> <p> <code>target-network-id</code> - The ID of the subnet specified as the target network.</p> </li>
+    /// <li> <p> <code>vpc-id</code> - The ID of the VPC in which the target network is located.</p> </li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
@@ -165,12 +156,9 @@ impl DescribeClientVpnTargetNetworksInputBuilder {
     }
     /// <p>One or more filters. Filter names and values are case-sensitive.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>association-id</code> - The ID of the association.</p></li>
-    /// <li>
-    /// <p><code>target-network-id</code> - The ID of the subnet specified as the target network.</p></li>
-    /// <li>
-    /// <p><code>vpc-id</code> - The ID of the VPC in which the target network is located.</p></li>
+    /// <li> <p> <code>association-id</code> - The ID of the association.</p> </li>
+    /// <li> <p> <code>target-network-id</code> - The ID of the subnet specified as the target network.</p> </li>
+    /// <li> <p> <code>vpc-id</code> - The ID of the VPC in which the target network is located.</p> </li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
@@ -178,12 +166,9 @@ impl DescribeClientVpnTargetNetworksInputBuilder {
     }
     /// <p>One or more filters. Filter names and values are case-sensitive.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>association-id</code> - The ID of the association.</p></li>
-    /// <li>
-    /// <p><code>target-network-id</code> - The ID of the subnet specified as the target network.</p></li>
-    /// <li>
-    /// <p><code>vpc-id</code> - The ID of the VPC in which the target network is located.</p></li>
+    /// <li> <p> <code>association-id</code> - The ID of the association.</p> </li>
+    /// <li> <p> <code>target-network-id</code> - The ID of the subnet specified as the target network.</p> </li>
+    /// <li> <p> <code>vpc-id</code> - The ID of the VPC in which the target network is located.</p> </li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters

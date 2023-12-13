@@ -11,16 +11,11 @@ pub struct TransformJob {
     /// <p>The status of the transform job.</p>
     /// <p>Transform job statuses are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>InProgress</code> - The job is in progress.</p></li>
-    /// <li>
-    /// <p><code>Completed</code> - The job has completed.</p></li>
-    /// <li>
-    /// <p><code>Failed</code> - The transform job has failed. To see the reason for the failure, see the <code>FailureReason</code> field in the response to a <code>DescribeTransformJob</code> call.</p></li>
-    /// <li>
-    /// <p><code>Stopping</code> - The transform job is stopping.</p></li>
-    /// <li>
-    /// <p><code>Stopped</code> - The transform job has stopped.</p></li>
+    /// <li> <p> <code>InProgress</code> - The job is in progress.</p> </li>
+    /// <li> <p> <code>Completed</code> - The job has completed.</p> </li>
+    /// <li> <p> <code>Failed</code> - The transform job has failed. To see the reason for the failure, see the <code>FailureReason</code> field in the response to a <code>DescribeTransformJob</code> call.</p> </li>
+    /// <li> <p> <code>Stopping</code> - The transform job is stopping.</p> </li>
+    /// <li> <p> <code>Stopped</code> - The transform job has stopped.</p> </li>
     /// </ul>
     pub transform_job_status: ::std::option::Option<crate::types::TransformJobStatus>,
     /// <p>If the transform job failed, the reason it failed.</p>
@@ -57,12 +52,9 @@ pub struct TransformJob {
     pub data_processing: ::std::option::Option<crate::types::DataProcessing>,
     /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p>
     /// <ul>
-    /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateProcessingJob.html">CreateProcessingJob</a></p></li>
-    /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a></p></li>
-    /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTransformJob.html">CreateTransformJob</a></p></li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateProcessingJob.html">CreateProcessingJob</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTransformJob.html">CreateTransformJob</a> </p> </li>
     /// </ul>
     pub experiment_config: ::std::option::Option<crate::types::ExperimentConfig>,
     /// <p>A list of tags associated with the transform job.</p>
@@ -82,16 +74,11 @@ impl TransformJob {
     /// <p>The status of the transform job.</p>
     /// <p>Transform job statuses are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>InProgress</code> - The job is in progress.</p></li>
-    /// <li>
-    /// <p><code>Completed</code> - The job has completed.</p></li>
-    /// <li>
-    /// <p><code>Failed</code> - The transform job has failed. To see the reason for the failure, see the <code>FailureReason</code> field in the response to a <code>DescribeTransformJob</code> call.</p></li>
-    /// <li>
-    /// <p><code>Stopping</code> - The transform job is stopping.</p></li>
-    /// <li>
-    /// <p><code>Stopped</code> - The transform job has stopped.</p></li>
+    /// <li> <p> <code>InProgress</code> - The job is in progress.</p> </li>
+    /// <li> <p> <code>Completed</code> - The job has completed.</p> </li>
+    /// <li> <p> <code>Failed</code> - The transform job has failed. To see the reason for the failure, see the <code>FailureReason</code> field in the response to a <code>DescribeTransformJob</code> call.</p> </li>
+    /// <li> <p> <code>Stopping</code> - The transform job is stopping.</p> </li>
+    /// <li> <p> <code>Stopped</code> - The transform job has stopped.</p> </li>
     /// </ul>
     pub fn transform_job_status(&self) -> ::std::option::Option<&crate::types::TransformJobStatus> {
         self.transform_job_status.as_ref()
@@ -162,12 +149,9 @@ impl TransformJob {
     }
     /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p>
     /// <ul>
-    /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateProcessingJob.html">CreateProcessingJob</a></p></li>
-    /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a></p></li>
-    /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTransformJob.html">CreateTransformJob</a></p></li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateProcessingJob.html">CreateProcessingJob</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTransformJob.html">CreateTransformJob</a> </p> </li>
     /// </ul>
     pub fn experiment_config(&self) -> ::std::option::Option<&crate::types::ExperimentConfig> {
         self.experiment_config.as_ref()
@@ -249,16 +233,11 @@ impl TransformJobBuilder {
     /// <p>The status of the transform job.</p>
     /// <p>Transform job statuses are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>InProgress</code> - The job is in progress.</p></li>
-    /// <li>
-    /// <p><code>Completed</code> - The job has completed.</p></li>
-    /// <li>
-    /// <p><code>Failed</code> - The transform job has failed. To see the reason for the failure, see the <code>FailureReason</code> field in the response to a <code>DescribeTransformJob</code> call.</p></li>
-    /// <li>
-    /// <p><code>Stopping</code> - The transform job is stopping.</p></li>
-    /// <li>
-    /// <p><code>Stopped</code> - The transform job has stopped.</p></li>
+    /// <li> <p> <code>InProgress</code> - The job is in progress.</p> </li>
+    /// <li> <p> <code>Completed</code> - The job has completed.</p> </li>
+    /// <li> <p> <code>Failed</code> - The transform job has failed. To see the reason for the failure, see the <code>FailureReason</code> field in the response to a <code>DescribeTransformJob</code> call.</p> </li>
+    /// <li> <p> <code>Stopping</code> - The transform job is stopping.</p> </li>
+    /// <li> <p> <code>Stopped</code> - The transform job has stopped.</p> </li>
     /// </ul>
     pub fn transform_job_status(mut self, input: crate::types::TransformJobStatus) -> Self {
         self.transform_job_status = ::std::option::Option::Some(input);
@@ -267,16 +246,11 @@ impl TransformJobBuilder {
     /// <p>The status of the transform job.</p>
     /// <p>Transform job statuses are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>InProgress</code> - The job is in progress.</p></li>
-    /// <li>
-    /// <p><code>Completed</code> - The job has completed.</p></li>
-    /// <li>
-    /// <p><code>Failed</code> - The transform job has failed. To see the reason for the failure, see the <code>FailureReason</code> field in the response to a <code>DescribeTransformJob</code> call.</p></li>
-    /// <li>
-    /// <p><code>Stopping</code> - The transform job is stopping.</p></li>
-    /// <li>
-    /// <p><code>Stopped</code> - The transform job has stopped.</p></li>
+    /// <li> <p> <code>InProgress</code> - The job is in progress.</p> </li>
+    /// <li> <p> <code>Completed</code> - The job has completed.</p> </li>
+    /// <li> <p> <code>Failed</code> - The transform job has failed. To see the reason for the failure, see the <code>FailureReason</code> field in the response to a <code>DescribeTransformJob</code> call.</p> </li>
+    /// <li> <p> <code>Stopping</code> - The transform job is stopping.</p> </li>
+    /// <li> <p> <code>Stopped</code> - The transform job has stopped.</p> </li>
     /// </ul>
     pub fn set_transform_job_status(mut self, input: ::std::option::Option<crate::types::TransformJobStatus>) -> Self {
         self.transform_job_status = input;
@@ -285,16 +259,11 @@ impl TransformJobBuilder {
     /// <p>The status of the transform job.</p>
     /// <p>Transform job statuses are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>InProgress</code> - The job is in progress.</p></li>
-    /// <li>
-    /// <p><code>Completed</code> - The job has completed.</p></li>
-    /// <li>
-    /// <p><code>Failed</code> - The transform job has failed. To see the reason for the failure, see the <code>FailureReason</code> field in the response to a <code>DescribeTransformJob</code> call.</p></li>
-    /// <li>
-    /// <p><code>Stopping</code> - The transform job is stopping.</p></li>
-    /// <li>
-    /// <p><code>Stopped</code> - The transform job has stopped.</p></li>
+    /// <li> <p> <code>InProgress</code> - The job is in progress.</p> </li>
+    /// <li> <p> <code>Completed</code> - The job has completed.</p> </li>
+    /// <li> <p> <code>Failed</code> - The transform job has failed. To see the reason for the failure, see the <code>FailureReason</code> field in the response to a <code>DescribeTransformJob</code> call.</p> </li>
+    /// <li> <p> <code>Stopping</code> - The transform job is stopping.</p> </li>
+    /// <li> <p> <code>Stopped</code> - The transform job has stopped.</p> </li>
     /// </ul>
     pub fn get_transform_job_status(&self) -> &::std::option::Option<crate::types::TransformJobStatus> {
         &self.transform_job_status
@@ -534,12 +503,9 @@ impl TransformJobBuilder {
     }
     /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p>
     /// <ul>
-    /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateProcessingJob.html">CreateProcessingJob</a></p></li>
-    /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a></p></li>
-    /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTransformJob.html">CreateTransformJob</a></p></li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateProcessingJob.html">CreateProcessingJob</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTransformJob.html">CreateTransformJob</a> </p> </li>
     /// </ul>
     pub fn experiment_config(mut self, input: crate::types::ExperimentConfig) -> Self {
         self.experiment_config = ::std::option::Option::Some(input);
@@ -547,12 +513,9 @@ impl TransformJobBuilder {
     }
     /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p>
     /// <ul>
-    /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateProcessingJob.html">CreateProcessingJob</a></p></li>
-    /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a></p></li>
-    /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTransformJob.html">CreateTransformJob</a></p></li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateProcessingJob.html">CreateProcessingJob</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTransformJob.html">CreateTransformJob</a> </p> </li>
     /// </ul>
     pub fn set_experiment_config(mut self, input: ::std::option::Option<crate::types::ExperimentConfig>) -> Self {
         self.experiment_config = input;
@@ -560,12 +523,9 @@ impl TransformJobBuilder {
     }
     /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p>
     /// <ul>
-    /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateProcessingJob.html">CreateProcessingJob</a></p></li>
-    /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a></p></li>
-    /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTransformJob.html">CreateTransformJob</a></p></li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateProcessingJob.html">CreateProcessingJob</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTransformJob.html">CreateTransformJob</a> </p> </li>
     /// </ul>
     pub fn get_experiment_config(&self) -> &::std::option::Option<crate::types::ExperimentConfig> {
         &self.experiment_config

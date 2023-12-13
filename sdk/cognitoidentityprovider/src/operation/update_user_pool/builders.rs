@@ -26,16 +26,14 @@ impl UpdateUserPoolInputBuilder {
 /// <p>This action might generate an SMS text message. Starting June 1, 2021, US telecom carriers require you to register an origination phone number before you can send SMS messages to US phone numbers. If you use SMS text messages in Amazon Cognito, you must register a phone number with <a href="https://console.aws.amazon.com/pinpoint/home/">Amazon Pinpoint</a>. Amazon Cognito uses the registered number automatically. Otherwise, Amazon Cognito users who must receive SMS messages might not be able to sign up, activate their accounts, or sign in.</p>
 /// <p>If you have never used SMS text messages with Amazon Cognito or any other Amazon Web Service, Amazon Simple Notification Service might place your account in the SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox mode</a> </i>, you can send messages only to verified phone numbers. After you test your app while in the sandbox environment, you can move out of the sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html"> SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
 /// </note>
-/// <p>Updates the specified user pool with the specified attributes. You can get a list of the current user pool settings using <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html">DescribeUserPool</a>.</p><important>
+/// <p>Updates the specified user pool with the specified attributes. You can get a list of the current user pool settings using <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html">DescribeUserPool</a>.</p> <important>
 /// <p>If you don't provide a value for an attribute, Amazon Cognito sets it to its default value.</p>
 /// </important> <note>
 /// <p>Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.</p>
-/// <p class="title"><b>Learn more</b></p>
+/// <p class="title"> <b>Learn more</b> </p>
 /// <ul>
-/// <li>
-/// <p><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing Amazon Web Services API Requests</a></p></li>
-/// <li>
-/// <p><a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using the Amazon Cognito user pools API and user pool endpoints</a></p></li>
+/// <li> <p> <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing Amazon Web Services API Requests</a> </p> </li>
+/// <li> <p> <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using the Amazon Cognito user pools API and user pool endpoints</a> </p> </li>
 /// </ul>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -286,12 +284,9 @@ impl UpdateUserPoolFluentBuilder {
     }
     /// <p>Possible values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>OFF</code> - MFA tokens aren't required and can't be specified during user registration.</p></li>
-    /// <li>
-    /// <p><code>ON</code> - MFA tokens are required for all user registrations. You can only specify ON when you're initially creating a user pool. You can use the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a> API operation to turn MFA "ON" for existing user pools.</p></li>
-    /// <li>
-    /// <p><code>OPTIONAL</code> - Users have the option when registering to create an MFA token.</p></li>
+    /// <li> <p> <code>OFF</code> - MFA tokens aren't required and can't be specified during user registration.</p> </li>
+    /// <li> <p> <code>ON</code> - MFA tokens are required for all user registrations. You can only specify ON when you're initially creating a user pool. You can use the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a> API operation to turn MFA "ON" for existing user pools. </p> </li>
+    /// <li> <p> <code>OPTIONAL</code> - Users have the option when registering to create an MFA token.</p> </li>
     /// </ul>
     pub fn mfa_configuration(mut self, input: crate::types::UserPoolMfaType) -> Self {
         self.inner = self.inner.mfa_configuration(input);
@@ -299,12 +294,9 @@ impl UpdateUserPoolFluentBuilder {
     }
     /// <p>Possible values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>OFF</code> - MFA tokens aren't required and can't be specified during user registration.</p></li>
-    /// <li>
-    /// <p><code>ON</code> - MFA tokens are required for all user registrations. You can only specify ON when you're initially creating a user pool. You can use the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a> API operation to turn MFA "ON" for existing user pools.</p></li>
-    /// <li>
-    /// <p><code>OPTIONAL</code> - Users have the option when registering to create an MFA token.</p></li>
+    /// <li> <p> <code>OFF</code> - MFA tokens aren't required and can't be specified during user registration.</p> </li>
+    /// <li> <p> <code>ON</code> - MFA tokens are required for all user registrations. You can only specify ON when you're initially creating a user pool. You can use the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a> API operation to turn MFA "ON" for existing user pools. </p> </li>
+    /// <li> <p> <code>OPTIONAL</code> - Users have the option when registering to create an MFA token.</p> </li>
     /// </ul>
     pub fn set_mfa_configuration(mut self, input: ::std::option::Option<crate::types::UserPoolMfaType>) -> Self {
         self.inner = self.inner.set_mfa_configuration(input);
@@ -312,31 +304,28 @@ impl UpdateUserPoolFluentBuilder {
     }
     /// <p>Possible values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>OFF</code> - MFA tokens aren't required and can't be specified during user registration.</p></li>
-    /// <li>
-    /// <p><code>ON</code> - MFA tokens are required for all user registrations. You can only specify ON when you're initially creating a user pool. You can use the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a> API operation to turn MFA "ON" for existing user pools.</p></li>
-    /// <li>
-    /// <p><code>OPTIONAL</code> - Users have the option when registering to create an MFA token.</p></li>
+    /// <li> <p> <code>OFF</code> - MFA tokens aren't required and can't be specified during user registration.</p> </li>
+    /// <li> <p> <code>ON</code> - MFA tokens are required for all user registrations. You can only specify ON when you're initially creating a user pool. You can use the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a> API operation to turn MFA "ON" for existing user pools. </p> </li>
+    /// <li> <p> <code>OPTIONAL</code> - Users have the option when registering to create an MFA token.</p> </li>
     /// </ul>
     pub fn get_mfa_configuration(&self) -> &::std::option::Option<crate::types::UserPoolMfaType> {
         self.inner.get_mfa_configuration()
     }
-    /// <p>The device-remembering configuration for a user pool. A null value indicates that you have deactivated device remembering in your user pool.</p><note>
+    /// <p>The device-remembering configuration for a user pool. A null value indicates that you have deactivated device remembering in your user pool.</p> <note>
     /// <p>When you provide a value for any <code>DeviceConfiguration</code> field, you activate the Amazon Cognito device-remembering feature.</p>
     /// </note>
     pub fn device_configuration(mut self, input: crate::types::DeviceConfigurationType) -> Self {
         self.inner = self.inner.device_configuration(input);
         self
     }
-    /// <p>The device-remembering configuration for a user pool. A null value indicates that you have deactivated device remembering in your user pool.</p><note>
+    /// <p>The device-remembering configuration for a user pool. A null value indicates that you have deactivated device remembering in your user pool.</p> <note>
     /// <p>When you provide a value for any <code>DeviceConfiguration</code> field, you activate the Amazon Cognito device-remembering feature.</p>
     /// </note>
     pub fn set_device_configuration(mut self, input: ::std::option::Option<crate::types::DeviceConfigurationType>) -> Self {
         self.inner = self.inner.set_device_configuration(input);
         self
     }
-    /// <p>The device-remembering configuration for a user pool. A null value indicates that you have deactivated device remembering in your user pool.</p><note>
+    /// <p>The device-remembering configuration for a user pool. A null value indicates that you have deactivated device remembering in your user pool.</p> <note>
     /// <p>When you provide a value for any <code>DeviceConfiguration</code> field, you activate the Amazon Cognito device-remembering feature.</p>
     /// </note>
     pub fn get_device_configuration(&self) -> &::std::option::Option<crate::types::DeviceConfigurationType> {

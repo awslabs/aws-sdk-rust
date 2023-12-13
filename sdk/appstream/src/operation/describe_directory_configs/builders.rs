@@ -22,7 +22,7 @@ impl DescribeDirectoryConfigsInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeDirectoryConfigs`.
 ///
-/// <p>Retrieves a list that describes one or more specified Directory Config objects for AppStream 2.0, if the names for these objects are provided. Otherwise, all Directory Config objects in the account are described. These objects include the configuration information required to join fleets and image builders to Microsoft Active Directory domains.</p>
+/// <p>Retrieves a list that describes one or more specified Directory Config objects for AppStream 2.0, if the names for these objects are provided. Otherwise, all Directory Config objects in the account are described. These objects include the configuration information required to join fleets and image builders to Microsoft Active Directory domains. </p>
 /// <p>Although the response syntax in this topic includes the account password, this password is not returned in the actual response.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeDirectoryConfigsFluentBuilder {

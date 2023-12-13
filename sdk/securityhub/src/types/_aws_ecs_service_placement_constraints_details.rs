@@ -7,7 +7,7 @@ pub struct AwsEcsServicePlacementConstraintsDetails {
     /// <p>A cluster query language expression to apply to the constraint. You cannot specify an expression if the constraint type is <code>distinctInstance</code>.</p>
     pub expression: ::std::option::Option<::std::string::String>,
     /// <p>The type of constraint. Use <code>distinctInstance</code> to run each task in a particular group on a different container instance. Use <code>memberOf</code> to restrict the selection to a group of valid candidates.</p>
-    /// <p>Valid values: <code>distinctInstance</code> | <code>memberOf</code></p>
+    /// <p>Valid values: <code>distinctInstance</code> | <code>memberOf</code> </p>
     pub r#type: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsServicePlacementConstraintsDetails {
@@ -16,7 +16,7 @@ impl AwsEcsServicePlacementConstraintsDetails {
         self.expression.as_deref()
     }
     /// <p>The type of constraint. Use <code>distinctInstance</code> to run each task in a particular group on a different container instance. Use <code>memberOf</code> to restrict the selection to a group of valid candidates.</p>
-    /// <p>Valid values: <code>distinctInstance</code> | <code>memberOf</code></p>
+    /// <p>Valid values: <code>distinctInstance</code> | <code>memberOf</code> </p>
     pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
@@ -51,19 +51,19 @@ impl AwsEcsServicePlacementConstraintsDetailsBuilder {
         &self.expression
     }
     /// <p>The type of constraint. Use <code>distinctInstance</code> to run each task in a particular group on a different container instance. Use <code>memberOf</code> to restrict the selection to a group of valid candidates.</p>
-    /// <p>Valid values: <code>distinctInstance</code> | <code>memberOf</code></p>
+    /// <p>Valid values: <code>distinctInstance</code> | <code>memberOf</code> </p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of constraint. Use <code>distinctInstance</code> to run each task in a particular group on a different container instance. Use <code>memberOf</code> to restrict the selection to a group of valid candidates.</p>
-    /// <p>Valid values: <code>distinctInstance</code> | <code>memberOf</code></p>
+    /// <p>Valid values: <code>distinctInstance</code> | <code>memberOf</code> </p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The type of constraint. Use <code>distinctInstance</code> to run each task in a particular group on a different container instance. Use <code>memberOf</code> to restrict the selection to a group of valid candidates.</p>
-    /// <p>Valid values: <code>distinctInstance</code> | <code>memberOf</code></p>
+    /// <p>Valid values: <code>distinctInstance</code> | <code>memberOf</code> </p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.r#type
     }

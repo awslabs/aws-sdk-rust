@@ -10,18 +10,14 @@ pub struct ReferenceLineDataConfiguration {
     pub dynamic_configuration: ::std::option::Option<crate::types::ReferenceLineDynamicDataConfiguration>,
     /// <p>The axis binding type of the reference line. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PrimaryY</code></p></li>
-    /// <li>
-    /// <p><code>SecondaryY</code></p></li>
+    /// <li> <p> <code>PrimaryY</code> </p> </li>
+    /// <li> <p> <code>SecondaryY</code> </p> </li>
     /// </ul>
     pub axis_binding: ::std::option::Option<crate::types::AxisBinding>,
     /// <p>The series type of the reference line data configuration. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>BAR</code></p></li>
-    /// <li>
-    /// <p><code>LINE</code></p></li>
+    /// <li> <p> <code>BAR</code> </p> </li>
+    /// <li> <p> <code>LINE</code> </p> </li>
     /// </ul>
     pub series_type: ::std::option::Option<crate::types::ReferenceLineSeriesType>,
 }
@@ -36,20 +32,16 @@ impl ReferenceLineDataConfiguration {
     }
     /// <p>The axis binding type of the reference line. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PrimaryY</code></p></li>
-    /// <li>
-    /// <p><code>SecondaryY</code></p></li>
+    /// <li> <p> <code>PrimaryY</code> </p> </li>
+    /// <li> <p> <code>SecondaryY</code> </p> </li>
     /// </ul>
     pub fn axis_binding(&self) -> ::std::option::Option<&crate::types::AxisBinding> {
         self.axis_binding.as_ref()
     }
     /// <p>The series type of the reference line data configuration. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>BAR</code></p></li>
-    /// <li>
-    /// <p><code>LINE</code></p></li>
+    /// <li> <p> <code>BAR</code> </p> </li>
+    /// <li> <p> <code>LINE</code> </p> </li>
     /// </ul>
     pub fn series_type(&self) -> ::std::option::Option<&crate::types::ReferenceLineSeriesType> {
         self.series_type.as_ref()
@@ -102,10 +94,8 @@ impl ReferenceLineDataConfigurationBuilder {
     }
     /// <p>The axis binding type of the reference line. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PrimaryY</code></p></li>
-    /// <li>
-    /// <p><code>SecondaryY</code></p></li>
+    /// <li> <p> <code>PrimaryY</code> </p> </li>
+    /// <li> <p> <code>SecondaryY</code> </p> </li>
     /// </ul>
     pub fn axis_binding(mut self, input: crate::types::AxisBinding) -> Self {
         self.axis_binding = ::std::option::Option::Some(input);
@@ -113,10 +103,8 @@ impl ReferenceLineDataConfigurationBuilder {
     }
     /// <p>The axis binding type of the reference line. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PrimaryY</code></p></li>
-    /// <li>
-    /// <p><code>SecondaryY</code></p></li>
+    /// <li> <p> <code>PrimaryY</code> </p> </li>
+    /// <li> <p> <code>SecondaryY</code> </p> </li>
     /// </ul>
     pub fn set_axis_binding(mut self, input: ::std::option::Option<crate::types::AxisBinding>) -> Self {
         self.axis_binding = input;
@@ -124,20 +112,16 @@ impl ReferenceLineDataConfigurationBuilder {
     }
     /// <p>The axis binding type of the reference line. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PrimaryY</code></p></li>
-    /// <li>
-    /// <p><code>SecondaryY</code></p></li>
+    /// <li> <p> <code>PrimaryY</code> </p> </li>
+    /// <li> <p> <code>SecondaryY</code> </p> </li>
     /// </ul>
     pub fn get_axis_binding(&self) -> &::std::option::Option<crate::types::AxisBinding> {
         &self.axis_binding
     }
     /// <p>The series type of the reference line data configuration. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>BAR</code></p></li>
-    /// <li>
-    /// <p><code>LINE</code></p></li>
+    /// <li> <p> <code>BAR</code> </p> </li>
+    /// <li> <p> <code>LINE</code> </p> </li>
     /// </ul>
     pub fn series_type(mut self, input: crate::types::ReferenceLineSeriesType) -> Self {
         self.series_type = ::std::option::Option::Some(input);
@@ -145,10 +129,8 @@ impl ReferenceLineDataConfigurationBuilder {
     }
     /// <p>The series type of the reference line data configuration. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>BAR</code></p></li>
-    /// <li>
-    /// <p><code>LINE</code></p></li>
+    /// <li> <p> <code>BAR</code> </p> </li>
+    /// <li> <p> <code>LINE</code> </p> </li>
     /// </ul>
     pub fn set_series_type(mut self, input: ::std::option::Option<crate::types::ReferenceLineSeriesType>) -> Self {
         self.series_type = input;
@@ -156,10 +138,8 @@ impl ReferenceLineDataConfigurationBuilder {
     }
     /// <p>The series type of the reference line data configuration. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>BAR</code></p></li>
-    /// <li>
-    /// <p><code>LINE</code></p></li>
+    /// <li> <p> <code>BAR</code> </p> </li>
+    /// <li> <p> <code>LINE</code> </p> </li>
     /// </ul>
     pub fn get_series_type(&self) -> &::std::option::Option<crate::types::ReferenceLineSeriesType> {
         &self.series_type

@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AcceptShareInput {
-    /// <p>The ID for a share offer for analytics store data.</p>
+    /// <p> The ID for a share offer for analytics store data. </p>
     pub share_id: ::std::option::Option<::std::string::String>,
 }
 impl AcceptShareInput {
-    /// <p>The ID for a share offer for analytics store data.</p>
+    /// <p> The ID for a share offer for analytics store data. </p>
     pub fn share_id(&self) -> ::std::option::Option<&str> {
         self.share_id.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct AcceptShareInputBuilder {
     pub(crate) share_id: ::std::option::Option<::std::string::String>,
 }
 impl AcceptShareInputBuilder {
-    /// <p>The ID for a share offer for analytics store data.</p>
+    /// <p> The ID for a share offer for analytics store data. </p>
     /// This field is required.
     pub fn share_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.share_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID for a share offer for analytics store data.</p>
+    /// <p> The ID for a share offer for analytics store data. </p>
     pub fn set_share_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.share_id = input;
         self
     }
-    /// <p>The ID for a share offer for analytics store data.</p>
+    /// <p> The ID for a share offer for analytics store data. </p>
     pub fn get_share_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.share_id
     }

@@ -3,25 +3,25 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLocalGatewayRouteTableInput {
-    /// <p>The ID of the local gateway.</p>
+    /// <p> The ID of the local gateway. </p>
     pub local_gateway_id: ::std::option::Option<::std::string::String>,
-    /// <p>The mode of the local gateway route table.</p>
+    /// <p> The mode of the local gateway route table. </p>
     pub mode: ::std::option::Option<crate::types::LocalGatewayRouteTableMode>,
-    /// <p>The tags assigned to the local gateway route table.</p>
+    /// <p> The tags assigned to the local gateway route table. </p>
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
 impl CreateLocalGatewayRouteTableInput {
-    /// <p>The ID of the local gateway.</p>
+    /// <p> The ID of the local gateway. </p>
     pub fn local_gateway_id(&self) -> ::std::option::Option<&str> {
         self.local_gateway_id.as_deref()
     }
-    /// <p>The mode of the local gateway route table.</p>
+    /// <p> The mode of the local gateway route table. </p>
     pub fn mode(&self) -> ::std::option::Option<&crate::types::LocalGatewayRouteTableMode> {
         self.mode.as_ref()
     }
-    /// <p>The tags assigned to the local gateway route table.</p>
+    /// <p> The tags assigned to the local gateway route table. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
     pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
@@ -49,32 +49,32 @@ pub struct CreateLocalGatewayRouteTableInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl CreateLocalGatewayRouteTableInputBuilder {
-    /// <p>The ID of the local gateway.</p>
+    /// <p> The ID of the local gateway. </p>
     /// This field is required.
     pub fn local_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.local_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the local gateway.</p>
+    /// <p> The ID of the local gateway. </p>
     pub fn set_local_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.local_gateway_id = input;
         self
     }
-    /// <p>The ID of the local gateway.</p>
+    /// <p> The ID of the local gateway. </p>
     pub fn get_local_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.local_gateway_id
     }
-    /// <p>The mode of the local gateway route table.</p>
+    /// <p> The mode of the local gateway route table. </p>
     pub fn mode(mut self, input: crate::types::LocalGatewayRouteTableMode) -> Self {
         self.mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The mode of the local gateway route table.</p>
+    /// <p> The mode of the local gateway route table. </p>
     pub fn set_mode(mut self, input: ::std::option::Option<crate::types::LocalGatewayRouteTableMode>) -> Self {
         self.mode = input;
         self
     }
-    /// <p>The mode of the local gateway route table.</p>
+    /// <p> The mode of the local gateway route table. </p>
     pub fn get_mode(&self) -> &::std::option::Option<crate::types::LocalGatewayRouteTableMode> {
         &self.mode
     }
@@ -82,19 +82,19 @@ impl CreateLocalGatewayRouteTableInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
     ///
-    /// <p>The tags assigned to the local gateway route table.</p>
+    /// <p> The tags assigned to the local gateway route table. </p>
     pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
         let mut v = self.tag_specifications.unwrap_or_default();
         v.push(input);
         self.tag_specifications = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The tags assigned to the local gateway route table.</p>
+    /// <p> The tags assigned to the local gateway route table. </p>
     pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.tag_specifications = input;
         self
     }
-    /// <p>The tags assigned to the local gateway route table.</p>
+    /// <p> The tags assigned to the local gateway route table. </p>
     pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
     }

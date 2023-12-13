@@ -123,40 +123,43 @@ impl UpdateSourceControlFromJobFluentBuilder {
     pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_job_name()
     }
-    /// <p>The provider for the remote repository. Possible values: GITHUB, AWS_CODE_COMMIT, GITLAB, BITBUCKET.</p>
+    /// <p> The provider for the remote repository. Possible values: GITHUB, AWS_CODE_COMMIT, GITLAB, BITBUCKET. </p>
     pub fn provider(mut self, input: crate::types::SourceControlProvider) -> Self {
         self.inner = self.inner.provider(input);
         self
     }
-    /// <p>The provider for the remote repository. Possible values: GITHUB, AWS_CODE_COMMIT, GITLAB, BITBUCKET.</p>
+    /// <p> The provider for the remote repository. Possible values: GITHUB, AWS_CODE_COMMIT, GITLAB, BITBUCKET. </p>
     pub fn set_provider(mut self, input: ::std::option::Option<crate::types::SourceControlProvider>) -> Self {
         self.inner = self.inner.set_provider(input);
         self
     }
-    /// <p>The provider for the remote repository. Possible values: GITHUB, AWS_CODE_COMMIT, GITLAB, BITBUCKET.</p>
+    /// <p> The provider for the remote repository. Possible values: GITHUB, AWS_CODE_COMMIT, GITLAB, BITBUCKET. </p>
     pub fn get_provider(&self) -> &::std::option::Option<crate::types::SourceControlProvider> {
         self.inner.get_provider()
     }
-    /// <p>The name of the remote repository that contains the job artifacts. For BitBucket providers, <code>RepositoryName</code> should include <code>WorkspaceName</code>. Use the format <code><workspacename>
+    /// <p>The name of the remote repository that contains the job artifacts. For BitBucket providers, <code>RepositoryName</code> should include <code>WorkspaceName</code>. Use the format <code>
+    /// <workspacename>
     /// /
     /// <repositoryname></repositoryname>
-    /// </workspacename></code>.</p>
+    /// </workspacename></code>. </p>
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository_name(input.into());
         self
     }
-    /// <p>The name of the remote repository that contains the job artifacts. For BitBucket providers, <code>RepositoryName</code> should include <code>WorkspaceName</code>. Use the format <code><workspacename>
+    /// <p>The name of the remote repository that contains the job artifacts. For BitBucket providers, <code>RepositoryName</code> should include <code>WorkspaceName</code>. Use the format <code>
+    /// <workspacename>
     /// /
     /// <repositoryname></repositoryname>
-    /// </workspacename></code>.</p>
+    /// </workspacename></code>. </p>
     pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
     }
-    /// <p>The name of the remote repository that contains the job artifacts. For BitBucket providers, <code>RepositoryName</code> should include <code>WorkspaceName</code>. Use the format <code><workspacename>
+    /// <p>The name of the remote repository that contains the job artifacts. For BitBucket providers, <code>RepositoryName</code> should include <code>WorkspaceName</code>. Use the format <code>
+    /// <workspacename>
     /// /
     /// <repositoryname></repositoryname>
-    /// </workspacename></code>.</p>
+    /// </workspacename></code>. </p>
     pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_repository_name()
     }

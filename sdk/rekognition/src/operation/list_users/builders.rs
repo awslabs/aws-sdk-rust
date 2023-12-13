@@ -122,17 +122,17 @@ impl ListUsersFluentBuilder {
     pub fn get_collection_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_collection_id()
     }
-    /// <p>Maximum number of UsersID to return.</p>
+    /// <p>Maximum number of UsersID to return. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>Maximum number of UsersID to return.</p>
+    /// <p>Maximum number of UsersID to return. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>Maximum number of UsersID to return.</p>
+    /// <p>Maximum number of UsersID to return. </p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

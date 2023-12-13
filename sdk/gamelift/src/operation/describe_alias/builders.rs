@@ -22,10 +22,10 @@ impl DescribeAliasInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeAlias`.
 ///
-/// <p>Retrieves properties for an alias. This operation returns all alias metadata and settings. To get an alias's target fleet ID only, use <code>ResolveAlias</code>.</p>
+/// <p>Retrieves properties for an alias. This operation returns all alias metadata and settings. To get an alias's target fleet ID only, use <code>ResolveAlias</code>. </p>
 /// <p>To get alias properties, specify the alias ID. If successful, the requested alias record is returned.</p>
-/// <p><b>Related actions</b></p>
-/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a></p>
+/// <p> <b>Related actions</b> </p>
+/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAliasFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -111,17 +111,17 @@ impl DescribeAliasFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier for the fleet alias that you want to retrieve. You can use either the alias ID or ARN value.</p>
+    /// <p>The unique identifier for the fleet alias that you want to retrieve. You can use either the alias ID or ARN value. </p>
     pub fn alias_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.alias_id(input.into());
         self
     }
-    /// <p>The unique identifier for the fleet alias that you want to retrieve. You can use either the alias ID or ARN value.</p>
+    /// <p>The unique identifier for the fleet alias that you want to retrieve. You can use either the alias ID or ARN value. </p>
     pub fn set_alias_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_alias_id(input);
         self
     }
-    /// <p>The unique identifier for the fleet alias that you want to retrieve. You can use either the alias ID or ARN value.</p>
+    /// <p>The unique identifier for the fleet alias that you want to retrieve. You can use either the alias ID or ARN value. </p>
     pub fn get_alias_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_alias_id()
     }

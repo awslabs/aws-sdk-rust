@@ -22,7 +22,7 @@ impl DeleteUserInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteUser`.
 ///
-/// <p>Deletes the Amazon QuickSight user that is associated with the identity of the IAM user or role that's making the call. The IAM user isn't deleted as a result of this call.</p>
+/// <p>Deletes the Amazon QuickSight user that is associated with the identity of the IAM user or role that's making the call. The IAM user isn't deleted as a result of this call. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteUserFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

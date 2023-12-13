@@ -22,7 +22,7 @@ impl SetVoiceMessageSpendLimitOverrideInputBuilder {
 }
 /// Fluent builder constructing a request to `SetVoiceMessageSpendLimitOverride`.
 ///
-/// <p>Sets an account level monthly spend limit override for sending voice messages. The requested spend limit must be less than or equal to the <code>MaxLimit</code>, which is set by Amazon Web Services.</p>
+/// <p>Sets an account level monthly spend limit override for sending voice messages. The requested spend limit must be less than or equal to the <code>MaxLimit</code>, which is set by Amazon Web Services. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SetVoiceMessageSpendLimitOverrideFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

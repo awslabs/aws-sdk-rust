@@ -22,7 +22,7 @@ impl GetAccountStatusInputBuilder {
 }
 /// Fluent builder constructing a request to `GetAccountStatus`.
 ///
-/// <p>Gets the registration status of an account in Audit Manager.</p>
+/// <p> Gets the registration status of an account in Audit Manager. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAccountStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

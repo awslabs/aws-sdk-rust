@@ -22,7 +22,7 @@ impl CreateBotInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateBot`.
 ///
-/// <p>Creates an Amazon Lex conversational bot.</p>
+/// <p>Creates an Amazon Lex conversational bot. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateBotFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -158,21 +158,21 @@ impl CreateBotFluentBuilder {
     pub fn get_data_privacy(&self) -> &::std::option::Option<crate::types::DataPrivacy> {
         self.inner.get_data_privacy()
     }
-    /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot.</p>
+    /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot. </p>
     /// <p>A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p>
     /// <p>You can specify between 60 (1 minute) and 86,400 (24 hours) seconds.</p>
     pub fn idle_session_ttl_in_seconds(mut self, input: i32) -> Self {
         self.inner = self.inner.idle_session_ttl_in_seconds(input);
         self
     }
-    /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot.</p>
+    /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot. </p>
     /// <p>A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p>
     /// <p>You can specify between 60 (1 minute) and 86,400 (24 hours) seconds.</p>
     pub fn set_idle_session_ttl_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_idle_session_ttl_in_seconds(input);
         self
     }
-    /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot.</p>
+    /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot. </p>
     /// <p>A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p>
     /// <p>You can specify between 60 (1 minute) and 86,400 (24 hours) seconds.</p>
     pub fn get_idle_session_ttl_in_seconds(&self) -> &::std::option::Option<i32> {

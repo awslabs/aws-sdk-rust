@@ -137,17 +137,17 @@ impl UpdateAuthorizerFluentBuilder {
     pub fn get_authorizer_function_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_authorizer_function_arn()
     }
-    /// <p>The key used to extract the token from the HTTP headers.</p>
+    /// <p>The key used to extract the token from the HTTP headers. </p>
     pub fn token_key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.token_key_name(input.into());
         self
     }
-    /// <p>The key used to extract the token from the HTTP headers.</p>
+    /// <p>The key used to extract the token from the HTTP headers. </p>
     pub fn set_token_key_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_token_key_name(input);
         self
     }
-    /// <p>The key used to extract the token from the HTTP headers.</p>
+    /// <p>The key used to extract the token from the HTTP headers. </p>
     pub fn get_token_key_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_token_key_name()
     }

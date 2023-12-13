@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFirewallPolicyOutput {
-    /// <p>The object containing the definition of the <code>FirewallPolicyResponse</code> that you asked to delete.</p>
+    /// <p>The object containing the definition of the <code>FirewallPolicyResponse</code> that you asked to delete. </p>
     pub firewall_policy_response: ::std::option::Option<crate::types::FirewallPolicyResponse>,
     _request_id: Option<String>,
 }
 impl DeleteFirewallPolicyOutput {
-    /// <p>The object containing the definition of the <code>FirewallPolicyResponse</code> that you asked to delete.</p>
+    /// <p>The object containing the definition of the <code>FirewallPolicyResponse</code> that you asked to delete. </p>
     pub fn firewall_policy_response(&self) -> ::std::option::Option<&crate::types::FirewallPolicyResponse> {
         self.firewall_policy_response.as_ref()
     }
@@ -33,18 +33,18 @@ pub struct DeleteFirewallPolicyOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteFirewallPolicyOutputBuilder {
-    /// <p>The object containing the definition of the <code>FirewallPolicyResponse</code> that you asked to delete.</p>
+    /// <p>The object containing the definition of the <code>FirewallPolicyResponse</code> that you asked to delete. </p>
     /// This field is required.
     pub fn firewall_policy_response(mut self, input: crate::types::FirewallPolicyResponse) -> Self {
         self.firewall_policy_response = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The object containing the definition of the <code>FirewallPolicyResponse</code> that you asked to delete.</p>
+    /// <p>The object containing the definition of the <code>FirewallPolicyResponse</code> that you asked to delete. </p>
     pub fn set_firewall_policy_response(mut self, input: ::std::option::Option<crate::types::FirewallPolicyResponse>) -> Self {
         self.firewall_policy_response = input;
         self
     }
-    /// <p>The object containing the definition of the <code>FirewallPolicyResponse</code> that you asked to delete.</p>
+    /// <p>The object containing the definition of the <code>FirewallPolicyResponse</code> that you asked to delete. </p>
     pub fn get_firewall_policy_response(&self) -> &::std::option::Option<crate::types::FirewallPolicyResponse> {
         &self.firewall_policy_response
     }

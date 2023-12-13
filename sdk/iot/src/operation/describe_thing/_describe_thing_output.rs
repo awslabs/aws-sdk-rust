@@ -17,7 +17,7 @@ pub struct DescribeThingOutput {
     pub thing_type_name: ::std::option::Option<::std::string::String>,
     /// <p>The thing attributes.</p>
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>The current version of the thing record in the registry.</p><note>
+    /// <p>The current version of the thing record in the registry.</p> <note>
     /// <p>To avoid unintentional changes to the information in the registry, you can pass the version information in the <code>expectedVersion</code> parameter of the <code>UpdateThing</code> and <code>DeleteThing</code> calls.</p>
     /// </note>
     pub version: i64,
@@ -51,7 +51,7 @@ impl DescribeThingOutput {
     pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
     }
-    /// <p>The current version of the thing record in the registry.</p><note>
+    /// <p>The current version of the thing record in the registry.</p> <note>
     /// <p>To avoid unintentional changes to the information in the registry, you can pass the version information in the <code>expectedVersion</code> parameter of the <code>UpdateThing</code> and <code>DeleteThing</code> calls.</p>
     /// </note>
     pub fn version(&self) -> i64 {
@@ -182,21 +182,21 @@ impl DescribeThingOutputBuilder {
     pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.attributes
     }
-    /// <p>The current version of the thing record in the registry.</p><note>
+    /// <p>The current version of the thing record in the registry.</p> <note>
     /// <p>To avoid unintentional changes to the information in the registry, you can pass the version information in the <code>expectedVersion</code> parameter of the <code>UpdateThing</code> and <code>DeleteThing</code> calls.</p>
     /// </note>
     pub fn version(mut self, input: i64) -> Self {
         self.version = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current version of the thing record in the registry.</p><note>
+    /// <p>The current version of the thing record in the registry.</p> <note>
     /// <p>To avoid unintentional changes to the information in the registry, you can pass the version information in the <code>expectedVersion</code> parameter of the <code>UpdateThing</code> and <code>DeleteThing</code> calls.</p>
     /// </note>
     pub fn set_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.version = input;
         self
     }
-    /// <p>The current version of the thing record in the registry.</p><note>
+    /// <p>The current version of the thing record in the registry.</p> <note>
     /// <p>To avoid unintentional changes to the information in the registry, you can pass the version information in the <code>expectedVersion</code> parameter of the <code>UpdateThing</code> and <code>DeleteThing</code> calls.</p>
     /// </note>
     pub fn get_version(&self) -> &::std::option::Option<i64> {

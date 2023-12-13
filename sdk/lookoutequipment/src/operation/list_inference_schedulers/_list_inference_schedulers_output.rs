@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListInferenceSchedulersOutput {
-    /// <p>An opaque pagination token indicating where to continue the listing of inference schedulers.</p>
+    /// <p> An opaque pagination token indicating where to continue the listing of inference schedulers. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>Provides information about the specified inference scheduler, including data upload frequency, model name and ARN, and status.</p>
+    /// <p>Provides information about the specified inference scheduler, including data upload frequency, model name and ARN, and status. </p>
     pub inference_scheduler_summaries: ::std::option::Option<::std::vec::Vec<crate::types::InferenceSchedulerSummary>>,
     _request_id: Option<String>,
 }
 impl ListInferenceSchedulersOutput {
-    /// <p>An opaque pagination token indicating where to continue the listing of inference schedulers.</p>
+    /// <p> An opaque pagination token indicating where to continue the listing of inference schedulers. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Provides information about the specified inference scheduler, including data upload frequency, model name and ARN, and status.</p>
+    /// <p>Provides information about the specified inference scheduler, including data upload frequency, model name and ARN, and status. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inference_scheduler_summaries.is_none()`.
     pub fn inference_scheduler_summaries(&self) -> &[crate::types::InferenceSchedulerSummary] {
@@ -42,17 +42,17 @@ pub struct ListInferenceSchedulersOutputBuilder {
     _request_id: Option<String>,
 }
 impl ListInferenceSchedulersOutputBuilder {
-    /// <p>An opaque pagination token indicating where to continue the listing of inference schedulers.</p>
+    /// <p> An opaque pagination token indicating where to continue the listing of inference schedulers. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An opaque pagination token indicating where to continue the listing of inference schedulers.</p>
+    /// <p> An opaque pagination token indicating where to continue the listing of inference schedulers. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>An opaque pagination token indicating where to continue the listing of inference schedulers.</p>
+    /// <p> An opaque pagination token indicating where to continue the listing of inference schedulers. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
@@ -60,14 +60,14 @@ impl ListInferenceSchedulersOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_inference_scheduler_summaries`](Self::set_inference_scheduler_summaries).
     ///
-    /// <p>Provides information about the specified inference scheduler, including data upload frequency, model name and ARN, and status.</p>
+    /// <p>Provides information about the specified inference scheduler, including data upload frequency, model name and ARN, and status. </p>
     pub fn inference_scheduler_summaries(mut self, input: crate::types::InferenceSchedulerSummary) -> Self {
         let mut v = self.inference_scheduler_summaries.unwrap_or_default();
         v.push(input);
         self.inference_scheduler_summaries = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Provides information about the specified inference scheduler, including data upload frequency, model name and ARN, and status.</p>
+    /// <p>Provides information about the specified inference scheduler, including data upload frequency, model name and ARN, and status. </p>
     pub fn set_inference_scheduler_summaries(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::InferenceSchedulerSummary>>,
@@ -75,7 +75,7 @@ impl ListInferenceSchedulersOutputBuilder {
         self.inference_scheduler_summaries = input;
         self
     }
-    /// <p>Provides information about the specified inference scheduler, including data upload frequency, model name and ARN, and status.</p>
+    /// <p>Provides information about the specified inference scheduler, including data upload frequency, model name and ARN, and status. </p>
     pub fn get_inference_scheduler_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InferenceSchedulerSummary>> {
         &self.inference_scheduler_summaries
     }

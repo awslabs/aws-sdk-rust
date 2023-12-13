@@ -271,7 +271,7 @@ pub enum UpdatePullRequestApprovalStateError {
     EncryptionKeyNotFoundException(crate::types::error::EncryptionKeyNotFoundException),
     /// <p>The encryption key is not available.</p>
     EncryptionKeyUnavailableException(crate::types::error::EncryptionKeyUnavailableException),
-    /// <p>The state for the approval is not valid. Valid values include APPROVE and REVOKE.</p>
+    /// <p>The state for the approval is not valid. Valid values include APPROVE and REVOKE. </p>
     InvalidApprovalStateException(crate::types::error::InvalidApprovalStateException),
     /// <p>The pull request ID is not valid. Make sure that you have provided the full ID and that the pull request is in the specified repository, and then try again.</p>
     InvalidPullRequestIdException(crate::types::error::InvalidPullRequestIdException),

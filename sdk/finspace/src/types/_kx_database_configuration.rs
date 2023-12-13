@@ -10,9 +10,9 @@ pub struct KxDatabaseConfiguration {
     pub cache_configurations: ::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseCacheConfiguration>>,
     /// <p>A unique identifier of the changeset that is associated with the cluster.</p>
     pub changeset_id: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the dataview to be used for caching historical data on disk.</p>
+    /// <p> The name of the dataview to be used for caching historical data on disk. </p>
     pub dataview_name: ::std::option::Option<::std::string::String>,
-    /// <p>The configuration of the dataview to be used with specified cluster.</p>
+    /// <p> The configuration of the dataview to be used with specified cluster. </p>
     pub dataview_configuration: ::std::option::Option<crate::types::KxDataviewConfiguration>,
 }
 impl KxDatabaseConfiguration {
@@ -31,11 +31,11 @@ impl KxDatabaseConfiguration {
     pub fn changeset_id(&self) -> ::std::option::Option<&str> {
         self.changeset_id.as_deref()
     }
-    /// <p>The name of the dataview to be used for caching historical data on disk.</p>
+    /// <p> The name of the dataview to be used for caching historical data on disk. </p>
     pub fn dataview_name(&self) -> ::std::option::Option<&str> {
         self.dataview_name.as_deref()
     }
-    /// <p>The configuration of the dataview to be used with specified cluster.</p>
+    /// <p> The configuration of the dataview to be used with specified cluster. </p>
     pub fn dataview_configuration(&self) -> ::std::option::Option<&crate::types::KxDataviewConfiguration> {
         self.dataview_configuration.as_ref()
     }
@@ -107,31 +107,31 @@ impl KxDatabaseConfigurationBuilder {
     pub fn get_changeset_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.changeset_id
     }
-    /// <p>The name of the dataview to be used for caching historical data on disk.</p>
+    /// <p> The name of the dataview to be used for caching historical data on disk. </p>
     pub fn dataview_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataview_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the dataview to be used for caching historical data on disk.</p>
+    /// <p> The name of the dataview to be used for caching historical data on disk. </p>
     pub fn set_dataview_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataview_name = input;
         self
     }
-    /// <p>The name of the dataview to be used for caching historical data on disk.</p>
+    /// <p> The name of the dataview to be used for caching historical data on disk. </p>
     pub fn get_dataview_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.dataview_name
     }
-    /// <p>The configuration of the dataview to be used with specified cluster.</p>
+    /// <p> The configuration of the dataview to be used with specified cluster. </p>
     pub fn dataview_configuration(mut self, input: crate::types::KxDataviewConfiguration) -> Self {
         self.dataview_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The configuration of the dataview to be used with specified cluster.</p>
+    /// <p> The configuration of the dataview to be used with specified cluster. </p>
     pub fn set_dataview_configuration(mut self, input: ::std::option::Option<crate::types::KxDataviewConfiguration>) -> Self {
         self.dataview_configuration = input;
         self
     }
-    /// <p>The configuration of the dataview to be used with specified cluster.</p>
+    /// <p> The configuration of the dataview to be used with specified cluster. </p>
     pub fn get_dataview_configuration(&self) -> &::std::option::Option<crate::types::KxDataviewConfiguration> {
         &self.dataview_configuration
     }

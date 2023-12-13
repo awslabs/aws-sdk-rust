@@ -13,11 +13,11 @@ pub struct CreateNotificationRuleInput {
     pub targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
     /// <p>The level of detail to include in the notifications for this resource. <code>BASIC</code> will include only the contents of the event as it would appear in Amazon CloudWatch. <code>FULL</code> will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
     pub detail_type: ::std::option::Option<crate::types::DetailType>,
-    /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request with the same parameters is received and a token is included, the request returns information about the initial request that used that token.</p><note>
+    /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request with the same parameters is received and a token is included, the request returns information about the initial request that used that token.</p> <note>
     /// <p>The Amazon Web Services SDKs prepopulate client request tokens. If you are using an Amazon Web Services SDK, an idempotency token is created for you.</p>
     /// </note>
     pub client_request_token: ::std::option::Option<::std::string::String>,
-    /// <p>A list of tags to apply to this notification rule. Key names cannot start with "<code>aws</code>".</p>
+    /// <p>A list of tags to apply to this notification rule. Key names cannot start with "<code>aws</code>". </p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The status of the notification rule. The default value is <code>ENABLED</code>. If the status is set to <code>DISABLED</code>, notifications aren't sent for the notification rule.</p>
     pub status: ::std::option::Option<crate::types::NotificationRuleStatus>,
@@ -47,13 +47,13 @@ impl CreateNotificationRuleInput {
     pub fn detail_type(&self) -> ::std::option::Option<&crate::types::DetailType> {
         self.detail_type.as_ref()
     }
-    /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request with the same parameters is received and a token is included, the request returns information about the initial request that used that token.</p><note>
+    /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request with the same parameters is received and a token is included, the request returns information about the initial request that used that token.</p> <note>
     /// <p>The Amazon Web Services SDKs prepopulate client request tokens. If you are using an Amazon Web Services SDK, an idempotency token is created for you.</p>
     /// </note>
     pub fn client_request_token(&self) -> ::std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>A list of tags to apply to this notification rule. Key names cannot start with "<code>aws</code>".</p>
+    /// <p>A list of tags to apply to this notification rule. Key names cannot start with "<code>aws</code>". </p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
@@ -182,21 +182,21 @@ impl CreateNotificationRuleInputBuilder {
     pub fn get_detail_type(&self) -> &::std::option::Option<crate::types::DetailType> {
         &self.detail_type
     }
-    /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request with the same parameters is received and a token is included, the request returns information about the initial request that used that token.</p><note>
+    /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request with the same parameters is received and a token is included, the request returns information about the initial request that used that token.</p> <note>
     /// <p>The Amazon Web Services SDKs prepopulate client request tokens. If you are using an Amazon Web Services SDK, an idempotency token is created for you.</p>
     /// </note>
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request with the same parameters is received and a token is included, the request returns information about the initial request that used that token.</p><note>
+    /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request with the same parameters is received and a token is included, the request returns information about the initial request that used that token.</p> <note>
     /// <p>The Amazon Web Services SDKs prepopulate client request tokens. If you are using an Amazon Web Services SDK, an idempotency token is created for you.</p>
     /// </note>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
-    /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request with the same parameters is received and a token is included, the request returns information about the initial request that used that token.</p><note>
+    /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request with the same parameters is received and a token is included, the request returns information about the initial request that used that token.</p> <note>
     /// <p>The Amazon Web Services SDKs prepopulate client request tokens. If you are using an Amazon Web Services SDK, an idempotency token is created for you.</p>
     /// </note>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -206,19 +206,19 @@ impl CreateNotificationRuleInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A list of tags to apply to this notification rule. Key names cannot start with "<code>aws</code>".</p>
+    /// <p>A list of tags to apply to this notification rule. Key names cannot start with "<code>aws</code>". </p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>A list of tags to apply to this notification rule. Key names cannot start with "<code>aws</code>".</p>
+    /// <p>A list of tags to apply to this notification rule. Key names cannot start with "<code>aws</code>". </p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>A list of tags to apply to this notification rule. Key names cannot start with "<code>aws</code>".</p>
+    /// <p>A list of tags to apply to this notification rule. Key names cannot start with "<code>aws</code>". </p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }

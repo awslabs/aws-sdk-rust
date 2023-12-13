@@ -24,10 +24,8 @@ impl CreateResolverEndpointInputBuilder {
 ///
 /// <p>Creates a Resolver endpoint. There are two types of Resolver endpoints, inbound and outbound:</p>
 /// <ul>
-/// <li>
-/// <p>An <i>inbound Resolver endpoint</i> forwards DNS queries to the DNS service for a VPC from your network.</p></li>
-/// <li>
-/// <p>An <i>outbound Resolver endpoint</i> forwards DNS queries from the DNS service for a VPC to your network.</p></li>
+/// <li> <p>An <i>inbound Resolver endpoint</i> forwards DNS queries to the DNS service for a VPC from your network.</p> </li>
+/// <li> <p>An <i>outbound Resolver endpoint</i> forwards DNS queries from the DNS service for a VPC to your network.</p> </li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateResolverEndpointFluentBuilder {
@@ -114,17 +112,17 @@ impl CreateResolverEndpointFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp.</p>
+    /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
     pub fn creator_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.creator_request_id(input.into());
         self
     }
-    /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp.</p>
+    /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
     pub fn set_creator_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_creator_request_id(input);
         self
     }
-    /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp.</p>
+    /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
     pub fn get_creator_request_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_creator_request_id()
     }
@@ -162,10 +160,8 @@ impl CreateResolverEndpointFluentBuilder {
     }
     /// <p>Specify the applicable value:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>INBOUND</code>: Resolver forwards DNS queries to the DNS service for a VPC from your network</p></li>
-    /// <li>
-    /// <p><code>OUTBOUND</code>: Resolver forwards DNS queries from the DNS service for a VPC to your network</p></li>
+    /// <li> <p> <code>INBOUND</code>: Resolver forwards DNS queries to the DNS service for a VPC from your network</p> </li>
+    /// <li> <p> <code>OUTBOUND</code>: Resolver forwards DNS queries from the DNS service for a VPC to your network</p> </li>
     /// </ul>
     pub fn direction(mut self, input: crate::types::ResolverEndpointDirection) -> Self {
         self.inner = self.inner.direction(input);
@@ -173,10 +169,8 @@ impl CreateResolverEndpointFluentBuilder {
     }
     /// <p>Specify the applicable value:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>INBOUND</code>: Resolver forwards DNS queries to the DNS service for a VPC from your network</p></li>
-    /// <li>
-    /// <p><code>OUTBOUND</code>: Resolver forwards DNS queries from the DNS service for a VPC to your network</p></li>
+    /// <li> <p> <code>INBOUND</code>: Resolver forwards DNS queries to the DNS service for a VPC from your network</p> </li>
+    /// <li> <p> <code>OUTBOUND</code>: Resolver forwards DNS queries from the DNS service for a VPC to your network</p> </li>
     /// </ul>
     pub fn set_direction(mut self, input: ::std::option::Option<crate::types::ResolverEndpointDirection>) -> Self {
         self.inner = self.inner.set_direction(input);
@@ -184,10 +178,8 @@ impl CreateResolverEndpointFluentBuilder {
     }
     /// <p>Specify the applicable value:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>INBOUND</code>: Resolver forwards DNS queries to the DNS service for a VPC from your network</p></li>
-    /// <li>
-    /// <p><code>OUTBOUND</code>: Resolver forwards DNS queries from the DNS service for a VPC to your network</p></li>
+    /// <li> <p> <code>INBOUND</code>: Resolver forwards DNS queries to the DNS service for a VPC from your network</p> </li>
+    /// <li> <p> <code>OUTBOUND</code>: Resolver forwards DNS queries from the DNS service for a VPC to your network</p> </li>
     /// </ul>
     pub fn get_direction(&self) -> &::std::option::Option<crate::types::ResolverEndpointDirection> {
         self.inner.get_direction()
@@ -196,17 +188,17 @@ impl CreateResolverEndpointFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_ip_addresses`](Self::set_ip_addresses).
     ///
-    /// <p>The subnets and IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you forward DNS queries to (for inbound endpoints). The subnet ID uniquely identifies a VPC.</p>
+    /// <p>The subnets and IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you forward DNS queries to (for inbound endpoints). The subnet ID uniquely identifies a VPC. </p>
     pub fn ip_addresses(mut self, input: crate::types::IpAddressRequest) -> Self {
         self.inner = self.inner.ip_addresses(input);
         self
     }
-    /// <p>The subnets and IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you forward DNS queries to (for inbound endpoints). The subnet ID uniquely identifies a VPC.</p>
+    /// <p>The subnets and IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you forward DNS queries to (for inbound endpoints). The subnet ID uniquely identifies a VPC. </p>
     pub fn set_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpAddressRequest>>) -> Self {
         self.inner = self.inner.set_ip_addresses(input);
         self
     }
-    /// <p>The subnets and IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you forward DNS queries to (for inbound endpoints). The subnet ID uniquely identifies a VPC.</p>
+    /// <p>The subnets and IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you forward DNS queries to (for inbound endpoints). The subnet ID uniquely identifies a VPC. </p>
     pub fn get_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpAddressRequest>> {
         self.inner.get_ip_addresses()
     }
@@ -228,31 +220,31 @@ impl CreateResolverEndpointFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
-    /// <p>For the endpoint type you can choose either IPv4, IPv6, or dual-stack. A dual-stack endpoint means that it will resolve via both IPv4 and IPv6. This endpoint type is applied to all IP addresses.</p>
+    /// <p> For the endpoint type you can choose either IPv4, IPv6, or dual-stack. A dual-stack endpoint means that it will resolve via both IPv4 and IPv6. This endpoint type is applied to all IP addresses. </p>
     pub fn resolver_endpoint_type(mut self, input: crate::types::ResolverEndpointType) -> Self {
         self.inner = self.inner.resolver_endpoint_type(input);
         self
     }
-    /// <p>For the endpoint type you can choose either IPv4, IPv6, or dual-stack. A dual-stack endpoint means that it will resolve via both IPv4 and IPv6. This endpoint type is applied to all IP addresses.</p>
+    /// <p> For the endpoint type you can choose either IPv4, IPv6, or dual-stack. A dual-stack endpoint means that it will resolve via both IPv4 and IPv6. This endpoint type is applied to all IP addresses. </p>
     pub fn set_resolver_endpoint_type(mut self, input: ::std::option::Option<crate::types::ResolverEndpointType>) -> Self {
         self.inner = self.inner.set_resolver_endpoint_type(input);
         self
     }
-    /// <p>For the endpoint type you can choose either IPv4, IPv6, or dual-stack. A dual-stack endpoint means that it will resolve via both IPv4 and IPv6. This endpoint type is applied to all IP addresses.</p>
+    /// <p> For the endpoint type you can choose either IPv4, IPv6, or dual-stack. A dual-stack endpoint means that it will resolve via both IPv4 and IPv6. This endpoint type is applied to all IP addresses. </p>
     pub fn get_resolver_endpoint_type(&self) -> &::std::option::Option<crate::types::ResolverEndpointType> {
         self.inner.get_resolver_endpoint_type()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must also specify a value for the <code>PreferredInstanceType</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must also specify a value for the <code>PreferredInstanceType</code>. </p>
     pub fn outpost_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.outpost_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must also specify a value for the <code>PreferredInstanceType</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must also specify a value for the <code>PreferredInstanceType</code>. </p>
     pub fn set_outpost_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_outpost_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must also specify a value for the <code>PreferredInstanceType</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must also specify a value for the <code>PreferredInstanceType</code>. </p>
     pub fn get_outpost_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_outpost_arn()
     }

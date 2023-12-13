@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetQualificationScoreOutput {
-    /// <p>The Qualification data structure of the Qualification assigned to a user, including the Qualification type and the value (score).</p>
+    /// <p> The Qualification data structure of the Qualification assigned to a user, including the Qualification type and the value (score). </p>
     pub qualification: ::std::option::Option<crate::types::Qualification>,
     _request_id: Option<String>,
 }
 impl GetQualificationScoreOutput {
-    /// <p>The Qualification data structure of the Qualification assigned to a user, including the Qualification type and the value (score).</p>
+    /// <p> The Qualification data structure of the Qualification assigned to a user, including the Qualification type and the value (score). </p>
     pub fn qualification(&self) -> ::std::option::Option<&crate::types::Qualification> {
         self.qualification.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct GetQualificationScoreOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetQualificationScoreOutputBuilder {
-    /// <p>The Qualification data structure of the Qualification assigned to a user, including the Qualification type and the value (score).</p>
+    /// <p> The Qualification data structure of the Qualification assigned to a user, including the Qualification type and the value (score). </p>
     pub fn qualification(mut self, input: crate::types::Qualification) -> Self {
         self.qualification = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Qualification data structure of the Qualification assigned to a user, including the Qualification type and the value (score).</p>
+    /// <p> The Qualification data structure of the Qualification assigned to a user, including the Qualification type and the value (score). </p>
     pub fn set_qualification(mut self, input: ::std::option::Option<crate::types::Qualification>) -> Self {
         self.qualification = input;
         self
     }
-    /// <p>The Qualification data structure of the Qualification assigned to a user, including the Qualification type and the value (score).</p>
+    /// <p> The Qualification data structure of the Qualification assigned to a user, including the Qualification type and the value (score). </p>
     pub fn get_qualification(&self) -> &::std::option::Option<crate::types::Qualification> {
         &self.qualification
     }

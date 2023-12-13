@@ -8,7 +8,7 @@ pub struct EmergencyContact {
     pub email_address: ::std::string::String,
     /// <p>The phone number for the contact.</p>
     pub phone_number: ::std::option::Option<::std::string::String>,
-    /// <p>Additional notes regarding the contact.</p>
+    /// <p>Additional notes regarding the contact. </p>
     pub contact_notes: ::std::option::Option<::std::string::String>,
 }
 impl EmergencyContact {
@@ -21,7 +21,7 @@ impl EmergencyContact {
     pub fn phone_number(&self) -> ::std::option::Option<&str> {
         self.phone_number.as_deref()
     }
-    /// <p>Additional notes regarding the contact.</p>
+    /// <p>Additional notes regarding the contact. </p>
     pub fn contact_notes(&self) -> ::std::option::Option<&str> {
         self.contact_notes.as_deref()
     }
@@ -71,17 +71,17 @@ impl EmergencyContactBuilder {
     pub fn get_phone_number(&self) -> &::std::option::Option<::std::string::String> {
         &self.phone_number
     }
-    /// <p>Additional notes regarding the contact.</p>
+    /// <p>Additional notes regarding the contact. </p>
     pub fn contact_notes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_notes = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Additional notes regarding the contact.</p>
+    /// <p>Additional notes regarding the contact. </p>
     pub fn set_contact_notes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.contact_notes = input;
         self
     }
-    /// <p>Additional notes regarding the contact.</p>
+    /// <p>Additional notes regarding the contact. </p>
     pub fn get_contact_notes(&self) -> &::std::option::Option<::std::string::String> {
         &self.contact_notes
     }

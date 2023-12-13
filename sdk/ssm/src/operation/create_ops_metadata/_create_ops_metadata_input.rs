@@ -5,14 +5,12 @@
 pub struct CreateOpsMetadataInput {
     /// <p>A resource ID for a new Application Manager application.</p>
     pub resource_id: ::std::option::Option<::std::string::String>,
-    /// <p>Metadata for a new Application Manager application.</p>
+    /// <p>Metadata for a new Application Manager application. </p>
     pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>>,
     /// <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for an OpsMetadata object. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an OpsMetadata object to identify an environment or target Amazon Web Services Region. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Key=Environment,Value=Production</code></p></li>
-    /// <li>
-    /// <p><code>Key=Region,Value=us-east-2</code></p></li>
+    /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
+    /// <li> <p> <code>Key=Region,Value=us-east-2</code> </p> </li>
     /// </ul>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
@@ -21,16 +19,14 @@ impl CreateOpsMetadataInput {
     pub fn resource_id(&self) -> ::std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// <p>Metadata for a new Application Manager application.</p>
+    /// <p>Metadata for a new Application Manager application. </p>
     pub fn metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>> {
         self.metadata.as_ref()
     }
     /// <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for an OpsMetadata object. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an OpsMetadata object to identify an environment or target Amazon Web Services Region. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Key=Environment,Value=Production</code></p></li>
-    /// <li>
-    /// <p><code>Key=Region,Value=us-east-2</code></p></li>
+    /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
+    /// <li> <p> <code>Key=Region,Value=us-east-2</code> </p> </li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
@@ -73,14 +69,14 @@ impl CreateOpsMetadataInputBuilder {
     ///
     /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
     ///
-    /// <p>Metadata for a new Application Manager application.</p>
+    /// <p>Metadata for a new Application Manager application. </p>
     pub fn metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::MetadataValue) -> Self {
         let mut hash_map = self.metadata.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.metadata = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>Metadata for a new Application Manager application.</p>
+    /// <p>Metadata for a new Application Manager application. </p>
     pub fn set_metadata(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>>,
@@ -88,7 +84,7 @@ impl CreateOpsMetadataInputBuilder {
         self.metadata = input;
         self
     }
-    /// <p>Metadata for a new Application Manager application.</p>
+    /// <p>Metadata for a new Application Manager application. </p>
     pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>> {
         &self.metadata
     }
@@ -98,10 +94,8 @@ impl CreateOpsMetadataInputBuilder {
     ///
     /// <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for an OpsMetadata object. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an OpsMetadata object to identify an environment or target Amazon Web Services Region. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Key=Environment,Value=Production</code></p></li>
-    /// <li>
-    /// <p><code>Key=Region,Value=us-east-2</code></p></li>
+    /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
+    /// <li> <p> <code>Key=Region,Value=us-east-2</code> </p> </li>
     /// </ul>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
@@ -111,10 +105,8 @@ impl CreateOpsMetadataInputBuilder {
     }
     /// <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for an OpsMetadata object. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an OpsMetadata object to identify an environment or target Amazon Web Services Region. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Key=Environment,Value=Production</code></p></li>
-    /// <li>
-    /// <p><code>Key=Region,Value=us-east-2</code></p></li>
+    /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
+    /// <li> <p> <code>Key=Region,Value=us-east-2</code> </p> </li>
     /// </ul>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
@@ -122,10 +114,8 @@ impl CreateOpsMetadataInputBuilder {
     }
     /// <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for an OpsMetadata object. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an OpsMetadata object to identify an environment or target Amazon Web Services Region. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Key=Environment,Value=Production</code></p></li>
-    /// <li>
-    /// <p><code>Key=Region,Value=us-east-2</code></p></li>
+    /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
+    /// <li> <p> <code>Key=Region,Value=us-east-2</code> </p> </li>
     /// </ul>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags

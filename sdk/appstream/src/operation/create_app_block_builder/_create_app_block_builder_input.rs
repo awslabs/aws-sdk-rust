@@ -9,27 +9,22 @@ pub struct CreateAppBlockBuilderInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the app block builder.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
-    /// <p>The tags to associate with the app block builder. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=.</p>
+    /// <p>The tags to associate with the app block builder. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
     /// <p>If you do not specify a value, the value is set to an empty string.</p>
-    /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters:</p>
+    /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
     /// <p>_ . : / = + \ - @</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The platform of the app block builder.</p>
-    /// <p><code>WINDOWS_SERVER_2019</code> is the only valid value.</p>
+    /// <p> <code>WINDOWS_SERVER_2019</code> is the only valid value.</p>
     pub platform: ::std::option::Option<crate::types::AppBlockBuilderPlatformType>,
     /// <p>The instance type to use when launching the app block builder. The following instance types are available:</p>
     /// <ul>
-    /// <li>
-    /// <p>stream.standard.small</p></li>
-    /// <li>
-    /// <p>stream.standard.medium</p></li>
-    /// <li>
-    /// <p>stream.standard.large</p></li>
-    /// <li>
-    /// <p>stream.standard.xlarge</p></li>
-    /// <li>
-    /// <p>stream.standard.2xlarge</p></li>
+    /// <li> <p>stream.standard.small</p> </li>
+    /// <li> <p>stream.standard.medium</p> </li>
+    /// <li> <p>stream.standard.large</p> </li>
+    /// <li> <p>stream.standard.xlarge</p> </li>
+    /// <li> <p>stream.standard.2xlarge</p> </li>
     /// </ul>
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The VPC configuration for the app block builder.</p>
@@ -56,31 +51,26 @@ impl CreateAppBlockBuilderInput {
     pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p>The tags to associate with the app block builder. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=.</p>
+    /// <p>The tags to associate with the app block builder. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
     /// <p>If you do not specify a value, the value is set to an empty string.</p>
-    /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters:</p>
+    /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
     /// <p>_ . : / = + \ - @</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The platform of the app block builder.</p>
-    /// <p><code>WINDOWS_SERVER_2019</code> is the only valid value.</p>
+    /// <p> <code>WINDOWS_SERVER_2019</code> is the only valid value.</p>
     pub fn platform(&self) -> ::std::option::Option<&crate::types::AppBlockBuilderPlatformType> {
         self.platform.as_ref()
     }
     /// <p>The instance type to use when launching the app block builder. The following instance types are available:</p>
     /// <ul>
-    /// <li>
-    /// <p>stream.standard.small</p></li>
-    /// <li>
-    /// <p>stream.standard.medium</p></li>
-    /// <li>
-    /// <p>stream.standard.large</p></li>
-    /// <li>
-    /// <p>stream.standard.xlarge</p></li>
-    /// <li>
-    /// <p>stream.standard.2xlarge</p></li>
+    /// <li> <p>stream.standard.small</p> </li>
+    /// <li> <p>stream.standard.medium</p> </li>
+    /// <li> <p>stream.standard.large</p> </li>
+    /// <li> <p>stream.standard.xlarge</p> </li>
+    /// <li> <p>stream.standard.2xlarge</p> </li>
     /// </ul>
     pub fn instance_type(&self) -> ::std::option::Option<&str> {
         self.instance_type.as_deref()
@@ -176,9 +166,9 @@ impl CreateAppBlockBuilderInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The tags to associate with the app block builder. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=.</p>
+    /// <p>The tags to associate with the app block builder. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
     /// <p>If you do not specify a value, the value is set to an empty string.</p>
-    /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters:</p>
+    /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
     /// <p>_ . : / = + \ - @</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -187,53 +177,48 @@ impl CreateAppBlockBuilderInputBuilder {
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The tags to associate with the app block builder. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=.</p>
+    /// <p>The tags to associate with the app block builder. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
     /// <p>If you do not specify a value, the value is set to an empty string.</p>
-    /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters:</p>
+    /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
     /// <p>_ . : / = + \ - @</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>The tags to associate with the app block builder. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=.</p>
+    /// <p>The tags to associate with the app block builder. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
     /// <p>If you do not specify a value, the value is set to an empty string.</p>
-    /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters:</p>
+    /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
     /// <p>_ . : / = + \ - @</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The platform of the app block builder.</p>
-    /// <p><code>WINDOWS_SERVER_2019</code> is the only valid value.</p>
+    /// <p> <code>WINDOWS_SERVER_2019</code> is the only valid value.</p>
     /// This field is required.
     pub fn platform(mut self, input: crate::types::AppBlockBuilderPlatformType) -> Self {
         self.platform = ::std::option::Option::Some(input);
         self
     }
     /// <p>The platform of the app block builder.</p>
-    /// <p><code>WINDOWS_SERVER_2019</code> is the only valid value.</p>
+    /// <p> <code>WINDOWS_SERVER_2019</code> is the only valid value.</p>
     pub fn set_platform(mut self, input: ::std::option::Option<crate::types::AppBlockBuilderPlatformType>) -> Self {
         self.platform = input;
         self
     }
     /// <p>The platform of the app block builder.</p>
-    /// <p><code>WINDOWS_SERVER_2019</code> is the only valid value.</p>
+    /// <p> <code>WINDOWS_SERVER_2019</code> is the only valid value.</p>
     pub fn get_platform(&self) -> &::std::option::Option<crate::types::AppBlockBuilderPlatformType> {
         &self.platform
     }
     /// <p>The instance type to use when launching the app block builder. The following instance types are available:</p>
     /// <ul>
-    /// <li>
-    /// <p>stream.standard.small</p></li>
-    /// <li>
-    /// <p>stream.standard.medium</p></li>
-    /// <li>
-    /// <p>stream.standard.large</p></li>
-    /// <li>
-    /// <p>stream.standard.xlarge</p></li>
-    /// <li>
-    /// <p>stream.standard.2xlarge</p></li>
+    /// <li> <p>stream.standard.small</p> </li>
+    /// <li> <p>stream.standard.medium</p> </li>
+    /// <li> <p>stream.standard.large</p> </li>
+    /// <li> <p>stream.standard.xlarge</p> </li>
+    /// <li> <p>stream.standard.2xlarge</p> </li>
     /// </ul>
     /// This field is required.
     pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -242,16 +227,11 @@ impl CreateAppBlockBuilderInputBuilder {
     }
     /// <p>The instance type to use when launching the app block builder. The following instance types are available:</p>
     /// <ul>
-    /// <li>
-    /// <p>stream.standard.small</p></li>
-    /// <li>
-    /// <p>stream.standard.medium</p></li>
-    /// <li>
-    /// <p>stream.standard.large</p></li>
-    /// <li>
-    /// <p>stream.standard.xlarge</p></li>
-    /// <li>
-    /// <p>stream.standard.2xlarge</p></li>
+    /// <li> <p>stream.standard.small</p> </li>
+    /// <li> <p>stream.standard.medium</p> </li>
+    /// <li> <p>stream.standard.large</p> </li>
+    /// <li> <p>stream.standard.xlarge</p> </li>
+    /// <li> <p>stream.standard.2xlarge</p> </li>
     /// </ul>
     pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_type = input;
@@ -259,16 +239,11 @@ impl CreateAppBlockBuilderInputBuilder {
     }
     /// <p>The instance type to use when launching the app block builder. The following instance types are available:</p>
     /// <ul>
-    /// <li>
-    /// <p>stream.standard.small</p></li>
-    /// <li>
-    /// <p>stream.standard.medium</p></li>
-    /// <li>
-    /// <p>stream.standard.large</p></li>
-    /// <li>
-    /// <p>stream.standard.xlarge</p></li>
-    /// <li>
-    /// <p>stream.standard.2xlarge</p></li>
+    /// <li> <p>stream.standard.small</p> </li>
+    /// <li> <p>stream.standard.medium</p> </li>
+    /// <li> <p>stream.standard.large</p> </li>
+    /// <li> <p>stream.standard.xlarge</p> </li>
+    /// <li> <p>stream.standard.2xlarge</p> </li>
     /// </ul>
     pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_type

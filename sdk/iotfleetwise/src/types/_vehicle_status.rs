@@ -10,16 +10,11 @@ pub struct VehicleStatus {
     pub vehicle_name: ::std::option::Option<::std::string::String>,
     /// <p>The state of a vehicle, which can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATED</code> - Amazon Web Services IoT FleetWise sucessfully created the vehicle.</p></li>
-    /// <li>
-    /// <p><code>READY</code> - The vehicle is ready to receive a campaign deployment.</p></li>
-    /// <li>
-    /// <p><code>HEALTHY</code> - A campaign deployment was delivered to the vehicle.</p></li>
-    /// <li>
-    /// <p><code>SUSPENDED</code> - A campaign associated with the vehicle was suspended and data collection was paused.</p></li>
-    /// <li>
-    /// <p><code>DELETING</code> - Amazon Web Services IoT FleetWise is removing a campaign from the vehicle.</p></li>
+    /// <li> <p> <code>CREATED</code> - Amazon Web Services IoT FleetWise sucessfully created the vehicle. </p> </li>
+    /// <li> <p> <code>READY</code> - The vehicle is ready to receive a campaign deployment. </p> </li>
+    /// <li> <p> <code>HEALTHY</code> - A campaign deployment was delivered to the vehicle. </p> </li>
+    /// <li> <p> <code>SUSPENDED</code> - A campaign associated with the vehicle was suspended and data collection was paused. </p> </li>
+    /// <li> <p> <code>DELETING</code> - Amazon Web Services IoT FleetWise is removing a campaign from the vehicle. </p> </li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::VehicleState>,
 }
@@ -34,16 +29,11 @@ impl VehicleStatus {
     }
     /// <p>The state of a vehicle, which can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATED</code> - Amazon Web Services IoT FleetWise sucessfully created the vehicle.</p></li>
-    /// <li>
-    /// <p><code>READY</code> - The vehicle is ready to receive a campaign deployment.</p></li>
-    /// <li>
-    /// <p><code>HEALTHY</code> - A campaign deployment was delivered to the vehicle.</p></li>
-    /// <li>
-    /// <p><code>SUSPENDED</code> - A campaign associated with the vehicle was suspended and data collection was paused.</p></li>
-    /// <li>
-    /// <p><code>DELETING</code> - Amazon Web Services IoT FleetWise is removing a campaign from the vehicle.</p></li>
+    /// <li> <p> <code>CREATED</code> - Amazon Web Services IoT FleetWise sucessfully created the vehicle. </p> </li>
+    /// <li> <p> <code>READY</code> - The vehicle is ready to receive a campaign deployment. </p> </li>
+    /// <li> <p> <code>HEALTHY</code> - A campaign deployment was delivered to the vehicle. </p> </li>
+    /// <li> <p> <code>SUSPENDED</code> - A campaign associated with the vehicle was suspended and data collection was paused. </p> </li>
+    /// <li> <p> <code>DELETING</code> - Amazon Web Services IoT FleetWise is removing a campaign from the vehicle. </p> </li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::VehicleState> {
         self.status.as_ref()
@@ -95,16 +85,11 @@ impl VehicleStatusBuilder {
     }
     /// <p>The state of a vehicle, which can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATED</code> - Amazon Web Services IoT FleetWise sucessfully created the vehicle.</p></li>
-    /// <li>
-    /// <p><code>READY</code> - The vehicle is ready to receive a campaign deployment.</p></li>
-    /// <li>
-    /// <p><code>HEALTHY</code> - A campaign deployment was delivered to the vehicle.</p></li>
-    /// <li>
-    /// <p><code>SUSPENDED</code> - A campaign associated with the vehicle was suspended and data collection was paused.</p></li>
-    /// <li>
-    /// <p><code>DELETING</code> - Amazon Web Services IoT FleetWise is removing a campaign from the vehicle.</p></li>
+    /// <li> <p> <code>CREATED</code> - Amazon Web Services IoT FleetWise sucessfully created the vehicle. </p> </li>
+    /// <li> <p> <code>READY</code> - The vehicle is ready to receive a campaign deployment. </p> </li>
+    /// <li> <p> <code>HEALTHY</code> - A campaign deployment was delivered to the vehicle. </p> </li>
+    /// <li> <p> <code>SUSPENDED</code> - A campaign associated with the vehicle was suspended and data collection was paused. </p> </li>
+    /// <li> <p> <code>DELETING</code> - Amazon Web Services IoT FleetWise is removing a campaign from the vehicle. </p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::VehicleState) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -112,16 +97,11 @@ impl VehicleStatusBuilder {
     }
     /// <p>The state of a vehicle, which can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATED</code> - Amazon Web Services IoT FleetWise sucessfully created the vehicle.</p></li>
-    /// <li>
-    /// <p><code>READY</code> - The vehicle is ready to receive a campaign deployment.</p></li>
-    /// <li>
-    /// <p><code>HEALTHY</code> - A campaign deployment was delivered to the vehicle.</p></li>
-    /// <li>
-    /// <p><code>SUSPENDED</code> - A campaign associated with the vehicle was suspended and data collection was paused.</p></li>
-    /// <li>
-    /// <p><code>DELETING</code> - Amazon Web Services IoT FleetWise is removing a campaign from the vehicle.</p></li>
+    /// <li> <p> <code>CREATED</code> - Amazon Web Services IoT FleetWise sucessfully created the vehicle. </p> </li>
+    /// <li> <p> <code>READY</code> - The vehicle is ready to receive a campaign deployment. </p> </li>
+    /// <li> <p> <code>HEALTHY</code> - A campaign deployment was delivered to the vehicle. </p> </li>
+    /// <li> <p> <code>SUSPENDED</code> - A campaign associated with the vehicle was suspended and data collection was paused. </p> </li>
+    /// <li> <p> <code>DELETING</code> - Amazon Web Services IoT FleetWise is removing a campaign from the vehicle. </p> </li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::VehicleState>) -> Self {
         self.status = input;
@@ -129,16 +109,11 @@ impl VehicleStatusBuilder {
     }
     /// <p>The state of a vehicle, which can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATED</code> - Amazon Web Services IoT FleetWise sucessfully created the vehicle.</p></li>
-    /// <li>
-    /// <p><code>READY</code> - The vehicle is ready to receive a campaign deployment.</p></li>
-    /// <li>
-    /// <p><code>HEALTHY</code> - A campaign deployment was delivered to the vehicle.</p></li>
-    /// <li>
-    /// <p><code>SUSPENDED</code> - A campaign associated with the vehicle was suspended and data collection was paused.</p></li>
-    /// <li>
-    /// <p><code>DELETING</code> - Amazon Web Services IoT FleetWise is removing a campaign from the vehicle.</p></li>
+    /// <li> <p> <code>CREATED</code> - Amazon Web Services IoT FleetWise sucessfully created the vehicle. </p> </li>
+    /// <li> <p> <code>READY</code> - The vehicle is ready to receive a campaign deployment. </p> </li>
+    /// <li> <p> <code>HEALTHY</code> - A campaign deployment was delivered to the vehicle. </p> </li>
+    /// <li> <p> <code>SUSPENDED</code> - A campaign associated with the vehicle was suspended and data collection was paused. </p> </li>
+    /// <li> <p> <code>DELETING</code> - Amazon Web Services IoT FleetWise is removing a campaign from the vehicle. </p> </li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::VehicleState> {
         &self.status

@@ -24,16 +24,11 @@ impl AddTagsToResourceInputBuilder {
 ///
 /// <p>Adds one or more tags to the specified resource. You use tags to add metadata to resources, which you can use to categorize these resources. For example, you can categorize resources by purpose, owner, environment, or team. Each tag consists of a key and a value, which you define. You can add tags to the following Storage Gateway resources:</p>
 /// <ul>
-/// <li>
-/// <p>Storage gateways of all types</p></li>
-/// <li>
-/// <p>Storage volumes</p></li>
-/// <li>
-/// <p>Virtual tapes</p></li>
-/// <li>
-/// <p>NFS and SMB file shares</p></li>
-/// <li>
-/// <p>File System associations</p></li>
+/// <li> <p>Storage gateways of all types</p> </li>
+/// <li> <p>Storage volumes</p> </li>
+/// <li> <p>Virtual tapes</p> </li>
+/// <li> <p>NFS and SMB file shares</p> </li>
+/// <li> <p>File System associations</p> </li>
 /// </ul>
 /// <p>You can create a maximum of 50 tags for each resource. Virtual tapes and storage volumes that are recovered to a new gateway maintain their tags.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -139,21 +134,21 @@ impl AddTagsToResourceFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The key-value pair that represents the tag you want to add to the resource. The value can be an empty string.</p><note>
+    /// <p>The key-value pair that represents the tag you want to add to the resource. The value can be an empty string.</p> <note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
-    /// <p>The key-value pair that represents the tag you want to add to the resource. The value can be an empty string.</p><note>
+    /// <p>The key-value pair that represents the tag you want to add to the resource. The value can be an empty string.</p> <note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>The key-value pair that represents the tag you want to add to the resource. The value can be an empty string.</p><note>
+    /// <p>The key-value pair that represents the tag you want to add to the resource. The value can be an empty string.</p> <note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {

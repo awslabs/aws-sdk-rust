@@ -2,7 +2,7 @@
 
 /// <p>Represents an object that contains entries and targets for <code>HomeDirectoryMappings</code>.</p>
 /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
-/// <p><code>[ { "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code></p>
+/// <p> <code>[ { "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HomeDirectoryMapEntry {
@@ -10,7 +10,7 @@ pub struct HomeDirectoryMapEntry {
     pub entry: ::std::string::String,
     /// <p>Represents the map target that is used in a <code>HomeDirectoryMapEntry</code>.</p>
     pub target: ::std::string::String,
-    /// <p>Specifies the type of mapping. Set the type to <code>FILE</code> if you want the mapping to point to a file, or <code>DIRECTORY</code> for the directory to point to a directory.</p><note>
+    /// <p>Specifies the type of mapping. Set the type to <code>FILE</code> if you want the mapping to point to a file, or <code>DIRECTORY</code> for the directory to point to a directory.</p> <note>
     /// <p>By default, home directory mappings have a <code>Type</code> of <code>DIRECTORY</code> when you create a Transfer Family server. You would need to explicitly set <code>Type</code> to <code>FILE</code> if you want a mapping to have a file target.</p>
     /// </note>
     pub r#type: ::std::option::Option<crate::types::MapType>,
@@ -26,7 +26,7 @@ impl HomeDirectoryMapEntry {
         use std::ops::Deref;
         self.target.deref()
     }
-    /// <p>Specifies the type of mapping. Set the type to <code>FILE</code> if you want the mapping to point to a file, or <code>DIRECTORY</code> for the directory to point to a directory.</p><note>
+    /// <p>Specifies the type of mapping. Set the type to <code>FILE</code> if you want the mapping to point to a file, or <code>DIRECTORY</code> for the directory to point to a directory.</p> <note>
     /// <p>By default, home directory mappings have a <code>Type</code> of <code>DIRECTORY</code> when you create a Transfer Family server. You would need to explicitly set <code>Type</code> to <code>FILE</code> if you want a mapping to have a file target.</p>
     /// </note>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::MapType> {
@@ -79,21 +79,21 @@ impl HomeDirectoryMapEntryBuilder {
     pub fn get_target(&self) -> &::std::option::Option<::std::string::String> {
         &self.target
     }
-    /// <p>Specifies the type of mapping. Set the type to <code>FILE</code> if you want the mapping to point to a file, or <code>DIRECTORY</code> for the directory to point to a directory.</p><note>
+    /// <p>Specifies the type of mapping. Set the type to <code>FILE</code> if you want the mapping to point to a file, or <code>DIRECTORY</code> for the directory to point to a directory.</p> <note>
     /// <p>By default, home directory mappings have a <code>Type</code> of <code>DIRECTORY</code> when you create a Transfer Family server. You would need to explicitly set <code>Type</code> to <code>FILE</code> if you want a mapping to have a file target.</p>
     /// </note>
     pub fn r#type(mut self, input: crate::types::MapType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the type of mapping. Set the type to <code>FILE</code> if you want the mapping to point to a file, or <code>DIRECTORY</code> for the directory to point to a directory.</p><note>
+    /// <p>Specifies the type of mapping. Set the type to <code>FILE</code> if you want the mapping to point to a file, or <code>DIRECTORY</code> for the directory to point to a directory.</p> <note>
     /// <p>By default, home directory mappings have a <code>Type</code> of <code>DIRECTORY</code> when you create a Transfer Family server. You would need to explicitly set <code>Type</code> to <code>FILE</code> if you want a mapping to have a file target.</p>
     /// </note>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::MapType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>Specifies the type of mapping. Set the type to <code>FILE</code> if you want the mapping to point to a file, or <code>DIRECTORY</code> for the directory to point to a directory.</p><note>
+    /// <p>Specifies the type of mapping. Set the type to <code>FILE</code> if you want the mapping to point to a file, or <code>DIRECTORY</code> for the directory to point to a directory.</p> <note>
     /// <p>By default, home directory mappings have a <code>Type</code> of <code>DIRECTORY</code> when you create a Transfer Family server. You would need to explicitly set <code>Type</code> to <code>FILE</code> if you want a mapping to have a file target.</p>
     /// </note>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::MapType> {

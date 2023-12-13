@@ -23,20 +23,16 @@ impl CreateCaseInputBuilder {
 /// Fluent builder constructing a request to `CreateCase`.
 ///
 /// <p>Creates a case in the Amazon Web Services Support Center. This operation is similar to how you create a case in the Amazon Web Services Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.</p>
-/// <p>The Amazon Web Services Support API doesn't support requesting service limit increases. You can submit a service limit increase in the following ways:</p>
+/// <p>The Amazon Web Services Support API doesn't support requesting service limit increases. You can submit a service limit increase in the following ways: </p>
 /// <ul>
-/// <li>
-/// <p>Submit a request from the Amazon Web Services Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.</p></li>
-/// <li>
-/// <p>Use the Service Quotas <a href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_RequestServiceQuotaIncrease.html">RequestServiceQuotaIncrease</a> operation.</p></li>
+/// <li> <p>Submit a request from the Amazon Web Services Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.</p> </li>
+/// <li> <p>Use the Service Quotas <a href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_RequestServiceQuotaIncrease.html">RequestServiceQuotaIncrease</a> operation.</p> </li>
 /// </ul>
 /// <p>A successful <code>CreateCase</code> request returns an Amazon Web Services Support case number. You can use the <code>DescribeCases</code> operation and specify the case number to get existing Amazon Web Services Support cases. After you create a case, use the <code>AddCommunicationToCase</code> operation to add additional communication or attachments to an existing case.</p>
-/// <p>The <code>caseId</code> is separate from the <code>displayId</code> that appears in the <a href="https://console.aws.amazon.com/support">Amazon Web Services Support Center</a>. Use the <code>DescribeCases</code> operation to get the <code>displayId</code>.</p><note>
+/// <p>The <code>caseId</code> is separate from the <code>displayId</code> that appears in the <a href="https://console.aws.amazon.com/support">Amazon Web Services Support Center</a>. Use the <code>DescribeCases</code> operation to get the <code>displayId</code>.</p> <note>
 /// <ul>
-/// <li>
-/// <p>You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the Amazon Web Services Support API.</p></li>
-/// <li>
-/// <p>If you call the Amazon Web Services Support API from an account that doesn't have a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a>.</p></li>
+/// <li> <p>You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the Amazon Web Services Support API. </p> </li>
+/// <li> <p>If you call the Amazon Web Services Support API from an account that doesn't have a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a>.</p> </li>
 /// </ul>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -152,24 +148,24 @@ impl CreateCaseFluentBuilder {
     pub fn get_service_code(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_service_code()
     }
-    /// <p>A value that indicates the urgency of the case. This value determines the response time according to your service level agreement with Amazon Web Services Support. You can use the <code>DescribeSeverityLevels</code> operation to get the possible values for <code>severityCode</code>.</p>
-    /// <p>For more information, see <code>SeverityLevel</code> and <a href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing a Severity</a> in the <i>Amazon Web Services Support User Guide</i>.</p><note>
+    /// <p>A value that indicates the urgency of the case. This value determines the response time according to your service level agreement with Amazon Web Services Support. You can use the <code>DescribeSeverityLevels</code> operation to get the possible values for <code>severityCode</code>. </p>
+    /// <p>For more information, see <code>SeverityLevel</code> and <a href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing a Severity</a> in the <i>Amazon Web Services Support User Guide</i>.</p> <note>
     /// <p>The availability of severity levels depends on the support plan for the Amazon Web Services account.</p>
     /// </note>
     pub fn severity_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.severity_code(input.into());
         self
     }
-    /// <p>A value that indicates the urgency of the case. This value determines the response time according to your service level agreement with Amazon Web Services Support. You can use the <code>DescribeSeverityLevels</code> operation to get the possible values for <code>severityCode</code>.</p>
-    /// <p>For more information, see <code>SeverityLevel</code> and <a href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing a Severity</a> in the <i>Amazon Web Services Support User Guide</i>.</p><note>
+    /// <p>A value that indicates the urgency of the case. This value determines the response time according to your service level agreement with Amazon Web Services Support. You can use the <code>DescribeSeverityLevels</code> operation to get the possible values for <code>severityCode</code>. </p>
+    /// <p>For more information, see <code>SeverityLevel</code> and <a href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing a Severity</a> in the <i>Amazon Web Services Support User Guide</i>.</p> <note>
     /// <p>The availability of severity levels depends on the support plan for the Amazon Web Services account.</p>
     /// </note>
     pub fn set_severity_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_severity_code(input);
         self
     }
-    /// <p>A value that indicates the urgency of the case. This value determines the response time according to your service level agreement with Amazon Web Services Support. You can use the <code>DescribeSeverityLevels</code> operation to get the possible values for <code>severityCode</code>.</p>
-    /// <p>For more information, see <code>SeverityLevel</code> and <a href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing a Severity</a> in the <i>Amazon Web Services Support User Guide</i>.</p><note>
+    /// <p>A value that indicates the urgency of the case. This value determines the response time according to your service level agreement with Amazon Web Services Support. You can use the <code>DescribeSeverityLevels</code> operation to get the possible values for <code>severityCode</code>. </p>
+    /// <p>For more information, see <code>SeverityLevel</code> and <a href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing a Severity</a> in the <i>Amazon Web Services Support User Guide</i>.</p> <note>
     /// <p>The availability of severity levels depends on the support plan for the Amazon Web Services account.</p>
     /// </note>
     pub fn get_severity_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -207,17 +203,17 @@ impl CreateCaseFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_cc_email_addresses`](Self::set_cc_email_addresses).
     ///
-    /// <p>A list of email addresses that Amazon Web Services Support copies on case correspondence. Amazon Web Services Support identifies the account that creates the case when you specify your Amazon Web Services credentials in an HTTP POST method or use the <a href="http://aws.amazon.com/tools/">Amazon Web Services SDKs</a>.</p>
+    /// <p>A list of email addresses that Amazon Web Services Support copies on case correspondence. Amazon Web Services Support identifies the account that creates the case when you specify your Amazon Web Services credentials in an HTTP POST method or use the <a href="http://aws.amazon.com/tools/">Amazon Web Services SDKs</a>. </p>
     pub fn cc_email_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cc_email_addresses(input.into());
         self
     }
-    /// <p>A list of email addresses that Amazon Web Services Support copies on case correspondence. Amazon Web Services Support identifies the account that creates the case when you specify your Amazon Web Services credentials in an HTTP POST method or use the <a href="http://aws.amazon.com/tools/">Amazon Web Services SDKs</a>.</p>
+    /// <p>A list of email addresses that Amazon Web Services Support copies on case correspondence. Amazon Web Services Support identifies the account that creates the case when you specify your Amazon Web Services credentials in an HTTP POST method or use the <a href="http://aws.amazon.com/tools/">Amazon Web Services SDKs</a>. </p>
     pub fn set_cc_email_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_cc_email_addresses(input);
         self
     }
-    /// <p>A list of email addresses that Amazon Web Services Support copies on case correspondence. Amazon Web Services Support identifies the account that creates the case when you specify your Amazon Web Services credentials in an HTTP POST method or use the <a href="http://aws.amazon.com/tools/">Amazon Web Services SDKs</a>.</p>
+    /// <p>A list of email addresses that Amazon Web Services Support copies on case correspondence. Amazon Web Services Support identifies the account that creates the case when you specify your Amazon Web Services credentials in an HTTP POST method or use the <a href="http://aws.amazon.com/tools/">Amazon Web Services SDKs</a>. </p>
     pub fn get_cc_email_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_cc_email_addresses()
     }

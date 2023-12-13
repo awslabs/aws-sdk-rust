@@ -22,21 +22,17 @@ impl ListRetirableGrantsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListRetirableGrants`.
 ///
-/// <p>Returns information about all grants in the Amazon Web Services account and Region that have the specified retiring principal.</p>
+/// <p>Returns information about all grants in the Amazon Web Services account and Region that have the specified retiring principal. </p>
 /// <p>You can specify any principal in your Amazon Web Services account. The grants that are returned include grants for KMS keys in your Amazon Web Services account and other Amazon Web Services accounts. You might use this operation to determine which grants you may retire. To retire a grant, use the <code>RetireGrant</code> operation.</p>
-/// <p>For detailed information about grants, including grant terminology, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Grants in KMS</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. For examples of working with grants in several programming languages, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-grants.html">Programming grants</a>.</p>
-/// <p><b>Cross-account use</b>: You must specify a principal in your Amazon Web Services account. However, this operation can return grants in any Amazon Web Services account. You do not need <code>kms:ListRetirableGrants</code> permission (or any other additional permission) in any Amazon Web Services account other than your own.</p>
-/// <p><b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:ListRetirableGrants</a> (IAM policy) in your Amazon Web Services account.</p>
-/// <p><b>Related operations:</b></p>
+/// <p>For detailed information about grants, including grant terminology, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Grants in KMS</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. For examples of working with grants in several programming languages, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-grants.html">Programming grants</a>. </p>
+/// <p> <b>Cross-account use</b>: You must specify a principal in your Amazon Web Services account. However, this operation can return grants in any Amazon Web Services account. You do not need <code>kms:ListRetirableGrants</code> permission (or any other additional permission) in any Amazon Web Services account other than your own.</p>
+/// <p> <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:ListRetirableGrants</a> (IAM policy) in your Amazon Web Services account.</p>
+/// <p> <b>Related operations:</b> </p>
 /// <ul>
-/// <li>
-/// <p><code>CreateGrant</code></p></li>
-/// <li>
-/// <p><code>ListGrants</code></p></li>
-/// <li>
-/// <p><code>RetireGrant</code></p></li>
-/// <li>
-/// <p><code>RevokeGrant</code></p></li>
+/// <li> <p> <code>CreateGrant</code> </p> </li>
+/// <li> <p> <code>ListGrants</code> </p> </li>
+/// <li> <p> <code>RetireGrant</code> </p> </li>
+/// <li> <p> <code>RevokeGrant</code> </p> </li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListRetirableGrantsFluentBuilder {

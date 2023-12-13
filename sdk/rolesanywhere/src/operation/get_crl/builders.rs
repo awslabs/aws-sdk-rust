@@ -23,7 +23,7 @@ impl GetCrlInputBuilder {
 /// Fluent builder constructing a request to `GetCrl`.
 ///
 /// <p>Gets a certificate revocation list (CRL).</p>
-/// <p><b>Required permissions: </b> <code>rolesanywhere:GetCrl</code>.</p>
+/// <p> <b>Required permissions: </b> <code>rolesanywhere:GetCrl</code>. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetCrlFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

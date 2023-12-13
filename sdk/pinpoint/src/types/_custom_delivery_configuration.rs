@@ -6,10 +6,8 @@
 pub struct CustomDeliveryConfiguration {
     /// <p>The destination to send the campaign or treatment to. This value can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>The name or Amazon Resource Name (ARN) of an AWS Lambda function to invoke to handle delivery of the campaign or treatment.</p></li>
-    /// <li>
-    /// <p>The URL for a web application or service that supports HTTPS and can receive the message. The URL has to be a full URL, including the HTTPS protocol.</p></li>
+    /// <li><p>The name or Amazon Resource Name (ARN) of an AWS Lambda function to invoke to handle delivery of the campaign or treatment.</p></li>
+    /// <li><p>The URL for a web application or service that supports HTTPS and can receive the message. The URL has to be a full URL, including the HTTPS protocol.</p></li>
     /// </ul>
     pub delivery_uri: ::std::option::Option<::std::string::String>,
     /// <p>The types of endpoints to send the campaign or treatment to. Each valid value maps to a type of channel that you can associate with an endpoint by using the ChannelType property of an endpoint.</p>
@@ -18,10 +16,8 @@ pub struct CustomDeliveryConfiguration {
 impl CustomDeliveryConfiguration {
     /// <p>The destination to send the campaign or treatment to. This value can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>The name or Amazon Resource Name (ARN) of an AWS Lambda function to invoke to handle delivery of the campaign or treatment.</p></li>
-    /// <li>
-    /// <p>The URL for a web application or service that supports HTTPS and can receive the message. The URL has to be a full URL, including the HTTPS protocol.</p></li>
+    /// <li><p>The name or Amazon Resource Name (ARN) of an AWS Lambda function to invoke to handle delivery of the campaign or treatment.</p></li>
+    /// <li><p>The URL for a web application or service that supports HTTPS and can receive the message. The URL has to be a full URL, including the HTTPS protocol.</p></li>
     /// </ul>
     pub fn delivery_uri(&self) -> ::std::option::Option<&str> {
         self.delivery_uri.as_deref()
@@ -50,10 +46,8 @@ pub struct CustomDeliveryConfigurationBuilder {
 impl CustomDeliveryConfigurationBuilder {
     /// <p>The destination to send the campaign or treatment to. This value can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>The name or Amazon Resource Name (ARN) of an AWS Lambda function to invoke to handle delivery of the campaign or treatment.</p></li>
-    /// <li>
-    /// <p>The URL for a web application or service that supports HTTPS and can receive the message. The URL has to be a full URL, including the HTTPS protocol.</p></li>
+    /// <li><p>The name or Amazon Resource Name (ARN) of an AWS Lambda function to invoke to handle delivery of the campaign or treatment.</p></li>
+    /// <li><p>The URL for a web application or service that supports HTTPS and can receive the message. The URL has to be a full URL, including the HTTPS protocol.</p></li>
     /// </ul>
     /// This field is required.
     pub fn delivery_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -62,10 +56,8 @@ impl CustomDeliveryConfigurationBuilder {
     }
     /// <p>The destination to send the campaign or treatment to. This value can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>The name or Amazon Resource Name (ARN) of an AWS Lambda function to invoke to handle delivery of the campaign or treatment.</p></li>
-    /// <li>
-    /// <p>The URL for a web application or service that supports HTTPS and can receive the message. The URL has to be a full URL, including the HTTPS protocol.</p></li>
+    /// <li><p>The name or Amazon Resource Name (ARN) of an AWS Lambda function to invoke to handle delivery of the campaign or treatment.</p></li>
+    /// <li><p>The URL for a web application or service that supports HTTPS and can receive the message. The URL has to be a full URL, including the HTTPS protocol.</p></li>
     /// </ul>
     pub fn set_delivery_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.delivery_uri = input;
@@ -73,10 +65,8 @@ impl CustomDeliveryConfigurationBuilder {
     }
     /// <p>The destination to send the campaign or treatment to. This value can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>The name or Amazon Resource Name (ARN) of an AWS Lambda function to invoke to handle delivery of the campaign or treatment.</p></li>
-    /// <li>
-    /// <p>The URL for a web application or service that supports HTTPS and can receive the message. The URL has to be a full URL, including the HTTPS protocol.</p></li>
+    /// <li><p>The name or Amazon Resource Name (ARN) of an AWS Lambda function to invoke to handle delivery of the campaign or treatment.</p></li>
+    /// <li><p>The URL for a web application or service that supports HTTPS and can receive the message. The URL has to be a full URL, including the HTTPS protocol.</p></li>
     /// </ul>
     pub fn get_delivery_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.delivery_uri

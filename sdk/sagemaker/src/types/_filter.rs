@@ -8,33 +8,37 @@
 /// Metrics
 /// </dt>
 /// <dd>
-/// <p>To define a metric filter, enter a value using the form <code>"Metrics.<name>
+/// <p>To define a metric filter, enter a value using the form <code>"Metrics.
+/// <name>
 /// "
-/// </name></code>, where <code><name></name></code> is a metric name. For example, the following filter searches for training jobs with an <code>"accuracy"</code> metric greater than <code>"0.9"</code>:</p>
-/// <p><code>{</code></p>
-/// <p><code>"Name": "Metrics.accuracy",</code></p>
-/// <p><code>"Operator": "GreaterThan",</code></p>
-/// <p><code>"Value": "0.9"</code></p>
-/// <p><code>}</code></p>
+/// </name></code>, where <code>
+/// <name></name></code> is a metric name. For example, the following filter searches for training jobs with an <code>"accuracy"</code> metric greater than <code>"0.9"</code>:</p>
+/// <p> <code>{</code> </p>
+/// <p> <code>"Name": "Metrics.accuracy",</code> </p>
+/// <p> <code>"Operator": "GreaterThan",</code> </p>
+/// <p> <code>"Value": "0.9"</code> </p>
+/// <p> <code>}</code> </p>
 /// </dd>
 /// <dt>
 /// HyperParameters
 /// </dt>
 /// <dd>
-/// <p>To define a hyperparameter filter, enter a value with the form <code>"HyperParameters.<name>
+/// <p>To define a hyperparameter filter, enter a value with the form <code>"HyperParameters.
+/// <name>
 /// "
 /// </name></code>. Decimal hyperparameter values are treated as a decimal in a comparison if the specified <code>Value</code> is also a decimal value. If the specified <code>Value</code> is an integer, the decimal hyperparameter values are treated as integers. For example, the following filter is satisfied by training jobs with a <code>"learning_rate"</code> hyperparameter that is less than <code>"0.5"</code>:</p>
-/// <p><code> {</code></p>
-/// <p><code> "Name": "HyperParameters.learning_rate",</code></p>
-/// <p><code> "Operator": "LessThan",</code></p>
-/// <p><code> "Value": "0.5"</code></p>
-/// <p><code> }</code></p>
+/// <p> <code> {</code> </p>
+/// <p> <code> "Name": "HyperParameters.learning_rate",</code> </p>
+/// <p> <code> "Operator": "LessThan",</code> </p>
+/// <p> <code> "Value": "0.5"</code> </p>
+/// <p> <code> }</code> </p>
 /// </dd>
 /// <dt>
 /// Tags
 /// </dt>
 /// <dd>
-/// <p>To define a tag filter, enter a value with the form <code>Tags.<key></key></code>.</p>
+/// <p>To define a tag filter, enter a value with the form <code>Tags.
+/// <key></key></code>.</p>
 /// </dd>
 /// </dl>
 #[non_exhaustive]
@@ -105,28 +109,17 @@ pub struct Filter {
     /// <p>The value of <code>Name</code> contains the string <code>Value</code>. Only supported for text properties.</p>
     /// <p>A <code>SearchExpression</code> can include the <code>Contains</code> operator multiple times when the value of <code>Name</code> is one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Experiment.DisplayName</code></p></li>
-    /// <li>
-    /// <p><code>Experiment.ExperimentName</code></p></li>
-    /// <li>
-    /// <p><code>Experiment.Tags</code></p></li>
-    /// <li>
-    /// <p><code>Trial.DisplayName</code></p></li>
-    /// <li>
-    /// <p><code>Trial.TrialName</code></p></li>
-    /// <li>
-    /// <p><code>Trial.Tags</code></p></li>
-    /// <li>
-    /// <p><code>TrialComponent.DisplayName</code></p></li>
-    /// <li>
-    /// <p><code>TrialComponent.TrialComponentName</code></p></li>
-    /// <li>
-    /// <p><code>TrialComponent.Tags</code></p></li>
-    /// <li>
-    /// <p><code>TrialComponent.InputArtifacts</code></p></li>
-    /// <li>
-    /// <p><code>TrialComponent.OutputArtifacts</code></p></li>
+    /// <li> <p> <code>Experiment.DisplayName</code> </p> </li>
+    /// <li> <p> <code>Experiment.ExperimentName</code> </p> </li>
+    /// <li> <p> <code>Experiment.Tags</code> </p> </li>
+    /// <li> <p> <code>Trial.DisplayName</code> </p> </li>
+    /// <li> <p> <code>Trial.TrialName</code> </p> </li>
+    /// <li> <p> <code>Trial.Tags</code> </p> </li>
+    /// <li> <p> <code>TrialComponent.DisplayName</code> </p> </li>
+    /// <li> <p> <code>TrialComponent.TrialComponentName</code> </p> </li>
+    /// <li> <p> <code>TrialComponent.Tags</code> </p> </li>
+    /// <li> <p> <code>TrialComponent.InputArtifacts</code> </p> </li>
+    /// <li> <p> <code>TrialComponent.OutputArtifacts</code> </p> </li>
     /// </ul>
     /// <p>A <code>SearchExpression</code> can include only one <code>Contains</code> operator for all other values of <code>Name</code>. In these cases, if you include multiple <code>Contains</code> operators in the <code>SearchExpression</code>, the result is the following error message: "<code>'CONTAINS' operator usage limit of 1 exceeded.</code>"</p>
     /// </dd>
@@ -203,28 +196,17 @@ impl Filter {
     /// <p>The value of <code>Name</code> contains the string <code>Value</code>. Only supported for text properties.</p>
     /// <p>A <code>SearchExpression</code> can include the <code>Contains</code> operator multiple times when the value of <code>Name</code> is one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Experiment.DisplayName</code></p></li>
-    /// <li>
-    /// <p><code>Experiment.ExperimentName</code></p></li>
-    /// <li>
-    /// <p><code>Experiment.Tags</code></p></li>
-    /// <li>
-    /// <p><code>Trial.DisplayName</code></p></li>
-    /// <li>
-    /// <p><code>Trial.TrialName</code></p></li>
-    /// <li>
-    /// <p><code>Trial.Tags</code></p></li>
-    /// <li>
-    /// <p><code>TrialComponent.DisplayName</code></p></li>
-    /// <li>
-    /// <p><code>TrialComponent.TrialComponentName</code></p></li>
-    /// <li>
-    /// <p><code>TrialComponent.Tags</code></p></li>
-    /// <li>
-    /// <p><code>TrialComponent.InputArtifacts</code></p></li>
-    /// <li>
-    /// <p><code>TrialComponent.OutputArtifacts</code></p></li>
+    /// <li> <p> <code>Experiment.DisplayName</code> </p> </li>
+    /// <li> <p> <code>Experiment.ExperimentName</code> </p> </li>
+    /// <li> <p> <code>Experiment.Tags</code> </p> </li>
+    /// <li> <p> <code>Trial.DisplayName</code> </p> </li>
+    /// <li> <p> <code>Trial.TrialName</code> </p> </li>
+    /// <li> <p> <code>Trial.Tags</code> </p> </li>
+    /// <li> <p> <code>TrialComponent.DisplayName</code> </p> </li>
+    /// <li> <p> <code>TrialComponent.TrialComponentName</code> </p> </li>
+    /// <li> <p> <code>TrialComponent.Tags</code> </p> </li>
+    /// <li> <p> <code>TrialComponent.InputArtifacts</code> </p> </li>
+    /// <li> <p> <code>TrialComponent.OutputArtifacts</code> </p> </li>
     /// </ul>
     /// <p>A <code>SearchExpression</code> can include only one <code>Contains</code> operator for all other values of <code>Name</code>. In these cases, if you include multiple <code>Contains</code> operators in the <code>SearchExpression</code>, the result is the following error message: "<code>'CONTAINS' operator usage limit of 1 exceeded.</code>"</p>
     /// </dd>
@@ -331,28 +313,17 @@ impl FilterBuilder {
     /// <p>The value of <code>Name</code> contains the string <code>Value</code>. Only supported for text properties.</p>
     /// <p>A <code>SearchExpression</code> can include the <code>Contains</code> operator multiple times when the value of <code>Name</code> is one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Experiment.DisplayName</code></p></li>
-    /// <li>
-    /// <p><code>Experiment.ExperimentName</code></p></li>
-    /// <li>
-    /// <p><code>Experiment.Tags</code></p></li>
-    /// <li>
-    /// <p><code>Trial.DisplayName</code></p></li>
-    /// <li>
-    /// <p><code>Trial.TrialName</code></p></li>
-    /// <li>
-    /// <p><code>Trial.Tags</code></p></li>
-    /// <li>
-    /// <p><code>TrialComponent.DisplayName</code></p></li>
-    /// <li>
-    /// <p><code>TrialComponent.TrialComponentName</code></p></li>
-    /// <li>
-    /// <p><code>TrialComponent.Tags</code></p></li>
-    /// <li>
-    /// <p><code>TrialComponent.InputArtifacts</code></p></li>
-    /// <li>
-    /// <p><code>TrialComponent.OutputArtifacts</code></p></li>
+    /// <li> <p> <code>Experiment.DisplayName</code> </p> </li>
+    /// <li> <p> <code>Experiment.ExperimentName</code> </p> </li>
+    /// <li> <p> <code>Experiment.Tags</code> </p> </li>
+    /// <li> <p> <code>Trial.DisplayName</code> </p> </li>
+    /// <li> <p> <code>Trial.TrialName</code> </p> </li>
+    /// <li> <p> <code>Trial.Tags</code> </p> </li>
+    /// <li> <p> <code>TrialComponent.DisplayName</code> </p> </li>
+    /// <li> <p> <code>TrialComponent.TrialComponentName</code> </p> </li>
+    /// <li> <p> <code>TrialComponent.Tags</code> </p> </li>
+    /// <li> <p> <code>TrialComponent.InputArtifacts</code> </p> </li>
+    /// <li> <p> <code>TrialComponent.OutputArtifacts</code> </p> </li>
     /// </ul>
     /// <p>A <code>SearchExpression</code> can include only one <code>Contains</code> operator for all other values of <code>Name</code>. In these cases, if you include multiple <code>Contains</code> operators in the <code>SearchExpression</code>, the result is the following error message: "<code>'CONTAINS' operator usage limit of 1 exceeded.</code>"</p>
     /// </dd>
@@ -424,28 +395,17 @@ impl FilterBuilder {
     /// <p>The value of <code>Name</code> contains the string <code>Value</code>. Only supported for text properties.</p>
     /// <p>A <code>SearchExpression</code> can include the <code>Contains</code> operator multiple times when the value of <code>Name</code> is one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Experiment.DisplayName</code></p></li>
-    /// <li>
-    /// <p><code>Experiment.ExperimentName</code></p></li>
-    /// <li>
-    /// <p><code>Experiment.Tags</code></p></li>
-    /// <li>
-    /// <p><code>Trial.DisplayName</code></p></li>
-    /// <li>
-    /// <p><code>Trial.TrialName</code></p></li>
-    /// <li>
-    /// <p><code>Trial.Tags</code></p></li>
-    /// <li>
-    /// <p><code>TrialComponent.DisplayName</code></p></li>
-    /// <li>
-    /// <p><code>TrialComponent.TrialComponentName</code></p></li>
-    /// <li>
-    /// <p><code>TrialComponent.Tags</code></p></li>
-    /// <li>
-    /// <p><code>TrialComponent.InputArtifacts</code></p></li>
-    /// <li>
-    /// <p><code>TrialComponent.OutputArtifacts</code></p></li>
+    /// <li> <p> <code>Experiment.DisplayName</code> </p> </li>
+    /// <li> <p> <code>Experiment.ExperimentName</code> </p> </li>
+    /// <li> <p> <code>Experiment.Tags</code> </p> </li>
+    /// <li> <p> <code>Trial.DisplayName</code> </p> </li>
+    /// <li> <p> <code>Trial.TrialName</code> </p> </li>
+    /// <li> <p> <code>Trial.Tags</code> </p> </li>
+    /// <li> <p> <code>TrialComponent.DisplayName</code> </p> </li>
+    /// <li> <p> <code>TrialComponent.TrialComponentName</code> </p> </li>
+    /// <li> <p> <code>TrialComponent.Tags</code> </p> </li>
+    /// <li> <p> <code>TrialComponent.InputArtifacts</code> </p> </li>
+    /// <li> <p> <code>TrialComponent.OutputArtifacts</code> </p> </li>
     /// </ul>
     /// <p>A <code>SearchExpression</code> can include only one <code>Contains</code> operator for all other values of <code>Name</code>. In these cases, if you include multiple <code>Contains</code> operators in the <code>SearchExpression</code>, the result is the following error message: "<code>'CONTAINS' operator usage limit of 1 exceeded.</code>"</p>
     /// </dd>
@@ -517,28 +477,17 @@ impl FilterBuilder {
     /// <p>The value of <code>Name</code> contains the string <code>Value</code>. Only supported for text properties.</p>
     /// <p>A <code>SearchExpression</code> can include the <code>Contains</code> operator multiple times when the value of <code>Name</code> is one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Experiment.DisplayName</code></p></li>
-    /// <li>
-    /// <p><code>Experiment.ExperimentName</code></p></li>
-    /// <li>
-    /// <p><code>Experiment.Tags</code></p></li>
-    /// <li>
-    /// <p><code>Trial.DisplayName</code></p></li>
-    /// <li>
-    /// <p><code>Trial.TrialName</code></p></li>
-    /// <li>
-    /// <p><code>Trial.Tags</code></p></li>
-    /// <li>
-    /// <p><code>TrialComponent.DisplayName</code></p></li>
-    /// <li>
-    /// <p><code>TrialComponent.TrialComponentName</code></p></li>
-    /// <li>
-    /// <p><code>TrialComponent.Tags</code></p></li>
-    /// <li>
-    /// <p><code>TrialComponent.InputArtifacts</code></p></li>
-    /// <li>
-    /// <p><code>TrialComponent.OutputArtifacts</code></p></li>
+    /// <li> <p> <code>Experiment.DisplayName</code> </p> </li>
+    /// <li> <p> <code>Experiment.ExperimentName</code> </p> </li>
+    /// <li> <p> <code>Experiment.Tags</code> </p> </li>
+    /// <li> <p> <code>Trial.DisplayName</code> </p> </li>
+    /// <li> <p> <code>Trial.TrialName</code> </p> </li>
+    /// <li> <p> <code>Trial.Tags</code> </p> </li>
+    /// <li> <p> <code>TrialComponent.DisplayName</code> </p> </li>
+    /// <li> <p> <code>TrialComponent.TrialComponentName</code> </p> </li>
+    /// <li> <p> <code>TrialComponent.Tags</code> </p> </li>
+    /// <li> <p> <code>TrialComponent.InputArtifacts</code> </p> </li>
+    /// <li> <p> <code>TrialComponent.OutputArtifacts</code> </p> </li>
     /// </ul>
     /// <p>A <code>SearchExpression</code> can include only one <code>Contains</code> operator for all other values of <code>Name</code>. In these cases, if you include multiple <code>Contains</code> operators in the <code>SearchExpression</code>, the result is the following error message: "<code>'CONTAINS' operator usage limit of 1 exceeded.</code>"</p>
     /// </dd>

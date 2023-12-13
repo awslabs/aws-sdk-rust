@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeKeyPhrasesDetectionJobOutput {
-    /// <p>An object that contains the properties associated with a key phrases detection job.</p>
+    /// <p>An object that contains the properties associated with a key phrases detection job. </p>
     pub key_phrases_detection_job_properties: ::std::option::Option<crate::types::KeyPhrasesDetectionJobProperties>,
     _request_id: Option<String>,
 }
 impl DescribeKeyPhrasesDetectionJobOutput {
-    /// <p>An object that contains the properties associated with a key phrases detection job.</p>
+    /// <p>An object that contains the properties associated with a key phrases detection job. </p>
     pub fn key_phrases_detection_job_properties(&self) -> ::std::option::Option<&crate::types::KeyPhrasesDetectionJobProperties> {
         self.key_phrases_detection_job_properties.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct DescribeKeyPhrasesDetectionJobOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeKeyPhrasesDetectionJobOutputBuilder {
-    /// <p>An object that contains the properties associated with a key phrases detection job.</p>
+    /// <p>An object that contains the properties associated with a key phrases detection job. </p>
     pub fn key_phrases_detection_job_properties(mut self, input: crate::types::KeyPhrasesDetectionJobProperties) -> Self {
         self.key_phrases_detection_job_properties = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An object that contains the properties associated with a key phrases detection job.</p>
+    /// <p>An object that contains the properties associated with a key phrases detection job. </p>
     pub fn set_key_phrases_detection_job_properties(mut self, input: ::std::option::Option<crate::types::KeyPhrasesDetectionJobProperties>) -> Self {
         self.key_phrases_detection_job_properties = input;
         self
     }
-    /// <p>An object that contains the properties associated with a key phrases detection job.</p>
+    /// <p>An object that contains the properties associated with a key phrases detection job. </p>
     pub fn get_key_phrases_detection_job_properties(&self) -> &::std::option::Option<crate::types::KeyPhrasesDetectionJobProperties> {
         &self.key_phrases_detection_job_properties
     }

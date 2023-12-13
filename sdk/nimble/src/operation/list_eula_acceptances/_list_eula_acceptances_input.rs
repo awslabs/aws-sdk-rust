@@ -7,7 +7,7 @@ pub struct ListEulaAcceptancesInput {
     pub eula_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>The studio ID.</p>
+    /// <p>The studio ID. </p>
     pub studio_id: ::std::option::Option<::std::string::String>,
 }
 impl ListEulaAcceptancesInput {
@@ -21,7 +21,7 @@ impl ListEulaAcceptancesInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The studio ID.</p>
+    /// <p>The studio ID. </p>
     pub fn studio_id(&self) -> ::std::option::Option<&str> {
         self.studio_id.as_deref()
     }
@@ -76,18 +76,18 @@ impl ListEulaAcceptancesInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>The studio ID.</p>
+    /// <p>The studio ID. </p>
     /// This field is required.
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The studio ID.</p>
+    /// <p>The studio ID. </p>
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.studio_id = input;
         self
     }
-    /// <p>The studio ID.</p>
+    /// <p>The studio ID. </p>
     pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.studio_id
     }

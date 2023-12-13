@@ -7,7 +7,7 @@ pub struct DescribeGlobalClustersInput {
     /// <p>Constraints: If supplied, must match an existing DB cluster identifier.</p>
     pub global_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination marker token is included in the response that you can use to retrieve the remaining results.</p>
-    /// <p>Default: <code>100</code></p>
+    /// <p>Default: <code>100</code> </p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub max_records: ::std::option::Option<i32>,
     /// <p>(<i>Optional</i>) A pagination token returned by a previous call to <code>DescribeGlobalClusters</code>. If this parameter is specified, the response will only include records beyond the marker, up to the number specified by <code>MaxRecords</code>.</p>
@@ -20,7 +20,7 @@ impl DescribeGlobalClustersInput {
         self.global_cluster_identifier.as_deref()
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination marker token is included in the response that you can use to retrieve the remaining results.</p>
-    /// <p>Default: <code>100</code></p>
+    /// <p>Default: <code>100</code> </p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn max_records(&self) -> ::std::option::Option<i32> {
         self.max_records
@@ -64,21 +64,21 @@ impl DescribeGlobalClustersInputBuilder {
         &self.global_cluster_identifier
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination marker token is included in the response that you can use to retrieve the remaining results.</p>
-    /// <p>Default: <code>100</code></p>
+    /// <p>Default: <code>100</code> </p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.max_records = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination marker token is included in the response that you can use to retrieve the remaining results.</p>
-    /// <p>Default: <code>100</code></p>
+    /// <p>Default: <code>100</code> </p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_records = input;
         self
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination marker token is included in the response that you can use to retrieve the remaining results.</p>
-    /// <p>Default: <code>100</code></p>
+    /// <p>Default: <code>100</code> </p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn get_max_records(&self) -> &::std::option::Option<i32> {
         &self.max_records

@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FieldInputConfig {
-    /// <p>The input type for the field.</p>
+    /// <p>The input type for the field. </p>
     pub r#type: ::std::string::String,
     /// <p>Specifies a field that requires input.</p>
     pub required: ::std::option::Option<bool>,
@@ -38,7 +38,7 @@ pub struct FieldInputConfig {
     pub file_uploader_config: ::std::option::Option<crate::types::FileUploaderFieldConfig>,
 }
 impl FieldInputConfig {
-    /// <p>The input type for the field.</p>
+    /// <p>The input type for the field. </p>
     pub fn r#type(&self) -> &str {
         use std::ops::Deref;
         self.r#type.deref()
@@ -133,18 +133,18 @@ pub struct FieldInputConfigBuilder {
     pub(crate) file_uploader_config: ::std::option::Option<crate::types::FileUploaderFieldConfig>,
 }
 impl FieldInputConfigBuilder {
-    /// <p>The input type for the field.</p>
+    /// <p>The input type for the field. </p>
     /// This field is required.
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The input type for the field.</p>
+    /// <p>The input type for the field. </p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The input type for the field.</p>
+    /// <p>The input type for the field. </p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.r#type
     }

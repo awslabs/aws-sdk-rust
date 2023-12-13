@@ -110,7 +110,7 @@ impl PutRecommendationPreferencesFluentBuilder {
         self
     }
     /// <p>The target resource type of the recommendation preference to create.</p>
-    /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p><note>
+    /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p> <note>
     /// <p>The valid values for this parameter are <code>Ec2Instance</code> and <code>AutoScalingGroup</code>.</p>
     /// </note>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
@@ -118,7 +118,7 @@ impl PutRecommendationPreferencesFluentBuilder {
         self
     }
     /// <p>The target resource type of the recommendation preference to create.</p>
-    /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p><note>
+    /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p> <note>
     /// <p>The valid values for this parameter are <code>Ec2Instance</code> and <code>AutoScalingGroup</code>.</p>
     /// </note>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
@@ -126,14 +126,14 @@ impl PutRecommendationPreferencesFluentBuilder {
         self
     }
     /// <p>The target resource type of the recommendation preference to create.</p>
-    /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p><note>
+    /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p> <note>
     /// <p>The valid values for this parameter are <code>Ec2Instance</code> and <code>AutoScalingGroup</code>.</p>
     /// </note>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
         self.inner.get_resource_type()
     }
     /// <p>An object that describes the scope of the recommendation preference to create.</p>
-    /// <p>You can create recommendation preferences at the organization level (for management accounts of an organization only), account level, and resource level. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p><note>
+    /// <p>You can create recommendation preferences at the organization level (for management accounts of an organization only), account level, and resource level. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p> <note>
     /// <p>You cannot create recommendation preferences for Auto Scaling groups at the organization and account levels. You can create recommendation preferences for Auto Scaling groups only at the resource level by specifying a scope name of <code>ResourceArn</code> and a scope value of the Auto Scaling group Amazon Resource Name (ARN). This will configure the preference for all instances that are part of the specified Auto Scaling group. You also cannot create recommendation preferences at the resource level for instances that are part of an Auto Scaling group. You can create recommendation preferences at the resource level only for standalone instances.</p>
     /// </note>
     pub fn scope(mut self, input: crate::types::Scope) -> Self {
@@ -141,7 +141,7 @@ impl PutRecommendationPreferencesFluentBuilder {
         self
     }
     /// <p>An object that describes the scope of the recommendation preference to create.</p>
-    /// <p>You can create recommendation preferences at the organization level (for management accounts of an organization only), account level, and resource level. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p><note>
+    /// <p>You can create recommendation preferences at the organization level (for management accounts of an organization only), account level, and resource level. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p> <note>
     /// <p>You cannot create recommendation preferences for Auto Scaling groups at the organization and account levels. You can create recommendation preferences for Auto Scaling groups only at the resource level by specifying a scope name of <code>ResourceArn</code> and a scope value of the Auto Scaling group Amazon Resource Name (ARN). This will configure the preference for all instances that are part of the specified Auto Scaling group. You also cannot create recommendation preferences at the resource level for instances that are part of an Auto Scaling group. You can create recommendation preferences at the resource level only for standalone instances.</p>
     /// </note>
     pub fn set_scope(mut self, input: ::std::option::Option<crate::types::Scope>) -> Self {
@@ -149,7 +149,7 @@ impl PutRecommendationPreferencesFluentBuilder {
         self
     }
     /// <p>An object that describes the scope of the recommendation preference to create.</p>
-    /// <p>You can create recommendation preferences at the organization level (for management accounts of an organization only), account level, and resource level. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p><note>
+    /// <p>You can create recommendation preferences at the organization level (for management accounts of an organization only), account level, and resource level. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p> <note>
     /// <p>You cannot create recommendation preferences for Auto Scaling groups at the organization and account levels. You can create recommendation preferences for Auto Scaling groups only at the resource level by specifying a scope name of <code>ResourceArn</code> and a scope value of the Auto Scaling group Amazon Resource Name (ARN). This will configure the preference for all instances that are part of the specified Auto Scaling group. You also cannot create recommendation preferences at the resource level for instances that are part of an Auto Scaling group. You can create recommendation preferences at the resource level only for standalone instances.</p>
     /// </note>
     pub fn get_scope(&self) -> &::std::option::Option<crate::types::Scope> {
@@ -175,7 +175,7 @@ impl PutRecommendationPreferencesFluentBuilder {
     pub fn get_enhanced_infrastructure_metrics(&self) -> &::std::option::Option<crate::types::EnhancedInfrastructureMetrics> {
         self.inner.get_enhanced_infrastructure_metrics()
     }
-    /// <p>The status of the inferred workload types recommendation preference to create or update.</p><note>
+    /// <p>The status of the inferred workload types recommendation preference to create or update.</p> <note>
     /// <p>The inferred workload type feature is active by default. To deactivate it, create a recommendation preference.</p>
     /// </note>
     /// <p>Specify the <code>Inactive</code> status to deactivate the feature, or specify <code>Active</code> to activate it.</p>
@@ -184,7 +184,7 @@ impl PutRecommendationPreferencesFluentBuilder {
         self.inner = self.inner.inferred_workload_types(input);
         self
     }
-    /// <p>The status of the inferred workload types recommendation preference to create or update.</p><note>
+    /// <p>The status of the inferred workload types recommendation preference to create or update.</p> <note>
     /// <p>The inferred workload type feature is active by default. To deactivate it, create a recommendation preference.</p>
     /// </note>
     /// <p>Specify the <code>Inactive</code> status to deactivate the feature, or specify <code>Active</code> to activate it.</p>
@@ -193,7 +193,7 @@ impl PutRecommendationPreferencesFluentBuilder {
         self.inner = self.inner.set_inferred_workload_types(input);
         self
     }
-    /// <p>The status of the inferred workload types recommendation preference to create or update.</p><note>
+    /// <p>The status of the inferred workload types recommendation preference to create or update.</p> <note>
     /// <p>The inferred workload type feature is active by default. To deactivate it, create a recommendation preference.</p>
     /// </note>
     /// <p>Specify the <code>Inactive</code> status to deactivate the feature, or specify <code>Active</code> to activate it.</p>
@@ -224,21 +224,21 @@ impl PutRecommendationPreferencesFluentBuilder {
     pub fn get_external_metrics_preference(&self) -> &::std::option::Option<crate::types::ExternalMetricsPreference> {
         self.inner.get_external_metrics_preference()
     }
-    /// <p>The preference to control the number of days the utilization metrics of the Amazon Web Services resource are analyzed. When this preference isn't specified, we use the default value <code>DAYS_14</code>.</p><note>
+    /// <p> The preference to control the number of days the utilization metrics of the Amazon Web Services resource are analyzed. When this preference isn't specified, we use the default value <code>DAYS_14</code>. </p> <note>
     /// <p>You can only set this preference for the Amazon EC2 instance and Auto Scaling group resource types.</p>
     /// </note>
     pub fn look_back_period(mut self, input: crate::types::LookBackPeriodPreference) -> Self {
         self.inner = self.inner.look_back_period(input);
         self
     }
-    /// <p>The preference to control the number of days the utilization metrics of the Amazon Web Services resource are analyzed. When this preference isn't specified, we use the default value <code>DAYS_14</code>.</p><note>
+    /// <p> The preference to control the number of days the utilization metrics of the Amazon Web Services resource are analyzed. When this preference isn't specified, we use the default value <code>DAYS_14</code>. </p> <note>
     /// <p>You can only set this preference for the Amazon EC2 instance and Auto Scaling group resource types.</p>
     /// </note>
     pub fn set_look_back_period(mut self, input: ::std::option::Option<crate::types::LookBackPeriodPreference>) -> Self {
         self.inner = self.inner.set_look_back_period(input);
         self
     }
-    /// <p>The preference to control the number of days the utilization metrics of the Amazon Web Services resource are analyzed. When this preference isn't specified, we use the default value <code>DAYS_14</code>.</p><note>
+    /// <p> The preference to control the number of days the utilization metrics of the Amazon Web Services resource are analyzed. When this preference isn't specified, we use the default value <code>DAYS_14</code>. </p> <note>
     /// <p>You can only set this preference for the Amazon EC2 instance and Auto Scaling group resource types.</p>
     /// </note>
     pub fn get_look_back_period(&self) -> &::std::option::Option<crate::types::LookBackPeriodPreference> {
@@ -248,39 +248,33 @@ impl PutRecommendationPreferencesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_utilization_preferences`](Self::set_utilization_preferences).
     ///
-    /// <p>The preference to control the resource’s CPU utilization thresholds - threshold and headroom. When this preference isn't specified, we use the following default values:</p>
+    /// <p> The preference to control the resource’s CPU utilization thresholds - threshold and headroom. When this preference isn't specified, we use the following default values: </p>
     /// <ul>
-    /// <li>
-    /// <p><code>P99_5</code> for threshold</p></li>
-    /// <li>
-    /// <p><code>PERCENT_17</code> for headroom</p></li>
-    /// </ul><note>
+    /// <li> <p> <code>P99_5</code> for threshold</p> </li>
+    /// <li> <p> <code>PERCENT_17</code> for headroom</p> </li>
+    /// </ul> <note>
     /// <p>You can only set this preference for the Amazon EC2 instance resource type.</p>
     /// </note>
     pub fn utilization_preferences(mut self, input: crate::types::UtilizationPreference) -> Self {
         self.inner = self.inner.utilization_preferences(input);
         self
     }
-    /// <p>The preference to control the resource’s CPU utilization thresholds - threshold and headroom. When this preference isn't specified, we use the following default values:</p>
+    /// <p> The preference to control the resource’s CPU utilization thresholds - threshold and headroom. When this preference isn't specified, we use the following default values: </p>
     /// <ul>
-    /// <li>
-    /// <p><code>P99_5</code> for threshold</p></li>
-    /// <li>
-    /// <p><code>PERCENT_17</code> for headroom</p></li>
-    /// </ul><note>
+    /// <li> <p> <code>P99_5</code> for threshold</p> </li>
+    /// <li> <p> <code>PERCENT_17</code> for headroom</p> </li>
+    /// </ul> <note>
     /// <p>You can only set this preference for the Amazon EC2 instance resource type.</p>
     /// </note>
     pub fn set_utilization_preferences(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UtilizationPreference>>) -> Self {
         self.inner = self.inner.set_utilization_preferences(input);
         self
     }
-    /// <p>The preference to control the resource’s CPU utilization thresholds - threshold and headroom. When this preference isn't specified, we use the following default values:</p>
+    /// <p> The preference to control the resource’s CPU utilization thresholds - threshold and headroom. When this preference isn't specified, we use the following default values: </p>
     /// <ul>
-    /// <li>
-    /// <p><code>P99_5</code> for threshold</p></li>
-    /// <li>
-    /// <p><code>PERCENT_17</code> for headroom</p></li>
-    /// </ul><note>
+    /// <li> <p> <code>P99_5</code> for threshold</p> </li>
+    /// <li> <p> <code>PERCENT_17</code> for headroom</p> </li>
+    /// </ul> <note>
     /// <p>You can only set this preference for the Amazon EC2 instance resource type.</p>
     /// </note>
     pub fn get_utilization_preferences(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UtilizationPreference>> {
@@ -290,27 +284,27 @@ impl PutRecommendationPreferencesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_preferred_resources`](Self::set_preferred_resources).
     ///
-    /// <p>The preference to control which resource type values are considered when generating rightsizing recommendations. You can specify this preference as a combination of include and exclude lists. You must specify either an <code>includeList</code> or <code>excludeList</code>. If the preference is an empty set of resource type values, an error occurs.</p><note>
+    /// <p> The preference to control which resource type values are considered when generating rightsizing recommendations. You can specify this preference as a combination of include and exclude lists. You must specify either an <code>includeList</code> or <code>excludeList</code>. If the preference is an empty set of resource type values, an error occurs. </p> <note>
     /// <p>You can only set this preference for the Amazon EC2 instance and Auto Scaling group resource types.</p>
     /// </note>
     pub fn preferred_resources(mut self, input: crate::types::PreferredResource) -> Self {
         self.inner = self.inner.preferred_resources(input);
         self
     }
-    /// <p>The preference to control which resource type values are considered when generating rightsizing recommendations. You can specify this preference as a combination of include and exclude lists. You must specify either an <code>includeList</code> or <code>excludeList</code>. If the preference is an empty set of resource type values, an error occurs.</p><note>
+    /// <p> The preference to control which resource type values are considered when generating rightsizing recommendations. You can specify this preference as a combination of include and exclude lists. You must specify either an <code>includeList</code> or <code>excludeList</code>. If the preference is an empty set of resource type values, an error occurs. </p> <note>
     /// <p>You can only set this preference for the Amazon EC2 instance and Auto Scaling group resource types.</p>
     /// </note>
     pub fn set_preferred_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PreferredResource>>) -> Self {
         self.inner = self.inner.set_preferred_resources(input);
         self
     }
-    /// <p>The preference to control which resource type values are considered when generating rightsizing recommendations. You can specify this preference as a combination of include and exclude lists. You must specify either an <code>includeList</code> or <code>excludeList</code>. If the preference is an empty set of resource type values, an error occurs.</p><note>
+    /// <p> The preference to control which resource type values are considered when generating rightsizing recommendations. You can specify this preference as a combination of include and exclude lists. You must specify either an <code>includeList</code> or <code>excludeList</code>. If the preference is an empty set of resource type values, an error occurs. </p> <note>
     /// <p>You can only set this preference for the Amazon EC2 instance and Auto Scaling group resource types.</p>
     /// </note>
     pub fn get_preferred_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PreferredResource>> {
         self.inner.get_preferred_resources()
     }
-    /// <p>The status of the savings estimation mode preference to create or update.</p>
+    /// <p> The status of the savings estimation mode preference to create or update. </p>
     /// <p>Specify the <code>AfterDiscounts</code> status to activate the preference, or specify <code>BeforeDiscounts</code> to deactivate the preference.</p>
     /// <p>Only the account manager or delegated administrator of your organization can activate this preference.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/savings-estimation-mode.html"> Savings estimation mode</a> in the <i>Compute Optimizer User Guide</i>.</p>
@@ -318,7 +312,7 @@ impl PutRecommendationPreferencesFluentBuilder {
         self.inner = self.inner.savings_estimation_mode(input);
         self
     }
-    /// <p>The status of the savings estimation mode preference to create or update.</p>
+    /// <p> The status of the savings estimation mode preference to create or update. </p>
     /// <p>Specify the <code>AfterDiscounts</code> status to activate the preference, or specify <code>BeforeDiscounts</code> to deactivate the preference.</p>
     /// <p>Only the account manager or delegated administrator of your organization can activate this preference.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/savings-estimation-mode.html"> Savings estimation mode</a> in the <i>Compute Optimizer User Guide</i>.</p>
@@ -326,7 +320,7 @@ impl PutRecommendationPreferencesFluentBuilder {
         self.inner = self.inner.set_savings_estimation_mode(input);
         self
     }
-    /// <p>The status of the savings estimation mode preference to create or update.</p>
+    /// <p> The status of the savings estimation mode preference to create or update. </p>
     /// <p>Specify the <code>AfterDiscounts</code> status to activate the preference, or specify <code>BeforeDiscounts</code> to deactivate the preference.</p>
     /// <p>Only the account manager or delegated administrator of your organization can activate this preference.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/savings-estimation-mode.html"> Savings estimation mode</a> in the <i>Compute Optimizer User Guide</i>.</p>

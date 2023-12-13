@@ -22,7 +22,7 @@ impl DescribeExportConfigurationsInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeExportConfigurations`.
 ///
-/// <p><code>DescribeExportConfigurations</code> is deprecated. Use <a href="https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeExportTasks.html">DescribeExportTasks</a>, instead.</p>
+/// <p> <code>DescribeExportConfigurations</code> is deprecated. Use <a href="https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeExportTasks.html">DescribeExportTasks</a>, instead.</p>
 #[deprecated]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeExportConfigurationsFluentBuilder {

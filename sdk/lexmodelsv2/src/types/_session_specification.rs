@@ -24,14 +24,10 @@ pub struct SessionSpecification {
     pub conversation_end_state: ::std::option::Option<crate::types::ConversationEndState>,
     /// <p>The mode of the session. The possible values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Speech</code> – The session was spoken.</p></li>
-    /// <li>
-    /// <p><code>Text</code> – The session was written.</p></li>
-    /// <li>
-    /// <p><code>DTMF</code> – The session used a touch-tone keypad (Dual Tone Multi-Frequency).</p></li>
-    /// <li>
-    /// <p><code>MultiMode</code> – The session used multiple modes.</p></li>
+    /// <li> <p> <code>Speech</code> – The session was spoken.</p> </li>
+    /// <li> <p> <code>Text</code> – The session was written.</p> </li>
+    /// <li> <p> <code>DTMF</code> – The session used a touch-tone keypad (Dual Tone Multi-Frequency).</p> </li>
+    /// <li> <p> <code>MultiMode</code> – The session used multiple modes.</p> </li>
     /// </ul>
     pub mode: ::std::option::Option<crate::types::AnalyticsModality>,
     /// <p>The number of turns that the session took.</p>
@@ -80,14 +76,10 @@ impl SessionSpecification {
     }
     /// <p>The mode of the session. The possible values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Speech</code> – The session was spoken.</p></li>
-    /// <li>
-    /// <p><code>Text</code> – The session was written.</p></li>
-    /// <li>
-    /// <p><code>DTMF</code> – The session used a touch-tone keypad (Dual Tone Multi-Frequency).</p></li>
-    /// <li>
-    /// <p><code>MultiMode</code> – The session used multiple modes.</p></li>
+    /// <li> <p> <code>Speech</code> – The session was spoken.</p> </li>
+    /// <li> <p> <code>Text</code> – The session was written.</p> </li>
+    /// <li> <p> <code>DTMF</code> – The session used a touch-tone keypad (Dual Tone Multi-Frequency).</p> </li>
+    /// <li> <p> <code>MultiMode</code> – The session used multiple modes.</p> </li>
     /// </ul>
     pub fn mode(&self) -> ::std::option::Option<&crate::types::AnalyticsModality> {
         self.mode.as_ref()
@@ -261,14 +253,10 @@ impl SessionSpecificationBuilder {
     }
     /// <p>The mode of the session. The possible values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Speech</code> – The session was spoken.</p></li>
-    /// <li>
-    /// <p><code>Text</code> – The session was written.</p></li>
-    /// <li>
-    /// <p><code>DTMF</code> – The session used a touch-tone keypad (Dual Tone Multi-Frequency).</p></li>
-    /// <li>
-    /// <p><code>MultiMode</code> – The session used multiple modes.</p></li>
+    /// <li> <p> <code>Speech</code> – The session was spoken.</p> </li>
+    /// <li> <p> <code>Text</code> – The session was written.</p> </li>
+    /// <li> <p> <code>DTMF</code> – The session used a touch-tone keypad (Dual Tone Multi-Frequency).</p> </li>
+    /// <li> <p> <code>MultiMode</code> – The session used multiple modes.</p> </li>
     /// </ul>
     pub fn mode(mut self, input: crate::types::AnalyticsModality) -> Self {
         self.mode = ::std::option::Option::Some(input);
@@ -276,14 +264,10 @@ impl SessionSpecificationBuilder {
     }
     /// <p>The mode of the session. The possible values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Speech</code> – The session was spoken.</p></li>
-    /// <li>
-    /// <p><code>Text</code> – The session was written.</p></li>
-    /// <li>
-    /// <p><code>DTMF</code> – The session used a touch-tone keypad (Dual Tone Multi-Frequency).</p></li>
-    /// <li>
-    /// <p><code>MultiMode</code> – The session used multiple modes.</p></li>
+    /// <li> <p> <code>Speech</code> – The session was spoken.</p> </li>
+    /// <li> <p> <code>Text</code> – The session was written.</p> </li>
+    /// <li> <p> <code>DTMF</code> – The session used a touch-tone keypad (Dual Tone Multi-Frequency).</p> </li>
+    /// <li> <p> <code>MultiMode</code> – The session used multiple modes.</p> </li>
     /// </ul>
     pub fn set_mode(mut self, input: ::std::option::Option<crate::types::AnalyticsModality>) -> Self {
         self.mode = input;
@@ -291,14 +275,10 @@ impl SessionSpecificationBuilder {
     }
     /// <p>The mode of the session. The possible values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Speech</code> – The session was spoken.</p></li>
-    /// <li>
-    /// <p><code>Text</code> – The session was written.</p></li>
-    /// <li>
-    /// <p><code>DTMF</code> – The session used a touch-tone keypad (Dual Tone Multi-Frequency).</p></li>
-    /// <li>
-    /// <p><code>MultiMode</code> – The session used multiple modes.</p></li>
+    /// <li> <p> <code>Speech</code> – The session was spoken.</p> </li>
+    /// <li> <p> <code>Text</code> – The session was written.</p> </li>
+    /// <li> <p> <code>DTMF</code> – The session used a touch-tone keypad (Dual Tone Multi-Frequency).</p> </li>
+    /// <li> <p> <code>MultiMode</code> – The session used multiple modes.</p> </li>
     /// </ul>
     pub fn get_mode(&self) -> &::std::option::Option<crate::types::AnalyticsModality> {
         &self.mode

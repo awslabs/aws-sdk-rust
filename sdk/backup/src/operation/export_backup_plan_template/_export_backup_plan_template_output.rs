@@ -3,15 +3,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportBackupPlanTemplateOutput {
-    /// <p>The body of a backup plan template in JSON format.</p><note>
-    /// <p>This is a signed JSON document that cannot be modified before being passed to <code>GetBackupPlanFromJSON.</code></p>
+    /// <p>The body of a backup plan template in JSON format.</p> <note>
+    /// <p>This is a signed JSON document that cannot be modified before being passed to <code>GetBackupPlanFromJSON.</code> </p>
     /// </note>
     pub backup_plan_template_json: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ExportBackupPlanTemplateOutput {
-    /// <p>The body of a backup plan template in JSON format.</p><note>
-    /// <p>This is a signed JSON document that cannot be modified before being passed to <code>GetBackupPlanFromJSON.</code></p>
+    /// <p>The body of a backup plan template in JSON format.</p> <note>
+    /// <p>This is a signed JSON document that cannot be modified before being passed to <code>GetBackupPlanFromJSON.</code> </p>
     /// </note>
     pub fn backup_plan_template_json(&self) -> ::std::option::Option<&str> {
         self.backup_plan_template_json.as_deref()
@@ -37,22 +37,22 @@ pub struct ExportBackupPlanTemplateOutputBuilder {
     _request_id: Option<String>,
 }
 impl ExportBackupPlanTemplateOutputBuilder {
-    /// <p>The body of a backup plan template in JSON format.</p><note>
-    /// <p>This is a signed JSON document that cannot be modified before being passed to <code>GetBackupPlanFromJSON.</code></p>
+    /// <p>The body of a backup plan template in JSON format.</p> <note>
+    /// <p>This is a signed JSON document that cannot be modified before being passed to <code>GetBackupPlanFromJSON.</code> </p>
     /// </note>
     pub fn backup_plan_template_json(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_plan_template_json = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The body of a backup plan template in JSON format.</p><note>
-    /// <p>This is a signed JSON document that cannot be modified before being passed to <code>GetBackupPlanFromJSON.</code></p>
+    /// <p>The body of a backup plan template in JSON format.</p> <note>
+    /// <p>This is a signed JSON document that cannot be modified before being passed to <code>GetBackupPlanFromJSON.</code> </p>
     /// </note>
     pub fn set_backup_plan_template_json(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_plan_template_json = input;
         self
     }
-    /// <p>The body of a backup plan template in JSON format.</p><note>
-    /// <p>This is a signed JSON document that cannot be modified before being passed to <code>GetBackupPlanFromJSON.</code></p>
+    /// <p>The body of a backup plan template in JSON format.</p> <note>
+    /// <p>This is a signed JSON document that cannot be modified before being passed to <code>GetBackupPlanFromJSON.</code> </p>
     /// </note>
     pub fn get_backup_plan_template_json(&self) -> &::std::option::Option<::std::string::String> {
         &self.backup_plan_template_json

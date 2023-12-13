@@ -6,7 +6,7 @@
 pub struct MediaCapturePipelineSourceConfiguration {
     /// <p>The media pipeline ARN in the configuration object of a media capture pipeline.</p>
     pub media_pipeline_arn: ::std::string::String,
-    /// <p>The meeting configuration settings in a media capture pipeline configuration object.</p>
+    /// <p>The meeting configuration settings in a media capture pipeline configuration object. </p>
     pub chime_sdk_meeting_configuration: ::std::option::Option<crate::types::ChimeSdkMeetingConcatenationConfiguration>,
 }
 impl MediaCapturePipelineSourceConfiguration {
@@ -15,7 +15,7 @@ impl MediaCapturePipelineSourceConfiguration {
         use std::ops::Deref;
         self.media_pipeline_arn.deref()
     }
-    /// <p>The meeting configuration settings in a media capture pipeline configuration object.</p>
+    /// <p>The meeting configuration settings in a media capture pipeline configuration object. </p>
     pub fn chime_sdk_meeting_configuration(&self) -> ::std::option::Option<&crate::types::ChimeSdkMeetingConcatenationConfiguration> {
         self.chime_sdk_meeting_configuration.as_ref()
     }
@@ -58,13 +58,13 @@ impl MediaCapturePipelineSourceConfigurationBuilder {
     pub fn get_media_pipeline_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.media_pipeline_arn
     }
-    /// <p>The meeting configuration settings in a media capture pipeline configuration object.</p>
+    /// <p>The meeting configuration settings in a media capture pipeline configuration object. </p>
     /// This field is required.
     pub fn chime_sdk_meeting_configuration(mut self, input: crate::types::ChimeSdkMeetingConcatenationConfiguration) -> Self {
         self.chime_sdk_meeting_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The meeting configuration settings in a media capture pipeline configuration object.</p>
+    /// <p>The meeting configuration settings in a media capture pipeline configuration object. </p>
     pub fn set_chime_sdk_meeting_configuration(
         mut self,
         input: ::std::option::Option<crate::types::ChimeSdkMeetingConcatenationConfiguration>,
@@ -72,7 +72,7 @@ impl MediaCapturePipelineSourceConfigurationBuilder {
         self.chime_sdk_meeting_configuration = input;
         self
     }
-    /// <p>The meeting configuration settings in a media capture pipeline configuration object.</p>
+    /// <p>The meeting configuration settings in a media capture pipeline configuration object. </p>
     pub fn get_chime_sdk_meeting_configuration(&self) -> &::std::option::Option<crate::types::ChimeSdkMeetingConcatenationConfiguration> {
         &self.chime_sdk_meeting_configuration
     }

@@ -4,9 +4,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Connector {
-    /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html">CreateConnector</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html">CreateConnector</a>. </p>
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the certificate authority being used.</p>
+    /// <p>The Amazon Resource Name (ARN) of the certificate authority being used. </p>
     pub certificate_authority_arn: ::std::option::Option<::std::string::String>,
     /// <p>Certificate enrollment endpoint for Active Directory domain-joined objects reach out to when requesting certificates.</p>
     pub certificate_enrollment_policy_server_endpoint: ::std::option::Option<::std::string::String>,
@@ -24,11 +24,11 @@ pub struct Connector {
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Connector {
-    /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html">CreateConnector</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html">CreateConnector</a>. </p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the certificate authority being used.</p>
+    /// <p>The Amazon Resource Name (ARN) of the certificate authority being used. </p>
     pub fn certificate_authority_arn(&self) -> ::std::option::Option<&str> {
         self.certificate_authority_arn.as_deref()
     }
@@ -83,31 +83,31 @@ pub struct ConnectorBuilder {
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ConnectorBuilder {
-    /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html">CreateConnector</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html">CreateConnector</a>. </p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html">CreateConnector</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html">CreateConnector</a>. </p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html">CreateConnector</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html">CreateConnector</a>. </p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>The Amazon Resource Name (ARN) of the certificate authority being used.</p>
+    /// <p>The Amazon Resource Name (ARN) of the certificate authority being used. </p>
     pub fn certificate_authority_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_authority_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the certificate authority being used.</p>
+    /// <p>The Amazon Resource Name (ARN) of the certificate authority being used. </p>
     pub fn set_certificate_authority_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_authority_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the certificate authority being used.</p>
+    /// <p>The Amazon Resource Name (ARN) of the certificate authority being used. </p>
     pub fn get_certificate_authority_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate_authority_arn
     }

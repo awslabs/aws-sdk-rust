@@ -22,7 +22,7 @@ impl ListUsersInputBuilder {
 }
 /// Fluent builder constructing a request to `ListUsers`.
 ///
-/// <p>Returns a list of all of the Amazon QuickSight users belonging to this account.</p>
+/// <p>Returns a list of all of the Amazon QuickSight users belonging to this account. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListUsersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

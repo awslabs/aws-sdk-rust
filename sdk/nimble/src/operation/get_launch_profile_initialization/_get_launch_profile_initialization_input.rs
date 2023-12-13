@@ -11,7 +11,7 @@ pub struct GetLaunchProfileInitializationInput {
     pub launch_purpose: ::std::option::Option<::std::string::String>,
     /// <p>The platform where this Launch Profile will be used, either Windows or Linux.</p>
     pub platform: ::std::option::Option<::std::string::String>,
-    /// <p>The studio ID.</p>
+    /// <p>The studio ID. </p>
     pub studio_id: ::std::option::Option<::std::string::String>,
 }
 impl GetLaunchProfileInitializationInput {
@@ -33,7 +33,7 @@ impl GetLaunchProfileInitializationInput {
     pub fn platform(&self) -> ::std::option::Option<&str> {
         self.platform.as_deref()
     }
-    /// <p>The studio ID.</p>
+    /// <p>The studio ID. </p>
     pub fn studio_id(&self) -> ::std::option::Option<&str> {
         self.studio_id.as_deref()
     }
@@ -121,18 +121,18 @@ impl GetLaunchProfileInitializationInputBuilder {
     pub fn get_platform(&self) -> &::std::option::Option<::std::string::String> {
         &self.platform
     }
-    /// <p>The studio ID.</p>
+    /// <p>The studio ID. </p>
     /// This field is required.
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The studio ID.</p>
+    /// <p>The studio ID. </p>
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.studio_id = input;
         self
     }
-    /// <p>The studio ID.</p>
+    /// <p>The studio ID. </p>
     pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.studio_id
     }

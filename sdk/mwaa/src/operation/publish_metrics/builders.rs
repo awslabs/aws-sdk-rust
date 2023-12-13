@@ -22,7 +22,7 @@ impl PublishMetricsInputBuilder {
 }
 /// Fluent builder constructing a request to `PublishMetrics`.
 ///
-/// <p><b>Internal only</b>. Publishes environment health metrics to Amazon CloudWatch.</p>
+/// <p> <b>Internal only</b>. Publishes environment health metrics to Amazon CloudWatch.</p>
 #[deprecated(note = "This API is for internal use and not meant for public use, and is no longer available.")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PublishMetricsFluentBuilder {
@@ -109,17 +109,17 @@ impl PublishMetricsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p><b>Internal only</b>. The name of the environment.</p>
+    /// <p> <b>Internal only</b>. The name of the environment.</p>
     pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_name(input.into());
         self
     }
-    /// <p><b>Internal only</b>. The name of the environment.</p>
+    /// <p> <b>Internal only</b>. The name of the environment.</p>
     pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_name(input);
         self
     }
-    /// <p><b>Internal only</b>. The name of the environment.</p>
+    /// <p> <b>Internal only</b>. The name of the environment.</p>
     pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_environment_name()
     }
@@ -127,17 +127,17 @@ impl PublishMetricsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_metric_data`](Self::set_metric_data).
     ///
-    /// <p><b>Internal only</b>. Publishes metrics to Amazon CloudWatch. To learn more about the metrics published to Amazon CloudWatch, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/cw-metrics.html">Amazon MWAA performance metrics in Amazon CloudWatch</a>.</p>
+    /// <p> <b>Internal only</b>. Publishes metrics to Amazon CloudWatch. To learn more about the metrics published to Amazon CloudWatch, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/cw-metrics.html">Amazon MWAA performance metrics in Amazon CloudWatch</a>.</p>
     pub fn metric_data(mut self, input: crate::types::MetricDatum) -> Self {
         self.inner = self.inner.metric_data(input);
         self
     }
-    /// <p><b>Internal only</b>. Publishes metrics to Amazon CloudWatch. To learn more about the metrics published to Amazon CloudWatch, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/cw-metrics.html">Amazon MWAA performance metrics in Amazon CloudWatch</a>.</p>
+    /// <p> <b>Internal only</b>. Publishes metrics to Amazon CloudWatch. To learn more about the metrics published to Amazon CloudWatch, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/cw-metrics.html">Amazon MWAA performance metrics in Amazon CloudWatch</a>.</p>
     pub fn set_metric_data(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricDatum>>) -> Self {
         self.inner = self.inner.set_metric_data(input);
         self
     }
-    /// <p><b>Internal only</b>. Publishes metrics to Amazon CloudWatch. To learn more about the metrics published to Amazon CloudWatch, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/cw-metrics.html">Amazon MWAA performance metrics in Amazon CloudWatch</a>.</p>
+    /// <p> <b>Internal only</b>. Publishes metrics to Amazon CloudWatch. To learn more about the metrics published to Amazon CloudWatch, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/cw-metrics.html">Amazon MWAA performance metrics in Amazon CloudWatch</a>.</p>
     pub fn get_metric_data(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDatum>> {
         self.inner.get_metric_data()
     }

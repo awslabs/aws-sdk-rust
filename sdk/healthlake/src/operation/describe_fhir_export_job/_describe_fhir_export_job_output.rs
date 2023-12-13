@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFhirExportJobOutput {
-    /// <p>Displays the properties of the export job, including the ID, Arn, Name, and the status of the job.</p>
+    /// <p>Displays the properties of the export job, including the ID, Arn, Name, and the status of the job. </p>
     pub export_job_properties: ::std::option::Option<crate::types::ExportJobProperties>,
     _request_id: Option<String>,
 }
 impl DescribeFhirExportJobOutput {
-    /// <p>Displays the properties of the export job, including the ID, Arn, Name, and the status of the job.</p>
+    /// <p>Displays the properties of the export job, including the ID, Arn, Name, and the status of the job. </p>
     pub fn export_job_properties(&self) -> ::std::option::Option<&crate::types::ExportJobProperties> {
         self.export_job_properties.as_ref()
     }
@@ -33,18 +33,18 @@ pub struct DescribeFhirExportJobOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeFhirExportJobOutputBuilder {
-    /// <p>Displays the properties of the export job, including the ID, Arn, Name, and the status of the job.</p>
+    /// <p>Displays the properties of the export job, including the ID, Arn, Name, and the status of the job. </p>
     /// This field is required.
     pub fn export_job_properties(mut self, input: crate::types::ExportJobProperties) -> Self {
         self.export_job_properties = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Displays the properties of the export job, including the ID, Arn, Name, and the status of the job.</p>
+    /// <p>Displays the properties of the export job, including the ID, Arn, Name, and the status of the job. </p>
     pub fn set_export_job_properties(mut self, input: ::std::option::Option<crate::types::ExportJobProperties>) -> Self {
         self.export_job_properties = input;
         self
     }
-    /// <p>Displays the properties of the export job, including the ID, Arn, Name, and the status of the job.</p>
+    /// <p>Displays the properties of the export job, including the ID, Arn, Name, and the status of the job. </p>
     pub fn get_export_job_properties(&self) -> &::std::option::Option<crate::types::ExportJobProperties> {
         &self.export_job_properties
     }

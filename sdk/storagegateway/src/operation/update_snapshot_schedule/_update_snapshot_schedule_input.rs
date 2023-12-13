@@ -2,14 +2,10 @@
 
 /// <p>A JSON object containing one or more of the following fields:</p>
 /// <ul>
-/// <li>
-/// <p><code>UpdateSnapshotScheduleInput$Description</code></p></li>
-/// <li>
-/// <p><code>UpdateSnapshotScheduleInput$RecurrenceInHours</code></p></li>
-/// <li>
-/// <p><code>UpdateSnapshotScheduleInput$StartAt</code></p></li>
-/// <li>
-/// <p><code>UpdateSnapshotScheduleInput$VolumeARN</code></p></li>
+/// <li> <p> <code>UpdateSnapshotScheduleInput$Description</code> </p> </li>
+/// <li> <p> <code>UpdateSnapshotScheduleInput$RecurrenceInHours</code> </p> </li>
+/// <li> <p> <code>UpdateSnapshotScheduleInput$StartAt</code> </p> </li>
+/// <li> <p> <code>UpdateSnapshotScheduleInput$VolumeARN</code> </p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
@@ -22,7 +18,7 @@ pub struct UpdateSnapshotScheduleInput {
     pub recurrence_in_hours: ::std::option::Option<i32>,
     /// <p>Optional description of the snapshot that overwrites the existing description.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>A list of up to 50 tags that can be assigned to a snapshot. Each tag is a key-value pair.</p><note>
+    /// <p>A list of up to 50 tags that can be assigned to a snapshot. Each tag is a key-value pair.</p> <note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -44,7 +40,7 @@ impl UpdateSnapshotScheduleInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>A list of up to 50 tags that can be assigned to a snapshot. Each tag is a key-value pair.</p><note>
+    /// <p>A list of up to 50 tags that can be assigned to a snapshot. Each tag is a key-value pair.</p> <note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
     ///
@@ -134,7 +130,7 @@ impl UpdateSnapshotScheduleInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A list of up to 50 tags that can be assigned to a snapshot. Each tag is a key-value pair.</p><note>
+    /// <p>A list of up to 50 tags that can be assigned to a snapshot. Each tag is a key-value pair.</p> <note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
@@ -143,14 +139,14 @@ impl UpdateSnapshotScheduleInputBuilder {
         self.tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of up to 50 tags that can be assigned to a snapshot. Each tag is a key-value pair.</p><note>
+    /// <p>A list of up to 50 tags that can be assigned to a snapshot. Each tag is a key-value pair.</p> <note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>A list of up to 50 tags that can be assigned to a snapshot. Each tag is a key-value pair.</p><note>
+    /// <p>A list of up to 50 tags that can be assigned to a snapshot. Each tag is a key-value pair.</p> <note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {

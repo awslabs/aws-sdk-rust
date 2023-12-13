@@ -6,14 +6,14 @@ pub struct ListSessionsInput {
     /// <p>The workgroup to which the session belongs.</p>
     pub work_group: ::std::option::Option<::std::string::String>,
     /// <p>A filter for a specific session state. A description of each state follows.</p>
-    /// <p><code>CREATING</code> - The session is being started, including acquiring resources.</p>
-    /// <p><code>CREATED</code> - The session has been started.</p>
-    /// <p><code>IDLE</code> - The session is able to accept a calculation.</p>
-    /// <p><code>BUSY</code> - The session is processing another task and is unable to accept a calculation.</p>
-    /// <p><code>TERMINATING</code> - The session is in the process of shutting down.</p>
-    /// <p><code>TERMINATED</code> - The session and its resources are no longer running.</p>
-    /// <p><code>DEGRADED</code> - The session has no healthy coordinators.</p>
-    /// <p><code>FAILED</code> - Due to a failure, the session and its resources are no longer running.</p>
+    /// <p> <code>CREATING</code> - The session is being started, including acquiring resources.</p>
+    /// <p> <code>CREATED</code> - The session has been started.</p>
+    /// <p> <code>IDLE</code> - The session is able to accept a calculation.</p>
+    /// <p> <code>BUSY</code> - The session is processing another task and is unable to accept a calculation.</p>
+    /// <p> <code>TERMINATING</code> - The session is in the process of shutting down.</p>
+    /// <p> <code>TERMINATED</code> - The session and its resources are no longer running.</p>
+    /// <p> <code>DEGRADED</code> - The session has no healthy coordinators.</p>
+    /// <p> <code>FAILED</code> - Due to a failure, the session and its resources are no longer running.</p>
     pub state_filter: ::std::option::Option<crate::types::SessionState>,
     /// <p>The maximum number of sessions to return.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -26,14 +26,14 @@ impl ListSessionsInput {
         self.work_group.as_deref()
     }
     /// <p>A filter for a specific session state. A description of each state follows.</p>
-    /// <p><code>CREATING</code> - The session is being started, including acquiring resources.</p>
-    /// <p><code>CREATED</code> - The session has been started.</p>
-    /// <p><code>IDLE</code> - The session is able to accept a calculation.</p>
-    /// <p><code>BUSY</code> - The session is processing another task and is unable to accept a calculation.</p>
-    /// <p><code>TERMINATING</code> - The session is in the process of shutting down.</p>
-    /// <p><code>TERMINATED</code> - The session and its resources are no longer running.</p>
-    /// <p><code>DEGRADED</code> - The session has no healthy coordinators.</p>
-    /// <p><code>FAILED</code> - Due to a failure, the session and its resources are no longer running.</p>
+    /// <p> <code>CREATING</code> - The session is being started, including acquiring resources.</p>
+    /// <p> <code>CREATED</code> - The session has been started.</p>
+    /// <p> <code>IDLE</code> - The session is able to accept a calculation.</p>
+    /// <p> <code>BUSY</code> - The session is processing another task and is unable to accept a calculation.</p>
+    /// <p> <code>TERMINATING</code> - The session is in the process of shutting down.</p>
+    /// <p> <code>TERMINATED</code> - The session and its resources are no longer running.</p>
+    /// <p> <code>DEGRADED</code> - The session has no healthy coordinators.</p>
+    /// <p> <code>FAILED</code> - Due to a failure, the session and its resources are no longer running.</p>
     pub fn state_filter(&self) -> ::std::option::Option<&crate::types::SessionState> {
         self.state_filter.as_ref()
     }
@@ -79,40 +79,40 @@ impl ListSessionsInputBuilder {
         &self.work_group
     }
     /// <p>A filter for a specific session state. A description of each state follows.</p>
-    /// <p><code>CREATING</code> - The session is being started, including acquiring resources.</p>
-    /// <p><code>CREATED</code> - The session has been started.</p>
-    /// <p><code>IDLE</code> - The session is able to accept a calculation.</p>
-    /// <p><code>BUSY</code> - The session is processing another task and is unable to accept a calculation.</p>
-    /// <p><code>TERMINATING</code> - The session is in the process of shutting down.</p>
-    /// <p><code>TERMINATED</code> - The session and its resources are no longer running.</p>
-    /// <p><code>DEGRADED</code> - The session has no healthy coordinators.</p>
-    /// <p><code>FAILED</code> - Due to a failure, the session and its resources are no longer running.</p>
+    /// <p> <code>CREATING</code> - The session is being started, including acquiring resources.</p>
+    /// <p> <code>CREATED</code> - The session has been started.</p>
+    /// <p> <code>IDLE</code> - The session is able to accept a calculation.</p>
+    /// <p> <code>BUSY</code> - The session is processing another task and is unable to accept a calculation.</p>
+    /// <p> <code>TERMINATING</code> - The session is in the process of shutting down.</p>
+    /// <p> <code>TERMINATED</code> - The session and its resources are no longer running.</p>
+    /// <p> <code>DEGRADED</code> - The session has no healthy coordinators.</p>
+    /// <p> <code>FAILED</code> - Due to a failure, the session and its resources are no longer running.</p>
     pub fn state_filter(mut self, input: crate::types::SessionState) -> Self {
         self.state_filter = ::std::option::Option::Some(input);
         self
     }
     /// <p>A filter for a specific session state. A description of each state follows.</p>
-    /// <p><code>CREATING</code> - The session is being started, including acquiring resources.</p>
-    /// <p><code>CREATED</code> - The session has been started.</p>
-    /// <p><code>IDLE</code> - The session is able to accept a calculation.</p>
-    /// <p><code>BUSY</code> - The session is processing another task and is unable to accept a calculation.</p>
-    /// <p><code>TERMINATING</code> - The session is in the process of shutting down.</p>
-    /// <p><code>TERMINATED</code> - The session and its resources are no longer running.</p>
-    /// <p><code>DEGRADED</code> - The session has no healthy coordinators.</p>
-    /// <p><code>FAILED</code> - Due to a failure, the session and its resources are no longer running.</p>
+    /// <p> <code>CREATING</code> - The session is being started, including acquiring resources.</p>
+    /// <p> <code>CREATED</code> - The session has been started.</p>
+    /// <p> <code>IDLE</code> - The session is able to accept a calculation.</p>
+    /// <p> <code>BUSY</code> - The session is processing another task and is unable to accept a calculation.</p>
+    /// <p> <code>TERMINATING</code> - The session is in the process of shutting down.</p>
+    /// <p> <code>TERMINATED</code> - The session and its resources are no longer running.</p>
+    /// <p> <code>DEGRADED</code> - The session has no healthy coordinators.</p>
+    /// <p> <code>FAILED</code> - Due to a failure, the session and its resources are no longer running.</p>
     pub fn set_state_filter(mut self, input: ::std::option::Option<crate::types::SessionState>) -> Self {
         self.state_filter = input;
         self
     }
     /// <p>A filter for a specific session state. A description of each state follows.</p>
-    /// <p><code>CREATING</code> - The session is being started, including acquiring resources.</p>
-    /// <p><code>CREATED</code> - The session has been started.</p>
-    /// <p><code>IDLE</code> - The session is able to accept a calculation.</p>
-    /// <p><code>BUSY</code> - The session is processing another task and is unable to accept a calculation.</p>
-    /// <p><code>TERMINATING</code> - The session is in the process of shutting down.</p>
-    /// <p><code>TERMINATED</code> - The session and its resources are no longer running.</p>
-    /// <p><code>DEGRADED</code> - The session has no healthy coordinators.</p>
-    /// <p><code>FAILED</code> - Due to a failure, the session and its resources are no longer running.</p>
+    /// <p> <code>CREATING</code> - The session is being started, including acquiring resources.</p>
+    /// <p> <code>CREATED</code> - The session has been started.</p>
+    /// <p> <code>IDLE</code> - The session is able to accept a calculation.</p>
+    /// <p> <code>BUSY</code> - The session is processing another task and is unable to accept a calculation.</p>
+    /// <p> <code>TERMINATING</code> - The session is in the process of shutting down.</p>
+    /// <p> <code>TERMINATED</code> - The session and its resources are no longer running.</p>
+    /// <p> <code>DEGRADED</code> - The session has no healthy coordinators.</p>
+    /// <p> <code>FAILED</code> - Due to a failure, the session and its resources are no longer running.</p>
     pub fn get_state_filter(&self) -> &::std::option::Option<crate::types::SessionState> {
         &self.state_filter
     }

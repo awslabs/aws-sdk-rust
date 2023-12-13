@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTagsInput {
-    /// <p>The ID of the ML object. For example, <code>exampleModelId</code>.</p>
+    /// <p>The ID of the ML object. For example, <code>exampleModelId</code>. </p>
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of the ML object.</p>
     pub resource_type: ::std::option::Option<crate::types::TaggableResourceType>,
 }
 impl DescribeTagsInput {
-    /// <p>The ID of the ML object. For example, <code>exampleModelId</code>.</p>
+    /// <p>The ID of the ML object. For example, <code>exampleModelId</code>. </p>
     pub fn resource_id(&self) -> ::std::option::Option<&str> {
         self.resource_id.as_deref()
     }
@@ -33,18 +33,18 @@ pub struct DescribeTagsInputBuilder {
     pub(crate) resource_type: ::std::option::Option<crate::types::TaggableResourceType>,
 }
 impl DescribeTagsInputBuilder {
-    /// <p>The ID of the ML object. For example, <code>exampleModelId</code>.</p>
+    /// <p>The ID of the ML object. For example, <code>exampleModelId</code>. </p>
     /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the ML object. For example, <code>exampleModelId</code>.</p>
+    /// <p>The ID of the ML object. For example, <code>exampleModelId</code>. </p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
     }
-    /// <p>The ID of the ML object. For example, <code>exampleModelId</code>.</p>
+    /// <p>The ID of the ML object. For example, <code>exampleModelId</code>. </p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_id
     }

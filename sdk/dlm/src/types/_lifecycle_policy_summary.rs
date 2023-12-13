@@ -14,12 +14,10 @@ pub struct LifecyclePolicySummary {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The type of policy. <code>EBS_SNAPSHOT_MANAGEMENT</code> indicates that the policy manages the lifecycle of Amazon EBS snapshots. <code>IMAGE_MANAGEMENT</code> indicates that the policy manages the lifecycle of EBS-backed AMIs. <code>EVENT_BASED_POLICY</code> indicates that the policy automates cross-account snapshot copies for snapshots that are shared with your account.</p>
     pub policy_type: ::std::option::Option<crate::types::PolicyTypeValues>,
-    /// <p><b>[Default policies only]</b> The type of default policy. Values include:</p>
+    /// <p> <b>[Default policies only]</b> The type of default policy. Values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>VOLUME</code> - Default policy for EBS snapshots</p></li>
-    /// <li>
-    /// <p><code>INSTANCE</code> - Default policy for EBS-backed AMIs</p></li>
+    /// <li> <p> <code>VOLUME</code> - Default policy for EBS snapshots</p> </li>
+    /// <li> <p> <code>INSTANCE</code> - Default policy for EBS-backed AMIs</p> </li>
     /// </ul>
     pub default_policy: ::std::option::Option<bool>,
 }
@@ -44,12 +42,10 @@ impl LifecyclePolicySummary {
     pub fn policy_type(&self) -> ::std::option::Option<&crate::types::PolicyTypeValues> {
         self.policy_type.as_ref()
     }
-    /// <p><b>[Default policies only]</b> The type of default policy. Values include:</p>
+    /// <p> <b>[Default policies only]</b> The type of default policy. Values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>VOLUME</code> - Default policy for EBS snapshots</p></li>
-    /// <li>
-    /// <p><code>INSTANCE</code> - Default policy for EBS-backed AMIs</p></li>
+    /// <li> <p> <code>VOLUME</code> - Default policy for EBS snapshots</p> </li>
+    /// <li> <p> <code>INSTANCE</code> - Default policy for EBS-backed AMIs</p> </li>
     /// </ul>
     pub fn default_policy(&self) -> ::std::option::Option<bool> {
         self.default_policy
@@ -150,34 +146,28 @@ impl LifecyclePolicySummaryBuilder {
     pub fn get_policy_type(&self) -> &::std::option::Option<crate::types::PolicyTypeValues> {
         &self.policy_type
     }
-    /// <p><b>[Default policies only]</b> The type of default policy. Values include:</p>
+    /// <p> <b>[Default policies only]</b> The type of default policy. Values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>VOLUME</code> - Default policy for EBS snapshots</p></li>
-    /// <li>
-    /// <p><code>INSTANCE</code> - Default policy for EBS-backed AMIs</p></li>
+    /// <li> <p> <code>VOLUME</code> - Default policy for EBS snapshots</p> </li>
+    /// <li> <p> <code>INSTANCE</code> - Default policy for EBS-backed AMIs</p> </li>
     /// </ul>
     pub fn default_policy(mut self, input: bool) -> Self {
         self.default_policy = ::std::option::Option::Some(input);
         self
     }
-    /// <p><b>[Default policies only]</b> The type of default policy. Values include:</p>
+    /// <p> <b>[Default policies only]</b> The type of default policy. Values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>VOLUME</code> - Default policy for EBS snapshots</p></li>
-    /// <li>
-    /// <p><code>INSTANCE</code> - Default policy for EBS-backed AMIs</p></li>
+    /// <li> <p> <code>VOLUME</code> - Default policy for EBS snapshots</p> </li>
+    /// <li> <p> <code>INSTANCE</code> - Default policy for EBS-backed AMIs</p> </li>
     /// </ul>
     pub fn set_default_policy(mut self, input: ::std::option::Option<bool>) -> Self {
         self.default_policy = input;
         self
     }
-    /// <p><b>[Default policies only]</b> The type of default policy. Values include:</p>
+    /// <p> <b>[Default policies only]</b> The type of default policy. Values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>VOLUME</code> - Default policy for EBS snapshots</p></li>
-    /// <li>
-    /// <p><code>INSTANCE</code> - Default policy for EBS-backed AMIs</p></li>
+    /// <li> <p> <code>VOLUME</code> - Default policy for EBS snapshots</p> </li>
+    /// <li> <p> <code>INSTANCE</code> - Default policy for EBS-backed AMIs</p> </li>
     /// </ul>
     pub fn get_default_policy(&self) -> &::std::option::Option<bool> {
         &self.default_policy

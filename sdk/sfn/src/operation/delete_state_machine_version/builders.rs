@@ -22,17 +22,15 @@ impl DeleteStateMachineVersionInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteStateMachineVersion`.
 ///
-/// <p>Deletes a state machine <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version</a>. After you delete a version, you can't call <code>StartExecution</code> using that version's ARN or use the version with a state machine <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a>.</p><note>
+/// <p>Deletes a state machine <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version</a>. After you delete a version, you can't call <code>StartExecution</code> using that version's ARN or use the version with a state machine <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a>.</p> <note>
 /// <p>Deleting a state machine version won't terminate its in-progress executions.</p>
 /// </note> <note>
 /// <p>You can't delete a state machine version currently referenced by one or more aliases. Before you delete a version, you must either delete the aliases or update them to point to another state machine version.</p>
 /// </note>
-/// <p><b>Related operations:</b></p>
+/// <p> <b>Related operations:</b> </p>
 /// <ul>
-/// <li>
-/// <p><code>PublishStateMachineVersion</code></p></li>
-/// <li>
-/// <p><code>ListStateMachineVersions</code></p></li>
+/// <li> <p> <code>PublishStateMachineVersion</code> </p> </li>
+/// <li> <p> <code>ListStateMachineVersions</code> </p> </li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteStateMachineVersionFluentBuilder {

@@ -5,7 +5,7 @@
 pub struct GetEntitiesInput {
     /// <p>An array of entity IDs.</p>
     /// <p>The IDs should be in the following format.</p>
-    /// <p><code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code></p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
     pub ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
     pub namespace_version: ::std::option::Option<i64>,
@@ -13,7 +13,7 @@ pub struct GetEntitiesInput {
 impl GetEntitiesInput {
     /// <p>An array of entity IDs.</p>
     /// <p>The IDs should be in the following format.</p>
-    /// <p><code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code></p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ids.is_none()`.
     pub fn ids(&self) -> &[::std::string::String] {
@@ -45,7 +45,7 @@ impl GetEntitiesInputBuilder {
     ///
     /// <p>An array of entity IDs.</p>
     /// <p>The IDs should be in the following format.</p>
-    /// <p><code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code></p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
     pub fn ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ids.unwrap_or_default();
         v.push(input.into());
@@ -54,14 +54,14 @@ impl GetEntitiesInputBuilder {
     }
     /// <p>An array of entity IDs.</p>
     /// <p>The IDs should be in the following format.</p>
-    /// <p><code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code></p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
     pub fn set_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ids = input;
         self
     }
     /// <p>An array of entity IDs.</p>
     /// <p>The IDs should be in the following format.</p>
-    /// <p><code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code></p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
     pub fn get_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.ids
     }

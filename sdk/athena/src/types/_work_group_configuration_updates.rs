@@ -12,7 +12,7 @@ pub struct WorkGroupConfigurationUpdates {
     pub publish_cloud_watch_metrics_enabled: ::std::option::Option<bool>,
     /// <p>The upper limit (cutoff) for the amount of bytes a single query in a workgroup is allowed to scan.</p>
     pub bytes_scanned_cutoff_per_query: ::std::option::Option<i64>,
-    /// <p>Indicates that the data usage control limit per query is removed. <code>WorkGroupConfiguration$BytesScannedCutoffPerQuery</code></p>
+    /// <p>Indicates that the data usage control limit per query is removed. <code>WorkGroupConfiguration$BytesScannedCutoffPerQuery</code> </p>
     pub remove_bytes_scanned_cutoff_per_query: ::std::option::Option<bool>,
     /// <p>If set to <code>true</code>, allows members assigned to a workgroup to specify Amazon S3 Requester Pays buckets in queries. If set to <code>false</code>, workgroup members cannot query data from Requester Pays buckets, and queries that retrieve data from Requester Pays buckets cause an error. The default is <code>false</code>. For more information about Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html">Requester Pays Buckets</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
     pub requester_pays_enabled: ::std::option::Option<bool>,
@@ -49,7 +49,7 @@ impl WorkGroupConfigurationUpdates {
     pub fn bytes_scanned_cutoff_per_query(&self) -> ::std::option::Option<i64> {
         self.bytes_scanned_cutoff_per_query
     }
-    /// <p>Indicates that the data usage control limit per query is removed. <code>WorkGroupConfiguration$BytesScannedCutoffPerQuery</code></p>
+    /// <p>Indicates that the data usage control limit per query is removed. <code>WorkGroupConfiguration$BytesScannedCutoffPerQuery</code> </p>
     pub fn remove_bytes_scanned_cutoff_per_query(&self) -> ::std::option::Option<bool> {
         self.remove_bytes_scanned_cutoff_per_query
     }
@@ -169,17 +169,17 @@ impl WorkGroupConfigurationUpdatesBuilder {
     pub fn get_bytes_scanned_cutoff_per_query(&self) -> &::std::option::Option<i64> {
         &self.bytes_scanned_cutoff_per_query
     }
-    /// <p>Indicates that the data usage control limit per query is removed. <code>WorkGroupConfiguration$BytesScannedCutoffPerQuery</code></p>
+    /// <p>Indicates that the data usage control limit per query is removed. <code>WorkGroupConfiguration$BytesScannedCutoffPerQuery</code> </p>
     pub fn remove_bytes_scanned_cutoff_per_query(mut self, input: bool) -> Self {
         self.remove_bytes_scanned_cutoff_per_query = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates that the data usage control limit per query is removed. <code>WorkGroupConfiguration$BytesScannedCutoffPerQuery</code></p>
+    /// <p>Indicates that the data usage control limit per query is removed. <code>WorkGroupConfiguration$BytesScannedCutoffPerQuery</code> </p>
     pub fn set_remove_bytes_scanned_cutoff_per_query(mut self, input: ::std::option::Option<bool>) -> Self {
         self.remove_bytes_scanned_cutoff_per_query = input;
         self
     }
-    /// <p>Indicates that the data usage control limit per query is removed. <code>WorkGroupConfiguration$BytesScannedCutoffPerQuery</code></p>
+    /// <p>Indicates that the data usage control limit per query is removed. <code>WorkGroupConfiguration$BytesScannedCutoffPerQuery</code> </p>
     pub fn get_remove_bytes_scanned_cutoff_per_query(&self) -> &::std::option::Option<bool> {
         &self.remove_bytes_scanned_cutoff_per_query
     }

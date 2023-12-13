@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetFieldOutput {
-    /// <p>A list of detailed field information.</p>
+    /// <p>A list of detailed field information. </p>
     pub fields: ::std::vec::Vec<crate::types::GetFieldResponse>,
-    /// <p>A list of field errors.</p>
+    /// <p>A list of field errors. </p>
     pub errors: ::std::vec::Vec<crate::types::FieldError>,
     _request_id: Option<String>,
 }
 impl BatchGetFieldOutput {
-    /// <p>A list of detailed field information.</p>
+    /// <p>A list of detailed field information. </p>
     pub fn fields(&self) -> &[crate::types::GetFieldResponse] {
         use std::ops::Deref;
         self.fields.deref()
     }
-    /// <p>A list of field errors.</p>
+    /// <p>A list of field errors. </p>
     pub fn errors(&self) -> &[crate::types::FieldError] {
         use std::ops::Deref;
         self.errors.deref()
@@ -46,19 +46,19 @@ impl BatchGetFieldOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_fields`](Self::set_fields).
     ///
-    /// <p>A list of detailed field information.</p>
+    /// <p>A list of detailed field information. </p>
     pub fn fields(mut self, input: crate::types::GetFieldResponse) -> Self {
         let mut v = self.fields.unwrap_or_default();
         v.push(input);
         self.fields = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of detailed field information.</p>
+    /// <p>A list of detailed field information. </p>
     pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GetFieldResponse>>) -> Self {
         self.fields = input;
         self
     }
-    /// <p>A list of detailed field information.</p>
+    /// <p>A list of detailed field information. </p>
     pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GetFieldResponse>> {
         &self.fields
     }
@@ -66,19 +66,19 @@ impl BatchGetFieldOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
     ///
-    /// <p>A list of field errors.</p>
+    /// <p>A list of field errors. </p>
     pub fn errors(mut self, input: crate::types::FieldError) -> Self {
         let mut v = self.errors.unwrap_or_default();
         v.push(input);
         self.errors = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of field errors.</p>
+    /// <p>A list of field errors. </p>
     pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FieldError>>) -> Self {
         self.errors = input;
         self
     }
-    /// <p>A list of field errors.</p>
+    /// <p>A list of field errors. </p>
     pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldError>> {
         &self.errors
     }

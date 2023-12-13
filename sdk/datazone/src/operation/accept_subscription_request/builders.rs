@@ -22,7 +22,7 @@ impl AcceptSubscriptionRequestInputBuilder {
 }
 /// Fluent builder constructing a request to `AcceptSubscriptionRequest`.
 ///
-/// <p>Accepts a subscription request to a specific asset.</p>
+/// <p>Accepts a subscription request to a specific asset. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AcceptSubscriptionRequestFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

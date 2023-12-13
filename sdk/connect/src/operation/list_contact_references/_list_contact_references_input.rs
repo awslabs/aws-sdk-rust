@@ -9,7 +9,7 @@ pub struct ListContactReferencesInput {
     pub contact_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of reference.</p>
     pub reference_types: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceType>>,
-    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p><important>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p> <important>
     /// <p>This is not expected to be set, because the value returned in the previous response is always null.</p>
     /// </important>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -29,7 +29,7 @@ impl ListContactReferencesInput {
     pub fn reference_types(&self) -> &[crate::types::ReferenceType] {
         self.reference_types.as_deref().unwrap_or_default()
     }
-    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p><important>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p> <important>
     /// <p>This is not expected to be set, because the value returned in the previous response is always null.</p>
     /// </important>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -103,21 +103,21 @@ impl ListContactReferencesInputBuilder {
     pub fn get_reference_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReferenceType>> {
         &self.reference_types
     }
-    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p><important>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p> <important>
     /// <p>This is not expected to be set, because the value returned in the previous response is always null.</p>
     /// </important>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p><important>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p> <important>
     /// <p>This is not expected to be set, because the value returned in the previous response is always null.</p>
     /// </important>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p><important>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p> <important>
     /// <p>This is not expected to be set, because the value returned in the previous response is always null.</p>
     /// </important>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {

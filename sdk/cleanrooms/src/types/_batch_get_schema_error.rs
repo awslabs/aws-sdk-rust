@@ -6,7 +6,7 @@
 pub struct BatchGetSchemaError {
     /// <p>An error name for the error.</p>
     pub name: ::std::string::String,
-    /// <p>An error code for the error.</p>
+    /// <p>An error code for the error. </p>
     pub code: ::std::string::String,
     /// <p>An error message for the error.</p>
     pub message: ::std::string::String,
@@ -17,7 +17,7 @@ impl BatchGetSchemaError {
         use std::ops::Deref;
         self.name.deref()
     }
-    /// <p>An error code for the error.</p>
+    /// <p>An error code for the error. </p>
     pub fn code(&self) -> &str {
         use std::ops::Deref;
         self.code.deref()
@@ -59,18 +59,18 @@ impl BatchGetSchemaErrorBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>An error code for the error.</p>
+    /// <p>An error code for the error. </p>
     /// This field is required.
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An error code for the error.</p>
+    /// <p>An error code for the error. </p>
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.code = input;
         self
     }
-    /// <p>An error code for the error.</p>
+    /// <p>An error code for the error. </p>
     pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.code
     }

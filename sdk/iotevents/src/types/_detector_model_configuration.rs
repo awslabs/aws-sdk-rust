@@ -20,10 +20,10 @@ pub struct DetectorModelConfiguration {
     pub last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the detector model.</p>
     pub status: ::std::option::Option<crate::types::DetectorModelVersionStatus>,
-    /// <p>The value used to identify a detector instance. When a device or system sends input, a new detector instance with a unique key value is created. AWS IoT Events can continue to route input to its corresponding detector instance based on this identifying information.</p>
+    /// <p>The value used to identify a detector instance. When a device or system sends input, a new detector instance with a unique key value is created. AWS IoT Events can continue to route input to its corresponding detector instance based on this identifying information. </p>
     /// <p>This parameter uses a JSON-path expression to select the attribute-value pair in the message payload that is used for identification. To route the message to the correct detector instance, the device must send a message payload that contains the same attribute-value.</p>
     pub key: ::std::option::Option<::std::string::String>,
-    /// <p>Information about the order in which events are evaluated and how actions are executed.</p>
+    /// <p>Information about the order in which events are evaluated and how actions are executed. </p>
     pub evaluation_method: ::std::option::Option<crate::types::EvaluationMethod>,
 }
 impl DetectorModelConfiguration {
@@ -59,12 +59,12 @@ impl DetectorModelConfiguration {
     pub fn status(&self) -> ::std::option::Option<&crate::types::DetectorModelVersionStatus> {
         self.status.as_ref()
     }
-    /// <p>The value used to identify a detector instance. When a device or system sends input, a new detector instance with a unique key value is created. AWS IoT Events can continue to route input to its corresponding detector instance based on this identifying information.</p>
+    /// <p>The value used to identify a detector instance. When a device or system sends input, a new detector instance with a unique key value is created. AWS IoT Events can continue to route input to its corresponding detector instance based on this identifying information. </p>
     /// <p>This parameter uses a JSON-path expression to select the attribute-value pair in the message payload that is used for identification. To route the message to the correct detector instance, the device must send a message payload that contains the same attribute-value.</p>
     pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
     }
-    /// <p>Information about the order in which events are evaluated and how actions are executed.</p>
+    /// <p>Information about the order in which events are evaluated and how actions are executed. </p>
     pub fn evaluation_method(&self) -> ::std::option::Option<&crate::types::EvaluationMethod> {
         self.evaluation_method.as_ref()
     }
@@ -204,34 +204,34 @@ impl DetectorModelConfigurationBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::DetectorModelVersionStatus> {
         &self.status
     }
-    /// <p>The value used to identify a detector instance. When a device or system sends input, a new detector instance with a unique key value is created. AWS IoT Events can continue to route input to its corresponding detector instance based on this identifying information.</p>
+    /// <p>The value used to identify a detector instance. When a device or system sends input, a new detector instance with a unique key value is created. AWS IoT Events can continue to route input to its corresponding detector instance based on this identifying information. </p>
     /// <p>This parameter uses a JSON-path expression to select the attribute-value pair in the message payload that is used for identification. To route the message to the correct detector instance, the device must send a message payload that contains the same attribute-value.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The value used to identify a detector instance. When a device or system sends input, a new detector instance with a unique key value is created. AWS IoT Events can continue to route input to its corresponding detector instance based on this identifying information.</p>
+    /// <p>The value used to identify a detector instance. When a device or system sends input, a new detector instance with a unique key value is created. AWS IoT Events can continue to route input to its corresponding detector instance based on this identifying information. </p>
     /// <p>This parameter uses a JSON-path expression to select the attribute-value pair in the message payload that is used for identification. To route the message to the correct detector instance, the device must send a message payload that contains the same attribute-value.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
     }
-    /// <p>The value used to identify a detector instance. When a device or system sends input, a new detector instance with a unique key value is created. AWS IoT Events can continue to route input to its corresponding detector instance based on this identifying information.</p>
+    /// <p>The value used to identify a detector instance. When a device or system sends input, a new detector instance with a unique key value is created. AWS IoT Events can continue to route input to its corresponding detector instance based on this identifying information. </p>
     /// <p>This parameter uses a JSON-path expression to select the attribute-value pair in the message payload that is used for identification. To route the message to the correct detector instance, the device must send a message payload that contains the same attribute-value.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.key
     }
-    /// <p>Information about the order in which events are evaluated and how actions are executed.</p>
+    /// <p>Information about the order in which events are evaluated and how actions are executed. </p>
     pub fn evaluation_method(mut self, input: crate::types::EvaluationMethod) -> Self {
         self.evaluation_method = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Information about the order in which events are evaluated and how actions are executed.</p>
+    /// <p>Information about the order in which events are evaluated and how actions are executed. </p>
     pub fn set_evaluation_method(mut self, input: ::std::option::Option<crate::types::EvaluationMethod>) -> Self {
         self.evaluation_method = input;
         self
     }
-    /// <p>Information about the order in which events are evaluated and how actions are executed.</p>
+    /// <p>Information about the order in which events are evaluated and how actions are executed. </p>
     pub fn get_evaluation_method(&self) -> &::std::option::Option<crate::types::EvaluationMethod> {
         &self.evaluation_method
     }

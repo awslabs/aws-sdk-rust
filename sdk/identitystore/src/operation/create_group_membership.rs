@@ -256,10 +256,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateGroupMe
 pub enum CreateGroupMembershipError {
     /// <p>This request cannot be completed for one of the following reasons:</p>
     /// <ul>
-    /// <li>
-    /// <p>Performing the requested operation would violate an existing uniqueness claim in the identity store. Resolve the conflict before retrying this request.</p></li>
-    /// <li>
-    /// <p>The requested resource was being concurrently modified by another request.</p></li>
+    /// <li> <p>Performing the requested operation would violate an existing uniqueness claim in the identity store. Resolve the conflict before retrying this request.</p> </li>
+    /// <li> <p>The requested resource was being concurrently modified by another request.</p> </li>
     /// </ul>
     ConflictException(crate::types::error::ConflictException),
     /// <p>Indicates that a requested resource is not found.</p>

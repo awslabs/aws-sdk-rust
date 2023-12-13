@@ -3,41 +3,39 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateKxDataviewInput {
-    /// <p>A unique identifier for the kdb environment, where you want to create the dataview.</p>
+    /// <p>A unique identifier for the kdb environment, where you want to create the dataview. </p>
     pub environment_id: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the database where you want to create a dataview.</p>
+    /// <p> The name of the database where you want to create a dataview. </p>
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the dataview.</p>
     pub dataview_name: ::std::option::Option<::std::string::String>,
-    /// <p>The number of availability zones you want to assign per cluster. This can be one of the following</p>
+    /// <p>The number of availability zones you want to assign per cluster. This can be one of the following </p>
     /// <ul>
-    /// <li>
-    /// <p><code>SINGLE</code> – Assigns one availability zone per cluster.</p></li>
-    /// <li>
-    /// <p><code>MULTI</code> – Assigns all the availability zones per cluster.</p></li>
+    /// <li> <p> <code>SINGLE</code> – Assigns one availability zone per cluster.</p> </li>
+    /// <li> <p> <code>MULTI</code> – Assigns all the availability zones per cluster.</p> </li>
     /// </ul>
     pub az_mode: ::std::option::Option<crate::types::KxAzMode>,
-    /// <p>The identifier of the availability zones.</p>
+    /// <p> The identifier of the availability zones. </p>
     pub availability_zone_id: ::std::option::Option<::std::string::String>,
-    /// <p>A unique identifier of the changeset that you want to use to ingest data.</p>
+    /// <p> A unique identifier of the changeset that you want to use to ingest data. </p>
     pub changeset_id: ::std::option::Option<::std::string::String>,
-    /// <p>The configuration that contains the database path of the data that you want to place on each selected volume. Each segment must have a unique database path for each volume. If you do not explicitly specify any database path for a volume, they are accessible from the cluster through the default S3/object store segment.</p>
+    /// <p> The configuration that contains the database path of the data that you want to place on each selected volume. Each segment must have a unique database path for each volume. If you do not explicitly specify any database path for a volume, they are accessible from the cluster through the default S3/object store segment. </p>
     pub segment_configurations: ::std::option::Option<::std::vec::Vec<crate::types::KxDataviewSegmentConfiguration>>,
     /// <p>The option to specify whether you want to apply all the future additions and corrections automatically to the dataview, when you ingest new changesets. The default value is false.</p>
     pub auto_update: ::std::option::Option<bool>,
     /// <p>A description of the dataview.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>A list of key-value pairs to label the dataview. You can add up to 50 tags to a dataview.</p>
+    /// <p> A list of key-value pairs to label the dataview. You can add up to 50 tags to a dataview. </p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateKxDataviewInput {
-    /// <p>A unique identifier for the kdb environment, where you want to create the dataview.</p>
+    /// <p>A unique identifier for the kdb environment, where you want to create the dataview. </p>
     pub fn environment_id(&self) -> ::std::option::Option<&str> {
         self.environment_id.as_deref()
     }
-    /// <p>The name of the database where you want to create a dataview.</p>
+    /// <p> The name of the database where you want to create a dataview. </p>
     pub fn database_name(&self) -> ::std::option::Option<&str> {
         self.database_name.as_deref()
     }
@@ -45,25 +43,23 @@ impl CreateKxDataviewInput {
     pub fn dataview_name(&self) -> ::std::option::Option<&str> {
         self.dataview_name.as_deref()
     }
-    /// <p>The number of availability zones you want to assign per cluster. This can be one of the following</p>
+    /// <p>The number of availability zones you want to assign per cluster. This can be one of the following </p>
     /// <ul>
-    /// <li>
-    /// <p><code>SINGLE</code> – Assigns one availability zone per cluster.</p></li>
-    /// <li>
-    /// <p><code>MULTI</code> – Assigns all the availability zones per cluster.</p></li>
+    /// <li> <p> <code>SINGLE</code> – Assigns one availability zone per cluster.</p> </li>
+    /// <li> <p> <code>MULTI</code> – Assigns all the availability zones per cluster.</p> </li>
     /// </ul>
     pub fn az_mode(&self) -> ::std::option::Option<&crate::types::KxAzMode> {
         self.az_mode.as_ref()
     }
-    /// <p>The identifier of the availability zones.</p>
+    /// <p> The identifier of the availability zones. </p>
     pub fn availability_zone_id(&self) -> ::std::option::Option<&str> {
         self.availability_zone_id.as_deref()
     }
-    /// <p>A unique identifier of the changeset that you want to use to ingest data.</p>
+    /// <p> A unique identifier of the changeset that you want to use to ingest data. </p>
     pub fn changeset_id(&self) -> ::std::option::Option<&str> {
         self.changeset_id.as_deref()
     }
-    /// <p>The configuration that contains the database path of the data that you want to place on each selected volume. Each segment must have a unique database path for each volume. If you do not explicitly specify any database path for a volume, they are accessible from the cluster through the default S3/object store segment.</p>
+    /// <p> The configuration that contains the database path of the data that you want to place on each selected volume. Each segment must have a unique database path for each volume. If you do not explicitly specify any database path for a volume, they are accessible from the cluster through the default S3/object store segment. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.segment_configurations.is_none()`.
     pub fn segment_configurations(&self) -> &[crate::types::KxDataviewSegmentConfiguration] {
@@ -77,7 +73,7 @@ impl CreateKxDataviewInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>A list of key-value pairs to label the dataview. You can add up to 50 tags to a dataview.</p>
+    /// <p> A list of key-value pairs to label the dataview. You can add up to 50 tags to a dataview. </p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
@@ -110,33 +106,33 @@ pub struct CreateKxDataviewInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateKxDataviewInputBuilder {
-    /// <p>A unique identifier for the kdb environment, where you want to create the dataview.</p>
+    /// <p>A unique identifier for the kdb environment, where you want to create the dataview. </p>
     /// This field is required.
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique identifier for the kdb environment, where you want to create the dataview.</p>
+    /// <p>A unique identifier for the kdb environment, where you want to create the dataview. </p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_id = input;
         self
     }
-    /// <p>A unique identifier for the kdb environment, where you want to create the dataview.</p>
+    /// <p>A unique identifier for the kdb environment, where you want to create the dataview. </p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.environment_id
     }
-    /// <p>The name of the database where you want to create a dataview.</p>
+    /// <p> The name of the database where you want to create a dataview. </p>
     /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the database where you want to create a dataview.</p>
+    /// <p> The name of the database where you want to create a dataview. </p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
-    /// <p>The name of the database where you want to create a dataview.</p>
+    /// <p> The name of the database where you want to create a dataview. </p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.database_name
     }
@@ -155,64 +151,58 @@ impl CreateKxDataviewInputBuilder {
     pub fn get_dataview_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.dataview_name
     }
-    /// <p>The number of availability zones you want to assign per cluster. This can be one of the following</p>
+    /// <p>The number of availability zones you want to assign per cluster. This can be one of the following </p>
     /// <ul>
-    /// <li>
-    /// <p><code>SINGLE</code> – Assigns one availability zone per cluster.</p></li>
-    /// <li>
-    /// <p><code>MULTI</code> – Assigns all the availability zones per cluster.</p></li>
+    /// <li> <p> <code>SINGLE</code> – Assigns one availability zone per cluster.</p> </li>
+    /// <li> <p> <code>MULTI</code> – Assigns all the availability zones per cluster.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn az_mode(mut self, input: crate::types::KxAzMode) -> Self {
         self.az_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of availability zones you want to assign per cluster. This can be one of the following</p>
+    /// <p>The number of availability zones you want to assign per cluster. This can be one of the following </p>
     /// <ul>
-    /// <li>
-    /// <p><code>SINGLE</code> – Assigns one availability zone per cluster.</p></li>
-    /// <li>
-    /// <p><code>MULTI</code> – Assigns all the availability zones per cluster.</p></li>
+    /// <li> <p> <code>SINGLE</code> – Assigns one availability zone per cluster.</p> </li>
+    /// <li> <p> <code>MULTI</code> – Assigns all the availability zones per cluster.</p> </li>
     /// </ul>
     pub fn set_az_mode(mut self, input: ::std::option::Option<crate::types::KxAzMode>) -> Self {
         self.az_mode = input;
         self
     }
-    /// <p>The number of availability zones you want to assign per cluster. This can be one of the following</p>
+    /// <p>The number of availability zones you want to assign per cluster. This can be one of the following </p>
     /// <ul>
-    /// <li>
-    /// <p><code>SINGLE</code> – Assigns one availability zone per cluster.</p></li>
-    /// <li>
-    /// <p><code>MULTI</code> – Assigns all the availability zones per cluster.</p></li>
+    /// <li> <p> <code>SINGLE</code> – Assigns one availability zone per cluster.</p> </li>
+    /// <li> <p> <code>MULTI</code> – Assigns all the availability zones per cluster.</p> </li>
     /// </ul>
     pub fn get_az_mode(&self) -> &::std::option::Option<crate::types::KxAzMode> {
         &self.az_mode
     }
-    /// <p>The identifier of the availability zones.</p>
+    /// <p> The identifier of the availability zones. </p>
     pub fn availability_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the availability zones.</p>
+    /// <p> The identifier of the availability zones. </p>
     pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone_id = input;
         self
     }
-    /// <p>The identifier of the availability zones.</p>
+    /// <p> The identifier of the availability zones. </p>
     pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.availability_zone_id
     }
-    /// <p>A unique identifier of the changeset that you want to use to ingest data.</p>
+    /// <p> A unique identifier of the changeset that you want to use to ingest data. </p>
     pub fn changeset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.changeset_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique identifier of the changeset that you want to use to ingest data.</p>
+    /// <p> A unique identifier of the changeset that you want to use to ingest data. </p>
     pub fn set_changeset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.changeset_id = input;
         self
     }
-    /// <p>A unique identifier of the changeset that you want to use to ingest data.</p>
+    /// <p> A unique identifier of the changeset that you want to use to ingest data. </p>
     pub fn get_changeset_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.changeset_id
     }
@@ -220,19 +210,19 @@ impl CreateKxDataviewInputBuilder {
     ///
     /// To override the contents of this collection use [`set_segment_configurations`](Self::set_segment_configurations).
     ///
-    /// <p>The configuration that contains the database path of the data that you want to place on each selected volume. Each segment must have a unique database path for each volume. If you do not explicitly specify any database path for a volume, they are accessible from the cluster through the default S3/object store segment.</p>
+    /// <p> The configuration that contains the database path of the data that you want to place on each selected volume. Each segment must have a unique database path for each volume. If you do not explicitly specify any database path for a volume, they are accessible from the cluster through the default S3/object store segment. </p>
     pub fn segment_configurations(mut self, input: crate::types::KxDataviewSegmentConfiguration) -> Self {
         let mut v = self.segment_configurations.unwrap_or_default();
         v.push(input);
         self.segment_configurations = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The configuration that contains the database path of the data that you want to place on each selected volume. Each segment must have a unique database path for each volume. If you do not explicitly specify any database path for a volume, they are accessible from the cluster through the default S3/object store segment.</p>
+    /// <p> The configuration that contains the database path of the data that you want to place on each selected volume. Each segment must have a unique database path for each volume. If you do not explicitly specify any database path for a volume, they are accessible from the cluster through the default S3/object store segment. </p>
     pub fn set_segment_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KxDataviewSegmentConfiguration>>) -> Self {
         self.segment_configurations = input;
         self
     }
-    /// <p>The configuration that contains the database path of the data that you want to place on each selected volume. Each segment must have a unique database path for each volume. If you do not explicitly specify any database path for a volume, they are accessible from the cluster through the default S3/object store segment.</p>
+    /// <p> The configuration that contains the database path of the data that you want to place on each selected volume. Each segment must have a unique database path for each volume. If you do not explicitly specify any database path for a volume, they are accessible from the cluster through the default S3/object store segment. </p>
     pub fn get_segment_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KxDataviewSegmentConfiguration>> {
         &self.segment_configurations
     }
@@ -268,19 +258,19 @@ impl CreateKxDataviewInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A list of key-value pairs to label the dataview. You can add up to 50 tags to a dataview.</p>
+    /// <p> A list of key-value pairs to label the dataview. You can add up to 50 tags to a dataview. </p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>A list of key-value pairs to label the dataview. You can add up to 50 tags to a dataview.</p>
+    /// <p> A list of key-value pairs to label the dataview. You can add up to 50 tags to a dataview. </p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>A list of key-value pairs to label the dataview. You can add up to 50 tags to a dataview.</p>
+    /// <p> A list of key-value pairs to label the dataview. You can add up to 50 tags to a dataview. </p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }

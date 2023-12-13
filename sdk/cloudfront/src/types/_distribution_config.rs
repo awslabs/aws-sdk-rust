@@ -27,10 +27,8 @@ pub struct DistributionConfig {
     pub cache_behaviors: ::std::option::Option<crate::types::CacheBehaviors>,
     /// <p>A complex type that controls the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>Whether CloudFront replaces HTTP status codes in the 4xx and 5xx range with custom error messages before returning the response to the viewer.</p></li>
-    /// <li>
-    /// <p>How long CloudFront caches HTTP status codes in the 4xx and 5xx range.</p></li>
+    /// <li> <p>Whether CloudFront replaces HTTP status codes in the 4xx and 5xx range with custom error messages before returning the response to the viewer.</p> </li>
+    /// <li> <p>How long CloudFront caches HTTP status codes in the 4xx and 5xx range.</p> </li>
     /// </ul>
     /// <p>For more information about custom error pages, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub custom_error_responses: ::std::option::Option<crate::types::CustomErrorResponses>,
@@ -60,10 +58,8 @@ pub struct DistributionConfig {
     /// <p>In general, you should enable IPv6 if you have users on IPv6 networks who want to access your content. However, if you're using signed URLs or signed cookies to restrict access to your content, and if you're using a custom policy that includes the <code>IpAddress</code> parameter to restrict the IP addresses that can access your content, don't enable IPv6. If you want to restrict access to some content by IP address and not restrict access to other content (or restrict access but not by IP address), you can create two distributions. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html">Creating a Signed URL Using a Custom Policy</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>If you're using an Route&nbsp;53 Amazon Web Services Integration alias resource record set to route traffic to your CloudFront distribution, you need to create a second alias resource record set when both of the following are true:</p>
     /// <ul>
-    /// <li>
-    /// <p>You enable IPv6 for the distribution</p></li>
-    /// <li>
-    /// <p>You're using alternate domain names in the URLs for your objects</p></li>
+    /// <li> <p>You enable IPv6 for the distribution</p> </li>
+    /// <li> <p>You're using alternate domain names in the URLs for your objects</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html">Routing Traffic to an Amazon CloudFront Web Distribution by Using Your Domain Name</a> in the <i>Route&nbsp;53 Amazon Web Services Integration Developer Guide</i>.</p>
     /// <p>If you created a CNAME resource record set, either with Route&nbsp;53 Amazon Web Services Integration or with another DNS service, you don't need to make any changes. A CNAME record will route traffic to your distribution regardless of the IP address format of the viewer request.</p>
@@ -112,10 +108,8 @@ impl DistributionConfig {
     }
     /// <p>A complex type that controls the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>Whether CloudFront replaces HTTP status codes in the 4xx and 5xx range with custom error messages before returning the response to the viewer.</p></li>
-    /// <li>
-    /// <p>How long CloudFront caches HTTP status codes in the 4xx and 5xx range.</p></li>
+    /// <li> <p>Whether CloudFront replaces HTTP status codes in the 4xx and 5xx range with custom error messages before returning the response to the viewer.</p> </li>
+    /// <li> <p>How long CloudFront caches HTTP status codes in the 4xx and 5xx range.</p> </li>
     /// </ul>
     /// <p>For more information about custom error pages, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub fn custom_error_responses(&self) -> ::std::option::Option<&crate::types::CustomErrorResponses> {
@@ -164,10 +158,8 @@ impl DistributionConfig {
     /// <p>In general, you should enable IPv6 if you have users on IPv6 networks who want to access your content. However, if you're using signed URLs or signed cookies to restrict access to your content, and if you're using a custom policy that includes the <code>IpAddress</code> parameter to restrict the IP addresses that can access your content, don't enable IPv6. If you want to restrict access to some content by IP address and not restrict access to other content (or restrict access but not by IP address), you can create two distributions. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html">Creating a Signed URL Using a Custom Policy</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>If you're using an Route&nbsp;53 Amazon Web Services Integration alias resource record set to route traffic to your CloudFront distribution, you need to create a second alias resource record set when both of the following are true:</p>
     /// <ul>
-    /// <li>
-    /// <p>You enable IPv6 for the distribution</p></li>
-    /// <li>
-    /// <p>You're using alternate domain names in the URLs for your objects</p></li>
+    /// <li> <p>You enable IPv6 for the distribution</p> </li>
+    /// <li> <p>You're using alternate domain names in the URLs for your objects</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html">Routing Traffic to an Amazon CloudFront Web Distribution by Using Your Domain Name</a> in the <i>Route&nbsp;53 Amazon Web Services Integration Developer Guide</i>.</p>
     /// <p>If you created a CNAME resource record set, either with Route&nbsp;53 Amazon Web Services Integration or with another DNS service, you don't need to make any changes. A CNAME record will route traffic to your distribution regardless of the IP address format of the viewer request.</p>
@@ -364,10 +356,8 @@ impl DistributionConfigBuilder {
     }
     /// <p>A complex type that controls the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>Whether CloudFront replaces HTTP status codes in the 4xx and 5xx range with custom error messages before returning the response to the viewer.</p></li>
-    /// <li>
-    /// <p>How long CloudFront caches HTTP status codes in the 4xx and 5xx range.</p></li>
+    /// <li> <p>Whether CloudFront replaces HTTP status codes in the 4xx and 5xx range with custom error messages before returning the response to the viewer.</p> </li>
+    /// <li> <p>How long CloudFront caches HTTP status codes in the 4xx and 5xx range.</p> </li>
     /// </ul>
     /// <p>For more information about custom error pages, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub fn custom_error_responses(mut self, input: crate::types::CustomErrorResponses) -> Self {
@@ -376,10 +366,8 @@ impl DistributionConfigBuilder {
     }
     /// <p>A complex type that controls the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>Whether CloudFront replaces HTTP status codes in the 4xx and 5xx range with custom error messages before returning the response to the viewer.</p></li>
-    /// <li>
-    /// <p>How long CloudFront caches HTTP status codes in the 4xx and 5xx range.</p></li>
+    /// <li> <p>Whether CloudFront replaces HTTP status codes in the 4xx and 5xx range with custom error messages before returning the response to the viewer.</p> </li>
+    /// <li> <p>How long CloudFront caches HTTP status codes in the 4xx and 5xx range.</p> </li>
     /// </ul>
     /// <p>For more information about custom error pages, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub fn set_custom_error_responses(mut self, input: ::std::option::Option<crate::types::CustomErrorResponses>) -> Self {
@@ -388,10 +376,8 @@ impl DistributionConfigBuilder {
     }
     /// <p>A complex type that controls the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>Whether CloudFront replaces HTTP status codes in the 4xx and 5xx range with custom error messages before returning the response to the viewer.</p></li>
-    /// <li>
-    /// <p>How long CloudFront caches HTTP status codes in the 4xx and 5xx range.</p></li>
+    /// <li> <p>Whether CloudFront replaces HTTP status codes in the 4xx and 5xx range with custom error messages before returning the response to the viewer.</p> </li>
+    /// <li> <p>How long CloudFront caches HTTP status codes in the 4xx and 5xx range.</p> </li>
     /// </ul>
     /// <p>For more information about custom error pages, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub fn get_custom_error_responses(&self) -> &::std::option::Option<crate::types::CustomErrorResponses> {
@@ -533,10 +519,8 @@ impl DistributionConfigBuilder {
     /// <p>In general, you should enable IPv6 if you have users on IPv6 networks who want to access your content. However, if you're using signed URLs or signed cookies to restrict access to your content, and if you're using a custom policy that includes the <code>IpAddress</code> parameter to restrict the IP addresses that can access your content, don't enable IPv6. If you want to restrict access to some content by IP address and not restrict access to other content (or restrict access but not by IP address), you can create two distributions. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html">Creating a Signed URL Using a Custom Policy</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>If you're using an Route&nbsp;53 Amazon Web Services Integration alias resource record set to route traffic to your CloudFront distribution, you need to create a second alias resource record set when both of the following are true:</p>
     /// <ul>
-    /// <li>
-    /// <p>You enable IPv6 for the distribution</p></li>
-    /// <li>
-    /// <p>You're using alternate domain names in the URLs for your objects</p></li>
+    /// <li> <p>You enable IPv6 for the distribution</p> </li>
+    /// <li> <p>You're using alternate domain names in the URLs for your objects</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html">Routing Traffic to an Amazon CloudFront Web Distribution by Using Your Domain Name</a> in the <i>Route&nbsp;53 Amazon Web Services Integration Developer Guide</i>.</p>
     /// <p>If you created a CNAME resource record set, either with Route&nbsp;53 Amazon Web Services Integration or with another DNS service, you don't need to make any changes. A CNAME record will route traffic to your distribution regardless of the IP address format of the viewer request.</p>
@@ -548,10 +532,8 @@ impl DistributionConfigBuilder {
     /// <p>In general, you should enable IPv6 if you have users on IPv6 networks who want to access your content. However, if you're using signed URLs or signed cookies to restrict access to your content, and if you're using a custom policy that includes the <code>IpAddress</code> parameter to restrict the IP addresses that can access your content, don't enable IPv6. If you want to restrict access to some content by IP address and not restrict access to other content (or restrict access but not by IP address), you can create two distributions. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html">Creating a Signed URL Using a Custom Policy</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>If you're using an Route&nbsp;53 Amazon Web Services Integration alias resource record set to route traffic to your CloudFront distribution, you need to create a second alias resource record set when both of the following are true:</p>
     /// <ul>
-    /// <li>
-    /// <p>You enable IPv6 for the distribution</p></li>
-    /// <li>
-    /// <p>You're using alternate domain names in the URLs for your objects</p></li>
+    /// <li> <p>You enable IPv6 for the distribution</p> </li>
+    /// <li> <p>You're using alternate domain names in the URLs for your objects</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html">Routing Traffic to an Amazon CloudFront Web Distribution by Using Your Domain Name</a> in the <i>Route&nbsp;53 Amazon Web Services Integration Developer Guide</i>.</p>
     /// <p>If you created a CNAME resource record set, either with Route&nbsp;53 Amazon Web Services Integration or with another DNS service, you don't need to make any changes. A CNAME record will route traffic to your distribution regardless of the IP address format of the viewer request.</p>
@@ -563,10 +545,8 @@ impl DistributionConfigBuilder {
     /// <p>In general, you should enable IPv6 if you have users on IPv6 networks who want to access your content. However, if you're using signed URLs or signed cookies to restrict access to your content, and if you're using a custom policy that includes the <code>IpAddress</code> parameter to restrict the IP addresses that can access your content, don't enable IPv6. If you want to restrict access to some content by IP address and not restrict access to other content (or restrict access but not by IP address), you can create two distributions. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html">Creating a Signed URL Using a Custom Policy</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>If you're using an Route&nbsp;53 Amazon Web Services Integration alias resource record set to route traffic to your CloudFront distribution, you need to create a second alias resource record set when both of the following are true:</p>
     /// <ul>
-    /// <li>
-    /// <p>You enable IPv6 for the distribution</p></li>
-    /// <li>
-    /// <p>You're using alternate domain names in the URLs for your objects</p></li>
+    /// <li> <p>You enable IPv6 for the distribution</p> </li>
+    /// <li> <p>You're using alternate domain names in the URLs for your objects</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html">Routing Traffic to an Amazon CloudFront Web Distribution by Using Your Domain Name</a> in the <i>Route&nbsp;53 Amazon Web Services Integration Developer Guide</i>.</p>
     /// <p>If you created a CNAME resource record set, either with Route&nbsp;53 Amazon Web Services Integration or with another DNS service, you don't need to make any changes. A CNAME record will route traffic to your distribution regardless of the IP address format of the viewer request.</p>

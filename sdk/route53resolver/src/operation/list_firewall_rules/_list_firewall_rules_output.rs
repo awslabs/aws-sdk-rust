@@ -5,8 +5,8 @@
 pub struct ListFirewallRulesOutput {
     /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>A list of the rules that you have defined.</p>
-    /// <p>This might be a partial list of the firewall rules that you've defined. For information, see <code>MaxResults</code>.</p>
+    /// <p>A list of the rules that you have defined. </p>
+    /// <p>This might be a partial list of the firewall rules that you've defined. For information, see <code>MaxResults</code>. </p>
     pub firewall_rules: ::std::option::Option<::std::vec::Vec<crate::types::FirewallRule>>,
     _request_id: Option<String>,
 }
@@ -15,8 +15,8 @@ impl ListFirewallRulesOutput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>A list of the rules that you have defined.</p>
-    /// <p>This might be a partial list of the firewall rules that you've defined. For information, see <code>MaxResults</code>.</p>
+    /// <p>A list of the rules that you have defined. </p>
+    /// <p>This might be a partial list of the firewall rules that you've defined. For information, see <code>MaxResults</code>. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.firewall_rules.is_none()`.
     pub fn firewall_rules(&self) -> &[crate::types::FirewallRule] {
@@ -62,22 +62,22 @@ impl ListFirewallRulesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_firewall_rules`](Self::set_firewall_rules).
     ///
-    /// <p>A list of the rules that you have defined.</p>
-    /// <p>This might be a partial list of the firewall rules that you've defined. For information, see <code>MaxResults</code>.</p>
+    /// <p>A list of the rules that you have defined. </p>
+    /// <p>This might be a partial list of the firewall rules that you've defined. For information, see <code>MaxResults</code>. </p>
     pub fn firewall_rules(mut self, input: crate::types::FirewallRule) -> Self {
         let mut v = self.firewall_rules.unwrap_or_default();
         v.push(input);
         self.firewall_rules = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of the rules that you have defined.</p>
-    /// <p>This might be a partial list of the firewall rules that you've defined. For information, see <code>MaxResults</code>.</p>
+    /// <p>A list of the rules that you have defined. </p>
+    /// <p>This might be a partial list of the firewall rules that you've defined. For information, see <code>MaxResults</code>. </p>
     pub fn set_firewall_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FirewallRule>>) -> Self {
         self.firewall_rules = input;
         self
     }
-    /// <p>A list of the rules that you have defined.</p>
-    /// <p>This might be a partial list of the firewall rules that you've defined. For information, see <code>MaxResults</code>.</p>
+    /// <p>A list of the rules that you have defined. </p>
+    /// <p>This might be a partial list of the firewall rules that you've defined. For information, see <code>MaxResults</code>. </p>
     pub fn get_firewall_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FirewallRule>> {
         &self.firewall_rules
     }

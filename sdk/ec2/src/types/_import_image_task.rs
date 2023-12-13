@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportImageTask {
     /// <p>The architecture of the virtual machine.</p>
-    /// <p>Valid values: <code>i386</code> | <code>x86_64</code> | <code>arm64</code></p>
+    /// <p>Valid values: <code>i386</code> | <code>x86_64</code> | <code>arm64</code> </p>
     pub architecture: ::std::option::Option<::std::string::String>,
     /// <p>A description of the import task.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the image is encrypted.</p>
     pub encrypted: ::std::option::Option<bool>,
     /// <p>The target hypervisor for the import task.</p>
-    /// <p>Valid values: <code>xen</code></p>
+    /// <p>Valid values: <code>xen</code> </p>
     pub hypervisor: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Machine Image (AMI) of the imported virtual machine.</p>
     pub image_id: ::std::option::Option<::std::string::String>,
@@ -43,7 +43,7 @@ pub struct ImportImageTask {
 }
 impl ImportImageTask {
     /// <p>The architecture of the virtual machine.</p>
-    /// <p>Valid values: <code>i386</code> | <code>x86_64</code> | <code>arm64</code></p>
+    /// <p>Valid values: <code>i386</code> | <code>x86_64</code> | <code>arm64</code> </p>
     pub fn architecture(&self) -> ::std::option::Option<&str> {
         self.architecture.as_deref()
     }
@@ -56,7 +56,7 @@ impl ImportImageTask {
         self.encrypted
     }
     /// <p>The target hypervisor for the import task.</p>
-    /// <p>Valid values: <code>xen</code></p>
+    /// <p>Valid values: <code>xen</code> </p>
     pub fn hypervisor(&self) -> ::std::option::Option<&str> {
         self.hypervisor.as_deref()
     }
@@ -150,19 +150,19 @@ pub struct ImportImageTaskBuilder {
 }
 impl ImportImageTaskBuilder {
     /// <p>The architecture of the virtual machine.</p>
-    /// <p>Valid values: <code>i386</code> | <code>x86_64</code> | <code>arm64</code></p>
+    /// <p>Valid values: <code>i386</code> | <code>x86_64</code> | <code>arm64</code> </p>
     pub fn architecture(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.architecture = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The architecture of the virtual machine.</p>
-    /// <p>Valid values: <code>i386</code> | <code>x86_64</code> | <code>arm64</code></p>
+    /// <p>Valid values: <code>i386</code> | <code>x86_64</code> | <code>arm64</code> </p>
     pub fn set_architecture(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.architecture = input;
         self
     }
     /// <p>The architecture of the virtual machine.</p>
-    /// <p>Valid values: <code>i386</code> | <code>x86_64</code> | <code>arm64</code></p>
+    /// <p>Valid values: <code>i386</code> | <code>x86_64</code> | <code>arm64</code> </p>
     pub fn get_architecture(&self) -> &::std::option::Option<::std::string::String> {
         &self.architecture
     }
@@ -195,19 +195,19 @@ impl ImportImageTaskBuilder {
         &self.encrypted
     }
     /// <p>The target hypervisor for the import task.</p>
-    /// <p>Valid values: <code>xen</code></p>
+    /// <p>Valid values: <code>xen</code> </p>
     pub fn hypervisor(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hypervisor = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The target hypervisor for the import task.</p>
-    /// <p>Valid values: <code>xen</code></p>
+    /// <p>Valid values: <code>xen</code> </p>
     pub fn set_hypervisor(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hypervisor = input;
         self
     }
     /// <p>The target hypervisor for the import task.</p>
-    /// <p>Valid values: <code>xen</code></p>
+    /// <p>Valid values: <code>xen</code> </p>
     pub fn get_hypervisor(&self) -> &::std::option::Option<::std::string::String> {
         &self.hypervisor
     }

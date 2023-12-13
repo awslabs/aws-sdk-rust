@@ -22,7 +22,7 @@ impl ListLfTagsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListLFTags`.
 ///
-/// <p>Lists LF-tags that the requester has permission to view.</p>
+/// <p>Lists LF-tags that the requester has permission to view. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListLFTagsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,17 +114,17 @@ impl ListLFTagsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_lf_tags::paginator::ListLfTagsPaginator {
         crate::operation::list_lf_tags::paginator::ListLfTagsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.</p>
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     pub fn catalog_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.catalog_id(input.into());
         self
     }
-    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.</p>
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_catalog_id(input);
         self
     }
-    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.</p>
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_catalog_id()
     }

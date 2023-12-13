@@ -9,8 +9,8 @@ pub struct CreateUpdatedWorkspaceImageInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the source WorkSpace image.</p>
     pub source_image_id: ::std::option::Option<::std::string::String>,
-    /// <p>The tags that you want to add to the new updated WorkSpace image.</p><note>
-    /// <p>To add tags at the same time when you're creating the updated image, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>.</p>
+    /// <p>The tags that you want to add to the new updated WorkSpace image.</p> <note>
+    /// <p>To add tags at the same time when you're creating the updated image, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
     /// </note>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
@@ -27,8 +27,8 @@ impl CreateUpdatedWorkspaceImageInput {
     pub fn source_image_id(&self) -> ::std::option::Option<&str> {
         self.source_image_id.as_deref()
     }
-    /// <p>The tags that you want to add to the new updated WorkSpace image.</p><note>
-    /// <p>To add tags at the same time when you're creating the updated image, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>.</p>
+    /// <p>The tags that you want to add to the new updated WorkSpace image.</p> <note>
+    /// <p>To add tags at the same time when you're creating the updated image, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
     /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
@@ -102,8 +102,8 @@ impl CreateUpdatedWorkspaceImageInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The tags that you want to add to the new updated WorkSpace image.</p><note>
-    /// <p>To add tags at the same time when you're creating the updated image, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>.</p>
+    /// <p>The tags that you want to add to the new updated WorkSpace image.</p> <note>
+    /// <p>To add tags at the same time when you're creating the updated image, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
     /// </note>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
@@ -111,15 +111,15 @@ impl CreateUpdatedWorkspaceImageInputBuilder {
         self.tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The tags that you want to add to the new updated WorkSpace image.</p><note>
-    /// <p>To add tags at the same time when you're creating the updated image, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>.</p>
+    /// <p>The tags that you want to add to the new updated WorkSpace image.</p> <note>
+    /// <p>To add tags at the same time when you're creating the updated image, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
     /// </note>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>The tags that you want to add to the new updated WorkSpace image.</p><note>
-    /// <p>To add tags at the same time when you're creating the updated image, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>.</p>
+    /// <p>The tags that you want to add to the new updated WorkSpace image.</p> <note>
+    /// <p>To add tags at the same time when you're creating the updated image, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
     /// </note>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags

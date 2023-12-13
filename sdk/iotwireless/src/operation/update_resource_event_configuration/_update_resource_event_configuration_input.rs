@@ -7,7 +7,7 @@ pub struct UpdateResourceEventConfigurationInput {
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>Identifier type of the particular resource identifier for event configuration.</p>
     pub identifier_type: ::std::option::Option<crate::types::IdentifierType>,
-    /// <p>Partner type of the resource if the identifier type is <code>PartnerAccountId</code></p>
+    /// <p>Partner type of the resource if the identifier type is <code>PartnerAccountId</code> </p>
     pub partner_type: ::std::option::Option<crate::types::EventNotificationPartnerType>,
     /// <p>Event configuration for the device registration state event.</p>
     pub device_registration_state: ::std::option::Option<crate::types::DeviceRegistrationStateEventConfiguration>,
@@ -29,7 +29,7 @@ impl UpdateResourceEventConfigurationInput {
     pub fn identifier_type(&self) -> ::std::option::Option<&crate::types::IdentifierType> {
         self.identifier_type.as_ref()
     }
-    /// <p>Partner type of the resource if the identifier type is <code>PartnerAccountId</code></p>
+    /// <p>Partner type of the resource if the identifier type is <code>PartnerAccountId</code> </p>
     pub fn partner_type(&self) -> ::std::option::Option<&crate::types::EventNotificationPartnerType> {
         self.partner_type.as_ref()
     }
@@ -105,17 +105,17 @@ impl UpdateResourceEventConfigurationInputBuilder {
     pub fn get_identifier_type(&self) -> &::std::option::Option<crate::types::IdentifierType> {
         &self.identifier_type
     }
-    /// <p>Partner type of the resource if the identifier type is <code>PartnerAccountId</code></p>
+    /// <p>Partner type of the resource if the identifier type is <code>PartnerAccountId</code> </p>
     pub fn partner_type(mut self, input: crate::types::EventNotificationPartnerType) -> Self {
         self.partner_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Partner type of the resource if the identifier type is <code>PartnerAccountId</code></p>
+    /// <p>Partner type of the resource if the identifier type is <code>PartnerAccountId</code> </p>
     pub fn set_partner_type(mut self, input: ::std::option::Option<crate::types::EventNotificationPartnerType>) -> Self {
         self.partner_type = input;
         self
     }
-    /// <p>Partner type of the resource if the identifier type is <code>PartnerAccountId</code></p>
+    /// <p>Partner type of the resource if the identifier type is <code>PartnerAccountId</code> </p>
     pub fn get_partner_type(&self) -> &::std::option::Option<crate::types::EventNotificationPartnerType> {
         &self.partner_type
     }

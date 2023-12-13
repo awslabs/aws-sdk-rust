@@ -9,29 +9,20 @@ pub struct OrganizationConformancePackStatus {
     /// <p>Indicates deployment status of an organization conformance pack. When management account calls PutOrganizationConformancePack for the first time, conformance pack status is created in all the member accounts. When management account calls PutOrganizationConformancePack for the second time, conformance pack status is updated in all the member accounts. Additionally, conformance pack status is updated when one or more member accounts join or leave an organization. Conformance pack status is deleted when the management account deletes OrganizationConformancePack in all the member accounts and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
     /// <p>Config sets the state of the conformance pack to:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATE_SUCCESSFUL</code> when an organization conformance pack has been successfully created in all the member accounts.</p></li>
-    /// <li>
-    /// <p><code>CREATE_IN_PROGRESS</code> when an organization conformance pack creation is in progress.</p></li>
-    /// <li>
-    /// <p><code>CREATE_FAILED</code> when an organization conformance pack creation failed in one or more member accounts within that organization.</p></li>
-    /// <li>
-    /// <p><code>DELETE_FAILED</code> when an organization conformance pack deletion failed in one or more member accounts within that organization.</p></li>
-    /// <li>
-    /// <p><code>DELETE_IN_PROGRESS</code> when an organization conformance pack deletion is in progress.</p></li>
-    /// <li>
-    /// <p><code>DELETE_SUCCESSFUL</code> when an organization conformance pack has been successfully deleted from all the member accounts.</p></li>
-    /// <li>
-    /// <p><code>UPDATE_SUCCESSFUL</code> when an organization conformance pack has been successfully updated in all the member accounts.</p></li>
-    /// <li>
-    /// <p><code>UPDATE_IN_PROGRESS</code> when an organization conformance pack update is in progress.</p></li>
-    /// <li>
-    /// <p><code>UPDATE_FAILED</code> when an organization conformance pack update failed in one or more member accounts within that organization.</p></li>
+    /// <li> <p> <code>CREATE_SUCCESSFUL</code> when an organization conformance pack has been successfully created in all the member accounts. </p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> when an organization conformance pack creation is in progress.</p> </li>
+    /// <li> <p> <code>CREATE_FAILED</code> when an organization conformance pack creation failed in one or more member accounts within that organization.</p> </li>
+    /// <li> <p> <code>DELETE_FAILED</code> when an organization conformance pack deletion failed in one or more member accounts within that organization.</p> </li>
+    /// <li> <p> <code>DELETE_IN_PROGRESS</code> when an organization conformance pack deletion is in progress.</p> </li>
+    /// <li> <p> <code>DELETE_SUCCESSFUL</code> when an organization conformance pack has been successfully deleted from all the member accounts.</p> </li>
+    /// <li> <p> <code>UPDATE_SUCCESSFUL</code> when an organization conformance pack has been successfully updated in all the member accounts.</p> </li>
+    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> when an organization conformance pack update is in progress.</p> </li>
+    /// <li> <p> <code>UPDATE_FAILED</code> when an organization conformance pack update failed in one or more member accounts within that organization.</p> </li>
     /// </ul>
     pub status: crate::types::OrganizationResourceStatus,
-    /// <p>An error code that is returned when organization conformance pack creation or deletion has failed in a member account.</p>
+    /// <p>An error code that is returned when organization conformance pack creation or deletion has failed in a member account. </p>
     pub error_code: ::std::option::Option<::std::string::String>,
-    /// <p>An error message indicating that organization conformance pack creation or deletion failed due to an error.</p>
+    /// <p>An error message indicating that organization conformance pack creation or deletion failed due to an error. </p>
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp of the last update.</p>
     pub last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -45,33 +36,24 @@ impl OrganizationConformancePackStatus {
     /// <p>Indicates deployment status of an organization conformance pack. When management account calls PutOrganizationConformancePack for the first time, conformance pack status is created in all the member accounts. When management account calls PutOrganizationConformancePack for the second time, conformance pack status is updated in all the member accounts. Additionally, conformance pack status is updated when one or more member accounts join or leave an organization. Conformance pack status is deleted when the management account deletes OrganizationConformancePack in all the member accounts and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
     /// <p>Config sets the state of the conformance pack to:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATE_SUCCESSFUL</code> when an organization conformance pack has been successfully created in all the member accounts.</p></li>
-    /// <li>
-    /// <p><code>CREATE_IN_PROGRESS</code> when an organization conformance pack creation is in progress.</p></li>
-    /// <li>
-    /// <p><code>CREATE_FAILED</code> when an organization conformance pack creation failed in one or more member accounts within that organization.</p></li>
-    /// <li>
-    /// <p><code>DELETE_FAILED</code> when an organization conformance pack deletion failed in one or more member accounts within that organization.</p></li>
-    /// <li>
-    /// <p><code>DELETE_IN_PROGRESS</code> when an organization conformance pack deletion is in progress.</p></li>
-    /// <li>
-    /// <p><code>DELETE_SUCCESSFUL</code> when an organization conformance pack has been successfully deleted from all the member accounts.</p></li>
-    /// <li>
-    /// <p><code>UPDATE_SUCCESSFUL</code> when an organization conformance pack has been successfully updated in all the member accounts.</p></li>
-    /// <li>
-    /// <p><code>UPDATE_IN_PROGRESS</code> when an organization conformance pack update is in progress.</p></li>
-    /// <li>
-    /// <p><code>UPDATE_FAILED</code> when an organization conformance pack update failed in one or more member accounts within that organization.</p></li>
+    /// <li> <p> <code>CREATE_SUCCESSFUL</code> when an organization conformance pack has been successfully created in all the member accounts. </p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> when an organization conformance pack creation is in progress.</p> </li>
+    /// <li> <p> <code>CREATE_FAILED</code> when an organization conformance pack creation failed in one or more member accounts within that organization.</p> </li>
+    /// <li> <p> <code>DELETE_FAILED</code> when an organization conformance pack deletion failed in one or more member accounts within that organization.</p> </li>
+    /// <li> <p> <code>DELETE_IN_PROGRESS</code> when an organization conformance pack deletion is in progress.</p> </li>
+    /// <li> <p> <code>DELETE_SUCCESSFUL</code> when an organization conformance pack has been successfully deleted from all the member accounts.</p> </li>
+    /// <li> <p> <code>UPDATE_SUCCESSFUL</code> when an organization conformance pack has been successfully updated in all the member accounts.</p> </li>
+    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> when an organization conformance pack update is in progress.</p> </li>
+    /// <li> <p> <code>UPDATE_FAILED</code> when an organization conformance pack update failed in one or more member accounts within that organization.</p> </li>
     /// </ul>
     pub fn status(&self) -> &crate::types::OrganizationResourceStatus {
         &self.status
     }
-    /// <p>An error code that is returned when organization conformance pack creation or deletion has failed in a member account.</p>
+    /// <p>An error code that is returned when organization conformance pack creation or deletion has failed in a member account. </p>
     pub fn error_code(&self) -> ::std::option::Option<&str> {
         self.error_code.as_deref()
     }
-    /// <p>An error message indicating that organization conformance pack creation or deletion failed due to an error.</p>
+    /// <p>An error message indicating that organization conformance pack creation or deletion failed due to an error. </p>
     pub fn error_message(&self) -> ::std::option::Option<&str> {
         self.error_message.as_deref()
     }
@@ -116,24 +98,15 @@ impl OrganizationConformancePackStatusBuilder {
     /// <p>Indicates deployment status of an organization conformance pack. When management account calls PutOrganizationConformancePack for the first time, conformance pack status is created in all the member accounts. When management account calls PutOrganizationConformancePack for the second time, conformance pack status is updated in all the member accounts. Additionally, conformance pack status is updated when one or more member accounts join or leave an organization. Conformance pack status is deleted when the management account deletes OrganizationConformancePack in all the member accounts and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
     /// <p>Config sets the state of the conformance pack to:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATE_SUCCESSFUL</code> when an organization conformance pack has been successfully created in all the member accounts.</p></li>
-    /// <li>
-    /// <p><code>CREATE_IN_PROGRESS</code> when an organization conformance pack creation is in progress.</p></li>
-    /// <li>
-    /// <p><code>CREATE_FAILED</code> when an organization conformance pack creation failed in one or more member accounts within that organization.</p></li>
-    /// <li>
-    /// <p><code>DELETE_FAILED</code> when an organization conformance pack deletion failed in one or more member accounts within that organization.</p></li>
-    /// <li>
-    /// <p><code>DELETE_IN_PROGRESS</code> when an organization conformance pack deletion is in progress.</p></li>
-    /// <li>
-    /// <p><code>DELETE_SUCCESSFUL</code> when an organization conformance pack has been successfully deleted from all the member accounts.</p></li>
-    /// <li>
-    /// <p><code>UPDATE_SUCCESSFUL</code> when an organization conformance pack has been successfully updated in all the member accounts.</p></li>
-    /// <li>
-    /// <p><code>UPDATE_IN_PROGRESS</code> when an organization conformance pack update is in progress.</p></li>
-    /// <li>
-    /// <p><code>UPDATE_FAILED</code> when an organization conformance pack update failed in one or more member accounts within that organization.</p></li>
+    /// <li> <p> <code>CREATE_SUCCESSFUL</code> when an organization conformance pack has been successfully created in all the member accounts. </p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> when an organization conformance pack creation is in progress.</p> </li>
+    /// <li> <p> <code>CREATE_FAILED</code> when an organization conformance pack creation failed in one or more member accounts within that organization.</p> </li>
+    /// <li> <p> <code>DELETE_FAILED</code> when an organization conformance pack deletion failed in one or more member accounts within that organization.</p> </li>
+    /// <li> <p> <code>DELETE_IN_PROGRESS</code> when an organization conformance pack deletion is in progress.</p> </li>
+    /// <li> <p> <code>DELETE_SUCCESSFUL</code> when an organization conformance pack has been successfully deleted from all the member accounts.</p> </li>
+    /// <li> <p> <code>UPDATE_SUCCESSFUL</code> when an organization conformance pack has been successfully updated in all the member accounts.</p> </li>
+    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> when an organization conformance pack update is in progress.</p> </li>
+    /// <li> <p> <code>UPDATE_FAILED</code> when an organization conformance pack update failed in one or more member accounts within that organization.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn status(mut self, input: crate::types::OrganizationResourceStatus) -> Self {
@@ -143,24 +116,15 @@ impl OrganizationConformancePackStatusBuilder {
     /// <p>Indicates deployment status of an organization conformance pack. When management account calls PutOrganizationConformancePack for the first time, conformance pack status is created in all the member accounts. When management account calls PutOrganizationConformancePack for the second time, conformance pack status is updated in all the member accounts. Additionally, conformance pack status is updated when one or more member accounts join or leave an organization. Conformance pack status is deleted when the management account deletes OrganizationConformancePack in all the member accounts and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
     /// <p>Config sets the state of the conformance pack to:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATE_SUCCESSFUL</code> when an organization conformance pack has been successfully created in all the member accounts.</p></li>
-    /// <li>
-    /// <p><code>CREATE_IN_PROGRESS</code> when an organization conformance pack creation is in progress.</p></li>
-    /// <li>
-    /// <p><code>CREATE_FAILED</code> when an organization conformance pack creation failed in one or more member accounts within that organization.</p></li>
-    /// <li>
-    /// <p><code>DELETE_FAILED</code> when an organization conformance pack deletion failed in one or more member accounts within that organization.</p></li>
-    /// <li>
-    /// <p><code>DELETE_IN_PROGRESS</code> when an organization conformance pack deletion is in progress.</p></li>
-    /// <li>
-    /// <p><code>DELETE_SUCCESSFUL</code> when an organization conformance pack has been successfully deleted from all the member accounts.</p></li>
-    /// <li>
-    /// <p><code>UPDATE_SUCCESSFUL</code> when an organization conformance pack has been successfully updated in all the member accounts.</p></li>
-    /// <li>
-    /// <p><code>UPDATE_IN_PROGRESS</code> when an organization conformance pack update is in progress.</p></li>
-    /// <li>
-    /// <p><code>UPDATE_FAILED</code> when an organization conformance pack update failed in one or more member accounts within that organization.</p></li>
+    /// <li> <p> <code>CREATE_SUCCESSFUL</code> when an organization conformance pack has been successfully created in all the member accounts. </p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> when an organization conformance pack creation is in progress.</p> </li>
+    /// <li> <p> <code>CREATE_FAILED</code> when an organization conformance pack creation failed in one or more member accounts within that organization.</p> </li>
+    /// <li> <p> <code>DELETE_FAILED</code> when an organization conformance pack deletion failed in one or more member accounts within that organization.</p> </li>
+    /// <li> <p> <code>DELETE_IN_PROGRESS</code> when an organization conformance pack deletion is in progress.</p> </li>
+    /// <li> <p> <code>DELETE_SUCCESSFUL</code> when an organization conformance pack has been successfully deleted from all the member accounts.</p> </li>
+    /// <li> <p> <code>UPDATE_SUCCESSFUL</code> when an organization conformance pack has been successfully updated in all the member accounts.</p> </li>
+    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> when an organization conformance pack update is in progress.</p> </li>
+    /// <li> <p> <code>UPDATE_FAILED</code> when an organization conformance pack update failed in one or more member accounts within that organization.</p> </li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::OrganizationResourceStatus>) -> Self {
         self.status = input;
@@ -169,53 +133,44 @@ impl OrganizationConformancePackStatusBuilder {
     /// <p>Indicates deployment status of an organization conformance pack. When management account calls PutOrganizationConformancePack for the first time, conformance pack status is created in all the member accounts. When management account calls PutOrganizationConformancePack for the second time, conformance pack status is updated in all the member accounts. Additionally, conformance pack status is updated when one or more member accounts join or leave an organization. Conformance pack status is deleted when the management account deletes OrganizationConformancePack in all the member accounts and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
     /// <p>Config sets the state of the conformance pack to:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATE_SUCCESSFUL</code> when an organization conformance pack has been successfully created in all the member accounts.</p></li>
-    /// <li>
-    /// <p><code>CREATE_IN_PROGRESS</code> when an organization conformance pack creation is in progress.</p></li>
-    /// <li>
-    /// <p><code>CREATE_FAILED</code> when an organization conformance pack creation failed in one or more member accounts within that organization.</p></li>
-    /// <li>
-    /// <p><code>DELETE_FAILED</code> when an organization conformance pack deletion failed in one or more member accounts within that organization.</p></li>
-    /// <li>
-    /// <p><code>DELETE_IN_PROGRESS</code> when an organization conformance pack deletion is in progress.</p></li>
-    /// <li>
-    /// <p><code>DELETE_SUCCESSFUL</code> when an organization conformance pack has been successfully deleted from all the member accounts.</p></li>
-    /// <li>
-    /// <p><code>UPDATE_SUCCESSFUL</code> when an organization conformance pack has been successfully updated in all the member accounts.</p></li>
-    /// <li>
-    /// <p><code>UPDATE_IN_PROGRESS</code> when an organization conformance pack update is in progress.</p></li>
-    /// <li>
-    /// <p><code>UPDATE_FAILED</code> when an organization conformance pack update failed in one or more member accounts within that organization.</p></li>
+    /// <li> <p> <code>CREATE_SUCCESSFUL</code> when an organization conformance pack has been successfully created in all the member accounts. </p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> when an organization conformance pack creation is in progress.</p> </li>
+    /// <li> <p> <code>CREATE_FAILED</code> when an organization conformance pack creation failed in one or more member accounts within that organization.</p> </li>
+    /// <li> <p> <code>DELETE_FAILED</code> when an organization conformance pack deletion failed in one or more member accounts within that organization.</p> </li>
+    /// <li> <p> <code>DELETE_IN_PROGRESS</code> when an organization conformance pack deletion is in progress.</p> </li>
+    /// <li> <p> <code>DELETE_SUCCESSFUL</code> when an organization conformance pack has been successfully deleted from all the member accounts.</p> </li>
+    /// <li> <p> <code>UPDATE_SUCCESSFUL</code> when an organization conformance pack has been successfully updated in all the member accounts.</p> </li>
+    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> when an organization conformance pack update is in progress.</p> </li>
+    /// <li> <p> <code>UPDATE_FAILED</code> when an organization conformance pack update failed in one or more member accounts within that organization.</p> </li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::OrganizationResourceStatus> {
         &self.status
     }
-    /// <p>An error code that is returned when organization conformance pack creation or deletion has failed in a member account.</p>
+    /// <p>An error code that is returned when organization conformance pack creation or deletion has failed in a member account. </p>
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An error code that is returned when organization conformance pack creation or deletion has failed in a member account.</p>
+    /// <p>An error code that is returned when organization conformance pack creation or deletion has failed in a member account. </p>
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_code = input;
         self
     }
-    /// <p>An error code that is returned when organization conformance pack creation or deletion has failed in a member account.</p>
+    /// <p>An error code that is returned when organization conformance pack creation or deletion has failed in a member account. </p>
     pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.error_code
     }
-    /// <p>An error message indicating that organization conformance pack creation or deletion failed due to an error.</p>
+    /// <p>An error message indicating that organization conformance pack creation or deletion failed due to an error. </p>
     pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An error message indicating that organization conformance pack creation or deletion failed due to an error.</p>
+    /// <p>An error message indicating that organization conformance pack creation or deletion failed due to an error. </p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }
-    /// <p>An error message indicating that organization conformance pack creation or deletion failed due to an error.</p>
+    /// <p>An error message indicating that organization conformance pack creation or deletion failed due to an error. </p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.error_message
     }

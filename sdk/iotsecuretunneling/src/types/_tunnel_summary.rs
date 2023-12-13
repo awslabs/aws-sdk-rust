@@ -6,7 +6,7 @@
 pub struct TunnelSummary {
     /// <p>The unique alpha-numeric identifier for the tunnel.</p>
     pub tunnel_id: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name of the tunnel.</p>
+    /// <p>The Amazon Resource Name of the tunnel. </p>
     pub tunnel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of a tunnel. Valid values are: Open and Closed.</p>
     pub status: ::std::option::Option<crate::types::TunnelStatus>,
@@ -22,7 +22,7 @@ impl TunnelSummary {
     pub fn tunnel_id(&self) -> ::std::option::Option<&str> {
         self.tunnel_id.as_deref()
     }
-    /// <p>The Amazon Resource Name of the tunnel.</p>
+    /// <p>The Amazon Resource Name of the tunnel. </p>
     pub fn tunnel_arn(&self) -> ::std::option::Option<&str> {
         self.tunnel_arn.as_deref()
     }
@@ -76,17 +76,17 @@ impl TunnelSummaryBuilder {
     pub fn get_tunnel_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.tunnel_id
     }
-    /// <p>The Amazon Resource Name of the tunnel.</p>
+    /// <p>The Amazon Resource Name of the tunnel. </p>
     pub fn tunnel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tunnel_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name of the tunnel.</p>
+    /// <p>The Amazon Resource Name of the tunnel. </p>
     pub fn set_tunnel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tunnel_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name of the tunnel.</p>
+    /// <p>The Amazon Resource Name of the tunnel. </p>
     pub fn get_tunnel_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.tunnel_arn
     }

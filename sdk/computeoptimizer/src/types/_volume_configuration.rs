@@ -17,7 +17,7 @@ pub struct VolumeConfiguration {
     pub volume_baseline_throughput: i32,
     /// <p>The burst throughput of the volume.</p>
     pub volume_burst_throughput: i32,
-    /// <p>Contains the image used to boot the instance during launch.</p>
+    /// <p> Contains the image used to boot the instance during launch. </p>
     pub root_volume: ::std::option::Option<bool>,
 }
 impl VolumeConfiguration {
@@ -46,7 +46,7 @@ impl VolumeConfiguration {
     pub fn volume_burst_throughput(&self) -> i32 {
         self.volume_burst_throughput
     }
-    /// <p>Contains the image used to boot the instance during launch.</p>
+    /// <p> Contains the image used to boot the instance during launch. </p>
     pub fn root_volume(&self) -> ::std::option::Option<bool> {
         self.root_volume
     }
@@ -158,17 +158,17 @@ impl VolumeConfigurationBuilder {
     pub fn get_volume_burst_throughput(&self) -> &::std::option::Option<i32> {
         &self.volume_burst_throughput
     }
-    /// <p>Contains the image used to boot the instance during launch.</p>
+    /// <p> Contains the image used to boot the instance during launch. </p>
     pub fn root_volume(mut self, input: bool) -> Self {
         self.root_volume = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Contains the image used to boot the instance during launch.</p>
+    /// <p> Contains the image used to boot the instance during launch. </p>
     pub fn set_root_volume(mut self, input: ::std::option::Option<bool>) -> Self {
         self.root_volume = input;
         self
     }
-    /// <p>Contains the image used to boot the instance during launch.</p>
+    /// <p> Contains the image used to boot the instance during launch. </p>
     pub fn get_root_volume(&self) -> &::std::option::Option<bool> {
         &self.root_volume
     }

@@ -133,19 +133,19 @@ impl StopInstancesFluentBuilder {
         self.inner.get_instance_ids()
     }
     /// <p>Hibernates the instance if the instance was enabled for hibernation at launch. If the instance cannot hibernate successfully, a normal shutdown occurs. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p> Default: <code>false</code> </p>
     pub fn hibernate(mut self, input: bool) -> Self {
         self.inner = self.inner.hibernate(input);
         self
     }
     /// <p>Hibernates the instance if the instance was enabled for hibernation at launch. If the instance cannot hibernate successfully, a normal shutdown occurs. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p> Default: <code>false</code> </p>
     pub fn set_hibernate(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_hibernate(input);
         self
     }
     /// <p>Hibernates the instance if the instance was enabled for hibernation at launch. If the instance cannot hibernate successfully, a normal shutdown occurs. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p> Default: <code>false</code> </p>
     pub fn get_hibernate(&self) -> &::std::option::Option<bool> {
         self.inner.get_hibernate()
     }
@@ -164,19 +164,19 @@ impl StopInstancesFluentBuilder {
         self.inner.get_dry_run()
     }
     /// <p>Forces the instances to stop. The instances do not have an opportunity to flush file system caches or file system metadata. If you use this option, you must perform file system check and repair procedures. This option is not recommended for Windows instances.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p>Default: <code>false</code> </p>
     pub fn force(mut self, input: bool) -> Self {
         self.inner = self.inner.force(input);
         self
     }
     /// <p>Forces the instances to stop. The instances do not have an opportunity to flush file system caches or file system metadata. If you use this option, you must perform file system check and repair procedures. This option is not recommended for Windows instances.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p>Default: <code>false</code> </p>
     pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_force(input);
         self
     }
     /// <p>Forces the instances to stop. The instances do not have an opportunity to flush file system caches or file system metadata. If you use this option, you must perform file system check and repair procedures. This option is not recommended for Windows instances.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p>Default: <code>false</code> </p>
     pub fn get_force(&self) -> &::std::option::Option<bool> {
         self.inner.get_force()
     }

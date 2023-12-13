@@ -22,8 +22,8 @@ impl UpdateSchemaMappingInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateSchemaMapping`.
 ///
-/// <p>Updates a schema mapping.</p><note>
-/// <p>A schema is immutable if it is being used by a workflow. Therefore, you can't update a schema mapping if it's associated with a workflow.</p>
+/// <p>Updates a schema mapping.</p> <note>
+/// <p>A schema is immutable if it is being used by a workflow. Therefore, you can't update a schema mapping if it's associated with a workflow. </p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateSchemaMappingFluentBuilder {

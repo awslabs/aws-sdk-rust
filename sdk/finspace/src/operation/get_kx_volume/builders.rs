@@ -22,7 +22,7 @@ impl GetKxVolumeInputBuilder {
 }
 /// Fluent builder constructing a request to `GetKxVolume`.
 ///
-/// <p>Retrieves the information about the volume.</p>
+/// <p> Retrieves the information about the volume. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetKxVolumeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl GetKxVolumeFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume.</p>
+    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume. </p>
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_id(input.into());
         self
     }
-    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume.</p>
+    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume. </p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_id(input);
         self
     }
-    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume.</p>
+    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume. </p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_environment_id()
     }

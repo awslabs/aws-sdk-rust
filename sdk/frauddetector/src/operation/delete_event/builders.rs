@@ -137,17 +137,17 @@ impl DeleteEventFluentBuilder {
     pub fn get_event_type_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_event_type_name()
     }
-    /// <p>Specifies whether or not to delete any predictions associated with the event. If set to <code>True</code>,</p>
+    /// <p>Specifies whether or not to delete any predictions associated with the event. If set to <code>True</code>, </p>
     pub fn delete_audit_history(mut self, input: bool) -> Self {
         self.inner = self.inner.delete_audit_history(input);
         self
     }
-    /// <p>Specifies whether or not to delete any predictions associated with the event. If set to <code>True</code>,</p>
+    /// <p>Specifies whether or not to delete any predictions associated with the event. If set to <code>True</code>, </p>
     pub fn set_delete_audit_history(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_delete_audit_history(input);
         self
     }
-    /// <p>Specifies whether or not to delete any predictions associated with the event. If set to <code>True</code>,</p>
+    /// <p>Specifies whether or not to delete any predictions associated with the event. If set to <code>True</code>, </p>
     pub fn get_delete_audit_history(&self) -> &::std::option::Option<bool> {
         self.inner.get_delete_audit_history()
     }

@@ -22,8 +22,8 @@ impl ListFirewallRuleGroupAssociationsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListFirewallRuleGroupAssociations`.
 ///
-/// <p>Retrieves the firewall rule group associations that you have defined. Each association enables DNS filtering for a VPC with one rule group.</p>
-/// <p>A single call might return only a partial list of the associations. For information, see <code>MaxResults</code>.</p>
+/// <p>Retrieves the firewall rule group associations that you have defined. Each association enables DNS filtering for a VPC with one rule group. </p>
+/// <p>A single call might return only a partial list of the associations. For information, see <code>MaxResults</code>. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListFirewallRuleGroupAssociationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -115,45 +115,45 @@ impl ListFirewallRuleGroupAssociationsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_firewall_rule_group_associations::paginator::ListFirewallRuleGroupAssociationsPaginator {
         crate::operation::list_firewall_rule_group_associations::paginator::ListFirewallRuleGroupAssociationsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The unique identifier of the firewall rule group that you want to retrieve the associations for. Leave this blank to retrieve associations for any rule group.</p>
+    /// <p>The unique identifier of the firewall rule group that you want to retrieve the associations for. Leave this blank to retrieve associations for any rule group. </p>
     pub fn firewall_rule_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.firewall_rule_group_id(input.into());
         self
     }
-    /// <p>The unique identifier of the firewall rule group that you want to retrieve the associations for. Leave this blank to retrieve associations for any rule group.</p>
+    /// <p>The unique identifier of the firewall rule group that you want to retrieve the associations for. Leave this blank to retrieve associations for any rule group. </p>
     pub fn set_firewall_rule_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_firewall_rule_group_id(input);
         self
     }
-    /// <p>The unique identifier of the firewall rule group that you want to retrieve the associations for. Leave this blank to retrieve associations for any rule group.</p>
+    /// <p>The unique identifier of the firewall rule group that you want to retrieve the associations for. Leave this blank to retrieve associations for any rule group. </p>
     pub fn get_firewall_rule_group_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_firewall_rule_group_id()
     }
-    /// <p>The unique identifier of the VPC that you want to retrieve the associations for. Leave this blank to retrieve associations for any VPC.</p>
+    /// <p>The unique identifier of the VPC that you want to retrieve the associations for. Leave this blank to retrieve associations for any VPC. </p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_id(input.into());
         self
     }
-    /// <p>The unique identifier of the VPC that you want to retrieve the associations for. Leave this blank to retrieve associations for any VPC.</p>
+    /// <p>The unique identifier of the VPC that you want to retrieve the associations for. Leave this blank to retrieve associations for any VPC. </p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpc_id(input);
         self
     }
-    /// <p>The unique identifier of the VPC that you want to retrieve the associations for. Leave this blank to retrieve associations for any VPC.</p>
+    /// <p>The unique identifier of the VPC that you want to retrieve the associations for. Leave this blank to retrieve associations for any VPC. </p>
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_vpc_id()
     }
-    /// <p>The setting that determines the processing order of the rule group among the rule groups that are associated with a single VPC. DNS Firewall filters VPC traffic starting from the rule group with the lowest numeric priority setting.</p>
+    /// <p>The setting that determines the processing order of the rule group among the rule groups that are associated with a single VPC. DNS Firewall filters VPC traffic starting from the rule group with the lowest numeric priority setting. </p>
     pub fn priority(mut self, input: i32) -> Self {
         self.inner = self.inner.priority(input);
         self
     }
-    /// <p>The setting that determines the processing order of the rule group among the rule groups that are associated with a single VPC. DNS Firewall filters VPC traffic starting from the rule group with the lowest numeric priority setting.</p>
+    /// <p>The setting that determines the processing order of the rule group among the rule groups that are associated with a single VPC. DNS Firewall filters VPC traffic starting from the rule group with the lowest numeric priority setting. </p>
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_priority(input);
         self
     }
-    /// <p>The setting that determines the processing order of the rule group among the rule groups that are associated with a single VPC. DNS Firewall filters VPC traffic starting from the rule group with the lowest numeric priority setting.</p>
+    /// <p>The setting that determines the processing order of the rule group among the rule groups that are associated with a single VPC. DNS Firewall filters VPC traffic starting from the rule group with the lowest numeric priority setting. </p>
     pub fn get_priority(&self) -> &::std::option::Option<i32> {
         self.inner.get_priority()
     }
@@ -172,19 +172,19 @@ impl ListFirewallRuleGroupAssociationsFluentBuilder {
         self.inner.get_status()
     }
     /// <p>The maximum number of objects that you want Resolver to return for this request. If more objects are available, in the response, Resolver provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
-    /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects.</p>
+    /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
     /// <p>The maximum number of objects that you want Resolver to return for this request. If more objects are available, in the response, Resolver provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
-    /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects.</p>
+    /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
     /// <p>The maximum number of objects that you want Resolver to return for this request. If more objects are available, in the response, Resolver provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
-    /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects.</p>
+    /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

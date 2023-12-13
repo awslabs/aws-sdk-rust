@@ -21,7 +21,7 @@ pub struct ModifyEventSubscriptionInput {
     /// <p>Specifies the Amazon Redshift event severity to be published by the event notification subscription.</p>
     /// <p>Values: ERROR, INFO</p>
     pub severity: ::std::option::Option<::std::string::String>,
-    /// <p>A Boolean value indicating if the subscription is enabled. <code>true</code> indicates the subscription is enabled</p>
+    /// <p>A Boolean value indicating if the subscription is enabled. <code>true</code> indicates the subscription is enabled </p>
     pub enabled: ::std::option::Option<bool>,
 }
 impl ModifyEventSubscriptionInput {
@@ -58,7 +58,7 @@ impl ModifyEventSubscriptionInput {
     pub fn severity(&self) -> ::std::option::Option<&str> {
         self.severity.as_deref()
     }
-    /// <p>A Boolean value indicating if the subscription is enabled. <code>true</code> indicates the subscription is enabled</p>
+    /// <p>A Boolean value indicating if the subscription is enabled. <code>true</code> indicates the subscription is enabled </p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
@@ -195,17 +195,17 @@ impl ModifyEventSubscriptionInputBuilder {
     pub fn get_severity(&self) -> &::std::option::Option<::std::string::String> {
         &self.severity
     }
-    /// <p>A Boolean value indicating if the subscription is enabled. <code>true</code> indicates the subscription is enabled</p>
+    /// <p>A Boolean value indicating if the subscription is enabled. <code>true</code> indicates the subscription is enabled </p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A Boolean value indicating if the subscription is enabled. <code>true</code> indicates the subscription is enabled</p>
+    /// <p>A Boolean value indicating if the subscription is enabled. <code>true</code> indicates the subscription is enabled </p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }
-    /// <p>A Boolean value indicating if the subscription is enabled. <code>true</code> indicates the subscription is enabled</p>
+    /// <p>A Boolean value indicating if the subscription is enabled. <code>true</code> indicates the subscription is enabled </p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
         &self.enabled
     }

@@ -8,7 +8,7 @@ pub struct EdgeDeploymentPlanSummary {
     pub edge_deployment_plan_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the edge deployment plan.</p>
     pub edge_deployment_plan_name: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the device fleet used for the deployment.</p>
+    /// <p>The name of the device fleet used for the deployment. </p>
     pub device_fleet_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of edge devices with the successful deployment.</p>
     pub edge_deployment_success: ::std::option::Option<i32>,
@@ -30,7 +30,7 @@ impl EdgeDeploymentPlanSummary {
     pub fn edge_deployment_plan_name(&self) -> ::std::option::Option<&str> {
         self.edge_deployment_plan_name.as_deref()
     }
-    /// <p>The name of the device fleet used for the deployment.</p>
+    /// <p>The name of the device fleet used for the deployment. </p>
     pub fn device_fleet_name(&self) -> ::std::option::Option<&str> {
         self.device_fleet_name.as_deref()
     }
@@ -106,18 +106,18 @@ impl EdgeDeploymentPlanSummaryBuilder {
     pub fn get_edge_deployment_plan_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.edge_deployment_plan_name
     }
-    /// <p>The name of the device fleet used for the deployment.</p>
+    /// <p>The name of the device fleet used for the deployment. </p>
     /// This field is required.
     pub fn device_fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_fleet_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the device fleet used for the deployment.</p>
+    /// <p>The name of the device fleet used for the deployment. </p>
     pub fn set_device_fleet_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_fleet_name = input;
         self
     }
-    /// <p>The name of the device fleet used for the deployment.</p>
+    /// <p>The name of the device fleet used for the deployment. </p>
     pub fn get_device_fleet_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.device_fleet_name
     }

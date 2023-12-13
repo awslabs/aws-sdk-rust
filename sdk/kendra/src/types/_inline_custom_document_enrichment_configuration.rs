@@ -9,7 +9,7 @@ pub struct InlineCustomDocumentEnrichmentConfiguration {
     pub condition: ::std::option::Option<crate::types::DocumentAttributeCondition>,
     /// <p>Configuration of the target document attribute or metadata field when ingesting documents into Amazon Kendra. You can also include a value.</p>
     pub target: ::std::option::Option<crate::types::DocumentAttributeTarget>,
-    /// <p><code>TRUE</code> to delete content if the condition used for the target attribute is met.</p>
+    /// <p> <code>TRUE</code> to delete content if the condition used for the target attribute is met.</p>
     pub document_content_deletion: bool,
 }
 impl InlineCustomDocumentEnrichmentConfiguration {
@@ -21,7 +21,7 @@ impl InlineCustomDocumentEnrichmentConfiguration {
     pub fn target(&self) -> ::std::option::Option<&crate::types::DocumentAttributeTarget> {
         self.target.as_ref()
     }
-    /// <p><code>TRUE</code> to delete content if the condition used for the target attribute is met.</p>
+    /// <p> <code>TRUE</code> to delete content if the condition used for the target attribute is met.</p>
     pub fn document_content_deletion(&self) -> bool {
         self.document_content_deletion
     }
@@ -70,17 +70,17 @@ impl InlineCustomDocumentEnrichmentConfigurationBuilder {
     pub fn get_target(&self) -> &::std::option::Option<crate::types::DocumentAttributeTarget> {
         &self.target
     }
-    /// <p><code>TRUE</code> to delete content if the condition used for the target attribute is met.</p>
+    /// <p> <code>TRUE</code> to delete content if the condition used for the target attribute is met.</p>
     pub fn document_content_deletion(mut self, input: bool) -> Self {
         self.document_content_deletion = ::std::option::Option::Some(input);
         self
     }
-    /// <p><code>TRUE</code> to delete content if the condition used for the target attribute is met.</p>
+    /// <p> <code>TRUE</code> to delete content if the condition used for the target attribute is met.</p>
     pub fn set_document_content_deletion(mut self, input: ::std::option::Option<bool>) -> Self {
         self.document_content_deletion = input;
         self
     }
-    /// <p><code>TRUE</code> to delete content if the condition used for the target attribute is met.</p>
+    /// <p> <code>TRUE</code> to delete content if the condition used for the target attribute is met.</p>
     pub fn get_document_content_deletion(&self) -> &::std::option::Option<bool> {
         &self.document_content_deletion
     }

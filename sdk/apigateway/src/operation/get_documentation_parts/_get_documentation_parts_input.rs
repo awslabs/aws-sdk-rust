@@ -6,7 +6,7 @@
 pub struct GetDocumentationPartsInput {
     /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: ::std::option::Option<::std::string::String>,
-    /// <p>The type of API entities of the to-be-retrieved documentation parts.</p>
+    /// <p>The type of API entities of the to-be-retrieved documentation parts. </p>
     pub r#type: ::std::option::Option<crate::types::DocumentationPartType>,
     /// <p>The name of API entities of the to-be-retrieved documentation parts.</p>
     pub name_query: ::std::option::Option<::std::string::String>,
@@ -24,7 +24,7 @@ impl GetDocumentationPartsInput {
     pub fn rest_api_id(&self) -> ::std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>The type of API entities of the to-be-retrieved documentation parts.</p>
+    /// <p>The type of API entities of the to-be-retrieved documentation parts. </p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::DocumentationPartType> {
         self.r#type.as_ref()
     }
@@ -84,17 +84,17 @@ impl GetDocumentationPartsInputBuilder {
     pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.rest_api_id
     }
-    /// <p>The type of API entities of the to-be-retrieved documentation parts.</p>
+    /// <p>The type of API entities of the to-be-retrieved documentation parts. </p>
     pub fn r#type(mut self, input: crate::types::DocumentationPartType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of API entities of the to-be-retrieved documentation parts.</p>
+    /// <p>The type of API entities of the to-be-retrieved documentation parts. </p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::DocumentationPartType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The type of API entities of the to-be-retrieved documentation parts.</p>
+    /// <p>The type of API entities of the to-be-retrieved documentation parts. </p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::DocumentationPartType> {
         &self.r#type
     }

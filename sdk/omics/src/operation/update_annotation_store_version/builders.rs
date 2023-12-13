@@ -22,7 +22,7 @@ impl UpdateAnnotationStoreVersionInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateAnnotationStoreVersion`.
 ///
-/// <p>Updates the description of an annotation store version.</p>
+/// <p> Updates the description of an annotation store version. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAnnotationStoreVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,45 +108,45 @@ impl UpdateAnnotationStoreVersionFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of an annotation store.</p>
+    /// <p> The name of an annotation store. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of an annotation store.</p>
+    /// <p> The name of an annotation store. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name of an annotation store.</p>
+    /// <p> The name of an annotation store. </p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>The name of an annotation store version.</p>
+    /// <p> The name of an annotation store version. </p>
     pub fn version_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.version_name(input.into());
         self
     }
-    /// <p>The name of an annotation store version.</p>
+    /// <p> The name of an annotation store version. </p>
     pub fn set_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_version_name(input);
         self
     }
-    /// <p>The name of an annotation store version.</p>
+    /// <p> The name of an annotation store version. </p>
     pub fn get_version_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_version_name()
     }
-    /// <p>The description of an annotation store.</p>
+    /// <p> The description of an annotation store. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>The description of an annotation store.</p>
+    /// <p> The description of an annotation store. </p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>The description of an annotation store.</p>
+    /// <p> The description of an annotation store. </p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }

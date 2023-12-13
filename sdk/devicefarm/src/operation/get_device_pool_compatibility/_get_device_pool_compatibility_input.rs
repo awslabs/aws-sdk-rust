@@ -11,42 +11,24 @@ pub struct GetDevicePoolCompatibilityInput {
     /// <p>The test type for the specified device pool.</p>
     /// <p>Allowed values include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>BUILTIN_FUZZ.</p></li>
-    /// <li>
-    /// <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p></li>
-    /// <li>
-    /// <p>APPIUM_JAVA_JUNIT.</p></li>
-    /// <li>
-    /// <p>APPIUM_JAVA_TESTNG.</p></li>
-    /// <li>
-    /// <p>APPIUM_PYTHON.</p></li>
-    /// <li>
-    /// <p>APPIUM_NODE.</p></li>
-    /// <li>
-    /// <p>APPIUM_RUBY.</p></li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_JUNIT.</p></li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_TESTNG.</p></li>
-    /// <li>
-    /// <p>APPIUM_WEB_PYTHON.</p></li>
-    /// <li>
-    /// <p>APPIUM_WEB_NODE.</p></li>
-    /// <li>
-    /// <p>APPIUM_WEB_RUBY.</p></li>
-    /// <li>
-    /// <p>CALABASH.</p></li>
-    /// <li>
-    /// <p>INSTRUMENTATION.</p></li>
-    /// <li>
-    /// <p>UIAUTOMATION.</p></li>
-    /// <li>
-    /// <p>UIAUTOMATOR.</p></li>
-    /// <li>
-    /// <p>XCTEST.</p></li>
-    /// <li>
-    /// <p>XCTEST_UI.</p></li>
+    /// <li> <p>BUILTIN_FUZZ.</p> </li>
+    /// <li> <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p> </li>
+    /// <li> <p>APPIUM_JAVA_JUNIT.</p> </li>
+    /// <li> <p>APPIUM_JAVA_TESTNG.</p> </li>
+    /// <li> <p>APPIUM_PYTHON.</p> </li>
+    /// <li> <p>APPIUM_NODE.</p> </li>
+    /// <li> <p>APPIUM_RUBY.</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_JUNIT.</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_TESTNG.</p> </li>
+    /// <li> <p>APPIUM_WEB_PYTHON.</p> </li>
+    /// <li> <p>APPIUM_WEB_NODE.</p> </li>
+    /// <li> <p>APPIUM_WEB_RUBY.</p> </li>
+    /// <li> <p>CALABASH.</p> </li>
+    /// <li> <p>INSTRUMENTATION.</p> </li>
+    /// <li> <p>UIAUTOMATION.</p> </li>
+    /// <li> <p>UIAUTOMATOR.</p> </li>
+    /// <li> <p>XCTEST.</p> </li>
+    /// <li> <p>XCTEST_UI.</p> </li>
     /// </ul>
     pub test_type: ::std::option::Option<crate::types::TestType>,
     /// <p>Information about the uploaded test to be run against the device pool.</p>
@@ -66,42 +48,24 @@ impl GetDevicePoolCompatibilityInput {
     /// <p>The test type for the specified device pool.</p>
     /// <p>Allowed values include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>BUILTIN_FUZZ.</p></li>
-    /// <li>
-    /// <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p></li>
-    /// <li>
-    /// <p>APPIUM_JAVA_JUNIT.</p></li>
-    /// <li>
-    /// <p>APPIUM_JAVA_TESTNG.</p></li>
-    /// <li>
-    /// <p>APPIUM_PYTHON.</p></li>
-    /// <li>
-    /// <p>APPIUM_NODE.</p></li>
-    /// <li>
-    /// <p>APPIUM_RUBY.</p></li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_JUNIT.</p></li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_TESTNG.</p></li>
-    /// <li>
-    /// <p>APPIUM_WEB_PYTHON.</p></li>
-    /// <li>
-    /// <p>APPIUM_WEB_NODE.</p></li>
-    /// <li>
-    /// <p>APPIUM_WEB_RUBY.</p></li>
-    /// <li>
-    /// <p>CALABASH.</p></li>
-    /// <li>
-    /// <p>INSTRUMENTATION.</p></li>
-    /// <li>
-    /// <p>UIAUTOMATION.</p></li>
-    /// <li>
-    /// <p>UIAUTOMATOR.</p></li>
-    /// <li>
-    /// <p>XCTEST.</p></li>
-    /// <li>
-    /// <p>XCTEST_UI.</p></li>
+    /// <li> <p>BUILTIN_FUZZ.</p> </li>
+    /// <li> <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p> </li>
+    /// <li> <p>APPIUM_JAVA_JUNIT.</p> </li>
+    /// <li> <p>APPIUM_JAVA_TESTNG.</p> </li>
+    /// <li> <p>APPIUM_PYTHON.</p> </li>
+    /// <li> <p>APPIUM_NODE.</p> </li>
+    /// <li> <p>APPIUM_RUBY.</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_JUNIT.</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_TESTNG.</p> </li>
+    /// <li> <p>APPIUM_WEB_PYTHON.</p> </li>
+    /// <li> <p>APPIUM_WEB_NODE.</p> </li>
+    /// <li> <p>APPIUM_WEB_RUBY.</p> </li>
+    /// <li> <p>CALABASH.</p> </li>
+    /// <li> <p>INSTRUMENTATION.</p> </li>
+    /// <li> <p>UIAUTOMATION.</p> </li>
+    /// <li> <p>UIAUTOMATOR.</p> </li>
+    /// <li> <p>XCTEST.</p> </li>
+    /// <li> <p>XCTEST_UI.</p> </li>
     /// </ul>
     pub fn test_type(&self) -> ::std::option::Option<&crate::types::TestType> {
         self.test_type.as_ref()
@@ -165,42 +129,24 @@ impl GetDevicePoolCompatibilityInputBuilder {
     /// <p>The test type for the specified device pool.</p>
     /// <p>Allowed values include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>BUILTIN_FUZZ.</p></li>
-    /// <li>
-    /// <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p></li>
-    /// <li>
-    /// <p>APPIUM_JAVA_JUNIT.</p></li>
-    /// <li>
-    /// <p>APPIUM_JAVA_TESTNG.</p></li>
-    /// <li>
-    /// <p>APPIUM_PYTHON.</p></li>
-    /// <li>
-    /// <p>APPIUM_NODE.</p></li>
-    /// <li>
-    /// <p>APPIUM_RUBY.</p></li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_JUNIT.</p></li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_TESTNG.</p></li>
-    /// <li>
-    /// <p>APPIUM_WEB_PYTHON.</p></li>
-    /// <li>
-    /// <p>APPIUM_WEB_NODE.</p></li>
-    /// <li>
-    /// <p>APPIUM_WEB_RUBY.</p></li>
-    /// <li>
-    /// <p>CALABASH.</p></li>
-    /// <li>
-    /// <p>INSTRUMENTATION.</p></li>
-    /// <li>
-    /// <p>UIAUTOMATION.</p></li>
-    /// <li>
-    /// <p>UIAUTOMATOR.</p></li>
-    /// <li>
-    /// <p>XCTEST.</p></li>
-    /// <li>
-    /// <p>XCTEST_UI.</p></li>
+    /// <li> <p>BUILTIN_FUZZ.</p> </li>
+    /// <li> <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p> </li>
+    /// <li> <p>APPIUM_JAVA_JUNIT.</p> </li>
+    /// <li> <p>APPIUM_JAVA_TESTNG.</p> </li>
+    /// <li> <p>APPIUM_PYTHON.</p> </li>
+    /// <li> <p>APPIUM_NODE.</p> </li>
+    /// <li> <p>APPIUM_RUBY.</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_JUNIT.</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_TESTNG.</p> </li>
+    /// <li> <p>APPIUM_WEB_PYTHON.</p> </li>
+    /// <li> <p>APPIUM_WEB_NODE.</p> </li>
+    /// <li> <p>APPIUM_WEB_RUBY.</p> </li>
+    /// <li> <p>CALABASH.</p> </li>
+    /// <li> <p>INSTRUMENTATION.</p> </li>
+    /// <li> <p>UIAUTOMATION.</p> </li>
+    /// <li> <p>UIAUTOMATOR.</p> </li>
+    /// <li> <p>XCTEST.</p> </li>
+    /// <li> <p>XCTEST_UI.</p> </li>
     /// </ul>
     pub fn test_type(mut self, input: crate::types::TestType) -> Self {
         self.test_type = ::std::option::Option::Some(input);
@@ -209,42 +155,24 @@ impl GetDevicePoolCompatibilityInputBuilder {
     /// <p>The test type for the specified device pool.</p>
     /// <p>Allowed values include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>BUILTIN_FUZZ.</p></li>
-    /// <li>
-    /// <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p></li>
-    /// <li>
-    /// <p>APPIUM_JAVA_JUNIT.</p></li>
-    /// <li>
-    /// <p>APPIUM_JAVA_TESTNG.</p></li>
-    /// <li>
-    /// <p>APPIUM_PYTHON.</p></li>
-    /// <li>
-    /// <p>APPIUM_NODE.</p></li>
-    /// <li>
-    /// <p>APPIUM_RUBY.</p></li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_JUNIT.</p></li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_TESTNG.</p></li>
-    /// <li>
-    /// <p>APPIUM_WEB_PYTHON.</p></li>
-    /// <li>
-    /// <p>APPIUM_WEB_NODE.</p></li>
-    /// <li>
-    /// <p>APPIUM_WEB_RUBY.</p></li>
-    /// <li>
-    /// <p>CALABASH.</p></li>
-    /// <li>
-    /// <p>INSTRUMENTATION.</p></li>
-    /// <li>
-    /// <p>UIAUTOMATION.</p></li>
-    /// <li>
-    /// <p>UIAUTOMATOR.</p></li>
-    /// <li>
-    /// <p>XCTEST.</p></li>
-    /// <li>
-    /// <p>XCTEST_UI.</p></li>
+    /// <li> <p>BUILTIN_FUZZ.</p> </li>
+    /// <li> <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p> </li>
+    /// <li> <p>APPIUM_JAVA_JUNIT.</p> </li>
+    /// <li> <p>APPIUM_JAVA_TESTNG.</p> </li>
+    /// <li> <p>APPIUM_PYTHON.</p> </li>
+    /// <li> <p>APPIUM_NODE.</p> </li>
+    /// <li> <p>APPIUM_RUBY.</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_JUNIT.</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_TESTNG.</p> </li>
+    /// <li> <p>APPIUM_WEB_PYTHON.</p> </li>
+    /// <li> <p>APPIUM_WEB_NODE.</p> </li>
+    /// <li> <p>APPIUM_WEB_RUBY.</p> </li>
+    /// <li> <p>CALABASH.</p> </li>
+    /// <li> <p>INSTRUMENTATION.</p> </li>
+    /// <li> <p>UIAUTOMATION.</p> </li>
+    /// <li> <p>UIAUTOMATOR.</p> </li>
+    /// <li> <p>XCTEST.</p> </li>
+    /// <li> <p>XCTEST_UI.</p> </li>
     /// </ul>
     pub fn set_test_type(mut self, input: ::std::option::Option<crate::types::TestType>) -> Self {
         self.test_type = input;
@@ -253,42 +181,24 @@ impl GetDevicePoolCompatibilityInputBuilder {
     /// <p>The test type for the specified device pool.</p>
     /// <p>Allowed values include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>BUILTIN_FUZZ.</p></li>
-    /// <li>
-    /// <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p></li>
-    /// <li>
-    /// <p>APPIUM_JAVA_JUNIT.</p></li>
-    /// <li>
-    /// <p>APPIUM_JAVA_TESTNG.</p></li>
-    /// <li>
-    /// <p>APPIUM_PYTHON.</p></li>
-    /// <li>
-    /// <p>APPIUM_NODE.</p></li>
-    /// <li>
-    /// <p>APPIUM_RUBY.</p></li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_JUNIT.</p></li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_TESTNG.</p></li>
-    /// <li>
-    /// <p>APPIUM_WEB_PYTHON.</p></li>
-    /// <li>
-    /// <p>APPIUM_WEB_NODE.</p></li>
-    /// <li>
-    /// <p>APPIUM_WEB_RUBY.</p></li>
-    /// <li>
-    /// <p>CALABASH.</p></li>
-    /// <li>
-    /// <p>INSTRUMENTATION.</p></li>
-    /// <li>
-    /// <p>UIAUTOMATION.</p></li>
-    /// <li>
-    /// <p>UIAUTOMATOR.</p></li>
-    /// <li>
-    /// <p>XCTEST.</p></li>
-    /// <li>
-    /// <p>XCTEST_UI.</p></li>
+    /// <li> <p>BUILTIN_FUZZ.</p> </li>
+    /// <li> <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p> </li>
+    /// <li> <p>APPIUM_JAVA_JUNIT.</p> </li>
+    /// <li> <p>APPIUM_JAVA_TESTNG.</p> </li>
+    /// <li> <p>APPIUM_PYTHON.</p> </li>
+    /// <li> <p>APPIUM_NODE.</p> </li>
+    /// <li> <p>APPIUM_RUBY.</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_JUNIT.</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_TESTNG.</p> </li>
+    /// <li> <p>APPIUM_WEB_PYTHON.</p> </li>
+    /// <li> <p>APPIUM_WEB_NODE.</p> </li>
+    /// <li> <p>APPIUM_WEB_RUBY.</p> </li>
+    /// <li> <p>CALABASH.</p> </li>
+    /// <li> <p>INSTRUMENTATION.</p> </li>
+    /// <li> <p>UIAUTOMATION.</p> </li>
+    /// <li> <p>UIAUTOMATOR.</p> </li>
+    /// <li> <p>XCTEST.</p> </li>
+    /// <li> <p>XCTEST_UI.</p> </li>
     /// </ul>
     pub fn get_test_type(&self) -> &::std::option::Option<crate::types::TestType> {
         &self.test_type

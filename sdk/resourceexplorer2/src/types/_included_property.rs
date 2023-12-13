@@ -7,8 +7,7 @@ pub struct IncludedProperty {
     /// <p>The name of the property that is included in this view.</p>
     /// <p>You can specify the following property names for this field:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Tags</code></p></li>
+    /// <li> <p> <code>Tags</code> </p> </li>
     /// </ul>
     pub name: ::std::string::String,
 }
@@ -16,8 +15,7 @@ impl IncludedProperty {
     /// <p>The name of the property that is included in this view.</p>
     /// <p>You can specify the following property names for this field:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Tags</code></p></li>
+    /// <li> <p> <code>Tags</code> </p> </li>
     /// </ul>
     pub fn name(&self) -> &str {
         use std::ops::Deref;
@@ -41,8 +39,7 @@ impl IncludedPropertyBuilder {
     /// <p>The name of the property that is included in this view.</p>
     /// <p>You can specify the following property names for this field:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Tags</code></p></li>
+    /// <li> <p> <code>Tags</code> </p> </li>
     /// </ul>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -52,8 +49,7 @@ impl IncludedPropertyBuilder {
     /// <p>The name of the property that is included in this view.</p>
     /// <p>You can specify the following property names for this field:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Tags</code></p></li>
+    /// <li> <p> <code>Tags</code> </p> </li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
@@ -62,8 +58,7 @@ impl IncludedPropertyBuilder {
     /// <p>The name of the property that is included in this view.</p>
     /// <p>You can specify the following property names for this field:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Tags</code></p></li>
+    /// <li> <p> <code>Tags</code> </p> </li>
     /// </ul>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name

@@ -31,7 +31,7 @@ pub struct GetAnnotationStoreOutput {
     pub status_message: ::std::string::String,
     /// <p>The store's size in bytes.</p>
     pub store_size_bytes: i64,
-    /// <p>An integer indicating how many versions of an annotation store exist.</p>
+    /// <p> An integer indicating how many versions of an annotation store exist. </p>
     pub num_versions: i32,
     _request_id: Option<String>,
 }
@@ -97,7 +97,7 @@ impl GetAnnotationStoreOutput {
     pub fn store_size_bytes(&self) -> i64 {
         self.store_size_bytes
     }
-    /// <p>An integer indicating how many versions of an annotation store exist.</p>
+    /// <p> An integer indicating how many versions of an annotation store exist. </p>
     pub fn num_versions(&self) -> i32 {
         self.num_versions
     }
@@ -349,18 +349,18 @@ impl GetAnnotationStoreOutputBuilder {
     pub fn get_store_size_bytes(&self) -> &::std::option::Option<i64> {
         &self.store_size_bytes
     }
-    /// <p>An integer indicating how many versions of an annotation store exist.</p>
+    /// <p> An integer indicating how many versions of an annotation store exist. </p>
     /// This field is required.
     pub fn num_versions(mut self, input: i32) -> Self {
         self.num_versions = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An integer indicating how many versions of an annotation store exist.</p>
+    /// <p> An integer indicating how many versions of an annotation store exist. </p>
     pub fn set_num_versions(mut self, input: ::std::option::Option<i32>) -> Self {
         self.num_versions = input;
         self
     }
-    /// <p>An integer indicating how many versions of an annotation store exist.</p>
+    /// <p> An integer indicating how many versions of an annotation store exist. </p>
     pub fn get_num_versions(&self) -> &::std::option::Option<i32> {
         &self.num_versions
     }

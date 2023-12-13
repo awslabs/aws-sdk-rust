@@ -22,7 +22,7 @@ impl UpdateDirectorySetupInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateDirectorySetup`.
 ///
-/// <p>Updates the directory for a particular update type.</p>
+/// <p> Updates the directory for a particular update type. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDirectorySetupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,59 +108,59 @@ impl UpdateDirectorySetupFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier of the directory on which you want to perform the update.</p>
+    /// <p> The identifier of the directory on which you want to perform the update. </p>
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.directory_id(input.into());
         self
     }
-    /// <p>The identifier of the directory on which you want to perform the update.</p>
+    /// <p> The identifier of the directory on which you want to perform the update. </p>
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_directory_id(input);
         self
     }
-    /// <p>The identifier of the directory on which you want to perform the update.</p>
+    /// <p> The identifier of the directory on which you want to perform the update. </p>
     pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_directory_id()
     }
-    /// <p>The type of update that needs to be performed on the directory. For example, OS.</p>
+    /// <p> The type of update that needs to be performed on the directory. For example, OS. </p>
     pub fn update_type(mut self, input: crate::types::UpdateType) -> Self {
         self.inner = self.inner.update_type(input);
         self
     }
-    /// <p>The type of update that needs to be performed on the directory. For example, OS.</p>
+    /// <p> The type of update that needs to be performed on the directory. For example, OS. </p>
     pub fn set_update_type(mut self, input: ::std::option::Option<crate::types::UpdateType>) -> Self {
         self.inner = self.inner.set_update_type(input);
         self
     }
-    /// <p>The type of update that needs to be performed on the directory. For example, OS.</p>
+    /// <p> The type of update that needs to be performed on the directory. For example, OS. </p>
     pub fn get_update_type(&self) -> &::std::option::Option<crate::types::UpdateType> {
         self.inner.get_update_type()
     }
-    /// <p>The settings for the OS update that needs to be performed on the directory.</p>
+    /// <p> The settings for the OS update that needs to be performed on the directory. </p>
     pub fn os_update_settings(mut self, input: crate::types::OsUpdateSettings) -> Self {
         self.inner = self.inner.os_update_settings(input);
         self
     }
-    /// <p>The settings for the OS update that needs to be performed on the directory.</p>
+    /// <p> The settings for the OS update that needs to be performed on the directory. </p>
     pub fn set_os_update_settings(mut self, input: ::std::option::Option<crate::types::OsUpdateSettings>) -> Self {
         self.inner = self.inner.set_os_update_settings(input);
         self
     }
-    /// <p>The settings for the OS update that needs to be performed on the directory.</p>
+    /// <p> The settings for the OS update that needs to be performed on the directory. </p>
     pub fn get_os_update_settings(&self) -> &::std::option::Option<crate::types::OsUpdateSettings> {
         self.inner.get_os_update_settings()
     }
-    /// <p>The boolean that specifies if a snapshot for the directory needs to be taken before updating the directory.</p>
+    /// <p> The boolean that specifies if a snapshot for the directory needs to be taken before updating the directory. </p>
     pub fn create_snapshot_before_update(mut self, input: bool) -> Self {
         self.inner = self.inner.create_snapshot_before_update(input);
         self
     }
-    /// <p>The boolean that specifies if a snapshot for the directory needs to be taken before updating the directory.</p>
+    /// <p> The boolean that specifies if a snapshot for the directory needs to be taken before updating the directory. </p>
     pub fn set_create_snapshot_before_update(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_create_snapshot_before_update(input);
         self
     }
-    /// <p>The boolean that specifies if a snapshot for the directory needs to be taken before updating the directory.</p>
+    /// <p> The boolean that specifies if a snapshot for the directory needs to be taken before updating the directory. </p>
     pub fn get_create_snapshot_before_update(&self) -> &::std::option::Option<bool> {
         self.inner.get_create_snapshot_before_update()
     }

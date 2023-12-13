@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder takes no input, just [`send`](crate::operation::deregister_account::builders::DeregisterAccountFluentBuilder::send) it.
     /// - On success, responds with [`DeregisterAccountOutput`](crate::operation::deregister_account::DeregisterAccountOutput) with field(s):
-    ///   - [`status(Option<AccountStatus>)`](crate::operation::deregister_account::DeregisterAccountOutput::status): <p>The registration status of the account.</p>
+    ///   - [`status(Option<AccountStatus>)`](crate::operation::deregister_account::DeregisterAccountOutput::status): <p> The registration status of the account. </p>
     /// - On failure, responds with [`SdkError<DeregisterAccountError>`](crate::operation::deregister_account::DeregisterAccountError)
     pub fn deregister_account(&self) -> crate::operation::deregister_account::builders::DeregisterAccountFluentBuilder {
         crate::operation::deregister_account::builders::DeregisterAccountFluentBuilder::new(self.handle.clone())

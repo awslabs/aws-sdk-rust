@@ -4,17 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LandingZoneOperationDetail {
-    /// <p>The landing zone operation type.</p>
+    /// <p>The landing zone operation type. </p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>DELETE</code>: The <code>DeleteLandingZone</code> operation.</p></li>
-    /// <li>
-    /// <p><code>CREATE</code>: The <code>CreateLandingZone</code> operation.</p></li>
-    /// <li>
-    /// <p><code>UPDATE</code>: The <code>UpdateLandingZone</code> operation.</p></li>
-    /// <li>
-    /// <p><code>RESET</code>: The <code>ResetLandingZone</code> operation.</p></li>
+    /// <li> <p> <code>DELETE</code>: The <code>DeleteLandingZone</code> operation. </p> </li>
+    /// <li> <p> <code>CREATE</code>: The <code>CreateLandingZone</code> operation. </p> </li>
+    /// <li> <p> <code>UPDATE</code>: The <code>UpdateLandingZone</code> operation. </p> </li>
+    /// <li> <p> <code>RESET</code>: The <code>ResetLandingZone</code> operation. </p> </li>
     /// </ul>
     pub operation_type: ::std::option::Option<crate::types::LandingZoneOperationType>,
     /// <p>The landing zone operation start time.</p>
@@ -23,29 +19,22 @@ pub struct LandingZoneOperationDetail {
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SUCCEEDED</code>: The landing zone operation succeeded.</p></li>
-    /// <li>
-    /// <p><code>IN_PROGRESS</code>: The landing zone operation is in progress.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code>: The landing zone operation failed.</p></li>
+    /// <li> <p> <code>SUCCEEDED</code>: The landing zone operation succeeded. </p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code>: The landing zone operation is in progress. </p> </li>
+    /// <li> <p> <code>FAILED</code>: The landing zone operation failed. </p> </li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::LandingZoneOperationStatus>,
     /// <p>If the operation result is FAILED, this string contains a message explaining why the operation failed.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
 }
 impl LandingZoneOperationDetail {
-    /// <p>The landing zone operation type.</p>
+    /// <p>The landing zone operation type. </p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>DELETE</code>: The <code>DeleteLandingZone</code> operation.</p></li>
-    /// <li>
-    /// <p><code>CREATE</code>: The <code>CreateLandingZone</code> operation.</p></li>
-    /// <li>
-    /// <p><code>UPDATE</code>: The <code>UpdateLandingZone</code> operation.</p></li>
-    /// <li>
-    /// <p><code>RESET</code>: The <code>ResetLandingZone</code> operation.</p></li>
+    /// <li> <p> <code>DELETE</code>: The <code>DeleteLandingZone</code> operation. </p> </li>
+    /// <li> <p> <code>CREATE</code>: The <code>CreateLandingZone</code> operation. </p> </li>
+    /// <li> <p> <code>UPDATE</code>: The <code>UpdateLandingZone</code> operation. </p> </li>
+    /// <li> <p> <code>RESET</code>: The <code>ResetLandingZone</code> operation. </p> </li>
     /// </ul>
     pub fn operation_type(&self) -> ::std::option::Option<&crate::types::LandingZoneOperationType> {
         self.operation_type.as_ref()
@@ -60,12 +49,9 @@ impl LandingZoneOperationDetail {
     }
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SUCCEEDED</code>: The landing zone operation succeeded.</p></li>
-    /// <li>
-    /// <p><code>IN_PROGRESS</code>: The landing zone operation is in progress.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code>: The landing zone operation failed.</p></li>
+    /// <li> <p> <code>SUCCEEDED</code>: The landing zone operation succeeded. </p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code>: The landing zone operation is in progress. </p> </li>
+    /// <li> <p> <code>FAILED</code>: The landing zone operation failed. </p> </li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::LandingZoneOperationStatus> {
         self.status.as_ref()
@@ -93,49 +79,37 @@ pub struct LandingZoneOperationDetailBuilder {
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
 }
 impl LandingZoneOperationDetailBuilder {
-    /// <p>The landing zone operation type.</p>
+    /// <p>The landing zone operation type. </p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>DELETE</code>: The <code>DeleteLandingZone</code> operation.</p></li>
-    /// <li>
-    /// <p><code>CREATE</code>: The <code>CreateLandingZone</code> operation.</p></li>
-    /// <li>
-    /// <p><code>UPDATE</code>: The <code>UpdateLandingZone</code> operation.</p></li>
-    /// <li>
-    /// <p><code>RESET</code>: The <code>ResetLandingZone</code> operation.</p></li>
+    /// <li> <p> <code>DELETE</code>: The <code>DeleteLandingZone</code> operation. </p> </li>
+    /// <li> <p> <code>CREATE</code>: The <code>CreateLandingZone</code> operation. </p> </li>
+    /// <li> <p> <code>UPDATE</code>: The <code>UpdateLandingZone</code> operation. </p> </li>
+    /// <li> <p> <code>RESET</code>: The <code>ResetLandingZone</code> operation. </p> </li>
     /// </ul>
     pub fn operation_type(mut self, input: crate::types::LandingZoneOperationType) -> Self {
         self.operation_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The landing zone operation type.</p>
+    /// <p>The landing zone operation type. </p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>DELETE</code>: The <code>DeleteLandingZone</code> operation.</p></li>
-    /// <li>
-    /// <p><code>CREATE</code>: The <code>CreateLandingZone</code> operation.</p></li>
-    /// <li>
-    /// <p><code>UPDATE</code>: The <code>UpdateLandingZone</code> operation.</p></li>
-    /// <li>
-    /// <p><code>RESET</code>: The <code>ResetLandingZone</code> operation.</p></li>
+    /// <li> <p> <code>DELETE</code>: The <code>DeleteLandingZone</code> operation. </p> </li>
+    /// <li> <p> <code>CREATE</code>: The <code>CreateLandingZone</code> operation. </p> </li>
+    /// <li> <p> <code>UPDATE</code>: The <code>UpdateLandingZone</code> operation. </p> </li>
+    /// <li> <p> <code>RESET</code>: The <code>ResetLandingZone</code> operation. </p> </li>
     /// </ul>
     pub fn set_operation_type(mut self, input: ::std::option::Option<crate::types::LandingZoneOperationType>) -> Self {
         self.operation_type = input;
         self
     }
-    /// <p>The landing zone operation type.</p>
+    /// <p>The landing zone operation type. </p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>DELETE</code>: The <code>DeleteLandingZone</code> operation.</p></li>
-    /// <li>
-    /// <p><code>CREATE</code>: The <code>CreateLandingZone</code> operation.</p></li>
-    /// <li>
-    /// <p><code>UPDATE</code>: The <code>UpdateLandingZone</code> operation.</p></li>
-    /// <li>
-    /// <p><code>RESET</code>: The <code>ResetLandingZone</code> operation.</p></li>
+    /// <li> <p> <code>DELETE</code>: The <code>DeleteLandingZone</code> operation. </p> </li>
+    /// <li> <p> <code>CREATE</code>: The <code>CreateLandingZone</code> operation. </p> </li>
+    /// <li> <p> <code>UPDATE</code>: The <code>UpdateLandingZone</code> operation. </p> </li>
+    /// <li> <p> <code>RESET</code>: The <code>ResetLandingZone</code> operation. </p> </li>
     /// </ul>
     pub fn get_operation_type(&self) -> &::std::option::Option<crate::types::LandingZoneOperationType> {
         &self.operation_type
@@ -170,12 +144,9 @@ impl LandingZoneOperationDetailBuilder {
     }
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SUCCEEDED</code>: The landing zone operation succeeded.</p></li>
-    /// <li>
-    /// <p><code>IN_PROGRESS</code>: The landing zone operation is in progress.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code>: The landing zone operation failed.</p></li>
+    /// <li> <p> <code>SUCCEEDED</code>: The landing zone operation succeeded. </p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code>: The landing zone operation is in progress. </p> </li>
+    /// <li> <p> <code>FAILED</code>: The landing zone operation failed. </p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::LandingZoneOperationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -183,12 +154,9 @@ impl LandingZoneOperationDetailBuilder {
     }
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SUCCEEDED</code>: The landing zone operation succeeded.</p></li>
-    /// <li>
-    /// <p><code>IN_PROGRESS</code>: The landing zone operation is in progress.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code>: The landing zone operation failed.</p></li>
+    /// <li> <p> <code>SUCCEEDED</code>: The landing zone operation succeeded. </p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code>: The landing zone operation is in progress. </p> </li>
+    /// <li> <p> <code>FAILED</code>: The landing zone operation failed. </p> </li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::LandingZoneOperationStatus>) -> Self {
         self.status = input;
@@ -196,12 +164,9 @@ impl LandingZoneOperationDetailBuilder {
     }
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SUCCEEDED</code>: The landing zone operation succeeded.</p></li>
-    /// <li>
-    /// <p><code>IN_PROGRESS</code>: The landing zone operation is in progress.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code>: The landing zone operation failed.</p></li>
+    /// <li> <p> <code>SUCCEEDED</code>: The landing zone operation succeeded. </p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code>: The landing zone operation is in progress. </p> </li>
+    /// <li> <p> <code>FAILED</code>: The landing zone operation failed. </p> </li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::LandingZoneOperationStatus> {
         &self.status

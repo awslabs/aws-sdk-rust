@@ -22,7 +22,7 @@ impl CopyDbParameterGroupInputBuilder {
 }
 /// Fluent builder constructing a request to `CopyDBParameterGroup`.
 ///
-/// <p>Copies the specified DB parameter group.</p><note>
+/// <p>Copies the specified DB parameter group.</p> <note>
 /// <p>You can't copy a default DB parameter group. Instead, create a new custom DB parameter group, which copies the default parameters and values for the specified DB parameter group family.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -113,8 +113,7 @@ impl CopyDBParameterGroupFluentBuilder {
     /// <p>The identifier or ARN for the source DB parameter group. For information about creating an ARN, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"> Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must specify a valid DB parameter group.</p></li>
+    /// <li> <p>Must specify a valid DB parameter group.</p> </li>
     /// </ul>
     pub fn source_db_parameter_group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_db_parameter_group_identifier(input.into());
@@ -123,8 +122,7 @@ impl CopyDBParameterGroupFluentBuilder {
     /// <p>The identifier or ARN for the source DB parameter group. For information about creating an ARN, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"> Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must specify a valid DB parameter group.</p></li>
+    /// <li> <p>Must specify a valid DB parameter group.</p> </li>
     /// </ul>
     pub fn set_source_db_parameter_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_db_parameter_group_identifier(input);
@@ -133,8 +131,7 @@ impl CopyDBParameterGroupFluentBuilder {
     /// <p>The identifier or ARN for the source DB parameter group. For information about creating an ARN, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"> Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must specify a valid DB parameter group.</p></li>
+    /// <li> <p>Must specify a valid DB parameter group.</p> </li>
     /// </ul>
     pub fn get_source_db_parameter_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_db_parameter_group_identifier()
@@ -142,16 +139,12 @@ impl CopyDBParameterGroupFluentBuilder {
     /// <p>The identifier for the copied DB parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Can't be null, empty, or blank</p></li>
-    /// <li>
-    /// <p>Must contain from 1 to 255 letters, numbers, or hyphens</p></li>
-    /// <li>
-    /// <p>First character must be a letter</p></li>
-    /// <li>
-    /// <p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li> <p>Can't be null, empty, or blank</p> </li>
+    /// <li> <p>Must contain from 1 to 255 letters, numbers, or hyphens</p> </li>
+    /// <li> <p>First character must be a letter</p> </li>
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
-    /// <p>Example: <code>my-db-parameter-group</code></p>
+    /// <p>Example: <code>my-db-parameter-group</code> </p>
     pub fn target_db_parameter_group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_db_parameter_group_identifier(input.into());
         self
@@ -159,16 +152,12 @@ impl CopyDBParameterGroupFluentBuilder {
     /// <p>The identifier for the copied DB parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Can't be null, empty, or blank</p></li>
-    /// <li>
-    /// <p>Must contain from 1 to 255 letters, numbers, or hyphens</p></li>
-    /// <li>
-    /// <p>First character must be a letter</p></li>
-    /// <li>
-    /// <p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li> <p>Can't be null, empty, or blank</p> </li>
+    /// <li> <p>Must contain from 1 to 255 letters, numbers, or hyphens</p> </li>
+    /// <li> <p>First character must be a letter</p> </li>
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
-    /// <p>Example: <code>my-db-parameter-group</code></p>
+    /// <p>Example: <code>my-db-parameter-group</code> </p>
     pub fn set_target_db_parameter_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_db_parameter_group_identifier(input);
         self
@@ -176,16 +165,12 @@ impl CopyDBParameterGroupFluentBuilder {
     /// <p>The identifier for the copied DB parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Can't be null, empty, or blank</p></li>
-    /// <li>
-    /// <p>Must contain from 1 to 255 letters, numbers, or hyphens</p></li>
-    /// <li>
-    /// <p>First character must be a letter</p></li>
-    /// <li>
-    /// <p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li> <p>Can't be null, empty, or blank</p> </li>
+    /// <li> <p>Must contain from 1 to 255 letters, numbers, or hyphens</p> </li>
+    /// <li> <p>First character must be a letter</p> </li>
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
-    /// <p>Example: <code>my-db-parameter-group</code></p>
+    /// <p>Example: <code>my-db-parameter-group</code> </p>
     pub fn get_target_db_parameter_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_target_db_parameter_group_identifier()
     }
@@ -207,17 +192,17 @@ impl CopyDBParameterGroupFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }

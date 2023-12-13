@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSupportedLanguagesOutput {
-    /// <p>A JSON-formatted array that contains the available ISO 639-1 language codes.</p>
+    /// <p> A JSON-formatted array that contains the available ISO 639-1 language codes. </p>
     pub supported_languages: ::std::option::Option<::std::vec::Vec<crate::types::SupportedLanguage>>,
     _request_id: Option<String>,
 }
 impl DescribeSupportedLanguagesOutput {
-    /// <p>A JSON-formatted array that contains the available ISO 639-1 language codes.</p>
+    /// <p> A JSON-formatted array that contains the available ISO 639-1 language codes. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_languages.is_none()`.
     pub fn supported_languages(&self) -> &[crate::types::SupportedLanguage] {
@@ -39,19 +39,19 @@ impl DescribeSupportedLanguagesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_supported_languages`](Self::set_supported_languages).
     ///
-    /// <p>A JSON-formatted array that contains the available ISO 639-1 language codes.</p>
+    /// <p> A JSON-formatted array that contains the available ISO 639-1 language codes. </p>
     pub fn supported_languages(mut self, input: crate::types::SupportedLanguage) -> Self {
         let mut v = self.supported_languages.unwrap_or_default();
         v.push(input);
         self.supported_languages = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A JSON-formatted array that contains the available ISO 639-1 language codes.</p>
+    /// <p> A JSON-formatted array that contains the available ISO 639-1 language codes. </p>
     pub fn set_supported_languages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SupportedLanguage>>) -> Self {
         self.supported_languages = input;
         self
     }
-    /// <p>A JSON-formatted array that contains the available ISO 639-1 language codes.</p>
+    /// <p> A JSON-formatted array that contains the available ISO 639-1 language codes. </p>
     pub fn get_supported_languages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SupportedLanguage>> {
         &self.supported_languages
     }

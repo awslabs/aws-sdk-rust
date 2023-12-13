@@ -9,7 +9,7 @@ pub struct CreateThreatIntelSetInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The format of the file that contains the ThreatIntelSet.</p>
     pub format: ::std::option::Option<crate::types::ThreatIntelSetFormat>,
-    /// <p>The URI of the file that contains the ThreatIntelSet.</p>
+    /// <p>The URI of the file that contains the ThreatIntelSet. </p>
     pub location: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded ThreatIntelSet.</p>
     pub activate: ::std::option::Option<bool>,
@@ -31,7 +31,7 @@ impl CreateThreatIntelSetInput {
     pub fn format(&self) -> ::std::option::Option<&crate::types::ThreatIntelSetFormat> {
         self.format.as_ref()
     }
-    /// <p>The URI of the file that contains the ThreatIntelSet.</p>
+    /// <p>The URI of the file that contains the ThreatIntelSet. </p>
     pub fn location(&self) -> ::std::option::Option<&str> {
         self.location.as_deref()
     }
@@ -113,18 +113,18 @@ impl CreateThreatIntelSetInputBuilder {
     pub fn get_format(&self) -> &::std::option::Option<crate::types::ThreatIntelSetFormat> {
         &self.format
     }
-    /// <p>The URI of the file that contains the ThreatIntelSet.</p>
+    /// <p>The URI of the file that contains the ThreatIntelSet. </p>
     /// This field is required.
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The URI of the file that contains the ThreatIntelSet.</p>
+    /// <p>The URI of the file that contains the ThreatIntelSet. </p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location = input;
         self
     }
-    /// <p>The URI of the file that contains the ThreatIntelSet.</p>
+    /// <p>The URI of the file that contains the ThreatIntelSet. </p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.location
     }

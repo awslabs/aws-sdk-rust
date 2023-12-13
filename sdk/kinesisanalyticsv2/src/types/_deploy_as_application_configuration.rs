@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeployAsApplicationConfiguration {
-    /// <p>The description of an Amazon S3 object that contains the Amazon Data Analytics application, including the Amazon Resource Name (ARN) of the S3 bucket, the name of the Amazon S3 object that contains the data, and the version number of the Amazon S3 object that contains the data.</p>
+    /// <p>The description of an Amazon S3 object that contains the Amazon Data Analytics application, including the Amazon Resource Name (ARN) of the S3 bucket, the name of the Amazon S3 object that contains the data, and the version number of the Amazon S3 object that contains the data. </p>
     pub s3_content_location: ::std::option::Option<crate::types::S3ContentBaseLocation>,
 }
 impl DeployAsApplicationConfiguration {
-    /// <p>The description of an Amazon S3 object that contains the Amazon Data Analytics application, including the Amazon Resource Name (ARN) of the S3 bucket, the name of the Amazon S3 object that contains the data, and the version number of the Amazon S3 object that contains the data.</p>
+    /// <p>The description of an Amazon S3 object that contains the Amazon Data Analytics application, including the Amazon Resource Name (ARN) of the S3 bucket, the name of the Amazon S3 object that contains the data, and the version number of the Amazon S3 object that contains the data. </p>
     pub fn s3_content_location(&self) -> ::std::option::Option<&crate::types::S3ContentBaseLocation> {
         self.s3_content_location.as_ref()
     }
@@ -27,18 +27,18 @@ pub struct DeployAsApplicationConfigurationBuilder {
     pub(crate) s3_content_location: ::std::option::Option<crate::types::S3ContentBaseLocation>,
 }
 impl DeployAsApplicationConfigurationBuilder {
-    /// <p>The description of an Amazon S3 object that contains the Amazon Data Analytics application, including the Amazon Resource Name (ARN) of the S3 bucket, the name of the Amazon S3 object that contains the data, and the version number of the Amazon S3 object that contains the data.</p>
+    /// <p>The description of an Amazon S3 object that contains the Amazon Data Analytics application, including the Amazon Resource Name (ARN) of the S3 bucket, the name of the Amazon S3 object that contains the data, and the version number of the Amazon S3 object that contains the data. </p>
     /// This field is required.
     pub fn s3_content_location(mut self, input: crate::types::S3ContentBaseLocation) -> Self {
         self.s3_content_location = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The description of an Amazon S3 object that contains the Amazon Data Analytics application, including the Amazon Resource Name (ARN) of the S3 bucket, the name of the Amazon S3 object that contains the data, and the version number of the Amazon S3 object that contains the data.</p>
+    /// <p>The description of an Amazon S3 object that contains the Amazon Data Analytics application, including the Amazon Resource Name (ARN) of the S3 bucket, the name of the Amazon S3 object that contains the data, and the version number of the Amazon S3 object that contains the data. </p>
     pub fn set_s3_content_location(mut self, input: ::std::option::Option<crate::types::S3ContentBaseLocation>) -> Self {
         self.s3_content_location = input;
         self
     }
-    /// <p>The description of an Amazon S3 object that contains the Amazon Data Analytics application, including the Amazon Resource Name (ARN) of the S3 bucket, the name of the Amazon S3 object that contains the data, and the version number of the Amazon S3 object that contains the data.</p>
+    /// <p>The description of an Amazon S3 object that contains the Amazon Data Analytics application, including the Amazon Resource Name (ARN) of the S3 bucket, the name of the Amazon S3 object that contains the data, and the version number of the Amazon S3 object that contains the data. </p>
     pub fn get_s3_content_location(&self) -> &::std::option::Option<crate::types::S3ContentBaseLocation> {
         &self.s3_content_location
     }

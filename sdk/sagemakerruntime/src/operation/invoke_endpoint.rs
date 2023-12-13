@@ -254,17 +254,17 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for InvokeEndpoin
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum InvokeEndpointError {
-    /// <p>Your request caused an exception with an internal dependency. Contact customer support.</p>
+    /// <p>Your request caused an exception with an internal dependency. Contact customer support. </p>
     InternalDependencyException(crate::types::error::InternalDependencyException),
     /// <p>Either a serverless endpoint variant's resources are still being provisioned, or a multi-model endpoint is still downloading or loading the target model. Wait and try your request again.</p>
     ModelNotReadyException(crate::types::error::ModelNotReadyException),
-    /// <p>An internal failure occurred.</p>
+    /// <p> An internal failure occurred. </p>
     InternalFailure(crate::types::error::InternalFailure),
-    /// <p>Inspect your request and try again.</p>
+    /// <p> Inspect your request and try again. </p>
     ValidationError(crate::types::error::ValidationError),
-    /// <p>Model (owned by the customer in the container) returned 4xx or 5xx error code.</p>
+    /// <p> Model (owned by the customer in the container) returned 4xx or 5xx error code. </p>
     ModelError(crate::types::error::ModelError),
-    /// <p>The service is unavailable. Try your call again.</p>
+    /// <p> The service is unavailable. Try your call again. </p>
     ServiceUnavailable(crate::types::error::ServiceUnavailable),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

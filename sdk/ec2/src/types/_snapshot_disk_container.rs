@@ -7,7 +7,7 @@ pub struct SnapshotDiskContainer {
     /// <p>The description of the disk image being imported.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The format of the disk image being imported.</p>
-    /// <p>Valid values: <code>VHD</code> | <code>VMDK</code> | <code>RAW</code></p>
+    /// <p>Valid values: <code>VHD</code> | <code>VMDK</code> | <code>RAW</code> </p>
     pub format: ::std::option::Option<::std::string::String>,
     /// <p>The URL to the Amazon S3-based disk image being imported. It can either be a https URL (https://..) or an Amazon S3 URL (s3://..).</p>
     pub url: ::std::option::Option<::std::string::String>,
@@ -20,7 +20,7 @@ impl SnapshotDiskContainer {
         self.description.as_deref()
     }
     /// <p>The format of the disk image being imported.</p>
-    /// <p>Valid values: <code>VHD</code> | <code>VMDK</code> | <code>RAW</code></p>
+    /// <p>Valid values: <code>VHD</code> | <code>VMDK</code> | <code>RAW</code> </p>
     pub fn format(&self) -> ::std::option::Option<&str> {
         self.format.as_deref()
     }
@@ -75,19 +75,19 @@ impl SnapshotDiskContainerBuilder {
         &self.description
     }
     /// <p>The format of the disk image being imported.</p>
-    /// <p>Valid values: <code>VHD</code> | <code>VMDK</code> | <code>RAW</code></p>
+    /// <p>Valid values: <code>VHD</code> | <code>VMDK</code> | <code>RAW</code> </p>
     pub fn format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.format = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The format of the disk image being imported.</p>
-    /// <p>Valid values: <code>VHD</code> | <code>VMDK</code> | <code>RAW</code></p>
+    /// <p>Valid values: <code>VHD</code> | <code>VMDK</code> | <code>RAW</code> </p>
     pub fn set_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.format = input;
         self
     }
     /// <p>The format of the disk image being imported.</p>
-    /// <p>Valid values: <code>VHD</code> | <code>VMDK</code> | <code>RAW</code></p>
+    /// <p>Valid values: <code>VHD</code> | <code>VMDK</code> | <code>RAW</code> </p>
     pub fn get_format(&self) -> &::std::option::Option<::std::string::String> {
         &self.format
     }

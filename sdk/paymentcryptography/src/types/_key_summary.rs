@@ -14,7 +14,7 @@ pub struct KeySummary {
     pub key_check_value: ::std::string::String,
     /// <p>Specifies whether the key is exportable. This data is immutable after the key is created.</p>
     pub exportable: bool,
-    /// <p>Specifies whether the key is enabled.</p>
+    /// <p>Specifies whether the key is enabled. </p>
     pub enabled: bool,
 }
 impl KeySummary {
@@ -40,7 +40,7 @@ impl KeySummary {
     pub fn exportable(&self) -> bool {
         self.exportable
     }
-    /// <p>Specifies whether the key is enabled.</p>
+    /// <p>Specifies whether the key is enabled. </p>
     pub fn enabled(&self) -> bool {
         self.enabled
     }
@@ -139,18 +139,18 @@ impl KeySummaryBuilder {
     pub fn get_exportable(&self) -> &::std::option::Option<bool> {
         &self.exportable
     }
-    /// <p>Specifies whether the key is enabled.</p>
+    /// <p>Specifies whether the key is enabled. </p>
     /// This field is required.
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether the key is enabled.</p>
+    /// <p>Specifies whether the key is enabled. </p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }
-    /// <p>Specifies whether the key is enabled.</p>
+    /// <p>Specifies whether the key is enabled. </p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
         &self.enabled
     }

@@ -27,7 +27,7 @@ impl UpdateQuerySuggestionsConfigInputBuilder {
 /// <p>If an update is currently processing, you need to wait for the update to finish before making another update.</p>
 /// <p>Updates to query suggestions settings might not take effect right away. The time for your updated settings to take effect depends on the updates made and the number of search queries in your index.</p>
 /// <p>You can still enable/disable query suggestions at any time.</p>
-/// <p><code>UpdateQuerySuggestionsConfig</code> is currently not supported in the Amazon Web Services GovCloud (US-West) region.</p>
+/// <p> <code>UpdateQuerySuggestionsConfig</code> is currently not supported in the Amazon Web Services GovCloud (US-West) region.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateQuerySuggestionsConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -113,17 +113,17 @@ impl UpdateQuerySuggestionsConfigFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier of the index with query suggestions you want to update.</p>
+    /// <p> The identifier of the index with query suggestions you want to update.</p>
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.index_id(input.into());
         self
     }
-    /// <p>The identifier of the index with query suggestions you want to update.</p>
+    /// <p> The identifier of the index with query suggestions you want to update.</p>
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_index_id(input);
         self
     }
-    /// <p>The identifier of the index with query suggestions you want to update.</p>
+    /// <p> The identifier of the index with query suggestions you want to update.</p>
     pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_index_id()
     }
@@ -167,7 +167,7 @@ impl UpdateQuerySuggestionsConfigFluentBuilder {
     pub fn get_query_log_look_back_window_in_days(&self) -> &::std::option::Option<i32> {
         self.inner.get_query_log_look_back_window_in_days()
     }
-    /// <p><code>TRUE</code> to include queries without user information (i.e. all queries, irrespective of the user), otherwise <code>FALSE</code> to only include queries with user information.</p>
+    /// <p> <code>TRUE</code> to include queries without user information (i.e. all queries, irrespective of the user), otherwise <code>FALSE</code> to only include queries with user information.</p>
     /// <p>If you pass user information to Amazon Kendra along with the queries, you can set this flag to <code>FALSE</code> and instruct Amazon Kendra to only consider queries with user information.</p>
     /// <p>If you set to <code>FALSE</code>, Amazon Kendra only considers queries searched at least <code>MinimumQueryCount</code> times across <code>MinimumNumberOfQueryingUsers</code> unique users for suggestions.</p>
     /// <p>If you set to <code>TRUE</code>, Amazon Kendra ignores all user information and learns from all queries.</p>
@@ -175,7 +175,7 @@ impl UpdateQuerySuggestionsConfigFluentBuilder {
         self.inner = self.inner.include_queries_without_user_information(input);
         self
     }
-    /// <p><code>TRUE</code> to include queries without user information (i.e. all queries, irrespective of the user), otherwise <code>FALSE</code> to only include queries with user information.</p>
+    /// <p> <code>TRUE</code> to include queries without user information (i.e. all queries, irrespective of the user), otherwise <code>FALSE</code> to only include queries with user information.</p>
     /// <p>If you pass user information to Amazon Kendra along with the queries, you can set this flag to <code>FALSE</code> and instruct Amazon Kendra to only consider queries with user information.</p>
     /// <p>If you set to <code>FALSE</code>, Amazon Kendra only considers queries searched at least <code>MinimumQueryCount</code> times across <code>MinimumNumberOfQueryingUsers</code> unique users for suggestions.</p>
     /// <p>If you set to <code>TRUE</code>, Amazon Kendra ignores all user information and learns from all queries.</p>
@@ -183,7 +183,7 @@ impl UpdateQuerySuggestionsConfigFluentBuilder {
         self.inner = self.inner.set_include_queries_without_user_information(input);
         self
     }
-    /// <p><code>TRUE</code> to include queries without user information (i.e. all queries, irrespective of the user), otherwise <code>FALSE</code> to only include queries with user information.</p>
+    /// <p> <code>TRUE</code> to include queries without user information (i.e. all queries, irrespective of the user), otherwise <code>FALSE</code> to only include queries with user information.</p>
     /// <p>If you pass user information to Amazon Kendra along with the queries, you can set this flag to <code>FALSE</code> and instruct Amazon Kendra to only consider queries with user information.</p>
     /// <p>If you set to <code>FALSE</code>, Amazon Kendra only considers queries searched at least <code>MinimumQueryCount</code> times across <code>MinimumNumberOfQueryingUsers</code> unique users for suggestions.</p>
     /// <p>If you set to <code>TRUE</code>, Amazon Kendra ignores all user information and learns from all queries.</p>

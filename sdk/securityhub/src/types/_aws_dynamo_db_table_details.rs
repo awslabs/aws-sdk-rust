@@ -43,23 +43,16 @@ pub struct AwsDynamoDbTableDetails {
     pub table_size_bytes: ::std::option::Option<i64>,
     /// <p>The current status of the table. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ACTIVE</code></p></li>
-    /// <li>
-    /// <p><code>ARCHIVED</code></p></li>
-    /// <li>
-    /// <p><code>ARCHIVING</code></p></li>
-    /// <li>
-    /// <p><code>CREATING</code></p></li>
-    /// <li>
-    /// <p><code>DELETING</code></p></li>
-    /// <li>
-    /// <p><code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code></p></li>
-    /// <li>
-    /// <p><code>UPDATING</code></p></li>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>ARCHIVED</code> </p> </li>
+    /// <li> <p> <code>ARCHIVING</code> </p> </li>
+    /// <li> <p> <code>CREATING</code> </p> </li>
+    /// <li> <p> <code>DELETING</code> </p> </li>
+    /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> </p> </li>
+    /// <li> <p> <code>UPDATING</code> </p> </li>
     /// </ul>
     pub table_status: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates whether deletion protection is to be enabled (true) or disabled (false) on the table.</p>
+    /// <p> Indicates whether deletion protection is to be enabled (true) or disabled (false) on the table. </p>
     pub deletion_protection_enabled: ::std::option::Option<bool>,
 }
 impl AwsDynamoDbTableDetails {
@@ -148,25 +141,18 @@ impl AwsDynamoDbTableDetails {
     }
     /// <p>The current status of the table. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ACTIVE</code></p></li>
-    /// <li>
-    /// <p><code>ARCHIVED</code></p></li>
-    /// <li>
-    /// <p><code>ARCHIVING</code></p></li>
-    /// <li>
-    /// <p><code>CREATING</code></p></li>
-    /// <li>
-    /// <p><code>DELETING</code></p></li>
-    /// <li>
-    /// <p><code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code></p></li>
-    /// <li>
-    /// <p><code>UPDATING</code></p></li>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>ARCHIVED</code> </p> </li>
+    /// <li> <p> <code>ARCHIVING</code> </p> </li>
+    /// <li> <p> <code>CREATING</code> </p> </li>
+    /// <li> <p> <code>DELETING</code> </p> </li>
+    /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> </p> </li>
+    /// <li> <p> <code>UPDATING</code> </p> </li>
     /// </ul>
     pub fn table_status(&self) -> ::std::option::Option<&str> {
         self.table_status.as_deref()
     }
-    /// <p>Indicates whether deletion protection is to be enabled (true) or disabled (false) on the table.</p>
+    /// <p> Indicates whether deletion protection is to be enabled (true) or disabled (false) on the table. </p>
     pub fn deletion_protection_enabled(&self) -> ::std::option::Option<bool> {
         self.deletion_protection_enabled
     }
@@ -500,20 +486,13 @@ impl AwsDynamoDbTableDetailsBuilder {
     }
     /// <p>The current status of the table. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ACTIVE</code></p></li>
-    /// <li>
-    /// <p><code>ARCHIVED</code></p></li>
-    /// <li>
-    /// <p><code>ARCHIVING</code></p></li>
-    /// <li>
-    /// <p><code>CREATING</code></p></li>
-    /// <li>
-    /// <p><code>DELETING</code></p></li>
-    /// <li>
-    /// <p><code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code></p></li>
-    /// <li>
-    /// <p><code>UPDATING</code></p></li>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>ARCHIVED</code> </p> </li>
+    /// <li> <p> <code>ARCHIVING</code> </p> </li>
+    /// <li> <p> <code>CREATING</code> </p> </li>
+    /// <li> <p> <code>DELETING</code> </p> </li>
+    /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> </p> </li>
+    /// <li> <p> <code>UPDATING</code> </p> </li>
     /// </ul>
     pub fn table_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_status = ::std::option::Option::Some(input.into());
@@ -521,20 +500,13 @@ impl AwsDynamoDbTableDetailsBuilder {
     }
     /// <p>The current status of the table. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ACTIVE</code></p></li>
-    /// <li>
-    /// <p><code>ARCHIVED</code></p></li>
-    /// <li>
-    /// <p><code>ARCHIVING</code></p></li>
-    /// <li>
-    /// <p><code>CREATING</code></p></li>
-    /// <li>
-    /// <p><code>DELETING</code></p></li>
-    /// <li>
-    /// <p><code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code></p></li>
-    /// <li>
-    /// <p><code>UPDATING</code></p></li>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>ARCHIVED</code> </p> </li>
+    /// <li> <p> <code>ARCHIVING</code> </p> </li>
+    /// <li> <p> <code>CREATING</code> </p> </li>
+    /// <li> <p> <code>DELETING</code> </p> </li>
+    /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> </p> </li>
+    /// <li> <p> <code>UPDATING</code> </p> </li>
     /// </ul>
     pub fn set_table_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_status = input;
@@ -542,35 +514,28 @@ impl AwsDynamoDbTableDetailsBuilder {
     }
     /// <p>The current status of the table. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ACTIVE</code></p></li>
-    /// <li>
-    /// <p><code>ARCHIVED</code></p></li>
-    /// <li>
-    /// <p><code>ARCHIVING</code></p></li>
-    /// <li>
-    /// <p><code>CREATING</code></p></li>
-    /// <li>
-    /// <p><code>DELETING</code></p></li>
-    /// <li>
-    /// <p><code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code></p></li>
-    /// <li>
-    /// <p><code>UPDATING</code></p></li>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>ARCHIVED</code> </p> </li>
+    /// <li> <p> <code>ARCHIVING</code> </p> </li>
+    /// <li> <p> <code>CREATING</code> </p> </li>
+    /// <li> <p> <code>DELETING</code> </p> </li>
+    /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> </p> </li>
+    /// <li> <p> <code>UPDATING</code> </p> </li>
     /// </ul>
     pub fn get_table_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.table_status
     }
-    /// <p>Indicates whether deletion protection is to be enabled (true) or disabled (false) on the table.</p>
+    /// <p> Indicates whether deletion protection is to be enabled (true) or disabled (false) on the table. </p>
     pub fn deletion_protection_enabled(mut self, input: bool) -> Self {
         self.deletion_protection_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether deletion protection is to be enabled (true) or disabled (false) on the table.</p>
+    /// <p> Indicates whether deletion protection is to be enabled (true) or disabled (false) on the table. </p>
     pub fn set_deletion_protection_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.deletion_protection_enabled = input;
         self
     }
-    /// <p>Indicates whether deletion protection is to be enabled (true) or disabled (false) on the table.</p>
+    /// <p> Indicates whether deletion protection is to be enabled (true) or disabled (false) on the table. </p>
     pub fn get_deletion_protection_enabled(&self) -> &::std::option::Option<bool> {
         &self.deletion_protection_enabled
     }

@@ -22,7 +22,7 @@ impl BatchDeleteGeofenceInputBuilder {
 }
 /// Fluent builder constructing a request to `BatchDeleteGeofence`.
 ///
-/// <p>Deletes a batch of geofences from a geofence collection.</p><note>
+/// <p>Deletes a batch of geofences from a geofence collection.</p> <note>
 /// <p>This operation deletes the resource permanently.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

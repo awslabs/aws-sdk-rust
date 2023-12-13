@@ -154,73 +154,73 @@ impl UpdateLocationHdfsFluentBuilder {
     pub fn get_name_nodes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HdfsNameNode>> {
         self.inner.get_name_nodes()
     }
-    /// <p>The size of the data blocks to write into the HDFS cluster.</p>
+    /// <p>The size of the data blocks to write into the HDFS cluster. </p>
     pub fn block_size(mut self, input: i32) -> Self {
         self.inner = self.inner.block_size(input);
         self
     }
-    /// <p>The size of the data blocks to write into the HDFS cluster.</p>
+    /// <p>The size of the data blocks to write into the HDFS cluster. </p>
     pub fn set_block_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_block_size(input);
         self
     }
-    /// <p>The size of the data blocks to write into the HDFS cluster.</p>
+    /// <p>The size of the data blocks to write into the HDFS cluster. </p>
     pub fn get_block_size(&self) -> &::std::option::Option<i32> {
         self.inner.get_block_size()
     }
-    /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster.</p>
+    /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster. </p>
     pub fn replication_factor(mut self, input: i32) -> Self {
         self.inner = self.inner.replication_factor(input);
         self
     }
-    /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster.</p>
+    /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster. </p>
     pub fn set_replication_factor(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_replication_factor(input);
         self
     }
-    /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster.</p>
+    /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster. </p>
     pub fn get_replication_factor(&self) -> &::std::option::Option<i32> {
         self.inner.get_replication_factor()
     }
-    /// <p>The URI of the HDFS cluster's Key Management Server (KMS).</p>
+    /// <p>The URI of the HDFS cluster's Key Management Server (KMS). </p>
     pub fn kms_key_provider_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key_provider_uri(input.into());
         self
     }
-    /// <p>The URI of the HDFS cluster's Key Management Server (KMS).</p>
+    /// <p>The URI of the HDFS cluster's Key Management Server (KMS). </p>
     pub fn set_kms_key_provider_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_provider_uri(input);
         self
     }
-    /// <p>The URI of the HDFS cluster's Key Management Server (KMS).</p>
+    /// <p>The URI of the HDFS cluster's Key Management Server (KMS). </p>
     pub fn get_kms_key_provider_uri(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_kms_key_provider_uri()
     }
-    /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer privacy settings configured on the Hadoop Distributed File System (HDFS) cluster.</p>
+    /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer privacy settings configured on the Hadoop Distributed File System (HDFS) cluster. </p>
     pub fn qop_configuration(mut self, input: crate::types::QopConfiguration) -> Self {
         self.inner = self.inner.qop_configuration(input);
         self
     }
-    /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer privacy settings configured on the Hadoop Distributed File System (HDFS) cluster.</p>
+    /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer privacy settings configured on the Hadoop Distributed File System (HDFS) cluster. </p>
     pub fn set_qop_configuration(mut self, input: ::std::option::Option<crate::types::QopConfiguration>) -> Self {
         self.inner = self.inner.set_qop_configuration(input);
         self
     }
-    /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer privacy settings configured on the Hadoop Distributed File System (HDFS) cluster.</p>
+    /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer privacy settings configured on the Hadoop Distributed File System (HDFS) cluster. </p>
     pub fn get_qop_configuration(&self) -> &::std::option::Option<crate::types::QopConfiguration> {
         self.inner.get_qop_configuration()
     }
-    /// <p>The type of authentication used to determine the identity of the user.</p>
+    /// <p>The type of authentication used to determine the identity of the user. </p>
     pub fn authentication_type(mut self, input: crate::types::HdfsAuthenticationType) -> Self {
         self.inner = self.inner.authentication_type(input);
         self
     }
-    /// <p>The type of authentication used to determine the identity of the user.</p>
+    /// <p>The type of authentication used to determine the identity of the user. </p>
     pub fn set_authentication_type(mut self, input: ::std::option::Option<crate::types::HdfsAuthenticationType>) -> Self {
         self.inner = self.inner.set_authentication_type(input);
         self
     }
-    /// <p>The type of authentication used to determine the identity of the user.</p>
+    /// <p>The type of authentication used to determine the identity of the user. </p>
     pub fn get_authentication_type(&self) -> &::std::option::Option<crate::types::HdfsAuthenticationType> {
         self.inner.get_authentication_type()
     }
@@ -238,17 +238,17 @@ impl UpdateLocationHdfsFluentBuilder {
     pub fn get_simple_user(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_simple_user()
     }
-    /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster.</p>
+    /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster. </p>
     pub fn kerberos_principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kerberos_principal(input.into());
         self
     }
-    /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster.</p>
+    /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster. </p>
     pub fn set_kerberos_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kerberos_principal(input);
         self
     }
-    /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster.</p>
+    /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster. </p>
     pub fn get_kerberos_principal(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_kerberos_principal()
     }
@@ -284,17 +284,17 @@ impl UpdateLocationHdfsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_agent_arns`](Self::set_agent_arns).
     ///
-    /// <p>The ARNs of the agents that are used to connect to the HDFS cluster.</p>
+    /// <p>The ARNs of the agents that are used to connect to the HDFS cluster. </p>
     pub fn agent_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_arns(input.into());
         self
     }
-    /// <p>The ARNs of the agents that are used to connect to the HDFS cluster.</p>
+    /// <p>The ARNs of the agents that are used to connect to the HDFS cluster. </p>
     pub fn set_agent_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_agent_arns(input);
         self
     }
-    /// <p>The ARNs of the agents that are used to connect to the HDFS cluster.</p>
+    /// <p>The ARNs of the agents that are used to connect to the HDFS cluster. </p>
     pub fn get_agent_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_agent_arns()
     }

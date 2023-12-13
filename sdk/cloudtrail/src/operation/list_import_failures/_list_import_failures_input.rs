@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListImportFailuresInput {
-    /// <p>The ID of the import.</p>
+    /// <p> The ID of the import. </p>
     pub import_id: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum number of failures to display on a single page.</p>
+    /// <p> The maximum number of failures to display on a single page. </p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>A token you can use to get the next page of import failures.</p>
+    /// <p> A token you can use to get the next page of import failures. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListImportFailuresInput {
-    /// <p>The ID of the import.</p>
+    /// <p> The ID of the import. </p>
     pub fn import_id(&self) -> ::std::option::Option<&str> {
         self.import_id.as_deref()
     }
-    /// <p>The maximum number of failures to display on a single page.</p>
+    /// <p> The maximum number of failures to display on a single page. </p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>A token you can use to get the next page of import failures.</p>
+    /// <p> A token you can use to get the next page of import failures. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -40,46 +40,46 @@ pub struct ListImportFailuresInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListImportFailuresInputBuilder {
-    /// <p>The ID of the import.</p>
+    /// <p> The ID of the import. </p>
     /// This field is required.
     pub fn import_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.import_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the import.</p>
+    /// <p> The ID of the import. </p>
     pub fn set_import_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.import_id = input;
         self
     }
-    /// <p>The ID of the import.</p>
+    /// <p> The ID of the import. </p>
     pub fn get_import_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.import_id
     }
-    /// <p>The maximum number of failures to display on a single page.</p>
+    /// <p> The maximum number of failures to display on a single page. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of failures to display on a single page.</p>
+    /// <p> The maximum number of failures to display on a single page. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of failures to display on a single page.</p>
+    /// <p> The maximum number of failures to display on a single page. </p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p>A token you can use to get the next page of import failures.</p>
+    /// <p> A token you can use to get the next page of import failures. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A token you can use to get the next page of import failures.</p>
+    /// <p> A token you can use to get the next page of import failures. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>A token you can use to get the next page of import failures.</p>
+    /// <p> A token you can use to get the next page of import failures. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

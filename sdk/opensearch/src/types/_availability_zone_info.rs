@@ -8,12 +8,9 @@ pub struct AvailabilityZoneInfo {
     pub availability_zone_name: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the Availability Zone. Current options are <code>Active</code> and <code>StandBy</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Active</code> - Data nodes in the Availability Zone are in use.</p></li>
-    /// <li>
-    /// <p><code>StandBy</code> - Data nodes in the Availability Zone are in a standby state.</p></li>
-    /// <li>
-    /// <p><code>NotAvailable</code> - Unable to retrieve information.</p></li>
+    /// <li> <p> <code>Active</code> - Data nodes in the Availability Zone are in use.</p> </li>
+    /// <li> <p> <code>StandBy</code> - Data nodes in the Availability Zone are in a standby state.</p> </li>
+    /// <li> <p> <code>NotAvailable</code> - Unable to retrieve information.</p> </li>
     /// </ul>
     pub zone_status: ::std::option::Option<crate::types::ZoneStatus>,
     /// <p>The total number of data nodes configured in the Availability Zone.</p>
@@ -32,12 +29,9 @@ impl AvailabilityZoneInfo {
     }
     /// <p>The current state of the Availability Zone. Current options are <code>Active</code> and <code>StandBy</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Active</code> - Data nodes in the Availability Zone are in use.</p></li>
-    /// <li>
-    /// <p><code>StandBy</code> - Data nodes in the Availability Zone are in a standby state.</p></li>
-    /// <li>
-    /// <p><code>NotAvailable</code> - Unable to retrieve information.</p></li>
+    /// <li> <p> <code>Active</code> - Data nodes in the Availability Zone are in use.</p> </li>
+    /// <li> <p> <code>StandBy</code> - Data nodes in the Availability Zone are in a standby state.</p> </li>
+    /// <li> <p> <code>NotAvailable</code> - Unable to retrieve information.</p> </li>
     /// </ul>
     pub fn zone_status(&self) -> ::std::option::Option<&crate::types::ZoneStatus> {
         self.zone_status.as_ref()
@@ -94,12 +88,9 @@ impl AvailabilityZoneInfoBuilder {
     }
     /// <p>The current state of the Availability Zone. Current options are <code>Active</code> and <code>StandBy</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Active</code> - Data nodes in the Availability Zone are in use.</p></li>
-    /// <li>
-    /// <p><code>StandBy</code> - Data nodes in the Availability Zone are in a standby state.</p></li>
-    /// <li>
-    /// <p><code>NotAvailable</code> - Unable to retrieve information.</p></li>
+    /// <li> <p> <code>Active</code> - Data nodes in the Availability Zone are in use.</p> </li>
+    /// <li> <p> <code>StandBy</code> - Data nodes in the Availability Zone are in a standby state.</p> </li>
+    /// <li> <p> <code>NotAvailable</code> - Unable to retrieve information.</p> </li>
     /// </ul>
     pub fn zone_status(mut self, input: crate::types::ZoneStatus) -> Self {
         self.zone_status = ::std::option::Option::Some(input);
@@ -107,12 +98,9 @@ impl AvailabilityZoneInfoBuilder {
     }
     /// <p>The current state of the Availability Zone. Current options are <code>Active</code> and <code>StandBy</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Active</code> - Data nodes in the Availability Zone are in use.</p></li>
-    /// <li>
-    /// <p><code>StandBy</code> - Data nodes in the Availability Zone are in a standby state.</p></li>
-    /// <li>
-    /// <p><code>NotAvailable</code> - Unable to retrieve information.</p></li>
+    /// <li> <p> <code>Active</code> - Data nodes in the Availability Zone are in use.</p> </li>
+    /// <li> <p> <code>StandBy</code> - Data nodes in the Availability Zone are in a standby state.</p> </li>
+    /// <li> <p> <code>NotAvailable</code> - Unable to retrieve information.</p> </li>
     /// </ul>
     pub fn set_zone_status(mut self, input: ::std::option::Option<crate::types::ZoneStatus>) -> Self {
         self.zone_status = input;
@@ -120,12 +108,9 @@ impl AvailabilityZoneInfoBuilder {
     }
     /// <p>The current state of the Availability Zone. Current options are <code>Active</code> and <code>StandBy</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Active</code> - Data nodes in the Availability Zone are in use.</p></li>
-    /// <li>
-    /// <p><code>StandBy</code> - Data nodes in the Availability Zone are in a standby state.</p></li>
-    /// <li>
-    /// <p><code>NotAvailable</code> - Unable to retrieve information.</p></li>
+    /// <li> <p> <code>Active</code> - Data nodes in the Availability Zone are in use.</p> </li>
+    /// <li> <p> <code>StandBy</code> - Data nodes in the Availability Zone are in a standby state.</p> </li>
+    /// <li> <p> <code>NotAvailable</code> - Unable to retrieve information.</p> </li>
     /// </ul>
     pub fn get_zone_status(&self) -> &::std::option::Option<crate::types::ZoneStatus> {
         &self.zone_status

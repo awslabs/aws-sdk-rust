@@ -6,7 +6,7 @@
 pub struct TeamMember {
     /// <p>The Amazon Resource Name (ARN) of the user in IAM.</p>
     pub user_arn: ::std::string::String,
-    /// <p>The role assigned to the user in the project. Project roles have different levels of access. For more information, see <a href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working with Teams</a> in the <i>AWS CodeStar User Guide</i>.</p>
+    /// <p>The role assigned to the user in the project. Project roles have different levels of access. For more information, see <a href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working with Teams</a> in the <i>AWS CodeStar User Guide</i>. </p>
     pub project_role: ::std::string::String,
     /// <p>Whether the user is allowed to remotely access project resources using an SSH public/private key pair.</p>
     pub remote_access_allowed: ::std::option::Option<bool>,
@@ -17,7 +17,7 @@ impl TeamMember {
         use std::ops::Deref;
         self.user_arn.deref()
     }
-    /// <p>The role assigned to the user in the project. Project roles have different levels of access. For more information, see <a href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working with Teams</a> in the <i>AWS CodeStar User Guide</i>.</p>
+    /// <p>The role assigned to the user in the project. Project roles have different levels of access. For more information, see <a href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working with Teams</a> in the <i>AWS CodeStar User Guide</i>. </p>
     pub fn project_role(&self) -> &str {
         use std::ops::Deref;
         self.project_role.deref()
@@ -58,18 +58,18 @@ impl TeamMemberBuilder {
     pub fn get_user_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_arn
     }
-    /// <p>The role assigned to the user in the project. Project roles have different levels of access. For more information, see <a href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working with Teams</a> in the <i>AWS CodeStar User Guide</i>.</p>
+    /// <p>The role assigned to the user in the project. Project roles have different levels of access. For more information, see <a href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working with Teams</a> in the <i>AWS CodeStar User Guide</i>. </p>
     /// This field is required.
     pub fn project_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_role = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The role assigned to the user in the project. Project roles have different levels of access. For more information, see <a href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working with Teams</a> in the <i>AWS CodeStar User Guide</i>.</p>
+    /// <p>The role assigned to the user in the project. Project roles have different levels of access. For more information, see <a href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working with Teams</a> in the <i>AWS CodeStar User Guide</i>. </p>
     pub fn set_project_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.project_role = input;
         self
     }
-    /// <p>The role assigned to the user in the project. Project roles have different levels of access. For more information, see <a href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working with Teams</a> in the <i>AWS CodeStar User Guide</i>.</p>
+    /// <p>The role assigned to the user in the project. Project roles have different levels of access. For more information, see <a href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working with Teams</a> in the <i>AWS CodeStar User Guide</i>. </p>
     pub fn get_project_role(&self) -> &::std::option::Option<::std::string::String> {
         &self.project_role
     }

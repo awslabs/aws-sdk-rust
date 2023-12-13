@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum Error {
-    /// <p>The user does not have permission to perform the action. Check the AWS Identity and Access Management (IAM) policy associated with this user.</p>
+    /// <p> The user does not have permission to perform the action. Check the AWS Identity and Access Management (IAM) policy associated with this user.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>Exception to indicate that there is an ongoing task when a new task is created. Return when once the existing tasks are complete.</p>
+    /// <p> Exception to indicate that there is an ongoing task when a new task is created. Return when once the existing tasks are complete. </p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>Dependency encountered an error.</p>
     DependencyException(crate::types::error::DependencyException),
-    /// <p>The server experienced an internal error. Try again.</p>
+    /// <p> The server experienced an internal error. Try again. </p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p>The specified ID in the request is not found.</p>
+    /// <p> The specified ID in the request is not found. </p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>Exception to indicate that the service-linked role (SLR) is locked.</p>
+    /// <p> Exception to indicate that the service-linked role (SLR) is locked. </p>
     ServiceLinkedRoleLockClientException(crate::types::error::ServiceLinkedRoleLockClientException),
-    /// <p>The AWS account has reached its quota of imports. Contact AWS Support to increase the quota for this account.</p>
+    /// <p> The AWS account has reached its quota of imports. Contact AWS Support to increase the quota for this account. </p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
-    /// <p>The request was denied due to request throttling.</p>
+    /// <p> The request was denied due to request throttling. </p>
     ThrottlingException(crate::types::error::ThrottlingException),
-    /// <p>The request body isn't valid.</p>
+    /// <p> The request body isn't valid. </p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

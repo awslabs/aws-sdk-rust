@@ -7,7 +7,7 @@ pub struct ModifyDbSnapshotAttributeInput {
     /// <p>The identifier for the DB snapshot to modify the attributes for.</p>
     pub db_snapshot_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the DB snapshot attribute to modify.</p>
-    /// <p>To manage authorization for other Amazon Web Services accounts to copy or restore a manual DB snapshot, set this value to <code>restore</code>.</p><note>
+    /// <p>To manage authorization for other Amazon Web Services accounts to copy or restore a manual DB snapshot, set this value to <code>restore</code>.</p> <note>
     /// <p>To view the list of attributes available to modify, use the <code>DescribeDBSnapshotAttributes</code> API operation.</p>
     /// </note>
     pub attribute_name: ::std::option::Option<::std::string::String>,
@@ -24,7 +24,7 @@ impl ModifyDbSnapshotAttributeInput {
         self.db_snapshot_identifier.as_deref()
     }
     /// <p>The name of the DB snapshot attribute to modify.</p>
-    /// <p>To manage authorization for other Amazon Web Services accounts to copy or restore a manual DB snapshot, set this value to <code>restore</code>.</p><note>
+    /// <p>To manage authorization for other Amazon Web Services accounts to copy or restore a manual DB snapshot, set this value to <code>restore</code>.</p> <note>
     /// <p>To view the list of attributes available to modify, use the <code>DescribeDBSnapshotAttributes</code> API operation.</p>
     /// </note>
     pub fn attribute_name(&self) -> ::std::option::Option<&str> {
@@ -78,7 +78,7 @@ impl ModifyDbSnapshotAttributeInputBuilder {
         &self.db_snapshot_identifier
     }
     /// <p>The name of the DB snapshot attribute to modify.</p>
-    /// <p>To manage authorization for other Amazon Web Services accounts to copy or restore a manual DB snapshot, set this value to <code>restore</code>.</p><note>
+    /// <p>To manage authorization for other Amazon Web Services accounts to copy or restore a manual DB snapshot, set this value to <code>restore</code>.</p> <note>
     /// <p>To view the list of attributes available to modify, use the <code>DescribeDBSnapshotAttributes</code> API operation.</p>
     /// </note>
     /// This field is required.
@@ -87,7 +87,7 @@ impl ModifyDbSnapshotAttributeInputBuilder {
         self
     }
     /// <p>The name of the DB snapshot attribute to modify.</p>
-    /// <p>To manage authorization for other Amazon Web Services accounts to copy or restore a manual DB snapshot, set this value to <code>restore</code>.</p><note>
+    /// <p>To manage authorization for other Amazon Web Services accounts to copy or restore a manual DB snapshot, set this value to <code>restore</code>.</p> <note>
     /// <p>To view the list of attributes available to modify, use the <code>DescribeDBSnapshotAttributes</code> API operation.</p>
     /// </note>
     pub fn set_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -95,7 +95,7 @@ impl ModifyDbSnapshotAttributeInputBuilder {
         self
     }
     /// <p>The name of the DB snapshot attribute to modify.</p>
-    /// <p>To manage authorization for other Amazon Web Services accounts to copy or restore a manual DB snapshot, set this value to <code>restore</code>.</p><note>
+    /// <p>To manage authorization for other Amazon Web Services accounts to copy or restore a manual DB snapshot, set this value to <code>restore</code>.</p> <note>
     /// <p>To view the list of attributes available to modify, use the <code>DescribeDBSnapshotAttributes</code> API operation.</p>
     /// </note>
     pub fn get_attribute_name(&self) -> &::std::option::Option<::std::string::String> {

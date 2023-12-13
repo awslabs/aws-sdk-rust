@@ -22,7 +22,7 @@ impl DisassociatePricingRulesInputBuilder {
 }
 /// Fluent builder constructing a request to `DisassociatePricingRules`.
 ///
-/// <p>Disassociates a list of pricing rules from a pricing plan.</p>
+/// <p> Disassociates a list of pricing rules from a pricing plan. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociatePricingRulesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DisassociatePricingRulesFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The pricing plan Amazon Resource Name (ARN) to disassociate pricing rules from.</p>
+    /// <p> The pricing plan Amazon Resource Name (ARN) to disassociate pricing rules from. </p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.arn(input.into());
         self
     }
-    /// <p>The pricing plan Amazon Resource Name (ARN) to disassociate pricing rules from.</p>
+    /// <p> The pricing plan Amazon Resource Name (ARN) to disassociate pricing rules from. </p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_arn(input);
         self
     }
-    /// <p>The pricing plan Amazon Resource Name (ARN) to disassociate pricing rules from.</p>
+    /// <p> The pricing plan Amazon Resource Name (ARN) to disassociate pricing rules from. </p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_arn()
     }
@@ -126,17 +126,17 @@ impl DisassociatePricingRulesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_pricing_rule_arns`](Self::set_pricing_rule_arns).
     ///
-    /// <p>A list containing the Amazon Resource Name (ARN) of the pricing rules that will be disassociated.</p>
+    /// <p> A list containing the Amazon Resource Name (ARN) of the pricing rules that will be disassociated. </p>
     pub fn pricing_rule_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pricing_rule_arns(input.into());
         self
     }
-    /// <p>A list containing the Amazon Resource Name (ARN) of the pricing rules that will be disassociated.</p>
+    /// <p> A list containing the Amazon Resource Name (ARN) of the pricing rules that will be disassociated. </p>
     pub fn set_pricing_rule_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_pricing_rule_arns(input);
         self
     }
-    /// <p>A list containing the Amazon Resource Name (ARN) of the pricing rules that will be disassociated.</p>
+    /// <p> A list containing the Amazon Resource Name (ARN) of the pricing rules that will be disassociated. </p>
     pub fn get_pricing_rule_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_pricing_rule_arns()
     }

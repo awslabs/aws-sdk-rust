@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MonitoringConfiguration {
-    /// <p>Monitoring configurations for the persistent application UI.</p>
+    /// <p>Monitoring configurations for the persistent application UI. </p>
     pub persistent_app_ui: ::std::option::Option<crate::types::PersistentAppUi>,
     /// <p>Monitoring configurations for CloudWatch.</p>
     pub cloud_watch_monitoring_configuration: ::std::option::Option<crate::types::CloudWatchMonitoringConfiguration>,
@@ -14,7 +14,7 @@ pub struct MonitoringConfiguration {
     pub container_log_rotation_configuration: ::std::option::Option<crate::types::ContainerLogRotationConfiguration>,
 }
 impl MonitoringConfiguration {
-    /// <p>Monitoring configurations for the persistent application UI.</p>
+    /// <p>Monitoring configurations for the persistent application UI. </p>
     pub fn persistent_app_ui(&self) -> ::std::option::Option<&crate::types::PersistentAppUi> {
         self.persistent_app_ui.as_ref()
     }
@@ -48,17 +48,17 @@ pub struct MonitoringConfigurationBuilder {
     pub(crate) container_log_rotation_configuration: ::std::option::Option<crate::types::ContainerLogRotationConfiguration>,
 }
 impl MonitoringConfigurationBuilder {
-    /// <p>Monitoring configurations for the persistent application UI.</p>
+    /// <p>Monitoring configurations for the persistent application UI. </p>
     pub fn persistent_app_ui(mut self, input: crate::types::PersistentAppUi) -> Self {
         self.persistent_app_ui = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Monitoring configurations for the persistent application UI.</p>
+    /// <p>Monitoring configurations for the persistent application UI. </p>
     pub fn set_persistent_app_ui(mut self, input: ::std::option::Option<crate::types::PersistentAppUi>) -> Self {
         self.persistent_app_ui = input;
         self
     }
-    /// <p>Monitoring configurations for the persistent application UI.</p>
+    /// <p>Monitoring configurations for the persistent application UI. </p>
     pub fn get_persistent_app_ui(&self) -> &::std::option::Option<crate::types::PersistentAppUi> {
         &self.persistent_app_ui
     }

@@ -9,7 +9,7 @@ pub struct AdminSetUserPasswordInput {
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>The password for the user.</p>
     pub password: ::std::option::Option<::std::string::String>,
-    /// <p><code>True</code> if the password is permanent, <code>False</code> if it is temporary.</p>
+    /// <p> <code>True</code> if the password is permanent, <code>False</code> if it is temporary.</p>
     pub permanent: ::std::option::Option<bool>,
 }
 impl AdminSetUserPasswordInput {
@@ -25,7 +25,7 @@ impl AdminSetUserPasswordInput {
     pub fn password(&self) -> ::std::option::Option<&str> {
         self.password.as_deref()
     }
-    /// <p><code>True</code> if the password is permanent, <code>False</code> if it is temporary.</p>
+    /// <p> <code>True</code> if the password is permanent, <code>False</code> if it is temporary.</p>
     pub fn permanent(&self) -> ::std::option::Option<bool> {
         self.permanent
     }
@@ -102,17 +102,17 @@ impl AdminSetUserPasswordInputBuilder {
     pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
         &self.password
     }
-    /// <p><code>True</code> if the password is permanent, <code>False</code> if it is temporary.</p>
+    /// <p> <code>True</code> if the password is permanent, <code>False</code> if it is temporary.</p>
     pub fn permanent(mut self, input: bool) -> Self {
         self.permanent = ::std::option::Option::Some(input);
         self
     }
-    /// <p><code>True</code> if the password is permanent, <code>False</code> if it is temporary.</p>
+    /// <p> <code>True</code> if the password is permanent, <code>False</code> if it is temporary.</p>
     pub fn set_permanent(mut self, input: ::std::option::Option<bool>) -> Self {
         self.permanent = input;
         self
     }
-    /// <p><code>True</code> if the password is permanent, <code>False</code> if it is temporary.</p>
+    /// <p> <code>True</code> if the password is permanent, <code>False</code> if it is temporary.</p>
     pub fn get_permanent(&self) -> &::std::option::Option<bool> {
         &self.permanent
     }

@@ -249,7 +249,7 @@ pub enum CreateClusterError {
     ClusterAlreadyExistsFault(crate::types::error::ClusterAlreadyExistsFault),
     /// <p>You have attempted to exceed the maximum number of DAX clusters for your AWS account.</p>
     ClusterQuotaForCustomerExceededFault(crate::types::error::ClusterQuotaForCustomerExceededFault),
-    /// <p>There are not enough system resources to create the cluster you requested (or to resize an already-existing cluster).</p>
+    /// <p>There are not enough system resources to create the cluster you requested (or to resize an already-existing cluster). </p>
     InsufficientClusterCapacityFault(crate::types::error::InsufficientClusterCapacityFault),
     /// <p>The requested DAX cluster is not in the <i>available</i> state.</p>
     InvalidClusterStateFault(crate::types::error::InvalidClusterStateFault),

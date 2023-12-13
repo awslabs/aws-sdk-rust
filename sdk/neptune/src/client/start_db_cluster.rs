@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`db_cluster_identifier(impl Into<String>)`](crate::operation::start_db_cluster::builders::StartDBClusterFluentBuilder::db_cluster_identifier) / [`set_db_cluster_identifier(Option<String>)`](crate::operation::start_db_cluster::builders::StartDBClusterFluentBuilder::set_db_cluster_identifier):<br>required: **true**<br><p>The DB cluster identifier of the Neptune DB cluster to be started. This parameter is stored as a lowercase string.</p><br>
     /// - On success, responds with [`StartDbClusterOutput`](crate::operation::start_db_cluster::StartDbClusterOutput) with field(s):
-    ///   - [`db_cluster(Option<DbCluster>)`](crate::operation::start_db_cluster::StartDbClusterOutput::db_cluster): <p>Contains the details of an Amazon Neptune DB cluster.</p> <p>This data type is used as a response element in the <code>DescribeDBClusters</code>.</p>
+    ///   - [`db_cluster(Option<DbCluster>)`](crate::operation::start_db_cluster::StartDbClusterOutput::db_cluster): <p>Contains the details of an Amazon Neptune DB cluster.</p>  <p>This data type is used as a response element in the <code>DescribeDBClusters</code>.</p>
     /// - On failure, responds with [`SdkError<StartDBClusterError>`](crate::operation::start_db_cluster::StartDBClusterError)
     pub fn start_db_cluster(&self) -> crate::operation::start_db_cluster::builders::StartDBClusterFluentBuilder {
         crate::operation::start_db_cluster::builders::StartDBClusterFluentBuilder::new(self.handle.clone())

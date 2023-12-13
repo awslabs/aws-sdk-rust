@@ -4,17 +4,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimestreamDestination {
-    /// <p>Timestream database name.</p>
+    /// <p>Timestream database name. </p>
     pub database_name: ::std::option::Option<::std::string::String>,
-    /// <p>Timestream table name.</p>
+    /// <p>Timestream table name. </p>
     pub table_name: ::std::option::Option<::std::string::String>,
 }
 impl TimestreamDestination {
-    /// <p>Timestream database name.</p>
+    /// <p>Timestream database name. </p>
     pub fn database_name(&self) -> ::std::option::Option<&str> {
         self.database_name.as_deref()
     }
-    /// <p>Timestream table name.</p>
+    /// <p>Timestream table name. </p>
     pub fn table_name(&self) -> ::std::option::Option<&str> {
         self.table_name.as_deref()
     }
@@ -34,31 +34,31 @@ pub struct TimestreamDestinationBuilder {
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
 }
 impl TimestreamDestinationBuilder {
-    /// <p>Timestream database name.</p>
+    /// <p>Timestream database name. </p>
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Timestream database name.</p>
+    /// <p>Timestream database name. </p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
-    /// <p>Timestream database name.</p>
+    /// <p>Timestream database name. </p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.database_name
     }
-    /// <p>Timestream table name.</p>
+    /// <p>Timestream table name. </p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Timestream table name.</p>
+    /// <p>Timestream table name. </p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
     }
-    /// <p>Timestream table name.</p>
+    /// <p>Timestream table name. </p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.table_name
     }

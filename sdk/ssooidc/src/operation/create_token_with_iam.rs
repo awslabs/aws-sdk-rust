@@ -270,7 +270,7 @@ pub enum CreateTokenWithIAMError {
     InvalidRequestRegionException(crate::types::error::InvalidRequestRegionException),
     /// <p>Indicates that the scope provided in the request is invalid.</p>
     InvalidScopeException(crate::types::error::InvalidScopeException),
-    /// <p>Indicates that the client is making the request too frequently and is more than the service can handle.</p>
+    /// <p>Indicates that the client is making the request too frequently and is more than the service can handle. </p>
     SlowDownException(crate::types::error::SlowDownException),
     /// <p>Indicates that the client is not currently authorized to make the request. This can happen when a <code>clientId</code> is not issued for a public client.</p>
     UnauthorizedClientException(crate::types::error::UnauthorizedClientException),

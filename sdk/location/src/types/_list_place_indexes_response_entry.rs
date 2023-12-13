@@ -10,21 +10,18 @@ pub struct ListPlaceIndexesResponseEntry {
     pub description: ::std::string::String,
     /// <p>The data provider of geospatial data. Values can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Esri</code></p></li>
-    /// <li>
-    /// <p><code>Grab</code></p></li>
-    /// <li>
-    /// <p><code>Here</code></p></li>
+    /// <li> <p> <code>Esri</code> </p> </li>
+    /// <li> <p> <code>Grab</code> </p> </li>
+    /// <li> <p> <code>Here</code> </p> </li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub data_source: ::std::string::String,
     /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
     #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
     pub pricing_plan: ::std::option::Option<crate::types::PricingPlan>,
-    /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+    /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub create_time: ::aws_smithy_types::DateTime,
-    /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+    /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub update_time: ::aws_smithy_types::DateTime,
 }
 impl ListPlaceIndexesResponseEntry {
@@ -40,12 +37,9 @@ impl ListPlaceIndexesResponseEntry {
     }
     /// <p>The data provider of geospatial data. Values can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Esri</code></p></li>
-    /// <li>
-    /// <p><code>Grab</code></p></li>
-    /// <li>
-    /// <p><code>Here</code></p></li>
+    /// <li> <p> <code>Esri</code> </p> </li>
+    /// <li> <p> <code>Grab</code> </p> </li>
+    /// <li> <p> <code>Here</code> </p> </li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub fn data_source(&self) -> &str {
@@ -57,11 +51,11 @@ impl ListPlaceIndexesResponseEntry {
     pub fn pricing_plan(&self) -> ::std::option::Option<&crate::types::PricingPlan> {
         self.pricing_plan.as_ref()
     }
-    /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+    /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
         &self.create_time
     }
-    /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+    /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
         &self.update_time
     }
@@ -117,12 +111,9 @@ impl ListPlaceIndexesResponseEntryBuilder {
     }
     /// <p>The data provider of geospatial data. Values can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Esri</code></p></li>
-    /// <li>
-    /// <p><code>Grab</code></p></li>
-    /// <li>
-    /// <p><code>Here</code></p></li>
+    /// <li> <p> <code>Esri</code> </p> </li>
+    /// <li> <p> <code>Grab</code> </p> </li>
+    /// <li> <p> <code>Here</code> </p> </li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     /// This field is required.
@@ -132,12 +123,9 @@ impl ListPlaceIndexesResponseEntryBuilder {
     }
     /// <p>The data provider of geospatial data. Values can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Esri</code></p></li>
-    /// <li>
-    /// <p><code>Grab</code></p></li>
-    /// <li>
-    /// <p><code>Here</code></p></li>
+    /// <li> <p> <code>Esri</code> </p> </li>
+    /// <li> <p> <code>Grab</code> </p> </li>
+    /// <li> <p> <code>Here</code> </p> </li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub fn set_data_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -146,12 +134,9 @@ impl ListPlaceIndexesResponseEntryBuilder {
     }
     /// <p>The data provider of geospatial data. Values can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Esri</code></p></li>
-    /// <li>
-    /// <p><code>Grab</code></p></li>
-    /// <li>
-    /// <p><code>Here</code></p></li>
+    /// <li> <p> <code>Esri</code> </p> </li>
+    /// <li> <p> <code>Grab</code> </p> </li>
+    /// <li> <p> <code>Here</code> </p> </li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub fn get_data_source(&self) -> &::std::option::Option<::std::string::String> {
@@ -174,33 +159,33 @@ impl ListPlaceIndexesResponseEntryBuilder {
     pub fn get_pricing_plan(&self) -> &::std::option::Option<crate::types::PricingPlan> {
         &self.pricing_plan
     }
-    /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+    /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     /// This field is required.
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+    /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_time = input;
         self
     }
-    /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+    /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.create_time
     }
-    /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+    /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     /// This field is required.
     pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+    /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_time = input;
         self
     }
-    /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+    /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.update_time
     }

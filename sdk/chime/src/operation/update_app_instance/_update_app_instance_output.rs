@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAppInstanceOutput {
-    /// <p>The ARN of the <code>AppInstance</code>.</p>
+    /// <p>The ARN of the <code>AppInstance</code>. </p>
     pub app_instance_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateAppInstanceOutput {
-    /// <p>The ARN of the <code>AppInstance</code>.</p>
+    /// <p>The ARN of the <code>AppInstance</code>. </p>
     pub fn app_instance_arn(&self) -> ::std::option::Option<&str> {
         self.app_instance_arn.as_deref()
     }
@@ -33,17 +33,17 @@ pub struct UpdateAppInstanceOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateAppInstanceOutputBuilder {
-    /// <p>The ARN of the <code>AppInstance</code>.</p>
+    /// <p>The ARN of the <code>AppInstance</code>. </p>
     pub fn app_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_instance_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the <code>AppInstance</code>.</p>
+    /// <p>The ARN of the <code>AppInstance</code>. </p>
     pub fn set_app_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_instance_arn = input;
         self
     }
-    /// <p>The ARN of the <code>AppInstance</code>.</p>
+    /// <p>The ARN of the <code>AppInstance</code>. </p>
     pub fn get_app_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.app_instance_arn
     }

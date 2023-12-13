@@ -22,7 +22,7 @@ impl CreateBranchInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateBranch`.
 ///
-/// <p>Creates a new branch for an Amplify app.</p>
+/// <p> Creates a new branch for an Amplify app. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateBranchFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,101 +108,101 @@ impl CreateBranchFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique ID for an Amplify app.</p>
+    /// <p> The unique ID for an Amplify app. </p>
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_id(input.into());
         self
     }
-    /// <p>The unique ID for an Amplify app.</p>
+    /// <p> The unique ID for an Amplify app. </p>
     pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_id(input);
         self
     }
-    /// <p>The unique ID for an Amplify app.</p>
+    /// <p> The unique ID for an Amplify app. </p>
     pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_app_id()
     }
-    /// <p>The name for the branch.</p>
+    /// <p>The name for the branch. </p>
     pub fn branch_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.branch_name(input.into());
         self
     }
-    /// <p>The name for the branch.</p>
+    /// <p>The name for the branch. </p>
     pub fn set_branch_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_branch_name(input);
         self
     }
-    /// <p>The name for the branch.</p>
+    /// <p>The name for the branch. </p>
     pub fn get_branch_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_branch_name()
     }
-    /// <p>The description for the branch.</p>
+    /// <p>The description for the branch. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>The description for the branch.</p>
+    /// <p>The description for the branch. </p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>The description for the branch.</p>
+    /// <p>The description for the branch. </p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p>Describes the current stage for the branch.</p>
+    /// <p>Describes the current stage for the branch. </p>
     pub fn stage(mut self, input: crate::types::Stage) -> Self {
         self.inner = self.inner.stage(input);
         self
     }
-    /// <p>Describes the current stage for the branch.</p>
+    /// <p>Describes the current stage for the branch. </p>
     pub fn set_stage(mut self, input: ::std::option::Option<crate::types::Stage>) -> Self {
         self.inner = self.inner.set_stage(input);
         self
     }
-    /// <p>Describes the current stage for the branch.</p>
+    /// <p>Describes the current stage for the branch. </p>
     pub fn get_stage(&self) -> &::std::option::Option<crate::types::Stage> {
         self.inner.get_stage()
     }
-    /// <p>The framework for the branch.</p>
+    /// <p> The framework for the branch. </p>
     pub fn framework(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.framework(input.into());
         self
     }
-    /// <p>The framework for the branch.</p>
+    /// <p> The framework for the branch. </p>
     pub fn set_framework(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_framework(input);
         self
     }
-    /// <p>The framework for the branch.</p>
+    /// <p> The framework for the branch. </p>
     pub fn get_framework(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_framework()
     }
-    /// <p>Enables notifications for the branch.</p>
+    /// <p> Enables notifications for the branch. </p>
     pub fn enable_notification(mut self, input: bool) -> Self {
         self.inner = self.inner.enable_notification(input);
         self
     }
-    /// <p>Enables notifications for the branch.</p>
+    /// <p> Enables notifications for the branch. </p>
     pub fn set_enable_notification(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable_notification(input);
         self
     }
-    /// <p>Enables notifications for the branch.</p>
+    /// <p> Enables notifications for the branch. </p>
     pub fn get_enable_notification(&self) -> &::std::option::Option<bool> {
         self.inner.get_enable_notification()
     }
-    /// <p>Enables auto building for the branch.</p>
+    /// <p> Enables auto building for the branch. </p>
     pub fn enable_auto_build(mut self, input: bool) -> Self {
         self.inner = self.inner.enable_auto_build(input);
         self
     }
-    /// <p>Enables auto building for the branch.</p>
+    /// <p> Enables auto building for the branch. </p>
     pub fn set_enable_auto_build(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable_auto_build(input);
         self
     }
-    /// <p>Enables auto building for the branch.</p>
+    /// <p> Enables auto building for the branch. </p>
     pub fn get_enable_auto_build(&self) -> &::std::option::Option<bool> {
         self.inner.get_enable_auto_build()
     }
@@ -210,7 +210,7 @@ impl CreateBranchFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_environment_variables`](Self::set_environment_variables).
     ///
-    /// <p>The environment variables for the branch.</p>
+    /// <p> The environment variables for the branch. </p>
     pub fn environment_variables(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -219,7 +219,7 @@ impl CreateBranchFluentBuilder {
         self.inner = self.inner.environment_variables(k.into(), v.into());
         self
     }
-    /// <p>The environment variables for the branch.</p>
+    /// <p> The environment variables for the branch. </p>
     pub fn set_environment_variables(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -227,52 +227,52 @@ impl CreateBranchFluentBuilder {
         self.inner = self.inner.set_environment_variables(input);
         self
     }
-    /// <p>The environment variables for the branch.</p>
+    /// <p> The environment variables for the branch. </p>
     pub fn get_environment_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_environment_variables()
     }
-    /// <p>The basic authorization credentials for the branch. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
+    /// <p> The basic authorization credentials for the branch. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
     pub fn basic_auth_credentials(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.basic_auth_credentials(input.into());
         self
     }
-    /// <p>The basic authorization credentials for the branch. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
+    /// <p> The basic authorization credentials for the branch. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
     pub fn set_basic_auth_credentials(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_basic_auth_credentials(input);
         self
     }
-    /// <p>The basic authorization credentials for the branch. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
+    /// <p> The basic authorization credentials for the branch. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
     pub fn get_basic_auth_credentials(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_basic_auth_credentials()
     }
-    /// <p>Enables basic authorization for the branch.</p>
+    /// <p> Enables basic authorization for the branch. </p>
     pub fn enable_basic_auth(mut self, input: bool) -> Self {
         self.inner = self.inner.enable_basic_auth(input);
         self
     }
-    /// <p>Enables basic authorization for the branch.</p>
+    /// <p> Enables basic authorization for the branch. </p>
     pub fn set_enable_basic_auth(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable_basic_auth(input);
         self
     }
-    /// <p>Enables basic authorization for the branch.</p>
+    /// <p> Enables basic authorization for the branch. </p>
     pub fn get_enable_basic_auth(&self) -> &::std::option::Option<bool> {
         self.inner.get_enable_basic_auth()
     }
     /// <p>Enables performance mode for the branch.</p>
-    /// <p>Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer interval. When performance mode is enabled, hosting configuration or code changes can take up to 10 minutes to roll out.</p>
+    /// <p>Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer interval. When performance mode is enabled, hosting configuration or code changes can take up to 10 minutes to roll out. </p>
     pub fn enable_performance_mode(mut self, input: bool) -> Self {
         self.inner = self.inner.enable_performance_mode(input);
         self
     }
     /// <p>Enables performance mode for the branch.</p>
-    /// <p>Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer interval. When performance mode is enabled, hosting configuration or code changes can take up to 10 minutes to roll out.</p>
+    /// <p>Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer interval. When performance mode is enabled, hosting configuration or code changes can take up to 10 minutes to roll out. </p>
     pub fn set_enable_performance_mode(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable_performance_mode(input);
         self
     }
     /// <p>Enables performance mode for the branch.</p>
-    /// <p>Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer interval. When performance mode is enabled, hosting configuration or code changes can take up to 10 minutes to roll out.</p>
+    /// <p>Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer interval. When performance mode is enabled, hosting configuration or code changes can take up to 10 minutes to roll out. </p>
     pub fn get_enable_performance_mode(&self) -> &::std::option::Option<bool> {
         self.inner.get_enable_performance_mode()
     }
@@ -280,101 +280,101 @@ impl CreateBranchFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The tag for the branch.</p>
+    /// <p> The tag for the branch. </p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
-    /// <p>The tag for the branch.</p>
+    /// <p> The tag for the branch. </p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>The tag for the branch.</p>
+    /// <p> The tag for the branch. </p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
-    /// <p>The build specification (build spec) for the branch.</p>
+    /// <p> The build specification (build spec) for the branch. </p>
     pub fn build_spec(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.build_spec(input.into());
         self
     }
-    /// <p>The build specification (build spec) for the branch.</p>
+    /// <p> The build specification (build spec) for the branch. </p>
     pub fn set_build_spec(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_build_spec(input);
         self
     }
-    /// <p>The build specification (build spec) for the branch.</p>
+    /// <p> The build specification (build spec) for the branch. </p>
     pub fn get_build_spec(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_build_spec()
     }
-    /// <p>The content Time To Live (TTL) for the website in seconds.</p>
+    /// <p> The content Time To Live (TTL) for the website in seconds. </p>
     pub fn ttl(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ttl(input.into());
         self
     }
-    /// <p>The content Time To Live (TTL) for the website in seconds.</p>
+    /// <p> The content Time To Live (TTL) for the website in seconds. </p>
     pub fn set_ttl(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ttl(input);
         self
     }
-    /// <p>The content Time To Live (TTL) for the website in seconds.</p>
+    /// <p> The content Time To Live (TTL) for the website in seconds. </p>
     pub fn get_ttl(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_ttl()
     }
-    /// <p>The display name for a branch. This is used as the default domain prefix.</p>
+    /// <p> The display name for a branch. This is used as the default domain prefix. </p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.display_name(input.into());
         self
     }
-    /// <p>The display name for a branch. This is used as the default domain prefix.</p>
+    /// <p> The display name for a branch. This is used as the default domain prefix. </p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_display_name(input);
         self
     }
-    /// <p>The display name for a branch. This is used as the default domain prefix.</p>
+    /// <p> The display name for a branch. This is used as the default domain prefix. </p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_display_name()
     }
-    /// <p>Enables pull request previews for this branch.</p>
+    /// <p> Enables pull request previews for this branch. </p>
     pub fn enable_pull_request_preview(mut self, input: bool) -> Self {
         self.inner = self.inner.enable_pull_request_preview(input);
         self
     }
-    /// <p>Enables pull request previews for this branch.</p>
+    /// <p> Enables pull request previews for this branch. </p>
     pub fn set_enable_pull_request_preview(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable_pull_request_preview(input);
         self
     }
-    /// <p>Enables pull request previews for this branch.</p>
+    /// <p> Enables pull request previews for this branch. </p>
     pub fn get_enable_pull_request_preview(&self) -> &::std::option::Option<bool> {
         self.inner.get_enable_pull_request_preview()
     }
-    /// <p>The Amplify environment name for the pull request.</p>
+    /// <p> The Amplify environment name for the pull request. </p>
     pub fn pull_request_environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pull_request_environment_name(input.into());
         self
     }
-    /// <p>The Amplify environment name for the pull request.</p>
+    /// <p> The Amplify environment name for the pull request. </p>
     pub fn set_pull_request_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pull_request_environment_name(input);
         self
     }
-    /// <p>The Amplify environment name for the pull request.</p>
+    /// <p> The Amplify environment name for the pull request. </p>
     pub fn get_pull_request_environment_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_pull_request_environment_name()
     }
-    /// <p>The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app.</p>
+    /// <p>The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
     pub fn backend_environment_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.backend_environment_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app.</p>
+    /// <p>The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
     pub fn set_backend_environment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_backend_environment_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app.</p>
+    /// <p>The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
     pub fn get_backend_environment_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_backend_environment_arn()
     }

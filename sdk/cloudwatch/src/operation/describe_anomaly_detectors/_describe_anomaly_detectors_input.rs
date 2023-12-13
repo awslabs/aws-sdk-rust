@@ -6,7 +6,7 @@ pub struct DescribeAnomalyDetectorsInput {
     /// <p>Use the token returned by the previous operation to request the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return in one operation. The maximum value that you can specify is 100.</p>
-    /// <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
+    /// <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. </p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>Limits the results to only the anomaly detection models that are associated with the specified namespace.</p>
     pub namespace: ::std::option::Option<::std::string::String>,
@@ -23,7 +23,7 @@ impl DescribeAnomalyDetectorsInput {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return in one operation. The maximum value that you can specify is 100.</p>
-    /// <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
+    /// <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. </p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -82,19 +82,19 @@ impl DescribeAnomalyDetectorsInputBuilder {
         &self.next_token
     }
     /// <p>The maximum number of results to return in one operation. The maximum value that you can specify is 100.</p>
-    /// <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
+    /// <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of results to return in one operation. The maximum value that you can specify is 100.</p>
-    /// <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
+    /// <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
     /// <p>The maximum number of results to return in one operation. The maximum value that you can specify is 100.</p>
-    /// <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
+    /// <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. </p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

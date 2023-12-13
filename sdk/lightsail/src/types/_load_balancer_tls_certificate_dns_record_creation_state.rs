@@ -7,12 +7,9 @@ pub struct LoadBalancerTlsCertificateDnsRecordCreationState {
     /// <p>The status code for the automated DNS record creation.</p>
     /// <p>Following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SUCCEEDED</code> - The validation records were successfully added.</p></li>
-    /// <li>
-    /// <p><code>STARTED</code> - The automatic DNS record creation has started.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - The validation record addition failed.</p></li>
+    /// <li> <p> <code>SUCCEEDED</code> - The validation records were successfully added.</p> </li>
+    /// <li> <p> <code>STARTED</code> - The automatic DNS record creation has started.</p> </li>
+    /// <li> <p> <code>FAILED</code> - The validation record addition failed.</p> </li>
     /// </ul>
     pub code: ::std::option::Option<crate::types::LoadBalancerTlsCertificateDnsRecordCreationStateCode>,
     /// <p>The message that describes the reason for the status code.</p>
@@ -22,12 +19,9 @@ impl LoadBalancerTlsCertificateDnsRecordCreationState {
     /// <p>The status code for the automated DNS record creation.</p>
     /// <p>Following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SUCCEEDED</code> - The validation records were successfully added.</p></li>
-    /// <li>
-    /// <p><code>STARTED</code> - The automatic DNS record creation has started.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - The validation record addition failed.</p></li>
+    /// <li> <p> <code>SUCCEEDED</code> - The validation records were successfully added.</p> </li>
+    /// <li> <p> <code>STARTED</code> - The automatic DNS record creation has started.</p> </li>
+    /// <li> <p> <code>FAILED</code> - The validation record addition failed.</p> </li>
     /// </ul>
     pub fn code(&self) -> ::std::option::Option<&crate::types::LoadBalancerTlsCertificateDnsRecordCreationStateCode> {
         self.code.as_ref()
@@ -55,12 +49,9 @@ impl LoadBalancerTlsCertificateDnsRecordCreationStateBuilder {
     /// <p>The status code for the automated DNS record creation.</p>
     /// <p>Following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SUCCEEDED</code> - The validation records were successfully added.</p></li>
-    /// <li>
-    /// <p><code>STARTED</code> - The automatic DNS record creation has started.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - The validation record addition failed.</p></li>
+    /// <li> <p> <code>SUCCEEDED</code> - The validation records were successfully added.</p> </li>
+    /// <li> <p> <code>STARTED</code> - The automatic DNS record creation has started.</p> </li>
+    /// <li> <p> <code>FAILED</code> - The validation record addition failed.</p> </li>
     /// </ul>
     pub fn code(mut self, input: crate::types::LoadBalancerTlsCertificateDnsRecordCreationStateCode) -> Self {
         self.code = ::std::option::Option::Some(input);
@@ -69,12 +60,9 @@ impl LoadBalancerTlsCertificateDnsRecordCreationStateBuilder {
     /// <p>The status code for the automated DNS record creation.</p>
     /// <p>Following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SUCCEEDED</code> - The validation records were successfully added.</p></li>
-    /// <li>
-    /// <p><code>STARTED</code> - The automatic DNS record creation has started.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - The validation record addition failed.</p></li>
+    /// <li> <p> <code>SUCCEEDED</code> - The validation records were successfully added.</p> </li>
+    /// <li> <p> <code>STARTED</code> - The automatic DNS record creation has started.</p> </li>
+    /// <li> <p> <code>FAILED</code> - The validation record addition failed.</p> </li>
     /// </ul>
     pub fn set_code(mut self, input: ::std::option::Option<crate::types::LoadBalancerTlsCertificateDnsRecordCreationStateCode>) -> Self {
         self.code = input;
@@ -83,12 +71,9 @@ impl LoadBalancerTlsCertificateDnsRecordCreationStateBuilder {
     /// <p>The status code for the automated DNS record creation.</p>
     /// <p>Following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SUCCEEDED</code> - The validation records were successfully added.</p></li>
-    /// <li>
-    /// <p><code>STARTED</code> - The automatic DNS record creation has started.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - The validation record addition failed.</p></li>
+    /// <li> <p> <code>SUCCEEDED</code> - The validation records were successfully added.</p> </li>
+    /// <li> <p> <code>STARTED</code> - The automatic DNS record creation has started.</p> </li>
+    /// <li> <p> <code>FAILED</code> - The validation record addition failed.</p> </li>
     /// </ul>
     pub fn get_code(&self) -> &::std::option::Option<crate::types::LoadBalancerTlsCertificateDnsRecordCreationStateCode> {
         &self.code

@@ -13,7 +13,7 @@ pub struct CreateSlotTypeVersionOutput {
     pub last_updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date that the slot type was created.</p>
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The version assigned to the new slot type version.</p>
+    /// <p>The version assigned to the new slot type version. </p>
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>Checksum of the <code>$LATEST</code> version of the slot type.</p>
     pub checksum: ::std::option::Option<::std::string::String>,
@@ -48,7 +48,7 @@ impl CreateSlotTypeVersionOutput {
     pub fn created_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
-    /// <p>The version assigned to the new slot type version.</p>
+    /// <p>The version assigned to the new slot type version. </p>
     pub fn version(&self) -> ::std::option::Option<&str> {
         self.version.as_deref()
     }
@@ -176,17 +176,17 @@ impl CreateSlotTypeVersionOutputBuilder {
     pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_date
     }
-    /// <p>The version assigned to the new slot type version.</p>
+    /// <p>The version assigned to the new slot type version. </p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The version assigned to the new slot type version.</p>
+    /// <p>The version assigned to the new slot type version. </p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
     }
-    /// <p>The version assigned to the new slot type version.</p>
+    /// <p>The version assigned to the new slot type version. </p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.version
     }

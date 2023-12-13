@@ -23,7 +23,7 @@ impl DisableTrustAnchorInputBuilder {
 /// Fluent builder constructing a request to `DisableTrustAnchor`.
 ///
 /// <p>Disables a trust anchor. When disabled, temporary credential requests specifying this trust anchor are unauthorized.</p>
-/// <p><b>Required permissions: </b> <code>rolesanywhere:DisableTrustAnchor</code>.</p>
+/// <p> <b>Required permissions: </b> <code>rolesanywhere:DisableTrustAnchor</code>. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisableTrustAnchorFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

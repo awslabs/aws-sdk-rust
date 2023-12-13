@@ -7,7 +7,7 @@ pub struct DescribeDomainControllersInput {
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of identifiers for the domain controllers whose information will be provided.</p>
     pub domain_controller_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The <i>DescribeDomainControllers.NextToken</i> value from a previous call to <code>DescribeDomainControllers</code>. Pass null if this is the first call.</p>
+    /// <p>The <i>DescribeDomainControllers.NextToken</i> value from a previous call to <code>DescribeDomainControllers</code>. Pass null if this is the first call. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return.</p>
     pub limit: ::std::option::Option<i32>,
@@ -23,7 +23,7 @@ impl DescribeDomainControllersInput {
     pub fn domain_controller_ids(&self) -> &[::std::string::String] {
         self.domain_controller_ids.as_deref().unwrap_or_default()
     }
-    /// <p>The <i>DescribeDomainControllers.NextToken</i> value from a previous call to <code>DescribeDomainControllers</code>. Pass null if this is the first call.</p>
+    /// <p>The <i>DescribeDomainControllers.NextToken</i> value from a previous call to <code>DescribeDomainControllers</code>. Pass null if this is the first call. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -84,17 +84,17 @@ impl DescribeDomainControllersInputBuilder {
     pub fn get_domain_controller_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.domain_controller_ids
     }
-    /// <p>The <i>DescribeDomainControllers.NextToken</i> value from a previous call to <code>DescribeDomainControllers</code>. Pass null if this is the first call.</p>
+    /// <p>The <i>DescribeDomainControllers.NextToken</i> value from a previous call to <code>DescribeDomainControllers</code>. Pass null if this is the first call. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The <i>DescribeDomainControllers.NextToken</i> value from a previous call to <code>DescribeDomainControllers</code>. Pass null if this is the first call.</p>
+    /// <p>The <i>DescribeDomainControllers.NextToken</i> value from a previous call to <code>DescribeDomainControllers</code>. Pass null if this is the first call. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The <i>DescribeDomainControllers.NextToken</i> value from a previous call to <code>DescribeDomainControllers</code>. Pass null if this is the first call.</p>
+    /// <p>The <i>DescribeDomainControllers.NextToken</i> value from a previous call to <code>DescribeDomainControllers</code>. Pass null if this is the first call. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

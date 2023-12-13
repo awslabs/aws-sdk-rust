@@ -22,11 +22,11 @@ impl DescribeFleetEventsInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeFleetEvents`.
 ///
-/// <p>Retrieves entries from a fleet's event log. Fleet events are initiated by changes in status, such as during fleet creation and termination, changes in capacity, etc. If a fleet has multiple locations, events are also initiated by changes to status and capacity in remote locations.</p>
-/// <p>You can specify a time range to limit the result set. Use the pagination parameters to retrieve results as a set of sequential pages.</p>
+/// <p>Retrieves entries from a fleet's event log. Fleet events are initiated by changes in status, such as during fleet creation and termination, changes in capacity, etc. If a fleet has multiple locations, events are also initiated by changes to status and capacity in remote locations. </p>
+/// <p>You can specify a time range to limit the result set. Use the pagination parameters to retrieve results as a set of sequential pages. </p>
 /// <p>If successful, a collection of event log entries matching the request are returned.</p>
-/// <p><b>Learn more</b></p>
-/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up Amazon GameLift fleets</a></p>
+/// <p> <b>Learn more</b> </p>
+/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up Amazon GameLift fleets</a> </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeFleetEventsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

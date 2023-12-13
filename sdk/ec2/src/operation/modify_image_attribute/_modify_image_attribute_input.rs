@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyImageAttributeInput {
     /// <p>The name of the attribute to modify.</p>
-    /// <p>Valid values: <code>description</code> | <code>imdsSupport</code> | <code>launchPermission</code></p>
+    /// <p>Valid values: <code>description</code> | <code>imdsSupport</code> | <code>launchPermission</code> </p>
     pub attribute: ::std::option::Option<::std::string::String>,
     /// <p>A new description for the AMI.</p>
     pub description: ::std::option::Option<crate::types::AttributeValue>,
@@ -29,14 +29,14 @@ pub struct ModifyImageAttributeInput {
     pub organization_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of an organizational unit (OU). This parameter can be used only when the <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
     pub organizational_unit_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Set to <code>v2.0</code> to indicate that IMDSv2 is specified in the AMI. Instances launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code> so that, by default, the instance requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p><important>
+    /// <p>Set to <code>v2.0</code> to indicate that IMDSv2 is specified in the AMI. Instances launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code> so that, by default, the instance requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p> <important>
     /// <p>Do not use this parameter unless your AMI software supports IMDSv2. After you set the value to <code>v2.0</code>, you can't undo it. The only way to “reset” your AMI is to create a new AMI from the underlying snapshot.</p>
     /// </important>
     pub imds_support: ::std::option::Option<crate::types::AttributeValue>,
 }
 impl ModifyImageAttributeInput {
     /// <p>The name of the attribute to modify.</p>
-    /// <p>Valid values: <code>description</code> | <code>imdsSupport</code> | <code>launchPermission</code></p>
+    /// <p>Valid values: <code>description</code> | <code>imdsSupport</code> | <code>launchPermission</code> </p>
     pub fn attribute(&self) -> ::std::option::Option<&str> {
         self.attribute.as_deref()
     }
@@ -94,7 +94,7 @@ impl ModifyImageAttributeInput {
     pub fn organizational_unit_arns(&self) -> &[::std::string::String] {
         self.organizational_unit_arns.as_deref().unwrap_or_default()
     }
-    /// <p>Set to <code>v2.0</code> to indicate that IMDSv2 is specified in the AMI. Instances launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code> so that, by default, the instance requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p><important>
+    /// <p>Set to <code>v2.0</code> to indicate that IMDSv2 is specified in the AMI. Instances launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code> so that, by default, the instance requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p> <important>
     /// <p>Do not use this parameter unless your AMI software supports IMDSv2. After you set the value to <code>v2.0</code>, you can't undo it. The only way to “reset” your AMI is to create a new AMI from the underlying snapshot.</p>
     /// </important>
     pub fn imds_support(&self) -> ::std::option::Option<&crate::types::AttributeValue> {
@@ -128,19 +128,19 @@ pub struct ModifyImageAttributeInputBuilder {
 }
 impl ModifyImageAttributeInputBuilder {
     /// <p>The name of the attribute to modify.</p>
-    /// <p>Valid values: <code>description</code> | <code>imdsSupport</code> | <code>launchPermission</code></p>
+    /// <p>Valid values: <code>description</code> | <code>imdsSupport</code> | <code>launchPermission</code> </p>
     pub fn attribute(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the attribute to modify.</p>
-    /// <p>Valid values: <code>description</code> | <code>imdsSupport</code> | <code>launchPermission</code></p>
+    /// <p>Valid values: <code>description</code> | <code>imdsSupport</code> | <code>launchPermission</code> </p>
     pub fn set_attribute(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attribute = input;
         self
     }
     /// <p>The name of the attribute to modify.</p>
-    /// <p>Valid values: <code>description</code> | <code>imdsSupport</code> | <code>launchPermission</code></p>
+    /// <p>Valid values: <code>description</code> | <code>imdsSupport</code> | <code>launchPermission</code> </p>
     pub fn get_attribute(&self) -> &::std::option::Option<::std::string::String> {
         &self.attribute
     }
@@ -329,21 +329,21 @@ impl ModifyImageAttributeInputBuilder {
     pub fn get_organizational_unit_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.organizational_unit_arns
     }
-    /// <p>Set to <code>v2.0</code> to indicate that IMDSv2 is specified in the AMI. Instances launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code> so that, by default, the instance requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p><important>
+    /// <p>Set to <code>v2.0</code> to indicate that IMDSv2 is specified in the AMI. Instances launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code> so that, by default, the instance requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p> <important>
     /// <p>Do not use this parameter unless your AMI software supports IMDSv2. After you set the value to <code>v2.0</code>, you can't undo it. The only way to “reset” your AMI is to create a new AMI from the underlying snapshot.</p>
     /// </important>
     pub fn imds_support(mut self, input: crate::types::AttributeValue) -> Self {
         self.imds_support = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Set to <code>v2.0</code> to indicate that IMDSv2 is specified in the AMI. Instances launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code> so that, by default, the instance requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p><important>
+    /// <p>Set to <code>v2.0</code> to indicate that IMDSv2 is specified in the AMI. Instances launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code> so that, by default, the instance requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p> <important>
     /// <p>Do not use this parameter unless your AMI software supports IMDSv2. After you set the value to <code>v2.0</code>, you can't undo it. The only way to “reset” your AMI is to create a new AMI from the underlying snapshot.</p>
     /// </important>
     pub fn set_imds_support(mut self, input: ::std::option::Option<crate::types::AttributeValue>) -> Self {
         self.imds_support = input;
         self
     }
-    /// <p>Set to <code>v2.0</code> to indicate that IMDSv2 is specified in the AMI. Instances launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code> so that, by default, the instance requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p><important>
+    /// <p>Set to <code>v2.0</code> to indicate that IMDSv2 is specified in the AMI. Instances launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code> so that, by default, the instance requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p> <important>
     /// <p>Do not use this parameter unless your AMI software supports IMDSv2. After you set the value to <code>v2.0</code>, you can't undo it. The only way to “reset” your AMI is to create a new AMI from the underlying snapshot.</p>
     /// </important>
     pub fn get_imds_support(&self) -> &::std::option::Option<crate::types::AttributeValue> {

@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfirmCustomerAgreementOutput {
-    /// <p>The status of the customer agreement when the connection was created. This will be either <code>signed</code> or <code>unsigned</code>.</p>
+    /// <p> The status of the customer agreement when the connection was created. This will be either <code>signed</code> or <code>unsigned</code>. </p>
     pub status: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ConfirmCustomerAgreementOutput {
-    /// <p>The status of the customer agreement when the connection was created. This will be either <code>signed</code> or <code>unsigned</code>.</p>
+    /// <p> The status of the customer agreement when the connection was created. This will be either <code>signed</code> or <code>unsigned</code>. </p>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
@@ -33,17 +33,17 @@ pub struct ConfirmCustomerAgreementOutputBuilder {
     _request_id: Option<String>,
 }
 impl ConfirmCustomerAgreementOutputBuilder {
-    /// <p>The status of the customer agreement when the connection was created. This will be either <code>signed</code> or <code>unsigned</code>.</p>
+    /// <p> The status of the customer agreement when the connection was created. This will be either <code>signed</code> or <code>unsigned</code>. </p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The status of the customer agreement when the connection was created. This will be either <code>signed</code> or <code>unsigned</code>.</p>
+    /// <p> The status of the customer agreement when the connection was created. This will be either <code>signed</code> or <code>unsigned</code>. </p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of the customer agreement when the connection was created. This will be either <code>signed</code> or <code>unsigned</code>.</p>
+    /// <p> The status of the customer agreement when the connection was created. This will be either <code>signed</code> or <code>unsigned</code>. </p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status
     }

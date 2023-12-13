@@ -29,7 +29,7 @@ pub struct PlatformSummary {
     /// <p>The platform branch to which the platform version belongs.</p>
     pub platform_branch_name: ::std::option::Option<::std::string::String>,
     /// <p>The state of the platform version's branch in its lifecycle.</p>
-    /// <p>Possible values: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code></p>
+    /// <p>Possible values: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code> </p>
     pub platform_branch_lifecycle_state: ::std::option::Option<::std::string::String>,
 }
 impl PlatformSummary {
@@ -84,7 +84,7 @@ impl PlatformSummary {
         self.platform_branch_name.as_deref()
     }
     /// <p>The state of the platform version's branch in its lifecycle.</p>
-    /// <p>Possible values: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code></p>
+    /// <p>Possible values: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code> </p>
     pub fn platform_branch_lifecycle_state(&self) -> ::std::option::Option<&str> {
         self.platform_branch_lifecycle_state.as_deref()
     }
@@ -287,19 +287,19 @@ impl PlatformSummaryBuilder {
         &self.platform_branch_name
     }
     /// <p>The state of the platform version's branch in its lifecycle.</p>
-    /// <p>Possible values: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code></p>
+    /// <p>Possible values: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code> </p>
     pub fn platform_branch_lifecycle_state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform_branch_lifecycle_state = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The state of the platform version's branch in its lifecycle.</p>
-    /// <p>Possible values: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code></p>
+    /// <p>Possible values: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code> </p>
     pub fn set_platform_branch_lifecycle_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.platform_branch_lifecycle_state = input;
         self
     }
     /// <p>The state of the platform version's branch in its lifecycle.</p>
-    /// <p>Possible values: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code></p>
+    /// <p>Possible values: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code> </p>
     pub fn get_platform_branch_lifecycle_state(&self) -> &::std::option::Option<::std::string::String> {
         &self.platform_branch_lifecycle_state
     }

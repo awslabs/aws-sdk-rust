@@ -22,7 +22,7 @@ impl ConfirmCustomerAgreementInputBuilder {
 }
 /// Fluent builder constructing a request to `ConfirmCustomerAgreement`.
 ///
-/// <p>The confirmation of the terms of agreement when creating the connection/link aggregation group (LAG).</p>
+/// <p> The confirmation of the terms of agreement when creating the connection/link aggregation group (LAG). </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ConfirmCustomerAgreementFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl ConfirmCustomerAgreementFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the customer agreement.</p>
+    /// <p> The name of the customer agreement. </p>
     pub fn agreement_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agreement_name(input.into());
         self
     }
-    /// <p>The name of the customer agreement.</p>
+    /// <p> The name of the customer agreement. </p>
     pub fn set_agreement_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agreement_name(input);
         self
     }
-    /// <p>The name of the customer agreement.</p>
+    /// <p> The name of the customer agreement. </p>
     pub fn get_agreement_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agreement_name()
     }

@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeMatchmakingRuleSetsOutput {
-    /// <p>A collection of requested matchmaking rule set objects.</p>
+    /// <p>A collection of requested matchmaking rule set objects. </p>
     pub rule_sets: ::std::option::Option<::std::vec::Vec<crate::types::MatchmakingRuleSet>>,
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeMatchmakingRuleSetsOutput {
-    /// <p>A collection of requested matchmaking rule set objects.</p>
+    /// <p>A collection of requested matchmaking rule set objects. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rule_sets.is_none()`.
     pub fn rule_sets(&self) -> &[crate::types::MatchmakingRuleSet] {
@@ -46,19 +46,19 @@ impl DescribeMatchmakingRuleSetsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_rule_sets`](Self::set_rule_sets).
     ///
-    /// <p>A collection of requested matchmaking rule set objects.</p>
+    /// <p>A collection of requested matchmaking rule set objects. </p>
     pub fn rule_sets(mut self, input: crate::types::MatchmakingRuleSet) -> Self {
         let mut v = self.rule_sets.unwrap_or_default();
         v.push(input);
         self.rule_sets = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A collection of requested matchmaking rule set objects.</p>
+    /// <p>A collection of requested matchmaking rule set objects. </p>
     pub fn set_rule_sets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MatchmakingRuleSet>>) -> Self {
         self.rule_sets = input;
         self
     }
-    /// <p>A collection of requested matchmaking rule set objects.</p>
+    /// <p>A collection of requested matchmaking rule set objects. </p>
     pub fn get_rule_sets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MatchmakingRuleSet>> {
         &self.rule_sets
     }

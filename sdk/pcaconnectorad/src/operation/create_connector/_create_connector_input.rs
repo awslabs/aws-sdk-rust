@@ -5,7 +5,7 @@
 pub struct CreateConnectorInput {
     /// <p>The identifier of the Active Directory.</p>
     pub directory_id: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the certificate authority being used.</p>
+    /// <p> The Amazon Resource Name (ARN) of the certificate authority being used.</p>
     pub certificate_authority_arn: ::std::option::Option<::std::string::String>,
     /// <p>Security group IDs that describe the inbound and outbound rules.</p>
     pub vpc_information: ::std::option::Option<crate::types::VpcInformation>,
@@ -19,7 +19,7 @@ impl CreateConnectorInput {
     pub fn directory_id(&self) -> ::std::option::Option<&str> {
         self.directory_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the certificate authority being used.</p>
+    /// <p> The Amazon Resource Name (ARN) of the certificate authority being used.</p>
     pub fn certificate_authority_arn(&self) -> ::std::option::Option<&str> {
         self.certificate_authority_arn.as_deref()
     }
@@ -69,18 +69,18 @@ impl CreateConnectorInputBuilder {
     pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.directory_id
     }
-    /// <p>The Amazon Resource Name (ARN) of the certificate authority being used.</p>
+    /// <p> The Amazon Resource Name (ARN) of the certificate authority being used.</p>
     /// This field is required.
     pub fn certificate_authority_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_authority_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the certificate authority being used.</p>
+    /// <p> The Amazon Resource Name (ARN) of the certificate authority being used.</p>
     pub fn set_certificate_authority_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_authority_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the certificate authority being used.</p>
+    /// <p> The Amazon Resource Name (ARN) of the certificate authority being used.</p>
     pub fn get_certificate_authority_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate_authority_arn
     }

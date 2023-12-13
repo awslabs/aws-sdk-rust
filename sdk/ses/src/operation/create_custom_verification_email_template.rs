@@ -258,7 +258,7 @@ pub enum CreateCustomVerificationEmailTemplateError {
     CustomVerificationEmailInvalidContentException(crate::types::error::CustomVerificationEmailInvalidContentException),
     /// <p>Indicates that a custom verification email template with the name you specified already exists.</p>
     CustomVerificationEmailTemplateAlreadyExistsException(crate::types::error::CustomVerificationEmailTemplateAlreadyExistsException),
-    /// <p>Indicates that the sender address specified for a custom verification email is not verified, and is therefore not eligible to send the custom verification email.</p>
+    /// <p>Indicates that the sender address specified for a custom verification email is not verified, and is therefore not eligible to send the custom verification email. </p>
     FromEmailAddressNotVerifiedException(crate::types::error::FromEmailAddressNotVerifiedException),
     /// <p>Indicates that a resource could not be created because of service limits. For a list of Amazon SES limits, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES Developer Guide</a>.</p>
     LimitExceededException(crate::types::error::LimitExceededException),

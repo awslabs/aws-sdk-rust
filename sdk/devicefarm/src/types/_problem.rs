@@ -17,20 +17,13 @@ pub struct Problem {
     /// <p>The problem's result.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>PENDING</p></li>
-    /// <li>
-    /// <p>PASSED</p></li>
-    /// <li>
-    /// <p>WARNED</p></li>
-    /// <li>
-    /// <p>FAILED</p></li>
-    /// <li>
-    /// <p>SKIPPED</p></li>
-    /// <li>
-    /// <p>ERRORED</p></li>
-    /// <li>
-    /// <p>STOPPED</p></li>
+    /// <li> <p>PENDING</p> </li>
+    /// <li> <p>PASSED</p> </li>
+    /// <li> <p>WARNED</p> </li>
+    /// <li> <p>FAILED</p> </li>
+    /// <li> <p>SKIPPED</p> </li>
+    /// <li> <p>ERRORED</p> </li>
+    /// <li> <p>STOPPED</p> </li>
     /// </ul>
     pub result: ::std::option::Option<crate::types::ExecutionResult>,
     /// <p>A message about the problem's result.</p>
@@ -60,20 +53,13 @@ impl Problem {
     /// <p>The problem's result.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>PENDING</p></li>
-    /// <li>
-    /// <p>PASSED</p></li>
-    /// <li>
-    /// <p>WARNED</p></li>
-    /// <li>
-    /// <p>FAILED</p></li>
-    /// <li>
-    /// <p>SKIPPED</p></li>
-    /// <li>
-    /// <p>ERRORED</p></li>
-    /// <li>
-    /// <p>STOPPED</p></li>
+    /// <li> <p>PENDING</p> </li>
+    /// <li> <p>PASSED</p> </li>
+    /// <li> <p>WARNED</p> </li>
+    /// <li> <p>FAILED</p> </li>
+    /// <li> <p>SKIPPED</p> </li>
+    /// <li> <p>ERRORED</p> </li>
+    /// <li> <p>STOPPED</p> </li>
     /// </ul>
     pub fn result(&self) -> ::std::option::Option<&crate::types::ExecutionResult> {
         self.result.as_ref()
@@ -176,20 +162,13 @@ impl ProblemBuilder {
     /// <p>The problem's result.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>PENDING</p></li>
-    /// <li>
-    /// <p>PASSED</p></li>
-    /// <li>
-    /// <p>WARNED</p></li>
-    /// <li>
-    /// <p>FAILED</p></li>
-    /// <li>
-    /// <p>SKIPPED</p></li>
-    /// <li>
-    /// <p>ERRORED</p></li>
-    /// <li>
-    /// <p>STOPPED</p></li>
+    /// <li> <p>PENDING</p> </li>
+    /// <li> <p>PASSED</p> </li>
+    /// <li> <p>WARNED</p> </li>
+    /// <li> <p>FAILED</p> </li>
+    /// <li> <p>SKIPPED</p> </li>
+    /// <li> <p>ERRORED</p> </li>
+    /// <li> <p>STOPPED</p> </li>
     /// </ul>
     pub fn result(mut self, input: crate::types::ExecutionResult) -> Self {
         self.result = ::std::option::Option::Some(input);
@@ -198,20 +177,13 @@ impl ProblemBuilder {
     /// <p>The problem's result.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>PENDING</p></li>
-    /// <li>
-    /// <p>PASSED</p></li>
-    /// <li>
-    /// <p>WARNED</p></li>
-    /// <li>
-    /// <p>FAILED</p></li>
-    /// <li>
-    /// <p>SKIPPED</p></li>
-    /// <li>
-    /// <p>ERRORED</p></li>
-    /// <li>
-    /// <p>STOPPED</p></li>
+    /// <li> <p>PENDING</p> </li>
+    /// <li> <p>PASSED</p> </li>
+    /// <li> <p>WARNED</p> </li>
+    /// <li> <p>FAILED</p> </li>
+    /// <li> <p>SKIPPED</p> </li>
+    /// <li> <p>ERRORED</p> </li>
+    /// <li> <p>STOPPED</p> </li>
     /// </ul>
     pub fn set_result(mut self, input: ::std::option::Option<crate::types::ExecutionResult>) -> Self {
         self.result = input;
@@ -220,20 +192,13 @@ impl ProblemBuilder {
     /// <p>The problem's result.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>PENDING</p></li>
-    /// <li>
-    /// <p>PASSED</p></li>
-    /// <li>
-    /// <p>WARNED</p></li>
-    /// <li>
-    /// <p>FAILED</p></li>
-    /// <li>
-    /// <p>SKIPPED</p></li>
-    /// <li>
-    /// <p>ERRORED</p></li>
-    /// <li>
-    /// <p>STOPPED</p></li>
+    /// <li> <p>PENDING</p> </li>
+    /// <li> <p>PASSED</p> </li>
+    /// <li> <p>WARNED</p> </li>
+    /// <li> <p>FAILED</p> </li>
+    /// <li> <p>SKIPPED</p> </li>
+    /// <li> <p>ERRORED</p> </li>
+    /// <li> <p>STOPPED</p> </li>
     /// </ul>
     pub fn get_result(&self) -> &::std::option::Option<crate::types::ExecutionResult> {
         &self.result

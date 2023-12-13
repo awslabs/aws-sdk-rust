@@ -148,10 +148,8 @@ impl DescribeInstanceTypeOfferingsFluentBuilder {
     ///
     /// <p>One or more filters. Filter names and values are case-sensitive.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>location</code> - This depends on the location type. For example, if the location type is <code>region</code> (default), the location is the Region code (for example, <code>us-east-2</code>.)</p></li>
-    /// <li>
-    /// <p><code>instance-type</code> - The instance type. For example, <code>c5.2xlarge</code>.</p></li>
+    /// <li> <p> <code>location</code> - This depends on the location type. For example, if the location type is <code>region</code> (default), the location is the Region code (for example, <code>us-east-2</code>.)</p> </li>
+    /// <li> <p> <code>instance-type</code> - The instance type. For example, <code>c5.2xlarge</code>.</p> </li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
@@ -159,10 +157,8 @@ impl DescribeInstanceTypeOfferingsFluentBuilder {
     }
     /// <p>One or more filters. Filter names and values are case-sensitive.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>location</code> - This depends on the location type. For example, if the location type is <code>region</code> (default), the location is the Region code (for example, <code>us-east-2</code>.)</p></li>
-    /// <li>
-    /// <p><code>instance-type</code> - The instance type. For example, <code>c5.2xlarge</code>.</p></li>
+    /// <li> <p> <code>location</code> - This depends on the location type. For example, if the location type is <code>region</code> (default), the location is the Region code (for example, <code>us-east-2</code>.)</p> </li>
+    /// <li> <p> <code>instance-type</code> - The instance type. For example, <code>c5.2xlarge</code>.</p> </li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
@@ -170,10 +166,8 @@ impl DescribeInstanceTypeOfferingsFluentBuilder {
     }
     /// <p>One or more filters. Filter names and values are case-sensitive.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>location</code> - This depends on the location type. For example, if the location type is <code>region</code> (default), the location is the Region code (for example, <code>us-east-2</code>.)</p></li>
-    /// <li>
-    /// <p><code>instance-type</code> - The instance type. For example, <code>c5.2xlarge</code>.</p></li>
+    /// <li> <p> <code>location</code> - This depends on the location type. For example, if the location type is <code>region</code> (default), the location is the Region code (for example, <code>us-east-2</code>.)</p> </li>
+    /// <li> <p> <code>instance-type</code> - The instance type. For example, <code>c5.2xlarge</code>.</p> </li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()

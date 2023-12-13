@@ -8,7 +8,7 @@ pub struct SignalInformation {
     pub name: ::std::string::String,
     /// <p>The maximum number of samples to collect.</p>
     pub max_sample_count: ::std::option::Option<i64>,
-    /// <p>The minimum duration of time (in milliseconds) between two triggering events to collect data.</p><note>
+    /// <p>The minimum duration of time (in milliseconds) between two triggering events to collect data.</p> <note>
     /// <p>If a signal changes often, you might want to collect data at a slower rate.</p>
     /// </note>
     pub minimum_sampling_interval_ms: ::std::option::Option<i64>,
@@ -23,7 +23,7 @@ impl SignalInformation {
     pub fn max_sample_count(&self) -> ::std::option::Option<i64> {
         self.max_sample_count
     }
-    /// <p>The minimum duration of time (in milliseconds) between two triggering events to collect data.</p><note>
+    /// <p>The minimum duration of time (in milliseconds) between two triggering events to collect data.</p> <note>
     /// <p>If a signal changes often, you might want to collect data at a slower rate.</p>
     /// </note>
     pub fn minimum_sampling_interval_ms(&self) -> ::std::option::Option<i64> {
@@ -75,21 +75,21 @@ impl SignalInformationBuilder {
     pub fn get_max_sample_count(&self) -> &::std::option::Option<i64> {
         &self.max_sample_count
     }
-    /// <p>The minimum duration of time (in milliseconds) between two triggering events to collect data.</p><note>
+    /// <p>The minimum duration of time (in milliseconds) between two triggering events to collect data.</p> <note>
     /// <p>If a signal changes often, you might want to collect data at a slower rate.</p>
     /// </note>
     pub fn minimum_sampling_interval_ms(mut self, input: i64) -> Self {
         self.minimum_sampling_interval_ms = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The minimum duration of time (in milliseconds) between two triggering events to collect data.</p><note>
+    /// <p>The minimum duration of time (in milliseconds) between two triggering events to collect data.</p> <note>
     /// <p>If a signal changes often, you might want to collect data at a slower rate.</p>
     /// </note>
     pub fn set_minimum_sampling_interval_ms(mut self, input: ::std::option::Option<i64>) -> Self {
         self.minimum_sampling_interval_ms = input;
         self
     }
-    /// <p>The minimum duration of time (in milliseconds) between two triggering events to collect data.</p><note>
+    /// <p>The minimum duration of time (in milliseconds) between two triggering events to collect data.</p> <note>
     /// <p>If a signal changes often, you might want to collect data at a slower rate.</p>
     /// </note>
     pub fn get_minimum_sampling_interval_ms(&self) -> &::std::option::Option<i64> {

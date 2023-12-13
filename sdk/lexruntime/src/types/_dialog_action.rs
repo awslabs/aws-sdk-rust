@@ -6,61 +6,44 @@
 pub struct DialogAction {
     /// <p>The next action that the bot should take in its interaction with the user. The possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ConfirmIntent</code> - The next action is asking the user if the intent is complete and ready to be fulfilled. This is a yes/no question such as "Place the order?"</p></li>
-    /// <li>
-    /// <p><code>Close</code> - Indicates that the there will not be a response from the user. For example, the statement "Your order has been placed" does not require a response.</p></li>
-    /// <li>
-    /// <p><code>Delegate</code> - The next action is determined by Amazon Lex.</p></li>
-    /// <li>
-    /// <p><code>ElicitIntent</code> - The next action is to determine the intent that the user wants to fulfill.</p></li>
-    /// <li>
-    /// <p><code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p></li>
+    /// <li> <p> <code>ConfirmIntent</code> - The next action is asking the user if the intent is complete and ready to be fulfilled. This is a yes/no question such as "Place the order?"</p> </li>
+    /// <li> <p> <code>Close</code> - Indicates that the there will not be a response from the user. For example, the statement "Your order has been placed" does not require a response.</p> </li>
+    /// <li> <p> <code>Delegate</code> - The next action is determined by Amazon Lex.</p> </li>
+    /// <li> <p> <code>ElicitIntent</code> - The next action is to determine the intent that the user wants to fulfill.</p> </li>
+    /// <li> <p> <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p> </li>
     /// </ul>
     pub r#type: crate::types::DialogActionType,
     /// <p>The name of the intent.</p>
     pub intent_name: ::std::option::Option<::std::string::String>,
-    /// <p>Map of the slots that have been gathered and their values.</p>
+    /// <p>Map of the slots that have been gathered and their values. </p>
     pub slots: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The name of the slot that should be elicited from the user.</p>
     pub slot_to_elicit: ::std::option::Option<::std::string::String>,
     /// <p>The fulfillment state of the intent. The possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Failed</code> - The Lambda function associated with the intent failed to fulfill the intent.</p></li>
-    /// <li>
-    /// <p><code>Fulfilled</code> - The intent has fulfilled by the Lambda function associated with the intent.</p></li>
-    /// <li>
-    /// <p><code>ReadyForFulfillment</code> - All of the information necessary for the intent is present and the intent ready to be fulfilled by the client application.</p></li>
+    /// <li> <p> <code>Failed</code> - The Lambda function associated with the intent failed to fulfill the intent.</p> </li>
+    /// <li> <p> <code>Fulfilled</code> - The intent has fulfilled by the Lambda function associated with the intent. </p> </li>
+    /// <li> <p> <code>ReadyForFulfillment</code> - All of the information necessary for the intent is present and the intent ready to be fulfilled by the client application.</p> </li>
     /// </ul>
     pub fulfillment_state: ::std::option::Option<crate::types::FulfillmentState>,
     /// <p>The message that should be shown to the user. If you don't specify a message, Amazon Lex will use the message configured for the intent.</p>
     pub message: ::std::option::Option<::std::string::String>,
     /// <ul>
-    /// <li>
-    /// <p><code>PlainText</code> - The message contains plain UTF-8 text.</p></li>
-    /// <li>
-    /// <p><code>CustomPayload</code> - The message is a custom format for the client.</p></li>
-    /// <li>
-    /// <p><code>SSML</code> - The message contains text formatted for voice output.</p></li>
-    /// <li>
-    /// <p><code>Composite</code> - The message contains an escaped JSON object containing one or more messages. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/howitworks-manage-prompts.html">Message Groups</a>.</p></li>
+    /// <li> <p> <code>PlainText</code> - The message contains plain UTF-8 text.</p> </li>
+    /// <li> <p> <code>CustomPayload</code> - The message is a custom format for the client.</p> </li>
+    /// <li> <p> <code>SSML</code> - The message contains text formatted for voice output.</p> </li>
+    /// <li> <p> <code>Composite</code> - The message contains an escaped JSON object containing one or more messages. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/howitworks-manage-prompts.html">Message Groups</a>. </p> </li>
     /// </ul>
     pub message_format: ::std::option::Option<crate::types::MessageFormatType>,
 }
 impl DialogAction {
     /// <p>The next action that the bot should take in its interaction with the user. The possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ConfirmIntent</code> - The next action is asking the user if the intent is complete and ready to be fulfilled. This is a yes/no question such as "Place the order?"</p></li>
-    /// <li>
-    /// <p><code>Close</code> - Indicates that the there will not be a response from the user. For example, the statement "Your order has been placed" does not require a response.</p></li>
-    /// <li>
-    /// <p><code>Delegate</code> - The next action is determined by Amazon Lex.</p></li>
-    /// <li>
-    /// <p><code>ElicitIntent</code> - The next action is to determine the intent that the user wants to fulfill.</p></li>
-    /// <li>
-    /// <p><code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p></li>
+    /// <li> <p> <code>ConfirmIntent</code> - The next action is asking the user if the intent is complete and ready to be fulfilled. This is a yes/no question such as "Place the order?"</p> </li>
+    /// <li> <p> <code>Close</code> - Indicates that the there will not be a response from the user. For example, the statement "Your order has been placed" does not require a response.</p> </li>
+    /// <li> <p> <code>Delegate</code> - The next action is determined by Amazon Lex.</p> </li>
+    /// <li> <p> <code>ElicitIntent</code> - The next action is to determine the intent that the user wants to fulfill.</p> </li>
+    /// <li> <p> <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p> </li>
     /// </ul>
     pub fn r#type(&self) -> &crate::types::DialogActionType {
         &self.r#type
@@ -69,7 +52,7 @@ impl DialogAction {
     pub fn intent_name(&self) -> ::std::option::Option<&str> {
         self.intent_name.as_deref()
     }
-    /// <p>Map of the slots that have been gathered and their values.</p>
+    /// <p>Map of the slots that have been gathered and their values. </p>
     pub fn slots(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.slots.as_ref()
     }
@@ -79,12 +62,9 @@ impl DialogAction {
     }
     /// <p>The fulfillment state of the intent. The possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Failed</code> - The Lambda function associated with the intent failed to fulfill the intent.</p></li>
-    /// <li>
-    /// <p><code>Fulfilled</code> - The intent has fulfilled by the Lambda function associated with the intent.</p></li>
-    /// <li>
-    /// <p><code>ReadyForFulfillment</code> - All of the information necessary for the intent is present and the intent ready to be fulfilled by the client application.</p></li>
+    /// <li> <p> <code>Failed</code> - The Lambda function associated with the intent failed to fulfill the intent.</p> </li>
+    /// <li> <p> <code>Fulfilled</code> - The intent has fulfilled by the Lambda function associated with the intent. </p> </li>
+    /// <li> <p> <code>ReadyForFulfillment</code> - All of the information necessary for the intent is present and the intent ready to be fulfilled by the client application.</p> </li>
     /// </ul>
     pub fn fulfillment_state(&self) -> ::std::option::Option<&crate::types::FulfillmentState> {
         self.fulfillment_state.as_ref()
@@ -94,14 +74,10 @@ impl DialogAction {
         self.message.as_deref()
     }
     /// <ul>
-    /// <li>
-    /// <p><code>PlainText</code> - The message contains plain UTF-8 text.</p></li>
-    /// <li>
-    /// <p><code>CustomPayload</code> - The message is a custom format for the client.</p></li>
-    /// <li>
-    /// <p><code>SSML</code> - The message contains text formatted for voice output.</p></li>
-    /// <li>
-    /// <p><code>Composite</code> - The message contains an escaped JSON object containing one or more messages. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/howitworks-manage-prompts.html">Message Groups</a>.</p></li>
+    /// <li> <p> <code>PlainText</code> - The message contains plain UTF-8 text.</p> </li>
+    /// <li> <p> <code>CustomPayload</code> - The message is a custom format for the client.</p> </li>
+    /// <li> <p> <code>SSML</code> - The message contains text formatted for voice output.</p> </li>
+    /// <li> <p> <code>Composite</code> - The message contains an escaped JSON object containing one or more messages. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/howitworks-manage-prompts.html">Message Groups</a>. </p> </li>
     /// </ul>
     pub fn message_format(&self) -> ::std::option::Option<&crate::types::MessageFormatType> {
         self.message_format.as_ref()
@@ -142,16 +118,11 @@ pub struct DialogActionBuilder {
 impl DialogActionBuilder {
     /// <p>The next action that the bot should take in its interaction with the user. The possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ConfirmIntent</code> - The next action is asking the user if the intent is complete and ready to be fulfilled. This is a yes/no question such as "Place the order?"</p></li>
-    /// <li>
-    /// <p><code>Close</code> - Indicates that the there will not be a response from the user. For example, the statement "Your order has been placed" does not require a response.</p></li>
-    /// <li>
-    /// <p><code>Delegate</code> - The next action is determined by Amazon Lex.</p></li>
-    /// <li>
-    /// <p><code>ElicitIntent</code> - The next action is to determine the intent that the user wants to fulfill.</p></li>
-    /// <li>
-    /// <p><code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p></li>
+    /// <li> <p> <code>ConfirmIntent</code> - The next action is asking the user if the intent is complete and ready to be fulfilled. This is a yes/no question such as "Place the order?"</p> </li>
+    /// <li> <p> <code>Close</code> - Indicates that the there will not be a response from the user. For example, the statement "Your order has been placed" does not require a response.</p> </li>
+    /// <li> <p> <code>Delegate</code> - The next action is determined by Amazon Lex.</p> </li>
+    /// <li> <p> <code>ElicitIntent</code> - The next action is to determine the intent that the user wants to fulfill.</p> </li>
+    /// <li> <p> <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::DialogActionType) -> Self {
@@ -160,16 +131,11 @@ impl DialogActionBuilder {
     }
     /// <p>The next action that the bot should take in its interaction with the user. The possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ConfirmIntent</code> - The next action is asking the user if the intent is complete and ready to be fulfilled. This is a yes/no question such as "Place the order?"</p></li>
-    /// <li>
-    /// <p><code>Close</code> - Indicates that the there will not be a response from the user. For example, the statement "Your order has been placed" does not require a response.</p></li>
-    /// <li>
-    /// <p><code>Delegate</code> - The next action is determined by Amazon Lex.</p></li>
-    /// <li>
-    /// <p><code>ElicitIntent</code> - The next action is to determine the intent that the user wants to fulfill.</p></li>
-    /// <li>
-    /// <p><code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p></li>
+    /// <li> <p> <code>ConfirmIntent</code> - The next action is asking the user if the intent is complete and ready to be fulfilled. This is a yes/no question such as "Place the order?"</p> </li>
+    /// <li> <p> <code>Close</code> - Indicates that the there will not be a response from the user. For example, the statement "Your order has been placed" does not require a response.</p> </li>
+    /// <li> <p> <code>Delegate</code> - The next action is determined by Amazon Lex.</p> </li>
+    /// <li> <p> <code>ElicitIntent</code> - The next action is to determine the intent that the user wants to fulfill.</p> </li>
+    /// <li> <p> <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p> </li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::DialogActionType>) -> Self {
         self.r#type = input;
@@ -177,16 +143,11 @@ impl DialogActionBuilder {
     }
     /// <p>The next action that the bot should take in its interaction with the user. The possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ConfirmIntent</code> - The next action is asking the user if the intent is complete and ready to be fulfilled. This is a yes/no question such as "Place the order?"</p></li>
-    /// <li>
-    /// <p><code>Close</code> - Indicates that the there will not be a response from the user. For example, the statement "Your order has been placed" does not require a response.</p></li>
-    /// <li>
-    /// <p><code>Delegate</code> - The next action is determined by Amazon Lex.</p></li>
-    /// <li>
-    /// <p><code>ElicitIntent</code> - The next action is to determine the intent that the user wants to fulfill.</p></li>
-    /// <li>
-    /// <p><code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p></li>
+    /// <li> <p> <code>ConfirmIntent</code> - The next action is asking the user if the intent is complete and ready to be fulfilled. This is a yes/no question such as "Place the order?"</p> </li>
+    /// <li> <p> <code>Close</code> - Indicates that the there will not be a response from the user. For example, the statement "Your order has been placed" does not require a response.</p> </li>
+    /// <li> <p> <code>Delegate</code> - The next action is determined by Amazon Lex.</p> </li>
+    /// <li> <p> <code>ElicitIntent</code> - The next action is to determine the intent that the user wants to fulfill.</p> </li>
+    /// <li> <p> <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p> </li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::DialogActionType> {
         &self.r#type
@@ -209,19 +170,19 @@ impl DialogActionBuilder {
     ///
     /// To override the contents of this collection use [`set_slots`](Self::set_slots).
     ///
-    /// <p>Map of the slots that have been gathered and their values.</p>
+    /// <p>Map of the slots that have been gathered and their values. </p>
     pub fn slots(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.slots.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.slots = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>Map of the slots that have been gathered and their values.</p>
+    /// <p>Map of the slots that have been gathered and their values. </p>
     pub fn set_slots(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.slots = input;
         self
     }
-    /// <p>Map of the slots that have been gathered and their values.</p>
+    /// <p>Map of the slots that have been gathered and their values. </p>
     pub fn get_slots(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.slots
     }
@@ -241,12 +202,9 @@ impl DialogActionBuilder {
     }
     /// <p>The fulfillment state of the intent. The possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Failed</code> - The Lambda function associated with the intent failed to fulfill the intent.</p></li>
-    /// <li>
-    /// <p><code>Fulfilled</code> - The intent has fulfilled by the Lambda function associated with the intent.</p></li>
-    /// <li>
-    /// <p><code>ReadyForFulfillment</code> - All of the information necessary for the intent is present and the intent ready to be fulfilled by the client application.</p></li>
+    /// <li> <p> <code>Failed</code> - The Lambda function associated with the intent failed to fulfill the intent.</p> </li>
+    /// <li> <p> <code>Fulfilled</code> - The intent has fulfilled by the Lambda function associated with the intent. </p> </li>
+    /// <li> <p> <code>ReadyForFulfillment</code> - All of the information necessary for the intent is present and the intent ready to be fulfilled by the client application.</p> </li>
     /// </ul>
     pub fn fulfillment_state(mut self, input: crate::types::FulfillmentState) -> Self {
         self.fulfillment_state = ::std::option::Option::Some(input);
@@ -254,12 +212,9 @@ impl DialogActionBuilder {
     }
     /// <p>The fulfillment state of the intent. The possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Failed</code> - The Lambda function associated with the intent failed to fulfill the intent.</p></li>
-    /// <li>
-    /// <p><code>Fulfilled</code> - The intent has fulfilled by the Lambda function associated with the intent.</p></li>
-    /// <li>
-    /// <p><code>ReadyForFulfillment</code> - All of the information necessary for the intent is present and the intent ready to be fulfilled by the client application.</p></li>
+    /// <li> <p> <code>Failed</code> - The Lambda function associated with the intent failed to fulfill the intent.</p> </li>
+    /// <li> <p> <code>Fulfilled</code> - The intent has fulfilled by the Lambda function associated with the intent. </p> </li>
+    /// <li> <p> <code>ReadyForFulfillment</code> - All of the information necessary for the intent is present and the intent ready to be fulfilled by the client application.</p> </li>
     /// </ul>
     pub fn set_fulfillment_state(mut self, input: ::std::option::Option<crate::types::FulfillmentState>) -> Self {
         self.fulfillment_state = input;
@@ -267,12 +222,9 @@ impl DialogActionBuilder {
     }
     /// <p>The fulfillment state of the intent. The possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Failed</code> - The Lambda function associated with the intent failed to fulfill the intent.</p></li>
-    /// <li>
-    /// <p><code>Fulfilled</code> - The intent has fulfilled by the Lambda function associated with the intent.</p></li>
-    /// <li>
-    /// <p><code>ReadyForFulfillment</code> - All of the information necessary for the intent is present and the intent ready to be fulfilled by the client application.</p></li>
+    /// <li> <p> <code>Failed</code> - The Lambda function associated with the intent failed to fulfill the intent.</p> </li>
+    /// <li> <p> <code>Fulfilled</code> - The intent has fulfilled by the Lambda function associated with the intent. </p> </li>
+    /// <li> <p> <code>ReadyForFulfillment</code> - All of the information necessary for the intent is present and the intent ready to be fulfilled by the client application.</p> </li>
     /// </ul>
     pub fn get_fulfillment_state(&self) -> &::std::option::Option<crate::types::FulfillmentState> {
         &self.fulfillment_state
@@ -292,42 +244,30 @@ impl DialogActionBuilder {
         &self.message
     }
     /// <ul>
-    /// <li>
-    /// <p><code>PlainText</code> - The message contains plain UTF-8 text.</p></li>
-    /// <li>
-    /// <p><code>CustomPayload</code> - The message is a custom format for the client.</p></li>
-    /// <li>
-    /// <p><code>SSML</code> - The message contains text formatted for voice output.</p></li>
-    /// <li>
-    /// <p><code>Composite</code> - The message contains an escaped JSON object containing one or more messages. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/howitworks-manage-prompts.html">Message Groups</a>.</p></li>
+    /// <li> <p> <code>PlainText</code> - The message contains plain UTF-8 text.</p> </li>
+    /// <li> <p> <code>CustomPayload</code> - The message is a custom format for the client.</p> </li>
+    /// <li> <p> <code>SSML</code> - The message contains text formatted for voice output.</p> </li>
+    /// <li> <p> <code>Composite</code> - The message contains an escaped JSON object containing one or more messages. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/howitworks-manage-prompts.html">Message Groups</a>. </p> </li>
     /// </ul>
     pub fn message_format(mut self, input: crate::types::MessageFormatType) -> Self {
         self.message_format = ::std::option::Option::Some(input);
         self
     }
     /// <ul>
-    /// <li>
-    /// <p><code>PlainText</code> - The message contains plain UTF-8 text.</p></li>
-    /// <li>
-    /// <p><code>CustomPayload</code> - The message is a custom format for the client.</p></li>
-    /// <li>
-    /// <p><code>SSML</code> - The message contains text formatted for voice output.</p></li>
-    /// <li>
-    /// <p><code>Composite</code> - The message contains an escaped JSON object containing one or more messages. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/howitworks-manage-prompts.html">Message Groups</a>.</p></li>
+    /// <li> <p> <code>PlainText</code> - The message contains plain UTF-8 text.</p> </li>
+    /// <li> <p> <code>CustomPayload</code> - The message is a custom format for the client.</p> </li>
+    /// <li> <p> <code>SSML</code> - The message contains text formatted for voice output.</p> </li>
+    /// <li> <p> <code>Composite</code> - The message contains an escaped JSON object containing one or more messages. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/howitworks-manage-prompts.html">Message Groups</a>. </p> </li>
     /// </ul>
     pub fn set_message_format(mut self, input: ::std::option::Option<crate::types::MessageFormatType>) -> Self {
         self.message_format = input;
         self
     }
     /// <ul>
-    /// <li>
-    /// <p><code>PlainText</code> - The message contains plain UTF-8 text.</p></li>
-    /// <li>
-    /// <p><code>CustomPayload</code> - The message is a custom format for the client.</p></li>
-    /// <li>
-    /// <p><code>SSML</code> - The message contains text formatted for voice output.</p></li>
-    /// <li>
-    /// <p><code>Composite</code> - The message contains an escaped JSON object containing one or more messages. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/howitworks-manage-prompts.html">Message Groups</a>.</p></li>
+    /// <li> <p> <code>PlainText</code> - The message contains plain UTF-8 text.</p> </li>
+    /// <li> <p> <code>CustomPayload</code> - The message is a custom format for the client.</p> </li>
+    /// <li> <p> <code>SSML</code> - The message contains text formatted for voice output.</p> </li>
+    /// <li> <p> <code>Composite</code> - The message contains an escaped JSON object containing one or more messages. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/howitworks-manage-prompts.html">Message Groups</a>. </p> </li>
     /// </ul>
     pub fn get_message_format(&self) -> &::std::option::Option<crate::types::MessageFormatType> {
         &self.message_format

@@ -11,7 +11,7 @@ pub struct SparkSql {
     /// <p>A SQL query that must use Spark SQL syntax and return a single data set.</p>
     pub sql_query: ::std::string::String,
     /// <p>A list of aliases. An alias allows you to specify what name to use in the SQL for a given input. For example, you have a datasource named "MyDataSource". If you specify <code>From</code> as MyDataSource, and <code>Alias</code> as SqlName, then in your SQL you can do:</p>
-    /// <p><code>select * from SqlName</code></p>
+    /// <p> <code>select * from SqlName</code> </p>
     /// <p>and that gets data from MyDataSource.</p>
     pub sql_aliases: ::std::vec::Vec<crate::types::SqlAlias>,
     /// <p>Specifies the data schema for the SparkSQL transform.</p>
@@ -34,7 +34,7 @@ impl SparkSql {
         self.sql_query.deref()
     }
     /// <p>A list of aliases. An alias allows you to specify what name to use in the SQL for a given input. For example, you have a datasource named "MyDataSource". If you specify <code>From</code> as MyDataSource, and <code>Alias</code> as SqlName, then in your SQL you can do:</p>
-    /// <p><code>select * from SqlName</code></p>
+    /// <p> <code>select * from SqlName</code> </p>
     /// <p>and that gets data from MyDataSource.</p>
     pub fn sql_aliases(&self) -> &[crate::types::SqlAlias] {
         use std::ops::Deref;
@@ -120,7 +120,7 @@ impl SparkSqlBuilder {
     /// To override the contents of this collection use [`set_sql_aliases`](Self::set_sql_aliases).
     ///
     /// <p>A list of aliases. An alias allows you to specify what name to use in the SQL for a given input. For example, you have a datasource named "MyDataSource". If you specify <code>From</code> as MyDataSource, and <code>Alias</code> as SqlName, then in your SQL you can do:</p>
-    /// <p><code>select * from SqlName</code></p>
+    /// <p> <code>select * from SqlName</code> </p>
     /// <p>and that gets data from MyDataSource.</p>
     pub fn sql_aliases(mut self, input: crate::types::SqlAlias) -> Self {
         let mut v = self.sql_aliases.unwrap_or_default();
@@ -129,14 +129,14 @@ impl SparkSqlBuilder {
         self
     }
     /// <p>A list of aliases. An alias allows you to specify what name to use in the SQL for a given input. For example, you have a datasource named "MyDataSource". If you specify <code>From</code> as MyDataSource, and <code>Alias</code> as SqlName, then in your SQL you can do:</p>
-    /// <p><code>select * from SqlName</code></p>
+    /// <p> <code>select * from SqlName</code> </p>
     /// <p>and that gets data from MyDataSource.</p>
     pub fn set_sql_aliases(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SqlAlias>>) -> Self {
         self.sql_aliases = input;
         self
     }
     /// <p>A list of aliases. An alias allows you to specify what name to use in the SQL for a given input. For example, you have a datasource named "MyDataSource". If you specify <code>From</code> as MyDataSource, and <code>Alias</code> as SqlName, then in your SQL you can do:</p>
-    /// <p><code>select * from SqlName</code></p>
+    /// <p> <code>select * from SqlName</code> </p>
     /// <p>and that gets data from MyDataSource.</p>
     pub fn get_sql_aliases(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SqlAlias>> {
         &self.sql_aliases

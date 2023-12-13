@@ -115,7 +115,7 @@ impl ListServicesFluentBuilder {
         crate::operation::list_services::paginator::ListServicesPaginator::new(self.handle, self.inner)
     }
     /// <p>For the first <code>ListServices</code> request, omit this value.</p>
-    /// <p>If the response contains <code>NextToken</code>, submit another <code>ListServices</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p><note>
+    /// <p>If the response contains <code>NextToken</code>, submit another <code>ListServices</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note>
     /// <p>Cloud Map gets <code>MaxResults</code> services and then filters them based on the specified criteria. It's possible that no services in the first <code>MaxResults</code> services matched the specified criteria but that subsequent groups of <code>MaxResults</code> services do contain services that match the criteria.</p>
     /// </note>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -123,7 +123,7 @@ impl ListServicesFluentBuilder {
         self
     }
     /// <p>For the first <code>ListServices</code> request, omit this value.</p>
-    /// <p>If the response contains <code>NextToken</code>, submit another <code>ListServices</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p><note>
+    /// <p>If the response contains <code>NextToken</code>, submit another <code>ListServices</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note>
     /// <p>Cloud Map gets <code>MaxResults</code> services and then filters them based on the specified criteria. It's possible that no services in the first <code>MaxResults</code> services matched the specified criteria but that subsequent groups of <code>MaxResults</code> services do contain services that match the criteria.</p>
     /// </note>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -131,7 +131,7 @@ impl ListServicesFluentBuilder {
         self
     }
     /// <p>For the first <code>ListServices</code> request, omit this value.</p>
-    /// <p>If the response contains <code>NextToken</code>, submit another <code>ListServices</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p><note>
+    /// <p>If the response contains <code>NextToken</code>, submit another <code>ListServices</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note>
     /// <p>Cloud Map gets <code>MaxResults</code> services and then filters them based on the specified criteria. It's possible that no services in the first <code>MaxResults</code> services matched the specified criteria but that subsequent groups of <code>MaxResults</code> services do contain services that match the criteria.</p>
     /// </note>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,19 +155,19 @@ impl ListServicesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>A complex type that contains specifications for the namespaces that you want to list services for.</p>
+    /// <p>A complex type that contains specifications for the namespaces that you want to list services for. </p>
     /// <p>If you specify more than one filter, an operation must match all filters to be returned by <code>ListServices</code>.</p>
     pub fn filters(mut self, input: crate::types::ServiceFilter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>A complex type that contains specifications for the namespaces that you want to list services for.</p>
+    /// <p>A complex type that contains specifications for the namespaces that you want to list services for. </p>
     /// <p>If you specify more than one filter, an operation must match all filters to be returned by <code>ListServices</code>.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
-    /// <p>A complex type that contains specifications for the namespaces that you want to list services for.</p>
+    /// <p>A complex type that contains specifications for the namespaces that you want to list services for. </p>
     /// <p>If you specify more than one filter, an operation must match all filters to be returned by <code>ListServices</code>.</p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceFilter>> {
         self.inner.get_filters()

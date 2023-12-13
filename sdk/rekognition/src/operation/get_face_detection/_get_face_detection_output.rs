@@ -9,9 +9,9 @@ pub struct GetFaceDetectionOutput {
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation.</p>
     pub video_metadata: ::std::option::Option<crate::types::VideoMetadata>,
-    /// <p>If the response is truncated, Amazon Rekognition returns this token that you can use in the subsequent request to retrieve the next set of faces.</p>
+    /// <p>If the response is truncated, Amazon Rekognition returns this token that you can use in the subsequent request to retrieve the next set of faces. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>An array of faces detected in the video. Each element contains a detected face's details and the time, in milliseconds from the start of the video, the face was detected.</p>
+    /// <p>An array of faces detected in the video. Each element contains a detected face's details and the time, in milliseconds from the start of the video, the face was detected. </p>
     pub faces: ::std::option::Option<::std::vec::Vec<crate::types::FaceDetection>>,
     /// <p>Job identifier for the face detection operation for which you want to obtain results. The job identifer is returned by an initial call to StartFaceDetection.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
@@ -34,11 +34,11 @@ impl GetFaceDetectionOutput {
     pub fn video_metadata(&self) -> ::std::option::Option<&crate::types::VideoMetadata> {
         self.video_metadata.as_ref()
     }
-    /// <p>If the response is truncated, Amazon Rekognition returns this token that you can use in the subsequent request to retrieve the next set of faces.</p>
+    /// <p>If the response is truncated, Amazon Rekognition returns this token that you can use in the subsequent request to retrieve the next set of faces. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>An array of faces detected in the video. Each element contains a detected face's details and the time, in milliseconds from the start of the video, the face was detected.</p>
+    /// <p>An array of faces detected in the video. Each element contains a detected face's details and the time, in milliseconds from the start of the video, the face was detected. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.faces.is_none()`.
     pub fn faces(&self) -> &[crate::types::FaceDetection] {
@@ -126,17 +126,17 @@ impl GetFaceDetectionOutputBuilder {
     pub fn get_video_metadata(&self) -> &::std::option::Option<crate::types::VideoMetadata> {
         &self.video_metadata
     }
-    /// <p>If the response is truncated, Amazon Rekognition returns this token that you can use in the subsequent request to retrieve the next set of faces.</p>
+    /// <p>If the response is truncated, Amazon Rekognition returns this token that you can use in the subsequent request to retrieve the next set of faces. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If the response is truncated, Amazon Rekognition returns this token that you can use in the subsequent request to retrieve the next set of faces.</p>
+    /// <p>If the response is truncated, Amazon Rekognition returns this token that you can use in the subsequent request to retrieve the next set of faces. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>If the response is truncated, Amazon Rekognition returns this token that you can use in the subsequent request to retrieve the next set of faces.</p>
+    /// <p>If the response is truncated, Amazon Rekognition returns this token that you can use in the subsequent request to retrieve the next set of faces. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
@@ -144,19 +144,19 @@ impl GetFaceDetectionOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_faces`](Self::set_faces).
     ///
-    /// <p>An array of faces detected in the video. Each element contains a detected face's details and the time, in milliseconds from the start of the video, the face was detected.</p>
+    /// <p>An array of faces detected in the video. Each element contains a detected face's details and the time, in milliseconds from the start of the video, the face was detected. </p>
     pub fn faces(mut self, input: crate::types::FaceDetection) -> Self {
         let mut v = self.faces.unwrap_or_default();
         v.push(input);
         self.faces = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of faces detected in the video. Each element contains a detected face's details and the time, in milliseconds from the start of the video, the face was detected.</p>
+    /// <p>An array of faces detected in the video. Each element contains a detected face's details and the time, in milliseconds from the start of the video, the face was detected. </p>
     pub fn set_faces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FaceDetection>>) -> Self {
         self.faces = input;
         self
     }
-    /// <p>An array of faces detected in the video. Each element contains a detected face's details and the time, in milliseconds from the start of the video, the face was detected.</p>
+    /// <p>An array of faces detected in the video. Each element contains a detected face's details and the time, in milliseconds from the start of the video, the face was detected. </p>
     pub fn get_faces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FaceDetection>> {
         &self.faces
     }

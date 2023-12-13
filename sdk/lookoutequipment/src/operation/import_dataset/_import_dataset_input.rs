@@ -7,9 +7,9 @@ pub struct ImportDatasetInput {
     pub source_dataset_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the machine learning dataset to be created. If the dataset already exists, Amazon Lookout for Equipment overwrites the existing dataset. If you don't specify this field, it is filled with the name of the source dataset.</p>
     pub dataset_name: ::std::option::Option<::std::string::String>,
-    /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one.</p>
+    /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// <p>Provides the identifier of the KMS key key used to encrypt model data by Amazon Lookout for Equipment.</p>
+    /// <p>Provides the identifier of the KMS key key used to encrypt model data by Amazon Lookout for Equipment. </p>
     pub server_side_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Any tags associated with the dataset to be created.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -23,11 +23,11 @@ impl ImportDatasetInput {
     pub fn dataset_name(&self) -> ::std::option::Option<&str> {
         self.dataset_name.as_deref()
     }
-    /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one.</p>
+    /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>Provides the identifier of the KMS key key used to encrypt model data by Amazon Lookout for Equipment.</p>
+    /// <p>Provides the identifier of the KMS key key used to encrypt model data by Amazon Lookout for Equipment. </p>
     pub fn server_side_kms_key_id(&self) -> ::std::option::Option<&str> {
         self.server_side_kms_key_id.as_deref()
     }
@@ -85,32 +85,32 @@ impl ImportDatasetInputBuilder {
     pub fn get_dataset_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.dataset_name
     }
-    /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one.</p>
+    /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
     /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one.</p>
+    /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one.</p>
+    /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
-    /// <p>Provides the identifier of the KMS key key used to encrypt model data by Amazon Lookout for Equipment.</p>
+    /// <p>Provides the identifier of the KMS key key used to encrypt model data by Amazon Lookout for Equipment. </p>
     pub fn server_side_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_side_kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Provides the identifier of the KMS key key used to encrypt model data by Amazon Lookout for Equipment.</p>
+    /// <p>Provides the identifier of the KMS key key used to encrypt model data by Amazon Lookout for Equipment. </p>
     pub fn set_server_side_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_side_kms_key_id = input;
         self
     }
-    /// <p>Provides the identifier of the KMS key key used to encrypt model data by Amazon Lookout for Equipment.</p>
+    /// <p>Provides the identifier of the KMS key key used to encrypt model data by Amazon Lookout for Equipment. </p>
     pub fn get_server_side_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.server_side_kms_key_id
     }

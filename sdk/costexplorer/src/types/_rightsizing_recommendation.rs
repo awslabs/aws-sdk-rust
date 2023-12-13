@@ -10,11 +10,11 @@ pub struct RightsizingRecommendation {
     pub current_instance: ::std::option::Option<crate::types::CurrentInstance>,
     /// <p>A recommendation to either terminate or modify the resource.</p>
     pub rightsizing_type: ::std::option::Option<crate::types::RightsizingType>,
-    /// <p>The details for the modification recommendations.</p>
+    /// <p>The details for the modification recommendations. </p>
     pub modify_recommendation_detail: ::std::option::Option<crate::types::ModifyRecommendationDetail>,
     /// <p>The details for termination recommendations.</p>
     pub terminate_recommendation_detail: ::std::option::Option<crate::types::TerminateRecommendationDetail>,
-    /// <p>The list of possible reasons why the recommendation is generated, such as under- or over-utilization of specific metrics (for example, CPU, Memory, Network).</p>
+    /// <p>The list of possible reasons why the recommendation is generated, such as under- or over-utilization of specific metrics (for example, CPU, Memory, Network). </p>
     pub finding_reason_codes: ::std::option::Option<::std::vec::Vec<crate::types::FindingReasonCode>>,
 }
 impl RightsizingRecommendation {
@@ -30,7 +30,7 @@ impl RightsizingRecommendation {
     pub fn rightsizing_type(&self) -> ::std::option::Option<&crate::types::RightsizingType> {
         self.rightsizing_type.as_ref()
     }
-    /// <p>The details for the modification recommendations.</p>
+    /// <p>The details for the modification recommendations. </p>
     pub fn modify_recommendation_detail(&self) -> ::std::option::Option<&crate::types::ModifyRecommendationDetail> {
         self.modify_recommendation_detail.as_ref()
     }
@@ -38,7 +38,7 @@ impl RightsizingRecommendation {
     pub fn terminate_recommendation_detail(&self) -> ::std::option::Option<&crate::types::TerminateRecommendationDetail> {
         self.terminate_recommendation_detail.as_ref()
     }
-    /// <p>The list of possible reasons why the recommendation is generated, such as under- or over-utilization of specific metrics (for example, CPU, Memory, Network).</p>
+    /// <p>The list of possible reasons why the recommendation is generated, such as under- or over-utilization of specific metrics (for example, CPU, Memory, Network). </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.finding_reason_codes.is_none()`.
     pub fn finding_reason_codes(&self) -> &[crate::types::FindingReasonCode] {
@@ -106,17 +106,17 @@ impl RightsizingRecommendationBuilder {
     pub fn get_rightsizing_type(&self) -> &::std::option::Option<crate::types::RightsizingType> {
         &self.rightsizing_type
     }
-    /// <p>The details for the modification recommendations.</p>
+    /// <p>The details for the modification recommendations. </p>
     pub fn modify_recommendation_detail(mut self, input: crate::types::ModifyRecommendationDetail) -> Self {
         self.modify_recommendation_detail = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The details for the modification recommendations.</p>
+    /// <p>The details for the modification recommendations. </p>
     pub fn set_modify_recommendation_detail(mut self, input: ::std::option::Option<crate::types::ModifyRecommendationDetail>) -> Self {
         self.modify_recommendation_detail = input;
         self
     }
-    /// <p>The details for the modification recommendations.</p>
+    /// <p>The details for the modification recommendations. </p>
     pub fn get_modify_recommendation_detail(&self) -> &::std::option::Option<crate::types::ModifyRecommendationDetail> {
         &self.modify_recommendation_detail
     }
@@ -138,19 +138,19 @@ impl RightsizingRecommendationBuilder {
     ///
     /// To override the contents of this collection use [`set_finding_reason_codes`](Self::set_finding_reason_codes).
     ///
-    /// <p>The list of possible reasons why the recommendation is generated, such as under- or over-utilization of specific metrics (for example, CPU, Memory, Network).</p>
+    /// <p>The list of possible reasons why the recommendation is generated, such as under- or over-utilization of specific metrics (for example, CPU, Memory, Network). </p>
     pub fn finding_reason_codes(mut self, input: crate::types::FindingReasonCode) -> Self {
         let mut v = self.finding_reason_codes.unwrap_or_default();
         v.push(input);
         self.finding_reason_codes = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of possible reasons why the recommendation is generated, such as under- or over-utilization of specific metrics (for example, CPU, Memory, Network).</p>
+    /// <p>The list of possible reasons why the recommendation is generated, such as under- or over-utilization of specific metrics (for example, CPU, Memory, Network). </p>
     pub fn set_finding_reason_codes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FindingReasonCode>>) -> Self {
         self.finding_reason_codes = input;
         self
     }
-    /// <p>The list of possible reasons why the recommendation is generated, such as under- or over-utilization of specific metrics (for example, CPU, Memory, Network).</p>
+    /// <p>The list of possible reasons why the recommendation is generated, such as under- or over-utilization of specific metrics (for example, CPU, Memory, Network). </p>
     pub fn get_finding_reason_codes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FindingReasonCode>> {
         &self.finding_reason_codes
     }

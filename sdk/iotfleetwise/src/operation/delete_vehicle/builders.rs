@@ -22,7 +22,7 @@ impl DeleteVehicleInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteVehicle`.
 ///
-/// <p>Deletes a vehicle and removes it from any campaigns.</p><note>
+/// <p> Deletes a vehicle and removes it from any campaigns.</p> <note>
 /// <p>If the vehicle is successfully deleted, Amazon Web Services IoT FleetWise sends back an HTTP 200 response with an empty body.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -110,17 +110,17 @@ impl DeleteVehicleFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the vehicle to delete.</p>
+    /// <p>The ID of the vehicle to delete. </p>
     pub fn vehicle_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vehicle_name(input.into());
         self
     }
-    /// <p>The ID of the vehicle to delete.</p>
+    /// <p>The ID of the vehicle to delete. </p>
     pub fn set_vehicle_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vehicle_name(input);
         self
     }
-    /// <p>The ID of the vehicle to delete.</p>
+    /// <p>The ID of the vehicle to delete. </p>
     pub fn get_vehicle_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_vehicle_name()
     }

@@ -116,10 +116,8 @@ impl ListBuildsFluentBuilder {
     }
     /// <p>The order to list build IDs. Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ASCENDING</code>: List the build IDs in ascending order by build ID.</p></li>
-    /// <li>
-    /// <p><code>DESCENDING</code>: List the build IDs in descending order by build ID.</p></li>
+    /// <li> <p> <code>ASCENDING</code>: List the build IDs in ascending order by build ID.</p> </li>
+    /// <li> <p> <code>DESCENDING</code>: List the build IDs in descending order by build ID.</p> </li>
     /// </ul>
     pub fn sort_order(mut self, input: crate::types::SortOrderType) -> Self {
         self.inner = self.inner.sort_order(input);
@@ -127,10 +125,8 @@ impl ListBuildsFluentBuilder {
     }
     /// <p>The order to list build IDs. Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ASCENDING</code>: List the build IDs in ascending order by build ID.</p></li>
-    /// <li>
-    /// <p><code>DESCENDING</code>: List the build IDs in descending order by build ID.</p></li>
+    /// <li> <p> <code>ASCENDING</code>: List the build IDs in ascending order by build ID.</p> </li>
+    /// <li> <p> <code>DESCENDING</code>: List the build IDs in descending order by build ID.</p> </li>
     /// </ul>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrderType>) -> Self {
         self.inner = self.inner.set_sort_order(input);
@@ -138,10 +134,8 @@ impl ListBuildsFluentBuilder {
     }
     /// <p>The order to list build IDs. Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ASCENDING</code>: List the build IDs in ascending order by build ID.</p></li>
-    /// <li>
-    /// <p><code>DESCENDING</code>: List the build IDs in descending order by build ID.</p></li>
+    /// <li> <p> <code>ASCENDING</code>: List the build IDs in ascending order by build ID.</p> </li>
+    /// <li> <p> <code>DESCENDING</code>: List the build IDs in descending order by build ID.</p> </li>
     /// </ul>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrderType> {
         self.inner.get_sort_order()

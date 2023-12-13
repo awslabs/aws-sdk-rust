@@ -272,7 +272,7 @@ pub enum MergePullRequestByFastForwardError {
     InvalidCommitIdException(crate::types::error::InvalidCommitIdException),
     /// <p>The pull request ID is not valid. Make sure that you have provided the full ID and that the pull request is in the specified repository, and then try again.</p>
     InvalidPullRequestIdException(crate::types::error::InvalidPullRequestIdException),
-    /// <p>A specified repository name is not valid.</p><note>
+    /// <p>A specified repository name is not valid.</p> <note>
     /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::types::error::InvalidRepositoryNameException),

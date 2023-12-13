@@ -14,11 +14,11 @@ pub struct UpdateDeploymentStrategyInput {
     /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
     pub growth_factor: ::std::option::Option<f32>,
     /// <p>The algorithm used to define how percentage grows over time. AppConfig supports the following growth types:</p>
-    /// <p><b>Linear</b>: For this type, AppConfig processes the deployment by increments of the growth factor evenly distributed over the deployment time. For example, a linear deployment that uses a growth factor of 20 initially makes the configuration available to 20 percent of the targets. After 1/5th of the deployment time has passed, the system updates the percentage to 40 percent. This continues until 100% of the targets are set to receive the deployed configuration.</p>
-    /// <p><b>Exponential</b>: For this type, AppConfig processes the deployment exponentially using the following formula: <code>G*(2^N)</code>. In this formula, <code>G</code> is the growth factor specified by the user and <code>N</code> is the number of steps until the configuration is deployed to all targets. For example, if you specify a growth factor of 2, then the system rolls out the configuration as follows:</p>
-    /// <p><code>2*(2^0)</code></p>
-    /// <p><code>2*(2^1)</code></p>
-    /// <p><code>2*(2^2)</code></p>
+    /// <p> <b>Linear</b>: For this type, AppConfig processes the deployment by increments of the growth factor evenly distributed over the deployment time. For example, a linear deployment that uses a growth factor of 20 initially makes the configuration available to 20 percent of the targets. After 1/5th of the deployment time has passed, the system updates the percentage to 40 percent. This continues until 100% of the targets are set to receive the deployed configuration.</p>
+    /// <p> <b>Exponential</b>: For this type, AppConfig processes the deployment exponentially using the following formula: <code>G*(2^N)</code>. In this formula, <code>G</code> is the growth factor specified by the user and <code>N</code> is the number of steps until the configuration is deployed to all targets. For example, if you specify a growth factor of 2, then the system rolls out the configuration as follows:</p>
+    /// <p> <code>2*(2^0)</code> </p>
+    /// <p> <code>2*(2^1)</code> </p>
+    /// <p> <code>2*(2^2)</code> </p>
     /// <p>Expressed numerically, the deployment rolls out as follows: 2% of the targets, 4% of the targets, 8% of the targets, and continues until the configuration has been deployed to all targets.</p>
     pub growth_type: ::std::option::Option<crate::types::GrowthType>,
 }
@@ -44,11 +44,11 @@ impl UpdateDeploymentStrategyInput {
         self.growth_factor
     }
     /// <p>The algorithm used to define how percentage grows over time. AppConfig supports the following growth types:</p>
-    /// <p><b>Linear</b>: For this type, AppConfig processes the deployment by increments of the growth factor evenly distributed over the deployment time. For example, a linear deployment that uses a growth factor of 20 initially makes the configuration available to 20 percent of the targets. After 1/5th of the deployment time has passed, the system updates the percentage to 40 percent. This continues until 100% of the targets are set to receive the deployed configuration.</p>
-    /// <p><b>Exponential</b>: For this type, AppConfig processes the deployment exponentially using the following formula: <code>G*(2^N)</code>. In this formula, <code>G</code> is the growth factor specified by the user and <code>N</code> is the number of steps until the configuration is deployed to all targets. For example, if you specify a growth factor of 2, then the system rolls out the configuration as follows:</p>
-    /// <p><code>2*(2^0)</code></p>
-    /// <p><code>2*(2^1)</code></p>
-    /// <p><code>2*(2^2)</code></p>
+    /// <p> <b>Linear</b>: For this type, AppConfig processes the deployment by increments of the growth factor evenly distributed over the deployment time. For example, a linear deployment that uses a growth factor of 20 initially makes the configuration available to 20 percent of the targets. After 1/5th of the deployment time has passed, the system updates the percentage to 40 percent. This continues until 100% of the targets are set to receive the deployed configuration.</p>
+    /// <p> <b>Exponential</b>: For this type, AppConfig processes the deployment exponentially using the following formula: <code>G*(2^N)</code>. In this formula, <code>G</code> is the growth factor specified by the user and <code>N</code> is the number of steps until the configuration is deployed to all targets. For example, if you specify a growth factor of 2, then the system rolls out the configuration as follows:</p>
+    /// <p> <code>2*(2^0)</code> </p>
+    /// <p> <code>2*(2^1)</code> </p>
+    /// <p> <code>2*(2^2)</code> </p>
     /// <p>Expressed numerically, the deployment rolls out as follows: 2% of the targets, 4% of the targets, 8% of the targets, and continues until the configuration has been deployed to all targets.</p>
     pub fn growth_type(&self) -> ::std::option::Option<&crate::types::GrowthType> {
         self.growth_type.as_ref()
@@ -145,33 +145,33 @@ impl UpdateDeploymentStrategyInputBuilder {
         &self.growth_factor
     }
     /// <p>The algorithm used to define how percentage grows over time. AppConfig supports the following growth types:</p>
-    /// <p><b>Linear</b>: For this type, AppConfig processes the deployment by increments of the growth factor evenly distributed over the deployment time. For example, a linear deployment that uses a growth factor of 20 initially makes the configuration available to 20 percent of the targets. After 1/5th of the deployment time has passed, the system updates the percentage to 40 percent. This continues until 100% of the targets are set to receive the deployed configuration.</p>
-    /// <p><b>Exponential</b>: For this type, AppConfig processes the deployment exponentially using the following formula: <code>G*(2^N)</code>. In this formula, <code>G</code> is the growth factor specified by the user and <code>N</code> is the number of steps until the configuration is deployed to all targets. For example, if you specify a growth factor of 2, then the system rolls out the configuration as follows:</p>
-    /// <p><code>2*(2^0)</code></p>
-    /// <p><code>2*(2^1)</code></p>
-    /// <p><code>2*(2^2)</code></p>
+    /// <p> <b>Linear</b>: For this type, AppConfig processes the deployment by increments of the growth factor evenly distributed over the deployment time. For example, a linear deployment that uses a growth factor of 20 initially makes the configuration available to 20 percent of the targets. After 1/5th of the deployment time has passed, the system updates the percentage to 40 percent. This continues until 100% of the targets are set to receive the deployed configuration.</p>
+    /// <p> <b>Exponential</b>: For this type, AppConfig processes the deployment exponentially using the following formula: <code>G*(2^N)</code>. In this formula, <code>G</code> is the growth factor specified by the user and <code>N</code> is the number of steps until the configuration is deployed to all targets. For example, if you specify a growth factor of 2, then the system rolls out the configuration as follows:</p>
+    /// <p> <code>2*(2^0)</code> </p>
+    /// <p> <code>2*(2^1)</code> </p>
+    /// <p> <code>2*(2^2)</code> </p>
     /// <p>Expressed numerically, the deployment rolls out as follows: 2% of the targets, 4% of the targets, 8% of the targets, and continues until the configuration has been deployed to all targets.</p>
     pub fn growth_type(mut self, input: crate::types::GrowthType) -> Self {
         self.growth_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The algorithm used to define how percentage grows over time. AppConfig supports the following growth types:</p>
-    /// <p><b>Linear</b>: For this type, AppConfig processes the deployment by increments of the growth factor evenly distributed over the deployment time. For example, a linear deployment that uses a growth factor of 20 initially makes the configuration available to 20 percent of the targets. After 1/5th of the deployment time has passed, the system updates the percentage to 40 percent. This continues until 100% of the targets are set to receive the deployed configuration.</p>
-    /// <p><b>Exponential</b>: For this type, AppConfig processes the deployment exponentially using the following formula: <code>G*(2^N)</code>. In this formula, <code>G</code> is the growth factor specified by the user and <code>N</code> is the number of steps until the configuration is deployed to all targets. For example, if you specify a growth factor of 2, then the system rolls out the configuration as follows:</p>
-    /// <p><code>2*(2^0)</code></p>
-    /// <p><code>2*(2^1)</code></p>
-    /// <p><code>2*(2^2)</code></p>
+    /// <p> <b>Linear</b>: For this type, AppConfig processes the deployment by increments of the growth factor evenly distributed over the deployment time. For example, a linear deployment that uses a growth factor of 20 initially makes the configuration available to 20 percent of the targets. After 1/5th of the deployment time has passed, the system updates the percentage to 40 percent. This continues until 100% of the targets are set to receive the deployed configuration.</p>
+    /// <p> <b>Exponential</b>: For this type, AppConfig processes the deployment exponentially using the following formula: <code>G*(2^N)</code>. In this formula, <code>G</code> is the growth factor specified by the user and <code>N</code> is the number of steps until the configuration is deployed to all targets. For example, if you specify a growth factor of 2, then the system rolls out the configuration as follows:</p>
+    /// <p> <code>2*(2^0)</code> </p>
+    /// <p> <code>2*(2^1)</code> </p>
+    /// <p> <code>2*(2^2)</code> </p>
     /// <p>Expressed numerically, the deployment rolls out as follows: 2% of the targets, 4% of the targets, 8% of the targets, and continues until the configuration has been deployed to all targets.</p>
     pub fn set_growth_type(mut self, input: ::std::option::Option<crate::types::GrowthType>) -> Self {
         self.growth_type = input;
         self
     }
     /// <p>The algorithm used to define how percentage grows over time. AppConfig supports the following growth types:</p>
-    /// <p><b>Linear</b>: For this type, AppConfig processes the deployment by increments of the growth factor evenly distributed over the deployment time. For example, a linear deployment that uses a growth factor of 20 initially makes the configuration available to 20 percent of the targets. After 1/5th of the deployment time has passed, the system updates the percentage to 40 percent. This continues until 100% of the targets are set to receive the deployed configuration.</p>
-    /// <p><b>Exponential</b>: For this type, AppConfig processes the deployment exponentially using the following formula: <code>G*(2^N)</code>. In this formula, <code>G</code> is the growth factor specified by the user and <code>N</code> is the number of steps until the configuration is deployed to all targets. For example, if you specify a growth factor of 2, then the system rolls out the configuration as follows:</p>
-    /// <p><code>2*(2^0)</code></p>
-    /// <p><code>2*(2^1)</code></p>
-    /// <p><code>2*(2^2)</code></p>
+    /// <p> <b>Linear</b>: For this type, AppConfig processes the deployment by increments of the growth factor evenly distributed over the deployment time. For example, a linear deployment that uses a growth factor of 20 initially makes the configuration available to 20 percent of the targets. After 1/5th of the deployment time has passed, the system updates the percentage to 40 percent. This continues until 100% of the targets are set to receive the deployed configuration.</p>
+    /// <p> <b>Exponential</b>: For this type, AppConfig processes the deployment exponentially using the following formula: <code>G*(2^N)</code>. In this formula, <code>G</code> is the growth factor specified by the user and <code>N</code> is the number of steps until the configuration is deployed to all targets. For example, if you specify a growth factor of 2, then the system rolls out the configuration as follows:</p>
+    /// <p> <code>2*(2^0)</code> </p>
+    /// <p> <code>2*(2^1)</code> </p>
+    /// <p> <code>2*(2^2)</code> </p>
     /// <p>Expressed numerically, the deployment rolls out as follows: 2% of the targets, 4% of the targets, 8% of the targets, and continues until the configuration has been deployed to all targets.</p>
     pub fn get_growth_type(&self) -> &::std::option::Option<crate::types::GrowthType> {
         &self.growth_type

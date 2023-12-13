@@ -3,14 +3,10 @@
 /// <p>This structure contains information about one <i>delivery destination</i> in your account. A delivery destination is an Amazon Web Services resource that represents an shared id="AWS"/&gt; service that logs can be sent to. CloudWatch Logs, Amazon S3, are supported as Kinesis Data Firehose delivery destinations.</p>
 /// <p>To configure logs delivery between a supported Amazon Web Services service and a destination, you must do the following:</p>
 /// <ul>
-/// <li>
-/// <p>Create a delivery source, which is a logical object that represents the resource that is actually sending the logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliverySource.html">PutDeliverySource</a>.</p></li>
-/// <li>
-/// <p>Create a <i>delivery destination</i>, which is a logical object that represents the actual delivery destination.</p></li>
-/// <li>
-/// <p>If you are delivering logs cross-account, you must use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestinationolicy.html">PutDeliveryDestinationPolicy</a> in the destination account to assign an IAM policy to the destination. This policy allows delivery to that destination.</p></li>
-/// <li>
-/// <p>Create a <i>delivery</i> by pairing exactly one delivery source and one delivery destination. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateDelivery.html">CreateDelivery</a>.</p></li>
+/// <li> <p>Create a delivery source, which is a logical object that represents the resource that is actually sending the logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliverySource.html">PutDeliverySource</a>.</p> </li>
+/// <li> <p>Create a <i>delivery destination</i>, which is a logical object that represents the actual delivery destination. </p> </li>
+/// <li> <p>If you are delivering logs cross-account, you must use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestinationolicy.html">PutDeliveryDestinationPolicy</a> in the destination account to assign an IAM policy to the destination. This policy allows delivery to that destination. </p> </li>
+/// <li> <p>Create a <i>delivery</i> by pairing exactly one delivery source and one delivery destination. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateDelivery.html">CreateDelivery</a>.</p> </li>
 /// </ul>
 /// <p>You can configure a single delivery source to send logs to multiple destinations by creating multiple deliveries. You can also create multiple deliveries to configure multiple delivery sources to send logs to the same delivery destination.</p>
 #[non_exhaustive]
@@ -22,7 +18,7 @@ pub struct DeliveryDestination {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Displays whether this delivery destination is CloudWatch Logs, Amazon S3, or Kinesis Data Firehose.</p>
     pub delivery_destination_type: ::std::option::Option<crate::types::DeliveryDestinationType>,
-    /// <p>The format of the logs that are sent to this delivery destination.</p>
+    /// <p>The format of the logs that are sent to this delivery destination. </p>
     pub output_format: ::std::option::Option<crate::types::OutputFormat>,
     /// <p>A structure that contains the ARN of the Amazon Web Services resource that will receive the logs.</p>
     pub delivery_destination_configuration: ::std::option::Option<crate::types::DeliveryDestinationConfiguration>,
@@ -42,7 +38,7 @@ impl DeliveryDestination {
     pub fn delivery_destination_type(&self) -> ::std::option::Option<&crate::types::DeliveryDestinationType> {
         self.delivery_destination_type.as_ref()
     }
-    /// <p>The format of the logs that are sent to this delivery destination.</p>
+    /// <p>The format of the logs that are sent to this delivery destination. </p>
     pub fn output_format(&self) -> ::std::option::Option<&crate::types::OutputFormat> {
         self.output_format.as_ref()
     }
@@ -116,17 +112,17 @@ impl DeliveryDestinationBuilder {
     pub fn get_delivery_destination_type(&self) -> &::std::option::Option<crate::types::DeliveryDestinationType> {
         &self.delivery_destination_type
     }
-    /// <p>The format of the logs that are sent to this delivery destination.</p>
+    /// <p>The format of the logs that are sent to this delivery destination. </p>
     pub fn output_format(mut self, input: crate::types::OutputFormat) -> Self {
         self.output_format = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The format of the logs that are sent to this delivery destination.</p>
+    /// <p>The format of the logs that are sent to this delivery destination. </p>
     pub fn set_output_format(mut self, input: ::std::option::Option<crate::types::OutputFormat>) -> Self {
         self.output_format = input;
         self
     }
-    /// <p>The format of the logs that are sent to this delivery destination.</p>
+    /// <p>The format of the logs that are sent to this delivery destination. </p>
     pub fn get_output_format(&self) -> &::std::option::Option<crate::types::OutputFormat> {
         &self.output_format
     }

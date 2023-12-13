@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SpotFleetMonitoring {
     /// <p>Enables monitoring for the instance.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p>Default: <code>false</code> </p>
     pub enabled: ::std::option::Option<bool>,
 }
 impl SpotFleetMonitoring {
     /// <p>Enables monitoring for the instance.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p>Default: <code>false</code> </p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
@@ -30,19 +30,19 @@ pub struct SpotFleetMonitoringBuilder {
 }
 impl SpotFleetMonitoringBuilder {
     /// <p>Enables monitoring for the instance.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p>Default: <code>false</code> </p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Enables monitoring for the instance.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p>Default: <code>false</code> </p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }
     /// <p>Enables monitoring for the instance.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p>Default: <code>false</code> </p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
         &self.enabled
     }

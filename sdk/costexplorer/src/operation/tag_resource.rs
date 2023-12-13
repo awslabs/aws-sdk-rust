@@ -247,7 +247,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for TagResourceEn
 pub enum TagResourceError {
     /// <p>You made too many calls in a short period of time. Try again later.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
-    /// <p>The specified ARN in the request doesn't exist.</p>
+    /// <p> The specified ARN in the request doesn't exist. </p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>Can occur if you specify a number of tags for a resource greater than the maximum 50 user tags per resource.</p>
     TooManyTagsException(crate::types::error::TooManyTagsException),

@@ -12,7 +12,7 @@ pub struct EngineTranscribeMedicalSettings {
     pub r#type: crate::types::TranscribeMedicalType,
     /// <p>The name of the vocabulary passed to Amazon Transcribe Medical.</p>
     pub vocabulary_name: ::std::option::Option<::std::string::String>,
-    /// <p>The AWS Region passed to Amazon Transcribe Medical. If you don't specify a Region, Amazon Chime uses the meeting's Region.</p>
+    /// <p>The AWS Region passed to Amazon Transcribe Medical. If you don't specify a Region, Amazon Chime uses the meeting's Region. </p>
     pub region: ::std::option::Option<crate::types::TranscribeMedicalRegion>,
     /// <p>Set this field to <code>PHI</code> to identify personal health information in the transcription output.</p>
     pub content_identification_type: ::std::option::Option<crate::types::TranscribeMedicalContentIdentificationType>,
@@ -34,7 +34,7 @@ impl EngineTranscribeMedicalSettings {
     pub fn vocabulary_name(&self) -> ::std::option::Option<&str> {
         self.vocabulary_name.as_deref()
     }
-    /// <p>The AWS Region passed to Amazon Transcribe Medical. If you don't specify a Region, Amazon Chime uses the meeting's Region.</p>
+    /// <p>The AWS Region passed to Amazon Transcribe Medical. If you don't specify a Region, Amazon Chime uses the meeting's Region. </p>
     pub fn region(&self) -> ::std::option::Option<&crate::types::TranscribeMedicalRegion> {
         self.region.as_ref()
     }
@@ -121,17 +121,17 @@ impl EngineTranscribeMedicalSettingsBuilder {
     pub fn get_vocabulary_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.vocabulary_name
     }
-    /// <p>The AWS Region passed to Amazon Transcribe Medical. If you don't specify a Region, Amazon Chime uses the meeting's Region.</p>
+    /// <p>The AWS Region passed to Amazon Transcribe Medical. If you don't specify a Region, Amazon Chime uses the meeting's Region. </p>
     pub fn region(mut self, input: crate::types::TranscribeMedicalRegion) -> Self {
         self.region = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The AWS Region passed to Amazon Transcribe Medical. If you don't specify a Region, Amazon Chime uses the meeting's Region.</p>
+    /// <p>The AWS Region passed to Amazon Transcribe Medical. If you don't specify a Region, Amazon Chime uses the meeting's Region. </p>
     pub fn set_region(mut self, input: ::std::option::Option<crate::types::TranscribeMedicalRegion>) -> Self {
         self.region = input;
         self
     }
-    /// <p>The AWS Region passed to Amazon Transcribe Medical. If you don't specify a Region, Amazon Chime uses the meeting's Region.</p>
+    /// <p>The AWS Region passed to Amazon Transcribe Medical. If you don't specify a Region, Amazon Chime uses the meeting's Region. </p>
     pub fn get_region(&self) -> &::std::option::Option<crate::types::TranscribeMedicalRegion> {
         &self.region
     }

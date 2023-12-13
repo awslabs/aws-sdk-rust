@@ -22,7 +22,7 @@ impl StopWorkspacesInputBuilder {
 }
 /// Fluent builder constructing a request to `StopWorkspaces`.
 ///
-/// <p>Stops the specified WorkSpaces.</p>
+/// <p> Stops the specified WorkSpaces.</p>
 /// <p>You cannot stop a WorkSpace unless it has a running mode of <code>AutoStop</code> and a state of <code>AVAILABLE</code>, <code>IMPAIRED</code>, <code>UNHEALTHY</code>, or <code>ERROR</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopWorkspacesFluentBuilder {

@@ -23,7 +23,7 @@ impl StartTaskExecutionInputBuilder {
 /// Fluent builder constructing a request to `StartTaskExecution`.
 ///
 /// <p>Starts an DataSync transfer task. For each task, you can only run one task execution at a time.</p>
-/// <p>There are several phases to a task execution. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/working-with-task-executions.html#understand-task-execution-statuses">Task execution statuses</a>.</p><important>
+/// <p>There are several phases to a task execution. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/working-with-task-executions.html#understand-task-execution-statuses">Task execution statuses</a>.</p> <important>
 /// <p>If you're planning to transfer data to or from an Amazon S3 location, review <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#create-s3-location-s3-requests">how DataSync can affect your S3 request charges</a> and the <a href="http://aws.amazon.com/datasync/pricing/">DataSync pricing page</a> before you begin.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -146,17 +146,17 @@ impl StartTaskExecutionFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_includes`](Self::set_includes).
     ///
-    /// <p>Specifies a list of filter rules that determines which files to include when running a task. The pattern should contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
+    /// <p>Specifies a list of filter rules that determines which files to include when running a task. The pattern should contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
     pub fn includes(mut self, input: crate::types::FilterRule) -> Self {
         self.inner = self.inner.includes(input);
         self
     }
-    /// <p>Specifies a list of filter rules that determines which files to include when running a task. The pattern should contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
+    /// <p>Specifies a list of filter rules that determines which files to include when running a task. The pattern should contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
     pub fn set_includes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>) -> Self {
         self.inner = self.inner.set_includes(input);
         self
     }
-    /// <p>Specifies a list of filter rules that determines which files to include when running a task. The pattern should contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
+    /// <p>Specifies a list of filter rules that determines which files to include when running a task. The pattern should contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
     pub fn get_includes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterRule>> {
         self.inner.get_includes()
     }
@@ -164,17 +164,17 @@ impl StartTaskExecutionFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_excludes`](Self::set_excludes).
     ///
-    /// <p>Specifies a list of filter rules that determines which files to exclude from a task. The list contains a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
+    /// <p>Specifies a list of filter rules that determines which files to exclude from a task. The list contains a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
     pub fn excludes(mut self, input: crate::types::FilterRule) -> Self {
         self.inner = self.inner.excludes(input);
         self
     }
-    /// <p>Specifies a list of filter rules that determines which files to exclude from a task. The list contains a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
+    /// <p>Specifies a list of filter rules that determines which files to exclude from a task. The list contains a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
     pub fn set_excludes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>) -> Self {
         self.inner = self.inner.set_excludes(input);
         self
     }
-    /// <p>Specifies a list of filter rules that determines which files to exclude from a task. The list contains a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
+    /// <p>Specifies a list of filter rules that determines which files to exclude from a task. The list contains a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
     pub fn get_excludes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterRule>> {
         self.inner.get_excludes()
     }
@@ -183,19 +183,19 @@ impl StartTaskExecutionFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Specifies the tags that you want to apply to the Amazon Resource Name (ARN) representing the task execution.</p>
-    /// <p><i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.</p>
+    /// <p> <i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.</p>
     pub fn tags(mut self, input: crate::types::TagListEntry) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
     /// <p>Specifies the tags that you want to apply to the Amazon Resource Name (ARN) representing the task execution.</p>
-    /// <p><i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.</p>
+    /// <p> <i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>Specifies the tags that you want to apply to the Amazon Resource Name (ARN) representing the task execution.</p>
-    /// <p><i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.</p>
+    /// <p> <i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>> {
         self.inner.get_tags()
     }

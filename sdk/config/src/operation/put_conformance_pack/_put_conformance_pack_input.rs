@@ -5,19 +5,19 @@
 pub struct PutConformancePackInput {
     /// <p>The unique name of the conformance pack you want to deploy.</p>
     pub conformance_pack_name: ::std::option::Option<::std::string::String>,
-    /// <p>The location of the file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to a conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same Region as the conformance pack.</p><note>
+    /// <p>The location of the file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to a conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same Region as the conformance pack. </p> <note>
     /// <p>You must have access to read Amazon S3 bucket. In addition, in order to ensure a successful deployment, the template object must not be in an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html">archived storage class</a> if this parameter is passed.</p>
     /// </note>
     pub template_s3_uri: ::std::option::Option<::std::string::String>,
-    /// <p>A string containing the full conformance pack template body. The structure containing the template body has a minimum length of 1 byte and a maximum length of 51,200 bytes.</p><note>
+    /// <p>A string containing the full conformance pack template body. The structure containing the template body has a minimum length of 1 byte and a maximum length of 51,200 bytes.</p> <note>
     /// <p>You can use a YAML template with two resource types: Config rule (<code>AWS::Config::ConfigRule</code>) and remediation action (<code>AWS::Config::RemediationConfiguration</code>).</p>
     /// </note>
     pub template_body: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p><note>
+    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p> <note>
     /// <p>This field is optional.</p>
     /// </note>
     pub delivery_s3_bucket: ::std::option::Option<::std::string::String>,
-    /// <p>The prefix for the Amazon S3 bucket.</p><note>
+    /// <p>The prefix for the Amazon S3 bucket. </p> <note>
     /// <p>This field is optional.</p>
     /// </note>
     pub delivery_s3_key_prefix: ::std::option::Option<::std::string::String>,
@@ -31,25 +31,25 @@ impl PutConformancePackInput {
     pub fn conformance_pack_name(&self) -> ::std::option::Option<&str> {
         self.conformance_pack_name.as_deref()
     }
-    /// <p>The location of the file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to a conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same Region as the conformance pack.</p><note>
+    /// <p>The location of the file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to a conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same Region as the conformance pack. </p> <note>
     /// <p>You must have access to read Amazon S3 bucket. In addition, in order to ensure a successful deployment, the template object must not be in an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html">archived storage class</a> if this parameter is passed.</p>
     /// </note>
     pub fn template_s3_uri(&self) -> ::std::option::Option<&str> {
         self.template_s3_uri.as_deref()
     }
-    /// <p>A string containing the full conformance pack template body. The structure containing the template body has a minimum length of 1 byte and a maximum length of 51,200 bytes.</p><note>
+    /// <p>A string containing the full conformance pack template body. The structure containing the template body has a minimum length of 1 byte and a maximum length of 51,200 bytes.</p> <note>
     /// <p>You can use a YAML template with two resource types: Config rule (<code>AWS::Config::ConfigRule</code>) and remediation action (<code>AWS::Config::RemediationConfiguration</code>).</p>
     /// </note>
     pub fn template_body(&self) -> ::std::option::Option<&str> {
         self.template_body.as_deref()
     }
-    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p><note>
+    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p> <note>
     /// <p>This field is optional.</p>
     /// </note>
     pub fn delivery_s3_bucket(&self) -> ::std::option::Option<&str> {
         self.delivery_s3_bucket.as_deref()
     }
-    /// <p>The prefix for the Amazon S3 bucket.</p><note>
+    /// <p>The prefix for the Amazon S3 bucket. </p> <note>
     /// <p>This field is optional.</p>
     /// </note>
     pub fn delivery_s3_key_prefix(&self) -> ::std::option::Option<&str> {
@@ -101,81 +101,81 @@ impl PutConformancePackInputBuilder {
     pub fn get_conformance_pack_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.conformance_pack_name
     }
-    /// <p>The location of the file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to a conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same Region as the conformance pack.</p><note>
+    /// <p>The location of the file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to a conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same Region as the conformance pack. </p> <note>
     /// <p>You must have access to read Amazon S3 bucket. In addition, in order to ensure a successful deployment, the template object must not be in an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html">archived storage class</a> if this parameter is passed.</p>
     /// </note>
     pub fn template_s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_s3_uri = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The location of the file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to a conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same Region as the conformance pack.</p><note>
+    /// <p>The location of the file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to a conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same Region as the conformance pack. </p> <note>
     /// <p>You must have access to read Amazon S3 bucket. In addition, in order to ensure a successful deployment, the template object must not be in an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html">archived storage class</a> if this parameter is passed.</p>
     /// </note>
     pub fn set_template_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_s3_uri = input;
         self
     }
-    /// <p>The location of the file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to a conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same Region as the conformance pack.</p><note>
+    /// <p>The location of the file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to a conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same Region as the conformance pack. </p> <note>
     /// <p>You must have access to read Amazon S3 bucket. In addition, in order to ensure a successful deployment, the template object must not be in an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html">archived storage class</a> if this parameter is passed.</p>
     /// </note>
     pub fn get_template_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.template_s3_uri
     }
-    /// <p>A string containing the full conformance pack template body. The structure containing the template body has a minimum length of 1 byte and a maximum length of 51,200 bytes.</p><note>
+    /// <p>A string containing the full conformance pack template body. The structure containing the template body has a minimum length of 1 byte and a maximum length of 51,200 bytes.</p> <note>
     /// <p>You can use a YAML template with two resource types: Config rule (<code>AWS::Config::ConfigRule</code>) and remediation action (<code>AWS::Config::RemediationConfiguration</code>).</p>
     /// </note>
     pub fn template_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_body = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A string containing the full conformance pack template body. The structure containing the template body has a minimum length of 1 byte and a maximum length of 51,200 bytes.</p><note>
+    /// <p>A string containing the full conformance pack template body. The structure containing the template body has a minimum length of 1 byte and a maximum length of 51,200 bytes.</p> <note>
     /// <p>You can use a YAML template with two resource types: Config rule (<code>AWS::Config::ConfigRule</code>) and remediation action (<code>AWS::Config::RemediationConfiguration</code>).</p>
     /// </note>
     pub fn set_template_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_body = input;
         self
     }
-    /// <p>A string containing the full conformance pack template body. The structure containing the template body has a minimum length of 1 byte and a maximum length of 51,200 bytes.</p><note>
+    /// <p>A string containing the full conformance pack template body. The structure containing the template body has a minimum length of 1 byte and a maximum length of 51,200 bytes.</p> <note>
     /// <p>You can use a YAML template with two resource types: Config rule (<code>AWS::Config::ConfigRule</code>) and remediation action (<code>AWS::Config::RemediationConfiguration</code>).</p>
     /// </note>
     pub fn get_template_body(&self) -> &::std::option::Option<::std::string::String> {
         &self.template_body
     }
-    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p><note>
+    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p> <note>
     /// <p>This field is optional.</p>
     /// </note>
     pub fn delivery_s3_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delivery_s3_bucket = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p><note>
+    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p> <note>
     /// <p>This field is optional.</p>
     /// </note>
     pub fn set_delivery_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.delivery_s3_bucket = input;
         self
     }
-    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p><note>
+    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p> <note>
     /// <p>This field is optional.</p>
     /// </note>
     pub fn get_delivery_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
         &self.delivery_s3_bucket
     }
-    /// <p>The prefix for the Amazon S3 bucket.</p><note>
+    /// <p>The prefix for the Amazon S3 bucket. </p> <note>
     /// <p>This field is optional.</p>
     /// </note>
     pub fn delivery_s3_key_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delivery_s3_key_prefix = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The prefix for the Amazon S3 bucket.</p><note>
+    /// <p>The prefix for the Amazon S3 bucket. </p> <note>
     /// <p>This field is optional.</p>
     /// </note>
     pub fn set_delivery_s3_key_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.delivery_s3_key_prefix = input;
         self
     }
-    /// <p>The prefix for the Amazon S3 bucket.</p><note>
+    /// <p>The prefix for the Amazon S3 bucket. </p> <note>
     /// <p>This field is optional.</p>
     /// </note>
     pub fn get_delivery_s3_key_prefix(&self) -> &::std::option::Option<::std::string::String> {

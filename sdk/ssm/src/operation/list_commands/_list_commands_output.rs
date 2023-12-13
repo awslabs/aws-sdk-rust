@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCommandsOutput {
-    /// <p>(Optional) The list of commands requested by the user.</p>
+    /// <p>(Optional) The list of commands requested by the user. </p>
     pub commands: ::std::option::Option<::std::vec::Vec<crate::types::Command>>,
     /// <p>(Optional) The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListCommandsOutput {
-    /// <p>(Optional) The list of commands requested by the user.</p>
+    /// <p>(Optional) The list of commands requested by the user. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.commands.is_none()`.
     pub fn commands(&self) -> &[crate::types::Command] {
@@ -46,19 +46,19 @@ impl ListCommandsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_commands`](Self::set_commands).
     ///
-    /// <p>(Optional) The list of commands requested by the user.</p>
+    /// <p>(Optional) The list of commands requested by the user. </p>
     pub fn commands(mut self, input: crate::types::Command) -> Self {
         let mut v = self.commands.unwrap_or_default();
         v.push(input);
         self.commands = ::std::option::Option::Some(v);
         self
     }
-    /// <p>(Optional) The list of commands requested by the user.</p>
+    /// <p>(Optional) The list of commands requested by the user. </p>
     pub fn set_commands(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Command>>) -> Self {
         self.commands = input;
         self
     }
-    /// <p>(Optional) The list of commands requested by the user.</p>
+    /// <p>(Optional) The list of commands requested by the user. </p>
     pub fn get_commands(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Command>> {
         &self.commands
     }

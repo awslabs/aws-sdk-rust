@@ -243,15 +243,15 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ModifySchedul
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum ModifyScheduledActionError {
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.</p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
     ClusterNotFoundFault(crate::types::error::ClusterNotFoundFault),
-    /// <p>The scheduled action is not valid.</p>
+    /// <p>The scheduled action is not valid. </p>
     InvalidScheduledActionFault(crate::types::error::InvalidScheduledActionFault),
     /// <p>The schedule you submitted isn't valid.</p>
     InvalidScheduleFault(crate::types::error::InvalidScheduleFault),
-    /// <p>The scheduled action cannot be found.</p>
+    /// <p>The scheduled action cannot be found. </p>
     ScheduledActionNotFoundFault(crate::types::error::ScheduledActionNotFoundFault),
-    /// <p>The action type specified for a scheduled action is not supported.</p>
+    /// <p>The action type specified for a scheduled action is not supported. </p>
     ScheduledActionTypeUnsupportedFault(crate::types::error::ScheduledActionTypeUnsupportedFault),
     /// <p>Your account is not authorized to perform the requested operation.</p>
     UnauthorizedOperation(crate::types::error::UnauthorizedOperation),

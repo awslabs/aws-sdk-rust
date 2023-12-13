@@ -4,12 +4,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsApiGatewayMethodSettings {
-    /// <p>Indicates whether CloudWatch metrics are enabled for the method.</p>
+    /// <p>Indicates whether CloudWatch metrics are enabled for the method. </p>
     pub metrics_enabled: ::std::option::Option<bool>,
     /// <p>The logging level for this method. The logging level affects the log entries that are pushed to CloudWatch Logs.</p>
     /// <p>If the logging level is <code>ERROR</code>, then the logs only include error-level entries.</p>
     /// <p>If the logging level is <code>INFO</code>, then the logs include both <code>ERROR</code> events and extra informational events.</p>
-    /// <p>Valid values: <code>OFF</code> | <code>ERROR</code> | <code>INFO</code></p>
+    /// <p>Valid values: <code>OFF</code> | <code>ERROR</code> | <code>INFO</code> </p>
     pub logging_level: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether data trace logging is enabled for the method. Data trace logging affects the log entries that are pushed to CloudWatch Logs.</p>
     pub data_trace_enabled: ::std::option::Option<bool>,
@@ -21,12 +21,12 @@ pub struct AwsApiGatewayMethodSettings {
     pub caching_enabled: ::std::option::Option<bool>,
     /// <p>Specifies the time to live (TTL), in seconds, for cached responses. The higher the TTL, the longer the response is cached.</p>
     pub cache_ttl_in_seconds: ::std::option::Option<i32>,
-    /// <p>Indicates whether the cached responses are encrypted.</p>
+    /// <p>Indicates whether the cached responses are encrypted. </p>
     pub cache_data_encrypted: ::std::option::Option<bool>,
     /// <p>Indicates whether authorization is required for a cache invalidation request.</p>
     pub require_authorization_for_cache_control: ::std::option::Option<bool>,
     /// <p>Indicates how to handle unauthorized requests for cache invalidation.</p>
-    /// <p>Valid values: <code>FAIL_WITH_403</code> | <code>SUCCEED_WITH_RESPONSE_HEADER</code> | <code>SUCCEED_WITHOUT_RESPONSE_HEADER</code></p>
+    /// <p>Valid values: <code>FAIL_WITH_403</code> | <code>SUCCEED_WITH_RESPONSE_HEADER</code> | <code>SUCCEED_WITHOUT_RESPONSE_HEADER</code> </p>
     pub unauthorized_cache_control_header_strategy: ::std::option::Option<::std::string::String>,
     /// <p>The HTTP method. You can use an asterisk (*) as a wildcard to apply method settings to multiple methods.</p>
     pub http_method: ::std::option::Option<::std::string::String>,
@@ -36,14 +36,14 @@ pub struct AwsApiGatewayMethodSettings {
     pub resource_path: ::std::option::Option<::std::string::String>,
 }
 impl AwsApiGatewayMethodSettings {
-    /// <p>Indicates whether CloudWatch metrics are enabled for the method.</p>
+    /// <p>Indicates whether CloudWatch metrics are enabled for the method. </p>
     pub fn metrics_enabled(&self) -> ::std::option::Option<bool> {
         self.metrics_enabled
     }
     /// <p>The logging level for this method. The logging level affects the log entries that are pushed to CloudWatch Logs.</p>
     /// <p>If the logging level is <code>ERROR</code>, then the logs only include error-level entries.</p>
     /// <p>If the logging level is <code>INFO</code>, then the logs include both <code>ERROR</code> events and extra informational events.</p>
-    /// <p>Valid values: <code>OFF</code> | <code>ERROR</code> | <code>INFO</code></p>
+    /// <p>Valid values: <code>OFF</code> | <code>ERROR</code> | <code>INFO</code> </p>
     pub fn logging_level(&self) -> ::std::option::Option<&str> {
         self.logging_level.as_deref()
     }
@@ -67,7 +67,7 @@ impl AwsApiGatewayMethodSettings {
     pub fn cache_ttl_in_seconds(&self) -> ::std::option::Option<i32> {
         self.cache_ttl_in_seconds
     }
-    /// <p>Indicates whether the cached responses are encrypted.</p>
+    /// <p>Indicates whether the cached responses are encrypted. </p>
     pub fn cache_data_encrypted(&self) -> ::std::option::Option<bool> {
         self.cache_data_encrypted
     }
@@ -76,7 +76,7 @@ impl AwsApiGatewayMethodSettings {
         self.require_authorization_for_cache_control
     }
     /// <p>Indicates how to handle unauthorized requests for cache invalidation.</p>
-    /// <p>Valid values: <code>FAIL_WITH_403</code> | <code>SUCCEED_WITH_RESPONSE_HEADER</code> | <code>SUCCEED_WITHOUT_RESPONSE_HEADER</code></p>
+    /// <p>Valid values: <code>FAIL_WITH_403</code> | <code>SUCCEED_WITH_RESPONSE_HEADER</code> | <code>SUCCEED_WITHOUT_RESPONSE_HEADER</code> </p>
     pub fn unauthorized_cache_control_header_strategy(&self) -> ::std::option::Option<&str> {
         self.unauthorized_cache_control_header_strategy.as_deref()
     }
@@ -116,24 +116,24 @@ pub struct AwsApiGatewayMethodSettingsBuilder {
     pub(crate) resource_path: ::std::option::Option<::std::string::String>,
 }
 impl AwsApiGatewayMethodSettingsBuilder {
-    /// <p>Indicates whether CloudWatch metrics are enabled for the method.</p>
+    /// <p>Indicates whether CloudWatch metrics are enabled for the method. </p>
     pub fn metrics_enabled(mut self, input: bool) -> Self {
         self.metrics_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether CloudWatch metrics are enabled for the method.</p>
+    /// <p>Indicates whether CloudWatch metrics are enabled for the method. </p>
     pub fn set_metrics_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.metrics_enabled = input;
         self
     }
-    /// <p>Indicates whether CloudWatch metrics are enabled for the method.</p>
+    /// <p>Indicates whether CloudWatch metrics are enabled for the method. </p>
     pub fn get_metrics_enabled(&self) -> &::std::option::Option<bool> {
         &self.metrics_enabled
     }
     /// <p>The logging level for this method. The logging level affects the log entries that are pushed to CloudWatch Logs.</p>
     /// <p>If the logging level is <code>ERROR</code>, then the logs only include error-level entries.</p>
     /// <p>If the logging level is <code>INFO</code>, then the logs include both <code>ERROR</code> events and extra informational events.</p>
-    /// <p>Valid values: <code>OFF</code> | <code>ERROR</code> | <code>INFO</code></p>
+    /// <p>Valid values: <code>OFF</code> | <code>ERROR</code> | <code>INFO</code> </p>
     pub fn logging_level(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.logging_level = ::std::option::Option::Some(input.into());
         self
@@ -141,7 +141,7 @@ impl AwsApiGatewayMethodSettingsBuilder {
     /// <p>The logging level for this method. The logging level affects the log entries that are pushed to CloudWatch Logs.</p>
     /// <p>If the logging level is <code>ERROR</code>, then the logs only include error-level entries.</p>
     /// <p>If the logging level is <code>INFO</code>, then the logs include both <code>ERROR</code> events and extra informational events.</p>
-    /// <p>Valid values: <code>OFF</code> | <code>ERROR</code> | <code>INFO</code></p>
+    /// <p>Valid values: <code>OFF</code> | <code>ERROR</code> | <code>INFO</code> </p>
     pub fn set_logging_level(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.logging_level = input;
         self
@@ -149,7 +149,7 @@ impl AwsApiGatewayMethodSettingsBuilder {
     /// <p>The logging level for this method. The logging level affects the log entries that are pushed to CloudWatch Logs.</p>
     /// <p>If the logging level is <code>ERROR</code>, then the logs only include error-level entries.</p>
     /// <p>If the logging level is <code>INFO</code>, then the logs include both <code>ERROR</code> events and extra informational events.</p>
-    /// <p>Valid values: <code>OFF</code> | <code>ERROR</code> | <code>INFO</code></p>
+    /// <p>Valid values: <code>OFF</code> | <code>ERROR</code> | <code>INFO</code> </p>
     pub fn get_logging_level(&self) -> &::std::option::Option<::std::string::String> {
         &self.logging_level
     }
@@ -223,17 +223,17 @@ impl AwsApiGatewayMethodSettingsBuilder {
     pub fn get_cache_ttl_in_seconds(&self) -> &::std::option::Option<i32> {
         &self.cache_ttl_in_seconds
     }
-    /// <p>Indicates whether the cached responses are encrypted.</p>
+    /// <p>Indicates whether the cached responses are encrypted. </p>
     pub fn cache_data_encrypted(mut self, input: bool) -> Self {
         self.cache_data_encrypted = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether the cached responses are encrypted.</p>
+    /// <p>Indicates whether the cached responses are encrypted. </p>
     pub fn set_cache_data_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.cache_data_encrypted = input;
         self
     }
-    /// <p>Indicates whether the cached responses are encrypted.</p>
+    /// <p>Indicates whether the cached responses are encrypted. </p>
     pub fn get_cache_data_encrypted(&self) -> &::std::option::Option<bool> {
         &self.cache_data_encrypted
     }
@@ -252,19 +252,19 @@ impl AwsApiGatewayMethodSettingsBuilder {
         &self.require_authorization_for_cache_control
     }
     /// <p>Indicates how to handle unauthorized requests for cache invalidation.</p>
-    /// <p>Valid values: <code>FAIL_WITH_403</code> | <code>SUCCEED_WITH_RESPONSE_HEADER</code> | <code>SUCCEED_WITHOUT_RESPONSE_HEADER</code></p>
+    /// <p>Valid values: <code>FAIL_WITH_403</code> | <code>SUCCEED_WITH_RESPONSE_HEADER</code> | <code>SUCCEED_WITHOUT_RESPONSE_HEADER</code> </p>
     pub fn unauthorized_cache_control_header_strategy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.unauthorized_cache_control_header_strategy = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates how to handle unauthorized requests for cache invalidation.</p>
-    /// <p>Valid values: <code>FAIL_WITH_403</code> | <code>SUCCEED_WITH_RESPONSE_HEADER</code> | <code>SUCCEED_WITHOUT_RESPONSE_HEADER</code></p>
+    /// <p>Valid values: <code>FAIL_WITH_403</code> | <code>SUCCEED_WITH_RESPONSE_HEADER</code> | <code>SUCCEED_WITHOUT_RESPONSE_HEADER</code> </p>
     pub fn set_unauthorized_cache_control_header_strategy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.unauthorized_cache_control_header_strategy = input;
         self
     }
     /// <p>Indicates how to handle unauthorized requests for cache invalidation.</p>
-    /// <p>Valid values: <code>FAIL_WITH_403</code> | <code>SUCCEED_WITH_RESPONSE_HEADER</code> | <code>SUCCEED_WITHOUT_RESPONSE_HEADER</code></p>
+    /// <p>Valid values: <code>FAIL_WITH_403</code> | <code>SUCCEED_WITH_RESPONSE_HEADER</code> | <code>SUCCEED_WITHOUT_RESPONSE_HEADER</code> </p>
     pub fn get_unauthorized_cache_control_header_strategy(&self) -> &::std::option::Option<::std::string::String> {
         &self.unauthorized_cache_control_header_strategy
     }

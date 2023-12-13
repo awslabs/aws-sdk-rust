@@ -108,21 +108,21 @@ impl CreateConnectionAliasFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>A connection string in the form of a fully qualified domain name (FQDN), such as <code>www.example.com</code>.</p><important>
+    /// <p>A connection string in the form of a fully qualified domain name (FQDN), such as <code>www.example.com</code>.</p> <important>
     /// <p>After you create a connection string, it is always associated to your Amazon Web Services account. You cannot recreate the same connection string with a different account, even if you delete all instances of it from the original account. The connection string is globally reserved for your account.</p>
     /// </important>
     pub fn connection_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connection_string(input.into());
         self
     }
-    /// <p>A connection string in the form of a fully qualified domain name (FQDN), such as <code>www.example.com</code>.</p><important>
+    /// <p>A connection string in the form of a fully qualified domain name (FQDN), such as <code>www.example.com</code>.</p> <important>
     /// <p>After you create a connection string, it is always associated to your Amazon Web Services account. You cannot recreate the same connection string with a different account, even if you delete all instances of it from the original account. The connection string is globally reserved for your account.</p>
     /// </important>
     pub fn set_connection_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connection_string(input);
         self
     }
-    /// <p>A connection string in the form of a fully qualified domain name (FQDN), such as <code>www.example.com</code>.</p><important>
+    /// <p>A connection string in the form of a fully qualified domain name (FQDN), such as <code>www.example.com</code>.</p> <important>
     /// <p>After you create a connection string, it is always associated to your Amazon Web Services account. You cannot recreate the same connection string with a different account, even if you delete all instances of it from the original account. The connection string is globally reserved for your account.</p>
     /// </important>
     pub fn get_connection_string(&self) -> &::std::option::Option<::std::string::String> {

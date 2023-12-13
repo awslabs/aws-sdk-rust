@@ -23,7 +23,7 @@ impl RevokeSnapshotAccessInputBuilder {
 /// Fluent builder constructing a request to `RevokeSnapshotAccess`.
 ///
 /// <p>Removes the ability of the specified Amazon Web Services account to restore the specified snapshot. If the account is currently restoring the snapshot, the restore will run to completion.</p>
-/// <p>For more information about working with snapshots, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+/// <p> For more information about working with snapshots, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RevokeSnapshotAccessFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

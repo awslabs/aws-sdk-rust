@@ -249,7 +249,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ModifyDBClust
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum ModifyDBClusterParameterGroupError {
-    /// <p><code>DBParameterGroupName</code> doesn't refer to an existing parameter group.</p>
+    /// <p> <code>DBParameterGroupName</code> doesn't refer to an existing parameter group. </p>
     DbParameterGroupNotFoundFault(crate::types::error::DbParameterGroupNotFoundFault),
     /// <p>The parameter group is in use, or it is in a state that is not valid. If you are trying to delete the parameter group, you can't delete it when the parameter group is in this state.</p>
     InvalidDbParameterGroupStateFault(crate::types::error::InvalidDbParameterGroupStateFault),

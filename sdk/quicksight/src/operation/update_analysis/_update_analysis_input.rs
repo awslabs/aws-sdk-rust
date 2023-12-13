@@ -9,7 +9,7 @@ pub struct UpdateAnalysisInput {
     pub analysis_id: ::std::option::Option<::std::string::String>,
     /// <p>A descriptive name for the analysis that you're updating. This name displays for the analysis in the Amazon QuickSight console.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The parameter names and override values that you want to use. An analysis can have any parameter type, and some parameters might accept multiple values.</p>
+    /// <p>The parameter names and override values that you want to use. An analysis can have any parameter type, and some parameters might accept multiple values. </p>
     pub parameters: ::std::option::Option<crate::types::Parameters>,
     /// <p>A source entity to use for the analysis that you're updating. This metadata structure contains details that describe a source template and one or more datasets.</p>
     pub source_entity: ::std::option::Option<crate::types::AnalysisSourceEntity>,
@@ -34,7 +34,7 @@ impl UpdateAnalysisInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The parameter names and override values that you want to use. An analysis can have any parameter type, and some parameters might accept multiple values.</p>
+    /// <p>The parameter names and override values that you want to use. An analysis can have any parameter type, and some parameters might accept multiple values. </p>
     pub fn parameters(&self) -> ::std::option::Option<&crate::types::Parameters> {
         self.parameters.as_ref()
     }
@@ -122,17 +122,17 @@ impl UpdateAnalysisInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The parameter names and override values that you want to use. An analysis can have any parameter type, and some parameters might accept multiple values.</p>
+    /// <p>The parameter names and override values that you want to use. An analysis can have any parameter type, and some parameters might accept multiple values. </p>
     pub fn parameters(mut self, input: crate::types::Parameters) -> Self {
         self.parameters = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The parameter names and override values that you want to use. An analysis can have any parameter type, and some parameters might accept multiple values.</p>
+    /// <p>The parameter names and override values that you want to use. An analysis can have any parameter type, and some parameters might accept multiple values. </p>
     pub fn set_parameters(mut self, input: ::std::option::Option<crate::types::Parameters>) -> Self {
         self.parameters = input;
         self
     }
-    /// <p>The parameter names and override values that you want to use. An analysis can have any parameter type, and some parameters might accept multiple values.</p>
+    /// <p>The parameter names and override values that you want to use. An analysis can have any parameter type, and some parameters might accept multiple values. </p>
     pub fn get_parameters(&self) -> &::std::option::Option<crate::types::Parameters> {
         &self.parameters
     }

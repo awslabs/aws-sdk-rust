@@ -109,36 +109,36 @@ impl DeleteTLSInspectionConfigurationFluentBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the TLS inspection configuration.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub fn tls_inspection_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tls_inspection_configuration_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the TLS inspection configuration.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub fn set_tls_inspection_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_tls_inspection_configuration_arn(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the TLS inspection configuration.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub fn get_tls_inspection_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_tls_inspection_configuration_arn()
     }
     /// <p>The descriptive name of the TLS inspection configuration. You can't change the name of a TLS inspection configuration after you create it.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub fn tls_inspection_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tls_inspection_configuration_name(input.into());
         self
     }
     /// <p>The descriptive name of the TLS inspection configuration. You can't change the name of a TLS inspection configuration after you create it.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub fn set_tls_inspection_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_tls_inspection_configuration_name(input);
         self
     }
     /// <p>The descriptive name of the TLS inspection configuration. You can't change the name of a TLS inspection configuration after you create it.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub fn get_tls_inspection_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_tls_inspection_configuration_name()
     }

@@ -22,7 +22,7 @@ impl CreateDataIntegrationInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateDataIntegration`.
 ///
-/// <p>Creates and persists a DataIntegration resource.</p><note>
+/// <p>Creates and persists a DataIntegration resource.</p> <note>
 /// <p>You cannot create a DataIntegration association for a DataIntegration that has been previously associated. Use a different DataIntegration, or recreate the DataIntegration using the <code>CreateDataIntegration</code> API.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

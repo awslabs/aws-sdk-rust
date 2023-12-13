@@ -11,7 +11,7 @@ pub struct CreateTapePoolInput {
     pub retention_lock_type: ::std::option::Option<crate::types::RetentionLockType>,
     /// <p>Tape retention lock time is set in days. Tape retention lock can be enabled for up to 100 years (36,500 days).</p>
     pub retention_lock_time_in_days: ::std::option::Option<i32>,
-    /// <p>A list of up to 50 tags that can be assigned to tape pool. Each tag is a key-value pair.</p><note>
+    /// <p>A list of up to 50 tags that can be assigned to tape pool. Each tag is a key-value pair.</p> <note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -33,7 +33,7 @@ impl CreateTapePoolInput {
     pub fn retention_lock_time_in_days(&self) -> ::std::option::Option<i32> {
         self.retention_lock_time_in_days
     }
-    /// <p>A list of up to 50 tags that can be assigned to tape pool. Each tag is a key-value pair.</p><note>
+    /// <p>A list of up to 50 tags that can be assigned to tape pool. Each tag is a key-value pair.</p> <note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
     ///
@@ -122,7 +122,7 @@ impl CreateTapePoolInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A list of up to 50 tags that can be assigned to tape pool. Each tag is a key-value pair.</p><note>
+    /// <p>A list of up to 50 tags that can be assigned to tape pool. Each tag is a key-value pair.</p> <note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
@@ -131,14 +131,14 @@ impl CreateTapePoolInputBuilder {
         self.tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of up to 50 tags that can be assigned to tape pool. Each tag is a key-value pair.</p><note>
+    /// <p>A list of up to 50 tags that can be assigned to tape pool. Each tag is a key-value pair.</p> <note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>A list of up to 50 tags that can be assigned to tape pool. Each tag is a key-value pair.</p><note>
+    /// <p>A list of up to 50 tags that can be assigned to tape pool. Each tag is a key-value pair.</p> <note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {

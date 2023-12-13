@@ -6,7 +6,7 @@
 pub struct SuggestableConfig {
     /// <p>The name of the document field/attribute.</p>
     pub attribute_name: ::std::option::Option<::std::string::String>,
-    /// <p><code>TRUE</code> means the document field/attribute is suggestible, so the contents within the field can be used for query suggestions.</p>
+    /// <p> <code>TRUE</code> means the document field/attribute is suggestible, so the contents within the field can be used for query suggestions.</p>
     pub suggestable: ::std::option::Option<bool>,
 }
 impl SuggestableConfig {
@@ -14,7 +14,7 @@ impl SuggestableConfig {
     pub fn attribute_name(&self) -> ::std::option::Option<&str> {
         self.attribute_name.as_deref()
     }
-    /// <p><code>TRUE</code> means the document field/attribute is suggestible, so the contents within the field can be used for query suggestions.</p>
+    /// <p> <code>TRUE</code> means the document field/attribute is suggestible, so the contents within the field can be used for query suggestions.</p>
     pub fn suggestable(&self) -> ::std::option::Option<bool> {
         self.suggestable
     }
@@ -48,17 +48,17 @@ impl SuggestableConfigBuilder {
     pub fn get_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.attribute_name
     }
-    /// <p><code>TRUE</code> means the document field/attribute is suggestible, so the contents within the field can be used for query suggestions.</p>
+    /// <p> <code>TRUE</code> means the document field/attribute is suggestible, so the contents within the field can be used for query suggestions.</p>
     pub fn suggestable(mut self, input: bool) -> Self {
         self.suggestable = ::std::option::Option::Some(input);
         self
     }
-    /// <p><code>TRUE</code> means the document field/attribute is suggestible, so the contents within the field can be used for query suggestions.</p>
+    /// <p> <code>TRUE</code> means the document field/attribute is suggestible, so the contents within the field can be used for query suggestions.</p>
     pub fn set_suggestable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.suggestable = input;
         self
     }
-    /// <p><code>TRUE</code> means the document field/attribute is suggestible, so the contents within the field can be used for query suggestions.</p>
+    /// <p> <code>TRUE</code> means the document field/attribute is suggestible, so the contents within the field can be used for query suggestions.</p>
     pub fn get_suggestable(&self) -> &::std::option::Option<bool> {
         &self.suggestable
     }

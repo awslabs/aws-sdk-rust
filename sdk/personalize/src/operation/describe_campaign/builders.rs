@@ -25,10 +25,8 @@ impl DescribeCampaignInputBuilder {
 /// <p>Describes the given campaign, including its status.</p>
 /// <p>A campaign can be in one of the following states:</p>
 /// <ul>
-/// <li>
-/// <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p></li>
-/// <li>
-/// <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p></li>
+/// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+/// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
 /// </ul>
 /// <p>When the <code>status</code> is <code>CREATE FAILED</code>, the response includes the <code>failureReason</code> key, which describes why.</p>
 /// <p>For more information on campaigns, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateCampaign.html">CreateCampaign</a>.</p>

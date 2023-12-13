@@ -11,7 +11,7 @@ pub struct UpdateNotebookInput {
     pub r#type: ::std::option::Option<crate::types::NotebookType>,
     /// <p>The active notebook session ID. Required if the notebook has an active session.</p>
     pub session_id: ::std::option::Option<::std::string::String>,
-    /// <p>A unique case-sensitive string used to ensure the request to create the notebook is idempotent (executes only once).</p><important>
+    /// <p>A unique case-sensitive string used to ensure the request to create the notebook is idempotent (executes only once).</p> <important>
     /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
     /// </important>
     pub client_request_token: ::std::option::Option<::std::string::String>,
@@ -33,7 +33,7 @@ impl UpdateNotebookInput {
     pub fn session_id(&self) -> ::std::option::Option<&str> {
         self.session_id.as_deref()
     }
-    /// <p>A unique case-sensitive string used to ensure the request to create the notebook is idempotent (executes only once).</p><important>
+    /// <p>A unique case-sensitive string used to ensure the request to create the notebook is idempotent (executes only once).</p> <important>
     /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
     /// </important>
     pub fn client_request_token(&self) -> ::std::option::Option<&str> {
@@ -117,21 +117,21 @@ impl UpdateNotebookInputBuilder {
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.session_id
     }
-    /// <p>A unique case-sensitive string used to ensure the request to create the notebook is idempotent (executes only once).</p><important>
+    /// <p>A unique case-sensitive string used to ensure the request to create the notebook is idempotent (executes only once).</p> <important>
     /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
     /// </important>
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique case-sensitive string used to ensure the request to create the notebook is idempotent (executes only once).</p><important>
+    /// <p>A unique case-sensitive string used to ensure the request to create the notebook is idempotent (executes only once).</p> <important>
     /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
     /// </important>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
-    /// <p>A unique case-sensitive string used to ensure the request to create the notebook is idempotent (executes only once).</p><important>
+    /// <p>A unique case-sensitive string used to ensure the request to create the notebook is idempotent (executes only once).</p> <important>
     /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
     /// </important>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {

@@ -250,7 +250,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteCidrCol
 pub enum DeleteCidrCollectionError {
     /// <p>This CIDR collection is in use, and isn't empty.</p>
     CidrCollectionInUseException(crate::types::error::CidrCollectionInUseException),
-    /// <p>Another user submitted a request to create, update, or delete the object at the same time that you did. Retry the request.</p>
+    /// <p>Another user submitted a request to create, update, or delete the object at the same time that you did. Retry the request. </p>
     ConcurrentModification(crate::types::error::ConcurrentModification),
     /// <p>The input is not valid.</p>
     InvalidInput(crate::types::error::InvalidInput),

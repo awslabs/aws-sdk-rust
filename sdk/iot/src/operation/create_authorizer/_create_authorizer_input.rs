@@ -13,7 +13,7 @@ pub struct CreateAuthorizerInput {
     pub token_signing_public_keys: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The status of the create authorizer request.</p>
     pub status: ::std::option::Option<crate::types::AuthorizerStatus>,
-    /// <p>Metadata which can be used to manage the custom authorizer.</p><note>
+    /// <p>Metadata which can be used to manage the custom authorizer.</p> <note>
     /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
     /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
@@ -46,7 +46,7 @@ impl CreateAuthorizerInput {
     pub fn status(&self) -> ::std::option::Option<&crate::types::AuthorizerStatus> {
         self.status.as_ref()
     }
-    /// <p>Metadata which can be used to manage the custom authorizer.</p><note>
+    /// <p>Metadata which can be used to manage the custom authorizer.</p> <note>
     /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
     /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
@@ -176,7 +176,7 @@ impl CreateAuthorizerInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>Metadata which can be used to manage the custom authorizer.</p><note>
+    /// <p>Metadata which can be used to manage the custom authorizer.</p> <note>
     /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
     /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
@@ -187,7 +187,7 @@ impl CreateAuthorizerInputBuilder {
         self.tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Metadata which can be used to manage the custom authorizer.</p><note>
+    /// <p>Metadata which can be used to manage the custom authorizer.</p> <note>
     /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
     /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
@@ -196,7 +196,7 @@ impl CreateAuthorizerInputBuilder {
         self.tags = input;
         self
     }
-    /// <p>Metadata which can be used to manage the custom authorizer.</p><note>
+    /// <p>Metadata which can be used to manage the custom authorizer.</p> <note>
     /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
     /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>

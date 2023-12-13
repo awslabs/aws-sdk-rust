@@ -22,7 +22,7 @@ impl DeleteDataSourceInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteDataSource`.
 ///
-/// <p>Deletes an Amazon Q data source connector. While the data source is being deleted, the <code>Status</code> field returned by a call to the <code>DescribeDataSource</code> API is set to <code>DELETING</code>.</p>
+/// <p>Deletes an Amazon Q data source connector. While the data source is being deleted, the <code>Status</code> field returned by a call to the <code>DescribeDataSource</code> API is set to <code>DELETING</code>. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteDataSourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -136,17 +136,17 @@ impl DeleteDataSourceFluentBuilder {
     pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_index_id()
     }
-    /// <p>The identifier of the data source connector that you want to delete.</p>
+    /// <p>The identifier of the data source connector that you want to delete. </p>
     pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data_source_id(input.into());
         self
     }
-    /// <p>The identifier of the data source connector that you want to delete.</p>
+    /// <p>The identifier of the data source connector that you want to delete. </p>
     pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_data_source_id(input);
         self
     }
-    /// <p>The identifier of the data source connector that you want to delete.</p>
+    /// <p>The identifier of the data source connector that you want to delete. </p>
     pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_data_source_id()
     }

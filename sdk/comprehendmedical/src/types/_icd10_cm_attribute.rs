@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Icd10CmAttribute {
-    /// <p>The type of attribute. InferICD10CM detects entities of the type <code>DX_NAME</code>.</p>
+    /// <p>The type of attribute. InferICD10CM detects entities of the type <code>DX_NAME</code>. </p>
     pub r#type: ::std::option::Option<crate::types::Icd10CmAttributeType>,
     /// <p>The level of confidence that Amazon Comprehend Medical has that the segment of text is correctly recognized as an attribute.</p>
     pub score: ::std::option::Option<f32>,
@@ -26,7 +26,7 @@ pub struct Icd10CmAttribute {
     pub relationship_type: ::std::option::Option<crate::types::Icd10CmRelationshipType>,
 }
 impl Icd10CmAttribute {
-    /// <p>The type of attribute. InferICD10CM detects entities of the type <code>DX_NAME</code>.</p>
+    /// <p>The type of attribute. InferICD10CM detects entities of the type <code>DX_NAME</code>. </p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::Icd10CmAttributeType> {
         self.r#type.as_ref()
     }
@@ -92,17 +92,17 @@ pub struct Icd10CmAttributeBuilder {
     pub(crate) relationship_type: ::std::option::Option<crate::types::Icd10CmRelationshipType>,
 }
 impl Icd10CmAttributeBuilder {
-    /// <p>The type of attribute. InferICD10CM detects entities of the type <code>DX_NAME</code>.</p>
+    /// <p>The type of attribute. InferICD10CM detects entities of the type <code>DX_NAME</code>. </p>
     pub fn r#type(mut self, input: crate::types::Icd10CmAttributeType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of attribute. InferICD10CM detects entities of the type <code>DX_NAME</code>.</p>
+    /// <p>The type of attribute. InferICD10CM detects entities of the type <code>DX_NAME</code>. </p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::Icd10CmAttributeType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The type of attribute. InferICD10CM detects entities of the type <code>DX_NAME</code>.</p>
+    /// <p>The type of attribute. InferICD10CM detects entities of the type <code>DX_NAME</code>. </p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::Icd10CmAttributeType> {
         &self.r#type
     }

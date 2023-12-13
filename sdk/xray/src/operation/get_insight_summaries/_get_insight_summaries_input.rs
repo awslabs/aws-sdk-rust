@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetInsightSummariesInput {
-    /// <p>The list of insight states.</p>
+    /// <p>The list of insight states. </p>
     pub states: ::std::option::Option<::std::vec::Vec<crate::types::InsightState>>,
     /// <p>The Amazon Resource Name (ARN) of the group. Required if the GroupName isn't provided.</p>
     pub group_arn: ::std::option::Option<::std::string::String>,
@@ -19,7 +19,7 @@ pub struct GetInsightSummariesInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl GetInsightSummariesInput {
-    /// <p>The list of insight states.</p>
+    /// <p>The list of insight states. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.states.is_none()`.
     pub fn states(&self) -> &[crate::types::InsightState] {
@@ -74,19 +74,19 @@ impl GetInsightSummariesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_states`](Self::set_states).
     ///
-    /// <p>The list of insight states.</p>
+    /// <p>The list of insight states. </p>
     pub fn states(mut self, input: crate::types::InsightState) -> Self {
         let mut v = self.states.unwrap_or_default();
         v.push(input);
         self.states = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of insight states.</p>
+    /// <p>The list of insight states. </p>
     pub fn set_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InsightState>>) -> Self {
         self.states = input;
         self
     }
-    /// <p>The list of insight states.</p>
+    /// <p>The list of insight states. </p>
     pub fn get_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InsightState>> {
         &self.states
     }

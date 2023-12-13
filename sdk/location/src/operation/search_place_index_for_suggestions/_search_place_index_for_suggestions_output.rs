@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchPlaceIndexForSuggestionsOutput {
-    /// <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>, <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>, and <code>Text</code>. Also includes the <code>DataSource</code> of the place index.</p>
+    /// <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>, <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>, and <code>Text</code>. Also includes the <code>DataSource</code> of the place index. </p>
     pub summary: ::std::option::Option<crate::types::SearchPlaceIndexForSuggestionsSummary>,
     /// <p>A list of place suggestions that best match the search text.</p>
     pub results: ::std::vec::Vec<crate::types::SearchForSuggestionsResult>,
     _request_id: Option<String>,
 }
 impl SearchPlaceIndexForSuggestionsOutput {
-    /// <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>, <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>, and <code>Text</code>. Also includes the <code>DataSource</code> of the place index.</p>
+    /// <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>, <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>, and <code>Text</code>. Also includes the <code>DataSource</code> of the place index. </p>
     pub fn summary(&self) -> ::std::option::Option<&crate::types::SearchPlaceIndexForSuggestionsSummary> {
         self.summary.as_ref()
     }
@@ -41,18 +41,18 @@ pub struct SearchPlaceIndexForSuggestionsOutputBuilder {
     _request_id: Option<String>,
 }
 impl SearchPlaceIndexForSuggestionsOutputBuilder {
-    /// <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>, <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>, and <code>Text</code>. Also includes the <code>DataSource</code> of the place index.</p>
+    /// <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>, <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>, and <code>Text</code>. Also includes the <code>DataSource</code> of the place index. </p>
     /// This field is required.
     pub fn summary(mut self, input: crate::types::SearchPlaceIndexForSuggestionsSummary) -> Self {
         self.summary = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>, <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>, and <code>Text</code>. Also includes the <code>DataSource</code> of the place index.</p>
+    /// <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>, <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>, and <code>Text</code>. Also includes the <code>DataSource</code> of the place index. </p>
     pub fn set_summary(mut self, input: ::std::option::Option<crate::types::SearchPlaceIndexForSuggestionsSummary>) -> Self {
         self.summary = input;
         self
     }
-    /// <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>, <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>, and <code>Text</code>. Also includes the <code>DataSource</code> of the place index.</p>
+    /// <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>, <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>, and <code>Text</code>. Also includes the <code>DataSource</code> of the place index. </p>
     pub fn get_summary(&self) -> &::std::option::Option<crate::types::SearchPlaceIndexForSuggestionsSummary> {
         &self.summary
     }

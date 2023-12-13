@@ -256,11 +256,8 @@ pub enum GetKeyRotationStatusError {
     /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
     /// <p>This exceptions means one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>The key state of the KMS key is not compatible with the operation.</p>
-    /// <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p></li>
-    /// <li>
-    /// <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p></li>
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
     /// </ul>
     KmsInvalidStateException(crate::types::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>

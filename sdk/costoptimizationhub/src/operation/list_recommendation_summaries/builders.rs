@@ -22,7 +22,7 @@ impl ListRecommendationSummariesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListRecommendationSummaries`.
 ///
-/// <p>Returns a concise representation of savings estimates for resources. Also returns de-duped savings across different types of recommendations.</p><note>
+/// <p>Returns a concise representation of savings estimates for resources. Also returns de-duped savings across different types of recommendations.</p> <note>
 /// <p>The following filters are not supported for this API: <code>recommendationIds</code>, <code>resourceArns</code>, and <code>resourceIds</code>.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

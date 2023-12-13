@@ -6,7 +6,7 @@
 pub struct MediaSourceConfig {
     /// <p>The Amazon Web Services Secrets Manager ARN for the username and password of the camera, or a local media file location.</p>
     pub media_uri_secret_arn: ::std::string::String,
-    /// <p>The Uniform Resource Identifier (URI) type. The <code>FILE_URI</code> value can be used to stream local media files.</p><note>
+    /// <p>The Uniform Resource Identifier (URI) type. The <code>FILE_URI</code> value can be used to stream local media files.</p> <note>
     /// <p>Preview only supports the <code>RTSP_URI</code> media source URI format .</p>
     /// </note>
     pub media_uri_type: crate::types::MediaUriType,
@@ -17,7 +17,7 @@ impl MediaSourceConfig {
         use std::ops::Deref;
         self.media_uri_secret_arn.deref()
     }
-    /// <p>The Uniform Resource Identifier (URI) type. The <code>FILE_URI</code> value can be used to stream local media files.</p><note>
+    /// <p>The Uniform Resource Identifier (URI) type. The <code>FILE_URI</code> value can be used to stream local media files.</p> <note>
     /// <p>Preview only supports the <code>RTSP_URI</code> media source URI format .</p>
     /// </note>
     pub fn media_uri_type(&self) -> &crate::types::MediaUriType {
@@ -62,7 +62,7 @@ impl MediaSourceConfigBuilder {
     pub fn get_media_uri_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.media_uri_secret_arn
     }
-    /// <p>The Uniform Resource Identifier (URI) type. The <code>FILE_URI</code> value can be used to stream local media files.</p><note>
+    /// <p>The Uniform Resource Identifier (URI) type. The <code>FILE_URI</code> value can be used to stream local media files.</p> <note>
     /// <p>Preview only supports the <code>RTSP_URI</code> media source URI format .</p>
     /// </note>
     /// This field is required.
@@ -70,14 +70,14 @@ impl MediaSourceConfigBuilder {
         self.media_uri_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Uniform Resource Identifier (URI) type. The <code>FILE_URI</code> value can be used to stream local media files.</p><note>
+    /// <p>The Uniform Resource Identifier (URI) type. The <code>FILE_URI</code> value can be used to stream local media files.</p> <note>
     /// <p>Preview only supports the <code>RTSP_URI</code> media source URI format .</p>
     /// </note>
     pub fn set_media_uri_type(mut self, input: ::std::option::Option<crate::types::MediaUriType>) -> Self {
         self.media_uri_type = input;
         self
     }
-    /// <p>The Uniform Resource Identifier (URI) type. The <code>FILE_URI</code> value can be used to stream local media files.</p><note>
+    /// <p>The Uniform Resource Identifier (URI) type. The <code>FILE_URI</code> value can be used to stream local media files.</p> <note>
     /// <p>Preview only supports the <code>RTSP_URI</code> media source URI format .</p>
     /// </note>
     pub fn get_media_uri_type(&self) -> &::std::option::Option<crate::types::MediaUriType> {

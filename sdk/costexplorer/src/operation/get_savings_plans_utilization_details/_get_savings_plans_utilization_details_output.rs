@@ -7,7 +7,7 @@ pub struct GetSavingsPlansUtilizationDetailsOutput {
     pub savings_plans_utilization_details: ::std::vec::Vec<crate::types::SavingsPlansUtilizationDetail>,
     /// <p>The total Savings Plans utilization, regardless of time period.</p>
     pub total: ::std::option::Option<crate::types::SavingsPlansUtilizationAggregates>,
-    /// <p>The time period of the request.</p>
+    /// <p>The time period of the request. </p>
     pub time_period: ::std::option::Option<crate::types::DateInterval>,
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -23,7 +23,7 @@ impl GetSavingsPlansUtilizationDetailsOutput {
     pub fn total(&self) -> ::std::option::Option<&crate::types::SavingsPlansUtilizationAggregates> {
         self.total.as_ref()
     }
-    /// <p>The time period of the request.</p>
+    /// <p>The time period of the request. </p>
     pub fn time_period(&self) -> ::std::option::Option<&crate::types::DateInterval> {
         self.time_period.as_ref()
     }
@@ -92,18 +92,18 @@ impl GetSavingsPlansUtilizationDetailsOutputBuilder {
     pub fn get_total(&self) -> &::std::option::Option<crate::types::SavingsPlansUtilizationAggregates> {
         &self.total
     }
-    /// <p>The time period of the request.</p>
+    /// <p>The time period of the request. </p>
     /// This field is required.
     pub fn time_period(mut self, input: crate::types::DateInterval) -> Self {
         self.time_period = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time period of the request.</p>
+    /// <p>The time period of the request. </p>
     pub fn set_time_period(mut self, input: ::std::option::Option<crate::types::DateInterval>) -> Self {
         self.time_period = input;
         self
     }
-    /// <p>The time period of the request.</p>
+    /// <p>The time period of the request. </p>
     pub fn get_time_period(&self) -> &::std::option::Option<crate::types::DateInterval> {
         &self.time_period
     }

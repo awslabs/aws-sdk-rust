@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFirewallConfigOutput {
-    /// <p>Configuration of the firewall behavior provided by DNS Firewall for a single VPC from AmazonVPC.</p>
+    /// <p>Configuration of the firewall behavior provided by DNS Firewall for a single VPC from AmazonVPC. </p>
     pub firewall_config: ::std::option::Option<crate::types::FirewallConfig>,
     _request_id: Option<String>,
 }
 impl GetFirewallConfigOutput {
-    /// <p>Configuration of the firewall behavior provided by DNS Firewall for a single VPC from AmazonVPC.</p>
+    /// <p>Configuration of the firewall behavior provided by DNS Firewall for a single VPC from AmazonVPC. </p>
     pub fn firewall_config(&self) -> ::std::option::Option<&crate::types::FirewallConfig> {
         self.firewall_config.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct GetFirewallConfigOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetFirewallConfigOutputBuilder {
-    /// <p>Configuration of the firewall behavior provided by DNS Firewall for a single VPC from AmazonVPC.</p>
+    /// <p>Configuration of the firewall behavior provided by DNS Firewall for a single VPC from AmazonVPC. </p>
     pub fn firewall_config(mut self, input: crate::types::FirewallConfig) -> Self {
         self.firewall_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Configuration of the firewall behavior provided by DNS Firewall for a single VPC from AmazonVPC.</p>
+    /// <p>Configuration of the firewall behavior provided by DNS Firewall for a single VPC from AmazonVPC. </p>
     pub fn set_firewall_config(mut self, input: ::std::option::Option<crate::types::FirewallConfig>) -> Self {
         self.firewall_config = input;
         self
     }
-    /// <p>Configuration of the firewall behavior provided by DNS Firewall for a single VPC from AmazonVPC.</p>
+    /// <p>Configuration of the firewall behavior provided by DNS Firewall for a single VPC from AmazonVPC. </p>
     pub fn get_firewall_config(&self) -> &::std::option::Option<crate::types::FirewallConfig> {
         &self.firewall_config
     }

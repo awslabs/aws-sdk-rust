@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`tags(Tag)`](crate::operation::create_trust_anchor::builders::CreateTrustAnchorFluentBuilder::tags) / [`set_tags(Option<Vec::<Tag>>)`](crate::operation::create_trust_anchor::builders::CreateTrustAnchorFluentBuilder::set_tags):<br>required: **false**<br><p>The tags to attach to the trust anchor.</p><br>
     ///   - [`notification_settings(NotificationSetting)`](crate::operation::create_trust_anchor::builders::CreateTrustAnchorFluentBuilder::notification_settings) / [`set_notification_settings(Option<Vec::<NotificationSetting>>)`](crate::operation::create_trust_anchor::builders::CreateTrustAnchorFluentBuilder::set_notification_settings):<br>required: **false**<br><p>A list of notification settings to be associated to the trust anchor.</p><br>
     /// - On success, responds with [`CreateTrustAnchorOutput`](crate::operation::create_trust_anchor::CreateTrustAnchorOutput) with field(s):
-    ///   - [`trust_anchor(Option<TrustAnchorDetail>)`](crate::operation::create_trust_anchor::CreateTrustAnchorOutput::trust_anchor): <p>The state of the trust anchor after a read or write operation.</p>
+    ///   - [`trust_anchor(Option<TrustAnchorDetail>)`](crate::operation::create_trust_anchor::CreateTrustAnchorOutput::trust_anchor): <p>The state of the trust anchor after a read or write operation. </p>
     /// - On failure, responds with [`SdkError<CreateTrustAnchorError>`](crate::operation::create_trust_anchor::CreateTrustAnchorError)
     pub fn create_trust_anchor(&self) -> crate::operation::create_trust_anchor::builders::CreateTrustAnchorFluentBuilder {
         crate::operation::create_trust_anchor::builders::CreateTrustAnchorFluentBuilder::new(self.handle.clone())

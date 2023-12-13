@@ -6,7 +6,7 @@
 pub struct DocumentMetadataConfiguration {
     /// <p>The name of the index field.</p>
     pub name: ::std::string::String,
-    /// <p>The data type of the index field.</p>
+    /// <p>The data type of the index field. </p>
     pub r#type: crate::types::DocumentAttributeValueType,
     /// <p>Provides tuning parameters to determine how the field affects the search results.</p>
     pub relevance: ::std::option::Option<crate::types::Relevance>,
@@ -19,7 +19,7 @@ impl DocumentMetadataConfiguration {
         use std::ops::Deref;
         self.name.deref()
     }
-    /// <p>The data type of the index field.</p>
+    /// <p>The data type of the index field. </p>
     pub fn r#type(&self) -> &crate::types::DocumentAttributeValueType {
         &self.r#type
     }
@@ -64,18 +64,18 @@ impl DocumentMetadataConfigurationBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The data type of the index field.</p>
+    /// <p>The data type of the index field. </p>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::DocumentAttributeValueType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The data type of the index field.</p>
+    /// <p>The data type of the index field. </p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::DocumentAttributeValueType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The data type of the index field.</p>
+    /// <p>The data type of the index field. </p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::DocumentAttributeValueType> {
         &self.r#type
     }

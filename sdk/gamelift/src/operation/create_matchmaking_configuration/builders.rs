@@ -22,12 +22,12 @@ impl CreateMatchmakingConfigurationInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateMatchmakingConfiguration`.
 ///
-/// <p>Defines a new matchmaking configuration for use with FlexMatch. Whether your are using FlexMatch with Amazon GameLift hosting or as a standalone matchmaking service, the matchmaking configuration sets out rules for matching players and forming teams. If you're also using Amazon GameLift hosting, it defines how to start game sessions for each match. Your matchmaking system can use multiple configurations to handle different game scenarios. All matchmaking requests identify the matchmaking configuration to use and provide player attributes consistent with that configuration.</p>
+/// <p>Defines a new matchmaking configuration for use with FlexMatch. Whether your are using FlexMatch with Amazon GameLift hosting or as a standalone matchmaking service, the matchmaking configuration sets out rules for matching players and forming teams. If you're also using Amazon GameLift hosting, it defines how to start game sessions for each match. Your matchmaking system can use multiple configurations to handle different game scenarios. All matchmaking requests identify the matchmaking configuration to use and provide player attributes consistent with that configuration. </p>
 /// <p>To create a matchmaking configuration, you must provide the following: configuration name and FlexMatch mode (with or without Amazon GameLift hosting); a rule set that specifies how to evaluate players and find acceptable matches; whether player acceptance is required; and the maximum time allowed for a matchmaking attempt. When using FlexMatch with Amazon GameLift hosting, you also need to identify the game session queue to use when starting a game session for the match.</p>
 /// <p>In addition, you must set up an Amazon Simple Notification Service topic to receive matchmaking notifications. Provide the topic ARN in the matchmaking configuration.</p>
-/// <p><b>Learn more</b></p>
-/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-configuration.html"> Design a FlexMatch matchmaker</a></p>
-/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html"> Set up FlexMatch event notification</a></p>
+/// <p> <b>Learn more</b> </p>
+/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-configuration.html"> Design a FlexMatch matchmaker</a> </p>
+/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html"> Set up FlexMatch event notification</a> </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateMatchmakingConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -127,17 +127,17 @@ impl CreateMatchmakingConfigurationFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>A human-readable description of the matchmaking configuration.</p>
+    /// <p>A human-readable description of the matchmaking configuration. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>A human-readable description of the matchmaking configuration.</p>
+    /// <p>A human-readable description of the matchmaking configuration. </p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>A human-readable description of the matchmaking configuration.</p>
+    /// <p>A human-readable description of the matchmaking configuration. </p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
@@ -145,26 +145,29 @@ impl CreateMatchmakingConfigurationFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_game_session_queue_arns`](Self::set_game_session_queue_arns).
     ///
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
+    /// <region>
     /// ::gamesessionqueue/
     /// <queue name></queue>
-    /// </region></code>. Queues can be located in any Region. Queues are used to start new Amazon GameLift-hosted game sessions for matches that are created with this matchmaking configuration. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not set this parameter.</p>
+    /// </region></code>. Queues can be located in any Region. Queues are used to start new Amazon GameLift-hosted game sessions for matches that are created with this matchmaking configuration. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not set this parameter. </p>
     pub fn game_session_queue_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.game_session_queue_arns(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
+    /// <region>
     /// ::gamesessionqueue/
     /// <queue name></queue>
-    /// </region></code>. Queues can be located in any Region. Queues are used to start new Amazon GameLift-hosted game sessions for matches that are created with this matchmaking configuration. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not set this parameter.</p>
+    /// </region></code>. Queues can be located in any Region. Queues are used to start new Amazon GameLift-hosted game sessions for matches that are created with this matchmaking configuration. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not set this parameter. </p>
     pub fn set_game_session_queue_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_game_session_queue_arns(input);
         self
     }
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
+    /// <region>
     /// ::gamesessionqueue/
     /// <queue name></queue>
-    /// </region></code>. Queues can be located in any Region. Queues are used to start new Amazon GameLift-hosted game sessions for matches that are created with this matchmaking configuration. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not set this parameter.</p>
+    /// </region></code>. Queues can be located in any Region. Queues are used to start new Amazon GameLift-hosted game sessions for matches that are created with this matchmaking configuration. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not set this parameter. </p>
     pub fn get_game_session_queue_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_game_session_queue_arns()
     }
@@ -182,31 +185,31 @@ impl CreateMatchmakingConfigurationFluentBuilder {
     pub fn get_request_timeout_seconds(&self) -> &::std::option::Option<i32> {
         self.inner.get_request_timeout_seconds()
     }
-    /// <p>The length of time (in seconds) to wait for players to accept a proposed match, if acceptance is required.</p>
+    /// <p>The length of time (in seconds) to wait for players to accept a proposed match, if acceptance is required. </p>
     pub fn acceptance_timeout_seconds(mut self, input: i32) -> Self {
         self.inner = self.inner.acceptance_timeout_seconds(input);
         self
     }
-    /// <p>The length of time (in seconds) to wait for players to accept a proposed match, if acceptance is required.</p>
+    /// <p>The length of time (in seconds) to wait for players to accept a proposed match, if acceptance is required. </p>
     pub fn set_acceptance_timeout_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_acceptance_timeout_seconds(input);
         self
     }
-    /// <p>The length of time (in seconds) to wait for players to accept a proposed match, if acceptance is required.</p>
+    /// <p>The length of time (in seconds) to wait for players to accept a proposed match, if acceptance is required. </p>
     pub fn get_acceptance_timeout_seconds(&self) -> &::std::option::Option<i32> {
         self.inner.get_acceptance_timeout_seconds()
     }
-    /// <p>A flag that determines whether a match that was created with this configuration must be accepted by the matched players. To require acceptance, set to <code>TRUE</code>. With this option enabled, matchmaking tickets use the status <code>REQUIRES_ACCEPTANCE</code> to indicate when a completed potential match is waiting for player acceptance.</p>
+    /// <p>A flag that determines whether a match that was created with this configuration must be accepted by the matched players. To require acceptance, set to <code>TRUE</code>. With this option enabled, matchmaking tickets use the status <code>REQUIRES_ACCEPTANCE</code> to indicate when a completed potential match is waiting for player acceptance. </p>
     pub fn acceptance_required(mut self, input: bool) -> Self {
         self.inner = self.inner.acceptance_required(input);
         self
     }
-    /// <p>A flag that determines whether a match that was created with this configuration must be accepted by the matched players. To require acceptance, set to <code>TRUE</code>. With this option enabled, matchmaking tickets use the status <code>REQUIRES_ACCEPTANCE</code> to indicate when a completed potential match is waiting for player acceptance.</p>
+    /// <p>A flag that determines whether a match that was created with this configuration must be accepted by the matched players. To require acceptance, set to <code>TRUE</code>. With this option enabled, matchmaking tickets use the status <code>REQUIRES_ACCEPTANCE</code> to indicate when a completed potential match is waiting for player acceptance. </p>
     pub fn set_acceptance_required(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_acceptance_required(input);
         self
     }
-    /// <p>A flag that determines whether a match that was created with this configuration must be accepted by the matched players. To require acceptance, set to <code>TRUE</code>. With this option enabled, matchmaking tickets use the status <code>REQUIRES_ACCEPTANCE</code> to indicate when a completed potential match is waiting for player acceptance.</p>
+    /// <p>A flag that determines whether a match that was created with this configuration must be accepted by the matched players. To require acceptance, set to <code>TRUE</code>. With this option enabled, matchmaking tickets use the status <code>REQUIRES_ACCEPTANCE</code> to indicate when a completed potential match is waiting for player acceptance. </p>
     pub fn get_acceptance_required(&self) -> &::std::option::Option<bool> {
         self.inner.get_acceptance_required()
     }
@@ -252,17 +255,17 @@ impl CreateMatchmakingConfigurationFluentBuilder {
     pub fn get_additional_player_count(&self) -> &::std::option::Option<i32> {
         self.inner.get_additional_player_count()
     }
-    /// <p>Information to be added to all events related to this matchmaking configuration.</p>
+    /// <p>Information to be added to all events related to this matchmaking configuration. </p>
     pub fn custom_event_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.custom_event_data(input.into());
         self
     }
-    /// <p>Information to be added to all events related to this matchmaking configuration.</p>
+    /// <p>Information to be added to all events related to this matchmaking configuration. </p>
     pub fn set_custom_event_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_custom_event_data(input);
         self
     }
-    /// <p>Information to be added to all events related to this matchmaking configuration.</p>
+    /// <p>Information to be added to all events related to this matchmaking configuration. </p>
     pub fn get_custom_event_data(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_custom_event_data()
     }
@@ -312,34 +315,28 @@ impl CreateMatchmakingConfigurationFluentBuilder {
     pub fn get_backfill_mode(&self) -> &::std::option::Option<crate::types::BackfillMode> {
         self.inner.get_backfill_mode()
     }
-    /// <p>Indicates whether this matchmaking configuration is being used with Amazon GameLift hosting or as a standalone matchmaking solution.</p>
+    /// <p>Indicates whether this matchmaking configuration is being used with Amazon GameLift hosting or as a standalone matchmaking solution. </p>
     /// <ul>
-    /// <li>
-    /// <p><b>STANDALONE</b> - FlexMatch forms matches and returns match information, including players and team assignments, in a <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-events.html#match-events-matchmakingsucceeded"> MatchmakingSucceeded</a> event.</p></li>
-    /// <li>
-    /// <p><b>WITH_QUEUE</b> - FlexMatch forms matches and uses the specified Amazon GameLift queue to start a game session for the match.</p></li>
+    /// <li> <p> <b>STANDALONE</b> - FlexMatch forms matches and returns match information, including players and team assignments, in a <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-events.html#match-events-matchmakingsucceeded"> MatchmakingSucceeded</a> event.</p> </li>
+    /// <li> <p> <b>WITH_QUEUE</b> - FlexMatch forms matches and uses the specified Amazon GameLift queue to start a game session for the match. </p> </li>
     /// </ul>
     pub fn flex_match_mode(mut self, input: crate::types::FlexMatchMode) -> Self {
         self.inner = self.inner.flex_match_mode(input);
         self
     }
-    /// <p>Indicates whether this matchmaking configuration is being used with Amazon GameLift hosting or as a standalone matchmaking solution.</p>
+    /// <p>Indicates whether this matchmaking configuration is being used with Amazon GameLift hosting or as a standalone matchmaking solution. </p>
     /// <ul>
-    /// <li>
-    /// <p><b>STANDALONE</b> - FlexMatch forms matches and returns match information, including players and team assignments, in a <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-events.html#match-events-matchmakingsucceeded"> MatchmakingSucceeded</a> event.</p></li>
-    /// <li>
-    /// <p><b>WITH_QUEUE</b> - FlexMatch forms matches and uses the specified Amazon GameLift queue to start a game session for the match.</p></li>
+    /// <li> <p> <b>STANDALONE</b> - FlexMatch forms matches and returns match information, including players and team assignments, in a <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-events.html#match-events-matchmakingsucceeded"> MatchmakingSucceeded</a> event.</p> </li>
+    /// <li> <p> <b>WITH_QUEUE</b> - FlexMatch forms matches and uses the specified Amazon GameLift queue to start a game session for the match. </p> </li>
     /// </ul>
     pub fn set_flex_match_mode(mut self, input: ::std::option::Option<crate::types::FlexMatchMode>) -> Self {
         self.inner = self.inner.set_flex_match_mode(input);
         self
     }
-    /// <p>Indicates whether this matchmaking configuration is being used with Amazon GameLift hosting or as a standalone matchmaking solution.</p>
+    /// <p>Indicates whether this matchmaking configuration is being used with Amazon GameLift hosting or as a standalone matchmaking solution. </p>
     /// <ul>
-    /// <li>
-    /// <p><b>STANDALONE</b> - FlexMatch forms matches and returns match information, including players and team assignments, in a <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-events.html#match-events-matchmakingsucceeded"> MatchmakingSucceeded</a> event.</p></li>
-    /// <li>
-    /// <p><b>WITH_QUEUE</b> - FlexMatch forms matches and uses the specified Amazon GameLift queue to start a game session for the match.</p></li>
+    /// <li> <p> <b>STANDALONE</b> - FlexMatch forms matches and returns match information, including players and team assignments, in a <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-events.html#match-events-matchmakingsucceeded"> MatchmakingSucceeded</a> event.</p> </li>
+    /// <li> <p> <b>WITH_QUEUE</b> - FlexMatch forms matches and uses the specified Amazon GameLift queue to start a game session for the match. </p> </li>
     /// </ul>
     pub fn get_flex_match_mode(&self) -> &::std::option::Option<crate::types::FlexMatchMode> {
         self.inner.get_flex_match_mode()

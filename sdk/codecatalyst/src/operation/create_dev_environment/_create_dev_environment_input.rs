@@ -7,21 +7,21 @@ pub struct CreateDevEnvironmentInput {
     pub space_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the project in the space.</p>
     pub project_name: ::std::option::Option<::std::string::String>,
-    /// <p>The source repository that contains the branch to clone into the Dev Environment.</p>
+    /// <p>The source repository that contains the branch to clone into the Dev Environment. </p>
     pub repositories: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryInput>>,
     /// <p>A user-specified idempotency token. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries return the result from the original successful request and have no additional effect.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The user-defined alias for a Dev Environment.</p>
     pub alias: ::std::option::Option<::std::string::String>,
-    /// <p>Information about the integrated development environment (IDE) configured for a Dev Environment.</p><note>
-    /// <p>An IDE is required to create a Dev Environment. For Dev Environment creation, this field contains configuration information and must be provided.</p>
+    /// <p>Information about the integrated development environment (IDE) configured for a Dev Environment.</p> <note>
+    /// <p>An IDE is required to create a Dev Environment. For Dev Environment creation, this field contains configuration information and must be provided. </p>
     /// </note>
     pub ides: ::std::option::Option<::std::vec::Vec<crate::types::IdeConfiguration>>,
-    /// <p>The Amazon EC2 instace type to use for the Dev Environment.</p>
+    /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p>
     pub instance_type: ::std::option::Option<crate::types::InstanceType>,
     /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. Only whole integers are allowed. Dev Environments consume compute minutes when running.</p>
     pub inactivity_timeout_minutes: ::std::option::Option<i32>,
-    /// <p>Information about the amount of storage allocated to the Dev Environment.</p><note>
+    /// <p>Information about the amount of storage allocated to the Dev Environment. </p> <note>
     /// <p>By default, a Dev Environment is configured to have 16GB of persistent storage when created from the Amazon CodeCatalyst console, but there is no default when programmatically creating a Dev Environment. Valid values for persistent storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p>
     /// </note>
     pub persistent_storage: ::std::option::Option<crate::types::PersistentStorageConfiguration>,
@@ -37,7 +37,7 @@ impl CreateDevEnvironmentInput {
     pub fn project_name(&self) -> ::std::option::Option<&str> {
         self.project_name.as_deref()
     }
-    /// <p>The source repository that contains the branch to clone into the Dev Environment.</p>
+    /// <p>The source repository that contains the branch to clone into the Dev Environment. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.repositories.is_none()`.
     pub fn repositories(&self) -> &[crate::types::RepositoryInput] {
@@ -51,15 +51,15 @@ impl CreateDevEnvironmentInput {
     pub fn alias(&self) -> ::std::option::Option<&str> {
         self.alias.as_deref()
     }
-    /// <p>Information about the integrated development environment (IDE) configured for a Dev Environment.</p><note>
-    /// <p>An IDE is required to create a Dev Environment. For Dev Environment creation, this field contains configuration information and must be provided.</p>
+    /// <p>Information about the integrated development environment (IDE) configured for a Dev Environment.</p> <note>
+    /// <p>An IDE is required to create a Dev Environment. For Dev Environment creation, this field contains configuration information and must be provided. </p>
     /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ides.is_none()`.
     pub fn ides(&self) -> &[crate::types::IdeConfiguration] {
         self.ides.as_deref().unwrap_or_default()
     }
-    /// <p>The Amazon EC2 instace type to use for the Dev Environment.</p>
+    /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p>
     pub fn instance_type(&self) -> ::std::option::Option<&crate::types::InstanceType> {
         self.instance_type.as_ref()
     }
@@ -67,7 +67,7 @@ impl CreateDevEnvironmentInput {
     pub fn inactivity_timeout_minutes(&self) -> ::std::option::Option<i32> {
         self.inactivity_timeout_minutes
     }
-    /// <p>Information about the amount of storage allocated to the Dev Environment.</p><note>
+    /// <p>Information about the amount of storage allocated to the Dev Environment. </p> <note>
     /// <p>By default, a Dev Environment is configured to have 16GB of persistent storage when created from the Amazon CodeCatalyst console, but there is no default when programmatically creating a Dev Environment. Valid values for persistent storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p>
     /// </note>
     pub fn persistent_storage(&self) -> ::std::option::Option<&crate::types::PersistentStorageConfiguration> {
@@ -135,19 +135,19 @@ impl CreateDevEnvironmentInputBuilder {
     ///
     /// To override the contents of this collection use [`set_repositories`](Self::set_repositories).
     ///
-    /// <p>The source repository that contains the branch to clone into the Dev Environment.</p>
+    /// <p>The source repository that contains the branch to clone into the Dev Environment. </p>
     pub fn repositories(mut self, input: crate::types::RepositoryInput) -> Self {
         let mut v = self.repositories.unwrap_or_default();
         v.push(input);
         self.repositories = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The source repository that contains the branch to clone into the Dev Environment.</p>
+    /// <p>The source repository that contains the branch to clone into the Dev Environment. </p>
     pub fn set_repositories(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryInput>>) -> Self {
         self.repositories = input;
         self
     }
-    /// <p>The source repository that contains the branch to clone into the Dev Environment.</p>
+    /// <p>The source repository that contains the branch to clone into the Dev Environment. </p>
     pub fn get_repositories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RepositoryInput>> {
         &self.repositories
     }
@@ -183,8 +183,8 @@ impl CreateDevEnvironmentInputBuilder {
     ///
     /// To override the contents of this collection use [`set_ides`](Self::set_ides).
     ///
-    /// <p>Information about the integrated development environment (IDE) configured for a Dev Environment.</p><note>
-    /// <p>An IDE is required to create a Dev Environment. For Dev Environment creation, this field contains configuration information and must be provided.</p>
+    /// <p>Information about the integrated development environment (IDE) configured for a Dev Environment.</p> <note>
+    /// <p>An IDE is required to create a Dev Environment. For Dev Environment creation, this field contains configuration information and must be provided. </p>
     /// </note>
     pub fn ides(mut self, input: crate::types::IdeConfiguration) -> Self {
         let mut v = self.ides.unwrap_or_default();
@@ -192,31 +192,31 @@ impl CreateDevEnvironmentInputBuilder {
         self.ides = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Information about the integrated development environment (IDE) configured for a Dev Environment.</p><note>
-    /// <p>An IDE is required to create a Dev Environment. For Dev Environment creation, this field contains configuration information and must be provided.</p>
+    /// <p>Information about the integrated development environment (IDE) configured for a Dev Environment.</p> <note>
+    /// <p>An IDE is required to create a Dev Environment. For Dev Environment creation, this field contains configuration information and must be provided. </p>
     /// </note>
     pub fn set_ides(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IdeConfiguration>>) -> Self {
         self.ides = input;
         self
     }
-    /// <p>Information about the integrated development environment (IDE) configured for a Dev Environment.</p><note>
-    /// <p>An IDE is required to create a Dev Environment. For Dev Environment creation, this field contains configuration information and must be provided.</p>
+    /// <p>Information about the integrated development environment (IDE) configured for a Dev Environment.</p> <note>
+    /// <p>An IDE is required to create a Dev Environment. For Dev Environment creation, this field contains configuration information and must be provided. </p>
     /// </note>
     pub fn get_ides(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IdeConfiguration>> {
         &self.ides
     }
-    /// <p>The Amazon EC2 instace type to use for the Dev Environment.</p>
+    /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p>
     /// This field is required.
     pub fn instance_type(mut self, input: crate::types::InstanceType) -> Self {
         self.instance_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Amazon EC2 instace type to use for the Dev Environment.</p>
+    /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::InstanceType>) -> Self {
         self.instance_type = input;
         self
     }
-    /// <p>The Amazon EC2 instace type to use for the Dev Environment.</p>
+    /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p>
     pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::InstanceType> {
         &self.instance_type
     }
@@ -234,7 +234,7 @@ impl CreateDevEnvironmentInputBuilder {
     pub fn get_inactivity_timeout_minutes(&self) -> &::std::option::Option<i32> {
         &self.inactivity_timeout_minutes
     }
-    /// <p>Information about the amount of storage allocated to the Dev Environment.</p><note>
+    /// <p>Information about the amount of storage allocated to the Dev Environment. </p> <note>
     /// <p>By default, a Dev Environment is configured to have 16GB of persistent storage when created from the Amazon CodeCatalyst console, but there is no default when programmatically creating a Dev Environment. Valid values for persistent storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p>
     /// </note>
     /// This field is required.
@@ -242,14 +242,14 @@ impl CreateDevEnvironmentInputBuilder {
         self.persistent_storage = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Information about the amount of storage allocated to the Dev Environment.</p><note>
+    /// <p>Information about the amount of storage allocated to the Dev Environment. </p> <note>
     /// <p>By default, a Dev Environment is configured to have 16GB of persistent storage when created from the Amazon CodeCatalyst console, but there is no default when programmatically creating a Dev Environment. Valid values for persistent storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p>
     /// </note>
     pub fn set_persistent_storage(mut self, input: ::std::option::Option<crate::types::PersistentStorageConfiguration>) -> Self {
         self.persistent_storage = input;
         self
     }
-    /// <p>Information about the amount of storage allocated to the Dev Environment.</p><note>
+    /// <p>Information about the amount of storage allocated to the Dev Environment. </p> <note>
     /// <p>By default, a Dev Environment is configured to have 16GB of persistent storage when created from the Amazon CodeCatalyst console, but there is no default when programmatically creating a Dev Environment. Valid values for persistent storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p>
     /// </note>
     pub fn get_persistent_storage(&self) -> &::std::option::Option<crate::types::PersistentStorageConfiguration> {

@@ -24,12 +24,9 @@ impl RegisterTypeInputBuilder {
 ///
 /// <p>Registers an extension with the CloudFormation service. Registering an extension makes it available for use in CloudFormation templates in your Amazon Web Services account, and includes:</p>
 /// <ul>
-/// <li>
-/// <p>Validating the extension schema.</p></li>
-/// <li>
-/// <p>Determining which handlers, if any, have been specified for the extension.</p></li>
-/// <li>
-/// <p>Making the extension available for use in your account.</p></li>
+/// <li> <p>Validating the extension schema.</p> </li>
+/// <li> <p>Determining which handlers, if any, have been specified for the extension.</p> </li>
+/// <li> <p>Making the extension available for use in your account.</p> </li>
 /// </ul>
 /// <p>For more information about how to develop extensions and ready them for registration, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-types.html">Creating Resource Providers</a> in the <i>CloudFormation CLI User Guide</i>.</p>
 /// <p>You can have a maximum of 50 resource extension versions registered at a time. This maximum is per account and per Region. Use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeregisterType.html">DeregisterType</a> to deregister specific extension versions if necessary.</p>
@@ -137,27 +134,18 @@ impl RegisterTypeFluentBuilder {
     /// <p>The name of the extension being registered.</p>
     /// <p>We suggest that extension names adhere to the following patterns:</p>
     /// <ul>
-    /// <li>
-    /// <p>For resource types, <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p></li>
-    /// <li>
-    /// <p>For modules, <i>company_or_organization</i>::<i>service</i>::<i>type</i>::MODULE.</p></li>
-    /// <li>
-    /// <p>For hooks, <i>MyCompany</i>::<i>Testing</i>::<i>MyTestHook</i>.</p></li>
-    /// </ul><note>
+    /// <li> <p>For resource types, <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p> </li>
+    /// <li> <p>For modules, <i>company_or_organization</i>::<i>service</i>::<i>type</i>::MODULE.</p> </li>
+    /// <li> <p>For hooks, <i>MyCompany</i>::<i>Testing</i>::<i>MyTestHook</i>.</p> </li>
+    /// </ul> <note>
     /// <p>The following organization namespaces are reserved and can't be used in your extension names:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Alexa</code></p></li>
-    /// <li>
-    /// <p><code>AMZN</code></p></li>
-    /// <li>
-    /// <p><code>Amazon</code></p></li>
-    /// <li>
-    /// <p><code>AWS</code></p></li>
-    /// <li>
-    /// <p><code>Custom</code></p></li>
-    /// <li>
-    /// <p><code>Dev</code></p></li>
+    /// <li> <p> <code>Alexa</code> </p> </li>
+    /// <li> <p> <code>AMZN</code> </p> </li>
+    /// <li> <p> <code>Amazon</code> </p> </li>
+    /// <li> <p> <code>AWS</code> </p> </li>
+    /// <li> <p> <code>Custom</code> </p> </li>
+    /// <li> <p> <code>Dev</code> </p> </li>
     /// </ul>
     /// </note>
     pub fn type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -167,27 +155,18 @@ impl RegisterTypeFluentBuilder {
     /// <p>The name of the extension being registered.</p>
     /// <p>We suggest that extension names adhere to the following patterns:</p>
     /// <ul>
-    /// <li>
-    /// <p>For resource types, <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p></li>
-    /// <li>
-    /// <p>For modules, <i>company_or_organization</i>::<i>service</i>::<i>type</i>::MODULE.</p></li>
-    /// <li>
-    /// <p>For hooks, <i>MyCompany</i>::<i>Testing</i>::<i>MyTestHook</i>.</p></li>
-    /// </ul><note>
+    /// <li> <p>For resource types, <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p> </li>
+    /// <li> <p>For modules, <i>company_or_organization</i>::<i>service</i>::<i>type</i>::MODULE.</p> </li>
+    /// <li> <p>For hooks, <i>MyCompany</i>::<i>Testing</i>::<i>MyTestHook</i>.</p> </li>
+    /// </ul> <note>
     /// <p>The following organization namespaces are reserved and can't be used in your extension names:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Alexa</code></p></li>
-    /// <li>
-    /// <p><code>AMZN</code></p></li>
-    /// <li>
-    /// <p><code>Amazon</code></p></li>
-    /// <li>
-    /// <p><code>AWS</code></p></li>
-    /// <li>
-    /// <p><code>Custom</code></p></li>
-    /// <li>
-    /// <p><code>Dev</code></p></li>
+    /// <li> <p> <code>Alexa</code> </p> </li>
+    /// <li> <p> <code>AMZN</code> </p> </li>
+    /// <li> <p> <code>Amazon</code> </p> </li>
+    /// <li> <p> <code>AWS</code> </p> </li>
+    /// <li> <p> <code>Custom</code> </p> </li>
+    /// <li> <p> <code>Dev</code> </p> </li>
     /// </ul>
     /// </note>
     pub fn set_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -197,34 +176,25 @@ impl RegisterTypeFluentBuilder {
     /// <p>The name of the extension being registered.</p>
     /// <p>We suggest that extension names adhere to the following patterns:</p>
     /// <ul>
-    /// <li>
-    /// <p>For resource types, <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p></li>
-    /// <li>
-    /// <p>For modules, <i>company_or_organization</i>::<i>service</i>::<i>type</i>::MODULE.</p></li>
-    /// <li>
-    /// <p>For hooks, <i>MyCompany</i>::<i>Testing</i>::<i>MyTestHook</i>.</p></li>
-    /// </ul><note>
+    /// <li> <p>For resource types, <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p> </li>
+    /// <li> <p>For modules, <i>company_or_organization</i>::<i>service</i>::<i>type</i>::MODULE.</p> </li>
+    /// <li> <p>For hooks, <i>MyCompany</i>::<i>Testing</i>::<i>MyTestHook</i>.</p> </li>
+    /// </ul> <note>
     /// <p>The following organization namespaces are reserved and can't be used in your extension names:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Alexa</code></p></li>
-    /// <li>
-    /// <p><code>AMZN</code></p></li>
-    /// <li>
-    /// <p><code>Amazon</code></p></li>
-    /// <li>
-    /// <p><code>AWS</code></p></li>
-    /// <li>
-    /// <p><code>Custom</code></p></li>
-    /// <li>
-    /// <p><code>Dev</code></p></li>
+    /// <li> <p> <code>Alexa</code> </p> </li>
+    /// <li> <p> <code>AMZN</code> </p> </li>
+    /// <li> <p> <code>Amazon</code> </p> </li>
+    /// <li> <p> <code>AWS</code> </p> </li>
+    /// <li> <p> <code>Custom</code> </p> </li>
+    /// <li> <p> <code>Dev</code> </p> </li>
     /// </ul>
     /// </note>
     pub fn get_type_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_type_name()
     }
     /// <p>A URL to the S3 bucket containing the extension project package that contains the necessary files for the extension you want to register.</p>
-    /// <p>For information about generating a schema handler package for the extension you want to register, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a> in the <i>CloudFormation CLI User Guide</i>.</p><note>
+    /// <p>For information about generating a schema handler package for the extension you want to register, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a> in the <i>CloudFormation CLI User Guide</i>.</p> <note>
     /// <p>The user registering the extension must be able to access the package in the S3 bucket. That's, the user needs to have <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a> permissions for the schema handler package. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html">Actions, Resources, and Condition Keys for Amazon S3</a> in the <i>Identity and Access Management User Guide</i>.</p>
     /// </note>
     pub fn schema_handler_package(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -232,7 +202,7 @@ impl RegisterTypeFluentBuilder {
         self
     }
     /// <p>A URL to the S3 bucket containing the extension project package that contains the necessary files for the extension you want to register.</p>
-    /// <p>For information about generating a schema handler package for the extension you want to register, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a> in the <i>CloudFormation CLI User Guide</i>.</p><note>
+    /// <p>For information about generating a schema handler package for the extension you want to register, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a> in the <i>CloudFormation CLI User Guide</i>.</p> <note>
     /// <p>The user registering the extension must be able to access the package in the S3 bucket. That's, the user needs to have <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a> permissions for the schema handler package. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html">Actions, Resources, and Condition Keys for Amazon S3</a> in the <i>Identity and Access Management User Guide</i>.</p>
     /// </note>
     pub fn set_schema_handler_package(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -240,7 +210,7 @@ impl RegisterTypeFluentBuilder {
         self
     }
     /// <p>A URL to the S3 bucket containing the extension project package that contains the necessary files for the extension you want to register.</p>
-    /// <p>For information about generating a schema handler package for the extension you want to register, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a> in the <i>CloudFormation CLI User Guide</i>.</p><note>
+    /// <p>For information about generating a schema handler package for the extension you want to register, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a> in the <i>CloudFormation CLI User Guide</i>.</p> <note>
     /// <p>The user registering the extension must be able to access the package in the S3 bucket. That's, the user needs to have <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a> permissions for the schema handler package. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html">Actions, Resources, and Condition Keys for Amazon S3</a> in the <i>Identity and Access Management User Guide</i>.</p>
     /// </note>
     pub fn get_schema_handler_package(&self) -> &::std::option::Option<::std::string::String> {

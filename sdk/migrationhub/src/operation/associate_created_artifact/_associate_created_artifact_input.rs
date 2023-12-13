@@ -3,25 +3,25 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateCreatedArtifactInput {
-    /// <p>The name of the ProgressUpdateStream.</p>
+    /// <p>The name of the ProgressUpdateStream. </p>
     pub progress_update_stream: ::std::option::Option<::std::string::String>,
-    /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i></p>
+    /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
     pub migration_task_name: ::std::option::Option<::std::string::String>,
-    /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.)</p>
+    /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.) </p>
     pub created_artifact: ::std::option::Option<crate::types::CreatedArtifact>,
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
 impl AssociateCreatedArtifactInput {
-    /// <p>The name of the ProgressUpdateStream.</p>
+    /// <p>The name of the ProgressUpdateStream. </p>
     pub fn progress_update_stream(&self) -> ::std::option::Option<&str> {
         self.progress_update_stream.as_deref()
     }
-    /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i></p>
+    /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
     pub fn migration_task_name(&self) -> ::std::option::Option<&str> {
         self.migration_task_name.as_deref()
     }
-    /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.)</p>
+    /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.) </p>
     pub fn created_artifact(&self) -> ::std::option::Option<&crate::types::CreatedArtifact> {
         self.created_artifact.as_ref()
     }
@@ -47,48 +47,48 @@ pub struct AssociateCreatedArtifactInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl AssociateCreatedArtifactInputBuilder {
-    /// <p>The name of the ProgressUpdateStream.</p>
+    /// <p>The name of the ProgressUpdateStream. </p>
     /// This field is required.
     pub fn progress_update_stream(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.progress_update_stream = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the ProgressUpdateStream.</p>
+    /// <p>The name of the ProgressUpdateStream. </p>
     pub fn set_progress_update_stream(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.progress_update_stream = input;
         self
     }
-    /// <p>The name of the ProgressUpdateStream.</p>
+    /// <p>The name of the ProgressUpdateStream. </p>
     pub fn get_progress_update_stream(&self) -> &::std::option::Option<::std::string::String> {
         &self.progress_update_stream
     }
-    /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i></p>
+    /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
     /// This field is required.
     pub fn migration_task_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.migration_task_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i></p>
+    /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
     pub fn set_migration_task_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.migration_task_name = input;
         self
     }
-    /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i></p>
+    /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
     pub fn get_migration_task_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.migration_task_name
     }
-    /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.)</p>
+    /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.) </p>
     /// This field is required.
     pub fn created_artifact(mut self, input: crate::types::CreatedArtifact) -> Self {
         self.created_artifact = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.)</p>
+    /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.) </p>
     pub fn set_created_artifact(mut self, input: ::std::option::Option<crate::types::CreatedArtifact>) -> Self {
         self.created_artifact = input;
         self
     }
-    /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.)</p>
+    /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.) </p>
     pub fn get_created_artifact(&self) -> &::std::option::Option<crate::types::CreatedArtifact> {
         &self.created_artifact
     }

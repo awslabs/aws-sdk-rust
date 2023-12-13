@@ -23,7 +23,7 @@ impl DeleteUserInputBuilder {
 /// Fluent builder constructing a request to `DeleteUser`.
 ///
 /// <p>Deletes the user belonging to a file transfer protocol-enabled server you specify.</p>
-/// <p>No response returns from this operation.</p><note>
+/// <p>No response returns from this operation.</p> <note>
 /// <p>When you delete a user from a server, the user's information is lost.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

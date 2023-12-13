@@ -22,7 +22,7 @@ pub struct GetDomainDetailOutput {
     pub registrant_privacy: ::std::option::Option<bool>,
     /// <p>Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return the information that you entered for the technical contact.</p>
     pub tech_privacy: ::std::option::Option<bool>,
-    /// <p>Name of the registrar of the domain as identified in the registry. Domains with a .com, .net, or .org TLD are registered by Amazon Registrar. All other domains are registered by our registrar associate, Gandi. The value for domains that are registered by Gandi is <code>"GANDI SAS"</code>.</p>
+    /// <p>Name of the registrar of the domain as identified in the registry. Domains with a .com, .net, or .org TLD are registered by Amazon Registrar. All other domains are registered by our registrar associate, Gandi. The value for domains that are registered by Gandi is <code>"GANDI SAS"</code>. </p>
     pub registrar_name: ::std::option::Option<::std::string::String>,
     /// <p>The fully qualified name of the WHOIS server that can answer the WHOIS query for the domain.</p>
     pub who_is_server: ::std::option::Option<::std::string::String>,
@@ -40,7 +40,7 @@ pub struct GetDomainDetailOutput {
     pub updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date when the registration for the domain is set to expire. The date and time is in Unix time format and Coordinated Universal time (UTC).</p>
     pub expiration_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Reseller of the domain. Domains registered or transferred using Route 53 domains will have <code>"Amazon"</code> as the reseller.</p>
+    /// <p>Reseller of the domain. Domains registered or transferred using Route 53 domains will have <code>"Amazon"</code> as the reseller. </p>
     pub reseller: ::std::option::Option<::std::string::String>,
     /// <p>Deprecated.</p>
     pub dns_sec: ::std::option::Option<::std::string::String>,
@@ -91,7 +91,7 @@ impl GetDomainDetailOutput {
     pub fn tech_privacy(&self) -> ::std::option::Option<bool> {
         self.tech_privacy
     }
-    /// <p>Name of the registrar of the domain as identified in the registry. Domains with a .com, .net, or .org TLD are registered by Amazon Registrar. All other domains are registered by our registrar associate, Gandi. The value for domains that are registered by Gandi is <code>"GANDI SAS"</code>.</p>
+    /// <p>Name of the registrar of the domain as identified in the registry. Domains with a .com, .net, or .org TLD are registered by Amazon Registrar. All other domains are registered by our registrar associate, Gandi. The value for domains that are registered by Gandi is <code>"GANDI SAS"</code>. </p>
     pub fn registrar_name(&self) -> ::std::option::Option<&str> {
         self.registrar_name.as_deref()
     }
@@ -127,7 +127,7 @@ impl GetDomainDetailOutput {
     pub fn expiration_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.expiration_date.as_ref()
     }
-    /// <p>Reseller of the domain. Domains registered or transferred using Route 53 domains will have <code>"Amazon"</code> as the reseller.</p>
+    /// <p>Reseller of the domain. Domains registered or transferred using Route 53 domains will have <code>"Amazon"</code> as the reseller. </p>
     pub fn reseller(&self) -> ::std::option::Option<&str> {
         self.reseller.as_deref()
     }
@@ -352,17 +352,17 @@ impl GetDomainDetailOutputBuilder {
     pub fn get_tech_privacy(&self) -> &::std::option::Option<bool> {
         &self.tech_privacy
     }
-    /// <p>Name of the registrar of the domain as identified in the registry. Domains with a .com, .net, or .org TLD are registered by Amazon Registrar. All other domains are registered by our registrar associate, Gandi. The value for domains that are registered by Gandi is <code>"GANDI SAS"</code>.</p>
+    /// <p>Name of the registrar of the domain as identified in the registry. Domains with a .com, .net, or .org TLD are registered by Amazon Registrar. All other domains are registered by our registrar associate, Gandi. The value for domains that are registered by Gandi is <code>"GANDI SAS"</code>. </p>
     pub fn registrar_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registrar_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Name of the registrar of the domain as identified in the registry. Domains with a .com, .net, or .org TLD are registered by Amazon Registrar. All other domains are registered by our registrar associate, Gandi. The value for domains that are registered by Gandi is <code>"GANDI SAS"</code>.</p>
+    /// <p>Name of the registrar of the domain as identified in the registry. Domains with a .com, .net, or .org TLD are registered by Amazon Registrar. All other domains are registered by our registrar associate, Gandi. The value for domains that are registered by Gandi is <code>"GANDI SAS"</code>. </p>
     pub fn set_registrar_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.registrar_name = input;
         self
     }
-    /// <p>Name of the registrar of the domain as identified in the registry. Domains with a .com, .net, or .org TLD are registered by Amazon Registrar. All other domains are registered by our registrar associate, Gandi. The value for domains that are registered by Gandi is <code>"GANDI SAS"</code>.</p>
+    /// <p>Name of the registrar of the domain as identified in the registry. Domains with a .com, .net, or .org TLD are registered by Amazon Registrar. All other domains are registered by our registrar associate, Gandi. The value for domains that are registered by Gandi is <code>"GANDI SAS"</code>. </p>
     pub fn get_registrar_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.registrar_name
     }
@@ -478,17 +478,17 @@ impl GetDomainDetailOutputBuilder {
     pub fn get_expiration_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.expiration_date
     }
-    /// <p>Reseller of the domain. Domains registered or transferred using Route 53 domains will have <code>"Amazon"</code> as the reseller.</p>
+    /// <p>Reseller of the domain. Domains registered or transferred using Route 53 domains will have <code>"Amazon"</code> as the reseller. </p>
     pub fn reseller(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reseller = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Reseller of the domain. Domains registered or transferred using Route 53 domains will have <code>"Amazon"</code> as the reseller.</p>
+    /// <p>Reseller of the domain. Domains registered or transferred using Route 53 domains will have <code>"Amazon"</code> as the reseller. </p>
     pub fn set_reseller(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reseller = input;
         self
     }
-    /// <p>Reseller of the domain. Domains registered or transferred using Route 53 domains will have <code>"Amazon"</code> as the reseller.</p>
+    /// <p>Reseller of the domain. Domains registered or transferred using Route 53 domains will have <code>"Amazon"</code> as the reseller. </p>
     pub fn get_reseller(&self) -> &::std::option::Option<::std::string::String> {
         &self.reseller
     }

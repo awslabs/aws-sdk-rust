@@ -246,7 +246,7 @@ pub enum DeleteSubscriptionError {
     InternalErrorException(crate::types::error::InternalErrorException),
     /// <p>You are trying to update a subscription that has not yet completed the 1-year commitment. You can change the <code>AutoRenew</code> parameter during the last 30 days of your subscription. This exception indicates that you are attempting to change <code>AutoRenew</code> prior to that period.</p>
     LockedSubscriptionException(crate::types::error::LockedSubscriptionException),
-    /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties.</p>
+    /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

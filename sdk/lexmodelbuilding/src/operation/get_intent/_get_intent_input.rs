@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetIntentInput {
-    /// <p>The name of the intent. The name is case sensitive.</p>
+    /// <p>The name of the intent. The name is case sensitive. </p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the intent.</p>
     pub version: ::std::option::Option<::std::string::String>,
 }
 impl GetIntentInput {
-    /// <p>The name of the intent. The name is case sensitive.</p>
+    /// <p>The name of the intent. The name is case sensitive. </p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -33,18 +33,18 @@ pub struct GetIntentInputBuilder {
     pub(crate) version: ::std::option::Option<::std::string::String>,
 }
 impl GetIntentInputBuilder {
-    /// <p>The name of the intent. The name is case sensitive.</p>
+    /// <p>The name of the intent. The name is case sensitive. </p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the intent. The name is case sensitive.</p>
+    /// <p>The name of the intent. The name is case sensitive. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the intent. The name is case sensitive.</p>
+    /// <p>The name of the intent. The name is case sensitive. </p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

@@ -204,17 +204,17 @@ impl CreateJobFluentBuilder {
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_role_arn()
     }
-    /// <p>The user-defined criteria that specifies when a job stops running.</p>
+    /// <p> The user-defined criteria that specifies when a job stops running.</p>
     pub fn stopping_condition(mut self, input: crate::types::JobStoppingCondition) -> Self {
         self.inner = self.inner.stopping_condition(input);
         self
     }
-    /// <p>The user-defined criteria that specifies when a job stops running.</p>
+    /// <p> The user-defined criteria that specifies when a job stops running.</p>
     pub fn set_stopping_condition(mut self, input: ::std::option::Option<crate::types::JobStoppingCondition>) -> Self {
         self.inner = self.inner.set_stopping_condition(input);
         self
     }
-    /// <p>The user-defined criteria that specifies when a job stops running.</p>
+    /// <p> The user-defined criteria that specifies when a job stops running.</p>
     pub fn get_stopping_condition(&self) -> &::std::option::Option<crate::types::JobStoppingCondition> {
         self.inner.get_stopping_condition()
     }

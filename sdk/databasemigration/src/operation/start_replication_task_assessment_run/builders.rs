@@ -167,10 +167,8 @@ impl StartReplicationTaskAssessmentRunFluentBuilder {
     }
     /// <p>Encryption mode that you can specify to encrypt the results of this assessment run. If you don't specify this request parameter, DMS stores the assessment run results without encryption. You can specify one of the options following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>"SSE_S3"</code> – The server-side encryption provided as a default by Amazon S3.</p></li>
-    /// <li>
-    /// <p><code>"SSE_KMS"</code> – Key Management Service (KMS) encryption. This encryption can use either a custom KMS encryption key that you specify or the default KMS encryption key that DMS provides.</p></li>
+    /// <li> <p> <code>"SSE_S3"</code> – The server-side encryption provided as a default by Amazon S3.</p> </li>
+    /// <li> <p> <code>"SSE_KMS"</code> – Key Management Service (KMS) encryption. This encryption can use either a custom KMS encryption key that you specify or the default KMS encryption key that DMS provides.</p> </li>
     /// </ul>
     pub fn result_encryption_mode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.result_encryption_mode(input.into());
@@ -178,10 +176,8 @@ impl StartReplicationTaskAssessmentRunFluentBuilder {
     }
     /// <p>Encryption mode that you can specify to encrypt the results of this assessment run. If you don't specify this request parameter, DMS stores the assessment run results without encryption. You can specify one of the options following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>"SSE_S3"</code> – The server-side encryption provided as a default by Amazon S3.</p></li>
-    /// <li>
-    /// <p><code>"SSE_KMS"</code> – Key Management Service (KMS) encryption. This encryption can use either a custom KMS encryption key that you specify or the default KMS encryption key that DMS provides.</p></li>
+    /// <li> <p> <code>"SSE_S3"</code> – The server-side encryption provided as a default by Amazon S3.</p> </li>
+    /// <li> <p> <code>"SSE_KMS"</code> – Key Management Service (KMS) encryption. This encryption can use either a custom KMS encryption key that you specify or the default KMS encryption key that DMS provides.</p> </li>
     /// </ul>
     pub fn set_result_encryption_mode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_result_encryption_mode(input);
@@ -189,10 +185,8 @@ impl StartReplicationTaskAssessmentRunFluentBuilder {
     }
     /// <p>Encryption mode that you can specify to encrypt the results of this assessment run. If you don't specify this request parameter, DMS stores the assessment run results without encryption. You can specify one of the options following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>"SSE_S3"</code> – The server-side encryption provided as a default by Amazon S3.</p></li>
-    /// <li>
-    /// <p><code>"SSE_KMS"</code> – Key Management Service (KMS) encryption. This encryption can use either a custom KMS encryption key that you specify or the default KMS encryption key that DMS provides.</p></li>
+    /// <li> <p> <code>"SSE_S3"</code> – The server-side encryption provided as a default by Amazon S3.</p> </li>
+    /// <li> <p> <code>"SSE_KMS"</code> – Key Management Service (KMS) encryption. This encryption can use either a custom KMS encryption key that you specify or the default KMS encryption key that DMS provides.</p> </li>
     /// </ul>
     pub fn get_result_encryption_mode(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_result_encryption_mode()
@@ -229,24 +223,24 @@ impl StartReplicationTaskAssessmentRunFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_include_only`](Self::set_include_only).
     ///
-    /// <p>Space-separated list of names for specific individual assessments that you want to include. These names come from the default list of individual assessments that DMS supports for the associated migration task. This task is specified by <code>ReplicationTaskArn</code>.</p><note>
-    /// <p>You can't set a value for <code>IncludeOnly</code> if you also set a value for <code>Exclude</code> in the API operation.</p>
+    /// <p>Space-separated list of names for specific individual assessments that you want to include. These names come from the default list of individual assessments that DMS supports for the associated migration task. This task is specified by <code>ReplicationTaskArn</code>.</p> <note>
+    /// <p>You can't set a value for <code>IncludeOnly</code> if you also set a value for <code>Exclude</code> in the API operation. </p>
     /// <p>To identify the names of the default individual assessments that DMS supports for the associated migration task, run the <code>DescribeApplicableIndividualAssessments</code> operation using its own <code>ReplicationTaskArn</code> request parameter.</p>
     /// </note>
     pub fn include_only(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.include_only(input.into());
         self
     }
-    /// <p>Space-separated list of names for specific individual assessments that you want to include. These names come from the default list of individual assessments that DMS supports for the associated migration task. This task is specified by <code>ReplicationTaskArn</code>.</p><note>
-    /// <p>You can't set a value for <code>IncludeOnly</code> if you also set a value for <code>Exclude</code> in the API operation.</p>
+    /// <p>Space-separated list of names for specific individual assessments that you want to include. These names come from the default list of individual assessments that DMS supports for the associated migration task. This task is specified by <code>ReplicationTaskArn</code>.</p> <note>
+    /// <p>You can't set a value for <code>IncludeOnly</code> if you also set a value for <code>Exclude</code> in the API operation. </p>
     /// <p>To identify the names of the default individual assessments that DMS supports for the associated migration task, run the <code>DescribeApplicableIndividualAssessments</code> operation using its own <code>ReplicationTaskArn</code> request parameter.</p>
     /// </note>
     pub fn set_include_only(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_include_only(input);
         self
     }
-    /// <p>Space-separated list of names for specific individual assessments that you want to include. These names come from the default list of individual assessments that DMS supports for the associated migration task. This task is specified by <code>ReplicationTaskArn</code>.</p><note>
-    /// <p>You can't set a value for <code>IncludeOnly</code> if you also set a value for <code>Exclude</code> in the API operation.</p>
+    /// <p>Space-separated list of names for specific individual assessments that you want to include. These names come from the default list of individual assessments that DMS supports for the associated migration task. This task is specified by <code>ReplicationTaskArn</code>.</p> <note>
+    /// <p>You can't set a value for <code>IncludeOnly</code> if you also set a value for <code>Exclude</code> in the API operation. </p>
     /// <p>To identify the names of the default individual assessments that DMS supports for the associated migration task, run the <code>DescribeApplicableIndividualAssessments</code> operation using its own <code>ReplicationTaskArn</code> request parameter.</p>
     /// </note>
     pub fn get_include_only(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
@@ -256,7 +250,7 @@ impl StartReplicationTaskAssessmentRunFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_exclude`](Self::set_exclude).
     ///
-    /// <p>Space-separated list of names for specific individual assessments that you want to exclude. These names come from the default list of individual assessments that DMS supports for the associated migration task. This task is specified by <code>ReplicationTaskArn</code>.</p><note>
+    /// <p>Space-separated list of names for specific individual assessments that you want to exclude. These names come from the default list of individual assessments that DMS supports for the associated migration task. This task is specified by <code>ReplicationTaskArn</code>.</p> <note>
     /// <p>You can't set a value for <code>Exclude</code> if you also set a value for <code>IncludeOnly</code> in the API operation.</p>
     /// <p>To identify the names of the default individual assessments that DMS supports for the associated migration task, run the <code>DescribeApplicableIndividualAssessments</code> operation using its own <code>ReplicationTaskArn</code> request parameter.</p>
     /// </note>
@@ -264,7 +258,7 @@ impl StartReplicationTaskAssessmentRunFluentBuilder {
         self.inner = self.inner.exclude(input.into());
         self
     }
-    /// <p>Space-separated list of names for specific individual assessments that you want to exclude. These names come from the default list of individual assessments that DMS supports for the associated migration task. This task is specified by <code>ReplicationTaskArn</code>.</p><note>
+    /// <p>Space-separated list of names for specific individual assessments that you want to exclude. These names come from the default list of individual assessments that DMS supports for the associated migration task. This task is specified by <code>ReplicationTaskArn</code>.</p> <note>
     /// <p>You can't set a value for <code>Exclude</code> if you also set a value for <code>IncludeOnly</code> in the API operation.</p>
     /// <p>To identify the names of the default individual assessments that DMS supports for the associated migration task, run the <code>DescribeApplicableIndividualAssessments</code> operation using its own <code>ReplicationTaskArn</code> request parameter.</p>
     /// </note>
@@ -272,7 +266,7 @@ impl StartReplicationTaskAssessmentRunFluentBuilder {
         self.inner = self.inner.set_exclude(input);
         self
     }
-    /// <p>Space-separated list of names for specific individual assessments that you want to exclude. These names come from the default list of individual assessments that DMS supports for the associated migration task. This task is specified by <code>ReplicationTaskArn</code>.</p><note>
+    /// <p>Space-separated list of names for specific individual assessments that you want to exclude. These names come from the default list of individual assessments that DMS supports for the associated migration task. This task is specified by <code>ReplicationTaskArn</code>.</p> <note>
     /// <p>You can't set a value for <code>Exclude</code> if you also set a value for <code>IncludeOnly</code> in the API operation.</p>
     /// <p>To identify the names of the default individual assessments that DMS supports for the associated migration task, run the <code>DescribeApplicableIndividualAssessments</code> operation using its own <code>ReplicationTaskArn</code> request parameter.</p>
     /// </note>

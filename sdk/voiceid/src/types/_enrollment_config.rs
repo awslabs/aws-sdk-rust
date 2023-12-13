@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnrollmentConfig {
-    /// <p>The action to take when the specified speaker is already enrolled in the specified domain. The default value is <code>SKIP</code>, which skips the enrollment for the existing speaker. Setting the value to <code>OVERWRITE</code> replaces the existing voice prints and enrollment audio stored for that speaker with new data generated from the latest audio.</p>
+    /// <p> The action to take when the specified speaker is already enrolled in the specified domain. The default value is <code>SKIP</code>, which skips the enrollment for the existing speaker. Setting the value to <code>OVERWRITE</code> replaces the existing voice prints and enrollment audio stored for that speaker with new data generated from the latest audio.</p>
     pub existing_enrollment_action: ::std::option::Option<crate::types::ExistingEnrollmentAction>,
     /// <p>The fraud detection configuration to use for the speaker enrollment job.</p>
     pub fraud_detection_config: ::std::option::Option<crate::types::EnrollmentJobFraudDetectionConfig>,
 }
 impl EnrollmentConfig {
-    /// <p>The action to take when the specified speaker is already enrolled in the specified domain. The default value is <code>SKIP</code>, which skips the enrollment for the existing speaker. Setting the value to <code>OVERWRITE</code> replaces the existing voice prints and enrollment audio stored for that speaker with new data generated from the latest audio.</p>
+    /// <p> The action to take when the specified speaker is already enrolled in the specified domain. The default value is <code>SKIP</code>, which skips the enrollment for the existing speaker. Setting the value to <code>OVERWRITE</code> replaces the existing voice prints and enrollment audio stored for that speaker with new data generated from the latest audio.</p>
     pub fn existing_enrollment_action(&self) -> ::std::option::Option<&crate::types::ExistingEnrollmentAction> {
         self.existing_enrollment_action.as_ref()
     }
@@ -34,17 +34,17 @@ pub struct EnrollmentConfigBuilder {
     pub(crate) fraud_detection_config: ::std::option::Option<crate::types::EnrollmentJobFraudDetectionConfig>,
 }
 impl EnrollmentConfigBuilder {
-    /// <p>The action to take when the specified speaker is already enrolled in the specified domain. The default value is <code>SKIP</code>, which skips the enrollment for the existing speaker. Setting the value to <code>OVERWRITE</code> replaces the existing voice prints and enrollment audio stored for that speaker with new data generated from the latest audio.</p>
+    /// <p> The action to take when the specified speaker is already enrolled in the specified domain. The default value is <code>SKIP</code>, which skips the enrollment for the existing speaker. Setting the value to <code>OVERWRITE</code> replaces the existing voice prints and enrollment audio stored for that speaker with new data generated from the latest audio.</p>
     pub fn existing_enrollment_action(mut self, input: crate::types::ExistingEnrollmentAction) -> Self {
         self.existing_enrollment_action = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The action to take when the specified speaker is already enrolled in the specified domain. The default value is <code>SKIP</code>, which skips the enrollment for the existing speaker. Setting the value to <code>OVERWRITE</code> replaces the existing voice prints and enrollment audio stored for that speaker with new data generated from the latest audio.</p>
+    /// <p> The action to take when the specified speaker is already enrolled in the specified domain. The default value is <code>SKIP</code>, which skips the enrollment for the existing speaker. Setting the value to <code>OVERWRITE</code> replaces the existing voice prints and enrollment audio stored for that speaker with new data generated from the latest audio.</p>
     pub fn set_existing_enrollment_action(mut self, input: ::std::option::Option<crate::types::ExistingEnrollmentAction>) -> Self {
         self.existing_enrollment_action = input;
         self
     }
-    /// <p>The action to take when the specified speaker is already enrolled in the specified domain. The default value is <code>SKIP</code>, which skips the enrollment for the existing speaker. Setting the value to <code>OVERWRITE</code> replaces the existing voice prints and enrollment audio stored for that speaker with new data generated from the latest audio.</p>
+    /// <p> The action to take when the specified speaker is already enrolled in the specified domain. The default value is <code>SKIP</code>, which skips the enrollment for the existing speaker. Setting the value to <code>OVERWRITE</code> replaces the existing voice prints and enrollment audio stored for that speaker with new data generated from the latest audio.</p>
     pub fn get_existing_enrollment_action(&self) -> &::std::option::Option<crate::types::ExistingEnrollmentAction> {
         &self.existing_enrollment_action
     }

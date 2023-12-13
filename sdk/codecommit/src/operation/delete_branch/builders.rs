@@ -22,7 +22,7 @@ impl DeleteBranchInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteBranch`.
 ///
-/// <p>Deletes a branch from a repository, unless that branch is the default branch for the repository.</p>
+/// <p>Deletes a branch from a repository, unless that branch is the default branch for the repository. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteBranchFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

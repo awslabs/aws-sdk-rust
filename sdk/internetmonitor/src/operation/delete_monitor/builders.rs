@@ -22,7 +22,7 @@ impl DeleteMonitorInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteMonitor`.
 ///
-/// <p>Deletes a monitor in Amazon CloudWatch Internet Monitor.</p>
+/// <p>Deletes a monitor in Amazon CloudWatch Internet Monitor. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteMonitorFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

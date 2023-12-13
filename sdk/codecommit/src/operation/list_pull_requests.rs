@@ -265,7 +265,7 @@ pub enum ListPullRequestsError {
     InvalidMaxResultsException(crate::types::error::InvalidMaxResultsException),
     /// <p>The pull request status is not valid. The only valid values are <code>OPEN</code> and <code>CLOSED</code>.</p>
     InvalidPullRequestStatusException(crate::types::error::InvalidPullRequestStatusException),
-    /// <p>A specified repository name is not valid.</p><note>
+    /// <p>A specified repository name is not valid.</p> <note>
     /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::types::error::InvalidRepositoryNameException),

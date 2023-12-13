@@ -27,7 +27,7 @@ pub enum Error {
     TooManyTagsException(crate::types::error::TooManyTagsException),
     /// <p>The data format is not valid. Kinesis Data Analytics cannot detect the schema for the given streaming source.</p>
     UnableToDetectSchemaException(crate::types::error::UnableToDetectSchemaException),
-    /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation.</p>
+    /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation. </p>
     UnsupportedOperationException(crate::types::error::UnsupportedOperationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

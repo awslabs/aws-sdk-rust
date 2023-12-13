@@ -22,7 +22,7 @@ impl BatchGetFrameMetricDataInputBuilder {
 }
 /// Fluent builder constructing a request to `BatchGetFrameMetricData`.
 ///
-/// <p>Returns the time series of values for a requested list of frame metrics from a time period.</p>
+/// <p> Returns the time series of values for a requested list of frame metrics from a time period.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchGetFrameMetricDataFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,96 +108,87 @@ impl BatchGetFrameMetricDataFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the profiling group associated with the the frame metrics used to return the time series values.</p>
+    /// <p> The name of the profiling group associated with the the frame metrics used to return the time series values. </p>
     pub fn profiling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.profiling_group_name(input.into());
         self
     }
-    /// <p>The name of the profiling group associated with the the frame metrics used to return the time series values.</p>
+    /// <p> The name of the profiling group associated with the the frame metrics used to return the time series values. </p>
     pub fn set_profiling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_profiling_group_name(input);
         self
     }
-    /// <p>The name of the profiling group associated with the the frame metrics used to return the time series values.</p>
+    /// <p> The name of the profiling group associated with the the frame metrics used to return the time series values. </p>
     pub fn get_profiling_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_profiling_group_name()
     }
-    /// <p>The start time of the time period for the frame metrics used to return the time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
+    /// <p> The start time of the time period for the frame metrics used to return the time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_time(input);
         self
     }
-    /// <p>The start time of the time period for the frame metrics used to return the time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
+    /// <p> The start time of the time period for the frame metrics used to return the time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
-    /// <p>The start time of the time period for the frame metrics used to return the time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
+    /// <p> The start time of the time period for the frame metrics used to return the time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_start_time()
     }
-    /// <p>The end time of the time period for the returned time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
+    /// <p> The end time of the time period for the returned time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.end_time(input);
         self
     }
-    /// <p>The end time of the time period for the returned time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
+    /// <p> The end time of the time period for the returned time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }
-    /// <p>The end time of the time period for the returned time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
+    /// <p> The end time of the time period for the returned time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_end_time()
     }
-    /// <p>The duration of the frame metrics used to return the time series values. Specify using the ISO 8601 format. The maximum period duration is one day (<code>PT24H</code> or <code>P1D</code>).</p>
+    /// <p> The duration of the frame metrics used to return the time series values. Specify using the ISO 8601 format. The maximum period duration is one day (<code>PT24H</code> or <code>P1D</code>). </p>
     pub fn period(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.period(input.into());
         self
     }
-    /// <p>The duration of the frame metrics used to return the time series values. Specify using the ISO 8601 format. The maximum period duration is one day (<code>PT24H</code> or <code>P1D</code>).</p>
+    /// <p> The duration of the frame metrics used to return the time series values. Specify using the ISO 8601 format. The maximum period duration is one day (<code>PT24H</code> or <code>P1D</code>). </p>
     pub fn set_period(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_period(input);
         self
     }
-    /// <p>The duration of the frame metrics used to return the time series values. Specify using the ISO 8601 format. The maximum period duration is one day (<code>PT24H</code> or <code>P1D</code>).</p>
+    /// <p> The duration of the frame metrics used to return the time series values. Specify using the ISO 8601 format. The maximum period duration is one day (<code>PT24H</code> or <code>P1D</code>). </p>
     pub fn get_period(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_period()
     }
-    /// <p>The requested resolution of time steps for the returned time series of values. If the requested target resolution is not available due to data not being retained we provide a best effort result by falling back to the most granular available resolution after the target resolution. There are 3 valid values.</p>
+    /// <p>The requested resolution of time steps for the returned time series of values. If the requested target resolution is not available due to data not being retained we provide a best effort result by falling back to the most granular available resolution after the target resolution. There are 3 valid values. </p>
     /// <ul>
-    /// <li>
-    /// <p><code>P1D</code> — 1 day</p></li>
-    /// <li>
-    /// <p><code>PT1H</code> — 1 hour</p></li>
-    /// <li>
-    /// <p><code>PT5M</code> — 5 minutes</p></li>
+    /// <li> <p> <code>P1D</code> — 1 day </p> </li>
+    /// <li> <p> <code>PT1H</code> — 1 hour </p> </li>
+    /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li>
     /// </ul>
     pub fn target_resolution(mut self, input: crate::types::AggregationPeriod) -> Self {
         self.inner = self.inner.target_resolution(input);
         self
     }
-    /// <p>The requested resolution of time steps for the returned time series of values. If the requested target resolution is not available due to data not being retained we provide a best effort result by falling back to the most granular available resolution after the target resolution. There are 3 valid values.</p>
+    /// <p>The requested resolution of time steps for the returned time series of values. If the requested target resolution is not available due to data not being retained we provide a best effort result by falling back to the most granular available resolution after the target resolution. There are 3 valid values. </p>
     /// <ul>
-    /// <li>
-    /// <p><code>P1D</code> — 1 day</p></li>
-    /// <li>
-    /// <p><code>PT1H</code> — 1 hour</p></li>
-    /// <li>
-    /// <p><code>PT5M</code> — 5 minutes</p></li>
+    /// <li> <p> <code>P1D</code> — 1 day </p> </li>
+    /// <li> <p> <code>PT1H</code> — 1 hour </p> </li>
+    /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li>
     /// </ul>
     pub fn set_target_resolution(mut self, input: ::std::option::Option<crate::types::AggregationPeriod>) -> Self {
         self.inner = self.inner.set_target_resolution(input);
         self
     }
-    /// <p>The requested resolution of time steps for the returned time series of values. If the requested target resolution is not available due to data not being retained we provide a best effort result by falling back to the most granular available resolution after the target resolution. There are 3 valid values.</p>
+    /// <p>The requested resolution of time steps for the returned time series of values. If the requested target resolution is not available due to data not being retained we provide a best effort result by falling back to the most granular available resolution after the target resolution. There are 3 valid values. </p>
     /// <ul>
-    /// <li>
-    /// <p><code>P1D</code> — 1 day</p></li>
-    /// <li>
-    /// <p><code>PT1H</code> — 1 hour</p></li>
-    /// <li>
-    /// <p><code>PT5M</code> — 5 minutes</p></li>
+    /// <li> <p> <code>P1D</code> — 1 day </p> </li>
+    /// <li> <p> <code>PT1H</code> — 1 hour </p> </li>
+    /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li>
     /// </ul>
     pub fn get_target_resolution(&self) -> &::std::option::Option<crate::types::AggregationPeriod> {
         self.inner.get_target_resolution()
@@ -206,17 +197,17 @@ impl BatchGetFrameMetricDataFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_frame_metrics`](Self::set_frame_metrics).
     ///
-    /// <p>The details of the metrics that are used to request a time series of values. The metric includes the name of the frame, the aggregation type to calculate the metric value for the frame, and the thread states to use to get the count for the metric value of the frame.</p>
+    /// <p> The details of the metrics that are used to request a time series of values. The metric includes the name of the frame, the aggregation type to calculate the metric value for the frame, and the thread states to use to get the count for the metric value of the frame.</p>
     pub fn frame_metrics(mut self, input: crate::types::FrameMetric) -> Self {
         self.inner = self.inner.frame_metrics(input);
         self
     }
-    /// <p>The details of the metrics that are used to request a time series of values. The metric includes the name of the frame, the aggregation type to calculate the metric value for the frame, and the thread states to use to get the count for the metric value of the frame.</p>
+    /// <p> The details of the metrics that are used to request a time series of values. The metric includes the name of the frame, the aggregation type to calculate the metric value for the frame, and the thread states to use to get the count for the metric value of the frame.</p>
     pub fn set_frame_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FrameMetric>>) -> Self {
         self.inner = self.inner.set_frame_metrics(input);
         self
     }
-    /// <p>The details of the metrics that are used to request a time series of values. The metric includes the name of the frame, the aggregation type to calculate the metric value for the frame, and the thread states to use to get the count for the metric value of the frame.</p>
+    /// <p> The details of the metrics that are used to request a time series of values. The metric includes the name of the frame, the aggregation type to calculate the metric value for the frame, and the thread states to use to get the count for the metric value of the frame.</p>
     pub fn get_frame_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FrameMetric>> {
         self.inner.get_frame_metrics()
     }

@@ -23,31 +23,20 @@ impl LeaveOrganizationInputBuilder {
 /// Fluent builder constructing a request to `LeaveOrganization`.
 ///
 /// <p>Removes a member account from its parent organization. This version of the operation is performed by the account that wants to leave. To remove a member account as a user in the management account, use <code>RemoveAccountFromOrganization</code> instead.</p>
-/// <p>This operation can be called only from a member account in the organization.</p><important>
+/// <p>This operation can be called only from a member account in the organization.</p> <important>
 /// <ul>
-/// <li>
-/// <p>The management account in an organization with all features enabled can set service control policies (SCPs) that can restrict what administrators of member accounts can do. This includes preventing them from successfully calling <code>LeaveOrganization</code> and leaving the organization.</p></li>
-/// <li>
-/// <p>You can leave an organization as a member account only if the account is configured with the information required to operate as a standalone account. When you create an account in an organization using the Organizations console, API, or CLI commands, the information required of standalone accounts is <i>not</i> automatically collected. For each account that you want to make standalone, you must perform the following steps. If any of the steps are already completed for this account, that step doesn't appear.</p>
+/// <li> <p>The management account in an organization with all features enabled can set service control policies (SCPs) that can restrict what administrators of member accounts can do. This includes preventing them from successfully calling <code>LeaveOrganization</code> and leaving the organization.</p> </li>
+/// <li> <p>You can leave an organization as a member account only if the account is configured with the information required to operate as a standalone account. When you create an account in an organization using the Organizations console, API, or CLI commands, the information required of standalone accounts is <i>not</i> automatically collected. For each account that you want to make standalone, you must perform the following steps. If any of the steps are already completed for this account, that step doesn't appear.</p>
 /// <ul>
-/// <li>
-/// <p>Choose a support plan</p></li>
-/// <li>
-/// <p>Provide and verify the required contact information</p></li>
-/// <li>
-/// <p>Provide a current payment method</p></li>
-/// </ul>
-/// <p>Amazon Web Services uses the payment method to charge for any billable (not free tier) Amazon Web Services activity that occurs while the account isn't attached to an organization. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_account-before-remove.html">Considerations before removing an account from an organization</a> in the <i>Organizations User Guide</i>.</p></li>
-/// <li>
-/// <p>The account that you want to leave must not be a delegated administrator account for any Amazon Web Services service enabled for your organization. If the account is a delegated administrator, you must first change the delegated administrator account to another account that is remaining in the organization.</p></li>
-/// <li>
-/// <p>You can leave an organization only after you enable IAM user access to billing in your account. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">About IAM access to the Billing and Cost Management console</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p></li>
-/// <li>
-/// <p>After the account leaves the organization, all tags that were attached to the account object in the organization are deleted. Amazon Web Services accounts outside of an organization do not support tags.</p></li>
-/// <li>
-/// <p>A newly created account has a waiting period before it can be removed from its organization. If you get an error that indicates that a wait period is required, then try again in a few days.</p></li>
-/// <li>
-/// <p>If you are using an organization principal to call <code>LeaveOrganization</code> across multiple accounts, you can only do this up to 5 accounts per second in a single organization.</p></li>
+/// <li> <p>Choose a support plan</p> </li>
+/// <li> <p>Provide and verify the required contact information</p> </li>
+/// <li> <p>Provide a current payment method</p> </li>
+/// </ul> <p>Amazon Web Services uses the payment method to charge for any billable (not free tier) Amazon Web Services activity that occurs while the account isn't attached to an organization. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_account-before-remove.html">Considerations before removing an account from an organization</a> in the <i>Organizations User Guide</i>.</p> </li>
+/// <li> <p>The account that you want to leave must not be a delegated administrator account for any Amazon Web Services service enabled for your organization. If the account is a delegated administrator, you must first change the delegated administrator account to another account that is remaining in the organization.</p> </li>
+/// <li> <p>You can leave an organization only after you enable IAM user access to billing in your account. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">About IAM access to the Billing and Cost Management console</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p> </li>
+/// <li> <p>After the account leaves the organization, all tags that were attached to the account object in the organization are deleted. Amazon Web Services accounts outside of an organization do not support tags.</p> </li>
+/// <li> <p>A newly created account has a waiting period before it can be removed from its organization. If you get an error that indicates that a wait period is required, then try again in a few days.</p> </li>
+/// <li> <p>If you are using an organization principal to call <code>LeaveOrganization</code> across multiple accounts, you can only do this up to 5 accounts per second in a single organization.</p> </li>
 /// </ul>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

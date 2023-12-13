@@ -8,7 +8,7 @@ pub struct EndpointInputConfiguration {
     pub instance_type: ::std::option::Option<crate::types::ProductionVariantInstanceType>,
     /// <p>The inference specification name in the model package version.</p>
     pub inference_specification_name: ::std::option::Option<::std::string::String>,
-    /// <p>The parameter you want to benchmark against.</p>
+    /// <p> The parameter you want to benchmark against.</p>
     pub environment_parameter_ranges: ::std::option::Option<crate::types::EnvironmentParameterRanges>,
     /// <p>Specifies the serverless configuration for an endpoint variant.</p>
     pub serverless_config: ::std::option::Option<crate::types::ProductionVariantServerlessConfig>,
@@ -22,7 +22,7 @@ impl EndpointInputConfiguration {
     pub fn inference_specification_name(&self) -> ::std::option::Option<&str> {
         self.inference_specification_name.as_deref()
     }
-    /// <p>The parameter you want to benchmark against.</p>
+    /// <p> The parameter you want to benchmark against.</p>
     pub fn environment_parameter_ranges(&self) -> ::std::option::Option<&crate::types::EnvironmentParameterRanges> {
         self.environment_parameter_ranges.as_ref()
     }
@@ -76,17 +76,17 @@ impl EndpointInputConfigurationBuilder {
     pub fn get_inference_specification_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.inference_specification_name
     }
-    /// <p>The parameter you want to benchmark against.</p>
+    /// <p> The parameter you want to benchmark against.</p>
     pub fn environment_parameter_ranges(mut self, input: crate::types::EnvironmentParameterRanges) -> Self {
         self.environment_parameter_ranges = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The parameter you want to benchmark against.</p>
+    /// <p> The parameter you want to benchmark against.</p>
     pub fn set_environment_parameter_ranges(mut self, input: ::std::option::Option<crate::types::EnvironmentParameterRanges>) -> Self {
         self.environment_parameter_ranges = input;
         self
     }
-    /// <p>The parameter you want to benchmark against.</p>
+    /// <p> The parameter you want to benchmark against.</p>
     pub fn get_environment_parameter_ranges(&self) -> &::std::option::Option<crate::types::EnvironmentParameterRanges> {
         &self.environment_parameter_ranges
     }

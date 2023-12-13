@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstantBooking {
-    /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book an available room when a meeting is started with Alexa.</p>
+    /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book an available room when a meeting is started with Alexa. </p>
     pub duration_in_minutes: ::std::option::Option<i32>,
     /// <p>Whether instant booking is enabled or not.</p>
     pub enabled: ::std::option::Option<bool>,
 }
 impl InstantBooking {
-    /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book an available room when a meeting is started with Alexa.</p>
+    /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book an available room when a meeting is started with Alexa. </p>
     pub fn duration_in_minutes(&self) -> ::std::option::Option<i32> {
         self.duration_in_minutes
     }
@@ -34,17 +34,17 @@ pub struct InstantBookingBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
 }
 impl InstantBookingBuilder {
-    /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book an available room when a meeting is started with Alexa.</p>
+    /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book an available room when a meeting is started with Alexa. </p>
     pub fn duration_in_minutes(mut self, input: i32) -> Self {
         self.duration_in_minutes = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book an available room when a meeting is started with Alexa.</p>
+    /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book an available room when a meeting is started with Alexa. </p>
     pub fn set_duration_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.duration_in_minutes = input;
         self
     }
-    /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book an available room when a meeting is started with Alexa.</p>
+    /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book an available room when a meeting is started with Alexa. </p>
     pub fn get_duration_in_minutes(&self) -> &::std::option::Option<i32> {
         &self.duration_in_minutes
     }

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateConnectAttachmentInput {
-    /// <p>The ID of a core network where you want to create the attachment.</p>
+    /// <p>The ID of a core network where you want to create the attachment. </p>
     pub core_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The Region where the edge is located.</p>
     pub edge_location: ::std::option::Option<::std::string::String>,
@@ -17,7 +17,7 @@ pub struct CreateConnectAttachmentInput {
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateConnectAttachmentInput {
-    /// <p>The ID of a core network where you want to create the attachment.</p>
+    /// <p>The ID of a core network where you want to create the attachment. </p>
     pub fn core_network_id(&self) -> ::std::option::Option<&str> {
         self.core_network_id.as_deref()
     }
@@ -63,18 +63,18 @@ pub struct CreateConnectAttachmentInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateConnectAttachmentInputBuilder {
-    /// <p>The ID of a core network where you want to create the attachment.</p>
+    /// <p>The ID of a core network where you want to create the attachment. </p>
     /// This field is required.
     pub fn core_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.core_network_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of a core network where you want to create the attachment.</p>
+    /// <p>The ID of a core network where you want to create the attachment. </p>
     pub fn set_core_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.core_network_id = input;
         self
     }
-    /// <p>The ID of a core network where you want to create the attachment.</p>
+    /// <p>The ID of a core network where you want to create the attachment. </p>
     pub fn get_core_network_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.core_network_id
     }

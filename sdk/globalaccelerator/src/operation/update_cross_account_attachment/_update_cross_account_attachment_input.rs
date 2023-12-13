@@ -5,7 +5,7 @@
 pub struct UpdateCrossAccountAttachmentInput {
     /// <p>The Amazon Resource Name (ARN) of the cross-account attachment to update.</p>
     pub attachment_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the cross-account attachment.</p>
+    /// <p>The name of the cross-account attachment. </p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The principals to add to the cross-account attachment. A principal is an account or the Amazon Resource Name (ARN) of an accelerator that the attachment gives permission to add the resources from another account, listed in the attachment.</p>
     /// <p>To add more than one principal, separate the account numbers or accelerator ARNs, or both, with commas.</p>
@@ -25,7 +25,7 @@ impl UpdateCrossAccountAttachmentInput {
     pub fn attachment_arn(&self) -> ::std::option::Option<&str> {
         self.attachment_arn.as_deref()
     }
-    /// <p>The name of the cross-account attachment.</p>
+    /// <p>The name of the cross-account attachment. </p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -92,17 +92,17 @@ impl UpdateCrossAccountAttachmentInputBuilder {
     pub fn get_attachment_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.attachment_arn
     }
-    /// <p>The name of the cross-account attachment.</p>
+    /// <p>The name of the cross-account attachment. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the cross-account attachment.</p>
+    /// <p>The name of the cross-account attachment. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the cross-account attachment.</p>
+    /// <p>The name of the cross-account attachment. </p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

@@ -115,19 +115,19 @@ impl ListComponentsFluentBuilder {
         crate::operation::list_components::paginator::ListComponentsPaginator::new(self.handle, self.inner)
     }
     /// <p>The scope of the components to list.</p>
-    /// <p>Default: <code>PRIVATE</code></p>
+    /// <p>Default: <code>PRIVATE</code> </p>
     pub fn scope(mut self, input: crate::types::ComponentVisibilityScope) -> Self {
         self.inner = self.inner.scope(input);
         self
     }
     /// <p>The scope of the components to list.</p>
-    /// <p>Default: <code>PRIVATE</code></p>
+    /// <p>Default: <code>PRIVATE</code> </p>
     pub fn set_scope(mut self, input: ::std::option::Option<crate::types::ComponentVisibilityScope>) -> Self {
         self.inner = self.inner.set_scope(input);
         self
     }
     /// <p>The scope of the components to list.</p>
-    /// <p>Default: <code>PRIVATE</code></p>
+    /// <p>Default: <code>PRIVATE</code> </p>
     pub fn get_scope(&self) -> &::std::option::Option<crate::types::ComponentVisibilityScope> {
         self.inner.get_scope()
     }

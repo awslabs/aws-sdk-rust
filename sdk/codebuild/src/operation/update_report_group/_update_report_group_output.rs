@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateReportGroupOutput {
-    /// <p>Information about the updated report group.</p>
+    /// <p> Information about the updated report group. </p>
     pub report_group: ::std::option::Option<crate::types::ReportGroup>,
     _request_id: Option<String>,
 }
 impl UpdateReportGroupOutput {
-    /// <p>Information about the updated report group.</p>
+    /// <p> Information about the updated report group. </p>
     pub fn report_group(&self) -> ::std::option::Option<&crate::types::ReportGroup> {
         self.report_group.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct UpdateReportGroupOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateReportGroupOutputBuilder {
-    /// <p>Information about the updated report group.</p>
+    /// <p> Information about the updated report group. </p>
     pub fn report_group(mut self, input: crate::types::ReportGroup) -> Self {
         self.report_group = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Information about the updated report group.</p>
+    /// <p> Information about the updated report group. </p>
     pub fn set_report_group(mut self, input: ::std::option::Option<crate::types::ReportGroup>) -> Self {
         self.report_group = input;
         self
     }
-    /// <p>Information about the updated report group.</p>
+    /// <p> Information about the updated report group. </p>
     pub fn get_report_group(&self) -> &::std::option::Option<crate::types::ReportGroup> {
         &self.report_group
     }

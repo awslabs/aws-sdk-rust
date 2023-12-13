@@ -14,7 +14,7 @@ pub struct ImportJobProperties {
     pub submit_time: ::aws_smithy_types::DateTime,
     /// <p>The time that the Import job was completed.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The datastore id used when the Import job was created.</p>
+    /// <p>The datastore id used when the Import job was created. </p>
     pub datastore_id: ::std::string::String,
     /// <p>The input data configuration that was supplied when the Import job was created.</p>
     pub input_data_config: ::std::option::Option<crate::types::InputDataConfig>,
@@ -22,7 +22,7 @@ pub struct ImportJobProperties {
     pub job_output_data_config: ::std::option::Option<crate::types::OutputDataConfig>,
     /// <p>The Amazon Resource Name (ARN) that gives AWS HealthLake access to your input data.</p>
     pub data_access_role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>An explanation of any errors that may have occurred during the FHIR import job.</p>
+    /// <p>An explanation of any errors that may have occurred during the FHIR import job. </p>
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl ImportJobProperties {
@@ -47,7 +47,7 @@ impl ImportJobProperties {
     pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
-    /// <p>The datastore id used when the Import job was created.</p>
+    /// <p>The datastore id used when the Import job was created. </p>
     pub fn datastore_id(&self) -> &str {
         use std::ops::Deref;
         self.datastore_id.deref()
@@ -64,7 +64,7 @@ impl ImportJobProperties {
     pub fn data_access_role_arn(&self) -> ::std::option::Option<&str> {
         self.data_access_role_arn.as_deref()
     }
-    /// <p>An explanation of any errors that may have occurred during the FHIR import job.</p>
+    /// <p>An explanation of any errors that may have occurred during the FHIR import job. </p>
     pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
@@ -165,18 +165,18 @@ impl ImportJobPropertiesBuilder {
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_time
     }
-    /// <p>The datastore id used when the Import job was created.</p>
+    /// <p>The datastore id used when the Import job was created. </p>
     /// This field is required.
     pub fn datastore_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The datastore id used when the Import job was created.</p>
+    /// <p>The datastore id used when the Import job was created. </p>
     pub fn set_datastore_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.datastore_id = input;
         self
     }
-    /// <p>The datastore id used when the Import job was created.</p>
+    /// <p>The datastore id used when the Import job was created. </p>
     pub fn get_datastore_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.datastore_id
     }
@@ -223,17 +223,17 @@ impl ImportJobPropertiesBuilder {
     pub fn get_data_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_access_role_arn
     }
-    /// <p>An explanation of any errors that may have occurred during the FHIR import job.</p>
+    /// <p>An explanation of any errors that may have occurred during the FHIR import job. </p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An explanation of any errors that may have occurred during the FHIR import job.</p>
+    /// <p>An explanation of any errors that may have occurred during the FHIR import job. </p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
-    /// <p>An explanation of any errors that may have occurred during the FHIR import job.</p>
+    /// <p>An explanation of any errors that may have occurred during the FHIR import job. </p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }

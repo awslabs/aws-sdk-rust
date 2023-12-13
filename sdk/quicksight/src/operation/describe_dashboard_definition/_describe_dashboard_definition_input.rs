@@ -7,7 +7,7 @@ pub struct DescribeDashboardDefinitionInput {
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the dashboard.</p>
     pub dashboard_id: ::std::option::Option<::std::string::String>,
-    /// <p>The version number for the dashboard. If a version number isn't passed, the latest published dashboard version is described.</p>
+    /// <p>The version number for the dashboard. If a version number isn't passed, the latest published dashboard version is described. </p>
     pub version_number: ::std::option::Option<i64>,
     /// <p>The alias name.</p>
     pub alias_name: ::std::option::Option<::std::string::String>,
@@ -21,7 +21,7 @@ impl DescribeDashboardDefinitionInput {
     pub fn dashboard_id(&self) -> ::std::option::Option<&str> {
         self.dashboard_id.as_deref()
     }
-    /// <p>The version number for the dashboard. If a version number isn't passed, the latest published dashboard version is described.</p>
+    /// <p>The version number for the dashboard. If a version number isn't passed, the latest published dashboard version is described. </p>
     pub fn version_number(&self) -> ::std::option::Option<i64> {
         self.version_number
     }
@@ -77,17 +77,17 @@ impl DescribeDashboardDefinitionInputBuilder {
     pub fn get_dashboard_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.dashboard_id
     }
-    /// <p>The version number for the dashboard. If a version number isn't passed, the latest published dashboard version is described.</p>
+    /// <p>The version number for the dashboard. If a version number isn't passed, the latest published dashboard version is described. </p>
     pub fn version_number(mut self, input: i64) -> Self {
         self.version_number = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The version number for the dashboard. If a version number isn't passed, the latest published dashboard version is described.</p>
+    /// <p>The version number for the dashboard. If a version number isn't passed, the latest published dashboard version is described. </p>
     pub fn set_version_number(mut self, input: ::std::option::Option<i64>) -> Self {
         self.version_number = input;
         self
     }
-    /// <p>The version number for the dashboard. If a version number isn't passed, the latest published dashboard version is described.</p>
+    /// <p>The version number for the dashboard. If a version number isn't passed, the latest published dashboard version is described. </p>
     pub fn get_version_number(&self) -> &::std::option::Option<i64> {
         &self.version_number
     }

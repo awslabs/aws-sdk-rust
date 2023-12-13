@@ -3,9 +3,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteRecordInput {
-    /// <p>The name or Amazon Resource Name (ARN) of the feature group to delete the record from.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the feature group to delete the record from. </p>
     pub feature_group_name: ::std::option::Option<::std::string::String>,
-    /// <p>The value for the <code>RecordIdentifier</code> that uniquely identifies the record, in string format.</p>
+    /// <p>The value for the <code>RecordIdentifier</code> that uniquely identifies the record, in string format. </p>
     pub record_identifier_value_as_string: ::std::option::Option<::std::string::String>,
     /// <p>Timestamp indicating when the deletion event occurred. <code>EventTime</code> can be used to query data at a certain point in time.</p>
     pub event_time: ::std::option::Option<::std::string::String>,
@@ -15,11 +15,11 @@ pub struct DeleteRecordInput {
     pub deletion_mode: ::std::option::Option<crate::types::DeletionMode>,
 }
 impl DeleteRecordInput {
-    /// <p>The name or Amazon Resource Name (ARN) of the feature group to delete the record from.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the feature group to delete the record from. </p>
     pub fn feature_group_name(&self) -> ::std::option::Option<&str> {
         self.feature_group_name.as_deref()
     }
-    /// <p>The value for the <code>RecordIdentifier</code> that uniquely identifies the record, in string format.</p>
+    /// <p>The value for the <code>RecordIdentifier</code> that uniquely identifies the record, in string format. </p>
     pub fn record_identifier_value_as_string(&self) -> ::std::option::Option<&str> {
         self.record_identifier_value_as_string.as_deref()
     }
@@ -56,33 +56,33 @@ pub struct DeleteRecordInputBuilder {
     pub(crate) deletion_mode: ::std::option::Option<crate::types::DeletionMode>,
 }
 impl DeleteRecordInputBuilder {
-    /// <p>The name or Amazon Resource Name (ARN) of the feature group to delete the record from.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the feature group to delete the record from. </p>
     /// This field is required.
     pub fn feature_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_group_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name or Amazon Resource Name (ARN) of the feature group to delete the record from.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the feature group to delete the record from. </p>
     pub fn set_feature_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.feature_group_name = input;
         self
     }
-    /// <p>The name or Amazon Resource Name (ARN) of the feature group to delete the record from.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the feature group to delete the record from. </p>
     pub fn get_feature_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.feature_group_name
     }
-    /// <p>The value for the <code>RecordIdentifier</code> that uniquely identifies the record, in string format.</p>
+    /// <p>The value for the <code>RecordIdentifier</code> that uniquely identifies the record, in string format. </p>
     /// This field is required.
     pub fn record_identifier_value_as_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.record_identifier_value_as_string = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The value for the <code>RecordIdentifier</code> that uniquely identifies the record, in string format.</p>
+    /// <p>The value for the <code>RecordIdentifier</code> that uniquely identifies the record, in string format. </p>
     pub fn set_record_identifier_value_as_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.record_identifier_value_as_string = input;
         self
     }
-    /// <p>The value for the <code>RecordIdentifier</code> that uniquely identifies the record, in string format.</p>
+    /// <p>The value for the <code>RecordIdentifier</code> that uniquely identifies the record, in string format. </p>
     pub fn get_record_identifier_value_as_string(&self) -> &::std::option::Option<::std::string::String> {
         &self.record_identifier_value_as_string
     }

@@ -5,14 +5,10 @@
 pub struct GetWebAclOutput {
     /// <p>Information about the <code>WebACL</code> that you specified in the <code>GetWebACL</code> request. For more information, see the following topics:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>WebACL</code>: Contains <code>DefaultAction</code>, <code>MetricName</code>, <code>Name</code>, an array of <code>Rule</code> objects, and <code>WebACLId</code></p></li>
-    /// <li>
-    /// <p><code>DefaultAction</code> (Data type is <code>WafAction</code>): Contains <code>Type</code></p></li>
-    /// <li>
-    /// <p><code>Rules</code>: Contains an array of <code>ActivatedRule</code> objects, which contain <code>Action</code>, <code>Priority</code>, and <code>RuleId</code></p></li>
-    /// <li>
-    /// <p><code>Action</code>: Contains <code>Type</code></p></li>
+    /// <li> <p> <code>WebACL</code>: Contains <code>DefaultAction</code>, <code>MetricName</code>, <code>Name</code>, an array of <code>Rule</code> objects, and <code>WebACLId</code> </p> </li>
+    /// <li> <p> <code>DefaultAction</code> (Data type is <code>WafAction</code>): Contains <code>Type</code> </p> </li>
+    /// <li> <p> <code>Rules</code>: Contains an array of <code>ActivatedRule</code> objects, which contain <code>Action</code>, <code>Priority</code>, and <code>RuleId</code> </p> </li>
+    /// <li> <p> <code>Action</code>: Contains <code>Type</code> </p> </li>
     /// </ul>
     pub web_acl: ::std::option::Option<crate::types::WebAcl>,
     _request_id: Option<String>,
@@ -20,14 +16,10 @@ pub struct GetWebAclOutput {
 impl GetWebAclOutput {
     /// <p>Information about the <code>WebACL</code> that you specified in the <code>GetWebACL</code> request. For more information, see the following topics:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>WebACL</code>: Contains <code>DefaultAction</code>, <code>MetricName</code>, <code>Name</code>, an array of <code>Rule</code> objects, and <code>WebACLId</code></p></li>
-    /// <li>
-    /// <p><code>DefaultAction</code> (Data type is <code>WafAction</code>): Contains <code>Type</code></p></li>
-    /// <li>
-    /// <p><code>Rules</code>: Contains an array of <code>ActivatedRule</code> objects, which contain <code>Action</code>, <code>Priority</code>, and <code>RuleId</code></p></li>
-    /// <li>
-    /// <p><code>Action</code>: Contains <code>Type</code></p></li>
+    /// <li> <p> <code>WebACL</code>: Contains <code>DefaultAction</code>, <code>MetricName</code>, <code>Name</code>, an array of <code>Rule</code> objects, and <code>WebACLId</code> </p> </li>
+    /// <li> <p> <code>DefaultAction</code> (Data type is <code>WafAction</code>): Contains <code>Type</code> </p> </li>
+    /// <li> <p> <code>Rules</code>: Contains an array of <code>ActivatedRule</code> objects, which contain <code>Action</code>, <code>Priority</code>, and <code>RuleId</code> </p> </li>
+    /// <li> <p> <code>Action</code>: Contains <code>Type</code> </p> </li>
     /// </ul>
     pub fn web_acl(&self) -> ::std::option::Option<&crate::types::WebAcl> {
         self.web_acl.as_ref()
@@ -55,14 +47,10 @@ pub struct GetWebAclOutputBuilder {
 impl GetWebAclOutputBuilder {
     /// <p>Information about the <code>WebACL</code> that you specified in the <code>GetWebACL</code> request. For more information, see the following topics:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>WebACL</code>: Contains <code>DefaultAction</code>, <code>MetricName</code>, <code>Name</code>, an array of <code>Rule</code> objects, and <code>WebACLId</code></p></li>
-    /// <li>
-    /// <p><code>DefaultAction</code> (Data type is <code>WafAction</code>): Contains <code>Type</code></p></li>
-    /// <li>
-    /// <p><code>Rules</code>: Contains an array of <code>ActivatedRule</code> objects, which contain <code>Action</code>, <code>Priority</code>, and <code>RuleId</code></p></li>
-    /// <li>
-    /// <p><code>Action</code>: Contains <code>Type</code></p></li>
+    /// <li> <p> <code>WebACL</code>: Contains <code>DefaultAction</code>, <code>MetricName</code>, <code>Name</code>, an array of <code>Rule</code> objects, and <code>WebACLId</code> </p> </li>
+    /// <li> <p> <code>DefaultAction</code> (Data type is <code>WafAction</code>): Contains <code>Type</code> </p> </li>
+    /// <li> <p> <code>Rules</code>: Contains an array of <code>ActivatedRule</code> objects, which contain <code>Action</code>, <code>Priority</code>, and <code>RuleId</code> </p> </li>
+    /// <li> <p> <code>Action</code>: Contains <code>Type</code> </p> </li>
     /// </ul>
     pub fn web_acl(mut self, input: crate::types::WebAcl) -> Self {
         self.web_acl = ::std::option::Option::Some(input);
@@ -70,14 +58,10 @@ impl GetWebAclOutputBuilder {
     }
     /// <p>Information about the <code>WebACL</code> that you specified in the <code>GetWebACL</code> request. For more information, see the following topics:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>WebACL</code>: Contains <code>DefaultAction</code>, <code>MetricName</code>, <code>Name</code>, an array of <code>Rule</code> objects, and <code>WebACLId</code></p></li>
-    /// <li>
-    /// <p><code>DefaultAction</code> (Data type is <code>WafAction</code>): Contains <code>Type</code></p></li>
-    /// <li>
-    /// <p><code>Rules</code>: Contains an array of <code>ActivatedRule</code> objects, which contain <code>Action</code>, <code>Priority</code>, and <code>RuleId</code></p></li>
-    /// <li>
-    /// <p><code>Action</code>: Contains <code>Type</code></p></li>
+    /// <li> <p> <code>WebACL</code>: Contains <code>DefaultAction</code>, <code>MetricName</code>, <code>Name</code>, an array of <code>Rule</code> objects, and <code>WebACLId</code> </p> </li>
+    /// <li> <p> <code>DefaultAction</code> (Data type is <code>WafAction</code>): Contains <code>Type</code> </p> </li>
+    /// <li> <p> <code>Rules</code>: Contains an array of <code>ActivatedRule</code> objects, which contain <code>Action</code>, <code>Priority</code>, and <code>RuleId</code> </p> </li>
+    /// <li> <p> <code>Action</code>: Contains <code>Type</code> </p> </li>
     /// </ul>
     pub fn set_web_acl(mut self, input: ::std::option::Option<crate::types::WebAcl>) -> Self {
         self.web_acl = input;
@@ -85,14 +69,10 @@ impl GetWebAclOutputBuilder {
     }
     /// <p>Information about the <code>WebACL</code> that you specified in the <code>GetWebACL</code> request. For more information, see the following topics:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>WebACL</code>: Contains <code>DefaultAction</code>, <code>MetricName</code>, <code>Name</code>, an array of <code>Rule</code> objects, and <code>WebACLId</code></p></li>
-    /// <li>
-    /// <p><code>DefaultAction</code> (Data type is <code>WafAction</code>): Contains <code>Type</code></p></li>
-    /// <li>
-    /// <p><code>Rules</code>: Contains an array of <code>ActivatedRule</code> objects, which contain <code>Action</code>, <code>Priority</code>, and <code>RuleId</code></p></li>
-    /// <li>
-    /// <p><code>Action</code>: Contains <code>Type</code></p></li>
+    /// <li> <p> <code>WebACL</code>: Contains <code>DefaultAction</code>, <code>MetricName</code>, <code>Name</code>, an array of <code>Rule</code> objects, and <code>WebACLId</code> </p> </li>
+    /// <li> <p> <code>DefaultAction</code> (Data type is <code>WafAction</code>): Contains <code>Type</code> </p> </li>
+    /// <li> <p> <code>Rules</code>: Contains an array of <code>ActivatedRule</code> objects, which contain <code>Action</code>, <code>Priority</code>, and <code>RuleId</code> </p> </li>
+    /// <li> <p> <code>Action</code>: Contains <code>Type</code> </p> </li>
     /// </ul>
     pub fn get_web_acl(&self) -> &::std::option::Option<crate::types::WebAcl> {
         &self.web_acl

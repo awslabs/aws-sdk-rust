@@ -23,7 +23,7 @@ impl DeleteFindingAggregatorInputBuilder {
 /// Fluent builder constructing a request to `DeleteFindingAggregator`.
 ///
 /// <p>Deletes a finding aggregator. When you delete the finding aggregator, you stop finding aggregation.</p>
-/// <p>When you stop finding aggregation, findings that were already aggregated to the aggregation Region are still visible from the aggregation Region. New findings and finding updates are not aggregated.</p>
+/// <p>When you stop finding aggregation, findings that were already aggregated to the aggregation Region are still visible from the aggregation Region. New findings and finding updates are not aggregated. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteFindingAggregatorFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

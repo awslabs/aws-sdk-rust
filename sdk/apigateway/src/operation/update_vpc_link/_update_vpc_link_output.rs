@@ -12,7 +12,7 @@ pub struct UpdateVpcLinkOutput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned by the same Amazon Web Services account of the API owner.</p>
     pub target_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The status of the VPC link. The valid values are <code>AVAILABLE</code>, <code>PENDING</code>, <code>DELETING</code>, or <code>FAILED</code>. Deploying an API will wait if the status is <code>PENDING</code> and will fail if the status is <code>DELETING</code>.</p>
+    /// <p>The status of the VPC link. The valid values are <code>AVAILABLE</code>, <code>PENDING</code>, <code>DELETING</code>, or <code>FAILED</code>. Deploying an API will wait if the status is <code>PENDING</code> and will fail if the status is <code>DELETING</code>. </p>
     pub status: ::std::option::Option<crate::types::VpcLinkStatus>,
     /// <p>A description about the VPC link status.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
@@ -39,7 +39,7 @@ impl UpdateVpcLinkOutput {
     pub fn target_arns(&self) -> &[::std::string::String] {
         self.target_arns.as_deref().unwrap_or_default()
     }
-    /// <p>The status of the VPC link. The valid values are <code>AVAILABLE</code>, <code>PENDING</code>, <code>DELETING</code>, or <code>FAILED</code>. Deploying an API will wait if the status is <code>PENDING</code> and will fail if the status is <code>DELETING</code>.</p>
+    /// <p>The status of the VPC link. The valid values are <code>AVAILABLE</code>, <code>PENDING</code>, <code>DELETING</code>, or <code>FAILED</code>. Deploying an API will wait if the status is <code>PENDING</code> and will fail if the status is <code>DELETING</code>. </p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::VpcLinkStatus> {
         self.status.as_ref()
     }
@@ -140,17 +140,17 @@ impl UpdateVpcLinkOutputBuilder {
     pub fn get_target_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.target_arns
     }
-    /// <p>The status of the VPC link. The valid values are <code>AVAILABLE</code>, <code>PENDING</code>, <code>DELETING</code>, or <code>FAILED</code>. Deploying an API will wait if the status is <code>PENDING</code> and will fail if the status is <code>DELETING</code>.</p>
+    /// <p>The status of the VPC link. The valid values are <code>AVAILABLE</code>, <code>PENDING</code>, <code>DELETING</code>, or <code>FAILED</code>. Deploying an API will wait if the status is <code>PENDING</code> and will fail if the status is <code>DELETING</code>. </p>
     pub fn status(mut self, input: crate::types::VpcLinkStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the VPC link. The valid values are <code>AVAILABLE</code>, <code>PENDING</code>, <code>DELETING</code>, or <code>FAILED</code>. Deploying an API will wait if the status is <code>PENDING</code> and will fail if the status is <code>DELETING</code>.</p>
+    /// <p>The status of the VPC link. The valid values are <code>AVAILABLE</code>, <code>PENDING</code>, <code>DELETING</code>, or <code>FAILED</code>. Deploying an API will wait if the status is <code>PENDING</code> and will fail if the status is <code>DELETING</code>. </p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::VpcLinkStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of the VPC link. The valid values are <code>AVAILABLE</code>, <code>PENDING</code>, <code>DELETING</code>, or <code>FAILED</code>. Deploying an API will wait if the status is <code>PENDING</code> and will fail if the status is <code>DELETING</code>.</p>
+    /// <p>The status of the VPC link. The valid values are <code>AVAILABLE</code>, <code>PENDING</code>, <code>DELETING</code>, or <code>FAILED</code>. Deploying an API will wait if the status is <code>PENDING</code> and will fail if the status is <code>DELETING</code>. </p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::VpcLinkStatus> {
         &self.status
     }

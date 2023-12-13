@@ -136,17 +136,17 @@ impl DescribeDashboardFluentBuilder {
     pub fn get_dashboard_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_dashboard_id()
     }
-    /// <p>The version number for the dashboard. If a version number isn't passed, the latest published dashboard version is described.</p>
+    /// <p>The version number for the dashboard. If a version number isn't passed, the latest published dashboard version is described. </p>
     pub fn version_number(mut self, input: i64) -> Self {
         self.inner = self.inner.version_number(input);
         self
     }
-    /// <p>The version number for the dashboard. If a version number isn't passed, the latest published dashboard version is described.</p>
+    /// <p>The version number for the dashboard. If a version number isn't passed, the latest published dashboard version is described. </p>
     pub fn set_version_number(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_version_number(input);
         self
     }
-    /// <p>The version number for the dashboard. If a version number isn't passed, the latest published dashboard version is described.</p>
+    /// <p>The version number for the dashboard. If a version number isn't passed, the latest published dashboard version is described. </p>
     pub fn get_version_number(&self) -> &::std::option::Option<i64> {
         self.inner.get_version_number()
     }

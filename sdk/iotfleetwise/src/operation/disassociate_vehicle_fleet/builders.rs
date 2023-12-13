@@ -22,7 +22,7 @@ impl DisassociateVehicleFleetInputBuilder {
 }
 /// Fluent builder constructing a request to `DisassociateVehicleFleet`.
 ///
-/// <p>Removes, or disassociates, a vehicle from a fleet. Disassociating a vehicle from a fleet doesn't delete the vehicle.</p><note>
+/// <p>Removes, or disassociates, a vehicle from a fleet. Disassociating a vehicle from a fleet doesn't delete the vehicle.</p> <note>
 /// <p>If the vehicle is successfully dissociated from a fleet, Amazon Web Services IoT FleetWise sends back an HTTP 200 response with an empty body.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -110,31 +110,31 @@ impl DisassociateVehicleFleetFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique ID of the vehicle to disassociate from the fleet.</p>
+    /// <p> The unique ID of the vehicle to disassociate from the fleet.</p>
     pub fn vehicle_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vehicle_name(input.into());
         self
     }
-    /// <p>The unique ID of the vehicle to disassociate from the fleet.</p>
+    /// <p> The unique ID of the vehicle to disassociate from the fleet.</p>
     pub fn set_vehicle_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vehicle_name(input);
         self
     }
-    /// <p>The unique ID of the vehicle to disassociate from the fleet.</p>
+    /// <p> The unique ID of the vehicle to disassociate from the fleet.</p>
     pub fn get_vehicle_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_vehicle_name()
     }
-    /// <p>The unique ID of a fleet.</p>
+    /// <p> The unique ID of a fleet. </p>
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fleet_id(input.into());
         self
     }
-    /// <p>The unique ID of a fleet.</p>
+    /// <p> The unique ID of a fleet. </p>
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_fleet_id(input);
         self
     }
-    /// <p>The unique ID of a fleet.</p>
+    /// <p> The unique ID of a fleet. </p>
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_fleet_id()
     }

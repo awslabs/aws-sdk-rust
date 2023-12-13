@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Filters {
-    /// <p>The queues to use to filter the metrics. You should specify at least one queue, and can specify up to 100 queues per request. The <code>GetCurrentMetricsData</code> API in particular requires a queue when you include a <code>Filter</code> in your request.</p>
+    /// <p>The queues to use to filter the metrics. You should specify at least one queue, and can specify up to 100 queues per request. The <code>GetCurrentMetricsData</code> API in particular requires a queue when you include a <code>Filter</code> in your request. </p>
     pub queues: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The channel to use to filter the metrics.</p>
     pub channels: ::std::option::Option<::std::vec::Vec<crate::types::Channel>>,
@@ -12,7 +12,7 @@ pub struct Filters {
     pub routing_profiles: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Filters {
-    /// <p>The queues to use to filter the metrics. You should specify at least one queue, and can specify up to 100 queues per request. The <code>GetCurrentMetricsData</code> API in particular requires a queue when you include a <code>Filter</code> in your request.</p>
+    /// <p>The queues to use to filter the metrics. You should specify at least one queue, and can specify up to 100 queues per request. The <code>GetCurrentMetricsData</code> API in particular requires a queue when you include a <code>Filter</code> in your request. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.queues.is_none()`.
     pub fn queues(&self) -> &[::std::string::String] {
@@ -51,19 +51,19 @@ impl FiltersBuilder {
     ///
     /// To override the contents of this collection use [`set_queues`](Self::set_queues).
     ///
-    /// <p>The queues to use to filter the metrics. You should specify at least one queue, and can specify up to 100 queues per request. The <code>GetCurrentMetricsData</code> API in particular requires a queue when you include a <code>Filter</code> in your request.</p>
+    /// <p>The queues to use to filter the metrics. You should specify at least one queue, and can specify up to 100 queues per request. The <code>GetCurrentMetricsData</code> API in particular requires a queue when you include a <code>Filter</code> in your request. </p>
     pub fn queues(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.queues.unwrap_or_default();
         v.push(input.into());
         self.queues = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The queues to use to filter the metrics. You should specify at least one queue, and can specify up to 100 queues per request. The <code>GetCurrentMetricsData</code> API in particular requires a queue when you include a <code>Filter</code> in your request.</p>
+    /// <p>The queues to use to filter the metrics. You should specify at least one queue, and can specify up to 100 queues per request. The <code>GetCurrentMetricsData</code> API in particular requires a queue when you include a <code>Filter</code> in your request. </p>
     pub fn set_queues(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.queues = input;
         self
     }
-    /// <p>The queues to use to filter the metrics. You should specify at least one queue, and can specify up to 100 queues per request. The <code>GetCurrentMetricsData</code> API in particular requires a queue when you include a <code>Filter</code> in your request.</p>
+    /// <p>The queues to use to filter the metrics. You should specify at least one queue, and can specify up to 100 queues per request. The <code>GetCurrentMetricsData</code> API in particular requires a queue when you include a <code>Filter</code> in your request. </p>
     pub fn get_queues(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.queues
     }

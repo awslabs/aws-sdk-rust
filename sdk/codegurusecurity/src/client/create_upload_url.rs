@@ -7,7 +7,7 @@ impl super::Client {
     /// - On success, responds with [`CreateUploadUrlOutput`](crate::operation::create_upload_url::CreateUploadUrlOutput) with field(s):
     ///   - [`s3_url(String)`](crate::operation::create_upload_url::CreateUploadUrlOutput::s3_url): <p>A pre-signed S3 URL. You can upload the code file you want to scan and add the required <code>requestHeaders</code> using any HTTP client.</p>
     ///   - [`request_headers(HashMap::<String, String>)`](crate::operation::create_upload_url::CreateUploadUrlOutput::request_headers): <p>A set of key-value pairs that contain the required headers when uploading your resource.</p>
-    ///   - [`code_artifact_id(String)`](crate::operation::create_upload_url::CreateUploadUrlOutput::code_artifact_id): <p>The identifier for the uploaded code resource.</p>
+    ///   - [`code_artifact_id(String)`](crate::operation::create_upload_url::CreateUploadUrlOutput::code_artifact_id): <p>The identifier for the uploaded code resource. </p>
     /// - On failure, responds with [`SdkError<CreateUploadUrlError>`](crate::operation::create_upload_url::CreateUploadUrlError)
     pub fn create_upload_url(&self) -> crate::operation::create_upload_url::builders::CreateUploadUrlFluentBuilder {
         crate::operation::create_upload_url::builders::CreateUploadUrlFluentBuilder::new(self.handle.clone())

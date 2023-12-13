@@ -22,11 +22,11 @@ impl StopStreamEncryptionInputBuilder {
 }
 /// Fluent builder constructing a request to `StopStreamEncryption`.
 ///
-/// <p>Disables server-side encryption for a specified stream.</p><note>
+/// <p>Disables server-side encryption for a specified stream. </p> <note>
 /// <p>When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code> parameter, or both. It is recommended that you use the <code>StreamARN</code> input parameter when you invoke this API.</p>
 /// </note>
-/// <p>Stopping encryption is an asynchronous operation. Upon receiving the request, Kinesis Data Streams returns immediately and sets the status of the stream to <code>UPDATING</code>. After the update is complete, Kinesis Data Streams sets the status of the stream back to <code>ACTIVE</code>. Stopping encryption normally takes a few seconds to complete, but it can take minutes. You can continue to read and write data to your stream while its status is <code>UPDATING</code>. Once the status of the stream is <code>ACTIVE</code>, records written to the stream are no longer encrypted by Kinesis Data Streams.</p>
-/// <p>API Limits: You can successfully disable server-side encryption 25 times in a rolling 24-hour period.</p>
+/// <p>Stopping encryption is an asynchronous operation. Upon receiving the request, Kinesis Data Streams returns immediately and sets the status of the stream to <code>UPDATING</code>. After the update is complete, Kinesis Data Streams sets the status of the stream back to <code>ACTIVE</code>. Stopping encryption normally takes a few seconds to complete, but it can take minutes. You can continue to read and write data to your stream while its status is <code>UPDATING</code>. Once the status of the stream is <code>ACTIVE</code>, records written to the stream are no longer encrypted by Kinesis Data Streams. </p>
+/// <p>API Limits: You can successfully disable server-side encryption 25 times in a rolling 24-hour period. </p>
 /// <p>Note: It can take up to 5 seconds after the stream is in an <code>ACTIVE</code> status before all records written to the stream are no longer subject to encryption. After you disabled encryption, you can verify that encryption is not applied by inspecting the API response from <code>PutRecord</code> or <code>PutRecords</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopStreamEncryptionFluentBuilder {
@@ -143,16 +143,11 @@ impl StopStreamEncryptionFluentBuilder {
     }
     /// <p>The GUID for the customer-managed Amazon Web Services KMS key to use for encryption. This value can be a globally unique identifier, a fully specified Amazon Resource Name (ARN) to either an alias or a key, or an alias name prefixed by "alias/".You can also use a master key owned by Kinesis Data Streams by specifying the alias <code>aws/kinesis</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p>Key ARN example: <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code></p></li>
-    /// <li>
-    /// <p>Alias ARN example: <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code></p></li>
-    /// <li>
-    /// <p>Globally unique key ID example: <code>12345678-1234-1234-1234-123456789012</code></p></li>
-    /// <li>
-    /// <p>Alias name example: <code>alias/MyAliasName</code></p></li>
-    /// <li>
-    /// <p>Master key owned by Kinesis Data Streams: <code>alias/aws/kinesis</code></p></li>
+    /// <li> <p>Key ARN example: <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p> </li>
+    /// <li> <p>Alias ARN example: <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code> </p> </li>
+    /// <li> <p>Globally unique key ID example: <code>12345678-1234-1234-1234-123456789012</code> </p> </li>
+    /// <li> <p>Alias name example: <code>alias/MyAliasName</code> </p> </li>
+    /// <li> <p>Master key owned by Kinesis Data Streams: <code>alias/aws/kinesis</code> </p> </li>
     /// </ul>
     pub fn key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.key_id(input.into());
@@ -160,16 +155,11 @@ impl StopStreamEncryptionFluentBuilder {
     }
     /// <p>The GUID for the customer-managed Amazon Web Services KMS key to use for encryption. This value can be a globally unique identifier, a fully specified Amazon Resource Name (ARN) to either an alias or a key, or an alias name prefixed by "alias/".You can also use a master key owned by Kinesis Data Streams by specifying the alias <code>aws/kinesis</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p>Key ARN example: <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code></p></li>
-    /// <li>
-    /// <p>Alias ARN example: <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code></p></li>
-    /// <li>
-    /// <p>Globally unique key ID example: <code>12345678-1234-1234-1234-123456789012</code></p></li>
-    /// <li>
-    /// <p>Alias name example: <code>alias/MyAliasName</code></p></li>
-    /// <li>
-    /// <p>Master key owned by Kinesis Data Streams: <code>alias/aws/kinesis</code></p></li>
+    /// <li> <p>Key ARN example: <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p> </li>
+    /// <li> <p>Alias ARN example: <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code> </p> </li>
+    /// <li> <p>Globally unique key ID example: <code>12345678-1234-1234-1234-123456789012</code> </p> </li>
+    /// <li> <p>Alias name example: <code>alias/MyAliasName</code> </p> </li>
+    /// <li> <p>Master key owned by Kinesis Data Streams: <code>alias/aws/kinesis</code> </p> </li>
     /// </ul>
     pub fn set_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_key_id(input);
@@ -177,16 +167,11 @@ impl StopStreamEncryptionFluentBuilder {
     }
     /// <p>The GUID for the customer-managed Amazon Web Services KMS key to use for encryption. This value can be a globally unique identifier, a fully specified Amazon Resource Name (ARN) to either an alias or a key, or an alias name prefixed by "alias/".You can also use a master key owned by Kinesis Data Streams by specifying the alias <code>aws/kinesis</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p>Key ARN example: <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code></p></li>
-    /// <li>
-    /// <p>Alias ARN example: <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code></p></li>
-    /// <li>
-    /// <p>Globally unique key ID example: <code>12345678-1234-1234-1234-123456789012</code></p></li>
-    /// <li>
-    /// <p>Alias name example: <code>alias/MyAliasName</code></p></li>
-    /// <li>
-    /// <p>Master key owned by Kinesis Data Streams: <code>alias/aws/kinesis</code></p></li>
+    /// <li> <p>Key ARN example: <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p> </li>
+    /// <li> <p>Alias ARN example: <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code> </p> </li>
+    /// <li> <p>Globally unique key ID example: <code>12345678-1234-1234-1234-123456789012</code> </p> </li>
+    /// <li> <p>Alias name example: <code>alias/MyAliasName</code> </p> </li>
+    /// <li> <p>Master key owned by Kinesis Data Streams: <code>alias/aws/kinesis</code> </p> </li>
     /// </ul>
     pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_key_id()

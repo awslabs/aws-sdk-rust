@@ -7,20 +7,16 @@
 pub struct ConfigurationSet {
     /// <p>The name of the configuration set. The name must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p></li>
-    /// <li>
-    /// <p>Contain 64 characters or fewer.</p></li>
+    /// <li> <p>Contain only letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
+    /// <li> <p>Contain 64 characters or fewer.</p> </li>
     /// </ul>
     pub name: ::std::string::String,
 }
 impl ConfigurationSet {
     /// <p>The name of the configuration set. The name must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p></li>
-    /// <li>
-    /// <p>Contain 64 characters or fewer.</p></li>
+    /// <li> <p>Contain only letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
+    /// <li> <p>Contain 64 characters or fewer.</p> </li>
     /// </ul>
     pub fn name(&self) -> &str {
         use std::ops::Deref;
@@ -43,10 +39,8 @@ pub struct ConfigurationSetBuilder {
 impl ConfigurationSetBuilder {
     /// <p>The name of the configuration set. The name must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p></li>
-    /// <li>
-    /// <p>Contain 64 characters or fewer.</p></li>
+    /// <li> <p>Contain only letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
+    /// <li> <p>Contain 64 characters or fewer.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,10 +49,8 @@ impl ConfigurationSetBuilder {
     }
     /// <p>The name of the configuration set. The name must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p></li>
-    /// <li>
-    /// <p>Contain 64 characters or fewer.</p></li>
+    /// <li> <p>Contain only letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
+    /// <li> <p>Contain 64 characters or fewer.</p> </li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
@@ -66,10 +58,8 @@ impl ConfigurationSetBuilder {
     }
     /// <p>The name of the configuration set. The name must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p></li>
-    /// <li>
-    /// <p>Contain 64 characters or fewer.</p></li>
+    /// <li> <p>Contain only letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
+    /// <li> <p>Contain 64 characters or fewer.</p> </li>
     /// </ul>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name

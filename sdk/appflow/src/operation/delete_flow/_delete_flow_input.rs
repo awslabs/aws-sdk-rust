@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFlowInput {
-    /// <p>The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only.</p>
+    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     pub flow_name: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates whether Amazon AppFlow should delete the flow, even if it is currently in use.</p>
+    /// <p> Indicates whether Amazon AppFlow should delete the flow, even if it is currently in use. </p>
     pub force_delete: ::std::option::Option<bool>,
 }
 impl DeleteFlowInput {
-    /// <p>The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only.</p>
+    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     pub fn flow_name(&self) -> ::std::option::Option<&str> {
         self.flow_name.as_deref()
     }
-    /// <p>Indicates whether Amazon AppFlow should delete the flow, even if it is currently in use.</p>
+    /// <p> Indicates whether Amazon AppFlow should delete the flow, even if it is currently in use. </p>
     pub fn force_delete(&self) -> ::std::option::Option<bool> {
         self.force_delete
     }
@@ -33,32 +33,32 @@ pub struct DeleteFlowInputBuilder {
     pub(crate) force_delete: ::std::option::Option<bool>,
 }
 impl DeleteFlowInputBuilder {
-    /// <p>The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only.</p>
+    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     /// This field is required.
     pub fn flow_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only.</p>
+    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     pub fn set_flow_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.flow_name = input;
         self
     }
-    /// <p>The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only.</p>
+    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     pub fn get_flow_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.flow_name
     }
-    /// <p>Indicates whether Amazon AppFlow should delete the flow, even if it is currently in use.</p>
+    /// <p> Indicates whether Amazon AppFlow should delete the flow, even if it is currently in use. </p>
     pub fn force_delete(mut self, input: bool) -> Self {
         self.force_delete = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether Amazon AppFlow should delete the flow, even if it is currently in use.</p>
+    /// <p> Indicates whether Amazon AppFlow should delete the flow, even if it is currently in use. </p>
     pub fn set_force_delete(mut self, input: ::std::option::Option<bool>) -> Self {
         self.force_delete = input;
         self
     }
-    /// <p>Indicates whether Amazon AppFlow should delete the flow, even if it is currently in use.</p>
+    /// <p> Indicates whether Amazon AppFlow should delete the flow, even if it is currently in use. </p>
     pub fn get_force_delete(&self) -> &::std::option::Option<bool> {
         &self.force_delete
     }

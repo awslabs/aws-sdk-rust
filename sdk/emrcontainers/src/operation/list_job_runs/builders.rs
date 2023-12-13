@@ -114,17 +114,17 @@ impl ListJobRunsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_job_runs::paginator::ListJobRunsPaginator {
         crate::operation::list_job_runs::paginator::ListJobRunsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The ID of the virtual cluster for which to list the job run.</p>
+    /// <p>The ID of the virtual cluster for which to list the job run. </p>
     pub fn virtual_cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.virtual_cluster_id(input.into());
         self
     }
-    /// <p>The ID of the virtual cluster for which to list the job run.</p>
+    /// <p>The ID of the virtual cluster for which to list the job run. </p>
     pub fn set_virtual_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_virtual_cluster_id(input);
         self
     }
-    /// <p>The ID of the virtual cluster for which to list the job run.</p>
+    /// <p>The ID of the virtual cluster for which to list the job run. </p>
     pub fn get_virtual_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_virtual_cluster_id()
     }

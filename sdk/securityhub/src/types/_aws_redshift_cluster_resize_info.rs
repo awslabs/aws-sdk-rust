@@ -7,7 +7,7 @@ pub struct AwsRedshiftClusterResizeInfo {
     /// <p>Indicates whether the resize operation can be canceled.</p>
     pub allow_cancel_resize: ::std::option::Option<bool>,
     /// <p>The type of resize operation.</p>
-    /// <p>Valid values: <code>ClassicResize</code></p>
+    /// <p>Valid values: <code>ClassicResize</code> </p>
     pub resize_type: ::std::option::Option<::std::string::String>,
 }
 impl AwsRedshiftClusterResizeInfo {
@@ -16,7 +16,7 @@ impl AwsRedshiftClusterResizeInfo {
         self.allow_cancel_resize
     }
     /// <p>The type of resize operation.</p>
-    /// <p>Valid values: <code>ClassicResize</code></p>
+    /// <p>Valid values: <code>ClassicResize</code> </p>
     pub fn resize_type(&self) -> ::std::option::Option<&str> {
         self.resize_type.as_deref()
     }
@@ -51,19 +51,19 @@ impl AwsRedshiftClusterResizeInfoBuilder {
         &self.allow_cancel_resize
     }
     /// <p>The type of resize operation.</p>
-    /// <p>Valid values: <code>ClassicResize</code></p>
+    /// <p>Valid values: <code>ClassicResize</code> </p>
     pub fn resize_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resize_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of resize operation.</p>
-    /// <p>Valid values: <code>ClassicResize</code></p>
+    /// <p>Valid values: <code>ClassicResize</code> </p>
     pub fn set_resize_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resize_type = input;
         self
     }
     /// <p>The type of resize operation.</p>
-    /// <p>Valid values: <code>ClassicResize</code></p>
+    /// <p>Valid values: <code>ClassicResize</code> </p>
     pub fn get_resize_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.resize_type
     }

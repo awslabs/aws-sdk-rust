@@ -22,7 +22,7 @@ impl StartAvailabilityMonitorTestInputBuilder {
 }
 /// Fluent builder constructing a request to `StartAvailabilityMonitorTest`.
 ///
-/// <p>Start a test that verifies that the specified gateway is configured for High Availability monitoring in your host environment. This request only initiates the test and that a successful response only indicates that the test was started. It doesn't indicate that the test passed. For the status of the test, invoke the <code>DescribeAvailabilityMonitorTest</code> API.</p><note>
+/// <p>Start a test that verifies that the specified gateway is configured for High Availability monitoring in your host environment. This request only initiates the test and that a successful response only indicates that the test was started. It doesn't indicate that the test passed. For the status of the test, invoke the <code>DescribeAvailabilityMonitorTest</code> API.</p> <note>
 /// <p>Starting this test will cause your gateway to go offline for a brief period.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

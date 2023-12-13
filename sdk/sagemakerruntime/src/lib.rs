@@ -12,7 +12,6 @@
 #![allow(clippy::result_large_err)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
-#![cfg_attr(docsrs, feature(doc_auto_cfg))]
 //! The Amazon SageMaker runtime API.
 //!
 //! ## Getting Started
@@ -26,8 +25,8 @@
 //!
 //! ```toml
 //! [dependencies]
-//! aws-config = { version = "1.1.0", features = ["behavior-version-latest"] }
-//! aws-sdk-sagemakerruntime = "1.6.0"
+//! aws-config = { version = "1.0.3", features = ["behavior-version-latest"] }
+//! aws-sdk-sagemakerruntime = "1.7.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -187,9 +186,9 @@ mod serialization_settings;
 /// Data structures used by operation inputs/outputs.
 pub mod types;
 
-mod endpoint_lib;
-
 mod serde_util;
+
+mod endpoint_lib;
 
 mod json_errors;
 

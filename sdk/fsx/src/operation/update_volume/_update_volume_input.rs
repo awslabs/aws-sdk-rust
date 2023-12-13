@@ -9,7 +9,7 @@ pub struct UpdateVolumeInput {
     pub volume_id: ::std::option::Option<::std::string::String>,
     /// <p>The configuration of the ONTAP volume that you are updating.</p>
     pub ontap_configuration: ::std::option::Option<crate::types::UpdateOntapVolumeConfiguration>,
-    /// <p>The name of the OpenZFS volume. OpenZFS root volumes are automatically named <code>FSX</code>. Child volume names must be unique among their parent volume's children. The name of the volume is part of the mount string for the OpenZFS volume.</p>
+    /// <p>The name of the OpenZFS volume. OpenZFS root volumes are automatically named <code>FSX</code>. Child volume names must be unique among their parent volume's children. The name of the volume is part of the mount string for the OpenZFS volume. </p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The configuration of the OpenZFS volume that you are updating.</p>
     pub open_zfs_configuration: ::std::option::Option<crate::types::UpdateOpenZfsVolumeConfiguration>,
@@ -27,7 +27,7 @@ impl UpdateVolumeInput {
     pub fn ontap_configuration(&self) -> ::std::option::Option<&crate::types::UpdateOntapVolumeConfiguration> {
         self.ontap_configuration.as_ref()
     }
-    /// <p>The name of the OpenZFS volume. OpenZFS root volumes are automatically named <code>FSX</code>. Child volume names must be unique among their parent volume's children. The name of the volume is part of the mount string for the OpenZFS volume.</p>
+    /// <p>The name of the OpenZFS volume. OpenZFS root volumes are automatically named <code>FSX</code>. Child volume names must be unique among their parent volume's children. The name of the volume is part of the mount string for the OpenZFS volume. </p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -97,17 +97,17 @@ impl UpdateVolumeInputBuilder {
     pub fn get_ontap_configuration(&self) -> &::std::option::Option<crate::types::UpdateOntapVolumeConfiguration> {
         &self.ontap_configuration
     }
-    /// <p>The name of the OpenZFS volume. OpenZFS root volumes are automatically named <code>FSX</code>. Child volume names must be unique among their parent volume's children. The name of the volume is part of the mount string for the OpenZFS volume.</p>
+    /// <p>The name of the OpenZFS volume. OpenZFS root volumes are automatically named <code>FSX</code>. Child volume names must be unique among their parent volume's children. The name of the volume is part of the mount string for the OpenZFS volume. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the OpenZFS volume. OpenZFS root volumes are automatically named <code>FSX</code>. Child volume names must be unique among their parent volume's children. The name of the volume is part of the mount string for the OpenZFS volume.</p>
+    /// <p>The name of the OpenZFS volume. OpenZFS root volumes are automatically named <code>FSX</code>. Child volume names must be unique among their parent volume's children. The name of the volume is part of the mount string for the OpenZFS volume. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the OpenZFS volume. OpenZFS root volumes are automatically named <code>FSX</code>. Child volume names must be unique among their parent volume's children. The name of the volume is part of the mount string for the OpenZFS volume.</p>
+    /// <p>The name of the OpenZFS volume. OpenZFS root volumes are automatically named <code>FSX</code>. Child volume names must be unique among their parent volume's children. The name of the volume is part of the mount string for the OpenZFS volume. </p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

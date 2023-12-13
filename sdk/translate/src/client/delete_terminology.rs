@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteTerminology`](crate::operation::delete_terminology::builders::DeleteTerminologyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::delete_terminology::builders::DeleteTerminologyFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_terminology::builders::DeleteTerminologyFluentBuilder::set_name):<br>required: **true**<br><p>The name of the custom terminology being deleted.</p><br>
+    ///   - [`name(impl Into<String>)`](crate::operation::delete_terminology::builders::DeleteTerminologyFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_terminology::builders::DeleteTerminologyFluentBuilder::set_name):<br>required: **true**<br><p>The name of the custom terminology being deleted. </p><br>
     /// - On success, responds with [`DeleteTerminologyOutput`](crate::operation::delete_terminology::DeleteTerminologyOutput)
     /// - On failure, responds with [`SdkError<DeleteTerminologyError>`](crate::operation::delete_terminology::DeleteTerminologyError)
     pub fn delete_terminology(&self) -> crate::operation::delete_terminology::builders::DeleteTerminologyFluentBuilder {

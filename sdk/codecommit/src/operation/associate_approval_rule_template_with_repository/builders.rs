@@ -114,17 +114,17 @@ impl AssociateApprovalRuleTemplateWithRepositoryFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name for the approval rule template.</p>
+    /// <p>The name for the approval rule template. </p>
     pub fn approval_rule_template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.approval_rule_template_name(input.into());
         self
     }
-    /// <p>The name for the approval rule template.</p>
+    /// <p>The name for the approval rule template. </p>
     pub fn set_approval_rule_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_approval_rule_template_name(input);
         self
     }
-    /// <p>The name for the approval rule template.</p>
+    /// <p>The name for the approval rule template. </p>
     pub fn get_approval_rule_template_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_approval_rule_template_name()
     }

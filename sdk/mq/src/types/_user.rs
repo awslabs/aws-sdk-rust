@@ -12,11 +12,9 @@ pub struct User {
     pub password: ::std::option::Option<::std::string::String>,
     /// <p>The username of the broker user. The following restrictions apply to broker usernames:</p>
     /// <ul>
-    /// <li>
-    /// <p>For Amazon MQ for ActiveMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p></li>
-    /// <li>
-    /// <p>para&gt;For Amazon MQ for RabbitMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores (- . _). This value must not contain a tilde (~) character. Amazon MQ prohibts using guest as a valid usename. This value must be 2-100 characters long.</p></li>
-    /// </ul><important>
+    /// <li><p>For Amazon MQ for ActiveMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p></li>
+    /// <li><p>para&gt;For Amazon MQ for RabbitMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores (- . _). This value must not contain a tilde (~) character. Amazon MQ prohibts using guest as a valid usename. This value must be 2-100 characters long.</p></li>
+    /// </ul> <important>
     /// <p>Do not add personally identifiable information (PII) or other confidential or sensitive information in broker usernames. Broker usernames are accessible to other Amazon Web Services services, including CloudWatch Logs. Broker usernames are not intended to be used for private or sensitive data.</p>
     /// </important>
     pub username: ::std::option::Option<::std::string::String>,
@@ -40,11 +38,9 @@ impl User {
     }
     /// <p>The username of the broker user. The following restrictions apply to broker usernames:</p>
     /// <ul>
-    /// <li>
-    /// <p>For Amazon MQ for ActiveMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p></li>
-    /// <li>
-    /// <p>para&gt;For Amazon MQ for RabbitMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores (- . _). This value must not contain a tilde (~) character. Amazon MQ prohibts using guest as a valid usename. This value must be 2-100 characters long.</p></li>
-    /// </ul><important>
+    /// <li><p>For Amazon MQ for ActiveMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p></li>
+    /// <li><p>para&gt;For Amazon MQ for RabbitMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores (- . _). This value must not contain a tilde (~) character. Amazon MQ prohibts using guest as a valid usename. This value must be 2-100 characters long.</p></li>
+    /// </ul> <important>
     /// <p>Do not add personally identifiable information (PII) or other confidential or sensitive information in broker usernames. Broker usernames are accessible to other Amazon Web Services services, including CloudWatch Logs. Broker usernames are not intended to be used for private or sensitive data.</p>
     /// </important>
     pub fn username(&self) -> ::std::option::Option<&str> {
@@ -124,11 +120,9 @@ impl UserBuilder {
     }
     /// <p>The username of the broker user. The following restrictions apply to broker usernames:</p>
     /// <ul>
-    /// <li>
-    /// <p>For Amazon MQ for ActiveMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p></li>
-    /// <li>
-    /// <p>para&gt;For Amazon MQ for RabbitMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores (- . _). This value must not contain a tilde (~) character. Amazon MQ prohibts using guest as a valid usename. This value must be 2-100 characters long.</p></li>
-    /// </ul><important>
+    /// <li><p>For Amazon MQ for ActiveMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p></li>
+    /// <li><p>para&gt;For Amazon MQ for RabbitMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores (- . _). This value must not contain a tilde (~) character. Amazon MQ prohibts using guest as a valid usename. This value must be 2-100 characters long.</p></li>
+    /// </ul> <important>
     /// <p>Do not add personally identifiable information (PII) or other confidential or sensitive information in broker usernames. Broker usernames are accessible to other Amazon Web Services services, including CloudWatch Logs. Broker usernames are not intended to be used for private or sensitive data.</p>
     /// </important>
     /// This field is required.
@@ -138,11 +132,9 @@ impl UserBuilder {
     }
     /// <p>The username of the broker user. The following restrictions apply to broker usernames:</p>
     /// <ul>
-    /// <li>
-    /// <p>For Amazon MQ for ActiveMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p></li>
-    /// <li>
-    /// <p>para&gt;For Amazon MQ for RabbitMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores (- . _). This value must not contain a tilde (~) character. Amazon MQ prohibts using guest as a valid usename. This value must be 2-100 characters long.</p></li>
-    /// </ul><important>
+    /// <li><p>For Amazon MQ for ActiveMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p></li>
+    /// <li><p>para&gt;For Amazon MQ for RabbitMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores (- . _). This value must not contain a tilde (~) character. Amazon MQ prohibts using guest as a valid usename. This value must be 2-100 characters long.</p></li>
+    /// </ul> <important>
     /// <p>Do not add personally identifiable information (PII) or other confidential or sensitive information in broker usernames. Broker usernames are accessible to other Amazon Web Services services, including CloudWatch Logs. Broker usernames are not intended to be used for private or sensitive data.</p>
     /// </important>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -151,11 +143,9 @@ impl UserBuilder {
     }
     /// <p>The username of the broker user. The following restrictions apply to broker usernames:</p>
     /// <ul>
-    /// <li>
-    /// <p>For Amazon MQ for ActiveMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p></li>
-    /// <li>
-    /// <p>para&gt;For Amazon MQ for RabbitMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores (- . _). This value must not contain a tilde (~) character. Amazon MQ prohibts using guest as a valid usename. This value must be 2-100 characters long.</p></li>
-    /// </ul><important>
+    /// <li><p>For Amazon MQ for ActiveMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p></li>
+    /// <li><p>para&gt;For Amazon MQ for RabbitMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores (- . _). This value must not contain a tilde (~) character. Amazon MQ prohibts using guest as a valid usename. This value must be 2-100 characters long.</p></li>
+    /// </ul> <important>
     /// <p>Do not add personally identifiable information (PII) or other confidential or sensitive information in broker usernames. Broker usernames are accessible to other Amazon Web Services services, including CloudWatch Logs. Broker usernames are not intended to be used for private or sensitive data.</p>
     /// </important>
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {

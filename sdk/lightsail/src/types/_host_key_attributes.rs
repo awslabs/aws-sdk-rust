@@ -13,22 +13,14 @@ pub struct HostKeyAttributes {
     pub witnessed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The SHA-1 fingerprint of the returned SSH host key or RDP certificate.</p>
     /// <ul>
-    /// <li>
-    /// <p>Example of an SHA-1 SSH fingerprint:</p>
-    /// <p><code>SHA1:1CHH6FaAaXjtFOsR/t83vf91SR0</code></p></li>
-    /// <li>
-    /// <p>Example of an SHA-1 RDP fingerprint:</p>
-    /// <p><code>af:34:51:fe:09:f0:e0:da:b8:4e:56:ca:60:c2:10:ff:38:06:db:45</code></p></li>
+    /// <li> <p>Example of an SHA-1 SSH fingerprint:</p> <p> <code>SHA1:1CHH6FaAaXjtFOsR/t83vf91SR0</code> </p> </li>
+    /// <li> <p>Example of an SHA-1 RDP fingerprint:</p> <p> <code>af:34:51:fe:09:f0:e0:da:b8:4e:56:ca:60:c2:10:ff:38:06:db:45</code> </p> </li>
     /// </ul>
     pub fingerprint_sha1: ::std::option::Option<::std::string::String>,
     /// <p>The SHA-256 fingerprint of the returned SSH host key or RDP certificate.</p>
     /// <ul>
-    /// <li>
-    /// <p>Example of an SHA-256 SSH fingerprint:</p>
-    /// <p><code>SHA256:KTsMnRBh1IhD17HpdfsbzeGA4jOijm5tyXsMjKVbB8o</code></p></li>
-    /// <li>
-    /// <p>Example of an SHA-256 RDP fingerprint:</p>
-    /// <p><code>03:9b:36:9f:4b:de:4e:61:70:fc:7c:c9:78:e7:d2:1a:1c:25:a8:0c:91:f6:7c:e4:d6:a0:85:c8:b4:53:99:68</code></p></li>
+    /// <li> <p>Example of an SHA-256 SSH fingerprint:</p> <p> <code>SHA256:KTsMnRBh1IhD17HpdfsbzeGA4jOijm5tyXsMjKVbB8o</code> </p> </li>
+    /// <li> <p>Example of an SHA-256 RDP fingerprint:</p> <p> <code>03:9b:36:9f:4b:de:4e:61:70:fc:7c:c9:78:e7:d2:1a:1c:25:a8:0c:91:f6:7c:e4:d6:a0:85:c8:b4:53:99:68</code> </p> </li>
     /// </ul>
     pub fingerprint_sha256: ::std::option::Option<::std::string::String>,
     /// <p>The returned RDP certificate is valid after this point in time.</p>
@@ -54,24 +46,16 @@ impl HostKeyAttributes {
     }
     /// <p>The SHA-1 fingerprint of the returned SSH host key or RDP certificate.</p>
     /// <ul>
-    /// <li>
-    /// <p>Example of an SHA-1 SSH fingerprint:</p>
-    /// <p><code>SHA1:1CHH6FaAaXjtFOsR/t83vf91SR0</code></p></li>
-    /// <li>
-    /// <p>Example of an SHA-1 RDP fingerprint:</p>
-    /// <p><code>af:34:51:fe:09:f0:e0:da:b8:4e:56:ca:60:c2:10:ff:38:06:db:45</code></p></li>
+    /// <li> <p>Example of an SHA-1 SSH fingerprint:</p> <p> <code>SHA1:1CHH6FaAaXjtFOsR/t83vf91SR0</code> </p> </li>
+    /// <li> <p>Example of an SHA-1 RDP fingerprint:</p> <p> <code>af:34:51:fe:09:f0:e0:da:b8:4e:56:ca:60:c2:10:ff:38:06:db:45</code> </p> </li>
     /// </ul>
     pub fn fingerprint_sha1(&self) -> ::std::option::Option<&str> {
         self.fingerprint_sha1.as_deref()
     }
     /// <p>The SHA-256 fingerprint of the returned SSH host key or RDP certificate.</p>
     /// <ul>
-    /// <li>
-    /// <p>Example of an SHA-256 SSH fingerprint:</p>
-    /// <p><code>SHA256:KTsMnRBh1IhD17HpdfsbzeGA4jOijm5tyXsMjKVbB8o</code></p></li>
-    /// <li>
-    /// <p>Example of an SHA-256 RDP fingerprint:</p>
-    /// <p><code>03:9b:36:9f:4b:de:4e:61:70:fc:7c:c9:78:e7:d2:1a:1c:25:a8:0c:91:f6:7c:e4:d6:a0:85:c8:b4:53:99:68</code></p></li>
+    /// <li> <p>Example of an SHA-256 SSH fingerprint:</p> <p> <code>SHA256:KTsMnRBh1IhD17HpdfsbzeGA4jOijm5tyXsMjKVbB8o</code> </p> </li>
+    /// <li> <p>Example of an SHA-256 RDP fingerprint:</p> <p> <code>03:9b:36:9f:4b:de:4e:61:70:fc:7c:c9:78:e7:d2:1a:1c:25:a8:0c:91:f6:7c:e4:d6:a0:85:c8:b4:53:99:68</code> </p> </li>
     /// </ul>
     pub fn fingerprint_sha256(&self) -> ::std::option::Option<&str> {
         self.fingerprint_sha256.as_deref()
@@ -154,12 +138,8 @@ impl HostKeyAttributesBuilder {
     }
     /// <p>The SHA-1 fingerprint of the returned SSH host key or RDP certificate.</p>
     /// <ul>
-    /// <li>
-    /// <p>Example of an SHA-1 SSH fingerprint:</p>
-    /// <p><code>SHA1:1CHH6FaAaXjtFOsR/t83vf91SR0</code></p></li>
-    /// <li>
-    /// <p>Example of an SHA-1 RDP fingerprint:</p>
-    /// <p><code>af:34:51:fe:09:f0:e0:da:b8:4e:56:ca:60:c2:10:ff:38:06:db:45</code></p></li>
+    /// <li> <p>Example of an SHA-1 SSH fingerprint:</p> <p> <code>SHA1:1CHH6FaAaXjtFOsR/t83vf91SR0</code> </p> </li>
+    /// <li> <p>Example of an SHA-1 RDP fingerprint:</p> <p> <code>af:34:51:fe:09:f0:e0:da:b8:4e:56:ca:60:c2:10:ff:38:06:db:45</code> </p> </li>
     /// </ul>
     pub fn fingerprint_sha1(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fingerprint_sha1 = ::std::option::Option::Some(input.into());
@@ -167,12 +147,8 @@ impl HostKeyAttributesBuilder {
     }
     /// <p>The SHA-1 fingerprint of the returned SSH host key or RDP certificate.</p>
     /// <ul>
-    /// <li>
-    /// <p>Example of an SHA-1 SSH fingerprint:</p>
-    /// <p><code>SHA1:1CHH6FaAaXjtFOsR/t83vf91SR0</code></p></li>
-    /// <li>
-    /// <p>Example of an SHA-1 RDP fingerprint:</p>
-    /// <p><code>af:34:51:fe:09:f0:e0:da:b8:4e:56:ca:60:c2:10:ff:38:06:db:45</code></p></li>
+    /// <li> <p>Example of an SHA-1 SSH fingerprint:</p> <p> <code>SHA1:1CHH6FaAaXjtFOsR/t83vf91SR0</code> </p> </li>
+    /// <li> <p>Example of an SHA-1 RDP fingerprint:</p> <p> <code>af:34:51:fe:09:f0:e0:da:b8:4e:56:ca:60:c2:10:ff:38:06:db:45</code> </p> </li>
     /// </ul>
     pub fn set_fingerprint_sha1(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fingerprint_sha1 = input;
@@ -180,24 +156,16 @@ impl HostKeyAttributesBuilder {
     }
     /// <p>The SHA-1 fingerprint of the returned SSH host key or RDP certificate.</p>
     /// <ul>
-    /// <li>
-    /// <p>Example of an SHA-1 SSH fingerprint:</p>
-    /// <p><code>SHA1:1CHH6FaAaXjtFOsR/t83vf91SR0</code></p></li>
-    /// <li>
-    /// <p>Example of an SHA-1 RDP fingerprint:</p>
-    /// <p><code>af:34:51:fe:09:f0:e0:da:b8:4e:56:ca:60:c2:10:ff:38:06:db:45</code></p></li>
+    /// <li> <p>Example of an SHA-1 SSH fingerprint:</p> <p> <code>SHA1:1CHH6FaAaXjtFOsR/t83vf91SR0</code> </p> </li>
+    /// <li> <p>Example of an SHA-1 RDP fingerprint:</p> <p> <code>af:34:51:fe:09:f0:e0:da:b8:4e:56:ca:60:c2:10:ff:38:06:db:45</code> </p> </li>
     /// </ul>
     pub fn get_fingerprint_sha1(&self) -> &::std::option::Option<::std::string::String> {
         &self.fingerprint_sha1
     }
     /// <p>The SHA-256 fingerprint of the returned SSH host key or RDP certificate.</p>
     /// <ul>
-    /// <li>
-    /// <p>Example of an SHA-256 SSH fingerprint:</p>
-    /// <p><code>SHA256:KTsMnRBh1IhD17HpdfsbzeGA4jOijm5tyXsMjKVbB8o</code></p></li>
-    /// <li>
-    /// <p>Example of an SHA-256 RDP fingerprint:</p>
-    /// <p><code>03:9b:36:9f:4b:de:4e:61:70:fc:7c:c9:78:e7:d2:1a:1c:25:a8:0c:91:f6:7c:e4:d6:a0:85:c8:b4:53:99:68</code></p></li>
+    /// <li> <p>Example of an SHA-256 SSH fingerprint:</p> <p> <code>SHA256:KTsMnRBh1IhD17HpdfsbzeGA4jOijm5tyXsMjKVbB8o</code> </p> </li>
+    /// <li> <p>Example of an SHA-256 RDP fingerprint:</p> <p> <code>03:9b:36:9f:4b:de:4e:61:70:fc:7c:c9:78:e7:d2:1a:1c:25:a8:0c:91:f6:7c:e4:d6:a0:85:c8:b4:53:99:68</code> </p> </li>
     /// </ul>
     pub fn fingerprint_sha256(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fingerprint_sha256 = ::std::option::Option::Some(input.into());
@@ -205,12 +173,8 @@ impl HostKeyAttributesBuilder {
     }
     /// <p>The SHA-256 fingerprint of the returned SSH host key or RDP certificate.</p>
     /// <ul>
-    /// <li>
-    /// <p>Example of an SHA-256 SSH fingerprint:</p>
-    /// <p><code>SHA256:KTsMnRBh1IhD17HpdfsbzeGA4jOijm5tyXsMjKVbB8o</code></p></li>
-    /// <li>
-    /// <p>Example of an SHA-256 RDP fingerprint:</p>
-    /// <p><code>03:9b:36:9f:4b:de:4e:61:70:fc:7c:c9:78:e7:d2:1a:1c:25:a8:0c:91:f6:7c:e4:d6:a0:85:c8:b4:53:99:68</code></p></li>
+    /// <li> <p>Example of an SHA-256 SSH fingerprint:</p> <p> <code>SHA256:KTsMnRBh1IhD17HpdfsbzeGA4jOijm5tyXsMjKVbB8o</code> </p> </li>
+    /// <li> <p>Example of an SHA-256 RDP fingerprint:</p> <p> <code>03:9b:36:9f:4b:de:4e:61:70:fc:7c:c9:78:e7:d2:1a:1c:25:a8:0c:91:f6:7c:e4:d6:a0:85:c8:b4:53:99:68</code> </p> </li>
     /// </ul>
     pub fn set_fingerprint_sha256(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fingerprint_sha256 = input;
@@ -218,12 +182,8 @@ impl HostKeyAttributesBuilder {
     }
     /// <p>The SHA-256 fingerprint of the returned SSH host key or RDP certificate.</p>
     /// <ul>
-    /// <li>
-    /// <p>Example of an SHA-256 SSH fingerprint:</p>
-    /// <p><code>SHA256:KTsMnRBh1IhD17HpdfsbzeGA4jOijm5tyXsMjKVbB8o</code></p></li>
-    /// <li>
-    /// <p>Example of an SHA-256 RDP fingerprint:</p>
-    /// <p><code>03:9b:36:9f:4b:de:4e:61:70:fc:7c:c9:78:e7:d2:1a:1c:25:a8:0c:91:f6:7c:e4:d6:a0:85:c8:b4:53:99:68</code></p></li>
+    /// <li> <p>Example of an SHA-256 SSH fingerprint:</p> <p> <code>SHA256:KTsMnRBh1IhD17HpdfsbzeGA4jOijm5tyXsMjKVbB8o</code> </p> </li>
+    /// <li> <p>Example of an SHA-256 RDP fingerprint:</p> <p> <code>03:9b:36:9f:4b:de:4e:61:70:fc:7c:c9:78:e7:d2:1a:1c:25:a8:0c:91:f6:7c:e4:d6:a0:85:c8:b4:53:99:68</code> </p> </li>
     /// </ul>
     pub fn get_fingerprint_sha256(&self) -> &::std::option::Option<::std::string::String> {
         &self.fingerprint_sha256

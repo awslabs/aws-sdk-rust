@@ -6,7 +6,7 @@
 pub struct PageClassification {
     /// <p>The class, or document type, assigned to a detected Page object. The class, or document type, assigned to a detected Page object.</p>
     pub page_type: ::std::vec::Vec<crate::types::Prediction>,
-    /// <p>The page number the value was detected on, relative to Amazon Textract's starting position.</p>
+    /// <p> The page number the value was detected on, relative to Amazon Textract's starting position.</p>
     pub page_number: ::std::vec::Vec<crate::types::Prediction>,
 }
 impl PageClassification {
@@ -15,7 +15,7 @@ impl PageClassification {
         use std::ops::Deref;
         self.page_type.deref()
     }
-    /// <p>The page number the value was detected on, relative to Amazon Textract's starting position.</p>
+    /// <p> The page number the value was detected on, relative to Amazon Textract's starting position.</p>
     pub fn page_number(&self) -> &[crate::types::Prediction] {
         use std::ops::Deref;
         self.page_number.deref()
@@ -60,19 +60,19 @@ impl PageClassificationBuilder {
     ///
     /// To override the contents of this collection use [`set_page_number`](Self::set_page_number).
     ///
-    /// <p>The page number the value was detected on, relative to Amazon Textract's starting position.</p>
+    /// <p> The page number the value was detected on, relative to Amazon Textract's starting position.</p>
     pub fn page_number(mut self, input: crate::types::Prediction) -> Self {
         let mut v = self.page_number.unwrap_or_default();
         v.push(input);
         self.page_number = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The page number the value was detected on, relative to Amazon Textract's starting position.</p>
+    /// <p> The page number the value was detected on, relative to Amazon Textract's starting position.</p>
     pub fn set_page_number(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Prediction>>) -> Self {
         self.page_number = input;
         self
     }
-    /// <p>The page number the value was detected on, relative to Amazon Textract's starting position.</p>
+    /// <p> The page number the value was detected on, relative to Amazon Textract's starting position.</p>
     pub fn get_page_number(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Prediction>> {
         &self.page_number
     }

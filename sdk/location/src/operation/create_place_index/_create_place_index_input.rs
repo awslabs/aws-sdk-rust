@@ -3,30 +3,24 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePlaceIndexInput {
-    /// <p>The name of the place index resource.</p>
+    /// <p>The name of the place index resource. </p>
     /// <p>Requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_).</p></li>
-    /// <li>
-    /// <p>Must be a unique place index resource name.</p></li>
-    /// <li>
-    /// <p>No spaces allowed. For example, <code>ExamplePlaceIndex</code>.</p></li>
+    /// <li> <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_).</p> </li>
+    /// <li> <p>Must be a unique place index resource name.</p> </li>
+    /// <li> <p>No spaces allowed. For example, <code>ExamplePlaceIndex</code>.</p> </li>
     /// </ul>
     pub index_name: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the geospatial data provider for the new place index.</p><note>
+    /// <p>Specifies the geospatial data provider for the new place index.</p> <note>
     /// <p>This field is case-sensitive. Enter the valid values as shown. For example, entering <code>HERE</code> returns an error.</p>
     /// </note>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Esri</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s coverage in your region of interest, see <a href="https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm">Esri details on geocoding coverage</a>.</p></li>
-    /// <li>
-    /// <p><code>Grab</code> – Grab provides place index functionality for Southeast Asia. For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>' coverage, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps countries and areas covered</a>.</p></li>
-    /// <li>
-    /// <p><code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>' coverage in your region of interest, see <a href="https://developer.here.com/documentation/geocoder/dev_guide/topics/coverage-geocoder.html">HERE details on goecoding coverage</a>.</p><important>
+    /// <li> <p> <code>Esri</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s coverage in your region of interest, see <a href="https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm">Esri details on geocoding coverage</a>.</p> </li>
+    /// <li> <p> <code>Grab</code> – Grab provides place index functionality for Southeast Asia. For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>' coverage, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps countries and areas covered</a>.</p> </li>
+    /// <li> <p> <code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>' coverage in your region of interest, see <a href="https://developer.here.com/documentation/geocoder/dev_guide/topics/coverage-geocoder.html">HERE details on goecoding coverage</a>.</p> <important>
     /// <p>If you specify HERE Technologies (<code>Here</code>) as the data provider, you may not <a href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store results</a> for locations in Japan. For more information, see the <a href="http://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a> for Amazon Location Service.</p>
-    /// </important></li>
+    /// </important> </li>
     /// </ul>
     /// <p>For additional information , see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
     pub data_source: ::std::option::Option<::std::string::String>,
@@ -38,51 +32,39 @@ pub struct CreatePlaceIndexInput {
     /// <p>Specifies the data storage option requesting Places.</p>
     pub data_source_configuration: ::std::option::Option<crate::types::DataSourceConfiguration>,
     /// <p>Applies one or more tags to the place index resource. A tag is a key-value pair that helps you manage, identify, search, and filter your resources.</p>
-    /// <p>Format: <code>"key" : "value"</code></p>
+    /// <p>Format: <code>"key" : "value"</code> </p>
     /// <p>Restrictions:</p>
     /// <ul>
-    /// <li>
-    /// <p>Maximum 50 tags per resource.</p></li>
-    /// <li>
-    /// <p>Each tag key must be unique and must have exactly one associated value.</p></li>
-    /// <li>
-    /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p></li>
-    /// <li>
-    /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p></li>
-    /// <li>
-    /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @</p></li>
-    /// <li>
-    /// <p>Cannot use "aws:" as a prefix for a key.</p></li>
+    /// <li> <p>Maximum 50 tags per resource.</p> </li>
+    /// <li> <p>Each tag key must be unique and must have exactly one associated value.</p> </li>
+    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @</p> </li>
+    /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
     /// </ul>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreatePlaceIndexInput {
-    /// <p>The name of the place index resource.</p>
+    /// <p>The name of the place index resource. </p>
     /// <p>Requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_).</p></li>
-    /// <li>
-    /// <p>Must be a unique place index resource name.</p></li>
-    /// <li>
-    /// <p>No spaces allowed. For example, <code>ExamplePlaceIndex</code>.</p></li>
+    /// <li> <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_).</p> </li>
+    /// <li> <p>Must be a unique place index resource name.</p> </li>
+    /// <li> <p>No spaces allowed. For example, <code>ExamplePlaceIndex</code>.</p> </li>
     /// </ul>
     pub fn index_name(&self) -> ::std::option::Option<&str> {
         self.index_name.as_deref()
     }
-    /// <p>Specifies the geospatial data provider for the new place index.</p><note>
+    /// <p>Specifies the geospatial data provider for the new place index.</p> <note>
     /// <p>This field is case-sensitive. Enter the valid values as shown. For example, entering <code>HERE</code> returns an error.</p>
     /// </note>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Esri</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s coverage in your region of interest, see <a href="https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm">Esri details on geocoding coverage</a>.</p></li>
-    /// <li>
-    /// <p><code>Grab</code> – Grab provides place index functionality for Southeast Asia. For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>' coverage, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps countries and areas covered</a>.</p></li>
-    /// <li>
-    /// <p><code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>' coverage in your region of interest, see <a href="https://developer.here.com/documentation/geocoder/dev_guide/topics/coverage-geocoder.html">HERE details on goecoding coverage</a>.</p><important>
+    /// <li> <p> <code>Esri</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s coverage in your region of interest, see <a href="https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm">Esri details on geocoding coverage</a>.</p> </li>
+    /// <li> <p> <code>Grab</code> – Grab provides place index functionality for Southeast Asia. For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>' coverage, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps countries and areas covered</a>.</p> </li>
+    /// <li> <p> <code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>' coverage in your region of interest, see <a href="https://developer.here.com/documentation/geocoder/dev_guide/topics/coverage-geocoder.html">HERE details on goecoding coverage</a>.</p> <important>
     /// <p>If you specify HERE Technologies (<code>Here</code>) as the data provider, you may not <a href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store results</a> for locations in Japan. For more information, see the <a href="http://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a> for Amazon Location Service.</p>
-    /// </important></li>
+    /// </important> </li>
     /// </ul>
     /// <p>For additional information , see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
     pub fn data_source(&self) -> ::std::option::Option<&str> {
@@ -102,21 +84,15 @@ impl CreatePlaceIndexInput {
         self.data_source_configuration.as_ref()
     }
     /// <p>Applies one or more tags to the place index resource. A tag is a key-value pair that helps you manage, identify, search, and filter your resources.</p>
-    /// <p>Format: <code>"key" : "value"</code></p>
+    /// <p>Format: <code>"key" : "value"</code> </p>
     /// <p>Restrictions:</p>
     /// <ul>
-    /// <li>
-    /// <p>Maximum 50 tags per resource.</p></li>
-    /// <li>
-    /// <p>Each tag key must be unique and must have exactly one associated value.</p></li>
-    /// <li>
-    /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p></li>
-    /// <li>
-    /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p></li>
-    /// <li>
-    /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @</p></li>
-    /// <li>
-    /// <p>Cannot use "aws:" as a prefix for a key.</p></li>
+    /// <li> <p>Maximum 50 tags per resource.</p> </li>
+    /// <li> <p>Each tag key must be unique and must have exactly one associated value.</p> </li>
+    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @</p> </li>
+    /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
     /// </ul>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
@@ -141,61 +117,49 @@ pub struct CreatePlaceIndexInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreatePlaceIndexInputBuilder {
-    /// <p>The name of the place index resource.</p>
+    /// <p>The name of the place index resource. </p>
     /// <p>Requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_).</p></li>
-    /// <li>
-    /// <p>Must be a unique place index resource name.</p></li>
-    /// <li>
-    /// <p>No spaces allowed. For example, <code>ExamplePlaceIndex</code>.</p></li>
+    /// <li> <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_).</p> </li>
+    /// <li> <p>Must be a unique place index resource name.</p> </li>
+    /// <li> <p>No spaces allowed. For example, <code>ExamplePlaceIndex</code>.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn index_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the place index resource.</p>
+    /// <p>The name of the place index resource. </p>
     /// <p>Requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_).</p></li>
-    /// <li>
-    /// <p>Must be a unique place index resource name.</p></li>
-    /// <li>
-    /// <p>No spaces allowed. For example, <code>ExamplePlaceIndex</code>.</p></li>
+    /// <li> <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_).</p> </li>
+    /// <li> <p>Must be a unique place index resource name.</p> </li>
+    /// <li> <p>No spaces allowed. For example, <code>ExamplePlaceIndex</code>.</p> </li>
     /// </ul>
     pub fn set_index_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.index_name = input;
         self
     }
-    /// <p>The name of the place index resource.</p>
+    /// <p>The name of the place index resource. </p>
     /// <p>Requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_).</p></li>
-    /// <li>
-    /// <p>Must be a unique place index resource name.</p></li>
-    /// <li>
-    /// <p>No spaces allowed. For example, <code>ExamplePlaceIndex</code>.</p></li>
+    /// <li> <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_).</p> </li>
+    /// <li> <p>Must be a unique place index resource name.</p> </li>
+    /// <li> <p>No spaces allowed. For example, <code>ExamplePlaceIndex</code>.</p> </li>
     /// </ul>
     pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.index_name
     }
-    /// <p>Specifies the geospatial data provider for the new place index.</p><note>
+    /// <p>Specifies the geospatial data provider for the new place index.</p> <note>
     /// <p>This field is case-sensitive. Enter the valid values as shown. For example, entering <code>HERE</code> returns an error.</p>
     /// </note>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Esri</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s coverage in your region of interest, see <a href="https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm">Esri details on geocoding coverage</a>.</p></li>
-    /// <li>
-    /// <p><code>Grab</code> – Grab provides place index functionality for Southeast Asia. For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>' coverage, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps countries and areas covered</a>.</p></li>
-    /// <li>
-    /// <p><code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>' coverage in your region of interest, see <a href="https://developer.here.com/documentation/geocoder/dev_guide/topics/coverage-geocoder.html">HERE details on goecoding coverage</a>.</p><important>
+    /// <li> <p> <code>Esri</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s coverage in your region of interest, see <a href="https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm">Esri details on geocoding coverage</a>.</p> </li>
+    /// <li> <p> <code>Grab</code> – Grab provides place index functionality for Southeast Asia. For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>' coverage, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps countries and areas covered</a>.</p> </li>
+    /// <li> <p> <code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>' coverage in your region of interest, see <a href="https://developer.here.com/documentation/geocoder/dev_guide/topics/coverage-geocoder.html">HERE details on goecoding coverage</a>.</p> <important>
     /// <p>If you specify HERE Technologies (<code>Here</code>) as the data provider, you may not <a href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store results</a> for locations in Japan. For more information, see the <a href="http://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a> for Amazon Location Service.</p>
-    /// </important></li>
+    /// </important> </li>
     /// </ul>
     /// <p>For additional information , see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
     /// This field is required.
@@ -203,38 +167,32 @@ impl CreatePlaceIndexInputBuilder {
         self.data_source = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the geospatial data provider for the new place index.</p><note>
+    /// <p>Specifies the geospatial data provider for the new place index.</p> <note>
     /// <p>This field is case-sensitive. Enter the valid values as shown. For example, entering <code>HERE</code> returns an error.</p>
     /// </note>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Esri</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s coverage in your region of interest, see <a href="https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm">Esri details on geocoding coverage</a>.</p></li>
-    /// <li>
-    /// <p><code>Grab</code> – Grab provides place index functionality for Southeast Asia. For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>' coverage, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps countries and areas covered</a>.</p></li>
-    /// <li>
-    /// <p><code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>' coverage in your region of interest, see <a href="https://developer.here.com/documentation/geocoder/dev_guide/topics/coverage-geocoder.html">HERE details on goecoding coverage</a>.</p><important>
+    /// <li> <p> <code>Esri</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s coverage in your region of interest, see <a href="https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm">Esri details on geocoding coverage</a>.</p> </li>
+    /// <li> <p> <code>Grab</code> – Grab provides place index functionality for Southeast Asia. For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>' coverage, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps countries and areas covered</a>.</p> </li>
+    /// <li> <p> <code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>' coverage in your region of interest, see <a href="https://developer.here.com/documentation/geocoder/dev_guide/topics/coverage-geocoder.html">HERE details on goecoding coverage</a>.</p> <important>
     /// <p>If you specify HERE Technologies (<code>Here</code>) as the data provider, you may not <a href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store results</a> for locations in Japan. For more information, see the <a href="http://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a> for Amazon Location Service.</p>
-    /// </important></li>
+    /// </important> </li>
     /// </ul>
     /// <p>For additional information , see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
     pub fn set_data_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_source = input;
         self
     }
-    /// <p>Specifies the geospatial data provider for the new place index.</p><note>
+    /// <p>Specifies the geospatial data provider for the new place index.</p> <note>
     /// <p>This field is case-sensitive. Enter the valid values as shown. For example, entering <code>HERE</code> returns an error.</p>
     /// </note>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Esri</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s coverage in your region of interest, see <a href="https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm">Esri details on geocoding coverage</a>.</p></li>
-    /// <li>
-    /// <p><code>Grab</code> – Grab provides place index functionality for Southeast Asia. For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>' coverage, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps countries and areas covered</a>.</p></li>
-    /// <li>
-    /// <p><code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>' coverage in your region of interest, see <a href="https://developer.here.com/documentation/geocoder/dev_guide/topics/coverage-geocoder.html">HERE details on goecoding coverage</a>.</p><important>
+    /// <li> <p> <code>Esri</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s coverage in your region of interest, see <a href="https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm">Esri details on geocoding coverage</a>.</p> </li>
+    /// <li> <p> <code>Grab</code> – Grab provides place index functionality for Southeast Asia. For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>' coverage, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps countries and areas covered</a>.</p> </li>
+    /// <li> <p> <code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>' coverage in your region of interest, see <a href="https://developer.here.com/documentation/geocoder/dev_guide/topics/coverage-geocoder.html">HERE details on goecoding coverage</a>.</p> <important>
     /// <p>If you specify HERE Technologies (<code>Here</code>) as the data provider, you may not <a href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store results</a> for locations in Japan. For more information, see the <a href="http://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a> for Amazon Location Service.</p>
-    /// </important></li>
+    /// </important> </li>
     /// </ul>
     /// <p>For additional information , see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
     pub fn get_data_source(&self) -> &::std::option::Option<::std::string::String> {
@@ -290,21 +248,15 @@ impl CreatePlaceIndexInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Applies one or more tags to the place index resource. A tag is a key-value pair that helps you manage, identify, search, and filter your resources.</p>
-    /// <p>Format: <code>"key" : "value"</code></p>
+    /// <p>Format: <code>"key" : "value"</code> </p>
     /// <p>Restrictions:</p>
     /// <ul>
-    /// <li>
-    /// <p>Maximum 50 tags per resource.</p></li>
-    /// <li>
-    /// <p>Each tag key must be unique and must have exactly one associated value.</p></li>
-    /// <li>
-    /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p></li>
-    /// <li>
-    /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p></li>
-    /// <li>
-    /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @</p></li>
-    /// <li>
-    /// <p>Cannot use "aws:" as a prefix for a key.</p></li>
+    /// <li> <p>Maximum 50 tags per resource.</p> </li>
+    /// <li> <p>Each tag key must be unique and must have exactly one associated value.</p> </li>
+    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @</p> </li>
+    /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
     /// </ul>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
@@ -313,42 +265,30 @@ impl CreatePlaceIndexInputBuilder {
         self
     }
     /// <p>Applies one or more tags to the place index resource. A tag is a key-value pair that helps you manage, identify, search, and filter your resources.</p>
-    /// <p>Format: <code>"key" : "value"</code></p>
+    /// <p>Format: <code>"key" : "value"</code> </p>
     /// <p>Restrictions:</p>
     /// <ul>
-    /// <li>
-    /// <p>Maximum 50 tags per resource.</p></li>
-    /// <li>
-    /// <p>Each tag key must be unique and must have exactly one associated value.</p></li>
-    /// <li>
-    /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p></li>
-    /// <li>
-    /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p></li>
-    /// <li>
-    /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @</p></li>
-    /// <li>
-    /// <p>Cannot use "aws:" as a prefix for a key.</p></li>
+    /// <li> <p>Maximum 50 tags per resource.</p> </li>
+    /// <li> <p>Each tag key must be unique and must have exactly one associated value.</p> </li>
+    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @</p> </li>
+    /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
     /// </ul>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>Applies one or more tags to the place index resource. A tag is a key-value pair that helps you manage, identify, search, and filter your resources.</p>
-    /// <p>Format: <code>"key" : "value"</code></p>
+    /// <p>Format: <code>"key" : "value"</code> </p>
     /// <p>Restrictions:</p>
     /// <ul>
-    /// <li>
-    /// <p>Maximum 50 tags per resource.</p></li>
-    /// <li>
-    /// <p>Each tag key must be unique and must have exactly one associated value.</p></li>
-    /// <li>
-    /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p></li>
-    /// <li>
-    /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p></li>
-    /// <li>
-    /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @</p></li>
-    /// <li>
-    /// <p>Cannot use "aws:" as a prefix for a key.</p></li>
+    /// <li> <p>Maximum 50 tags per resource.</p> </li>
+    /// <li> <p>Each tag key must be unique and must have exactly one associated value.</p> </li>
+    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @</p> </li>
+    /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
     /// </ul>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags

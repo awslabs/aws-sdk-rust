@@ -22,26 +22,20 @@ impl CountClosedWorkflowExecutionsInputBuilder {
 }
 /// Fluent builder constructing a request to `CountClosedWorkflowExecutions`.
 ///
-/// <p>Returns the number of closed workflow executions within the given domain that meet the specified filtering criteria.</p><note>
+/// <p>Returns the number of closed workflow executions within the given domain that meet the specified filtering criteria.</p> <note>
 /// <p>This operation is eventually consistent. The results are best effort and may not exactly reflect recent updates and changes.</p>
 /// </note>
-/// <p><b>Access Control</b></p>
+/// <p> <b>Access Control</b> </p>
 /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p>
 /// <ul>
-/// <li>
-/// <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p></li>
-/// <li>
-/// <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p></li>
-/// <li>
-/// <p>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys.</p>
+/// <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li>
+/// <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li>
+/// <li> <p>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys.</p>
 /// <ul>
-/// <li>
-/// <p><code>tagFilter.tag</code>: String constraint. The key is <code>swf:tagFilter.tag</code>.</p></li>
-/// <li>
-/// <p><code>typeFilter.name</code>: String constraint. The key is <code>swf:typeFilter.name</code>.</p></li>
-/// <li>
-/// <p><code>typeFilter.version</code>: String constraint. The key is <code>swf:typeFilter.version</code>.</p></li>
-/// </ul></li>
+/// <li> <p> <code>tagFilter.tag</code>: String constraint. The key is <code>swf:tagFilter.tag</code>.</p> </li>
+/// <li> <p> <code>typeFilter.name</code>: String constraint. The key is <code>swf:typeFilter.name</code>.</p> </li>
+/// <li> <p> <code>typeFilter.version</code>: String constraint. The key is <code>swf:typeFilter.version</code>.</p> </li>
+/// </ul> </li>
 /// </ul>
 /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -143,122 +137,122 @@ impl CountClosedWorkflowExecutionsFluentBuilder {
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain()
     }
-    /// <p>If specified, only workflow executions that meet the start time criteria of the filter are counted.</p><note>
-    /// <p><code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
+    /// <p>If specified, only workflow executions that meet the start time criteria of the filter are counted.</p> <note>
+    /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
     /// </note>
     pub fn start_time_filter(mut self, input: crate::types::ExecutionTimeFilter) -> Self {
         self.inner = self.inner.start_time_filter(input);
         self
     }
-    /// <p>If specified, only workflow executions that meet the start time criteria of the filter are counted.</p><note>
-    /// <p><code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
+    /// <p>If specified, only workflow executions that meet the start time criteria of the filter are counted.</p> <note>
+    /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
     /// </note>
     pub fn set_start_time_filter(mut self, input: ::std::option::Option<crate::types::ExecutionTimeFilter>) -> Self {
         self.inner = self.inner.set_start_time_filter(input);
         self
     }
-    /// <p>If specified, only workflow executions that meet the start time criteria of the filter are counted.</p><note>
-    /// <p><code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
+    /// <p>If specified, only workflow executions that meet the start time criteria of the filter are counted.</p> <note>
+    /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
     /// </note>
     pub fn get_start_time_filter(&self) -> &::std::option::Option<crate::types::ExecutionTimeFilter> {
         self.inner.get_start_time_filter()
     }
-    /// <p>If specified, only workflow executions that meet the close time criteria of the filter are counted.</p><note>
-    /// <p><code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
+    /// <p>If specified, only workflow executions that meet the close time criteria of the filter are counted.</p> <note>
+    /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
     /// </note>
     pub fn close_time_filter(mut self, input: crate::types::ExecutionTimeFilter) -> Self {
         self.inner = self.inner.close_time_filter(input);
         self
     }
-    /// <p>If specified, only workflow executions that meet the close time criteria of the filter are counted.</p><note>
-    /// <p><code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
+    /// <p>If specified, only workflow executions that meet the close time criteria of the filter are counted.</p> <note>
+    /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
     /// </note>
     pub fn set_close_time_filter(mut self, input: ::std::option::Option<crate::types::ExecutionTimeFilter>) -> Self {
         self.inner = self.inner.set_close_time_filter(input);
         self
     }
-    /// <p>If specified, only workflow executions that meet the close time criteria of the filter are counted.</p><note>
-    /// <p><code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
+    /// <p>If specified, only workflow executions that meet the close time criteria of the filter are counted.</p> <note>
+    /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
     /// </note>
     pub fn get_close_time_filter(&self) -> &::std::option::Option<crate::types::ExecutionTimeFilter> {
         self.inner.get_close_time_filter()
     }
-    /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p><note>
-    /// <p><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p> <note>
+    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub fn execution_filter(mut self, input: crate::types::WorkflowExecutionFilter) -> Self {
         self.inner = self.inner.execution_filter(input);
         self
     }
-    /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p><note>
-    /// <p><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p> <note>
+    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub fn set_execution_filter(mut self, input: ::std::option::Option<crate::types::WorkflowExecutionFilter>) -> Self {
         self.inner = self.inner.set_execution_filter(input);
         self
     }
-    /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p><note>
-    /// <p><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p> <note>
+    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub fn get_execution_filter(&self) -> &::std::option::Option<crate::types::WorkflowExecutionFilter> {
         self.inner.get_execution_filter()
     }
-    /// <p>If specified, indicates the type of the workflow executions to be counted.</p><note>
-    /// <p><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p>If specified, indicates the type of the workflow executions to be counted.</p> <note>
+    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub fn type_filter(mut self, input: crate::types::WorkflowTypeFilter) -> Self {
         self.inner = self.inner.type_filter(input);
         self
     }
-    /// <p>If specified, indicates the type of the workflow executions to be counted.</p><note>
-    /// <p><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p>If specified, indicates the type of the workflow executions to be counted.</p> <note>
+    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub fn set_type_filter(mut self, input: ::std::option::Option<crate::types::WorkflowTypeFilter>) -> Self {
         self.inner = self.inner.set_type_filter(input);
         self
     }
-    /// <p>If specified, indicates the type of the workflow executions to be counted.</p><note>
-    /// <p><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p>If specified, indicates the type of the workflow executions to be counted.</p> <note>
+    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub fn get_type_filter(&self) -> &::std::option::Option<crate::types::WorkflowTypeFilter> {
         self.inner.get_type_filter()
     }
-    /// <p>If specified, only executions that have a tag that matches the filter are counted.</p><note>
-    /// <p><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p>If specified, only executions that have a tag that matches the filter are counted.</p> <note>
+    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub fn tag_filter(mut self, input: crate::types::TagFilter) -> Self {
         self.inner = self.inner.tag_filter(input);
         self
     }
-    /// <p>If specified, only executions that have a tag that matches the filter are counted.</p><note>
-    /// <p><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p>If specified, only executions that have a tag that matches the filter are counted.</p> <note>
+    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub fn set_tag_filter(mut self, input: ::std::option::Option<crate::types::TagFilter>) -> Self {
         self.inner = self.inner.set_tag_filter(input);
         self
     }
-    /// <p>If specified, only executions that have a tag that matches the filter are counted.</p><note>
-    /// <p><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p>If specified, only executions that have a tag that matches the filter are counted.</p> <note>
+    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub fn get_tag_filter(&self) -> &::std::option::Option<crate::types::TagFilter> {
         self.inner.get_tag_filter()
     }
-    /// <p>If specified, only workflow executions that match this close status are counted. This filter has an affect only if <code>executionStatus</code> is specified as <code>CLOSED</code>.</p><note>
-    /// <p><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p>If specified, only workflow executions that match this close status are counted. This filter has an affect only if <code>executionStatus</code> is specified as <code>CLOSED</code>.</p> <note>
+    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub fn close_status_filter(mut self, input: crate::types::CloseStatusFilter) -> Self {
         self.inner = self.inner.close_status_filter(input);
         self
     }
-    /// <p>If specified, only workflow executions that match this close status are counted. This filter has an affect only if <code>executionStatus</code> is specified as <code>CLOSED</code>.</p><note>
-    /// <p><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p>If specified, only workflow executions that match this close status are counted. This filter has an affect only if <code>executionStatus</code> is specified as <code>CLOSED</code>.</p> <note>
+    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub fn set_close_status_filter(mut self, input: ::std::option::Option<crate::types::CloseStatusFilter>) -> Self {
         self.inner = self.inner.set_close_status_filter(input);
         self
     }
-    /// <p>If specified, only workflow executions that match this close status are counted. This filter has an affect only if <code>executionStatus</code> is specified as <code>CLOSED</code>.</p><note>
-    /// <p><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p>If specified, only workflow executions that match this close status are counted. This filter has an affect only if <code>executionStatus</code> is specified as <code>CLOSED</code>.</p> <note>
+    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub fn get_close_status_filter(&self) -> &::std::option::Option<crate::types::CloseStatusFilter> {
         self.inner.get_close_status_filter()

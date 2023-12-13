@@ -133,19 +133,19 @@ impl GetComplianceDetailsByConfigRuleFluentBuilder {
     /// To override the contents of this collection use [`set_compliance_types`](Self::set_compliance_types).
     ///
     /// <p>Filters the results by compliance.</p>
-    /// <p><code>INSUFFICIENT_DATA</code> is a valid <code>ComplianceType</code> that is returned when an Config rule cannot be evaluated. However, <code>INSUFFICIENT_DATA</code> cannot be used as a <code>ComplianceType</code> for filtering results.</p>
+    /// <p> <code>INSUFFICIENT_DATA</code> is a valid <code>ComplianceType</code> that is returned when an Config rule cannot be evaluated. However, <code>INSUFFICIENT_DATA</code> cannot be used as a <code>ComplianceType</code> for filtering results.</p>
     pub fn compliance_types(mut self, input: crate::types::ComplianceType) -> Self {
         self.inner = self.inner.compliance_types(input);
         self
     }
     /// <p>Filters the results by compliance.</p>
-    /// <p><code>INSUFFICIENT_DATA</code> is a valid <code>ComplianceType</code> that is returned when an Config rule cannot be evaluated. However, <code>INSUFFICIENT_DATA</code> cannot be used as a <code>ComplianceType</code> for filtering results.</p>
+    /// <p> <code>INSUFFICIENT_DATA</code> is a valid <code>ComplianceType</code> that is returned when an Config rule cannot be evaluated. However, <code>INSUFFICIENT_DATA</code> cannot be used as a <code>ComplianceType</code> for filtering results.</p>
     pub fn set_compliance_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceType>>) -> Self {
         self.inner = self.inner.set_compliance_types(input);
         self
     }
     /// <p>Filters the results by compliance.</p>
-    /// <p><code>INSUFFICIENT_DATA</code> is a valid <code>ComplianceType</code> that is returned when an Config rule cannot be evaluated. However, <code>INSUFFICIENT_DATA</code> cannot be used as a <code>ComplianceType</code> for filtering results.</p>
+    /// <p> <code>INSUFFICIENT_DATA</code> is a valid <code>ComplianceType</code> that is returned when an Config rule cannot be evaluated. However, <code>INSUFFICIENT_DATA</code> cannot be used as a <code>ComplianceType</code> for filtering results.</p>
     pub fn get_compliance_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComplianceType>> {
         self.inner.get_compliance_types()
     }

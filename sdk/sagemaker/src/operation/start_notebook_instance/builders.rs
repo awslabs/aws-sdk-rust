@@ -22,7 +22,7 @@ impl StartNotebookInstanceInputBuilder {
 }
 /// Fluent builder constructing a request to `StartNotebookInstance`.
 ///
-/// <p>Launches an ML compute instance with the latest version of the libraries and attaches your ML storage volume. After configuring the notebook instance, SageMaker sets the notebook instance status to <code>InService</code>. A notebook instance's status must be <code>InService</code> before you can connect to your Jupyter notebook.</p>
+/// <p>Launches an ML compute instance with the latest version of the libraries and attaches your ML storage volume. After configuring the notebook instance, SageMaker sets the notebook instance status to <code>InService</code>. A notebook instance's status must be <code>InService</code> before you can connect to your Jupyter notebook. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartNotebookInstanceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

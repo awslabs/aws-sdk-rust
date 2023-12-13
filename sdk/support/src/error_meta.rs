@@ -21,7 +21,7 @@ pub enum Error {
     DescribeAttachmentLimitExceeded(crate::types::error::DescribeAttachmentLimitExceeded),
     /// <p>An internal server error occurred.</p>
     InternalServerError(crate::types::error::InternalServerError),
-    /// <p>You have exceeded the maximum allowed TPS (Transactions Per Second) for the operations.</p>
+    /// <p> You have exceeded the maximum allowed TPS (Transactions Per Second) for the operations. </p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

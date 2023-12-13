@@ -150,17 +150,17 @@ impl UpdateDomainConfigFluentBuilder {
     pub fn get_ebs_options(&self) -> &::std::option::Option<crate::types::EbsOptions> {
         self.inner.get_ebs_options()
     }
-    /// <p>Option to set the time, in UTC format, for the daily automated snapshot. Default value is <code>0</code> hours.</p>
+    /// <p>Option to set the time, in UTC format, for the daily automated snapshot. Default value is <code>0</code> hours. </p>
     pub fn snapshot_options(mut self, input: crate::types::SnapshotOptions) -> Self {
         self.inner = self.inner.snapshot_options(input);
         self
     }
-    /// <p>Option to set the time, in UTC format, for the daily automated snapshot. Default value is <code>0</code> hours.</p>
+    /// <p>Option to set the time, in UTC format, for the daily automated snapshot. Default value is <code>0</code> hours. </p>
     pub fn set_snapshot_options(mut self, input: ::std::option::Option<crate::types::SnapshotOptions>) -> Self {
         self.inner = self.inner.set_snapshot_options(input);
         self
     }
-    /// <p>Option to set the time, in UTC format, for the daily automated snapshot. Default value is <code>0</code> hours.</p>
+    /// <p>Option to set the time, in UTC format, for the daily automated snapshot. Default value is <code>0</code> hours. </p>
     pub fn get_snapshot_options(&self) -> &::std::option::Option<crate::types::SnapshotOptions> {
         self.inner.get_snapshot_options()
     }
@@ -198,12 +198,9 @@ impl UpdateDomainConfigFluentBuilder {
     ///
     /// <p>Key-value pairs to specify advanced configuration options. The following key-value pairs are supported:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>"rest.action.multi.allow_explicit_index": "true" | "false"</code> - Note the use of a string rather than a boolean. Specifies whether explicit references to indexes are allowed inside the body of HTTP requests. If you want to configure access policies for domain sub-resources, such as specific indexes and domain APIs, you must disable this property. Default is true.</p></li>
-    /// <li>
-    /// <p><code>"indices.fielddata.cache.size": "80" </code> - Note the use of a string rather than a boolean. Specifies the percentage of heap space allocated to field data. Default is unbounded.</p></li>
-    /// <li>
-    /// <p><code>"indices.query.bool.max_clause_count": "1024"</code> - Note the use of a string rather than a boolean. Specifies the maximum number of clauses allowed in a Lucene boolean query. Default is 1,024. Queries with more than the permitted number of clauses result in a <code>TooManyClauses</code> error.</p></li>
+    /// <li> <p> <code>"rest.action.multi.allow_explicit_index": "true" | "false"</code> - Note the use of a string rather than a boolean. Specifies whether explicit references to indexes are allowed inside the body of HTTP requests. If you want to configure access policies for domain sub-resources, such as specific indexes and domain APIs, you must disable this property. Default is true.</p> </li>
+    /// <li> <p> <code>"indices.fielddata.cache.size": "80" </code> - Note the use of a string rather than a boolean. Specifies the percentage of heap space allocated to field data. Default is unbounded.</p> </li>
+    /// <li> <p> <code>"indices.query.bool.max_clause_count": "1024"</code> - Note the use of a string rather than a boolean. Specifies the maximum number of clauses allowed in a Lucene boolean query. Default is 1,024. Queries with more than the permitted number of clauses result in a <code>TooManyClauses</code> error.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options">Advanced cluster parameters</a>.</p>
     pub fn advanced_options(
@@ -216,12 +213,9 @@ impl UpdateDomainConfigFluentBuilder {
     }
     /// <p>Key-value pairs to specify advanced configuration options. The following key-value pairs are supported:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>"rest.action.multi.allow_explicit_index": "true" | "false"</code> - Note the use of a string rather than a boolean. Specifies whether explicit references to indexes are allowed inside the body of HTTP requests. If you want to configure access policies for domain sub-resources, such as specific indexes and domain APIs, you must disable this property. Default is true.</p></li>
-    /// <li>
-    /// <p><code>"indices.fielddata.cache.size": "80" </code> - Note the use of a string rather than a boolean. Specifies the percentage of heap space allocated to field data. Default is unbounded.</p></li>
-    /// <li>
-    /// <p><code>"indices.query.bool.max_clause_count": "1024"</code> - Note the use of a string rather than a boolean. Specifies the maximum number of clauses allowed in a Lucene boolean query. Default is 1,024. Queries with more than the permitted number of clauses result in a <code>TooManyClauses</code> error.</p></li>
+    /// <li> <p> <code>"rest.action.multi.allow_explicit_index": "true" | "false"</code> - Note the use of a string rather than a boolean. Specifies whether explicit references to indexes are allowed inside the body of HTTP requests. If you want to configure access policies for domain sub-resources, such as specific indexes and domain APIs, you must disable this property. Default is true.</p> </li>
+    /// <li> <p> <code>"indices.fielddata.cache.size": "80" </code> - Note the use of a string rather than a boolean. Specifies the percentage of heap space allocated to field data. Default is unbounded.</p> </li>
+    /// <li> <p> <code>"indices.query.bool.max_clause_count": "1024"</code> - Note the use of a string rather than a boolean. Specifies the maximum number of clauses allowed in a Lucene boolean query. Default is 1,024. Queries with more than the permitted number of clauses result in a <code>TooManyClauses</code> error.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options">Advanced cluster parameters</a>.</p>
     pub fn set_advanced_options(
@@ -233,12 +227,9 @@ impl UpdateDomainConfigFluentBuilder {
     }
     /// <p>Key-value pairs to specify advanced configuration options. The following key-value pairs are supported:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>"rest.action.multi.allow_explicit_index": "true" | "false"</code> - Note the use of a string rather than a boolean. Specifies whether explicit references to indexes are allowed inside the body of HTTP requests. If you want to configure access policies for domain sub-resources, such as specific indexes and domain APIs, you must disable this property. Default is true.</p></li>
-    /// <li>
-    /// <p><code>"indices.fielddata.cache.size": "80" </code> - Note the use of a string rather than a boolean. Specifies the percentage of heap space allocated to field data. Default is unbounded.</p></li>
-    /// <li>
-    /// <p><code>"indices.query.bool.max_clause_count": "1024"</code> - Note the use of a string rather than a boolean. Specifies the maximum number of clauses allowed in a Lucene boolean query. Default is 1,024. Queries with more than the permitted number of clauses result in a <code>TooManyClauses</code> error.</p></li>
+    /// <li> <p> <code>"rest.action.multi.allow_explicit_index": "true" | "false"</code> - Note the use of a string rather than a boolean. Specifies whether explicit references to indexes are allowed inside the body of HTTP requests. If you want to configure access policies for domain sub-resources, such as specific indexes and domain APIs, you must disable this property. Default is true.</p> </li>
+    /// <li> <p> <code>"indices.fielddata.cache.size": "80" </code> - Note the use of a string rather than a boolean. Specifies the percentage of heap space allocated to field data. Default is unbounded.</p> </li>
+    /// <li> <p> <code>"indices.query.bool.max_clause_count": "1024"</code> - Note the use of a string rather than a boolean. Specifies the maximum number of clauses allowed in a Lucene boolean query. Default is 1,024. Queries with more than the permitted number of clauses result in a <code>TooManyClauses</code> error.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options">Advanced cluster parameters</a>.</p>
     pub fn get_advanced_options(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -381,10 +372,8 @@ impl UpdateDomainConfigFluentBuilder {
     }
     /// <p>The type of dry run to perform.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Basic</code> only returns the type of deployment (blue/green or dynamic) that the update will cause.</p></li>
-    /// <li>
-    /// <p><code>Verbose</code> runs an additional check to validate the changes you're making. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-configuration-changes#validation-check">Validating a domain update</a>.</p></li>
+    /// <li> <p> <code>Basic</code> only returns the type of deployment (blue/green or dynamic) that the update will cause.</p> </li>
+    /// <li> <p> <code>Verbose</code> runs an additional check to validate the changes you're making. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-configuration-changes#validation-check">Validating a domain update</a>.</p> </li>
     /// </ul>
     pub fn dry_run_mode(mut self, input: crate::types::DryRunMode) -> Self {
         self.inner = self.inner.dry_run_mode(input);
@@ -392,10 +381,8 @@ impl UpdateDomainConfigFluentBuilder {
     }
     /// <p>The type of dry run to perform.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Basic</code> only returns the type of deployment (blue/green or dynamic) that the update will cause.</p></li>
-    /// <li>
-    /// <p><code>Verbose</code> runs an additional check to validate the changes you're making. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-configuration-changes#validation-check">Validating a domain update</a>.</p></li>
+    /// <li> <p> <code>Basic</code> only returns the type of deployment (blue/green or dynamic) that the update will cause.</p> </li>
+    /// <li> <p> <code>Verbose</code> runs an additional check to validate the changes you're making. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-configuration-changes#validation-check">Validating a domain update</a>.</p> </li>
     /// </ul>
     pub fn set_dry_run_mode(mut self, input: ::std::option::Option<crate::types::DryRunMode>) -> Self {
         self.inner = self.inner.set_dry_run_mode(input);
@@ -403,10 +390,8 @@ impl UpdateDomainConfigFluentBuilder {
     }
     /// <p>The type of dry run to perform.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Basic</code> only returns the type of deployment (blue/green or dynamic) that the update will cause.</p></li>
-    /// <li>
-    /// <p><code>Verbose</code> runs an additional check to validate the changes you're making. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-configuration-changes#validation-check">Validating a domain update</a>.</p></li>
+    /// <li> <p> <code>Basic</code> only returns the type of deployment (blue/green or dynamic) that the update will cause.</p> </li>
+    /// <li> <p> <code>Verbose</code> runs an additional check to validate the changes you're making. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-configuration-changes#validation-check">Validating a domain update</a>.</p> </li>
     /// </ul>
     pub fn get_dry_run_mode(&self) -> &::std::option::Option<crate::types::DryRunMode> {
         self.inner.get_dry_run_mode()

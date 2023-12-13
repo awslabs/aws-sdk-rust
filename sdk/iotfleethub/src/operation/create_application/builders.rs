@@ -22,7 +22,7 @@ impl CreateApplicationInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateApplication`.
 ///
-/// <p>Creates a Fleet Hub for AWS IoT Device Management web application.</p><note>
+/// <p>Creates a Fleet Hub for AWS IoT Device Management web application.</p> <note>
 /// <p>Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -152,21 +152,21 @@ impl CreateApplicationFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
-    /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p><note>
+    /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p> <note>
     /// <p>The name of the role must be in the form <code>AWSIotFleetHub_<i>random_string</i> </code>.</p>
     /// </note>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
         self
     }
-    /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p><note>
+    /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p> <note>
     /// <p>The name of the role must be in the form <code>AWSIotFleetHub_<i>random_string</i> </code>.</p>
     /// </note>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
     }
-    /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p><note>
+    /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p> <note>
     /// <p>The name of the role must be in the form <code>AWSIotFleetHub_<i>random_string</i> </code>.</p>
     /// </note>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {

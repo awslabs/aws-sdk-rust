@@ -23,7 +23,7 @@ impl UpdateServiceInstanceInputBuilder {
 /// Fluent builder constructing a request to `UpdateServiceInstance`.
 ///
 /// <p>Update a service instance.</p>
-/// <p>There are a few modes for updating a service instance. The <code>deploymentType</code> field defines the mode.</p><note>
+/// <p>There are a few modes for updating a service instance. The <code>deploymentType</code> field defines the mode.</p> <note>
 /// <p>You can't update a service instance while its deployment status, or the deployment status of a component attached to it, is <code>IN_PROGRESS</code>.</p>
 /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
 /// </note>
@@ -144,22 +144,22 @@ impl UpdateServiceInstanceFluentBuilder {
     /// <dl>
     /// <dt></dt>
     /// <dd>
-    /// <p><code>NONE</code></p>
+    /// <p> <code>NONE</code> </p>
     /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>
     /// </dd>
     /// <dt></dt>
     /// <dd>
-    /// <p><code>CURRENT_VERSION</code></p>
+    /// <p> <code>CURRENT_VERSION</code> </p>
     /// <p>In this mode, the service instance is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include major or minor version parameters when you use this deployment type.</p>
     /// </dd>
     /// <dt></dt>
     /// <dd>
-    /// <p><code>MINOR_VERSION</code></p>
+    /// <p> <code>MINOR_VERSION</code> </p>
     /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) minor version of the current major version in use, by default. You can also specify a different minor version of the current major version in use.</p>
     /// </dd>
     /// <dt></dt>
     /// <dd>
-    /// <p><code>MAJOR_VERSION</code></p>
+    /// <p> <code>MAJOR_VERSION</code> </p>
     /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can specify a different major version that's higher than the major version in use and a minor version.</p>
     /// </dd>
     /// </dl>
@@ -171,22 +171,22 @@ impl UpdateServiceInstanceFluentBuilder {
     /// <dl>
     /// <dt></dt>
     /// <dd>
-    /// <p><code>NONE</code></p>
+    /// <p> <code>NONE</code> </p>
     /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>
     /// </dd>
     /// <dt></dt>
     /// <dd>
-    /// <p><code>CURRENT_VERSION</code></p>
+    /// <p> <code>CURRENT_VERSION</code> </p>
     /// <p>In this mode, the service instance is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include major or minor version parameters when you use this deployment type.</p>
     /// </dd>
     /// <dt></dt>
     /// <dd>
-    /// <p><code>MINOR_VERSION</code></p>
+    /// <p> <code>MINOR_VERSION</code> </p>
     /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) minor version of the current major version in use, by default. You can also specify a different minor version of the current major version in use.</p>
     /// </dd>
     /// <dt></dt>
     /// <dd>
-    /// <p><code>MAJOR_VERSION</code></p>
+    /// <p> <code>MAJOR_VERSION</code> </p>
     /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can specify a different major version that's higher than the major version in use and a minor version.</p>
     /// </dd>
     /// </dl>
@@ -198,22 +198,22 @@ impl UpdateServiceInstanceFluentBuilder {
     /// <dl>
     /// <dt></dt>
     /// <dd>
-    /// <p><code>NONE</code></p>
+    /// <p> <code>NONE</code> </p>
     /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>
     /// </dd>
     /// <dt></dt>
     /// <dd>
-    /// <p><code>CURRENT_VERSION</code></p>
+    /// <p> <code>CURRENT_VERSION</code> </p>
     /// <p>In this mode, the service instance is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include major or minor version parameters when you use this deployment type.</p>
     /// </dd>
     /// <dt></dt>
     /// <dd>
-    /// <p><code>MINOR_VERSION</code></p>
+    /// <p> <code>MINOR_VERSION</code> </p>
     /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) minor version of the current major version in use, by default. You can also specify a different minor version of the current major version in use.</p>
     /// </dd>
     /// <dt></dt>
     /// <dd>
-    /// <p><code>MAJOR_VERSION</code></p>
+    /// <p> <code>MAJOR_VERSION</code> </p>
     /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can specify a different major version that's higher than the major version in use and a minor version.</p>
     /// </dd>
     /// </dl>

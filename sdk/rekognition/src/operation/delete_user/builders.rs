@@ -22,7 +22,7 @@ impl DeleteUserInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteUser`.
 ///
-/// <p>Deletes the specified UserID within the collection. Faces that are associated with the UserID are disassociated from the UserID before deleting the specified UserID. If the specified <code>Collection</code> or <code>UserID</code> is already deleted or not found, a <code>ResourceNotFoundException</code> will be thrown. If the action is successful with a 200 response, an empty HTTP body is returned.</p>
+/// <p>Deletes the specified UserID within the collection. Faces that are associated with the UserID are disassociated from the UserID before deleting the specified UserID. If the specified <code>Collection</code> or <code>UserID</code> is already deleted or not found, a <code>ResourceNotFoundException</code> will be thrown. If the action is successful with a 200 response, an empty HTTP body is returned. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteUserFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl DeleteUserFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of an existing collection from which the UserID needs to be deleted.</p>
+    /// <p>The ID of an existing collection from which the UserID needs to be deleted. </p>
     pub fn collection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.collection_id(input.into());
         self
     }
-    /// <p>The ID of an existing collection from which the UserID needs to be deleted.</p>
+    /// <p>The ID of an existing collection from which the UserID needs to be deleted. </p>
     pub fn set_collection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_collection_id(input);
         self
     }
-    /// <p>The ID of an existing collection from which the UserID needs to be deleted.</p>
+    /// <p>The ID of an existing collection from which the UserID needs to be deleted. </p>
     pub fn get_collection_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_collection_id()
     }
-    /// <p>ID for the UserID to be deleted.</p>
+    /// <p>ID for the UserID to be deleted. </p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_id(input.into());
         self
     }
-    /// <p>ID for the UserID to be deleted.</p>
+    /// <p>ID for the UserID to be deleted. </p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_id(input);
         self
     }
-    /// <p>ID for the UserID to be deleted.</p>
+    /// <p>ID for the UserID to be deleted. </p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_id()
     }

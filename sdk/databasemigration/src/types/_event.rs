@@ -4,9 +4,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Event {
-    /// <p>The identifier of an event source.</p>
+    /// <p> The identifier of an event source.</p>
     pub source_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>The type of DMS resource that generates events.</p>
+    /// <p> The type of DMS resource that generates events. </p>
     /// <p>Valid values: replication-instance | endpoint | replication-task</p>
     pub source_type: ::std::option::Option<crate::types::SourceType>,
     /// <p>The event message.</p>
@@ -17,11 +17,11 @@ pub struct Event {
     pub date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Event {
-    /// <p>The identifier of an event source.</p>
+    /// <p> The identifier of an event source.</p>
     pub fn source_identifier(&self) -> ::std::option::Option<&str> {
         self.source_identifier.as_deref()
     }
-    /// <p>The type of DMS resource that generates events.</p>
+    /// <p> The type of DMS resource that generates events. </p>
     /// <p>Valid values: replication-instance | endpoint | replication-task</p>
     pub fn source_type(&self) -> ::std::option::Option<&crate::types::SourceType> {
         self.source_type.as_ref()
@@ -59,33 +59,33 @@ pub struct EventBuilder {
     pub(crate) date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl EventBuilder {
-    /// <p>The identifier of an event source.</p>
+    /// <p> The identifier of an event source.</p>
     pub fn source_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of an event source.</p>
+    /// <p> The identifier of an event source.</p>
     pub fn set_source_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_identifier = input;
         self
     }
-    /// <p>The identifier of an event source.</p>
+    /// <p> The identifier of an event source.</p>
     pub fn get_source_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_identifier
     }
-    /// <p>The type of DMS resource that generates events.</p>
+    /// <p> The type of DMS resource that generates events. </p>
     /// <p>Valid values: replication-instance | endpoint | replication-task</p>
     pub fn source_type(mut self, input: crate::types::SourceType) -> Self {
         self.source_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of DMS resource that generates events.</p>
+    /// <p> The type of DMS resource that generates events. </p>
     /// <p>Valid values: replication-instance | endpoint | replication-task</p>
     pub fn set_source_type(mut self, input: ::std::option::Option<crate::types::SourceType>) -> Self {
         self.source_type = input;
         self
     }
-    /// <p>The type of DMS resource that generates events.</p>
+    /// <p> The type of DMS resource that generates events. </p>
     /// <p>Valid values: replication-instance | endpoint | replication-task</p>
     pub fn get_source_type(&self) -> &::std::option::Option<crate::types::SourceType> {
         &self.source_type

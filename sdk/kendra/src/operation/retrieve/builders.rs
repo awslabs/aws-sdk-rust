@@ -26,16 +26,12 @@ impl RetrieveInputBuilder {
 /// <p>This API is similar to the <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_Query.html">Query</a> API. However, by default, the <code>Query</code> API only returns excerpt passages of up to 100 token words. With the <code>Retrieve</code> API, you can retrieve longer passages of up to 200 token words and up to 100 semantically relevant passages. This doesn't include question-answer or FAQ type responses from your index. The passages are text excerpts that can be semantically extracted from multiple documents and multiple parts of the same document. If in extreme cases your documents produce zero passages using the <code>Retrieve</code> API, you can alternatively use the <code>Query</code> API and its types of responses.</p>
 /// <p>You can also do the following:</p>
 /// <ul>
-/// <li>
-/// <p>Override boosting at the index level</p></li>
-/// <li>
-/// <p>Filter based on document fields or attributes</p></li>
-/// <li>
-/// <p>Filter based on the user or their group access to documents</p></li>
-/// <li>
-/// <p>View the confidence score bucket for a retrieved passage result. The confidence bucket provides a relative ranking that indicates how confident Amazon Kendra is that the response is relevant to the query.</p><note>
+/// <li> <p>Override boosting at the index level</p> </li>
+/// <li> <p>Filter based on document fields or attributes</p> </li>
+/// <li> <p>Filter based on the user or their group access to documents</p> </li>
+/// <li> <p>View the confidence score bucket for a retrieved passage result. The confidence bucket provides a relative ranking that indicates how confident Amazon Kendra is that the response is relevant to the query.</p> <note>
 /// <p>Confidence score buckets are currently available only for English.</p>
-/// </note></li>
+/// </note> </li>
 /// </ul>
 /// <p>You can also include certain fields in the response that might provide useful additional information.</p>
 /// <p>The <code>Retrieve</code> API shares the number of <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_CapacityUnitsConfiguration.html">query capacity units</a> that you set for your index. For more information on what's included in a single capacity unit and the default base capacity for an index, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting capacity</a>.</p>

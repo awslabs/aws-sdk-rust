@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetShare`](crate::operation::get_share::builders::GetShareFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`share_id(impl Into<String>)`](crate::operation::get_share::builders::GetShareFluentBuilder::share_id) / [`set_share_id(Option<String>)`](crate::operation::get_share::builders::GetShareFluentBuilder::set_share_id):<br>required: **true**<br><p>The generated ID for a share.</p><br>
+    ///   - [`share_id(impl Into<String>)`](crate::operation::get_share::builders::GetShareFluentBuilder::share_id) / [`set_share_id(Option<String>)`](crate::operation::get_share::builders::GetShareFluentBuilder::set_share_id):<br>required: **true**<br><p> The generated ID for a share. </p><br>
     /// - On success, responds with [`GetShareOutput`](crate::operation::get_share::GetShareOutput) with field(s):
-    ///   - [`share(Option<ShareDetails>)`](crate::operation::get_share::GetShareOutput::share): <p>An analytic store share details object. contains status, resourceArn, ownerId, etc.</p>
+    ///   - [`share(Option<ShareDetails>)`](crate::operation::get_share::GetShareOutput::share): <p> An analytic store share details object. contains status, resourceArn, ownerId, etc. </p>
     /// - On failure, responds with [`SdkError<GetShareError>`](crate::operation::get_share::GetShareError)
     pub fn get_share(&self) -> crate::operation::get_share::builders::GetShareFluentBuilder {
         crate::operation::get_share::builders::GetShareFluentBuilder::new(self.handle.clone())

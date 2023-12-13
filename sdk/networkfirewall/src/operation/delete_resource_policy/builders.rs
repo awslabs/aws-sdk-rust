@@ -22,7 +22,7 @@ impl DeleteResourcePolicyInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteResourcePolicy`.
 ///
-/// <p>Deletes a resource policy that you created in a <code>PutResourcePolicy</code> request.</p>
+/// <p>Deletes a resource policy that you created in a <code>PutResourcePolicy</code> request. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteResourcePolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DeleteResourcePolicyFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the rule group or firewall policy whose resource policy you want to delete.</p>
+    /// <p>The Amazon Resource Name (ARN) of the rule group or firewall policy whose resource policy you want to delete. </p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the rule group or firewall policy whose resource policy you want to delete.</p>
+    /// <p>The Amazon Resource Name (ARN) of the rule group or firewall policy whose resource policy you want to delete. </p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the rule group or firewall policy whose resource policy you want to delete.</p>
+    /// <p>The Amazon Resource Name (ARN) of the rule group or firewall policy whose resource policy you want to delete. </p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_arn()
     }

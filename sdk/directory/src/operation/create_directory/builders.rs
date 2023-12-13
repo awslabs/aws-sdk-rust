@@ -141,19 +141,14 @@ impl CreateDirectoryFluentBuilder {
     /// <p>If you need to change the password for the administrator account, you can use the <code>ResetUserPassword</code> API call.</p>
     /// <p>The regex pattern for this string is made up of the following conditions:</p>
     /// <ul>
-    /// <li>
-    /// <p>Length (?=^.{8,64}$) – Must be between 8 and 64 characters</p></li>
+    /// <li> <p>Length (?=^.{8,64}$) – Must be between 8 and 64 characters</p> </li>
     /// </ul>
     /// <p>AND any 3 of the following password complexity rules required by Active Directory:</p>
     /// <ul>
-    /// <li>
-    /// <p>Numbers and upper case and lowercase (?=.*\d)(?=.*[A-Z])(?=.*[a-z])</p></li>
-    /// <li>
-    /// <p>Numbers and special characters and lower case (?=.*\d)(?=.*[^A-Za-z0-9\s])(?=.*[a-z])</p></li>
-    /// <li>
-    /// <p>Special characters and upper case and lower case (?=.*[^A-Za-z0-9\s])(?=.*[A-Z])(?=.*[a-z])</p></li>
-    /// <li>
-    /// <p>Numbers and upper case and special characters (?=.*\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9\s])</p></li>
+    /// <li> <p>Numbers and upper case and lowercase (?=.*\d)(?=.*[A-Z])(?=.*[a-z])</p> </li>
+    /// <li> <p>Numbers and special characters and lower case (?=.*\d)(?=.*[^A-Za-z0-9\s])(?=.*[a-z])</p> </li>
+    /// <li> <p>Special characters and upper case and lower case (?=.*[^A-Za-z0-9\s])(?=.*[A-Z])(?=.*[a-z])</p> </li>
+    /// <li> <p>Numbers and upper case and special characters (?=.*\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9\s])</p> </li>
     /// </ul>
     /// <p>For additional information about how Active Directory passwords are enforced, see <a href="https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements">Password must meet complexity requirements</a> on the Microsoft website.</p>
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -164,19 +159,14 @@ impl CreateDirectoryFluentBuilder {
     /// <p>If you need to change the password for the administrator account, you can use the <code>ResetUserPassword</code> API call.</p>
     /// <p>The regex pattern for this string is made up of the following conditions:</p>
     /// <ul>
-    /// <li>
-    /// <p>Length (?=^.{8,64}$) – Must be between 8 and 64 characters</p></li>
+    /// <li> <p>Length (?=^.{8,64}$) – Must be between 8 and 64 characters</p> </li>
     /// </ul>
     /// <p>AND any 3 of the following password complexity rules required by Active Directory:</p>
     /// <ul>
-    /// <li>
-    /// <p>Numbers and upper case and lowercase (?=.*\d)(?=.*[A-Z])(?=.*[a-z])</p></li>
-    /// <li>
-    /// <p>Numbers and special characters and lower case (?=.*\d)(?=.*[^A-Za-z0-9\s])(?=.*[a-z])</p></li>
-    /// <li>
-    /// <p>Special characters and upper case and lower case (?=.*[^A-Za-z0-9\s])(?=.*[A-Z])(?=.*[a-z])</p></li>
-    /// <li>
-    /// <p>Numbers and upper case and special characters (?=.*\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9\s])</p></li>
+    /// <li> <p>Numbers and upper case and lowercase (?=.*\d)(?=.*[A-Z])(?=.*[a-z])</p> </li>
+    /// <li> <p>Numbers and special characters and lower case (?=.*\d)(?=.*[^A-Za-z0-9\s])(?=.*[a-z])</p> </li>
+    /// <li> <p>Special characters and upper case and lower case (?=.*[^A-Za-z0-9\s])(?=.*[A-Z])(?=.*[a-z])</p> </li>
+    /// <li> <p>Numbers and upper case and special characters (?=.*\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9\s])</p> </li>
     /// </ul>
     /// <p>For additional information about how Active Directory passwords are enforced, see <a href="https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements">Password must meet complexity requirements</a> on the Microsoft website.</p>
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -187,19 +177,14 @@ impl CreateDirectoryFluentBuilder {
     /// <p>If you need to change the password for the administrator account, you can use the <code>ResetUserPassword</code> API call.</p>
     /// <p>The regex pattern for this string is made up of the following conditions:</p>
     /// <ul>
-    /// <li>
-    /// <p>Length (?=^.{8,64}$) – Must be between 8 and 64 characters</p></li>
+    /// <li> <p>Length (?=^.{8,64}$) – Must be between 8 and 64 characters</p> </li>
     /// </ul>
     /// <p>AND any 3 of the following password complexity rules required by Active Directory:</p>
     /// <ul>
-    /// <li>
-    /// <p>Numbers and upper case and lowercase (?=.*\d)(?=.*[A-Z])(?=.*[a-z])</p></li>
-    /// <li>
-    /// <p>Numbers and special characters and lower case (?=.*\d)(?=.*[^A-Za-z0-9\s])(?=.*[a-z])</p></li>
-    /// <li>
-    /// <p>Special characters and upper case and lower case (?=.*[^A-Za-z0-9\s])(?=.*[A-Z])(?=.*[a-z])</p></li>
-    /// <li>
-    /// <p>Numbers and upper case and special characters (?=.*\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9\s])</p></li>
+    /// <li> <p>Numbers and upper case and lowercase (?=.*\d)(?=.*[A-Z])(?=.*[a-z])</p> </li>
+    /// <li> <p>Numbers and special characters and lower case (?=.*\d)(?=.*[^A-Za-z0-9\s])(?=.*[a-z])</p> </li>
+    /// <li> <p>Special characters and upper case and lower case (?=.*[^A-Za-z0-9\s])(?=.*[A-Z])(?=.*[a-z])</p> </li>
+    /// <li> <p>Numbers and upper case and special characters (?=.*\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9\s])</p> </li>
     /// </ul>
     /// <p>For additional information about how Active Directory passwords are enforced, see <a href="https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements">Password must meet complexity requirements</a> on the Microsoft website.</p>
     pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {

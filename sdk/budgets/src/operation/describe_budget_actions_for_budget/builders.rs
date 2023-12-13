@@ -22,7 +22,7 @@ impl DescribeBudgetActionsForBudgetInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeBudgetActionsForBudget`.
 ///
-/// <p>Describes all of the budget actions for a budget.</p>
+/// <p> Describes all of the budget actions for a budget. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeBudgetActionsForBudgetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -128,45 +128,45 @@ impl DescribeBudgetActionsForBudgetFluentBuilder {
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_account_id()
     }
-    /// <p>A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
+    /// <p> A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
     pub fn budget_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.budget_name(input.into());
         self
     }
-    /// <p>A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
+    /// <p> A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
     pub fn set_budget_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_budget_name(input);
         self
     }
-    /// <p>A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
+    /// <p> A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
     pub fn get_budget_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_budget_name()
     }
-    /// <p>An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
+    /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
+    /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
+    /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p>A generic string.</p>
+    /// <p> A generic string.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>A generic string.</p>
+    /// <p> A generic string.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>A generic string.</p>
+    /// <p> A generic string.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Patch {
-    /// <p>The ID of the patch. Applies to Windows patches only.</p><note>
+    /// <p>The ID of the patch. Applies to Windows patches only.</p> <note>
     /// <p>This ID isn't the same as the Microsoft Knowledge Base ID.</p>
     /// </note>
     pub id: ::std::option::Option<::std::string::String>,
@@ -54,7 +54,7 @@ pub struct Patch {
     pub repository: ::std::option::Option<::std::string::String>,
 }
 impl Patch {
-    /// <p>The ID of the patch. Applies to Windows patches only.</p><note>
+    /// <p>The ID of the patch. Applies to Windows patches only.</p> <note>
     /// <p>This ID isn't the same as the Microsoft Knowledge Base ID.</p>
     /// </note>
     pub fn id(&self) -> ::std::option::Option<&str> {
@@ -191,21 +191,21 @@ pub struct PatchBuilder {
     pub(crate) repository: ::std::option::Option<::std::string::String>,
 }
 impl PatchBuilder {
-    /// <p>The ID of the patch. Applies to Windows patches only.</p><note>
+    /// <p>The ID of the patch. Applies to Windows patches only.</p> <note>
     /// <p>This ID isn't the same as the Microsoft Knowledge Base ID.</p>
     /// </note>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the patch. Applies to Windows patches only.</p><note>
+    /// <p>The ID of the patch. Applies to Windows patches only.</p> <note>
     /// <p>This ID isn't the same as the Microsoft Knowledge Base ID.</p>
     /// </note>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// <p>The ID of the patch. Applies to Windows patches only.</p><note>
+    /// <p>The ID of the patch. Applies to Windows patches only.</p> <note>
     /// <p>This ID isn't the same as the Microsoft Knowledge Base ID.</p>
     /// </note>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {

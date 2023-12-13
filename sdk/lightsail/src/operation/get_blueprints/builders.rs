@@ -22,7 +22,7 @@ impl GetBlueprintsInputBuilder {
 }
 /// Fluent builder constructing a request to `GetBlueprints`.
 ///
-/// <p>Returns the list of available instance images, or <i>blueprints</i>. You can use a blueprint to create a new instance already running a specific operating system, as well as a preinstalled app or development stack. The software each instance is running depends on the blueprint image you choose.</p><note>
+/// <p>Returns the list of available instance images, or <i>blueprints</i>. You can use a blueprint to create a new instance already running a specific operating system, as well as a preinstalled app or development stack. The software each instance is running depends on the blueprint image you choose.</p> <note>
 /// <p>Use active blueprints when creating new instances. Inactive blueprints are listed to support customers with existing instances and are not necessarily available to create new instances. Blueprints are marked inactive when they become outdated due to operating system updates or new application releases.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -141,21 +141,21 @@ impl GetBlueprintsFluentBuilder {
     pub fn get_page_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_page_token()
     }
-    /// <p>Returns a list of blueprints that are specific to Lightsail for Research.</p><important>
+    /// <p>Returns a list of blueprints that are specific to Lightsail for Research.</p> <important>
     /// <p>You must use this parameter to view Lightsail for Research blueprints.</p>
     /// </important>
     pub fn app_category(mut self, input: crate::types::AppCategory) -> Self {
         self.inner = self.inner.app_category(input);
         self
     }
-    /// <p>Returns a list of blueprints that are specific to Lightsail for Research.</p><important>
+    /// <p>Returns a list of blueprints that are specific to Lightsail for Research.</p> <important>
     /// <p>You must use this parameter to view Lightsail for Research blueprints.</p>
     /// </important>
     pub fn set_app_category(mut self, input: ::std::option::Option<crate::types::AppCategory>) -> Self {
         self.inner = self.inner.set_app_category(input);
         self
     }
-    /// <p>Returns a list of blueprints that are specific to Lightsail for Research.</p><important>
+    /// <p>Returns a list of blueprints that are specific to Lightsail for Research.</p> <important>
     /// <p>You must use this parameter to view Lightsail for Research blueprints.</p>
     /// </important>
     pub fn get_app_category(&self) -> &::std::option::Option<crate::types::AppCategory> {

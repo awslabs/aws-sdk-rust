@@ -23,7 +23,7 @@ impl DeleteDefaultMessageTypeInputBuilder {
 /// Fluent builder constructing a request to `DeleteDefaultMessageType`.
 ///
 /// <p>Deletes an existing default message type on a configuration set.</p>
-/// <p>A message type is a type of messages that you plan to send. If you send account-related messages or time-sensitive messages such as one-time passcodes, choose <b>Transactional</b>. If you plan to send messages that contain marketing material or other promotional content, choose <b>Promotional</b>. This setting applies to your entire Amazon Web Services account.</p>
+/// <p> A message type is a type of messages that you plan to send. If you send account-related messages or time-sensitive messages such as one-time passcodes, choose <b>Transactional</b>. If you plan to send messages that contain marketing material or other promotional content, choose <b>Promotional</b>. This setting applies to your entire Amazon Web Services account. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteDefaultMessageTypeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

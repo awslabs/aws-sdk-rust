@@ -22,7 +22,7 @@ impl GetKxScalingGroupInputBuilder {
 }
 /// Fluent builder constructing a request to `GetKxScalingGroup`.
 ///
-/// <p>Retrieves details of a scaling group.</p>
+/// <p> Retrieves details of a scaling group.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetKxScalingGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl GetKxScalingGroupFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>A unique identifier for the kdb environment.</p>
+    /// <p>A unique identifier for the kdb environment. </p>
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_id(input.into());
         self
     }
-    /// <p>A unique identifier for the kdb environment.</p>
+    /// <p>A unique identifier for the kdb environment. </p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_id(input);
         self
     }
-    /// <p>A unique identifier for the kdb environment.</p>
+    /// <p>A unique identifier for the kdb environment. </p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_environment_id()
     }
-    /// <p>A unique identifier for the kdb scaling group.</p>
+    /// <p>A unique identifier for the kdb scaling group. </p>
     pub fn scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.scaling_group_name(input.into());
         self
     }
-    /// <p>A unique identifier for the kdb scaling group.</p>
+    /// <p>A unique identifier for the kdb scaling group. </p>
     pub fn set_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_scaling_group_name(input);
         self
     }
-    /// <p>A unique identifier for the kdb scaling group.</p>
+    /// <p>A unique identifier for the kdb scaling group. </p>
     pub fn get_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_scaling_group_name()
     }

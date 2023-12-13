@@ -14,7 +14,7 @@ pub struct InstanceAssociationStatusInfo {
     pub association_version: ::std::option::Option<::std::string::String>,
     /// <p>The managed node ID where the association was created.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
-    /// <p>The date the association ran.</p>
+    /// <p>The date the association ran. </p>
     pub execution_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Status information about the association.</p>
     pub status: ::std::option::Option<::std::string::String>,
@@ -50,7 +50,7 @@ impl InstanceAssociationStatusInfo {
     pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The date the association ran.</p>
+    /// <p>The date the association ran. </p>
     pub fn execution_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.execution_date.as_ref()
     }
@@ -174,17 +174,17 @@ impl InstanceAssociationStatusInfoBuilder {
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_id
     }
-    /// <p>The date the association ran.</p>
+    /// <p>The date the association ran. </p>
     pub fn execution_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.execution_date = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date the association ran.</p>
+    /// <p>The date the association ran. </p>
     pub fn set_execution_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.execution_date = input;
         self
     }
-    /// <p>The date the association ran.</p>
+    /// <p>The date the association ran. </p>
     pub fn get_execution_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.execution_date
     }

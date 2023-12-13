@@ -7,7 +7,7 @@ pub struct DescribeAggregateComplianceByConformancePacksInput {
     pub configuration_aggregator_name: ::std::option::Option<::std::string::String>,
     /// <p>Filters the result by <code>AggregateConformancePackComplianceFilters</code> object.</p>
     pub filters: ::std::option::Option<crate::types::AggregateConformancePackComplianceFilters>,
-    /// <p>The maximum number of conformance packs compliance details returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
+    /// <p>The maximum number of conformance packs compliance details returned on each page. The default is maximum. If you specify 0, Config uses the default. </p>
     pub limit: ::std::option::Option<i32>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -21,7 +21,7 @@ impl DescribeAggregateComplianceByConformancePacksInput {
     pub fn filters(&self) -> ::std::option::Option<&crate::types::AggregateConformancePackComplianceFilters> {
         self.filters.as_ref()
     }
-    /// <p>The maximum number of conformance packs compliance details returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
+    /// <p>The maximum number of conformance packs compliance details returned on each page. The default is maximum. If you specify 0, Config uses the default. </p>
     pub fn limit(&self) -> ::std::option::Option<i32> {
         self.limit
     }
@@ -78,17 +78,17 @@ impl DescribeAggregateComplianceByConformancePacksInputBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<crate::types::AggregateConformancePackComplianceFilters> {
         &self.filters
     }
-    /// <p>The maximum number of conformance packs compliance details returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
+    /// <p>The maximum number of conformance packs compliance details returned on each page. The default is maximum. If you specify 0, Config uses the default. </p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of conformance packs compliance details returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
+    /// <p>The maximum number of conformance packs compliance details returned on each page. The default is maximum. If you specify 0, Config uses the default. </p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
     }
-    /// <p>The maximum number of conformance packs compliance details returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
+    /// <p>The maximum number of conformance packs compliance details returned on each page. The default is maximum. If you specify 0, Config uses the default. </p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
         &self.limit
     }

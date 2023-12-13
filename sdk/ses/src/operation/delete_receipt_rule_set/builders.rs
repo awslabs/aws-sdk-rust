@@ -22,7 +22,7 @@ impl DeleteReceiptRuleSetInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteReceiptRuleSet`.
 ///
-/// <p>Deletes the specified receipt rule set and all of the receipt rules it contains.</p><note>
+/// <p>Deletes the specified receipt rule set and all of the receipt rules it contains.</p> <note>
 /// <p>The currently active rule set cannot be deleted.</p>
 /// </note>
 /// <p>For information about managing receipt rule sets, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email-receipt-rules-console-walkthrough.html">Amazon SES Developer Guide</a>.</p>

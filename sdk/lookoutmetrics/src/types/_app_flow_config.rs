@@ -6,7 +6,7 @@
 pub struct AppFlowConfig {
     /// <p>An IAM role that gives Amazon Lookout for Metrics permission to access the flow.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>name of the flow.</p>
+    /// <p> name of the flow.</p>
     pub flow_name: ::std::option::Option<::std::string::String>,
 }
 impl AppFlowConfig {
@@ -14,7 +14,7 @@ impl AppFlowConfig {
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>name of the flow.</p>
+    /// <p> name of the flow.</p>
     pub fn flow_name(&self) -> ::std::option::Option<&str> {
         self.flow_name.as_deref()
     }
@@ -48,17 +48,17 @@ impl AppFlowConfigBuilder {
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
-    /// <p>name of the flow.</p>
+    /// <p> name of the flow.</p>
     pub fn flow_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>name of the flow.</p>
+    /// <p> name of the flow.</p>
     pub fn set_flow_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.flow_name = input;
         self
     }
-    /// <p>name of the flow.</p>
+    /// <p> name of the flow.</p>
     pub fn get_flow_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.flow_name
     }

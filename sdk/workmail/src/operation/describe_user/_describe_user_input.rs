@@ -8,12 +8,9 @@ pub struct DescribeUserInput {
     /// <p>The identifier for the user to be described.</p>
     /// <p>The identifier can be the <i>UserId</i>, <i>Username</i>, or <i>email</i>. The following identity formats are available:</p>
     /// <ul>
-    /// <li>
-    /// <p>User ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p></li>
-    /// <li>
-    /// <p>Email address: user@domain.tld</p></li>
-    /// <li>
-    /// <p>User name: user</p></li>
+    /// <li> <p>User ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p> </li>
+    /// <li> <p>Email address: user@domain.tld</p> </li>
+    /// <li> <p>User name: user</p> </li>
     /// </ul>
     /// <p></p>
     pub user_id: ::std::option::Option<::std::string::String>,
@@ -26,12 +23,9 @@ impl DescribeUserInput {
     /// <p>The identifier for the user to be described.</p>
     /// <p>The identifier can be the <i>UserId</i>, <i>Username</i>, or <i>email</i>. The following identity formats are available:</p>
     /// <ul>
-    /// <li>
-    /// <p>User ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p></li>
-    /// <li>
-    /// <p>Email address: user@domain.tld</p></li>
-    /// <li>
-    /// <p>User name: user</p></li>
+    /// <li> <p>User ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p> </li>
+    /// <li> <p>Email address: user@domain.tld</p> </li>
+    /// <li> <p>User name: user</p> </li>
     /// </ul>
     /// <p></p>
     pub fn user_id(&self) -> ::std::option::Option<&str> {
@@ -71,12 +65,9 @@ impl DescribeUserInputBuilder {
     /// <p>The identifier for the user to be described.</p>
     /// <p>The identifier can be the <i>UserId</i>, <i>Username</i>, or <i>email</i>. The following identity formats are available:</p>
     /// <ul>
-    /// <li>
-    /// <p>User ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p></li>
-    /// <li>
-    /// <p>Email address: user@domain.tld</p></li>
-    /// <li>
-    /// <p>User name: user</p></li>
+    /// <li> <p>User ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p> </li>
+    /// <li> <p>Email address: user@domain.tld</p> </li>
+    /// <li> <p>User name: user</p> </li>
     /// </ul>
     /// <p></p>
     /// This field is required.
@@ -87,12 +78,9 @@ impl DescribeUserInputBuilder {
     /// <p>The identifier for the user to be described.</p>
     /// <p>The identifier can be the <i>UserId</i>, <i>Username</i>, or <i>email</i>. The following identity formats are available:</p>
     /// <ul>
-    /// <li>
-    /// <p>User ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p></li>
-    /// <li>
-    /// <p>Email address: user@domain.tld</p></li>
-    /// <li>
-    /// <p>User name: user</p></li>
+    /// <li> <p>User ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p> </li>
+    /// <li> <p>Email address: user@domain.tld</p> </li>
+    /// <li> <p>User name: user</p> </li>
     /// </ul>
     /// <p></p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -102,12 +90,9 @@ impl DescribeUserInputBuilder {
     /// <p>The identifier for the user to be described.</p>
     /// <p>The identifier can be the <i>UserId</i>, <i>Username</i>, or <i>email</i>. The following identity formats are available:</p>
     /// <ul>
-    /// <li>
-    /// <p>User ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p></li>
-    /// <li>
-    /// <p>Email address: user@domain.tld</p></li>
-    /// <li>
-    /// <p>User name: user</p></li>
+    /// <li> <p>User ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p> </li>
+    /// <li> <p>Email address: user@domain.tld</p> </li>
+    /// <li> <p>User name: user</p> </li>
     /// </ul>
     /// <p></p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {

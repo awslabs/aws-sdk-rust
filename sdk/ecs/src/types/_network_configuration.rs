@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkConfiguration {
-    /// <p>The VPC subnets and security groups that are associated with a task.</p><note>
+    /// <p>The VPC subnets and security groups that are associated with a task.</p> <note>
     /// <p>All specified subnets and security groups must be from the same VPC.</p>
     /// </note>
     pub awsvpc_configuration: ::std::option::Option<crate::types::AwsVpcConfiguration>,
 }
 impl NetworkConfiguration {
-    /// <p>The VPC subnets and security groups that are associated with a task.</p><note>
+    /// <p>The VPC subnets and security groups that are associated with a task.</p> <note>
     /// <p>All specified subnets and security groups must be from the same VPC.</p>
     /// </note>
     pub fn awsvpc_configuration(&self) -> ::std::option::Option<&crate::types::AwsVpcConfiguration> {
@@ -31,21 +31,21 @@ pub struct NetworkConfigurationBuilder {
     pub(crate) awsvpc_configuration: ::std::option::Option<crate::types::AwsVpcConfiguration>,
 }
 impl NetworkConfigurationBuilder {
-    /// <p>The VPC subnets and security groups that are associated with a task.</p><note>
+    /// <p>The VPC subnets and security groups that are associated with a task.</p> <note>
     /// <p>All specified subnets and security groups must be from the same VPC.</p>
     /// </note>
     pub fn awsvpc_configuration(mut self, input: crate::types::AwsVpcConfiguration) -> Self {
         self.awsvpc_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The VPC subnets and security groups that are associated with a task.</p><note>
+    /// <p>The VPC subnets and security groups that are associated with a task.</p> <note>
     /// <p>All specified subnets and security groups must be from the same VPC.</p>
     /// </note>
     pub fn set_awsvpc_configuration(mut self, input: ::std::option::Option<crate::types::AwsVpcConfiguration>) -> Self {
         self.awsvpc_configuration = input;
         self
     }
-    /// <p>The VPC subnets and security groups that are associated with a task.</p><note>
+    /// <p>The VPC subnets and security groups that are associated with a task.</p> <note>
     /// <p>All specified subnets and security groups must be from the same VPC.</p>
     /// </note>
     pub fn get_awsvpc_configuration(&self) -> &::std::option::Option<crate::types::AwsVpcConfiguration> {

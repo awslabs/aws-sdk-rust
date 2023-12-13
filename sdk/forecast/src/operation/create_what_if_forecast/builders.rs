@@ -22,7 +22,7 @@ impl CreateWhatIfForecastInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateWhatIfForecast`.
 ///
-/// <p>A what-if forecast is a forecast that is created from a modified version of the baseline forecast. Each what-if forecast incorporates either a replacement dataset or a set of transformations to the original dataset.</p>
+/// <p>A what-if forecast is a forecast that is created from a modified version of the baseline forecast. Each what-if forecast incorporates either a replacement dataset or a set of transformations to the original dataset. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateWhatIfForecastFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -157,7 +157,7 @@ impl CreateWhatIfForecastFluentBuilder {
     /// <p>The replacement time series dataset, which contains the rows that you want to change in the related time series dataset. A replacement time series does not need to contain all rows that are in the baseline related time series. Include only the rows (measure-dimension combinations) that you want to include in the what-if forecast.</p>
     /// <p>This dataset is merged with the original time series to create a transformed dataset that is used for the what-if analysis.</p>
     /// <p>This dataset should contain the items to modify (such as item_id or workforce_type), any relevant dimensions, the timestamp column, and at least one of the related time series columns. This file should not contain duplicate timestamps for the same time series.</p>
-    /// <p>Timestamps and item_ids not included in this dataset are not included in the what-if analysis.</p>
+    /// <p>Timestamps and item_ids not included in this dataset are not included in the what-if analysis. </p>
     pub fn time_series_replacements_data_source(mut self, input: crate::types::TimeSeriesReplacementsDataSource) -> Self {
         self.inner = self.inner.time_series_replacements_data_source(input);
         self
@@ -165,7 +165,7 @@ impl CreateWhatIfForecastFluentBuilder {
     /// <p>The replacement time series dataset, which contains the rows that you want to change in the related time series dataset. A replacement time series does not need to contain all rows that are in the baseline related time series. Include only the rows (measure-dimension combinations) that you want to include in the what-if forecast.</p>
     /// <p>This dataset is merged with the original time series to create a transformed dataset that is used for the what-if analysis.</p>
     /// <p>This dataset should contain the items to modify (such as item_id or workforce_type), any relevant dimensions, the timestamp column, and at least one of the related time series columns. This file should not contain duplicate timestamps for the same time series.</p>
-    /// <p>Timestamps and item_ids not included in this dataset are not included in the what-if analysis.</p>
+    /// <p>Timestamps and item_ids not included in this dataset are not included in the what-if analysis. </p>
     pub fn set_time_series_replacements_data_source(mut self, input: ::std::option::Option<crate::types::TimeSeriesReplacementsDataSource>) -> Self {
         self.inner = self.inner.set_time_series_replacements_data_source(input);
         self
@@ -173,7 +173,7 @@ impl CreateWhatIfForecastFluentBuilder {
     /// <p>The replacement time series dataset, which contains the rows that you want to change in the related time series dataset. A replacement time series does not need to contain all rows that are in the baseline related time series. Include only the rows (measure-dimension combinations) that you want to include in the what-if forecast.</p>
     /// <p>This dataset is merged with the original time series to create a transformed dataset that is used for the what-if analysis.</p>
     /// <p>This dataset should contain the items to modify (such as item_id or workforce_type), any relevant dimensions, the timestamp column, and at least one of the related time series columns. This file should not contain duplicate timestamps for the same time series.</p>
-    /// <p>Timestamps and item_ids not included in this dataset are not included in the what-if analysis.</p>
+    /// <p>Timestamps and item_ids not included in this dataset are not included in the what-if analysis. </p>
     pub fn get_time_series_replacements_data_source(&self) -> &::std::option::Option<crate::types::TimeSeriesReplacementsDataSource> {
         self.inner.get_time_series_replacements_data_source()
     }

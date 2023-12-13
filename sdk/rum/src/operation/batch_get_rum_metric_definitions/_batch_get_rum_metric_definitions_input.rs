@@ -11,7 +11,7 @@ pub struct BatchGetRumMetricDefinitionsInput {
     /// <p>This parameter specifies the ARN of the Evidently experiment that corresponds to the destination.</p>
     pub destination_arn: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return in one operation. The default is 50. The maximum that you can specify is 100.</p>
-    /// <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
+    /// <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. </p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>Use the token returned by the previous operation to request the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -31,7 +31,7 @@ impl BatchGetRumMetricDefinitionsInput {
         self.destination_arn.as_deref()
     }
     /// <p>The maximum number of results to return in one operation. The default is 50. The maximum that you can specify is 100.</p>
-    /// <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
+    /// <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. </p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -106,19 +106,19 @@ impl BatchGetRumMetricDefinitionsInputBuilder {
         &self.destination_arn
     }
     /// <p>The maximum number of results to return in one operation. The default is 50. The maximum that you can specify is 100.</p>
-    /// <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
+    /// <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of results to return in one operation. The default is 50. The maximum that you can specify is 100.</p>
-    /// <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
+    /// <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
     /// <p>The maximum number of results to return in one operation. The default is 50. The maximum that you can specify is 100.</p>
-    /// <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
+    /// <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. </p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

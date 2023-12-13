@@ -159,14 +159,10 @@ impl DescribeUsersFluentBuilder {
     }
     /// <p>A query to filter users by user name. Remember the following about the <code>Userids</code> and <code>Query</code> parameters:</p>
     /// <ul>
-    /// <li>
-    /// <p>If you don't use either parameter, the API returns a paginated list of all users on the site.</p></li>
-    /// <li>
-    /// <p>If you use both parameters, the API ignores the <code>Query</code> parameter.</p></li>
-    /// <li>
-    /// <p>The <code>Userid</code> parameter only returns user names that match a corresponding user ID.</p></li>
-    /// <li>
-    /// <p>The <code>Query</code> parameter runs a "prefix" search for users by the <code>GivenName</code>, <code>SurName</code>, or <code>UserName</code> fields included in a <a href="https://docs.aws.amazon.com/workdocs/latest/APIReference/API_CreateUser.html">CreateUser</a> API call. For example, querying on <code>Ma</code> returns Márcia Oliveira, María García, and Mateo Jackson. If you use multiple characters, the API only returns data that matches all characters. For example, querying on <code>Ma J</code> only returns Mateo Jackson.</p></li>
+    /// <li> <p>If you don't use either parameter, the API returns a paginated list of all users on the site.</p> </li>
+    /// <li> <p>If you use both parameters, the API ignores the <code>Query</code> parameter.</p> </li>
+    /// <li> <p>The <code>Userid</code> parameter only returns user names that match a corresponding user ID.</p> </li>
+    /// <li> <p>The <code>Query</code> parameter runs a "prefix" search for users by the <code>GivenName</code>, <code>SurName</code>, or <code>UserName</code> fields included in a <a href="https://docs.aws.amazon.com/workdocs/latest/APIReference/API_CreateUser.html">CreateUser</a> API call. For example, querying on <code>Ma</code> returns Márcia Oliveira, María García, and Mateo Jackson. If you use multiple characters, the API only returns data that matches all characters. For example, querying on <code>Ma J</code> only returns Mateo Jackson.</p> </li>
     /// </ul>
     pub fn query(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.query(input.into());
@@ -174,14 +170,10 @@ impl DescribeUsersFluentBuilder {
     }
     /// <p>A query to filter users by user name. Remember the following about the <code>Userids</code> and <code>Query</code> parameters:</p>
     /// <ul>
-    /// <li>
-    /// <p>If you don't use either parameter, the API returns a paginated list of all users on the site.</p></li>
-    /// <li>
-    /// <p>If you use both parameters, the API ignores the <code>Query</code> parameter.</p></li>
-    /// <li>
-    /// <p>The <code>Userid</code> parameter only returns user names that match a corresponding user ID.</p></li>
-    /// <li>
-    /// <p>The <code>Query</code> parameter runs a "prefix" search for users by the <code>GivenName</code>, <code>SurName</code>, or <code>UserName</code> fields included in a <a href="https://docs.aws.amazon.com/workdocs/latest/APIReference/API_CreateUser.html">CreateUser</a> API call. For example, querying on <code>Ma</code> returns Márcia Oliveira, María García, and Mateo Jackson. If you use multiple characters, the API only returns data that matches all characters. For example, querying on <code>Ma J</code> only returns Mateo Jackson.</p></li>
+    /// <li> <p>If you don't use either parameter, the API returns a paginated list of all users on the site.</p> </li>
+    /// <li> <p>If you use both parameters, the API ignores the <code>Query</code> parameter.</p> </li>
+    /// <li> <p>The <code>Userid</code> parameter only returns user names that match a corresponding user ID.</p> </li>
+    /// <li> <p>The <code>Query</code> parameter runs a "prefix" search for users by the <code>GivenName</code>, <code>SurName</code>, or <code>UserName</code> fields included in a <a href="https://docs.aws.amazon.com/workdocs/latest/APIReference/API_CreateUser.html">CreateUser</a> API call. For example, querying on <code>Ma</code> returns Márcia Oliveira, María García, and Mateo Jackson. If you use multiple characters, the API only returns data that matches all characters. For example, querying on <code>Ma J</code> only returns Mateo Jackson.</p> </li>
     /// </ul>
     pub fn set_query(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_query(input);
@@ -189,14 +181,10 @@ impl DescribeUsersFluentBuilder {
     }
     /// <p>A query to filter users by user name. Remember the following about the <code>Userids</code> and <code>Query</code> parameters:</p>
     /// <ul>
-    /// <li>
-    /// <p>If you don't use either parameter, the API returns a paginated list of all users on the site.</p></li>
-    /// <li>
-    /// <p>If you use both parameters, the API ignores the <code>Query</code> parameter.</p></li>
-    /// <li>
-    /// <p>The <code>Userid</code> parameter only returns user names that match a corresponding user ID.</p></li>
-    /// <li>
-    /// <p>The <code>Query</code> parameter runs a "prefix" search for users by the <code>GivenName</code>, <code>SurName</code>, or <code>UserName</code> fields included in a <a href="https://docs.aws.amazon.com/workdocs/latest/APIReference/API_CreateUser.html">CreateUser</a> API call. For example, querying on <code>Ma</code> returns Márcia Oliveira, María García, and Mateo Jackson. If you use multiple characters, the API only returns data that matches all characters. For example, querying on <code>Ma J</code> only returns Mateo Jackson.</p></li>
+    /// <li> <p>If you don't use either parameter, the API returns a paginated list of all users on the site.</p> </li>
+    /// <li> <p>If you use both parameters, the API ignores the <code>Query</code> parameter.</p> </li>
+    /// <li> <p>The <code>Userid</code> parameter only returns user names that match a corresponding user ID.</p> </li>
+    /// <li> <p>The <code>Query</code> parameter runs a "prefix" search for users by the <code>GivenName</code>, <code>SurName</code>, or <code>UserName</code> fields included in a <a href="https://docs.aws.amazon.com/workdocs/latest/APIReference/API_CreateUser.html">CreateUser</a> API call. For example, querying on <code>Ma</code> returns Márcia Oliveira, María García, and Mateo Jackson. If you use multiple characters, the API only returns data that matches all characters. For example, querying on <code>Ma J</code> only returns Mateo Jackson.</p> </li>
     /// </ul>
     pub fn get_query(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_query()

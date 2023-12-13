@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KerberosAttributes {
-    /// <p>The name of the Kerberos realm to which all nodes in a cluster belong. For example, <code>EC2.INTERNAL</code>.</p>
+    /// <p>The name of the Kerberos realm to which all nodes in a cluster belong. For example, <code>EC2.INTERNAL</code>. </p>
     pub realm: ::std::option::Option<::std::string::String>,
     /// <p>The password used within the cluster for the kadmin service on the cluster-dedicated KDC, which maintains Kerberos principals, password policies, and keytabs for the cluster.</p>
     pub kdc_admin_password: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ pub struct KerberosAttributes {
     pub ad_domain_join_password: ::std::option::Option<::std::string::String>,
 }
 impl KerberosAttributes {
-    /// <p>The name of the Kerberos realm to which all nodes in a cluster belong. For example, <code>EC2.INTERNAL</code>.</p>
+    /// <p>The name of the Kerberos realm to which all nodes in a cluster belong. For example, <code>EC2.INTERNAL</code>. </p>
     pub fn realm(&self) -> ::std::option::Option<&str> {
         self.realm.as_deref()
     }
@@ -55,18 +55,18 @@ pub struct KerberosAttributesBuilder {
     pub(crate) ad_domain_join_password: ::std::option::Option<::std::string::String>,
 }
 impl KerberosAttributesBuilder {
-    /// <p>The name of the Kerberos realm to which all nodes in a cluster belong. For example, <code>EC2.INTERNAL</code>.</p>
+    /// <p>The name of the Kerberos realm to which all nodes in a cluster belong. For example, <code>EC2.INTERNAL</code>. </p>
     /// This field is required.
     pub fn realm(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.realm = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the Kerberos realm to which all nodes in a cluster belong. For example, <code>EC2.INTERNAL</code>.</p>
+    /// <p>The name of the Kerberos realm to which all nodes in a cluster belong. For example, <code>EC2.INTERNAL</code>. </p>
     pub fn set_realm(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.realm = input;
         self
     }
-    /// <p>The name of the Kerberos realm to which all nodes in a cluster belong. For example, <code>EC2.INTERNAL</code>.</p>
+    /// <p>The name of the Kerberos realm to which all nodes in a cluster belong. For example, <code>EC2.INTERNAL</code>. </p>
     pub fn get_realm(&self) -> &::std::option::Option<::std::string::String> {
         &self.realm
     }

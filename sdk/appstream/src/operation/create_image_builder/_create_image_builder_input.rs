@@ -11,72 +11,39 @@ pub struct CreateImageBuilderInput {
     pub image_arn: ::std::option::Option<::std::string::String>,
     /// <p>The instance type to use when launching the image builder. The following instance types are available:</p>
     /// <ul>
-    /// <li>
-    /// <p>stream.standard.small</p></li>
-    /// <li>
-    /// <p>stream.standard.medium</p></li>
-    /// <li>
-    /// <p>stream.standard.large</p></li>
-    /// <li>
-    /// <p>stream.compute.large</p></li>
-    /// <li>
-    /// <p>stream.compute.xlarge</p></li>
-    /// <li>
-    /// <p>stream.compute.2xlarge</p></li>
-    /// <li>
-    /// <p>stream.compute.4xlarge</p></li>
-    /// <li>
-    /// <p>stream.compute.8xlarge</p></li>
-    /// <li>
-    /// <p>stream.memory.large</p></li>
-    /// <li>
-    /// <p>stream.memory.xlarge</p></li>
-    /// <li>
-    /// <p>stream.memory.2xlarge</p></li>
-    /// <li>
-    /// <p>stream.memory.4xlarge</p></li>
-    /// <li>
-    /// <p>stream.memory.8xlarge</p></li>
-    /// <li>
-    /// <p>stream.memory.z1d.large</p></li>
-    /// <li>
-    /// <p>stream.memory.z1d.xlarge</p></li>
-    /// <li>
-    /// <p>stream.memory.z1d.2xlarge</p></li>
-    /// <li>
-    /// <p>stream.memory.z1d.3xlarge</p></li>
-    /// <li>
-    /// <p>stream.memory.z1d.6xlarge</p></li>
-    /// <li>
-    /// <p>stream.memory.z1d.12xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-design.large</p></li>
-    /// <li>
-    /// <p>stream.graphics-design.xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-design.2xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-design.4xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-desktop.2xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.2xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.4xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.8xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.12xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.16xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-pro.4xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-pro.8xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-pro.16xlarge</p></li>
+    /// <li> <p>stream.standard.small</p> </li>
+    /// <li> <p>stream.standard.medium</p> </li>
+    /// <li> <p>stream.standard.large</p> </li>
+    /// <li> <p>stream.compute.large</p> </li>
+    /// <li> <p>stream.compute.xlarge</p> </li>
+    /// <li> <p>stream.compute.2xlarge</p> </li>
+    /// <li> <p>stream.compute.4xlarge</p> </li>
+    /// <li> <p>stream.compute.8xlarge</p> </li>
+    /// <li> <p>stream.memory.large</p> </li>
+    /// <li> <p>stream.memory.xlarge</p> </li>
+    /// <li> <p>stream.memory.2xlarge</p> </li>
+    /// <li> <p>stream.memory.4xlarge</p> </li>
+    /// <li> <p>stream.memory.8xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.large</p> </li>
+    /// <li> <p>stream.memory.z1d.xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.2xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.3xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.6xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.12xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.large</p> </li>
+    /// <li> <p>stream.graphics-design.xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.2xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.4xlarge</p> </li>
+    /// <li> <p>stream.graphics-desktop.2xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.4xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
     /// </ul>
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The description to display.</p>
@@ -90,12 +57,12 @@ pub struct CreateImageBuilderInput {
     pub iam_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Enables or disables default internet access for the image builder.</p>
     pub enable_default_internet_access: ::std::option::Option<bool>,
-    /// <p>The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft Active Directory domain.</p>
+    /// <p>The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft Active Directory domain. </p>
     pub domain_join_info: ::std::option::Option<crate::types::DomainJoinInfo>,
-    /// <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify [LATEST].</p>
+    /// <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify [LATEST]. </p>
     pub appstream_agent_version: ::std::option::Option<::std::string::String>,
-    /// <p>The tags to associate with the image builder. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=.</p>
-    /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters:</p>
+    /// <p>The tags to associate with the image builder. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
+    /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
     /// <p>_ . : / = + \ - @</p>
     /// <p>If you do not specify a value, the value is set to an empty string.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
@@ -118,72 +85,39 @@ impl CreateImageBuilderInput {
     }
     /// <p>The instance type to use when launching the image builder. The following instance types are available:</p>
     /// <ul>
-    /// <li>
-    /// <p>stream.standard.small</p></li>
-    /// <li>
-    /// <p>stream.standard.medium</p></li>
-    /// <li>
-    /// <p>stream.standard.large</p></li>
-    /// <li>
-    /// <p>stream.compute.large</p></li>
-    /// <li>
-    /// <p>stream.compute.xlarge</p></li>
-    /// <li>
-    /// <p>stream.compute.2xlarge</p></li>
-    /// <li>
-    /// <p>stream.compute.4xlarge</p></li>
-    /// <li>
-    /// <p>stream.compute.8xlarge</p></li>
-    /// <li>
-    /// <p>stream.memory.large</p></li>
-    /// <li>
-    /// <p>stream.memory.xlarge</p></li>
-    /// <li>
-    /// <p>stream.memory.2xlarge</p></li>
-    /// <li>
-    /// <p>stream.memory.4xlarge</p></li>
-    /// <li>
-    /// <p>stream.memory.8xlarge</p></li>
-    /// <li>
-    /// <p>stream.memory.z1d.large</p></li>
-    /// <li>
-    /// <p>stream.memory.z1d.xlarge</p></li>
-    /// <li>
-    /// <p>stream.memory.z1d.2xlarge</p></li>
-    /// <li>
-    /// <p>stream.memory.z1d.3xlarge</p></li>
-    /// <li>
-    /// <p>stream.memory.z1d.6xlarge</p></li>
-    /// <li>
-    /// <p>stream.memory.z1d.12xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-design.large</p></li>
-    /// <li>
-    /// <p>stream.graphics-design.xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-design.2xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-design.4xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-desktop.2xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.2xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.4xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.8xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.12xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.16xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-pro.4xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-pro.8xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-pro.16xlarge</p></li>
+    /// <li> <p>stream.standard.small</p> </li>
+    /// <li> <p>stream.standard.medium</p> </li>
+    /// <li> <p>stream.standard.large</p> </li>
+    /// <li> <p>stream.compute.large</p> </li>
+    /// <li> <p>stream.compute.xlarge</p> </li>
+    /// <li> <p>stream.compute.2xlarge</p> </li>
+    /// <li> <p>stream.compute.4xlarge</p> </li>
+    /// <li> <p>stream.compute.8xlarge</p> </li>
+    /// <li> <p>stream.memory.large</p> </li>
+    /// <li> <p>stream.memory.xlarge</p> </li>
+    /// <li> <p>stream.memory.2xlarge</p> </li>
+    /// <li> <p>stream.memory.4xlarge</p> </li>
+    /// <li> <p>stream.memory.8xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.large</p> </li>
+    /// <li> <p>stream.memory.z1d.xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.2xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.3xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.6xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.12xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.large</p> </li>
+    /// <li> <p>stream.graphics-design.xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.2xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.4xlarge</p> </li>
+    /// <li> <p>stream.graphics-desktop.2xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.4xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
     /// </ul>
     pub fn instance_type(&self) -> ::std::option::Option<&str> {
         self.instance_type.as_deref()
@@ -209,16 +143,16 @@ impl CreateImageBuilderInput {
     pub fn enable_default_internet_access(&self) -> ::std::option::Option<bool> {
         self.enable_default_internet_access
     }
-    /// <p>The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft Active Directory domain.</p>
+    /// <p>The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft Active Directory domain. </p>
     pub fn domain_join_info(&self) -> ::std::option::Option<&crate::types::DomainJoinInfo> {
         self.domain_join_info.as_ref()
     }
-    /// <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify [LATEST].</p>
+    /// <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify [LATEST]. </p>
     pub fn appstream_agent_version(&self) -> ::std::option::Option<&str> {
         self.appstream_agent_version.as_deref()
     }
-    /// <p>The tags to associate with the image builder. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=.</p>
-    /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters:</p>
+    /// <p>The tags to associate with the image builder. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
+    /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
     /// <p>_ . : / = + \ - @</p>
     /// <p>If you do not specify a value, the value is set to an empty string.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
@@ -303,72 +237,39 @@ impl CreateImageBuilderInputBuilder {
     }
     /// <p>The instance type to use when launching the image builder. The following instance types are available:</p>
     /// <ul>
-    /// <li>
-    /// <p>stream.standard.small</p></li>
-    /// <li>
-    /// <p>stream.standard.medium</p></li>
-    /// <li>
-    /// <p>stream.standard.large</p></li>
-    /// <li>
-    /// <p>stream.compute.large</p></li>
-    /// <li>
-    /// <p>stream.compute.xlarge</p></li>
-    /// <li>
-    /// <p>stream.compute.2xlarge</p></li>
-    /// <li>
-    /// <p>stream.compute.4xlarge</p></li>
-    /// <li>
-    /// <p>stream.compute.8xlarge</p></li>
-    /// <li>
-    /// <p>stream.memory.large</p></li>
-    /// <li>
-    /// <p>stream.memory.xlarge</p></li>
-    /// <li>
-    /// <p>stream.memory.2xlarge</p></li>
-    /// <li>
-    /// <p>stream.memory.4xlarge</p></li>
-    /// <li>
-    /// <p>stream.memory.8xlarge</p></li>
-    /// <li>
-    /// <p>stream.memory.z1d.large</p></li>
-    /// <li>
-    /// <p>stream.memory.z1d.xlarge</p></li>
-    /// <li>
-    /// <p>stream.memory.z1d.2xlarge</p></li>
-    /// <li>
-    /// <p>stream.memory.z1d.3xlarge</p></li>
-    /// <li>
-    /// <p>stream.memory.z1d.6xlarge</p></li>
-    /// <li>
-    /// <p>stream.memory.z1d.12xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-design.large</p></li>
-    /// <li>
-    /// <p>stream.graphics-design.xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-design.2xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-design.4xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-desktop.2xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.2xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.4xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.8xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.12xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.16xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-pro.4xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-pro.8xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-pro.16xlarge</p></li>
+    /// <li> <p>stream.standard.small</p> </li>
+    /// <li> <p>stream.standard.medium</p> </li>
+    /// <li> <p>stream.standard.large</p> </li>
+    /// <li> <p>stream.compute.large</p> </li>
+    /// <li> <p>stream.compute.xlarge</p> </li>
+    /// <li> <p>stream.compute.2xlarge</p> </li>
+    /// <li> <p>stream.compute.4xlarge</p> </li>
+    /// <li> <p>stream.compute.8xlarge</p> </li>
+    /// <li> <p>stream.memory.large</p> </li>
+    /// <li> <p>stream.memory.xlarge</p> </li>
+    /// <li> <p>stream.memory.2xlarge</p> </li>
+    /// <li> <p>stream.memory.4xlarge</p> </li>
+    /// <li> <p>stream.memory.8xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.large</p> </li>
+    /// <li> <p>stream.memory.z1d.xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.2xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.3xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.6xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.12xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.large</p> </li>
+    /// <li> <p>stream.graphics-design.xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.2xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.4xlarge</p> </li>
+    /// <li> <p>stream.graphics-desktop.2xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.4xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
     /// </ul>
     /// This field is required.
     pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -377,72 +278,39 @@ impl CreateImageBuilderInputBuilder {
     }
     /// <p>The instance type to use when launching the image builder. The following instance types are available:</p>
     /// <ul>
-    /// <li>
-    /// <p>stream.standard.small</p></li>
-    /// <li>
-    /// <p>stream.standard.medium</p></li>
-    /// <li>
-    /// <p>stream.standard.large</p></li>
-    /// <li>
-    /// <p>stream.compute.large</p></li>
-    /// <li>
-    /// <p>stream.compute.xlarge</p></li>
-    /// <li>
-    /// <p>stream.compute.2xlarge</p></li>
-    /// <li>
-    /// <p>stream.compute.4xlarge</p></li>
-    /// <li>
-    /// <p>stream.compute.8xlarge</p></li>
-    /// <li>
-    /// <p>stream.memory.large</p></li>
-    /// <li>
-    /// <p>stream.memory.xlarge</p></li>
-    /// <li>
-    /// <p>stream.memory.2xlarge</p></li>
-    /// <li>
-    /// <p>stream.memory.4xlarge</p></li>
-    /// <li>
-    /// <p>stream.memory.8xlarge</p></li>
-    /// <li>
-    /// <p>stream.memory.z1d.large</p></li>
-    /// <li>
-    /// <p>stream.memory.z1d.xlarge</p></li>
-    /// <li>
-    /// <p>stream.memory.z1d.2xlarge</p></li>
-    /// <li>
-    /// <p>stream.memory.z1d.3xlarge</p></li>
-    /// <li>
-    /// <p>stream.memory.z1d.6xlarge</p></li>
-    /// <li>
-    /// <p>stream.memory.z1d.12xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-design.large</p></li>
-    /// <li>
-    /// <p>stream.graphics-design.xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-design.2xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-design.4xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-desktop.2xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.2xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.4xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.8xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.12xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.16xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-pro.4xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-pro.8xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-pro.16xlarge</p></li>
+    /// <li> <p>stream.standard.small</p> </li>
+    /// <li> <p>stream.standard.medium</p> </li>
+    /// <li> <p>stream.standard.large</p> </li>
+    /// <li> <p>stream.compute.large</p> </li>
+    /// <li> <p>stream.compute.xlarge</p> </li>
+    /// <li> <p>stream.compute.2xlarge</p> </li>
+    /// <li> <p>stream.compute.4xlarge</p> </li>
+    /// <li> <p>stream.compute.8xlarge</p> </li>
+    /// <li> <p>stream.memory.large</p> </li>
+    /// <li> <p>stream.memory.xlarge</p> </li>
+    /// <li> <p>stream.memory.2xlarge</p> </li>
+    /// <li> <p>stream.memory.4xlarge</p> </li>
+    /// <li> <p>stream.memory.8xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.large</p> </li>
+    /// <li> <p>stream.memory.z1d.xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.2xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.3xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.6xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.12xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.large</p> </li>
+    /// <li> <p>stream.graphics-design.xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.2xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.4xlarge</p> </li>
+    /// <li> <p>stream.graphics-desktop.2xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.4xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
     /// </ul>
     pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_type = input;
@@ -450,72 +318,39 @@ impl CreateImageBuilderInputBuilder {
     }
     /// <p>The instance type to use when launching the image builder. The following instance types are available:</p>
     /// <ul>
-    /// <li>
-    /// <p>stream.standard.small</p></li>
-    /// <li>
-    /// <p>stream.standard.medium</p></li>
-    /// <li>
-    /// <p>stream.standard.large</p></li>
-    /// <li>
-    /// <p>stream.compute.large</p></li>
-    /// <li>
-    /// <p>stream.compute.xlarge</p></li>
-    /// <li>
-    /// <p>stream.compute.2xlarge</p></li>
-    /// <li>
-    /// <p>stream.compute.4xlarge</p></li>
-    /// <li>
-    /// <p>stream.compute.8xlarge</p></li>
-    /// <li>
-    /// <p>stream.memory.large</p></li>
-    /// <li>
-    /// <p>stream.memory.xlarge</p></li>
-    /// <li>
-    /// <p>stream.memory.2xlarge</p></li>
-    /// <li>
-    /// <p>stream.memory.4xlarge</p></li>
-    /// <li>
-    /// <p>stream.memory.8xlarge</p></li>
-    /// <li>
-    /// <p>stream.memory.z1d.large</p></li>
-    /// <li>
-    /// <p>stream.memory.z1d.xlarge</p></li>
-    /// <li>
-    /// <p>stream.memory.z1d.2xlarge</p></li>
-    /// <li>
-    /// <p>stream.memory.z1d.3xlarge</p></li>
-    /// <li>
-    /// <p>stream.memory.z1d.6xlarge</p></li>
-    /// <li>
-    /// <p>stream.memory.z1d.12xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-design.large</p></li>
-    /// <li>
-    /// <p>stream.graphics-design.xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-design.2xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-design.4xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-desktop.2xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.2xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.4xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.8xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.12xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.16xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-pro.4xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-pro.8xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-pro.16xlarge</p></li>
+    /// <li> <p>stream.standard.small</p> </li>
+    /// <li> <p>stream.standard.medium</p> </li>
+    /// <li> <p>stream.standard.large</p> </li>
+    /// <li> <p>stream.compute.large</p> </li>
+    /// <li> <p>stream.compute.xlarge</p> </li>
+    /// <li> <p>stream.compute.2xlarge</p> </li>
+    /// <li> <p>stream.compute.4xlarge</p> </li>
+    /// <li> <p>stream.compute.8xlarge</p> </li>
+    /// <li> <p>stream.memory.large</p> </li>
+    /// <li> <p>stream.memory.xlarge</p> </li>
+    /// <li> <p>stream.memory.2xlarge</p> </li>
+    /// <li> <p>stream.memory.4xlarge</p> </li>
+    /// <li> <p>stream.memory.8xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.large</p> </li>
+    /// <li> <p>stream.memory.z1d.xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.2xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.3xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.6xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.12xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.large</p> </li>
+    /// <li> <p>stream.graphics-design.xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.2xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.4xlarge</p> </li>
+    /// <li> <p>stream.graphics-desktop.2xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.4xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
     /// </ul>
     pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_type
@@ -593,31 +428,31 @@ impl CreateImageBuilderInputBuilder {
     pub fn get_enable_default_internet_access(&self) -> &::std::option::Option<bool> {
         &self.enable_default_internet_access
     }
-    /// <p>The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft Active Directory domain.</p>
+    /// <p>The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft Active Directory domain. </p>
     pub fn domain_join_info(mut self, input: crate::types::DomainJoinInfo) -> Self {
         self.domain_join_info = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft Active Directory domain.</p>
+    /// <p>The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft Active Directory domain. </p>
     pub fn set_domain_join_info(mut self, input: ::std::option::Option<crate::types::DomainJoinInfo>) -> Self {
         self.domain_join_info = input;
         self
     }
-    /// <p>The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft Active Directory domain.</p>
+    /// <p>The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft Active Directory domain. </p>
     pub fn get_domain_join_info(&self) -> &::std::option::Option<crate::types::DomainJoinInfo> {
         &self.domain_join_info
     }
-    /// <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify [LATEST].</p>
+    /// <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify [LATEST]. </p>
     pub fn appstream_agent_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.appstream_agent_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify [LATEST].</p>
+    /// <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify [LATEST]. </p>
     pub fn set_appstream_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.appstream_agent_version = input;
         self
     }
-    /// <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify [LATEST].</p>
+    /// <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify [LATEST]. </p>
     pub fn get_appstream_agent_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.appstream_agent_version
     }
@@ -625,8 +460,8 @@ impl CreateImageBuilderInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The tags to associate with the image builder. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=.</p>
-    /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters:</p>
+    /// <p>The tags to associate with the image builder. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
+    /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
     /// <p>_ . : / = + \ - @</p>
     /// <p>If you do not specify a value, the value is set to an empty string.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
@@ -636,8 +471,8 @@ impl CreateImageBuilderInputBuilder {
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The tags to associate with the image builder. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=.</p>
-    /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters:</p>
+    /// <p>The tags to associate with the image builder. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
+    /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
     /// <p>_ . : / = + \ - @</p>
     /// <p>If you do not specify a value, the value is set to an empty string.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
@@ -645,8 +480,8 @@ impl CreateImageBuilderInputBuilder {
         self.tags = input;
         self
     }
-    /// <p>The tags to associate with the image builder. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=.</p>
-    /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters:</p>
+    /// <p>The tags to associate with the image builder. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
+    /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
     /// <p>_ . : / = + \ - @</p>
     /// <p>If you do not specify a value, the value is set to an empty string.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>

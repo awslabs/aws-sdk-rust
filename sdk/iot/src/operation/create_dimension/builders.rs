@@ -123,17 +123,17 @@ impl CreateDimensionFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>Specifies the type of dimension. Supported types: <code>TOPIC_FILTER.</code></p>
+    /// <p>Specifies the type of dimension. Supported types: <code>TOPIC_FILTER.</code> </p>
     pub fn r#type(mut self, input: crate::types::DimensionType) -> Self {
         self.inner = self.inner.r#type(input);
         self
     }
-    /// <p>Specifies the type of dimension. Supported types: <code>TOPIC_FILTER.</code></p>
+    /// <p>Specifies the type of dimension. Supported types: <code>TOPIC_FILTER.</code> </p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::DimensionType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
-    /// <p>Specifies the type of dimension. Supported types: <code>TOPIC_FILTER.</code></p>
+    /// <p>Specifies the type of dimension. Supported types: <code>TOPIC_FILTER.</code> </p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::DimensionType> {
         self.inner.get_type()
     }

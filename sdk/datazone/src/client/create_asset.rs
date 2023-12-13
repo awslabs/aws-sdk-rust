@@ -27,7 +27,7 @@ impl super::Client {
     ///   - [`first_revision_created_at(Option<DateTime>)`](crate::operation::create_asset::CreateAssetOutput::first_revision_created_at): <p>The timestamp of when the first revision of the asset took place.</p>
     ///   - [`first_revision_created_by(Option<String>)`](crate::operation::create_asset::CreateAssetOutput::first_revision_created_by): <p>The Amazon DataZone user that made the first revision of the asset.</p>
     ///   - [`glossary_terms(Option<Vec::<String>>)`](crate::operation::create_asset::CreateAssetOutput::glossary_terms): <p>The glossary terms that are attached to the created asset.</p>
-    ///   - [`owning_project_id(String)`](crate::operation::create_asset::CreateAssetOutput::owning_project_id): <p>The ID of the Amazon DataZone project that owns the created asset.</p>
+    ///   - [`owning_project_id(String)`](crate::operation::create_asset::CreateAssetOutput::owning_project_id): <p>The ID of the Amazon DataZone project that owns the created asset. </p>
     ///   - [`domain_id(String)`](crate::operation::create_asset::CreateAssetOutput::domain_id): <p>The ID of the Amazon DataZone domain in which the asset was created.</p>
     ///   - [`listing(Option<AssetListingDetails>)`](crate::operation::create_asset::CreateAssetOutput::listing): <p></p>
     ///   - [`forms_output(Vec::<FormOutput>)`](crate::operation::create_asset::CreateAssetOutput::forms_output): <p>The metadata forms that are attached to the created asset.</p>

@@ -6,7 +6,7 @@
 pub struct LoadBalancerState {
     /// <p>The state code. The initial state of the load balancer is provisioning.</p>
     /// <p>After the load balancer is fully set up and ready to route traffic, its state is active.</p>
-    /// <p>If the load balancer could not be set up, its state is failed.</p>
+    /// <p>If the load balancer could not be set up, its state is failed. </p>
     pub code: ::std::option::Option<::std::string::String>,
     /// <p>A description of the state.</p>
     pub reason: ::std::option::Option<::std::string::String>,
@@ -14,7 +14,7 @@ pub struct LoadBalancerState {
 impl LoadBalancerState {
     /// <p>The state code. The initial state of the load balancer is provisioning.</p>
     /// <p>After the load balancer is fully set up and ready to route traffic, its state is active.</p>
-    /// <p>If the load balancer could not be set up, its state is failed.</p>
+    /// <p>If the load balancer could not be set up, its state is failed. </p>
     pub fn code(&self) -> ::std::option::Option<&str> {
         self.code.as_deref()
     }
@@ -40,21 +40,21 @@ pub struct LoadBalancerStateBuilder {
 impl LoadBalancerStateBuilder {
     /// <p>The state code. The initial state of the load balancer is provisioning.</p>
     /// <p>After the load balancer is fully set up and ready to route traffic, its state is active.</p>
-    /// <p>If the load balancer could not be set up, its state is failed.</p>
+    /// <p>If the load balancer could not be set up, its state is failed. </p>
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The state code. The initial state of the load balancer is provisioning.</p>
     /// <p>After the load balancer is fully set up and ready to route traffic, its state is active.</p>
-    /// <p>If the load balancer could not be set up, its state is failed.</p>
+    /// <p>If the load balancer could not be set up, its state is failed. </p>
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.code = input;
         self
     }
     /// <p>The state code. The initial state of the load balancer is provisioning.</p>
     /// <p>After the load balancer is fully set up and ready to route traffic, its state is active.</p>
-    /// <p>If the load balancer could not be set up, its state is failed.</p>
+    /// <p>If the load balancer could not be set up, its state is failed. </p>
     pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.code
     }

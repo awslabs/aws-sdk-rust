@@ -22,9 +22,9 @@ impl DetectAnomaliesInputBuilder {
 }
 /// Fluent builder constructing a request to `DetectAnomalies`.
 ///
-/// <p>Detects anomalies in an image that you supply.</p>
-/// <p>The response from <code>DetectAnomalies</code> includes a boolean prediction that the image contains one or more anomalies and a confidence value for the prediction. If the model is an image segmentation model, the response also includes segmentation information for each type of anomaly found in the image.</p><note>
-/// <p>Before calling <code>DetectAnomalies</code>, you must first start your model with the <code>StartModel</code> operation. You are charged for the amount of time, in minutes, that a model runs and for the number of anomaly detection units that your model uses. If you are not using a model, use the <code>StopModel</code> operation to stop your model.</p>
+/// <p>Detects anomalies in an image that you supply. </p>
+/// <p>The response from <code>DetectAnomalies</code> includes a boolean prediction that the image contains one or more anomalies and a confidence value for the prediction. If the model is an image segmentation model, the response also includes segmentation information for each type of anomaly found in the image.</p> <note>
+/// <p>Before calling <code>DetectAnomalies</code>, you must first start your model with the <code>StartModel</code> operation. You are charged for the amount of time, in minutes, that a model runs and for the number of anomaly detection units that your model uses. If you are not using a model, use the <code>StopModel</code> operation to stop your model. </p>
 /// </note>
 /// <p>For more information, see <i>Detecting anomalies in an image</i> in the Amazon Lookout for Vision developer guide.</p>
 /// <p>This operation requires permissions to perform the <code>lookoutvision:DetectAnomalies</code> operation.</p>
@@ -141,31 +141,31 @@ impl DetectAnomaliesFluentBuilder {
     pub fn get_model_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_model_version()
     }
-    /// <p>The unencrypted image bytes that you want to analyze.</p>
+    /// <p>The unencrypted image bytes that you want to analyze. </p>
     pub fn body(mut self, input: ::aws_smithy_types::byte_stream::ByteStream) -> Self {
         self.inner = self.inner.body(input);
         self
     }
-    /// <p>The unencrypted image bytes that you want to analyze.</p>
+    /// <p>The unencrypted image bytes that you want to analyze. </p>
     pub fn set_body(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
         self.inner = self.inner.set_body(input);
         self
     }
-    /// <p>The unencrypted image bytes that you want to analyze.</p>
+    /// <p>The unencrypted image bytes that you want to analyze. </p>
     pub fn get_body(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
         self.inner.get_body()
     }
-    /// <p>The type of the image passed in <code>Body</code>. Valid values are <code>image/png</code> (PNG format images) and <code>image/jpeg</code> (JPG format images).</p>
+    /// <p>The type of the image passed in <code>Body</code>. Valid values are <code>image/png</code> (PNG format images) and <code>image/jpeg</code> (JPG format images). </p>
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.content_type(input.into());
         self
     }
-    /// <p>The type of the image passed in <code>Body</code>. Valid values are <code>image/png</code> (PNG format images) and <code>image/jpeg</code> (JPG format images).</p>
+    /// <p>The type of the image passed in <code>Body</code>. Valid values are <code>image/png</code> (PNG format images) and <code>image/jpeg</code> (JPG format images). </p>
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_content_type(input);
         self
     }
-    /// <p>The type of the image passed in <code>Body</code>. Valid values are <code>image/png</code> (PNG format images) and <code>image/jpeg</code> (JPG format images).</p>
+    /// <p>The type of the image passed in <code>Body</code>. Valid values are <code>image/png</code> (PNG format images) and <code>image/jpeg</code> (JPG format images). </p>
     pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_content_type()
     }

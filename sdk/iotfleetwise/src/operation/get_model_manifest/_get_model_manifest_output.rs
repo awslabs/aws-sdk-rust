@@ -3,15 +3,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetModelManifestOutput {
-    /// <p>The name of the vehicle model.</p>
+    /// <p> The name of the vehicle model. </p>
     pub name: ::std::string::String,
-    /// <p>The Amazon Resource Name (ARN) of the vehicle model.</p>
+    /// <p> The Amazon Resource Name (ARN) of the vehicle model. </p>
     pub arn: ::std::string::String,
-    /// <p>A brief description of the vehicle model.</p>
+    /// <p> A brief description of the vehicle model. </p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The ARN of the signal catalog associated with the vehicle model.</p>
+    /// <p> The ARN of the signal catalog associated with the vehicle model. </p>
     pub signal_catalog_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The state of the vehicle model. If the status is <code>ACTIVE</code>, the vehicle model can't be edited. You can edit the vehicle model if the status is marked <code>DRAFT</code>.</p>
+    /// <p> The state of the vehicle model. If the status is <code>ACTIVE</code>, the vehicle model can't be edited. You can edit the vehicle model if the status is marked <code>DRAFT</code>.</p>
     pub status: ::std::option::Option<crate::types::ManifestStatus>,
     /// <p>The time the vehicle model was created, in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
     pub creation_time: ::aws_smithy_types::DateTime,
@@ -20,25 +20,25 @@ pub struct GetModelManifestOutput {
     _request_id: Option<String>,
 }
 impl GetModelManifestOutput {
-    /// <p>The name of the vehicle model.</p>
+    /// <p> The name of the vehicle model. </p>
     pub fn name(&self) -> &str {
         use std::ops::Deref;
         self.name.deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the vehicle model.</p>
+    /// <p> The Amazon Resource Name (ARN) of the vehicle model. </p>
     pub fn arn(&self) -> &str {
         use std::ops::Deref;
         self.arn.deref()
     }
-    /// <p>A brief description of the vehicle model.</p>
+    /// <p> A brief description of the vehicle model. </p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The ARN of the signal catalog associated with the vehicle model.</p>
+    /// <p> The ARN of the signal catalog associated with the vehicle model. </p>
     pub fn signal_catalog_arn(&self) -> ::std::option::Option<&str> {
         self.signal_catalog_arn.as_deref()
     }
-    /// <p>The state of the vehicle model. If the status is <code>ACTIVE</code>, the vehicle model can't be edited. You can edit the vehicle model if the status is marked <code>DRAFT</code>.</p>
+    /// <p> The state of the vehicle model. If the status is <code>ACTIVE</code>, the vehicle model can't be edited. You can edit the vehicle model if the status is marked <code>DRAFT</code>.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ManifestStatus> {
         self.status.as_ref()
     }
@@ -77,75 +77,75 @@ pub struct GetModelManifestOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetModelManifestOutputBuilder {
-    /// <p>The name of the vehicle model.</p>
+    /// <p> The name of the vehicle model. </p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the vehicle model.</p>
+    /// <p> The name of the vehicle model. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the vehicle model.</p>
+    /// <p> The name of the vehicle model. </p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The Amazon Resource Name (ARN) of the vehicle model.</p>
+    /// <p> The Amazon Resource Name (ARN) of the vehicle model. </p>
     /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the vehicle model.</p>
+    /// <p> The Amazon Resource Name (ARN) of the vehicle model. </p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the vehicle model.</p>
+    /// <p> The Amazon Resource Name (ARN) of the vehicle model. </p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>A brief description of the vehicle model.</p>
+    /// <p> A brief description of the vehicle model. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A brief description of the vehicle model.</p>
+    /// <p> A brief description of the vehicle model. </p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>A brief description of the vehicle model.</p>
+    /// <p> A brief description of the vehicle model. </p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The ARN of the signal catalog associated with the vehicle model.</p>
+    /// <p> The ARN of the signal catalog associated with the vehicle model. </p>
     pub fn signal_catalog_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.signal_catalog_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the signal catalog associated with the vehicle model.</p>
+    /// <p> The ARN of the signal catalog associated with the vehicle model. </p>
     pub fn set_signal_catalog_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.signal_catalog_arn = input;
         self
     }
-    /// <p>The ARN of the signal catalog associated with the vehicle model.</p>
+    /// <p> The ARN of the signal catalog associated with the vehicle model. </p>
     pub fn get_signal_catalog_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.signal_catalog_arn
     }
-    /// <p>The state of the vehicle model. If the status is <code>ACTIVE</code>, the vehicle model can't be edited. You can edit the vehicle model if the status is marked <code>DRAFT</code>.</p>
+    /// <p> The state of the vehicle model. If the status is <code>ACTIVE</code>, the vehicle model can't be edited. You can edit the vehicle model if the status is marked <code>DRAFT</code>.</p>
     pub fn status(mut self, input: crate::types::ManifestStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The state of the vehicle model. If the status is <code>ACTIVE</code>, the vehicle model can't be edited. You can edit the vehicle model if the status is marked <code>DRAFT</code>.</p>
+    /// <p> The state of the vehicle model. If the status is <code>ACTIVE</code>, the vehicle model can't be edited. You can edit the vehicle model if the status is marked <code>DRAFT</code>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ManifestStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The state of the vehicle model. If the status is <code>ACTIVE</code>, the vehicle model can't be edited. You can edit the vehicle model if the status is marked <code>DRAFT</code>.</p>
+    /// <p> The state of the vehicle model. If the status is <code>ACTIVE</code>, the vehicle model can't be edited. You can edit the vehicle model if the status is marked <code>DRAFT</code>.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ManifestStatus> {
         &self.status
     }

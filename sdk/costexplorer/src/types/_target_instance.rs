@@ -12,11 +12,11 @@ pub struct TargetInstance {
     pub currency_code: ::std::option::Option<::std::string::String>,
     /// <p>Determines whether this recommendation is the defaulted Amazon Web Services recommendation.</p>
     pub default_target_instance: bool,
-    /// <p>Details on the target instance type.</p>
+    /// <p>Details on the target instance type. </p>
     pub resource_details: ::std::option::Option<crate::types::ResourceDetails>,
     /// <p>The expected utilization metrics for target instance type.</p>
     pub expected_resource_utilization: ::std::option::Option<crate::types::ResourceUtilization>,
-    /// <p>Explains the actions that you might need to take to successfully migrate your workloads from the current instance type to the recommended instance type.</p>
+    /// <p>Explains the actions that you might need to take to successfully migrate your workloads from the current instance type to the recommended instance type. </p>
     pub platform_differences: ::std::option::Option<::std::vec::Vec<crate::types::PlatformDifference>>,
 }
 impl TargetInstance {
@@ -36,7 +36,7 @@ impl TargetInstance {
     pub fn default_target_instance(&self) -> bool {
         self.default_target_instance
     }
-    /// <p>Details on the target instance type.</p>
+    /// <p>Details on the target instance type. </p>
     pub fn resource_details(&self) -> ::std::option::Option<&crate::types::ResourceDetails> {
         self.resource_details.as_ref()
     }
@@ -44,7 +44,7 @@ impl TargetInstance {
     pub fn expected_resource_utilization(&self) -> ::std::option::Option<&crate::types::ResourceUtilization> {
         self.expected_resource_utilization.as_ref()
     }
-    /// <p>Explains the actions that you might need to take to successfully migrate your workloads from the current instance type to the recommended instance type.</p>
+    /// <p>Explains the actions that you might need to take to successfully migrate your workloads from the current instance type to the recommended instance type. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.platform_differences.is_none()`.
     pub fn platform_differences(&self) -> &[crate::types::PlatformDifference] {
@@ -127,17 +127,17 @@ impl TargetInstanceBuilder {
     pub fn get_default_target_instance(&self) -> &::std::option::Option<bool> {
         &self.default_target_instance
     }
-    /// <p>Details on the target instance type.</p>
+    /// <p>Details on the target instance type. </p>
     pub fn resource_details(mut self, input: crate::types::ResourceDetails) -> Self {
         self.resource_details = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Details on the target instance type.</p>
+    /// <p>Details on the target instance type. </p>
     pub fn set_resource_details(mut self, input: ::std::option::Option<crate::types::ResourceDetails>) -> Self {
         self.resource_details = input;
         self
     }
-    /// <p>Details on the target instance type.</p>
+    /// <p>Details on the target instance type. </p>
     pub fn get_resource_details(&self) -> &::std::option::Option<crate::types::ResourceDetails> {
         &self.resource_details
     }
@@ -159,19 +159,19 @@ impl TargetInstanceBuilder {
     ///
     /// To override the contents of this collection use [`set_platform_differences`](Self::set_platform_differences).
     ///
-    /// <p>Explains the actions that you might need to take to successfully migrate your workloads from the current instance type to the recommended instance type.</p>
+    /// <p>Explains the actions that you might need to take to successfully migrate your workloads from the current instance type to the recommended instance type. </p>
     pub fn platform_differences(mut self, input: crate::types::PlatformDifference) -> Self {
         let mut v = self.platform_differences.unwrap_or_default();
         v.push(input);
         self.platform_differences = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Explains the actions that you might need to take to successfully migrate your workloads from the current instance type to the recommended instance type.</p>
+    /// <p>Explains the actions that you might need to take to successfully migrate your workloads from the current instance type to the recommended instance type. </p>
     pub fn set_platform_differences(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PlatformDifference>>) -> Self {
         self.platform_differences = input;
         self
     }
-    /// <p>Explains the actions that you might need to take to successfully migrate your workloads from the current instance type to the recommended instance type.</p>
+    /// <p>Explains the actions that you might need to take to successfully migrate your workloads from the current instance type to the recommended instance type. </p>
     pub fn get_platform_differences(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlatformDifference>> {
         &self.platform_differences
     }

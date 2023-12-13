@@ -4,15 +4,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IpAddressRequest {
-    /// <p>The ID of the subnet that contains the IP address.</p>
+    /// <p>The ID of the subnet that contains the IP address. </p>
     pub subnet_id: ::std::string::String,
     /// <p>The IPv4 address that you want to use for DNS queries.</p>
     pub ip: ::std::option::Option<::std::string::String>,
-    /// <p>The IPv6 address that you want to use for DNS queries.</p>
+    /// <p> The IPv6 address that you want to use for DNS queries. </p>
     pub ipv6: ::std::option::Option<::std::string::String>,
 }
 impl IpAddressRequest {
-    /// <p>The ID of the subnet that contains the IP address.</p>
+    /// <p>The ID of the subnet that contains the IP address. </p>
     pub fn subnet_id(&self) -> &str {
         use std::ops::Deref;
         self.subnet_id.deref()
@@ -21,7 +21,7 @@ impl IpAddressRequest {
     pub fn ip(&self) -> ::std::option::Option<&str> {
         self.ip.as_deref()
     }
-    /// <p>The IPv6 address that you want to use for DNS queries.</p>
+    /// <p> The IPv6 address that you want to use for DNS queries. </p>
     pub fn ipv6(&self) -> ::std::option::Option<&str> {
         self.ipv6.as_deref()
     }
@@ -42,18 +42,18 @@ pub struct IpAddressRequestBuilder {
     pub(crate) ipv6: ::std::option::Option<::std::string::String>,
 }
 impl IpAddressRequestBuilder {
-    /// <p>The ID of the subnet that contains the IP address.</p>
+    /// <p>The ID of the subnet that contains the IP address. </p>
     /// This field is required.
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the subnet that contains the IP address.</p>
+    /// <p>The ID of the subnet that contains the IP address. </p>
     pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subnet_id = input;
         self
     }
-    /// <p>The ID of the subnet that contains the IP address.</p>
+    /// <p>The ID of the subnet that contains the IP address. </p>
     pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.subnet_id
     }
@@ -71,17 +71,17 @@ impl IpAddressRequestBuilder {
     pub fn get_ip(&self) -> &::std::option::Option<::std::string::String> {
         &self.ip
     }
-    /// <p>The IPv6 address that you want to use for DNS queries.</p>
+    /// <p> The IPv6 address that you want to use for DNS queries. </p>
     pub fn ipv6(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipv6 = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The IPv6 address that you want to use for DNS queries.</p>
+    /// <p> The IPv6 address that you want to use for DNS queries. </p>
     pub fn set_ipv6(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipv6 = input;
         self
     }
-    /// <p>The IPv6 address that you want to use for DNS queries.</p>
+    /// <p> The IPv6 address that you want to use for DNS queries. </p>
     pub fn get_ipv6(&self) -> &::std::option::Option<::std::string::String> {
         &self.ipv6
     }

@@ -22,7 +22,7 @@ impl DescribeAccountHealthInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeAccountHealth`.
 ///
-/// <p>Returns the number of open reactive insights, the number of open proactive insights, and the number of metrics analyzed in your Amazon Web Services account. Use these numbers to gauge the health of operations in your Amazon Web Services account.</p>
+/// <p> Returns the number of open reactive insights, the number of open proactive insights, and the number of metrics analyzed in your Amazon Web Services account. Use these numbers to gauge the health of operations in your Amazon Web Services account. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAccountHealthFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

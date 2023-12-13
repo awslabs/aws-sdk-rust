@@ -6,16 +6,12 @@ pub struct UpdateEventSourceMappingInput {
     /// <p>The identifier of the event source mapping.</p>
     pub uuid: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title"><b>Name formats</b></p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p><b>Function name</b> – <code>MyFunction</code>.</p></li>
-    /// <li>
-    /// <p><b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p></li>
-    /// <li>
-    /// <p><b>Version or Alias ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p></li>
-    /// <li>
-    /// <p><b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.</p></li>
+    /// <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Version or Alias ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
     pub function_name: ::std::option::Option<::std::string::String>,
@@ -24,20 +20,13 @@ pub struct UpdateEventSourceMappingInput {
     pub enabled: ::std::option::Option<bool>,
     /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
     /// <ul>
-    /// <li>
-    /// <p><b>Amazon Kinesis</b> – Default 100. Max 10,000.</p></li>
-    /// <li>
-    /// <p><b>Amazon DynamoDB Streams</b> – Default 100. Max 10,000.</p></li>
-    /// <li>
-    /// <p><b>Amazon Simple Queue Service</b> – Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p></li>
-    /// <li>
-    /// <p><b>Amazon Managed Streaming for Apache Kafka</b> – Default 100. Max 10,000.</p></li>
-    /// <li>
-    /// <p><b>Self-managed Apache Kafka</b> – Default 100. Max 10,000.</p></li>
-    /// <li>
-    /// <p><b>Amazon MQ (ActiveMQ and RabbitMQ)</b> – Default 100. Max 10,000.</p></li>
-    /// <li>
-    /// <p><b>DocumentDB</b> – Default 100. Max 10,000.</p></li>
+    /// <li> <p> <b>Amazon Kinesis</b> – Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>Amazon DynamoDB Streams</b> – Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>Amazon Simple Queue Service</b> – Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p> </li>
+    /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>Self-managed Apache Kafka</b> – Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> – Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>DocumentDB</b> – Default 100. Max 10,000.</p> </li>
     /// </ul>
     pub batch_size: ::std::option::Option<i32>,
     /// <p>An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
@@ -73,16 +62,12 @@ impl UpdateEventSourceMappingInput {
         self.uuid.as_deref()
     }
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title"><b>Name formats</b></p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p><b>Function name</b> – <code>MyFunction</code>.</p></li>
-    /// <li>
-    /// <p><b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p></li>
-    /// <li>
-    /// <p><b>Version or Alias ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p></li>
-    /// <li>
-    /// <p><b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.</p></li>
+    /// <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Version or Alias ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
     pub fn function_name(&self) -> ::std::option::Option<&str> {
@@ -95,20 +80,13 @@ impl UpdateEventSourceMappingInput {
     }
     /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
     /// <ul>
-    /// <li>
-    /// <p><b>Amazon Kinesis</b> – Default 100. Max 10,000.</p></li>
-    /// <li>
-    /// <p><b>Amazon DynamoDB Streams</b> – Default 100. Max 10,000.</p></li>
-    /// <li>
-    /// <p><b>Amazon Simple Queue Service</b> – Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p></li>
-    /// <li>
-    /// <p><b>Amazon Managed Streaming for Apache Kafka</b> – Default 100. Max 10,000.</p></li>
-    /// <li>
-    /// <p><b>Self-managed Apache Kafka</b> – Default 100. Max 10,000.</p></li>
-    /// <li>
-    /// <p><b>Amazon MQ (ActiveMQ and RabbitMQ)</b> – Default 100. Max 10,000.</p></li>
-    /// <li>
-    /// <p><b>DocumentDB</b> – Default 100. Max 10,000.</p></li>
+    /// <li> <p> <b>Amazon Kinesis</b> – Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>Amazon DynamoDB Streams</b> – Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>Amazon Simple Queue Service</b> – Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p> </li>
+    /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>Self-managed Apache Kafka</b> – Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> – Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>DocumentDB</b> – Default 100. Max 10,000.</p> </li>
     /// </ul>
     pub fn batch_size(&self) -> ::std::option::Option<i32> {
         self.batch_size
@@ -213,16 +191,12 @@ impl UpdateEventSourceMappingInputBuilder {
         &self.uuid
     }
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title"><b>Name formats</b></p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p><b>Function name</b> – <code>MyFunction</code>.</p></li>
-    /// <li>
-    /// <p><b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p></li>
-    /// <li>
-    /// <p><b>Version or Alias ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p></li>
-    /// <li>
-    /// <p><b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.</p></li>
+    /// <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Version or Alias ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
     pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -230,16 +204,12 @@ impl UpdateEventSourceMappingInputBuilder {
         self
     }
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title"><b>Name formats</b></p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p><b>Function name</b> – <code>MyFunction</code>.</p></li>
-    /// <li>
-    /// <p><b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p></li>
-    /// <li>
-    /// <p><b>Version or Alias ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p></li>
-    /// <li>
-    /// <p><b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.</p></li>
+    /// <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Version or Alias ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
     pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -247,16 +217,12 @@ impl UpdateEventSourceMappingInputBuilder {
         self
     }
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title"><b>Name formats</b></p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p><b>Function name</b> – <code>MyFunction</code>.</p></li>
-    /// <li>
-    /// <p><b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p></li>
-    /// <li>
-    /// <p><b>Version or Alias ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p></li>
-    /// <li>
-    /// <p><b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.</p></li>
+    /// <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Version or Alias ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
     pub fn get_function_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -281,20 +247,13 @@ impl UpdateEventSourceMappingInputBuilder {
     }
     /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
     /// <ul>
-    /// <li>
-    /// <p><b>Amazon Kinesis</b> – Default 100. Max 10,000.</p></li>
-    /// <li>
-    /// <p><b>Amazon DynamoDB Streams</b> – Default 100. Max 10,000.</p></li>
-    /// <li>
-    /// <p><b>Amazon Simple Queue Service</b> – Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p></li>
-    /// <li>
-    /// <p><b>Amazon Managed Streaming for Apache Kafka</b> – Default 100. Max 10,000.</p></li>
-    /// <li>
-    /// <p><b>Self-managed Apache Kafka</b> – Default 100. Max 10,000.</p></li>
-    /// <li>
-    /// <p><b>Amazon MQ (ActiveMQ and RabbitMQ)</b> – Default 100. Max 10,000.</p></li>
-    /// <li>
-    /// <p><b>DocumentDB</b> – Default 100. Max 10,000.</p></li>
+    /// <li> <p> <b>Amazon Kinesis</b> – Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>Amazon DynamoDB Streams</b> – Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>Amazon Simple Queue Service</b> – Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p> </li>
+    /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>Self-managed Apache Kafka</b> – Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> – Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>DocumentDB</b> – Default 100. Max 10,000.</p> </li>
     /// </ul>
     pub fn batch_size(mut self, input: i32) -> Self {
         self.batch_size = ::std::option::Option::Some(input);
@@ -302,20 +261,13 @@ impl UpdateEventSourceMappingInputBuilder {
     }
     /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
     /// <ul>
-    /// <li>
-    /// <p><b>Amazon Kinesis</b> – Default 100. Max 10,000.</p></li>
-    /// <li>
-    /// <p><b>Amazon DynamoDB Streams</b> – Default 100. Max 10,000.</p></li>
-    /// <li>
-    /// <p><b>Amazon Simple Queue Service</b> – Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p></li>
-    /// <li>
-    /// <p><b>Amazon Managed Streaming for Apache Kafka</b> – Default 100. Max 10,000.</p></li>
-    /// <li>
-    /// <p><b>Self-managed Apache Kafka</b> – Default 100. Max 10,000.</p></li>
-    /// <li>
-    /// <p><b>Amazon MQ (ActiveMQ and RabbitMQ)</b> – Default 100. Max 10,000.</p></li>
-    /// <li>
-    /// <p><b>DocumentDB</b> – Default 100. Max 10,000.</p></li>
+    /// <li> <p> <b>Amazon Kinesis</b> – Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>Amazon DynamoDB Streams</b> – Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>Amazon Simple Queue Service</b> – Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p> </li>
+    /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>Self-managed Apache Kafka</b> – Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> – Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>DocumentDB</b> – Default 100. Max 10,000.</p> </li>
     /// </ul>
     pub fn set_batch_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.batch_size = input;
@@ -323,20 +275,13 @@ impl UpdateEventSourceMappingInputBuilder {
     }
     /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
     /// <ul>
-    /// <li>
-    /// <p><b>Amazon Kinesis</b> – Default 100. Max 10,000.</p></li>
-    /// <li>
-    /// <p><b>Amazon DynamoDB Streams</b> – Default 100. Max 10,000.</p></li>
-    /// <li>
-    /// <p><b>Amazon Simple Queue Service</b> – Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p></li>
-    /// <li>
-    /// <p><b>Amazon Managed Streaming for Apache Kafka</b> – Default 100. Max 10,000.</p></li>
-    /// <li>
-    /// <p><b>Self-managed Apache Kafka</b> – Default 100. Max 10,000.</p></li>
-    /// <li>
-    /// <p><b>Amazon MQ (ActiveMQ and RabbitMQ)</b> – Default 100. Max 10,000.</p></li>
-    /// <li>
-    /// <p><b>DocumentDB</b> – Default 100. Max 10,000.</p></li>
+    /// <li> <p> <b>Amazon Kinesis</b> – Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>Amazon DynamoDB Streams</b> – Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>Amazon Simple Queue Service</b> – Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p> </li>
+    /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>Self-managed Apache Kafka</b> – Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> – Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>DocumentDB</b> – Default 100. Max 10,000.</p> </li>
     /// </ul>
     pub fn get_batch_size(&self) -> &::std::option::Option<i32> {
         &self.batch_size

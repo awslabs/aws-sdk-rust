@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartDataSourceSyncJobInput {
-    /// <p>The identifier of the data source connector.</p>
+    /// <p> The identifier of the data source connector. </p>
     pub data_source_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of Amazon Q application the data source is connected to.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
@@ -11,7 +11,7 @@ pub struct StartDataSourceSyncJobInput {
     pub index_id: ::std::option::Option<::std::string::String>,
 }
 impl StartDataSourceSyncJobInput {
-    /// <p>The identifier of the data source connector.</p>
+    /// <p> The identifier of the data source connector. </p>
     pub fn data_source_id(&self) -> ::std::option::Option<&str> {
         self.data_source_id.as_deref()
     }
@@ -40,18 +40,18 @@ pub struct StartDataSourceSyncJobInputBuilder {
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
 }
 impl StartDataSourceSyncJobInputBuilder {
-    /// <p>The identifier of the data source connector.</p>
+    /// <p> The identifier of the data source connector. </p>
     /// This field is required.
     pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the data source connector.</p>
+    /// <p> The identifier of the data source connector. </p>
     pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_source_id = input;
         self
     }
-    /// <p>The identifier of the data source connector.</p>
+    /// <p> The identifier of the data source connector. </p>
     pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_source_id
     }

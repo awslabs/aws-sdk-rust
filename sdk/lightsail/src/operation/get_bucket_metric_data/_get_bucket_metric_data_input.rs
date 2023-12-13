@@ -6,41 +6,30 @@ pub struct GetBucketMetricDataInput {
     /// <p>The name of the bucket for which to get metric data.</p>
     pub bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The metric for which you want to return information.</p>
-    /// <p>Valid bucket metric names are listed below, along with the most useful statistics to include in your request, and the published unit value.</p><note>
+    /// <p>Valid bucket metric names are listed below, along with the most useful statistics to include in your request, and the published unit value.</p> <note>
     /// <p>These bucket metrics are reported once per day.</p>
     /// </note>
     /// <ul>
-    /// <li>
-    /// <p><b> <code>BucketSizeBytes</code> </b> - The amount of data in bytes stored in a bucket. This value is calculated by summing the size of all objects in the bucket (including object versions), including the size of all parts for all incomplete multipart uploads to the bucket.</p>
-    /// <p>Statistics: The most useful statistic is <code>Maximum</code>.</p>
-    /// <p>Unit: The published unit is <code>Bytes</code>.</p></li>
-    /// <li>
-    /// <p><b> <code>NumberOfObjects</code> </b> - The total number of objects stored in a bucket. This value is calculated by counting all objects in the bucket (including object versions) and the total number of parts for all incomplete multipart uploads to the bucket.</p>
-    /// <p>Statistics: The most useful statistic is <code>Average</code>.</p>
-    /// <p>Unit: The published unit is <code>Count</code>.</p></li>
+    /// <li> <p> <b> <code>BucketSizeBytes</code> </b> - The amount of data in bytes stored in a bucket. This value is calculated by summing the size of all objects in the bucket (including object versions), including the size of all parts for all incomplete multipart uploads to the bucket.</p> <p>Statistics: The most useful statistic is <code>Maximum</code>.</p> <p>Unit: The published unit is <code>Bytes</code>.</p> </li>
+    /// <li> <p> <b> <code>NumberOfObjects</code> </b> - The total number of objects stored in a bucket. This value is calculated by counting all objects in the bucket (including object versions) and the total number of parts for all incomplete multipart uploads to the bucket.</p> <p>Statistics: The most useful statistic is <code>Average</code>.</p> <p>Unit: The published unit is <code>Count</code>.</p> </li>
     /// </ul>
     pub metric_name: ::std::option::Option<crate::types::BucketMetricName>,
     /// <p>The timestamp indicating the earliest data to be returned.</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp indicating the latest data to be returned.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The granularity, in seconds, of the returned data points.</p><note>
+    /// <p>The granularity, in seconds, of the returned data points.</p> <note>
     /// <p>Bucket storage metrics are reported once per day. Therefore, you should specify a period of 86400 seconds, which is the number of seconds in a day.</p>
     /// </note>
     pub period: ::std::option::Option<i32>,
     /// <p>The statistic for the metric.</p>
     /// <p>The following statistics are available:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low volumes of activity for your application.</p></li>
-    /// <li>
-    /// <p><code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high volumes of activity for your application.</p></li>
-    /// <li>
-    /// <p><code>Sum</code> - The sum of all values submitted for the matching metric. You can use this statistic to determine the total volume of a metric.</p></li>
-    /// <li>
-    /// <p><code>Average</code> - The value of <code>Sum</code> / <code>SampleCount</code> during the specified period. By comparing this statistic with the <code>Minimum</code> and <code>Maximum</code> values, you can determine the full scope of a metric and how close the average use is to the <code>Minimum</code> and <code>Maximum</code> values. This comparison helps you to know when to increase or decrease your resources.</p></li>
-    /// <li>
-    /// <p><code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p></li>
+    /// <li> <p> <code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low volumes of activity for your application.</p> </li>
+    /// <li> <p> <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high volumes of activity for your application.</p> </li>
+    /// <li> <p> <code>Sum</code> - The sum of all values submitted for the matching metric. You can use this statistic to determine the total volume of a metric.</p> </li>
+    /// <li> <p> <code>Average</code> - The value of <code>Sum</code> / <code>SampleCount</code> during the specified period. By comparing this statistic with the <code>Minimum</code> and <code>Maximum</code> values, you can determine the full scope of a metric and how close the average use is to the <code>Minimum</code> and <code>Maximum</code> values. This comparison helps you to know when to increase or decrease your resources.</p> </li>
+    /// <li> <p> <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p> </li>
     /// </ul>
     pub statistics: ::std::option::Option<::std::vec::Vec<crate::types::MetricStatistic>>,
     /// <p>The unit for the metric data request.</p>
@@ -53,18 +42,12 @@ impl GetBucketMetricDataInput {
         self.bucket_name.as_deref()
     }
     /// <p>The metric for which you want to return information.</p>
-    /// <p>Valid bucket metric names are listed below, along with the most useful statistics to include in your request, and the published unit value.</p><note>
+    /// <p>Valid bucket metric names are listed below, along with the most useful statistics to include in your request, and the published unit value.</p> <note>
     /// <p>These bucket metrics are reported once per day.</p>
     /// </note>
     /// <ul>
-    /// <li>
-    /// <p><b> <code>BucketSizeBytes</code> </b> - The amount of data in bytes stored in a bucket. This value is calculated by summing the size of all objects in the bucket (including object versions), including the size of all parts for all incomplete multipart uploads to the bucket.</p>
-    /// <p>Statistics: The most useful statistic is <code>Maximum</code>.</p>
-    /// <p>Unit: The published unit is <code>Bytes</code>.</p></li>
-    /// <li>
-    /// <p><b> <code>NumberOfObjects</code> </b> - The total number of objects stored in a bucket. This value is calculated by counting all objects in the bucket (including object versions) and the total number of parts for all incomplete multipart uploads to the bucket.</p>
-    /// <p>Statistics: The most useful statistic is <code>Average</code>.</p>
-    /// <p>Unit: The published unit is <code>Count</code>.</p></li>
+    /// <li> <p> <b> <code>BucketSizeBytes</code> </b> - The amount of data in bytes stored in a bucket. This value is calculated by summing the size of all objects in the bucket (including object versions), including the size of all parts for all incomplete multipart uploads to the bucket.</p> <p>Statistics: The most useful statistic is <code>Maximum</code>.</p> <p>Unit: The published unit is <code>Bytes</code>.</p> </li>
+    /// <li> <p> <b> <code>NumberOfObjects</code> </b> - The total number of objects stored in a bucket. This value is calculated by counting all objects in the bucket (including object versions) and the total number of parts for all incomplete multipart uploads to the bucket.</p> <p>Statistics: The most useful statistic is <code>Average</code>.</p> <p>Unit: The published unit is <code>Count</code>.</p> </li>
     /// </ul>
     pub fn metric_name(&self) -> ::std::option::Option<&crate::types::BucketMetricName> {
         self.metric_name.as_ref()
@@ -77,7 +60,7 @@ impl GetBucketMetricDataInput {
     pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
-    /// <p>The granularity, in seconds, of the returned data points.</p><note>
+    /// <p>The granularity, in seconds, of the returned data points.</p> <note>
     /// <p>Bucket storage metrics are reported once per day. Therefore, you should specify a period of 86400 seconds, which is the number of seconds in a day.</p>
     /// </note>
     pub fn period(&self) -> ::std::option::Option<i32> {
@@ -86,16 +69,11 @@ impl GetBucketMetricDataInput {
     /// <p>The statistic for the metric.</p>
     /// <p>The following statistics are available:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low volumes of activity for your application.</p></li>
-    /// <li>
-    /// <p><code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high volumes of activity for your application.</p></li>
-    /// <li>
-    /// <p><code>Sum</code> - The sum of all values submitted for the matching metric. You can use this statistic to determine the total volume of a metric.</p></li>
-    /// <li>
-    /// <p><code>Average</code> - The value of <code>Sum</code> / <code>SampleCount</code> during the specified period. By comparing this statistic with the <code>Minimum</code> and <code>Maximum</code> values, you can determine the full scope of a metric and how close the average use is to the <code>Minimum</code> and <code>Maximum</code> values. This comparison helps you to know when to increase or decrease your resources.</p></li>
-    /// <li>
-    /// <p><code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p></li>
+    /// <li> <p> <code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low volumes of activity for your application.</p> </li>
+    /// <li> <p> <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high volumes of activity for your application.</p> </li>
+    /// <li> <p> <code>Sum</code> - The sum of all values submitted for the matching metric. You can use this statistic to determine the total volume of a metric.</p> </li>
+    /// <li> <p> <code>Average</code> - The value of <code>Sum</code> / <code>SampleCount</code> during the specified period. By comparing this statistic with the <code>Minimum</code> and <code>Maximum</code> values, you can determine the full scope of a metric and how close the average use is to the <code>Minimum</code> and <code>Maximum</code> values. This comparison helps you to know when to increase or decrease your resources.</p> </li>
+    /// <li> <p> <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p> </li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.statistics.is_none()`.
@@ -144,18 +122,12 @@ impl GetBucketMetricDataInputBuilder {
         &self.bucket_name
     }
     /// <p>The metric for which you want to return information.</p>
-    /// <p>Valid bucket metric names are listed below, along with the most useful statistics to include in your request, and the published unit value.</p><note>
+    /// <p>Valid bucket metric names are listed below, along with the most useful statistics to include in your request, and the published unit value.</p> <note>
     /// <p>These bucket metrics are reported once per day.</p>
     /// </note>
     /// <ul>
-    /// <li>
-    /// <p><b> <code>BucketSizeBytes</code> </b> - The amount of data in bytes stored in a bucket. This value is calculated by summing the size of all objects in the bucket (including object versions), including the size of all parts for all incomplete multipart uploads to the bucket.</p>
-    /// <p>Statistics: The most useful statistic is <code>Maximum</code>.</p>
-    /// <p>Unit: The published unit is <code>Bytes</code>.</p></li>
-    /// <li>
-    /// <p><b> <code>NumberOfObjects</code> </b> - The total number of objects stored in a bucket. This value is calculated by counting all objects in the bucket (including object versions) and the total number of parts for all incomplete multipart uploads to the bucket.</p>
-    /// <p>Statistics: The most useful statistic is <code>Average</code>.</p>
-    /// <p>Unit: The published unit is <code>Count</code>.</p></li>
+    /// <li> <p> <b> <code>BucketSizeBytes</code> </b> - The amount of data in bytes stored in a bucket. This value is calculated by summing the size of all objects in the bucket (including object versions), including the size of all parts for all incomplete multipart uploads to the bucket.</p> <p>Statistics: The most useful statistic is <code>Maximum</code>.</p> <p>Unit: The published unit is <code>Bytes</code>.</p> </li>
+    /// <li> <p> <b> <code>NumberOfObjects</code> </b> - The total number of objects stored in a bucket. This value is calculated by counting all objects in the bucket (including object versions) and the total number of parts for all incomplete multipart uploads to the bucket.</p> <p>Statistics: The most useful statistic is <code>Average</code>.</p> <p>Unit: The published unit is <code>Count</code>.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn metric_name(mut self, input: crate::types::BucketMetricName) -> Self {
@@ -163,36 +135,24 @@ impl GetBucketMetricDataInputBuilder {
         self
     }
     /// <p>The metric for which you want to return information.</p>
-    /// <p>Valid bucket metric names are listed below, along with the most useful statistics to include in your request, and the published unit value.</p><note>
+    /// <p>Valid bucket metric names are listed below, along with the most useful statistics to include in your request, and the published unit value.</p> <note>
     /// <p>These bucket metrics are reported once per day.</p>
     /// </note>
     /// <ul>
-    /// <li>
-    /// <p><b> <code>BucketSizeBytes</code> </b> - The amount of data in bytes stored in a bucket. This value is calculated by summing the size of all objects in the bucket (including object versions), including the size of all parts for all incomplete multipart uploads to the bucket.</p>
-    /// <p>Statistics: The most useful statistic is <code>Maximum</code>.</p>
-    /// <p>Unit: The published unit is <code>Bytes</code>.</p></li>
-    /// <li>
-    /// <p><b> <code>NumberOfObjects</code> </b> - The total number of objects stored in a bucket. This value is calculated by counting all objects in the bucket (including object versions) and the total number of parts for all incomplete multipart uploads to the bucket.</p>
-    /// <p>Statistics: The most useful statistic is <code>Average</code>.</p>
-    /// <p>Unit: The published unit is <code>Count</code>.</p></li>
+    /// <li> <p> <b> <code>BucketSizeBytes</code> </b> - The amount of data in bytes stored in a bucket. This value is calculated by summing the size of all objects in the bucket (including object versions), including the size of all parts for all incomplete multipart uploads to the bucket.</p> <p>Statistics: The most useful statistic is <code>Maximum</code>.</p> <p>Unit: The published unit is <code>Bytes</code>.</p> </li>
+    /// <li> <p> <b> <code>NumberOfObjects</code> </b> - The total number of objects stored in a bucket. This value is calculated by counting all objects in the bucket (including object versions) and the total number of parts for all incomplete multipart uploads to the bucket.</p> <p>Statistics: The most useful statistic is <code>Average</code>.</p> <p>Unit: The published unit is <code>Count</code>.</p> </li>
     /// </ul>
     pub fn set_metric_name(mut self, input: ::std::option::Option<crate::types::BucketMetricName>) -> Self {
         self.metric_name = input;
         self
     }
     /// <p>The metric for which you want to return information.</p>
-    /// <p>Valid bucket metric names are listed below, along with the most useful statistics to include in your request, and the published unit value.</p><note>
+    /// <p>Valid bucket metric names are listed below, along with the most useful statistics to include in your request, and the published unit value.</p> <note>
     /// <p>These bucket metrics are reported once per day.</p>
     /// </note>
     /// <ul>
-    /// <li>
-    /// <p><b> <code>BucketSizeBytes</code> </b> - The amount of data in bytes stored in a bucket. This value is calculated by summing the size of all objects in the bucket (including object versions), including the size of all parts for all incomplete multipart uploads to the bucket.</p>
-    /// <p>Statistics: The most useful statistic is <code>Maximum</code>.</p>
-    /// <p>Unit: The published unit is <code>Bytes</code>.</p></li>
-    /// <li>
-    /// <p><b> <code>NumberOfObjects</code> </b> - The total number of objects stored in a bucket. This value is calculated by counting all objects in the bucket (including object versions) and the total number of parts for all incomplete multipart uploads to the bucket.</p>
-    /// <p>Statistics: The most useful statistic is <code>Average</code>.</p>
-    /// <p>Unit: The published unit is <code>Count</code>.</p></li>
+    /// <li> <p> <b> <code>BucketSizeBytes</code> </b> - The amount of data in bytes stored in a bucket. This value is calculated by summing the size of all objects in the bucket (including object versions), including the size of all parts for all incomplete multipart uploads to the bucket.</p> <p>Statistics: The most useful statistic is <code>Maximum</code>.</p> <p>Unit: The published unit is <code>Bytes</code>.</p> </li>
+    /// <li> <p> <b> <code>NumberOfObjects</code> </b> - The total number of objects stored in a bucket. This value is calculated by counting all objects in the bucket (including object versions) and the total number of parts for all incomplete multipart uploads to the bucket.</p> <p>Statistics: The most useful statistic is <code>Average</code>.</p> <p>Unit: The published unit is <code>Count</code>.</p> </li>
     /// </ul>
     pub fn get_metric_name(&self) -> &::std::option::Option<crate::types::BucketMetricName> {
         &self.metric_name
@@ -227,7 +187,7 @@ impl GetBucketMetricDataInputBuilder {
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_time
     }
-    /// <p>The granularity, in seconds, of the returned data points.</p><note>
+    /// <p>The granularity, in seconds, of the returned data points.</p> <note>
     /// <p>Bucket storage metrics are reported once per day. Therefore, you should specify a period of 86400 seconds, which is the number of seconds in a day.</p>
     /// </note>
     /// This field is required.
@@ -235,14 +195,14 @@ impl GetBucketMetricDataInputBuilder {
         self.period = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The granularity, in seconds, of the returned data points.</p><note>
+    /// <p>The granularity, in seconds, of the returned data points.</p> <note>
     /// <p>Bucket storage metrics are reported once per day. Therefore, you should specify a period of 86400 seconds, which is the number of seconds in a day.</p>
     /// </note>
     pub fn set_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.period = input;
         self
     }
-    /// <p>The granularity, in seconds, of the returned data points.</p><note>
+    /// <p>The granularity, in seconds, of the returned data points.</p> <note>
     /// <p>Bucket storage metrics are reported once per day. Therefore, you should specify a period of 86400 seconds, which is the number of seconds in a day.</p>
     /// </note>
     pub fn get_period(&self) -> &::std::option::Option<i32> {
@@ -255,16 +215,11 @@ impl GetBucketMetricDataInputBuilder {
     /// <p>The statistic for the metric.</p>
     /// <p>The following statistics are available:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low volumes of activity for your application.</p></li>
-    /// <li>
-    /// <p><code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high volumes of activity for your application.</p></li>
-    /// <li>
-    /// <p><code>Sum</code> - The sum of all values submitted for the matching metric. You can use this statistic to determine the total volume of a metric.</p></li>
-    /// <li>
-    /// <p><code>Average</code> - The value of <code>Sum</code> / <code>SampleCount</code> during the specified period. By comparing this statistic with the <code>Minimum</code> and <code>Maximum</code> values, you can determine the full scope of a metric and how close the average use is to the <code>Minimum</code> and <code>Maximum</code> values. This comparison helps you to know when to increase or decrease your resources.</p></li>
-    /// <li>
-    /// <p><code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p></li>
+    /// <li> <p> <code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low volumes of activity for your application.</p> </li>
+    /// <li> <p> <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high volumes of activity for your application.</p> </li>
+    /// <li> <p> <code>Sum</code> - The sum of all values submitted for the matching metric. You can use this statistic to determine the total volume of a metric.</p> </li>
+    /// <li> <p> <code>Average</code> - The value of <code>Sum</code> / <code>SampleCount</code> during the specified period. By comparing this statistic with the <code>Minimum</code> and <code>Maximum</code> values, you can determine the full scope of a metric and how close the average use is to the <code>Minimum</code> and <code>Maximum</code> values. This comparison helps you to know when to increase or decrease your resources.</p> </li>
+    /// <li> <p> <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p> </li>
     /// </ul>
     pub fn statistics(mut self, input: crate::types::MetricStatistic) -> Self {
         let mut v = self.statistics.unwrap_or_default();
@@ -275,16 +230,11 @@ impl GetBucketMetricDataInputBuilder {
     /// <p>The statistic for the metric.</p>
     /// <p>The following statistics are available:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low volumes of activity for your application.</p></li>
-    /// <li>
-    /// <p><code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high volumes of activity for your application.</p></li>
-    /// <li>
-    /// <p><code>Sum</code> - The sum of all values submitted for the matching metric. You can use this statistic to determine the total volume of a metric.</p></li>
-    /// <li>
-    /// <p><code>Average</code> - The value of <code>Sum</code> / <code>SampleCount</code> during the specified period. By comparing this statistic with the <code>Minimum</code> and <code>Maximum</code> values, you can determine the full scope of a metric and how close the average use is to the <code>Minimum</code> and <code>Maximum</code> values. This comparison helps you to know when to increase or decrease your resources.</p></li>
-    /// <li>
-    /// <p><code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p></li>
+    /// <li> <p> <code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low volumes of activity for your application.</p> </li>
+    /// <li> <p> <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high volumes of activity for your application.</p> </li>
+    /// <li> <p> <code>Sum</code> - The sum of all values submitted for the matching metric. You can use this statistic to determine the total volume of a metric.</p> </li>
+    /// <li> <p> <code>Average</code> - The value of <code>Sum</code> / <code>SampleCount</code> during the specified period. By comparing this statistic with the <code>Minimum</code> and <code>Maximum</code> values, you can determine the full scope of a metric and how close the average use is to the <code>Minimum</code> and <code>Maximum</code> values. This comparison helps you to know when to increase or decrease your resources.</p> </li>
+    /// <li> <p> <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p> </li>
     /// </ul>
     pub fn set_statistics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricStatistic>>) -> Self {
         self.statistics = input;
@@ -293,16 +243,11 @@ impl GetBucketMetricDataInputBuilder {
     /// <p>The statistic for the metric.</p>
     /// <p>The following statistics are available:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low volumes of activity for your application.</p></li>
-    /// <li>
-    /// <p><code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high volumes of activity for your application.</p></li>
-    /// <li>
-    /// <p><code>Sum</code> - The sum of all values submitted for the matching metric. You can use this statistic to determine the total volume of a metric.</p></li>
-    /// <li>
-    /// <p><code>Average</code> - The value of <code>Sum</code> / <code>SampleCount</code> during the specified period. By comparing this statistic with the <code>Minimum</code> and <code>Maximum</code> values, you can determine the full scope of a metric and how close the average use is to the <code>Minimum</code> and <code>Maximum</code> values. This comparison helps you to know when to increase or decrease your resources.</p></li>
-    /// <li>
-    /// <p><code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p></li>
+    /// <li> <p> <code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low volumes of activity for your application.</p> </li>
+    /// <li> <p> <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high volumes of activity for your application.</p> </li>
+    /// <li> <p> <code>Sum</code> - The sum of all values submitted for the matching metric. You can use this statistic to determine the total volume of a metric.</p> </li>
+    /// <li> <p> <code>Average</code> - The value of <code>Sum</code> / <code>SampleCount</code> during the specified period. By comparing this statistic with the <code>Minimum</code> and <code>Maximum</code> values, you can determine the full scope of a metric and how close the average use is to the <code>Minimum</code> and <code>Maximum</code> values. This comparison helps you to know when to increase or decrease your resources.</p> </li>
+    /// <li> <p> <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p> </li>
     /// </ul>
     pub fn get_statistics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricStatistic>> {
         &self.statistics

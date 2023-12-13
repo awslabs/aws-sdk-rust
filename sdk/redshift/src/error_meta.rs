@@ -19,15 +19,15 @@ pub enum Error {
     AuthorizationNotFoundFault(crate::types::error::AuthorizationNotFoundFault),
     /// <p>The authorization quota for the cluster security group has been reached.</p>
     AuthorizationQuotaExceededFault(crate::types::error::AuthorizationQuotaExceededFault),
-    /// <p>The maximum number for a batch delete of snapshots has been reached. The limit is 100.</p>
+    /// <p>The maximum number for a batch delete of snapshots has been reached. The limit is 100. </p>
     BatchDeleteRequestSizeExceededFault(crate::types::error::BatchDeleteRequestSizeExceededFault),
-    /// <p>The maximum number for snapshot identifiers has been reached. The limit is 100.</p>
+    /// <p>The maximum number for snapshot identifiers has been reached. The limit is 100. </p>
     BatchModifyClusterSnapshotsLimitExceededFault(crate::types::error::BatchModifyClusterSnapshotsLimitExceededFault),
     /// <p>Could not find the specified S3 bucket.</p>
     BucketNotFoundFault(crate::types::error::BucketNotFoundFault),
     /// <p>The account already has a cluster with the given identifier.</p>
     ClusterAlreadyExistsFault(crate::types::error::ClusterAlreadyExistsFault),
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.</p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
     ClusterNotFoundFault(crate::types::error::ClusterNotFoundFault),
     /// <p>Cluster is already on the latest database revision.</p>
     ClusterOnLatestRevisionFault(crate::types::error::ClusterOnLatestRevisionFault),
@@ -35,15 +35,15 @@ pub enum Error {
     ClusterParameterGroupAlreadyExistsFault(crate::types::error::ClusterParameterGroupAlreadyExistsFault),
     /// <p>The parameter group name does not refer to an existing parameter group.</p>
     ClusterParameterGroupNotFoundFault(crate::types::error::ClusterParameterGroupNotFoundFault),
-    /// <p>The request would result in the user exceeding the allowed number of cluster parameter groups. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+    /// <p>The request would result in the user exceeding the allowed number of cluster parameter groups. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
     ClusterParameterGroupQuotaExceededFault(crate::types::error::ClusterParameterGroupQuotaExceededFault),
-    /// <p>The request would exceed the allowed number of cluster instances for this account. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+    /// <p>The request would exceed the allowed number of cluster instances for this account. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
     ClusterQuotaExceededFault(crate::types::error::ClusterQuotaExceededFault),
     /// <p>A cluster security group with the same name already exists.</p>
     ClusterSecurityGroupAlreadyExistsFault(crate::types::error::ClusterSecurityGroupAlreadyExistsFault),
     /// <p>The cluster security group name does not refer to an existing cluster security group.</p>
     ClusterSecurityGroupNotFoundFault(crate::types::error::ClusterSecurityGroupNotFoundFault),
-    /// <p>The request would result in the user exceeding the allowed number of cluster security groups. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+    /// <p>The request would result in the user exceeding the allowed number of cluster security groups. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
     ClusterSecurityGroupQuotaExceededFault(crate::types::error::ClusterSecurityGroupQuotaExceededFault),
     /// <p>The value specified as a snapshot identifier is already used by an existing snapshot.</p>
     ClusterSnapshotAlreadyExistsFault(crate::types::error::ClusterSnapshotAlreadyExistsFault),
@@ -51,13 +51,13 @@ pub enum Error {
     ClusterSnapshotNotFoundFault(crate::types::error::ClusterSnapshotNotFoundFault),
     /// <p>The request would result in the user exceeding the allowed number of cluster snapshots.</p>
     ClusterSnapshotQuotaExceededFault(crate::types::error::ClusterSnapshotQuotaExceededFault),
-    /// <p>A <i>ClusterSubnetGroupName</i> is already used by an existing cluster subnet group.</p>
+    /// <p>A <i>ClusterSubnetGroupName</i> is already used by an existing cluster subnet group. </p>
     ClusterSubnetGroupAlreadyExistsFault(crate::types::error::ClusterSubnetGroupAlreadyExistsFault),
     /// <p>The cluster subnet group name does not refer to an existing cluster subnet group.</p>
     ClusterSubnetGroupNotFoundFault(crate::types::error::ClusterSubnetGroupNotFoundFault),
-    /// <p>The request would result in user exceeding the allowed number of cluster subnet groups. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+    /// <p>The request would result in user exceeding the allowed number of cluster subnet groups. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
     ClusterSubnetGroupQuotaExceededFault(crate::types::error::ClusterSubnetGroupQuotaExceededFault),
-    /// <p>The request would result in user exceeding the allowed number of subnets in a cluster subnet groups. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+    /// <p>The request would result in user exceeding the allowed number of subnets in a cluster subnet groups. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
     ClusterSubnetQuotaExceededFault(crate::types::error::ClusterSubnetQuotaExceededFault),
     /// <p>There is a conflict while updating the resource policy.</p>
     ConflictPolicyUpdateFault(crate::types::error::ConflictPolicyUpdateFault),
@@ -87,19 +87,19 @@ pub enum Error {
     EndpointsPerAuthorizationLimitExceededFault(crate::types::error::EndpointsPerAuthorizationLimitExceededFault),
     /// <p>The number of Redshift-managed VPC endpoints per cluster has exceeded its limit.</p>
     EndpointsPerClusterLimitExceededFault(crate::types::error::EndpointsPerClusterLimitExceededFault),
-    /// <p>The request would exceed the allowed number of event subscriptions for this account. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+    /// <p>The request would exceed the allowed number of event subscriptions for this account. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
     EventSubscriptionQuotaExceededFault(crate::types::error::EventSubscriptionQuotaExceededFault),
     /// <p>There is already an existing Amazon Redshift HSM client certificate with the specified identifier.</p>
     HsmClientCertificateAlreadyExistsFault(crate::types::error::HsmClientCertificateAlreadyExistsFault),
     /// <p>There is no Amazon Redshift HSM client certificate with the specified identifier.</p>
     HsmClientCertificateNotFoundFault(crate::types::error::HsmClientCertificateNotFoundFault),
-    /// <p>The quota for HSM client certificates has been reached. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+    /// <p>The quota for HSM client certificates has been reached. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
     HsmClientCertificateQuotaExceededFault(crate::types::error::HsmClientCertificateQuotaExceededFault),
     /// <p>There is already an existing Amazon Redshift HSM configuration with the specified identifier.</p>
     HsmConfigurationAlreadyExistsFault(crate::types::error::HsmConfigurationAlreadyExistsFault),
     /// <p>There is no Amazon Redshift HSM configuration with the specified identifier.</p>
     HsmConfigurationNotFoundFault(crate::types::error::HsmConfigurationNotFoundFault),
-    /// <p>The quota for HSM configurations has been reached. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+    /// <p>The quota for HSM configurations has been reached. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
     HsmConfigurationQuotaExceededFault(crate::types::error::HsmConfigurationQuotaExceededFault),
     /// <p>You have exceeded the allowed number of table restore requests. Wait for your current table restore requests to complete before making a new request.</p>
     InProgressTableRestoreQuotaExceededFault(crate::types::error::InProgressTableRestoreQuotaExceededFault),
@@ -117,13 +117,13 @@ pub enum Error {
     InvalidAuthorizationStateFault(crate::types::error::InvalidAuthorizationStateFault),
     /// <p>The cluster parameter group action can not be completed because another task is in progress that involves the parameter group. Wait a few moments and try the operation again.</p>
     InvalidClusterParameterGroupStateFault(crate::types::error::InvalidClusterParameterGroupStateFault),
-    /// <p>The state of the cluster security group is not <code>available</code>.</p>
+    /// <p>The state of the cluster security group is not <code>available</code>. </p>
     InvalidClusterSecurityGroupStateFault(crate::types::error::InvalidClusterSecurityGroupStateFault),
     /// <p>The cluster snapshot schedule state is not valid.</p>
     InvalidClusterSnapshotScheduleStateFault(crate::types::error::InvalidClusterSnapshotScheduleStateFault),
-    /// <p>The specified cluster snapshot is not in the <code>available</code> state, or other accounts are authorized to access the snapshot.</p>
+    /// <p>The specified cluster snapshot is not in the <code>available</code> state, or other accounts are authorized to access the snapshot. </p>
     InvalidClusterSnapshotStateFault(crate::types::error::InvalidClusterSnapshotStateFault),
-    /// <p>The specified cluster is not in the <code>available</code> state.</p>
+    /// <p>The specified cluster is not in the <code>available</code> state. </p>
     InvalidClusterStateFault(crate::types::error::InvalidClusterStateFault),
     /// <p>The cluster subnet group cannot be deleted because it is in use.</p>
     InvalidClusterSubnetGroupStateFault(crate::types::error::InvalidClusterSubnetGroupStateFault),
@@ -158,7 +158,7 @@ pub enum Error {
     InvalidS3KeyPrefixFault(crate::types::error::InvalidS3KeyPrefixFault),
     /// <p>The schedule you submitted isn't valid.</p>
     InvalidScheduleFault(crate::types::error::InvalidScheduleFault),
-    /// <p>The scheduled action is not valid.</p>
+    /// <p>The scheduled action is not valid. </p>
     InvalidScheduledActionFault(crate::types::error::InvalidScheduledActionFault),
     /// <p>The snapshot copy grant can't be deleted because it is used by one or more clusters.</p>
     InvalidSnapshotCopyGrantStateFault(crate::types::error::InvalidSnapshotCopyGrantStateFault),
@@ -180,7 +180,7 @@ pub enum Error {
     LimitExceededFault(crate::types::error::LimitExceededFault),
     /// <p>The operation would exceed the number of nodes allowed for a cluster.</p>
     NumberOfNodesPerClusterLimitExceededFault(crate::types::error::NumberOfNodesPerClusterLimitExceededFault),
-    /// <p>The operation would exceed the number of nodes allotted to the account. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+    /// <p>The operation would exceed the number of nodes allotted to the account. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
     NumberOfNodesQuotaExceededFault(crate::types::error::NumberOfNodesQuotaExceededFault),
     /// <p>The name of the partner was not found.</p>
     PartnerNotFoundFault(crate::types::error::PartnerNotFoundFault),
@@ -200,7 +200,7 @@ pub enum Error {
     ReservedNodeNotFoundFault(crate::types::error::ReservedNodeNotFoundFault),
     /// <p>Specified offering does not exist.</p>
     ReservedNodeOfferingNotFoundFault(crate::types::error::ReservedNodeOfferingNotFoundFault),
-    /// <p>Request would exceed the user's compute node quota. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+    /// <p>Request would exceed the user's compute node quota. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
     ReservedNodeQuotaExceededFault(crate::types::error::ReservedNodeQuotaExceededFault),
     /// <p>A resize operation for the specified cluster is not found.</p>
     ResizeNotFoundFault(crate::types::error::ResizeNotFoundFault),
@@ -214,13 +214,13 @@ pub enum Error {
     SnsTopicArnNotFoundFault(crate::types::error::SnsTopicArnNotFoundFault),
     /// <p>The definition you submitted is not supported.</p>
     ScheduleDefinitionTypeUnsupportedFault(crate::types::error::ScheduleDefinitionTypeUnsupportedFault),
-    /// <p>The scheduled action already exists.</p>
+    /// <p>The scheduled action already exists. </p>
     ScheduledActionAlreadyExistsFault(crate::types::error::ScheduledActionAlreadyExistsFault),
-    /// <p>The scheduled action cannot be found.</p>
+    /// <p>The scheduled action cannot be found. </p>
     ScheduledActionNotFoundFault(crate::types::error::ScheduledActionNotFoundFault),
-    /// <p>The quota for scheduled actions exceeded.</p>
+    /// <p>The quota for scheduled actions exceeded. </p>
     ScheduledActionQuotaExceededFault(crate::types::error::ScheduledActionQuotaExceededFault),
-    /// <p>The action type specified for a scheduled action is not supported.</p>
+    /// <p>The action type specified for a scheduled action is not supported. </p>
     ScheduledActionTypeUnsupportedFault(crate::types::error::ScheduledActionTypeUnsupportedFault),
     /// <p>The cluster already has cross-region snapshot copy disabled.</p>
     SnapshotCopyAlreadyDisabledFault(crate::types::error::SnapshotCopyAlreadyDisabledFault),
@@ -234,11 +234,11 @@ pub enum Error {
     SnapshotCopyGrantNotFoundFault(crate::types::error::SnapshotCopyGrantNotFoundFault),
     /// <p>The Amazon Web Services account has exceeded the maximum number of snapshot copy grants in this region.</p>
     SnapshotCopyGrantQuotaExceededFault(crate::types::error::SnapshotCopyGrantQuotaExceededFault),
-    /// <p>The specified snapshot schedule already exists.</p>
+    /// <p>The specified snapshot schedule already exists. </p>
     SnapshotScheduleAlreadyExistsFault(crate::types::error::SnapshotScheduleAlreadyExistsFault),
-    /// <p>We could not find the specified snapshot schedule.</p>
+    /// <p>We could not find the specified snapshot schedule. </p>
     SnapshotScheduleNotFoundFault(crate::types::error::SnapshotScheduleNotFoundFault),
-    /// <p>You have exceeded the quota of snapshot schedules.</p>
+    /// <p>You have exceeded the quota of snapshot schedules. </p>
     SnapshotScheduleQuotaExceededFault(crate::types::error::SnapshotScheduleQuotaExceededFault),
     /// <p>The specified snapshot schedule is already being updated.</p>
     SnapshotScheduleUpdateInProgressFault(crate::types::error::SnapshotScheduleUpdateInProgressFault),
@@ -256,7 +256,7 @@ pub enum Error {
     SubscriptionNotFoundFault(crate::types::error::SubscriptionNotFoundFault),
     /// <p>The value specified for the event severity was not one of the allowed values, or it specified a severity that does not apply to the specified source type. The allowed values are ERROR and INFO.</p>
     SubscriptionSeverityNotFoundFault(crate::types::error::SubscriptionSeverityNotFoundFault),
-    /// <p>The number of tables in the cluster exceeds the limit for the requested new cluster node type.</p>
+    /// <p>The number of tables in the cluster exceeds the limit for the requested new cluster node type. </p>
     TableLimitExceededFault(crate::types::error::TableLimitExceededFault),
     /// <p>The specified <code>TableRestoreRequestId</code> value was not found.</p>
     TableRestoreNotFoundFault(crate::types::error::TableRestoreNotFoundFault),
@@ -272,7 +272,7 @@ pub enum Error {
     UnsupportedOperationFault(crate::types::error::UnsupportedOperationFault),
     /// <p>A request option was specified that is not supported.</p>
     UnsupportedOptionFault(crate::types::error::UnsupportedOptionFault),
-    /// <p>The usage limit already exists.</p>
+    /// <p>The usage limit already exists. </p>
     UsageLimitAlreadyExistsFault(crate::types::error::UsageLimitAlreadyExistsFault),
     /// <p>The usage limit identifier can't be found.</p>
     UsageLimitNotFoundFault(crate::types::error::UsageLimitNotFoundFault),

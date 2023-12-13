@@ -5,10 +5,8 @@
 pub struct ModifyCacheSubnetGroupOutput {
     /// <p>Represents the output of one of the following operations:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CreateCacheSubnetGroup</code></p></li>
-    /// <li>
-    /// <p><code>ModifyCacheSubnetGroup</code></p></li>
+    /// <li> <p> <code>CreateCacheSubnetGroup</code> </p> </li>
+    /// <li> <p> <code>ModifyCacheSubnetGroup</code> </p> </li>
     /// </ul>
     pub cache_subnet_group: ::std::option::Option<crate::types::CacheSubnetGroup>,
     _request_id: Option<String>,
@@ -16,10 +14,8 @@ pub struct ModifyCacheSubnetGroupOutput {
 impl ModifyCacheSubnetGroupOutput {
     /// <p>Represents the output of one of the following operations:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CreateCacheSubnetGroup</code></p></li>
-    /// <li>
-    /// <p><code>ModifyCacheSubnetGroup</code></p></li>
+    /// <li> <p> <code>CreateCacheSubnetGroup</code> </p> </li>
+    /// <li> <p> <code>ModifyCacheSubnetGroup</code> </p> </li>
     /// </ul>
     pub fn cache_subnet_group(&self) -> ::std::option::Option<&crate::types::CacheSubnetGroup> {
         self.cache_subnet_group.as_ref()
@@ -47,10 +43,8 @@ pub struct ModifyCacheSubnetGroupOutputBuilder {
 impl ModifyCacheSubnetGroupOutputBuilder {
     /// <p>Represents the output of one of the following operations:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CreateCacheSubnetGroup</code></p></li>
-    /// <li>
-    /// <p><code>ModifyCacheSubnetGroup</code></p></li>
+    /// <li> <p> <code>CreateCacheSubnetGroup</code> </p> </li>
+    /// <li> <p> <code>ModifyCacheSubnetGroup</code> </p> </li>
     /// </ul>
     pub fn cache_subnet_group(mut self, input: crate::types::CacheSubnetGroup) -> Self {
         self.cache_subnet_group = ::std::option::Option::Some(input);
@@ -58,10 +52,8 @@ impl ModifyCacheSubnetGroupOutputBuilder {
     }
     /// <p>Represents the output of one of the following operations:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CreateCacheSubnetGroup</code></p></li>
-    /// <li>
-    /// <p><code>ModifyCacheSubnetGroup</code></p></li>
+    /// <li> <p> <code>CreateCacheSubnetGroup</code> </p> </li>
+    /// <li> <p> <code>ModifyCacheSubnetGroup</code> </p> </li>
     /// </ul>
     pub fn set_cache_subnet_group(mut self, input: ::std::option::Option<crate::types::CacheSubnetGroup>) -> Self {
         self.cache_subnet_group = input;
@@ -69,10 +61,8 @@ impl ModifyCacheSubnetGroupOutputBuilder {
     }
     /// <p>Represents the output of one of the following operations:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CreateCacheSubnetGroup</code></p></li>
-    /// <li>
-    /// <p><code>ModifyCacheSubnetGroup</code></p></li>
+    /// <li> <p> <code>CreateCacheSubnetGroup</code> </p> </li>
+    /// <li> <p> <code>ModifyCacheSubnetGroup</code> </p> </li>
     /// </ul>
     pub fn get_cache_subnet_group(&self) -> &::std::option::Option<crate::types::CacheSubnetGroup> {
         &self.cache_subnet_group

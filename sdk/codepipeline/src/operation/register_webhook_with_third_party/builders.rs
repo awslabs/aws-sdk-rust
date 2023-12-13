@@ -108,17 +108,17 @@ impl RegisterWebhookWithThirdPartyFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of an existing webhook created with PutWebhook to register with a supported third party.</p>
+    /// <p>The name of an existing webhook created with PutWebhook to register with a supported third party. </p>
     pub fn webhook_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.webhook_name(input.into());
         self
     }
-    /// <p>The name of an existing webhook created with PutWebhook to register with a supported third party.</p>
+    /// <p>The name of an existing webhook created with PutWebhook to register with a supported third party. </p>
     pub fn set_webhook_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_webhook_name(input);
         self
     }
-    /// <p>The name of an existing webhook created with PutWebhook to register with a supported third party.</p>
+    /// <p>The name of an existing webhook created with PutWebhook to register with a supported third party. </p>
     pub fn get_webhook_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_webhook_name()
     }

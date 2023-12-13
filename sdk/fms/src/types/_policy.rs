@@ -15,18 +15,12 @@ pub struct Policy {
     /// <p>The type of resource protected by or in scope of the policy. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a>. To apply this policy to multiple resource types, specify a resource type of <code>ResourceTypeList</code> and then specify the resource types in a <code>ResourceTypeList</code>.</p>
     /// <p>The following are valid resource types for each Firewall Manager policy type:</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon Web Services WAF Classic - <code>AWS::ApiGateway::Stage</code>, <code>AWS::CloudFront::Distribution</code>, and <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>.</p></li>
-    /// <li>
-    /// <p>WAF - <code>AWS::ApiGateway::Stage</code>, <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, and <code>AWS::CloudFront::Distribution</code>.</p></li>
-    /// <li>
-    /// <p>DNS Firewall, Network Firewall, and third-party firewall - <code>AWS::EC2::VPC</code>.</p></li>
-    /// <li>
-    /// <p>Shield Advanced - <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, <code>AWS::ElasticLoadBalancing::LoadBalancer</code>, <code>AWS::EC2::EIP</code>, and <code>AWS::CloudFront::Distribution</code>.</p></li>
-    /// <li>
-    /// <p>Security group content audit - <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>.</p></li>
-    /// <li>
-    /// <p>Security group usage audit - <code>AWS::EC2::SecurityGroup</code>.</p></li>
+    /// <li> <p>Amazon Web Services WAF Classic - <code>AWS::ApiGateway::Stage</code>, <code>AWS::CloudFront::Distribution</code>, and <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>.</p> </li>
+    /// <li> <p>WAF - <code>AWS::ApiGateway::Stage</code>, <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, and <code>AWS::CloudFront::Distribution</code>.</p> </li>
+    /// <li> <p> DNS Firewall, Network Firewall, and third-party firewall - <code>AWS::EC2::VPC</code>.</p> </li>
+    /// <li> <p>Shield Advanced - <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, <code>AWS::ElasticLoadBalancing::LoadBalancer</code>, <code>AWS::EC2::EIP</code>, and <code>AWS::CloudFront::Distribution</code>.</p> </li>
+    /// <li> <p>Security group content audit - <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>.</p> </li>
+    /// <li> <p>Security group usage audit - <code>AWS::EC2::SecurityGroup</code>.</p> </li>
     /// </ul>
     pub resource_type: ::std::string::String,
     /// <p>An array of <code>ResourceType</code> objects. Use this only to specify multiple resource types. To specify a single resource type, use <code>ResourceType</code>.</p>
@@ -37,33 +31,27 @@ pub struct Policy {
     pub exclude_resource_tags: bool,
     /// <p>Indicates if the policy should be automatically applied to new resources.</p>
     pub remediation_enabled: bool,
-    /// <p>Indicates whether Firewall Manager should automatically remove protections from resources that leave the policy scope and clean up resources that Firewall Manager is managing for accounts when those accounts leave policy scope. For example, Firewall Manager will disassociate a Firewall Manager managed web ACL from a protected customer resource when the customer resource leaves policy scope.</p>
-    /// <p>By default, Firewall Manager doesn't remove protections or delete Firewall Manager managed resources.</p>
+    /// <p>Indicates whether Firewall Manager should automatically remove protections from resources that leave the policy scope and clean up resources that Firewall Manager is managing for accounts when those accounts leave policy scope. For example, Firewall Manager will disassociate a Firewall Manager managed web ACL from a protected customer resource when the customer resource leaves policy scope. </p>
+    /// <p>By default, Firewall Manager doesn't remove protections or delete Firewall Manager managed resources. </p>
     /// <p>This option is not available for Shield Advanced or WAF Classic policies.</p>
     pub delete_unused_fm_managed_resources: bool,
     /// <p>Specifies the Amazon Web Services account IDs and Organizations organizational units (OUs) to include in the policy. Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs, including any child OUs and accounts that are added at a later time.</p>
     /// <p>You can specify inclusions or exclusions, but not both. If you specify an <code>IncludeMap</code>, Firewall Manager applies the policy to all accounts specified by the <code>IncludeMap</code>, and does not evaluate any <code>ExcludeMap</code> specifications. If you do not specify an <code>IncludeMap</code>, then Firewall Manager applies the policy to all accounts except for those specified by the <code>ExcludeMap</code>.</p>
-    /// <p>You can specify account IDs, OUs, or a combination:</p>
+    /// <p>You can specify account IDs, OUs, or a combination: </p>
     /// <ul>
-    /// <li>
-    /// <p>Specify account IDs by setting the key to <code>ACCOUNT</code>. For example, the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p></li>
-    /// <li>
-    /// <p>Specify OUs by setting the key to <code>ORG_UNIT</code>. For example, the following is a valid map: <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p></li>
-    /// <li>
-    /// <p>Specify accounts and OUs together in a single map, separated with a comma. For example, the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”], “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p></li>
+    /// <li> <p>Specify account IDs by setting the key to <code>ACCOUNT</code>. For example, the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p> </li>
+    /// <li> <p>Specify OUs by setting the key to <code>ORG_UNIT</code>. For example, the following is a valid map: <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li>
+    /// <li> <p>Specify accounts and OUs together in a single map, separated with a comma. For example, the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”], “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li>
     /// </ul>
     pub include_map:
         ::std::option::Option<::std::collections::HashMap<crate::types::CustomerPolicyScopeIdType, ::std::vec::Vec<::std::string::String>>>,
     /// <p>Specifies the Amazon Web Services account IDs and Organizations organizational units (OUs) to exclude from the policy. Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs, including any child OUs and accounts that are added at a later time.</p>
     /// <p>You can specify inclusions or exclusions, but not both. If you specify an <code>IncludeMap</code>, Firewall Manager applies the policy to all accounts specified by the <code>IncludeMap</code>, and does not evaluate any <code>ExcludeMap</code> specifications. If you do not specify an <code>IncludeMap</code>, then Firewall Manager applies the policy to all accounts except for those specified by the <code>ExcludeMap</code>.</p>
-    /// <p>You can specify account IDs, OUs, or a combination:</p>
+    /// <p>You can specify account IDs, OUs, or a combination: </p>
     /// <ul>
-    /// <li>
-    /// <p>Specify account IDs by setting the key to <code>ACCOUNT</code>. For example, the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p></li>
-    /// <li>
-    /// <p>Specify OUs by setting the key to <code>ORG_UNIT</code>. For example, the following is a valid map: <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p></li>
-    /// <li>
-    /// <p>Specify accounts and OUs together in a single map, separated with a comma. For example, the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”], “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p></li>
+    /// <li> <p>Specify account IDs by setting the key to <code>ACCOUNT</code>. For example, the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p> </li>
+    /// <li> <p>Specify OUs by setting the key to <code>ORG_UNIT</code>. For example, the following is a valid map: <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li>
+    /// <li> <p>Specify accounts and OUs together in a single map, separated with a comma. For example, the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”], “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li>
     /// </ul>
     pub exclude_map:
         ::std::option::Option<::std::collections::HashMap<crate::types::CustomerPolicyScopeIdType, ::std::vec::Vec<::std::string::String>>>,
@@ -73,10 +61,8 @@ pub struct Policy {
     pub policy_description: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the policy is in or out of an admin's policy or Region scope.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ACTIVE</code> - The administrator can manage and delete the policy.</p></li>
-    /// <li>
-    /// <p><code>OUT_OF_ADMIN_SCOPE</code> - The administrator can view the policy, but they can't edit or delete the policy. Existing policy protections stay in place. Any new resources that come into scope of the policy won't be protected.</p></li>
+    /// <li> <p> <code>ACTIVE</code> - The administrator can manage and delete the policy.</p> </li>
+    /// <li> <p> <code>OUT_OF_ADMIN_SCOPE</code> - The administrator can view the policy, but they can't edit or delete the policy. Existing policy protections stay in place. Any new resources that come into scope of the policy won't be protected.</p> </li>
     /// </ul>
     pub policy_status: ::std::option::Option<crate::types::CustomerPolicyStatus>,
 }
@@ -101,18 +87,12 @@ impl Policy {
     /// <p>The type of resource protected by or in scope of the policy. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a>. To apply this policy to multiple resource types, specify a resource type of <code>ResourceTypeList</code> and then specify the resource types in a <code>ResourceTypeList</code>.</p>
     /// <p>The following are valid resource types for each Firewall Manager policy type:</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon Web Services WAF Classic - <code>AWS::ApiGateway::Stage</code>, <code>AWS::CloudFront::Distribution</code>, and <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>.</p></li>
-    /// <li>
-    /// <p>WAF - <code>AWS::ApiGateway::Stage</code>, <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, and <code>AWS::CloudFront::Distribution</code>.</p></li>
-    /// <li>
-    /// <p>DNS Firewall, Network Firewall, and third-party firewall - <code>AWS::EC2::VPC</code>.</p></li>
-    /// <li>
-    /// <p>Shield Advanced - <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, <code>AWS::ElasticLoadBalancing::LoadBalancer</code>, <code>AWS::EC2::EIP</code>, and <code>AWS::CloudFront::Distribution</code>.</p></li>
-    /// <li>
-    /// <p>Security group content audit - <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>.</p></li>
-    /// <li>
-    /// <p>Security group usage audit - <code>AWS::EC2::SecurityGroup</code>.</p></li>
+    /// <li> <p>Amazon Web Services WAF Classic - <code>AWS::ApiGateway::Stage</code>, <code>AWS::CloudFront::Distribution</code>, and <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>.</p> </li>
+    /// <li> <p>WAF - <code>AWS::ApiGateway::Stage</code>, <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, and <code>AWS::CloudFront::Distribution</code>.</p> </li>
+    /// <li> <p> DNS Firewall, Network Firewall, and third-party firewall - <code>AWS::EC2::VPC</code>.</p> </li>
+    /// <li> <p>Shield Advanced - <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, <code>AWS::ElasticLoadBalancing::LoadBalancer</code>, <code>AWS::EC2::EIP</code>, and <code>AWS::CloudFront::Distribution</code>.</p> </li>
+    /// <li> <p>Security group content audit - <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>.</p> </li>
+    /// <li> <p>Security group usage audit - <code>AWS::EC2::SecurityGroup</code>.</p> </li>
     /// </ul>
     pub fn resource_type(&self) -> &str {
         use std::ops::Deref;
@@ -138,22 +118,19 @@ impl Policy {
     pub fn remediation_enabled(&self) -> bool {
         self.remediation_enabled
     }
-    /// <p>Indicates whether Firewall Manager should automatically remove protections from resources that leave the policy scope and clean up resources that Firewall Manager is managing for accounts when those accounts leave policy scope. For example, Firewall Manager will disassociate a Firewall Manager managed web ACL from a protected customer resource when the customer resource leaves policy scope.</p>
-    /// <p>By default, Firewall Manager doesn't remove protections or delete Firewall Manager managed resources.</p>
+    /// <p>Indicates whether Firewall Manager should automatically remove protections from resources that leave the policy scope and clean up resources that Firewall Manager is managing for accounts when those accounts leave policy scope. For example, Firewall Manager will disassociate a Firewall Manager managed web ACL from a protected customer resource when the customer resource leaves policy scope. </p>
+    /// <p>By default, Firewall Manager doesn't remove protections or delete Firewall Manager managed resources. </p>
     /// <p>This option is not available for Shield Advanced or WAF Classic policies.</p>
     pub fn delete_unused_fm_managed_resources(&self) -> bool {
         self.delete_unused_fm_managed_resources
     }
     /// <p>Specifies the Amazon Web Services account IDs and Organizations organizational units (OUs) to include in the policy. Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs, including any child OUs and accounts that are added at a later time.</p>
     /// <p>You can specify inclusions or exclusions, but not both. If you specify an <code>IncludeMap</code>, Firewall Manager applies the policy to all accounts specified by the <code>IncludeMap</code>, and does not evaluate any <code>ExcludeMap</code> specifications. If you do not specify an <code>IncludeMap</code>, then Firewall Manager applies the policy to all accounts except for those specified by the <code>ExcludeMap</code>.</p>
-    /// <p>You can specify account IDs, OUs, or a combination:</p>
+    /// <p>You can specify account IDs, OUs, or a combination: </p>
     /// <ul>
-    /// <li>
-    /// <p>Specify account IDs by setting the key to <code>ACCOUNT</code>. For example, the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p></li>
-    /// <li>
-    /// <p>Specify OUs by setting the key to <code>ORG_UNIT</code>. For example, the following is a valid map: <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p></li>
-    /// <li>
-    /// <p>Specify accounts and OUs together in a single map, separated with a comma. For example, the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”], “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p></li>
+    /// <li> <p>Specify account IDs by setting the key to <code>ACCOUNT</code>. For example, the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p> </li>
+    /// <li> <p>Specify OUs by setting the key to <code>ORG_UNIT</code>. For example, the following is a valid map: <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li>
+    /// <li> <p>Specify accounts and OUs together in a single map, separated with a comma. For example, the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”], “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li>
     /// </ul>
     pub fn include_map(
         &self,
@@ -162,14 +139,11 @@ impl Policy {
     }
     /// <p>Specifies the Amazon Web Services account IDs and Organizations organizational units (OUs) to exclude from the policy. Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs, including any child OUs and accounts that are added at a later time.</p>
     /// <p>You can specify inclusions or exclusions, but not both. If you specify an <code>IncludeMap</code>, Firewall Manager applies the policy to all accounts specified by the <code>IncludeMap</code>, and does not evaluate any <code>ExcludeMap</code> specifications. If you do not specify an <code>IncludeMap</code>, then Firewall Manager applies the policy to all accounts except for those specified by the <code>ExcludeMap</code>.</p>
-    /// <p>You can specify account IDs, OUs, or a combination:</p>
+    /// <p>You can specify account IDs, OUs, or a combination: </p>
     /// <ul>
-    /// <li>
-    /// <p>Specify account IDs by setting the key to <code>ACCOUNT</code>. For example, the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p></li>
-    /// <li>
-    /// <p>Specify OUs by setting the key to <code>ORG_UNIT</code>. For example, the following is a valid map: <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p></li>
-    /// <li>
-    /// <p>Specify accounts and OUs together in a single map, separated with a comma. For example, the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”], “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p></li>
+    /// <li> <p>Specify account IDs by setting the key to <code>ACCOUNT</code>. For example, the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p> </li>
+    /// <li> <p>Specify OUs by setting the key to <code>ORG_UNIT</code>. For example, the following is a valid map: <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li>
+    /// <li> <p>Specify accounts and OUs together in a single map, separated with a comma. For example, the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”], “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li>
     /// </ul>
     pub fn exclude_map(
         &self,
@@ -188,10 +162,8 @@ impl Policy {
     }
     /// <p>Indicates whether the policy is in or out of an admin's policy or Region scope.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ACTIVE</code> - The administrator can manage and delete the policy.</p></li>
-    /// <li>
-    /// <p><code>OUT_OF_ADMIN_SCOPE</code> - The administrator can view the policy, but they can't edit or delete the policy. Existing policy protections stay in place. Any new resources that come into scope of the policy won't be protected.</p></li>
+    /// <li> <p> <code>ACTIVE</code> - The administrator can manage and delete the policy.</p> </li>
+    /// <li> <p> <code>OUT_OF_ADMIN_SCOPE</code> - The administrator can view the policy, but they can't edit or delete the policy. Existing policy protections stay in place. Any new resources that come into scope of the policy won't be protected.</p> </li>
     /// </ul>
     pub fn policy_status(&self) -> ::std::option::Option<&crate::types::CustomerPolicyStatus> {
         self.policy_status.as_ref()
@@ -288,18 +260,12 @@ impl PolicyBuilder {
     /// <p>The type of resource protected by or in scope of the policy. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a>. To apply this policy to multiple resource types, specify a resource type of <code>ResourceTypeList</code> and then specify the resource types in a <code>ResourceTypeList</code>.</p>
     /// <p>The following are valid resource types for each Firewall Manager policy type:</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon Web Services WAF Classic - <code>AWS::ApiGateway::Stage</code>, <code>AWS::CloudFront::Distribution</code>, and <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>.</p></li>
-    /// <li>
-    /// <p>WAF - <code>AWS::ApiGateway::Stage</code>, <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, and <code>AWS::CloudFront::Distribution</code>.</p></li>
-    /// <li>
-    /// <p>DNS Firewall, Network Firewall, and third-party firewall - <code>AWS::EC2::VPC</code>.</p></li>
-    /// <li>
-    /// <p>Shield Advanced - <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, <code>AWS::ElasticLoadBalancing::LoadBalancer</code>, <code>AWS::EC2::EIP</code>, and <code>AWS::CloudFront::Distribution</code>.</p></li>
-    /// <li>
-    /// <p>Security group content audit - <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>.</p></li>
-    /// <li>
-    /// <p>Security group usage audit - <code>AWS::EC2::SecurityGroup</code>.</p></li>
+    /// <li> <p>Amazon Web Services WAF Classic - <code>AWS::ApiGateway::Stage</code>, <code>AWS::CloudFront::Distribution</code>, and <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>.</p> </li>
+    /// <li> <p>WAF - <code>AWS::ApiGateway::Stage</code>, <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, and <code>AWS::CloudFront::Distribution</code>.</p> </li>
+    /// <li> <p> DNS Firewall, Network Firewall, and third-party firewall - <code>AWS::EC2::VPC</code>.</p> </li>
+    /// <li> <p>Shield Advanced - <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, <code>AWS::ElasticLoadBalancing::LoadBalancer</code>, <code>AWS::EC2::EIP</code>, and <code>AWS::CloudFront::Distribution</code>.</p> </li>
+    /// <li> <p>Security group content audit - <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>.</p> </li>
+    /// <li> <p>Security group usage audit - <code>AWS::EC2::SecurityGroup</code>.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -309,18 +275,12 @@ impl PolicyBuilder {
     /// <p>The type of resource protected by or in scope of the policy. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a>. To apply this policy to multiple resource types, specify a resource type of <code>ResourceTypeList</code> and then specify the resource types in a <code>ResourceTypeList</code>.</p>
     /// <p>The following are valid resource types for each Firewall Manager policy type:</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon Web Services WAF Classic - <code>AWS::ApiGateway::Stage</code>, <code>AWS::CloudFront::Distribution</code>, and <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>.</p></li>
-    /// <li>
-    /// <p>WAF - <code>AWS::ApiGateway::Stage</code>, <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, and <code>AWS::CloudFront::Distribution</code>.</p></li>
-    /// <li>
-    /// <p>DNS Firewall, Network Firewall, and third-party firewall - <code>AWS::EC2::VPC</code>.</p></li>
-    /// <li>
-    /// <p>Shield Advanced - <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, <code>AWS::ElasticLoadBalancing::LoadBalancer</code>, <code>AWS::EC2::EIP</code>, and <code>AWS::CloudFront::Distribution</code>.</p></li>
-    /// <li>
-    /// <p>Security group content audit - <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>.</p></li>
-    /// <li>
-    /// <p>Security group usage audit - <code>AWS::EC2::SecurityGroup</code>.</p></li>
+    /// <li> <p>Amazon Web Services WAF Classic - <code>AWS::ApiGateway::Stage</code>, <code>AWS::CloudFront::Distribution</code>, and <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>.</p> </li>
+    /// <li> <p>WAF - <code>AWS::ApiGateway::Stage</code>, <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, and <code>AWS::CloudFront::Distribution</code>.</p> </li>
+    /// <li> <p> DNS Firewall, Network Firewall, and third-party firewall - <code>AWS::EC2::VPC</code>.</p> </li>
+    /// <li> <p>Shield Advanced - <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, <code>AWS::ElasticLoadBalancing::LoadBalancer</code>, <code>AWS::EC2::EIP</code>, and <code>AWS::CloudFront::Distribution</code>.</p> </li>
+    /// <li> <p>Security group content audit - <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>.</p> </li>
+    /// <li> <p>Security group usage audit - <code>AWS::EC2::SecurityGroup</code>.</p> </li>
     /// </ul>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
@@ -329,18 +289,12 @@ impl PolicyBuilder {
     /// <p>The type of resource protected by or in scope of the policy. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a>. To apply this policy to multiple resource types, specify a resource type of <code>ResourceTypeList</code> and then specify the resource types in a <code>ResourceTypeList</code>.</p>
     /// <p>The following are valid resource types for each Firewall Manager policy type:</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon Web Services WAF Classic - <code>AWS::ApiGateway::Stage</code>, <code>AWS::CloudFront::Distribution</code>, and <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>.</p></li>
-    /// <li>
-    /// <p>WAF - <code>AWS::ApiGateway::Stage</code>, <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, and <code>AWS::CloudFront::Distribution</code>.</p></li>
-    /// <li>
-    /// <p>DNS Firewall, Network Firewall, and third-party firewall - <code>AWS::EC2::VPC</code>.</p></li>
-    /// <li>
-    /// <p>Shield Advanced - <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, <code>AWS::ElasticLoadBalancing::LoadBalancer</code>, <code>AWS::EC2::EIP</code>, and <code>AWS::CloudFront::Distribution</code>.</p></li>
-    /// <li>
-    /// <p>Security group content audit - <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>.</p></li>
-    /// <li>
-    /// <p>Security group usage audit - <code>AWS::EC2::SecurityGroup</code>.</p></li>
+    /// <li> <p>Amazon Web Services WAF Classic - <code>AWS::ApiGateway::Stage</code>, <code>AWS::CloudFront::Distribution</code>, and <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>.</p> </li>
+    /// <li> <p>WAF - <code>AWS::ApiGateway::Stage</code>, <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, and <code>AWS::CloudFront::Distribution</code>.</p> </li>
+    /// <li> <p> DNS Firewall, Network Firewall, and third-party firewall - <code>AWS::EC2::VPC</code>.</p> </li>
+    /// <li> <p>Shield Advanced - <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, <code>AWS::ElasticLoadBalancing::LoadBalancer</code>, <code>AWS::EC2::EIP</code>, and <code>AWS::CloudFront::Distribution</code>.</p> </li>
+    /// <li> <p>Security group content audit - <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>.</p> </li>
+    /// <li> <p>Security group usage audit - <code>AWS::EC2::SecurityGroup</code>.</p> </li>
     /// </ul>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_type
@@ -415,22 +369,22 @@ impl PolicyBuilder {
     pub fn get_remediation_enabled(&self) -> &::std::option::Option<bool> {
         &self.remediation_enabled
     }
-    /// <p>Indicates whether Firewall Manager should automatically remove protections from resources that leave the policy scope and clean up resources that Firewall Manager is managing for accounts when those accounts leave policy scope. For example, Firewall Manager will disassociate a Firewall Manager managed web ACL from a protected customer resource when the customer resource leaves policy scope.</p>
-    /// <p>By default, Firewall Manager doesn't remove protections or delete Firewall Manager managed resources.</p>
+    /// <p>Indicates whether Firewall Manager should automatically remove protections from resources that leave the policy scope and clean up resources that Firewall Manager is managing for accounts when those accounts leave policy scope. For example, Firewall Manager will disassociate a Firewall Manager managed web ACL from a protected customer resource when the customer resource leaves policy scope. </p>
+    /// <p>By default, Firewall Manager doesn't remove protections or delete Firewall Manager managed resources. </p>
     /// <p>This option is not available for Shield Advanced or WAF Classic policies.</p>
     pub fn delete_unused_fm_managed_resources(mut self, input: bool) -> Self {
         self.delete_unused_fm_managed_resources = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether Firewall Manager should automatically remove protections from resources that leave the policy scope and clean up resources that Firewall Manager is managing for accounts when those accounts leave policy scope. For example, Firewall Manager will disassociate a Firewall Manager managed web ACL from a protected customer resource when the customer resource leaves policy scope.</p>
-    /// <p>By default, Firewall Manager doesn't remove protections or delete Firewall Manager managed resources.</p>
+    /// <p>Indicates whether Firewall Manager should automatically remove protections from resources that leave the policy scope and clean up resources that Firewall Manager is managing for accounts when those accounts leave policy scope. For example, Firewall Manager will disassociate a Firewall Manager managed web ACL from a protected customer resource when the customer resource leaves policy scope. </p>
+    /// <p>By default, Firewall Manager doesn't remove protections or delete Firewall Manager managed resources. </p>
     /// <p>This option is not available for Shield Advanced or WAF Classic policies.</p>
     pub fn set_delete_unused_fm_managed_resources(mut self, input: ::std::option::Option<bool>) -> Self {
         self.delete_unused_fm_managed_resources = input;
         self
     }
-    /// <p>Indicates whether Firewall Manager should automatically remove protections from resources that leave the policy scope and clean up resources that Firewall Manager is managing for accounts when those accounts leave policy scope. For example, Firewall Manager will disassociate a Firewall Manager managed web ACL from a protected customer resource when the customer resource leaves policy scope.</p>
-    /// <p>By default, Firewall Manager doesn't remove protections or delete Firewall Manager managed resources.</p>
+    /// <p>Indicates whether Firewall Manager should automatically remove protections from resources that leave the policy scope and clean up resources that Firewall Manager is managing for accounts when those accounts leave policy scope. For example, Firewall Manager will disassociate a Firewall Manager managed web ACL from a protected customer resource when the customer resource leaves policy scope. </p>
+    /// <p>By default, Firewall Manager doesn't remove protections or delete Firewall Manager managed resources. </p>
     /// <p>This option is not available for Shield Advanced or WAF Classic policies.</p>
     pub fn get_delete_unused_fm_managed_resources(&self) -> &::std::option::Option<bool> {
         &self.delete_unused_fm_managed_resources
@@ -441,14 +395,11 @@ impl PolicyBuilder {
     ///
     /// <p>Specifies the Amazon Web Services account IDs and Organizations organizational units (OUs) to include in the policy. Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs, including any child OUs and accounts that are added at a later time.</p>
     /// <p>You can specify inclusions or exclusions, but not both. If you specify an <code>IncludeMap</code>, Firewall Manager applies the policy to all accounts specified by the <code>IncludeMap</code>, and does not evaluate any <code>ExcludeMap</code> specifications. If you do not specify an <code>IncludeMap</code>, then Firewall Manager applies the policy to all accounts except for those specified by the <code>ExcludeMap</code>.</p>
-    /// <p>You can specify account IDs, OUs, or a combination:</p>
+    /// <p>You can specify account IDs, OUs, or a combination: </p>
     /// <ul>
-    /// <li>
-    /// <p>Specify account IDs by setting the key to <code>ACCOUNT</code>. For example, the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p></li>
-    /// <li>
-    /// <p>Specify OUs by setting the key to <code>ORG_UNIT</code>. For example, the following is a valid map: <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p></li>
-    /// <li>
-    /// <p>Specify accounts and OUs together in a single map, separated with a comma. For example, the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”], “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p></li>
+    /// <li> <p>Specify account IDs by setting the key to <code>ACCOUNT</code>. For example, the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p> </li>
+    /// <li> <p>Specify OUs by setting the key to <code>ORG_UNIT</code>. For example, the following is a valid map: <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li>
+    /// <li> <p>Specify accounts and OUs together in a single map, separated with a comma. For example, the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”], “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li>
     /// </ul>
     pub fn include_map(mut self, k: crate::types::CustomerPolicyScopeIdType, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.include_map.unwrap_or_default();
@@ -458,14 +409,11 @@ impl PolicyBuilder {
     }
     /// <p>Specifies the Amazon Web Services account IDs and Organizations organizational units (OUs) to include in the policy. Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs, including any child OUs and accounts that are added at a later time.</p>
     /// <p>You can specify inclusions or exclusions, but not both. If you specify an <code>IncludeMap</code>, Firewall Manager applies the policy to all accounts specified by the <code>IncludeMap</code>, and does not evaluate any <code>ExcludeMap</code> specifications. If you do not specify an <code>IncludeMap</code>, then Firewall Manager applies the policy to all accounts except for those specified by the <code>ExcludeMap</code>.</p>
-    /// <p>You can specify account IDs, OUs, or a combination:</p>
+    /// <p>You can specify account IDs, OUs, or a combination: </p>
     /// <ul>
-    /// <li>
-    /// <p>Specify account IDs by setting the key to <code>ACCOUNT</code>. For example, the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p></li>
-    /// <li>
-    /// <p>Specify OUs by setting the key to <code>ORG_UNIT</code>. For example, the following is a valid map: <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p></li>
-    /// <li>
-    /// <p>Specify accounts and OUs together in a single map, separated with a comma. For example, the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”], “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p></li>
+    /// <li> <p>Specify account IDs by setting the key to <code>ACCOUNT</code>. For example, the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p> </li>
+    /// <li> <p>Specify OUs by setting the key to <code>ORG_UNIT</code>. For example, the following is a valid map: <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li>
+    /// <li> <p>Specify accounts and OUs together in a single map, separated with a comma. For example, the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”], “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li>
     /// </ul>
     pub fn set_include_map(
         mut self,
@@ -476,14 +424,11 @@ impl PolicyBuilder {
     }
     /// <p>Specifies the Amazon Web Services account IDs and Organizations organizational units (OUs) to include in the policy. Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs, including any child OUs and accounts that are added at a later time.</p>
     /// <p>You can specify inclusions or exclusions, but not both. If you specify an <code>IncludeMap</code>, Firewall Manager applies the policy to all accounts specified by the <code>IncludeMap</code>, and does not evaluate any <code>ExcludeMap</code> specifications. If you do not specify an <code>IncludeMap</code>, then Firewall Manager applies the policy to all accounts except for those specified by the <code>ExcludeMap</code>.</p>
-    /// <p>You can specify account IDs, OUs, or a combination:</p>
+    /// <p>You can specify account IDs, OUs, or a combination: </p>
     /// <ul>
-    /// <li>
-    /// <p>Specify account IDs by setting the key to <code>ACCOUNT</code>. For example, the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p></li>
-    /// <li>
-    /// <p>Specify OUs by setting the key to <code>ORG_UNIT</code>. For example, the following is a valid map: <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p></li>
-    /// <li>
-    /// <p>Specify accounts and OUs together in a single map, separated with a comma. For example, the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”], “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p></li>
+    /// <li> <p>Specify account IDs by setting the key to <code>ACCOUNT</code>. For example, the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p> </li>
+    /// <li> <p>Specify OUs by setting the key to <code>ORG_UNIT</code>. For example, the following is a valid map: <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li>
+    /// <li> <p>Specify accounts and OUs together in a single map, separated with a comma. For example, the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”], “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li>
     /// </ul>
     pub fn get_include_map(
         &self,
@@ -496,14 +441,11 @@ impl PolicyBuilder {
     ///
     /// <p>Specifies the Amazon Web Services account IDs and Organizations organizational units (OUs) to exclude from the policy. Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs, including any child OUs and accounts that are added at a later time.</p>
     /// <p>You can specify inclusions or exclusions, but not both. If you specify an <code>IncludeMap</code>, Firewall Manager applies the policy to all accounts specified by the <code>IncludeMap</code>, and does not evaluate any <code>ExcludeMap</code> specifications. If you do not specify an <code>IncludeMap</code>, then Firewall Manager applies the policy to all accounts except for those specified by the <code>ExcludeMap</code>.</p>
-    /// <p>You can specify account IDs, OUs, or a combination:</p>
+    /// <p>You can specify account IDs, OUs, or a combination: </p>
     /// <ul>
-    /// <li>
-    /// <p>Specify account IDs by setting the key to <code>ACCOUNT</code>. For example, the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p></li>
-    /// <li>
-    /// <p>Specify OUs by setting the key to <code>ORG_UNIT</code>. For example, the following is a valid map: <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p></li>
-    /// <li>
-    /// <p>Specify accounts and OUs together in a single map, separated with a comma. For example, the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”], “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p></li>
+    /// <li> <p>Specify account IDs by setting the key to <code>ACCOUNT</code>. For example, the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p> </li>
+    /// <li> <p>Specify OUs by setting the key to <code>ORG_UNIT</code>. For example, the following is a valid map: <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li>
+    /// <li> <p>Specify accounts and OUs together in a single map, separated with a comma. For example, the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”], “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li>
     /// </ul>
     pub fn exclude_map(mut self, k: crate::types::CustomerPolicyScopeIdType, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.exclude_map.unwrap_or_default();
@@ -513,14 +455,11 @@ impl PolicyBuilder {
     }
     /// <p>Specifies the Amazon Web Services account IDs and Organizations organizational units (OUs) to exclude from the policy. Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs, including any child OUs and accounts that are added at a later time.</p>
     /// <p>You can specify inclusions or exclusions, but not both. If you specify an <code>IncludeMap</code>, Firewall Manager applies the policy to all accounts specified by the <code>IncludeMap</code>, and does not evaluate any <code>ExcludeMap</code> specifications. If you do not specify an <code>IncludeMap</code>, then Firewall Manager applies the policy to all accounts except for those specified by the <code>ExcludeMap</code>.</p>
-    /// <p>You can specify account IDs, OUs, or a combination:</p>
+    /// <p>You can specify account IDs, OUs, or a combination: </p>
     /// <ul>
-    /// <li>
-    /// <p>Specify account IDs by setting the key to <code>ACCOUNT</code>. For example, the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p></li>
-    /// <li>
-    /// <p>Specify OUs by setting the key to <code>ORG_UNIT</code>. For example, the following is a valid map: <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p></li>
-    /// <li>
-    /// <p>Specify accounts and OUs together in a single map, separated with a comma. For example, the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”], “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p></li>
+    /// <li> <p>Specify account IDs by setting the key to <code>ACCOUNT</code>. For example, the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p> </li>
+    /// <li> <p>Specify OUs by setting the key to <code>ORG_UNIT</code>. For example, the following is a valid map: <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li>
+    /// <li> <p>Specify accounts and OUs together in a single map, separated with a comma. For example, the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”], “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li>
     /// </ul>
     pub fn set_exclude_map(
         mut self,
@@ -531,14 +470,11 @@ impl PolicyBuilder {
     }
     /// <p>Specifies the Amazon Web Services account IDs and Organizations organizational units (OUs) to exclude from the policy. Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs, including any child OUs and accounts that are added at a later time.</p>
     /// <p>You can specify inclusions or exclusions, but not both. If you specify an <code>IncludeMap</code>, Firewall Manager applies the policy to all accounts specified by the <code>IncludeMap</code>, and does not evaluate any <code>ExcludeMap</code> specifications. If you do not specify an <code>IncludeMap</code>, then Firewall Manager applies the policy to all accounts except for those specified by the <code>ExcludeMap</code>.</p>
-    /// <p>You can specify account IDs, OUs, or a combination:</p>
+    /// <p>You can specify account IDs, OUs, or a combination: </p>
     /// <ul>
-    /// <li>
-    /// <p>Specify account IDs by setting the key to <code>ACCOUNT</code>. For example, the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p></li>
-    /// <li>
-    /// <p>Specify OUs by setting the key to <code>ORG_UNIT</code>. For example, the following is a valid map: <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p></li>
-    /// <li>
-    /// <p>Specify accounts and OUs together in a single map, separated with a comma. For example, the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”], “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p></li>
+    /// <li> <p>Specify account IDs by setting the key to <code>ACCOUNT</code>. For example, the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p> </li>
+    /// <li> <p>Specify OUs by setting the key to <code>ORG_UNIT</code>. For example, the following is a valid map: <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li>
+    /// <li> <p>Specify accounts and OUs together in a single map, separated with a comma. For example, the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”], “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li>
     /// </ul>
     pub fn get_exclude_map(
         &self,
@@ -581,10 +517,8 @@ impl PolicyBuilder {
     }
     /// <p>Indicates whether the policy is in or out of an admin's policy or Region scope.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ACTIVE</code> - The administrator can manage and delete the policy.</p></li>
-    /// <li>
-    /// <p><code>OUT_OF_ADMIN_SCOPE</code> - The administrator can view the policy, but they can't edit or delete the policy. Existing policy protections stay in place. Any new resources that come into scope of the policy won't be protected.</p></li>
+    /// <li> <p> <code>ACTIVE</code> - The administrator can manage and delete the policy.</p> </li>
+    /// <li> <p> <code>OUT_OF_ADMIN_SCOPE</code> - The administrator can view the policy, but they can't edit or delete the policy. Existing policy protections stay in place. Any new resources that come into scope of the policy won't be protected.</p> </li>
     /// </ul>
     pub fn policy_status(mut self, input: crate::types::CustomerPolicyStatus) -> Self {
         self.policy_status = ::std::option::Option::Some(input);
@@ -592,10 +526,8 @@ impl PolicyBuilder {
     }
     /// <p>Indicates whether the policy is in or out of an admin's policy or Region scope.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ACTIVE</code> - The administrator can manage and delete the policy.</p></li>
-    /// <li>
-    /// <p><code>OUT_OF_ADMIN_SCOPE</code> - The administrator can view the policy, but they can't edit or delete the policy. Existing policy protections stay in place. Any new resources that come into scope of the policy won't be protected.</p></li>
+    /// <li> <p> <code>ACTIVE</code> - The administrator can manage and delete the policy.</p> </li>
+    /// <li> <p> <code>OUT_OF_ADMIN_SCOPE</code> - The administrator can view the policy, but they can't edit or delete the policy. Existing policy protections stay in place. Any new resources that come into scope of the policy won't be protected.</p> </li>
     /// </ul>
     pub fn set_policy_status(mut self, input: ::std::option::Option<crate::types::CustomerPolicyStatus>) -> Self {
         self.policy_status = input;
@@ -603,10 +535,8 @@ impl PolicyBuilder {
     }
     /// <p>Indicates whether the policy is in or out of an admin's policy or Region scope.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ACTIVE</code> - The administrator can manage and delete the policy.</p></li>
-    /// <li>
-    /// <p><code>OUT_OF_ADMIN_SCOPE</code> - The administrator can view the policy, but they can't edit or delete the policy. Existing policy protections stay in place. Any new resources that come into scope of the policy won't be protected.</p></li>
+    /// <li> <p> <code>ACTIVE</code> - The administrator can manage and delete the policy.</p> </li>
+    /// <li> <p> <code>OUT_OF_ADMIN_SCOPE</code> - The administrator can view the policy, but they can't edit or delete the policy. Existing policy protections stay in place. Any new resources that come into scope of the policy won't be protected.</p> </li>
     /// </ul>
     pub fn get_policy_status(&self) -> &::std::option::Option<crate::types::CustomerPolicyStatus> {
         &self.policy_status

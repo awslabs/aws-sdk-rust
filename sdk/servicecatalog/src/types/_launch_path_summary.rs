@@ -10,7 +10,7 @@ pub struct LaunchPathSummary {
     pub constraint_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ConstraintSummary>>,
     /// <p>The tags associated with this product path.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    /// <p>The name of the portfolio that contains the product.</p>
+    /// <p>The name of the portfolio that contains the product. </p>
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl LaunchPathSummary {
@@ -30,7 +30,7 @@ impl LaunchPathSummary {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
-    /// <p>The name of the portfolio that contains the product.</p>
+    /// <p>The name of the portfolio that contains the product. </p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -106,17 +106,17 @@ impl LaunchPathSummaryBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
-    /// <p>The name of the portfolio that contains the product.</p>
+    /// <p>The name of the portfolio that contains the product. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the portfolio that contains the product.</p>
+    /// <p>The name of the portfolio that contains the product. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the portfolio that contains the product.</p>
+    /// <p>The name of the portfolio that contains the product. </p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

@@ -7,53 +7,37 @@ pub struct CreateDbParameterGroupInput {
     /// <p>The name of the DB parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
-    /// <li>
-    /// <p>First character must be a letter</p></li>
-    /// <li>
-    /// <p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
-    /// </ul><note>
+    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter</p> </li>
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
     pub db_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The DB parameter group family name. A DB parameter group can be associated with one and only one DB parameter group family, and can be applied only to a DB instance running a database engine and engine version compatible with that DB parameter group family.</p>
     /// <p>To list all of the available parameter group families for a DB engine, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" --engine <engine></engine></code></p>
+    /// <p> <code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" --engine
+    /// <engine></engine></code> </p>
     /// <p>For example, to list all of the available parameter group families for the MySQL DB engine, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" --engine mysql</code></p><note>
+    /// <p> <code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" --engine mysql</code> </p> <note>
     /// <p>The output contains duplicates.</p>
     /// </note>
     /// <p>The following are the valid DB engine values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>aurora-mysql</code></p></li>
-    /// <li>
-    /// <p><code>aurora-postgresql</code></p></li>
-    /// <li>
-    /// <p><code>db2-ae</code></p></li>
-    /// <li>
-    /// <p><code>db2-se</code></p></li>
-    /// <li>
-    /// <p><code>mysql</code></p></li>
-    /// <li>
-    /// <p><code>oracle-ee</code></p></li>
-    /// <li>
-    /// <p><code>oracle-ee-cdb</code></p></li>
-    /// <li>
-    /// <p><code>oracle-se2</code></p></li>
-    /// <li>
-    /// <p><code>oracle-se2-cdb</code></p></li>
-    /// <li>
-    /// <p><code>postgres</code></p></li>
-    /// <li>
-    /// <p><code>sqlserver-ee</code></p></li>
-    /// <li>
-    /// <p><code>sqlserver-se</code></p></li>
-    /// <li>
-    /// <p><code>sqlserver-ex</code></p></li>
-    /// <li>
-    /// <p><code>sqlserver-web</code></p></li>
+    /// <li> <p> <code>aurora-mysql</code> </p> </li>
+    /// <li> <p> <code>aurora-postgresql</code> </p> </li>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
+    /// <li> <p> <code>mysql</code> </p> </li>
+    /// <li> <p> <code>oracle-ee</code> </p> </li>
+    /// <li> <p> <code>oracle-ee-cdb</code> </p> </li>
+    /// <li> <p> <code>oracle-se2</code> </p> </li>
+    /// <li> <p> <code>oracle-se2-cdb</code> </p> </li>
+    /// <li> <p> <code>postgres</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ee</code> </p> </li>
+    /// <li> <p> <code>sqlserver-se</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ex</code> </p> </li>
+    /// <li> <p> <code>sqlserver-web</code> </p> </li>
     /// </ul>
     pub db_parameter_group_family: ::std::option::Option<::std::string::String>,
     /// <p>The description for the DB parameter group.</p>
@@ -65,13 +49,10 @@ impl CreateDbParameterGroupInput {
     /// <p>The name of the DB parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
-    /// <li>
-    /// <p>First character must be a letter</p></li>
-    /// <li>
-    /// <p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
-    /// </ul><note>
+    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter</p> </li>
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
     pub fn db_parameter_group_name(&self) -> ::std::option::Option<&str> {
@@ -79,41 +60,28 @@ impl CreateDbParameterGroupInput {
     }
     /// <p>The DB parameter group family name. A DB parameter group can be associated with one and only one DB parameter group family, and can be applied only to a DB instance running a database engine and engine version compatible with that DB parameter group family.</p>
     /// <p>To list all of the available parameter group families for a DB engine, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" --engine <engine></engine></code></p>
+    /// <p> <code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" --engine
+    /// <engine></engine></code> </p>
     /// <p>For example, to list all of the available parameter group families for the MySQL DB engine, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" --engine mysql</code></p><note>
+    /// <p> <code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" --engine mysql</code> </p> <note>
     /// <p>The output contains duplicates.</p>
     /// </note>
     /// <p>The following are the valid DB engine values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>aurora-mysql</code></p></li>
-    /// <li>
-    /// <p><code>aurora-postgresql</code></p></li>
-    /// <li>
-    /// <p><code>db2-ae</code></p></li>
-    /// <li>
-    /// <p><code>db2-se</code></p></li>
-    /// <li>
-    /// <p><code>mysql</code></p></li>
-    /// <li>
-    /// <p><code>oracle-ee</code></p></li>
-    /// <li>
-    /// <p><code>oracle-ee-cdb</code></p></li>
-    /// <li>
-    /// <p><code>oracle-se2</code></p></li>
-    /// <li>
-    /// <p><code>oracle-se2-cdb</code></p></li>
-    /// <li>
-    /// <p><code>postgres</code></p></li>
-    /// <li>
-    /// <p><code>sqlserver-ee</code></p></li>
-    /// <li>
-    /// <p><code>sqlserver-se</code></p></li>
-    /// <li>
-    /// <p><code>sqlserver-ex</code></p></li>
-    /// <li>
-    /// <p><code>sqlserver-web</code></p></li>
+    /// <li> <p> <code>aurora-mysql</code> </p> </li>
+    /// <li> <p> <code>aurora-postgresql</code> </p> </li>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
+    /// <li> <p> <code>mysql</code> </p> </li>
+    /// <li> <p> <code>oracle-ee</code> </p> </li>
+    /// <li> <p> <code>oracle-ee-cdb</code> </p> </li>
+    /// <li> <p> <code>oracle-se2</code> </p> </li>
+    /// <li> <p> <code>oracle-se2-cdb</code> </p> </li>
+    /// <li> <p> <code>postgres</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ee</code> </p> </li>
+    /// <li> <p> <code>sqlserver-se</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ex</code> </p> </li>
+    /// <li> <p> <code>sqlserver-web</code> </p> </li>
     /// </ul>
     pub fn db_parameter_group_family(&self) -> ::std::option::Option<&str> {
         self.db_parameter_group_family.as_deref()
@@ -149,13 +117,10 @@ impl CreateDbParameterGroupInputBuilder {
     /// <p>The name of the DB parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
-    /// <li>
-    /// <p>First character must be a letter</p></li>
-    /// <li>
-    /// <p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
-    /// </ul><note>
+    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter</p> </li>
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
     /// This field is required.
@@ -166,13 +131,10 @@ impl CreateDbParameterGroupInputBuilder {
     /// <p>The name of the DB parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
-    /// <li>
-    /// <p>First character must be a letter</p></li>
-    /// <li>
-    /// <p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
-    /// </ul><note>
+    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter</p> </li>
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
     pub fn set_db_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -182,13 +144,10 @@ impl CreateDbParameterGroupInputBuilder {
     /// <p>The name of the DB parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
-    /// <li>
-    /// <p>First character must be a letter</p></li>
-    /// <li>
-    /// <p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
-    /// </ul><note>
+    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter</p> </li>
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
     pub fn get_db_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -196,41 +155,28 @@ impl CreateDbParameterGroupInputBuilder {
     }
     /// <p>The DB parameter group family name. A DB parameter group can be associated with one and only one DB parameter group family, and can be applied only to a DB instance running a database engine and engine version compatible with that DB parameter group family.</p>
     /// <p>To list all of the available parameter group families for a DB engine, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" --engine <engine></engine></code></p>
+    /// <p> <code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" --engine
+    /// <engine></engine></code> </p>
     /// <p>For example, to list all of the available parameter group families for the MySQL DB engine, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" --engine mysql</code></p><note>
+    /// <p> <code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" --engine mysql</code> </p> <note>
     /// <p>The output contains duplicates.</p>
     /// </note>
     /// <p>The following are the valid DB engine values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>aurora-mysql</code></p></li>
-    /// <li>
-    /// <p><code>aurora-postgresql</code></p></li>
-    /// <li>
-    /// <p><code>db2-ae</code></p></li>
-    /// <li>
-    /// <p><code>db2-se</code></p></li>
-    /// <li>
-    /// <p><code>mysql</code></p></li>
-    /// <li>
-    /// <p><code>oracle-ee</code></p></li>
-    /// <li>
-    /// <p><code>oracle-ee-cdb</code></p></li>
-    /// <li>
-    /// <p><code>oracle-se2</code></p></li>
-    /// <li>
-    /// <p><code>oracle-se2-cdb</code></p></li>
-    /// <li>
-    /// <p><code>postgres</code></p></li>
-    /// <li>
-    /// <p><code>sqlserver-ee</code></p></li>
-    /// <li>
-    /// <p><code>sqlserver-se</code></p></li>
-    /// <li>
-    /// <p><code>sqlserver-ex</code></p></li>
-    /// <li>
-    /// <p><code>sqlserver-web</code></p></li>
+    /// <li> <p> <code>aurora-mysql</code> </p> </li>
+    /// <li> <p> <code>aurora-postgresql</code> </p> </li>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
+    /// <li> <p> <code>mysql</code> </p> </li>
+    /// <li> <p> <code>oracle-ee</code> </p> </li>
+    /// <li> <p> <code>oracle-ee-cdb</code> </p> </li>
+    /// <li> <p> <code>oracle-se2</code> </p> </li>
+    /// <li> <p> <code>oracle-se2-cdb</code> </p> </li>
+    /// <li> <p> <code>postgres</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ee</code> </p> </li>
+    /// <li> <p> <code>sqlserver-se</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ex</code> </p> </li>
+    /// <li> <p> <code>sqlserver-web</code> </p> </li>
     /// </ul>
     /// This field is required.
     pub fn db_parameter_group_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -239,41 +185,28 @@ impl CreateDbParameterGroupInputBuilder {
     }
     /// <p>The DB parameter group family name. A DB parameter group can be associated with one and only one DB parameter group family, and can be applied only to a DB instance running a database engine and engine version compatible with that DB parameter group family.</p>
     /// <p>To list all of the available parameter group families for a DB engine, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" --engine <engine></engine></code></p>
+    /// <p> <code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" --engine
+    /// <engine></engine></code> </p>
     /// <p>For example, to list all of the available parameter group families for the MySQL DB engine, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" --engine mysql</code></p><note>
+    /// <p> <code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" --engine mysql</code> </p> <note>
     /// <p>The output contains duplicates.</p>
     /// </note>
     /// <p>The following are the valid DB engine values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>aurora-mysql</code></p></li>
-    /// <li>
-    /// <p><code>aurora-postgresql</code></p></li>
-    /// <li>
-    /// <p><code>db2-ae</code></p></li>
-    /// <li>
-    /// <p><code>db2-se</code></p></li>
-    /// <li>
-    /// <p><code>mysql</code></p></li>
-    /// <li>
-    /// <p><code>oracle-ee</code></p></li>
-    /// <li>
-    /// <p><code>oracle-ee-cdb</code></p></li>
-    /// <li>
-    /// <p><code>oracle-se2</code></p></li>
-    /// <li>
-    /// <p><code>oracle-se2-cdb</code></p></li>
-    /// <li>
-    /// <p><code>postgres</code></p></li>
-    /// <li>
-    /// <p><code>sqlserver-ee</code></p></li>
-    /// <li>
-    /// <p><code>sqlserver-se</code></p></li>
-    /// <li>
-    /// <p><code>sqlserver-ex</code></p></li>
-    /// <li>
-    /// <p><code>sqlserver-web</code></p></li>
+    /// <li> <p> <code>aurora-mysql</code> </p> </li>
+    /// <li> <p> <code>aurora-postgresql</code> </p> </li>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
+    /// <li> <p> <code>mysql</code> </p> </li>
+    /// <li> <p> <code>oracle-ee</code> </p> </li>
+    /// <li> <p> <code>oracle-ee-cdb</code> </p> </li>
+    /// <li> <p> <code>oracle-se2</code> </p> </li>
+    /// <li> <p> <code>oracle-se2-cdb</code> </p> </li>
+    /// <li> <p> <code>postgres</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ee</code> </p> </li>
+    /// <li> <p> <code>sqlserver-se</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ex</code> </p> </li>
+    /// <li> <p> <code>sqlserver-web</code> </p> </li>
     /// </ul>
     pub fn set_db_parameter_group_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_parameter_group_family = input;
@@ -281,41 +214,28 @@ impl CreateDbParameterGroupInputBuilder {
     }
     /// <p>The DB parameter group family name. A DB parameter group can be associated with one and only one DB parameter group family, and can be applied only to a DB instance running a database engine and engine version compatible with that DB parameter group family.</p>
     /// <p>To list all of the available parameter group families for a DB engine, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" --engine <engine></engine></code></p>
+    /// <p> <code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" --engine
+    /// <engine></engine></code> </p>
     /// <p>For example, to list all of the available parameter group families for the MySQL DB engine, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" --engine mysql</code></p><note>
+    /// <p> <code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" --engine mysql</code> </p> <note>
     /// <p>The output contains duplicates.</p>
     /// </note>
     /// <p>The following are the valid DB engine values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>aurora-mysql</code></p></li>
-    /// <li>
-    /// <p><code>aurora-postgresql</code></p></li>
-    /// <li>
-    /// <p><code>db2-ae</code></p></li>
-    /// <li>
-    /// <p><code>db2-se</code></p></li>
-    /// <li>
-    /// <p><code>mysql</code></p></li>
-    /// <li>
-    /// <p><code>oracle-ee</code></p></li>
-    /// <li>
-    /// <p><code>oracle-ee-cdb</code></p></li>
-    /// <li>
-    /// <p><code>oracle-se2</code></p></li>
-    /// <li>
-    /// <p><code>oracle-se2-cdb</code></p></li>
-    /// <li>
-    /// <p><code>postgres</code></p></li>
-    /// <li>
-    /// <p><code>sqlserver-ee</code></p></li>
-    /// <li>
-    /// <p><code>sqlserver-se</code></p></li>
-    /// <li>
-    /// <p><code>sqlserver-ex</code></p></li>
-    /// <li>
-    /// <p><code>sqlserver-web</code></p></li>
+    /// <li> <p> <code>aurora-mysql</code> </p> </li>
+    /// <li> <p> <code>aurora-postgresql</code> </p> </li>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
+    /// <li> <p> <code>mysql</code> </p> </li>
+    /// <li> <p> <code>oracle-ee</code> </p> </li>
+    /// <li> <p> <code>oracle-ee-cdb</code> </p> </li>
+    /// <li> <p> <code>oracle-se2</code> </p> </li>
+    /// <li> <p> <code>oracle-se2-cdb</code> </p> </li>
+    /// <li> <p> <code>postgres</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ee</code> </p> </li>
+    /// <li> <p> <code>sqlserver-se</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ex</code> </p> </li>
+    /// <li> <p> <code>sqlserver-web</code> </p> </li>
     /// </ul>
     pub fn get_db_parameter_group_family(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_parameter_group_family

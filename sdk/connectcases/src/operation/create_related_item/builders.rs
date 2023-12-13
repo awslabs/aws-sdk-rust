@@ -22,12 +22,10 @@ impl CreateRelatedItemInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateRelatedItem`.
 ///
-/// <p>Creates a related item (comments, tasks, and contacts) and associates it with a case.</p><note>
+/// <p>Creates a related item (comments, tasks, and contacts) and associates it with a case.</p> <note>
 /// <ul>
-/// <li>
-/// <p>A Related Item is a resource that is associated with a case. It may or may not have an external identifier linking it to an external resource (for example, a <code>contactArn</code>). All Related Items have their own internal identifier, the <code>relatedItemArn</code>. Examples of related items include <code>comments</code> and <code>contacts</code>.</p></li>
-/// <li>
-/// <p>If you provide a value for <code>performedBy.userArn</code> you must also have <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">DescribeUser</a> permission on the ARN of the user that you provide.</p></li>
+/// <li> <p>A Related Item is a resource that is associated with a case. It may or may not have an external identifier linking it to an external resource (for example, a <code>contactArn</code>). All Related Items have their own internal identifier, the <code>relatedItemArn</code>. Examples of related items include <code>comments</code> and <code>contacts</code>.</p> </li>
+/// <li> <p>If you provide a value for <code>performedBy.userArn</code> you must also have <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">DescribeUser</a> permission on the ARN of the user that you provide.</p> </li>
 /// </ul>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -115,17 +113,17 @@ impl CreateRelatedItemFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier of the Cases domain.</p>
+    /// <p>The unique identifier of the Cases domain. </p>
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_id(input.into());
         self
     }
-    /// <p>The unique identifier of the Cases domain.</p>
+    /// <p>The unique identifier of the Cases domain. </p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_id(input);
         self
     }
-    /// <p>The unique identifier of the Cases domain.</p>
+    /// <p>The unique identifier of the Cases domain. </p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_id()
     }

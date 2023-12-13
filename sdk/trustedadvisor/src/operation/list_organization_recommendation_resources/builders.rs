@@ -22,7 +22,7 @@ impl ListOrganizationRecommendationResourcesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListOrganizationRecommendationResources`.
 ///
-/// <p>List Resources of a Recommendation within an Organization. This API only supports prioritized recommendations.</p>
+/// <p>List Resources of a Recommendation within an Organization. This API only supports prioritized recommendations. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListOrganizationRecommendationResourcesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -123,17 +123,17 @@ impl ListOrganizationRecommendationResourcesFluentBuilder {
             self.inner,
         )
     }
-    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

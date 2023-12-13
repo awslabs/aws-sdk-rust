@@ -158,31 +158,31 @@ impl ModifyEventSubscriptionFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_event_categories`](Self::set_event_categories).
     ///
-    /// <p>A list of event categories for a SourceType that you want to subscribe to. You can see a list of the categories for a given SourceType by using the <b>DescribeEventCategories</b> action.</p>
+    /// <p> A list of event categories for a SourceType that you want to subscribe to. You can see a list of the categories for a given SourceType by using the <b>DescribeEventCategories</b> action.</p>
     pub fn event_categories(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_categories(input.into());
         self
     }
-    /// <p>A list of event categories for a SourceType that you want to subscribe to. You can see a list of the categories for a given SourceType by using the <b>DescribeEventCategories</b> action.</p>
+    /// <p> A list of event categories for a SourceType that you want to subscribe to. You can see a list of the categories for a given SourceType by using the <b>DescribeEventCategories</b> action.</p>
     pub fn set_event_categories(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_event_categories(input);
         self
     }
-    /// <p>A list of event categories for a SourceType that you want to subscribe to. You can see a list of the categories for a given SourceType by using the <b>DescribeEventCategories</b> action.</p>
+    /// <p> A list of event categories for a SourceType that you want to subscribe to. You can see a list of the categories for a given SourceType by using the <b>DescribeEventCategories</b> action.</p>
     pub fn get_event_categories(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_event_categories()
     }
-    /// <p>A Boolean value; set to <b>true</b> to activate the subscription.</p>
+    /// <p> A Boolean value; set to <b>true</b> to activate the subscription.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.enabled(input);
         self
     }
-    /// <p>A Boolean value; set to <b>true</b> to activate the subscription.</p>
+    /// <p> A Boolean value; set to <b>true</b> to activate the subscription.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enabled(input);
         self
     }
-    /// <p>A Boolean value; set to <b>true</b> to activate the subscription.</p>
+    /// <p> A Boolean value; set to <b>true</b> to activate the subscription.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_enabled()
     }

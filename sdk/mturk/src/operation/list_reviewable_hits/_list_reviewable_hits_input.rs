@@ -3,21 +3,21 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListReviewableHiTsInput {
-    /// <p>The ID of the HIT type of the HITs to consider for the query. If not specified, all HITs for the Reviewer are considered</p>
+    /// <p> The ID of the HIT type of the HITs to consider for the query. If not specified, all HITs for the Reviewer are considered </p>
     pub hit_type_id: ::std::option::Option<::std::string::String>,
-    /// <p>Can be either <code>Reviewable</code> or <code>Reviewing</code>. Reviewable is the default value.</p>
+    /// <p> Can be either <code>Reviewable</code> or <code>Reviewing</code>. Reviewable is the default value. </p>
     pub status: ::std::option::Option<crate::types::ReviewableHitStatus>,
     /// <p>Pagination Token</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>Limit the number of results returned.</p>
+    /// <p> Limit the number of results returned. </p>
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListReviewableHiTsInput {
-    /// <p>The ID of the HIT type of the HITs to consider for the query. If not specified, all HITs for the Reviewer are considered</p>
+    /// <p> The ID of the HIT type of the HITs to consider for the query. If not specified, all HITs for the Reviewer are considered </p>
     pub fn hit_type_id(&self) -> ::std::option::Option<&str> {
         self.hit_type_id.as_deref()
     }
-    /// <p>Can be either <code>Reviewable</code> or <code>Reviewing</code>. Reviewable is the default value.</p>
+    /// <p> Can be either <code>Reviewable</code> or <code>Reviewing</code>. Reviewable is the default value. </p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ReviewableHitStatus> {
         self.status.as_ref()
     }
@@ -25,7 +25,7 @@ impl ListReviewableHiTsInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Limit the number of results returned.</p>
+    /// <p> Limit the number of results returned. </p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -47,31 +47,31 @@ pub struct ListReviewableHiTsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ListReviewableHiTsInputBuilder {
-    /// <p>The ID of the HIT type of the HITs to consider for the query. If not specified, all HITs for the Reviewer are considered</p>
+    /// <p> The ID of the HIT type of the HITs to consider for the query. If not specified, all HITs for the Reviewer are considered </p>
     pub fn hit_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hit_type_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the HIT type of the HITs to consider for the query. If not specified, all HITs for the Reviewer are considered</p>
+    /// <p> The ID of the HIT type of the HITs to consider for the query. If not specified, all HITs for the Reviewer are considered </p>
     pub fn set_hit_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hit_type_id = input;
         self
     }
-    /// <p>The ID of the HIT type of the HITs to consider for the query. If not specified, all HITs for the Reviewer are considered</p>
+    /// <p> The ID of the HIT type of the HITs to consider for the query. If not specified, all HITs for the Reviewer are considered </p>
     pub fn get_hit_type_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.hit_type_id
     }
-    /// <p>Can be either <code>Reviewable</code> or <code>Reviewing</code>. Reviewable is the default value.</p>
+    /// <p> Can be either <code>Reviewable</code> or <code>Reviewing</code>. Reviewable is the default value. </p>
     pub fn status(mut self, input: crate::types::ReviewableHitStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Can be either <code>Reviewable</code> or <code>Reviewing</code>. Reviewable is the default value.</p>
+    /// <p> Can be either <code>Reviewable</code> or <code>Reviewing</code>. Reviewable is the default value. </p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ReviewableHitStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>Can be either <code>Reviewable</code> or <code>Reviewing</code>. Reviewable is the default value.</p>
+    /// <p> Can be either <code>Reviewable</code> or <code>Reviewing</code>. Reviewable is the default value. </p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ReviewableHitStatus> {
         &self.status
     }
@@ -89,17 +89,17 @@ impl ListReviewableHiTsInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>Limit the number of results returned.</p>
+    /// <p> Limit the number of results returned. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Limit the number of results returned.</p>
+    /// <p> Limit the number of results returned. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>Limit the number of results returned.</p>
+    /// <p> Limit the number of results returned. </p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

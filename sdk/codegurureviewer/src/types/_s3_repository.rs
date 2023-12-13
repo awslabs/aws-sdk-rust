@@ -6,7 +6,7 @@
 pub struct S3Repository {
     /// <p>The name of the repository in the S3 bucket.</p>
     pub name: ::std::string::String,
-    /// <p>The name of the S3 bucket used for associating a new S3 repository. It must begin with <code>codeguru-reviewer-</code>.</p>
+    /// <p>The name of the S3 bucket used for associating a new S3 repository. It must begin with <code>codeguru-reviewer-</code>. </p>
     pub bucket_name: ::std::string::String,
 }
 impl S3Repository {
@@ -15,7 +15,7 @@ impl S3Repository {
         use std::ops::Deref;
         self.name.deref()
     }
-    /// <p>The name of the S3 bucket used for associating a new S3 repository. It must begin with <code>codeguru-reviewer-</code>.</p>
+    /// <p>The name of the S3 bucket used for associating a new S3 repository. It must begin with <code>codeguru-reviewer-</code>. </p>
     pub fn bucket_name(&self) -> &str {
         use std::ops::Deref;
         self.bucket_name.deref()
@@ -51,18 +51,18 @@ impl S3RepositoryBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The name of the S3 bucket used for associating a new S3 repository. It must begin with <code>codeguru-reviewer-</code>.</p>
+    /// <p>The name of the S3 bucket used for associating a new S3 repository. It must begin with <code>codeguru-reviewer-</code>. </p>
     /// This field is required.
     pub fn bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the S3 bucket used for associating a new S3 repository. It must begin with <code>codeguru-reviewer-</code>.</p>
+    /// <p>The name of the S3 bucket used for associating a new S3 repository. It must begin with <code>codeguru-reviewer-</code>. </p>
     pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket_name = input;
         self
     }
-    /// <p>The name of the S3 bucket used for associating a new S3 repository. It must begin with <code>codeguru-reviewer-</code>.</p>
+    /// <p>The name of the S3 bucket used for associating a new S3 repository. It must begin with <code>codeguru-reviewer-</code>. </p>
     pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.bucket_name
     }

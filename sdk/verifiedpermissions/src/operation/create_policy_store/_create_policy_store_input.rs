@@ -8,7 +8,7 @@ pub struct CreatePolicyStoreInput {
     /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the validation setting for this policy store.</p>
-    /// <p>Currently, the only valid and required value is <code>Mode</code>.</p><important>
+    /// <p>Currently, the only valid and required value is <code>Mode</code>.</p> <important>
     /// <p>We recommend that you turn on <code>STRICT</code> mode only after you define a schema. If a schema doesn't exist, then <code>STRICT</code> mode causes any policy to fail validation, and Verified Permissions rejects the policy. You can turn off validation by using the <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_UpdatePolicyStore">UpdatePolicyStore</a>. Then, when you have a schema defined, use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_UpdatePolicyStore">UpdatePolicyStore</a> again to turn validation back on.</p>
     /// </important>
     pub validation_settings: ::std::option::Option<crate::types::ValidationSettings>,
@@ -23,7 +23,7 @@ impl CreatePolicyStoreInput {
         self.client_token.as_deref()
     }
     /// <p>Specifies the validation setting for this policy store.</p>
-    /// <p>Currently, the only valid and required value is <code>Mode</code>.</p><important>
+    /// <p>Currently, the only valid and required value is <code>Mode</code>.</p> <important>
     /// <p>We recommend that you turn on <code>STRICT</code> mode only after you define a schema. If a schema doesn't exist, then <code>STRICT</code> mode causes any policy to fail validation, and Verified Permissions rejects the policy. You can turn off validation by using the <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_UpdatePolicyStore">UpdatePolicyStore</a>. Then, when you have a schema defined, use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_UpdatePolicyStore">UpdatePolicyStore</a> again to turn validation back on.</p>
     /// </important>
     pub fn validation_settings(&self) -> ::std::option::Option<&crate::types::ValidationSettings> {
@@ -80,7 +80,7 @@ impl CreatePolicyStoreInputBuilder {
         &self.client_token
     }
     /// <p>Specifies the validation setting for this policy store.</p>
-    /// <p>Currently, the only valid and required value is <code>Mode</code>.</p><important>
+    /// <p>Currently, the only valid and required value is <code>Mode</code>.</p> <important>
     /// <p>We recommend that you turn on <code>STRICT</code> mode only after you define a schema. If a schema doesn't exist, then <code>STRICT</code> mode causes any policy to fail validation, and Verified Permissions rejects the policy. You can turn off validation by using the <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_UpdatePolicyStore">UpdatePolicyStore</a>. Then, when you have a schema defined, use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_UpdatePolicyStore">UpdatePolicyStore</a> again to turn validation back on.</p>
     /// </important>
     /// This field is required.
@@ -89,7 +89,7 @@ impl CreatePolicyStoreInputBuilder {
         self
     }
     /// <p>Specifies the validation setting for this policy store.</p>
-    /// <p>Currently, the only valid and required value is <code>Mode</code>.</p><important>
+    /// <p>Currently, the only valid and required value is <code>Mode</code>.</p> <important>
     /// <p>We recommend that you turn on <code>STRICT</code> mode only after you define a schema. If a schema doesn't exist, then <code>STRICT</code> mode causes any policy to fail validation, and Verified Permissions rejects the policy. You can turn off validation by using the <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_UpdatePolicyStore">UpdatePolicyStore</a>. Then, when you have a schema defined, use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_UpdatePolicyStore">UpdatePolicyStore</a> again to turn validation back on.</p>
     /// </important>
     pub fn set_validation_settings(mut self, input: ::std::option::Option<crate::types::ValidationSettings>) -> Self {
@@ -97,7 +97,7 @@ impl CreatePolicyStoreInputBuilder {
         self
     }
     /// <p>Specifies the validation setting for this policy store.</p>
-    /// <p>Currently, the only valid and required value is <code>Mode</code>.</p><important>
+    /// <p>Currently, the only valid and required value is <code>Mode</code>.</p> <important>
     /// <p>We recommend that you turn on <code>STRICT</code> mode only after you define a schema. If a schema doesn't exist, then <code>STRICT</code> mode causes any policy to fail validation, and Verified Permissions rejects the policy. You can turn off validation by using the <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_UpdatePolicyStore">UpdatePolicyStore</a>. Then, when you have a schema defined, use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_UpdatePolicyStore">UpdatePolicyStore</a> again to turn validation back on.</p>
     /// </important>
     pub fn get_validation_settings(&self) -> &::std::option::Option<crate::types::ValidationSettings> {

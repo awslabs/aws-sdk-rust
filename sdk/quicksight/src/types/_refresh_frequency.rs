@@ -6,18 +6,12 @@
 pub struct RefreshFrequency {
     /// <p>The interval between scheduled refreshes. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>MINUTE15</code>: The dataset refreshes every 15 minutes. This value is only supported for incremental refreshes. This interval can only be used for one schedule per dataset.</p></li>
-    /// <li>
-    /// <p><code>MINUTE30</code>:The dataset refreshes every 30 minutes. This value is only supported for incremental refreshes. This interval can only be used for one schedule per dataset.</p></li>
-    /// <li>
-    /// <p><code>HOURLY</code>: The dataset refreshes every hour. This interval can only be used for one schedule per dataset.</p></li>
-    /// <li>
-    /// <p><code>DAILY</code>: The dataset refreshes every day.</p></li>
-    /// <li>
-    /// <p><code>WEEKLY</code>: The dataset refreshes every week.</p></li>
-    /// <li>
-    /// <p><code>MONTHLY</code>: The dataset refreshes every month.</p></li>
+    /// <li> <p> <code>MINUTE15</code>: The dataset refreshes every 15 minutes. This value is only supported for incremental refreshes. This interval can only be used for one schedule per dataset.</p> </li>
+    /// <li> <p> <code>MINUTE30</code>:The dataset refreshes every 30 minutes. This value is only supported for incremental refreshes. This interval can only be used for one schedule per dataset.</p> </li>
+    /// <li> <p> <code>HOURLY</code>: The dataset refreshes every hour. This interval can only be used for one schedule per dataset.</p> </li>
+    /// <li> <p> <code>DAILY</code>: The dataset refreshes every day.</p> </li>
+    /// <li> <p> <code>WEEKLY</code>: The dataset refreshes every week.</p> </li>
+    /// <li> <p> <code>MONTHLY</code>: The dataset refreshes every month.</p> </li>
     /// </ul>
     pub interval: crate::types::RefreshInterval,
     /// <p>The day of the week that you want to schedule the refresh on. This value is required for weekly and monthly refresh intervals.</p>
@@ -30,18 +24,12 @@ pub struct RefreshFrequency {
 impl RefreshFrequency {
     /// <p>The interval between scheduled refreshes. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>MINUTE15</code>: The dataset refreshes every 15 minutes. This value is only supported for incremental refreshes. This interval can only be used for one schedule per dataset.</p></li>
-    /// <li>
-    /// <p><code>MINUTE30</code>:The dataset refreshes every 30 minutes. This value is only supported for incremental refreshes. This interval can only be used for one schedule per dataset.</p></li>
-    /// <li>
-    /// <p><code>HOURLY</code>: The dataset refreshes every hour. This interval can only be used for one schedule per dataset.</p></li>
-    /// <li>
-    /// <p><code>DAILY</code>: The dataset refreshes every day.</p></li>
-    /// <li>
-    /// <p><code>WEEKLY</code>: The dataset refreshes every week.</p></li>
-    /// <li>
-    /// <p><code>MONTHLY</code>: The dataset refreshes every month.</p></li>
+    /// <li> <p> <code>MINUTE15</code>: The dataset refreshes every 15 minutes. This value is only supported for incremental refreshes. This interval can only be used for one schedule per dataset.</p> </li>
+    /// <li> <p> <code>MINUTE30</code>:The dataset refreshes every 30 minutes. This value is only supported for incremental refreshes. This interval can only be used for one schedule per dataset.</p> </li>
+    /// <li> <p> <code>HOURLY</code>: The dataset refreshes every hour. This interval can only be used for one schedule per dataset.</p> </li>
+    /// <li> <p> <code>DAILY</code>: The dataset refreshes every day.</p> </li>
+    /// <li> <p> <code>WEEKLY</code>: The dataset refreshes every week.</p> </li>
+    /// <li> <p> <code>MONTHLY</code>: The dataset refreshes every month.</p> </li>
     /// </ul>
     pub fn interval(&self) -> &crate::types::RefreshInterval {
         &self.interval
@@ -78,18 +66,12 @@ pub struct RefreshFrequencyBuilder {
 impl RefreshFrequencyBuilder {
     /// <p>The interval between scheduled refreshes. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>MINUTE15</code>: The dataset refreshes every 15 minutes. This value is only supported for incremental refreshes. This interval can only be used for one schedule per dataset.</p></li>
-    /// <li>
-    /// <p><code>MINUTE30</code>:The dataset refreshes every 30 minutes. This value is only supported for incremental refreshes. This interval can only be used for one schedule per dataset.</p></li>
-    /// <li>
-    /// <p><code>HOURLY</code>: The dataset refreshes every hour. This interval can only be used for one schedule per dataset.</p></li>
-    /// <li>
-    /// <p><code>DAILY</code>: The dataset refreshes every day.</p></li>
-    /// <li>
-    /// <p><code>WEEKLY</code>: The dataset refreshes every week.</p></li>
-    /// <li>
-    /// <p><code>MONTHLY</code>: The dataset refreshes every month.</p></li>
+    /// <li> <p> <code>MINUTE15</code>: The dataset refreshes every 15 minutes. This value is only supported for incremental refreshes. This interval can only be used for one schedule per dataset.</p> </li>
+    /// <li> <p> <code>MINUTE30</code>:The dataset refreshes every 30 minutes. This value is only supported for incremental refreshes. This interval can only be used for one schedule per dataset.</p> </li>
+    /// <li> <p> <code>HOURLY</code>: The dataset refreshes every hour. This interval can only be used for one schedule per dataset.</p> </li>
+    /// <li> <p> <code>DAILY</code>: The dataset refreshes every day.</p> </li>
+    /// <li> <p> <code>WEEKLY</code>: The dataset refreshes every week.</p> </li>
+    /// <li> <p> <code>MONTHLY</code>: The dataset refreshes every month.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn interval(mut self, input: crate::types::RefreshInterval) -> Self {
@@ -98,18 +80,12 @@ impl RefreshFrequencyBuilder {
     }
     /// <p>The interval between scheduled refreshes. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>MINUTE15</code>: The dataset refreshes every 15 minutes. This value is only supported for incremental refreshes. This interval can only be used for one schedule per dataset.</p></li>
-    /// <li>
-    /// <p><code>MINUTE30</code>:The dataset refreshes every 30 minutes. This value is only supported for incremental refreshes. This interval can only be used for one schedule per dataset.</p></li>
-    /// <li>
-    /// <p><code>HOURLY</code>: The dataset refreshes every hour. This interval can only be used for one schedule per dataset.</p></li>
-    /// <li>
-    /// <p><code>DAILY</code>: The dataset refreshes every day.</p></li>
-    /// <li>
-    /// <p><code>WEEKLY</code>: The dataset refreshes every week.</p></li>
-    /// <li>
-    /// <p><code>MONTHLY</code>: The dataset refreshes every month.</p></li>
+    /// <li> <p> <code>MINUTE15</code>: The dataset refreshes every 15 minutes. This value is only supported for incremental refreshes. This interval can only be used for one schedule per dataset.</p> </li>
+    /// <li> <p> <code>MINUTE30</code>:The dataset refreshes every 30 minutes. This value is only supported for incremental refreshes. This interval can only be used for one schedule per dataset.</p> </li>
+    /// <li> <p> <code>HOURLY</code>: The dataset refreshes every hour. This interval can only be used for one schedule per dataset.</p> </li>
+    /// <li> <p> <code>DAILY</code>: The dataset refreshes every day.</p> </li>
+    /// <li> <p> <code>WEEKLY</code>: The dataset refreshes every week.</p> </li>
+    /// <li> <p> <code>MONTHLY</code>: The dataset refreshes every month.</p> </li>
     /// </ul>
     pub fn set_interval(mut self, input: ::std::option::Option<crate::types::RefreshInterval>) -> Self {
         self.interval = input;
@@ -117,18 +93,12 @@ impl RefreshFrequencyBuilder {
     }
     /// <p>The interval between scheduled refreshes. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>MINUTE15</code>: The dataset refreshes every 15 minutes. This value is only supported for incremental refreshes. This interval can only be used for one schedule per dataset.</p></li>
-    /// <li>
-    /// <p><code>MINUTE30</code>:The dataset refreshes every 30 minutes. This value is only supported for incremental refreshes. This interval can only be used for one schedule per dataset.</p></li>
-    /// <li>
-    /// <p><code>HOURLY</code>: The dataset refreshes every hour. This interval can only be used for one schedule per dataset.</p></li>
-    /// <li>
-    /// <p><code>DAILY</code>: The dataset refreshes every day.</p></li>
-    /// <li>
-    /// <p><code>WEEKLY</code>: The dataset refreshes every week.</p></li>
-    /// <li>
-    /// <p><code>MONTHLY</code>: The dataset refreshes every month.</p></li>
+    /// <li> <p> <code>MINUTE15</code>: The dataset refreshes every 15 minutes. This value is only supported for incremental refreshes. This interval can only be used for one schedule per dataset.</p> </li>
+    /// <li> <p> <code>MINUTE30</code>:The dataset refreshes every 30 minutes. This value is only supported for incremental refreshes. This interval can only be used for one schedule per dataset.</p> </li>
+    /// <li> <p> <code>HOURLY</code>: The dataset refreshes every hour. This interval can only be used for one schedule per dataset.</p> </li>
+    /// <li> <p> <code>DAILY</code>: The dataset refreshes every day.</p> </li>
+    /// <li> <p> <code>WEEKLY</code>: The dataset refreshes every week.</p> </li>
+    /// <li> <p> <code>MONTHLY</code>: The dataset refreshes every month.</p> </li>
     /// </ul>
     pub fn get_interval(&self) -> &::std::option::Option<crate::types::RefreshInterval> {
         &self.interval

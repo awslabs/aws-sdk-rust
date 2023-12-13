@@ -144,10 +144,8 @@ impl UpdateLicenseManagerReportGeneratorFluentBuilder {
     ///
     /// <p>Type of reports to generate. The following report types are supported:</p>
     /// <ul>
-    /// <li>
-    /// <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p></li>
-    /// <li>
-    /// <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p></li>
+    /// <li> <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p> </li>
+    /// <li> <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p> </li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::ReportType) -> Self {
         self.inner = self.inner.r#type(input);
@@ -155,10 +153,8 @@ impl UpdateLicenseManagerReportGeneratorFluentBuilder {
     }
     /// <p>Type of reports to generate. The following report types are supported:</p>
     /// <ul>
-    /// <li>
-    /// <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p></li>
-    /// <li>
-    /// <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p></li>
+    /// <li> <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p> </li>
+    /// <li> <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p> </li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReportType>>) -> Self {
         self.inner = self.inner.set_type(input);
@@ -166,10 +162,8 @@ impl UpdateLicenseManagerReportGeneratorFluentBuilder {
     }
     /// <p>Type of reports to generate. The following report types are supported:</p>
     /// <ul>
-    /// <li>
-    /// <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p></li>
-    /// <li>
-    /// <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p></li>
+    /// <li> <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p> </li>
+    /// <li> <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p> </li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReportType>> {
         self.inner.get_type()

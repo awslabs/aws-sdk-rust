@@ -8,7 +8,7 @@ pub struct CapacityUnitsConfiguration {
     pub storage_capacity_units: i32,
     /// <p>The amount of extra query capacity for an index and <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_GetQuerySuggestions.html">GetQuerySuggestions</a> capacity.</p>
     /// <p>A single extra capacity unit for an index provides 0.1 queries per second or approximately 8,000 queries per day. You can add up to 100 extra capacity units.</p>
-    /// <p><code>GetQuerySuggestions</code> capacity is five times the provisioned query capacity for an index, or the base capacity of 2.5 calls per second, whichever is higher. For example, the base capacity for an index is 0.1 queries per second, and <code>GetQuerySuggestions</code> capacity has a base of 2.5 calls per second. If you add another 0.1 queries per second to total 0.2 queries per second for an index, the <code>GetQuerySuggestions</code> capacity is 2.5 calls per second (higher than five times 0.2 queries per second).</p>
+    /// <p> <code>GetQuerySuggestions</code> capacity is five times the provisioned query capacity for an index, or the base capacity of 2.5 calls per second, whichever is higher. For example, the base capacity for an index is 0.1 queries per second, and <code>GetQuerySuggestions</code> capacity has a base of 2.5 calls per second. If you add another 0.1 queries per second to total 0.2 queries per second for an index, the <code>GetQuerySuggestions</code> capacity is 2.5 calls per second (higher than five times 0.2 queries per second).</p>
     pub query_capacity_units: i32,
 }
 impl CapacityUnitsConfiguration {
@@ -18,7 +18,7 @@ impl CapacityUnitsConfiguration {
     }
     /// <p>The amount of extra query capacity for an index and <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_GetQuerySuggestions.html">GetQuerySuggestions</a> capacity.</p>
     /// <p>A single extra capacity unit for an index provides 0.1 queries per second or approximately 8,000 queries per day. You can add up to 100 extra capacity units.</p>
-    /// <p><code>GetQuerySuggestions</code> capacity is five times the provisioned query capacity for an index, or the base capacity of 2.5 calls per second, whichever is higher. For example, the base capacity for an index is 0.1 queries per second, and <code>GetQuerySuggestions</code> capacity has a base of 2.5 calls per second. If you add another 0.1 queries per second to total 0.2 queries per second for an index, the <code>GetQuerySuggestions</code> capacity is 2.5 calls per second (higher than five times 0.2 queries per second).</p>
+    /// <p> <code>GetQuerySuggestions</code> capacity is five times the provisioned query capacity for an index, or the base capacity of 2.5 calls per second, whichever is higher. For example, the base capacity for an index is 0.1 queries per second, and <code>GetQuerySuggestions</code> capacity has a base of 2.5 calls per second. If you add another 0.1 queries per second to total 0.2 queries per second for an index, the <code>GetQuerySuggestions</code> capacity is 2.5 calls per second (higher than five times 0.2 queries per second).</p>
     pub fn query_capacity_units(&self) -> i32 {
         self.query_capacity_units
     }
@@ -55,7 +55,7 @@ impl CapacityUnitsConfigurationBuilder {
     }
     /// <p>The amount of extra query capacity for an index and <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_GetQuerySuggestions.html">GetQuerySuggestions</a> capacity.</p>
     /// <p>A single extra capacity unit for an index provides 0.1 queries per second or approximately 8,000 queries per day. You can add up to 100 extra capacity units.</p>
-    /// <p><code>GetQuerySuggestions</code> capacity is five times the provisioned query capacity for an index, or the base capacity of 2.5 calls per second, whichever is higher. For example, the base capacity for an index is 0.1 queries per second, and <code>GetQuerySuggestions</code> capacity has a base of 2.5 calls per second. If you add another 0.1 queries per second to total 0.2 queries per second for an index, the <code>GetQuerySuggestions</code> capacity is 2.5 calls per second (higher than five times 0.2 queries per second).</p>
+    /// <p> <code>GetQuerySuggestions</code> capacity is five times the provisioned query capacity for an index, or the base capacity of 2.5 calls per second, whichever is higher. For example, the base capacity for an index is 0.1 queries per second, and <code>GetQuerySuggestions</code> capacity has a base of 2.5 calls per second. If you add another 0.1 queries per second to total 0.2 queries per second for an index, the <code>GetQuerySuggestions</code> capacity is 2.5 calls per second (higher than five times 0.2 queries per second).</p>
     /// This field is required.
     pub fn query_capacity_units(mut self, input: i32) -> Self {
         self.query_capacity_units = ::std::option::Option::Some(input);
@@ -63,14 +63,14 @@ impl CapacityUnitsConfigurationBuilder {
     }
     /// <p>The amount of extra query capacity for an index and <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_GetQuerySuggestions.html">GetQuerySuggestions</a> capacity.</p>
     /// <p>A single extra capacity unit for an index provides 0.1 queries per second or approximately 8,000 queries per day. You can add up to 100 extra capacity units.</p>
-    /// <p><code>GetQuerySuggestions</code> capacity is five times the provisioned query capacity for an index, or the base capacity of 2.5 calls per second, whichever is higher. For example, the base capacity for an index is 0.1 queries per second, and <code>GetQuerySuggestions</code> capacity has a base of 2.5 calls per second. If you add another 0.1 queries per second to total 0.2 queries per second for an index, the <code>GetQuerySuggestions</code> capacity is 2.5 calls per second (higher than five times 0.2 queries per second).</p>
+    /// <p> <code>GetQuerySuggestions</code> capacity is five times the provisioned query capacity for an index, or the base capacity of 2.5 calls per second, whichever is higher. For example, the base capacity for an index is 0.1 queries per second, and <code>GetQuerySuggestions</code> capacity has a base of 2.5 calls per second. If you add another 0.1 queries per second to total 0.2 queries per second for an index, the <code>GetQuerySuggestions</code> capacity is 2.5 calls per second (higher than five times 0.2 queries per second).</p>
     pub fn set_query_capacity_units(mut self, input: ::std::option::Option<i32>) -> Self {
         self.query_capacity_units = input;
         self
     }
     /// <p>The amount of extra query capacity for an index and <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_GetQuerySuggestions.html">GetQuerySuggestions</a> capacity.</p>
     /// <p>A single extra capacity unit for an index provides 0.1 queries per second or approximately 8,000 queries per day. You can add up to 100 extra capacity units.</p>
-    /// <p><code>GetQuerySuggestions</code> capacity is five times the provisioned query capacity for an index, or the base capacity of 2.5 calls per second, whichever is higher. For example, the base capacity for an index is 0.1 queries per second, and <code>GetQuerySuggestions</code> capacity has a base of 2.5 calls per second. If you add another 0.1 queries per second to total 0.2 queries per second for an index, the <code>GetQuerySuggestions</code> capacity is 2.5 calls per second (higher than five times 0.2 queries per second).</p>
+    /// <p> <code>GetQuerySuggestions</code> capacity is five times the provisioned query capacity for an index, or the base capacity of 2.5 calls per second, whichever is higher. For example, the base capacity for an index is 0.1 queries per second, and <code>GetQuerySuggestions</code> capacity has a base of 2.5 calls per second. If you add another 0.1 queries per second to total 0.2 queries per second for an index, the <code>GetQuerySuggestions</code> capacity is 2.5 calls per second (higher than five times 0.2 queries per second).</p>
     pub fn get_query_capacity_units(&self) -> &::std::option::Option<i32> {
         &self.query_capacity_units
     }

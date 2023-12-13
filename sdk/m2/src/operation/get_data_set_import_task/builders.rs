@@ -122,17 +122,17 @@ impl GetDataSetImportTaskFluentBuilder {
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_id()
     }
-    /// <p>The task identifier returned by the <code>CreateDataSetImportTask</code> operation.</p>
+    /// <p>The task identifier returned by the <code>CreateDataSetImportTask</code> operation. </p>
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.task_id(input.into());
         self
     }
-    /// <p>The task identifier returned by the <code>CreateDataSetImportTask</code> operation.</p>
+    /// <p>The task identifier returned by the <code>CreateDataSetImportTask</code> operation. </p>
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_task_id(input);
         self
     }
-    /// <p>The task identifier returned by the <code>CreateDataSetImportTask</code> operation.</p>
+    /// <p>The task identifier returned by the <code>CreateDataSetImportTask</code> operation. </p>
     pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_task_id()
     }

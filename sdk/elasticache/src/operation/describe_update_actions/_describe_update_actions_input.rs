@@ -9,7 +9,7 @@ pub struct DescribeUpdateActionsInput {
     pub replication_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The cache cluster IDs</p>
     pub cache_cluster_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The Elasticache engine to which the update applies. Either Redis or Memcached</p>
+    /// <p>The Elasticache engine to which the update applies. Either Redis or Memcached </p>
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The status of the service update</p>
     pub service_update_status: ::std::option::Option<::std::vec::Vec<crate::types::ServiceUpdateStatus>>,
@@ -17,7 +17,7 @@ pub struct DescribeUpdateActionsInput {
     pub service_update_time_range: ::std::option::Option<crate::types::TimeRangeFilter>,
     /// <p>The status of the update action.</p>
     pub update_action_status: ::std::option::Option<::std::vec::Vec<crate::types::UpdateActionStatus>>,
-    /// <p>Dictates whether to include node level update status in the response</p>
+    /// <p>Dictates whether to include node level update status in the response </p>
     pub show_node_level_update_status: ::std::option::Option<bool>,
     /// <p>The maximum number of records to include in the response</p>
     pub max_records: ::std::option::Option<i32>,
@@ -41,7 +41,7 @@ impl DescribeUpdateActionsInput {
     pub fn cache_cluster_ids(&self) -> &[::std::string::String] {
         self.cache_cluster_ids.as_deref().unwrap_or_default()
     }
-    /// <p>The Elasticache engine to which the update applies. Either Redis or Memcached</p>
+    /// <p>The Elasticache engine to which the update applies. Either Redis or Memcached </p>
     pub fn engine(&self) -> ::std::option::Option<&str> {
         self.engine.as_deref()
     }
@@ -61,7 +61,7 @@ impl DescribeUpdateActionsInput {
     pub fn update_action_status(&self) -> &[crate::types::UpdateActionStatus] {
         self.update_action_status.as_deref().unwrap_or_default()
     }
-    /// <p>Dictates whether to include node level update status in the response</p>
+    /// <p>Dictates whether to include node level update status in the response </p>
     pub fn show_node_level_update_status(&self) -> ::std::option::Option<bool> {
         self.show_node_level_update_status
     }
@@ -151,17 +151,17 @@ impl DescribeUpdateActionsInputBuilder {
     pub fn get_cache_cluster_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.cache_cluster_ids
     }
-    /// <p>The Elasticache engine to which the update applies. Either Redis or Memcached</p>
+    /// <p>The Elasticache engine to which the update applies. Either Redis or Memcached </p>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Elasticache engine to which the update applies. Either Redis or Memcached</p>
+    /// <p>The Elasticache engine to which the update applies. Either Redis or Memcached </p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine = input;
         self
     }
-    /// <p>The Elasticache engine to which the update applies. Either Redis or Memcached</p>
+    /// <p>The Elasticache engine to which the update applies. Either Redis or Memcached </p>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine
     }
@@ -219,17 +219,17 @@ impl DescribeUpdateActionsInputBuilder {
     pub fn get_update_action_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateActionStatus>> {
         &self.update_action_status
     }
-    /// <p>Dictates whether to include node level update status in the response</p>
+    /// <p>Dictates whether to include node level update status in the response </p>
     pub fn show_node_level_update_status(mut self, input: bool) -> Self {
         self.show_node_level_update_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Dictates whether to include node level update status in the response</p>
+    /// <p>Dictates whether to include node level update status in the response </p>
     pub fn set_show_node_level_update_status(mut self, input: ::std::option::Option<bool>) -> Self {
         self.show_node_level_update_status = input;
         self
     }
-    /// <p>Dictates whether to include node level update status in the response</p>
+    /// <p>Dictates whether to include node level update status in the response </p>
     pub fn get_show_node_level_update_status(&self) -> &::std::option::Option<bool> {
         &self.show_node_level_update_status
     }

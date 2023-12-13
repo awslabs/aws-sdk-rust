@@ -131,12 +131,9 @@ impl ListResourceDelegatesFluentBuilder {
     /// <p>The identifier for the resource whose delegates are listed.</p>
     /// <p>The identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>. The following identity formats are available:</p>
     /// <ul>
-    /// <li>
-    /// <p>Resource ID: r-0123456789a0123456789b0123456789</p></li>
-    /// <li>
-    /// <p>Email address: resource@domain.tld</p></li>
-    /// <li>
-    /// <p>Resource name: resource</p></li>
+    /// <li> <p>Resource ID: r-0123456789a0123456789b0123456789</p> </li>
+    /// <li> <p>Email address: resource@domain.tld</p> </li>
+    /// <li> <p>Resource name: resource</p> </li>
     /// </ul>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_id(input.into());
@@ -145,12 +142,9 @@ impl ListResourceDelegatesFluentBuilder {
     /// <p>The identifier for the resource whose delegates are listed.</p>
     /// <p>The identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>. The following identity formats are available:</p>
     /// <ul>
-    /// <li>
-    /// <p>Resource ID: r-0123456789a0123456789b0123456789</p></li>
-    /// <li>
-    /// <p>Email address: resource@domain.tld</p></li>
-    /// <li>
-    /// <p>Resource name: resource</p></li>
+    /// <li> <p>Resource ID: r-0123456789a0123456789b0123456789</p> </li>
+    /// <li> <p>Email address: resource@domain.tld</p> </li>
+    /// <li> <p>Resource name: resource</p> </li>
     /// </ul>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_id(input);
@@ -159,12 +153,9 @@ impl ListResourceDelegatesFluentBuilder {
     /// <p>The identifier for the resource whose delegates are listed.</p>
     /// <p>The identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>. The following identity formats are available:</p>
     /// <ul>
-    /// <li>
-    /// <p>Resource ID: r-0123456789a0123456789b0123456789</p></li>
-    /// <li>
-    /// <p>Email address: resource@domain.tld</p></li>
-    /// <li>
-    /// <p>Resource name: resource</p></li>
+    /// <li> <p>Resource ID: r-0123456789a0123456789b0123456789</p> </li>
+    /// <li> <p>Email address: resource@domain.tld</p> </li>
+    /// <li> <p>Resource name: resource</p> </li>
     /// </ul>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_id()

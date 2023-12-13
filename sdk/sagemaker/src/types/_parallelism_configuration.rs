@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParallelismConfiguration {
-    /// <p>The max number of steps that can be executed in parallel.</p>
+    /// <p>The max number of steps that can be executed in parallel. </p>
     pub max_parallel_execution_steps: ::std::option::Option<i32>,
 }
 impl ParallelismConfiguration {
-    /// <p>The max number of steps that can be executed in parallel.</p>
+    /// <p>The max number of steps that can be executed in parallel. </p>
     pub fn max_parallel_execution_steps(&self) -> ::std::option::Option<i32> {
         self.max_parallel_execution_steps
     }
@@ -27,18 +27,18 @@ pub struct ParallelismConfigurationBuilder {
     pub(crate) max_parallel_execution_steps: ::std::option::Option<i32>,
 }
 impl ParallelismConfigurationBuilder {
-    /// <p>The max number of steps that can be executed in parallel.</p>
+    /// <p>The max number of steps that can be executed in parallel. </p>
     /// This field is required.
     pub fn max_parallel_execution_steps(mut self, input: i32) -> Self {
         self.max_parallel_execution_steps = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The max number of steps that can be executed in parallel.</p>
+    /// <p>The max number of steps that can be executed in parallel. </p>
     pub fn set_max_parallel_execution_steps(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_parallel_execution_steps = input;
         self
     }
-    /// <p>The max number of steps that can be executed in parallel.</p>
+    /// <p>The max number of steps that can be executed in parallel. </p>
     pub fn get_max_parallel_execution_steps(&self) -> &::std::option::Option<i32> {
         &self.max_parallel_execution_steps
     }

@@ -10,12 +10,9 @@ pub struct DescribeTenantDatabasesInput {
     /// <p>A filter that specifies one or more database tenants to describe.</p>
     /// <p>Supported filters:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>tenant-db-name</code> - Tenant database names. The results list only includes information about the tenant databases that match these tenant DB names.</p></li>
-    /// <li>
-    /// <p><code>tenant-database-resource-id</code> - Tenant database resource identifiers.</p></li>
-    /// <li>
-    /// <p><code>dbi-resource-id</code> - DB instance resource identifiers. The results list only includes information about the tenants contained within the DB instances identified by these resource identifiers.</p></li>
+    /// <li> <p> <code>tenant-db-name</code> - Tenant database names. The results list only includes information about the tenant databases that match these tenant DB names.</p> </li>
+    /// <li> <p> <code>tenant-database-resource-id</code> - Tenant database resource identifiers.</p> </li>
+    /// <li> <p> <code>dbi-resource-id</code> - DB instance resource identifiers. The results list only includes information about the tenants contained within the DB instances identified by these resource identifiers.</p> </li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>An optional pagination token provided by a previous <code>DescribeTenantDatabases</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
@@ -35,12 +32,9 @@ impl DescribeTenantDatabasesInput {
     /// <p>A filter that specifies one or more database tenants to describe.</p>
     /// <p>Supported filters:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>tenant-db-name</code> - Tenant database names. The results list only includes information about the tenant databases that match these tenant DB names.</p></li>
-    /// <li>
-    /// <p><code>tenant-database-resource-id</code> - Tenant database resource identifiers.</p></li>
-    /// <li>
-    /// <p><code>dbi-resource-id</code> - DB instance resource identifiers. The results list only includes information about the tenants contained within the DB instances identified by these resource identifiers.</p></li>
+    /// <li> <p> <code>tenant-db-name</code> - Tenant database names. The results list only includes information about the tenant databases that match these tenant DB names.</p> </li>
+    /// <li> <p> <code>tenant-database-resource-id</code> - Tenant database resource identifiers.</p> </li>
+    /// <li> <p> <code>dbi-resource-id</code> - DB instance resource identifiers. The results list only includes information about the tenants contained within the DB instances identified by these resource identifiers.</p> </li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
@@ -109,12 +103,9 @@ impl DescribeTenantDatabasesInputBuilder {
     /// <p>A filter that specifies one or more database tenants to describe.</p>
     /// <p>Supported filters:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>tenant-db-name</code> - Tenant database names. The results list only includes information about the tenant databases that match these tenant DB names.</p></li>
-    /// <li>
-    /// <p><code>tenant-database-resource-id</code> - Tenant database resource identifiers.</p></li>
-    /// <li>
-    /// <p><code>dbi-resource-id</code> - DB instance resource identifiers. The results list only includes information about the tenants contained within the DB instances identified by these resource identifiers.</p></li>
+    /// <li> <p> <code>tenant-db-name</code> - Tenant database names. The results list only includes information about the tenant databases that match these tenant DB names.</p> </li>
+    /// <li> <p> <code>tenant-database-resource-id</code> - Tenant database resource identifiers.</p> </li>
+    /// <li> <p> <code>dbi-resource-id</code> - DB instance resource identifiers. The results list only includes information about the tenants contained within the DB instances identified by these resource identifiers.</p> </li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
@@ -125,12 +116,9 @@ impl DescribeTenantDatabasesInputBuilder {
     /// <p>A filter that specifies one or more database tenants to describe.</p>
     /// <p>Supported filters:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>tenant-db-name</code> - Tenant database names. The results list only includes information about the tenant databases that match these tenant DB names.</p></li>
-    /// <li>
-    /// <p><code>tenant-database-resource-id</code> - Tenant database resource identifiers.</p></li>
-    /// <li>
-    /// <p><code>dbi-resource-id</code> - DB instance resource identifiers. The results list only includes information about the tenants contained within the DB instances identified by these resource identifiers.</p></li>
+    /// <li> <p> <code>tenant-db-name</code> - Tenant database names. The results list only includes information about the tenant databases that match these tenant DB names.</p> </li>
+    /// <li> <p> <code>tenant-database-resource-id</code> - Tenant database resource identifiers.</p> </li>
+    /// <li> <p> <code>dbi-resource-id</code> - DB instance resource identifiers. The results list only includes information about the tenants contained within the DB instances identified by these resource identifiers.</p> </li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
@@ -139,12 +127,9 @@ impl DescribeTenantDatabasesInputBuilder {
     /// <p>A filter that specifies one or more database tenants to describe.</p>
     /// <p>Supported filters:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>tenant-db-name</code> - Tenant database names. The results list only includes information about the tenant databases that match these tenant DB names.</p></li>
-    /// <li>
-    /// <p><code>tenant-database-resource-id</code> - Tenant database resource identifiers.</p></li>
-    /// <li>
-    /// <p><code>dbi-resource-id</code> - DB instance resource identifiers. The results list only includes information about the tenants contained within the DB instances identified by these resource identifiers.</p></li>
+    /// <li> <p> <code>tenant-db-name</code> - Tenant database names. The results list only includes information about the tenant databases that match these tenant DB names.</p> </li>
+    /// <li> <p> <code>tenant-database-resource-id</code> - Tenant database resource identifiers.</p> </li>
+    /// <li> <p> <code>dbi-resource-id</code> - DB instance resource identifiers. The results list only includes information about the tenants contained within the DB instances identified by these resource identifiers.</p> </li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters

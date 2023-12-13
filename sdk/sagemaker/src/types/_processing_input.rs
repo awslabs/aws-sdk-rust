@@ -10,7 +10,7 @@ pub struct ProcessingInput {
     pub app_managed: ::std::option::Option<bool>,
     /// <p>Configuration for downloading input data from Amazon S3 into the processing container.</p>
     pub s3_input: ::std::option::Option<crate::types::ProcessingS3Input>,
-    /// <p>Configuration for a Dataset Definition input.</p>
+    /// <p>Configuration for a Dataset Definition input. </p>
     pub dataset_definition: ::std::option::Option<crate::types::DatasetDefinition>,
 }
 impl ProcessingInput {
@@ -26,7 +26,7 @@ impl ProcessingInput {
     pub fn s3_input(&self) -> ::std::option::Option<&crate::types::ProcessingS3Input> {
         self.s3_input.as_ref()
     }
-    /// <p>Configuration for a Dataset Definition input.</p>
+    /// <p>Configuration for a Dataset Definition input. </p>
     pub fn dataset_definition(&self) -> ::std::option::Option<&crate::types::DatasetDefinition> {
         self.dataset_definition.as_ref()
     }
@@ -91,17 +91,17 @@ impl ProcessingInputBuilder {
     pub fn get_s3_input(&self) -> &::std::option::Option<crate::types::ProcessingS3Input> {
         &self.s3_input
     }
-    /// <p>Configuration for a Dataset Definition input.</p>
+    /// <p>Configuration for a Dataset Definition input. </p>
     pub fn dataset_definition(mut self, input: crate::types::DatasetDefinition) -> Self {
         self.dataset_definition = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Configuration for a Dataset Definition input.</p>
+    /// <p>Configuration for a Dataset Definition input. </p>
     pub fn set_dataset_definition(mut self, input: ::std::option::Option<crate::types::DatasetDefinition>) -> Self {
         self.dataset_definition = input;
         self
     }
-    /// <p>Configuration for a Dataset Definition input.</p>
+    /// <p>Configuration for a Dataset Definition input. </p>
     pub fn get_dataset_definition(&self) -> &::std::option::Option<crate::types::DatasetDefinition> {
         &self.dataset_definition
     }

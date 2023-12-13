@@ -138,12 +138,9 @@ impl DescribeFastLaunchImagesFluentBuilder {
     ///
     /// <p>Use the following filters to streamline results.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>resource-type</code> - The resource type for pre-provisioning.</p></li>
-    /// <li>
-    /// <p><code>owner-id</code> - The owner ID for the pre-provisioning resource.</p></li>
-    /// <li>
-    /// <p><code>state</code> - The current state of fast launching for the Windows AMI.</p></li>
+    /// <li> <p> <code>resource-type</code> - The resource type for pre-provisioning.</p> </li>
+    /// <li> <p> <code>owner-id</code> - The owner ID for the pre-provisioning resource.</p> </li>
+    /// <li> <p> <code>state</code> - The current state of fast launching for the Windows AMI.</p> </li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
@@ -151,12 +148,9 @@ impl DescribeFastLaunchImagesFluentBuilder {
     }
     /// <p>Use the following filters to streamline results.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>resource-type</code> - The resource type for pre-provisioning.</p></li>
-    /// <li>
-    /// <p><code>owner-id</code> - The owner ID for the pre-provisioning resource.</p></li>
-    /// <li>
-    /// <p><code>state</code> - The current state of fast launching for the Windows AMI.</p></li>
+    /// <li> <p> <code>resource-type</code> - The resource type for pre-provisioning.</p> </li>
+    /// <li> <p> <code>owner-id</code> - The owner ID for the pre-provisioning resource.</p> </li>
+    /// <li> <p> <code>state</code> - The current state of fast launching for the Windows AMI.</p> </li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
@@ -164,12 +158,9 @@ impl DescribeFastLaunchImagesFluentBuilder {
     }
     /// <p>Use the following filters to streamline results.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>resource-type</code> - The resource type for pre-provisioning.</p></li>
-    /// <li>
-    /// <p><code>owner-id</code> - The owner ID for the pre-provisioning resource.</p></li>
-    /// <li>
-    /// <p><code>state</code> - The current state of fast launching for the Windows AMI.</p></li>
+    /// <li> <p> <code>resource-type</code> - The resource type for pre-provisioning.</p> </li>
+    /// <li> <p> <code>owner-id</code> - The owner ID for the pre-provisioning resource.</p> </li>
+    /// <li> <p> <code>state</code> - The current state of fast launching for the Windows AMI.</p> </li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()

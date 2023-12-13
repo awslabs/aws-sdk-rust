@@ -8,16 +8,12 @@ pub struct UpgradeHistory {
     pub upgrade_name: ::std::option::Option<::std::string::String>,
     /// <p>UTC timestamp at which the upgrade API call was made, in the format <code>yyyy-MM-ddTHH:mm:ssZ</code>.</p>
     pub start_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The current status of the upgrade. The status can take one of the following values:</p>
+    /// <p> The current status of the upgrade. The status can take one of the following values: </p>
     /// <ul>
-    /// <li>
-    /// <p>In Progress</p></li>
-    /// <li>
-    /// <p>Succeeded</p></li>
-    /// <li>
-    /// <p>Succeeded with Issues</p></li>
-    /// <li>
-    /// <p>Failed</p></li>
+    /// <li> <p>In Progress</p> </li>
+    /// <li> <p>Succeeded</p> </li>
+    /// <li> <p>Succeeded with Issues</p> </li>
+    /// <li> <p>Failed</p> </li>
     /// </ul>
     pub upgrade_status: ::std::option::Option<crate::types::UpgradeStatus>,
     /// <p>A list of each step performed as part of a specific upgrade or upgrade eligibility check.</p>
@@ -32,16 +28,12 @@ impl UpgradeHistory {
     pub fn start_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_timestamp.as_ref()
     }
-    /// <p>The current status of the upgrade. The status can take one of the following values:</p>
+    /// <p> The current status of the upgrade. The status can take one of the following values: </p>
     /// <ul>
-    /// <li>
-    /// <p>In Progress</p></li>
-    /// <li>
-    /// <p>Succeeded</p></li>
-    /// <li>
-    /// <p>Succeeded with Issues</p></li>
-    /// <li>
-    /// <p>Failed</p></li>
+    /// <li> <p>In Progress</p> </li>
+    /// <li> <p>Succeeded</p> </li>
+    /// <li> <p>Succeeded with Issues</p> </li>
+    /// <li> <p>Failed</p> </li>
     /// </ul>
     pub fn upgrade_status(&self) -> ::std::option::Option<&crate::types::UpgradeStatus> {
         self.upgrade_status.as_ref()
@@ -98,46 +90,34 @@ impl UpgradeHistoryBuilder {
     pub fn get_start_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.start_timestamp
     }
-    /// <p>The current status of the upgrade. The status can take one of the following values:</p>
+    /// <p> The current status of the upgrade. The status can take one of the following values: </p>
     /// <ul>
-    /// <li>
-    /// <p>In Progress</p></li>
-    /// <li>
-    /// <p>Succeeded</p></li>
-    /// <li>
-    /// <p>Succeeded with Issues</p></li>
-    /// <li>
-    /// <p>Failed</p></li>
+    /// <li> <p>In Progress</p> </li>
+    /// <li> <p>Succeeded</p> </li>
+    /// <li> <p>Succeeded with Issues</p> </li>
+    /// <li> <p>Failed</p> </li>
     /// </ul>
     pub fn upgrade_status(mut self, input: crate::types::UpgradeStatus) -> Self {
         self.upgrade_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current status of the upgrade. The status can take one of the following values:</p>
+    /// <p> The current status of the upgrade. The status can take one of the following values: </p>
     /// <ul>
-    /// <li>
-    /// <p>In Progress</p></li>
-    /// <li>
-    /// <p>Succeeded</p></li>
-    /// <li>
-    /// <p>Succeeded with Issues</p></li>
-    /// <li>
-    /// <p>Failed</p></li>
+    /// <li> <p>In Progress</p> </li>
+    /// <li> <p>Succeeded</p> </li>
+    /// <li> <p>Succeeded with Issues</p> </li>
+    /// <li> <p>Failed</p> </li>
     /// </ul>
     pub fn set_upgrade_status(mut self, input: ::std::option::Option<crate::types::UpgradeStatus>) -> Self {
         self.upgrade_status = input;
         self
     }
-    /// <p>The current status of the upgrade. The status can take one of the following values:</p>
+    /// <p> The current status of the upgrade. The status can take one of the following values: </p>
     /// <ul>
-    /// <li>
-    /// <p>In Progress</p></li>
-    /// <li>
-    /// <p>Succeeded</p></li>
-    /// <li>
-    /// <p>Succeeded with Issues</p></li>
-    /// <li>
-    /// <p>Failed</p></li>
+    /// <li> <p>In Progress</p> </li>
+    /// <li> <p>Succeeded</p> </li>
+    /// <li> <p>Succeeded with Issues</p> </li>
+    /// <li> <p>Failed</p> </li>
     /// </ul>
     pub fn get_upgrade_status(&self) -> &::std::option::Option<crate::types::UpgradeStatus> {
         &self.upgrade_status

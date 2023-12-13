@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MediaAnalysisDetectModerationLabelsConfig {
-    /// <p>Specifies the minimum confidence level for the moderation labels to return. Amazon Rekognition doesn't return any labels with a confidence level lower than this specified value.</p>
+    /// <p>Specifies the minimum confidence level for the moderation labels to return. Amazon Rekognition doesn't return any labels with a confidence level lower than this specified value. </p>
     pub min_confidence: ::std::option::Option<f32>,
     /// <p>Specifies the custom moderation model to be used during the label detection job. If not provided the pre-trained model is used.</p>
     pub project_version: ::std::option::Option<::std::string::String>,
 }
 impl MediaAnalysisDetectModerationLabelsConfig {
-    /// <p>Specifies the minimum confidence level for the moderation labels to return. Amazon Rekognition doesn't return any labels with a confidence level lower than this specified value.</p>
+    /// <p>Specifies the minimum confidence level for the moderation labels to return. Amazon Rekognition doesn't return any labels with a confidence level lower than this specified value. </p>
     pub fn min_confidence(&self) -> ::std::option::Option<f32> {
         self.min_confidence
     }
@@ -34,17 +34,17 @@ pub struct MediaAnalysisDetectModerationLabelsConfigBuilder {
     pub(crate) project_version: ::std::option::Option<::std::string::String>,
 }
 impl MediaAnalysisDetectModerationLabelsConfigBuilder {
-    /// <p>Specifies the minimum confidence level for the moderation labels to return. Amazon Rekognition doesn't return any labels with a confidence level lower than this specified value.</p>
+    /// <p>Specifies the minimum confidence level for the moderation labels to return. Amazon Rekognition doesn't return any labels with a confidence level lower than this specified value. </p>
     pub fn min_confidence(mut self, input: f32) -> Self {
         self.min_confidence = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the minimum confidence level for the moderation labels to return. Amazon Rekognition doesn't return any labels with a confidence level lower than this specified value.</p>
+    /// <p>Specifies the minimum confidence level for the moderation labels to return. Amazon Rekognition doesn't return any labels with a confidence level lower than this specified value. </p>
     pub fn set_min_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
         self.min_confidence = input;
         self
     }
-    /// <p>Specifies the minimum confidence level for the moderation labels to return. Amazon Rekognition doesn't return any labels with a confidence level lower than this specified value.</p>
+    /// <p>Specifies the minimum confidence level for the moderation labels to return. Amazon Rekognition doesn't return any labels with a confidence level lower than this specified value. </p>
     pub fn get_min_confidence(&self) -> &::std::option::Option<f32> {
         &self.min_confidence
     }

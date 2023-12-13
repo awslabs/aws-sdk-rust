@@ -5,7 +5,7 @@
 pub struct GetResourceShareInvitationsInput {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resource share invitations you want information about.</p>
     pub resource_share_invitation_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Specifies that you want details about invitations only for the resource shares described by this list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a></p>
+    /// <p>Specifies that you want details about invitations only for the resource shares described by this list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> </p>
     pub resource_share_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -19,7 +19,7 @@ impl GetResourceShareInvitationsInput {
     pub fn resource_share_invitation_arns(&self) -> &[::std::string::String] {
         self.resource_share_invitation_arns.as_deref().unwrap_or_default()
     }
-    /// <p>Specifies that you want details about invitations only for the resource shares described by this list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a></p>
+    /// <p>Specifies that you want details about invitations only for the resource shares described by this list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_share_arns.is_none()`.
     pub fn resource_share_arns(&self) -> &[::std::string::String] {
@@ -75,19 +75,19 @@ impl GetResourceShareInvitationsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_resource_share_arns`](Self::set_resource_share_arns).
     ///
-    /// <p>Specifies that you want details about invitations only for the resource shares described by this list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a></p>
+    /// <p>Specifies that you want details about invitations only for the resource shares described by this list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> </p>
     pub fn resource_share_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_share_arns.unwrap_or_default();
         v.push(input.into());
         self.resource_share_arns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Specifies that you want details about invitations only for the resource shares described by this list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a></p>
+    /// <p>Specifies that you want details about invitations only for the resource shares described by this list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> </p>
     pub fn set_resource_share_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resource_share_arns = input;
         self
     }
-    /// <p>Specifies that you want details about invitations only for the resource shares described by this list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a></p>
+    /// <p>Specifies that you want details about invitations only for the resource shares described by this list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> </p>
     pub fn get_resource_share_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.resource_share_arns
     }

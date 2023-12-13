@@ -8,7 +8,7 @@ pub struct Source {
     pub config_type: ::std::option::Option<crate::types::ConfigCapabilityType>,
     /// <p>UUID of a <code>Config</code>.</p>
     pub config_id: ::std::option::Option<::std::string::String>,
-    /// <p>Additional details for a <code>Config</code>, if type is <code>dataflow-endpoint</code> or <code>antenna-downlink-demod-decode</code></p>
+    /// <p>Additional details for a <code>Config</code>, if type is <code>dataflow-endpoint</code> or <code>antenna-downlink-demod-decode</code> </p>
     pub config_details: ::std::option::Option<crate::types::ConfigDetails>,
     /// <p>Region of a dataflow source.</p>
     pub dataflow_source_region: ::std::option::Option<::std::string::String>,
@@ -22,7 +22,7 @@ impl Source {
     pub fn config_id(&self) -> ::std::option::Option<&str> {
         self.config_id.as_deref()
     }
-    /// <p>Additional details for a <code>Config</code>, if type is <code>dataflow-endpoint</code> or <code>antenna-downlink-demod-decode</code></p>
+    /// <p>Additional details for a <code>Config</code>, if type is <code>dataflow-endpoint</code> or <code>antenna-downlink-demod-decode</code> </p>
     pub fn config_details(&self) -> ::std::option::Option<&crate::types::ConfigDetails> {
         self.config_details.as_ref()
     }
@@ -76,17 +76,17 @@ impl SourceBuilder {
     pub fn get_config_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.config_id
     }
-    /// <p>Additional details for a <code>Config</code>, if type is <code>dataflow-endpoint</code> or <code>antenna-downlink-demod-decode</code></p>
+    /// <p>Additional details for a <code>Config</code>, if type is <code>dataflow-endpoint</code> or <code>antenna-downlink-demod-decode</code> </p>
     pub fn config_details(mut self, input: crate::types::ConfigDetails) -> Self {
         self.config_details = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Additional details for a <code>Config</code>, if type is <code>dataflow-endpoint</code> or <code>antenna-downlink-demod-decode</code></p>
+    /// <p>Additional details for a <code>Config</code>, if type is <code>dataflow-endpoint</code> or <code>antenna-downlink-demod-decode</code> </p>
     pub fn set_config_details(mut self, input: ::std::option::Option<crate::types::ConfigDetails>) -> Self {
         self.config_details = input;
         self
     }
-    /// <p>Additional details for a <code>Config</code>, if type is <code>dataflow-endpoint</code> or <code>antenna-downlink-demod-decode</code></p>
+    /// <p>Additional details for a <code>Config</code>, if type is <code>dataflow-endpoint</code> or <code>antenna-downlink-demod-decode</code> </p>
     pub fn get_config_details(&self) -> &::std::option::Option<crate::types::ConfigDetails> {
         &self.config_details
     }

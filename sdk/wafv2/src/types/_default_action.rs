@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DefaultAction {
-    /// <p>Specifies that WAF should block requests by default.</p>
+    /// <p>Specifies that WAF should block requests by default. </p>
     pub block: ::std::option::Option<crate::types::BlockAction>,
     /// <p>Specifies that WAF should allow requests by default.</p>
     pub allow: ::std::option::Option<crate::types::AllowAction>,
 }
 impl DefaultAction {
-    /// <p>Specifies that WAF should block requests by default.</p>
+    /// <p>Specifies that WAF should block requests by default. </p>
     pub fn block(&self) -> ::std::option::Option<&crate::types::BlockAction> {
         self.block.as_ref()
     }
@@ -34,17 +34,17 @@ pub struct DefaultActionBuilder {
     pub(crate) allow: ::std::option::Option<crate::types::AllowAction>,
 }
 impl DefaultActionBuilder {
-    /// <p>Specifies that WAF should block requests by default.</p>
+    /// <p>Specifies that WAF should block requests by default. </p>
     pub fn block(mut self, input: crate::types::BlockAction) -> Self {
         self.block = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies that WAF should block requests by default.</p>
+    /// <p>Specifies that WAF should block requests by default. </p>
     pub fn set_block(mut self, input: ::std::option::Option<crate::types::BlockAction>) -> Self {
         self.block = input;
         self
     }
-    /// <p>Specifies that WAF should block requests by default.</p>
+    /// <p>Specifies that WAF should block requests by default. </p>
     pub fn get_block(&self) -> &::std::option::Option<crate::types::BlockAction> {
         &self.block
     }

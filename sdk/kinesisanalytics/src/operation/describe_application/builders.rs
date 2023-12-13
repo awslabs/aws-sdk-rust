@@ -27,7 +27,7 @@ impl DescribeApplicationInputBuilder {
 /// </note>
 /// <p>Returns information about a specific Amazon Kinesis Analytics application.</p>
 /// <p>If you want to retrieve a list of all applications in your account, use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_ListApplications.html">ListApplications</a> operation.</p>
-/// <p>This operation requires permissions to perform the <code>kinesisanalytics:DescribeApplication</code> action. You can use <code>DescribeApplication</code> to get the current application versionId, which you need to call other operations such as <code>Update</code>.</p>
+/// <p>This operation requires permissions to perform the <code>kinesisanalytics:DescribeApplication</code> action. You can use <code>DescribeApplication</code> to get the current application versionId, which you need to call other operations such as <code>Update</code>. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeApplicationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

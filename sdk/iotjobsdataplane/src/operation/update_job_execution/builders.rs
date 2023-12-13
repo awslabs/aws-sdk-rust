@@ -154,7 +154,7 @@ impl UpdateJobExecutionFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_status_details`](Self::set_status_details).
     ///
-    /// <p>Optional. A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>
+    /// <p> Optional. A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>
     pub fn status_details(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -163,7 +163,7 @@ impl UpdateJobExecutionFluentBuilder {
         self.inner = self.inner.status_details(k.into(), v.into());
         self
     }
-    /// <p>Optional. A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>
+    /// <p> Optional. A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>
     pub fn set_status_details(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -171,7 +171,7 @@ impl UpdateJobExecutionFluentBuilder {
         self.inner = self.inner.set_status_details(input);
         self
     }
-    /// <p>Optional. A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>
+    /// <p> Optional. A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>
     pub fn get_status_details(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_status_details()
     }

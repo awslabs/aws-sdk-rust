@@ -22,7 +22,7 @@ impl ListTargetsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListTargets`.
 ///
-/// <p>Lists the targets for the target group. By default, all targets are included. You can use this API to check the health status of targets. You can also ﬁlter the results by target.</p>
+/// <p>Lists the targets for the target group. By default, all targets are included. You can use this API to check the health status of targets. You can also ﬁlter the results by target. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTargetsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

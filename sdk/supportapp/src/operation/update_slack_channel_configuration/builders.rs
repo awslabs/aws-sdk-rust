@@ -195,22 +195,16 @@ impl UpdateSlackChannelConfigurationFluentBuilder {
     /// <p>The case severity for a support case that you want to receive notifications.</p>
     /// <p>If you specify <code>high</code> or <code>all</code>, at least one of the following parameters must be <code>true</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>notifyOnAddCorrespondenceToCase</code></p></li>
-    /// <li>
-    /// <p><code>notifyOnCreateOrReopenCase</code></p></li>
-    /// <li>
-    /// <p><code>notifyOnResolveCase</code></p></li>
+    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li>
+    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li>
+    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li>
     /// </ul>
     /// <p>If you specify <code>none</code>, any of the following parameters that you specify in your request must be <code>false</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>notifyOnAddCorrespondenceToCase</code></p></li>
-    /// <li>
-    /// <p><code>notifyOnCreateOrReopenCase</code></p></li>
-    /// <li>
-    /// <p><code>notifyOnResolveCase</code></p></li>
-    /// </ul><note>
+    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li>
+    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li>
+    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li>
+    /// </ul> <note>
     /// <p>If you don't specify these parameters in your request, the Amazon Web Services Support App uses the current values by default.</p>
     /// </note>
     pub fn notify_on_case_severity(mut self, input: crate::types::NotificationSeverityLevel) -> Self {
@@ -220,22 +214,16 @@ impl UpdateSlackChannelConfigurationFluentBuilder {
     /// <p>The case severity for a support case that you want to receive notifications.</p>
     /// <p>If you specify <code>high</code> or <code>all</code>, at least one of the following parameters must be <code>true</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>notifyOnAddCorrespondenceToCase</code></p></li>
-    /// <li>
-    /// <p><code>notifyOnCreateOrReopenCase</code></p></li>
-    /// <li>
-    /// <p><code>notifyOnResolveCase</code></p></li>
+    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li>
+    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li>
+    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li>
     /// </ul>
     /// <p>If you specify <code>none</code>, any of the following parameters that you specify in your request must be <code>false</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>notifyOnAddCorrespondenceToCase</code></p></li>
-    /// <li>
-    /// <p><code>notifyOnCreateOrReopenCase</code></p></li>
-    /// <li>
-    /// <p><code>notifyOnResolveCase</code></p></li>
-    /// </ul><note>
+    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li>
+    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li>
+    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li>
+    /// </ul> <note>
     /// <p>If you don't specify these parameters in your request, the Amazon Web Services Support App uses the current values by default.</p>
     /// </note>
     pub fn set_notify_on_case_severity(mut self, input: ::std::option::Option<crate::types::NotificationSeverityLevel>) -> Self {
@@ -245,22 +233,16 @@ impl UpdateSlackChannelConfigurationFluentBuilder {
     /// <p>The case severity for a support case that you want to receive notifications.</p>
     /// <p>If you specify <code>high</code> or <code>all</code>, at least one of the following parameters must be <code>true</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>notifyOnAddCorrespondenceToCase</code></p></li>
-    /// <li>
-    /// <p><code>notifyOnCreateOrReopenCase</code></p></li>
-    /// <li>
-    /// <p><code>notifyOnResolveCase</code></p></li>
+    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li>
+    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li>
+    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li>
     /// </ul>
     /// <p>If you specify <code>none</code>, any of the following parameters that you specify in your request must be <code>false</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>notifyOnAddCorrespondenceToCase</code></p></li>
-    /// <li>
-    /// <p><code>notifyOnCreateOrReopenCase</code></p></li>
-    /// <li>
-    /// <p><code>notifyOnResolveCase</code></p></li>
-    /// </ul><note>
+    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li>
+    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li>
+    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li>
+    /// </ul> <note>
     /// <p>If you don't specify these parameters in your request, the Amazon Web Services Support App uses the current values by default.</p>
     /// </note>
     pub fn get_notify_on_case_severity(&self) -> &::std::option::Option<crate::types::NotificationSeverityLevel> {

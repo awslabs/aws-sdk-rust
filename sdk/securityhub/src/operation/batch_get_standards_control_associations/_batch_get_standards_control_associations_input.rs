@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetStandardsControlAssociationsInput {
-    /// <p>An array with one or more objects that includes a security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) and the Amazon Resource Name (ARN) of a standard. This field is used to query the enablement status of a control in a specified standard. The security control ID or ARN is the same across standards.</p>
+    /// <p> An array with one or more objects that includes a security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) and the Amazon Resource Name (ARN) of a standard. This field is used to query the enablement status of a control in a specified standard. The security control ID or ARN is the same across standards. </p>
     pub standards_control_association_ids: ::std::option::Option<::std::vec::Vec<crate::types::StandardsControlAssociationId>>,
 }
 impl BatchGetStandardsControlAssociationsInput {
-    /// <p>An array with one or more objects that includes a security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) and the Amazon Resource Name (ARN) of a standard. This field is used to query the enablement status of a control in a specified standard. The security control ID or ARN is the same across standards.</p>
+    /// <p> An array with one or more objects that includes a security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) and the Amazon Resource Name (ARN) of a standard. This field is used to query the enablement status of a control in a specified standard. The security control ID or ARN is the same across standards. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.standards_control_association_ids.is_none()`.
     pub fn standards_control_association_ids(&self) -> &[crate::types::StandardsControlAssociationId] {
@@ -32,14 +32,14 @@ impl BatchGetStandardsControlAssociationsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_standards_control_association_ids`](Self::set_standards_control_association_ids).
     ///
-    /// <p>An array with one or more objects that includes a security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) and the Amazon Resource Name (ARN) of a standard. This field is used to query the enablement status of a control in a specified standard. The security control ID or ARN is the same across standards.</p>
+    /// <p> An array with one or more objects that includes a security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) and the Amazon Resource Name (ARN) of a standard. This field is used to query the enablement status of a control in a specified standard. The security control ID or ARN is the same across standards. </p>
     pub fn standards_control_association_ids(mut self, input: crate::types::StandardsControlAssociationId) -> Self {
         let mut v = self.standards_control_association_ids.unwrap_or_default();
         v.push(input);
         self.standards_control_association_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array with one or more objects that includes a security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) and the Amazon Resource Name (ARN) of a standard. This field is used to query the enablement status of a control in a specified standard. The security control ID or ARN is the same across standards.</p>
+    /// <p> An array with one or more objects that includes a security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) and the Amazon Resource Name (ARN) of a standard. This field is used to query the enablement status of a control in a specified standard. The security control ID or ARN is the same across standards. </p>
     pub fn set_standards_control_association_ids(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::StandardsControlAssociationId>>,
@@ -47,7 +47,7 @@ impl BatchGetStandardsControlAssociationsInputBuilder {
         self.standards_control_association_ids = input;
         self
     }
-    /// <p>An array with one or more objects that includes a security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) and the Amazon Resource Name (ARN) of a standard. This field is used to query the enablement status of a control in a specified standard. The security control ID or ARN is the same across standards.</p>
+    /// <p> An array with one or more objects that includes a security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) and the Amazon Resource Name (ARN) of a standard. This field is used to query the enablement status of a control in a specified standard. The security control ID or ARN is the same across standards. </p>
     pub fn get_standards_control_association_ids(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StandardsControlAssociationId>> {
         &self.standards_control_association_ids
     }

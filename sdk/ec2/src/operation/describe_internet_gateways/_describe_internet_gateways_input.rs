@@ -5,24 +5,18 @@
 pub struct DescribeInternetGatewaysInput {
     /// <p>The filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>attachment.state</code> - The current state of the attachment between the gateway and the VPC (<code>available</code>). Present only if a VPC is attached.</p></li>
-    /// <li>
-    /// <p><code>attachment.vpc-id</code> - The ID of an attached VPC.</p></li>
-    /// <li>
-    /// <p><code>internet-gateway-id</code> - The ID of the Internet gateway.</p></li>
-    /// <li>
-    /// <p><code>owner-id</code> - The ID of the Amazon Web Services account that owns the internet gateway.</p></li>
-    /// <li>
-    /// <p><code>tag</code>:<key>
+    /// <li> <p> <code>attachment.state</code> - The current state of the attachment between the gateway and the VPC (<code>available</code>). Present only if a VPC is attached.</p> </li>
+    /// <li> <p> <code>attachment.vpc-id</code> - The ID of an attached VPC.</p> </li>
+    /// <li> <p> <code>internet-gateway-id</code> - The ID of the Internet gateway.</p> </li>
+    /// <li> <p> <code>owner-id</code> - The ID of the Amazon Web Services account that owns the internet gateway.</p> </li>
+    /// <li> <p> <code>tag</code>:<key>
     /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
     /// <code>Owner</code> and the value
     /// <code>TeamA</code>, specify
     /// <code>tag:Owner</code> for the filter name and
     /// <code>TeamA</code> for the filter value.
-    /// </key></p></li>
-    /// <li>
-    /// <p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
+    /// </key></p> </li>
+    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -38,24 +32,18 @@ pub struct DescribeInternetGatewaysInput {
 impl DescribeInternetGatewaysInput {
     /// <p>The filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>attachment.state</code> - The current state of the attachment between the gateway and the VPC (<code>available</code>). Present only if a VPC is attached.</p></li>
-    /// <li>
-    /// <p><code>attachment.vpc-id</code> - The ID of an attached VPC.</p></li>
-    /// <li>
-    /// <p><code>internet-gateway-id</code> - The ID of the Internet gateway.</p></li>
-    /// <li>
-    /// <p><code>owner-id</code> - The ID of the Amazon Web Services account that owns the internet gateway.</p></li>
-    /// <li>
-    /// <p><code>tag</code>:<key>
+    /// <li> <p> <code>attachment.state</code> - The current state of the attachment between the gateway and the VPC (<code>available</code>). Present only if a VPC is attached.</p> </li>
+    /// <li> <p> <code>attachment.vpc-id</code> - The ID of an attached VPC.</p> </li>
+    /// <li> <p> <code>internet-gateway-id</code> - The ID of the Internet gateway.</p> </li>
+    /// <li> <p> <code>owner-id</code> - The ID of the Amazon Web Services account that owns the internet gateway.</p> </li>
+    /// <li> <p> <code>tag</code>:<key>
     /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
     /// <code>Owner</code> and the value
     /// <code>TeamA</code>, specify
     /// <code>tag:Owner</code> for the filter name and
     /// <code>TeamA</code> for the filter value.
-    /// </key></p></li>
-    /// <li>
-    /// <p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
+    /// </key></p> </li>
+    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
@@ -106,24 +94,18 @@ impl DescribeInternetGatewaysInputBuilder {
     ///
     /// <p>The filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>attachment.state</code> - The current state of the attachment between the gateway and the VPC (<code>available</code>). Present only if a VPC is attached.</p></li>
-    /// <li>
-    /// <p><code>attachment.vpc-id</code> - The ID of an attached VPC.</p></li>
-    /// <li>
-    /// <p><code>internet-gateway-id</code> - The ID of the Internet gateway.</p></li>
-    /// <li>
-    /// <p><code>owner-id</code> - The ID of the Amazon Web Services account that owns the internet gateway.</p></li>
-    /// <li>
-    /// <p><code>tag</code>:<key>
+    /// <li> <p> <code>attachment.state</code> - The current state of the attachment between the gateway and the VPC (<code>available</code>). Present only if a VPC is attached.</p> </li>
+    /// <li> <p> <code>attachment.vpc-id</code> - The ID of an attached VPC.</p> </li>
+    /// <li> <p> <code>internet-gateway-id</code> - The ID of the Internet gateway.</p> </li>
+    /// <li> <p> <code>owner-id</code> - The ID of the Amazon Web Services account that owns the internet gateway.</p> </li>
+    /// <li> <p> <code>tag</code>:<key>
     /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
     /// <code>Owner</code> and the value
     /// <code>TeamA</code>, specify
     /// <code>tag:Owner</code> for the filter name and
     /// <code>TeamA</code> for the filter value.
-    /// </key></p></li>
-    /// <li>
-    /// <p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
+    /// </key></p> </li>
+    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
@@ -133,24 +115,18 @@ impl DescribeInternetGatewaysInputBuilder {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>attachment.state</code> - The current state of the attachment between the gateway and the VPC (<code>available</code>). Present only if a VPC is attached.</p></li>
-    /// <li>
-    /// <p><code>attachment.vpc-id</code> - The ID of an attached VPC.</p></li>
-    /// <li>
-    /// <p><code>internet-gateway-id</code> - The ID of the Internet gateway.</p></li>
-    /// <li>
-    /// <p><code>owner-id</code> - The ID of the Amazon Web Services account that owns the internet gateway.</p></li>
-    /// <li>
-    /// <p><code>tag</code>:<key>
+    /// <li> <p> <code>attachment.state</code> - The current state of the attachment between the gateway and the VPC (<code>available</code>). Present only if a VPC is attached.</p> </li>
+    /// <li> <p> <code>attachment.vpc-id</code> - The ID of an attached VPC.</p> </li>
+    /// <li> <p> <code>internet-gateway-id</code> - The ID of the Internet gateway.</p> </li>
+    /// <li> <p> <code>owner-id</code> - The ID of the Amazon Web Services account that owns the internet gateway.</p> </li>
+    /// <li> <p> <code>tag</code>:<key>
     /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
     /// <code>Owner</code> and the value
     /// <code>TeamA</code>, specify
     /// <code>tag:Owner</code> for the filter name and
     /// <code>TeamA</code> for the filter value.
-    /// </key></p></li>
-    /// <li>
-    /// <p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
+    /// </key></p> </li>
+    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
@@ -158,24 +134,18 @@ impl DescribeInternetGatewaysInputBuilder {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>attachment.state</code> - The current state of the attachment between the gateway and the VPC (<code>available</code>). Present only if a VPC is attached.</p></li>
-    /// <li>
-    /// <p><code>attachment.vpc-id</code> - The ID of an attached VPC.</p></li>
-    /// <li>
-    /// <p><code>internet-gateway-id</code> - The ID of the Internet gateway.</p></li>
-    /// <li>
-    /// <p><code>owner-id</code> - The ID of the Amazon Web Services account that owns the internet gateway.</p></li>
-    /// <li>
-    /// <p><code>tag</code>:<key>
+    /// <li> <p> <code>attachment.state</code> - The current state of the attachment between the gateway and the VPC (<code>available</code>). Present only if a VPC is attached.</p> </li>
+    /// <li> <p> <code>attachment.vpc-id</code> - The ID of an attached VPC.</p> </li>
+    /// <li> <p> <code>internet-gateway-id</code> - The ID of the Internet gateway.</p> </li>
+    /// <li> <p> <code>owner-id</code> - The ID of the Amazon Web Services account that owns the internet gateway.</p> </li>
+    /// <li> <p> <code>tag</code>:<key>
     /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
     /// <code>Owner</code> and the value
     /// <code>TeamA</code>, specify
     /// <code>tag:Owner</code> for the filter name and
     /// <code>TeamA</code> for the filter value.
-    /// </key></p></li>
-    /// <li>
-    /// <p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
+    /// </key></p> </li>
+    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters

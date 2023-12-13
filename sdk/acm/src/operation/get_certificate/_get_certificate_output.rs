@@ -5,7 +5,7 @@
 pub struct GetCertificateOutput {
     /// <p>The ACM-issued certificate corresponding to the ARN specified as input.</p>
     pub certificate: ::std::option::Option<::std::string::String>,
-    /// <p>Certificates forming the requested certificate's chain of trust. The chain consists of the certificate of the issuing CA and the intermediate certificates of any other subordinate CAs.</p>
+    /// <p>Certificates forming the requested certificate's chain of trust. The chain consists of the certificate of the issuing CA and the intermediate certificates of any other subordinate CAs. </p>
     pub certificate_chain: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -14,7 +14,7 @@ impl GetCertificateOutput {
     pub fn certificate(&self) -> ::std::option::Option<&str> {
         self.certificate.as_deref()
     }
-    /// <p>Certificates forming the requested certificate's chain of trust. The chain consists of the certificate of the issuing CA and the intermediate certificates of any other subordinate CAs.</p>
+    /// <p>Certificates forming the requested certificate's chain of trust. The chain consists of the certificate of the issuing CA and the intermediate certificates of any other subordinate CAs. </p>
     pub fn certificate_chain(&self) -> ::std::option::Option<&str> {
         self.certificate_chain.as_deref()
     }
@@ -54,17 +54,17 @@ impl GetCertificateOutputBuilder {
     pub fn get_certificate(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate
     }
-    /// <p>Certificates forming the requested certificate's chain of trust. The chain consists of the certificate of the issuing CA and the intermediate certificates of any other subordinate CAs.</p>
+    /// <p>Certificates forming the requested certificate's chain of trust. The chain consists of the certificate of the issuing CA and the intermediate certificates of any other subordinate CAs. </p>
     pub fn certificate_chain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_chain = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Certificates forming the requested certificate's chain of trust. The chain consists of the certificate of the issuing CA and the intermediate certificates of any other subordinate CAs.</p>
+    /// <p>Certificates forming the requested certificate's chain of trust. The chain consists of the certificate of the issuing CA and the intermediate certificates of any other subordinate CAs. </p>
     pub fn set_certificate_chain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_chain = input;
         self
     }
-    /// <p>Certificates forming the requested certificate's chain of trust. The chain consists of the certificate of the issuing CA and the intermediate certificates of any other subordinate CAs.</p>
+    /// <p>Certificates forming the requested certificate's chain of trust. The chain consists of the certificate of the issuing CA and the intermediate certificates of any other subordinate CAs. </p>
     pub fn get_certificate_chain(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate_chain
     }

@@ -7,8 +7,7 @@ pub struct BatchDeleteDevicePositionHistoryInput {
     pub tracker_name: ::std::option::Option<::std::string::String>,
     /// <p>Devices whose position history you want to delete.</p>
     /// <ul>
-    /// <li>
-    /// <p>For example, for two devices: <code>“DeviceIds” : [DeviceId1,DeviceId2]</code></p></li>
+    /// <li> <p>For example, for two devices: <code>“DeviceIds” : [DeviceId1,DeviceId2]</code> </p> </li>
     /// </ul>
     pub device_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -19,8 +18,7 @@ impl BatchDeleteDevicePositionHistoryInput {
     }
     /// <p>Devices whose position history you want to delete.</p>
     /// <ul>
-    /// <li>
-    /// <p>For example, for two devices: <code>“DeviceIds” : [DeviceId1,DeviceId2]</code></p></li>
+    /// <li> <p>For example, for two devices: <code>“DeviceIds” : [DeviceId1,DeviceId2]</code> </p> </li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.device_ids.is_none()`.
@@ -64,8 +62,7 @@ impl BatchDeleteDevicePositionHistoryInputBuilder {
     ///
     /// <p>Devices whose position history you want to delete.</p>
     /// <ul>
-    /// <li>
-    /// <p>For example, for two devices: <code>“DeviceIds” : [DeviceId1,DeviceId2]</code></p></li>
+    /// <li> <p>For example, for two devices: <code>“DeviceIds” : [DeviceId1,DeviceId2]</code> </p> </li>
     /// </ul>
     pub fn device_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.device_ids.unwrap_or_default();
@@ -75,8 +72,7 @@ impl BatchDeleteDevicePositionHistoryInputBuilder {
     }
     /// <p>Devices whose position history you want to delete.</p>
     /// <ul>
-    /// <li>
-    /// <p>For example, for two devices: <code>“DeviceIds” : [DeviceId1,DeviceId2]</code></p></li>
+    /// <li> <p>For example, for two devices: <code>“DeviceIds” : [DeviceId1,DeviceId2]</code> </p> </li>
     /// </ul>
     pub fn set_device_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.device_ids = input;
@@ -84,8 +80,7 @@ impl BatchDeleteDevicePositionHistoryInputBuilder {
     }
     /// <p>Devices whose position history you want to delete.</p>
     /// <ul>
-    /// <li>
-    /// <p>For example, for two devices: <code>“DeviceIds” : [DeviceId1,DeviceId2]</code></p></li>
+    /// <li> <p>For example, for two devices: <code>“DeviceIds” : [DeviceId1,DeviceId2]</code> </p> </li>
     /// </ul>
     pub fn get_device_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.device_ids

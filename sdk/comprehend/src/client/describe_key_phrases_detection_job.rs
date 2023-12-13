@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`job_id(impl Into<String>)`](crate::operation::describe_key_phrases_detection_job::builders::DescribeKeyPhrasesDetectionJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::describe_key_phrases_detection_job::builders::DescribeKeyPhrasesDetectionJobFluentBuilder::set_job_id):<br>required: **true**<br><p>The identifier that Amazon Comprehend generated for the job. The <code>StartKeyPhrasesDetectionJob</code> operation returns this identifier in its response.</p><br>
     /// - On success, responds with [`DescribeKeyPhrasesDetectionJobOutput`](crate::operation::describe_key_phrases_detection_job::DescribeKeyPhrasesDetectionJobOutput) with field(s):
-    ///   - [`key_phrases_detection_job_properties(Option<KeyPhrasesDetectionJobProperties>)`](crate::operation::describe_key_phrases_detection_job::DescribeKeyPhrasesDetectionJobOutput::key_phrases_detection_job_properties): <p>An object that contains the properties associated with a key phrases detection job.</p>
+    ///   - [`key_phrases_detection_job_properties(Option<KeyPhrasesDetectionJobProperties>)`](crate::operation::describe_key_phrases_detection_job::DescribeKeyPhrasesDetectionJobOutput::key_phrases_detection_job_properties): <p>An object that contains the properties associated with a key phrases detection job. </p>
     /// - On failure, responds with [`SdkError<DescribeKeyPhrasesDetectionJobError>`](crate::operation::describe_key_phrases_detection_job::DescribeKeyPhrasesDetectionJobError)
     pub fn describe_key_phrases_detection_job(
         &self,

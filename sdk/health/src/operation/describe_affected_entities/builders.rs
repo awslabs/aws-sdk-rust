@@ -23,12 +23,10 @@ impl DescribeAffectedEntitiesInputBuilder {
 /// Fluent builder constructing a request to `DescribeAffectedEntities`.
 ///
 /// <p>Returns a list of entities that have been affected by the specified events, based on the specified filter criteria. Entities can refer to individual customer resources, groups of customer resources, or any other construct, depending on the Amazon Web Service. Events that have impact beyond that of the affected entities, or where the extent of impact is unknown, include at least one entity indicating this.</p>
-/// <p>At least one event ARN is required.</p><note>
+/// <p>At least one event ARN is required.</p> <note>
 /// <ul>
-/// <li>
-/// <p>This API operation uses pagination. Specify the <code>nextToken</code> parameter in the next request to return more results.</p></li>
-/// <li>
-/// <p>This operation supports resource-level permissions. You can use this operation to allow or deny access to specific Health events. For more information, see <a href="https://docs.aws.amazon.com/health/latest/ug/security_iam_id-based-policy-examples.html#resource-action-based-conditions">Resource- and action-based conditions</a> in the <i>Health User Guide</i>.</p></li>
+/// <li> <p>This API operation uses pagination. Specify the <code>nextToken</code> parameter in the next request to return more results.</p> </li>
+/// <li> <p>This operation supports resource-level permissions. You can use this operation to allow or deny access to specific Health events. For more information, see <a href="https://docs.aws.amazon.com/health/latest/ug/security_iam_id-based-policy-examples.html#resource-action-based-conditions">Resource- and action-based conditions</a> in the <i>Health User Guide</i>.</p> </li>
 /// </ul>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

@@ -4,17 +4,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListVpcIngressConnectionsFilter {
-    /// <p>The Amazon Resource Name (ARN) of a service to filter by.</p>
+    /// <p>The Amazon Resource Name (ARN) of a service to filter by. </p>
     pub service_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of a VPC Endpoint to filter by.</p>
+    /// <p>The ID of a VPC Endpoint to filter by. </p>
     pub vpc_endpoint_id: ::std::option::Option<::std::string::String>,
 }
 impl ListVpcIngressConnectionsFilter {
-    /// <p>The Amazon Resource Name (ARN) of a service to filter by.</p>
+    /// <p>The Amazon Resource Name (ARN) of a service to filter by. </p>
     pub fn service_arn(&self) -> ::std::option::Option<&str> {
         self.service_arn.as_deref()
     }
-    /// <p>The ID of a VPC Endpoint to filter by.</p>
+    /// <p>The ID of a VPC Endpoint to filter by. </p>
     pub fn vpc_endpoint_id(&self) -> ::std::option::Option<&str> {
         self.vpc_endpoint_id.as_deref()
     }
@@ -34,31 +34,31 @@ pub struct ListVpcIngressConnectionsFilterBuilder {
     pub(crate) vpc_endpoint_id: ::std::option::Option<::std::string::String>,
 }
 impl ListVpcIngressConnectionsFilterBuilder {
-    /// <p>The Amazon Resource Name (ARN) of a service to filter by.</p>
+    /// <p>The Amazon Resource Name (ARN) of a service to filter by. </p>
     pub fn service_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of a service to filter by.</p>
+    /// <p>The Amazon Resource Name (ARN) of a service to filter by. </p>
     pub fn set_service_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of a service to filter by.</p>
+    /// <p>The Amazon Resource Name (ARN) of a service to filter by. </p>
     pub fn get_service_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_arn
     }
-    /// <p>The ID of a VPC Endpoint to filter by.</p>
+    /// <p>The ID of a VPC Endpoint to filter by. </p>
     pub fn vpc_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_endpoint_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of a VPC Endpoint to filter by.</p>
+    /// <p>The ID of a VPC Endpoint to filter by. </p>
     pub fn set_vpc_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_endpoint_id = input;
         self
     }
-    /// <p>The ID of a VPC Endpoint to filter by.</p>
+    /// <p>The ID of a VPC Endpoint to filter by. </p>
     pub fn get_vpc_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_endpoint_id
     }

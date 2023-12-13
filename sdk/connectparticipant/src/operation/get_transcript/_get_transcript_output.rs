@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTranscriptOutput {
-    /// <p>The initial contact ID for the contact.</p>
+    /// <p>The initial contact ID for the contact. </p>
     pub initial_contact_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of messages in the session.</p>
     pub transcript: ::std::option::Option<::std::vec::Vec<crate::types::Item>>,
@@ -12,7 +12,7 @@ pub struct GetTranscriptOutput {
     _request_id: Option<String>,
 }
 impl GetTranscriptOutput {
-    /// <p>The initial contact ID for the contact.</p>
+    /// <p>The initial contact ID for the contact. </p>
     pub fn initial_contact_id(&self) -> ::std::option::Option<&str> {
         self.initial_contact_id.as_deref()
     }
@@ -49,17 +49,17 @@ pub struct GetTranscriptOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetTranscriptOutputBuilder {
-    /// <p>The initial contact ID for the contact.</p>
+    /// <p>The initial contact ID for the contact. </p>
     pub fn initial_contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.initial_contact_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The initial contact ID for the contact.</p>
+    /// <p>The initial contact ID for the contact. </p>
     pub fn set_initial_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.initial_contact_id = input;
         self
     }
-    /// <p>The initial contact ID for the contact.</p>
+    /// <p>The initial contact ID for the contact. </p>
     pub fn get_initial_contact_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.initial_contact_id
     }

@@ -5,7 +5,7 @@
 pub struct UpdateDeletionProtectionInput {
     /// <p>The Amazon Resource Name (ARN) of the replication set to update.</p>
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies if deletion protection is turned on or off in your account.</p>
+    /// <p>Specifies if deletion protection is turned on or off in your account. </p>
     pub deletion_protected: ::std::option::Option<bool>,
     /// <p>A token that ensures that the operation is called only once with the specified details.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ impl UpdateDeletionProtectionInput {
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>Specifies if deletion protection is turned on or off in your account.</p>
+    /// <p>Specifies if deletion protection is turned on or off in your account. </p>
     pub fn deletion_protected(&self) -> ::std::option::Option<bool> {
         self.deletion_protected
     }
@@ -55,18 +55,18 @@ impl UpdateDeletionProtectionInputBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>Specifies if deletion protection is turned on or off in your account.</p>
+    /// <p>Specifies if deletion protection is turned on or off in your account. </p>
     /// This field is required.
     pub fn deletion_protected(mut self, input: bool) -> Self {
         self.deletion_protected = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies if deletion protection is turned on or off in your account.</p>
+    /// <p>Specifies if deletion protection is turned on or off in your account. </p>
     pub fn set_deletion_protected(mut self, input: ::std::option::Option<bool>) -> Self {
         self.deletion_protected = input;
         self
     }
-    /// <p>Specifies if deletion protection is turned on or off in your account.</p>
+    /// <p>Specifies if deletion protection is turned on or off in your account. </p>
     pub fn get_deletion_protected(&self) -> &::std::option::Option<bool> {
         &self.deletion_protected
     }

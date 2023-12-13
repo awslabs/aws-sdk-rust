@@ -7,14 +7,14 @@ impl super::Client {
     /// - On success, responds with [`DescribeDeviceOutput`](crate::operation::describe_device::DescribeDeviceOutput) with field(s):
     ///   - [`last_reached_out_at(Option<DateTime>)`](crate::operation::describe_device::DescribeDeviceOutput::last_reached_out_at): <p>When the device last contacted the Amazon Web Services Cloud. Indicates that the device is online.</p>
     ///   - [`last_updated_at(Option<DateTime>)`](crate::operation::describe_device::DescribeDeviceOutput::last_updated_at): <p>When the device last pushed an update to the Amazon Web Services Cloud. Indicates when the device cache was refreshed.</p>
-    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::describe_device::DescribeDeviceOutput::tags): <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::describe_device::DescribeDeviceOutput::tags): <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment. </p>
     ///   - [`managed_device_id(Option<String>)`](crate::operation::describe_device::DescribeDeviceOutput::managed_device_id): <p>The ID of the device that you checked the information for.</p>
     ///   - [`managed_device_arn(Option<String>)`](crate::operation::describe_device::DescribeDeviceOutput::managed_device_arn): <p>The Amazon Resource Name (ARN) of the device.</p>
     ///   - [`device_type(Option<String>)`](crate::operation::describe_device::DescribeDeviceOutput::device_type): <p>The type of Amazon Web Services Snow Family device.</p>
     ///   - [`associated_with_job(Option<String>)`](crate::operation::describe_device::DescribeDeviceOutput::associated_with_job): <p>The ID of the job used when ordering the device.</p>
     ///   - [`device_state(Option<UnlockState>)`](crate::operation::describe_device::DescribeDeviceOutput::device_state): <p>The current state of the device.</p>
     ///   - [`physical_network_interfaces(Option<Vec::<PhysicalNetworkInterface>>)`](crate::operation::describe_device::DescribeDeviceOutput::physical_network_interfaces): <p>The network interfaces available on the device.</p>
-    ///   - [`device_capacities(Option<Vec::<Capacity>>)`](crate::operation::describe_device::DescribeDeviceOutput::device_capacities): <p>The hardware specifications of the device.</p>
+    ///   - [`device_capacities(Option<Vec::<Capacity>>)`](crate::operation::describe_device::DescribeDeviceOutput::device_capacities): <p>The hardware specifications of the device. </p>
     ///   - [`software(Option<SoftwareInformation>)`](crate::operation::describe_device::DescribeDeviceOutput::software): <p>The software installed on the device.</p>
     /// - On failure, responds with [`SdkError<DescribeDeviceError>`](crate::operation::describe_device::DescribeDeviceError)
     pub fn describe_device(&self) -> crate::operation::describe_device::builders::DescribeDeviceFluentBuilder {

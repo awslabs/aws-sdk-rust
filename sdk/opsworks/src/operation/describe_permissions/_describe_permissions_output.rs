@@ -6,12 +6,9 @@
 pub struct DescribePermissionsOutput {
     /// <p>An array of <code>Permission</code> objects that describe the stack permissions.</p>
     /// <ul>
-    /// <li>
-    /// <p>If the request object contains only a stack ID, the array contains a <code>Permission</code> object with permissions for each of the stack IAM ARNs.</p></li>
-    /// <li>
-    /// <p>If the request object contains only an IAM ARN, the array contains a <code>Permission</code> object with permissions for each of the user's stack IDs.</p></li>
-    /// <li>
-    /// <p>If the request contains a stack ID and an IAM ARN, the array contains a single <code>Permission</code> object with permissions for the specified stack and IAM ARN.</p></li>
+    /// <li> <p>If the request object contains only a stack ID, the array contains a <code>Permission</code> object with permissions for each of the stack IAM ARNs.</p> </li>
+    /// <li> <p>If the request object contains only an IAM ARN, the array contains a <code>Permission</code> object with permissions for each of the user's stack IDs.</p> </li>
+    /// <li> <p>If the request contains a stack ID and an IAM ARN, the array contains a single <code>Permission</code> object with permissions for the specified stack and IAM ARN.</p> </li>
     /// </ul>
     pub permissions: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
     _request_id: Option<String>,
@@ -19,12 +16,9 @@ pub struct DescribePermissionsOutput {
 impl DescribePermissionsOutput {
     /// <p>An array of <code>Permission</code> objects that describe the stack permissions.</p>
     /// <ul>
-    /// <li>
-    /// <p>If the request object contains only a stack ID, the array contains a <code>Permission</code> object with permissions for each of the stack IAM ARNs.</p></li>
-    /// <li>
-    /// <p>If the request object contains only an IAM ARN, the array contains a <code>Permission</code> object with permissions for each of the user's stack IDs.</p></li>
-    /// <li>
-    /// <p>If the request contains a stack ID and an IAM ARN, the array contains a single <code>Permission</code> object with permissions for the specified stack and IAM ARN.</p></li>
+    /// <li> <p>If the request object contains only a stack ID, the array contains a <code>Permission</code> object with permissions for each of the stack IAM ARNs.</p> </li>
+    /// <li> <p>If the request object contains only an IAM ARN, the array contains a <code>Permission</code> object with permissions for each of the user's stack IDs.</p> </li>
+    /// <li> <p>If the request contains a stack ID and an IAM ARN, the array contains a single <code>Permission</code> object with permissions for the specified stack and IAM ARN.</p> </li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permissions.is_none()`.
@@ -58,12 +52,9 @@ impl DescribePermissionsOutputBuilder {
     ///
     /// <p>An array of <code>Permission</code> objects that describe the stack permissions.</p>
     /// <ul>
-    /// <li>
-    /// <p>If the request object contains only a stack ID, the array contains a <code>Permission</code> object with permissions for each of the stack IAM ARNs.</p></li>
-    /// <li>
-    /// <p>If the request object contains only an IAM ARN, the array contains a <code>Permission</code> object with permissions for each of the user's stack IDs.</p></li>
-    /// <li>
-    /// <p>If the request contains a stack ID and an IAM ARN, the array contains a single <code>Permission</code> object with permissions for the specified stack and IAM ARN.</p></li>
+    /// <li> <p>If the request object contains only a stack ID, the array contains a <code>Permission</code> object with permissions for each of the stack IAM ARNs.</p> </li>
+    /// <li> <p>If the request object contains only an IAM ARN, the array contains a <code>Permission</code> object with permissions for each of the user's stack IDs.</p> </li>
+    /// <li> <p>If the request contains a stack ID and an IAM ARN, the array contains a single <code>Permission</code> object with permissions for the specified stack and IAM ARN.</p> </li>
     /// </ul>
     pub fn permissions(mut self, input: crate::types::Permission) -> Self {
         let mut v = self.permissions.unwrap_or_default();
@@ -73,12 +64,9 @@ impl DescribePermissionsOutputBuilder {
     }
     /// <p>An array of <code>Permission</code> objects that describe the stack permissions.</p>
     /// <ul>
-    /// <li>
-    /// <p>If the request object contains only a stack ID, the array contains a <code>Permission</code> object with permissions for each of the stack IAM ARNs.</p></li>
-    /// <li>
-    /// <p>If the request object contains only an IAM ARN, the array contains a <code>Permission</code> object with permissions for each of the user's stack IDs.</p></li>
-    /// <li>
-    /// <p>If the request contains a stack ID and an IAM ARN, the array contains a single <code>Permission</code> object with permissions for the specified stack and IAM ARN.</p></li>
+    /// <li> <p>If the request object contains only a stack ID, the array contains a <code>Permission</code> object with permissions for each of the stack IAM ARNs.</p> </li>
+    /// <li> <p>If the request object contains only an IAM ARN, the array contains a <code>Permission</code> object with permissions for each of the user's stack IDs.</p> </li>
+    /// <li> <p>If the request contains a stack ID and an IAM ARN, the array contains a single <code>Permission</code> object with permissions for the specified stack and IAM ARN.</p> </li>
     /// </ul>
     pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>) -> Self {
         self.permissions = input;
@@ -86,12 +74,9 @@ impl DescribePermissionsOutputBuilder {
     }
     /// <p>An array of <code>Permission</code> objects that describe the stack permissions.</p>
     /// <ul>
-    /// <li>
-    /// <p>If the request object contains only a stack ID, the array contains a <code>Permission</code> object with permissions for each of the stack IAM ARNs.</p></li>
-    /// <li>
-    /// <p>If the request object contains only an IAM ARN, the array contains a <code>Permission</code> object with permissions for each of the user's stack IDs.</p></li>
-    /// <li>
-    /// <p>If the request contains a stack ID and an IAM ARN, the array contains a single <code>Permission</code> object with permissions for the specified stack and IAM ARN.</p></li>
+    /// <li> <p>If the request object contains only a stack ID, the array contains a <code>Permission</code> object with permissions for each of the stack IAM ARNs.</p> </li>
+    /// <li> <p>If the request object contains only an IAM ARN, the array contains a <code>Permission</code> object with permissions for each of the user's stack IDs.</p> </li>
+    /// <li> <p>If the request contains a stack ID and an IAM ARN, the array contains a single <code>Permission</code> object with permissions for the specified stack and IAM ARN.</p> </li>
     /// </ul>
     pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Permission>> {
         &self.permissions

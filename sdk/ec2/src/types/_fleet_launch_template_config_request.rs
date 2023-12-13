@@ -4,14 +4,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FleetLaunchTemplateConfigRequest {
-    /// <p>The launch template to use. You must specify either the launch template ID or launch template name in the request.</p>
+    /// <p>The launch template to use. You must specify either the launch template ID or launch template name in the request. </p>
     pub launch_template_specification: ::std::option::Option<crate::types::FleetLaunchTemplateSpecificationRequest>,
     /// <p>Any parameters that you specify override the same parameters in the launch template.</p>
     /// <p>For fleets of type <code>request</code> and <code>maintain</code>, a maximum of 300 items is allowed across all launch templates.</p>
     pub overrides: ::std::option::Option<::std::vec::Vec<crate::types::FleetLaunchTemplateOverridesRequest>>,
 }
 impl FleetLaunchTemplateConfigRequest {
-    /// <p>The launch template to use. You must specify either the launch template ID or launch template name in the request.</p>
+    /// <p>The launch template to use. You must specify either the launch template ID or launch template name in the request. </p>
     pub fn launch_template_specification(&self) -> ::std::option::Option<&crate::types::FleetLaunchTemplateSpecificationRequest> {
         self.launch_template_specification.as_ref()
     }
@@ -38,17 +38,17 @@ pub struct FleetLaunchTemplateConfigRequestBuilder {
     pub(crate) overrides: ::std::option::Option<::std::vec::Vec<crate::types::FleetLaunchTemplateOverridesRequest>>,
 }
 impl FleetLaunchTemplateConfigRequestBuilder {
-    /// <p>The launch template to use. You must specify either the launch template ID or launch template name in the request.</p>
+    /// <p>The launch template to use. You must specify either the launch template ID or launch template name in the request. </p>
     pub fn launch_template_specification(mut self, input: crate::types::FleetLaunchTemplateSpecificationRequest) -> Self {
         self.launch_template_specification = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The launch template to use. You must specify either the launch template ID or launch template name in the request.</p>
+    /// <p>The launch template to use. You must specify either the launch template ID or launch template name in the request. </p>
     pub fn set_launch_template_specification(mut self, input: ::std::option::Option<crate::types::FleetLaunchTemplateSpecificationRequest>) -> Self {
         self.launch_template_specification = input;
         self
     }
-    /// <p>The launch template to use. You must specify either the launch template ID or launch template name in the request.</p>
+    /// <p>The launch template to use. You must specify either the launch template ID or launch template name in the request. </p>
     pub fn get_launch_template_specification(&self) -> &::std::option::Option<crate::types::FleetLaunchTemplateSpecificationRequest> {
         &self.launch_template_specification
     }

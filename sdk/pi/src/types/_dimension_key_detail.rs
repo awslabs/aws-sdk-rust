@@ -6,60 +6,46 @@
 pub struct DimensionKeyDetail {
     /// <p>The value of the dimension detail data. Depending on the return status, this value is either the full or truncated SQL query for the following dimensions:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>db.query.statement</code> (Amazon DocumentDB)</p></li>
-    /// <li>
-    /// <p><code>db.sql.statement</code> (Amazon RDS and Aurora)</p></li>
+    /// <li> <p> <code>db.query.statement</code> (Amazon DocumentDB)</p> </li>
+    /// <li> <p> <code>db.sql.statement</code> (Amazon RDS and Aurora)</p> </li>
     /// </ul>
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>The full name of the dimension. The full name includes the group name and key name. The following values are valid:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>db.query.statement</code> (Amazon DocumentDB)</p></li>
-    /// <li>
-    /// <p><code>db.sql.statement</code> (Amazon RDS and Aurora)</p></li>
+    /// <li> <p> <code>db.query.statement</code> (Amazon DocumentDB)</p> </li>
+    /// <li> <p> <code>db.sql.statement</code> (Amazon RDS and Aurora)</p> </li>
     /// </ul>
     pub dimension: ::std::option::Option<::std::string::String>,
     /// <p>The status of the dimension detail data. Possible values include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AVAILABLE</code> - The dimension detail data is ready to be retrieved.</p></li>
-    /// <li>
-    /// <p><code>PROCESSING</code> - The dimension detail data isn't ready to be retrieved because more processing time is required. If the requested detail data has the status <code>PROCESSING</code>, Performance Insights returns the truncated query.</p></li>
-    /// <li>
-    /// <p><code>UNAVAILABLE</code> - The dimension detail data could not be collected successfully.</p></li>
+    /// <li> <p> <code>AVAILABLE</code> - The dimension detail data is ready to be retrieved.</p> </li>
+    /// <li> <p> <code>PROCESSING</code> - The dimension detail data isn't ready to be retrieved because more processing time is required. If the requested detail data has the status <code>PROCESSING</code>, Performance Insights returns the truncated query.</p> </li>
+    /// <li> <p> <code>UNAVAILABLE</code> - The dimension detail data could not be collected successfully.</p> </li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::DetailStatus>,
 }
 impl DimensionKeyDetail {
     /// <p>The value of the dimension detail data. Depending on the return status, this value is either the full or truncated SQL query for the following dimensions:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>db.query.statement</code> (Amazon DocumentDB)</p></li>
-    /// <li>
-    /// <p><code>db.sql.statement</code> (Amazon RDS and Aurora)</p></li>
+    /// <li> <p> <code>db.query.statement</code> (Amazon DocumentDB)</p> </li>
+    /// <li> <p> <code>db.sql.statement</code> (Amazon RDS and Aurora)</p> </li>
     /// </ul>
     pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
     /// <p>The full name of the dimension. The full name includes the group name and key name. The following values are valid:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>db.query.statement</code> (Amazon DocumentDB)</p></li>
-    /// <li>
-    /// <p><code>db.sql.statement</code> (Amazon RDS and Aurora)</p></li>
+    /// <li> <p> <code>db.query.statement</code> (Amazon DocumentDB)</p> </li>
+    /// <li> <p> <code>db.sql.statement</code> (Amazon RDS and Aurora)</p> </li>
     /// </ul>
     pub fn dimension(&self) -> ::std::option::Option<&str> {
         self.dimension.as_deref()
     }
     /// <p>The status of the dimension detail data. Possible values include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AVAILABLE</code> - The dimension detail data is ready to be retrieved.</p></li>
-    /// <li>
-    /// <p><code>PROCESSING</code> - The dimension detail data isn't ready to be retrieved because more processing time is required. If the requested detail data has the status <code>PROCESSING</code>, Performance Insights returns the truncated query.</p></li>
-    /// <li>
-    /// <p><code>UNAVAILABLE</code> - The dimension detail data could not be collected successfully.</p></li>
+    /// <li> <p> <code>AVAILABLE</code> - The dimension detail data is ready to be retrieved.</p> </li>
+    /// <li> <p> <code>PROCESSING</code> - The dimension detail data isn't ready to be retrieved because more processing time is required. If the requested detail data has the status <code>PROCESSING</code>, Performance Insights returns the truncated query.</p> </li>
+    /// <li> <p> <code>UNAVAILABLE</code> - The dimension detail data could not be collected successfully.</p> </li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::DetailStatus> {
         self.status.as_ref()
@@ -83,10 +69,8 @@ pub struct DimensionKeyDetailBuilder {
 impl DimensionKeyDetailBuilder {
     /// <p>The value of the dimension detail data. Depending on the return status, this value is either the full or truncated SQL query for the following dimensions:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>db.query.statement</code> (Amazon DocumentDB)</p></li>
-    /// <li>
-    /// <p><code>db.sql.statement</code> (Amazon RDS and Aurora)</p></li>
+    /// <li> <p> <code>db.query.statement</code> (Amazon DocumentDB)</p> </li>
+    /// <li> <p> <code>db.sql.statement</code> (Amazon RDS and Aurora)</p> </li>
     /// </ul>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -94,10 +78,8 @@ impl DimensionKeyDetailBuilder {
     }
     /// <p>The value of the dimension detail data. Depending on the return status, this value is either the full or truncated SQL query for the following dimensions:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>db.query.statement</code> (Amazon DocumentDB)</p></li>
-    /// <li>
-    /// <p><code>db.sql.statement</code> (Amazon RDS and Aurora)</p></li>
+    /// <li> <p> <code>db.query.statement</code> (Amazon DocumentDB)</p> </li>
+    /// <li> <p> <code>db.sql.statement</code> (Amazon RDS and Aurora)</p> </li>
     /// </ul>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
@@ -105,20 +87,16 @@ impl DimensionKeyDetailBuilder {
     }
     /// <p>The value of the dimension detail data. Depending on the return status, this value is either the full or truncated SQL query for the following dimensions:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>db.query.statement</code> (Amazon DocumentDB)</p></li>
-    /// <li>
-    /// <p><code>db.sql.statement</code> (Amazon RDS and Aurora)</p></li>
+    /// <li> <p> <code>db.query.statement</code> (Amazon DocumentDB)</p> </li>
+    /// <li> <p> <code>db.sql.statement</code> (Amazon RDS and Aurora)</p> </li>
     /// </ul>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.value
     }
     /// <p>The full name of the dimension. The full name includes the group name and key name. The following values are valid:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>db.query.statement</code> (Amazon DocumentDB)</p></li>
-    /// <li>
-    /// <p><code>db.sql.statement</code> (Amazon RDS and Aurora)</p></li>
+    /// <li> <p> <code>db.query.statement</code> (Amazon DocumentDB)</p> </li>
+    /// <li> <p> <code>db.sql.statement</code> (Amazon RDS and Aurora)</p> </li>
     /// </ul>
     pub fn dimension(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dimension = ::std::option::Option::Some(input.into());
@@ -126,10 +104,8 @@ impl DimensionKeyDetailBuilder {
     }
     /// <p>The full name of the dimension. The full name includes the group name and key name. The following values are valid:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>db.query.statement</code> (Amazon DocumentDB)</p></li>
-    /// <li>
-    /// <p><code>db.sql.statement</code> (Amazon RDS and Aurora)</p></li>
+    /// <li> <p> <code>db.query.statement</code> (Amazon DocumentDB)</p> </li>
+    /// <li> <p> <code>db.sql.statement</code> (Amazon RDS and Aurora)</p> </li>
     /// </ul>
     pub fn set_dimension(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dimension = input;
@@ -137,22 +113,17 @@ impl DimensionKeyDetailBuilder {
     }
     /// <p>The full name of the dimension. The full name includes the group name and key name. The following values are valid:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>db.query.statement</code> (Amazon DocumentDB)</p></li>
-    /// <li>
-    /// <p><code>db.sql.statement</code> (Amazon RDS and Aurora)</p></li>
+    /// <li> <p> <code>db.query.statement</code> (Amazon DocumentDB)</p> </li>
+    /// <li> <p> <code>db.sql.statement</code> (Amazon RDS and Aurora)</p> </li>
     /// </ul>
     pub fn get_dimension(&self) -> &::std::option::Option<::std::string::String> {
         &self.dimension
     }
     /// <p>The status of the dimension detail data. Possible values include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AVAILABLE</code> - The dimension detail data is ready to be retrieved.</p></li>
-    /// <li>
-    /// <p><code>PROCESSING</code> - The dimension detail data isn't ready to be retrieved because more processing time is required. If the requested detail data has the status <code>PROCESSING</code>, Performance Insights returns the truncated query.</p></li>
-    /// <li>
-    /// <p><code>UNAVAILABLE</code> - The dimension detail data could not be collected successfully.</p></li>
+    /// <li> <p> <code>AVAILABLE</code> - The dimension detail data is ready to be retrieved.</p> </li>
+    /// <li> <p> <code>PROCESSING</code> - The dimension detail data isn't ready to be retrieved because more processing time is required. If the requested detail data has the status <code>PROCESSING</code>, Performance Insights returns the truncated query.</p> </li>
+    /// <li> <p> <code>UNAVAILABLE</code> - The dimension detail data could not be collected successfully.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::DetailStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -160,12 +131,9 @@ impl DimensionKeyDetailBuilder {
     }
     /// <p>The status of the dimension detail data. Possible values include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AVAILABLE</code> - The dimension detail data is ready to be retrieved.</p></li>
-    /// <li>
-    /// <p><code>PROCESSING</code> - The dimension detail data isn't ready to be retrieved because more processing time is required. If the requested detail data has the status <code>PROCESSING</code>, Performance Insights returns the truncated query.</p></li>
-    /// <li>
-    /// <p><code>UNAVAILABLE</code> - The dimension detail data could not be collected successfully.</p></li>
+    /// <li> <p> <code>AVAILABLE</code> - The dimension detail data is ready to be retrieved.</p> </li>
+    /// <li> <p> <code>PROCESSING</code> - The dimension detail data isn't ready to be retrieved because more processing time is required. If the requested detail data has the status <code>PROCESSING</code>, Performance Insights returns the truncated query.</p> </li>
+    /// <li> <p> <code>UNAVAILABLE</code> - The dimension detail data could not be collected successfully.</p> </li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::DetailStatus>) -> Self {
         self.status = input;
@@ -173,12 +141,9 @@ impl DimensionKeyDetailBuilder {
     }
     /// <p>The status of the dimension detail data. Possible values include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AVAILABLE</code> - The dimension detail data is ready to be retrieved.</p></li>
-    /// <li>
-    /// <p><code>PROCESSING</code> - The dimension detail data isn't ready to be retrieved because more processing time is required. If the requested detail data has the status <code>PROCESSING</code>, Performance Insights returns the truncated query.</p></li>
-    /// <li>
-    /// <p><code>UNAVAILABLE</code> - The dimension detail data could not be collected successfully.</p></li>
+    /// <li> <p> <code>AVAILABLE</code> - The dimension detail data is ready to be retrieved.</p> </li>
+    /// <li> <p> <code>PROCESSING</code> - The dimension detail data isn't ready to be retrieved because more processing time is required. If the requested detail data has the status <code>PROCESSING</code>, Performance Insights returns the truncated query.</p> </li>
+    /// <li> <p> <code>UNAVAILABLE</code> - The dimension detail data could not be collected successfully.</p> </li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::DetailStatus> {
         &self.status

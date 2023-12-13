@@ -114,17 +114,17 @@ impl ListRecipesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_recipes::paginator::ListRecipesPaginator {
         crate::operation::list_recipes::paginator::ListRecipesPaginator::new(self.handle, self.inner)
     }
-    /// <p>The maximum number of results to return in this request.</p>
+    /// <p>The maximum number of results to return in this request. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of results to return in this request.</p>
+    /// <p>The maximum number of results to return in this request. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The maximum number of results to return in this request.</p>
+    /// <p>The maximum number of results to return in this request. </p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
@@ -143,19 +143,19 @@ impl ListRecipesFluentBuilder {
         self.inner.get_next_token()
     }
     /// <p>Return only those recipes with a version identifier of <code>LATEST_WORKING</code> or <code>LATEST_PUBLISHED</code>. If <code>RecipeVersion</code> is omitted, <code>ListRecipes</code> returns all of the <code>LATEST_PUBLISHED</code> recipe versions.</p>
-    /// <p>Valid values: <code>LATEST_WORKING</code> | <code>LATEST_PUBLISHED</code></p>
+    /// <p>Valid values: <code>LATEST_WORKING</code> | <code>LATEST_PUBLISHED</code> </p>
     pub fn recipe_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.recipe_version(input.into());
         self
     }
     /// <p>Return only those recipes with a version identifier of <code>LATEST_WORKING</code> or <code>LATEST_PUBLISHED</code>. If <code>RecipeVersion</code> is omitted, <code>ListRecipes</code> returns all of the <code>LATEST_PUBLISHED</code> recipe versions.</p>
-    /// <p>Valid values: <code>LATEST_WORKING</code> | <code>LATEST_PUBLISHED</code></p>
+    /// <p>Valid values: <code>LATEST_WORKING</code> | <code>LATEST_PUBLISHED</code> </p>
     pub fn set_recipe_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_recipe_version(input);
         self
     }
     /// <p>Return only those recipes with a version identifier of <code>LATEST_WORKING</code> or <code>LATEST_PUBLISHED</code>. If <code>RecipeVersion</code> is omitted, <code>ListRecipes</code> returns all of the <code>LATEST_PUBLISHED</code> recipe versions.</p>
-    /// <p>Valid values: <code>LATEST_WORKING</code> | <code>LATEST_PUBLISHED</code></p>
+    /// <p>Valid values: <code>LATEST_WORKING</code> | <code>LATEST_PUBLISHED</code> </p>
     pub fn get_recipe_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_recipe_version()
     }

@@ -24,7 +24,7 @@ impl UntagDeliveryStreamInputBuilder {
 ///
 /// <p>Removes tags from the specified delivery stream. Removed tags are deleted, and you can't recover them after this operation successfully completes.</p>
 /// <p>If you specify a tag that doesn't exist, the operation ignores it.</p>
-/// <p>This operation has a limit of five transactions per second per account.</p>
+/// <p>This operation has a limit of five transactions per second per account. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UntagDeliveryStreamFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

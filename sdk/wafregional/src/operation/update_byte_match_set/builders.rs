@@ -24,30 +24,22 @@ impl UpdateByteMatchSetInputBuilder {
 ///
 /// <note>
 /// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p><b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use.</p>
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
 /// </note>
-/// <p>Inserts or deletes <code>ByteMatchTuple</code> objects (filters) in a <code>ByteMatchSet</code>. For each <code>ByteMatchTuple</code> object, you specify the following values:</p>
+/// <p>Inserts or deletes <code>ByteMatchTuple</code> objects (filters) in a <code>ByteMatchSet</code>. For each <code>ByteMatchTuple</code> object, you specify the following values: </p>
 /// <ul>
-/// <li>
-/// <p>Whether to insert or delete the object from the array. If you want to change a <code>ByteMatchSetUpdate</code> object, you delete the existing object and add a new one.</p></li>
-/// <li>
-/// <p>The part of a web request that you want AWS WAF to inspect, such as a query string or the value of the <code>User-Agent</code> header.</p></li>
-/// <li>
-/// <p>The bytes (typically a string that corresponds with ASCII characters) that you want AWS WAF to look for. For more information, including how you specify the values for the AWS WAF API and the AWS CLI or SDKs, see <code>TargetString</code> in the <code>ByteMatchTuple</code> data type.</p></li>
-/// <li>
-/// <p>Where to look, such as at the beginning or the end of a query string.</p></li>
-/// <li>
-/// <p>Whether to perform any conversions on the request, such as converting it to lowercase, before inspecting it for the specified string.</p></li>
+/// <li> <p>Whether to insert or delete the object from the array. If you want to change a <code>ByteMatchSetUpdate</code> object, you delete the existing object and add a new one.</p> </li>
+/// <li> <p>The part of a web request that you want AWS WAF to inspect, such as a query string or the value of the <code>User-Agent</code> header. </p> </li>
+/// <li> <p>The bytes (typically a string that corresponds with ASCII characters) that you want AWS WAF to look for. For more information, including how you specify the values for the AWS WAF API and the AWS CLI or SDKs, see <code>TargetString</code> in the <code>ByteMatchTuple</code> data type. </p> </li>
+/// <li> <p>Where to look, such as at the beginning or the end of a query string.</p> </li>
+/// <li> <p>Whether to perform any conversions on the request, such as converting it to lowercase, before inspecting it for the specified string.</p> </li>
 /// </ul>
 /// <p>For example, you can add a <code>ByteMatchSetUpdate</code> object that matches web requests in which <code>User-Agent</code> headers contain the string <code>BadBot</code>. You can then configure AWS WAF to block those requests.</p>
 /// <p>To create and configure a <code>ByteMatchSet</code>, perform the following steps:</p>
 /// <ol>
-/// <li>
-/// <p>Create a <code>ByteMatchSet.</code> For more information, see <code>CreateByteMatchSet</code>.</p></li>
-/// <li>
-/// <p>Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code> parameter of an <code>UpdateByteMatchSet</code> request.</p></li>
-/// <li>
-/// <p>Submit an <code>UpdateByteMatchSet</code> request to specify the part of the request that you want AWS WAF to inspect (for example, the header or the URI) and the value that you want AWS WAF to watch for.</p></li>
+/// <li> <p>Create a <code>ByteMatchSet.</code> For more information, see <code>CreateByteMatchSet</code>.</p> </li>
+/// <li> <p>Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code> parameter of an <code>UpdateByteMatchSet</code> request.</p> </li>
+/// <li> <p>Submit an <code>UpdateByteMatchSet</code> request to specify the part of the request that you want AWS WAF to inspect (for example, the header or the URI) and the value that you want AWS WAF to watch for.</p> </li>
 /// </ol>
 /// <p>For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -169,12 +161,9 @@ impl UpdateByteMatchSetFluentBuilder {
     ///
     /// <p>An array of <code>ByteMatchSetUpdate</code> objects that you want to insert into or delete from a <code>ByteMatchSet</code>. For more information, see the applicable data types:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ByteMatchSetUpdate</code>: Contains <code>Action</code> and <code>ByteMatchTuple</code></p></li>
-    /// <li>
-    /// <p><code>ByteMatchTuple</code>: Contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>, <code>TargetString</code>, and <code>TextTransformation</code></p></li>
-    /// <li>
-    /// <p><code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code></p></li>
+    /// <li> <p> <code>ByteMatchSetUpdate</code>: Contains <code>Action</code> and <code>ByteMatchTuple</code> </p> </li>
+    /// <li> <p> <code>ByteMatchTuple</code>: Contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>, <code>TargetString</code>, and <code>TextTransformation</code> </p> </li>
+    /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
     pub fn updates(mut self, input: crate::types::ByteMatchSetUpdate) -> Self {
         self.inner = self.inner.updates(input);
@@ -182,12 +171,9 @@ impl UpdateByteMatchSetFluentBuilder {
     }
     /// <p>An array of <code>ByteMatchSetUpdate</code> objects that you want to insert into or delete from a <code>ByteMatchSet</code>. For more information, see the applicable data types:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ByteMatchSetUpdate</code>: Contains <code>Action</code> and <code>ByteMatchTuple</code></p></li>
-    /// <li>
-    /// <p><code>ByteMatchTuple</code>: Contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>, <code>TargetString</code>, and <code>TextTransformation</code></p></li>
-    /// <li>
-    /// <p><code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code></p></li>
+    /// <li> <p> <code>ByteMatchSetUpdate</code>: Contains <code>Action</code> and <code>ByteMatchTuple</code> </p> </li>
+    /// <li> <p> <code>ByteMatchTuple</code>: Contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>, <code>TargetString</code>, and <code>TextTransformation</code> </p> </li>
+    /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
     pub fn set_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ByteMatchSetUpdate>>) -> Self {
         self.inner = self.inner.set_updates(input);
@@ -195,12 +181,9 @@ impl UpdateByteMatchSetFluentBuilder {
     }
     /// <p>An array of <code>ByteMatchSetUpdate</code> objects that you want to insert into or delete from a <code>ByteMatchSet</code>. For more information, see the applicable data types:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ByteMatchSetUpdate</code>: Contains <code>Action</code> and <code>ByteMatchTuple</code></p></li>
-    /// <li>
-    /// <p><code>ByteMatchTuple</code>: Contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>, <code>TargetString</code>, and <code>TextTransformation</code></p></li>
-    /// <li>
-    /// <p><code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code></p></li>
+    /// <li> <p> <code>ByteMatchSetUpdate</code>: Contains <code>Action</code> and <code>ByteMatchTuple</code> </p> </li>
+    /// <li> <p> <code>ByteMatchTuple</code>: Contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>, <code>TargetString</code>, and <code>TextTransformation</code> </p> </li>
+    /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
     pub fn get_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ByteMatchSetUpdate>> {
         self.inner.get_updates()

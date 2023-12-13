@@ -13,7 +13,7 @@ pub struct UpdateRunGroupInput {
     pub max_runs: ::std::option::Option<i32>,
     /// <p>A maximum run time for the group in minutes.</p>
     pub max_duration: ::std::option::Option<i32>,
-    /// <p>The maximum GPUs that can be used by a run group.</p>
+    /// <p> The maximum GPUs that can be used by a run group. </p>
     pub max_gpus: ::std::option::Option<i32>,
 }
 impl UpdateRunGroupInput {
@@ -37,7 +37,7 @@ impl UpdateRunGroupInput {
     pub fn max_duration(&self) -> ::std::option::Option<i32> {
         self.max_duration
     }
-    /// <p>The maximum GPUs that can be used by a run group.</p>
+    /// <p> The maximum GPUs that can be used by a run group. </p>
     pub fn max_gpus(&self) -> ::std::option::Option<i32> {
         self.max_gpus
     }
@@ -132,17 +132,17 @@ impl UpdateRunGroupInputBuilder {
     pub fn get_max_duration(&self) -> &::std::option::Option<i32> {
         &self.max_duration
     }
-    /// <p>The maximum GPUs that can be used by a run group.</p>
+    /// <p> The maximum GPUs that can be used by a run group. </p>
     pub fn max_gpus(mut self, input: i32) -> Self {
         self.max_gpus = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum GPUs that can be used by a run group.</p>
+    /// <p> The maximum GPUs that can be used by a run group. </p>
     pub fn set_max_gpus(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_gpus = input;
         self
     }
-    /// <p>The maximum GPUs that can be used by a run group.</p>
+    /// <p> The maximum GPUs that can be used by a run group. </p>
     pub fn get_max_gpus(&self) -> &::std::option::Option<i32> {
         &self.max_gpus
     }

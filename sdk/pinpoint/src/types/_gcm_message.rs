@@ -6,12 +6,9 @@
 pub struct GcmMessage {
     /// <p>The action to occur if the recipient taps the push notification. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the default action.</p></li>
-    /// <li>
-    /// <p>DEEP_LINK - Your app opens and displays a designated user interface in the app. This action uses the deep-linking features of the Android platform.</p></li>
-    /// <li>
-    /// <p>URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you specify.</p></li>
+    /// <li><p>OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the default action.</p></li>
+    /// <li><p>DEEP_LINK - Your app opens and displays a designated user interface in the app. This action uses the deep-linking features of the Android platform.</p></li>
+    /// <li><p>URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you specify.</p></li>
     /// </ul>
     pub action: ::std::option::Option<crate::types::Action>,
     /// <p>The body of the notification message.</p>
@@ -30,8 +27,7 @@ pub struct GcmMessage {
     /// <p>The preferred authentication method, with valid values "KEY" or "TOKEN". If a value isn't provided then the <b>DefaultAuthenticationMethod</b> is used.</p>
     pub preferred_authentication_method: ::std::option::Option<::std::string::String>,
     /// <p>para&gt;normal – The notification might be delayed. Delivery is optimized for battery usage on the recipient's device. Use this value unless immediate delivery is required.</p>/listitem&gt;
-    /// <li>
-    /// <p>high – The notification is sent immediately and might wake a sleeping device.</p></li>/para&gt;
+    /// <li><p>high – The notification is sent immediately and might wake a sleeping device.</p></li>/para&gt;
     /// <p>Amazon Pinpoint specifies this value in the FCM priority parameter when it sends the notification message to FCM.</p>
     /// <p>The equivalent values for Apple Push Notification service (APNs) are 5, for normal, and 10, for high. If you specify an APNs value for this property, Amazon Pinpoint accepts and converts the value to the corresponding FCM value.</p>
     pub priority: ::std::option::Option<::std::string::String>,
@@ -58,12 +54,9 @@ pub struct GcmMessage {
 impl GcmMessage {
     /// <p>The action to occur if the recipient taps the push notification. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the default action.</p></li>
-    /// <li>
-    /// <p>DEEP_LINK - Your app opens and displays a designated user interface in the app. This action uses the deep-linking features of the Android platform.</p></li>
-    /// <li>
-    /// <p>URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you specify.</p></li>
+    /// <li><p>OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the default action.</p></li>
+    /// <li><p>DEEP_LINK - Your app opens and displays a designated user interface in the app. This action uses the deep-linking features of the Android platform.</p></li>
+    /// <li><p>URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you specify.</p></li>
     /// </ul>
     pub fn action(&self) -> ::std::option::Option<&crate::types::Action> {
         self.action.as_ref()
@@ -98,8 +91,7 @@ impl GcmMessage {
         self.preferred_authentication_method.as_deref()
     }
     /// <p>para&gt;normal – The notification might be delayed. Delivery is optimized for battery usage on the recipient's device. Use this value unless immediate delivery is required.</p>/listitem&gt;
-    /// <li>
-    /// <p>high – The notification is sent immediately and might wake a sleeping device.</p></li>/para&gt;
+    /// <li><p>high – The notification is sent immediately and might wake a sleeping device.</p></li>/para&gt;
     /// <p>Amazon Pinpoint specifies this value in the FCM priority parameter when it sends the notification message to FCM.</p>
     /// <p>The equivalent values for Apple Push Notification service (APNs) are 5, for normal, and 10, for high. If you specify an APNs value for this property, Amazon Pinpoint accepts and converts the value to the corresponding FCM value.</p>
     pub fn priority(&self) -> ::std::option::Option<&str> {
@@ -178,12 +170,9 @@ pub struct GcmMessageBuilder {
 impl GcmMessageBuilder {
     /// <p>The action to occur if the recipient taps the push notification. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the default action.</p></li>
-    /// <li>
-    /// <p>DEEP_LINK - Your app opens and displays a designated user interface in the app. This action uses the deep-linking features of the Android platform.</p></li>
-    /// <li>
-    /// <p>URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you specify.</p></li>
+    /// <li><p>OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the default action.</p></li>
+    /// <li><p>DEEP_LINK - Your app opens and displays a designated user interface in the app. This action uses the deep-linking features of the Android platform.</p></li>
+    /// <li><p>URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you specify.</p></li>
     /// </ul>
     pub fn action(mut self, input: crate::types::Action) -> Self {
         self.action = ::std::option::Option::Some(input);
@@ -191,12 +180,9 @@ impl GcmMessageBuilder {
     }
     /// <p>The action to occur if the recipient taps the push notification. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the default action.</p></li>
-    /// <li>
-    /// <p>DEEP_LINK - Your app opens and displays a designated user interface in the app. This action uses the deep-linking features of the Android platform.</p></li>
-    /// <li>
-    /// <p>URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you specify.</p></li>
+    /// <li><p>OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the default action.</p></li>
+    /// <li><p>DEEP_LINK - Your app opens and displays a designated user interface in the app. This action uses the deep-linking features of the Android platform.</p></li>
+    /// <li><p>URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you specify.</p></li>
     /// </ul>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::Action>) -> Self {
         self.action = input;
@@ -204,12 +190,9 @@ impl GcmMessageBuilder {
     }
     /// <p>The action to occur if the recipient taps the push notification. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the default action.</p></li>
-    /// <li>
-    /// <p>DEEP_LINK - Your app opens and displays a designated user interface in the app. This action uses the deep-linking features of the Android platform.</p></li>
-    /// <li>
-    /// <p>URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you specify.</p></li>
+    /// <li><p>OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the default action.</p></li>
+    /// <li><p>DEEP_LINK - Your app opens and displays a designated user interface in the app. This action uses the deep-linking features of the Android platform.</p></li>
+    /// <li><p>URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you specify.</p></li>
     /// </ul>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::Action> {
         &self.action
@@ -322,8 +305,7 @@ impl GcmMessageBuilder {
         &self.preferred_authentication_method
     }
     /// <p>para&gt;normal – The notification might be delayed. Delivery is optimized for battery usage on the recipient's device. Use this value unless immediate delivery is required.</p>/listitem&gt;
-    /// <li>
-    /// <p>high – The notification is sent immediately and might wake a sleeping device.</p></li>/para&gt;
+    /// <li><p>high – The notification is sent immediately and might wake a sleeping device.</p></li>/para&gt;
     /// <p>Amazon Pinpoint specifies this value in the FCM priority parameter when it sends the notification message to FCM.</p>
     /// <p>The equivalent values for Apple Push Notification service (APNs) are 5, for normal, and 10, for high. If you specify an APNs value for this property, Amazon Pinpoint accepts and converts the value to the corresponding FCM value.</p>
     pub fn priority(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -331,8 +313,7 @@ impl GcmMessageBuilder {
         self
     }
     /// <p>para&gt;normal – The notification might be delayed. Delivery is optimized for battery usage on the recipient's device. Use this value unless immediate delivery is required.</p>/listitem&gt;
-    /// <li>
-    /// <p>high – The notification is sent immediately and might wake a sleeping device.</p></li>/para&gt;
+    /// <li><p>high – The notification is sent immediately and might wake a sleeping device.</p></li>/para&gt;
     /// <p>Amazon Pinpoint specifies this value in the FCM priority parameter when it sends the notification message to FCM.</p>
     /// <p>The equivalent values for Apple Push Notification service (APNs) are 5, for normal, and 10, for high. If you specify an APNs value for this property, Amazon Pinpoint accepts and converts the value to the corresponding FCM value.</p>
     pub fn set_priority(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -340,8 +321,7 @@ impl GcmMessageBuilder {
         self
     }
     /// <p>para&gt;normal – The notification might be delayed. Delivery is optimized for battery usage on the recipient's device. Use this value unless immediate delivery is required.</p>/listitem&gt;
-    /// <li>
-    /// <p>high – The notification is sent immediately and might wake a sleeping device.</p></li>/para&gt;
+    /// <li><p>high – The notification is sent immediately and might wake a sleeping device.</p></li>/para&gt;
     /// <p>Amazon Pinpoint specifies this value in the FCM priority parameter when it sends the notification message to FCM.</p>
     /// <p>The equivalent values for Apple Push Notification service (APNs) are 5, for normal, and 10, for high. If you specify an APNs value for this property, Amazon Pinpoint accepts and converts the value to the corresponding FCM value.</p>
     pub fn get_priority(&self) -> &::std::option::Option<::std::string::String> {

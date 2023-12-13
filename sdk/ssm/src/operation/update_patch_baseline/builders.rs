@@ -22,7 +22,7 @@ impl UpdatePatchBaselineInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdatePatchBaseline`.
 ///
-/// <p>Modifies an existing patch baseline. Fields not specified in the request are left unchanged.</p><note>
+/// <p>Modifies an existing patch baseline. Fields not specified in the request are left unchanged.</p> <note>
 /// <p>For information about valid key-value pairs in <code>PatchFilters</code> for each supported operating system type, see <code>PatchFilter</code>.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -238,10 +238,8 @@ impl UpdatePatchBaselineFluentBuilder {
     }
     /// <p>The action for Patch Manager to take on patches included in the <code>RejectedPackages</code> list.</p>
     /// <ul>
-    /// <li>
-    /// <p><b> <code>ALLOW_AS_DEPENDENCY</code> </b>: A package in the <code>Rejected</code> patches list is installed only if it is a dependency of another package. It is considered compliant with the patch baseline, and its status is reported as <code>InstalledOther</code>. This is the default action if no option is specified.</p></li>
-    /// <li>
-    /// <p><b> <code>BLOCK</code> </b>: Packages in the <code>RejectedPatches</code> list, and packages that include them as dependencies, aren't installed under any circumstances. If a package was installed before it was added to the <code>Rejected</code> patches list, it is considered non-compliant with the patch baseline, and its status is reported as <code>InstalledRejected</code>.</p></li>
+    /// <li> <p> <b> <code>ALLOW_AS_DEPENDENCY</code> </b>: A package in the <code>Rejected</code> patches list is installed only if it is a dependency of another package. It is considered compliant with the patch baseline, and its status is reported as <code>InstalledOther</code>. This is the default action if no option is specified.</p> </li>
+    /// <li> <p> <b> <code>BLOCK</code> </b>: Packages in the <code>RejectedPatches</code> list, and packages that include them as dependencies, aren't installed under any circumstances. If a package was installed before it was added to the <code>Rejected</code> patches list, it is considered non-compliant with the patch baseline, and its status is reported as <code>InstalledRejected</code>.</p> </li>
     /// </ul>
     pub fn rejected_patches_action(mut self, input: crate::types::PatchAction) -> Self {
         self.inner = self.inner.rejected_patches_action(input);
@@ -249,10 +247,8 @@ impl UpdatePatchBaselineFluentBuilder {
     }
     /// <p>The action for Patch Manager to take on patches included in the <code>RejectedPackages</code> list.</p>
     /// <ul>
-    /// <li>
-    /// <p><b> <code>ALLOW_AS_DEPENDENCY</code> </b>: A package in the <code>Rejected</code> patches list is installed only if it is a dependency of another package. It is considered compliant with the patch baseline, and its status is reported as <code>InstalledOther</code>. This is the default action if no option is specified.</p></li>
-    /// <li>
-    /// <p><b> <code>BLOCK</code> </b>: Packages in the <code>RejectedPatches</code> list, and packages that include them as dependencies, aren't installed under any circumstances. If a package was installed before it was added to the <code>Rejected</code> patches list, it is considered non-compliant with the patch baseline, and its status is reported as <code>InstalledRejected</code>.</p></li>
+    /// <li> <p> <b> <code>ALLOW_AS_DEPENDENCY</code> </b>: A package in the <code>Rejected</code> patches list is installed only if it is a dependency of another package. It is considered compliant with the patch baseline, and its status is reported as <code>InstalledOther</code>. This is the default action if no option is specified.</p> </li>
+    /// <li> <p> <b> <code>BLOCK</code> </b>: Packages in the <code>RejectedPatches</code> list, and packages that include them as dependencies, aren't installed under any circumstances. If a package was installed before it was added to the <code>Rejected</code> patches list, it is considered non-compliant with the patch baseline, and its status is reported as <code>InstalledRejected</code>.</p> </li>
     /// </ul>
     pub fn set_rejected_patches_action(mut self, input: ::std::option::Option<crate::types::PatchAction>) -> Self {
         self.inner = self.inner.set_rejected_patches_action(input);
@@ -260,10 +256,8 @@ impl UpdatePatchBaselineFluentBuilder {
     }
     /// <p>The action for Patch Manager to take on patches included in the <code>RejectedPackages</code> list.</p>
     /// <ul>
-    /// <li>
-    /// <p><b> <code>ALLOW_AS_DEPENDENCY</code> </b>: A package in the <code>Rejected</code> patches list is installed only if it is a dependency of another package. It is considered compliant with the patch baseline, and its status is reported as <code>InstalledOther</code>. This is the default action if no option is specified.</p></li>
-    /// <li>
-    /// <p><b> <code>BLOCK</code> </b>: Packages in the <code>RejectedPatches</code> list, and packages that include them as dependencies, aren't installed under any circumstances. If a package was installed before it was added to the <code>Rejected</code> patches list, it is considered non-compliant with the patch baseline, and its status is reported as <code>InstalledRejected</code>.</p></li>
+    /// <li> <p> <b> <code>ALLOW_AS_DEPENDENCY</code> </b>: A package in the <code>Rejected</code> patches list is installed only if it is a dependency of another package. It is considered compliant with the patch baseline, and its status is reported as <code>InstalledOther</code>. This is the default action if no option is specified.</p> </li>
+    /// <li> <p> <b> <code>BLOCK</code> </b>: Packages in the <code>RejectedPatches</code> list, and packages that include them as dependencies, aren't installed under any circumstances. If a package was installed before it was added to the <code>Rejected</code> patches list, it is considered non-compliant with the patch baseline, and its status is reported as <code>InstalledRejected</code>.</p> </li>
     /// </ul>
     pub fn get_rejected_patches_action(&self) -> &::std::option::Option<crate::types::PatchAction> {
         self.inner.get_rejected_patches_action()

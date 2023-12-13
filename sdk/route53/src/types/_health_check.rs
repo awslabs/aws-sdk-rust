@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HealthCheck {
-    /// <p>The identifier that Amazon Route 53 assigned to the health check when you created it. When you add or update a resource record set, you use this value to specify which health check to use. The value can be up to 64 characters long.</p>
+    /// <p>The identifier that Amazon Route 53 assigned to the health check when you created it. When you add or update a resource record set, you use this value to specify which health check to use. The value can be up to 64 characters long. </p>
     pub id: ::std::string::String,
     /// <p>A unique string that you specified when you created the health check.</p>
     pub caller_reference: ::std::string::String,
-    /// <p>If the health check was created by another service, the service that created the health check. When a health check is created by another service, you can't edit or delete it using Amazon Route 53.</p>
+    /// <p>If the health check was created by another service, the service that created the health check. When a health check is created by another service, you can't edit or delete it using Amazon Route 53. </p>
     pub linked_service: ::std::option::Option<crate::types::LinkedService>,
     /// <p>A complex type that contains detailed information about one health check.</p>
     pub health_check_config: ::std::option::Option<crate::types::HealthCheckConfig>,
@@ -18,7 +18,7 @@ pub struct HealthCheck {
     pub cloud_watch_alarm_configuration: ::std::option::Option<crate::types::CloudWatchAlarmConfiguration>,
 }
 impl HealthCheck {
-    /// <p>The identifier that Amazon Route 53 assigned to the health check when you created it. When you add or update a resource record set, you use this value to specify which health check to use. The value can be up to 64 characters long.</p>
+    /// <p>The identifier that Amazon Route 53 assigned to the health check when you created it. When you add or update a resource record set, you use this value to specify which health check to use. The value can be up to 64 characters long. </p>
     pub fn id(&self) -> &str {
         use std::ops::Deref;
         self.id.deref()
@@ -28,7 +28,7 @@ impl HealthCheck {
         use std::ops::Deref;
         self.caller_reference.deref()
     }
-    /// <p>If the health check was created by another service, the service that created the health check. When a health check is created by another service, you can't edit or delete it using Amazon Route 53.</p>
+    /// <p>If the health check was created by another service, the service that created the health check. When a health check is created by another service, you can't edit or delete it using Amazon Route 53. </p>
     pub fn linked_service(&self) -> ::std::option::Option<&crate::types::LinkedService> {
         self.linked_service.as_ref()
     }
@@ -64,18 +64,18 @@ pub struct HealthCheckBuilder {
     pub(crate) cloud_watch_alarm_configuration: ::std::option::Option<crate::types::CloudWatchAlarmConfiguration>,
 }
 impl HealthCheckBuilder {
-    /// <p>The identifier that Amazon Route 53 assigned to the health check when you created it. When you add or update a resource record set, you use this value to specify which health check to use. The value can be up to 64 characters long.</p>
+    /// <p>The identifier that Amazon Route 53 assigned to the health check when you created it. When you add or update a resource record set, you use this value to specify which health check to use. The value can be up to 64 characters long. </p>
     /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier that Amazon Route 53 assigned to the health check when you created it. When you add or update a resource record set, you use this value to specify which health check to use. The value can be up to 64 characters long.</p>
+    /// <p>The identifier that Amazon Route 53 assigned to the health check when you created it. When you add or update a resource record set, you use this value to specify which health check to use. The value can be up to 64 characters long. </p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// <p>The identifier that Amazon Route 53 assigned to the health check when you created it. When you add or update a resource record set, you use this value to specify which health check to use. The value can be up to 64 characters long.</p>
+    /// <p>The identifier that Amazon Route 53 assigned to the health check when you created it. When you add or update a resource record set, you use this value to specify which health check to use. The value can be up to 64 characters long. </p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
@@ -94,17 +94,17 @@ impl HealthCheckBuilder {
     pub fn get_caller_reference(&self) -> &::std::option::Option<::std::string::String> {
         &self.caller_reference
     }
-    /// <p>If the health check was created by another service, the service that created the health check. When a health check is created by another service, you can't edit or delete it using Amazon Route 53.</p>
+    /// <p>If the health check was created by another service, the service that created the health check. When a health check is created by another service, you can't edit or delete it using Amazon Route 53. </p>
     pub fn linked_service(mut self, input: crate::types::LinkedService) -> Self {
         self.linked_service = ::std::option::Option::Some(input);
         self
     }
-    /// <p>If the health check was created by another service, the service that created the health check. When a health check is created by another service, you can't edit or delete it using Amazon Route 53.</p>
+    /// <p>If the health check was created by another service, the service that created the health check. When a health check is created by another service, you can't edit or delete it using Amazon Route 53. </p>
     pub fn set_linked_service(mut self, input: ::std::option::Option<crate::types::LinkedService>) -> Self {
         self.linked_service = input;
         self
     }
-    /// <p>If the health check was created by another service, the service that created the health check. When a health check is created by another service, you can't edit or delete it using Amazon Route 53.</p>
+    /// <p>If the health check was created by another service, the service that created the health check. When a health check is created by another service, you can't edit or delete it using Amazon Route 53. </p>
     pub fn get_linked_service(&self) -> &::std::option::Option<crate::types::LinkedService> {
         &self.linked_service
     }

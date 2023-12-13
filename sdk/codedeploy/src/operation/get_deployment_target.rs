@@ -254,13 +254,13 @@ pub enum GetDeploymentTargetError {
     DeploymentIdRequiredException(crate::types::error::DeploymentIdRequiredException),
     /// <p>The specified deployment has not started.</p>
     DeploymentNotStartedException(crate::types::error::DeploymentNotStartedException),
-    /// <p>The provided target ID does not belong to the attempted deployment.</p>
+    /// <p> The provided target ID does not belong to the attempted deployment. </p>
     DeploymentTargetDoesNotExistException(crate::types::error::DeploymentTargetDoesNotExistException),
-    /// <p>A deployment target ID was not provided.</p>
+    /// <p> A deployment target ID was not provided. </p>
     DeploymentTargetIdRequiredException(crate::types::error::DeploymentTargetIdRequiredException),
     /// <p>At least one of the deployment IDs was specified in an invalid format.</p>
     InvalidDeploymentIdException(crate::types::error::InvalidDeploymentIdException),
-    /// <p>The target ID provided was not valid.</p>
+    /// <p> The target ID provided was not valid. </p>
     InvalidDeploymentTargetIdException(crate::types::error::InvalidDeploymentTargetIdException),
     /// <p>The on-premises instance name was specified in an invalid format.</p>
     InvalidInstanceNameException(crate::types::error::InvalidInstanceNameException),

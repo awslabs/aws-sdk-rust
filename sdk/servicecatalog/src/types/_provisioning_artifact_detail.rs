@@ -12,14 +12,10 @@ pub struct ProvisioningArtifactDetail {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The type of provisioning artifact.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p></li>
-    /// <li>
-    /// <p><code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file</p></li>
-    /// <li>
-    /// <p><code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file</p></li>
-    /// <li>
-    /// <p><code>EXTERNAL</code> - External configuration file</p></li>
+    /// <li> <p> <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p> </li>
+    /// <li> <p> <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file</p> </li>
+    /// <li> <p> <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file</p> </li>
+    /// <li> <p> <code>EXTERNAL</code> - External configuration file</p> </li>
     /// </ul>
     pub r#type: ::std::option::Option<crate::types::ProvisioningArtifactType>,
     /// <p>The UTC time stamp of the creation time.</p>
@@ -28,8 +24,8 @@ pub struct ProvisioningArtifactDetail {
     pub active: ::std::option::Option<bool>,
     /// <p>Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.</p>
     pub guidance: ::std::option::Option<crate::types::ProvisioningArtifactGuidance>,
-    /// <p>Specifies the revision of the external artifact that was used to automatically sync the Service Catalog product and create the provisioning artifact. Service Catalog includes this response parameter as a high level field to the existing <code>ProvisioningArtifactDetail</code> type, which is returned as part of the response for <code>CreateProduct</code>, <code>UpdateProduct</code>, <code>DescribeProductAsAdmin</code>, <code>DescribeProvisioningArtifact</code>, <code>ListProvisioningArtifact</code>, and <code>UpdateProvisioningArticat</code> APIs.</p>
-    /// <p>This field only exists for Repo-Synced products.</p>
+    /// <p>Specifies the revision of the external artifact that was used to automatically sync the Service Catalog product and create the provisioning artifact. Service Catalog includes this response parameter as a high level field to the existing <code>ProvisioningArtifactDetail</code> type, which is returned as part of the response for <code>CreateProduct</code>, <code>UpdateProduct</code>, <code>DescribeProductAsAdmin</code>, <code>DescribeProvisioningArtifact</code>, <code>ListProvisioningArtifact</code>, and <code>UpdateProvisioningArticat</code> APIs. </p>
+    /// <p>This field only exists for Repo-Synced products. </p>
     pub source_revision: ::std::option::Option<::std::string::String>,
 }
 impl ProvisioningArtifactDetail {
@@ -47,14 +43,10 @@ impl ProvisioningArtifactDetail {
     }
     /// <p>The type of provisioning artifact.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p></li>
-    /// <li>
-    /// <p><code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file</p></li>
-    /// <li>
-    /// <p><code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file</p></li>
-    /// <li>
-    /// <p><code>EXTERNAL</code> - External configuration file</p></li>
+    /// <li> <p> <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p> </li>
+    /// <li> <p> <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file</p> </li>
+    /// <li> <p> <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file</p> </li>
+    /// <li> <p> <code>EXTERNAL</code> - External configuration file</p> </li>
     /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::ProvisioningArtifactType> {
         self.r#type.as_ref()
@@ -71,8 +63,8 @@ impl ProvisioningArtifactDetail {
     pub fn guidance(&self) -> ::std::option::Option<&crate::types::ProvisioningArtifactGuidance> {
         self.guidance.as_ref()
     }
-    /// <p>Specifies the revision of the external artifact that was used to automatically sync the Service Catalog product and create the provisioning artifact. Service Catalog includes this response parameter as a high level field to the existing <code>ProvisioningArtifactDetail</code> type, which is returned as part of the response for <code>CreateProduct</code>, <code>UpdateProduct</code>, <code>DescribeProductAsAdmin</code>, <code>DescribeProvisioningArtifact</code>, <code>ListProvisioningArtifact</code>, and <code>UpdateProvisioningArticat</code> APIs.</p>
-    /// <p>This field only exists for Repo-Synced products.</p>
+    /// <p>Specifies the revision of the external artifact that was used to automatically sync the Service Catalog product and create the provisioning artifact. Service Catalog includes this response parameter as a high level field to the existing <code>ProvisioningArtifactDetail</code> type, which is returned as part of the response for <code>CreateProduct</code>, <code>UpdateProduct</code>, <code>DescribeProductAsAdmin</code>, <code>DescribeProvisioningArtifact</code>, <code>ListProvisioningArtifact</code>, and <code>UpdateProvisioningArticat</code> APIs. </p>
+    /// <p>This field only exists for Repo-Synced products. </p>
     pub fn source_revision(&self) -> ::std::option::Option<&str> {
         self.source_revision.as_deref()
     }
@@ -142,14 +134,10 @@ impl ProvisioningArtifactDetailBuilder {
     }
     /// <p>The type of provisioning artifact.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p></li>
-    /// <li>
-    /// <p><code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file</p></li>
-    /// <li>
-    /// <p><code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file</p></li>
-    /// <li>
-    /// <p><code>EXTERNAL</code> - External configuration file</p></li>
+    /// <li> <p> <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p> </li>
+    /// <li> <p> <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file</p> </li>
+    /// <li> <p> <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file</p> </li>
+    /// <li> <p> <code>EXTERNAL</code> - External configuration file</p> </li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::ProvisioningArtifactType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -157,14 +145,10 @@ impl ProvisioningArtifactDetailBuilder {
     }
     /// <p>The type of provisioning artifact.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p></li>
-    /// <li>
-    /// <p><code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file</p></li>
-    /// <li>
-    /// <p><code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file</p></li>
-    /// <li>
-    /// <p><code>EXTERNAL</code> - External configuration file</p></li>
+    /// <li> <p> <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p> </li>
+    /// <li> <p> <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file</p> </li>
+    /// <li> <p> <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file</p> </li>
+    /// <li> <p> <code>EXTERNAL</code> - External configuration file</p> </li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ProvisioningArtifactType>) -> Self {
         self.r#type = input;
@@ -172,14 +156,10 @@ impl ProvisioningArtifactDetailBuilder {
     }
     /// <p>The type of provisioning artifact.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p></li>
-    /// <li>
-    /// <p><code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file</p></li>
-    /// <li>
-    /// <p><code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file</p></li>
-    /// <li>
-    /// <p><code>EXTERNAL</code> - External configuration file</p></li>
+    /// <li> <p> <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p> </li>
+    /// <li> <p> <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file</p> </li>
+    /// <li> <p> <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file</p> </li>
+    /// <li> <p> <code>EXTERNAL</code> - External configuration file</p> </li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ProvisioningArtifactType> {
         &self.r#type
@@ -226,20 +206,20 @@ impl ProvisioningArtifactDetailBuilder {
     pub fn get_guidance(&self) -> &::std::option::Option<crate::types::ProvisioningArtifactGuidance> {
         &self.guidance
     }
-    /// <p>Specifies the revision of the external artifact that was used to automatically sync the Service Catalog product and create the provisioning artifact. Service Catalog includes this response parameter as a high level field to the existing <code>ProvisioningArtifactDetail</code> type, which is returned as part of the response for <code>CreateProduct</code>, <code>UpdateProduct</code>, <code>DescribeProductAsAdmin</code>, <code>DescribeProvisioningArtifact</code>, <code>ListProvisioningArtifact</code>, and <code>UpdateProvisioningArticat</code> APIs.</p>
-    /// <p>This field only exists for Repo-Synced products.</p>
+    /// <p>Specifies the revision of the external artifact that was used to automatically sync the Service Catalog product and create the provisioning artifact. Service Catalog includes this response parameter as a high level field to the existing <code>ProvisioningArtifactDetail</code> type, which is returned as part of the response for <code>CreateProduct</code>, <code>UpdateProduct</code>, <code>DescribeProductAsAdmin</code>, <code>DescribeProvisioningArtifact</code>, <code>ListProvisioningArtifact</code>, and <code>UpdateProvisioningArticat</code> APIs. </p>
+    /// <p>This field only exists for Repo-Synced products. </p>
     pub fn source_revision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_revision = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the revision of the external artifact that was used to automatically sync the Service Catalog product and create the provisioning artifact. Service Catalog includes this response parameter as a high level field to the existing <code>ProvisioningArtifactDetail</code> type, which is returned as part of the response for <code>CreateProduct</code>, <code>UpdateProduct</code>, <code>DescribeProductAsAdmin</code>, <code>DescribeProvisioningArtifact</code>, <code>ListProvisioningArtifact</code>, and <code>UpdateProvisioningArticat</code> APIs.</p>
-    /// <p>This field only exists for Repo-Synced products.</p>
+    /// <p>Specifies the revision of the external artifact that was used to automatically sync the Service Catalog product and create the provisioning artifact. Service Catalog includes this response parameter as a high level field to the existing <code>ProvisioningArtifactDetail</code> type, which is returned as part of the response for <code>CreateProduct</code>, <code>UpdateProduct</code>, <code>DescribeProductAsAdmin</code>, <code>DescribeProvisioningArtifact</code>, <code>ListProvisioningArtifact</code>, and <code>UpdateProvisioningArticat</code> APIs. </p>
+    /// <p>This field only exists for Repo-Synced products. </p>
     pub fn set_source_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_revision = input;
         self
     }
-    /// <p>Specifies the revision of the external artifact that was used to automatically sync the Service Catalog product and create the provisioning artifact. Service Catalog includes this response parameter as a high level field to the existing <code>ProvisioningArtifactDetail</code> type, which is returned as part of the response for <code>CreateProduct</code>, <code>UpdateProduct</code>, <code>DescribeProductAsAdmin</code>, <code>DescribeProvisioningArtifact</code>, <code>ListProvisioningArtifact</code>, and <code>UpdateProvisioningArticat</code> APIs.</p>
-    /// <p>This field only exists for Repo-Synced products.</p>
+    /// <p>Specifies the revision of the external artifact that was used to automatically sync the Service Catalog product and create the provisioning artifact. Service Catalog includes this response parameter as a high level field to the existing <code>ProvisioningArtifactDetail</code> type, which is returned as part of the response for <code>CreateProduct</code>, <code>UpdateProduct</code>, <code>DescribeProductAsAdmin</code>, <code>DescribeProvisioningArtifact</code>, <code>ListProvisioningArtifact</code>, and <code>UpdateProvisioningArticat</code> APIs. </p>
+    /// <p>This field only exists for Repo-Synced products. </p>
     pub fn get_source_revision(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_revision
     }

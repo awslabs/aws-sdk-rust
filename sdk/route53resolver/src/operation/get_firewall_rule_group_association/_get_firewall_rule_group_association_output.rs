@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFirewallRuleGroupAssociationOutput {
-    /// <p>The association that you requested.</p>
+    /// <p>The association that you requested. </p>
     pub firewall_rule_group_association: ::std::option::Option<crate::types::FirewallRuleGroupAssociation>,
     _request_id: Option<String>,
 }
 impl GetFirewallRuleGroupAssociationOutput {
-    /// <p>The association that you requested.</p>
+    /// <p>The association that you requested. </p>
     pub fn firewall_rule_group_association(&self) -> ::std::option::Option<&crate::types::FirewallRuleGroupAssociation> {
         self.firewall_rule_group_association.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct GetFirewallRuleGroupAssociationOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetFirewallRuleGroupAssociationOutputBuilder {
-    /// <p>The association that you requested.</p>
+    /// <p>The association that you requested. </p>
     pub fn firewall_rule_group_association(mut self, input: crate::types::FirewallRuleGroupAssociation) -> Self {
         self.firewall_rule_group_association = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The association that you requested.</p>
+    /// <p>The association that you requested. </p>
     pub fn set_firewall_rule_group_association(mut self, input: ::std::option::Option<crate::types::FirewallRuleGroupAssociation>) -> Self {
         self.firewall_rule_group_association = input;
         self
     }
-    /// <p>The association that you requested.</p>
+    /// <p>The association that you requested. </p>
     pub fn get_firewall_rule_group_association(&self) -> &::std::option::Option<crate::types::FirewallRuleGroupAssociation> {
         &self.firewall_rule_group_association
     }

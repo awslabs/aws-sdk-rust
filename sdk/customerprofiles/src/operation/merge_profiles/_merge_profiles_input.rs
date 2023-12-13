@@ -9,7 +9,7 @@ pub struct MergeProfilesInput {
     pub main_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the profile to be merged into MainProfileId.</p>
     pub profile_ids_to_be_merged: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The identifiers of the fields in the profile that has the information you want to apply to the merge. For example, say you want to merge EmailAddress from Profile1 into MainProfile. This would be the identifier of the EmailAddress field in Profile1.</p>
+    /// <p>The identifiers of the fields in the profile that has the information you want to apply to the merge. For example, say you want to merge EmailAddress from Profile1 into MainProfile. This would be the identifier of the EmailAddress field in Profile1. </p>
     pub field_source_profile_ids: ::std::option::Option<crate::types::FieldSourceProfileIds>,
 }
 impl MergeProfilesInput {
@@ -27,7 +27,7 @@ impl MergeProfilesInput {
     pub fn profile_ids_to_be_merged(&self) -> &[::std::string::String] {
         self.profile_ids_to_be_merged.as_deref().unwrap_or_default()
     }
-    /// <p>The identifiers of the fields in the profile that has the information you want to apply to the merge. For example, say you want to merge EmailAddress from Profile1 into MainProfile. This would be the identifier of the EmailAddress field in Profile1.</p>
+    /// <p>The identifiers of the fields in the profile that has the information you want to apply to the merge. For example, say you want to merge EmailAddress from Profile1 into MainProfile. This would be the identifier of the EmailAddress field in Profile1. </p>
     pub fn field_source_profile_ids(&self) -> ::std::option::Option<&crate::types::FieldSourceProfileIds> {
         self.field_source_profile_ids.as_ref()
     }
@@ -99,17 +99,17 @@ impl MergeProfilesInputBuilder {
     pub fn get_profile_ids_to_be_merged(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.profile_ids_to_be_merged
     }
-    /// <p>The identifiers of the fields in the profile that has the information you want to apply to the merge. For example, say you want to merge EmailAddress from Profile1 into MainProfile. This would be the identifier of the EmailAddress field in Profile1.</p>
+    /// <p>The identifiers of the fields in the profile that has the information you want to apply to the merge. For example, say you want to merge EmailAddress from Profile1 into MainProfile. This would be the identifier of the EmailAddress field in Profile1. </p>
     pub fn field_source_profile_ids(mut self, input: crate::types::FieldSourceProfileIds) -> Self {
         self.field_source_profile_ids = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The identifiers of the fields in the profile that has the information you want to apply to the merge. For example, say you want to merge EmailAddress from Profile1 into MainProfile. This would be the identifier of the EmailAddress field in Profile1.</p>
+    /// <p>The identifiers of the fields in the profile that has the information you want to apply to the merge. For example, say you want to merge EmailAddress from Profile1 into MainProfile. This would be the identifier of the EmailAddress field in Profile1. </p>
     pub fn set_field_source_profile_ids(mut self, input: ::std::option::Option<crate::types::FieldSourceProfileIds>) -> Self {
         self.field_source_profile_ids = input;
         self
     }
-    /// <p>The identifiers of the fields in the profile that has the information you want to apply to the merge. For example, say you want to merge EmailAddress from Profile1 into MainProfile. This would be the identifier of the EmailAddress field in Profile1.</p>
+    /// <p>The identifiers of the fields in the profile that has the information you want to apply to the merge. For example, say you want to merge EmailAddress from Profile1 into MainProfile. This would be the identifier of the EmailAddress field in Profile1. </p>
     pub fn get_field_source_profile_ids(&self) -> &::std::option::Option<crate::types::FieldSourceProfileIds> {
         &self.field_source_profile_ids
     }

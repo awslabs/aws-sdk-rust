@@ -220,17 +220,17 @@ impl CreateDomainNameFluentBuilder {
     pub fn get_regional_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_regional_certificate_arn()
     }
-    /// <p>The endpoint configuration of this DomainName showing the endpoint types of the domain name.</p>
+    /// <p>The endpoint configuration of this DomainName showing the endpoint types of the domain name. </p>
     pub fn endpoint_configuration(mut self, input: crate::types::EndpointConfiguration) -> Self {
         self.inner = self.inner.endpoint_configuration(input);
         self
     }
-    /// <p>The endpoint configuration of this DomainName showing the endpoint types of the domain name.</p>
+    /// <p>The endpoint configuration of this DomainName showing the endpoint types of the domain name. </p>
     pub fn set_endpoint_configuration(mut self, input: ::std::option::Option<crate::types::EndpointConfiguration>) -> Self {
         self.inner = self.inner.set_endpoint_configuration(input);
         self
     }
-    /// <p>The endpoint configuration of this DomainName showing the endpoint types of the domain name.</p>
+    /// <p>The endpoint configuration of this DomainName showing the endpoint types of the domain name. </p>
     pub fn get_endpoint_configuration(&self) -> &::std::option::Option<crate::types::EndpointConfiguration> {
         self.inner.get_endpoint_configuration()
     }

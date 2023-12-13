@@ -23,8 +23,8 @@ impl ResolveAliasInputBuilder {
 /// Fluent builder constructing a request to `ResolveAlias`.
 ///
 /// <p>Retrieves the fleet ID that an alias is currently pointing to.</p>
-/// <p><b>Related actions</b></p>
-/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a></p>
+/// <p> <b>Related actions</b> </p>
+/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ResolveAliasFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

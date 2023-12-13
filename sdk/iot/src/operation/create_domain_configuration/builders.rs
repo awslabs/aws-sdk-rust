@@ -183,21 +183,21 @@ impl CreateDomainConfigurationFluentBuilder {
     pub fn get_authorizer_config(&self) -> &::std::option::Option<crate::types::AuthorizerConfig> {
         self.inner.get_authorizer_config()
     }
-    /// <p>The type of service delivered by the endpoint.</p><note>
+    /// <p>The type of service delivered by the endpoint.</p> <note>
     /// <p>Amazon Web Services IoT Core currently supports only the <code>DATA</code> service type.</p>
     /// </note>
     pub fn service_type(mut self, input: crate::types::ServiceType) -> Self {
         self.inner = self.inner.service_type(input);
         self
     }
-    /// <p>The type of service delivered by the endpoint.</p><note>
+    /// <p>The type of service delivered by the endpoint.</p> <note>
     /// <p>Amazon Web Services IoT Core currently supports only the <code>DATA</code> service type.</p>
     /// </note>
     pub fn set_service_type(mut self, input: ::std::option::Option<crate::types::ServiceType>) -> Self {
         self.inner = self.inner.set_service_type(input);
         self
     }
-    /// <p>The type of service delivered by the endpoint.</p><note>
+    /// <p>The type of service delivered by the endpoint.</p> <note>
     /// <p>Amazon Web Services IoT Core currently supports only the <code>DATA</code> service type.</p>
     /// </note>
     pub fn get_service_type(&self) -> &::std::option::Option<crate::types::ServiceType> {
@@ -207,7 +207,7 @@ impl CreateDomainConfigurationFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>Metadata which can be used to manage the domain configuration.</p><note>
+    /// <p>Metadata which can be used to manage the domain configuration.</p> <note>
     /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
     /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
@@ -216,7 +216,7 @@ impl CreateDomainConfigurationFluentBuilder {
         self.inner = self.inner.tags(input);
         self
     }
-    /// <p>Metadata which can be used to manage the domain configuration.</p><note>
+    /// <p>Metadata which can be used to manage the domain configuration.</p> <note>
     /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
     /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
@@ -225,7 +225,7 @@ impl CreateDomainConfigurationFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>Metadata which can be used to manage the domain configuration.</p><note>
+    /// <p>Metadata which can be used to manage the domain configuration.</p> <note>
     /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
     /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>

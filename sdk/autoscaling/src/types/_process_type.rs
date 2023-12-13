@@ -7,48 +7,30 @@
 pub struct ProcessType {
     /// <p>One of the following processes:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Launch</code></p></li>
-    /// <li>
-    /// <p><code>Terminate</code></p></li>
-    /// <li>
-    /// <p><code>AddToLoadBalancer</code></p></li>
-    /// <li>
-    /// <p><code>AlarmNotification</code></p></li>
-    /// <li>
-    /// <p><code>AZRebalance</code></p></li>
-    /// <li>
-    /// <p><code>HealthCheck</code></p></li>
-    /// <li>
-    /// <p><code>InstanceRefresh</code></p></li>
-    /// <li>
-    /// <p><code>ReplaceUnhealthy</code></p></li>
-    /// <li>
-    /// <p><code>ScheduledActions</code></p></li>
+    /// <li> <p> <code>Launch</code> </p> </li>
+    /// <li> <p> <code>Terminate</code> </p> </li>
+    /// <li> <p> <code>AddToLoadBalancer</code> </p> </li>
+    /// <li> <p> <code>AlarmNotification</code> </p> </li>
+    /// <li> <p> <code>AZRebalance</code> </p> </li>
+    /// <li> <p> <code>HealthCheck</code> </p> </li>
+    /// <li> <p> <code>InstanceRefresh</code> </p> </li>
+    /// <li> <p> <code>ReplaceUnhealthy</code> </p> </li>
+    /// <li> <p> <code>ScheduledActions</code> </p> </li>
     /// </ul>
     pub process_name: ::std::option::Option<::std::string::String>,
 }
 impl ProcessType {
     /// <p>One of the following processes:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Launch</code></p></li>
-    /// <li>
-    /// <p><code>Terminate</code></p></li>
-    /// <li>
-    /// <p><code>AddToLoadBalancer</code></p></li>
-    /// <li>
-    /// <p><code>AlarmNotification</code></p></li>
-    /// <li>
-    /// <p><code>AZRebalance</code></p></li>
-    /// <li>
-    /// <p><code>HealthCheck</code></p></li>
-    /// <li>
-    /// <p><code>InstanceRefresh</code></p></li>
-    /// <li>
-    /// <p><code>ReplaceUnhealthy</code></p></li>
-    /// <li>
-    /// <p><code>ScheduledActions</code></p></li>
+    /// <li> <p> <code>Launch</code> </p> </li>
+    /// <li> <p> <code>Terminate</code> </p> </li>
+    /// <li> <p> <code>AddToLoadBalancer</code> </p> </li>
+    /// <li> <p> <code>AlarmNotification</code> </p> </li>
+    /// <li> <p> <code>AZRebalance</code> </p> </li>
+    /// <li> <p> <code>HealthCheck</code> </p> </li>
+    /// <li> <p> <code>InstanceRefresh</code> </p> </li>
+    /// <li> <p> <code>ReplaceUnhealthy</code> </p> </li>
+    /// <li> <p> <code>ScheduledActions</code> </p> </li>
     /// </ul>
     pub fn process_name(&self) -> ::std::option::Option<&str> {
         self.process_name.as_deref()
@@ -70,24 +52,15 @@ pub struct ProcessTypeBuilder {
 impl ProcessTypeBuilder {
     /// <p>One of the following processes:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Launch</code></p></li>
-    /// <li>
-    /// <p><code>Terminate</code></p></li>
-    /// <li>
-    /// <p><code>AddToLoadBalancer</code></p></li>
-    /// <li>
-    /// <p><code>AlarmNotification</code></p></li>
-    /// <li>
-    /// <p><code>AZRebalance</code></p></li>
-    /// <li>
-    /// <p><code>HealthCheck</code></p></li>
-    /// <li>
-    /// <p><code>InstanceRefresh</code></p></li>
-    /// <li>
-    /// <p><code>ReplaceUnhealthy</code></p></li>
-    /// <li>
-    /// <p><code>ScheduledActions</code></p></li>
+    /// <li> <p> <code>Launch</code> </p> </li>
+    /// <li> <p> <code>Terminate</code> </p> </li>
+    /// <li> <p> <code>AddToLoadBalancer</code> </p> </li>
+    /// <li> <p> <code>AlarmNotification</code> </p> </li>
+    /// <li> <p> <code>AZRebalance</code> </p> </li>
+    /// <li> <p> <code>HealthCheck</code> </p> </li>
+    /// <li> <p> <code>InstanceRefresh</code> </p> </li>
+    /// <li> <p> <code>ReplaceUnhealthy</code> </p> </li>
+    /// <li> <p> <code>ScheduledActions</code> </p> </li>
     /// </ul>
     /// This field is required.
     pub fn process_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -96,24 +69,15 @@ impl ProcessTypeBuilder {
     }
     /// <p>One of the following processes:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Launch</code></p></li>
-    /// <li>
-    /// <p><code>Terminate</code></p></li>
-    /// <li>
-    /// <p><code>AddToLoadBalancer</code></p></li>
-    /// <li>
-    /// <p><code>AlarmNotification</code></p></li>
-    /// <li>
-    /// <p><code>AZRebalance</code></p></li>
-    /// <li>
-    /// <p><code>HealthCheck</code></p></li>
-    /// <li>
-    /// <p><code>InstanceRefresh</code></p></li>
-    /// <li>
-    /// <p><code>ReplaceUnhealthy</code></p></li>
-    /// <li>
-    /// <p><code>ScheduledActions</code></p></li>
+    /// <li> <p> <code>Launch</code> </p> </li>
+    /// <li> <p> <code>Terminate</code> </p> </li>
+    /// <li> <p> <code>AddToLoadBalancer</code> </p> </li>
+    /// <li> <p> <code>AlarmNotification</code> </p> </li>
+    /// <li> <p> <code>AZRebalance</code> </p> </li>
+    /// <li> <p> <code>HealthCheck</code> </p> </li>
+    /// <li> <p> <code>InstanceRefresh</code> </p> </li>
+    /// <li> <p> <code>ReplaceUnhealthy</code> </p> </li>
+    /// <li> <p> <code>ScheduledActions</code> </p> </li>
     /// </ul>
     pub fn set_process_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.process_name = input;
@@ -121,24 +85,15 @@ impl ProcessTypeBuilder {
     }
     /// <p>One of the following processes:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Launch</code></p></li>
-    /// <li>
-    /// <p><code>Terminate</code></p></li>
-    /// <li>
-    /// <p><code>AddToLoadBalancer</code></p></li>
-    /// <li>
-    /// <p><code>AlarmNotification</code></p></li>
-    /// <li>
-    /// <p><code>AZRebalance</code></p></li>
-    /// <li>
-    /// <p><code>HealthCheck</code></p></li>
-    /// <li>
-    /// <p><code>InstanceRefresh</code></p></li>
-    /// <li>
-    /// <p><code>ReplaceUnhealthy</code></p></li>
-    /// <li>
-    /// <p><code>ScheduledActions</code></p></li>
+    /// <li> <p> <code>Launch</code> </p> </li>
+    /// <li> <p> <code>Terminate</code> </p> </li>
+    /// <li> <p> <code>AddToLoadBalancer</code> </p> </li>
+    /// <li> <p> <code>AlarmNotification</code> </p> </li>
+    /// <li> <p> <code>AZRebalance</code> </p> </li>
+    /// <li> <p> <code>HealthCheck</code> </p> </li>
+    /// <li> <p> <code>InstanceRefresh</code> </p> </li>
+    /// <li> <p> <code>ReplaceUnhealthy</code> </p> </li>
+    /// <li> <p> <code>ScheduledActions</code> </p> </li>
     /// </ul>
     pub fn get_process_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.process_name

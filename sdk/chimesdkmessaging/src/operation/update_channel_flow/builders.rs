@@ -126,17 +126,17 @@ impl UpdateChannelFlowFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_processors`](Self::set_processors).
     ///
-    /// <p>Information about the processor Lambda functions</p>
+    /// <p>Information about the processor Lambda functions </p>
     pub fn processors(mut self, input: crate::types::Processor) -> Self {
         self.inner = self.inner.processors(input);
         self
     }
-    /// <p>Information about the processor Lambda functions</p>
+    /// <p>Information about the processor Lambda functions </p>
     pub fn set_processors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Processor>>) -> Self {
         self.inner = self.inner.set_processors(input);
         self
     }
-    /// <p>Information about the processor Lambda functions</p>
+    /// <p>Information about the processor Lambda functions </p>
     pub fn get_processors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Processor>> {
         self.inner.get_processors()
     }

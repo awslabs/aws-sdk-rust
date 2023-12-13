@@ -23,7 +23,7 @@ impl DeletePackageInputBuilder {
 /// Fluent builder constructing a request to `DeletePackage`.
 ///
 /// <p>Deletes a specific version from a software package.</p>
-/// <p><b>Note:</b> All package versions must be deleted before deleting the software package.</p>
+/// <p> <b>Note:</b> All package versions must be deleted before deleting the software package.</p>
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeletePackageVersion</a> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeletePackageFluentBuilder {

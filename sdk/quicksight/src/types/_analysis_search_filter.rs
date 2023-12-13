@@ -11,18 +11,12 @@ pub struct AnalysisSearchFilter {
     /// <p>The name of the value that you want to use as a filter, for example <code>"Name": "QUICKSIGHT_OWNER"</code>.</p>
     /// <p>Valid values are defined as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>QUICKSIGHT_VIEWER_OR_OWNER</code>: Provide an ARN of a user or group, and any analyses with that ARN listed as one of the analysis' owners or viewers are returned. Implicit permissions from folders or groups are considered.</p></li>
-    /// <li>
-    /// <p><code>QUICKSIGHT_OWNER</code>: Provide an ARN of a user or group, and any analyses with that ARN listed as one of the owners of the analyses are returned. Implicit permissions from folders or groups are considered.</p></li>
-    /// <li>
-    /// <p><code>DIRECT_QUICKSIGHT_SOLE_OWNER</code>: Provide an ARN of a user or group, and any analyses with that ARN listed as the only owner of the analysis are returned. Implicit permissions from folders or groups are not considered.</p></li>
-    /// <li>
-    /// <p><code>DIRECT_QUICKSIGHT_OWNER</code>: Provide an ARN of a user or group, and any analyses with that ARN listed as one of the owners of the analyses are returned. Implicit permissions from folders or groups are not considered.</p></li>
-    /// <li>
-    /// <p><code>DIRECT_QUICKSIGHT_VIEWER_OR_OWNER</code>: Provide an ARN of a user or group, and any analyses with that ARN listed as one of the owners or viewers of the analyses are returned. Implicit permissions from folders or groups are not considered.</p></li>
-    /// <li>
-    /// <p><code>ANALYSIS_NAME</code>: Any analyses whose names have a substring match to this value will be returned.</p></li>
+    /// <li> <p> <code>QUICKSIGHT_VIEWER_OR_OWNER</code>: Provide an ARN of a user or group, and any analyses with that ARN listed as one of the analysis' owners or viewers are returned. Implicit permissions from folders or groups are considered. </p> </li>
+    /// <li> <p> <code>QUICKSIGHT_OWNER</code>: Provide an ARN of a user or group, and any analyses with that ARN listed as one of the owners of the analyses are returned. Implicit permissions from folders or groups are considered.</p> </li>
+    /// <li> <p> <code>DIRECT_QUICKSIGHT_SOLE_OWNER</code>: Provide an ARN of a user or group, and any analyses with that ARN listed as the only owner of the analysis are returned. Implicit permissions from folders or groups are not considered.</p> </li>
+    /// <li> <p> <code>DIRECT_QUICKSIGHT_OWNER</code>: Provide an ARN of a user or group, and any analyses with that ARN listed as one of the owners of the analyses are returned. Implicit permissions from folders or groups are not considered.</p> </li>
+    /// <li> <p> <code>DIRECT_QUICKSIGHT_VIEWER_OR_OWNER</code>: Provide an ARN of a user or group, and any analyses with that ARN listed as one of the owners or viewers of the analyses are returned. Implicit permissions from folders or groups are not considered. </p> </li>
+    /// <li> <p> <code>ANALYSIS_NAME</code>: Any analyses whose names have a substring match to this value will be returned.</p> </li>
     /// </ul>
     pub name: ::std::option::Option<crate::types::AnalysisFilterAttribute>,
     /// <p>The value of the named item, in this case <code>QUICKSIGHT_USER</code>, that you want to use as a filter, for example <code>"Value"</code>. An example is <code>"arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>.</p>
@@ -38,18 +32,12 @@ impl AnalysisSearchFilter {
     /// <p>The name of the value that you want to use as a filter, for example <code>"Name": "QUICKSIGHT_OWNER"</code>.</p>
     /// <p>Valid values are defined as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>QUICKSIGHT_VIEWER_OR_OWNER</code>: Provide an ARN of a user or group, and any analyses with that ARN listed as one of the analysis' owners or viewers are returned. Implicit permissions from folders or groups are considered.</p></li>
-    /// <li>
-    /// <p><code>QUICKSIGHT_OWNER</code>: Provide an ARN of a user or group, and any analyses with that ARN listed as one of the owners of the analyses are returned. Implicit permissions from folders or groups are considered.</p></li>
-    /// <li>
-    /// <p><code>DIRECT_QUICKSIGHT_SOLE_OWNER</code>: Provide an ARN of a user or group, and any analyses with that ARN listed as the only owner of the analysis are returned. Implicit permissions from folders or groups are not considered.</p></li>
-    /// <li>
-    /// <p><code>DIRECT_QUICKSIGHT_OWNER</code>: Provide an ARN of a user or group, and any analyses with that ARN listed as one of the owners of the analyses are returned. Implicit permissions from folders or groups are not considered.</p></li>
-    /// <li>
-    /// <p><code>DIRECT_QUICKSIGHT_VIEWER_OR_OWNER</code>: Provide an ARN of a user or group, and any analyses with that ARN listed as one of the owners or viewers of the analyses are returned. Implicit permissions from folders or groups are not considered.</p></li>
-    /// <li>
-    /// <p><code>ANALYSIS_NAME</code>: Any analyses whose names have a substring match to this value will be returned.</p></li>
+    /// <li> <p> <code>QUICKSIGHT_VIEWER_OR_OWNER</code>: Provide an ARN of a user or group, and any analyses with that ARN listed as one of the analysis' owners or viewers are returned. Implicit permissions from folders or groups are considered. </p> </li>
+    /// <li> <p> <code>QUICKSIGHT_OWNER</code>: Provide an ARN of a user or group, and any analyses with that ARN listed as one of the owners of the analyses are returned. Implicit permissions from folders or groups are considered.</p> </li>
+    /// <li> <p> <code>DIRECT_QUICKSIGHT_SOLE_OWNER</code>: Provide an ARN of a user or group, and any analyses with that ARN listed as the only owner of the analysis are returned. Implicit permissions from folders or groups are not considered.</p> </li>
+    /// <li> <p> <code>DIRECT_QUICKSIGHT_OWNER</code>: Provide an ARN of a user or group, and any analyses with that ARN listed as one of the owners of the analyses are returned. Implicit permissions from folders or groups are not considered.</p> </li>
+    /// <li> <p> <code>DIRECT_QUICKSIGHT_VIEWER_OR_OWNER</code>: Provide an ARN of a user or group, and any analyses with that ARN listed as one of the owners or viewers of the analyses are returned. Implicit permissions from folders or groups are not considered. </p> </li>
+    /// <li> <p> <code>ANALYSIS_NAME</code>: Any analyses whose names have a substring match to this value will be returned.</p> </li>
     /// </ul>
     pub fn name(&self) -> ::std::option::Option<&crate::types::AnalysisFilterAttribute> {
         self.name.as_ref()
@@ -98,18 +86,12 @@ impl AnalysisSearchFilterBuilder {
     /// <p>The name of the value that you want to use as a filter, for example <code>"Name": "QUICKSIGHT_OWNER"</code>.</p>
     /// <p>Valid values are defined as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>QUICKSIGHT_VIEWER_OR_OWNER</code>: Provide an ARN of a user or group, and any analyses with that ARN listed as one of the analysis' owners or viewers are returned. Implicit permissions from folders or groups are considered.</p></li>
-    /// <li>
-    /// <p><code>QUICKSIGHT_OWNER</code>: Provide an ARN of a user or group, and any analyses with that ARN listed as one of the owners of the analyses are returned. Implicit permissions from folders or groups are considered.</p></li>
-    /// <li>
-    /// <p><code>DIRECT_QUICKSIGHT_SOLE_OWNER</code>: Provide an ARN of a user or group, and any analyses with that ARN listed as the only owner of the analysis are returned. Implicit permissions from folders or groups are not considered.</p></li>
-    /// <li>
-    /// <p><code>DIRECT_QUICKSIGHT_OWNER</code>: Provide an ARN of a user or group, and any analyses with that ARN listed as one of the owners of the analyses are returned. Implicit permissions from folders or groups are not considered.</p></li>
-    /// <li>
-    /// <p><code>DIRECT_QUICKSIGHT_VIEWER_OR_OWNER</code>: Provide an ARN of a user or group, and any analyses with that ARN listed as one of the owners or viewers of the analyses are returned. Implicit permissions from folders or groups are not considered.</p></li>
-    /// <li>
-    /// <p><code>ANALYSIS_NAME</code>: Any analyses whose names have a substring match to this value will be returned.</p></li>
+    /// <li> <p> <code>QUICKSIGHT_VIEWER_OR_OWNER</code>: Provide an ARN of a user or group, and any analyses with that ARN listed as one of the analysis' owners or viewers are returned. Implicit permissions from folders or groups are considered. </p> </li>
+    /// <li> <p> <code>QUICKSIGHT_OWNER</code>: Provide an ARN of a user or group, and any analyses with that ARN listed as one of the owners of the analyses are returned. Implicit permissions from folders or groups are considered.</p> </li>
+    /// <li> <p> <code>DIRECT_QUICKSIGHT_SOLE_OWNER</code>: Provide an ARN of a user or group, and any analyses with that ARN listed as the only owner of the analysis are returned. Implicit permissions from folders or groups are not considered.</p> </li>
+    /// <li> <p> <code>DIRECT_QUICKSIGHT_OWNER</code>: Provide an ARN of a user or group, and any analyses with that ARN listed as one of the owners of the analyses are returned. Implicit permissions from folders or groups are not considered.</p> </li>
+    /// <li> <p> <code>DIRECT_QUICKSIGHT_VIEWER_OR_OWNER</code>: Provide an ARN of a user or group, and any analyses with that ARN listed as one of the owners or viewers of the analyses are returned. Implicit permissions from folders or groups are not considered. </p> </li>
+    /// <li> <p> <code>ANALYSIS_NAME</code>: Any analyses whose names have a substring match to this value will be returned.</p> </li>
     /// </ul>
     pub fn name(mut self, input: crate::types::AnalysisFilterAttribute) -> Self {
         self.name = ::std::option::Option::Some(input);
@@ -118,18 +100,12 @@ impl AnalysisSearchFilterBuilder {
     /// <p>The name of the value that you want to use as a filter, for example <code>"Name": "QUICKSIGHT_OWNER"</code>.</p>
     /// <p>Valid values are defined as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>QUICKSIGHT_VIEWER_OR_OWNER</code>: Provide an ARN of a user or group, and any analyses with that ARN listed as one of the analysis' owners or viewers are returned. Implicit permissions from folders or groups are considered.</p></li>
-    /// <li>
-    /// <p><code>QUICKSIGHT_OWNER</code>: Provide an ARN of a user or group, and any analyses with that ARN listed as one of the owners of the analyses are returned. Implicit permissions from folders or groups are considered.</p></li>
-    /// <li>
-    /// <p><code>DIRECT_QUICKSIGHT_SOLE_OWNER</code>: Provide an ARN of a user or group, and any analyses with that ARN listed as the only owner of the analysis are returned. Implicit permissions from folders or groups are not considered.</p></li>
-    /// <li>
-    /// <p><code>DIRECT_QUICKSIGHT_OWNER</code>: Provide an ARN of a user or group, and any analyses with that ARN listed as one of the owners of the analyses are returned. Implicit permissions from folders or groups are not considered.</p></li>
-    /// <li>
-    /// <p><code>DIRECT_QUICKSIGHT_VIEWER_OR_OWNER</code>: Provide an ARN of a user or group, and any analyses with that ARN listed as one of the owners or viewers of the analyses are returned. Implicit permissions from folders or groups are not considered.</p></li>
-    /// <li>
-    /// <p><code>ANALYSIS_NAME</code>: Any analyses whose names have a substring match to this value will be returned.</p></li>
+    /// <li> <p> <code>QUICKSIGHT_VIEWER_OR_OWNER</code>: Provide an ARN of a user or group, and any analyses with that ARN listed as one of the analysis' owners or viewers are returned. Implicit permissions from folders or groups are considered. </p> </li>
+    /// <li> <p> <code>QUICKSIGHT_OWNER</code>: Provide an ARN of a user or group, and any analyses with that ARN listed as one of the owners of the analyses are returned. Implicit permissions from folders or groups are considered.</p> </li>
+    /// <li> <p> <code>DIRECT_QUICKSIGHT_SOLE_OWNER</code>: Provide an ARN of a user or group, and any analyses with that ARN listed as the only owner of the analysis are returned. Implicit permissions from folders or groups are not considered.</p> </li>
+    /// <li> <p> <code>DIRECT_QUICKSIGHT_OWNER</code>: Provide an ARN of a user or group, and any analyses with that ARN listed as one of the owners of the analyses are returned. Implicit permissions from folders or groups are not considered.</p> </li>
+    /// <li> <p> <code>DIRECT_QUICKSIGHT_VIEWER_OR_OWNER</code>: Provide an ARN of a user or group, and any analyses with that ARN listed as one of the owners or viewers of the analyses are returned. Implicit permissions from folders or groups are not considered. </p> </li>
+    /// <li> <p> <code>ANALYSIS_NAME</code>: Any analyses whose names have a substring match to this value will be returned.</p> </li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::AnalysisFilterAttribute>) -> Self {
         self.name = input;
@@ -138,18 +114,12 @@ impl AnalysisSearchFilterBuilder {
     /// <p>The name of the value that you want to use as a filter, for example <code>"Name": "QUICKSIGHT_OWNER"</code>.</p>
     /// <p>Valid values are defined as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>QUICKSIGHT_VIEWER_OR_OWNER</code>: Provide an ARN of a user or group, and any analyses with that ARN listed as one of the analysis' owners or viewers are returned. Implicit permissions from folders or groups are considered.</p></li>
-    /// <li>
-    /// <p><code>QUICKSIGHT_OWNER</code>: Provide an ARN of a user or group, and any analyses with that ARN listed as one of the owners of the analyses are returned. Implicit permissions from folders or groups are considered.</p></li>
-    /// <li>
-    /// <p><code>DIRECT_QUICKSIGHT_SOLE_OWNER</code>: Provide an ARN of a user or group, and any analyses with that ARN listed as the only owner of the analysis are returned. Implicit permissions from folders or groups are not considered.</p></li>
-    /// <li>
-    /// <p><code>DIRECT_QUICKSIGHT_OWNER</code>: Provide an ARN of a user or group, and any analyses with that ARN listed as one of the owners of the analyses are returned. Implicit permissions from folders or groups are not considered.</p></li>
-    /// <li>
-    /// <p><code>DIRECT_QUICKSIGHT_VIEWER_OR_OWNER</code>: Provide an ARN of a user or group, and any analyses with that ARN listed as one of the owners or viewers of the analyses are returned. Implicit permissions from folders or groups are not considered.</p></li>
-    /// <li>
-    /// <p><code>ANALYSIS_NAME</code>: Any analyses whose names have a substring match to this value will be returned.</p></li>
+    /// <li> <p> <code>QUICKSIGHT_VIEWER_OR_OWNER</code>: Provide an ARN of a user or group, and any analyses with that ARN listed as one of the analysis' owners or viewers are returned. Implicit permissions from folders or groups are considered. </p> </li>
+    /// <li> <p> <code>QUICKSIGHT_OWNER</code>: Provide an ARN of a user or group, and any analyses with that ARN listed as one of the owners of the analyses are returned. Implicit permissions from folders or groups are considered.</p> </li>
+    /// <li> <p> <code>DIRECT_QUICKSIGHT_SOLE_OWNER</code>: Provide an ARN of a user or group, and any analyses with that ARN listed as the only owner of the analysis are returned. Implicit permissions from folders or groups are not considered.</p> </li>
+    /// <li> <p> <code>DIRECT_QUICKSIGHT_OWNER</code>: Provide an ARN of a user or group, and any analyses with that ARN listed as one of the owners of the analyses are returned. Implicit permissions from folders or groups are not considered.</p> </li>
+    /// <li> <p> <code>DIRECT_QUICKSIGHT_VIEWER_OR_OWNER</code>: Provide an ARN of a user or group, and any analyses with that ARN listed as one of the owners or viewers of the analyses are returned. Implicit permissions from folders or groups are not considered. </p> </li>
+    /// <li> <p> <code>ANALYSIS_NAME</code>: Any analyses whose names have a substring match to this value will be returned.</p> </li>
     /// </ul>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::AnalysisFilterAttribute> {
         &self.name

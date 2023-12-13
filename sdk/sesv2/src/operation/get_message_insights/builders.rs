@@ -109,17 +109,17 @@ impl GetMessageInsightsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>A <code>MessageId</code> is a unique identifier for a message, and is returned when sending emails through Amazon SES.</p>
+    /// <p> A <code>MessageId</code> is a unique identifier for a message, and is returned when sending emails through Amazon SES. </p>
     pub fn message_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.message_id(input.into());
         self
     }
-    /// <p>A <code>MessageId</code> is a unique identifier for a message, and is returned when sending emails through Amazon SES.</p>
+    /// <p> A <code>MessageId</code> is a unique identifier for a message, and is returned when sending emails through Amazon SES. </p>
     pub fn set_message_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_message_id(input);
         self
     }
-    /// <p>A <code>MessageId</code> is a unique identifier for a message, and is returned when sending emails through Amazon SES.</p>
+    /// <p> A <code>MessageId</code> is a unique identifier for a message, and is returned when sending emails through Amazon SES. </p>
     pub fn get_message_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_message_id()
     }

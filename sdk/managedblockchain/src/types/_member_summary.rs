@@ -13,21 +13,13 @@ pub struct MemberSummary {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The status of the member.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATING</code> - The Amazon Web Services account is in the process of creating a member.</p></li>
-    /// <li>
-    /// <p><code>AVAILABLE</code> - The member has been created and can participate in the network.</p></li>
-    /// <li>
-    /// <p><code>CREATE_FAILED</code> - The Amazon Web Services account attempted to create a member and creation failed.</p></li>
-    /// <li>
-    /// <p><code>UPDATING</code> - The member is in the process of being updated.</p></li>
-    /// <li>
-    /// <p><code>DELETING</code> - The member and all associated resources are in the process of being deleted. Either the Amazon Web Services account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p></li>
-    /// <li>
-    /// <p><code>DELETED</code> - The member can no longer participate on the network and all associated resources are deleted. Either the Amazon Web Services account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p></li>
-    /// <li>
-    /// <p><code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected because it cannot access the specified customer managed key in Key Management Service (KMS) for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p>
-    /// <p>The effect of disabling or deleting a key or of revoking a grant isn't immediate. It might take some time for the member resource to discover that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p></li>
+    /// <li> <p> <code>CREATING</code> - The Amazon Web Services account is in the process of creating a member.</p> </li>
+    /// <li> <p> <code>AVAILABLE</code> - The member has been created and can participate in the network.</p> </li>
+    /// <li> <p> <code>CREATE_FAILED</code> - The Amazon Web Services account attempted to create a member and creation failed.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - The member is in the process of being updated.</p> </li>
+    /// <li> <p> <code>DELETING</code> - The member and all associated resources are in the process of being deleted. Either the Amazon Web Services account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li>
+    /// <li> <p> <code>DELETED</code> - The member can no longer participate on the network and all associated resources are deleted. Either the Amazon Web Services account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li>
+    /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected because it cannot access the specified customer managed key in Key Management Service (KMS) for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p> <p>The effect of disabling or deleting a key or of revoking a grant isn't immediate. It might take some time for the member resource to discover that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p> </li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::MemberStatus>,
     /// <p>The date and time that the member was created.</p>
@@ -52,21 +44,13 @@ impl MemberSummary {
     }
     /// <p>The status of the member.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATING</code> - The Amazon Web Services account is in the process of creating a member.</p></li>
-    /// <li>
-    /// <p><code>AVAILABLE</code> - The member has been created and can participate in the network.</p></li>
-    /// <li>
-    /// <p><code>CREATE_FAILED</code> - The Amazon Web Services account attempted to create a member and creation failed.</p></li>
-    /// <li>
-    /// <p><code>UPDATING</code> - The member is in the process of being updated.</p></li>
-    /// <li>
-    /// <p><code>DELETING</code> - The member and all associated resources are in the process of being deleted. Either the Amazon Web Services account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p></li>
-    /// <li>
-    /// <p><code>DELETED</code> - The member can no longer participate on the network and all associated resources are deleted. Either the Amazon Web Services account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p></li>
-    /// <li>
-    /// <p><code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected because it cannot access the specified customer managed key in Key Management Service (KMS) for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p>
-    /// <p>The effect of disabling or deleting a key or of revoking a grant isn't immediate. It might take some time for the member resource to discover that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p></li>
+    /// <li> <p> <code>CREATING</code> - The Amazon Web Services account is in the process of creating a member.</p> </li>
+    /// <li> <p> <code>AVAILABLE</code> - The member has been created and can participate in the network.</p> </li>
+    /// <li> <p> <code>CREATE_FAILED</code> - The Amazon Web Services account attempted to create a member and creation failed.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - The member is in the process of being updated.</p> </li>
+    /// <li> <p> <code>DELETING</code> - The member and all associated resources are in the process of being deleted. Either the Amazon Web Services account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li>
+    /// <li> <p> <code>DELETED</code> - The member can no longer participate on the network and all associated resources are deleted. Either the Amazon Web Services account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li>
+    /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected because it cannot access the specified customer managed key in Key Management Service (KMS) for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p> <p>The effect of disabling or deleting a key or of revoking a grant isn't immediate. It might take some time for the member resource to discover that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p> </li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::MemberStatus> {
         self.status.as_ref()
@@ -148,21 +132,13 @@ impl MemberSummaryBuilder {
     }
     /// <p>The status of the member.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATING</code> - The Amazon Web Services account is in the process of creating a member.</p></li>
-    /// <li>
-    /// <p><code>AVAILABLE</code> - The member has been created and can participate in the network.</p></li>
-    /// <li>
-    /// <p><code>CREATE_FAILED</code> - The Amazon Web Services account attempted to create a member and creation failed.</p></li>
-    /// <li>
-    /// <p><code>UPDATING</code> - The member is in the process of being updated.</p></li>
-    /// <li>
-    /// <p><code>DELETING</code> - The member and all associated resources are in the process of being deleted. Either the Amazon Web Services account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p></li>
-    /// <li>
-    /// <p><code>DELETED</code> - The member can no longer participate on the network and all associated resources are deleted. Either the Amazon Web Services account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p></li>
-    /// <li>
-    /// <p><code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected because it cannot access the specified customer managed key in Key Management Service (KMS) for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p>
-    /// <p>The effect of disabling or deleting a key or of revoking a grant isn't immediate. It might take some time for the member resource to discover that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p></li>
+    /// <li> <p> <code>CREATING</code> - The Amazon Web Services account is in the process of creating a member.</p> </li>
+    /// <li> <p> <code>AVAILABLE</code> - The member has been created and can participate in the network.</p> </li>
+    /// <li> <p> <code>CREATE_FAILED</code> - The Amazon Web Services account attempted to create a member and creation failed.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - The member is in the process of being updated.</p> </li>
+    /// <li> <p> <code>DELETING</code> - The member and all associated resources are in the process of being deleted. Either the Amazon Web Services account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li>
+    /// <li> <p> <code>DELETED</code> - The member can no longer participate on the network and all associated resources are deleted. Either the Amazon Web Services account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li>
+    /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected because it cannot access the specified customer managed key in Key Management Service (KMS) for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p> <p>The effect of disabling or deleting a key or of revoking a grant isn't immediate. It might take some time for the member resource to discover that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::MemberStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -170,21 +146,13 @@ impl MemberSummaryBuilder {
     }
     /// <p>The status of the member.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATING</code> - The Amazon Web Services account is in the process of creating a member.</p></li>
-    /// <li>
-    /// <p><code>AVAILABLE</code> - The member has been created and can participate in the network.</p></li>
-    /// <li>
-    /// <p><code>CREATE_FAILED</code> - The Amazon Web Services account attempted to create a member and creation failed.</p></li>
-    /// <li>
-    /// <p><code>UPDATING</code> - The member is in the process of being updated.</p></li>
-    /// <li>
-    /// <p><code>DELETING</code> - The member and all associated resources are in the process of being deleted. Either the Amazon Web Services account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p></li>
-    /// <li>
-    /// <p><code>DELETED</code> - The member can no longer participate on the network and all associated resources are deleted. Either the Amazon Web Services account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p></li>
-    /// <li>
-    /// <p><code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected because it cannot access the specified customer managed key in Key Management Service (KMS) for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p>
-    /// <p>The effect of disabling or deleting a key or of revoking a grant isn't immediate. It might take some time for the member resource to discover that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p></li>
+    /// <li> <p> <code>CREATING</code> - The Amazon Web Services account is in the process of creating a member.</p> </li>
+    /// <li> <p> <code>AVAILABLE</code> - The member has been created and can participate in the network.</p> </li>
+    /// <li> <p> <code>CREATE_FAILED</code> - The Amazon Web Services account attempted to create a member and creation failed.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - The member is in the process of being updated.</p> </li>
+    /// <li> <p> <code>DELETING</code> - The member and all associated resources are in the process of being deleted. Either the Amazon Web Services account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li>
+    /// <li> <p> <code>DELETED</code> - The member can no longer participate on the network and all associated resources are deleted. Either the Amazon Web Services account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li>
+    /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected because it cannot access the specified customer managed key in Key Management Service (KMS) for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p> <p>The effect of disabling or deleting a key or of revoking a grant isn't immediate. It might take some time for the member resource to discover that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p> </li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::MemberStatus>) -> Self {
         self.status = input;
@@ -192,21 +160,13 @@ impl MemberSummaryBuilder {
     }
     /// <p>The status of the member.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATING</code> - The Amazon Web Services account is in the process of creating a member.</p></li>
-    /// <li>
-    /// <p><code>AVAILABLE</code> - The member has been created and can participate in the network.</p></li>
-    /// <li>
-    /// <p><code>CREATE_FAILED</code> - The Amazon Web Services account attempted to create a member and creation failed.</p></li>
-    /// <li>
-    /// <p><code>UPDATING</code> - The member is in the process of being updated.</p></li>
-    /// <li>
-    /// <p><code>DELETING</code> - The member and all associated resources are in the process of being deleted. Either the Amazon Web Services account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p></li>
-    /// <li>
-    /// <p><code>DELETED</code> - The member can no longer participate on the network and all associated resources are deleted. Either the Amazon Web Services account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p></li>
-    /// <li>
-    /// <p><code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected because it cannot access the specified customer managed key in Key Management Service (KMS) for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p>
-    /// <p>The effect of disabling or deleting a key or of revoking a grant isn't immediate. It might take some time for the member resource to discover that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p></li>
+    /// <li> <p> <code>CREATING</code> - The Amazon Web Services account is in the process of creating a member.</p> </li>
+    /// <li> <p> <code>AVAILABLE</code> - The member has been created and can participate in the network.</p> </li>
+    /// <li> <p> <code>CREATE_FAILED</code> - The Amazon Web Services account attempted to create a member and creation failed.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - The member is in the process of being updated.</p> </li>
+    /// <li> <p> <code>DELETING</code> - The member and all associated resources are in the process of being deleted. Either the Amazon Web Services account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li>
+    /// <li> <p> <code>DELETED</code> - The member can no longer participate on the network and all associated resources are deleted. Either the Amazon Web Services account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li>
+    /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected because it cannot access the specified customer managed key in Key Management Service (KMS) for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p> <p>The effect of disabling or deleting a key or of revoking a grant isn't immediate. It might take some time for the member resource to discover that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p> </li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::MemberStatus> {
         &self.status

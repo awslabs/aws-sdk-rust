@@ -22,7 +22,7 @@ pub struct CreateDeploymentJobOutput {
     /// BadPermissionError
     /// </dt>
     /// <dd>
-    /// <p>AWS Greengrass requires a service-level role permission to access other services. The role must include the <a href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSGreengrassResourceAccessRolePolicy$jsonEditor"> <code>AWSGreengrassResourceAccessRolePolicy</code> managed policy</a>.</p>
+    /// <p>AWS Greengrass requires a service-level role permission to access other services. The role must include the <a href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSGreengrassResourceAccessRolePolicy$jsonEditor"> <code>AWSGreengrassResourceAccessRolePolicy</code> managed policy</a>. </p>
     /// </dd>
     /// <dt>
     /// ExtractingBundleFailure
@@ -82,7 +82,7 @@ pub struct CreateDeploymentJobOutput {
     /// ResourceNotFound
     /// </dt>
     /// <dd>
-    /// <p>One or more deployment resources are missing. For example, do robot application source bundles still exist?</p>
+    /// <p>One or more deployment resources are missing. For example, do robot application source bundles still exist? </p>
     /// </dd>
     /// <dt>
     /// RobotDeploymentNoResponse
@@ -129,7 +129,7 @@ impl CreateDeploymentJobOutput {
     /// BadPermissionError
     /// </dt>
     /// <dd>
-    /// <p>AWS Greengrass requires a service-level role permission to access other services. The role must include the <a href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSGreengrassResourceAccessRolePolicy$jsonEditor"> <code>AWSGreengrassResourceAccessRolePolicy</code> managed policy</a>.</p>
+    /// <p>AWS Greengrass requires a service-level role permission to access other services. The role must include the <a href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSGreengrassResourceAccessRolePolicy$jsonEditor"> <code>AWSGreengrassResourceAccessRolePolicy</code> managed policy</a>. </p>
     /// </dd>
     /// <dt>
     /// ExtractingBundleFailure
@@ -189,7 +189,7 @@ impl CreateDeploymentJobOutput {
     /// ResourceNotFound
     /// </dt>
     /// <dd>
-    /// <p>One or more deployment resources are missing. For example, do robot application source bundles still exist?</p>
+    /// <p>One or more deployment resources are missing. For example, do robot application source bundles still exist? </p>
     /// </dd>
     /// <dt>
     /// RobotDeploymentNoResponse
@@ -327,7 +327,7 @@ impl CreateDeploymentJobOutputBuilder {
     /// BadPermissionError
     /// </dt>
     /// <dd>
-    /// <p>AWS Greengrass requires a service-level role permission to access other services. The role must include the <a href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSGreengrassResourceAccessRolePolicy$jsonEditor"> <code>AWSGreengrassResourceAccessRolePolicy</code> managed policy</a>.</p>
+    /// <p>AWS Greengrass requires a service-level role permission to access other services. The role must include the <a href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSGreengrassResourceAccessRolePolicy$jsonEditor"> <code>AWSGreengrassResourceAccessRolePolicy</code> managed policy</a>. </p>
     /// </dd>
     /// <dt>
     /// ExtractingBundleFailure
@@ -387,7 +387,7 @@ impl CreateDeploymentJobOutputBuilder {
     /// ResourceNotFound
     /// </dt>
     /// <dd>
-    /// <p>One or more deployment resources are missing. For example, do robot application source bundles still exist?</p>
+    /// <p>One or more deployment resources are missing. For example, do robot application source bundles still exist? </p>
     /// </dd>
     /// <dt>
     /// RobotDeploymentNoResponse
@@ -406,7 +406,7 @@ impl CreateDeploymentJobOutputBuilder {
     /// BadPermissionError
     /// </dt>
     /// <dd>
-    /// <p>AWS Greengrass requires a service-level role permission to access other services. The role must include the <a href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSGreengrassResourceAccessRolePolicy$jsonEditor"> <code>AWSGreengrassResourceAccessRolePolicy</code> managed policy</a>.</p>
+    /// <p>AWS Greengrass requires a service-level role permission to access other services. The role must include the <a href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSGreengrassResourceAccessRolePolicy$jsonEditor"> <code>AWSGreengrassResourceAccessRolePolicy</code> managed policy</a>. </p>
     /// </dd>
     /// <dt>
     /// ExtractingBundleFailure
@@ -466,7 +466,7 @@ impl CreateDeploymentJobOutputBuilder {
     /// ResourceNotFound
     /// </dt>
     /// <dd>
-    /// <p>One or more deployment resources are missing. For example, do robot application source bundles still exist?</p>
+    /// <p>One or more deployment resources are missing. For example, do robot application source bundles still exist? </p>
     /// </dd>
     /// <dt>
     /// RobotDeploymentNoResponse
@@ -485,7 +485,7 @@ impl CreateDeploymentJobOutputBuilder {
     /// BadPermissionError
     /// </dt>
     /// <dd>
-    /// <p>AWS Greengrass requires a service-level role permission to access other services. The role must include the <a href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSGreengrassResourceAccessRolePolicy$jsonEditor"> <code>AWSGreengrassResourceAccessRolePolicy</code> managed policy</a>.</p>
+    /// <p>AWS Greengrass requires a service-level role permission to access other services. The role must include the <a href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSGreengrassResourceAccessRolePolicy$jsonEditor"> <code>AWSGreengrassResourceAccessRolePolicy</code> managed policy</a>. </p>
     /// </dd>
     /// <dt>
     /// ExtractingBundleFailure
@@ -545,7 +545,7 @@ impl CreateDeploymentJobOutputBuilder {
     /// ResourceNotFound
     /// </dt>
     /// <dd>
-    /// <p>One or more deployment resources are missing. For example, do robot application source bundles still exist?</p>
+    /// <p>One or more deployment resources are missing. For example, do robot application source bundles still exist? </p>
     /// </dd>
     /// <dt>
     /// RobotDeploymentNoResponse

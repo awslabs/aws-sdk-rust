@@ -3,29 +3,29 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateScheduledActionInput {
-    /// <p>The name of the scheduled action. The name must be unique within an account. For more information about this parameter, see <code>ScheduledAction</code>.</p>
+    /// <p>The name of the scheduled action. The name must be unique within an account. For more information about this parameter, see <code>ScheduledAction</code>. </p>
     pub scheduled_action_name: ::std::option::Option<::std::string::String>,
-    /// <p>A JSON format string of the Amazon Redshift API operation with input parameters. For more information about this parameter, see <code>ScheduledAction</code>.</p>
+    /// <p>A JSON format string of the Amazon Redshift API operation with input parameters. For more information about this parameter, see <code>ScheduledAction</code>. </p>
     pub target_action: ::std::option::Option<crate::types::ScheduledActionType>,
     /// <p>The schedule in <code>at( )</code> or <code>cron( )</code> format. For more information about this parameter, see <code>ScheduledAction</code>.</p>
     pub schedule: ::std::option::Option<::std::string::String>,
-    /// <p>The IAM role to assume to run the target action. For more information about this parameter, see <code>ScheduledAction</code>.</p>
+    /// <p>The IAM role to assume to run the target action. For more information about this parameter, see <code>ScheduledAction</code>. </p>
     pub iam_role: ::std::option::Option<::std::string::String>,
-    /// <p>The description of the scheduled action.</p>
+    /// <p>The description of the scheduled action. </p>
     pub scheduled_action_description: ::std::option::Option<::std::string::String>,
     /// <p>The start time in UTC of the scheduled action. Before this time, the scheduled action does not trigger. For more information about this parameter, see <code>ScheduledAction</code>.</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The end time in UTC of the scheduled action. After this time, the scheduled action does not trigger. For more information about this parameter, see <code>ScheduledAction</code>.</p>
+    /// <p>The end time in UTC of the scheduled action. After this time, the scheduled action does not trigger. For more information about this parameter, see <code>ScheduledAction</code>. </p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>If true, the schedule is enabled. If false, the scheduled action does not trigger. For more information about <code>state</code> of the scheduled action, see <code>ScheduledAction</code>.</p>
+    /// <p>If true, the schedule is enabled. If false, the scheduled action does not trigger. For more information about <code>state</code> of the scheduled action, see <code>ScheduledAction</code>. </p>
     pub enable: ::std::option::Option<bool>,
 }
 impl CreateScheduledActionInput {
-    /// <p>The name of the scheduled action. The name must be unique within an account. For more information about this parameter, see <code>ScheduledAction</code>.</p>
+    /// <p>The name of the scheduled action. The name must be unique within an account. For more information about this parameter, see <code>ScheduledAction</code>. </p>
     pub fn scheduled_action_name(&self) -> ::std::option::Option<&str> {
         self.scheduled_action_name.as_deref()
     }
-    /// <p>A JSON format string of the Amazon Redshift API operation with input parameters. For more information about this parameter, see <code>ScheduledAction</code>.</p>
+    /// <p>A JSON format string of the Amazon Redshift API operation with input parameters. For more information about this parameter, see <code>ScheduledAction</code>. </p>
     pub fn target_action(&self) -> ::std::option::Option<&crate::types::ScheduledActionType> {
         self.target_action.as_ref()
     }
@@ -33,11 +33,11 @@ impl CreateScheduledActionInput {
     pub fn schedule(&self) -> ::std::option::Option<&str> {
         self.schedule.as_deref()
     }
-    /// <p>The IAM role to assume to run the target action. For more information about this parameter, see <code>ScheduledAction</code>.</p>
+    /// <p>The IAM role to assume to run the target action. For more information about this parameter, see <code>ScheduledAction</code>. </p>
     pub fn iam_role(&self) -> ::std::option::Option<&str> {
         self.iam_role.as_deref()
     }
-    /// <p>The description of the scheduled action.</p>
+    /// <p>The description of the scheduled action. </p>
     pub fn scheduled_action_description(&self) -> ::std::option::Option<&str> {
         self.scheduled_action_description.as_deref()
     }
@@ -45,11 +45,11 @@ impl CreateScheduledActionInput {
     pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>The end time in UTC of the scheduled action. After this time, the scheduled action does not trigger. For more information about this parameter, see <code>ScheduledAction</code>.</p>
+    /// <p>The end time in UTC of the scheduled action. After this time, the scheduled action does not trigger. For more information about this parameter, see <code>ScheduledAction</code>. </p>
     pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
-    /// <p>If true, the schedule is enabled. If false, the scheduled action does not trigger. For more information about <code>state</code> of the scheduled action, see <code>ScheduledAction</code>.</p>
+    /// <p>If true, the schedule is enabled. If false, the scheduled action does not trigger. For more information about <code>state</code> of the scheduled action, see <code>ScheduledAction</code>. </p>
     pub fn enable(&self) -> ::std::option::Option<bool> {
         self.enable
     }
@@ -75,33 +75,33 @@ pub struct CreateScheduledActionInputBuilder {
     pub(crate) enable: ::std::option::Option<bool>,
 }
 impl CreateScheduledActionInputBuilder {
-    /// <p>The name of the scheduled action. The name must be unique within an account. For more information about this parameter, see <code>ScheduledAction</code>.</p>
+    /// <p>The name of the scheduled action. The name must be unique within an account. For more information about this parameter, see <code>ScheduledAction</code>. </p>
     /// This field is required.
     pub fn scheduled_action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scheduled_action_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the scheduled action. The name must be unique within an account. For more information about this parameter, see <code>ScheduledAction</code>.</p>
+    /// <p>The name of the scheduled action. The name must be unique within an account. For more information about this parameter, see <code>ScheduledAction</code>. </p>
     pub fn set_scheduled_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scheduled_action_name = input;
         self
     }
-    /// <p>The name of the scheduled action. The name must be unique within an account. For more information about this parameter, see <code>ScheduledAction</code>.</p>
+    /// <p>The name of the scheduled action. The name must be unique within an account. For more information about this parameter, see <code>ScheduledAction</code>. </p>
     pub fn get_scheduled_action_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.scheduled_action_name
     }
-    /// <p>A JSON format string of the Amazon Redshift API operation with input parameters. For more information about this parameter, see <code>ScheduledAction</code>.</p>
+    /// <p>A JSON format string of the Amazon Redshift API operation with input parameters. For more information about this parameter, see <code>ScheduledAction</code>. </p>
     /// This field is required.
     pub fn target_action(mut self, input: crate::types::ScheduledActionType) -> Self {
         self.target_action = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A JSON format string of the Amazon Redshift API operation with input parameters. For more information about this parameter, see <code>ScheduledAction</code>.</p>
+    /// <p>A JSON format string of the Amazon Redshift API operation with input parameters. For more information about this parameter, see <code>ScheduledAction</code>. </p>
     pub fn set_target_action(mut self, input: ::std::option::Option<crate::types::ScheduledActionType>) -> Self {
         self.target_action = input;
         self
     }
-    /// <p>A JSON format string of the Amazon Redshift API operation with input parameters. For more information about this parameter, see <code>ScheduledAction</code>.</p>
+    /// <p>A JSON format string of the Amazon Redshift API operation with input parameters. For more information about this parameter, see <code>ScheduledAction</code>. </p>
     pub fn get_target_action(&self) -> &::std::option::Option<crate::types::ScheduledActionType> {
         &self.target_action
     }
@@ -120,32 +120,32 @@ impl CreateScheduledActionInputBuilder {
     pub fn get_schedule(&self) -> &::std::option::Option<::std::string::String> {
         &self.schedule
     }
-    /// <p>The IAM role to assume to run the target action. For more information about this parameter, see <code>ScheduledAction</code>.</p>
+    /// <p>The IAM role to assume to run the target action. For more information about this parameter, see <code>ScheduledAction</code>. </p>
     /// This field is required.
     pub fn iam_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_role = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The IAM role to assume to run the target action. For more information about this parameter, see <code>ScheduledAction</code>.</p>
+    /// <p>The IAM role to assume to run the target action. For more information about this parameter, see <code>ScheduledAction</code>. </p>
     pub fn set_iam_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iam_role = input;
         self
     }
-    /// <p>The IAM role to assume to run the target action. For more information about this parameter, see <code>ScheduledAction</code>.</p>
+    /// <p>The IAM role to assume to run the target action. For more information about this parameter, see <code>ScheduledAction</code>. </p>
     pub fn get_iam_role(&self) -> &::std::option::Option<::std::string::String> {
         &self.iam_role
     }
-    /// <p>The description of the scheduled action.</p>
+    /// <p>The description of the scheduled action. </p>
     pub fn scheduled_action_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scheduled_action_description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The description of the scheduled action.</p>
+    /// <p>The description of the scheduled action. </p>
     pub fn set_scheduled_action_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scheduled_action_description = input;
         self
     }
-    /// <p>The description of the scheduled action.</p>
+    /// <p>The description of the scheduled action. </p>
     pub fn get_scheduled_action_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.scheduled_action_description
     }
@@ -163,31 +163,31 @@ impl CreateScheduledActionInputBuilder {
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.start_time
     }
-    /// <p>The end time in UTC of the scheduled action. After this time, the scheduled action does not trigger. For more information about this parameter, see <code>ScheduledAction</code>.</p>
+    /// <p>The end time in UTC of the scheduled action. After this time, the scheduled action does not trigger. For more information about this parameter, see <code>ScheduledAction</code>. </p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The end time in UTC of the scheduled action. After this time, the scheduled action does not trigger. For more information about this parameter, see <code>ScheduledAction</code>.</p>
+    /// <p>The end time in UTC of the scheduled action. After this time, the scheduled action does not trigger. For more information about this parameter, see <code>ScheduledAction</code>. </p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
-    /// <p>The end time in UTC of the scheduled action. After this time, the scheduled action does not trigger. For more information about this parameter, see <code>ScheduledAction</code>.</p>
+    /// <p>The end time in UTC of the scheduled action. After this time, the scheduled action does not trigger. For more information about this parameter, see <code>ScheduledAction</code>. </p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_time
     }
-    /// <p>If true, the schedule is enabled. If false, the scheduled action does not trigger. For more information about <code>state</code> of the scheduled action, see <code>ScheduledAction</code>.</p>
+    /// <p>If true, the schedule is enabled. If false, the scheduled action does not trigger. For more information about <code>state</code> of the scheduled action, see <code>ScheduledAction</code>. </p>
     pub fn enable(mut self, input: bool) -> Self {
         self.enable = ::std::option::Option::Some(input);
         self
     }
-    /// <p>If true, the schedule is enabled. If false, the scheduled action does not trigger. For more information about <code>state</code> of the scheduled action, see <code>ScheduledAction</code>.</p>
+    /// <p>If true, the schedule is enabled. If false, the scheduled action does not trigger. For more information about <code>state</code> of the scheduled action, see <code>ScheduledAction</code>. </p>
     pub fn set_enable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable = input;
         self
     }
-    /// <p>If true, the schedule is enabled. If false, the scheduled action does not trigger. For more information about <code>state</code> of the scheduled action, see <code>ScheduledAction</code>.</p>
+    /// <p>If true, the schedule is enabled. If false, the scheduled action does not trigger. For more information about <code>state</code> of the scheduled action, see <code>ScheduledAction</code>. </p>
     pub fn get_enable(&self) -> &::std::option::Option<bool> {
         &self.enable
     }

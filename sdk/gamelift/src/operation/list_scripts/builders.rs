@@ -22,11 +22,11 @@ impl ListScriptsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListScripts`.
 ///
-/// <p>Retrieves script records for all Realtime scripts that are associated with the Amazon Web Services account in use.</p>
-/// <p><b>Learn more</b></p>
-/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/realtime-intro.html">Amazon GameLift Realtime Servers</a></p>
-/// <p><b>Related actions</b></p>
-/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a></p>
+/// <p>Retrieves script records for all Realtime scripts that are associated with the Amazon Web Services account in use. </p>
+/// <p> <b>Learn more</b> </p>
+/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/realtime-intro.html">Amazon GameLift Realtime Servers</a> </p>
+/// <p> <b>Related actions</b> </p>
+/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListScriptsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

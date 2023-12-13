@@ -16,7 +16,7 @@ pub struct AssetModelPropertySummary {
     pub unit: ::std::option::Option<::std::string::String>,
     /// <p>Contains a property type, which can be one of <code>attribute</code>, <code>measurement</code>, <code>metric</code>, or <code>transform</code>.</p>
     pub r#type: ::std::option::Option<crate::types::PropertyType>,
-    /// <p>The ID of the composite model that contains the asset model property.</p>
+    /// <p> The ID of the composite model that contains the asset model property. </p>
     pub asset_model_composite_model_id: ::std::option::Option<::std::string::String>,
     /// <p>The structured path to the property from the root of the asset model.</p>
     pub path: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelPropertyPathSegment>>,
@@ -49,7 +49,7 @@ impl AssetModelPropertySummary {
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::PropertyType> {
         self.r#type.as_ref()
     }
-    /// <p>The ID of the composite model that contains the asset model property.</p>
+    /// <p> The ID of the composite model that contains the asset model property. </p>
     pub fn asset_model_composite_model_id(&self) -> ::std::option::Option<&str> {
         self.asset_model_composite_model_id.as_deref()
     }
@@ -173,17 +173,17 @@ impl AssetModelPropertySummaryBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::PropertyType> {
         &self.r#type
     }
-    /// <p>The ID of the composite model that contains the asset model property.</p>
+    /// <p> The ID of the composite model that contains the asset model property. </p>
     pub fn asset_model_composite_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_model_composite_model_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the composite model that contains the asset model property.</p>
+    /// <p> The ID of the composite model that contains the asset model property. </p>
     pub fn set_asset_model_composite_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.asset_model_composite_model_id = input;
         self
     }
-    /// <p>The ID of the composite model that contains the asset model property.</p>
+    /// <p> The ID of the composite model that contains the asset model property. </p>
     pub fn get_asset_model_composite_model_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.asset_model_composite_model_id
     }

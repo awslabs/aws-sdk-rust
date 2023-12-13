@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateModelVersionInput {
-    /// <p>The model ID.</p>
+    /// <p>The model ID. </p>
     pub model_id: ::std::option::Option<::std::string::String>,
     /// <p>The model type.</p>
     pub model_type: ::std::option::Option<crate::types::ModelTypeEnum>,
-    /// <p>The training data source location in Amazon S3.</p>
+    /// <p>The training data source location in Amazon S3. </p>
     pub training_data_source: ::std::option::Option<crate::types::TrainingDataSourceEnum>,
     /// <p>The training data schema.</p>
     pub training_data_schema: ::std::option::Option<crate::types::TrainingDataSchema>,
@@ -19,7 +19,7 @@ pub struct CreateModelVersionInput {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateModelVersionInput {
-    /// <p>The model ID.</p>
+    /// <p>The model ID. </p>
     pub fn model_id(&self) -> ::std::option::Option<&str> {
         self.model_id.as_deref()
     }
@@ -27,7 +27,7 @@ impl CreateModelVersionInput {
     pub fn model_type(&self) -> ::std::option::Option<&crate::types::ModelTypeEnum> {
         self.model_type.as_ref()
     }
-    /// <p>The training data source location in Amazon S3.</p>
+    /// <p>The training data source location in Amazon S3. </p>
     pub fn training_data_source(&self) -> ::std::option::Option<&crate::types::TrainingDataSourceEnum> {
         self.training_data_source.as_ref()
     }
@@ -70,18 +70,18 @@ pub struct CreateModelVersionInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateModelVersionInputBuilder {
-    /// <p>The model ID.</p>
+    /// <p>The model ID. </p>
     /// This field is required.
     pub fn model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The model ID.</p>
+    /// <p>The model ID. </p>
     pub fn set_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_id = input;
         self
     }
-    /// <p>The model ID.</p>
+    /// <p>The model ID. </p>
     pub fn get_model_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_id
     }
@@ -100,18 +100,18 @@ impl CreateModelVersionInputBuilder {
     pub fn get_model_type(&self) -> &::std::option::Option<crate::types::ModelTypeEnum> {
         &self.model_type
     }
-    /// <p>The training data source location in Amazon S3.</p>
+    /// <p>The training data source location in Amazon S3. </p>
     /// This field is required.
     pub fn training_data_source(mut self, input: crate::types::TrainingDataSourceEnum) -> Self {
         self.training_data_source = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The training data source location in Amazon S3.</p>
+    /// <p>The training data source location in Amazon S3. </p>
     pub fn set_training_data_source(mut self, input: ::std::option::Option<crate::types::TrainingDataSourceEnum>) -> Self {
         self.training_data_source = input;
         self
     }
-    /// <p>The training data source location in Amazon S3.</p>
+    /// <p>The training data source location in Amazon S3. </p>
     pub fn get_training_data_source(&self) -> &::std::option::Option<crate::types::TrainingDataSourceEnum> {
         &self.training_data_source
     }

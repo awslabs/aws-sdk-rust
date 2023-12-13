@@ -5,7 +5,7 @@
 pub struct PutConfigurationAggregatorInput {
     /// <p>The name of the configuration aggregator.</p>
     pub configuration_aggregator_name: ::std::option::Option<::std::string::String>,
-    /// <p>A list of AccountAggregationSource object.</p>
+    /// <p>A list of AccountAggregationSource object. </p>
     pub account_aggregation_sources: ::std::option::Option<::std::vec::Vec<crate::types::AccountAggregationSource>>,
     /// <p>An OrganizationAggregationSource object.</p>
     pub organization_aggregation_source: ::std::option::Option<crate::types::OrganizationAggregationSource>,
@@ -17,7 +17,7 @@ impl PutConfigurationAggregatorInput {
     pub fn configuration_aggregator_name(&self) -> ::std::option::Option<&str> {
         self.configuration_aggregator_name.as_deref()
     }
-    /// <p>A list of AccountAggregationSource object.</p>
+    /// <p>A list of AccountAggregationSource object. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_aggregation_sources.is_none()`.
     pub fn account_aggregation_sources(&self) -> &[crate::types::AccountAggregationSource] {
@@ -70,19 +70,19 @@ impl PutConfigurationAggregatorInputBuilder {
     ///
     /// To override the contents of this collection use [`set_account_aggregation_sources`](Self::set_account_aggregation_sources).
     ///
-    /// <p>A list of AccountAggregationSource object.</p>
+    /// <p>A list of AccountAggregationSource object. </p>
     pub fn account_aggregation_sources(mut self, input: crate::types::AccountAggregationSource) -> Self {
         let mut v = self.account_aggregation_sources.unwrap_or_default();
         v.push(input);
         self.account_aggregation_sources = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of AccountAggregationSource object.</p>
+    /// <p>A list of AccountAggregationSource object. </p>
     pub fn set_account_aggregation_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccountAggregationSource>>) -> Self {
         self.account_aggregation_sources = input;
         self
     }
-    /// <p>A list of AccountAggregationSource object.</p>
+    /// <p>A list of AccountAggregationSource object. </p>
     pub fn get_account_aggregation_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountAggregationSource>> {
         &self.account_aggregation_sources
     }

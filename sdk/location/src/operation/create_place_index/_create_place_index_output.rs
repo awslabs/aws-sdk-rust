@@ -5,13 +5,12 @@
 pub struct CreatePlaceIndexOutput {
     /// <p>The name for the place index resource.</p>
     pub index_name: ::std::string::String,
-    /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across Amazon Web Services.</p>
+    /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across Amazon Web Services. </p>
     /// <ul>
-    /// <li>
-    /// <p>Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code></p></li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code> </p> </li>
     /// </ul>
     pub index_arn: ::std::string::String,
-    /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+    /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub create_time: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
@@ -21,16 +20,15 @@ impl CreatePlaceIndexOutput {
         use std::ops::Deref;
         self.index_name.deref()
     }
-    /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across Amazon Web Services.</p>
+    /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across Amazon Web Services. </p>
     /// <ul>
-    /// <li>
-    /// <p>Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code></p></li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code> </p> </li>
     /// </ul>
     pub fn index_arn(&self) -> &str {
         use std::ops::Deref;
         self.index_arn.deref()
     }
-    /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+    /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
         &self.create_time
     }
@@ -72,45 +70,42 @@ impl CreatePlaceIndexOutputBuilder {
     pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.index_name
     }
-    /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across Amazon Web Services.</p>
+    /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across Amazon Web Services. </p>
     /// <ul>
-    /// <li>
-    /// <p>Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code></p></li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code> </p> </li>
     /// </ul>
     /// This field is required.
     pub fn index_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across Amazon Web Services.</p>
+    /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across Amazon Web Services. </p>
     /// <ul>
-    /// <li>
-    /// <p>Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code></p></li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code> </p> </li>
     /// </ul>
     pub fn set_index_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.index_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across Amazon Web Services.</p>
+    /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across Amazon Web Services. </p>
     /// <ul>
-    /// <li>
-    /// <p>Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code></p></li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code> </p> </li>
     /// </ul>
     pub fn get_index_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.index_arn
     }
-    /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+    /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     /// This field is required.
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+    /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_time = input;
         self
     }
-    /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+    /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.create_time
     }

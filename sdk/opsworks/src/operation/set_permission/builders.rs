@@ -23,7 +23,7 @@ impl SetPermissionInputBuilder {
 /// Fluent builder constructing a request to `SetPermission`.
 ///
 /// <p>Specifies a user's permissions. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingsecurity.html">Security and Permissions</a>.</p>
-/// <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+/// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SetPermissionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -167,16 +167,11 @@ impl SetPermissionFluentBuilder {
     }
     /// <p>The user's permission level, which must be set to one of the following strings. You cannot set your own permissions level.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>deny</code></p></li>
-    /// <li>
-    /// <p><code>show</code></p></li>
-    /// <li>
-    /// <p><code>deploy</code></p></li>
-    /// <li>
-    /// <p><code>manage</code></p></li>
-    /// <li>
-    /// <p><code>iam_only</code></p></li>
+    /// <li> <p> <code>deny</code> </p> </li>
+    /// <li> <p> <code>show</code> </p> </li>
+    /// <li> <p> <code>deploy</code> </p> </li>
+    /// <li> <p> <code>manage</code> </p> </li>
+    /// <li> <p> <code>iam_only</code> </p> </li>
     /// </ul>
     /// <p>For more information about the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
     pub fn level(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -185,16 +180,11 @@ impl SetPermissionFluentBuilder {
     }
     /// <p>The user's permission level, which must be set to one of the following strings. You cannot set your own permissions level.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>deny</code></p></li>
-    /// <li>
-    /// <p><code>show</code></p></li>
-    /// <li>
-    /// <p><code>deploy</code></p></li>
-    /// <li>
-    /// <p><code>manage</code></p></li>
-    /// <li>
-    /// <p><code>iam_only</code></p></li>
+    /// <li> <p> <code>deny</code> </p> </li>
+    /// <li> <p> <code>show</code> </p> </li>
+    /// <li> <p> <code>deploy</code> </p> </li>
+    /// <li> <p> <code>manage</code> </p> </li>
+    /// <li> <p> <code>iam_only</code> </p> </li>
     /// </ul>
     /// <p>For more information about the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
     pub fn set_level(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -203,16 +193,11 @@ impl SetPermissionFluentBuilder {
     }
     /// <p>The user's permission level, which must be set to one of the following strings. You cannot set your own permissions level.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>deny</code></p></li>
-    /// <li>
-    /// <p><code>show</code></p></li>
-    /// <li>
-    /// <p><code>deploy</code></p></li>
-    /// <li>
-    /// <p><code>manage</code></p></li>
-    /// <li>
-    /// <p><code>iam_only</code></p></li>
+    /// <li> <p> <code>deny</code> </p> </li>
+    /// <li> <p> <code>show</code> </p> </li>
+    /// <li> <p> <code>deploy</code> </p> </li>
+    /// <li> <p> <code>manage</code> </p> </li>
+    /// <li> <p> <code>iam_only</code> </p> </li>
     /// </ul>
     /// <p>For more information about the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
     pub fn get_level(&self) -> &::std::option::Option<::std::string::String> {

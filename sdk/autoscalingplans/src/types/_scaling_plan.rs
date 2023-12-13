@@ -14,22 +14,14 @@ pub struct ScalingPlan {
     pub scaling_instructions: ::std::vec::Vec<crate::types::ScalingInstruction>,
     /// <p>The status of the scaling plan.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Active</code> - The scaling plan is active.</p></li>
-    /// <li>
-    /// <p><code>ActiveWithProblems</code> - The scaling plan is active, but the scaling configuration for one or more resources could not be applied.</p></li>
-    /// <li>
-    /// <p><code>CreationInProgress</code> - The scaling plan is being created.</p></li>
-    /// <li>
-    /// <p><code>CreationFailed</code> - The scaling plan could not be created.</p></li>
-    /// <li>
-    /// <p><code>DeletionInProgress</code> - The scaling plan is being deleted.</p></li>
-    /// <li>
-    /// <p><code>DeletionFailed</code> - The scaling plan could not be deleted.</p></li>
-    /// <li>
-    /// <p><code>UpdateInProgress</code> - The scaling plan is being updated.</p></li>
-    /// <li>
-    /// <p><code>UpdateFailed</code> - The scaling plan could not be updated.</p></li>
+    /// <li> <p> <code>Active</code> - The scaling plan is active.</p> </li>
+    /// <li> <p> <code>ActiveWithProblems</code> - The scaling plan is active, but the scaling configuration for one or more resources could not be applied.</p> </li>
+    /// <li> <p> <code>CreationInProgress</code> - The scaling plan is being created.</p> </li>
+    /// <li> <p> <code>CreationFailed</code> - The scaling plan could not be created.</p> </li>
+    /// <li> <p> <code>DeletionInProgress</code> - The scaling plan is being deleted.</p> </li>
+    /// <li> <p> <code>DeletionFailed</code> - The scaling plan could not be deleted.</p> </li>
+    /// <li> <p> <code>UpdateInProgress</code> - The scaling plan is being updated.</p> </li>
+    /// <li> <p> <code>UpdateFailed</code> - The scaling plan could not be updated.</p> </li>
     /// </ul>
     pub status_code: crate::types::ScalingPlanStatusCode,
     /// <p>A simple message about the current status of the scaling plan.</p>
@@ -60,22 +52,14 @@ impl ScalingPlan {
     }
     /// <p>The status of the scaling plan.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Active</code> - The scaling plan is active.</p></li>
-    /// <li>
-    /// <p><code>ActiveWithProblems</code> - The scaling plan is active, but the scaling configuration for one or more resources could not be applied.</p></li>
-    /// <li>
-    /// <p><code>CreationInProgress</code> - The scaling plan is being created.</p></li>
-    /// <li>
-    /// <p><code>CreationFailed</code> - The scaling plan could not be created.</p></li>
-    /// <li>
-    /// <p><code>DeletionInProgress</code> - The scaling plan is being deleted.</p></li>
-    /// <li>
-    /// <p><code>DeletionFailed</code> - The scaling plan could not be deleted.</p></li>
-    /// <li>
-    /// <p><code>UpdateInProgress</code> - The scaling plan is being updated.</p></li>
-    /// <li>
-    /// <p><code>UpdateFailed</code> - The scaling plan could not be updated.</p></li>
+    /// <li> <p> <code>Active</code> - The scaling plan is active.</p> </li>
+    /// <li> <p> <code>ActiveWithProblems</code> - The scaling plan is active, but the scaling configuration for one or more resources could not be applied.</p> </li>
+    /// <li> <p> <code>CreationInProgress</code> - The scaling plan is being created.</p> </li>
+    /// <li> <p> <code>CreationFailed</code> - The scaling plan could not be created.</p> </li>
+    /// <li> <p> <code>DeletionInProgress</code> - The scaling plan is being deleted.</p> </li>
+    /// <li> <p> <code>DeletionFailed</code> - The scaling plan could not be deleted.</p> </li>
+    /// <li> <p> <code>UpdateInProgress</code> - The scaling plan is being updated.</p> </li>
+    /// <li> <p> <code>UpdateFailed</code> - The scaling plan could not be updated.</p> </li>
     /// </ul>
     pub fn status_code(&self) -> &crate::types::ScalingPlanStatusCode {
         &self.status_code
@@ -181,22 +165,14 @@ impl ScalingPlanBuilder {
     }
     /// <p>The status of the scaling plan.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Active</code> - The scaling plan is active.</p></li>
-    /// <li>
-    /// <p><code>ActiveWithProblems</code> - The scaling plan is active, but the scaling configuration for one or more resources could not be applied.</p></li>
-    /// <li>
-    /// <p><code>CreationInProgress</code> - The scaling plan is being created.</p></li>
-    /// <li>
-    /// <p><code>CreationFailed</code> - The scaling plan could not be created.</p></li>
-    /// <li>
-    /// <p><code>DeletionInProgress</code> - The scaling plan is being deleted.</p></li>
-    /// <li>
-    /// <p><code>DeletionFailed</code> - The scaling plan could not be deleted.</p></li>
-    /// <li>
-    /// <p><code>UpdateInProgress</code> - The scaling plan is being updated.</p></li>
-    /// <li>
-    /// <p><code>UpdateFailed</code> - The scaling plan could not be updated.</p></li>
+    /// <li> <p> <code>Active</code> - The scaling plan is active.</p> </li>
+    /// <li> <p> <code>ActiveWithProblems</code> - The scaling plan is active, but the scaling configuration for one or more resources could not be applied.</p> </li>
+    /// <li> <p> <code>CreationInProgress</code> - The scaling plan is being created.</p> </li>
+    /// <li> <p> <code>CreationFailed</code> - The scaling plan could not be created.</p> </li>
+    /// <li> <p> <code>DeletionInProgress</code> - The scaling plan is being deleted.</p> </li>
+    /// <li> <p> <code>DeletionFailed</code> - The scaling plan could not be deleted.</p> </li>
+    /// <li> <p> <code>UpdateInProgress</code> - The scaling plan is being updated.</p> </li>
+    /// <li> <p> <code>UpdateFailed</code> - The scaling plan could not be updated.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn status_code(mut self, input: crate::types::ScalingPlanStatusCode) -> Self {
@@ -205,22 +181,14 @@ impl ScalingPlanBuilder {
     }
     /// <p>The status of the scaling plan.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Active</code> - The scaling plan is active.</p></li>
-    /// <li>
-    /// <p><code>ActiveWithProblems</code> - The scaling plan is active, but the scaling configuration for one or more resources could not be applied.</p></li>
-    /// <li>
-    /// <p><code>CreationInProgress</code> - The scaling plan is being created.</p></li>
-    /// <li>
-    /// <p><code>CreationFailed</code> - The scaling plan could not be created.</p></li>
-    /// <li>
-    /// <p><code>DeletionInProgress</code> - The scaling plan is being deleted.</p></li>
-    /// <li>
-    /// <p><code>DeletionFailed</code> - The scaling plan could not be deleted.</p></li>
-    /// <li>
-    /// <p><code>UpdateInProgress</code> - The scaling plan is being updated.</p></li>
-    /// <li>
-    /// <p><code>UpdateFailed</code> - The scaling plan could not be updated.</p></li>
+    /// <li> <p> <code>Active</code> - The scaling plan is active.</p> </li>
+    /// <li> <p> <code>ActiveWithProblems</code> - The scaling plan is active, but the scaling configuration for one or more resources could not be applied.</p> </li>
+    /// <li> <p> <code>CreationInProgress</code> - The scaling plan is being created.</p> </li>
+    /// <li> <p> <code>CreationFailed</code> - The scaling plan could not be created.</p> </li>
+    /// <li> <p> <code>DeletionInProgress</code> - The scaling plan is being deleted.</p> </li>
+    /// <li> <p> <code>DeletionFailed</code> - The scaling plan could not be deleted.</p> </li>
+    /// <li> <p> <code>UpdateInProgress</code> - The scaling plan is being updated.</p> </li>
+    /// <li> <p> <code>UpdateFailed</code> - The scaling plan could not be updated.</p> </li>
     /// </ul>
     pub fn set_status_code(mut self, input: ::std::option::Option<crate::types::ScalingPlanStatusCode>) -> Self {
         self.status_code = input;
@@ -228,22 +196,14 @@ impl ScalingPlanBuilder {
     }
     /// <p>The status of the scaling plan.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Active</code> - The scaling plan is active.</p></li>
-    /// <li>
-    /// <p><code>ActiveWithProblems</code> - The scaling plan is active, but the scaling configuration for one or more resources could not be applied.</p></li>
-    /// <li>
-    /// <p><code>CreationInProgress</code> - The scaling plan is being created.</p></li>
-    /// <li>
-    /// <p><code>CreationFailed</code> - The scaling plan could not be created.</p></li>
-    /// <li>
-    /// <p><code>DeletionInProgress</code> - The scaling plan is being deleted.</p></li>
-    /// <li>
-    /// <p><code>DeletionFailed</code> - The scaling plan could not be deleted.</p></li>
-    /// <li>
-    /// <p><code>UpdateInProgress</code> - The scaling plan is being updated.</p></li>
-    /// <li>
-    /// <p><code>UpdateFailed</code> - The scaling plan could not be updated.</p></li>
+    /// <li> <p> <code>Active</code> - The scaling plan is active.</p> </li>
+    /// <li> <p> <code>ActiveWithProblems</code> - The scaling plan is active, but the scaling configuration for one or more resources could not be applied.</p> </li>
+    /// <li> <p> <code>CreationInProgress</code> - The scaling plan is being created.</p> </li>
+    /// <li> <p> <code>CreationFailed</code> - The scaling plan could not be created.</p> </li>
+    /// <li> <p> <code>DeletionInProgress</code> - The scaling plan is being deleted.</p> </li>
+    /// <li> <p> <code>DeletionFailed</code> - The scaling plan could not be deleted.</p> </li>
+    /// <li> <p> <code>UpdateInProgress</code> - The scaling plan is being updated.</p> </li>
+    /// <li> <p> <code>UpdateFailed</code> - The scaling plan could not be updated.</p> </li>
     /// </ul>
     pub fn get_status_code(&self) -> &::std::option::Option<crate::types::ScalingPlanStatusCode> {
         &self.status_code

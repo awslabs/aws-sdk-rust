@@ -24,9 +24,9 @@ pub struct ProvisionedModelSummary {
     pub commitment_duration: ::std::option::Option<crate::types::CommitmentDuration>,
     /// <p>Commitment expiration time for the provisioned throughput.</p>
     pub commitment_expiration_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The time that this provisioned throughput was created.</p>
+    /// <p>The time that this provisioned throughput was created. </p>
     pub creation_time: ::aws_smithy_types::DateTime,
-    /// <p>The time that this provisioned throughput was last modified.</p>
+    /// <p>The time that this provisioned throughput was last modified. </p>
     pub last_modified_time: ::aws_smithy_types::DateTime,
 }
 impl ProvisionedModelSummary {
@@ -75,11 +75,11 @@ impl ProvisionedModelSummary {
     pub fn commitment_expiration_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.commitment_expiration_time.as_ref()
     }
-    /// <p>The time that this provisioned throughput was created.</p>
+    /// <p>The time that this provisioned throughput was created. </p>
     pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
         &self.creation_time
     }
-    /// <p>The time that this provisioned throughput was last modified.</p>
+    /// <p>The time that this provisioned throughput was last modified. </p>
     pub fn last_modified_time(&self) -> &::aws_smithy_types::DateTime {
         &self.last_modified_time
     }
@@ -257,33 +257,33 @@ impl ProvisionedModelSummaryBuilder {
     pub fn get_commitment_expiration_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.commitment_expiration_time
     }
-    /// <p>The time that this provisioned throughput was created.</p>
+    /// <p>The time that this provisioned throughput was created. </p>
     /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time that this provisioned throughput was created.</p>
+    /// <p>The time that this provisioned throughput was created. </p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
-    /// <p>The time that this provisioned throughput was created.</p>
+    /// <p>The time that this provisioned throughput was created. </p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }
-    /// <p>The time that this provisioned throughput was last modified.</p>
+    /// <p>The time that this provisioned throughput was last modified. </p>
     /// This field is required.
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time that this provisioned throughput was last modified.</p>
+    /// <p>The time that this provisioned throughput was last modified. </p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
-    /// <p>The time that this provisioned throughput was last modified.</p>
+    /// <p>The time that this provisioned throughput was last modified. </p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_time
     }

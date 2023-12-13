@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeMatchmakingRuleSetsInput {
-    /// <p>A list of one or more matchmaking rule set names to retrieve details for. (Note: The rule set name is different from the optional "name" field in the rule set body.) You can use either the rule set name or ARN value.</p>
+    /// <p>A list of one or more matchmaking rule set names to retrieve details for. (Note: The rule set name is different from the optional "name" field in the rule set body.) You can use either the rule set name or ARN value. </p>
     pub names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
     pub limit: ::std::option::Option<i32>,
@@ -11,7 +11,7 @@ pub struct DescribeMatchmakingRuleSetsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeMatchmakingRuleSetsInput {
-    /// <p>A list of one or more matchmaking rule set names to retrieve details for. (Note: The rule set name is different from the optional "name" field in the rule set body.) You can use either the rule set name or ARN value.</p>
+    /// <p>A list of one or more matchmaking rule set names to retrieve details for. (Note: The rule set name is different from the optional "name" field in the rule set body.) You can use either the rule set name or ARN value. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.names.is_none()`.
     pub fn names(&self) -> &[::std::string::String] {
@@ -46,19 +46,19 @@ impl DescribeMatchmakingRuleSetsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_names`](Self::set_names).
     ///
-    /// <p>A list of one or more matchmaking rule set names to retrieve details for. (Note: The rule set name is different from the optional "name" field in the rule set body.) You can use either the rule set name or ARN value.</p>
+    /// <p>A list of one or more matchmaking rule set names to retrieve details for. (Note: The rule set name is different from the optional "name" field in the rule set body.) You can use either the rule set name or ARN value. </p>
     pub fn names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.names.unwrap_or_default();
         v.push(input.into());
         self.names = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of one or more matchmaking rule set names to retrieve details for. (Note: The rule set name is different from the optional "name" field in the rule set body.) You can use either the rule set name or ARN value.</p>
+    /// <p>A list of one or more matchmaking rule set names to retrieve details for. (Note: The rule set name is different from the optional "name" field in the rule set body.) You can use either the rule set name or ARN value. </p>
     pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.names = input;
         self
     }
-    /// <p>A list of one or more matchmaking rule set names to retrieve details for. (Note: The rule set name is different from the optional "name" field in the rule set body.) You can use either the rule set name or ARN value.</p>
+    /// <p>A list of one or more matchmaking rule set names to retrieve details for. (Note: The rule set name is different from the optional "name" field in the rule set body.) You can use either the rule set name or ARN value. </p>
     pub fn get_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.names
     }

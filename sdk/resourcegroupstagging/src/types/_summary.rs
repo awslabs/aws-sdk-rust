@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Summary {
-    /// <p>The timestamp that shows when this summary was generated in this Region.</p>
+    /// <p>The timestamp that shows when this summary was generated in this Region. </p>
     pub last_updated: ::std::option::Option<::std::string::String>,
     /// <p>The account identifier or the root identifier of the organization. If you don't know the root ID, you can call the Organizations <a href="https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListRoots.html">ListRoots</a> API.</p>
     pub target_id: ::std::option::Option<::std::string::String>,
@@ -18,7 +18,7 @@ pub struct Summary {
     pub non_compliant_resources: i64,
 }
 impl Summary {
-    /// <p>The timestamp that shows when this summary was generated in this Region.</p>
+    /// <p>The timestamp that shows when this summary was generated in this Region. </p>
     pub fn last_updated(&self) -> ::std::option::Option<&str> {
         self.last_updated.as_deref()
     }
@@ -62,17 +62,17 @@ pub struct SummaryBuilder {
     pub(crate) non_compliant_resources: ::std::option::Option<i64>,
 }
 impl SummaryBuilder {
-    /// <p>The timestamp that shows when this summary was generated in this Region.</p>
+    /// <p>The timestamp that shows when this summary was generated in this Region. </p>
     pub fn last_updated(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_updated = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The timestamp that shows when this summary was generated in this Region.</p>
+    /// <p>The timestamp that shows when this summary was generated in this Region. </p>
     pub fn set_last_updated(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_updated = input;
         self
     }
-    /// <p>The timestamp that shows when this summary was generated in this Region.</p>
+    /// <p>The timestamp that shows when this summary was generated in this Region. </p>
     pub fn get_last_updated(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_updated
     }

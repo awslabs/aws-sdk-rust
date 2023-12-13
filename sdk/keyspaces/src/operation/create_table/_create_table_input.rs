@@ -10,68 +10,50 @@ pub struct CreateTableInput {
     /// <p>The <code>schemaDefinition</code> consists of the following parameters.</p>
     /// <p>For each column to be created:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>name</code> - The name of the column.</p></li>
-    /// <li>
-    /// <p><code>type</code> - An Amazon Keyspaces data type. For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types">Data types</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p></li>
+    /// <li> <p> <code>name</code> - The name of the column.</p> </li>
+    /// <li> <p> <code>type</code> - An Amazon Keyspaces data type. For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types">Data types</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p> </li>
     /// </ul>
     /// <p>The primary key of the table consists of the following columns:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>partitionKeys</code> - The partition key can be a single column, or it can be a compound value composed of two or more columns. The partition key portion of the primary key is required and determines how Amazon Keyspaces stores your data.</p></li>
-    /// <li>
-    /// <p><code>name</code> - The name of each partition key column.</p></li>
-    /// <li>
-    /// <p><code>clusteringKeys</code> - The optional clustering column portion of your primary key determines how the data is clustered and sorted within each partition.</p></li>
-    /// <li>
-    /// <p><code>name</code> - The name of the clustering column.</p></li>
-    /// <li>
-    /// <p><code>orderBy</code> - Sets the ascendant (<code>ASC</code>) or descendant (<code>DESC</code>) order modifier.</p>
-    /// <p>To define a column as static use <code>staticColumns</code> - Static columns store values that are shared by all rows in the same partition:</p></li>
-    /// <li>
-    /// <p><code>name</code> - The name of the column.</p></li>
-    /// <li>
-    /// <p><code>type</code> - An Amazon Keyspaces data type.</p></li>
+    /// <li> <p> <code>partitionKeys</code> - The partition key can be a single column, or it can be a compound value composed of two or more columns. The partition key portion of the primary key is required and determines how Amazon Keyspaces stores your data.</p> </li>
+    /// <li> <p> <code>name</code> - The name of each partition key column.</p> </li>
+    /// <li> <p> <code>clusteringKeys</code> - The optional clustering column portion of your primary key determines how the data is clustered and sorted within each partition.</p> </li>
+    /// <li> <p> <code>name</code> - The name of the clustering column. </p> </li>
+    /// <li> <p> <code>orderBy</code> - Sets the ascendant (<code>ASC</code>) or descendant (<code>DESC</code>) order modifier.</p> <p>To define a column as static use <code>staticColumns</code> - Static columns store values that are shared by all rows in the same partition:</p> </li>
+    /// <li> <p> <code>name</code> - The name of the column.</p> </li>
+    /// <li> <p> <code>type</code> - An Amazon Keyspaces data type.</p> </li>
     /// </ul>
     pub schema_definition: ::std::option::Option<crate::types::SchemaDefinition>,
     /// <p>This parameter allows to enter a description of the table.</p>
     pub comment: ::std::option::Option<crate::types::Comment>,
     /// <p>Specifies the read/write throughput capacity mode for the table. The options are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>throughputMode:PAY_PER_REQUEST</code> and</p></li>
-    /// <li>
-    /// <p><code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p></li>
+    /// <li> <p> <code>throughputMode:PAY_PER_REQUEST</code> and </p> </li>
+    /// <li> <p> <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p> </li>
     /// </ul>
     /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub capacity_specification: ::std::option::Option<crate::types::CapacitySpecification>,
     /// <p>Specifies how the encryption key for encryption at rest is managed for the table. You can choose one of the following KMS key (KMS key):</p>
     /// <ul>
-    /// <li>
-    /// <p><code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces.</p></li>
-    /// <li>
-    /// <p><code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input.</p></li>
+    /// <li> <p> <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. </p> </li>
+    /// <li> <p> <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input.</p> </li>
     /// </ul>
     /// <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub encryption_specification: ::std::option::Option<crate::types::EncryptionSpecification>,
     /// <p>Specifies if <code>pointInTimeRecovery</code> is enabled or disabled for the table. The options are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>status=ENABLED</code></p></li>
-    /// <li>
-    /// <p><code>status=DISABLED</code></p></li>
+    /// <li> <p> <code>status=ENABLED</code> </p> </li>
+    /// <li> <p> <code>status=DISABLED</code> </p> </li>
     /// </ul>
     /// <p>If it's not specified, the default is <code>status=DISABLED</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub point_in_time_recovery: ::std::option::Option<crate::types::PointInTimeRecovery>,
     /// <p>Enables Time to Live custom settings for the table. The options are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>status:enabled</code></p></li>
-    /// <li>
-    /// <p><code>status:disabled</code></p></li>
+    /// <li> <p> <code>status:enabled</code> </p> </li>
+    /// <li> <p> <code>status:disabled</code> </p> </li>
     /// </ul>
     /// <p>The default is <code>status:disabled</code>. After <code>ttl</code> is enabled, you can't disable it for the table.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL.html">Expiring data by using Amazon Keyspaces Time to Live (TTL)</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
@@ -79,13 +61,12 @@ pub struct CreateTableInput {
     /// <p>The default Time to Live setting in seconds for the table.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL-how-it-works.html#ttl-howitworks_default_ttl">Setting the default TTL value for a table</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub default_time_to_live: ::std::option::Option<i32>,
-    /// <p>A list of key-value pair tags to be attached to the resource.</p>
+    /// <p>A list of key-value pair tags to be attached to the resource. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    /// <p>Enables client-side timestamps for the table. By default, the setting is disabled. You can enable client-side timestamps with the following option:</p>
+    /// <p> Enables client-side timestamps for the table. By default, the setting is disabled. You can enable client-side timestamps with the following option:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>status: "enabled"</code></p></li>
+    /// <li> <p> <code>status: "enabled"</code> </p> </li>
     /// </ul>
     /// <p>Once client-side timestamps are enabled for a table, this setting cannot be disabled.</p>
     pub client_side_timestamps: ::std::option::Option<crate::types::ClientSideTimestamps>,
@@ -102,28 +83,18 @@ impl CreateTableInput {
     /// <p>The <code>schemaDefinition</code> consists of the following parameters.</p>
     /// <p>For each column to be created:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>name</code> - The name of the column.</p></li>
-    /// <li>
-    /// <p><code>type</code> - An Amazon Keyspaces data type. For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types">Data types</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p></li>
+    /// <li> <p> <code>name</code> - The name of the column.</p> </li>
+    /// <li> <p> <code>type</code> - An Amazon Keyspaces data type. For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types">Data types</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p> </li>
     /// </ul>
     /// <p>The primary key of the table consists of the following columns:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>partitionKeys</code> - The partition key can be a single column, or it can be a compound value composed of two or more columns. The partition key portion of the primary key is required and determines how Amazon Keyspaces stores your data.</p></li>
-    /// <li>
-    /// <p><code>name</code> - The name of each partition key column.</p></li>
-    /// <li>
-    /// <p><code>clusteringKeys</code> - The optional clustering column portion of your primary key determines how the data is clustered and sorted within each partition.</p></li>
-    /// <li>
-    /// <p><code>name</code> - The name of the clustering column.</p></li>
-    /// <li>
-    /// <p><code>orderBy</code> - Sets the ascendant (<code>ASC</code>) or descendant (<code>DESC</code>) order modifier.</p>
-    /// <p>To define a column as static use <code>staticColumns</code> - Static columns store values that are shared by all rows in the same partition:</p></li>
-    /// <li>
-    /// <p><code>name</code> - The name of the column.</p></li>
-    /// <li>
-    /// <p><code>type</code> - An Amazon Keyspaces data type.</p></li>
+    /// <li> <p> <code>partitionKeys</code> - The partition key can be a single column, or it can be a compound value composed of two or more columns. The partition key portion of the primary key is required and determines how Amazon Keyspaces stores your data.</p> </li>
+    /// <li> <p> <code>name</code> - The name of each partition key column.</p> </li>
+    /// <li> <p> <code>clusteringKeys</code> - The optional clustering column portion of your primary key determines how the data is clustered and sorted within each partition.</p> </li>
+    /// <li> <p> <code>name</code> - The name of the clustering column. </p> </li>
+    /// <li> <p> <code>orderBy</code> - Sets the ascendant (<code>ASC</code>) or descendant (<code>DESC</code>) order modifier.</p> <p>To define a column as static use <code>staticColumns</code> - Static columns store values that are shared by all rows in the same partition:</p> </li>
+    /// <li> <p> <code>name</code> - The name of the column.</p> </li>
+    /// <li> <p> <code>type</code> - An Amazon Keyspaces data type.</p> </li>
     /// </ul>
     pub fn schema_definition(&self) -> ::std::option::Option<&crate::types::SchemaDefinition> {
         self.schema_definition.as_ref()
@@ -134,10 +105,8 @@ impl CreateTableInput {
     }
     /// <p>Specifies the read/write throughput capacity mode for the table. The options are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>throughputMode:PAY_PER_REQUEST</code> and</p></li>
-    /// <li>
-    /// <p><code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p></li>
+    /// <li> <p> <code>throughputMode:PAY_PER_REQUEST</code> and </p> </li>
+    /// <li> <p> <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p> </li>
     /// </ul>
     /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
@@ -146,10 +115,8 @@ impl CreateTableInput {
     }
     /// <p>Specifies how the encryption key for encryption at rest is managed for the table. You can choose one of the following KMS key (KMS key):</p>
     /// <ul>
-    /// <li>
-    /// <p><code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces.</p></li>
-    /// <li>
-    /// <p><code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input.</p></li>
+    /// <li> <p> <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. </p> </li>
+    /// <li> <p> <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input.</p> </li>
     /// </ul>
     /// <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
@@ -158,10 +125,8 @@ impl CreateTableInput {
     }
     /// <p>Specifies if <code>pointInTimeRecovery</code> is enabled or disabled for the table. The options are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>status=ENABLED</code></p></li>
-    /// <li>
-    /// <p><code>status=DISABLED</code></p></li>
+    /// <li> <p> <code>status=ENABLED</code> </p> </li>
+    /// <li> <p> <code>status=DISABLED</code> </p> </li>
     /// </ul>
     /// <p>If it's not specified, the default is <code>status=DISABLED</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
@@ -170,10 +135,8 @@ impl CreateTableInput {
     }
     /// <p>Enables Time to Live custom settings for the table. The options are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>status:enabled</code></p></li>
-    /// <li>
-    /// <p><code>status:disabled</code></p></li>
+    /// <li> <p> <code>status:enabled</code> </p> </li>
+    /// <li> <p> <code>status:disabled</code> </p> </li>
     /// </ul>
     /// <p>The default is <code>status:disabled</code>. After <code>ttl</code> is enabled, you can't disable it for the table.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL.html">Expiring data by using Amazon Keyspaces Time to Live (TTL)</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
@@ -185,17 +148,16 @@ impl CreateTableInput {
     pub fn default_time_to_live(&self) -> ::std::option::Option<i32> {
         self.default_time_to_live
     }
-    /// <p>A list of key-value pair tags to be attached to the resource.</p>
+    /// <p>A list of key-value pair tags to be attached to the resource. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
-    /// <p>Enables client-side timestamps for the table. By default, the setting is disabled. You can enable client-side timestamps with the following option:</p>
+    /// <p> Enables client-side timestamps for the table. By default, the setting is disabled. You can enable client-side timestamps with the following option:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>status: "enabled"</code></p></li>
+    /// <li> <p> <code>status: "enabled"</code> </p> </li>
     /// </ul>
     /// <p>Once client-side timestamps are enabled for a table, this setting cannot be disabled.</p>
     pub fn client_side_timestamps(&self) -> ::std::option::Option<&crate::types::ClientSideTimestamps> {
@@ -259,28 +221,18 @@ impl CreateTableInputBuilder {
     /// <p>The <code>schemaDefinition</code> consists of the following parameters.</p>
     /// <p>For each column to be created:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>name</code> - The name of the column.</p></li>
-    /// <li>
-    /// <p><code>type</code> - An Amazon Keyspaces data type. For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types">Data types</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p></li>
+    /// <li> <p> <code>name</code> - The name of the column.</p> </li>
+    /// <li> <p> <code>type</code> - An Amazon Keyspaces data type. For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types">Data types</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p> </li>
     /// </ul>
     /// <p>The primary key of the table consists of the following columns:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>partitionKeys</code> - The partition key can be a single column, or it can be a compound value composed of two or more columns. The partition key portion of the primary key is required and determines how Amazon Keyspaces stores your data.</p></li>
-    /// <li>
-    /// <p><code>name</code> - The name of each partition key column.</p></li>
-    /// <li>
-    /// <p><code>clusteringKeys</code> - The optional clustering column portion of your primary key determines how the data is clustered and sorted within each partition.</p></li>
-    /// <li>
-    /// <p><code>name</code> - The name of the clustering column.</p></li>
-    /// <li>
-    /// <p><code>orderBy</code> - Sets the ascendant (<code>ASC</code>) or descendant (<code>DESC</code>) order modifier.</p>
-    /// <p>To define a column as static use <code>staticColumns</code> - Static columns store values that are shared by all rows in the same partition:</p></li>
-    /// <li>
-    /// <p><code>name</code> - The name of the column.</p></li>
-    /// <li>
-    /// <p><code>type</code> - An Amazon Keyspaces data type.</p></li>
+    /// <li> <p> <code>partitionKeys</code> - The partition key can be a single column, or it can be a compound value composed of two or more columns. The partition key portion of the primary key is required and determines how Amazon Keyspaces stores your data.</p> </li>
+    /// <li> <p> <code>name</code> - The name of each partition key column.</p> </li>
+    /// <li> <p> <code>clusteringKeys</code> - The optional clustering column portion of your primary key determines how the data is clustered and sorted within each partition.</p> </li>
+    /// <li> <p> <code>name</code> - The name of the clustering column. </p> </li>
+    /// <li> <p> <code>orderBy</code> - Sets the ascendant (<code>ASC</code>) or descendant (<code>DESC</code>) order modifier.</p> <p>To define a column as static use <code>staticColumns</code> - Static columns store values that are shared by all rows in the same partition:</p> </li>
+    /// <li> <p> <code>name</code> - The name of the column.</p> </li>
+    /// <li> <p> <code>type</code> - An Amazon Keyspaces data type.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn schema_definition(mut self, input: crate::types::SchemaDefinition) -> Self {
@@ -290,28 +242,18 @@ impl CreateTableInputBuilder {
     /// <p>The <code>schemaDefinition</code> consists of the following parameters.</p>
     /// <p>For each column to be created:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>name</code> - The name of the column.</p></li>
-    /// <li>
-    /// <p><code>type</code> - An Amazon Keyspaces data type. For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types">Data types</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p></li>
+    /// <li> <p> <code>name</code> - The name of the column.</p> </li>
+    /// <li> <p> <code>type</code> - An Amazon Keyspaces data type. For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types">Data types</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p> </li>
     /// </ul>
     /// <p>The primary key of the table consists of the following columns:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>partitionKeys</code> - The partition key can be a single column, or it can be a compound value composed of two or more columns. The partition key portion of the primary key is required and determines how Amazon Keyspaces stores your data.</p></li>
-    /// <li>
-    /// <p><code>name</code> - The name of each partition key column.</p></li>
-    /// <li>
-    /// <p><code>clusteringKeys</code> - The optional clustering column portion of your primary key determines how the data is clustered and sorted within each partition.</p></li>
-    /// <li>
-    /// <p><code>name</code> - The name of the clustering column.</p></li>
-    /// <li>
-    /// <p><code>orderBy</code> - Sets the ascendant (<code>ASC</code>) or descendant (<code>DESC</code>) order modifier.</p>
-    /// <p>To define a column as static use <code>staticColumns</code> - Static columns store values that are shared by all rows in the same partition:</p></li>
-    /// <li>
-    /// <p><code>name</code> - The name of the column.</p></li>
-    /// <li>
-    /// <p><code>type</code> - An Amazon Keyspaces data type.</p></li>
+    /// <li> <p> <code>partitionKeys</code> - The partition key can be a single column, or it can be a compound value composed of two or more columns. The partition key portion of the primary key is required and determines how Amazon Keyspaces stores your data.</p> </li>
+    /// <li> <p> <code>name</code> - The name of each partition key column.</p> </li>
+    /// <li> <p> <code>clusteringKeys</code> - The optional clustering column portion of your primary key determines how the data is clustered and sorted within each partition.</p> </li>
+    /// <li> <p> <code>name</code> - The name of the clustering column. </p> </li>
+    /// <li> <p> <code>orderBy</code> - Sets the ascendant (<code>ASC</code>) or descendant (<code>DESC</code>) order modifier.</p> <p>To define a column as static use <code>staticColumns</code> - Static columns store values that are shared by all rows in the same partition:</p> </li>
+    /// <li> <p> <code>name</code> - The name of the column.</p> </li>
+    /// <li> <p> <code>type</code> - An Amazon Keyspaces data type.</p> </li>
     /// </ul>
     pub fn set_schema_definition(mut self, input: ::std::option::Option<crate::types::SchemaDefinition>) -> Self {
         self.schema_definition = input;
@@ -320,28 +262,18 @@ impl CreateTableInputBuilder {
     /// <p>The <code>schemaDefinition</code> consists of the following parameters.</p>
     /// <p>For each column to be created:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>name</code> - The name of the column.</p></li>
-    /// <li>
-    /// <p><code>type</code> - An Amazon Keyspaces data type. For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types">Data types</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p></li>
+    /// <li> <p> <code>name</code> - The name of the column.</p> </li>
+    /// <li> <p> <code>type</code> - An Amazon Keyspaces data type. For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types">Data types</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p> </li>
     /// </ul>
     /// <p>The primary key of the table consists of the following columns:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>partitionKeys</code> - The partition key can be a single column, or it can be a compound value composed of two or more columns. The partition key portion of the primary key is required and determines how Amazon Keyspaces stores your data.</p></li>
-    /// <li>
-    /// <p><code>name</code> - The name of each partition key column.</p></li>
-    /// <li>
-    /// <p><code>clusteringKeys</code> - The optional clustering column portion of your primary key determines how the data is clustered and sorted within each partition.</p></li>
-    /// <li>
-    /// <p><code>name</code> - The name of the clustering column.</p></li>
-    /// <li>
-    /// <p><code>orderBy</code> - Sets the ascendant (<code>ASC</code>) or descendant (<code>DESC</code>) order modifier.</p>
-    /// <p>To define a column as static use <code>staticColumns</code> - Static columns store values that are shared by all rows in the same partition:</p></li>
-    /// <li>
-    /// <p><code>name</code> - The name of the column.</p></li>
-    /// <li>
-    /// <p><code>type</code> - An Amazon Keyspaces data type.</p></li>
+    /// <li> <p> <code>partitionKeys</code> - The partition key can be a single column, or it can be a compound value composed of two or more columns. The partition key portion of the primary key is required and determines how Amazon Keyspaces stores your data.</p> </li>
+    /// <li> <p> <code>name</code> - The name of each partition key column.</p> </li>
+    /// <li> <p> <code>clusteringKeys</code> - The optional clustering column portion of your primary key determines how the data is clustered and sorted within each partition.</p> </li>
+    /// <li> <p> <code>name</code> - The name of the clustering column. </p> </li>
+    /// <li> <p> <code>orderBy</code> - Sets the ascendant (<code>ASC</code>) or descendant (<code>DESC</code>) order modifier.</p> <p>To define a column as static use <code>staticColumns</code> - Static columns store values that are shared by all rows in the same partition:</p> </li>
+    /// <li> <p> <code>name</code> - The name of the column.</p> </li>
+    /// <li> <p> <code>type</code> - An Amazon Keyspaces data type.</p> </li>
     /// </ul>
     pub fn get_schema_definition(&self) -> &::std::option::Option<crate::types::SchemaDefinition> {
         &self.schema_definition
@@ -362,10 +294,8 @@ impl CreateTableInputBuilder {
     }
     /// <p>Specifies the read/write throughput capacity mode for the table. The options are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>throughputMode:PAY_PER_REQUEST</code> and</p></li>
-    /// <li>
-    /// <p><code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p></li>
+    /// <li> <p> <code>throughputMode:PAY_PER_REQUEST</code> and </p> </li>
+    /// <li> <p> <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p> </li>
     /// </ul>
     /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
@@ -375,10 +305,8 @@ impl CreateTableInputBuilder {
     }
     /// <p>Specifies the read/write throughput capacity mode for the table. The options are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>throughputMode:PAY_PER_REQUEST</code> and</p></li>
-    /// <li>
-    /// <p><code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p></li>
+    /// <li> <p> <code>throughputMode:PAY_PER_REQUEST</code> and </p> </li>
+    /// <li> <p> <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p> </li>
     /// </ul>
     /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
@@ -388,10 +316,8 @@ impl CreateTableInputBuilder {
     }
     /// <p>Specifies the read/write throughput capacity mode for the table. The options are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>throughputMode:PAY_PER_REQUEST</code> and</p></li>
-    /// <li>
-    /// <p><code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p></li>
+    /// <li> <p> <code>throughputMode:PAY_PER_REQUEST</code> and </p> </li>
+    /// <li> <p> <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p> </li>
     /// </ul>
     /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
@@ -400,10 +326,8 @@ impl CreateTableInputBuilder {
     }
     /// <p>Specifies how the encryption key for encryption at rest is managed for the table. You can choose one of the following KMS key (KMS key):</p>
     /// <ul>
-    /// <li>
-    /// <p><code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces.</p></li>
-    /// <li>
-    /// <p><code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input.</p></li>
+    /// <li> <p> <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. </p> </li>
+    /// <li> <p> <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input.</p> </li>
     /// </ul>
     /// <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
@@ -413,10 +337,8 @@ impl CreateTableInputBuilder {
     }
     /// <p>Specifies how the encryption key for encryption at rest is managed for the table. You can choose one of the following KMS key (KMS key):</p>
     /// <ul>
-    /// <li>
-    /// <p><code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces.</p></li>
-    /// <li>
-    /// <p><code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input.</p></li>
+    /// <li> <p> <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. </p> </li>
+    /// <li> <p> <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input.</p> </li>
     /// </ul>
     /// <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
@@ -426,10 +348,8 @@ impl CreateTableInputBuilder {
     }
     /// <p>Specifies how the encryption key for encryption at rest is managed for the table. You can choose one of the following KMS key (KMS key):</p>
     /// <ul>
-    /// <li>
-    /// <p><code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces.</p></li>
-    /// <li>
-    /// <p><code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input.</p></li>
+    /// <li> <p> <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. </p> </li>
+    /// <li> <p> <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input.</p> </li>
     /// </ul>
     /// <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
@@ -438,10 +358,8 @@ impl CreateTableInputBuilder {
     }
     /// <p>Specifies if <code>pointInTimeRecovery</code> is enabled or disabled for the table. The options are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>status=ENABLED</code></p></li>
-    /// <li>
-    /// <p><code>status=DISABLED</code></p></li>
+    /// <li> <p> <code>status=ENABLED</code> </p> </li>
+    /// <li> <p> <code>status=DISABLED</code> </p> </li>
     /// </ul>
     /// <p>If it's not specified, the default is <code>status=DISABLED</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
@@ -451,10 +369,8 @@ impl CreateTableInputBuilder {
     }
     /// <p>Specifies if <code>pointInTimeRecovery</code> is enabled or disabled for the table. The options are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>status=ENABLED</code></p></li>
-    /// <li>
-    /// <p><code>status=DISABLED</code></p></li>
+    /// <li> <p> <code>status=ENABLED</code> </p> </li>
+    /// <li> <p> <code>status=DISABLED</code> </p> </li>
     /// </ul>
     /// <p>If it's not specified, the default is <code>status=DISABLED</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
@@ -464,10 +380,8 @@ impl CreateTableInputBuilder {
     }
     /// <p>Specifies if <code>pointInTimeRecovery</code> is enabled or disabled for the table. The options are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>status=ENABLED</code></p></li>
-    /// <li>
-    /// <p><code>status=DISABLED</code></p></li>
+    /// <li> <p> <code>status=ENABLED</code> </p> </li>
+    /// <li> <p> <code>status=DISABLED</code> </p> </li>
     /// </ul>
     /// <p>If it's not specified, the default is <code>status=DISABLED</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
@@ -476,10 +390,8 @@ impl CreateTableInputBuilder {
     }
     /// <p>Enables Time to Live custom settings for the table. The options are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>status:enabled</code></p></li>
-    /// <li>
-    /// <p><code>status:disabled</code></p></li>
+    /// <li> <p> <code>status:enabled</code> </p> </li>
+    /// <li> <p> <code>status:disabled</code> </p> </li>
     /// </ul>
     /// <p>The default is <code>status:disabled</code>. After <code>ttl</code> is enabled, you can't disable it for the table.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL.html">Expiring data by using Amazon Keyspaces Time to Live (TTL)</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
@@ -489,10 +401,8 @@ impl CreateTableInputBuilder {
     }
     /// <p>Enables Time to Live custom settings for the table. The options are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>status:enabled</code></p></li>
-    /// <li>
-    /// <p><code>status:disabled</code></p></li>
+    /// <li> <p> <code>status:enabled</code> </p> </li>
+    /// <li> <p> <code>status:disabled</code> </p> </li>
     /// </ul>
     /// <p>The default is <code>status:disabled</code>. After <code>ttl</code> is enabled, you can't disable it for the table.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL.html">Expiring data by using Amazon Keyspaces Time to Live (TTL)</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
@@ -502,10 +412,8 @@ impl CreateTableInputBuilder {
     }
     /// <p>Enables Time to Live custom settings for the table. The options are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>status:enabled</code></p></li>
-    /// <li>
-    /// <p><code>status:disabled</code></p></li>
+    /// <li> <p> <code>status:enabled</code> </p> </li>
+    /// <li> <p> <code>status:disabled</code> </p> </li>
     /// </ul>
     /// <p>The default is <code>status:disabled</code>. After <code>ttl</code> is enabled, you can't disable it for the table.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL.html">Expiring data by using Amazon Keyspaces Time to Live (TTL)</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
@@ -533,7 +441,7 @@ impl CreateTableInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A list of key-value pair tags to be attached to the resource.</p>
+    /// <p>A list of key-value pair tags to be attached to the resource. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
@@ -541,41 +449,38 @@ impl CreateTableInputBuilder {
         self.tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of key-value pair tags to be attached to the resource.</p>
+    /// <p>A list of key-value pair tags to be attached to the resource. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>A list of key-value pair tags to be attached to the resource.</p>
+    /// <p>A list of key-value pair tags to be attached to the resource. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
-    /// <p>Enables client-side timestamps for the table. By default, the setting is disabled. You can enable client-side timestamps with the following option:</p>
+    /// <p> Enables client-side timestamps for the table. By default, the setting is disabled. You can enable client-side timestamps with the following option:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>status: "enabled"</code></p></li>
+    /// <li> <p> <code>status: "enabled"</code> </p> </li>
     /// </ul>
     /// <p>Once client-side timestamps are enabled for a table, this setting cannot be disabled.</p>
     pub fn client_side_timestamps(mut self, input: crate::types::ClientSideTimestamps) -> Self {
         self.client_side_timestamps = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Enables client-side timestamps for the table. By default, the setting is disabled. You can enable client-side timestamps with the following option:</p>
+    /// <p> Enables client-side timestamps for the table. By default, the setting is disabled. You can enable client-side timestamps with the following option:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>status: "enabled"</code></p></li>
+    /// <li> <p> <code>status: "enabled"</code> </p> </li>
     /// </ul>
     /// <p>Once client-side timestamps are enabled for a table, this setting cannot be disabled.</p>
     pub fn set_client_side_timestamps(mut self, input: ::std::option::Option<crate::types::ClientSideTimestamps>) -> Self {
         self.client_side_timestamps = input;
         self
     }
-    /// <p>Enables client-side timestamps for the table. By default, the setting is disabled. You can enable client-side timestamps with the following option:</p>
+    /// <p> Enables client-side timestamps for the table. By default, the setting is disabled. You can enable client-side timestamps with the following option:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>status: "enabled"</code></p></li>
+    /// <li> <p> <code>status: "enabled"</code> </p> </li>
     /// </ul>
     /// <p>Once client-side timestamps are enabled for a table, this setting cannot be disabled.</p>
     pub fn get_client_side_timestamps(&self) -> &::std::option::Option<crate::types::ClientSideTimestamps> {

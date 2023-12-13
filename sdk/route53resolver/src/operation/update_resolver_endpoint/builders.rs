@@ -22,7 +22,7 @@ impl UpdateResolverEndpointInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateResolverEndpoint`.
 ///
-/// <p>Updates the name, or enpoint type for an inbound or an outbound Resolver endpoint. You can only update between IPV4 and DUALSTACK, IPV6 endpoint type can't be updated to other type.</p>
+/// <p>Updates the name, or enpoint type for an inbound or an outbound Resolver endpoint. You can only update between IPV4 and DUALSTACK, IPV6 endpoint type can't be updated to other type. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateResolverEndpointFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -136,19 +136,19 @@ impl UpdateResolverEndpointFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>Specifies the endpoint type for what type of IP address the endpoint uses to forward DNS queries.</p>
+    /// <p> Specifies the endpoint type for what type of IP address the endpoint uses to forward DNS queries. </p>
     /// <p>Updating to <code>IPV6</code> type isn't currently supported.</p>
     pub fn resolver_endpoint_type(mut self, input: crate::types::ResolverEndpointType) -> Self {
         self.inner = self.inner.resolver_endpoint_type(input);
         self
     }
-    /// <p>Specifies the endpoint type for what type of IP address the endpoint uses to forward DNS queries.</p>
+    /// <p> Specifies the endpoint type for what type of IP address the endpoint uses to forward DNS queries. </p>
     /// <p>Updating to <code>IPV6</code> type isn't currently supported.</p>
     pub fn set_resolver_endpoint_type(mut self, input: ::std::option::Option<crate::types::ResolverEndpointType>) -> Self {
         self.inner = self.inner.set_resolver_endpoint_type(input);
         self
     }
-    /// <p>Specifies the endpoint type for what type of IP address the endpoint uses to forward DNS queries.</p>
+    /// <p> Specifies the endpoint type for what type of IP address the endpoint uses to forward DNS queries. </p>
     /// <p>Updating to <code>IPV6</code> type isn't currently supported.</p>
     pub fn get_resolver_endpoint_type(&self) -> &::std::option::Option<crate::types::ResolverEndpointType> {
         self.inner.get_resolver_endpoint_type()
@@ -157,17 +157,17 @@ impl UpdateResolverEndpointFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_update_ip_addresses`](Self::set_update_ip_addresses).
     ///
-    /// <p>Specifies the IPv6 address when you update the Resolver endpoint from IPv4 to dual-stack. If you don't specify an IPv6 address, one will be automatically chosen from your subnet.</p>
+    /// <p> Specifies the IPv6 address when you update the Resolver endpoint from IPv4 to dual-stack. If you don't specify an IPv6 address, one will be automatically chosen from your subnet. </p>
     pub fn update_ip_addresses(mut self, input: crate::types::UpdateIpAddress) -> Self {
         self.inner = self.inner.update_ip_addresses(input);
         self
     }
-    /// <p>Specifies the IPv6 address when you update the Resolver endpoint from IPv4 to dual-stack. If you don't specify an IPv6 address, one will be automatically chosen from your subnet.</p>
+    /// <p> Specifies the IPv6 address when you update the Resolver endpoint from IPv4 to dual-stack. If you don't specify an IPv6 address, one will be automatically chosen from your subnet. </p>
     pub fn set_update_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateIpAddress>>) -> Self {
         self.inner = self.inner.set_update_ip_addresses(input);
         self
     }
-    /// <p>Specifies the IPv6 address when you update the Resolver endpoint from IPv4 to dual-stack. If you don't specify an IPv6 address, one will be automatically chosen from your subnet.</p>
+    /// <p> Specifies the IPv6 address when you update the Resolver endpoint from IPv4 to dual-stack. If you don't specify an IPv6 address, one will be automatically chosen from your subnet. </p>
     pub fn get_update_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateIpAddress>> {
         self.inner.get_update_ip_addresses()
     }

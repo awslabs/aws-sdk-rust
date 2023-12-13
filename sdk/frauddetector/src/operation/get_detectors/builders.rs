@@ -22,7 +22,7 @@ impl GetDetectorsInputBuilder {
 }
 /// Fluent builder constructing a request to `GetDetectors`.
 ///
-/// <p>Gets all detectors or a single detector if a <code>detectorId</code> is specified. This is a paginated API. If you provide a null <code>maxResults</code>, this action retrieves a maximum of 10 records per page. If you provide a <code>maxResults</code>, the value must be between 5 and 10. To get the next page results, provide the pagination token from the <code>GetDetectorsResponse</code> as part of your request. A null pagination token fetches the records from the beginning.</p>
+/// <p>Gets all detectors or a single detector if a <code>detectorId</code> is specified. This is a paginated API. If you provide a null <code>maxResults</code>, this action retrieves a maximum of 10 records per page. If you provide a <code>maxResults</code>, the value must be between 5 and 10. To get the next page results, provide the pagination token from the <code>GetDetectorsResponse</code> as part of your request. A null pagination token fetches the records from the beginning. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDetectorsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -12,7 +12,7 @@ pub struct QueryObjectsInput {
     pub sphere: ::std::option::Option<::std::string::String>,
     /// <p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>QueryObjects</code> with the marker value from the previous call to retrieve the next set of results.</p>
     pub marker: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum number of object names that <code>QueryObjects</code> will return in a single call. The default value is 100.</p>
+    /// <p>The maximum number of object names that <code>QueryObjects</code> will return in a single call. The default value is 100. </p>
     pub limit: ::std::option::Option<i32>,
 }
 impl QueryObjectsInput {
@@ -32,7 +32,7 @@ impl QueryObjectsInput {
     pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
-    /// <p>The maximum number of object names that <code>QueryObjects</code> will return in a single call. The default value is 100.</p>
+    /// <p>The maximum number of object names that <code>QueryObjects</code> will return in a single call. The default value is 100. </p>
     pub fn limit(&self) -> ::std::option::Option<i32> {
         self.limit
     }
@@ -113,17 +113,17 @@ impl QueryObjectsInputBuilder {
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }
-    /// <p>The maximum number of object names that <code>QueryObjects</code> will return in a single call. The default value is 100.</p>
+    /// <p>The maximum number of object names that <code>QueryObjects</code> will return in a single call. The default value is 100. </p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of object names that <code>QueryObjects</code> will return in a single call. The default value is 100.</p>
+    /// <p>The maximum number of object names that <code>QueryObjects</code> will return in a single call. The default value is 100. </p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
     }
-    /// <p>The maximum number of object names that <code>QueryObjects</code> will return in a single call. The default value is 100.</p>
+    /// <p>The maximum number of object names that <code>QueryObjects</code> will return in a single call. The default value is 100. </p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
         &self.limit
     }

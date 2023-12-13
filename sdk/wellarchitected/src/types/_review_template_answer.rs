@@ -21,7 +21,7 @@ pub struct ReviewTemplateAnswer {
     /// <p>For Amazon Web Services official lenses, this is the helpful resource URL for a question or choice.</p>
     /// <p>For custom lenses, this is the helpful resource URL for a question and is only provided if <code>HelpfulResourceDisplayText</code> was specified for the question.</p>
     pub helpful_resource_url: ::std::option::Option<::std::string::String>,
-    /// <p>The helpful resource text to be displayed for a custom lens.</p><note>
+    /// <p>The helpful resource text to be displayed for a custom lens.</p> <note>
     /// <p>This field does not apply to Amazon Web Services official lenses.</p>
     /// </note>
     pub helpful_resource_display_text: ::std::option::Option<::std::string::String>,
@@ -72,7 +72,7 @@ impl ReviewTemplateAnswer {
     pub fn helpful_resource_url(&self) -> ::std::option::Option<&str> {
         self.helpful_resource_url.as_deref()
     }
-    /// <p>The helpful resource text to be displayed for a custom lens.</p><note>
+    /// <p>The helpful resource text to be displayed for a custom lens.</p> <note>
     /// <p>This field does not apply to Amazon Web Services official lenses.</p>
     /// </note>
     pub fn helpful_resource_display_text(&self) -> ::std::option::Option<&str> {
@@ -241,21 +241,21 @@ impl ReviewTemplateAnswerBuilder {
     pub fn get_helpful_resource_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.helpful_resource_url
     }
-    /// <p>The helpful resource text to be displayed for a custom lens.</p><note>
+    /// <p>The helpful resource text to be displayed for a custom lens.</p> <note>
     /// <p>This field does not apply to Amazon Web Services official lenses.</p>
     /// </note>
     pub fn helpful_resource_display_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.helpful_resource_display_text = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The helpful resource text to be displayed for a custom lens.</p><note>
+    /// <p>The helpful resource text to be displayed for a custom lens.</p> <note>
     /// <p>This field does not apply to Amazon Web Services official lenses.</p>
     /// </note>
     pub fn set_helpful_resource_display_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.helpful_resource_display_text = input;
         self
     }
-    /// <p>The helpful resource text to be displayed for a custom lens.</p><note>
+    /// <p>The helpful resource text to be displayed for a custom lens.</p> <note>
     /// <p>This field does not apply to Amazon Web Services official lenses.</p>
     /// </note>
     pub fn get_helpful_resource_display_text(&self) -> &::std::option::Option<::std::string::String> {

@@ -8,10 +8,8 @@ pub struct ValidationMessage {
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>An indication of the severity of this message:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>error</code>: This message indicates that this is not a valid setting for an option.</p></li>
-    /// <li>
-    /// <p><code>warning</code>: This message is providing information you should take into account.</p></li>
+    /// <li> <p> <code>error</code>: This message indicates that this is not a valid setting for an option.</p> </li>
+    /// <li> <p> <code>warning</code>: This message is providing information you should take into account.</p> </li>
     /// </ul>
     pub severity: ::std::option::Option<crate::types::ValidationSeverity>,
     /// <p>The namespace to which the option belongs.</p>
@@ -26,10 +24,8 @@ impl ValidationMessage {
     }
     /// <p>An indication of the severity of this message:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>error</code>: This message indicates that this is not a valid setting for an option.</p></li>
-    /// <li>
-    /// <p><code>warning</code>: This message is providing information you should take into account.</p></li>
+    /// <li> <p> <code>error</code>: This message indicates that this is not a valid setting for an option.</p> </li>
+    /// <li> <p> <code>warning</code>: This message is providing information you should take into account.</p> </li>
     /// </ul>
     pub fn severity(&self) -> ::std::option::Option<&crate::types::ValidationSeverity> {
         self.severity.as_ref()
@@ -76,10 +72,8 @@ impl ValidationMessageBuilder {
     }
     /// <p>An indication of the severity of this message:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>error</code>: This message indicates that this is not a valid setting for an option.</p></li>
-    /// <li>
-    /// <p><code>warning</code>: This message is providing information you should take into account.</p></li>
+    /// <li> <p> <code>error</code>: This message indicates that this is not a valid setting for an option.</p> </li>
+    /// <li> <p> <code>warning</code>: This message is providing information you should take into account.</p> </li>
     /// </ul>
     pub fn severity(mut self, input: crate::types::ValidationSeverity) -> Self {
         self.severity = ::std::option::Option::Some(input);
@@ -87,10 +81,8 @@ impl ValidationMessageBuilder {
     }
     /// <p>An indication of the severity of this message:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>error</code>: This message indicates that this is not a valid setting for an option.</p></li>
-    /// <li>
-    /// <p><code>warning</code>: This message is providing information you should take into account.</p></li>
+    /// <li> <p> <code>error</code>: This message indicates that this is not a valid setting for an option.</p> </li>
+    /// <li> <p> <code>warning</code>: This message is providing information you should take into account.</p> </li>
     /// </ul>
     pub fn set_severity(mut self, input: ::std::option::Option<crate::types::ValidationSeverity>) -> Self {
         self.severity = input;
@@ -98,10 +90,8 @@ impl ValidationMessageBuilder {
     }
     /// <p>An indication of the severity of this message:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>error</code>: This message indicates that this is not a valid setting for an option.</p></li>
-    /// <li>
-    /// <p><code>warning</code>: This message is providing information you should take into account.</p></li>
+    /// <li> <p> <code>error</code>: This message indicates that this is not a valid setting for an option.</p> </li>
+    /// <li> <p> <code>warning</code>: This message is providing information you should take into account.</p> </li>
     /// </ul>
     pub fn get_severity(&self) -> &::std::option::Option<crate::types::ValidationSeverity> {
         &self.severity

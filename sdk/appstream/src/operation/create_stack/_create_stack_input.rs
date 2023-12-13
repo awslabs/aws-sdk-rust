@@ -15,19 +15,19 @@ pub struct CreateStackInput {
     pub redirect_url: ::std::option::Option<::std::string::String>,
     /// <p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>
     pub feedback_url: ::std::option::Option<::std::string::String>,
-    /// <p>The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are enabled.</p>
+    /// <p>The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are enabled. </p>
     pub user_settings: ::std::option::Option<::std::vec::Vec<crate::types::UserSetting>>,
     /// <p>The persistent application settings for users of a stack. When these settings are enabled, changes that users make to applications and Windows settings are automatically saved after each session and applied to the next session.</p>
     pub application_settings: ::std::option::Option<crate::types::ApplicationSettings>,
-    /// <p>The tags to associate with the stack. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=.</p>
+    /// <p>The tags to associate with the stack. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
     /// <p>If you do not specify a value, the value is set to an empty string.</p>
-    /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters:</p>
+    /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
     /// <p>_ . : / = + \ - @</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to AppStream 2.0 only through the specified endpoints.</p>
     pub access_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>,
-    /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions.</p>
+    /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions. </p>
     pub embed_host_domains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.</p>
     pub streaming_experience_settings: ::std::option::Option<crate::types::StreamingExperienceSettings>,
@@ -59,7 +59,7 @@ impl CreateStackInput {
     pub fn feedback_url(&self) -> ::std::option::Option<&str> {
         self.feedback_url.as_deref()
     }
-    /// <p>The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are enabled.</p>
+    /// <p>The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are enabled. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_settings.is_none()`.
     pub fn user_settings(&self) -> &[crate::types::UserSetting] {
@@ -69,9 +69,9 @@ impl CreateStackInput {
     pub fn application_settings(&self) -> ::std::option::Option<&crate::types::ApplicationSettings> {
         self.application_settings.as_ref()
     }
-    /// <p>The tags to associate with the stack. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=.</p>
+    /// <p>The tags to associate with the stack. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
     /// <p>If you do not specify a value, the value is set to an empty string.</p>
-    /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters:</p>
+    /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
     /// <p>_ . : / = + \ - @</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -83,7 +83,7 @@ impl CreateStackInput {
     pub fn access_endpoints(&self) -> &[crate::types::AccessEndpoint] {
         self.access_endpoints.as_deref().unwrap_or_default()
     }
-    /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions.</p>
+    /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.embed_host_domains.is_none()`.
     pub fn embed_host_domains(&self) -> &[::std::string::String] {
@@ -214,19 +214,19 @@ impl CreateStackInputBuilder {
     ///
     /// To override the contents of this collection use [`set_user_settings`](Self::set_user_settings).
     ///
-    /// <p>The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are enabled.</p>
+    /// <p>The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are enabled. </p>
     pub fn user_settings(mut self, input: crate::types::UserSetting) -> Self {
         let mut v = self.user_settings.unwrap_or_default();
         v.push(input);
         self.user_settings = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are enabled.</p>
+    /// <p>The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are enabled. </p>
     pub fn set_user_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UserSetting>>) -> Self {
         self.user_settings = input;
         self
     }
-    /// <p>The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are enabled.</p>
+    /// <p>The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are enabled. </p>
     pub fn get_user_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserSetting>> {
         &self.user_settings
     }
@@ -248,9 +248,9 @@ impl CreateStackInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The tags to associate with the stack. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=.</p>
+    /// <p>The tags to associate with the stack. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
     /// <p>If you do not specify a value, the value is set to an empty string.</p>
-    /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters:</p>
+    /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
     /// <p>_ . : / = + \ - @</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -259,18 +259,18 @@ impl CreateStackInputBuilder {
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The tags to associate with the stack. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=.</p>
+    /// <p>The tags to associate with the stack. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
     /// <p>If you do not specify a value, the value is set to an empty string.</p>
-    /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters:</p>
+    /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
     /// <p>_ . : / = + \ - @</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>The tags to associate with the stack. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=.</p>
+    /// <p>The tags to associate with the stack. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
     /// <p>If you do not specify a value, the value is set to an empty string.</p>
-    /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters:</p>
+    /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
     /// <p>_ . : / = + \ - @</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -300,19 +300,19 @@ impl CreateStackInputBuilder {
     ///
     /// To override the contents of this collection use [`set_embed_host_domains`](Self::set_embed_host_domains).
     ///
-    /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions.</p>
+    /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions. </p>
     pub fn embed_host_domains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.embed_host_domains.unwrap_or_default();
         v.push(input.into());
         self.embed_host_domains = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions.</p>
+    /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions. </p>
     pub fn set_embed_host_domains(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.embed_host_domains = input;
         self
     }
-    /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions.</p>
+    /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions. </p>
     pub fn get_embed_host_domains(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.embed_host_domains
     }

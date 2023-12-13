@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodeSigningPolicies {
-    /// <p>Code signing configuration policy for deployment validation failure. If you set the policy to <code>Enforce</code>, Lambda blocks the deployment request if signature validation checks fail. If you set the policy to <code>Warn</code>, Lambda allows the deployment and creates a CloudWatch log.</p>
-    /// <p>Default value: <code>Warn</code></p>
+    /// <p>Code signing configuration policy for deployment validation failure. If you set the policy to <code>Enforce</code>, Lambda blocks the deployment request if signature validation checks fail. If you set the policy to <code>Warn</code>, Lambda allows the deployment and creates a CloudWatch log. </p>
+    /// <p>Default value: <code>Warn</code> </p>
     pub untrusted_artifact_on_deployment: ::std::option::Option<crate::types::CodeSigningPolicy>,
 }
 impl CodeSigningPolicies {
-    /// <p>Code signing configuration policy for deployment validation failure. If you set the policy to <code>Enforce</code>, Lambda blocks the deployment request if signature validation checks fail. If you set the policy to <code>Warn</code>, Lambda allows the deployment and creates a CloudWatch log.</p>
-    /// <p>Default value: <code>Warn</code></p>
+    /// <p>Code signing configuration policy for deployment validation failure. If you set the policy to <code>Enforce</code>, Lambda blocks the deployment request if signature validation checks fail. If you set the policy to <code>Warn</code>, Lambda allows the deployment and creates a CloudWatch log. </p>
+    /// <p>Default value: <code>Warn</code> </p>
     pub fn untrusted_artifact_on_deployment(&self) -> ::std::option::Option<&crate::types::CodeSigningPolicy> {
         self.untrusted_artifact_on_deployment.as_ref()
     }
@@ -29,20 +29,20 @@ pub struct CodeSigningPoliciesBuilder {
     pub(crate) untrusted_artifact_on_deployment: ::std::option::Option<crate::types::CodeSigningPolicy>,
 }
 impl CodeSigningPoliciesBuilder {
-    /// <p>Code signing configuration policy for deployment validation failure. If you set the policy to <code>Enforce</code>, Lambda blocks the deployment request if signature validation checks fail. If you set the policy to <code>Warn</code>, Lambda allows the deployment and creates a CloudWatch log.</p>
-    /// <p>Default value: <code>Warn</code></p>
+    /// <p>Code signing configuration policy for deployment validation failure. If you set the policy to <code>Enforce</code>, Lambda blocks the deployment request if signature validation checks fail. If you set the policy to <code>Warn</code>, Lambda allows the deployment and creates a CloudWatch log. </p>
+    /// <p>Default value: <code>Warn</code> </p>
     pub fn untrusted_artifact_on_deployment(mut self, input: crate::types::CodeSigningPolicy) -> Self {
         self.untrusted_artifact_on_deployment = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Code signing configuration policy for deployment validation failure. If you set the policy to <code>Enforce</code>, Lambda blocks the deployment request if signature validation checks fail. If you set the policy to <code>Warn</code>, Lambda allows the deployment and creates a CloudWatch log.</p>
-    /// <p>Default value: <code>Warn</code></p>
+    /// <p>Code signing configuration policy for deployment validation failure. If you set the policy to <code>Enforce</code>, Lambda blocks the deployment request if signature validation checks fail. If you set the policy to <code>Warn</code>, Lambda allows the deployment and creates a CloudWatch log. </p>
+    /// <p>Default value: <code>Warn</code> </p>
     pub fn set_untrusted_artifact_on_deployment(mut self, input: ::std::option::Option<crate::types::CodeSigningPolicy>) -> Self {
         self.untrusted_artifact_on_deployment = input;
         self
     }
-    /// <p>Code signing configuration policy for deployment validation failure. If you set the policy to <code>Enforce</code>, Lambda blocks the deployment request if signature validation checks fail. If you set the policy to <code>Warn</code>, Lambda allows the deployment and creates a CloudWatch log.</p>
-    /// <p>Default value: <code>Warn</code></p>
+    /// <p>Code signing configuration policy for deployment validation failure. If you set the policy to <code>Enforce</code>, Lambda blocks the deployment request if signature validation checks fail. If you set the policy to <code>Warn</code>, Lambda allows the deployment and creates a CloudWatch log. </p>
+    /// <p>Default value: <code>Warn</code> </p>
     pub fn get_untrusted_artifact_on_deployment(&self) -> &::std::option::Option<crate::types::CodeSigningPolicy> {
         &self.untrusted_artifact_on_deployment
     }

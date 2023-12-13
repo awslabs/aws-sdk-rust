@@ -23,7 +23,7 @@ impl AuthorizeSnapshotAccessInputBuilder {
 /// Fluent builder constructing a request to `AuthorizeSnapshotAccess`.
 ///
 /// <p>Authorizes the specified Amazon Web Services account to restore the specified snapshot.</p>
-/// <p>For more information about working with snapshots, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+/// <p> For more information about working with snapshots, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AuthorizeSnapshotAccessFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

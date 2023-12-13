@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EntityFilter {
-    /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code></p>
+    /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code> </p>
     pub event_arns: ::std::vec::Vec<::std::string::String>,
     /// <p>A list of entity ARNs (unique identifiers).</p>
     pub entity_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -12,7 +12,7 @@ pub struct EntityFilter {
     pub entity_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of the most recent dates and times that the entity was updated.</p>
     pub last_updated_times: ::std::option::Option<::std::vec::Vec<crate::types::DateTimeRange>>,
-    /// <p>A map of entity tags attached to the affected entity.</p><note>
+    /// <p>A map of entity tags attached to the affected entity.</p> <note>
     /// <p>Currently, the <code>tags</code> property isn't supported.</p>
     /// </note>
     pub tags: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>,
@@ -20,7 +20,7 @@ pub struct EntityFilter {
     pub status_codes: ::std::option::Option<::std::vec::Vec<crate::types::EntityStatusCode>>,
 }
 impl EntityFilter {
-    /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code></p>
+    /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code> </p>
     pub fn event_arns(&self) -> &[::std::string::String] {
         use std::ops::Deref;
         self.event_arns.deref()
@@ -43,7 +43,7 @@ impl EntityFilter {
     pub fn last_updated_times(&self) -> &[crate::types::DateTimeRange] {
         self.last_updated_times.as_deref().unwrap_or_default()
     }
-    /// <p>A map of entity tags attached to the affected entity.</p><note>
+    /// <p>A map of entity tags attached to the affected entity.</p> <note>
     /// <p>Currently, the <code>tags</code> property isn't supported.</p>
     /// </note>
     ///
@@ -81,19 +81,19 @@ impl EntityFilterBuilder {
     ///
     /// To override the contents of this collection use [`set_event_arns`](Self::set_event_arns).
     ///
-    /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code></p>
+    /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code> </p>
     pub fn event_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.event_arns.unwrap_or_default();
         v.push(input.into());
         self.event_arns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code></p>
+    /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code> </p>
     pub fn set_event_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.event_arns = input;
         self
     }
-    /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code></p>
+    /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code> </p>
     pub fn get_event_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.event_arns
     }
@@ -161,7 +161,7 @@ impl EntityFilterBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A map of entity tags attached to the affected entity.</p><note>
+    /// <p>A map of entity tags attached to the affected entity.</p> <note>
     /// <p>Currently, the <code>tags</code> property isn't supported.</p>
     /// </note>
     pub fn tags(mut self, input: ::std::collections::HashMap<::std::string::String, ::std::string::String>) -> Self {
@@ -170,7 +170,7 @@ impl EntityFilterBuilder {
         self.tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A map of entity tags attached to the affected entity.</p><note>
+    /// <p>A map of entity tags attached to the affected entity.</p> <note>
     /// <p>Currently, the <code>tags</code> property isn't supported.</p>
     /// </note>
     pub fn set_tags(
@@ -180,7 +180,7 @@ impl EntityFilterBuilder {
         self.tags = input;
         self
     }
-    /// <p>A map of entity tags attached to the affected entity.</p><note>
+    /// <p>A map of entity tags attached to the affected entity.</p> <note>
     /// <p>Currently, the <code>tags</code> property isn't supported.</p>
     /// </note>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>> {

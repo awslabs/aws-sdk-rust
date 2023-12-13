@@ -15,7 +15,7 @@ pub struct MedicalScribeJobSummary {
     /// <p>The date and time the specified Medical Scribe job finished processing.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents a Medical Scribe job that finished processing at 12:32 PM UTC-7 on May 4, 2022.</p>
     pub completion_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The language code used to create your Medical Scribe job. US English (<code>en-US</code>) is the only supported language for Medical Scribe jobs.</p>
+    /// <p>The language code used to create your Medical Scribe job. US English (<code>en-US</code>) is the only supported language for Medical Scribe jobs. </p>
     pub language_code: ::std::option::Option<crate::types::MedicalScribeLanguageCode>,
     /// <p>Provides the status of the specified Medical Scribe job.</p>
     /// <p>If the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location specified in <code>MedicalScribeOutput</code> If the status is <code>FAILED</code>, <code>FailureReason</code> provides details on why your Medical Scribe job failed.</p>
@@ -43,7 +43,7 @@ impl MedicalScribeJobSummary {
     pub fn completion_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.completion_time.as_ref()
     }
-    /// <p>The language code used to create your Medical Scribe job. US English (<code>en-US</code>) is the only supported language for Medical Scribe jobs.</p>
+    /// <p>The language code used to create your Medical Scribe job. US English (<code>en-US</code>) is the only supported language for Medical Scribe jobs. </p>
     pub fn language_code(&self) -> ::std::option::Option<&crate::types::MedicalScribeLanguageCode> {
         self.language_code.as_ref()
     }
@@ -142,17 +142,17 @@ impl MedicalScribeJobSummaryBuilder {
     pub fn get_completion_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.completion_time
     }
-    /// <p>The language code used to create your Medical Scribe job. US English (<code>en-US</code>) is the only supported language for Medical Scribe jobs.</p>
+    /// <p>The language code used to create your Medical Scribe job. US English (<code>en-US</code>) is the only supported language for Medical Scribe jobs. </p>
     pub fn language_code(mut self, input: crate::types::MedicalScribeLanguageCode) -> Self {
         self.language_code = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The language code used to create your Medical Scribe job. US English (<code>en-US</code>) is the only supported language for Medical Scribe jobs.</p>
+    /// <p>The language code used to create your Medical Scribe job. US English (<code>en-US</code>) is the only supported language for Medical Scribe jobs. </p>
     pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::MedicalScribeLanguageCode>) -> Self {
         self.language_code = input;
         self
     }
-    /// <p>The language code used to create your Medical Scribe job. US English (<code>en-US</code>) is the only supported language for Medical Scribe jobs.</p>
+    /// <p>The language code used to create your Medical Scribe job. US English (<code>en-US</code>) is the only supported language for Medical Scribe jobs. </p>
     pub fn get_language_code(&self) -> &::std::option::Option<crate::types::MedicalScribeLanguageCode> {
         &self.language_code
     }

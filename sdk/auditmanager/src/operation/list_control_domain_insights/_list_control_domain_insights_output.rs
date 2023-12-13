@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListControlDomainInsightsOutput {
-    /// <p>The control domain analytics data that the <code>ListControlDomainInsights</code> API returned.</p>
+    /// <p>The control domain analytics data that the <code>ListControlDomainInsights</code> API returned. </p>
     pub control_domain_insights: ::std::option::Option<::std::vec::Vec<crate::types::ControlDomainInsights>>,
-    /// <p>The pagination token that's used to fetch the next set of results.</p>
+    /// <p>The pagination token that's used to fetch the next set of results. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListControlDomainInsightsOutput {
-    /// <p>The control domain analytics data that the <code>ListControlDomainInsights</code> API returned.</p>
+    /// <p>The control domain analytics data that the <code>ListControlDomainInsights</code> API returned. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.control_domain_insights.is_none()`.
     pub fn control_domain_insights(&self) -> &[crate::types::ControlDomainInsights] {
         self.control_domain_insights.as_deref().unwrap_or_default()
     }
-    /// <p>The pagination token that's used to fetch the next set of results.</p>
+    /// <p>The pagination token that's used to fetch the next set of results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -46,33 +46,33 @@ impl ListControlDomainInsightsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_control_domain_insights`](Self::set_control_domain_insights).
     ///
-    /// <p>The control domain analytics data that the <code>ListControlDomainInsights</code> API returned.</p>
+    /// <p>The control domain analytics data that the <code>ListControlDomainInsights</code> API returned. </p>
     pub fn control_domain_insights(mut self, input: crate::types::ControlDomainInsights) -> Self {
         let mut v = self.control_domain_insights.unwrap_or_default();
         v.push(input);
         self.control_domain_insights = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The control domain analytics data that the <code>ListControlDomainInsights</code> API returned.</p>
+    /// <p>The control domain analytics data that the <code>ListControlDomainInsights</code> API returned. </p>
     pub fn set_control_domain_insights(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ControlDomainInsights>>) -> Self {
         self.control_domain_insights = input;
         self
     }
-    /// <p>The control domain analytics data that the <code>ListControlDomainInsights</code> API returned.</p>
+    /// <p>The control domain analytics data that the <code>ListControlDomainInsights</code> API returned. </p>
     pub fn get_control_domain_insights(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ControlDomainInsights>> {
         &self.control_domain_insights
     }
-    /// <p>The pagination token that's used to fetch the next set of results.</p>
+    /// <p>The pagination token that's used to fetch the next set of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The pagination token that's used to fetch the next set of results.</p>
+    /// <p>The pagination token that's used to fetch the next set of results. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The pagination token that's used to fetch the next set of results.</p>
+    /// <p>The pagination token that's used to fetch the next set of results. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

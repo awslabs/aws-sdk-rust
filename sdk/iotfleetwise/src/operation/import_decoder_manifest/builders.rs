@@ -22,7 +22,7 @@ impl ImportDecoderManifestInputBuilder {
 }
 /// Fluent builder constructing a request to `ImportDecoderManifest`.
 ///
-/// <p>Creates a decoder manifest using your existing CAN DBC file from your local device.</p>
+/// <p> Creates a decoder manifest using your existing CAN DBC file from your local device. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ImportDecoderManifestFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl ImportDecoderManifestFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the decoder manifest to import.</p>
+    /// <p> The name of the decoder manifest to import. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of the decoder manifest to import.</p>
+    /// <p> The name of the decoder manifest to import. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name of the decoder manifest to import.</p>
+    /// <p> The name of the decoder manifest to import. </p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
@@ -126,17 +126,17 @@ impl ImportDecoderManifestFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_network_file_definitions`](Self::set_network_file_definitions).
     ///
-    /// <p>The file to load into an Amazon Web Services account.</p>
+    /// <p> The file to load into an Amazon Web Services account. </p>
     pub fn network_file_definitions(mut self, input: crate::types::NetworkFileDefinition) -> Self {
         self.inner = self.inner.network_file_definitions(input);
         self
     }
-    /// <p>The file to load into an Amazon Web Services account.</p>
+    /// <p> The file to load into an Amazon Web Services account. </p>
     pub fn set_network_file_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkFileDefinition>>) -> Self {
         self.inner = self.inner.set_network_file_definitions(input);
         self
     }
-    /// <p>The file to load into an Amazon Web Services account.</p>
+    /// <p> The file to load into an Amazon Web Services account. </p>
     pub fn get_network_file_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkFileDefinition>> {
         self.inner.get_network_file_definitions()
     }

@@ -22,7 +22,7 @@ impl ListHubsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListHubs`.
 ///
-/// <p>List all existing hubs.</p><note>
+/// <p>List all existing hubs.</p> <note>
 /// <p>Hub APIs are only callable through SageMaker Studio.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

@@ -13,12 +13,12 @@ pub struct DescribePredictorOutput {
     pub auto_ml_algorithm_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The number of time-steps of the forecast. The forecast horizon is also called the prediction length.</p>
     pub forecast_horizon: ::std::option::Option<i32>,
-    /// <p>The forecast types used during predictor training. Default value is <code>["0.1","0.5","0.9"]</code></p>
+    /// <p>The forecast types used during predictor training. Default value is <code>["0.1","0.5","0.9"]</code> </p>
     pub forecast_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Whether the predictor is set to perform AutoML.</p>
     pub perform_auto_ml: ::std::option::Option<bool>,
     /// <note>
-    /// <p>The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact Amazon Web Services Support or your account manager to learn more about access privileges.</p>
+    /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact Amazon Web Services Support or your account manager to learn more about access privileges. </p>
     /// </note>
     /// <p>The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code> is specified, the AutoML strategy optimizes predictor accuracy.</p>
     /// <p>This parameter is only valid for predictors trained using AutoML.</p>
@@ -47,15 +47,11 @@ pub struct DescribePredictorOutput {
     pub dataset_import_job_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The status of the predictor. States include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ACTIVE</code></p></li>
-    /// <li>
-    /// <p><code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code></p></li>
-    /// <li>
-    /// <p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
-    /// <li>
-    /// <p><code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code></p></li>
-    /// </ul><note>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+    /// </ul> <note>
     /// <p>The <code>Status</code> of the predictor must be <code>ACTIVE</code> before you can use the predictor to create a forecast.</p>
     /// </note>
     pub status: ::std::option::Option<::std::string::String>,
@@ -65,16 +61,11 @@ pub struct DescribePredictorOutput {
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p></li>
-    /// <li>
-    /// <p><code>CREATE_IN_PROGRESS</code> - The current timestamp.</p></li>
-    /// <li>
-    /// <p><code>CREATE_STOPPING</code> - The current timestamp.</p></li>
-    /// <li>
-    /// <p><code>CREATE_STOPPED</code> - When the job stopped.</p></li>
-    /// <li>
-    /// <p><code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p></li>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
     pub last_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The accuracy metric used to optimize the predictor.</p>
@@ -104,7 +95,7 @@ impl DescribePredictorOutput {
     pub fn forecast_horizon(&self) -> ::std::option::Option<i32> {
         self.forecast_horizon
     }
-    /// <p>The forecast types used during predictor training. Default value is <code>["0.1","0.5","0.9"]</code></p>
+    /// <p>The forecast types used during predictor training. Default value is <code>["0.1","0.5","0.9"]</code> </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.forecast_types.is_none()`.
     pub fn forecast_types(&self) -> &[::std::string::String] {
@@ -115,7 +106,7 @@ impl DescribePredictorOutput {
         self.perform_auto_ml
     }
     /// <note>
-    /// <p>The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact Amazon Web Services Support or your account manager to learn more about access privileges.</p>
+    /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact Amazon Web Services Support or your account manager to learn more about access privileges. </p>
     /// </note>
     /// <p>The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code> is specified, the AutoML strategy optimizes predictor accuracy.</p>
     /// <p>This parameter is only valid for predictors trained using AutoML.</p>
@@ -170,15 +161,11 @@ impl DescribePredictorOutput {
     }
     /// <p>The status of the predictor. States include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ACTIVE</code></p></li>
-    /// <li>
-    /// <p><code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code></p></li>
-    /// <li>
-    /// <p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
-    /// <li>
-    /// <p><code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code></p></li>
-    /// </ul><note>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+    /// </ul> <note>
     /// <p>The <code>Status</code> of the predictor must be <code>ACTIVE</code> before you can use the predictor to create a forecast.</p>
     /// </note>
     pub fn status(&self) -> ::std::option::Option<&str> {
@@ -194,16 +181,11 @@ impl DescribePredictorOutput {
     }
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p></li>
-    /// <li>
-    /// <p><code>CREATE_IN_PROGRESS</code> - The current timestamp.</p></li>
-    /// <li>
-    /// <p><code>CREATE_STOPPING</code> - The current timestamp.</p></li>
-    /// <li>
-    /// <p><code>CREATE_STOPPED</code> - When the job stopped.</p></li>
-    /// <li>
-    /// <p><code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p></li>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
     pub fn last_modification_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
@@ -336,19 +318,19 @@ impl DescribePredictorOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_forecast_types`](Self::set_forecast_types).
     ///
-    /// <p>The forecast types used during predictor training. Default value is <code>["0.1","0.5","0.9"]</code></p>
+    /// <p>The forecast types used during predictor training. Default value is <code>["0.1","0.5","0.9"]</code> </p>
     pub fn forecast_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.forecast_types.unwrap_or_default();
         v.push(input.into());
         self.forecast_types = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The forecast types used during predictor training. Default value is <code>["0.1","0.5","0.9"]</code></p>
+    /// <p>The forecast types used during predictor training. Default value is <code>["0.1","0.5","0.9"]</code> </p>
     pub fn set_forecast_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.forecast_types = input;
         self
     }
-    /// <p>The forecast types used during predictor training. Default value is <code>["0.1","0.5","0.9"]</code></p>
+    /// <p>The forecast types used during predictor training. Default value is <code>["0.1","0.5","0.9"]</code> </p>
     pub fn get_forecast_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.forecast_types
     }
@@ -367,7 +349,7 @@ impl DescribePredictorOutputBuilder {
         &self.perform_auto_ml
     }
     /// <note>
-    /// <p>The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact Amazon Web Services Support or your account manager to learn more about access privileges.</p>
+    /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact Amazon Web Services Support or your account manager to learn more about access privileges. </p>
     /// </note>
     /// <p>The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code> is specified, the AutoML strategy optimizes predictor accuracy.</p>
     /// <p>This parameter is only valid for predictors trained using AutoML.</p>
@@ -376,7 +358,7 @@ impl DescribePredictorOutputBuilder {
         self
     }
     /// <note>
-    /// <p>The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact Amazon Web Services Support or your account manager to learn more about access privileges.</p>
+    /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact Amazon Web Services Support or your account manager to learn more about access privileges. </p>
     /// </note>
     /// <p>The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code> is specified, the AutoML strategy optimizes predictor accuracy.</p>
     /// <p>This parameter is only valid for predictors trained using AutoML.</p>
@@ -385,7 +367,7 @@ impl DescribePredictorOutputBuilder {
         self
     }
     /// <note>
-    /// <p>The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact Amazon Web Services Support or your account manager to learn more about access privileges.</p>
+    /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact Amazon Web Services Support or your account manager to learn more about access privileges. </p>
     /// </note>
     /// <p>The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code> is specified, the AutoML strategy optimizes predictor accuracy.</p>
     /// <p>This parameter is only valid for predictors trained using AutoML.</p>
@@ -567,15 +549,11 @@ impl DescribePredictorOutputBuilder {
     }
     /// <p>The status of the predictor. States include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ACTIVE</code></p></li>
-    /// <li>
-    /// <p><code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code></p></li>
-    /// <li>
-    /// <p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
-    /// <li>
-    /// <p><code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code></p></li>
-    /// </ul><note>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+    /// </ul> <note>
     /// <p>The <code>Status</code> of the predictor must be <code>ACTIVE</code> before you can use the predictor to create a forecast.</p>
     /// </note>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -584,15 +562,11 @@ impl DescribePredictorOutputBuilder {
     }
     /// <p>The status of the predictor. States include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ACTIVE</code></p></li>
-    /// <li>
-    /// <p><code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code></p></li>
-    /// <li>
-    /// <p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
-    /// <li>
-    /// <p><code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code></p></li>
-    /// </ul><note>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+    /// </ul> <note>
     /// <p>The <code>Status</code> of the predictor must be <code>ACTIVE</code> before you can use the predictor to create a forecast.</p>
     /// </note>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -601,15 +575,11 @@ impl DescribePredictorOutputBuilder {
     }
     /// <p>The status of the predictor. States include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ACTIVE</code></p></li>
-    /// <li>
-    /// <p><code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code></p></li>
-    /// <li>
-    /// <p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
-    /// <li>
-    /// <p><code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code></p></li>
-    /// </ul><note>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+    /// </ul> <note>
     /// <p>The <code>Status</code> of the predictor must be <code>ACTIVE</code> before you can use the predictor to create a forecast.</p>
     /// </note>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -645,16 +615,11 @@ impl DescribePredictorOutputBuilder {
     }
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p></li>
-    /// <li>
-    /// <p><code>CREATE_IN_PROGRESS</code> - The current timestamp.</p></li>
-    /// <li>
-    /// <p><code>CREATE_STOPPING</code> - The current timestamp.</p></li>
-    /// <li>
-    /// <p><code>CREATE_STOPPED</code> - When the job stopped.</p></li>
-    /// <li>
-    /// <p><code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p></li>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
     pub fn last_modification_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modification_time = ::std::option::Option::Some(input);
@@ -662,16 +627,11 @@ impl DescribePredictorOutputBuilder {
     }
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p></li>
-    /// <li>
-    /// <p><code>CREATE_IN_PROGRESS</code> - The current timestamp.</p></li>
-    /// <li>
-    /// <p><code>CREATE_STOPPING</code> - The current timestamp.</p></li>
-    /// <li>
-    /// <p><code>CREATE_STOPPED</code> - When the job stopped.</p></li>
-    /// <li>
-    /// <p><code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p></li>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
     pub fn set_last_modification_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modification_time = input;
@@ -679,16 +639,11 @@ impl DescribePredictorOutputBuilder {
     }
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p></li>
-    /// <li>
-    /// <p><code>CREATE_IN_PROGRESS</code> - The current timestamp.</p></li>
-    /// <li>
-    /// <p><code>CREATE_STOPPING</code> - The current timestamp.</p></li>
-    /// <li>
-    /// <p><code>CREATE_STOPPED</code> - When the job stopped.</p></li>
-    /// <li>
-    /// <p><code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p></li>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
     pub fn get_last_modification_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modification_time

@@ -22,7 +22,7 @@ impl GetDataProtectionPolicyInputBuilder {
 }
 /// Fluent builder constructing a request to `GetDataProtectionPolicy`.
 ///
-/// <p>Retrieves the specified inline <code>DataProtectionPolicy</code> document that is stored in the specified Amazon SNS topic.</p>
+/// <p>Retrieves the specified inline <code>DataProtectionPolicy</code> document that is stored in the specified Amazon SNS topic. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDataProtectionPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -6,7 +6,7 @@
 pub struct ConformancePackInputParameter {
     /// <p>One part of a key-value pair.</p>
     pub parameter_name: ::std::string::String,
-    /// <p>Another part of the key-value pair.</p>
+    /// <p>Another part of the key-value pair. </p>
     pub parameter_value: ::std::string::String,
 }
 impl ConformancePackInputParameter {
@@ -15,7 +15,7 @@ impl ConformancePackInputParameter {
         use std::ops::Deref;
         self.parameter_name.deref()
     }
-    /// <p>Another part of the key-value pair.</p>
+    /// <p>Another part of the key-value pair. </p>
     pub fn parameter_value(&self) -> &str {
         use std::ops::Deref;
         self.parameter_value.deref()
@@ -51,18 +51,18 @@ impl ConformancePackInputParameterBuilder {
     pub fn get_parameter_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.parameter_name
     }
-    /// <p>Another part of the key-value pair.</p>
+    /// <p>Another part of the key-value pair. </p>
     /// This field is required.
     pub fn parameter_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_value = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Another part of the key-value pair.</p>
+    /// <p>Another part of the key-value pair. </p>
     pub fn set_parameter_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_value = input;
         self
     }
-    /// <p>Another part of the key-value pair.</p>
+    /// <p>Another part of the key-value pair. </p>
     pub fn get_parameter_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.parameter_value
     }

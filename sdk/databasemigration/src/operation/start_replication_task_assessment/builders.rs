@@ -22,15 +22,13 @@ impl StartReplicationTaskAssessmentInputBuilder {
 }
 /// Fluent builder constructing a request to `StartReplicationTaskAssessment`.
 ///
-/// <p>Starts the replication task assessment for unsupported data types in the source database.</p>
+/// <p> Starts the replication task assessment for unsupported data types in the source database. </p>
 /// <p>You can only use this operation for a task if the following conditions are true:</p>
 /// <ul>
-/// <li>
-/// <p>The task must be in the <code>stopped</code> state.</p></li>
-/// <li>
-/// <p>The task must have successful connections to the source and target.</p></li>
+/// <li> <p>The task must be in the <code>stopped</code> state.</p> </li>
+/// <li> <p>The task must have successful connections to the source and target.</p> </li>
 /// </ul>
-/// <p>If either of these conditions are not met, an <code>InvalidResourceStateFault</code> error will result.</p>
+/// <p>If either of these conditions are not met, an <code>InvalidResourceStateFault</code> error will result. </p>
 /// <p>For information about DMS task assessments, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Creating a task assessment report</a> in the <i>Database Migration Service User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartReplicationTaskAssessmentFluentBuilder {
@@ -117,17 +115,17 @@ impl StartReplicationTaskAssessmentFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
+    /// <p> The Amazon Resource Name (ARN) of the replication task. </p>
     pub fn replication_task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.replication_task_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
+    /// <p> The Amazon Resource Name (ARN) of the replication task. </p>
     pub fn set_replication_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_replication_task_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
+    /// <p> The Amazon Resource Name (ARN) of the replication task. </p>
     pub fn get_replication_task_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_replication_task_arn()
     }

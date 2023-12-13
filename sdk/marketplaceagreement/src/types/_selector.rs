@@ -6,7 +6,7 @@
 pub struct Selector {
     /// <p>Category of selector.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
-    /// <p>Contract duration. This field supports the ISO 8601 format.</p>
+    /// <p>Contract duration. This field supports the ISO 8601 format. </p>
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl Selector {
@@ -14,7 +14,7 @@ impl Selector {
     pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
-    /// <p>Contract duration. This field supports the ISO 8601 format.</p>
+    /// <p>Contract duration. This field supports the ISO 8601 format. </p>
     pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
@@ -48,17 +48,17 @@ impl SelectorBuilder {
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.r#type
     }
-    /// <p>Contract duration. This field supports the ISO 8601 format.</p>
+    /// <p>Contract duration. This field supports the ISO 8601 format. </p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Contract duration. This field supports the ISO 8601 format.</p>
+    /// <p>Contract duration. This field supports the ISO 8601 format. </p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }
-    /// <p>Contract duration. This field supports the ISO 8601 format.</p>
+    /// <p>Contract duration. This field supports the ISO 8601 format. </p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.value
     }

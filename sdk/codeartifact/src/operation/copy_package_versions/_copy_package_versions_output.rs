@@ -3,47 +3,35 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CopyPackageVersionsOutput {
-    /// <p>A list of the package versions that were successfully copied to your repository.</p>
+    /// <p> A list of the package versions that were successfully copied to your repository. </p>
     pub successful_versions: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SuccessfulPackageVersionInfo>>,
-    /// <p>A map of package versions that failed to copy and their error codes. The possible error codes are in the <code>PackageVersionError</code> data type. They are:</p>
+    /// <p> A map of package versions that failed to copy and their error codes. The possible error codes are in the <code>PackageVersionError</code> data type. They are: </p>
     /// <ul>
-    /// <li>
-    /// <p><code>ALREADY_EXISTS</code></p></li>
-    /// <li>
-    /// <p><code>MISMATCHED_REVISION</code></p></li>
-    /// <li>
-    /// <p><code>MISMATCHED_STATUS</code></p></li>
-    /// <li>
-    /// <p><code>NOT_ALLOWED</code></p></li>
-    /// <li>
-    /// <p><code>NOT_FOUND</code></p></li>
-    /// <li>
-    /// <p><code>SKIPPED</code></p></li>
+    /// <li> <p> <code>ALREADY_EXISTS</code> </p> </li>
+    /// <li> <p> <code>MISMATCHED_REVISION</code> </p> </li>
+    /// <li> <p> <code>MISMATCHED_STATUS</code> </p> </li>
+    /// <li> <p> <code>NOT_ALLOWED</code> </p> </li>
+    /// <li> <p> <code>NOT_FOUND</code> </p> </li>
+    /// <li> <p> <code>SKIPPED</code> </p> </li>
     /// </ul>
     pub failed_versions: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PackageVersionError>>,
     _request_id: Option<String>,
 }
 impl CopyPackageVersionsOutput {
-    /// <p>A list of the package versions that were successfully copied to your repository.</p>
+    /// <p> A list of the package versions that were successfully copied to your repository. </p>
     pub fn successful_versions(
         &self,
     ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::SuccessfulPackageVersionInfo>> {
         self.successful_versions.as_ref()
     }
-    /// <p>A map of package versions that failed to copy and their error codes. The possible error codes are in the <code>PackageVersionError</code> data type. They are:</p>
+    /// <p> A map of package versions that failed to copy and their error codes. The possible error codes are in the <code>PackageVersionError</code> data type. They are: </p>
     /// <ul>
-    /// <li>
-    /// <p><code>ALREADY_EXISTS</code></p></li>
-    /// <li>
-    /// <p><code>MISMATCHED_REVISION</code></p></li>
-    /// <li>
-    /// <p><code>MISMATCHED_STATUS</code></p></li>
-    /// <li>
-    /// <p><code>NOT_ALLOWED</code></p></li>
-    /// <li>
-    /// <p><code>NOT_FOUND</code></p></li>
-    /// <li>
-    /// <p><code>SKIPPED</code></p></li>
+    /// <li> <p> <code>ALREADY_EXISTS</code> </p> </li>
+    /// <li> <p> <code>MISMATCHED_REVISION</code> </p> </li>
+    /// <li> <p> <code>MISMATCHED_STATUS</code> </p> </li>
+    /// <li> <p> <code>NOT_ALLOWED</code> </p> </li>
+    /// <li> <p> <code>NOT_FOUND</code> </p> </li>
+    /// <li> <p> <code>SKIPPED</code> </p> </li>
     /// </ul>
     pub fn failed_versions(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::PackageVersionError>> {
         self.failed_versions.as_ref()
@@ -75,14 +63,14 @@ impl CopyPackageVersionsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_successful_versions`](Self::set_successful_versions).
     ///
-    /// <p>A list of the package versions that were successfully copied to your repository.</p>
+    /// <p> A list of the package versions that were successfully copied to your repository. </p>
     pub fn successful_versions(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::SuccessfulPackageVersionInfo) -> Self {
         let mut hash_map = self.successful_versions.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.successful_versions = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>A list of the package versions that were successfully copied to your repository.</p>
+    /// <p> A list of the package versions that were successfully copied to your repository. </p>
     pub fn set_successful_versions(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SuccessfulPackageVersionInfo>>,
@@ -90,7 +78,7 @@ impl CopyPackageVersionsOutputBuilder {
         self.successful_versions = input;
         self
     }
-    /// <p>A list of the package versions that were successfully copied to your repository.</p>
+    /// <p> A list of the package versions that were successfully copied to your repository. </p>
     pub fn get_successful_versions(
         &self,
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SuccessfulPackageVersionInfo>> {
@@ -100,20 +88,14 @@ impl CopyPackageVersionsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_failed_versions`](Self::set_failed_versions).
     ///
-    /// <p>A map of package versions that failed to copy and their error codes. The possible error codes are in the <code>PackageVersionError</code> data type. They are:</p>
+    /// <p> A map of package versions that failed to copy and their error codes. The possible error codes are in the <code>PackageVersionError</code> data type. They are: </p>
     /// <ul>
-    /// <li>
-    /// <p><code>ALREADY_EXISTS</code></p></li>
-    /// <li>
-    /// <p><code>MISMATCHED_REVISION</code></p></li>
-    /// <li>
-    /// <p><code>MISMATCHED_STATUS</code></p></li>
-    /// <li>
-    /// <p><code>NOT_ALLOWED</code></p></li>
-    /// <li>
-    /// <p><code>NOT_FOUND</code></p></li>
-    /// <li>
-    /// <p><code>SKIPPED</code></p></li>
+    /// <li> <p> <code>ALREADY_EXISTS</code> </p> </li>
+    /// <li> <p> <code>MISMATCHED_REVISION</code> </p> </li>
+    /// <li> <p> <code>MISMATCHED_STATUS</code> </p> </li>
+    /// <li> <p> <code>NOT_ALLOWED</code> </p> </li>
+    /// <li> <p> <code>NOT_FOUND</code> </p> </li>
+    /// <li> <p> <code>SKIPPED</code> </p> </li>
     /// </ul>
     pub fn failed_versions(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::PackageVersionError) -> Self {
         let mut hash_map = self.failed_versions.unwrap_or_default();
@@ -121,20 +103,14 @@ impl CopyPackageVersionsOutputBuilder {
         self.failed_versions = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>A map of package versions that failed to copy and their error codes. The possible error codes are in the <code>PackageVersionError</code> data type. They are:</p>
+    /// <p> A map of package versions that failed to copy and their error codes. The possible error codes are in the <code>PackageVersionError</code> data type. They are: </p>
     /// <ul>
-    /// <li>
-    /// <p><code>ALREADY_EXISTS</code></p></li>
-    /// <li>
-    /// <p><code>MISMATCHED_REVISION</code></p></li>
-    /// <li>
-    /// <p><code>MISMATCHED_STATUS</code></p></li>
-    /// <li>
-    /// <p><code>NOT_ALLOWED</code></p></li>
-    /// <li>
-    /// <p><code>NOT_FOUND</code></p></li>
-    /// <li>
-    /// <p><code>SKIPPED</code></p></li>
+    /// <li> <p> <code>ALREADY_EXISTS</code> </p> </li>
+    /// <li> <p> <code>MISMATCHED_REVISION</code> </p> </li>
+    /// <li> <p> <code>MISMATCHED_STATUS</code> </p> </li>
+    /// <li> <p> <code>NOT_ALLOWED</code> </p> </li>
+    /// <li> <p> <code>NOT_FOUND</code> </p> </li>
+    /// <li> <p> <code>SKIPPED</code> </p> </li>
     /// </ul>
     pub fn set_failed_versions(
         mut self,
@@ -143,20 +119,14 @@ impl CopyPackageVersionsOutputBuilder {
         self.failed_versions = input;
         self
     }
-    /// <p>A map of package versions that failed to copy and their error codes. The possible error codes are in the <code>PackageVersionError</code> data type. They are:</p>
+    /// <p> A map of package versions that failed to copy and their error codes. The possible error codes are in the <code>PackageVersionError</code> data type. They are: </p>
     /// <ul>
-    /// <li>
-    /// <p><code>ALREADY_EXISTS</code></p></li>
-    /// <li>
-    /// <p><code>MISMATCHED_REVISION</code></p></li>
-    /// <li>
-    /// <p><code>MISMATCHED_STATUS</code></p></li>
-    /// <li>
-    /// <p><code>NOT_ALLOWED</code></p></li>
-    /// <li>
-    /// <p><code>NOT_FOUND</code></p></li>
-    /// <li>
-    /// <p><code>SKIPPED</code></p></li>
+    /// <li> <p> <code>ALREADY_EXISTS</code> </p> </li>
+    /// <li> <p> <code>MISMATCHED_REVISION</code> </p> </li>
+    /// <li> <p> <code>MISMATCHED_STATUS</code> </p> </li>
+    /// <li> <p> <code>NOT_ALLOWED</code> </p> </li>
+    /// <li> <p> <code>NOT_FOUND</code> </p> </li>
+    /// <li> <p> <code>SKIPPED</code> </p> </li>
     /// </ul>
     pub fn get_failed_versions(
         &self,

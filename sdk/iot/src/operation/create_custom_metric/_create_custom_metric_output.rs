@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCustomMetricOutput {
-    /// <p>The name of the custom metric to be used in the metric report.</p>
+    /// <p> The name of the custom metric to be used in the metric report. </p>
     pub metric_name: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Number (ARN) of the custom metric. For example, <code>arn:<i>aws-partition</i>:iot:<i>region</i>:<i>accountId</i>:custommetric/<i>metricName</i> </code></p>
+    /// <p> The Amazon Resource Number (ARN) of the custom metric. For example, <code>arn:<i>aws-partition</i>:iot:<i>region</i>:<i>accountId</i>:custommetric/<i>metricName</i> </code> </p>
     pub metric_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateCustomMetricOutput {
-    /// <p>The name of the custom metric to be used in the metric report.</p>
+    /// <p> The name of the custom metric to be used in the metric report. </p>
     pub fn metric_name(&self) -> ::std::option::Option<&str> {
         self.metric_name.as_deref()
     }
-    /// <p>The Amazon Resource Number (ARN) of the custom metric. For example, <code>arn:<i>aws-partition</i>:iot:<i>region</i>:<i>accountId</i>:custommetric/<i>metricName</i> </code></p>
+    /// <p> The Amazon Resource Number (ARN) of the custom metric. For example, <code>arn:<i>aws-partition</i>:iot:<i>region</i>:<i>accountId</i>:custommetric/<i>metricName</i> </code> </p>
     pub fn metric_arn(&self) -> ::std::option::Option<&str> {
         self.metric_arn.as_deref()
     }
@@ -40,31 +40,31 @@ pub struct CreateCustomMetricOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateCustomMetricOutputBuilder {
-    /// <p>The name of the custom metric to be used in the metric report.</p>
+    /// <p> The name of the custom metric to be used in the metric report. </p>
     pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the custom metric to be used in the metric report.</p>
+    /// <p> The name of the custom metric to be used in the metric report. </p>
     pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric_name = input;
         self
     }
-    /// <p>The name of the custom metric to be used in the metric report.</p>
+    /// <p> The name of the custom metric to be used in the metric report. </p>
     pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.metric_name
     }
-    /// <p>The Amazon Resource Number (ARN) of the custom metric. For example, <code>arn:<i>aws-partition</i>:iot:<i>region</i>:<i>accountId</i>:custommetric/<i>metricName</i> </code></p>
+    /// <p> The Amazon Resource Number (ARN) of the custom metric. For example, <code>arn:<i>aws-partition</i>:iot:<i>region</i>:<i>accountId</i>:custommetric/<i>metricName</i> </code> </p>
     pub fn metric_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Number (ARN) of the custom metric. For example, <code>arn:<i>aws-partition</i>:iot:<i>region</i>:<i>accountId</i>:custommetric/<i>metricName</i> </code></p>
+    /// <p> The Amazon Resource Number (ARN) of the custom metric. For example, <code>arn:<i>aws-partition</i>:iot:<i>region</i>:<i>accountId</i>:custommetric/<i>metricName</i> </code> </p>
     pub fn set_metric_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric_arn = input;
         self
     }
-    /// <p>The Amazon Resource Number (ARN) of the custom metric. For example, <code>arn:<i>aws-partition</i>:iot:<i>region</i>:<i>accountId</i>:custommetric/<i>metricName</i> </code></p>
+    /// <p> The Amazon Resource Number (ARN) of the custom metric. For example, <code>arn:<i>aws-partition</i>:iot:<i>region</i>:<i>accountId</i>:custommetric/<i>metricName</i> </code> </p>
     pub fn get_metric_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.metric_arn
     }

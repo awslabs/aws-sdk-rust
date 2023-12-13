@@ -9,30 +9,20 @@ pub struct CreateAlgorithmInput {
     pub algorithm_description: ::std::option::Option<::std::string::String>,
     /// <p>Specifies details about training jobs run by this algorithm, including the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>The Amazon ECR path of the container and the version digest of the algorithm.</p></li>
-    /// <li>
-    /// <p>The hyperparameters that the algorithm supports.</p></li>
-    /// <li>
-    /// <p>The instance types that the algorithm supports for training.</p></li>
-    /// <li>
-    /// <p>Whether the algorithm supports distributed training.</p></li>
-    /// <li>
-    /// <p>The metrics that the algorithm emits to Amazon CloudWatch.</p></li>
-    /// <li>
-    /// <p>Which metrics that the algorithm emits can be used as the objective metric for hyperparameter tuning jobs.</p></li>
-    /// <li>
-    /// <p>The input channels that the algorithm supports for training data. For example, an algorithm might support <code>train</code>, <code>validation</code>, and <code>test</code> channels.</p></li>
+    /// <li> <p>The Amazon ECR path of the container and the version digest of the algorithm.</p> </li>
+    /// <li> <p>The hyperparameters that the algorithm supports.</p> </li>
+    /// <li> <p>The instance types that the algorithm supports for training.</p> </li>
+    /// <li> <p>Whether the algorithm supports distributed training.</p> </li>
+    /// <li> <p>The metrics that the algorithm emits to Amazon CloudWatch.</p> </li>
+    /// <li> <p>Which metrics that the algorithm emits can be used as the objective metric for hyperparameter tuning jobs.</p> </li>
+    /// <li> <p>The input channels that the algorithm supports for training data. For example, an algorithm might support <code>train</code>, <code>validation</code>, and <code>test</code> channels.</p> </li>
     /// </ul>
     pub training_specification: ::std::option::Option<crate::types::TrainingSpecification>,
     /// <p>Specifies details about inference jobs that the algorithm runs, including the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>The Amazon ECR paths of containers that contain the inference code and model artifacts.</p></li>
-    /// <li>
-    /// <p>The instance types that the algorithm supports for transform jobs and real-time endpoints used for inference.</p></li>
-    /// <li>
-    /// <p>The input and output content formats that the algorithm supports for inference.</p></li>
+    /// <li> <p>The Amazon ECR paths of containers that contain the inference code and model artifacts.</p> </li>
+    /// <li> <p>The instance types that the algorithm supports for transform jobs and real-time endpoints used for inference.</p> </li>
+    /// <li> <p>The input and output content formats that the algorithm supports for inference.</p> </li>
     /// </ul>
     pub inference_specification: ::std::option::Option<crate::types::InferenceSpecification>,
     /// <p>Specifies configurations for one or more training jobs and that SageMaker runs to test the algorithm's training code and, optionally, one or more batch transform jobs that SageMaker runs to test the algorithm's inference code.</p>
@@ -53,32 +43,22 @@ impl CreateAlgorithmInput {
     }
     /// <p>Specifies details about training jobs run by this algorithm, including the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>The Amazon ECR path of the container and the version digest of the algorithm.</p></li>
-    /// <li>
-    /// <p>The hyperparameters that the algorithm supports.</p></li>
-    /// <li>
-    /// <p>The instance types that the algorithm supports for training.</p></li>
-    /// <li>
-    /// <p>Whether the algorithm supports distributed training.</p></li>
-    /// <li>
-    /// <p>The metrics that the algorithm emits to Amazon CloudWatch.</p></li>
-    /// <li>
-    /// <p>Which metrics that the algorithm emits can be used as the objective metric for hyperparameter tuning jobs.</p></li>
-    /// <li>
-    /// <p>The input channels that the algorithm supports for training data. For example, an algorithm might support <code>train</code>, <code>validation</code>, and <code>test</code> channels.</p></li>
+    /// <li> <p>The Amazon ECR path of the container and the version digest of the algorithm.</p> </li>
+    /// <li> <p>The hyperparameters that the algorithm supports.</p> </li>
+    /// <li> <p>The instance types that the algorithm supports for training.</p> </li>
+    /// <li> <p>Whether the algorithm supports distributed training.</p> </li>
+    /// <li> <p>The metrics that the algorithm emits to Amazon CloudWatch.</p> </li>
+    /// <li> <p>Which metrics that the algorithm emits can be used as the objective metric for hyperparameter tuning jobs.</p> </li>
+    /// <li> <p>The input channels that the algorithm supports for training data. For example, an algorithm might support <code>train</code>, <code>validation</code>, and <code>test</code> channels.</p> </li>
     /// </ul>
     pub fn training_specification(&self) -> ::std::option::Option<&crate::types::TrainingSpecification> {
         self.training_specification.as_ref()
     }
     /// <p>Specifies details about inference jobs that the algorithm runs, including the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>The Amazon ECR paths of containers that contain the inference code and model artifacts.</p></li>
-    /// <li>
-    /// <p>The instance types that the algorithm supports for transform jobs and real-time endpoints used for inference.</p></li>
-    /// <li>
-    /// <p>The input and output content formats that the algorithm supports for inference.</p></li>
+    /// <li> <p>The Amazon ECR paths of containers that contain the inference code and model artifacts.</p> </li>
+    /// <li> <p>The instance types that the algorithm supports for transform jobs and real-time endpoints used for inference.</p> </li>
+    /// <li> <p>The input and output content formats that the algorithm supports for inference.</p> </li>
     /// </ul>
     pub fn inference_specification(&self) -> ::std::option::Option<&crate::types::InferenceSpecification> {
         self.inference_specification.as_ref()
@@ -149,20 +129,13 @@ impl CreateAlgorithmInputBuilder {
     }
     /// <p>Specifies details about training jobs run by this algorithm, including the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>The Amazon ECR path of the container and the version digest of the algorithm.</p></li>
-    /// <li>
-    /// <p>The hyperparameters that the algorithm supports.</p></li>
-    /// <li>
-    /// <p>The instance types that the algorithm supports for training.</p></li>
-    /// <li>
-    /// <p>Whether the algorithm supports distributed training.</p></li>
-    /// <li>
-    /// <p>The metrics that the algorithm emits to Amazon CloudWatch.</p></li>
-    /// <li>
-    /// <p>Which metrics that the algorithm emits can be used as the objective metric for hyperparameter tuning jobs.</p></li>
-    /// <li>
-    /// <p>The input channels that the algorithm supports for training data. For example, an algorithm might support <code>train</code>, <code>validation</code>, and <code>test</code> channels.</p></li>
+    /// <li> <p>The Amazon ECR path of the container and the version digest of the algorithm.</p> </li>
+    /// <li> <p>The hyperparameters that the algorithm supports.</p> </li>
+    /// <li> <p>The instance types that the algorithm supports for training.</p> </li>
+    /// <li> <p>Whether the algorithm supports distributed training.</p> </li>
+    /// <li> <p>The metrics that the algorithm emits to Amazon CloudWatch.</p> </li>
+    /// <li> <p>Which metrics that the algorithm emits can be used as the objective metric for hyperparameter tuning jobs.</p> </li>
+    /// <li> <p>The input channels that the algorithm supports for training data. For example, an algorithm might support <code>train</code>, <code>validation</code>, and <code>test</code> channels.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn training_specification(mut self, input: crate::types::TrainingSpecification) -> Self {
@@ -171,20 +144,13 @@ impl CreateAlgorithmInputBuilder {
     }
     /// <p>Specifies details about training jobs run by this algorithm, including the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>The Amazon ECR path of the container and the version digest of the algorithm.</p></li>
-    /// <li>
-    /// <p>The hyperparameters that the algorithm supports.</p></li>
-    /// <li>
-    /// <p>The instance types that the algorithm supports for training.</p></li>
-    /// <li>
-    /// <p>Whether the algorithm supports distributed training.</p></li>
-    /// <li>
-    /// <p>The metrics that the algorithm emits to Amazon CloudWatch.</p></li>
-    /// <li>
-    /// <p>Which metrics that the algorithm emits can be used as the objective metric for hyperparameter tuning jobs.</p></li>
-    /// <li>
-    /// <p>The input channels that the algorithm supports for training data. For example, an algorithm might support <code>train</code>, <code>validation</code>, and <code>test</code> channels.</p></li>
+    /// <li> <p>The Amazon ECR path of the container and the version digest of the algorithm.</p> </li>
+    /// <li> <p>The hyperparameters that the algorithm supports.</p> </li>
+    /// <li> <p>The instance types that the algorithm supports for training.</p> </li>
+    /// <li> <p>Whether the algorithm supports distributed training.</p> </li>
+    /// <li> <p>The metrics that the algorithm emits to Amazon CloudWatch.</p> </li>
+    /// <li> <p>Which metrics that the algorithm emits can be used as the objective metric for hyperparameter tuning jobs.</p> </li>
+    /// <li> <p>The input channels that the algorithm supports for training data. For example, an algorithm might support <code>train</code>, <code>validation</code>, and <code>test</code> channels.</p> </li>
     /// </ul>
     pub fn set_training_specification(mut self, input: ::std::option::Option<crate::types::TrainingSpecification>) -> Self {
         self.training_specification = input;
@@ -192,32 +158,22 @@ impl CreateAlgorithmInputBuilder {
     }
     /// <p>Specifies details about training jobs run by this algorithm, including the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>The Amazon ECR path of the container and the version digest of the algorithm.</p></li>
-    /// <li>
-    /// <p>The hyperparameters that the algorithm supports.</p></li>
-    /// <li>
-    /// <p>The instance types that the algorithm supports for training.</p></li>
-    /// <li>
-    /// <p>Whether the algorithm supports distributed training.</p></li>
-    /// <li>
-    /// <p>The metrics that the algorithm emits to Amazon CloudWatch.</p></li>
-    /// <li>
-    /// <p>Which metrics that the algorithm emits can be used as the objective metric for hyperparameter tuning jobs.</p></li>
-    /// <li>
-    /// <p>The input channels that the algorithm supports for training data. For example, an algorithm might support <code>train</code>, <code>validation</code>, and <code>test</code> channels.</p></li>
+    /// <li> <p>The Amazon ECR path of the container and the version digest of the algorithm.</p> </li>
+    /// <li> <p>The hyperparameters that the algorithm supports.</p> </li>
+    /// <li> <p>The instance types that the algorithm supports for training.</p> </li>
+    /// <li> <p>Whether the algorithm supports distributed training.</p> </li>
+    /// <li> <p>The metrics that the algorithm emits to Amazon CloudWatch.</p> </li>
+    /// <li> <p>Which metrics that the algorithm emits can be used as the objective metric for hyperparameter tuning jobs.</p> </li>
+    /// <li> <p>The input channels that the algorithm supports for training data. For example, an algorithm might support <code>train</code>, <code>validation</code>, and <code>test</code> channels.</p> </li>
     /// </ul>
     pub fn get_training_specification(&self) -> &::std::option::Option<crate::types::TrainingSpecification> {
         &self.training_specification
     }
     /// <p>Specifies details about inference jobs that the algorithm runs, including the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>The Amazon ECR paths of containers that contain the inference code and model artifacts.</p></li>
-    /// <li>
-    /// <p>The instance types that the algorithm supports for transform jobs and real-time endpoints used for inference.</p></li>
-    /// <li>
-    /// <p>The input and output content formats that the algorithm supports for inference.</p></li>
+    /// <li> <p>The Amazon ECR paths of containers that contain the inference code and model artifacts.</p> </li>
+    /// <li> <p>The instance types that the algorithm supports for transform jobs and real-time endpoints used for inference.</p> </li>
+    /// <li> <p>The input and output content formats that the algorithm supports for inference.</p> </li>
     /// </ul>
     pub fn inference_specification(mut self, input: crate::types::InferenceSpecification) -> Self {
         self.inference_specification = ::std::option::Option::Some(input);
@@ -225,12 +181,9 @@ impl CreateAlgorithmInputBuilder {
     }
     /// <p>Specifies details about inference jobs that the algorithm runs, including the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>The Amazon ECR paths of containers that contain the inference code and model artifacts.</p></li>
-    /// <li>
-    /// <p>The instance types that the algorithm supports for transform jobs and real-time endpoints used for inference.</p></li>
-    /// <li>
-    /// <p>The input and output content formats that the algorithm supports for inference.</p></li>
+    /// <li> <p>The Amazon ECR paths of containers that contain the inference code and model artifacts.</p> </li>
+    /// <li> <p>The instance types that the algorithm supports for transform jobs and real-time endpoints used for inference.</p> </li>
+    /// <li> <p>The input and output content formats that the algorithm supports for inference.</p> </li>
     /// </ul>
     pub fn set_inference_specification(mut self, input: ::std::option::Option<crate::types::InferenceSpecification>) -> Self {
         self.inference_specification = input;
@@ -238,12 +191,9 @@ impl CreateAlgorithmInputBuilder {
     }
     /// <p>Specifies details about inference jobs that the algorithm runs, including the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>The Amazon ECR paths of containers that contain the inference code and model artifacts.</p></li>
-    /// <li>
-    /// <p>The instance types that the algorithm supports for transform jobs and real-time endpoints used for inference.</p></li>
-    /// <li>
-    /// <p>The input and output content formats that the algorithm supports for inference.</p></li>
+    /// <li> <p>The Amazon ECR paths of containers that contain the inference code and model artifacts.</p> </li>
+    /// <li> <p>The instance types that the algorithm supports for transform jobs and real-time endpoints used for inference.</p> </li>
+    /// <li> <p>The input and output content formats that the algorithm supports for inference.</p> </li>
     /// </ul>
     pub fn get_inference_specification(&self) -> &::std::option::Option<crate::types::InferenceSpecification> {
         &self.inference_specification

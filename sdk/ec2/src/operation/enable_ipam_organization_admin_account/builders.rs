@@ -22,7 +22,7 @@ impl EnableIpamOrganizationAdminAccountInputBuilder {
 }
 /// Fluent builder constructing a request to `EnableIpamOrganizationAdminAccount`.
 ///
-/// <p>Enable an Organizations member account as the IPAM admin account. You cannot select the Organizations management account as the IPAM admin account. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/enable-integ-ipam.html">Enable integration with Organizations</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+/// <p>Enable an Organizations member account as the IPAM admin account. You cannot select the Organizations management account as the IPAM admin account. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/enable-integ-ipam.html">Enable integration with Organizations</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct EnableIpamOrganizationAdminAccountFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

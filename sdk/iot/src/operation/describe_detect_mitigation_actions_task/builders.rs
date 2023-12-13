@@ -22,7 +22,7 @@ impl DescribeDetectMitigationActionsTaskInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeDetectMitigationActionsTask`.
 ///
-/// <p>Gets information about a Device Defender ML Detect mitigation action.</p>
+/// <p> Gets information about a Device Defender ML Detect mitigation action. </p>
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeDetectMitigationActionsTask</a> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeDetectMitigationActionsTaskFluentBuilder {
@@ -110,17 +110,17 @@ impl DescribeDetectMitigationActionsTaskFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier of the task.</p>
+    /// <p> The unique identifier of the task. </p>
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.task_id(input.into());
         self
     }
-    /// <p>The unique identifier of the task.</p>
+    /// <p> The unique identifier of the task. </p>
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_task_id(input);
         self
     }
-    /// <p>The unique identifier of the task.</p>
+    /// <p> The unique identifier of the task. </p>
     pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_task_id()
     }

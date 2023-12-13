@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RejectQualificationRequestInput {
-    /// <p>The ID of the Qualification request, as returned by the <code>ListQualificationRequests</code> operation.</p>
+    /// <p> The ID of the Qualification request, as returned by the <code>ListQualificationRequests</code> operation. </p>
     pub qualification_request_id: ::std::option::Option<::std::string::String>,
     /// <p>A text message explaining why the request was rejected, to be shown to the Worker who made the request.</p>
     pub reason: ::std::option::Option<::std::string::String>,
 }
 impl RejectQualificationRequestInput {
-    /// <p>The ID of the Qualification request, as returned by the <code>ListQualificationRequests</code> operation.</p>
+    /// <p> The ID of the Qualification request, as returned by the <code>ListQualificationRequests</code> operation. </p>
     pub fn qualification_request_id(&self) -> ::std::option::Option<&str> {
         self.qualification_request_id.as_deref()
     }
@@ -33,18 +33,18 @@ pub struct RejectQualificationRequestInputBuilder {
     pub(crate) reason: ::std::option::Option<::std::string::String>,
 }
 impl RejectQualificationRequestInputBuilder {
-    /// <p>The ID of the Qualification request, as returned by the <code>ListQualificationRequests</code> operation.</p>
+    /// <p> The ID of the Qualification request, as returned by the <code>ListQualificationRequests</code> operation. </p>
     /// This field is required.
     pub fn qualification_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.qualification_request_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the Qualification request, as returned by the <code>ListQualificationRequests</code> operation.</p>
+    /// <p> The ID of the Qualification request, as returned by the <code>ListQualificationRequests</code> operation. </p>
     pub fn set_qualification_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.qualification_request_id = input;
         self
     }
-    /// <p>The ID of the Qualification request, as returned by the <code>ListQualificationRequests</code> operation.</p>
+    /// <p> The ID of the Qualification request, as returned by the <code>ListQualificationRequests</code> operation. </p>
     pub fn get_qualification_request_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.qualification_request_id
     }

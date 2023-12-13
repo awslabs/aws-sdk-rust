@@ -17,7 +17,7 @@ pub struct GetLowLatencyHlsManifestConfiguration {
     pub program_date_time_interval_seconds: ::std::option::Option<i32>,
     /// <p>The SCTE configuration.</p>
     pub scte_hls: ::std::option::Option<crate::types::ScteHls>,
-    /// <p>Filter configuration includes settings for manifest filtering, start and end times, and time delay that apply to all of your egress requests for this manifest.</p>
+    /// <p>Filter configuration includes settings for manifest filtering, start and end times, and time delay that apply to all of your egress requests for this manifest. </p>
     pub filter_configuration: ::std::option::Option<crate::types::FilterConfiguration>,
 }
 impl GetLowLatencyHlsManifestConfiguration {
@@ -48,7 +48,7 @@ impl GetLowLatencyHlsManifestConfiguration {
     pub fn scte_hls(&self) -> ::std::option::Option<&crate::types::ScteHls> {
         self.scte_hls.as_ref()
     }
-    /// <p>Filter configuration includes settings for manifest filtering, start and end times, and time delay that apply to all of your egress requests for this manifest.</p>
+    /// <p>Filter configuration includes settings for manifest filtering, start and end times, and time delay that apply to all of your egress requests for this manifest. </p>
     pub fn filter_configuration(&self) -> ::std::option::Option<&crate::types::FilterConfiguration> {
         self.filter_configuration.as_ref()
     }
@@ -162,17 +162,17 @@ impl GetLowLatencyHlsManifestConfigurationBuilder {
     pub fn get_scte_hls(&self) -> &::std::option::Option<crate::types::ScteHls> {
         &self.scte_hls
     }
-    /// <p>Filter configuration includes settings for manifest filtering, start and end times, and time delay that apply to all of your egress requests for this manifest.</p>
+    /// <p>Filter configuration includes settings for manifest filtering, start and end times, and time delay that apply to all of your egress requests for this manifest. </p>
     pub fn filter_configuration(mut self, input: crate::types::FilterConfiguration) -> Self {
         self.filter_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Filter configuration includes settings for manifest filtering, start and end times, and time delay that apply to all of your egress requests for this manifest.</p>
+    /// <p>Filter configuration includes settings for manifest filtering, start and end times, and time delay that apply to all of your egress requests for this manifest. </p>
     pub fn set_filter_configuration(mut self, input: ::std::option::Option<crate::types::FilterConfiguration>) -> Self {
         self.filter_configuration = input;
         self
     }
-    /// <p>Filter configuration includes settings for manifest filtering, start and end times, and time delay that apply to all of your egress requests for this manifest.</p>
+    /// <p>Filter configuration includes settings for manifest filtering, start and end times, and time delay that apply to all of your egress requests for this manifest. </p>
     pub fn get_filter_configuration(&self) -> &::std::option::Option<crate::types::FilterConfiguration> {
         &self.filter_configuration
     }

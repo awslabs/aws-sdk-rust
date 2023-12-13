@@ -23,8 +23,8 @@ impl DeleteAliasInputBuilder {
 /// Fluent builder constructing a request to `DeleteAlias`.
 ///
 /// <p>Deletes an alias. This operation removes all record of the alias. Game clients attempting to access a server process using the deleted alias receive an error. To delete an alias, specify the alias ID to be deleted.</p>
-/// <p><b>Related actions</b></p>
-/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a></p>
+/// <p> <b>Related actions</b> </p>
+/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAliasFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

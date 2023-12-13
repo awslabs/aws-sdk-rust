@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartStreamProcessorOutput {
-    /// <p>A unique identifier for the stream processing session.</p>
+    /// <p> A unique identifier for the stream processing session. </p>
     pub session_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl StartStreamProcessorOutput {
-    /// <p>A unique identifier for the stream processing session.</p>
+    /// <p> A unique identifier for the stream processing session. </p>
     pub fn session_id(&self) -> ::std::option::Option<&str> {
         self.session_id.as_deref()
     }
@@ -33,17 +33,17 @@ pub struct StartStreamProcessorOutputBuilder {
     _request_id: Option<String>,
 }
 impl StartStreamProcessorOutputBuilder {
-    /// <p>A unique identifier for the stream processing session.</p>
+    /// <p> A unique identifier for the stream processing session. </p>
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique identifier for the stream processing session.</p>
+    /// <p> A unique identifier for the stream processing session. </p>
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session_id = input;
         self
     }
-    /// <p>A unique identifier for the stream processing session.</p>
+    /// <p> A unique identifier for the stream processing session. </p>
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.session_id
     }

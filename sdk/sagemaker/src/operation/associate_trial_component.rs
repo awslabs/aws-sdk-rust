@@ -248,7 +248,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for AssociateTria
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum AssociateTrialComponentError {
-    /// <p>You have exceeded an SageMaker resource limit. For example, you might have too many training jobs created.</p>
+    /// <p> You have exceeded an SageMaker resource limit. For example, you might have too many training jobs created. </p>
     ResourceLimitExceeded(crate::types::error::ResourceLimitExceeded),
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::types::error::ResourceNotFound),

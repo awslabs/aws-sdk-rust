@@ -22,7 +22,7 @@ impl DeleteInstanceProfileInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteInstanceProfile`.
 ///
-/// <p>Deletes the specified instance profile.</p><note>
+/// <p>Deletes the specified instance profile.</p> <note>
 /// <p>All migration projects associated with the instance profile must be deleted or modified before you can delete the instance profile.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

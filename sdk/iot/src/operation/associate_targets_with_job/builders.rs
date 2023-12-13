@@ -22,14 +22,11 @@ impl AssociateTargetsWithJobInputBuilder {
 }
 /// Fluent builder constructing a request to `AssociateTargetsWithJob`.
 ///
-/// <p>Associates a group with a continuous job. The following criteria must be met:</p>
+/// <p>Associates a group with a continuous job. The following criteria must be met: </p>
 /// <ul>
-/// <li>
-/// <p>The job must have been created with the <code>targetSelection</code> field set to "CONTINUOUS".</p></li>
-/// <li>
-/// <p>The job status must currently be "IN_PROGRESS".</p></li>
-/// <li>
-/// <p>The total number of targets associated with a job must not exceed 100.</p></li>
+/// <li> <p>The job must have been created with the <code>targetSelection</code> field set to "CONTINUOUS".</p> </li>
+/// <li> <p>The job status must currently be "IN_PROGRESS".</p> </li>
+/// <li> <p>The total number of targets associated with a job must not exceed 100.</p> </li>
 /// </ul>
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AssociateTargetsWithJob</a> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -165,7 +162,7 @@ impl AssociateTargetsWithJobFluentBuilder {
     }
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
     /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
-    /// <p><code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code></p><note>
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
     /// <p>The <code>namespaceId</code> feature is in public preview.</p>
     /// </note>
     pub fn namespace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -174,7 +171,7 @@ impl AssociateTargetsWithJobFluentBuilder {
     }
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
     /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
-    /// <p><code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code></p><note>
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
     /// <p>The <code>namespaceId</code> feature is in public preview.</p>
     /// </note>
     pub fn set_namespace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -183,7 +180,7 @@ impl AssociateTargetsWithJobFluentBuilder {
     }
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
     /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
-    /// <p><code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code></p><note>
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
     /// <p>The <code>namespaceId</code> feature is in public preview.</p>
     /// </note>
     pub fn get_namespace_id(&self) -> &::std::option::Option<::std::string::String> {

@@ -12,19 +12,14 @@ pub struct UpdatePolicyTemplateInput {
     /// <p>Specifies new statement content written in Cedar policy language to replace the current body of the policy template.</p>
     /// <p>You can change only the following elements of the policy body:</p>
     /// <ul>
-    /// <li>
-    /// <p>The <code>action</code> referenced by the policy template.</p></li>
-    /// <li>
-    /// <p>Any conditional clauses, such as <code>when</code> or <code>unless</code> clauses.</p></li>
+    /// <li> <p>The <code>action</code> referenced by the policy template.</p> </li>
+    /// <li> <p>Any conditional clauses, such as <code>when</code> or <code>unless</code> clauses.</p> </li>
     /// </ul>
     /// <p>You <b>can't</b> change the following elements:</p>
     /// <ul>
-    /// <li>
-    /// <p>The effect (<code>permit</code> or <code>forbid</code>) of the policy template.</p></li>
-    /// <li>
-    /// <p>The <code>principal</code> referenced by the policy template.</p></li>
-    /// <li>
-    /// <p>The <code>resource</code> referenced by the policy template.</p></li>
+    /// <li> <p>The effect (<code>permit</code> or <code>forbid</code>) of the policy template.</p> </li>
+    /// <li> <p>The <code>principal</code> referenced by the policy template.</p> </li>
+    /// <li> <p>The <code>resource</code> referenced by the policy template.</p> </li>
     /// </ul>
     pub statement: ::std::option::Option<::std::string::String>,
 }
@@ -44,19 +39,14 @@ impl UpdatePolicyTemplateInput {
     /// <p>Specifies new statement content written in Cedar policy language to replace the current body of the policy template.</p>
     /// <p>You can change only the following elements of the policy body:</p>
     /// <ul>
-    /// <li>
-    /// <p>The <code>action</code> referenced by the policy template.</p></li>
-    /// <li>
-    /// <p>Any conditional clauses, such as <code>when</code> or <code>unless</code> clauses.</p></li>
+    /// <li> <p>The <code>action</code> referenced by the policy template.</p> </li>
+    /// <li> <p>Any conditional clauses, such as <code>when</code> or <code>unless</code> clauses.</p> </li>
     /// </ul>
     /// <p>You <b>can't</b> change the following elements:</p>
     /// <ul>
-    /// <li>
-    /// <p>The effect (<code>permit</code> or <code>forbid</code>) of the policy template.</p></li>
-    /// <li>
-    /// <p>The <code>principal</code> referenced by the policy template.</p></li>
-    /// <li>
-    /// <p>The <code>resource</code> referenced by the policy template.</p></li>
+    /// <li> <p>The effect (<code>permit</code> or <code>forbid</code>) of the policy template.</p> </li>
+    /// <li> <p>The <code>principal</code> referenced by the policy template.</p> </li>
+    /// <li> <p>The <code>resource</code> referenced by the policy template.</p> </li>
     /// </ul>
     pub fn statement(&self) -> ::std::option::Option<&str> {
         self.statement.as_deref()
@@ -136,19 +126,14 @@ impl UpdatePolicyTemplateInputBuilder {
     /// <p>Specifies new statement content written in Cedar policy language to replace the current body of the policy template.</p>
     /// <p>You can change only the following elements of the policy body:</p>
     /// <ul>
-    /// <li>
-    /// <p>The <code>action</code> referenced by the policy template.</p></li>
-    /// <li>
-    /// <p>Any conditional clauses, such as <code>when</code> or <code>unless</code> clauses.</p></li>
+    /// <li> <p>The <code>action</code> referenced by the policy template.</p> </li>
+    /// <li> <p>Any conditional clauses, such as <code>when</code> or <code>unless</code> clauses.</p> </li>
     /// </ul>
     /// <p>You <b>can't</b> change the following elements:</p>
     /// <ul>
-    /// <li>
-    /// <p>The effect (<code>permit</code> or <code>forbid</code>) of the policy template.</p></li>
-    /// <li>
-    /// <p>The <code>principal</code> referenced by the policy template.</p></li>
-    /// <li>
-    /// <p>The <code>resource</code> referenced by the policy template.</p></li>
+    /// <li> <p>The effect (<code>permit</code> or <code>forbid</code>) of the policy template.</p> </li>
+    /// <li> <p>The <code>principal</code> referenced by the policy template.</p> </li>
+    /// <li> <p>The <code>resource</code> referenced by the policy template.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn statement(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -158,19 +143,14 @@ impl UpdatePolicyTemplateInputBuilder {
     /// <p>Specifies new statement content written in Cedar policy language to replace the current body of the policy template.</p>
     /// <p>You can change only the following elements of the policy body:</p>
     /// <ul>
-    /// <li>
-    /// <p>The <code>action</code> referenced by the policy template.</p></li>
-    /// <li>
-    /// <p>Any conditional clauses, such as <code>when</code> or <code>unless</code> clauses.</p></li>
+    /// <li> <p>The <code>action</code> referenced by the policy template.</p> </li>
+    /// <li> <p>Any conditional clauses, such as <code>when</code> or <code>unless</code> clauses.</p> </li>
     /// </ul>
     /// <p>You <b>can't</b> change the following elements:</p>
     /// <ul>
-    /// <li>
-    /// <p>The effect (<code>permit</code> or <code>forbid</code>) of the policy template.</p></li>
-    /// <li>
-    /// <p>The <code>principal</code> referenced by the policy template.</p></li>
-    /// <li>
-    /// <p>The <code>resource</code> referenced by the policy template.</p></li>
+    /// <li> <p>The effect (<code>permit</code> or <code>forbid</code>) of the policy template.</p> </li>
+    /// <li> <p>The <code>principal</code> referenced by the policy template.</p> </li>
+    /// <li> <p>The <code>resource</code> referenced by the policy template.</p> </li>
     /// </ul>
     pub fn set_statement(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.statement = input;
@@ -179,19 +159,14 @@ impl UpdatePolicyTemplateInputBuilder {
     /// <p>Specifies new statement content written in Cedar policy language to replace the current body of the policy template.</p>
     /// <p>You can change only the following elements of the policy body:</p>
     /// <ul>
-    /// <li>
-    /// <p>The <code>action</code> referenced by the policy template.</p></li>
-    /// <li>
-    /// <p>Any conditional clauses, such as <code>when</code> or <code>unless</code> clauses.</p></li>
+    /// <li> <p>The <code>action</code> referenced by the policy template.</p> </li>
+    /// <li> <p>Any conditional clauses, such as <code>when</code> or <code>unless</code> clauses.</p> </li>
     /// </ul>
     /// <p>You <b>can't</b> change the following elements:</p>
     /// <ul>
-    /// <li>
-    /// <p>The effect (<code>permit</code> or <code>forbid</code>) of the policy template.</p></li>
-    /// <li>
-    /// <p>The <code>principal</code> referenced by the policy template.</p></li>
-    /// <li>
-    /// <p>The <code>resource</code> referenced by the policy template.</p></li>
+    /// <li> <p>The effect (<code>permit</code> or <code>forbid</code>) of the policy template.</p> </li>
+    /// <li> <p>The <code>principal</code> referenced by the policy template.</p> </li>
+    /// <li> <p>The <code>resource</code> referenced by the policy template.</p> </li>
     /// </ul>
     pub fn get_statement(&self) -> &::std::option::Option<::std::string::String> {
         &self.statement

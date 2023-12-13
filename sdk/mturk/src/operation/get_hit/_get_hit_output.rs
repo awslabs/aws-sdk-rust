@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetHitOutput {
-    /// <p>Contains the requested HIT data.</p>
+    /// <p> Contains the requested HIT data.</p>
     pub hit: ::std::option::Option<crate::types::Hit>,
     _request_id: Option<String>,
 }
 impl GetHitOutput {
-    /// <p>Contains the requested HIT data.</p>
+    /// <p> Contains the requested HIT data.</p>
     pub fn hit(&self) -> ::std::option::Option<&crate::types::Hit> {
         self.hit.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct GetHitOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetHitOutputBuilder {
-    /// <p>Contains the requested HIT data.</p>
+    /// <p> Contains the requested HIT data.</p>
     pub fn hit(mut self, input: crate::types::Hit) -> Self {
         self.hit = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Contains the requested HIT data.</p>
+    /// <p> Contains the requested HIT data.</p>
     pub fn set_hit(mut self, input: ::std::option::Option<crate::types::Hit>) -> Self {
         self.hit = input;
         self
     }
-    /// <p>Contains the requested HIT data.</p>
+    /// <p> Contains the requested HIT data.</p>
     pub fn get_hit(&self) -> &::std::option::Option<crate::types::Hit> {
         &self.hit
     }

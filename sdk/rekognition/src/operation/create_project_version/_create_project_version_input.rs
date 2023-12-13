@@ -7,25 +7,21 @@ pub struct CreateProjectVersionInput {
     pub project_arn: ::std::option::Option<::std::string::String>,
     /// <p>A name for the version of the project version. This value must be unique.</p>
     pub version_name: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon S3 bucket location to store the results of training. The bucket can be any S3 bucket in your AWS account. You need <code>s3:PutObject</code> permission on the bucket.</p>
+    /// <p>The Amazon S3 bucket location to store the results of training. The bucket can be any S3 bucket in your AWS account. You need <code>s3:PutObject</code> permission on the bucket. </p>
     pub output_config: ::std::option::Option<crate::types::OutputConfig>,
-    /// <p>Specifies an external manifest that the services uses to train the project version. If you specify <code>TrainingData</code> you must also specify <code>TestingData</code>. The project must not have any associated datasets.</p>
+    /// <p>Specifies an external manifest that the services uses to train the project version. If you specify <code>TrainingData</code> you must also specify <code>TestingData</code>. The project must not have any associated datasets. </p>
     pub training_data: ::std::option::Option<crate::types::TrainingData>,
     /// <p>Specifies an external manifest that the service uses to test the project version. If you specify <code>TestingData</code> you must also specify <code>TrainingData</code>. The project must not have any associated datasets.</p>
     pub testing_data: ::std::option::Option<crate::types::TestingData>,
-    /// <p>A set of tags (key-value pairs) that you want to attach to the project version.</p>
+    /// <p> A set of tags (key-value pairs) that you want to attach to the project version. </p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt training images, test images, and manifest files copied into the service for the project version. Your source images are unaffected. The key is also used to encrypt training results and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p>
     /// <p>If you choose to use your own KMS key, you need the following permissions on the KMS key.</p>
     /// <ul>
-    /// <li>
-    /// <p>kms:CreateGrant</p></li>
-    /// <li>
-    /// <p>kms:DescribeKey</p></li>
-    /// <li>
-    /// <p>kms:GenerateDataKey</p></li>
-    /// <li>
-    /// <p>kms:Decrypt</p></li>
+    /// <li> <p>kms:CreateGrant</p> </li>
+    /// <li> <p>kms:DescribeKey</p> </li>
+    /// <li> <p>kms:GenerateDataKey</p> </li>
+    /// <li> <p>kms:Decrypt</p> </li>
     /// </ul>
     /// <p>If you don't specify a value for <code>KmsKeyId</code>, images copied into the service are encrypted using a key that AWS owns and manages.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
@@ -43,11 +39,11 @@ impl CreateProjectVersionInput {
     pub fn version_name(&self) -> ::std::option::Option<&str> {
         self.version_name.as_deref()
     }
-    /// <p>The Amazon S3 bucket location to store the results of training. The bucket can be any S3 bucket in your AWS account. You need <code>s3:PutObject</code> permission on the bucket.</p>
+    /// <p>The Amazon S3 bucket location to store the results of training. The bucket can be any S3 bucket in your AWS account. You need <code>s3:PutObject</code> permission on the bucket. </p>
     pub fn output_config(&self) -> ::std::option::Option<&crate::types::OutputConfig> {
         self.output_config.as_ref()
     }
-    /// <p>Specifies an external manifest that the services uses to train the project version. If you specify <code>TrainingData</code> you must also specify <code>TestingData</code>. The project must not have any associated datasets.</p>
+    /// <p>Specifies an external manifest that the services uses to train the project version. If you specify <code>TrainingData</code> you must also specify <code>TestingData</code>. The project must not have any associated datasets. </p>
     pub fn training_data(&self) -> ::std::option::Option<&crate::types::TrainingData> {
         self.training_data.as_ref()
     }
@@ -55,21 +51,17 @@ impl CreateProjectVersionInput {
     pub fn testing_data(&self) -> ::std::option::Option<&crate::types::TestingData> {
         self.testing_data.as_ref()
     }
-    /// <p>A set of tags (key-value pairs) that you want to attach to the project version.</p>
+    /// <p> A set of tags (key-value pairs) that you want to attach to the project version. </p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt training images, test images, and manifest files copied into the service for the project version. Your source images are unaffected. The key is also used to encrypt training results and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p>
     /// <p>If you choose to use your own KMS key, you need the following permissions on the KMS key.</p>
     /// <ul>
-    /// <li>
-    /// <p>kms:CreateGrant</p></li>
-    /// <li>
-    /// <p>kms:DescribeKey</p></li>
-    /// <li>
-    /// <p>kms:GenerateDataKey</p></li>
-    /// <li>
-    /// <p>kms:Decrypt</p></li>
+    /// <li> <p>kms:CreateGrant</p> </li>
+    /// <li> <p>kms:DescribeKey</p> </li>
+    /// <li> <p>kms:GenerateDataKey</p> </li>
+    /// <li> <p>kms:Decrypt</p> </li>
     /// </ul>
     /// <p>If you don't specify a value for <code>KmsKeyId</code>, images copied into the service are encrypted using a key that AWS owns and manages.</p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
@@ -136,32 +128,32 @@ impl CreateProjectVersionInputBuilder {
     pub fn get_version_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.version_name
     }
-    /// <p>The Amazon S3 bucket location to store the results of training. The bucket can be any S3 bucket in your AWS account. You need <code>s3:PutObject</code> permission on the bucket.</p>
+    /// <p>The Amazon S3 bucket location to store the results of training. The bucket can be any S3 bucket in your AWS account. You need <code>s3:PutObject</code> permission on the bucket. </p>
     /// This field is required.
     pub fn output_config(mut self, input: crate::types::OutputConfig) -> Self {
         self.output_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Amazon S3 bucket location to store the results of training. The bucket can be any S3 bucket in your AWS account. You need <code>s3:PutObject</code> permission on the bucket.</p>
+    /// <p>The Amazon S3 bucket location to store the results of training. The bucket can be any S3 bucket in your AWS account. You need <code>s3:PutObject</code> permission on the bucket. </p>
     pub fn set_output_config(mut self, input: ::std::option::Option<crate::types::OutputConfig>) -> Self {
         self.output_config = input;
         self
     }
-    /// <p>The Amazon S3 bucket location to store the results of training. The bucket can be any S3 bucket in your AWS account. You need <code>s3:PutObject</code> permission on the bucket.</p>
+    /// <p>The Amazon S3 bucket location to store the results of training. The bucket can be any S3 bucket in your AWS account. You need <code>s3:PutObject</code> permission on the bucket. </p>
     pub fn get_output_config(&self) -> &::std::option::Option<crate::types::OutputConfig> {
         &self.output_config
     }
-    /// <p>Specifies an external manifest that the services uses to train the project version. If you specify <code>TrainingData</code> you must also specify <code>TestingData</code>. The project must not have any associated datasets.</p>
+    /// <p>Specifies an external manifest that the services uses to train the project version. If you specify <code>TrainingData</code> you must also specify <code>TestingData</code>. The project must not have any associated datasets. </p>
     pub fn training_data(mut self, input: crate::types::TrainingData) -> Self {
         self.training_data = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies an external manifest that the services uses to train the project version. If you specify <code>TrainingData</code> you must also specify <code>TestingData</code>. The project must not have any associated datasets.</p>
+    /// <p>Specifies an external manifest that the services uses to train the project version. If you specify <code>TrainingData</code> you must also specify <code>TestingData</code>. The project must not have any associated datasets. </p>
     pub fn set_training_data(mut self, input: ::std::option::Option<crate::types::TrainingData>) -> Self {
         self.training_data = input;
         self
     }
-    /// <p>Specifies an external manifest that the services uses to train the project version. If you specify <code>TrainingData</code> you must also specify <code>TestingData</code>. The project must not have any associated datasets.</p>
+    /// <p>Specifies an external manifest that the services uses to train the project version. If you specify <code>TrainingData</code> you must also specify <code>TestingData</code>. The project must not have any associated datasets. </p>
     pub fn get_training_data(&self) -> &::std::option::Option<crate::types::TrainingData> {
         &self.training_data
     }
@@ -183,33 +175,29 @@ impl CreateProjectVersionInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A set of tags (key-value pairs) that you want to attach to the project version.</p>
+    /// <p> A set of tags (key-value pairs) that you want to attach to the project version. </p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>A set of tags (key-value pairs) that you want to attach to the project version.</p>
+    /// <p> A set of tags (key-value pairs) that you want to attach to the project version. </p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>A set of tags (key-value pairs) that you want to attach to the project version.</p>
+    /// <p> A set of tags (key-value pairs) that you want to attach to the project version. </p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt training images, test images, and manifest files copied into the service for the project version. Your source images are unaffected. The key is also used to encrypt training results and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p>
     /// <p>If you choose to use your own KMS key, you need the following permissions on the KMS key.</p>
     /// <ul>
-    /// <li>
-    /// <p>kms:CreateGrant</p></li>
-    /// <li>
-    /// <p>kms:DescribeKey</p></li>
-    /// <li>
-    /// <p>kms:GenerateDataKey</p></li>
-    /// <li>
-    /// <p>kms:Decrypt</p></li>
+    /// <li> <p>kms:CreateGrant</p> </li>
+    /// <li> <p>kms:DescribeKey</p> </li>
+    /// <li> <p>kms:GenerateDataKey</p> </li>
+    /// <li> <p>kms:Decrypt</p> </li>
     /// </ul>
     /// <p>If you don't specify a value for <code>KmsKeyId</code>, images copied into the service are encrypted using a key that AWS owns and manages.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -219,14 +207,10 @@ impl CreateProjectVersionInputBuilder {
     /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt training images, test images, and manifest files copied into the service for the project version. Your source images are unaffected. The key is also used to encrypt training results and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p>
     /// <p>If you choose to use your own KMS key, you need the following permissions on the KMS key.</p>
     /// <ul>
-    /// <li>
-    /// <p>kms:CreateGrant</p></li>
-    /// <li>
-    /// <p>kms:DescribeKey</p></li>
-    /// <li>
-    /// <p>kms:GenerateDataKey</p></li>
-    /// <li>
-    /// <p>kms:Decrypt</p></li>
+    /// <li> <p>kms:CreateGrant</p> </li>
+    /// <li> <p>kms:DescribeKey</p> </li>
+    /// <li> <p>kms:GenerateDataKey</p> </li>
+    /// <li> <p>kms:Decrypt</p> </li>
     /// </ul>
     /// <p>If you don't specify a value for <code>KmsKeyId</code>, images copied into the service are encrypted using a key that AWS owns and manages.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -236,14 +220,10 @@ impl CreateProjectVersionInputBuilder {
     /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt training images, test images, and manifest files copied into the service for the project version. Your source images are unaffected. The key is also used to encrypt training results and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p>
     /// <p>If you choose to use your own KMS key, you need the following permissions on the KMS key.</p>
     /// <ul>
-    /// <li>
-    /// <p>kms:CreateGrant</p></li>
-    /// <li>
-    /// <p>kms:DescribeKey</p></li>
-    /// <li>
-    /// <p>kms:GenerateDataKey</p></li>
-    /// <li>
-    /// <p>kms:Decrypt</p></li>
+    /// <li> <p>kms:CreateGrant</p> </li>
+    /// <li> <p>kms:DescribeKey</p> </li>
+    /// <li> <p>kms:GenerateDataKey</p> </li>
+    /// <li> <p>kms:Decrypt</p> </li>
     /// </ul>
     /// <p>If you don't specify a value for <code>KmsKeyId</code>, images copied into the service are encrypted using a key that AWS owns and manages.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {

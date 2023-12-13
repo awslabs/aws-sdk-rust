@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PushNotificationPreferences {
-    /// <p>Enum value that indicates which push notifications to send to the requested member of a channel. <code>ALL</code> sends all push notifications, <code>NONE</code> sends no push notifications, <code>FILTERED</code> sends only filtered push notifications.</p>
+    /// <p>Enum value that indicates which push notifications to send to the requested member of a channel. <code>ALL</code> sends all push notifications, <code>NONE</code> sends no push notifications, <code>FILTERED</code> sends only filtered push notifications. </p>
     pub allow_notifications: crate::types::AllowNotifications,
     /// <p>The simple JSON object used to send a subset of a push notification to the requested member.</p>
     pub filter_rule: ::std::option::Option<::std::string::String>,
 }
 impl PushNotificationPreferences {
-    /// <p>Enum value that indicates which push notifications to send to the requested member of a channel. <code>ALL</code> sends all push notifications, <code>NONE</code> sends no push notifications, <code>FILTERED</code> sends only filtered push notifications.</p>
+    /// <p>Enum value that indicates which push notifications to send to the requested member of a channel. <code>ALL</code> sends all push notifications, <code>NONE</code> sends no push notifications, <code>FILTERED</code> sends only filtered push notifications. </p>
     pub fn allow_notifications(&self) -> &crate::types::AllowNotifications {
         &self.allow_notifications
     }
@@ -42,18 +42,18 @@ pub struct PushNotificationPreferencesBuilder {
     pub(crate) filter_rule: ::std::option::Option<::std::string::String>,
 }
 impl PushNotificationPreferencesBuilder {
-    /// <p>Enum value that indicates which push notifications to send to the requested member of a channel. <code>ALL</code> sends all push notifications, <code>NONE</code> sends no push notifications, <code>FILTERED</code> sends only filtered push notifications.</p>
+    /// <p>Enum value that indicates which push notifications to send to the requested member of a channel. <code>ALL</code> sends all push notifications, <code>NONE</code> sends no push notifications, <code>FILTERED</code> sends only filtered push notifications. </p>
     /// This field is required.
     pub fn allow_notifications(mut self, input: crate::types::AllowNotifications) -> Self {
         self.allow_notifications = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Enum value that indicates which push notifications to send to the requested member of a channel. <code>ALL</code> sends all push notifications, <code>NONE</code> sends no push notifications, <code>FILTERED</code> sends only filtered push notifications.</p>
+    /// <p>Enum value that indicates which push notifications to send to the requested member of a channel. <code>ALL</code> sends all push notifications, <code>NONE</code> sends no push notifications, <code>FILTERED</code> sends only filtered push notifications. </p>
     pub fn set_allow_notifications(mut self, input: ::std::option::Option<crate::types::AllowNotifications>) -> Self {
         self.allow_notifications = input;
         self
     }
-    /// <p>Enum value that indicates which push notifications to send to the requested member of a channel. <code>ALL</code> sends all push notifications, <code>NONE</code> sends no push notifications, <code>FILTERED</code> sends only filtered push notifications.</p>
+    /// <p>Enum value that indicates which push notifications to send to the requested member of a channel. <code>ALL</code> sends all push notifications, <code>NONE</code> sends no push notifications, <code>FILTERED</code> sends only filtered push notifications. </p>
     pub fn get_allow_notifications(&self) -> &::std::option::Option<crate::types::AllowNotifications> {
         &self.allow_notifications
     }

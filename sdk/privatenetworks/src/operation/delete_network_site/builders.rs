@@ -22,7 +22,7 @@ impl DeleteNetworkSiteInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteNetworkSite`.
 ///
-/// <p>Deletes the specified network site. Return the hardware after you delete the network site. You are responsible for minimum charges. For more information, see <a href="https://docs.aws.amazon.com/private-networks/latest/userguide/hardware-maintenance.html">Hardware returns</a> in the <i>Amazon Web Services Private 5G User Guide</i>.</p>
+/// <p>Deletes the specified network site. Return the hardware after you delete the network site. You are responsible for minimum charges. For more information, see <a href="https://docs.aws.amazon.com/private-networks/latest/userguide/hardware-maintenance.html">Hardware returns</a> in the <i>Amazon Web Services Private 5G User Guide</i>. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteNetworkSiteFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

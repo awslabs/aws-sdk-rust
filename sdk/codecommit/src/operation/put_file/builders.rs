@@ -127,35 +127,35 @@ impl PutFileFluentBuilder {
     pub fn get_branch_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_branch_name()
     }
-    /// <p>The content of the file, in binary object format.</p>
+    /// <p>The content of the file, in binary object format. </p>
     pub fn file_content(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.inner = self.inner.file_content(input);
         self
     }
-    /// <p>The content of the file, in binary object format.</p>
+    /// <p>The content of the file, in binary object format. </p>
     pub fn set_file_content(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.inner = self.inner.set_file_content(input);
         self
     }
-    /// <p>The content of the file, in binary object format.</p>
+    /// <p>The content of the file, in binary object format. </p>
     pub fn get_file_content(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         self.inner.get_file_content()
     }
-    /// <p>The name of the file you want to add or update, including the relative path to the file in the repository.</p><note>
+    /// <p>The name of the file you want to add or update, including the relative path to the file in the repository.</p> <note>
     /// <p>If the path does not currently exist in the repository, the path is created as part of adding the file.</p>
     /// </note>
     pub fn file_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.file_path(input.into());
         self
     }
-    /// <p>The name of the file you want to add or update, including the relative path to the file in the repository.</p><note>
+    /// <p>The name of the file you want to add or update, including the relative path to the file in the repository.</p> <note>
     /// <p>If the path does not currently exist in the repository, the path is created as part of adding the file.</p>
     /// </note>
     pub fn set_file_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_file_path(input);
         self
     }
-    /// <p>The name of the file you want to add or update, including the relative path to the file in the repository.</p><note>
+    /// <p>The name of the file you want to add or update, including the relative path to the file in the repository.</p> <note>
     /// <p>If the path does not currently exist in the repository, the path is created as part of adding the file.</p>
     /// </note>
     pub fn get_file_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -175,19 +175,19 @@ impl PutFileFluentBuilder {
     pub fn get_file_mode(&self) -> &::std::option::Option<crate::types::FileModeTypeEnum> {
         self.inner.get_file_mode()
     }
-    /// <p>The full commit ID of the head commit in the branch where you want to add or update the file. If this is an empty repository, no commit ID is required. If this is not an empty repository, a commit ID is required.</p>
+    /// <p>The full commit ID of the head commit in the branch where you want to add or update the file. If this is an empty repository, no commit ID is required. If this is not an empty repository, a commit ID is required. </p>
     /// <p>The commit ID must match the ID of the head commit at the time of the operation. Otherwise, an error occurs, and the file is not added or updated.</p>
     pub fn parent_commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.parent_commit_id(input.into());
         self
     }
-    /// <p>The full commit ID of the head commit in the branch where you want to add or update the file. If this is an empty repository, no commit ID is required. If this is not an empty repository, a commit ID is required.</p>
+    /// <p>The full commit ID of the head commit in the branch where you want to add or update the file. If this is an empty repository, no commit ID is required. If this is not an empty repository, a commit ID is required. </p>
     /// <p>The commit ID must match the ID of the head commit at the time of the operation. Otherwise, an error occurs, and the file is not added or updated.</p>
     pub fn set_parent_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_parent_commit_id(input);
         self
     }
-    /// <p>The full commit ID of the head commit in the branch where you want to add or update the file. If this is an empty repository, no commit ID is required. If this is not an empty repository, a commit ID is required.</p>
+    /// <p>The full commit ID of the head commit in the branch where you want to add or update the file. If this is an empty repository, no commit ID is required. If this is not an empty repository, a commit ID is required. </p>
     /// <p>The commit ID must match the ID of the head commit at the time of the operation. Otherwise, an error occurs, and the file is not added or updated.</p>
     pub fn get_parent_commit_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_parent_commit_id()

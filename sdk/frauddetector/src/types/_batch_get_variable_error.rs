@@ -4,19 +4,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetVariableError {
-    /// <p>The error name.</p>
+    /// <p>The error name. </p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The error code.</p>
+    /// <p>The error code. </p>
     pub code: i32,
     /// <p>The error message.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl BatchGetVariableError {
-    /// <p>The error name.</p>
+    /// <p>The error name. </p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The error code.</p>
+    /// <p>The error code. </p>
     pub fn code(&self) -> i32 {
         self.code
     }
@@ -41,31 +41,31 @@ pub struct BatchGetVariableErrorBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
 }
 impl BatchGetVariableErrorBuilder {
-    /// <p>The error name.</p>
+    /// <p>The error name. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The error name.</p>
+    /// <p>The error name. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The error name.</p>
+    /// <p>The error name. </p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The error code.</p>
+    /// <p>The error code. </p>
     pub fn code(mut self, input: i32) -> Self {
         self.code = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The error code.</p>
+    /// <p>The error code. </p>
     pub fn set_code(mut self, input: ::std::option::Option<i32>) -> Self {
         self.code = input;
         self
     }
-    /// <p>The error code.</p>
+    /// <p>The error code. </p>
     pub fn get_code(&self) -> &::std::option::Option<i32> {
         &self.code
     }

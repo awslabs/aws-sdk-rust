@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateVpcIngressConnectionOutput {
-    /// <p>A description of the App Runner VPC Ingress Connection resource that's created by this request.</p>
+    /// <p>A description of the App Runner VPC Ingress Connection resource that's created by this request. </p>
     pub vpc_ingress_connection: ::std::option::Option<crate::types::VpcIngressConnection>,
     _request_id: Option<String>,
 }
 impl CreateVpcIngressConnectionOutput {
-    /// <p>A description of the App Runner VPC Ingress Connection resource that's created by this request.</p>
+    /// <p>A description of the App Runner VPC Ingress Connection resource that's created by this request. </p>
     pub fn vpc_ingress_connection(&self) -> ::std::option::Option<&crate::types::VpcIngressConnection> {
         self.vpc_ingress_connection.as_ref()
     }
@@ -33,18 +33,18 @@ pub struct CreateVpcIngressConnectionOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateVpcIngressConnectionOutputBuilder {
-    /// <p>A description of the App Runner VPC Ingress Connection resource that's created by this request.</p>
+    /// <p>A description of the App Runner VPC Ingress Connection resource that's created by this request. </p>
     /// This field is required.
     pub fn vpc_ingress_connection(mut self, input: crate::types::VpcIngressConnection) -> Self {
         self.vpc_ingress_connection = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A description of the App Runner VPC Ingress Connection resource that's created by this request.</p>
+    /// <p>A description of the App Runner VPC Ingress Connection resource that's created by this request. </p>
     pub fn set_vpc_ingress_connection(mut self, input: ::std::option::Option<crate::types::VpcIngressConnection>) -> Self {
         self.vpc_ingress_connection = input;
         self
     }
-    /// <p>A description of the App Runner VPC Ingress Connection resource that's created by this request.</p>
+    /// <p>A description of the App Runner VPC Ingress Connection resource that's created by this request. </p>
     pub fn get_vpc_ingress_connection(&self) -> &::std::option::Option<crate::types::VpcIngressConnection> {
         &self.vpc_ingress_connection
     }

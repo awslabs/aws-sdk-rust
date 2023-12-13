@@ -9,7 +9,7 @@ pub struct LifecycleRule {
     pub expiration: ::std::option::Option<crate::types::LifecycleExpiration>,
     /// <p>Unique identifier for the rule. The value cannot be longer than 255 characters.</p>
     pub id: ::std::option::Option<::std::string::String>,
-    /// <p>Prefix identifying one or more objects to which the rule applies. This is no longer used; use <code>Filter</code> instead.</p><important>
+    /// <p>Prefix identifying one or more objects to which the rule applies. This is no longer used; use <code>Filter</code> instead.</p> <important>
     /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
     #[deprecated]
@@ -20,7 +20,7 @@ pub struct LifecycleRule {
     pub status: crate::types::ExpirationStatus,
     /// <p>Specifies when an Amazon S3 object transitions to a specified storage class.</p>
     pub transitions: ::std::option::Option<::std::vec::Vec<crate::types::Transition>>,
-    /// <p>Specifies the transition rule for the lifecycle rule that describes when noncurrent objects transition to a specific storage class. If your bucket is versioning-enabled (or versioning is suspended), you can set this action to request that Amazon S3 transition noncurrent object versions to a specific storage class at a set period in the object's lifetime.</p>
+    /// <p> Specifies the transition rule for the lifecycle rule that describes when noncurrent objects transition to a specific storage class. If your bucket is versioning-enabled (or versioning is suspended), you can set this action to request that Amazon S3 transition noncurrent object versions to a specific storage class at a set period in the object's lifetime. </p>
     pub noncurrent_version_transitions: ::std::option::Option<::std::vec::Vec<crate::types::NoncurrentVersionTransition>>,
     /// <p>Specifies when noncurrent object versions expire. Upon expiration, Amazon S3 permanently deletes the noncurrent object versions. You set this lifecycle configuration action on a bucket that has versioning enabled (or suspended) to request that Amazon S3 delete noncurrent object versions at a specific period in the object's lifetime.</p>
     pub noncurrent_version_expiration: ::std::option::Option<crate::types::NoncurrentVersionExpiration>,
@@ -36,7 +36,7 @@ impl LifecycleRule {
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>Prefix identifying one or more objects to which the rule applies. This is no longer used; use <code>Filter</code> instead.</p><important>
+    /// <p>Prefix identifying one or more objects to which the rule applies. This is no longer used; use <code>Filter</code> instead.</p> <important>
     /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
     #[deprecated]
@@ -57,7 +57,7 @@ impl LifecycleRule {
     pub fn transitions(&self) -> &[crate::types::Transition] {
         self.transitions.as_deref().unwrap_or_default()
     }
-    /// <p>Specifies the transition rule for the lifecycle rule that describes when noncurrent objects transition to a specific storage class. If your bucket is versioning-enabled (or versioning is suspended), you can set this action to request that Amazon S3 transition noncurrent object versions to a specific storage class at a set period in the object's lifetime.</p>
+    /// <p> Specifies the transition rule for the lifecycle rule that describes when noncurrent objects transition to a specific storage class. If your bucket is versioning-enabled (or versioning is suspended), you can set this action to request that Amazon S3 transition noncurrent object versions to a specific storage class at a set period in the object's lifetime. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.noncurrent_version_transitions.is_none()`.
     pub fn noncurrent_version_transitions(&self) -> &[crate::types::NoncurrentVersionTransition] {
@@ -122,7 +122,7 @@ impl LifecycleRuleBuilder {
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
-    /// <p>Prefix identifying one or more objects to which the rule applies. This is no longer used; use <code>Filter</code> instead.</p><important>
+    /// <p>Prefix identifying one or more objects to which the rule applies. This is no longer used; use <code>Filter</code> instead.</p> <important>
     /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
     #[deprecated]
@@ -130,7 +130,7 @@ impl LifecycleRuleBuilder {
         self.prefix = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Prefix identifying one or more objects to which the rule applies. This is no longer used; use <code>Filter</code> instead.</p><important>
+    /// <p>Prefix identifying one or more objects to which the rule applies. This is no longer used; use <code>Filter</code> instead.</p> <important>
     /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
     #[deprecated]
@@ -138,7 +138,7 @@ impl LifecycleRuleBuilder {
         self.prefix = input;
         self
     }
-    /// <p>Prefix identifying one or more objects to which the rule applies. This is no longer used; use <code>Filter</code> instead.</p><important>
+    /// <p>Prefix identifying one or more objects to which the rule applies. This is no longer used; use <code>Filter</code> instead.</p> <important>
     /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
     #[deprecated]
@@ -198,14 +198,14 @@ impl LifecycleRuleBuilder {
     ///
     /// To override the contents of this collection use [`set_noncurrent_version_transitions`](Self::set_noncurrent_version_transitions).
     ///
-    /// <p>Specifies the transition rule for the lifecycle rule that describes when noncurrent objects transition to a specific storage class. If your bucket is versioning-enabled (or versioning is suspended), you can set this action to request that Amazon S3 transition noncurrent object versions to a specific storage class at a set period in the object's lifetime.</p>
+    /// <p> Specifies the transition rule for the lifecycle rule that describes when noncurrent objects transition to a specific storage class. If your bucket is versioning-enabled (or versioning is suspended), you can set this action to request that Amazon S3 transition noncurrent object versions to a specific storage class at a set period in the object's lifetime. </p>
     pub fn noncurrent_version_transitions(mut self, input: crate::types::NoncurrentVersionTransition) -> Self {
         let mut v = self.noncurrent_version_transitions.unwrap_or_default();
         v.push(input);
         self.noncurrent_version_transitions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Specifies the transition rule for the lifecycle rule that describes when noncurrent objects transition to a specific storage class. If your bucket is versioning-enabled (or versioning is suspended), you can set this action to request that Amazon S3 transition noncurrent object versions to a specific storage class at a set period in the object's lifetime.</p>
+    /// <p> Specifies the transition rule for the lifecycle rule that describes when noncurrent objects transition to a specific storage class. If your bucket is versioning-enabled (or versioning is suspended), you can set this action to request that Amazon S3 transition noncurrent object versions to a specific storage class at a set period in the object's lifetime. </p>
     pub fn set_noncurrent_version_transitions(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::NoncurrentVersionTransition>>,
@@ -213,7 +213,7 @@ impl LifecycleRuleBuilder {
         self.noncurrent_version_transitions = input;
         self
     }
-    /// <p>Specifies the transition rule for the lifecycle rule that describes when noncurrent objects transition to a specific storage class. If your bucket is versioning-enabled (or versioning is suspended), you can set this action to request that Amazon S3 transition noncurrent object versions to a specific storage class at a set period in the object's lifetime.</p>
+    /// <p> Specifies the transition rule for the lifecycle rule that describes when noncurrent objects transition to a specific storage class. If your bucket is versioning-enabled (or versioning is suspended), you can set this action to request that Amazon S3 transition noncurrent object versions to a specific storage class at a set period in the object's lifetime. </p>
     pub fn get_noncurrent_version_transitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NoncurrentVersionTransition>> {
         &self.noncurrent_version_transitions
     }

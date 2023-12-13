@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSubjectInput {
-    /// <p>The unique identifier of the subject.</p>
+    /// <p>The unique identifier of the subject. </p>
     pub subject_id: ::std::option::Option<::std::string::String>,
 }
 impl GetSubjectInput {
-    /// <p>The unique identifier of the subject.</p>
+    /// <p>The unique identifier of the subject. </p>
     pub fn subject_id(&self) -> ::std::option::Option<&str> {
         self.subject_id.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct GetSubjectInputBuilder {
     pub(crate) subject_id: ::std::option::Option<::std::string::String>,
 }
 impl GetSubjectInputBuilder {
-    /// <p>The unique identifier of the subject.</p>
+    /// <p>The unique identifier of the subject. </p>
     /// This field is required.
     pub fn subject_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subject_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the subject.</p>
+    /// <p>The unique identifier of the subject. </p>
     pub fn set_subject_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subject_id = input;
         self
     }
-    /// <p>The unique identifier of the subject.</p>
+    /// <p>The unique identifier of the subject. </p>
     pub fn get_subject_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.subject_id
     }

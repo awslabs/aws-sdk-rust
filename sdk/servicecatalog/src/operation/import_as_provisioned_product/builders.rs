@@ -22,14 +22,14 @@ impl ImportAsProvisionedProductInputBuilder {
 }
 /// Fluent builder constructing a request to `ImportAsProvisionedProduct`.
 ///
-/// <p>Requests the import of a resource as an Service Catalog provisioned product that is associated to an Service Catalog product and provisioning artifact. Once imported, all supported governance actions are supported on the provisioned product.</p>
-/// <p>Resource import only supports CloudFormation stack ARNs. CloudFormation StackSets, and non-root nested stacks, are not supported.</p>
-/// <p>The CloudFormation stack must have one of the following statuses to be imported: <code>CREATE_COMPLETE</code>, <code>UPDATE_COMPLETE</code>, <code>UPDATE_ROLLBACK_COMPLETE</code>, <code>IMPORT_COMPLETE</code>, and <code>IMPORT_ROLLBACK_COMPLETE</code>.</p>
-/// <p>Import of the resource requires that the CloudFormation stack template matches the associated Service Catalog product provisioning artifact.</p><note>
-/// <p>When you import an existing CloudFormation stack into a portfolio, Service Catalog does not apply the product's associated constraints during the import process. Service Catalog applies the constraints after you call <code>UpdateProvisionedProduct</code> for the provisioned product.</p>
+/// <p> Requests the import of a resource as an Service Catalog provisioned product that is associated to an Service Catalog product and provisioning artifact. Once imported, all supported governance actions are supported on the provisioned product. </p>
+/// <p> Resource import only supports CloudFormation stack ARNs. CloudFormation StackSets, and non-root nested stacks, are not supported. </p>
+/// <p> The CloudFormation stack must have one of the following statuses to be imported: <code>CREATE_COMPLETE</code>, <code>UPDATE_COMPLETE</code>, <code>UPDATE_ROLLBACK_COMPLETE</code>, <code>IMPORT_COMPLETE</code>, and <code>IMPORT_ROLLBACK_COMPLETE</code>. </p>
+/// <p> Import of the resource requires that the CloudFormation stack template matches the associated Service Catalog product provisioning artifact. </p> <note>
+/// <p> When you import an existing CloudFormation stack into a portfolio, Service Catalog does not apply the product's associated constraints during the import process. Service Catalog applies the constraints after you call <code>UpdateProvisionedProduct</code> for the provisioned product. </p>
 /// </note>
-/// <p>The user or role that performs this operation must have the <code>cloudformation:GetTemplate</code> and <code>cloudformation:DescribeStacks</code> IAM policy permissions.</p>
-/// <p>You can only import one provisioned product at a time. The product's CloudFormation stack must have the <code>IMPORT_COMPLETE</code> status before you import another.</p>
+/// <p> The user or role that performs this operation must have the <code>cloudformation:GetTemplate</code> and <code>cloudformation:DescribeStacks</code> IAM policy permissions. </p>
+/// <p>You can only import one provisioned product at a time. The product's CloudFormation stack must have the <code>IMPORT_COMPLETE</code> status before you import another. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ImportAsProvisionedProductFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -117,10 +117,8 @@ impl ImportAsProvisionedProductFluentBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>jp</code> - Japanese</p></li>
-    /// <li>
-    /// <p><code>zh</code> - Chinese</p></li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accept_language(input.into());
@@ -128,10 +126,8 @@ impl ImportAsProvisionedProductFluentBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>jp</code> - Japanese</p></li>
-    /// <li>
-    /// <p><code>zh</code> - Chinese</p></li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_accept_language(input);
@@ -139,10 +135,8 @@ impl ImportAsProvisionedProductFluentBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>jp</code> - Japanese</p></li>
-    /// <li>
-    /// <p><code>zh</code> - Chinese</p></li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_accept_language()
@@ -175,17 +169,17 @@ impl ImportAsProvisionedProductFluentBuilder {
     pub fn get_provisioning_artifact_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_provisioning_artifact_id()
     }
-    /// <p>The user-friendly name of the provisioned product. The value must be unique for the Amazon Web Services account. The name cannot be updated after the product is provisioned.</p>
+    /// <p>The user-friendly name of the provisioned product. The value must be unique for the Amazon Web Services account. The name cannot be updated after the product is provisioned. </p>
     pub fn provisioned_product_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.provisioned_product_name(input.into());
         self
     }
-    /// <p>The user-friendly name of the provisioned product. The value must be unique for the Amazon Web Services account. The name cannot be updated after the product is provisioned.</p>
+    /// <p>The user-friendly name of the provisioned product. The value must be unique for the Amazon Web Services account. The name cannot be updated after the product is provisioned. </p>
     pub fn set_provisioned_product_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_provisioned_product_name(input);
         self
     }
-    /// <p>The user-friendly name of the provisioned product. The value must be unique for the Amazon Web Services account. The name cannot be updated after the product is provisioned.</p>
+    /// <p>The user-friendly name of the provisioned product. The value must be unique for the Amazon Web Services account. The name cannot be updated after the product is provisioned. </p>
     pub fn get_provisioned_product_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_provisioned_product_name()
     }

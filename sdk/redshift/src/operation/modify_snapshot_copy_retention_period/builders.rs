@@ -22,7 +22,7 @@ impl ModifySnapshotCopyRetentionPeriodInputBuilder {
 }
 /// Fluent builder constructing a request to `ModifySnapshotCopyRetentionPeriod`.
 ///
-/// <p>Modifies the number of days to retain snapshots in the destination Amazon Web Services Region after they are copied from the source Amazon Web Services Region. By default, this operation only changes the retention period of copied automated snapshots. The retention periods for both new and existing copied automated snapshots are updated with the new retention period. You can set the manual option to change only the retention periods of copied manual snapshots. If you set this option, only newly copied manual snapshots have the new retention period.</p>
+/// <p>Modifies the number of days to retain snapshots in the destination Amazon Web Services Region after they are copied from the source Amazon Web Services Region. By default, this operation only changes the retention period of copied automated snapshots. The retention periods for both new and existing copied automated snapshots are updated with the new retention period. You can set the manual option to change only the retention periods of copied manual snapshots. If you set this option, only newly copied manual snapshots have the new retention period. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifySnapshotCopyRetentionPeriodFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -126,10 +126,10 @@ impl ModifySnapshotCopyRetentionPeriodFluentBuilder {
         self.inner.get_cluster_identifier()
     }
     /// <p>The number of days to retain automated snapshots in the destination Amazon Web Services Region after they are copied from the source Amazon Web Services Region.</p>
-    /// <p>By default, this only changes the retention period of copied automated snapshots.</p>
+    /// <p>By default, this only changes the retention period of copied automated snapshots. </p>
     /// <p>If you decrease the retention period for automated snapshots that are copied to a destination Amazon Web Services Region, Amazon Redshift deletes any existing automated snapshots that were copied to the destination Amazon Web Services Region and that fall outside of the new retention period.</p>
-    /// <p>Constraints: Must be at least 1 and no more than 35 for automated snapshots.</p>
-    /// <p>If you specify the <code>manual</code> option, only newly copied manual snapshots will have the new retention period.</p>
+    /// <p>Constraints: Must be at least 1 and no more than 35 for automated snapshots. </p>
+    /// <p>If you specify the <code>manual</code> option, only newly copied manual snapshots will have the new retention period. </p>
     /// <p>If you specify the value of -1 newly copied manual snapshots are retained indefinitely.</p>
     /// <p>Constraints: The number of days must be either -1 or an integer between 1 and 3,653 for manual snapshots.</p>
     pub fn retention_period(mut self, input: i32) -> Self {
@@ -137,10 +137,10 @@ impl ModifySnapshotCopyRetentionPeriodFluentBuilder {
         self
     }
     /// <p>The number of days to retain automated snapshots in the destination Amazon Web Services Region after they are copied from the source Amazon Web Services Region.</p>
-    /// <p>By default, this only changes the retention period of copied automated snapshots.</p>
+    /// <p>By default, this only changes the retention period of copied automated snapshots. </p>
     /// <p>If you decrease the retention period for automated snapshots that are copied to a destination Amazon Web Services Region, Amazon Redshift deletes any existing automated snapshots that were copied to the destination Amazon Web Services Region and that fall outside of the new retention period.</p>
-    /// <p>Constraints: Must be at least 1 and no more than 35 for automated snapshots.</p>
-    /// <p>If you specify the <code>manual</code> option, only newly copied manual snapshots will have the new retention period.</p>
+    /// <p>Constraints: Must be at least 1 and no more than 35 for automated snapshots. </p>
+    /// <p>If you specify the <code>manual</code> option, only newly copied manual snapshots will have the new retention period. </p>
     /// <p>If you specify the value of -1 newly copied manual snapshots are retained indefinitely.</p>
     /// <p>Constraints: The number of days must be either -1 or an integer between 1 and 3,653 for manual snapshots.</p>
     pub fn set_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
@@ -148,10 +148,10 @@ impl ModifySnapshotCopyRetentionPeriodFluentBuilder {
         self
     }
     /// <p>The number of days to retain automated snapshots in the destination Amazon Web Services Region after they are copied from the source Amazon Web Services Region.</p>
-    /// <p>By default, this only changes the retention period of copied automated snapshots.</p>
+    /// <p>By default, this only changes the retention period of copied automated snapshots. </p>
     /// <p>If you decrease the retention period for automated snapshots that are copied to a destination Amazon Web Services Region, Amazon Redshift deletes any existing automated snapshots that were copied to the destination Amazon Web Services Region and that fall outside of the new retention period.</p>
-    /// <p>Constraints: Must be at least 1 and no more than 35 for automated snapshots.</p>
-    /// <p>If you specify the <code>manual</code> option, only newly copied manual snapshots will have the new retention period.</p>
+    /// <p>Constraints: Must be at least 1 and no more than 35 for automated snapshots. </p>
+    /// <p>If you specify the <code>manual</code> option, only newly copied manual snapshots will have the new retention period. </p>
     /// <p>If you specify the value of -1 newly copied manual snapshots are retained indefinitely.</p>
     /// <p>Constraints: The number of days must be either -1 or an integer between 1 and 3,653 for manual snapshots.</p>
     pub fn get_retention_period(&self) -> &::std::option::Option<i32> {

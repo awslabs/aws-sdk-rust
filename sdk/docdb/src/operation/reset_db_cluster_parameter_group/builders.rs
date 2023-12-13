@@ -22,8 +22,8 @@ impl ResetDbClusterParameterGroupInputBuilder {
 }
 /// Fluent builder constructing a request to `ResetDBClusterParameterGroup`.
 ///
-/// <p>Modifies the parameters of a cluster parameter group to the default value. To reset specific parameters, submit a list of the following: <code>ParameterName</code> and <code>ApplyMethod</code>. To reset the entire cluster parameter group, specify the <code>DBClusterParameterGroupName</code> and <code>ResetAllParameters</code> parameters.</p>
-/// <p>When you reset the entire group, dynamic parameters are updated immediately and static parameters are set to <code>pending-reboot</code> to take effect on the next DB instance reboot.</p>
+/// <p> Modifies the parameters of a cluster parameter group to the default value. To reset specific parameters, submit a list of the following: <code>ParameterName</code> and <code>ApplyMethod</code>. To reset the entire cluster parameter group, specify the <code>DBClusterParameterGroupName</code> and <code>ResetAllParameters</code> parameters. </p>
+/// <p> When you reset the entire group, dynamic parameters are updated immediately and static parameters are set to <code>pending-reboot</code> to take effect on the next DB instance reboot.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ResetDBClusterParameterGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

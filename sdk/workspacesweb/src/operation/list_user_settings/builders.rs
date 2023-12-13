@@ -114,17 +114,17 @@ impl ListUserSettingsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_user_settings::paginator::ListUserSettingsPaginator {
         crate::operation::list_user_settings::paginator::ListUserSettingsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+    /// <p>The pagination token used to retrieve the next page of results for this operation. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+    /// <p>The pagination token used to retrieve the next page of results for this operation. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+    /// <p>The pagination token used to retrieve the next page of results for this operation. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

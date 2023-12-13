@@ -7,7 +7,7 @@ pub struct StartDashboardSnapshotJobOutput {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the job. The job ID is set when you start a new job with a <code>StartDashboardSnapshotJob</code> API call.</p>
     pub snapshot_job_id: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Web Services request ID for this operation.</p>
+    /// <p> The Amazon Web Services request ID for this operation. </p>
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The HTTP status of the request</p>
     pub status: i32,
@@ -22,7 +22,7 @@ impl StartDashboardSnapshotJobOutput {
     pub fn snapshot_job_id(&self) -> ::std::option::Option<&str> {
         self.snapshot_job_id.as_deref()
     }
-    /// <p>The Amazon Web Services request ID for this operation.</p>
+    /// <p> The Amazon Web Services request ID for this operation. </p>
     pub fn request_id(&self) -> ::std::option::Option<&str> {
         self.request_id.as_deref()
     }
@@ -82,17 +82,17 @@ impl StartDashboardSnapshotJobOutputBuilder {
     pub fn get_snapshot_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.snapshot_job_id
     }
-    /// <p>The Amazon Web Services request ID for this operation.</p>
+    /// <p> The Amazon Web Services request ID for this operation. </p>
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Web Services request ID for this operation.</p>
+    /// <p> The Amazon Web Services request ID for this operation. </p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.request_id = input;
         self
     }
-    /// <p>The Amazon Web Services request ID for this operation.</p>
+    /// <p> The Amazon Web Services request ID for this operation. </p>
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.request_id
     }

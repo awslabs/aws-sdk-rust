@@ -135,10 +135,8 @@ impl DescribePendingMaintenanceActionsFluentBuilder {
     /// <p>A filter that specifies one or more resources to return pending maintenance actions for.</p>
     /// <p>Supported filters:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list only includes pending maintenance actions for the DB clusters identified by these ARNs.</p></li>
-    /// <li>
-    /// <p><code>db-instance-id</code> - Accepts DB instance identifiers and DB instance ARNs. The results list only includes pending maintenance actions for the DB instances identified by these ARNs.</p></li>
+    /// <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list only includes pending maintenance actions for the DB clusters identified by these ARNs.</p> </li>
+    /// <li> <p> <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance ARNs. The results list only includes pending maintenance actions for the DB instances identified by these ARNs.</p> </li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
@@ -147,10 +145,8 @@ impl DescribePendingMaintenanceActionsFluentBuilder {
     /// <p>A filter that specifies one or more resources to return pending maintenance actions for.</p>
     /// <p>Supported filters:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list only includes pending maintenance actions for the DB clusters identified by these ARNs.</p></li>
-    /// <li>
-    /// <p><code>db-instance-id</code> - Accepts DB instance identifiers and DB instance ARNs. The results list only includes pending maintenance actions for the DB instances identified by these ARNs.</p></li>
+    /// <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list only includes pending maintenance actions for the DB clusters identified by these ARNs.</p> </li>
+    /// <li> <p> <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance ARNs. The results list only includes pending maintenance actions for the DB instances identified by these ARNs.</p> </li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
@@ -159,10 +155,8 @@ impl DescribePendingMaintenanceActionsFluentBuilder {
     /// <p>A filter that specifies one or more resources to return pending maintenance actions for.</p>
     /// <p>Supported filters:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list only includes pending maintenance actions for the DB clusters identified by these ARNs.</p></li>
-    /// <li>
-    /// <p><code>db-instance-id</code> - Accepts DB instance identifiers and DB instance ARNs. The results list only includes pending maintenance actions for the DB instances identified by these ARNs.</p></li>
+    /// <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list only includes pending maintenance actions for the DB clusters identified by these ARNs.</p> </li>
+    /// <li> <p> <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance ARNs. The results list only includes pending maintenance actions for the DB instances identified by these ARNs.</p> </li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()

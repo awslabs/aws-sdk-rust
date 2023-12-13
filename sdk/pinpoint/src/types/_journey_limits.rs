@@ -10,7 +10,7 @@ pub struct JourneyLimits {
     pub endpoint_reentry_cap: ::std::option::Option<i32>,
     /// <p>The maximum number of messages that the journey can send each second.</p>
     pub messages_per_second: ::std::option::Option<i32>,
-    /// <p>Minimum time that must pass before an endpoint can re-enter a given journey. The duration should use an ISO 8601 format, such as PT1H.</p>
+    /// <p>Minimum time that must pass before an endpoint can re-enter a given journey. The duration should use an ISO 8601 format, such as PT1H. </p>
     pub endpoint_reentry_interval: ::std::option::Option<::std::string::String>,
     /// <p>The number of messages that an endpoint can receive during the specified timeframe.</p>
     pub timeframe_cap: ::std::option::Option<crate::types::JourneyTimeframeCap>,
@@ -30,7 +30,7 @@ impl JourneyLimits {
     pub fn messages_per_second(&self) -> ::std::option::Option<i32> {
         self.messages_per_second
     }
-    /// <p>Minimum time that must pass before an endpoint can re-enter a given journey. The duration should use an ISO 8601 format, such as PT1H.</p>
+    /// <p>Minimum time that must pass before an endpoint can re-enter a given journey. The duration should use an ISO 8601 format, such as PT1H. </p>
     pub fn endpoint_reentry_interval(&self) -> ::std::option::Option<&str> {
         self.endpoint_reentry_interval.as_deref()
     }
@@ -104,17 +104,17 @@ impl JourneyLimitsBuilder {
     pub fn get_messages_per_second(&self) -> &::std::option::Option<i32> {
         &self.messages_per_second
     }
-    /// <p>Minimum time that must pass before an endpoint can re-enter a given journey. The duration should use an ISO 8601 format, such as PT1H.</p>
+    /// <p>Minimum time that must pass before an endpoint can re-enter a given journey. The duration should use an ISO 8601 format, such as PT1H. </p>
     pub fn endpoint_reentry_interval(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_reentry_interval = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Minimum time that must pass before an endpoint can re-enter a given journey. The duration should use an ISO 8601 format, such as PT1H.</p>
+    /// <p>Minimum time that must pass before an endpoint can re-enter a given journey. The duration should use an ISO 8601 format, such as PT1H. </p>
     pub fn set_endpoint_reentry_interval(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_reentry_interval = input;
         self
     }
-    /// <p>Minimum time that must pass before an endpoint can re-enter a given journey. The duration should use an ISO 8601 format, such as PT1H.</p>
+    /// <p>Minimum time that must pass before an endpoint can re-enter a given journey. The duration should use an ISO 8601 format, such as PT1H. </p>
     pub fn get_endpoint_reentry_interval(&self) -> &::std::option::Option<::std::string::String> {
         &self.endpoint_reentry_interval
     }

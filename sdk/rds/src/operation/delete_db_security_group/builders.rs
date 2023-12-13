@@ -23,7 +23,7 @@ impl DeleteDbSecurityGroupInputBuilder {
 /// Fluent builder constructing a request to `DeleteDBSecurityGroup`.
 ///
 /// <p>Deletes a DB security group.</p>
-/// <p>The specified DB security group must not be associated with any DB instances.</p><note>
+/// <p>The specified DB security group must not be associated with any DB instances.</p> <note>
 /// <p>EC2-Classic was retired on August 15, 2022. If you haven't migrated from EC2-Classic to a VPC, we recommend that you migrate as soon as possible. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide</i>, the blog <a href="http://aws.amazon.com/blogs/aws/ec2-classic-is-retiring-heres-how-to-prepare/">EC2-Classic Networking is Retiring – Here’s How to Prepare</a>, and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.Non-VPC2VPC.html">Moving a DB instance not in a VPC into a VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -111,55 +111,43 @@ impl DeleteDBSecurityGroupFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the DB security group to delete.</p><note>
+    /// <p>The name of the DB security group to delete.</p> <note>
     /// <p>You can't delete the default DB security group.</p>
     /// </note>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
-    /// <li>
-    /// <p>First character must be a letter</p></li>
-    /// <li>
-    /// <p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
-    /// <li>
-    /// <p>Must not be "Default"</p></li>
+    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter</p> </li>
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// <li> <p>Must not be "Default"</p> </li>
     /// </ul>
     pub fn db_security_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_security_group_name(input.into());
         self
     }
-    /// <p>The name of the DB security group to delete.</p><note>
+    /// <p>The name of the DB security group to delete.</p> <note>
     /// <p>You can't delete the default DB security group.</p>
     /// </note>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
-    /// <li>
-    /// <p>First character must be a letter</p></li>
-    /// <li>
-    /// <p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
-    /// <li>
-    /// <p>Must not be "Default"</p></li>
+    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter</p> </li>
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// <li> <p>Must not be "Default"</p> </li>
     /// </ul>
     pub fn set_db_security_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_security_group_name(input);
         self
     }
-    /// <p>The name of the DB security group to delete.</p><note>
+    /// <p>The name of the DB security group to delete.</p> <note>
     /// <p>You can't delete the default DB security group.</p>
     /// </note>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
-    /// <li>
-    /// <p>First character must be a letter</p></li>
-    /// <li>
-    /// <p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
-    /// <li>
-    /// <p>Must not be "Default"</p></li>
+    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter</p> </li>
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// <li> <p>Must not be "Default"</p> </li>
     /// </ul>
     pub fn get_db_security_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_security_group_name()

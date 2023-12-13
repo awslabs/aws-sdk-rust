@@ -3,15 +3,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeConnectorsInput {
-    /// <p>The type of connector, such as Salesforce, Amplitude, and so on.</p>
+    /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
     pub connector_types: ::std::option::Option<::std::vec::Vec<crate::types::ConnectorType>>,
     /// <p>The maximum number of items that should be returned in the result set. The default is 20.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>The pagination token for the next page of data.</p>
+    /// <p> The pagination token for the next page of data. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeConnectorsInput {
-    /// <p>The type of connector, such as Salesforce, Amplitude, and so on.</p>
+    /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.connector_types.is_none()`.
     pub fn connector_types(&self) -> &[crate::types::ConnectorType] {
@@ -21,7 +21,7 @@ impl DescribeConnectorsInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The pagination token for the next page of data.</p>
+    /// <p> The pagination token for the next page of data. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -46,19 +46,19 @@ impl DescribeConnectorsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_connector_types`](Self::set_connector_types).
     ///
-    /// <p>The type of connector, such as Salesforce, Amplitude, and so on.</p>
+    /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
     pub fn connector_types(mut self, input: crate::types::ConnectorType) -> Self {
         let mut v = self.connector_types.unwrap_or_default();
         v.push(input);
         self.connector_types = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The type of connector, such as Salesforce, Amplitude, and so on.</p>
+    /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
     pub fn set_connector_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConnectorType>>) -> Self {
         self.connector_types = input;
         self
     }
-    /// <p>The type of connector, such as Salesforce, Amplitude, and so on.</p>
+    /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
     pub fn get_connector_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectorType>> {
         &self.connector_types
     }
@@ -76,17 +76,17 @@ impl DescribeConnectorsInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p>The pagination token for the next page of data.</p>
+    /// <p> The pagination token for the next page of data. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The pagination token for the next page of data.</p>
+    /// <p> The pagination token for the next page of data. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The pagination token for the next page of data.</p>
+    /// <p> The pagination token for the next page of data. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

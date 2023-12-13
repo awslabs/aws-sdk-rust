@@ -3,29 +3,29 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateExternalConnectionInput {
-    /// <p>The name of the domain that contains the repository from which to remove the external repository.</p>
+    /// <p>The name of the domain that contains the repository from which to remove the external repository. </p>
     pub domain: ::std::option::Option<::std::string::String>,
-    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub domain_owner: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the repository from which the external connection will be removed.</p>
+    /// <p>The name of the repository from which the external connection will be removed. </p>
     pub repository: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the external connection to be removed from the repository.</p>
+    /// <p>The name of the external connection to be removed from the repository. </p>
     pub external_connection: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateExternalConnectionInput {
-    /// <p>The name of the domain that contains the repository from which to remove the external repository.</p>
+    /// <p>The name of the domain that contains the repository from which to remove the external repository. </p>
     pub fn domain(&self) -> ::std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(&self) -> ::std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
-    /// <p>The name of the repository from which the external connection will be removed.</p>
+    /// <p>The name of the repository from which the external connection will be removed. </p>
     pub fn repository(&self) -> ::std::option::Option<&str> {
         self.repository.as_deref()
     }
-    /// <p>The name of the external connection to be removed from the repository.</p>
+    /// <p>The name of the external connection to be removed from the repository. </p>
     pub fn external_connection(&self) -> ::std::option::Option<&str> {
         self.external_connection.as_deref()
     }
@@ -47,62 +47,62 @@ pub struct DisassociateExternalConnectionInputBuilder {
     pub(crate) external_connection: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateExternalConnectionInputBuilder {
-    /// <p>The name of the domain that contains the repository from which to remove the external repository.</p>
+    /// <p>The name of the domain that contains the repository from which to remove the external repository. </p>
     /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the domain that contains the repository from which to remove the external repository.</p>
+    /// <p>The name of the domain that contains the repository from which to remove the external repository. </p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain = input;
         self
     }
-    /// <p>The name of the domain that contains the repository from which to remove the external repository.</p>
+    /// <p>The name of the domain that contains the repository from which to remove the external repository. </p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain
     }
-    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_owner = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn set_domain_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_owner = input;
         self
     }
-    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn get_domain_owner(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_owner
     }
-    /// <p>The name of the repository from which the external connection will be removed.</p>
+    /// <p>The name of the repository from which the external connection will be removed. </p>
     /// This field is required.
     pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the repository from which the external connection will be removed.</p>
+    /// <p>The name of the repository from which the external connection will be removed. </p>
     pub fn set_repository(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository = input;
         self
     }
-    /// <p>The name of the repository from which the external connection will be removed.</p>
+    /// <p>The name of the repository from which the external connection will be removed. </p>
     pub fn get_repository(&self) -> &::std::option::Option<::std::string::String> {
         &self.repository
     }
-    /// <p>The name of the external connection to be removed from the repository.</p>
+    /// <p>The name of the external connection to be removed from the repository. </p>
     /// This field is required.
     pub fn external_connection(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.external_connection = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the external connection to be removed from the repository.</p>
+    /// <p>The name of the external connection to be removed from the repository. </p>
     pub fn set_external_connection(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.external_connection = input;
         self
     }
-    /// <p>The name of the external connection to be removed from the repository.</p>
+    /// <p>The name of the external connection to be removed from the repository. </p>
     pub fn get_external_connection(&self) -> &::std::option::Option<::std::string::String> {
         &self.external_connection
     }

@@ -29,6 +29,8 @@ pub struct SourceServer {
     pub reversed_direction_source_server_arn: ::std::option::Option<::std::string::String>,
     /// <p>ID of the Source Network which is protecting this Source Server's network.</p>
     pub source_network_id: ::std::option::Option<::std::string::String>,
+    /// <p>The version of the DRS agent installed on the source server</p>
+    pub agent_version: ::std::option::Option<::std::string::String>,
 }
 impl SourceServer {
     /// <p>The ID of the Source Server.</p>
@@ -83,6 +85,10 @@ impl SourceServer {
     pub fn source_network_id(&self) -> ::std::option::Option<&str> {
         self.source_network_id.as_deref()
     }
+    /// <p>The version of the DRS agent installed on the source server</p>
+    pub fn agent_version(&self) -> ::std::option::Option<&str> {
+        self.agent_version.as_deref()
+    }
 }
 impl ::std::fmt::Debug for SourceServer {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -100,6 +106,7 @@ impl ::std::fmt::Debug for SourceServer {
         formatter.field("replication_direction", &self.replication_direction);
         formatter.field("reversed_direction_source_server_arn", &self.reversed_direction_source_server_arn);
         formatter.field("source_network_id", &self.source_network_id);
+        formatter.field("agent_version", &self.agent_version);
         formatter.finish()
     }
 }
@@ -127,6 +134,7 @@ pub struct SourceServerBuilder {
     pub(crate) replication_direction: ::std::option::Option<crate::types::ReplicationDirection>,
     pub(crate) reversed_direction_source_server_arn: ::std::option::Option<::std::string::String>,
     pub(crate) source_network_id: ::std::option::Option<::std::string::String>,
+    pub(crate) agent_version: ::std::option::Option<::std::string::String>,
 }
 impl SourceServerBuilder {
     /// <p>The ID of the Source Server.</p>
@@ -317,6 +325,20 @@ impl SourceServerBuilder {
     pub fn get_source_network_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_network_id
     }
+    /// <p>The version of the DRS agent installed on the source server</p>
+    pub fn agent_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.agent_version = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The version of the DRS agent installed on the source server</p>
+    pub fn set_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.agent_version = input;
+        self
+    }
+    /// <p>The version of the DRS agent installed on the source server</p>
+    pub fn get_agent_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.agent_version
+    }
     /// Consumes the builder and constructs a [`SourceServer`](crate::types::SourceServer).
     pub fn build(self) -> crate::types::SourceServer {
         crate::types::SourceServer {
@@ -333,6 +355,7 @@ impl SourceServerBuilder {
             replication_direction: self.replication_direction,
             reversed_direction_source_server_arn: self.reversed_direction_source_server_arn,
             source_network_id: self.source_network_id,
+            agent_version: self.agent_version,
         }
     }
 }
@@ -352,6 +375,7 @@ impl ::std::fmt::Debug for SourceServerBuilder {
         formatter.field("replication_direction", &self.replication_direction);
         formatter.field("reversed_direction_source_server_arn", &self.reversed_direction_source_server_arn);
         formatter.field("source_network_id", &self.source_network_id);
+        formatter.field("agent_version", &self.agent_version);
         formatter.finish()
     }
 }

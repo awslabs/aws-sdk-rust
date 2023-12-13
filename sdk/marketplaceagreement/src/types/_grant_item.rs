@@ -4,17 +4,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GrantItem {
-    /// <p>Unique dimension key defined in the product document. Dimensions represent categories of capacity in a product and are specified when the product is listed in AWS Marketplace.</p>
+    /// <p>Unique dimension key defined in the product document. Dimensions represent categories of capacity in a product and are specified when the product is listed in AWS Marketplace. </p>
     pub dimension_key: ::std::option::Option<::std::string::String>,
-    /// <p>Maximum amount of capacity that the buyer can be entitled to the given dimension of the product. If <code>MaxQuantity</code> is not provided, the buyer will be able to use an unlimited amount of the given dimension.</p>
+    /// <p>Maximum amount of capacity that the buyer can be entitled to the given dimension of the product. If <code>MaxQuantity</code> is not provided, the buyer will be able to use an unlimited amount of the given dimension. </p>
     pub max_quantity: i32,
 }
 impl GrantItem {
-    /// <p>Unique dimension key defined in the product document. Dimensions represent categories of capacity in a product and are specified when the product is listed in AWS Marketplace.</p>
+    /// <p>Unique dimension key defined in the product document. Dimensions represent categories of capacity in a product and are specified when the product is listed in AWS Marketplace. </p>
     pub fn dimension_key(&self) -> ::std::option::Option<&str> {
         self.dimension_key.as_deref()
     }
-    /// <p>Maximum amount of capacity that the buyer can be entitled to the given dimension of the product. If <code>MaxQuantity</code> is not provided, the buyer will be able to use an unlimited amount of the given dimension.</p>
+    /// <p>Maximum amount of capacity that the buyer can be entitled to the given dimension of the product. If <code>MaxQuantity</code> is not provided, the buyer will be able to use an unlimited amount of the given dimension. </p>
     pub fn max_quantity(&self) -> i32 {
         self.max_quantity
     }
@@ -34,31 +34,31 @@ pub struct GrantItemBuilder {
     pub(crate) max_quantity: ::std::option::Option<i32>,
 }
 impl GrantItemBuilder {
-    /// <p>Unique dimension key defined in the product document. Dimensions represent categories of capacity in a product and are specified when the product is listed in AWS Marketplace.</p>
+    /// <p>Unique dimension key defined in the product document. Dimensions represent categories of capacity in a product and are specified when the product is listed in AWS Marketplace. </p>
     pub fn dimension_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dimension_key = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Unique dimension key defined in the product document. Dimensions represent categories of capacity in a product and are specified when the product is listed in AWS Marketplace.</p>
+    /// <p>Unique dimension key defined in the product document. Dimensions represent categories of capacity in a product and are specified when the product is listed in AWS Marketplace. </p>
     pub fn set_dimension_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dimension_key = input;
         self
     }
-    /// <p>Unique dimension key defined in the product document. Dimensions represent categories of capacity in a product and are specified when the product is listed in AWS Marketplace.</p>
+    /// <p>Unique dimension key defined in the product document. Dimensions represent categories of capacity in a product and are specified when the product is listed in AWS Marketplace. </p>
     pub fn get_dimension_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.dimension_key
     }
-    /// <p>Maximum amount of capacity that the buyer can be entitled to the given dimension of the product. If <code>MaxQuantity</code> is not provided, the buyer will be able to use an unlimited amount of the given dimension.</p>
+    /// <p>Maximum amount of capacity that the buyer can be entitled to the given dimension of the product. If <code>MaxQuantity</code> is not provided, the buyer will be able to use an unlimited amount of the given dimension. </p>
     pub fn max_quantity(mut self, input: i32) -> Self {
         self.max_quantity = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Maximum amount of capacity that the buyer can be entitled to the given dimension of the product. If <code>MaxQuantity</code> is not provided, the buyer will be able to use an unlimited amount of the given dimension.</p>
+    /// <p>Maximum amount of capacity that the buyer can be entitled to the given dimension of the product. If <code>MaxQuantity</code> is not provided, the buyer will be able to use an unlimited amount of the given dimension. </p>
     pub fn set_max_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_quantity = input;
         self
     }
-    /// <p>Maximum amount of capacity that the buyer can be entitled to the given dimension of the product. If <code>MaxQuantity</code> is not provided, the buyer will be able to use an unlimited amount of the given dimension.</p>
+    /// <p>Maximum amount of capacity that the buyer can be entitled to the given dimension of the product. If <code>MaxQuantity</code> is not provided, the buyer will be able to use an unlimited amount of the given dimension. </p>
     pub fn get_max_quantity(&self) -> &::std::option::Option<i32> {
         &self.max_quantity
     }

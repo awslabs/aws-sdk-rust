@@ -108,31 +108,31 @@ impl EnableClientAuthenticationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier of the specified directory.</p>
+    /// <p>The identifier of the specified directory. </p>
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.directory_id(input.into());
         self
     }
-    /// <p>The identifier of the specified directory.</p>
+    /// <p>The identifier of the specified directory. </p>
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_directory_id(input);
         self
     }
-    /// <p>The identifier of the specified directory.</p>
+    /// <p>The identifier of the specified directory. </p>
     pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_directory_id()
     }
-    /// <p>The type of client authentication to enable. Currently only the value <code>SmartCard</code> is supported. Smart card authentication in AD Connector requires that you enable Kerberos Constrained Delegation for the Service User to the LDAP service in your self-managed AD.</p>
+    /// <p>The type of client authentication to enable. Currently only the value <code>SmartCard</code> is supported. Smart card authentication in AD Connector requires that you enable Kerberos Constrained Delegation for the Service User to the LDAP service in your self-managed AD. </p>
     pub fn r#type(mut self, input: crate::types::ClientAuthenticationType) -> Self {
         self.inner = self.inner.r#type(input);
         self
     }
-    /// <p>The type of client authentication to enable. Currently only the value <code>SmartCard</code> is supported. Smart card authentication in AD Connector requires that you enable Kerberos Constrained Delegation for the Service User to the LDAP service in your self-managed AD.</p>
+    /// <p>The type of client authentication to enable. Currently only the value <code>SmartCard</code> is supported. Smart card authentication in AD Connector requires that you enable Kerberos Constrained Delegation for the Service User to the LDAP service in your self-managed AD. </p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ClientAuthenticationType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
-    /// <p>The type of client authentication to enable. Currently only the value <code>SmartCard</code> is supported. Smart card authentication in AD Connector requires that you enable Kerberos Constrained Delegation for the Service User to the LDAP service in your self-managed AD.</p>
+    /// <p>The type of client authentication to enable. Currently only the value <code>SmartCard</code> is supported. Smart card authentication in AD Connector requires that you enable Kerberos Constrained Delegation for the Service User to the LDAP service in your self-managed AD. </p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ClientAuthenticationType> {
         self.inner.get_type()
     }

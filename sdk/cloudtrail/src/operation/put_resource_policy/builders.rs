@@ -22,7 +22,7 @@ impl PutResourcePolicyInputBuilder {
 }
 /// Fluent builder constructing a request to `PutResourcePolicy`.
 ///
-/// <p>Attaches a resource-based permission policy to a CloudTrail channel that is used for an integration with an event source outside of Amazon Web Services. For more information about resource-based policies, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/security_iam_resource-based-policy-examples.html">CloudTrail resource-based policy examples</a> in the <i>CloudTrail User Guide</i>.</p>
+/// <p> Attaches a resource-based permission policy to a CloudTrail channel that is used for an integration with an event source outside of Amazon Web Services. For more information about resource-based policies, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/security_iam_resource-based-policy-examples.html">CloudTrail resource-based policy examples</a> in the <i>CloudTrail User Guide</i>. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutResourcePolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,57 +108,48 @@ impl PutResourcePolicyFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the CloudTrail channel attached to the resource-based policy. The following is the format of a resource ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/MyChannel</code>.</p>
+    /// <p> The Amazon Resource Name (ARN) of the CloudTrail channel attached to the resource-based policy. The following is the format of a resource ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/MyChannel</code>. </p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the CloudTrail channel attached to the resource-based policy. The following is the format of a resource ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/MyChannel</code>.</p>
+    /// <p> The Amazon Resource Name (ARN) of the CloudTrail channel attached to the resource-based policy. The following is the format of a resource ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/MyChannel</code>. </p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the CloudTrail channel attached to the resource-based policy. The following is the format of a resource ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/MyChannel</code>.</p>
+    /// <p> The Amazon Resource Name (ARN) of the CloudTrail channel attached to the resource-based policy. The following is the format of a resource ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/MyChannel</code>. </p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_arn()
     }
-    /// <p>A JSON-formatted string for an Amazon Web Services resource-based policy.</p>
+    /// <p> A JSON-formatted string for an Amazon Web Services resource-based policy. </p>
     /// <p>The following are requirements for the resource policy:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contains only one action: cloudtrail-data:PutAuditEvents</p></li>
-    /// <li>
-    /// <p>Contains at least one statement. The policy can have a maximum of 20 statements.</p></li>
-    /// <li>
-    /// <p>Each statement contains at least one principal. A statement can have a maximum of 50 principals.</p></li>
+    /// <li> <p> Contains only one action: cloudtrail-data:PutAuditEvents </p> </li>
+    /// <li> <p> Contains at least one statement. The policy can have a maximum of 20 statements. </p> </li>
+    /// <li> <p> Each statement contains at least one principal. A statement can have a maximum of 50 principals. </p> </li>
     /// </ul>
     pub fn resource_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_policy(input.into());
         self
     }
-    /// <p>A JSON-formatted string for an Amazon Web Services resource-based policy.</p>
+    /// <p> A JSON-formatted string for an Amazon Web Services resource-based policy. </p>
     /// <p>The following are requirements for the resource policy:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contains only one action: cloudtrail-data:PutAuditEvents</p></li>
-    /// <li>
-    /// <p>Contains at least one statement. The policy can have a maximum of 20 statements.</p></li>
-    /// <li>
-    /// <p>Each statement contains at least one principal. A statement can have a maximum of 50 principals.</p></li>
+    /// <li> <p> Contains only one action: cloudtrail-data:PutAuditEvents </p> </li>
+    /// <li> <p> Contains at least one statement. The policy can have a maximum of 20 statements. </p> </li>
+    /// <li> <p> Each statement contains at least one principal. A statement can have a maximum of 50 principals. </p> </li>
     /// </ul>
     pub fn set_resource_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_policy(input);
         self
     }
-    /// <p>A JSON-formatted string for an Amazon Web Services resource-based policy.</p>
+    /// <p> A JSON-formatted string for an Amazon Web Services resource-based policy. </p>
     /// <p>The following are requirements for the resource policy:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contains only one action: cloudtrail-data:PutAuditEvents</p></li>
-    /// <li>
-    /// <p>Contains at least one statement. The policy can have a maximum of 20 statements.</p></li>
-    /// <li>
-    /// <p>Each statement contains at least one principal. A statement can have a maximum of 50 principals.</p></li>
+    /// <li> <p> Contains only one action: cloudtrail-data:PutAuditEvents </p> </li>
+    /// <li> <p> Contains at least one statement. The policy can have a maximum of 20 statements. </p> </li>
+    /// <li> <p> Each statement contains at least one principal. A statement can have a maximum of 50 principals. </p> </li>
     /// </ul>
     pub fn get_resource_policy(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_policy()

@@ -7,11 +7,11 @@ pub struct ListAuditSuppressionsInput {
     pub check_name: ::std::option::Option<::std::string::String>,
     /// <p>Information that identifies the noncompliant resource.</p>
     pub resource_identifier: ::std::option::Option<crate::types::ResourceIdentifier>,
-    /// <p>Determines whether suppressions are listed in ascending order by expiration date or not. If parameter isn't provided, <code>ascendingOrder=true</code>.</p>
+    /// <p> Determines whether suppressions are listed in ascending order by expiration date or not. If parameter isn't provided, <code>ascendingOrder=true</code>. </p>
     pub ascending_order: ::std::option::Option<bool>,
-    /// <p>The token for the next set of results.</p>
+    /// <p> The token for the next set of results. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum number of results to return at one time. The default is 25.</p>
+    /// <p> The maximum number of results to return at one time. The default is 25. </p>
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListAuditSuppressionsInput {
@@ -23,15 +23,15 @@ impl ListAuditSuppressionsInput {
     pub fn resource_identifier(&self) -> ::std::option::Option<&crate::types::ResourceIdentifier> {
         self.resource_identifier.as_ref()
     }
-    /// <p>Determines whether suppressions are listed in ascending order by expiration date or not. If parameter isn't provided, <code>ascendingOrder=true</code>.</p>
+    /// <p> Determines whether suppressions are listed in ascending order by expiration date or not. If parameter isn't provided, <code>ascendingOrder=true</code>. </p>
     pub fn ascending_order(&self) -> ::std::option::Option<bool> {
         self.ascending_order
     }
-    /// <p>The token for the next set of results.</p>
+    /// <p> The token for the next set of results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return at one time. The default is 25.</p>
+    /// <p> The maximum number of results to return at one time. The default is 25. </p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -82,45 +82,45 @@ impl ListAuditSuppressionsInputBuilder {
     pub fn get_resource_identifier(&self) -> &::std::option::Option<crate::types::ResourceIdentifier> {
         &self.resource_identifier
     }
-    /// <p>Determines whether suppressions are listed in ascending order by expiration date or not. If parameter isn't provided, <code>ascendingOrder=true</code>.</p>
+    /// <p> Determines whether suppressions are listed in ascending order by expiration date or not. If parameter isn't provided, <code>ascendingOrder=true</code>. </p>
     pub fn ascending_order(mut self, input: bool) -> Self {
         self.ascending_order = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Determines whether suppressions are listed in ascending order by expiration date or not. If parameter isn't provided, <code>ascendingOrder=true</code>.</p>
+    /// <p> Determines whether suppressions are listed in ascending order by expiration date or not. If parameter isn't provided, <code>ascendingOrder=true</code>. </p>
     pub fn set_ascending_order(mut self, input: ::std::option::Option<bool>) -> Self {
         self.ascending_order = input;
         self
     }
-    /// <p>Determines whether suppressions are listed in ascending order by expiration date or not. If parameter isn't provided, <code>ascendingOrder=true</code>.</p>
+    /// <p> Determines whether suppressions are listed in ascending order by expiration date or not. If parameter isn't provided, <code>ascendingOrder=true</code>. </p>
     pub fn get_ascending_order(&self) -> &::std::option::Option<bool> {
         &self.ascending_order
     }
-    /// <p>The token for the next set of results.</p>
+    /// <p> The token for the next set of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token for the next set of results.</p>
+    /// <p> The token for the next set of results. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The token for the next set of results.</p>
+    /// <p> The token for the next set of results. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>The maximum number of results to return at one time. The default is 25.</p>
+    /// <p> The maximum number of results to return at one time. The default is 25. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of results to return at one time. The default is 25.</p>
+    /// <p> The maximum number of results to return at one time. The default is 25. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of results to return at one time. The default is 25.</p>
+    /// <p> The maximum number of results to return at one time. The default is 25. </p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

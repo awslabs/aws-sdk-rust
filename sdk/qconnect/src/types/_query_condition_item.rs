@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueryConditionItem {
-    /// <p>The name of the field for query condition to query on.</p>
+    /// <p> The name of the field for query condition to query on.</p>
     pub field: crate::types::QueryConditionFieldName,
     /// <p>The comparison operator for query condition to query on.</p>
     pub comparator: crate::types::QueryConditionComparisonOperator,
@@ -12,7 +12,7 @@ pub struct QueryConditionItem {
     pub value: ::std::string::String,
 }
 impl QueryConditionItem {
-    /// <p>The name of the field for query condition to query on.</p>
+    /// <p> The name of the field for query condition to query on.</p>
     pub fn field(&self) -> &crate::types::QueryConditionFieldName {
         &self.field
     }
@@ -42,18 +42,18 @@ pub struct QueryConditionItemBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
 }
 impl QueryConditionItemBuilder {
-    /// <p>The name of the field for query condition to query on.</p>
+    /// <p> The name of the field for query condition to query on.</p>
     /// This field is required.
     pub fn field(mut self, input: crate::types::QueryConditionFieldName) -> Self {
         self.field = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The name of the field for query condition to query on.</p>
+    /// <p> The name of the field for query condition to query on.</p>
     pub fn set_field(mut self, input: ::std::option::Option<crate::types::QueryConditionFieldName>) -> Self {
         self.field = input;
         self
     }
-    /// <p>The name of the field for query condition to query on.</p>
+    /// <p> The name of the field for query condition to query on.</p>
     pub fn get_field(&self) -> &::std::option::Option<crate::types::QueryConditionFieldName> {
         &self.field
     }

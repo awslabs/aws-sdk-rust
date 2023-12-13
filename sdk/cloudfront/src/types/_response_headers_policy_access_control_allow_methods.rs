@@ -9,24 +9,16 @@ pub struct ResponseHeadersPolicyAccessControlAllowMethods {
     pub quantity: i32,
     /// <p>The list of HTTP methods. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>GET</code></p></li>
-    /// <li>
-    /// <p><code>DELETE</code></p></li>
-    /// <li>
-    /// <p><code>HEAD</code></p></li>
-    /// <li>
-    /// <p><code>OPTIONS</code></p></li>
-    /// <li>
-    /// <p><code>PATCH</code></p></li>
-    /// <li>
-    /// <p><code>POST</code></p></li>
-    /// <li>
-    /// <p><code>PUT</code></p></li>
-    /// <li>
-    /// <p><code>ALL</code></p></li>
+    /// <li> <p> <code>GET</code> </p> </li>
+    /// <li> <p> <code>DELETE</code> </p> </li>
+    /// <li> <p> <code>HEAD</code> </p> </li>
+    /// <li> <p> <code>OPTIONS</code> </p> </li>
+    /// <li> <p> <code>PATCH</code> </p> </li>
+    /// <li> <p> <code>POST</code> </p> </li>
+    /// <li> <p> <code>PUT</code> </p> </li>
+    /// <li> <p> <code>ALL</code> </p> </li>
     /// </ul>
-    /// <p><code>ALL</code> is a special value that includes all of the listed HTTP methods.</p>
+    /// <p> <code>ALL</code> is a special value that includes all of the listed HTTP methods.</p>
     pub items: ::std::vec::Vec<crate::types::ResponseHeadersPolicyAccessControlAllowMethodsValues>,
 }
 impl ResponseHeadersPolicyAccessControlAllowMethods {
@@ -36,24 +28,16 @@ impl ResponseHeadersPolicyAccessControlAllowMethods {
     }
     /// <p>The list of HTTP methods. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>GET</code></p></li>
-    /// <li>
-    /// <p><code>DELETE</code></p></li>
-    /// <li>
-    /// <p><code>HEAD</code></p></li>
-    /// <li>
-    /// <p><code>OPTIONS</code></p></li>
-    /// <li>
-    /// <p><code>PATCH</code></p></li>
-    /// <li>
-    /// <p><code>POST</code></p></li>
-    /// <li>
-    /// <p><code>PUT</code></p></li>
-    /// <li>
-    /// <p><code>ALL</code></p></li>
+    /// <li> <p> <code>GET</code> </p> </li>
+    /// <li> <p> <code>DELETE</code> </p> </li>
+    /// <li> <p> <code>HEAD</code> </p> </li>
+    /// <li> <p> <code>OPTIONS</code> </p> </li>
+    /// <li> <p> <code>PATCH</code> </p> </li>
+    /// <li> <p> <code>POST</code> </p> </li>
+    /// <li> <p> <code>PUT</code> </p> </li>
+    /// <li> <p> <code>ALL</code> </p> </li>
     /// </ul>
-    /// <p><code>ALL</code> is a special value that includes all of the listed HTTP methods.</p>
+    /// <p> <code>ALL</code> is a special value that includes all of the listed HTTP methods.</p>
     pub fn items(&self) -> &[crate::types::ResponseHeadersPolicyAccessControlAllowMethodsValues] {
         use std::ops::Deref;
         self.items.deref()
@@ -95,24 +79,16 @@ impl ResponseHeadersPolicyAccessControlAllowMethodsBuilder {
     ///
     /// <p>The list of HTTP methods. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>GET</code></p></li>
-    /// <li>
-    /// <p><code>DELETE</code></p></li>
-    /// <li>
-    /// <p><code>HEAD</code></p></li>
-    /// <li>
-    /// <p><code>OPTIONS</code></p></li>
-    /// <li>
-    /// <p><code>PATCH</code></p></li>
-    /// <li>
-    /// <p><code>POST</code></p></li>
-    /// <li>
-    /// <p><code>PUT</code></p></li>
-    /// <li>
-    /// <p><code>ALL</code></p></li>
+    /// <li> <p> <code>GET</code> </p> </li>
+    /// <li> <p> <code>DELETE</code> </p> </li>
+    /// <li> <p> <code>HEAD</code> </p> </li>
+    /// <li> <p> <code>OPTIONS</code> </p> </li>
+    /// <li> <p> <code>PATCH</code> </p> </li>
+    /// <li> <p> <code>POST</code> </p> </li>
+    /// <li> <p> <code>PUT</code> </p> </li>
+    /// <li> <p> <code>ALL</code> </p> </li>
     /// </ul>
-    /// <p><code>ALL</code> is a special value that includes all of the listed HTTP methods.</p>
+    /// <p> <code>ALL</code> is a special value that includes all of the listed HTTP methods.</p>
     pub fn items(mut self, input: crate::types::ResponseHeadersPolicyAccessControlAllowMethodsValues) -> Self {
         let mut v = self.items.unwrap_or_default();
         v.push(input);
@@ -121,24 +97,16 @@ impl ResponseHeadersPolicyAccessControlAllowMethodsBuilder {
     }
     /// <p>The list of HTTP methods. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>GET</code></p></li>
-    /// <li>
-    /// <p><code>DELETE</code></p></li>
-    /// <li>
-    /// <p><code>HEAD</code></p></li>
-    /// <li>
-    /// <p><code>OPTIONS</code></p></li>
-    /// <li>
-    /// <p><code>PATCH</code></p></li>
-    /// <li>
-    /// <p><code>POST</code></p></li>
-    /// <li>
-    /// <p><code>PUT</code></p></li>
-    /// <li>
-    /// <p><code>ALL</code></p></li>
+    /// <li> <p> <code>GET</code> </p> </li>
+    /// <li> <p> <code>DELETE</code> </p> </li>
+    /// <li> <p> <code>HEAD</code> </p> </li>
+    /// <li> <p> <code>OPTIONS</code> </p> </li>
+    /// <li> <p> <code>PATCH</code> </p> </li>
+    /// <li> <p> <code>POST</code> </p> </li>
+    /// <li> <p> <code>PUT</code> </p> </li>
+    /// <li> <p> <code>ALL</code> </p> </li>
     /// </ul>
-    /// <p><code>ALL</code> is a special value that includes all of the listed HTTP methods.</p>
+    /// <p> <code>ALL</code> is a special value that includes all of the listed HTTP methods.</p>
     pub fn set_items(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::ResponseHeadersPolicyAccessControlAllowMethodsValues>>,
@@ -148,24 +116,16 @@ impl ResponseHeadersPolicyAccessControlAllowMethodsBuilder {
     }
     /// <p>The list of HTTP methods. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>GET</code></p></li>
-    /// <li>
-    /// <p><code>DELETE</code></p></li>
-    /// <li>
-    /// <p><code>HEAD</code></p></li>
-    /// <li>
-    /// <p><code>OPTIONS</code></p></li>
-    /// <li>
-    /// <p><code>PATCH</code></p></li>
-    /// <li>
-    /// <p><code>POST</code></p></li>
-    /// <li>
-    /// <p><code>PUT</code></p></li>
-    /// <li>
-    /// <p><code>ALL</code></p></li>
+    /// <li> <p> <code>GET</code> </p> </li>
+    /// <li> <p> <code>DELETE</code> </p> </li>
+    /// <li> <p> <code>HEAD</code> </p> </li>
+    /// <li> <p> <code>OPTIONS</code> </p> </li>
+    /// <li> <p> <code>PATCH</code> </p> </li>
+    /// <li> <p> <code>POST</code> </p> </li>
+    /// <li> <p> <code>PUT</code> </p> </li>
+    /// <li> <p> <code>ALL</code> </p> </li>
     /// </ul>
-    /// <p><code>ALL</code> is a special value that includes all of the listed HTTP methods.</p>
+    /// <p> <code>ALL</code> is a special value that includes all of the listed HTTP methods.</p>
     pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResponseHeadersPolicyAccessControlAllowMethodsValues>> {
         &self.items
     }

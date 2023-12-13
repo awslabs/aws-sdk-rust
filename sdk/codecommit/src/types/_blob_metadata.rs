@@ -10,14 +10,10 @@ pub struct BlobMetadata {
     pub path: ::std::option::Option<::std::string::String>,
     /// <p>The file mode permissions of the blob. File mode permission codes include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>100644</code> indicates read/write</p></li>
-    /// <li>
-    /// <p><code>100755</code> indicates read/write/execute</p></li>
-    /// <li>
-    /// <p><code>160000</code> indicates a submodule</p></li>
-    /// <li>
-    /// <p><code>120000</code> indicates a symlink</p></li>
+    /// <li> <p> <code>100644</code> indicates read/write</p> </li>
+    /// <li> <p> <code>100755</code> indicates read/write/execute</p> </li>
+    /// <li> <p> <code>160000</code> indicates a submodule</p> </li>
+    /// <li> <p> <code>120000</code> indicates a symlink</p> </li>
     /// </ul>
     pub mode: ::std::option::Option<::std::string::String>,
 }
@@ -32,14 +28,10 @@ impl BlobMetadata {
     }
     /// <p>The file mode permissions of the blob. File mode permission codes include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>100644</code> indicates read/write</p></li>
-    /// <li>
-    /// <p><code>100755</code> indicates read/write/execute</p></li>
-    /// <li>
-    /// <p><code>160000</code> indicates a submodule</p></li>
-    /// <li>
-    /// <p><code>120000</code> indicates a symlink</p></li>
+    /// <li> <p> <code>100644</code> indicates read/write</p> </li>
+    /// <li> <p> <code>100755</code> indicates read/write/execute</p> </li>
+    /// <li> <p> <code>160000</code> indicates a submodule</p> </li>
+    /// <li> <p> <code>120000</code> indicates a symlink</p> </li>
     /// </ul>
     pub fn mode(&self) -> ::std::option::Option<&str> {
         self.mode.as_deref()
@@ -91,14 +83,10 @@ impl BlobMetadataBuilder {
     }
     /// <p>The file mode permissions of the blob. File mode permission codes include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>100644</code> indicates read/write</p></li>
-    /// <li>
-    /// <p><code>100755</code> indicates read/write/execute</p></li>
-    /// <li>
-    /// <p><code>160000</code> indicates a submodule</p></li>
-    /// <li>
-    /// <p><code>120000</code> indicates a symlink</p></li>
+    /// <li> <p> <code>100644</code> indicates read/write</p> </li>
+    /// <li> <p> <code>100755</code> indicates read/write/execute</p> </li>
+    /// <li> <p> <code>160000</code> indicates a submodule</p> </li>
+    /// <li> <p> <code>120000</code> indicates a symlink</p> </li>
     /// </ul>
     pub fn mode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mode = ::std::option::Option::Some(input.into());
@@ -106,14 +94,10 @@ impl BlobMetadataBuilder {
     }
     /// <p>The file mode permissions of the blob. File mode permission codes include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>100644</code> indicates read/write</p></li>
-    /// <li>
-    /// <p><code>100755</code> indicates read/write/execute</p></li>
-    /// <li>
-    /// <p><code>160000</code> indicates a submodule</p></li>
-    /// <li>
-    /// <p><code>120000</code> indicates a symlink</p></li>
+    /// <li> <p> <code>100644</code> indicates read/write</p> </li>
+    /// <li> <p> <code>100755</code> indicates read/write/execute</p> </li>
+    /// <li> <p> <code>160000</code> indicates a submodule</p> </li>
+    /// <li> <p> <code>120000</code> indicates a symlink</p> </li>
     /// </ul>
     pub fn set_mode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mode = input;
@@ -121,14 +105,10 @@ impl BlobMetadataBuilder {
     }
     /// <p>The file mode permissions of the blob. File mode permission codes include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>100644</code> indicates read/write</p></li>
-    /// <li>
-    /// <p><code>100755</code> indicates read/write/execute</p></li>
-    /// <li>
-    /// <p><code>160000</code> indicates a submodule</p></li>
-    /// <li>
-    /// <p><code>120000</code> indicates a symlink</p></li>
+    /// <li> <p> <code>100644</code> indicates read/write</p> </li>
+    /// <li> <p> <code>100755</code> indicates read/write/execute</p> </li>
+    /// <li> <p> <code>160000</code> indicates a submodule</p> </li>
+    /// <li> <p> <code>120000</code> indicates a symlink</p> </li>
     /// </ul>
     pub fn get_mode(&self) -> &::std::option::Option<::std::string::String> {
         &self.mode

@@ -7,7 +7,7 @@ pub struct DescribeCacheParametersInput {
     /// <p>The name of a specific cache parameter group to return details for.</p>
     pub cache_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The parameter types to return.</p>
-    /// <p>Valid values: <code>user</code> | <code>system</code> | <code>engine-default</code></p>
+    /// <p>Valid values: <code>user</code> | <code>system</code> | <code>engine-default</code> </p>
     pub source: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p>
     /// <p>Default: 100</p>
@@ -22,7 +22,7 @@ impl DescribeCacheParametersInput {
         self.cache_parameter_group_name.as_deref()
     }
     /// <p>The parameter types to return.</p>
-    /// <p>Valid values: <code>user</code> | <code>system</code> | <code>engine-default</code></p>
+    /// <p>Valid values: <code>user</code> | <code>system</code> | <code>engine-default</code> </p>
     pub fn source(&self) -> ::std::option::Option<&str> {
         self.source.as_deref()
     }
@@ -70,19 +70,19 @@ impl DescribeCacheParametersInputBuilder {
         &self.cache_parameter_group_name
     }
     /// <p>The parameter types to return.</p>
-    /// <p>Valid values: <code>user</code> | <code>system</code> | <code>engine-default</code></p>
+    /// <p>Valid values: <code>user</code> | <code>system</code> | <code>engine-default</code> </p>
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The parameter types to return.</p>
-    /// <p>Valid values: <code>user</code> | <code>system</code> | <code>engine-default</code></p>
+    /// <p>Valid values: <code>user</code> | <code>system</code> | <code>engine-default</code> </p>
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source = input;
         self
     }
     /// <p>The parameter types to return.</p>
-    /// <p>Valid values: <code>user</code> | <code>system</code> | <code>engine-default</code></p>
+    /// <p>Valid values: <code>user</code> | <code>system</code> | <code>engine-default</code> </p>
     pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
         &self.source
     }

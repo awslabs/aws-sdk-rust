@@ -22,7 +22,7 @@ impl DeleteMobileDeviceAccessOverrideInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteMobileDeviceAccessOverride`.
 ///
-/// <p>Deletes the mobile device access override for the given WorkMail organization, user, and device.</p><note>
+/// <p>Deletes the mobile device access override for the given WorkMail organization, user, and device.</p> <note>
 /// <p>Deleting already deleted and non-existing overrides does not produce an error. In those cases, the service sends back an HTTP 200 response with an empty HTTP body.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -126,12 +126,9 @@ impl DeleteMobileDeviceAccessOverrideFluentBuilder {
     }
     /// <p>The WorkMail user for which you want to delete the override. Accepts the following types of user identities:</p>
     /// <ul>
-    /// <li>
-    /// <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code></p></li>
-    /// <li>
-    /// <p>Email address: <code>user@domain.tld</code></p></li>
-    /// <li>
-    /// <p>User name: <code>user</code></p></li>
+    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+    /// <li> <p>User name: <code>user</code> </p> </li>
     /// </ul>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_id(input.into());
@@ -139,12 +136,9 @@ impl DeleteMobileDeviceAccessOverrideFluentBuilder {
     }
     /// <p>The WorkMail user for which you want to delete the override. Accepts the following types of user identities:</p>
     /// <ul>
-    /// <li>
-    /// <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code></p></li>
-    /// <li>
-    /// <p>Email address: <code>user@domain.tld</code></p></li>
-    /// <li>
-    /// <p>User name: <code>user</code></p></li>
+    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+    /// <li> <p>User name: <code>user</code> </p> </li>
     /// </ul>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_id(input);
@@ -152,12 +146,9 @@ impl DeleteMobileDeviceAccessOverrideFluentBuilder {
     }
     /// <p>The WorkMail user for which you want to delete the override. Accepts the following types of user identities:</p>
     /// <ul>
-    /// <li>
-    /// <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code></p></li>
-    /// <li>
-    /// <p>Email address: <code>user@domain.tld</code></p></li>
-    /// <li>
-    /// <p>User name: <code>user</code></p></li>
+    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+    /// <li> <p>User name: <code>user</code> </p> </li>
     /// </ul>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_id()

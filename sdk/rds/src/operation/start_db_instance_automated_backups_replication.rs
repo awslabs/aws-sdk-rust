@@ -253,7 +253,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for StartDBInstan
 pub enum StartDBInstanceAutomatedBackupsReplicationError {
     /// <p>The quota for retained automated backups was exceeded. This prevents you from retaining any additional automated backups. The retained automated backups quota is the same as your DB instance quota.</p>
     DbInstanceAutomatedBackupQuotaExceededFault(crate::types::error::DbInstanceAutomatedBackupQuotaExceededFault),
-    /// <p><code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
+    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
     DbInstanceNotFoundFault(crate::types::error::DbInstanceNotFoundFault),
     /// <p>The DB instance isn't in a valid state.</p>
     InvalidDbInstanceStateFault(crate::types::error::InvalidDbInstanceStateFault),

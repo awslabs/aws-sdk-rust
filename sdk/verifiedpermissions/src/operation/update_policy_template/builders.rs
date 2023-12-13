@@ -22,7 +22,7 @@ impl UpdatePolicyTemplateInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdatePolicyTemplate`.
 ///
-/// <p>Updates the specified policy template. You can update only the description and the some elements of the <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_UpdatePolicyTemplate.html#amazonverifiedpermissions-UpdatePolicyTemplate-request-policyBody">policyBody</a>.</p><important>
+/// <p>Updates the specified policy template. You can update only the description and the some elements of the <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_UpdatePolicyTemplate.html#amazonverifiedpermissions-UpdatePolicyTemplate-request-policyBody">policyBody</a>. </p> <important>
 /// <p>Changes you make to the policy template content are immediately (within the constraints of eventual consistency) reflected in authorization decisions that involve all template-linked policies instantiated from this template.</p>
 /// </important> <note>
 /// <p>Verified Permissions is <i> <a href="https://wikipedia.org/wiki/Eventual_consistency">eventually consistent</a> </i>. It can take a few seconds for a new or changed element to be propagate through the service and be visible in the results of other Verified Permissions operations.</p>
@@ -157,19 +157,14 @@ impl UpdatePolicyTemplateFluentBuilder {
     /// <p>Specifies new statement content written in Cedar policy language to replace the current body of the policy template.</p>
     /// <p>You can change only the following elements of the policy body:</p>
     /// <ul>
-    /// <li>
-    /// <p>The <code>action</code> referenced by the policy template.</p></li>
-    /// <li>
-    /// <p>Any conditional clauses, such as <code>when</code> or <code>unless</code> clauses.</p></li>
+    /// <li> <p>The <code>action</code> referenced by the policy template.</p> </li>
+    /// <li> <p>Any conditional clauses, such as <code>when</code> or <code>unless</code> clauses.</p> </li>
     /// </ul>
     /// <p>You <b>can't</b> change the following elements:</p>
     /// <ul>
-    /// <li>
-    /// <p>The effect (<code>permit</code> or <code>forbid</code>) of the policy template.</p></li>
-    /// <li>
-    /// <p>The <code>principal</code> referenced by the policy template.</p></li>
-    /// <li>
-    /// <p>The <code>resource</code> referenced by the policy template.</p></li>
+    /// <li> <p>The effect (<code>permit</code> or <code>forbid</code>) of the policy template.</p> </li>
+    /// <li> <p>The <code>principal</code> referenced by the policy template.</p> </li>
+    /// <li> <p>The <code>resource</code> referenced by the policy template.</p> </li>
     /// </ul>
     pub fn statement(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.statement(input.into());
@@ -178,19 +173,14 @@ impl UpdatePolicyTemplateFluentBuilder {
     /// <p>Specifies new statement content written in Cedar policy language to replace the current body of the policy template.</p>
     /// <p>You can change only the following elements of the policy body:</p>
     /// <ul>
-    /// <li>
-    /// <p>The <code>action</code> referenced by the policy template.</p></li>
-    /// <li>
-    /// <p>Any conditional clauses, such as <code>when</code> or <code>unless</code> clauses.</p></li>
+    /// <li> <p>The <code>action</code> referenced by the policy template.</p> </li>
+    /// <li> <p>Any conditional clauses, such as <code>when</code> or <code>unless</code> clauses.</p> </li>
     /// </ul>
     /// <p>You <b>can't</b> change the following elements:</p>
     /// <ul>
-    /// <li>
-    /// <p>The effect (<code>permit</code> or <code>forbid</code>) of the policy template.</p></li>
-    /// <li>
-    /// <p>The <code>principal</code> referenced by the policy template.</p></li>
-    /// <li>
-    /// <p>The <code>resource</code> referenced by the policy template.</p></li>
+    /// <li> <p>The effect (<code>permit</code> or <code>forbid</code>) of the policy template.</p> </li>
+    /// <li> <p>The <code>principal</code> referenced by the policy template.</p> </li>
+    /// <li> <p>The <code>resource</code> referenced by the policy template.</p> </li>
     /// </ul>
     pub fn set_statement(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_statement(input);
@@ -199,19 +189,14 @@ impl UpdatePolicyTemplateFluentBuilder {
     /// <p>Specifies new statement content written in Cedar policy language to replace the current body of the policy template.</p>
     /// <p>You can change only the following elements of the policy body:</p>
     /// <ul>
-    /// <li>
-    /// <p>The <code>action</code> referenced by the policy template.</p></li>
-    /// <li>
-    /// <p>Any conditional clauses, such as <code>when</code> or <code>unless</code> clauses.</p></li>
+    /// <li> <p>The <code>action</code> referenced by the policy template.</p> </li>
+    /// <li> <p>Any conditional clauses, such as <code>when</code> or <code>unless</code> clauses.</p> </li>
     /// </ul>
     /// <p>You <b>can't</b> change the following elements:</p>
     /// <ul>
-    /// <li>
-    /// <p>The effect (<code>permit</code> or <code>forbid</code>) of the policy template.</p></li>
-    /// <li>
-    /// <p>The <code>principal</code> referenced by the policy template.</p></li>
-    /// <li>
-    /// <p>The <code>resource</code> referenced by the policy template.</p></li>
+    /// <li> <p>The effect (<code>permit</code> or <code>forbid</code>) of the policy template.</p> </li>
+    /// <li> <p>The <code>principal</code> referenced by the policy template.</p> </li>
+    /// <li> <p>The <code>resource</code> referenced by the policy template.</p> </li>
     /// </ul>
     pub fn get_statement(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_statement()

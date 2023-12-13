@@ -5,10 +5,8 @@
 pub struct UpdateProductInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>jp</code> - Japanese</p></li>
-    /// <li>
-    /// <p><code>zh</code> - Chinese</p></li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: ::std::option::Option<::std::string::String>,
     /// <p>The product identifier.</p>
@@ -33,20 +31,16 @@ pub struct UpdateProductInput {
     pub remove_tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies connection details for the updated product and syncs the product to the connection source artifact. This automatically manages the product's artifacts based on changes to the source. The <code>SourceConnection</code> parameter consists of the following sub-fields.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Type</code></p></li>
-    /// <li>
-    /// <p><code>ConnectionParamters</code></p></li>
+    /// <li> <p> <code>Type</code> </p> </li>
+    /// <li> <p> <code>ConnectionParamters</code> </p> </li>
     /// </ul>
     pub source_connection: ::std::option::Option<crate::types::SourceConnection>,
 }
 impl UpdateProductInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>jp</code> - Japanese</p></li>
-    /// <li>
-    /// <p><code>zh</code> - Chinese</p></li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> ::std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -97,10 +91,8 @@ impl UpdateProductInput {
     }
     /// <p>Specifies connection details for the updated product and syncs the product to the connection source artifact. This automatically manages the product's artifacts based on changes to the source. The <code>SourceConnection</code> parameter consists of the following sub-fields.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Type</code></p></li>
-    /// <li>
-    /// <p><code>ConnectionParamters</code></p></li>
+    /// <li> <p> <code>Type</code> </p> </li>
+    /// <li> <p> <code>ConnectionParamters</code> </p> </li>
     /// </ul>
     pub fn source_connection(&self) -> ::std::option::Option<&crate::types::SourceConnection> {
         self.source_connection.as_ref()
@@ -133,10 +125,8 @@ pub struct UpdateProductInputBuilder {
 impl UpdateProductInputBuilder {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>jp</code> - Japanese</p></li>
-    /// <li>
-    /// <p><code>zh</code> - Chinese</p></li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accept_language = ::std::option::Option::Some(input.into());
@@ -144,10 +134,8 @@ impl UpdateProductInputBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>jp</code> - Japanese</p></li>
-    /// <li>
-    /// <p><code>zh</code> - Chinese</p></li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accept_language = input;
@@ -155,10 +143,8 @@ impl UpdateProductInputBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>jp</code> - Japanese</p></li>
-    /// <li>
-    /// <p><code>zh</code> - Chinese</p></li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
         &self.accept_language
@@ -318,10 +304,8 @@ impl UpdateProductInputBuilder {
     }
     /// <p>Specifies connection details for the updated product and syncs the product to the connection source artifact. This automatically manages the product's artifacts based on changes to the source. The <code>SourceConnection</code> parameter consists of the following sub-fields.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Type</code></p></li>
-    /// <li>
-    /// <p><code>ConnectionParamters</code></p></li>
+    /// <li> <p> <code>Type</code> </p> </li>
+    /// <li> <p> <code>ConnectionParamters</code> </p> </li>
     /// </ul>
     pub fn source_connection(mut self, input: crate::types::SourceConnection) -> Self {
         self.source_connection = ::std::option::Option::Some(input);
@@ -329,10 +313,8 @@ impl UpdateProductInputBuilder {
     }
     /// <p>Specifies connection details for the updated product and syncs the product to the connection source artifact. This automatically manages the product's artifacts based on changes to the source. The <code>SourceConnection</code> parameter consists of the following sub-fields.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Type</code></p></li>
-    /// <li>
-    /// <p><code>ConnectionParamters</code></p></li>
+    /// <li> <p> <code>Type</code> </p> </li>
+    /// <li> <p> <code>ConnectionParamters</code> </p> </li>
     /// </ul>
     pub fn set_source_connection(mut self, input: ::std::option::Option<crate::types::SourceConnection>) -> Self {
         self.source_connection = input;
@@ -340,10 +322,8 @@ impl UpdateProductInputBuilder {
     }
     /// <p>Specifies connection details for the updated product and syncs the product to the connection source artifact. This automatically manages the product's artifacts based on changes to the source. The <code>SourceConnection</code> parameter consists of the following sub-fields.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Type</code></p></li>
-    /// <li>
-    /// <p><code>ConnectionParamters</code></p></li>
+    /// <li> <p> <code>Type</code> </p> </li>
+    /// <li> <p> <code>ConnectionParamters</code> </p> </li>
     /// </ul>
     pub fn get_source_connection(&self) -> &::std::option::Option<crate::types::SourceConnection> {
         &self.source_connection

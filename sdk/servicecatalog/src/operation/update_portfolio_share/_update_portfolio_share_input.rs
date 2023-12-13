@@ -5,10 +5,8 @@
 pub struct UpdatePortfolioShareInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>jp</code> - Japanese</p></li>
-    /// <li>
-    /// <p><code>zh</code> - Chinese</p></li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the portfolio for which the share will be updated.</p>
@@ -19,16 +17,14 @@ pub struct UpdatePortfolioShareInput {
     pub organization_node: ::std::option::Option<crate::types::OrganizationNode>,
     /// <p>Enables or disables <code>TagOptions</code> sharing for the portfolio share. If this field is not provided, the current state of TagOptions sharing on the portfolio share will not be modified.</p>
     pub share_tag_options: ::std::option::Option<bool>,
-    /// <p>A flag to enables or disables <code>Principals</code> sharing in the portfolio. If this field is not provided, the current state of the <code>Principals</code> sharing on the portfolio share will not be modified.</p>
+    /// <p>A flag to enables or disables <code>Principals</code> sharing in the portfolio. If this field is not provided, the current state of the <code>Principals</code> sharing on the portfolio share will not be modified. </p>
     pub share_principals: ::std::option::Option<bool>,
 }
 impl UpdatePortfolioShareInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>jp</code> - Japanese</p></li>
-    /// <li>
-    /// <p><code>zh</code> - Chinese</p></li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> ::std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -49,7 +45,7 @@ impl UpdatePortfolioShareInput {
     pub fn share_tag_options(&self) -> ::std::option::Option<bool> {
         self.share_tag_options
     }
-    /// <p>A flag to enables or disables <code>Principals</code> sharing in the portfolio. If this field is not provided, the current state of the <code>Principals</code> sharing on the portfolio share will not be modified.</p>
+    /// <p>A flag to enables or disables <code>Principals</code> sharing in the portfolio. If this field is not provided, the current state of the <code>Principals</code> sharing on the portfolio share will not be modified. </p>
     pub fn share_principals(&self) -> ::std::option::Option<bool> {
         self.share_principals
     }
@@ -75,10 +71,8 @@ pub struct UpdatePortfolioShareInputBuilder {
 impl UpdatePortfolioShareInputBuilder {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>jp</code> - Japanese</p></li>
-    /// <li>
-    /// <p><code>zh</code> - Chinese</p></li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accept_language = ::std::option::Option::Some(input.into());
@@ -86,10 +80,8 @@ impl UpdatePortfolioShareInputBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>jp</code> - Japanese</p></li>
-    /// <li>
-    /// <p><code>zh</code> - Chinese</p></li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accept_language = input;
@@ -97,10 +89,8 @@ impl UpdatePortfolioShareInputBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>jp</code> - Japanese</p></li>
-    /// <li>
-    /// <p><code>zh</code> - Chinese</p></li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
         &self.accept_language
@@ -162,17 +152,17 @@ impl UpdatePortfolioShareInputBuilder {
     pub fn get_share_tag_options(&self) -> &::std::option::Option<bool> {
         &self.share_tag_options
     }
-    /// <p>A flag to enables or disables <code>Principals</code> sharing in the portfolio. If this field is not provided, the current state of the <code>Principals</code> sharing on the portfolio share will not be modified.</p>
+    /// <p>A flag to enables or disables <code>Principals</code> sharing in the portfolio. If this field is not provided, the current state of the <code>Principals</code> sharing on the portfolio share will not be modified. </p>
     pub fn share_principals(mut self, input: bool) -> Self {
         self.share_principals = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A flag to enables or disables <code>Principals</code> sharing in the portfolio. If this field is not provided, the current state of the <code>Principals</code> sharing on the portfolio share will not be modified.</p>
+    /// <p>A flag to enables or disables <code>Principals</code> sharing in the portfolio. If this field is not provided, the current state of the <code>Principals</code> sharing on the portfolio share will not be modified. </p>
     pub fn set_share_principals(mut self, input: ::std::option::Option<bool>) -> Self {
         self.share_principals = input;
         self
     }
-    /// <p>A flag to enables or disables <code>Principals</code> sharing in the portfolio. If this field is not provided, the current state of the <code>Principals</code> sharing on the portfolio share will not be modified.</p>
+    /// <p>A flag to enables or disables <code>Principals</code> sharing in the portfolio. If this field is not provided, the current state of the <code>Principals</code> sharing on the portfolio share will not be modified. </p>
     pub fn get_share_principals(&self) -> &::std::option::Option<bool> {
         &self.share_principals
     }

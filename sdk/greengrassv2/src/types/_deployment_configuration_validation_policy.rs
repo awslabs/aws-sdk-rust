@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeploymentConfigurationValidationPolicy {
     /// <p>The amount of time in seconds that a component can validate its configuration updates. If the validation time exceeds this timeout, then the deployment proceeds for the device.</p>
-    /// <p>Default: <code>30</code></p>
+    /// <p>Default: <code>30</code> </p>
     pub timeout_in_seconds: ::std::option::Option<i32>,
 }
 impl DeploymentConfigurationValidationPolicy {
     /// <p>The amount of time in seconds that a component can validate its configuration updates. If the validation time exceeds this timeout, then the deployment proceeds for the device.</p>
-    /// <p>Default: <code>30</code></p>
+    /// <p>Default: <code>30</code> </p>
     pub fn timeout_in_seconds(&self) -> ::std::option::Option<i32> {
         self.timeout_in_seconds
     }
@@ -30,19 +30,19 @@ pub struct DeploymentConfigurationValidationPolicyBuilder {
 }
 impl DeploymentConfigurationValidationPolicyBuilder {
     /// <p>The amount of time in seconds that a component can validate its configuration updates. If the validation time exceeds this timeout, then the deployment proceeds for the device.</p>
-    /// <p>Default: <code>30</code></p>
+    /// <p>Default: <code>30</code> </p>
     pub fn timeout_in_seconds(mut self, input: i32) -> Self {
         self.timeout_in_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>The amount of time in seconds that a component can validate its configuration updates. If the validation time exceeds this timeout, then the deployment proceeds for the device.</p>
-    /// <p>Default: <code>30</code></p>
+    /// <p>Default: <code>30</code> </p>
     pub fn set_timeout_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.timeout_in_seconds = input;
         self
     }
     /// <p>The amount of time in seconds that a component can validate its configuration updates. If the validation time exceeds this timeout, then the deployment proceeds for the device.</p>
-    /// <p>Default: <code>30</code></p>
+    /// <p>Default: <code>30</code> </p>
     pub fn get_timeout_in_seconds(&self) -> &::std::option::Option<i32> {
         &self.timeout_in_seconds
     }

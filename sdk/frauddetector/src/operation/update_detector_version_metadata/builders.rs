@@ -22,7 +22,7 @@ impl UpdateDetectorVersionMetadataInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateDetectorVersionMetadata`.
 ///
-/// <p>Updates the detector version's description. You can update the metadata for any detector version (<code>DRAFT, ACTIVE,</code> or <code>INACTIVE</code>).</p>
+/// <p>Updates the detector version's description. You can update the metadata for any detector version (<code>DRAFT, ACTIVE,</code> or <code>INACTIVE</code>). </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDetectorVersionMetadataFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -122,17 +122,17 @@ impl UpdateDetectorVersionMetadataFluentBuilder {
     pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_detector_id()
     }
-    /// <p>The detector version ID.</p>
+    /// <p>The detector version ID. </p>
     pub fn detector_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.detector_version_id(input.into());
         self
     }
-    /// <p>The detector version ID.</p>
+    /// <p>The detector version ID. </p>
     pub fn set_detector_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_detector_version_id(input);
         self
     }
-    /// <p>The detector version ID.</p>
+    /// <p>The detector version ID. </p>
     pub fn get_detector_version_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_detector_version_id()
     }

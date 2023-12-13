@@ -28,7 +28,7 @@ pub struct ParameterHistory {
     /// <p>The parameter tier.</p>
     pub tier: ::std::option::Option<crate::types::ParameterTier>,
     /// <p>Information about the policies assigned to a parameter.</p>
-    /// <p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning parameter policies</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning parameter policies</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub policies: ::std::option::Option<::std::vec::Vec<crate::types::ParameterInlinePolicy>>,
     /// <p>The data type of the parameter, such as <code>text</code> or <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
     pub data_type: ::std::option::Option<::std::string::String>,
@@ -82,7 +82,7 @@ impl ParameterHistory {
         self.tier.as_ref()
     }
     /// <p>Information about the policies assigned to a parameter.</p>
-    /// <p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning parameter policies</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning parameter policies</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policies.is_none()`.
     pub fn policies(&self) -> &[crate::types::ParameterInlinePolicy] {
@@ -306,7 +306,7 @@ impl ParameterHistoryBuilder {
     /// To override the contents of this collection use [`set_policies`](Self::set_policies).
     ///
     /// <p>Information about the policies assigned to a parameter.</p>
-    /// <p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning parameter policies</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning parameter policies</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn policies(mut self, input: crate::types::ParameterInlinePolicy) -> Self {
         let mut v = self.policies.unwrap_or_default();
         v.push(input);
@@ -314,13 +314,13 @@ impl ParameterHistoryBuilder {
         self
     }
     /// <p>Information about the policies assigned to a parameter.</p>
-    /// <p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning parameter policies</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning parameter policies</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn set_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterInlinePolicy>>) -> Self {
         self.policies = input;
         self
     }
     /// <p>Information about the policies assigned to a parameter.</p>
-    /// <p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning parameter policies</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning parameter policies</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn get_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterInlinePolicy>> {
         &self.policies
     }

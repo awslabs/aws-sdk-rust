@@ -254,7 +254,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeWorks
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DescribeWorkspaceConfigurationError {
-    /// <p>You do not have sufficient permissions to perform this action.</p>
+    /// <p>You do not have sufficient permissions to perform this action. </p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>Unexpected error while processing the request. Retry the request.</p>
     InternalServerException(crate::types::error::InternalServerException),

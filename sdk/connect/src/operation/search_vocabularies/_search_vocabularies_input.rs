@@ -13,7 +13,7 @@ pub struct SearchVocabulariesInput {
     pub state: ::std::option::Option<crate::types::VocabularyState>,
     /// <p>The starting pattern of the name of the vocabulary.</p>
     pub name_starts_with: ::std::option::Option<::std::string::String>,
-    /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a></p>
+    /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
     pub language_code: ::std::option::Option<crate::types::VocabularyLanguageCode>,
 }
 impl SearchVocabulariesInput {
@@ -37,7 +37,7 @@ impl SearchVocabulariesInput {
     pub fn name_starts_with(&self) -> ::std::option::Option<&str> {
         self.name_starts_with.as_deref()
     }
-    /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a></p>
+    /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
     pub fn language_code(&self) -> ::std::option::Option<&crate::types::VocabularyLanguageCode> {
         self.language_code.as_ref()
     }
@@ -132,17 +132,17 @@ impl SearchVocabulariesInputBuilder {
     pub fn get_name_starts_with(&self) -> &::std::option::Option<::std::string::String> {
         &self.name_starts_with
     }
-    /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a></p>
+    /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
     pub fn language_code(mut self, input: crate::types::VocabularyLanguageCode) -> Self {
         self.language_code = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a></p>
+    /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
     pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::VocabularyLanguageCode>) -> Self {
         self.language_code = input;
         self
     }
-    /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a></p>
+    /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
     pub fn get_language_code(&self) -> &::std::option::Option<crate::types::VocabularyLanguageCode> {
         &self.language_code
     }

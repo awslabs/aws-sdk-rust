@@ -8,14 +8,10 @@ pub struct DomainEndpointOptions {
     pub enforce_https: ::std::option::Option<bool>,
     /// <p>Specify the TLS security policy to apply to the HTTPS endpoint of the domain. The policy can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><b>Policy-Min-TLS-1-0-2019-07:</b> TLS security policy which supports TLS version 1.0 to TLS version 1.2</p></li>
-    /// <li>
-    /// <p><b>Policy-Min-TLS-1-2-2019-07:</b> TLS security policy which supports only TLS version 1.2</p></li>
-    /// <li>
-    /// <p><b>Policy-Min-TLS-1-0-2023-10:</b> TLS security policy which supports TLS version 1.0 to TLS version 1.3</p></li>
-    /// <li>
-    /// <p><b>Policy-Min-TLS-1-2-2023-10:</b> TLS security policy which supports TLS version 1.2 to TLS version 1.3 with perfect forward secrecy cipher suites</p></li>
+    /// <li> <p> <b>Policy-Min-TLS-1-0-2019-07:</b> TLS security policy which supports TLS version 1.0 to TLS version 1.2</p> </li>
+    /// <li> <p> <b>Policy-Min-TLS-1-2-2019-07:</b> TLS security policy which supports only TLS version 1.2</p> </li>
+    /// <li> <p> <b>Policy-Min-TLS-1-0-2023-10:</b> TLS security policy which supports TLS version 1.0 to TLS version 1.3</p> </li>
+    /// <li> <p> <b>Policy-Min-TLS-1-2-2023-10:</b> TLS security policy which supports TLS version 1.2 to TLS version 1.3 with perfect forward secrecy cipher suites</p> </li>
     /// </ul>
     pub tls_security_policy: ::std::option::Option<crate::types::TlsSecurityPolicy>,
     /// <p>Whether to enable a custom endpoint for the domain.</p>
@@ -32,14 +28,10 @@ impl DomainEndpointOptions {
     }
     /// <p>Specify the TLS security policy to apply to the HTTPS endpoint of the domain. The policy can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><b>Policy-Min-TLS-1-0-2019-07:</b> TLS security policy which supports TLS version 1.0 to TLS version 1.2</p></li>
-    /// <li>
-    /// <p><b>Policy-Min-TLS-1-2-2019-07:</b> TLS security policy which supports only TLS version 1.2</p></li>
-    /// <li>
-    /// <p><b>Policy-Min-TLS-1-0-2023-10:</b> TLS security policy which supports TLS version 1.0 to TLS version 1.3</p></li>
-    /// <li>
-    /// <p><b>Policy-Min-TLS-1-2-2023-10:</b> TLS security policy which supports TLS version 1.2 to TLS version 1.3 with perfect forward secrecy cipher suites</p></li>
+    /// <li> <p> <b>Policy-Min-TLS-1-0-2019-07:</b> TLS security policy which supports TLS version 1.0 to TLS version 1.2</p> </li>
+    /// <li> <p> <b>Policy-Min-TLS-1-2-2019-07:</b> TLS security policy which supports only TLS version 1.2</p> </li>
+    /// <li> <p> <b>Policy-Min-TLS-1-0-2023-10:</b> TLS security policy which supports TLS version 1.0 to TLS version 1.3</p> </li>
+    /// <li> <p> <b>Policy-Min-TLS-1-2-2023-10:</b> TLS security policy which supports TLS version 1.2 to TLS version 1.3 with perfect forward secrecy cipher suites</p> </li>
     /// </ul>
     pub fn tls_security_policy(&self) -> ::std::option::Option<&crate::types::TlsSecurityPolicy> {
         self.tls_security_policy.as_ref()
@@ -91,14 +83,10 @@ impl DomainEndpointOptionsBuilder {
     }
     /// <p>Specify the TLS security policy to apply to the HTTPS endpoint of the domain. The policy can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><b>Policy-Min-TLS-1-0-2019-07:</b> TLS security policy which supports TLS version 1.0 to TLS version 1.2</p></li>
-    /// <li>
-    /// <p><b>Policy-Min-TLS-1-2-2019-07:</b> TLS security policy which supports only TLS version 1.2</p></li>
-    /// <li>
-    /// <p><b>Policy-Min-TLS-1-0-2023-10:</b> TLS security policy which supports TLS version 1.0 to TLS version 1.3</p></li>
-    /// <li>
-    /// <p><b>Policy-Min-TLS-1-2-2023-10:</b> TLS security policy which supports TLS version 1.2 to TLS version 1.3 with perfect forward secrecy cipher suites</p></li>
+    /// <li> <p> <b>Policy-Min-TLS-1-0-2019-07:</b> TLS security policy which supports TLS version 1.0 to TLS version 1.2</p> </li>
+    /// <li> <p> <b>Policy-Min-TLS-1-2-2019-07:</b> TLS security policy which supports only TLS version 1.2</p> </li>
+    /// <li> <p> <b>Policy-Min-TLS-1-0-2023-10:</b> TLS security policy which supports TLS version 1.0 to TLS version 1.3</p> </li>
+    /// <li> <p> <b>Policy-Min-TLS-1-2-2023-10:</b> TLS security policy which supports TLS version 1.2 to TLS version 1.3 with perfect forward secrecy cipher suites</p> </li>
     /// </ul>
     pub fn tls_security_policy(mut self, input: crate::types::TlsSecurityPolicy) -> Self {
         self.tls_security_policy = ::std::option::Option::Some(input);
@@ -106,14 +94,10 @@ impl DomainEndpointOptionsBuilder {
     }
     /// <p>Specify the TLS security policy to apply to the HTTPS endpoint of the domain. The policy can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><b>Policy-Min-TLS-1-0-2019-07:</b> TLS security policy which supports TLS version 1.0 to TLS version 1.2</p></li>
-    /// <li>
-    /// <p><b>Policy-Min-TLS-1-2-2019-07:</b> TLS security policy which supports only TLS version 1.2</p></li>
-    /// <li>
-    /// <p><b>Policy-Min-TLS-1-0-2023-10:</b> TLS security policy which supports TLS version 1.0 to TLS version 1.3</p></li>
-    /// <li>
-    /// <p><b>Policy-Min-TLS-1-2-2023-10:</b> TLS security policy which supports TLS version 1.2 to TLS version 1.3 with perfect forward secrecy cipher suites</p></li>
+    /// <li> <p> <b>Policy-Min-TLS-1-0-2019-07:</b> TLS security policy which supports TLS version 1.0 to TLS version 1.2</p> </li>
+    /// <li> <p> <b>Policy-Min-TLS-1-2-2019-07:</b> TLS security policy which supports only TLS version 1.2</p> </li>
+    /// <li> <p> <b>Policy-Min-TLS-1-0-2023-10:</b> TLS security policy which supports TLS version 1.0 to TLS version 1.3</p> </li>
+    /// <li> <p> <b>Policy-Min-TLS-1-2-2023-10:</b> TLS security policy which supports TLS version 1.2 to TLS version 1.3 with perfect forward secrecy cipher suites</p> </li>
     /// </ul>
     pub fn set_tls_security_policy(mut self, input: ::std::option::Option<crate::types::TlsSecurityPolicy>) -> Self {
         self.tls_security_policy = input;
@@ -121,14 +105,10 @@ impl DomainEndpointOptionsBuilder {
     }
     /// <p>Specify the TLS security policy to apply to the HTTPS endpoint of the domain. The policy can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><b>Policy-Min-TLS-1-0-2019-07:</b> TLS security policy which supports TLS version 1.0 to TLS version 1.2</p></li>
-    /// <li>
-    /// <p><b>Policy-Min-TLS-1-2-2019-07:</b> TLS security policy which supports only TLS version 1.2</p></li>
-    /// <li>
-    /// <p><b>Policy-Min-TLS-1-0-2023-10:</b> TLS security policy which supports TLS version 1.0 to TLS version 1.3</p></li>
-    /// <li>
-    /// <p><b>Policy-Min-TLS-1-2-2023-10:</b> TLS security policy which supports TLS version 1.2 to TLS version 1.3 with perfect forward secrecy cipher suites</p></li>
+    /// <li> <p> <b>Policy-Min-TLS-1-0-2019-07:</b> TLS security policy which supports TLS version 1.0 to TLS version 1.2</p> </li>
+    /// <li> <p> <b>Policy-Min-TLS-1-2-2019-07:</b> TLS security policy which supports only TLS version 1.2</p> </li>
+    /// <li> <p> <b>Policy-Min-TLS-1-0-2023-10:</b> TLS security policy which supports TLS version 1.0 to TLS version 1.3</p> </li>
+    /// <li> <p> <b>Policy-Min-TLS-1-2-2023-10:</b> TLS security policy which supports TLS version 1.2 to TLS version 1.3 with perfect forward secrecy cipher suites</p> </li>
     /// </ul>
     pub fn get_tls_security_policy(&self) -> &::std::option::Option<crate::types::TlsSecurityPolicy> {
         &self.tls_security_policy

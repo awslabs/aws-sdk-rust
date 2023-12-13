@@ -4,19 +4,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum ReplicationRuleFilter {
-    /// <p>A container for specifying rule filters. The filters determine the subset of objects to which the rule applies. This element is required only if you specify more than one filter. For example:</p>
+    /// <p>A container for specifying rule filters. The filters determine the subset of objects to which the rule applies. This element is required only if you specify more than one filter. For example: </p>
     /// <ul>
-    /// <li>
-    /// <p>If you specify both a <code>Prefix</code> and a <code>Tag</code> filter, wrap these filters in an <code>And</code> tag.</p></li>
-    /// <li>
-    /// <p>If you specify a filter based on multiple tags, wrap the <code>Tag</code> elements in an <code>And</code> tag.</p></li>
+    /// <li> <p>If you specify both a <code>Prefix</code> and a <code>Tag</code> filter, wrap these filters in an <code>And</code> tag.</p> </li>
+    /// <li> <p>If you specify a filter based on multiple tags, wrap the <code>Tag</code> elements in an <code>And</code> tag.</p> </li>
     /// </ul>
     And(crate::types::ReplicationRuleAndOperator),
-    /// <p>An object key name prefix that identifies the subset of objects to which the rule applies.</p><important>
+    /// <p>An object key name prefix that identifies the subset of objects to which the rule applies.</p> <important>
     /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
     Prefix(::std::string::String),
-    /// <p>A container for specifying a tag key and value.</p>
+    /// <p>A container for specifying a tag key and value. </p>
     /// <p>The rule applies only to objects that have the tag in their tag set.</p>
     Tag(crate::types::Tag),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.

@@ -22,7 +22,7 @@ impl DeleteCapacityProviderInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteCapacityProvider`.
 ///
-/// <p>Deletes the specified capacity provider.</p><note>
+/// <p>Deletes the specified capacity provider.</p> <note>
 /// <p>The <code>FARGATE</code> and <code>FARGATE_SPOT</code> capacity providers are reserved and can't be deleted. You can disassociate them from a cluster using either the <code>PutClusterCapacityProviders</code> API or by deleting the cluster.</p>
 /// </note>
 /// <p>Prior to a capacity provider being deleted, the capacity provider must be removed from the capacity provider strategy from all services. The <code>UpdateService</code> API can be used to remove a capacity provider from a service's capacity provider strategy. When updating a service, the <code>forceNewDeployment</code> option can be used to ensure that any tasks using the Amazon EC2 instance capacity provided by the capacity provider are transitioned to use the capacity from the remaining capacity providers. Only capacity providers that aren't associated with a cluster can be deleted. To remove a capacity provider from a cluster, you can either use <code>PutClusterCapacityProviders</code> or delete the cluster.</p>

@@ -6,8 +6,7 @@ pub struct DescribeGlobalClustersInput {
     /// <p>The user-supplied DB cluster identifier. If this parameter is specified, information from only the specific DB cluster is returned. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>If supplied, must match an existing DBClusterIdentifier.</p></li>
+    /// <li> <p>If supplied, must match an existing DBClusterIdentifier.</p> </li>
     /// </ul>
     pub global_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>This parameter isn't currently supported.</p>
@@ -23,8 +22,7 @@ impl DescribeGlobalClustersInput {
     /// <p>The user-supplied DB cluster identifier. If this parameter is specified, information from only the specific DB cluster is returned. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>If supplied, must match an existing DBClusterIdentifier.</p></li>
+    /// <li> <p>If supplied, must match an existing DBClusterIdentifier.</p> </li>
     /// </ul>
     pub fn global_cluster_identifier(&self) -> ::std::option::Option<&str> {
         self.global_cluster_identifier.as_deref()
@@ -66,8 +64,7 @@ impl DescribeGlobalClustersInputBuilder {
     /// <p>The user-supplied DB cluster identifier. If this parameter is specified, information from only the specific DB cluster is returned. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>If supplied, must match an existing DBClusterIdentifier.</p></li>
+    /// <li> <p>If supplied, must match an existing DBClusterIdentifier.</p> </li>
     /// </ul>
     pub fn global_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_cluster_identifier = ::std::option::Option::Some(input.into());
@@ -76,8 +73,7 @@ impl DescribeGlobalClustersInputBuilder {
     /// <p>The user-supplied DB cluster identifier. If this parameter is specified, information from only the specific DB cluster is returned. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>If supplied, must match an existing DBClusterIdentifier.</p></li>
+    /// <li> <p>If supplied, must match an existing DBClusterIdentifier.</p> </li>
     /// </ul>
     pub fn set_global_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.global_cluster_identifier = input;
@@ -86,8 +82,7 @@ impl DescribeGlobalClustersInputBuilder {
     /// <p>The user-supplied DB cluster identifier. If this parameter is specified, information from only the specific DB cluster is returned. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>If supplied, must match an existing DBClusterIdentifier.</p></li>
+    /// <li> <p>If supplied, must match an existing DBClusterIdentifier.</p> </li>
     /// </ul>
     pub fn get_global_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.global_cluster_identifier

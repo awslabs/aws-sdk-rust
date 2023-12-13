@@ -8,7 +8,7 @@ pub struct MixedMeasureMapping {
     pub measure_name: ::std::option::Option<::std::string::String>,
     /// <p>This field refers to the source column from which measure-value is to be read for result materialization.</p>
     pub source_column: ::std::option::Option<::std::string::String>,
-    /// <p>Target measure name to be used. If not provided, the target measure name by default would be measure-name if provided, or sourceColumn otherwise.</p>
+    /// <p>Target measure name to be used. If not provided, the target measure name by default would be measure-name if provided, or sourceColumn otherwise. </p>
     pub target_measure_name: ::std::option::Option<::std::string::String>,
     /// <p>Type of the value that is to be read from sourceColumn. If the mapping is for MULTI, use MeasureValueType.MULTI.</p>
     pub measure_value_type: crate::types::MeasureValueType,
@@ -24,7 +24,7 @@ impl MixedMeasureMapping {
     pub fn source_column(&self) -> ::std::option::Option<&str> {
         self.source_column.as_deref()
     }
-    /// <p>Target measure name to be used. If not provided, the target measure name by default would be measure-name if provided, or sourceColumn otherwise.</p>
+    /// <p>Target measure name to be used. If not provided, the target measure name by default would be measure-name if provided, or sourceColumn otherwise. </p>
     pub fn target_measure_name(&self) -> ::std::option::Option<&str> {
         self.target_measure_name.as_deref()
     }
@@ -85,17 +85,17 @@ impl MixedMeasureMappingBuilder {
     pub fn get_source_column(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_column
     }
-    /// <p>Target measure name to be used. If not provided, the target measure name by default would be measure-name if provided, or sourceColumn otherwise.</p>
+    /// <p>Target measure name to be used. If not provided, the target measure name by default would be measure-name if provided, or sourceColumn otherwise. </p>
     pub fn target_measure_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_measure_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Target measure name to be used. If not provided, the target measure name by default would be measure-name if provided, or sourceColumn otherwise.</p>
+    /// <p>Target measure name to be used. If not provided, the target measure name by default would be measure-name if provided, or sourceColumn otherwise. </p>
     pub fn set_target_measure_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_measure_name = input;
         self
     }
-    /// <p>Target measure name to be used. If not provided, the target measure name by default would be measure-name if provided, or sourceColumn otherwise.</p>
+    /// <p>Target measure name to be used. If not provided, the target measure name by default would be measure-name if provided, or sourceColumn otherwise. </p>
     pub fn get_target_measure_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_measure_name
     }

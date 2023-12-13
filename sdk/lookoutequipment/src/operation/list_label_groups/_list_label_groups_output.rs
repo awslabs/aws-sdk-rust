@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListLabelGroupsOutput {
-    /// <p>An opaque pagination token indicating where to continue the listing of label groups.</p>
+    /// <p> An opaque pagination token indicating where to continue the listing of label groups. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>A summary of the label groups.</p>
+    /// <p> A summary of the label groups. </p>
     pub label_group_summaries: ::std::option::Option<::std::vec::Vec<crate::types::LabelGroupSummary>>,
     _request_id: Option<String>,
 }
 impl ListLabelGroupsOutput {
-    /// <p>An opaque pagination token indicating where to continue the listing of label groups.</p>
+    /// <p> An opaque pagination token indicating where to continue the listing of label groups. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>A summary of the label groups.</p>
+    /// <p> A summary of the label groups. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.label_group_summaries.is_none()`.
     pub fn label_group_summaries(&self) -> &[crate::types::LabelGroupSummary] {
@@ -42,17 +42,17 @@ pub struct ListLabelGroupsOutputBuilder {
     _request_id: Option<String>,
 }
 impl ListLabelGroupsOutputBuilder {
-    /// <p>An opaque pagination token indicating where to continue the listing of label groups.</p>
+    /// <p> An opaque pagination token indicating where to continue the listing of label groups. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An opaque pagination token indicating where to continue the listing of label groups.</p>
+    /// <p> An opaque pagination token indicating where to continue the listing of label groups. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>An opaque pagination token indicating where to continue the listing of label groups.</p>
+    /// <p> An opaque pagination token indicating where to continue the listing of label groups. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
@@ -60,19 +60,19 @@ impl ListLabelGroupsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_label_group_summaries`](Self::set_label_group_summaries).
     ///
-    /// <p>A summary of the label groups.</p>
+    /// <p> A summary of the label groups. </p>
     pub fn label_group_summaries(mut self, input: crate::types::LabelGroupSummary) -> Self {
         let mut v = self.label_group_summaries.unwrap_or_default();
         v.push(input);
         self.label_group_summaries = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A summary of the label groups.</p>
+    /// <p> A summary of the label groups. </p>
     pub fn set_label_group_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LabelGroupSummary>>) -> Self {
         self.label_group_summaries = input;
         self
     }
-    /// <p>A summary of the label groups.</p>
+    /// <p> A summary of the label groups. </p>
     pub fn get_label_group_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LabelGroupSummary>> {
         &self.label_group_summaries
     }

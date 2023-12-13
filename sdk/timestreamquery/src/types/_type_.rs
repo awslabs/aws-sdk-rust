@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Type {
-    /// <p>Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time.</p>
+    /// <p>Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time. </p>
     pub scalar_type: ::std::option::Option<crate::types::ScalarType>,
     /// <p>Indicates if the column is an array.</p>
     pub array_column_info: ::std::option::Option<crate::types::ColumnInfo>,
@@ -14,7 +14,7 @@ pub struct Type {
     pub row_column_info: ::std::option::Option<::std::vec::Vec<crate::types::ColumnInfo>>,
 }
 impl Type {
-    /// <p>Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time.</p>
+    /// <p>Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time. </p>
     pub fn scalar_type(&self) -> ::std::option::Option<&crate::types::ScalarType> {
         self.scalar_type.as_ref()
     }
@@ -50,17 +50,17 @@ pub struct TypeBuilder {
     pub(crate) row_column_info: ::std::option::Option<::std::vec::Vec<crate::types::ColumnInfo>>,
 }
 impl TypeBuilder {
-    /// <p>Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time.</p>
+    /// <p>Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time. </p>
     pub fn scalar_type(mut self, input: crate::types::ScalarType) -> Self {
         self.scalar_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time.</p>
+    /// <p>Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time. </p>
     pub fn set_scalar_type(mut self, input: ::std::option::Option<crate::types::ScalarType>) -> Self {
         self.scalar_type = input;
         self
     }
-    /// <p>Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time.</p>
+    /// <p>Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time. </p>
     pub fn get_scalar_type(&self) -> &::std::option::Option<crate::types::ScalarType> {
         &self.scalar_type
     }

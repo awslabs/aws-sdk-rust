@@ -14,10 +14,8 @@ pub struct FilterSliderControl {
     pub display_options: ::std::option::Option<crate::types::SliderControlDisplayOptions>,
     /// <p>The type of <code>FilterSliderControl</code>. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SINGLE_POINT</code>: Filter against(equals) a single data point.</p></li>
-    /// <li>
-    /// <p><code>RANGE</code>: Filter data that is in a specified range.</p></li>
+    /// <li> <p> <code>SINGLE_POINT</code>: Filter against(equals) a single data point.</p> </li>
+    /// <li> <p> <code>RANGE</code>: Filter data that is in a specified range.</p> </li>
     /// </ul>
     pub r#type: ::std::option::Option<crate::types::SheetControlSliderType>,
     /// <p>The smaller value that is displayed at the left of the slider.</p>
@@ -49,10 +47,8 @@ impl FilterSliderControl {
     }
     /// <p>The type of <code>FilterSliderControl</code>. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SINGLE_POINT</code>: Filter against(equals) a single data point.</p></li>
-    /// <li>
-    /// <p><code>RANGE</code>: Filter data that is in a specified range.</p></li>
+    /// <li> <p> <code>SINGLE_POINT</code>: Filter against(equals) a single data point.</p> </li>
+    /// <li> <p> <code>RANGE</code>: Filter data that is in a specified range.</p> </li>
     /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::SheetControlSliderType> {
         self.r#type.as_ref()
@@ -152,10 +148,8 @@ impl FilterSliderControlBuilder {
     }
     /// <p>The type of <code>FilterSliderControl</code>. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SINGLE_POINT</code>: Filter against(equals) a single data point.</p></li>
-    /// <li>
-    /// <p><code>RANGE</code>: Filter data that is in a specified range.</p></li>
+    /// <li> <p> <code>SINGLE_POINT</code>: Filter against(equals) a single data point.</p> </li>
+    /// <li> <p> <code>RANGE</code>: Filter data that is in a specified range.</p> </li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::SheetControlSliderType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -163,10 +157,8 @@ impl FilterSliderControlBuilder {
     }
     /// <p>The type of <code>FilterSliderControl</code>. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SINGLE_POINT</code>: Filter against(equals) a single data point.</p></li>
-    /// <li>
-    /// <p><code>RANGE</code>: Filter data that is in a specified range.</p></li>
+    /// <li> <p> <code>SINGLE_POINT</code>: Filter against(equals) a single data point.</p> </li>
+    /// <li> <p> <code>RANGE</code>: Filter data that is in a specified range.</p> </li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::SheetControlSliderType>) -> Self {
         self.r#type = input;
@@ -174,10 +166,8 @@ impl FilterSliderControlBuilder {
     }
     /// <p>The type of <code>FilterSliderControl</code>. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SINGLE_POINT</code>: Filter against(equals) a single data point.</p></li>
-    /// <li>
-    /// <p><code>RANGE</code>: Filter data that is in a specified range.</p></li>
+    /// <li> <p> <code>SINGLE_POINT</code>: Filter against(equals) a single data point.</p> </li>
+    /// <li> <p> <code>RANGE</code>: Filter data that is in a specified range.</p> </li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::SheetControlSliderType> {
         &self.r#type

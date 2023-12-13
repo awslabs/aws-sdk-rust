@@ -5,16 +5,12 @@
 pub struct ListGroupsInput {
     /// <p>Filters, formatted as <code>GroupFilter</code> objects, that you want to apply to a <code>ListGroups</code> operation.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>resource-type</code> - Filter the results to include only those of the specified resource types. Specify up to five resource types in the format <code>AWS::<i>ServiceCode</i>::<i>ResourceType</i> </code>. For example, <code>AWS::EC2::Instance</code>, or <code>AWS::S3::Bucket</code>.</p></li>
-    /// <li>
-    /// <p><code>configuration-type</code> - Filter the results to include only those groups that have the specified configuration types attached. The current supported values are:</p>
+    /// <li> <p> <code>resource-type</code> - Filter the results to include only those of the specified resource types. Specify up to five resource types in the format <code>AWS::<i>ServiceCode</i>::<i>ResourceType</i> </code>. For example, <code>AWS::EC2::Instance</code>, or <code>AWS::S3::Bucket</code>.</p> </li>
+    /// <li> <p> <code>configuration-type</code> - Filter the results to include only those groups that have the specified configuration types attached. The current supported values are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AWS::EC2::CapacityReservationPool</code></p></li>
-    /// <li>
-    /// <p><code>AWS::EC2::HostManagement</code></p></li>
-    /// </ul></li>
+    /// <li> <p> <code>AWS::EC2::CapacityReservationPool</code> </p> </li>
+    /// <li> <p> <code>AWS::EC2::HostManagement</code> </p> </li>
+    /// </ul> </li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::GroupFilter>>,
     /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
@@ -25,16 +21,12 @@ pub struct ListGroupsInput {
 impl ListGroupsInput {
     /// <p>Filters, formatted as <code>GroupFilter</code> objects, that you want to apply to a <code>ListGroups</code> operation.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>resource-type</code> - Filter the results to include only those of the specified resource types. Specify up to five resource types in the format <code>AWS::<i>ServiceCode</i>::<i>ResourceType</i> </code>. For example, <code>AWS::EC2::Instance</code>, or <code>AWS::S3::Bucket</code>.</p></li>
-    /// <li>
-    /// <p><code>configuration-type</code> - Filter the results to include only those groups that have the specified configuration types attached. The current supported values are:</p>
+    /// <li> <p> <code>resource-type</code> - Filter the results to include only those of the specified resource types. Specify up to five resource types in the format <code>AWS::<i>ServiceCode</i>::<i>ResourceType</i> </code>. For example, <code>AWS::EC2::Instance</code>, or <code>AWS::S3::Bucket</code>.</p> </li>
+    /// <li> <p> <code>configuration-type</code> - Filter the results to include only those groups that have the specified configuration types attached. The current supported values are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AWS::EC2::CapacityReservationPool</code></p></li>
-    /// <li>
-    /// <p><code>AWS::EC2::HostManagement</code></p></li>
-    /// </ul></li>
+    /// <li> <p> <code>AWS::EC2::CapacityReservationPool</code> </p> </li>
+    /// <li> <p> <code>AWS::EC2::HostManagement</code> </p> </li>
+    /// </ul> </li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
@@ -72,16 +64,12 @@ impl ListGroupsInputBuilder {
     ///
     /// <p>Filters, formatted as <code>GroupFilter</code> objects, that you want to apply to a <code>ListGroups</code> operation.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>resource-type</code> - Filter the results to include only those of the specified resource types. Specify up to five resource types in the format <code>AWS::<i>ServiceCode</i>::<i>ResourceType</i> </code>. For example, <code>AWS::EC2::Instance</code>, or <code>AWS::S3::Bucket</code>.</p></li>
-    /// <li>
-    /// <p><code>configuration-type</code> - Filter the results to include only those groups that have the specified configuration types attached. The current supported values are:</p>
+    /// <li> <p> <code>resource-type</code> - Filter the results to include only those of the specified resource types. Specify up to five resource types in the format <code>AWS::<i>ServiceCode</i>::<i>ResourceType</i> </code>. For example, <code>AWS::EC2::Instance</code>, or <code>AWS::S3::Bucket</code>.</p> </li>
+    /// <li> <p> <code>configuration-type</code> - Filter the results to include only those groups that have the specified configuration types attached. The current supported values are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AWS::EC2::CapacityReservationPool</code></p></li>
-    /// <li>
-    /// <p><code>AWS::EC2::HostManagement</code></p></li>
-    /// </ul></li>
+    /// <li> <p> <code>AWS::EC2::CapacityReservationPool</code> </p> </li>
+    /// <li> <p> <code>AWS::EC2::HostManagement</code> </p> </li>
+    /// </ul> </li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::GroupFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
@@ -91,16 +79,12 @@ impl ListGroupsInputBuilder {
     }
     /// <p>Filters, formatted as <code>GroupFilter</code> objects, that you want to apply to a <code>ListGroups</code> operation.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>resource-type</code> - Filter the results to include only those of the specified resource types. Specify up to five resource types in the format <code>AWS::<i>ServiceCode</i>::<i>ResourceType</i> </code>. For example, <code>AWS::EC2::Instance</code>, or <code>AWS::S3::Bucket</code>.</p></li>
-    /// <li>
-    /// <p><code>configuration-type</code> - Filter the results to include only those groups that have the specified configuration types attached. The current supported values are:</p>
+    /// <li> <p> <code>resource-type</code> - Filter the results to include only those of the specified resource types. Specify up to five resource types in the format <code>AWS::<i>ServiceCode</i>::<i>ResourceType</i> </code>. For example, <code>AWS::EC2::Instance</code>, or <code>AWS::S3::Bucket</code>.</p> </li>
+    /// <li> <p> <code>configuration-type</code> - Filter the results to include only those groups that have the specified configuration types attached. The current supported values are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AWS::EC2::CapacityReservationPool</code></p></li>
-    /// <li>
-    /// <p><code>AWS::EC2::HostManagement</code></p></li>
-    /// </ul></li>
+    /// <li> <p> <code>AWS::EC2::CapacityReservationPool</code> </p> </li>
+    /// <li> <p> <code>AWS::EC2::HostManagement</code> </p> </li>
+    /// </ul> </li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GroupFilter>>) -> Self {
         self.filters = input;
@@ -108,16 +92,12 @@ impl ListGroupsInputBuilder {
     }
     /// <p>Filters, formatted as <code>GroupFilter</code> objects, that you want to apply to a <code>ListGroups</code> operation.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>resource-type</code> - Filter the results to include only those of the specified resource types. Specify up to five resource types in the format <code>AWS::<i>ServiceCode</i>::<i>ResourceType</i> </code>. For example, <code>AWS::EC2::Instance</code>, or <code>AWS::S3::Bucket</code>.</p></li>
-    /// <li>
-    /// <p><code>configuration-type</code> - Filter the results to include only those groups that have the specified configuration types attached. The current supported values are:</p>
+    /// <li> <p> <code>resource-type</code> - Filter the results to include only those of the specified resource types. Specify up to five resource types in the format <code>AWS::<i>ServiceCode</i>::<i>ResourceType</i> </code>. For example, <code>AWS::EC2::Instance</code>, or <code>AWS::S3::Bucket</code>.</p> </li>
+    /// <li> <p> <code>configuration-type</code> - Filter the results to include only those groups that have the specified configuration types attached. The current supported values are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AWS::EC2::CapacityReservationPool</code></p></li>
-    /// <li>
-    /// <p><code>AWS::EC2::HostManagement</code></p></li>
-    /// </ul></li>
+    /// <li> <p> <code>AWS::EC2::CapacityReservationPool</code> </p> </li>
+    /// <li> <p> <code>AWS::EC2::HostManagement</code> </p> </li>
+    /// </ul> </li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupFilter>> {
         &self.filters

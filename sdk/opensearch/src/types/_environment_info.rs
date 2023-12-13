@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnvironmentInfo {
-    /// <p>A list of <code>AvailabilityZoneInfo</code> for the domain.</p>
+    /// <p> A list of <code>AvailabilityZoneInfo</code> for the domain.</p>
     pub availability_zone_information: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZoneInfo>>,
 }
 impl EnvironmentInfo {
-    /// <p>A list of <code>AvailabilityZoneInfo</code> for the domain.</p>
+    /// <p> A list of <code>AvailabilityZoneInfo</code> for the domain.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zone_information.is_none()`.
     pub fn availability_zone_information(&self) -> &[crate::types::AvailabilityZoneInfo] {
@@ -33,19 +33,19 @@ impl EnvironmentInfoBuilder {
     ///
     /// To override the contents of this collection use [`set_availability_zone_information`](Self::set_availability_zone_information).
     ///
-    /// <p>A list of <code>AvailabilityZoneInfo</code> for the domain.</p>
+    /// <p> A list of <code>AvailabilityZoneInfo</code> for the domain.</p>
     pub fn availability_zone_information(mut self, input: crate::types::AvailabilityZoneInfo) -> Self {
         let mut v = self.availability_zone_information.unwrap_or_default();
         v.push(input);
         self.availability_zone_information = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of <code>AvailabilityZoneInfo</code> for the domain.</p>
+    /// <p> A list of <code>AvailabilityZoneInfo</code> for the domain.</p>
     pub fn set_availability_zone_information(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZoneInfo>>) -> Self {
         self.availability_zone_information = input;
         self
     }
-    /// <p>A list of <code>AvailabilityZoneInfo</code> for the domain.</p>
+    /// <p> A list of <code>AvailabilityZoneInfo</code> for the domain.</p>
     pub fn get_availability_zone_information(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZoneInfo>> {
         &self.availability_zone_information
     }

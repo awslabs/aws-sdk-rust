@@ -243,7 +243,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeDBSna
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DescribeDBSnapshotAttributesError {
-    /// <p><code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.</p>
+    /// <p> <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.</p>
     DbSnapshotNotFoundFault(crate::types::error::DbSnapshotNotFoundFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

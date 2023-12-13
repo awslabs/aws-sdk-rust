@@ -2,15 +2,15 @@
 
 /// <p>The resource that you are attempting to delete is referred to by another resource. Use this information to remove references to the resource that you are trying to delete.</p>
 /// <p>The body of the exception contains a JSON object that describes the resource.</p>
-/// <p><code>{ "resourceType": BOT | BOTALIAS | BOTCHANNEL | INTENT,</code></p>
-/// <p><code>"resourceReference": {</code></p>
-/// <p><code>"name": <i>string</i>, "version": <i>string</i> } }</code></p>
+/// <p> <code>{ "resourceType": BOT | BOTALIAS | BOTCHANNEL | INTENT,</code> </p>
+/// <p> <code>"resourceReference": {</code> </p>
+/// <p> <code>"name": <i>string</i>, "version": <i>string</i> } }</code> </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceInUseException {
     #[allow(missing_docs)] // documentation missing in model
     pub reference_type: ::std::option::Option<crate::types::ReferenceType>,
-    /// <p>Describes the resource that refers to the resource that you are attempting to delete. This object is returned as part of the <code>ResourceInUseException</code> exception.</p>
+    /// <p>Describes the resource that refers to the resource that you are attempting to delete. This object is returned as part of the <code>ResourceInUseException</code> exception. </p>
     pub example_reference: ::std::option::Option<crate::types::ResourceReference>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: ::std::option::Option<::std::string::String>,
@@ -21,7 +21,7 @@ impl ResourceInUseException {
     pub fn reference_type(&self) -> ::std::option::Option<&crate::types::ReferenceType> {
         self.reference_type.as_ref()
     }
-    /// <p>Describes the resource that refers to the resource that you are attempting to delete. This object is returned as part of the <code>ResourceInUseException</code> exception.</p>
+    /// <p>Describes the resource that refers to the resource that you are attempting to delete. This object is returned as part of the <code>ResourceInUseException</code> exception. </p>
     pub fn example_reference(&self) -> ::std::option::Option<&crate::types::ResourceReference> {
         self.example_reference.as_ref()
     }
@@ -86,17 +86,17 @@ impl ResourceInUseExceptionBuilder {
     pub fn get_reference_type(&self) -> &::std::option::Option<crate::types::ReferenceType> {
         &self.reference_type
     }
-    /// <p>Describes the resource that refers to the resource that you are attempting to delete. This object is returned as part of the <code>ResourceInUseException</code> exception.</p>
+    /// <p>Describes the resource that refers to the resource that you are attempting to delete. This object is returned as part of the <code>ResourceInUseException</code> exception. </p>
     pub fn example_reference(mut self, input: crate::types::ResourceReference) -> Self {
         self.example_reference = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Describes the resource that refers to the resource that you are attempting to delete. This object is returned as part of the <code>ResourceInUseException</code> exception.</p>
+    /// <p>Describes the resource that refers to the resource that you are attempting to delete. This object is returned as part of the <code>ResourceInUseException</code> exception. </p>
     pub fn set_example_reference(mut self, input: ::std::option::Option<crate::types::ResourceReference>) -> Self {
         self.example_reference = input;
         self
     }
-    /// <p>Describes the resource that refers to the resource that you are attempting to delete. This object is returned as part of the <code>ResourceInUseException</code> exception.</p>
+    /// <p>Describes the resource that refers to the resource that you are attempting to delete. This object is returned as part of the <code>ResourceInUseException</code> exception. </p>
     pub fn get_example_reference(&self) -> &::std::option::Option<crate::types::ResourceReference> {
         &self.example_reference
     }

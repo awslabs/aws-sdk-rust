@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetExperimentResultsOutput {
-    /// <p>An array of structures that include experiment results including metric names and values.</p>
+    /// <p>An array of structures that include experiment results including metric names and values. </p>
     pub results_data: ::std::option::Option<::std::vec::Vec<crate::types::ExperimentResultsData>>,
     /// <p>An array of structures that include the reports that you requested.</p>
     pub reports: ::std::option::Option<::std::vec::Vec<crate::types::ExperimentReport>>,
@@ -14,7 +14,7 @@ pub struct GetExperimentResultsOutput {
     _request_id: Option<String>,
 }
 impl GetExperimentResultsOutput {
-    /// <p>An array of structures that include experiment results including metric names and values.</p>
+    /// <p>An array of structures that include experiment results including metric names and values. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.results_data.is_none()`.
     pub fn results_data(&self) -> &[crate::types::ExperimentResultsData] {
@@ -64,19 +64,19 @@ impl GetExperimentResultsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_results_data`](Self::set_results_data).
     ///
-    /// <p>An array of structures that include experiment results including metric names and values.</p>
+    /// <p>An array of structures that include experiment results including metric names and values. </p>
     pub fn results_data(mut self, input: crate::types::ExperimentResultsData) -> Self {
         let mut v = self.results_data.unwrap_or_default();
         v.push(input);
         self.results_data = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of structures that include experiment results including metric names and values.</p>
+    /// <p>An array of structures that include experiment results including metric names and values. </p>
     pub fn set_results_data(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExperimentResultsData>>) -> Self {
         self.results_data = input;
         self
     }
-    /// <p>An array of structures that include experiment results including metric names and values.</p>
+    /// <p>An array of structures that include experiment results including metric names and values. </p>
     pub fn get_results_data(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExperimentResultsData>> {
         &self.results_data
     }

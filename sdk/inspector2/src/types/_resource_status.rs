@@ -10,7 +10,7 @@ pub struct ResourceStatus {
     pub ecr: crate::types::Status,
     /// <p>The status of Amazon Inspector scanning for AWS Lambda function.</p>
     pub lambda: ::std::option::Option<crate::types::Status>,
-    /// <p>The status of Amazon Inspector scanning for custom application code for Amazon Web Services Lambda functions.</p>
+    /// <p>The status of Amazon Inspector scanning for custom application code for Amazon Web Services Lambda functions. </p>
     pub lambda_code: ::std::option::Option<crate::types::Status>,
 }
 impl ResourceStatus {
@@ -26,7 +26,7 @@ impl ResourceStatus {
     pub fn lambda(&self) -> ::std::option::Option<&crate::types::Status> {
         self.lambda.as_ref()
     }
-    /// <p>The status of Amazon Inspector scanning for custom application code for Amazon Web Services Lambda functions.</p>
+    /// <p>The status of Amazon Inspector scanning for custom application code for Amazon Web Services Lambda functions. </p>
     pub fn lambda_code(&self) -> ::std::option::Option<&crate::types::Status> {
         self.lambda_code.as_ref()
     }
@@ -92,17 +92,17 @@ impl ResourceStatusBuilder {
     pub fn get_lambda(&self) -> &::std::option::Option<crate::types::Status> {
         &self.lambda
     }
-    /// <p>The status of Amazon Inspector scanning for custom application code for Amazon Web Services Lambda functions.</p>
+    /// <p>The status of Amazon Inspector scanning for custom application code for Amazon Web Services Lambda functions. </p>
     pub fn lambda_code(mut self, input: crate::types::Status) -> Self {
         self.lambda_code = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of Amazon Inspector scanning for custom application code for Amazon Web Services Lambda functions.</p>
+    /// <p>The status of Amazon Inspector scanning for custom application code for Amazon Web Services Lambda functions. </p>
     pub fn set_lambda_code(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
         self.lambda_code = input;
         self
     }
-    /// <p>The status of Amazon Inspector scanning for custom application code for Amazon Web Services Lambda functions.</p>
+    /// <p>The status of Amazon Inspector scanning for custom application code for Amazon Web Services Lambda functions. </p>
     pub fn get_lambda_code(&self) -> &::std::option::Option<crate::types::Status> {
         &self.lambda_code
     }

@@ -164,31 +164,31 @@ impl UpdateTableFluentBuilder {
     pub fn get_skip_archive(&self) -> &::std::option::Option<bool> {
         self.inner.get_skip_archive()
     }
-    /// <p>The transaction ID at which to update the table contents.</p>
+    /// <p>The transaction ID at which to update the table contents. </p>
     pub fn transaction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.transaction_id(input.into());
         self
     }
-    /// <p>The transaction ID at which to update the table contents.</p>
+    /// <p>The transaction ID at which to update the table contents. </p>
     pub fn set_transaction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_transaction_id(input);
         self
     }
-    /// <p>The transaction ID at which to update the table contents.</p>
+    /// <p>The transaction ID at which to update the table contents. </p>
     pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_transaction_id()
     }
-    /// <p>The version ID at which to update the table contents.</p>
+    /// <p>The version ID at which to update the table contents. </p>
     pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.version_id(input.into());
         self
     }
-    /// <p>The version ID at which to update the table contents.</p>
+    /// <p>The version ID at which to update the table contents. </p>
     pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_version_id(input);
         self
     }
-    /// <p>The version ID at which to update the table contents.</p>
+    /// <p>The version ID at which to update the table contents. </p>
     pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_version_id()
     }

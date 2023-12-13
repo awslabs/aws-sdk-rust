@@ -35,7 +35,7 @@ pub struct InstanceNetworkInterface {
     /// <p>The ID of the VPC.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of network interface.</p>
-    /// <p>Valid values: <code>interface</code> | <code>efa</code> | <code>trunk</code></p>
+    /// <p>Valid values: <code>interface</code> | <code>efa</code> | <code>trunk</code> </p>
     pub interface_type: ::std::option::Option<::std::string::String>,
     /// <p>The IPv4 delegated prefixes that are assigned to the network interface.</p>
     pub ipv4_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::InstanceIpv4Prefix>>,
@@ -112,7 +112,7 @@ impl InstanceNetworkInterface {
         self.vpc_id.as_deref()
     }
     /// <p>The type of network interface.</p>
-    /// <p>Valid values: <code>interface</code> | <code>efa</code> | <code>trunk</code></p>
+    /// <p>Valid values: <code>interface</code> | <code>efa</code> | <code>trunk</code> </p>
     pub fn interface_type(&self) -> ::std::option::Option<&str> {
         self.interface_type.as_deref()
     }
@@ -394,19 +394,19 @@ impl InstanceNetworkInterfaceBuilder {
         &self.vpc_id
     }
     /// <p>The type of network interface.</p>
-    /// <p>Valid values: <code>interface</code> | <code>efa</code> | <code>trunk</code></p>
+    /// <p>Valid values: <code>interface</code> | <code>efa</code> | <code>trunk</code> </p>
     pub fn interface_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.interface_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of network interface.</p>
-    /// <p>Valid values: <code>interface</code> | <code>efa</code> | <code>trunk</code></p>
+    /// <p>Valid values: <code>interface</code> | <code>efa</code> | <code>trunk</code> </p>
     pub fn set_interface_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.interface_type = input;
         self
     }
     /// <p>The type of network interface.</p>
-    /// <p>Valid values: <code>interface</code> | <code>efa</code> | <code>trunk</code></p>
+    /// <p>Valid values: <code>interface</code> | <code>efa</code> | <code>trunk</code> </p>
     pub fn get_interface_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.interface_type
     }

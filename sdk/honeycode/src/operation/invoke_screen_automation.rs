@@ -295,7 +295,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for InvokeScreenA
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum InvokeScreenAutomationError {
-    /// <p>You do not have sufficient access to perform this action. Check that the workbook is owned by you and your IAM policy allows access to the resource in the request.</p>
+    /// <p> You do not have sufficient access to perform this action. Check that the workbook is owned by you and your IAM policy allows access to the resource in the request. </p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>The automation execution did not end successfully.</p>
     AutomationExecutionException(crate::types::error::AutomationExecutionException),
@@ -307,13 +307,13 @@ pub enum InvokeScreenAutomationError {
     RequestTimeoutException(crate::types::error::RequestTimeoutException),
     /// <p>A Workbook, Table, App, Screen or Screen Automation was not found with the given ID.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>The request caused service quota to be breached.</p>
+    /// <p> The request caused service quota to be breached. </p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>Remote service is unreachable.</p>
     ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
     /// <p>Tps(transactions per second) rate reached.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
-    /// <p>Request is invalid. The message in the response contains details on why the request is invalid.</p>
+    /// <p> Request is invalid. The message in the response contains details on why the request is invalid. </p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

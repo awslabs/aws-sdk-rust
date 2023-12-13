@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActionReviewPayloadField {
-    /// <p>The name of the field.</p>
+    /// <p> The name of the field. </p>
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The display order of fields in a payload.</p>
     pub display_order: ::std::option::Option<i32>,
-    /// <p>The type of field.</p>
+    /// <p>The type of field. </p>
     pub r#type: ::std::option::Option<crate::types::ActionPayloadFieldType>,
     /// <p>The field value.</p>
     pub value: ::std::option::Option<::aws_smithy_types::Document>,
@@ -18,7 +18,7 @@ pub struct ActionReviewPayloadField {
     pub required: ::std::option::Option<bool>,
 }
 impl ActionReviewPayloadField {
-    /// <p>The name of the field.</p>
+    /// <p> The name of the field. </p>
     pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
@@ -26,7 +26,7 @@ impl ActionReviewPayloadField {
     pub fn display_order(&self) -> ::std::option::Option<i32> {
         self.display_order
     }
-    /// <p>The type of field.</p>
+    /// <p>The type of field. </p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::ActionPayloadFieldType> {
         self.r#type.as_ref()
     }
@@ -64,17 +64,17 @@ pub struct ActionReviewPayloadFieldBuilder {
     pub(crate) required: ::std::option::Option<bool>,
 }
 impl ActionReviewPayloadFieldBuilder {
-    /// <p>The name of the field.</p>
+    /// <p> The name of the field. </p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the field.</p>
+    /// <p> The name of the field. </p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
     }
-    /// <p>The name of the field.</p>
+    /// <p> The name of the field. </p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }
@@ -92,17 +92,17 @@ impl ActionReviewPayloadFieldBuilder {
     pub fn get_display_order(&self) -> &::std::option::Option<i32> {
         &self.display_order
     }
-    /// <p>The type of field.</p>
+    /// <p>The type of field. </p>
     pub fn r#type(mut self, input: crate::types::ActionPayloadFieldType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of field.</p>
+    /// <p>The type of field. </p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ActionPayloadFieldType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The type of field.</p>
+    /// <p>The type of field. </p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ActionPayloadFieldType> {
         &self.r#type
     }

@@ -122,17 +122,17 @@ impl ModifyClusterMaintenanceFluentBuilder {
     pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cluster_identifier()
     }
-    /// <p>A boolean indicating whether to enable the deferred maintenance window.</p>
+    /// <p>A boolean indicating whether to enable the deferred maintenance window. </p>
     pub fn defer_maintenance(mut self, input: bool) -> Self {
         self.inner = self.inner.defer_maintenance(input);
         self
     }
-    /// <p>A boolean indicating whether to enable the deferred maintenance window.</p>
+    /// <p>A boolean indicating whether to enable the deferred maintenance window. </p>
     pub fn set_defer_maintenance(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_defer_maintenance(input);
         self
     }
-    /// <p>A boolean indicating whether to enable the deferred maintenance window.</p>
+    /// <p>A boolean indicating whether to enable the deferred maintenance window. </p>
     pub fn get_defer_maintenance(&self) -> &::std::option::Option<bool> {
         self.inner.get_defer_maintenance()
     }

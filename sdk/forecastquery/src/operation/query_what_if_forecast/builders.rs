@@ -136,17 +136,17 @@ impl QueryWhatIfForecastFluentBuilder {
     pub fn get_start_date(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_start_date()
     }
-    /// <p>The end date for the what-if forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T20:00:00.</p>
+    /// <p>The end date for the what-if forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T20:00:00. </p>
     pub fn end_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.end_date(input.into());
         self
     }
-    /// <p>The end date for the what-if forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T20:00:00.</p>
+    /// <p>The end date for the what-if forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T20:00:00. </p>
     pub fn set_end_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_end_date(input);
         self
     }
-    /// <p>The end date for the what-if forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T20:00:00.</p>
+    /// <p>The end date for the what-if forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T20:00:00. </p>
     pub fn get_end_date(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_end_date()
     }
@@ -155,21 +155,21 @@ impl QueryWhatIfForecastFluentBuilder {
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
     /// <p>The filtering criteria to apply when retrieving the forecast. For example, to get the forecast for <code>client_21</code> in the electricity usage dataset, specify the following:</p>
-    /// <p><code>{"item_id" : "client_21"}</code></p>
+    /// <p> <code>{"item_id" : "client_21"}</code> </p>
     /// <p>To get the full what-if forecast, use the <a href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateWhatIfForecastExport.html">CreateForecastExportJob</a> operation.</p>
     pub fn filters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.filters(k.into(), v.into());
         self
     }
     /// <p>The filtering criteria to apply when retrieving the forecast. For example, to get the forecast for <code>client_21</code> in the electricity usage dataset, specify the following:</p>
-    /// <p><code>{"item_id" : "client_21"}</code></p>
+    /// <p> <code>{"item_id" : "client_21"}</code> </p>
     /// <p>To get the full what-if forecast, use the <a href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateWhatIfForecastExport.html">CreateForecastExportJob</a> operation.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>The filtering criteria to apply when retrieving the forecast. For example, to get the forecast for <code>client_21</code> in the electricity usage dataset, specify the following:</p>
-    /// <p><code>{"item_id" : "client_21"}</code></p>
+    /// <p> <code>{"item_id" : "client_21"}</code> </p>
     /// <p>To get the full what-if forecast, use the <a href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateWhatIfForecastExport.html">CreateForecastExportJob</a> operation.</p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_filters()

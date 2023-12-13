@@ -108,21 +108,21 @@ impl CreateEventBusFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the new event bus.</p>
+    /// <p>The name of the new event bus. </p>
     /// <p>Custom event bus names can't contain the <code>/</code> character, but you can use the <code>/</code> character in partner event bus names. In addition, for partner event buses, the name must exactly match the name of the partner event source that this event bus is matched to.</p>
     /// <p>You can't use the name <code>default</code> for a custom event bus, as this name is already used for your account's default event bus.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of the new event bus.</p>
+    /// <p>The name of the new event bus. </p>
     /// <p>Custom event bus names can't contain the <code>/</code> character, but you can use the <code>/</code> character in partner event bus names. In addition, for partner event buses, the name must exactly match the name of the partner event source that this event bus is matched to.</p>
     /// <p>You can't use the name <code>default</code> for a custom event bus, as this name is already used for your account's default event bus.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name of the new event bus.</p>
+    /// <p>The name of the new event bus. </p>
     /// <p>Custom event bus names can't contain the <code>/</code> character, but you can use the <code>/</code> character in partner event bus names. In addition, for partner event buses, the name must exactly match the name of the partner event source that this event bus is matched to.</p>
     /// <p>You can't use the name <code>default</code> for a custom event bus, as this name is already used for your account's default event bus.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {

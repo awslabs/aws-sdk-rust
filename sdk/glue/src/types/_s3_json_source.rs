@@ -10,7 +10,7 @@ pub struct S3JsonSource {
     pub paths: ::std::vec::Vec<::std::string::String>,
     /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
     pub compression_type: ::std::option::Option<crate::types::CompressionType>,
-    /// <p>A string containing a JSON list of Unix-style glob patterns to exclude. For example, "[\"**.pdf\"]" excludes all PDF files.</p>
+    /// <p>A string containing a JSON list of Unix-style glob patterns to exclude. For example, "[\"**.pdf\"]" excludes all PDF files. </p>
     pub exclusions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The target group size in bytes. The default is computed based on the input data size and the size of your cluster. When there are fewer than 50,000 input files, <code>"groupFiles"</code> must be set to <code>"inPartition"</code> for this to take effect.</p>
     pub group_size: ::std::option::Option<::std::string::String>,
@@ -46,7 +46,7 @@ impl S3JsonSource {
     pub fn compression_type(&self) -> ::std::option::Option<&crate::types::CompressionType> {
         self.compression_type.as_ref()
     }
-    /// <p>A string containing a JSON list of Unix-style glob patterns to exclude. For example, "[\"**.pdf\"]" excludes all PDF files.</p>
+    /// <p>A string containing a JSON list of Unix-style glob patterns to exclude. For example, "[\"**.pdf\"]" excludes all PDF files. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exclusions.is_none()`.
     pub fn exclusions(&self) -> &[::std::string::String] {
@@ -170,19 +170,19 @@ impl S3JsonSourceBuilder {
     ///
     /// To override the contents of this collection use [`set_exclusions`](Self::set_exclusions).
     ///
-    /// <p>A string containing a JSON list of Unix-style glob patterns to exclude. For example, "[\"**.pdf\"]" excludes all PDF files.</p>
+    /// <p>A string containing a JSON list of Unix-style glob patterns to exclude. For example, "[\"**.pdf\"]" excludes all PDF files. </p>
     pub fn exclusions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.exclusions.unwrap_or_default();
         v.push(input.into());
         self.exclusions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A string containing a JSON list of Unix-style glob patterns to exclude. For example, "[\"**.pdf\"]" excludes all PDF files.</p>
+    /// <p>A string containing a JSON list of Unix-style glob patterns to exclude. For example, "[\"**.pdf\"]" excludes all PDF files. </p>
     pub fn set_exclusions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.exclusions = input;
         self
     }
-    /// <p>A string containing a JSON list of Unix-style glob patterns to exclude. For example, "[\"**.pdf\"]" excludes all PDF files.</p>
+    /// <p>A string containing a JSON list of Unix-style glob patterns to exclude. For example, "[\"**.pdf\"]" excludes all PDF files. </p>
     pub fn get_exclusions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.exclusions
     }

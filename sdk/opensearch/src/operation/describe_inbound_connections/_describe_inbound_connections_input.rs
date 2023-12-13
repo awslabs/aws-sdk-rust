@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeInboundConnectionsInput {
-    /// <p>A list of filters used to match properties for inbound cross-cluster connections.</p>
+    /// <p> A list of filters used to match properties for inbound cross-cluster connections.</p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -12,7 +12,7 @@ pub struct DescribeInboundConnectionsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeInboundConnectionsInput {
-    /// <p>A list of filters used to match properties for inbound cross-cluster connections.</p>
+    /// <p> A list of filters used to match properties for inbound cross-cluster connections.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
     pub fn filters(&self) -> &[crate::types::Filter] {
@@ -47,19 +47,19 @@ impl DescribeInboundConnectionsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>A list of filters used to match properties for inbound cross-cluster connections.</p>
+    /// <p> A list of filters used to match properties for inbound cross-cluster connections.</p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
         v.push(input);
         self.filters = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of filters used to match properties for inbound cross-cluster connections.</p>
+    /// <p> A list of filters used to match properties for inbound cross-cluster connections.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
-    /// <p>A list of filters used to match properties for inbound cross-cluster connections.</p>
+    /// <p> A list of filters used to match properties for inbound cross-cluster connections.</p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters
     }

@@ -22,7 +22,7 @@ impl GetEvidenceInputBuilder {
 }
 /// Fluent builder constructing a request to `GetEvidence`.
 ///
-/// <p>Gets information about a specified evidence item.</p>
+/// <p> Gets information about a specified evidence item.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetEvidenceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,59 +108,59 @@ impl GetEvidenceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier for the assessment.</p>
+    /// <p> The unique identifier for the assessment. </p>
     pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_id(input.into());
         self
     }
-    /// <p>The unique identifier for the assessment.</p>
+    /// <p> The unique identifier for the assessment. </p>
     pub fn set_assessment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assessment_id(input);
         self
     }
-    /// <p>The unique identifier for the assessment.</p>
+    /// <p> The unique identifier for the assessment. </p>
     pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_assessment_id()
     }
-    /// <p>The unique identifier for the control set.</p>
+    /// <p> The unique identifier for the control set. </p>
     pub fn control_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.control_set_id(input.into());
         self
     }
-    /// <p>The unique identifier for the control set.</p>
+    /// <p> The unique identifier for the control set. </p>
     pub fn set_control_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_control_set_id(input);
         self
     }
-    /// <p>The unique identifier for the control set.</p>
+    /// <p> The unique identifier for the control set. </p>
     pub fn get_control_set_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_control_set_id()
     }
-    /// <p>The unique identifier for the folder that the evidence is stored in.</p>
+    /// <p> The unique identifier for the folder that the evidence is stored in. </p>
     pub fn evidence_folder_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.evidence_folder_id(input.into());
         self
     }
-    /// <p>The unique identifier for the folder that the evidence is stored in.</p>
+    /// <p> The unique identifier for the folder that the evidence is stored in. </p>
     pub fn set_evidence_folder_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_evidence_folder_id(input);
         self
     }
-    /// <p>The unique identifier for the folder that the evidence is stored in.</p>
+    /// <p> The unique identifier for the folder that the evidence is stored in. </p>
     pub fn get_evidence_folder_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_evidence_folder_id()
     }
-    /// <p>The unique identifier for the evidence.</p>
+    /// <p> The unique identifier for the evidence. </p>
     pub fn evidence_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.evidence_id(input.into());
         self
     }
-    /// <p>The unique identifier for the evidence.</p>
+    /// <p> The unique identifier for the evidence. </p>
     pub fn set_evidence_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_evidence_id(input);
         self
     }
-    /// <p>The unique identifier for the evidence.</p>
+    /// <p> The unique identifier for the evidence. </p>
     pub fn get_evidence_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_evidence_id()
     }

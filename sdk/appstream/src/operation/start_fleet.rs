@@ -245,7 +245,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for StartFleetEnd
 pub enum StartFleetError {
     /// <p>An API error occurred. Wait a few minutes and try again.</p>
     ConcurrentModificationException(crate::types::error::ConcurrentModificationException),
-    /// <p>The resource cannot be created because your AWS account is suspended. For assistance, contact AWS Support.</p>
+    /// <p>The resource cannot be created because your AWS account is suspended. For assistance, contact AWS Support. </p>
     InvalidAccountStatusException(crate::types::error::InvalidAccountStatusException),
     /// <p>The specified role is invalid.</p>
     InvalidRoleException(crate::types::error::InvalidRoleException),

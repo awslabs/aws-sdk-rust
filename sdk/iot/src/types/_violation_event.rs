@@ -14,7 +14,7 @@ pub struct ViolationEvent {
     pub behavior: ::std::option::Option<crate::types::Behavior>,
     /// <p>The value of the metric (the measurement).</p>
     pub metric_value: ::std::option::Option<crate::types::MetricValue>,
-    /// <p>The details of a violation event.</p>
+    /// <p> The details of a violation event. </p>
     pub violation_event_additional_info: ::std::option::Option<crate::types::ViolationEventAdditionalInfo>,
     /// <p>The type of violation event.</p>
     pub violation_event_type: ::std::option::Option<crate::types::ViolationEventType>,
@@ -46,7 +46,7 @@ impl ViolationEvent {
     pub fn metric_value(&self) -> ::std::option::Option<&crate::types::MetricValue> {
         self.metric_value.as_ref()
     }
-    /// <p>The details of a violation event.</p>
+    /// <p> The details of a violation event. </p>
     pub fn violation_event_additional_info(&self) -> ::std::option::Option<&crate::types::ViolationEventAdditionalInfo> {
         self.violation_event_additional_info.as_ref()
     }
@@ -160,17 +160,17 @@ impl ViolationEventBuilder {
     pub fn get_metric_value(&self) -> &::std::option::Option<crate::types::MetricValue> {
         &self.metric_value
     }
-    /// <p>The details of a violation event.</p>
+    /// <p> The details of a violation event. </p>
     pub fn violation_event_additional_info(mut self, input: crate::types::ViolationEventAdditionalInfo) -> Self {
         self.violation_event_additional_info = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The details of a violation event.</p>
+    /// <p> The details of a violation event. </p>
     pub fn set_violation_event_additional_info(mut self, input: ::std::option::Option<crate::types::ViolationEventAdditionalInfo>) -> Self {
         self.violation_event_additional_info = input;
         self
     }
-    /// <p>The details of a violation event.</p>
+    /// <p> The details of a violation event. </p>
     pub fn get_violation_event_additional_info(&self) -> &::std::option::Option<crate::types::ViolationEventAdditionalInfo> {
         &self.violation_event_additional_info
     }

@@ -7,21 +7,17 @@ pub struct TimeSeriesTransformations {
     /// <p>A key value pair defining the filling method for a column, where the key is the column name and the value is an object which defines the filling logic. You can specify multiple filling methods for a single column.</p>
     /// <p>The supported filling methods and their corresponding options are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>frontfill</code>: <code>none</code> (Supported only for target column)</p></li>
-    /// <li>
-    /// <p><code>middlefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code></p></li>
-    /// <li>
-    /// <p><code>backfill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code></p></li>
-    /// <li>
-    /// <p><code>futurefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code></p></li>
+    /// <li> <p> <code>frontfill</code>: <code>none</code> (Supported only for target column)</p> </li>
+    /// <li> <p> <code>middlefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
+    /// <li> <p> <code>backfill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
+    /// <li> <p> <code>futurefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
     /// </ul>
     /// <p>To set a filling method to a specific value, set the fill parameter to the chosen filling method value (for example <code>"backfill" : "value"</code>), and define the filling value in an additional parameter prefixed with "_value". For example, to set <code>backfill</code> to a value of <code>2</code>, you must include two parameters: <code>"backfill": "value"</code> and <code>"backfill_value":"2"</code>.</p>
     pub filling: ::std::option::Option<
         ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<crate::types::FillingType, ::std::string::String>>,
     >,
     /// <p>A key value pair defining the aggregation method for a column, where the key is the column name and the value is the aggregation method.</p>
-    /// <p>The supported aggregation methods are <code>sum</code> (default), <code>avg</code>, <code>first</code>, <code>min</code>, <code>max</code>.</p><note>
+    /// <p>The supported aggregation methods are <code>sum</code> (default), <code>avg</code>, <code>first</code>, <code>min</code>, <code>max</code>.</p> <note>
     /// <p>Aggregation is only supported for the target column.</p>
     /// </note>
     pub aggregation: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AggregationTransformationValue>>,
@@ -30,14 +26,10 @@ impl TimeSeriesTransformations {
     /// <p>A key value pair defining the filling method for a column, where the key is the column name and the value is an object which defines the filling logic. You can specify multiple filling methods for a single column.</p>
     /// <p>The supported filling methods and their corresponding options are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>frontfill</code>: <code>none</code> (Supported only for target column)</p></li>
-    /// <li>
-    /// <p><code>middlefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code></p></li>
-    /// <li>
-    /// <p><code>backfill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code></p></li>
-    /// <li>
-    /// <p><code>futurefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code></p></li>
+    /// <li> <p> <code>frontfill</code>: <code>none</code> (Supported only for target column)</p> </li>
+    /// <li> <p> <code>middlefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
+    /// <li> <p> <code>backfill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
+    /// <li> <p> <code>futurefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
     /// </ul>
     /// <p>To set a filling method to a specific value, set the fill parameter to the chosen filling method value (for example <code>"backfill" : "value"</code>), and define the filling value in an additional parameter prefixed with "_value". For example, to set <code>backfill</code> to a value of <code>2</code>, you must include two parameters: <code>"backfill": "value"</code> and <code>"backfill_value":"2"</code>.</p>
     pub fn filling(
@@ -48,7 +40,7 @@ impl TimeSeriesTransformations {
         self.filling.as_ref()
     }
     /// <p>A key value pair defining the aggregation method for a column, where the key is the column name and the value is the aggregation method.</p>
-    /// <p>The supported aggregation methods are <code>sum</code> (default), <code>avg</code>, <code>first</code>, <code>min</code>, <code>max</code>.</p><note>
+    /// <p>The supported aggregation methods are <code>sum</code> (default), <code>avg</code>, <code>first</code>, <code>min</code>, <code>max</code>.</p> <note>
     /// <p>Aggregation is only supported for the target column.</p>
     /// </note>
     pub fn aggregation(
@@ -81,14 +73,10 @@ impl TimeSeriesTransformationsBuilder {
     /// <p>A key value pair defining the filling method for a column, where the key is the column name and the value is an object which defines the filling logic. You can specify multiple filling methods for a single column.</p>
     /// <p>The supported filling methods and their corresponding options are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>frontfill</code>: <code>none</code> (Supported only for target column)</p></li>
-    /// <li>
-    /// <p><code>middlefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code></p></li>
-    /// <li>
-    /// <p><code>backfill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code></p></li>
-    /// <li>
-    /// <p><code>futurefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code></p></li>
+    /// <li> <p> <code>frontfill</code>: <code>none</code> (Supported only for target column)</p> </li>
+    /// <li> <p> <code>middlefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
+    /// <li> <p> <code>backfill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
+    /// <li> <p> <code>futurefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
     /// </ul>
     /// <p>To set a filling method to a specific value, set the fill parameter to the chosen filling method value (for example <code>"backfill" : "value"</code>), and define the filling value in an additional parameter prefixed with "_value". For example, to set <code>backfill</code> to a value of <code>2</code>, you must include two parameters: <code>"backfill": "value"</code> and <code>"backfill_value":"2"</code>.</p>
     pub fn filling(
@@ -104,14 +92,10 @@ impl TimeSeriesTransformationsBuilder {
     /// <p>A key value pair defining the filling method for a column, where the key is the column name and the value is an object which defines the filling logic. You can specify multiple filling methods for a single column.</p>
     /// <p>The supported filling methods and their corresponding options are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>frontfill</code>: <code>none</code> (Supported only for target column)</p></li>
-    /// <li>
-    /// <p><code>middlefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code></p></li>
-    /// <li>
-    /// <p><code>backfill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code></p></li>
-    /// <li>
-    /// <p><code>futurefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code></p></li>
+    /// <li> <p> <code>frontfill</code>: <code>none</code> (Supported only for target column)</p> </li>
+    /// <li> <p> <code>middlefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
+    /// <li> <p> <code>backfill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
+    /// <li> <p> <code>futurefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
     /// </ul>
     /// <p>To set a filling method to a specific value, set the fill parameter to the chosen filling method value (for example <code>"backfill" : "value"</code>), and define the filling value in an additional parameter prefixed with "_value". For example, to set <code>backfill</code> to a value of <code>2</code>, you must include two parameters: <code>"backfill": "value"</code> and <code>"backfill_value":"2"</code>.</p>
     pub fn set_filling(
@@ -126,14 +110,10 @@ impl TimeSeriesTransformationsBuilder {
     /// <p>A key value pair defining the filling method for a column, where the key is the column name and the value is an object which defines the filling logic. You can specify multiple filling methods for a single column.</p>
     /// <p>The supported filling methods and their corresponding options are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>frontfill</code>: <code>none</code> (Supported only for target column)</p></li>
-    /// <li>
-    /// <p><code>middlefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code></p></li>
-    /// <li>
-    /// <p><code>backfill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code></p></li>
-    /// <li>
-    /// <p><code>futurefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code></p></li>
+    /// <li> <p> <code>frontfill</code>: <code>none</code> (Supported only for target column)</p> </li>
+    /// <li> <p> <code>middlefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
+    /// <li> <p> <code>backfill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
+    /// <li> <p> <code>futurefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
     /// </ul>
     /// <p>To set a filling method to a specific value, set the fill parameter to the chosen filling method value (for example <code>"backfill" : "value"</code>), and define the filling value in an additional parameter prefixed with "_value". For example, to set <code>backfill</code> to a value of <code>2</code>, you must include two parameters: <code>"backfill": "value"</code> and <code>"backfill_value":"2"</code>.</p>
     pub fn get_filling(
@@ -148,7 +128,7 @@ impl TimeSeriesTransformationsBuilder {
     /// To override the contents of this collection use [`set_aggregation`](Self::set_aggregation).
     ///
     /// <p>A key value pair defining the aggregation method for a column, where the key is the column name and the value is the aggregation method.</p>
-    /// <p>The supported aggregation methods are <code>sum</code> (default), <code>avg</code>, <code>first</code>, <code>min</code>, <code>max</code>.</p><note>
+    /// <p>The supported aggregation methods are <code>sum</code> (default), <code>avg</code>, <code>first</code>, <code>min</code>, <code>max</code>.</p> <note>
     /// <p>Aggregation is only supported for the target column.</p>
     /// </note>
     pub fn aggregation(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::AggregationTransformationValue) -> Self {
@@ -158,7 +138,7 @@ impl TimeSeriesTransformationsBuilder {
         self
     }
     /// <p>A key value pair defining the aggregation method for a column, where the key is the column name and the value is the aggregation method.</p>
-    /// <p>The supported aggregation methods are <code>sum</code> (default), <code>avg</code>, <code>first</code>, <code>min</code>, <code>max</code>.</p><note>
+    /// <p>The supported aggregation methods are <code>sum</code> (default), <code>avg</code>, <code>first</code>, <code>min</code>, <code>max</code>.</p> <note>
     /// <p>Aggregation is only supported for the target column.</p>
     /// </note>
     pub fn set_aggregation(
@@ -169,7 +149,7 @@ impl TimeSeriesTransformationsBuilder {
         self
     }
     /// <p>A key value pair defining the aggregation method for a column, where the key is the column name and the value is the aggregation method.</p>
-    /// <p>The supported aggregation methods are <code>sum</code> (default), <code>avg</code>, <code>first</code>, <code>min</code>, <code>max</code>.</p><note>
+    /// <p>The supported aggregation methods are <code>sum</code> (default), <code>avg</code>, <code>first</code>, <code>min</code>, <code>max</code>.</p> <note>
     /// <p>Aggregation is only supported for the target column.</p>
     /// </note>
     pub fn get_aggregation(

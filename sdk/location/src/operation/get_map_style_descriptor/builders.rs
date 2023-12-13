@@ -22,7 +22,7 @@ impl GetMapStyleDescriptorInputBuilder {
 }
 /// Fluent builder constructing a request to `GetMapStyleDescriptor`.
 ///
-/// <p>Retrieves the map style descriptor from a map resource.</p>
+/// <p>Retrieves the map style descriptor from a map resource. </p>
 /// <p>The style descriptor contains speciﬁcations on how features render on a map. For example, what data to display, what order to display the data in, and the style for the data. Style descriptors follow the Mapbox Style Specification.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetMapStyleDescriptorFluentBuilder {

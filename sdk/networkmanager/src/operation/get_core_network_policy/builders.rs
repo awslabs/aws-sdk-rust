@@ -136,17 +136,17 @@ impl GetCoreNetworkPolicyFluentBuilder {
     pub fn get_policy_version_id(&self) -> &::std::option::Option<i32> {
         self.inner.get_policy_version_id()
     }
-    /// <p>The alias of a core network policy</p>
+    /// <p>The alias of a core network policy </p>
     pub fn alias(mut self, input: crate::types::CoreNetworkPolicyAlias) -> Self {
         self.inner = self.inner.alias(input);
         self
     }
-    /// <p>The alias of a core network policy</p>
+    /// <p>The alias of a core network policy </p>
     pub fn set_alias(mut self, input: ::std::option::Option<crate::types::CoreNetworkPolicyAlias>) -> Self {
         self.inner = self.inner.set_alias(input);
         self
     }
-    /// <p>The alias of a core network policy</p>
+    /// <p>The alias of a core network policy </p>
     pub fn get_alias(&self) -> &::std::option::Option<crate::types::CoreNetworkPolicyAlias> {
         self.inner.get_alias()
     }

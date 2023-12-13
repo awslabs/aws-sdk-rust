@@ -3,37 +3,37 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreatePricingPlanInput {
-    /// <p>The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update.</p>
+    /// <p> The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the pricing plan. The names must be unique to each pricing plan.</p>
+    /// <p>The name of the pricing plan. The names must be unique to each pricing plan. </p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The description of the pricing plan.</p>
+    /// <p>The description of the pricing plan. </p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>A list of Amazon Resource Names (ARNs) that define the pricing plan parameters.</p>
+    /// <p> A list of Amazon Resource Names (ARNs) that define the pricing plan parameters. </p>
     pub pricing_rule_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>A map that contains tag keys and tag values that are attached to a pricing plan.</p>
+    /// <p> A map that contains tag keys and tag values that are attached to a pricing plan. </p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreatePricingPlanInput {
-    /// <p>The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update.</p>
+    /// <p> The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The name of the pricing plan. The names must be unique to each pricing plan.</p>
+    /// <p>The name of the pricing plan. The names must be unique to each pricing plan. </p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The description of the pricing plan.</p>
+    /// <p>The description of the pricing plan. </p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>A list of Amazon Resource Names (ARNs) that define the pricing plan parameters.</p>
+    /// <p> A list of Amazon Resource Names (ARNs) that define the pricing plan parameters. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pricing_rule_arns.is_none()`.
     pub fn pricing_rule_arns(&self) -> &[::std::string::String] {
         self.pricing_rule_arns.as_deref().unwrap_or_default()
     }
-    /// <p>A map that contains tag keys and tag values that are attached to a pricing plan.</p>
+    /// <p> A map that contains tag keys and tag values that are attached to a pricing plan. </p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
@@ -67,46 +67,46 @@ pub struct CreatePricingPlanInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreatePricingPlanInputBuilder {
-    /// <p>The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update.</p>
+    /// <p> The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update.</p>
+    /// <p> The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p>The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update.</p>
+    /// <p> The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
-    /// <p>The name of the pricing plan. The names must be unique to each pricing plan.</p>
+    /// <p>The name of the pricing plan. The names must be unique to each pricing plan. </p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the pricing plan. The names must be unique to each pricing plan.</p>
+    /// <p>The name of the pricing plan. The names must be unique to each pricing plan. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the pricing plan. The names must be unique to each pricing plan.</p>
+    /// <p>The name of the pricing plan. The names must be unique to each pricing plan. </p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The description of the pricing plan.</p>
+    /// <p>The description of the pricing plan. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The description of the pricing plan.</p>
+    /// <p>The description of the pricing plan. </p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>The description of the pricing plan.</p>
+    /// <p>The description of the pricing plan. </p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
@@ -114,19 +114,19 @@ impl CreatePricingPlanInputBuilder {
     ///
     /// To override the contents of this collection use [`set_pricing_rule_arns`](Self::set_pricing_rule_arns).
     ///
-    /// <p>A list of Amazon Resource Names (ARNs) that define the pricing plan parameters.</p>
+    /// <p> A list of Amazon Resource Names (ARNs) that define the pricing plan parameters. </p>
     pub fn pricing_rule_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.pricing_rule_arns.unwrap_or_default();
         v.push(input.into());
         self.pricing_rule_arns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of Amazon Resource Names (ARNs) that define the pricing plan parameters.</p>
+    /// <p> A list of Amazon Resource Names (ARNs) that define the pricing plan parameters. </p>
     pub fn set_pricing_rule_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.pricing_rule_arns = input;
         self
     }
-    /// <p>A list of Amazon Resource Names (ARNs) that define the pricing plan parameters.</p>
+    /// <p> A list of Amazon Resource Names (ARNs) that define the pricing plan parameters. </p>
     pub fn get_pricing_rule_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.pricing_rule_arns
     }
@@ -134,19 +134,19 @@ impl CreatePricingPlanInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A map that contains tag keys and tag values that are attached to a pricing plan.</p>
+    /// <p> A map that contains tag keys and tag values that are attached to a pricing plan. </p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>A map that contains tag keys and tag values that are attached to a pricing plan.</p>
+    /// <p> A map that contains tag keys and tag values that are attached to a pricing plan. </p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>A map that contains tag keys and tag values that are attached to a pricing plan.</p>
+    /// <p> A map that contains tag keys and tag values that are attached to a pricing plan. </p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }

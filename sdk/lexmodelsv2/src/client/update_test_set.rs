@@ -16,7 +16,7 @@ impl super::Client {
     ///   - [`num_turns(Option<i32>)`](crate::operation::update_test_set::UpdateTestSetOutput::num_turns): <p>The number of conversation turns from the updated test set.</p>
     ///   - [`storage_location(Option<TestSetStorageLocation>)`](crate::operation::update_test_set::UpdateTestSetOutput::storage_location): <p>The Amazon S3 storage location for the updated test set.</p>
     ///   - [`creation_date_time(Option<DateTime>)`](crate::operation::update_test_set::UpdateTestSetOutput::creation_date_time): <p>The creation date and time for the updated test set.</p>
-    ///   - [`last_updated_date_time(Option<DateTime>)`](crate::operation::update_test_set::UpdateTestSetOutput::last_updated_date_time): <p>The date and time of the last update for the updated test set.</p>
+    ///   - [`last_updated_date_time(Option<DateTime>)`](crate::operation::update_test_set::UpdateTestSetOutput::last_updated_date_time): <p> The date and time of the last update for the updated test set.</p>
     /// - On failure, responds with [`SdkError<UpdateTestSetError>`](crate::operation::update_test_set::UpdateTestSetError)
     pub fn update_test_set(&self) -> crate::operation::update_test_set::builders::UpdateTestSetFluentBuilder {
         crate::operation::update_test_set::builders::UpdateTestSetFluentBuilder::new(self.handle.clone())

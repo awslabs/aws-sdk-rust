@@ -22,7 +22,7 @@ impl BatchGetStandardsControlAssociationsInputBuilder {
 }
 /// Fluent builder constructing a request to `BatchGetStandardsControlAssociations`.
 ///
-/// <p>For a batch of security controls and standards, identifies whether each control is currently enabled or disabled in a standard.</p>
+/// <p> For a batch of security controls and standards, identifies whether each control is currently enabled or disabled in a standard. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchGetStandardsControlAssociationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -115,12 +115,12 @@ impl BatchGetStandardsControlAssociationsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_standards_control_association_ids`](Self::set_standards_control_association_ids).
     ///
-    /// <p>An array with one or more objects that includes a security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) and the Amazon Resource Name (ARN) of a standard. This field is used to query the enablement status of a control in a specified standard. The security control ID or ARN is the same across standards.</p>
+    /// <p> An array with one or more objects that includes a security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) and the Amazon Resource Name (ARN) of a standard. This field is used to query the enablement status of a control in a specified standard. The security control ID or ARN is the same across standards. </p>
     pub fn standards_control_association_ids(mut self, input: crate::types::StandardsControlAssociationId) -> Self {
         self.inner = self.inner.standards_control_association_ids(input);
         self
     }
-    /// <p>An array with one or more objects that includes a security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) and the Amazon Resource Name (ARN) of a standard. This field is used to query the enablement status of a control in a specified standard. The security control ID or ARN is the same across standards.</p>
+    /// <p> An array with one or more objects that includes a security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) and the Amazon Resource Name (ARN) of a standard. This field is used to query the enablement status of a control in a specified standard. The security control ID or ARN is the same across standards. </p>
     pub fn set_standards_control_association_ids(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::StandardsControlAssociationId>>,
@@ -128,7 +128,7 @@ impl BatchGetStandardsControlAssociationsFluentBuilder {
         self.inner = self.inner.set_standards_control_association_ids(input);
         self
     }
-    /// <p>An array with one or more objects that includes a security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) and the Amazon Resource Name (ARN) of a standard. This field is used to query the enablement status of a control in a specified standard. The security control ID or ARN is the same across standards.</p>
+    /// <p> An array with one or more objects that includes a security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) and the Amazon Resource Name (ARN) of a standard. This field is used to query the enablement status of a control in a specified standard. The security control ID or ARN is the same across standards. </p>
     pub fn get_standards_control_association_ids(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StandardsControlAssociationId>> {
         self.inner.get_standards_control_association_ids()
     }

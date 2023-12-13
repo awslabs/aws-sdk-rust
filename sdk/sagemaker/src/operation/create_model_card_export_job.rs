@@ -256,7 +256,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateModelCa
 pub enum CreateModelCardExportJobError {
     /// <p>There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code> or <code>Artifact</code>.</p>
     ConflictException(crate::types::error::ConflictException),
-    /// <p>You have exceeded an SageMaker resource limit. For example, you might have too many training jobs created.</p>
+    /// <p> You have exceeded an SageMaker resource limit. For example, you might have too many training jobs created. </p>
     ResourceLimitExceeded(crate::types::error::ResourceLimitExceeded),
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::types::error::ResourceNotFound),

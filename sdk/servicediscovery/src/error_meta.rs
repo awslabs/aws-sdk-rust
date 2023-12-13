@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum Error {
-    /// <p>The health check for the instance that's specified by <code>ServiceId</code> and <code>InstanceId</code> isn't a custom health check.</p>
+    /// <p>The health check for the instance that's specified by <code>ServiceId</code> and <code>InstanceId</code> isn't a custom health check. </p>
     CustomHealthNotFound(crate::types::error::CustomHealthNotFound),
     /// <p>The operation is already in progress.</p>
     DuplicateRequest(crate::types::error::DuplicateRequest),

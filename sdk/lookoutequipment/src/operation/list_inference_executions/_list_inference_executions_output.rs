@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListInferenceExecutionsOutput {
-    /// <p>An opaque pagination token indicating where to continue the listing of inference executions.</p>
+    /// <p> An opaque pagination token indicating where to continue the listing of inference executions. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>Provides an array of information about the individual inference executions returned from the <code>ListInferenceExecutions</code> operation, including model used, inference scheduler, data configuration, and so on.</p>
+    /// <p>Provides an array of information about the individual inference executions returned from the <code>ListInferenceExecutions</code> operation, including model used, inference scheduler, data configuration, and so on. </p>
     pub inference_execution_summaries: ::std::option::Option<::std::vec::Vec<crate::types::InferenceExecutionSummary>>,
     _request_id: Option<String>,
 }
 impl ListInferenceExecutionsOutput {
-    /// <p>An opaque pagination token indicating where to continue the listing of inference executions.</p>
+    /// <p> An opaque pagination token indicating where to continue the listing of inference executions. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Provides an array of information about the individual inference executions returned from the <code>ListInferenceExecutions</code> operation, including model used, inference scheduler, data configuration, and so on.</p>
+    /// <p>Provides an array of information about the individual inference executions returned from the <code>ListInferenceExecutions</code> operation, including model used, inference scheduler, data configuration, and so on. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inference_execution_summaries.is_none()`.
     pub fn inference_execution_summaries(&self) -> &[crate::types::InferenceExecutionSummary] {
@@ -42,17 +42,17 @@ pub struct ListInferenceExecutionsOutputBuilder {
     _request_id: Option<String>,
 }
 impl ListInferenceExecutionsOutputBuilder {
-    /// <p>An opaque pagination token indicating where to continue the listing of inference executions.</p>
+    /// <p> An opaque pagination token indicating where to continue the listing of inference executions. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An opaque pagination token indicating where to continue the listing of inference executions.</p>
+    /// <p> An opaque pagination token indicating where to continue the listing of inference executions. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>An opaque pagination token indicating where to continue the listing of inference executions.</p>
+    /// <p> An opaque pagination token indicating where to continue the listing of inference executions. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
@@ -60,14 +60,14 @@ impl ListInferenceExecutionsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_inference_execution_summaries`](Self::set_inference_execution_summaries).
     ///
-    /// <p>Provides an array of information about the individual inference executions returned from the <code>ListInferenceExecutions</code> operation, including model used, inference scheduler, data configuration, and so on.</p>
+    /// <p>Provides an array of information about the individual inference executions returned from the <code>ListInferenceExecutions</code> operation, including model used, inference scheduler, data configuration, and so on. </p>
     pub fn inference_execution_summaries(mut self, input: crate::types::InferenceExecutionSummary) -> Self {
         let mut v = self.inference_execution_summaries.unwrap_or_default();
         v.push(input);
         self.inference_execution_summaries = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Provides an array of information about the individual inference executions returned from the <code>ListInferenceExecutions</code> operation, including model used, inference scheduler, data configuration, and so on.</p>
+    /// <p>Provides an array of information about the individual inference executions returned from the <code>ListInferenceExecutions</code> operation, including model used, inference scheduler, data configuration, and so on. </p>
     pub fn set_inference_execution_summaries(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::InferenceExecutionSummary>>,
@@ -75,7 +75,7 @@ impl ListInferenceExecutionsOutputBuilder {
         self.inference_execution_summaries = input;
         self
     }
-    /// <p>Provides an array of information about the individual inference executions returned from the <code>ListInferenceExecutions</code> operation, including model used, inference scheduler, data configuration, and so on.</p>
+    /// <p>Provides an array of information about the individual inference executions returned from the <code>ListInferenceExecutions</code> operation, including model used, inference scheduler, data configuration, and so on. </p>
     pub fn get_inference_execution_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InferenceExecutionSummary>> {
         &self.inference_execution_summaries
     }

@@ -14,14 +14,10 @@ pub struct ReplicaAutoScalingDescription {
     pub replica_provisioned_write_capacity_auto_scaling_settings: ::std::option::Option<crate::types::AutoScalingSettingsDescription>,
     /// <p>The current state of the replica:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATING</code> - The replica is being created.</p></li>
-    /// <li>
-    /// <p><code>UPDATING</code> - The replica is being updated.</p></li>
-    /// <li>
-    /// <p><code>DELETING</code> - The replica is being deleted.</p></li>
-    /// <li>
-    /// <p><code>ACTIVE</code> - The replica is ready for use.</p></li>
+    /// <li> <p> <code>CREATING</code> - The replica is being created.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - The replica is being updated.</p> </li>
+    /// <li> <p> <code>DELETING</code> - The replica is being deleted.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> - The replica is ready for use.</p> </li>
     /// </ul>
     pub replica_status: ::std::option::Option<crate::types::ReplicaStatus>,
 }
@@ -46,14 +42,10 @@ impl ReplicaAutoScalingDescription {
     }
     /// <p>The current state of the replica:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATING</code> - The replica is being created.</p></li>
-    /// <li>
-    /// <p><code>UPDATING</code> - The replica is being updated.</p></li>
-    /// <li>
-    /// <p><code>DELETING</code> - The replica is being deleted.</p></li>
-    /// <li>
-    /// <p><code>ACTIVE</code> - The replica is ready for use.</p></li>
+    /// <li> <p> <code>CREATING</code> - The replica is being created.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - The replica is being updated.</p> </li>
+    /// <li> <p> <code>DELETING</code> - The replica is being deleted.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> - The replica is ready for use.</p> </li>
     /// </ul>
     pub fn replica_status(&self) -> ::std::option::Option<&crate::types::ReplicaStatus> {
         self.replica_status.as_ref()
@@ -156,14 +148,10 @@ impl ReplicaAutoScalingDescriptionBuilder {
     }
     /// <p>The current state of the replica:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATING</code> - The replica is being created.</p></li>
-    /// <li>
-    /// <p><code>UPDATING</code> - The replica is being updated.</p></li>
-    /// <li>
-    /// <p><code>DELETING</code> - The replica is being deleted.</p></li>
-    /// <li>
-    /// <p><code>ACTIVE</code> - The replica is ready for use.</p></li>
+    /// <li> <p> <code>CREATING</code> - The replica is being created.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - The replica is being updated.</p> </li>
+    /// <li> <p> <code>DELETING</code> - The replica is being deleted.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> - The replica is ready for use.</p> </li>
     /// </ul>
     pub fn replica_status(mut self, input: crate::types::ReplicaStatus) -> Self {
         self.replica_status = ::std::option::Option::Some(input);
@@ -171,14 +159,10 @@ impl ReplicaAutoScalingDescriptionBuilder {
     }
     /// <p>The current state of the replica:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATING</code> - The replica is being created.</p></li>
-    /// <li>
-    /// <p><code>UPDATING</code> - The replica is being updated.</p></li>
-    /// <li>
-    /// <p><code>DELETING</code> - The replica is being deleted.</p></li>
-    /// <li>
-    /// <p><code>ACTIVE</code> - The replica is ready for use.</p></li>
+    /// <li> <p> <code>CREATING</code> - The replica is being created.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - The replica is being updated.</p> </li>
+    /// <li> <p> <code>DELETING</code> - The replica is being deleted.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> - The replica is ready for use.</p> </li>
     /// </ul>
     pub fn set_replica_status(mut self, input: ::std::option::Option<crate::types::ReplicaStatus>) -> Self {
         self.replica_status = input;
@@ -186,14 +170,10 @@ impl ReplicaAutoScalingDescriptionBuilder {
     }
     /// <p>The current state of the replica:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATING</code> - The replica is being created.</p></li>
-    /// <li>
-    /// <p><code>UPDATING</code> - The replica is being updated.</p></li>
-    /// <li>
-    /// <p><code>DELETING</code> - The replica is being deleted.</p></li>
-    /// <li>
-    /// <p><code>ACTIVE</code> - The replica is ready for use.</p></li>
+    /// <li> <p> <code>CREATING</code> - The replica is being created.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - The replica is being updated.</p> </li>
+    /// <li> <p> <code>DELETING</code> - The replica is being deleted.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> - The replica is ready for use.</p> </li>
     /// </ul>
     pub fn get_replica_status(&self) -> &::std::option::Option<crate::types::ReplicaStatus> {
         &self.replica_status

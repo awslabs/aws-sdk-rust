@@ -9,22 +9,14 @@ pub struct ResponseHeadersPolicyReferrerPolicy {
     pub r#override: bool,
     /// <p>The value of the <code>Referrer-Policy</code> HTTP response header. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>no-referrer</code></p></li>
-    /// <li>
-    /// <p><code>no-referrer-when-downgrade</code></p></li>
-    /// <li>
-    /// <p><code>origin</code></p></li>
-    /// <li>
-    /// <p><code>origin-when-cross-origin</code></p></li>
-    /// <li>
-    /// <p><code>same-origin</code></p></li>
-    /// <li>
-    /// <p><code>strict-origin</code></p></li>
-    /// <li>
-    /// <p><code>strict-origin-when-cross-origin</code></p></li>
-    /// <li>
-    /// <p><code>unsafe-url</code></p></li>
+    /// <li> <p> <code>no-referrer</code> </p> </li>
+    /// <li> <p> <code>no-referrer-when-downgrade</code> </p> </li>
+    /// <li> <p> <code>origin</code> </p> </li>
+    /// <li> <p> <code>origin-when-cross-origin</code> </p> </li>
+    /// <li> <p> <code>same-origin</code> </p> </li>
+    /// <li> <p> <code>strict-origin</code> </p> </li>
+    /// <li> <p> <code>strict-origin-when-cross-origin</code> </p> </li>
+    /// <li> <p> <code>unsafe-url</code> </p> </li>
     /// </ul>
     /// <p>For more information about these values, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy">Referrer-Policy</a> in the MDN Web Docs.</p>
     pub referrer_policy: crate::types::ReferrerPolicyList,
@@ -36,22 +28,14 @@ impl ResponseHeadersPolicyReferrerPolicy {
     }
     /// <p>The value of the <code>Referrer-Policy</code> HTTP response header. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>no-referrer</code></p></li>
-    /// <li>
-    /// <p><code>no-referrer-when-downgrade</code></p></li>
-    /// <li>
-    /// <p><code>origin</code></p></li>
-    /// <li>
-    /// <p><code>origin-when-cross-origin</code></p></li>
-    /// <li>
-    /// <p><code>same-origin</code></p></li>
-    /// <li>
-    /// <p><code>strict-origin</code></p></li>
-    /// <li>
-    /// <p><code>strict-origin-when-cross-origin</code></p></li>
-    /// <li>
-    /// <p><code>unsafe-url</code></p></li>
+    /// <li> <p> <code>no-referrer</code> </p> </li>
+    /// <li> <p> <code>no-referrer-when-downgrade</code> </p> </li>
+    /// <li> <p> <code>origin</code> </p> </li>
+    /// <li> <p> <code>origin-when-cross-origin</code> </p> </li>
+    /// <li> <p> <code>same-origin</code> </p> </li>
+    /// <li> <p> <code>strict-origin</code> </p> </li>
+    /// <li> <p> <code>strict-origin-when-cross-origin</code> </p> </li>
+    /// <li> <p> <code>unsafe-url</code> </p> </li>
     /// </ul>
     /// <p>For more information about these values, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy">Referrer-Policy</a> in the MDN Web Docs.</p>
     pub fn referrer_policy(&self) -> &crate::types::ReferrerPolicyList {
@@ -90,22 +74,14 @@ impl ResponseHeadersPolicyReferrerPolicyBuilder {
     }
     /// <p>The value of the <code>Referrer-Policy</code> HTTP response header. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>no-referrer</code></p></li>
-    /// <li>
-    /// <p><code>no-referrer-when-downgrade</code></p></li>
-    /// <li>
-    /// <p><code>origin</code></p></li>
-    /// <li>
-    /// <p><code>origin-when-cross-origin</code></p></li>
-    /// <li>
-    /// <p><code>same-origin</code></p></li>
-    /// <li>
-    /// <p><code>strict-origin</code></p></li>
-    /// <li>
-    /// <p><code>strict-origin-when-cross-origin</code></p></li>
-    /// <li>
-    /// <p><code>unsafe-url</code></p></li>
+    /// <li> <p> <code>no-referrer</code> </p> </li>
+    /// <li> <p> <code>no-referrer-when-downgrade</code> </p> </li>
+    /// <li> <p> <code>origin</code> </p> </li>
+    /// <li> <p> <code>origin-when-cross-origin</code> </p> </li>
+    /// <li> <p> <code>same-origin</code> </p> </li>
+    /// <li> <p> <code>strict-origin</code> </p> </li>
+    /// <li> <p> <code>strict-origin-when-cross-origin</code> </p> </li>
+    /// <li> <p> <code>unsafe-url</code> </p> </li>
     /// </ul>
     /// <p>For more information about these values, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy">Referrer-Policy</a> in the MDN Web Docs.</p>
     /// This field is required.
@@ -115,22 +91,14 @@ impl ResponseHeadersPolicyReferrerPolicyBuilder {
     }
     /// <p>The value of the <code>Referrer-Policy</code> HTTP response header. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>no-referrer</code></p></li>
-    /// <li>
-    /// <p><code>no-referrer-when-downgrade</code></p></li>
-    /// <li>
-    /// <p><code>origin</code></p></li>
-    /// <li>
-    /// <p><code>origin-when-cross-origin</code></p></li>
-    /// <li>
-    /// <p><code>same-origin</code></p></li>
-    /// <li>
-    /// <p><code>strict-origin</code></p></li>
-    /// <li>
-    /// <p><code>strict-origin-when-cross-origin</code></p></li>
-    /// <li>
-    /// <p><code>unsafe-url</code></p></li>
+    /// <li> <p> <code>no-referrer</code> </p> </li>
+    /// <li> <p> <code>no-referrer-when-downgrade</code> </p> </li>
+    /// <li> <p> <code>origin</code> </p> </li>
+    /// <li> <p> <code>origin-when-cross-origin</code> </p> </li>
+    /// <li> <p> <code>same-origin</code> </p> </li>
+    /// <li> <p> <code>strict-origin</code> </p> </li>
+    /// <li> <p> <code>strict-origin-when-cross-origin</code> </p> </li>
+    /// <li> <p> <code>unsafe-url</code> </p> </li>
     /// </ul>
     /// <p>For more information about these values, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy">Referrer-Policy</a> in the MDN Web Docs.</p>
     pub fn set_referrer_policy(mut self, input: ::std::option::Option<crate::types::ReferrerPolicyList>) -> Self {
@@ -139,22 +107,14 @@ impl ResponseHeadersPolicyReferrerPolicyBuilder {
     }
     /// <p>The value of the <code>Referrer-Policy</code> HTTP response header. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>no-referrer</code></p></li>
-    /// <li>
-    /// <p><code>no-referrer-when-downgrade</code></p></li>
-    /// <li>
-    /// <p><code>origin</code></p></li>
-    /// <li>
-    /// <p><code>origin-when-cross-origin</code></p></li>
-    /// <li>
-    /// <p><code>same-origin</code></p></li>
-    /// <li>
-    /// <p><code>strict-origin</code></p></li>
-    /// <li>
-    /// <p><code>strict-origin-when-cross-origin</code></p></li>
-    /// <li>
-    /// <p><code>unsafe-url</code></p></li>
+    /// <li> <p> <code>no-referrer</code> </p> </li>
+    /// <li> <p> <code>no-referrer-when-downgrade</code> </p> </li>
+    /// <li> <p> <code>origin</code> </p> </li>
+    /// <li> <p> <code>origin-when-cross-origin</code> </p> </li>
+    /// <li> <p> <code>same-origin</code> </p> </li>
+    /// <li> <p> <code>strict-origin</code> </p> </li>
+    /// <li> <p> <code>strict-origin-when-cross-origin</code> </p> </li>
+    /// <li> <p> <code>unsafe-url</code> </p> </li>
     /// </ul>
     /// <p>For more information about these values, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy">Referrer-Policy</a> in the MDN Web Docs.</p>
     pub fn get_referrer_policy(&self) -> &::std::option::Option<crate::types::ReferrerPolicyList> {

@@ -22,7 +22,7 @@ impl DeleteGlobalClusterInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteGlobalCluster`.
 ///
-/// <p>Deletes a global database cluster. The primary and secondary clusters must already be detached or destroyed first.</p><note>
+/// <p>Deletes a global database cluster. The primary and secondary clusters must already be detached or destroyed first.</p> <note>
 /// <p>This action only applies to Aurora DB clusters.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

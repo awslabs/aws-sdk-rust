@@ -22,7 +22,7 @@ impl ListRecoveryPointsByResourceInputBuilder {
 }
 /// Fluent builder constructing a request to `ListRecoveryPointsByResource`.
 ///
-/// <p>Returns detailed information about all the recovery points of the type specified by a resource Amazon Resource Name (ARN).</p><note>
+/// <p>Returns detailed information about all the recovery points of the type specified by a resource Amazon Resource Name (ARN).</p> <note>
 /// <p>For Amazon EFS and Amazon EC2, this action only lists recovery points created by Backup.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -144,21 +144,21 @@ impl ListRecoveryPointsByResourceFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>The maximum number of items to be returned.</p><note>
+    /// <p>The maximum number of items to be returned.</p> <note>
     /// <p>Amazon RDS requires a value of at least 20.</p>
     /// </note>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of items to be returned.</p><note>
+    /// <p>The maximum number of items to be returned.</p> <note>
     /// <p>Amazon RDS requires a value of at least 20.</p>
     /// </note>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The maximum number of items to be returned.</p><note>
+    /// <p>The maximum number of items to be returned.</p> <note>
     /// <p>Amazon RDS requires a value of at least 20.</p>
     /// </note>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {

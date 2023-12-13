@@ -4,20 +4,16 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CalculateRouteOutput {
-    /// <p>Contains details about each path between a pair of positions included along a route such as: <code>StartPosition</code>, <code>EndPosition</code>, <code>Distance</code>, <code>DurationSeconds</code>, <code>Geometry</code>, and <code>Steps</code>. The number of legs returned corresponds to one fewer than the total number of positions in the request.</p>
+    /// <p>Contains details about each path between a pair of positions included along a route such as: <code>StartPosition</code>, <code>EndPosition</code>, <code>Distance</code>, <code>DurationSeconds</code>, <code>Geometry</code>, and <code>Steps</code>. The number of legs returned corresponds to one fewer than the total number of positions in the request. </p>
     /// <p>For example, a route with a departure position and destination position returns one leg with the positions <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>:</p>
     /// <ul>
-    /// <li>
-    /// <p>The <code>StartPosition</code> is the departure position.</p></li>
-    /// <li>
-    /// <p>The <code>EndPosition</code> is the destination position.</p></li>
+    /// <li> <p>The <code>StartPosition</code> is the departure position.</p> </li>
+    /// <li> <p>The <code>EndPosition</code> is the destination position.</p> </li>
     /// </ul>
     /// <p>A route with a waypoint between the departure and destination position returns two legs with the positions snapped to a nearby road:</p>
     /// <ul>
-    /// <li>
-    /// <p>Leg 1: The <code>StartPosition</code> is the departure position . The <code>EndPosition</code> is the waypoint positon.</p></li>
-    /// <li>
-    /// <p>Leg 2: The <code>StartPosition</code> is the waypoint position. The <code>EndPosition</code> is the destination position.</p></li>
+    /// <li> <p>Leg 1: The <code>StartPosition</code> is the departure position . The <code>EndPosition</code> is the waypoint positon.</p> </li>
+    /// <li> <p>Leg 2: The <code>StartPosition</code> is the waypoint position. The <code>EndPosition</code> is the destination position.</p> </li>
     /// </ul>
     pub legs: ::std::vec::Vec<crate::types::Leg>,
     /// <p>Contains information about the whole route, such as: <code>RouteBBox</code>, <code>DataSource</code>, <code>Distance</code>, <code>DistanceUnit</code>, and <code>DurationSeconds</code>.</p>
@@ -25,20 +21,16 @@ pub struct CalculateRouteOutput {
     _request_id: Option<String>,
 }
 impl CalculateRouteOutput {
-    /// <p>Contains details about each path between a pair of positions included along a route such as: <code>StartPosition</code>, <code>EndPosition</code>, <code>Distance</code>, <code>DurationSeconds</code>, <code>Geometry</code>, and <code>Steps</code>. The number of legs returned corresponds to one fewer than the total number of positions in the request.</p>
+    /// <p>Contains details about each path between a pair of positions included along a route such as: <code>StartPosition</code>, <code>EndPosition</code>, <code>Distance</code>, <code>DurationSeconds</code>, <code>Geometry</code>, and <code>Steps</code>. The number of legs returned corresponds to one fewer than the total number of positions in the request. </p>
     /// <p>For example, a route with a departure position and destination position returns one leg with the positions <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>:</p>
     /// <ul>
-    /// <li>
-    /// <p>The <code>StartPosition</code> is the departure position.</p></li>
-    /// <li>
-    /// <p>The <code>EndPosition</code> is the destination position.</p></li>
+    /// <li> <p>The <code>StartPosition</code> is the departure position.</p> </li>
+    /// <li> <p>The <code>EndPosition</code> is the destination position.</p> </li>
     /// </ul>
     /// <p>A route with a waypoint between the departure and destination position returns two legs with the positions snapped to a nearby road:</p>
     /// <ul>
-    /// <li>
-    /// <p>Leg 1: The <code>StartPosition</code> is the departure position . The <code>EndPosition</code> is the waypoint positon.</p></li>
-    /// <li>
-    /// <p>Leg 2: The <code>StartPosition</code> is the waypoint position. The <code>EndPosition</code> is the destination position.</p></li>
+    /// <li> <p>Leg 1: The <code>StartPosition</code> is the departure position . The <code>EndPosition</code> is the waypoint positon.</p> </li>
+    /// <li> <p>Leg 2: The <code>StartPosition</code> is the waypoint position. The <code>EndPosition</code> is the destination position.</p> </li>
     /// </ul>
     pub fn legs(&self) -> &[crate::types::Leg] {
         use std::ops::Deref;
@@ -74,20 +66,16 @@ impl CalculateRouteOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_legs`](Self::set_legs).
     ///
-    /// <p>Contains details about each path between a pair of positions included along a route such as: <code>StartPosition</code>, <code>EndPosition</code>, <code>Distance</code>, <code>DurationSeconds</code>, <code>Geometry</code>, and <code>Steps</code>. The number of legs returned corresponds to one fewer than the total number of positions in the request.</p>
+    /// <p>Contains details about each path between a pair of positions included along a route such as: <code>StartPosition</code>, <code>EndPosition</code>, <code>Distance</code>, <code>DurationSeconds</code>, <code>Geometry</code>, and <code>Steps</code>. The number of legs returned corresponds to one fewer than the total number of positions in the request. </p>
     /// <p>For example, a route with a departure position and destination position returns one leg with the positions <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>:</p>
     /// <ul>
-    /// <li>
-    /// <p>The <code>StartPosition</code> is the departure position.</p></li>
-    /// <li>
-    /// <p>The <code>EndPosition</code> is the destination position.</p></li>
+    /// <li> <p>The <code>StartPosition</code> is the departure position.</p> </li>
+    /// <li> <p>The <code>EndPosition</code> is the destination position.</p> </li>
     /// </ul>
     /// <p>A route with a waypoint between the departure and destination position returns two legs with the positions snapped to a nearby road:</p>
     /// <ul>
-    /// <li>
-    /// <p>Leg 1: The <code>StartPosition</code> is the departure position . The <code>EndPosition</code> is the waypoint positon.</p></li>
-    /// <li>
-    /// <p>Leg 2: The <code>StartPosition</code> is the waypoint position. The <code>EndPosition</code> is the destination position.</p></li>
+    /// <li> <p>Leg 1: The <code>StartPosition</code> is the departure position . The <code>EndPosition</code> is the waypoint positon.</p> </li>
+    /// <li> <p>Leg 2: The <code>StartPosition</code> is the waypoint position. The <code>EndPosition</code> is the destination position.</p> </li>
     /// </ul>
     pub fn legs(mut self, input: crate::types::Leg) -> Self {
         let mut v = self.legs.unwrap_or_default();
@@ -95,39 +83,31 @@ impl CalculateRouteOutputBuilder {
         self.legs = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Contains details about each path between a pair of positions included along a route such as: <code>StartPosition</code>, <code>EndPosition</code>, <code>Distance</code>, <code>DurationSeconds</code>, <code>Geometry</code>, and <code>Steps</code>. The number of legs returned corresponds to one fewer than the total number of positions in the request.</p>
+    /// <p>Contains details about each path between a pair of positions included along a route such as: <code>StartPosition</code>, <code>EndPosition</code>, <code>Distance</code>, <code>DurationSeconds</code>, <code>Geometry</code>, and <code>Steps</code>. The number of legs returned corresponds to one fewer than the total number of positions in the request. </p>
     /// <p>For example, a route with a departure position and destination position returns one leg with the positions <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>:</p>
     /// <ul>
-    /// <li>
-    /// <p>The <code>StartPosition</code> is the departure position.</p></li>
-    /// <li>
-    /// <p>The <code>EndPosition</code> is the destination position.</p></li>
+    /// <li> <p>The <code>StartPosition</code> is the departure position.</p> </li>
+    /// <li> <p>The <code>EndPosition</code> is the destination position.</p> </li>
     /// </ul>
     /// <p>A route with a waypoint between the departure and destination position returns two legs with the positions snapped to a nearby road:</p>
     /// <ul>
-    /// <li>
-    /// <p>Leg 1: The <code>StartPosition</code> is the departure position . The <code>EndPosition</code> is the waypoint positon.</p></li>
-    /// <li>
-    /// <p>Leg 2: The <code>StartPosition</code> is the waypoint position. The <code>EndPosition</code> is the destination position.</p></li>
+    /// <li> <p>Leg 1: The <code>StartPosition</code> is the departure position . The <code>EndPosition</code> is the waypoint positon.</p> </li>
+    /// <li> <p>Leg 2: The <code>StartPosition</code> is the waypoint position. The <code>EndPosition</code> is the destination position.</p> </li>
     /// </ul>
     pub fn set_legs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Leg>>) -> Self {
         self.legs = input;
         self
     }
-    /// <p>Contains details about each path between a pair of positions included along a route such as: <code>StartPosition</code>, <code>EndPosition</code>, <code>Distance</code>, <code>DurationSeconds</code>, <code>Geometry</code>, and <code>Steps</code>. The number of legs returned corresponds to one fewer than the total number of positions in the request.</p>
+    /// <p>Contains details about each path between a pair of positions included along a route such as: <code>StartPosition</code>, <code>EndPosition</code>, <code>Distance</code>, <code>DurationSeconds</code>, <code>Geometry</code>, and <code>Steps</code>. The number of legs returned corresponds to one fewer than the total number of positions in the request. </p>
     /// <p>For example, a route with a departure position and destination position returns one leg with the positions <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>:</p>
     /// <ul>
-    /// <li>
-    /// <p>The <code>StartPosition</code> is the departure position.</p></li>
-    /// <li>
-    /// <p>The <code>EndPosition</code> is the destination position.</p></li>
+    /// <li> <p>The <code>StartPosition</code> is the departure position.</p> </li>
+    /// <li> <p>The <code>EndPosition</code> is the destination position.</p> </li>
     /// </ul>
     /// <p>A route with a waypoint between the departure and destination position returns two legs with the positions snapped to a nearby road:</p>
     /// <ul>
-    /// <li>
-    /// <p>Leg 1: The <code>StartPosition</code> is the departure position . The <code>EndPosition</code> is the waypoint positon.</p></li>
-    /// <li>
-    /// <p>Leg 2: The <code>StartPosition</code> is the waypoint position. The <code>EndPosition</code> is the destination position.</p></li>
+    /// <li> <p>Leg 1: The <code>StartPosition</code> is the departure position . The <code>EndPosition</code> is the waypoint positon.</p> </li>
+    /// <li> <p>Leg 2: The <code>StartPosition</code> is the waypoint position. The <code>EndPosition</code> is the destination position.</p> </li>
     /// </ul>
     pub fn get_legs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Leg>> {
         &self.legs

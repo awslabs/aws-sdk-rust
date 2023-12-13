@@ -150,17 +150,17 @@ impl PutCoreNetworkPolicyFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p>The ID of a core network policy.</p>
+    /// <p>The ID of a core network policy. </p>
     pub fn latest_version_id(mut self, input: i32) -> Self {
         self.inner = self.inner.latest_version_id(input);
         self
     }
-    /// <p>The ID of a core network policy.</p>
+    /// <p>The ID of a core network policy. </p>
     pub fn set_latest_version_id(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_latest_version_id(input);
         self
     }
-    /// <p>The ID of a core network policy.</p>
+    /// <p>The ID of a core network policy. </p>
     pub fn get_latest_version_id(&self) -> &::std::option::Option<i32> {
         self.inner.get_latest_version_id()
     }

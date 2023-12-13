@@ -124,17 +124,13 @@ impl GetMapSpritesFluentBuilder {
     }
     /// <p>The name of the sprite ﬁle. Use the following ﬁle names for the sprite sheet:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>sprites.png</code></p></li>
-    /// <li>
-    /// <p><code>sprites@2x.png</code> for high pixel density displays</p></li>
+    /// <li> <p> <code>sprites.png</code> </p> </li>
+    /// <li> <p> <code>sprites@2x.png</code> for high pixel density displays</p> </li>
     /// </ul>
     /// <p>For the JSON document containing image offsets. Use the following ﬁle names:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>sprites.json</code></p></li>
-    /// <li>
-    /// <p><code>sprites@2x.json</code> for high pixel density displays</p></li>
+    /// <li> <p> <code>sprites.json</code> </p> </li>
+    /// <li> <p> <code>sprites@2x.json</code> for high pixel density displays</p> </li>
     /// </ul>
     pub fn file_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.file_name(input.into());
@@ -142,17 +138,13 @@ impl GetMapSpritesFluentBuilder {
     }
     /// <p>The name of the sprite ﬁle. Use the following ﬁle names for the sprite sheet:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>sprites.png</code></p></li>
-    /// <li>
-    /// <p><code>sprites@2x.png</code> for high pixel density displays</p></li>
+    /// <li> <p> <code>sprites.png</code> </p> </li>
+    /// <li> <p> <code>sprites@2x.png</code> for high pixel density displays</p> </li>
     /// </ul>
     /// <p>For the JSON document containing image offsets. Use the following ﬁle names:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>sprites.json</code></p></li>
-    /// <li>
-    /// <p><code>sprites@2x.json</code> for high pixel density displays</p></li>
+    /// <li> <p> <code>sprites.json</code> </p> </li>
+    /// <li> <p> <code>sprites@2x.json</code> for high pixel density displays</p> </li>
     /// </ul>
     pub fn set_file_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_file_name(input);
@@ -160,17 +152,13 @@ impl GetMapSpritesFluentBuilder {
     }
     /// <p>The name of the sprite ﬁle. Use the following ﬁle names for the sprite sheet:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>sprites.png</code></p></li>
-    /// <li>
-    /// <p><code>sprites@2x.png</code> for high pixel density displays</p></li>
+    /// <li> <p> <code>sprites.png</code> </p> </li>
+    /// <li> <p> <code>sprites@2x.png</code> for high pixel density displays</p> </li>
     /// </ul>
     /// <p>For the JSON document containing image offsets. Use the following ﬁle names:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>sprites.json</code></p></li>
-    /// <li>
-    /// <p><code>sprites@2x.json</code> for high pixel density displays</p></li>
+    /// <li> <p> <code>sprites.json</code> </p> </li>
+    /// <li> <p> <code>sprites@2x.json</code> for high pixel density displays</p> </li>
     /// </ul>
     pub fn get_file_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_file_name()

@@ -24,16 +24,11 @@ pub struct ApplicationVersionDescription {
     pub date_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The processing status of the application version. Reflects the state of the application version during its creation. Many of the values are only applicable if you specified <code>True</code> for the <code>Process</code> parameter of the <code>CreateApplicationVersion</code> action. The following list describes the possible values.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Unprocessed</code> – Application version wasn't pre-processed or validated. Elastic Beanstalk will validate configuration files during deployment of the application version to an environment.</p></li>
-    /// <li>
-    /// <p><code>Processing</code> – Elastic Beanstalk is currently processing the application version.</p></li>
-    /// <li>
-    /// <p><code>Building</code> – Application version is currently undergoing an AWS CodeBuild build.</p></li>
-    /// <li>
-    /// <p><code>Processed</code> – Elastic Beanstalk was successfully pre-processed and validated.</p></li>
-    /// <li>
-    /// <p><code>Failed</code> – Either the AWS CodeBuild build failed or configuration files didn't pass validation. This application version isn't usable.</p></li>
+    /// <li> <p> <code>Unprocessed</code> – Application version wasn't pre-processed or validated. Elastic Beanstalk will validate configuration files during deployment of the application version to an environment.</p> </li>
+    /// <li> <p> <code>Processing</code> – Elastic Beanstalk is currently processing the application version.</p> </li>
+    /// <li> <p> <code>Building</code> – Application version is currently undergoing an AWS CodeBuild build.</p> </li>
+    /// <li> <p> <code>Processed</code> – Elastic Beanstalk was successfully pre-processed and validated.</p> </li>
+    /// <li> <p> <code>Failed</code> – Either the AWS CodeBuild build failed or configuration files didn't pass validation. This application version isn't usable.</p> </li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::ApplicationVersionStatus>,
 }
@@ -76,16 +71,11 @@ impl ApplicationVersionDescription {
     }
     /// <p>The processing status of the application version. Reflects the state of the application version during its creation. Many of the values are only applicable if you specified <code>True</code> for the <code>Process</code> parameter of the <code>CreateApplicationVersion</code> action. The following list describes the possible values.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Unprocessed</code> – Application version wasn't pre-processed or validated. Elastic Beanstalk will validate configuration files during deployment of the application version to an environment.</p></li>
-    /// <li>
-    /// <p><code>Processing</code> – Elastic Beanstalk is currently processing the application version.</p></li>
-    /// <li>
-    /// <p><code>Building</code> – Application version is currently undergoing an AWS CodeBuild build.</p></li>
-    /// <li>
-    /// <p><code>Processed</code> – Elastic Beanstalk was successfully pre-processed and validated.</p></li>
-    /// <li>
-    /// <p><code>Failed</code> – Either the AWS CodeBuild build failed or configuration files didn't pass validation. This application version isn't usable.</p></li>
+    /// <li> <p> <code>Unprocessed</code> – Application version wasn't pre-processed or validated. Elastic Beanstalk will validate configuration files during deployment of the application version to an environment.</p> </li>
+    /// <li> <p> <code>Processing</code> – Elastic Beanstalk is currently processing the application version.</p> </li>
+    /// <li> <p> <code>Building</code> – Application version is currently undergoing an AWS CodeBuild build.</p> </li>
+    /// <li> <p> <code>Processed</code> – Elastic Beanstalk was successfully pre-processed and validated.</p> </li>
+    /// <li> <p> <code>Failed</code> – Either the AWS CodeBuild build failed or configuration files didn't pass validation. This application version isn't usable.</p> </li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ApplicationVersionStatus> {
         self.status.as_ref()
@@ -242,16 +232,11 @@ impl ApplicationVersionDescriptionBuilder {
     }
     /// <p>The processing status of the application version. Reflects the state of the application version during its creation. Many of the values are only applicable if you specified <code>True</code> for the <code>Process</code> parameter of the <code>CreateApplicationVersion</code> action. The following list describes the possible values.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Unprocessed</code> – Application version wasn't pre-processed or validated. Elastic Beanstalk will validate configuration files during deployment of the application version to an environment.</p></li>
-    /// <li>
-    /// <p><code>Processing</code> – Elastic Beanstalk is currently processing the application version.</p></li>
-    /// <li>
-    /// <p><code>Building</code> – Application version is currently undergoing an AWS CodeBuild build.</p></li>
-    /// <li>
-    /// <p><code>Processed</code> – Elastic Beanstalk was successfully pre-processed and validated.</p></li>
-    /// <li>
-    /// <p><code>Failed</code> – Either the AWS CodeBuild build failed or configuration files didn't pass validation. This application version isn't usable.</p></li>
+    /// <li> <p> <code>Unprocessed</code> – Application version wasn't pre-processed or validated. Elastic Beanstalk will validate configuration files during deployment of the application version to an environment.</p> </li>
+    /// <li> <p> <code>Processing</code> – Elastic Beanstalk is currently processing the application version.</p> </li>
+    /// <li> <p> <code>Building</code> – Application version is currently undergoing an AWS CodeBuild build.</p> </li>
+    /// <li> <p> <code>Processed</code> – Elastic Beanstalk was successfully pre-processed and validated.</p> </li>
+    /// <li> <p> <code>Failed</code> – Either the AWS CodeBuild build failed or configuration files didn't pass validation. This application version isn't usable.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::ApplicationVersionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -259,16 +244,11 @@ impl ApplicationVersionDescriptionBuilder {
     }
     /// <p>The processing status of the application version. Reflects the state of the application version during its creation. Many of the values are only applicable if you specified <code>True</code> for the <code>Process</code> parameter of the <code>CreateApplicationVersion</code> action. The following list describes the possible values.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Unprocessed</code> – Application version wasn't pre-processed or validated. Elastic Beanstalk will validate configuration files during deployment of the application version to an environment.</p></li>
-    /// <li>
-    /// <p><code>Processing</code> – Elastic Beanstalk is currently processing the application version.</p></li>
-    /// <li>
-    /// <p><code>Building</code> – Application version is currently undergoing an AWS CodeBuild build.</p></li>
-    /// <li>
-    /// <p><code>Processed</code> – Elastic Beanstalk was successfully pre-processed and validated.</p></li>
-    /// <li>
-    /// <p><code>Failed</code> – Either the AWS CodeBuild build failed or configuration files didn't pass validation. This application version isn't usable.</p></li>
+    /// <li> <p> <code>Unprocessed</code> – Application version wasn't pre-processed or validated. Elastic Beanstalk will validate configuration files during deployment of the application version to an environment.</p> </li>
+    /// <li> <p> <code>Processing</code> – Elastic Beanstalk is currently processing the application version.</p> </li>
+    /// <li> <p> <code>Building</code> – Application version is currently undergoing an AWS CodeBuild build.</p> </li>
+    /// <li> <p> <code>Processed</code> – Elastic Beanstalk was successfully pre-processed and validated.</p> </li>
+    /// <li> <p> <code>Failed</code> – Either the AWS CodeBuild build failed or configuration files didn't pass validation. This application version isn't usable.</p> </li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ApplicationVersionStatus>) -> Self {
         self.status = input;
@@ -276,16 +256,11 @@ impl ApplicationVersionDescriptionBuilder {
     }
     /// <p>The processing status of the application version. Reflects the state of the application version during its creation. Many of the values are only applicable if you specified <code>True</code> for the <code>Process</code> parameter of the <code>CreateApplicationVersion</code> action. The following list describes the possible values.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Unprocessed</code> – Application version wasn't pre-processed or validated. Elastic Beanstalk will validate configuration files during deployment of the application version to an environment.</p></li>
-    /// <li>
-    /// <p><code>Processing</code> – Elastic Beanstalk is currently processing the application version.</p></li>
-    /// <li>
-    /// <p><code>Building</code> – Application version is currently undergoing an AWS CodeBuild build.</p></li>
-    /// <li>
-    /// <p><code>Processed</code> – Elastic Beanstalk was successfully pre-processed and validated.</p></li>
-    /// <li>
-    /// <p><code>Failed</code> – Either the AWS CodeBuild build failed or configuration files didn't pass validation. This application version isn't usable.</p></li>
+    /// <li> <p> <code>Unprocessed</code> – Application version wasn't pre-processed or validated. Elastic Beanstalk will validate configuration files during deployment of the application version to an environment.</p> </li>
+    /// <li> <p> <code>Processing</code> – Elastic Beanstalk is currently processing the application version.</p> </li>
+    /// <li> <p> <code>Building</code> – Application version is currently undergoing an AWS CodeBuild build.</p> </li>
+    /// <li> <p> <code>Processed</code> – Elastic Beanstalk was successfully pre-processed and validated.</p> </li>
+    /// <li> <p> <code>Failed</code> – Either the AWS CodeBuild build failed or configuration files didn't pass validation. This application version isn't usable.</p> </li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ApplicationVersionStatus> {
         &self.status

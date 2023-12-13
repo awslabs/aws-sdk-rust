@@ -9,36 +9,27 @@ pub struct DescribeExplainabilityExportOutput {
     pub explainability_export_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Explainability export.</p>
     pub explainability_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The destination for an export job. Provide an S3 path, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an Key Management Service (KMS) key (optional).</p>
+    /// <p>The destination for an export job. Provide an S3 path, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an Key Management Service (KMS) key (optional). </p>
     pub destination: ::std::option::Option<crate::types::DataDestination>,
     /// <p>Information about any errors that occurred during the export.</p>
     pub message: ::std::option::Option<::std::string::String>,
-    /// <p>The status of the Explainability export. States include:</p>
+    /// <p>The status of the Explainability export. States include: </p>
     /// <ul>
-    /// <li>
-    /// <p><code>ACTIVE</code></p></li>
-    /// <li>
-    /// <p><code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code></p></li>
-    /// <li>
-    /// <p><code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code></p></li>
-    /// <li>
-    /// <p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>When the Explainability export was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p></li>
-    /// <li>
-    /// <p><code>CREATE_IN_PROGRESS</code> - The current timestamp.</p></li>
-    /// <li>
-    /// <p><code>CREATE_STOPPING</code> - The current timestamp.</p></li>
-    /// <li>
-    /// <p><code>CREATE_STOPPED</code> - When the job stopped.</p></li>
-    /// <li>
-    /// <p><code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p></li>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
     pub last_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The format of the exported data, CSV or PARQUET.</p>
@@ -58,7 +49,7 @@ impl DescribeExplainabilityExportOutput {
     pub fn explainability_arn(&self) -> ::std::option::Option<&str> {
         self.explainability_arn.as_deref()
     }
-    /// <p>The destination for an export job. Provide an S3 path, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an Key Management Service (KMS) key (optional).</p>
+    /// <p>The destination for an export job. Provide an S3 path, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an Key Management Service (KMS) key (optional). </p>
     pub fn destination(&self) -> ::std::option::Option<&crate::types::DataDestination> {
         self.destination.as_ref()
     }
@@ -66,16 +57,12 @@ impl DescribeExplainabilityExportOutput {
     pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
-    /// <p>The status of the Explainability export. States include:</p>
+    /// <p>The status of the Explainability export. States include: </p>
     /// <ul>
-    /// <li>
-    /// <p><code>ACTIVE</code></p></li>
-    /// <li>
-    /// <p><code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code></p></li>
-    /// <li>
-    /// <p><code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code></p></li>
-    /// <li>
-    /// <p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
@@ -86,16 +73,11 @@ impl DescribeExplainabilityExportOutput {
     }
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p></li>
-    /// <li>
-    /// <p><code>CREATE_IN_PROGRESS</code> - The current timestamp.</p></li>
-    /// <li>
-    /// <p><code>CREATE_STOPPING</code> - The current timestamp.</p></li>
-    /// <li>
-    /// <p><code>CREATE_STOPPED</code> - When the job stopped.</p></li>
-    /// <li>
-    /// <p><code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p></li>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
     pub fn last_modification_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
@@ -175,17 +157,17 @@ impl DescribeExplainabilityExportOutputBuilder {
     pub fn get_explainability_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.explainability_arn
     }
-    /// <p>The destination for an export job. Provide an S3 path, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an Key Management Service (KMS) key (optional).</p>
+    /// <p>The destination for an export job. Provide an S3 path, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an Key Management Service (KMS) key (optional). </p>
     pub fn destination(mut self, input: crate::types::DataDestination) -> Self {
         self.destination = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The destination for an export job. Provide an S3 path, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an Key Management Service (KMS) key (optional).</p>
+    /// <p>The destination for an export job. Provide an S3 path, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an Key Management Service (KMS) key (optional). </p>
     pub fn set_destination(mut self, input: ::std::option::Option<crate::types::DataDestination>) -> Self {
         self.destination = input;
         self
     }
-    /// <p>The destination for an export job. Provide an S3 path, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an Key Management Service (KMS) key (optional).</p>
+    /// <p>The destination for an export job. Provide an S3 path, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an Key Management Service (KMS) key (optional). </p>
     pub fn get_destination(&self) -> &::std::option::Option<crate::types::DataDestination> {
         &self.destination
     }
@@ -203,46 +185,34 @@ impl DescribeExplainabilityExportOutputBuilder {
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
-    /// <p>The status of the Explainability export. States include:</p>
+    /// <p>The status of the Explainability export. States include: </p>
     /// <ul>
-    /// <li>
-    /// <p><code>ACTIVE</code></p></li>
-    /// <li>
-    /// <p><code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code></p></li>
-    /// <li>
-    /// <p><code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code></p></li>
-    /// <li>
-    /// <p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
     /// </ul>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The status of the Explainability export. States include:</p>
+    /// <p>The status of the Explainability export. States include: </p>
     /// <ul>
-    /// <li>
-    /// <p><code>ACTIVE</code></p></li>
-    /// <li>
-    /// <p><code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code></p></li>
-    /// <li>
-    /// <p><code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code></p></li>
-    /// <li>
-    /// <p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of the Explainability export. States include:</p>
+    /// <p>The status of the Explainability export. States include: </p>
     /// <ul>
-    /// <li>
-    /// <p><code>ACTIVE</code></p></li>
-    /// <li>
-    /// <p><code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code></p></li>
-    /// <li>
-    /// <p><code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code></p></li>
-    /// <li>
-    /// <p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status
@@ -263,16 +233,11 @@ impl DescribeExplainabilityExportOutputBuilder {
     }
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p></li>
-    /// <li>
-    /// <p><code>CREATE_IN_PROGRESS</code> - The current timestamp.</p></li>
-    /// <li>
-    /// <p><code>CREATE_STOPPING</code> - The current timestamp.</p></li>
-    /// <li>
-    /// <p><code>CREATE_STOPPED</code> - When the job stopped.</p></li>
-    /// <li>
-    /// <p><code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p></li>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
     pub fn last_modification_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modification_time = ::std::option::Option::Some(input);
@@ -280,16 +245,11 @@ impl DescribeExplainabilityExportOutputBuilder {
     }
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p></li>
-    /// <li>
-    /// <p><code>CREATE_IN_PROGRESS</code> - The current timestamp.</p></li>
-    /// <li>
-    /// <p><code>CREATE_STOPPING</code> - The current timestamp.</p></li>
-    /// <li>
-    /// <p><code>CREATE_STOPPED</code> - When the job stopped.</p></li>
-    /// <li>
-    /// <p><code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p></li>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
     pub fn set_last_modification_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modification_time = input;
@@ -297,16 +257,11 @@ impl DescribeExplainabilityExportOutputBuilder {
     }
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p></li>
-    /// <li>
-    /// <p><code>CREATE_IN_PROGRESS</code> - The current timestamp.</p></li>
-    /// <li>
-    /// <p><code>CREATE_STOPPING</code> - The current timestamp.</p></li>
-    /// <li>
-    /// <p><code>CREATE_STOPPED</code> - When the job stopped.</p></li>
-    /// <li>
-    /// <p><code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p></li>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
     pub fn get_last_modification_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modification_time

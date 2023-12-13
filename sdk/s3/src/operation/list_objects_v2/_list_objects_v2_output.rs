@@ -9,44 +9,42 @@ pub struct ListObjectsV2Output {
     pub contents: ::std::option::Option<::std::vec::Vec<crate::types::Object>>,
     /// <p>The bucket name.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>Keys that begin with the indicated prefix.</p><note>
-    /// <p><b>Directory buckets</b> - For directory buckets, only prefixes that end in a delimiter (<code>/</code>) are supported.</p>
+    /// <p>Keys that begin with the indicated prefix.</p> <note>
+    /// <p> <b>Directory buckets</b> - For directory buckets, only prefixes that end in a delimiter (<code>/</code>) are supported.</p>
     /// </note>
     pub prefix: ::std::option::Option<::std::string::String>,
-    /// <p>Causes keys that contain the same string between the <code>prefix</code> and the first occurrence of the delimiter to be rolled up into a single result element in the <code>CommonPrefixes</code> collection. These rolled-up keys are not returned elsewhere in the response. Each rolled-up result counts as only one return against the <code>MaxKeys</code> value.</p><note>
-    /// <p><b>Directory buckets</b> - For directory buckets, <code>/</code> is the only supported delimiter.</p>
+    /// <p>Causes keys that contain the same string between the <code>prefix</code> and the first occurrence of the delimiter to be rolled up into a single result element in the <code>CommonPrefixes</code> collection. These rolled-up keys are not returned elsewhere in the response. Each rolled-up result counts as only one return against the <code>MaxKeys</code> value.</p> <note>
+    /// <p> <b>Directory buckets</b> - For directory buckets, <code>/</code> is the only supported delimiter.</p>
     /// </note>
     pub delimiter: ::std::option::Option<::std::string::String>,
     /// <p>Sets the maximum number of keys returned in the response. By default, the action returns up to 1,000 key names. The response might contain fewer keys but will never contain more.</p>
     pub max_keys: ::std::option::Option<i32>,
     /// <p>All of the keys (up to 1,000) that share the same prefix are grouped together. When counting the total numbers of returns by this API operation, this group of keys is considered as one item.</p>
     /// <p>A response can contain <code>CommonPrefixes</code> only if you specify a delimiter.</p>
-    /// <p><code>CommonPrefixes</code> contains all (if there are any) keys between <code>Prefix</code> and the next occurrence of the string specified by a delimiter.</p>
-    /// <p><code>CommonPrefixes</code> lists keys that act like subdirectories in the directory specified by <code>Prefix</code>.</p>
-    /// <p>For example, if the prefix is <code>notes/</code> and the delimiter is a slash (<code>/</code>) as in <code>notes/summer/july</code>, the common prefix is <code>notes/summer/</code>. All of the keys that roll up into a common prefix count as a single return when calculating the number of returns.</p><note>
+    /// <p> <code>CommonPrefixes</code> contains all (if there are any) keys between <code>Prefix</code> and the next occurrence of the string specified by a delimiter.</p>
+    /// <p> <code>CommonPrefixes</code> lists keys that act like subdirectories in the directory specified by <code>Prefix</code>.</p>
+    /// <p>For example, if the prefix is <code>notes/</code> and the delimiter is a slash (<code>/</code>) as in <code>notes/summer/july</code>, the common prefix is <code>notes/summer/</code>. All of the keys that roll up into a common prefix count as a single return when calculating the number of returns. </p> <note>
     /// <ul>
-    /// <li>
-    /// <p><b>Directory buckets</b> - For directory buckets, only prefixes that end in a delimiter (<code>/</code>) are supported.</p></li>
-    /// <li>
-    /// <p><b>Directory buckets </b> - When you query <code>ListObjectsV2</code> with a delimiter during in-progress multipart uploads, the <code>CommonPrefixes</code> response parameter contains the prefixes that are associated with the in-progress multipart uploads. For more information about multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart Upload Overview</a> in the <i>Amazon S3 User Guide</i>.</p></li>
+    /// <li> <p> <b>Directory buckets</b> - For directory buckets, only prefixes that end in a delimiter (<code>/</code>) are supported.</p> </li>
+    /// <li> <p> <b>Directory buckets </b> - When you query <code>ListObjectsV2</code> with a delimiter during in-progress multipart uploads, the <code>CommonPrefixes</code> response parameter contains the prefixes that are associated with the in-progress multipart uploads. For more information about multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart Upload Overview</a> in the <i>Amazon S3 User Guide</i>.</p> </li>
     /// </ul>
     /// </note>
     pub common_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::CommonPrefix>>,
     /// <p>Encoding type used by Amazon S3 to encode object key names in the XML response.</p>
     /// <p>If you specify the <code>encoding-type</code> request parameter, Amazon S3 includes this element in the response, and returns encoded key name values in the following response elements:</p>
-    /// <p><code>Delimiter, Prefix, Key,</code> and <code>StartAfter</code>.</p>
+    /// <p> <code>Delimiter, Prefix, Key,</code> and <code>StartAfter</code>.</p>
     pub encoding_type: ::std::option::Option<crate::types::EncodingType>,
-    /// <p><code>KeyCount</code> is the number of keys returned with this request. <code>KeyCount</code> will always be less than or equal to the <code>MaxKeys</code> field. For example, if you ask for 50 keys, your result will include 50 keys or fewer.</p>
+    /// <p> <code>KeyCount</code> is the number of keys returned with this request. <code>KeyCount</code> will always be less than or equal to the <code>MaxKeys</code> field. For example, if you ask for 50 keys, your result will include 50 keys or fewer.</p>
     pub key_count: ::std::option::Option<i32>,
-    /// <p>If <code>ContinuationToken</code> was sent with the request, it is included in the response. You can use the returned <code>ContinuationToken</code> for pagination of the list response. You can use this <code>ContinuationToken</code> for pagination of the list results.</p>
+    /// <p> If <code>ContinuationToken</code> was sent with the request, it is included in the response. You can use the returned <code>ContinuationToken</code> for pagination of the list response. You can use this <code>ContinuationToken</code> for pagination of the list results. </p>
     pub continuation_token: ::std::option::Option<::std::string::String>,
-    /// <p><code>NextContinuationToken</code> is sent when <code>isTruncated</code> is true, which means there are more keys in the bucket that can be listed. The next list requests to Amazon S3 can be continued with this <code>NextContinuationToken</code>. <code>NextContinuationToken</code> is obfuscated and is not a real key</p>
+    /// <p> <code>NextContinuationToken</code> is sent when <code>isTruncated</code> is true, which means there are more keys in the bucket that can be listed. The next list requests to Amazon S3 can be continued with this <code>NextContinuationToken</code>. <code>NextContinuationToken</code> is obfuscated and is not a real key</p>
     pub next_continuation_token: ::std::option::Option<::std::string::String>,
-    /// <p>If StartAfter was sent with the request, it is included in the response.</p><note>
+    /// <p>If StartAfter was sent with the request, it is included in the response.</p> <note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub start_after: ::std::option::Option<::std::string::String>,
-    /// <p>If present, indicates that the requester was successfully charged for the request.</p><note>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p> <note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub request_charged: ::std::option::Option<crate::types::RequestCharged>,
@@ -68,14 +66,14 @@ impl ListObjectsV2Output {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Keys that begin with the indicated prefix.</p><note>
-    /// <p><b>Directory buckets</b> - For directory buckets, only prefixes that end in a delimiter (<code>/</code>) are supported.</p>
+    /// <p>Keys that begin with the indicated prefix.</p> <note>
+    /// <p> <b>Directory buckets</b> - For directory buckets, only prefixes that end in a delimiter (<code>/</code>) are supported.</p>
     /// </note>
     pub fn prefix(&self) -> ::std::option::Option<&str> {
         self.prefix.as_deref()
     }
-    /// <p>Causes keys that contain the same string between the <code>prefix</code> and the first occurrence of the delimiter to be rolled up into a single result element in the <code>CommonPrefixes</code> collection. These rolled-up keys are not returned elsewhere in the response. Each rolled-up result counts as only one return against the <code>MaxKeys</code> value.</p><note>
-    /// <p><b>Directory buckets</b> - For directory buckets, <code>/</code> is the only supported delimiter.</p>
+    /// <p>Causes keys that contain the same string between the <code>prefix</code> and the first occurrence of the delimiter to be rolled up into a single result element in the <code>CommonPrefixes</code> collection. These rolled-up keys are not returned elsewhere in the response. Each rolled-up result counts as only one return against the <code>MaxKeys</code> value.</p> <note>
+    /// <p> <b>Directory buckets</b> - For directory buckets, <code>/</code> is the only supported delimiter.</p>
     /// </note>
     pub fn delimiter(&self) -> ::std::option::Option<&str> {
         self.delimiter.as_deref()
@@ -86,14 +84,12 @@ impl ListObjectsV2Output {
     }
     /// <p>All of the keys (up to 1,000) that share the same prefix are grouped together. When counting the total numbers of returns by this API operation, this group of keys is considered as one item.</p>
     /// <p>A response can contain <code>CommonPrefixes</code> only if you specify a delimiter.</p>
-    /// <p><code>CommonPrefixes</code> contains all (if there are any) keys between <code>Prefix</code> and the next occurrence of the string specified by a delimiter.</p>
-    /// <p><code>CommonPrefixes</code> lists keys that act like subdirectories in the directory specified by <code>Prefix</code>.</p>
-    /// <p>For example, if the prefix is <code>notes/</code> and the delimiter is a slash (<code>/</code>) as in <code>notes/summer/july</code>, the common prefix is <code>notes/summer/</code>. All of the keys that roll up into a common prefix count as a single return when calculating the number of returns.</p><note>
+    /// <p> <code>CommonPrefixes</code> contains all (if there are any) keys between <code>Prefix</code> and the next occurrence of the string specified by a delimiter.</p>
+    /// <p> <code>CommonPrefixes</code> lists keys that act like subdirectories in the directory specified by <code>Prefix</code>.</p>
+    /// <p>For example, if the prefix is <code>notes/</code> and the delimiter is a slash (<code>/</code>) as in <code>notes/summer/july</code>, the common prefix is <code>notes/summer/</code>. All of the keys that roll up into a common prefix count as a single return when calculating the number of returns. </p> <note>
     /// <ul>
-    /// <li>
-    /// <p><b>Directory buckets</b> - For directory buckets, only prefixes that end in a delimiter (<code>/</code>) are supported.</p></li>
-    /// <li>
-    /// <p><b>Directory buckets </b> - When you query <code>ListObjectsV2</code> with a delimiter during in-progress multipart uploads, the <code>CommonPrefixes</code> response parameter contains the prefixes that are associated with the in-progress multipart uploads. For more information about multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart Upload Overview</a> in the <i>Amazon S3 User Guide</i>.</p></li>
+    /// <li> <p> <b>Directory buckets</b> - For directory buckets, only prefixes that end in a delimiter (<code>/</code>) are supported.</p> </li>
+    /// <li> <p> <b>Directory buckets </b> - When you query <code>ListObjectsV2</code> with a delimiter during in-progress multipart uploads, the <code>CommonPrefixes</code> response parameter contains the prefixes that are associated with the in-progress multipart uploads. For more information about multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart Upload Overview</a> in the <i>Amazon S3 User Guide</i>.</p> </li>
     /// </ul>
     /// </note>
     ///
@@ -103,29 +99,29 @@ impl ListObjectsV2Output {
     }
     /// <p>Encoding type used by Amazon S3 to encode object key names in the XML response.</p>
     /// <p>If you specify the <code>encoding-type</code> request parameter, Amazon S3 includes this element in the response, and returns encoded key name values in the following response elements:</p>
-    /// <p><code>Delimiter, Prefix, Key,</code> and <code>StartAfter</code>.</p>
+    /// <p> <code>Delimiter, Prefix, Key,</code> and <code>StartAfter</code>.</p>
     pub fn encoding_type(&self) -> ::std::option::Option<&crate::types::EncodingType> {
         self.encoding_type.as_ref()
     }
-    /// <p><code>KeyCount</code> is the number of keys returned with this request. <code>KeyCount</code> will always be less than or equal to the <code>MaxKeys</code> field. For example, if you ask for 50 keys, your result will include 50 keys or fewer.</p>
+    /// <p> <code>KeyCount</code> is the number of keys returned with this request. <code>KeyCount</code> will always be less than or equal to the <code>MaxKeys</code> field. For example, if you ask for 50 keys, your result will include 50 keys or fewer.</p>
     pub fn key_count(&self) -> ::std::option::Option<i32> {
         self.key_count
     }
-    /// <p>If <code>ContinuationToken</code> was sent with the request, it is included in the response. You can use the returned <code>ContinuationToken</code> for pagination of the list response. You can use this <code>ContinuationToken</code> for pagination of the list results.</p>
+    /// <p> If <code>ContinuationToken</code> was sent with the request, it is included in the response. You can use the returned <code>ContinuationToken</code> for pagination of the list response. You can use this <code>ContinuationToken</code> for pagination of the list results. </p>
     pub fn continuation_token(&self) -> ::std::option::Option<&str> {
         self.continuation_token.as_deref()
     }
-    /// <p><code>NextContinuationToken</code> is sent when <code>isTruncated</code> is true, which means there are more keys in the bucket that can be listed. The next list requests to Amazon S3 can be continued with this <code>NextContinuationToken</code>. <code>NextContinuationToken</code> is obfuscated and is not a real key</p>
+    /// <p> <code>NextContinuationToken</code> is sent when <code>isTruncated</code> is true, which means there are more keys in the bucket that can be listed. The next list requests to Amazon S3 can be continued with this <code>NextContinuationToken</code>. <code>NextContinuationToken</code> is obfuscated and is not a real key</p>
     pub fn next_continuation_token(&self) -> ::std::option::Option<&str> {
         self.next_continuation_token.as_deref()
     }
-    /// <p>If StartAfter was sent with the request, it is included in the response.</p><note>
+    /// <p>If StartAfter was sent with the request, it is included in the response.</p> <note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn start_after(&self) -> ::std::option::Option<&str> {
         self.start_after.as_deref()
     }
-    /// <p>If present, indicates that the requester was successfully charged for the request.</p><note>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p> <note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn request_charged(&self) -> ::std::option::Option<&crate::types::RequestCharged> {
@@ -218,42 +214,42 @@ impl ListObjectsV2OutputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>Keys that begin with the indicated prefix.</p><note>
-    /// <p><b>Directory buckets</b> - For directory buckets, only prefixes that end in a delimiter (<code>/</code>) are supported.</p>
+    /// <p>Keys that begin with the indicated prefix.</p> <note>
+    /// <p> <b>Directory buckets</b> - For directory buckets, only prefixes that end in a delimiter (<code>/</code>) are supported.</p>
     /// </note>
     pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prefix = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Keys that begin with the indicated prefix.</p><note>
-    /// <p><b>Directory buckets</b> - For directory buckets, only prefixes that end in a delimiter (<code>/</code>) are supported.</p>
+    /// <p>Keys that begin with the indicated prefix.</p> <note>
+    /// <p> <b>Directory buckets</b> - For directory buckets, only prefixes that end in a delimiter (<code>/</code>) are supported.</p>
     /// </note>
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prefix = input;
         self
     }
-    /// <p>Keys that begin with the indicated prefix.</p><note>
-    /// <p><b>Directory buckets</b> - For directory buckets, only prefixes that end in a delimiter (<code>/</code>) are supported.</p>
+    /// <p>Keys that begin with the indicated prefix.</p> <note>
+    /// <p> <b>Directory buckets</b> - For directory buckets, only prefixes that end in a delimiter (<code>/</code>) are supported.</p>
     /// </note>
     pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
         &self.prefix
     }
-    /// <p>Causes keys that contain the same string between the <code>prefix</code> and the first occurrence of the delimiter to be rolled up into a single result element in the <code>CommonPrefixes</code> collection. These rolled-up keys are not returned elsewhere in the response. Each rolled-up result counts as only one return against the <code>MaxKeys</code> value.</p><note>
-    /// <p><b>Directory buckets</b> - For directory buckets, <code>/</code> is the only supported delimiter.</p>
+    /// <p>Causes keys that contain the same string between the <code>prefix</code> and the first occurrence of the delimiter to be rolled up into a single result element in the <code>CommonPrefixes</code> collection. These rolled-up keys are not returned elsewhere in the response. Each rolled-up result counts as only one return against the <code>MaxKeys</code> value.</p> <note>
+    /// <p> <b>Directory buckets</b> - For directory buckets, <code>/</code> is the only supported delimiter.</p>
     /// </note>
     pub fn delimiter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delimiter = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Causes keys that contain the same string between the <code>prefix</code> and the first occurrence of the delimiter to be rolled up into a single result element in the <code>CommonPrefixes</code> collection. These rolled-up keys are not returned elsewhere in the response. Each rolled-up result counts as only one return against the <code>MaxKeys</code> value.</p><note>
-    /// <p><b>Directory buckets</b> - For directory buckets, <code>/</code> is the only supported delimiter.</p>
+    /// <p>Causes keys that contain the same string between the <code>prefix</code> and the first occurrence of the delimiter to be rolled up into a single result element in the <code>CommonPrefixes</code> collection. These rolled-up keys are not returned elsewhere in the response. Each rolled-up result counts as only one return against the <code>MaxKeys</code> value.</p> <note>
+    /// <p> <b>Directory buckets</b> - For directory buckets, <code>/</code> is the only supported delimiter.</p>
     /// </note>
     pub fn set_delimiter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.delimiter = input;
         self
     }
-    /// <p>Causes keys that contain the same string between the <code>prefix</code> and the first occurrence of the delimiter to be rolled up into a single result element in the <code>CommonPrefixes</code> collection. These rolled-up keys are not returned elsewhere in the response. Each rolled-up result counts as only one return against the <code>MaxKeys</code> value.</p><note>
-    /// <p><b>Directory buckets</b> - For directory buckets, <code>/</code> is the only supported delimiter.</p>
+    /// <p>Causes keys that contain the same string between the <code>prefix</code> and the first occurrence of the delimiter to be rolled up into a single result element in the <code>CommonPrefixes</code> collection. These rolled-up keys are not returned elsewhere in the response. Each rolled-up result counts as only one return against the <code>MaxKeys</code> value.</p> <note>
+    /// <p> <b>Directory buckets</b> - For directory buckets, <code>/</code> is the only supported delimiter.</p>
     /// </note>
     pub fn get_delimiter(&self) -> &::std::option::Option<::std::string::String> {
         &self.delimiter
@@ -278,14 +274,12 @@ impl ListObjectsV2OutputBuilder {
     ///
     /// <p>All of the keys (up to 1,000) that share the same prefix are grouped together. When counting the total numbers of returns by this API operation, this group of keys is considered as one item.</p>
     /// <p>A response can contain <code>CommonPrefixes</code> only if you specify a delimiter.</p>
-    /// <p><code>CommonPrefixes</code> contains all (if there are any) keys between <code>Prefix</code> and the next occurrence of the string specified by a delimiter.</p>
-    /// <p><code>CommonPrefixes</code> lists keys that act like subdirectories in the directory specified by <code>Prefix</code>.</p>
-    /// <p>For example, if the prefix is <code>notes/</code> and the delimiter is a slash (<code>/</code>) as in <code>notes/summer/july</code>, the common prefix is <code>notes/summer/</code>. All of the keys that roll up into a common prefix count as a single return when calculating the number of returns.</p><note>
+    /// <p> <code>CommonPrefixes</code> contains all (if there are any) keys between <code>Prefix</code> and the next occurrence of the string specified by a delimiter.</p>
+    /// <p> <code>CommonPrefixes</code> lists keys that act like subdirectories in the directory specified by <code>Prefix</code>.</p>
+    /// <p>For example, if the prefix is <code>notes/</code> and the delimiter is a slash (<code>/</code>) as in <code>notes/summer/july</code>, the common prefix is <code>notes/summer/</code>. All of the keys that roll up into a common prefix count as a single return when calculating the number of returns. </p> <note>
     /// <ul>
-    /// <li>
-    /// <p><b>Directory buckets</b> - For directory buckets, only prefixes that end in a delimiter (<code>/</code>) are supported.</p></li>
-    /// <li>
-    /// <p><b>Directory buckets </b> - When you query <code>ListObjectsV2</code> with a delimiter during in-progress multipart uploads, the <code>CommonPrefixes</code> response parameter contains the prefixes that are associated with the in-progress multipart uploads. For more information about multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart Upload Overview</a> in the <i>Amazon S3 User Guide</i>.</p></li>
+    /// <li> <p> <b>Directory buckets</b> - For directory buckets, only prefixes that end in a delimiter (<code>/</code>) are supported.</p> </li>
+    /// <li> <p> <b>Directory buckets </b> - When you query <code>ListObjectsV2</code> with a delimiter during in-progress multipart uploads, the <code>CommonPrefixes</code> response parameter contains the prefixes that are associated with the in-progress multipart uploads. For more information about multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart Upload Overview</a> in the <i>Amazon S3 User Guide</i>.</p> </li>
     /// </ul>
     /// </note>
     pub fn common_prefixes(mut self, input: crate::types::CommonPrefix) -> Self {
@@ -296,14 +290,12 @@ impl ListObjectsV2OutputBuilder {
     }
     /// <p>All of the keys (up to 1,000) that share the same prefix are grouped together. When counting the total numbers of returns by this API operation, this group of keys is considered as one item.</p>
     /// <p>A response can contain <code>CommonPrefixes</code> only if you specify a delimiter.</p>
-    /// <p><code>CommonPrefixes</code> contains all (if there are any) keys between <code>Prefix</code> and the next occurrence of the string specified by a delimiter.</p>
-    /// <p><code>CommonPrefixes</code> lists keys that act like subdirectories in the directory specified by <code>Prefix</code>.</p>
-    /// <p>For example, if the prefix is <code>notes/</code> and the delimiter is a slash (<code>/</code>) as in <code>notes/summer/july</code>, the common prefix is <code>notes/summer/</code>. All of the keys that roll up into a common prefix count as a single return when calculating the number of returns.</p><note>
+    /// <p> <code>CommonPrefixes</code> contains all (if there are any) keys between <code>Prefix</code> and the next occurrence of the string specified by a delimiter.</p>
+    /// <p> <code>CommonPrefixes</code> lists keys that act like subdirectories in the directory specified by <code>Prefix</code>.</p>
+    /// <p>For example, if the prefix is <code>notes/</code> and the delimiter is a slash (<code>/</code>) as in <code>notes/summer/july</code>, the common prefix is <code>notes/summer/</code>. All of the keys that roll up into a common prefix count as a single return when calculating the number of returns. </p> <note>
     /// <ul>
-    /// <li>
-    /// <p><b>Directory buckets</b> - For directory buckets, only prefixes that end in a delimiter (<code>/</code>) are supported.</p></li>
-    /// <li>
-    /// <p><b>Directory buckets </b> - When you query <code>ListObjectsV2</code> with a delimiter during in-progress multipart uploads, the <code>CommonPrefixes</code> response parameter contains the prefixes that are associated with the in-progress multipart uploads. For more information about multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart Upload Overview</a> in the <i>Amazon S3 User Guide</i>.</p></li>
+    /// <li> <p> <b>Directory buckets</b> - For directory buckets, only prefixes that end in a delimiter (<code>/</code>) are supported.</p> </li>
+    /// <li> <p> <b>Directory buckets </b> - When you query <code>ListObjectsV2</code> with a delimiter during in-progress multipart uploads, the <code>CommonPrefixes</code> response parameter contains the prefixes that are associated with the in-progress multipart uploads. For more information about multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart Upload Overview</a> in the <i>Amazon S3 User Guide</i>.</p> </li>
     /// </ul>
     /// </note>
     pub fn set_common_prefixes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CommonPrefix>>) -> Self {
@@ -312,14 +304,12 @@ impl ListObjectsV2OutputBuilder {
     }
     /// <p>All of the keys (up to 1,000) that share the same prefix are grouped together. When counting the total numbers of returns by this API operation, this group of keys is considered as one item.</p>
     /// <p>A response can contain <code>CommonPrefixes</code> only if you specify a delimiter.</p>
-    /// <p><code>CommonPrefixes</code> contains all (if there are any) keys between <code>Prefix</code> and the next occurrence of the string specified by a delimiter.</p>
-    /// <p><code>CommonPrefixes</code> lists keys that act like subdirectories in the directory specified by <code>Prefix</code>.</p>
-    /// <p>For example, if the prefix is <code>notes/</code> and the delimiter is a slash (<code>/</code>) as in <code>notes/summer/july</code>, the common prefix is <code>notes/summer/</code>. All of the keys that roll up into a common prefix count as a single return when calculating the number of returns.</p><note>
+    /// <p> <code>CommonPrefixes</code> contains all (if there are any) keys between <code>Prefix</code> and the next occurrence of the string specified by a delimiter.</p>
+    /// <p> <code>CommonPrefixes</code> lists keys that act like subdirectories in the directory specified by <code>Prefix</code>.</p>
+    /// <p>For example, if the prefix is <code>notes/</code> and the delimiter is a slash (<code>/</code>) as in <code>notes/summer/july</code>, the common prefix is <code>notes/summer/</code>. All of the keys that roll up into a common prefix count as a single return when calculating the number of returns. </p> <note>
     /// <ul>
-    /// <li>
-    /// <p><b>Directory buckets</b> - For directory buckets, only prefixes that end in a delimiter (<code>/</code>) are supported.</p></li>
-    /// <li>
-    /// <p><b>Directory buckets </b> - When you query <code>ListObjectsV2</code> with a delimiter during in-progress multipart uploads, the <code>CommonPrefixes</code> response parameter contains the prefixes that are associated with the in-progress multipart uploads. For more information about multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart Upload Overview</a> in the <i>Amazon S3 User Guide</i>.</p></li>
+    /// <li> <p> <b>Directory buckets</b> - For directory buckets, only prefixes that end in a delimiter (<code>/</code>) are supported.</p> </li>
+    /// <li> <p> <b>Directory buckets </b> - When you query <code>ListObjectsV2</code> with a delimiter during in-progress multipart uploads, the <code>CommonPrefixes</code> response parameter contains the prefixes that are associated with the in-progress multipart uploads. For more information about multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart Upload Overview</a> in the <i>Amazon S3 User Guide</i>.</p> </li>
     /// </ul>
     /// </note>
     pub fn get_common_prefixes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CommonPrefix>> {
@@ -327,101 +317,101 @@ impl ListObjectsV2OutputBuilder {
     }
     /// <p>Encoding type used by Amazon S3 to encode object key names in the XML response.</p>
     /// <p>If you specify the <code>encoding-type</code> request parameter, Amazon S3 includes this element in the response, and returns encoded key name values in the following response elements:</p>
-    /// <p><code>Delimiter, Prefix, Key,</code> and <code>StartAfter</code>.</p>
+    /// <p> <code>Delimiter, Prefix, Key,</code> and <code>StartAfter</code>.</p>
     pub fn encoding_type(mut self, input: crate::types::EncodingType) -> Self {
         self.encoding_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Encoding type used by Amazon S3 to encode object key names in the XML response.</p>
     /// <p>If you specify the <code>encoding-type</code> request parameter, Amazon S3 includes this element in the response, and returns encoded key name values in the following response elements:</p>
-    /// <p><code>Delimiter, Prefix, Key,</code> and <code>StartAfter</code>.</p>
+    /// <p> <code>Delimiter, Prefix, Key,</code> and <code>StartAfter</code>.</p>
     pub fn set_encoding_type(mut self, input: ::std::option::Option<crate::types::EncodingType>) -> Self {
         self.encoding_type = input;
         self
     }
     /// <p>Encoding type used by Amazon S3 to encode object key names in the XML response.</p>
     /// <p>If you specify the <code>encoding-type</code> request parameter, Amazon S3 includes this element in the response, and returns encoded key name values in the following response elements:</p>
-    /// <p><code>Delimiter, Prefix, Key,</code> and <code>StartAfter</code>.</p>
+    /// <p> <code>Delimiter, Prefix, Key,</code> and <code>StartAfter</code>.</p>
     pub fn get_encoding_type(&self) -> &::std::option::Option<crate::types::EncodingType> {
         &self.encoding_type
     }
-    /// <p><code>KeyCount</code> is the number of keys returned with this request. <code>KeyCount</code> will always be less than or equal to the <code>MaxKeys</code> field. For example, if you ask for 50 keys, your result will include 50 keys or fewer.</p>
+    /// <p> <code>KeyCount</code> is the number of keys returned with this request. <code>KeyCount</code> will always be less than or equal to the <code>MaxKeys</code> field. For example, if you ask for 50 keys, your result will include 50 keys or fewer.</p>
     pub fn key_count(mut self, input: i32) -> Self {
         self.key_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p><code>KeyCount</code> is the number of keys returned with this request. <code>KeyCount</code> will always be less than or equal to the <code>MaxKeys</code> field. For example, if you ask for 50 keys, your result will include 50 keys or fewer.</p>
+    /// <p> <code>KeyCount</code> is the number of keys returned with this request. <code>KeyCount</code> will always be less than or equal to the <code>MaxKeys</code> field. For example, if you ask for 50 keys, your result will include 50 keys or fewer.</p>
     pub fn set_key_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.key_count = input;
         self
     }
-    /// <p><code>KeyCount</code> is the number of keys returned with this request. <code>KeyCount</code> will always be less than or equal to the <code>MaxKeys</code> field. For example, if you ask for 50 keys, your result will include 50 keys or fewer.</p>
+    /// <p> <code>KeyCount</code> is the number of keys returned with this request. <code>KeyCount</code> will always be less than or equal to the <code>MaxKeys</code> field. For example, if you ask for 50 keys, your result will include 50 keys or fewer.</p>
     pub fn get_key_count(&self) -> &::std::option::Option<i32> {
         &self.key_count
     }
-    /// <p>If <code>ContinuationToken</code> was sent with the request, it is included in the response. You can use the returned <code>ContinuationToken</code> for pagination of the list response. You can use this <code>ContinuationToken</code> for pagination of the list results.</p>
+    /// <p> If <code>ContinuationToken</code> was sent with the request, it is included in the response. You can use the returned <code>ContinuationToken</code> for pagination of the list response. You can use this <code>ContinuationToken</code> for pagination of the list results. </p>
     pub fn continuation_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.continuation_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If <code>ContinuationToken</code> was sent with the request, it is included in the response. You can use the returned <code>ContinuationToken</code> for pagination of the list response. You can use this <code>ContinuationToken</code> for pagination of the list results.</p>
+    /// <p> If <code>ContinuationToken</code> was sent with the request, it is included in the response. You can use the returned <code>ContinuationToken</code> for pagination of the list response. You can use this <code>ContinuationToken</code> for pagination of the list results. </p>
     pub fn set_continuation_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.continuation_token = input;
         self
     }
-    /// <p>If <code>ContinuationToken</code> was sent with the request, it is included in the response. You can use the returned <code>ContinuationToken</code> for pagination of the list response. You can use this <code>ContinuationToken</code> for pagination of the list results.</p>
+    /// <p> If <code>ContinuationToken</code> was sent with the request, it is included in the response. You can use the returned <code>ContinuationToken</code> for pagination of the list response. You can use this <code>ContinuationToken</code> for pagination of the list results. </p>
     pub fn get_continuation_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.continuation_token
     }
-    /// <p><code>NextContinuationToken</code> is sent when <code>isTruncated</code> is true, which means there are more keys in the bucket that can be listed. The next list requests to Amazon S3 can be continued with this <code>NextContinuationToken</code>. <code>NextContinuationToken</code> is obfuscated and is not a real key</p>
+    /// <p> <code>NextContinuationToken</code> is sent when <code>isTruncated</code> is true, which means there are more keys in the bucket that can be listed. The next list requests to Amazon S3 can be continued with this <code>NextContinuationToken</code>. <code>NextContinuationToken</code> is obfuscated and is not a real key</p>
     pub fn next_continuation_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_continuation_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p><code>NextContinuationToken</code> is sent when <code>isTruncated</code> is true, which means there are more keys in the bucket that can be listed. The next list requests to Amazon S3 can be continued with this <code>NextContinuationToken</code>. <code>NextContinuationToken</code> is obfuscated and is not a real key</p>
+    /// <p> <code>NextContinuationToken</code> is sent when <code>isTruncated</code> is true, which means there are more keys in the bucket that can be listed. The next list requests to Amazon S3 can be continued with this <code>NextContinuationToken</code>. <code>NextContinuationToken</code> is obfuscated and is not a real key</p>
     pub fn set_next_continuation_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_continuation_token = input;
         self
     }
-    /// <p><code>NextContinuationToken</code> is sent when <code>isTruncated</code> is true, which means there are more keys in the bucket that can be listed. The next list requests to Amazon S3 can be continued with this <code>NextContinuationToken</code>. <code>NextContinuationToken</code> is obfuscated and is not a real key</p>
+    /// <p> <code>NextContinuationToken</code> is sent when <code>isTruncated</code> is true, which means there are more keys in the bucket that can be listed. The next list requests to Amazon S3 can be continued with this <code>NextContinuationToken</code>. <code>NextContinuationToken</code> is obfuscated and is not a real key</p>
     pub fn get_next_continuation_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_continuation_token
     }
-    /// <p>If StartAfter was sent with the request, it is included in the response.</p><note>
+    /// <p>If StartAfter was sent with the request, it is included in the response.</p> <note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn start_after(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.start_after = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If StartAfter was sent with the request, it is included in the response.</p><note>
+    /// <p>If StartAfter was sent with the request, it is included in the response.</p> <note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_start_after(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.start_after = input;
         self
     }
-    /// <p>If StartAfter was sent with the request, it is included in the response.</p><note>
+    /// <p>If StartAfter was sent with the request, it is included in the response.</p> <note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn get_start_after(&self) -> &::std::option::Option<::std::string::String> {
         &self.start_after
     }
-    /// <p>If present, indicates that the requester was successfully charged for the request.</p><note>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p> <note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn request_charged(mut self, input: crate::types::RequestCharged) -> Self {
         self.request_charged = ::std::option::Option::Some(input);
         self
     }
-    /// <p>If present, indicates that the requester was successfully charged for the request.</p><note>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p> <note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_request_charged(mut self, input: ::std::option::Option<crate::types::RequestCharged>) -> Self {
         self.request_charged = input;
         self
     }
-    /// <p>If present, indicates that the requester was successfully charged for the request.</p><note>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p> <note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn get_request_charged(&self) -> &::std::option::Option<crate::types::RequestCharged> {

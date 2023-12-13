@@ -15,8 +15,8 @@ pub struct CreateWorkspaceBundleInput {
     pub user_storage: ::std::option::Option<crate::types::UserStorage>,
     /// <p>Describes the root volume for a WorkSpace bundle.</p>
     pub root_storage: ::std::option::Option<crate::types::RootStorage>,
-    /// <p>The tags associated with the bundle.</p><note>
-    /// <p>To add tags at the same time when you're creating the bundle, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>.</p>
+    /// <p>The tags associated with the bundle.</p> <note>
+    /// <p>To add tags at the same time when you're creating the bundle, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
     /// </note>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
@@ -45,8 +45,8 @@ impl CreateWorkspaceBundleInput {
     pub fn root_storage(&self) -> ::std::option::Option<&crate::types::RootStorage> {
         self.root_storage.as_ref()
     }
-    /// <p>The tags associated with the bundle.</p><note>
-    /// <p>To add tags at the same time when you're creating the bundle, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>.</p>
+    /// <p>The tags associated with the bundle.</p> <note>
+    /// <p>To add tags at the same time when you're creating the bundle, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
     /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
@@ -167,8 +167,8 @@ impl CreateWorkspaceBundleInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The tags associated with the bundle.</p><note>
-    /// <p>To add tags at the same time when you're creating the bundle, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>.</p>
+    /// <p>The tags associated with the bundle.</p> <note>
+    /// <p>To add tags at the same time when you're creating the bundle, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
     /// </note>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
@@ -176,15 +176,15 @@ impl CreateWorkspaceBundleInputBuilder {
         self.tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The tags associated with the bundle.</p><note>
-    /// <p>To add tags at the same time when you're creating the bundle, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>.</p>
+    /// <p>The tags associated with the bundle.</p> <note>
+    /// <p>To add tags at the same time when you're creating the bundle, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
     /// </note>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>The tags associated with the bundle.</p><note>
-    /// <p>To add tags at the same time when you're creating the bundle, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>.</p>
+    /// <p>The tags associated with the bundle.</p> <note>
+    /// <p>To add tags at the same time when you're creating the bundle, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
     /// </note>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags

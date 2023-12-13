@@ -25,7 +25,7 @@ impl DistributeDatasetEntriesInputBuilder {
 /// <note>
 /// <p>This operation applies only to Amazon Rekognition Custom Labels.</p>
 /// </note>
-/// <p>Distributes the entries (images) in a training dataset across the training dataset and the test dataset for a project. <code>DistributeDatasetEntries</code> moves 20% of the training dataset images to the test dataset. An entry is a JSON Line that describes an image.</p>
+/// <p>Distributes the entries (images) in a training dataset across the training dataset and the test dataset for a project. <code>DistributeDatasetEntries</code> moves 20% of the training dataset images to the test dataset. An entry is a JSON Line that describes an image. </p>
 /// <p>You supply the Amazon Resource Names (ARN) of a project's training dataset and test dataset. The training dataset must contain the images that you want to split. The test dataset must be empty. The datasets must belong to the same project. To create training and test datasets for a project, call <code>CreateDataset</code>.</p>
 /// <p>Distributing a dataset takes a while to complete. To check the status call <code>DescribeDataset</code>. The operation is complete when the <code>Status</code> field for the training dataset and the test dataset is <code>UPDATE_COMPLETE</code>. If the dataset split fails, the value of <code>Status</code> is <code>UPDATE_FAILED</code>.</p>
 /// <p>This operation requires permissions to perform the <code>rekognition:DistributeDatasetEntries</code> action.</p>
@@ -118,17 +118,17 @@ impl DistributeDatasetEntriesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_datasets`](Self::set_datasets).
     ///
-    /// <p>The ARNS for the training dataset and test dataset that you want to use. The datasets must belong to the same project. The test dataset must be empty.</p>
+    /// <p>The ARNS for the training dataset and test dataset that you want to use. The datasets must belong to the same project. The test dataset must be empty. </p>
     pub fn datasets(mut self, input: crate::types::DistributeDataset) -> Self {
         self.inner = self.inner.datasets(input);
         self
     }
-    /// <p>The ARNS for the training dataset and test dataset that you want to use. The datasets must belong to the same project. The test dataset must be empty.</p>
+    /// <p>The ARNS for the training dataset and test dataset that you want to use. The datasets must belong to the same project. The test dataset must be empty. </p>
     pub fn set_datasets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DistributeDataset>>) -> Self {
         self.inner = self.inner.set_datasets(input);
         self
     }
-    /// <p>The ARNS for the training dataset and test dataset that you want to use. The datasets must belong to the same project. The test dataset must be empty.</p>
+    /// <p>The ARNS for the training dataset and test dataset that you want to use. The datasets must belong to the same project. The test dataset must be empty. </p>
     pub fn get_datasets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DistributeDataset>> {
         self.inner.get_datasets()
     }

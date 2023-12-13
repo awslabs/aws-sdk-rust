@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeInboundCrossClusterSearchConnectionsInput {
-    /// <p>A list of filters used to match properties for inbound cross-cluster search connection. Available <code><code>Filter</code></code> names for this operation are:</p>
+    /// <p> A list of filters used to match properties for inbound cross-cluster search connection. Available <code><code>Filter</code></code> names for this operation are: </p>
     /// <ul>
     /// <li>cross-cluster-search-connection-id</li>
     /// <li>source-domain-info.domain-name</li>
@@ -16,11 +16,11 @@ pub struct DescribeInboundCrossClusterSearchConnectionsInput {
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>NextToken is sent in case the earlier API call results contain the NextToken. It is used for pagination.</p>
+    /// <p> NextToken is sent in case the earlier API call results contain the NextToken. It is used for pagination.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeInboundCrossClusterSearchConnectionsInput {
-    /// <p>A list of filters used to match properties for inbound cross-cluster search connection. Available <code><code>Filter</code></code> names for this operation are:</p>
+    /// <p> A list of filters used to match properties for inbound cross-cluster search connection. Available <code><code>Filter</code></code> names for this operation are: </p>
     /// <ul>
     /// <li>cross-cluster-search-connection-id</li>
     /// <li>source-domain-info.domain-name</li>
@@ -38,7 +38,7 @@ impl DescribeInboundCrossClusterSearchConnectionsInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>NextToken is sent in case the earlier API call results contain the NextToken. It is used for pagination.</p>
+    /// <p> NextToken is sent in case the earlier API call results contain the NextToken. It is used for pagination.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -64,7 +64,7 @@ impl DescribeInboundCrossClusterSearchConnectionsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>A list of filters used to match properties for inbound cross-cluster search connection. Available <code><code>Filter</code></code> names for this operation are:</p>
+    /// <p> A list of filters used to match properties for inbound cross-cluster search connection. Available <code><code>Filter</code></code> names for this operation are: </p>
     /// <ul>
     /// <li>cross-cluster-search-connection-id</li>
     /// <li>source-domain-info.domain-name</li>
@@ -79,7 +79,7 @@ impl DescribeInboundCrossClusterSearchConnectionsInputBuilder {
         self.filters = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of filters used to match properties for inbound cross-cluster search connection. Available <code><code>Filter</code></code> names for this operation are:</p>
+    /// <p> A list of filters used to match properties for inbound cross-cluster search connection. Available <code><code>Filter</code></code> names for this operation are: </p>
     /// <ul>
     /// <li>cross-cluster-search-connection-id</li>
     /// <li>source-domain-info.domain-name</li>
@@ -92,7 +92,7 @@ impl DescribeInboundCrossClusterSearchConnectionsInputBuilder {
         self.filters = input;
         self
     }
-    /// <p>A list of filters used to match properties for inbound cross-cluster search connection. Available <code><code>Filter</code></code> names for this operation are:</p>
+    /// <p> A list of filters used to match properties for inbound cross-cluster search connection. Available <code><code>Filter</code></code> names for this operation are: </p>
     /// <ul>
     /// <li>cross-cluster-search-connection-id</li>
     /// <li>source-domain-info.domain-name</li>
@@ -118,17 +118,17 @@ impl DescribeInboundCrossClusterSearchConnectionsInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p>NextToken is sent in case the earlier API call results contain the NextToken. It is used for pagination.</p>
+    /// <p> NextToken is sent in case the earlier API call results contain the NextToken. It is used for pagination.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>NextToken is sent in case the earlier API call results contain the NextToken. It is used for pagination.</p>
+    /// <p> NextToken is sent in case the earlier API call results contain the NextToken. It is used for pagination.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>NextToken is sent in case the earlier API call results contain the NextToken. It is used for pagination.</p>
+    /// <p> NextToken is sent in case the earlier API call results contain the NextToken. It is used for pagination.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

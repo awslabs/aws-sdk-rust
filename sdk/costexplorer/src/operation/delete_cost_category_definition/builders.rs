@@ -108,17 +108,17 @@ impl DeleteCostCategoryDefinitionFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier for your Cost Category.</p>
+    /// <p>The unique identifier for your Cost Category. </p>
     pub fn cost_category_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cost_category_arn(input.into());
         self
     }
-    /// <p>The unique identifier for your Cost Category.</p>
+    /// <p>The unique identifier for your Cost Category. </p>
     pub fn set_cost_category_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cost_category_arn(input);
         self
     }
-    /// <p>The unique identifier for your Cost Category.</p>
+    /// <p>The unique identifier for your Cost Category. </p>
     pub fn get_cost_category_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cost_category_arn()
     }

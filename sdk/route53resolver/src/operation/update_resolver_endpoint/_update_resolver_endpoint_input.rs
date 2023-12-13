@@ -7,10 +7,10 @@ pub struct UpdateResolverEndpointInput {
     pub resolver_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Resolver endpoint that you want to update.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the endpoint type for what type of IP address the endpoint uses to forward DNS queries.</p>
+    /// <p> Specifies the endpoint type for what type of IP address the endpoint uses to forward DNS queries. </p>
     /// <p>Updating to <code>IPV6</code> type isn't currently supported.</p>
     pub resolver_endpoint_type: ::std::option::Option<crate::types::ResolverEndpointType>,
-    /// <p>Specifies the IPv6 address when you update the Resolver endpoint from IPv4 to dual-stack. If you don't specify an IPv6 address, one will be automatically chosen from your subnet.</p>
+    /// <p> Specifies the IPv6 address when you update the Resolver endpoint from IPv4 to dual-stack. If you don't specify an IPv6 address, one will be automatically chosen from your subnet. </p>
     pub update_ip_addresses: ::std::option::Option<::std::vec::Vec<crate::types::UpdateIpAddress>>,
 }
 impl UpdateResolverEndpointInput {
@@ -22,12 +22,12 @@ impl UpdateResolverEndpointInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Specifies the endpoint type for what type of IP address the endpoint uses to forward DNS queries.</p>
+    /// <p> Specifies the endpoint type for what type of IP address the endpoint uses to forward DNS queries. </p>
     /// <p>Updating to <code>IPV6</code> type isn't currently supported.</p>
     pub fn resolver_endpoint_type(&self) -> ::std::option::Option<&crate::types::ResolverEndpointType> {
         self.resolver_endpoint_type.as_ref()
     }
-    /// <p>Specifies the IPv6 address when you update the Resolver endpoint from IPv4 to dual-stack. If you don't specify an IPv6 address, one will be automatically chosen from your subnet.</p>
+    /// <p> Specifies the IPv6 address when you update the Resolver endpoint from IPv4 to dual-stack. If you don't specify an IPv6 address, one will be automatically chosen from your subnet. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.update_ip_addresses.is_none()`.
     pub fn update_ip_addresses(&self) -> &[crate::types::UpdateIpAddress] {
@@ -80,19 +80,19 @@ impl UpdateResolverEndpointInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>Specifies the endpoint type for what type of IP address the endpoint uses to forward DNS queries.</p>
+    /// <p> Specifies the endpoint type for what type of IP address the endpoint uses to forward DNS queries. </p>
     /// <p>Updating to <code>IPV6</code> type isn't currently supported.</p>
     pub fn resolver_endpoint_type(mut self, input: crate::types::ResolverEndpointType) -> Self {
         self.resolver_endpoint_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the endpoint type for what type of IP address the endpoint uses to forward DNS queries.</p>
+    /// <p> Specifies the endpoint type for what type of IP address the endpoint uses to forward DNS queries. </p>
     /// <p>Updating to <code>IPV6</code> type isn't currently supported.</p>
     pub fn set_resolver_endpoint_type(mut self, input: ::std::option::Option<crate::types::ResolverEndpointType>) -> Self {
         self.resolver_endpoint_type = input;
         self
     }
-    /// <p>Specifies the endpoint type for what type of IP address the endpoint uses to forward DNS queries.</p>
+    /// <p> Specifies the endpoint type for what type of IP address the endpoint uses to forward DNS queries. </p>
     /// <p>Updating to <code>IPV6</code> type isn't currently supported.</p>
     pub fn get_resolver_endpoint_type(&self) -> &::std::option::Option<crate::types::ResolverEndpointType> {
         &self.resolver_endpoint_type
@@ -101,19 +101,19 @@ impl UpdateResolverEndpointInputBuilder {
     ///
     /// To override the contents of this collection use [`set_update_ip_addresses`](Self::set_update_ip_addresses).
     ///
-    /// <p>Specifies the IPv6 address when you update the Resolver endpoint from IPv4 to dual-stack. If you don't specify an IPv6 address, one will be automatically chosen from your subnet.</p>
+    /// <p> Specifies the IPv6 address when you update the Resolver endpoint from IPv4 to dual-stack. If you don't specify an IPv6 address, one will be automatically chosen from your subnet. </p>
     pub fn update_ip_addresses(mut self, input: crate::types::UpdateIpAddress) -> Self {
         let mut v = self.update_ip_addresses.unwrap_or_default();
         v.push(input);
         self.update_ip_addresses = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Specifies the IPv6 address when you update the Resolver endpoint from IPv4 to dual-stack. If you don't specify an IPv6 address, one will be automatically chosen from your subnet.</p>
+    /// <p> Specifies the IPv6 address when you update the Resolver endpoint from IPv4 to dual-stack. If you don't specify an IPv6 address, one will be automatically chosen from your subnet. </p>
     pub fn set_update_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateIpAddress>>) -> Self {
         self.update_ip_addresses = input;
         self
     }
-    /// <p>Specifies the IPv6 address when you update the Resolver endpoint from IPv4 to dual-stack. If you don't specify an IPv6 address, one will be automatically chosen from your subnet.</p>
+    /// <p> Specifies the IPv6 address when you update the Resolver endpoint from IPv4 to dual-stack. If you don't specify an IPv6 address, one will be automatically chosen from your subnet. </p>
     pub fn get_update_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateIpAddress>> {
         &self.update_ip_addresses
     }

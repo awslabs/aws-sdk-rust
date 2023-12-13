@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPricingPlansInput {
-    /// <p>The preferred billing period to get pricing plan.</p>
+    /// <p>The preferred billing period to get pricing plan. </p>
     pub billing_period: ::std::option::Option<::std::string::String>,
     /// <p>A <code>ListPricingPlansFilter</code> that specifies the Amazon Resource Name (ARNs) of pricing plans to retrieve pricing plans information.</p>
     pub filters: ::std::option::Option<crate::types::ListPricingPlansFilter>,
     /// <p>The maximum number of pricing plans to retrieve.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>The pagination token that's used on subsequent call to get pricing plans.</p>
+    /// <p>The pagination token that's used on subsequent call to get pricing plans. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListPricingPlansInput {
-    /// <p>The preferred billing period to get pricing plan.</p>
+    /// <p>The preferred billing period to get pricing plan. </p>
     pub fn billing_period(&self) -> ::std::option::Option<&str> {
         self.billing_period.as_deref()
     }
@@ -25,7 +25,7 @@ impl ListPricingPlansInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The pagination token that's used on subsequent call to get pricing plans.</p>
+    /// <p>The pagination token that's used on subsequent call to get pricing plans. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -47,17 +47,17 @@ pub struct ListPricingPlansInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListPricingPlansInputBuilder {
-    /// <p>The preferred billing period to get pricing plan.</p>
+    /// <p>The preferred billing period to get pricing plan. </p>
     pub fn billing_period(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.billing_period = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The preferred billing period to get pricing plan.</p>
+    /// <p>The preferred billing period to get pricing plan. </p>
     pub fn set_billing_period(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.billing_period = input;
         self
     }
-    /// <p>The preferred billing period to get pricing plan.</p>
+    /// <p>The preferred billing period to get pricing plan. </p>
     pub fn get_billing_period(&self) -> &::std::option::Option<::std::string::String> {
         &self.billing_period
     }
@@ -89,17 +89,17 @@ impl ListPricingPlansInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p>The pagination token that's used on subsequent call to get pricing plans.</p>
+    /// <p>The pagination token that's used on subsequent call to get pricing plans. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The pagination token that's used on subsequent call to get pricing plans.</p>
+    /// <p>The pagination token that's used on subsequent call to get pricing plans. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The pagination token that's used on subsequent call to get pricing plans.</p>
+    /// <p>The pagination token that's used on subsequent call to get pricing plans. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

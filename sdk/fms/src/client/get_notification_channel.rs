@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder takes no input, just [`send`](crate::operation::get_notification_channel::builders::GetNotificationChannelFluentBuilder::send) it.
     /// - On success, responds with [`GetNotificationChannelOutput`](crate::operation::get_notification_channel::GetNotificationChannelOutput) with field(s):
-    ///   - [`sns_topic_arn(Option<String>)`](crate::operation::get_notification_channel::GetNotificationChannelOutput::sns_topic_arn): <p>The SNS topic that records Firewall Manager activity.</p>
+    ///   - [`sns_topic_arn(Option<String>)`](crate::operation::get_notification_channel::GetNotificationChannelOutput::sns_topic_arn): <p>The SNS topic that records Firewall Manager activity. </p>
     ///   - [`sns_role_name(Option<String>)`](crate::operation::get_notification_channel::GetNotificationChannelOutput::sns_role_name): <p>The IAM role that is used by Firewall Manager to record activity to SNS.</p>
     /// - On failure, responds with [`SdkError<GetNotificationChannelError>`](crate::operation::get_notification_channel::GetNotificationChannelError)
     pub fn get_notification_channel(&self) -> crate::operation::get_notification_channel::builders::GetNotificationChannelFluentBuilder {

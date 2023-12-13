@@ -3,29 +3,29 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSensorStatisticsInput {
-    /// <p>The name of the dataset associated with the list of Sensor Statistics.</p>
+    /// <p> The name of the dataset associated with the list of Sensor Statistics. </p>
     pub dataset_name: ::std::option::Option<::std::string::String>,
-    /// <p>The ingestion job id associated with the list of Sensor Statistics. To get sensor statistics for a particular ingestion job id, both dataset name and ingestion job id must be submitted as inputs.</p>
+    /// <p> The ingestion job id associated with the list of Sensor Statistics. To get sensor statistics for a particular ingestion job id, both dataset name and ingestion job id must be submitted as inputs. </p>
     pub ingestion_job_id: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the maximum number of sensors for which to retrieve statistics.</p>
+    /// <p>Specifies the maximum number of sensors for which to retrieve statistics. </p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>An opaque pagination token indicating where to continue the listing of sensor statistics.</p>
+    /// <p>An opaque pagination token indicating where to continue the listing of sensor statistics. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListSensorStatisticsInput {
-    /// <p>The name of the dataset associated with the list of Sensor Statistics.</p>
+    /// <p> The name of the dataset associated with the list of Sensor Statistics. </p>
     pub fn dataset_name(&self) -> ::std::option::Option<&str> {
         self.dataset_name.as_deref()
     }
-    /// <p>The ingestion job id associated with the list of Sensor Statistics. To get sensor statistics for a particular ingestion job id, both dataset name and ingestion job id must be submitted as inputs.</p>
+    /// <p> The ingestion job id associated with the list of Sensor Statistics. To get sensor statistics for a particular ingestion job id, both dataset name and ingestion job id must be submitted as inputs. </p>
     pub fn ingestion_job_id(&self) -> ::std::option::Option<&str> {
         self.ingestion_job_id.as_deref()
     }
-    /// <p>Specifies the maximum number of sensors for which to retrieve statistics.</p>
+    /// <p>Specifies the maximum number of sensors for which to retrieve statistics. </p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>An opaque pagination token indicating where to continue the listing of sensor statistics.</p>
+    /// <p>An opaque pagination token indicating where to continue the listing of sensor statistics. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -47,60 +47,60 @@ pub struct ListSensorStatisticsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListSensorStatisticsInputBuilder {
-    /// <p>The name of the dataset associated with the list of Sensor Statistics.</p>
+    /// <p> The name of the dataset associated with the list of Sensor Statistics. </p>
     /// This field is required.
     pub fn dataset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the dataset associated with the list of Sensor Statistics.</p>
+    /// <p> The name of the dataset associated with the list of Sensor Statistics. </p>
     pub fn set_dataset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_name = input;
         self
     }
-    /// <p>The name of the dataset associated with the list of Sensor Statistics.</p>
+    /// <p> The name of the dataset associated with the list of Sensor Statistics. </p>
     pub fn get_dataset_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.dataset_name
     }
-    /// <p>The ingestion job id associated with the list of Sensor Statistics. To get sensor statistics for a particular ingestion job id, both dataset name and ingestion job id must be submitted as inputs.</p>
+    /// <p> The ingestion job id associated with the list of Sensor Statistics. To get sensor statistics for a particular ingestion job id, both dataset name and ingestion job id must be submitted as inputs. </p>
     pub fn ingestion_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ingestion_job_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ingestion job id associated with the list of Sensor Statistics. To get sensor statistics for a particular ingestion job id, both dataset name and ingestion job id must be submitted as inputs.</p>
+    /// <p> The ingestion job id associated with the list of Sensor Statistics. To get sensor statistics for a particular ingestion job id, both dataset name and ingestion job id must be submitted as inputs. </p>
     pub fn set_ingestion_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ingestion_job_id = input;
         self
     }
-    /// <p>The ingestion job id associated with the list of Sensor Statistics. To get sensor statistics for a particular ingestion job id, both dataset name and ingestion job id must be submitted as inputs.</p>
+    /// <p> The ingestion job id associated with the list of Sensor Statistics. To get sensor statistics for a particular ingestion job id, both dataset name and ingestion job id must be submitted as inputs. </p>
     pub fn get_ingestion_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.ingestion_job_id
     }
-    /// <p>Specifies the maximum number of sensors for which to retrieve statistics.</p>
+    /// <p>Specifies the maximum number of sensors for which to retrieve statistics. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the maximum number of sensors for which to retrieve statistics.</p>
+    /// <p>Specifies the maximum number of sensors for which to retrieve statistics. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>Specifies the maximum number of sensors for which to retrieve statistics.</p>
+    /// <p>Specifies the maximum number of sensors for which to retrieve statistics. </p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p>An opaque pagination token indicating where to continue the listing of sensor statistics.</p>
+    /// <p>An opaque pagination token indicating where to continue the listing of sensor statistics. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An opaque pagination token indicating where to continue the listing of sensor statistics.</p>
+    /// <p>An opaque pagination token indicating where to continue the listing of sensor statistics. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>An opaque pagination token indicating where to continue the listing of sensor statistics.</p>
+    /// <p>An opaque pagination token indicating where to continue the listing of sensor statistics. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

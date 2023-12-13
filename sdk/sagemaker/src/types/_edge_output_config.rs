@@ -12,20 +12,13 @@ pub struct EdgeOutputConfig {
     pub preset_deployment_type: ::std::option::Option<crate::types::EdgePresetDeploymentType>,
     /// <p>The configuration used to create deployment artifacts. Specify configuration options with a JSON string. The available configuration options for each type are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ComponentName</code> (optional) - Name of the GreenGrass V2 component. If not specified, the default name generated consists of "SagemakerEdgeManager" and the name of your SageMaker Edge Manager packaging job.</p></li>
-    /// <li>
-    /// <p><code>ComponentDescription</code> (optional) - Description of the component.</p></li>
-    /// <li>
-    /// <p><code>ComponentVersion</code> (optional) - The version of the component.</p><note>
+    /// <li> <p> <code>ComponentName</code> (optional) - Name of the GreenGrass V2 component. If not specified, the default name generated consists of "SagemakerEdgeManager" and the name of your SageMaker Edge Manager packaging job.</p> </li>
+    /// <li> <p> <code>ComponentDescription</code> (optional) - Description of the component.</p> </li>
+    /// <li> <p> <code>ComponentVersion</code> (optional) - The version of the component.</p> <note>
     /// <p>Amazon Web Services IoT Greengrass uses semantic versions for components. Semantic versions follow a<i> major.minor.patch</i> number system. For example, version 1.0.0 represents the first major release for a component. For more information, see the <a href="https://semver.org/">semantic version specification</a>.</p>
-    /// </note></li>
-    /// <li>
-    /// <p><code>PlatformOS</code> (optional) - The name of the operating system for the platform. Supported platforms include Windows and Linux.</p></li>
-    /// <li>
-    /// <p><code>PlatformArchitecture</code> (optional) - The processor architecture for the platform.</p>
-    /// <p>Supported architectures Windows include: Windows32_x86, Windows64_x64.</p>
-    /// <p>Supported architectures for Linux include: Linux x86_64, Linux ARMV8.</p></li>
+    /// </note> </li>
+    /// <li> <p> <code>PlatformOS</code> (optional) - The name of the operating system for the platform. Supported platforms include Windows and Linux.</p> </li>
+    /// <li> <p> <code>PlatformArchitecture</code> (optional) - The processor architecture for the platform. </p> <p>Supported architectures Windows include: Windows32_x86, Windows64_x64.</p> <p>Supported architectures for Linux include: Linux x86_64, Linux ARMV8.</p> </li>
     /// </ul>
     pub preset_deployment_config: ::std::option::Option<::std::string::String>,
 }
@@ -44,20 +37,13 @@ impl EdgeOutputConfig {
     }
     /// <p>The configuration used to create deployment artifacts. Specify configuration options with a JSON string. The available configuration options for each type are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ComponentName</code> (optional) - Name of the GreenGrass V2 component. If not specified, the default name generated consists of "SagemakerEdgeManager" and the name of your SageMaker Edge Manager packaging job.</p></li>
-    /// <li>
-    /// <p><code>ComponentDescription</code> (optional) - Description of the component.</p></li>
-    /// <li>
-    /// <p><code>ComponentVersion</code> (optional) - The version of the component.</p><note>
+    /// <li> <p> <code>ComponentName</code> (optional) - Name of the GreenGrass V2 component. If not specified, the default name generated consists of "SagemakerEdgeManager" and the name of your SageMaker Edge Manager packaging job.</p> </li>
+    /// <li> <p> <code>ComponentDescription</code> (optional) - Description of the component.</p> </li>
+    /// <li> <p> <code>ComponentVersion</code> (optional) - The version of the component.</p> <note>
     /// <p>Amazon Web Services IoT Greengrass uses semantic versions for components. Semantic versions follow a<i> major.minor.patch</i> number system. For example, version 1.0.0 represents the first major release for a component. For more information, see the <a href="https://semver.org/">semantic version specification</a>.</p>
-    /// </note></li>
-    /// <li>
-    /// <p><code>PlatformOS</code> (optional) - The name of the operating system for the platform. Supported platforms include Windows and Linux.</p></li>
-    /// <li>
-    /// <p><code>PlatformArchitecture</code> (optional) - The processor architecture for the platform.</p>
-    /// <p>Supported architectures Windows include: Windows32_x86, Windows64_x64.</p>
-    /// <p>Supported architectures for Linux include: Linux x86_64, Linux ARMV8.</p></li>
+    /// </note> </li>
+    /// <li> <p> <code>PlatformOS</code> (optional) - The name of the operating system for the platform. Supported platforms include Windows and Linux.</p> </li>
+    /// <li> <p> <code>PlatformArchitecture</code> (optional) - The processor architecture for the platform. </p> <p>Supported architectures Windows include: Windows32_x86, Windows64_x64.</p> <p>Supported architectures for Linux include: Linux x86_64, Linux ARMV8.</p> </li>
     /// </ul>
     pub fn preset_deployment_config(&self) -> ::std::option::Option<&str> {
         self.preset_deployment_config.as_deref()
@@ -125,20 +111,13 @@ impl EdgeOutputConfigBuilder {
     }
     /// <p>The configuration used to create deployment artifacts. Specify configuration options with a JSON string. The available configuration options for each type are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ComponentName</code> (optional) - Name of the GreenGrass V2 component. If not specified, the default name generated consists of "SagemakerEdgeManager" and the name of your SageMaker Edge Manager packaging job.</p></li>
-    /// <li>
-    /// <p><code>ComponentDescription</code> (optional) - Description of the component.</p></li>
-    /// <li>
-    /// <p><code>ComponentVersion</code> (optional) - The version of the component.</p><note>
+    /// <li> <p> <code>ComponentName</code> (optional) - Name of the GreenGrass V2 component. If not specified, the default name generated consists of "SagemakerEdgeManager" and the name of your SageMaker Edge Manager packaging job.</p> </li>
+    /// <li> <p> <code>ComponentDescription</code> (optional) - Description of the component.</p> </li>
+    /// <li> <p> <code>ComponentVersion</code> (optional) - The version of the component.</p> <note>
     /// <p>Amazon Web Services IoT Greengrass uses semantic versions for components. Semantic versions follow a<i> major.minor.patch</i> number system. For example, version 1.0.0 represents the first major release for a component. For more information, see the <a href="https://semver.org/">semantic version specification</a>.</p>
-    /// </note></li>
-    /// <li>
-    /// <p><code>PlatformOS</code> (optional) - The name of the operating system for the platform. Supported platforms include Windows and Linux.</p></li>
-    /// <li>
-    /// <p><code>PlatformArchitecture</code> (optional) - The processor architecture for the platform.</p>
-    /// <p>Supported architectures Windows include: Windows32_x86, Windows64_x64.</p>
-    /// <p>Supported architectures for Linux include: Linux x86_64, Linux ARMV8.</p></li>
+    /// </note> </li>
+    /// <li> <p> <code>PlatformOS</code> (optional) - The name of the operating system for the platform. Supported platforms include Windows and Linux.</p> </li>
+    /// <li> <p> <code>PlatformArchitecture</code> (optional) - The processor architecture for the platform. </p> <p>Supported architectures Windows include: Windows32_x86, Windows64_x64.</p> <p>Supported architectures for Linux include: Linux x86_64, Linux ARMV8.</p> </li>
     /// </ul>
     pub fn preset_deployment_config(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preset_deployment_config = ::std::option::Option::Some(input.into());
@@ -146,20 +125,13 @@ impl EdgeOutputConfigBuilder {
     }
     /// <p>The configuration used to create deployment artifacts. Specify configuration options with a JSON string. The available configuration options for each type are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ComponentName</code> (optional) - Name of the GreenGrass V2 component. If not specified, the default name generated consists of "SagemakerEdgeManager" and the name of your SageMaker Edge Manager packaging job.</p></li>
-    /// <li>
-    /// <p><code>ComponentDescription</code> (optional) - Description of the component.</p></li>
-    /// <li>
-    /// <p><code>ComponentVersion</code> (optional) - The version of the component.</p><note>
+    /// <li> <p> <code>ComponentName</code> (optional) - Name of the GreenGrass V2 component. If not specified, the default name generated consists of "SagemakerEdgeManager" and the name of your SageMaker Edge Manager packaging job.</p> </li>
+    /// <li> <p> <code>ComponentDescription</code> (optional) - Description of the component.</p> </li>
+    /// <li> <p> <code>ComponentVersion</code> (optional) - The version of the component.</p> <note>
     /// <p>Amazon Web Services IoT Greengrass uses semantic versions for components. Semantic versions follow a<i> major.minor.patch</i> number system. For example, version 1.0.0 represents the first major release for a component. For more information, see the <a href="https://semver.org/">semantic version specification</a>.</p>
-    /// </note></li>
-    /// <li>
-    /// <p><code>PlatformOS</code> (optional) - The name of the operating system for the platform. Supported platforms include Windows and Linux.</p></li>
-    /// <li>
-    /// <p><code>PlatformArchitecture</code> (optional) - The processor architecture for the platform.</p>
-    /// <p>Supported architectures Windows include: Windows32_x86, Windows64_x64.</p>
-    /// <p>Supported architectures for Linux include: Linux x86_64, Linux ARMV8.</p></li>
+    /// </note> </li>
+    /// <li> <p> <code>PlatformOS</code> (optional) - The name of the operating system for the platform. Supported platforms include Windows and Linux.</p> </li>
+    /// <li> <p> <code>PlatformArchitecture</code> (optional) - The processor architecture for the platform. </p> <p>Supported architectures Windows include: Windows32_x86, Windows64_x64.</p> <p>Supported architectures for Linux include: Linux x86_64, Linux ARMV8.</p> </li>
     /// </ul>
     pub fn set_preset_deployment_config(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preset_deployment_config = input;
@@ -167,20 +139,13 @@ impl EdgeOutputConfigBuilder {
     }
     /// <p>The configuration used to create deployment artifacts. Specify configuration options with a JSON string. The available configuration options for each type are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ComponentName</code> (optional) - Name of the GreenGrass V2 component. If not specified, the default name generated consists of "SagemakerEdgeManager" and the name of your SageMaker Edge Manager packaging job.</p></li>
-    /// <li>
-    /// <p><code>ComponentDescription</code> (optional) - Description of the component.</p></li>
-    /// <li>
-    /// <p><code>ComponentVersion</code> (optional) - The version of the component.</p><note>
+    /// <li> <p> <code>ComponentName</code> (optional) - Name of the GreenGrass V2 component. If not specified, the default name generated consists of "SagemakerEdgeManager" and the name of your SageMaker Edge Manager packaging job.</p> </li>
+    /// <li> <p> <code>ComponentDescription</code> (optional) - Description of the component.</p> </li>
+    /// <li> <p> <code>ComponentVersion</code> (optional) - The version of the component.</p> <note>
     /// <p>Amazon Web Services IoT Greengrass uses semantic versions for components. Semantic versions follow a<i> major.minor.patch</i> number system. For example, version 1.0.0 represents the first major release for a component. For more information, see the <a href="https://semver.org/">semantic version specification</a>.</p>
-    /// </note></li>
-    /// <li>
-    /// <p><code>PlatformOS</code> (optional) - The name of the operating system for the platform. Supported platforms include Windows and Linux.</p></li>
-    /// <li>
-    /// <p><code>PlatformArchitecture</code> (optional) - The processor architecture for the platform.</p>
-    /// <p>Supported architectures Windows include: Windows32_x86, Windows64_x64.</p>
-    /// <p>Supported architectures for Linux include: Linux x86_64, Linux ARMV8.</p></li>
+    /// </note> </li>
+    /// <li> <p> <code>PlatformOS</code> (optional) - The name of the operating system for the platform. Supported platforms include Windows and Linux.</p> </li>
+    /// <li> <p> <code>PlatformArchitecture</code> (optional) - The processor architecture for the platform. </p> <p>Supported architectures Windows include: Windows32_x86, Windows64_x64.</p> <p>Supported architectures for Linux include: Linux x86_64, Linux ARMV8.</p> </li>
     /// </ul>
     pub fn get_preset_deployment_config(&self) -> &::std::option::Option<::std::string::String> {
         &self.preset_deployment_config

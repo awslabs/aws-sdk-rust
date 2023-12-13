@@ -10,28 +10,23 @@ pub struct CreateTenantDatabaseInput {
     /// <p>The name for the master user account in your tenant database. RDS creates this user account in the tenant database and grants privileges to the master user. This parameter is case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be 1 to 16 letters, numbers, or underscores.</p></li>
-    /// <li>
-    /// <p>First character must be a letter.</p></li>
-    /// <li>
-    /// <p>Can't be a reserved word for the chosen database engine.</p></li>
+    /// <li> <p>Must be 1 to 16 letters, numbers, or underscores.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Can't be a reserved word for the chosen database engine.</p> </li>
     /// </ul>
     pub master_username: ::std::option::Option<::std::string::String>,
     /// <p>The password for the master user in your tenant database.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be 8 to 30 characters.</p></li>
-    /// <li>
-    /// <p>Can include any printable ASCII character except forward slash (<code>/</code>), double quote (<code>"</code>), at symbol (<code>@</code>), ampersand (<code>&amp;</code>), or single quote (<code>'</code>).</p></li>
+    /// <li> <p>Must be 8 to 30 characters.</p> </li>
+    /// <li> <p>Can include any printable ASCII character except forward slash (<code>/</code>), double quote (<code>"</code>), at symbol (<code>@</code>), ampersand (<code>&amp;</code>), or single quote (<code>'</code>).</p> </li>
     /// </ul>
     pub master_user_password: ::std::option::Option<::std::string::String>,
     /// <p>The character set for your tenant database. If you don't specify a value, the character set name defaults to <code>AL32UTF8</code>.</p>
     pub character_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The <code>NCHAR</code> value for the tenant database.</p>
     pub nchar_character_set_name: ::std::option::Option<::std::string::String>,
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateTenantDatabaseInput {
@@ -46,12 +41,9 @@ impl CreateTenantDatabaseInput {
     /// <p>The name for the master user account in your tenant database. RDS creates this user account in the tenant database and grants privileges to the master user. This parameter is case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be 1 to 16 letters, numbers, or underscores.</p></li>
-    /// <li>
-    /// <p>First character must be a letter.</p></li>
-    /// <li>
-    /// <p>Can't be a reserved word for the chosen database engine.</p></li>
+    /// <li> <p>Must be 1 to 16 letters, numbers, or underscores.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Can't be a reserved word for the chosen database engine.</p> </li>
     /// </ul>
     pub fn master_username(&self) -> ::std::option::Option<&str> {
         self.master_username.as_deref()
@@ -59,10 +51,8 @@ impl CreateTenantDatabaseInput {
     /// <p>The password for the master user in your tenant database.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be 8 to 30 characters.</p></li>
-    /// <li>
-    /// <p>Can include any printable ASCII character except forward slash (<code>/</code>), double quote (<code>"</code>), at symbol (<code>@</code>), ampersand (<code>&amp;</code>), or single quote (<code>'</code>).</p></li>
+    /// <li> <p>Must be 8 to 30 characters.</p> </li>
+    /// <li> <p>Can include any printable ASCII character except forward slash (<code>/</code>), double quote (<code>"</code>), at symbol (<code>@</code>), ampersand (<code>&amp;</code>), or single quote (<code>'</code>).</p> </li>
     /// </ul>
     pub fn master_user_password(&self) -> ::std::option::Option<&str> {
         self.master_user_password.as_deref()
@@ -75,7 +65,7 @@ impl CreateTenantDatabaseInput {
     pub fn nchar_character_set_name(&self) -> ::std::option::Option<&str> {
         self.nchar_character_set_name.as_deref()
     }
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
     pub fn tags(&self) -> &[crate::types::Tag] {
@@ -148,12 +138,9 @@ impl CreateTenantDatabaseInputBuilder {
     /// <p>The name for the master user account in your tenant database. RDS creates this user account in the tenant database and grants privileges to the master user. This parameter is case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be 1 to 16 letters, numbers, or underscores.</p></li>
-    /// <li>
-    /// <p>First character must be a letter.</p></li>
-    /// <li>
-    /// <p>Can't be a reserved word for the chosen database engine.</p></li>
+    /// <li> <p>Must be 1 to 16 letters, numbers, or underscores.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Can't be a reserved word for the chosen database engine.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn master_username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -163,12 +150,9 @@ impl CreateTenantDatabaseInputBuilder {
     /// <p>The name for the master user account in your tenant database. RDS creates this user account in the tenant database and grants privileges to the master user. This parameter is case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be 1 to 16 letters, numbers, or underscores.</p></li>
-    /// <li>
-    /// <p>First character must be a letter.</p></li>
-    /// <li>
-    /// <p>Can't be a reserved word for the chosen database engine.</p></li>
+    /// <li> <p>Must be 1 to 16 letters, numbers, or underscores.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Can't be a reserved word for the chosen database engine.</p> </li>
     /// </ul>
     pub fn set_master_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_username = input;
@@ -177,12 +161,9 @@ impl CreateTenantDatabaseInputBuilder {
     /// <p>The name for the master user account in your tenant database. RDS creates this user account in the tenant database and grants privileges to the master user. This parameter is case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be 1 to 16 letters, numbers, or underscores.</p></li>
-    /// <li>
-    /// <p>First character must be a letter.</p></li>
-    /// <li>
-    /// <p>Can't be a reserved word for the chosen database engine.</p></li>
+    /// <li> <p>Must be 1 to 16 letters, numbers, or underscores.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Can't be a reserved word for the chosen database engine.</p> </li>
     /// </ul>
     pub fn get_master_username(&self) -> &::std::option::Option<::std::string::String> {
         &self.master_username
@@ -190,10 +171,8 @@ impl CreateTenantDatabaseInputBuilder {
     /// <p>The password for the master user in your tenant database.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be 8 to 30 characters.</p></li>
-    /// <li>
-    /// <p>Can include any printable ASCII character except forward slash (<code>/</code>), double quote (<code>"</code>), at symbol (<code>@</code>), ampersand (<code>&amp;</code>), or single quote (<code>'</code>).</p></li>
+    /// <li> <p>Must be 8 to 30 characters.</p> </li>
+    /// <li> <p>Can include any printable ASCII character except forward slash (<code>/</code>), double quote (<code>"</code>), at symbol (<code>@</code>), ampersand (<code>&amp;</code>), or single quote (<code>'</code>).</p> </li>
     /// </ul>
     /// This field is required.
     pub fn master_user_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -203,10 +182,8 @@ impl CreateTenantDatabaseInputBuilder {
     /// <p>The password for the master user in your tenant database.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be 8 to 30 characters.</p></li>
-    /// <li>
-    /// <p>Can include any printable ASCII character except forward slash (<code>/</code>), double quote (<code>"</code>), at symbol (<code>@</code>), ampersand (<code>&amp;</code>), or single quote (<code>'</code>).</p></li>
+    /// <li> <p>Must be 8 to 30 characters.</p> </li>
+    /// <li> <p>Can include any printable ASCII character except forward slash (<code>/</code>), double quote (<code>"</code>), at symbol (<code>@</code>), ampersand (<code>&amp;</code>), or single quote (<code>'</code>).</p> </li>
     /// </ul>
     pub fn set_master_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_user_password = input;
@@ -215,10 +192,8 @@ impl CreateTenantDatabaseInputBuilder {
     /// <p>The password for the master user in your tenant database.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be 8 to 30 characters.</p></li>
-    /// <li>
-    /// <p>Can include any printable ASCII character except forward slash (<code>/</code>), double quote (<code>"</code>), at symbol (<code>@</code>), ampersand (<code>&amp;</code>), or single quote (<code>'</code>).</p></li>
+    /// <li> <p>Must be 8 to 30 characters.</p> </li>
+    /// <li> <p>Can include any printable ASCII character except forward slash (<code>/</code>), double quote (<code>"</code>), at symbol (<code>@</code>), ampersand (<code>&amp;</code>), or single quote (<code>'</code>).</p> </li>
     /// </ul>
     pub fn get_master_user_password(&self) -> &::std::option::Option<::std::string::String> {
         &self.master_user_password
@@ -255,19 +230,19 @@ impl CreateTenantDatabaseInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
         self.tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }

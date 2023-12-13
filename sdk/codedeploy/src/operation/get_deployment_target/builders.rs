@@ -22,7 +22,7 @@ impl GetDeploymentTargetInputBuilder {
 }
 /// Fluent builder constructing a request to `GetDeploymentTarget`.
 ///
-/// <p>Returns information about a deployment target.</p>
+/// <p> Returns information about a deployment target. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDeploymentTargetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl GetDeploymentTargetFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique ID of a deployment.</p>
+    /// <p> The unique ID of a deployment. </p>
     pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.deployment_id(input.into());
         self
     }
-    /// <p>The unique ID of a deployment.</p>
+    /// <p> The unique ID of a deployment. </p>
     pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_deployment_id(input);
         self
     }
-    /// <p>The unique ID of a deployment.</p>
+    /// <p> The unique ID of a deployment. </p>
     pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_deployment_id()
     }
-    /// <p>The unique ID of a deployment target.</p>
+    /// <p> The unique ID of a deployment target. </p>
     pub fn target_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_id(input.into());
         self
     }
-    /// <p>The unique ID of a deployment target.</p>
+    /// <p> The unique ID of a deployment target. </p>
     pub fn set_target_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_id(input);
         self
     }
-    /// <p>The unique ID of a deployment target.</p>
+    /// <p> The unique ID of a deployment target. </p>
     pub fn get_target_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_target_id()
     }

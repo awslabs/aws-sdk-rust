@@ -7,13 +7,13 @@ pub struct ListAccountSettingsInput {
     pub name: ::std::option::Option<crate::types::SettingName>,
     /// <p>The value of the account settings to filter results with. You must also specify an account setting name to use this parameter.</p>
     pub value: ::std::option::Option<::std::string::String>,
-    /// <p>The ARN of the principal, which can be a user, role, or the root user. If this field is omitted, the account settings are listed only for the authenticated user.</p><note>
+    /// <p>The ARN of the principal, which can be a user, role, or the root user. If this field is omitted, the account settings are listed only for the authenticated user.</p> <note>
     /// <p>Federated users assume the account setting of the root user and can't have explicit account settings set for them.</p>
     /// </note>
     pub principal_arn: ::std::option::Option<::std::string::String>,
     /// <p>Determines whether to return the effective settings. If <code>true</code>, the account settings for the root user or the default setting for the <code>principalArn</code> are returned. If <code>false</code>, the account settings for the <code>principalArn</code> are returned if they're set. Otherwise, no account settings are returned.</p>
     pub effective_settings: ::std::option::Option<bool>,
-    /// <p>The <code>nextToken</code> value returned from a <code>ListAccountSettings</code> request indicating that more results are available to fulfill the request and further calls will be needed. If <code>maxResults</code> was provided, it's possible the number of results to be fewer than <code>maxResults</code>.</p><note>
+    /// <p>The <code>nextToken</code> value returned from a <code>ListAccountSettings</code> request indicating that more results are available to fulfill the request and further calls will be needed. If <code>maxResults</code> was provided, it's possible the number of results to be fewer than <code>maxResults</code>.</p> <note>
     /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -29,7 +29,7 @@ impl ListAccountSettingsInput {
     pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
-    /// <p>The ARN of the principal, which can be a user, role, or the root user. If this field is omitted, the account settings are listed only for the authenticated user.</p><note>
+    /// <p>The ARN of the principal, which can be a user, role, or the root user. If this field is omitted, the account settings are listed only for the authenticated user.</p> <note>
     /// <p>Federated users assume the account setting of the root user and can't have explicit account settings set for them.</p>
     /// </note>
     pub fn principal_arn(&self) -> ::std::option::Option<&str> {
@@ -39,7 +39,7 @@ impl ListAccountSettingsInput {
     pub fn effective_settings(&self) -> ::std::option::Option<bool> {
         self.effective_settings
     }
-    /// <p>The <code>nextToken</code> value returned from a <code>ListAccountSettings</code> request indicating that more results are available to fulfill the request and further calls will be needed. If <code>maxResults</code> was provided, it's possible the number of results to be fewer than <code>maxResults</code>.</p><note>
+    /// <p>The <code>nextToken</code> value returned from a <code>ListAccountSettings</code> request indicating that more results are available to fulfill the request and further calls will be needed. If <code>maxResults</code> was provided, it's possible the number of results to be fewer than <code>maxResults</code>.</p> <note>
     /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -97,21 +97,21 @@ impl ListAccountSettingsInputBuilder {
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.value
     }
-    /// <p>The ARN of the principal, which can be a user, role, or the root user. If this field is omitted, the account settings are listed only for the authenticated user.</p><note>
+    /// <p>The ARN of the principal, which can be a user, role, or the root user. If this field is omitted, the account settings are listed only for the authenticated user.</p> <note>
     /// <p>Federated users assume the account setting of the root user and can't have explicit account settings set for them.</p>
     /// </note>
     pub fn principal_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the principal, which can be a user, role, or the root user. If this field is omitted, the account settings are listed only for the authenticated user.</p><note>
+    /// <p>The ARN of the principal, which can be a user, role, or the root user. If this field is omitted, the account settings are listed only for the authenticated user.</p> <note>
     /// <p>Federated users assume the account setting of the root user and can't have explicit account settings set for them.</p>
     /// </note>
     pub fn set_principal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.principal_arn = input;
         self
     }
-    /// <p>The ARN of the principal, which can be a user, role, or the root user. If this field is omitted, the account settings are listed only for the authenticated user.</p><note>
+    /// <p>The ARN of the principal, which can be a user, role, or the root user. If this field is omitted, the account settings are listed only for the authenticated user.</p> <note>
     /// <p>Federated users assume the account setting of the root user and can't have explicit account settings set for them.</p>
     /// </note>
     pub fn get_principal_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,21 +131,21 @@ impl ListAccountSettingsInputBuilder {
     pub fn get_effective_settings(&self) -> &::std::option::Option<bool> {
         &self.effective_settings
     }
-    /// <p>The <code>nextToken</code> value returned from a <code>ListAccountSettings</code> request indicating that more results are available to fulfill the request and further calls will be needed. If <code>maxResults</code> was provided, it's possible the number of results to be fewer than <code>maxResults</code>.</p><note>
+    /// <p>The <code>nextToken</code> value returned from a <code>ListAccountSettings</code> request indicating that more results are available to fulfill the request and further calls will be needed. If <code>maxResults</code> was provided, it's possible the number of results to be fewer than <code>maxResults</code>.</p> <note>
     /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The <code>nextToken</code> value returned from a <code>ListAccountSettings</code> request indicating that more results are available to fulfill the request and further calls will be needed. If <code>maxResults</code> was provided, it's possible the number of results to be fewer than <code>maxResults</code>.</p><note>
+    /// <p>The <code>nextToken</code> value returned from a <code>ListAccountSettings</code> request indicating that more results are available to fulfill the request and further calls will be needed. If <code>maxResults</code> was provided, it's possible the number of results to be fewer than <code>maxResults</code>.</p> <note>
     /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The <code>nextToken</code> value returned from a <code>ListAccountSettings</code> request indicating that more results are available to fulfill the request and further calls will be needed. If <code>maxResults</code> was provided, it's possible the number of results to be fewer than <code>maxResults</code>.</p><note>
+    /// <p>The <code>nextToken</code> value returned from a <code>ListAccountSettings</code> request indicating that more results are available to fulfill the request and further calls will be needed. If <code>maxResults</code> was provided, it's possible the number of results to be fewer than <code>maxResults</code>.</p> <note>
     /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {

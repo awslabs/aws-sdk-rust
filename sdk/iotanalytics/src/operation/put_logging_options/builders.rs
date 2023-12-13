@@ -23,7 +23,7 @@ impl PutLoggingOptionsInputBuilder {
 /// Fluent builder constructing a request to `PutLoggingOptions`.
 ///
 /// <p>Sets or updates the IoT Analytics logging options.</p>
-/// <p>If you update the value of any <code>loggingOptions</code> field, it takes up to one minute for the change to take effect. Also, if you change the policy attached to the role you specified in the <code>roleArn</code> field (for example, to correct an invalid policy), it takes up to five minutes for that change to take effect.</p>
+/// <p>If you update the value of any <code>loggingOptions</code> field, it takes up to one minute for the change to take effect. Also, if you change the policy attached to the role you specified in the <code>roleArn</code> field (for example, to correct an invalid policy), it takes up to five minutes for that change to take effect. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutLoggingOptionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

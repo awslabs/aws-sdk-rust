@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetQueryResultsOutput {
-    /// <p>The number of rows inserted with a <code>CREATE TABLE AS SELECT</code> statement.</p>
+    /// <p>The number of rows inserted with a <code>CREATE TABLE AS SELECT</code> statement. </p>
     pub update_count: ::std::option::Option<i64>,
     /// <p>The results of the query execution.</p>
     pub result_set: ::std::option::Option<crate::types::ResultSet>,
@@ -12,7 +12,7 @@ pub struct GetQueryResultsOutput {
     _request_id: Option<String>,
 }
 impl GetQueryResultsOutput {
-    /// <p>The number of rows inserted with a <code>CREATE TABLE AS SELECT</code> statement.</p>
+    /// <p>The number of rows inserted with a <code>CREATE TABLE AS SELECT</code> statement. </p>
     pub fn update_count(&self) -> ::std::option::Option<i64> {
         self.update_count
     }
@@ -47,17 +47,17 @@ pub struct GetQueryResultsOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetQueryResultsOutputBuilder {
-    /// <p>The number of rows inserted with a <code>CREATE TABLE AS SELECT</code> statement.</p>
+    /// <p>The number of rows inserted with a <code>CREATE TABLE AS SELECT</code> statement. </p>
     pub fn update_count(mut self, input: i64) -> Self {
         self.update_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of rows inserted with a <code>CREATE TABLE AS SELECT</code> statement.</p>
+    /// <p>The number of rows inserted with a <code>CREATE TABLE AS SELECT</code> statement. </p>
     pub fn set_update_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.update_count = input;
         self
     }
-    /// <p>The number of rows inserted with a <code>CREATE TABLE AS SELECT</code> statement.</p>
+    /// <p>The number of rows inserted with a <code>CREATE TABLE AS SELECT</code> statement. </p>
     pub fn get_update_count(&self) -> &::std::option::Option<i64> {
         &self.update_count
     }

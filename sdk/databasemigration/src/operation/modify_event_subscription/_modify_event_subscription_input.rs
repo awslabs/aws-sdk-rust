@@ -6,14 +6,14 @@
 pub struct ModifyEventSubscriptionInput {
     /// <p>The name of the DMS event notification subscription to be modified.</p>
     pub subscription_name: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it.</p>
+    /// <p> The Amazon Resource Name (ARN) of the Amazon SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it.</p>
     pub sns_topic_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The type of DMS resource that generates the events you want to subscribe to.</p>
+    /// <p> The type of DMS resource that generates the events you want to subscribe to. </p>
     /// <p>Valid values: replication-instance | replication-task</p>
     pub source_type: ::std::option::Option<::std::string::String>,
-    /// <p>A list of event categories for a source type that you want to subscribe to. Use the <code>DescribeEventCategories</code> action to see a list of event categories.</p>
+    /// <p> A list of event categories for a source type that you want to subscribe to. Use the <code>DescribeEventCategories</code> action to see a list of event categories. </p>
     pub event_categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>A Boolean value; set to <b>true</b> to activate the subscription.</p>
+    /// <p> A Boolean value; set to <b>true</b> to activate the subscription. </p>
     pub enabled: ::std::option::Option<bool>,
 }
 impl ModifyEventSubscriptionInput {
@@ -21,22 +21,22 @@ impl ModifyEventSubscriptionInput {
     pub fn subscription_name(&self) -> ::std::option::Option<&str> {
         self.subscription_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it.</p>
+    /// <p> The Amazon Resource Name (ARN) of the Amazon SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it.</p>
     pub fn sns_topic_arn(&self) -> ::std::option::Option<&str> {
         self.sns_topic_arn.as_deref()
     }
-    /// <p>The type of DMS resource that generates the events you want to subscribe to.</p>
+    /// <p> The type of DMS resource that generates the events you want to subscribe to. </p>
     /// <p>Valid values: replication-instance | replication-task</p>
     pub fn source_type(&self) -> ::std::option::Option<&str> {
         self.source_type.as_deref()
     }
-    /// <p>A list of event categories for a source type that you want to subscribe to. Use the <code>DescribeEventCategories</code> action to see a list of event categories.</p>
+    /// <p> A list of event categories for a source type that you want to subscribe to. Use the <code>DescribeEventCategories</code> action to see a list of event categories. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_categories.is_none()`.
     pub fn event_categories(&self) -> &[::std::string::String] {
         self.event_categories.as_deref().unwrap_or_default()
     }
-    /// <p>A Boolean value; set to <b>true</b> to activate the subscription.</p>
+    /// <p> A Boolean value; set to <b>true</b> to activate the subscription. </p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
@@ -74,33 +74,33 @@ impl ModifyEventSubscriptionInputBuilder {
     pub fn get_subscription_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.subscription_name
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it.</p>
+    /// <p> The Amazon Resource Name (ARN) of the Amazon SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it.</p>
     pub fn sns_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sns_topic_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it.</p>
+    /// <p> The Amazon Resource Name (ARN) of the Amazon SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it.</p>
     pub fn set_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sns_topic_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it.</p>
+    /// <p> The Amazon Resource Name (ARN) of the Amazon SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it.</p>
     pub fn get_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.sns_topic_arn
     }
-    /// <p>The type of DMS resource that generates the events you want to subscribe to.</p>
+    /// <p> The type of DMS resource that generates the events you want to subscribe to. </p>
     /// <p>Valid values: replication-instance | replication-task</p>
     pub fn source_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The type of DMS resource that generates the events you want to subscribe to.</p>
+    /// <p> The type of DMS resource that generates the events you want to subscribe to. </p>
     /// <p>Valid values: replication-instance | replication-task</p>
     pub fn set_source_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_type = input;
         self
     }
-    /// <p>The type of DMS resource that generates the events you want to subscribe to.</p>
+    /// <p> The type of DMS resource that generates the events you want to subscribe to. </p>
     /// <p>Valid values: replication-instance | replication-task</p>
     pub fn get_source_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_type
@@ -109,33 +109,33 @@ impl ModifyEventSubscriptionInputBuilder {
     ///
     /// To override the contents of this collection use [`set_event_categories`](Self::set_event_categories).
     ///
-    /// <p>A list of event categories for a source type that you want to subscribe to. Use the <code>DescribeEventCategories</code> action to see a list of event categories.</p>
+    /// <p> A list of event categories for a source type that you want to subscribe to. Use the <code>DescribeEventCategories</code> action to see a list of event categories. </p>
     pub fn event_categories(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.event_categories.unwrap_or_default();
         v.push(input.into());
         self.event_categories = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of event categories for a source type that you want to subscribe to. Use the <code>DescribeEventCategories</code> action to see a list of event categories.</p>
+    /// <p> A list of event categories for a source type that you want to subscribe to. Use the <code>DescribeEventCategories</code> action to see a list of event categories. </p>
     pub fn set_event_categories(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.event_categories = input;
         self
     }
-    /// <p>A list of event categories for a source type that you want to subscribe to. Use the <code>DescribeEventCategories</code> action to see a list of event categories.</p>
+    /// <p> A list of event categories for a source type that you want to subscribe to. Use the <code>DescribeEventCategories</code> action to see a list of event categories. </p>
     pub fn get_event_categories(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.event_categories
     }
-    /// <p>A Boolean value; set to <b>true</b> to activate the subscription.</p>
+    /// <p> A Boolean value; set to <b>true</b> to activate the subscription. </p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A Boolean value; set to <b>true</b> to activate the subscription.</p>
+    /// <p> A Boolean value; set to <b>true</b> to activate the subscription. </p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }
-    /// <p>A Boolean value; set to <b>true</b> to activate the subscription.</p>
+    /// <p> A Boolean value; set to <b>true</b> to activate the subscription. </p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
         &self.enabled
     }

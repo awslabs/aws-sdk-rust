@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Volume {
-    /// <p>The contents of the <code>host</code> parameter determine whether your data volume persists on the host container instance and where it's stored. If the host parameter is empty, then the Docker daemon assigns a host path for your data volume. However, the data isn't guaranteed to persist after the containers that are associated with it stop running.</p><note>
+    /// <p>The contents of the <code>host</code> parameter determine whether your data volume persists on the host container instance and where it's stored. If the host parameter is empty, then the Docker daemon assigns a host path for your data volume. However, the data isn't guaranteed to persist after the containers that are associated with it stop running.</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.</p>
     /// </note>
     pub host: ::std::option::Option<crate::types::Host>,
@@ -14,7 +14,7 @@ pub struct Volume {
     pub efs_volume_configuration: ::std::option::Option<crate::types::EfsVolumeConfiguration>,
 }
 impl Volume {
-    /// <p>The contents of the <code>host</code> parameter determine whether your data volume persists on the host container instance and where it's stored. If the host parameter is empty, then the Docker daemon assigns a host path for your data volume. However, the data isn't guaranteed to persist after the containers that are associated with it stop running.</p><note>
+    /// <p>The contents of the <code>host</code> parameter determine whether your data volume persists on the host container instance and where it's stored. If the host parameter is empty, then the Docker daemon assigns a host path for your data volume. However, the data isn't guaranteed to persist after the containers that are associated with it stop running.</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.</p>
     /// </note>
     pub fn host(&self) -> ::std::option::Option<&crate::types::Host> {
@@ -45,21 +45,21 @@ pub struct VolumeBuilder {
     pub(crate) efs_volume_configuration: ::std::option::Option<crate::types::EfsVolumeConfiguration>,
 }
 impl VolumeBuilder {
-    /// <p>The contents of the <code>host</code> parameter determine whether your data volume persists on the host container instance and where it's stored. If the host parameter is empty, then the Docker daemon assigns a host path for your data volume. However, the data isn't guaranteed to persist after the containers that are associated with it stop running.</p><note>
+    /// <p>The contents of the <code>host</code> parameter determine whether your data volume persists on the host container instance and where it's stored. If the host parameter is empty, then the Docker daemon assigns a host path for your data volume. However, the data isn't guaranteed to persist after the containers that are associated with it stop running.</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.</p>
     /// </note>
     pub fn host(mut self, input: crate::types::Host) -> Self {
         self.host = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The contents of the <code>host</code> parameter determine whether your data volume persists on the host container instance and where it's stored. If the host parameter is empty, then the Docker daemon assigns a host path for your data volume. However, the data isn't guaranteed to persist after the containers that are associated with it stop running.</p><note>
+    /// <p>The contents of the <code>host</code> parameter determine whether your data volume persists on the host container instance and where it's stored. If the host parameter is empty, then the Docker daemon assigns a host path for your data volume. However, the data isn't guaranteed to persist after the containers that are associated with it stop running.</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.</p>
     /// </note>
     pub fn set_host(mut self, input: ::std::option::Option<crate::types::Host>) -> Self {
         self.host = input;
         self
     }
-    /// <p>The contents of the <code>host</code> parameter determine whether your data volume persists on the host container instance and where it's stored. If the host parameter is empty, then the Docker daemon assigns a host path for your data volume. However, the data isn't guaranteed to persist after the containers that are associated with it stop running.</p><note>
+    /// <p>The contents of the <code>host</code> parameter determine whether your data volume persists on the host container instance and where it's stored. If the host parameter is empty, then the Docker daemon assigns a host path for your data volume. However, the data isn't guaranteed to persist after the containers that are associated with it stop running.</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.</p>
     /// </note>
     pub fn get_host(&self) -> &::std::option::Option<crate::types::Host> {

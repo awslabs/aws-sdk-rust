@@ -6,9 +6,9 @@
 pub struct RoundTripTime {
     /// <p>RTT at the 50th percentile (p50).</p>
     pub p50: ::std::option::Option<f64>,
-    /// <p>RTT at the 90th percentile (p90).</p>
+    /// <p>RTT at the 90th percentile (p90). </p>
     pub p90: ::std::option::Option<f64>,
-    /// <p>RTT at the 95th percentile (p95).</p>
+    /// <p>RTT at the 95th percentile (p95). </p>
     pub p95: ::std::option::Option<f64>,
 }
 impl RoundTripTime {
@@ -16,11 +16,11 @@ impl RoundTripTime {
     pub fn p50(&self) -> ::std::option::Option<f64> {
         self.p50
     }
-    /// <p>RTT at the 90th percentile (p90).</p>
+    /// <p>RTT at the 90th percentile (p90). </p>
     pub fn p90(&self) -> ::std::option::Option<f64> {
         self.p90
     }
-    /// <p>RTT at the 95th percentile (p95).</p>
+    /// <p>RTT at the 95th percentile (p95). </p>
     pub fn p95(&self) -> ::std::option::Option<f64> {
         self.p95
     }
@@ -55,31 +55,31 @@ impl RoundTripTimeBuilder {
     pub fn get_p50(&self) -> &::std::option::Option<f64> {
         &self.p50
     }
-    /// <p>RTT at the 90th percentile (p90).</p>
+    /// <p>RTT at the 90th percentile (p90). </p>
     pub fn p90(mut self, input: f64) -> Self {
         self.p90 = ::std::option::Option::Some(input);
         self
     }
-    /// <p>RTT at the 90th percentile (p90).</p>
+    /// <p>RTT at the 90th percentile (p90). </p>
     pub fn set_p90(mut self, input: ::std::option::Option<f64>) -> Self {
         self.p90 = input;
         self
     }
-    /// <p>RTT at the 90th percentile (p90).</p>
+    /// <p>RTT at the 90th percentile (p90). </p>
     pub fn get_p90(&self) -> &::std::option::Option<f64> {
         &self.p90
     }
-    /// <p>RTT at the 95th percentile (p95).</p>
+    /// <p>RTT at the 95th percentile (p95). </p>
     pub fn p95(mut self, input: f64) -> Self {
         self.p95 = ::std::option::Option::Some(input);
         self
     }
-    /// <p>RTT at the 95th percentile (p95).</p>
+    /// <p>RTT at the 95th percentile (p95). </p>
     pub fn set_p95(mut self, input: ::std::option::Option<f64>) -> Self {
         self.p95 = input;
         self
     }
-    /// <p>RTT at the 95th percentile (p95).</p>
+    /// <p>RTT at the 95th percentile (p95). </p>
     pub fn get_p95(&self) -> &::std::option::Option<f64> {
         &self.p95
     }

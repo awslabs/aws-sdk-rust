@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportKeyOutput {
-    /// <p>The key material under export as a TR-34 WrappedKeyBlock or a TR-31 WrappedKeyBlock.</p>
+    /// <p>The key material under export as a TR-34 WrappedKeyBlock or a TR-31 WrappedKeyBlock. </p>
     pub wrapped_key: ::std::option::Option<crate::types::WrappedKey>,
     _request_id: Option<String>,
 }
 impl ExportKeyOutput {
-    /// <p>The key material under export as a TR-34 WrappedKeyBlock or a TR-31 WrappedKeyBlock.</p>
+    /// <p>The key material under export as a TR-34 WrappedKeyBlock or a TR-31 WrappedKeyBlock. </p>
     pub fn wrapped_key(&self) -> ::std::option::Option<&crate::types::WrappedKey> {
         self.wrapped_key.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct ExportKeyOutputBuilder {
     _request_id: Option<String>,
 }
 impl ExportKeyOutputBuilder {
-    /// <p>The key material under export as a TR-34 WrappedKeyBlock or a TR-31 WrappedKeyBlock.</p>
+    /// <p>The key material under export as a TR-34 WrappedKeyBlock or a TR-31 WrappedKeyBlock. </p>
     pub fn wrapped_key(mut self, input: crate::types::WrappedKey) -> Self {
         self.wrapped_key = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The key material under export as a TR-34 WrappedKeyBlock or a TR-31 WrappedKeyBlock.</p>
+    /// <p>The key material under export as a TR-34 WrappedKeyBlock or a TR-31 WrappedKeyBlock. </p>
     pub fn set_wrapped_key(mut self, input: ::std::option::Option<crate::types::WrappedKey>) -> Self {
         self.wrapped_key = input;
         self
     }
-    /// <p>The key material under export as a TR-34 WrappedKeyBlock or a TR-31 WrappedKeyBlock.</p>
+    /// <p>The key material under export as a TR-34 WrappedKeyBlock or a TR-31 WrappedKeyBlock. </p>
     pub fn get_wrapped_key(&self) -> &::std::option::Option<crate::types::WrappedKey> {
         &self.wrapped_key
     }

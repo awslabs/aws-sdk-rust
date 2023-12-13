@@ -3,35 +3,35 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListResourcesAssociatedToCustomLineItemInput {
-    /// <p>The billing period for which the resource associations will be listed.</p>
+    /// <p> The billing period for which the resource associations will be listed. </p>
     pub billing_period: ::std::option::Option<::std::string::String>,
-    /// <p>The ARN of the custom line item for which the resource associations will be listed.</p>
+    /// <p> The ARN of the custom line item for which the resource associations will be listed. </p>
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p>(Optional) The maximum number of resource associations to be retrieved.</p>
+    /// <p> (Optional) The maximum number of resource associations to be retrieved. </p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>(Optional) The pagination token that's returned by a previous request.</p>
+    /// <p> (Optional) The pagination token that's returned by a previous request. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>(Optional) A <code>ListResourcesAssociatedToCustomLineItemFilter</code> that can specify the types of resources that should be retrieved.</p>
+    /// <p> (Optional) A <code>ListResourcesAssociatedToCustomLineItemFilter</code> that can specify the types of resources that should be retrieved. </p>
     pub filters: ::std::option::Option<crate::types::ListResourcesAssociatedToCustomLineItemFilter>,
 }
 impl ListResourcesAssociatedToCustomLineItemInput {
-    /// <p>The billing period for which the resource associations will be listed.</p>
+    /// <p> The billing period for which the resource associations will be listed. </p>
     pub fn billing_period(&self) -> ::std::option::Option<&str> {
         self.billing_period.as_deref()
     }
-    /// <p>The ARN of the custom line item for which the resource associations will be listed.</p>
+    /// <p> The ARN of the custom line item for which the resource associations will be listed. </p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>(Optional) The maximum number of resource associations to be retrieved.</p>
+    /// <p> (Optional) The maximum number of resource associations to be retrieved. </p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>(Optional) The pagination token that's returned by a previous request.</p>
+    /// <p> (Optional) The pagination token that's returned by a previous request. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>(Optional) A <code>ListResourcesAssociatedToCustomLineItemFilter</code> that can specify the types of resources that should be retrieved.</p>
+    /// <p> (Optional) A <code>ListResourcesAssociatedToCustomLineItemFilter</code> that can specify the types of resources that should be retrieved. </p>
     pub fn filters(&self) -> ::std::option::Option<&crate::types::ListResourcesAssociatedToCustomLineItemFilter> {
         self.filters.as_ref()
     }
@@ -55,74 +55,74 @@ pub struct ListResourcesAssociatedToCustomLineItemInputBuilder {
     pub(crate) filters: ::std::option::Option<crate::types::ListResourcesAssociatedToCustomLineItemFilter>,
 }
 impl ListResourcesAssociatedToCustomLineItemInputBuilder {
-    /// <p>The billing period for which the resource associations will be listed.</p>
+    /// <p> The billing period for which the resource associations will be listed. </p>
     pub fn billing_period(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.billing_period = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The billing period for which the resource associations will be listed.</p>
+    /// <p> The billing period for which the resource associations will be listed. </p>
     pub fn set_billing_period(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.billing_period = input;
         self
     }
-    /// <p>The billing period for which the resource associations will be listed.</p>
+    /// <p> The billing period for which the resource associations will be listed. </p>
     pub fn get_billing_period(&self) -> &::std::option::Option<::std::string::String> {
         &self.billing_period
     }
-    /// <p>The ARN of the custom line item for which the resource associations will be listed.</p>
+    /// <p> The ARN of the custom line item for which the resource associations will be listed. </p>
     /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the custom line item for which the resource associations will be listed.</p>
+    /// <p> The ARN of the custom line item for which the resource associations will be listed. </p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>The ARN of the custom line item for which the resource associations will be listed.</p>
+    /// <p> The ARN of the custom line item for which the resource associations will be listed. </p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>(Optional) The maximum number of resource associations to be retrieved.</p>
+    /// <p> (Optional) The maximum number of resource associations to be retrieved. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>(Optional) The maximum number of resource associations to be retrieved.</p>
+    /// <p> (Optional) The maximum number of resource associations to be retrieved. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>(Optional) The maximum number of resource associations to be retrieved.</p>
+    /// <p> (Optional) The maximum number of resource associations to be retrieved. </p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p>(Optional) The pagination token that's returned by a previous request.</p>
+    /// <p> (Optional) The pagination token that's returned by a previous request. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>(Optional) The pagination token that's returned by a previous request.</p>
+    /// <p> (Optional) The pagination token that's returned by a previous request. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>(Optional) The pagination token that's returned by a previous request.</p>
+    /// <p> (Optional) The pagination token that's returned by a previous request. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>(Optional) A <code>ListResourcesAssociatedToCustomLineItemFilter</code> that can specify the types of resources that should be retrieved.</p>
+    /// <p> (Optional) A <code>ListResourcesAssociatedToCustomLineItemFilter</code> that can specify the types of resources that should be retrieved. </p>
     pub fn filters(mut self, input: crate::types::ListResourcesAssociatedToCustomLineItemFilter) -> Self {
         self.filters = ::std::option::Option::Some(input);
         self
     }
-    /// <p>(Optional) A <code>ListResourcesAssociatedToCustomLineItemFilter</code> that can specify the types of resources that should be retrieved.</p>
+    /// <p> (Optional) A <code>ListResourcesAssociatedToCustomLineItemFilter</code> that can specify the types of resources that should be retrieved. </p>
     pub fn set_filters(mut self, input: ::std::option::Option<crate::types::ListResourcesAssociatedToCustomLineItemFilter>) -> Self {
         self.filters = input;
         self
     }
-    /// <p>(Optional) A <code>ListResourcesAssociatedToCustomLineItemFilter</code> that can specify the types of resources that should be retrieved.</p>
+    /// <p> (Optional) A <code>ListResourcesAssociatedToCustomLineItemFilter</code> that can specify the types of resources that should be retrieved. </p>
     pub fn get_filters(&self) -> &::std::option::Option<crate::types::ListResourcesAssociatedToCustomLineItemFilter> {
         &self.filters
     }

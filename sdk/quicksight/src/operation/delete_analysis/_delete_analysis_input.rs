@@ -9,7 +9,7 @@ pub struct DeleteAnalysisInput {
     pub analysis_id: ::std::option::Option<::std::string::String>,
     /// <p>A value that specifies the number of days that Amazon QuickSight waits before it deletes the analysis. You can't use this parameter with the <code>ForceDeleteWithoutRecovery</code> option in the same API call. The default value is 30.</p>
     pub recovery_window_in_days: ::std::option::Option<i64>,
-    /// <p>This option defaults to the value <code>NoForceDeleteWithoutRecovery</code>. To immediately delete the analysis, add the <code>ForceDeleteWithoutRecovery</code> option. You can't restore an analysis after it's deleted.</p>
+    /// <p>This option defaults to the value <code>NoForceDeleteWithoutRecovery</code>. To immediately delete the analysis, add the <code>ForceDeleteWithoutRecovery</code> option. You can't restore an analysis after it's deleted. </p>
     pub force_delete_without_recovery: ::std::option::Option<bool>,
 }
 impl DeleteAnalysisInput {
@@ -25,7 +25,7 @@ impl DeleteAnalysisInput {
     pub fn recovery_window_in_days(&self) -> ::std::option::Option<i64> {
         self.recovery_window_in_days
     }
-    /// <p>This option defaults to the value <code>NoForceDeleteWithoutRecovery</code>. To immediately delete the analysis, add the <code>ForceDeleteWithoutRecovery</code> option. You can't restore an analysis after it's deleted.</p>
+    /// <p>This option defaults to the value <code>NoForceDeleteWithoutRecovery</code>. To immediately delete the analysis, add the <code>ForceDeleteWithoutRecovery</code> option. You can't restore an analysis after it's deleted. </p>
     pub fn force_delete_without_recovery(&self) -> ::std::option::Option<bool> {
         self.force_delete_without_recovery
     }
@@ -91,17 +91,17 @@ impl DeleteAnalysisInputBuilder {
     pub fn get_recovery_window_in_days(&self) -> &::std::option::Option<i64> {
         &self.recovery_window_in_days
     }
-    /// <p>This option defaults to the value <code>NoForceDeleteWithoutRecovery</code>. To immediately delete the analysis, add the <code>ForceDeleteWithoutRecovery</code> option. You can't restore an analysis after it's deleted.</p>
+    /// <p>This option defaults to the value <code>NoForceDeleteWithoutRecovery</code>. To immediately delete the analysis, add the <code>ForceDeleteWithoutRecovery</code> option. You can't restore an analysis after it's deleted. </p>
     pub fn force_delete_without_recovery(mut self, input: bool) -> Self {
         self.force_delete_without_recovery = ::std::option::Option::Some(input);
         self
     }
-    /// <p>This option defaults to the value <code>NoForceDeleteWithoutRecovery</code>. To immediately delete the analysis, add the <code>ForceDeleteWithoutRecovery</code> option. You can't restore an analysis after it's deleted.</p>
+    /// <p>This option defaults to the value <code>NoForceDeleteWithoutRecovery</code>. To immediately delete the analysis, add the <code>ForceDeleteWithoutRecovery</code> option. You can't restore an analysis after it's deleted. </p>
     pub fn set_force_delete_without_recovery(mut self, input: ::std::option::Option<bool>) -> Self {
         self.force_delete_without_recovery = input;
         self
     }
-    /// <p>This option defaults to the value <code>NoForceDeleteWithoutRecovery</code>. To immediately delete the analysis, add the <code>ForceDeleteWithoutRecovery</code> option. You can't restore an analysis after it's deleted.</p>
+    /// <p>This option defaults to the value <code>NoForceDeleteWithoutRecovery</code>. To immediately delete the analysis, add the <code>ForceDeleteWithoutRecovery</code> option. You can't restore an analysis after it's deleted. </p>
     pub fn get_force_delete_without_recovery(&self) -> &::std::option::Option<bool> {
         &self.force_delete_without_recovery
     }

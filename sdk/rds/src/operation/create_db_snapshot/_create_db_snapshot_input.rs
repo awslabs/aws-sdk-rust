@@ -7,54 +7,44 @@ pub struct CreateDbSnapshotInput {
     /// <p>The identifier for the DB snapshot.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Can't be null, empty, or blank</p></li>
-    /// <li>
-    /// <p>Must contain from 1 to 255 letters, numbers, or hyphens</p></li>
-    /// <li>
-    /// <p>First character must be a letter</p></li>
-    /// <li>
-    /// <p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li> <p>Can't be null, empty, or blank</p> </li>
+    /// <li> <p>Must contain from 1 to 255 letters, numbers, or hyphens</p> </li>
+    /// <li> <p>First character must be a letter</p> </li>
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
-    /// <p>Example: <code>my-snapshot-id</code></p>
+    /// <p>Example: <code>my-snapshot-id</code> </p>
     pub db_snapshot_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the DB instance that you want to create the snapshot of.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must match the identifier of an existing DBInstance.</p></li>
+    /// <li> <p>Must match the identifier of an existing DBInstance.</p> </li>
     /// </ul>
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateDbSnapshotInput {
     /// <p>The identifier for the DB snapshot.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Can't be null, empty, or blank</p></li>
-    /// <li>
-    /// <p>Must contain from 1 to 255 letters, numbers, or hyphens</p></li>
-    /// <li>
-    /// <p>First character must be a letter</p></li>
-    /// <li>
-    /// <p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li> <p>Can't be null, empty, or blank</p> </li>
+    /// <li> <p>Must contain from 1 to 255 letters, numbers, or hyphens</p> </li>
+    /// <li> <p>First character must be a letter</p> </li>
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
-    /// <p>Example: <code>my-snapshot-id</code></p>
+    /// <p>Example: <code>my-snapshot-id</code> </p>
     pub fn db_snapshot_identifier(&self) -> ::std::option::Option<&str> {
         self.db_snapshot_identifier.as_deref()
     }
     /// <p>The identifier of the DB instance that you want to create the snapshot of.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must match the identifier of an existing DBInstance.</p></li>
+    /// <li> <p>Must match the identifier of an existing DBInstance.</p> </li>
     /// </ul>
     pub fn db_instance_identifier(&self) -> ::std::option::Option<&str> {
         self.db_instance_identifier.as_deref()
     }
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
     pub fn tags(&self) -> &[crate::types::Tag] {
@@ -80,16 +70,12 @@ impl CreateDbSnapshotInputBuilder {
     /// <p>The identifier for the DB snapshot.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Can't be null, empty, or blank</p></li>
-    /// <li>
-    /// <p>Must contain from 1 to 255 letters, numbers, or hyphens</p></li>
-    /// <li>
-    /// <p>First character must be a letter</p></li>
-    /// <li>
-    /// <p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li> <p>Can't be null, empty, or blank</p> </li>
+    /// <li> <p>Must contain from 1 to 255 letters, numbers, or hyphens</p> </li>
+    /// <li> <p>First character must be a letter</p> </li>
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
-    /// <p>Example: <code>my-snapshot-id</code></p>
+    /// <p>Example: <code>my-snapshot-id</code> </p>
     /// This field is required.
     pub fn db_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_snapshot_identifier = ::std::option::Option::Some(input.into());
@@ -98,16 +84,12 @@ impl CreateDbSnapshotInputBuilder {
     /// <p>The identifier for the DB snapshot.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Can't be null, empty, or blank</p></li>
-    /// <li>
-    /// <p>Must contain from 1 to 255 letters, numbers, or hyphens</p></li>
-    /// <li>
-    /// <p>First character must be a letter</p></li>
-    /// <li>
-    /// <p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li> <p>Can't be null, empty, or blank</p> </li>
+    /// <li> <p>Must contain from 1 to 255 letters, numbers, or hyphens</p> </li>
+    /// <li> <p>First character must be a letter</p> </li>
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
-    /// <p>Example: <code>my-snapshot-id</code></p>
+    /// <p>Example: <code>my-snapshot-id</code> </p>
     pub fn set_db_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_snapshot_identifier = input;
         self
@@ -115,24 +97,19 @@ impl CreateDbSnapshotInputBuilder {
     /// <p>The identifier for the DB snapshot.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Can't be null, empty, or blank</p></li>
-    /// <li>
-    /// <p>Must contain from 1 to 255 letters, numbers, or hyphens</p></li>
-    /// <li>
-    /// <p>First character must be a letter</p></li>
-    /// <li>
-    /// <p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li> <p>Can't be null, empty, or blank</p> </li>
+    /// <li> <p>Must contain from 1 to 255 letters, numbers, or hyphens</p> </li>
+    /// <li> <p>First character must be a letter</p> </li>
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
-    /// <p>Example: <code>my-snapshot-id</code></p>
+    /// <p>Example: <code>my-snapshot-id</code> </p>
     pub fn get_db_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_snapshot_identifier
     }
     /// <p>The identifier of the DB instance that you want to create the snapshot of.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must match the identifier of an existing DBInstance.</p></li>
+    /// <li> <p>Must match the identifier of an existing DBInstance.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -142,8 +119,7 @@ impl CreateDbSnapshotInputBuilder {
     /// <p>The identifier of the DB instance that you want to create the snapshot of.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must match the identifier of an existing DBInstance.</p></li>
+    /// <li> <p>Must match the identifier of an existing DBInstance.</p> </li>
     /// </ul>
     pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_instance_identifier = input;
@@ -152,8 +128,7 @@ impl CreateDbSnapshotInputBuilder {
     /// <p>The identifier of the DB instance that you want to create the snapshot of.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must match the identifier of an existing DBInstance.</p></li>
+    /// <li> <p>Must match the identifier of an existing DBInstance.</p> </li>
     /// </ul>
     pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_instance_identifier
@@ -162,19 +137,19 @@ impl CreateDbSnapshotInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
         self.tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }

@@ -6,7 +6,7 @@
 pub struct UpdateConfigurationSetSendingEnabledInput {
     /// <p>The name of the configuration set to update.</p>
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
-    /// <p>Describes whether email sending is enabled or disabled for the configuration set.</p>
+    /// <p>Describes whether email sending is enabled or disabled for the configuration set. </p>
     pub enabled: ::std::option::Option<bool>,
 }
 impl UpdateConfigurationSetSendingEnabledInput {
@@ -14,7 +14,7 @@ impl UpdateConfigurationSetSendingEnabledInput {
     pub fn configuration_set_name(&self) -> ::std::option::Option<&str> {
         self.configuration_set_name.as_deref()
     }
-    /// <p>Describes whether email sending is enabled or disabled for the configuration set.</p>
+    /// <p>Describes whether email sending is enabled or disabled for the configuration set. </p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
@@ -49,18 +49,18 @@ impl UpdateConfigurationSetSendingEnabledInputBuilder {
     pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.configuration_set_name
     }
-    /// <p>Describes whether email sending is enabled or disabled for the configuration set.</p>
+    /// <p>Describes whether email sending is enabled or disabled for the configuration set. </p>
     /// This field is required.
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Describes whether email sending is enabled or disabled for the configuration set.</p>
+    /// <p>Describes whether email sending is enabled or disabled for the configuration set. </p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }
-    /// <p>Describes whether email sending is enabled or disabled for the configuration set.</p>
+    /// <p>Describes whether email sending is enabled or disabled for the configuration set. </p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
         &self.enabled
     }

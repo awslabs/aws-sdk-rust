@@ -9,10 +9,8 @@ pub struct Block {
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The block represents a line of text or one word of text.</p>
     /// <ul>
-    /// <li>
-    /// <p>WORD - A word that's detected on a document page. A word is one or more ISO basic Latin script characters that aren't separated by spaces.</p></li>
-    /// <li>
-    /// <p>LINE - A string of tab-delimited, contiguous words that are detected on a document page</p></li>
+    /// <li> <p>WORD - A word that's detected on a document page. A word is one or more ISO basic Latin script characters that aren't separated by spaces.</p> </li>
+    /// <li> <p>LINE - A string of tab-delimited, contiguous words that are detected on a document page</p> </li>
     /// </ul>
     pub block_type: ::std::option::Option<crate::types::BlockType>,
     /// <p>The word or line of text extracted from the block.</p>
@@ -21,7 +19,7 @@ pub struct Block {
     pub page: ::std::option::Option<i32>,
     /// <p>Co-ordinates of the rectangle or polygon that contains the text.</p>
     pub geometry: ::std::option::Option<crate::types::Geometry>,
-    /// <p>A list of child blocks of the current block. For example, a LINE object has child blocks for each WORD block that's part of the line of text.</p>
+    /// <p>A list of child blocks of the current block. For example, a LINE object has child blocks for each WORD block that's part of the line of text. </p>
     pub relationships: ::std::option::Option<::std::vec::Vec<crate::types::RelationshipsListItem>>,
 }
 impl Block {
@@ -31,10 +29,8 @@ impl Block {
     }
     /// <p>The block represents a line of text or one word of text.</p>
     /// <ul>
-    /// <li>
-    /// <p>WORD - A word that's detected on a document page. A word is one or more ISO basic Latin script characters that aren't separated by spaces.</p></li>
-    /// <li>
-    /// <p>LINE - A string of tab-delimited, contiguous words that are detected on a document page</p></li>
+    /// <li> <p>WORD - A word that's detected on a document page. A word is one or more ISO basic Latin script characters that aren't separated by spaces.</p> </li>
+    /// <li> <p>LINE - A string of tab-delimited, contiguous words that are detected on a document page</p> </li>
     /// </ul>
     pub fn block_type(&self) -> ::std::option::Option<&crate::types::BlockType> {
         self.block_type.as_ref()
@@ -51,7 +47,7 @@ impl Block {
     pub fn geometry(&self) -> ::std::option::Option<&crate::types::Geometry> {
         self.geometry.as_ref()
     }
-    /// <p>A list of child blocks of the current block. For example, a LINE object has child blocks for each WORD block that's part of the line of text.</p>
+    /// <p>A list of child blocks of the current block. For example, a LINE object has child blocks for each WORD block that's part of the line of text. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.relationships.is_none()`.
     pub fn relationships(&self) -> &[crate::types::RelationshipsListItem] {
@@ -93,10 +89,8 @@ impl BlockBuilder {
     }
     /// <p>The block represents a line of text or one word of text.</p>
     /// <ul>
-    /// <li>
-    /// <p>WORD - A word that's detected on a document page. A word is one or more ISO basic Latin script characters that aren't separated by spaces.</p></li>
-    /// <li>
-    /// <p>LINE - A string of tab-delimited, contiguous words that are detected on a document page</p></li>
+    /// <li> <p>WORD - A word that's detected on a document page. A word is one or more ISO basic Latin script characters that aren't separated by spaces.</p> </li>
+    /// <li> <p>LINE - A string of tab-delimited, contiguous words that are detected on a document page</p> </li>
     /// </ul>
     pub fn block_type(mut self, input: crate::types::BlockType) -> Self {
         self.block_type = ::std::option::Option::Some(input);
@@ -104,10 +98,8 @@ impl BlockBuilder {
     }
     /// <p>The block represents a line of text or one word of text.</p>
     /// <ul>
-    /// <li>
-    /// <p>WORD - A word that's detected on a document page. A word is one or more ISO basic Latin script characters that aren't separated by spaces.</p></li>
-    /// <li>
-    /// <p>LINE - A string of tab-delimited, contiguous words that are detected on a document page</p></li>
+    /// <li> <p>WORD - A word that's detected on a document page. A word is one or more ISO basic Latin script characters that aren't separated by spaces.</p> </li>
+    /// <li> <p>LINE - A string of tab-delimited, contiguous words that are detected on a document page</p> </li>
     /// </ul>
     pub fn set_block_type(mut self, input: ::std::option::Option<crate::types::BlockType>) -> Self {
         self.block_type = input;
@@ -115,10 +107,8 @@ impl BlockBuilder {
     }
     /// <p>The block represents a line of text or one word of text.</p>
     /// <ul>
-    /// <li>
-    /// <p>WORD - A word that's detected on a document page. A word is one or more ISO basic Latin script characters that aren't separated by spaces.</p></li>
-    /// <li>
-    /// <p>LINE - A string of tab-delimited, contiguous words that are detected on a document page</p></li>
+    /// <li> <p>WORD - A word that's detected on a document page. A word is one or more ISO basic Latin script characters that aren't separated by spaces.</p> </li>
+    /// <li> <p>LINE - A string of tab-delimited, contiguous words that are detected on a document page</p> </li>
     /// </ul>
     pub fn get_block_type(&self) -> &::std::option::Option<crate::types::BlockType> {
         &self.block_type
@@ -169,19 +159,19 @@ impl BlockBuilder {
     ///
     /// To override the contents of this collection use [`set_relationships`](Self::set_relationships).
     ///
-    /// <p>A list of child blocks of the current block. For example, a LINE object has child blocks for each WORD block that's part of the line of text.</p>
+    /// <p>A list of child blocks of the current block. For example, a LINE object has child blocks for each WORD block that's part of the line of text. </p>
     pub fn relationships(mut self, input: crate::types::RelationshipsListItem) -> Self {
         let mut v = self.relationships.unwrap_or_default();
         v.push(input);
         self.relationships = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of child blocks of the current block. For example, a LINE object has child blocks for each WORD block that's part of the line of text.</p>
+    /// <p>A list of child blocks of the current block. For example, a LINE object has child blocks for each WORD block that's part of the line of text. </p>
     pub fn set_relationships(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RelationshipsListItem>>) -> Self {
         self.relationships = input;
         self
     }
-    /// <p>A list of child blocks of the current block. For example, a LINE object has child blocks for each WORD block that's part of the line of text.</p>
+    /// <p>A list of child blocks of the current block. For example, a LINE object has child blocks for each WORD block that's part of the line of text. </p>
     pub fn get_relationships(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RelationshipsListItem>> {
         &self.relationships
     }

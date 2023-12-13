@@ -110,16 +110,11 @@ impl GetViolationDetailsFluentBuilder {
     }
     /// <p>The ID of the Firewall Manager policy that you want the details for. You can get violation details for the following policy types:</p>
     /// <ul>
-    /// <li>
-    /// <p>DNS Firewall</p></li>
-    /// <li>
-    /// <p>Imported Network Firewall</p></li>
-    /// <li>
-    /// <p>Network Firewall</p></li>
-    /// <li>
-    /// <p>Security group content audit</p></li>
-    /// <li>
-    /// <p>Third-party firewall</p></li>
+    /// <li> <p>DNS Firewall</p> </li>
+    /// <li> <p>Imported Network Firewall</p> </li>
+    /// <li> <p>Network Firewall</p> </li>
+    /// <li> <p>Security group content audit</p> </li>
+    /// <li> <p>Third-party firewall</p> </li>
     /// </ul>
     pub fn policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_id(input.into());
@@ -127,16 +122,11 @@ impl GetViolationDetailsFluentBuilder {
     }
     /// <p>The ID of the Firewall Manager policy that you want the details for. You can get violation details for the following policy types:</p>
     /// <ul>
-    /// <li>
-    /// <p>DNS Firewall</p></li>
-    /// <li>
-    /// <p>Imported Network Firewall</p></li>
-    /// <li>
-    /// <p>Network Firewall</p></li>
-    /// <li>
-    /// <p>Security group content audit</p></li>
-    /// <li>
-    /// <p>Third-party firewall</p></li>
+    /// <li> <p>DNS Firewall</p> </li>
+    /// <li> <p>Imported Network Firewall</p> </li>
+    /// <li> <p>Network Firewall</p> </li>
+    /// <li> <p>Security group content audit</p> </li>
+    /// <li> <p>Third-party firewall</p> </li>
     /// </ul>
     pub fn set_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_id(input);
@@ -144,16 +134,11 @@ impl GetViolationDetailsFluentBuilder {
     }
     /// <p>The ID of the Firewall Manager policy that you want the details for. You can get violation details for the following policy types:</p>
     /// <ul>
-    /// <li>
-    /// <p>DNS Firewall</p></li>
-    /// <li>
-    /// <p>Imported Network Firewall</p></li>
-    /// <li>
-    /// <p>Network Firewall</p></li>
-    /// <li>
-    /// <p>Security group content audit</p></li>
-    /// <li>
-    /// <p>Third-party firewall</p></li>
+    /// <li> <p>DNS Firewall</p> </li>
+    /// <li> <p>Imported Network Firewall</p> </li>
+    /// <li> <p>Network Firewall</p> </li>
+    /// <li> <p>Security group content audit</p> </li>
+    /// <li> <p>Third-party firewall</p> </li>
     /// </ul>
     pub fn get_policy_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_policy_id()
@@ -186,17 +171,17 @@ impl GetViolationDetailsFluentBuilder {
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_id()
     }
-    /// <p>The resource type. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a>. Supported resource types are: <code>AWS::EC2::Instance</code>, <code>AWS::EC2::NetworkInterface</code>, <code>AWS::EC2::SecurityGroup</code>, <code>AWS::NetworkFirewall::FirewallPolicy</code>, and <code>AWS::EC2::Subnet</code>.</p>
+    /// <p>The resource type. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a>. Supported resource types are: <code>AWS::EC2::Instance</code>, <code>AWS::EC2::NetworkInterface</code>, <code>AWS::EC2::SecurityGroup</code>, <code>AWS::NetworkFirewall::FirewallPolicy</code>, and <code>AWS::EC2::Subnet</code>. </p>
     pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_type(input.into());
         self
     }
-    /// <p>The resource type. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a>. Supported resource types are: <code>AWS::EC2::Instance</code>, <code>AWS::EC2::NetworkInterface</code>, <code>AWS::EC2::SecurityGroup</code>, <code>AWS::NetworkFirewall::FirewallPolicy</code>, and <code>AWS::EC2::Subnet</code>.</p>
+    /// <p>The resource type. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a>. Supported resource types are: <code>AWS::EC2::Instance</code>, <code>AWS::EC2::NetworkInterface</code>, <code>AWS::EC2::SecurityGroup</code>, <code>AWS::NetworkFirewall::FirewallPolicy</code>, and <code>AWS::EC2::Subnet</code>. </p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }
-    /// <p>The resource type. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a>. Supported resource types are: <code>AWS::EC2::Instance</code>, <code>AWS::EC2::NetworkInterface</code>, <code>AWS::EC2::SecurityGroup</code>, <code>AWS::NetworkFirewall::FirewallPolicy</code>, and <code>AWS::EC2::Subnet</code>.</p>
+    /// <p>The resource type. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a>. Supported resource types are: <code>AWS::EC2::Instance</code>, <code>AWS::EC2::NetworkInterface</code>, <code>AWS::EC2::SecurityGroup</code>, <code>AWS::NetworkFirewall::FirewallPolicy</code>, and <code>AWS::EC2::Subnet</code>. </p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_type()
     }

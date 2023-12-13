@@ -11,7 +11,7 @@ pub struct RegisterGameServerInput {
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>Information that is needed to make inbound client connections to the game server. This might include the IP address and port, DNS name, and other information.</p>
     pub connection_info: ::std::option::Option<::std::string::String>,
-    /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers.</p>
+    /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers. </p>
     pub game_server_data: ::std::option::Option<::std::string::String>,
 }
 impl RegisterGameServerInput {
@@ -31,7 +31,7 @@ impl RegisterGameServerInput {
     pub fn connection_info(&self) -> ::std::option::Option<&str> {
         self.connection_info.as_deref()
     }
-    /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers.</p>
+    /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers. </p>
     pub fn game_server_data(&self) -> ::std::option::Option<&str> {
         self.game_server_data.as_deref()
     }
@@ -113,17 +113,17 @@ impl RegisterGameServerInputBuilder {
     pub fn get_connection_info(&self) -> &::std::option::Option<::std::string::String> {
         &self.connection_info
     }
-    /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers.</p>
+    /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers. </p>
     pub fn game_server_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_server_data = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers.</p>
+    /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers. </p>
     pub fn set_game_server_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.game_server_data = input;
         self
     }
-    /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers.</p>
+    /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers. </p>
     pub fn get_game_server_data(&self) -> &::std::option::Option<::std::string::String> {
         &self.game_server_data
     }

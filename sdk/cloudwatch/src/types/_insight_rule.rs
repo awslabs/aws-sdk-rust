@@ -8,11 +8,11 @@ pub struct InsightRule {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the rule is enabled or disabled.</p>
     pub state: ::std::option::Option<::std::string::String>,
-    /// <p>For rules that you create, this is always <code>{"Name": "CloudWatchLogRule", "Version": 1}</code>. For managed rules, this is <code>{"Name": "ServiceLogRule", "Version": 1}</code></p>
+    /// <p>For rules that you create, this is always <code>{"Name": "CloudWatchLogRule", "Version": 1}</code>. For managed rules, this is <code>{"Name": "ServiceLogRule", "Version": 1}</code> </p>
     pub schema: ::std::option::Option<::std::string::String>,
     /// <p>The definition of the rule, as a JSON object. The definition contains the keywords used to define contributors, the value to aggregate on if this rule returns a sum instead of a count, and the filters. For details on the valid syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights-RuleSyntax.html">Contributor Insights Rule Syntax</a>.</p>
     pub definition: ::std::option::Option<::std::string::String>,
-    /// <p>An optional built-in rule that Amazon Web Services manages.</p>
+    /// <p> An optional built-in rule that Amazon Web Services manages. </p>
     pub managed_rule: ::std::option::Option<bool>,
 }
 impl InsightRule {
@@ -24,7 +24,7 @@ impl InsightRule {
     pub fn state(&self) -> ::std::option::Option<&str> {
         self.state.as_deref()
     }
-    /// <p>For rules that you create, this is always <code>{"Name": "CloudWatchLogRule", "Version": 1}</code>. For managed rules, this is <code>{"Name": "ServiceLogRule", "Version": 1}</code></p>
+    /// <p>For rules that you create, this is always <code>{"Name": "CloudWatchLogRule", "Version": 1}</code>. For managed rules, this is <code>{"Name": "ServiceLogRule", "Version": 1}</code> </p>
     pub fn schema(&self) -> ::std::option::Option<&str> {
         self.schema.as_deref()
     }
@@ -32,7 +32,7 @@ impl InsightRule {
     pub fn definition(&self) -> ::std::option::Option<&str> {
         self.definition.as_deref()
     }
-    /// <p>An optional built-in rule that Amazon Web Services manages.</p>
+    /// <p> An optional built-in rule that Amazon Web Services manages. </p>
     pub fn managed_rule(&self) -> ::std::option::Option<bool> {
         self.managed_rule
     }
@@ -85,18 +85,18 @@ impl InsightRuleBuilder {
     pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
         &self.state
     }
-    /// <p>For rules that you create, this is always <code>{"Name": "CloudWatchLogRule", "Version": 1}</code>. For managed rules, this is <code>{"Name": "ServiceLogRule", "Version": 1}</code></p>
+    /// <p>For rules that you create, this is always <code>{"Name": "CloudWatchLogRule", "Version": 1}</code>. For managed rules, this is <code>{"Name": "ServiceLogRule", "Version": 1}</code> </p>
     /// This field is required.
     pub fn schema(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>For rules that you create, this is always <code>{"Name": "CloudWatchLogRule", "Version": 1}</code>. For managed rules, this is <code>{"Name": "ServiceLogRule", "Version": 1}</code></p>
+    /// <p>For rules that you create, this is always <code>{"Name": "CloudWatchLogRule", "Version": 1}</code>. For managed rules, this is <code>{"Name": "ServiceLogRule", "Version": 1}</code> </p>
     pub fn set_schema(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema = input;
         self
     }
-    /// <p>For rules that you create, this is always <code>{"Name": "CloudWatchLogRule", "Version": 1}</code>. For managed rules, this is <code>{"Name": "ServiceLogRule", "Version": 1}</code></p>
+    /// <p>For rules that you create, this is always <code>{"Name": "CloudWatchLogRule", "Version": 1}</code>. For managed rules, this is <code>{"Name": "ServiceLogRule", "Version": 1}</code> </p>
     pub fn get_schema(&self) -> &::std::option::Option<::std::string::String> {
         &self.schema
     }
@@ -115,17 +115,17 @@ impl InsightRuleBuilder {
     pub fn get_definition(&self) -> &::std::option::Option<::std::string::String> {
         &self.definition
     }
-    /// <p>An optional built-in rule that Amazon Web Services manages.</p>
+    /// <p> An optional built-in rule that Amazon Web Services manages. </p>
     pub fn managed_rule(mut self, input: bool) -> Self {
         self.managed_rule = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An optional built-in rule that Amazon Web Services manages.</p>
+    /// <p> An optional built-in rule that Amazon Web Services manages. </p>
     pub fn set_managed_rule(mut self, input: ::std::option::Option<bool>) -> Self {
         self.managed_rule = input;
         self
     }
-    /// <p>An optional built-in rule that Amazon Web Services manages.</p>
+    /// <p> An optional built-in rule that Amazon Web Services manages. </p>
     pub fn get_managed_rule(&self) -> &::std::option::Option<bool> {
         &self.managed_rule
     }

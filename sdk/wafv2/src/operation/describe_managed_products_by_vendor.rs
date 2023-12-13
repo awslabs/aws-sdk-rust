@@ -256,20 +256,16 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeManag
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DescribeManagedProductsByVendorError {
-    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request.</p>
+    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::types::error::WafInternalErrorException),
-    /// <p>The operation isn't valid.</p>
+    /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::types::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example:</p>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified a parameter name or value that isn't valid.</p></li>
-    /// <li>
-    /// <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested.</p></li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p></li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p></li>
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::types::error::WafInvalidParameterException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).

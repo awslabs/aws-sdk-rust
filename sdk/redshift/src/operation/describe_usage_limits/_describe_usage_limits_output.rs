@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeUsageLimitsOutput {
-    /// <p>Contains the output from the <code>DescribeUsageLimits</code> action.</p>
+    /// <p>Contains the output from the <code>DescribeUsageLimits</code> action. </p>
     pub usage_limits: ::std::option::Option<::std::vec::Vec<crate::types::UsageLimit>>,
-    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request.</p>
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeUsageLimitsOutput {
-    /// <p>Contains the output from the <code>DescribeUsageLimits</code> action.</p>
+    /// <p>Contains the output from the <code>DescribeUsageLimits</code> action. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.usage_limits.is_none()`.
     pub fn usage_limits(&self) -> &[crate::types::UsageLimit] {
         self.usage_limits.as_deref().unwrap_or_default()
     }
-    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request.</p>
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -46,33 +46,33 @@ impl DescribeUsageLimitsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_usage_limits`](Self::set_usage_limits).
     ///
-    /// <p>Contains the output from the <code>DescribeUsageLimits</code> action.</p>
+    /// <p>Contains the output from the <code>DescribeUsageLimits</code> action. </p>
     pub fn usage_limits(mut self, input: crate::types::UsageLimit) -> Self {
         let mut v = self.usage_limits.unwrap_or_default();
         v.push(input);
         self.usage_limits = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Contains the output from the <code>DescribeUsageLimits</code> action.</p>
+    /// <p>Contains the output from the <code>DescribeUsageLimits</code> action. </p>
     pub fn set_usage_limits(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UsageLimit>>) -> Self {
         self.usage_limits = input;
         self
     }
-    /// <p>Contains the output from the <code>DescribeUsageLimits</code> action.</p>
+    /// <p>Contains the output from the <code>DescribeUsageLimits</code> action. </p>
     pub fn get_usage_limits(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageLimit>> {
         &self.usage_limits
     }
-    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request.</p>
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request.</p>
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }
-    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request.</p>
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }

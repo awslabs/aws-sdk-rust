@@ -242,17 +242,17 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for AddTagsToReso
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum AddTagsToResourceError {
-    /// <p><code>BlueGreenDeploymentIdentifier</code> doesn't refer to an existing blue/green deployment.</p>
+    /// <p> <code>BlueGreenDeploymentIdentifier</code> doesn't refer to an existing blue/green deployment.</p>
     BlueGreenDeploymentNotFoundFault(crate::types::error::BlueGreenDeploymentNotFoundFault),
-    /// <p><code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
+    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
     DbClusterNotFoundFault(crate::types::error::DbClusterNotFoundFault),
-    /// <p><code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
+    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
     DbInstanceNotFoundFault(crate::types::error::DbInstanceNotFoundFault),
     /// <p>The specified proxy name doesn't correspond to a proxy owned by your Amazon Web Services account in the specified Amazon Web Services Region.</p>
     DbProxyNotFoundFault(crate::types::error::DbProxyNotFoundFault),
     /// <p>The specified target group isn't available for a proxy owned by your Amazon Web Services account in the specified Amazon Web Services Region.</p>
     DbProxyTargetGroupNotFoundFault(crate::types::error::DbProxyTargetGroupNotFoundFault),
-    /// <p><code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.</p>
+    /// <p> <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.</p>
     DbSnapshotNotFoundFault(crate::types::error::DbSnapshotNotFoundFault),
     /// <p>The specified snapshot tenant database wasn't found.</p>
     DbSnapshotTenantDatabaseNotFoundFault(crate::types::error::DbSnapshotTenantDatabaseNotFoundFault),

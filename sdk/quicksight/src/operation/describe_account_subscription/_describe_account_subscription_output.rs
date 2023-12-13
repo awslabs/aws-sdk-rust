@@ -5,16 +5,11 @@
 pub struct DescribeAccountSubscriptionOutput {
     /// <p>A structure that contains the following elements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Your Amazon QuickSight account name.</p></li>
-    /// <li>
-    /// <p>The edition of Amazon QuickSight that your account is using.</p></li>
-    /// <li>
-    /// <p>The notification email address that is associated with the Amazon QuickSight account.</p></li>
-    /// <li>
-    /// <p>The authentication type of the Amazon QuickSight account.</p></li>
-    /// <li>
-    /// <p>The status of the Amazon QuickSight account's subscription.</p></li>
+    /// <li> <p>Your Amazon QuickSight account name.</p> </li>
+    /// <li> <p>The edition of Amazon QuickSight that your account is using.</p> </li>
+    /// <li> <p>The notification email address that is associated with the Amazon QuickSight account. </p> </li>
+    /// <li> <p>The authentication type of the Amazon QuickSight account.</p> </li>
+    /// <li> <p>The status of the Amazon QuickSight account's subscription.</p> </li>
     /// </ul>
     pub account_info: ::std::option::Option<crate::types::AccountInfo>,
     /// <p>The HTTP status of the request.</p>
@@ -26,16 +21,11 @@ pub struct DescribeAccountSubscriptionOutput {
 impl DescribeAccountSubscriptionOutput {
     /// <p>A structure that contains the following elements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Your Amazon QuickSight account name.</p></li>
-    /// <li>
-    /// <p>The edition of Amazon QuickSight that your account is using.</p></li>
-    /// <li>
-    /// <p>The notification email address that is associated with the Amazon QuickSight account.</p></li>
-    /// <li>
-    /// <p>The authentication type of the Amazon QuickSight account.</p></li>
-    /// <li>
-    /// <p>The status of the Amazon QuickSight account's subscription.</p></li>
+    /// <li> <p>Your Amazon QuickSight account name.</p> </li>
+    /// <li> <p>The edition of Amazon QuickSight that your account is using.</p> </li>
+    /// <li> <p>The notification email address that is associated with the Amazon QuickSight account. </p> </li>
+    /// <li> <p>The authentication type of the Amazon QuickSight account.</p> </li>
+    /// <li> <p>The status of the Amazon QuickSight account's subscription.</p> </li>
     /// </ul>
     pub fn account_info(&self) -> ::std::option::Option<&crate::types::AccountInfo> {
         self.account_info.as_ref()
@@ -73,16 +63,11 @@ pub struct DescribeAccountSubscriptionOutputBuilder {
 impl DescribeAccountSubscriptionOutputBuilder {
     /// <p>A structure that contains the following elements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Your Amazon QuickSight account name.</p></li>
-    /// <li>
-    /// <p>The edition of Amazon QuickSight that your account is using.</p></li>
-    /// <li>
-    /// <p>The notification email address that is associated with the Amazon QuickSight account.</p></li>
-    /// <li>
-    /// <p>The authentication type of the Amazon QuickSight account.</p></li>
-    /// <li>
-    /// <p>The status of the Amazon QuickSight account's subscription.</p></li>
+    /// <li> <p>Your Amazon QuickSight account name.</p> </li>
+    /// <li> <p>The edition of Amazon QuickSight that your account is using.</p> </li>
+    /// <li> <p>The notification email address that is associated with the Amazon QuickSight account. </p> </li>
+    /// <li> <p>The authentication type of the Amazon QuickSight account.</p> </li>
+    /// <li> <p>The status of the Amazon QuickSight account's subscription.</p> </li>
     /// </ul>
     pub fn account_info(mut self, input: crate::types::AccountInfo) -> Self {
         self.account_info = ::std::option::Option::Some(input);
@@ -90,16 +75,11 @@ impl DescribeAccountSubscriptionOutputBuilder {
     }
     /// <p>A structure that contains the following elements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Your Amazon QuickSight account name.</p></li>
-    /// <li>
-    /// <p>The edition of Amazon QuickSight that your account is using.</p></li>
-    /// <li>
-    /// <p>The notification email address that is associated with the Amazon QuickSight account.</p></li>
-    /// <li>
-    /// <p>The authentication type of the Amazon QuickSight account.</p></li>
-    /// <li>
-    /// <p>The status of the Amazon QuickSight account's subscription.</p></li>
+    /// <li> <p>Your Amazon QuickSight account name.</p> </li>
+    /// <li> <p>The edition of Amazon QuickSight that your account is using.</p> </li>
+    /// <li> <p>The notification email address that is associated with the Amazon QuickSight account. </p> </li>
+    /// <li> <p>The authentication type of the Amazon QuickSight account.</p> </li>
+    /// <li> <p>The status of the Amazon QuickSight account's subscription.</p> </li>
     /// </ul>
     pub fn set_account_info(mut self, input: ::std::option::Option<crate::types::AccountInfo>) -> Self {
         self.account_info = input;
@@ -107,16 +87,11 @@ impl DescribeAccountSubscriptionOutputBuilder {
     }
     /// <p>A structure that contains the following elements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Your Amazon QuickSight account name.</p></li>
-    /// <li>
-    /// <p>The edition of Amazon QuickSight that your account is using.</p></li>
-    /// <li>
-    /// <p>The notification email address that is associated with the Amazon QuickSight account.</p></li>
-    /// <li>
-    /// <p>The authentication type of the Amazon QuickSight account.</p></li>
-    /// <li>
-    /// <p>The status of the Amazon QuickSight account's subscription.</p></li>
+    /// <li> <p>Your Amazon QuickSight account name.</p> </li>
+    /// <li> <p>The edition of Amazon QuickSight that your account is using.</p> </li>
+    /// <li> <p>The notification email address that is associated with the Amazon QuickSight account. </p> </li>
+    /// <li> <p>The authentication type of the Amazon QuickSight account.</p> </li>
+    /// <li> <p>The status of the Amazon QuickSight account's subscription.</p> </li>
     /// </ul>
     pub fn get_account_info(&self) -> &::std::option::Option<crate::types::AccountInfo> {
         &self.account_info

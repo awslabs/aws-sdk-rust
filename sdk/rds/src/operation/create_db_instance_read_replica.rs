@@ -243,23 +243,23 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateDBInsta
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreateDBInstanceReadReplicaError {
-    /// <p><code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
+    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
     DbClusterNotFoundFault(crate::types::error::DbClusterNotFoundFault),
     /// <p>The user already has a DB instance with the given identifier.</p>
     DbInstanceAlreadyExistsFault(crate::types::error::DbInstanceAlreadyExistsFault),
-    /// <p><code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
+    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
     DbInstanceNotFoundFault(crate::types::error::DbInstanceNotFoundFault),
-    /// <p><code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.</p>
+    /// <p> <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.</p>
     DbParameterGroupNotFoundFault(crate::types::error::DbParameterGroupNotFoundFault),
-    /// <p><code>DBSecurityGroupName</code> doesn't refer to an existing DB security group.</p>
+    /// <p> <code>DBSecurityGroupName</code> doesn't refer to an existing DB security group.</p>
     DbSecurityGroupNotFoundFault(crate::types::error::DbSecurityGroupNotFoundFault),
     /// <p>Subnets in the DB subnet group should cover at least two Availability Zones unless there is only one Availability Zone.</p>
     DbSubnetGroupDoesNotCoverEnoughAZs(crate::types::error::DbSubnetGroupDoesNotCoverEnoughAZs),
     /// <p>The DBSubnetGroup shouldn't be specified while creating read replicas that lie in the same region as the source instance.</p>
     DbSubnetGroupNotAllowedFault(crate::types::error::DbSubnetGroupNotAllowedFault),
-    /// <p><code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.</p>
+    /// <p> <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.</p>
     DbSubnetGroupNotFoundFault(crate::types::error::DbSubnetGroupNotFoundFault),
-    /// <p><code>Domain</code> doesn't refer to an existing Active Directory domain.</p>
+    /// <p> <code>Domain</code> doesn't refer to an existing Active Directory domain.</p>
     DomainNotFoundFault(crate::types::error::DomainNotFoundFault),
     /// <p>The request would result in the user exceeding the allowed number of DB instances.</p>
     InstanceQuotaExceededFault(crate::types::error::InstanceQuotaExceededFault),

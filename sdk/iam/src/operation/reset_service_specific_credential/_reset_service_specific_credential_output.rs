@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResetServiceSpecificCredentialOutput {
-    /// <p>A structure with details about the updated service-specific credential, including the new password.</p><important>
+    /// <p>A structure with details about the updated service-specific credential, including the new password.</p> <important>
     /// <p>This is the <b>only</b> time that you can access the password. You cannot recover the password later, but you can reset it again.</p>
     /// </important>
     pub service_specific_credential: ::std::option::Option<crate::types::ServiceSpecificCredential>,
     _request_id: Option<String>,
 }
 impl ResetServiceSpecificCredentialOutput {
-    /// <p>A structure with details about the updated service-specific credential, including the new password.</p><important>
+    /// <p>A structure with details about the updated service-specific credential, including the new password.</p> <important>
     /// <p>This is the <b>only</b> time that you can access the password. You cannot recover the password later, but you can reset it again.</p>
     /// </important>
     pub fn service_specific_credential(&self) -> ::std::option::Option<&crate::types::ServiceSpecificCredential> {
@@ -37,21 +37,21 @@ pub struct ResetServiceSpecificCredentialOutputBuilder {
     _request_id: Option<String>,
 }
 impl ResetServiceSpecificCredentialOutputBuilder {
-    /// <p>A structure with details about the updated service-specific credential, including the new password.</p><important>
+    /// <p>A structure with details about the updated service-specific credential, including the new password.</p> <important>
     /// <p>This is the <b>only</b> time that you can access the password. You cannot recover the password later, but you can reset it again.</p>
     /// </important>
     pub fn service_specific_credential(mut self, input: crate::types::ServiceSpecificCredential) -> Self {
         self.service_specific_credential = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A structure with details about the updated service-specific credential, including the new password.</p><important>
+    /// <p>A structure with details about the updated service-specific credential, including the new password.</p> <important>
     /// <p>This is the <b>only</b> time that you can access the password. You cannot recover the password later, but you can reset it again.</p>
     /// </important>
     pub fn set_service_specific_credential(mut self, input: ::std::option::Option<crate::types::ServiceSpecificCredential>) -> Self {
         self.service_specific_credential = input;
         self
     }
-    /// <p>A structure with details about the updated service-specific credential, including the new password.</p><important>
+    /// <p>A structure with details about the updated service-specific credential, including the new password.</p> <important>
     /// <p>This is the <b>only</b> time that you can access the password. You cannot recover the password later, but you can reset it again.</p>
     /// </important>
     pub fn get_service_specific_credential(&self) -> &::std::option::Option<crate::types::ServiceSpecificCredential> {

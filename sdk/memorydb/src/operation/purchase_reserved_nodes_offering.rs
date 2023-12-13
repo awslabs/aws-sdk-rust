@@ -262,7 +262,7 @@ pub enum PurchaseReservedNodesOfferingError {
     ReservedNodeAlreadyExistsFault(crate::types::error::ReservedNodeAlreadyExistsFault),
     /// <p>The request cannot be processed because it would exceed the user's node quota.</p>
     ReservedNodeQuotaExceededFault(crate::types::error::ReservedNodeQuotaExceededFault),
-    /// <p>The requested node offering does not exist.</p>
+    /// <p>The requested node offering does not exist. </p>
     ReservedNodesOfferingNotFoundFault(crate::types::error::ReservedNodesOfferingNotFoundFault),
     /// <p></p>
     ServiceLinkedRoleNotFoundFault(crate::types::error::ServiceLinkedRoleNotFoundFault),

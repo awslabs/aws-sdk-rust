@@ -12,12 +12,12 @@ pub struct AssociateMacSecKeyInput {
     pub secret_arn: ::std::option::Option<::std::string::String>,
     /// <p>The MAC Security (MACsec) CKN to associate with the dedicated connection.</p>
     /// <p>You can create the CKN/CAK pair using an industry standard tool.</p>
-    /// <p>The valid values are 64 hexadecimal characters (0-9, A-E).</p>
+    /// <p> The valid values are 64 hexadecimal characters (0-9, A-E).</p>
     /// <p>If you use this request parameter, you must use the <code>cak</code> request parameter and not use the <code>secretARN</code> request parameter.</p>
     pub ckn: ::std::option::Option<::std::string::String>,
     /// <p>The MAC Security (MACsec) CAK to associate with the dedicated connection.</p>
     /// <p>You can create the CKN/CAK pair using an industry standard tool.</p>
-    /// <p>The valid values are 64 hexadecimal characters (0-9, A-E).</p>
+    /// <p> The valid values are 64 hexadecimal characters (0-9, A-E).</p>
     /// <p>If you use this request parameter, you must use the <code>ckn</code> request parameter and not use the <code>secretARN</code> request parameter.</p>
     pub cak: ::std::option::Option<::std::string::String>,
 }
@@ -35,14 +35,14 @@ impl AssociateMacSecKeyInput {
     }
     /// <p>The MAC Security (MACsec) CKN to associate with the dedicated connection.</p>
     /// <p>You can create the CKN/CAK pair using an industry standard tool.</p>
-    /// <p>The valid values are 64 hexadecimal characters (0-9, A-E).</p>
+    /// <p> The valid values are 64 hexadecimal characters (0-9, A-E).</p>
     /// <p>If you use this request parameter, you must use the <code>cak</code> request parameter and not use the <code>secretARN</code> request parameter.</p>
     pub fn ckn(&self) -> ::std::option::Option<&str> {
         self.ckn.as_deref()
     }
     /// <p>The MAC Security (MACsec) CAK to associate with the dedicated connection.</p>
     /// <p>You can create the CKN/CAK pair using an industry standard tool.</p>
-    /// <p>The valid values are 64 hexadecimal characters (0-9, A-E).</p>
+    /// <p> The valid values are 64 hexadecimal characters (0-9, A-E).</p>
     /// <p>If you use this request parameter, you must use the <code>ckn</code> request parameter and not use the <code>secretARN</code> request parameter.</p>
     pub fn cak(&self) -> ::std::option::Option<&str> {
         self.cak.as_deref()
@@ -105,7 +105,7 @@ impl AssociateMacSecKeyInputBuilder {
     }
     /// <p>The MAC Security (MACsec) CKN to associate with the dedicated connection.</p>
     /// <p>You can create the CKN/CAK pair using an industry standard tool.</p>
-    /// <p>The valid values are 64 hexadecimal characters (0-9, A-E).</p>
+    /// <p> The valid values are 64 hexadecimal characters (0-9, A-E).</p>
     /// <p>If you use this request parameter, you must use the <code>cak</code> request parameter and not use the <code>secretARN</code> request parameter.</p>
     pub fn ckn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ckn = ::std::option::Option::Some(input.into());
@@ -113,7 +113,7 @@ impl AssociateMacSecKeyInputBuilder {
     }
     /// <p>The MAC Security (MACsec) CKN to associate with the dedicated connection.</p>
     /// <p>You can create the CKN/CAK pair using an industry standard tool.</p>
-    /// <p>The valid values are 64 hexadecimal characters (0-9, A-E).</p>
+    /// <p> The valid values are 64 hexadecimal characters (0-9, A-E).</p>
     /// <p>If you use this request parameter, you must use the <code>cak</code> request parameter and not use the <code>secretARN</code> request parameter.</p>
     pub fn set_ckn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ckn = input;
@@ -121,14 +121,14 @@ impl AssociateMacSecKeyInputBuilder {
     }
     /// <p>The MAC Security (MACsec) CKN to associate with the dedicated connection.</p>
     /// <p>You can create the CKN/CAK pair using an industry standard tool.</p>
-    /// <p>The valid values are 64 hexadecimal characters (0-9, A-E).</p>
+    /// <p> The valid values are 64 hexadecimal characters (0-9, A-E).</p>
     /// <p>If you use this request parameter, you must use the <code>cak</code> request parameter and not use the <code>secretARN</code> request parameter.</p>
     pub fn get_ckn(&self) -> &::std::option::Option<::std::string::String> {
         &self.ckn
     }
     /// <p>The MAC Security (MACsec) CAK to associate with the dedicated connection.</p>
     /// <p>You can create the CKN/CAK pair using an industry standard tool.</p>
-    /// <p>The valid values are 64 hexadecimal characters (0-9, A-E).</p>
+    /// <p> The valid values are 64 hexadecimal characters (0-9, A-E).</p>
     /// <p>If you use this request parameter, you must use the <code>ckn</code> request parameter and not use the <code>secretARN</code> request parameter.</p>
     pub fn cak(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cak = ::std::option::Option::Some(input.into());
@@ -136,7 +136,7 @@ impl AssociateMacSecKeyInputBuilder {
     }
     /// <p>The MAC Security (MACsec) CAK to associate with the dedicated connection.</p>
     /// <p>You can create the CKN/CAK pair using an industry standard tool.</p>
-    /// <p>The valid values are 64 hexadecimal characters (0-9, A-E).</p>
+    /// <p> The valid values are 64 hexadecimal characters (0-9, A-E).</p>
     /// <p>If you use this request parameter, you must use the <code>ckn</code> request parameter and not use the <code>secretARN</code> request parameter.</p>
     pub fn set_cak(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cak = input;
@@ -144,7 +144,7 @@ impl AssociateMacSecKeyInputBuilder {
     }
     /// <p>The MAC Security (MACsec) CAK to associate with the dedicated connection.</p>
     /// <p>You can create the CKN/CAK pair using an industry standard tool.</p>
-    /// <p>The valid values are 64 hexadecimal characters (0-9, A-E).</p>
+    /// <p> The valid values are 64 hexadecimal characters (0-9, A-E).</p>
     /// <p>If you use this request parameter, you must use the <code>ckn</code> request parameter and not use the <code>secretARN</code> request parameter.</p>
     pub fn get_cak(&self) -> &::std::option::Option<::std::string::String> {
         &self.cak

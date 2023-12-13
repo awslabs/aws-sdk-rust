@@ -8,11 +8,11 @@ pub struct SecurityGroupRule {
     pub security_group_rule_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the security group.</p>
     pub group_id: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the Amazon Web Services account that owns the security group.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the security group. </p>
     pub group_owner_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the security group rule is an outbound rule.</p>
     pub is_egress: ::std::option::Option<bool>,
-    /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>, <code>icmpv6</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>).</p>
+    /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>, <code>icmpv6</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). </p>
     /// <p>Use <code>-1</code> to specify all protocols.</p>
     pub ip_protocol: ::std::option::Option<::std::string::String>,
     /// <p>If the protocol is TCP or UDP, this is the start of the port range. If the protocol is ICMP or ICMPv6, this is the type number. A value of -1 indicates all ICMP/ICMPv6 types. If you specify all ICMP/ICMPv6 types, you must specify all ICMP/ICMPv6 codes.</p>
@@ -41,7 +41,7 @@ impl SecurityGroupRule {
     pub fn group_id(&self) -> ::std::option::Option<&str> {
         self.group_id.as_deref()
     }
-    /// <p>The ID of the Amazon Web Services account that owns the security group.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the security group. </p>
     pub fn group_owner_id(&self) -> ::std::option::Option<&str> {
         self.group_owner_id.as_deref()
     }
@@ -49,7 +49,7 @@ impl SecurityGroupRule {
     pub fn is_egress(&self) -> ::std::option::Option<bool> {
         self.is_egress
     }
-    /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>, <code>icmpv6</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>).</p>
+    /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>, <code>icmpv6</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). </p>
     /// <p>Use <code>-1</code> to specify all protocols.</p>
     pub fn ip_protocol(&self) -> ::std::option::Option<&str> {
         self.ip_protocol.as_deref()
@@ -143,17 +143,17 @@ impl SecurityGroupRuleBuilder {
     pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.group_id
     }
-    /// <p>The ID of the Amazon Web Services account that owns the security group.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the security group. </p>
     pub fn group_owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_owner_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the Amazon Web Services account that owns the security group.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the security group. </p>
     pub fn set_group_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_owner_id = input;
         self
     }
-    /// <p>The ID of the Amazon Web Services account that owns the security group.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the security group. </p>
     pub fn get_group_owner_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.group_owner_id
     }
@@ -171,19 +171,19 @@ impl SecurityGroupRuleBuilder {
     pub fn get_is_egress(&self) -> &::std::option::Option<bool> {
         &self.is_egress
     }
-    /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>, <code>icmpv6</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>).</p>
+    /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>, <code>icmpv6</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). </p>
     /// <p>Use <code>-1</code> to specify all protocols.</p>
     pub fn ip_protocol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_protocol = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>, <code>icmpv6</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>).</p>
+    /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>, <code>icmpv6</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). </p>
     /// <p>Use <code>-1</code> to specify all protocols.</p>
     pub fn set_ip_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_protocol = input;
         self
     }
-    /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>, <code>icmpv6</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>).</p>
+    /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>, <code>icmpv6</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). </p>
     /// <p>Use <code>-1</code> to specify all protocols.</p>
     pub fn get_ip_protocol(&self) -> &::std::option::Option<::std::string::String> {
         &self.ip_protocol

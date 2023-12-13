@@ -22,7 +22,7 @@ impl ListTemplateGroupAccessControlEntriesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListTemplateGroupAccessControlEntries`.
 ///
-/// <p>Lists group access control entries you created.</p>
+/// <p>Lists group access control entries you created. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTemplateGroupAccessControlEntriesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

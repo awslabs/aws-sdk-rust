@@ -37,11 +37,11 @@ pub struct StopDeploymentOutput {
     pub percentage_complete: ::std::option::Option<f32>,
     /// <p>The time the deployment started.</p>
     pub started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The time the deployment completed.</p>
+    /// <p>The time the deployment completed. </p>
     pub completed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of extensions that were processed as part of the deployment. The extensions that were previously associated to the configuration profile, environment, or the application when <code>StartDeployment</code> was called.</p>
     pub applied_extensions: ::std::option::Option<::std::vec::Vec<crate::types::AppliedExtension>>,
-    /// <p>The Amazon Resource Name of the Key Management Service key used to encrypt configuration data. You can encrypt secrets stored in Secrets Manager, Amazon Simple Storage Service (Amazon S3) objects encrypted with SSE-KMS, or secure string parameters stored in Amazon Web Services Systems Manager Parameter Store.</p>
+    /// <p>The Amazon Resource Name of the Key Management Service key used to encrypt configuration data. You can encrypt secrets stored in Secrets Manager, Amazon Simple Storage Service (Amazon S3) objects encrypted with SSE-KMS, or secure string parameters stored in Amazon Web Services Systems Manager Parameter Store. </p>
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Key Management Service key identifier (key ID, key alias, or key ARN) provided when the resource was created or updated.</p>
     pub kms_key_identifier: ::std::option::Option<::std::string::String>,
@@ -120,7 +120,7 @@ impl StopDeploymentOutput {
     pub fn started_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.started_at.as_ref()
     }
-    /// <p>The time the deployment completed.</p>
+    /// <p>The time the deployment completed. </p>
     pub fn completed_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.completed_at.as_ref()
     }
@@ -130,7 +130,7 @@ impl StopDeploymentOutput {
     pub fn applied_extensions(&self) -> &[crate::types::AppliedExtension] {
         self.applied_extensions.as_deref().unwrap_or_default()
     }
-    /// <p>The Amazon Resource Name of the Key Management Service key used to encrypt configuration data. You can encrypt secrets stored in Secrets Manager, Amazon Simple Storage Service (Amazon S3) objects encrypted with SSE-KMS, or secure string parameters stored in Amazon Web Services Systems Manager Parameter Store.</p>
+    /// <p>The Amazon Resource Name of the Key Management Service key used to encrypt configuration data. You can encrypt secrets stored in Secrets Manager, Amazon Simple Storage Service (Amazon S3) objects encrypted with SSE-KMS, or secure string parameters stored in Amazon Web Services Systems Manager Parameter Store. </p>
     pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
@@ -428,17 +428,17 @@ impl StopDeploymentOutputBuilder {
     pub fn get_started_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.started_at
     }
-    /// <p>The time the deployment completed.</p>
+    /// <p>The time the deployment completed. </p>
     pub fn completed_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.completed_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time the deployment completed.</p>
+    /// <p>The time the deployment completed. </p>
     pub fn set_completed_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.completed_at = input;
         self
     }
-    /// <p>The time the deployment completed.</p>
+    /// <p>The time the deployment completed. </p>
     pub fn get_completed_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.completed_at
     }
@@ -462,17 +462,17 @@ impl StopDeploymentOutputBuilder {
     pub fn get_applied_extensions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AppliedExtension>> {
         &self.applied_extensions
     }
-    /// <p>The Amazon Resource Name of the Key Management Service key used to encrypt configuration data. You can encrypt secrets stored in Secrets Manager, Amazon Simple Storage Service (Amazon S3) objects encrypted with SSE-KMS, or secure string parameters stored in Amazon Web Services Systems Manager Parameter Store.</p>
+    /// <p>The Amazon Resource Name of the Key Management Service key used to encrypt configuration data. You can encrypt secrets stored in Secrets Manager, Amazon Simple Storage Service (Amazon S3) objects encrypted with SSE-KMS, or secure string parameters stored in Amazon Web Services Systems Manager Parameter Store. </p>
     pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name of the Key Management Service key used to encrypt configuration data. You can encrypt secrets stored in Secrets Manager, Amazon Simple Storage Service (Amazon S3) objects encrypted with SSE-KMS, or secure string parameters stored in Amazon Web Services Systems Manager Parameter Store.</p>
+    /// <p>The Amazon Resource Name of the Key Management Service key used to encrypt configuration data. You can encrypt secrets stored in Secrets Manager, Amazon Simple Storage Service (Amazon S3) objects encrypted with SSE-KMS, or secure string parameters stored in Amazon Web Services Systems Manager Parameter Store. </p>
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name of the Key Management Service key used to encrypt configuration data. You can encrypt secrets stored in Secrets Manager, Amazon Simple Storage Service (Amazon S3) objects encrypted with SSE-KMS, or secure string parameters stored in Amazon Web Services Systems Manager Parameter Store.</p>
+    /// <p>The Amazon Resource Name of the Key Management Service key used to encrypt configuration data. You can encrypt secrets stored in Secrets Manager, Amazon Simple Storage Service (Amazon S3) objects encrypted with SSE-KMS, or secure string parameters stored in Amazon Web Services Systems Manager Parameter Store. </p>
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_arn
     }

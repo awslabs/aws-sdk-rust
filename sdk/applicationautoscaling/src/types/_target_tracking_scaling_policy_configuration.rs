@@ -5,7 +5,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TargetTrackingScalingPolicyConfiguration {
-    /// <p>The target value for the metric. Although this property accepts numbers of type Double, it won't accept values that are either too small or too large. Values must be in the range of -2^360 to 2^360. The value must be a valid number based on the choice of metric. For example, if the metric is CPU utilization, then the target value is a percent value that represents how much of the CPU can be used before scaling out.</p><note>
+    /// <p>The target value for the metric. Although this property accepts numbers of type Double, it won't accept values that are either too small or too large. Values must be in the range of -2^360 to 2^360. The value must be a valid number based on the choice of metric. For example, if the metric is CPU utilization, then the target value is a percent value that represents how much of the CPU can be used before scaling out. </p> <note>
     /// <p>If the scaling policy specifies the <code>ALBRequestCountPerTarget</code> predefined metric, specify the target utilization as the optimal average request count per target during any one-minute interval.</p>
     /// </note>
     pub target_value: f64,
@@ -21,7 +21,7 @@ pub struct TargetTrackingScalingPolicyConfiguration {
     pub disable_scale_in: ::std::option::Option<bool>,
 }
 impl TargetTrackingScalingPolicyConfiguration {
-    /// <p>The target value for the metric. Although this property accepts numbers of type Double, it won't accept values that are either too small or too large. Values must be in the range of -2^360 to 2^360. The value must be a valid number based on the choice of metric. For example, if the metric is CPU utilization, then the target value is a percent value that represents how much of the CPU can be used before scaling out.</p><note>
+    /// <p>The target value for the metric. Although this property accepts numbers of type Double, it won't accept values that are either too small or too large. Values must be in the range of -2^360 to 2^360. The value must be a valid number based on the choice of metric. For example, if the metric is CPU utilization, then the target value is a percent value that represents how much of the CPU can be used before scaling out. </p> <note>
     /// <p>If the scaling policy specifies the <code>ALBRequestCountPerTarget</code> predefined metric, specify the target utilization as the optimal average request count per target during any one-minute interval.</p>
     /// </note>
     pub fn target_value(&self) -> f64 {
@@ -67,7 +67,7 @@ pub struct TargetTrackingScalingPolicyConfigurationBuilder {
     pub(crate) disable_scale_in: ::std::option::Option<bool>,
 }
 impl TargetTrackingScalingPolicyConfigurationBuilder {
-    /// <p>The target value for the metric. Although this property accepts numbers of type Double, it won't accept values that are either too small or too large. Values must be in the range of -2^360 to 2^360. The value must be a valid number based on the choice of metric. For example, if the metric is CPU utilization, then the target value is a percent value that represents how much of the CPU can be used before scaling out.</p><note>
+    /// <p>The target value for the metric. Although this property accepts numbers of type Double, it won't accept values that are either too small or too large. Values must be in the range of -2^360 to 2^360. The value must be a valid number based on the choice of metric. For example, if the metric is CPU utilization, then the target value is a percent value that represents how much of the CPU can be used before scaling out. </p> <note>
     /// <p>If the scaling policy specifies the <code>ALBRequestCountPerTarget</code> predefined metric, specify the target utilization as the optimal average request count per target during any one-minute interval.</p>
     /// </note>
     /// This field is required.
@@ -75,14 +75,14 @@ impl TargetTrackingScalingPolicyConfigurationBuilder {
         self.target_value = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The target value for the metric. Although this property accepts numbers of type Double, it won't accept values that are either too small or too large. Values must be in the range of -2^360 to 2^360. The value must be a valid number based on the choice of metric. For example, if the metric is CPU utilization, then the target value is a percent value that represents how much of the CPU can be used before scaling out.</p><note>
+    /// <p>The target value for the metric. Although this property accepts numbers of type Double, it won't accept values that are either too small or too large. Values must be in the range of -2^360 to 2^360. The value must be a valid number based on the choice of metric. For example, if the metric is CPU utilization, then the target value is a percent value that represents how much of the CPU can be used before scaling out. </p> <note>
     /// <p>If the scaling policy specifies the <code>ALBRequestCountPerTarget</code> predefined metric, specify the target utilization as the optimal average request count per target during any one-minute interval.</p>
     /// </note>
     pub fn set_target_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.target_value = input;
         self
     }
-    /// <p>The target value for the metric. Although this property accepts numbers of type Double, it won't accept values that are either too small or too large. Values must be in the range of -2^360 to 2^360. The value must be a valid number based on the choice of metric. For example, if the metric is CPU utilization, then the target value is a percent value that represents how much of the CPU can be used before scaling out.</p><note>
+    /// <p>The target value for the metric. Although this property accepts numbers of type Double, it won't accept values that are either too small or too large. Values must be in the range of -2^360 to 2^360. The value must be a valid number based on the choice of metric. For example, if the metric is CPU utilization, then the target value is a percent value that represents how much of the CPU can be used before scaling out. </p> <note>
     /// <p>If the scaling policy specifies the <code>ALBRequestCountPerTarget</code> predefined metric, specify the target utilization as the optimal average request count per target during any one-minute interval.</p>
     /// </note>
     pub fn get_target_value(&self) -> &::std::option::Option<f64> {

@@ -22,7 +22,7 @@ impl DescribeChannelBanInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeChannelBan`.
 ///
-/// <p>Returns the full details of a channel ban.</p><note>
+/// <p>Returns the full details of a channel ban.</p> <note>
 /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

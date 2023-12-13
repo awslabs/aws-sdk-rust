@@ -4,10 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteBlueGreenDeploymentInput {
     /// <p>The unique identifier of the blue/green deployment to delete. This parameter isn't case-sensitive.</p>
-    /// <p>Constraints:</p>
+    /// <p>Constraints: </p>
     /// <ul>
-    /// <li>
-    /// <p>Must match an existing blue/green deployment identifier.</p></li>
+    /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
     /// </ul>
     pub blue_green_deployment_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to delete the resources in the green environment. You can't specify this option if the blue/green deployment <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_BlueGreenDeployment.html">status</a> is <code>SWITCHOVER_COMPLETED</code>.</p>
@@ -15,10 +14,9 @@ pub struct DeleteBlueGreenDeploymentInput {
 }
 impl DeleteBlueGreenDeploymentInput {
     /// <p>The unique identifier of the blue/green deployment to delete. This parameter isn't case-sensitive.</p>
-    /// <p>Constraints:</p>
+    /// <p>Constraints: </p>
     /// <ul>
-    /// <li>
-    /// <p>Must match an existing blue/green deployment identifier.</p></li>
+    /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
     /// </ul>
     pub fn blue_green_deployment_identifier(&self) -> ::std::option::Option<&str> {
         self.blue_green_deployment_identifier.as_deref()
@@ -44,10 +42,9 @@ pub struct DeleteBlueGreenDeploymentInputBuilder {
 }
 impl DeleteBlueGreenDeploymentInputBuilder {
     /// <p>The unique identifier of the blue/green deployment to delete. This parameter isn't case-sensitive.</p>
-    /// <p>Constraints:</p>
+    /// <p>Constraints: </p>
     /// <ul>
-    /// <li>
-    /// <p>Must match an existing blue/green deployment identifier.</p></li>
+    /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn blue_green_deployment_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,20 +52,18 @@ impl DeleteBlueGreenDeploymentInputBuilder {
         self
     }
     /// <p>The unique identifier of the blue/green deployment to delete. This parameter isn't case-sensitive.</p>
-    /// <p>Constraints:</p>
+    /// <p>Constraints: </p>
     /// <ul>
-    /// <li>
-    /// <p>Must match an existing blue/green deployment identifier.</p></li>
+    /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
     /// </ul>
     pub fn set_blue_green_deployment_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.blue_green_deployment_identifier = input;
         self
     }
     /// <p>The unique identifier of the blue/green deployment to delete. This parameter isn't case-sensitive.</p>
-    /// <p>Constraints:</p>
+    /// <p>Constraints: </p>
     /// <ul>
-    /// <li>
-    /// <p>Must match an existing blue/green deployment identifier.</p></li>
+    /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
     /// </ul>
     pub fn get_blue_green_deployment_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.blue_green_deployment_identifier

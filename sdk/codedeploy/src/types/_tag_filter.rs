@@ -10,12 +10,9 @@ pub struct TagFilter {
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>The on-premises instance tag filter type:</p>
     /// <ul>
-    /// <li>
-    /// <p>KEY_ONLY: Key only.</p></li>
-    /// <li>
-    /// <p>VALUE_ONLY: Value only.</p></li>
-    /// <li>
-    /// <p>KEY_AND_VALUE: Key and value.</p></li>
+    /// <li> <p>KEY_ONLY: Key only.</p> </li>
+    /// <li> <p>VALUE_ONLY: Value only.</p> </li>
+    /// <li> <p>KEY_AND_VALUE: Key and value.</p> </li>
     /// </ul>
     pub r#type: ::std::option::Option<crate::types::TagFilterType>,
 }
@@ -30,12 +27,9 @@ impl TagFilter {
     }
     /// <p>The on-premises instance tag filter type:</p>
     /// <ul>
-    /// <li>
-    /// <p>KEY_ONLY: Key only.</p></li>
-    /// <li>
-    /// <p>VALUE_ONLY: Value only.</p></li>
-    /// <li>
-    /// <p>KEY_AND_VALUE: Key and value.</p></li>
+    /// <li> <p>KEY_ONLY: Key only.</p> </li>
+    /// <li> <p>VALUE_ONLY: Value only.</p> </li>
+    /// <li> <p>KEY_AND_VALUE: Key and value.</p> </li>
     /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::TagFilterType> {
         self.r#type.as_ref()
@@ -87,12 +81,9 @@ impl TagFilterBuilder {
     }
     /// <p>The on-premises instance tag filter type:</p>
     /// <ul>
-    /// <li>
-    /// <p>KEY_ONLY: Key only.</p></li>
-    /// <li>
-    /// <p>VALUE_ONLY: Value only.</p></li>
-    /// <li>
-    /// <p>KEY_AND_VALUE: Key and value.</p></li>
+    /// <li> <p>KEY_ONLY: Key only.</p> </li>
+    /// <li> <p>VALUE_ONLY: Value only.</p> </li>
+    /// <li> <p>KEY_AND_VALUE: Key and value.</p> </li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::TagFilterType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -100,12 +91,9 @@ impl TagFilterBuilder {
     }
     /// <p>The on-premises instance tag filter type:</p>
     /// <ul>
-    /// <li>
-    /// <p>KEY_ONLY: Key only.</p></li>
-    /// <li>
-    /// <p>VALUE_ONLY: Value only.</p></li>
-    /// <li>
-    /// <p>KEY_AND_VALUE: Key and value.</p></li>
+    /// <li> <p>KEY_ONLY: Key only.</p> </li>
+    /// <li> <p>VALUE_ONLY: Value only.</p> </li>
+    /// <li> <p>KEY_AND_VALUE: Key and value.</p> </li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::TagFilterType>) -> Self {
         self.r#type = input;
@@ -113,12 +101,9 @@ impl TagFilterBuilder {
     }
     /// <p>The on-premises instance tag filter type:</p>
     /// <ul>
-    /// <li>
-    /// <p>KEY_ONLY: Key only.</p></li>
-    /// <li>
-    /// <p>VALUE_ONLY: Value only.</p></li>
-    /// <li>
-    /// <p>KEY_AND_VALUE: Key and value.</p></li>
+    /// <li> <p>KEY_ONLY: Key only.</p> </li>
+    /// <li> <p>VALUE_ONLY: Value only.</p> </li>
+    /// <li> <p>KEY_AND_VALUE: Key and value.</p> </li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::TagFilterType> {
         &self.r#type

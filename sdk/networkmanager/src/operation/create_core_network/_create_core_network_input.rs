@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCoreNetworkInput {
-    /// <p>The ID of the global network that a core network will be a part of.</p>
+    /// <p>The ID of the global network that a core network will be a part of. </p>
     pub global_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The description of a core network.</p>
     pub description: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ pub struct CreateCoreNetworkInput {
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateCoreNetworkInput {
-    /// <p>The ID of the global network that a core network will be a part of.</p>
+    /// <p>The ID of the global network that a core network will be a part of. </p>
     pub fn global_network_id(&self) -> ::std::option::Option<&str> {
         self.global_network_id.as_deref()
     }
@@ -56,18 +56,18 @@ pub struct CreateCoreNetworkInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateCoreNetworkInputBuilder {
-    /// <p>The ID of the global network that a core network will be a part of.</p>
+    /// <p>The ID of the global network that a core network will be a part of. </p>
     /// This field is required.
     pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_network_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the global network that a core network will be a part of.</p>
+    /// <p>The ID of the global network that a core network will be a part of. </p>
     pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.global_network_id = input;
         self
     }
-    /// <p>The ID of the global network that a core network will be a part of.</p>
+    /// <p>The ID of the global network that a core network will be a part of. </p>
     pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.global_network_id
     }

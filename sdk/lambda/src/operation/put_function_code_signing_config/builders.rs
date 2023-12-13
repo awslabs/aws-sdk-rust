@@ -22,7 +22,7 @@ impl PutFunctionCodeSigningConfigInputBuilder {
 }
 /// Fluent builder constructing a request to `PutFunctionCodeSigningConfig`.
 ///
-/// <p>Update the code signing configuration for the function. Changes to the code signing configuration take effect the next time a user tries to deploy a code package to the function.</p>
+/// <p>Update the code signing configuration for the function. Changes to the code signing configuration take effect the next time a user tries to deploy a code package to the function. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutFunctionCodeSigningConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -123,14 +123,11 @@ impl PutFunctionCodeSigningConfigFluentBuilder {
         self.inner.get_code_signing_config_arn()
     }
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title"><b>Name formats</b></p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p><b>Function name</b> - <code>MyFunction</code>.</p></li>
-    /// <li>
-    /// <p><b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p></li>
-    /// <li>
-    /// <p><b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p></li>
+    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -138,14 +135,11 @@ impl PutFunctionCodeSigningConfigFluentBuilder {
         self
     }
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title"><b>Name formats</b></p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p><b>Function name</b> - <code>MyFunction</code>.</p></li>
-    /// <li>
-    /// <p><b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p></li>
-    /// <li>
-    /// <p><b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p></li>
+    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -153,14 +147,11 @@ impl PutFunctionCodeSigningConfigFluentBuilder {
         self
     }
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title"><b>Name formats</b></p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p><b>Function name</b> - <code>MyFunction</code>.</p></li>
-    /// <li>
-    /// <p><b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p></li>
-    /// <li>
-    /// <p><b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p></li>
+    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn get_function_name(&self) -> &::std::option::Option<::std::string::String> {

@@ -30,7 +30,7 @@ pub struct AssetItem {
     pub glossary_terms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The identifier of the Amazon DataZone project that owns the inventory asset.</p>
     pub owning_project_id: ::std::string::String,
-    /// <p>The additional attributes of a Amazon DataZone inventory asset.</p>
+    /// <p>The additional attributes of a Amazon DataZone inventory asset. </p>
     pub additional_attributes: ::std::option::Option<crate::types::AssetItemAdditionalAttributes>,
 }
 impl AssetItem {
@@ -94,7 +94,7 @@ impl AssetItem {
         use std::ops::Deref;
         self.owning_project_id.deref()
     }
-    /// <p>The additional attributes of a Amazon DataZone inventory asset.</p>
+    /// <p>The additional attributes of a Amazon DataZone inventory asset. </p>
     pub fn additional_attributes(&self) -> ::std::option::Option<&crate::types::AssetItemAdditionalAttributes> {
         self.additional_attributes.as_ref()
     }
@@ -340,17 +340,17 @@ impl AssetItemBuilder {
     pub fn get_owning_project_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.owning_project_id
     }
-    /// <p>The additional attributes of a Amazon DataZone inventory asset.</p>
+    /// <p>The additional attributes of a Amazon DataZone inventory asset. </p>
     pub fn additional_attributes(mut self, input: crate::types::AssetItemAdditionalAttributes) -> Self {
         self.additional_attributes = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The additional attributes of a Amazon DataZone inventory asset.</p>
+    /// <p>The additional attributes of a Amazon DataZone inventory asset. </p>
     pub fn set_additional_attributes(mut self, input: ::std::option::Option<crate::types::AssetItemAdditionalAttributes>) -> Self {
         self.additional_attributes = input;
         self
     }
-    /// <p>The additional attributes of a Amazon DataZone inventory asset.</p>
+    /// <p>The additional attributes of a Amazon DataZone inventory asset. </p>
     pub fn get_additional_attributes(&self) -> &::std::option::Option<crate::types::AssetItemAdditionalAttributes> {
         &self.additional_attributes
     }

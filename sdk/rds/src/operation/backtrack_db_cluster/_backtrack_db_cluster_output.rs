@@ -16,14 +16,10 @@ pub struct BacktrackDbClusterOutput {
     pub backtrack_request_creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the backtrack. This property returns one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>applying</code> - The backtrack is currently being applied to or rolled back from the DB cluster.</p></li>
-    /// <li>
-    /// <p><code>completed</code> - The backtrack has successfully been applied to or rolled back from the DB cluster.</p></li>
-    /// <li>
-    /// <p><code>failed</code> - An error occurred while the backtrack was applied to or rolled back from the DB cluster.</p></li>
-    /// <li>
-    /// <p><code>pending</code> - The backtrack is currently pending application to or rollback from the DB cluster.</p></li>
+    /// <li> <p> <code>applying</code> - The backtrack is currently being applied to or rolled back from the DB cluster.</p> </li>
+    /// <li> <p> <code>completed</code> - The backtrack has successfully been applied to or rolled back from the DB cluster.</p> </li>
+    /// <li> <p> <code>failed</code> - An error occurred while the backtrack was applied to or rolled back from the DB cluster.</p> </li>
+    /// <li> <p> <code>pending</code> - The backtrack is currently pending application to or rollback from the DB cluster.</p> </li>
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -51,14 +47,10 @@ impl BacktrackDbClusterOutput {
     }
     /// <p>The status of the backtrack. This property returns one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>applying</code> - The backtrack is currently being applied to or rolled back from the DB cluster.</p></li>
-    /// <li>
-    /// <p><code>completed</code> - The backtrack has successfully been applied to or rolled back from the DB cluster.</p></li>
-    /// <li>
-    /// <p><code>failed</code> - An error occurred while the backtrack was applied to or rolled back from the DB cluster.</p></li>
-    /// <li>
-    /// <p><code>pending</code> - The backtrack is currently pending application to or rollback from the DB cluster.</p></li>
+    /// <li> <p> <code>applying</code> - The backtrack is currently being applied to or rolled back from the DB cluster.</p> </li>
+    /// <li> <p> <code>completed</code> - The backtrack has successfully been applied to or rolled back from the DB cluster.</p> </li>
+    /// <li> <p> <code>failed</code> - An error occurred while the backtrack was applied to or rolled back from the DB cluster.</p> </li>
+    /// <li> <p> <code>pending</code> - The backtrack is currently pending application to or rollback from the DB cluster.</p> </li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
@@ -161,14 +153,10 @@ impl BacktrackDbClusterOutputBuilder {
     }
     /// <p>The status of the backtrack. This property returns one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>applying</code> - The backtrack is currently being applied to or rolled back from the DB cluster.</p></li>
-    /// <li>
-    /// <p><code>completed</code> - The backtrack has successfully been applied to or rolled back from the DB cluster.</p></li>
-    /// <li>
-    /// <p><code>failed</code> - An error occurred while the backtrack was applied to or rolled back from the DB cluster.</p></li>
-    /// <li>
-    /// <p><code>pending</code> - The backtrack is currently pending application to or rollback from the DB cluster.</p></li>
+    /// <li> <p> <code>applying</code> - The backtrack is currently being applied to or rolled back from the DB cluster.</p> </li>
+    /// <li> <p> <code>completed</code> - The backtrack has successfully been applied to or rolled back from the DB cluster.</p> </li>
+    /// <li> <p> <code>failed</code> - An error occurred while the backtrack was applied to or rolled back from the DB cluster.</p> </li>
+    /// <li> <p> <code>pending</code> - The backtrack is currently pending application to or rollback from the DB cluster.</p> </li>
     /// </ul>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -176,14 +164,10 @@ impl BacktrackDbClusterOutputBuilder {
     }
     /// <p>The status of the backtrack. This property returns one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>applying</code> - The backtrack is currently being applied to or rolled back from the DB cluster.</p></li>
-    /// <li>
-    /// <p><code>completed</code> - The backtrack has successfully been applied to or rolled back from the DB cluster.</p></li>
-    /// <li>
-    /// <p><code>failed</code> - An error occurred while the backtrack was applied to or rolled back from the DB cluster.</p></li>
-    /// <li>
-    /// <p><code>pending</code> - The backtrack is currently pending application to or rollback from the DB cluster.</p></li>
+    /// <li> <p> <code>applying</code> - The backtrack is currently being applied to or rolled back from the DB cluster.</p> </li>
+    /// <li> <p> <code>completed</code> - The backtrack has successfully been applied to or rolled back from the DB cluster.</p> </li>
+    /// <li> <p> <code>failed</code> - An error occurred while the backtrack was applied to or rolled back from the DB cluster.</p> </li>
+    /// <li> <p> <code>pending</code> - The backtrack is currently pending application to or rollback from the DB cluster.</p> </li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
@@ -191,14 +175,10 @@ impl BacktrackDbClusterOutputBuilder {
     }
     /// <p>The status of the backtrack. This property returns one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>applying</code> - The backtrack is currently being applied to or rolled back from the DB cluster.</p></li>
-    /// <li>
-    /// <p><code>completed</code> - The backtrack has successfully been applied to or rolled back from the DB cluster.</p></li>
-    /// <li>
-    /// <p><code>failed</code> - An error occurred while the backtrack was applied to or rolled back from the DB cluster.</p></li>
-    /// <li>
-    /// <p><code>pending</code> - The backtrack is currently pending application to or rollback from the DB cluster.</p></li>
+    /// <li> <p> <code>applying</code> - The backtrack is currently being applied to or rolled back from the DB cluster.</p> </li>
+    /// <li> <p> <code>completed</code> - The backtrack has successfully been applied to or rolled back from the DB cluster.</p> </li>
+    /// <li> <p> <code>failed</code> - An error occurred while the backtrack was applied to or rolled back from the DB cluster.</p> </li>
+    /// <li> <p> <code>pending</code> - The backtrack is currently pending application to or rollback from the DB cluster.</p> </li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status

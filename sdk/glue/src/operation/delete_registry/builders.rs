@@ -22,7 +22,7 @@ impl DeleteRegistryInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteRegistry`.
 ///
-/// <p>Delete the entire registry including schema and all of its versions. To get the status of the delete operation, you can call the <code>GetRegistry</code> API after the asynchronous call. Deleting a registry will deactivate all online operations for the registry such as the <code>UpdateRegistry</code>, <code>CreateSchema</code>, <code>UpdateSchema</code>, and <code>RegisterSchemaVersion</code> APIs.</p>
+/// <p>Delete the entire registry including schema and all of its versions. To get the status of the delete operation, you can call the <code>GetRegistry</code> API after the asynchronous call. Deleting a registry will deactivate all online operations for the registry such as the <code>UpdateRegistry</code>, <code>CreateSchema</code>, <code>UpdateSchema</code>, and <code>RegisterSchemaVersion</code> APIs. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteRegistryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Locale {
-    /// <p>The country of the locale. Must be a valid ISO 3166 country code. For example, the code US refers to the United States of America.</p>
+    /// <p> The country of the locale. Must be a valid ISO 3166 country code. For example, the code US refers to the United States of America. </p>
     pub country: ::std::string::String,
     /// <p>The state or subdivision of the locale. A valid ISO 3166-2 subdivision code. For example, the code WA refers to the state of Washington.</p>
     pub subdivision: ::std::option::Option<::std::string::String>,
 }
 impl Locale {
-    /// <p>The country of the locale. Must be a valid ISO 3166 country code. For example, the code US refers to the United States of America.</p>
+    /// <p> The country of the locale. Must be a valid ISO 3166 country code. For example, the code US refers to the United States of America. </p>
     pub fn country(&self) -> &str {
         use std::ops::Deref;
         self.country.deref()
@@ -35,18 +35,18 @@ pub struct LocaleBuilder {
     pub(crate) subdivision: ::std::option::Option<::std::string::String>,
 }
 impl LocaleBuilder {
-    /// <p>The country of the locale. Must be a valid ISO 3166 country code. For example, the code US refers to the United States of America.</p>
+    /// <p> The country of the locale. Must be a valid ISO 3166 country code. For example, the code US refers to the United States of America. </p>
     /// This field is required.
     pub fn country(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.country = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The country of the locale. Must be a valid ISO 3166 country code. For example, the code US refers to the United States of America.</p>
+    /// <p> The country of the locale. Must be a valid ISO 3166 country code. For example, the code US refers to the United States of America. </p>
     pub fn set_country(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.country = input;
         self
     }
-    /// <p>The country of the locale. Must be a valid ISO 3166 country code. For example, the code US refers to the United States of America.</p>
+    /// <p> The country of the locale. Must be a valid ISO 3166 country code. For example, the code US refers to the United States of America. </p>
     pub fn get_country(&self) -> &::std::option::Option<::std::string::String> {
         &self.country
     }

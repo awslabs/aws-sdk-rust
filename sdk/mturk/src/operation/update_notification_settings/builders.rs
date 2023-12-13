@@ -22,7 +22,7 @@ impl UpdateNotificationSettingsInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateNotificationSettings`.
 ///
-/// <p>The <code>UpdateNotificationSettings</code> operation creates, updates, disables or re-enables notifications for a HIT type. If you call the UpdateNotificationSettings operation for a HIT type that already has a notification specification, the operation replaces the old specification with a new one. You can call the UpdateNotificationSettings operation to enable or disable notifications for the HIT type, without having to modify the notification specification itself by providing updates to the Active status without specifying a new notification specification. To change the Active status of a HIT type's notifications, the HIT type must already have a notification specification, or one must be provided in the same call to <code>UpdateNotificationSettings</code>.</p>
+/// <p> The <code>UpdateNotificationSettings</code> operation creates, updates, disables or re-enables notifications for a HIT type. If you call the UpdateNotificationSettings operation for a HIT type that already has a notification specification, the operation replaces the old specification with a new one. You can call the UpdateNotificationSettings operation to enable or disable notifications for the HIT type, without having to modify the notification specification itself by providing updates to the Active status without specifying a new notification specification. To change the Active status of a HIT type's notifications, the HIT type must already have a notification specification, or one must be provided in the same call to <code>UpdateNotificationSettings</code>. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateNotificationSettingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,45 +108,45 @@ impl UpdateNotificationSettingsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the HIT type whose notification specification is being updated.</p>
+    /// <p> The ID of the HIT type whose notification specification is being updated. </p>
     pub fn hit_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hit_type_id(input.into());
         self
     }
-    /// <p>The ID of the HIT type whose notification specification is being updated.</p>
+    /// <p> The ID of the HIT type whose notification specification is being updated. </p>
     pub fn set_hit_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hit_type_id(input);
         self
     }
-    /// <p>The ID of the HIT type whose notification specification is being updated.</p>
+    /// <p> The ID of the HIT type whose notification specification is being updated. </p>
     pub fn get_hit_type_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_hit_type_id()
     }
-    /// <p>The notification specification for the HIT type.</p>
+    /// <p> The notification specification for the HIT type. </p>
     pub fn notification(mut self, input: crate::types::NotificationSpecification) -> Self {
         self.inner = self.inner.notification(input);
         self
     }
-    /// <p>The notification specification for the HIT type.</p>
+    /// <p> The notification specification for the HIT type. </p>
     pub fn set_notification(mut self, input: ::std::option::Option<crate::types::NotificationSpecification>) -> Self {
         self.inner = self.inner.set_notification(input);
         self
     }
-    /// <p>The notification specification for the HIT type.</p>
+    /// <p> The notification specification for the HIT type. </p>
     pub fn get_notification(&self) -> &::std::option::Option<crate::types::NotificationSpecification> {
         self.inner.get_notification()
     }
-    /// <p>Specifies whether notifications are sent for HITs of this HIT type, according to the notification specification. You must specify either the Notification parameter or the Active parameter for the call to UpdateNotificationSettings to succeed.</p>
+    /// <p> Specifies whether notifications are sent for HITs of this HIT type, according to the notification specification. You must specify either the Notification parameter or the Active parameter for the call to UpdateNotificationSettings to succeed. </p>
     pub fn active(mut self, input: bool) -> Self {
         self.inner = self.inner.active(input);
         self
     }
-    /// <p>Specifies whether notifications are sent for HITs of this HIT type, according to the notification specification. You must specify either the Notification parameter or the Active parameter for the call to UpdateNotificationSettings to succeed.</p>
+    /// <p> Specifies whether notifications are sent for HITs of this HIT type, according to the notification specification. You must specify either the Notification parameter or the Active parameter for the call to UpdateNotificationSettings to succeed. </p>
     pub fn set_active(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_active(input);
         self
     }
-    /// <p>Specifies whether notifications are sent for HITs of this HIT type, according to the notification specification. You must specify either the Notification parameter or the Active parameter for the call to UpdateNotificationSettings to succeed.</p>
+    /// <p> Specifies whether notifications are sent for HITs of this HIT type, according to the notification specification. You must specify either the Notification parameter or the Active parameter for the call to UpdateNotificationSettings to succeed. </p>
     pub fn get_active(&self) -> &::std::option::Option<bool> {
         self.inner.get_active()
     }

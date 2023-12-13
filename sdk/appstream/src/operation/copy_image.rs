@@ -245,7 +245,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CopyImageEndp
 pub enum CopyImageError {
     /// <p>The image can't be updated because it's not compatible for updates.</p>
     IncompatibleImageException(crate::types::error::IncompatibleImageException),
-    /// <p>The resource cannot be created because your AWS account is suspended. For assistance, contact AWS Support.</p>
+    /// <p>The resource cannot be created because your AWS account is suspended. For assistance, contact AWS Support. </p>
     InvalidAccountStatusException(crate::types::error::InvalidAccountStatusException),
     /// <p>The requested limit exceeds the permitted limit for an account.</p>
     LimitExceededException(crate::types::error::LimitExceededException),

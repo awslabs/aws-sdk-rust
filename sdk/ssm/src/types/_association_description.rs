@@ -22,11 +22,11 @@ pub struct AssociationDescription {
     pub document_version: ::std::option::Option<::std::string::String>,
     /// <p>Choose the parameter that will define how your automation will branch out. This target is required for associations that use an Automation runbook and target resources by using rate controls. Automation is a capability of Amazon Web Services Systems Manager.</p>
     pub automation_target_parameter_name: ::std::option::Option<::std::string::String>,
-    /// <p>A description of the parameters for a document.</p>
+    /// <p>A description of the parameters for a document. </p>
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>The association ID.</p>
     pub association_id: ::std::option::Option<::std::string::String>,
-    /// <p>The managed nodes targeted by the request.</p>
+    /// <p>The managed nodes targeted by the request. </p>
     pub targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
     /// <p>A cron expression that specifies a schedule when the association runs.</p>
     pub schedule_expression: ::std::option::Option<::std::string::String>,
@@ -103,7 +103,7 @@ impl AssociationDescription {
     pub fn automation_target_parameter_name(&self) -> ::std::option::Option<&str> {
         self.automation_target_parameter_name.as_deref()
     }
-    /// <p>A description of the parameters for a document.</p>
+    /// <p>A description of the parameters for a document. </p>
     pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.parameters.as_ref()
     }
@@ -111,7 +111,7 @@ impl AssociationDescription {
     pub fn association_id(&self) -> ::std::option::Option<&str> {
         self.association_id.as_deref()
     }
-    /// <p>The managed nodes targeted by the request.</p>
+    /// <p>The managed nodes targeted by the request. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.targets.is_none()`.
     pub fn targets(&self) -> &[crate::types::Target] {
@@ -400,14 +400,14 @@ impl AssociationDescriptionBuilder {
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
-    /// <p>A description of the parameters for a document.</p>
+    /// <p>A description of the parameters for a document. </p>
     pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.parameters = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>A description of the parameters for a document.</p>
+    /// <p>A description of the parameters for a document. </p>
     pub fn set_parameters(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
@@ -415,7 +415,7 @@ impl AssociationDescriptionBuilder {
         self.parameters = input;
         self
     }
-    /// <p>A description of the parameters for a document.</p>
+    /// <p>A description of the parameters for a document. </p>
     pub fn get_parameters(
         &self,
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
@@ -439,19 +439,19 @@ impl AssociationDescriptionBuilder {
     ///
     /// To override the contents of this collection use [`set_targets`](Self::set_targets).
     ///
-    /// <p>The managed nodes targeted by the request.</p>
+    /// <p>The managed nodes targeted by the request. </p>
     pub fn targets(mut self, input: crate::types::Target) -> Self {
         let mut v = self.targets.unwrap_or_default();
         v.push(input);
         self.targets = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The managed nodes targeted by the request.</p>
+    /// <p>The managed nodes targeted by the request. </p>
     pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>) -> Self {
         self.targets = input;
         self
     }
-    /// <p>The managed nodes targeted by the request.</p>
+    /// <p>The managed nodes targeted by the request. </p>
     pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Target>> {
         &self.targets
     }

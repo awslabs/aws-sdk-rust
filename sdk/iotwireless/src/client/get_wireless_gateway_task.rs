@@ -7,7 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetWirelessGatewayTaskOutput`](crate::operation::get_wireless_gateway_task::GetWirelessGatewayTaskOutput) with field(s):
     ///   - [`wireless_gateway_id(Option<String>)`](crate::operation::get_wireless_gateway_task::GetWirelessGatewayTaskOutput::wireless_gateway_id): <p>The ID of the wireless gateway.</p>
     ///   - [`wireless_gateway_task_definition_id(Option<String>)`](crate::operation::get_wireless_gateway_task::GetWirelessGatewayTaskOutput::wireless_gateway_task_definition_id): <p>The ID of the WirelessGatewayTask.</p>
-    ///   - [`last_uplink_received_at(Option<String>)`](crate::operation::get_wireless_gateway_task::GetWirelessGatewayTaskOutput::last_uplink_received_at): <p>The date and time when the most recent uplink was received.</p><note>  <p>This value is only valid for 3 months.</p> </note>
+    ///   - [`last_uplink_received_at(Option<String>)`](crate::operation::get_wireless_gateway_task::GetWirelessGatewayTaskOutput::last_uplink_received_at): <p>The date and time when the most recent uplink was received.</p> <note>   <p>This value is only valid for 3 months.</p>  </note>
     ///   - [`task_created_at(Option<String>)`](crate::operation::get_wireless_gateway_task::GetWirelessGatewayTaskOutput::task_created_at): <p>The date and time when the task was created.</p>
     ///   - [`status(Option<WirelessGatewayTaskStatus>)`](crate::operation::get_wireless_gateway_task::GetWirelessGatewayTaskOutput::status): <p>The status of the request.</p>
     /// - On failure, responds with [`SdkError<GetWirelessGatewayTaskError>`](crate::operation::get_wireless_gateway_task::GetWirelessGatewayTaskError)

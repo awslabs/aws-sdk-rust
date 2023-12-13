@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAcceleratorTypesOutput {
-    /// <p>The available accelerator types.</p>
+    /// <p> The available accelerator types. </p>
     pub accelerator_types: ::std::option::Option<::std::vec::Vec<crate::types::AcceleratorType>>,
     _request_id: Option<String>,
 }
 impl DescribeAcceleratorTypesOutput {
-    /// <p>The available accelerator types.</p>
+    /// <p> The available accelerator types. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accelerator_types.is_none()`.
     pub fn accelerator_types(&self) -> &[crate::types::AcceleratorType] {
@@ -39,19 +39,19 @@ impl DescribeAcceleratorTypesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_accelerator_types`](Self::set_accelerator_types).
     ///
-    /// <p>The available accelerator types.</p>
+    /// <p> The available accelerator types. </p>
     pub fn accelerator_types(mut self, input: crate::types::AcceleratorType) -> Self {
         let mut v = self.accelerator_types.unwrap_or_default();
         v.push(input);
         self.accelerator_types = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The available accelerator types.</p>
+    /// <p> The available accelerator types. </p>
     pub fn set_accelerator_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AcceleratorType>>) -> Self {
         self.accelerator_types = input;
         self
     }
-    /// <p>The available accelerator types.</p>
+    /// <p> The available accelerator types. </p>
     pub fn get_accelerator_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AcceleratorType>> {
         &self.accelerator_types
     }

@@ -22,7 +22,7 @@ impl CreateAssessmentInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateAssessment`.
 ///
-/// <p>Creates an assessment in Audit Manager.</p>
+/// <p> Creates an assessment in Audit Manager. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateAssessmentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,59 +108,59 @@ impl CreateAssessmentFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the assessment to be created.</p>
+    /// <p> The name of the assessment to be created. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of the assessment to be created.</p>
+    /// <p> The name of the assessment to be created. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name of the assessment to be created.</p>
+    /// <p> The name of the assessment to be created. </p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>The optional description of the assessment to be created.</p>
+    /// <p> The optional description of the assessment to be created. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>The optional description of the assessment to be created.</p>
+    /// <p> The optional description of the assessment to be created. </p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>The optional description of the assessment to be created.</p>
+    /// <p> The optional description of the assessment to be created. </p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p>The assessment report storage destination for the assessment that's being created.</p>
+    /// <p> The assessment report storage destination for the assessment that's being created. </p>
     pub fn assessment_reports_destination(mut self, input: crate::types::AssessmentReportsDestination) -> Self {
         self.inner = self.inner.assessment_reports_destination(input);
         self
     }
-    /// <p>The assessment report storage destination for the assessment that's being created.</p>
+    /// <p> The assessment report storage destination for the assessment that's being created. </p>
     pub fn set_assessment_reports_destination(mut self, input: ::std::option::Option<crate::types::AssessmentReportsDestination>) -> Self {
         self.inner = self.inner.set_assessment_reports_destination(input);
         self
     }
-    /// <p>The assessment report storage destination for the assessment that's being created.</p>
+    /// <p> The assessment report storage destination for the assessment that's being created. </p>
     pub fn get_assessment_reports_destination(&self) -> &::std::option::Option<crate::types::AssessmentReportsDestination> {
         self.inner.get_assessment_reports_destination()
     }
-    /// <p>The wrapper that contains the Amazon Web Services accounts and services that are in scope for the assessment.</p>
+    /// <p> The wrapper that contains the Amazon Web Services accounts and services that are in scope for the assessment. </p>
     pub fn scope(mut self, input: crate::types::Scope) -> Self {
         self.inner = self.inner.scope(input);
         self
     }
-    /// <p>The wrapper that contains the Amazon Web Services accounts and services that are in scope for the assessment.</p>
+    /// <p> The wrapper that contains the Amazon Web Services accounts and services that are in scope for the assessment. </p>
     pub fn set_scope(mut self, input: ::std::option::Option<crate::types::Scope>) -> Self {
         self.inner = self.inner.set_scope(input);
         self
     }
-    /// <p>The wrapper that contains the Amazon Web Services accounts and services that are in scope for the assessment.</p>
+    /// <p> The wrapper that contains the Amazon Web Services accounts and services that are in scope for the assessment. </p>
     pub fn get_scope(&self) -> &::std::option::Option<crate::types::Scope> {
         self.inner.get_scope()
     }
@@ -168,31 +168,31 @@ impl CreateAssessmentFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_roles`](Self::set_roles).
     ///
-    /// <p>The list of roles for the assessment.</p>
+    /// <p> The list of roles for the assessment. </p>
     pub fn roles(mut self, input: crate::types::Role) -> Self {
         self.inner = self.inner.roles(input);
         self
     }
-    /// <p>The list of roles for the assessment.</p>
+    /// <p> The list of roles for the assessment. </p>
     pub fn set_roles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Role>>) -> Self {
         self.inner = self.inner.set_roles(input);
         self
     }
-    /// <p>The list of roles for the assessment.</p>
+    /// <p> The list of roles for the assessment. </p>
     pub fn get_roles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Role>> {
         self.inner.get_roles()
     }
-    /// <p>The identifier for the framework that the assessment will be created from.</p>
+    /// <p> The identifier for the framework that the assessment will be created from. </p>
     pub fn framework_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.framework_id(input.into());
         self
     }
-    /// <p>The identifier for the framework that the assessment will be created from.</p>
+    /// <p> The identifier for the framework that the assessment will be created from. </p>
     pub fn set_framework_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_framework_id(input);
         self
     }
-    /// <p>The identifier for the framework that the assessment will be created from.</p>
+    /// <p> The identifier for the framework that the assessment will be created from. </p>
     pub fn get_framework_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_framework_id()
     }
@@ -200,17 +200,17 @@ impl CreateAssessmentFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The tags that are associated with the assessment.</p>
+    /// <p> The tags that are associated with the assessment. </p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
-    /// <p>The tags that are associated with the assessment.</p>
+    /// <p> The tags that are associated with the assessment. </p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>The tags that are associated with the assessment.</p>
+    /// <p> The tags that are associated with the assessment. </p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }

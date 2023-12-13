@@ -108,21 +108,21 @@ impl StartChangeRequestExecutionFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The date and time specified in the change request to run the Automation runbooks.</p><note>
+    /// <p>The date and time specified in the change request to run the Automation runbooks.</p> <note>
     /// <p>The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change request have been received.</p>
     /// </note>
     pub fn scheduled_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.scheduled_time(input);
         self
     }
-    /// <p>The date and time specified in the change request to run the Automation runbooks.</p><note>
+    /// <p>The date and time specified in the change request to run the Automation runbooks.</p> <note>
     /// <p>The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change request have been received.</p>
     /// </note>
     pub fn set_scheduled_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_scheduled_time(input);
         self
     }
-    /// <p>The date and time specified in the change request to run the Automation runbooks.</p><note>
+    /// <p>The date and time specified in the change request to run the Automation runbooks.</p> <note>
     /// <p>The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change request have been received.</p>
     /// </note>
     pub fn get_scheduled_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -208,24 +208,24 @@ impl StartChangeRequestExecutionFluentBuilder {
         self.inner.get_client_token()
     }
     /// <p>Indicates whether the change request can be approved automatically without the need for manual approvals.</p>
-    /// <p>If <code>AutoApprovable</code> is enabled in a change template, then setting <code>AutoApprove</code> to <code>true</code> in <code>StartChangeRequestExecution</code> creates a change request that bypasses approver review.</p><note>
-    /// <p>Change Calendar restrictions are not bypassed in this scenario. If the state of an associated calendar is <code>CLOSED</code>, change freeze approvers must still grant permission for this change request to run. If they don't, the change won't be processed until the calendar state is again <code>OPEN</code>.</p>
+    /// <p>If <code>AutoApprovable</code> is enabled in a change template, then setting <code>AutoApprove</code> to <code>true</code> in <code>StartChangeRequestExecution</code> creates a change request that bypasses approver review.</p> <note>
+    /// <p>Change Calendar restrictions are not bypassed in this scenario. If the state of an associated calendar is <code>CLOSED</code>, change freeze approvers must still grant permission for this change request to run. If they don't, the change won't be processed until the calendar state is again <code>OPEN</code>. </p>
     /// </note>
     pub fn auto_approve(mut self, input: bool) -> Self {
         self.inner = self.inner.auto_approve(input);
         self
     }
     /// <p>Indicates whether the change request can be approved automatically without the need for manual approvals.</p>
-    /// <p>If <code>AutoApprovable</code> is enabled in a change template, then setting <code>AutoApprove</code> to <code>true</code> in <code>StartChangeRequestExecution</code> creates a change request that bypasses approver review.</p><note>
-    /// <p>Change Calendar restrictions are not bypassed in this scenario. If the state of an associated calendar is <code>CLOSED</code>, change freeze approvers must still grant permission for this change request to run. If they don't, the change won't be processed until the calendar state is again <code>OPEN</code>.</p>
+    /// <p>If <code>AutoApprovable</code> is enabled in a change template, then setting <code>AutoApprove</code> to <code>true</code> in <code>StartChangeRequestExecution</code> creates a change request that bypasses approver review.</p> <note>
+    /// <p>Change Calendar restrictions are not bypassed in this scenario. If the state of an associated calendar is <code>CLOSED</code>, change freeze approvers must still grant permission for this change request to run. If they don't, the change won't be processed until the calendar state is again <code>OPEN</code>. </p>
     /// </note>
     pub fn set_auto_approve(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_auto_approve(input);
         self
     }
     /// <p>Indicates whether the change request can be approved automatically without the need for manual approvals.</p>
-    /// <p>If <code>AutoApprovable</code> is enabled in a change template, then setting <code>AutoApprove</code> to <code>true</code> in <code>StartChangeRequestExecution</code> creates a change request that bypasses approver review.</p><note>
-    /// <p>Change Calendar restrictions are not bypassed in this scenario. If the state of an associated calendar is <code>CLOSED</code>, change freeze approvers must still grant permission for this change request to run. If they don't, the change won't be processed until the calendar state is again <code>OPEN</code>.</p>
+    /// <p>If <code>AutoApprovable</code> is enabled in a change template, then setting <code>AutoApprove</code> to <code>true</code> in <code>StartChangeRequestExecution</code> creates a change request that bypasses approver review.</p> <note>
+    /// <p>Change Calendar restrictions are not bypassed in this scenario. If the state of an associated calendar is <code>CLOSED</code>, change freeze approvers must still grant permission for this change request to run. If they don't, the change won't be processed until the calendar state is again <code>OPEN</code>. </p>
     /// </note>
     pub fn get_auto_approve(&self) -> &::std::option::Option<bool> {
         self.inner.get_auto_approve()
@@ -234,21 +234,21 @@ impl StartChangeRequestExecutionFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_runbooks`](Self::set_runbooks).
     ///
-    /// <p>Information about the Automation runbooks that are run during the runbook workflow.</p><note>
+    /// <p>Information about the Automation runbooks that are run during the runbook workflow.</p> <note>
     /// <p>The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change request have been received.</p>
     /// </note>
     pub fn runbooks(mut self, input: crate::types::Runbook) -> Self {
         self.inner = self.inner.runbooks(input);
         self
     }
-    /// <p>Information about the Automation runbooks that are run during the runbook workflow.</p><note>
+    /// <p>Information about the Automation runbooks that are run during the runbook workflow.</p> <note>
     /// <p>The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change request have been received.</p>
     /// </note>
     pub fn set_runbooks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Runbook>>) -> Self {
         self.inner = self.inner.set_runbooks(input);
         self
     }
-    /// <p>Information about the Automation runbooks that are run during the runbook workflow.</p><note>
+    /// <p>Information about the Automation runbooks that are run during the runbook workflow.</p> <note>
     /// <p>The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change request have been received.</p>
     /// </note>
     pub fn get_runbooks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Runbook>> {
@@ -260,10 +260,8 @@ impl StartChangeRequestExecutionFluentBuilder {
     ///
     /// <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for a change request. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a change request to identify an environment or target Amazon Web Services Region. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Key=Environment,Value=Production</code></p></li>
-    /// <li>
-    /// <p><code>Key=Region,Value=us-east-2</code></p></li>
+    /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
+    /// <li> <p> <code>Key=Region,Value=us-east-2</code> </p> </li>
     /// </ul>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
@@ -271,10 +269,8 @@ impl StartChangeRequestExecutionFluentBuilder {
     }
     /// <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for a change request. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a change request to identify an environment or target Amazon Web Services Region. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Key=Environment,Value=Production</code></p></li>
-    /// <li>
-    /// <p><code>Key=Region,Value=us-east-2</code></p></li>
+    /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
+    /// <li> <p> <code>Key=Region,Value=us-east-2</code> </p> </li>
     /// </ul>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
@@ -282,10 +278,8 @@ impl StartChangeRequestExecutionFluentBuilder {
     }
     /// <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for a change request. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a change request to identify an environment or target Amazon Web Services Region. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Key=Environment,Value=Production</code></p></li>
-    /// <li>
-    /// <p><code>Key=Region,Value=us-east-2</code></p></li>
+    /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
+    /// <li> <p> <code>Key=Region,Value=us-east-2</code> </p> </li>
     /// </ul>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()

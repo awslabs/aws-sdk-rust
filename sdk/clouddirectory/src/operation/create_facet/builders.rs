@@ -156,20 +156,16 @@ impl CreateFacetFluentBuilder {
     }
     /// <p>Specifies whether a given object created from this facet is of type node, leaf node, policy or index.</p>
     /// <ul>
-    /// <li>
-    /// <p>Node: Can have multiple children but one parent.</p></li>
+    /// <li> <p>Node: Can have multiple children but one parent.</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p>Leaf node: Cannot have children but can have multiple parents.</p></li>
+    /// <li> <p>Leaf node: Cannot have children but can have multiple parents.</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p>Policy: Allows you to store a policy document and policy type. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p></li>
+    /// <li> <p>Policy: Allows you to store a policy document and policy type. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p>Index: Can be created with the Index API.</p></li>
+    /// <li> <p>Index: Can be created with the Index API.</p> </li>
     /// </ul>
     pub fn object_type(mut self, input: crate::types::ObjectType) -> Self {
         self.inner = self.inner.object_type(input);
@@ -177,20 +173,16 @@ impl CreateFacetFluentBuilder {
     }
     /// <p>Specifies whether a given object created from this facet is of type node, leaf node, policy or index.</p>
     /// <ul>
-    /// <li>
-    /// <p>Node: Can have multiple children but one parent.</p></li>
+    /// <li> <p>Node: Can have multiple children but one parent.</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p>Leaf node: Cannot have children but can have multiple parents.</p></li>
+    /// <li> <p>Leaf node: Cannot have children but can have multiple parents.</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p>Policy: Allows you to store a policy document and policy type. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p></li>
+    /// <li> <p>Policy: Allows you to store a policy document and policy type. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p>Index: Can be created with the Index API.</p></li>
+    /// <li> <p>Index: Can be created with the Index API.</p> </li>
     /// </ul>
     pub fn set_object_type(mut self, input: ::std::option::Option<crate::types::ObjectType>) -> Self {
         self.inner = self.inner.set_object_type(input);
@@ -198,20 +190,16 @@ impl CreateFacetFluentBuilder {
     }
     /// <p>Specifies whether a given object created from this facet is of type node, leaf node, policy or index.</p>
     /// <ul>
-    /// <li>
-    /// <p>Node: Can have multiple children but one parent.</p></li>
+    /// <li> <p>Node: Can have multiple children but one parent.</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p>Leaf node: Cannot have children but can have multiple parents.</p></li>
+    /// <li> <p>Leaf node: Cannot have children but can have multiple parents.</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p>Policy: Allows you to store a policy document and policy type. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p></li>
+    /// <li> <p>Policy: Allows you to store a policy document and policy type. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p>Index: Can be created with the Index API.</p></li>
+    /// <li> <p>Index: Can be created with the Index API.</p> </li>
     /// </ul>
     pub fn get_object_type(&self) -> &::std::option::Option<crate::types::ObjectType> {
         self.inner.get_object_type()

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ImportCertificateInput {
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an imported certificate to replace. To import a new certificate, omit this field.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an imported certificate to replace. To import a new certificate, omit this field. </p>
     pub certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>The certificate to import.</p>
     pub certificate: ::std::option::Option<::aws_smithy_types::Blob>,
@@ -11,12 +11,12 @@ pub struct ImportCertificateInput {
     pub private_key: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The PEM encoded certificate chain.</p>
     pub certificate_chain: ::std::option::Option<::aws_smithy_types::Blob>,
-    /// <p>One or more resource tags to associate with the imported certificate.</p>
+    /// <p>One or more resource tags to associate with the imported certificate. </p>
     /// <p>Note: You cannot apply tags when reimporting a certificate.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl ImportCertificateInput {
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an imported certificate to replace. To import a new certificate, omit this field.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an imported certificate to replace. To import a new certificate, omit this field. </p>
     pub fn certificate_arn(&self) -> ::std::option::Option<&str> {
         self.certificate_arn.as_deref()
     }
@@ -32,7 +32,7 @@ impl ImportCertificateInput {
     pub fn certificate_chain(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.certificate_chain.as_ref()
     }
-    /// <p>One or more resource tags to associate with the imported certificate.</p>
+    /// <p>One or more resource tags to associate with the imported certificate. </p>
     /// <p>Note: You cannot apply tags when reimporting a certificate.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
@@ -69,17 +69,17 @@ pub struct ImportCertificateInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl ImportCertificateInputBuilder {
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an imported certificate to replace. To import a new certificate, omit this field.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an imported certificate to replace. To import a new certificate, omit this field. </p>
     pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an imported certificate to replace. To import a new certificate, omit this field.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an imported certificate to replace. To import a new certificate, omit this field. </p>
     pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_arn = input;
         self
     }
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an imported certificate to replace. To import a new certificate, omit this field.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an imported certificate to replace. To import a new certificate, omit this field. </p>
     pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate_arn
     }
@@ -131,7 +131,7 @@ impl ImportCertificateInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>One or more resource tags to associate with the imported certificate.</p>
+    /// <p>One or more resource tags to associate with the imported certificate. </p>
     /// <p>Note: You cannot apply tags when reimporting a certificate.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
@@ -139,13 +139,13 @@ impl ImportCertificateInputBuilder {
         self.tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>One or more resource tags to associate with the imported certificate.</p>
+    /// <p>One or more resource tags to associate with the imported certificate. </p>
     /// <p>Note: You cannot apply tags when reimporting a certificate.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>One or more resource tags to associate with the imported certificate.</p>
+    /// <p>One or more resource tags to associate with the imported certificate. </p>
     /// <p>Note: You cannot apply tags when reimporting a certificate.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags

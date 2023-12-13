@@ -150,17 +150,17 @@ impl ExportVectorEnrichmentJobFluentBuilder {
     pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_execution_role_arn()
     }
-    /// <p>Output location information for exporting Vector Enrichment Job results.</p>
+    /// <p>Output location information for exporting Vector Enrichment Job results. </p>
     pub fn output_config(mut self, input: crate::types::ExportVectorEnrichmentJobOutputConfig) -> Self {
         self.inner = self.inner.output_config(input);
         self
     }
-    /// <p>Output location information for exporting Vector Enrichment Job results.</p>
+    /// <p>Output location information for exporting Vector Enrichment Job results. </p>
     pub fn set_output_config(mut self, input: ::std::option::Option<crate::types::ExportVectorEnrichmentJobOutputConfig>) -> Self {
         self.inner = self.inner.set_output_config(input);
         self
     }
-    /// <p>Output location information for exporting Vector Enrichment Job results.</p>
+    /// <p>Output location information for exporting Vector Enrichment Job results. </p>
     pub fn get_output_config(&self) -> &::std::option::Option<crate::types::ExportVectorEnrichmentJobOutputConfig> {
         self.inner.get_output_config()
     }

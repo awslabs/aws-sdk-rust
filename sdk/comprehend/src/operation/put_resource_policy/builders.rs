@@ -123,25 +123,25 @@ impl PutResourcePolicyFluentBuilder {
         self.inner.get_resource_arn()
     }
     /// <p>The JSON resource-based policy to attach to your custom model. Provide your JSON as a UTF-8 encoded string without line breaks. To provide valid JSON for your policy, enclose the attribute names and values in double quotes. If the JSON body is also enclosed in double quotes, then you must escape the double quotes that are inside the policy:</p>
-    /// <p><code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code></p>
+    /// <p> <code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code> </p>
     /// <p>To avoid escaping quotes, you can use single quotes to enclose the policy and double quotes to enclose the JSON names and values:</p>
-    /// <p><code>'{"attribute": "value", "attribute": ["value"]}'</code></p>
+    /// <p> <code>'{"attribute": "value", "attribute": ["value"]}'</code> </p>
     pub fn resource_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_policy(input.into());
         self
     }
     /// <p>The JSON resource-based policy to attach to your custom model. Provide your JSON as a UTF-8 encoded string without line breaks. To provide valid JSON for your policy, enclose the attribute names and values in double quotes. If the JSON body is also enclosed in double quotes, then you must escape the double quotes that are inside the policy:</p>
-    /// <p><code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code></p>
+    /// <p> <code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code> </p>
     /// <p>To avoid escaping quotes, you can use single quotes to enclose the policy and double quotes to enclose the JSON names and values:</p>
-    /// <p><code>'{"attribute": "value", "attribute": ["value"]}'</code></p>
+    /// <p> <code>'{"attribute": "value", "attribute": ["value"]}'</code> </p>
     pub fn set_resource_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_policy(input);
         self
     }
     /// <p>The JSON resource-based policy to attach to your custom model. Provide your JSON as a UTF-8 encoded string without line breaks. To provide valid JSON for your policy, enclose the attribute names and values in double quotes. If the JSON body is also enclosed in double quotes, then you must escape the double quotes that are inside the policy:</p>
-    /// <p><code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code></p>
+    /// <p> <code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code> </p>
     /// <p>To avoid escaping quotes, you can use single quotes to enclose the policy and double quotes to enclose the JSON names and values:</p>
-    /// <p><code>'{"attribute": "value", "attribute": ["value"]}'</code></p>
+    /// <p> <code>'{"attribute": "value", "attribute": ["value"]}'</code> </p>
     pub fn get_resource_policy(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_policy()
     }

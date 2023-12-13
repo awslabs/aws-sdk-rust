@@ -138,12 +138,9 @@ impl GetImpersonationRoleEffectFluentBuilder {
     }
     /// <p>The WorkMail organization user chosen to test the impersonation role. The following identity formats are available:</p>
     /// <ul>
-    /// <li>
-    /// <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code></p></li>
-    /// <li>
-    /// <p>Email address: <code>user@domain.tld</code></p></li>
-    /// <li>
-    /// <p>User name: <code>user</code></p></li>
+    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+    /// <li> <p>User name: <code>user</code> </p> </li>
     /// </ul>
     pub fn target_user(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_user(input.into());
@@ -151,12 +148,9 @@ impl GetImpersonationRoleEffectFluentBuilder {
     }
     /// <p>The WorkMail organization user chosen to test the impersonation role. The following identity formats are available:</p>
     /// <ul>
-    /// <li>
-    /// <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code></p></li>
-    /// <li>
-    /// <p>Email address: <code>user@domain.tld</code></p></li>
-    /// <li>
-    /// <p>User name: <code>user</code></p></li>
+    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+    /// <li> <p>User name: <code>user</code> </p> </li>
     /// </ul>
     pub fn set_target_user(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_user(input);
@@ -164,12 +158,9 @@ impl GetImpersonationRoleEffectFluentBuilder {
     }
     /// <p>The WorkMail organization user chosen to test the impersonation role. The following identity formats are available:</p>
     /// <ul>
-    /// <li>
-    /// <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code></p></li>
-    /// <li>
-    /// <p>Email address: <code>user@domain.tld</code></p></li>
-    /// <li>
-    /// <p>User name: <code>user</code></p></li>
+    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+    /// <li> <p>User name: <code>user</code> </p> </li>
     /// </ul>
     pub fn get_target_user(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_target_user()

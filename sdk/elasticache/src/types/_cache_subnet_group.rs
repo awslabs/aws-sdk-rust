@@ -2,10 +2,8 @@
 
 /// <p>Represents the output of one of the following operations:</p>
 /// <ul>
-/// <li>
-/// <p><code>CreateCacheSubnetGroup</code></p></li>
-/// <li>
-/// <p><code>ModifyCacheSubnetGroup</code></p></li>
+/// <li> <p> <code>CreateCacheSubnetGroup</code> </p> </li>
+/// <li> <p> <code>ModifyCacheSubnetGroup</code> </p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]

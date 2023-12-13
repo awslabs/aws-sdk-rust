@@ -2,8 +2,7 @@
 
 /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
 /// <ul>
-/// <li>
-/// <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p></li>
+/// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
@@ -27,14 +26,14 @@ pub struct GlobalReplicationGroup {
     /// <p>Indicates the slot configuration and global identifier for each slice group.</p>
     pub global_node_groups: ::std::option::Option<::std::vec::Vec<crate::types::GlobalNodeGroup>>,
     /// <p>A flag that enables using an <code>AuthToken</code> (password) when issuing Redis commands.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p>Default: <code>false</code> </p>
     pub auth_token_enabled: ::std::option::Option<bool>,
     /// <p>A flag that enables in-transit encryption when set to true.</p>
-    /// <p><b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
+    /// <p> <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
     pub transit_encryption_enabled: ::std::option::Option<bool>,
     /// <p>A flag that enables encryption at rest when set to <code>true</code>.</p>
-    /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the replication group is created. To enable encryption at rest on a replication group you must set <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create the replication group.</p>
-    /// <p><b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
+    /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the replication group is created. To enable encryption at rest on a replication group you must set <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create the replication group. </p>
+    /// <p> <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
     pub at_rest_encryption_enabled: ::std::option::Option<bool>,
     /// <p>The ARN (Amazon Resource Name) of the global replication group.</p>
     pub arn: ::std::option::Option<::std::string::String>,
@@ -81,18 +80,18 @@ impl GlobalReplicationGroup {
         self.global_node_groups.as_deref().unwrap_or_default()
     }
     /// <p>A flag that enables using an <code>AuthToken</code> (password) when issuing Redis commands.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p>Default: <code>false</code> </p>
     pub fn auth_token_enabled(&self) -> ::std::option::Option<bool> {
         self.auth_token_enabled
     }
     /// <p>A flag that enables in-transit encryption when set to true.</p>
-    /// <p><b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
+    /// <p> <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
     pub fn transit_encryption_enabled(&self) -> ::std::option::Option<bool> {
         self.transit_encryption_enabled
     }
     /// <p>A flag that enables encryption at rest when set to <code>true</code>.</p>
-    /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the replication group is created. To enable encryption at rest on a replication group you must set <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create the replication group.</p>
-    /// <p><b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
+    /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the replication group is created. To enable encryption at rest on a replication group you must set <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create the replication group. </p>
+    /// <p> <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
     pub fn at_rest_encryption_enabled(&self) -> ::std::option::Option<bool> {
         self.at_rest_encryption_enabled
     }
@@ -266,56 +265,56 @@ impl GlobalReplicationGroupBuilder {
         &self.global_node_groups
     }
     /// <p>A flag that enables using an <code>AuthToken</code> (password) when issuing Redis commands.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p>Default: <code>false</code> </p>
     pub fn auth_token_enabled(mut self, input: bool) -> Self {
         self.auth_token_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>A flag that enables using an <code>AuthToken</code> (password) when issuing Redis commands.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p>Default: <code>false</code> </p>
     pub fn set_auth_token_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auth_token_enabled = input;
         self
     }
     /// <p>A flag that enables using an <code>AuthToken</code> (password) when issuing Redis commands.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p>Default: <code>false</code> </p>
     pub fn get_auth_token_enabled(&self) -> &::std::option::Option<bool> {
         &self.auth_token_enabled
     }
     /// <p>A flag that enables in-transit encryption when set to true.</p>
-    /// <p><b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
+    /// <p> <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
     pub fn transit_encryption_enabled(mut self, input: bool) -> Self {
         self.transit_encryption_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>A flag that enables in-transit encryption when set to true.</p>
-    /// <p><b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
+    /// <p> <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
     pub fn set_transit_encryption_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.transit_encryption_enabled = input;
         self
     }
     /// <p>A flag that enables in-transit encryption when set to true.</p>
-    /// <p><b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
+    /// <p> <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
     pub fn get_transit_encryption_enabled(&self) -> &::std::option::Option<bool> {
         &self.transit_encryption_enabled
     }
     /// <p>A flag that enables encryption at rest when set to <code>true</code>.</p>
-    /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the replication group is created. To enable encryption at rest on a replication group you must set <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create the replication group.</p>
-    /// <p><b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
+    /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the replication group is created. To enable encryption at rest on a replication group you must set <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create the replication group. </p>
+    /// <p> <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
     pub fn at_rest_encryption_enabled(mut self, input: bool) -> Self {
         self.at_rest_encryption_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>A flag that enables encryption at rest when set to <code>true</code>.</p>
-    /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the replication group is created. To enable encryption at rest on a replication group you must set <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create the replication group.</p>
-    /// <p><b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
+    /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the replication group is created. To enable encryption at rest on a replication group you must set <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create the replication group. </p>
+    /// <p> <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
     pub fn set_at_rest_encryption_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.at_rest_encryption_enabled = input;
         self
     }
     /// <p>A flag that enables encryption at rest when set to <code>true</code>.</p>
-    /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the replication group is created. To enable encryption at rest on a replication group you must set <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create the replication group.</p>
-    /// <p><b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
+    /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the replication group is created. To enable encryption at rest on a replication group you must set <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create the replication group. </p>
+    /// <p> <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
     pub fn get_at_rest_encryption_enabled(&self) -> &::std::option::Option<bool> {
         &self.at_rest_encryption_enabled
     }

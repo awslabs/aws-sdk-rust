@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PendingDeploymentSummary {
-    /// <p>The name of the endpoint configuration used in the deployment.</p>
+    /// <p>The name of the endpoint configuration used in the deployment. </p>
     pub endpoint_config_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_PendingProductionVariantSummary.html">PendingProductionVariantSummary</a> objects, one for each model hosted behind this endpoint for the in-progress deployment.</p>
     pub production_variants: ::std::option::Option<::std::vec::Vec<crate::types::PendingProductionVariantSummary>>,
@@ -14,7 +14,7 @@ pub struct PendingDeploymentSummary {
     pub shadow_production_variants: ::std::option::Option<::std::vec::Vec<crate::types::PendingProductionVariantSummary>>,
 }
 impl PendingDeploymentSummary {
-    /// <p>The name of the endpoint configuration used in the deployment.</p>
+    /// <p>The name of the endpoint configuration used in the deployment. </p>
     pub fn endpoint_config_name(&self) -> ::std::option::Option<&str> {
         self.endpoint_config_name.as_deref()
     }
@@ -52,18 +52,18 @@ pub struct PendingDeploymentSummaryBuilder {
     pub(crate) shadow_production_variants: ::std::option::Option<::std::vec::Vec<crate::types::PendingProductionVariantSummary>>,
 }
 impl PendingDeploymentSummaryBuilder {
-    /// <p>The name of the endpoint configuration used in the deployment.</p>
+    /// <p>The name of the endpoint configuration used in the deployment. </p>
     /// This field is required.
     pub fn endpoint_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_config_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the endpoint configuration used in the deployment.</p>
+    /// <p>The name of the endpoint configuration used in the deployment. </p>
     pub fn set_endpoint_config_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_config_name = input;
         self
     }
-    /// <p>The name of the endpoint configuration used in the deployment.</p>
+    /// <p>The name of the endpoint configuration used in the deployment. </p>
     pub fn get_endpoint_config_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.endpoint_config_name
     }

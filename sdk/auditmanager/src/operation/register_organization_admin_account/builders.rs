@@ -22,7 +22,7 @@ impl RegisterOrganizationAdminAccountInputBuilder {
 }
 /// Fluent builder constructing a request to `RegisterOrganizationAdminAccount`.
 ///
-/// <p>Enables an Amazon Web Services account within the organization as the delegated administrator for Audit Manager.</p>
+/// <p> Enables an Amazon Web Services account within the organization as the delegated administrator for Audit Manager. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RegisterOrganizationAdminAccountFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl RegisterOrganizationAdminAccountFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier for the delegated administrator account.</p>
+    /// <p> The identifier for the delegated administrator account. </p>
     pub fn admin_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.admin_account_id(input.into());
         self
     }
-    /// <p>The identifier for the delegated administrator account.</p>
+    /// <p> The identifier for the delegated administrator account. </p>
     pub fn set_admin_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_admin_account_id(input);
         self
     }
-    /// <p>The identifier for the delegated administrator account.</p>
+    /// <p> The identifier for the delegated administrator account. </p>
     pub fn get_admin_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_admin_account_id()
     }

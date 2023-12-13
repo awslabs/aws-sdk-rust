@@ -33,17 +33,13 @@ pub struct KeySigningKey {
     /// <dd>
     /// <p>The key policy must give permission for the following actions:</p>
     /// <ul>
-    /// <li>
-    /// <p>DescribeKey</p></li>
-    /// <li>
-    /// <p>GetPublicKey</p></li>
-    /// <li>
-    /// <p>Sign</p></li>
+    /// <li> <p>DescribeKey</p> </li>
+    /// <li> <p>GetPublicKey</p> </li>
+    /// <li> <p>Sign</p> </li>
     /// </ul>
     /// <p>The key policy must also include the Amazon Route 53 service in the principal for your account. Specify the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>"Service": "dnssec-route53.amazonaws.com"</code></p></li>
+    /// <li> <p> <code>"Service": "dnssec-route53.amazonaws.com"</code> </p> </li>
     /// </ul>
     /// </dd>
     /// </dl>
@@ -51,11 +47,11 @@ pub struct KeySigningKey {
     pub kms_arn: ::std::option::Option<::std::string::String>,
     /// <p>An integer that specifies how the key is used. For key-signing key (KSK), this value is always 257.</p>
     pub flag: i32,
-    /// <p>A string used to represent the signing algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.1">RFC-8624 Section 3.1</a>.</p>
+    /// <p>A string used to represent the signing algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.1">RFC-8624 Section 3.1</a>. </p>
     pub signing_algorithm_mnemonic: ::std::option::Option<::std::string::String>,
-    /// <p>An integer used to represent the signing algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.1">RFC-8624 Section 3.1</a>.</p>
+    /// <p>An integer used to represent the signing algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.1">RFC-8624 Section 3.1</a>. </p>
     pub signing_algorithm_type: i32,
-    /// <p>A string used to represent the delegation signer digest algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.3">RFC-8624 Section 3.3</a>.</p>
+    /// <p>A string used to represent the delegation signer digest algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.3">RFC-8624 Section 3.3</a>. </p>
     pub digest_algorithm_mnemonic: ::std::option::Option<::std::string::String>,
     /// <p>An integer used to represent the delegation signer digest algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.3">RFC-8624 Section 3.3</a>.</p>
     pub digest_algorithm_type: i32,
@@ -143,17 +139,13 @@ impl KeySigningKey {
     /// <dd>
     /// <p>The key policy must give permission for the following actions:</p>
     /// <ul>
-    /// <li>
-    /// <p>DescribeKey</p></li>
-    /// <li>
-    /// <p>GetPublicKey</p></li>
-    /// <li>
-    /// <p>Sign</p></li>
+    /// <li> <p>DescribeKey</p> </li>
+    /// <li> <p>GetPublicKey</p> </li>
+    /// <li> <p>Sign</p> </li>
     /// </ul>
     /// <p>The key policy must also include the Amazon Route 53 service in the principal for your account. Specify the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>"Service": "dnssec-route53.amazonaws.com"</code></p></li>
+    /// <li> <p> <code>"Service": "dnssec-route53.amazonaws.com"</code> </p> </li>
     /// </ul>
     /// </dd>
     /// </dl>
@@ -165,15 +157,15 @@ impl KeySigningKey {
     pub fn flag(&self) -> i32 {
         self.flag
     }
-    /// <p>A string used to represent the signing algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.1">RFC-8624 Section 3.1</a>.</p>
+    /// <p>A string used to represent the signing algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.1">RFC-8624 Section 3.1</a>. </p>
     pub fn signing_algorithm_mnemonic(&self) -> ::std::option::Option<&str> {
         self.signing_algorithm_mnemonic.as_deref()
     }
-    /// <p>An integer used to represent the signing algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.1">RFC-8624 Section 3.1</a>.</p>
+    /// <p>An integer used to represent the signing algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.1">RFC-8624 Section 3.1</a>. </p>
     pub fn signing_algorithm_type(&self) -> i32 {
         self.signing_algorithm_type
     }
-    /// <p>A string used to represent the delegation signer digest algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.3">RFC-8624 Section 3.3</a>.</p>
+    /// <p>A string used to represent the delegation signer digest algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.3">RFC-8624 Section 3.3</a>. </p>
     pub fn digest_algorithm_mnemonic(&self) -> ::std::option::Option<&str> {
         self.digest_algorithm_mnemonic.as_deref()
     }
@@ -321,17 +313,13 @@ impl KeySigningKeyBuilder {
     /// <dd>
     /// <p>The key policy must give permission for the following actions:</p>
     /// <ul>
-    /// <li>
-    /// <p>DescribeKey</p></li>
-    /// <li>
-    /// <p>GetPublicKey</p></li>
-    /// <li>
-    /// <p>Sign</p></li>
+    /// <li> <p>DescribeKey</p> </li>
+    /// <li> <p>GetPublicKey</p> </li>
+    /// <li> <p>Sign</p> </li>
     /// </ul>
     /// <p>The key policy must also include the Amazon Route 53 service in the principal for your account. Specify the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>"Service": "dnssec-route53.amazonaws.com"</code></p></li>
+    /// <li> <p> <code>"Service": "dnssec-route53.amazonaws.com"</code> </p> </li>
     /// </ul>
     /// </dd>
     /// </dl>
@@ -367,17 +355,13 @@ impl KeySigningKeyBuilder {
     /// <dd>
     /// <p>The key policy must give permission for the following actions:</p>
     /// <ul>
-    /// <li>
-    /// <p>DescribeKey</p></li>
-    /// <li>
-    /// <p>GetPublicKey</p></li>
-    /// <li>
-    /// <p>Sign</p></li>
+    /// <li> <p>DescribeKey</p> </li>
+    /// <li> <p>GetPublicKey</p> </li>
+    /// <li> <p>Sign</p> </li>
     /// </ul>
     /// <p>The key policy must also include the Amazon Route 53 service in the principal for your account. Specify the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>"Service": "dnssec-route53.amazonaws.com"</code></p></li>
+    /// <li> <p> <code>"Service": "dnssec-route53.amazonaws.com"</code> </p> </li>
     /// </ul>
     /// </dd>
     /// </dl>
@@ -413,17 +397,13 @@ impl KeySigningKeyBuilder {
     /// <dd>
     /// <p>The key policy must give permission for the following actions:</p>
     /// <ul>
-    /// <li>
-    /// <p>DescribeKey</p></li>
-    /// <li>
-    /// <p>GetPublicKey</p></li>
-    /// <li>
-    /// <p>Sign</p></li>
+    /// <li> <p>DescribeKey</p> </li>
+    /// <li> <p>GetPublicKey</p> </li>
+    /// <li> <p>Sign</p> </li>
     /// </ul>
     /// <p>The key policy must also include the Amazon Route 53 service in the principal for your account. Specify the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>"Service": "dnssec-route53.amazonaws.com"</code></p></li>
+    /// <li> <p> <code>"Service": "dnssec-route53.amazonaws.com"</code> </p> </li>
     /// </ul>
     /// </dd>
     /// </dl>
@@ -445,45 +425,45 @@ impl KeySigningKeyBuilder {
     pub fn get_flag(&self) -> &::std::option::Option<i32> {
         &self.flag
     }
-    /// <p>A string used to represent the signing algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.1">RFC-8624 Section 3.1</a>.</p>
+    /// <p>A string used to represent the signing algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.1">RFC-8624 Section 3.1</a>. </p>
     pub fn signing_algorithm_mnemonic(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.signing_algorithm_mnemonic = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A string used to represent the signing algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.1">RFC-8624 Section 3.1</a>.</p>
+    /// <p>A string used to represent the signing algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.1">RFC-8624 Section 3.1</a>. </p>
     pub fn set_signing_algorithm_mnemonic(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.signing_algorithm_mnemonic = input;
         self
     }
-    /// <p>A string used to represent the signing algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.1">RFC-8624 Section 3.1</a>.</p>
+    /// <p>A string used to represent the signing algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.1">RFC-8624 Section 3.1</a>. </p>
     pub fn get_signing_algorithm_mnemonic(&self) -> &::std::option::Option<::std::string::String> {
         &self.signing_algorithm_mnemonic
     }
-    /// <p>An integer used to represent the signing algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.1">RFC-8624 Section 3.1</a>.</p>
+    /// <p>An integer used to represent the signing algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.1">RFC-8624 Section 3.1</a>. </p>
     pub fn signing_algorithm_type(mut self, input: i32) -> Self {
         self.signing_algorithm_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An integer used to represent the signing algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.1">RFC-8624 Section 3.1</a>.</p>
+    /// <p>An integer used to represent the signing algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.1">RFC-8624 Section 3.1</a>. </p>
     pub fn set_signing_algorithm_type(mut self, input: ::std::option::Option<i32>) -> Self {
         self.signing_algorithm_type = input;
         self
     }
-    /// <p>An integer used to represent the signing algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.1">RFC-8624 Section 3.1</a>.</p>
+    /// <p>An integer used to represent the signing algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.1">RFC-8624 Section 3.1</a>. </p>
     pub fn get_signing_algorithm_type(&self) -> &::std::option::Option<i32> {
         &self.signing_algorithm_type
     }
-    /// <p>A string used to represent the delegation signer digest algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.3">RFC-8624 Section 3.3</a>.</p>
+    /// <p>A string used to represent the delegation signer digest algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.3">RFC-8624 Section 3.3</a>. </p>
     pub fn digest_algorithm_mnemonic(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.digest_algorithm_mnemonic = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A string used to represent the delegation signer digest algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.3">RFC-8624 Section 3.3</a>.</p>
+    /// <p>A string used to represent the delegation signer digest algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.3">RFC-8624 Section 3.3</a>. </p>
     pub fn set_digest_algorithm_mnemonic(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.digest_algorithm_mnemonic = input;
         self
     }
-    /// <p>A string used to represent the delegation signer digest algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.3">RFC-8624 Section 3.3</a>.</p>
+    /// <p>A string used to represent the delegation signer digest algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.3">RFC-8624 Section 3.3</a>. </p>
     pub fn get_digest_algorithm_mnemonic(&self) -> &::std::option::Option<::std::string::String> {
         &self.digest_algorithm_mnemonic
     }

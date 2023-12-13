@@ -23,7 +23,7 @@ impl SetIdentityPoolConfigurationInputBuilder {
 /// Fluent builder constructing a request to `SetIdentityPoolConfiguration`.
 ///
 /// <p>Sets the necessary configuration for push sync.</p>
-/// <p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p><examples>
+/// <p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p> <examples>
 /// <example>
 /// <name>
 /// SetIdentityPoolConfiguration

@@ -22,7 +22,7 @@ impl UpdateCustomRoutingListenerInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateCustomRoutingListener`.
 ///
-/// <p>Update a listener for a custom routing accelerator.</p>
+/// <p>Update a listener for a custom routing accelerator. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateCustomRoutingListenerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

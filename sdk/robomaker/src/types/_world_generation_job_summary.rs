@@ -22,19 +22,19 @@ pub struct WorldGenerationJobSummary {
     /// Running
     /// </dt>
     /// <dd>
-    /// <p>The world generator job is running.</p>
+    /// <p>The world generator job is running. </p>
     /// </dd>
     /// <dt>
     /// Completed
     /// </dt>
     /// <dd>
-    /// <p>The world generator job completed.</p>
+    /// <p>The world generator job completed. </p>
     /// </dd>
     /// <dt>
     /// Failed
     /// </dt>
     /// <dd>
-    /// <p>The world generator job failed. See <code>failureCode</code> for more information.</p>
+    /// <p>The world generator job failed. See <code>failureCode</code> for more information. </p>
     /// </dd>
     /// <dt>
     /// PartialFailed
@@ -88,19 +88,19 @@ impl WorldGenerationJobSummary {
     /// Running
     /// </dt>
     /// <dd>
-    /// <p>The world generator job is running.</p>
+    /// <p>The world generator job is running. </p>
     /// </dd>
     /// <dt>
     /// Completed
     /// </dt>
     /// <dd>
-    /// <p>The world generator job completed.</p>
+    /// <p>The world generator job completed. </p>
     /// </dd>
     /// <dt>
     /// Failed
     /// </dt>
     /// <dd>
-    /// <p>The world generator job failed. See <code>failureCode</code> for more information.</p>
+    /// <p>The world generator job failed. See <code>failureCode</code> for more information. </p>
     /// </dd>
     /// <dt>
     /// PartialFailed
@@ -211,19 +211,19 @@ impl WorldGenerationJobSummaryBuilder {
     /// Running
     /// </dt>
     /// <dd>
-    /// <p>The world generator job is running.</p>
+    /// <p>The world generator job is running. </p>
     /// </dd>
     /// <dt>
     /// Completed
     /// </dt>
     /// <dd>
-    /// <p>The world generator job completed.</p>
+    /// <p>The world generator job completed. </p>
     /// </dd>
     /// <dt>
     /// Failed
     /// </dt>
     /// <dd>
-    /// <p>The world generator job failed. See <code>failureCode</code> for more information.</p>
+    /// <p>The world generator job failed. See <code>failureCode</code> for more information. </p>
     /// </dd>
     /// <dt>
     /// PartialFailed
@@ -260,19 +260,19 @@ impl WorldGenerationJobSummaryBuilder {
     /// Running
     /// </dt>
     /// <dd>
-    /// <p>The world generator job is running.</p>
+    /// <p>The world generator job is running. </p>
     /// </dd>
     /// <dt>
     /// Completed
     /// </dt>
     /// <dd>
-    /// <p>The world generator job completed.</p>
+    /// <p>The world generator job completed. </p>
     /// </dd>
     /// <dt>
     /// Failed
     /// </dt>
     /// <dd>
-    /// <p>The world generator job failed. See <code>failureCode</code> for more information.</p>
+    /// <p>The world generator job failed. See <code>failureCode</code> for more information. </p>
     /// </dd>
     /// <dt>
     /// PartialFailed
@@ -309,19 +309,19 @@ impl WorldGenerationJobSummaryBuilder {
     /// Running
     /// </dt>
     /// <dd>
-    /// <p>The world generator job is running.</p>
+    /// <p>The world generator job is running. </p>
     /// </dd>
     /// <dt>
     /// Completed
     /// </dt>
     /// <dd>
-    /// <p>The world generator job completed.</p>
+    /// <p>The world generator job completed. </p>
     /// </dd>
     /// <dt>
     /// Failed
     /// </dt>
     /// <dd>
-    /// <p>The world generator job failed. See <code>failureCode</code> for more information.</p>
+    /// <p>The world generator job failed. See <code>failureCode</code> for more information. </p>
     /// </dd>
     /// <dt>
     /// PartialFailed

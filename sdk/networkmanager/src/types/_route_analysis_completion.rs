@@ -8,24 +8,15 @@ pub struct RouteAnalysisCompletion {
     pub result_code: ::std::option::Option<crate::types::RouteAnalysisCompletionResultCode>,
     /// <p>The reason code. Available only if a connection is not found.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>BLACKHOLE_ROUTE_FOR_DESTINATION_FOUND</code> - Found a black hole route with the destination CIDR block.</p></li>
-    /// <li>
-    /// <p><code>CYCLIC_PATH_DETECTED</code> - Found the same resource multiple times while traversing the path.</p></li>
-    /// <li>
-    /// <p><code>INACTIVE_ROUTE_FOR_DESTINATION_FOUND</code> - Found an inactive route with the destination CIDR block.</p></li>
-    /// <li>
-    /// <p><code>MAX_HOPS_EXCEEDED</code> - Analysis exceeded 64 hops without finding the destination.</p></li>
-    /// <li>
-    /// <p><code>ROUTE_NOT_FOUND</code> - Cannot find a route table with the destination CIDR block.</p></li>
-    /// <li>
-    /// <p><code>TGW_ATTACH_ARN_NO_MATCH</code> - Found an attachment, but not with the correct destination ARN.</p></li>
-    /// <li>
-    /// <p><code>TGW_ATTACH_NOT_FOUND</code> - Cannot find an attachment.</p></li>
-    /// <li>
-    /// <p><code>TGW_ATTACH_NOT_IN_TGW</code> - Found an attachment, but not to the correct transit gateway.</p></li>
-    /// <li>
-    /// <p><code>TGW_ATTACH_STABLE_ROUTE_TABLE_NOT_FOUND</code> - The state of the route table association is not associated.</p></li>
+    /// <li> <p> <code>BLACKHOLE_ROUTE_FOR_DESTINATION_FOUND</code> - Found a black hole route with the destination CIDR block.</p> </li>
+    /// <li> <p> <code>CYCLIC_PATH_DETECTED</code> - Found the same resource multiple times while traversing the path.</p> </li>
+    /// <li> <p> <code>INACTIVE_ROUTE_FOR_DESTINATION_FOUND</code> - Found an inactive route with the destination CIDR block.</p> </li>
+    /// <li> <p> <code>MAX_HOPS_EXCEEDED</code> - Analysis exceeded 64 hops without finding the destination.</p> </li>
+    /// <li> <p> <code>ROUTE_NOT_FOUND</code> - Cannot find a route table with the destination CIDR block.</p> </li>
+    /// <li> <p> <code>TGW_ATTACH_ARN_NO_MATCH</code> - Found an attachment, but not with the correct destination ARN.</p> </li>
+    /// <li> <p> <code>TGW_ATTACH_NOT_FOUND</code> - Cannot find an attachment.</p> </li>
+    /// <li> <p> <code>TGW_ATTACH_NOT_IN_TGW</code> - Found an attachment, but not to the correct transit gateway.</p> </li>
+    /// <li> <p> <code>TGW_ATTACH_STABLE_ROUTE_TABLE_NOT_FOUND</code> - The state of the route table association is not associated.</p> </li>
     /// </ul>
     pub reason_code: ::std::option::Option<crate::types::RouteAnalysisCompletionReasonCode>,
     /// <p>Additional information about the path. Available only if a connection is not found.</p>
@@ -38,24 +29,15 @@ impl RouteAnalysisCompletion {
     }
     /// <p>The reason code. Available only if a connection is not found.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>BLACKHOLE_ROUTE_FOR_DESTINATION_FOUND</code> - Found a black hole route with the destination CIDR block.</p></li>
-    /// <li>
-    /// <p><code>CYCLIC_PATH_DETECTED</code> - Found the same resource multiple times while traversing the path.</p></li>
-    /// <li>
-    /// <p><code>INACTIVE_ROUTE_FOR_DESTINATION_FOUND</code> - Found an inactive route with the destination CIDR block.</p></li>
-    /// <li>
-    /// <p><code>MAX_HOPS_EXCEEDED</code> - Analysis exceeded 64 hops without finding the destination.</p></li>
-    /// <li>
-    /// <p><code>ROUTE_NOT_FOUND</code> - Cannot find a route table with the destination CIDR block.</p></li>
-    /// <li>
-    /// <p><code>TGW_ATTACH_ARN_NO_MATCH</code> - Found an attachment, but not with the correct destination ARN.</p></li>
-    /// <li>
-    /// <p><code>TGW_ATTACH_NOT_FOUND</code> - Cannot find an attachment.</p></li>
-    /// <li>
-    /// <p><code>TGW_ATTACH_NOT_IN_TGW</code> - Found an attachment, but not to the correct transit gateway.</p></li>
-    /// <li>
-    /// <p><code>TGW_ATTACH_STABLE_ROUTE_TABLE_NOT_FOUND</code> - The state of the route table association is not associated.</p></li>
+    /// <li> <p> <code>BLACKHOLE_ROUTE_FOR_DESTINATION_FOUND</code> - Found a black hole route with the destination CIDR block.</p> </li>
+    /// <li> <p> <code>CYCLIC_PATH_DETECTED</code> - Found the same resource multiple times while traversing the path.</p> </li>
+    /// <li> <p> <code>INACTIVE_ROUTE_FOR_DESTINATION_FOUND</code> - Found an inactive route with the destination CIDR block.</p> </li>
+    /// <li> <p> <code>MAX_HOPS_EXCEEDED</code> - Analysis exceeded 64 hops without finding the destination.</p> </li>
+    /// <li> <p> <code>ROUTE_NOT_FOUND</code> - Cannot find a route table with the destination CIDR block.</p> </li>
+    /// <li> <p> <code>TGW_ATTACH_ARN_NO_MATCH</code> - Found an attachment, but not with the correct destination ARN.</p> </li>
+    /// <li> <p> <code>TGW_ATTACH_NOT_FOUND</code> - Cannot find an attachment.</p> </li>
+    /// <li> <p> <code>TGW_ATTACH_NOT_IN_TGW</code> - Found an attachment, but not to the correct transit gateway.</p> </li>
+    /// <li> <p> <code>TGW_ATTACH_STABLE_ROUTE_TABLE_NOT_FOUND</code> - The state of the route table association is not associated.</p> </li>
     /// </ul>
     pub fn reason_code(&self) -> ::std::option::Option<&crate::types::RouteAnalysisCompletionReasonCode> {
         self.reason_code.as_ref()
@@ -97,24 +79,15 @@ impl RouteAnalysisCompletionBuilder {
     }
     /// <p>The reason code. Available only if a connection is not found.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>BLACKHOLE_ROUTE_FOR_DESTINATION_FOUND</code> - Found a black hole route with the destination CIDR block.</p></li>
-    /// <li>
-    /// <p><code>CYCLIC_PATH_DETECTED</code> - Found the same resource multiple times while traversing the path.</p></li>
-    /// <li>
-    /// <p><code>INACTIVE_ROUTE_FOR_DESTINATION_FOUND</code> - Found an inactive route with the destination CIDR block.</p></li>
-    /// <li>
-    /// <p><code>MAX_HOPS_EXCEEDED</code> - Analysis exceeded 64 hops without finding the destination.</p></li>
-    /// <li>
-    /// <p><code>ROUTE_NOT_FOUND</code> - Cannot find a route table with the destination CIDR block.</p></li>
-    /// <li>
-    /// <p><code>TGW_ATTACH_ARN_NO_MATCH</code> - Found an attachment, but not with the correct destination ARN.</p></li>
-    /// <li>
-    /// <p><code>TGW_ATTACH_NOT_FOUND</code> - Cannot find an attachment.</p></li>
-    /// <li>
-    /// <p><code>TGW_ATTACH_NOT_IN_TGW</code> - Found an attachment, but not to the correct transit gateway.</p></li>
-    /// <li>
-    /// <p><code>TGW_ATTACH_STABLE_ROUTE_TABLE_NOT_FOUND</code> - The state of the route table association is not associated.</p></li>
+    /// <li> <p> <code>BLACKHOLE_ROUTE_FOR_DESTINATION_FOUND</code> - Found a black hole route with the destination CIDR block.</p> </li>
+    /// <li> <p> <code>CYCLIC_PATH_DETECTED</code> - Found the same resource multiple times while traversing the path.</p> </li>
+    /// <li> <p> <code>INACTIVE_ROUTE_FOR_DESTINATION_FOUND</code> - Found an inactive route with the destination CIDR block.</p> </li>
+    /// <li> <p> <code>MAX_HOPS_EXCEEDED</code> - Analysis exceeded 64 hops without finding the destination.</p> </li>
+    /// <li> <p> <code>ROUTE_NOT_FOUND</code> - Cannot find a route table with the destination CIDR block.</p> </li>
+    /// <li> <p> <code>TGW_ATTACH_ARN_NO_MATCH</code> - Found an attachment, but not with the correct destination ARN.</p> </li>
+    /// <li> <p> <code>TGW_ATTACH_NOT_FOUND</code> - Cannot find an attachment.</p> </li>
+    /// <li> <p> <code>TGW_ATTACH_NOT_IN_TGW</code> - Found an attachment, but not to the correct transit gateway.</p> </li>
+    /// <li> <p> <code>TGW_ATTACH_STABLE_ROUTE_TABLE_NOT_FOUND</code> - The state of the route table association is not associated.</p> </li>
     /// </ul>
     pub fn reason_code(mut self, input: crate::types::RouteAnalysisCompletionReasonCode) -> Self {
         self.reason_code = ::std::option::Option::Some(input);
@@ -122,24 +95,15 @@ impl RouteAnalysisCompletionBuilder {
     }
     /// <p>The reason code. Available only if a connection is not found.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>BLACKHOLE_ROUTE_FOR_DESTINATION_FOUND</code> - Found a black hole route with the destination CIDR block.</p></li>
-    /// <li>
-    /// <p><code>CYCLIC_PATH_DETECTED</code> - Found the same resource multiple times while traversing the path.</p></li>
-    /// <li>
-    /// <p><code>INACTIVE_ROUTE_FOR_DESTINATION_FOUND</code> - Found an inactive route with the destination CIDR block.</p></li>
-    /// <li>
-    /// <p><code>MAX_HOPS_EXCEEDED</code> - Analysis exceeded 64 hops without finding the destination.</p></li>
-    /// <li>
-    /// <p><code>ROUTE_NOT_FOUND</code> - Cannot find a route table with the destination CIDR block.</p></li>
-    /// <li>
-    /// <p><code>TGW_ATTACH_ARN_NO_MATCH</code> - Found an attachment, but not with the correct destination ARN.</p></li>
-    /// <li>
-    /// <p><code>TGW_ATTACH_NOT_FOUND</code> - Cannot find an attachment.</p></li>
-    /// <li>
-    /// <p><code>TGW_ATTACH_NOT_IN_TGW</code> - Found an attachment, but not to the correct transit gateway.</p></li>
-    /// <li>
-    /// <p><code>TGW_ATTACH_STABLE_ROUTE_TABLE_NOT_FOUND</code> - The state of the route table association is not associated.</p></li>
+    /// <li> <p> <code>BLACKHOLE_ROUTE_FOR_DESTINATION_FOUND</code> - Found a black hole route with the destination CIDR block.</p> </li>
+    /// <li> <p> <code>CYCLIC_PATH_DETECTED</code> - Found the same resource multiple times while traversing the path.</p> </li>
+    /// <li> <p> <code>INACTIVE_ROUTE_FOR_DESTINATION_FOUND</code> - Found an inactive route with the destination CIDR block.</p> </li>
+    /// <li> <p> <code>MAX_HOPS_EXCEEDED</code> - Analysis exceeded 64 hops without finding the destination.</p> </li>
+    /// <li> <p> <code>ROUTE_NOT_FOUND</code> - Cannot find a route table with the destination CIDR block.</p> </li>
+    /// <li> <p> <code>TGW_ATTACH_ARN_NO_MATCH</code> - Found an attachment, but not with the correct destination ARN.</p> </li>
+    /// <li> <p> <code>TGW_ATTACH_NOT_FOUND</code> - Cannot find an attachment.</p> </li>
+    /// <li> <p> <code>TGW_ATTACH_NOT_IN_TGW</code> - Found an attachment, but not to the correct transit gateway.</p> </li>
+    /// <li> <p> <code>TGW_ATTACH_STABLE_ROUTE_TABLE_NOT_FOUND</code> - The state of the route table association is not associated.</p> </li>
     /// </ul>
     pub fn set_reason_code(mut self, input: ::std::option::Option<crate::types::RouteAnalysisCompletionReasonCode>) -> Self {
         self.reason_code = input;
@@ -147,24 +111,15 @@ impl RouteAnalysisCompletionBuilder {
     }
     /// <p>The reason code. Available only if a connection is not found.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>BLACKHOLE_ROUTE_FOR_DESTINATION_FOUND</code> - Found a black hole route with the destination CIDR block.</p></li>
-    /// <li>
-    /// <p><code>CYCLIC_PATH_DETECTED</code> - Found the same resource multiple times while traversing the path.</p></li>
-    /// <li>
-    /// <p><code>INACTIVE_ROUTE_FOR_DESTINATION_FOUND</code> - Found an inactive route with the destination CIDR block.</p></li>
-    /// <li>
-    /// <p><code>MAX_HOPS_EXCEEDED</code> - Analysis exceeded 64 hops without finding the destination.</p></li>
-    /// <li>
-    /// <p><code>ROUTE_NOT_FOUND</code> - Cannot find a route table with the destination CIDR block.</p></li>
-    /// <li>
-    /// <p><code>TGW_ATTACH_ARN_NO_MATCH</code> - Found an attachment, but not with the correct destination ARN.</p></li>
-    /// <li>
-    /// <p><code>TGW_ATTACH_NOT_FOUND</code> - Cannot find an attachment.</p></li>
-    /// <li>
-    /// <p><code>TGW_ATTACH_NOT_IN_TGW</code> - Found an attachment, but not to the correct transit gateway.</p></li>
-    /// <li>
-    /// <p><code>TGW_ATTACH_STABLE_ROUTE_TABLE_NOT_FOUND</code> - The state of the route table association is not associated.</p></li>
+    /// <li> <p> <code>BLACKHOLE_ROUTE_FOR_DESTINATION_FOUND</code> - Found a black hole route with the destination CIDR block.</p> </li>
+    /// <li> <p> <code>CYCLIC_PATH_DETECTED</code> - Found the same resource multiple times while traversing the path.</p> </li>
+    /// <li> <p> <code>INACTIVE_ROUTE_FOR_DESTINATION_FOUND</code> - Found an inactive route with the destination CIDR block.</p> </li>
+    /// <li> <p> <code>MAX_HOPS_EXCEEDED</code> - Analysis exceeded 64 hops without finding the destination.</p> </li>
+    /// <li> <p> <code>ROUTE_NOT_FOUND</code> - Cannot find a route table with the destination CIDR block.</p> </li>
+    /// <li> <p> <code>TGW_ATTACH_ARN_NO_MATCH</code> - Found an attachment, but not with the correct destination ARN.</p> </li>
+    /// <li> <p> <code>TGW_ATTACH_NOT_FOUND</code> - Cannot find an attachment.</p> </li>
+    /// <li> <p> <code>TGW_ATTACH_NOT_IN_TGW</code> - Found an attachment, but not to the correct transit gateway.</p> </li>
+    /// <li> <p> <code>TGW_ATTACH_STABLE_ROUTE_TABLE_NOT_FOUND</code> - The state of the route table association is not associated.</p> </li>
     /// </ul>
     pub fn get_reason_code(&self) -> &::std::option::Option<crate::types::RouteAnalysisCompletionReasonCode> {
         &self.reason_code

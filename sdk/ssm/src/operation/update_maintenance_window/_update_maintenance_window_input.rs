@@ -19,7 +19,7 @@ pub struct UpdateMaintenanceWindowInput {
     pub schedule_timezone: ::std::option::Option<::std::string::String>,
     /// <p>The number of days to wait after the date and time specified by a cron expression before running the maintenance window.</p>
     /// <p>For example, the following cron expression schedules a maintenance window to run the third Tuesday of every month at 11:30 PM.</p>
-    /// <p><code>cron(30 23 ? * TUE#3 *)</code></p>
+    /// <p> <code>cron(30 23 ? * TUE#3 *)</code> </p>
     /// <p>If the schedule offset is <code>2</code>, the maintenance window won't run until two days later.</p>
     pub schedule_offset: ::std::option::Option<i32>,
     /// <p>The duration of the maintenance window in hours.</p>
@@ -30,7 +30,7 @@ pub struct UpdateMaintenanceWindowInput {
     pub allow_unassociated_targets: ::std::option::Option<bool>,
     /// <p>Whether the maintenance window is enabled.</p>
     pub enabled: ::std::option::Option<bool>,
-    /// <p>If <code>True</code>, then all fields that are required by the <code>CreateMaintenanceWindow</code> operation are also required for this API request. Optional fields that aren't specified are set to null.</p>
+    /// <p>If <code>True</code>, then all fields that are required by the <code>CreateMaintenanceWindow</code> operation are also required for this API request. Optional fields that aren't specified are set to null. </p>
     pub replace: ::std::option::Option<bool>,
 }
 impl UpdateMaintenanceWindowInput {
@@ -64,7 +64,7 @@ impl UpdateMaintenanceWindowInput {
     }
     /// <p>The number of days to wait after the date and time specified by a cron expression before running the maintenance window.</p>
     /// <p>For example, the following cron expression schedules a maintenance window to run the third Tuesday of every month at 11:30 PM.</p>
-    /// <p><code>cron(30 23 ? * TUE#3 *)</code></p>
+    /// <p> <code>cron(30 23 ? * TUE#3 *)</code> </p>
     /// <p>If the schedule offset is <code>2</code>, the maintenance window won't run until two days later.</p>
     pub fn schedule_offset(&self) -> ::std::option::Option<i32> {
         self.schedule_offset
@@ -85,7 +85,7 @@ impl UpdateMaintenanceWindowInput {
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
-    /// <p>If <code>True</code>, then all fields that are required by the <code>CreateMaintenanceWindow</code> operation are also required for this API request. Optional fields that aren't specified are set to null.</p>
+    /// <p>If <code>True</code>, then all fields that are required by the <code>CreateMaintenanceWindow</code> operation are also required for this API request. Optional fields that aren't specified are set to null. </p>
     pub fn replace(&self) -> ::std::option::Option<bool> {
         self.replace
     }
@@ -236,7 +236,7 @@ impl UpdateMaintenanceWindowInputBuilder {
     }
     /// <p>The number of days to wait after the date and time specified by a cron expression before running the maintenance window.</p>
     /// <p>For example, the following cron expression schedules a maintenance window to run the third Tuesday of every month at 11:30 PM.</p>
-    /// <p><code>cron(30 23 ? * TUE#3 *)</code></p>
+    /// <p> <code>cron(30 23 ? * TUE#3 *)</code> </p>
     /// <p>If the schedule offset is <code>2</code>, the maintenance window won't run until two days later.</p>
     pub fn schedule_offset(mut self, input: i32) -> Self {
         self.schedule_offset = ::std::option::Option::Some(input);
@@ -244,7 +244,7 @@ impl UpdateMaintenanceWindowInputBuilder {
     }
     /// <p>The number of days to wait after the date and time specified by a cron expression before running the maintenance window.</p>
     /// <p>For example, the following cron expression schedules a maintenance window to run the third Tuesday of every month at 11:30 PM.</p>
-    /// <p><code>cron(30 23 ? * TUE#3 *)</code></p>
+    /// <p> <code>cron(30 23 ? * TUE#3 *)</code> </p>
     /// <p>If the schedule offset is <code>2</code>, the maintenance window won't run until two days later.</p>
     pub fn set_schedule_offset(mut self, input: ::std::option::Option<i32>) -> Self {
         self.schedule_offset = input;
@@ -252,7 +252,7 @@ impl UpdateMaintenanceWindowInputBuilder {
     }
     /// <p>The number of days to wait after the date and time specified by a cron expression before running the maintenance window.</p>
     /// <p>For example, the following cron expression schedules a maintenance window to run the third Tuesday of every month at 11:30 PM.</p>
-    /// <p><code>cron(30 23 ? * TUE#3 *)</code></p>
+    /// <p> <code>cron(30 23 ? * TUE#3 *)</code> </p>
     /// <p>If the schedule offset is <code>2</code>, the maintenance window won't run until two days later.</p>
     pub fn get_schedule_offset(&self) -> &::std::option::Option<i32> {
         &self.schedule_offset
@@ -313,17 +313,17 @@ impl UpdateMaintenanceWindowInputBuilder {
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
         &self.enabled
     }
-    /// <p>If <code>True</code>, then all fields that are required by the <code>CreateMaintenanceWindow</code> operation are also required for this API request. Optional fields that aren't specified are set to null.</p>
+    /// <p>If <code>True</code>, then all fields that are required by the <code>CreateMaintenanceWindow</code> operation are also required for this API request. Optional fields that aren't specified are set to null. </p>
     pub fn replace(mut self, input: bool) -> Self {
         self.replace = ::std::option::Option::Some(input);
         self
     }
-    /// <p>If <code>True</code>, then all fields that are required by the <code>CreateMaintenanceWindow</code> operation are also required for this API request. Optional fields that aren't specified are set to null.</p>
+    /// <p>If <code>True</code>, then all fields that are required by the <code>CreateMaintenanceWindow</code> operation are also required for this API request. Optional fields that aren't specified are set to null. </p>
     pub fn set_replace(mut self, input: ::std::option::Option<bool>) -> Self {
         self.replace = input;
         self
     }
-    /// <p>If <code>True</code>, then all fields that are required by the <code>CreateMaintenanceWindow</code> operation are also required for this API request. Optional fields that aren't specified are set to null.</p>
+    /// <p>If <code>True</code>, then all fields that are required by the <code>CreateMaintenanceWindow</code> operation are also required for this API request. Optional fields that aren't specified are set to null. </p>
     pub fn get_replace(&self) -> &::std::option::Option<bool> {
         &self.replace
     }

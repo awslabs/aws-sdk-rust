@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeWorkforceInput {
-    /// <p>The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is automatically set to <code>default</code> when a workforce is created and cannot be modified.</p>
+    /// <p>The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is automatically set to <code>default</code> when a workforce is created and cannot be modified. </p>
     pub workforce_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeWorkforceInput {
-    /// <p>The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is automatically set to <code>default</code> when a workforce is created and cannot be modified.</p>
+    /// <p>The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is automatically set to <code>default</code> when a workforce is created and cannot be modified. </p>
     pub fn workforce_name(&self) -> ::std::option::Option<&str> {
         self.workforce_name.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct DescribeWorkforceInputBuilder {
     pub(crate) workforce_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeWorkforceInputBuilder {
-    /// <p>The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is automatically set to <code>default</code> when a workforce is created and cannot be modified.</p>
+    /// <p>The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is automatically set to <code>default</code> when a workforce is created and cannot be modified. </p>
     /// This field is required.
     pub fn workforce_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workforce_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is automatically set to <code>default</code> when a workforce is created and cannot be modified.</p>
+    /// <p>The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is automatically set to <code>default</code> when a workforce is created and cannot be modified. </p>
     pub fn set_workforce_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workforce_name = input;
         self
     }
-    /// <p>The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is automatically set to <code>default</code> when a workforce is created and cannot be modified.</p>
+    /// <p>The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is automatically set to <code>default</code> when a workforce is created and cannot be modified. </p>
     pub fn get_workforce_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.workforce_name
     }

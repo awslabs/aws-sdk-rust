@@ -3,36 +3,36 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEventPredictionMetadataInput {
-    /// <p>The event ID.</p>
+    /// <p> The event ID. </p>
     pub event_id: ::std::option::Option<::std::string::String>,
-    /// <p>The event type associated with the detector specified for the prediction.</p>
+    /// <p> The event type associated with the detector specified for the prediction. </p>
     pub event_type_name: ::std::option::Option<::std::string::String>,
-    /// <p>The detector ID.</p>
+    /// <p> The detector ID. </p>
     pub detector_id: ::std::option::Option<::std::string::String>,
-    /// <p>The detector version ID.</p>
+    /// <p> The detector version ID. </p>
     pub detector_version_id: ::std::option::Option<::std::string::String>,
-    /// <p>The timestamp that defines when the prediction was generated. The timestamp must be specified using ISO 8601 standard in UTC.</p>
+    /// <p> The timestamp that defines when the prediction was generated. The timestamp must be specified using ISO 8601 standard in UTC.</p>
     /// <p>We recommend calling <a href="https://docs.aws.amazon.com/frauddetector/latest/api/API_ListEventPredictions.html">ListEventPredictions</a> first, and using the <code>predictionTimestamp</code> value in the response to provide an accurate prediction timestamp value.</p>
     pub prediction_timestamp: ::std::option::Option<::std::string::String>,
 }
 impl GetEventPredictionMetadataInput {
-    /// <p>The event ID.</p>
+    /// <p> The event ID. </p>
     pub fn event_id(&self) -> ::std::option::Option<&str> {
         self.event_id.as_deref()
     }
-    /// <p>The event type associated with the detector specified for the prediction.</p>
+    /// <p> The event type associated with the detector specified for the prediction. </p>
     pub fn event_type_name(&self) -> ::std::option::Option<&str> {
         self.event_type_name.as_deref()
     }
-    /// <p>The detector ID.</p>
+    /// <p> The detector ID. </p>
     pub fn detector_id(&self) -> ::std::option::Option<&str> {
         self.detector_id.as_deref()
     }
-    /// <p>The detector version ID.</p>
+    /// <p> The detector version ID. </p>
     pub fn detector_version_id(&self) -> ::std::option::Option<&str> {
         self.detector_version_id.as_deref()
     }
-    /// <p>The timestamp that defines when the prediction was generated. The timestamp must be specified using ISO 8601 standard in UTC.</p>
+    /// <p> The timestamp that defines when the prediction was generated. The timestamp must be specified using ISO 8601 standard in UTC.</p>
     /// <p>We recommend calling <a href="https://docs.aws.amazon.com/frauddetector/latest/api/API_ListEventPredictions.html">ListEventPredictions</a> first, and using the <code>predictionTimestamp</code> value in the response to provide an accurate prediction timestamp value.</p>
     pub fn prediction_timestamp(&self) -> ::std::option::Option<&str> {
         self.prediction_timestamp.as_deref()
@@ -56,80 +56,80 @@ pub struct GetEventPredictionMetadataInputBuilder {
     pub(crate) prediction_timestamp: ::std::option::Option<::std::string::String>,
 }
 impl GetEventPredictionMetadataInputBuilder {
-    /// <p>The event ID.</p>
+    /// <p> The event ID. </p>
     /// This field is required.
     pub fn event_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The event ID.</p>
+    /// <p> The event ID. </p>
     pub fn set_event_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_id = input;
         self
     }
-    /// <p>The event ID.</p>
+    /// <p> The event ID. </p>
     pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_id
     }
-    /// <p>The event type associated with the detector specified for the prediction.</p>
+    /// <p> The event type associated with the detector specified for the prediction. </p>
     /// This field is required.
     pub fn event_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_type_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The event type associated with the detector specified for the prediction.</p>
+    /// <p> The event type associated with the detector specified for the prediction. </p>
     pub fn set_event_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_type_name = input;
         self
     }
-    /// <p>The event type associated with the detector specified for the prediction.</p>
+    /// <p> The event type associated with the detector specified for the prediction. </p>
     pub fn get_event_type_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_type_name
     }
-    /// <p>The detector ID.</p>
+    /// <p> The detector ID. </p>
     /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The detector ID.</p>
+    /// <p> The detector ID. </p>
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detector_id = input;
         self
     }
-    /// <p>The detector ID.</p>
+    /// <p> The detector ID. </p>
     pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.detector_id
     }
-    /// <p>The detector version ID.</p>
+    /// <p> The detector version ID. </p>
     /// This field is required.
     pub fn detector_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_version_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The detector version ID.</p>
+    /// <p> The detector version ID. </p>
     pub fn set_detector_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detector_version_id = input;
         self
     }
-    /// <p>The detector version ID.</p>
+    /// <p> The detector version ID. </p>
     pub fn get_detector_version_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.detector_version_id
     }
-    /// <p>The timestamp that defines when the prediction was generated. The timestamp must be specified using ISO 8601 standard in UTC.</p>
+    /// <p> The timestamp that defines when the prediction was generated. The timestamp must be specified using ISO 8601 standard in UTC.</p>
     /// <p>We recommend calling <a href="https://docs.aws.amazon.com/frauddetector/latest/api/API_ListEventPredictions.html">ListEventPredictions</a> first, and using the <code>predictionTimestamp</code> value in the response to provide an accurate prediction timestamp value.</p>
     /// This field is required.
     pub fn prediction_timestamp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prediction_timestamp = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The timestamp that defines when the prediction was generated. The timestamp must be specified using ISO 8601 standard in UTC.</p>
+    /// <p> The timestamp that defines when the prediction was generated. The timestamp must be specified using ISO 8601 standard in UTC.</p>
     /// <p>We recommend calling <a href="https://docs.aws.amazon.com/frauddetector/latest/api/API_ListEventPredictions.html">ListEventPredictions</a> first, and using the <code>predictionTimestamp</code> value in the response to provide an accurate prediction timestamp value.</p>
     pub fn set_prediction_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prediction_timestamp = input;
         self
     }
-    /// <p>The timestamp that defines when the prediction was generated. The timestamp must be specified using ISO 8601 standard in UTC.</p>
+    /// <p> The timestamp that defines when the prediction was generated. The timestamp must be specified using ISO 8601 standard in UTC.</p>
     /// <p>We recommend calling <a href="https://docs.aws.amazon.com/frauddetector/latest/api/API_ListEventPredictions.html">ListEventPredictions</a> first, and using the <code>predictionTimestamp</code> value in the response to provide an accurate prediction timestamp value.</p>
     pub fn get_prediction_timestamp(&self) -> &::std::option::Option<::std::string::String> {
         &self.prediction_timestamp

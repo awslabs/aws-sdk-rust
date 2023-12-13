@@ -8,8 +8,8 @@ pub struct AdvancedBackupSetting {
     /// <p>Valid values: <code>EC2</code>.</p>
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the backup option for a selected resource. This option is only available for Windows VSS backup jobs.</p>
-    /// <p>Valid values:</p>
-    /// <p>Set to <code>"WindowsVSS":"enabled"</code> to enable the <code>WindowsVSS</code> backup option and create a Windows VSS backup.</p>
+    /// <p>Valid values: </p>
+    /// <p>Set to <code>"WindowsVSS":"enabled"</code> to enable the <code>WindowsVSS</code> backup option and create a Windows VSS backup. </p>
     /// <p>Set to <code>"WindowsVSS":"disabled"</code> to create a regular backup. The <code>WindowsVSS</code> option is not enabled by default.</p>
     /// <p>If you specify an invalid option, you get an <code>InvalidParameterValueException</code> exception.</p>
     /// <p>For more information about Windows VSS backups, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/windows-backups.html">Creating a VSS-Enabled Windows Backup</a>.</p>
@@ -22,8 +22,8 @@ impl AdvancedBackupSetting {
         self.resource_type.as_deref()
     }
     /// <p>Specifies the backup option for a selected resource. This option is only available for Windows VSS backup jobs.</p>
-    /// <p>Valid values:</p>
-    /// <p>Set to <code>"WindowsVSS":"enabled"</code> to enable the <code>WindowsVSS</code> backup option and create a Windows VSS backup.</p>
+    /// <p>Valid values: </p>
+    /// <p>Set to <code>"WindowsVSS":"enabled"</code> to enable the <code>WindowsVSS</code> backup option and create a Windows VSS backup. </p>
     /// <p>Set to <code>"WindowsVSS":"disabled"</code> to create a regular backup. The <code>WindowsVSS</code> option is not enabled by default.</p>
     /// <p>If you specify an invalid option, you get an <code>InvalidParameterValueException</code> exception.</p>
     /// <p>For more information about Windows VSS backups, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/windows-backups.html">Creating a VSS-Enabled Windows Backup</a>.</p>
@@ -68,8 +68,8 @@ impl AdvancedBackupSettingBuilder {
     /// To override the contents of this collection use [`set_backup_options`](Self::set_backup_options).
     ///
     /// <p>Specifies the backup option for a selected resource. This option is only available for Windows VSS backup jobs.</p>
-    /// <p>Valid values:</p>
-    /// <p>Set to <code>"WindowsVSS":"enabled"</code> to enable the <code>WindowsVSS</code> backup option and create a Windows VSS backup.</p>
+    /// <p>Valid values: </p>
+    /// <p>Set to <code>"WindowsVSS":"enabled"</code> to enable the <code>WindowsVSS</code> backup option and create a Windows VSS backup. </p>
     /// <p>Set to <code>"WindowsVSS":"disabled"</code> to create a regular backup. The <code>WindowsVSS</code> option is not enabled by default.</p>
     /// <p>If you specify an invalid option, you get an <code>InvalidParameterValueException</code> exception.</p>
     /// <p>For more information about Windows VSS backups, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/windows-backups.html">Creating a VSS-Enabled Windows Backup</a>.</p>
@@ -84,8 +84,8 @@ impl AdvancedBackupSettingBuilder {
         self
     }
     /// <p>Specifies the backup option for a selected resource. This option is only available for Windows VSS backup jobs.</p>
-    /// <p>Valid values:</p>
-    /// <p>Set to <code>"WindowsVSS":"enabled"</code> to enable the <code>WindowsVSS</code> backup option and create a Windows VSS backup.</p>
+    /// <p>Valid values: </p>
+    /// <p>Set to <code>"WindowsVSS":"enabled"</code> to enable the <code>WindowsVSS</code> backup option and create a Windows VSS backup. </p>
     /// <p>Set to <code>"WindowsVSS":"disabled"</code> to create a regular backup. The <code>WindowsVSS</code> option is not enabled by default.</p>
     /// <p>If you specify an invalid option, you get an <code>InvalidParameterValueException</code> exception.</p>
     /// <p>For more information about Windows VSS backups, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/windows-backups.html">Creating a VSS-Enabled Windows Backup</a>.</p>
@@ -97,8 +97,8 @@ impl AdvancedBackupSettingBuilder {
         self
     }
     /// <p>Specifies the backup option for a selected resource. This option is only available for Windows VSS backup jobs.</p>
-    /// <p>Valid values:</p>
-    /// <p>Set to <code>"WindowsVSS":"enabled"</code> to enable the <code>WindowsVSS</code> backup option and create a Windows VSS backup.</p>
+    /// <p>Valid values: </p>
+    /// <p>Set to <code>"WindowsVSS":"enabled"</code> to enable the <code>WindowsVSS</code> backup option and create a Windows VSS backup. </p>
     /// <p>Set to <code>"WindowsVSS":"disabled"</code> to create a regular backup. The <code>WindowsVSS</code> option is not enabled by default.</p>
     /// <p>If you specify an invalid option, you get an <code>InvalidParameterValueException</code> exception.</p>
     /// <p>For more information about Windows VSS backups, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/windows-backups.html">Creating a VSS-Enabled Windows Backup</a>.</p>

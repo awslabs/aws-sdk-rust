@@ -3,29 +3,29 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPricingPlansAssociatedWithPricingRuleInput {
-    /// <p>The pricing plan billing period for which associations will be listed.</p>
+    /// <p> The pricing plan billing period for which associations will be listed. </p>
     pub billing_period: ::std::option::Option<::std::string::String>,
-    /// <p>The pricing rule Amazon Resource Name (ARN) for which associations will be listed.</p>
+    /// <p> The pricing rule Amazon Resource Name (ARN) for which associations will be listed. </p>
     pub pricing_rule_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The optional maximum number of pricing rule associations to retrieve.</p>
+    /// <p> The optional maximum number of pricing rule associations to retrieve. </p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>The optional pagination token returned by a previous call.</p>
+    /// <p> The optional pagination token returned by a previous call. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListPricingPlansAssociatedWithPricingRuleInput {
-    /// <p>The pricing plan billing period for which associations will be listed.</p>
+    /// <p> The pricing plan billing period for which associations will be listed. </p>
     pub fn billing_period(&self) -> ::std::option::Option<&str> {
         self.billing_period.as_deref()
     }
-    /// <p>The pricing rule Amazon Resource Name (ARN) for which associations will be listed.</p>
+    /// <p> The pricing rule Amazon Resource Name (ARN) for which associations will be listed. </p>
     pub fn pricing_rule_arn(&self) -> ::std::option::Option<&str> {
         self.pricing_rule_arn.as_deref()
     }
-    /// <p>The optional maximum number of pricing rule associations to retrieve.</p>
+    /// <p> The optional maximum number of pricing rule associations to retrieve. </p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The optional pagination token returned by a previous call.</p>
+    /// <p> The optional pagination token returned by a previous call. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -48,60 +48,60 @@ pub struct ListPricingPlansAssociatedWithPricingRuleInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListPricingPlansAssociatedWithPricingRuleInputBuilder {
-    /// <p>The pricing plan billing period for which associations will be listed.</p>
+    /// <p> The pricing plan billing period for which associations will be listed. </p>
     pub fn billing_period(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.billing_period = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The pricing plan billing period for which associations will be listed.</p>
+    /// <p> The pricing plan billing period for which associations will be listed. </p>
     pub fn set_billing_period(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.billing_period = input;
         self
     }
-    /// <p>The pricing plan billing period for which associations will be listed.</p>
+    /// <p> The pricing plan billing period for which associations will be listed. </p>
     pub fn get_billing_period(&self) -> &::std::option::Option<::std::string::String> {
         &self.billing_period
     }
-    /// <p>The pricing rule Amazon Resource Name (ARN) for which associations will be listed.</p>
+    /// <p> The pricing rule Amazon Resource Name (ARN) for which associations will be listed. </p>
     /// This field is required.
     pub fn pricing_rule_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pricing_rule_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The pricing rule Amazon Resource Name (ARN) for which associations will be listed.</p>
+    /// <p> The pricing rule Amazon Resource Name (ARN) for which associations will be listed. </p>
     pub fn set_pricing_rule_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pricing_rule_arn = input;
         self
     }
-    /// <p>The pricing rule Amazon Resource Name (ARN) for which associations will be listed.</p>
+    /// <p> The pricing rule Amazon Resource Name (ARN) for which associations will be listed. </p>
     pub fn get_pricing_rule_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.pricing_rule_arn
     }
-    /// <p>The optional maximum number of pricing rule associations to retrieve.</p>
+    /// <p> The optional maximum number of pricing rule associations to retrieve. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The optional maximum number of pricing rule associations to retrieve.</p>
+    /// <p> The optional maximum number of pricing rule associations to retrieve. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The optional maximum number of pricing rule associations to retrieve.</p>
+    /// <p> The optional maximum number of pricing rule associations to retrieve. </p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p>The optional pagination token returned by a previous call.</p>
+    /// <p> The optional pagination token returned by a previous call. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The optional pagination token returned by a previous call.</p>
+    /// <p> The optional pagination token returned by a previous call. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The optional pagination token returned by a previous call.</p>
+    /// <p> The optional pagination token returned by a previous call. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

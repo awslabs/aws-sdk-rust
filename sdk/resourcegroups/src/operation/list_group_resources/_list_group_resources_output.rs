@@ -6,7 +6,7 @@ pub struct ListGroupResourcesOutput {
     /// <p>An array of resources from which you can determine each resource's identity, type, and group membership status.</p>
     pub resources: ::std::option::Option<::std::vec::Vec<crate::types::ListGroupResourcesItem>>,
     /// <important>
-    /// <p><b> <i>Deprecated - don't use this parameter. Use the <code>Resources</code> response field instead.</i> </b></p>
+    /// <p> <b> <i>Deprecated - don't use this parameter. Use the <code>Resources</code> response field instead.</i> </b> </p>
     /// </important>
     #[deprecated(note = "This field is deprecated, use Resources instead.")]
     pub resource_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::ResourceIdentifier>>,
@@ -24,7 +24,7 @@ impl ListGroupResourcesOutput {
         self.resources.as_deref().unwrap_or_default()
     }
     /// <important>
-    /// <p><b> <i>Deprecated - don't use this parameter. Use the <code>Resources</code> response field instead.</i> </b></p>
+    /// <p> <b> <i>Deprecated - don't use this parameter. Use the <code>Resources</code> response field instead.</i> </b> </p>
     /// </important>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_identifiers.is_none()`.
@@ -91,7 +91,7 @@ impl ListGroupResourcesOutputBuilder {
     /// To override the contents of this collection use [`set_resource_identifiers`](Self::set_resource_identifiers).
     ///
     /// <important>
-    /// <p><b> <i>Deprecated - don't use this parameter. Use the <code>Resources</code> response field instead.</i> </b></p>
+    /// <p> <b> <i>Deprecated - don't use this parameter. Use the <code>Resources</code> response field instead.</i> </b> </p>
     /// </important>
     #[deprecated(note = "This field is deprecated, use Resources instead.")]
     pub fn resource_identifiers(mut self, input: crate::types::ResourceIdentifier) -> Self {
@@ -101,7 +101,7 @@ impl ListGroupResourcesOutputBuilder {
         self
     }
     /// <important>
-    /// <p><b> <i>Deprecated - don't use this parameter. Use the <code>Resources</code> response field instead.</i> </b></p>
+    /// <p> <b> <i>Deprecated - don't use this parameter. Use the <code>Resources</code> response field instead.</i> </b> </p>
     /// </important>
     #[deprecated(note = "This field is deprecated, use Resources instead.")]
     pub fn set_resource_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceIdentifier>>) -> Self {
@@ -109,7 +109,7 @@ impl ListGroupResourcesOutputBuilder {
         self
     }
     /// <important>
-    /// <p><b> <i>Deprecated - don't use this parameter. Use the <code>Resources</code> response field instead.</i> </b></p>
+    /// <p> <b> <i>Deprecated - don't use this parameter. Use the <code>Resources</code> response field instead.</i> </b> </p>
     /// </important>
     #[deprecated(note = "This field is deprecated, use Resources instead.")]
     pub fn get_resource_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceIdentifier>> {

@@ -5,7 +5,7 @@
 pub struct CreateDataSourceInput {
     /// <p>The Amazon Web Services account ID.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
-    /// <p>An ID for the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    /// <p>An ID for the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account. </p>
     pub data_source_id: ::std::option::Option<::std::string::String>,
     /// <p>A display name for the data source.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -32,7 +32,7 @@ impl CreateDataSourceInput {
     pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
-    /// <p>An ID for the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    /// <p>An ID for the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account. </p>
     pub fn data_source_id(&self) -> ::std::option::Option<&str> {
         self.data_source_id.as_deref()
     }
@@ -136,18 +136,18 @@ impl CreateDataSourceInputBuilder {
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.aws_account_id
     }
-    /// <p>An ID for the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    /// <p>An ID for the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account. </p>
     /// This field is required.
     pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An ID for the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    /// <p>An ID for the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account. </p>
     pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_source_id = input;
         self
     }
-    /// <p>An ID for the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    /// <p>An ID for the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account. </p>
     pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_source_id
     }

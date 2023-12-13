@@ -7,8 +7,8 @@ pub struct DeleteThemeInput {
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>An ID for the theme that you want to delete.</p>
     pub theme_id: ::std::option::Option<::std::string::String>,
-    /// <p>The version of the theme that you want to delete.</p>
-    /// <p><b>Note:</b> If you don't provide a version number, you're using this call to <code>DeleteTheme</code> to delete all versions of the theme.</p>
+    /// <p>The version of the theme that you want to delete. </p>
+    /// <p> <b>Note:</b> If you don't provide a version number, you're using this call to <code>DeleteTheme</code> to delete all versions of the theme.</p>
     pub version_number: ::std::option::Option<i64>,
 }
 impl DeleteThemeInput {
@@ -20,8 +20,8 @@ impl DeleteThemeInput {
     pub fn theme_id(&self) -> ::std::option::Option<&str> {
         self.theme_id.as_deref()
     }
-    /// <p>The version of the theme that you want to delete.</p>
-    /// <p><b>Note:</b> If you don't provide a version number, you're using this call to <code>DeleteTheme</code> to delete all versions of the theme.</p>
+    /// <p>The version of the theme that you want to delete. </p>
+    /// <p> <b>Note:</b> If you don't provide a version number, you're using this call to <code>DeleteTheme</code> to delete all versions of the theme.</p>
     pub fn version_number(&self) -> ::std::option::Option<i64> {
         self.version_number
     }
@@ -72,20 +72,20 @@ impl DeleteThemeInputBuilder {
     pub fn get_theme_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.theme_id
     }
-    /// <p>The version of the theme that you want to delete.</p>
-    /// <p><b>Note:</b> If you don't provide a version number, you're using this call to <code>DeleteTheme</code> to delete all versions of the theme.</p>
+    /// <p>The version of the theme that you want to delete. </p>
+    /// <p> <b>Note:</b> If you don't provide a version number, you're using this call to <code>DeleteTheme</code> to delete all versions of the theme.</p>
     pub fn version_number(mut self, input: i64) -> Self {
         self.version_number = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The version of the theme that you want to delete.</p>
-    /// <p><b>Note:</b> If you don't provide a version number, you're using this call to <code>DeleteTheme</code> to delete all versions of the theme.</p>
+    /// <p>The version of the theme that you want to delete. </p>
+    /// <p> <b>Note:</b> If you don't provide a version number, you're using this call to <code>DeleteTheme</code> to delete all versions of the theme.</p>
     pub fn set_version_number(mut self, input: ::std::option::Option<i64>) -> Self {
         self.version_number = input;
         self
     }
-    /// <p>The version of the theme that you want to delete.</p>
-    /// <p><b>Note:</b> If you don't provide a version number, you're using this call to <code>DeleteTheme</code> to delete all versions of the theme.</p>
+    /// <p>The version of the theme that you want to delete. </p>
+    /// <p> <b>Note:</b> If you don't provide a version number, you're using this call to <code>DeleteTheme</code> to delete all versions of the theme.</p>
     pub fn get_version_number(&self) -> &::std::option::Option<i64> {
         &self.version_number
     }

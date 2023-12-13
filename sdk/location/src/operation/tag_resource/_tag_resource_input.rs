@@ -5,54 +5,40 @@
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource whose tags you want to update.</p>
     /// <ul>
-    /// <li>
-    /// <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code></p></li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code> </p> </li>
     /// </ul>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>Applies one or more tags to specific resource. A tag is a key-value pair that helps you manage, identify, search, and filter your resources.</p>
-    /// <p>Format: <code>"key" : "value"</code></p>
+    /// <p>Format: <code>"key" : "value"</code> </p>
     /// <p>Restrictions:</p>
     /// <ul>
-    /// <li>
-    /// <p>Maximum 50 tags per resource.</p></li>
-    /// <li>
-    /// <p>Each tag key must be unique and must have exactly one associated value.</p></li>
-    /// <li>
-    /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p></li>
-    /// <li>
-    /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p></li>
-    /// <li>
-    /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @</p></li>
-    /// <li>
-    /// <p>Cannot use "aws:" as a prefix for a key.</p></li>
+    /// <li> <p>Maximum 50 tags per resource.</p> </li>
+    /// <li> <p>Each tag key must be unique and must have exactly one associated value.</p> </li>
+    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @</p> </li>
+    /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
     /// </ul>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource whose tags you want to update.</p>
     /// <ul>
-    /// <li>
-    /// <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code></p></li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code> </p> </li>
     /// </ul>
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// <p>Applies one or more tags to specific resource. A tag is a key-value pair that helps you manage, identify, search, and filter your resources.</p>
-    /// <p>Format: <code>"key" : "value"</code></p>
+    /// <p>Format: <code>"key" : "value"</code> </p>
     /// <p>Restrictions:</p>
     /// <ul>
-    /// <li>
-    /// <p>Maximum 50 tags per resource.</p></li>
-    /// <li>
-    /// <p>Each tag key must be unique and must have exactly one associated value.</p></li>
-    /// <li>
-    /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p></li>
-    /// <li>
-    /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p></li>
-    /// <li>
-    /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @</p></li>
-    /// <li>
-    /// <p>Cannot use "aws:" as a prefix for a key.</p></li>
+    /// <li> <p>Maximum 50 tags per resource.</p> </li>
+    /// <li> <p>Each tag key must be unique and must have exactly one associated value.</p> </li>
+    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @</p> </li>
+    /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
     /// </ul>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
@@ -75,8 +61,7 @@ pub struct TagResourceInputBuilder {
 impl TagResourceInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the resource whose tags you want to update.</p>
     /// <ul>
-    /// <li>
-    /// <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code></p></li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code> </p> </li>
     /// </ul>
     /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -85,8 +70,7 @@ impl TagResourceInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the resource whose tags you want to update.</p>
     /// <ul>
-    /// <li>
-    /// <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code></p></li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code> </p> </li>
     /// </ul>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
@@ -94,8 +78,7 @@ impl TagResourceInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the resource whose tags you want to update.</p>
     /// <ul>
-    /// <li>
-    /// <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code></p></li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code> </p> </li>
     /// </ul>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
@@ -105,21 +88,15 @@ impl TagResourceInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Applies one or more tags to specific resource. A tag is a key-value pair that helps you manage, identify, search, and filter your resources.</p>
-    /// <p>Format: <code>"key" : "value"</code></p>
+    /// <p>Format: <code>"key" : "value"</code> </p>
     /// <p>Restrictions:</p>
     /// <ul>
-    /// <li>
-    /// <p>Maximum 50 tags per resource.</p></li>
-    /// <li>
-    /// <p>Each tag key must be unique and must have exactly one associated value.</p></li>
-    /// <li>
-    /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p></li>
-    /// <li>
-    /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p></li>
-    /// <li>
-    /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @</p></li>
-    /// <li>
-    /// <p>Cannot use "aws:" as a prefix for a key.</p></li>
+    /// <li> <p>Maximum 50 tags per resource.</p> </li>
+    /// <li> <p>Each tag key must be unique and must have exactly one associated value.</p> </li>
+    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @</p> </li>
+    /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
     /// </ul>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
@@ -128,42 +105,30 @@ impl TagResourceInputBuilder {
         self
     }
     /// <p>Applies one or more tags to specific resource. A tag is a key-value pair that helps you manage, identify, search, and filter your resources.</p>
-    /// <p>Format: <code>"key" : "value"</code></p>
+    /// <p>Format: <code>"key" : "value"</code> </p>
     /// <p>Restrictions:</p>
     /// <ul>
-    /// <li>
-    /// <p>Maximum 50 tags per resource.</p></li>
-    /// <li>
-    /// <p>Each tag key must be unique and must have exactly one associated value.</p></li>
-    /// <li>
-    /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p></li>
-    /// <li>
-    /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p></li>
-    /// <li>
-    /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @</p></li>
-    /// <li>
-    /// <p>Cannot use "aws:" as a prefix for a key.</p></li>
+    /// <li> <p>Maximum 50 tags per resource.</p> </li>
+    /// <li> <p>Each tag key must be unique and must have exactly one associated value.</p> </li>
+    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @</p> </li>
+    /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
     /// </ul>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>Applies one or more tags to specific resource. A tag is a key-value pair that helps you manage, identify, search, and filter your resources.</p>
-    /// <p>Format: <code>"key" : "value"</code></p>
+    /// <p>Format: <code>"key" : "value"</code> </p>
     /// <p>Restrictions:</p>
     /// <ul>
-    /// <li>
-    /// <p>Maximum 50 tags per resource.</p></li>
-    /// <li>
-    /// <p>Each tag key must be unique and must have exactly one associated value.</p></li>
-    /// <li>
-    /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p></li>
-    /// <li>
-    /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p></li>
-    /// <li>
-    /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @</p></li>
-    /// <li>
-    /// <p>Cannot use "aws:" as a prefix for a key.</p></li>
+    /// <li> <p>Maximum 50 tags per resource.</p> </li>
+    /// <li> <p>Each tag key must be unique and must have exactly one associated value.</p> </li>
+    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @</p> </li>
+    /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
     /// </ul>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags

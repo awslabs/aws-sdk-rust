@@ -254,7 +254,7 @@ pub enum ImportKeyMaterialError {
     /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.</p>
     InvalidArnException(crate::types::error::InvalidArnException),
     /// <p>From the <code>Decrypt</code> or <code>ReEncrypt</code> operation, the request was rejected because the specified ciphertext, or additional authenticated data incorporated into the ciphertext, such as the encryption context, is corrupted, missing, or otherwise invalid.</p>
-    /// <p>From the <code>ImportKeyMaterial</code> operation, the request was rejected because KMS could not decrypt the encrypted (wrapped) key material.</p>
+    /// <p>From the <code>ImportKeyMaterial</code> operation, the request was rejected because KMS could not decrypt the encrypted (wrapped) key material. </p>
     InvalidCiphertextException(crate::types::error::InvalidCiphertextException),
     /// <p>The request was rejected because the provided import token is invalid or is associated with a different KMS key.</p>
     InvalidImportTokenException(crate::types::error::InvalidImportTokenException),
@@ -263,11 +263,8 @@ pub enum ImportKeyMaterialError {
     /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
     /// <p>This exceptions means one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>The key state of the KMS key is not compatible with the operation.</p>
-    /// <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p></li>
-    /// <li>
-    /// <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p></li>
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
     /// </ul>
     KmsInvalidStateException(crate::types::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>

@@ -7,7 +7,7 @@ pub struct RevokeClientVpnIngressInput {
     pub client_vpn_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The IPv4 address range, in CIDR notation, of the network for which access is being removed.</p>
     pub target_network_cidr: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the Active Directory group for which to revoke access.</p>
+    /// <p>The ID of the Active Directory group for which to revoke access. </p>
     pub access_group_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether access should be revoked for all clients.</p>
     pub revoke_all_groups: ::std::option::Option<bool>,
@@ -23,7 +23,7 @@ impl RevokeClientVpnIngressInput {
     pub fn target_network_cidr(&self) -> ::std::option::Option<&str> {
         self.target_network_cidr.as_deref()
     }
-    /// <p>The ID of the Active Directory group for which to revoke access.</p>
+    /// <p>The ID of the Active Directory group for which to revoke access. </p>
     pub fn access_group_id(&self) -> ::std::option::Option<&str> {
         self.access_group_id.as_deref()
     }
@@ -84,17 +84,17 @@ impl RevokeClientVpnIngressInputBuilder {
     pub fn get_target_network_cidr(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_network_cidr
     }
-    /// <p>The ID of the Active Directory group for which to revoke access.</p>
+    /// <p>The ID of the Active Directory group for which to revoke access. </p>
     pub fn access_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_group_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the Active Directory group for which to revoke access.</p>
+    /// <p>The ID of the Active Directory group for which to revoke access. </p>
     pub fn set_access_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_group_id = input;
         self
     }
-    /// <p>The ID of the Active Directory group for which to revoke access.</p>
+    /// <p>The ID of the Active Directory group for which to revoke access. </p>
     pub fn get_access_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.access_group_id
     }

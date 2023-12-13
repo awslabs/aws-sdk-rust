@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricProcessingConfig {
-    /// <p>The compute location for the given metric property.</p>
+    /// <p>The compute location for the given metric property. </p>
     pub compute_location: crate::types::ComputeLocation,
 }
 impl MetricProcessingConfig {
-    /// <p>The compute location for the given metric property.</p>
+    /// <p>The compute location for the given metric property. </p>
     pub fn compute_location(&self) -> &crate::types::ComputeLocation {
         &self.compute_location
     }
@@ -27,18 +27,18 @@ pub struct MetricProcessingConfigBuilder {
     pub(crate) compute_location: ::std::option::Option<crate::types::ComputeLocation>,
 }
 impl MetricProcessingConfigBuilder {
-    /// <p>The compute location for the given metric property.</p>
+    /// <p>The compute location for the given metric property. </p>
     /// This field is required.
     pub fn compute_location(mut self, input: crate::types::ComputeLocation) -> Self {
         self.compute_location = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The compute location for the given metric property.</p>
+    /// <p>The compute location for the given metric property. </p>
     pub fn set_compute_location(mut self, input: ::std::option::Option<crate::types::ComputeLocation>) -> Self {
         self.compute_location = input;
         self
     }
-    /// <p>The compute location for the given metric property.</p>
+    /// <p>The compute location for the given metric property. </p>
     pub fn get_compute_location(&self) -> &::std::option::Option<crate::types::ComputeLocation> {
         &self.compute_location
     }

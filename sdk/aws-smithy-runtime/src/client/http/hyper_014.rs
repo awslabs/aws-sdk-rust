@@ -15,12 +15,9 @@ use aws_smithy_runtime_api::client::http::{
 };
 use aws_smithy_runtime_api::client::orchestrator::{HttpRequest, HttpResponse};
 use aws_smithy_runtime_api::client::result::ConnectorError;
-use aws_smithy_runtime_api::client::runtime_components::{
-    RuntimeComponents, RuntimeComponentsBuilder,
-};
+use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
 use aws_smithy_runtime_api::shared::IntoShared;
 use aws_smithy_types::body::SdkBody;
-use aws_smithy_types::config_bag::ConfigBag;
 use aws_smithy_types::error::display::DisplayErrorContext;
 use aws_smithy_types::retry::ErrorKind;
 use h2::Reason;
@@ -39,42 +36,38 @@ use tokio::io::{AsyncRead, AsyncWrite};
 mod default_connector {
     use aws_smithy_async::rt::sleep::SharedAsyncSleep;
     use aws_smithy_runtime_api::client::http::HttpConnectorSettings;
-    use hyper_0_14::client::HttpConnector;
-    use hyper_rustls::HttpsConnector;
 
     // Creating a `with_native_roots` HTTP client takes 300ms on OS X. Cache this so that we
     // don't need to repeatedly incur that cost.
-    pub(crate) static HTTPS_NATIVE_ROOTS: once_cell::sync::Lazy<
+    static HTTPS_NATIVE_ROOTS: once_cell::sync::Lazy<
         hyper_rustls::HttpsConnector<hyper_0_14::client::HttpConnector>,
-    > = once_cell::sync::Lazy::new(default_tls);
-
-    fn default_tls() -> HttpsConnector<HttpConnector> {
+    > = once_cell::sync::Lazy::new(|| {
         use hyper_rustls::ConfigBuilderExt;
         hyper_rustls::HttpsConnectorBuilder::new()
-               .with_tls_config(
-                rustls::ClientConfig::builder()
-                    .with_cipher_suites(&[
-                        // TLS1.3 suites
-                        rustls::cipher_suite::TLS13_AES_256_GCM_SHA384,
-                        rustls::cipher_suite::TLS13_AES_128_GCM_SHA256,
-                        // TLS1.2 suites
-                        rustls::cipher_suite::TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,
-                        rustls::cipher_suite::TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,
-                        rustls::cipher_suite::TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,
-                        rustls::cipher_suite::TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,
-                        rustls::cipher_suite::TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256,
-                    ])
-                    .with_safe_default_kx_groups()
-                    .with_safe_default_protocol_versions()
-                    .expect("Error with the TLS configuration. Please file a bug report under https://github.com/smithy-lang/smithy-rs/issues.")
-                    .with_native_roots()
-                    .with_no_client_auth()
-            )
-            .https_or_http()
-            .enable_http1()
-            .enable_http2()
-            .build()
-    }
+        .with_tls_config(
+            rustls::ClientConfig::builder()
+                .with_cipher_suites(&[
+                    // TLS1.3 suites
+                    rustls::cipher_suite::TLS13_AES_256_GCM_SHA384,
+                    rustls::cipher_suite::TLS13_AES_128_GCM_SHA256,
+                    // TLS1.2 suites
+                    rustls::cipher_suite::TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,
+                    rustls::cipher_suite::TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,
+                    rustls::cipher_suite::TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,
+                    rustls::cipher_suite::TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,
+                    rustls::cipher_suite::TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256,
+                ])
+                .with_safe_default_kx_groups()
+                .with_safe_default_protocol_versions()
+                .expect("Error with the TLS configuration. Please file a bug report under https://github.com/smithy-lang/smithy-rs/issues.")
+                .with_native_roots()
+                .with_no_client_auth()
+        )
+        .https_or_http()
+        .enable_http1()
+        .enable_http2()
+        .build()
+    });
 
     pub(super) fn base(
         settings: &HttpConnectorSettings,
@@ -132,9 +125,53 @@ pub fn default_client() -> Option<SharedHttpClient> {
 ///
 /// This connector also implements socket connect and read timeouts.
 ///
-/// This shouldn't be used directly in most cases.
-/// See the docs on [`HyperClientBuilder`] for examples of how
-/// to customize the Hyper client.
+/// # Examples
+///
+/// Construct a `HyperConnector` with the default TLS implementation (rustls).
+/// This can be useful when you want to share a Hyper connector between multiple
+/// generated Smithy clients.
+///
+/// ```no_run,ignore
+/// use aws_smithy_runtime::client::connectors::hyper_connector::{DefaultHttpsTcpConnector, HyperConnector};
+///
+/// let hyper_connector = HyperConnector::builder().build(DefaultHttpsTcpConnector::new());
+///
+/// // This connector can then be given to a generated service Config
+/// let config = my_service_client::Config::builder()
+///     .endpoint_url("http://localhost:1234")
+///     .http_connector(hyper_connector)
+///     .build();
+/// let client = my_service_client::Client::from_conf(config);
+/// ```
+///
+/// ## Use a Hyper client with WebPKI roots
+///
+/// A use case for where you may want to use the [`HyperConnector`] is when setting Hyper client settings
+/// that aren't otherwise exposed by the `Config` builder interface. Some examples include changing:
+///
+/// - Hyper client settings
+/// - Allowed TLS cipher suites
+/// - Using an alternative TLS connector library (not the default, rustls)
+/// - CA trust root certificates (illustrated using WebPKI below)
+///
+/// ```no_run,ignore
+/// use aws_smithy_runtime::client::connectors::hyper_connector::HyperConnector;
+///
+/// let https_connector = hyper_rustls::HttpsConnectorBuilder::new()
+///     .with_webpki_roots()
+///     .https_only()
+///     .enable_http1()
+///     .enable_http2()
+///     .build();
+/// let hyper_connector = HyperConnector::builder().build(https_connector);
+///
+/// // This connector can then be given to a generated service Config
+/// let config = my_service_client::Config::builder()
+///     .endpoint_url("https://example.com")
+///     .http_connector(hyper_connector)
+///     .build();
+/// let client = my_service_client::Client::from_conf(config);
+/// ```
 #[derive(Debug)]
 pub struct HyperConnector {
     adapter: Box<dyn HttpConnector>,
@@ -287,19 +324,14 @@ fn extract_smithy_connection(capture_conn: &CaptureConnection) -> Option<Connect
         let mut extensions = Extensions::new();
         conn.get_extras(&mut extensions);
         let http_info = extensions.get::<HttpInfo>();
-        let mut builder = ConnectionMetadata::builder()
-            .proxied(conn.is_proxied())
-            .poison_fn(move || match capture_conn.connection_metadata().as_ref() {
+        let smithy_connection = ConnectionMetadata::new(
+            conn.is_proxied(),
+            http_info.map(|info| info.remote_addr()),
+            move || match capture_conn.connection_metadata().as_ref() {
                 Some(conn) => conn.poison(),
                 None => tracing::trace!("no connection existed to poison"),
-            });
-
-        builder
-            .set_local_addr(http_info.map(|info| info.local_addr()))
-            .set_remote_addr(http_info.map(|info| info.remote_addr()));
-
-        let smithy_connection = builder.build();
-
+            },
+        );
         Some(smithy_connection)
     } else {
         None
@@ -442,20 +474,6 @@ where
     C::Future: Unpin + Send + 'static,
     C::Error: Into<BoxError>,
 {
-    fn validate_base_client_config(
-        &self,
-        _: &RuntimeComponentsBuilder,
-        _: &ConfigBag,
-    ) -> Result<(), BoxError> {
-        // Initialize the TCP connector at this point so that native certs load
-        // at client initialization time instead of upon first request. We do it
-        // here rather than at construction so that it won't run if this is not
-        // the selected HTTP client for the base config (for example, if this was
-        // the default HTTP client, and it was overridden by a later plugin).
-        let _ = (self.tcp_connector_fn)();
-        Ok(())
-    }
-
     fn http_connector(
         &self,
         settings: &HttpConnectorSettings,
@@ -472,14 +490,7 @@ where
                     .connector_settings(settings.clone());
                 builder.set_sleep_impl(components.sleep_impl());
 
-                let start = components.time_source().map(|ts| ts.now());
                 let tcp_connector = (self.tcp_connector_fn)();
-                let end = components.time_source().map(|ts| ts.now());
-                if let (Some(start), Some(end)) = (start, end) {
-                    if let Ok(elapsed) = end.duration_since(start) {
-                        tracing::debug!("new TCP connector created in {:?}", elapsed);
-                    }
-                }
                 let connector = SharedHttpConnector::new(builder.build(tcp_connector));
                 cache.insert(key.clone(), connector);
             }
@@ -494,55 +505,6 @@ where
 ///
 /// This builder can be used to customize the underlying TCP connector used, as well as
 /// hyper client configuration.
-///
-/// # Examples
-///
-/// Construct a Hyper client with the default TLS implementation (rustls).
-/// This can be useful when you want to share a Hyper connector between multiple
-/// generated Smithy clients.
-///
-/// ```no_run,ignore
-/// use aws_smithy_runtime::client::http::hyper_014::HyperClientBuilder;
-///
-/// let http_client = HyperClientBuilder::new().build_https();
-///
-/// // This connector can then be given to a generated service Config
-/// let config = my_service_client::Config::builder()
-///     .endpoint_url("http://localhost:1234")
-///     .http_client(http_client)
-///     .build();
-/// let client = my_service_client::Client::from_conf(config);
-/// ```
-///
-/// ## Use a Hyper client with WebPKI roots
-///
-/// A use case for where you may want to use the [`HyperClientBuilder`] is when
-/// setting Hyper client settings that aren't otherwise exposed by the `Config`
-/// builder interface. Some examples include changing:
-///
-/// - Hyper client settings
-/// - Allowed TLS cipher suites
-/// - Using an alternative TLS connector library (not the default, rustls)
-/// - CA trust root certificates (illustrated using WebPKI below)
-///
-/// ```no_run,ignore
-/// use aws_smithy_runtime::client::http::hyper_014::HyperClientBuilder;
-///
-/// let https_connector = hyper_rustls::HttpsConnectorBuilder::new()
-///     .with_webpki_roots()
-///     .https_only()
-///     .enable_http1()
-///     .enable_http2()
-///     .build();
-/// let http_client = HyperClientBuilder::new().build(https_connector);
-///
-/// // This connector can then be given to a generated service Config
-/// let config = my_service_client::Config::builder()
-///     .endpoint_url("https://example.com")
-///     .http_client(http_client)
-///     .build();
-/// let client = my_service_client::Client::from_conf(config);
-/// ```
 #[derive(Clone, Default, Debug)]
 pub struct HyperClientBuilder {
     client_builder: Option<hyper_0_14::client::Builder>,
@@ -573,13 +535,10 @@ impl HyperClientBuilder {
         self
     }
 
-    /// Create a hyper client with the default rustls HTTPS implementation.
-    ///
-    /// The trusted certificates will be loaded later when this becomes the selected
-    /// HTTP client for a Smithy client.
+    /// Create a [`HyperConnector`] with the default rustls HTTPS implementation.
     #[cfg(feature = "tls-rustls")]
     pub fn build_https(self) -> SharedHttpClient {
-        self.build_with_fn(default_connector::https)
+        self.build(default_connector::https())
     }
 
     /// Create a [`SharedHttpClient`] from this builder and a given connector.
@@ -596,9 +555,14 @@ impl HyperClientBuilder {
         C::Future: Unpin + Send + 'static,
         C::Error: Into<BoxError>,
     {
-        self.build_with_fn(move || tcp_connector.clone())
+        SharedHttpClient::new(HyperClient {
+            connector_cache: RwLock::new(HashMap::new()),
+            client_builder: self.client_builder.unwrap_or_default(),
+            tcp_connector_fn: move || tcp_connector.clone(),
+        })
     }
 
+    #[cfg(all(test, feature = "test-util"))]
     fn build_with_fn<C, F>(self, tcp_connector_fn: F) -> SharedHttpClient
     where
         F: Fn() -> C + Send + Sync + 'static,
@@ -988,7 +952,6 @@ mod timeout_middleware {
 mod test {
     use super::*;
     use crate::client::http::test_util::NeverTcpConnector;
-    use aws_smithy_async::time::SystemTimeSource;
     use aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder;
     use http::Uri;
     use hyper_0_14::client::connect::{Connected, Connection};
@@ -1030,10 +993,7 @@ mod test {
         ];
 
         // Kick off thousands of parallel tasks that will try to create a connector
-        let components = RuntimeComponentsBuilder::for_tests()
-            .with_time_source(Some(SystemTimeSource::new()))
-            .build()
-            .unwrap();
+        let components = RuntimeComponentsBuilder::for_tests().build().unwrap();
         let mut handles = Vec::new();
         for setting in &settings {
             for _ in 0..1000 {

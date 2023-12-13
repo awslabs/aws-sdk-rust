@@ -29,12 +29,12 @@ impl super::Client {
     ///   - [`stop_time(Option<DateTime>)`](crate::operation::get_run::GetRunOutput::stop_time): <p>The run's stop time.</p>
     ///   - [`status_message(Option<String>)`](crate::operation::get_run::GetRunOutput::status_message): <p>The run's status message.</p>
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_run::GetRunOutput::tags): <p>The run's tags.</p>
-    ///   - [`accelerators(Option<Accelerators>)`](crate::operation::get_run::GetRunOutput::accelerators): <p>The computational accelerator used to run the workflow.</p>
+    ///   - [`accelerators(Option<Accelerators>)`](crate::operation::get_run::GetRunOutput::accelerators): <p> The computational accelerator used to run the workflow. </p>
     ///   - [`retention_mode(Option<RunRetentionMode>)`](crate::operation::get_run::GetRunOutput::retention_mode): <p>The run's retention mode.</p>
-    ///   - [`failure_reason(Option<String>)`](crate::operation::get_run::GetRunOutput::failure_reason): <p>The reason a run has failed.</p>
-    ///   - [`log_location(Option<RunLogLocation>)`](crate::operation::get_run::GetRunOutput::log_location): <p>The location of the run log.</p>
-    ///   - [`uuid(Option<String>)`](crate::operation::get_run::GetRunOutput::uuid): <p>The universally unique identifier for a run.</p>
-    ///   - [`run_output_uri(Option<String>)`](crate::operation::get_run::GetRunOutput::run_output_uri): <p>The destination for workflow outputs.</p>
+    ///   - [`failure_reason(Option<String>)`](crate::operation::get_run::GetRunOutput::failure_reason): <p> The reason a run has failed. </p>
+    ///   - [`log_location(Option<RunLogLocation>)`](crate::operation::get_run::GetRunOutput::log_location): <p> The location of the run log. </p>
+    ///   - [`uuid(Option<String>)`](crate::operation::get_run::GetRunOutput::uuid): <p> The universally unique identifier for a run. </p>
+    ///   - [`run_output_uri(Option<String>)`](crate::operation::get_run::GetRunOutput::run_output_uri): <p> The destination for workflow outputs. </p>
     /// - On failure, responds with [`SdkError<GetRunError>`](crate::operation::get_run::GetRunError)
     pub fn get_run(&self) -> crate::operation::get_run::builders::GetRunFluentBuilder {
         crate::operation::get_run::builders::GetRunFluentBuilder::new(self.handle.clone())

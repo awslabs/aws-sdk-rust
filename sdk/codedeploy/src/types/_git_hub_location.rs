@@ -4,14 +4,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GitHubLocation {
-    /// <p>The GitHub account and repository pair that stores a reference to the commit that represents the bundled artifacts for the application revision.</p>
+    /// <p>The GitHub account and repository pair that stores a reference to the commit that represents the bundled artifacts for the application revision. </p>
     /// <p>Specified as account/repository.</p>
     pub repository: ::std::option::Option<::std::string::String>,
     /// <p>The SHA1 commit ID of the GitHub commit that represents the bundled artifacts for the application revision.</p>
     pub commit_id: ::std::option::Option<::std::string::String>,
 }
 impl GitHubLocation {
-    /// <p>The GitHub account and repository pair that stores a reference to the commit that represents the bundled artifacts for the application revision.</p>
+    /// <p>The GitHub account and repository pair that stores a reference to the commit that represents the bundled artifacts for the application revision. </p>
     /// <p>Specified as account/repository.</p>
     pub fn repository(&self) -> ::std::option::Option<&str> {
         self.repository.as_deref()
@@ -36,19 +36,19 @@ pub struct GitHubLocationBuilder {
     pub(crate) commit_id: ::std::option::Option<::std::string::String>,
 }
 impl GitHubLocationBuilder {
-    /// <p>The GitHub account and repository pair that stores a reference to the commit that represents the bundled artifacts for the application revision.</p>
+    /// <p>The GitHub account and repository pair that stores a reference to the commit that represents the bundled artifacts for the application revision. </p>
     /// <p>Specified as account/repository.</p>
     pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The GitHub account and repository pair that stores a reference to the commit that represents the bundled artifacts for the application revision.</p>
+    /// <p>The GitHub account and repository pair that stores a reference to the commit that represents the bundled artifacts for the application revision. </p>
     /// <p>Specified as account/repository.</p>
     pub fn set_repository(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository = input;
         self
     }
-    /// <p>The GitHub account and repository pair that stores a reference to the commit that represents the bundled artifacts for the application revision.</p>
+    /// <p>The GitHub account and repository pair that stores a reference to the commit that represents the bundled artifacts for the application revision. </p>
     /// <p>Specified as account/repository.</p>
     pub fn get_repository(&self) -> &::std::option::Option<::std::string::String> {
         &self.repository

@@ -3,34 +3,30 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDeploymentTargetsInput {
-    /// <p>The unique ID of a deployment.</p>
+    /// <p> The unique ID of a deployment. </p>
     pub deployment_id: ::std::option::Option<::std::string::String>,
-    /// <p>A token identifier returned from the previous <code>ListDeploymentTargets</code> call. It can be used to return the next set of deployment targets in the list.</p>
+    /// <p> A token identifier returned from the previous <code>ListDeploymentTargets</code> call. It can be used to return the next set of deployment targets in the list. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>A key used to filter the returned targets. The two valid values are:</p>
+    /// <p> A key used to filter the returned targets. The two valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>TargetStatus</code> - A <code>TargetStatus</code> filter string can be <code>Failed</code>, <code>InProgress</code>, <code>Pending</code>, <code>Ready</code>, <code>Skipped</code>, <code>Succeeded</code>, or <code>Unknown</code>.</p></li>
-    /// <li>
-    /// <p><code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter string can be <code>Blue</code> or <code>Green</code>.</p></li>
+    /// <li> <p> <code>TargetStatus</code> - A <code>TargetStatus</code> filter string can be <code>Failed</code>, <code>InProgress</code>, <code>Pending</code>, <code>Ready</code>, <code>Skipped</code>, <code>Succeeded</code>, or <code>Unknown</code>. </p> </li>
+    /// <li> <p> <code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter string can be <code>Blue</code> or <code>Green</code>. </p> </li>
     /// </ul>
     pub target_filters: ::std::option::Option<::std::collections::HashMap<crate::types::TargetFilterName, ::std::vec::Vec<::std::string::String>>>,
 }
 impl ListDeploymentTargetsInput {
-    /// <p>The unique ID of a deployment.</p>
+    /// <p> The unique ID of a deployment. </p>
     pub fn deployment_id(&self) -> ::std::option::Option<&str> {
         self.deployment_id.as_deref()
     }
-    /// <p>A token identifier returned from the previous <code>ListDeploymentTargets</code> call. It can be used to return the next set of deployment targets in the list.</p>
+    /// <p> A token identifier returned from the previous <code>ListDeploymentTargets</code> call. It can be used to return the next set of deployment targets in the list. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>A key used to filter the returned targets. The two valid values are:</p>
+    /// <p> A key used to filter the returned targets. The two valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>TargetStatus</code> - A <code>TargetStatus</code> filter string can be <code>Failed</code>, <code>InProgress</code>, <code>Pending</code>, <code>Ready</code>, <code>Skipped</code>, <code>Succeeded</code>, or <code>Unknown</code>.</p></li>
-    /// <li>
-    /// <p><code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter string can be <code>Blue</code> or <code>Green</code>.</p></li>
+    /// <li> <p> <code>TargetStatus</code> - A <code>TargetStatus</code> filter string can be <code>Failed</code>, <code>InProgress</code>, <code>Pending</code>, <code>Ready</code>, <code>Skipped</code>, <code>Succeeded</code>, or <code>Unknown</code>. </p> </li>
+    /// <li> <p> <code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter string can be <code>Blue</code> or <code>Green</code>. </p> </li>
     /// </ul>
     pub fn target_filters(
         &self,
@@ -55,32 +51,32 @@ pub struct ListDeploymentTargetsInputBuilder {
         ::std::option::Option<::std::collections::HashMap<crate::types::TargetFilterName, ::std::vec::Vec<::std::string::String>>>,
 }
 impl ListDeploymentTargetsInputBuilder {
-    /// <p>The unique ID of a deployment.</p>
+    /// <p> The unique ID of a deployment. </p>
     /// This field is required.
     pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique ID of a deployment.</p>
+    /// <p> The unique ID of a deployment. </p>
     pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_id = input;
         self
     }
-    /// <p>The unique ID of a deployment.</p>
+    /// <p> The unique ID of a deployment. </p>
     pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.deployment_id
     }
-    /// <p>A token identifier returned from the previous <code>ListDeploymentTargets</code> call. It can be used to return the next set of deployment targets in the list.</p>
+    /// <p> A token identifier returned from the previous <code>ListDeploymentTargets</code> call. It can be used to return the next set of deployment targets in the list. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A token identifier returned from the previous <code>ListDeploymentTargets</code> call. It can be used to return the next set of deployment targets in the list.</p>
+    /// <p> A token identifier returned from the previous <code>ListDeploymentTargets</code> call. It can be used to return the next set of deployment targets in the list. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>A token identifier returned from the previous <code>ListDeploymentTargets</code> call. It can be used to return the next set of deployment targets in the list.</p>
+    /// <p> A token identifier returned from the previous <code>ListDeploymentTargets</code> call. It can be used to return the next set of deployment targets in the list. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
@@ -88,12 +84,10 @@ impl ListDeploymentTargetsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_target_filters`](Self::set_target_filters).
     ///
-    /// <p>A key used to filter the returned targets. The two valid values are:</p>
+    /// <p> A key used to filter the returned targets. The two valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>TargetStatus</code> - A <code>TargetStatus</code> filter string can be <code>Failed</code>, <code>InProgress</code>, <code>Pending</code>, <code>Ready</code>, <code>Skipped</code>, <code>Succeeded</code>, or <code>Unknown</code>.</p></li>
-    /// <li>
-    /// <p><code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter string can be <code>Blue</code> or <code>Green</code>.</p></li>
+    /// <li> <p> <code>TargetStatus</code> - A <code>TargetStatus</code> filter string can be <code>Failed</code>, <code>InProgress</code>, <code>Pending</code>, <code>Ready</code>, <code>Skipped</code>, <code>Succeeded</code>, or <code>Unknown</code>. </p> </li>
+    /// <li> <p> <code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter string can be <code>Blue</code> or <code>Green</code>. </p> </li>
     /// </ul>
     pub fn target_filters(mut self, k: crate::types::TargetFilterName, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.target_filters.unwrap_or_default();
@@ -101,12 +95,10 @@ impl ListDeploymentTargetsInputBuilder {
         self.target_filters = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>A key used to filter the returned targets. The two valid values are:</p>
+    /// <p> A key used to filter the returned targets. The two valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>TargetStatus</code> - A <code>TargetStatus</code> filter string can be <code>Failed</code>, <code>InProgress</code>, <code>Pending</code>, <code>Ready</code>, <code>Skipped</code>, <code>Succeeded</code>, or <code>Unknown</code>.</p></li>
-    /// <li>
-    /// <p><code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter string can be <code>Blue</code> or <code>Green</code>.</p></li>
+    /// <li> <p> <code>TargetStatus</code> - A <code>TargetStatus</code> filter string can be <code>Failed</code>, <code>InProgress</code>, <code>Pending</code>, <code>Ready</code>, <code>Skipped</code>, <code>Succeeded</code>, or <code>Unknown</code>. </p> </li>
+    /// <li> <p> <code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter string can be <code>Blue</code> or <code>Green</code>. </p> </li>
     /// </ul>
     pub fn set_target_filters(
         mut self,
@@ -115,12 +107,10 @@ impl ListDeploymentTargetsInputBuilder {
         self.target_filters = input;
         self
     }
-    /// <p>A key used to filter the returned targets. The two valid values are:</p>
+    /// <p> A key used to filter the returned targets. The two valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>TargetStatus</code> - A <code>TargetStatus</code> filter string can be <code>Failed</code>, <code>InProgress</code>, <code>Pending</code>, <code>Ready</code>, <code>Skipped</code>, <code>Succeeded</code>, or <code>Unknown</code>.</p></li>
-    /// <li>
-    /// <p><code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter string can be <code>Blue</code> or <code>Green</code>.</p></li>
+    /// <li> <p> <code>TargetStatus</code> - A <code>TargetStatus</code> filter string can be <code>Failed</code>, <code>InProgress</code>, <code>Pending</code>, <code>Ready</code>, <code>Skipped</code>, <code>Succeeded</code>, or <code>Unknown</code>. </p> </li>
+    /// <li> <p> <code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter string can be <code>Blue</code> or <code>Green</code>. </p> </li>
     /// </ul>
     pub fn get_target_filters(
         &self,

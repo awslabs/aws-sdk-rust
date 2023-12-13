@@ -6,26 +6,16 @@
 pub struct OutboundConnectionStatus {
     /// <p>The status code for the outbound connection. Can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><b>VALIDATING</b> - The outbound connection request is being validated.</p></li>
-    /// <li>
-    /// <p><b>VALIDATION_FAILED</b> - Validation failed for the connection request.</p></li>
-    /// <li>
-    /// <p><b>PENDING_ACCEPTANCE</b>: Outbound connection request is validated and is not yet accepted by the remote domain owner.</p></li>
-    /// <li>
-    /// <p><b>APPROVED</b> - Outbound connection has been approved by the remote domain owner for getting provisioned.</p></li>
-    /// <li>
-    /// <p><b>PROVISIONING</b> - Outbound connection request is in process.</p></li>
-    /// <li>
-    /// <p><b>ACTIVE</b> - Outbound connection is active and ready to use.</p></li>
-    /// <li>
-    /// <p><b>REJECTING</b> - Outbound connection rejection by remote domain owner is in progress.</p></li>
-    /// <li>
-    /// <p><b>REJECTED</b> - Outbound connection request is rejected by remote domain owner.</p></li>
-    /// <li>
-    /// <p><b>DELETING</b> - Outbound connection deletion is in progress.</p></li>
-    /// <li>
-    /// <p><b>DELETED</b> - Outbound connection is deleted and can no longer be used.</p></li>
+    /// <li> <p> <b>VALIDATING</b> - The outbound connection request is being validated.</p> </li>
+    /// <li> <p> <b>VALIDATION_FAILED</b> - Validation failed for the connection request.</p> </li>
+    /// <li> <p> <b>PENDING_ACCEPTANCE</b>: Outbound connection request is validated and is not yet accepted by the remote domain owner.</p> </li>
+    /// <li> <p> <b>APPROVED</b> - Outbound connection has been approved by the remote domain owner for getting provisioned.</p> </li>
+    /// <li> <p> <b>PROVISIONING</b> - Outbound connection request is in process.</p> </li>
+    /// <li> <p> <b>ACTIVE</b> - Outbound connection is active and ready to use.</p> </li>
+    /// <li> <p> <b>REJECTING</b> - Outbound connection rejection by remote domain owner is in progress.</p> </li>
+    /// <li> <p> <b>REJECTED</b> - Outbound connection request is rejected by remote domain owner.</p> </li>
+    /// <li> <p> <b>DELETING</b> - Outbound connection deletion is in progress.</p> </li>
+    /// <li> <p> <b>DELETED</b> - Outbound connection is deleted and can no longer be used.</p> </li>
     /// </ul>
     pub status_code: ::std::option::Option<crate::types::OutboundConnectionStatusCode>,
     /// <p>Verbose information for the outbound connection.</p>
@@ -34,26 +24,16 @@ pub struct OutboundConnectionStatus {
 impl OutboundConnectionStatus {
     /// <p>The status code for the outbound connection. Can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><b>VALIDATING</b> - The outbound connection request is being validated.</p></li>
-    /// <li>
-    /// <p><b>VALIDATION_FAILED</b> - Validation failed for the connection request.</p></li>
-    /// <li>
-    /// <p><b>PENDING_ACCEPTANCE</b>: Outbound connection request is validated and is not yet accepted by the remote domain owner.</p></li>
-    /// <li>
-    /// <p><b>APPROVED</b> - Outbound connection has been approved by the remote domain owner for getting provisioned.</p></li>
-    /// <li>
-    /// <p><b>PROVISIONING</b> - Outbound connection request is in process.</p></li>
-    /// <li>
-    /// <p><b>ACTIVE</b> - Outbound connection is active and ready to use.</p></li>
-    /// <li>
-    /// <p><b>REJECTING</b> - Outbound connection rejection by remote domain owner is in progress.</p></li>
-    /// <li>
-    /// <p><b>REJECTED</b> - Outbound connection request is rejected by remote domain owner.</p></li>
-    /// <li>
-    /// <p><b>DELETING</b> - Outbound connection deletion is in progress.</p></li>
-    /// <li>
-    /// <p><b>DELETED</b> - Outbound connection is deleted and can no longer be used.</p></li>
+    /// <li> <p> <b>VALIDATING</b> - The outbound connection request is being validated.</p> </li>
+    /// <li> <p> <b>VALIDATION_FAILED</b> - Validation failed for the connection request.</p> </li>
+    /// <li> <p> <b>PENDING_ACCEPTANCE</b>: Outbound connection request is validated and is not yet accepted by the remote domain owner.</p> </li>
+    /// <li> <p> <b>APPROVED</b> - Outbound connection has been approved by the remote domain owner for getting provisioned.</p> </li>
+    /// <li> <p> <b>PROVISIONING</b> - Outbound connection request is in process.</p> </li>
+    /// <li> <p> <b>ACTIVE</b> - Outbound connection is active and ready to use.</p> </li>
+    /// <li> <p> <b>REJECTING</b> - Outbound connection rejection by remote domain owner is in progress.</p> </li>
+    /// <li> <p> <b>REJECTED</b> - Outbound connection request is rejected by remote domain owner.</p> </li>
+    /// <li> <p> <b>DELETING</b> - Outbound connection deletion is in progress.</p> </li>
+    /// <li> <p> <b>DELETED</b> - Outbound connection is deleted and can no longer be used.</p> </li>
     /// </ul>
     pub fn status_code(&self) -> ::std::option::Option<&crate::types::OutboundConnectionStatusCode> {
         self.status_code.as_ref()
@@ -80,26 +60,16 @@ pub struct OutboundConnectionStatusBuilder {
 impl OutboundConnectionStatusBuilder {
     /// <p>The status code for the outbound connection. Can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><b>VALIDATING</b> - The outbound connection request is being validated.</p></li>
-    /// <li>
-    /// <p><b>VALIDATION_FAILED</b> - Validation failed for the connection request.</p></li>
-    /// <li>
-    /// <p><b>PENDING_ACCEPTANCE</b>: Outbound connection request is validated and is not yet accepted by the remote domain owner.</p></li>
-    /// <li>
-    /// <p><b>APPROVED</b> - Outbound connection has been approved by the remote domain owner for getting provisioned.</p></li>
-    /// <li>
-    /// <p><b>PROVISIONING</b> - Outbound connection request is in process.</p></li>
-    /// <li>
-    /// <p><b>ACTIVE</b> - Outbound connection is active and ready to use.</p></li>
-    /// <li>
-    /// <p><b>REJECTING</b> - Outbound connection rejection by remote domain owner is in progress.</p></li>
-    /// <li>
-    /// <p><b>REJECTED</b> - Outbound connection request is rejected by remote domain owner.</p></li>
-    /// <li>
-    /// <p><b>DELETING</b> - Outbound connection deletion is in progress.</p></li>
-    /// <li>
-    /// <p><b>DELETED</b> - Outbound connection is deleted and can no longer be used.</p></li>
+    /// <li> <p> <b>VALIDATING</b> - The outbound connection request is being validated.</p> </li>
+    /// <li> <p> <b>VALIDATION_FAILED</b> - Validation failed for the connection request.</p> </li>
+    /// <li> <p> <b>PENDING_ACCEPTANCE</b>: Outbound connection request is validated and is not yet accepted by the remote domain owner.</p> </li>
+    /// <li> <p> <b>APPROVED</b> - Outbound connection has been approved by the remote domain owner for getting provisioned.</p> </li>
+    /// <li> <p> <b>PROVISIONING</b> - Outbound connection request is in process.</p> </li>
+    /// <li> <p> <b>ACTIVE</b> - Outbound connection is active and ready to use.</p> </li>
+    /// <li> <p> <b>REJECTING</b> - Outbound connection rejection by remote domain owner is in progress.</p> </li>
+    /// <li> <p> <b>REJECTED</b> - Outbound connection request is rejected by remote domain owner.</p> </li>
+    /// <li> <p> <b>DELETING</b> - Outbound connection deletion is in progress.</p> </li>
+    /// <li> <p> <b>DELETED</b> - Outbound connection is deleted and can no longer be used.</p> </li>
     /// </ul>
     pub fn status_code(mut self, input: crate::types::OutboundConnectionStatusCode) -> Self {
         self.status_code = ::std::option::Option::Some(input);
@@ -107,26 +77,16 @@ impl OutboundConnectionStatusBuilder {
     }
     /// <p>The status code for the outbound connection. Can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><b>VALIDATING</b> - The outbound connection request is being validated.</p></li>
-    /// <li>
-    /// <p><b>VALIDATION_FAILED</b> - Validation failed for the connection request.</p></li>
-    /// <li>
-    /// <p><b>PENDING_ACCEPTANCE</b>: Outbound connection request is validated and is not yet accepted by the remote domain owner.</p></li>
-    /// <li>
-    /// <p><b>APPROVED</b> - Outbound connection has been approved by the remote domain owner for getting provisioned.</p></li>
-    /// <li>
-    /// <p><b>PROVISIONING</b> - Outbound connection request is in process.</p></li>
-    /// <li>
-    /// <p><b>ACTIVE</b> - Outbound connection is active and ready to use.</p></li>
-    /// <li>
-    /// <p><b>REJECTING</b> - Outbound connection rejection by remote domain owner is in progress.</p></li>
-    /// <li>
-    /// <p><b>REJECTED</b> - Outbound connection request is rejected by remote domain owner.</p></li>
-    /// <li>
-    /// <p><b>DELETING</b> - Outbound connection deletion is in progress.</p></li>
-    /// <li>
-    /// <p><b>DELETED</b> - Outbound connection is deleted and can no longer be used.</p></li>
+    /// <li> <p> <b>VALIDATING</b> - The outbound connection request is being validated.</p> </li>
+    /// <li> <p> <b>VALIDATION_FAILED</b> - Validation failed for the connection request.</p> </li>
+    /// <li> <p> <b>PENDING_ACCEPTANCE</b>: Outbound connection request is validated and is not yet accepted by the remote domain owner.</p> </li>
+    /// <li> <p> <b>APPROVED</b> - Outbound connection has been approved by the remote domain owner for getting provisioned.</p> </li>
+    /// <li> <p> <b>PROVISIONING</b> - Outbound connection request is in process.</p> </li>
+    /// <li> <p> <b>ACTIVE</b> - Outbound connection is active and ready to use.</p> </li>
+    /// <li> <p> <b>REJECTING</b> - Outbound connection rejection by remote domain owner is in progress.</p> </li>
+    /// <li> <p> <b>REJECTED</b> - Outbound connection request is rejected by remote domain owner.</p> </li>
+    /// <li> <p> <b>DELETING</b> - Outbound connection deletion is in progress.</p> </li>
+    /// <li> <p> <b>DELETED</b> - Outbound connection is deleted and can no longer be used.</p> </li>
     /// </ul>
     pub fn set_status_code(mut self, input: ::std::option::Option<crate::types::OutboundConnectionStatusCode>) -> Self {
         self.status_code = input;
@@ -134,26 +94,16 @@ impl OutboundConnectionStatusBuilder {
     }
     /// <p>The status code for the outbound connection. Can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><b>VALIDATING</b> - The outbound connection request is being validated.</p></li>
-    /// <li>
-    /// <p><b>VALIDATION_FAILED</b> - Validation failed for the connection request.</p></li>
-    /// <li>
-    /// <p><b>PENDING_ACCEPTANCE</b>: Outbound connection request is validated and is not yet accepted by the remote domain owner.</p></li>
-    /// <li>
-    /// <p><b>APPROVED</b> - Outbound connection has been approved by the remote domain owner for getting provisioned.</p></li>
-    /// <li>
-    /// <p><b>PROVISIONING</b> - Outbound connection request is in process.</p></li>
-    /// <li>
-    /// <p><b>ACTIVE</b> - Outbound connection is active and ready to use.</p></li>
-    /// <li>
-    /// <p><b>REJECTING</b> - Outbound connection rejection by remote domain owner is in progress.</p></li>
-    /// <li>
-    /// <p><b>REJECTED</b> - Outbound connection request is rejected by remote domain owner.</p></li>
-    /// <li>
-    /// <p><b>DELETING</b> - Outbound connection deletion is in progress.</p></li>
-    /// <li>
-    /// <p><b>DELETED</b> - Outbound connection is deleted and can no longer be used.</p></li>
+    /// <li> <p> <b>VALIDATING</b> - The outbound connection request is being validated.</p> </li>
+    /// <li> <p> <b>VALIDATION_FAILED</b> - Validation failed for the connection request.</p> </li>
+    /// <li> <p> <b>PENDING_ACCEPTANCE</b>: Outbound connection request is validated and is not yet accepted by the remote domain owner.</p> </li>
+    /// <li> <p> <b>APPROVED</b> - Outbound connection has been approved by the remote domain owner for getting provisioned.</p> </li>
+    /// <li> <p> <b>PROVISIONING</b> - Outbound connection request is in process.</p> </li>
+    /// <li> <p> <b>ACTIVE</b> - Outbound connection is active and ready to use.</p> </li>
+    /// <li> <p> <b>REJECTING</b> - Outbound connection rejection by remote domain owner is in progress.</p> </li>
+    /// <li> <p> <b>REJECTED</b> - Outbound connection request is rejected by remote domain owner.</p> </li>
+    /// <li> <p> <b>DELETING</b> - Outbound connection deletion is in progress.</p> </li>
+    /// <li> <p> <b>DELETED</b> - Outbound connection is deleted and can no longer be used.</p> </li>
     /// </ul>
     pub fn get_status_code(&self) -> &::std::option::Option<crate::types::OutboundConnectionStatusCode> {
         &self.status_code

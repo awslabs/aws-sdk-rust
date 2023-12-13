@@ -142,17 +142,17 @@ impl ListPeeringsFluentBuilder {
     pub fn get_peering_type(&self) -> &::std::option::Option<crate::types::PeeringType> {
         self.inner.get_peering_type()
     }
-    /// <p>Returns a list edge locations for the</p>
+    /// <p>Returns a list edge locations for the </p>
     pub fn edge_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.edge_location(input.into());
         self
     }
-    /// <p>Returns a list edge locations for the</p>
+    /// <p>Returns a list edge locations for the </p>
     pub fn set_edge_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_edge_location(input);
         self
     }
-    /// <p>Returns a list edge locations for the</p>
+    /// <p>Returns a list edge locations for the </p>
     pub fn get_edge_location(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_edge_location()
     }

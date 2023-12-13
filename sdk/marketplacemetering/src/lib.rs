@@ -12,7 +12,6 @@
 #![allow(clippy::result_large_err)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
-#![cfg_attr(docsrs, feature(doc_auto_cfg))]
 //! This reference provides descriptions of the low-level AWS Marketplace Metering Service API.
 //!
 //! AWS Marketplace sellers can use this API to submit usage data for custom usage dimensions.
@@ -42,8 +41,8 @@
 //!
 //! ```toml
 //! [dependencies]
-//! aws-config = { version = "1.1.0", features = ["behavior-version-latest"] }
-//! aws-sdk-marketplacemetering = "1.5.0"
+//! aws-config = { version = "1.0.3", features = ["behavior-version-latest"] }
+//! aws-sdk-marketplacemetering = "1.6.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

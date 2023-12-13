@@ -22,7 +22,7 @@ impl UpdateTaskExecutionInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateTaskExecution`.
 ///
-/// <p>Updates the configuration of a running DataSync task execution.</p><note>
+/// <p>Updates the configuration of a running DataSync task execution.</p> <note>
 /// <p>Currently, the only <code>Option</code> that you can modify with <code>UpdateTaskExecution</code> is <code> <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Options.html#DataSync-Type-Options-BytesPerSecond">BytesPerSecond</a> </code>, which throttles bandwidth for a running or queued task execution.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

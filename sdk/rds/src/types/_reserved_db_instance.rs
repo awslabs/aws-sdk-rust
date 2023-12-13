@@ -34,7 +34,7 @@ pub struct ReservedDbInstance {
     pub recurring_charges: ::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>>,
     /// <p>The Amazon Resource Name (ARN) for the reserved DB instance.</p>
     pub reserved_db_instance_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The unique identifier for the lease associated with the reserved DB instance.</p><note>
+    /// <p>The unique identifier for the lease associated with the reserved DB instance.</p> <note>
     /// <p>Amazon Web Services Support might request the lease ID for an issue related to a reserved DB instance.</p>
     /// </note>
     pub lease_id: ::std::option::Option<::std::string::String>,
@@ -102,7 +102,7 @@ impl ReservedDbInstance {
     pub fn reserved_db_instance_arn(&self) -> ::std::option::Option<&str> {
         self.reserved_db_instance_arn.as_deref()
     }
-    /// <p>The unique identifier for the lease associated with the reserved DB instance.</p><note>
+    /// <p>The unique identifier for the lease associated with the reserved DB instance.</p> <note>
     /// <p>Amazon Web Services Support might request the lease ID for an issue related to a reserved DB instance.</p>
     /// </note>
     pub fn lease_id(&self) -> ::std::option::Option<&str> {
@@ -354,21 +354,21 @@ impl ReservedDbInstanceBuilder {
     pub fn get_reserved_db_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.reserved_db_instance_arn
     }
-    /// <p>The unique identifier for the lease associated with the reserved DB instance.</p><note>
+    /// <p>The unique identifier for the lease associated with the reserved DB instance.</p> <note>
     /// <p>Amazon Web Services Support might request the lease ID for an issue related to a reserved DB instance.</p>
     /// </note>
     pub fn lease_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lease_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier for the lease associated with the reserved DB instance.</p><note>
+    /// <p>The unique identifier for the lease associated with the reserved DB instance.</p> <note>
     /// <p>Amazon Web Services Support might request the lease ID for an issue related to a reserved DB instance.</p>
     /// </note>
     pub fn set_lease_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lease_id = input;
         self
     }
-    /// <p>The unique identifier for the lease associated with the reserved DB instance.</p><note>
+    /// <p>The unique identifier for the lease associated with the reserved DB instance.</p> <note>
     /// <p>Amazon Web Services Support might request the lease ID for an issue related to a reserved DB instance.</p>
     /// </note>
     pub fn get_lease_id(&self) -> &::std::option::Option<::std::string::String> {

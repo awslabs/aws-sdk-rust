@@ -22,7 +22,7 @@ impl CreateSecurityConfigInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateSecurityConfig`.
 ///
-/// <p>Specifies a security configuration for OpenSearch Serverless. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-saml.html">SAML authentication for Amazon OpenSearch Serverless</a>.</p>
+/// <p>Specifies a security configuration for OpenSearch Serverless. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-saml.html">SAML authentication for Amazon OpenSearch Serverless</a>. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateSecurityConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

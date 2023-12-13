@@ -8,7 +8,7 @@ pub struct SenderIdInformation {
     pub sender_id_arn: ::std::string::String,
     /// <p>The alphanumeric sender ID in a specific country that you'd like to describe.</p>
     pub sender_id: ::std::string::String,
-    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
+    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
     pub iso_country_code: ::std::string::String,
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
     pub message_types: ::std::vec::Vec<crate::types::MessageType>,
@@ -32,7 +32,7 @@ impl SenderIdInformation {
         use std::ops::Deref;
         self.sender_id.deref()
     }
-    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
+    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
     pub fn iso_country_code(&self) -> &str {
         use std::ops::Deref;
         self.iso_country_code.deref()
@@ -111,18 +111,18 @@ impl SenderIdInformationBuilder {
     pub fn get_sender_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.sender_id
     }
-    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
+    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
     /// This field is required.
     pub fn iso_country_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iso_country_code = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
+    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
     pub fn set_iso_country_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iso_country_code = input;
         self
     }
-    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
+    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
     pub fn get_iso_country_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.iso_country_code
     }

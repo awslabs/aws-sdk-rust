@@ -122,17 +122,17 @@ impl UpdateScheduledQueryFluentBuilder {
     pub fn get_scheduled_query_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_scheduled_query_arn()
     }
-    /// <p>State of the scheduled query.</p>
+    /// <p>State of the scheduled query. </p>
     pub fn state(mut self, input: crate::types::ScheduledQueryState) -> Self {
         self.inner = self.inner.state(input);
         self
     }
-    /// <p>State of the scheduled query.</p>
+    /// <p>State of the scheduled query. </p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ScheduledQueryState>) -> Self {
         self.inner = self.inner.set_state(input);
         self
     }
-    /// <p>State of the scheduled query.</p>
+    /// <p>State of the scheduled query. </p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ScheduledQueryState> {
         self.inner.get_state()
     }

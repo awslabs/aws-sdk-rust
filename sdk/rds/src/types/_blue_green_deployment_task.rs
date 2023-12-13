@@ -10,14 +10,10 @@ pub struct BlueGreenDeploymentTask {
     /// <p>The status of the blue/green deployment task.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PENDING</code> - The resource is being prepared for deployment.</p></li>
-    /// <li>
-    /// <p><code>IN_PROGRESS</code> - The resource is being deployed.</p></li>
-    /// <li>
-    /// <p><code>COMPLETED</code> - The resource has been deployed.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - Deployment of the resource failed.</p></li>
+    /// <li> <p> <code>PENDING</code> - The resource is being prepared for deployment.</p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code> - The resource is being deployed.</p> </li>
+    /// <li> <p> <code>COMPLETED</code> - The resource has been deployed.</p> </li>
+    /// <li> <p> <code>FAILED</code> - Deployment of the resource failed.</p> </li>
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
 }
@@ -29,14 +25,10 @@ impl BlueGreenDeploymentTask {
     /// <p>The status of the blue/green deployment task.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PENDING</code> - The resource is being prepared for deployment.</p></li>
-    /// <li>
-    /// <p><code>IN_PROGRESS</code> - The resource is being deployed.</p></li>
-    /// <li>
-    /// <p><code>COMPLETED</code> - The resource has been deployed.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - Deployment of the resource failed.</p></li>
+    /// <li> <p> <code>PENDING</code> - The resource is being prepared for deployment.</p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code> - The resource is being deployed.</p> </li>
+    /// <li> <p> <code>COMPLETED</code> - The resource has been deployed.</p> </li>
+    /// <li> <p> <code>FAILED</code> - Deployment of the resource failed.</p> </li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
@@ -74,14 +66,10 @@ impl BlueGreenDeploymentTaskBuilder {
     /// <p>The status of the blue/green deployment task.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PENDING</code> - The resource is being prepared for deployment.</p></li>
-    /// <li>
-    /// <p><code>IN_PROGRESS</code> - The resource is being deployed.</p></li>
-    /// <li>
-    /// <p><code>COMPLETED</code> - The resource has been deployed.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - Deployment of the resource failed.</p></li>
+    /// <li> <p> <code>PENDING</code> - The resource is being prepared for deployment.</p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code> - The resource is being deployed.</p> </li>
+    /// <li> <p> <code>COMPLETED</code> - The resource has been deployed.</p> </li>
+    /// <li> <p> <code>FAILED</code> - Deployment of the resource failed.</p> </li>
     /// </ul>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -90,14 +78,10 @@ impl BlueGreenDeploymentTaskBuilder {
     /// <p>The status of the blue/green deployment task.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PENDING</code> - The resource is being prepared for deployment.</p></li>
-    /// <li>
-    /// <p><code>IN_PROGRESS</code> - The resource is being deployed.</p></li>
-    /// <li>
-    /// <p><code>COMPLETED</code> - The resource has been deployed.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - Deployment of the resource failed.</p></li>
+    /// <li> <p> <code>PENDING</code> - The resource is being prepared for deployment.</p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code> - The resource is being deployed.</p> </li>
+    /// <li> <p> <code>COMPLETED</code> - The resource has been deployed.</p> </li>
+    /// <li> <p> <code>FAILED</code> - Deployment of the resource failed.</p> </li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
@@ -106,14 +90,10 @@ impl BlueGreenDeploymentTaskBuilder {
     /// <p>The status of the blue/green deployment task.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PENDING</code> - The resource is being prepared for deployment.</p></li>
-    /// <li>
-    /// <p><code>IN_PROGRESS</code> - The resource is being deployed.</p></li>
-    /// <li>
-    /// <p><code>COMPLETED</code> - The resource has been deployed.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - Deployment of the resource failed.</p></li>
+    /// <li> <p> <code>PENDING</code> - The resource is being prepared for deployment.</p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code> - The resource is being deployed.</p> </li>
+    /// <li> <p> <code>COMPLETED</code> - The resource has been deployed.</p> </li>
+    /// <li> <p> <code>FAILED</code> - Deployment of the resource failed.</p> </li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status

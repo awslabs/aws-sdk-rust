@@ -7,7 +7,8 @@ pub struct TopicsDetectionJobProperties {
     /// <p>The identifier assigned to the topic detection job.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the topics detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
-    /// <p><code>arn:<partition>
+    /// <p> <code>arn:
+    /// <partition>
     /// :comprehend:
     /// <region>
     /// :
@@ -16,9 +17,9 @@ pub struct TopicsDetectionJobProperties {
     /// <job-id></job-id>
     /// </account-id>
     /// </region>
-    /// </partition></code></p>
+    /// </partition></code> </p>
     /// <p>The following is an example job ARN:</p>
-    /// <p><code>arn:aws:comprehend:us-west-2:111122223333:topics-detection-job/1234abcd12ab34cd56ef1234567890ab</code></p>
+    /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:topics-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
     pub job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the topic detection job.</p>
     pub job_name: ::std::option::Option<::std::string::String>,
@@ -34,19 +35,17 @@ pub struct TopicsDetectionJobProperties {
     pub input_data_config: ::std::option::Option<crate::types::InputDataConfig>,
     /// <p>The output data configuration supplied when you created the topic detection job.</p>
     pub output_data_config: ::std::option::Option<crate::types::OutputDataConfig>,
-    /// <p>The number of topics to detect supplied when you created the topic detection job. The default is 10.</p>
+    /// <p>The number of topics to detect supplied when you created the topic detection job. The default is 10. </p>
     pub number_of_topics: ::std::option::Option<i32>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your job data.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your job data. </p>
     pub data_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
     /// <ul>
-    /// <li>
-    /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
-    /// <li>
-    /// <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
+    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
     pub volume_kms_key_id: ::std::option::Option<::std::string::String>,
-    /// <p>Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for your topic detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.</p>
+    /// <p>Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for your topic detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
     pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
 }
 impl TopicsDetectionJobProperties {
@@ -55,7 +54,8 @@ impl TopicsDetectionJobProperties {
         self.job_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the topics detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
-    /// <p><code>arn:<partition>
+    /// <p> <code>arn:
+    /// <partition>
     /// :comprehend:
     /// <region>
     /// :
@@ -64,9 +64,9 @@ impl TopicsDetectionJobProperties {
     /// <job-id></job-id>
     /// </account-id>
     /// </region>
-    /// </partition></code></p>
+    /// </partition></code> </p>
     /// <p>The following is an example job ARN:</p>
-    /// <p><code>arn:aws:comprehend:us-west-2:111122223333:topics-detection-job/1234abcd12ab34cd56ef1234567890ab</code></p>
+    /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:topics-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
     pub fn job_arn(&self) -> ::std::option::Option<&str> {
         self.job_arn.as_deref()
     }
@@ -98,25 +98,23 @@ impl TopicsDetectionJobProperties {
     pub fn output_data_config(&self) -> ::std::option::Option<&crate::types::OutputDataConfig> {
         self.output_data_config.as_ref()
     }
-    /// <p>The number of topics to detect supplied when you created the topic detection job. The default is 10.</p>
+    /// <p>The number of topics to detect supplied when you created the topic detection job. The default is 10. </p>
     pub fn number_of_topics(&self) -> ::std::option::Option<i32> {
         self.number_of_topics
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your job data.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your job data. </p>
     pub fn data_access_role_arn(&self) -> ::std::option::Option<&str> {
         self.data_access_role_arn.as_deref()
     }
     /// <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
     /// <ul>
-    /// <li>
-    /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
-    /// <li>
-    /// <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
+    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
     pub fn volume_kms_key_id(&self) -> ::std::option::Option<&str> {
         self.volume_kms_key_id.as_deref()
     }
-    /// <p>Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for your topic detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.</p>
+    /// <p>Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for your topic detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
     pub fn vpc_config(&self) -> ::std::option::Option<&crate::types::VpcConfig> {
         self.vpc_config.as_ref()
     }
@@ -162,7 +160,8 @@ impl TopicsDetectionJobPropertiesBuilder {
         &self.job_id
     }
     /// <p>The Amazon Resource Name (ARN) of the topics detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
-    /// <p><code>arn:<partition>
+    /// <p> <code>arn:
+    /// <partition>
     /// :comprehend:
     /// <region>
     /// :
@@ -171,15 +170,16 @@ impl TopicsDetectionJobPropertiesBuilder {
     /// <job-id></job-id>
     /// </account-id>
     /// </region>
-    /// </partition></code></p>
+    /// </partition></code> </p>
     /// <p>The following is an example job ARN:</p>
-    /// <p><code>arn:aws:comprehend:us-west-2:111122223333:topics-detection-job/1234abcd12ab34cd56ef1234567890ab</code></p>
+    /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:topics-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
     pub fn job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the topics detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
-    /// <p><code>arn:<partition>
+    /// <p> <code>arn:
+    /// <partition>
     /// :comprehend:
     /// <region>
     /// :
@@ -188,15 +188,16 @@ impl TopicsDetectionJobPropertiesBuilder {
     /// <job-id></job-id>
     /// </account-id>
     /// </region>
-    /// </partition></code></p>
+    /// </partition></code> </p>
     /// <p>The following is an example job ARN:</p>
-    /// <p><code>arn:aws:comprehend:us-west-2:111122223333:topics-detection-job/1234abcd12ab34cd56ef1234567890ab</code></p>
+    /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:topics-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
     pub fn set_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the topics detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
-    /// <p><code>arn:<partition>
+    /// <p> <code>arn:
+    /// <partition>
     /// :comprehend:
     /// <region>
     /// :
@@ -205,9 +206,9 @@ impl TopicsDetectionJobPropertiesBuilder {
     /// <job-id></job-id>
     /// </account-id>
     /// </region>
-    /// </partition></code></p>
+    /// </partition></code> </p>
     /// <p>The following is an example job ARN:</p>
-    /// <p><code>arn:aws:comprehend:us-west-2:111122223333:topics-detection-job/1234abcd12ab34cd56ef1234567890ab</code></p>
+    /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:topics-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
     pub fn get_job_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_arn
     }
@@ -309,40 +310,38 @@ impl TopicsDetectionJobPropertiesBuilder {
     pub fn get_output_data_config(&self) -> &::std::option::Option<crate::types::OutputDataConfig> {
         &self.output_data_config
     }
-    /// <p>The number of topics to detect supplied when you created the topic detection job. The default is 10.</p>
+    /// <p>The number of topics to detect supplied when you created the topic detection job. The default is 10. </p>
     pub fn number_of_topics(mut self, input: i32) -> Self {
         self.number_of_topics = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of topics to detect supplied when you created the topic detection job. The default is 10.</p>
+    /// <p>The number of topics to detect supplied when you created the topic detection job. The default is 10. </p>
     pub fn set_number_of_topics(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_topics = input;
         self
     }
-    /// <p>The number of topics to detect supplied when you created the topic detection job. The default is 10.</p>
+    /// <p>The number of topics to detect supplied when you created the topic detection job. The default is 10. </p>
     pub fn get_number_of_topics(&self) -> &::std::option::Option<i32> {
         &self.number_of_topics
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your job data.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your job data. </p>
     pub fn data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_access_role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your job data.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your job data. </p>
     pub fn set_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_access_role_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your job data.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your job data. </p>
     pub fn get_data_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_access_role_arn
     }
     /// <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
     /// <ul>
-    /// <li>
-    /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
-    /// <li>
-    /// <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
+    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
     pub fn volume_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_kms_key_id = ::std::option::Option::Some(input.into());
@@ -350,10 +349,8 @@ impl TopicsDetectionJobPropertiesBuilder {
     }
     /// <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
     /// <ul>
-    /// <li>
-    /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
-    /// <li>
-    /// <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
+    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
     pub fn set_volume_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_kms_key_id = input;
@@ -361,25 +358,23 @@ impl TopicsDetectionJobPropertiesBuilder {
     }
     /// <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
     /// <ul>
-    /// <li>
-    /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
-    /// <li>
-    /// <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
+    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
     pub fn get_volume_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.volume_kms_key_id
     }
-    /// <p>Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for your topic detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.</p>
+    /// <p>Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for your topic detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
     pub fn vpc_config(mut self, input: crate::types::VpcConfig) -> Self {
         self.vpc_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for your topic detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.</p>
+    /// <p>Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for your topic detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
     pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfig>) -> Self {
         self.vpc_config = input;
         self
     }
-    /// <p>Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for your topic detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.</p>
+    /// <p>Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for your topic detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
     pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
         &self.vpc_config
     }

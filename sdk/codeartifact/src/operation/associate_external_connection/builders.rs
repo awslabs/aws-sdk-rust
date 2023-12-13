@@ -22,7 +22,7 @@ impl AssociateExternalConnectionInputBuilder {
 }
 /// Fluent builder constructing a request to `AssociateExternalConnection`.
 ///
-/// <p>Adds an existing external connection to a repository. One external connection is allowed per repository.</p><note>
+/// <p>Adds an existing external connection to a repository. One external connection is allowed per repository.</p> <note>
 /// <p>A repository can have one or more upstream repositories, or an external connection.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -124,98 +124,74 @@ impl AssociateExternalConnectionFluentBuilder {
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain()
     }
-    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_owner(input.into());
         self
     }
-    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn set_domain_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_owner(input);
         self
     }
-    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn get_domain_owner(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_owner()
     }
-    /// <p>The name of the repository to which the external connection is added.</p>
+    /// <p> The name of the repository to which the external connection is added. </p>
     pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository(input.into());
         self
     }
-    /// <p>The name of the repository to which the external connection is added.</p>
+    /// <p> The name of the repository to which the external connection is added. </p>
     pub fn set_repository(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository(input);
         self
     }
-    /// <p>The name of the repository to which the external connection is added.</p>
+    /// <p> The name of the repository to which the external connection is added. </p>
     pub fn get_repository(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_repository()
     }
-    /// <p>The name of the external connection to add to the repository. The following values are supported:</p>
+    /// <p> The name of the external connection to add to the repository. The following values are supported: </p>
     /// <ul>
-    /// <li>
-    /// <p><code>public:npmjs</code> - for the npm public repository.</p></li>
-    /// <li>
-    /// <p><code>public:nuget-org</code> - for the NuGet Gallery.</p></li>
-    /// <li>
-    /// <p><code>public:pypi</code> - for the Python Package Index.</p></li>
-    /// <li>
-    /// <p><code>public:maven-central</code> - for Maven Central.</p></li>
-    /// <li>
-    /// <p><code>public:maven-googleandroid</code> - for the Google Android repository.</p></li>
-    /// <li>
-    /// <p><code>public:maven-gradleplugins</code> - for the Gradle plugins repository.</p></li>
-    /// <li>
-    /// <p><code>public:maven-commonsware</code> - for the CommonsWare Android repository.</p></li>
-    /// <li>
-    /// <p><code>public:maven-clojars</code> - for the Clojars repository.</p></li>
+    /// <li> <p> <code>public:npmjs</code> - for the npm public repository. </p> </li>
+    /// <li> <p> <code>public:nuget-org</code> - for the NuGet Gallery. </p> </li>
+    /// <li> <p> <code>public:pypi</code> - for the Python Package Index. </p> </li>
+    /// <li> <p> <code>public:maven-central</code> - for Maven Central. </p> </li>
+    /// <li> <p> <code>public:maven-googleandroid</code> - for the Google Android repository. </p> </li>
+    /// <li> <p> <code>public:maven-gradleplugins</code> - for the Gradle plugins repository. </p> </li>
+    /// <li> <p> <code>public:maven-commonsware</code> - for the CommonsWare Android repository. </p> </li>
+    /// <li> <p> <code>public:maven-clojars</code> - for the Clojars repository. </p> </li>
     /// </ul>
     pub fn external_connection(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.external_connection(input.into());
         self
     }
-    /// <p>The name of the external connection to add to the repository. The following values are supported:</p>
+    /// <p> The name of the external connection to add to the repository. The following values are supported: </p>
     /// <ul>
-    /// <li>
-    /// <p><code>public:npmjs</code> - for the npm public repository.</p></li>
-    /// <li>
-    /// <p><code>public:nuget-org</code> - for the NuGet Gallery.</p></li>
-    /// <li>
-    /// <p><code>public:pypi</code> - for the Python Package Index.</p></li>
-    /// <li>
-    /// <p><code>public:maven-central</code> - for Maven Central.</p></li>
-    /// <li>
-    /// <p><code>public:maven-googleandroid</code> - for the Google Android repository.</p></li>
-    /// <li>
-    /// <p><code>public:maven-gradleplugins</code> - for the Gradle plugins repository.</p></li>
-    /// <li>
-    /// <p><code>public:maven-commonsware</code> - for the CommonsWare Android repository.</p></li>
-    /// <li>
-    /// <p><code>public:maven-clojars</code> - for the Clojars repository.</p></li>
+    /// <li> <p> <code>public:npmjs</code> - for the npm public repository. </p> </li>
+    /// <li> <p> <code>public:nuget-org</code> - for the NuGet Gallery. </p> </li>
+    /// <li> <p> <code>public:pypi</code> - for the Python Package Index. </p> </li>
+    /// <li> <p> <code>public:maven-central</code> - for Maven Central. </p> </li>
+    /// <li> <p> <code>public:maven-googleandroid</code> - for the Google Android repository. </p> </li>
+    /// <li> <p> <code>public:maven-gradleplugins</code> - for the Gradle plugins repository. </p> </li>
+    /// <li> <p> <code>public:maven-commonsware</code> - for the CommonsWare Android repository. </p> </li>
+    /// <li> <p> <code>public:maven-clojars</code> - for the Clojars repository. </p> </li>
     /// </ul>
     pub fn set_external_connection(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_external_connection(input);
         self
     }
-    /// <p>The name of the external connection to add to the repository. The following values are supported:</p>
+    /// <p> The name of the external connection to add to the repository. The following values are supported: </p>
     /// <ul>
-    /// <li>
-    /// <p><code>public:npmjs</code> - for the npm public repository.</p></li>
-    /// <li>
-    /// <p><code>public:nuget-org</code> - for the NuGet Gallery.</p></li>
-    /// <li>
-    /// <p><code>public:pypi</code> - for the Python Package Index.</p></li>
-    /// <li>
-    /// <p><code>public:maven-central</code> - for Maven Central.</p></li>
-    /// <li>
-    /// <p><code>public:maven-googleandroid</code> - for the Google Android repository.</p></li>
-    /// <li>
-    /// <p><code>public:maven-gradleplugins</code> - for the Gradle plugins repository.</p></li>
-    /// <li>
-    /// <p><code>public:maven-commonsware</code> - for the CommonsWare Android repository.</p></li>
-    /// <li>
-    /// <p><code>public:maven-clojars</code> - for the Clojars repository.</p></li>
+    /// <li> <p> <code>public:npmjs</code> - for the npm public repository. </p> </li>
+    /// <li> <p> <code>public:nuget-org</code> - for the NuGet Gallery. </p> </li>
+    /// <li> <p> <code>public:pypi</code> - for the Python Package Index. </p> </li>
+    /// <li> <p> <code>public:maven-central</code> - for Maven Central. </p> </li>
+    /// <li> <p> <code>public:maven-googleandroid</code> - for the Google Android repository. </p> </li>
+    /// <li> <p> <code>public:maven-gradleplugins</code> - for the Gradle plugins repository. </p> </li>
+    /// <li> <p> <code>public:maven-commonsware</code> - for the CommonsWare Android repository. </p> </li>
+    /// <li> <p> <code>public:maven-clojars</code> - for the Clojars repository. </p> </li>
     /// </ul>
     pub fn get_external_connection(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_external_connection()

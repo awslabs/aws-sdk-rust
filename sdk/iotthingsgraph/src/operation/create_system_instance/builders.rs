@@ -22,7 +22,7 @@ impl CreateSystemInstanceInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateSystemInstance`.
 ///
-/// <p>Creates a system instance.</p>
+/// <p>Creates a system instance. </p>
 /// <p>This action validates the system instance, prepares the deployment-related resources. For Greengrass deployments, it updates the Greengrass group that is specified by the <code>greengrassGroupName</code> parameter. It also adds a file to the S3 bucket specified by the <code>s3BucketName</code> parameter. You need to call <code>DeploySystemInstance</code> after running this action.</p>
 /// <p>For Greengrass deployments, since this action modifies and adds resources to a Greengrass group and an S3 bucket on the caller's behalf, the calling identity must have write permissions to both the specified Greengrass group and S3 bucket. Otherwise, the call will fail with an authorization error.</p>
 /// <p>For cloud deployments, this action requires a <code>flowActionsRoleArn</code> value. This is an IAM role that has permissions to access AWS services, such as AWS Lambda and AWS IoT, that the flow uses when it executes.</p>
@@ -131,17 +131,17 @@ impl CreateSystemInstanceFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
-    /// <p>A document that defines an entity.</p>
+    /// <p>A document that defines an entity. </p>
     pub fn definition(mut self, input: crate::types::DefinitionDocument) -> Self {
         self.inner = self.inner.definition(input);
         self
     }
-    /// <p>A document that defines an entity.</p>
+    /// <p>A document that defines an entity. </p>
     pub fn set_definition(mut self, input: ::std::option::Option<crate::types::DefinitionDocument>) -> Self {
         self.inner = self.inner.set_definition(input);
         self
     }
-    /// <p>A document that defines an entity.</p>
+    /// <p>A document that defines an entity. </p>
     pub fn get_definition(&self) -> &::std::option::Option<crate::types::DefinitionDocument> {
         self.inner.get_definition()
     }

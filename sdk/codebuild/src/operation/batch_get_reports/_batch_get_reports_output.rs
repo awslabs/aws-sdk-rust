@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetReportsOutput {
-    /// <p>The array of <code>Report</code> objects returned by <code>BatchGetReports</code>.</p>
+    /// <p> The array of <code>Report</code> objects returned by <code>BatchGetReports</code>. </p>
     pub reports: ::std::option::Option<::std::vec::Vec<crate::types::Report>>,
-    /// <p>An array of ARNs passed to <code>BatchGetReportGroups</code> that are not associated with a <code>Report</code>.</p>
+    /// <p> An array of ARNs passed to <code>BatchGetReportGroups</code> that are not associated with a <code>Report</code>. </p>
     pub reports_not_found: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl BatchGetReportsOutput {
-    /// <p>The array of <code>Report</code> objects returned by <code>BatchGetReports</code>.</p>
+    /// <p> The array of <code>Report</code> objects returned by <code>BatchGetReports</code>. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reports.is_none()`.
     pub fn reports(&self) -> &[crate::types::Report] {
         self.reports.as_deref().unwrap_or_default()
     }
-    /// <p>An array of ARNs passed to <code>BatchGetReportGroups</code> that are not associated with a <code>Report</code>.</p>
+    /// <p> An array of ARNs passed to <code>BatchGetReportGroups</code> that are not associated with a <code>Report</code>. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reports_not_found.is_none()`.
     pub fn reports_not_found(&self) -> &[::std::string::String] {
@@ -48,19 +48,19 @@ impl BatchGetReportsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_reports`](Self::set_reports).
     ///
-    /// <p>The array of <code>Report</code> objects returned by <code>BatchGetReports</code>.</p>
+    /// <p> The array of <code>Report</code> objects returned by <code>BatchGetReports</code>. </p>
     pub fn reports(mut self, input: crate::types::Report) -> Self {
         let mut v = self.reports.unwrap_or_default();
         v.push(input);
         self.reports = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The array of <code>Report</code> objects returned by <code>BatchGetReports</code>.</p>
+    /// <p> The array of <code>Report</code> objects returned by <code>BatchGetReports</code>. </p>
     pub fn set_reports(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Report>>) -> Self {
         self.reports = input;
         self
     }
-    /// <p>The array of <code>Report</code> objects returned by <code>BatchGetReports</code>.</p>
+    /// <p> The array of <code>Report</code> objects returned by <code>BatchGetReports</code>. </p>
     pub fn get_reports(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Report>> {
         &self.reports
     }
@@ -68,19 +68,19 @@ impl BatchGetReportsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_reports_not_found`](Self::set_reports_not_found).
     ///
-    /// <p>An array of ARNs passed to <code>BatchGetReportGroups</code> that are not associated with a <code>Report</code>.</p>
+    /// <p> An array of ARNs passed to <code>BatchGetReportGroups</code> that are not associated with a <code>Report</code>. </p>
     pub fn reports_not_found(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.reports_not_found.unwrap_or_default();
         v.push(input.into());
         self.reports_not_found = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of ARNs passed to <code>BatchGetReportGroups</code> that are not associated with a <code>Report</code>.</p>
+    /// <p> An array of ARNs passed to <code>BatchGetReportGroups</code> that are not associated with a <code>Report</code>. </p>
     pub fn set_reports_not_found(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.reports_not_found = input;
         self
     }
-    /// <p>An array of ARNs passed to <code>BatchGetReportGroups</code> that are not associated with a <code>Report</code>.</p>
+    /// <p> An array of ARNs passed to <code>BatchGetReportGroups</code> that are not associated with a <code>Report</code>. </p>
     pub fn get_reports_not_found(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.reports_not_found
     }

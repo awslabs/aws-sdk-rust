@@ -22,11 +22,11 @@ impl AddTagsToStreamInputBuilder {
 }
 /// Fluent builder constructing a request to `AddTagsToStream`.
 ///
-/// <p>Adds or updates tags for the specified Kinesis data stream. You can assign up to 50 tags to a data stream.</p><note>
+/// <p>Adds or updates tags for the specified Kinesis data stream. You can assign up to 50 tags to a data stream.</p> <note>
 /// <p>When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code> parameter, or both. It is recommended that you use the <code>StreamARN</code> input parameter when you invoke this API.</p>
 /// </note>
 /// <p>If tags have already been assigned to the stream, <code>AddTagsToStream</code> overwrites any existing tags that correspond to the specified tag keys.</p>
-/// <p><code>AddTagsToStream</code> has a limit of five transactions per second per account.</p>
+/// <p> <code>AddTagsToStream</code> has a limit of five transactions per second per account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AddTagsToStreamFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

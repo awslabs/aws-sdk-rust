@@ -22,7 +22,7 @@ impl ListHealthChecksInputBuilder {
 }
 /// Fluent builder constructing a request to `ListHealthChecks`.
 ///
-/// <p>Retrieve a list of the health checks that are associated with the current Amazon Web Services account.</p>
+/// <p>Retrieve a list of the health checks that are associated with the current Amazon Web Services account. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListHealthChecksFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,37 +114,37 @@ impl ListHealthChecksFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_health_checks::paginator::ListHealthChecksPaginator {
         crate::operation::list_health_checks::paginator::ListHealthChecksPaginator::new(self.handle, self.inner)
     }
-    /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more health checks. To get another group, submit another <code>ListHealthChecks</code> request.</p>
+    /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more health checks. To get another group, submit another <code>ListHealthChecks</code> request. </p>
     /// <p>For the value of <code>marker</code>, specify the value of <code>NextMarker</code> from the previous response, which is the ID of the first health check that Amazon Route 53 will return if you submit another request.</p>
     /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more health checks to get.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
         self
     }
-    /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more health checks. To get another group, submit another <code>ListHealthChecks</code> request.</p>
+    /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more health checks. To get another group, submit another <code>ListHealthChecks</code> request. </p>
     /// <p>For the value of <code>marker</code>, specify the value of <code>NextMarker</code> from the previous response, which is the ID of the first health check that Amazon Route 53 will return if you submit another request.</p>
     /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more health checks to get.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_marker(input);
         self
     }
-    /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more health checks. To get another group, submit another <code>ListHealthChecks</code> request.</p>
+    /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more health checks. To get another group, submit another <code>ListHealthChecks</code> request. </p>
     /// <p>For the value of <code>marker</code>, specify the value of <code>NextMarker</code> from the previous response, which is the ID of the first health check that Amazon Route 53 will return if you submit another request.</p>
     /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more health checks to get.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_marker()
     }
-    /// <p>The maximum number of health checks that you want <code>ListHealthChecks</code> to return in response to the current request. Amazon Route 53 returns a maximum of 1000 items. If you set <code>MaxItems</code> to a value greater than 1000, Route 53 returns only the first 1000 health checks.</p>
+    /// <p>The maximum number of health checks that you want <code>ListHealthChecks</code> to return in response to the current request. Amazon Route 53 returns a maximum of 1000 items. If you set <code>MaxItems</code> to a value greater than 1000, Route 53 returns only the first 1000 health checks. </p>
     pub fn max_items(mut self, input: i32) -> Self {
         self.inner = self.inner.max_items(input);
         self
     }
-    /// <p>The maximum number of health checks that you want <code>ListHealthChecks</code> to return in response to the current request. Amazon Route 53 returns a maximum of 1000 items. If you set <code>MaxItems</code> to a value greater than 1000, Route 53 returns only the first 1000 health checks.</p>
+    /// <p>The maximum number of health checks that you want <code>ListHealthChecks</code> to return in response to the current request. Amazon Route 53 returns a maximum of 1000 items. If you set <code>MaxItems</code> to a value greater than 1000, Route 53 returns only the first 1000 health checks. </p>
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_items(input);
         self
     }
-    /// <p>The maximum number of health checks that you want <code>ListHealthChecks</code> to return in response to the current request. Amazon Route 53 returns a maximum of 1000 items. If you set <code>MaxItems</code> to a value greater than 1000, Route 53 returns only the first 1000 health checks.</p>
+    /// <p>The maximum number of health checks that you want <code>ListHealthChecks</code> to return in response to the current request. Amazon Route 53 returns a maximum of 1000 items. If you set <code>MaxItems</code> to a value greater than 1000, Route 53 returns only the first 1000 health checks. </p>
     pub fn get_max_items(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_items()
     }

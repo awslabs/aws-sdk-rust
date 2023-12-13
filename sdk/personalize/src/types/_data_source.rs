@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataSource {
-    /// <p>The path to the Amazon S3 bucket where the data that you want to upload to your dataset is stored. For example:</p>
-    /// <p><code>s3://bucket-name/folder-name/</code></p>
+    /// <p>The path to the Amazon S3 bucket where the data that you want to upload to your dataset is stored. For example: </p>
+    /// <p> <code>s3://bucket-name/folder-name/</code> </p>
     pub data_location: ::std::option::Option<::std::string::String>,
 }
 impl DataSource {
-    /// <p>The path to the Amazon S3 bucket where the data that you want to upload to your dataset is stored. For example:</p>
-    /// <p><code>s3://bucket-name/folder-name/</code></p>
+    /// <p>The path to the Amazon S3 bucket where the data that you want to upload to your dataset is stored. For example: </p>
+    /// <p> <code>s3://bucket-name/folder-name/</code> </p>
     pub fn data_location(&self) -> ::std::option::Option<&str> {
         self.data_location.as_deref()
     }
@@ -29,20 +29,20 @@ pub struct DataSourceBuilder {
     pub(crate) data_location: ::std::option::Option<::std::string::String>,
 }
 impl DataSourceBuilder {
-    /// <p>The path to the Amazon S3 bucket where the data that you want to upload to your dataset is stored. For example:</p>
-    /// <p><code>s3://bucket-name/folder-name/</code></p>
+    /// <p>The path to the Amazon S3 bucket where the data that you want to upload to your dataset is stored. For example: </p>
+    /// <p> <code>s3://bucket-name/folder-name/</code> </p>
     pub fn data_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_location = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The path to the Amazon S3 bucket where the data that you want to upload to your dataset is stored. For example:</p>
-    /// <p><code>s3://bucket-name/folder-name/</code></p>
+    /// <p>The path to the Amazon S3 bucket where the data that you want to upload to your dataset is stored. For example: </p>
+    /// <p> <code>s3://bucket-name/folder-name/</code> </p>
     pub fn set_data_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_location = input;
         self
     }
-    /// <p>The path to the Amazon S3 bucket where the data that you want to upload to your dataset is stored. For example:</p>
-    /// <p><code>s3://bucket-name/folder-name/</code></p>
+    /// <p>The path to the Amazon S3 bucket where the data that you want to upload to your dataset is stored. For example: </p>
+    /// <p> <code>s3://bucket-name/folder-name/</code> </p>
     pub fn get_data_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_location
     }

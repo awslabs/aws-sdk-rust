@@ -24,9 +24,9 @@ impl RequestUploadCredentialsInputBuilder {
 ///
 /// <p>Retrieves a fresh set of credentials for use when uploading a new set of game build files to Amazon GameLift's Amazon S3. This is done as part of the build creation process; see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateBuild.html">GameSession</a>.</p>
 /// <p>To request new credentials, specify the build ID as returned with an initial <code>CreateBuild</code> request. If successful, a new set of credentials are returned, along with the S3 storage location associated with the build ID.</p>
-/// <p><b>Learn more</b></p>
-/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build"> Create a Build with Files in S3</a></p>
-/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a></p>
+/// <p> <b>Learn more</b> </p>
+/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build"> Create a Build with Files in S3</a> </p>
+/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RequestUploadCredentialsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -112,17 +112,17 @@ impl RequestUploadCredentialsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>A unique identifier for the build to get credentials for. You can use either the build ID or ARN value.</p>
+    /// <p>A unique identifier for the build to get credentials for. You can use either the build ID or ARN value. </p>
     pub fn build_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.build_id(input.into());
         self
     }
-    /// <p>A unique identifier for the build to get credentials for. You can use either the build ID or ARN value.</p>
+    /// <p>A unique identifier for the build to get credentials for. You can use either the build ID or ARN value. </p>
     pub fn set_build_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_build_id(input);
         self
     }
-    /// <p>A unique identifier for the build to get credentials for. You can use either the build ID or ARN value.</p>
+    /// <p>A unique identifier for the build to get credentials for. You can use either the build ID or ARN value. </p>
     pub fn get_build_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_build_id()
     }

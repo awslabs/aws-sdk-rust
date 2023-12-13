@@ -245,7 +245,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UntagResource
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum UntagResourceError {
-    /// <p>Concurrent modification of the tags associated with an Amazon Comprehend resource is not supported.</p>
+    /// <p>Concurrent modification of the tags associated with an Amazon Comprehend resource is not supported. </p>
     ConcurrentModificationException(crate::types::error::ConcurrentModificationException),
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::types::error::InternalServerException),

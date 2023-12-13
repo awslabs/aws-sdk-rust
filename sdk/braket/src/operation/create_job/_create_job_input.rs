@@ -17,7 +17,7 @@ pub struct CreateJobInput {
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform tasks on behalf of a user. It can access user resources, run an Amazon Braket job container on behalf of user, and output resources to the users' s3 buckets.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The user-defined criteria that specifies when a job stops running.</p>
+    /// <p> The user-defined criteria that specifies when a job stops running.</p>
     pub stopping_condition: ::std::option::Option<crate::types::JobStoppingCondition>,
     /// <p>Configuration of the resource instances to use while running the hybrid job on Amazon Braket.</p>
     pub instance_config: ::std::option::Option<crate::types::InstanceConfig>,
@@ -61,7 +61,7 @@ impl CreateJobInput {
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>The user-defined criteria that specifies when a job stops running.</p>
+    /// <p> The user-defined criteria that specifies when a job stops running.</p>
     pub fn stopping_condition(&self) -> ::std::option::Option<&crate::types::JobStoppingCondition> {
         self.stopping_condition.as_ref()
     }
@@ -223,17 +223,17 @@ impl CreateJobInputBuilder {
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
-    /// <p>The user-defined criteria that specifies when a job stops running.</p>
+    /// <p> The user-defined criteria that specifies when a job stops running.</p>
     pub fn stopping_condition(mut self, input: crate::types::JobStoppingCondition) -> Self {
         self.stopping_condition = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The user-defined criteria that specifies when a job stops running.</p>
+    /// <p> The user-defined criteria that specifies when a job stops running.</p>
     pub fn set_stopping_condition(mut self, input: ::std::option::Option<crate::types::JobStoppingCondition>) -> Self {
         self.stopping_condition = input;
         self
     }
-    /// <p>The user-defined criteria that specifies when a job stops running.</p>
+    /// <p> The user-defined criteria that specifies when a job stops running.</p>
     pub fn get_stopping_condition(&self) -> &::std::option::Option<crate::types::JobStoppingCondition> {
         &self.stopping_condition
     }

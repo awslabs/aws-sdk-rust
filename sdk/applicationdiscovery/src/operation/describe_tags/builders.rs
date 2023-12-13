@@ -25,12 +25,9 @@ impl DescribeTagsInputBuilder {
 /// <p>Retrieves a list of configuration items that have tags as specified by the key-value pairs, name and value, passed to the optional parameter <code>filters</code>.</p>
 /// <p>There are three valid tag filter names:</p>
 /// <ul>
-/// <li>
-/// <p>tagKey</p></li>
-/// <li>
-/// <p>tagValue</p></li>
-/// <li>
-/// <p>configurationId</p></li>
+/// <li> <p>tagKey</p> </li>
+/// <li> <p>tagValue</p> </li>
+/// <li> <p>configurationId</p> </li>
 /// </ul>
 /// <p>Also, all configuration items associated with your user that have tags can be listed if you call <code>DescribeTags</code> as is without passing any parameters.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -128,17 +125,17 @@ impl DescribeTagsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>You can filter the list using a <i>key</i>-<i>value</i> format. You can separate these items by using logical operators. Allowed filters include <code>tagKey</code>, <code>tagValue</code>, and <code>configurationId</code>.</p>
+    /// <p>You can filter the list using a <i>key</i>-<i>value</i> format. You can separate these items by using logical operators. Allowed filters include <code>tagKey</code>, <code>tagValue</code>, and <code>configurationId</code>. </p>
     pub fn filters(mut self, input: crate::types::TagFilter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>You can filter the list using a <i>key</i>-<i>value</i> format. You can separate these items by using logical operators. Allowed filters include <code>tagKey</code>, <code>tagValue</code>, and <code>configurationId</code>.</p>
+    /// <p>You can filter the list using a <i>key</i>-<i>value</i> format. You can separate these items by using logical operators. Allowed filters include <code>tagKey</code>, <code>tagValue</code>, and <code>configurationId</code>. </p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
-    /// <p>You can filter the list using a <i>key</i>-<i>value</i> format. You can separate these items by using logical operators. Allowed filters include <code>tagKey</code>, <code>tagValue</code>, and <code>configurationId</code>.</p>
+    /// <p>You can filter the list using a <i>key</i>-<i>value</i> format. You can separate these items by using logical operators. Allowed filters include <code>tagKey</code>, <code>tagValue</code>, and <code>configurationId</code>. </p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagFilter>> {
         self.inner.get_filters()
     }

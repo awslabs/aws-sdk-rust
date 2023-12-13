@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateQuickConnectOutput {
-    /// <p>The Amazon Resource Name (ARN) for the quick connect.</p>
+    /// <p>The Amazon Resource Name (ARN) for the quick connect. </p>
     pub quick_connect_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier for the quick connect.</p>
+    /// <p>The identifier for the quick connect. </p>
     pub quick_connect_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateQuickConnectOutput {
-    /// <p>The Amazon Resource Name (ARN) for the quick connect.</p>
+    /// <p>The Amazon Resource Name (ARN) for the quick connect. </p>
     pub fn quick_connect_arn(&self) -> ::std::option::Option<&str> {
         self.quick_connect_arn.as_deref()
     }
-    /// <p>The identifier for the quick connect.</p>
+    /// <p>The identifier for the quick connect. </p>
     pub fn quick_connect_id(&self) -> ::std::option::Option<&str> {
         self.quick_connect_id.as_deref()
     }
@@ -40,31 +40,31 @@ pub struct CreateQuickConnectOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateQuickConnectOutputBuilder {
-    /// <p>The Amazon Resource Name (ARN) for the quick connect.</p>
+    /// <p>The Amazon Resource Name (ARN) for the quick connect. </p>
     pub fn quick_connect_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.quick_connect_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the quick connect.</p>
+    /// <p>The Amazon Resource Name (ARN) for the quick connect. </p>
     pub fn set_quick_connect_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.quick_connect_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the quick connect.</p>
+    /// <p>The Amazon Resource Name (ARN) for the quick connect. </p>
     pub fn get_quick_connect_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.quick_connect_arn
     }
-    /// <p>The identifier for the quick connect.</p>
+    /// <p>The identifier for the quick connect. </p>
     pub fn quick_connect_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.quick_connect_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier for the quick connect.</p>
+    /// <p>The identifier for the quick connect. </p>
     pub fn set_quick_connect_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.quick_connect_id = input;
         self
     }
-    /// <p>The identifier for the quick connect.</p>
+    /// <p>The identifier for the quick connect. </p>
     pub fn get_quick_connect_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.quick_connect_id
     }

@@ -25,10 +25,8 @@ impl CreateAssetModelInputBuilder {
 /// <p>Creates an asset model from specified property and hierarchy definitions. You create assets from asset models. With asset models, you can easily create assets of the same type that have standardized definitions. Each asset created from a model inherits the asset model's property and hierarchy definitions. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/define-models.html">Defining asset models</a> in the <i>IoT SiteWise User Guide</i>.</p>
 /// <p>You can create two types of asset models, <code>ASSET_MODEL</code> or <code>COMPONENT_MODEL</code>.</p>
 /// <ul>
-/// <li>
-/// <p><b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p></li>
-/// <li>
-/// <p><b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model.</p></li>
+/// <li> <p> <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p> </li>
+/// <li> <p> <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model. </p> </li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateAssetModelFluentBuilder {
@@ -189,7 +187,7 @@ impl CreateAssetModelFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_asset_model_composite_models`](Self::set_asset_model_composite_models).
     ///
-    /// <p>The composite models that are part of this asset model. It groups properties (such as attributes, measurements, transforms, and metrics) and child composite models that model parts of your industrial equipment. Each composite model has a type that defines the properties that the composite model supports. Use composite models to define alarms on this asset model.</p><note>
+    /// <p>The composite models that are part of this asset model. It groups properties (such as attributes, measurements, transforms, and metrics) and child composite models that model parts of your industrial equipment. Each composite model has a type that defines the properties that the composite model supports. Use composite models to define alarms on this asset model.</p> <note>
     /// <p>When creating custom composite models, you need to use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModelCompositeModel.html">CreateAssetModelCompositeModel</a>. For more information, see
     /// <link>.</p>
     /// </note>
@@ -197,7 +195,7 @@ impl CreateAssetModelFluentBuilder {
         self.inner = self.inner.asset_model_composite_models(input);
         self
     }
-    /// <p>The composite models that are part of this asset model. It groups properties (such as attributes, measurements, transforms, and metrics) and child composite models that model parts of your industrial equipment. Each composite model has a type that defines the properties that the composite model supports. Use composite models to define alarms on this asset model.</p><note>
+    /// <p>The composite models that are part of this asset model. It groups properties (such as attributes, measurements, transforms, and metrics) and child composite models that model parts of your industrial equipment. Each composite model has a type that defines the properties that the composite model supports. Use composite models to define alarms on this asset model.</p> <note>
     /// <p>When creating custom composite models, you need to use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModelCompositeModel.html">CreateAssetModelCompositeModel</a>. For more information, see
     /// <link>.</p>
     /// </note>
@@ -208,7 +206,7 @@ impl CreateAssetModelFluentBuilder {
         self.inner = self.inner.set_asset_model_composite_models(input);
         self
     }
-    /// <p>The composite models that are part of this asset model. It groups properties (such as attributes, measurements, transforms, and metrics) and child composite models that model parts of your industrial equipment. Each composite model has a type that defines the properties that the composite model supports. Use composite models to define alarms on this asset model.</p><note>
+    /// <p>The composite models that are part of this asset model. It groups properties (such as attributes, measurements, transforms, and metrics) and child composite models that model parts of your industrial equipment. Each composite model has a type that defines the properties that the composite model supports. Use composite models to define alarms on this asset model.</p> <note>
     /// <p>When creating custom composite models, you need to use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModelCompositeModel.html">CreateAssetModelCompositeModel</a>. For more information, see
     /// <link>.</p>
     /// </note>
@@ -277,10 +275,8 @@ impl CreateAssetModelFluentBuilder {
     }
     /// <p>The type of asset model.</p>
     /// <ul>
-    /// <li>
-    /// <p><b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p></li>
-    /// <li>
-    /// <p><b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model.</p></li>
+    /// <li> <p> <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p> </li>
+    /// <li> <p> <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model. </p> </li>
     /// </ul>
     pub fn asset_model_type(mut self, input: crate::types::AssetModelType) -> Self {
         self.inner = self.inner.asset_model_type(input);
@@ -288,10 +284,8 @@ impl CreateAssetModelFluentBuilder {
     }
     /// <p>The type of asset model.</p>
     /// <ul>
-    /// <li>
-    /// <p><b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p></li>
-    /// <li>
-    /// <p><b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model.</p></li>
+    /// <li> <p> <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p> </li>
+    /// <li> <p> <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model. </p> </li>
     /// </ul>
     pub fn set_asset_model_type(mut self, input: ::std::option::Option<crate::types::AssetModelType>) -> Self {
         self.inner = self.inner.set_asset_model_type(input);
@@ -299,10 +293,8 @@ impl CreateAssetModelFluentBuilder {
     }
     /// <p>The type of asset model.</p>
     /// <ul>
-    /// <li>
-    /// <p><b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p></li>
-    /// <li>
-    /// <p><b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model.</p></li>
+    /// <li> <p> <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p> </li>
+    /// <li> <p> <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model. </p> </li>
     /// </ul>
     pub fn get_asset_model_type(&self) -> &::std::option::Option<crate::types::AssetModelType> {
         self.inner.get_asset_model_type()

@@ -9,10 +9,10 @@ pub struct PatchSource {
     /// <p>The specific operating system versions a patch repository applies to, such as "Ubuntu16.04", "AmazonLinux2016.09", "RedhatEnterpriseLinux7.2" or "Suse12.7". For lists of supported product values, see <code>PatchFilter</code>.</p>
     pub products: ::std::vec::Vec<::std::string::String>,
     /// <p>The value of the yum repo configuration. For example:</p>
-    /// <p><code>[main]</code></p>
-    /// <p><code>name=MyCustomRepository</code></p>
-    /// <p><code>baseurl=https://my-custom-repository</code></p>
-    /// <p><code>enabled=1</code></p><note>
+    /// <p> <code>[main]</code> </p>
+    /// <p> <code>name=MyCustomRepository</code> </p>
+    /// <p> <code>baseurl=https://my-custom-repository</code> </p>
+    /// <p> <code>enabled=1</code> </p> <note>
     /// <p>For information about other options available for your yum repository configuration, see <a href="https://man7.org/linux/man-pages/man5/dnf.conf.5.html">dnf.conf(5)</a>.</p>
     /// </note>
     pub configuration: ::std::string::String,
@@ -29,10 +29,10 @@ impl PatchSource {
         self.products.deref()
     }
     /// <p>The value of the yum repo configuration. For example:</p>
-    /// <p><code>[main]</code></p>
-    /// <p><code>name=MyCustomRepository</code></p>
-    /// <p><code>baseurl=https://my-custom-repository</code></p>
-    /// <p><code>enabled=1</code></p><note>
+    /// <p> <code>[main]</code> </p>
+    /// <p> <code>name=MyCustomRepository</code> </p>
+    /// <p> <code>baseurl=https://my-custom-repository</code> </p>
+    /// <p> <code>enabled=1</code> </p> <note>
     /// <p>For information about other options available for your yum repository configuration, see <a href="https://man7.org/linux/man-pages/man5/dnf.conf.5.html">dnf.conf(5)</a>.</p>
     /// </note>
     pub fn configuration(&self) -> &str {
@@ -101,10 +101,10 @@ impl PatchSourceBuilder {
         &self.products
     }
     /// <p>The value of the yum repo configuration. For example:</p>
-    /// <p><code>[main]</code></p>
-    /// <p><code>name=MyCustomRepository</code></p>
-    /// <p><code>baseurl=https://my-custom-repository</code></p>
-    /// <p><code>enabled=1</code></p><note>
+    /// <p> <code>[main]</code> </p>
+    /// <p> <code>name=MyCustomRepository</code> </p>
+    /// <p> <code>baseurl=https://my-custom-repository</code> </p>
+    /// <p> <code>enabled=1</code> </p> <note>
     /// <p>For information about other options available for your yum repository configuration, see <a href="https://man7.org/linux/man-pages/man5/dnf.conf.5.html">dnf.conf(5)</a>.</p>
     /// </note>
     /// This field is required.
@@ -113,10 +113,10 @@ impl PatchSourceBuilder {
         self
     }
     /// <p>The value of the yum repo configuration. For example:</p>
-    /// <p><code>[main]</code></p>
-    /// <p><code>name=MyCustomRepository</code></p>
-    /// <p><code>baseurl=https://my-custom-repository</code></p>
-    /// <p><code>enabled=1</code></p><note>
+    /// <p> <code>[main]</code> </p>
+    /// <p> <code>name=MyCustomRepository</code> </p>
+    /// <p> <code>baseurl=https://my-custom-repository</code> </p>
+    /// <p> <code>enabled=1</code> </p> <note>
     /// <p>For information about other options available for your yum repository configuration, see <a href="https://man7.org/linux/man-pages/man5/dnf.conf.5.html">dnf.conf(5)</a>.</p>
     /// </note>
     pub fn set_configuration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -124,10 +124,10 @@ impl PatchSourceBuilder {
         self
     }
     /// <p>The value of the yum repo configuration. For example:</p>
-    /// <p><code>[main]</code></p>
-    /// <p><code>name=MyCustomRepository</code></p>
-    /// <p><code>baseurl=https://my-custom-repository</code></p>
-    /// <p><code>enabled=1</code></p><note>
+    /// <p> <code>[main]</code> </p>
+    /// <p> <code>name=MyCustomRepository</code> </p>
+    /// <p> <code>baseurl=https://my-custom-repository</code> </p>
+    /// <p> <code>enabled=1</code> </p> <note>
     /// <p>For information about other options available for your yum repository configuration, see <a href="https://man7.org/linux/man-pages/man5/dnf.conf.5.html">dnf.conf(5)</a>.</p>
     /// </note>
     pub fn get_configuration(&self) -> &::std::option::Option<::std::string::String> {

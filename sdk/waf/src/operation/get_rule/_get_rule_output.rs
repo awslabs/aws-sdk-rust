@@ -5,10 +5,8 @@
 pub struct GetRuleOutput {
     /// <p>Information about the <code>Rule</code> that you specified in the <code>GetRule</code> request. For more information, see the following topics:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Rule</code>: Contains <code>MetricName</code>, <code>Name</code>, an array of <code>Predicate</code> objects, and <code>RuleId</code></p></li>
-    /// <li>
-    /// <p><code>Predicate</code>: Each <code>Predicate</code> object contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code></p></li>
+    /// <li> <p> <code>Rule</code>: Contains <code>MetricName</code>, <code>Name</code>, an array of <code>Predicate</code> objects, and <code>RuleId</code> </p> </li>
+    /// <li> <p> <code>Predicate</code>: Each <code>Predicate</code> object contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code> </p> </li>
     /// </ul>
     pub rule: ::std::option::Option<crate::types::Rule>,
     _request_id: Option<String>,
@@ -16,10 +14,8 @@ pub struct GetRuleOutput {
 impl GetRuleOutput {
     /// <p>Information about the <code>Rule</code> that you specified in the <code>GetRule</code> request. For more information, see the following topics:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Rule</code>: Contains <code>MetricName</code>, <code>Name</code>, an array of <code>Predicate</code> objects, and <code>RuleId</code></p></li>
-    /// <li>
-    /// <p><code>Predicate</code>: Each <code>Predicate</code> object contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code></p></li>
+    /// <li> <p> <code>Rule</code>: Contains <code>MetricName</code>, <code>Name</code>, an array of <code>Predicate</code> objects, and <code>RuleId</code> </p> </li>
+    /// <li> <p> <code>Predicate</code>: Each <code>Predicate</code> object contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code> </p> </li>
     /// </ul>
     pub fn rule(&self) -> ::std::option::Option<&crate::types::Rule> {
         self.rule.as_ref()
@@ -47,10 +43,8 @@ pub struct GetRuleOutputBuilder {
 impl GetRuleOutputBuilder {
     /// <p>Information about the <code>Rule</code> that you specified in the <code>GetRule</code> request. For more information, see the following topics:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Rule</code>: Contains <code>MetricName</code>, <code>Name</code>, an array of <code>Predicate</code> objects, and <code>RuleId</code></p></li>
-    /// <li>
-    /// <p><code>Predicate</code>: Each <code>Predicate</code> object contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code></p></li>
+    /// <li> <p> <code>Rule</code>: Contains <code>MetricName</code>, <code>Name</code>, an array of <code>Predicate</code> objects, and <code>RuleId</code> </p> </li>
+    /// <li> <p> <code>Predicate</code>: Each <code>Predicate</code> object contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code> </p> </li>
     /// </ul>
     pub fn rule(mut self, input: crate::types::Rule) -> Self {
         self.rule = ::std::option::Option::Some(input);
@@ -58,10 +52,8 @@ impl GetRuleOutputBuilder {
     }
     /// <p>Information about the <code>Rule</code> that you specified in the <code>GetRule</code> request. For more information, see the following topics:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Rule</code>: Contains <code>MetricName</code>, <code>Name</code>, an array of <code>Predicate</code> objects, and <code>RuleId</code></p></li>
-    /// <li>
-    /// <p><code>Predicate</code>: Each <code>Predicate</code> object contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code></p></li>
+    /// <li> <p> <code>Rule</code>: Contains <code>MetricName</code>, <code>Name</code>, an array of <code>Predicate</code> objects, and <code>RuleId</code> </p> </li>
+    /// <li> <p> <code>Predicate</code>: Each <code>Predicate</code> object contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code> </p> </li>
     /// </ul>
     pub fn set_rule(mut self, input: ::std::option::Option<crate::types::Rule>) -> Self {
         self.rule = input;
@@ -69,10 +61,8 @@ impl GetRuleOutputBuilder {
     }
     /// <p>Information about the <code>Rule</code> that you specified in the <code>GetRule</code> request. For more information, see the following topics:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Rule</code>: Contains <code>MetricName</code>, <code>Name</code>, an array of <code>Predicate</code> objects, and <code>RuleId</code></p></li>
-    /// <li>
-    /// <p><code>Predicate</code>: Each <code>Predicate</code> object contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code></p></li>
+    /// <li> <p> <code>Rule</code>: Contains <code>MetricName</code>, <code>Name</code>, an array of <code>Predicate</code> objects, and <code>RuleId</code> </p> </li>
+    /// <li> <p> <code>Predicate</code>: Each <code>Predicate</code> object contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code> </p> </li>
     /// </ul>
     pub fn get_rule(&self) -> &::std::option::Option<crate::types::Rule> {
         &self.rule

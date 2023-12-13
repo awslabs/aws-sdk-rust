@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutlierDetection {
-    /// <p>Number of consecutive <code>5xx</code> errors required for ejection.</p>
+    /// <p>Number of consecutive <code>5xx</code> errors required for ejection. </p>
     pub max_server_errors: i64,
     /// <p>The time interval between ejection sweep analysis.</p>
     pub interval: ::std::option::Option<crate::types::Duration>,
@@ -14,7 +14,7 @@ pub struct OutlierDetection {
     pub max_ejection_percent: i32,
 }
 impl OutlierDetection {
-    /// <p>Number of consecutive <code>5xx</code> errors required for ejection.</p>
+    /// <p>Number of consecutive <code>5xx</code> errors required for ejection. </p>
     pub fn max_server_errors(&self) -> i64 {
         self.max_server_errors
     }
@@ -48,18 +48,18 @@ pub struct OutlierDetectionBuilder {
     pub(crate) max_ejection_percent: ::std::option::Option<i32>,
 }
 impl OutlierDetectionBuilder {
-    /// <p>Number of consecutive <code>5xx</code> errors required for ejection.</p>
+    /// <p>Number of consecutive <code>5xx</code> errors required for ejection. </p>
     /// This field is required.
     pub fn max_server_errors(mut self, input: i64) -> Self {
         self.max_server_errors = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Number of consecutive <code>5xx</code> errors required for ejection.</p>
+    /// <p>Number of consecutive <code>5xx</code> errors required for ejection. </p>
     pub fn set_max_server_errors(mut self, input: ::std::option::Option<i64>) -> Self {
         self.max_server_errors = input;
         self
     }
-    /// <p>Number of consecutive <code>5xx</code> errors required for ejection.</p>
+    /// <p>Number of consecutive <code>5xx</code> errors required for ejection. </p>
     pub fn get_max_server_errors(&self) -> &::std::option::Option<i64> {
         &self.max_server_errors
     }

@@ -6,54 +6,40 @@
 pub struct NamespaceFilter {
     /// <p>Specify the namespaces that you want to get using one of the following.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>TYPE</code>: Gets the namespaces of the specified type.</p></li>
-    /// <li>
-    /// <p><code>NAME</code>: Gets the namespaces with the specified name.</p></li>
-    /// <li>
-    /// <p><code>HTTP_NAME</code>: Gets the namespaces with the specified HTTP name.</p></li>
+    /// <li> <p> <code>TYPE</code>: Gets the namespaces of the specified type.</p> </li>
+    /// <li> <p> <code>NAME</code>: Gets the namespaces with the specified name.</p> </li>
+    /// <li> <p> <code>HTTP_NAME</code>: Gets the namespaces with the specified HTTP name.</p> </li>
     /// </ul>
     pub name: crate::types::NamespaceFilterName,
     /// <p>Specify the values that are applicable to the value that you specify for <code>Name</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>TYPE</code>: Specify <code>HTTP</code>, <code>DNS_PUBLIC</code>, or <code>DNS_PRIVATE</code>.</p></li>
-    /// <li>
-    /// <p><code>NAME</code>: Specify the name of the namespace, which is found in <code>Namespace.Name</code>.</p></li>
-    /// <li>
-    /// <p><code>HTTP_NAME</code>: Specify the HTTP name of the namespace, which is found in <code>Namespace.Properties.HttpProperties.HttpName</code>.</p></li>
+    /// <li> <p> <code>TYPE</code>: Specify <code>HTTP</code>, <code>DNS_PUBLIC</code>, or <code>DNS_PRIVATE</code>.</p> </li>
+    /// <li> <p> <code>NAME</code>: Specify the name of the namespace, which is found in <code>Namespace.Name</code>.</p> </li>
+    /// <li> <p> <code>HTTP_NAME</code>: Specify the HTTP name of the namespace, which is found in <code>Namespace.Properties.HttpProperties.HttpName</code>.</p> </li>
     /// </ul>
     pub values: ::std::vec::Vec<::std::string::String>,
     /// <p>Specify the operator that you want to use to determine whether a namespace matches the specified value. Valid values for <code>Condition</code> are one of the following.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>EQ</code>: When you specify <code>EQ</code> for <code>Condition</code>, you can specify only one value. <code>EQ</code> is supported for <code>TYPE</code>, <code>NAME</code>, and <code>HTTP_NAME</code>. <code>EQ</code> is the default condition and can be omitted.</p></li>
-    /// <li>
-    /// <p><code>BEGINS_WITH</code>: When you specify <code>BEGINS_WITH</code> for <code>Condition</code>, you can specify only one value. <code>BEGINS_WITH</code> is supported for <code>TYPE</code>, <code>NAME</code>, and <code>HTTP_NAME</code>.</p></li>
+    /// <li> <p> <code>EQ</code>: When you specify <code>EQ</code> for <code>Condition</code>, you can specify only one value. <code>EQ</code> is supported for <code>TYPE</code>, <code>NAME</code>, and <code>HTTP_NAME</code>. <code>EQ</code> is the default condition and can be omitted.</p> </li>
+    /// <li> <p> <code>BEGINS_WITH</code>: When you specify <code>BEGINS_WITH</code> for <code>Condition</code>, you can specify only one value. <code>BEGINS_WITH</code> is supported for <code>TYPE</code>, <code>NAME</code>, and <code>HTTP_NAME</code>.</p> </li>
     /// </ul>
     pub condition: ::std::option::Option<crate::types::FilterCondition>,
 }
 impl NamespaceFilter {
     /// <p>Specify the namespaces that you want to get using one of the following.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>TYPE</code>: Gets the namespaces of the specified type.</p></li>
-    /// <li>
-    /// <p><code>NAME</code>: Gets the namespaces with the specified name.</p></li>
-    /// <li>
-    /// <p><code>HTTP_NAME</code>: Gets the namespaces with the specified HTTP name.</p></li>
+    /// <li> <p> <code>TYPE</code>: Gets the namespaces of the specified type.</p> </li>
+    /// <li> <p> <code>NAME</code>: Gets the namespaces with the specified name.</p> </li>
+    /// <li> <p> <code>HTTP_NAME</code>: Gets the namespaces with the specified HTTP name.</p> </li>
     /// </ul>
     pub fn name(&self) -> &crate::types::NamespaceFilterName {
         &self.name
     }
     /// <p>Specify the values that are applicable to the value that you specify for <code>Name</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>TYPE</code>: Specify <code>HTTP</code>, <code>DNS_PUBLIC</code>, or <code>DNS_PRIVATE</code>.</p></li>
-    /// <li>
-    /// <p><code>NAME</code>: Specify the name of the namespace, which is found in <code>Namespace.Name</code>.</p></li>
-    /// <li>
-    /// <p><code>HTTP_NAME</code>: Specify the HTTP name of the namespace, which is found in <code>Namespace.Properties.HttpProperties.HttpName</code>.</p></li>
+    /// <li> <p> <code>TYPE</code>: Specify <code>HTTP</code>, <code>DNS_PUBLIC</code>, or <code>DNS_PRIVATE</code>.</p> </li>
+    /// <li> <p> <code>NAME</code>: Specify the name of the namespace, which is found in <code>Namespace.Name</code>.</p> </li>
+    /// <li> <p> <code>HTTP_NAME</code>: Specify the HTTP name of the namespace, which is found in <code>Namespace.Properties.HttpProperties.HttpName</code>.</p> </li>
     /// </ul>
     pub fn values(&self) -> &[::std::string::String] {
         use std::ops::Deref;
@@ -61,10 +47,8 @@ impl NamespaceFilter {
     }
     /// <p>Specify the operator that you want to use to determine whether a namespace matches the specified value. Valid values for <code>Condition</code> are one of the following.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>EQ</code>: When you specify <code>EQ</code> for <code>Condition</code>, you can specify only one value. <code>EQ</code> is supported for <code>TYPE</code>, <code>NAME</code>, and <code>HTTP_NAME</code>. <code>EQ</code> is the default condition and can be omitted.</p></li>
-    /// <li>
-    /// <p><code>BEGINS_WITH</code>: When you specify <code>BEGINS_WITH</code> for <code>Condition</code>, you can specify only one value. <code>BEGINS_WITH</code> is supported for <code>TYPE</code>, <code>NAME</code>, and <code>HTTP_NAME</code>.</p></li>
+    /// <li> <p> <code>EQ</code>: When you specify <code>EQ</code> for <code>Condition</code>, you can specify only one value. <code>EQ</code> is supported for <code>TYPE</code>, <code>NAME</code>, and <code>HTTP_NAME</code>. <code>EQ</code> is the default condition and can be omitted.</p> </li>
+    /// <li> <p> <code>BEGINS_WITH</code>: When you specify <code>BEGINS_WITH</code> for <code>Condition</code>, you can specify only one value. <code>BEGINS_WITH</code> is supported for <code>TYPE</code>, <code>NAME</code>, and <code>HTTP_NAME</code>.</p> </li>
     /// </ul>
     pub fn condition(&self) -> ::std::option::Option<&crate::types::FilterCondition> {
         self.condition.as_ref()
@@ -88,12 +72,9 @@ pub struct NamespaceFilterBuilder {
 impl NamespaceFilterBuilder {
     /// <p>Specify the namespaces that you want to get using one of the following.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>TYPE</code>: Gets the namespaces of the specified type.</p></li>
-    /// <li>
-    /// <p><code>NAME</code>: Gets the namespaces with the specified name.</p></li>
-    /// <li>
-    /// <p><code>HTTP_NAME</code>: Gets the namespaces with the specified HTTP name.</p></li>
+    /// <li> <p> <code>TYPE</code>: Gets the namespaces of the specified type.</p> </li>
+    /// <li> <p> <code>NAME</code>: Gets the namespaces with the specified name.</p> </li>
+    /// <li> <p> <code>HTTP_NAME</code>: Gets the namespaces with the specified HTTP name.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn name(mut self, input: crate::types::NamespaceFilterName) -> Self {
@@ -102,12 +83,9 @@ impl NamespaceFilterBuilder {
     }
     /// <p>Specify the namespaces that you want to get using one of the following.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>TYPE</code>: Gets the namespaces of the specified type.</p></li>
-    /// <li>
-    /// <p><code>NAME</code>: Gets the namespaces with the specified name.</p></li>
-    /// <li>
-    /// <p><code>HTTP_NAME</code>: Gets the namespaces with the specified HTTP name.</p></li>
+    /// <li> <p> <code>TYPE</code>: Gets the namespaces of the specified type.</p> </li>
+    /// <li> <p> <code>NAME</code>: Gets the namespaces with the specified name.</p> </li>
+    /// <li> <p> <code>HTTP_NAME</code>: Gets the namespaces with the specified HTTP name.</p> </li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::NamespaceFilterName>) -> Self {
         self.name = input;
@@ -115,12 +93,9 @@ impl NamespaceFilterBuilder {
     }
     /// <p>Specify the namespaces that you want to get using one of the following.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>TYPE</code>: Gets the namespaces of the specified type.</p></li>
-    /// <li>
-    /// <p><code>NAME</code>: Gets the namespaces with the specified name.</p></li>
-    /// <li>
-    /// <p><code>HTTP_NAME</code>: Gets the namespaces with the specified HTTP name.</p></li>
+    /// <li> <p> <code>TYPE</code>: Gets the namespaces of the specified type.</p> </li>
+    /// <li> <p> <code>NAME</code>: Gets the namespaces with the specified name.</p> </li>
+    /// <li> <p> <code>HTTP_NAME</code>: Gets the namespaces with the specified HTTP name.</p> </li>
     /// </ul>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::NamespaceFilterName> {
         &self.name
@@ -131,12 +106,9 @@ impl NamespaceFilterBuilder {
     ///
     /// <p>Specify the values that are applicable to the value that you specify for <code>Name</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>TYPE</code>: Specify <code>HTTP</code>, <code>DNS_PUBLIC</code>, or <code>DNS_PRIVATE</code>.</p></li>
-    /// <li>
-    /// <p><code>NAME</code>: Specify the name of the namespace, which is found in <code>Namespace.Name</code>.</p></li>
-    /// <li>
-    /// <p><code>HTTP_NAME</code>: Specify the HTTP name of the namespace, which is found in <code>Namespace.Properties.HttpProperties.HttpName</code>.</p></li>
+    /// <li> <p> <code>TYPE</code>: Specify <code>HTTP</code>, <code>DNS_PUBLIC</code>, or <code>DNS_PRIVATE</code>.</p> </li>
+    /// <li> <p> <code>NAME</code>: Specify the name of the namespace, which is found in <code>Namespace.Name</code>.</p> </li>
+    /// <li> <p> <code>HTTP_NAME</code>: Specify the HTTP name of the namespace, which is found in <code>Namespace.Properties.HttpProperties.HttpName</code>.</p> </li>
     /// </ul>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
@@ -146,12 +118,9 @@ impl NamespaceFilterBuilder {
     }
     /// <p>Specify the values that are applicable to the value that you specify for <code>Name</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>TYPE</code>: Specify <code>HTTP</code>, <code>DNS_PUBLIC</code>, or <code>DNS_PRIVATE</code>.</p></li>
-    /// <li>
-    /// <p><code>NAME</code>: Specify the name of the namespace, which is found in <code>Namespace.Name</code>.</p></li>
-    /// <li>
-    /// <p><code>HTTP_NAME</code>: Specify the HTTP name of the namespace, which is found in <code>Namespace.Properties.HttpProperties.HttpName</code>.</p></li>
+    /// <li> <p> <code>TYPE</code>: Specify <code>HTTP</code>, <code>DNS_PUBLIC</code>, or <code>DNS_PRIVATE</code>.</p> </li>
+    /// <li> <p> <code>NAME</code>: Specify the name of the namespace, which is found in <code>Namespace.Name</code>.</p> </li>
+    /// <li> <p> <code>HTTP_NAME</code>: Specify the HTTP name of the namespace, which is found in <code>Namespace.Properties.HttpProperties.HttpName</code>.</p> </li>
     /// </ul>
     pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
@@ -159,22 +128,17 @@ impl NamespaceFilterBuilder {
     }
     /// <p>Specify the values that are applicable to the value that you specify for <code>Name</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>TYPE</code>: Specify <code>HTTP</code>, <code>DNS_PUBLIC</code>, or <code>DNS_PRIVATE</code>.</p></li>
-    /// <li>
-    /// <p><code>NAME</code>: Specify the name of the namespace, which is found in <code>Namespace.Name</code>.</p></li>
-    /// <li>
-    /// <p><code>HTTP_NAME</code>: Specify the HTTP name of the namespace, which is found in <code>Namespace.Properties.HttpProperties.HttpName</code>.</p></li>
+    /// <li> <p> <code>TYPE</code>: Specify <code>HTTP</code>, <code>DNS_PUBLIC</code>, or <code>DNS_PRIVATE</code>.</p> </li>
+    /// <li> <p> <code>NAME</code>: Specify the name of the namespace, which is found in <code>Namespace.Name</code>.</p> </li>
+    /// <li> <p> <code>HTTP_NAME</code>: Specify the HTTP name of the namespace, which is found in <code>Namespace.Properties.HttpProperties.HttpName</code>.</p> </li>
     /// </ul>
     pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.values
     }
     /// <p>Specify the operator that you want to use to determine whether a namespace matches the specified value. Valid values for <code>Condition</code> are one of the following.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>EQ</code>: When you specify <code>EQ</code> for <code>Condition</code>, you can specify only one value. <code>EQ</code> is supported for <code>TYPE</code>, <code>NAME</code>, and <code>HTTP_NAME</code>. <code>EQ</code> is the default condition and can be omitted.</p></li>
-    /// <li>
-    /// <p><code>BEGINS_WITH</code>: When you specify <code>BEGINS_WITH</code> for <code>Condition</code>, you can specify only one value. <code>BEGINS_WITH</code> is supported for <code>TYPE</code>, <code>NAME</code>, and <code>HTTP_NAME</code>.</p></li>
+    /// <li> <p> <code>EQ</code>: When you specify <code>EQ</code> for <code>Condition</code>, you can specify only one value. <code>EQ</code> is supported for <code>TYPE</code>, <code>NAME</code>, and <code>HTTP_NAME</code>. <code>EQ</code> is the default condition and can be omitted.</p> </li>
+    /// <li> <p> <code>BEGINS_WITH</code>: When you specify <code>BEGINS_WITH</code> for <code>Condition</code>, you can specify only one value. <code>BEGINS_WITH</code> is supported for <code>TYPE</code>, <code>NAME</code>, and <code>HTTP_NAME</code>.</p> </li>
     /// </ul>
     pub fn condition(mut self, input: crate::types::FilterCondition) -> Self {
         self.condition = ::std::option::Option::Some(input);
@@ -182,10 +146,8 @@ impl NamespaceFilterBuilder {
     }
     /// <p>Specify the operator that you want to use to determine whether a namespace matches the specified value. Valid values for <code>Condition</code> are one of the following.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>EQ</code>: When you specify <code>EQ</code> for <code>Condition</code>, you can specify only one value. <code>EQ</code> is supported for <code>TYPE</code>, <code>NAME</code>, and <code>HTTP_NAME</code>. <code>EQ</code> is the default condition and can be omitted.</p></li>
-    /// <li>
-    /// <p><code>BEGINS_WITH</code>: When you specify <code>BEGINS_WITH</code> for <code>Condition</code>, you can specify only one value. <code>BEGINS_WITH</code> is supported for <code>TYPE</code>, <code>NAME</code>, and <code>HTTP_NAME</code>.</p></li>
+    /// <li> <p> <code>EQ</code>: When you specify <code>EQ</code> for <code>Condition</code>, you can specify only one value. <code>EQ</code> is supported for <code>TYPE</code>, <code>NAME</code>, and <code>HTTP_NAME</code>. <code>EQ</code> is the default condition and can be omitted.</p> </li>
+    /// <li> <p> <code>BEGINS_WITH</code>: When you specify <code>BEGINS_WITH</code> for <code>Condition</code>, you can specify only one value. <code>BEGINS_WITH</code> is supported for <code>TYPE</code>, <code>NAME</code>, and <code>HTTP_NAME</code>.</p> </li>
     /// </ul>
     pub fn set_condition(mut self, input: ::std::option::Option<crate::types::FilterCondition>) -> Self {
         self.condition = input;
@@ -193,10 +155,8 @@ impl NamespaceFilterBuilder {
     }
     /// <p>Specify the operator that you want to use to determine whether a namespace matches the specified value. Valid values for <code>Condition</code> are one of the following.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>EQ</code>: When you specify <code>EQ</code> for <code>Condition</code>, you can specify only one value. <code>EQ</code> is supported for <code>TYPE</code>, <code>NAME</code>, and <code>HTTP_NAME</code>. <code>EQ</code> is the default condition and can be omitted.</p></li>
-    /// <li>
-    /// <p><code>BEGINS_WITH</code>: When you specify <code>BEGINS_WITH</code> for <code>Condition</code>, you can specify only one value. <code>BEGINS_WITH</code> is supported for <code>TYPE</code>, <code>NAME</code>, and <code>HTTP_NAME</code>.</p></li>
+    /// <li> <p> <code>EQ</code>: When you specify <code>EQ</code> for <code>Condition</code>, you can specify only one value. <code>EQ</code> is supported for <code>TYPE</code>, <code>NAME</code>, and <code>HTTP_NAME</code>. <code>EQ</code> is the default condition and can be omitted.</p> </li>
+    /// <li> <p> <code>BEGINS_WITH</code>: When you specify <code>BEGINS_WITH</code> for <code>Condition</code>, you can specify only one value. <code>BEGINS_WITH</code> is supported for <code>TYPE</code>, <code>NAME</code>, and <code>HTTP_NAME</code>.</p> </li>
     /// </ul>
     pub fn get_condition(&self) -> &::std::option::Option<crate::types::FilterCondition> {
         &self.condition

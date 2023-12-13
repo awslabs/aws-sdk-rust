@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SubnetMapping {
-    /// <p>The unique identifier for the subnet.</p>
+    /// <p>The unique identifier for the subnet. </p>
     pub subnet_id: ::std::string::String,
     /// <p>The subnet's IP address type. You can't change the IP address type after you create the subnet.</p>
     pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
 }
 impl SubnetMapping {
-    /// <p>The unique identifier for the subnet.</p>
+    /// <p>The unique identifier for the subnet. </p>
     pub fn subnet_id(&self) -> &str {
         use std::ops::Deref;
         self.subnet_id.deref()
@@ -35,18 +35,18 @@ pub struct SubnetMappingBuilder {
     pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
 }
 impl SubnetMappingBuilder {
-    /// <p>The unique identifier for the subnet.</p>
+    /// <p>The unique identifier for the subnet. </p>
     /// This field is required.
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier for the subnet.</p>
+    /// <p>The unique identifier for the subnet. </p>
     pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subnet_id = input;
         self
     }
-    /// <p>The unique identifier for the subnet.</p>
+    /// <p>The unique identifier for the subnet. </p>
     pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.subnet_id
     }

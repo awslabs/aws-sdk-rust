@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteExplainabilityExport`](crate::operation::delete_explainability_export::builders::DeleteExplainabilityExportFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`explainability_export_arn(impl Into<String>)`](crate::operation::delete_explainability_export::builders::DeleteExplainabilityExportFluentBuilder::explainability_export_arn) / [`set_explainability_export_arn(Option<String>)`](crate::operation::delete_explainability_export::builders::DeleteExplainabilityExportFluentBuilder::set_explainability_export_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the Explainability export to delete.</p><br>
+    ///   - [`explainability_export_arn(impl Into<String>)`](crate::operation::delete_explainability_export::builders::DeleteExplainabilityExportFluentBuilder::explainability_export_arn) / [`set_explainability_export_arn(Option<String>)`](crate::operation::delete_explainability_export::builders::DeleteExplainabilityExportFluentBuilder::set_explainability_export_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the Explainability export to delete. </p><br>
     /// - On success, responds with [`DeleteExplainabilityExportOutput`](crate::operation::delete_explainability_export::DeleteExplainabilityExportOutput)
     /// - On failure, responds with [`SdkError<DeleteExplainabilityExportError>`](crate::operation::delete_explainability_export::DeleteExplainabilityExportError)
     pub fn delete_explainability_export(&self) -> crate::operation::delete_explainability_export::builders::DeleteExplainabilityExportFluentBuilder {

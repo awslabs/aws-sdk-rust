@@ -13,11 +13,11 @@ pub struct ImageDetail {
     /// <p>The list of tags that's associated with this image.</p>
     pub image_tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The size, in bytes, of the image in the repository.</p>
-    /// <p>If the image is a manifest list, this is the max size of all manifests in the list.</p><note>
+    /// <p>If the image is a manifest list, this is the max size of all manifests in the list.</p> <note>
     /// <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it might return a larger image size than the image sizes that are returned by <code>DescribeImages</code>.</p>
     /// </note>
     pub image_size_in_bytes: ::std::option::Option<i64>,
-    /// <p>The date and time, expressed in standard JavaScript date format, that the current image was pushed to the repository at.</p>
+    /// <p>The date and time, expressed in standard JavaScript date format, that the current image was pushed to the repository at. </p>
     pub image_pushed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The media type of the image manifest.</p>
     pub image_manifest_media_type: ::std::option::Option<::std::string::String>,
@@ -44,13 +44,13 @@ impl ImageDetail {
         self.image_tags.as_deref().unwrap_or_default()
     }
     /// <p>The size, in bytes, of the image in the repository.</p>
-    /// <p>If the image is a manifest list, this is the max size of all manifests in the list.</p><note>
+    /// <p>If the image is a manifest list, this is the max size of all manifests in the list.</p> <note>
     /// <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it might return a larger image size than the image sizes that are returned by <code>DescribeImages</code>.</p>
     /// </note>
     pub fn image_size_in_bytes(&self) -> ::std::option::Option<i64> {
         self.image_size_in_bytes
     }
-    /// <p>The date and time, expressed in standard JavaScript date format, that the current image was pushed to the repository at.</p>
+    /// <p>The date and time, expressed in standard JavaScript date format, that the current image was pushed to the repository at. </p>
     pub fn image_pushed_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.image_pushed_at.as_ref()
     }
@@ -147,7 +147,7 @@ impl ImageDetailBuilder {
         &self.image_tags
     }
     /// <p>The size, in bytes, of the image in the repository.</p>
-    /// <p>If the image is a manifest list, this is the max size of all manifests in the list.</p><note>
+    /// <p>If the image is a manifest list, this is the max size of all manifests in the list.</p> <note>
     /// <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it might return a larger image size than the image sizes that are returned by <code>DescribeImages</code>.</p>
     /// </note>
     pub fn image_size_in_bytes(mut self, input: i64) -> Self {
@@ -155,7 +155,7 @@ impl ImageDetailBuilder {
         self
     }
     /// <p>The size, in bytes, of the image in the repository.</p>
-    /// <p>If the image is a manifest list, this is the max size of all manifests in the list.</p><note>
+    /// <p>If the image is a manifest list, this is the max size of all manifests in the list.</p> <note>
     /// <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it might return a larger image size than the image sizes that are returned by <code>DescribeImages</code>.</p>
     /// </note>
     pub fn set_image_size_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
@@ -163,23 +163,23 @@ impl ImageDetailBuilder {
         self
     }
     /// <p>The size, in bytes, of the image in the repository.</p>
-    /// <p>If the image is a manifest list, this is the max size of all manifests in the list.</p><note>
+    /// <p>If the image is a manifest list, this is the max size of all manifests in the list.</p> <note>
     /// <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it might return a larger image size than the image sizes that are returned by <code>DescribeImages</code>.</p>
     /// </note>
     pub fn get_image_size_in_bytes(&self) -> &::std::option::Option<i64> {
         &self.image_size_in_bytes
     }
-    /// <p>The date and time, expressed in standard JavaScript date format, that the current image was pushed to the repository at.</p>
+    /// <p>The date and time, expressed in standard JavaScript date format, that the current image was pushed to the repository at. </p>
     pub fn image_pushed_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.image_pushed_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time, expressed in standard JavaScript date format, that the current image was pushed to the repository at.</p>
+    /// <p>The date and time, expressed in standard JavaScript date format, that the current image was pushed to the repository at. </p>
     pub fn set_image_pushed_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.image_pushed_at = input;
         self
     }
-    /// <p>The date and time, expressed in standard JavaScript date format, that the current image was pushed to the repository at.</p>
+    /// <p>The date and time, expressed in standard JavaScript date format, that the current image was pushed to the repository at. </p>
     pub fn get_image_pushed_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.image_pushed_at
     }

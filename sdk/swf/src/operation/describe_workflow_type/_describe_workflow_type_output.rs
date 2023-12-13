@@ -7,13 +7,11 @@ pub struct DescribeWorkflowTypeOutput {
     /// <p>General information about the workflow type.</p>
     /// <p>The status of the workflow type (returned in the WorkflowTypeInfo structure) can be one of the following.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running.</p></li>
-    /// <li>
-    /// <p><code>DEPRECATED</code> – The type was deprecated using <code>DeprecateWorkflowType</code>, but is still in use. You should keep workers supporting this type running. You cannot create new workflow executions of this type.</p></li>
+    /// <li> <p> <code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running.</p> </li>
+    /// <li> <p> <code>DEPRECATED</code> – The type was deprecated using <code>DeprecateWorkflowType</code>, but is still in use. You should keep workers supporting this type running. You cannot create new workflow executions of this type.</p> </li>
     /// </ul>
     pub type_info: ::std::option::Option<crate::types::WorkflowTypeInfo>,
-    /// <p>Configuration settings of the workflow type registered through <code>RegisterWorkflowType</code></p>
+    /// <p>Configuration settings of the workflow type registered through <code>RegisterWorkflowType</code> </p>
     pub configuration: ::std::option::Option<crate::types::WorkflowTypeConfiguration>,
     _request_id: Option<String>,
 }
@@ -21,15 +19,13 @@ impl DescribeWorkflowTypeOutput {
     /// <p>General information about the workflow type.</p>
     /// <p>The status of the workflow type (returned in the WorkflowTypeInfo structure) can be one of the following.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running.</p></li>
-    /// <li>
-    /// <p><code>DEPRECATED</code> – The type was deprecated using <code>DeprecateWorkflowType</code>, but is still in use. You should keep workers supporting this type running. You cannot create new workflow executions of this type.</p></li>
+    /// <li> <p> <code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running.</p> </li>
+    /// <li> <p> <code>DEPRECATED</code> – The type was deprecated using <code>DeprecateWorkflowType</code>, but is still in use. You should keep workers supporting this type running. You cannot create new workflow executions of this type.</p> </li>
     /// </ul>
     pub fn type_info(&self) -> ::std::option::Option<&crate::types::WorkflowTypeInfo> {
         self.type_info.as_ref()
     }
-    /// <p>Configuration settings of the workflow type registered through <code>RegisterWorkflowType</code></p>
+    /// <p>Configuration settings of the workflow type registered through <code>RegisterWorkflowType</code> </p>
     pub fn configuration(&self) -> ::std::option::Option<&crate::types::WorkflowTypeConfiguration> {
         self.configuration.as_ref()
     }
@@ -58,10 +54,8 @@ impl DescribeWorkflowTypeOutputBuilder {
     /// <p>General information about the workflow type.</p>
     /// <p>The status of the workflow type (returned in the WorkflowTypeInfo structure) can be one of the following.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running.</p></li>
-    /// <li>
-    /// <p><code>DEPRECATED</code> – The type was deprecated using <code>DeprecateWorkflowType</code>, but is still in use. You should keep workers supporting this type running. You cannot create new workflow executions of this type.</p></li>
+    /// <li> <p> <code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running.</p> </li>
+    /// <li> <p> <code>DEPRECATED</code> – The type was deprecated using <code>DeprecateWorkflowType</code>, but is still in use. You should keep workers supporting this type running. You cannot create new workflow executions of this type.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn type_info(mut self, input: crate::types::WorkflowTypeInfo) -> Self {
@@ -71,10 +65,8 @@ impl DescribeWorkflowTypeOutputBuilder {
     /// <p>General information about the workflow type.</p>
     /// <p>The status of the workflow type (returned in the WorkflowTypeInfo structure) can be one of the following.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running.</p></li>
-    /// <li>
-    /// <p><code>DEPRECATED</code> – The type was deprecated using <code>DeprecateWorkflowType</code>, but is still in use. You should keep workers supporting this type running. You cannot create new workflow executions of this type.</p></li>
+    /// <li> <p> <code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running.</p> </li>
+    /// <li> <p> <code>DEPRECATED</code> – The type was deprecated using <code>DeprecateWorkflowType</code>, but is still in use. You should keep workers supporting this type running. You cannot create new workflow executions of this type.</p> </li>
     /// </ul>
     pub fn set_type_info(mut self, input: ::std::option::Option<crate::types::WorkflowTypeInfo>) -> Self {
         self.type_info = input;
@@ -83,26 +75,24 @@ impl DescribeWorkflowTypeOutputBuilder {
     /// <p>General information about the workflow type.</p>
     /// <p>The status of the workflow type (returned in the WorkflowTypeInfo structure) can be one of the following.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running.</p></li>
-    /// <li>
-    /// <p><code>DEPRECATED</code> – The type was deprecated using <code>DeprecateWorkflowType</code>, but is still in use. You should keep workers supporting this type running. You cannot create new workflow executions of this type.</p></li>
+    /// <li> <p> <code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running.</p> </li>
+    /// <li> <p> <code>DEPRECATED</code> – The type was deprecated using <code>DeprecateWorkflowType</code>, but is still in use. You should keep workers supporting this type running. You cannot create new workflow executions of this type.</p> </li>
     /// </ul>
     pub fn get_type_info(&self) -> &::std::option::Option<crate::types::WorkflowTypeInfo> {
         &self.type_info
     }
-    /// <p>Configuration settings of the workflow type registered through <code>RegisterWorkflowType</code></p>
+    /// <p>Configuration settings of the workflow type registered through <code>RegisterWorkflowType</code> </p>
     /// This field is required.
     pub fn configuration(mut self, input: crate::types::WorkflowTypeConfiguration) -> Self {
         self.configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Configuration settings of the workflow type registered through <code>RegisterWorkflowType</code></p>
+    /// <p>Configuration settings of the workflow type registered through <code>RegisterWorkflowType</code> </p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::WorkflowTypeConfiguration>) -> Self {
         self.configuration = input;
         self
     }
-    /// <p>Configuration settings of the workflow type registered through <code>RegisterWorkflowType</code></p>
+    /// <p>Configuration settings of the workflow type registered through <code>RegisterWorkflowType</code> </p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::WorkflowTypeConfiguration> {
         &self.configuration
     }

@@ -22,7 +22,7 @@ impl DeleteUserInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteUser`.
 ///
-/// <p>Deletes the specified user from a Simple AD or Microsoft AD directory.</p><important>
+/// <p>Deletes the specified user from a Simple AD or Microsoft AD directory.</p> <important>
 /// <p>Deleting a user immediately and permanently deletes all content in that user's folder structure. Site retention policies do NOT apply to this type of deletion.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

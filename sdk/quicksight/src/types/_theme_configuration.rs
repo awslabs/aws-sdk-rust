@@ -6,7 +6,7 @@
 pub struct ThemeConfiguration {
     /// <p>Color properties that apply to chart data colors.</p>
     pub data_color_palette: ::std::option::Option<crate::types::DataColorPalette>,
-    /// <p>Color properties that apply to the UI and to charts, excluding the colors that apply to data.</p>
+    /// <p>Color properties that apply to the UI and to charts, excluding the colors that apply to data. </p>
     pub ui_color_palette: ::std::option::Option<crate::types::UiColorPalette>,
     /// <p>Display options related to sheets.</p>
     pub sheet: ::std::option::Option<crate::types::SheetStyle>,
@@ -18,7 +18,7 @@ impl ThemeConfiguration {
     pub fn data_color_palette(&self) -> ::std::option::Option<&crate::types::DataColorPalette> {
         self.data_color_palette.as_ref()
     }
-    /// <p>Color properties that apply to the UI and to charts, excluding the colors that apply to data.</p>
+    /// <p>Color properties that apply to the UI and to charts, excluding the colors that apply to data. </p>
     pub fn ui_color_palette(&self) -> ::std::option::Option<&crate::types::UiColorPalette> {
         self.ui_color_palette.as_ref()
     }
@@ -62,17 +62,17 @@ impl ThemeConfigurationBuilder {
     pub fn get_data_color_palette(&self) -> &::std::option::Option<crate::types::DataColorPalette> {
         &self.data_color_palette
     }
-    /// <p>Color properties that apply to the UI and to charts, excluding the colors that apply to data.</p>
+    /// <p>Color properties that apply to the UI and to charts, excluding the colors that apply to data. </p>
     pub fn ui_color_palette(mut self, input: crate::types::UiColorPalette) -> Self {
         self.ui_color_palette = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Color properties that apply to the UI and to charts, excluding the colors that apply to data.</p>
+    /// <p>Color properties that apply to the UI and to charts, excluding the colors that apply to data. </p>
     pub fn set_ui_color_palette(mut self, input: ::std::option::Option<crate::types::UiColorPalette>) -> Self {
         self.ui_color_palette = input;
         self
     }
-    /// <p>Color properties that apply to the UI and to charts, excluding the colors that apply to data.</p>
+    /// <p>Color properties that apply to the UI and to charts, excluding the colors that apply to data. </p>
     pub fn get_ui_color_palette(&self) -> &::std::option::Option<crate::types::UiColorPalette> {
         &self.ui_color_palette
     }

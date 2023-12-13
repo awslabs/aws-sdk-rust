@@ -10,16 +10,11 @@ pub struct TrafficSourceState {
     /// <p>Describes the current state of a traffic source.</p>
     /// <p>The state values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Adding</code> - The Auto Scaling instances are being registered with the load balancer or target group.</p></li>
-    /// <li>
-    /// <p><code>Added</code> - All Auto Scaling instances are registered with the load balancer or target group.</p></li>
-    /// <li>
-    /// <p><code>InService</code> - For an Elastic Load Balancing load balancer or target group, at least one Auto Scaling instance passed an <code>ELB</code> health check. For VPC Lattice, at least one Auto Scaling instance passed an <code>VPC_LATTICE</code> health check.</p></li>
-    /// <li>
-    /// <p><code>Removing</code> - The Auto Scaling instances are being deregistered from the load balancer or target group. If connection draining (deregistration delay) is enabled, Elastic Load Balancing or VPC Lattice waits for in-flight requests to complete before deregistering the instances.</p></li>
-    /// <li>
-    /// <p><code>Removed</code> - All Auto Scaling instances are deregistered from the load balancer or target group.</p></li>
+    /// <li> <p> <code>Adding</code> - The Auto Scaling instances are being registered with the load balancer or target group.</p> </li>
+    /// <li> <p> <code>Added</code> - All Auto Scaling instances are registered with the load balancer or target group.</p> </li>
+    /// <li> <p> <code>InService</code> - For an Elastic Load Balancing load balancer or target group, at least one Auto Scaling instance passed an <code>ELB</code> health check. For VPC Lattice, at least one Auto Scaling instance passed an <code>VPC_LATTICE</code> health check.</p> </li>
+    /// <li> <p> <code>Removing</code> - The Auto Scaling instances are being deregistered from the load balancer or target group. If connection draining (deregistration delay) is enabled, Elastic Load Balancing or VPC Lattice waits for in-flight requests to complete before deregistering the instances.</p> </li>
+    /// <li> <p> <code>Removed</code> - All Auto Scaling instances are deregistered from the load balancer or target group.</p> </li>
     /// </ul>
     pub state: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the traffic source.</p>
@@ -27,12 +22,9 @@ pub struct TrafficSourceState {
     /// <p>Provides additional context for the value of <code>Identifier</code>.</p>
     /// <p>The following lists the valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>elb</code> if <code>Identifier</code> is the name of a Classic Load Balancer.</p></li>
-    /// <li>
-    /// <p><code>elbv2</code> if <code>Identifier</code> is the ARN of an Application Load Balancer, Gateway Load Balancer, or Network Load Balancer target group.</p></li>
-    /// <li>
-    /// <p><code>vpc-lattice</code> if <code>Identifier</code> is the ARN of a VPC Lattice target group.</p></li>
+    /// <li> <p> <code>elb</code> if <code>Identifier</code> is the name of a Classic Load Balancer.</p> </li>
+    /// <li> <p> <code>elbv2</code> if <code>Identifier</code> is the ARN of an Application Load Balancer, Gateway Load Balancer, or Network Load Balancer target group.</p> </li>
+    /// <li> <p> <code>vpc-lattice</code> if <code>Identifier</code> is the ARN of a VPC Lattice target group.</p> </li>
     /// </ul>
     /// <p>Required if the identifier is the name of a Classic Load Balancer.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
@@ -46,16 +38,11 @@ impl TrafficSourceState {
     /// <p>Describes the current state of a traffic source.</p>
     /// <p>The state values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Adding</code> - The Auto Scaling instances are being registered with the load balancer or target group.</p></li>
-    /// <li>
-    /// <p><code>Added</code> - All Auto Scaling instances are registered with the load balancer or target group.</p></li>
-    /// <li>
-    /// <p><code>InService</code> - For an Elastic Load Balancing load balancer or target group, at least one Auto Scaling instance passed an <code>ELB</code> health check. For VPC Lattice, at least one Auto Scaling instance passed an <code>VPC_LATTICE</code> health check.</p></li>
-    /// <li>
-    /// <p><code>Removing</code> - The Auto Scaling instances are being deregistered from the load balancer or target group. If connection draining (deregistration delay) is enabled, Elastic Load Balancing or VPC Lattice waits for in-flight requests to complete before deregistering the instances.</p></li>
-    /// <li>
-    /// <p><code>Removed</code> - All Auto Scaling instances are deregistered from the load balancer or target group.</p></li>
+    /// <li> <p> <code>Adding</code> - The Auto Scaling instances are being registered with the load balancer or target group.</p> </li>
+    /// <li> <p> <code>Added</code> - All Auto Scaling instances are registered with the load balancer or target group.</p> </li>
+    /// <li> <p> <code>InService</code> - For an Elastic Load Balancing load balancer or target group, at least one Auto Scaling instance passed an <code>ELB</code> health check. For VPC Lattice, at least one Auto Scaling instance passed an <code>VPC_LATTICE</code> health check.</p> </li>
+    /// <li> <p> <code>Removing</code> - The Auto Scaling instances are being deregistered from the load balancer or target group. If connection draining (deregistration delay) is enabled, Elastic Load Balancing or VPC Lattice waits for in-flight requests to complete before deregistering the instances.</p> </li>
+    /// <li> <p> <code>Removed</code> - All Auto Scaling instances are deregistered from the load balancer or target group.</p> </li>
     /// </ul>
     pub fn state(&self) -> ::std::option::Option<&str> {
         self.state.as_deref()
@@ -67,12 +54,9 @@ impl TrafficSourceState {
     /// <p>Provides additional context for the value of <code>Identifier</code>.</p>
     /// <p>The following lists the valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>elb</code> if <code>Identifier</code> is the name of a Classic Load Balancer.</p></li>
-    /// <li>
-    /// <p><code>elbv2</code> if <code>Identifier</code> is the ARN of an Application Load Balancer, Gateway Load Balancer, or Network Load Balancer target group.</p></li>
-    /// <li>
-    /// <p><code>vpc-lattice</code> if <code>Identifier</code> is the ARN of a VPC Lattice target group.</p></li>
+    /// <li> <p> <code>elb</code> if <code>Identifier</code> is the name of a Classic Load Balancer.</p> </li>
+    /// <li> <p> <code>elbv2</code> if <code>Identifier</code> is the ARN of an Application Load Balancer, Gateway Load Balancer, or Network Load Balancer target group.</p> </li>
+    /// <li> <p> <code>vpc-lattice</code> if <code>Identifier</code> is the ARN of a VPC Lattice target group.</p> </li>
     /// </ul>
     /// <p>Required if the identifier is the name of a Classic Load Balancer.</p>
     pub fn r#type(&self) -> ::std::option::Option<&str> {
@@ -116,16 +100,11 @@ impl TrafficSourceStateBuilder {
     /// <p>Describes the current state of a traffic source.</p>
     /// <p>The state values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Adding</code> - The Auto Scaling instances are being registered with the load balancer or target group.</p></li>
-    /// <li>
-    /// <p><code>Added</code> - All Auto Scaling instances are registered with the load balancer or target group.</p></li>
-    /// <li>
-    /// <p><code>InService</code> - For an Elastic Load Balancing load balancer or target group, at least one Auto Scaling instance passed an <code>ELB</code> health check. For VPC Lattice, at least one Auto Scaling instance passed an <code>VPC_LATTICE</code> health check.</p></li>
-    /// <li>
-    /// <p><code>Removing</code> - The Auto Scaling instances are being deregistered from the load balancer or target group. If connection draining (deregistration delay) is enabled, Elastic Load Balancing or VPC Lattice waits for in-flight requests to complete before deregistering the instances.</p></li>
-    /// <li>
-    /// <p><code>Removed</code> - All Auto Scaling instances are deregistered from the load balancer or target group.</p></li>
+    /// <li> <p> <code>Adding</code> - The Auto Scaling instances are being registered with the load balancer or target group.</p> </li>
+    /// <li> <p> <code>Added</code> - All Auto Scaling instances are registered with the load balancer or target group.</p> </li>
+    /// <li> <p> <code>InService</code> - For an Elastic Load Balancing load balancer or target group, at least one Auto Scaling instance passed an <code>ELB</code> health check. For VPC Lattice, at least one Auto Scaling instance passed an <code>VPC_LATTICE</code> health check.</p> </li>
+    /// <li> <p> <code>Removing</code> - The Auto Scaling instances are being deregistered from the load balancer or target group. If connection draining (deregistration delay) is enabled, Elastic Load Balancing or VPC Lattice waits for in-flight requests to complete before deregistering the instances.</p> </li>
+    /// <li> <p> <code>Removed</code> - All Auto Scaling instances are deregistered from the load balancer or target group.</p> </li>
     /// </ul>
     pub fn state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state = ::std::option::Option::Some(input.into());
@@ -134,16 +113,11 @@ impl TrafficSourceStateBuilder {
     /// <p>Describes the current state of a traffic source.</p>
     /// <p>The state values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Adding</code> - The Auto Scaling instances are being registered with the load balancer or target group.</p></li>
-    /// <li>
-    /// <p><code>Added</code> - All Auto Scaling instances are registered with the load balancer or target group.</p></li>
-    /// <li>
-    /// <p><code>InService</code> - For an Elastic Load Balancing load balancer or target group, at least one Auto Scaling instance passed an <code>ELB</code> health check. For VPC Lattice, at least one Auto Scaling instance passed an <code>VPC_LATTICE</code> health check.</p></li>
-    /// <li>
-    /// <p><code>Removing</code> - The Auto Scaling instances are being deregistered from the load balancer or target group. If connection draining (deregistration delay) is enabled, Elastic Load Balancing or VPC Lattice waits for in-flight requests to complete before deregistering the instances.</p></li>
-    /// <li>
-    /// <p><code>Removed</code> - All Auto Scaling instances are deregistered from the load balancer or target group.</p></li>
+    /// <li> <p> <code>Adding</code> - The Auto Scaling instances are being registered with the load balancer or target group.</p> </li>
+    /// <li> <p> <code>Added</code> - All Auto Scaling instances are registered with the load balancer or target group.</p> </li>
+    /// <li> <p> <code>InService</code> - For an Elastic Load Balancing load balancer or target group, at least one Auto Scaling instance passed an <code>ELB</code> health check. For VPC Lattice, at least one Auto Scaling instance passed an <code>VPC_LATTICE</code> health check.</p> </li>
+    /// <li> <p> <code>Removing</code> - The Auto Scaling instances are being deregistered from the load balancer or target group. If connection draining (deregistration delay) is enabled, Elastic Load Balancing or VPC Lattice waits for in-flight requests to complete before deregistering the instances.</p> </li>
+    /// <li> <p> <code>Removed</code> - All Auto Scaling instances are deregistered from the load balancer or target group.</p> </li>
     /// </ul>
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state = input;
@@ -152,16 +126,11 @@ impl TrafficSourceStateBuilder {
     /// <p>Describes the current state of a traffic source.</p>
     /// <p>The state values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Adding</code> - The Auto Scaling instances are being registered with the load balancer or target group.</p></li>
-    /// <li>
-    /// <p><code>Added</code> - All Auto Scaling instances are registered with the load balancer or target group.</p></li>
-    /// <li>
-    /// <p><code>InService</code> - For an Elastic Load Balancing load balancer or target group, at least one Auto Scaling instance passed an <code>ELB</code> health check. For VPC Lattice, at least one Auto Scaling instance passed an <code>VPC_LATTICE</code> health check.</p></li>
-    /// <li>
-    /// <p><code>Removing</code> - The Auto Scaling instances are being deregistered from the load balancer or target group. If connection draining (deregistration delay) is enabled, Elastic Load Balancing or VPC Lattice waits for in-flight requests to complete before deregistering the instances.</p></li>
-    /// <li>
-    /// <p><code>Removed</code> - All Auto Scaling instances are deregistered from the load balancer or target group.</p></li>
+    /// <li> <p> <code>Adding</code> - The Auto Scaling instances are being registered with the load balancer or target group.</p> </li>
+    /// <li> <p> <code>Added</code> - All Auto Scaling instances are registered with the load balancer or target group.</p> </li>
+    /// <li> <p> <code>InService</code> - For an Elastic Load Balancing load balancer or target group, at least one Auto Scaling instance passed an <code>ELB</code> health check. For VPC Lattice, at least one Auto Scaling instance passed an <code>VPC_LATTICE</code> health check.</p> </li>
+    /// <li> <p> <code>Removing</code> - The Auto Scaling instances are being deregistered from the load balancer or target group. If connection draining (deregistration delay) is enabled, Elastic Load Balancing or VPC Lattice waits for in-flight requests to complete before deregistering the instances.</p> </li>
+    /// <li> <p> <code>Removed</code> - All Auto Scaling instances are deregistered from the load balancer or target group.</p> </li>
     /// </ul>
     pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
         &self.state
@@ -183,12 +152,9 @@ impl TrafficSourceStateBuilder {
     /// <p>Provides additional context for the value of <code>Identifier</code>.</p>
     /// <p>The following lists the valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>elb</code> if <code>Identifier</code> is the name of a Classic Load Balancer.</p></li>
-    /// <li>
-    /// <p><code>elbv2</code> if <code>Identifier</code> is the ARN of an Application Load Balancer, Gateway Load Balancer, or Network Load Balancer target group.</p></li>
-    /// <li>
-    /// <p><code>vpc-lattice</code> if <code>Identifier</code> is the ARN of a VPC Lattice target group.</p></li>
+    /// <li> <p> <code>elb</code> if <code>Identifier</code> is the name of a Classic Load Balancer.</p> </li>
+    /// <li> <p> <code>elbv2</code> if <code>Identifier</code> is the ARN of an Application Load Balancer, Gateway Load Balancer, or Network Load Balancer target group.</p> </li>
+    /// <li> <p> <code>vpc-lattice</code> if <code>Identifier</code> is the ARN of a VPC Lattice target group.</p> </li>
     /// </ul>
     /// <p>Required if the identifier is the name of a Classic Load Balancer.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -198,12 +164,9 @@ impl TrafficSourceStateBuilder {
     /// <p>Provides additional context for the value of <code>Identifier</code>.</p>
     /// <p>The following lists the valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>elb</code> if <code>Identifier</code> is the name of a Classic Load Balancer.</p></li>
-    /// <li>
-    /// <p><code>elbv2</code> if <code>Identifier</code> is the ARN of an Application Load Balancer, Gateway Load Balancer, or Network Load Balancer target group.</p></li>
-    /// <li>
-    /// <p><code>vpc-lattice</code> if <code>Identifier</code> is the ARN of a VPC Lattice target group.</p></li>
+    /// <li> <p> <code>elb</code> if <code>Identifier</code> is the name of a Classic Load Balancer.</p> </li>
+    /// <li> <p> <code>elbv2</code> if <code>Identifier</code> is the ARN of an Application Load Balancer, Gateway Load Balancer, or Network Load Balancer target group.</p> </li>
+    /// <li> <p> <code>vpc-lattice</code> if <code>Identifier</code> is the ARN of a VPC Lattice target group.</p> </li>
     /// </ul>
     /// <p>Required if the identifier is the name of a Classic Load Balancer.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -213,12 +176,9 @@ impl TrafficSourceStateBuilder {
     /// <p>Provides additional context for the value of <code>Identifier</code>.</p>
     /// <p>The following lists the valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>elb</code> if <code>Identifier</code> is the name of a Classic Load Balancer.</p></li>
-    /// <li>
-    /// <p><code>elbv2</code> if <code>Identifier</code> is the ARN of an Application Load Balancer, Gateway Load Balancer, or Network Load Balancer target group.</p></li>
-    /// <li>
-    /// <p><code>vpc-lattice</code> if <code>Identifier</code> is the ARN of a VPC Lattice target group.</p></li>
+    /// <li> <p> <code>elb</code> if <code>Identifier</code> is the name of a Classic Load Balancer.</p> </li>
+    /// <li> <p> <code>elbv2</code> if <code>Identifier</code> is the ARN of an Application Load Balancer, Gateway Load Balancer, or Network Load Balancer target group.</p> </li>
+    /// <li> <p> <code>vpc-lattice</code> if <code>Identifier</code> is the ARN of a VPC Lattice target group.</p> </li>
     /// </ul>
     /// <p>Required if the identifier is the name of a Classic Load Balancer.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {

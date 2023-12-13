@@ -22,7 +22,7 @@ impl SetActiveReceiptRuleSetInputBuilder {
 }
 /// Fluent builder constructing a request to `SetActiveReceiptRuleSet`.
 ///
-/// <p>Sets the specified receipt rule set as the active receipt rule set.</p><note>
+/// <p>Sets the specified receipt rule set as the active receipt rule set.</p> <note>
 /// <p>To disable your email-receiving through Amazon SES completely, you can call this operation with <code>RuleSetName</code> set to null.</p>
 /// </note>
 /// <p>For information about managing receipt rule sets, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email-receipt-rules-console-walkthrough.html">Amazon SES Developer Guide</a>.</p>

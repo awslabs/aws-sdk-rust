@@ -6,7 +6,7 @@
 pub struct WorkflowDetails {
     /// <p>A trigger that starts a workflow: the workflow begins to execute after a file is uploaded.</p>
     /// <p>To remove an associated workflow from a server, you can provide an empty <code>OnUpload</code> object, as in the following example.</p>
-    /// <p><code>aws transfer update-server --server-id s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code></p>
+    /// <p> <code>aws transfer update-server --server-id s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code> </p>
     pub on_upload: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowDetail>>,
     /// <p>A trigger that starts a workflow if a file is only partially uploaded. You can attach a workflow to a server that executes whenever there is a partial upload.</p>
     /// <p>A <i>partial upload</i> occurs when a file is open when the session disconnects.</p>
@@ -15,7 +15,7 @@ pub struct WorkflowDetails {
 impl WorkflowDetails {
     /// <p>A trigger that starts a workflow: the workflow begins to execute after a file is uploaded.</p>
     /// <p>To remove an associated workflow from a server, you can provide an empty <code>OnUpload</code> object, as in the following example.</p>
-    /// <p><code>aws transfer update-server --server-id s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code></p>
+    /// <p> <code>aws transfer update-server --server-id s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code> </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.on_upload.is_none()`.
     pub fn on_upload(&self) -> &[crate::types::WorkflowDetail] {
@@ -50,7 +50,7 @@ impl WorkflowDetailsBuilder {
     ///
     /// <p>A trigger that starts a workflow: the workflow begins to execute after a file is uploaded.</p>
     /// <p>To remove an associated workflow from a server, you can provide an empty <code>OnUpload</code> object, as in the following example.</p>
-    /// <p><code>aws transfer update-server --server-id s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code></p>
+    /// <p> <code>aws transfer update-server --server-id s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code> </p>
     pub fn on_upload(mut self, input: crate::types::WorkflowDetail) -> Self {
         let mut v = self.on_upload.unwrap_or_default();
         v.push(input);
@@ -59,14 +59,14 @@ impl WorkflowDetailsBuilder {
     }
     /// <p>A trigger that starts a workflow: the workflow begins to execute after a file is uploaded.</p>
     /// <p>To remove an associated workflow from a server, you can provide an empty <code>OnUpload</code> object, as in the following example.</p>
-    /// <p><code>aws transfer update-server --server-id s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code></p>
+    /// <p> <code>aws transfer update-server --server-id s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code> </p>
     pub fn set_on_upload(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowDetail>>) -> Self {
         self.on_upload = input;
         self
     }
     /// <p>A trigger that starts a workflow: the workflow begins to execute after a file is uploaded.</p>
     /// <p>To remove an associated workflow from a server, you can provide an empty <code>OnUpload</code> object, as in the following example.</p>
-    /// <p><code>aws transfer update-server --server-id s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code></p>
+    /// <p> <code>aws transfer update-server --server-id s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code> </p>
     pub fn get_on_upload(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowDetail>> {
         &self.on_upload
     }

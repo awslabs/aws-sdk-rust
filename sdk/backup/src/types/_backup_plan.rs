@@ -6,7 +6,7 @@
 pub struct BackupPlan {
     /// <p>The display name of a backup plan. Must contain 1 to 50 alphanumeric or '-_.' characters.</p>
     pub backup_plan_name: ::std::string::String,
-    /// <p>An array of <code>BackupRule</code> objects, each of which specifies a scheduled task that is used to back up a selection of resources.</p>
+    /// <p>An array of <code>BackupRule</code> objects, each of which specifies a scheduled task that is used to back up a selection of resources. </p>
     pub rules: ::std::vec::Vec<crate::types::BackupRule>,
     /// <p>Contains a list of <code>BackupOptions</code> for each resource type.</p>
     pub advanced_backup_settings: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedBackupSetting>>,
@@ -17,7 +17,7 @@ impl BackupPlan {
         use std::ops::Deref;
         self.backup_plan_name.deref()
     }
-    /// <p>An array of <code>BackupRule</code> objects, each of which specifies a scheduled task that is used to back up a selection of resources.</p>
+    /// <p>An array of <code>BackupRule</code> objects, each of which specifies a scheduled task that is used to back up a selection of resources. </p>
     pub fn rules(&self) -> &[crate::types::BackupRule] {
         use std::ops::Deref;
         self.rules.deref()
@@ -64,19 +64,19 @@ impl BackupPlanBuilder {
     ///
     /// To override the contents of this collection use [`set_rules`](Self::set_rules).
     ///
-    /// <p>An array of <code>BackupRule</code> objects, each of which specifies a scheduled task that is used to back up a selection of resources.</p>
+    /// <p>An array of <code>BackupRule</code> objects, each of which specifies a scheduled task that is used to back up a selection of resources. </p>
     pub fn rules(mut self, input: crate::types::BackupRule) -> Self {
         let mut v = self.rules.unwrap_or_default();
         v.push(input);
         self.rules = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of <code>BackupRule</code> objects, each of which specifies a scheduled task that is used to back up a selection of resources.</p>
+    /// <p>An array of <code>BackupRule</code> objects, each of which specifies a scheduled task that is used to back up a selection of resources. </p>
     pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BackupRule>>) -> Self {
         self.rules = input;
         self
     }
-    /// <p>An array of <code>BackupRule</code> objects, each of which specifies a scheduled task that is used to back up a selection of resources.</p>
+    /// <p>An array of <code>BackupRule</code> objects, each of which specifies a scheduled task that is used to back up a selection of resources. </p>
     pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BackupRule>> {
         &self.rules
     }

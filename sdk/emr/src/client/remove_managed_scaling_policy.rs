@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RemoveManagedScalingPolicy`](crate::operation::remove_managed_scaling_policy::builders::RemoveManagedScalingPolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`cluster_id(impl Into<String>)`](crate::operation::remove_managed_scaling_policy::builders::RemoveManagedScalingPolicyFluentBuilder::cluster_id) / [`set_cluster_id(Option<String>)`](crate::operation::remove_managed_scaling_policy::builders::RemoveManagedScalingPolicyFluentBuilder::set_cluster_id):<br>required: **true**<br><p>Specifies the ID of the cluster from which the managed scaling policy will be removed.</p><br>
+    ///   - [`cluster_id(impl Into<String>)`](crate::operation::remove_managed_scaling_policy::builders::RemoveManagedScalingPolicyFluentBuilder::cluster_id) / [`set_cluster_id(Option<String>)`](crate::operation::remove_managed_scaling_policy::builders::RemoveManagedScalingPolicyFluentBuilder::set_cluster_id):<br>required: **true**<br><p> Specifies the ID of the cluster from which the managed scaling policy will be removed. </p><br>
     /// - On success, responds with [`RemoveManagedScalingPolicyOutput`](crate::operation::remove_managed_scaling_policy::RemoveManagedScalingPolicyOutput)
     /// - On failure, responds with [`SdkError<RemoveManagedScalingPolicyError>`](crate::operation::remove_managed_scaling_policy::RemoveManagedScalingPolicyError)
     pub fn remove_managed_scaling_policy(

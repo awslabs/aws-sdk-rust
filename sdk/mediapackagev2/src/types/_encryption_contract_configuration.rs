@@ -5,87 +5,57 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EncryptionContractConfiguration {
     /// <p>A collection of audio encryption presets.</p>
-    /// <p>Value description:</p>
+    /// <p>Value description: </p>
     /// <ul>
-    /// <li>
-    /// <p>PRESET-AUDIO-1 - Use one content key to encrypt all of the audio tracks in your stream.</p></li>
-    /// <li>
-    /// <p>PRESET-AUDIO-2 - Use one content key to encrypt all of the stereo audio tracks and one content key to encrypt all of the multichannel audio tracks.</p></li>
-    /// <li>
-    /// <p>PRESET-AUDIO-3 - Use one content key to encrypt all of the stereo audio tracks, one content key to encrypt all of the multichannel audio tracks with 3 to 6 channels, and one content key to encrypt all of the multichannel audio tracks with more than 6 channels.</p></li>
-    /// <li>
-    /// <p>SHARED - Use the same content key for all of the audio and video tracks in your stream.</p></li>
-    /// <li>
-    /// <p>UNENCRYPTED - Don't encrypt any of the audio tracks in your stream.</p></li>
+    /// <li> <p>PRESET-AUDIO-1 - Use one content key to encrypt all of the audio tracks in your stream.</p> </li>
+    /// <li> <p>PRESET-AUDIO-2 - Use one content key to encrypt all of the stereo audio tracks and one content key to encrypt all of the multichannel audio tracks.</p> </li>
+    /// <li> <p>PRESET-AUDIO-3 - Use one content key to encrypt all of the stereo audio tracks, one content key to encrypt all of the multichannel audio tracks with 3 to 6 channels, and one content key to encrypt all of the multichannel audio tracks with more than 6 channels.</p> </li>
+    /// <li> <p>SHARED - Use the same content key for all of the audio and video tracks in your stream.</p> </li>
+    /// <li> <p>UNENCRYPTED - Don't encrypt any of the audio tracks in your stream.</p> </li>
     /// </ul>
     pub preset_speke20_audio: crate::types::PresetSpeke20Audio,
     /// <p>A collection of video encryption presets.</p>
-    /// <p>Value description:</p>
+    /// <p>Value description: </p>
     /// <ul>
-    /// <li>
-    /// <p>PRESET-VIDEO-1 - Use one content key to encrypt all of the video tracks in your stream.</p></li>
-    /// <li>
-    /// <p>PRESET-VIDEO-2 - Use one content key to encrypt all of the SD video tracks and one content key for all HD and higher resolutions video tracks.</p></li>
-    /// <li>
-    /// <p>PRESET-VIDEO-3 - Use one content key to encrypt all of the SD video tracks, one content key for HD video tracks and one content key for all UHD video tracks.</p></li>
-    /// <li>
-    /// <p>PRESET-VIDEO-4 - Use one content key to encrypt all of the SD video tracks, one content key for HD video tracks, one content key for all UHD1 video tracks and one content key for all UHD2 video tracks.</p></li>
-    /// <li>
-    /// <p>PRESET-VIDEO-5 - Use one content key to encrypt all of the SD video tracks, one content key for HD1 video tracks, one content key for HD2 video tracks, one content key for all UHD1 video tracks and one content key for all UHD2 video tracks.</p></li>
-    /// <li>
-    /// <p>PRESET-VIDEO-6 - Use one content key to encrypt all of the SD video tracks, one content key for HD1 video tracks, one content key for HD2 video tracks and one content key for all UHD video tracks.</p></li>
-    /// <li>
-    /// <p>PRESET-VIDEO-7 - Use one content key to encrypt all of the SD+HD1 video tracks, one content key for HD2 video tracks and one content key for all UHD video tracks.</p></li>
-    /// <li>
-    /// <p>PRESET-VIDEO-8 - Use one content key to encrypt all of the SD+HD1 video tracks, one content key for HD2 video tracks, one content key for all UHD1 video tracks and one content key for all UHD2 video tracks.</p></li>
-    /// <li>
-    /// <p>SHARED - Use the same content key for all of the video and audio tracks in your stream.</p></li>
-    /// <li>
-    /// <p>UNENCRYPTED - Don't encrypt any of the video tracks in your stream.</p></li>
+    /// <li> <p>PRESET-VIDEO-1 - Use one content key to encrypt all of the video tracks in your stream.</p> </li>
+    /// <li> <p>PRESET-VIDEO-2 - Use one content key to encrypt all of the SD video tracks and one content key for all HD and higher resolutions video tracks.</p> </li>
+    /// <li> <p>PRESET-VIDEO-3 - Use one content key to encrypt all of the SD video tracks, one content key for HD video tracks and one content key for all UHD video tracks.</p> </li>
+    /// <li> <p>PRESET-VIDEO-4 - Use one content key to encrypt all of the SD video tracks, one content key for HD video tracks, one content key for all UHD1 video tracks and one content key for all UHD2 video tracks.</p> </li>
+    /// <li> <p>PRESET-VIDEO-5 - Use one content key to encrypt all of the SD video tracks, one content key for HD1 video tracks, one content key for HD2 video tracks, one content key for all UHD1 video tracks and one content key for all UHD2 video tracks.</p> </li>
+    /// <li> <p>PRESET-VIDEO-6 - Use one content key to encrypt all of the SD video tracks, one content key for HD1 video tracks, one content key for HD2 video tracks and one content key for all UHD video tracks.</p> </li>
+    /// <li> <p>PRESET-VIDEO-7 - Use one content key to encrypt all of the SD+HD1 video tracks, one content key for HD2 video tracks and one content key for all UHD video tracks.</p> </li>
+    /// <li> <p>PRESET-VIDEO-8 - Use one content key to encrypt all of the SD+HD1 video tracks, one content key for HD2 video tracks, one content key for all UHD1 video tracks and one content key for all UHD2 video tracks.</p> </li>
+    /// <li> <p>SHARED - Use the same content key for all of the video and audio tracks in your stream.</p> </li>
+    /// <li> <p>UNENCRYPTED - Don't encrypt any of the video tracks in your stream.</p> </li>
     /// </ul>
     pub preset_speke20_video: crate::types::PresetSpeke20Video,
 }
 impl EncryptionContractConfiguration {
     /// <p>A collection of audio encryption presets.</p>
-    /// <p>Value description:</p>
+    /// <p>Value description: </p>
     /// <ul>
-    /// <li>
-    /// <p>PRESET-AUDIO-1 - Use one content key to encrypt all of the audio tracks in your stream.</p></li>
-    /// <li>
-    /// <p>PRESET-AUDIO-2 - Use one content key to encrypt all of the stereo audio tracks and one content key to encrypt all of the multichannel audio tracks.</p></li>
-    /// <li>
-    /// <p>PRESET-AUDIO-3 - Use one content key to encrypt all of the stereo audio tracks, one content key to encrypt all of the multichannel audio tracks with 3 to 6 channels, and one content key to encrypt all of the multichannel audio tracks with more than 6 channels.</p></li>
-    /// <li>
-    /// <p>SHARED - Use the same content key for all of the audio and video tracks in your stream.</p></li>
-    /// <li>
-    /// <p>UNENCRYPTED - Don't encrypt any of the audio tracks in your stream.</p></li>
+    /// <li> <p>PRESET-AUDIO-1 - Use one content key to encrypt all of the audio tracks in your stream.</p> </li>
+    /// <li> <p>PRESET-AUDIO-2 - Use one content key to encrypt all of the stereo audio tracks and one content key to encrypt all of the multichannel audio tracks.</p> </li>
+    /// <li> <p>PRESET-AUDIO-3 - Use one content key to encrypt all of the stereo audio tracks, one content key to encrypt all of the multichannel audio tracks with 3 to 6 channels, and one content key to encrypt all of the multichannel audio tracks with more than 6 channels.</p> </li>
+    /// <li> <p>SHARED - Use the same content key for all of the audio and video tracks in your stream.</p> </li>
+    /// <li> <p>UNENCRYPTED - Don't encrypt any of the audio tracks in your stream.</p> </li>
     /// </ul>
     pub fn preset_speke20_audio(&self) -> &crate::types::PresetSpeke20Audio {
         &self.preset_speke20_audio
     }
     /// <p>A collection of video encryption presets.</p>
-    /// <p>Value description:</p>
+    /// <p>Value description: </p>
     /// <ul>
-    /// <li>
-    /// <p>PRESET-VIDEO-1 - Use one content key to encrypt all of the video tracks in your stream.</p></li>
-    /// <li>
-    /// <p>PRESET-VIDEO-2 - Use one content key to encrypt all of the SD video tracks and one content key for all HD and higher resolutions video tracks.</p></li>
-    /// <li>
-    /// <p>PRESET-VIDEO-3 - Use one content key to encrypt all of the SD video tracks, one content key for HD video tracks and one content key for all UHD video tracks.</p></li>
-    /// <li>
-    /// <p>PRESET-VIDEO-4 - Use one content key to encrypt all of the SD video tracks, one content key for HD video tracks, one content key for all UHD1 video tracks and one content key for all UHD2 video tracks.</p></li>
-    /// <li>
-    /// <p>PRESET-VIDEO-5 - Use one content key to encrypt all of the SD video tracks, one content key for HD1 video tracks, one content key for HD2 video tracks, one content key for all UHD1 video tracks and one content key for all UHD2 video tracks.</p></li>
-    /// <li>
-    /// <p>PRESET-VIDEO-6 - Use one content key to encrypt all of the SD video tracks, one content key for HD1 video tracks, one content key for HD2 video tracks and one content key for all UHD video tracks.</p></li>
-    /// <li>
-    /// <p>PRESET-VIDEO-7 - Use one content key to encrypt all of the SD+HD1 video tracks, one content key for HD2 video tracks and one content key for all UHD video tracks.</p></li>
-    /// <li>
-    /// <p>PRESET-VIDEO-8 - Use one content key to encrypt all of the SD+HD1 video tracks, one content key for HD2 video tracks, one content key for all UHD1 video tracks and one content key for all UHD2 video tracks.</p></li>
-    /// <li>
-    /// <p>SHARED - Use the same content key for all of the video and audio tracks in your stream.</p></li>
-    /// <li>
-    /// <p>UNENCRYPTED - Don't encrypt any of the video tracks in your stream.</p></li>
+    /// <li> <p>PRESET-VIDEO-1 - Use one content key to encrypt all of the video tracks in your stream.</p> </li>
+    /// <li> <p>PRESET-VIDEO-2 - Use one content key to encrypt all of the SD video tracks and one content key for all HD and higher resolutions video tracks.</p> </li>
+    /// <li> <p>PRESET-VIDEO-3 - Use one content key to encrypt all of the SD video tracks, one content key for HD video tracks and one content key for all UHD video tracks.</p> </li>
+    /// <li> <p>PRESET-VIDEO-4 - Use one content key to encrypt all of the SD video tracks, one content key for HD video tracks, one content key for all UHD1 video tracks and one content key for all UHD2 video tracks.</p> </li>
+    /// <li> <p>PRESET-VIDEO-5 - Use one content key to encrypt all of the SD video tracks, one content key for HD1 video tracks, one content key for HD2 video tracks, one content key for all UHD1 video tracks and one content key for all UHD2 video tracks.</p> </li>
+    /// <li> <p>PRESET-VIDEO-6 - Use one content key to encrypt all of the SD video tracks, one content key for HD1 video tracks, one content key for HD2 video tracks and one content key for all UHD video tracks.</p> </li>
+    /// <li> <p>PRESET-VIDEO-7 - Use one content key to encrypt all of the SD+HD1 video tracks, one content key for HD2 video tracks and one content key for all UHD video tracks.</p> </li>
+    /// <li> <p>PRESET-VIDEO-8 - Use one content key to encrypt all of the SD+HD1 video tracks, one content key for HD2 video tracks, one content key for all UHD1 video tracks and one content key for all UHD2 video tracks.</p> </li>
+    /// <li> <p>SHARED - Use the same content key for all of the video and audio tracks in your stream.</p> </li>
+    /// <li> <p>UNENCRYPTED - Don't encrypt any of the video tracks in your stream.</p> </li>
     /// </ul>
     pub fn preset_speke20_video(&self) -> &crate::types::PresetSpeke20Video {
         &self.preset_speke20_video
@@ -107,18 +77,13 @@ pub struct EncryptionContractConfigurationBuilder {
 }
 impl EncryptionContractConfigurationBuilder {
     /// <p>A collection of audio encryption presets.</p>
-    /// <p>Value description:</p>
+    /// <p>Value description: </p>
     /// <ul>
-    /// <li>
-    /// <p>PRESET-AUDIO-1 - Use one content key to encrypt all of the audio tracks in your stream.</p></li>
-    /// <li>
-    /// <p>PRESET-AUDIO-2 - Use one content key to encrypt all of the stereo audio tracks and one content key to encrypt all of the multichannel audio tracks.</p></li>
-    /// <li>
-    /// <p>PRESET-AUDIO-3 - Use one content key to encrypt all of the stereo audio tracks, one content key to encrypt all of the multichannel audio tracks with 3 to 6 channels, and one content key to encrypt all of the multichannel audio tracks with more than 6 channels.</p></li>
-    /// <li>
-    /// <p>SHARED - Use the same content key for all of the audio and video tracks in your stream.</p></li>
-    /// <li>
-    /// <p>UNENCRYPTED - Don't encrypt any of the audio tracks in your stream.</p></li>
+    /// <li> <p>PRESET-AUDIO-1 - Use one content key to encrypt all of the audio tracks in your stream.</p> </li>
+    /// <li> <p>PRESET-AUDIO-2 - Use one content key to encrypt all of the stereo audio tracks and one content key to encrypt all of the multichannel audio tracks.</p> </li>
+    /// <li> <p>PRESET-AUDIO-3 - Use one content key to encrypt all of the stereo audio tracks, one content key to encrypt all of the multichannel audio tracks with 3 to 6 channels, and one content key to encrypt all of the multichannel audio tracks with more than 6 channels.</p> </li>
+    /// <li> <p>SHARED - Use the same content key for all of the audio and video tracks in your stream.</p> </li>
+    /// <li> <p>UNENCRYPTED - Don't encrypt any of the audio tracks in your stream.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn preset_speke20_audio(mut self, input: crate::types::PresetSpeke20Audio) -> Self {
@@ -126,63 +91,43 @@ impl EncryptionContractConfigurationBuilder {
         self
     }
     /// <p>A collection of audio encryption presets.</p>
-    /// <p>Value description:</p>
+    /// <p>Value description: </p>
     /// <ul>
-    /// <li>
-    /// <p>PRESET-AUDIO-1 - Use one content key to encrypt all of the audio tracks in your stream.</p></li>
-    /// <li>
-    /// <p>PRESET-AUDIO-2 - Use one content key to encrypt all of the stereo audio tracks and one content key to encrypt all of the multichannel audio tracks.</p></li>
-    /// <li>
-    /// <p>PRESET-AUDIO-3 - Use one content key to encrypt all of the stereo audio tracks, one content key to encrypt all of the multichannel audio tracks with 3 to 6 channels, and one content key to encrypt all of the multichannel audio tracks with more than 6 channels.</p></li>
-    /// <li>
-    /// <p>SHARED - Use the same content key for all of the audio and video tracks in your stream.</p></li>
-    /// <li>
-    /// <p>UNENCRYPTED - Don't encrypt any of the audio tracks in your stream.</p></li>
+    /// <li> <p>PRESET-AUDIO-1 - Use one content key to encrypt all of the audio tracks in your stream.</p> </li>
+    /// <li> <p>PRESET-AUDIO-2 - Use one content key to encrypt all of the stereo audio tracks and one content key to encrypt all of the multichannel audio tracks.</p> </li>
+    /// <li> <p>PRESET-AUDIO-3 - Use one content key to encrypt all of the stereo audio tracks, one content key to encrypt all of the multichannel audio tracks with 3 to 6 channels, and one content key to encrypt all of the multichannel audio tracks with more than 6 channels.</p> </li>
+    /// <li> <p>SHARED - Use the same content key for all of the audio and video tracks in your stream.</p> </li>
+    /// <li> <p>UNENCRYPTED - Don't encrypt any of the audio tracks in your stream.</p> </li>
     /// </ul>
     pub fn set_preset_speke20_audio(mut self, input: ::std::option::Option<crate::types::PresetSpeke20Audio>) -> Self {
         self.preset_speke20_audio = input;
         self
     }
     /// <p>A collection of audio encryption presets.</p>
-    /// <p>Value description:</p>
+    /// <p>Value description: </p>
     /// <ul>
-    /// <li>
-    /// <p>PRESET-AUDIO-1 - Use one content key to encrypt all of the audio tracks in your stream.</p></li>
-    /// <li>
-    /// <p>PRESET-AUDIO-2 - Use one content key to encrypt all of the stereo audio tracks and one content key to encrypt all of the multichannel audio tracks.</p></li>
-    /// <li>
-    /// <p>PRESET-AUDIO-3 - Use one content key to encrypt all of the stereo audio tracks, one content key to encrypt all of the multichannel audio tracks with 3 to 6 channels, and one content key to encrypt all of the multichannel audio tracks with more than 6 channels.</p></li>
-    /// <li>
-    /// <p>SHARED - Use the same content key for all of the audio and video tracks in your stream.</p></li>
-    /// <li>
-    /// <p>UNENCRYPTED - Don't encrypt any of the audio tracks in your stream.</p></li>
+    /// <li> <p>PRESET-AUDIO-1 - Use one content key to encrypt all of the audio tracks in your stream.</p> </li>
+    /// <li> <p>PRESET-AUDIO-2 - Use one content key to encrypt all of the stereo audio tracks and one content key to encrypt all of the multichannel audio tracks.</p> </li>
+    /// <li> <p>PRESET-AUDIO-3 - Use one content key to encrypt all of the stereo audio tracks, one content key to encrypt all of the multichannel audio tracks with 3 to 6 channels, and one content key to encrypt all of the multichannel audio tracks with more than 6 channels.</p> </li>
+    /// <li> <p>SHARED - Use the same content key for all of the audio and video tracks in your stream.</p> </li>
+    /// <li> <p>UNENCRYPTED - Don't encrypt any of the audio tracks in your stream.</p> </li>
     /// </ul>
     pub fn get_preset_speke20_audio(&self) -> &::std::option::Option<crate::types::PresetSpeke20Audio> {
         &self.preset_speke20_audio
     }
     /// <p>A collection of video encryption presets.</p>
-    /// <p>Value description:</p>
+    /// <p>Value description: </p>
     /// <ul>
-    /// <li>
-    /// <p>PRESET-VIDEO-1 - Use one content key to encrypt all of the video tracks in your stream.</p></li>
-    /// <li>
-    /// <p>PRESET-VIDEO-2 - Use one content key to encrypt all of the SD video tracks and one content key for all HD and higher resolutions video tracks.</p></li>
-    /// <li>
-    /// <p>PRESET-VIDEO-3 - Use one content key to encrypt all of the SD video tracks, one content key for HD video tracks and one content key for all UHD video tracks.</p></li>
-    /// <li>
-    /// <p>PRESET-VIDEO-4 - Use one content key to encrypt all of the SD video tracks, one content key for HD video tracks, one content key for all UHD1 video tracks and one content key for all UHD2 video tracks.</p></li>
-    /// <li>
-    /// <p>PRESET-VIDEO-5 - Use one content key to encrypt all of the SD video tracks, one content key for HD1 video tracks, one content key for HD2 video tracks, one content key for all UHD1 video tracks and one content key for all UHD2 video tracks.</p></li>
-    /// <li>
-    /// <p>PRESET-VIDEO-6 - Use one content key to encrypt all of the SD video tracks, one content key for HD1 video tracks, one content key for HD2 video tracks and one content key for all UHD video tracks.</p></li>
-    /// <li>
-    /// <p>PRESET-VIDEO-7 - Use one content key to encrypt all of the SD+HD1 video tracks, one content key for HD2 video tracks and one content key for all UHD video tracks.</p></li>
-    /// <li>
-    /// <p>PRESET-VIDEO-8 - Use one content key to encrypt all of the SD+HD1 video tracks, one content key for HD2 video tracks, one content key for all UHD1 video tracks and one content key for all UHD2 video tracks.</p></li>
-    /// <li>
-    /// <p>SHARED - Use the same content key for all of the video and audio tracks in your stream.</p></li>
-    /// <li>
-    /// <p>UNENCRYPTED - Don't encrypt any of the video tracks in your stream.</p></li>
+    /// <li> <p>PRESET-VIDEO-1 - Use one content key to encrypt all of the video tracks in your stream.</p> </li>
+    /// <li> <p>PRESET-VIDEO-2 - Use one content key to encrypt all of the SD video tracks and one content key for all HD and higher resolutions video tracks.</p> </li>
+    /// <li> <p>PRESET-VIDEO-3 - Use one content key to encrypt all of the SD video tracks, one content key for HD video tracks and one content key for all UHD video tracks.</p> </li>
+    /// <li> <p>PRESET-VIDEO-4 - Use one content key to encrypt all of the SD video tracks, one content key for HD video tracks, one content key for all UHD1 video tracks and one content key for all UHD2 video tracks.</p> </li>
+    /// <li> <p>PRESET-VIDEO-5 - Use one content key to encrypt all of the SD video tracks, one content key for HD1 video tracks, one content key for HD2 video tracks, one content key for all UHD1 video tracks and one content key for all UHD2 video tracks.</p> </li>
+    /// <li> <p>PRESET-VIDEO-6 - Use one content key to encrypt all of the SD video tracks, one content key for HD1 video tracks, one content key for HD2 video tracks and one content key for all UHD video tracks.</p> </li>
+    /// <li> <p>PRESET-VIDEO-7 - Use one content key to encrypt all of the SD+HD1 video tracks, one content key for HD2 video tracks and one content key for all UHD video tracks.</p> </li>
+    /// <li> <p>PRESET-VIDEO-8 - Use one content key to encrypt all of the SD+HD1 video tracks, one content key for HD2 video tracks, one content key for all UHD1 video tracks and one content key for all UHD2 video tracks.</p> </li>
+    /// <li> <p>SHARED - Use the same content key for all of the video and audio tracks in your stream.</p> </li>
+    /// <li> <p>UNENCRYPTED - Don't encrypt any of the video tracks in your stream.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn preset_speke20_video(mut self, input: crate::types::PresetSpeke20Video) -> Self {
@@ -190,56 +135,36 @@ impl EncryptionContractConfigurationBuilder {
         self
     }
     /// <p>A collection of video encryption presets.</p>
-    /// <p>Value description:</p>
+    /// <p>Value description: </p>
     /// <ul>
-    /// <li>
-    /// <p>PRESET-VIDEO-1 - Use one content key to encrypt all of the video tracks in your stream.</p></li>
-    /// <li>
-    /// <p>PRESET-VIDEO-2 - Use one content key to encrypt all of the SD video tracks and one content key for all HD and higher resolutions video tracks.</p></li>
-    /// <li>
-    /// <p>PRESET-VIDEO-3 - Use one content key to encrypt all of the SD video tracks, one content key for HD video tracks and one content key for all UHD video tracks.</p></li>
-    /// <li>
-    /// <p>PRESET-VIDEO-4 - Use one content key to encrypt all of the SD video tracks, one content key for HD video tracks, one content key for all UHD1 video tracks and one content key for all UHD2 video tracks.</p></li>
-    /// <li>
-    /// <p>PRESET-VIDEO-5 - Use one content key to encrypt all of the SD video tracks, one content key for HD1 video tracks, one content key for HD2 video tracks, one content key for all UHD1 video tracks and one content key for all UHD2 video tracks.</p></li>
-    /// <li>
-    /// <p>PRESET-VIDEO-6 - Use one content key to encrypt all of the SD video tracks, one content key for HD1 video tracks, one content key for HD2 video tracks and one content key for all UHD video tracks.</p></li>
-    /// <li>
-    /// <p>PRESET-VIDEO-7 - Use one content key to encrypt all of the SD+HD1 video tracks, one content key for HD2 video tracks and one content key for all UHD video tracks.</p></li>
-    /// <li>
-    /// <p>PRESET-VIDEO-8 - Use one content key to encrypt all of the SD+HD1 video tracks, one content key for HD2 video tracks, one content key for all UHD1 video tracks and one content key for all UHD2 video tracks.</p></li>
-    /// <li>
-    /// <p>SHARED - Use the same content key for all of the video and audio tracks in your stream.</p></li>
-    /// <li>
-    /// <p>UNENCRYPTED - Don't encrypt any of the video tracks in your stream.</p></li>
+    /// <li> <p>PRESET-VIDEO-1 - Use one content key to encrypt all of the video tracks in your stream.</p> </li>
+    /// <li> <p>PRESET-VIDEO-2 - Use one content key to encrypt all of the SD video tracks and one content key for all HD and higher resolutions video tracks.</p> </li>
+    /// <li> <p>PRESET-VIDEO-3 - Use one content key to encrypt all of the SD video tracks, one content key for HD video tracks and one content key for all UHD video tracks.</p> </li>
+    /// <li> <p>PRESET-VIDEO-4 - Use one content key to encrypt all of the SD video tracks, one content key for HD video tracks, one content key for all UHD1 video tracks and one content key for all UHD2 video tracks.</p> </li>
+    /// <li> <p>PRESET-VIDEO-5 - Use one content key to encrypt all of the SD video tracks, one content key for HD1 video tracks, one content key for HD2 video tracks, one content key for all UHD1 video tracks and one content key for all UHD2 video tracks.</p> </li>
+    /// <li> <p>PRESET-VIDEO-6 - Use one content key to encrypt all of the SD video tracks, one content key for HD1 video tracks, one content key for HD2 video tracks and one content key for all UHD video tracks.</p> </li>
+    /// <li> <p>PRESET-VIDEO-7 - Use one content key to encrypt all of the SD+HD1 video tracks, one content key for HD2 video tracks and one content key for all UHD video tracks.</p> </li>
+    /// <li> <p>PRESET-VIDEO-8 - Use one content key to encrypt all of the SD+HD1 video tracks, one content key for HD2 video tracks, one content key for all UHD1 video tracks and one content key for all UHD2 video tracks.</p> </li>
+    /// <li> <p>SHARED - Use the same content key for all of the video and audio tracks in your stream.</p> </li>
+    /// <li> <p>UNENCRYPTED - Don't encrypt any of the video tracks in your stream.</p> </li>
     /// </ul>
     pub fn set_preset_speke20_video(mut self, input: ::std::option::Option<crate::types::PresetSpeke20Video>) -> Self {
         self.preset_speke20_video = input;
         self
     }
     /// <p>A collection of video encryption presets.</p>
-    /// <p>Value description:</p>
+    /// <p>Value description: </p>
     /// <ul>
-    /// <li>
-    /// <p>PRESET-VIDEO-1 - Use one content key to encrypt all of the video tracks in your stream.</p></li>
-    /// <li>
-    /// <p>PRESET-VIDEO-2 - Use one content key to encrypt all of the SD video tracks and one content key for all HD and higher resolutions video tracks.</p></li>
-    /// <li>
-    /// <p>PRESET-VIDEO-3 - Use one content key to encrypt all of the SD video tracks, one content key for HD video tracks and one content key for all UHD video tracks.</p></li>
-    /// <li>
-    /// <p>PRESET-VIDEO-4 - Use one content key to encrypt all of the SD video tracks, one content key for HD video tracks, one content key for all UHD1 video tracks and one content key for all UHD2 video tracks.</p></li>
-    /// <li>
-    /// <p>PRESET-VIDEO-5 - Use one content key to encrypt all of the SD video tracks, one content key for HD1 video tracks, one content key for HD2 video tracks, one content key for all UHD1 video tracks and one content key for all UHD2 video tracks.</p></li>
-    /// <li>
-    /// <p>PRESET-VIDEO-6 - Use one content key to encrypt all of the SD video tracks, one content key for HD1 video tracks, one content key for HD2 video tracks and one content key for all UHD video tracks.</p></li>
-    /// <li>
-    /// <p>PRESET-VIDEO-7 - Use one content key to encrypt all of the SD+HD1 video tracks, one content key for HD2 video tracks and one content key for all UHD video tracks.</p></li>
-    /// <li>
-    /// <p>PRESET-VIDEO-8 - Use one content key to encrypt all of the SD+HD1 video tracks, one content key for HD2 video tracks, one content key for all UHD1 video tracks and one content key for all UHD2 video tracks.</p></li>
-    /// <li>
-    /// <p>SHARED - Use the same content key for all of the video and audio tracks in your stream.</p></li>
-    /// <li>
-    /// <p>UNENCRYPTED - Don't encrypt any of the video tracks in your stream.</p></li>
+    /// <li> <p>PRESET-VIDEO-1 - Use one content key to encrypt all of the video tracks in your stream.</p> </li>
+    /// <li> <p>PRESET-VIDEO-2 - Use one content key to encrypt all of the SD video tracks and one content key for all HD and higher resolutions video tracks.</p> </li>
+    /// <li> <p>PRESET-VIDEO-3 - Use one content key to encrypt all of the SD video tracks, one content key for HD video tracks and one content key for all UHD video tracks.</p> </li>
+    /// <li> <p>PRESET-VIDEO-4 - Use one content key to encrypt all of the SD video tracks, one content key for HD video tracks, one content key for all UHD1 video tracks and one content key for all UHD2 video tracks.</p> </li>
+    /// <li> <p>PRESET-VIDEO-5 - Use one content key to encrypt all of the SD video tracks, one content key for HD1 video tracks, one content key for HD2 video tracks, one content key for all UHD1 video tracks and one content key for all UHD2 video tracks.</p> </li>
+    /// <li> <p>PRESET-VIDEO-6 - Use one content key to encrypt all of the SD video tracks, one content key for HD1 video tracks, one content key for HD2 video tracks and one content key for all UHD video tracks.</p> </li>
+    /// <li> <p>PRESET-VIDEO-7 - Use one content key to encrypt all of the SD+HD1 video tracks, one content key for HD2 video tracks and one content key for all UHD video tracks.</p> </li>
+    /// <li> <p>PRESET-VIDEO-8 - Use one content key to encrypt all of the SD+HD1 video tracks, one content key for HD2 video tracks, one content key for all UHD1 video tracks and one content key for all UHD2 video tracks.</p> </li>
+    /// <li> <p>SHARED - Use the same content key for all of the video and audio tracks in your stream.</p> </li>
+    /// <li> <p>UNENCRYPTED - Don't encrypt any of the video tracks in your stream.</p> </li>
     /// </ul>
     pub fn get_preset_speke20_video(&self) -> &::std::option::Option<crate::types::PresetSpeke20Video> {
         &self.preset_speke20_video

@@ -6,11 +6,11 @@ pub struct SearchPlaceIndexForPositionInput {
     /// <p>The name of the place index resource you want to use for the search.</p>
     pub index_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the longitude and latitude of the position to query.</p>
-    /// <p>This parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
+    /// <p> This parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
     /// <p>For example, <code>[-123.1174, 49.2847]</code> represents a position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
     pub position: ::std::option::Option<::std::vec::Vec<f64>>,
     /// <p>An optional parameter. The maximum number of results returned per request.</p>
-    /// <p>Default value: <code>50</code></p>
+    /// <p>Default value: <code>50</code> </p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
     /// <p>This setting affects the languages used in the results, but not the results themselves. If no language is specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p>
@@ -27,7 +27,7 @@ impl SearchPlaceIndexForPositionInput {
         self.index_name.as_deref()
     }
     /// <p>Specifies the longitude and latitude of the position to query.</p>
-    /// <p>This parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
+    /// <p> This parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
     /// <p>For example, <code>[-123.1174, 49.2847]</code> represents a position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.position.is_none()`.
@@ -35,7 +35,7 @@ impl SearchPlaceIndexForPositionInput {
         self.position.as_deref().unwrap_or_default()
     }
     /// <p>An optional parameter. The maximum number of results returned per request.</p>
-    /// <p>Default value: <code>50</code></p>
+    /// <p>Default value: <code>50</code> </p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -101,7 +101,7 @@ impl SearchPlaceIndexForPositionInputBuilder {
     /// To override the contents of this collection use [`set_position`](Self::set_position).
     ///
     /// <p>Specifies the longitude and latitude of the position to query.</p>
-    /// <p>This parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
+    /// <p> This parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
     /// <p>For example, <code>[-123.1174, 49.2847]</code> represents a position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
     pub fn position(mut self, input: f64) -> Self {
         let mut v = self.position.unwrap_or_default();
@@ -110,32 +110,32 @@ impl SearchPlaceIndexForPositionInputBuilder {
         self
     }
     /// <p>Specifies the longitude and latitude of the position to query.</p>
-    /// <p>This parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
+    /// <p> This parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
     /// <p>For example, <code>[-123.1174, 49.2847]</code> represents a position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
     pub fn set_position(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.position = input;
         self
     }
     /// <p>Specifies the longitude and latitude of the position to query.</p>
-    /// <p>This parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
+    /// <p> This parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
     /// <p>For example, <code>[-123.1174, 49.2847]</code> represents a position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
     pub fn get_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
         &self.position
     }
     /// <p>An optional parameter. The maximum number of results returned per request.</p>
-    /// <p>Default value: <code>50</code></p>
+    /// <p>Default value: <code>50</code> </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
     /// <p>An optional parameter. The maximum number of results returned per request.</p>
-    /// <p>Default value: <code>50</code></p>
+    /// <p>Default value: <code>50</code> </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
     /// <p>An optional parameter. The maximum number of results returned per request.</p>
-    /// <p>Default value: <code>50</code></p>
+    /// <p>Default value: <code>50</code> </p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

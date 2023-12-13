@@ -24,7 +24,7 @@ impl ModifyVolumeInputBuilder {
 ///
 /// <p>You can modify several parameters of an existing EBS volume, including volume size, volume type, and IOPS capacity. If your EBS volume is attached to a current-generation EC2 instance type, you might be able to apply these changes without stopping the instance or detaching the volume from it. For more information about modifying EBS volumes, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modify-volume.html">Amazon EBS Elastic Volumes</a> (Linux instances) or <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-modify-volume.html">Amazon EBS Elastic Volumes</a> (Windows instances).</p>
 /// <p>When you complete a resize operation on your volume, you need to extend the volume's file-system size to take advantage of the new storage capacity. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#recognize-expanded-volume-linux">Extend a Linux file system</a> or <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html#recognize-expanded-volume-windows">Extend a Windows file system</a>.</p>
-/// <p>You can use CloudWatch Events to check the status of a modification to an EBS volume. For information about CloudWatch Events, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon CloudWatch Events User Guide</a>. You can also track the status of a modification using <code>DescribeVolumesModifications</code>. For information about tracking status changes using either method, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-modifications.html">Monitor the progress of volume modifications</a>.</p>
+/// <p> You can use CloudWatch Events to check the status of a modification to an EBS volume. For information about CloudWatch Events, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon CloudWatch Events User Guide</a>. You can also track the status of a modification using <code>DescribeVolumesModifications</code>. For information about tracking status changes using either method, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-modifications.html">Monitor the progress of volume modifications</a>.</p>
 /// <p>With previous-generation instance types, resizing an EBS volume might require detaching and reattaching the volume or stopping and restarting the instance.</p>
 /// <p>After modifying a volume, you must wait at least six hours and ensure that the volume is in the <code>in-use</code> or <code>available</code> state before you can modify the same volume. This is sometimes referred to as a cooldown period.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -143,16 +143,11 @@ impl ModifyVolumeFluentBuilder {
     /// <p>The target size of the volume, in GiB. The target volume size must be greater than or equal to the existing size of the volume.</p>
     /// <p>The following are the supported volumes sizes for each volume type:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB</p></li>
-    /// <li>
-    /// <p><code>io1</code>: 4 - 16,384 GiB</p></li>
-    /// <li>
-    /// <p><code>io2</code>: 4 - 65,536 GiB</p></li>
-    /// <li>
-    /// <p><code>st1</code> and <code>sc1</code>: 125 - 16,384 GiB</p></li>
-    /// <li>
-    /// <p><code>standard</code>: 1 - 1024 GiB</p></li>
+    /// <li> <p> <code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB</p> </li>
+    /// <li> <p> <code>io1</code>: 4 - 16,384 GiB</p> </li>
+    /// <li> <p> <code>io2</code>: 4 - 65,536 GiB</p> </li>
+    /// <li> <p> <code>st1</code> and <code>sc1</code>: 125 - 16,384 GiB</p> </li>
+    /// <li> <p> <code>standard</code>: 1 - 1024 GiB</p> </li>
     /// </ul>
     /// <p>Default: The existing size is retained.</p>
     pub fn size(mut self, input: i32) -> Self {
@@ -162,16 +157,11 @@ impl ModifyVolumeFluentBuilder {
     /// <p>The target size of the volume, in GiB. The target volume size must be greater than or equal to the existing size of the volume.</p>
     /// <p>The following are the supported volumes sizes for each volume type:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB</p></li>
-    /// <li>
-    /// <p><code>io1</code>: 4 - 16,384 GiB</p></li>
-    /// <li>
-    /// <p><code>io2</code>: 4 - 65,536 GiB</p></li>
-    /// <li>
-    /// <p><code>st1</code> and <code>sc1</code>: 125 - 16,384 GiB</p></li>
-    /// <li>
-    /// <p><code>standard</code>: 1 - 1024 GiB</p></li>
+    /// <li> <p> <code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB</p> </li>
+    /// <li> <p> <code>io1</code>: 4 - 16,384 GiB</p> </li>
+    /// <li> <p> <code>io2</code>: 4 - 65,536 GiB</p> </li>
+    /// <li> <p> <code>st1</code> and <code>sc1</code>: 125 - 16,384 GiB</p> </li>
+    /// <li> <p> <code>standard</code>: 1 - 1024 GiB</p> </li>
     /// </ul>
     /// <p>Default: The existing size is retained.</p>
     pub fn set_size(mut self, input: ::std::option::Option<i32>) -> Self {
@@ -181,16 +171,11 @@ impl ModifyVolumeFluentBuilder {
     /// <p>The target size of the volume, in GiB. The target volume size must be greater than or equal to the existing size of the volume.</p>
     /// <p>The following are the supported volumes sizes for each volume type:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB</p></li>
-    /// <li>
-    /// <p><code>io1</code>: 4 - 16,384 GiB</p></li>
-    /// <li>
-    /// <p><code>io2</code>: 4 - 65,536 GiB</p></li>
-    /// <li>
-    /// <p><code>st1</code> and <code>sc1</code>: 125 - 16,384 GiB</p></li>
-    /// <li>
-    /// <p><code>standard</code>: 1 - 1024 GiB</p></li>
+    /// <li> <p> <code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB</p> </li>
+    /// <li> <p> <code>io1</code>: 4 - 16,384 GiB</p> </li>
+    /// <li> <p> <code>io2</code>: 4 - 65,536 GiB</p> </li>
+    /// <li> <p> <code>st1</code> and <code>sc1</code>: 125 - 16,384 GiB</p> </li>
+    /// <li> <p> <code>standard</code>: 1 - 1024 GiB</p> </li>
     /// </ul>
     /// <p>Default: The existing size is retained.</p>
     pub fn get_size(&self) -> &::std::option::Option<i32> {
@@ -216,12 +201,9 @@ impl ModifyVolumeFluentBuilder {
     /// <p>The target IOPS rate of the volume. This parameter is valid only for <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes.</p>
     /// <p>The following are the supported values for each volume type:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>gp3</code>: 3,000 - 16,000 IOPS</p></li>
-    /// <li>
-    /// <p><code>io1</code>: 100 - 64,000 IOPS</p></li>
-    /// <li>
-    /// <p><code>io2</code>: 100 - 256,000 IOPS</p></li>
+    /// <li> <p> <code>gp3</code>: 3,000 - 16,000 IOPS</p> </li>
+    /// <li> <p> <code>io1</code>: 100 - 64,000 IOPS</p> </li>
+    /// <li> <p> <code>io2</code>: 100 - 256,000 IOPS</p> </li>
     /// </ul>
     /// <p>For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000 IOPS.</p>
     /// <p>Default: The existing value is retained if you keep the same volume type. If you change the volume type to <code>io1</code>, <code>io2</code>, or <code>gp3</code>, the default is 3,000.</p>
@@ -232,12 +214,9 @@ impl ModifyVolumeFluentBuilder {
     /// <p>The target IOPS rate of the volume. This parameter is valid only for <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes.</p>
     /// <p>The following are the supported values for each volume type:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>gp3</code>: 3,000 - 16,000 IOPS</p></li>
-    /// <li>
-    /// <p><code>io1</code>: 100 - 64,000 IOPS</p></li>
-    /// <li>
-    /// <p><code>io2</code>: 100 - 256,000 IOPS</p></li>
+    /// <li> <p> <code>gp3</code>: 3,000 - 16,000 IOPS</p> </li>
+    /// <li> <p> <code>io1</code>: 100 - 64,000 IOPS</p> </li>
+    /// <li> <p> <code>io2</code>: 100 - 256,000 IOPS</p> </li>
     /// </ul>
     /// <p>For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000 IOPS.</p>
     /// <p>Default: The existing value is retained if you keep the same volume type. If you change the volume type to <code>io1</code>, <code>io2</code>, or <code>gp3</code>, the default is 3,000.</p>
@@ -248,12 +227,9 @@ impl ModifyVolumeFluentBuilder {
     /// <p>The target IOPS rate of the volume. This parameter is valid only for <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes.</p>
     /// <p>The following are the supported values for each volume type:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>gp3</code>: 3,000 - 16,000 IOPS</p></li>
-    /// <li>
-    /// <p><code>io1</code>: 100 - 64,000 IOPS</p></li>
-    /// <li>
-    /// <p><code>io2</code>: 100 - 256,000 IOPS</p></li>
+    /// <li> <p> <code>gp3</code>: 3,000 - 16,000 IOPS</p> </li>
+    /// <li> <p> <code>io1</code>: 100 - 64,000 IOPS</p> </li>
+    /// <li> <p> <code>io2</code>: 100 - 256,000 IOPS</p> </li>
     /// </ul>
     /// <p>For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000 IOPS.</p>
     /// <p>Default: The existing value is retained if you keep the same volume type. If you change the volume type to <code>io1</code>, <code>io2</code>, or <code>gp3</code>, the default is 3,000.</p>

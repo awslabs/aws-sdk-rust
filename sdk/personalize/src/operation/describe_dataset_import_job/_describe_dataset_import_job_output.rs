@@ -6,14 +6,10 @@ pub struct DescribeDatasetImportJobOutput {
     /// <p>Information about the dataset import job, including the status.</p>
     /// <p>The status is one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>CREATE PENDING</p></li>
-    /// <li>
-    /// <p>CREATE IN_PROGRESS</p></li>
-    /// <li>
-    /// <p>ACTIVE</p></li>
-    /// <li>
-    /// <p>CREATE FAILED</p></li>
+    /// <li> <p>CREATE PENDING</p> </li>
+    /// <li> <p>CREATE IN_PROGRESS</p> </li>
+    /// <li> <p>ACTIVE</p> </li>
+    /// <li> <p>CREATE FAILED</p> </li>
     /// </ul>
     pub dataset_import_job: ::std::option::Option<crate::types::DatasetImportJob>,
     _request_id: Option<String>,
@@ -22,14 +18,10 @@ impl DescribeDatasetImportJobOutput {
     /// <p>Information about the dataset import job, including the status.</p>
     /// <p>The status is one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>CREATE PENDING</p></li>
-    /// <li>
-    /// <p>CREATE IN_PROGRESS</p></li>
-    /// <li>
-    /// <p>ACTIVE</p></li>
-    /// <li>
-    /// <p>CREATE FAILED</p></li>
+    /// <li> <p>CREATE PENDING</p> </li>
+    /// <li> <p>CREATE IN_PROGRESS</p> </li>
+    /// <li> <p>ACTIVE</p> </li>
+    /// <li> <p>CREATE FAILED</p> </li>
     /// </ul>
     pub fn dataset_import_job(&self) -> ::std::option::Option<&crate::types::DatasetImportJob> {
         self.dataset_import_job.as_ref()
@@ -58,14 +50,10 @@ impl DescribeDatasetImportJobOutputBuilder {
     /// <p>Information about the dataset import job, including the status.</p>
     /// <p>The status is one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>CREATE PENDING</p></li>
-    /// <li>
-    /// <p>CREATE IN_PROGRESS</p></li>
-    /// <li>
-    /// <p>ACTIVE</p></li>
-    /// <li>
-    /// <p>CREATE FAILED</p></li>
+    /// <li> <p>CREATE PENDING</p> </li>
+    /// <li> <p>CREATE IN_PROGRESS</p> </li>
+    /// <li> <p>ACTIVE</p> </li>
+    /// <li> <p>CREATE FAILED</p> </li>
     /// </ul>
     pub fn dataset_import_job(mut self, input: crate::types::DatasetImportJob) -> Self {
         self.dataset_import_job = ::std::option::Option::Some(input);
@@ -74,14 +62,10 @@ impl DescribeDatasetImportJobOutputBuilder {
     /// <p>Information about the dataset import job, including the status.</p>
     /// <p>The status is one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>CREATE PENDING</p></li>
-    /// <li>
-    /// <p>CREATE IN_PROGRESS</p></li>
-    /// <li>
-    /// <p>ACTIVE</p></li>
-    /// <li>
-    /// <p>CREATE FAILED</p></li>
+    /// <li> <p>CREATE PENDING</p> </li>
+    /// <li> <p>CREATE IN_PROGRESS</p> </li>
+    /// <li> <p>ACTIVE</p> </li>
+    /// <li> <p>CREATE FAILED</p> </li>
     /// </ul>
     pub fn set_dataset_import_job(mut self, input: ::std::option::Option<crate::types::DatasetImportJob>) -> Self {
         self.dataset_import_job = input;
@@ -90,14 +74,10 @@ impl DescribeDatasetImportJobOutputBuilder {
     /// <p>Information about the dataset import job, including the status.</p>
     /// <p>The status is one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>CREATE PENDING</p></li>
-    /// <li>
-    /// <p>CREATE IN_PROGRESS</p></li>
-    /// <li>
-    /// <p>ACTIVE</p></li>
-    /// <li>
-    /// <p>CREATE FAILED</p></li>
+    /// <li> <p>CREATE PENDING</p> </li>
+    /// <li> <p>CREATE IN_PROGRESS</p> </li>
+    /// <li> <p>ACTIVE</p> </li>
+    /// <li> <p>CREATE FAILED</p> </li>
     /// </ul>
     pub fn get_dataset_import_job(&self) -> &::std::option::Option<crate::types::DatasetImportJob> {
         &self.dataset_import_job

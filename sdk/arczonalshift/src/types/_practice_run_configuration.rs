@@ -13,7 +13,7 @@ pub struct PracticeRunConfiguration {
     /// <p>Specify the blocked windows in UTC, using the format <code>DAY:HH:MM-DAY:HH:MM</code>, separated by spaces. For example, <code>MON:18:30-MON:19:30 TUE:18:30-TUE:19:30</code>.</p>
     pub blocked_windows: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array of one or more dates that you can specify when Amazon Web Services does not start practice runs for a resource.</p>
-    /// <p>Specify blocked dates, in UTC, in the format <code>YYYY-MM-DD</code>, separated by spaces.</p>
+    /// <p>Specify blocked dates, in UTC, in the format <code>YYYY-MM-DD</code>, separated by spaces. </p>
     pub blocked_dates: ::std::vec::Vec<::std::string::String>,
 }
 impl PracticeRunConfiguration {
@@ -36,7 +36,7 @@ impl PracticeRunConfiguration {
         self.blocked_windows.as_deref().unwrap_or_default()
     }
     /// <p>An array of one or more dates that you can specify when Amazon Web Services does not start practice runs for a resource.</p>
-    /// <p>Specify blocked dates, in UTC, in the format <code>YYYY-MM-DD</code>, separated by spaces.</p>
+    /// <p>Specify blocked dates, in UTC, in the format <code>YYYY-MM-DD</code>, separated by spaces. </p>
     pub fn blocked_dates(&self) -> &[::std::string::String] {
         use std::ops::Deref;
         self.blocked_dates.deref()
@@ -127,7 +127,7 @@ impl PracticeRunConfigurationBuilder {
     /// To override the contents of this collection use [`set_blocked_dates`](Self::set_blocked_dates).
     ///
     /// <p>An array of one or more dates that you can specify when Amazon Web Services does not start practice runs for a resource.</p>
-    /// <p>Specify blocked dates, in UTC, in the format <code>YYYY-MM-DD</code>, separated by spaces.</p>
+    /// <p>Specify blocked dates, in UTC, in the format <code>YYYY-MM-DD</code>, separated by spaces. </p>
     pub fn blocked_dates(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.blocked_dates.unwrap_or_default();
         v.push(input.into());
@@ -135,13 +135,13 @@ impl PracticeRunConfigurationBuilder {
         self
     }
     /// <p>An array of one or more dates that you can specify when Amazon Web Services does not start practice runs for a resource.</p>
-    /// <p>Specify blocked dates, in UTC, in the format <code>YYYY-MM-DD</code>, separated by spaces.</p>
+    /// <p>Specify blocked dates, in UTC, in the format <code>YYYY-MM-DD</code>, separated by spaces. </p>
     pub fn set_blocked_dates(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.blocked_dates = input;
         self
     }
     /// <p>An array of one or more dates that you can specify when Amazon Web Services does not start practice runs for a resource.</p>
-    /// <p>Specify blocked dates, in UTC, in the format <code>YYYY-MM-DD</code>, separated by spaces.</p>
+    /// <p>Specify blocked dates, in UTC, in the format <code>YYYY-MM-DD</code>, separated by spaces. </p>
     pub fn get_blocked_dates(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.blocked_dates
     }

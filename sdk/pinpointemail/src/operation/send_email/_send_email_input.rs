@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendEmailInput {
-    /// <p>The email address that you want to use as the "From" address for the email. The address that you specify has to be verified.</p>
+    /// <p>The email address that you want to use as the "From" address for the email. The address that you specify has to be verified. </p>
     pub from_email_address: ::std::option::Option<::std::string::String>,
     /// <p>An object that contains the recipients of the email message.</p>
     pub destination: ::std::option::Option<crate::types::Destination>,
@@ -14,13 +14,13 @@ pub struct SendEmailInput {
     pub feedback_forwarding_email_address: ::std::option::Option<::std::string::String>,
     /// <p>An object that contains the body of the message. You can send either a Simple message or a Raw message.</p>
     pub content: ::std::option::Option<crate::types::EmailContent>,
-    /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
+    /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events. </p>
     pub email_tags: ::std::option::Option<::std::vec::Vec<crate::types::MessageTag>>,
     /// <p>The name of the configuration set that you want to use when sending the email.</p>
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
 }
 impl SendEmailInput {
-    /// <p>The email address that you want to use as the "From" address for the email. The address that you specify has to be verified.</p>
+    /// <p>The email address that you want to use as the "From" address for the email. The address that you specify has to be verified. </p>
     pub fn from_email_address(&self) -> ::std::option::Option<&str> {
         self.from_email_address.as_deref()
     }
@@ -42,7 +42,7 @@ impl SendEmailInput {
     pub fn content(&self) -> ::std::option::Option<&crate::types::EmailContent> {
         self.content.as_ref()
     }
-    /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
+    /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.email_tags.is_none()`.
     pub fn email_tags(&self) -> &[crate::types::MessageTag] {
@@ -73,17 +73,17 @@ pub struct SendEmailInputBuilder {
     pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
 }
 impl SendEmailInputBuilder {
-    /// <p>The email address that you want to use as the "From" address for the email. The address that you specify has to be verified.</p>
+    /// <p>The email address that you want to use as the "From" address for the email. The address that you specify has to be verified. </p>
     pub fn from_email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.from_email_address = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The email address that you want to use as the "From" address for the email. The address that you specify has to be verified.</p>
+    /// <p>The email address that you want to use as the "From" address for the email. The address that you specify has to be verified. </p>
     pub fn set_from_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.from_email_address = input;
         self
     }
-    /// <p>The email address that you want to use as the "From" address for the email. The address that you specify has to be verified.</p>
+    /// <p>The email address that you want to use as the "From" address for the email. The address that you specify has to be verified. </p>
     pub fn get_from_email_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.from_email_address
     }
@@ -155,19 +155,19 @@ impl SendEmailInputBuilder {
     ///
     /// To override the contents of this collection use [`set_email_tags`](Self::set_email_tags).
     ///
-    /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
+    /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events. </p>
     pub fn email_tags(mut self, input: crate::types::MessageTag) -> Self {
         let mut v = self.email_tags.unwrap_or_default();
         v.push(input);
         self.email_tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
+    /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events. </p>
     pub fn set_email_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MessageTag>>) -> Self {
         self.email_tags = input;
         self
     }
-    /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
+    /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events. </p>
     pub fn get_email_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MessageTag>> {
         &self.email_tags
     }

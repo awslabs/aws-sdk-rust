@@ -22,8 +22,8 @@ impl SendMessageInputBuilder {
 }
 /// Fluent builder constructing a request to `SendMessage`.
 ///
-/// <p>Sends a message.</p><note>
-/// <p><code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.</p>
+/// <p>Sends a message.</p> <note>
+/// <p> <code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.</p>
 /// </note>
 /// <p>The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 authentication</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -125,40 +125,31 @@ impl SendMessageFluentBuilder {
     pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_content_type()
     }
-    /// <p>The content of the message.</p>
+    /// <p>The content of the message. </p>
     /// <ul>
-    /// <li>
-    /// <p>For <code>text/plain</code> and <code>text/markdown</code>, the Length Constraints are Minimum of 1, Maximum of 1024.</p></li>
-    /// <li>
-    /// <p>For <code>application/json</code>, the Length Constraints are Minimum of 1, Maximum of 12000.</p></li>
-    /// <li>
-    /// <p>For <code>application/vnd.amazonaws.connect.message.interactive.response</code>, the Length Constraints are Minimum of 1, Maximum of 12288.</p></li>
+    /// <li> <p>For <code>text/plain</code> and <code>text/markdown</code>, the Length Constraints are Minimum of 1, Maximum of 1024. </p> </li>
+    /// <li> <p>For <code>application/json</code>, the Length Constraints are Minimum of 1, Maximum of 12000. </p> </li>
+    /// <li> <p>For <code>application/vnd.amazonaws.connect.message.interactive.response</code>, the Length Constraints are Minimum of 1, Maximum of 12288.</p> </li>
     /// </ul>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.content(input.into());
         self
     }
-    /// <p>The content of the message.</p>
+    /// <p>The content of the message. </p>
     /// <ul>
-    /// <li>
-    /// <p>For <code>text/plain</code> and <code>text/markdown</code>, the Length Constraints are Minimum of 1, Maximum of 1024.</p></li>
-    /// <li>
-    /// <p>For <code>application/json</code>, the Length Constraints are Minimum of 1, Maximum of 12000.</p></li>
-    /// <li>
-    /// <p>For <code>application/vnd.amazonaws.connect.message.interactive.response</code>, the Length Constraints are Minimum of 1, Maximum of 12288.</p></li>
+    /// <li> <p>For <code>text/plain</code> and <code>text/markdown</code>, the Length Constraints are Minimum of 1, Maximum of 1024. </p> </li>
+    /// <li> <p>For <code>application/json</code>, the Length Constraints are Minimum of 1, Maximum of 12000. </p> </li>
+    /// <li> <p>For <code>application/vnd.amazonaws.connect.message.interactive.response</code>, the Length Constraints are Minimum of 1, Maximum of 12288.</p> </li>
     /// </ul>
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_content(input);
         self
     }
-    /// <p>The content of the message.</p>
+    /// <p>The content of the message. </p>
     /// <ul>
-    /// <li>
-    /// <p>For <code>text/plain</code> and <code>text/markdown</code>, the Length Constraints are Minimum of 1, Maximum of 1024.</p></li>
-    /// <li>
-    /// <p>For <code>application/json</code>, the Length Constraints are Minimum of 1, Maximum of 12000.</p></li>
-    /// <li>
-    /// <p>For <code>application/vnd.amazonaws.connect.message.interactive.response</code>, the Length Constraints are Minimum of 1, Maximum of 12288.</p></li>
+    /// <li> <p>For <code>text/plain</code> and <code>text/markdown</code>, the Length Constraints are Minimum of 1, Maximum of 1024. </p> </li>
+    /// <li> <p>For <code>application/json</code>, the Length Constraints are Minimum of 1, Maximum of 12000. </p> </li>
+    /// <li> <p>For <code>application/vnd.amazonaws.connect.message.interactive.response</code>, the Length Constraints are Minimum of 1, Maximum of 12288.</p> </li>
     /// </ul>
     pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_content()

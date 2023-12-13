@@ -22,9 +22,9 @@ impl CreateModelInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateModel`.
 ///
-/// <p>Creates a machine learning model for data inference.</p>
+/// <p>Creates a machine learning model for data inference. </p>
 /// <p>A machine-learning (ML) model is a mathematical model that finds patterns in your data. In Amazon Lookout for Equipment, the model learns the patterns of normal behavior and detects abnormal behavior that could be potential equipment failure (or maintenance events). The models are made by analyzing normal data and abnormalities in machine behavior that have already occurred.</p>
-/// <p>Your model is trained using a portion of the data from your dataset and uses that data to learn patterns of normal behavior and abnormal patterns that lead to equipment failure. Another portion of the data is used to evaluate the model's accuracy.</p>
+/// <p>Your model is trained using a portion of the data from your dataset and uses that data to learn patterns of normal behavior and abnormal patterns that lead to equipment failure. Another portion of the data is used to evaluate the model's accuracy. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateModelFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -124,160 +124,160 @@ impl CreateModelFluentBuilder {
     pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_model_name()
     }
-    /// <p>The name of the dataset for the machine learning model being created.</p>
+    /// <p>The name of the dataset for the machine learning model being created. </p>
     pub fn dataset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dataset_name(input.into());
         self
     }
-    /// <p>The name of the dataset for the machine learning model being created.</p>
+    /// <p>The name of the dataset for the machine learning model being created. </p>
     pub fn set_dataset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dataset_name(input);
         self
     }
-    /// <p>The name of the dataset for the machine learning model being created.</p>
+    /// <p>The name of the dataset for the machine learning model being created. </p>
     pub fn get_dataset_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_dataset_name()
     }
-    /// <p>The data schema for the machine learning model being created.</p>
+    /// <p>The data schema for the machine learning model being created. </p>
     pub fn dataset_schema(mut self, input: crate::types::DatasetSchema) -> Self {
         self.inner = self.inner.dataset_schema(input);
         self
     }
-    /// <p>The data schema for the machine learning model being created.</p>
+    /// <p>The data schema for the machine learning model being created. </p>
     pub fn set_dataset_schema(mut self, input: ::std::option::Option<crate::types::DatasetSchema>) -> Self {
         self.inner = self.inner.set_dataset_schema(input);
         self
     }
-    /// <p>The data schema for the machine learning model being created.</p>
+    /// <p>The data schema for the machine learning model being created. </p>
     pub fn get_dataset_schema(&self) -> &::std::option::Option<crate::types::DatasetSchema> {
         self.inner.get_dataset_schema()
     }
-    /// <p>The input configuration for the labels being used for the machine learning model that's being created.</p>
+    /// <p>The input configuration for the labels being used for the machine learning model that's being created. </p>
     pub fn labels_input_configuration(mut self, input: crate::types::LabelsInputConfiguration) -> Self {
         self.inner = self.inner.labels_input_configuration(input);
         self
     }
-    /// <p>The input configuration for the labels being used for the machine learning model that's being created.</p>
+    /// <p>The input configuration for the labels being used for the machine learning model that's being created. </p>
     pub fn set_labels_input_configuration(mut self, input: ::std::option::Option<crate::types::LabelsInputConfiguration>) -> Self {
         self.inner = self.inner.set_labels_input_configuration(input);
         self
     }
-    /// <p>The input configuration for the labels being used for the machine learning model that's being created.</p>
+    /// <p>The input configuration for the labels being used for the machine learning model that's being created. </p>
     pub fn get_labels_input_configuration(&self) -> &::std::option::Option<crate::types::LabelsInputConfiguration> {
         self.inner.get_labels_input_configuration()
     }
-    /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one.</p>
+    /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one.</p>
+    /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one.</p>
+    /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
-    /// <p>Indicates the time reference in the dataset that should be used to begin the subset of training data for the machine learning model.</p>
+    /// <p>Indicates the time reference in the dataset that should be used to begin the subset of training data for the machine learning model. </p>
     pub fn training_data_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.training_data_start_time(input);
         self
     }
-    /// <p>Indicates the time reference in the dataset that should be used to begin the subset of training data for the machine learning model.</p>
+    /// <p>Indicates the time reference in the dataset that should be used to begin the subset of training data for the machine learning model. </p>
     pub fn set_training_data_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_training_data_start_time(input);
         self
     }
-    /// <p>Indicates the time reference in the dataset that should be used to begin the subset of training data for the machine learning model.</p>
+    /// <p>Indicates the time reference in the dataset that should be used to begin the subset of training data for the machine learning model. </p>
     pub fn get_training_data_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_training_data_start_time()
     }
-    /// <p>Indicates the time reference in the dataset that should be used to end the subset of training data for the machine learning model.</p>
+    /// <p>Indicates the time reference in the dataset that should be used to end the subset of training data for the machine learning model. </p>
     pub fn training_data_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.training_data_end_time(input);
         self
     }
-    /// <p>Indicates the time reference in the dataset that should be used to end the subset of training data for the machine learning model.</p>
+    /// <p>Indicates the time reference in the dataset that should be used to end the subset of training data for the machine learning model. </p>
     pub fn set_training_data_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_training_data_end_time(input);
         self
     }
-    /// <p>Indicates the time reference in the dataset that should be used to end the subset of training data for the machine learning model.</p>
+    /// <p>Indicates the time reference in the dataset that should be used to end the subset of training data for the machine learning model. </p>
     pub fn get_training_data_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_training_data_end_time()
     }
-    /// <p>Indicates the time reference in the dataset that should be used to begin the subset of evaluation data for the machine learning model.</p>
+    /// <p>Indicates the time reference in the dataset that should be used to begin the subset of evaluation data for the machine learning model. </p>
     pub fn evaluation_data_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.evaluation_data_start_time(input);
         self
     }
-    /// <p>Indicates the time reference in the dataset that should be used to begin the subset of evaluation data for the machine learning model.</p>
+    /// <p>Indicates the time reference in the dataset that should be used to begin the subset of evaluation data for the machine learning model. </p>
     pub fn set_evaluation_data_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_evaluation_data_start_time(input);
         self
     }
-    /// <p>Indicates the time reference in the dataset that should be used to begin the subset of evaluation data for the machine learning model.</p>
+    /// <p>Indicates the time reference in the dataset that should be used to begin the subset of evaluation data for the machine learning model. </p>
     pub fn get_evaluation_data_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_evaluation_data_start_time()
     }
-    /// <p>Indicates the time reference in the dataset that should be used to end the subset of evaluation data for the machine learning model.</p>
+    /// <p> Indicates the time reference in the dataset that should be used to end the subset of evaluation data for the machine learning model. </p>
     pub fn evaluation_data_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.evaluation_data_end_time(input);
         self
     }
-    /// <p>Indicates the time reference in the dataset that should be used to end the subset of evaluation data for the machine learning model.</p>
+    /// <p> Indicates the time reference in the dataset that should be used to end the subset of evaluation data for the machine learning model. </p>
     pub fn set_evaluation_data_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_evaluation_data_end_time(input);
         self
     }
-    /// <p>Indicates the time reference in the dataset that should be used to end the subset of evaluation data for the machine learning model.</p>
+    /// <p> Indicates the time reference in the dataset that should be used to end the subset of evaluation data for the machine learning model. </p>
     pub fn get_evaluation_data_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_evaluation_data_end_time()
     }
-    /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source being used to create the machine learning model.</p>
+    /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source being used to create the machine learning model. </p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source being used to create the machine learning model.</p>
+    /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source being used to create the machine learning model. </p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source being used to create the machine learning model.</p>
+    /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source being used to create the machine learning model. </p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_role_arn()
     }
     /// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p>
-    /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i></p>
+    /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i> </p>
     pub fn data_pre_processing_configuration(mut self, input: crate::types::DataPreProcessingConfiguration) -> Self {
         self.inner = self.inner.data_pre_processing_configuration(input);
         self
     }
     /// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p>
-    /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i></p>
+    /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i> </p>
     pub fn set_data_pre_processing_configuration(mut self, input: ::std::option::Option<crate::types::DataPreProcessingConfiguration>) -> Self {
         self.inner = self.inner.set_data_pre_processing_configuration(input);
         self
     }
     /// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p>
-    /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i></p>
+    /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i> </p>
     pub fn get_data_pre_processing_configuration(&self) -> &::std::option::Option<crate::types::DataPreProcessingConfiguration> {
         self.inner.get_data_pre_processing_configuration()
     }
-    /// <p>Provides the identifier of the KMS key used to encrypt model data by Amazon Lookout for Equipment.</p>
+    /// <p>Provides the identifier of the KMS key used to encrypt model data by Amazon Lookout for Equipment. </p>
     pub fn server_side_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.server_side_kms_key_id(input.into());
         self
     }
-    /// <p>Provides the identifier of the KMS key used to encrypt model data by Amazon Lookout for Equipment.</p>
+    /// <p>Provides the identifier of the KMS key used to encrypt model data by Amazon Lookout for Equipment. </p>
     pub fn set_server_side_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_server_side_kms_key_id(input);
         self
     }
-    /// <p>Provides the identifier of the KMS key used to encrypt model data by Amazon Lookout for Equipment.</p>
+    /// <p>Provides the identifier of the KMS key used to encrypt model data by Amazon Lookout for Equipment. </p>
     pub fn get_server_side_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_server_side_kms_key_id()
     }
@@ -285,17 +285,17 @@ impl CreateModelFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>Any tags associated with the machine learning model being created.</p>
+    /// <p> Any tags associated with the machine learning model being created. </p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
-    /// <p>Any tags associated with the machine learning model being created.</p>
+    /// <p> Any tags associated with the machine learning model being created. </p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>Any tags associated with the machine learning model being created.</p>
+    /// <p> Any tags associated with the machine learning model being created. </p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }

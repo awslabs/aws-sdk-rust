@@ -9,7 +9,7 @@ pub struct DeleteTenantDatabaseInput {
     pub tenant_db_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to skip the creation of a final DB snapshot before removing the tenant database from your DB instance. If you enable this parameter, RDS doesn't create a DB snapshot. If you don't enable this parameter, RDS creates a DB snapshot before it deletes the tenant database. By default, RDS doesn't skip the final snapshot. If you don't enable this parameter, you must specify the <code>FinalDBSnapshotIdentifier</code> parameter.</p>
     pub skip_final_snapshot: ::std::option::Option<bool>,
-    /// <p>The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code> created when the <code>SkipFinalSnapshot</code> parameter is disabled.</p><note>
+    /// <p>The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code> created when the <code>SkipFinalSnapshot</code> parameter is disabled.</p> <note>
     /// <p>If you enable this parameter and also enable <code>SkipFinalShapshot</code>, the command results in an error.</p>
     /// </note>
     pub final_db_snapshot_identifier: ::std::option::Option<::std::string::String>,
@@ -27,7 +27,7 @@ impl DeleteTenantDatabaseInput {
     pub fn skip_final_snapshot(&self) -> ::std::option::Option<bool> {
         self.skip_final_snapshot
     }
-    /// <p>The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code> created when the <code>SkipFinalSnapshot</code> parameter is disabled.</p><note>
+    /// <p>The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code> created when the <code>SkipFinalSnapshot</code> parameter is disabled.</p> <note>
     /// <p>If you enable this parameter and also enable <code>SkipFinalShapshot</code>, the command results in an error.</p>
     /// </note>
     pub fn final_db_snapshot_identifier(&self) -> ::std::option::Option<&str> {
@@ -95,21 +95,21 @@ impl DeleteTenantDatabaseInputBuilder {
     pub fn get_skip_final_snapshot(&self) -> &::std::option::Option<bool> {
         &self.skip_final_snapshot
     }
-    /// <p>The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code> created when the <code>SkipFinalSnapshot</code> parameter is disabled.</p><note>
+    /// <p>The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code> created when the <code>SkipFinalSnapshot</code> parameter is disabled.</p> <note>
     /// <p>If you enable this parameter and also enable <code>SkipFinalShapshot</code>, the command results in an error.</p>
     /// </note>
     pub fn final_db_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.final_db_snapshot_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code> created when the <code>SkipFinalSnapshot</code> parameter is disabled.</p><note>
+    /// <p>The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code> created when the <code>SkipFinalSnapshot</code> parameter is disabled.</p> <note>
     /// <p>If you enable this parameter and also enable <code>SkipFinalShapshot</code>, the command results in an error.</p>
     /// </note>
     pub fn set_final_db_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.final_db_snapshot_identifier = input;
         self
     }
-    /// <p>The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code> created when the <code>SkipFinalSnapshot</code> parameter is disabled.</p><note>
+    /// <p>The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code> created when the <code>SkipFinalSnapshot</code> parameter is disabled.</p> <note>
     /// <p>If you enable this parameter and also enable <code>SkipFinalShapshot</code>, the command results in an error.</p>
     /// </note>
     pub fn get_final_db_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {

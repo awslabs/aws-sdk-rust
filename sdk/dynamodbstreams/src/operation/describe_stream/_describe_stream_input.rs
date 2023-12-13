@@ -8,7 +8,7 @@ pub struct DescribeStreamInput {
     pub stream_arn: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of shard objects to return. The upper limit is 100.</p>
     pub limit: ::std::option::Option<i32>,
-    /// <p>The shard ID of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedShardId</code> in the previous operation.</p>
+    /// <p>The shard ID of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedShardId</code> in the previous operation. </p>
     pub exclusive_start_shard_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeStreamInput {
@@ -20,7 +20,7 @@ impl DescribeStreamInput {
     pub fn limit(&self) -> ::std::option::Option<i32> {
         self.limit
     }
-    /// <p>The shard ID of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedShardId</code> in the previous operation.</p>
+    /// <p>The shard ID of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedShardId</code> in the previous operation. </p>
     pub fn exclusive_start_shard_id(&self) -> ::std::option::Option<&str> {
         self.exclusive_start_shard_id.as_deref()
     }
@@ -70,17 +70,17 @@ impl DescribeStreamInputBuilder {
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
         &self.limit
     }
-    /// <p>The shard ID of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedShardId</code> in the previous operation.</p>
+    /// <p>The shard ID of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedShardId</code> in the previous operation. </p>
     pub fn exclusive_start_shard_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.exclusive_start_shard_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The shard ID of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedShardId</code> in the previous operation.</p>
+    /// <p>The shard ID of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedShardId</code> in the previous operation. </p>
     pub fn set_exclusive_start_shard_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.exclusive_start_shard_id = input;
         self
     }
-    /// <p>The shard ID of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedShardId</code> in the previous operation.</p>
+    /// <p>The shard ID of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedShardId</code> in the previous operation. </p>
     pub fn get_exclusive_start_shard_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.exclusive_start_shard_id
     }

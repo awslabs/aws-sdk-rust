@@ -272,7 +272,7 @@ pub enum DescribePullRequestEventsError {
     InvalidContinuationTokenException(crate::types::error::InvalidContinuationTokenException),
     /// <p>The specified number of maximum results is not valid.</p>
     InvalidMaxResultsException(crate::types::error::InvalidMaxResultsException),
-    /// <p>The pull request event type is not valid.</p>
+    /// <p>The pull request event type is not valid. </p>
     InvalidPullRequestEventTypeException(crate::types::error::InvalidPullRequestEventTypeException),
     /// <p>The pull request ID is not valid. Make sure that you have provided the full ID and that the pull request is in the specified repository, and then try again.</p>
     InvalidPullRequestIdException(crate::types::error::InvalidPullRequestIdException),

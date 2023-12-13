@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`JoinStorageSession`](crate::operation::join_storage_session::builders::JoinStorageSessionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`channel_arn(impl Into<String>)`](crate::operation::join_storage_session::builders::JoinStorageSessionFluentBuilder::channel_arn) / [`set_channel_arn(Option<String>)`](crate::operation::join_storage_session::builders::JoinStorageSessionFluentBuilder::set_channel_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the signaling channel.</p><br>
+    ///   - [`channel_arn(impl Into<String>)`](crate::operation::join_storage_session::builders::JoinStorageSessionFluentBuilder::channel_arn) / [`set_channel_arn(Option<String>)`](crate::operation::join_storage_session::builders::JoinStorageSessionFluentBuilder::set_channel_arn):<br>required: **true**<br><p> The Amazon Resource Name (ARN) of the signaling channel. </p><br>
     /// - On success, responds with [`JoinStorageSessionOutput`](crate::operation::join_storage_session::JoinStorageSessionOutput)
     /// - On failure, responds with [`SdkError<JoinStorageSessionError>`](crate::operation::join_storage_session::JoinStorageSessionError)
     pub fn join_storage_session(&self) -> crate::operation::join_storage_session::builders::JoinStorageSessionFluentBuilder {

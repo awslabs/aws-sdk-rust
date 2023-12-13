@@ -3,26 +3,26 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateManagedRuleSetVersionExpiryDateOutput {
-    /// <p>The version that is set to expire.</p>
+    /// <p>The version that is set to expire. </p>
     pub expiring_version: ::std::option::Option<::std::string::String>,
-    /// <p>The time that the version will expire.</p>
-    /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z".</p>
+    /// <p>The time that the version will expire. </p>
+    /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z". </p>
     pub expiry_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation.</p>
+    /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
     pub next_lock_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateManagedRuleSetVersionExpiryDateOutput {
-    /// <p>The version that is set to expire.</p>
+    /// <p>The version that is set to expire. </p>
     pub fn expiring_version(&self) -> ::std::option::Option<&str> {
         self.expiring_version.as_deref()
     }
-    /// <p>The time that the version will expire.</p>
-    /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z".</p>
+    /// <p>The time that the version will expire. </p>
+    /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z". </p>
     pub fn expiry_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.expiry_timestamp.as_ref()
     }
-    /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation.</p>
+    /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
     pub fn next_lock_token(&self) -> ::std::option::Option<&str> {
         self.next_lock_token.as_deref()
     }
@@ -49,48 +49,48 @@ pub struct UpdateManagedRuleSetVersionExpiryDateOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateManagedRuleSetVersionExpiryDateOutputBuilder {
-    /// <p>The version that is set to expire.</p>
+    /// <p>The version that is set to expire. </p>
     pub fn expiring_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expiring_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The version that is set to expire.</p>
+    /// <p>The version that is set to expire. </p>
     pub fn set_expiring_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expiring_version = input;
         self
     }
-    /// <p>The version that is set to expire.</p>
+    /// <p>The version that is set to expire. </p>
     pub fn get_expiring_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.expiring_version
     }
-    /// <p>The time that the version will expire.</p>
-    /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z".</p>
+    /// <p>The time that the version will expire. </p>
+    /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z". </p>
     pub fn expiry_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.expiry_timestamp = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time that the version will expire.</p>
-    /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z".</p>
+    /// <p>The time that the version will expire. </p>
+    /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z". </p>
     pub fn set_expiry_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expiry_timestamp = input;
         self
     }
-    /// <p>The time that the version will expire.</p>
-    /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z".</p>
+    /// <p>The time that the version will expire. </p>
+    /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z". </p>
     pub fn get_expiry_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.expiry_timestamp
     }
-    /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation.</p>
+    /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
     pub fn next_lock_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_lock_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation.</p>
+    /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
     pub fn set_next_lock_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_lock_token = input;
         self
     }
-    /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation.</p>
+    /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
     pub fn get_next_lock_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_lock_token
     }

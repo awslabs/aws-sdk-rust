@@ -138,10 +138,8 @@ impl CreateEnvironmentMembershipFluentBuilder {
     }
     /// <p>The type of environment member permissions you want to associate with this environment member. Available values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>read-only</code>: Has read-only access to the environment.</p></li>
-    /// <li>
-    /// <p><code>read-write</code>: Has read-write access to the environment.</p></li>
+    /// <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li>
+    /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>
     /// </ul>
     pub fn permissions(mut self, input: crate::types::MemberPermissions) -> Self {
         self.inner = self.inner.permissions(input);
@@ -149,10 +147,8 @@ impl CreateEnvironmentMembershipFluentBuilder {
     }
     /// <p>The type of environment member permissions you want to associate with this environment member. Available values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>read-only</code>: Has read-only access to the environment.</p></li>
-    /// <li>
-    /// <p><code>read-write</code>: Has read-write access to the environment.</p></li>
+    /// <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li>
+    /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>
     /// </ul>
     pub fn set_permissions(mut self, input: ::std::option::Option<crate::types::MemberPermissions>) -> Self {
         self.inner = self.inner.set_permissions(input);
@@ -160,10 +156,8 @@ impl CreateEnvironmentMembershipFluentBuilder {
     }
     /// <p>The type of environment member permissions you want to associate with this environment member. Available values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>read-only</code>: Has read-only access to the environment.</p></li>
-    /// <li>
-    /// <p><code>read-write</code>: Has read-write access to the environment.</p></li>
+    /// <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li>
+    /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>
     /// </ul>
     pub fn get_permissions(&self) -> &::std::option::Option<crate::types::MemberPermissions> {
         self.inner.get_permissions()

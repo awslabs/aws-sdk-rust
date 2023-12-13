@@ -16,7 +16,7 @@ pub struct MetricDatapoint {
     pub sum: ::std::option::Option<f64>,
     /// <p>The timestamp (e.g., <code>1479816991.349</code>).</p>
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The unit.</p>
+    /// <p>The unit. </p>
     pub unit: ::std::option::Option<crate::types::MetricUnit>,
 }
 impl MetricDatapoint {
@@ -44,7 +44,7 @@ impl MetricDatapoint {
     pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
-    /// <p>The unit.</p>
+    /// <p>The unit. </p>
     pub fn unit(&self) -> ::std::option::Option<&crate::types::MetricUnit> {
         self.unit.as_ref()
     }
@@ -153,17 +153,17 @@ impl MetricDatapointBuilder {
     pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.timestamp
     }
-    /// <p>The unit.</p>
+    /// <p>The unit. </p>
     pub fn unit(mut self, input: crate::types::MetricUnit) -> Self {
         self.unit = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The unit.</p>
+    /// <p>The unit. </p>
     pub fn set_unit(mut self, input: ::std::option::Option<crate::types::MetricUnit>) -> Self {
         self.unit = input;
         self
     }
-    /// <p>The unit.</p>
+    /// <p>The unit. </p>
     pub fn get_unit(&self) -> &::std::option::Option<crate::types::MetricUnit> {
         &self.unit
     }

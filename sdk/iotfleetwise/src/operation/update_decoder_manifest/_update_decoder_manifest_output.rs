@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDecoderManifestOutput {
-    /// <p>The name of the updated decoder manifest.</p>
+    /// <p> The name of the updated decoder manifest. </p>
     pub name: ::std::string::String,
-    /// <p>The Amazon Resource Name (ARN) of the updated decoder manifest.</p>
+    /// <p> The Amazon Resource Name (ARN) of the updated decoder manifest. </p>
     pub arn: ::std::string::String,
     _request_id: Option<String>,
 }
 impl UpdateDecoderManifestOutput {
-    /// <p>The name of the updated decoder manifest.</p>
+    /// <p> The name of the updated decoder manifest. </p>
     pub fn name(&self) -> &str {
         use std::ops::Deref;
         self.name.deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the updated decoder manifest.</p>
+    /// <p> The Amazon Resource Name (ARN) of the updated decoder manifest. </p>
     pub fn arn(&self) -> &str {
         use std::ops::Deref;
         self.arn.deref()
@@ -42,33 +42,33 @@ pub struct UpdateDecoderManifestOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateDecoderManifestOutputBuilder {
-    /// <p>The name of the updated decoder manifest.</p>
+    /// <p> The name of the updated decoder manifest. </p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the updated decoder manifest.</p>
+    /// <p> The name of the updated decoder manifest. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the updated decoder manifest.</p>
+    /// <p> The name of the updated decoder manifest. </p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The Amazon Resource Name (ARN) of the updated decoder manifest.</p>
+    /// <p> The Amazon Resource Name (ARN) of the updated decoder manifest. </p>
     /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the updated decoder manifest.</p>
+    /// <p> The Amazon Resource Name (ARN) of the updated decoder manifest. </p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the updated decoder manifest.</p>
+    /// <p> The Amazon Resource Name (ARN) of the updated decoder manifest. </p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }

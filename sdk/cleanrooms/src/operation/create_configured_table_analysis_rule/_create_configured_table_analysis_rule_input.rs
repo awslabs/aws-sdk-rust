@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateConfiguredTableAnalysisRuleInput {
-    /// <p>The identifier for the configured table to create the analysis rule for. Currently accepts the configured table ID.</p>
+    /// <p>The identifier for the configured table to create the analysis rule for. Currently accepts the configured table ID. </p>
     pub configured_table_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The type of analysis rule.</p>
     pub analysis_rule_type: ::std::option::Option<crate::types::ConfiguredTableAnalysisRuleType>,
@@ -11,7 +11,7 @@ pub struct CreateConfiguredTableAnalysisRuleInput {
     pub analysis_rule_policy: ::std::option::Option<crate::types::ConfiguredTableAnalysisRulePolicy>,
 }
 impl CreateConfiguredTableAnalysisRuleInput {
-    /// <p>The identifier for the configured table to create the analysis rule for. Currently accepts the configured table ID.</p>
+    /// <p>The identifier for the configured table to create the analysis rule for. Currently accepts the configured table ID. </p>
     pub fn configured_table_identifier(&self) -> ::std::option::Option<&str> {
         self.configured_table_identifier.as_deref()
     }
@@ -40,18 +40,18 @@ pub struct CreateConfiguredTableAnalysisRuleInputBuilder {
     pub(crate) analysis_rule_policy: ::std::option::Option<crate::types::ConfiguredTableAnalysisRulePolicy>,
 }
 impl CreateConfiguredTableAnalysisRuleInputBuilder {
-    /// <p>The identifier for the configured table to create the analysis rule for. Currently accepts the configured table ID.</p>
+    /// <p>The identifier for the configured table to create the analysis rule for. Currently accepts the configured table ID. </p>
     /// This field is required.
     pub fn configured_table_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configured_table_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier for the configured table to create the analysis rule for. Currently accepts the configured table ID.</p>
+    /// <p>The identifier for the configured table to create the analysis rule for. Currently accepts the configured table ID. </p>
     pub fn set_configured_table_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configured_table_identifier = input;
         self
     }
-    /// <p>The identifier for the configured table to create the analysis rule for. Currently accepts the configured table ID.</p>
+    /// <p>The identifier for the configured table to create the analysis rule for. Currently accepts the configured table ID. </p>
     pub fn get_configured_table_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.configured_table_identifier
     }

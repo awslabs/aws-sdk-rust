@@ -22,10 +22,10 @@ impl DescribeLayersInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeLayers`.
 ///
-/// <p>Requests a description of one or more layers in a specified stack.</p><note>
+/// <p>Requests a description of one or more layers in a specified stack.</p> <note>
 /// <p>This call accepts only one resource-identifying parameter.</p>
 /// </note>
-/// <p><b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+/// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeLayersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

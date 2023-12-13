@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAccountAttributesOutput {
-    /// <p>The attributes that are currently set for the account.</p>
+    /// <p> The attributes that are currently set for the account. </p>
     pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::AccountAttribute>>,
     _request_id: Option<String>,
 }
 impl DescribeAccountAttributesOutput {
-    /// <p>The attributes that are currently set for the account.</p>
+    /// <p> The attributes that are currently set for the account. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes.is_none()`.
     pub fn attributes(&self) -> &[crate::types::AccountAttribute] {
@@ -39,19 +39,19 @@ impl DescribeAccountAttributesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
-    /// <p>The attributes that are currently set for the account.</p>
+    /// <p> The attributes that are currently set for the account. </p>
     pub fn attributes(mut self, input: crate::types::AccountAttribute) -> Self {
         let mut v = self.attributes.unwrap_or_default();
         v.push(input);
         self.attributes = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The attributes that are currently set for the account.</p>
+    /// <p> The attributes that are currently set for the account. </p>
     pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccountAttribute>>) -> Self {
         self.attributes = input;
         self
     }
-    /// <p>The attributes that are currently set for the account.</p>
+    /// <p> The attributes that are currently set for the account. </p>
     pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountAttribute>> {
         &self.attributes
     }

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResetInstanceAttributeInput {
-    /// <p>The attribute to reset.</p><important>
+    /// <p>The attribute to reset.</p> <important>
     /// <p>You can only reset the following attributes: <code>kernel</code> | <code>ramdisk</code> | <code>sourceDestCheck</code>.</p>
     /// </important>
     pub attribute: ::std::option::Option<crate::types::InstanceAttributeName>,
@@ -13,7 +13,7 @@ pub struct ResetInstanceAttributeInput {
     pub instance_id: ::std::option::Option<::std::string::String>,
 }
 impl ResetInstanceAttributeInput {
-    /// <p>The attribute to reset.</p><important>
+    /// <p>The attribute to reset.</p> <important>
     /// <p>You can only reset the following attributes: <code>kernel</code> | <code>ramdisk</code> | <code>sourceDestCheck</code>.</p>
     /// </important>
     pub fn attribute(&self) -> ::std::option::Option<&crate::types::InstanceAttributeName> {
@@ -44,7 +44,7 @@ pub struct ResetInstanceAttributeInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
 }
 impl ResetInstanceAttributeInputBuilder {
-    /// <p>The attribute to reset.</p><important>
+    /// <p>The attribute to reset.</p> <important>
     /// <p>You can only reset the following attributes: <code>kernel</code> | <code>ramdisk</code> | <code>sourceDestCheck</code>.</p>
     /// </important>
     /// This field is required.
@@ -52,14 +52,14 @@ impl ResetInstanceAttributeInputBuilder {
         self.attribute = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The attribute to reset.</p><important>
+    /// <p>The attribute to reset.</p> <important>
     /// <p>You can only reset the following attributes: <code>kernel</code> | <code>ramdisk</code> | <code>sourceDestCheck</code>.</p>
     /// </important>
     pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::InstanceAttributeName>) -> Self {
         self.attribute = input;
         self
     }
-    /// <p>The attribute to reset.</p><important>
+    /// <p>The attribute to reset.</p> <important>
     /// <p>You can only reset the following attributes: <code>kernel</code> | <code>ramdisk</code> | <code>sourceDestCheck</code>.</p>
     /// </important>
     pub fn get_attribute(&self) -> &::std::option::Option<crate::types::InstanceAttributeName> {

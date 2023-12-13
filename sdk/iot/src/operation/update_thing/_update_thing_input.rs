@@ -10,7 +10,7 @@ pub struct UpdateThingInput {
     /// <p>The name of the thing type.</p>
     pub thing_type_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of thing attributes, a JSON string containing name-value pairs. For example:</p>
-    /// <p><code>{\"attributes\":{\"name1\":\"value2\"}}</code></p>
+    /// <p> <code>{\"attributes\":{\"name1\":\"value2\"}}</code> </p>
     /// <p>This data is used to add new attributes or update existing attributes.</p>
     pub attribute_payload: ::std::option::Option<crate::types::AttributePayload>,
     /// <p>The expected version of the thing record in the registry. If the version of the record in the registry does not match the expected version specified in the request, the <code>UpdateThing</code> request is rejected with a <code>VersionConflictException</code>.</p>
@@ -29,7 +29,7 @@ impl UpdateThingInput {
         self.thing_type_name.as_deref()
     }
     /// <p>A list of thing attributes, a JSON string containing name-value pairs. For example:</p>
-    /// <p><code>{\"attributes\":{\"name1\":\"value2\"}}</code></p>
+    /// <p> <code>{\"attributes\":{\"name1\":\"value2\"}}</code> </p>
     /// <p>This data is used to add new attributes or update existing attributes.</p>
     pub fn attribute_payload(&self) -> ::std::option::Option<&crate::types::AttributePayload> {
         self.attribute_payload.as_ref()
@@ -94,21 +94,21 @@ impl UpdateThingInputBuilder {
         &self.thing_type_name
     }
     /// <p>A list of thing attributes, a JSON string containing name-value pairs. For example:</p>
-    /// <p><code>{\"attributes\":{\"name1\":\"value2\"}}</code></p>
+    /// <p> <code>{\"attributes\":{\"name1\":\"value2\"}}</code> </p>
     /// <p>This data is used to add new attributes or update existing attributes.</p>
     pub fn attribute_payload(mut self, input: crate::types::AttributePayload) -> Self {
         self.attribute_payload = ::std::option::Option::Some(input);
         self
     }
     /// <p>A list of thing attributes, a JSON string containing name-value pairs. For example:</p>
-    /// <p><code>{\"attributes\":{\"name1\":\"value2\"}}</code></p>
+    /// <p> <code>{\"attributes\":{\"name1\":\"value2\"}}</code> </p>
     /// <p>This data is used to add new attributes or update existing attributes.</p>
     pub fn set_attribute_payload(mut self, input: ::std::option::Option<crate::types::AttributePayload>) -> Self {
         self.attribute_payload = input;
         self
     }
     /// <p>A list of thing attributes, a JSON string containing name-value pairs. For example:</p>
-    /// <p><code>{\"attributes\":{\"name1\":\"value2\"}}</code></p>
+    /// <p> <code>{\"attributes\":{\"name1\":\"value2\"}}</code> </p>
     /// <p>This data is used to add new attributes or update existing attributes.</p>
     pub fn get_attribute_payload(&self) -> &::std::option::Option<crate::types::AttributePayload> {
         &self.attribute_payload

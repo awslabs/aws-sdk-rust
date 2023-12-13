@@ -9,7 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeWorkspaceImagePermissionsOutput`](crate::operation::describe_workspace_image_permissions::DescribeWorkspaceImagePermissionsOutput) with field(s):
     ///   - [`image_id(Option<String>)`](crate::operation::describe_workspace_image_permissions::DescribeWorkspaceImagePermissionsOutput::image_id): <p>The identifier of the image.</p>
     ///   - [`image_permissions(Option<Vec::<ImagePermission>>)`](crate::operation::describe_workspace_image_permissions::DescribeWorkspaceImagePermissionsOutput::image_permissions): <p>The identifiers of the Amazon Web Services accounts that the image has been shared with.</p>
-    ///   - [`next_token(Option<String>)`](crate::operation::describe_workspace_image_permissions::DescribeWorkspaceImagePermissionsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
+    ///   - [`next_token(Option<String>)`](crate::operation::describe_workspace_image_permissions::DescribeWorkspaceImagePermissionsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
     /// - On failure, responds with [`SdkError<DescribeWorkspaceImagePermissionsError>`](crate::operation::describe_workspace_image_permissions::DescribeWorkspaceImagePermissionsError)
     pub fn describe_workspace_image_permissions(
         &self,

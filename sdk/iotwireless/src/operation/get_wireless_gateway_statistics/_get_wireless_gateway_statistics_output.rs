@@ -5,7 +5,7 @@
 pub struct GetWirelessGatewayStatisticsOutput {
     /// <p>The ID of the wireless gateway.</p>
     pub wireless_gateway_id: ::std::option::Option<::std::string::String>,
-    /// <p>The date and time when the most recent uplink was received.</p><note>
+    /// <p>The date and time when the most recent uplink was received.</p> <note>
     /// <p>This value is only valid for 3 months.</p>
     /// </note>
     pub last_uplink_received_at: ::std::option::Option<::std::string::String>,
@@ -18,7 +18,7 @@ impl GetWirelessGatewayStatisticsOutput {
     pub fn wireless_gateway_id(&self) -> ::std::option::Option<&str> {
         self.wireless_gateway_id.as_deref()
     }
-    /// <p>The date and time when the most recent uplink was received.</p><note>
+    /// <p>The date and time when the most recent uplink was received.</p> <note>
     /// <p>This value is only valid for 3 months.</p>
     /// </note>
     pub fn last_uplink_received_at(&self) -> ::std::option::Option<&str> {
@@ -65,21 +65,21 @@ impl GetWirelessGatewayStatisticsOutputBuilder {
     pub fn get_wireless_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.wireless_gateway_id
     }
-    /// <p>The date and time when the most recent uplink was received.</p><note>
+    /// <p>The date and time when the most recent uplink was received.</p> <note>
     /// <p>This value is only valid for 3 months.</p>
     /// </note>
     pub fn last_uplink_received_at(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_uplink_received_at = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The date and time when the most recent uplink was received.</p><note>
+    /// <p>The date and time when the most recent uplink was received.</p> <note>
     /// <p>This value is only valid for 3 months.</p>
     /// </note>
     pub fn set_last_uplink_received_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_uplink_received_at = input;
         self
     }
-    /// <p>The date and time when the most recent uplink was received.</p><note>
+    /// <p>The date and time when the most recent uplink was received.</p> <note>
     /// <p>This value is only valid for 3 months.</p>
     /// </note>
     pub fn get_last_uplink_received_at(&self) -> &::std::option::Option<::std::string::String> {

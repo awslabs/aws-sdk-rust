@@ -22,7 +22,7 @@ impl ListListenersInputBuilder {
 }
 /// Fluent builder constructing a request to `ListListeners`.
 ///
-/// <p>List the listeners for an accelerator.</p>
+/// <p>List the listeners for an accelerator. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListListenersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

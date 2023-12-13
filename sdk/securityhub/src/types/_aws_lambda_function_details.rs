@@ -43,7 +43,7 @@ pub struct AwsLambdaFunctionDetails {
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The instruction set architecture that the function uses. Valid values are <code>x86_64</code> or <code>arm64</code>.</p>
     pub architectures: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The type of deployment package that's used to deploy the function code to Lambda. Set to <code>Image</code> for a container image and <code>Zip</code> for a .zip file archive.</p>
+    /// <p>The type of deployment package that's used to deploy the function code to Lambda. Set to <code>Image</code> for a container image and <code>Zip</code> for a .zip file archive. </p>
     pub package_type: ::std::option::Option<::std::string::String>,
 }
 impl AwsLambdaFunctionDetails {
@@ -128,7 +128,7 @@ impl AwsLambdaFunctionDetails {
     pub fn architectures(&self) -> &[::std::string::String] {
         self.architectures.as_deref().unwrap_or_default()
     }
-    /// <p>The type of deployment package that's used to deploy the function code to Lambda. Set to <code>Image</code> for a container image and <code>Zip</code> for a .zip file archive.</p>
+    /// <p>The type of deployment package that's used to deploy the function code to Lambda. Set to <code>Image</code> for a container image and <code>Zip</code> for a .zip file archive. </p>
     pub fn package_type(&self) -> ::std::option::Option<&str> {
         self.package_type.as_deref()
     }
@@ -447,17 +447,17 @@ impl AwsLambdaFunctionDetailsBuilder {
     pub fn get_architectures(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.architectures
     }
-    /// <p>The type of deployment package that's used to deploy the function code to Lambda. Set to <code>Image</code> for a container image and <code>Zip</code> for a .zip file archive.</p>
+    /// <p>The type of deployment package that's used to deploy the function code to Lambda. Set to <code>Image</code> for a container image and <code>Zip</code> for a .zip file archive. </p>
     pub fn package_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The type of deployment package that's used to deploy the function code to Lambda. Set to <code>Image</code> for a container image and <code>Zip</code> for a .zip file archive.</p>
+    /// <p>The type of deployment package that's used to deploy the function code to Lambda. Set to <code>Image</code> for a container image and <code>Zip</code> for a .zip file archive. </p>
     pub fn set_package_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.package_type = input;
         self
     }
-    /// <p>The type of deployment package that's used to deploy the function code to Lambda. Set to <code>Image</code> for a container image and <code>Zip</code> for a .zip file archive.</p>
+    /// <p>The type of deployment package that's used to deploy the function code to Lambda. Set to <code>Image</code> for a container image and <code>Zip</code> for a .zip file archive. </p>
     pub fn get_package_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.package_type
     }

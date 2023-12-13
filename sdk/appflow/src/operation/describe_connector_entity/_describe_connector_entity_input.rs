@@ -3,25 +3,25 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeConnectorEntityInput {
-    /// <p>The entity name for that connector.</p>
+    /// <p> The entity name for that connector. </p>
     pub connector_entity_name: ::std::option::Option<::std::string::String>,
-    /// <p>The type of connector application, such as Salesforce, Amplitude, and so on.</p>
+    /// <p> The type of connector application, such as Salesforce, Amplitude, and so on. </p>
     pub connector_type: ::std::option::Option<crate::types::ConnectorType>,
-    /// <p>The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account.</p>
+    /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
     pub connector_profile_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the API that's used by the connector.</p>
     pub api_version: ::std::option::Option<::std::string::String>,
 }
 impl DescribeConnectorEntityInput {
-    /// <p>The entity name for that connector.</p>
+    /// <p> The entity name for that connector. </p>
     pub fn connector_entity_name(&self) -> ::std::option::Option<&str> {
         self.connector_entity_name.as_deref()
     }
-    /// <p>The type of connector application, such as Salesforce, Amplitude, and so on.</p>
+    /// <p> The type of connector application, such as Salesforce, Amplitude, and so on. </p>
     pub fn connector_type(&self) -> ::std::option::Option<&crate::types::ConnectorType> {
         self.connector_type.as_ref()
     }
-    /// <p>The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account.</p>
+    /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
     pub fn connector_profile_name(&self) -> ::std::option::Option<&str> {
         self.connector_profile_name.as_deref()
     }
@@ -47,46 +47,46 @@ pub struct DescribeConnectorEntityInputBuilder {
     pub(crate) api_version: ::std::option::Option<::std::string::String>,
 }
 impl DescribeConnectorEntityInputBuilder {
-    /// <p>The entity name for that connector.</p>
+    /// <p> The entity name for that connector. </p>
     /// This field is required.
     pub fn connector_entity_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_entity_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The entity name for that connector.</p>
+    /// <p> The entity name for that connector. </p>
     pub fn set_connector_entity_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connector_entity_name = input;
         self
     }
-    /// <p>The entity name for that connector.</p>
+    /// <p> The entity name for that connector. </p>
     pub fn get_connector_entity_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.connector_entity_name
     }
-    /// <p>The type of connector application, such as Salesforce, Amplitude, and so on.</p>
+    /// <p> The type of connector application, such as Salesforce, Amplitude, and so on. </p>
     pub fn connector_type(mut self, input: crate::types::ConnectorType) -> Self {
         self.connector_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of connector application, such as Salesforce, Amplitude, and so on.</p>
+    /// <p> The type of connector application, such as Salesforce, Amplitude, and so on. </p>
     pub fn set_connector_type(mut self, input: ::std::option::Option<crate::types::ConnectorType>) -> Self {
         self.connector_type = input;
         self
     }
-    /// <p>The type of connector application, such as Salesforce, Amplitude, and so on.</p>
+    /// <p> The type of connector application, such as Salesforce, Amplitude, and so on. </p>
     pub fn get_connector_type(&self) -> &::std::option::Option<crate::types::ConnectorType> {
         &self.connector_type
     }
-    /// <p>The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account.</p>
+    /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
     pub fn connector_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_profile_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account.</p>
+    /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
     pub fn set_connector_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connector_profile_name = input;
         self
     }
-    /// <p>The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account.</p>
+    /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
     pub fn get_connector_profile_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.connector_profile_name
     }

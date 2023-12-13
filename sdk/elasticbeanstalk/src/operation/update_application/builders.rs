@@ -22,7 +22,7 @@ impl UpdateApplicationInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateApplication`.
 ///
-/// <p>Updates the specified application to have the specified properties.</p><note>
+/// <p>Updates the specified application to have the specified properties.</p> <note>
 /// <p>If a property (for example, <code>description</code>) is not provided, the value remains unchanged. To clear these properties, specify an empty string.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -110,17 +110,17 @@ impl UpdateApplicationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the application to update. If no such application is found, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error.</p>
+    /// <p>The name of the application to update. If no such application is found, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error. </p>
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_name(input.into());
         self
     }
-    /// <p>The name of the application to update. If no such application is found, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error.</p>
+    /// <p>The name of the application to update. If no such application is found, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error. </p>
     pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_name(input);
         self
     }
-    /// <p>The name of the application to update. If no such application is found, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error.</p>
+    /// <p>The name of the application to update. If no such application is found, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error. </p>
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_name()
     }

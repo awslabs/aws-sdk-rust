@@ -22,14 +22,12 @@ impl EnableHealthServiceAccessForOrganizationInputBuilder {
 }
 /// Fluent builder constructing a request to `EnableHealthServiceAccessForOrganization`.
 ///
-/// <p>Enables Health to work with Organizations. You can use the organizational view feature to aggregate events from all Amazon Web Services accounts in your organization in a centralized location.</p>
-/// <p>This operation also creates a service-linked role for the management account in the organization.</p><note>
+/// <p>Enables Health to work with Organizations. You can use the organizational view feature to aggregate events from all Amazon Web Services accounts in your organization in a centralized location. </p>
+/// <p>This operation also creates a service-linked role for the management account in the organization. </p> <note>
 /// <p>To call this operation, you must meet the following requirements:</p>
 /// <ul>
-/// <li>
-/// <p>You must have a Business, Enterprise On-Ramp, or Enterprise Support plan from <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a> to use the Health API. If you call the Health API from an Amazon Web Services account that doesn't have a Business, Enterprise On-Ramp, or Enterprise Support plan, you receive a <code>SubscriptionRequiredException</code> error.</p></li>
-/// <li>
-/// <p>You must have permission to call this operation from the organization's management account. For example IAM policies, see <a href="https://docs.aws.amazon.com/health/latest/ug/security_iam_id-based-policy-examples.html">Health identity-based policy examples</a>.</p></li>
+/// <li> <p>You must have a Business, Enterprise On-Ramp, or Enterprise Support plan from <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a> to use the Health API. If you call the Health API from an Amazon Web Services account that doesn't have a Business, Enterprise On-Ramp, or Enterprise Support plan, you receive a <code>SubscriptionRequiredException</code> error.</p> </li>
+/// <li> <p>You must have permission to call this operation from the organization's management account. For example IAM policies, see <a href="https://docs.aws.amazon.com/health/latest/ug/security_iam_id-based-policy-examples.html">Health identity-based policy examples</a>.</p> </li>
 /// </ul>
 /// </note>
 /// <p>If you don't have the required support plan, you can instead use the Health console to enable the organizational view feature. For more information, see <a href="https://docs.aws.amazon.com/health/latest/ug/aggregate-events.html">Aggregating Health events</a> in the <i>Health User Guide</i>.</p>

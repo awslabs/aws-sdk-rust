@@ -22,7 +22,7 @@ impl DescribeAccountOverviewInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeAccountOverview`.
 ///
-/// <p>For the time range passed in, returns the number of open reactive insight that were created, the number of open proactive insights that were created, and the Mean Time to Recover (MTTR) for all closed reactive insights.</p>
+/// <p> For the time range passed in, returns the number of open reactive insight that were created, the number of open proactive insights that were created, and the Mean Time to Recover (MTTR) for all closed reactive insights. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAccountOverviewFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl DescribeAccountOverviewFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day.</p>
+    /// <p> The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day. </p>
     pub fn from_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.from_time(input);
         self
     }
-    /// <p>The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day.</p>
+    /// <p> The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day. </p>
     pub fn set_from_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_from_time(input);
         self
     }
-    /// <p>The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day.</p>
+    /// <p> The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day. </p>
     pub fn get_from_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_from_time()
     }
-    /// <p>The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used.</p>
+    /// <p> The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used. </p>
     pub fn to_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.to_time(input);
         self
     }
-    /// <p>The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used.</p>
+    /// <p> The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used. </p>
     pub fn set_to_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_to_time(input);
         self
     }
-    /// <p>The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used.</p>
+    /// <p> The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used. </p>
     pub fn get_to_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_to_time()
     }

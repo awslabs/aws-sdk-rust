@@ -10,7 +10,7 @@ pub struct GetMessageInsightsOutput {
     pub from_email_address: ::std::option::Option<::std::string::String>,
     /// <p>The subject line of the message.</p>
     pub subject: ::std::option::Option<::std::string::String>,
-    /// <p>A list of tags, in the form of name/value pairs, that were applied to the email you sent, along with Amazon SES <a href="https://docs.aws.amazon.com/ses/latest/dg/monitor-using-event-publishing.html">Auto-Tags</a>.</p>
+    /// <p> A list of tags, in the form of name/value pairs, that were applied to the email you sent, along with Amazon SES <a href="https://docs.aws.amazon.com/ses/latest/dg/monitor-using-event-publishing.html">Auto-Tags</a>. </p>
     pub email_tags: ::std::option::Option<::std::vec::Vec<crate::types::MessageTag>>,
     /// <p>A set of insights associated with the message.</p>
     pub insights: ::std::option::Option<::std::vec::Vec<crate::types::EmailInsights>>,
@@ -29,7 +29,7 @@ impl GetMessageInsightsOutput {
     pub fn subject(&self) -> ::std::option::Option<&str> {
         self.subject.as_deref()
     }
-    /// <p>A list of tags, in the form of name/value pairs, that were applied to the email you sent, along with Amazon SES <a href="https://docs.aws.amazon.com/ses/latest/dg/monitor-using-event-publishing.html">Auto-Tags</a>.</p>
+    /// <p> A list of tags, in the form of name/value pairs, that were applied to the email you sent, along with Amazon SES <a href="https://docs.aws.amazon.com/ses/latest/dg/monitor-using-event-publishing.html">Auto-Tags</a>. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.email_tags.is_none()`.
     pub fn email_tags(&self) -> &[crate::types::MessageTag] {
@@ -124,19 +124,19 @@ impl GetMessageInsightsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_email_tags`](Self::set_email_tags).
     ///
-    /// <p>A list of tags, in the form of name/value pairs, that were applied to the email you sent, along with Amazon SES <a href="https://docs.aws.amazon.com/ses/latest/dg/monitor-using-event-publishing.html">Auto-Tags</a>.</p>
+    /// <p> A list of tags, in the form of name/value pairs, that were applied to the email you sent, along with Amazon SES <a href="https://docs.aws.amazon.com/ses/latest/dg/monitor-using-event-publishing.html">Auto-Tags</a>. </p>
     pub fn email_tags(mut self, input: crate::types::MessageTag) -> Self {
         let mut v = self.email_tags.unwrap_or_default();
         v.push(input);
         self.email_tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of tags, in the form of name/value pairs, that were applied to the email you sent, along with Amazon SES <a href="https://docs.aws.amazon.com/ses/latest/dg/monitor-using-event-publishing.html">Auto-Tags</a>.</p>
+    /// <p> A list of tags, in the form of name/value pairs, that were applied to the email you sent, along with Amazon SES <a href="https://docs.aws.amazon.com/ses/latest/dg/monitor-using-event-publishing.html">Auto-Tags</a>. </p>
     pub fn set_email_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MessageTag>>) -> Self {
         self.email_tags = input;
         self
     }
-    /// <p>A list of tags, in the form of name/value pairs, that were applied to the email you sent, along with Amazon SES <a href="https://docs.aws.amazon.com/ses/latest/dg/monitor-using-event-publishing.html">Auto-Tags</a>.</p>
+    /// <p> A list of tags, in the form of name/value pairs, that were applied to the email you sent, along with Amazon SES <a href="https://docs.aws.amazon.com/ses/latest/dg/monitor-using-event-publishing.html">Auto-Tags</a>. </p>
     pub fn get_email_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MessageTag>> {
         &self.email_tags
     }

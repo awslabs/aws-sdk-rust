@@ -13,7 +13,7 @@ pub struct CreateComponentInput {
     pub service_instance_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Proton environment that you want to associate this component with. You must specify this when you don't specify <code>serviceInstanceName</code> and <code>serviceName</code>.</p>
     pub environment_name: ::std::option::Option<::std::string::String>,
-    /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p><note>
+    /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p> <note>
     /// <p>Components support a single IaC file, even if you use Terraform as your template language.</p>
     /// </note>
     pub template_file: ::std::option::Option<::std::string::String>,
@@ -48,7 +48,7 @@ impl CreateComponentInput {
     pub fn environment_name(&self) -> ::std::option::Option<&str> {
         self.environment_name.as_deref()
     }
-    /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p><note>
+    /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p> <note>
     /// <p>Components support a single IaC file, even if you use Terraform as your template language.</p>
     /// </note>
     pub fn template_file(&self) -> ::std::option::Option<&str> {
@@ -184,7 +184,7 @@ impl CreateComponentInputBuilder {
     pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.environment_name
     }
-    /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p><note>
+    /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p> <note>
     /// <p>Components support a single IaC file, even if you use Terraform as your template language.</p>
     /// </note>
     /// This field is required.
@@ -192,14 +192,14 @@ impl CreateComponentInputBuilder {
         self.template_file = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p><note>
+    /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p> <note>
     /// <p>Components support a single IaC file, even if you use Terraform as your template language.</p>
     /// </note>
     pub fn set_template_file(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_file = input;
         self
     }
-    /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p><note>
+    /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p> <note>
     /// <p>Components support a single IaC file, even if you use Terraform as your template language.</p>
     /// </note>
     pub fn get_template_file(&self) -> &::std::option::Option<::std::string::String> {

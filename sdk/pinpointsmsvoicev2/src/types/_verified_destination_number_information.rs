@@ -12,10 +12,8 @@ pub struct VerifiedDestinationNumberInformation {
     pub destination_phone_number: ::std::string::String,
     /// <p>The status of the verified destination phone number.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PENDING</code>: The phone number hasn't been verified yet.</p></li>
-    /// <li>
-    /// <p><code>VERIFIED</code>: The phone number is verified and can receive messages.</p></li>
+    /// <li> <p> <code>PENDING</code>: The phone number hasn't been verified yet.</p> </li>
+    /// <li> <p> <code>VERIFIED</code>: The phone number is verified and can receive messages.</p> </li>
     /// </ul>
     pub status: crate::types::VerificationStatus,
     /// <p>The time when the destination phone number was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
@@ -39,10 +37,8 @@ impl VerifiedDestinationNumberInformation {
     }
     /// <p>The status of the verified destination phone number.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PENDING</code>: The phone number hasn't been verified yet.</p></li>
-    /// <li>
-    /// <p><code>VERIFIED</code>: The phone number is verified and can receive messages.</p></li>
+    /// <li> <p> <code>PENDING</code>: The phone number hasn't been verified yet.</p> </li>
+    /// <li> <p> <code>VERIFIED</code>: The phone number is verified and can receive messages.</p> </li>
     /// </ul>
     pub fn status(&self) -> &crate::types::VerificationStatus {
         &self.status
@@ -117,10 +113,8 @@ impl VerifiedDestinationNumberInformationBuilder {
     }
     /// <p>The status of the verified destination phone number.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PENDING</code>: The phone number hasn't been verified yet.</p></li>
-    /// <li>
-    /// <p><code>VERIFIED</code>: The phone number is verified and can receive messages.</p></li>
+    /// <li> <p> <code>PENDING</code>: The phone number hasn't been verified yet.</p> </li>
+    /// <li> <p> <code>VERIFIED</code>: The phone number is verified and can receive messages.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn status(mut self, input: crate::types::VerificationStatus) -> Self {
@@ -129,10 +123,8 @@ impl VerifiedDestinationNumberInformationBuilder {
     }
     /// <p>The status of the verified destination phone number.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PENDING</code>: The phone number hasn't been verified yet.</p></li>
-    /// <li>
-    /// <p><code>VERIFIED</code>: The phone number is verified and can receive messages.</p></li>
+    /// <li> <p> <code>PENDING</code>: The phone number hasn't been verified yet.</p> </li>
+    /// <li> <p> <code>VERIFIED</code>: The phone number is verified and can receive messages.</p> </li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::VerificationStatus>) -> Self {
         self.status = input;
@@ -140,10 +132,8 @@ impl VerifiedDestinationNumberInformationBuilder {
     }
     /// <p>The status of the verified destination phone number.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PENDING</code>: The phone number hasn't been verified yet.</p></li>
-    /// <li>
-    /// <p><code>VERIFIED</code>: The phone number is verified and can receive messages.</p></li>
+    /// <li> <p> <code>PENDING</code>: The phone number hasn't been verified yet.</p> </li>
+    /// <li> <p> <code>VERIFIED</code>: The phone number is verified and can receive messages.</p> </li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::VerificationStatus> {
         &self.status

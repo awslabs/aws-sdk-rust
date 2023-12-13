@@ -6,7 +6,7 @@
 pub struct AddAttributesActivity {
     /// <p>The name of the addAttributes activity.</p>
     pub name: ::std::string::String,
-    /// <p>A list of 1-50 <code>AttributeNameMapping</code> objects that map an existing attribute to a new attribute.</p><note>
+    /// <p>A list of 1-50 <code>AttributeNameMapping</code> objects that map an existing attribute to a new attribute.</p> <note>
     /// <p>The existing attributes remain in the message, so if you want to remove the originals, use <code>RemoveAttributeActivity</code>.</p>
     /// </note>
     pub attributes: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
@@ -19,7 +19,7 @@ impl AddAttributesActivity {
         use std::ops::Deref;
         self.name.deref()
     }
-    /// <p>A list of 1-50 <code>AttributeNameMapping</code> objects that map an existing attribute to a new attribute.</p><note>
+    /// <p>A list of 1-50 <code>AttributeNameMapping</code> objects that map an existing attribute to a new attribute.</p> <note>
     /// <p>The existing attributes remain in the message, so if you want to remove the originals, use <code>RemoveAttributeActivity</code>.</p>
     /// </note>
     pub fn attributes(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
@@ -65,7 +65,7 @@ impl AddAttributesActivityBuilder {
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
-    /// <p>A list of 1-50 <code>AttributeNameMapping</code> objects that map an existing attribute to a new attribute.</p><note>
+    /// <p>A list of 1-50 <code>AttributeNameMapping</code> objects that map an existing attribute to a new attribute.</p> <note>
     /// <p>The existing attributes remain in the message, so if you want to remove the originals, use <code>RemoveAttributeActivity</code>.</p>
     /// </note>
     pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -74,14 +74,14 @@ impl AddAttributesActivityBuilder {
         self.attributes = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>A list of 1-50 <code>AttributeNameMapping</code> objects that map an existing attribute to a new attribute.</p><note>
+    /// <p>A list of 1-50 <code>AttributeNameMapping</code> objects that map an existing attribute to a new attribute.</p> <note>
     /// <p>The existing attributes remain in the message, so if you want to remove the originals, use <code>RemoveAttributeActivity</code>.</p>
     /// </note>
     pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.attributes = input;
         self
     }
-    /// <p>A list of 1-50 <code>AttributeNameMapping</code> objects that map an existing attribute to a new attribute.</p><note>
+    /// <p>A list of 1-50 <code>AttributeNameMapping</code> objects that map an existing attribute to a new attribute.</p> <note>
     /// <p>The existing attributes remain in the message, so if you want to remove the originals, use <code>RemoveAttributeActivity</code>.</p>
     /// </note>
     pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {

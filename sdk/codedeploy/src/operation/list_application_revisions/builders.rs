@@ -114,67 +114,56 @@ impl ListApplicationRevisionsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_application_revisions::paginator::ListApplicationRevisionsPaginator {
         crate::operation::list_application_revisions::paginator::ListApplicationRevisionsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The name of an CodeDeploy application associated with the user or Amazon Web Services account.</p>
+    /// <p> The name of an CodeDeploy application associated with the user or Amazon Web Services account. </p>
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_name(input.into());
         self
     }
-    /// <p>The name of an CodeDeploy application associated with the user or Amazon Web Services account.</p>
+    /// <p> The name of an CodeDeploy application associated with the user or Amazon Web Services account. </p>
     pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_name(input);
         self
     }
-    /// <p>The name of an CodeDeploy application associated with the user or Amazon Web Services account.</p>
+    /// <p> The name of an CodeDeploy application associated with the user or Amazon Web Services account. </p>
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_name()
     }
     /// <p>The column name to use to sort the list results:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>registerTime</code>: Sort by the time the revisions were registered with CodeDeploy.</p></li>
-    /// <li>
-    /// <p><code>firstUsedTime</code>: Sort by the time the revisions were first used in a deployment.</p></li>
-    /// <li>
-    /// <p><code>lastUsedTime</code>: Sort by the time the revisions were last used in a deployment.</p></li>
+    /// <li> <p> <code>registerTime</code>: Sort by the time the revisions were registered with CodeDeploy.</p> </li>
+    /// <li> <p> <code>firstUsedTime</code>: Sort by the time the revisions were first used in a deployment.</p> </li>
+    /// <li> <p> <code>lastUsedTime</code>: Sort by the time the revisions were last used in a deployment.</p> </li>
     /// </ul>
-    /// <p>If not specified or set to null, the results are returned in an arbitrary order.</p>
+    /// <p> If not specified or set to null, the results are returned in an arbitrary order. </p>
     pub fn sort_by(mut self, input: crate::types::ApplicationRevisionSortBy) -> Self {
         self.inner = self.inner.sort_by(input);
         self
     }
     /// <p>The column name to use to sort the list results:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>registerTime</code>: Sort by the time the revisions were registered with CodeDeploy.</p></li>
-    /// <li>
-    /// <p><code>firstUsedTime</code>: Sort by the time the revisions were first used in a deployment.</p></li>
-    /// <li>
-    /// <p><code>lastUsedTime</code>: Sort by the time the revisions were last used in a deployment.</p></li>
+    /// <li> <p> <code>registerTime</code>: Sort by the time the revisions were registered with CodeDeploy.</p> </li>
+    /// <li> <p> <code>firstUsedTime</code>: Sort by the time the revisions were first used in a deployment.</p> </li>
+    /// <li> <p> <code>lastUsedTime</code>: Sort by the time the revisions were last used in a deployment.</p> </li>
     /// </ul>
-    /// <p>If not specified or set to null, the results are returned in an arbitrary order.</p>
+    /// <p> If not specified or set to null, the results are returned in an arbitrary order. </p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ApplicationRevisionSortBy>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
     /// <p>The column name to use to sort the list results:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>registerTime</code>: Sort by the time the revisions were registered with CodeDeploy.</p></li>
-    /// <li>
-    /// <p><code>firstUsedTime</code>: Sort by the time the revisions were first used in a deployment.</p></li>
-    /// <li>
-    /// <p><code>lastUsedTime</code>: Sort by the time the revisions were last used in a deployment.</p></li>
+    /// <li> <p> <code>registerTime</code>: Sort by the time the revisions were registered with CodeDeploy.</p> </li>
+    /// <li> <p> <code>firstUsedTime</code>: Sort by the time the revisions were first used in a deployment.</p> </li>
+    /// <li> <p> <code>lastUsedTime</code>: Sort by the time the revisions were last used in a deployment.</p> </li>
     /// </ul>
-    /// <p>If not specified or set to null, the results are returned in an arbitrary order.</p>
+    /// <p> If not specified or set to null, the results are returned in an arbitrary order. </p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::ApplicationRevisionSortBy> {
         self.inner.get_sort_by()
     }
-    /// <p>The order in which to sort the list results:</p>
+    /// <p> The order in which to sort the list results: </p>
     /// <ul>
-    /// <li>
-    /// <p><code>ascending</code>: ascending order.</p></li>
-    /// <li>
-    /// <p><code>descending</code>: descending order.</p></li>
+    /// <li> <p> <code>ascending</code>: ascending order.</p> </li>
+    /// <li> <p> <code>descending</code>: descending order.</p> </li>
     /// </ul>
     /// <p>If not specified, the results are sorted in ascending order.</p>
     /// <p>If set to null, the results are sorted in an arbitrary order.</p>
@@ -182,12 +171,10 @@ impl ListApplicationRevisionsFluentBuilder {
         self.inner = self.inner.sort_order(input);
         self
     }
-    /// <p>The order in which to sort the list results:</p>
+    /// <p> The order in which to sort the list results: </p>
     /// <ul>
-    /// <li>
-    /// <p><code>ascending</code>: ascending order.</p></li>
-    /// <li>
-    /// <p><code>descending</code>: descending order.</p></li>
+    /// <li> <p> <code>ascending</code>: ascending order.</p> </li>
+    /// <li> <p> <code>descending</code>: descending order.</p> </li>
     /// </ul>
     /// <p>If not specified, the results are sorted in ascending order.</p>
     /// <p>If set to null, the results are sorted in an arbitrary order.</p>
@@ -195,83 +182,72 @@ impl ListApplicationRevisionsFluentBuilder {
         self.inner = self.inner.set_sort_order(input);
         self
     }
-    /// <p>The order in which to sort the list results:</p>
+    /// <p> The order in which to sort the list results: </p>
     /// <ul>
-    /// <li>
-    /// <p><code>ascending</code>: ascending order.</p></li>
-    /// <li>
-    /// <p><code>descending</code>: descending order.</p></li>
+    /// <li> <p> <code>ascending</code>: ascending order.</p> </li>
+    /// <li> <p> <code>descending</code>: descending order.</p> </li>
     /// </ul>
     /// <p>If not specified, the results are sorted in ascending order.</p>
     /// <p>If set to null, the results are sorted in an arbitrary order.</p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
         self.inner.get_sort_order()
     }
-    /// <p>An Amazon S3 bucket name to limit the search for revisions.</p>
-    /// <p>If set to null, all of the user's buckets are searched.</p>
+    /// <p> An Amazon S3 bucket name to limit the search for revisions. </p>
+    /// <p> If set to null, all of the user's buckets are searched. </p>
     pub fn s3_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.s3_bucket(input.into());
         self
     }
-    /// <p>An Amazon S3 bucket name to limit the search for revisions.</p>
-    /// <p>If set to null, all of the user's buckets are searched.</p>
+    /// <p> An Amazon S3 bucket name to limit the search for revisions. </p>
+    /// <p> If set to null, all of the user's buckets are searched. </p>
     pub fn set_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_s3_bucket(input);
         self
     }
-    /// <p>An Amazon S3 bucket name to limit the search for revisions.</p>
-    /// <p>If set to null, all of the user's buckets are searched.</p>
+    /// <p> An Amazon S3 bucket name to limit the search for revisions. </p>
+    /// <p> If set to null, all of the user's buckets are searched. </p>
     pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_s3_bucket()
     }
-    /// <p>A key prefix for the set of Amazon S3 objects to limit the search for revisions.</p>
+    /// <p> A key prefix for the set of Amazon S3 objects to limit the search for revisions. </p>
     pub fn s3_key_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.s3_key_prefix(input.into());
         self
     }
-    /// <p>A key prefix for the set of Amazon S3 objects to limit the search for revisions.</p>
+    /// <p> A key prefix for the set of Amazon S3 objects to limit the search for revisions. </p>
     pub fn set_s3_key_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_s3_key_prefix(input);
         self
     }
-    /// <p>A key prefix for the set of Amazon S3 objects to limit the search for revisions.</p>
+    /// <p> A key prefix for the set of Amazon S3 objects to limit the search for revisions. </p>
     pub fn get_s3_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_s3_key_prefix()
     }
-    /// <p>Whether to list revisions based on whether the revision is the target revision of a deployment group:</p>
+    /// <p> Whether to list revisions based on whether the revision is the target revision of a deployment group: </p>
     /// <ul>
-    /// <li>
-    /// <p><code>include</code>: List revisions that are target revisions of a deployment group.</p></li>
-    /// <li>
-    /// <p><code>exclude</code>: Do not list revisions that are target revisions of a deployment group.</p></li>
-    /// <li>
-    /// <p><code>ignore</code>: List all revisions.</p></li>
+    /// <li> <p> <code>include</code>: List revisions that are target revisions of a deployment group.</p> </li>
+    /// <li> <p> <code>exclude</code>: Do not list revisions that are target revisions of a deployment group.</p> </li>
+    /// <li> <p> <code>ignore</code>: List all revisions.</p> </li>
     /// </ul>
     pub fn deployed(mut self, input: crate::types::ListStateFilterAction) -> Self {
         self.inner = self.inner.deployed(input);
         self
     }
-    /// <p>Whether to list revisions based on whether the revision is the target revision of a deployment group:</p>
+    /// <p> Whether to list revisions based on whether the revision is the target revision of a deployment group: </p>
     /// <ul>
-    /// <li>
-    /// <p><code>include</code>: List revisions that are target revisions of a deployment group.</p></li>
-    /// <li>
-    /// <p><code>exclude</code>: Do not list revisions that are target revisions of a deployment group.</p></li>
-    /// <li>
-    /// <p><code>ignore</code>: List all revisions.</p></li>
+    /// <li> <p> <code>include</code>: List revisions that are target revisions of a deployment group.</p> </li>
+    /// <li> <p> <code>exclude</code>: Do not list revisions that are target revisions of a deployment group.</p> </li>
+    /// <li> <p> <code>ignore</code>: List all revisions.</p> </li>
     /// </ul>
     pub fn set_deployed(mut self, input: ::std::option::Option<crate::types::ListStateFilterAction>) -> Self {
         self.inner = self.inner.set_deployed(input);
         self
     }
-    /// <p>Whether to list revisions based on whether the revision is the target revision of a deployment group:</p>
+    /// <p> Whether to list revisions based on whether the revision is the target revision of a deployment group: </p>
     /// <ul>
-    /// <li>
-    /// <p><code>include</code>: List revisions that are target revisions of a deployment group.</p></li>
-    /// <li>
-    /// <p><code>exclude</code>: Do not list revisions that are target revisions of a deployment group.</p></li>
-    /// <li>
-    /// <p><code>ignore</code>: List all revisions.</p></li>
+    /// <li> <p> <code>include</code>: List revisions that are target revisions of a deployment group.</p> </li>
+    /// <li> <p> <code>exclude</code>: Do not list revisions that are target revisions of a deployment group.</p> </li>
+    /// <li> <p> <code>ignore</code>: List all revisions.</p> </li>
     /// </ul>
     pub fn get_deployed(&self) -> &::std::option::Option<crate::types::ListStateFilterAction> {
         self.inner.get_deployed()

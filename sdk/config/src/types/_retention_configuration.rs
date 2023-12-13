@@ -6,7 +6,7 @@
 pub struct RetentionConfiguration {
     /// <p>The name of the retention configuration object.</p>
     pub name: ::std::string::String,
-    /// <p>Number of days Config stores your historical information.</p><note>
+    /// <p>Number of days Config stores your historical information.</p> <note>
     /// <p>Currently, only applicable to the configuration item history.</p>
     /// </note>
     pub retention_period_in_days: i32,
@@ -17,7 +17,7 @@ impl RetentionConfiguration {
         use std::ops::Deref;
         self.name.deref()
     }
-    /// <p>Number of days Config stores your historical information.</p><note>
+    /// <p>Number of days Config stores your historical information.</p> <note>
     /// <p>Currently, only applicable to the configuration item history.</p>
     /// </note>
     pub fn retention_period_in_days(&self) -> i32 {
@@ -54,7 +54,7 @@ impl RetentionConfigurationBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>Number of days Config stores your historical information.</p><note>
+    /// <p>Number of days Config stores your historical information.</p> <note>
     /// <p>Currently, only applicable to the configuration item history.</p>
     /// </note>
     /// This field is required.
@@ -62,14 +62,14 @@ impl RetentionConfigurationBuilder {
         self.retention_period_in_days = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Number of days Config stores your historical information.</p><note>
+    /// <p>Number of days Config stores your historical information.</p> <note>
     /// <p>Currently, only applicable to the configuration item history.</p>
     /// </note>
     pub fn set_retention_period_in_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.retention_period_in_days = input;
         self
     }
-    /// <p>Number of days Config stores your historical information.</p><note>
+    /// <p>Number of days Config stores your historical information.</p> <note>
     /// <p>Currently, only applicable to the configuration item history.</p>
     /// </note>
     pub fn get_retention_period_in_days(&self) -> &::std::option::Option<i32> {

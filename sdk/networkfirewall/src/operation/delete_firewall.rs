@@ -246,25 +246,22 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteFirewal
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DeleteFirewallError {
-    /// <p>Your request is valid, but Network Firewall couldn't perform the operation because of a system problem. Retry your request.</p>
+    /// <p>Your request is valid, but Network Firewall couldn't perform the operation because of a system problem. Retry your request. </p>
     InternalServerError(crate::types::error::InternalServerError),
     /// <p>The operation failed because it's not valid. For example, you might have tried to delete a rule group or firewall policy that's in use.</p>
     InvalidOperationException(crate::types::error::InvalidOperationException),
-    /// <p>The operation failed because of a problem with your request. Examples include:</p>
+    /// <p>The operation failed because of a problem with your request. Examples include: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an unsupported parameter name or value.</p></li>
-    /// <li>
-    /// <p>You tried to update a property with a value that isn't among the available types.</p></li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p></li>
+    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
     /// </ul>
     InvalidRequestException(crate::types::error::InvalidRequestException),
     /// <p>Unable to locate a resource using the parameters that you provided.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>Unable to process the request due to throttling limitations.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
-    /// <p>The operation you requested isn't supported by Network Firewall.</p>
+    /// <p>The operation you requested isn't supported by Network Firewall. </p>
     UnsupportedOperationException(crate::types::error::UnsupportedOperationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

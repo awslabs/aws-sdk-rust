@@ -3,18 +3,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRetrainingSchedulerInput {
-    /// <p>The name of the model whose retraining scheduler you want to update.</p>
+    /// <p>The name of the model whose retraining scheduler you want to update. </p>
     pub model_name: ::std::option::Option<::std::string::String>,
     /// <p>The start date for the retraining scheduler. Lookout for Equipment truncates the time you provide to the nearest UTC day.</p>
     pub retraining_start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>This parameter uses the <a href="https://en.wikipedia.org/wiki/ISO_8601#Durations">ISO 8601</a> standard to set the frequency at which you want retraining to occur in terms of Years, Months, and/or Days (note: other parameters like Time are not currently supported). The minimum value is 30 days (P30D) and the maximum value is 1 year (P1Y). For example, the following values are valid:</p>
     /// <ul>
-    /// <li>
-    /// <p>P3M15D – Every 3 months and 15 days</p></li>
-    /// <li>
-    /// <p>P2M – Every 2 months</p></li>
-    /// <li>
-    /// <p>P150D – Every 150 days</p></li>
+    /// <li> <p>P3M15D – Every 3 months and 15 days</p> </li>
+    /// <li> <p>P2M – Every 2 months</p> </li>
+    /// <li> <p>P150D – Every 150 days</p> </li>
     /// </ul>
     pub retraining_frequency: ::std::option::Option<::std::string::String>,
     /// <p>The number of past days of data that will be used for retraining.</p>
@@ -23,7 +20,7 @@ pub struct UpdateRetrainingSchedulerInput {
     pub promote_mode: ::std::option::Option<crate::types::ModelPromoteMode>,
 }
 impl UpdateRetrainingSchedulerInput {
-    /// <p>The name of the model whose retraining scheduler you want to update.</p>
+    /// <p>The name of the model whose retraining scheduler you want to update. </p>
     pub fn model_name(&self) -> ::std::option::Option<&str> {
         self.model_name.as_deref()
     }
@@ -33,12 +30,9 @@ impl UpdateRetrainingSchedulerInput {
     }
     /// <p>This parameter uses the <a href="https://en.wikipedia.org/wiki/ISO_8601#Durations">ISO 8601</a> standard to set the frequency at which you want retraining to occur in terms of Years, Months, and/or Days (note: other parameters like Time are not currently supported). The minimum value is 30 days (P30D) and the maximum value is 1 year (P1Y). For example, the following values are valid:</p>
     /// <ul>
-    /// <li>
-    /// <p>P3M15D – Every 3 months and 15 days</p></li>
-    /// <li>
-    /// <p>P2M – Every 2 months</p></li>
-    /// <li>
-    /// <p>P150D – Every 150 days</p></li>
+    /// <li> <p>P3M15D – Every 3 months and 15 days</p> </li>
+    /// <li> <p>P2M – Every 2 months</p> </li>
+    /// <li> <p>P150D – Every 150 days</p> </li>
     /// </ul>
     pub fn retraining_frequency(&self) -> ::std::option::Option<&str> {
         self.retraining_frequency.as_deref()
@@ -70,18 +64,18 @@ pub struct UpdateRetrainingSchedulerInputBuilder {
     pub(crate) promote_mode: ::std::option::Option<crate::types::ModelPromoteMode>,
 }
 impl UpdateRetrainingSchedulerInputBuilder {
-    /// <p>The name of the model whose retraining scheduler you want to update.</p>
+    /// <p>The name of the model whose retraining scheduler you want to update. </p>
     /// This field is required.
     pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the model whose retraining scheduler you want to update.</p>
+    /// <p>The name of the model whose retraining scheduler you want to update. </p>
     pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_name = input;
         self
     }
-    /// <p>The name of the model whose retraining scheduler you want to update.</p>
+    /// <p>The name of the model whose retraining scheduler you want to update. </p>
     pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_name
     }
@@ -101,12 +95,9 @@ impl UpdateRetrainingSchedulerInputBuilder {
     }
     /// <p>This parameter uses the <a href="https://en.wikipedia.org/wiki/ISO_8601#Durations">ISO 8601</a> standard to set the frequency at which you want retraining to occur in terms of Years, Months, and/or Days (note: other parameters like Time are not currently supported). The minimum value is 30 days (P30D) and the maximum value is 1 year (P1Y). For example, the following values are valid:</p>
     /// <ul>
-    /// <li>
-    /// <p>P3M15D – Every 3 months and 15 days</p></li>
-    /// <li>
-    /// <p>P2M – Every 2 months</p></li>
-    /// <li>
-    /// <p>P150D – Every 150 days</p></li>
+    /// <li> <p>P3M15D – Every 3 months and 15 days</p> </li>
+    /// <li> <p>P2M – Every 2 months</p> </li>
+    /// <li> <p>P150D – Every 150 days</p> </li>
     /// </ul>
     pub fn retraining_frequency(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.retraining_frequency = ::std::option::Option::Some(input.into());
@@ -114,12 +105,9 @@ impl UpdateRetrainingSchedulerInputBuilder {
     }
     /// <p>This parameter uses the <a href="https://en.wikipedia.org/wiki/ISO_8601#Durations">ISO 8601</a> standard to set the frequency at which you want retraining to occur in terms of Years, Months, and/or Days (note: other parameters like Time are not currently supported). The minimum value is 30 days (P30D) and the maximum value is 1 year (P1Y). For example, the following values are valid:</p>
     /// <ul>
-    /// <li>
-    /// <p>P3M15D – Every 3 months and 15 days</p></li>
-    /// <li>
-    /// <p>P2M – Every 2 months</p></li>
-    /// <li>
-    /// <p>P150D – Every 150 days</p></li>
+    /// <li> <p>P3M15D – Every 3 months and 15 days</p> </li>
+    /// <li> <p>P2M – Every 2 months</p> </li>
+    /// <li> <p>P150D – Every 150 days</p> </li>
     /// </ul>
     pub fn set_retraining_frequency(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.retraining_frequency = input;
@@ -127,12 +115,9 @@ impl UpdateRetrainingSchedulerInputBuilder {
     }
     /// <p>This parameter uses the <a href="https://en.wikipedia.org/wiki/ISO_8601#Durations">ISO 8601</a> standard to set the frequency at which you want retraining to occur in terms of Years, Months, and/or Days (note: other parameters like Time are not currently supported). The minimum value is 30 days (P30D) and the maximum value is 1 year (P1Y). For example, the following values are valid:</p>
     /// <ul>
-    /// <li>
-    /// <p>P3M15D – Every 3 months and 15 days</p></li>
-    /// <li>
-    /// <p>P2M – Every 2 months</p></li>
-    /// <li>
-    /// <p>P150D – Every 150 days</p></li>
+    /// <li> <p>P3M15D – Every 3 months and 15 days</p> </li>
+    /// <li> <p>P2M – Every 2 months</p> </li>
+    /// <li> <p>P150D – Every 150 days</p> </li>
     /// </ul>
     pub fn get_retraining_frequency(&self) -> &::std::option::Option<::std::string::String> {
         &self.retraining_frequency

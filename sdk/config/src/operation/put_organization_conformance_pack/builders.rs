@@ -24,7 +24,7 @@ impl PutOrganizationConformancePackInputBuilder {
 ///
 /// <p>Deploys conformance packs across member accounts in an Amazon Web Services Organization. For information on how many organization conformance packs and how many Config rules you can have per account, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html"> <b>Service Limits</b> </a> in the <i>Config Developer Guide</i>.</p>
 /// <p>Only a management account and a delegated administrator can call this API. When calling this API with a delegated administrator, you must ensure Organizations <code>ListDelegatedAdministrator</code> permissions are added. An organization can have up to 3 delegated administrators.</p>
-/// <p>This API enables organization service access for <code>config-multiaccountsetup.amazonaws.com</code> through the <code>EnableAWSServiceAccess</code> action and creates a service-linked role <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the management or delegated administrator account of your organization. The service-linked role is created only when the role does not exist in the caller account. To use this API with delegated administrator, register a delegated administrator by calling Amazon Web Services Organization <code>register-delegate-admin</code> for <code>config-multiaccountsetup.amazonaws.com</code>.</p><note>
+/// <p>This API enables organization service access for <code>config-multiaccountsetup.amazonaws.com</code> through the <code>EnableAWSServiceAccess</code> action and creates a service-linked role <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the management or delegated administrator account of your organization. The service-linked role is created only when the role does not exist in the caller account. To use this API with delegated administrator, register a delegated administrator by calling Amazon Web Services Organization <code>register-delegate-admin</code> for <code>config-multiaccountsetup.amazonaws.com</code>.</p> <note>
 /// <p>Prerequisite: Ensure you call <code>EnableAllFeatures</code> API to enable all features in an organization.</p>
 /// <p>You must specify either the <code>TemplateS3Uri</code> or the <code>TemplateBody</code> parameter, but not both. If you provide both Config uses the <code>TemplateS3Uri</code> parameter and ignores the <code>TemplateBody</code> parameter.</p>
 /// <p>Config sets the state of a conformance pack to CREATE_IN_PROGRESS and UPDATE_IN_PROGRESS until the conformance pack is created or updated. You cannot update a conformance pack while it is in this state.</p>
@@ -128,21 +128,21 @@ impl PutOrganizationConformancePackFluentBuilder {
     pub fn get_organization_conformance_pack_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_organization_conformance_pack_name()
     }
-    /// <p>Location of file containing the template body. The uri must point to the conformance pack template (max size: 300 KB).</p><note>
+    /// <p>Location of file containing the template body. The uri must point to the conformance pack template (max size: 300 KB).</p> <note>
     /// <p>You must have access to read Amazon S3 bucket. In addition, in order to ensure a successful deployment, the template object must not be in an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html">archived storage class</a> if this parameter is passed.</p>
     /// </note>
     pub fn template_s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_s3_uri(input.into());
         self
     }
-    /// <p>Location of file containing the template body. The uri must point to the conformance pack template (max size: 300 KB).</p><note>
+    /// <p>Location of file containing the template body. The uri must point to the conformance pack template (max size: 300 KB).</p> <note>
     /// <p>You must have access to read Amazon S3 bucket. In addition, in order to ensure a successful deployment, the template object must not be in an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html">archived storage class</a> if this parameter is passed.</p>
     /// </note>
     pub fn set_template_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_s3_uri(input);
         self
     }
-    /// <p>Location of file containing the template body. The uri must point to the conformance pack template (max size: 300 KB).</p><note>
+    /// <p>Location of file containing the template body. The uri must point to the conformance pack template (max size: 300 KB).</p> <note>
     /// <p>You must have access to read Amazon S3 bucket. In addition, in order to ensure a successful deployment, the template object must not be in an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html">archived storage class</a> if this parameter is passed.</p>
     /// </note>
     pub fn get_template_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -162,41 +162,41 @@ impl PutOrganizationConformancePackFluentBuilder {
     pub fn get_template_body(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_template_body()
     }
-    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p><note>
+    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p> <note>
     /// <p>This field is optional. If used, it must be prefixed with <code>awsconfigconforms</code>.</p>
     /// </note>
     pub fn delivery_s3_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.delivery_s3_bucket(input.into());
         self
     }
-    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p><note>
+    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p> <note>
     /// <p>This field is optional. If used, it must be prefixed with <code>awsconfigconforms</code>.</p>
     /// </note>
     pub fn set_delivery_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_delivery_s3_bucket(input);
         self
     }
-    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p><note>
+    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p> <note>
     /// <p>This field is optional. If used, it must be prefixed with <code>awsconfigconforms</code>.</p>
     /// </note>
     pub fn get_delivery_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_delivery_s3_bucket()
     }
-    /// <p>The prefix for the Amazon S3 bucket.</p><note>
+    /// <p>The prefix for the Amazon S3 bucket.</p> <note>
     /// <p>This field is optional.</p>
     /// </note>
     pub fn delivery_s3_key_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.delivery_s3_key_prefix(input.into());
         self
     }
-    /// <p>The prefix for the Amazon S3 bucket.</p><note>
+    /// <p>The prefix for the Amazon S3 bucket.</p> <note>
     /// <p>This field is optional.</p>
     /// </note>
     pub fn set_delivery_s3_key_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_delivery_s3_key_prefix(input);
         self
     }
-    /// <p>The prefix for the Amazon S3 bucket.</p><note>
+    /// <p>The prefix for the Amazon S3 bucket.</p> <note>
     /// <p>This field is optional.</p>
     /// </note>
     pub fn get_delivery_s3_key_prefix(&self) -> &::std::option::Option<::std::string::String> {

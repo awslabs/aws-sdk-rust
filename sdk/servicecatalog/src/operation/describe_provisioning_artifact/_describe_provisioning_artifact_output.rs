@@ -9,7 +9,7 @@ pub struct DescribeProvisioningArtifactOutput {
     pub info: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The status of the current request.</p>
     pub status: ::std::option::Option<crate::types::Status>,
-    /// <p>Information about the parameters used to provision the product.</p>
+    /// <p>Information about the parameters used to provision the product. </p>
     pub provisioning_artifact_parameters: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningArtifactParameter>>,
     _request_id: Option<String>,
 }
@@ -26,7 +26,7 @@ impl DescribeProvisioningArtifactOutput {
     pub fn status(&self) -> ::std::option::Option<&crate::types::Status> {
         self.status.as_ref()
     }
-    /// <p>Information about the parameters used to provision the product.</p>
+    /// <p>Information about the parameters used to provision the product. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.provisioning_artifact_parameters.is_none()`.
     pub fn provisioning_artifact_parameters(&self) -> &[crate::types::ProvisioningArtifactParameter] {
@@ -108,14 +108,14 @@ impl DescribeProvisioningArtifactOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_provisioning_artifact_parameters`](Self::set_provisioning_artifact_parameters).
     ///
-    /// <p>Information about the parameters used to provision the product.</p>
+    /// <p>Information about the parameters used to provision the product. </p>
     pub fn provisioning_artifact_parameters(mut self, input: crate::types::ProvisioningArtifactParameter) -> Self {
         let mut v = self.provisioning_artifact_parameters.unwrap_or_default();
         v.push(input);
         self.provisioning_artifact_parameters = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Information about the parameters used to provision the product.</p>
+    /// <p>Information about the parameters used to provision the product. </p>
     pub fn set_provisioning_artifact_parameters(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningArtifactParameter>>,
@@ -123,7 +123,7 @@ impl DescribeProvisioningArtifactOutputBuilder {
         self.provisioning_artifact_parameters = input;
         self
     }
-    /// <p>Information about the parameters used to provision the product.</p>
+    /// <p>Information about the parameters used to provision the product. </p>
     pub fn get_provisioning_artifact_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProvisioningArtifactParameter>> {
         &self.provisioning_artifact_parameters
     }

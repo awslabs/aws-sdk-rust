@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListModelsOutput {
-    /// <p>A list of model versions in the specified project.</p>
+    /// <p>A list of model versions in the specified project. </p>
     pub models: ::std::option::Option<::std::vec::Vec<crate::types::ModelMetadata>>,
-    /// <p>If the response is truncated, Amazon Lookout for Vision returns this token that you can use in the subsequent request to retrieve the next set of models.</p>
+    /// <p>If the response is truncated, Amazon Lookout for Vision returns this token that you can use in the subsequent request to retrieve the next set of models. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListModelsOutput {
-    /// <p>A list of model versions in the specified project.</p>
+    /// <p>A list of model versions in the specified project. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.models.is_none()`.
     pub fn models(&self) -> &[crate::types::ModelMetadata] {
         self.models.as_deref().unwrap_or_default()
     }
-    /// <p>If the response is truncated, Amazon Lookout for Vision returns this token that you can use in the subsequent request to retrieve the next set of models.</p>
+    /// <p>If the response is truncated, Amazon Lookout for Vision returns this token that you can use in the subsequent request to retrieve the next set of models. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -46,33 +46,33 @@ impl ListModelsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_models`](Self::set_models).
     ///
-    /// <p>A list of model versions in the specified project.</p>
+    /// <p>A list of model versions in the specified project. </p>
     pub fn models(mut self, input: crate::types::ModelMetadata) -> Self {
         let mut v = self.models.unwrap_or_default();
         v.push(input);
         self.models = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of model versions in the specified project.</p>
+    /// <p>A list of model versions in the specified project. </p>
     pub fn set_models(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ModelMetadata>>) -> Self {
         self.models = input;
         self
     }
-    /// <p>A list of model versions in the specified project.</p>
+    /// <p>A list of model versions in the specified project. </p>
     pub fn get_models(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelMetadata>> {
         &self.models
     }
-    /// <p>If the response is truncated, Amazon Lookout for Vision returns this token that you can use in the subsequent request to retrieve the next set of models.</p>
+    /// <p>If the response is truncated, Amazon Lookout for Vision returns this token that you can use in the subsequent request to retrieve the next set of models. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If the response is truncated, Amazon Lookout for Vision returns this token that you can use in the subsequent request to retrieve the next set of models.</p>
+    /// <p>If the response is truncated, Amazon Lookout for Vision returns this token that you can use in the subsequent request to retrieve the next set of models. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>If the response is truncated, Amazon Lookout for Vision returns this token that you can use in the subsequent request to retrieve the next set of models.</p>
+    /// <p>If the response is truncated, Amazon Lookout for Vision returns this token that you can use in the subsequent request to retrieve the next set of models. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

@@ -9,7 +9,7 @@ pub struct EventDestination {
     pub event_destination_name: ::std::string::String,
     /// <p>When set to true events will be logged.</p>
     pub enabled: bool,
-    /// <p>An array of event types that determine which events to log.</p><note>
+    /// <p>An array of event types that determine which events to log.</p> <note>
     /// <p>The <code>TEXT_SENT</code> event type is not supported.</p>
     /// </note>
     pub matching_event_types: ::std::vec::Vec<crate::types::EventType>,
@@ -30,7 +30,7 @@ impl EventDestination {
     pub fn enabled(&self) -> bool {
         self.enabled
     }
-    /// <p>An array of event types that determine which events to log.</p><note>
+    /// <p>An array of event types that determine which events to log.</p> <note>
     /// <p>The <code>TEXT_SENT</code> event type is not supported.</p>
     /// </note>
     pub fn matching_event_types(&self) -> &[crate::types::EventType] {
@@ -103,7 +103,7 @@ impl EventDestinationBuilder {
     ///
     /// To override the contents of this collection use [`set_matching_event_types`](Self::set_matching_event_types).
     ///
-    /// <p>An array of event types that determine which events to log.</p><note>
+    /// <p>An array of event types that determine which events to log.</p> <note>
     /// <p>The <code>TEXT_SENT</code> event type is not supported.</p>
     /// </note>
     pub fn matching_event_types(mut self, input: crate::types::EventType) -> Self {
@@ -112,14 +112,14 @@ impl EventDestinationBuilder {
         self.matching_event_types = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of event types that determine which events to log.</p><note>
+    /// <p>An array of event types that determine which events to log.</p> <note>
     /// <p>The <code>TEXT_SENT</code> event type is not supported.</p>
     /// </note>
     pub fn set_matching_event_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>) -> Self {
         self.matching_event_types = input;
         self
     }
-    /// <p>An array of event types that determine which events to log.</p><note>
+    /// <p>An array of event types that determine which events to log.</p> <note>
     /// <p>The <code>TEXT_SENT</code> event type is not supported.</p>
     /// </note>
     pub fn get_matching_event_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventType>> {

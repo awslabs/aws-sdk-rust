@@ -3,31 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetDeploymentTargetsOutput {
-    /// <p>A list of target objects for a deployment. Each target object contains details about the target, such as its status and lifecycle events. The type of the target objects depends on the deployment' compute platform.</p>
+    /// <p> A list of target objects for a deployment. Each target object contains details about the target, such as its status and lifecycle events. The type of the target objects depends on the deployment' compute platform. </p>
     /// <ul>
-    /// <li>
-    /// <p><b>EC2/On-premises</b>: Each target object is an Amazon EC2 or on-premises instance.</p></li>
-    /// <li>
-    /// <p><b>Lambda</b>: The target object is a specific version of an Lambda function.</p></li>
-    /// <li>
-    /// <p><b>Amazon ECS</b>: The target object is an Amazon ECS service.</p></li>
-    /// <li>
-    /// <p><b>CloudFormation</b>: The target object is an CloudFormation blue/green deployment.</p></li>
+    /// <li> <p> <b>EC2/On-premises</b>: Each target object is an Amazon EC2 or on-premises instance. </p> </li>
+    /// <li> <p> <b>Lambda</b>: The target object is a specific version of an Lambda function. </p> </li>
+    /// <li> <p> <b>Amazon ECS</b>: The target object is an Amazon ECS service. </p> </li>
+    /// <li> <p> <b>CloudFormation</b>: The target object is an CloudFormation blue/green deployment. </p> </li>
     /// </ul>
     pub deployment_targets: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentTarget>>,
     _request_id: Option<String>,
 }
 impl BatchGetDeploymentTargetsOutput {
-    /// <p>A list of target objects for a deployment. Each target object contains details about the target, such as its status and lifecycle events. The type of the target objects depends on the deployment' compute platform.</p>
+    /// <p> A list of target objects for a deployment. Each target object contains details about the target, such as its status and lifecycle events. The type of the target objects depends on the deployment' compute platform. </p>
     /// <ul>
-    /// <li>
-    /// <p><b>EC2/On-premises</b>: Each target object is an Amazon EC2 or on-premises instance.</p></li>
-    /// <li>
-    /// <p><b>Lambda</b>: The target object is a specific version of an Lambda function.</p></li>
-    /// <li>
-    /// <p><b>Amazon ECS</b>: The target object is an Amazon ECS service.</p></li>
-    /// <li>
-    /// <p><b>CloudFormation</b>: The target object is an CloudFormation blue/green deployment.</p></li>
+    /// <li> <p> <b>EC2/On-premises</b>: Each target object is an Amazon EC2 or on-premises instance. </p> </li>
+    /// <li> <p> <b>Lambda</b>: The target object is a specific version of an Lambda function. </p> </li>
+    /// <li> <p> <b>Amazon ECS</b>: The target object is an Amazon ECS service. </p> </li>
+    /// <li> <p> <b>CloudFormation</b>: The target object is an CloudFormation blue/green deployment. </p> </li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.deployment_targets.is_none()`.
@@ -59,16 +51,12 @@ impl BatchGetDeploymentTargetsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_deployment_targets`](Self::set_deployment_targets).
     ///
-    /// <p>A list of target objects for a deployment. Each target object contains details about the target, such as its status and lifecycle events. The type of the target objects depends on the deployment' compute platform.</p>
+    /// <p> A list of target objects for a deployment. Each target object contains details about the target, such as its status and lifecycle events. The type of the target objects depends on the deployment' compute platform. </p>
     /// <ul>
-    /// <li>
-    /// <p><b>EC2/On-premises</b>: Each target object is an Amazon EC2 or on-premises instance.</p></li>
-    /// <li>
-    /// <p><b>Lambda</b>: The target object is a specific version of an Lambda function.</p></li>
-    /// <li>
-    /// <p><b>Amazon ECS</b>: The target object is an Amazon ECS service.</p></li>
-    /// <li>
-    /// <p><b>CloudFormation</b>: The target object is an CloudFormation blue/green deployment.</p></li>
+    /// <li> <p> <b>EC2/On-premises</b>: Each target object is an Amazon EC2 or on-premises instance. </p> </li>
+    /// <li> <p> <b>Lambda</b>: The target object is a specific version of an Lambda function. </p> </li>
+    /// <li> <p> <b>Amazon ECS</b>: The target object is an Amazon ECS service. </p> </li>
+    /// <li> <p> <b>CloudFormation</b>: The target object is an CloudFormation blue/green deployment. </p> </li>
     /// </ul>
     pub fn deployment_targets(mut self, input: crate::types::DeploymentTarget) -> Self {
         let mut v = self.deployment_targets.unwrap_or_default();
@@ -76,31 +64,23 @@ impl BatchGetDeploymentTargetsOutputBuilder {
         self.deployment_targets = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of target objects for a deployment. Each target object contains details about the target, such as its status and lifecycle events. The type of the target objects depends on the deployment' compute platform.</p>
+    /// <p> A list of target objects for a deployment. Each target object contains details about the target, such as its status and lifecycle events. The type of the target objects depends on the deployment' compute platform. </p>
     /// <ul>
-    /// <li>
-    /// <p><b>EC2/On-premises</b>: Each target object is an Amazon EC2 or on-premises instance.</p></li>
-    /// <li>
-    /// <p><b>Lambda</b>: The target object is a specific version of an Lambda function.</p></li>
-    /// <li>
-    /// <p><b>Amazon ECS</b>: The target object is an Amazon ECS service.</p></li>
-    /// <li>
-    /// <p><b>CloudFormation</b>: The target object is an CloudFormation blue/green deployment.</p></li>
+    /// <li> <p> <b>EC2/On-premises</b>: Each target object is an Amazon EC2 or on-premises instance. </p> </li>
+    /// <li> <p> <b>Lambda</b>: The target object is a specific version of an Lambda function. </p> </li>
+    /// <li> <p> <b>Amazon ECS</b>: The target object is an Amazon ECS service. </p> </li>
+    /// <li> <p> <b>CloudFormation</b>: The target object is an CloudFormation blue/green deployment. </p> </li>
     /// </ul>
     pub fn set_deployment_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentTarget>>) -> Self {
         self.deployment_targets = input;
         self
     }
-    /// <p>A list of target objects for a deployment. Each target object contains details about the target, such as its status and lifecycle events. The type of the target objects depends on the deployment' compute platform.</p>
+    /// <p> A list of target objects for a deployment. Each target object contains details about the target, such as its status and lifecycle events. The type of the target objects depends on the deployment' compute platform. </p>
     /// <ul>
-    /// <li>
-    /// <p><b>EC2/On-premises</b>: Each target object is an Amazon EC2 or on-premises instance.</p></li>
-    /// <li>
-    /// <p><b>Lambda</b>: The target object is a specific version of an Lambda function.</p></li>
-    /// <li>
-    /// <p><b>Amazon ECS</b>: The target object is an Amazon ECS service.</p></li>
-    /// <li>
-    /// <p><b>CloudFormation</b>: The target object is an CloudFormation blue/green deployment.</p></li>
+    /// <li> <p> <b>EC2/On-premises</b>: Each target object is an Amazon EC2 or on-premises instance. </p> </li>
+    /// <li> <p> <b>Lambda</b>: The target object is a specific version of an Lambda function. </p> </li>
+    /// <li> <p> <b>Amazon ECS</b>: The target object is an Amazon ECS service. </p> </li>
+    /// <li> <p> <b>CloudFormation</b>: The target object is an CloudFormation blue/green deployment. </p> </li>
     /// </ul>
     pub fn get_deployment_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentTarget>> {
         &self.deployment_targets

@@ -22,7 +22,7 @@ impl BatchUpdateRuleInputBuilder {
 }
 /// Fluent builder constructing a request to `BatchUpdateRule`.
 ///
-/// <p>Updates the listener rules in a batch. You can use this operation to change the priority of listener rules. This can be useful when bulk updating or swapping rule priority.</p>
+/// <p>Updates the listener rules in a batch. You can use this operation to change the priority of listener rules. This can be useful when bulk updating or swapping rule priority. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchUpdateRuleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

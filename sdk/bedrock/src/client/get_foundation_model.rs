@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetFoundationModel`](crate::operation::get_foundation_model::builders::GetFoundationModelFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`model_identifier(impl Into<String>)`](crate::operation::get_foundation_model::builders::GetFoundationModelFluentBuilder::model_identifier) / [`set_model_identifier(Option<String>)`](crate::operation::get_foundation_model::builders::GetFoundationModelFluentBuilder::set_model_identifier):<br>required: **true**<br><p>The model identifier.</p><br>
+    ///   - [`model_identifier(impl Into<String>)`](crate::operation::get_foundation_model::builders::GetFoundationModelFluentBuilder::model_identifier) / [`set_model_identifier(Option<String>)`](crate::operation::get_foundation_model::builders::GetFoundationModelFluentBuilder::set_model_identifier):<br>required: **true**<br><p>The model identifier. </p><br>
     /// - On success, responds with [`GetFoundationModelOutput`](crate::operation::get_foundation_model::GetFoundationModelOutput) with field(s):
     ///   - [`model_details(Option<FoundationModelDetails>)`](crate::operation::get_foundation_model::GetFoundationModelOutput::model_details): <p>Information about the foundation model.</p>
     /// - On failure, responds with [`SdkError<GetFoundationModelError>`](crate::operation::get_foundation_model::GetFoundationModelError)

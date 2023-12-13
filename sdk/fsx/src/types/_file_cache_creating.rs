@@ -16,16 +16,11 @@ pub struct FileCacheCreating {
     pub file_cache_type_version: ::std::option::Option<::std::string::String>,
     /// <p>The lifecycle status of the cache. The following are the possible values and what they mean:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AVAILABLE</code> - The cache is in a healthy state, and is reachable and available for use.</p></li>
-    /// <li>
-    /// <p><code>CREATING</code> - The new cache is being created.</p></li>
-    /// <li>
-    /// <p><code>DELETING</code> - An existing cache is being deleted.</p></li>
-    /// <li>
-    /// <p><code>UPDATING</code> - The cache is undergoing a customer-initiated update.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - An existing cache has experienced an unrecoverable failure. When creating a new cache, the cache was unable to be created.</p></li>
+    /// <li> <p> <code>AVAILABLE</code> - The cache is in a healthy state, and is reachable and available for use.</p> </li>
+    /// <li> <p> <code>CREATING</code> - The new cache is being created.</p> </li>
+    /// <li> <p> <code>DELETING</code> - An existing cache is being deleted.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - The cache is undergoing a customer-initiated update.</p> </li>
+    /// <li> <p> <code>FAILED</code> - An existing cache has experienced an unrecoverable failure. When creating a new cache, the cache was unable to be created.</p> </li>
     /// </ul>
     pub lifecycle: ::std::option::Option<crate::types::FileCacheLifecycle>,
     /// <p>A structure providing details of any failures that occurred.</p>
@@ -76,16 +71,11 @@ impl FileCacheCreating {
     }
     /// <p>The lifecycle status of the cache. The following are the possible values and what they mean:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AVAILABLE</code> - The cache is in a healthy state, and is reachable and available for use.</p></li>
-    /// <li>
-    /// <p><code>CREATING</code> - The new cache is being created.</p></li>
-    /// <li>
-    /// <p><code>DELETING</code> - An existing cache is being deleted.</p></li>
-    /// <li>
-    /// <p><code>UPDATING</code> - The cache is undergoing a customer-initiated update.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - An existing cache has experienced an unrecoverable failure. When creating a new cache, the cache was unable to be created.</p></li>
+    /// <li> <p> <code>AVAILABLE</code> - The cache is in a healthy state, and is reachable and available for use.</p> </li>
+    /// <li> <p> <code>CREATING</code> - The new cache is being created.</p> </li>
+    /// <li> <p> <code>DELETING</code> - An existing cache is being deleted.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - The cache is undergoing a customer-initiated update.</p> </li>
+    /// <li> <p> <code>FAILED</code> - An existing cache has experienced an unrecoverable failure. When creating a new cache, the cache was unable to be created.</p> </li>
     /// </ul>
     pub fn lifecycle(&self) -> ::std::option::Option<&crate::types::FileCacheLifecycle> {
         self.lifecycle.as_ref()
@@ -250,16 +240,11 @@ impl FileCacheCreatingBuilder {
     }
     /// <p>The lifecycle status of the cache. The following are the possible values and what they mean:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AVAILABLE</code> - The cache is in a healthy state, and is reachable and available for use.</p></li>
-    /// <li>
-    /// <p><code>CREATING</code> - The new cache is being created.</p></li>
-    /// <li>
-    /// <p><code>DELETING</code> - An existing cache is being deleted.</p></li>
-    /// <li>
-    /// <p><code>UPDATING</code> - The cache is undergoing a customer-initiated update.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - An existing cache has experienced an unrecoverable failure. When creating a new cache, the cache was unable to be created.</p></li>
+    /// <li> <p> <code>AVAILABLE</code> - The cache is in a healthy state, and is reachable and available for use.</p> </li>
+    /// <li> <p> <code>CREATING</code> - The new cache is being created.</p> </li>
+    /// <li> <p> <code>DELETING</code> - An existing cache is being deleted.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - The cache is undergoing a customer-initiated update.</p> </li>
+    /// <li> <p> <code>FAILED</code> - An existing cache has experienced an unrecoverable failure. When creating a new cache, the cache was unable to be created.</p> </li>
     /// </ul>
     pub fn lifecycle(mut self, input: crate::types::FileCacheLifecycle) -> Self {
         self.lifecycle = ::std::option::Option::Some(input);
@@ -267,16 +252,11 @@ impl FileCacheCreatingBuilder {
     }
     /// <p>The lifecycle status of the cache. The following are the possible values and what they mean:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AVAILABLE</code> - The cache is in a healthy state, and is reachable and available for use.</p></li>
-    /// <li>
-    /// <p><code>CREATING</code> - The new cache is being created.</p></li>
-    /// <li>
-    /// <p><code>DELETING</code> - An existing cache is being deleted.</p></li>
-    /// <li>
-    /// <p><code>UPDATING</code> - The cache is undergoing a customer-initiated update.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - An existing cache has experienced an unrecoverable failure. When creating a new cache, the cache was unable to be created.</p></li>
+    /// <li> <p> <code>AVAILABLE</code> - The cache is in a healthy state, and is reachable and available for use.</p> </li>
+    /// <li> <p> <code>CREATING</code> - The new cache is being created.</p> </li>
+    /// <li> <p> <code>DELETING</code> - An existing cache is being deleted.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - The cache is undergoing a customer-initiated update.</p> </li>
+    /// <li> <p> <code>FAILED</code> - An existing cache has experienced an unrecoverable failure. When creating a new cache, the cache was unable to be created.</p> </li>
     /// </ul>
     pub fn set_lifecycle(mut self, input: ::std::option::Option<crate::types::FileCacheLifecycle>) -> Self {
         self.lifecycle = input;
@@ -284,16 +264,11 @@ impl FileCacheCreatingBuilder {
     }
     /// <p>The lifecycle status of the cache. The following are the possible values and what they mean:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AVAILABLE</code> - The cache is in a healthy state, and is reachable and available for use.</p></li>
-    /// <li>
-    /// <p><code>CREATING</code> - The new cache is being created.</p></li>
-    /// <li>
-    /// <p><code>DELETING</code> - An existing cache is being deleted.</p></li>
-    /// <li>
-    /// <p><code>UPDATING</code> - The cache is undergoing a customer-initiated update.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - An existing cache has experienced an unrecoverable failure. When creating a new cache, the cache was unable to be created.</p></li>
+    /// <li> <p> <code>AVAILABLE</code> - The cache is in a healthy state, and is reachable and available for use.</p> </li>
+    /// <li> <p> <code>CREATING</code> - The new cache is being created.</p> </li>
+    /// <li> <p> <code>DELETING</code> - An existing cache is being deleted.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - The cache is undergoing a customer-initiated update.</p> </li>
+    /// <li> <p> <code>FAILED</code> - An existing cache has experienced an unrecoverable failure. When creating a new cache, the cache was unable to be created.</p> </li>
     /// </ul>
     pub fn get_lifecycle(&self) -> &::std::option::Option<crate::types::FileCacheLifecycle> {
         &self.lifecycle

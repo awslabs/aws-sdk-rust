@@ -22,7 +22,7 @@ impl DeleteKxVolumeInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteKxVolume`.
 ///
-/// <p>Deletes a volume. You can only delete a volume if it's not attached to a cluster or a dataview. When a volume is deleted, any data on the volume is lost. This action is irreversible.</p>
+/// <p> Deletes a volume. You can only delete a volume if it's not attached to a cluster or a dataview. When a volume is deleted, any data on the volume is lost. This action is irreversible. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteKxVolumeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl DeleteKxVolumeFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume.</p>
+    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume. </p>
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_id(input.into());
         self
     }
-    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume.</p>
+    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume. </p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_id(input);
         self
     }
-    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume.</p>
+    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume. </p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_environment_id()
     }
-    /// <p>The name of the volume that you want to delete.</p>
+    /// <p> The name of the volume that you want to delete. </p>
     pub fn volume_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.volume_name(input.into());
         self
     }
-    /// <p>The name of the volume that you want to delete.</p>
+    /// <p> The name of the volume that you want to delete. </p>
     pub fn set_volume_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_volume_name(input);
         self
     }
-    /// <p>The name of the volume that you want to delete.</p>
+    /// <p> The name of the volume that you want to delete. </p>
     pub fn get_volume_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_volume_name()
     }

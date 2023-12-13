@@ -17,10 +17,8 @@ pub struct PutMetricStreamInput {
     pub firehose_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of an IAM role that this metric stream will use to access Amazon Kinesis Data Firehose resources. This IAM role must already exist and must be in the same account as the metric stream. This IAM role must include the following permissions:</p>
     /// <ul>
-    /// <li>
-    /// <p>firehose:PutRecord</p></li>
-    /// <li>
-    /// <p>firehose:PutRecordBatch</p></li>
+    /// <li> <p>firehose:PutRecord</p> </li>
+    /// <li> <p>firehose:PutRecordBatch</p> </li>
     /// </ul>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The output format for the stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>. For more information about metric stream output formats, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html"> Metric streams output formats</a>.</p>
@@ -62,10 +60,8 @@ impl PutMetricStreamInput {
     }
     /// <p>The ARN of an IAM role that this metric stream will use to access Amazon Kinesis Data Firehose resources. This IAM role must already exist and must be in the same account as the metric stream. This IAM role must include the following permissions:</p>
     /// <ul>
-    /// <li>
-    /// <p>firehose:PutRecord</p></li>
-    /// <li>
-    /// <p>firehose:PutRecordBatch</p></li>
+    /// <li> <p>firehose:PutRecord</p> </li>
+    /// <li> <p>firehose:PutRecordBatch</p> </li>
     /// </ul>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
@@ -200,10 +196,8 @@ impl PutMetricStreamInputBuilder {
     }
     /// <p>The ARN of an IAM role that this metric stream will use to access Amazon Kinesis Data Firehose resources. This IAM role must already exist and must be in the same account as the metric stream. This IAM role must include the following permissions:</p>
     /// <ul>
-    /// <li>
-    /// <p>firehose:PutRecord</p></li>
-    /// <li>
-    /// <p>firehose:PutRecordBatch</p></li>
+    /// <li> <p>firehose:PutRecord</p> </li>
+    /// <li> <p>firehose:PutRecordBatch</p> </li>
     /// </ul>
     /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -212,10 +206,8 @@ impl PutMetricStreamInputBuilder {
     }
     /// <p>The ARN of an IAM role that this metric stream will use to access Amazon Kinesis Data Firehose resources. This IAM role must already exist and must be in the same account as the metric stream. This IAM role must include the following permissions:</p>
     /// <ul>
-    /// <li>
-    /// <p>firehose:PutRecord</p></li>
-    /// <li>
-    /// <p>firehose:PutRecordBatch</p></li>
+    /// <li> <p>firehose:PutRecord</p> </li>
+    /// <li> <p>firehose:PutRecordBatch</p> </li>
     /// </ul>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
@@ -223,10 +215,8 @@ impl PutMetricStreamInputBuilder {
     }
     /// <p>The ARN of an IAM role that this metric stream will use to access Amazon Kinesis Data Firehose resources. This IAM role must already exist and must be in the same account as the metric stream. This IAM role must include the following permissions:</p>
     /// <ul>
-    /// <li>
-    /// <p>firehose:PutRecord</p></li>
-    /// <li>
-    /// <p>firehose:PutRecordBatch</p></li>
+    /// <li> <p>firehose:PutRecord</p> </li>
+    /// <li> <p>firehose:PutRecordBatch</p> </li>
     /// </ul>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn

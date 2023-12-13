@@ -258,7 +258,7 @@ pub enum ContinueDeploymentError {
     InvalidDeploymentIdException(crate::types::error::InvalidDeploymentIdException),
     /// <p>The specified deployment status doesn't exist or cannot be determined.</p>
     InvalidDeploymentStatusException(crate::types::error::InvalidDeploymentStatusException),
-    /// <p>The wait type is invalid.</p>
+    /// <p> The wait type is invalid. </p>
     InvalidDeploymentWaitTypeException(crate::types::error::InvalidDeploymentWaitTypeException),
     /// <p>A call was submitted that is not supported for the specified deployment type.</p>
     UnsupportedActionForDeploymentTypeException(crate::types::error::UnsupportedActionForDeploymentTypeException),

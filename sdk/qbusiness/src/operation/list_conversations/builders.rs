@@ -128,17 +128,17 @@ impl ListConversationsFluentBuilder {
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_id()
     }
-    /// <p>The identifier of the user involved in the Amazon Q web experience conversation.</p>
+    /// <p>The identifier of the user involved in the Amazon Q web experience conversation. </p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_id(input.into());
         self
     }
-    /// <p>The identifier of the user involved in the Amazon Q web experience conversation.</p>
+    /// <p>The identifier of the user involved in the Amazon Q web experience conversation. </p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_id(input);
         self
     }
-    /// <p>The identifier of the user involved in the Amazon Q web experience conversation.</p>
+    /// <p>The identifier of the user involved in the Amazon Q web experience conversation. </p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_id()
     }

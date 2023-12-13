@@ -22,7 +22,7 @@ impl DeleteResourceConfigInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteResourceConfig`.
 ///
-/// <p>Records the configuration state for a custom resource that has been deleted. This API records a new ConfigurationItem with a ResourceDeleted status. You can retrieve the ConfigurationItems recorded for this resource in your Config History.</p>
+/// <p>Records the configuration state for a custom resource that has been deleted. This API records a new ConfigurationItem with a ResourceDeleted status. You can retrieve the ConfigurationItems recorded for this resource in your Config History. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteResourceConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

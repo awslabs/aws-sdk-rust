@@ -4,21 +4,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCacheEngineVersionsInput {
-    /// <p>The cache engine to return. Valid values: <code>memcached</code> | <code>redis</code></p>
+    /// <p>The cache engine to return. Valid values: <code>memcached</code> | <code>redis</code> </p>
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The cache engine version to return.</p>
-    /// <p>Example: <code>1.4.14</code></p>
+    /// <p>Example: <code>1.4.14</code> </p>
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The name of a specific cache parameter group family to return details for.</p>
-    /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> | <code>redis6.2</code> | <code>redis7</code></p>
+    /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> | <code>redis6.2</code> | <code>redis7</code> </p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be 1 to 255 alphanumeric characters</p></li>
-    /// <li>
-    /// <p>First character must be a letter</p></li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li> <p>Must be 1 to 255 alphanumeric characters</p> </li>
+    /// <li> <p>First character must be a letter</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     pub cache_parameter_group_family: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p>
@@ -31,25 +28,22 @@ pub struct DescribeCacheEngineVersionsInput {
     pub default_only: ::std::option::Option<bool>,
 }
 impl DescribeCacheEngineVersionsInput {
-    /// <p>The cache engine to return. Valid values: <code>memcached</code> | <code>redis</code></p>
+    /// <p>The cache engine to return. Valid values: <code>memcached</code> | <code>redis</code> </p>
     pub fn engine(&self) -> ::std::option::Option<&str> {
         self.engine.as_deref()
     }
     /// <p>The cache engine version to return.</p>
-    /// <p>Example: <code>1.4.14</code></p>
+    /// <p>Example: <code>1.4.14</code> </p>
     pub fn engine_version(&self) -> ::std::option::Option<&str> {
         self.engine_version.as_deref()
     }
     /// <p>The name of a specific cache parameter group family to return details for.</p>
-    /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> | <code>redis6.2</code> | <code>redis7</code></p>
+    /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> | <code>redis6.2</code> | <code>redis7</code> </p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be 1 to 255 alphanumeric characters</p></li>
-    /// <li>
-    /// <p>First character must be a letter</p></li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li> <p>Must be 1 to 255 alphanumeric characters</p> </li>
+    /// <li> <p>First character must be a letter</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     pub fn cache_parameter_group_family(&self) -> ::std::option::Option<&str> {
         self.cache_parameter_group_family.as_deref()
@@ -88,77 +82,68 @@ pub struct DescribeCacheEngineVersionsInputBuilder {
     pub(crate) default_only: ::std::option::Option<bool>,
 }
 impl DescribeCacheEngineVersionsInputBuilder {
-    /// <p>The cache engine to return. Valid values: <code>memcached</code> | <code>redis</code></p>
+    /// <p>The cache engine to return. Valid values: <code>memcached</code> | <code>redis</code> </p>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The cache engine to return. Valid values: <code>memcached</code> | <code>redis</code></p>
+    /// <p>The cache engine to return. Valid values: <code>memcached</code> | <code>redis</code> </p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine = input;
         self
     }
-    /// <p>The cache engine to return. Valid values: <code>memcached</code> | <code>redis</code></p>
+    /// <p>The cache engine to return. Valid values: <code>memcached</code> | <code>redis</code> </p>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine
     }
     /// <p>The cache engine version to return.</p>
-    /// <p>Example: <code>1.4.14</code></p>
+    /// <p>Example: <code>1.4.14</code> </p>
     pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The cache engine version to return.</p>
-    /// <p>Example: <code>1.4.14</code></p>
+    /// <p>Example: <code>1.4.14</code> </p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_version = input;
         self
     }
     /// <p>The cache engine version to return.</p>
-    /// <p>Example: <code>1.4.14</code></p>
+    /// <p>Example: <code>1.4.14</code> </p>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine_version
     }
     /// <p>The name of a specific cache parameter group family to return details for.</p>
-    /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> | <code>redis6.2</code> | <code>redis7</code></p>
+    /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> | <code>redis6.2</code> | <code>redis7</code> </p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be 1 to 255 alphanumeric characters</p></li>
-    /// <li>
-    /// <p>First character must be a letter</p></li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li> <p>Must be 1 to 255 alphanumeric characters</p> </li>
+    /// <li> <p>First character must be a letter</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     pub fn cache_parameter_group_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_parameter_group_family = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a specific cache parameter group family to return details for.</p>
-    /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> | <code>redis6.2</code> | <code>redis7</code></p>
+    /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> | <code>redis6.2</code> | <code>redis7</code> </p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be 1 to 255 alphanumeric characters</p></li>
-    /// <li>
-    /// <p>First character must be a letter</p></li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li> <p>Must be 1 to 255 alphanumeric characters</p> </li>
+    /// <li> <p>First character must be a letter</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     pub fn set_cache_parameter_group_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cache_parameter_group_family = input;
         self
     }
     /// <p>The name of a specific cache parameter group family to return details for.</p>
-    /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> | <code>redis6.2</code> | <code>redis7</code></p>
+    /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> | <code>redis6.2</code> | <code>redis7</code> </p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be 1 to 255 alphanumeric characters</p></li>
-    /// <li>
-    /// <p>First character must be a letter</p></li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li> <p>Must be 1 to 255 alphanumeric characters</p> </li>
+    /// <li> <p>First character must be a letter</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     pub fn get_cache_parameter_group_family(&self) -> &::std::option::Option<::std::string::String> {
         &self.cache_parameter_group_family

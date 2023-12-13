@@ -22,7 +22,7 @@ impl StopStreamInputBuilder {
 }
 /// Fluent builder constructing a request to `StopStream`.
 ///
-/// <p>Disconnects the incoming RTMPS stream for the specified channel. Can be used in conjunction with <code>DeleteStreamKey</code> to prevent further streaming to a channel.</p><note>
+/// <p>Disconnects the incoming RTMPS stream for the specified channel. Can be used in conjunction with <code>DeleteStreamKey</code> to prevent further streaming to a channel.</p> <note>
 /// <p>Many streaming client-software libraries automatically reconnect a dropped RTMPS session, so to stop the stream permanently, you may want to first revoke the <code>streamKey</code> attached to the channel.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

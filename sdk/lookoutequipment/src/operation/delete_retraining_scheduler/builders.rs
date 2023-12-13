@@ -22,7 +22,7 @@ impl DeleteRetrainingSchedulerInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteRetrainingScheduler`.
 ///
-/// <p>Deletes a retraining scheduler from a model. The retraining scheduler must be in the <code>STOPPED</code> status.</p>
+/// <p>Deletes a retraining scheduler from a model. The retraining scheduler must be in the <code>STOPPED</code> status. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteRetrainingSchedulerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DeleteRetrainingSchedulerFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the model whose retraining scheduler you want to delete.</p>
+    /// <p>The name of the model whose retraining scheduler you want to delete. </p>
     pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.model_name(input.into());
         self
     }
-    /// <p>The name of the model whose retraining scheduler you want to delete.</p>
+    /// <p>The name of the model whose retraining scheduler you want to delete. </p>
     pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_model_name(input);
         self
     }
-    /// <p>The name of the model whose retraining scheduler you want to delete.</p>
+    /// <p>The name of the model whose retraining scheduler you want to delete. </p>
     pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_model_name()
     }

@@ -9,7 +9,7 @@ pub struct RestoreTableToPointInTimeInput {
     pub source_table_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the new table to which it must be restored to.</p>
     pub target_table_name: ::std::option::Option<::std::string::String>,
-    /// <p>Restore the table to the latest possible time. <code>LatestRestorableDateTime</code> is typically 5 minutes before the current time.</p>
+    /// <p>Restore the table to the latest possible time. <code>LatestRestorableDateTime</code> is typically 5 minutes before the current time. </p>
     pub use_latest_restorable_time: ::std::option::Option<bool>,
     /// <p>Time in the past to restore the table to.</p>
     pub restore_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -37,7 +37,7 @@ impl RestoreTableToPointInTimeInput {
     pub fn target_table_name(&self) -> ::std::option::Option<&str> {
         self.target_table_name.as_deref()
     }
-    /// <p>Restore the table to the latest possible time. <code>LatestRestorableDateTime</code> is typically 5 minutes before the current time.</p>
+    /// <p>Restore the table to the latest possible time. <code>LatestRestorableDateTime</code> is typically 5 minutes before the current time. </p>
     pub fn use_latest_restorable_time(&self) -> ::std::option::Option<bool> {
         self.use_latest_restorable_time
     }
@@ -136,17 +136,17 @@ impl RestoreTableToPointInTimeInputBuilder {
     pub fn get_target_table_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_table_name
     }
-    /// <p>Restore the table to the latest possible time. <code>LatestRestorableDateTime</code> is typically 5 minutes before the current time.</p>
+    /// <p>Restore the table to the latest possible time. <code>LatestRestorableDateTime</code> is typically 5 minutes before the current time. </p>
     pub fn use_latest_restorable_time(mut self, input: bool) -> Self {
         self.use_latest_restorable_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Restore the table to the latest possible time. <code>LatestRestorableDateTime</code> is typically 5 minutes before the current time.</p>
+    /// <p>Restore the table to the latest possible time. <code>LatestRestorableDateTime</code> is typically 5 minutes before the current time. </p>
     pub fn set_use_latest_restorable_time(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_latest_restorable_time = input;
         self
     }
-    /// <p>Restore the table to the latest possible time. <code>LatestRestorableDateTime</code> is typically 5 minutes before the current time.</p>
+    /// <p>Restore the table to the latest possible time. <code>LatestRestorableDateTime</code> is typically 5 minutes before the current time. </p>
     pub fn get_use_latest_restorable_time(&self) -> &::std::option::Option<bool> {
         &self.use_latest_restorable_time
     }

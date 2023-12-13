@@ -260,7 +260,7 @@ pub enum CreateDeploymentConfigError {
     InvalidDeploymentConfigNameException(crate::types::error::InvalidDeploymentConfigNameException),
     /// <p>The minimum healthy instance value was specified in an invalid format.</p>
     InvalidMinimumHealthyHostValueException(crate::types::error::InvalidMinimumHealthyHostValueException),
-    /// <p>The configuration that specifies how traffic is routed during a deployment is invalid.</p>
+    /// <p> The configuration that specifies how traffic is routed during a deployment is invalid.</p>
     InvalidTrafficRoutingConfigurationException(crate::types::error::InvalidTrafficRoutingConfigurationException),
     /// <p>The <code>ZonalConfig</code> object is not valid.</p>
     InvalidZonalDeploymentConfigurationException(crate::types::error::InvalidZonalDeploymentConfigurationException),

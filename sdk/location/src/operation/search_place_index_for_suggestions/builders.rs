@@ -23,7 +23,7 @@ impl SearchPlaceIndexForSuggestionsInputBuilder {
 /// Fluent builder constructing a request to `SearchPlaceIndexForSuggestions`.
 ///
 /// <p>Generates suggestions for addresses and points of interest based on partial or misspelled free-form text. This operation is also known as autocomplete, autosuggest, or fuzzy matching.</p>
-/// <p>Optional parameters let you narrow your search results by bounding box or country, or bias your search toward a specific position on the globe.</p><note>
+/// <p>Optional parameters let you narrow your search results by bounding box or country, or bias your search toward a specific position on the globe.</p> <note>
 /// <p>You can search for suggested place names near a specified position by using <code>BiasPosition</code>, or filter results within a bounding box by using <code>FilterBBox</code>. These parameters are mutually exclusive; using both <code>BiasPosition</code> and <code>FilterBBox</code> in the same command returns an error.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -144,27 +144,27 @@ impl SearchPlaceIndexForSuggestionsFluentBuilder {
     /// To override the contents of this collection use [`set_bias_position`](Self::set_bias_position).
     ///
     /// <p>An optional parameter that indicates a preference for place suggestions that are closer to a specified position.</p>
-    /// <p>If provided, this parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
-    /// <p>For example, <code>[-123.1174, 49.2847]</code> represents the position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p><note>
-    /// <p><code>BiasPosition</code> and <code>FilterBBox</code> are mutually exclusive. Specifying both options results in an error.</p>
+    /// <p> If provided, this parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
+    /// <p>For example, <code>[-123.1174, 49.2847]</code> represents the position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p> <note>
+    /// <p> <code>BiasPosition</code> and <code>FilterBBox</code> are mutually exclusive. Specifying both options results in an error. </p>
     /// </note>
     pub fn bias_position(mut self, input: f64) -> Self {
         self.inner = self.inner.bias_position(input);
         self
     }
     /// <p>An optional parameter that indicates a preference for place suggestions that are closer to a specified position.</p>
-    /// <p>If provided, this parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
-    /// <p>For example, <code>[-123.1174, 49.2847]</code> represents the position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p><note>
-    /// <p><code>BiasPosition</code> and <code>FilterBBox</code> are mutually exclusive. Specifying both options results in an error.</p>
+    /// <p> If provided, this parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
+    /// <p>For example, <code>[-123.1174, 49.2847]</code> represents the position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p> <note>
+    /// <p> <code>BiasPosition</code> and <code>FilterBBox</code> are mutually exclusive. Specifying both options results in an error. </p>
     /// </note>
     pub fn set_bias_position(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.inner = self.inner.set_bias_position(input);
         self
     }
     /// <p>An optional parameter that indicates a preference for place suggestions that are closer to a specified position.</p>
-    /// <p>If provided, this parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
-    /// <p>For example, <code>[-123.1174, 49.2847]</code> represents the position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p><note>
-    /// <p><code>BiasPosition</code> and <code>FilterBBox</code> are mutually exclusive. Specifying both options results in an error.</p>
+    /// <p> If provided, this parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
+    /// <p>For example, <code>[-123.1174, 49.2847]</code> represents the position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p> <note>
+    /// <p> <code>BiasPosition</code> and <code>FilterBBox</code> are mutually exclusive. Specifying both options results in an error. </p>
     /// </note>
     pub fn get_bias_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
         self.inner.get_bias_position()
@@ -174,27 +174,27 @@ impl SearchPlaceIndexForSuggestionsFluentBuilder {
     /// To override the contents of this collection use [`set_filter_b_box`](Self::set_filter_b_box).
     ///
     /// <p>An optional parameter that limits the search results by returning only suggestions within a specified bounding box.</p>
-    /// <p>If provided, this parameter must contain a total of four consecutive numbers in two pairs. The first pair of numbers represents the X and Y coordinates (longitude and latitude, respectively) of the southwest corner of the bounding box; the second pair of numbers represents the X and Y coordinates (longitude and latitude, respectively) of the northeast corner of the bounding box.</p>
-    /// <p>For example, <code>[-12.7935, -37.4835, -12.0684, -36.9542]</code> represents a bounding box where the southwest corner has longitude <code>-12.7935</code> and latitude <code>-37.4835</code>, and the northeast corner has longitude <code>-12.0684</code> and latitude <code>-36.9542</code>.</p><note>
-    /// <p><code>FilterBBox</code> and <code>BiasPosition</code> are mutually exclusive. Specifying both options results in an error.</p>
+    /// <p> If provided, this parameter must contain a total of four consecutive numbers in two pairs. The first pair of numbers represents the X and Y coordinates (longitude and latitude, respectively) of the southwest corner of the bounding box; the second pair of numbers represents the X and Y coordinates (longitude and latitude, respectively) of the northeast corner of the bounding box.</p>
+    /// <p>For example, <code>[-12.7935, -37.4835, -12.0684, -36.9542]</code> represents a bounding box where the southwest corner has longitude <code>-12.7935</code> and latitude <code>-37.4835</code>, and the northeast corner has longitude <code>-12.0684</code> and latitude <code>-36.9542</code>.</p> <note>
+    /// <p> <code>FilterBBox</code> and <code>BiasPosition</code> are mutually exclusive. Specifying both options results in an error. </p>
     /// </note>
     pub fn filter_b_box(mut self, input: f64) -> Self {
         self.inner = self.inner.filter_b_box(input);
         self
     }
     /// <p>An optional parameter that limits the search results by returning only suggestions within a specified bounding box.</p>
-    /// <p>If provided, this parameter must contain a total of four consecutive numbers in two pairs. The first pair of numbers represents the X and Y coordinates (longitude and latitude, respectively) of the southwest corner of the bounding box; the second pair of numbers represents the X and Y coordinates (longitude and latitude, respectively) of the northeast corner of the bounding box.</p>
-    /// <p>For example, <code>[-12.7935, -37.4835, -12.0684, -36.9542]</code> represents a bounding box where the southwest corner has longitude <code>-12.7935</code> and latitude <code>-37.4835</code>, and the northeast corner has longitude <code>-12.0684</code> and latitude <code>-36.9542</code>.</p><note>
-    /// <p><code>FilterBBox</code> and <code>BiasPosition</code> are mutually exclusive. Specifying both options results in an error.</p>
+    /// <p> If provided, this parameter must contain a total of four consecutive numbers in two pairs. The first pair of numbers represents the X and Y coordinates (longitude and latitude, respectively) of the southwest corner of the bounding box; the second pair of numbers represents the X and Y coordinates (longitude and latitude, respectively) of the northeast corner of the bounding box.</p>
+    /// <p>For example, <code>[-12.7935, -37.4835, -12.0684, -36.9542]</code> represents a bounding box where the southwest corner has longitude <code>-12.7935</code> and latitude <code>-37.4835</code>, and the northeast corner has longitude <code>-12.0684</code> and latitude <code>-36.9542</code>.</p> <note>
+    /// <p> <code>FilterBBox</code> and <code>BiasPosition</code> are mutually exclusive. Specifying both options results in an error. </p>
     /// </note>
     pub fn set_filter_b_box(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.inner = self.inner.set_filter_b_box(input);
         self
     }
     /// <p>An optional parameter that limits the search results by returning only suggestions within a specified bounding box.</p>
-    /// <p>If provided, this parameter must contain a total of four consecutive numbers in two pairs. The first pair of numbers represents the X and Y coordinates (longitude and latitude, respectively) of the southwest corner of the bounding box; the second pair of numbers represents the X and Y coordinates (longitude and latitude, respectively) of the northeast corner of the bounding box.</p>
-    /// <p>For example, <code>[-12.7935, -37.4835, -12.0684, -36.9542]</code> represents a bounding box where the southwest corner has longitude <code>-12.7935</code> and latitude <code>-37.4835</code>, and the northeast corner has longitude <code>-12.0684</code> and latitude <code>-36.9542</code>.</p><note>
-    /// <p><code>FilterBBox</code> and <code>BiasPosition</code> are mutually exclusive. Specifying both options results in an error.</p>
+    /// <p> If provided, this parameter must contain a total of four consecutive numbers in two pairs. The first pair of numbers represents the X and Y coordinates (longitude and latitude, respectively) of the southwest corner of the bounding box; the second pair of numbers represents the X and Y coordinates (longitude and latitude, respectively) of the northeast corner of the bounding box.</p>
+    /// <p>For example, <code>[-12.7935, -37.4835, -12.0684, -36.9542]</code> represents a bounding box where the southwest corner has longitude <code>-12.7935</code> and latitude <code>-37.4835</code>, and the northeast corner has longitude <code>-12.0684</code> and latitude <code>-36.9542</code>.</p> <note>
+    /// <p> <code>FilterBBox</code> and <code>BiasPosition</code> are mutually exclusive. Specifying both options results in an error. </p>
     /// </note>
     pub fn get_filter_b_box(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
         self.inner.get_filter_b_box()
@@ -205,8 +205,7 @@ impl SearchPlaceIndexForSuggestionsFluentBuilder {
     ///
     /// <p>An optional parameter that limits the search results by returning only suggestions within the provided list of countries.</p>
     /// <ul>
-    /// <li>
-    /// <p>Use the <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit country code. For example, Australia uses three upper-case characters: <code>AUS</code>.</p></li>
+    /// <li> <p>Use the <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit country code. For example, Australia uses three upper-case characters: <code>AUS</code>.</p> </li>
     /// </ul>
     pub fn filter_countries(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.filter_countries(input.into());
@@ -214,8 +213,7 @@ impl SearchPlaceIndexForSuggestionsFluentBuilder {
     }
     /// <p>An optional parameter that limits the search results by returning only suggestions within the provided list of countries.</p>
     /// <ul>
-    /// <li>
-    /// <p>Use the <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit country code. For example, Australia uses three upper-case characters: <code>AUS</code>.</p></li>
+    /// <li> <p>Use the <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit country code. For example, Australia uses three upper-case characters: <code>AUS</code>.</p> </li>
     /// </ul>
     pub fn set_filter_countries(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_filter_countries(input);
@@ -223,26 +221,25 @@ impl SearchPlaceIndexForSuggestionsFluentBuilder {
     }
     /// <p>An optional parameter that limits the search results by returning only suggestions within the provided list of countries.</p>
     /// <ul>
-    /// <li>
-    /// <p>Use the <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit country code. For example, Australia uses three upper-case characters: <code>AUS</code>.</p></li>
+    /// <li> <p>Use the <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit country code. For example, Australia uses three upper-case characters: <code>AUS</code>.</p> </li>
     /// </ul>
     pub fn get_filter_countries(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_filter_countries()
     }
-    /// <p>An optional parameter. The maximum number of results returned per request.</p>
-    /// <p>The default: <code>5</code></p>
+    /// <p>An optional parameter. The maximum number of results returned per request. </p>
+    /// <p>The default: <code>5</code> </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>An optional parameter. The maximum number of results returned per request.</p>
-    /// <p>The default: <code>5</code></p>
+    /// <p>An optional parameter. The maximum number of results returned per request. </p>
+    /// <p>The default: <code>5</code> </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>An optional parameter. The maximum number of results returned per request.</p>
-    /// <p>The default: <code>5</code></p>
+    /// <p>An optional parameter. The maximum number of results returned per request. </p>
+    /// <p>The default: <code>5</code> </p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

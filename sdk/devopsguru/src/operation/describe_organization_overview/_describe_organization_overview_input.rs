@@ -3,9 +3,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeOrganizationOverviewInput {
-    /// <p>The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day.</p>
+    /// <p> The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day. </p>
     pub from_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used.</p>
+    /// <p> The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used. </p>
     pub to_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ID of the Amazon Web Services account.</p>
     pub account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -13,11 +13,11 @@ pub struct DescribeOrganizationOverviewInput {
     pub organizational_unit_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeOrganizationOverviewInput {
-    /// <p>The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day.</p>
+    /// <p> The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day. </p>
     pub fn from_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.from_time.as_ref()
     }
-    /// <p>The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used.</p>
+    /// <p> The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used. </p>
     pub fn to_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.to_time.as_ref()
     }
@@ -51,32 +51,32 @@ pub struct DescribeOrganizationOverviewInputBuilder {
     pub(crate) organizational_unit_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeOrganizationOverviewInputBuilder {
-    /// <p>The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day.</p>
+    /// <p> The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day. </p>
     /// This field is required.
     pub fn from_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.from_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day.</p>
+    /// <p> The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day. </p>
     pub fn set_from_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.from_time = input;
         self
     }
-    /// <p>The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day.</p>
+    /// <p> The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day. </p>
     pub fn get_from_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.from_time
     }
-    /// <p>The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used.</p>
+    /// <p> The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used. </p>
     pub fn to_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.to_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used.</p>
+    /// <p> The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used. </p>
     pub fn set_to_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.to_time = input;
         self
     }
-    /// <p>The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used.</p>
+    /// <p> The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used. </p>
     pub fn get_to_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.to_time
     }

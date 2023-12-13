@@ -5,7 +5,7 @@
 pub struct AddApplicationCloudWatchLoggingOptionOutput {
     /// <p>The application's ARN.</p>
     pub application_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The new version ID of the Kinesis Data Analytics application. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you change the CloudWatch logging options.</p>
+    /// <p>The new version ID of the Kinesis Data Analytics application. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you change the CloudWatch logging options. </p>
     pub application_version_id: ::std::option::Option<i64>,
     /// <p>The descriptions of the current CloudWatch logging options for the Kinesis Data Analytics application.</p>
     pub cloud_watch_logging_option_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOptionDescription>>,
@@ -16,7 +16,7 @@ impl AddApplicationCloudWatchLoggingOptionOutput {
     pub fn application_arn(&self) -> ::std::option::Option<&str> {
         self.application_arn.as_deref()
     }
-    /// <p>The new version ID of the Kinesis Data Analytics application. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you change the CloudWatch logging options.</p>
+    /// <p>The new version ID of the Kinesis Data Analytics application. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you change the CloudWatch logging options. </p>
     pub fn application_version_id(&self) -> ::std::option::Option<i64> {
         self.application_version_id
     }
@@ -63,17 +63,17 @@ impl AddApplicationCloudWatchLoggingOptionOutputBuilder {
     pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_arn
     }
-    /// <p>The new version ID of the Kinesis Data Analytics application. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you change the CloudWatch logging options.</p>
+    /// <p>The new version ID of the Kinesis Data Analytics application. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you change the CloudWatch logging options. </p>
     pub fn application_version_id(mut self, input: i64) -> Self {
         self.application_version_id = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The new version ID of the Kinesis Data Analytics application. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you change the CloudWatch logging options.</p>
+    /// <p>The new version ID of the Kinesis Data Analytics application. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you change the CloudWatch logging options. </p>
     pub fn set_application_version_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.application_version_id = input;
         self
     }
-    /// <p>The new version ID of the Kinesis Data Analytics application. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you change the CloudWatch logging options.</p>
+    /// <p>The new version ID of the Kinesis Data Analytics application. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you change the CloudWatch logging options. </p>
     pub fn get_application_version_id(&self) -> &::std::option::Option<i64> {
         &self.application_version_id
     }

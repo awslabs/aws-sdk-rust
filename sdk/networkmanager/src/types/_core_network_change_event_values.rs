@@ -8,7 +8,7 @@ pub struct CoreNetworkChangeEventValues {
     pub edge_location: ::std::option::Option<::std::string::String>,
     /// <p>The segment name if the change event is associated with a segment.</p>
     pub segment_name: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the attachment if the change event is associated with an attachment.</p>
+    /// <p>The ID of the attachment if the change event is associated with an attachment. </p>
     pub attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>For a <code>STATIC_ROUTE</code> event, this is the IP address.</p>
     pub cidr: ::std::option::Option<::std::string::String>,
@@ -22,7 +22,7 @@ impl CoreNetworkChangeEventValues {
     pub fn segment_name(&self) -> ::std::option::Option<&str> {
         self.segment_name.as_deref()
     }
-    /// <p>The ID of the attachment if the change event is associated with an attachment.</p>
+    /// <p>The ID of the attachment if the change event is associated with an attachment. </p>
     pub fn attachment_id(&self) -> ::std::option::Option<&str> {
         self.attachment_id.as_deref()
     }
@@ -76,17 +76,17 @@ impl CoreNetworkChangeEventValuesBuilder {
     pub fn get_segment_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.segment_name
     }
-    /// <p>The ID of the attachment if the change event is associated with an attachment.</p>
+    /// <p>The ID of the attachment if the change event is associated with an attachment. </p>
     pub fn attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attachment_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the attachment if the change event is associated with an attachment.</p>
+    /// <p>The ID of the attachment if the change event is associated with an attachment. </p>
     pub fn set_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attachment_id = input;
         self
     }
-    /// <p>The ID of the attachment if the change event is associated with an attachment.</p>
+    /// <p>The ID of the attachment if the change event is associated with an attachment. </p>
     pub fn get_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.attachment_id
     }

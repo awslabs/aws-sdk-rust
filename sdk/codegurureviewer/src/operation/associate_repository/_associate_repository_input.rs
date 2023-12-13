@@ -9,18 +9,14 @@ pub struct AssociateRepositoryInput {
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:</p>
     /// <ul>
-    /// <li>
-    /// <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p></li>
-    /// <li>
-    /// <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p></li>
+    /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>
+    /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>
     /// </ul>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A <code>KMSKeyDetails</code> object that contains:</p>
     /// <ul>
-    /// <li>
-    /// <p>The encryption option for this repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p></li>
-    /// <li>
-    /// <p>The ID of the Amazon Web Services KMS key that is associated with this repository association.</p></li>
+    /// <li> <p>The encryption option for this repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p> </li>
+    /// <li> <p>The ID of the Amazon Web Services KMS key that is associated with this repository association.</p> </li>
     /// </ul>
     pub kms_key_details: ::std::option::Option<crate::types::KmsKeyDetails>,
 }
@@ -35,20 +31,16 @@ impl AssociateRepositoryInput {
     }
     /// <p>An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:</p>
     /// <ul>
-    /// <li>
-    /// <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p></li>
-    /// <li>
-    /// <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p></li>
+    /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>
+    /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>
     /// </ul>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>A <code>KMSKeyDetails</code> object that contains:</p>
     /// <ul>
-    /// <li>
-    /// <p>The encryption option for this repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p></li>
-    /// <li>
-    /// <p>The ID of the Amazon Web Services KMS key that is associated with this repository association.</p></li>
+    /// <li> <p>The encryption option for this repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p> </li>
+    /// <li> <p>The ID of the Amazon Web Services KMS key that is associated with this repository association.</p> </li>
     /// </ul>
     pub fn kms_key_details(&self) -> ::std::option::Option<&crate::types::KmsKeyDetails> {
         self.kms_key_details.as_ref()
@@ -106,10 +98,8 @@ impl AssociateRepositoryInputBuilder {
     ///
     /// <p>An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:</p>
     /// <ul>
-    /// <li>
-    /// <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p></li>
-    /// <li>
-    /// <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p></li>
+    /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>
+    /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>
     /// </ul>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
@@ -119,10 +109,8 @@ impl AssociateRepositoryInputBuilder {
     }
     /// <p>An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:</p>
     /// <ul>
-    /// <li>
-    /// <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p></li>
-    /// <li>
-    /// <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p></li>
+    /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>
+    /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>
     /// </ul>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
@@ -130,20 +118,16 @@ impl AssociateRepositoryInputBuilder {
     }
     /// <p>An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:</p>
     /// <ul>
-    /// <li>
-    /// <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p></li>
-    /// <li>
-    /// <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p></li>
+    /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>
+    /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>
     /// </ul>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>A <code>KMSKeyDetails</code> object that contains:</p>
     /// <ul>
-    /// <li>
-    /// <p>The encryption option for this repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p></li>
-    /// <li>
-    /// <p>The ID of the Amazon Web Services KMS key that is associated with this repository association.</p></li>
+    /// <li> <p>The encryption option for this repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p> </li>
+    /// <li> <p>The ID of the Amazon Web Services KMS key that is associated with this repository association.</p> </li>
     /// </ul>
     pub fn kms_key_details(mut self, input: crate::types::KmsKeyDetails) -> Self {
         self.kms_key_details = ::std::option::Option::Some(input);
@@ -151,10 +135,8 @@ impl AssociateRepositoryInputBuilder {
     }
     /// <p>A <code>KMSKeyDetails</code> object that contains:</p>
     /// <ul>
-    /// <li>
-    /// <p>The encryption option for this repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p></li>
-    /// <li>
-    /// <p>The ID of the Amazon Web Services KMS key that is associated with this repository association.</p></li>
+    /// <li> <p>The encryption option for this repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p> </li>
+    /// <li> <p>The ID of the Amazon Web Services KMS key that is associated with this repository association.</p> </li>
     /// </ul>
     pub fn set_kms_key_details(mut self, input: ::std::option::Option<crate::types::KmsKeyDetails>) -> Self {
         self.kms_key_details = input;
@@ -162,10 +144,8 @@ impl AssociateRepositoryInputBuilder {
     }
     /// <p>A <code>KMSKeyDetails</code> object that contains:</p>
     /// <ul>
-    /// <li>
-    /// <p>The encryption option for this repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p></li>
-    /// <li>
-    /// <p>The ID of the Amazon Web Services KMS key that is associated with this repository association.</p></li>
+    /// <li> <p>The encryption option for this repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p> </li>
+    /// <li> <p>The ID of the Amazon Web Services KMS key that is associated with this repository association.</p> </li>
     /// </ul>
     pub fn get_kms_key_details(&self) -> &::std::option::Option<crate::types::KmsKeyDetails> {
         &self.kms_key_details

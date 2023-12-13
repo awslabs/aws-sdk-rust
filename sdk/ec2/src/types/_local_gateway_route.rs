@@ -24,7 +24,7 @@ pub struct LocalGatewayRoute {
     pub coip_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the network interface.</p>
     pub network_interface_id: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the prefix list.</p>
+    /// <p> The ID of the prefix list. </p>
     pub destination_prefix_list_id: ::std::option::Option<::std::string::String>,
 }
 impl LocalGatewayRoute {
@@ -68,7 +68,7 @@ impl LocalGatewayRoute {
     pub fn network_interface_id(&self) -> ::std::option::Option<&str> {
         self.network_interface_id.as_deref()
     }
-    /// <p>The ID of the prefix list.</p>
+    /// <p> The ID of the prefix list. </p>
     pub fn destination_prefix_list_id(&self) -> ::std::option::Option<&str> {
         self.destination_prefix_list_id.as_deref()
     }
@@ -237,17 +237,17 @@ impl LocalGatewayRouteBuilder {
     pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.network_interface_id
     }
-    /// <p>The ID of the prefix list.</p>
+    /// <p> The ID of the prefix list. </p>
     pub fn destination_prefix_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_prefix_list_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the prefix list.</p>
+    /// <p> The ID of the prefix list. </p>
     pub fn set_destination_prefix_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_prefix_list_id = input;
         self
     }
-    /// <p>The ID of the prefix list.</p>
+    /// <p> The ID of the prefix list. </p>
     pub fn get_destination_prefix_list_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination_prefix_list_id
     }

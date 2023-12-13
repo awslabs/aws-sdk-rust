@@ -22,7 +22,7 @@ impl DeleteAccountAssignmentInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteAccountAssignment`.
 ///
-/// <p>Deletes a principal's access from a specified Amazon Web Services account using a specified permission set.</p><note>
+/// <p>Deletes a principal's access from a specified Amazon Web Services account using a specified permission set.</p> <note>
 /// <p>After a successful response, call <code>DescribeAccountAssignmentDeletionStatus</code> to describe the status of an assignment deletion request.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

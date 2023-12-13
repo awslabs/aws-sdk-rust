@@ -7,7 +7,7 @@ pub struct PublishOutput {
     /// <p>Unique identifier assigned to the published message.</p>
     /// <p>Length Constraint: Maximum 100 characters</p>
     pub message_id: ::std::option::Option<::std::string::String>,
-    /// <p>This response element applies only to FIFO (first-in-first-out) topics.</p>
+    /// <p>This response element applies only to FIFO (first-in-first-out) topics. </p>
     /// <p>The sequence number is a large, non-consecutive number that Amazon SNS assigns to each message. The length of <code>SequenceNumber</code> is 128 bits. <code>SequenceNumber</code> continues to increase for each <code>MessageGroupId</code>.</p>
     pub sequence_number: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -18,7 +18,7 @@ impl PublishOutput {
     pub fn message_id(&self) -> ::std::option::Option<&str> {
         self.message_id.as_deref()
     }
-    /// <p>This response element applies only to FIFO (first-in-first-out) topics.</p>
+    /// <p>This response element applies only to FIFO (first-in-first-out) topics. </p>
     /// <p>The sequence number is a large, non-consecutive number that Amazon SNS assigns to each message. The length of <code>SequenceNumber</code> is 128 bits. <code>SequenceNumber</code> continues to increase for each <code>MessageGroupId</code>.</p>
     pub fn sequence_number(&self) -> ::std::option::Option<&str> {
         self.sequence_number.as_deref()
@@ -62,19 +62,19 @@ impl PublishOutputBuilder {
     pub fn get_message_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.message_id
     }
-    /// <p>This response element applies only to FIFO (first-in-first-out) topics.</p>
+    /// <p>This response element applies only to FIFO (first-in-first-out) topics. </p>
     /// <p>The sequence number is a large, non-consecutive number that Amazon SNS assigns to each message. The length of <code>SequenceNumber</code> is 128 bits. <code>SequenceNumber</code> continues to increase for each <code>MessageGroupId</code>.</p>
     pub fn sequence_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sequence_number = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>This response element applies only to FIFO (first-in-first-out) topics.</p>
+    /// <p>This response element applies only to FIFO (first-in-first-out) topics. </p>
     /// <p>The sequence number is a large, non-consecutive number that Amazon SNS assigns to each message. The length of <code>SequenceNumber</code> is 128 bits. <code>SequenceNumber</code> continues to increase for each <code>MessageGroupId</code>.</p>
     pub fn set_sequence_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sequence_number = input;
         self
     }
-    /// <p>This response element applies only to FIFO (first-in-first-out) topics.</p>
+    /// <p>This response element applies only to FIFO (first-in-first-out) topics. </p>
     /// <p>The sequence number is a large, non-consecutive number that Amazon SNS assigns to each message. The length of <code>SequenceNumber</code> is 128 bits. <code>SequenceNumber</code> continues to increase for each <code>MessageGroupId</code>.</p>
     pub fn get_sequence_number(&self) -> &::std::option::Option<::std::string::String> {
         &self.sequence_number

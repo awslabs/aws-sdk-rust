@@ -6,12 +6,9 @@
 pub struct AwsSsmComplianceSummary {
     /// <p>The current patch compliance status. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>COMPLIANT</code></p></li>
-    /// <li>
-    /// <p><code>NON_COMPLIANT</code></p></li>
-    /// <li>
-    /// <p><code>UNSPECIFIED_DATA</code></p></li>
+    /// <li> <p> <code>COMPLIANT</code> </p> </li>
+    /// <li> <p> <code>NON_COMPLIANT</code> </p> </li>
+    /// <li> <p> <code>UNSPECIFIED_DATA</code> </p> </li>
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>For the patches that are compliant, the number that have a severity of <code>CRITICAL</code>.</p>
@@ -36,24 +33,18 @@ pub struct AwsSsmComplianceSummary {
     pub non_compliant_high_count: ::std::option::Option<i32>,
     /// <p>For the patches that are compliant, the number that have a severity of <code>LOW</code>.</p>
     pub compliant_low_count: ::std::option::Option<i32>,
-    /// <p>The type of resource for which the compliance was determined. For <code>AwsSsmPatchCompliance</code>, <code>ComplianceType</code> is <code>Patch</code>.</p>
+    /// <p>The type of resource for which the compliance was determined. For <code>AwsSsmPatchCompliance</code>, <code>ComplianceType</code> is <code>Patch</code>. </p>
     pub compliance_type: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the patch baseline. The patch baseline lists the patches that are approved for installation.</p>
     pub patch_baseline_id: ::std::option::Option<::std::string::String>,
     /// <p>The highest severity for the patches. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CRITICAL</code></p></li>
-    /// <li>
-    /// <p><code>HIGH</code></p></li>
-    /// <li>
-    /// <p><code>MEDIUM</code></p></li>
-    /// <li>
-    /// <p><code>LOW</code></p></li>
-    /// <li>
-    /// <p><code>INFORMATIONAL</code></p></li>
-    /// <li>
-    /// <p><code>UNSPECIFIED</code></p></li>
+    /// <li> <p> <code>CRITICAL</code> </p> </li>
+    /// <li> <p> <code>HIGH</code> </p> </li>
+    /// <li> <p> <code>MEDIUM</code> </p> </li>
+    /// <li> <p> <code>LOW</code> </p> </li>
+    /// <li> <p> <code>INFORMATIONAL</code> </p> </li>
+    /// <li> <p> <code>UNSPECIFIED</code> </p> </li>
     /// </ul>
     pub overall_severity: ::std::option::Option<::std::string::String>,
     /// <p>For the patches that are noncompliant, the number that have a severity of <code>MEDIUM</code>.</p>
@@ -66,12 +57,9 @@ pub struct AwsSsmComplianceSummary {
 impl AwsSsmComplianceSummary {
     /// <p>The current patch compliance status. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>COMPLIANT</code></p></li>
-    /// <li>
-    /// <p><code>NON_COMPLIANT</code></p></li>
-    /// <li>
-    /// <p><code>UNSPECIFIED_DATA</code></p></li>
+    /// <li> <p> <code>COMPLIANT</code> </p> </li>
+    /// <li> <p> <code>NON_COMPLIANT</code> </p> </li>
+    /// <li> <p> <code>UNSPECIFIED_DATA</code> </p> </li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
@@ -120,7 +108,7 @@ impl AwsSsmComplianceSummary {
     pub fn compliant_low_count(&self) -> ::std::option::Option<i32> {
         self.compliant_low_count
     }
-    /// <p>The type of resource for which the compliance was determined. For <code>AwsSsmPatchCompliance</code>, <code>ComplianceType</code> is <code>Patch</code>.</p>
+    /// <p>The type of resource for which the compliance was determined. For <code>AwsSsmPatchCompliance</code>, <code>ComplianceType</code> is <code>Patch</code>. </p>
     pub fn compliance_type(&self) -> ::std::option::Option<&str> {
         self.compliance_type.as_deref()
     }
@@ -130,18 +118,12 @@ impl AwsSsmComplianceSummary {
     }
     /// <p>The highest severity for the patches. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CRITICAL</code></p></li>
-    /// <li>
-    /// <p><code>HIGH</code></p></li>
-    /// <li>
-    /// <p><code>MEDIUM</code></p></li>
-    /// <li>
-    /// <p><code>LOW</code></p></li>
-    /// <li>
-    /// <p><code>INFORMATIONAL</code></p></li>
-    /// <li>
-    /// <p><code>UNSPECIFIED</code></p></li>
+    /// <li> <p> <code>CRITICAL</code> </p> </li>
+    /// <li> <p> <code>HIGH</code> </p> </li>
+    /// <li> <p> <code>MEDIUM</code> </p> </li>
+    /// <li> <p> <code>LOW</code> </p> </li>
+    /// <li> <p> <code>INFORMATIONAL</code> </p> </li>
+    /// <li> <p> <code>UNSPECIFIED</code> </p> </li>
     /// </ul>
     pub fn overall_severity(&self) -> ::std::option::Option<&str> {
         self.overall_severity.as_deref()
@@ -192,12 +174,9 @@ pub struct AwsSsmComplianceSummaryBuilder {
 impl AwsSsmComplianceSummaryBuilder {
     /// <p>The current patch compliance status. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>COMPLIANT</code></p></li>
-    /// <li>
-    /// <p><code>NON_COMPLIANT</code></p></li>
-    /// <li>
-    /// <p><code>UNSPECIFIED_DATA</code></p></li>
+    /// <li> <p> <code>COMPLIANT</code> </p> </li>
+    /// <li> <p> <code>NON_COMPLIANT</code> </p> </li>
+    /// <li> <p> <code>UNSPECIFIED_DATA</code> </p> </li>
     /// </ul>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -205,12 +184,9 @@ impl AwsSsmComplianceSummaryBuilder {
     }
     /// <p>The current patch compliance status. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>COMPLIANT</code></p></li>
-    /// <li>
-    /// <p><code>NON_COMPLIANT</code></p></li>
-    /// <li>
-    /// <p><code>UNSPECIFIED_DATA</code></p></li>
+    /// <li> <p> <code>COMPLIANT</code> </p> </li>
+    /// <li> <p> <code>NON_COMPLIANT</code> </p> </li>
+    /// <li> <p> <code>UNSPECIFIED_DATA</code> </p> </li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
@@ -218,12 +194,9 @@ impl AwsSsmComplianceSummaryBuilder {
     }
     /// <p>The current patch compliance status. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>COMPLIANT</code></p></li>
-    /// <li>
-    /// <p><code>NON_COMPLIANT</code></p></li>
-    /// <li>
-    /// <p><code>UNSPECIFIED_DATA</code></p></li>
+    /// <li> <p> <code>COMPLIANT</code> </p> </li>
+    /// <li> <p> <code>NON_COMPLIANT</code> </p> </li>
+    /// <li> <p> <code>UNSPECIFIED_DATA</code> </p> </li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status
@@ -382,17 +355,17 @@ impl AwsSsmComplianceSummaryBuilder {
     pub fn get_compliant_low_count(&self) -> &::std::option::Option<i32> {
         &self.compliant_low_count
     }
-    /// <p>The type of resource for which the compliance was determined. For <code>AwsSsmPatchCompliance</code>, <code>ComplianceType</code> is <code>Patch</code>.</p>
+    /// <p>The type of resource for which the compliance was determined. For <code>AwsSsmPatchCompliance</code>, <code>ComplianceType</code> is <code>Patch</code>. </p>
     pub fn compliance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.compliance_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The type of resource for which the compliance was determined. For <code>AwsSsmPatchCompliance</code>, <code>ComplianceType</code> is <code>Patch</code>.</p>
+    /// <p>The type of resource for which the compliance was determined. For <code>AwsSsmPatchCompliance</code>, <code>ComplianceType</code> is <code>Patch</code>. </p>
     pub fn set_compliance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.compliance_type = input;
         self
     }
-    /// <p>The type of resource for which the compliance was determined. For <code>AwsSsmPatchCompliance</code>, <code>ComplianceType</code> is <code>Patch</code>.</p>
+    /// <p>The type of resource for which the compliance was determined. For <code>AwsSsmPatchCompliance</code>, <code>ComplianceType</code> is <code>Patch</code>. </p>
     pub fn get_compliance_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.compliance_type
     }
@@ -412,18 +385,12 @@ impl AwsSsmComplianceSummaryBuilder {
     }
     /// <p>The highest severity for the patches. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CRITICAL</code></p></li>
-    /// <li>
-    /// <p><code>HIGH</code></p></li>
-    /// <li>
-    /// <p><code>MEDIUM</code></p></li>
-    /// <li>
-    /// <p><code>LOW</code></p></li>
-    /// <li>
-    /// <p><code>INFORMATIONAL</code></p></li>
-    /// <li>
-    /// <p><code>UNSPECIFIED</code></p></li>
+    /// <li> <p> <code>CRITICAL</code> </p> </li>
+    /// <li> <p> <code>HIGH</code> </p> </li>
+    /// <li> <p> <code>MEDIUM</code> </p> </li>
+    /// <li> <p> <code>LOW</code> </p> </li>
+    /// <li> <p> <code>INFORMATIONAL</code> </p> </li>
+    /// <li> <p> <code>UNSPECIFIED</code> </p> </li>
     /// </ul>
     pub fn overall_severity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.overall_severity = ::std::option::Option::Some(input.into());
@@ -431,18 +398,12 @@ impl AwsSsmComplianceSummaryBuilder {
     }
     /// <p>The highest severity for the patches. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CRITICAL</code></p></li>
-    /// <li>
-    /// <p><code>HIGH</code></p></li>
-    /// <li>
-    /// <p><code>MEDIUM</code></p></li>
-    /// <li>
-    /// <p><code>LOW</code></p></li>
-    /// <li>
-    /// <p><code>INFORMATIONAL</code></p></li>
-    /// <li>
-    /// <p><code>UNSPECIFIED</code></p></li>
+    /// <li> <p> <code>CRITICAL</code> </p> </li>
+    /// <li> <p> <code>HIGH</code> </p> </li>
+    /// <li> <p> <code>MEDIUM</code> </p> </li>
+    /// <li> <p> <code>LOW</code> </p> </li>
+    /// <li> <p> <code>INFORMATIONAL</code> </p> </li>
+    /// <li> <p> <code>UNSPECIFIED</code> </p> </li>
     /// </ul>
     pub fn set_overall_severity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.overall_severity = input;
@@ -450,18 +411,12 @@ impl AwsSsmComplianceSummaryBuilder {
     }
     /// <p>The highest severity for the patches. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CRITICAL</code></p></li>
-    /// <li>
-    /// <p><code>HIGH</code></p></li>
-    /// <li>
-    /// <p><code>MEDIUM</code></p></li>
-    /// <li>
-    /// <p><code>LOW</code></p></li>
-    /// <li>
-    /// <p><code>INFORMATIONAL</code></p></li>
-    /// <li>
-    /// <p><code>UNSPECIFIED</code></p></li>
+    /// <li> <p> <code>CRITICAL</code> </p> </li>
+    /// <li> <p> <code>HIGH</code> </p> </li>
+    /// <li> <p> <code>MEDIUM</code> </p> </li>
+    /// <li> <p> <code>LOW</code> </p> </li>
+    /// <li> <p> <code>INFORMATIONAL</code> </p> </li>
+    /// <li> <p> <code>UNSPECIFIED</code> </p> </li>
     /// </ul>
     pub fn get_overall_severity(&self) -> &::std::option::Option<::std::string::String> {
         &self.overall_severity

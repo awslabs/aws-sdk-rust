@@ -3,39 +3,39 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFirewallPolicyInput {
-    /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the firewall policy. The token marks the state of the policy resource at the time of the request.</p>
-    /// <p>To make changes to the policy, you provide the token in your request. Network Firewall uses the token to ensure that the policy hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall policy again to get a current copy of it with current token. Reapply your changes as needed, then try the operation again using the new token.</p>
+    /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the firewall policy. The token marks the state of the policy resource at the time of the request. </p>
+    /// <p>To make changes to the policy, you provide the token in your request. Network Firewall uses the token to ensure that the policy hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall policy again to get a current copy of it with current token. Reapply your changes as needed, then try the operation again using the new token. </p>
     pub update_token: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub firewall_policy_arn: ::std::option::Option<::std::string::String>,
     /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub firewall_policy_name: ::std::option::Option<::std::string::String>,
     /// <p>The updated firewall policy to use for the firewall. You can't add or remove a <code>TLSInspectionConfiguration</code> after you create a firewall policy. However, you can replace an existing TLS inspection configuration with another <code>TLSInspectionConfiguration</code>.</p>
     pub firewall_policy: ::std::option::Option<crate::types::FirewallPolicy>,
     /// <p>A description of the firewall policy.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request.</p>
-    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid.</p>
-    /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources.</p>
+    /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
+    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
+    /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>A complex type that contains settings for encryption of your firewall policy resources.</p>
     pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
 }
 impl UpdateFirewallPolicyInput {
-    /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the firewall policy. The token marks the state of the policy resource at the time of the request.</p>
-    /// <p>To make changes to the policy, you provide the token in your request. Network Firewall uses the token to ensure that the policy hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall policy again to get a current copy of it with current token. Reapply your changes as needed, then try the operation again using the new token.</p>
+    /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the firewall policy. The token marks the state of the policy resource at the time of the request. </p>
+    /// <p>To make changes to the policy, you provide the token in your request. Network Firewall uses the token to ensure that the policy hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall policy again to get a current copy of it with current token. Reapply your changes as needed, then try the operation again using the new token. </p>
     pub fn update_token(&self) -> ::std::option::Option<&str> {
         self.update_token.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub fn firewall_policy_arn(&self) -> ::std::option::Option<&str> {
         self.firewall_policy_arn.as_deref()
     }
     /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub fn firewall_policy_name(&self) -> ::std::option::Option<&str> {
         self.firewall_policy_name.as_deref()
     }
@@ -47,9 +47,9 @@ impl UpdateFirewallPolicyInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request.</p>
-    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid.</p>
-    /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources.</p>
+    /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
+    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
+    /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
@@ -78,55 +78,55 @@ pub struct UpdateFirewallPolicyInputBuilder {
     pub(crate) encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
 }
 impl UpdateFirewallPolicyInputBuilder {
-    /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the firewall policy. The token marks the state of the policy resource at the time of the request.</p>
-    /// <p>To make changes to the policy, you provide the token in your request. Network Firewall uses the token to ensure that the policy hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall policy again to get a current copy of it with current token. Reapply your changes as needed, then try the operation again using the new token.</p>
+    /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the firewall policy. The token marks the state of the policy resource at the time of the request. </p>
+    /// <p>To make changes to the policy, you provide the token in your request. Network Firewall uses the token to ensure that the policy hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall policy again to get a current copy of it with current token. Reapply your changes as needed, then try the operation again using the new token. </p>
     /// This field is required.
     pub fn update_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.update_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the firewall policy. The token marks the state of the policy resource at the time of the request.</p>
-    /// <p>To make changes to the policy, you provide the token in your request. Network Firewall uses the token to ensure that the policy hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall policy again to get a current copy of it with current token. Reapply your changes as needed, then try the operation again using the new token.</p>
+    /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the firewall policy. The token marks the state of the policy resource at the time of the request. </p>
+    /// <p>To make changes to the policy, you provide the token in your request. Network Firewall uses the token to ensure that the policy hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall policy again to get a current copy of it with current token. Reapply your changes as needed, then try the operation again using the new token. </p>
     pub fn set_update_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.update_token = input;
         self
     }
-    /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the firewall policy. The token marks the state of the policy resource at the time of the request.</p>
-    /// <p>To make changes to the policy, you provide the token in your request. Network Firewall uses the token to ensure that the policy hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall policy again to get a current copy of it with current token. Reapply your changes as needed, then try the operation again using the new token.</p>
+    /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the firewall policy. The token marks the state of the policy resource at the time of the request. </p>
+    /// <p>To make changes to the policy, you provide the token in your request. Network Firewall uses the token to ensure that the policy hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall policy again to get a current copy of it with current token. Reapply your changes as needed, then try the operation again using the new token. </p>
     pub fn get_update_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.update_token
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub fn firewall_policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_policy_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub fn set_firewall_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_policy_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub fn get_firewall_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.firewall_policy_arn
     }
     /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub fn firewall_policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_policy_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub fn set_firewall_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_policy_name = input;
         self
     }
     /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub fn get_firewall_policy_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.firewall_policy_name
     }
@@ -159,23 +159,23 @@ impl UpdateFirewallPolicyInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request.</p>
-    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid.</p>
-    /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources.</p>
+    /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
+    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
+    /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request.</p>
-    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid.</p>
-    /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources.</p>
+    /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
+    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
+    /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
     }
-    /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request.</p>
-    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid.</p>
-    /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources.</p>
+    /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
+    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
+    /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }

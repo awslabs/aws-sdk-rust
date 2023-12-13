@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeConnectorEntityOutput {
-    /// <p>Describes the fields for that connector entity. For example, for an <i>account</i> entity, the fields would be <i>account name</i>, <i>account ID</i>, and so on.</p>
+    /// <p> Describes the fields for that connector entity. For example, for an <i>account</i> entity, the fields would be <i>account name</i>, <i>account ID</i>, and so on. </p>
     pub connector_entity_fields: ::std::vec::Vec<crate::types::ConnectorEntityField>,
     _request_id: Option<String>,
 }
 impl DescribeConnectorEntityOutput {
-    /// <p>Describes the fields for that connector entity. For example, for an <i>account</i> entity, the fields would be <i>account name</i>, <i>account ID</i>, and so on.</p>
+    /// <p> Describes the fields for that connector entity. For example, for an <i>account</i> entity, the fields would be <i>account name</i>, <i>account ID</i>, and so on. </p>
     pub fn connector_entity_fields(&self) -> &[crate::types::ConnectorEntityField] {
         use std::ops::Deref;
         self.connector_entity_fields.deref()
@@ -38,19 +38,19 @@ impl DescribeConnectorEntityOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_connector_entity_fields`](Self::set_connector_entity_fields).
     ///
-    /// <p>Describes the fields for that connector entity. For example, for an <i>account</i> entity, the fields would be <i>account name</i>, <i>account ID</i>, and so on.</p>
+    /// <p> Describes the fields for that connector entity. For example, for an <i>account</i> entity, the fields would be <i>account name</i>, <i>account ID</i>, and so on. </p>
     pub fn connector_entity_fields(mut self, input: crate::types::ConnectorEntityField) -> Self {
         let mut v = self.connector_entity_fields.unwrap_or_default();
         v.push(input);
         self.connector_entity_fields = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Describes the fields for that connector entity. For example, for an <i>account</i> entity, the fields would be <i>account name</i>, <i>account ID</i>, and so on.</p>
+    /// <p> Describes the fields for that connector entity. For example, for an <i>account</i> entity, the fields would be <i>account name</i>, <i>account ID</i>, and so on. </p>
     pub fn set_connector_entity_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConnectorEntityField>>) -> Self {
         self.connector_entity_fields = input;
         self
     }
-    /// <p>Describes the fields for that connector entity. For example, for an <i>account</i> entity, the fields would be <i>account name</i>, <i>account ID</i>, and so on.</p>
+    /// <p> Describes the fields for that connector entity. For example, for an <i>account</i> entity, the fields would be <i>account name</i>, <i>account ID</i>, and so on. </p>
     pub fn get_connector_entity_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectorEntityField>> {
         &self.connector_entity_fields
     }

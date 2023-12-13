@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRoomSkillParameterInput {
-    /// <p>The ARN of the room from which to get the room skill parameter details.</p>
+    /// <p>The ARN of the room from which to get the room skill parameter details. </p>
     pub room_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the skill from which to get the room skill parameter details. Required.</p>
     pub skill_id: ::std::option::Option<::std::string::String>,
@@ -11,7 +11,7 @@ pub struct GetRoomSkillParameterInput {
     pub parameter_key: ::std::option::Option<::std::string::String>,
 }
 impl GetRoomSkillParameterInput {
-    /// <p>The ARN of the room from which to get the room skill parameter details.</p>
+    /// <p>The ARN of the room from which to get the room skill parameter details. </p>
     pub fn room_arn(&self) -> ::std::option::Option<&str> {
         self.room_arn.as_deref()
     }
@@ -40,17 +40,17 @@ pub struct GetRoomSkillParameterInputBuilder {
     pub(crate) parameter_key: ::std::option::Option<::std::string::String>,
 }
 impl GetRoomSkillParameterInputBuilder {
-    /// <p>The ARN of the room from which to get the room skill parameter details.</p>
+    /// <p>The ARN of the room from which to get the room skill parameter details. </p>
     pub fn room_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.room_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the room from which to get the room skill parameter details.</p>
+    /// <p>The ARN of the room from which to get the room skill parameter details. </p>
     pub fn set_room_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.room_arn = input;
         self
     }
-    /// <p>The ARN of the room from which to get the room skill parameter details.</p>
+    /// <p>The ARN of the room from which to get the room skill parameter details. </p>
     pub fn get_room_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.room_arn
     }

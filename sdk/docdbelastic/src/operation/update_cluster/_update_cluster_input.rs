@@ -16,15 +16,15 @@ pub struct UpdateClusterInput {
     /// <p>The number of shards to create in the Elastic DocumentDB cluster.</p>
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The password for the Elastic DocumentDB cluster administrator. This password can contain any printable ASCII character except forward slash (/), double quote ("), or the "at" symbol (@).</p>
-    /// <p><i>Constraints</i>: Must contain from 8 to 100 characters.</p>
+    /// <p> <i>Constraints</i>: Must contain from 8 to 100 characters.</p>
     pub admin_user_password: ::std::option::Option<::std::string::String>,
     /// <p>The client token for the Elastic DocumentDB cluster.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
-    /// <p><i>Format</i>: <code>ddd:hh24:mi-ddd:hh24:mi</code></p>
-    /// <p><i>Default</i>: a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>
-    /// <p><i>Valid days</i>: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
-    /// <p><i>Constraints</i>: Minimum 30-minute window.</p>
+    /// <p> <i>Format</i>: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
+    /// <p> <i>Default</i>: a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>
+    /// <p> <i>Valid days</i>: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
+    /// <p> <i>Constraints</i>: Minimum 30-minute window.</p>
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
 }
 impl UpdateClusterInput {
@@ -57,7 +57,7 @@ impl UpdateClusterInput {
         self.subnet_ids.as_deref().unwrap_or_default()
     }
     /// <p>The password for the Elastic DocumentDB cluster administrator. This password can contain any printable ASCII character except forward slash (/), double quote ("), or the "at" symbol (@).</p>
-    /// <p><i>Constraints</i>: Must contain from 8 to 100 characters.</p>
+    /// <p> <i>Constraints</i>: Must contain from 8 to 100 characters.</p>
     pub fn admin_user_password(&self) -> ::std::option::Option<&str> {
         self.admin_user_password.as_deref()
     }
@@ -66,10 +66,10 @@ impl UpdateClusterInput {
         self.client_token.as_deref()
     }
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
-    /// <p><i>Format</i>: <code>ddd:hh24:mi-ddd:hh24:mi</code></p>
-    /// <p><i>Default</i>: a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>
-    /// <p><i>Valid days</i>: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
-    /// <p><i>Constraints</i>: Minimum 30-minute window.</p>
+    /// <p> <i>Format</i>: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
+    /// <p> <i>Default</i>: a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>
+    /// <p> <i>Valid days</i>: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
+    /// <p> <i>Constraints</i>: Minimum 30-minute window.</p>
     pub fn preferred_maintenance_window(&self) -> ::std::option::Option<&str> {
         self.preferred_maintenance_window.as_deref()
     }
@@ -209,19 +209,19 @@ impl UpdateClusterInputBuilder {
         &self.subnet_ids
     }
     /// <p>The password for the Elastic DocumentDB cluster administrator. This password can contain any printable ASCII character except forward slash (/), double quote ("), or the "at" symbol (@).</p>
-    /// <p><i>Constraints</i>: Must contain from 8 to 100 characters.</p>
+    /// <p> <i>Constraints</i>: Must contain from 8 to 100 characters.</p>
     pub fn admin_user_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.admin_user_password = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The password for the Elastic DocumentDB cluster administrator. This password can contain any printable ASCII character except forward slash (/), double quote ("), or the "at" symbol (@).</p>
-    /// <p><i>Constraints</i>: Must contain from 8 to 100 characters.</p>
+    /// <p> <i>Constraints</i>: Must contain from 8 to 100 characters.</p>
     pub fn set_admin_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.admin_user_password = input;
         self
     }
     /// <p>The password for the Elastic DocumentDB cluster administrator. This password can contain any printable ASCII character except forward slash (/), double quote ("), or the "at" symbol (@).</p>
-    /// <p><i>Constraints</i>: Must contain from 8 to 100 characters.</p>
+    /// <p> <i>Constraints</i>: Must contain from 8 to 100 characters.</p>
     pub fn get_admin_user_password(&self) -> &::std::option::Option<::std::string::String> {
         &self.admin_user_password
     }
@@ -240,28 +240,28 @@ impl UpdateClusterInputBuilder {
         &self.client_token
     }
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
-    /// <p><i>Format</i>: <code>ddd:hh24:mi-ddd:hh24:mi</code></p>
-    /// <p><i>Default</i>: a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>
-    /// <p><i>Valid days</i>: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
-    /// <p><i>Constraints</i>: Minimum 30-minute window.</p>
+    /// <p> <i>Format</i>: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
+    /// <p> <i>Default</i>: a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>
+    /// <p> <i>Valid days</i>: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
+    /// <p> <i>Constraints</i>: Minimum 30-minute window.</p>
     pub fn preferred_maintenance_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_maintenance_window = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
-    /// <p><i>Format</i>: <code>ddd:hh24:mi-ddd:hh24:mi</code></p>
-    /// <p><i>Default</i>: a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>
-    /// <p><i>Valid days</i>: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
-    /// <p><i>Constraints</i>: Minimum 30-minute window.</p>
+    /// <p> <i>Format</i>: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
+    /// <p> <i>Default</i>: a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>
+    /// <p> <i>Valid days</i>: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
+    /// <p> <i>Constraints</i>: Minimum 30-minute window.</p>
     pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_maintenance_window = input;
         self
     }
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
-    /// <p><i>Format</i>: <code>ddd:hh24:mi-ddd:hh24:mi</code></p>
-    /// <p><i>Default</i>: a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>
-    /// <p><i>Valid days</i>: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
-    /// <p><i>Constraints</i>: Minimum 30-minute window.</p>
+    /// <p> <i>Format</i>: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
+    /// <p> <i>Default</i>: a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>
+    /// <p> <i>Valid days</i>: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
+    /// <p> <i>Constraints</i>: Minimum 30-minute window.</p>
     pub fn get_preferred_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
         &self.preferred_maintenance_window
     }

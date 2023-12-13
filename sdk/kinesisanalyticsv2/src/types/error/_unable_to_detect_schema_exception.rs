@@ -8,7 +8,7 @@ pub struct UnableToDetectSchemaException {
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>Raw stream data that was sampled to infer the schema.</p>
     pub raw_input_records: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Stream data that was modified by the processor specified in the <code>InputProcessingConfiguration</code> parameter.</p>
+    /// <p>Stream data that was modified by the processor specified in the <code>InputProcessingConfiguration</code> parameter. </p>
     pub processed_input_records: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
@@ -19,7 +19,7 @@ impl UnableToDetectSchemaException {
     pub fn raw_input_records(&self) -> &[::std::string::String] {
         self.raw_input_records.as_deref().unwrap_or_default()
     }
-    /// <p>Stream data that was modified by the processor specified in the <code>InputProcessingConfiguration</code> parameter.</p>
+    /// <p>Stream data that was modified by the processor specified in the <code>InputProcessingConfiguration</code> parameter. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.processed_input_records.is_none()`.
     pub fn processed_input_records(&self) -> &[::std::string::String] {
@@ -110,19 +110,19 @@ impl UnableToDetectSchemaExceptionBuilder {
     ///
     /// To override the contents of this collection use [`set_processed_input_records`](Self::set_processed_input_records).
     ///
-    /// <p>Stream data that was modified by the processor specified in the <code>InputProcessingConfiguration</code> parameter.</p>
+    /// <p>Stream data that was modified by the processor specified in the <code>InputProcessingConfiguration</code> parameter. </p>
     pub fn processed_input_records(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.processed_input_records.unwrap_or_default();
         v.push(input.into());
         self.processed_input_records = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Stream data that was modified by the processor specified in the <code>InputProcessingConfiguration</code> parameter.</p>
+    /// <p>Stream data that was modified by the processor specified in the <code>InputProcessingConfiguration</code> parameter. </p>
     pub fn set_processed_input_records(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.processed_input_records = input;
         self
     }
-    /// <p>Stream data that was modified by the processor specified in the <code>InputProcessingConfiguration</code> parameter.</p>
+    /// <p>Stream data that was modified by the processor specified in the <code>InputProcessingConfiguration</code> parameter. </p>
     pub fn get_processed_input_records(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.processed_input_records
     }

@@ -5,7 +5,7 @@
 pub struct PostCommentForPullRequestOutput {
     /// <p>The name of the repository where you posted a comment on a pull request.</p>
     pub repository_name: ::std::option::Option<::std::string::String>,
-    /// <p>The system-generated ID of the pull request.</p>
+    /// <p>The system-generated ID of the pull request. </p>
     pub pull_request_id: ::std::option::Option<::std::string::String>,
     /// <p>The full commit ID of the commit in the source branch used to create the pull request, or in the case of an updated pull request, the full commit ID of the commit used to update the pull request.</p>
     pub before_commit_id: ::std::option::Option<::std::string::String>,
@@ -26,7 +26,7 @@ impl PostCommentForPullRequestOutput {
     pub fn repository_name(&self) -> ::std::option::Option<&str> {
         self.repository_name.as_deref()
     }
-    /// <p>The system-generated ID of the pull request.</p>
+    /// <p>The system-generated ID of the pull request. </p>
     pub fn pull_request_id(&self) -> ::std::option::Option<&str> {
         self.pull_request_id.as_deref()
     }
@@ -96,17 +96,17 @@ impl PostCommentForPullRequestOutputBuilder {
     pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.repository_name
     }
-    /// <p>The system-generated ID of the pull request.</p>
+    /// <p>The system-generated ID of the pull request. </p>
     pub fn pull_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pull_request_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The system-generated ID of the pull request.</p>
+    /// <p>The system-generated ID of the pull request. </p>
     pub fn set_pull_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pull_request_id = input;
         self
     }
-    /// <p>The system-generated ID of the pull request.</p>
+    /// <p>The system-generated ID of the pull request. </p>
     pub fn get_pull_request_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.pull_request_id
     }

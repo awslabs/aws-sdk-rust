@@ -6,7 +6,7 @@
 pub struct JobDetails {
     /// <p>The unique system-generated ID of the job.</p>
     pub id: ::std::option::Option<::std::string::String>,
-    /// <p>Represents other information about a job required for a job worker to complete the job.</p>
+    /// <p>Represents other information about a job required for a job worker to complete the job. </p>
     pub data: ::std::option::Option<crate::types::JobData>,
     /// <p>The Amazon Web Services account ID associated with the job.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ impl JobDetails {
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>Represents other information about a job required for a job worker to complete the job.</p>
+    /// <p>Represents other information about a job required for a job worker to complete the job. </p>
     pub fn data(&self) -> ::std::option::Option<&crate::types::JobData> {
         self.data.as_ref()
     }
@@ -55,17 +55,17 @@ impl JobDetailsBuilder {
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
-    /// <p>Represents other information about a job required for a job worker to complete the job.</p>
+    /// <p>Represents other information about a job required for a job worker to complete the job. </p>
     pub fn data(mut self, input: crate::types::JobData) -> Self {
         self.data = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Represents other information about a job required for a job worker to complete the job.</p>
+    /// <p>Represents other information about a job required for a job worker to complete the job. </p>
     pub fn set_data(mut self, input: ::std::option::Option<crate::types::JobData>) -> Self {
         self.data = input;
         self
     }
-    /// <p>Represents other information about a job required for a job worker to complete the job.</p>
+    /// <p>Represents other information about a job required for a job worker to complete the job. </p>
     pub fn get_data(&self) -> &::std::option::Option<crate::types::JobData> {
         &self.data
     }

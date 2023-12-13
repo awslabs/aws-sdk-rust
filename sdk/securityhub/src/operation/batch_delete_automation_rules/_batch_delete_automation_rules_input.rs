@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDeleteAutomationRulesInput {
-    /// <p>A list of Amazon Resource Names (ARNs) for the rules that are to be deleted.</p>
+    /// <p> A list of Amazon Resource Names (ARNs) for the rules that are to be deleted. </p>
     pub automation_rules_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchDeleteAutomationRulesInput {
-    /// <p>A list of Amazon Resource Names (ARNs) for the rules that are to be deleted.</p>
+    /// <p> A list of Amazon Resource Names (ARNs) for the rules that are to be deleted. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.automation_rules_arns.is_none()`.
     pub fn automation_rules_arns(&self) -> &[::std::string::String] {
@@ -32,19 +32,19 @@ impl BatchDeleteAutomationRulesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_automation_rules_arns`](Self::set_automation_rules_arns).
     ///
-    /// <p>A list of Amazon Resource Names (ARNs) for the rules that are to be deleted.</p>
+    /// <p> A list of Amazon Resource Names (ARNs) for the rules that are to be deleted. </p>
     pub fn automation_rules_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.automation_rules_arns.unwrap_or_default();
         v.push(input.into());
         self.automation_rules_arns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of Amazon Resource Names (ARNs) for the rules that are to be deleted.</p>
+    /// <p> A list of Amazon Resource Names (ARNs) for the rules that are to be deleted. </p>
     pub fn set_automation_rules_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.automation_rules_arns = input;
         self
     }
-    /// <p>A list of Amazon Resource Names (ARNs) for the rules that are to be deleted.</p>
+    /// <p> A list of Amazon Resource Names (ARNs) for the rules that are to be deleted. </p>
     pub fn get_automation_rules_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.automation_rules_arns
     }

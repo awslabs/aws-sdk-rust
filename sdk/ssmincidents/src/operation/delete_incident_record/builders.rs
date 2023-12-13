@@ -22,7 +22,7 @@ impl DeleteIncidentRecordInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteIncidentRecord`.
 ///
-/// <p>Delete an incident record from Incident Manager.</p>
+/// <p>Delete an incident record from Incident Manager. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteIncidentRecordFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

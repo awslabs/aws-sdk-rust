@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMobileSdkReleasesOutput {
-    /// <p>The high level information for the available SDK releases. If you specified a <code>Limit</code> in your request, this might not be the full list.</p>
+    /// <p>The high level information for the available SDK releases. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
     pub release_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ReleaseSummary>>,
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     pub next_marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListMobileSdkReleasesOutput {
-    /// <p>The high level information for the available SDK releases. If you specified a <code>Limit</code> in your request, this might not be the full list.</p>
+    /// <p>The high level information for the available SDK releases. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.release_summaries.is_none()`.
     pub fn release_summaries(&self) -> &[crate::types::ReleaseSummary] {
@@ -46,19 +46,19 @@ impl ListMobileSdkReleasesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_release_summaries`](Self::set_release_summaries).
     ///
-    /// <p>The high level information for the available SDK releases. If you specified a <code>Limit</code> in your request, this might not be the full list.</p>
+    /// <p>The high level information for the available SDK releases. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
     pub fn release_summaries(mut self, input: crate::types::ReleaseSummary) -> Self {
         let mut v = self.release_summaries.unwrap_or_default();
         v.push(input);
         self.release_summaries = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The high level information for the available SDK releases. If you specified a <code>Limit</code> in your request, this might not be the full list.</p>
+    /// <p>The high level information for the available SDK releases. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
     pub fn set_release_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReleaseSummary>>) -> Self {
         self.release_summaries = input;
         self
     }
-    /// <p>The high level information for the available SDK releases. If you specified a <code>Limit</code> in your request, this might not be the full list.</p>
+    /// <p>The high level information for the available SDK releases. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
     pub fn get_release_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReleaseSummary>> {
         &self.release_summaries
     }

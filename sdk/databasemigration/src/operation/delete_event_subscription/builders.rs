@@ -22,7 +22,7 @@ impl DeleteEventSubscriptionInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteEventSubscription`.
 ///
-/// <p>Deletes an DMS event subscription.</p>
+/// <p> Deletes an DMS event subscription. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteEventSubscriptionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

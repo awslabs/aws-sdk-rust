@@ -12,10 +12,8 @@ pub struct DescribeStacksInput {
     /// </note>
     /// <p>The name or the unique stack ID that's associated with the stack, which aren't always interchangeable:</p>
     /// <ul>
-    /// <li>
-    /// <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p></li>
-    /// <li>
-    /// <p>Deleted stacks: You must specify the unique stack ID.</p></li>
+    /// <li> <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p> </li>
+    /// <li> <p>Deleted stacks: You must specify the unique stack ID.</p> </li>
     /// </ul>
     /// <p>Default: There is no default value.</p>
     pub stack_name: ::std::option::Option<::std::string::String>,
@@ -31,10 +29,8 @@ impl DescribeStacksInput {
     /// </note>
     /// <p>The name or the unique stack ID that's associated with the stack, which aren't always interchangeable:</p>
     /// <ul>
-    /// <li>
-    /// <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p></li>
-    /// <li>
-    /// <p>Deleted stacks: You must specify the unique stack ID.</p></li>
+    /// <li> <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p> </li>
+    /// <li> <p>Deleted stacks: You must specify the unique stack ID.</p> </li>
     /// </ul>
     /// <p>Default: There is no default value.</p>
     pub fn stack_name(&self) -> ::std::option::Option<&str> {
@@ -68,10 +64,8 @@ impl DescribeStacksInputBuilder {
     /// </note>
     /// <p>The name or the unique stack ID that's associated with the stack, which aren't always interchangeable:</p>
     /// <ul>
-    /// <li>
-    /// <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p></li>
-    /// <li>
-    /// <p>Deleted stacks: You must specify the unique stack ID.</p></li>
+    /// <li> <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p> </li>
+    /// <li> <p>Deleted stacks: You must specify the unique stack ID.</p> </li>
     /// </ul>
     /// <p>Default: There is no default value.</p>
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -86,10 +80,8 @@ impl DescribeStacksInputBuilder {
     /// </note>
     /// <p>The name or the unique stack ID that's associated with the stack, which aren't always interchangeable:</p>
     /// <ul>
-    /// <li>
-    /// <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p></li>
-    /// <li>
-    /// <p>Deleted stacks: You must specify the unique stack ID.</p></li>
+    /// <li> <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p> </li>
+    /// <li> <p>Deleted stacks: You must specify the unique stack ID.</p> </li>
     /// </ul>
     /// <p>Default: There is no default value.</p>
     pub fn set_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -104,10 +96,8 @@ impl DescribeStacksInputBuilder {
     /// </note>
     /// <p>The name or the unique stack ID that's associated with the stack, which aren't always interchangeable:</p>
     /// <ul>
-    /// <li>
-    /// <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p></li>
-    /// <li>
-    /// <p>Deleted stacks: You must specify the unique stack ID.</p></li>
+    /// <li> <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p> </li>
+    /// <li> <p>Deleted stacks: You must specify the unique stack ID.</p> </li>
     /// </ul>
     /// <p>Default: There is no default value.</p>
     pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {

@@ -22,7 +22,7 @@ impl DescribeRouterConfigurationInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeRouterConfiguration`.
 ///
-/// <p>Details about the router.</p>
+/// <p> Details about the router. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeRouterConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

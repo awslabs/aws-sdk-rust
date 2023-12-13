@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchAssociateAnalyticsDataSetOutput {
-    /// <p>Information about associations that are successfully created: <code>DataSetId</code>, <code>TargetAccountId</code>, <code>ResourceShareId</code>, <code>ResourceShareArn</code>.</p>
+    /// <p>Information about associations that are successfully created: <code>DataSetId</code>, <code>TargetAccountId</code>, <code>ResourceShareId</code>, <code>ResourceShareArn</code>. </p>
     pub created: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsDataAssociationResult>>,
     /// <p>A list of errors for datasets that aren't successfully associated with the target account.</p>
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::ErrorResult>>,
     _request_id: Option<String>,
 }
 impl BatchAssociateAnalyticsDataSetOutput {
-    /// <p>Information about associations that are successfully created: <code>DataSetId</code>, <code>TargetAccountId</code>, <code>ResourceShareId</code>, <code>ResourceShareArn</code>.</p>
+    /// <p>Information about associations that are successfully created: <code>DataSetId</code>, <code>TargetAccountId</code>, <code>ResourceShareId</code>, <code>ResourceShareArn</code>. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.created.is_none()`.
     pub fn created(&self) -> &[crate::types::AnalyticsDataAssociationResult] {
@@ -48,19 +48,19 @@ impl BatchAssociateAnalyticsDataSetOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_created`](Self::set_created).
     ///
-    /// <p>Information about associations that are successfully created: <code>DataSetId</code>, <code>TargetAccountId</code>, <code>ResourceShareId</code>, <code>ResourceShareArn</code>.</p>
+    /// <p>Information about associations that are successfully created: <code>DataSetId</code>, <code>TargetAccountId</code>, <code>ResourceShareId</code>, <code>ResourceShareArn</code>. </p>
     pub fn created(mut self, input: crate::types::AnalyticsDataAssociationResult) -> Self {
         let mut v = self.created.unwrap_or_default();
         v.push(input);
         self.created = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Information about associations that are successfully created: <code>DataSetId</code>, <code>TargetAccountId</code>, <code>ResourceShareId</code>, <code>ResourceShareArn</code>.</p>
+    /// <p>Information about associations that are successfully created: <code>DataSetId</code>, <code>TargetAccountId</code>, <code>ResourceShareId</code>, <code>ResourceShareArn</code>. </p>
     pub fn set_created(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsDataAssociationResult>>) -> Self {
         self.created = input;
         self
     }
-    /// <p>Information about associations that are successfully created: <code>DataSetId</code>, <code>TargetAccountId</code>, <code>ResourceShareId</code>, <code>ResourceShareArn</code>.</p>
+    /// <p>Information about associations that are successfully created: <code>DataSetId</code>, <code>TargetAccountId</code>, <code>ResourceShareId</code>, <code>ResourceShareArn</code>. </p>
     pub fn get_created(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsDataAssociationResult>> {
         &self.created
     }

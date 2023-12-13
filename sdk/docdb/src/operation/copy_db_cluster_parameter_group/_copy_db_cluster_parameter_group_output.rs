@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CopyDbClusterParameterGroupOutput {
-    /// <p>Detailed information about a cluster parameter group.</p>
+    /// <p>Detailed information about a cluster parameter group. </p>
     pub db_cluster_parameter_group: ::std::option::Option<crate::types::DbClusterParameterGroup>,
     _request_id: Option<String>,
 }
 impl CopyDbClusterParameterGroupOutput {
-    /// <p>Detailed information about a cluster parameter group.</p>
+    /// <p>Detailed information about a cluster parameter group. </p>
     pub fn db_cluster_parameter_group(&self) -> ::std::option::Option<&crate::types::DbClusterParameterGroup> {
         self.db_cluster_parameter_group.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct CopyDbClusterParameterGroupOutputBuilder {
     _request_id: Option<String>,
 }
 impl CopyDbClusterParameterGroupOutputBuilder {
-    /// <p>Detailed information about a cluster parameter group.</p>
+    /// <p>Detailed information about a cluster parameter group. </p>
     pub fn db_cluster_parameter_group(mut self, input: crate::types::DbClusterParameterGroup) -> Self {
         self.db_cluster_parameter_group = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Detailed information about a cluster parameter group.</p>
+    /// <p>Detailed information about a cluster parameter group. </p>
     pub fn set_db_cluster_parameter_group(mut self, input: ::std::option::Option<crate::types::DbClusterParameterGroup>) -> Self {
         self.db_cluster_parameter_group = input;
         self
     }
-    /// <p>Detailed information about a cluster parameter group.</p>
+    /// <p>Detailed information about a cluster parameter group. </p>
     pub fn get_db_cluster_parameter_group(&self) -> &::std::option::Option<crate::types::DbClusterParameterGroup> {
         &self.db_cluster_parameter_group
     }

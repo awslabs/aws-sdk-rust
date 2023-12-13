@@ -6,9 +6,9 @@
 pub struct VpcEndpoint {
     /// <p>The connection endpoint ID for connecting an Amazon Redshift cluster through the proxy.</p>
     pub vpc_endpoint_id: ::std::option::Option<::std::string::String>,
-    /// <p>The VPC identifier that the endpoint is associated.</p>
+    /// <p>The VPC identifier that the endpoint is associated. </p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
-    /// <p>One or more network interfaces of the endpoint. Also known as an interface endpoint.</p>
+    /// <p>One or more network interfaces of the endpoint. Also known as an interface endpoint. </p>
     pub network_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
 }
 impl VpcEndpoint {
@@ -16,11 +16,11 @@ impl VpcEndpoint {
     pub fn vpc_endpoint_id(&self) -> ::std::option::Option<&str> {
         self.vpc_endpoint_id.as_deref()
     }
-    /// <p>The VPC identifier that the endpoint is associated.</p>
+    /// <p>The VPC identifier that the endpoint is associated. </p>
     pub fn vpc_id(&self) -> ::std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
-    /// <p>One or more network interfaces of the endpoint. Also known as an interface endpoint.</p>
+    /// <p>One or more network interfaces of the endpoint. Also known as an interface endpoint. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_interfaces.is_none()`.
     pub fn network_interfaces(&self) -> &[crate::types::NetworkInterface] {
@@ -57,17 +57,17 @@ impl VpcEndpointBuilder {
     pub fn get_vpc_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_endpoint_id
     }
-    /// <p>The VPC identifier that the endpoint is associated.</p>
+    /// <p>The VPC identifier that the endpoint is associated. </p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The VPC identifier that the endpoint is associated.</p>
+    /// <p>The VPC identifier that the endpoint is associated. </p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
     }
-    /// <p>The VPC identifier that the endpoint is associated.</p>
+    /// <p>The VPC identifier that the endpoint is associated. </p>
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_id
     }
@@ -75,19 +75,19 @@ impl VpcEndpointBuilder {
     ///
     /// To override the contents of this collection use [`set_network_interfaces`](Self::set_network_interfaces).
     ///
-    /// <p>One or more network interfaces of the endpoint. Also known as an interface endpoint.</p>
+    /// <p>One or more network interfaces of the endpoint. Also known as an interface endpoint. </p>
     pub fn network_interfaces(mut self, input: crate::types::NetworkInterface) -> Self {
         let mut v = self.network_interfaces.unwrap_or_default();
         v.push(input);
         self.network_interfaces = ::std::option::Option::Some(v);
         self
     }
-    /// <p>One or more network interfaces of the endpoint. Also known as an interface endpoint.</p>
+    /// <p>One or more network interfaces of the endpoint. Also known as an interface endpoint. </p>
     pub fn set_network_interfaces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>) -> Self {
         self.network_interfaces = input;
         self
     }
-    /// <p>One or more network interfaces of the endpoint. Also known as an interface endpoint.</p>
+    /// <p>One or more network interfaces of the endpoint. Also known as an interface endpoint. </p>
     pub fn get_network_interfaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>> {
         &self.network_interfaces
     }

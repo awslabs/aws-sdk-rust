@@ -9,7 +9,7 @@ pub struct DisassociateFacesInput {
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>Idempotent token used to identify the request to <code>DisassociateFaces</code>. If you use the same token with multiple <code>DisassociateFaces</code> requests, the same response is returned. Use ClientRequestToken to prevent the same request from being processed more than once.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
-    /// <p>An array of face IDs to disassociate from the UserID.</p>
+    /// <p>An array of face IDs to disassociate from the UserID. </p>
     pub face_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DisassociateFacesInput {
@@ -25,7 +25,7 @@ impl DisassociateFacesInput {
     pub fn client_request_token(&self) -> ::std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>An array of face IDs to disassociate from the UserID.</p>
+    /// <p>An array of face IDs to disassociate from the UserID. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.face_ids.is_none()`.
     pub fn face_ids(&self) -> &[::std::string::String] {
@@ -97,19 +97,19 @@ impl DisassociateFacesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_face_ids`](Self::set_face_ids).
     ///
-    /// <p>An array of face IDs to disassociate from the UserID.</p>
+    /// <p>An array of face IDs to disassociate from the UserID. </p>
     pub fn face_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.face_ids.unwrap_or_default();
         v.push(input.into());
         self.face_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of face IDs to disassociate from the UserID.</p>
+    /// <p>An array of face IDs to disassociate from the UserID. </p>
     pub fn set_face_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.face_ids = input;
         self
     }
-    /// <p>An array of face IDs to disassociate from the UserID.</p>
+    /// <p>An array of face IDs to disassociate from the UserID. </p>
     pub fn get_face_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.face_ids
     }

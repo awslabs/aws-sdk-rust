@@ -14,7 +14,7 @@ pub struct RecommendationData {
     pub relevance_level: ::std::option::Option<crate::types::RelevanceLevel>,
     /// <p>The type of recommendation.</p>
     pub r#type: ::std::option::Option<crate::types::RecommendationType>,
-    /// <p>Summary of the recommended content.</p>
+    /// <p> Summary of the recommended content.</p>
     pub data: ::std::option::Option<crate::types::DataSummary>,
 }
 impl RecommendationData {
@@ -39,7 +39,7 @@ impl RecommendationData {
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::RecommendationType> {
         self.r#type.as_ref()
     }
-    /// <p>Summary of the recommended content.</p>
+    /// <p> Summary of the recommended content.</p>
     pub fn data(&self) -> ::std::option::Option<&crate::types::DataSummary> {
         self.data.as_ref()
     }
@@ -134,17 +134,17 @@ impl RecommendationDataBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::RecommendationType> {
         &self.r#type
     }
-    /// <p>Summary of the recommended content.</p>
+    /// <p> Summary of the recommended content.</p>
     pub fn data(mut self, input: crate::types::DataSummary) -> Self {
         self.data = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Summary of the recommended content.</p>
+    /// <p> Summary of the recommended content.</p>
     pub fn set_data(mut self, input: ::std::option::Option<crate::types::DataSummary>) -> Self {
         self.data = input;
         self
     }
-    /// <p>Summary of the recommended content.</p>
+    /// <p> Summary of the recommended content.</p>
     pub fn get_data(&self) -> &::std::option::Option<crate::types::DataSummary> {
         &self.data
     }

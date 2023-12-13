@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDirectoryRegistrationInput {
-    /// <p>The identifier of the Active Directory.</p>
+    /// <p> The identifier of the Active Directory.</p>
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>Idempotency token.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -11,7 +11,7 @@ pub struct CreateDirectoryRegistrationInput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateDirectoryRegistrationInput {
-    /// <p>The identifier of the Active Directory.</p>
+    /// <p> The identifier of the Active Directory.</p>
     pub fn directory_id(&self) -> ::std::option::Option<&str> {
         self.directory_id.as_deref()
     }
@@ -40,18 +40,18 @@ pub struct CreateDirectoryRegistrationInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateDirectoryRegistrationInputBuilder {
-    /// <p>The identifier of the Active Directory.</p>
+    /// <p> The identifier of the Active Directory.</p>
     /// This field is required.
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the Active Directory.</p>
+    /// <p> The identifier of the Active Directory.</p>
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.directory_id = input;
         self
     }
-    /// <p>The identifier of the Active Directory.</p>
+    /// <p> The identifier of the Active Directory.</p>
     pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.directory_id
     }

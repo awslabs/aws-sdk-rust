@@ -7,9 +7,8 @@ pub struct CreateDbClusterParameterGroupInput {
     /// <p>The name of the cluster parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must not match the name of an existing <code>DBClusterParameterGroup</code>.</p></li>
-    /// </ul><note>
+    /// <li> <p>Must not match the name of an existing <code>DBClusterParameterGroup</code>.</p> </li>
+    /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
     pub db_cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
@@ -24,9 +23,8 @@ impl CreateDbClusterParameterGroupInput {
     /// <p>The name of the cluster parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must not match the name of an existing <code>DBClusterParameterGroup</code>.</p></li>
-    /// </ul><note>
+    /// <li> <p>Must not match the name of an existing <code>DBClusterParameterGroup</code>.</p> </li>
+    /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
     pub fn db_cluster_parameter_group_name(&self) -> ::std::option::Option<&str> {
@@ -67,9 +65,8 @@ impl CreateDbClusterParameterGroupInputBuilder {
     /// <p>The name of the cluster parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must not match the name of an existing <code>DBClusterParameterGroup</code>.</p></li>
-    /// </ul><note>
+    /// <li> <p>Must not match the name of an existing <code>DBClusterParameterGroup</code>.</p> </li>
+    /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
     /// This field is required.
@@ -80,9 +77,8 @@ impl CreateDbClusterParameterGroupInputBuilder {
     /// <p>The name of the cluster parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must not match the name of an existing <code>DBClusterParameterGroup</code>.</p></li>
-    /// </ul><note>
+    /// <li> <p>Must not match the name of an existing <code>DBClusterParameterGroup</code>.</p> </li>
+    /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
     pub fn set_db_cluster_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -92,9 +88,8 @@ impl CreateDbClusterParameterGroupInputBuilder {
     /// <p>The name of the cluster parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must not match the name of an existing <code>DBClusterParameterGroup</code>.</p></li>
-    /// </ul><note>
+    /// <li> <p>Must not match the name of an existing <code>DBClusterParameterGroup</code>.</p> </li>
+    /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
     pub fn get_db_cluster_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {

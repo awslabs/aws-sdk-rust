@@ -7,7 +7,7 @@ pub struct ListLicenseConversionTasksInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of results to return in a single call.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>Filters to scope the results. Valid filters are <code>ResourceArns</code> and <code>Status</code>.</p>
+    /// <p> Filters to scope the results. Valid filters are <code>ResourceArns</code> and <code>Status</code>. </p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
 }
 impl ListLicenseConversionTasksInput {
@@ -19,7 +19,7 @@ impl ListLicenseConversionTasksInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>Filters to scope the results. Valid filters are <code>ResourceArns</code> and <code>Status</code>.</p>
+    /// <p> Filters to scope the results. Valid filters are <code>ResourceArns</code> and <code>Status</code>. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
     pub fn filters(&self) -> &[crate::types::Filter] {
@@ -74,19 +74,19 @@ impl ListLicenseConversionTasksInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>Filters to scope the results. Valid filters are <code>ResourceArns</code> and <code>Status</code>.</p>
+    /// <p> Filters to scope the results. Valid filters are <code>ResourceArns</code> and <code>Status</code>. </p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
         v.push(input);
         self.filters = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Filters to scope the results. Valid filters are <code>ResourceArns</code> and <code>Status</code>.</p>
+    /// <p> Filters to scope the results. Valid filters are <code>ResourceArns</code> and <code>Status</code>. </p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
-    /// <p>Filters to scope the results. Valid filters are <code>ResourceArns</code> and <code>Status</code>.</p>
+    /// <p> Filters to scope the results. Valid filters are <code>ResourceArns</code> and <code>Status</code>. </p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters
     }

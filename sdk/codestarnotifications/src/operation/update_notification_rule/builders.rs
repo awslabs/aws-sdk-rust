@@ -22,7 +22,7 @@ impl UpdateNotificationRuleInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateNotificationRule`.
 ///
-/// <p>Updates a notification rule for a resource. You can change the events that trigger the notification rule, the status of the rule, and the targets that receive the notifications.</p><note>
+/// <p>Updates a notification rule for a resource. You can change the events that trigger the notification rule, the status of the rule, and the targets that receive the notifications.</p> <note>
 /// <p>To add or remove tags for a notification rule, you must use <code>TagResource</code> and <code>UntagResource</code>.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

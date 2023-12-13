@@ -5,7 +5,7 @@
 pub struct CreateTypedLinkFacetInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
     pub schema_arn: ::std::option::Option<::std::string::String>,
-    /// <p><code>Facet</code> structure that is associated with the typed link facet.</p>
+    /// <p> <code>Facet</code> structure that is associated with the typed link facet.</p>
     pub facet: ::std::option::Option<crate::types::TypedLinkFacet>,
 }
 impl CreateTypedLinkFacetInput {
@@ -13,7 +13,7 @@ impl CreateTypedLinkFacetInput {
     pub fn schema_arn(&self) -> ::std::option::Option<&str> {
         self.schema_arn.as_deref()
     }
-    /// <p><code>Facet</code> structure that is associated with the typed link facet.</p>
+    /// <p> <code>Facet</code> structure that is associated with the typed link facet.</p>
     pub fn facet(&self) -> ::std::option::Option<&crate::types::TypedLinkFacet> {
         self.facet.as_ref()
     }
@@ -48,18 +48,18 @@ impl CreateTypedLinkFacetInputBuilder {
     pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.schema_arn
     }
-    /// <p><code>Facet</code> structure that is associated with the typed link facet.</p>
+    /// <p> <code>Facet</code> structure that is associated with the typed link facet.</p>
     /// This field is required.
     pub fn facet(mut self, input: crate::types::TypedLinkFacet) -> Self {
         self.facet = ::std::option::Option::Some(input);
         self
     }
-    /// <p><code>Facet</code> structure that is associated with the typed link facet.</p>
+    /// <p> <code>Facet</code> structure that is associated with the typed link facet.</p>
     pub fn set_facet(mut self, input: ::std::option::Option<crate::types::TypedLinkFacet>) -> Self {
         self.facet = input;
         self
     }
-    /// <p><code>Facet</code> structure that is associated with the typed link facet.</p>
+    /// <p> <code>Facet</code> structure that is associated with the typed link facet.</p>
     pub fn get_facet(&self) -> &::std::option::Option<crate::types::TypedLinkFacet> {
         &self.facet
     }

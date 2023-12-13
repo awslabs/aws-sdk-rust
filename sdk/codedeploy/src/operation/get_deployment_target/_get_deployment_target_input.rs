@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDeploymentTargetInput {
-    /// <p>The unique ID of a deployment.</p>
+    /// <p> The unique ID of a deployment. </p>
     pub deployment_id: ::std::option::Option<::std::string::String>,
-    /// <p>The unique ID of a deployment target.</p>
+    /// <p> The unique ID of a deployment target. </p>
     pub target_id: ::std::option::Option<::std::string::String>,
 }
 impl GetDeploymentTargetInput {
-    /// <p>The unique ID of a deployment.</p>
+    /// <p> The unique ID of a deployment. </p>
     pub fn deployment_id(&self) -> ::std::option::Option<&str> {
         self.deployment_id.as_deref()
     }
-    /// <p>The unique ID of a deployment target.</p>
+    /// <p> The unique ID of a deployment target. </p>
     pub fn target_id(&self) -> ::std::option::Option<&str> {
         self.target_id.as_deref()
     }
@@ -33,33 +33,33 @@ pub struct GetDeploymentTargetInputBuilder {
     pub(crate) target_id: ::std::option::Option<::std::string::String>,
 }
 impl GetDeploymentTargetInputBuilder {
-    /// <p>The unique ID of a deployment.</p>
+    /// <p> The unique ID of a deployment. </p>
     /// This field is required.
     pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique ID of a deployment.</p>
+    /// <p> The unique ID of a deployment. </p>
     pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_id = input;
         self
     }
-    /// <p>The unique ID of a deployment.</p>
+    /// <p> The unique ID of a deployment. </p>
     pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.deployment_id
     }
-    /// <p>The unique ID of a deployment target.</p>
+    /// <p> The unique ID of a deployment target. </p>
     /// This field is required.
     pub fn target_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique ID of a deployment target.</p>
+    /// <p> The unique ID of a deployment target. </p>
     pub fn set_target_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_id = input;
         self
     }
-    /// <p>The unique ID of a deployment target.</p>
+    /// <p> The unique ID of a deployment target. </p>
     pub fn get_target_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_id
     }

@@ -131,14 +131,11 @@ impl RestoreDBClusterFromSnapshotFluentBuilder {
     /// <p>The name of the DB cluster to create from the DB snapshot or DB cluster snapshot. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens</p></li>
-    /// <li>
-    /// <p>First character must be a letter</p></li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li>
+    /// <li> <p>First character must be a letter</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
-    /// <p>Example: <code>my-snapshot-id</code></p>
+    /// <p>Example: <code>my-snapshot-id</code> </p>
     pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_cluster_identifier(input.into());
         self
@@ -146,14 +143,11 @@ impl RestoreDBClusterFromSnapshotFluentBuilder {
     /// <p>The name of the DB cluster to create from the DB snapshot or DB cluster snapshot. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens</p></li>
-    /// <li>
-    /// <p>First character must be a letter</p></li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li>
+    /// <li> <p>First character must be a letter</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
-    /// <p>Example: <code>my-snapshot-id</code></p>
+    /// <p>Example: <code>my-snapshot-id</code> </p>
     pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_cluster_identifier(input);
         self
@@ -161,14 +155,11 @@ impl RestoreDBClusterFromSnapshotFluentBuilder {
     /// <p>The name of the DB cluster to create from the DB snapshot or DB cluster snapshot. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens</p></li>
-    /// <li>
-    /// <p>First character must be a letter</p></li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li>
+    /// <li> <p>First character must be a letter</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
-    /// <p>Example: <code>my-snapshot-id</code></p>
+    /// <p>Example: <code>my-snapshot-id</code> </p>
     pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_cluster_identifier()
     }
@@ -176,8 +167,7 @@ impl RestoreDBClusterFromSnapshotFluentBuilder {
     /// <p>You can use either the name or the Amazon Resource Name (ARN) to specify a DB cluster snapshot. However, you can use only the ARN to specify a DB snapshot.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must match the identifier of an existing Snapshot.</p></li>
+    /// <li> <p>Must match the identifier of an existing Snapshot.</p> </li>
     /// </ul>
     pub fn snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.snapshot_identifier(input.into());
@@ -187,8 +177,7 @@ impl RestoreDBClusterFromSnapshotFluentBuilder {
     /// <p>You can use either the name or the Amazon Resource Name (ARN) to specify a DB cluster snapshot. However, you can use only the ARN to specify a DB snapshot.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must match the identifier of an existing Snapshot.</p></li>
+    /// <li> <p>Must match the identifier of an existing Snapshot.</p> </li>
     /// </ul>
     pub fn set_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_snapshot_identifier(input);
@@ -198,8 +187,7 @@ impl RestoreDBClusterFromSnapshotFluentBuilder {
     /// <p>You can use either the name or the Amazon Resource Name (ARN) to specify a DB cluster snapshot. However, you can use only the ARN to specify a DB snapshot.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must match the identifier of an existing Snapshot.</p></li>
+    /// <li> <p>Must match the identifier of an existing Snapshot.</p> </li>
     /// </ul>
     pub fn get_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_snapshot_identifier()
@@ -239,42 +227,42 @@ impl RestoreDBClusterFromSnapshotFluentBuilder {
         self.inner.get_engine_version()
     }
     /// <p>The port number on which the new DB cluster accepts connections.</p>
-    /// <p>Constraints: Value must be <code>1150-65535</code></p>
+    /// <p>Constraints: Value must be <code>1150-65535</code> </p>
     /// <p>Default: The same port as the original DB cluster.</p>
     pub fn port(mut self, input: i32) -> Self {
         self.inner = self.inner.port(input);
         self
     }
     /// <p>The port number on which the new DB cluster accepts connections.</p>
-    /// <p>Constraints: Value must be <code>1150-65535</code></p>
+    /// <p>Constraints: Value must be <code>1150-65535</code> </p>
     /// <p>Default: The same port as the original DB cluster.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_port(input);
         self
     }
     /// <p>The port number on which the new DB cluster accepts connections.</p>
-    /// <p>Constraints: Value must be <code>1150-65535</code></p>
+    /// <p>Constraints: Value must be <code>1150-65535</code> </p>
     /// <p>Default: The same port as the original DB cluster.</p>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
         self.inner.get_port()
     }
     /// <p>The name of the DB subnet group to use for the new DB cluster.</p>
     /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
-    /// <p>Example: <code>mySubnetgroup</code></p>
+    /// <p>Example: <code>mySubnetgroup</code> </p>
     pub fn db_subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_subnet_group_name(input.into());
         self
     }
     /// <p>The name of the DB subnet group to use for the new DB cluster.</p>
     /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
-    /// <p>Example: <code>mySubnetgroup</code></p>
+    /// <p>Example: <code>mySubnetgroup</code> </p>
     pub fn set_db_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_subnet_group_name(input);
         self
     }
     /// <p>The name of the DB subnet group to use for the new DB cluster.</p>
     /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
-    /// <p>Example: <code>mySubnetgroup</code></p>
+    /// <p>Example: <code>mySubnetgroup</code> </p>
     pub fn get_db_subnet_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_subnet_group_name()
     }
@@ -292,17 +280,17 @@ impl RestoreDBClusterFromSnapshotFluentBuilder {
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_database_name()
     }
-    /// <p><i>(Not supported by Neptune)</i></p>
+    /// <p> <i>(Not supported by Neptune)</i> </p>
     pub fn option_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.option_group_name(input.into());
         self
     }
-    /// <p><i>(Not supported by Neptune)</i></p>
+    /// <p> <i>(Not supported by Neptune)</i> </p>
     pub fn set_option_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_option_group_name(input);
         self
     }
-    /// <p><i>(Not supported by Neptune)</i></p>
+    /// <p> <i>(Not supported by Neptune)</i> </p>
     pub fn get_option_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_option_group_name()
     }
@@ -346,10 +334,8 @@ impl RestoreDBClusterFromSnapshotFluentBuilder {
     /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a DB cluster with the same Amazon account that owns the KMS encryption key used to encrypt the new DB cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
     /// <p>If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following will occur:</p>
     /// <ul>
-    /// <li>
-    /// <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the DB snapshot or DB cluster snapshot.</p></li>
-    /// <li>
-    /// <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is not encrypted, then the restored DB cluster is not encrypted.</p></li>
+    /// <li> <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the DB snapshot or DB cluster snapshot.</p> </li>
+    /// <li> <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is not encrypted, then the restored DB cluster is not encrypted.</p> </li>
     /// </ul>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key_id(input.into());
@@ -359,10 +345,8 @@ impl RestoreDBClusterFromSnapshotFluentBuilder {
     /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a DB cluster with the same Amazon account that owns the KMS encryption key used to encrypt the new DB cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
     /// <p>If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following will occur:</p>
     /// <ul>
-    /// <li>
-    /// <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the DB snapshot or DB cluster snapshot.</p></li>
-    /// <li>
-    /// <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is not encrypted, then the restored DB cluster is not encrypted.</p></li>
+    /// <li> <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the DB snapshot or DB cluster snapshot.</p> </li>
+    /// <li> <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is not encrypted, then the restored DB cluster is not encrypted.</p> </li>
     /// </ul>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_id(input);
@@ -372,28 +356,26 @@ impl RestoreDBClusterFromSnapshotFluentBuilder {
     /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a DB cluster with the same Amazon account that owns the KMS encryption key used to encrypt the new DB cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
     /// <p>If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following will occur:</p>
     /// <ul>
-    /// <li>
-    /// <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the DB snapshot or DB cluster snapshot.</p></li>
-    /// <li>
-    /// <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is not encrypted, then the restored DB cluster is not encrypted.</p></li>
+    /// <li> <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the DB snapshot or DB cluster snapshot.</p> </li>
+    /// <li> <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is not encrypted, then the restored DB cluster is not encrypted.</p> </li>
     /// </ul>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_kms_key_id()
     }
     /// <p>True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database accounts, and otherwise false.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p>Default: <code>false</code> </p>
     pub fn enable_iam_database_authentication(mut self, input: bool) -> Self {
         self.inner = self.inner.enable_iam_database_authentication(input);
         self
     }
     /// <p>True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database accounts, and otherwise false.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p>Default: <code>false</code> </p>
     pub fn set_enable_iam_database_authentication(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable_iam_database_authentication(input);
         self
     }
     /// <p>True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database accounts, and otherwise false.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p>Default: <code>false</code> </p>
     pub fn get_enable_iam_database_authentication(&self) -> &::std::option::Option<bool> {
         self.inner.get_enable_iam_database_authentication()
     }
@@ -418,8 +400,7 @@ impl RestoreDBClusterFromSnapshotFluentBuilder {
     /// <p>The name of the DB cluster parameter group to associate with the new DB cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
+    /// <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li>
     /// </ul>
     pub fn db_cluster_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_cluster_parameter_group_name(input.into());
@@ -428,8 +409,7 @@ impl RestoreDBClusterFromSnapshotFluentBuilder {
     /// <p>The name of the DB cluster parameter group to associate with the new DB cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
+    /// <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li>
     /// </ul>
     pub fn set_db_cluster_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_cluster_parameter_group_name(input);
@@ -438,37 +418,36 @@ impl RestoreDBClusterFromSnapshotFluentBuilder {
     /// <p>The name of the DB cluster parameter group to associate with the new DB cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
+    /// <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li>
     /// </ul>
     pub fn get_db_cluster_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_cluster_parameter_group_name()
     }
-    /// <p>A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is disabled.</p>
+    /// <p>A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is disabled. </p>
     pub fn deletion_protection(mut self, input: bool) -> Self {
         self.inner = self.inner.deletion_protection(input);
         self
     }
-    /// <p>A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is disabled.</p>
+    /// <p>A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is disabled. </p>
     pub fn set_deletion_protection(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_deletion_protection(input);
         self
     }
-    /// <p>A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is disabled.</p>
+    /// <p>A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is disabled. </p>
     pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
         self.inner.get_deletion_protection()
     }
-    /// <p><i>If set to <code>true</code>, tags are copied to any snapshot of the restored DB cluster that is created.</i></p>
+    /// <p> <i>If set to <code>true</code>, tags are copied to any snapshot of the restored DB cluster that is created.</i> </p>
     pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
         self.inner = self.inner.copy_tags_to_snapshot(input);
         self
     }
-    /// <p><i>If set to <code>true</code>, tags are copied to any snapshot of the restored DB cluster that is created.</i></p>
+    /// <p> <i>If set to <code>true</code>, tags are copied to any snapshot of the restored DB cluster that is created.</i> </p>
     pub fn set_copy_tags_to_snapshot(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_copy_tags_to_snapshot(input);
         self
     }
-    /// <p><i>If set to <code>true</code>, tags are copied to any snapshot of the restored DB cluster that is created.</i></p>
+    /// <p> <i>If set to <code>true</code>, tags are copied to any snapshot of the restored DB cluster that is created.</i> </p>
     pub fn get_copy_tags_to_snapshot(&self) -> &::std::option::Option<bool> {
         self.inner.get_copy_tags_to_snapshot()
     }
@@ -490,22 +469,22 @@ impl RestoreDBClusterFromSnapshotFluentBuilder {
         self.inner.get_serverless_v2_scaling_configuration()
     }
     /// <p>Specifies the storage type to be associated with the DB cluster.</p>
-    /// <p>Valid values: <code>standard</code>, <code>iopt1</code></p>
-    /// <p>Default: <code>standard</code></p>
+    /// <p>Valid values: <code>standard</code>, <code>iopt1</code> </p>
+    /// <p>Default: <code>standard</code> </p>
     pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.storage_type(input.into());
         self
     }
     /// <p>Specifies the storage type to be associated with the DB cluster.</p>
-    /// <p>Valid values: <code>standard</code>, <code>iopt1</code></p>
-    /// <p>Default: <code>standard</code></p>
+    /// <p>Valid values: <code>standard</code>, <code>iopt1</code> </p>
+    /// <p>Default: <code>standard</code> </p>
     pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_storage_type(input);
         self
     }
     /// <p>Specifies the storage type to be associated with the DB cluster.</p>
-    /// <p>Valid values: <code>standard</code>, <code>iopt1</code></p>
-    /// <p>Default: <code>standard</code></p>
+    /// <p>Valid values: <code>standard</code>, <code>iopt1</code> </p>
+    /// <p>Default: <code>standard</code> </p>
     pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_storage_type()
     }

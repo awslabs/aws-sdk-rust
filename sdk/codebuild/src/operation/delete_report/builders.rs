@@ -22,7 +22,7 @@ impl DeleteReportInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteReport`.
 ///
-/// <p>Deletes a report.</p>
+/// <p> Deletes a report. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteReportFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DeleteReportFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ARN of the report to delete.</p>
+    /// <p> The ARN of the report to delete. </p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.arn(input.into());
         self
     }
-    /// <p>The ARN of the report to delete.</p>
+    /// <p> The ARN of the report to delete. </p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_arn(input);
         self
     }
-    /// <p>The ARN of the report to delete.</p>
+    /// <p> The ARN of the report to delete. </p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_arn()
     }

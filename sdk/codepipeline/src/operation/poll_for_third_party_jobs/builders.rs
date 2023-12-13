@@ -22,7 +22,7 @@ impl PollForThirdPartyJobsInputBuilder {
 }
 /// Fluent builder constructing a request to `PollForThirdPartyJobs`.
 ///
-/// <p>Determines whether there are any third party jobs for a job worker to act on. Used for partner actions only.</p><important>
+/// <p>Determines whether there are any third party jobs for a job worker to act on. Used for partner actions only.</p> <important>
 /// <p>When this API is called, CodePipeline returns temporary credentials for the S3 bucket used to store artifacts for the pipeline, if the action requires access to that S3 bucket for input or output artifacts.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

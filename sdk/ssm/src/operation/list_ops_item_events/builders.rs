@@ -118,45 +118,45 @@ impl ListOpsItemEventsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>One or more OpsItem filters. Use a filter to return a more specific list of results.</p>
+    /// <p>One or more OpsItem filters. Use a filter to return a more specific list of results. </p>
     pub fn filters(mut self, input: crate::types::OpsItemEventFilter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>One or more OpsItem filters. Use a filter to return a more specific list of results.</p>
+    /// <p>One or more OpsItem filters. Use a filter to return a more specific list of results. </p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OpsItemEventFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
-    /// <p>One or more OpsItem filters. Use a filter to return a more specific list of results.</p>
+    /// <p>One or more OpsItem filters. Use a filter to return a more specific list of results. </p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OpsItemEventFilter>> {
         self.inner.get_filters()
     }
-    /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results. </p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p>A token to start the list. Use this token to get the next set of results.</p>
+    /// <p>A token to start the list. Use this token to get the next set of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>A token to start the list. Use this token to get the next set of results.</p>
+    /// <p>A token to start the list. Use this token to get the next set of results. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>A token to start the list. Use this token to get the next set of results.</p>
+    /// <p>A token to start the list. Use this token to get the next set of results. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

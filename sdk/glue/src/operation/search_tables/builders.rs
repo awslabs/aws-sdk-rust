@@ -22,8 +22,8 @@ impl SearchTablesInputBuilder {
 }
 /// Fluent builder constructing a request to `SearchTables`.
 ///
-/// <p>Searches a set of tables based on properties in the table metadata as well as on the parent database. You can search against text or filter conditions.</p>
-/// <p>You can only get tables that you have access to based on the security policies defined in Lake Formation. You need at least a read-only access to the table for it to be returned. If you do not have access to all the columns in the table, these columns will not be searched against when returning the list of tables back to you. If you have access to the columns but not the data in the columns, those columns and the associated metadata for those columns will be included in the search.</p>
+/// <p>Searches a set of tables based on properties in the table metadata as well as on the parent database. You can search against text or filter conditions. </p>
+/// <p>You can only get tables that you have access to based on the security policies defined in Lake Formation. You need at least a read-only access to the table for it to be returned. If you do not have access to all the columns in the table, these columns will not be searched against when returning the list of tables back to you. If you have access to the columns but not the data in the columns, those columns and the associated metadata for those columns will be included in the search. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SearchTablesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -213,34 +213,28 @@ impl SearchTablesFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p>Allows you to specify that you want to search the tables shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>.</p>
+    /// <p>Allows you to specify that you want to search the tables shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p>
     /// <ul>
-    /// <li>
-    /// <p>If set to <code>FOREIGN</code>, will search the tables shared with your account.</p></li>
-    /// <li>
-    /// <p>If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local account.</p></li>
+    /// <li> <p>If set to <code>FOREIGN</code>, will search the tables shared with your account. </p> </li>
+    /// <li> <p>If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local account. </p> </li>
     /// </ul>
     pub fn resource_share_type(mut self, input: crate::types::ResourceShareType) -> Self {
         self.inner = self.inner.resource_share_type(input);
         self
     }
-    /// <p>Allows you to specify that you want to search the tables shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>.</p>
+    /// <p>Allows you to specify that you want to search the tables shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p>
     /// <ul>
-    /// <li>
-    /// <p>If set to <code>FOREIGN</code>, will search the tables shared with your account.</p></li>
-    /// <li>
-    /// <p>If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local account.</p></li>
+    /// <li> <p>If set to <code>FOREIGN</code>, will search the tables shared with your account. </p> </li>
+    /// <li> <p>If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local account. </p> </li>
     /// </ul>
     pub fn set_resource_share_type(mut self, input: ::std::option::Option<crate::types::ResourceShareType>) -> Self {
         self.inner = self.inner.set_resource_share_type(input);
         self
     }
-    /// <p>Allows you to specify that you want to search the tables shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>.</p>
+    /// <p>Allows you to specify that you want to search the tables shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p>
     /// <ul>
-    /// <li>
-    /// <p>If set to <code>FOREIGN</code>, will search the tables shared with your account.</p></li>
-    /// <li>
-    /// <p>If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local account.</p></li>
+    /// <li> <p>If set to <code>FOREIGN</code>, will search the tables shared with your account. </p> </li>
+    /// <li> <p>If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local account. </p> </li>
     /// </ul>
     pub fn get_resource_share_type(&self) -> &::std::option::Option<crate::types::ResourceShareType> {
         self.inner.get_resource_share_type()

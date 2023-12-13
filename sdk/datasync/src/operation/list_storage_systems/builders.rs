@@ -128,17 +128,17 @@ impl ListStorageSystemsFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p>Specifies an opaque string that indicates the position to begin the next list of results in the response.</p>
+    /// <p>Specifies an opaque string that indicates the position to begin the next list of results in the response. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>Specifies an opaque string that indicates the position to begin the next list of results in the response.</p>
+    /// <p>Specifies an opaque string that indicates the position to begin the next list of results in the response. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>Specifies an opaque string that indicates the position to begin the next list of results in the response.</p>
+    /// <p>Specifies an opaque string that indicates the position to begin the next list of results in the response. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

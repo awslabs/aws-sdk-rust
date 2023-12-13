@@ -7,46 +7,30 @@ pub struct ReplicationInstance {
     /// <p>The replication instance identifier is a required parameter. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must contain 1-63 alphanumeric characters or hyphens.</p></li>
-    /// <li>
-    /// <p>First character must be a letter.</p></li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li> <p>Must contain 1-63 alphanumeric characters or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
-    /// <p>Example: <code>myrepinstance</code></p>
+    /// <p>Example: <code>myrepinstance</code> </p>
     pub replication_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The compute and memory capacity of the replication instance as defined for the specified replication instance class. It is a required parameter, although a default value is pre-selected in the DMS console.</p>
-    /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>.</p>
+    /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>. </p>
     pub replication_instance_class: ::std::option::Option<::std::string::String>,
     /// <p>The status of the replication instance. The possible return values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>"available"</code></p></li>
-    /// <li>
-    /// <p><code>"creating"</code></p></li>
-    /// <li>
-    /// <p><code>"deleted"</code></p></li>
-    /// <li>
-    /// <p><code>"deleting"</code></p></li>
-    /// <li>
-    /// <p><code>"failed"</code></p></li>
-    /// <li>
-    /// <p><code>"modifying"</code></p></li>
-    /// <li>
-    /// <p><code>"upgrading"</code></p></li>
-    /// <li>
-    /// <p><code>"rebooting"</code></p></li>
-    /// <li>
-    /// <p><code>"resetting-master-credentials"</code></p></li>
-    /// <li>
-    /// <p><code>"storage-full"</code></p></li>
-    /// <li>
-    /// <p><code>"incompatible-credentials"</code></p></li>
-    /// <li>
-    /// <p><code>"incompatible-network"</code></p></li>
-    /// <li>
-    /// <p><code>"maintenance"</code></p></li>
+    /// <li> <p> <code>"available"</code> </p> </li>
+    /// <li> <p> <code>"creating"</code> </p> </li>
+    /// <li> <p> <code>"deleted"</code> </p> </li>
+    /// <li> <p> <code>"deleting"</code> </p> </li>
+    /// <li> <p> <code>"failed"</code> </p> </li>
+    /// <li> <p> <code>"modifying"</code> </p> </li>
+    /// <li> <p> <code>"upgrading"</code> </p> </li>
+    /// <li> <p> <code>"rebooting"</code> </p> </li>
+    /// <li> <p> <code>"resetting-master-credentials"</code> </p> </li>
+    /// <li> <p> <code>"storage-full"</code> </p> </li>
+    /// <li> <p> <code>"incompatible-credentials"</code> </p> </li>
+    /// <li> <p> <code>"incompatible-network"</code> </p> </li>
+    /// <li> <p> <code>"maintenance"</code> </p> </li>
     /// </ul>
     pub replication_instance_status: ::std::option::Option<::std::string::String>,
     /// <p>The amount of storage (in gigabytes) that is allocated for the replication instance.</p>
@@ -63,7 +47,7 @@ pub struct ReplicationInstance {
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>The pending modification values.</p>
     pub pending_modified_values: ::std::option::Option<crate::types::ReplicationPendingModifiedValues>,
-    /// <p>Specifies whether the replication instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.</p>
+    /// <p> Specifies whether the replication instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>. </p>
     pub multi_az: bool,
     /// <p>The engine version number of the replication instance.</p>
     /// <p>If an engine version number is not specified when a replication instance is created, the default is the latest engine version available.</p>
@@ -89,11 +73,11 @@ pub struct ReplicationInstance {
     pub replication_instance_private_ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>One or more IPv6 addresses for the replication instance.</p>
     pub replication_instance_ipv6_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Specifies the accessibility options for the replication instance. A value of <code>true</code> represents an instance with a public IP address. A value of <code>false</code> represents an instance with a private IP address. The default value is <code>true</code>.</p>
+    /// <p> Specifies the accessibility options for the replication instance. A value of <code>true</code> represents an instance with a public IP address. A value of <code>false</code> represents an instance with a private IP address. The default value is <code>true</code>. </p>
     pub publicly_accessible: bool,
     /// <p>The Availability Zone of the standby replication instance in a Multi-AZ deployment.</p>
     pub secondary_availability_zone: ::std::option::Option<::std::string::String>,
-    /// <p>The expiration date of the free replication instance that is part of the Free DMS program.</p>
+    /// <p> The expiration date of the free replication instance that is part of the Free DMS program. </p>
     pub free_until: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The DNS name servers supported for the replication instance to access your on-premise source or target database.</p>
     pub dns_name_servers: ::std::option::Option<::std::string::String>,
@@ -104,50 +88,34 @@ impl ReplicationInstance {
     /// <p>The replication instance identifier is a required parameter. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must contain 1-63 alphanumeric characters or hyphens.</p></li>
-    /// <li>
-    /// <p>First character must be a letter.</p></li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li> <p>Must contain 1-63 alphanumeric characters or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
-    /// <p>Example: <code>myrepinstance</code></p>
+    /// <p>Example: <code>myrepinstance</code> </p>
     pub fn replication_instance_identifier(&self) -> ::std::option::Option<&str> {
         self.replication_instance_identifier.as_deref()
     }
     /// <p>The compute and memory capacity of the replication instance as defined for the specified replication instance class. It is a required parameter, although a default value is pre-selected in the DMS console.</p>
-    /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>.</p>
+    /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>. </p>
     pub fn replication_instance_class(&self) -> ::std::option::Option<&str> {
         self.replication_instance_class.as_deref()
     }
     /// <p>The status of the replication instance. The possible return values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>"available"</code></p></li>
-    /// <li>
-    /// <p><code>"creating"</code></p></li>
-    /// <li>
-    /// <p><code>"deleted"</code></p></li>
-    /// <li>
-    /// <p><code>"deleting"</code></p></li>
-    /// <li>
-    /// <p><code>"failed"</code></p></li>
-    /// <li>
-    /// <p><code>"modifying"</code></p></li>
-    /// <li>
-    /// <p><code>"upgrading"</code></p></li>
-    /// <li>
-    /// <p><code>"rebooting"</code></p></li>
-    /// <li>
-    /// <p><code>"resetting-master-credentials"</code></p></li>
-    /// <li>
-    /// <p><code>"storage-full"</code></p></li>
-    /// <li>
-    /// <p><code>"incompatible-credentials"</code></p></li>
-    /// <li>
-    /// <p><code>"incompatible-network"</code></p></li>
-    /// <li>
-    /// <p><code>"maintenance"</code></p></li>
+    /// <li> <p> <code>"available"</code> </p> </li>
+    /// <li> <p> <code>"creating"</code> </p> </li>
+    /// <li> <p> <code>"deleted"</code> </p> </li>
+    /// <li> <p> <code>"deleting"</code> </p> </li>
+    /// <li> <p> <code>"failed"</code> </p> </li>
+    /// <li> <p> <code>"modifying"</code> </p> </li>
+    /// <li> <p> <code>"upgrading"</code> </p> </li>
+    /// <li> <p> <code>"rebooting"</code> </p> </li>
+    /// <li> <p> <code>"resetting-master-credentials"</code> </p> </li>
+    /// <li> <p> <code>"storage-full"</code> </p> </li>
+    /// <li> <p> <code>"incompatible-credentials"</code> </p> </li>
+    /// <li> <p> <code>"incompatible-network"</code> </p> </li>
+    /// <li> <p> <code>"maintenance"</code> </p> </li>
     /// </ul>
     pub fn replication_instance_status(&self) -> ::std::option::Option<&str> {
         self.replication_instance_status.as_deref()
@@ -182,7 +150,7 @@ impl ReplicationInstance {
     pub fn pending_modified_values(&self) -> ::std::option::Option<&crate::types::ReplicationPendingModifiedValues> {
         self.pending_modified_values.as_ref()
     }
-    /// <p>Specifies whether the replication instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.</p>
+    /// <p> Specifies whether the replication instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>. </p>
     pub fn multi_az(&self) -> bool {
         self.multi_az
     }
@@ -234,7 +202,7 @@ impl ReplicationInstance {
     pub fn replication_instance_ipv6_addresses(&self) -> &[::std::string::String] {
         self.replication_instance_ipv6_addresses.as_deref().unwrap_or_default()
     }
-    /// <p>Specifies the accessibility options for the replication instance. A value of <code>true</code> represents an instance with a public IP address. A value of <code>false</code> represents an instance with a private IP address. The default value is <code>true</code>.</p>
+    /// <p> Specifies the accessibility options for the replication instance. A value of <code>true</code> represents an instance with a public IP address. A value of <code>false</code> represents an instance with a private IP address. The default value is <code>true</code>. </p>
     pub fn publicly_accessible(&self) -> bool {
         self.publicly_accessible
     }
@@ -242,7 +210,7 @@ impl ReplicationInstance {
     pub fn secondary_availability_zone(&self) -> ::std::option::Option<&str> {
         self.secondary_availability_zone.as_deref()
     }
-    /// <p>The expiration date of the free replication instance that is part of the Free DMS program.</p>
+    /// <p> The expiration date of the free replication instance that is part of the Free DMS program. </p>
     pub fn free_until(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.free_until.as_ref()
     }
@@ -296,14 +264,11 @@ impl ReplicationInstanceBuilder {
     /// <p>The replication instance identifier is a required parameter. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must contain 1-63 alphanumeric characters or hyphens.</p></li>
-    /// <li>
-    /// <p>First character must be a letter.</p></li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li> <p>Must contain 1-63 alphanumeric characters or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
-    /// <p>Example: <code>myrepinstance</code></p>
+    /// <p>Example: <code>myrepinstance</code> </p>
     pub fn replication_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_instance_identifier = ::std::option::Option::Some(input.into());
         self
@@ -311,14 +276,11 @@ impl ReplicationInstanceBuilder {
     /// <p>The replication instance identifier is a required parameter. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must contain 1-63 alphanumeric characters or hyphens.</p></li>
-    /// <li>
-    /// <p>First character must be a letter.</p></li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li> <p>Must contain 1-63 alphanumeric characters or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
-    /// <p>Example: <code>myrepinstance</code></p>
+    /// <p>Example: <code>myrepinstance</code> </p>
     pub fn set_replication_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_instance_identifier = input;
         self
@@ -326,62 +288,46 @@ impl ReplicationInstanceBuilder {
     /// <p>The replication instance identifier is a required parameter. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must contain 1-63 alphanumeric characters or hyphens.</p></li>
-    /// <li>
-    /// <p>First character must be a letter.</p></li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li> <p>Must contain 1-63 alphanumeric characters or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
-    /// <p>Example: <code>myrepinstance</code></p>
+    /// <p>Example: <code>myrepinstance</code> </p>
     pub fn get_replication_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.replication_instance_identifier
     }
     /// <p>The compute and memory capacity of the replication instance as defined for the specified replication instance class. It is a required parameter, although a default value is pre-selected in the DMS console.</p>
-    /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>.</p>
+    /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>. </p>
     pub fn replication_instance_class(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_instance_class = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The compute and memory capacity of the replication instance as defined for the specified replication instance class. It is a required parameter, although a default value is pre-selected in the DMS console.</p>
-    /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>.</p>
+    /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>. </p>
     pub fn set_replication_instance_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_instance_class = input;
         self
     }
     /// <p>The compute and memory capacity of the replication instance as defined for the specified replication instance class. It is a required parameter, although a default value is pre-selected in the DMS console.</p>
-    /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>.</p>
+    /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>. </p>
     pub fn get_replication_instance_class(&self) -> &::std::option::Option<::std::string::String> {
         &self.replication_instance_class
     }
     /// <p>The status of the replication instance. The possible return values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>"available"</code></p></li>
-    /// <li>
-    /// <p><code>"creating"</code></p></li>
-    /// <li>
-    /// <p><code>"deleted"</code></p></li>
-    /// <li>
-    /// <p><code>"deleting"</code></p></li>
-    /// <li>
-    /// <p><code>"failed"</code></p></li>
-    /// <li>
-    /// <p><code>"modifying"</code></p></li>
-    /// <li>
-    /// <p><code>"upgrading"</code></p></li>
-    /// <li>
-    /// <p><code>"rebooting"</code></p></li>
-    /// <li>
-    /// <p><code>"resetting-master-credentials"</code></p></li>
-    /// <li>
-    /// <p><code>"storage-full"</code></p></li>
-    /// <li>
-    /// <p><code>"incompatible-credentials"</code></p></li>
-    /// <li>
-    /// <p><code>"incompatible-network"</code></p></li>
-    /// <li>
-    /// <p><code>"maintenance"</code></p></li>
+    /// <li> <p> <code>"available"</code> </p> </li>
+    /// <li> <p> <code>"creating"</code> </p> </li>
+    /// <li> <p> <code>"deleted"</code> </p> </li>
+    /// <li> <p> <code>"deleting"</code> </p> </li>
+    /// <li> <p> <code>"failed"</code> </p> </li>
+    /// <li> <p> <code>"modifying"</code> </p> </li>
+    /// <li> <p> <code>"upgrading"</code> </p> </li>
+    /// <li> <p> <code>"rebooting"</code> </p> </li>
+    /// <li> <p> <code>"resetting-master-credentials"</code> </p> </li>
+    /// <li> <p> <code>"storage-full"</code> </p> </li>
+    /// <li> <p> <code>"incompatible-credentials"</code> </p> </li>
+    /// <li> <p> <code>"incompatible-network"</code> </p> </li>
+    /// <li> <p> <code>"maintenance"</code> </p> </li>
     /// </ul>
     pub fn replication_instance_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_instance_status = ::std::option::Option::Some(input.into());
@@ -389,32 +335,19 @@ impl ReplicationInstanceBuilder {
     }
     /// <p>The status of the replication instance. The possible return values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>"available"</code></p></li>
-    /// <li>
-    /// <p><code>"creating"</code></p></li>
-    /// <li>
-    /// <p><code>"deleted"</code></p></li>
-    /// <li>
-    /// <p><code>"deleting"</code></p></li>
-    /// <li>
-    /// <p><code>"failed"</code></p></li>
-    /// <li>
-    /// <p><code>"modifying"</code></p></li>
-    /// <li>
-    /// <p><code>"upgrading"</code></p></li>
-    /// <li>
-    /// <p><code>"rebooting"</code></p></li>
-    /// <li>
-    /// <p><code>"resetting-master-credentials"</code></p></li>
-    /// <li>
-    /// <p><code>"storage-full"</code></p></li>
-    /// <li>
-    /// <p><code>"incompatible-credentials"</code></p></li>
-    /// <li>
-    /// <p><code>"incompatible-network"</code></p></li>
-    /// <li>
-    /// <p><code>"maintenance"</code></p></li>
+    /// <li> <p> <code>"available"</code> </p> </li>
+    /// <li> <p> <code>"creating"</code> </p> </li>
+    /// <li> <p> <code>"deleted"</code> </p> </li>
+    /// <li> <p> <code>"deleting"</code> </p> </li>
+    /// <li> <p> <code>"failed"</code> </p> </li>
+    /// <li> <p> <code>"modifying"</code> </p> </li>
+    /// <li> <p> <code>"upgrading"</code> </p> </li>
+    /// <li> <p> <code>"rebooting"</code> </p> </li>
+    /// <li> <p> <code>"resetting-master-credentials"</code> </p> </li>
+    /// <li> <p> <code>"storage-full"</code> </p> </li>
+    /// <li> <p> <code>"incompatible-credentials"</code> </p> </li>
+    /// <li> <p> <code>"incompatible-network"</code> </p> </li>
+    /// <li> <p> <code>"maintenance"</code> </p> </li>
     /// </ul>
     pub fn set_replication_instance_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_instance_status = input;
@@ -422,32 +355,19 @@ impl ReplicationInstanceBuilder {
     }
     /// <p>The status of the replication instance. The possible return values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>"available"</code></p></li>
-    /// <li>
-    /// <p><code>"creating"</code></p></li>
-    /// <li>
-    /// <p><code>"deleted"</code></p></li>
-    /// <li>
-    /// <p><code>"deleting"</code></p></li>
-    /// <li>
-    /// <p><code>"failed"</code></p></li>
-    /// <li>
-    /// <p><code>"modifying"</code></p></li>
-    /// <li>
-    /// <p><code>"upgrading"</code></p></li>
-    /// <li>
-    /// <p><code>"rebooting"</code></p></li>
-    /// <li>
-    /// <p><code>"resetting-master-credentials"</code></p></li>
-    /// <li>
-    /// <p><code>"storage-full"</code></p></li>
-    /// <li>
-    /// <p><code>"incompatible-credentials"</code></p></li>
-    /// <li>
-    /// <p><code>"incompatible-network"</code></p></li>
-    /// <li>
-    /// <p><code>"maintenance"</code></p></li>
+    /// <li> <p> <code>"available"</code> </p> </li>
+    /// <li> <p> <code>"creating"</code> </p> </li>
+    /// <li> <p> <code>"deleted"</code> </p> </li>
+    /// <li> <p> <code>"deleting"</code> </p> </li>
+    /// <li> <p> <code>"failed"</code> </p> </li>
+    /// <li> <p> <code>"modifying"</code> </p> </li>
+    /// <li> <p> <code>"upgrading"</code> </p> </li>
+    /// <li> <p> <code>"rebooting"</code> </p> </li>
+    /// <li> <p> <code>"resetting-master-credentials"</code> </p> </li>
+    /// <li> <p> <code>"storage-full"</code> </p> </li>
+    /// <li> <p> <code>"incompatible-credentials"</code> </p> </li>
+    /// <li> <p> <code>"incompatible-network"</code> </p> </li>
+    /// <li> <p> <code>"maintenance"</code> </p> </li>
     /// </ul>
     pub fn get_replication_instance_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.replication_instance_status
@@ -556,17 +476,17 @@ impl ReplicationInstanceBuilder {
     pub fn get_pending_modified_values(&self) -> &::std::option::Option<crate::types::ReplicationPendingModifiedValues> {
         &self.pending_modified_values
     }
-    /// <p>Specifies whether the replication instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.</p>
+    /// <p> Specifies whether the replication instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>. </p>
     pub fn multi_az(mut self, input: bool) -> Self {
         self.multi_az = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether the replication instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.</p>
+    /// <p> Specifies whether the replication instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>. </p>
     pub fn set_multi_az(mut self, input: ::std::option::Option<bool>) -> Self {
         self.multi_az = input;
         self
     }
-    /// <p>Specifies whether the replication instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.</p>
+    /// <p> Specifies whether the replication instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>. </p>
     pub fn get_multi_az(&self) -> &::std::option::Option<bool> {
         &self.multi_az
     }
@@ -732,17 +652,17 @@ impl ReplicationInstanceBuilder {
     pub fn get_replication_instance_ipv6_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.replication_instance_ipv6_addresses
     }
-    /// <p>Specifies the accessibility options for the replication instance. A value of <code>true</code> represents an instance with a public IP address. A value of <code>false</code> represents an instance with a private IP address. The default value is <code>true</code>.</p>
+    /// <p> Specifies the accessibility options for the replication instance. A value of <code>true</code> represents an instance with a public IP address. A value of <code>false</code> represents an instance with a private IP address. The default value is <code>true</code>. </p>
     pub fn publicly_accessible(mut self, input: bool) -> Self {
         self.publicly_accessible = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the accessibility options for the replication instance. A value of <code>true</code> represents an instance with a public IP address. A value of <code>false</code> represents an instance with a private IP address. The default value is <code>true</code>.</p>
+    /// <p> Specifies the accessibility options for the replication instance. A value of <code>true</code> represents an instance with a public IP address. A value of <code>false</code> represents an instance with a private IP address. The default value is <code>true</code>. </p>
     pub fn set_publicly_accessible(mut self, input: ::std::option::Option<bool>) -> Self {
         self.publicly_accessible = input;
         self
     }
-    /// <p>Specifies the accessibility options for the replication instance. A value of <code>true</code> represents an instance with a public IP address. A value of <code>false</code> represents an instance with a private IP address. The default value is <code>true</code>.</p>
+    /// <p> Specifies the accessibility options for the replication instance. A value of <code>true</code> represents an instance with a public IP address. A value of <code>false</code> represents an instance with a private IP address. The default value is <code>true</code>. </p>
     pub fn get_publicly_accessible(&self) -> &::std::option::Option<bool> {
         &self.publicly_accessible
     }
@@ -760,17 +680,17 @@ impl ReplicationInstanceBuilder {
     pub fn get_secondary_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         &self.secondary_availability_zone
     }
-    /// <p>The expiration date of the free replication instance that is part of the Free DMS program.</p>
+    /// <p> The expiration date of the free replication instance that is part of the Free DMS program. </p>
     pub fn free_until(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.free_until = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The expiration date of the free replication instance that is part of the Free DMS program.</p>
+    /// <p> The expiration date of the free replication instance that is part of the Free DMS program. </p>
     pub fn set_free_until(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.free_until = input;
         self
     }
-    /// <p>The expiration date of the free replication instance that is part of the Free DMS program.</p>
+    /// <p> The expiration date of the free replication instance that is part of the Free DMS program. </p>
     pub fn get_free_until(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.free_until
     }

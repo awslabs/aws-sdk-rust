@@ -8,7 +8,7 @@ pub struct WebsiteConfiguration {
     pub error_document: ::std::option::Option<crate::types::ErrorDocument>,
     /// <p>The name of the index document for the website.</p>
     pub index_document: ::std::option::Option<crate::types::IndexDocument>,
-    /// <p>The redirect behavior for every request to this bucket's website endpoint.</p><important>
+    /// <p>The redirect behavior for every request to this bucket's website endpoint.</p> <important>
     /// <p>If you specify this property, you can't specify any other property.</p>
     /// </important>
     pub redirect_all_requests_to: ::std::option::Option<crate::types::RedirectAllRequestsTo>,
@@ -24,7 +24,7 @@ impl WebsiteConfiguration {
     pub fn index_document(&self) -> ::std::option::Option<&crate::types::IndexDocument> {
         self.index_document.as_ref()
     }
-    /// <p>The redirect behavior for every request to this bucket's website endpoint.</p><important>
+    /// <p>The redirect behavior for every request to this bucket's website endpoint.</p> <important>
     /// <p>If you specify this property, you can't specify any other property.</p>
     /// </important>
     pub fn redirect_all_requests_to(&self) -> ::std::option::Option<&crate::types::RedirectAllRequestsTo> {
@@ -82,21 +82,21 @@ impl WebsiteConfigurationBuilder {
     pub fn get_index_document(&self) -> &::std::option::Option<crate::types::IndexDocument> {
         &self.index_document
     }
-    /// <p>The redirect behavior for every request to this bucket's website endpoint.</p><important>
+    /// <p>The redirect behavior for every request to this bucket's website endpoint.</p> <important>
     /// <p>If you specify this property, you can't specify any other property.</p>
     /// </important>
     pub fn redirect_all_requests_to(mut self, input: crate::types::RedirectAllRequestsTo) -> Self {
         self.redirect_all_requests_to = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The redirect behavior for every request to this bucket's website endpoint.</p><important>
+    /// <p>The redirect behavior for every request to this bucket's website endpoint.</p> <important>
     /// <p>If you specify this property, you can't specify any other property.</p>
     /// </important>
     pub fn set_redirect_all_requests_to(mut self, input: ::std::option::Option<crate::types::RedirectAllRequestsTo>) -> Self {
         self.redirect_all_requests_to = input;
         self
     }
-    /// <p>The redirect behavior for every request to this bucket's website endpoint.</p><important>
+    /// <p>The redirect behavior for every request to this bucket's website endpoint.</p> <important>
     /// <p>If you specify this property, you can't specify any other property.</p>
     /// </important>
     pub fn get_redirect_all_requests_to(&self) -> &::std::option::Option<crate::types::RedirectAllRequestsTo> {

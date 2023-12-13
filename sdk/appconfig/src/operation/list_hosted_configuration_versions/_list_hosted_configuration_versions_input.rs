@@ -9,7 +9,7 @@ pub struct ListHostedConfigurationVersionsInput {
     pub configuration_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>A token to start the list. Use this token to get the next set of results.</p>
+    /// <p>A token to start the list. Use this token to get the next set of results. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An optional filter that can be used to specify the version label of an AppConfig hosted configuration version. This parameter supports filtering by prefix using a wildcard, for example "v2*". If you don't specify an asterisk at the end of the value, only an exact match is returned.</p>
     pub version_label: ::std::option::Option<::std::string::String>,
@@ -27,7 +27,7 @@ impl ListHostedConfigurationVersionsInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>A token to start the list. Use this token to get the next set of results.</p>
+    /// <p>A token to start the list. Use this token to get the next set of results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -98,17 +98,17 @@ impl ListHostedConfigurationVersionsInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p>A token to start the list. Use this token to get the next set of results.</p>
+    /// <p>A token to start the list. Use this token to get the next set of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A token to start the list. Use this token to get the next set of results.</p>
+    /// <p>A token to start the list. Use this token to get the next set of results. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>A token to start the list. Use this token to get the next set of results.</p>
+    /// <p>A token to start the list. Use this token to get the next set of results. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

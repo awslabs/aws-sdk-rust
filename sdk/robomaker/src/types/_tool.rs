@@ -4,19 +4,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Tool {
-    /// <p>Boolean indicating whether a streaming session will be configured for the tool. If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with the tool as it is running in the simulation. It must have a graphical user interface. The default is <code>False</code>.</p>
+    /// <p>Boolean indicating whether a streaming session will be configured for the tool. If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with the tool as it is running in the simulation. It must have a graphical user interface. The default is <code>False</code>. </p>
     pub stream_ui: ::std::option::Option<bool>,
     /// <p>The name of the tool.</p>
     pub name: ::std::string::String,
     /// <p>Command-line arguments for the tool. It must include the tool executable name.</p>
     pub command: ::std::string::String,
-    /// <p>Boolean indicating whether logs will be recorded in CloudWatch for the tool. The default is <code>False</code>.</p>
+    /// <p>Boolean indicating whether logs will be recorded in CloudWatch for the tool. The default is <code>False</code>. </p>
     pub stream_output_to_cloud_watch: ::std::option::Option<bool>,
-    /// <p>Exit behavior determines what happens when your tool quits running. <code>RESTART</code> will cause your tool to be restarted. <code>FAIL</code> will cause your job to exit. The default is <code>RESTART</code>.</p>
+    /// <p>Exit behavior determines what happens when your tool quits running. <code>RESTART</code> will cause your tool to be restarted. <code>FAIL</code> will cause your job to exit. The default is <code>RESTART</code>. </p>
     pub exit_behavior: ::std::option::Option<crate::types::ExitBehavior>,
 }
 impl Tool {
-    /// <p>Boolean indicating whether a streaming session will be configured for the tool. If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with the tool as it is running in the simulation. It must have a graphical user interface. The default is <code>False</code>.</p>
+    /// <p>Boolean indicating whether a streaming session will be configured for the tool. If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with the tool as it is running in the simulation. It must have a graphical user interface. The default is <code>False</code>. </p>
     pub fn stream_ui(&self) -> ::std::option::Option<bool> {
         self.stream_ui
     }
@@ -30,11 +30,11 @@ impl Tool {
         use std::ops::Deref;
         self.command.deref()
     }
-    /// <p>Boolean indicating whether logs will be recorded in CloudWatch for the tool. The default is <code>False</code>.</p>
+    /// <p>Boolean indicating whether logs will be recorded in CloudWatch for the tool. The default is <code>False</code>. </p>
     pub fn stream_output_to_cloud_watch(&self) -> ::std::option::Option<bool> {
         self.stream_output_to_cloud_watch
     }
-    /// <p>Exit behavior determines what happens when your tool quits running. <code>RESTART</code> will cause your tool to be restarted. <code>FAIL</code> will cause your job to exit. The default is <code>RESTART</code>.</p>
+    /// <p>Exit behavior determines what happens when your tool quits running. <code>RESTART</code> will cause your tool to be restarted. <code>FAIL</code> will cause your job to exit. The default is <code>RESTART</code>. </p>
     pub fn exit_behavior(&self) -> ::std::option::Option<&crate::types::ExitBehavior> {
         self.exit_behavior.as_ref()
     }
@@ -57,17 +57,17 @@ pub struct ToolBuilder {
     pub(crate) exit_behavior: ::std::option::Option<crate::types::ExitBehavior>,
 }
 impl ToolBuilder {
-    /// <p>Boolean indicating whether a streaming session will be configured for the tool. If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with the tool as it is running in the simulation. It must have a graphical user interface. The default is <code>False</code>.</p>
+    /// <p>Boolean indicating whether a streaming session will be configured for the tool. If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with the tool as it is running in the simulation. It must have a graphical user interface. The default is <code>False</code>. </p>
     pub fn stream_ui(mut self, input: bool) -> Self {
         self.stream_ui = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Boolean indicating whether a streaming session will be configured for the tool. If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with the tool as it is running in the simulation. It must have a graphical user interface. The default is <code>False</code>.</p>
+    /// <p>Boolean indicating whether a streaming session will be configured for the tool. If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with the tool as it is running in the simulation. It must have a graphical user interface. The default is <code>False</code>. </p>
     pub fn set_stream_ui(mut self, input: ::std::option::Option<bool>) -> Self {
         self.stream_ui = input;
         self
     }
-    /// <p>Boolean indicating whether a streaming session will be configured for the tool. If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with the tool as it is running in the simulation. It must have a graphical user interface. The default is <code>False</code>.</p>
+    /// <p>Boolean indicating whether a streaming session will be configured for the tool. If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with the tool as it is running in the simulation. It must have a graphical user interface. The default is <code>False</code>. </p>
     pub fn get_stream_ui(&self) -> &::std::option::Option<bool> {
         &self.stream_ui
     }
@@ -101,31 +101,31 @@ impl ToolBuilder {
     pub fn get_command(&self) -> &::std::option::Option<::std::string::String> {
         &self.command
     }
-    /// <p>Boolean indicating whether logs will be recorded in CloudWatch for the tool. The default is <code>False</code>.</p>
+    /// <p>Boolean indicating whether logs will be recorded in CloudWatch for the tool. The default is <code>False</code>. </p>
     pub fn stream_output_to_cloud_watch(mut self, input: bool) -> Self {
         self.stream_output_to_cloud_watch = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Boolean indicating whether logs will be recorded in CloudWatch for the tool. The default is <code>False</code>.</p>
+    /// <p>Boolean indicating whether logs will be recorded in CloudWatch for the tool. The default is <code>False</code>. </p>
     pub fn set_stream_output_to_cloud_watch(mut self, input: ::std::option::Option<bool>) -> Self {
         self.stream_output_to_cloud_watch = input;
         self
     }
-    /// <p>Boolean indicating whether logs will be recorded in CloudWatch for the tool. The default is <code>False</code>.</p>
+    /// <p>Boolean indicating whether logs will be recorded in CloudWatch for the tool. The default is <code>False</code>. </p>
     pub fn get_stream_output_to_cloud_watch(&self) -> &::std::option::Option<bool> {
         &self.stream_output_to_cloud_watch
     }
-    /// <p>Exit behavior determines what happens when your tool quits running. <code>RESTART</code> will cause your tool to be restarted. <code>FAIL</code> will cause your job to exit. The default is <code>RESTART</code>.</p>
+    /// <p>Exit behavior determines what happens when your tool quits running. <code>RESTART</code> will cause your tool to be restarted. <code>FAIL</code> will cause your job to exit. The default is <code>RESTART</code>. </p>
     pub fn exit_behavior(mut self, input: crate::types::ExitBehavior) -> Self {
         self.exit_behavior = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Exit behavior determines what happens when your tool quits running. <code>RESTART</code> will cause your tool to be restarted. <code>FAIL</code> will cause your job to exit. The default is <code>RESTART</code>.</p>
+    /// <p>Exit behavior determines what happens when your tool quits running. <code>RESTART</code> will cause your tool to be restarted. <code>FAIL</code> will cause your job to exit. The default is <code>RESTART</code>. </p>
     pub fn set_exit_behavior(mut self, input: ::std::option::Option<crate::types::ExitBehavior>) -> Self {
         self.exit_behavior = input;
         self
     }
-    /// <p>Exit behavior determines what happens when your tool quits running. <code>RESTART</code> will cause your tool to be restarted. <code>FAIL</code> will cause your job to exit. The default is <code>RESTART</code>.</p>
+    /// <p>Exit behavior determines what happens when your tool quits running. <code>RESTART</code> will cause your tool to be restarted. <code>FAIL</code> will cause your job to exit. The default is <code>RESTART</code>. </p>
     pub fn get_exit_behavior(&self) -> &::std::option::Option<crate::types::ExitBehavior> {
         &self.exit_behavior
     }

@@ -11,9 +11,9 @@ pub struct CreateClusterInput {
     pub parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>An optional description of the cluster.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The number of shards the cluster will contain. The default value is 1.</p>
+    /// <p>The number of shards the cluster will contain. The default value is 1. </p>
     pub num_shards: ::std::option::Option<i32>,
-    /// <p>The number of replicas to apply to each shard. The default value is 1. The maximum is 5.</p>
+    /// <p>The number of replicas to apply to each shard. The default value is 1. The maximum is 5. </p>
     pub num_replicas_per_shard: ::std::option::Option<i32>,
     /// <p>The name of the subnet group to be used for the cluster.</p>
     pub subnet_group_name: ::std::option::Option<::std::string::String>,
@@ -22,22 +22,15 @@ pub struct CreateClusterInput {
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
     /// <p>Valid values for <code>ddd</code> are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>sun</code></p></li>
-    /// <li>
-    /// <p><code>mon</code></p></li>
-    /// <li>
-    /// <p><code>tue</code></p></li>
-    /// <li>
-    /// <p><code>wed</code></p></li>
-    /// <li>
-    /// <p><code>thu</code></p></li>
-    /// <li>
-    /// <p><code>fri</code></p></li>
-    /// <li>
-    /// <p><code>sat</code></p></li>
+    /// <li> <p> <code>sun</code> </p> </li>
+    /// <li> <p> <code>mon</code> </p> </li>
+    /// <li> <p> <code>tue</code> </p> </li>
+    /// <li> <p> <code>wed</code> </p> </li>
+    /// <li> <p> <code>thu</code> </p> </li>
+    /// <li> <p> <code>fri</code> </p> </li>
+    /// <li> <p> <code>sat</code> </p> </li>
     /// </ul>
-    /// <p>Example: <code>sun:23:00-mon:01:30</code></p>
+    /// <p>Example: <code>sun:23:00-mon:01:30</code> </p>
     pub maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>The port number on which each of the nodes accepts connections.</p>
     pub port: ::std::option::Option<i32>,
@@ -56,8 +49,8 @@ pub struct CreateClusterInput {
     /// <p>A list of tags to be added to this resource. Tags are comma-separated key,value pairs (e.g. Key=myKey, Value=myKeyValue. You can include multiple tags as shown following: Key=myKey, Value=myKeyValue Key=mySecondKey, Value=mySecondKeyValue.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your shard.</p>
-    /// <p>Example: 05:00-09:00</p>
-    /// <p>If you do not specify this parameter, MemoryDB automatically chooses an appropriate time range.</p>
+    /// <p> Example: 05:00-09:00</p>
+    /// <p> If you do not specify this parameter, MemoryDB automatically chooses an appropriate time range.</p>
     pub snapshot_window: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Access Control List to associate with the cluster.</p>
     pub acl_name: ::std::option::Option<::std::string::String>,
@@ -85,11 +78,11 @@ impl CreateClusterInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The number of shards the cluster will contain. The default value is 1.</p>
+    /// <p>The number of shards the cluster will contain. The default value is 1. </p>
     pub fn num_shards(&self) -> ::std::option::Option<i32> {
         self.num_shards
     }
-    /// <p>The number of replicas to apply to each shard. The default value is 1. The maximum is 5.</p>
+    /// <p>The number of replicas to apply to each shard. The default value is 1. The maximum is 5. </p>
     pub fn num_replicas_per_shard(&self) -> ::std::option::Option<i32> {
         self.num_replicas_per_shard
     }
@@ -106,22 +99,15 @@ impl CreateClusterInput {
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
     /// <p>Valid values for <code>ddd</code> are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>sun</code></p></li>
-    /// <li>
-    /// <p><code>mon</code></p></li>
-    /// <li>
-    /// <p><code>tue</code></p></li>
-    /// <li>
-    /// <p><code>wed</code></p></li>
-    /// <li>
-    /// <p><code>thu</code></p></li>
-    /// <li>
-    /// <p><code>fri</code></p></li>
-    /// <li>
-    /// <p><code>sat</code></p></li>
+    /// <li> <p> <code>sun</code> </p> </li>
+    /// <li> <p> <code>mon</code> </p> </li>
+    /// <li> <p> <code>tue</code> </p> </li>
+    /// <li> <p> <code>wed</code> </p> </li>
+    /// <li> <p> <code>thu</code> </p> </li>
+    /// <li> <p> <code>fri</code> </p> </li>
+    /// <li> <p> <code>sat</code> </p> </li>
     /// </ul>
-    /// <p>Example: <code>sun:23:00-mon:01:30</code></p>
+    /// <p>Example: <code>sun:23:00-mon:01:30</code> </p>
     pub fn maintenance_window(&self) -> ::std::option::Option<&str> {
         self.maintenance_window.as_deref()
     }
@@ -162,8 +148,8 @@ impl CreateClusterInput {
         self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your shard.</p>
-    /// <p>Example: 05:00-09:00</p>
-    /// <p>If you do not specify this parameter, MemoryDB automatically chooses an appropriate time range.</p>
+    /// <p> Example: 05:00-09:00</p>
+    /// <p> If you do not specify this parameter, MemoryDB automatically chooses an appropriate time range.</p>
     pub fn snapshot_window(&self) -> ::std::option::Option<&str> {
         self.snapshot_window.as_deref()
     }
@@ -277,31 +263,31 @@ impl CreateClusterInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The number of shards the cluster will contain. The default value is 1.</p>
+    /// <p>The number of shards the cluster will contain. The default value is 1. </p>
     pub fn num_shards(mut self, input: i32) -> Self {
         self.num_shards = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of shards the cluster will contain. The default value is 1.</p>
+    /// <p>The number of shards the cluster will contain. The default value is 1. </p>
     pub fn set_num_shards(mut self, input: ::std::option::Option<i32>) -> Self {
         self.num_shards = input;
         self
     }
-    /// <p>The number of shards the cluster will contain. The default value is 1.</p>
+    /// <p>The number of shards the cluster will contain. The default value is 1. </p>
     pub fn get_num_shards(&self) -> &::std::option::Option<i32> {
         &self.num_shards
     }
-    /// <p>The number of replicas to apply to each shard. The default value is 1. The maximum is 5.</p>
+    /// <p>The number of replicas to apply to each shard. The default value is 1. The maximum is 5. </p>
     pub fn num_replicas_per_shard(mut self, input: i32) -> Self {
         self.num_replicas_per_shard = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of replicas to apply to each shard. The default value is 1. The maximum is 5.</p>
+    /// <p>The number of replicas to apply to each shard. The default value is 1. The maximum is 5. </p>
     pub fn set_num_replicas_per_shard(mut self, input: ::std::option::Option<i32>) -> Self {
         self.num_replicas_per_shard = input;
         self
     }
-    /// <p>The number of replicas to apply to each shard. The default value is 1. The maximum is 5.</p>
+    /// <p>The number of replicas to apply to each shard. The default value is 1. The maximum is 5. </p>
     pub fn get_num_replicas_per_shard(&self) -> &::std::option::Option<i32> {
         &self.num_replicas_per_shard
     }
@@ -342,22 +328,15 @@ impl CreateClusterInputBuilder {
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
     /// <p>Valid values for <code>ddd</code> are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>sun</code></p></li>
-    /// <li>
-    /// <p><code>mon</code></p></li>
-    /// <li>
-    /// <p><code>tue</code></p></li>
-    /// <li>
-    /// <p><code>wed</code></p></li>
-    /// <li>
-    /// <p><code>thu</code></p></li>
-    /// <li>
-    /// <p><code>fri</code></p></li>
-    /// <li>
-    /// <p><code>sat</code></p></li>
+    /// <li> <p> <code>sun</code> </p> </li>
+    /// <li> <p> <code>mon</code> </p> </li>
+    /// <li> <p> <code>tue</code> </p> </li>
+    /// <li> <p> <code>wed</code> </p> </li>
+    /// <li> <p> <code>thu</code> </p> </li>
+    /// <li> <p> <code>fri</code> </p> </li>
+    /// <li> <p> <code>sat</code> </p> </li>
     /// </ul>
-    /// <p>Example: <code>sun:23:00-mon:01:30</code></p>
+    /// <p>Example: <code>sun:23:00-mon:01:30</code> </p>
     pub fn maintenance_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.maintenance_window = ::std::option::Option::Some(input.into());
         self
@@ -365,22 +344,15 @@ impl CreateClusterInputBuilder {
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
     /// <p>Valid values for <code>ddd</code> are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>sun</code></p></li>
-    /// <li>
-    /// <p><code>mon</code></p></li>
-    /// <li>
-    /// <p><code>tue</code></p></li>
-    /// <li>
-    /// <p><code>wed</code></p></li>
-    /// <li>
-    /// <p><code>thu</code></p></li>
-    /// <li>
-    /// <p><code>fri</code></p></li>
-    /// <li>
-    /// <p><code>sat</code></p></li>
+    /// <li> <p> <code>sun</code> </p> </li>
+    /// <li> <p> <code>mon</code> </p> </li>
+    /// <li> <p> <code>tue</code> </p> </li>
+    /// <li> <p> <code>wed</code> </p> </li>
+    /// <li> <p> <code>thu</code> </p> </li>
+    /// <li> <p> <code>fri</code> </p> </li>
+    /// <li> <p> <code>sat</code> </p> </li>
     /// </ul>
-    /// <p>Example: <code>sun:23:00-mon:01:30</code></p>
+    /// <p>Example: <code>sun:23:00-mon:01:30</code> </p>
     pub fn set_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.maintenance_window = input;
         self
@@ -388,22 +360,15 @@ impl CreateClusterInputBuilder {
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
     /// <p>Valid values for <code>ddd</code> are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>sun</code></p></li>
-    /// <li>
-    /// <p><code>mon</code></p></li>
-    /// <li>
-    /// <p><code>tue</code></p></li>
-    /// <li>
-    /// <p><code>wed</code></p></li>
-    /// <li>
-    /// <p><code>thu</code></p></li>
-    /// <li>
-    /// <p><code>fri</code></p></li>
-    /// <li>
-    /// <p><code>sat</code></p></li>
+    /// <li> <p> <code>sun</code> </p> </li>
+    /// <li> <p> <code>mon</code> </p> </li>
+    /// <li> <p> <code>tue</code> </p> </li>
+    /// <li> <p> <code>wed</code> </p> </li>
+    /// <li> <p> <code>thu</code> </p> </li>
+    /// <li> <p> <code>fri</code> </p> </li>
+    /// <li> <p> <code>sat</code> </p> </li>
     /// </ul>
-    /// <p>Example: <code>sun:23:00-mon:01:30</code></p>
+    /// <p>Example: <code>sun:23:00-mon:01:30</code> </p>
     pub fn get_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
         &self.maintenance_window
     }
@@ -532,22 +497,22 @@ impl CreateClusterInputBuilder {
         &self.tags
     }
     /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your shard.</p>
-    /// <p>Example: 05:00-09:00</p>
-    /// <p>If you do not specify this parameter, MemoryDB automatically chooses an appropriate time range.</p>
+    /// <p> Example: 05:00-09:00</p>
+    /// <p> If you do not specify this parameter, MemoryDB automatically chooses an appropriate time range.</p>
     pub fn snapshot_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_window = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your shard.</p>
-    /// <p>Example: 05:00-09:00</p>
-    /// <p>If you do not specify this parameter, MemoryDB automatically chooses an appropriate time range.</p>
+    /// <p> Example: 05:00-09:00</p>
+    /// <p> If you do not specify this parameter, MemoryDB automatically chooses an appropriate time range.</p>
     pub fn set_snapshot_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_window = input;
         self
     }
     /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your shard.</p>
-    /// <p>Example: 05:00-09:00</p>
-    /// <p>If you do not specify this parameter, MemoryDB automatically chooses an appropriate time range.</p>
+    /// <p> Example: 05:00-09:00</p>
+    /// <p> If you do not specify this parameter, MemoryDB automatically chooses an appropriate time range.</p>
     pub fn get_snapshot_window(&self) -> &::std::option::Option<::std::string::String> {
         &self.snapshot_window
     }

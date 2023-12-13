@@ -21,10 +21,8 @@ pub struct Service {
     pub deleted_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current state of the App Runner service. These particular values mean the following.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATE_FAILED</code> – The service failed to create. The failed service isn't usable, and still counts towards your service quota. To troubleshoot this failure, read the failure events and logs, change any parameters that need to be fixed, and rebuild your service using <code>UpdateService</code>.</p></li>
-    /// <li>
-    /// <p><code>DELETE_FAILED</code> – The service failed to delete and can't be successfully recovered. Retry the service deletion call to ensure that all related resources are removed.</p></li>
+    /// <li> <p> <code>CREATE_FAILED</code> – The service failed to create. The failed service isn't usable, and still counts towards your service quota. To troubleshoot this failure, read the failure events and logs, change any parameters that need to be fixed, and rebuild your service using <code>UpdateService</code>.</p> </li>
+    /// <li> <p> <code>DELETE_FAILED</code> – The service failed to delete and can't be successfully recovered. Retry the service deletion call to ensure that all related resources are removed.</p> </li>
     /// </ul>
     pub status: crate::types::ServiceStatus,
     /// <p>The source deployed to the App Runner service. It can be a code or an image repository.</p>
@@ -76,10 +74,8 @@ impl Service {
     }
     /// <p>The current state of the App Runner service. These particular values mean the following.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATE_FAILED</code> – The service failed to create. The failed service isn't usable, and still counts towards your service quota. To troubleshoot this failure, read the failure events and logs, change any parameters that need to be fixed, and rebuild your service using <code>UpdateService</code>.</p></li>
-    /// <li>
-    /// <p><code>DELETE_FAILED</code> – The service failed to delete and can't be successfully recovered. Retry the service deletion call to ensure that all related resources are removed.</p></li>
+    /// <li> <p> <code>CREATE_FAILED</code> – The service failed to create. The failed service isn't usable, and still counts towards your service quota. To troubleshoot this failure, read the failure events and logs, change any parameters that need to be fixed, and rebuild your service using <code>UpdateService</code>.</p> </li>
+    /// <li> <p> <code>DELETE_FAILED</code> – The service failed to delete and can't be successfully recovered. Retry the service deletion call to ensure that all related resources are removed.</p> </li>
     /// </ul>
     pub fn status(&self) -> &crate::types::ServiceStatus {
         &self.status
@@ -246,10 +242,8 @@ impl ServiceBuilder {
     }
     /// <p>The current state of the App Runner service. These particular values mean the following.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATE_FAILED</code> – The service failed to create. The failed service isn't usable, and still counts towards your service quota. To troubleshoot this failure, read the failure events and logs, change any parameters that need to be fixed, and rebuild your service using <code>UpdateService</code>.</p></li>
-    /// <li>
-    /// <p><code>DELETE_FAILED</code> – The service failed to delete and can't be successfully recovered. Retry the service deletion call to ensure that all related resources are removed.</p></li>
+    /// <li> <p> <code>CREATE_FAILED</code> – The service failed to create. The failed service isn't usable, and still counts towards your service quota. To troubleshoot this failure, read the failure events and logs, change any parameters that need to be fixed, and rebuild your service using <code>UpdateService</code>.</p> </li>
+    /// <li> <p> <code>DELETE_FAILED</code> – The service failed to delete and can't be successfully recovered. Retry the service deletion call to ensure that all related resources are removed.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn status(mut self, input: crate::types::ServiceStatus) -> Self {
@@ -258,10 +252,8 @@ impl ServiceBuilder {
     }
     /// <p>The current state of the App Runner service. These particular values mean the following.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATE_FAILED</code> – The service failed to create. The failed service isn't usable, and still counts towards your service quota. To troubleshoot this failure, read the failure events and logs, change any parameters that need to be fixed, and rebuild your service using <code>UpdateService</code>.</p></li>
-    /// <li>
-    /// <p><code>DELETE_FAILED</code> – The service failed to delete and can't be successfully recovered. Retry the service deletion call to ensure that all related resources are removed.</p></li>
+    /// <li> <p> <code>CREATE_FAILED</code> – The service failed to create. The failed service isn't usable, and still counts towards your service quota. To troubleshoot this failure, read the failure events and logs, change any parameters that need to be fixed, and rebuild your service using <code>UpdateService</code>.</p> </li>
+    /// <li> <p> <code>DELETE_FAILED</code> – The service failed to delete and can't be successfully recovered. Retry the service deletion call to ensure that all related resources are removed.</p> </li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ServiceStatus>) -> Self {
         self.status = input;
@@ -269,10 +261,8 @@ impl ServiceBuilder {
     }
     /// <p>The current state of the App Runner service. These particular values mean the following.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATE_FAILED</code> – The service failed to create. The failed service isn't usable, and still counts towards your service quota. To troubleshoot this failure, read the failure events and logs, change any parameters that need to be fixed, and rebuild your service using <code>UpdateService</code>.</p></li>
-    /// <li>
-    /// <p><code>DELETE_FAILED</code> – The service failed to delete and can't be successfully recovered. Retry the service deletion call to ensure that all related resources are removed.</p></li>
+    /// <li> <p> <code>CREATE_FAILED</code> – The service failed to create. The failed service isn't usable, and still counts towards your service quota. To troubleshoot this failure, read the failure events and logs, change any parameters that need to be fixed, and rebuild your service using <code>UpdateService</code>.</p> </li>
+    /// <li> <p> <code>DELETE_FAILED</code> – The service failed to delete and can't be successfully recovered. Retry the service deletion call to ensure that all related resources are removed.</p> </li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ServiceStatus> {
         &self.status

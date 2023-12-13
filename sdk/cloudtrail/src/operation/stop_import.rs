@@ -243,7 +243,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for StopImportEnd
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum StopImportError {
-    /// <p>The specified import was not found.</p>
+    /// <p> The specified import was not found. </p>
     ImportNotFoundException(crate::types::error::ImportNotFoundException),
     /// <p>The request includes a parameter that is not valid.</p>
     InvalidParameterException(crate::types::error::InvalidParameterException),

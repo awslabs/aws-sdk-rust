@@ -239,7 +239,7 @@ pub enum StartDeviceAuthorizationError {
     InvalidClientException(crate::types::error::InvalidClientException),
     /// <p>Indicates that something is wrong with the input to the request. For example, a required parameter might be missing or out of range.</p>
     InvalidRequestException(crate::types::error::InvalidRequestException),
-    /// <p>Indicates that the client is making the request too frequently and is more than the service can handle.</p>
+    /// <p>Indicates that the client is making the request too frequently and is more than the service can handle. </p>
     SlowDownException(crate::types::error::SlowDownException),
     /// <p>Indicates that the client is not currently authorized to make the request. This can happen when a <code>clientId</code> is not issued for a public client.</p>
     UnauthorizedClientException(crate::types::error::UnauthorizedClientException),

@@ -9,10 +9,8 @@ pub struct DedicatedIp {
     pub ip: ::std::string::String,
     /// <p>The warm-up status of a dedicated IP address. The status can have one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>IN_PROGRESS</code> – The IP address isn't ready to use because the dedicated IP warm-up process is ongoing.</p></li>
-    /// <li>
-    /// <p><code>DONE</code> – The dedicated IP warm-up process is complete, and the IP address is ready to use.</p></li>
+    /// <li> <p> <code>IN_PROGRESS</code> – The IP address isn't ready to use because the dedicated IP warm-up process is ongoing.</p> </li>
+    /// <li> <p> <code>DONE</code> – The dedicated IP warm-up process is complete, and the IP address is ready to use.</p> </li>
     /// </ul>
     pub warmup_status: crate::types::WarmupStatus,
     /// <p>Indicates how complete the dedicated IP warm-up process is. When this value equals 1, the address has completed the warm-up process and is ready for use.</p>
@@ -28,10 +26,8 @@ impl DedicatedIp {
     }
     /// <p>The warm-up status of a dedicated IP address. The status can have one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>IN_PROGRESS</code> – The IP address isn't ready to use because the dedicated IP warm-up process is ongoing.</p></li>
-    /// <li>
-    /// <p><code>DONE</code> – The dedicated IP warm-up process is complete, and the IP address is ready to use.</p></li>
+    /// <li> <p> <code>IN_PROGRESS</code> – The IP address isn't ready to use because the dedicated IP warm-up process is ongoing.</p> </li>
+    /// <li> <p> <code>DONE</code> – The dedicated IP warm-up process is complete, and the IP address is ready to use.</p> </li>
     /// </ul>
     pub fn warmup_status(&self) -> &crate::types::WarmupStatus {
         &self.warmup_status
@@ -79,10 +75,8 @@ impl DedicatedIpBuilder {
     }
     /// <p>The warm-up status of a dedicated IP address. The status can have one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>IN_PROGRESS</code> – The IP address isn't ready to use because the dedicated IP warm-up process is ongoing.</p></li>
-    /// <li>
-    /// <p><code>DONE</code> – The dedicated IP warm-up process is complete, and the IP address is ready to use.</p></li>
+    /// <li> <p> <code>IN_PROGRESS</code> – The IP address isn't ready to use because the dedicated IP warm-up process is ongoing.</p> </li>
+    /// <li> <p> <code>DONE</code> – The dedicated IP warm-up process is complete, and the IP address is ready to use.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn warmup_status(mut self, input: crate::types::WarmupStatus) -> Self {
@@ -91,10 +85,8 @@ impl DedicatedIpBuilder {
     }
     /// <p>The warm-up status of a dedicated IP address. The status can have one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>IN_PROGRESS</code> – The IP address isn't ready to use because the dedicated IP warm-up process is ongoing.</p></li>
-    /// <li>
-    /// <p><code>DONE</code> – The dedicated IP warm-up process is complete, and the IP address is ready to use.</p></li>
+    /// <li> <p> <code>IN_PROGRESS</code> – The IP address isn't ready to use because the dedicated IP warm-up process is ongoing.</p> </li>
+    /// <li> <p> <code>DONE</code> – The dedicated IP warm-up process is complete, and the IP address is ready to use.</p> </li>
     /// </ul>
     pub fn set_warmup_status(mut self, input: ::std::option::Option<crate::types::WarmupStatus>) -> Self {
         self.warmup_status = input;
@@ -102,10 +94,8 @@ impl DedicatedIpBuilder {
     }
     /// <p>The warm-up status of a dedicated IP address. The status can have one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>IN_PROGRESS</code> – The IP address isn't ready to use because the dedicated IP warm-up process is ongoing.</p></li>
-    /// <li>
-    /// <p><code>DONE</code> – The dedicated IP warm-up process is complete, and the IP address is ready to use.</p></li>
+    /// <li> <p> <code>IN_PROGRESS</code> – The IP address isn't ready to use because the dedicated IP warm-up process is ongoing.</p> </li>
+    /// <li> <p> <code>DONE</code> – The dedicated IP warm-up process is complete, and the IP address is ready to use.</p> </li>
     /// </ul>
     pub fn get_warmup_status(&self) -> &::std::option::Option<crate::types::WarmupStatus> {
         &self.warmup_status

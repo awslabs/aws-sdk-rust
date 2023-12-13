@@ -3,26 +3,26 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTableOutput {
-    /// <p>The table name.</p>
+    /// <p>The table name. </p>
     pub table_name: ::std::option::Option<::std::string::String>,
-    /// <p>A list of columns in the table.</p>
+    /// <p>A list of columns in the table. </p>
     pub column_list: ::std::option::Option<::std::vec::Vec<crate::types::ColumnMetadata>>,
-    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request.</p>
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeTableOutput {
-    /// <p>The table name.</p>
+    /// <p>The table name. </p>
     pub fn table_name(&self) -> ::std::option::Option<&str> {
         self.table_name.as_deref()
     }
-    /// <p>A list of columns in the table.</p>
+    /// <p>A list of columns in the table. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.column_list.is_none()`.
     pub fn column_list(&self) -> &[crate::types::ColumnMetadata] {
         self.column_list.as_deref().unwrap_or_default()
     }
-    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request.</p>
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -49,17 +49,17 @@ pub struct DescribeTableOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeTableOutputBuilder {
-    /// <p>The table name.</p>
+    /// <p>The table name. </p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The table name.</p>
+    /// <p>The table name. </p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
     }
-    /// <p>The table name.</p>
+    /// <p>The table name. </p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.table_name
     }
@@ -67,33 +67,33 @@ impl DescribeTableOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_column_list`](Self::set_column_list).
     ///
-    /// <p>A list of columns in the table.</p>
+    /// <p>A list of columns in the table. </p>
     pub fn column_list(mut self, input: crate::types::ColumnMetadata) -> Self {
         let mut v = self.column_list.unwrap_or_default();
         v.push(input);
         self.column_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of columns in the table.</p>
+    /// <p>A list of columns in the table. </p>
     pub fn set_column_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnMetadata>>) -> Self {
         self.column_list = input;
         self
     }
-    /// <p>A list of columns in the table.</p>
+    /// <p>A list of columns in the table. </p>
     pub fn get_column_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnMetadata>> {
         &self.column_list
     }
-    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request.</p>
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request.</p>
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request.</p>
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

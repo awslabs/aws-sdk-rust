@@ -22,7 +22,7 @@ impl DescribeProfilingGroupInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeProfilingGroup`.
 ///
-/// <p>Returns a <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> object that contains information about the requested profiling group.</p>
+/// <p> Returns a <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> object that contains information about the requested profiling group. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeProfilingGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DescribeProfilingGroupFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the profiling group to get information about.</p>
+    /// <p> The name of the profiling group to get information about. </p>
     pub fn profiling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.profiling_group_name(input.into());
         self
     }
-    /// <p>The name of the profiling group to get information about.</p>
+    /// <p> The name of the profiling group to get information about. </p>
     pub fn set_profiling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_profiling_group_name(input);
         self
     }
-    /// <p>The name of the profiling group to get information about.</p>
+    /// <p> The name of the profiling group to get information about. </p>
     pub fn get_profiling_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_profiling_group_name()
     }

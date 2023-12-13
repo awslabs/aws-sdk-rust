@@ -22,7 +22,7 @@ impl UpdateAssessmentFrameworkInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateAssessmentFramework`.
 ///
-/// <p>Updates a custom framework in Audit Manager.</p>
+/// <p> Updates a custom framework in Audit Manager. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAssessmentFrameworkFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,59 +108,59 @@ impl UpdateAssessmentFrameworkFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier for the framework.</p>
+    /// <p> The unique identifier for the framework. </p>
     pub fn framework_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.framework_id(input.into());
         self
     }
-    /// <p>The unique identifier for the framework.</p>
+    /// <p> The unique identifier for the framework. </p>
     pub fn set_framework_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_framework_id(input);
         self
     }
-    /// <p>The unique identifier for the framework.</p>
+    /// <p> The unique identifier for the framework. </p>
     pub fn get_framework_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_framework_id()
     }
-    /// <p>The name of the framework to be updated.</p>
+    /// <p> The name of the framework to be updated. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of the framework to be updated.</p>
+    /// <p> The name of the framework to be updated. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name of the framework to be updated.</p>
+    /// <p> The name of the framework to be updated. </p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>The description of the updated framework.</p>
+    /// <p> The description of the updated framework. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>The description of the updated framework.</p>
+    /// <p> The description of the updated framework. </p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>The description of the updated framework.</p>
+    /// <p> The description of the updated framework. </p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p>The compliance type that the new custom framework supports, such as CIS or HIPAA.</p>
+    /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
     pub fn compliance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.compliance_type(input.into());
         self
     }
-    /// <p>The compliance type that the new custom framework supports, such as CIS or HIPAA.</p>
+    /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
     pub fn set_compliance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_compliance_type(input);
         self
     }
-    /// <p>The compliance type that the new custom framework supports, such as CIS or HIPAA.</p>
+    /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
     pub fn get_compliance_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_compliance_type()
     }
@@ -168,17 +168,17 @@ impl UpdateAssessmentFrameworkFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_control_sets`](Self::set_control_sets).
     ///
-    /// <p>The control sets that are associated with the framework.</p>
+    /// <p> The control sets that are associated with the framework. </p>
     pub fn control_sets(mut self, input: crate::types::UpdateAssessmentFrameworkControlSet) -> Self {
         self.inner = self.inner.control_sets(input);
         self
     }
-    /// <p>The control sets that are associated with the framework.</p>
+    /// <p> The control sets that are associated with the framework. </p>
     pub fn set_control_sets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateAssessmentFrameworkControlSet>>) -> Self {
         self.inner = self.inner.set_control_sets(input);
         self
     }
-    /// <p>The control sets that are associated with the framework.</p>
+    /// <p> The control sets that are associated with the framework. </p>
     pub fn get_control_sets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateAssessmentFrameworkControlSet>> {
         self.inner.get_control_sets()
     }

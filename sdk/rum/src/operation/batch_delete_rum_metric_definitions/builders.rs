@@ -138,19 +138,19 @@ impl BatchDeleteRumMetricDefinitionsFluentBuilder {
     pub fn get_destination(&self) -> &::std::option::Option<crate::types::MetricDestination> {
         self.inner.get_destination()
     }
-    /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</p>
+    /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter. </p>
     /// <p>This parameter specifies the ARN of the Evidently experiment that was receiving the metrics that are being deleted.</p>
     pub fn destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_arn(input.into());
         self
     }
-    /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</p>
+    /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter. </p>
     /// <p>This parameter specifies the ARN of the Evidently experiment that was receiving the metrics that are being deleted.</p>
     pub fn set_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_arn(input);
         self
     }
-    /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</p>
+    /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter. </p>
     /// <p>This parameter specifies the ARN of the Evidently experiment that was receiving the metrics that are being deleted.</p>
     pub fn get_destination_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_destination_arn()

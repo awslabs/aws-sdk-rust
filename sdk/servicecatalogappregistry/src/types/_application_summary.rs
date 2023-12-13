@@ -14,7 +14,7 @@ pub struct ApplicationSummary {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ISO-8601 formatted timestamp of the moment when the application was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
+    /// <p> The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
     pub last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ApplicationSummary {
@@ -38,7 +38,7 @@ impl ApplicationSummary {
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
+    /// <p> The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
     pub fn last_update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
@@ -132,17 +132,17 @@ impl ApplicationSummaryBuilder {
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }
-    /// <p>The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
+    /// <p> The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
     pub fn last_update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_update_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
+    /// <p> The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
     pub fn set_last_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_update_time = input;
         self
     }
-    /// <p>The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
+    /// <p> The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
     pub fn get_last_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_update_time
     }

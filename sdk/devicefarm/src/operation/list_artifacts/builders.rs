@@ -131,12 +131,9 @@ impl ListArtifactsFluentBuilder {
     /// <p>The artifacts' type.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>FILE</p></li>
-    /// <li>
-    /// <p>LOG</p></li>
-    /// <li>
-    /// <p>SCREENSHOT</p></li>
+    /// <li> <p>FILE</p> </li>
+    /// <li> <p>LOG</p> </li>
+    /// <li> <p>SCREENSHOT</p> </li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::ArtifactCategory) -> Self {
         self.inner = self.inner.r#type(input);
@@ -145,12 +142,9 @@ impl ListArtifactsFluentBuilder {
     /// <p>The artifacts' type.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>FILE</p></li>
-    /// <li>
-    /// <p>LOG</p></li>
-    /// <li>
-    /// <p>SCREENSHOT</p></li>
+    /// <li> <p>FILE</p> </li>
+    /// <li> <p>LOG</p> </li>
+    /// <li> <p>SCREENSHOT</p> </li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ArtifactCategory>) -> Self {
         self.inner = self.inner.set_type(input);
@@ -159,12 +153,9 @@ impl ListArtifactsFluentBuilder {
     /// <p>The artifacts' type.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>FILE</p></li>
-    /// <li>
-    /// <p>LOG</p></li>
-    /// <li>
-    /// <p>SCREENSHOT</p></li>
+    /// <li> <p>FILE</p> </li>
+    /// <li> <p>LOG</p> </li>
+    /// <li> <p>SCREENSHOT</p> </li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ArtifactCategory> {
         self.inner.get_type()

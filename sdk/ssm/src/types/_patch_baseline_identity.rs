@@ -8,7 +8,7 @@ pub struct PatchBaselineIdentity {
     pub baseline_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the patch baseline.</p>
     pub baseline_name: ::std::option::Option<::std::string::String>,
-    /// <p>Defines the operating system the patch baseline applies to. The default value is <code>WINDOWS</code>.</p>
+    /// <p>Defines the operating system the patch baseline applies to. The default value is <code>WINDOWS</code>. </p>
     pub operating_system: ::std::option::Option<crate::types::OperatingSystem>,
     /// <p>The description of the patch baseline.</p>
     pub baseline_description: ::std::option::Option<::std::string::String>,
@@ -24,7 +24,7 @@ impl PatchBaselineIdentity {
     pub fn baseline_name(&self) -> ::std::option::Option<&str> {
         self.baseline_name.as_deref()
     }
-    /// <p>Defines the operating system the patch baseline applies to. The default value is <code>WINDOWS</code>.</p>
+    /// <p>Defines the operating system the patch baseline applies to. The default value is <code>WINDOWS</code>. </p>
     pub fn operating_system(&self) -> ::std::option::Option<&crate::types::OperatingSystem> {
         self.operating_system.as_ref()
     }
@@ -83,17 +83,17 @@ impl PatchBaselineIdentityBuilder {
     pub fn get_baseline_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.baseline_name
     }
-    /// <p>Defines the operating system the patch baseline applies to. The default value is <code>WINDOWS</code>.</p>
+    /// <p>Defines the operating system the patch baseline applies to. The default value is <code>WINDOWS</code>. </p>
     pub fn operating_system(mut self, input: crate::types::OperatingSystem) -> Self {
         self.operating_system = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Defines the operating system the patch baseline applies to. The default value is <code>WINDOWS</code>.</p>
+    /// <p>Defines the operating system the patch baseline applies to. The default value is <code>WINDOWS</code>. </p>
     pub fn set_operating_system(mut self, input: ::std::option::Option<crate::types::OperatingSystem>) -> Self {
         self.operating_system = input;
         self
     }
-    /// <p>Defines the operating system the patch baseline applies to. The default value is <code>WINDOWS</code>.</p>
+    /// <p>Defines the operating system the patch baseline applies to. The default value is <code>WINDOWS</code>. </p>
     pub fn get_operating_system(&self) -> &::std::option::Option<crate::types::OperatingSystem> {
         &self.operating_system
     }

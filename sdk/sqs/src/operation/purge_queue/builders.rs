@@ -22,9 +22,9 @@ impl PurgeQueueInputBuilder {
 }
 /// Fluent builder constructing a request to `PurgeQueue`.
 ///
-/// <p>Deletes available messages in a queue (including in-flight messages) specified by the <code>QueueURL</code> parameter.</p><important>
+/// <p>Deletes available messages in a queue (including in-flight messages) specified by the <code>QueueURL</code> parameter.</p> <important>
 /// <p>When you use the <code>PurgeQueue</code> action, you can't retrieve any messages deleted from a queue.</p>
-/// <p>The message deletion process takes up to 60 seconds. We recommend waiting for 60 seconds regardless of your queue's size.</p>
+/// <p>The message deletion process takes up to 60 seconds. We recommend waiting for 60 seconds regardless of your queue's size. </p>
 /// </important>
 /// <p>Messages sent to the queue <i>before</i> you call <code>PurgeQueue</code> might be received but are deleted within the next minute.</p>
 /// <p>Messages sent to the queue <i>after</i> you call <code>PurgeQueue</code> might be deleted while the queue is being purged.</p>

@@ -22,7 +22,7 @@ impl AssociateDelegationSignerToDomainInputBuilder {
 }
 /// Fluent builder constructing a request to `AssociateDelegationSignerToDomain`.
 ///
-/// <p>Creates a delegation signer (DS) record in the registry zone for this domain name.</p>
+/// <p> Creates a delegation signer (DS) record in the registry zone for this domain name.</p>
 /// <p>Note that creating DS record at the registry impacts DNSSEC validation of your DNS records. This action may render your domain name unavailable on the internet if the steps are completed in the wrong order, or with incorrect timing. For more information about DNSSEC signing, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-configuring-dnssec.html">Configuring DNSSEC signing</a> in the <i>Route&nbsp;53 developer guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateDelegationSignerToDomainFluentBuilder {

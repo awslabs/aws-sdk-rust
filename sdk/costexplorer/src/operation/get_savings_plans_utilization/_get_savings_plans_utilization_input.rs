@@ -10,34 +10,23 @@ pub struct GetSavingsPlansUtilizationInput {
     pub granularity: ::std::option::Option<crate::types::Granularity>,
     /// <p>Filters Savings Plans utilization coverage data for active Savings Plans dimensions. You can filter data with the following dimensions:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>LINKED_ACCOUNT</code></p></li>
-    /// <li>
-    /// <p><code>SAVINGS_PLAN_ARN</code></p></li>
-    /// <li>
-    /// <p><code>SAVINGS_PLANS_TYPE</code></p></li>
-    /// <li>
-    /// <p><code>REGION</code></p></li>
-    /// <li>
-    /// <p><code>PAYMENT_OPTION</code></p></li>
-    /// <li>
-    /// <p><code>INSTANCE_TYPE_FAMILY</code></p></li>
+    /// <li> <p> <code>LINKED_ACCOUNT</code> </p> </li>
+    /// <li> <p> <code>SAVINGS_PLAN_ARN</code> </p> </li>
+    /// <li> <p> <code>SAVINGS_PLANS_TYPE</code> </p> </li>
+    /// <li> <p> <code>REGION</code> </p> </li>
+    /// <li> <p> <code>PAYMENT_OPTION</code> </p> </li>
+    /// <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li>
     /// </ul>
-    /// <p><code>GetSavingsPlansUtilization</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension.</p>
+    /// <p> <code>GetSavingsPlansUtilization</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension.</p>
     pub filter: ::std::option::Option<crate::types::Expression>,
     /// <p>The value that you want to sort the data by.</p>
     /// <p>The following values are supported for <code>Key</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>UtilizationPercentage</code></p></li>
-    /// <li>
-    /// <p><code>TotalCommitment</code></p></li>
-    /// <li>
-    /// <p><code>UsedCommitment</code></p></li>
-    /// <li>
-    /// <p><code>UnusedCommitment</code></p></li>
-    /// <li>
-    /// <p><code>NetSavings</code></p></li>
+    /// <li> <p> <code>UtilizationPercentage</code> </p> </li>
+    /// <li> <p> <code>TotalCommitment</code> </p> </li>
+    /// <li> <p> <code>UsedCommitment</code> </p> </li>
+    /// <li> <p> <code>UnusedCommitment</code> </p> </li>
+    /// <li> <p> <code>NetSavings</code> </p> </li>
     /// </ul>
     /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
     pub sort_by: ::std::option::Option<crate::types::SortDefinition>,
@@ -54,36 +43,25 @@ impl GetSavingsPlansUtilizationInput {
     }
     /// <p>Filters Savings Plans utilization coverage data for active Savings Plans dimensions. You can filter data with the following dimensions:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>LINKED_ACCOUNT</code></p></li>
-    /// <li>
-    /// <p><code>SAVINGS_PLAN_ARN</code></p></li>
-    /// <li>
-    /// <p><code>SAVINGS_PLANS_TYPE</code></p></li>
-    /// <li>
-    /// <p><code>REGION</code></p></li>
-    /// <li>
-    /// <p><code>PAYMENT_OPTION</code></p></li>
-    /// <li>
-    /// <p><code>INSTANCE_TYPE_FAMILY</code></p></li>
+    /// <li> <p> <code>LINKED_ACCOUNT</code> </p> </li>
+    /// <li> <p> <code>SAVINGS_PLAN_ARN</code> </p> </li>
+    /// <li> <p> <code>SAVINGS_PLANS_TYPE</code> </p> </li>
+    /// <li> <p> <code>REGION</code> </p> </li>
+    /// <li> <p> <code>PAYMENT_OPTION</code> </p> </li>
+    /// <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li>
     /// </ul>
-    /// <p><code>GetSavingsPlansUtilization</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension.</p>
+    /// <p> <code>GetSavingsPlansUtilization</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension.</p>
     pub fn filter(&self) -> ::std::option::Option<&crate::types::Expression> {
         self.filter.as_ref()
     }
     /// <p>The value that you want to sort the data by.</p>
     /// <p>The following values are supported for <code>Key</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>UtilizationPercentage</code></p></li>
-    /// <li>
-    /// <p><code>TotalCommitment</code></p></li>
-    /// <li>
-    /// <p><code>UsedCommitment</code></p></li>
-    /// <li>
-    /// <p><code>UnusedCommitment</code></p></li>
-    /// <li>
-    /// <p><code>NetSavings</code></p></li>
+    /// <li> <p> <code>UtilizationPercentage</code> </p> </li>
+    /// <li> <p> <code>TotalCommitment</code> </p> </li>
+    /// <li> <p> <code>UsedCommitment</code> </p> </li>
+    /// <li> <p> <code>UnusedCommitment</code> </p> </li>
+    /// <li> <p> <code>NetSavings</code> </p> </li>
     /// </ul>
     /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
     pub fn sort_by(&self) -> ::std::option::Option<&crate::types::SortDefinition> {
@@ -141,76 +119,53 @@ impl GetSavingsPlansUtilizationInputBuilder {
     }
     /// <p>Filters Savings Plans utilization coverage data for active Savings Plans dimensions. You can filter data with the following dimensions:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>LINKED_ACCOUNT</code></p></li>
-    /// <li>
-    /// <p><code>SAVINGS_PLAN_ARN</code></p></li>
-    /// <li>
-    /// <p><code>SAVINGS_PLANS_TYPE</code></p></li>
-    /// <li>
-    /// <p><code>REGION</code></p></li>
-    /// <li>
-    /// <p><code>PAYMENT_OPTION</code></p></li>
-    /// <li>
-    /// <p><code>INSTANCE_TYPE_FAMILY</code></p></li>
+    /// <li> <p> <code>LINKED_ACCOUNT</code> </p> </li>
+    /// <li> <p> <code>SAVINGS_PLAN_ARN</code> </p> </li>
+    /// <li> <p> <code>SAVINGS_PLANS_TYPE</code> </p> </li>
+    /// <li> <p> <code>REGION</code> </p> </li>
+    /// <li> <p> <code>PAYMENT_OPTION</code> </p> </li>
+    /// <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li>
     /// </ul>
-    /// <p><code>GetSavingsPlansUtilization</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension.</p>
+    /// <p> <code>GetSavingsPlansUtilization</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension.</p>
     pub fn filter(mut self, input: crate::types::Expression) -> Self {
         self.filter = ::std::option::Option::Some(input);
         self
     }
     /// <p>Filters Savings Plans utilization coverage data for active Savings Plans dimensions. You can filter data with the following dimensions:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>LINKED_ACCOUNT</code></p></li>
-    /// <li>
-    /// <p><code>SAVINGS_PLAN_ARN</code></p></li>
-    /// <li>
-    /// <p><code>SAVINGS_PLANS_TYPE</code></p></li>
-    /// <li>
-    /// <p><code>REGION</code></p></li>
-    /// <li>
-    /// <p><code>PAYMENT_OPTION</code></p></li>
-    /// <li>
-    /// <p><code>INSTANCE_TYPE_FAMILY</code></p></li>
+    /// <li> <p> <code>LINKED_ACCOUNT</code> </p> </li>
+    /// <li> <p> <code>SAVINGS_PLAN_ARN</code> </p> </li>
+    /// <li> <p> <code>SAVINGS_PLANS_TYPE</code> </p> </li>
+    /// <li> <p> <code>REGION</code> </p> </li>
+    /// <li> <p> <code>PAYMENT_OPTION</code> </p> </li>
+    /// <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li>
     /// </ul>
-    /// <p><code>GetSavingsPlansUtilization</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension.</p>
+    /// <p> <code>GetSavingsPlansUtilization</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::Expression>) -> Self {
         self.filter = input;
         self
     }
     /// <p>Filters Savings Plans utilization coverage data for active Savings Plans dimensions. You can filter data with the following dimensions:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>LINKED_ACCOUNT</code></p></li>
-    /// <li>
-    /// <p><code>SAVINGS_PLAN_ARN</code></p></li>
-    /// <li>
-    /// <p><code>SAVINGS_PLANS_TYPE</code></p></li>
-    /// <li>
-    /// <p><code>REGION</code></p></li>
-    /// <li>
-    /// <p><code>PAYMENT_OPTION</code></p></li>
-    /// <li>
-    /// <p><code>INSTANCE_TYPE_FAMILY</code></p></li>
+    /// <li> <p> <code>LINKED_ACCOUNT</code> </p> </li>
+    /// <li> <p> <code>SAVINGS_PLAN_ARN</code> </p> </li>
+    /// <li> <p> <code>SAVINGS_PLANS_TYPE</code> </p> </li>
+    /// <li> <p> <code>REGION</code> </p> </li>
+    /// <li> <p> <code>PAYMENT_OPTION</code> </p> </li>
+    /// <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li>
     /// </ul>
-    /// <p><code>GetSavingsPlansUtilization</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension.</p>
+    /// <p> <code>GetSavingsPlansUtilization</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension.</p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::Expression> {
         &self.filter
     }
     /// <p>The value that you want to sort the data by.</p>
     /// <p>The following values are supported for <code>Key</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>UtilizationPercentage</code></p></li>
-    /// <li>
-    /// <p><code>TotalCommitment</code></p></li>
-    /// <li>
-    /// <p><code>UsedCommitment</code></p></li>
-    /// <li>
-    /// <p><code>UnusedCommitment</code></p></li>
-    /// <li>
-    /// <p><code>NetSavings</code></p></li>
+    /// <li> <p> <code>UtilizationPercentage</code> </p> </li>
+    /// <li> <p> <code>TotalCommitment</code> </p> </li>
+    /// <li> <p> <code>UsedCommitment</code> </p> </li>
+    /// <li> <p> <code>UnusedCommitment</code> </p> </li>
+    /// <li> <p> <code>NetSavings</code> </p> </li>
     /// </ul>
     /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
     pub fn sort_by(mut self, input: crate::types::SortDefinition) -> Self {
@@ -220,16 +175,11 @@ impl GetSavingsPlansUtilizationInputBuilder {
     /// <p>The value that you want to sort the data by.</p>
     /// <p>The following values are supported for <code>Key</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>UtilizationPercentage</code></p></li>
-    /// <li>
-    /// <p><code>TotalCommitment</code></p></li>
-    /// <li>
-    /// <p><code>UsedCommitment</code></p></li>
-    /// <li>
-    /// <p><code>UnusedCommitment</code></p></li>
-    /// <li>
-    /// <p><code>NetSavings</code></p></li>
+    /// <li> <p> <code>UtilizationPercentage</code> </p> </li>
+    /// <li> <p> <code>TotalCommitment</code> </p> </li>
+    /// <li> <p> <code>UsedCommitment</code> </p> </li>
+    /// <li> <p> <code>UnusedCommitment</code> </p> </li>
+    /// <li> <p> <code>NetSavings</code> </p> </li>
     /// </ul>
     /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::SortDefinition>) -> Self {
@@ -239,16 +189,11 @@ impl GetSavingsPlansUtilizationInputBuilder {
     /// <p>The value that you want to sort the data by.</p>
     /// <p>The following values are supported for <code>Key</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>UtilizationPercentage</code></p></li>
-    /// <li>
-    /// <p><code>TotalCommitment</code></p></li>
-    /// <li>
-    /// <p><code>UsedCommitment</code></p></li>
-    /// <li>
-    /// <p><code>UnusedCommitment</code></p></li>
-    /// <li>
-    /// <p><code>NetSavings</code></p></li>
+    /// <li> <p> <code>UtilizationPercentage</code> </p> </li>
+    /// <li> <p> <code>TotalCommitment</code> </p> </li>
+    /// <li> <p> <code>UsedCommitment</code> </p> </li>
+    /// <li> <p> <code>UnusedCommitment</code> </p> </li>
+    /// <li> <p> <code>NetSavings</code> </p> </li>
     /// </ul>
     /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::SortDefinition> {

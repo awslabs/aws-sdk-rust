@@ -10,10 +10,8 @@ pub struct SearchResourcesOutput {
     /// <p>A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code> and <code>Message</code> structures.</p>
     /// <p>Possible values for <code>ErrorCode</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CLOUDFORMATION_STACK_INACTIVE</code></p></li>
-    /// <li>
-    /// <p><code>CLOUDFORMATION_STACK_NOT_EXISTING</code></p></li>
+    /// <li> <p> <code>CLOUDFORMATION_STACK_INACTIVE</code> </p> </li>
+    /// <li> <p> <code>CLOUDFORMATION_STACK_NOT_EXISTING</code> </p> </li>
     /// </ul>
     pub query_errors: ::std::option::Option<::std::vec::Vec<crate::types::QueryError>>,
     _request_id: Option<String>,
@@ -32,10 +30,8 @@ impl SearchResourcesOutput {
     /// <p>A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code> and <code>Message</code> structures.</p>
     /// <p>Possible values for <code>ErrorCode</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CLOUDFORMATION_STACK_INACTIVE</code></p></li>
-    /// <li>
-    /// <p><code>CLOUDFORMATION_STACK_NOT_EXISTING</code></p></li>
+    /// <li> <p> <code>CLOUDFORMATION_STACK_INACTIVE</code> </p> </li>
+    /// <li> <p> <code>CLOUDFORMATION_STACK_NOT_EXISTING</code> </p> </li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.query_errors.is_none()`.
@@ -106,10 +102,8 @@ impl SearchResourcesOutputBuilder {
     /// <p>A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code> and <code>Message</code> structures.</p>
     /// <p>Possible values for <code>ErrorCode</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CLOUDFORMATION_STACK_INACTIVE</code></p></li>
-    /// <li>
-    /// <p><code>CLOUDFORMATION_STACK_NOT_EXISTING</code></p></li>
+    /// <li> <p> <code>CLOUDFORMATION_STACK_INACTIVE</code> </p> </li>
+    /// <li> <p> <code>CLOUDFORMATION_STACK_NOT_EXISTING</code> </p> </li>
     /// </ul>
     pub fn query_errors(mut self, input: crate::types::QueryError) -> Self {
         let mut v = self.query_errors.unwrap_or_default();
@@ -120,10 +114,8 @@ impl SearchResourcesOutputBuilder {
     /// <p>A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code> and <code>Message</code> structures.</p>
     /// <p>Possible values for <code>ErrorCode</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CLOUDFORMATION_STACK_INACTIVE</code></p></li>
-    /// <li>
-    /// <p><code>CLOUDFORMATION_STACK_NOT_EXISTING</code></p></li>
+    /// <li> <p> <code>CLOUDFORMATION_STACK_INACTIVE</code> </p> </li>
+    /// <li> <p> <code>CLOUDFORMATION_STACK_NOT_EXISTING</code> </p> </li>
     /// </ul>
     pub fn set_query_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::QueryError>>) -> Self {
         self.query_errors = input;
@@ -132,10 +124,8 @@ impl SearchResourcesOutputBuilder {
     /// <p>A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code> and <code>Message</code> structures.</p>
     /// <p>Possible values for <code>ErrorCode</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CLOUDFORMATION_STACK_INACTIVE</code></p></li>
-    /// <li>
-    /// <p><code>CLOUDFORMATION_STACK_NOT_EXISTING</code></p></li>
+    /// <li> <p> <code>CLOUDFORMATION_STACK_INACTIVE</code> </p> </li>
+    /// <li> <p> <code>CLOUDFORMATION_STACK_NOT_EXISTING</code> </p> </li>
     /// </ul>
     pub fn get_query_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QueryError>> {
         &self.query_errors

@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAnomaliesOutput {
-    /// <p>A list of cost anomalies.</p>
+    /// <p>A list of cost anomalies. </p>
     pub anomalies: ::std::vec::Vec<crate::types::Anomaly>,
-    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     pub next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetAnomaliesOutput {
-    /// <p>A list of cost anomalies.</p>
+    /// <p>A list of cost anomalies. </p>
     pub fn anomalies(&self) -> &[crate::types::Anomaly] {
         use std::ops::Deref;
         self.anomalies.deref()
     }
-    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     pub fn next_page_token(&self) -> ::std::option::Option<&str> {
         self.next_page_token.as_deref()
     }
@@ -45,33 +45,33 @@ impl GetAnomaliesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_anomalies`](Self::set_anomalies).
     ///
-    /// <p>A list of cost anomalies.</p>
+    /// <p>A list of cost anomalies. </p>
     pub fn anomalies(mut self, input: crate::types::Anomaly) -> Self {
         let mut v = self.anomalies.unwrap_or_default();
         v.push(input);
         self.anomalies = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of cost anomalies.</p>
+    /// <p>A list of cost anomalies. </p>
     pub fn set_anomalies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Anomaly>>) -> Self {
         self.anomalies = input;
         self
     }
-    /// <p>A list of cost anomalies.</p>
+    /// <p>A list of cost anomalies. </p>
     pub fn get_anomalies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Anomaly>> {
         &self.anomalies
     }
-    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_token = input;
         self
     }
-    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_page_token
     }

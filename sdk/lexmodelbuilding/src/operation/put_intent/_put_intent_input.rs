@@ -3,50 +3,46 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutIntentInput {
-    /// <p>The name of the intent. The name is <i>not</i> case sensitive.</p>
+    /// <p>The name of the intent. The name is <i>not</i> case sensitive. </p>
     /// <p>The name can't match a built-in intent name, or a built-in intent name with "AMAZON." removed. For example, because there is a built-in intent called <code>AMAZON.HelpIntent</code>, you can't create a custom intent called <code>HelpIntent</code>.</p>
     /// <p>For a list of built-in intents, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills Kit</i>.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the intent.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>An array of intent slots. At runtime, Amazon Lex elicits required slot values from the user using prompts defined in the slots. For more information, see <code>how-it-works</code>.</p>
+    /// <p>An array of intent slots. At runtime, Amazon Lex elicits required slot values from the user using prompts defined in the slots. For more information, see <code>how-it-works</code>. </p>
     pub slots: ::std::option::Option<::std::vec::Vec<crate::types::Slot>>,
-    /// <p>An array of utterances (strings) that a user might say to signal the intent. For example, "I want {PizzaSize} pizza", "Order {Quantity} {PizzaSize} pizzas".</p>
-    /// <p>In each utterance, a slot name is enclosed in curly braces.</p>
+    /// <p>An array of utterances (strings) that a user might say to signal the intent. For example, "I want {PizzaSize} pizza", "Order {Quantity} {PizzaSize} pizzas". </p>
+    /// <p>In each utterance, a slot name is enclosed in curly braces. </p>
     pub sample_utterances: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Prompts the user to confirm the intent. This question should have a yes or no answer.</p>
-    /// <p>Amazon Lex uses this prompt to ensure that the user acknowledges that the intent is ready for fulfillment. For example, with the <code>OrderPizza</code> intent, you might want to confirm that the order is correct before placing it. For other intents, such as intents that simply respond to user questions, you might not need to ask the user for confirmation before providing the information.</p><note>
+    /// <p>Amazon Lex uses this prompt to ensure that the user acknowledges that the intent is ready for fulfillment. For example, with the <code>OrderPizza</code> intent, you might want to confirm that the order is correct before placing it. For other intents, such as intents that simply respond to user questions, you might not need to ask the user for confirmation before providing the information. </p> <note>
     /// <p>You you must provide both the <code>rejectionStatement</code> and the <code>confirmationPrompt</code>, or neither.</p>
     /// </note>
     pub confirmation_prompt: ::std::option::Option<crate::types::Prompt>,
-    /// <p>When the user answers "no" to the question defined in <code>confirmationPrompt</code>, Amazon Lex responds with this statement to acknowledge that the intent was canceled.</p><note>
+    /// <p>When the user answers "no" to the question defined in <code>confirmationPrompt</code>, Amazon Lex responds with this statement to acknowledge that the intent was canceled. </p> <note>
     /// <p>You must provide both the <code>rejectionStatement</code> and the <code>confirmationPrompt</code>, or neither.</p>
     /// </note>
     pub rejection_statement: ::std::option::Option<crate::types::Statement>,
     /// <p>Amazon Lex uses this prompt to solicit additional activity after fulfilling an intent. For example, after the <code>OrderPizza</code> intent is fulfilled, you might prompt the user to order a drink.</p>
     /// <p>The action that Amazon Lex takes depends on the user's response, as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>If the user says "Yes" it responds with the clarification prompt that is configured for the bot.</p></li>
-    /// <li>
-    /// <p>if the user says "Yes" and continues with an utterance that triggers an intent it starts a conversation for the intent.</p></li>
-    /// <li>
-    /// <p>If the user says "No" it responds with the rejection statement configured for the the follow-up prompt.</p></li>
-    /// <li>
-    /// <p>If it doesn't recognize the utterance it repeats the follow-up prompt again.</p></li>
+    /// <li> <p>If the user says "Yes" it responds with the clarification prompt that is configured for the bot.</p> </li>
+    /// <li> <p>if the user says "Yes" and continues with an utterance that triggers an intent it starts a conversation for the intent.</p> </li>
+    /// <li> <p>If the user says "No" it responds with the rejection statement configured for the the follow-up prompt.</p> </li>
+    /// <li> <p>If it doesn't recognize the utterance it repeats the follow-up prompt again.</p> </li>
     /// </ul>
-    /// <p>The <code>followUpPrompt</code> field and the <code>conclusionStatement</code> field are mutually exclusive. You can specify only one.</p>
+    /// <p>The <code>followUpPrompt</code> field and the <code>conclusionStatement</code> field are mutually exclusive. You can specify only one. </p>
     pub follow_up_prompt: ::std::option::Option<crate::types::FollowUpPrompt>,
-    /// <p>The statement that you want Amazon Lex to convey to the user after the intent is successfully fulfilled by the Lambda function.</p>
-    /// <p>This element is relevant only if you provide a Lambda function in the <code>fulfillmentActivity</code>. If you return the intent to the client application, you can't specify this element.</p><note>
+    /// <p> The statement that you want Amazon Lex to convey to the user after the intent is successfully fulfilled by the Lambda function. </p>
+    /// <p>This element is relevant only if you provide a Lambda function in the <code>fulfillmentActivity</code>. If you return the intent to the client application, you can't specify this element.</p> <note>
     /// <p>The <code>followUpPrompt</code> and <code>conclusionStatement</code> are mutually exclusive. You can specify only one.</p>
     /// </note>
     pub conclusion_statement: ::std::option::Option<crate::types::Statement>,
-    /// <p>Specifies a Lambda function to invoke for each user input. You can invoke this Lambda function to personalize user interaction.</p>
-    /// <p>For example, suppose your bot determines that the user is John. Your Lambda function might retrieve John's information from a backend database and prepopulate some of the values. For example, if you find that John is gluten intolerant, you might set the corresponding intent slot, <code>GlutenIntolerant</code>, to true. You might find John's phone number and set the corresponding session attribute.</p>
+    /// <p> Specifies a Lambda function to invoke for each user input. You can invoke this Lambda function to personalize user interaction. </p>
+    /// <p>For example, suppose your bot determines that the user is John. Your Lambda function might retrieve John's information from a backend database and prepopulate some of the values. For example, if you find that John is gluten intolerant, you might set the corresponding intent slot, <code>GlutenIntolerant</code>, to true. You might find John's phone number and set the corresponding session attribute. </p>
     pub dialog_code_hook: ::std::option::Option<crate::types::CodeHook>,
-    /// <p>Required. Describes how the intent is fulfilled. For example, after a user provides all of the information for a pizza order, <code>fulfillmentActivity</code> defines how the bot places an order with a local pizza store.</p>
-    /// <p>You might configure Amazon Lex to return all of the intent information to the client application, or direct it to invoke a Lambda function that can process the intent (for example, place an order with a pizzeria).</p>
+    /// <p>Required. Describes how the intent is fulfilled. For example, after a user provides all of the information for a pizza order, <code>fulfillmentActivity</code> defines how the bot places an order with a local pizza store. </p>
+    /// <p> You might configure Amazon Lex to return all of the intent information to the client application, or direct it to invoke a Lambda function that can process the intent (for example, place an order with a pizzeria). </p>
     pub fulfillment_activity: ::std::option::Option<crate::types::FulfillmentActivity>,
     /// <p>A unique identifier for the built-in intent to base this intent on. To find the signature for an intent, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills Kit</i>.</p>
     pub parent_intent_signature: ::std::option::Option<::std::string::String>,
@@ -64,7 +60,7 @@ pub struct PutIntentInput {
     pub output_contexts: ::std::option::Option<::std::vec::Vec<crate::types::OutputContext>>,
 }
 impl PutIntentInput {
-    /// <p>The name of the intent. The name is <i>not</i> case sensitive.</p>
+    /// <p>The name of the intent. The name is <i>not</i> case sensitive. </p>
     /// <p>The name can't match a built-in intent name, or a built-in intent name with "AMAZON." removed. For example, because there is a built-in intent called <code>AMAZON.HelpIntent</code>, you can't create a custom intent called <code>HelpIntent</code>.</p>
     /// <p>For a list of built-in intents, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills Kit</i>.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -74,27 +70,27 @@ impl PutIntentInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>An array of intent slots. At runtime, Amazon Lex elicits required slot values from the user using prompts defined in the slots. For more information, see <code>how-it-works</code>.</p>
+    /// <p>An array of intent slots. At runtime, Amazon Lex elicits required slot values from the user using prompts defined in the slots. For more information, see <code>how-it-works</code>. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.slots.is_none()`.
     pub fn slots(&self) -> &[crate::types::Slot] {
         self.slots.as_deref().unwrap_or_default()
     }
-    /// <p>An array of utterances (strings) that a user might say to signal the intent. For example, "I want {PizzaSize} pizza", "Order {Quantity} {PizzaSize} pizzas".</p>
-    /// <p>In each utterance, a slot name is enclosed in curly braces.</p>
+    /// <p>An array of utterances (strings) that a user might say to signal the intent. For example, "I want {PizzaSize} pizza", "Order {Quantity} {PizzaSize} pizzas". </p>
+    /// <p>In each utterance, a slot name is enclosed in curly braces. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sample_utterances.is_none()`.
     pub fn sample_utterances(&self) -> &[::std::string::String] {
         self.sample_utterances.as_deref().unwrap_or_default()
     }
     /// <p>Prompts the user to confirm the intent. This question should have a yes or no answer.</p>
-    /// <p>Amazon Lex uses this prompt to ensure that the user acknowledges that the intent is ready for fulfillment. For example, with the <code>OrderPizza</code> intent, you might want to confirm that the order is correct before placing it. For other intents, such as intents that simply respond to user questions, you might not need to ask the user for confirmation before providing the information.</p><note>
+    /// <p>Amazon Lex uses this prompt to ensure that the user acknowledges that the intent is ready for fulfillment. For example, with the <code>OrderPizza</code> intent, you might want to confirm that the order is correct before placing it. For other intents, such as intents that simply respond to user questions, you might not need to ask the user for confirmation before providing the information. </p> <note>
     /// <p>You you must provide both the <code>rejectionStatement</code> and the <code>confirmationPrompt</code>, or neither.</p>
     /// </note>
     pub fn confirmation_prompt(&self) -> ::std::option::Option<&crate::types::Prompt> {
         self.confirmation_prompt.as_ref()
     }
-    /// <p>When the user answers "no" to the question defined in <code>confirmationPrompt</code>, Amazon Lex responds with this statement to acknowledge that the intent was canceled.</p><note>
+    /// <p>When the user answers "no" to the question defined in <code>confirmationPrompt</code>, Amazon Lex responds with this statement to acknowledge that the intent was canceled. </p> <note>
     /// <p>You must provide both the <code>rejectionStatement</code> and the <code>confirmationPrompt</code>, or neither.</p>
     /// </note>
     pub fn rejection_statement(&self) -> ::std::option::Option<&crate::types::Statement> {
@@ -103,33 +99,29 @@ impl PutIntentInput {
     /// <p>Amazon Lex uses this prompt to solicit additional activity after fulfilling an intent. For example, after the <code>OrderPizza</code> intent is fulfilled, you might prompt the user to order a drink.</p>
     /// <p>The action that Amazon Lex takes depends on the user's response, as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>If the user says "Yes" it responds with the clarification prompt that is configured for the bot.</p></li>
-    /// <li>
-    /// <p>if the user says "Yes" and continues with an utterance that triggers an intent it starts a conversation for the intent.</p></li>
-    /// <li>
-    /// <p>If the user says "No" it responds with the rejection statement configured for the the follow-up prompt.</p></li>
-    /// <li>
-    /// <p>If it doesn't recognize the utterance it repeats the follow-up prompt again.</p></li>
+    /// <li> <p>If the user says "Yes" it responds with the clarification prompt that is configured for the bot.</p> </li>
+    /// <li> <p>if the user says "Yes" and continues with an utterance that triggers an intent it starts a conversation for the intent.</p> </li>
+    /// <li> <p>If the user says "No" it responds with the rejection statement configured for the the follow-up prompt.</p> </li>
+    /// <li> <p>If it doesn't recognize the utterance it repeats the follow-up prompt again.</p> </li>
     /// </ul>
-    /// <p>The <code>followUpPrompt</code> field and the <code>conclusionStatement</code> field are mutually exclusive. You can specify only one.</p>
+    /// <p>The <code>followUpPrompt</code> field and the <code>conclusionStatement</code> field are mutually exclusive. You can specify only one. </p>
     pub fn follow_up_prompt(&self) -> ::std::option::Option<&crate::types::FollowUpPrompt> {
         self.follow_up_prompt.as_ref()
     }
-    /// <p>The statement that you want Amazon Lex to convey to the user after the intent is successfully fulfilled by the Lambda function.</p>
-    /// <p>This element is relevant only if you provide a Lambda function in the <code>fulfillmentActivity</code>. If you return the intent to the client application, you can't specify this element.</p><note>
+    /// <p> The statement that you want Amazon Lex to convey to the user after the intent is successfully fulfilled by the Lambda function. </p>
+    /// <p>This element is relevant only if you provide a Lambda function in the <code>fulfillmentActivity</code>. If you return the intent to the client application, you can't specify this element.</p> <note>
     /// <p>The <code>followUpPrompt</code> and <code>conclusionStatement</code> are mutually exclusive. You can specify only one.</p>
     /// </note>
     pub fn conclusion_statement(&self) -> ::std::option::Option<&crate::types::Statement> {
         self.conclusion_statement.as_ref()
     }
-    /// <p>Specifies a Lambda function to invoke for each user input. You can invoke this Lambda function to personalize user interaction.</p>
-    /// <p>For example, suppose your bot determines that the user is John. Your Lambda function might retrieve John's information from a backend database and prepopulate some of the values. For example, if you find that John is gluten intolerant, you might set the corresponding intent slot, <code>GlutenIntolerant</code>, to true. You might find John's phone number and set the corresponding session attribute.</p>
+    /// <p> Specifies a Lambda function to invoke for each user input. You can invoke this Lambda function to personalize user interaction. </p>
+    /// <p>For example, suppose your bot determines that the user is John. Your Lambda function might retrieve John's information from a backend database and prepopulate some of the values. For example, if you find that John is gluten intolerant, you might set the corresponding intent slot, <code>GlutenIntolerant</code>, to true. You might find John's phone number and set the corresponding session attribute. </p>
     pub fn dialog_code_hook(&self) -> ::std::option::Option<&crate::types::CodeHook> {
         self.dialog_code_hook.as_ref()
     }
-    /// <p>Required. Describes how the intent is fulfilled. For example, after a user provides all of the information for a pizza order, <code>fulfillmentActivity</code> defines how the bot places an order with a local pizza store.</p>
-    /// <p>You might configure Amazon Lex to return all of the intent information to the client application, or direct it to invoke a Lambda function that can process the intent (for example, place an order with a pizzeria).</p>
+    /// <p>Required. Describes how the intent is fulfilled. For example, after a user provides all of the information for a pizza order, <code>fulfillmentActivity</code> defines how the bot places an order with a local pizza store. </p>
+    /// <p> You might configure Amazon Lex to return all of the intent information to the client application, or direct it to invoke a Lambda function that can process the intent (for example, place an order with a pizzeria). </p>
     pub fn fulfillment_activity(&self) -> ::std::option::Option<&crate::types::FulfillmentActivity> {
         self.fulfillment_activity.as_ref()
     }
@@ -193,7 +185,7 @@ pub struct PutIntentInputBuilder {
     pub(crate) output_contexts: ::std::option::Option<::std::vec::Vec<crate::types::OutputContext>>,
 }
 impl PutIntentInputBuilder {
-    /// <p>The name of the intent. The name is <i>not</i> case sensitive.</p>
+    /// <p>The name of the intent. The name is <i>not</i> case sensitive. </p>
     /// <p>The name can't match a built-in intent name, or a built-in intent name with "AMAZON." removed. For example, because there is a built-in intent called <code>AMAZON.HelpIntent</code>, you can't create a custom intent called <code>HelpIntent</code>.</p>
     /// <p>For a list of built-in intents, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills Kit</i>.</p>
     /// This field is required.
@@ -201,14 +193,14 @@ impl PutIntentInputBuilder {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the intent. The name is <i>not</i> case sensitive.</p>
+    /// <p>The name of the intent. The name is <i>not</i> case sensitive. </p>
     /// <p>The name can't match a built-in intent name, or a built-in intent name with "AMAZON." removed. For example, because there is a built-in intent called <code>AMAZON.HelpIntent</code>, you can't create a custom intent called <code>HelpIntent</code>.</p>
     /// <p>For a list of built-in intents, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills Kit</i>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the intent. The name is <i>not</i> case sensitive.</p>
+    /// <p>The name of the intent. The name is <i>not</i> case sensitive. </p>
     /// <p>The name can't match a built-in intent name, or a built-in intent name with "AMAZON." removed. For example, because there is a built-in intent called <code>AMAZON.HelpIntent</code>, you can't create a custom intent called <code>HelpIntent</code>.</p>
     /// <p>For a list of built-in intents, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills Kit</i>.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -232,19 +224,19 @@ impl PutIntentInputBuilder {
     ///
     /// To override the contents of this collection use [`set_slots`](Self::set_slots).
     ///
-    /// <p>An array of intent slots. At runtime, Amazon Lex elicits required slot values from the user using prompts defined in the slots. For more information, see <code>how-it-works</code>.</p>
+    /// <p>An array of intent slots. At runtime, Amazon Lex elicits required slot values from the user using prompts defined in the slots. For more information, see <code>how-it-works</code>. </p>
     pub fn slots(mut self, input: crate::types::Slot) -> Self {
         let mut v = self.slots.unwrap_or_default();
         v.push(input);
         self.slots = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of intent slots. At runtime, Amazon Lex elicits required slot values from the user using prompts defined in the slots. For more information, see <code>how-it-works</code>.</p>
+    /// <p>An array of intent slots. At runtime, Amazon Lex elicits required slot values from the user using prompts defined in the slots. For more information, see <code>how-it-works</code>. </p>
     pub fn set_slots(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Slot>>) -> Self {
         self.slots = input;
         self
     }
-    /// <p>An array of intent slots. At runtime, Amazon Lex elicits required slot values from the user using prompts defined in the slots. For more information, see <code>how-it-works</code>.</p>
+    /// <p>An array of intent slots. At runtime, Amazon Lex elicits required slot values from the user using prompts defined in the slots. For more information, see <code>how-it-works</code>. </p>
     pub fn get_slots(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Slot>> {
         &self.slots
     }
@@ -252,27 +244,27 @@ impl PutIntentInputBuilder {
     ///
     /// To override the contents of this collection use [`set_sample_utterances`](Self::set_sample_utterances).
     ///
-    /// <p>An array of utterances (strings) that a user might say to signal the intent. For example, "I want {PizzaSize} pizza", "Order {Quantity} {PizzaSize} pizzas".</p>
-    /// <p>In each utterance, a slot name is enclosed in curly braces.</p>
+    /// <p>An array of utterances (strings) that a user might say to signal the intent. For example, "I want {PizzaSize} pizza", "Order {Quantity} {PizzaSize} pizzas". </p>
+    /// <p>In each utterance, a slot name is enclosed in curly braces. </p>
     pub fn sample_utterances(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.sample_utterances.unwrap_or_default();
         v.push(input.into());
         self.sample_utterances = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of utterances (strings) that a user might say to signal the intent. For example, "I want {PizzaSize} pizza", "Order {Quantity} {PizzaSize} pizzas".</p>
-    /// <p>In each utterance, a slot name is enclosed in curly braces.</p>
+    /// <p>An array of utterances (strings) that a user might say to signal the intent. For example, "I want {PizzaSize} pizza", "Order {Quantity} {PizzaSize} pizzas". </p>
+    /// <p>In each utterance, a slot name is enclosed in curly braces. </p>
     pub fn set_sample_utterances(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.sample_utterances = input;
         self
     }
-    /// <p>An array of utterances (strings) that a user might say to signal the intent. For example, "I want {PizzaSize} pizza", "Order {Quantity} {PizzaSize} pizzas".</p>
-    /// <p>In each utterance, a slot name is enclosed in curly braces.</p>
+    /// <p>An array of utterances (strings) that a user might say to signal the intent. For example, "I want {PizzaSize} pizza", "Order {Quantity} {PizzaSize} pizzas". </p>
+    /// <p>In each utterance, a slot name is enclosed in curly braces. </p>
     pub fn get_sample_utterances(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.sample_utterances
     }
     /// <p>Prompts the user to confirm the intent. This question should have a yes or no answer.</p>
-    /// <p>Amazon Lex uses this prompt to ensure that the user acknowledges that the intent is ready for fulfillment. For example, with the <code>OrderPizza</code> intent, you might want to confirm that the order is correct before placing it. For other intents, such as intents that simply respond to user questions, you might not need to ask the user for confirmation before providing the information.</p><note>
+    /// <p>Amazon Lex uses this prompt to ensure that the user acknowledges that the intent is ready for fulfillment. For example, with the <code>OrderPizza</code> intent, you might want to confirm that the order is correct before placing it. For other intents, such as intents that simply respond to user questions, you might not need to ask the user for confirmation before providing the information. </p> <note>
     /// <p>You you must provide both the <code>rejectionStatement</code> and the <code>confirmationPrompt</code>, or neither.</p>
     /// </note>
     pub fn confirmation_prompt(mut self, input: crate::types::Prompt) -> Self {
@@ -280,7 +272,7 @@ impl PutIntentInputBuilder {
         self
     }
     /// <p>Prompts the user to confirm the intent. This question should have a yes or no answer.</p>
-    /// <p>Amazon Lex uses this prompt to ensure that the user acknowledges that the intent is ready for fulfillment. For example, with the <code>OrderPizza</code> intent, you might want to confirm that the order is correct before placing it. For other intents, such as intents that simply respond to user questions, you might not need to ask the user for confirmation before providing the information.</p><note>
+    /// <p>Amazon Lex uses this prompt to ensure that the user acknowledges that the intent is ready for fulfillment. For example, with the <code>OrderPizza</code> intent, you might want to confirm that the order is correct before placing it. For other intents, such as intents that simply respond to user questions, you might not need to ask the user for confirmation before providing the information. </p> <note>
     /// <p>You you must provide both the <code>rejectionStatement</code> and the <code>confirmationPrompt</code>, or neither.</p>
     /// </note>
     pub fn set_confirmation_prompt(mut self, input: ::std::option::Option<crate::types::Prompt>) -> Self {
@@ -288,27 +280,27 @@ impl PutIntentInputBuilder {
         self
     }
     /// <p>Prompts the user to confirm the intent. This question should have a yes or no answer.</p>
-    /// <p>Amazon Lex uses this prompt to ensure that the user acknowledges that the intent is ready for fulfillment. For example, with the <code>OrderPizza</code> intent, you might want to confirm that the order is correct before placing it. For other intents, such as intents that simply respond to user questions, you might not need to ask the user for confirmation before providing the information.</p><note>
+    /// <p>Amazon Lex uses this prompt to ensure that the user acknowledges that the intent is ready for fulfillment. For example, with the <code>OrderPizza</code> intent, you might want to confirm that the order is correct before placing it. For other intents, such as intents that simply respond to user questions, you might not need to ask the user for confirmation before providing the information. </p> <note>
     /// <p>You you must provide both the <code>rejectionStatement</code> and the <code>confirmationPrompt</code>, or neither.</p>
     /// </note>
     pub fn get_confirmation_prompt(&self) -> &::std::option::Option<crate::types::Prompt> {
         &self.confirmation_prompt
     }
-    /// <p>When the user answers "no" to the question defined in <code>confirmationPrompt</code>, Amazon Lex responds with this statement to acknowledge that the intent was canceled.</p><note>
+    /// <p>When the user answers "no" to the question defined in <code>confirmationPrompt</code>, Amazon Lex responds with this statement to acknowledge that the intent was canceled. </p> <note>
     /// <p>You must provide both the <code>rejectionStatement</code> and the <code>confirmationPrompt</code>, or neither.</p>
     /// </note>
     pub fn rejection_statement(mut self, input: crate::types::Statement) -> Self {
         self.rejection_statement = ::std::option::Option::Some(input);
         self
     }
-    /// <p>When the user answers "no" to the question defined in <code>confirmationPrompt</code>, Amazon Lex responds with this statement to acknowledge that the intent was canceled.</p><note>
+    /// <p>When the user answers "no" to the question defined in <code>confirmationPrompt</code>, Amazon Lex responds with this statement to acknowledge that the intent was canceled. </p> <note>
     /// <p>You must provide both the <code>rejectionStatement</code> and the <code>confirmationPrompt</code>, or neither.</p>
     /// </note>
     pub fn set_rejection_statement(mut self, input: ::std::option::Option<crate::types::Statement>) -> Self {
         self.rejection_statement = input;
         self
     }
-    /// <p>When the user answers "no" to the question defined in <code>confirmationPrompt</code>, Amazon Lex responds with this statement to acknowledge that the intent was canceled.</p><note>
+    /// <p>When the user answers "no" to the question defined in <code>confirmationPrompt</code>, Amazon Lex responds with this statement to acknowledge that the intent was canceled. </p> <note>
     /// <p>You must provide both the <code>rejectionStatement</code> and the <code>confirmationPrompt</code>, or neither.</p>
     /// </note>
     pub fn get_rejection_statement(&self) -> &::std::option::Option<crate::types::Statement> {
@@ -317,16 +309,12 @@ impl PutIntentInputBuilder {
     /// <p>Amazon Lex uses this prompt to solicit additional activity after fulfilling an intent. For example, after the <code>OrderPizza</code> intent is fulfilled, you might prompt the user to order a drink.</p>
     /// <p>The action that Amazon Lex takes depends on the user's response, as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>If the user says "Yes" it responds with the clarification prompt that is configured for the bot.</p></li>
-    /// <li>
-    /// <p>if the user says "Yes" and continues with an utterance that triggers an intent it starts a conversation for the intent.</p></li>
-    /// <li>
-    /// <p>If the user says "No" it responds with the rejection statement configured for the the follow-up prompt.</p></li>
-    /// <li>
-    /// <p>If it doesn't recognize the utterance it repeats the follow-up prompt again.</p></li>
+    /// <li> <p>If the user says "Yes" it responds with the clarification prompt that is configured for the bot.</p> </li>
+    /// <li> <p>if the user says "Yes" and continues with an utterance that triggers an intent it starts a conversation for the intent.</p> </li>
+    /// <li> <p>If the user says "No" it responds with the rejection statement configured for the the follow-up prompt.</p> </li>
+    /// <li> <p>If it doesn't recognize the utterance it repeats the follow-up prompt again.</p> </li>
     /// </ul>
-    /// <p>The <code>followUpPrompt</code> field and the <code>conclusionStatement</code> field are mutually exclusive. You can specify only one.</p>
+    /// <p>The <code>followUpPrompt</code> field and the <code>conclusionStatement</code> field are mutually exclusive. You can specify only one. </p>
     pub fn follow_up_prompt(mut self, input: crate::types::FollowUpPrompt) -> Self {
         self.follow_up_prompt = ::std::option::Option::Some(input);
         self
@@ -334,16 +322,12 @@ impl PutIntentInputBuilder {
     /// <p>Amazon Lex uses this prompt to solicit additional activity after fulfilling an intent. For example, after the <code>OrderPizza</code> intent is fulfilled, you might prompt the user to order a drink.</p>
     /// <p>The action that Amazon Lex takes depends on the user's response, as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>If the user says "Yes" it responds with the clarification prompt that is configured for the bot.</p></li>
-    /// <li>
-    /// <p>if the user says "Yes" and continues with an utterance that triggers an intent it starts a conversation for the intent.</p></li>
-    /// <li>
-    /// <p>If the user says "No" it responds with the rejection statement configured for the the follow-up prompt.</p></li>
-    /// <li>
-    /// <p>If it doesn't recognize the utterance it repeats the follow-up prompt again.</p></li>
+    /// <li> <p>If the user says "Yes" it responds with the clarification prompt that is configured for the bot.</p> </li>
+    /// <li> <p>if the user says "Yes" and continues with an utterance that triggers an intent it starts a conversation for the intent.</p> </li>
+    /// <li> <p>If the user says "No" it responds with the rejection statement configured for the the follow-up prompt.</p> </li>
+    /// <li> <p>If it doesn't recognize the utterance it repeats the follow-up prompt again.</p> </li>
     /// </ul>
-    /// <p>The <code>followUpPrompt</code> field and the <code>conclusionStatement</code> field are mutually exclusive. You can specify only one.</p>
+    /// <p>The <code>followUpPrompt</code> field and the <code>conclusionStatement</code> field are mutually exclusive. You can specify only one. </p>
     pub fn set_follow_up_prompt(mut self, input: ::std::option::Option<crate::types::FollowUpPrompt>) -> Self {
         self.follow_up_prompt = input;
         self
@@ -351,73 +335,69 @@ impl PutIntentInputBuilder {
     /// <p>Amazon Lex uses this prompt to solicit additional activity after fulfilling an intent. For example, after the <code>OrderPizza</code> intent is fulfilled, you might prompt the user to order a drink.</p>
     /// <p>The action that Amazon Lex takes depends on the user's response, as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>If the user says "Yes" it responds with the clarification prompt that is configured for the bot.</p></li>
-    /// <li>
-    /// <p>if the user says "Yes" and continues with an utterance that triggers an intent it starts a conversation for the intent.</p></li>
-    /// <li>
-    /// <p>If the user says "No" it responds with the rejection statement configured for the the follow-up prompt.</p></li>
-    /// <li>
-    /// <p>If it doesn't recognize the utterance it repeats the follow-up prompt again.</p></li>
+    /// <li> <p>If the user says "Yes" it responds with the clarification prompt that is configured for the bot.</p> </li>
+    /// <li> <p>if the user says "Yes" and continues with an utterance that triggers an intent it starts a conversation for the intent.</p> </li>
+    /// <li> <p>If the user says "No" it responds with the rejection statement configured for the the follow-up prompt.</p> </li>
+    /// <li> <p>If it doesn't recognize the utterance it repeats the follow-up prompt again.</p> </li>
     /// </ul>
-    /// <p>The <code>followUpPrompt</code> field and the <code>conclusionStatement</code> field are mutually exclusive. You can specify only one.</p>
+    /// <p>The <code>followUpPrompt</code> field and the <code>conclusionStatement</code> field are mutually exclusive. You can specify only one. </p>
     pub fn get_follow_up_prompt(&self) -> &::std::option::Option<crate::types::FollowUpPrompt> {
         &self.follow_up_prompt
     }
-    /// <p>The statement that you want Amazon Lex to convey to the user after the intent is successfully fulfilled by the Lambda function.</p>
-    /// <p>This element is relevant only if you provide a Lambda function in the <code>fulfillmentActivity</code>. If you return the intent to the client application, you can't specify this element.</p><note>
+    /// <p> The statement that you want Amazon Lex to convey to the user after the intent is successfully fulfilled by the Lambda function. </p>
+    /// <p>This element is relevant only if you provide a Lambda function in the <code>fulfillmentActivity</code>. If you return the intent to the client application, you can't specify this element.</p> <note>
     /// <p>The <code>followUpPrompt</code> and <code>conclusionStatement</code> are mutually exclusive. You can specify only one.</p>
     /// </note>
     pub fn conclusion_statement(mut self, input: crate::types::Statement) -> Self {
         self.conclusion_statement = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The statement that you want Amazon Lex to convey to the user after the intent is successfully fulfilled by the Lambda function.</p>
-    /// <p>This element is relevant only if you provide a Lambda function in the <code>fulfillmentActivity</code>. If you return the intent to the client application, you can't specify this element.</p><note>
+    /// <p> The statement that you want Amazon Lex to convey to the user after the intent is successfully fulfilled by the Lambda function. </p>
+    /// <p>This element is relevant only if you provide a Lambda function in the <code>fulfillmentActivity</code>. If you return the intent to the client application, you can't specify this element.</p> <note>
     /// <p>The <code>followUpPrompt</code> and <code>conclusionStatement</code> are mutually exclusive. You can specify only one.</p>
     /// </note>
     pub fn set_conclusion_statement(mut self, input: ::std::option::Option<crate::types::Statement>) -> Self {
         self.conclusion_statement = input;
         self
     }
-    /// <p>The statement that you want Amazon Lex to convey to the user after the intent is successfully fulfilled by the Lambda function.</p>
-    /// <p>This element is relevant only if you provide a Lambda function in the <code>fulfillmentActivity</code>. If you return the intent to the client application, you can't specify this element.</p><note>
+    /// <p> The statement that you want Amazon Lex to convey to the user after the intent is successfully fulfilled by the Lambda function. </p>
+    /// <p>This element is relevant only if you provide a Lambda function in the <code>fulfillmentActivity</code>. If you return the intent to the client application, you can't specify this element.</p> <note>
     /// <p>The <code>followUpPrompt</code> and <code>conclusionStatement</code> are mutually exclusive. You can specify only one.</p>
     /// </note>
     pub fn get_conclusion_statement(&self) -> &::std::option::Option<crate::types::Statement> {
         &self.conclusion_statement
     }
-    /// <p>Specifies a Lambda function to invoke for each user input. You can invoke this Lambda function to personalize user interaction.</p>
-    /// <p>For example, suppose your bot determines that the user is John. Your Lambda function might retrieve John's information from a backend database and prepopulate some of the values. For example, if you find that John is gluten intolerant, you might set the corresponding intent slot, <code>GlutenIntolerant</code>, to true. You might find John's phone number and set the corresponding session attribute.</p>
+    /// <p> Specifies a Lambda function to invoke for each user input. You can invoke this Lambda function to personalize user interaction. </p>
+    /// <p>For example, suppose your bot determines that the user is John. Your Lambda function might retrieve John's information from a backend database and prepopulate some of the values. For example, if you find that John is gluten intolerant, you might set the corresponding intent slot, <code>GlutenIntolerant</code>, to true. You might find John's phone number and set the corresponding session attribute. </p>
     pub fn dialog_code_hook(mut self, input: crate::types::CodeHook) -> Self {
         self.dialog_code_hook = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies a Lambda function to invoke for each user input. You can invoke this Lambda function to personalize user interaction.</p>
-    /// <p>For example, suppose your bot determines that the user is John. Your Lambda function might retrieve John's information from a backend database and prepopulate some of the values. For example, if you find that John is gluten intolerant, you might set the corresponding intent slot, <code>GlutenIntolerant</code>, to true. You might find John's phone number and set the corresponding session attribute.</p>
+    /// <p> Specifies a Lambda function to invoke for each user input. You can invoke this Lambda function to personalize user interaction. </p>
+    /// <p>For example, suppose your bot determines that the user is John. Your Lambda function might retrieve John's information from a backend database and prepopulate some of the values. For example, if you find that John is gluten intolerant, you might set the corresponding intent slot, <code>GlutenIntolerant</code>, to true. You might find John's phone number and set the corresponding session attribute. </p>
     pub fn set_dialog_code_hook(mut self, input: ::std::option::Option<crate::types::CodeHook>) -> Self {
         self.dialog_code_hook = input;
         self
     }
-    /// <p>Specifies a Lambda function to invoke for each user input. You can invoke this Lambda function to personalize user interaction.</p>
-    /// <p>For example, suppose your bot determines that the user is John. Your Lambda function might retrieve John's information from a backend database and prepopulate some of the values. For example, if you find that John is gluten intolerant, you might set the corresponding intent slot, <code>GlutenIntolerant</code>, to true. You might find John's phone number and set the corresponding session attribute.</p>
+    /// <p> Specifies a Lambda function to invoke for each user input. You can invoke this Lambda function to personalize user interaction. </p>
+    /// <p>For example, suppose your bot determines that the user is John. Your Lambda function might retrieve John's information from a backend database and prepopulate some of the values. For example, if you find that John is gluten intolerant, you might set the corresponding intent slot, <code>GlutenIntolerant</code>, to true. You might find John's phone number and set the corresponding session attribute. </p>
     pub fn get_dialog_code_hook(&self) -> &::std::option::Option<crate::types::CodeHook> {
         &self.dialog_code_hook
     }
-    /// <p>Required. Describes how the intent is fulfilled. For example, after a user provides all of the information for a pizza order, <code>fulfillmentActivity</code> defines how the bot places an order with a local pizza store.</p>
-    /// <p>You might configure Amazon Lex to return all of the intent information to the client application, or direct it to invoke a Lambda function that can process the intent (for example, place an order with a pizzeria).</p>
+    /// <p>Required. Describes how the intent is fulfilled. For example, after a user provides all of the information for a pizza order, <code>fulfillmentActivity</code> defines how the bot places an order with a local pizza store. </p>
+    /// <p> You might configure Amazon Lex to return all of the intent information to the client application, or direct it to invoke a Lambda function that can process the intent (for example, place an order with a pizzeria). </p>
     pub fn fulfillment_activity(mut self, input: crate::types::FulfillmentActivity) -> Self {
         self.fulfillment_activity = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Required. Describes how the intent is fulfilled. For example, after a user provides all of the information for a pizza order, <code>fulfillmentActivity</code> defines how the bot places an order with a local pizza store.</p>
-    /// <p>You might configure Amazon Lex to return all of the intent information to the client application, or direct it to invoke a Lambda function that can process the intent (for example, place an order with a pizzeria).</p>
+    /// <p>Required. Describes how the intent is fulfilled. For example, after a user provides all of the information for a pizza order, <code>fulfillmentActivity</code> defines how the bot places an order with a local pizza store. </p>
+    /// <p> You might configure Amazon Lex to return all of the intent information to the client application, or direct it to invoke a Lambda function that can process the intent (for example, place an order with a pizzeria). </p>
     pub fn set_fulfillment_activity(mut self, input: ::std::option::Option<crate::types::FulfillmentActivity>) -> Self {
         self.fulfillment_activity = input;
         self
     }
-    /// <p>Required. Describes how the intent is fulfilled. For example, after a user provides all of the information for a pizza order, <code>fulfillmentActivity</code> defines how the bot places an order with a local pizza store.</p>
-    /// <p>You might configure Amazon Lex to return all of the intent information to the client application, or direct it to invoke a Lambda function that can process the intent (for example, place an order with a pizzeria).</p>
+    /// <p>Required. Describes how the intent is fulfilled. For example, after a user provides all of the information for a pizza order, <code>fulfillmentActivity</code> defines how the bot places an order with a local pizza store. </p>
+    /// <p> You might configure Amazon Lex to return all of the intent information to the client application, or direct it to invoke a Lambda function that can process the intent (for example, place an order with a pizzeria). </p>
     pub fn get_fulfillment_activity(&self) -> &::std::option::Option<crate::types::FulfillmentActivity> {
         &self.fulfillment_activity
     }

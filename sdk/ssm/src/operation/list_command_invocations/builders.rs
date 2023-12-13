@@ -188,17 +188,17 @@ impl ListCommandInvocationsFluentBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CommandFilter>> {
         self.inner.get_filters()
     }
-    /// <p>(Optional) If set this returns the response of the command executions and any command output. The default value is <code>false</code>.</p>
+    /// <p>(Optional) If set this returns the response of the command executions and any command output. The default value is <code>false</code>. </p>
     pub fn details(mut self, input: bool) -> Self {
         self.inner = self.inner.details(input);
         self
     }
-    /// <p>(Optional) If set this returns the response of the command executions and any command output. The default value is <code>false</code>.</p>
+    /// <p>(Optional) If set this returns the response of the command executions and any command output. The default value is <code>false</code>. </p>
     pub fn set_details(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_details(input);
         self
     }
-    /// <p>(Optional) If set this returns the response of the command executions and any command output. The default value is <code>false</code>.</p>
+    /// <p>(Optional) If set this returns the response of the command executions and any command output. The default value is <code>false</code>. </p>
     pub fn get_details(&self) -> &::std::option::Option<bool> {
         self.inner.get_details()
     }

@@ -3,16 +3,16 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct EnableUserInput {
-    /// <p>The email address of the user.</p><note>
-    /// <p>Users' email addresses are case-sensitive. During login, if they specify an email address that doesn't use the same capitalization as the email address specified when their user pool account was created, a "user does not exist" error message displays.</p>
+    /// <p>The email address of the user.</p> <note>
+    /// <p>Users' email addresses are case-sensitive. During login, if they specify an email address that doesn't use the same capitalization as the email address specified when their user pool account was created, a "user does not exist" error message displays. </p>
     /// </note>
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>The authentication type for the user. You must specify USERPOOL.</p>
     pub authentication_type: ::std::option::Option<crate::types::AuthenticationType>,
 }
 impl EnableUserInput {
-    /// <p>The email address of the user.</p><note>
-    /// <p>Users' email addresses are case-sensitive. During login, if they specify an email address that doesn't use the same capitalization as the email address specified when their user pool account was created, a "user does not exist" error message displays.</p>
+    /// <p>The email address of the user.</p> <note>
+    /// <p>Users' email addresses are case-sensitive. During login, if they specify an email address that doesn't use the same capitalization as the email address specified when their user pool account was created, a "user does not exist" error message displays. </p>
     /// </note>
     pub fn user_name(&self) -> ::std::option::Option<&str> {
         self.user_name.as_deref()
@@ -45,23 +45,23 @@ pub struct EnableUserInputBuilder {
     pub(crate) authentication_type: ::std::option::Option<crate::types::AuthenticationType>,
 }
 impl EnableUserInputBuilder {
-    /// <p>The email address of the user.</p><note>
-    /// <p>Users' email addresses are case-sensitive. During login, if they specify an email address that doesn't use the same capitalization as the email address specified when their user pool account was created, a "user does not exist" error message displays.</p>
+    /// <p>The email address of the user.</p> <note>
+    /// <p>Users' email addresses are case-sensitive. During login, if they specify an email address that doesn't use the same capitalization as the email address specified when their user pool account was created, a "user does not exist" error message displays. </p>
     /// </note>
     /// This field is required.
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The email address of the user.</p><note>
-    /// <p>Users' email addresses are case-sensitive. During login, if they specify an email address that doesn't use the same capitalization as the email address specified when their user pool account was created, a "user does not exist" error message displays.</p>
+    /// <p>The email address of the user.</p> <note>
+    /// <p>Users' email addresses are case-sensitive. During login, if they specify an email address that doesn't use the same capitalization as the email address specified when their user pool account was created, a "user does not exist" error message displays. </p>
     /// </note>
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_name = input;
         self
     }
-    /// <p>The email address of the user.</p><note>
-    /// <p>Users' email addresses are case-sensitive. During login, if they specify an email address that doesn't use the same capitalization as the email address specified when their user pool account was created, a "user does not exist" error message displays.</p>
+    /// <p>The email address of the user.</p> <note>
+    /// <p>Users' email addresses are case-sensitive. During login, if they specify an email address that doesn't use the same capitalization as the email address specified when their user pool account was created, a "user does not exist" error message displays. </p>
     /// </note>
     pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_name

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateApplicationInput {
-    /// <p>The name, ID, or ARN of the application that will be updated.</p>
+    /// <p> The name, ID, or ARN of the application that will be updated. </p>
     pub application: ::std::option::Option<::std::string::String>,
     /// <p>Deprecated: The new name of the application. The name must be unique in the region in which you are updating the application. Please do not use this field as we have stopped supporting name updates.</p>
     #[deprecated(note = "Name update for application is deprecated.")]
@@ -12,7 +12,7 @@ pub struct UpdateApplicationInput {
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl UpdateApplicationInput {
-    /// <p>The name, ID, or ARN of the application that will be updated.</p>
+    /// <p> The name, ID, or ARN of the application that will be updated. </p>
     pub fn application(&self) -> ::std::option::Option<&str> {
         self.application.as_deref()
     }
@@ -42,18 +42,18 @@ pub struct UpdateApplicationInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
 }
 impl UpdateApplicationInputBuilder {
-    /// <p>The name, ID, or ARN of the application that will be updated.</p>
+    /// <p> The name, ID, or ARN of the application that will be updated. </p>
     /// This field is required.
     pub fn application(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name, ID, or ARN of the application that will be updated.</p>
+    /// <p> The name, ID, or ARN of the application that will be updated. </p>
     pub fn set_application(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application = input;
         self
     }
-    /// <p>The name, ID, or ARN of the application that will be updated.</p>
+    /// <p> The name, ID, or ARN of the application that will be updated. </p>
     pub fn get_application(&self) -> &::std::option::Option<::std::string::String> {
         &self.application
     }

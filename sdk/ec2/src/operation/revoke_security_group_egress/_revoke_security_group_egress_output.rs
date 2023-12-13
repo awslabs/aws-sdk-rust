@@ -5,7 +5,7 @@
 pub struct RevokeSecurityGroupEgressOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
     pub r#return: ::std::option::Option<bool>,
-    /// <p>The outbound rules that were unknown to the service. In some cases, <code>unknownIpPermissionSet</code> might be in a different format from the request parameter.</p>
+    /// <p>The outbound rules that were unknown to the service. In some cases, <code>unknownIpPermissionSet</code> might be in a different format from the request parameter. </p>
     pub unknown_ip_permissions: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>,
     _request_id: Option<String>,
 }
@@ -14,7 +14,7 @@ impl RevokeSecurityGroupEgressOutput {
     pub fn r#return(&self) -> ::std::option::Option<bool> {
         self.r#return
     }
-    /// <p>The outbound rules that were unknown to the service. In some cases, <code>unknownIpPermissionSet</code> might be in a different format from the request parameter.</p>
+    /// <p>The outbound rules that were unknown to the service. In some cases, <code>unknownIpPermissionSet</code> might be in a different format from the request parameter. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unknown_ip_permissions.is_none()`.
     pub fn unknown_ip_permissions(&self) -> &[crate::types::IpPermission] {
@@ -60,19 +60,19 @@ impl RevokeSecurityGroupEgressOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_unknown_ip_permissions`](Self::set_unknown_ip_permissions).
     ///
-    /// <p>The outbound rules that were unknown to the service. In some cases, <code>unknownIpPermissionSet</code> might be in a different format from the request parameter.</p>
+    /// <p>The outbound rules that were unknown to the service. In some cases, <code>unknownIpPermissionSet</code> might be in a different format from the request parameter. </p>
     pub fn unknown_ip_permissions(mut self, input: crate::types::IpPermission) -> Self {
         let mut v = self.unknown_ip_permissions.unwrap_or_default();
         v.push(input);
         self.unknown_ip_permissions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The outbound rules that were unknown to the service. In some cases, <code>unknownIpPermissionSet</code> might be in a different format from the request parameter.</p>
+    /// <p>The outbound rules that were unknown to the service. In some cases, <code>unknownIpPermissionSet</code> might be in a different format from the request parameter. </p>
     pub fn set_unknown_ip_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>) -> Self {
         self.unknown_ip_permissions = input;
         self
     }
-    /// <p>The outbound rules that were unknown to the service. In some cases, <code>unknownIpPermissionSet</code> might be in a different format from the request parameter.</p>
+    /// <p>The outbound rules that were unknown to the service. In some cases, <code>unknownIpPermissionSet</code> might be in a different format from the request parameter. </p>
     pub fn get_unknown_ip_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpPermission>> {
         &self.unknown_ip_permissions
     }

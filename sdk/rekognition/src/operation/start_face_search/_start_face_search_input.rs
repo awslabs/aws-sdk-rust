@@ -3,9 +3,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartFaceSearchInput {
-    /// <p>The video you want to search. The video must be stored in an Amazon S3 bucket.</p>
+    /// <p>The video you want to search. The video must be stored in an Amazon S3 bucket. </p>
     pub video: ::std::option::Option<crate::types::Video>,
-    /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartFaceSearch</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once.</p>
+    /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartFaceSearch</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The minimum confidence in the person match to return. For example, don't return any matches where confidence in matches is less than 70%. The default value is 80%.</p>
     pub face_match_threshold: ::std::option::Option<f32>,
@@ -17,11 +17,11 @@ pub struct StartFaceSearchInput {
     pub job_tag: ::std::option::Option<::std::string::String>,
 }
 impl StartFaceSearchInput {
-    /// <p>The video you want to search. The video must be stored in an Amazon S3 bucket.</p>
+    /// <p>The video you want to search. The video must be stored in an Amazon S3 bucket. </p>
     pub fn video(&self) -> ::std::option::Option<&crate::types::Video> {
         self.video.as_ref()
     }
-    /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartFaceSearch</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once.</p>
+    /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartFaceSearch</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
     pub fn client_request_token(&self) -> ::std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -61,32 +61,32 @@ pub struct StartFaceSearchInputBuilder {
     pub(crate) job_tag: ::std::option::Option<::std::string::String>,
 }
 impl StartFaceSearchInputBuilder {
-    /// <p>The video you want to search. The video must be stored in an Amazon S3 bucket.</p>
+    /// <p>The video you want to search. The video must be stored in an Amazon S3 bucket. </p>
     /// This field is required.
     pub fn video(mut self, input: crate::types::Video) -> Self {
         self.video = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The video you want to search. The video must be stored in an Amazon S3 bucket.</p>
+    /// <p>The video you want to search. The video must be stored in an Amazon S3 bucket. </p>
     pub fn set_video(mut self, input: ::std::option::Option<crate::types::Video>) -> Self {
         self.video = input;
         self
     }
-    /// <p>The video you want to search. The video must be stored in an Amazon S3 bucket.</p>
+    /// <p>The video you want to search. The video must be stored in an Amazon S3 bucket. </p>
     pub fn get_video(&self) -> &::std::option::Option<crate::types::Video> {
         &self.video
     }
-    /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartFaceSearch</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once.</p>
+    /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartFaceSearch</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartFaceSearch</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once.</p>
+    /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartFaceSearch</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
-    /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartFaceSearch</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once.</p>
+    /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartFaceSearch</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_request_token
     }

@@ -29,7 +29,7 @@ pub struct Stack {
     /// <p>The default subnet ID; applicable only if the stack is running in a VPC.</p>
     pub default_subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>A JSON object that contains user-defined attributes to be added to the stack configuration and deployment attributes. You can use custom JSON to override the corresponding default stack configuration attribute values or to pass data to recipes. The string should be in the following format:</p>
-    /// <p><code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code></p>
+    /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
     /// <p>For more information on custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
     pub custom_json: ::std::option::Option<::std::string::String>,
     /// <p>The configuration manager.</p>
@@ -101,7 +101,7 @@ impl Stack {
         self.default_subnet_id.as_deref()
     }
     /// <p>A JSON object that contains user-defined attributes to be added to the stack configuration and deployment attributes. You can use custom JSON to override the corresponding default stack configuration attribute values or to pass data to recipes. The string should be in the following format:</p>
-    /// <p><code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code></p>
+    /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
     /// <p>For more information on custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
     pub fn custom_json(&self) -> ::std::option::Option<&str> {
         self.custom_json.as_deref()
@@ -356,21 +356,21 @@ impl StackBuilder {
         &self.default_subnet_id
     }
     /// <p>A JSON object that contains user-defined attributes to be added to the stack configuration and deployment attributes. You can use custom JSON to override the corresponding default stack configuration attribute values or to pass data to recipes. The string should be in the following format:</p>
-    /// <p><code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code></p>
+    /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
     /// <p>For more information on custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
     pub fn custom_json(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_json = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A JSON object that contains user-defined attributes to be added to the stack configuration and deployment attributes. You can use custom JSON to override the corresponding default stack configuration attribute values or to pass data to recipes. The string should be in the following format:</p>
-    /// <p><code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code></p>
+    /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
     /// <p>For more information on custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
     pub fn set_custom_json(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_json = input;
         self
     }
     /// <p>A JSON object that contains user-defined attributes to be added to the stack configuration and deployment attributes. You can use custom JSON to override the corresponding default stack configuration attribute values or to pass data to recipes. The string should be in the following format:</p>
-    /// <p><code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code></p>
+    /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
     /// <p>For more information on custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
     pub fn get_custom_json(&self) -> &::std::option::Option<::std::string::String> {
         &self.custom_json

@@ -13,12 +13,9 @@ pub struct UpdateVoiceTemplateInput {
     /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
     /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>For a get operation, retrieves information about the active version of the template.</p></li>
-    /// <li>
-    /// <p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
-    /// <li>
-    /// <p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+    /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+    /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+    /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
     /// </ul>
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through the voice channel.</p>
@@ -39,12 +36,9 @@ impl UpdateVoiceTemplateInput {
     /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
     /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>For a get operation, retrieves information about the active version of the template.</p></li>
-    /// <li>
-    /// <p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
-    /// <li>
-    /// <p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+    /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+    /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+    /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
     /// </ul>
     pub fn version(&self) -> ::std::option::Option<&str> {
         self.version.as_deref()
@@ -108,12 +102,9 @@ impl UpdateVoiceTemplateInputBuilder {
     /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
     /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>For a get operation, retrieves information about the active version of the template.</p></li>
-    /// <li>
-    /// <p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
-    /// <li>
-    /// <p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+    /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+    /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+    /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
     /// </ul>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -124,12 +115,9 @@ impl UpdateVoiceTemplateInputBuilder {
     /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
     /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>For a get operation, retrieves information about the active version of the template.</p></li>
-    /// <li>
-    /// <p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
-    /// <li>
-    /// <p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+    /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+    /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+    /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
     /// </ul>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
@@ -140,12 +128,9 @@ impl UpdateVoiceTemplateInputBuilder {
     /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
     /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>For a get operation, retrieves information about the active version of the template.</p></li>
-    /// <li>
-    /// <p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
-    /// <li>
-    /// <p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+    /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+    /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+    /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
     /// </ul>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.version

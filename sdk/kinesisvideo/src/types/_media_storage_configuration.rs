@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MediaStorageConfiguration {
-    /// <p>The Amazon Resource Name (ARN) of the stream</p>
+    /// <p>The Amazon Resource Name (ARN) of the stream </p>
     pub stream_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the media storage configuration.</p>
     pub status: crate::types::MediaStorageConfigurationStatus,
 }
 impl MediaStorageConfiguration {
-    /// <p>The Amazon Resource Name (ARN) of the stream</p>
+    /// <p>The Amazon Resource Name (ARN) of the stream </p>
     pub fn stream_arn(&self) -> ::std::option::Option<&str> {
         self.stream_arn.as_deref()
     }
@@ -34,17 +34,17 @@ pub struct MediaStorageConfigurationBuilder {
     pub(crate) status: ::std::option::Option<crate::types::MediaStorageConfigurationStatus>,
 }
 impl MediaStorageConfigurationBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the stream</p>
+    /// <p>The Amazon Resource Name (ARN) of the stream </p>
     pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the stream</p>
+    /// <p>The Amazon Resource Name (ARN) of the stream </p>
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the stream</p>
+    /// <p>The Amazon Resource Name (ARN) of the stream </p>
     pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.stream_arn
     }

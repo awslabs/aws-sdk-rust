@@ -23,17 +23,13 @@ impl ListGroupResourcesInputBuilder {
 /// Fluent builder constructing a request to `ListGroupResources`.
 ///
 /// <p>Returns a list of ARNs of the resources that are members of a specified resource group.</p>
-/// <p><b>Minimum permissions</b></p>
+/// <p> <b>Minimum permissions</b> </p>
 /// <p>To run this command, you must have the following permissions:</p>
 /// <ul>
-/// <li>
-/// <p><code>resource-groups:ListGroupResources</code></p></li>
-/// <li>
-/// <p><code>cloudformation:DescribeStacks</code></p></li>
-/// <li>
-/// <p><code>cloudformation:ListStackResources</code></p></li>
-/// <li>
-/// <p><code>tag:GetResources</code></p></li>
+/// <li> <p> <code>resource-groups:ListGroupResources</code> </p> </li>
+/// <li> <p> <code>cloudformation:DescribeStacks</code> </p> </li>
+/// <li> <p> <code>cloudformation:ListStackResources</code> </p> </li>
+/// <li> <p> <code>tag:GetResources</code> </p> </li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListGroupResourcesFluentBuilder {
@@ -127,7 +123,7 @@ impl ListGroupResourcesFluentBuilder {
         crate::operation::list_group_resources::paginator::ListGroupResourcesPaginator::new(self.handle, self.inner)
     }
     /// <important>
-    /// <p><i> <b>Deprecated - don't use this parameter. Use the <code>Group</code> request field instead.</b> </i></p>
+    /// <p> <i> <b>Deprecated - don't use this parameter. Use the <code>Group</code> request field instead.</b> </i> </p>
     /// </important>
     #[deprecated(note = "This field is deprecated, use Group instead.")]
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -135,7 +131,7 @@ impl ListGroupResourcesFluentBuilder {
         self
     }
     /// <important>
-    /// <p><i> <b>Deprecated - don't use this parameter. Use the <code>Group</code> request field instead.</b> </i></p>
+    /// <p> <i> <b>Deprecated - don't use this parameter. Use the <code>Group</code> request field instead.</b> </i> </p>
     /// </important>
     #[deprecated(note = "This field is deprecated, use Group instead.")]
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -143,7 +139,7 @@ impl ListGroupResourcesFluentBuilder {
         self
     }
     /// <important>
-    /// <p><i> <b>Deprecated - don't use this parameter. Use the <code>Group</code> request field instead.</b> </i></p>
+    /// <p> <i> <b>Deprecated - don't use this parameter. Use the <code>Group</code> request field instead.</b> </i> </p>
     /// </important>
     #[deprecated(note = "This field is deprecated, use Group instead.")]
     pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -169,11 +165,10 @@ impl ListGroupResourcesFluentBuilder {
     ///
     /// <p>Filters, formatted as <code>ResourceFilter</code> objects, that you want to apply to a <code>ListGroupResources</code> operation. Filters the results to include only those of the specified resource types.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>resource-type</code> - Filter resources by their type. Specify up to five resource types in the format <code>AWS::ServiceCode::ResourceType</code>. For example, <code>AWS::EC2::Instance</code>, or <code>AWS::S3::Bucket</code>.</p></li>
+    /// <li> <p> <code>resource-type</code> - Filter resources by their type. Specify up to five resource types in the format <code>AWS::ServiceCode::ResourceType</code>. For example, <code>AWS::EC2::Instance</code>, or <code>AWS::S3::Bucket</code>. </p> </li>
     /// </ul>
     /// <p>When you specify a <code>resource-type</code> filter for <code>ListGroupResources</code>, Resource Groups validates your filter resource types against the types that are defined in the query associated with the group. For example, if a group contains only S3 buckets because its query specifies only that resource type, but your <code>resource-type</code> filter includes EC2 instances, AWS Resource Groups does not filter for EC2 instances. In this case, a <code>ListGroupResources</code> request returns a <code>BadRequestException</code> error with a message similar to the following:</p>
-    /// <p><code>The resource types specified as filters in the request are not valid.</code></p>
+    /// <p> <code>The resource types specified as filters in the request are not valid.</code> </p>
     /// <p>The error includes a list of resource types that failed the validation because they are not part of the query associated with the group. This validation doesn't occur when the group query specifies <code>AWS::AllSupported</code>, because a group based on such a query can contain any of the allowed resource types for the query type (tag-based or Amazon CloudFront stack-based queries).</p>
     pub fn filters(mut self, input: crate::types::ResourceFilter) -> Self {
         self.inner = self.inner.filters(input);
@@ -181,11 +176,10 @@ impl ListGroupResourcesFluentBuilder {
     }
     /// <p>Filters, formatted as <code>ResourceFilter</code> objects, that you want to apply to a <code>ListGroupResources</code> operation. Filters the results to include only those of the specified resource types.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>resource-type</code> - Filter resources by their type. Specify up to five resource types in the format <code>AWS::ServiceCode::ResourceType</code>. For example, <code>AWS::EC2::Instance</code>, or <code>AWS::S3::Bucket</code>.</p></li>
+    /// <li> <p> <code>resource-type</code> - Filter resources by their type. Specify up to five resource types in the format <code>AWS::ServiceCode::ResourceType</code>. For example, <code>AWS::EC2::Instance</code>, or <code>AWS::S3::Bucket</code>. </p> </li>
     /// </ul>
     /// <p>When you specify a <code>resource-type</code> filter for <code>ListGroupResources</code>, Resource Groups validates your filter resource types against the types that are defined in the query associated with the group. For example, if a group contains only S3 buckets because its query specifies only that resource type, but your <code>resource-type</code> filter includes EC2 instances, AWS Resource Groups does not filter for EC2 instances. In this case, a <code>ListGroupResources</code> request returns a <code>BadRequestException</code> error with a message similar to the following:</p>
-    /// <p><code>The resource types specified as filters in the request are not valid.</code></p>
+    /// <p> <code>The resource types specified as filters in the request are not valid.</code> </p>
     /// <p>The error includes a list of resource types that failed the validation because they are not part of the query associated with the group. This validation doesn't occur when the group query specifies <code>AWS::AllSupported</code>, because a group based on such a query can contain any of the allowed resource types for the query type (tag-based or Amazon CloudFront stack-based queries).</p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
@@ -193,11 +187,10 @@ impl ListGroupResourcesFluentBuilder {
     }
     /// <p>Filters, formatted as <code>ResourceFilter</code> objects, that you want to apply to a <code>ListGroupResources</code> operation. Filters the results to include only those of the specified resource types.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>resource-type</code> - Filter resources by their type. Specify up to five resource types in the format <code>AWS::ServiceCode::ResourceType</code>. For example, <code>AWS::EC2::Instance</code>, or <code>AWS::S3::Bucket</code>.</p></li>
+    /// <li> <p> <code>resource-type</code> - Filter resources by their type. Specify up to five resource types in the format <code>AWS::ServiceCode::ResourceType</code>. For example, <code>AWS::EC2::Instance</code>, or <code>AWS::S3::Bucket</code>. </p> </li>
     /// </ul>
     /// <p>When you specify a <code>resource-type</code> filter for <code>ListGroupResources</code>, Resource Groups validates your filter resource types against the types that are defined in the query associated with the group. For example, if a group contains only S3 buckets because its query specifies only that resource type, but your <code>resource-type</code> filter includes EC2 instances, AWS Resource Groups does not filter for EC2 instances. In this case, a <code>ListGroupResources</code> request returns a <code>BadRequestException</code> error with a message similar to the following:</p>
-    /// <p><code>The resource types specified as filters in the request are not valid.</code></p>
+    /// <p> <code>The resource types specified as filters in the request are not valid.</code> </p>
     /// <p>The error includes a list of resource types that failed the validation because they are not part of the query associated with the group. This validation doesn't occur when the group query specifies <code>AWS::AllSupported</code>, because a group based on such a query can contain any of the allowed resource types for the query type (tag-based or Amazon CloudFront stack-based queries).</p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceFilter>> {
         self.inner.get_filters()

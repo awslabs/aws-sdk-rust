@@ -8,7 +8,7 @@ pub struct DescribeQueryInput {
     pub event_data_store: ::std::option::Option<::std::string::String>,
     /// <p>The query ID.</p>
     pub query_id: ::std::option::Option<::std::string::String>,
-    /// <p>The alias that identifies a query template.</p>
+    /// <p> The alias that identifies a query template. </p>
     pub query_alias: ::std::option::Option<::std::string::String>,
 }
 impl DescribeQueryInput {
@@ -21,7 +21,7 @@ impl DescribeQueryInput {
     pub fn query_id(&self) -> ::std::option::Option<&str> {
         self.query_id.as_deref()
     }
-    /// <p>The alias that identifies a query template.</p>
+    /// <p> The alias that identifies a query template. </p>
     pub fn query_alias(&self) -> ::std::option::Option<&str> {
         self.query_alias.as_deref()
     }
@@ -73,17 +73,17 @@ impl DescribeQueryInputBuilder {
     pub fn get_query_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.query_id
     }
-    /// <p>The alias that identifies a query template.</p>
+    /// <p> The alias that identifies a query template. </p>
     pub fn query_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_alias = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The alias that identifies a query template.</p>
+    /// <p> The alias that identifies a query template. </p>
     pub fn set_query_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_alias = input;
         self
     }
-    /// <p>The alias that identifies a query template.</p>
+    /// <p> The alias that identifies a query template. </p>
     pub fn get_query_alias(&self) -> &::std::option::Option<::std::string::String> {
         &self.query_alias
     }

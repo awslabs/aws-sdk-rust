@@ -18,26 +18,18 @@ pub struct BgpPeer {
     pub customer_address: ::std::option::Option<::std::string::String>,
     /// <p>The state of the BGP peer. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>verifying</code>: The BGP peering addresses or ASN require validation before the BGP peer can be created. This state applies only to public virtual interfaces.</p></li>
-    /// <li>
-    /// <p><code>pending</code>: The BGP peer is created, and remains in this state until it is ready to be established.</p></li>
-    /// <li>
-    /// <p><code>available</code>: The BGP peer is ready to be established.</p></li>
-    /// <li>
-    /// <p><code>deleting</code>: The BGP peer is being deleted.</p></li>
-    /// <li>
-    /// <p><code>deleted</code>: The BGP peer is deleted and cannot be established.</p></li>
+    /// <li> <p> <code>verifying</code>: The BGP peering addresses or ASN require validation before the BGP peer can be created. This state applies only to public virtual interfaces.</p> </li>
+    /// <li> <p> <code>pending</code>: The BGP peer is created, and remains in this state until it is ready to be established.</p> </li>
+    /// <li> <p> <code>available</code>: The BGP peer is ready to be established.</p> </li>
+    /// <li> <p> <code>deleting</code>: The BGP peer is being deleted.</p> </li>
+    /// <li> <p> <code>deleted</code>: The BGP peer is deleted and cannot be established.</p> </li>
     /// </ul>
     pub bgp_peer_state: ::std::option::Option<crate::types::BgpPeerState>,
     /// <p>The status of the BGP peer. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>up</code>: The BGP peer is established. This state does not indicate the state of the routing function. Ensure that you are receiving routes over the BGP session.</p></li>
-    /// <li>
-    /// <p><code>down</code>: The BGP peer is down.</p></li>
-    /// <li>
-    /// <p><code>unknown</code>: The BGP peer status is not available.</p></li>
+    /// <li> <p> <code>up</code>: The BGP peer is established. This state does not indicate the state of the routing function. Ensure that you are receiving routes over the BGP session.</p> </li>
+    /// <li> <p> <code>down</code>: The BGP peer is down.</p> </li>
+    /// <li> <p> <code>unknown</code>: The BGP peer status is not available.</p> </li>
     /// </ul>
     pub bgp_status: ::std::option::Option<crate::types::BgpStatus>,
     /// <p>The Direct Connect endpoint that terminates the BGP peer.</p>
@@ -72,28 +64,20 @@ impl BgpPeer {
     }
     /// <p>The state of the BGP peer. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>verifying</code>: The BGP peering addresses or ASN require validation before the BGP peer can be created. This state applies only to public virtual interfaces.</p></li>
-    /// <li>
-    /// <p><code>pending</code>: The BGP peer is created, and remains in this state until it is ready to be established.</p></li>
-    /// <li>
-    /// <p><code>available</code>: The BGP peer is ready to be established.</p></li>
-    /// <li>
-    /// <p><code>deleting</code>: The BGP peer is being deleted.</p></li>
-    /// <li>
-    /// <p><code>deleted</code>: The BGP peer is deleted and cannot be established.</p></li>
+    /// <li> <p> <code>verifying</code>: The BGP peering addresses or ASN require validation before the BGP peer can be created. This state applies only to public virtual interfaces.</p> </li>
+    /// <li> <p> <code>pending</code>: The BGP peer is created, and remains in this state until it is ready to be established.</p> </li>
+    /// <li> <p> <code>available</code>: The BGP peer is ready to be established.</p> </li>
+    /// <li> <p> <code>deleting</code>: The BGP peer is being deleted.</p> </li>
+    /// <li> <p> <code>deleted</code>: The BGP peer is deleted and cannot be established.</p> </li>
     /// </ul>
     pub fn bgp_peer_state(&self) -> ::std::option::Option<&crate::types::BgpPeerState> {
         self.bgp_peer_state.as_ref()
     }
     /// <p>The status of the BGP peer. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>up</code>: The BGP peer is established. This state does not indicate the state of the routing function. Ensure that you are receiving routes over the BGP session.</p></li>
-    /// <li>
-    /// <p><code>down</code>: The BGP peer is down.</p></li>
-    /// <li>
-    /// <p><code>unknown</code>: The BGP peer status is not available.</p></li>
+    /// <li> <p> <code>up</code>: The BGP peer is established. This state does not indicate the state of the routing function. Ensure that you are receiving routes over the BGP session.</p> </li>
+    /// <li> <p> <code>down</code>: The BGP peer is down.</p> </li>
+    /// <li> <p> <code>unknown</code>: The BGP peer status is not available.</p> </li>
     /// </ul>
     pub fn bgp_status(&self) -> ::std::option::Option<&crate::types::BgpStatus> {
         self.bgp_status.as_ref()
@@ -216,16 +200,11 @@ impl BgpPeerBuilder {
     }
     /// <p>The state of the BGP peer. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>verifying</code>: The BGP peering addresses or ASN require validation before the BGP peer can be created. This state applies only to public virtual interfaces.</p></li>
-    /// <li>
-    /// <p><code>pending</code>: The BGP peer is created, and remains in this state until it is ready to be established.</p></li>
-    /// <li>
-    /// <p><code>available</code>: The BGP peer is ready to be established.</p></li>
-    /// <li>
-    /// <p><code>deleting</code>: The BGP peer is being deleted.</p></li>
-    /// <li>
-    /// <p><code>deleted</code>: The BGP peer is deleted and cannot be established.</p></li>
+    /// <li> <p> <code>verifying</code>: The BGP peering addresses or ASN require validation before the BGP peer can be created. This state applies only to public virtual interfaces.</p> </li>
+    /// <li> <p> <code>pending</code>: The BGP peer is created, and remains in this state until it is ready to be established.</p> </li>
+    /// <li> <p> <code>available</code>: The BGP peer is ready to be established.</p> </li>
+    /// <li> <p> <code>deleting</code>: The BGP peer is being deleted.</p> </li>
+    /// <li> <p> <code>deleted</code>: The BGP peer is deleted and cannot be established.</p> </li>
     /// </ul>
     pub fn bgp_peer_state(mut self, input: crate::types::BgpPeerState) -> Self {
         self.bgp_peer_state = ::std::option::Option::Some(input);
@@ -233,16 +212,11 @@ impl BgpPeerBuilder {
     }
     /// <p>The state of the BGP peer. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>verifying</code>: The BGP peering addresses or ASN require validation before the BGP peer can be created. This state applies only to public virtual interfaces.</p></li>
-    /// <li>
-    /// <p><code>pending</code>: The BGP peer is created, and remains in this state until it is ready to be established.</p></li>
-    /// <li>
-    /// <p><code>available</code>: The BGP peer is ready to be established.</p></li>
-    /// <li>
-    /// <p><code>deleting</code>: The BGP peer is being deleted.</p></li>
-    /// <li>
-    /// <p><code>deleted</code>: The BGP peer is deleted and cannot be established.</p></li>
+    /// <li> <p> <code>verifying</code>: The BGP peering addresses or ASN require validation before the BGP peer can be created. This state applies only to public virtual interfaces.</p> </li>
+    /// <li> <p> <code>pending</code>: The BGP peer is created, and remains in this state until it is ready to be established.</p> </li>
+    /// <li> <p> <code>available</code>: The BGP peer is ready to be established.</p> </li>
+    /// <li> <p> <code>deleting</code>: The BGP peer is being deleted.</p> </li>
+    /// <li> <p> <code>deleted</code>: The BGP peer is deleted and cannot be established.</p> </li>
     /// </ul>
     pub fn set_bgp_peer_state(mut self, input: ::std::option::Option<crate::types::BgpPeerState>) -> Self {
         self.bgp_peer_state = input;
@@ -250,28 +224,20 @@ impl BgpPeerBuilder {
     }
     /// <p>The state of the BGP peer. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>verifying</code>: The BGP peering addresses or ASN require validation before the BGP peer can be created. This state applies only to public virtual interfaces.</p></li>
-    /// <li>
-    /// <p><code>pending</code>: The BGP peer is created, and remains in this state until it is ready to be established.</p></li>
-    /// <li>
-    /// <p><code>available</code>: The BGP peer is ready to be established.</p></li>
-    /// <li>
-    /// <p><code>deleting</code>: The BGP peer is being deleted.</p></li>
-    /// <li>
-    /// <p><code>deleted</code>: The BGP peer is deleted and cannot be established.</p></li>
+    /// <li> <p> <code>verifying</code>: The BGP peering addresses or ASN require validation before the BGP peer can be created. This state applies only to public virtual interfaces.</p> </li>
+    /// <li> <p> <code>pending</code>: The BGP peer is created, and remains in this state until it is ready to be established.</p> </li>
+    /// <li> <p> <code>available</code>: The BGP peer is ready to be established.</p> </li>
+    /// <li> <p> <code>deleting</code>: The BGP peer is being deleted.</p> </li>
+    /// <li> <p> <code>deleted</code>: The BGP peer is deleted and cannot be established.</p> </li>
     /// </ul>
     pub fn get_bgp_peer_state(&self) -> &::std::option::Option<crate::types::BgpPeerState> {
         &self.bgp_peer_state
     }
     /// <p>The status of the BGP peer. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>up</code>: The BGP peer is established. This state does not indicate the state of the routing function. Ensure that you are receiving routes over the BGP session.</p></li>
-    /// <li>
-    /// <p><code>down</code>: The BGP peer is down.</p></li>
-    /// <li>
-    /// <p><code>unknown</code>: The BGP peer status is not available.</p></li>
+    /// <li> <p> <code>up</code>: The BGP peer is established. This state does not indicate the state of the routing function. Ensure that you are receiving routes over the BGP session.</p> </li>
+    /// <li> <p> <code>down</code>: The BGP peer is down.</p> </li>
+    /// <li> <p> <code>unknown</code>: The BGP peer status is not available.</p> </li>
     /// </ul>
     pub fn bgp_status(mut self, input: crate::types::BgpStatus) -> Self {
         self.bgp_status = ::std::option::Option::Some(input);
@@ -279,12 +245,9 @@ impl BgpPeerBuilder {
     }
     /// <p>The status of the BGP peer. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>up</code>: The BGP peer is established. This state does not indicate the state of the routing function. Ensure that you are receiving routes over the BGP session.</p></li>
-    /// <li>
-    /// <p><code>down</code>: The BGP peer is down.</p></li>
-    /// <li>
-    /// <p><code>unknown</code>: The BGP peer status is not available.</p></li>
+    /// <li> <p> <code>up</code>: The BGP peer is established. This state does not indicate the state of the routing function. Ensure that you are receiving routes over the BGP session.</p> </li>
+    /// <li> <p> <code>down</code>: The BGP peer is down.</p> </li>
+    /// <li> <p> <code>unknown</code>: The BGP peer status is not available.</p> </li>
     /// </ul>
     pub fn set_bgp_status(mut self, input: ::std::option::Option<crate::types::BgpStatus>) -> Self {
         self.bgp_status = input;
@@ -292,12 +255,9 @@ impl BgpPeerBuilder {
     }
     /// <p>The status of the BGP peer. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>up</code>: The BGP peer is established. This state does not indicate the state of the routing function. Ensure that you are receiving routes over the BGP session.</p></li>
-    /// <li>
-    /// <p><code>down</code>: The BGP peer is down.</p></li>
-    /// <li>
-    /// <p><code>unknown</code>: The BGP peer status is not available.</p></li>
+    /// <li> <p> <code>up</code>: The BGP peer is established. This state does not indicate the state of the routing function. Ensure that you are receiving routes over the BGP session.</p> </li>
+    /// <li> <p> <code>down</code>: The BGP peer is down.</p> </li>
+    /// <li> <p> <code>unknown</code>: The BGP peer status is not available.</p> </li>
     /// </ul>
     pub fn get_bgp_status(&self) -> &::std::option::Option<crate::types::BgpStatus> {
         &self.bgp_status

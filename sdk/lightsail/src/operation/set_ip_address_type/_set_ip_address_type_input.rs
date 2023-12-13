@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SetIpAddressTypeInput {
     /// <p>The resource type.</p>
-    /// <p>The possible values are <code>Distribution</code>, <code>Instance</code>, and <code>LoadBalancer</code>.</p><note>
+    /// <p>The possible values are <code>Distribution</code>, <code>Instance</code>, and <code>LoadBalancer</code>.</p> <note>
     /// <p>Distribution-related APIs are available only in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit distributions.</p>
     /// </note>
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
@@ -16,7 +16,7 @@ pub struct SetIpAddressTypeInput {
 }
 impl SetIpAddressTypeInput {
     /// <p>The resource type.</p>
-    /// <p>The possible values are <code>Distribution</code>, <code>Instance</code>, and <code>LoadBalancer</code>.</p><note>
+    /// <p>The possible values are <code>Distribution</code>, <code>Instance</code>, and <code>LoadBalancer</code>.</p> <note>
     /// <p>Distribution-related APIs are available only in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit distributions.</p>
     /// </note>
     pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
@@ -49,7 +49,7 @@ pub struct SetIpAddressTypeInputBuilder {
 }
 impl SetIpAddressTypeInputBuilder {
     /// <p>The resource type.</p>
-    /// <p>The possible values are <code>Distribution</code>, <code>Instance</code>, and <code>LoadBalancer</code>.</p><note>
+    /// <p>The possible values are <code>Distribution</code>, <code>Instance</code>, and <code>LoadBalancer</code>.</p> <note>
     /// <p>Distribution-related APIs are available only in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit distributions.</p>
     /// </note>
     /// This field is required.
@@ -58,7 +58,7 @@ impl SetIpAddressTypeInputBuilder {
         self
     }
     /// <p>The resource type.</p>
-    /// <p>The possible values are <code>Distribution</code>, <code>Instance</code>, and <code>LoadBalancer</code>.</p><note>
+    /// <p>The possible values are <code>Distribution</code>, <code>Instance</code>, and <code>LoadBalancer</code>.</p> <note>
     /// <p>Distribution-related APIs are available only in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit distributions.</p>
     /// </note>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
@@ -66,7 +66,7 @@ impl SetIpAddressTypeInputBuilder {
         self
     }
     /// <p>The resource type.</p>
-    /// <p>The possible values are <code>Distribution</code>, <code>Instance</code>, and <code>LoadBalancer</code>.</p><note>
+    /// <p>The possible values are <code>Distribution</code>, <code>Instance</code>, and <code>LoadBalancer</code>.</p> <note>
     /// <p>Distribution-related APIs are available only in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit distributions.</p>
     /// </note>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {

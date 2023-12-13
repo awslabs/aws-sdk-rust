@@ -5,9 +5,9 @@
 pub struct ListSnomedctInferenceJobsInput {
     /// <p>Provides information for filtering a list of detection jobs.</p>
     pub filter: ::std::option::Option<crate::types::ComprehendMedicalAsyncJobFilter>,
-    /// <p>Identifies the next page of InferSNOMEDCT results to return.</p>
+    /// <p> Identifies the next page of InferSNOMEDCT results to return. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum number of results to return in each page. The default is 100.</p>
+    /// <p> The maximum number of results to return in each page. The default is 100. </p>
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListSnomedctInferenceJobsInput {
@@ -15,11 +15,11 @@ impl ListSnomedctInferenceJobsInput {
     pub fn filter(&self) -> ::std::option::Option<&crate::types::ComprehendMedicalAsyncJobFilter> {
         self.filter.as_ref()
     }
-    /// <p>Identifies the next page of InferSNOMEDCT results to return.</p>
+    /// <p> Identifies the next page of InferSNOMEDCT results to return. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return in each page. The default is 100.</p>
+    /// <p> The maximum number of results to return in each page. The default is 100. </p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -54,31 +54,31 @@ impl ListSnomedctInferenceJobsInputBuilder {
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::ComprehendMedicalAsyncJobFilter> {
         &self.filter
     }
-    /// <p>Identifies the next page of InferSNOMEDCT results to return.</p>
+    /// <p> Identifies the next page of InferSNOMEDCT results to return. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Identifies the next page of InferSNOMEDCT results to return.</p>
+    /// <p> Identifies the next page of InferSNOMEDCT results to return. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>Identifies the next page of InferSNOMEDCT results to return.</p>
+    /// <p> Identifies the next page of InferSNOMEDCT results to return. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>The maximum number of results to return in each page. The default is 100.</p>
+    /// <p> The maximum number of results to return in each page. The default is 100. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of results to return in each page. The default is 100.</p>
+    /// <p> The maximum number of results to return in each page. The default is 100. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of results to return in each page. The default is 100.</p>
+    /// <p> The maximum number of results to return in each page. The default is 100. </p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

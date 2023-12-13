@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMonitoredResourcesOutput {
-    /// <p>Information about the resource that is being monitored, including the name of the resource, the type of resource, and whether or not permission is given to DevOps Guru to access that resource.</p>
+    /// <p> Information about the resource that is being monitored, including the name of the resource, the type of resource, and whether or not permission is given to DevOps Guru to access that resource. </p>
     pub monitored_resource_identifiers: ::std::vec::Vec<crate::types::MonitoredResourceIdentifier>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListMonitoredResourcesOutput {
-    /// <p>Information about the resource that is being monitored, including the name of the resource, the type of resource, and whether or not permission is given to DevOps Guru to access that resource.</p>
+    /// <p> Information about the resource that is being monitored, including the name of the resource, the type of resource, and whether or not permission is given to DevOps Guru to access that resource. </p>
     pub fn monitored_resource_identifiers(&self) -> &[crate::types::MonitoredResourceIdentifier] {
         use std::ops::Deref;
         self.monitored_resource_identifiers.deref()
@@ -45,14 +45,14 @@ impl ListMonitoredResourcesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_monitored_resource_identifiers`](Self::set_monitored_resource_identifiers).
     ///
-    /// <p>Information about the resource that is being monitored, including the name of the resource, the type of resource, and whether or not permission is given to DevOps Guru to access that resource.</p>
+    /// <p> Information about the resource that is being monitored, including the name of the resource, the type of resource, and whether or not permission is given to DevOps Guru to access that resource. </p>
     pub fn monitored_resource_identifiers(mut self, input: crate::types::MonitoredResourceIdentifier) -> Self {
         let mut v = self.monitored_resource_identifiers.unwrap_or_default();
         v.push(input);
         self.monitored_resource_identifiers = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Information about the resource that is being monitored, including the name of the resource, the type of resource, and whether or not permission is given to DevOps Guru to access that resource.</p>
+    /// <p> Information about the resource that is being monitored, including the name of the resource, the type of resource, and whether or not permission is given to DevOps Guru to access that resource. </p>
     pub fn set_monitored_resource_identifiers(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::MonitoredResourceIdentifier>>,
@@ -60,7 +60,7 @@ impl ListMonitoredResourcesOutputBuilder {
         self.monitored_resource_identifiers = input;
         self
     }
-    /// <p>Information about the resource that is being monitored, including the name of the resource, the type of resource, and whether or not permission is given to DevOps Guru to access that resource.</p>
+    /// <p> Information about the resource that is being monitored, including the name of the resource, the type of resource, and whether or not permission is given to DevOps Guru to access that resource. </p>
     pub fn get_monitored_resource_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MonitoredResourceIdentifier>> {
         &self.monitored_resource_identifiers
     }

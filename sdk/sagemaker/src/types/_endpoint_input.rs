@@ -10,7 +10,7 @@ pub struct EndpointInput {
     pub local_path: ::std::option::Option<::std::string::String>,
     /// <p>Whether the <code>Pipe</code> or <code>File</code> is used as the input mode for transferring data for the monitoring job. <code>Pipe</code> mode is recommended for large datasets. <code>File</code> mode is useful for small files that fit in memory. Defaults to <code>File</code>.</p>
     pub s3_input_mode: ::std::option::Option<crate::types::ProcessingS3InputMode>,
-    /// <p>Whether input data distributed in Amazon S3 is fully replicated or sharded by an Amazon S3 key. Defaults to <code>FullyReplicated</code></p>
+    /// <p>Whether input data distributed in Amazon S3 is fully replicated or sharded by an Amazon S3 key. Defaults to <code>FullyReplicated</code> </p>
     pub s3_data_distribution_type: ::std::option::Option<crate::types::ProcessingS3DataDistributionType>,
     /// <p>The attributes of the input data that are the input features.</p>
     pub features_attribute: ::std::option::Option<::std::string::String>,
@@ -40,7 +40,7 @@ impl EndpointInput {
     pub fn s3_input_mode(&self) -> ::std::option::Option<&crate::types::ProcessingS3InputMode> {
         self.s3_input_mode.as_ref()
     }
-    /// <p>Whether input data distributed in Amazon S3 is fully replicated or sharded by an Amazon S3 key. Defaults to <code>FullyReplicated</code></p>
+    /// <p>Whether input data distributed in Amazon S3 is fully replicated or sharded by an Amazon S3 key. Defaults to <code>FullyReplicated</code> </p>
     pub fn s3_data_distribution_type(&self) -> ::std::option::Option<&crate::types::ProcessingS3DataDistributionType> {
         self.s3_data_distribution_type.as_ref()
     }
@@ -141,17 +141,17 @@ impl EndpointInputBuilder {
     pub fn get_s3_input_mode(&self) -> &::std::option::Option<crate::types::ProcessingS3InputMode> {
         &self.s3_input_mode
     }
-    /// <p>Whether input data distributed in Amazon S3 is fully replicated or sharded by an Amazon S3 key. Defaults to <code>FullyReplicated</code></p>
+    /// <p>Whether input data distributed in Amazon S3 is fully replicated or sharded by an Amazon S3 key. Defaults to <code>FullyReplicated</code> </p>
     pub fn s3_data_distribution_type(mut self, input: crate::types::ProcessingS3DataDistributionType) -> Self {
         self.s3_data_distribution_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Whether input data distributed in Amazon S3 is fully replicated or sharded by an Amazon S3 key. Defaults to <code>FullyReplicated</code></p>
+    /// <p>Whether input data distributed in Amazon S3 is fully replicated or sharded by an Amazon S3 key. Defaults to <code>FullyReplicated</code> </p>
     pub fn set_s3_data_distribution_type(mut self, input: ::std::option::Option<crate::types::ProcessingS3DataDistributionType>) -> Self {
         self.s3_data_distribution_type = input;
         self
     }
-    /// <p>Whether input data distributed in Amazon S3 is fully replicated or sharded by an Amazon S3 key. Defaults to <code>FullyReplicated</code></p>
+    /// <p>Whether input data distributed in Amazon S3 is fully replicated or sharded by an Amazon S3 key. Defaults to <code>FullyReplicated</code> </p>
     pub fn get_s3_data_distribution_type(&self) -> &::std::option::Option<crate::types::ProcessingS3DataDistributionType> {
         &self.s3_data_distribution_type
     }

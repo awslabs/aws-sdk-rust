@@ -10,7 +10,7 @@ pub struct Recommendation {
     pub all_matches_sum: f64,
     /// <p>The pattern that analysis recognized in the profile to make this recommendation.</p>
     pub pattern: ::std::option::Option<crate::types::Pattern>,
-    /// <p>List of the matches with most impact.</p>
+    /// <p>List of the matches with most impact. </p>
     pub top_matches: ::std::vec::Vec<crate::types::Match>,
     /// <p>The start time of the profile that was used by this analysis. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
     pub start_time: ::aws_smithy_types::DateTime,
@@ -30,7 +30,7 @@ impl Recommendation {
     pub fn pattern(&self) -> ::std::option::Option<&crate::types::Pattern> {
         self.pattern.as_ref()
     }
-    /// <p>List of the matches with most impact.</p>
+    /// <p>List of the matches with most impact. </p>
     pub fn top_matches(&self) -> &[crate::types::Match] {
         use std::ops::Deref;
         self.top_matches.deref()
@@ -112,19 +112,19 @@ impl RecommendationBuilder {
     ///
     /// To override the contents of this collection use [`set_top_matches`](Self::set_top_matches).
     ///
-    /// <p>List of the matches with most impact.</p>
+    /// <p>List of the matches with most impact. </p>
     pub fn top_matches(mut self, input: crate::types::Match) -> Self {
         let mut v = self.top_matches.unwrap_or_default();
         v.push(input);
         self.top_matches = ::std::option::Option::Some(v);
         self
     }
-    /// <p>List of the matches with most impact.</p>
+    /// <p>List of the matches with most impact. </p>
     pub fn set_top_matches(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Match>>) -> Self {
         self.top_matches = input;
         self
     }
-    /// <p>List of the matches with most impact.</p>
+    /// <p>List of the matches with most impact. </p>
     pub fn get_top_matches(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Match>> {
         &self.top_matches
     }

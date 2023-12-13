@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProvideAnomalyFeedbackOutput {
-    /// <p>The ID of the modified cost anomaly.</p>
+    /// <p>The ID of the modified cost anomaly. </p>
     pub anomaly_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl ProvideAnomalyFeedbackOutput {
-    /// <p>The ID of the modified cost anomaly.</p>
+    /// <p>The ID of the modified cost anomaly. </p>
     pub fn anomaly_id(&self) -> &str {
         use std::ops::Deref;
         self.anomaly_id.deref()
@@ -34,18 +34,18 @@ pub struct ProvideAnomalyFeedbackOutputBuilder {
     _request_id: Option<String>,
 }
 impl ProvideAnomalyFeedbackOutputBuilder {
-    /// <p>The ID of the modified cost anomaly.</p>
+    /// <p>The ID of the modified cost anomaly. </p>
     /// This field is required.
     pub fn anomaly_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.anomaly_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the modified cost anomaly.</p>
+    /// <p>The ID of the modified cost anomaly. </p>
     pub fn set_anomaly_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.anomaly_id = input;
         self
     }
-    /// <p>The ID of the modified cost anomaly.</p>
+    /// <p>The ID of the modified cost anomaly. </p>
     pub fn get_anomaly_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.anomaly_id
     }

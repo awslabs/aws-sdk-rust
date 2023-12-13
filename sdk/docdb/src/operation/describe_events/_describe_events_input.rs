@@ -7,26 +7,20 @@ pub struct DescribeEventsInput {
     /// <p>The identifier of the event source for which events are returned. If not specified, then all sources are included in the response.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>If <code>SourceIdentifier</code> is provided, <code>SourceType</code> must also be provided.</p></li>
-    /// <li>
-    /// <p>If the source type is <code>DBInstance</code>, a <code>DBInstanceIdentifier</code> must be provided.</p></li>
-    /// <li>
-    /// <p>If the source type is <code>DBSecurityGroup</code>, a <code>DBSecurityGroupName</code> must be provided.</p></li>
-    /// <li>
-    /// <p>If the source type is <code>DBParameterGroup</code>, a <code>DBParameterGroupName</code> must be provided.</p></li>
-    /// <li>
-    /// <p>If the source type is <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must be provided.</p></li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li> <p>If <code>SourceIdentifier</code> is provided, <code>SourceType</code> must also be provided.</p> </li>
+    /// <li> <p>If the source type is <code>DBInstance</code>, a <code>DBInstanceIdentifier</code> must be provided.</p> </li>
+    /// <li> <p>If the source type is <code>DBSecurityGroup</code>, a <code>DBSecurityGroupName</code> must be provided.</p> </li>
+    /// <li> <p>If the source type is <code>DBParameterGroup</code>, a <code>DBParameterGroupName</code> must be provided.</p> </li>
+    /// <li> <p>If the source type is <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must be provided.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     pub source_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The event source to retrieve events for. If no value is specified, all events are returned.</p>
     pub source_type: ::std::option::Option<crate::types::SourceType>,
-    /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format.</p>
+    /// <p> The beginning of the time interval to retrieve events for, specified in ISO 8601 format. </p>
     /// <p>Example: 2009-07-08T18:00Z</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format.</p>
+    /// <p> The end of the time interval for which to retrieve events, specified in ISO 8601 format. </p>
     /// <p>Example: 2009-07-08T18:00Z</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The number of minutes to retrieve events for.</p>
@@ -36,7 +30,7 @@ pub struct DescribeEventsInput {
     pub event_categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>This parameter is not currently supported.</p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub max_records: ::std::option::Option<i32>,
@@ -47,18 +41,12 @@ impl DescribeEventsInput {
     /// <p>The identifier of the event source for which events are returned. If not specified, then all sources are included in the response.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>If <code>SourceIdentifier</code> is provided, <code>SourceType</code> must also be provided.</p></li>
-    /// <li>
-    /// <p>If the source type is <code>DBInstance</code>, a <code>DBInstanceIdentifier</code> must be provided.</p></li>
-    /// <li>
-    /// <p>If the source type is <code>DBSecurityGroup</code>, a <code>DBSecurityGroupName</code> must be provided.</p></li>
-    /// <li>
-    /// <p>If the source type is <code>DBParameterGroup</code>, a <code>DBParameterGroupName</code> must be provided.</p></li>
-    /// <li>
-    /// <p>If the source type is <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must be provided.</p></li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li> <p>If <code>SourceIdentifier</code> is provided, <code>SourceType</code> must also be provided.</p> </li>
+    /// <li> <p>If the source type is <code>DBInstance</code>, a <code>DBInstanceIdentifier</code> must be provided.</p> </li>
+    /// <li> <p>If the source type is <code>DBSecurityGroup</code>, a <code>DBSecurityGroupName</code> must be provided.</p> </li>
+    /// <li> <p>If the source type is <code>DBParameterGroup</code>, a <code>DBParameterGroupName</code> must be provided.</p> </li>
+    /// <li> <p>If the source type is <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must be provided.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     pub fn source_identifier(&self) -> ::std::option::Option<&str> {
         self.source_identifier.as_deref()
@@ -67,12 +55,12 @@ impl DescribeEventsInput {
     pub fn source_type(&self) -> ::std::option::Option<&crate::types::SourceType> {
         self.source_type.as_ref()
     }
-    /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format.</p>
+    /// <p> The beginning of the time interval to retrieve events for, specified in ISO 8601 format. </p>
     /// <p>Example: 2009-07-08T18:00Z</p>
     pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format.</p>
+    /// <p> The end of the time interval for which to retrieve events, specified in ISO 8601 format. </p>
     /// <p>Example: 2009-07-08T18:00Z</p>
     pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
@@ -94,7 +82,7 @@ impl DescribeEventsInput {
     pub fn filters(&self) -> &[crate::types::Filter] {
         self.filters.as_deref().unwrap_or_default()
     }
-    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn max_records(&self) -> ::std::option::Option<i32> {
@@ -130,18 +118,12 @@ impl DescribeEventsInputBuilder {
     /// <p>The identifier of the event source for which events are returned. If not specified, then all sources are included in the response.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>If <code>SourceIdentifier</code> is provided, <code>SourceType</code> must also be provided.</p></li>
-    /// <li>
-    /// <p>If the source type is <code>DBInstance</code>, a <code>DBInstanceIdentifier</code> must be provided.</p></li>
-    /// <li>
-    /// <p>If the source type is <code>DBSecurityGroup</code>, a <code>DBSecurityGroupName</code> must be provided.</p></li>
-    /// <li>
-    /// <p>If the source type is <code>DBParameterGroup</code>, a <code>DBParameterGroupName</code> must be provided.</p></li>
-    /// <li>
-    /// <p>If the source type is <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must be provided.</p></li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li> <p>If <code>SourceIdentifier</code> is provided, <code>SourceType</code> must also be provided.</p> </li>
+    /// <li> <p>If the source type is <code>DBInstance</code>, a <code>DBInstanceIdentifier</code> must be provided.</p> </li>
+    /// <li> <p>If the source type is <code>DBSecurityGroup</code>, a <code>DBSecurityGroupName</code> must be provided.</p> </li>
+    /// <li> <p>If the source type is <code>DBParameterGroup</code>, a <code>DBParameterGroupName</code> must be provided.</p> </li>
+    /// <li> <p>If the source type is <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must be provided.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     pub fn source_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_identifier = ::std::option::Option::Some(input.into());
@@ -150,18 +132,12 @@ impl DescribeEventsInputBuilder {
     /// <p>The identifier of the event source for which events are returned. If not specified, then all sources are included in the response.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>If <code>SourceIdentifier</code> is provided, <code>SourceType</code> must also be provided.</p></li>
-    /// <li>
-    /// <p>If the source type is <code>DBInstance</code>, a <code>DBInstanceIdentifier</code> must be provided.</p></li>
-    /// <li>
-    /// <p>If the source type is <code>DBSecurityGroup</code>, a <code>DBSecurityGroupName</code> must be provided.</p></li>
-    /// <li>
-    /// <p>If the source type is <code>DBParameterGroup</code>, a <code>DBParameterGroupName</code> must be provided.</p></li>
-    /// <li>
-    /// <p>If the source type is <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must be provided.</p></li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li> <p>If <code>SourceIdentifier</code> is provided, <code>SourceType</code> must also be provided.</p> </li>
+    /// <li> <p>If the source type is <code>DBInstance</code>, a <code>DBInstanceIdentifier</code> must be provided.</p> </li>
+    /// <li> <p>If the source type is <code>DBSecurityGroup</code>, a <code>DBSecurityGroupName</code> must be provided.</p> </li>
+    /// <li> <p>If the source type is <code>DBParameterGroup</code>, a <code>DBParameterGroupName</code> must be provided.</p> </li>
+    /// <li> <p>If the source type is <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must be provided.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     pub fn set_source_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_identifier = input;
@@ -170,18 +146,12 @@ impl DescribeEventsInputBuilder {
     /// <p>The identifier of the event source for which events are returned. If not specified, then all sources are included in the response.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>If <code>SourceIdentifier</code> is provided, <code>SourceType</code> must also be provided.</p></li>
-    /// <li>
-    /// <p>If the source type is <code>DBInstance</code>, a <code>DBInstanceIdentifier</code> must be provided.</p></li>
-    /// <li>
-    /// <p>If the source type is <code>DBSecurityGroup</code>, a <code>DBSecurityGroupName</code> must be provided.</p></li>
-    /// <li>
-    /// <p>If the source type is <code>DBParameterGroup</code>, a <code>DBParameterGroupName</code> must be provided.</p></li>
-    /// <li>
-    /// <p>If the source type is <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must be provided.</p></li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li> <p>If <code>SourceIdentifier</code> is provided, <code>SourceType</code> must also be provided.</p> </li>
+    /// <li> <p>If the source type is <code>DBInstance</code>, a <code>DBInstanceIdentifier</code> must be provided.</p> </li>
+    /// <li> <p>If the source type is <code>DBSecurityGroup</code>, a <code>DBSecurityGroupName</code> must be provided.</p> </li>
+    /// <li> <p>If the source type is <code>DBParameterGroup</code>, a <code>DBParameterGroupName</code> must be provided.</p> </li>
+    /// <li> <p>If the source type is <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must be provided.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     pub fn get_source_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_identifier
@@ -200,36 +170,36 @@ impl DescribeEventsInputBuilder {
     pub fn get_source_type(&self) -> &::std::option::Option<crate::types::SourceType> {
         &self.source_type
     }
-    /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format.</p>
+    /// <p> The beginning of the time interval to retrieve events for, specified in ISO 8601 format. </p>
     /// <p>Example: 2009-07-08T18:00Z</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format.</p>
+    /// <p> The beginning of the time interval to retrieve events for, specified in ISO 8601 format. </p>
     /// <p>Example: 2009-07-08T18:00Z</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
-    /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format.</p>
+    /// <p> The beginning of the time interval to retrieve events for, specified in ISO 8601 format. </p>
     /// <p>Example: 2009-07-08T18:00Z</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.start_time
     }
-    /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format.</p>
+    /// <p> The end of the time interval for which to retrieve events, specified in ISO 8601 format. </p>
     /// <p>Example: 2009-07-08T18:00Z</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format.</p>
+    /// <p> The end of the time interval for which to retrieve events, specified in ISO 8601 format. </p>
     /// <p>Example: 2009-07-08T18:00Z</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
-    /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format.</p>
+    /// <p> The end of the time interval for which to retrieve events, specified in ISO 8601 format. </p>
     /// <p>Example: 2009-07-08T18:00Z</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_time
@@ -291,21 +261,21 @@ impl DescribeEventsInputBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters
     }
-    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.max_records = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_records = input;
         self
     }
-    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn get_max_records(&self) -> &::std::option::Option<i32> {

@@ -141,17 +141,17 @@ impl GetTableFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>The transaction ID at which to read the table contents.</p>
+    /// <p>The transaction ID at which to read the table contents. </p>
     pub fn transaction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.transaction_id(input.into());
         self
     }
-    /// <p>The transaction ID at which to read the table contents.</p>
+    /// <p>The transaction ID at which to read the table contents. </p>
     pub fn set_transaction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_transaction_id(input);
         self
     }
-    /// <p>The transaction ID at which to read the table contents.</p>
+    /// <p>The transaction ID at which to read the table contents. </p>
     pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_transaction_id()
     }

@@ -122,43 +122,35 @@ impl StartImportFluentBuilder {
     pub fn get_payload(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         self.inner.get_payload()
     }
-    /// <p>Specifies the type of resource to export. Each resource also exports any resources that it depends on.</p>
+    /// <p>Specifies the type of resource to export. Each resource also exports any resources that it depends on. </p>
     /// <ul>
-    /// <li>
-    /// <p>A bot exports dependent intents.</p></li>
-    /// <li>
-    /// <p>An intent exports dependent slot types.</p></li>
+    /// <li> <p>A bot exports dependent intents.</p> </li>
+    /// <li> <p>An intent exports dependent slot types.</p> </li>
     /// </ul>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.inner = self.inner.resource_type(input);
         self
     }
-    /// <p>Specifies the type of resource to export. Each resource also exports any resources that it depends on.</p>
+    /// <p>Specifies the type of resource to export. Each resource also exports any resources that it depends on. </p>
     /// <ul>
-    /// <li>
-    /// <p>A bot exports dependent intents.</p></li>
-    /// <li>
-    /// <p>An intent exports dependent slot types.</p></li>
+    /// <li> <p>A bot exports dependent intents.</p> </li>
+    /// <li> <p>An intent exports dependent slot types.</p> </li>
     /// </ul>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }
-    /// <p>Specifies the type of resource to export. Each resource also exports any resources that it depends on.</p>
+    /// <p>Specifies the type of resource to export. Each resource also exports any resources that it depends on. </p>
     /// <ul>
-    /// <li>
-    /// <p>A bot exports dependent intents.</p></li>
-    /// <li>
-    /// <p>An intent exports dependent slot types.</p></li>
+    /// <li> <p>A bot exports dependent intents.</p> </li>
+    /// <li> <p>An intent exports dependent slot types.</p> </li>
     /// </ul>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
         self.inner.get_resource_type()
     }
     /// <p>Specifies the action that the <code>StartImport</code> operation should take when there is an existing resource with the same name.</p>
     /// <ul>
-    /// <li>
-    /// <p>FAIL_ON_CONFLICT - The import operation is stopped on the first conflict between a resource in the import file and an existing resource. The name of the resource causing the conflict is in the <code>failureReason</code> field of the response to the <code>GetImport</code> operation.</p>
-    /// <p>OVERWRITE_LATEST - The import operation proceeds even if there is a conflict with an existing resource. The $LASTEST version of the existing resource is overwritten with the data from the import file.</p></li>
+    /// <li> <p>FAIL_ON_CONFLICT - The import operation is stopped on the first conflict between a resource in the import file and an existing resource. The name of the resource causing the conflict is in the <code>failureReason</code> field of the response to the <code>GetImport</code> operation.</p> <p>OVERWRITE_LATEST - The import operation proceeds even if there is a conflict with an existing resource. The $LASTEST version of the existing resource is overwritten with the data from the import file.</p> </li>
     /// </ul>
     pub fn merge_strategy(mut self, input: crate::types::MergeStrategy) -> Self {
         self.inner = self.inner.merge_strategy(input);
@@ -166,9 +158,7 @@ impl StartImportFluentBuilder {
     }
     /// <p>Specifies the action that the <code>StartImport</code> operation should take when there is an existing resource with the same name.</p>
     /// <ul>
-    /// <li>
-    /// <p>FAIL_ON_CONFLICT - The import operation is stopped on the first conflict between a resource in the import file and an existing resource. The name of the resource causing the conflict is in the <code>failureReason</code> field of the response to the <code>GetImport</code> operation.</p>
-    /// <p>OVERWRITE_LATEST - The import operation proceeds even if there is a conflict with an existing resource. The $LASTEST version of the existing resource is overwritten with the data from the import file.</p></li>
+    /// <li> <p>FAIL_ON_CONFLICT - The import operation is stopped on the first conflict between a resource in the import file and an existing resource. The name of the resource causing the conflict is in the <code>failureReason</code> field of the response to the <code>GetImport</code> operation.</p> <p>OVERWRITE_LATEST - The import operation proceeds even if there is a conflict with an existing resource. The $LASTEST version of the existing resource is overwritten with the data from the import file.</p> </li>
     /// </ul>
     pub fn set_merge_strategy(mut self, input: ::std::option::Option<crate::types::MergeStrategy>) -> Self {
         self.inner = self.inner.set_merge_strategy(input);
@@ -176,9 +166,7 @@ impl StartImportFluentBuilder {
     }
     /// <p>Specifies the action that the <code>StartImport</code> operation should take when there is an existing resource with the same name.</p>
     /// <ul>
-    /// <li>
-    /// <p>FAIL_ON_CONFLICT - The import operation is stopped on the first conflict between a resource in the import file and an existing resource. The name of the resource causing the conflict is in the <code>failureReason</code> field of the response to the <code>GetImport</code> operation.</p>
-    /// <p>OVERWRITE_LATEST - The import operation proceeds even if there is a conflict with an existing resource. The $LASTEST version of the existing resource is overwritten with the data from the import file.</p></li>
+    /// <li> <p>FAIL_ON_CONFLICT - The import operation is stopped on the first conflict between a resource in the import file and an existing resource. The name of the resource causing the conflict is in the <code>failureReason</code> field of the response to the <code>GetImport</code> operation.</p> <p>OVERWRITE_LATEST - The import operation proceeds even if there is a conflict with an existing resource. The $LASTEST version of the existing resource is overwritten with the data from the import file.</p> </li>
     /// </ul>
     pub fn get_merge_strategy(&self) -> &::std::option::Option<crate::types::MergeStrategy> {
         self.inner.get_merge_strategy()

@@ -7,12 +7,9 @@ pub struct ListMobileDeviceAccessOverridesInput {
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The WorkMail user under which you list the mobile device access overrides. Accepts the following types of user identities:</p>
     /// <ul>
-    /// <li>
-    /// <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code></p></li>
-    /// <li>
-    /// <p>Email address: <code>user@domain.tld</code></p></li>
-    /// <li>
-    /// <p>User name: <code>user</code></p></li>
+    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+    /// <li> <p>User name: <code>user</code> </p> </li>
     /// </ul>
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>The mobile device to which the access override applies.</p>
@@ -29,12 +26,9 @@ impl ListMobileDeviceAccessOverridesInput {
     }
     /// <p>The WorkMail user under which you list the mobile device access overrides. Accepts the following types of user identities:</p>
     /// <ul>
-    /// <li>
-    /// <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code></p></li>
-    /// <li>
-    /// <p>Email address: <code>user@domain.tld</code></p></li>
-    /// <li>
-    /// <p>User name: <code>user</code></p></li>
+    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+    /// <li> <p>User name: <code>user</code> </p> </li>
     /// </ul>
     pub fn user_id(&self) -> ::std::option::Option<&str> {
         self.user_id.as_deref()
@@ -87,12 +81,9 @@ impl ListMobileDeviceAccessOverridesInputBuilder {
     }
     /// <p>The WorkMail user under which you list the mobile device access overrides. Accepts the following types of user identities:</p>
     /// <ul>
-    /// <li>
-    /// <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code></p></li>
-    /// <li>
-    /// <p>Email address: <code>user@domain.tld</code></p></li>
-    /// <li>
-    /// <p>User name: <code>user</code></p></li>
+    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+    /// <li> <p>User name: <code>user</code> </p> </li>
     /// </ul>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
@@ -100,12 +91,9 @@ impl ListMobileDeviceAccessOverridesInputBuilder {
     }
     /// <p>The WorkMail user under which you list the mobile device access overrides. Accepts the following types of user identities:</p>
     /// <ul>
-    /// <li>
-    /// <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code></p></li>
-    /// <li>
-    /// <p>Email address: <code>user@domain.tld</code></p></li>
-    /// <li>
-    /// <p>User name: <code>user</code></p></li>
+    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+    /// <li> <p>User name: <code>user</code> </p> </li>
     /// </ul>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_id = input;
@@ -113,12 +101,9 @@ impl ListMobileDeviceAccessOverridesInputBuilder {
     }
     /// <p>The WorkMail user under which you list the mobile device access overrides. Accepts the following types of user identities:</p>
     /// <ul>
-    /// <li>
-    /// <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code></p></li>
-    /// <li>
-    /// <p>Email address: <code>user@domain.tld</code></p></li>
-    /// <li>
-    /// <p>User name: <code>user</code></p></li>
+    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+    /// <li> <p>User name: <code>user</code> </p> </li>
     /// </ul>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_id

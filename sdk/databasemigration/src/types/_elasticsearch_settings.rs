@@ -9,7 +9,7 @@ pub struct ElasticsearchSettings {
     /// <p>The endpoint for the OpenSearch cluster. DMS uses HTTPS if a transport protocol (http/https) is not specified.</p>
     pub endpoint_uri: ::std::string::String,
     /// <p>The maximum percentage of records that can fail to be written before a full load operation stops.</p>
-    /// <p>To avoid early failure, this counter is only effective after 1000 records are transferred. OpenSearch also has the concept of error monitoring during the last 10 minutes of an Observation Window. If transfer of all records fail in the last 10 minutes, the full load operation stops.</p>
+    /// <p>To avoid early failure, this counter is only effective after 1000 records are transferred. OpenSearch also has the concept of error monitoring during the last 10 minutes of an Observation Window. If transfer of all records fail in the last 10 minutes, the full load operation stops. </p>
     pub full_load_error_percentage: ::std::option::Option<i32>,
     /// <p>The maximum number of seconds for which DMS retries failed API requests to the OpenSearch cluster.</p>
     pub error_retry_duration: ::std::option::Option<i32>,
@@ -28,7 +28,7 @@ impl ElasticsearchSettings {
         self.endpoint_uri.deref()
     }
     /// <p>The maximum percentage of records that can fail to be written before a full load operation stops.</p>
-    /// <p>To avoid early failure, this counter is only effective after 1000 records are transferred. OpenSearch also has the concept of error monitoring during the last 10 minutes of an Observation Window. If transfer of all records fail in the last 10 minutes, the full load operation stops.</p>
+    /// <p>To avoid early failure, this counter is only effective after 1000 records are transferred. OpenSearch also has the concept of error monitoring during the last 10 minutes of an Observation Window. If transfer of all records fail in the last 10 minutes, the full load operation stops. </p>
     pub fn full_load_error_percentage(&self) -> ::std::option::Option<i32> {
         self.full_load_error_percentage
     }
@@ -90,19 +90,19 @@ impl ElasticsearchSettingsBuilder {
         &self.endpoint_uri
     }
     /// <p>The maximum percentage of records that can fail to be written before a full load operation stops.</p>
-    /// <p>To avoid early failure, this counter is only effective after 1000 records are transferred. OpenSearch also has the concept of error monitoring during the last 10 minutes of an Observation Window. If transfer of all records fail in the last 10 minutes, the full load operation stops.</p>
+    /// <p>To avoid early failure, this counter is only effective after 1000 records are transferred. OpenSearch also has the concept of error monitoring during the last 10 minutes of an Observation Window. If transfer of all records fail in the last 10 minutes, the full load operation stops. </p>
     pub fn full_load_error_percentage(mut self, input: i32) -> Self {
         self.full_load_error_percentage = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum percentage of records that can fail to be written before a full load operation stops.</p>
-    /// <p>To avoid early failure, this counter is only effective after 1000 records are transferred. OpenSearch also has the concept of error monitoring during the last 10 minutes of an Observation Window. If transfer of all records fail in the last 10 minutes, the full load operation stops.</p>
+    /// <p>To avoid early failure, this counter is only effective after 1000 records are transferred. OpenSearch also has the concept of error monitoring during the last 10 minutes of an Observation Window. If transfer of all records fail in the last 10 minutes, the full load operation stops. </p>
     pub fn set_full_load_error_percentage(mut self, input: ::std::option::Option<i32>) -> Self {
         self.full_load_error_percentage = input;
         self
     }
     /// <p>The maximum percentage of records that can fail to be written before a full load operation stops.</p>
-    /// <p>To avoid early failure, this counter is only effective after 1000 records are transferred. OpenSearch also has the concept of error monitoring during the last 10 minutes of an Observation Window. If transfer of all records fail in the last 10 minutes, the full load operation stops.</p>
+    /// <p>To avoid early failure, this counter is only effective after 1000 records are transferred. OpenSearch also has the concept of error monitoring during the last 10 minutes of an Observation Window. If transfer of all records fail in the last 10 minutes, the full load operation stops. </p>
     pub fn get_full_load_error_percentage(&self) -> &::std::option::Option<i32> {
         &self.full_load_error_percentage
     }

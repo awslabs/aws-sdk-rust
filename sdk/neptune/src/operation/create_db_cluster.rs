@@ -244,19 +244,19 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateDBClust
 pub enum CreateDBClusterError {
     /// <p>User already has a DB cluster with the given identifier.</p>
     DbClusterAlreadyExistsFault(crate::types::error::DbClusterAlreadyExistsFault),
-    /// <p><i>DBClusterIdentifier</i> does not refer to an existing DB cluster.</p>
+    /// <p> <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.</p>
     DbClusterNotFoundFault(crate::types::error::DbClusterNotFoundFault),
-    /// <p><i>DBClusterParameterGroupName</i> does not refer to an existing DB Cluster parameter group.</p>
+    /// <p> <i>DBClusterParameterGroupName</i> does not refer to an existing DB Cluster parameter group.</p>
     DbClusterParameterGroupNotFoundFault(crate::types::error::DbClusterParameterGroupNotFoundFault),
     /// <p>User attempted to create a new DB cluster and the user has already reached the maximum allowed DB cluster quota.</p>
     DbClusterQuotaExceededFault(crate::types::error::DbClusterQuotaExceededFault),
-    /// <p><i>DBInstanceIdentifier</i> does not refer to an existing DB instance.</p>
+    /// <p> <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.</p>
     DbInstanceNotFoundFault(crate::types::error::DbInstanceNotFoundFault),
     /// <p>Subnets in the DB subnet group should cover at least two Availability Zones unless there is only one Availability Zone.</p>
     DbSubnetGroupDoesNotCoverEnoughAZs(crate::types::error::DbSubnetGroupDoesNotCoverEnoughAZs),
-    /// <p><i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.</p>
+    /// <p> <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.</p>
     DbSubnetGroupNotFoundFault(crate::types::error::DbSubnetGroupNotFoundFault),
-    /// <p>The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database cluster.</p>
+    /// <p>The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database cluster. </p>
     GlobalClusterNotFoundFault(crate::types::error::GlobalClusterNotFoundFault),
     /// <p>There is insufficient storage available for the current action. You may be able to resolve this error by updating your subnet group to use different Availability Zones that have more storage available.</p>
     InsufficientStorageClusterCapacityFault(crate::types::error::InsufficientStorageClusterCapacityFault),
@@ -266,7 +266,7 @@ pub enum CreateDBClusterError {
     InvalidDbInstanceStateFault(crate::types::error::InvalidDbInstanceStateFault),
     /// <p>The DB subnet group cannot be deleted because it is in use.</p>
     InvalidDbSubnetGroupStateFault(crate::types::error::InvalidDbSubnetGroupStateFault),
-    /// <p>The global cluster is in an invalid state and can't perform the requested operation.</p>
+    /// <p>The global cluster is in an invalid state and can't perform the requested operation. </p>
     InvalidGlobalClusterStateFault(crate::types::error::InvalidGlobalClusterStateFault),
     /// <p>The requested subnet is invalid, or multiple subnets were requested that are not all in a common VPC.</p>
     InvalidSubnet(crate::types::error::InvalidSubnet),

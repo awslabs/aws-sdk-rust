@@ -7,7 +7,7 @@ pub struct UpdateCaCertificateInput {
     /// <p>The CA certificate identifier.</p>
     pub certificate_id: ::std::option::Option<::std::string::String>,
     /// <p>The updated status of the CA certificate.</p>
-    /// <p><b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
+    /// <p> <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
     pub new_status: ::std::option::Option<crate::types::CaCertificateStatus>,
     /// <p>The new value for the auto registration status. Valid values are: "ENABLE" or "DISABLE".</p>
     pub new_auto_registration_status: ::std::option::Option<crate::types::AutoRegistrationStatus>,
@@ -22,7 +22,7 @@ impl UpdateCaCertificateInput {
         self.certificate_id.as_deref()
     }
     /// <p>The updated status of the CA certificate.</p>
-    /// <p><b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
+    /// <p> <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
     pub fn new_status(&self) -> ::std::option::Option<&crate::types::CaCertificateStatus> {
         self.new_status.as_ref()
     }
@@ -73,19 +73,19 @@ impl UpdateCaCertificateInputBuilder {
         &self.certificate_id
     }
     /// <p>The updated status of the CA certificate.</p>
-    /// <p><b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
+    /// <p> <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
     pub fn new_status(mut self, input: crate::types::CaCertificateStatus) -> Self {
         self.new_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The updated status of the CA certificate.</p>
-    /// <p><b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
+    /// <p> <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
     pub fn set_new_status(mut self, input: ::std::option::Option<crate::types::CaCertificateStatus>) -> Self {
         self.new_status = input;
         self
     }
     /// <p>The updated status of the CA certificate.</p>
-    /// <p><b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
+    /// <p> <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
     pub fn get_new_status(&self) -> &::std::option::Option<crate::types::CaCertificateStatus> {
         &self.new_status
     }

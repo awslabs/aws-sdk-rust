@@ -13,12 +13,12 @@ pub struct ExecutorsSummary {
     /// <p>The date and time that the executor was terminated.</p>
     pub termination_date_time: ::std::option::Option<i64>,
     /// <p>The processing state of the executor. A description of each state follows.</p>
-    /// <p><code>CREATING</code> - The executor is being started, including acquiring resources.</p>
-    /// <p><code>CREATED</code> - The executor has been started.</p>
-    /// <p><code>REGISTERED</code> - The executor has been registered.</p>
-    /// <p><code>TERMINATING</code> - The executor is in the process of shutting down.</p>
-    /// <p><code>TERMINATED</code> - The executor is no longer running.</p>
-    /// <p><code>FAILED</code> - Due to a failure, the executor is no longer running.</p>
+    /// <p> <code>CREATING</code> - The executor is being started, including acquiring resources.</p>
+    /// <p> <code>CREATED</code> - The executor has been started.</p>
+    /// <p> <code>REGISTERED</code> - The executor has been registered.</p>
+    /// <p> <code>TERMINATING</code> - The executor is in the process of shutting down.</p>
+    /// <p> <code>TERMINATED</code> - The executor is no longer running.</p>
+    /// <p> <code>FAILED</code> - Due to a failure, the executor is no longer running.</p>
     pub executor_state: ::std::option::Option<crate::types::ExecutorState>,
     /// <p>The smallest unit of compute that a session can request from Athena. Size is measured in data processing unit (DPU) values, a relative measure of processing power.</p>
     pub executor_size: ::std::option::Option<i64>,
@@ -42,12 +42,12 @@ impl ExecutorsSummary {
         self.termination_date_time
     }
     /// <p>The processing state of the executor. A description of each state follows.</p>
-    /// <p><code>CREATING</code> - The executor is being started, including acquiring resources.</p>
-    /// <p><code>CREATED</code> - The executor has been started.</p>
-    /// <p><code>REGISTERED</code> - The executor has been registered.</p>
-    /// <p><code>TERMINATING</code> - The executor is in the process of shutting down.</p>
-    /// <p><code>TERMINATED</code> - The executor is no longer running.</p>
-    /// <p><code>FAILED</code> - Due to a failure, the executor is no longer running.</p>
+    /// <p> <code>CREATING</code> - The executor is being started, including acquiring resources.</p>
+    /// <p> <code>CREATED</code> - The executor has been started.</p>
+    /// <p> <code>REGISTERED</code> - The executor has been registered.</p>
+    /// <p> <code>TERMINATING</code> - The executor is in the process of shutting down.</p>
+    /// <p> <code>TERMINATED</code> - The executor is no longer running.</p>
+    /// <p> <code>FAILED</code> - Due to a failure, the executor is no longer running.</p>
     pub fn executor_state(&self) -> ::std::option::Option<&crate::types::ExecutorState> {
         self.executor_state.as_ref()
     }
@@ -133,34 +133,34 @@ impl ExecutorsSummaryBuilder {
         &self.termination_date_time
     }
     /// <p>The processing state of the executor. A description of each state follows.</p>
-    /// <p><code>CREATING</code> - The executor is being started, including acquiring resources.</p>
-    /// <p><code>CREATED</code> - The executor has been started.</p>
-    /// <p><code>REGISTERED</code> - The executor has been registered.</p>
-    /// <p><code>TERMINATING</code> - The executor is in the process of shutting down.</p>
-    /// <p><code>TERMINATED</code> - The executor is no longer running.</p>
-    /// <p><code>FAILED</code> - Due to a failure, the executor is no longer running.</p>
+    /// <p> <code>CREATING</code> - The executor is being started, including acquiring resources.</p>
+    /// <p> <code>CREATED</code> - The executor has been started.</p>
+    /// <p> <code>REGISTERED</code> - The executor has been registered.</p>
+    /// <p> <code>TERMINATING</code> - The executor is in the process of shutting down.</p>
+    /// <p> <code>TERMINATED</code> - The executor is no longer running.</p>
+    /// <p> <code>FAILED</code> - Due to a failure, the executor is no longer running.</p>
     pub fn executor_state(mut self, input: crate::types::ExecutorState) -> Self {
         self.executor_state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The processing state of the executor. A description of each state follows.</p>
-    /// <p><code>CREATING</code> - The executor is being started, including acquiring resources.</p>
-    /// <p><code>CREATED</code> - The executor has been started.</p>
-    /// <p><code>REGISTERED</code> - The executor has been registered.</p>
-    /// <p><code>TERMINATING</code> - The executor is in the process of shutting down.</p>
-    /// <p><code>TERMINATED</code> - The executor is no longer running.</p>
-    /// <p><code>FAILED</code> - Due to a failure, the executor is no longer running.</p>
+    /// <p> <code>CREATING</code> - The executor is being started, including acquiring resources.</p>
+    /// <p> <code>CREATED</code> - The executor has been started.</p>
+    /// <p> <code>REGISTERED</code> - The executor has been registered.</p>
+    /// <p> <code>TERMINATING</code> - The executor is in the process of shutting down.</p>
+    /// <p> <code>TERMINATED</code> - The executor is no longer running.</p>
+    /// <p> <code>FAILED</code> - Due to a failure, the executor is no longer running.</p>
     pub fn set_executor_state(mut self, input: ::std::option::Option<crate::types::ExecutorState>) -> Self {
         self.executor_state = input;
         self
     }
     /// <p>The processing state of the executor. A description of each state follows.</p>
-    /// <p><code>CREATING</code> - The executor is being started, including acquiring resources.</p>
-    /// <p><code>CREATED</code> - The executor has been started.</p>
-    /// <p><code>REGISTERED</code> - The executor has been registered.</p>
-    /// <p><code>TERMINATING</code> - The executor is in the process of shutting down.</p>
-    /// <p><code>TERMINATED</code> - The executor is no longer running.</p>
-    /// <p><code>FAILED</code> - Due to a failure, the executor is no longer running.</p>
+    /// <p> <code>CREATING</code> - The executor is being started, including acquiring resources.</p>
+    /// <p> <code>CREATED</code> - The executor has been started.</p>
+    /// <p> <code>REGISTERED</code> - The executor has been registered.</p>
+    /// <p> <code>TERMINATING</code> - The executor is in the process of shutting down.</p>
+    /// <p> <code>TERMINATED</code> - The executor is no longer running.</p>
+    /// <p> <code>FAILED</code> - Due to a failure, the executor is no longer running.</p>
     pub fn get_executor_state(&self) -> &::std::option::Option<crate::types::ExecutorState> {
         &self.executor_state
     }

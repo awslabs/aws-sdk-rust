@@ -130,8 +130,7 @@ impl ListAssetRelationshipsFluentBuilder {
     }
     /// <p>The type of traversal to use to identify asset relationships. Choose the following option:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PATH_TO_ROOT</code> – Identify the asset's parent assets up to the root asset. The asset that you specify in <code>assetId</code> is the first result in the list of <code>assetRelationshipSummaries</code>, and the root asset is the last result.</p></li>
+    /// <li> <p> <code>PATH_TO_ROOT</code> – Identify the asset's parent assets up to the root asset. The asset that you specify in <code>assetId</code> is the first result in the list of <code>assetRelationshipSummaries</code>, and the root asset is the last result.</p> </li>
     /// </ul>
     pub fn traversal_type(mut self, input: crate::types::TraversalType) -> Self {
         self.inner = self.inner.traversal_type(input);
@@ -139,8 +138,7 @@ impl ListAssetRelationshipsFluentBuilder {
     }
     /// <p>The type of traversal to use to identify asset relationships. Choose the following option:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PATH_TO_ROOT</code> – Identify the asset's parent assets up to the root asset. The asset that you specify in <code>assetId</code> is the first result in the list of <code>assetRelationshipSummaries</code>, and the root asset is the last result.</p></li>
+    /// <li> <p> <code>PATH_TO_ROOT</code> – Identify the asset's parent assets up to the root asset. The asset that you specify in <code>assetId</code> is the first result in the list of <code>assetRelationshipSummaries</code>, and the root asset is the last result.</p> </li>
     /// </ul>
     pub fn set_traversal_type(mut self, input: ::std::option::Option<crate::types::TraversalType>) -> Self {
         self.inner = self.inner.set_traversal_type(input);
@@ -148,8 +146,7 @@ impl ListAssetRelationshipsFluentBuilder {
     }
     /// <p>The type of traversal to use to identify asset relationships. Choose the following option:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PATH_TO_ROOT</code> – Identify the asset's parent assets up to the root asset. The asset that you specify in <code>assetId</code> is the first result in the list of <code>assetRelationshipSummaries</code>, and the root asset is the last result.</p></li>
+    /// <li> <p> <code>PATH_TO_ROOT</code> – Identify the asset's parent assets up to the root asset. The asset that you specify in <code>assetId</code> is the first result in the list of <code>assetRelationshipSummaries</code>, and the root asset is the last result.</p> </li>
     /// </ul>
     pub fn get_traversal_type(&self) -> &::std::option::Option<crate::types::TraversalType> {
         self.inner.get_traversal_type()

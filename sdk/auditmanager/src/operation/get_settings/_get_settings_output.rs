@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSettingsOutput {
-    /// <p>The settings object that holds all supported Audit Manager settings.</p>
+    /// <p> The settings object that holds all supported Audit Manager settings. </p>
     pub settings: ::std::option::Option<crate::types::Settings>,
     _request_id: Option<String>,
 }
 impl GetSettingsOutput {
-    /// <p>The settings object that holds all supported Audit Manager settings.</p>
+    /// <p> The settings object that holds all supported Audit Manager settings. </p>
     pub fn settings(&self) -> ::std::option::Option<&crate::types::Settings> {
         self.settings.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct GetSettingsOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetSettingsOutputBuilder {
-    /// <p>The settings object that holds all supported Audit Manager settings.</p>
+    /// <p> The settings object that holds all supported Audit Manager settings. </p>
     pub fn settings(mut self, input: crate::types::Settings) -> Self {
         self.settings = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The settings object that holds all supported Audit Manager settings.</p>
+    /// <p> The settings object that holds all supported Audit Manager settings. </p>
     pub fn set_settings(mut self, input: ::std::option::Option<crate::types::Settings>) -> Self {
         self.settings = input;
         self
     }
-    /// <p>The settings object that holds all supported Audit Manager settings.</p>
+    /// <p> The settings object that holds all supported Audit Manager settings. </p>
     pub fn get_settings(&self) -> &::std::option::Option<crate::types::Settings> {
         &self.settings
     }

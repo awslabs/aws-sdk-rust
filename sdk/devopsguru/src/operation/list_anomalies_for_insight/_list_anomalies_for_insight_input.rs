@@ -3,25 +3,25 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAnomaliesForInsightInput {
-    /// <p>The ID of the insight. The returned anomalies belong to this insight.</p>
+    /// <p> The ID of the insight. The returned anomalies belong to this insight. </p>
     pub insight_id: ::std::option::Option<::std::string::String>,
-    /// <p>A time range used to specify when the requested anomalies started. All returned anomalies started during this time range.</p>
+    /// <p> A time range used to specify when the requested anomalies started. All returned anomalies started during this time range. </p>
     pub start_time_range: ::std::option::Option<crate::types::StartTimeRange>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the Amazon Web Services account.</p>
+    /// <p>The ID of the Amazon Web Services account. </p>
     pub account_id: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies one or more service names that are used to list anomalies.</p>
+    /// <p> Specifies one or more service names that are used to list anomalies. </p>
     pub filters: ::std::option::Option<crate::types::ListAnomaliesForInsightFilters>,
 }
 impl ListAnomaliesForInsightInput {
-    /// <p>The ID of the insight. The returned anomalies belong to this insight.</p>
+    /// <p> The ID of the insight. The returned anomalies belong to this insight. </p>
     pub fn insight_id(&self) -> ::std::option::Option<&str> {
         self.insight_id.as_deref()
     }
-    /// <p>A time range used to specify when the requested anomalies started. All returned anomalies started during this time range.</p>
+    /// <p> A time range used to specify when the requested anomalies started. All returned anomalies started during this time range. </p>
     pub fn start_time_range(&self) -> ::std::option::Option<&crate::types::StartTimeRange> {
         self.start_time_range.as_ref()
     }
@@ -33,11 +33,11 @@ impl ListAnomaliesForInsightInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The ID of the Amazon Web Services account.</p>
+    /// <p>The ID of the Amazon Web Services account. </p>
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
-    /// <p>Specifies one or more service names that are used to list anomalies.</p>
+    /// <p> Specifies one or more service names that are used to list anomalies. </p>
     pub fn filters(&self) -> ::std::option::Option<&crate::types::ListAnomaliesForInsightFilters> {
         self.filters.as_ref()
     }
@@ -61,32 +61,32 @@ pub struct ListAnomaliesForInsightInputBuilder {
     pub(crate) filters: ::std::option::Option<crate::types::ListAnomaliesForInsightFilters>,
 }
 impl ListAnomaliesForInsightInputBuilder {
-    /// <p>The ID of the insight. The returned anomalies belong to this insight.</p>
+    /// <p> The ID of the insight. The returned anomalies belong to this insight. </p>
     /// This field is required.
     pub fn insight_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.insight_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the insight. The returned anomalies belong to this insight.</p>
+    /// <p> The ID of the insight. The returned anomalies belong to this insight. </p>
     pub fn set_insight_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.insight_id = input;
         self
     }
-    /// <p>The ID of the insight. The returned anomalies belong to this insight.</p>
+    /// <p> The ID of the insight. The returned anomalies belong to this insight. </p>
     pub fn get_insight_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.insight_id
     }
-    /// <p>A time range used to specify when the requested anomalies started. All returned anomalies started during this time range.</p>
+    /// <p> A time range used to specify when the requested anomalies started. All returned anomalies started during this time range. </p>
     pub fn start_time_range(mut self, input: crate::types::StartTimeRange) -> Self {
         self.start_time_range = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A time range used to specify when the requested anomalies started. All returned anomalies started during this time range.</p>
+    /// <p> A time range used to specify when the requested anomalies started. All returned anomalies started during this time range. </p>
     pub fn set_start_time_range(mut self, input: ::std::option::Option<crate::types::StartTimeRange>) -> Self {
         self.start_time_range = input;
         self
     }
-    /// <p>A time range used to specify when the requested anomalies started. All returned anomalies started during this time range.</p>
+    /// <p> A time range used to specify when the requested anomalies started. All returned anomalies started during this time range. </p>
     pub fn get_start_time_range(&self) -> &::std::option::Option<crate::types::StartTimeRange> {
         &self.start_time_range
     }
@@ -118,31 +118,31 @@ impl ListAnomaliesForInsightInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>The ID of the Amazon Web Services account.</p>
+    /// <p>The ID of the Amazon Web Services account. </p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the Amazon Web Services account.</p>
+    /// <p>The ID of the Amazon Web Services account. </p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
-    /// <p>The ID of the Amazon Web Services account.</p>
+    /// <p>The ID of the Amazon Web Services account. </p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }
-    /// <p>Specifies one or more service names that are used to list anomalies.</p>
+    /// <p> Specifies one or more service names that are used to list anomalies. </p>
     pub fn filters(mut self, input: crate::types::ListAnomaliesForInsightFilters) -> Self {
         self.filters = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies one or more service names that are used to list anomalies.</p>
+    /// <p> Specifies one or more service names that are used to list anomalies. </p>
     pub fn set_filters(mut self, input: ::std::option::Option<crate::types::ListAnomaliesForInsightFilters>) -> Self {
         self.filters = input;
         self
     }
-    /// <p>Specifies one or more service names that are used to list anomalies.</p>
+    /// <p> Specifies one or more service names that are used to list anomalies. </p>
     pub fn get_filters(&self) -> &::std::option::Option<crate::types::ListAnomaliesForInsightFilters> {
         &self.filters
     }

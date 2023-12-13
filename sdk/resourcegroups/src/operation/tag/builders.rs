@@ -22,14 +22,13 @@ impl TagInputBuilder {
 }
 /// Fluent builder constructing a request to `Tag`.
 ///
-/// <p>Adds tags to a resource group with the specified ARN. Existing tags on a resource group are not changed if they are not specified in the request parameters.</p><important>
+/// <p>Adds tags to a resource group with the specified ARN. Existing tags on a resource group are not changed if they are not specified in the request parameters.</p> <important>
 /// <p>Do not store personally identifiable information (PII) or other confidential or sensitive information in tags. We use tags to provide you with billing and administration services. Tags are not intended to be used for private or sensitive data.</p>
 /// </important>
-/// <p><b>Minimum permissions</b></p>
+/// <p> <b>Minimum permissions</b> </p>
 /// <p>To run this command, you must have the following permissions:</p>
 /// <ul>
-/// <li>
-/// <p><code>resource-groups:Tag</code></p></li>
+/// <li> <p> <code>resource-groups:Tag</code> </p> </li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TagFluentBuilder {

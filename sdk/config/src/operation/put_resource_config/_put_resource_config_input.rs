@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutResourceConfigInput {
-    /// <p>The type of the resource. The custom resource type must be registered with CloudFormation.</p><note>
+    /// <p>The type of the resource. The custom resource type must be registered with CloudFormation. </p> <note>
     /// <p>You cannot use the organization names “amzn”, “amazon”, “alexa”, “custom” with custom resource types. It is the first part of the ResourceType up to the first ::.</p>
     /// </note>
     pub resource_type: ::std::option::Option<::std::string::String>,
@@ -13,17 +13,17 @@ pub struct PutResourceConfigInput {
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>Name of the resource.</p>
     pub resource_name: ::std::option::Option<::std::string::String>,
-    /// <p>The configuration object of the resource in valid JSON format. It must match the schema registered with CloudFormation.</p><note>
+    /// <p>The configuration object of the resource in valid JSON format. It must match the schema registered with CloudFormation.</p> <note>
     /// <p>The configuration JSON must not exceed 64 KB.</p>
     /// </note>
     pub configuration: ::std::option::Option<::std::string::String>,
-    /// <p>Tags associated with the resource.</p><note>
+    /// <p>Tags associated with the resource.</p> <note>
     /// <p>This field is not to be confused with the Amazon Web Services-wide tag feature for Amazon Web Services resources. Tags for <code>PutResourceConfig</code> are tags that you supply for the configuration items of your custom resources.</p>
     /// </note>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl PutResourceConfigInput {
-    /// <p>The type of the resource. The custom resource type must be registered with CloudFormation.</p><note>
+    /// <p>The type of the resource. The custom resource type must be registered with CloudFormation. </p> <note>
     /// <p>You cannot use the organization names “amzn”, “amazon”, “alexa”, “custom” with custom resource types. It is the first part of the ResourceType up to the first ::.</p>
     /// </note>
     pub fn resource_type(&self) -> ::std::option::Option<&str> {
@@ -41,13 +41,13 @@ impl PutResourceConfigInput {
     pub fn resource_name(&self) -> ::std::option::Option<&str> {
         self.resource_name.as_deref()
     }
-    /// <p>The configuration object of the resource in valid JSON format. It must match the schema registered with CloudFormation.</p><note>
+    /// <p>The configuration object of the resource in valid JSON format. It must match the schema registered with CloudFormation.</p> <note>
     /// <p>The configuration JSON must not exceed 64 KB.</p>
     /// </note>
     pub fn configuration(&self) -> ::std::option::Option<&str> {
         self.configuration.as_deref()
     }
-    /// <p>Tags associated with the resource.</p><note>
+    /// <p>Tags associated with the resource.</p> <note>
     /// <p>This field is not to be confused with the Amazon Web Services-wide tag feature for Amazon Web Services resources. Tags for <code>PutResourceConfig</code> are tags that you supply for the configuration items of your custom resources.</p>
     /// </note>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -73,7 +73,7 @@ pub struct PutResourceConfigInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl PutResourceConfigInputBuilder {
-    /// <p>The type of the resource. The custom resource type must be registered with CloudFormation.</p><note>
+    /// <p>The type of the resource. The custom resource type must be registered with CloudFormation. </p> <note>
     /// <p>You cannot use the organization names “amzn”, “amazon”, “alexa”, “custom” with custom resource types. It is the first part of the ResourceType up to the first ::.</p>
     /// </note>
     /// This field is required.
@@ -81,14 +81,14 @@ impl PutResourceConfigInputBuilder {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The type of the resource. The custom resource type must be registered with CloudFormation.</p><note>
+    /// <p>The type of the resource. The custom resource type must be registered with CloudFormation. </p> <note>
     /// <p>You cannot use the organization names “amzn”, “amazon”, “alexa”, “custom” with custom resource types. It is the first part of the ResourceType up to the first ::.</p>
     /// </note>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
         self
     }
-    /// <p>The type of the resource. The custom resource type must be registered with CloudFormation.</p><note>
+    /// <p>The type of the resource. The custom resource type must be registered with CloudFormation. </p> <note>
     /// <p>You cannot use the organization names “amzn”, “amazon”, “alexa”, “custom” with custom resource types. It is the first part of the ResourceType up to the first ::.</p>
     /// </note>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,7 +138,7 @@ impl PutResourceConfigInputBuilder {
     pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_name
     }
-    /// <p>The configuration object of the resource in valid JSON format. It must match the schema registered with CloudFormation.</p><note>
+    /// <p>The configuration object of the resource in valid JSON format. It must match the schema registered with CloudFormation.</p> <note>
     /// <p>The configuration JSON must not exceed 64 KB.</p>
     /// </note>
     /// This field is required.
@@ -146,14 +146,14 @@ impl PutResourceConfigInputBuilder {
         self.configuration = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The configuration object of the resource in valid JSON format. It must match the schema registered with CloudFormation.</p><note>
+    /// <p>The configuration object of the resource in valid JSON format. It must match the schema registered with CloudFormation.</p> <note>
     /// <p>The configuration JSON must not exceed 64 KB.</p>
     /// </note>
     pub fn set_configuration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration = input;
         self
     }
-    /// <p>The configuration object of the resource in valid JSON format. It must match the schema registered with CloudFormation.</p><note>
+    /// <p>The configuration object of the resource in valid JSON format. It must match the schema registered with CloudFormation.</p> <note>
     /// <p>The configuration JSON must not exceed 64 KB.</p>
     /// </note>
     pub fn get_configuration(&self) -> &::std::option::Option<::std::string::String> {
@@ -163,7 +163,7 @@ impl PutResourceConfigInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>Tags associated with the resource.</p><note>
+    /// <p>Tags associated with the resource.</p> <note>
     /// <p>This field is not to be confused with the Amazon Web Services-wide tag feature for Amazon Web Services resources. Tags for <code>PutResourceConfig</code> are tags that you supply for the configuration items of your custom resources.</p>
     /// </note>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -172,14 +172,14 @@ impl PutResourceConfigInputBuilder {
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>Tags associated with the resource.</p><note>
+    /// <p>Tags associated with the resource.</p> <note>
     /// <p>This field is not to be confused with the Amazon Web Services-wide tag feature for Amazon Web Services resources. Tags for <code>PutResourceConfig</code> are tags that you supply for the configuration items of your custom resources.</p>
     /// </note>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>Tags associated with the resource.</p><note>
+    /// <p>Tags associated with the resource.</p> <note>
     /// <p>This field is not to be confused with the Amazon Web Services-wide tag feature for Amazon Web Services resources. Tags for <code>PutResourceConfig</code> are tags that you supply for the configuration items of your custom resources.</p>
     /// </note>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {

@@ -7,7 +7,7 @@ pub struct DescribeImagesInput {
     pub names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ARNs of the public, private, and shared images to describe.</p>
     pub arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The type of image (public, private, or shared) to describe.</p>
+    /// <p>The type of image (public, private, or shared) to describe. </p>
     pub r#type: ::std::option::Option<crate::types::VisibilityType>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -27,7 +27,7 @@ impl DescribeImagesInput {
     pub fn arns(&self) -> &[::std::string::String] {
         self.arns.as_deref().unwrap_or_default()
     }
-    /// <p>The type of image (public, private, or shared) to describe.</p>
+    /// <p>The type of image (public, private, or shared) to describe. </p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::VisibilityType> {
         self.r#type.as_ref()
     }
@@ -98,17 +98,17 @@ impl DescribeImagesInputBuilder {
     pub fn get_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.arns
     }
-    /// <p>The type of image (public, private, or shared) to describe.</p>
+    /// <p>The type of image (public, private, or shared) to describe. </p>
     pub fn r#type(mut self, input: crate::types::VisibilityType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of image (public, private, or shared) to describe.</p>
+    /// <p>The type of image (public, private, or shared) to describe. </p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::VisibilityType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The type of image (public, private, or shared) to describe.</p>
+    /// <p>The type of image (public, private, or shared) to describe. </p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::VisibilityType> {
         &self.r#type
     }

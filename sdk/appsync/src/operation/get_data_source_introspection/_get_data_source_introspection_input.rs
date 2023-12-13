@@ -5,7 +5,7 @@
 pub struct GetDataSourceIntrospectionInput {
     /// <p>The introspection ID. Each introspection contains a unique ID that can be used to reference the instrospection record.</p>
     pub introspection_id: ::std::option::Option<::std::string::String>,
-    /// <p>A boolean flag that determines whether SDL should be generated for introspected types or not. If set to <code>true</code>, each model will contain an <code>sdl</code> property that contains the SDL for that type. The SDL only contains the type data and no additional metadata or directives.</p>
+    /// <p>A boolean flag that determines whether SDL should be generated for introspected types or not. If set to <code>true</code>, each model will contain an <code>sdl</code> property that contains the SDL for that type. The SDL only contains the type data and no additional metadata or directives. </p>
     pub include_models_sdl: ::std::option::Option<bool>,
     /// <p>Determines the number of types to be returned in a single response before paginating. This value is typically taken from <code>nextToken</code> value from the previous response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -17,7 +17,7 @@ impl GetDataSourceIntrospectionInput {
     pub fn introspection_id(&self) -> ::std::option::Option<&str> {
         self.introspection_id.as_deref()
     }
-    /// <p>A boolean flag that determines whether SDL should be generated for introspected types or not. If set to <code>true</code>, each model will contain an <code>sdl</code> property that contains the SDL for that type. The SDL only contains the type data and no additional metadata or directives.</p>
+    /// <p>A boolean flag that determines whether SDL should be generated for introspected types or not. If set to <code>true</code>, each model will contain an <code>sdl</code> property that contains the SDL for that type. The SDL only contains the type data and no additional metadata or directives. </p>
     pub fn include_models_sdl(&self) -> ::std::option::Option<bool> {
         self.include_models_sdl
     }
@@ -62,17 +62,17 @@ impl GetDataSourceIntrospectionInputBuilder {
     pub fn get_introspection_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.introspection_id
     }
-    /// <p>A boolean flag that determines whether SDL should be generated for introspected types or not. If set to <code>true</code>, each model will contain an <code>sdl</code> property that contains the SDL for that type. The SDL only contains the type data and no additional metadata or directives.</p>
+    /// <p>A boolean flag that determines whether SDL should be generated for introspected types or not. If set to <code>true</code>, each model will contain an <code>sdl</code> property that contains the SDL for that type. The SDL only contains the type data and no additional metadata or directives. </p>
     pub fn include_models_sdl(mut self, input: bool) -> Self {
         self.include_models_sdl = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A boolean flag that determines whether SDL should be generated for introspected types or not. If set to <code>true</code>, each model will contain an <code>sdl</code> property that contains the SDL for that type. The SDL only contains the type data and no additional metadata or directives.</p>
+    /// <p>A boolean flag that determines whether SDL should be generated for introspected types or not. If set to <code>true</code>, each model will contain an <code>sdl</code> property that contains the SDL for that type. The SDL only contains the type data and no additional metadata or directives. </p>
     pub fn set_include_models_sdl(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_models_sdl = input;
         self
     }
-    /// <p>A boolean flag that determines whether SDL should be generated for introspected types or not. If set to <code>true</code>, each model will contain an <code>sdl</code> property that contains the SDL for that type. The SDL only contains the type data and no additional metadata or directives.</p>
+    /// <p>A boolean flag that determines whether SDL should be generated for introspected types or not. If set to <code>true</code>, each model will contain an <code>sdl</code> property that contains the SDL for that type. The SDL only contains the type data and no additional metadata or directives. </p>
     pub fn get_include_models_sdl(&self) -> &::std::option::Option<bool> {
         &self.include_models_sdl
     }

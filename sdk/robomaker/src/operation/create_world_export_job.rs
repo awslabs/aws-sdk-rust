@@ -253,7 +253,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateWorldEx
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreateWorldExportJobError {
-    /// <p>The request uses the same client token as a previous, but non-identical request. Do not reuse a client token with different requests, unless the requests are identical.</p>
+    /// <p>The request uses the same client token as a previous, but non-identical request. Do not reuse a client token with different requests, unless the requests are identical. </p>
     IdempotentParameterMismatchException(crate::types::error::IdempotentParameterMismatchException),
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::types::error::InternalServerException),

@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRepositoryEndpointOutput {
-    /// <p>A string that specifies the URL of the returned endpoint.</p>
+    /// <p> A string that specifies the URL of the returned endpoint. </p>
     pub repository_endpoint: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetRepositoryEndpointOutput {
-    /// <p>A string that specifies the URL of the returned endpoint.</p>
+    /// <p> A string that specifies the URL of the returned endpoint. </p>
     pub fn repository_endpoint(&self) -> ::std::option::Option<&str> {
         self.repository_endpoint.as_deref()
     }
@@ -33,17 +33,17 @@ pub struct GetRepositoryEndpointOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetRepositoryEndpointOutputBuilder {
-    /// <p>A string that specifies the URL of the returned endpoint.</p>
+    /// <p> A string that specifies the URL of the returned endpoint. </p>
     pub fn repository_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_endpoint = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A string that specifies the URL of the returned endpoint.</p>
+    /// <p> A string that specifies the URL of the returned endpoint. </p>
     pub fn set_repository_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_endpoint = input;
         self
     }
-    /// <p>A string that specifies the URL of the returned endpoint.</p>
+    /// <p> A string that specifies the URL of the returned endpoint. </p>
     pub fn get_repository_endpoint(&self) -> &::std::option::Option<::std::string::String> {
         &self.repository_endpoint
     }

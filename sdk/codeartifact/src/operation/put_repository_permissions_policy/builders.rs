@@ -22,8 +22,8 @@ impl PutRepositoryPermissionsPolicyInputBuilder {
 }
 /// Fluent builder constructing a request to `PutRepositoryPermissionsPolicy`.
 ///
-/// <p>Sets the resource policy on a repository that specifies permissions to access it.</p>
-/// <p>When you call <code>PutRepositoryPermissionsPolicy</code>, the resource policy on the repository is ignored when evaluting permissions. This ensures that the owner of a repository cannot lock themselves out of the repository, which would prevent them from being able to update the resource policy.</p>
+/// <p> Sets the resource policy on a repository that specifies permissions to access it. </p>
+/// <p> When you call <code>PutRepositoryPermissionsPolicy</code>, the resource policy on the repository is ignored when evaluting permissions. This ensures that the owner of a repository cannot lock themselves out of the repository, which would prevent them from being able to update the resource policy. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutRepositoryPermissionsPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -109,73 +109,73 @@ impl PutRepositoryPermissionsPolicyFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the domain containing the repository to set the resource policy on.</p>
+    /// <p> The name of the domain containing the repository to set the resource policy on. </p>
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain(input.into());
         self
     }
-    /// <p>The name of the domain containing the repository to set the resource policy on.</p>
+    /// <p> The name of the domain containing the repository to set the resource policy on. </p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain(input);
         self
     }
-    /// <p>The name of the domain containing the repository to set the resource policy on.</p>
+    /// <p> The name of the domain containing the repository to set the resource policy on. </p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain()
     }
-    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_owner(input.into());
         self
     }
-    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn set_domain_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_owner(input);
         self
     }
-    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn get_domain_owner(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_owner()
     }
-    /// <p>The name of the repository to set the resource policy on.</p>
+    /// <p> The name of the repository to set the resource policy on. </p>
     pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository(input.into());
         self
     }
-    /// <p>The name of the repository to set the resource policy on.</p>
+    /// <p> The name of the repository to set the resource policy on. </p>
     pub fn set_repository(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository(input);
         self
     }
-    /// <p>The name of the repository to set the resource policy on.</p>
+    /// <p> The name of the repository to set the resource policy on. </p>
     pub fn get_repository(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_repository()
     }
-    /// <p>Sets the revision of the resource policy that specifies permissions to access the repository. This revision is used for optimistic locking, which prevents others from overwriting your changes to the repository's resource policy.</p>
+    /// <p> Sets the revision of the resource policy that specifies permissions to access the repository. This revision is used for optimistic locking, which prevents others from overwriting your changes to the repository's resource policy. </p>
     pub fn policy_revision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_revision(input.into());
         self
     }
-    /// <p>Sets the revision of the resource policy that specifies permissions to access the repository. This revision is used for optimistic locking, which prevents others from overwriting your changes to the repository's resource policy.</p>
+    /// <p> Sets the revision of the resource policy that specifies permissions to access the repository. This revision is used for optimistic locking, which prevents others from overwriting your changes to the repository's resource policy. </p>
     pub fn set_policy_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_revision(input);
         self
     }
-    /// <p>Sets the revision of the resource policy that specifies permissions to access the repository. This revision is used for optimistic locking, which prevents others from overwriting your changes to the repository's resource policy.</p>
+    /// <p> Sets the revision of the resource policy that specifies permissions to access the repository. This revision is used for optimistic locking, which prevents others from overwriting your changes to the repository's resource policy. </p>
     pub fn get_policy_revision(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_policy_revision()
     }
-    /// <p>A valid displayable JSON Aspen policy string to be set as the access control resource policy on the provided repository.</p>
+    /// <p> A valid displayable JSON Aspen policy string to be set as the access control resource policy on the provided repository. </p>
     pub fn policy_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_document(input.into());
         self
     }
-    /// <p>A valid displayable JSON Aspen policy string to be set as the access control resource policy on the provided repository.</p>
+    /// <p> A valid displayable JSON Aspen policy string to be set as the access control resource policy on the provided repository. </p>
     pub fn set_policy_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_document(input);
         self
     }
-    /// <p>A valid displayable JSON Aspen policy string to be set as the access control resource policy on the provided repository.</p>
+    /// <p> A valid displayable JSON Aspen policy string to be set as the access control resource policy on the provided repository. </p>
     pub fn get_policy_document(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_policy_document()
     }

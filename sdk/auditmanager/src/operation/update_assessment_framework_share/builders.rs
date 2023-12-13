@@ -22,7 +22,7 @@ impl UpdateAssessmentFrameworkShareInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateAssessmentFrameworkShare`.
 ///
-/// <p>Updates a share request for a custom framework in Audit Manager.</p>
+/// <p> Updates a share request for a custom framework in Audit Manager. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAssessmentFrameworkShareFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl UpdateAssessmentFrameworkShareFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier for the share request.</p>
+    /// <p> The unique identifier for the share request. </p>
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.request_id(input.into());
         self
     }
-    /// <p>The unique identifier for the share request.</p>
+    /// <p> The unique identifier for the share request. </p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_request_id(input);
         self
     }
-    /// <p>The unique identifier for the share request.</p>
+    /// <p> The unique identifier for the share request. </p>
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_request_id()
     }

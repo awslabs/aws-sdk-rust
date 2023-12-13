@@ -22,7 +22,7 @@ impl DescribeClientBrandingInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeClientBranding`.
 ///
-/// <p>Describes the specified client branding. Client branding allows you to customize the log in page of various device types for your users. You can add your company logo, the support email address, support link, link to reset password, and a custom message for users trying to sign in.</p><note>
+/// <p>Describes the specified client branding. Client branding allows you to customize the log in page of various device types for your users. You can add your company logo, the support email address, support link, link to reset password, and a custom message for users trying to sign in.</p> <note>
 /// <p>Only device types that have branding information configured will be shown in the response.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

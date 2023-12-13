@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFleetAdvisorCollectorOutput {
-    /// <p>The unique ID of the new Fleet Advisor collector, for example: <code>22fda70c-40d5-4acf-b233-a495bd8eb7f5</code></p>
+    /// <p>The unique ID of the new Fleet Advisor collector, for example: <code>22fda70c-40d5-4acf-b233-a495bd8eb7f5</code> </p>
     pub collector_referenced_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the new Fleet Advisor collector.</p>
     pub collector_name: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ pub struct CreateFleetAdvisorCollectorOutput {
     _request_id: Option<String>,
 }
 impl CreateFleetAdvisorCollectorOutput {
-    /// <p>The unique ID of the new Fleet Advisor collector, for example: <code>22fda70c-40d5-4acf-b233-a495bd8eb7f5</code></p>
+    /// <p>The unique ID of the new Fleet Advisor collector, for example: <code>22fda70c-40d5-4acf-b233-a495bd8eb7f5</code> </p>
     pub fn collector_referenced_id(&self) -> ::std::option::Option<&str> {
         self.collector_referenced_id.as_deref()
     }
@@ -61,17 +61,17 @@ pub struct CreateFleetAdvisorCollectorOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateFleetAdvisorCollectorOutputBuilder {
-    /// <p>The unique ID of the new Fleet Advisor collector, for example: <code>22fda70c-40d5-4acf-b233-a495bd8eb7f5</code></p>
+    /// <p>The unique ID of the new Fleet Advisor collector, for example: <code>22fda70c-40d5-4acf-b233-a495bd8eb7f5</code> </p>
     pub fn collector_referenced_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collector_referenced_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique ID of the new Fleet Advisor collector, for example: <code>22fda70c-40d5-4acf-b233-a495bd8eb7f5</code></p>
+    /// <p>The unique ID of the new Fleet Advisor collector, for example: <code>22fda70c-40d5-4acf-b233-a495bd8eb7f5</code> </p>
     pub fn set_collector_referenced_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.collector_referenced_id = input;
         self
     }
-    /// <p>The unique ID of the new Fleet Advisor collector, for example: <code>22fda70c-40d5-4acf-b233-a495bd8eb7f5</code></p>
+    /// <p>The unique ID of the new Fleet Advisor collector, for example: <code>22fda70c-40d5-4acf-b233-a495bd8eb7f5</code> </p>
     pub fn get_collector_referenced_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.collector_referenced_id
     }

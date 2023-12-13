@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTerminologiesInput {
-    /// <p>If the result of the request to ListTerminologies was truncated, include the NextToken to fetch the next group of custom terminologies.</p>
+    /// <p>If the result of the request to ListTerminologies was truncated, include the NextToken to fetch the next group of custom terminologies. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of custom terminologies returned per list request.</p>
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListTerminologiesInput {
-    /// <p>If the result of the request to ListTerminologies was truncated, include the NextToken to fetch the next group of custom terminologies.</p>
+    /// <p>If the result of the request to ListTerminologies was truncated, include the NextToken to fetch the next group of custom terminologies. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -33,17 +33,17 @@ pub struct ListTerminologiesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ListTerminologiesInputBuilder {
-    /// <p>If the result of the request to ListTerminologies was truncated, include the NextToken to fetch the next group of custom terminologies.</p>
+    /// <p>If the result of the request to ListTerminologies was truncated, include the NextToken to fetch the next group of custom terminologies. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If the result of the request to ListTerminologies was truncated, include the NextToken to fetch the next group of custom terminologies.</p>
+    /// <p>If the result of the request to ListTerminologies was truncated, include the NextToken to fetch the next group of custom terminologies. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>If the result of the request to ListTerminologies was truncated, include the NextToken to fetch the next group of custom terminologies.</p>
+    /// <p>If the result of the request to ListTerminologies was truncated, include the NextToken to fetch the next group of custom terminologies. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

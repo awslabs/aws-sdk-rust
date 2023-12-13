@@ -122,17 +122,17 @@ impl DescribeAssetFluentBuilder {
     pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_asset_id()
     }
-    /// <p>Whether or not to exclude asset properties from the response.</p>
+    /// <p> Whether or not to exclude asset properties from the response. </p>
     pub fn exclude_properties(mut self, input: bool) -> Self {
         self.inner = self.inner.exclude_properties(input);
         self
     }
-    /// <p>Whether or not to exclude asset properties from the response.</p>
+    /// <p> Whether or not to exclude asset properties from the response. </p>
     pub fn set_exclude_properties(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_exclude_properties(input);
         self
     }
-    /// <p>Whether or not to exclude asset properties from the response.</p>
+    /// <p> Whether or not to exclude asset properties from the response. </p>
     pub fn get_exclude_properties(&self) -> &::std::option::Option<bool> {
         self.inner.get_exclude_properties()
     }

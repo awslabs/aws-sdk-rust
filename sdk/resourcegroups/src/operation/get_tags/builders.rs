@@ -23,11 +23,10 @@ impl GetTagsInputBuilder {
 /// Fluent builder constructing a request to `GetTags`.
 ///
 /// <p>Returns a list of tags that are associated with a resource group, specified by an ARN.</p>
-/// <p><b>Minimum permissions</b></p>
+/// <p> <b>Minimum permissions</b> </p>
 /// <p>To run this command, you must have the following permissions:</p>
 /// <ul>
-/// <li>
-/// <p><code>resource-groups:GetTags</code></p></li>
+/// <li> <p> <code>resource-groups:GetTags</code> </p> </li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetTagsFluentBuilder {

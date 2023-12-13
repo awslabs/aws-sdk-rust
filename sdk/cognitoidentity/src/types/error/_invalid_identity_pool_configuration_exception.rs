@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InvalidIdentityPoolConfigurationException {
-    /// <p>The message returned for an <code>InvalidIdentityPoolConfigurationException</code></p>
+    /// <p>The message returned for an <code>InvalidIdentityPoolConfigurationException</code> </p>
     pub message: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
@@ -52,17 +52,17 @@ pub struct InvalidIdentityPoolConfigurationExceptionBuilder {
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl InvalidIdentityPoolConfigurationExceptionBuilder {
-    /// <p>The message returned for an <code>InvalidIdentityPoolConfigurationException</code></p>
+    /// <p>The message returned for an <code>InvalidIdentityPoolConfigurationException</code> </p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The message returned for an <code>InvalidIdentityPoolConfigurationException</code></p>
+    /// <p>The message returned for an <code>InvalidIdentityPoolConfigurationException</code> </p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
-    /// <p>The message returned for an <code>InvalidIdentityPoolConfigurationException</code></p>
+    /// <p>The message returned for an <code>InvalidIdentityPoolConfigurationException</code> </p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }

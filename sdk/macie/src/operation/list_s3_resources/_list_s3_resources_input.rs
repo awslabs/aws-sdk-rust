@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListS3ResourcesInput {
-    /// <p>(Discontinued) The Amazon Macie Classic member account ID whose associated S3 resources you want to list.</p>
+    /// <p>(Discontinued) The Amazon Macie Classic member account ID whose associated S3 resources you want to list. </p>
     pub member_account_id: ::std::option::Option<::std::string::String>,
-    /// <p>(Discontinued) Use this parameter when paginating results. Set its value to null on your first call to the <code>ListS3Resources</code> action. Subsequent calls to the action fill <code>nextToken</code> in the request with the value of <code>nextToken</code> from the previous response to continue listing data.</p>
+    /// <p>(Discontinued) Use this parameter when paginating results. Set its value to null on your first call to the <code>ListS3Resources</code> action. Subsequent calls to the action fill <code>nextToken</code> in the request with the value of <code>nextToken</code> from the previous response to continue listing data. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>(Discontinued) Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250.</p>
+    /// <p>(Discontinued) Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250. </p>
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListS3ResourcesInput {
-    /// <p>(Discontinued) The Amazon Macie Classic member account ID whose associated S3 resources you want to list.</p>
+    /// <p>(Discontinued) The Amazon Macie Classic member account ID whose associated S3 resources you want to list. </p>
     pub fn member_account_id(&self) -> ::std::option::Option<&str> {
         self.member_account_id.as_deref()
     }
-    /// <p>(Discontinued) Use this parameter when paginating results. Set its value to null on your first call to the <code>ListS3Resources</code> action. Subsequent calls to the action fill <code>nextToken</code> in the request with the value of <code>nextToken</code> from the previous response to continue listing data.</p>
+    /// <p>(Discontinued) Use this parameter when paginating results. Set its value to null on your first call to the <code>ListS3Resources</code> action. Subsequent calls to the action fill <code>nextToken</code> in the request with the value of <code>nextToken</code> from the previous response to continue listing data. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>(Discontinued) Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250.</p>
+    /// <p>(Discontinued) Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250. </p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -40,45 +40,45 @@ pub struct ListS3ResourcesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ListS3ResourcesInputBuilder {
-    /// <p>(Discontinued) The Amazon Macie Classic member account ID whose associated S3 resources you want to list.</p>
+    /// <p>(Discontinued) The Amazon Macie Classic member account ID whose associated S3 resources you want to list. </p>
     pub fn member_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.member_account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>(Discontinued) The Amazon Macie Classic member account ID whose associated S3 resources you want to list.</p>
+    /// <p>(Discontinued) The Amazon Macie Classic member account ID whose associated S3 resources you want to list. </p>
     pub fn set_member_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.member_account_id = input;
         self
     }
-    /// <p>(Discontinued) The Amazon Macie Classic member account ID whose associated S3 resources you want to list.</p>
+    /// <p>(Discontinued) The Amazon Macie Classic member account ID whose associated S3 resources you want to list. </p>
     pub fn get_member_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.member_account_id
     }
-    /// <p>(Discontinued) Use this parameter when paginating results. Set its value to null on your first call to the <code>ListS3Resources</code> action. Subsequent calls to the action fill <code>nextToken</code> in the request with the value of <code>nextToken</code> from the previous response to continue listing data.</p>
+    /// <p>(Discontinued) Use this parameter when paginating results. Set its value to null on your first call to the <code>ListS3Resources</code> action. Subsequent calls to the action fill <code>nextToken</code> in the request with the value of <code>nextToken</code> from the previous response to continue listing data. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>(Discontinued) Use this parameter when paginating results. Set its value to null on your first call to the <code>ListS3Resources</code> action. Subsequent calls to the action fill <code>nextToken</code> in the request with the value of <code>nextToken</code> from the previous response to continue listing data.</p>
+    /// <p>(Discontinued) Use this parameter when paginating results. Set its value to null on your first call to the <code>ListS3Resources</code> action. Subsequent calls to the action fill <code>nextToken</code> in the request with the value of <code>nextToken</code> from the previous response to continue listing data. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>(Discontinued) Use this parameter when paginating results. Set its value to null on your first call to the <code>ListS3Resources</code> action. Subsequent calls to the action fill <code>nextToken</code> in the request with the value of <code>nextToken</code> from the previous response to continue listing data.</p>
+    /// <p>(Discontinued) Use this parameter when paginating results. Set its value to null on your first call to the <code>ListS3Resources</code> action. Subsequent calls to the action fill <code>nextToken</code> in the request with the value of <code>nextToken</code> from the previous response to continue listing data. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>(Discontinued) Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250.</p>
+    /// <p>(Discontinued) Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>(Discontinued) Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250.</p>
+    /// <p>(Discontinued) Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>(Discontinued) Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250.</p>
+    /// <p>(Discontinued) Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250. </p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

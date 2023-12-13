@@ -10,7 +10,7 @@ pub struct CreateRoleAliasInput {
     /// <p>How long (in seconds) the credentials will be valid. The default value is 3,600 seconds.</p>
     /// <p>This value must be less than or equal to the maximum session duration of the IAM role that the role alias references.</p>
     pub credential_duration_seconds: ::std::option::Option<i32>,
-    /// <p>Metadata which can be used to manage the role alias.</p><note>
+    /// <p>Metadata which can be used to manage the role alias.</p> <note>
     /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
     /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
@@ -31,7 +31,7 @@ impl CreateRoleAliasInput {
     pub fn credential_duration_seconds(&self) -> ::std::option::Option<i32> {
         self.credential_duration_seconds
     }
-    /// <p>Metadata which can be used to manage the role alias.</p><note>
+    /// <p>Metadata which can be used to manage the role alias.</p> <note>
     /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
     /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
@@ -110,7 +110,7 @@ impl CreateRoleAliasInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>Metadata which can be used to manage the role alias.</p><note>
+    /// <p>Metadata which can be used to manage the role alias.</p> <note>
     /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
     /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
@@ -121,7 +121,7 @@ impl CreateRoleAliasInputBuilder {
         self.tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Metadata which can be used to manage the role alias.</p><note>
+    /// <p>Metadata which can be used to manage the role alias.</p> <note>
     /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
     /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
@@ -130,7 +130,7 @@ impl CreateRoleAliasInputBuilder {
         self.tags = input;
         self
     }
-    /// <p>Metadata which can be used to manage the role alias.</p><note>
+    /// <p>Metadata which can be used to manage the role alias.</p> <note>
     /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
     /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>

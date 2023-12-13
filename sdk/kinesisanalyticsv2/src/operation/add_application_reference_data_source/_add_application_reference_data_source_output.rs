@@ -7,7 +7,7 @@ pub struct AddApplicationReferenceDataSourceOutput {
     pub application_arn: ::std::option::Option<::std::string::String>,
     /// <p>The updated application version ID. Kinesis Data Analytics increments this ID when the application is updated.</p>
     pub application_version_id: ::std::option::Option<i64>,
-    /// <p>Describes reference data sources configured for the application.</p>
+    /// <p>Describes reference data sources configured for the application. </p>
     pub reference_data_source_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceDataSourceDescription>>,
     _request_id: Option<String>,
 }
@@ -20,7 +20,7 @@ impl AddApplicationReferenceDataSourceOutput {
     pub fn application_version_id(&self) -> ::std::option::Option<i64> {
         self.application_version_id
     }
-    /// <p>Describes reference data sources configured for the application.</p>
+    /// <p>Describes reference data sources configured for the application. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reference_data_source_descriptions.is_none()`.
     pub fn reference_data_source_descriptions(&self) -> &[crate::types::ReferenceDataSourceDescription] {
@@ -81,14 +81,14 @@ impl AddApplicationReferenceDataSourceOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_reference_data_source_descriptions`](Self::set_reference_data_source_descriptions).
     ///
-    /// <p>Describes reference data sources configured for the application.</p>
+    /// <p>Describes reference data sources configured for the application. </p>
     pub fn reference_data_source_descriptions(mut self, input: crate::types::ReferenceDataSourceDescription) -> Self {
         let mut v = self.reference_data_source_descriptions.unwrap_or_default();
         v.push(input);
         self.reference_data_source_descriptions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Describes reference data sources configured for the application.</p>
+    /// <p>Describes reference data sources configured for the application. </p>
     pub fn set_reference_data_source_descriptions(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceDataSourceDescription>>,
@@ -96,7 +96,7 @@ impl AddApplicationReferenceDataSourceOutputBuilder {
         self.reference_data_source_descriptions = input;
         self
     }
-    /// <p>Describes reference data sources configured for the application.</p>
+    /// <p>Describes reference data sources configured for the application. </p>
     pub fn get_reference_data_source_descriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReferenceDataSourceDescription>> {
         &self.reference_data_source_descriptions
     }

@@ -22,7 +22,7 @@ impl ListApplicationDpuSizesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListApplicationDPUSizes`.
 ///
-/// <p>Returns the supported DPU sizes for the supported application runtimes (for example, <code>Athena notebook version 1</code>).</p>
+/// <p>Returns the supported DPU sizes for the supported application runtimes (for example, <code>Athena notebook version 1</code>). </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListApplicationDPUSizesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

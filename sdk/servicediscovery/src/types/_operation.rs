@@ -40,20 +40,13 @@ pub struct Operation {
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>The code associated with <code>ErrorMessage</code>. Values for <code>ErrorCode</code> include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ACCESS_DENIED</code></p></li>
-    /// <li>
-    /// <p><code>CANNOT_CREATE_HOSTED_ZONE</code></p></li>
-    /// <li>
-    /// <p><code>EXPIRED_TOKEN</code></p></li>
-    /// <li>
-    /// <p><code>HOSTED_ZONE_NOT_FOUND</code></p></li>
-    /// <li>
-    /// <p><code>INTERNAL_FAILURE</code></p></li>
-    /// <li>
-    /// <p><code>INVALID_CHANGE_BATCH</code></p></li>
-    /// <li>
-    /// <p><code>THROTTLED_REQUEST</code></p></li>
+    /// <li> <p> <code>ACCESS_DENIED</code> </p> </li>
+    /// <li> <p> <code>CANNOT_CREATE_HOSTED_ZONE</code> </p> </li>
+    /// <li> <p> <code>EXPIRED_TOKEN</code> </p> </li>
+    /// <li> <p> <code>HOSTED_ZONE_NOT_FOUND</code> </p> </li>
+    /// <li> <p> <code>INTERNAL_FAILURE</code> </p> </li>
+    /// <li> <p> <code>INVALID_CHANGE_BATCH</code> </p> </li>
+    /// <li> <p> <code>THROTTLED_REQUEST</code> </p> </li>
     /// </ul>
     pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the request was submitted, in Unix date/time format and Coordinated Universal Time (UTC). The value of <code>CreateDate</code> is accurate to milliseconds. For example, the value <code>1516925490.087</code> represents Friday, January 26, 2018 12:11:30.087 AM.</p>
@@ -128,20 +121,13 @@ impl Operation {
     }
     /// <p>The code associated with <code>ErrorMessage</code>. Values for <code>ErrorCode</code> include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ACCESS_DENIED</code></p></li>
-    /// <li>
-    /// <p><code>CANNOT_CREATE_HOSTED_ZONE</code></p></li>
-    /// <li>
-    /// <p><code>EXPIRED_TOKEN</code></p></li>
-    /// <li>
-    /// <p><code>HOSTED_ZONE_NOT_FOUND</code></p></li>
-    /// <li>
-    /// <p><code>INTERNAL_FAILURE</code></p></li>
-    /// <li>
-    /// <p><code>INVALID_CHANGE_BATCH</code></p></li>
-    /// <li>
-    /// <p><code>THROTTLED_REQUEST</code></p></li>
+    /// <li> <p> <code>ACCESS_DENIED</code> </p> </li>
+    /// <li> <p> <code>CANNOT_CREATE_HOSTED_ZONE</code> </p> </li>
+    /// <li> <p> <code>EXPIRED_TOKEN</code> </p> </li>
+    /// <li> <p> <code>HOSTED_ZONE_NOT_FOUND</code> </p> </li>
+    /// <li> <p> <code>INTERNAL_FAILURE</code> </p> </li>
+    /// <li> <p> <code>INVALID_CHANGE_BATCH</code> </p> </li>
+    /// <li> <p> <code>THROTTLED_REQUEST</code> </p> </li>
     /// </ul>
     pub fn error_code(&self) -> ::std::option::Option<&str> {
         self.error_code.as_deref()
@@ -336,20 +322,13 @@ impl OperationBuilder {
     }
     /// <p>The code associated with <code>ErrorMessage</code>. Values for <code>ErrorCode</code> include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ACCESS_DENIED</code></p></li>
-    /// <li>
-    /// <p><code>CANNOT_CREATE_HOSTED_ZONE</code></p></li>
-    /// <li>
-    /// <p><code>EXPIRED_TOKEN</code></p></li>
-    /// <li>
-    /// <p><code>HOSTED_ZONE_NOT_FOUND</code></p></li>
-    /// <li>
-    /// <p><code>INTERNAL_FAILURE</code></p></li>
-    /// <li>
-    /// <p><code>INVALID_CHANGE_BATCH</code></p></li>
-    /// <li>
-    /// <p><code>THROTTLED_REQUEST</code></p></li>
+    /// <li> <p> <code>ACCESS_DENIED</code> </p> </li>
+    /// <li> <p> <code>CANNOT_CREATE_HOSTED_ZONE</code> </p> </li>
+    /// <li> <p> <code>EXPIRED_TOKEN</code> </p> </li>
+    /// <li> <p> <code>HOSTED_ZONE_NOT_FOUND</code> </p> </li>
+    /// <li> <p> <code>INTERNAL_FAILURE</code> </p> </li>
+    /// <li> <p> <code>INVALID_CHANGE_BATCH</code> </p> </li>
+    /// <li> <p> <code>THROTTLED_REQUEST</code> </p> </li>
     /// </ul>
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code = ::std::option::Option::Some(input.into());
@@ -357,20 +336,13 @@ impl OperationBuilder {
     }
     /// <p>The code associated with <code>ErrorMessage</code>. Values for <code>ErrorCode</code> include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ACCESS_DENIED</code></p></li>
-    /// <li>
-    /// <p><code>CANNOT_CREATE_HOSTED_ZONE</code></p></li>
-    /// <li>
-    /// <p><code>EXPIRED_TOKEN</code></p></li>
-    /// <li>
-    /// <p><code>HOSTED_ZONE_NOT_FOUND</code></p></li>
-    /// <li>
-    /// <p><code>INTERNAL_FAILURE</code></p></li>
-    /// <li>
-    /// <p><code>INVALID_CHANGE_BATCH</code></p></li>
-    /// <li>
-    /// <p><code>THROTTLED_REQUEST</code></p></li>
+    /// <li> <p> <code>ACCESS_DENIED</code> </p> </li>
+    /// <li> <p> <code>CANNOT_CREATE_HOSTED_ZONE</code> </p> </li>
+    /// <li> <p> <code>EXPIRED_TOKEN</code> </p> </li>
+    /// <li> <p> <code>HOSTED_ZONE_NOT_FOUND</code> </p> </li>
+    /// <li> <p> <code>INTERNAL_FAILURE</code> </p> </li>
+    /// <li> <p> <code>INVALID_CHANGE_BATCH</code> </p> </li>
+    /// <li> <p> <code>THROTTLED_REQUEST</code> </p> </li>
     /// </ul>
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_code = input;
@@ -378,20 +350,13 @@ impl OperationBuilder {
     }
     /// <p>The code associated with <code>ErrorMessage</code>. Values for <code>ErrorCode</code> include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ACCESS_DENIED</code></p></li>
-    /// <li>
-    /// <p><code>CANNOT_CREATE_HOSTED_ZONE</code></p></li>
-    /// <li>
-    /// <p><code>EXPIRED_TOKEN</code></p></li>
-    /// <li>
-    /// <p><code>HOSTED_ZONE_NOT_FOUND</code></p></li>
-    /// <li>
-    /// <p><code>INTERNAL_FAILURE</code></p></li>
-    /// <li>
-    /// <p><code>INVALID_CHANGE_BATCH</code></p></li>
-    /// <li>
-    /// <p><code>THROTTLED_REQUEST</code></p></li>
+    /// <li> <p> <code>ACCESS_DENIED</code> </p> </li>
+    /// <li> <p> <code>CANNOT_CREATE_HOSTED_ZONE</code> </p> </li>
+    /// <li> <p> <code>EXPIRED_TOKEN</code> </p> </li>
+    /// <li> <p> <code>HOSTED_ZONE_NOT_FOUND</code> </p> </li>
+    /// <li> <p> <code>INTERNAL_FAILURE</code> </p> </li>
+    /// <li> <p> <code>INVALID_CHANGE_BATCH</code> </p> </li>
+    /// <li> <p> <code>THROTTLED_REQUEST</code> </p> </li>
     /// </ul>
     pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.error_code

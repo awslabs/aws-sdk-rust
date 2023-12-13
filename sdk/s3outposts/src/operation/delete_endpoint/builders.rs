@@ -22,16 +22,14 @@ impl DeleteEndpointInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteEndpoint`.
 ///
-/// <p>Deletes an endpoint.</p><note>
+/// <p>Deletes an endpoint.</p> <note>
 /// <p>It can take up to 5 minutes for this action to finish.</p>
 /// </note>
 /// <p></p>
 /// <p>Related actions include:</p>
 /// <ul>
-/// <li>
-/// <p><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_CreateEndpoint.html">CreateEndpoint</a></p></li>
-/// <li>
-/// <p><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_ListEndpoints.html">ListEndpoints</a></p></li>
+/// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_CreateEndpoint.html">CreateEndpoint</a> </p> </li>
+/// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_ListEndpoints.html">ListEndpoints</a> </p> </li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteEndpointFluentBuilder {
@@ -132,17 +130,17 @@ impl DeleteEndpointFluentBuilder {
     pub fn get_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_endpoint_id()
     }
-    /// <p>The ID of the Outposts.</p>
+    /// <p>The ID of the Outposts. </p>
     pub fn outpost_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.outpost_id(input.into());
         self
     }
-    /// <p>The ID of the Outposts.</p>
+    /// <p>The ID of the Outposts. </p>
     pub fn set_outpost_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_outpost_id(input);
         self
     }
-    /// <p>The ID of the Outposts.</p>
+    /// <p>The ID of the Outposts. </p>
     pub fn get_outpost_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_outpost_id()
     }

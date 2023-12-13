@@ -22,7 +22,7 @@ impl UpdateSmbSecurityStrategyInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateSMBSecurityStrategy`.
 ///
-/// <p>Updates the SMB security strategy on a file gateway. This action is only supported in file gateways.</p><note>
+/// <p>Updates the SMB security strategy on a file gateway. This action is only supported in file gateways.</p> <note>
 /// <p>This API is called Security level in the User Guide.</p>
 /// <p>A higher security level can affect performance of the gateway.</p>
 /// </note>

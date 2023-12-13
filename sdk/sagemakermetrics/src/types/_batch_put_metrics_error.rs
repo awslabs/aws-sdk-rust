@@ -6,14 +6,10 @@
 pub struct BatchPutMetricsError {
     /// <p>The error code of an error that occured when attempting to put metrics.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>METRIC_LIMIT_EXCEEDED</code>: The maximum amount of metrics per resource is exceeded.</p></li>
-    /// <li>
-    /// <p><code>INTERNAL_ERROR</code>: An internal error occured.</p></li>
-    /// <li>
-    /// <p><code>VALIDATION_ERROR</code>: The metric data failed validation.</p></li>
-    /// <li>
-    /// <p><code>CONFLICT_ERROR</code>: Multiple requests attempted to modify the same data simultaneously.</p></li>
+    /// <li> <p> <code>METRIC_LIMIT_EXCEEDED</code>: The maximum amount of metrics per resource is exceeded.</p> </li>
+    /// <li> <p> <code>INTERNAL_ERROR</code>: An internal error occured.</p> </li>
+    /// <li> <p> <code>VALIDATION_ERROR</code>: The metric data failed validation.</p> </li>
+    /// <li> <p> <code>CONFLICT_ERROR</code>: Multiple requests attempted to modify the same data simultaneously.</p> </li>
     /// </ul>
     pub code: ::std::option::Option<crate::types::PutMetricsErrorCode>,
     /// <p>An index that corresponds to the metric in the request.</p>
@@ -22,14 +18,10 @@ pub struct BatchPutMetricsError {
 impl BatchPutMetricsError {
     /// <p>The error code of an error that occured when attempting to put metrics.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>METRIC_LIMIT_EXCEEDED</code>: The maximum amount of metrics per resource is exceeded.</p></li>
-    /// <li>
-    /// <p><code>INTERNAL_ERROR</code>: An internal error occured.</p></li>
-    /// <li>
-    /// <p><code>VALIDATION_ERROR</code>: The metric data failed validation.</p></li>
-    /// <li>
-    /// <p><code>CONFLICT_ERROR</code>: Multiple requests attempted to modify the same data simultaneously.</p></li>
+    /// <li> <p> <code>METRIC_LIMIT_EXCEEDED</code>: The maximum amount of metrics per resource is exceeded.</p> </li>
+    /// <li> <p> <code>INTERNAL_ERROR</code>: An internal error occured.</p> </li>
+    /// <li> <p> <code>VALIDATION_ERROR</code>: The metric data failed validation.</p> </li>
+    /// <li> <p> <code>CONFLICT_ERROR</code>: Multiple requests attempted to modify the same data simultaneously.</p> </li>
     /// </ul>
     pub fn code(&self) -> ::std::option::Option<&crate::types::PutMetricsErrorCode> {
         self.code.as_ref()
@@ -56,14 +48,10 @@ pub struct BatchPutMetricsErrorBuilder {
 impl BatchPutMetricsErrorBuilder {
     /// <p>The error code of an error that occured when attempting to put metrics.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>METRIC_LIMIT_EXCEEDED</code>: The maximum amount of metrics per resource is exceeded.</p></li>
-    /// <li>
-    /// <p><code>INTERNAL_ERROR</code>: An internal error occured.</p></li>
-    /// <li>
-    /// <p><code>VALIDATION_ERROR</code>: The metric data failed validation.</p></li>
-    /// <li>
-    /// <p><code>CONFLICT_ERROR</code>: Multiple requests attempted to modify the same data simultaneously.</p></li>
+    /// <li> <p> <code>METRIC_LIMIT_EXCEEDED</code>: The maximum amount of metrics per resource is exceeded.</p> </li>
+    /// <li> <p> <code>INTERNAL_ERROR</code>: An internal error occured.</p> </li>
+    /// <li> <p> <code>VALIDATION_ERROR</code>: The metric data failed validation.</p> </li>
+    /// <li> <p> <code>CONFLICT_ERROR</code>: Multiple requests attempted to modify the same data simultaneously.</p> </li>
     /// </ul>
     pub fn code(mut self, input: crate::types::PutMetricsErrorCode) -> Self {
         self.code = ::std::option::Option::Some(input);
@@ -71,14 +59,10 @@ impl BatchPutMetricsErrorBuilder {
     }
     /// <p>The error code of an error that occured when attempting to put metrics.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>METRIC_LIMIT_EXCEEDED</code>: The maximum amount of metrics per resource is exceeded.</p></li>
-    /// <li>
-    /// <p><code>INTERNAL_ERROR</code>: An internal error occured.</p></li>
-    /// <li>
-    /// <p><code>VALIDATION_ERROR</code>: The metric data failed validation.</p></li>
-    /// <li>
-    /// <p><code>CONFLICT_ERROR</code>: Multiple requests attempted to modify the same data simultaneously.</p></li>
+    /// <li> <p> <code>METRIC_LIMIT_EXCEEDED</code>: The maximum amount of metrics per resource is exceeded.</p> </li>
+    /// <li> <p> <code>INTERNAL_ERROR</code>: An internal error occured.</p> </li>
+    /// <li> <p> <code>VALIDATION_ERROR</code>: The metric data failed validation.</p> </li>
+    /// <li> <p> <code>CONFLICT_ERROR</code>: Multiple requests attempted to modify the same data simultaneously.</p> </li>
     /// </ul>
     pub fn set_code(mut self, input: ::std::option::Option<crate::types::PutMetricsErrorCode>) -> Self {
         self.code = input;
@@ -86,14 +70,10 @@ impl BatchPutMetricsErrorBuilder {
     }
     /// <p>The error code of an error that occured when attempting to put metrics.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>METRIC_LIMIT_EXCEEDED</code>: The maximum amount of metrics per resource is exceeded.</p></li>
-    /// <li>
-    /// <p><code>INTERNAL_ERROR</code>: An internal error occured.</p></li>
-    /// <li>
-    /// <p><code>VALIDATION_ERROR</code>: The metric data failed validation.</p></li>
-    /// <li>
-    /// <p><code>CONFLICT_ERROR</code>: Multiple requests attempted to modify the same data simultaneously.</p></li>
+    /// <li> <p> <code>METRIC_LIMIT_EXCEEDED</code>: The maximum amount of metrics per resource is exceeded.</p> </li>
+    /// <li> <p> <code>INTERNAL_ERROR</code>: An internal error occured.</p> </li>
+    /// <li> <p> <code>VALIDATION_ERROR</code>: The metric data failed validation.</p> </li>
+    /// <li> <p> <code>CONFLICT_ERROR</code>: Multiple requests attempted to modify the same data simultaneously.</p> </li>
     /// </ul>
     pub fn get_code(&self) -> &::std::option::Option<crate::types::PutMetricsErrorCode> {
         &self.code

@@ -242,7 +242,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for FailoverGloba
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum FailoverGlobalClusterError {
-    /// <p><code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
+    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
     DbClusterNotFoundFault(crate::types::error::DbClusterNotFoundFault),
     /// <p>The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database cluster.</p>
     GlobalClusterNotFoundFault(crate::types::error::GlobalClusterNotFoundFault),

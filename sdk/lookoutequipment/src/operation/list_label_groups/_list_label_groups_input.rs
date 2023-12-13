@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListLabelGroupsInput {
-    /// <p>The beginning of the name of the label groups to be listed.</p>
+    /// <p> The beginning of the name of the label groups to be listed. </p>
     pub label_group_name_begins_with: ::std::option::Option<::std::string::String>,
-    /// <p>An opaque pagination token indicating where to continue the listing of label groups.</p>
+    /// <p> An opaque pagination token indicating where to continue the listing of label groups. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the maximum number of label groups to list.</p>
+    /// <p> Specifies the maximum number of label groups to list. </p>
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListLabelGroupsInput {
-    /// <p>The beginning of the name of the label groups to be listed.</p>
+    /// <p> The beginning of the name of the label groups to be listed. </p>
     pub fn label_group_name_begins_with(&self) -> ::std::option::Option<&str> {
         self.label_group_name_begins_with.as_deref()
     }
-    /// <p>An opaque pagination token indicating where to continue the listing of label groups.</p>
+    /// <p> An opaque pagination token indicating where to continue the listing of label groups. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Specifies the maximum number of label groups to list.</p>
+    /// <p> Specifies the maximum number of label groups to list. </p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -40,45 +40,45 @@ pub struct ListLabelGroupsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ListLabelGroupsInputBuilder {
-    /// <p>The beginning of the name of the label groups to be listed.</p>
+    /// <p> The beginning of the name of the label groups to be listed. </p>
     pub fn label_group_name_begins_with(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label_group_name_begins_with = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The beginning of the name of the label groups to be listed.</p>
+    /// <p> The beginning of the name of the label groups to be listed. </p>
     pub fn set_label_group_name_begins_with(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.label_group_name_begins_with = input;
         self
     }
-    /// <p>The beginning of the name of the label groups to be listed.</p>
+    /// <p> The beginning of the name of the label groups to be listed. </p>
     pub fn get_label_group_name_begins_with(&self) -> &::std::option::Option<::std::string::String> {
         &self.label_group_name_begins_with
     }
-    /// <p>An opaque pagination token indicating where to continue the listing of label groups.</p>
+    /// <p> An opaque pagination token indicating where to continue the listing of label groups. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An opaque pagination token indicating where to continue the listing of label groups.</p>
+    /// <p> An opaque pagination token indicating where to continue the listing of label groups. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>An opaque pagination token indicating where to continue the listing of label groups.</p>
+    /// <p> An opaque pagination token indicating where to continue the listing of label groups. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>Specifies the maximum number of label groups to list.</p>
+    /// <p> Specifies the maximum number of label groups to list. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the maximum number of label groups to list.</p>
+    /// <p> Specifies the maximum number of label groups to list. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>Specifies the maximum number of label groups to list.</p>
+    /// <p> Specifies the maximum number of label groups to list. </p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

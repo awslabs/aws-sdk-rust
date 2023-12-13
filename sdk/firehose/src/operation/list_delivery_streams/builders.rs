@@ -125,10 +125,8 @@ impl ListDeliveryStreamsFluentBuilder {
     }
     /// <p>The delivery stream type. This can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>DirectPut</code>: Provider applications access the delivery stream directly.</p></li>
-    /// <li>
-    /// <p><code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p></li>
+    /// <li> <p> <code>DirectPut</code>: Provider applications access the delivery stream directly.</p> </li>
+    /// <li> <p> <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p> </li>
     /// </ul>
     /// <p>This parameter is optional. If this parameter is omitted, delivery streams of all types are returned.</p>
     pub fn delivery_stream_type(mut self, input: crate::types::DeliveryStreamType) -> Self {
@@ -137,10 +135,8 @@ impl ListDeliveryStreamsFluentBuilder {
     }
     /// <p>The delivery stream type. This can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>DirectPut</code>: Provider applications access the delivery stream directly.</p></li>
-    /// <li>
-    /// <p><code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p></li>
+    /// <li> <p> <code>DirectPut</code>: Provider applications access the delivery stream directly.</p> </li>
+    /// <li> <p> <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p> </li>
     /// </ul>
     /// <p>This parameter is optional. If this parameter is omitted, delivery streams of all types are returned.</p>
     pub fn set_delivery_stream_type(mut self, input: ::std::option::Option<crate::types::DeliveryStreamType>) -> Self {
@@ -149,10 +145,8 @@ impl ListDeliveryStreamsFluentBuilder {
     }
     /// <p>The delivery stream type. This can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>DirectPut</code>: Provider applications access the delivery stream directly.</p></li>
-    /// <li>
-    /// <p><code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p></li>
+    /// <li> <p> <code>DirectPut</code>: Provider applications access the delivery stream directly.</p> </li>
+    /// <li> <p> <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p> </li>
     /// </ul>
     /// <p>This parameter is optional. If this parameter is omitted, delivery streams of all types are returned.</p>
     pub fn get_delivery_stream_type(&self) -> &::std::option::Option<crate::types::DeliveryStreamType> {

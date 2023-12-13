@@ -5,8 +5,8 @@
 pub struct ListFirewallDomainListsOutput {
     /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>A list of the domain lists that you have defined.</p>
-    /// <p>This might be a partial list of the domain lists that you've defined. For information, see <code>MaxResults</code>.</p>
+    /// <p>A list of the domain lists that you have defined. </p>
+    /// <p>This might be a partial list of the domain lists that you've defined. For information, see <code>MaxResults</code>. </p>
     pub firewall_domain_lists: ::std::option::Option<::std::vec::Vec<crate::types::FirewallDomainListMetadata>>,
     _request_id: Option<String>,
 }
@@ -15,8 +15,8 @@ impl ListFirewallDomainListsOutput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>A list of the domain lists that you have defined.</p>
-    /// <p>This might be a partial list of the domain lists that you've defined. For information, see <code>MaxResults</code>.</p>
+    /// <p>A list of the domain lists that you have defined. </p>
+    /// <p>This might be a partial list of the domain lists that you've defined. For information, see <code>MaxResults</code>. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.firewall_domain_lists.is_none()`.
     pub fn firewall_domain_lists(&self) -> &[crate::types::FirewallDomainListMetadata] {
@@ -62,22 +62,22 @@ impl ListFirewallDomainListsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_firewall_domain_lists`](Self::set_firewall_domain_lists).
     ///
-    /// <p>A list of the domain lists that you have defined.</p>
-    /// <p>This might be a partial list of the domain lists that you've defined. For information, see <code>MaxResults</code>.</p>
+    /// <p>A list of the domain lists that you have defined. </p>
+    /// <p>This might be a partial list of the domain lists that you've defined. For information, see <code>MaxResults</code>. </p>
     pub fn firewall_domain_lists(mut self, input: crate::types::FirewallDomainListMetadata) -> Self {
         let mut v = self.firewall_domain_lists.unwrap_or_default();
         v.push(input);
         self.firewall_domain_lists = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of the domain lists that you have defined.</p>
-    /// <p>This might be a partial list of the domain lists that you've defined. For information, see <code>MaxResults</code>.</p>
+    /// <p>A list of the domain lists that you have defined. </p>
+    /// <p>This might be a partial list of the domain lists that you've defined. For information, see <code>MaxResults</code>. </p>
     pub fn set_firewall_domain_lists(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FirewallDomainListMetadata>>) -> Self {
         self.firewall_domain_lists = input;
         self
     }
-    /// <p>A list of the domain lists that you have defined.</p>
-    /// <p>This might be a partial list of the domain lists that you've defined. For information, see <code>MaxResults</code>.</p>
+    /// <p>A list of the domain lists that you have defined. </p>
+    /// <p>This might be a partial list of the domain lists that you've defined. For information, see <code>MaxResults</code>. </p>
     pub fn get_firewall_domain_lists(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FirewallDomainListMetadata>> {
         &self.firewall_domain_lists
     }

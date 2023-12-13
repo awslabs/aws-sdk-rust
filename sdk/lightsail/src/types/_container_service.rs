@@ -24,23 +24,16 @@ pub struct ContainerService {
     /// <p>The current state of the container service.</p>
     /// <p>The following container service states are possible:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PENDING</code> - The container service is being created.</p></li>
-    /// <li>
-    /// <p><code>READY</code> - The container service is running but it does not have an active container deployment.</p></li>
-    /// <li>
-    /// <p><code>DEPLOYING</code> - The container service is launching a container deployment.</p></li>
-    /// <li>
-    /// <p><code>RUNNING</code> - The container service is running and it has an active container deployment.</p></li>
-    /// <li>
-    /// <p><code>UPDATING</code> - The container service capacity or its custom domains are being updated.</p></li>
-    /// <li>
-    /// <p><code>DELETING</code> - The container service is being deleted.</p></li>
-    /// <li>
-    /// <p><code>DISABLED</code> - The container service is disabled, and its active deployment and containers, if any, are shut down.</p></li>
+    /// <li> <p> <code>PENDING</code> - The container service is being created.</p> </li>
+    /// <li> <p> <code>READY</code> - The container service is running but it does not have an active container deployment.</p> </li>
+    /// <li> <p> <code>DEPLOYING</code> - The container service is launching a container deployment.</p> </li>
+    /// <li> <p> <code>RUNNING</code> - The container service is running and it has an active container deployment.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - The container service capacity or its custom domains are being updated.</p> </li>
+    /// <li> <p> <code>DELETING</code> - The container service is being deleted.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - The container service is disabled, and its active deployment and containers, if any, are shut down.</p> </li>
     /// </ul>
     pub state: ::std::option::Option<crate::types::ContainerServiceState>,
-    /// <p>An object that describes the current state of the container service.</p><note>
+    /// <p>An object that describes the current state of the container service.</p> <note>
     /// <p>The state detail is populated only when a container service is in a <code>PENDING</code>, <code>DEPLOYING</code>, or <code>UPDATING</code> state.</p>
     /// </note>
     pub state_detail: ::std::option::Option<crate::types::ContainerServiceStateDetail>,
@@ -62,7 +55,7 @@ pub struct ContainerService {
     pub private_domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The public domain name of the container service, such as <code>example.com</code> and <code>www.example.com</code>.</p>
     /// <p>You can specify up to four public domain names for a container service. The domain names that you specify are used when you create a deployment with a container configured as the public endpoint of your container service.</p>
-    /// <p>If you don't specify public domain names, then you can use the default domain of the container service.</p><important>
+    /// <p>If you don't specify public domain names, then you can use the default domain of the container service.</p> <important>
     /// <p>You must create and validate an SSL/TLS certificate before you can use public domain names with your container service. Use the <code>CreateCertificate</code> action to create a certificate for the public domain names you want to use with your container service.</p>
     /// </important>
     /// <p>See <code>CreateContainerService</code> or <code>UpdateContainerService</code> for information about how to specify public domain names for your Lightsail container service.</p>
@@ -113,25 +106,18 @@ impl ContainerService {
     /// <p>The current state of the container service.</p>
     /// <p>The following container service states are possible:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PENDING</code> - The container service is being created.</p></li>
-    /// <li>
-    /// <p><code>READY</code> - The container service is running but it does not have an active container deployment.</p></li>
-    /// <li>
-    /// <p><code>DEPLOYING</code> - The container service is launching a container deployment.</p></li>
-    /// <li>
-    /// <p><code>RUNNING</code> - The container service is running and it has an active container deployment.</p></li>
-    /// <li>
-    /// <p><code>UPDATING</code> - The container service capacity or its custom domains are being updated.</p></li>
-    /// <li>
-    /// <p><code>DELETING</code> - The container service is being deleted.</p></li>
-    /// <li>
-    /// <p><code>DISABLED</code> - The container service is disabled, and its active deployment and containers, if any, are shut down.</p></li>
+    /// <li> <p> <code>PENDING</code> - The container service is being created.</p> </li>
+    /// <li> <p> <code>READY</code> - The container service is running but it does not have an active container deployment.</p> </li>
+    /// <li> <p> <code>DEPLOYING</code> - The container service is launching a container deployment.</p> </li>
+    /// <li> <p> <code>RUNNING</code> - The container service is running and it has an active container deployment.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - The container service capacity or its custom domains are being updated.</p> </li>
+    /// <li> <p> <code>DELETING</code> - The container service is being deleted.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - The container service is disabled, and its active deployment and containers, if any, are shut down.</p> </li>
     /// </ul>
     pub fn state(&self) -> ::std::option::Option<&crate::types::ContainerServiceState> {
         self.state.as_ref()
     }
-    /// <p>An object that describes the current state of the container service.</p><note>
+    /// <p>An object that describes the current state of the container service.</p> <note>
     /// <p>The state detail is populated only when a container service is in a <code>PENDING</code>, <code>DEPLOYING</code>, or <code>UPDATING</code> state.</p>
     /// </note>
     pub fn state_detail(&self) -> ::std::option::Option<&crate::types::ContainerServiceStateDetail> {
@@ -167,7 +153,7 @@ impl ContainerService {
     }
     /// <p>The public domain name of the container service, such as <code>example.com</code> and <code>www.example.com</code>.</p>
     /// <p>You can specify up to four public domain names for a container service. The domain names that you specify are used when you create a deployment with a container configured as the public endpoint of your container service.</p>
-    /// <p>If you don't specify public domain names, then you can use the default domain of the container service.</p><important>
+    /// <p>If you don't specify public domain names, then you can use the default domain of the container service.</p> <important>
     /// <p>You must create and validate an SSL/TLS certificate before you can use public domain names with your container service. Use the <code>CreateCertificate</code> action to create a certificate for the public domain names you want to use with your container service.</p>
     /// </important>
     /// <p>See <code>CreateContainerService</code> or <code>UpdateContainerService</code> for information about how to specify public domain names for your Lightsail container service.</p>
@@ -343,20 +329,13 @@ impl ContainerServiceBuilder {
     /// <p>The current state of the container service.</p>
     /// <p>The following container service states are possible:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PENDING</code> - The container service is being created.</p></li>
-    /// <li>
-    /// <p><code>READY</code> - The container service is running but it does not have an active container deployment.</p></li>
-    /// <li>
-    /// <p><code>DEPLOYING</code> - The container service is launching a container deployment.</p></li>
-    /// <li>
-    /// <p><code>RUNNING</code> - The container service is running and it has an active container deployment.</p></li>
-    /// <li>
-    /// <p><code>UPDATING</code> - The container service capacity or its custom domains are being updated.</p></li>
-    /// <li>
-    /// <p><code>DELETING</code> - The container service is being deleted.</p></li>
-    /// <li>
-    /// <p><code>DISABLED</code> - The container service is disabled, and its active deployment and containers, if any, are shut down.</p></li>
+    /// <li> <p> <code>PENDING</code> - The container service is being created.</p> </li>
+    /// <li> <p> <code>READY</code> - The container service is running but it does not have an active container deployment.</p> </li>
+    /// <li> <p> <code>DEPLOYING</code> - The container service is launching a container deployment.</p> </li>
+    /// <li> <p> <code>RUNNING</code> - The container service is running and it has an active container deployment.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - The container service capacity or its custom domains are being updated.</p> </li>
+    /// <li> <p> <code>DELETING</code> - The container service is being deleted.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - The container service is disabled, and its active deployment and containers, if any, are shut down.</p> </li>
     /// </ul>
     pub fn state(mut self, input: crate::types::ContainerServiceState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -365,20 +344,13 @@ impl ContainerServiceBuilder {
     /// <p>The current state of the container service.</p>
     /// <p>The following container service states are possible:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PENDING</code> - The container service is being created.</p></li>
-    /// <li>
-    /// <p><code>READY</code> - The container service is running but it does not have an active container deployment.</p></li>
-    /// <li>
-    /// <p><code>DEPLOYING</code> - The container service is launching a container deployment.</p></li>
-    /// <li>
-    /// <p><code>RUNNING</code> - The container service is running and it has an active container deployment.</p></li>
-    /// <li>
-    /// <p><code>UPDATING</code> - The container service capacity or its custom domains are being updated.</p></li>
-    /// <li>
-    /// <p><code>DELETING</code> - The container service is being deleted.</p></li>
-    /// <li>
-    /// <p><code>DISABLED</code> - The container service is disabled, and its active deployment and containers, if any, are shut down.</p></li>
+    /// <li> <p> <code>PENDING</code> - The container service is being created.</p> </li>
+    /// <li> <p> <code>READY</code> - The container service is running but it does not have an active container deployment.</p> </li>
+    /// <li> <p> <code>DEPLOYING</code> - The container service is launching a container deployment.</p> </li>
+    /// <li> <p> <code>RUNNING</code> - The container service is running and it has an active container deployment.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - The container service capacity or its custom domains are being updated.</p> </li>
+    /// <li> <p> <code>DELETING</code> - The container service is being deleted.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - The container service is disabled, and its active deployment and containers, if any, are shut down.</p> </li>
     /// </ul>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ContainerServiceState>) -> Self {
         self.state = input;
@@ -387,39 +359,32 @@ impl ContainerServiceBuilder {
     /// <p>The current state of the container service.</p>
     /// <p>The following container service states are possible:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PENDING</code> - The container service is being created.</p></li>
-    /// <li>
-    /// <p><code>READY</code> - The container service is running but it does not have an active container deployment.</p></li>
-    /// <li>
-    /// <p><code>DEPLOYING</code> - The container service is launching a container deployment.</p></li>
-    /// <li>
-    /// <p><code>RUNNING</code> - The container service is running and it has an active container deployment.</p></li>
-    /// <li>
-    /// <p><code>UPDATING</code> - The container service capacity or its custom domains are being updated.</p></li>
-    /// <li>
-    /// <p><code>DELETING</code> - The container service is being deleted.</p></li>
-    /// <li>
-    /// <p><code>DISABLED</code> - The container service is disabled, and its active deployment and containers, if any, are shut down.</p></li>
+    /// <li> <p> <code>PENDING</code> - The container service is being created.</p> </li>
+    /// <li> <p> <code>READY</code> - The container service is running but it does not have an active container deployment.</p> </li>
+    /// <li> <p> <code>DEPLOYING</code> - The container service is launching a container deployment.</p> </li>
+    /// <li> <p> <code>RUNNING</code> - The container service is running and it has an active container deployment.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - The container service capacity or its custom domains are being updated.</p> </li>
+    /// <li> <p> <code>DELETING</code> - The container service is being deleted.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - The container service is disabled, and its active deployment and containers, if any, are shut down.</p> </li>
     /// </ul>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ContainerServiceState> {
         &self.state
     }
-    /// <p>An object that describes the current state of the container service.</p><note>
+    /// <p>An object that describes the current state of the container service.</p> <note>
     /// <p>The state detail is populated only when a container service is in a <code>PENDING</code>, <code>DEPLOYING</code>, or <code>UPDATING</code> state.</p>
     /// </note>
     pub fn state_detail(mut self, input: crate::types::ContainerServiceStateDetail) -> Self {
         self.state_detail = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An object that describes the current state of the container service.</p><note>
+    /// <p>An object that describes the current state of the container service.</p> <note>
     /// <p>The state detail is populated only when a container service is in a <code>PENDING</code>, <code>DEPLOYING</code>, or <code>UPDATING</code> state.</p>
     /// </note>
     pub fn set_state_detail(mut self, input: ::std::option::Option<crate::types::ContainerServiceStateDetail>) -> Self {
         self.state_detail = input;
         self
     }
-    /// <p>An object that describes the current state of the container service.</p><note>
+    /// <p>An object that describes the current state of the container service.</p> <note>
     /// <p>The state detail is populated only when a container service is in a <code>PENDING</code>, <code>DEPLOYING</code>, or <code>UPDATING</code> state.</p>
     /// </note>
     pub fn get_state_detail(&self) -> &::std::option::Option<crate::types::ContainerServiceStateDetail> {
@@ -527,7 +492,7 @@ impl ContainerServiceBuilder {
     ///
     /// <p>The public domain name of the container service, such as <code>example.com</code> and <code>www.example.com</code>.</p>
     /// <p>You can specify up to four public domain names for a container service. The domain names that you specify are used when you create a deployment with a container configured as the public endpoint of your container service.</p>
-    /// <p>If you don't specify public domain names, then you can use the default domain of the container service.</p><important>
+    /// <p>If you don't specify public domain names, then you can use the default domain of the container service.</p> <important>
     /// <p>You must create and validate an SSL/TLS certificate before you can use public domain names with your container service. Use the <code>CreateCertificate</code> action to create a certificate for the public domain names you want to use with your container service.</p>
     /// </important>
     /// <p>See <code>CreateContainerService</code> or <code>UpdateContainerService</code> for information about how to specify public domain names for your Lightsail container service.</p>
@@ -539,7 +504,7 @@ impl ContainerServiceBuilder {
     }
     /// <p>The public domain name of the container service, such as <code>example.com</code> and <code>www.example.com</code>.</p>
     /// <p>You can specify up to four public domain names for a container service. The domain names that you specify are used when you create a deployment with a container configured as the public endpoint of your container service.</p>
-    /// <p>If you don't specify public domain names, then you can use the default domain of the container service.</p><important>
+    /// <p>If you don't specify public domain names, then you can use the default domain of the container service.</p> <important>
     /// <p>You must create and validate an SSL/TLS certificate before you can use public domain names with your container service. Use the <code>CreateCertificate</code> action to create a certificate for the public domain names you want to use with your container service.</p>
     /// </important>
     /// <p>See <code>CreateContainerService</code> or <code>UpdateContainerService</code> for information about how to specify public domain names for your Lightsail container service.</p>
@@ -552,7 +517,7 @@ impl ContainerServiceBuilder {
     }
     /// <p>The public domain name of the container service, such as <code>example.com</code> and <code>www.example.com</code>.</p>
     /// <p>You can specify up to four public domain names for a container service. The domain names that you specify are used when you create a deployment with a container configured as the public endpoint of your container service.</p>
-    /// <p>If you don't specify public domain names, then you can use the default domain of the container service.</p><important>
+    /// <p>If you don't specify public domain names, then you can use the default domain of the container service.</p> <important>
     /// <p>You must create and validate an SSL/TLS certificate before you can use public domain names with your container service. Use the <code>CreateCertificate</code> action to create a certificate for the public domain names you want to use with your container service.</p>
     /// </important>
     /// <p>See <code>CreateContainerService</code> or <code>UpdateContainerService</code> for information about how to specify public domain names for your Lightsail container service.</p>

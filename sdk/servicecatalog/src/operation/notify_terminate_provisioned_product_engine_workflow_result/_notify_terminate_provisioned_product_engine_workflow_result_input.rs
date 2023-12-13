@@ -3,35 +3,35 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotifyTerminateProvisionedProductEngineWorkflowResultInput {
-    /// <p>The encrypted contents of the terminate engine execution payload that Service Catalog sends after the Terraform product terminate workflow starts.</p>
+    /// <p> The encrypted contents of the terminate engine execution payload that Service Catalog sends after the Terraform product terminate workflow starts. </p>
     pub workflow_token: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of the record.</p>
+    /// <p> The identifier of the record. </p>
     pub record_id: ::std::option::Option<::std::string::String>,
-    /// <p>The status of the terminate engine execution.</p>
+    /// <p> The status of the terminate engine execution. </p>
     pub status: ::std::option::Option<crate::types::EngineWorkflowStatus>,
-    /// <p>The reason why the terminate engine execution failed.</p>
+    /// <p> The reason why the terminate engine execution failed. </p>
     pub failure_reason: ::std::option::Option<::std::string::String>,
-    /// <p>The idempotency token that identifies the terminate engine execution.</p>
+    /// <p> The idempotency token that identifies the terminate engine execution. </p>
     pub idempotency_token: ::std::option::Option<::std::string::String>,
 }
 impl NotifyTerminateProvisionedProductEngineWorkflowResultInput {
-    /// <p>The encrypted contents of the terminate engine execution payload that Service Catalog sends after the Terraform product terminate workflow starts.</p>
+    /// <p> The encrypted contents of the terminate engine execution payload that Service Catalog sends after the Terraform product terminate workflow starts. </p>
     pub fn workflow_token(&self) -> ::std::option::Option<&str> {
         self.workflow_token.as_deref()
     }
-    /// <p>The identifier of the record.</p>
+    /// <p> The identifier of the record. </p>
     pub fn record_id(&self) -> ::std::option::Option<&str> {
         self.record_id.as_deref()
     }
-    /// <p>The status of the terminate engine execution.</p>
+    /// <p> The status of the terminate engine execution. </p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::EngineWorkflowStatus> {
         self.status.as_ref()
     }
-    /// <p>The reason why the terminate engine execution failed.</p>
+    /// <p> The reason why the terminate engine execution failed. </p>
     pub fn failure_reason(&self) -> ::std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
-    /// <p>The idempotency token that identifies the terminate engine execution.</p>
+    /// <p> The idempotency token that identifies the terminate engine execution. </p>
     pub fn idempotency_token(&self) -> ::std::option::Option<&str> {
         self.idempotency_token.as_deref()
     }
@@ -54,77 +54,77 @@ pub struct NotifyTerminateProvisionedProductEngineWorkflowResultInputBuilder {
     pub(crate) idempotency_token: ::std::option::Option<::std::string::String>,
 }
 impl NotifyTerminateProvisionedProductEngineWorkflowResultInputBuilder {
-    /// <p>The encrypted contents of the terminate engine execution payload that Service Catalog sends after the Terraform product terminate workflow starts.</p>
+    /// <p> The encrypted contents of the terminate engine execution payload that Service Catalog sends after the Terraform product terminate workflow starts. </p>
     /// This field is required.
     pub fn workflow_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The encrypted contents of the terminate engine execution payload that Service Catalog sends after the Terraform product terminate workflow starts.</p>
+    /// <p> The encrypted contents of the terminate engine execution payload that Service Catalog sends after the Terraform product terminate workflow starts. </p>
     pub fn set_workflow_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workflow_token = input;
         self
     }
-    /// <p>The encrypted contents of the terminate engine execution payload that Service Catalog sends after the Terraform product terminate workflow starts.</p>
+    /// <p> The encrypted contents of the terminate engine execution payload that Service Catalog sends after the Terraform product terminate workflow starts. </p>
     pub fn get_workflow_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.workflow_token
     }
-    /// <p>The identifier of the record.</p>
+    /// <p> The identifier of the record. </p>
     /// This field is required.
     pub fn record_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.record_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the record.</p>
+    /// <p> The identifier of the record. </p>
     pub fn set_record_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.record_id = input;
         self
     }
-    /// <p>The identifier of the record.</p>
+    /// <p> The identifier of the record. </p>
     pub fn get_record_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.record_id
     }
-    /// <p>The status of the terminate engine execution.</p>
+    /// <p> The status of the terminate engine execution. </p>
     /// This field is required.
     pub fn status(mut self, input: crate::types::EngineWorkflowStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the terminate engine execution.</p>
+    /// <p> The status of the terminate engine execution. </p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::EngineWorkflowStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of the terminate engine execution.</p>
+    /// <p> The status of the terminate engine execution. </p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::EngineWorkflowStatus> {
         &self.status
     }
-    /// <p>The reason why the terminate engine execution failed.</p>
+    /// <p> The reason why the terminate engine execution failed. </p>
     pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The reason why the terminate engine execution failed.</p>
+    /// <p> The reason why the terminate engine execution failed. </p>
     pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }
-    /// <p>The reason why the terminate engine execution failed.</p>
+    /// <p> The reason why the terminate engine execution failed. </p>
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.failure_reason
     }
-    /// <p>The idempotency token that identifies the terminate engine execution.</p>
+    /// <p> The idempotency token that identifies the terminate engine execution. </p>
     /// This field is required.
     pub fn idempotency_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.idempotency_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The idempotency token that identifies the terminate engine execution.</p>
+    /// <p> The idempotency token that identifies the terminate engine execution. </p>
     pub fn set_idempotency_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.idempotency_token = input;
         self
     }
-    /// <p>The idempotency token that identifies the terminate engine execution.</p>
+    /// <p> The idempotency token that identifies the terminate engine execution. </p>
     pub fn get_idempotency_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.idempotency_token
     }

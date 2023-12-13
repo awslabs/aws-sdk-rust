@@ -22,13 +22,13 @@ impl ListTrainingJobsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListTrainingJobs`.
 ///
-/// <p>Lists training jobs.</p><note>
+/// <p>Lists training jobs.</p> <note>
 /// <p>When <code>StatusEquals</code> and <code>MaxResults</code> are set at the same time, the <code>MaxResults</code> number of training jobs are first retrieved ignoring the <code>StatusEquals</code> parameter and then they are filtered by the <code>StatusEquals</code> parameter, which is returned as a response.</p>
 /// <p>For example, if <code>ListTrainingJobs</code> is invoked with the following parameters:</p>
-/// <p><code>{ ... MaxResults: 100, StatusEquals: InProgress ... }</code></p>
+/// <p> <code>{ ... MaxResults: 100, StatusEquals: InProgress ... }</code> </p>
 /// <p>First, 100 trainings jobs with any status, including those other than <code>InProgress</code>, are selected (sorted according to the creation time, from the most current to the oldest). Next, those with a status of <code>InProgress</code> are returned.</p>
 /// <p>You can quickly test the API using the following Amazon Web Services CLI code.</p>
-/// <p><code>aws sagemaker list-training-jobs --max-results 100 --status-equals InProgress</code></p>
+/// <p> <code>aws sagemaker list-training-jobs --max-results 100 --status-equals InProgress</code> </p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTrainingJobsFluentBuilder {
@@ -121,17 +121,17 @@ impl ListTrainingJobsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_training_jobs::paginator::ListTrainingJobsPaginator {
         crate::operation::list_training_jobs::paginator::ListTrainingJobsPaginator::new(self.handle, self.inner)
     }
-    /// <p>If the result of the previous <code>ListTrainingJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of training jobs, use the token in the next request.</p>
+    /// <p>If the result of the previous <code>ListTrainingJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of training jobs, use the token in the next request. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>If the result of the previous <code>ListTrainingJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of training jobs, use the token in the next request.</p>
+    /// <p>If the result of the previous <code>ListTrainingJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of training jobs, use the token in the next request. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>If the result of the previous <code>ListTrainingJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of training jobs, use the token in the next request.</p>
+    /// <p>If the result of the previous <code>ListTrainingJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of training jobs, use the token in the next request. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

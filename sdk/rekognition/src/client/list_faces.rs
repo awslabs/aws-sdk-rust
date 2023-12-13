@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`user_id(impl Into<String>)`](crate::operation::list_faces::builders::ListFacesFluentBuilder::user_id) / [`set_user_id(Option<String>)`](crate::operation::list_faces::builders::ListFacesFluentBuilder::set_user_id):<br>required: **false**<br><p>An array of user IDs to filter results with when listing faces in a collection.</p><br>
     ///   - [`face_ids(impl Into<String>)`](crate::operation::list_faces::builders::ListFacesFluentBuilder::face_ids) / [`set_face_ids(Option<Vec::<String>>)`](crate::operation::list_faces::builders::ListFacesFluentBuilder::set_face_ids):<br>required: **false**<br><p>An array of face IDs to filter results with when listing faces in a collection.</p><br>
     /// - On success, responds with [`ListFacesOutput`](crate::operation::list_faces::ListFacesOutput) with field(s):
-    ///   - [`faces(Option<Vec::<Face>>)`](crate::operation::list_faces::ListFacesOutput::faces): <p>An array of <code>Face</code> objects.</p>
+    ///   - [`faces(Option<Vec::<Face>>)`](crate::operation::list_faces::ListFacesOutput::faces): <p>An array of <code>Face</code> objects. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_faces::ListFacesOutput::next_token): <p>If the response is truncated, Amazon Rekognition returns this token that you can use in the subsequent request to retrieve the next set of faces.</p>
     ///   - [`face_model_version(Option<String>)`](crate::operation::list_faces::ListFacesOutput::face_model_version): <p>Version number of the face detection model associated with the input collection (<code>CollectionId</code>).</p>
     /// - On failure, responds with [`SdkError<ListFacesError>`](crate::operation::list_faces::ListFacesError)

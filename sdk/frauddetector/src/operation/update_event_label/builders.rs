@@ -150,17 +150,17 @@ impl UpdateEventLabelFluentBuilder {
     pub fn get_assigned_label(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_assigned_label()
     }
-    /// <p>The timestamp associated with the label. The timestamp must be specified using ISO 8601 standard in UTC.</p>
+    /// <p>The timestamp associated with the label. The timestamp must be specified using ISO 8601 standard in UTC. </p>
     pub fn label_timestamp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.label_timestamp(input.into());
         self
     }
-    /// <p>The timestamp associated with the label. The timestamp must be specified using ISO 8601 standard in UTC.</p>
+    /// <p>The timestamp associated with the label. The timestamp must be specified using ISO 8601 standard in UTC. </p>
     pub fn set_label_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_label_timestamp(input);
         self
     }
-    /// <p>The timestamp associated with the label. The timestamp must be specified using ISO 8601 standard in UTC.</p>
+    /// <p>The timestamp associated with the label. The timestamp must be specified using ISO 8601 standard in UTC. </p>
     pub fn get_label_timestamp(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_label_timestamp()
     }

@@ -13,10 +13,8 @@ pub struct AutoScalingGroupRecommendation {
     /// <p>The finding classification of the Auto Scaling group.</p>
     /// <p>Findings for Auto Scaling groups include:</p>
     /// <ul>
-    /// <li>
-    /// <p><b> <code>NotOptimized</code> </b>—An Auto Scaling group is considered not optimized when Compute Optimizer identifies a recommendation that can provide better performance for your workload.</p></li>
-    /// <li>
-    /// <p><b> <code>Optimized</code> </b>—An Auto Scaling group is considered optimized when Compute Optimizer determines that the group is correctly provisioned to run your workload based on the chosen instance type. For optimized resources, Compute Optimizer might recommend a new generation instance type.</p></li>
+    /// <li> <p> <b> <code>NotOptimized</code> </b>—An Auto Scaling group is considered not optimized when Compute Optimizer identifies a recommendation that can provide better performance for your workload.</p> </li>
+    /// <li> <p> <b> <code>Optimized</code> </b>—An Auto Scaling group is considered optimized when Compute Optimizer determines that the group is correctly provisioned to run your workload based on the chosen instance type. For optimized resources, Compute Optimizer might recommend a new generation instance type.</p> </li>
     /// </ul>
     pub finding: ::std::option::Option<crate::types::Finding>,
     /// <p>An array of objects that describe the utilization metrics of the Auto Scaling group.</p>
@@ -36,27 +34,18 @@ pub struct AutoScalingGroupRecommendation {
     /// <p>The applications that might be running on the instances in the Auto Scaling group as inferred by Compute Optimizer.</p>
     /// <p>Compute Optimizer can infer if one of the following applications might be running on the instances:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AmazonEmr</code> - Infers that Amazon EMR might be running on the instances.</p></li>
-    /// <li>
-    /// <p><code>ApacheCassandra</code> - Infers that Apache Cassandra might be running on the instances.</p></li>
-    /// <li>
-    /// <p><code>ApacheHadoop</code> - Infers that Apache Hadoop might be running on the instances.</p></li>
-    /// <li>
-    /// <p><code>Memcached</code> - Infers that Memcached might be running on the instances.</p></li>
-    /// <li>
-    /// <p><code>NGINX</code> - Infers that NGINX might be running on the instances.</p></li>
-    /// <li>
-    /// <p><code>PostgreSql</code> - Infers that PostgreSQL might be running on the instances.</p></li>
-    /// <li>
-    /// <p><code>Redis</code> - Infers that Redis might be running on the instances.</p></li>
-    /// <li>
-    /// <p><code>Kafka</code> - Infers that Kafka might be running on the instance.</p></li>
-    /// <li>
-    /// <p><code>SQLServer</code> - Infers that SQLServer might be running on the instance.</p></li>
+    /// <li> <p> <code>AmazonEmr</code> - Infers that Amazon EMR might be running on the instances.</p> </li>
+    /// <li> <p> <code>ApacheCassandra</code> - Infers that Apache Cassandra might be running on the instances.</p> </li>
+    /// <li> <p> <code>ApacheHadoop</code> - Infers that Apache Hadoop might be running on the instances.</p> </li>
+    /// <li> <p> <code>Memcached</code> - Infers that Memcached might be running on the instances.</p> </li>
+    /// <li> <p> <code>NGINX</code> - Infers that NGINX might be running on the instances.</p> </li>
+    /// <li> <p> <code>PostgreSql</code> - Infers that PostgreSQL might be running on the instances.</p> </li>
+    /// <li> <p> <code>Redis</code> - Infers that Redis might be running on the instances.</p> </li>
+    /// <li> <p> <code>Kafka</code> - Infers that Kafka might be running on the instance.</p> </li>
+    /// <li> <p> <code>SQLServer</code> - Infers that SQLServer might be running on the instance.</p> </li>
     /// </ul>
     pub inferred_workload_types: ::std::option::Option<::std::vec::Vec<crate::types::InferredWorkloadType>>,
-    /// <p>Describes the GPU accelerator settings for the current instance type of the Auto Scaling group.</p>
+    /// <p> Describes the GPU accelerator settings for the current instance type of the Auto Scaling group. </p>
     pub current_instance_gpu_info: ::std::option::Option<crate::types::GpuInfo>,
 }
 impl AutoScalingGroupRecommendation {
@@ -75,10 +64,8 @@ impl AutoScalingGroupRecommendation {
     /// <p>The finding classification of the Auto Scaling group.</p>
     /// <p>Findings for Auto Scaling groups include:</p>
     /// <ul>
-    /// <li>
-    /// <p><b> <code>NotOptimized</code> </b>—An Auto Scaling group is considered not optimized when Compute Optimizer identifies a recommendation that can provide better performance for your workload.</p></li>
-    /// <li>
-    /// <p><b> <code>Optimized</code> </b>—An Auto Scaling group is considered optimized when Compute Optimizer determines that the group is correctly provisioned to run your workload based on the chosen instance type. For optimized resources, Compute Optimizer might recommend a new generation instance type.</p></li>
+    /// <li> <p> <b> <code>NotOptimized</code> </b>—An Auto Scaling group is considered not optimized when Compute Optimizer identifies a recommendation that can provide better performance for your workload.</p> </li>
+    /// <li> <p> <b> <code>Optimized</code> </b>—An Auto Scaling group is considered optimized when Compute Optimizer determines that the group is correctly provisioned to run your workload based on the chosen instance type. For optimized resources, Compute Optimizer might recommend a new generation instance type.</p> </li>
     /// </ul>
     pub fn finding(&self) -> ::std::option::Option<&crate::types::Finding> {
         self.finding.as_ref()
@@ -118,31 +105,22 @@ impl AutoScalingGroupRecommendation {
     /// <p>The applications that might be running on the instances in the Auto Scaling group as inferred by Compute Optimizer.</p>
     /// <p>Compute Optimizer can infer if one of the following applications might be running on the instances:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AmazonEmr</code> - Infers that Amazon EMR might be running on the instances.</p></li>
-    /// <li>
-    /// <p><code>ApacheCassandra</code> - Infers that Apache Cassandra might be running on the instances.</p></li>
-    /// <li>
-    /// <p><code>ApacheHadoop</code> - Infers that Apache Hadoop might be running on the instances.</p></li>
-    /// <li>
-    /// <p><code>Memcached</code> - Infers that Memcached might be running on the instances.</p></li>
-    /// <li>
-    /// <p><code>NGINX</code> - Infers that NGINX might be running on the instances.</p></li>
-    /// <li>
-    /// <p><code>PostgreSql</code> - Infers that PostgreSQL might be running on the instances.</p></li>
-    /// <li>
-    /// <p><code>Redis</code> - Infers that Redis might be running on the instances.</p></li>
-    /// <li>
-    /// <p><code>Kafka</code> - Infers that Kafka might be running on the instance.</p></li>
-    /// <li>
-    /// <p><code>SQLServer</code> - Infers that SQLServer might be running on the instance.</p></li>
+    /// <li> <p> <code>AmazonEmr</code> - Infers that Amazon EMR might be running on the instances.</p> </li>
+    /// <li> <p> <code>ApacheCassandra</code> - Infers that Apache Cassandra might be running on the instances.</p> </li>
+    /// <li> <p> <code>ApacheHadoop</code> - Infers that Apache Hadoop might be running on the instances.</p> </li>
+    /// <li> <p> <code>Memcached</code> - Infers that Memcached might be running on the instances.</p> </li>
+    /// <li> <p> <code>NGINX</code> - Infers that NGINX might be running on the instances.</p> </li>
+    /// <li> <p> <code>PostgreSql</code> - Infers that PostgreSQL might be running on the instances.</p> </li>
+    /// <li> <p> <code>Redis</code> - Infers that Redis might be running on the instances.</p> </li>
+    /// <li> <p> <code>Kafka</code> - Infers that Kafka might be running on the instance.</p> </li>
+    /// <li> <p> <code>SQLServer</code> - Infers that SQLServer might be running on the instance.</p> </li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inferred_workload_types.is_none()`.
     pub fn inferred_workload_types(&self) -> &[crate::types::InferredWorkloadType] {
         self.inferred_workload_types.as_deref().unwrap_or_default()
     }
-    /// <p>Describes the GPU accelerator settings for the current instance type of the Auto Scaling group.</p>
+    /// <p> Describes the GPU accelerator settings for the current instance type of the Auto Scaling group. </p>
     pub fn current_instance_gpu_info(&self) -> ::std::option::Option<&crate::types::GpuInfo> {
         self.current_instance_gpu_info.as_ref()
     }
@@ -218,10 +196,8 @@ impl AutoScalingGroupRecommendationBuilder {
     /// <p>The finding classification of the Auto Scaling group.</p>
     /// <p>Findings for Auto Scaling groups include:</p>
     /// <ul>
-    /// <li>
-    /// <p><b> <code>NotOptimized</code> </b>—An Auto Scaling group is considered not optimized when Compute Optimizer identifies a recommendation that can provide better performance for your workload.</p></li>
-    /// <li>
-    /// <p><b> <code>Optimized</code> </b>—An Auto Scaling group is considered optimized when Compute Optimizer determines that the group is correctly provisioned to run your workload based on the chosen instance type. For optimized resources, Compute Optimizer might recommend a new generation instance type.</p></li>
+    /// <li> <p> <b> <code>NotOptimized</code> </b>—An Auto Scaling group is considered not optimized when Compute Optimizer identifies a recommendation that can provide better performance for your workload.</p> </li>
+    /// <li> <p> <b> <code>Optimized</code> </b>—An Auto Scaling group is considered optimized when Compute Optimizer determines that the group is correctly provisioned to run your workload based on the chosen instance type. For optimized resources, Compute Optimizer might recommend a new generation instance type.</p> </li>
     /// </ul>
     pub fn finding(mut self, input: crate::types::Finding) -> Self {
         self.finding = ::std::option::Option::Some(input);
@@ -230,10 +206,8 @@ impl AutoScalingGroupRecommendationBuilder {
     /// <p>The finding classification of the Auto Scaling group.</p>
     /// <p>Findings for Auto Scaling groups include:</p>
     /// <ul>
-    /// <li>
-    /// <p><b> <code>NotOptimized</code> </b>—An Auto Scaling group is considered not optimized when Compute Optimizer identifies a recommendation that can provide better performance for your workload.</p></li>
-    /// <li>
-    /// <p><b> <code>Optimized</code> </b>—An Auto Scaling group is considered optimized when Compute Optimizer determines that the group is correctly provisioned to run your workload based on the chosen instance type. For optimized resources, Compute Optimizer might recommend a new generation instance type.</p></li>
+    /// <li> <p> <b> <code>NotOptimized</code> </b>—An Auto Scaling group is considered not optimized when Compute Optimizer identifies a recommendation that can provide better performance for your workload.</p> </li>
+    /// <li> <p> <b> <code>Optimized</code> </b>—An Auto Scaling group is considered optimized when Compute Optimizer determines that the group is correctly provisioned to run your workload based on the chosen instance type. For optimized resources, Compute Optimizer might recommend a new generation instance type.</p> </li>
     /// </ul>
     pub fn set_finding(mut self, input: ::std::option::Option<crate::types::Finding>) -> Self {
         self.finding = input;
@@ -242,10 +216,8 @@ impl AutoScalingGroupRecommendationBuilder {
     /// <p>The finding classification of the Auto Scaling group.</p>
     /// <p>Findings for Auto Scaling groups include:</p>
     /// <ul>
-    /// <li>
-    /// <p><b> <code>NotOptimized</code> </b>—An Auto Scaling group is considered not optimized when Compute Optimizer identifies a recommendation that can provide better performance for your workload.</p></li>
-    /// <li>
-    /// <p><b> <code>Optimized</code> </b>—An Auto Scaling group is considered optimized when Compute Optimizer determines that the group is correctly provisioned to run your workload based on the chosen instance type. For optimized resources, Compute Optimizer might recommend a new generation instance type.</p></li>
+    /// <li> <p> <b> <code>NotOptimized</code> </b>—An Auto Scaling group is considered not optimized when Compute Optimizer identifies a recommendation that can provide better performance for your workload.</p> </li>
+    /// <li> <p> <b> <code>Optimized</code> </b>—An Auto Scaling group is considered optimized when Compute Optimizer determines that the group is correctly provisioned to run your workload based on the chosen instance type. For optimized resources, Compute Optimizer might recommend a new generation instance type.</p> </li>
     /// </ul>
     pub fn get_finding(&self) -> &::std::option::Option<crate::types::Finding> {
         &self.finding
@@ -373,24 +345,15 @@ impl AutoScalingGroupRecommendationBuilder {
     /// <p>The applications that might be running on the instances in the Auto Scaling group as inferred by Compute Optimizer.</p>
     /// <p>Compute Optimizer can infer if one of the following applications might be running on the instances:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AmazonEmr</code> - Infers that Amazon EMR might be running on the instances.</p></li>
-    /// <li>
-    /// <p><code>ApacheCassandra</code> - Infers that Apache Cassandra might be running on the instances.</p></li>
-    /// <li>
-    /// <p><code>ApacheHadoop</code> - Infers that Apache Hadoop might be running on the instances.</p></li>
-    /// <li>
-    /// <p><code>Memcached</code> - Infers that Memcached might be running on the instances.</p></li>
-    /// <li>
-    /// <p><code>NGINX</code> - Infers that NGINX might be running on the instances.</p></li>
-    /// <li>
-    /// <p><code>PostgreSql</code> - Infers that PostgreSQL might be running on the instances.</p></li>
-    /// <li>
-    /// <p><code>Redis</code> - Infers that Redis might be running on the instances.</p></li>
-    /// <li>
-    /// <p><code>Kafka</code> - Infers that Kafka might be running on the instance.</p></li>
-    /// <li>
-    /// <p><code>SQLServer</code> - Infers that SQLServer might be running on the instance.</p></li>
+    /// <li> <p> <code>AmazonEmr</code> - Infers that Amazon EMR might be running on the instances.</p> </li>
+    /// <li> <p> <code>ApacheCassandra</code> - Infers that Apache Cassandra might be running on the instances.</p> </li>
+    /// <li> <p> <code>ApacheHadoop</code> - Infers that Apache Hadoop might be running on the instances.</p> </li>
+    /// <li> <p> <code>Memcached</code> - Infers that Memcached might be running on the instances.</p> </li>
+    /// <li> <p> <code>NGINX</code> - Infers that NGINX might be running on the instances.</p> </li>
+    /// <li> <p> <code>PostgreSql</code> - Infers that PostgreSQL might be running on the instances.</p> </li>
+    /// <li> <p> <code>Redis</code> - Infers that Redis might be running on the instances.</p> </li>
+    /// <li> <p> <code>Kafka</code> - Infers that Kafka might be running on the instance.</p> </li>
+    /// <li> <p> <code>SQLServer</code> - Infers that SQLServer might be running on the instance.</p> </li>
     /// </ul>
     pub fn inferred_workload_types(mut self, input: crate::types::InferredWorkloadType) -> Self {
         let mut v = self.inferred_workload_types.unwrap_or_default();
@@ -401,24 +364,15 @@ impl AutoScalingGroupRecommendationBuilder {
     /// <p>The applications that might be running on the instances in the Auto Scaling group as inferred by Compute Optimizer.</p>
     /// <p>Compute Optimizer can infer if one of the following applications might be running on the instances:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AmazonEmr</code> - Infers that Amazon EMR might be running on the instances.</p></li>
-    /// <li>
-    /// <p><code>ApacheCassandra</code> - Infers that Apache Cassandra might be running on the instances.</p></li>
-    /// <li>
-    /// <p><code>ApacheHadoop</code> - Infers that Apache Hadoop might be running on the instances.</p></li>
-    /// <li>
-    /// <p><code>Memcached</code> - Infers that Memcached might be running on the instances.</p></li>
-    /// <li>
-    /// <p><code>NGINX</code> - Infers that NGINX might be running on the instances.</p></li>
-    /// <li>
-    /// <p><code>PostgreSql</code> - Infers that PostgreSQL might be running on the instances.</p></li>
-    /// <li>
-    /// <p><code>Redis</code> - Infers that Redis might be running on the instances.</p></li>
-    /// <li>
-    /// <p><code>Kafka</code> - Infers that Kafka might be running on the instance.</p></li>
-    /// <li>
-    /// <p><code>SQLServer</code> - Infers that SQLServer might be running on the instance.</p></li>
+    /// <li> <p> <code>AmazonEmr</code> - Infers that Amazon EMR might be running on the instances.</p> </li>
+    /// <li> <p> <code>ApacheCassandra</code> - Infers that Apache Cassandra might be running on the instances.</p> </li>
+    /// <li> <p> <code>ApacheHadoop</code> - Infers that Apache Hadoop might be running on the instances.</p> </li>
+    /// <li> <p> <code>Memcached</code> - Infers that Memcached might be running on the instances.</p> </li>
+    /// <li> <p> <code>NGINX</code> - Infers that NGINX might be running on the instances.</p> </li>
+    /// <li> <p> <code>PostgreSql</code> - Infers that PostgreSQL might be running on the instances.</p> </li>
+    /// <li> <p> <code>Redis</code> - Infers that Redis might be running on the instances.</p> </li>
+    /// <li> <p> <code>Kafka</code> - Infers that Kafka might be running on the instance.</p> </li>
+    /// <li> <p> <code>SQLServer</code> - Infers that SQLServer might be running on the instance.</p> </li>
     /// </ul>
     pub fn set_inferred_workload_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InferredWorkloadType>>) -> Self {
         self.inferred_workload_types = input;
@@ -427,39 +381,30 @@ impl AutoScalingGroupRecommendationBuilder {
     /// <p>The applications that might be running on the instances in the Auto Scaling group as inferred by Compute Optimizer.</p>
     /// <p>Compute Optimizer can infer if one of the following applications might be running on the instances:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AmazonEmr</code> - Infers that Amazon EMR might be running on the instances.</p></li>
-    /// <li>
-    /// <p><code>ApacheCassandra</code> - Infers that Apache Cassandra might be running on the instances.</p></li>
-    /// <li>
-    /// <p><code>ApacheHadoop</code> - Infers that Apache Hadoop might be running on the instances.</p></li>
-    /// <li>
-    /// <p><code>Memcached</code> - Infers that Memcached might be running on the instances.</p></li>
-    /// <li>
-    /// <p><code>NGINX</code> - Infers that NGINX might be running on the instances.</p></li>
-    /// <li>
-    /// <p><code>PostgreSql</code> - Infers that PostgreSQL might be running on the instances.</p></li>
-    /// <li>
-    /// <p><code>Redis</code> - Infers that Redis might be running on the instances.</p></li>
-    /// <li>
-    /// <p><code>Kafka</code> - Infers that Kafka might be running on the instance.</p></li>
-    /// <li>
-    /// <p><code>SQLServer</code> - Infers that SQLServer might be running on the instance.</p></li>
+    /// <li> <p> <code>AmazonEmr</code> - Infers that Amazon EMR might be running on the instances.</p> </li>
+    /// <li> <p> <code>ApacheCassandra</code> - Infers that Apache Cassandra might be running on the instances.</p> </li>
+    /// <li> <p> <code>ApacheHadoop</code> - Infers that Apache Hadoop might be running on the instances.</p> </li>
+    /// <li> <p> <code>Memcached</code> - Infers that Memcached might be running on the instances.</p> </li>
+    /// <li> <p> <code>NGINX</code> - Infers that NGINX might be running on the instances.</p> </li>
+    /// <li> <p> <code>PostgreSql</code> - Infers that PostgreSQL might be running on the instances.</p> </li>
+    /// <li> <p> <code>Redis</code> - Infers that Redis might be running on the instances.</p> </li>
+    /// <li> <p> <code>Kafka</code> - Infers that Kafka might be running on the instance.</p> </li>
+    /// <li> <p> <code>SQLServer</code> - Infers that SQLServer might be running on the instance.</p> </li>
     /// </ul>
     pub fn get_inferred_workload_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InferredWorkloadType>> {
         &self.inferred_workload_types
     }
-    /// <p>Describes the GPU accelerator settings for the current instance type of the Auto Scaling group.</p>
+    /// <p> Describes the GPU accelerator settings for the current instance type of the Auto Scaling group. </p>
     pub fn current_instance_gpu_info(mut self, input: crate::types::GpuInfo) -> Self {
         self.current_instance_gpu_info = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Describes the GPU accelerator settings for the current instance type of the Auto Scaling group.</p>
+    /// <p> Describes the GPU accelerator settings for the current instance type of the Auto Scaling group. </p>
     pub fn set_current_instance_gpu_info(mut self, input: ::std::option::Option<crate::types::GpuInfo>) -> Self {
         self.current_instance_gpu_info = input;
         self
     }
-    /// <p>Describes the GPU accelerator settings for the current instance type of the Auto Scaling group.</p>
+    /// <p> Describes the GPU accelerator settings for the current instance type of the Auto Scaling group. </p>
     pub fn get_current_instance_gpu_info(&self) -> &::std::option::Option<crate::types::GpuInfo> {
         &self.current_instance_gpu_info
     }

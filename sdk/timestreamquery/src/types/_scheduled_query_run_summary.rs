@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScheduledQueryRunSummary {
-    /// <p>InvocationTime for this run. This is the time at which the query is scheduled to run. Parameter <code>@scheduled_runtime</code> can be used in the query to get the value.</p>
+    /// <p>InvocationTime for this run. This is the time at which the query is scheduled to run. Parameter <code>@scheduled_runtime</code> can be used in the query to get the value. </p>
     pub invocation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The actual time when the query was run.</p>
     pub trigger_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -14,11 +14,11 @@ pub struct ScheduledQueryRunSummary {
     pub execution_stats: ::std::option::Option<crate::types::ExecutionStats>,
     /// <p>S3 location for error report.</p>
     pub error_report_location: ::std::option::Option<crate::types::ErrorReportLocation>,
-    /// <p>Error message for the scheduled query in case of failure. You might have to look at the error report to get more detailed error reasons.</p>
+    /// <p>Error message for the scheduled query in case of failure. You might have to look at the error report to get more detailed error reasons. </p>
     pub failure_reason: ::std::option::Option<::std::string::String>,
 }
 impl ScheduledQueryRunSummary {
-    /// <p>InvocationTime for this run. This is the time at which the query is scheduled to run. Parameter <code>@scheduled_runtime</code> can be used in the query to get the value.</p>
+    /// <p>InvocationTime for this run. This is the time at which the query is scheduled to run. Parameter <code>@scheduled_runtime</code> can be used in the query to get the value. </p>
     pub fn invocation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.invocation_time.as_ref()
     }
@@ -38,7 +38,7 @@ impl ScheduledQueryRunSummary {
     pub fn error_report_location(&self) -> ::std::option::Option<&crate::types::ErrorReportLocation> {
         self.error_report_location.as_ref()
     }
-    /// <p>Error message for the scheduled query in case of failure. You might have to look at the error report to get more detailed error reasons.</p>
+    /// <p>Error message for the scheduled query in case of failure. You might have to look at the error report to get more detailed error reasons. </p>
     pub fn failure_reason(&self) -> ::std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
@@ -62,17 +62,17 @@ pub struct ScheduledQueryRunSummaryBuilder {
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
 }
 impl ScheduledQueryRunSummaryBuilder {
-    /// <p>InvocationTime for this run. This is the time at which the query is scheduled to run. Parameter <code>@scheduled_runtime</code> can be used in the query to get the value.</p>
+    /// <p>InvocationTime for this run. This is the time at which the query is scheduled to run. Parameter <code>@scheduled_runtime</code> can be used in the query to get the value. </p>
     pub fn invocation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.invocation_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>InvocationTime for this run. This is the time at which the query is scheduled to run. Parameter <code>@scheduled_runtime</code> can be used in the query to get the value.</p>
+    /// <p>InvocationTime for this run. This is the time at which the query is scheduled to run. Parameter <code>@scheduled_runtime</code> can be used in the query to get the value. </p>
     pub fn set_invocation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.invocation_time = input;
         self
     }
-    /// <p>InvocationTime for this run. This is the time at which the query is scheduled to run. Parameter <code>@scheduled_runtime</code> can be used in the query to get the value.</p>
+    /// <p>InvocationTime for this run. This is the time at which the query is scheduled to run. Parameter <code>@scheduled_runtime</code> can be used in the query to get the value. </p>
     pub fn get_invocation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.invocation_time
     }
@@ -132,17 +132,17 @@ impl ScheduledQueryRunSummaryBuilder {
     pub fn get_error_report_location(&self) -> &::std::option::Option<crate::types::ErrorReportLocation> {
         &self.error_report_location
     }
-    /// <p>Error message for the scheduled query in case of failure. You might have to look at the error report to get more detailed error reasons.</p>
+    /// <p>Error message for the scheduled query in case of failure. You might have to look at the error report to get more detailed error reasons. </p>
     pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Error message for the scheduled query in case of failure. You might have to look at the error report to get more detailed error reasons.</p>
+    /// <p>Error message for the scheduled query in case of failure. You might have to look at the error report to get more detailed error reasons. </p>
     pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }
-    /// <p>Error message for the scheduled query in case of failure. You might have to look at the error report to get more detailed error reasons.</p>
+    /// <p>Error message for the scheduled query in case of failure. You might have to look at the error report to get more detailed error reasons. </p>
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.failure_reason
     }

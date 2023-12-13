@@ -246,7 +246,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeAccel
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DescribeAcceleratorTypesError {
-    /// <p>Raised when an unexpected error occurred during request processing.</p>
+    /// <p> Raised when an unexpected error occurred during request processing. </p>
     InternalServerException(crate::types::error::InternalServerException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

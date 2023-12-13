@@ -156,17 +156,17 @@ impl ListApplicationsFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>Filters response results.</p>
+    /// <p>Filters response results. </p>
     pub fn filter(mut self, input: crate::types::ListApplicationsFilter) -> Self {
         self.inner = self.inner.filter(input);
         self
     }
-    /// <p>Filters response results.</p>
+    /// <p>Filters response results. </p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::ListApplicationsFilter>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }
-    /// <p>Filters response results.</p>
+    /// <p>Filters response results. </p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::ListApplicationsFilter> {
         self.inner.get_filter()
     }

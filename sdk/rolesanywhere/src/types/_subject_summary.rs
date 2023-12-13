@@ -8,7 +8,7 @@ pub struct SubjectSummary {
     pub subject_arn: ::std::option::Option<::std::string::String>,
     /// <p>The id of the resource.</p>
     pub subject_id: ::std::option::Option<::std::string::String>,
-    /// <p>The enabled status of the subject.</p>
+    /// <p>The enabled status of the subject. </p>
     pub enabled: ::std::option::Option<bool>,
     /// <p>The x509 principal identifier of the authenticating certificate.</p>
     pub x509_subject: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ pub struct SubjectSummary {
     pub last_seen_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ISO-8601 time stamp of when the certificate was first used in a temporary credential request.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The ISO-8601 timestamp when the subject was last updated.</p>
+    /// <p>The ISO-8601 timestamp when the subject was last updated. </p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl SubjectSummary {
@@ -28,7 +28,7 @@ impl SubjectSummary {
     pub fn subject_id(&self) -> ::std::option::Option<&str> {
         self.subject_id.as_deref()
     }
-    /// <p>The enabled status of the subject.</p>
+    /// <p>The enabled status of the subject. </p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
@@ -44,7 +44,7 @@ impl SubjectSummary {
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The ISO-8601 timestamp when the subject was last updated.</p>
+    /// <p>The ISO-8601 timestamp when the subject was last updated. </p>
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
@@ -97,17 +97,17 @@ impl SubjectSummaryBuilder {
     pub fn get_subject_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.subject_id
     }
-    /// <p>The enabled status of the subject.</p>
+    /// <p>The enabled status of the subject. </p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The enabled status of the subject.</p>
+    /// <p>The enabled status of the subject. </p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }
-    /// <p>The enabled status of the subject.</p>
+    /// <p>The enabled status of the subject. </p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
         &self.enabled
     }
@@ -153,17 +153,17 @@ impl SubjectSummaryBuilder {
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
-    /// <p>The ISO-8601 timestamp when the subject was last updated.</p>
+    /// <p>The ISO-8601 timestamp when the subject was last updated. </p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The ISO-8601 timestamp when the subject was last updated.</p>
+    /// <p>The ISO-8601 timestamp when the subject was last updated. </p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
-    /// <p>The ISO-8601 timestamp when the subject was last updated.</p>
+    /// <p>The ISO-8601 timestamp when the subject was last updated. </p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }

@@ -22,7 +22,7 @@ impl DeleteBudgetInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteBudget`.
 ///
-/// <p>Deletes a budget. You can delete your budget at any time.</p><important>
+/// <p>Deletes a budget. You can delete your budget at any time.</p> <important>
 /// <p>Deleting a budget also deletes the notifications and subscribers that are associated with that budget.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

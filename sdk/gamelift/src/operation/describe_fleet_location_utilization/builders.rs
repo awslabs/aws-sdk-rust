@@ -23,11 +23,11 @@ impl DescribeFleetLocationUtilizationInputBuilder {
 /// Fluent builder constructing a request to `DescribeFleetLocationUtilization`.
 ///
 /// <p>Retrieves current usage data for a fleet location. Utilization data provides a snapshot of current game hosting activity at the requested location. Use this operation to retrieve utilization information for a fleet's remote location or home Region (you can also retrieve home Region utilization by calling <code>DescribeFleetUtilization</code>).</p>
-/// <p>To retrieve utilization data, identify a fleet and location.</p>
-/// <p>If successful, a <code>FleetUtilization</code> object is returned for the requested fleet location.</p>
-/// <p><b>Learn more</b></p>
-/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up Amazon GameLift fleets</a></p>
-/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html#gamelift-metrics-fleet">GameLift metrics for fleets</a></p>
+/// <p>To retrieve utilization data, identify a fleet and location. </p>
+/// <p>If successful, a <code>FleetUtilization</code> object is returned for the requested fleet location. </p>
+/// <p> <b>Learn more</b> </p>
+/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up Amazon GameLift fleets</a> </p>
+/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html#gamelift-metrics-fleet">GameLift metrics for fleets</a> </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeFleetLocationUtilizationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

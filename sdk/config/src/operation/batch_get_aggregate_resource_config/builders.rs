@@ -22,12 +22,10 @@ impl BatchGetAggregateResourceConfigInputBuilder {
 }
 /// Fluent builder constructing a request to `BatchGetAggregateResourceConfig`.
 ///
-/// <p>Returns the current configuration items for resources that are present in your Config aggregator. The operation also returns a list of resources that are not processed in the current request. If there are no unprocessed resources, the operation returns an empty <code>unprocessedResourceIdentifiers</code> list.</p><note>
+/// <p>Returns the current configuration items for resources that are present in your Config aggregator. The operation also returns a list of resources that are not processed in the current request. If there are no unprocessed resources, the operation returns an empty <code>unprocessedResourceIdentifiers</code> list. </p> <note>
 /// <ul>
-/// <li>
-/// <p>The API does not return results for deleted resources.</p></li>
-/// <li>
-/// <p>The API does not return tags and relationships.</p></li>
+/// <li> <p>The API does not return results for deleted resources.</p> </li>
+/// <li> <p> The API does not return tags and relationships.</p> </li>
 /// </ul>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -133,17 +131,17 @@ impl BatchGetAggregateResourceConfigFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_resource_identifiers`](Self::set_resource_identifiers).
     ///
-    /// <p>A list of aggregate ResourceIdentifiers objects.</p>
+    /// <p>A list of aggregate ResourceIdentifiers objects. </p>
     pub fn resource_identifiers(mut self, input: crate::types::AggregateResourceIdentifier) -> Self {
         self.inner = self.inner.resource_identifiers(input);
         self
     }
-    /// <p>A list of aggregate ResourceIdentifiers objects.</p>
+    /// <p>A list of aggregate ResourceIdentifiers objects. </p>
     pub fn set_resource_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AggregateResourceIdentifier>>) -> Self {
         self.inner = self.inner.set_resource_identifiers(input);
         self
     }
-    /// <p>A list of aggregate ResourceIdentifiers objects.</p>
+    /// <p>A list of aggregate ResourceIdentifiers objects. </p>
     pub fn get_resource_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregateResourceIdentifier>> {
         self.inner.get_resource_identifiers()
     }

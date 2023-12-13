@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloseStatusFilter {
-    /// <p>The close status that must match the close status of an execution for it to meet the criteria of this filter.</p>
+    /// <p> The close status that must match the close status of an execution for it to meet the criteria of this filter.</p>
     pub status: crate::types::CloseStatus,
 }
 impl CloseStatusFilter {
-    /// <p>The close status that must match the close status of an execution for it to meet the criteria of this filter.</p>
+    /// <p> The close status that must match the close status of an execution for it to meet the criteria of this filter.</p>
     pub fn status(&self) -> &crate::types::CloseStatus {
         &self.status
     }
@@ -27,18 +27,18 @@ pub struct CloseStatusFilterBuilder {
     pub(crate) status: ::std::option::Option<crate::types::CloseStatus>,
 }
 impl CloseStatusFilterBuilder {
-    /// <p>The close status that must match the close status of an execution for it to meet the criteria of this filter.</p>
+    /// <p> The close status that must match the close status of an execution for it to meet the criteria of this filter.</p>
     /// This field is required.
     pub fn status(mut self, input: crate::types::CloseStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The close status that must match the close status of an execution for it to meet the criteria of this filter.</p>
+    /// <p> The close status that must match the close status of an execution for it to meet the criteria of this filter.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::CloseStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The close status that must match the close status of an execution for it to meet the criteria of this filter.</p>
+    /// <p> The close status that must match the close status of an execution for it to meet the criteria of this filter.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::CloseStatus> {
         &self.status
     }

@@ -2,35 +2,28 @@
 
 /// <p>A fleet location and its life-cycle state. A location state object might be used to describe a fleet's remote location or home Region. Life-cycle state tracks the progress of launching the first instance in a new location and preparing it for game hosting, and then removing all instances and deleting the location from the fleet.</p>
 /// <ul>
-/// <li>
-/// <p><b>NEW</b> -- A new fleet location has been defined and desired instances is set to 1.</p></li>
-/// <li>
-/// <p><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting up the new fleet location, creating new instances with the game build or Realtime script and starting server processes.</p></li>
-/// <li>
-/// <p><b>ACTIVE</b> -- Hosts can now accept game sessions.</p></li>
-/// <li>
-/// <p><b>ERROR</b> -- An error occurred when downloading, validating, building, or activating the fleet location.</p></li>
-/// <li>
-/// <p><b>DELETING</b> -- Hosts are responding to a delete fleet location request.</p></li>
-/// <li>
-/// <p><b>TERMINATED</b> -- The fleet location no longer exists.</p></li>
-/// <li>
-/// <p><b>NOT_FOUND</b> -- The fleet location was not found. This could be because the custom location was removed or not created.</p></li>
+/// <li> <p> <b>NEW</b> -- A new fleet location has been defined and desired instances is set to 1. </p> </li>
+/// <li> <p> <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting up the new fleet location, creating new instances with the game build or Realtime script and starting server processes.</p> </li>
+/// <li> <p> <b>ACTIVE</b> -- Hosts can now accept game sessions.</p> </li>
+/// <li> <p> <b>ERROR</b> -- An error occurred when downloading, validating, building, or activating the fleet location.</p> </li>
+/// <li> <p> <b>DELETING</b> -- Hosts are responding to a delete fleet location request.</p> </li>
+/// <li> <p> <b>TERMINATED</b> -- The fleet location no longer exists.</p> </li>
+/// <li> <p> <b>NOT_FOUND</b> -- The fleet location was not found. This could be because the custom location was removed or not created. </p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LocationState {
-    /// <p>The fleet location, expressed as an Amazon Web Services Region code such as <code>us-west-2</code>.</p>
+    /// <p>The fleet location, expressed as an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
     pub location: ::std::option::Option<::std::string::String>,
-    /// <p>The life-cycle status of a fleet location.</p>
+    /// <p>The life-cycle status of a fleet location. </p>
     pub status: ::std::option::Option<crate::types::FleetStatus>,
 }
 impl LocationState {
-    /// <p>The fleet location, expressed as an Amazon Web Services Region code such as <code>us-west-2</code>.</p>
+    /// <p>The fleet location, expressed as an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
     pub fn location(&self) -> ::std::option::Option<&str> {
         self.location.as_deref()
     }
-    /// <p>The life-cycle status of a fleet location.</p>
+    /// <p>The life-cycle status of a fleet location. </p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::FleetStatus> {
         self.status.as_ref()
     }
@@ -50,31 +43,31 @@ pub struct LocationStateBuilder {
     pub(crate) status: ::std::option::Option<crate::types::FleetStatus>,
 }
 impl LocationStateBuilder {
-    /// <p>The fleet location, expressed as an Amazon Web Services Region code such as <code>us-west-2</code>.</p>
+    /// <p>The fleet location, expressed as an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The fleet location, expressed as an Amazon Web Services Region code such as <code>us-west-2</code>.</p>
+    /// <p>The fleet location, expressed as an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location = input;
         self
     }
-    /// <p>The fleet location, expressed as an Amazon Web Services Region code such as <code>us-west-2</code>.</p>
+    /// <p>The fleet location, expressed as an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.location
     }
-    /// <p>The life-cycle status of a fleet location.</p>
+    /// <p>The life-cycle status of a fleet location. </p>
     pub fn status(mut self, input: crate::types::FleetStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The life-cycle status of a fleet location.</p>
+    /// <p>The life-cycle status of a fleet location. </p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::FleetStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The life-cycle status of a fleet location.</p>
+    /// <p>The life-cycle status of a fleet location. </p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::FleetStatus> {
         &self.status
     }

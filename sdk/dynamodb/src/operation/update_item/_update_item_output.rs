@@ -12,11 +12,8 @@ pub struct UpdateItemOutput {
     /// <p>Information about item collections, if any, that were affected by the <code>UpdateItem</code> operation. <code>ItemCollectionMetrics</code> is only returned if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the table does not have any local secondary indexes, this information is not returned in the response.</p>
     /// <p>Each <code>ItemCollectionMetrics</code> element consists of:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the partition key value of the item itself.</p></li>
-    /// <li>
-    /// <p><code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p>
-    /// <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p></li>
+    /// <li> <p> <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the partition key value of the item itself.</p> </li>
+    /// <li> <p> <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p> <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p> </li>
     /// </ul>
     pub item_collection_metrics: ::std::option::Option<crate::types::ItemCollectionMetrics>,
     _request_id: Option<String>,
@@ -34,11 +31,8 @@ impl UpdateItemOutput {
     /// <p>Information about item collections, if any, that were affected by the <code>UpdateItem</code> operation. <code>ItemCollectionMetrics</code> is only returned if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the table does not have any local secondary indexes, this information is not returned in the response.</p>
     /// <p>Each <code>ItemCollectionMetrics</code> element consists of:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the partition key value of the item itself.</p></li>
-    /// <li>
-    /// <p><code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p>
-    /// <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p></li>
+    /// <li> <p> <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the partition key value of the item itself.</p> </li>
+    /// <li> <p> <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p> <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p> </li>
     /// </ul>
     pub fn item_collection_metrics(&self) -> ::std::option::Option<&crate::types::ItemCollectionMetrics> {
         self.item_collection_metrics.as_ref()
@@ -109,11 +103,8 @@ impl UpdateItemOutputBuilder {
     /// <p>Information about item collections, if any, that were affected by the <code>UpdateItem</code> operation. <code>ItemCollectionMetrics</code> is only returned if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the table does not have any local secondary indexes, this information is not returned in the response.</p>
     /// <p>Each <code>ItemCollectionMetrics</code> element consists of:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the partition key value of the item itself.</p></li>
-    /// <li>
-    /// <p><code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p>
-    /// <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p></li>
+    /// <li> <p> <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the partition key value of the item itself.</p> </li>
+    /// <li> <p> <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p> <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p> </li>
     /// </ul>
     pub fn item_collection_metrics(mut self, input: crate::types::ItemCollectionMetrics) -> Self {
         self.item_collection_metrics = ::std::option::Option::Some(input);
@@ -122,11 +113,8 @@ impl UpdateItemOutputBuilder {
     /// <p>Information about item collections, if any, that were affected by the <code>UpdateItem</code> operation. <code>ItemCollectionMetrics</code> is only returned if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the table does not have any local secondary indexes, this information is not returned in the response.</p>
     /// <p>Each <code>ItemCollectionMetrics</code> element consists of:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the partition key value of the item itself.</p></li>
-    /// <li>
-    /// <p><code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p>
-    /// <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p></li>
+    /// <li> <p> <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the partition key value of the item itself.</p> </li>
+    /// <li> <p> <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p> <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p> </li>
     /// </ul>
     pub fn set_item_collection_metrics(mut self, input: ::std::option::Option<crate::types::ItemCollectionMetrics>) -> Self {
         self.item_collection_metrics = input;
@@ -135,11 +123,8 @@ impl UpdateItemOutputBuilder {
     /// <p>Information about item collections, if any, that were affected by the <code>UpdateItem</code> operation. <code>ItemCollectionMetrics</code> is only returned if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the table does not have any local secondary indexes, this information is not returned in the response.</p>
     /// <p>Each <code>ItemCollectionMetrics</code> element consists of:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the partition key value of the item itself.</p></li>
-    /// <li>
-    /// <p><code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p>
-    /// <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p></li>
+    /// <li> <p> <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the partition key value of the item itself.</p> </li>
+    /// <li> <p> <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p> <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p> </li>
     /// </ul>
     pub fn get_item_collection_metrics(&self) -> &::std::option::Option<crate::types::ItemCollectionMetrics> {
         &self.item_collection_metrics

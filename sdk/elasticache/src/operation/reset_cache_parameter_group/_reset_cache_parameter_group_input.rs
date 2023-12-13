@@ -7,7 +7,7 @@ pub struct ResetCacheParameterGroupInput {
     /// <p>The name of the cache parameter group to reset.</p>
     pub cache_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>If <code>true</code>, all parameters in the cache parameter group are reset to their default values. If <code>false</code>, only the parameters listed by <code>ParameterNameValues</code> are reset to their default values.</p>
-    /// <p>Valid values: <code>true</code> | <code>false</code></p>
+    /// <p>Valid values: <code>true</code> | <code>false</code> </p>
     pub reset_all_parameters: ::std::option::Option<bool>,
     /// <p>An array of parameter names to reset to their default values. If <code>ResetAllParameters</code> is <code>true</code>, do not use <code>ParameterNameValues</code>. If <code>ResetAllParameters</code> is <code>false</code>, you must specify the name of at least one parameter to reset.</p>
     pub parameter_name_values: ::std::option::Option<::std::vec::Vec<crate::types::ParameterNameValue>>,
@@ -18,7 +18,7 @@ impl ResetCacheParameterGroupInput {
         self.cache_parameter_group_name.as_deref()
     }
     /// <p>If <code>true</code>, all parameters in the cache parameter group are reset to their default values. If <code>false</code>, only the parameters listed by <code>ParameterNameValues</code> are reset to their default values.</p>
-    /// <p>Valid values: <code>true</code> | <code>false</code></p>
+    /// <p>Valid values: <code>true</code> | <code>false</code> </p>
     pub fn reset_all_parameters(&self) -> ::std::option::Option<bool> {
         self.reset_all_parameters
     }
@@ -61,19 +61,19 @@ impl ResetCacheParameterGroupInputBuilder {
         &self.cache_parameter_group_name
     }
     /// <p>If <code>true</code>, all parameters in the cache parameter group are reset to their default values. If <code>false</code>, only the parameters listed by <code>ParameterNameValues</code> are reset to their default values.</p>
-    /// <p>Valid values: <code>true</code> | <code>false</code></p>
+    /// <p>Valid values: <code>true</code> | <code>false</code> </p>
     pub fn reset_all_parameters(mut self, input: bool) -> Self {
         self.reset_all_parameters = ::std::option::Option::Some(input);
         self
     }
     /// <p>If <code>true</code>, all parameters in the cache parameter group are reset to their default values. If <code>false</code>, only the parameters listed by <code>ParameterNameValues</code> are reset to their default values.</p>
-    /// <p>Valid values: <code>true</code> | <code>false</code></p>
+    /// <p>Valid values: <code>true</code> | <code>false</code> </p>
     pub fn set_reset_all_parameters(mut self, input: ::std::option::Option<bool>) -> Self {
         self.reset_all_parameters = input;
         self
     }
     /// <p>If <code>true</code>, all parameters in the cache parameter group are reset to their default values. If <code>false</code>, only the parameters listed by <code>ParameterNameValues</code> are reset to their default values.</p>
-    /// <p>Valid values: <code>true</code> | <code>false</code></p>
+    /// <p>Valid values: <code>true</code> | <code>false</code> </p>
     pub fn get_reset_all_parameters(&self) -> &::std::option::Option<bool> {
         &self.reset_all_parameters
     }

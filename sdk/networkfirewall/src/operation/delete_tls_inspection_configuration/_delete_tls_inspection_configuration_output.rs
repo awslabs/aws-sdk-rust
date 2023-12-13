@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteTlsInspectionConfigurationOutput {
-    /// <p>The high-level properties of a TLS inspection configuration. This, along with the <code>TLSInspectionConfiguration</code>, define the TLS inspection configuration. You can retrieve all objects for a TLS inspection configuration by calling <code>DescribeTLSInspectionConfiguration</code>.</p>
+    /// <p>The high-level properties of a TLS inspection configuration. This, along with the <code>TLSInspectionConfiguration</code>, define the TLS inspection configuration. You can retrieve all objects for a TLS inspection configuration by calling <code>DescribeTLSInspectionConfiguration</code>. </p>
     pub tls_inspection_configuration_response: ::std::option::Option<crate::types::TlsInspectionConfigurationResponse>,
     _request_id: Option<String>,
 }
 impl DeleteTlsInspectionConfigurationOutput {
-    /// <p>The high-level properties of a TLS inspection configuration. This, along with the <code>TLSInspectionConfiguration</code>, define the TLS inspection configuration. You can retrieve all objects for a TLS inspection configuration by calling <code>DescribeTLSInspectionConfiguration</code>.</p>
+    /// <p>The high-level properties of a TLS inspection configuration. This, along with the <code>TLSInspectionConfiguration</code>, define the TLS inspection configuration. You can retrieve all objects for a TLS inspection configuration by calling <code>DescribeTLSInspectionConfiguration</code>. </p>
     pub fn tls_inspection_configuration_response(&self) -> ::std::option::Option<&crate::types::TlsInspectionConfigurationResponse> {
         self.tls_inspection_configuration_response.as_ref()
     }
@@ -33,13 +33,13 @@ pub struct DeleteTlsInspectionConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteTlsInspectionConfigurationOutputBuilder {
-    /// <p>The high-level properties of a TLS inspection configuration. This, along with the <code>TLSInspectionConfiguration</code>, define the TLS inspection configuration. You can retrieve all objects for a TLS inspection configuration by calling <code>DescribeTLSInspectionConfiguration</code>.</p>
+    /// <p>The high-level properties of a TLS inspection configuration. This, along with the <code>TLSInspectionConfiguration</code>, define the TLS inspection configuration. You can retrieve all objects for a TLS inspection configuration by calling <code>DescribeTLSInspectionConfiguration</code>. </p>
     /// This field is required.
     pub fn tls_inspection_configuration_response(mut self, input: crate::types::TlsInspectionConfigurationResponse) -> Self {
         self.tls_inspection_configuration_response = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The high-level properties of a TLS inspection configuration. This, along with the <code>TLSInspectionConfiguration</code>, define the TLS inspection configuration. You can retrieve all objects for a TLS inspection configuration by calling <code>DescribeTLSInspectionConfiguration</code>.</p>
+    /// <p>The high-level properties of a TLS inspection configuration. This, along with the <code>TLSInspectionConfiguration</code>, define the TLS inspection configuration. You can retrieve all objects for a TLS inspection configuration by calling <code>DescribeTLSInspectionConfiguration</code>. </p>
     pub fn set_tls_inspection_configuration_response(
         mut self,
         input: ::std::option::Option<crate::types::TlsInspectionConfigurationResponse>,
@@ -47,7 +47,7 @@ impl DeleteTlsInspectionConfigurationOutputBuilder {
         self.tls_inspection_configuration_response = input;
         self
     }
-    /// <p>The high-level properties of a TLS inspection configuration. This, along with the <code>TLSInspectionConfiguration</code>, define the TLS inspection configuration. You can retrieve all objects for a TLS inspection configuration by calling <code>DescribeTLSInspectionConfiguration</code>.</p>
+    /// <p>The high-level properties of a TLS inspection configuration. This, along with the <code>TLSInspectionConfiguration</code>, define the TLS inspection configuration. You can retrieve all objects for a TLS inspection configuration by calling <code>DescribeTLSInspectionConfiguration</code>. </p>
     pub fn get_tls_inspection_configuration_response(&self) -> &::std::option::Option<crate::types::TlsInspectionConfigurationResponse> {
         &self.tls_inspection_configuration_response
     }

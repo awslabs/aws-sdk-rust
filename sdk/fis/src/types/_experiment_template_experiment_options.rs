@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExperimentTemplateExperimentOptions {
-    /// <p>The account targeting setting for an experiment template.</p>
+    /// <p>The account targeting setting for an experiment template. </p>
     pub account_targeting: ::std::option::Option<crate::types::AccountTargeting>,
     /// <p>The empty target resolution mode for an experiment template.</p>
     pub empty_target_resolution_mode: ::std::option::Option<crate::types::EmptyTargetResolutionMode>,
 }
 impl ExperimentTemplateExperimentOptions {
-    /// <p>The account targeting setting for an experiment template.</p>
+    /// <p>The account targeting setting for an experiment template. </p>
     pub fn account_targeting(&self) -> ::std::option::Option<&crate::types::AccountTargeting> {
         self.account_targeting.as_ref()
     }
@@ -34,17 +34,17 @@ pub struct ExperimentTemplateExperimentOptionsBuilder {
     pub(crate) empty_target_resolution_mode: ::std::option::Option<crate::types::EmptyTargetResolutionMode>,
 }
 impl ExperimentTemplateExperimentOptionsBuilder {
-    /// <p>The account targeting setting for an experiment template.</p>
+    /// <p>The account targeting setting for an experiment template. </p>
     pub fn account_targeting(mut self, input: crate::types::AccountTargeting) -> Self {
         self.account_targeting = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The account targeting setting for an experiment template.</p>
+    /// <p>The account targeting setting for an experiment template. </p>
     pub fn set_account_targeting(mut self, input: ::std::option::Option<crate::types::AccountTargeting>) -> Self {
         self.account_targeting = input;
         self
     }
-    /// <p>The account targeting setting for an experiment template.</p>
+    /// <p>The account targeting setting for an experiment template. </p>
     pub fn get_account_targeting(&self) -> &::std::option::Option<crate::types::AccountTargeting> {
         &self.account_targeting
     }

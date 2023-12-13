@@ -22,8 +22,8 @@ impl AssociateSubnetsInputBuilder {
 }
 /// Fluent builder constructing a request to `AssociateSubnets`.
 ///
-/// <p>Associates the specified subnets in the Amazon VPC to the firewall. You can specify one subnet for each of the Availability Zones that the VPC spans.</p>
-/// <p>This request creates an Network Firewall firewall endpoint in each of the subnets. To enable the firewall's protections, you must also modify the VPC's route tables for each subnet's Availability Zone, to redirect the traffic that's coming into and going out of the zone through the firewall endpoint.</p>
+/// <p>Associates the specified subnets in the Amazon VPC to the firewall. You can specify one subnet for each of the Availability Zones that the VPC spans. </p>
+/// <p>This request creates an Network Firewall firewall endpoint in each of the subnets. To enable the firewall's protections, you must also modify the VPC's route tables for each subnet's Availability Zone, to redirect the traffic that's coming into and going out of the zone through the firewall endpoint. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateSubnetsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -109,57 +109,57 @@ impl AssociateSubnetsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request.</p>
+    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
     /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
-    /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token.</p>
+    /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
     pub fn update_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.update_token(input.into());
         self
     }
-    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request.</p>
+    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
     /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
-    /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token.</p>
+    /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
     pub fn set_update_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_update_token(input);
         self
     }
-    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request.</p>
+    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
     /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
-    /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token.</p>
+    /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
     pub fn get_update_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_update_token()
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub fn firewall_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.firewall_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub fn set_firewall_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_firewall_arn(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub fn get_firewall_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_firewall_arn()
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub fn firewall_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.firewall_name(input.into());
         self
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub fn set_firewall_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_firewall_name(input);
         self
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub fn get_firewall_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_firewall_name()
     }
@@ -167,17 +167,17 @@ impl AssociateSubnetsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_subnet_mappings`](Self::set_subnet_mappings).
     ///
-    /// <p>The IDs of the subnets that you want to associate with the firewall.</p>
+    /// <p>The IDs of the subnets that you want to associate with the firewall. </p>
     pub fn subnet_mappings(mut self, input: crate::types::SubnetMapping) -> Self {
         self.inner = self.inner.subnet_mappings(input);
         self
     }
-    /// <p>The IDs of the subnets that you want to associate with the firewall.</p>
+    /// <p>The IDs of the subnets that you want to associate with the firewall. </p>
     pub fn set_subnet_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SubnetMapping>>) -> Self {
         self.inner = self.inner.set_subnet_mappings(input);
         self
     }
-    /// <p>The IDs of the subnets that you want to associate with the firewall.</p>
+    /// <p>The IDs of the subnets that you want to associate with the firewall. </p>
     pub fn get_subnet_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubnetMapping>> {
         self.inner.get_subnet_mappings()
     }

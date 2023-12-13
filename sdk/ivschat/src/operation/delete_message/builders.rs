@@ -108,17 +108,17 @@ impl DeleteMessageFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Identifier of the room where the message should be deleted. Currently this must be an ARN.</p>
+    /// <p>Identifier of the room where the message should be deleted. Currently this must be an ARN. </p>
     pub fn room_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.room_identifier(input.into());
         self
     }
-    /// <p>Identifier of the room where the message should be deleted. Currently this must be an ARN.</p>
+    /// <p>Identifier of the room where the message should be deleted. Currently this must be an ARN. </p>
     pub fn set_room_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_room_identifier(input);
         self
     }
-    /// <p>Identifier of the room where the message should be deleted. Currently this must be an ARN.</p>
+    /// <p>Identifier of the room where the message should be deleted. Currently this must be an ARN. </p>
     pub fn get_room_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_room_identifier()
     }

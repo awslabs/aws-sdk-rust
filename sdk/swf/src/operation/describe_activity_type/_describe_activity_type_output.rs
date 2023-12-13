@@ -7,10 +7,8 @@ pub struct DescribeActivityTypeOutput {
     /// <p>General information about the activity type.</p>
     /// <p>The status of activity type (returned in the ActivityTypeInfo structure) can be one of the following.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running.</p></li>
-    /// <li>
-    /// <p><code>DEPRECATED</code> – The type was deprecated using <code>DeprecateActivityType</code>, but is still in use. You should keep workers supporting this type running. You cannot create new tasks of this type.</p></li>
+    /// <li> <p> <code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running. </p> </li>
+    /// <li> <p> <code>DEPRECATED</code> – The type was deprecated using <code>DeprecateActivityType</code>, but is still in use. You should keep workers supporting this type running. You cannot create new tasks of this type. </p> </li>
     /// </ul>
     pub type_info: ::std::option::Option<crate::types::ActivityTypeInfo>,
     /// <p>The configuration settings registered with the activity type.</p>
@@ -21,10 +19,8 @@ impl DescribeActivityTypeOutput {
     /// <p>General information about the activity type.</p>
     /// <p>The status of activity type (returned in the ActivityTypeInfo structure) can be one of the following.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running.</p></li>
-    /// <li>
-    /// <p><code>DEPRECATED</code> – The type was deprecated using <code>DeprecateActivityType</code>, but is still in use. You should keep workers supporting this type running. You cannot create new tasks of this type.</p></li>
+    /// <li> <p> <code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running. </p> </li>
+    /// <li> <p> <code>DEPRECATED</code> – The type was deprecated using <code>DeprecateActivityType</code>, but is still in use. You should keep workers supporting this type running. You cannot create new tasks of this type. </p> </li>
     /// </ul>
     pub fn type_info(&self) -> ::std::option::Option<&crate::types::ActivityTypeInfo> {
         self.type_info.as_ref()
@@ -58,10 +54,8 @@ impl DescribeActivityTypeOutputBuilder {
     /// <p>General information about the activity type.</p>
     /// <p>The status of activity type (returned in the ActivityTypeInfo structure) can be one of the following.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running.</p></li>
-    /// <li>
-    /// <p><code>DEPRECATED</code> – The type was deprecated using <code>DeprecateActivityType</code>, but is still in use. You should keep workers supporting this type running. You cannot create new tasks of this type.</p></li>
+    /// <li> <p> <code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running. </p> </li>
+    /// <li> <p> <code>DEPRECATED</code> – The type was deprecated using <code>DeprecateActivityType</code>, but is still in use. You should keep workers supporting this type running. You cannot create new tasks of this type. </p> </li>
     /// </ul>
     /// This field is required.
     pub fn type_info(mut self, input: crate::types::ActivityTypeInfo) -> Self {
@@ -71,10 +65,8 @@ impl DescribeActivityTypeOutputBuilder {
     /// <p>General information about the activity type.</p>
     /// <p>The status of activity type (returned in the ActivityTypeInfo structure) can be one of the following.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running.</p></li>
-    /// <li>
-    /// <p><code>DEPRECATED</code> – The type was deprecated using <code>DeprecateActivityType</code>, but is still in use. You should keep workers supporting this type running. You cannot create new tasks of this type.</p></li>
+    /// <li> <p> <code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running. </p> </li>
+    /// <li> <p> <code>DEPRECATED</code> – The type was deprecated using <code>DeprecateActivityType</code>, but is still in use. You should keep workers supporting this type running. You cannot create new tasks of this type. </p> </li>
     /// </ul>
     pub fn set_type_info(mut self, input: ::std::option::Option<crate::types::ActivityTypeInfo>) -> Self {
         self.type_info = input;
@@ -83,10 +75,8 @@ impl DescribeActivityTypeOutputBuilder {
     /// <p>General information about the activity type.</p>
     /// <p>The status of activity type (returned in the ActivityTypeInfo structure) can be one of the following.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running.</p></li>
-    /// <li>
-    /// <p><code>DEPRECATED</code> – The type was deprecated using <code>DeprecateActivityType</code>, but is still in use. You should keep workers supporting this type running. You cannot create new tasks of this type.</p></li>
+    /// <li> <p> <code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running. </p> </li>
+    /// <li> <p> <code>DEPRECATED</code> – The type was deprecated using <code>DeprecateActivityType</code>, but is still in use. You should keep workers supporting this type running. You cannot create new tasks of this type. </p> </li>
     /// </ul>
     pub fn get_type_info(&self) -> &::std::option::Option<crate::types::ActivityTypeInfo> {
         &self.type_info

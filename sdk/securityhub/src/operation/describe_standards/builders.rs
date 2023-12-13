@@ -23,7 +23,7 @@ impl DescribeStandardsInputBuilder {
 /// Fluent builder constructing a request to `DescribeStandards`.
 ///
 /// <p>Returns a list of the available standards in Security Hub.</p>
-/// <p>For each standard, the results include the standard ARN, the name, and a description.</p>
+/// <p>For each standard, the results include the standard ARN, the name, and a description. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeStandardsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

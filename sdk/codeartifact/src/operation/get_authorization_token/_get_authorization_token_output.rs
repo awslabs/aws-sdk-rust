@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAuthorizationTokenOutput {
-    /// <p>The returned authentication token.</p>
+    /// <p> The returned authentication token. </p>
     pub authorization_token: ::std::option::Option<::std::string::String>,
-    /// <p>A timestamp that specifies the date and time the authorization token expires.</p>
+    /// <p> A timestamp that specifies the date and time the authorization token expires. </p>
     pub expiration: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl GetAuthorizationTokenOutput {
-    /// <p>The returned authentication token.</p>
+    /// <p> The returned authentication token. </p>
     pub fn authorization_token(&self) -> ::std::option::Option<&str> {
         self.authorization_token.as_deref()
     }
-    /// <p>A timestamp that specifies the date and time the authorization token expires.</p>
+    /// <p> A timestamp that specifies the date and time the authorization token expires. </p>
     pub fn expiration(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.expiration.as_ref()
     }
@@ -40,31 +40,31 @@ pub struct GetAuthorizationTokenOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetAuthorizationTokenOutputBuilder {
-    /// <p>The returned authentication token.</p>
+    /// <p> The returned authentication token. </p>
     pub fn authorization_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authorization_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The returned authentication token.</p>
+    /// <p> The returned authentication token. </p>
     pub fn set_authorization_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authorization_token = input;
         self
     }
-    /// <p>The returned authentication token.</p>
+    /// <p> The returned authentication token. </p>
     pub fn get_authorization_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.authorization_token
     }
-    /// <p>A timestamp that specifies the date and time the authorization token expires.</p>
+    /// <p> A timestamp that specifies the date and time the authorization token expires. </p>
     pub fn expiration(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.expiration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A timestamp that specifies the date and time the authorization token expires.</p>
+    /// <p> A timestamp that specifies the date and time the authorization token expires. </p>
     pub fn set_expiration(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expiration = input;
         self
     }
-    /// <p>A timestamp that specifies the date and time the authorization token expires.</p>
+    /// <p> A timestamp that specifies the date and time the authorization token expires. </p>
     pub fn get_expiration(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.expiration
     }

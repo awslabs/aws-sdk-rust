@@ -8,7 +8,7 @@ pub struct HyperParameterTrainingJobDefinition {
     pub definition_name: ::std::option::Option<::std::string::String>,
     /// <p>Defines the objective metric for a hyperparameter tuning job. Hyperparameter tuning uses the value of this metric to evaluate the training jobs it launches, and returns the training job that results in either the highest or lowest value for this metric, depending on the value you specify for the <code>Type</code> parameter. If you want to define a custom objective metric, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics-variables.html">Define metrics and environment variables</a>.</p>
     pub tuning_objective: ::std::option::Option<crate::types::HyperParameterTuningJobObjective>,
-    /// <p>Specifies ranges of integer, continuous, and categorical hyperparameters that a hyperparameter tuning job searches. The hyperparameter tuning job launches training jobs with hyperparameter values within these ranges to find the combination of values that result in the training job with the best performance as measured by the objective metric of the hyperparameter tuning job.</p><note>
+    /// <p>Specifies ranges of integer, continuous, and categorical hyperparameters that a hyperparameter tuning job searches. The hyperparameter tuning job launches training jobs with hyperparameter values within these ranges to find the combination of values that result in the training job with the best performance as measured by the objective metric of the hyperparameter tuning job.</p> <note>
     /// <p>The maximum number of items specified for <code>Array Members</code> refers to the maximum number of hyperparameters for each range and also the maximum for the hyperparameter tuning job itself. That is, the sum of the number of hyperparameters for all the ranges can't exceed the maximum number specified.</p>
     /// </note>
     pub hyper_parameter_ranges: ::std::option::Option<crate::types::ParameterRanges>,
@@ -25,7 +25,7 @@ pub struct HyperParameterTrainingJobDefinition {
     /// <p>Specifies the path to the Amazon S3 bucket where you store model artifacts from the training jobs that the tuning job launches.</p>
     pub output_data_config: ::std::option::Option<crate::types::OutputDataConfig>,
     /// <p>The resources, including the compute instances and storage volumes, to use for the training jobs that the tuning job launches.</p>
-    /// <p>Storage volumes store model artifacts and incremental states. Training algorithms might also use storage volumes for scratch space. If you want SageMaker to use the storage volume to store the training data, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For distributed training algorithms, specify an instance count greater than 1.</p><note>
+    /// <p>Storage volumes store model artifacts and incremental states. Training algorithms might also use storage volumes for scratch space. If you want SageMaker to use the storage volume to store the training data, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For distributed training algorithms, specify an instance count greater than 1.</p> <note>
     /// <p>If you want to use hyperparameter optimization with instance type flexibility, use <code>HyperParameterTuningResourceConfig</code> instead.</p>
     /// </note>
     pub resource_config: ::std::option::Option<crate::types::ResourceConfig>,
@@ -37,13 +37,13 @@ pub struct HyperParameterTrainingJobDefinition {
     pub enable_inter_container_traffic_encryption: ::std::option::Option<bool>,
     /// <p>A Boolean indicating whether managed spot training is enabled (<code>True</code>) or not (<code>False</code>).</p>
     pub enable_managed_spot_training: ::std::option::Option<bool>,
-    /// <p>Contains information about the output location for managed spot training checkpoint data.</p>
+    /// <p>Contains information about the output location for managed spot training checkpoint data. </p>
     pub checkpoint_config: ::std::option::Option<crate::types::CheckpointConfig>,
     /// <p>The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.</p>
     pub retry_strategy: ::std::option::Option<crate::types::RetryStrategy>,
     /// <p>The configuration for the hyperparameter tuning resources, including the compute instances and storage volumes, used for training jobs launched by the tuning job. By default, storage volumes hold model artifacts and incremental states. Choose <code>File</code> for <code>TrainingInputMode</code> in the <code>AlgorithmSpecification</code> parameter to additionally store training data in the storage volume (optional).</p>
     pub hyper_parameter_tuning_resource_config: ::std::option::Option<crate::types::HyperParameterTuningResourceConfig>,
-    /// <p>An environment variable that you can pass into the SageMaker <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a> API. You can use an existing <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html#sagemaker-CreateTrainingJob-request-Environment">environment variable from the training container</a> or use your own. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics-variables.html">Define metrics and variables</a> for more information.</p><note>
+    /// <p>An environment variable that you can pass into the SageMaker <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a> API. You can use an existing <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html#sagemaker-CreateTrainingJob-request-Environment">environment variable from the training container</a> or use your own. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics-variables.html">Define metrics and variables</a> for more information.</p> <note>
     /// <p>The maximum number of items specified for <code>Map Entries</code> refers to the maximum number of environment variables for each <code>TrainingJobDefinition</code> and also the maximum for the hyperparameter tuning job itself. That is, the sum of the number of environment variables for all the training job definitions can't exceed the maximum number specified.</p>
     /// </note>
     pub environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -57,7 +57,7 @@ impl HyperParameterTrainingJobDefinition {
     pub fn tuning_objective(&self) -> ::std::option::Option<&crate::types::HyperParameterTuningJobObjective> {
         self.tuning_objective.as_ref()
     }
-    /// <p>Specifies ranges of integer, continuous, and categorical hyperparameters that a hyperparameter tuning job searches. The hyperparameter tuning job launches training jobs with hyperparameter values within these ranges to find the combination of values that result in the training job with the best performance as measured by the objective metric of the hyperparameter tuning job.</p><note>
+    /// <p>Specifies ranges of integer, continuous, and categorical hyperparameters that a hyperparameter tuning job searches. The hyperparameter tuning job launches training jobs with hyperparameter values within these ranges to find the combination of values that result in the training job with the best performance as measured by the objective metric of the hyperparameter tuning job.</p> <note>
     /// <p>The maximum number of items specified for <code>Array Members</code> refers to the maximum number of hyperparameters for each range and also the maximum for the hyperparameter tuning job itself. That is, the sum of the number of hyperparameters for all the ranges can't exceed the maximum number specified.</p>
     /// </note>
     pub fn hyper_parameter_ranges(&self) -> ::std::option::Option<&crate::types::ParameterRanges> {
@@ -90,7 +90,7 @@ impl HyperParameterTrainingJobDefinition {
         self.output_data_config.as_ref()
     }
     /// <p>The resources, including the compute instances and storage volumes, to use for the training jobs that the tuning job launches.</p>
-    /// <p>Storage volumes store model artifacts and incremental states. Training algorithms might also use storage volumes for scratch space. If you want SageMaker to use the storage volume to store the training data, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For distributed training algorithms, specify an instance count greater than 1.</p><note>
+    /// <p>Storage volumes store model artifacts and incremental states. Training algorithms might also use storage volumes for scratch space. If you want SageMaker to use the storage volume to store the training data, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For distributed training algorithms, specify an instance count greater than 1.</p> <note>
     /// <p>If you want to use hyperparameter optimization with instance type flexibility, use <code>HyperParameterTuningResourceConfig</code> instead.</p>
     /// </note>
     pub fn resource_config(&self) -> ::std::option::Option<&crate::types::ResourceConfig> {
@@ -112,7 +112,7 @@ impl HyperParameterTrainingJobDefinition {
     pub fn enable_managed_spot_training(&self) -> ::std::option::Option<bool> {
         self.enable_managed_spot_training
     }
-    /// <p>Contains information about the output location for managed spot training checkpoint data.</p>
+    /// <p>Contains information about the output location for managed spot training checkpoint data. </p>
     pub fn checkpoint_config(&self) -> ::std::option::Option<&crate::types::CheckpointConfig> {
         self.checkpoint_config.as_ref()
     }
@@ -124,7 +124,7 @@ impl HyperParameterTrainingJobDefinition {
     pub fn hyper_parameter_tuning_resource_config(&self) -> ::std::option::Option<&crate::types::HyperParameterTuningResourceConfig> {
         self.hyper_parameter_tuning_resource_config.as_ref()
     }
-    /// <p>An environment variable that you can pass into the SageMaker <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a> API. You can use an existing <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html#sagemaker-CreateTrainingJob-request-Environment">environment variable from the training container</a> or use your own. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics-variables.html">Define metrics and variables</a> for more information.</p><note>
+    /// <p>An environment variable that you can pass into the SageMaker <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a> API. You can use an existing <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html#sagemaker-CreateTrainingJob-request-Environment">environment variable from the training container</a> or use your own. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics-variables.html">Define metrics and variables</a> for more information.</p> <note>
     /// <p>The maximum number of items specified for <code>Map Entries</code> refers to the maximum number of environment variables for each <code>TrainingJobDefinition</code> and also the maximum for the hyperparameter tuning job itself. That is, the sum of the number of environment variables for all the training job definitions can't exceed the maximum number specified.</p>
     /// </note>
     pub fn environment(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -190,21 +190,21 @@ impl HyperParameterTrainingJobDefinitionBuilder {
     pub fn get_tuning_objective(&self) -> &::std::option::Option<crate::types::HyperParameterTuningJobObjective> {
         &self.tuning_objective
     }
-    /// <p>Specifies ranges of integer, continuous, and categorical hyperparameters that a hyperparameter tuning job searches. The hyperparameter tuning job launches training jobs with hyperparameter values within these ranges to find the combination of values that result in the training job with the best performance as measured by the objective metric of the hyperparameter tuning job.</p><note>
+    /// <p>Specifies ranges of integer, continuous, and categorical hyperparameters that a hyperparameter tuning job searches. The hyperparameter tuning job launches training jobs with hyperparameter values within these ranges to find the combination of values that result in the training job with the best performance as measured by the objective metric of the hyperparameter tuning job.</p> <note>
     /// <p>The maximum number of items specified for <code>Array Members</code> refers to the maximum number of hyperparameters for each range and also the maximum for the hyperparameter tuning job itself. That is, the sum of the number of hyperparameters for all the ranges can't exceed the maximum number specified.</p>
     /// </note>
     pub fn hyper_parameter_ranges(mut self, input: crate::types::ParameterRanges) -> Self {
         self.hyper_parameter_ranges = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies ranges of integer, continuous, and categorical hyperparameters that a hyperparameter tuning job searches. The hyperparameter tuning job launches training jobs with hyperparameter values within these ranges to find the combination of values that result in the training job with the best performance as measured by the objective metric of the hyperparameter tuning job.</p><note>
+    /// <p>Specifies ranges of integer, continuous, and categorical hyperparameters that a hyperparameter tuning job searches. The hyperparameter tuning job launches training jobs with hyperparameter values within these ranges to find the combination of values that result in the training job with the best performance as measured by the objective metric of the hyperparameter tuning job.</p> <note>
     /// <p>The maximum number of items specified for <code>Array Members</code> refers to the maximum number of hyperparameters for each range and also the maximum for the hyperparameter tuning job itself. That is, the sum of the number of hyperparameters for all the ranges can't exceed the maximum number specified.</p>
     /// </note>
     pub fn set_hyper_parameter_ranges(mut self, input: ::std::option::Option<crate::types::ParameterRanges>) -> Self {
         self.hyper_parameter_ranges = input;
         self
     }
-    /// <p>Specifies ranges of integer, continuous, and categorical hyperparameters that a hyperparameter tuning job searches. The hyperparameter tuning job launches training jobs with hyperparameter values within these ranges to find the combination of values that result in the training job with the best performance as measured by the objective metric of the hyperparameter tuning job.</p><note>
+    /// <p>Specifies ranges of integer, continuous, and categorical hyperparameters that a hyperparameter tuning job searches. The hyperparameter tuning job launches training jobs with hyperparameter values within these ranges to find the combination of values that result in the training job with the best performance as measured by the objective metric of the hyperparameter tuning job.</p> <note>
     /// <p>The maximum number of items specified for <code>Array Members</code> refers to the maximum number of hyperparameters for each range and also the maximum for the hyperparameter tuning job itself. That is, the sum of the number of hyperparameters for all the ranges can't exceed the maximum number specified.</p>
     /// </note>
     pub fn get_hyper_parameter_ranges(&self) -> &::std::option::Option<crate::types::ParameterRanges> {
@@ -317,7 +317,7 @@ impl HyperParameterTrainingJobDefinitionBuilder {
         &self.output_data_config
     }
     /// <p>The resources, including the compute instances and storage volumes, to use for the training jobs that the tuning job launches.</p>
-    /// <p>Storage volumes store model artifacts and incremental states. Training algorithms might also use storage volumes for scratch space. If you want SageMaker to use the storage volume to store the training data, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For distributed training algorithms, specify an instance count greater than 1.</p><note>
+    /// <p>Storage volumes store model artifacts and incremental states. Training algorithms might also use storage volumes for scratch space. If you want SageMaker to use the storage volume to store the training data, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For distributed training algorithms, specify an instance count greater than 1.</p> <note>
     /// <p>If you want to use hyperparameter optimization with instance type flexibility, use <code>HyperParameterTuningResourceConfig</code> instead.</p>
     /// </note>
     pub fn resource_config(mut self, input: crate::types::ResourceConfig) -> Self {
@@ -325,7 +325,7 @@ impl HyperParameterTrainingJobDefinitionBuilder {
         self
     }
     /// <p>The resources, including the compute instances and storage volumes, to use for the training jobs that the tuning job launches.</p>
-    /// <p>Storage volumes store model artifacts and incremental states. Training algorithms might also use storage volumes for scratch space. If you want SageMaker to use the storage volume to store the training data, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For distributed training algorithms, specify an instance count greater than 1.</p><note>
+    /// <p>Storage volumes store model artifacts and incremental states. Training algorithms might also use storage volumes for scratch space. If you want SageMaker to use the storage volume to store the training data, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For distributed training algorithms, specify an instance count greater than 1.</p> <note>
     /// <p>If you want to use hyperparameter optimization with instance type flexibility, use <code>HyperParameterTuningResourceConfig</code> instead.</p>
     /// </note>
     pub fn set_resource_config(mut self, input: ::std::option::Option<crate::types::ResourceConfig>) -> Self {
@@ -333,7 +333,7 @@ impl HyperParameterTrainingJobDefinitionBuilder {
         self
     }
     /// <p>The resources, including the compute instances and storage volumes, to use for the training jobs that the tuning job launches.</p>
-    /// <p>Storage volumes store model artifacts and incremental states. Training algorithms might also use storage volumes for scratch space. If you want SageMaker to use the storage volume to store the training data, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For distributed training algorithms, specify an instance count greater than 1.</p><note>
+    /// <p>Storage volumes store model artifacts and incremental states. Training algorithms might also use storage volumes for scratch space. If you want SageMaker to use the storage volume to store the training data, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For distributed training algorithms, specify an instance count greater than 1.</p> <note>
     /// <p>If you want to use hyperparameter optimization with instance type flexibility, use <code>HyperParameterTuningResourceConfig</code> instead.</p>
     /// </note>
     pub fn get_resource_config(&self) -> &::std::option::Option<crate::types::ResourceConfig> {
@@ -396,17 +396,17 @@ impl HyperParameterTrainingJobDefinitionBuilder {
     pub fn get_enable_managed_spot_training(&self) -> &::std::option::Option<bool> {
         &self.enable_managed_spot_training
     }
-    /// <p>Contains information about the output location for managed spot training checkpoint data.</p>
+    /// <p>Contains information about the output location for managed spot training checkpoint data. </p>
     pub fn checkpoint_config(mut self, input: crate::types::CheckpointConfig) -> Self {
         self.checkpoint_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Contains information about the output location for managed spot training checkpoint data.</p>
+    /// <p>Contains information about the output location for managed spot training checkpoint data. </p>
     pub fn set_checkpoint_config(mut self, input: ::std::option::Option<crate::types::CheckpointConfig>) -> Self {
         self.checkpoint_config = input;
         self
     }
-    /// <p>Contains information about the output location for managed spot training checkpoint data.</p>
+    /// <p>Contains information about the output location for managed spot training checkpoint data. </p>
     pub fn get_checkpoint_config(&self) -> &::std::option::Option<crate::types::CheckpointConfig> {
         &self.checkpoint_config
     }
@@ -445,7 +445,7 @@ impl HyperParameterTrainingJobDefinitionBuilder {
     ///
     /// To override the contents of this collection use [`set_environment`](Self::set_environment).
     ///
-    /// <p>An environment variable that you can pass into the SageMaker <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a> API. You can use an existing <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html#sagemaker-CreateTrainingJob-request-Environment">environment variable from the training container</a> or use your own. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics-variables.html">Define metrics and variables</a> for more information.</p><note>
+    /// <p>An environment variable that you can pass into the SageMaker <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a> API. You can use an existing <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html#sagemaker-CreateTrainingJob-request-Environment">environment variable from the training container</a> or use your own. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics-variables.html">Define metrics and variables</a> for more information.</p> <note>
     /// <p>The maximum number of items specified for <code>Map Entries</code> refers to the maximum number of environment variables for each <code>TrainingJobDefinition</code> and also the maximum for the hyperparameter tuning job itself. That is, the sum of the number of environment variables for all the training job definitions can't exceed the maximum number specified.</p>
     /// </note>
     pub fn environment(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -454,7 +454,7 @@ impl HyperParameterTrainingJobDefinitionBuilder {
         self.environment = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>An environment variable that you can pass into the SageMaker <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a> API. You can use an existing <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html#sagemaker-CreateTrainingJob-request-Environment">environment variable from the training container</a> or use your own. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics-variables.html">Define metrics and variables</a> for more information.</p><note>
+    /// <p>An environment variable that you can pass into the SageMaker <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a> API. You can use an existing <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html#sagemaker-CreateTrainingJob-request-Environment">environment variable from the training container</a> or use your own. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics-variables.html">Define metrics and variables</a> for more information.</p> <note>
     /// <p>The maximum number of items specified for <code>Map Entries</code> refers to the maximum number of environment variables for each <code>TrainingJobDefinition</code> and also the maximum for the hyperparameter tuning job itself. That is, the sum of the number of environment variables for all the training job definitions can't exceed the maximum number specified.</p>
     /// </note>
     pub fn set_environment(
@@ -464,7 +464,7 @@ impl HyperParameterTrainingJobDefinitionBuilder {
         self.environment = input;
         self
     }
-    /// <p>An environment variable that you can pass into the SageMaker <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a> API. You can use an existing <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html#sagemaker-CreateTrainingJob-request-Environment">environment variable from the training container</a> or use your own. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics-variables.html">Define metrics and variables</a> for more information.</p><note>
+    /// <p>An environment variable that you can pass into the SageMaker <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a> API. You can use an existing <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html#sagemaker-CreateTrainingJob-request-Environment">environment variable from the training container</a> or use your own. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics-variables.html">Define metrics and variables</a> for more information.</p> <note>
     /// <p>The maximum number of items specified for <code>Map Entries</code> refers to the maximum number of environment variables for each <code>TrainingJobDefinition</code> and also the maximum for the hyperparameter tuning job itself. That is, the sum of the number of environment variables for all the training job definitions can't exceed the maximum number specified.</p>
     /// </note>
     pub fn get_environment(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {

@@ -8,17 +8,13 @@ pub struct UtteranceBotResponse {
     pub content: ::std::option::Option<::std::string::String>,
     /// <p>The type of the response. The following values are possible:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PlainText</code> – A plain text string.</p></li>
-    /// <li>
-    /// <p><code>CustomPayload</code> – A response string that you can customize to include data or metadata for your application.</p></li>
-    /// <li>
-    /// <p><code>SSML</code> – A string that includes Speech Synthesis Markup Language to customize the audio response.</p></li>
-    /// <li>
-    /// <p><code>ImageResponseCard</code> – An image with buttons that the customer can select. See <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_runtime_ImageResponseCard.html">ImageResponseCard</a> for more information.</p></li>
+    /// <li> <p> <code>PlainText</code> – A plain text string.</p> </li>
+    /// <li> <p> <code>CustomPayload</code> – A response string that you can customize to include data or metadata for your application.</p> </li>
+    /// <li> <p> <code>SSML</code> – A string that includes Speech Synthesis Markup Language to customize the audio response.</p> </li>
+    /// <li> <p> <code>ImageResponseCard</code> – An image with buttons that the customer can select. See <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_runtime_ImageResponseCard.html">ImageResponseCard</a> for more information.</p> </li>
     /// </ul>
     pub content_type: ::std::option::Option<crate::types::UtteranceContentType>,
-    /// <p>A card that is shown to the user by a messaging platform. You define the contents of the card, the card is displayed by the platform.</p>
+    /// <p>A card that is shown to the user by a messaging platform. You define the contents of the card, the card is displayed by the platform. </p>
     /// <p>When you use a response card, the response from the user is constrained to the text associated with a button on the card.</p>
     pub image_response_card: ::std::option::Option<crate::types::ImageResponseCard>,
 }
@@ -29,19 +25,15 @@ impl UtteranceBotResponse {
     }
     /// <p>The type of the response. The following values are possible:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PlainText</code> – A plain text string.</p></li>
-    /// <li>
-    /// <p><code>CustomPayload</code> – A response string that you can customize to include data or metadata for your application.</p></li>
-    /// <li>
-    /// <p><code>SSML</code> – A string that includes Speech Synthesis Markup Language to customize the audio response.</p></li>
-    /// <li>
-    /// <p><code>ImageResponseCard</code> – An image with buttons that the customer can select. See <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_runtime_ImageResponseCard.html">ImageResponseCard</a> for more information.</p></li>
+    /// <li> <p> <code>PlainText</code> – A plain text string.</p> </li>
+    /// <li> <p> <code>CustomPayload</code> – A response string that you can customize to include data or metadata for your application.</p> </li>
+    /// <li> <p> <code>SSML</code> – A string that includes Speech Synthesis Markup Language to customize the audio response.</p> </li>
+    /// <li> <p> <code>ImageResponseCard</code> – An image with buttons that the customer can select. See <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_runtime_ImageResponseCard.html">ImageResponseCard</a> for more information.</p> </li>
     /// </ul>
     pub fn content_type(&self) -> ::std::option::Option<&crate::types::UtteranceContentType> {
         self.content_type.as_ref()
     }
-    /// <p>A card that is shown to the user by a messaging platform. You define the contents of the card, the card is displayed by the platform.</p>
+    /// <p>A card that is shown to the user by a messaging platform. You define the contents of the card, the card is displayed by the platform. </p>
     /// <p>When you use a response card, the response from the user is constrained to the text associated with a button on the card.</p>
     pub fn image_response_card(&self) -> ::std::option::Option<&crate::types::ImageResponseCard> {
         self.image_response_card.as_ref()
@@ -79,14 +71,10 @@ impl UtteranceBotResponseBuilder {
     }
     /// <p>The type of the response. The following values are possible:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PlainText</code> – A plain text string.</p></li>
-    /// <li>
-    /// <p><code>CustomPayload</code> – A response string that you can customize to include data or metadata for your application.</p></li>
-    /// <li>
-    /// <p><code>SSML</code> – A string that includes Speech Synthesis Markup Language to customize the audio response.</p></li>
-    /// <li>
-    /// <p><code>ImageResponseCard</code> – An image with buttons that the customer can select. See <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_runtime_ImageResponseCard.html">ImageResponseCard</a> for more information.</p></li>
+    /// <li> <p> <code>PlainText</code> – A plain text string.</p> </li>
+    /// <li> <p> <code>CustomPayload</code> – A response string that you can customize to include data or metadata for your application.</p> </li>
+    /// <li> <p> <code>SSML</code> – A string that includes Speech Synthesis Markup Language to customize the audio response.</p> </li>
+    /// <li> <p> <code>ImageResponseCard</code> – An image with buttons that the customer can select. See <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_runtime_ImageResponseCard.html">ImageResponseCard</a> for more information.</p> </li>
     /// </ul>
     pub fn content_type(mut self, input: crate::types::UtteranceContentType) -> Self {
         self.content_type = ::std::option::Option::Some(input);
@@ -94,14 +82,10 @@ impl UtteranceBotResponseBuilder {
     }
     /// <p>The type of the response. The following values are possible:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PlainText</code> – A plain text string.</p></li>
-    /// <li>
-    /// <p><code>CustomPayload</code> – A response string that you can customize to include data or metadata for your application.</p></li>
-    /// <li>
-    /// <p><code>SSML</code> – A string that includes Speech Synthesis Markup Language to customize the audio response.</p></li>
-    /// <li>
-    /// <p><code>ImageResponseCard</code> – An image with buttons that the customer can select. See <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_runtime_ImageResponseCard.html">ImageResponseCard</a> for more information.</p></li>
+    /// <li> <p> <code>PlainText</code> – A plain text string.</p> </li>
+    /// <li> <p> <code>CustomPayload</code> – A response string that you can customize to include data or metadata for your application.</p> </li>
+    /// <li> <p> <code>SSML</code> – A string that includes Speech Synthesis Markup Language to customize the audio response.</p> </li>
+    /// <li> <p> <code>ImageResponseCard</code> – An image with buttons that the customer can select. See <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_runtime_ImageResponseCard.html">ImageResponseCard</a> for more information.</p> </li>
     /// </ul>
     pub fn set_content_type(mut self, input: ::std::option::Option<crate::types::UtteranceContentType>) -> Self {
         self.content_type = input;
@@ -109,31 +93,27 @@ impl UtteranceBotResponseBuilder {
     }
     /// <p>The type of the response. The following values are possible:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PlainText</code> – A plain text string.</p></li>
-    /// <li>
-    /// <p><code>CustomPayload</code> – A response string that you can customize to include data or metadata for your application.</p></li>
-    /// <li>
-    /// <p><code>SSML</code> – A string that includes Speech Synthesis Markup Language to customize the audio response.</p></li>
-    /// <li>
-    /// <p><code>ImageResponseCard</code> – An image with buttons that the customer can select. See <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_runtime_ImageResponseCard.html">ImageResponseCard</a> for more information.</p></li>
+    /// <li> <p> <code>PlainText</code> – A plain text string.</p> </li>
+    /// <li> <p> <code>CustomPayload</code> – A response string that you can customize to include data or metadata for your application.</p> </li>
+    /// <li> <p> <code>SSML</code> – A string that includes Speech Synthesis Markup Language to customize the audio response.</p> </li>
+    /// <li> <p> <code>ImageResponseCard</code> – An image with buttons that the customer can select. See <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_runtime_ImageResponseCard.html">ImageResponseCard</a> for more information.</p> </li>
     /// </ul>
     pub fn get_content_type(&self) -> &::std::option::Option<crate::types::UtteranceContentType> {
         &self.content_type
     }
-    /// <p>A card that is shown to the user by a messaging platform. You define the contents of the card, the card is displayed by the platform.</p>
+    /// <p>A card that is shown to the user by a messaging platform. You define the contents of the card, the card is displayed by the platform. </p>
     /// <p>When you use a response card, the response from the user is constrained to the text associated with a button on the card.</p>
     pub fn image_response_card(mut self, input: crate::types::ImageResponseCard) -> Self {
         self.image_response_card = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A card that is shown to the user by a messaging platform. You define the contents of the card, the card is displayed by the platform.</p>
+    /// <p>A card that is shown to the user by a messaging platform. You define the contents of the card, the card is displayed by the platform. </p>
     /// <p>When you use a response card, the response from the user is constrained to the text associated with a button on the card.</p>
     pub fn set_image_response_card(mut self, input: ::std::option::Option<crate::types::ImageResponseCard>) -> Self {
         self.image_response_card = input;
         self
     }
-    /// <p>A card that is shown to the user by a messaging platform. You define the contents of the card, the card is displayed by the platform.</p>
+    /// <p>A card that is shown to the user by a messaging platform. You define the contents of the card, the card is displayed by the platform. </p>
     /// <p>When you use a response card, the response from the user is constrained to the text associated with a button on the card.</p>
     pub fn get_image_response_card(&self) -> &::std::option::Option<crate::types::ImageResponseCard> {
         &self.image_response_card

@@ -14,18 +14,13 @@ pub struct Permission {
     pub allow_sudo: ::std::option::Option<bool>,
     /// <p>The user's permission level, which must be the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>deny</code></p></li>
-    /// <li>
-    /// <p><code>show</code></p></li>
-    /// <li>
-    /// <p><code>deploy</code></p></li>
-    /// <li>
-    /// <p><code>manage</code></p></li>
-    /// <li>
-    /// <p><code>iam_only</code></p></li>
+    /// <li> <p> <code>deny</code> </p> </li>
+    /// <li> <p> <code>show</code> </p> </li>
+    /// <li> <p> <code>deploy</code> </p> </li>
+    /// <li> <p> <code>manage</code> </p> </li>
+    /// <li> <p> <code>iam_only</code> </p> </li>
     /// </ul>
-    /// <p>For more information on the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a></p>
+    /// <p>For more information on the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a> </p>
     pub level: ::std::option::Option<::std::string::String>,
 }
 impl Permission {
@@ -47,18 +42,13 @@ impl Permission {
     }
     /// <p>The user's permission level, which must be the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>deny</code></p></li>
-    /// <li>
-    /// <p><code>show</code></p></li>
-    /// <li>
-    /// <p><code>deploy</code></p></li>
-    /// <li>
-    /// <p><code>manage</code></p></li>
-    /// <li>
-    /// <p><code>iam_only</code></p></li>
+    /// <li> <p> <code>deny</code> </p> </li>
+    /// <li> <p> <code>show</code> </p> </li>
+    /// <li> <p> <code>deploy</code> </p> </li>
+    /// <li> <p> <code>manage</code> </p> </li>
+    /// <li> <p> <code>iam_only</code> </p> </li>
     /// </ul>
-    /// <p>For more information on the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a></p>
+    /// <p>For more information on the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a> </p>
     pub fn level(&self) -> ::std::option::Option<&str> {
         self.level.as_deref()
     }
@@ -139,54 +129,39 @@ impl PermissionBuilder {
     }
     /// <p>The user's permission level, which must be the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>deny</code></p></li>
-    /// <li>
-    /// <p><code>show</code></p></li>
-    /// <li>
-    /// <p><code>deploy</code></p></li>
-    /// <li>
-    /// <p><code>manage</code></p></li>
-    /// <li>
-    /// <p><code>iam_only</code></p></li>
+    /// <li> <p> <code>deny</code> </p> </li>
+    /// <li> <p> <code>show</code> </p> </li>
+    /// <li> <p> <code>deploy</code> </p> </li>
+    /// <li> <p> <code>manage</code> </p> </li>
+    /// <li> <p> <code>iam_only</code> </p> </li>
     /// </ul>
-    /// <p>For more information on the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a></p>
+    /// <p>For more information on the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a> </p>
     pub fn level(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.level = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user's permission level, which must be the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>deny</code></p></li>
-    /// <li>
-    /// <p><code>show</code></p></li>
-    /// <li>
-    /// <p><code>deploy</code></p></li>
-    /// <li>
-    /// <p><code>manage</code></p></li>
-    /// <li>
-    /// <p><code>iam_only</code></p></li>
+    /// <li> <p> <code>deny</code> </p> </li>
+    /// <li> <p> <code>show</code> </p> </li>
+    /// <li> <p> <code>deploy</code> </p> </li>
+    /// <li> <p> <code>manage</code> </p> </li>
+    /// <li> <p> <code>iam_only</code> </p> </li>
     /// </ul>
-    /// <p>For more information on the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a></p>
+    /// <p>For more information on the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a> </p>
     pub fn set_level(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.level = input;
         self
     }
     /// <p>The user's permission level, which must be the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>deny</code></p></li>
-    /// <li>
-    /// <p><code>show</code></p></li>
-    /// <li>
-    /// <p><code>deploy</code></p></li>
-    /// <li>
-    /// <p><code>manage</code></p></li>
-    /// <li>
-    /// <p><code>iam_only</code></p></li>
+    /// <li> <p> <code>deny</code> </p> </li>
+    /// <li> <p> <code>show</code> </p> </li>
+    /// <li> <p> <code>deploy</code> </p> </li>
+    /// <li> <p> <code>manage</code> </p> </li>
+    /// <li> <p> <code>iam_only</code> </p> </li>
     /// </ul>
-    /// <p>For more information on the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a></p>
+    /// <p>For more information on the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a> </p>
     pub fn get_level(&self) -> &::std::option::Option<::std::string::String> {
         &self.level
     }

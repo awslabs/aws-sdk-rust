@@ -14,7 +14,7 @@ pub struct UpdateInstanceMetadataOptionsInput {
     pub http_endpoint: ::std::option::Option<crate::types::HttpEndpoint>,
     /// <p>The desired HTTP PUT response hop limit for instance metadata requests. A larger number means that the instance metadata requests can travel farther. If no parameter is specified, the existing state is maintained.</p>
     pub http_put_response_hop_limit: ::std::option::Option<i32>,
-    /// <p>Enables or disables the IPv6 endpoint for the instance metadata service. This setting applies only when the HTTP metadata endpoint is enabled.</p><note>
+    /// <p>Enables or disables the IPv6 endpoint for the instance metadata service. This setting applies only when the HTTP metadata endpoint is enabled.</p> <note>
     /// <p>This parameter is available only for instances in the Europe (Stockholm) Amazon Web Services Region (<code>eu-north-1</code>).</p>
     /// </note>
     pub http_protocol_ipv6: ::std::option::Option<crate::types::HttpProtocolIpv6>,
@@ -39,7 +39,7 @@ impl UpdateInstanceMetadataOptionsInput {
     pub fn http_put_response_hop_limit(&self) -> ::std::option::Option<i32> {
         self.http_put_response_hop_limit
     }
-    /// <p>Enables or disables the IPv6 endpoint for the instance metadata service. This setting applies only when the HTTP metadata endpoint is enabled.</p><note>
+    /// <p>Enables or disables the IPv6 endpoint for the instance metadata service. This setting applies only when the HTTP metadata endpoint is enabled.</p> <note>
     /// <p>This parameter is available only for instances in the Europe (Stockholm) Amazon Web Services Region (<code>eu-north-1</code>).</p>
     /// </note>
     pub fn http_protocol_ipv6(&self) -> ::std::option::Option<&crate::types::HttpProtocolIpv6> {
@@ -130,21 +130,21 @@ impl UpdateInstanceMetadataOptionsInputBuilder {
     pub fn get_http_put_response_hop_limit(&self) -> &::std::option::Option<i32> {
         &self.http_put_response_hop_limit
     }
-    /// <p>Enables or disables the IPv6 endpoint for the instance metadata service. This setting applies only when the HTTP metadata endpoint is enabled.</p><note>
+    /// <p>Enables or disables the IPv6 endpoint for the instance metadata service. This setting applies only when the HTTP metadata endpoint is enabled.</p> <note>
     /// <p>This parameter is available only for instances in the Europe (Stockholm) Amazon Web Services Region (<code>eu-north-1</code>).</p>
     /// </note>
     pub fn http_protocol_ipv6(mut self, input: crate::types::HttpProtocolIpv6) -> Self {
         self.http_protocol_ipv6 = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Enables or disables the IPv6 endpoint for the instance metadata service. This setting applies only when the HTTP metadata endpoint is enabled.</p><note>
+    /// <p>Enables or disables the IPv6 endpoint for the instance metadata service. This setting applies only when the HTTP metadata endpoint is enabled.</p> <note>
     /// <p>This parameter is available only for instances in the Europe (Stockholm) Amazon Web Services Region (<code>eu-north-1</code>).</p>
     /// </note>
     pub fn set_http_protocol_ipv6(mut self, input: ::std::option::Option<crate::types::HttpProtocolIpv6>) -> Self {
         self.http_protocol_ipv6 = input;
         self
     }
-    /// <p>Enables or disables the IPv6 endpoint for the instance metadata service. This setting applies only when the HTTP metadata endpoint is enabled.</p><note>
+    /// <p>Enables or disables the IPv6 endpoint for the instance metadata service. This setting applies only when the HTTP metadata endpoint is enabled.</p> <note>
     /// <p>This parameter is available only for instances in the Europe (Stockholm) Amazon Web Services Region (<code>eu-north-1</code>).</p>
     /// </note>
     pub fn get_http_protocol_ipv6(&self) -> &::std::option::Option<crate::types::HttpProtocolIpv6> {

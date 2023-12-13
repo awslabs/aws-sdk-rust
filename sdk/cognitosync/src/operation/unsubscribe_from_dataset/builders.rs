@@ -23,7 +23,7 @@ impl UnsubscribeFromDatasetInputBuilder {
 /// Fluent builder constructing a request to `UnsubscribeFromDataset`.
 ///
 /// <p>Unsubscribes from receiving notifications when a dataset is modified by another device.</p>
-/// <p>This API can only be called with temporary credentials provided by Cognito Identity. You cannot call this API with developer credentials.</p><examples>
+/// <p>This API can only be called with temporary credentials provided by Cognito Identity. You cannot call this API with developer credentials.</p> <examples>
 /// <example>
 /// <name>
 /// UnsubscribeFromDataset

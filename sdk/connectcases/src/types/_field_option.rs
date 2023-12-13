@@ -4,20 +4,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FieldOption {
-    /// <p><code>FieldOptionName</code> has max length 100 and disallows trailing spaces.</p>
+    /// <p> <code>FieldOptionName</code> has max length 100 and disallows trailing spaces.</p>
     pub name: ::std::string::String,
-    /// <p><code>FieldOptionValue</code> has max length 100 and must be alphanumeric with hyphens and underscores.</p>
+    /// <p> <code>FieldOptionValue</code> has max length 100 and must be alphanumeric with hyphens and underscores.</p>
     pub value: ::std::string::String,
     /// <p>Describes whether the <code>FieldOption</code> is active (displayed) or inactive.</p>
     pub active: bool,
 }
 impl FieldOption {
-    /// <p><code>FieldOptionName</code> has max length 100 and disallows trailing spaces.</p>
+    /// <p> <code>FieldOptionName</code> has max length 100 and disallows trailing spaces.</p>
     pub fn name(&self) -> &str {
         use std::ops::Deref;
         self.name.deref()
     }
-    /// <p><code>FieldOptionValue</code> has max length 100 and must be alphanumeric with hyphens and underscores.</p>
+    /// <p> <code>FieldOptionValue</code> has max length 100 and must be alphanumeric with hyphens and underscores.</p>
     pub fn value(&self) -> &str {
         use std::ops::Deref;
         self.value.deref()
@@ -43,33 +43,33 @@ pub struct FieldOptionBuilder {
     pub(crate) active: ::std::option::Option<bool>,
 }
 impl FieldOptionBuilder {
-    /// <p><code>FieldOptionName</code> has max length 100 and disallows trailing spaces.</p>
+    /// <p> <code>FieldOptionName</code> has max length 100 and disallows trailing spaces.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p><code>FieldOptionName</code> has max length 100 and disallows trailing spaces.</p>
+    /// <p> <code>FieldOptionName</code> has max length 100 and disallows trailing spaces.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p><code>FieldOptionName</code> has max length 100 and disallows trailing spaces.</p>
+    /// <p> <code>FieldOptionName</code> has max length 100 and disallows trailing spaces.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p><code>FieldOptionValue</code> has max length 100 and must be alphanumeric with hyphens and underscores.</p>
+    /// <p> <code>FieldOptionValue</code> has max length 100 and must be alphanumeric with hyphens and underscores.</p>
     /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p><code>FieldOptionValue</code> has max length 100 and must be alphanumeric with hyphens and underscores.</p>
+    /// <p> <code>FieldOptionValue</code> has max length 100 and must be alphanumeric with hyphens and underscores.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }
-    /// <p><code>FieldOptionValue</code> has max length 100 and must be alphanumeric with hyphens and underscores.</p>
+    /// <p> <code>FieldOptionValue</code> has max length 100 and must be alphanumeric with hyphens and underscores.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.value
     }

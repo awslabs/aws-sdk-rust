@@ -47,7 +47,7 @@ pub struct AutomationExecutionMetadata {
     pub max_errors: ::std::option::Option<::std::string::String>,
     /// <p>The list of execution outputs as defined in the Automation runbook.</p>
     pub target: ::std::option::Option<::std::string::String>,
-    /// <p>Use this filter with <code>DescribeAutomationExecutions</code>. Specify either Local or CrossAccount. CrossAccount is an Automation that runs in multiple Amazon Web Services Regions and Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Amazon Web Services Regions and accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>Use this filter with <code>DescribeAutomationExecutions</code>. Specify either Local or CrossAccount. CrossAccount is an Automation that runs in multiple Amazon Web Services Regions and Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Amazon Web Services Regions and accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
     pub automation_type: ::std::option::Option<crate::types::AutomationType>,
     /// <p>The details for the CloudWatch alarm applied to your automation.</p>
     pub alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
@@ -57,7 +57,7 @@ pub struct AutomationExecutionMetadata {
     pub automation_subtype: ::std::option::Option<crate::types::AutomationSubtype>,
     /// <p>The date and time the Automation operation is scheduled to start.</p>
     pub scheduled_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Information about the Automation runbooks that are run during a runbook workflow in Change Manager.</p><note>
+    /// <p>Information about the Automation runbooks that are run during a runbook workflow in Change Manager.</p> <note>
     /// <p>The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change request have been received.</p>
     /// </note>
     pub runbooks: ::std::option::Option<::std::vec::Vec<crate::types::Runbook>>,
@@ -157,7 +157,7 @@ impl AutomationExecutionMetadata {
     pub fn target(&self) -> ::std::option::Option<&str> {
         self.target.as_deref()
     }
-    /// <p>Use this filter with <code>DescribeAutomationExecutions</code>. Specify either Local or CrossAccount. CrossAccount is an Automation that runs in multiple Amazon Web Services Regions and Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Amazon Web Services Regions and accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>Use this filter with <code>DescribeAutomationExecutions</code>. Specify either Local or CrossAccount. CrossAccount is an Automation that runs in multiple Amazon Web Services Regions and Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Amazon Web Services Regions and accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
     pub fn automation_type(&self) -> ::std::option::Option<&crate::types::AutomationType> {
         self.automation_type.as_ref()
     }
@@ -179,7 +179,7 @@ impl AutomationExecutionMetadata {
     pub fn scheduled_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.scheduled_time.as_ref()
     }
-    /// <p>Information about the Automation runbooks that are run during a runbook workflow in Change Manager.</p><note>
+    /// <p>Information about the Automation runbooks that are run during a runbook workflow in Change Manager.</p> <note>
     /// <p>The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change request have been received.</p>
     /// </note>
     ///
@@ -564,17 +564,17 @@ impl AutomationExecutionMetadataBuilder {
     pub fn get_target(&self) -> &::std::option::Option<::std::string::String> {
         &self.target
     }
-    /// <p>Use this filter with <code>DescribeAutomationExecutions</code>. Specify either Local or CrossAccount. CrossAccount is an Automation that runs in multiple Amazon Web Services Regions and Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Amazon Web Services Regions and accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>Use this filter with <code>DescribeAutomationExecutions</code>. Specify either Local or CrossAccount. CrossAccount is an Automation that runs in multiple Amazon Web Services Regions and Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Amazon Web Services Regions and accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
     pub fn automation_type(mut self, input: crate::types::AutomationType) -> Self {
         self.automation_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Use this filter with <code>DescribeAutomationExecutions</code>. Specify either Local or CrossAccount. CrossAccount is an Automation that runs in multiple Amazon Web Services Regions and Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Amazon Web Services Regions and accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>Use this filter with <code>DescribeAutomationExecutions</code>. Specify either Local or CrossAccount. CrossAccount is an Automation that runs in multiple Amazon Web Services Regions and Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Amazon Web Services Regions and accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
     pub fn set_automation_type(mut self, input: ::std::option::Option<crate::types::AutomationType>) -> Self {
         self.automation_type = input;
         self
     }
-    /// <p>Use this filter with <code>DescribeAutomationExecutions</code>. Specify either Local or CrossAccount. CrossAccount is an Automation that runs in multiple Amazon Web Services Regions and Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Amazon Web Services Regions and accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>Use this filter with <code>DescribeAutomationExecutions</code>. Specify either Local or CrossAccount. CrossAccount is an Automation that runs in multiple Amazon Web Services Regions and Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Amazon Web Services Regions and accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
     pub fn get_automation_type(&self) -> &::std::option::Option<crate::types::AutomationType> {
         &self.automation_type
     }
@@ -644,7 +644,7 @@ impl AutomationExecutionMetadataBuilder {
     ///
     /// To override the contents of this collection use [`set_runbooks`](Self::set_runbooks).
     ///
-    /// <p>Information about the Automation runbooks that are run during a runbook workflow in Change Manager.</p><note>
+    /// <p>Information about the Automation runbooks that are run during a runbook workflow in Change Manager.</p> <note>
     /// <p>The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change request have been received.</p>
     /// </note>
     pub fn runbooks(mut self, input: crate::types::Runbook) -> Self {
@@ -653,14 +653,14 @@ impl AutomationExecutionMetadataBuilder {
         self.runbooks = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Information about the Automation runbooks that are run during a runbook workflow in Change Manager.</p><note>
+    /// <p>Information about the Automation runbooks that are run during a runbook workflow in Change Manager.</p> <note>
     /// <p>The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change request have been received.</p>
     /// </note>
     pub fn set_runbooks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Runbook>>) -> Self {
         self.runbooks = input;
         self
     }
-    /// <p>Information about the Automation runbooks that are run during a runbook workflow in Change Manager.</p><note>
+    /// <p>Information about the Automation runbooks that are run during a runbook workflow in Change Manager.</p> <note>
     /// <p>The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change request have been received.</p>
     /// </note>
     pub fn get_runbooks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Runbook>> {

@@ -24,10 +24,8 @@ pub struct SegmentResponse {
     pub segment_groups: ::std::option::Option<crate::types::SegmentGroupList>,
     /// <p>The segment type. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>DIMENSIONAL - A dynamic segment, which is a segment that uses selection criteria that you specify and is based on endpoint data that's reported by your app. Dynamic segments can change over time.</p></li>
-    /// <li>
-    /// <p>IMPORT - A static segment, which is a segment that uses selection criteria that you specify and is based on endpoint definitions that you import from a file. Imported segments are static; they don't change over time.</p></li>
+    /// <li><p>DIMENSIONAL - A dynamic segment, which is a segment that uses selection criteria that you specify and is based on endpoint data that's reported by your app. Dynamic segments can change over time.</p></li>
+    /// <li><p>IMPORT - A static segment, which is a segment that uses selection criteria that you specify and is based on endpoint definitions that you import from a file. Imported segments are static; they don't change over time.</p></li>
     /// </ul>
     pub segment_type: ::std::option::Option<crate::types::SegmentType>,
     /// <p>A string-to-string map of key-value pairs that identifies the tags that are associated with the segment. Each tag consists of a required tag key and an associated tag value.</p>
@@ -74,10 +72,8 @@ impl SegmentResponse {
     }
     /// <p>The segment type. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>DIMENSIONAL - A dynamic segment, which is a segment that uses selection criteria that you specify and is based on endpoint data that's reported by your app. Dynamic segments can change over time.</p></li>
-    /// <li>
-    /// <p>IMPORT - A static segment, which is a segment that uses selection criteria that you specify and is based on endpoint definitions that you import from a file. Imported segments are static; they don't change over time.</p></li>
+    /// <li><p>DIMENSIONAL - A dynamic segment, which is a segment that uses selection criteria that you specify and is based on endpoint data that's reported by your app. Dynamic segments can change over time.</p></li>
+    /// <li><p>IMPORT - A static segment, which is a segment that uses selection criteria that you specify and is based on endpoint definitions that you import from a file. Imported segments are static; they don't change over time.</p></li>
     /// </ul>
     pub fn segment_type(&self) -> ::std::option::Option<&crate::types::SegmentType> {
         self.segment_type.as_ref()
@@ -248,10 +244,8 @@ impl SegmentResponseBuilder {
     }
     /// <p>The segment type. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>DIMENSIONAL - A dynamic segment, which is a segment that uses selection criteria that you specify and is based on endpoint data that's reported by your app. Dynamic segments can change over time.</p></li>
-    /// <li>
-    /// <p>IMPORT - A static segment, which is a segment that uses selection criteria that you specify and is based on endpoint definitions that you import from a file. Imported segments are static; they don't change over time.</p></li>
+    /// <li><p>DIMENSIONAL - A dynamic segment, which is a segment that uses selection criteria that you specify and is based on endpoint data that's reported by your app. Dynamic segments can change over time.</p></li>
+    /// <li><p>IMPORT - A static segment, which is a segment that uses selection criteria that you specify and is based on endpoint definitions that you import from a file. Imported segments are static; they don't change over time.</p></li>
     /// </ul>
     /// This field is required.
     pub fn segment_type(mut self, input: crate::types::SegmentType) -> Self {
@@ -260,10 +254,8 @@ impl SegmentResponseBuilder {
     }
     /// <p>The segment type. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>DIMENSIONAL - A dynamic segment, which is a segment that uses selection criteria that you specify and is based on endpoint data that's reported by your app. Dynamic segments can change over time.</p></li>
-    /// <li>
-    /// <p>IMPORT - A static segment, which is a segment that uses selection criteria that you specify and is based on endpoint definitions that you import from a file. Imported segments are static; they don't change over time.</p></li>
+    /// <li><p>DIMENSIONAL - A dynamic segment, which is a segment that uses selection criteria that you specify and is based on endpoint data that's reported by your app. Dynamic segments can change over time.</p></li>
+    /// <li><p>IMPORT - A static segment, which is a segment that uses selection criteria that you specify and is based on endpoint definitions that you import from a file. Imported segments are static; they don't change over time.</p></li>
     /// </ul>
     pub fn set_segment_type(mut self, input: ::std::option::Option<crate::types::SegmentType>) -> Self {
         self.segment_type = input;
@@ -271,10 +263,8 @@ impl SegmentResponseBuilder {
     }
     /// <p>The segment type. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>DIMENSIONAL - A dynamic segment, which is a segment that uses selection criteria that you specify and is based on endpoint data that's reported by your app. Dynamic segments can change over time.</p></li>
-    /// <li>
-    /// <p>IMPORT - A static segment, which is a segment that uses selection criteria that you specify and is based on endpoint definitions that you import from a file. Imported segments are static; they don't change over time.</p></li>
+    /// <li><p>DIMENSIONAL - A dynamic segment, which is a segment that uses selection criteria that you specify and is based on endpoint data that's reported by your app. Dynamic segments can change over time.</p></li>
+    /// <li><p>IMPORT - A static segment, which is a segment that uses selection criteria that you specify and is based on endpoint definitions that you import from a file. Imported segments are static; they don't change over time.</p></li>
     /// </ul>
     pub fn get_segment_type(&self) -> &::std::option::Option<crate::types::SegmentType> {
         &self.segment_type

@@ -4,17 +4,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcIngressConnectionSummary {
-    /// <p>The Amazon Resource Name (ARN) of the VPC Ingress Connection.</p>
+    /// <p>The Amazon Resource Name (ARN) of the VPC Ingress Connection. </p>
     pub vpc_ingress_connection_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the service associated with the VPC Ingress Connection.</p>
+    /// <p>The Amazon Resource Name (ARN) of the service associated with the VPC Ingress Connection. </p>
     pub service_arn: ::std::option::Option<::std::string::String>,
 }
 impl VpcIngressConnectionSummary {
-    /// <p>The Amazon Resource Name (ARN) of the VPC Ingress Connection.</p>
+    /// <p>The Amazon Resource Name (ARN) of the VPC Ingress Connection. </p>
     pub fn vpc_ingress_connection_arn(&self) -> ::std::option::Option<&str> {
         self.vpc_ingress_connection_arn.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the service associated with the VPC Ingress Connection.</p>
+    /// <p>The Amazon Resource Name (ARN) of the service associated with the VPC Ingress Connection. </p>
     pub fn service_arn(&self) -> ::std::option::Option<&str> {
         self.service_arn.as_deref()
     }
@@ -34,31 +34,31 @@ pub struct VpcIngressConnectionSummaryBuilder {
     pub(crate) service_arn: ::std::option::Option<::std::string::String>,
 }
 impl VpcIngressConnectionSummaryBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the VPC Ingress Connection.</p>
+    /// <p>The Amazon Resource Name (ARN) of the VPC Ingress Connection. </p>
     pub fn vpc_ingress_connection_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_ingress_connection_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the VPC Ingress Connection.</p>
+    /// <p>The Amazon Resource Name (ARN) of the VPC Ingress Connection. </p>
     pub fn set_vpc_ingress_connection_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_ingress_connection_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the VPC Ingress Connection.</p>
+    /// <p>The Amazon Resource Name (ARN) of the VPC Ingress Connection. </p>
     pub fn get_vpc_ingress_connection_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_ingress_connection_arn
     }
-    /// <p>The Amazon Resource Name (ARN) of the service associated with the VPC Ingress Connection.</p>
+    /// <p>The Amazon Resource Name (ARN) of the service associated with the VPC Ingress Connection. </p>
     pub fn service_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the service associated with the VPC Ingress Connection.</p>
+    /// <p>The Amazon Resource Name (ARN) of the service associated with the VPC Ingress Connection. </p>
     pub fn set_service_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the service associated with the VPC Ingress Connection.</p>
+    /// <p>The Amazon Resource Name (ARN) of the service associated with the VPC Ingress Connection. </p>
     pub fn get_service_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_arn
     }

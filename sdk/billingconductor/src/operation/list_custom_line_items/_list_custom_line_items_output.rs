@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCustomLineItemsOutput {
-    /// <p>A list of <code>FreeFormLineItemListElements</code> received.</p>
+    /// <p> A list of <code>FreeFormLineItemListElements</code> received. </p>
     pub custom_line_items: ::std::option::Option<::std::vec::Vec<crate::types::CustomLineItemListElement>>,
-    /// <p>The pagination token that's used on subsequent calls to get custom line items (FFLIs).</p>
+    /// <p> The pagination token that's used on subsequent calls to get custom line items (FFLIs). </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListCustomLineItemsOutput {
-    /// <p>A list of <code>FreeFormLineItemListElements</code> received.</p>
+    /// <p> A list of <code>FreeFormLineItemListElements</code> received. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_line_items.is_none()`.
     pub fn custom_line_items(&self) -> &[crate::types::CustomLineItemListElement] {
         self.custom_line_items.as_deref().unwrap_or_default()
     }
-    /// <p>The pagination token that's used on subsequent calls to get custom line items (FFLIs).</p>
+    /// <p> The pagination token that's used on subsequent calls to get custom line items (FFLIs). </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -46,33 +46,33 @@ impl ListCustomLineItemsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_custom_line_items`](Self::set_custom_line_items).
     ///
-    /// <p>A list of <code>FreeFormLineItemListElements</code> received.</p>
+    /// <p> A list of <code>FreeFormLineItemListElements</code> received. </p>
     pub fn custom_line_items(mut self, input: crate::types::CustomLineItemListElement) -> Self {
         let mut v = self.custom_line_items.unwrap_or_default();
         v.push(input);
         self.custom_line_items = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of <code>FreeFormLineItemListElements</code> received.</p>
+    /// <p> A list of <code>FreeFormLineItemListElements</code> received. </p>
     pub fn set_custom_line_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomLineItemListElement>>) -> Self {
         self.custom_line_items = input;
         self
     }
-    /// <p>A list of <code>FreeFormLineItemListElements</code> received.</p>
+    /// <p> A list of <code>FreeFormLineItemListElements</code> received. </p>
     pub fn get_custom_line_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomLineItemListElement>> {
         &self.custom_line_items
     }
-    /// <p>The pagination token that's used on subsequent calls to get custom line items (FFLIs).</p>
+    /// <p> The pagination token that's used on subsequent calls to get custom line items (FFLIs). </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The pagination token that's used on subsequent calls to get custom line items (FFLIs).</p>
+    /// <p> The pagination token that's used on subsequent calls to get custom line items (FFLIs). </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The pagination token that's used on subsequent calls to get custom line items (FFLIs).</p>
+    /// <p> The pagination token that's used on subsequent calls to get custom line items (FFLIs). </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

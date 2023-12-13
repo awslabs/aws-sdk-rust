@@ -9,10 +9,8 @@ pub struct PutLifecycleHookInput {
     pub auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The lifecycle transition. For Auto Scaling groups, there are two major lifecycle transitions.</p>
     /// <ul>
-    /// <li>
-    /// <p>To create a lifecycle hook for scale-out events, specify <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>.</p></li>
-    /// <li>
-    /// <p>To create a lifecycle hook for scale-in events, specify <code>autoscaling:EC2_INSTANCE_TERMINATING</code>.</p></li>
+    /// <li> <p>To create a lifecycle hook for scale-out events, specify <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>.</p> </li>
+    /// <li> <p>To create a lifecycle hook for scale-in events, specify <code>autoscaling:EC2_INSTANCE_TERMINATING</code>.</p> </li>
     /// </ul>
     /// <p>Required for new lifecycle hooks, but optional when updating existing hooks.</p>
     pub lifecycle_transition: ::std::option::Option<::std::string::String>,
@@ -29,7 +27,7 @@ pub struct PutLifecycleHookInput {
     /// <p>The maximum time, in seconds, that can elapse before the lifecycle hook times out. The range is from <code>30</code> to <code>7200</code> seconds. The default value is <code>3600</code> seconds (1 hour).</p>
     pub heartbeat_timeout: ::std::option::Option<i32>,
     /// <p>The action the Auto Scaling group takes when the lifecycle hook timeout elapses or if an unexpected failure occurs. The default value is <code>ABANDON</code>.</p>
-    /// <p>Valid values: <code>CONTINUE</code> | <code>ABANDON</code></p>
+    /// <p>Valid values: <code>CONTINUE</code> | <code>ABANDON</code> </p>
     pub default_result: ::std::option::Option<::std::string::String>,
 }
 impl PutLifecycleHookInput {
@@ -43,10 +41,8 @@ impl PutLifecycleHookInput {
     }
     /// <p>The lifecycle transition. For Auto Scaling groups, there are two major lifecycle transitions.</p>
     /// <ul>
-    /// <li>
-    /// <p>To create a lifecycle hook for scale-out events, specify <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>.</p></li>
-    /// <li>
-    /// <p>To create a lifecycle hook for scale-in events, specify <code>autoscaling:EC2_INSTANCE_TERMINATING</code>.</p></li>
+    /// <li> <p>To create a lifecycle hook for scale-out events, specify <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>.</p> </li>
+    /// <li> <p>To create a lifecycle hook for scale-in events, specify <code>autoscaling:EC2_INSTANCE_TERMINATING</code>.</p> </li>
     /// </ul>
     /// <p>Required for new lifecycle hooks, but optional when updating existing hooks.</p>
     pub fn lifecycle_transition(&self) -> ::std::option::Option<&str> {
@@ -73,7 +69,7 @@ impl PutLifecycleHookInput {
         self.heartbeat_timeout
     }
     /// <p>The action the Auto Scaling group takes when the lifecycle hook timeout elapses or if an unexpected failure occurs. The default value is <code>ABANDON</code>.</p>
-    /// <p>Valid values: <code>CONTINUE</code> | <code>ABANDON</code></p>
+    /// <p>Valid values: <code>CONTINUE</code> | <code>ABANDON</code> </p>
     pub fn default_result(&self) -> ::std::option::Option<&str> {
         self.default_result.as_deref()
     }
@@ -131,10 +127,8 @@ impl PutLifecycleHookInputBuilder {
     }
     /// <p>The lifecycle transition. For Auto Scaling groups, there are two major lifecycle transitions.</p>
     /// <ul>
-    /// <li>
-    /// <p>To create a lifecycle hook for scale-out events, specify <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>.</p></li>
-    /// <li>
-    /// <p>To create a lifecycle hook for scale-in events, specify <code>autoscaling:EC2_INSTANCE_TERMINATING</code>.</p></li>
+    /// <li> <p>To create a lifecycle hook for scale-out events, specify <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>.</p> </li>
+    /// <li> <p>To create a lifecycle hook for scale-in events, specify <code>autoscaling:EC2_INSTANCE_TERMINATING</code>.</p> </li>
     /// </ul>
     /// <p>Required for new lifecycle hooks, but optional when updating existing hooks.</p>
     pub fn lifecycle_transition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -143,10 +137,8 @@ impl PutLifecycleHookInputBuilder {
     }
     /// <p>The lifecycle transition. For Auto Scaling groups, there are two major lifecycle transitions.</p>
     /// <ul>
-    /// <li>
-    /// <p>To create a lifecycle hook for scale-out events, specify <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>.</p></li>
-    /// <li>
-    /// <p>To create a lifecycle hook for scale-in events, specify <code>autoscaling:EC2_INSTANCE_TERMINATING</code>.</p></li>
+    /// <li> <p>To create a lifecycle hook for scale-out events, specify <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>.</p> </li>
+    /// <li> <p>To create a lifecycle hook for scale-in events, specify <code>autoscaling:EC2_INSTANCE_TERMINATING</code>.</p> </li>
     /// </ul>
     /// <p>Required for new lifecycle hooks, but optional when updating existing hooks.</p>
     pub fn set_lifecycle_transition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -155,10 +147,8 @@ impl PutLifecycleHookInputBuilder {
     }
     /// <p>The lifecycle transition. For Auto Scaling groups, there are two major lifecycle transitions.</p>
     /// <ul>
-    /// <li>
-    /// <p>To create a lifecycle hook for scale-out events, specify <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>.</p></li>
-    /// <li>
-    /// <p>To create a lifecycle hook for scale-in events, specify <code>autoscaling:EC2_INSTANCE_TERMINATING</code>.</p></li>
+    /// <li> <p>To create a lifecycle hook for scale-out events, specify <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>.</p> </li>
+    /// <li> <p>To create a lifecycle hook for scale-in events, specify <code>autoscaling:EC2_INSTANCE_TERMINATING</code>.</p> </li>
     /// </ul>
     /// <p>Required for new lifecycle hooks, but optional when updating existing hooks.</p>
     pub fn get_lifecycle_transition(&self) -> &::std::option::Option<::std::string::String> {
@@ -233,19 +223,19 @@ impl PutLifecycleHookInputBuilder {
         &self.heartbeat_timeout
     }
     /// <p>The action the Auto Scaling group takes when the lifecycle hook timeout elapses or if an unexpected failure occurs. The default value is <code>ABANDON</code>.</p>
-    /// <p>Valid values: <code>CONTINUE</code> | <code>ABANDON</code></p>
+    /// <p>Valid values: <code>CONTINUE</code> | <code>ABANDON</code> </p>
     pub fn default_result(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_result = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The action the Auto Scaling group takes when the lifecycle hook timeout elapses or if an unexpected failure occurs. The default value is <code>ABANDON</code>.</p>
-    /// <p>Valid values: <code>CONTINUE</code> | <code>ABANDON</code></p>
+    /// <p>Valid values: <code>CONTINUE</code> | <code>ABANDON</code> </p>
     pub fn set_default_result(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_result = input;
         self
     }
     /// <p>The action the Auto Scaling group takes when the lifecycle hook timeout elapses or if an unexpected failure occurs. The default value is <code>ABANDON</code>.</p>
-    /// <p>Valid values: <code>CONTINUE</code> | <code>ABANDON</code></p>
+    /// <p>Valid values: <code>CONTINUE</code> | <code>ABANDON</code> </p>
     pub fn get_default_result(&self) -> &::std::option::Option<::std::string::String> {
         &self.default_result
     }

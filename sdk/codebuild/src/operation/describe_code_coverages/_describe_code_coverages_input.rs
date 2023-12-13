@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCodeCoveragesInput {
-    /// <p>The ARN of the report for which test cases are returned.</p>
+    /// <p> The ARN of the report for which test cases are returned. </p>
     pub report_arn: ::std::option::Option<::std::string::String>,
     /// <p>The <code>nextToken</code> value returned from a previous call to <code>DescribeCodeCoverages</code>. This specifies the next item to return. To return the beginning of the list, exclude this parameter.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -33,7 +33,7 @@ pub struct DescribeCodeCoveragesInput {
     pub max_line_coverage_percentage: ::std::option::Option<f64>,
 }
 impl DescribeCodeCoveragesInput {
-    /// <p>The ARN of the report for which test cases are returned.</p>
+    /// <p> The ARN of the report for which test cases are returned. </p>
     pub fn report_arn(&self) -> ::std::option::Option<&str> {
         self.report_arn.as_deref()
     }
@@ -96,18 +96,18 @@ pub struct DescribeCodeCoveragesInputBuilder {
     pub(crate) max_line_coverage_percentage: ::std::option::Option<f64>,
 }
 impl DescribeCodeCoveragesInputBuilder {
-    /// <p>The ARN of the report for which test cases are returned.</p>
+    /// <p> The ARN of the report for which test cases are returned. </p>
     /// This field is required.
     pub fn report_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.report_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the report for which test cases are returned.</p>
+    /// <p> The ARN of the report for which test cases are returned. </p>
     pub fn set_report_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.report_arn = input;
         self
     }
-    /// <p>The ARN of the report for which test cases are returned.</p>
+    /// <p> The ARN of the report for which test cases are returned. </p>
     pub fn get_report_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.report_arn
     }

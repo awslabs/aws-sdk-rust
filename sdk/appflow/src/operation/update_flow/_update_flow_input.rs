@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFlowInput {
-    /// <p>The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only.</p>
+    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     pub flow_name: ::std::option::Option<::std::string::String>,
-    /// <p>A description of the flow.</p>
+    /// <p> A description of the flow. </p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The trigger settings that determine how and when the flow runs.</p>
+    /// <p> The trigger settings that determine how and when the flow runs. </p>
     pub trigger_config: ::std::option::Option<crate::types::TriggerConfig>,
-    /// <p>Contains information about the configuration of the source connector used in the flow.</p>
+    /// <p> Contains information about the configuration of the source connector used in the flow. </p>
     pub source_flow_config: ::std::option::Option<crate::types::SourceFlowConfig>,
-    /// <p>The configuration that controls how Amazon AppFlow transfers data to the destination connector.</p>
+    /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination connector. </p>
     pub destination_flow_config_list: ::std::option::Option<::std::vec::Vec<crate::types::DestinationFlowConfig>>,
-    /// <p>A list of tasks that Amazon AppFlow performs while transferring the data in the flow run.</p>
+    /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
     pub tasks: ::std::option::Option<::std::vec::Vec<crate::types::Task>>,
     /// <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's transferred by the associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.</p>
     pub metadata_catalog_config: ::std::option::Option<crate::types::MetadataCatalogConfig>,
@@ -23,29 +23,29 @@ pub struct UpdateFlowInput {
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateFlowInput {
-    /// <p>The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only.</p>
+    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     pub fn flow_name(&self) -> ::std::option::Option<&str> {
         self.flow_name.as_deref()
     }
-    /// <p>A description of the flow.</p>
+    /// <p> A description of the flow. </p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The trigger settings that determine how and when the flow runs.</p>
+    /// <p> The trigger settings that determine how and when the flow runs. </p>
     pub fn trigger_config(&self) -> ::std::option::Option<&crate::types::TriggerConfig> {
         self.trigger_config.as_ref()
     }
-    /// <p>Contains information about the configuration of the source connector used in the flow.</p>
+    /// <p> Contains information about the configuration of the source connector used in the flow. </p>
     pub fn source_flow_config(&self) -> ::std::option::Option<&crate::types::SourceFlowConfig> {
         self.source_flow_config.as_ref()
     }
-    /// <p>The configuration that controls how Amazon AppFlow transfers data to the destination connector.</p>
+    /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination connector. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destination_flow_config_list.is_none()`.
     pub fn destination_flow_config_list(&self) -> &[crate::types::DestinationFlowConfig] {
         self.destination_flow_config_list.as_deref().unwrap_or_default()
     }
-    /// <p>A list of tasks that Amazon AppFlow performs while transferring the data in the flow run.</p>
+    /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tasks.is_none()`.
     pub fn tasks(&self) -> &[crate::types::Task] {
@@ -83,62 +83,62 @@ pub struct UpdateFlowInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateFlowInputBuilder {
-    /// <p>The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only.</p>
+    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     /// This field is required.
     pub fn flow_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only.</p>
+    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     pub fn set_flow_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.flow_name = input;
         self
     }
-    /// <p>The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only.</p>
+    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     pub fn get_flow_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.flow_name
     }
-    /// <p>A description of the flow.</p>
+    /// <p> A description of the flow. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A description of the flow.</p>
+    /// <p> A description of the flow. </p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>A description of the flow.</p>
+    /// <p> A description of the flow. </p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The trigger settings that determine how and when the flow runs.</p>
+    /// <p> The trigger settings that determine how and when the flow runs. </p>
     /// This field is required.
     pub fn trigger_config(mut self, input: crate::types::TriggerConfig) -> Self {
         self.trigger_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The trigger settings that determine how and when the flow runs.</p>
+    /// <p> The trigger settings that determine how and when the flow runs. </p>
     pub fn set_trigger_config(mut self, input: ::std::option::Option<crate::types::TriggerConfig>) -> Self {
         self.trigger_config = input;
         self
     }
-    /// <p>The trigger settings that determine how and when the flow runs.</p>
+    /// <p> The trigger settings that determine how and when the flow runs. </p>
     pub fn get_trigger_config(&self) -> &::std::option::Option<crate::types::TriggerConfig> {
         &self.trigger_config
     }
-    /// <p>Contains information about the configuration of the source connector used in the flow.</p>
+    /// <p> Contains information about the configuration of the source connector used in the flow. </p>
     /// This field is required.
     pub fn source_flow_config(mut self, input: crate::types::SourceFlowConfig) -> Self {
         self.source_flow_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Contains information about the configuration of the source connector used in the flow.</p>
+    /// <p> Contains information about the configuration of the source connector used in the flow. </p>
     pub fn set_source_flow_config(mut self, input: ::std::option::Option<crate::types::SourceFlowConfig>) -> Self {
         self.source_flow_config = input;
         self
     }
-    /// <p>Contains information about the configuration of the source connector used in the flow.</p>
+    /// <p> Contains information about the configuration of the source connector used in the flow. </p>
     pub fn get_source_flow_config(&self) -> &::std::option::Option<crate::types::SourceFlowConfig> {
         &self.source_flow_config
     }
@@ -146,19 +146,19 @@ impl UpdateFlowInputBuilder {
     ///
     /// To override the contents of this collection use [`set_destination_flow_config_list`](Self::set_destination_flow_config_list).
     ///
-    /// <p>The configuration that controls how Amazon AppFlow transfers data to the destination connector.</p>
+    /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination connector. </p>
     pub fn destination_flow_config_list(mut self, input: crate::types::DestinationFlowConfig) -> Self {
         let mut v = self.destination_flow_config_list.unwrap_or_default();
         v.push(input);
         self.destination_flow_config_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The configuration that controls how Amazon AppFlow transfers data to the destination connector.</p>
+    /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination connector. </p>
     pub fn set_destination_flow_config_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DestinationFlowConfig>>) -> Self {
         self.destination_flow_config_list = input;
         self
     }
-    /// <p>The configuration that controls how Amazon AppFlow transfers data to the destination connector.</p>
+    /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination connector. </p>
     pub fn get_destination_flow_config_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DestinationFlowConfig>> {
         &self.destination_flow_config_list
     }
@@ -166,19 +166,19 @@ impl UpdateFlowInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tasks`](Self::set_tasks).
     ///
-    /// <p>A list of tasks that Amazon AppFlow performs while transferring the data in the flow run.</p>
+    /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
     pub fn tasks(mut self, input: crate::types::Task) -> Self {
         let mut v = self.tasks.unwrap_or_default();
         v.push(input);
         self.tasks = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of tasks that Amazon AppFlow performs while transferring the data in the flow run.</p>
+    /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
     pub fn set_tasks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Task>>) -> Self {
         self.tasks = input;
         self
     }
-    /// <p>A list of tasks that Amazon AppFlow performs while transferring the data in the flow run.</p>
+    /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
     pub fn get_tasks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Task>> {
         &self.tasks
     }

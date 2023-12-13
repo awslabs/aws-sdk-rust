@@ -111,21 +111,21 @@ impl CreateDiskSnapshotFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique name of the source disk (e.g., <code>Disk-Virginia-1</code>).</p><note>
+    /// <p>The unique name of the source disk (e.g., <code>Disk-Virginia-1</code>).</p> <note>
     /// <p>This parameter cannot be defined together with the <code>instance name</code> parameter. The <code>disk name</code> and <code>instance name</code> parameters are mutually exclusive.</p>
     /// </note>
     pub fn disk_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.disk_name(input.into());
         self
     }
-    /// <p>The unique name of the source disk (e.g., <code>Disk-Virginia-1</code>).</p><note>
+    /// <p>The unique name of the source disk (e.g., <code>Disk-Virginia-1</code>).</p> <note>
     /// <p>This parameter cannot be defined together with the <code>instance name</code> parameter. The <code>disk name</code> and <code>instance name</code> parameters are mutually exclusive.</p>
     /// </note>
     pub fn set_disk_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_disk_name(input);
         self
     }
-    /// <p>The unique name of the source disk (e.g., <code>Disk-Virginia-1</code>).</p><note>
+    /// <p>The unique name of the source disk (e.g., <code>Disk-Virginia-1</code>).</p> <note>
     /// <p>This parameter cannot be defined together with the <code>instance name</code> parameter. The <code>disk name</code> and <code>instance name</code> parameters are mutually exclusive.</p>
     /// </note>
     pub fn get_disk_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,21 +145,21 @@ impl CreateDiskSnapshotFluentBuilder {
     pub fn get_disk_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_disk_snapshot_name()
     }
-    /// <p>The unique name of the source instance (e.g., <code>Amazon_Linux-512MB-Virginia-1</code>). When this is defined, a snapshot of the instance's system volume is created.</p><note>
+    /// <p>The unique name of the source instance (e.g., <code>Amazon_Linux-512MB-Virginia-1</code>). When this is defined, a snapshot of the instance's system volume is created.</p> <note>
     /// <p>This parameter cannot be defined together with the <code>disk name</code> parameter. The <code>instance name</code> and <code>disk name</code> parameters are mutually exclusive.</p>
     /// </note>
     pub fn instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_name(input.into());
         self
     }
-    /// <p>The unique name of the source instance (e.g., <code>Amazon_Linux-512MB-Virginia-1</code>). When this is defined, a snapshot of the instance's system volume is created.</p><note>
+    /// <p>The unique name of the source instance (e.g., <code>Amazon_Linux-512MB-Virginia-1</code>). When this is defined, a snapshot of the instance's system volume is created.</p> <note>
     /// <p>This parameter cannot be defined together with the <code>disk name</code> parameter. The <code>instance name</code> and <code>disk name</code> parameters are mutually exclusive.</p>
     /// </note>
     pub fn set_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_name(input);
         self
     }
-    /// <p>The unique name of the source instance (e.g., <code>Amazon_Linux-512MB-Virginia-1</code>). When this is defined, a snapshot of the instance's system volume is created.</p><note>
+    /// <p>The unique name of the source instance (e.g., <code>Amazon_Linux-512MB-Virginia-1</code>). When this is defined, a snapshot of the instance's system volume is created.</p> <note>
     /// <p>This parameter cannot be defined together with the <code>disk name</code> parameter. The <code>instance name</code> and <code>disk name</code> parameters are mutually exclusive.</p>
     /// </note>
     pub fn get_instance_name(&self) -> &::std::option::Option<::std::string::String> {

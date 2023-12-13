@@ -7,20 +7,16 @@
 pub struct PointInTimeRecovery {
     /// <p>The options are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>status=ENABLED</code></p></li>
-    /// <li>
-    /// <p><code>status=DISABLED</code></p></li>
+    /// <li> <p> <code>status=ENABLED</code> </p> </li>
+    /// <li> <p> <code>status=DISABLED</code> </p> </li>
     /// </ul>
     pub status: crate::types::PointInTimeRecoveryStatus,
 }
 impl PointInTimeRecovery {
     /// <p>The options are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>status=ENABLED</code></p></li>
-    /// <li>
-    /// <p><code>status=DISABLED</code></p></li>
+    /// <li> <p> <code>status=ENABLED</code> </p> </li>
+    /// <li> <p> <code>status=DISABLED</code> </p> </li>
     /// </ul>
     pub fn status(&self) -> &crate::types::PointInTimeRecoveryStatus {
         &self.status
@@ -42,10 +38,8 @@ pub struct PointInTimeRecoveryBuilder {
 impl PointInTimeRecoveryBuilder {
     /// <p>The options are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>status=ENABLED</code></p></li>
-    /// <li>
-    /// <p><code>status=DISABLED</code></p></li>
+    /// <li> <p> <code>status=ENABLED</code> </p> </li>
+    /// <li> <p> <code>status=DISABLED</code> </p> </li>
     /// </ul>
     /// This field is required.
     pub fn status(mut self, input: crate::types::PointInTimeRecoveryStatus) -> Self {
@@ -54,10 +48,8 @@ impl PointInTimeRecoveryBuilder {
     }
     /// <p>The options are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>status=ENABLED</code></p></li>
-    /// <li>
-    /// <p><code>status=DISABLED</code></p></li>
+    /// <li> <p> <code>status=ENABLED</code> </p> </li>
+    /// <li> <p> <code>status=DISABLED</code> </p> </li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::PointInTimeRecoveryStatus>) -> Self {
         self.status = input;
@@ -65,10 +57,8 @@ impl PointInTimeRecoveryBuilder {
     }
     /// <p>The options are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>status=ENABLED</code></p></li>
-    /// <li>
-    /// <p><code>status=DISABLED</code></p></li>
+    /// <li> <p> <code>status=ENABLED</code> </p> </li>
+    /// <li> <p> <code>status=DISABLED</code> </p> </li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::PointInTimeRecoveryStatus> {
         &self.status

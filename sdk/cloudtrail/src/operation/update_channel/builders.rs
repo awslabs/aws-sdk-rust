@@ -140,17 +140,17 @@ impl UpdateChannelFluentBuilder {
     pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Destination>> {
         self.inner.get_destinations()
     }
-    /// <p>Changes the name of the channel.</p>
+    /// <p> Changes the name of the channel. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>Changes the name of the channel.</p>
+    /// <p> Changes the name of the channel. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>Changes the name of the channel.</p>
+    /// <p> Changes the name of the channel. </p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }

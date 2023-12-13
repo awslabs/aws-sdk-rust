@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ViewOffNadirInput {
-    /// <p>The minimum value for ViewOffNadir property filter. This filters items having ViewOffNadir greater than or equal to this value.</p>
+    /// <p>The minimum value for ViewOffNadir property filter. This filters items having ViewOffNadir greater than or equal to this value. </p>
     pub lower_bound: f32,
     /// <p>The maximum value for ViewOffNadir property filter. This filters items having ViewOffNadir lesser than or equal to this value.</p>
     pub upper_bound: f32,
 }
 impl ViewOffNadirInput {
-    /// <p>The minimum value for ViewOffNadir property filter. This filters items having ViewOffNadir greater than or equal to this value.</p>
+    /// <p>The minimum value for ViewOffNadir property filter. This filters items having ViewOffNadir greater than or equal to this value. </p>
     pub fn lower_bound(&self) -> f32 {
         self.lower_bound
     }
@@ -34,18 +34,18 @@ pub struct ViewOffNadirInputBuilder {
     pub(crate) upper_bound: ::std::option::Option<f32>,
 }
 impl ViewOffNadirInputBuilder {
-    /// <p>The minimum value for ViewOffNadir property filter. This filters items having ViewOffNadir greater than or equal to this value.</p>
+    /// <p>The minimum value for ViewOffNadir property filter. This filters items having ViewOffNadir greater than or equal to this value. </p>
     /// This field is required.
     pub fn lower_bound(mut self, input: f32) -> Self {
         self.lower_bound = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The minimum value for ViewOffNadir property filter. This filters items having ViewOffNadir greater than or equal to this value.</p>
+    /// <p>The minimum value for ViewOffNadir property filter. This filters items having ViewOffNadir greater than or equal to this value. </p>
     pub fn set_lower_bound(mut self, input: ::std::option::Option<f32>) -> Self {
         self.lower_bound = input;
         self
     }
-    /// <p>The minimum value for ViewOffNadir property filter. This filters items having ViewOffNadir greater than or equal to this value.</p>
+    /// <p>The minimum value for ViewOffNadir property filter. This filters items having ViewOffNadir greater than or equal to this value. </p>
     pub fn get_lower_bound(&self) -> &::std::option::Option<f32> {
         &self.lower_bound
     }

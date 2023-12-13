@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSettingsInput {
-    /// <p>The list of setting attribute enum values.</p>
+    /// <p> The list of setting attribute enum values. </p>
     pub attribute: ::std::option::Option<crate::types::SettingAttribute>,
 }
 impl GetSettingsInput {
-    /// <p>The list of setting attribute enum values.</p>
+    /// <p> The list of setting attribute enum values. </p>
     pub fn attribute(&self) -> ::std::option::Option<&crate::types::SettingAttribute> {
         self.attribute.as_ref()
     }
@@ -26,18 +26,18 @@ pub struct GetSettingsInputBuilder {
     pub(crate) attribute: ::std::option::Option<crate::types::SettingAttribute>,
 }
 impl GetSettingsInputBuilder {
-    /// <p>The list of setting attribute enum values.</p>
+    /// <p> The list of setting attribute enum values. </p>
     /// This field is required.
     pub fn attribute(mut self, input: crate::types::SettingAttribute) -> Self {
         self.attribute = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The list of setting attribute enum values.</p>
+    /// <p> The list of setting attribute enum values. </p>
     pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::SettingAttribute>) -> Self {
         self.attribute = input;
         self
     }
-    /// <p>The list of setting attribute enum values.</p>
+    /// <p> The list of setting attribute enum values. </p>
     pub fn get_attribute(&self) -> &::std::option::Option<crate::types::SettingAttribute> {
         &self.attribute
     }

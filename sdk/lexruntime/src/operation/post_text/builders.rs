@@ -22,36 +22,26 @@ impl PostTextInputBuilder {
 }
 /// Fluent builder constructing a request to `PostText`.
 ///
-/// <p>Sends user input to Amazon Lex. Client applications can use this API to send requests to Amazon Lex at runtime. Amazon Lex then interprets the user input using the machine learning model it built for the bot.</p>
-/// <p>In response, Amazon Lex returns the next <code>message</code> to convey to the user an optional <code>responseCard</code> to display. Consider the following example messages:</p>
+/// <p>Sends user input to Amazon Lex. Client applications can use this API to send requests to Amazon Lex at runtime. Amazon Lex then interprets the user input using the machine learning model it built for the bot. </p>
+/// <p> In response, Amazon Lex returns the next <code>message</code> to convey to the user an optional <code>responseCard</code> to display. Consider the following example messages: </p>
 /// <ul>
-/// <li>
-/// <p>For a user input "I would like a pizza", Amazon Lex might return a response with a message eliciting slot data (for example, PizzaSize): "What size pizza would you like?"</p></li>
-/// <li>
-/// <p>After the user provides all of the pizza order information, Amazon Lex might return a response with a message to obtain user confirmation "Proceed with the pizza order?".</p></li>
-/// <li>
-/// <p>After the user replies to a confirmation prompt with a "yes", Amazon Lex might return a conclusion statement: "Thank you, your cheese pizza has been ordered.".</p></li>
+/// <li> <p> For a user input "I would like a pizza", Amazon Lex might return a response with a message eliciting slot data (for example, PizzaSize): "What size pizza would you like?" </p> </li>
+/// <li> <p> After the user provides all of the pizza order information, Amazon Lex might return a response with a message to obtain user confirmation "Proceed with the pizza order?". </p> </li>
+/// <li> <p> After the user replies to a confirmation prompt with a "yes", Amazon Lex might return a conclusion statement: "Thank you, your cheese pizza has been ordered.". </p> </li>
 /// </ul>
-/// <p>Not all Amazon Lex messages require a user response. For example, a conclusion statement does not require a response. Some messages require only a "yes" or "no" user response. In addition to the <code>message</code>, Amazon Lex provides additional context about the message in the response that you might use to enhance client behavior, for example, to display the appropriate client user interface. These are the <code>slotToElicit</code>, <code>dialogState</code>, <code>intentName</code>, and <code>slots</code> fields in the response. Consider the following examples:</p>
+/// <p> Not all Amazon Lex messages require a user response. For example, a conclusion statement does not require a response. Some messages require only a "yes" or "no" user response. In addition to the <code>message</code>, Amazon Lex provides additional context about the message in the response that you might use to enhance client behavior, for example, to display the appropriate client user interface. These are the <code>slotToElicit</code>, <code>dialogState</code>, <code>intentName</code>, and <code>slots</code> fields in the response. Consider the following examples: </p>
 /// <ul>
-/// <li>
-/// <p>If the message is to elicit slot data, Amazon Lex returns the following context information:</p>
+/// <li> <p>If the message is to elicit slot data, Amazon Lex returns the following context information:</p>
 /// <ul>
-/// <li>
-/// <p><code>dialogState</code> set to ElicitSlot</p></li>
-/// <li>
-/// <p><code>intentName</code> set to the intent name in the current context</p></li>
-/// <li>
-/// <p><code>slotToElicit</code> set to the slot name for which the <code>message</code> is eliciting information</p></li>
-/// <li>
-/// <p><code>slots</code> set to a map of slots, configured for the intent, with currently known values</p></li>
-/// </ul></li>
-/// <li>
-/// <p>If the message is a confirmation prompt, the <code>dialogState</code> is set to ConfirmIntent and <code>SlotToElicit</code> is set to null.</p></li>
-/// <li>
-/// <p>If the message is a clarification prompt (configured for the intent) that indicates that user intent is not understood, the <code>dialogState</code> is set to ElicitIntent and <code>slotToElicit</code> is set to null.</p></li>
+/// <li> <p> <code>dialogState</code> set to ElicitSlot </p> </li>
+/// <li> <p> <code>intentName</code> set to the intent name in the current context </p> </li>
+/// <li> <p> <code>slotToElicit</code> set to the slot name for which the <code>message</code> is eliciting information </p> </li>
+/// <li> <p> <code>slots</code> set to a map of slots, configured for the intent, with currently known values </p> </li>
+/// </ul> </li>
+/// <li> <p> If the message is a confirmation prompt, the <code>dialogState</code> is set to ConfirmIntent and <code>SlotToElicit</code> is set to null. </p> </li>
+/// <li> <p>If the message is a clarification prompt (configured for the intent) that indicates that user intent is not understood, the <code>dialogState</code> is set to ElicitIntent and <code>slotToElicit</code> is set to null. </p> </li>
 /// </ul>
-/// <p>In addition, Amazon Lex also returns your application-specific <code>sessionAttributes</code>. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html">Managing Conversation Context</a>.</p>
+/// <p> In addition, Amazon Lex also returns your application-specific <code>sessionAttributes</code>. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html">Managing Conversation Context</a>. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PostTextFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -159,14 +149,10 @@ impl PostTextFluentBuilder {
     /// <p>The ID of the client application user. Amazon Lex uses this to identify a user's conversation with your bot. At runtime, each request must contain the <code>userID</code> field.</p>
     /// <p>To decide the user ID to use for your application, consider the following factors.</p>
     /// <ul>
-    /// <li>
-    /// <p>The <code>userID</code> field must not contain any personally identifiable information of the user, for example, name, personal identification numbers, or other end user personal information.</p></li>
-    /// <li>
-    /// <p>If you want a user to start a conversation on one device and continue on another device, use a user-specific identifier.</p></li>
-    /// <li>
-    /// <p>If you want the same user to be able to have two independent conversations on two different devices, choose a device-specific identifier.</p></li>
-    /// <li>
-    /// <p>A user can't have two independent conversations with two different versions of the same bot. For example, a user can't have a conversation with the PROD and BETA versions of the same bot. If you anticipate that a user will need to have conversation with two different versions, for example, while testing, include the bot alias in the user ID to separate the two conversations.</p></li>
+    /// <li> <p>The <code>userID</code> field must not contain any personally identifiable information of the user, for example, name, personal identification numbers, or other end user personal information.</p> </li>
+    /// <li> <p>If you want a user to start a conversation on one device and continue on another device, use a user-specific identifier.</p> </li>
+    /// <li> <p>If you want the same user to be able to have two independent conversations on two different devices, choose a device-specific identifier.</p> </li>
+    /// <li> <p>A user can't have two independent conversations with two different versions of the same bot. For example, a user can't have a conversation with the PROD and BETA versions of the same bot. If you anticipate that a user will need to have conversation with two different versions, for example, while testing, include the bot alias in the user ID to separate the two conversations.</p> </li>
     /// </ul>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_id(input.into());
@@ -175,14 +161,10 @@ impl PostTextFluentBuilder {
     /// <p>The ID of the client application user. Amazon Lex uses this to identify a user's conversation with your bot. At runtime, each request must contain the <code>userID</code> field.</p>
     /// <p>To decide the user ID to use for your application, consider the following factors.</p>
     /// <ul>
-    /// <li>
-    /// <p>The <code>userID</code> field must not contain any personally identifiable information of the user, for example, name, personal identification numbers, or other end user personal information.</p></li>
-    /// <li>
-    /// <p>If you want a user to start a conversation on one device and continue on another device, use a user-specific identifier.</p></li>
-    /// <li>
-    /// <p>If you want the same user to be able to have two independent conversations on two different devices, choose a device-specific identifier.</p></li>
-    /// <li>
-    /// <p>A user can't have two independent conversations with two different versions of the same bot. For example, a user can't have a conversation with the PROD and BETA versions of the same bot. If you anticipate that a user will need to have conversation with two different versions, for example, while testing, include the bot alias in the user ID to separate the two conversations.</p></li>
+    /// <li> <p>The <code>userID</code> field must not contain any personally identifiable information of the user, for example, name, personal identification numbers, or other end user personal information.</p> </li>
+    /// <li> <p>If you want a user to start a conversation on one device and continue on another device, use a user-specific identifier.</p> </li>
+    /// <li> <p>If you want the same user to be able to have two independent conversations on two different devices, choose a device-specific identifier.</p> </li>
+    /// <li> <p>A user can't have two independent conversations with two different versions of the same bot. For example, a user can't have a conversation with the PROD and BETA versions of the same bot. If you anticipate that a user will need to have conversation with two different versions, for example, while testing, include the bot alias in the user ID to separate the two conversations.</p> </li>
     /// </ul>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_id(input);
@@ -191,14 +173,10 @@ impl PostTextFluentBuilder {
     /// <p>The ID of the client application user. Amazon Lex uses this to identify a user's conversation with your bot. At runtime, each request must contain the <code>userID</code> field.</p>
     /// <p>To decide the user ID to use for your application, consider the following factors.</p>
     /// <ul>
-    /// <li>
-    /// <p>The <code>userID</code> field must not contain any personally identifiable information of the user, for example, name, personal identification numbers, or other end user personal information.</p></li>
-    /// <li>
-    /// <p>If you want a user to start a conversation on one device and continue on another device, use a user-specific identifier.</p></li>
-    /// <li>
-    /// <p>If you want the same user to be able to have two independent conversations on two different devices, choose a device-specific identifier.</p></li>
-    /// <li>
-    /// <p>A user can't have two independent conversations with two different versions of the same bot. For example, a user can't have a conversation with the PROD and BETA versions of the same bot. If you anticipate that a user will need to have conversation with two different versions, for example, while testing, include the bot alias in the user ID to separate the two conversations.</p></li>
+    /// <li> <p>The <code>userID</code> field must not contain any personally identifiable information of the user, for example, name, personal identification numbers, or other end user personal information.</p> </li>
+    /// <li> <p>If you want a user to start a conversation on one device and continue on another device, use a user-specific identifier.</p> </li>
+    /// <li> <p>If you want the same user to be able to have two independent conversations on two different devices, choose a device-specific identifier.</p> </li>
+    /// <li> <p>A user can't have two independent conversations with two different versions of the same bot. For example, a user can't have a conversation with the PROD and BETA versions of the same bot. If you anticipate that a user will need to have conversation with two different versions, for example, while testing, include the bot alias in the user ID to separate the two conversations.</p> </li>
     /// </ul>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_id()

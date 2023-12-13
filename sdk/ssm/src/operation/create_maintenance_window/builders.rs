@@ -22,7 +22,7 @@ impl CreateMaintenanceWindowInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateMaintenanceWindow`.
 ///
-/// <p>Creates a new maintenance window.</p><note>
+/// <p>Creates a new maintenance window.</p> <note>
 /// <p>The value you specify for <code>Duration</code> determines the specific end time for the maintenance window based on the time it begins. No maintenance window tasks are permitted to start after the resulting endtime minus the number of hours you specify for <code>Cutoff</code>. For example, if the maintenance window starts at 3 PM, the duration is three hours, and the value you specify for <code>Cutoff</code> is one hour, no maintenance window tasks can start after 5 PM.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -124,17 +124,17 @@ impl CreateMaintenanceWindowFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>An optional description for the maintenance window. We recommend specifying a description to help you organize your maintenance windows.</p>
+    /// <p>An optional description for the maintenance window. We recommend specifying a description to help you organize your maintenance windows. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>An optional description for the maintenance window. We recommend specifying a description to help you organize your maintenance windows.</p>
+    /// <p>An optional description for the maintenance window. We recommend specifying a description to help you organize your maintenance windows. </p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>An optional description for the maintenance window. We recommend specifying a description to help you organize your maintenance windows.</p>
+    /// <p>An optional description for the maintenance window. We recommend specifying a description to help you organize your maintenance windows. </p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
@@ -196,7 +196,7 @@ impl CreateMaintenanceWindowFluentBuilder {
     }
     /// <p>The number of days to wait after the date and time specified by a cron expression before running the maintenance window.</p>
     /// <p>For example, the following cron expression schedules a maintenance window to run on the third Tuesday of every month at 11:30 PM.</p>
-    /// <p><code>cron(30 23 ? * TUE#3 *)</code></p>
+    /// <p> <code>cron(30 23 ? * TUE#3 *)</code> </p>
     /// <p>If the schedule offset is <code>2</code>, the maintenance window won't run until two days later.</p>
     pub fn schedule_offset(mut self, input: i32) -> Self {
         self.inner = self.inner.schedule_offset(input);
@@ -204,7 +204,7 @@ impl CreateMaintenanceWindowFluentBuilder {
     }
     /// <p>The number of days to wait after the date and time specified by a cron expression before running the maintenance window.</p>
     /// <p>For example, the following cron expression schedules a maintenance window to run on the third Tuesday of every month at 11:30 PM.</p>
-    /// <p><code>cron(30 23 ? * TUE#3 *)</code></p>
+    /// <p> <code>cron(30 23 ? * TUE#3 *)</code> </p>
     /// <p>If the schedule offset is <code>2</code>, the maintenance window won't run until two days later.</p>
     pub fn set_schedule_offset(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_schedule_offset(input);
@@ -212,7 +212,7 @@ impl CreateMaintenanceWindowFluentBuilder {
     }
     /// <p>The number of days to wait after the date and time specified by a cron expression before running the maintenance window.</p>
     /// <p>For example, the following cron expression schedules a maintenance window to run on the third Tuesday of every month at 11:30 PM.</p>
-    /// <p><code>cron(30 23 ? * TUE#3 *)</code></p>
+    /// <p> <code>cron(30 23 ? * TUE#3 *)</code> </p>
     /// <p>If the schedule offset is <code>2</code>, the maintenance window won't run until two days later.</p>
     pub fn get_schedule_offset(&self) -> &::std::option::Option<i32> {
         self.inner.get_schedule_offset()
@@ -282,13 +282,10 @@ impl CreateMaintenanceWindowFluentBuilder {
     ///
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a maintenance window to identify the type of tasks it will run, the types of targets, and the environment it will run in. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Key=TaskType,Value=AgentUpdate</code></p></li>
-    /// <li>
-    /// <p><code>Key=OS,Value=Windows</code></p></li>
-    /// <li>
-    /// <p><code>Key=Environment,Value=Production</code></p></li>
-    /// </ul><note>
+    /// <li> <p> <code>Key=TaskType,Value=AgentUpdate</code> </p> </li>
+    /// <li> <p> <code>Key=OS,Value=Windows</code> </p> </li>
+    /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
+    /// </ul> <note>
     /// <p>To add tags to an existing maintenance window, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
@@ -297,13 +294,10 @@ impl CreateMaintenanceWindowFluentBuilder {
     }
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a maintenance window to identify the type of tasks it will run, the types of targets, and the environment it will run in. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Key=TaskType,Value=AgentUpdate</code></p></li>
-    /// <li>
-    /// <p><code>Key=OS,Value=Windows</code></p></li>
-    /// <li>
-    /// <p><code>Key=Environment,Value=Production</code></p></li>
-    /// </ul><note>
+    /// <li> <p> <code>Key=TaskType,Value=AgentUpdate</code> </p> </li>
+    /// <li> <p> <code>Key=OS,Value=Windows</code> </p> </li>
+    /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
+    /// </ul> <note>
     /// <p>To add tags to an existing maintenance window, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
@@ -312,13 +306,10 @@ impl CreateMaintenanceWindowFluentBuilder {
     }
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a maintenance window to identify the type of tasks it will run, the types of targets, and the environment it will run in. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Key=TaskType,Value=AgentUpdate</code></p></li>
-    /// <li>
-    /// <p><code>Key=OS,Value=Windows</code></p></li>
-    /// <li>
-    /// <p><code>Key=Environment,Value=Production</code></p></li>
-    /// </ul><note>
+    /// <li> <p> <code>Key=TaskType,Value=AgentUpdate</code> </p> </li>
+    /// <li> <p> <code>Key=OS,Value=Windows</code> </p> </li>
+    /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
+    /// </ul> <note>
     /// <p>To add tags to an existing maintenance window, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {

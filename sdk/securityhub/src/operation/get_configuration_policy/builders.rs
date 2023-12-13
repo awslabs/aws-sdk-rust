@@ -22,7 +22,7 @@ impl GetConfigurationPolicyInputBuilder {
 }
 /// Fluent builder constructing a request to `GetConfigurationPolicy`.
 ///
-/// <p>Provides information about a configuration policy. Only the Security Hub delegated administrator can invoke this operation from the home Region.</p>
+/// <p> Provides information about a configuration policy. Only the Security Hub delegated administrator can invoke this operation from the home Region. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetConfigurationPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl GetConfigurationPolicyFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) or universally unique identifier (UUID) of the configuration policy.</p>
+    /// <p> The Amazon Resource Name (ARN) or universally unique identifier (UUID) of the configuration policy. </p>
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identifier(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) or universally unique identifier (UUID) of the configuration policy.</p>
+    /// <p> The Amazon Resource Name (ARN) or universally unique identifier (UUID) of the configuration policy. </p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identifier(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) or universally unique identifier (UUID) of the configuration policy.</p>
+    /// <p> The Amazon Resource Name (ARN) or universally unique identifier (UUID) of the configuration policy. </p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_identifier()
     }

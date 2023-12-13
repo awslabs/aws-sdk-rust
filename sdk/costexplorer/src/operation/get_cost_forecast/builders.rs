@@ -22,7 +22,7 @@ impl GetCostForecastInputBuilder {
 }
 /// Fluent builder constructing a request to `GetCostForecast`.
 ///
-/// <p>Retrieves a forecast for how much Amazon Web Services predicts that you will spend over the forecast time period that you select, based on your past costs.</p>
+/// <p>Retrieves a forecast for how much Amazon Web Services predicts that you will spend over the forecast time period that you select, based on your past costs. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetCostForecastFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -122,55 +122,40 @@ impl GetCostForecastFluentBuilder {
     pub fn get_time_period(&self) -> &::std::option::Option<crate::types::DateInterval> {
         self.inner.get_time_period()
     }
-    /// <p>Which metric Cost Explorer uses to create your forecast. For more information about blended and unblended rates, see <a href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does the "blended" annotation appear on some line items in my bill?</a>.</p>
+    /// <p>Which metric Cost Explorer uses to create your forecast. For more information about blended and unblended rates, see <a href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does the "blended" annotation appear on some line items in my bill?</a>. </p>
     /// <p>Valid values for a <code>GetCostForecast</code> call are the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>AMORTIZED_COST</p></li>
-    /// <li>
-    /// <p>BLENDED_COST</p></li>
-    /// <li>
-    /// <p>NET_AMORTIZED_COST</p></li>
-    /// <li>
-    /// <p>NET_UNBLENDED_COST</p></li>
-    /// <li>
-    /// <p>UNBLENDED_COST</p></li>
+    /// <li> <p>AMORTIZED_COST</p> </li>
+    /// <li> <p>BLENDED_COST</p> </li>
+    /// <li> <p>NET_AMORTIZED_COST</p> </li>
+    /// <li> <p>NET_UNBLENDED_COST</p> </li>
+    /// <li> <p>UNBLENDED_COST</p> </li>
     /// </ul>
     pub fn metric(mut self, input: crate::types::Metric) -> Self {
         self.inner = self.inner.metric(input);
         self
     }
-    /// <p>Which metric Cost Explorer uses to create your forecast. For more information about blended and unblended rates, see <a href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does the "blended" annotation appear on some line items in my bill?</a>.</p>
+    /// <p>Which metric Cost Explorer uses to create your forecast. For more information about blended and unblended rates, see <a href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does the "blended" annotation appear on some line items in my bill?</a>. </p>
     /// <p>Valid values for a <code>GetCostForecast</code> call are the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>AMORTIZED_COST</p></li>
-    /// <li>
-    /// <p>BLENDED_COST</p></li>
-    /// <li>
-    /// <p>NET_AMORTIZED_COST</p></li>
-    /// <li>
-    /// <p>NET_UNBLENDED_COST</p></li>
-    /// <li>
-    /// <p>UNBLENDED_COST</p></li>
+    /// <li> <p>AMORTIZED_COST</p> </li>
+    /// <li> <p>BLENDED_COST</p> </li>
+    /// <li> <p>NET_AMORTIZED_COST</p> </li>
+    /// <li> <p>NET_UNBLENDED_COST</p> </li>
+    /// <li> <p>UNBLENDED_COST</p> </li>
     /// </ul>
     pub fn set_metric(mut self, input: ::std::option::Option<crate::types::Metric>) -> Self {
         self.inner = self.inner.set_metric(input);
         self
     }
-    /// <p>Which metric Cost Explorer uses to create your forecast. For more information about blended and unblended rates, see <a href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does the "blended" annotation appear on some line items in my bill?</a>.</p>
+    /// <p>Which metric Cost Explorer uses to create your forecast. For more information about blended and unblended rates, see <a href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does the "blended" annotation appear on some line items in my bill?</a>. </p>
     /// <p>Valid values for a <code>GetCostForecast</code> call are the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>AMORTIZED_COST</p></li>
-    /// <li>
-    /// <p>BLENDED_COST</p></li>
-    /// <li>
-    /// <p>NET_AMORTIZED_COST</p></li>
-    /// <li>
-    /// <p>NET_UNBLENDED_COST</p></li>
-    /// <li>
-    /// <p>UNBLENDED_COST</p></li>
+    /// <li> <p>AMORTIZED_COST</p> </li>
+    /// <li> <p>BLENDED_COST</p> </li>
+    /// <li> <p>NET_AMORTIZED_COST</p> </li>
+    /// <li> <p>NET_UNBLENDED_COST</p> </li>
+    /// <li> <p>UNBLENDED_COST</p> </li>
     /// </ul>
     pub fn get_metric(&self) -> &::std::option::Option<crate::types::Metric> {
         self.inner.get_metric()
@@ -194,52 +179,29 @@ impl GetCostForecastFluentBuilder {
     }
     /// <p>The filters that you want to use to filter your forecast. The <code>GetCostForecast</code> API supports filtering by the following dimensions:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AZ</code></p></li>
-    /// <li>
-    /// <p><code>INSTANCE_TYPE</code></p></li>
-    /// <li>
-    /// <p><code>LINKED_ACCOUNT</code></p></li>
-    /// <li>
-    /// <p><code>LINKED_ACCOUNT_NAME</code></p></li>
-    /// <li>
-    /// <p><code>OPERATION</code></p></li>
-    /// <li>
-    /// <p><code>PURCHASE_TYPE</code></p></li>
-    /// <li>
-    /// <p><code>REGION</code></p></li>
-    /// <li>
-    /// <p><code>SERVICE</code></p></li>
-    /// <li>
-    /// <p><code>USAGE_TYPE</code></p></li>
-    /// <li>
-    /// <p><code>USAGE_TYPE_GROUP</code></p></li>
-    /// <li>
-    /// <p><code>RECORD_TYPE</code></p></li>
-    /// <li>
-    /// <p><code>OPERATING_SYSTEM</code></p></li>
-    /// <li>
-    /// <p><code>TENANCY</code></p></li>
-    /// <li>
-    /// <p><code>SCOPE</code></p></li>
-    /// <li>
-    /// <p><code>PLATFORM</code></p></li>
-    /// <li>
-    /// <p><code>SUBSCRIPTION_ID</code></p></li>
-    /// <li>
-    /// <p><code>LEGAL_ENTITY_NAME</code></p></li>
-    /// <li>
-    /// <p><code>DEPLOYMENT_OPTION</code></p></li>
-    /// <li>
-    /// <p><code>DATABASE_ENGINE</code></p></li>
-    /// <li>
-    /// <p><code>INSTANCE_TYPE_FAMILY</code></p></li>
-    /// <li>
-    /// <p><code>BILLING_ENTITY</code></p></li>
-    /// <li>
-    /// <p><code>RESERVATION_ID</code></p></li>
-    /// <li>
-    /// <p><code>SAVINGS_PLAN_ARN</code></p></li>
+    /// <li> <p> <code>AZ</code> </p> </li>
+    /// <li> <p> <code>INSTANCE_TYPE</code> </p> </li>
+    /// <li> <p> <code>LINKED_ACCOUNT</code> </p> </li>
+    /// <li> <p> <code>LINKED_ACCOUNT_NAME</code> </p> </li>
+    /// <li> <p> <code>OPERATION</code> </p> </li>
+    /// <li> <p> <code>PURCHASE_TYPE</code> </p> </li>
+    /// <li> <p> <code>REGION</code> </p> </li>
+    /// <li> <p> <code>SERVICE</code> </p> </li>
+    /// <li> <p> <code>USAGE_TYPE</code> </p> </li>
+    /// <li> <p> <code>USAGE_TYPE_GROUP</code> </p> </li>
+    /// <li> <p> <code>RECORD_TYPE</code> </p> </li>
+    /// <li> <p> <code>OPERATING_SYSTEM</code> </p> </li>
+    /// <li> <p> <code>TENANCY</code> </p> </li>
+    /// <li> <p> <code>SCOPE</code> </p> </li>
+    /// <li> <p> <code>PLATFORM</code> </p> </li>
+    /// <li> <p> <code>SUBSCRIPTION_ID</code> </p> </li>
+    /// <li> <p> <code>LEGAL_ENTITY_NAME</code> </p> </li>
+    /// <li> <p> <code>DEPLOYMENT_OPTION</code> </p> </li>
+    /// <li> <p> <code>DATABASE_ENGINE</code> </p> </li>
+    /// <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li>
+    /// <li> <p> <code>BILLING_ENTITY</code> </p> </li>
+    /// <li> <p> <code>RESERVATION_ID</code> </p> </li>
+    /// <li> <p> <code>SAVINGS_PLAN_ARN</code> </p> </li>
     /// </ul>
     pub fn filter(mut self, input: crate::types::Expression) -> Self {
         self.inner = self.inner.filter(input);
@@ -247,52 +209,29 @@ impl GetCostForecastFluentBuilder {
     }
     /// <p>The filters that you want to use to filter your forecast. The <code>GetCostForecast</code> API supports filtering by the following dimensions:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AZ</code></p></li>
-    /// <li>
-    /// <p><code>INSTANCE_TYPE</code></p></li>
-    /// <li>
-    /// <p><code>LINKED_ACCOUNT</code></p></li>
-    /// <li>
-    /// <p><code>LINKED_ACCOUNT_NAME</code></p></li>
-    /// <li>
-    /// <p><code>OPERATION</code></p></li>
-    /// <li>
-    /// <p><code>PURCHASE_TYPE</code></p></li>
-    /// <li>
-    /// <p><code>REGION</code></p></li>
-    /// <li>
-    /// <p><code>SERVICE</code></p></li>
-    /// <li>
-    /// <p><code>USAGE_TYPE</code></p></li>
-    /// <li>
-    /// <p><code>USAGE_TYPE_GROUP</code></p></li>
-    /// <li>
-    /// <p><code>RECORD_TYPE</code></p></li>
-    /// <li>
-    /// <p><code>OPERATING_SYSTEM</code></p></li>
-    /// <li>
-    /// <p><code>TENANCY</code></p></li>
-    /// <li>
-    /// <p><code>SCOPE</code></p></li>
-    /// <li>
-    /// <p><code>PLATFORM</code></p></li>
-    /// <li>
-    /// <p><code>SUBSCRIPTION_ID</code></p></li>
-    /// <li>
-    /// <p><code>LEGAL_ENTITY_NAME</code></p></li>
-    /// <li>
-    /// <p><code>DEPLOYMENT_OPTION</code></p></li>
-    /// <li>
-    /// <p><code>DATABASE_ENGINE</code></p></li>
-    /// <li>
-    /// <p><code>INSTANCE_TYPE_FAMILY</code></p></li>
-    /// <li>
-    /// <p><code>BILLING_ENTITY</code></p></li>
-    /// <li>
-    /// <p><code>RESERVATION_ID</code></p></li>
-    /// <li>
-    /// <p><code>SAVINGS_PLAN_ARN</code></p></li>
+    /// <li> <p> <code>AZ</code> </p> </li>
+    /// <li> <p> <code>INSTANCE_TYPE</code> </p> </li>
+    /// <li> <p> <code>LINKED_ACCOUNT</code> </p> </li>
+    /// <li> <p> <code>LINKED_ACCOUNT_NAME</code> </p> </li>
+    /// <li> <p> <code>OPERATION</code> </p> </li>
+    /// <li> <p> <code>PURCHASE_TYPE</code> </p> </li>
+    /// <li> <p> <code>REGION</code> </p> </li>
+    /// <li> <p> <code>SERVICE</code> </p> </li>
+    /// <li> <p> <code>USAGE_TYPE</code> </p> </li>
+    /// <li> <p> <code>USAGE_TYPE_GROUP</code> </p> </li>
+    /// <li> <p> <code>RECORD_TYPE</code> </p> </li>
+    /// <li> <p> <code>OPERATING_SYSTEM</code> </p> </li>
+    /// <li> <p> <code>TENANCY</code> </p> </li>
+    /// <li> <p> <code>SCOPE</code> </p> </li>
+    /// <li> <p> <code>PLATFORM</code> </p> </li>
+    /// <li> <p> <code>SUBSCRIPTION_ID</code> </p> </li>
+    /// <li> <p> <code>LEGAL_ENTITY_NAME</code> </p> </li>
+    /// <li> <p> <code>DEPLOYMENT_OPTION</code> </p> </li>
+    /// <li> <p> <code>DATABASE_ENGINE</code> </p> </li>
+    /// <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li>
+    /// <li> <p> <code>BILLING_ENTITY</code> </p> </li>
+    /// <li> <p> <code>RESERVATION_ID</code> </p> </li>
+    /// <li> <p> <code>SAVINGS_PLAN_ARN</code> </p> </li>
     /// </ul>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::Expression>) -> Self {
         self.inner = self.inner.set_filter(input);
@@ -300,52 +239,29 @@ impl GetCostForecastFluentBuilder {
     }
     /// <p>The filters that you want to use to filter your forecast. The <code>GetCostForecast</code> API supports filtering by the following dimensions:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AZ</code></p></li>
-    /// <li>
-    /// <p><code>INSTANCE_TYPE</code></p></li>
-    /// <li>
-    /// <p><code>LINKED_ACCOUNT</code></p></li>
-    /// <li>
-    /// <p><code>LINKED_ACCOUNT_NAME</code></p></li>
-    /// <li>
-    /// <p><code>OPERATION</code></p></li>
-    /// <li>
-    /// <p><code>PURCHASE_TYPE</code></p></li>
-    /// <li>
-    /// <p><code>REGION</code></p></li>
-    /// <li>
-    /// <p><code>SERVICE</code></p></li>
-    /// <li>
-    /// <p><code>USAGE_TYPE</code></p></li>
-    /// <li>
-    /// <p><code>USAGE_TYPE_GROUP</code></p></li>
-    /// <li>
-    /// <p><code>RECORD_TYPE</code></p></li>
-    /// <li>
-    /// <p><code>OPERATING_SYSTEM</code></p></li>
-    /// <li>
-    /// <p><code>TENANCY</code></p></li>
-    /// <li>
-    /// <p><code>SCOPE</code></p></li>
-    /// <li>
-    /// <p><code>PLATFORM</code></p></li>
-    /// <li>
-    /// <p><code>SUBSCRIPTION_ID</code></p></li>
-    /// <li>
-    /// <p><code>LEGAL_ENTITY_NAME</code></p></li>
-    /// <li>
-    /// <p><code>DEPLOYMENT_OPTION</code></p></li>
-    /// <li>
-    /// <p><code>DATABASE_ENGINE</code></p></li>
-    /// <li>
-    /// <p><code>INSTANCE_TYPE_FAMILY</code></p></li>
-    /// <li>
-    /// <p><code>BILLING_ENTITY</code></p></li>
-    /// <li>
-    /// <p><code>RESERVATION_ID</code></p></li>
-    /// <li>
-    /// <p><code>SAVINGS_PLAN_ARN</code></p></li>
+    /// <li> <p> <code>AZ</code> </p> </li>
+    /// <li> <p> <code>INSTANCE_TYPE</code> </p> </li>
+    /// <li> <p> <code>LINKED_ACCOUNT</code> </p> </li>
+    /// <li> <p> <code>LINKED_ACCOUNT_NAME</code> </p> </li>
+    /// <li> <p> <code>OPERATION</code> </p> </li>
+    /// <li> <p> <code>PURCHASE_TYPE</code> </p> </li>
+    /// <li> <p> <code>REGION</code> </p> </li>
+    /// <li> <p> <code>SERVICE</code> </p> </li>
+    /// <li> <p> <code>USAGE_TYPE</code> </p> </li>
+    /// <li> <p> <code>USAGE_TYPE_GROUP</code> </p> </li>
+    /// <li> <p> <code>RECORD_TYPE</code> </p> </li>
+    /// <li> <p> <code>OPERATING_SYSTEM</code> </p> </li>
+    /// <li> <p> <code>TENANCY</code> </p> </li>
+    /// <li> <p> <code>SCOPE</code> </p> </li>
+    /// <li> <p> <code>PLATFORM</code> </p> </li>
+    /// <li> <p> <code>SUBSCRIPTION_ID</code> </p> </li>
+    /// <li> <p> <code>LEGAL_ENTITY_NAME</code> </p> </li>
+    /// <li> <p> <code>DEPLOYMENT_OPTION</code> </p> </li>
+    /// <li> <p> <code>DATABASE_ENGINE</code> </p> </li>
+    /// <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li>
+    /// <li> <p> <code>BILLING_ENTITY</code> </p> </li>
+    /// <li> <p> <code>RESERVATION_ID</code> </p> </li>
+    /// <li> <p> <code>SAVINGS_PLAN_ARN</code> </p> </li>
     /// </ul>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::Expression> {
         self.inner.get_filter()

@@ -5,7 +5,7 @@
 pub struct BatchGetAggregateResourceConfigInput {
     /// <p>The name of the configuration aggregator.</p>
     pub configuration_aggregator_name: ::std::option::Option<::std::string::String>,
-    /// <p>A list of aggregate ResourceIdentifiers objects.</p>
+    /// <p>A list of aggregate ResourceIdentifiers objects. </p>
     pub resource_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::AggregateResourceIdentifier>>,
 }
 impl BatchGetAggregateResourceConfigInput {
@@ -13,7 +13,7 @@ impl BatchGetAggregateResourceConfigInput {
     pub fn configuration_aggregator_name(&self) -> ::std::option::Option<&str> {
         self.configuration_aggregator_name.as_deref()
     }
-    /// <p>A list of aggregate ResourceIdentifiers objects.</p>
+    /// <p>A list of aggregate ResourceIdentifiers objects. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_identifiers.is_none()`.
     pub fn resource_identifiers(&self) -> &[crate::types::AggregateResourceIdentifier] {
@@ -54,19 +54,19 @@ impl BatchGetAggregateResourceConfigInputBuilder {
     ///
     /// To override the contents of this collection use [`set_resource_identifiers`](Self::set_resource_identifiers).
     ///
-    /// <p>A list of aggregate ResourceIdentifiers objects.</p>
+    /// <p>A list of aggregate ResourceIdentifiers objects. </p>
     pub fn resource_identifiers(mut self, input: crate::types::AggregateResourceIdentifier) -> Self {
         let mut v = self.resource_identifiers.unwrap_or_default();
         v.push(input);
         self.resource_identifiers = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of aggregate ResourceIdentifiers objects.</p>
+    /// <p>A list of aggregate ResourceIdentifiers objects. </p>
     pub fn set_resource_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AggregateResourceIdentifier>>) -> Self {
         self.resource_identifiers = input;
         self
     }
-    /// <p>A list of aggregate ResourceIdentifiers objects.</p>
+    /// <p>A list of aggregate ResourceIdentifiers objects. </p>
     pub fn get_resource_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregateResourceIdentifier>> {
         &self.resource_identifiers
     }

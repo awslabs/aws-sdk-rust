@@ -22,7 +22,7 @@ impl DeletePlaceIndexInputBuilder {
 }
 /// Fluent builder constructing a request to `DeletePlaceIndex`.
 ///
-/// <p>Deletes a place index resource from your Amazon Web Services account.</p><note>
+/// <p>Deletes a place index resource from your Amazon Web Services account.</p> <note>
 /// <p>This operation deletes the resource permanently.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

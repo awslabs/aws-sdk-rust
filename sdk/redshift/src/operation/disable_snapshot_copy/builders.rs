@@ -23,7 +23,7 @@ impl DisableSnapshotCopyInputBuilder {
 /// Fluent builder constructing a request to `DisableSnapshotCopy`.
 ///
 /// <p>Disables the automatic copying of snapshots from one region to another region for a specified cluster.</p>
-/// <p>If your cluster and its snapshots are encrypted using an encrypted symmetric key from Key Management Service, use <code>DeleteSnapshotCopyGrant</code> to delete the grant that grants Amazon Redshift permission to the key in the destination region.</p>
+/// <p>If your cluster and its snapshots are encrypted using an encrypted symmetric key from Key Management Service, use <code>DeleteSnapshotCopyGrant</code> to delete the grant that grants Amazon Redshift permission to the key in the destination region. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisableSnapshotCopyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

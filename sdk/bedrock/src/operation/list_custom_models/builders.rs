@@ -115,31 +115,31 @@ impl ListCustomModelsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_custom_models::paginator::ListCustomModelsPaginator {
         crate::operation::list_custom_models::paginator::ListCustomModelsPaginator::new(self.handle, self.inner)
     }
-    /// <p>Return custom models created before the specified time.</p>
+    /// <p>Return custom models created before the specified time. </p>
     pub fn creation_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.creation_time_before(input);
         self
     }
-    /// <p>Return custom models created before the specified time.</p>
+    /// <p>Return custom models created before the specified time. </p>
     pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_before(input);
         self
     }
-    /// <p>Return custom models created before the specified time.</p>
+    /// <p>Return custom models created before the specified time. </p>
     pub fn get_creation_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_creation_time_before()
     }
-    /// <p>Return custom models created after the specified time.</p>
+    /// <p>Return custom models created after the specified time. </p>
     pub fn creation_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.creation_time_after(input);
         self
     }
-    /// <p>Return custom models created after the specified time.</p>
+    /// <p>Return custom models created after the specified time. </p>
     pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_after(input);
         self
     }
-    /// <p>Return custom models created after the specified time.</p>
+    /// <p>Return custom models created after the specified time. </p>
     pub fn get_creation_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_creation_time_after()
     }

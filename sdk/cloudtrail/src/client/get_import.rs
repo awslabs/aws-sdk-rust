@@ -3,17 +3,17 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetImport`](crate::operation::get_import::builders::GetImportFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`import_id(impl Into<String>)`](crate::operation::get_import::builders::GetImportFluentBuilder::import_id) / [`set_import_id(Option<String>)`](crate::operation::get_import::builders::GetImportFluentBuilder::set_import_id):<br>required: **true**<br><p>The ID for the import.</p><br>
+    ///   - [`import_id(impl Into<String>)`](crate::operation::get_import::builders::GetImportFluentBuilder::import_id) / [`set_import_id(Option<String>)`](crate::operation::get_import::builders::GetImportFluentBuilder::set_import_id):<br>required: **true**<br><p> The ID for the import. </p><br>
     /// - On success, responds with [`GetImportOutput`](crate::operation::get_import::GetImportOutput) with field(s):
-    ///   - [`import_id(Option<String>)`](crate::operation::get_import::GetImportOutput::import_id): <p>The ID of the import.</p>
-    ///   - [`destinations(Option<Vec::<String>>)`](crate::operation::get_import::GetImportOutput::destinations): <p>The ARN of the destination event data store.</p>
-    ///   - [`import_source(Option<ImportSource>)`](crate::operation::get_import::GetImportOutput::import_source): <p>The source S3 bucket.</p>
-    ///   - [`start_event_time(Option<DateTime>)`](crate::operation::get_import::GetImportOutput::start_event_time): <p>Used with <code>EndEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period.</p>
-    ///   - [`end_event_time(Option<DateTime>)`](crate::operation::get_import::GetImportOutput::end_event_time): <p>Used with <code>StartEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period.</p>
-    ///   - [`import_status(Option<ImportStatus>)`](crate::operation::get_import::GetImportOutput::import_status): <p>The status of the import.</p>
-    ///   - [`created_timestamp(Option<DateTime>)`](crate::operation::get_import::GetImportOutput::created_timestamp): <p>The timestamp of the import's creation.</p>
-    ///   - [`updated_timestamp(Option<DateTime>)`](crate::operation::get_import::GetImportOutput::updated_timestamp): <p>The timestamp of when the import was updated.</p>
-    ///   - [`import_statistics(Option<ImportStatistics>)`](crate::operation::get_import::GetImportOutput::import_statistics): <p>Provides statistics for the import. CloudTrail does not update import statistics in real-time. Returned values for parameters such as <code>EventsCompleted</code> may be lower than the actual value, because CloudTrail updates statistics incrementally over the course of the import.</p>
+    ///   - [`import_id(Option<String>)`](crate::operation::get_import::GetImportOutput::import_id): <p> The ID of the import. </p>
+    ///   - [`destinations(Option<Vec::<String>>)`](crate::operation::get_import::GetImportOutput::destinations): <p> The ARN of the destination event data store. </p>
+    ///   - [`import_source(Option<ImportSource>)`](crate::operation::get_import::GetImportOutput::import_source): <p> The source S3 bucket. </p>
+    ///   - [`start_event_time(Option<DateTime>)`](crate::operation::get_import::GetImportOutput::start_event_time): <p> Used with <code>EndEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
+    ///   - [`end_event_time(Option<DateTime>)`](crate::operation::get_import::GetImportOutput::end_event_time): <p> Used with <code>StartEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
+    ///   - [`import_status(Option<ImportStatus>)`](crate::operation::get_import::GetImportOutput::import_status): <p> The status of the import. </p>
+    ///   - [`created_timestamp(Option<DateTime>)`](crate::operation::get_import::GetImportOutput::created_timestamp): <p> The timestamp of the import's creation. </p>
+    ///   - [`updated_timestamp(Option<DateTime>)`](crate::operation::get_import::GetImportOutput::updated_timestamp): <p> The timestamp of when the import was updated. </p>
+    ///   - [`import_statistics(Option<ImportStatistics>)`](crate::operation::get_import::GetImportOutput::import_statistics): <p> Provides statistics for the import. CloudTrail does not update import statistics in real-time. Returned values for parameters such as <code>EventsCompleted</code> may be lower than the actual value, because CloudTrail updates statistics incrementally over the course of the import. </p>
     /// - On failure, responds with [`SdkError<GetImportError>`](crate::operation::get_import::GetImportError)
     pub fn get_import(&self) -> crate::operation::get_import::builders::GetImportFluentBuilder {
         crate::operation::get_import::builders::GetImportFluentBuilder::new(self.handle.clone())

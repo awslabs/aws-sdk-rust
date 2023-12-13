@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeploySystemInstanceOutput {
-    /// <p>An object that contains summary information about a system instance that was deployed.</p>
+    /// <p>An object that contains summary information about a system instance that was deployed. </p>
     pub summary: ::std::option::Option<crate::types::SystemInstanceSummary>,
     /// <p>The ID of the Greengrass deployment used to deploy the system instance.</p>
     pub greengrass_deployment_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeploySystemInstanceOutput {
-    /// <p>An object that contains summary information about a system instance that was deployed.</p>
+    /// <p>An object that contains summary information about a system instance that was deployed. </p>
     pub fn summary(&self) -> ::std::option::Option<&crate::types::SystemInstanceSummary> {
         self.summary.as_ref()
     }
@@ -40,18 +40,18 @@ pub struct DeploySystemInstanceOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeploySystemInstanceOutputBuilder {
-    /// <p>An object that contains summary information about a system instance that was deployed.</p>
+    /// <p>An object that contains summary information about a system instance that was deployed. </p>
     /// This field is required.
     pub fn summary(mut self, input: crate::types::SystemInstanceSummary) -> Self {
         self.summary = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An object that contains summary information about a system instance that was deployed.</p>
+    /// <p>An object that contains summary information about a system instance that was deployed. </p>
     pub fn set_summary(mut self, input: ::std::option::Option<crate::types::SystemInstanceSummary>) -> Self {
         self.summary = input;
         self
     }
-    /// <p>An object that contains summary information about a system instance that was deployed.</p>
+    /// <p>An object that contains summary information about a system instance that was deployed. </p>
     pub fn get_summary(&self) -> &::std::option::Option<crate::types::SystemInstanceSummary> {
         &self.summary
     }

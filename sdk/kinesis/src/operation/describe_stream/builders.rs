@@ -22,8 +22,8 @@ impl DescribeStreamInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeStream`.
 ///
-/// <p>Describes the specified Kinesis data stream.</p><note>
-/// <p>This API has been revised. It's highly recommended that you use the <code>DescribeStreamSummary</code> API to get a summarized description of the specified Kinesis data stream and the <code>ListShards</code> API to list the shards in a specified data stream and obtain information about each shard.</p>
+/// <p>Describes the specified Kinesis data stream.</p> <note>
+/// <p>This API has been revised. It's highly recommended that you use the <code>DescribeStreamSummary</code> API to get a summarized description of the specified Kinesis data stream and the <code>ListShards</code> API to list the shards in a specified data stream and obtain information about each shard. </p>
 /// </note> <note>
 /// <p>When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code> parameter, or both. It is recommended that you use the <code>StreamARN</code> input parameter when you invoke this API.</p>
 /// </note>

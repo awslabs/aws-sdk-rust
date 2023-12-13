@@ -24,12 +24,9 @@ impl StartDashboardSnapshotJobInputBuilder {
 ///
 /// <p>Starts an asynchronous job that generates a dashboard snapshot. You can request one of the following format configurations per API call.</p>
 /// <ul>
-/// <li>
-/// <p>1 paginated PDF</p></li>
-/// <li>
-/// <p>1 Excel workbook</p></li>
-/// <li>
-/// <p>5 CSVs</p></li>
+/// <li> <p>1 paginated PDF</p> </li>
+/// <li> <p>1 Excel workbook</p> </li>
+/// <li> <p>5 CSVs</p> </li>
 /// </ul>
 /// <p>Poll job descriptions with a <code>DescribeDashboardSnapshotJob</code> API call. Once the job succeeds, use the <code>DescribeDashboardSnapshotJobResult</code> API to obtain the download URIs that the job generates.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -131,17 +128,17 @@ impl StartDashboardSnapshotJobFluentBuilder {
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_aws_account_id()
     }
-    /// <p>The ID of the dashboard that you want to start a snapshot job for.</p>
+    /// <p>The ID of the dashboard that you want to start a snapshot job for. </p>
     pub fn dashboard_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dashboard_id(input.into());
         self
     }
-    /// <p>The ID of the dashboard that you want to start a snapshot job for.</p>
+    /// <p>The ID of the dashboard that you want to start a snapshot job for. </p>
     pub fn set_dashboard_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dashboard_id(input);
         self
     }
-    /// <p>The ID of the dashboard that you want to start a snapshot job for.</p>
+    /// <p>The ID of the dashboard that you want to start a snapshot job for. </p>
     pub fn get_dashboard_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_dashboard_id()
     }
@@ -159,17 +156,17 @@ impl StartDashboardSnapshotJobFluentBuilder {
     pub fn get_snapshot_job_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_snapshot_job_id()
     }
-    /// <p>A structure that contains information about the anonymous users that the generated snapshot is for. This API will not return information about registered Amazon QuickSight.</p>
+    /// <p> A structure that contains information about the anonymous users that the generated snapshot is for. This API will not return information about registered Amazon QuickSight.</p>
     pub fn user_configuration(mut self, input: crate::types::SnapshotUserConfiguration) -> Self {
         self.inner = self.inner.user_configuration(input);
         self
     }
-    /// <p>A structure that contains information about the anonymous users that the generated snapshot is for. This API will not return information about registered Amazon QuickSight.</p>
+    /// <p> A structure that contains information about the anonymous users that the generated snapshot is for. This API will not return information about registered Amazon QuickSight.</p>
     pub fn set_user_configuration(mut self, input: ::std::option::Option<crate::types::SnapshotUserConfiguration>) -> Self {
         self.inner = self.inner.set_user_configuration(input);
         self
     }
-    /// <p>A structure that contains information about the anonymous users that the generated snapshot is for. This API will not return information about registered Amazon QuickSight.</p>
+    /// <p> A structure that contains information about the anonymous users that the generated snapshot is for. This API will not return information about registered Amazon QuickSight.</p>
     pub fn get_user_configuration(&self) -> &::std::option::Option<crate::types::SnapshotUserConfiguration> {
         self.inner.get_user_configuration()
     }

@@ -12,7 +12,7 @@ pub struct TestGridSession {
     pub created: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time the session ended.</p>
     pub ended: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The number of billed minutes that were used for this session.</p>
+    /// <p>The number of billed minutes that were used for this session. </p>
     pub billing_minutes: ::std::option::Option<f64>,
     /// <p>A JSON object of options and parameters passed to the Selenium WebDriver.</p>
     pub selenium_properties: ::std::option::Option<::std::string::String>,
@@ -34,7 +34,7 @@ impl TestGridSession {
     pub fn ended(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.ended.as_ref()
     }
-    /// <p>The number of billed minutes that were used for this session.</p>
+    /// <p>The number of billed minutes that were used for this session. </p>
     pub fn billing_minutes(&self) -> ::std::option::Option<f64> {
         self.billing_minutes
     }
@@ -118,17 +118,17 @@ impl TestGridSessionBuilder {
     pub fn get_ended(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.ended
     }
-    /// <p>The number of billed minutes that were used for this session.</p>
+    /// <p>The number of billed minutes that were used for this session. </p>
     pub fn billing_minutes(mut self, input: f64) -> Self {
         self.billing_minutes = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of billed minutes that were used for this session.</p>
+    /// <p>The number of billed minutes that were used for this session. </p>
     pub fn set_billing_minutes(mut self, input: ::std::option::Option<f64>) -> Self {
         self.billing_minutes = input;
         self
     }
-    /// <p>The number of billed minutes that were used for this session.</p>
+    /// <p>The number of billed minutes that were used for this session. </p>
     pub fn get_billing_minutes(&self) -> &::std::option::Option<f64> {
         &self.billing_minutes
     }

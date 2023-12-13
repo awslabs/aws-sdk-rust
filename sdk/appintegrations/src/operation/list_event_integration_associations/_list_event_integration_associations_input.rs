@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEventIntegrationAssociationsInput {
-    /// <p>The name of the event integration.</p>
+    /// <p>The name of the event integration. </p>
     pub event_integration_name: ::std::option::Option<::std::string::String>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -11,7 +11,7 @@ pub struct ListEventIntegrationAssociationsInput {
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListEventIntegrationAssociationsInput {
-    /// <p>The name of the event integration.</p>
+    /// <p>The name of the event integration. </p>
     pub fn event_integration_name(&self) -> ::std::option::Option<&str> {
         self.event_integration_name.as_deref()
     }
@@ -40,18 +40,18 @@ pub struct ListEventIntegrationAssociationsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ListEventIntegrationAssociationsInputBuilder {
-    /// <p>The name of the event integration.</p>
+    /// <p>The name of the event integration. </p>
     /// This field is required.
     pub fn event_integration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_integration_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the event integration.</p>
+    /// <p>The name of the event integration. </p>
     pub fn set_event_integration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_integration_name = input;
         self
     }
-    /// <p>The name of the event integration.</p>
+    /// <p>The name of the event integration. </p>
     pub fn get_event_integration_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_integration_name
     }

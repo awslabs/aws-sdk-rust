@@ -6,8 +6,7 @@ pub struct SwitchoverGlobalClusterInput {
     /// <p>The identifier of the global database cluster to switch over. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must match the identifier of an existing global database cluster (Aurora global database).</p></li>
+    /// <li> <p>Must match the identifier of an existing global database cluster (Aurora global database).</p> </li>
     /// </ul>
     pub global_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the secondary Aurora DB cluster to promote to the new primary for the global database cluster. Use the Amazon Resource Name (ARN) for the identifier so that Aurora can locate the cluster in its Amazon Web Services Region.</p>
@@ -17,8 +16,7 @@ impl SwitchoverGlobalClusterInput {
     /// <p>The identifier of the global database cluster to switch over. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must match the identifier of an existing global database cluster (Aurora global database).</p></li>
+    /// <li> <p>Must match the identifier of an existing global database cluster (Aurora global database).</p> </li>
     /// </ul>
     pub fn global_cluster_identifier(&self) -> ::std::option::Option<&str> {
         self.global_cluster_identifier.as_deref()
@@ -46,8 +44,7 @@ impl SwitchoverGlobalClusterInputBuilder {
     /// <p>The identifier of the global database cluster to switch over. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must match the identifier of an existing global database cluster (Aurora global database).</p></li>
+    /// <li> <p>Must match the identifier of an existing global database cluster (Aurora global database).</p> </li>
     /// </ul>
     /// This field is required.
     pub fn global_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -57,8 +54,7 @@ impl SwitchoverGlobalClusterInputBuilder {
     /// <p>The identifier of the global database cluster to switch over. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must match the identifier of an existing global database cluster (Aurora global database).</p></li>
+    /// <li> <p>Must match the identifier of an existing global database cluster (Aurora global database).</p> </li>
     /// </ul>
     pub fn set_global_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.global_cluster_identifier = input;
@@ -67,8 +63,7 @@ impl SwitchoverGlobalClusterInputBuilder {
     /// <p>The identifier of the global database cluster to switch over. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must match the identifier of an existing global database cluster (Aurora global database).</p></li>
+    /// <li> <p>Must match the identifier of an existing global database cluster (Aurora global database).</p> </li>
     /// </ul>
     pub fn get_global_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.global_cluster_identifier

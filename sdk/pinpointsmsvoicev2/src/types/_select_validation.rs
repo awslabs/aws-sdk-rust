@@ -8,7 +8,7 @@ pub struct SelectValidation {
     pub min_choices: i32,
     /// <p>The maximum number of choices for the select.</p>
     pub max_choices: i32,
-    /// <p>An array of strings for the possible selection options.</p>
+    /// <p>An array of strings for the possible selection options. </p>
     pub options: ::std::vec::Vec<::std::string::String>,
 }
 impl SelectValidation {
@@ -20,7 +20,7 @@ impl SelectValidation {
     pub fn max_choices(&self) -> i32 {
         self.max_choices
     }
-    /// <p>An array of strings for the possible selection options.</p>
+    /// <p>An array of strings for the possible selection options. </p>
     pub fn options(&self) -> &[::std::string::String] {
         use std::ops::Deref;
         self.options.deref()
@@ -76,19 +76,19 @@ impl SelectValidationBuilder {
     ///
     /// To override the contents of this collection use [`set_options`](Self::set_options).
     ///
-    /// <p>An array of strings for the possible selection options.</p>
+    /// <p>An array of strings for the possible selection options. </p>
     pub fn options(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.options.unwrap_or_default();
         v.push(input.into());
         self.options = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of strings for the possible selection options.</p>
+    /// <p>An array of strings for the possible selection options. </p>
     pub fn set_options(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.options = input;
         self
     }
-    /// <p>An array of strings for the possible selection options.</p>
+    /// <p>An array of strings for the possible selection options. </p>
     pub fn get_options(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.options
     }

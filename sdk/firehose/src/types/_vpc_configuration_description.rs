@@ -9,22 +9,14 @@ pub struct VpcConfigurationDescription {
     pub subnet_ids: ::std::vec::Vec<::std::string::String>,
     /// <p>The ARN of the IAM role that the delivery stream uses to create endpoints in the destination VPC. You can use your existing Kinesis Data Firehose delivery role or you can specify a new role. In either case, make sure that the role trusts the Kinesis Data Firehose service principal and that it grants the following permissions:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ec2:DescribeVpcs</code></p></li>
-    /// <li>
-    /// <p><code>ec2:DescribeVpcAttribute</code></p></li>
-    /// <li>
-    /// <p><code>ec2:DescribeSubnets</code></p></li>
-    /// <li>
-    /// <p><code>ec2:DescribeSecurityGroups</code></p></li>
-    /// <li>
-    /// <p><code>ec2:DescribeNetworkInterfaces</code></p></li>
-    /// <li>
-    /// <p><code>ec2:CreateNetworkInterface</code></p></li>
-    /// <li>
-    /// <p><code>ec2:CreateNetworkInterfacePermission</code></p></li>
-    /// <li>
-    /// <p><code>ec2:DeleteNetworkInterface</code></p></li>
+    /// <li> <p> <code>ec2:DescribeVpcs</code> </p> </li>
+    /// <li> <p> <code>ec2:DescribeVpcAttribute</code> </p> </li>
+    /// <li> <p> <code>ec2:DescribeSubnets</code> </p> </li>
+    /// <li> <p> <code>ec2:DescribeSecurityGroups</code> </p> </li>
+    /// <li> <p> <code>ec2:DescribeNetworkInterfaces</code> </p> </li>
+    /// <li> <p> <code>ec2:CreateNetworkInterface</code> </p> </li>
+    /// <li> <p> <code>ec2:CreateNetworkInterfacePermission</code> </p> </li>
+    /// <li> <p> <code>ec2:DeleteNetworkInterface</code> </p> </li>
     /// </ul>
     /// <p>If you revoke these permissions after you create the delivery stream, Kinesis Data Firehose can't scale out by creating more ENIs when necessary. You might therefore see a degradation in performance.</p>
     pub role_arn: ::std::string::String,
@@ -42,22 +34,14 @@ impl VpcConfigurationDescription {
     }
     /// <p>The ARN of the IAM role that the delivery stream uses to create endpoints in the destination VPC. You can use your existing Kinesis Data Firehose delivery role or you can specify a new role. In either case, make sure that the role trusts the Kinesis Data Firehose service principal and that it grants the following permissions:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ec2:DescribeVpcs</code></p></li>
-    /// <li>
-    /// <p><code>ec2:DescribeVpcAttribute</code></p></li>
-    /// <li>
-    /// <p><code>ec2:DescribeSubnets</code></p></li>
-    /// <li>
-    /// <p><code>ec2:DescribeSecurityGroups</code></p></li>
-    /// <li>
-    /// <p><code>ec2:DescribeNetworkInterfaces</code></p></li>
-    /// <li>
-    /// <p><code>ec2:CreateNetworkInterface</code></p></li>
-    /// <li>
-    /// <p><code>ec2:CreateNetworkInterfacePermission</code></p></li>
-    /// <li>
-    /// <p><code>ec2:DeleteNetworkInterface</code></p></li>
+    /// <li> <p> <code>ec2:DescribeVpcs</code> </p> </li>
+    /// <li> <p> <code>ec2:DescribeVpcAttribute</code> </p> </li>
+    /// <li> <p> <code>ec2:DescribeSubnets</code> </p> </li>
+    /// <li> <p> <code>ec2:DescribeSecurityGroups</code> </p> </li>
+    /// <li> <p> <code>ec2:DescribeNetworkInterfaces</code> </p> </li>
+    /// <li> <p> <code>ec2:CreateNetworkInterface</code> </p> </li>
+    /// <li> <p> <code>ec2:CreateNetworkInterfacePermission</code> </p> </li>
+    /// <li> <p> <code>ec2:DeleteNetworkInterface</code> </p> </li>
     /// </ul>
     /// <p>If you revoke these permissions after you create the delivery stream, Kinesis Data Firehose can't scale out by creating more ENIs when necessary. You might therefore see a degradation in performance.</p>
     pub fn role_arn(&self) -> &str {
@@ -117,22 +101,14 @@ impl VpcConfigurationDescriptionBuilder {
     }
     /// <p>The ARN of the IAM role that the delivery stream uses to create endpoints in the destination VPC. You can use your existing Kinesis Data Firehose delivery role or you can specify a new role. In either case, make sure that the role trusts the Kinesis Data Firehose service principal and that it grants the following permissions:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ec2:DescribeVpcs</code></p></li>
-    /// <li>
-    /// <p><code>ec2:DescribeVpcAttribute</code></p></li>
-    /// <li>
-    /// <p><code>ec2:DescribeSubnets</code></p></li>
-    /// <li>
-    /// <p><code>ec2:DescribeSecurityGroups</code></p></li>
-    /// <li>
-    /// <p><code>ec2:DescribeNetworkInterfaces</code></p></li>
-    /// <li>
-    /// <p><code>ec2:CreateNetworkInterface</code></p></li>
-    /// <li>
-    /// <p><code>ec2:CreateNetworkInterfacePermission</code></p></li>
-    /// <li>
-    /// <p><code>ec2:DeleteNetworkInterface</code></p></li>
+    /// <li> <p> <code>ec2:DescribeVpcs</code> </p> </li>
+    /// <li> <p> <code>ec2:DescribeVpcAttribute</code> </p> </li>
+    /// <li> <p> <code>ec2:DescribeSubnets</code> </p> </li>
+    /// <li> <p> <code>ec2:DescribeSecurityGroups</code> </p> </li>
+    /// <li> <p> <code>ec2:DescribeNetworkInterfaces</code> </p> </li>
+    /// <li> <p> <code>ec2:CreateNetworkInterface</code> </p> </li>
+    /// <li> <p> <code>ec2:CreateNetworkInterfacePermission</code> </p> </li>
+    /// <li> <p> <code>ec2:DeleteNetworkInterface</code> </p> </li>
     /// </ul>
     /// <p>If you revoke these permissions after you create the delivery stream, Kinesis Data Firehose can't scale out by creating more ENIs when necessary. You might therefore see a degradation in performance.</p>
     /// This field is required.
@@ -142,22 +118,14 @@ impl VpcConfigurationDescriptionBuilder {
     }
     /// <p>The ARN of the IAM role that the delivery stream uses to create endpoints in the destination VPC. You can use your existing Kinesis Data Firehose delivery role or you can specify a new role. In either case, make sure that the role trusts the Kinesis Data Firehose service principal and that it grants the following permissions:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ec2:DescribeVpcs</code></p></li>
-    /// <li>
-    /// <p><code>ec2:DescribeVpcAttribute</code></p></li>
-    /// <li>
-    /// <p><code>ec2:DescribeSubnets</code></p></li>
-    /// <li>
-    /// <p><code>ec2:DescribeSecurityGroups</code></p></li>
-    /// <li>
-    /// <p><code>ec2:DescribeNetworkInterfaces</code></p></li>
-    /// <li>
-    /// <p><code>ec2:CreateNetworkInterface</code></p></li>
-    /// <li>
-    /// <p><code>ec2:CreateNetworkInterfacePermission</code></p></li>
-    /// <li>
-    /// <p><code>ec2:DeleteNetworkInterface</code></p></li>
+    /// <li> <p> <code>ec2:DescribeVpcs</code> </p> </li>
+    /// <li> <p> <code>ec2:DescribeVpcAttribute</code> </p> </li>
+    /// <li> <p> <code>ec2:DescribeSubnets</code> </p> </li>
+    /// <li> <p> <code>ec2:DescribeSecurityGroups</code> </p> </li>
+    /// <li> <p> <code>ec2:DescribeNetworkInterfaces</code> </p> </li>
+    /// <li> <p> <code>ec2:CreateNetworkInterface</code> </p> </li>
+    /// <li> <p> <code>ec2:CreateNetworkInterfacePermission</code> </p> </li>
+    /// <li> <p> <code>ec2:DeleteNetworkInterface</code> </p> </li>
     /// </ul>
     /// <p>If you revoke these permissions after you create the delivery stream, Kinesis Data Firehose can't scale out by creating more ENIs when necessary. You might therefore see a degradation in performance.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -166,22 +134,14 @@ impl VpcConfigurationDescriptionBuilder {
     }
     /// <p>The ARN of the IAM role that the delivery stream uses to create endpoints in the destination VPC. You can use your existing Kinesis Data Firehose delivery role or you can specify a new role. In either case, make sure that the role trusts the Kinesis Data Firehose service principal and that it grants the following permissions:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ec2:DescribeVpcs</code></p></li>
-    /// <li>
-    /// <p><code>ec2:DescribeVpcAttribute</code></p></li>
-    /// <li>
-    /// <p><code>ec2:DescribeSubnets</code></p></li>
-    /// <li>
-    /// <p><code>ec2:DescribeSecurityGroups</code></p></li>
-    /// <li>
-    /// <p><code>ec2:DescribeNetworkInterfaces</code></p></li>
-    /// <li>
-    /// <p><code>ec2:CreateNetworkInterface</code></p></li>
-    /// <li>
-    /// <p><code>ec2:CreateNetworkInterfacePermission</code></p></li>
-    /// <li>
-    /// <p><code>ec2:DeleteNetworkInterface</code></p></li>
+    /// <li> <p> <code>ec2:DescribeVpcs</code> </p> </li>
+    /// <li> <p> <code>ec2:DescribeVpcAttribute</code> </p> </li>
+    /// <li> <p> <code>ec2:DescribeSubnets</code> </p> </li>
+    /// <li> <p> <code>ec2:DescribeSecurityGroups</code> </p> </li>
+    /// <li> <p> <code>ec2:DescribeNetworkInterfaces</code> </p> </li>
+    /// <li> <p> <code>ec2:CreateNetworkInterface</code> </p> </li>
+    /// <li> <p> <code>ec2:CreateNetworkInterfacePermission</code> </p> </li>
+    /// <li> <p> <code>ec2:DeleteNetworkInterface</code> </p> </li>
     /// </ul>
     /// <p>If you revoke these permissions after you create the delivery stream, Kinesis Data Firehose can't scale out by creating more ENIs when necessary. You might therefore see a degradation in performance.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {

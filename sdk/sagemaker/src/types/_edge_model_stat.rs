@@ -10,7 +10,7 @@ pub struct EdgeModelStat {
     pub model_version: ::std::option::Option<::std::string::String>,
     /// <p>The number of devices that have this model version and do not have a heart beat.</p>
     pub offline_device_count: ::std::option::Option<i64>,
-    /// <p>The number of devices that have this model version and have a heart beat.</p>
+    /// <p>The number of devices that have this model version and have a heart beat. </p>
     pub connected_device_count: ::std::option::Option<i64>,
     /// <p>The number of devices that have this model version, a heart beat, and are currently running.</p>
     pub active_device_count: ::std::option::Option<i64>,
@@ -30,7 +30,7 @@ impl EdgeModelStat {
     pub fn offline_device_count(&self) -> ::std::option::Option<i64> {
         self.offline_device_count
     }
-    /// <p>The number of devices that have this model version and have a heart beat.</p>
+    /// <p>The number of devices that have this model version and have a heart beat. </p>
     pub fn connected_device_count(&self) -> ::std::option::Option<i64> {
         self.connected_device_count
     }
@@ -107,18 +107,18 @@ impl EdgeModelStatBuilder {
     pub fn get_offline_device_count(&self) -> &::std::option::Option<i64> {
         &self.offline_device_count
     }
-    /// <p>The number of devices that have this model version and have a heart beat.</p>
+    /// <p>The number of devices that have this model version and have a heart beat. </p>
     /// This field is required.
     pub fn connected_device_count(mut self, input: i64) -> Self {
         self.connected_device_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of devices that have this model version and have a heart beat.</p>
+    /// <p>The number of devices that have this model version and have a heart beat. </p>
     pub fn set_connected_device_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.connected_device_count = input;
         self
     }
-    /// <p>The number of devices that have this model version and have a heart beat.</p>
+    /// <p>The number of devices that have this model version and have a heart beat. </p>
     pub fn get_connected_device_count(&self) -> &::std::option::Option<i64> {
         &self.connected_device_count
     }

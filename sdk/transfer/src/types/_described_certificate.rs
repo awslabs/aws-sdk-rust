@@ -28,7 +28,7 @@ pub struct DescribedCertificate {
     pub not_after_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>If a private key has been specified for the certificate, its type is <code>CERTIFICATE_WITH_PRIVATE_KEY</code>. If there is no private key, the type is <code>CERTIFICATE</code>.</p>
     pub r#type: ::std::option::Option<crate::types::CertificateType>,
-    /// <p>The name or description that's used to identity the certificate.</p>
+    /// <p>The name or description that's used to identity the certificate. </p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Key-value pairs that can be used to group and search for certificates.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -83,7 +83,7 @@ impl DescribedCertificate {
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::CertificateType> {
         self.r#type.as_ref()
     }
-    /// <p>The name or description that's used to identity the certificate.</p>
+    /// <p>The name or description that's used to identity the certificate. </p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -310,17 +310,17 @@ impl DescribedCertificateBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::CertificateType> {
         &self.r#type
     }
-    /// <p>The name or description that's used to identity the certificate.</p>
+    /// <p>The name or description that's used to identity the certificate. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name or description that's used to identity the certificate.</p>
+    /// <p>The name or description that's used to identity the certificate. </p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>The name or description that's used to identity the certificate.</p>
+    /// <p>The name or description that's used to identity the certificate. </p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }

@@ -22,7 +22,7 @@ impl UpdateRoutingProfileAgentAvailabilityTimerInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateRoutingProfileAgentAvailabilityTimer`.
 ///
-/// <p>Whether agents with this routing profile will have their routing order calculated based on <i>time since their last inbound contact</i> or <i>longest idle time</i>.</p>
+/// <p>Whether agents with this routing profile will have their routing order calculated based on <i>time since their last inbound contact</i> or <i>longest idle time</i>. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateRoutingProfileAgentAvailabilityTimerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -143,17 +143,17 @@ impl UpdateRoutingProfileAgentAvailabilityTimerFluentBuilder {
     pub fn get_routing_profile_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_routing_profile_id()
     }
-    /// <p>Whether agents with this routing profile will have their routing order calculated based on <i>time since their last inbound contact</i> or <i>longest idle time</i>.</p>
+    /// <p>Whether agents with this routing profile will have their routing order calculated based on <i>time since their last inbound contact</i> or <i>longest idle time</i>. </p>
     pub fn agent_availability_timer(mut self, input: crate::types::AgentAvailabilityTimer) -> Self {
         self.inner = self.inner.agent_availability_timer(input);
         self
     }
-    /// <p>Whether agents with this routing profile will have their routing order calculated based on <i>time since their last inbound contact</i> or <i>longest idle time</i>.</p>
+    /// <p>Whether agents with this routing profile will have their routing order calculated based on <i>time since their last inbound contact</i> or <i>longest idle time</i>. </p>
     pub fn set_agent_availability_timer(mut self, input: ::std::option::Option<crate::types::AgentAvailabilityTimer>) -> Self {
         self.inner = self.inner.set_agent_availability_timer(input);
         self
     }
-    /// <p>Whether agents with this routing profile will have their routing order calculated based on <i>time since their last inbound contact</i> or <i>longest idle time</i>.</p>
+    /// <p>Whether agents with this routing profile will have their routing order calculated based on <i>time since their last inbound contact</i> or <i>longest idle time</i>. </p>
     pub fn get_agent_availability_timer(&self) -> &::std::option::Option<crate::types::AgentAvailabilityTimer> {
         self.inner.get_agent_availability_timer()
     }

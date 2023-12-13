@@ -25,16 +25,13 @@ impl CreateLogGroupInputBuilder {
 /// <p>Creates a log group with the specified name. You can create up to 1,000,000 log groups per Region per account.</p>
 /// <p>You must use the following guidelines when naming a log group:</p>
 /// <ul>
-/// <li>
-/// <p>Log group names must be unique within a Region for an Amazon Web Services account.</p></li>
-/// <li>
-/// <p>Log group names can be between 1 and 512 characters long.</p></li>
-/// <li>
-/// <p>Log group names consist of the following characters: a-z, A-Z, 0-9, '_' (underscore), '-' (hyphen), '/' (forward slash), '.' (period), and '#' (number sign)</p></li>
+/// <li> <p>Log group names must be unique within a Region for an Amazon Web Services account.</p> </li>
+/// <li> <p>Log group names can be between 1 and 512 characters long.</p> </li>
+/// <li> <p>Log group names consist of the following characters: a-z, A-Z, 0-9, '_' (underscore), '-' (hyphen), '/' (forward slash), '.' (period), and '#' (number sign)</p> </li>
 /// </ul>
 /// <p>When you create a log group, by default the log events in the log group do not expire. To set a retention policy so that events expire and are deleted after a specified time, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutRetentionPolicy.html">PutRetentionPolicy</a>.</p>
 /// <p>If you associate an KMS key with the log group, ingested data is encrypted using the KMS key. This association is stored as long as the data encrypted with the KMS key is still within CloudWatch Logs. This enables CloudWatch Logs to decrypt this data whenever it is requested.</p>
-/// <p>If you attempt to associate a KMS key with the log group but the KMS key does not exist or the KMS key is disabled, you receive an <code>InvalidParameterException</code> error.</p><important>
+/// <p>If you attempt to associate a KMS key with the log group but the KMS key does not exist or the KMS key is disabled, you receive an <code>InvalidParameterException</code> error. </p> <important>
 /// <p>CloudWatch Logs supports only symmetric KMS keys. Do not associate an asymmetric KMS key with your log group. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using Symmetric and Asymmetric Keys</a>.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

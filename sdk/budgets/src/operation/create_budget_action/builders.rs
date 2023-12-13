@@ -22,7 +22,7 @@ impl CreateBudgetActionInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateBudgetAction`.
 ///
-/// <p>Creates a budget action.</p>
+/// <p> Creates a budget action. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateBudgetActionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -122,101 +122,101 @@ impl CreateBudgetActionFluentBuilder {
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_account_id()
     }
-    /// <p>A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
+    /// <p> A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
     pub fn budget_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.budget_name(input.into());
         self
     }
-    /// <p>A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
+    /// <p> A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
     pub fn set_budget_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_budget_name(input);
         self
     }
-    /// <p>A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
+    /// <p> A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
     pub fn get_budget_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_budget_name()
     }
-    /// <p>The type of a notification. It must be ACTUAL or FORECASTED.</p>
+    /// <p> The type of a notification. It must be ACTUAL or FORECASTED.</p>
     pub fn notification_type(mut self, input: crate::types::NotificationType) -> Self {
         self.inner = self.inner.notification_type(input);
         self
     }
-    /// <p>The type of a notification. It must be ACTUAL or FORECASTED.</p>
+    /// <p> The type of a notification. It must be ACTUAL or FORECASTED.</p>
     pub fn set_notification_type(mut self, input: ::std::option::Option<crate::types::NotificationType>) -> Self {
         self.inner = self.inner.set_notification_type(input);
         self
     }
-    /// <p>The type of a notification. It must be ACTUAL or FORECASTED.</p>
+    /// <p> The type of a notification. It must be ACTUAL or FORECASTED.</p>
     pub fn get_notification_type(&self) -> &::std::option::Option<crate::types::NotificationType> {
         self.inner.get_notification_type()
     }
-    /// <p>The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition.</p>
+    /// <p> The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition. </p>
     pub fn action_type(mut self, input: crate::types::ActionType) -> Self {
         self.inner = self.inner.action_type(input);
         self
     }
-    /// <p>The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition.</p>
+    /// <p> The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition. </p>
     pub fn set_action_type(mut self, input: ::std::option::Option<crate::types::ActionType>) -> Self {
         self.inner = self.inner.set_action_type(input);
         self
     }
-    /// <p>The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition.</p>
+    /// <p> The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition. </p>
     pub fn get_action_type(&self) -> &::std::option::Option<crate::types::ActionType> {
         self.inner.get_action_type()
     }
-    /// <p>The trigger threshold of the action.</p>
+    /// <p>The trigger threshold of the action. </p>
     pub fn action_threshold(mut self, input: crate::types::ActionThreshold) -> Self {
         self.inner = self.inner.action_threshold(input);
         self
     }
-    /// <p>The trigger threshold of the action.</p>
+    /// <p>The trigger threshold of the action. </p>
     pub fn set_action_threshold(mut self, input: ::std::option::Option<crate::types::ActionThreshold>) -> Self {
         self.inner = self.inner.set_action_threshold(input);
         self
     }
-    /// <p>The trigger threshold of the action.</p>
+    /// <p>The trigger threshold of the action. </p>
     pub fn get_action_threshold(&self) -> &::std::option::Option<crate::types::ActionThreshold> {
         self.inner.get_action_threshold()
     }
-    /// <p>Specifies all of the type-specific parameters.</p>
+    /// <p>Specifies all of the type-specific parameters. </p>
     pub fn definition(mut self, input: crate::types::Definition) -> Self {
         self.inner = self.inner.definition(input);
         self
     }
-    /// <p>Specifies all of the type-specific parameters.</p>
+    /// <p>Specifies all of the type-specific parameters. </p>
     pub fn set_definition(mut self, input: ::std::option::Option<crate::types::Definition>) -> Self {
         self.inner = self.inner.set_definition(input);
         self
     }
-    /// <p>Specifies all of the type-specific parameters.</p>
+    /// <p>Specifies all of the type-specific parameters. </p>
     pub fn get_definition(&self) -> &::std::option::Option<crate::types::Definition> {
         self.inner.get_definition()
     }
-    /// <p>The role passed for action execution and reversion. Roles and actions must be in the same account.</p>
+    /// <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
     pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.execution_role_arn(input.into());
         self
     }
-    /// <p>The role passed for action execution and reversion. Roles and actions must be in the same account.</p>
+    /// <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
     pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_execution_role_arn(input);
         self
     }
-    /// <p>The role passed for action execution and reversion. Roles and actions must be in the same account.</p>
+    /// <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
     pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_execution_role_arn()
     }
-    /// <p>This specifies if the action needs manual or automatic approval.</p>
+    /// <p> This specifies if the action needs manual or automatic approval. </p>
     pub fn approval_model(mut self, input: crate::types::ApprovalModel) -> Self {
         self.inner = self.inner.approval_model(input);
         self
     }
-    /// <p>This specifies if the action needs manual or automatic approval.</p>
+    /// <p> This specifies if the action needs manual or automatic approval. </p>
     pub fn set_approval_model(mut self, input: ::std::option::Option<crate::types::ApprovalModel>) -> Self {
         self.inner = self.inner.set_approval_model(input);
         self
     }
-    /// <p>This specifies if the action needs manual or automatic approval.</p>
+    /// <p> This specifies if the action needs manual or automatic approval. </p>
     pub fn get_approval_model(&self) -> &::std::option::Option<crate::types::ApprovalModel> {
         self.inner.get_approval_model()
     }
@@ -224,17 +224,17 @@ impl CreateBudgetActionFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_subscribers`](Self::set_subscribers).
     ///
-    /// <p>A list of subscribers.</p>
+    /// <p> A list of subscribers.</p>
     pub fn subscribers(mut self, input: crate::types::Subscriber) -> Self {
         self.inner = self.inner.subscribers(input);
         self
     }
-    /// <p>A list of subscribers.</p>
+    /// <p> A list of subscribers.</p>
     pub fn set_subscribers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Subscriber>>) -> Self {
         self.inner = self.inner.set_subscribers(input);
         self
     }
-    /// <p>A list of subscribers.</p>
+    /// <p> A list of subscribers.</p>
     pub fn get_subscribers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Subscriber>> {
         self.inner.get_subscribers()
     }

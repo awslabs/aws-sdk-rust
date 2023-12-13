@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AcceptAttachmentInput {
-    /// <p>The ID of the attachment.</p>
+    /// <p>The ID of the attachment. </p>
     pub attachment_id: ::std::option::Option<::std::string::String>,
 }
 impl AcceptAttachmentInput {
-    /// <p>The ID of the attachment.</p>
+    /// <p>The ID of the attachment. </p>
     pub fn attachment_id(&self) -> ::std::option::Option<&str> {
         self.attachment_id.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct AcceptAttachmentInputBuilder {
     pub(crate) attachment_id: ::std::option::Option<::std::string::String>,
 }
 impl AcceptAttachmentInputBuilder {
-    /// <p>The ID of the attachment.</p>
+    /// <p>The ID of the attachment. </p>
     /// This field is required.
     pub fn attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attachment_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the attachment.</p>
+    /// <p>The ID of the attachment. </p>
     pub fn set_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attachment_id = input;
         self
     }
-    /// <p>The ID of the attachment.</p>
+    /// <p>The ID of the attachment. </p>
     pub fn get_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.attachment_id
     }

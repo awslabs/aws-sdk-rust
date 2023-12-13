@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListOrdersInput {
-    /// <p>The ID or the Amazon Resource Name (ARN) of the Outpost.</p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
     pub outpost_identifier_filter: ::std::option::Option<::std::string::String>,
     /// <p>The pagination token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -11,7 +11,7 @@ pub struct ListOrdersInput {
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListOrdersInput {
-    /// <p>The ID or the Amazon Resource Name (ARN) of the Outpost.</p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
     pub fn outpost_identifier_filter(&self) -> ::std::option::Option<&str> {
         self.outpost_identifier_filter.as_deref()
     }
@@ -40,17 +40,17 @@ pub struct ListOrdersInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ListOrdersInputBuilder {
-    /// <p>The ID or the Amazon Resource Name (ARN) of the Outpost.</p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
     pub fn outpost_identifier_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outpost_identifier_filter = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID or the Amazon Resource Name (ARN) of the Outpost.</p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
     pub fn set_outpost_identifier_filter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outpost_identifier_filter = input;
         self
     }
-    /// <p>The ID or the Amazon Resource Name (ARN) of the Outpost.</p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
     pub fn get_outpost_identifier_filter(&self) -> &::std::option::Option<::std::string::String> {
         &self.outpost_identifier_filter
     }

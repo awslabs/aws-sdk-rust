@@ -25,16 +25,12 @@ impl DeleteTimeSeriesInputBuilder {
 /// <p>Deletes a time series (data stream). If you delete a time series that's associated with an asset property, the asset property still exists, but the time series will no longer be associated with this asset property.</p>
 /// <p>To identify a time series, do one of the following:</p>
 /// <ul>
-/// <li>
-/// <p>If the time series isn't associated with an asset property, specify the <code>alias</code> of the time series.</p></li>
-/// <li>
-/// <p>If the time series is associated with an asset property, specify one of the following:</p>
+/// <li> <p>If the time series isn't associated with an asset property, specify the <code>alias</code> of the time series.</p> </li>
+/// <li> <p>If the time series is associated with an asset property, specify one of the following: </p>
 /// <ul>
-/// <li>
-/// <p>The <code>alias</code> of the time series.</p></li>
-/// <li>
-/// <p>The <code>assetId</code> and <code>propertyId</code> that identifies the asset property.</p></li>
-/// </ul></li>
+/// <li> <p>The <code>alias</code> of the time series.</p> </li>
+/// <li> <p>The <code>assetId</code> and <code>propertyId</code> that identifies the asset property.</p> </li>
+/// </ul> </li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteTimeSeriesFluentBuilder {

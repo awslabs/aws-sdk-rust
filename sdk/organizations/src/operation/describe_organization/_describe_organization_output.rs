@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeOrganizationOutput {
-    /// <p>A structure that contains information about the organization.</p><important>
+    /// <p>A structure that contains information about the organization.</p> <important>
     /// <p>The <code>AvailablePolicyTypes</code> part of the response is deprecated, and you shouldn't use it in your apps. It doesn't include any policy type supported by Organizations other than SCPs. To determine which policy types are enabled in your organization, use the <code> <code>ListRoots</code> </code> operation.</p>
     /// </important>
     pub organization: ::std::option::Option<crate::types::Organization>,
     _request_id: Option<String>,
 }
 impl DescribeOrganizationOutput {
-    /// <p>A structure that contains information about the organization.</p><important>
+    /// <p>A structure that contains information about the organization.</p> <important>
     /// <p>The <code>AvailablePolicyTypes</code> part of the response is deprecated, and you shouldn't use it in your apps. It doesn't include any policy type supported by Organizations other than SCPs. To determine which policy types are enabled in your organization, use the <code> <code>ListRoots</code> </code> operation.</p>
     /// </important>
     pub fn organization(&self) -> ::std::option::Option<&crate::types::Organization> {
@@ -37,21 +37,21 @@ pub struct DescribeOrganizationOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeOrganizationOutputBuilder {
-    /// <p>A structure that contains information about the organization.</p><important>
+    /// <p>A structure that contains information about the organization.</p> <important>
     /// <p>The <code>AvailablePolicyTypes</code> part of the response is deprecated, and you shouldn't use it in your apps. It doesn't include any policy type supported by Organizations other than SCPs. To determine which policy types are enabled in your organization, use the <code> <code>ListRoots</code> </code> operation.</p>
     /// </important>
     pub fn organization(mut self, input: crate::types::Organization) -> Self {
         self.organization = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A structure that contains information about the organization.</p><important>
+    /// <p>A structure that contains information about the organization.</p> <important>
     /// <p>The <code>AvailablePolicyTypes</code> part of the response is deprecated, and you shouldn't use it in your apps. It doesn't include any policy type supported by Organizations other than SCPs. To determine which policy types are enabled in your organization, use the <code> <code>ListRoots</code> </code> operation.</p>
     /// </important>
     pub fn set_organization(mut self, input: ::std::option::Option<crate::types::Organization>) -> Self {
         self.organization = input;
         self
     }
-    /// <p>A structure that contains information about the organization.</p><important>
+    /// <p>A structure that contains information about the organization.</p> <important>
     /// <p>The <code>AvailablePolicyTypes</code> part of the response is deprecated, and you shouldn't use it in your apps. It doesn't include any policy type supported by Organizations other than SCPs. To determine which policy types are enabled in your organization, use the <code> <code>ListRoots</code> </code> operation.</p>
     /// </important>
     pub fn get_organization(&self) -> &::std::option::Option<crate::types::Organization> {

@@ -134,12 +134,9 @@ impl PutAccountSettingDefaultFluentBuilder {
     /// <p>The account setting value for the specified principal ARN. Accepted values are <code>enabled</code>, <code>disabled</code>, <code>on</code>, and <code>off</code>.</p>
     /// <p>When you specify <code>fargateTaskRetirementWaitPeriod</code> for the <code>name</code>, the following are the valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>0</code> - Amazon Web Services sends the notification, and immediately retires the affected tasks.</p></li>
-    /// <li>
-    /// <p><code>7</code> - Amazon Web Services sends the notification, and waits 7 calendar days to retire the tasks.</p></li>
-    /// <li>
-    /// <p><code>14</code> - Amazon Web Services sends the notification, and waits 14 calendar days to retire the tasks.</p></li>
+    /// <li> <p> <code>0</code> - Amazon Web Services sends the notification, and immediately retires the affected tasks.</p> </li>
+    /// <li> <p> <code>7</code> - Amazon Web Services sends the notification, and waits 7 calendar days to retire the tasks.</p> </li>
+    /// <li> <p> <code>14</code> - Amazon Web Services sends the notification, and waits 14 calendar days to retire the tasks.</p> </li>
     /// </ul>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.value(input.into());
@@ -148,12 +145,9 @@ impl PutAccountSettingDefaultFluentBuilder {
     /// <p>The account setting value for the specified principal ARN. Accepted values are <code>enabled</code>, <code>disabled</code>, <code>on</code>, and <code>off</code>.</p>
     /// <p>When you specify <code>fargateTaskRetirementWaitPeriod</code> for the <code>name</code>, the following are the valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>0</code> - Amazon Web Services sends the notification, and immediately retires the affected tasks.</p></li>
-    /// <li>
-    /// <p><code>7</code> - Amazon Web Services sends the notification, and waits 7 calendar days to retire the tasks.</p></li>
-    /// <li>
-    /// <p><code>14</code> - Amazon Web Services sends the notification, and waits 14 calendar days to retire the tasks.</p></li>
+    /// <li> <p> <code>0</code> - Amazon Web Services sends the notification, and immediately retires the affected tasks.</p> </li>
+    /// <li> <p> <code>7</code> - Amazon Web Services sends the notification, and waits 7 calendar days to retire the tasks.</p> </li>
+    /// <li> <p> <code>14</code> - Amazon Web Services sends the notification, and waits 14 calendar days to retire the tasks.</p> </li>
     /// </ul>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_value(input);
@@ -162,12 +156,9 @@ impl PutAccountSettingDefaultFluentBuilder {
     /// <p>The account setting value for the specified principal ARN. Accepted values are <code>enabled</code>, <code>disabled</code>, <code>on</code>, and <code>off</code>.</p>
     /// <p>When you specify <code>fargateTaskRetirementWaitPeriod</code> for the <code>name</code>, the following are the valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>0</code> - Amazon Web Services sends the notification, and immediately retires the affected tasks.</p></li>
-    /// <li>
-    /// <p><code>7</code> - Amazon Web Services sends the notification, and waits 7 calendar days to retire the tasks.</p></li>
-    /// <li>
-    /// <p><code>14</code> - Amazon Web Services sends the notification, and waits 14 calendar days to retire the tasks.</p></li>
+    /// <li> <p> <code>0</code> - Amazon Web Services sends the notification, and immediately retires the affected tasks.</p> </li>
+    /// <li> <p> <code>7</code> - Amazon Web Services sends the notification, and waits 7 calendar days to retire the tasks.</p> </li>
+    /// <li> <p> <code>14</code> - Amazon Web Services sends the notification, and waits 14 calendar days to retire the tasks.</p> </li>
     /// </ul>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_value()

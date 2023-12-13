@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ScheduleConfiguration {
-    /// <p>The timezone of the data source run.</p>
+    /// <p>The timezone of the data source run. </p>
     pub timezone: ::std::option::Option<crate::types::Timezone>,
     /// <p>The schedule of the data source runs.</p>
     pub schedule: ::std::option::Option<::std::string::String>,
 }
 impl ScheduleConfiguration {
-    /// <p>The timezone of the data source run.</p>
+    /// <p>The timezone of the data source run. </p>
     pub fn timezone(&self) -> ::std::option::Option<&crate::types::Timezone> {
         self.timezone.as_ref()
     }
@@ -42,17 +42,17 @@ pub struct ScheduleConfigurationBuilder {
     pub(crate) schedule: ::std::option::Option<::std::string::String>,
 }
 impl ScheduleConfigurationBuilder {
-    /// <p>The timezone of the data source run.</p>
+    /// <p>The timezone of the data source run. </p>
     pub fn timezone(mut self, input: crate::types::Timezone) -> Self {
         self.timezone = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The timezone of the data source run.</p>
+    /// <p>The timezone of the data source run. </p>
     pub fn set_timezone(mut self, input: ::std::option::Option<crate::types::Timezone>) -> Self {
         self.timezone = input;
         self
     }
-    /// <p>The timezone of the data source run.</p>
+    /// <p>The timezone of the data source run. </p>
     pub fn get_timezone(&self) -> &::std::option::Option<crate::types::Timezone> {
         &self.timezone
     }

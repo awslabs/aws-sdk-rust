@@ -5,7 +5,7 @@
 pub struct DeleteDomainInput {
     /// <p>The domain ID.</p>
     pub domain_id: ::std::option::Option<::std::string::String>,
-    /// <p>The retention policy for this domain, which specifies whether resources will be retained after the Domain is deleted. By default, all resources are retained (not automatically deleted).</p>
+    /// <p>The retention policy for this domain, which specifies whether resources will be retained after the Domain is deleted. By default, all resources are retained (not automatically deleted). </p>
     pub retention_policy: ::std::option::Option<crate::types::RetentionPolicy>,
 }
 impl DeleteDomainInput {
@@ -13,7 +13,7 @@ impl DeleteDomainInput {
     pub fn domain_id(&self) -> ::std::option::Option<&str> {
         self.domain_id.as_deref()
     }
-    /// <p>The retention policy for this domain, which specifies whether resources will be retained after the Domain is deleted. By default, all resources are retained (not automatically deleted).</p>
+    /// <p>The retention policy for this domain, which specifies whether resources will be retained after the Domain is deleted. By default, all resources are retained (not automatically deleted). </p>
     pub fn retention_policy(&self) -> ::std::option::Option<&crate::types::RetentionPolicy> {
         self.retention_policy.as_ref()
     }
@@ -48,17 +48,17 @@ impl DeleteDomainInputBuilder {
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_id
     }
-    /// <p>The retention policy for this domain, which specifies whether resources will be retained after the Domain is deleted. By default, all resources are retained (not automatically deleted).</p>
+    /// <p>The retention policy for this domain, which specifies whether resources will be retained after the Domain is deleted. By default, all resources are retained (not automatically deleted). </p>
     pub fn retention_policy(mut self, input: crate::types::RetentionPolicy) -> Self {
         self.retention_policy = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The retention policy for this domain, which specifies whether resources will be retained after the Domain is deleted. By default, all resources are retained (not automatically deleted).</p>
+    /// <p>The retention policy for this domain, which specifies whether resources will be retained after the Domain is deleted. By default, all resources are retained (not automatically deleted). </p>
     pub fn set_retention_policy(mut self, input: ::std::option::Option<crate::types::RetentionPolicy>) -> Self {
         self.retention_policy = input;
         self
     }
-    /// <p>The retention policy for this domain, which specifies whether resources will be retained after the Domain is deleted. By default, all resources are retained (not automatically deleted).</p>
+    /// <p>The retention policy for this domain, which specifies whether resources will be retained after the Domain is deleted. By default, all resources are retained (not automatically deleted). </p>
     pub fn get_retention_policy(&self) -> &::std::option::Option<crate::types::RetentionPolicy> {
         &self.retention_policy
     }

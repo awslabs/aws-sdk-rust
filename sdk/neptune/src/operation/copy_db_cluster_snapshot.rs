@@ -245,7 +245,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CopyDBCluster
 pub enum CopyDBClusterSnapshotError {
     /// <p>User already has a DB cluster snapshot with the given identifier.</p>
     DbClusterSnapshotAlreadyExistsFault(crate::types::error::DbClusterSnapshotAlreadyExistsFault),
-    /// <p><i>DBClusterSnapshotIdentifier</i> does not refer to an existing DB cluster snapshot.</p>
+    /// <p> <i>DBClusterSnapshotIdentifier</i> does not refer to an existing DB cluster snapshot.</p>
     DbClusterSnapshotNotFoundFault(crate::types::error::DbClusterSnapshotNotFoundFault),
     /// <p>The supplied value is not a valid DB cluster snapshot state.</p>
     InvalidDbClusterSnapshotStateFault(crate::types::error::InvalidDbClusterSnapshotStateFault),

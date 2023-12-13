@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`id(Option<String>)`](crate::operation::update_environment::UpdateEnvironmentOutput::id): <p>The environment ID.</p>
     ///   - [`name(Option<String>)`](crate::operation::update_environment::UpdateEnvironmentOutput::name): <p>The name of the environment.</p>
     ///   - [`description(Option<String>)`](crate::operation::update_environment::UpdateEnvironmentOutput::description): <p>The description of the environment.</p>
-    ///   - [`state(Option<EnvironmentState>)`](crate::operation::update_environment::UpdateEnvironmentOutput::state): <p>The state of the environment. An environment can be in one of the following states: <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or <code>ROLLED_BACK</code></p>
+    ///   - [`state(Option<EnvironmentState>)`](crate::operation::update_environment::UpdateEnvironmentOutput::state): <p>The state of the environment. An environment can be in one of the following states: <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or <code>ROLLED_BACK</code> </p>
     ///   - [`monitors(Option<Vec::<Monitor>>)`](crate::operation::update_environment::UpdateEnvironmentOutput::monitors): <p>Amazon CloudWatch alarms monitored during the deployment.</p>
     /// - On failure, responds with [`SdkError<UpdateEnvironmentError>`](crate::operation::update_environment::UpdateEnvironmentError)
     pub fn update_environment(&self) -> crate::operation::update_environment::builders::UpdateEnvironmentFluentBuilder {

@@ -10,15 +10,15 @@ pub struct LogsLocation {
     pub stream_name: ::std::option::Option<::std::string::String>,
     /// <p>The URL to an individual build log in CloudWatch Logs. The log stream is created during the PROVISIONING phase of a build and the <code>deeplink</code> will not be valid until it is created.</p>
     pub deep_link: ::std::option::Option<::std::string::String>,
-    /// <p>The URL to a build log in an S3 bucket.</p>
+    /// <p> The URL to a build log in an S3 bucket. </p>
     pub s3_deep_link: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the CloudWatch Logs stream for a build execution. Its format is <code>arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}:log-stream:${LogStreamName}</code>. The CloudWatch Logs stream is created during the PROVISIONING phase of a build and the ARN will not be valid until it is created. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatchlogs.html#amazoncloudwatchlogs-resources-for-iam-policies">Resources Defined by CloudWatch Logs</a>.</p>
     pub cloud_watch_logs_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The ARN of S3 logs for a build project. Its format is <code>arn:${Partition}:s3:::${BucketName}/${ObjectName}</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html#amazons3-resources-for-iam-policies">Resources Defined by Amazon S3</a>.</p>
+    /// <p> The ARN of S3 logs for a build project. Its format is <code>arn:${Partition}:s3:::${BucketName}/${ObjectName}</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html#amazons3-resources-for-iam-policies">Resources Defined by Amazon S3</a>. </p>
     pub s3_logs_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Information about CloudWatch Logs for a build project.</p>
+    /// <p> Information about CloudWatch Logs for a build project. </p>
     pub cloud_watch_logs: ::std::option::Option<crate::types::CloudWatchLogsConfig>,
-    /// <p>Information about S3 logs for a build project.</p>
+    /// <p> Information about S3 logs for a build project. </p>
     pub s3_logs: ::std::option::Option<crate::types::S3LogsConfig>,
 }
 impl LogsLocation {
@@ -34,7 +34,7 @@ impl LogsLocation {
     pub fn deep_link(&self) -> ::std::option::Option<&str> {
         self.deep_link.as_deref()
     }
-    /// <p>The URL to a build log in an S3 bucket.</p>
+    /// <p> The URL to a build log in an S3 bucket. </p>
     pub fn s3_deep_link(&self) -> ::std::option::Option<&str> {
         self.s3_deep_link.as_deref()
     }
@@ -42,15 +42,15 @@ impl LogsLocation {
     pub fn cloud_watch_logs_arn(&self) -> ::std::option::Option<&str> {
         self.cloud_watch_logs_arn.as_deref()
     }
-    /// <p>The ARN of S3 logs for a build project. Its format is <code>arn:${Partition}:s3:::${BucketName}/${ObjectName}</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html#amazons3-resources-for-iam-policies">Resources Defined by Amazon S3</a>.</p>
+    /// <p> The ARN of S3 logs for a build project. Its format is <code>arn:${Partition}:s3:::${BucketName}/${ObjectName}</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html#amazons3-resources-for-iam-policies">Resources Defined by Amazon S3</a>. </p>
     pub fn s3_logs_arn(&self) -> ::std::option::Option<&str> {
         self.s3_logs_arn.as_deref()
     }
-    /// <p>Information about CloudWatch Logs for a build project.</p>
+    /// <p> Information about CloudWatch Logs for a build project. </p>
     pub fn cloud_watch_logs(&self) -> ::std::option::Option<&crate::types::CloudWatchLogsConfig> {
         self.cloud_watch_logs.as_ref()
     }
-    /// <p>Information about S3 logs for a build project.</p>
+    /// <p> Information about S3 logs for a build project. </p>
     pub fn s3_logs(&self) -> ::std::option::Option<&crate::types::S3LogsConfig> {
         self.s3_logs.as_ref()
     }
@@ -118,17 +118,17 @@ impl LogsLocationBuilder {
     pub fn get_deep_link(&self) -> &::std::option::Option<::std::string::String> {
         &self.deep_link
     }
-    /// <p>The URL to a build log in an S3 bucket.</p>
+    /// <p> The URL to a build log in an S3 bucket. </p>
     pub fn s3_deep_link(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_deep_link = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The URL to a build log in an S3 bucket.</p>
+    /// <p> The URL to a build log in an S3 bucket. </p>
     pub fn set_s3_deep_link(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_deep_link = input;
         self
     }
-    /// <p>The URL to a build log in an S3 bucket.</p>
+    /// <p> The URL to a build log in an S3 bucket. </p>
     pub fn get_s3_deep_link(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3_deep_link
     }
@@ -146,45 +146,45 @@ impl LogsLocationBuilder {
     pub fn get_cloud_watch_logs_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.cloud_watch_logs_arn
     }
-    /// <p>The ARN of S3 logs for a build project. Its format is <code>arn:${Partition}:s3:::${BucketName}/${ObjectName}</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html#amazons3-resources-for-iam-policies">Resources Defined by Amazon S3</a>.</p>
+    /// <p> The ARN of S3 logs for a build project. Its format is <code>arn:${Partition}:s3:::${BucketName}/${ObjectName}</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html#amazons3-resources-for-iam-policies">Resources Defined by Amazon S3</a>. </p>
     pub fn s3_logs_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_logs_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of S3 logs for a build project. Its format is <code>arn:${Partition}:s3:::${BucketName}/${ObjectName}</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html#amazons3-resources-for-iam-policies">Resources Defined by Amazon S3</a>.</p>
+    /// <p> The ARN of S3 logs for a build project. Its format is <code>arn:${Partition}:s3:::${BucketName}/${ObjectName}</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html#amazons3-resources-for-iam-policies">Resources Defined by Amazon S3</a>. </p>
     pub fn set_s3_logs_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_logs_arn = input;
         self
     }
-    /// <p>The ARN of S3 logs for a build project. Its format is <code>arn:${Partition}:s3:::${BucketName}/${ObjectName}</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html#amazons3-resources-for-iam-policies">Resources Defined by Amazon S3</a>.</p>
+    /// <p> The ARN of S3 logs for a build project. Its format is <code>arn:${Partition}:s3:::${BucketName}/${ObjectName}</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html#amazons3-resources-for-iam-policies">Resources Defined by Amazon S3</a>. </p>
     pub fn get_s3_logs_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3_logs_arn
     }
-    /// <p>Information about CloudWatch Logs for a build project.</p>
+    /// <p> Information about CloudWatch Logs for a build project. </p>
     pub fn cloud_watch_logs(mut self, input: crate::types::CloudWatchLogsConfig) -> Self {
         self.cloud_watch_logs = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Information about CloudWatch Logs for a build project.</p>
+    /// <p> Information about CloudWatch Logs for a build project. </p>
     pub fn set_cloud_watch_logs(mut self, input: ::std::option::Option<crate::types::CloudWatchLogsConfig>) -> Self {
         self.cloud_watch_logs = input;
         self
     }
-    /// <p>Information about CloudWatch Logs for a build project.</p>
+    /// <p> Information about CloudWatch Logs for a build project. </p>
     pub fn get_cloud_watch_logs(&self) -> &::std::option::Option<crate::types::CloudWatchLogsConfig> {
         &self.cloud_watch_logs
     }
-    /// <p>Information about S3 logs for a build project.</p>
+    /// <p> Information about S3 logs for a build project. </p>
     pub fn s3_logs(mut self, input: crate::types::S3LogsConfig) -> Self {
         self.s3_logs = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Information about S3 logs for a build project.</p>
+    /// <p> Information about S3 logs for a build project. </p>
     pub fn set_s3_logs(mut self, input: ::std::option::Option<crate::types::S3LogsConfig>) -> Self {
         self.s3_logs = input;
         self
     }
-    /// <p>Information about S3 logs for a build project.</p>
+    /// <p> Information about S3 logs for a build project. </p>
     pub fn get_s3_logs(&self) -> &::std::option::Option<crate::types::S3LogsConfig> {
         &self.s3_logs
     }

@@ -249,11 +249,11 @@ pub enum TagResourceError {
     InvalidEndpointException(crate::types::error::InvalidEndpointException),
     /// <p>The operation tried to access a nonexistent resource. The resource might not be specified correctly, or its status might not be ACTIVE.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>The instance quota of resource exceeded for this account.</p>
+    /// <p> The instance quota of resource exceeded for this account.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
-    /// <p>Too many requests were made by a user and they exceeded the service quotas. The request was throttled.</p>
+    /// <p> Too many requests were made by a user and they exceeded the service quotas. The request was throttled.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
-    /// <p>An invalid or malformed request.</p>
+    /// <p> An invalid or malformed request.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

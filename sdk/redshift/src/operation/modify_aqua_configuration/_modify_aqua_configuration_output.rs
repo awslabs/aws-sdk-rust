@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyAquaConfigurationOutput {
-    /// <p>This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
+    /// <p>This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator). </p>
     pub aqua_configuration: ::std::option::Option<crate::types::AquaConfiguration>,
     _request_id: Option<String>,
 }
 impl ModifyAquaConfigurationOutput {
-    /// <p>This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
+    /// <p>This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator). </p>
     pub fn aqua_configuration(&self) -> ::std::option::Option<&crate::types::AquaConfiguration> {
         self.aqua_configuration.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct ModifyAquaConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
 impl ModifyAquaConfigurationOutputBuilder {
-    /// <p>This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
+    /// <p>This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator). </p>
     pub fn aqua_configuration(mut self, input: crate::types::AquaConfiguration) -> Self {
         self.aqua_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
+    /// <p>This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator). </p>
     pub fn set_aqua_configuration(mut self, input: ::std::option::Option<crate::types::AquaConfiguration>) -> Self {
         self.aqua_configuration = input;
         self
     }
-    /// <p>This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
+    /// <p>This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator). </p>
     pub fn get_aqua_configuration(&self) -> &::std::option::Option<crate::types::AquaConfiguration> {
         &self.aqua_configuration
     }

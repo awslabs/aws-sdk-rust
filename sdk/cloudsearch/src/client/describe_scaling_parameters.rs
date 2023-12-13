@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`domain_name(impl Into<String>)`](crate::operation::describe_scaling_parameters::builders::DescribeScalingParametersFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::describe_scaling_parameters::builders::DescribeScalingParametersFluentBuilder::set_domain_name):<br>required: **true**<br><p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p><br>
     /// - On success, responds with [`DescribeScalingParametersOutput`](crate::operation::describe_scaling_parameters::DescribeScalingParametersOutput) with field(s):
-    ///   - [`scaling_parameters(Option<ScalingParametersStatus>)`](crate::operation::describe_scaling_parameters::DescribeScalingParametersOutput::scaling_parameters): <p>The status and configuration of a search domain's scaling parameters.</p>
+    ///   - [`scaling_parameters(Option<ScalingParametersStatus>)`](crate::operation::describe_scaling_parameters::DescribeScalingParametersOutput::scaling_parameters): <p>The status and configuration of a search domain's scaling parameters. </p>
     /// - On failure, responds with [`SdkError<DescribeScalingParametersError>`](crate::operation::describe_scaling_parameters::DescribeScalingParametersError)
     pub fn describe_scaling_parameters(&self) -> crate::operation::describe_scaling_parameters::builders::DescribeScalingParametersFluentBuilder {
         crate::operation::describe_scaling_parameters::builders::DescribeScalingParametersFluentBuilder::new(self.handle.clone())

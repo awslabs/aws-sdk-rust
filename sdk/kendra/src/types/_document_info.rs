@@ -9,21 +9,15 @@ pub struct DocumentInfo {
     /// <p>Attributes that identify a specific version of a document to check.</p>
     /// <p>The only valid attributes are:</p>
     /// <ul>
-    /// <li>
-    /// <p>version</p></li>
-    /// <li>
-    /// <p>datasourceId</p></li>
-    /// <li>
-    /// <p>jobExecutionId</p></li>
+    /// <li> <p>version</p> </li>
+    /// <li> <p>datasourceId</p> </li>
+    /// <li> <p>jobExecutionId</p> </li>
     /// </ul>
     /// <p>The attributes follow these rules:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>dataSourceId</code> and <code>jobExecutionId</code> must be used together.</p></li>
-    /// <li>
-    /// <p><code>version</code> is ignored if <code>dataSourceId</code> and <code>jobExecutionId</code> are not provided.</p></li>
-    /// <li>
-    /// <p>If <code>dataSourceId</code> and <code>jobExecutionId</code> are provided, but <code>version</code> is not, the version defaults to "0".</p></li>
+    /// <li> <p> <code>dataSourceId</code> and <code>jobExecutionId</code> must be used together.</p> </li>
+    /// <li> <p> <code>version</code> is ignored if <code>dataSourceId</code> and <code>jobExecutionId</code> are not provided.</p> </li>
+    /// <li> <p>If <code>dataSourceId</code> and <code>jobExecutionId</code> are provided, but <code>version</code> is not, the version defaults to "0".</p> </li>
     /// </ul>
     pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>>,
 }
@@ -36,21 +30,15 @@ impl DocumentInfo {
     /// <p>Attributes that identify a specific version of a document to check.</p>
     /// <p>The only valid attributes are:</p>
     /// <ul>
-    /// <li>
-    /// <p>version</p></li>
-    /// <li>
-    /// <p>datasourceId</p></li>
-    /// <li>
-    /// <p>jobExecutionId</p></li>
+    /// <li> <p>version</p> </li>
+    /// <li> <p>datasourceId</p> </li>
+    /// <li> <p>jobExecutionId</p> </li>
     /// </ul>
     /// <p>The attributes follow these rules:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>dataSourceId</code> and <code>jobExecutionId</code> must be used together.</p></li>
-    /// <li>
-    /// <p><code>version</code> is ignored if <code>dataSourceId</code> and <code>jobExecutionId</code> are not provided.</p></li>
-    /// <li>
-    /// <p>If <code>dataSourceId</code> and <code>jobExecutionId</code> are provided, but <code>version</code> is not, the version defaults to "0".</p></li>
+    /// <li> <p> <code>dataSourceId</code> and <code>jobExecutionId</code> must be used together.</p> </li>
+    /// <li> <p> <code>version</code> is ignored if <code>dataSourceId</code> and <code>jobExecutionId</code> are not provided.</p> </li>
+    /// <li> <p>If <code>dataSourceId</code> and <code>jobExecutionId</code> are provided, but <code>version</code> is not, the version defaults to "0".</p> </li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes.is_none()`.
@@ -95,21 +83,15 @@ impl DocumentInfoBuilder {
     /// <p>Attributes that identify a specific version of a document to check.</p>
     /// <p>The only valid attributes are:</p>
     /// <ul>
-    /// <li>
-    /// <p>version</p></li>
-    /// <li>
-    /// <p>datasourceId</p></li>
-    /// <li>
-    /// <p>jobExecutionId</p></li>
+    /// <li> <p>version</p> </li>
+    /// <li> <p>datasourceId</p> </li>
+    /// <li> <p>jobExecutionId</p> </li>
     /// </ul>
     /// <p>The attributes follow these rules:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>dataSourceId</code> and <code>jobExecutionId</code> must be used together.</p></li>
-    /// <li>
-    /// <p><code>version</code> is ignored if <code>dataSourceId</code> and <code>jobExecutionId</code> are not provided.</p></li>
-    /// <li>
-    /// <p>If <code>dataSourceId</code> and <code>jobExecutionId</code> are provided, but <code>version</code> is not, the version defaults to "0".</p></li>
+    /// <li> <p> <code>dataSourceId</code> and <code>jobExecutionId</code> must be used together.</p> </li>
+    /// <li> <p> <code>version</code> is ignored if <code>dataSourceId</code> and <code>jobExecutionId</code> are not provided.</p> </li>
+    /// <li> <p>If <code>dataSourceId</code> and <code>jobExecutionId</code> are provided, but <code>version</code> is not, the version defaults to "0".</p> </li>
     /// </ul>
     pub fn attributes(mut self, input: crate::types::DocumentAttribute) -> Self {
         let mut v = self.attributes.unwrap_or_default();
@@ -120,21 +102,15 @@ impl DocumentInfoBuilder {
     /// <p>Attributes that identify a specific version of a document to check.</p>
     /// <p>The only valid attributes are:</p>
     /// <ul>
-    /// <li>
-    /// <p>version</p></li>
-    /// <li>
-    /// <p>datasourceId</p></li>
-    /// <li>
-    /// <p>jobExecutionId</p></li>
+    /// <li> <p>version</p> </li>
+    /// <li> <p>datasourceId</p> </li>
+    /// <li> <p>jobExecutionId</p> </li>
     /// </ul>
     /// <p>The attributes follow these rules:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>dataSourceId</code> and <code>jobExecutionId</code> must be used together.</p></li>
-    /// <li>
-    /// <p><code>version</code> is ignored if <code>dataSourceId</code> and <code>jobExecutionId</code> are not provided.</p></li>
-    /// <li>
-    /// <p>If <code>dataSourceId</code> and <code>jobExecutionId</code> are provided, but <code>version</code> is not, the version defaults to "0".</p></li>
+    /// <li> <p> <code>dataSourceId</code> and <code>jobExecutionId</code> must be used together.</p> </li>
+    /// <li> <p> <code>version</code> is ignored if <code>dataSourceId</code> and <code>jobExecutionId</code> are not provided.</p> </li>
+    /// <li> <p>If <code>dataSourceId</code> and <code>jobExecutionId</code> are provided, but <code>version</code> is not, the version defaults to "0".</p> </li>
     /// </ul>
     pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>>) -> Self {
         self.attributes = input;
@@ -143,21 +119,15 @@ impl DocumentInfoBuilder {
     /// <p>Attributes that identify a specific version of a document to check.</p>
     /// <p>The only valid attributes are:</p>
     /// <ul>
-    /// <li>
-    /// <p>version</p></li>
-    /// <li>
-    /// <p>datasourceId</p></li>
-    /// <li>
-    /// <p>jobExecutionId</p></li>
+    /// <li> <p>version</p> </li>
+    /// <li> <p>datasourceId</p> </li>
+    /// <li> <p>jobExecutionId</p> </li>
     /// </ul>
     /// <p>The attributes follow these rules:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>dataSourceId</code> and <code>jobExecutionId</code> must be used together.</p></li>
-    /// <li>
-    /// <p><code>version</code> is ignored if <code>dataSourceId</code> and <code>jobExecutionId</code> are not provided.</p></li>
-    /// <li>
-    /// <p>If <code>dataSourceId</code> and <code>jobExecutionId</code> are provided, but <code>version</code> is not, the version defaults to "0".</p></li>
+    /// <li> <p> <code>dataSourceId</code> and <code>jobExecutionId</code> must be used together.</p> </li>
+    /// <li> <p> <code>version</code> is ignored if <code>dataSourceId</code> and <code>jobExecutionId</code> are not provided.</p> </li>
+    /// <li> <p>If <code>dataSourceId</code> and <code>jobExecutionId</code> are provided, but <code>version</code> is not, the version defaults to "0".</p> </li>
     /// </ul>
     pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>> {
         &self.attributes

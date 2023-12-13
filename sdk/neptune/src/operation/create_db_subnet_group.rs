@@ -242,7 +242,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateDBSubne
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreateDBSubnetGroupError {
-    /// <p><i>DBSubnetGroupName</i> is already used by an existing DB subnet group.</p>
+    /// <p> <i>DBSubnetGroupName</i> is already used by an existing DB subnet group.</p>
     DbSubnetGroupAlreadyExistsFault(crate::types::error::DbSubnetGroupAlreadyExistsFault),
     /// <p>Subnets in the DB subnet group should cover at least two Availability Zones unless there is only one Availability Zone.</p>
     DbSubnetGroupDoesNotCoverEnoughAZs(crate::types::error::DbSubnetGroupDoesNotCoverEnoughAZs),

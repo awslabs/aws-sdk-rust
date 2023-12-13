@@ -22,14 +22,14 @@ impl DeleteStreamInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteStream`.
 ///
-/// <p>Deletes a Kinesis data stream and all its shards and data. You must shut down any applications that are operating on the stream before you delete the stream. If an application attempts to operate on a deleted stream, it receives the exception <code>ResourceNotFoundException</code>.</p><note>
+/// <p>Deletes a Kinesis data stream and all its shards and data. You must shut down any applications that are operating on the stream before you delete the stream. If an application attempts to operate on a deleted stream, it receives the exception <code>ResourceNotFoundException</code>.</p> <note>
 /// <p>When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code> parameter, or both. It is recommended that you use the <code>StreamARN</code> input parameter when you invoke this API.</p>
 /// </note>
 /// <p>If the stream is in the <code>ACTIVE</code> state, you can delete it. After a <code>DeleteStream</code> request, the specified stream is in the <code>DELETING</code> state until Kinesis Data Streams completes the deletion.</p>
-/// <p><b>Note:</b> Kinesis Data Streams might continue to accept data read and write operations, such as <code>PutRecord</code>, <code>PutRecords</code>, and <code>GetRecords</code>, on a stream in the <code>DELETING</code> state until the stream deletion is complete.</p>
+/// <p> <b>Note:</b> Kinesis Data Streams might continue to accept data read and write operations, such as <code>PutRecord</code>, <code>PutRecords</code>, and <code>GetRecords</code>, on a stream in the <code>DELETING</code> state until the stream deletion is complete.</p>
 /// <p>When you delete a stream, any shards in that stream are also deleted, and any tags are dissociated from the stream.</p>
 /// <p>You can use the <code>DescribeStreamSummary</code> operation to check the state of the stream, which is returned in <code>StreamStatus</code>.</p>
-/// <p><code>DeleteStream</code> has a limit of five transactions per second per account.</p>
+/// <p> <code>DeleteStream</code> has a limit of five transactions per second per account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteStreamFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -129,17 +129,17 @@ impl DeleteStreamFluentBuilder {
     pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_stream_name()
     }
-    /// <p>If this parameter is unset (<code>null</code>) or if you set it to <code>false</code>, and the stream has registered consumers, the call to <code>DeleteStream</code> fails with a <code>ResourceInUseException</code>.</p>
+    /// <p>If this parameter is unset (<code>null</code>) or if you set it to <code>false</code>, and the stream has registered consumers, the call to <code>DeleteStream</code> fails with a <code>ResourceInUseException</code>. </p>
     pub fn enforce_consumer_deletion(mut self, input: bool) -> Self {
         self.inner = self.inner.enforce_consumer_deletion(input);
         self
     }
-    /// <p>If this parameter is unset (<code>null</code>) or if you set it to <code>false</code>, and the stream has registered consumers, the call to <code>DeleteStream</code> fails with a <code>ResourceInUseException</code>.</p>
+    /// <p>If this parameter is unset (<code>null</code>) or if you set it to <code>false</code>, and the stream has registered consumers, the call to <code>DeleteStream</code> fails with a <code>ResourceInUseException</code>. </p>
     pub fn set_enforce_consumer_deletion(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enforce_consumer_deletion(input);
         self
     }
-    /// <p>If this parameter is unset (<code>null</code>) or if you set it to <code>false</code>, and the stream has registered consumers, the call to <code>DeleteStream</code> fails with a <code>ResourceInUseException</code>.</p>
+    /// <p>If this parameter is unset (<code>null</code>) or if you set it to <code>false</code>, and the stream has registered consumers, the call to <code>DeleteStream</code> fails with a <code>ResourceInUseException</code>. </p>
     pub fn get_enforce_consumer_deletion(&self) -> &::std::option::Option<bool> {
         self.inner.get_enforce_consumer_deletion()
     }

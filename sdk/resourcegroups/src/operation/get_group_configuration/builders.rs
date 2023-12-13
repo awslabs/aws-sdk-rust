@@ -23,11 +23,10 @@ impl GetGroupConfigurationInputBuilder {
 /// Fluent builder constructing a request to `GetGroupConfiguration`.
 ///
 /// <p>Retrieves the service configuration associated with the specified resource group. For details about the service configuration syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p>
-/// <p><b>Minimum permissions</b></p>
+/// <p> <b>Minimum permissions</b> </p>
 /// <p>To run this command, you must have the following permissions:</p>
 /// <ul>
-/// <li>
-/// <p><code>resource-groups:GetGroupConfiguration</code></p></li>
+/// <li> <p> <code>resource-groups:GetGroupConfiguration</code> </p> </li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetGroupConfigurationFluentBuilder {

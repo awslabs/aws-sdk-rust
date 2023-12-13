@@ -11,7 +11,7 @@ pub enum Error {
     AccountStreamLimitExceededException(crate::types::error::AccountStreamLimitExceededException),
     /// <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client calls. Try making the call later.</p>
     ClientLimitExceededException(crate::types::error::ClientLimitExceededException),
-    /// <p>Not implemented.</p>
+    /// <p>Not implemented. </p>
     DeviceStreamLimitExceededException(crate::types::error::DeviceStreamLimitExceededException),
     /// <p>The value for this input parameter is invalid.</p>
     InvalidArgumentException(crate::types::error::InvalidArgumentException),
@@ -23,21 +23,18 @@ pub enum Error {
     NoDataRetentionException(crate::types::error::NoDataRetentionException),
     /// <p>The caller is not authorized to perform this operation.</p>
     NotAuthorizedException(crate::types::error::NotAuthorizedException),
-    /// <p>When the input <code>StreamARN</code> or <code>ChannelARN</code> in <code>CLOUD_STORAGE_MODE</code> is already mapped to a different Kinesis Video Stream resource, or if the provided input <code>StreamARN</code> or <code>ChannelARN</code> is not in Active status, try one of the following :</p>
+    /// <p>When the input <code>StreamARN</code> or <code>ChannelARN</code> in <code>CLOUD_STORAGE_MODE</code> is already mapped to a different Kinesis Video Stream resource, or if the provided input <code>StreamARN</code> or <code>ChannelARN</code> is not in Active status, try one of the following : </p>
     /// <ol>
-    /// <li>
-    /// <p>The <code>DescribeMediaStorageConfiguration</code> API to determine what the stream given channel is mapped to.</p></li>
-    /// <li>
-    /// <p>The <code>DescribeMappedResourceConfiguration</code> API to determine the channel that the given stream is mapped to.</p></li>
-    /// <li>
-    /// <p>The <code>DescribeStream</code> or <code>DescribeSignalingChannel</code> API to determine the status of the resource.</p></li>
+    /// <li> <p>The <code>DescribeMediaStorageConfiguration</code> API to determine what the stream given channel is mapped to. </p> </li>
+    /// <li> <p>The <code>DescribeMappedResourceConfiguration</code> API to determine the channel that the given stream is mapped to. </p> </li>
+    /// <li> <p>The <code>DescribeStream</code> or <code>DescribeSignalingChannel</code> API to determine the status of the resource. </p> </li>
     /// </ol>
     ResourceInUseException(crate::types::error::ResourceInUseException),
     /// <p>Amazon Kinesis Video Streams can't find the stream that you specified.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>The Exception rendered when the Amazon Kinesis Video Stream can't find a stream's edge configuration that you specified.</p>
+    /// <p>The Exception rendered when the Amazon Kinesis Video Stream can't find a stream's edge configuration that you specified. </p>
     StreamEdgeConfigurationNotFoundException(crate::types::error::StreamEdgeConfigurationNotFoundException),
-    /// <p>You have exceeded the limit of tags that you can associate with the resource. A Kinesis video stream can support up to 50 tags.</p>
+    /// <p>You have exceeded the limit of tags that you can associate with the resource. A Kinesis video stream can support up to 50 tags. </p>
     TagsPerResourceExceededLimitException(crate::types::error::TagsPerResourceExceededLimitException),
     /// <p>The stream version that you specified is not the latest version. To get the latest version, use the <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeStream.html">DescribeStream</a> API.</p>
     VersionMismatchException(crate::types::error::VersionMismatchException),

@@ -22,7 +22,7 @@ impl ListGroundStationsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListGroundStations`.
 ///
-/// <p>Returns a list of ground stations.</p>
+/// <p>Returns a list of ground stations. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListGroundStationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

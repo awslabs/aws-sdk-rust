@@ -23,9 +23,9 @@ impl DescribeBuildInputBuilder {
 /// Fluent builder constructing a request to `DescribeBuild`.
 ///
 /// <p>Retrieves properties for a custom game build. To request a build resource, specify a build ID. If successful, an object containing the build properties is returned.</p>
-/// <p><b>Learn more</b></p>
-/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html"> Upload a Custom Server Build</a></p>
-/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a></p>
+/// <p> <b>Learn more</b> </p>
+/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html"> Upload a Custom Server Build</a> </p>
+/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeBuildFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -111,17 +111,17 @@ impl DescribeBuildFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>A unique identifier for the build to retrieve properties for. You can use either the build ID or ARN value.</p>
+    /// <p>A unique identifier for the build to retrieve properties for. You can use either the build ID or ARN value. </p>
     pub fn build_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.build_id(input.into());
         self
     }
-    /// <p>A unique identifier for the build to retrieve properties for. You can use either the build ID or ARN value.</p>
+    /// <p>A unique identifier for the build to retrieve properties for. You can use either the build ID or ARN value. </p>
     pub fn set_build_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_build_id(input);
         self
     }
-    /// <p>A unique identifier for the build to retrieve properties for. You can use either the build ID or ARN value.</p>
+    /// <p>A unique identifier for the build to retrieve properties for. You can use either the build ID or ARN value. </p>
     pub fn get_build_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_build_id()
     }

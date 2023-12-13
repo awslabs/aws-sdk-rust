@@ -36,7 +36,7 @@ pub struct SyncDeploymentJobOutput {
     /// SimulationApplicationCrash
     /// </dt>
     /// <dd>
-    /// <p>Simulation application exited abnormally.</p>
+    /// <p> Simulation application exited abnormally.</p>
     /// </dd>
     /// <dt>
     /// BadPermissionsRobotApplication
@@ -155,7 +155,7 @@ impl SyncDeploymentJobOutput {
     /// SimulationApplicationCrash
     /// </dt>
     /// <dd>
-    /// <p>Simulation application exited abnormally.</p>
+    /// <p> Simulation application exited abnormally.</p>
     /// </dd>
     /// <dt>
     /// BadPermissionsRobotApplication
@@ -370,7 +370,7 @@ impl SyncDeploymentJobOutputBuilder {
     /// SimulationApplicationCrash
     /// </dt>
     /// <dd>
-    /// <p>Simulation application exited abnormally.</p>
+    /// <p> Simulation application exited abnormally.</p>
     /// </dd>
     /// <dt>
     /// BadPermissionsRobotApplication
@@ -461,7 +461,7 @@ impl SyncDeploymentJobOutputBuilder {
     /// SimulationApplicationCrash
     /// </dt>
     /// <dd>
-    /// <p>Simulation application exited abnormally.</p>
+    /// <p> Simulation application exited abnormally.</p>
     /// </dd>
     /// <dt>
     /// BadPermissionsRobotApplication
@@ -552,7 +552,7 @@ impl SyncDeploymentJobOutputBuilder {
     /// SimulationApplicationCrash
     /// </dt>
     /// <dd>
-    /// <p>Simulation application exited abnormally.</p>
+    /// <p> Simulation application exited abnormally.</p>
     /// </dd>
     /// <dt>
     /// BadPermissionsRobotApplication

@@ -3,45 +3,45 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFleetOutput {
-    /// <p>The ID of the fleet.</p>
+    /// <p> The ID of the fleet.</p>
     pub id: ::std::string::String,
-    /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    /// <p> The Amazon Resource Name (ARN) of the fleet. </p>
     pub arn: ::std::string::String,
-    /// <p>A brief description of the fleet.</p>
+    /// <p> A brief description of the fleet. </p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The ARN of a signal catalog associated with the fleet.</p>
+    /// <p> The ARN of a signal catalog associated with the fleet. </p>
     pub signal_catalog_arn: ::std::string::String,
-    /// <p>The time the fleet was created in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
+    /// <p> The time the fleet was created in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
     pub creation_time: ::aws_smithy_types::DateTime,
-    /// <p>The time the fleet was last updated, in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
+    /// <p> The time the fleet was last updated, in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
     pub last_modification_time: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
 impl GetFleetOutput {
-    /// <p>The ID of the fleet.</p>
+    /// <p> The ID of the fleet.</p>
     pub fn id(&self) -> &str {
         use std::ops::Deref;
         self.id.deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    /// <p> The Amazon Resource Name (ARN) of the fleet. </p>
     pub fn arn(&self) -> &str {
         use std::ops::Deref;
         self.arn.deref()
     }
-    /// <p>A brief description of the fleet.</p>
+    /// <p> A brief description of the fleet. </p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The ARN of a signal catalog associated with the fleet.</p>
+    /// <p> The ARN of a signal catalog associated with the fleet. </p>
     pub fn signal_catalog_arn(&self) -> &str {
         use std::ops::Deref;
         self.signal_catalog_arn.deref()
     }
-    /// <p>The time the fleet was created in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
+    /// <p> The time the fleet was created in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
     pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
         &self.creation_time
     }
-    /// <p>The time the fleet was last updated, in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
+    /// <p> The time the fleet was last updated, in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
     pub fn last_modification_time(&self) -> &::aws_smithy_types::DateTime {
         &self.last_modification_time
     }
@@ -71,92 +71,92 @@ pub struct GetFleetOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetFleetOutputBuilder {
-    /// <p>The ID of the fleet.</p>
+    /// <p> The ID of the fleet.</p>
     /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the fleet.</p>
+    /// <p> The ID of the fleet.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// <p>The ID of the fleet.</p>
+    /// <p> The ID of the fleet.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
-    /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    /// <p> The Amazon Resource Name (ARN) of the fleet. </p>
     /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    /// <p> The Amazon Resource Name (ARN) of the fleet. </p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    /// <p> The Amazon Resource Name (ARN) of the fleet. </p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>A brief description of the fleet.</p>
+    /// <p> A brief description of the fleet. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A brief description of the fleet.</p>
+    /// <p> A brief description of the fleet. </p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>A brief description of the fleet.</p>
+    /// <p> A brief description of the fleet. </p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The ARN of a signal catalog associated with the fleet.</p>
+    /// <p> The ARN of a signal catalog associated with the fleet. </p>
     /// This field is required.
     pub fn signal_catalog_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.signal_catalog_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of a signal catalog associated with the fleet.</p>
+    /// <p> The ARN of a signal catalog associated with the fleet. </p>
     pub fn set_signal_catalog_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.signal_catalog_arn = input;
         self
     }
-    /// <p>The ARN of a signal catalog associated with the fleet.</p>
+    /// <p> The ARN of a signal catalog associated with the fleet. </p>
     pub fn get_signal_catalog_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.signal_catalog_arn
     }
-    /// <p>The time the fleet was created in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
+    /// <p> The time the fleet was created in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
     /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time the fleet was created in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
+    /// <p> The time the fleet was created in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
-    /// <p>The time the fleet was created in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
+    /// <p> The time the fleet was created in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }
-    /// <p>The time the fleet was last updated, in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
+    /// <p> The time the fleet was last updated, in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
     /// This field is required.
     pub fn last_modification_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modification_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time the fleet was last updated, in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
+    /// <p> The time the fleet was last updated, in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
     pub fn set_last_modification_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modification_time = input;
         self
     }
-    /// <p>The time the fleet was last updated, in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
+    /// <p> The time the fleet was last updated, in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
     pub fn get_last_modification_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modification_time
     }

@@ -17,7 +17,7 @@ pub struct SubscriberResource {
     /// <p>Amazon Security Lake supports log and event collection for natively supported Amazon Web Services. For more information, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/source-management.html">Amazon Security Lake User Guide</a>.</p>
     pub sources: ::std::vec::Vec<crate::types::LogSourceResource>,
     /// <p>You can choose to notify subscribers of new objects with an Amazon Simple Queue Service (Amazon SQS) queue or through messaging to an HTTPS endpoint provided by the subscriber.</p>
-    /// <p>Subscribers can consume data by directly querying Lake Formation tables in your Amazon S3 bucket through services like Amazon Athena. This subscription type is defined as <code>LAKEFORMATION</code>.</p>
+    /// <p> Subscribers can consume data by directly querying Lake Formation tables in your Amazon S3 bucket through services like Amazon Athena. This subscription type is defined as <code>LAKEFORMATION</code>.</p>
     pub access_types: ::std::option::Option<::std::vec::Vec<crate::types::AccessType>>,
     /// <p>The Amazon Resource Name (ARN) specifying the role of the subscriber.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
@@ -67,7 +67,7 @@ impl SubscriberResource {
         self.sources.deref()
     }
     /// <p>You can choose to notify subscribers of new objects with an Amazon Simple Queue Service (Amazon SQS) queue or through messaging to an HTTPS endpoint provided by the subscriber.</p>
-    /// <p>Subscribers can consume data by directly querying Lake Formation tables in your Amazon S3 bucket through services like Amazon Athena. This subscription type is defined as <code>LAKEFORMATION</code>.</p>
+    /// <p> Subscribers can consume data by directly querying Lake Formation tables in your Amazon S3 bucket through services like Amazon Athena. This subscription type is defined as <code>LAKEFORMATION</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.access_types.is_none()`.
     pub fn access_types(&self) -> &[crate::types::AccessType] {
@@ -234,7 +234,7 @@ impl SubscriberResourceBuilder {
     /// To override the contents of this collection use [`set_access_types`](Self::set_access_types).
     ///
     /// <p>You can choose to notify subscribers of new objects with an Amazon Simple Queue Service (Amazon SQS) queue or through messaging to an HTTPS endpoint provided by the subscriber.</p>
-    /// <p>Subscribers can consume data by directly querying Lake Formation tables in your Amazon S3 bucket through services like Amazon Athena. This subscription type is defined as <code>LAKEFORMATION</code>.</p>
+    /// <p> Subscribers can consume data by directly querying Lake Formation tables in your Amazon S3 bucket through services like Amazon Athena. This subscription type is defined as <code>LAKEFORMATION</code>.</p>
     pub fn access_types(mut self, input: crate::types::AccessType) -> Self {
         let mut v = self.access_types.unwrap_or_default();
         v.push(input);
@@ -242,13 +242,13 @@ impl SubscriberResourceBuilder {
         self
     }
     /// <p>You can choose to notify subscribers of new objects with an Amazon Simple Queue Service (Amazon SQS) queue or through messaging to an HTTPS endpoint provided by the subscriber.</p>
-    /// <p>Subscribers can consume data by directly querying Lake Formation tables in your Amazon S3 bucket through services like Amazon Athena. This subscription type is defined as <code>LAKEFORMATION</code>.</p>
+    /// <p> Subscribers can consume data by directly querying Lake Formation tables in your Amazon S3 bucket through services like Amazon Athena. This subscription type is defined as <code>LAKEFORMATION</code>.</p>
     pub fn set_access_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccessType>>) -> Self {
         self.access_types = input;
         self
     }
     /// <p>You can choose to notify subscribers of new objects with an Amazon Simple Queue Service (Amazon SQS) queue or through messaging to an HTTPS endpoint provided by the subscriber.</p>
-    /// <p>Subscribers can consume data by directly querying Lake Formation tables in your Amazon S3 bucket through services like Amazon Athena. This subscription type is defined as <code>LAKEFORMATION</code>.</p>
+    /// <p> Subscribers can consume data by directly querying Lake Formation tables in your Amazon S3 bucket through services like Amazon Athena. This subscription type is defined as <code>LAKEFORMATION</code>.</p>
     pub fn get_access_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessType>> {
         &self.access_types
     }

@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDashboardsInput {
-    /// <p>If you specify this parameter, only the dashboards with names starting with the specified string are listed. The maximum length is 255, and valid characters are A-Z, a-z, 0-9, ".", "-", and "_".</p>
+    /// <p>If you specify this parameter, only the dashboards with names starting with the specified string are listed. The maximum length is 255, and valid characters are A-Z, a-z, 0-9, ".", "-", and "_". </p>
     pub dashboard_name_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The token returned by a previous call to indicate that there is more data available.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListDashboardsInput {
-    /// <p>If you specify this parameter, only the dashboards with names starting with the specified string are listed. The maximum length is 255, and valid characters are A-Z, a-z, 0-9, ".", "-", and "_".</p>
+    /// <p>If you specify this parameter, only the dashboards with names starting with the specified string are listed. The maximum length is 255, and valid characters are A-Z, a-z, 0-9, ".", "-", and "_". </p>
     pub fn dashboard_name_prefix(&self) -> ::std::option::Option<&str> {
         self.dashboard_name_prefix.as_deref()
     }
@@ -33,17 +33,17 @@ pub struct ListDashboardsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListDashboardsInputBuilder {
-    /// <p>If you specify this parameter, only the dashboards with names starting with the specified string are listed. The maximum length is 255, and valid characters are A-Z, a-z, 0-9, ".", "-", and "_".</p>
+    /// <p>If you specify this parameter, only the dashboards with names starting with the specified string are listed. The maximum length is 255, and valid characters are A-Z, a-z, 0-9, ".", "-", and "_". </p>
     pub fn dashboard_name_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dashboard_name_prefix = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If you specify this parameter, only the dashboards with names starting with the specified string are listed. The maximum length is 255, and valid characters are A-Z, a-z, 0-9, ".", "-", and "_".</p>
+    /// <p>If you specify this parameter, only the dashboards with names starting with the specified string are listed. The maximum length is 255, and valid characters are A-Z, a-z, 0-9, ".", "-", and "_". </p>
     pub fn set_dashboard_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dashboard_name_prefix = input;
         self
     }
-    /// <p>If you specify this parameter, only the dashboards with names starting with the specified string are listed. The maximum length is 255, and valid characters are A-Z, a-z, 0-9, ".", "-", and "_".</p>
+    /// <p>If you specify this parameter, only the dashboards with names starting with the specified string are listed. The maximum length is 255, and valid characters are A-Z, a-z, 0-9, ".", "-", and "_". </p>
     pub fn get_dashboard_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
         &self.dashboard_name_prefix
     }

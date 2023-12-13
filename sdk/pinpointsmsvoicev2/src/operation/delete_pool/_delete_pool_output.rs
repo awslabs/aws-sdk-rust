@@ -9,12 +9,9 @@ pub struct DeletePoolOutput {
     pub pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the pool.</p>
     /// <ul>
-    /// <li>
-    /// <p>CREATING: The pool is currently being created and isn't yet available for use.</p></li>
-    /// <li>
-    /// <p>ACTIVE: The pool is active and available for use.</p></li>
-    /// <li>
-    /// <p>DELETING: The pool is being deleted.</p></li>
+    /// <li> <p>CREATING: The pool is currently being created and isn't yet available for use.</p> </li>
+    /// <li> <p>ACTIVE: The pool is active and available for use.</p> </li>
+    /// <li> <p>DELETING: The pool is being deleted.</p> </li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::PoolStatus>,
     /// <p>The message type that was associated with the deleted pool.</p>
@@ -46,12 +43,9 @@ impl DeletePoolOutput {
     }
     /// <p>The current status of the pool.</p>
     /// <ul>
-    /// <li>
-    /// <p>CREATING: The pool is currently being created and isn't yet available for use.</p></li>
-    /// <li>
-    /// <p>ACTIVE: The pool is active and available for use.</p></li>
-    /// <li>
-    /// <p>DELETING: The pool is being deleted.</p></li>
+    /// <li> <p>CREATING: The pool is currently being created and isn't yet available for use.</p> </li>
+    /// <li> <p>ACTIVE: The pool is active and available for use.</p> </li>
+    /// <li> <p>DELETING: The pool is being deleted.</p> </li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::PoolStatus> {
         self.status.as_ref()
@@ -149,12 +143,9 @@ impl DeletePoolOutputBuilder {
     }
     /// <p>The current status of the pool.</p>
     /// <ul>
-    /// <li>
-    /// <p>CREATING: The pool is currently being created and isn't yet available for use.</p></li>
-    /// <li>
-    /// <p>ACTIVE: The pool is active and available for use.</p></li>
-    /// <li>
-    /// <p>DELETING: The pool is being deleted.</p></li>
+    /// <li> <p>CREATING: The pool is currently being created and isn't yet available for use.</p> </li>
+    /// <li> <p>ACTIVE: The pool is active and available for use.</p> </li>
+    /// <li> <p>DELETING: The pool is being deleted.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::PoolStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -162,12 +153,9 @@ impl DeletePoolOutputBuilder {
     }
     /// <p>The current status of the pool.</p>
     /// <ul>
-    /// <li>
-    /// <p>CREATING: The pool is currently being created and isn't yet available for use.</p></li>
-    /// <li>
-    /// <p>ACTIVE: The pool is active and available for use.</p></li>
-    /// <li>
-    /// <p>DELETING: The pool is being deleted.</p></li>
+    /// <li> <p>CREATING: The pool is currently being created and isn't yet available for use.</p> </li>
+    /// <li> <p>ACTIVE: The pool is active and available for use.</p> </li>
+    /// <li> <p>DELETING: The pool is being deleted.</p> </li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::PoolStatus>) -> Self {
         self.status = input;
@@ -175,12 +163,9 @@ impl DeletePoolOutputBuilder {
     }
     /// <p>The current status of the pool.</p>
     /// <ul>
-    /// <li>
-    /// <p>CREATING: The pool is currently being created and isn't yet available for use.</p></li>
-    /// <li>
-    /// <p>ACTIVE: The pool is active and available for use.</p></li>
-    /// <li>
-    /// <p>DELETING: The pool is being deleted.</p></li>
+    /// <li> <p>CREATING: The pool is currently being created and isn't yet available for use.</p> </li>
+    /// <li> <p>ACTIVE: The pool is active and available for use.</p> </li>
+    /// <li> <p>DELETING: The pool is being deleted.</p> </li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::PoolStatus> {
         &self.status

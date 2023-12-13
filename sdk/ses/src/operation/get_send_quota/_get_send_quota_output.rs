@@ -6,7 +6,7 @@
 pub struct GetSendQuotaOutput {
     /// <p>The maximum number of emails the user is allowed to send in a 24-hour interval. A value of -1 signifies an unlimited quota.</p>
     pub max24_hour_send: f64,
-    /// <p>The maximum number of emails that Amazon SES can accept from the user's account per second.</p><note>
+    /// <p>The maximum number of emails that Amazon SES can accept from the user's account per second.</p> <note>
     /// <p>The rate at which Amazon SES accepts the user's messages might be less than the maximum send rate.</p>
     /// </note>
     pub max_send_rate: f64,
@@ -19,7 +19,7 @@ impl GetSendQuotaOutput {
     pub fn max24_hour_send(&self) -> f64 {
         self.max24_hour_send
     }
-    /// <p>The maximum number of emails that Amazon SES can accept from the user's account per second.</p><note>
+    /// <p>The maximum number of emails that Amazon SES can accept from the user's account per second.</p> <note>
     /// <p>The rate at which Amazon SES accepts the user's messages might be less than the maximum send rate.</p>
     /// </note>
     pub fn max_send_rate(&self) -> f64 {
@@ -66,21 +66,21 @@ impl GetSendQuotaOutputBuilder {
     pub fn get_max24_hour_send(&self) -> &::std::option::Option<f64> {
         &self.max24_hour_send
     }
-    /// <p>The maximum number of emails that Amazon SES can accept from the user's account per second.</p><note>
+    /// <p>The maximum number of emails that Amazon SES can accept from the user's account per second.</p> <note>
     /// <p>The rate at which Amazon SES accepts the user's messages might be less than the maximum send rate.</p>
     /// </note>
     pub fn max_send_rate(mut self, input: f64) -> Self {
         self.max_send_rate = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of emails that Amazon SES can accept from the user's account per second.</p><note>
+    /// <p>The maximum number of emails that Amazon SES can accept from the user's account per second.</p> <note>
     /// <p>The rate at which Amazon SES accepts the user's messages might be less than the maximum send rate.</p>
     /// </note>
     pub fn set_max_send_rate(mut self, input: ::std::option::Option<f64>) -> Self {
         self.max_send_rate = input;
         self
     }
-    /// <p>The maximum number of emails that Amazon SES can accept from the user's account per second.</p><note>
+    /// <p>The maximum number of emails that Amazon SES can accept from the user's account per second.</p> <note>
     /// <p>The rate at which Amazon SES accepts the user's messages might be less than the maximum send rate.</p>
     /// </note>
     pub fn get_max_send_rate(&self) -> &::std::option::Option<f64> {

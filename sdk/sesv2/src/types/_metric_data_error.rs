@@ -8,10 +8,8 @@ pub struct MetricDataError {
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The query error code. Can be one of:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>INTERNAL_FAILURE</code> – Amazon SES has failed to process one of the queries.</p></li>
-    /// <li>
-    /// <p><code>ACCESS_DENIED</code> – You have insufficient access to retrieve metrics based on the given query.</p></li>
+    /// <li> <p> <code>INTERNAL_FAILURE</code> – Amazon SES has failed to process one of the queries.</p> </li>
+    /// <li> <p> <code>ACCESS_DENIED</code> – You have insufficient access to retrieve metrics based on the given query.</p> </li>
     /// </ul>
     pub code: ::std::option::Option<crate::types::QueryErrorCode>,
     /// <p>The error message associated with the current query error.</p>
@@ -24,10 +22,8 @@ impl MetricDataError {
     }
     /// <p>The query error code. Can be one of:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>INTERNAL_FAILURE</code> – Amazon SES has failed to process one of the queries.</p></li>
-    /// <li>
-    /// <p><code>ACCESS_DENIED</code> – You have insufficient access to retrieve metrics based on the given query.</p></li>
+    /// <li> <p> <code>INTERNAL_FAILURE</code> – Amazon SES has failed to process one of the queries.</p> </li>
+    /// <li> <p> <code>ACCESS_DENIED</code> – You have insufficient access to retrieve metrics based on the given query.</p> </li>
     /// </ul>
     pub fn code(&self) -> ::std::option::Option<&crate::types::QueryErrorCode> {
         self.code.as_ref()
@@ -69,10 +65,8 @@ impl MetricDataErrorBuilder {
     }
     /// <p>The query error code. Can be one of:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>INTERNAL_FAILURE</code> – Amazon SES has failed to process one of the queries.</p></li>
-    /// <li>
-    /// <p><code>ACCESS_DENIED</code> – You have insufficient access to retrieve metrics based on the given query.</p></li>
+    /// <li> <p> <code>INTERNAL_FAILURE</code> – Amazon SES has failed to process one of the queries.</p> </li>
+    /// <li> <p> <code>ACCESS_DENIED</code> – You have insufficient access to retrieve metrics based on the given query.</p> </li>
     /// </ul>
     pub fn code(mut self, input: crate::types::QueryErrorCode) -> Self {
         self.code = ::std::option::Option::Some(input);
@@ -80,10 +74,8 @@ impl MetricDataErrorBuilder {
     }
     /// <p>The query error code. Can be one of:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>INTERNAL_FAILURE</code> – Amazon SES has failed to process one of the queries.</p></li>
-    /// <li>
-    /// <p><code>ACCESS_DENIED</code> – You have insufficient access to retrieve metrics based on the given query.</p></li>
+    /// <li> <p> <code>INTERNAL_FAILURE</code> – Amazon SES has failed to process one of the queries.</p> </li>
+    /// <li> <p> <code>ACCESS_DENIED</code> – You have insufficient access to retrieve metrics based on the given query.</p> </li>
     /// </ul>
     pub fn set_code(mut self, input: ::std::option::Option<crate::types::QueryErrorCode>) -> Self {
         self.code = input;
@@ -91,10 +83,8 @@ impl MetricDataErrorBuilder {
     }
     /// <p>The query error code. Can be one of:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>INTERNAL_FAILURE</code> – Amazon SES has failed to process one of the queries.</p></li>
-    /// <li>
-    /// <p><code>ACCESS_DENIED</code> – You have insufficient access to retrieve metrics based on the given query.</p></li>
+    /// <li> <p> <code>INTERNAL_FAILURE</code> – Amazon SES has failed to process one of the queries.</p> </li>
+    /// <li> <p> <code>ACCESS_DENIED</code> – You have insufficient access to retrieve metrics based on the given query.</p> </li>
     /// </ul>
     pub fn get_code(&self) -> &::std::option::Option<crate::types::QueryErrorCode> {
         &self.code

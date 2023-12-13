@@ -22,7 +22,7 @@ impl RegisterOnPremisesInstanceInputBuilder {
 }
 /// Fluent builder constructing a request to `RegisterOnPremisesInstance`.
 ///
-/// <p>Registers an on-premises instance.</p><note>
+/// <p>Registers an on-premises instance.</p> <note>
 /// <p>Only one IAM ARN (an IAM session ARN or IAM user ARN) is supported in the request. You cannot use both.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

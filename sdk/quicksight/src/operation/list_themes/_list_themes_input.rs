@@ -11,12 +11,9 @@ pub struct ListThemesInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>The type of themes that you want to list. Valid options include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ALL (default)</code>- Display all existing themes.</p></li>
-    /// <li>
-    /// <p><code>CUSTOM</code> - Display only the themes created by people using Amazon QuickSight.</p></li>
-    /// <li>
-    /// <p><code>QUICKSIGHT</code> - Display only the starting themes defined by Amazon QuickSight.</p></li>
+    /// <li> <p> <code>ALL (default)</code>- Display all existing themes.</p> </li>
+    /// <li> <p> <code>CUSTOM</code> - Display only the themes created by people using Amazon QuickSight.</p> </li>
+    /// <li> <p> <code>QUICKSIGHT</code> - Display only the starting themes defined by Amazon QuickSight.</p> </li>
     /// </ul>
     pub r#type: ::std::option::Option<crate::types::ThemeType>,
 }
@@ -35,12 +32,9 @@ impl ListThemesInput {
     }
     /// <p>The type of themes that you want to list. Valid options include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ALL (default)</code>- Display all existing themes.</p></li>
-    /// <li>
-    /// <p><code>CUSTOM</code> - Display only the themes created by people using Amazon QuickSight.</p></li>
-    /// <li>
-    /// <p><code>QUICKSIGHT</code> - Display only the starting themes defined by Amazon QuickSight.</p></li>
+    /// <li> <p> <code>ALL (default)</code>- Display all existing themes.</p> </li>
+    /// <li> <p> <code>CUSTOM</code> - Display only the themes created by people using Amazon QuickSight.</p> </li>
+    /// <li> <p> <code>QUICKSIGHT</code> - Display only the starting themes defined by Amazon QuickSight.</p> </li>
     /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::ThemeType> {
         self.r#type.as_ref()
@@ -108,12 +102,9 @@ impl ListThemesInputBuilder {
     }
     /// <p>The type of themes that you want to list. Valid options include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ALL (default)</code>- Display all existing themes.</p></li>
-    /// <li>
-    /// <p><code>CUSTOM</code> - Display only the themes created by people using Amazon QuickSight.</p></li>
-    /// <li>
-    /// <p><code>QUICKSIGHT</code> - Display only the starting themes defined by Amazon QuickSight.</p></li>
+    /// <li> <p> <code>ALL (default)</code>- Display all existing themes.</p> </li>
+    /// <li> <p> <code>CUSTOM</code> - Display only the themes created by people using Amazon QuickSight.</p> </li>
+    /// <li> <p> <code>QUICKSIGHT</code> - Display only the starting themes defined by Amazon QuickSight.</p> </li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::ThemeType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -121,12 +112,9 @@ impl ListThemesInputBuilder {
     }
     /// <p>The type of themes that you want to list. Valid options include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ALL (default)</code>- Display all existing themes.</p></li>
-    /// <li>
-    /// <p><code>CUSTOM</code> - Display only the themes created by people using Amazon QuickSight.</p></li>
-    /// <li>
-    /// <p><code>QUICKSIGHT</code> - Display only the starting themes defined by Amazon QuickSight.</p></li>
+    /// <li> <p> <code>ALL (default)</code>- Display all existing themes.</p> </li>
+    /// <li> <p> <code>CUSTOM</code> - Display only the themes created by people using Amazon QuickSight.</p> </li>
+    /// <li> <p> <code>QUICKSIGHT</code> - Display only the starting themes defined by Amazon QuickSight.</p> </li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ThemeType>) -> Self {
         self.r#type = input;
@@ -134,12 +122,9 @@ impl ListThemesInputBuilder {
     }
     /// <p>The type of themes that you want to list. Valid options include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ALL (default)</code>- Display all existing themes.</p></li>
-    /// <li>
-    /// <p><code>CUSTOM</code> - Display only the themes created by people using Amazon QuickSight.</p></li>
-    /// <li>
-    /// <p><code>QUICKSIGHT</code> - Display only the starting themes defined by Amazon QuickSight.</p></li>
+    /// <li> <p> <code>ALL (default)</code>- Display all existing themes.</p> </li>
+    /// <li> <p> <code>CUSTOM</code> - Display only the themes created by people using Amazon QuickSight.</p> </li>
+    /// <li> <p> <code>QUICKSIGHT</code> - Display only the starting themes defined by Amazon QuickSight.</p> </li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ThemeType> {
         &self.r#type

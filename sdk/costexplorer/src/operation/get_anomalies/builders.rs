@@ -108,87 +108,87 @@ impl GetAnomaliesFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Retrieves all of the cost anomalies detected for a specific cost anomaly monitor Amazon Resource Name (ARN).</p>
+    /// <p>Retrieves all of the cost anomalies detected for a specific cost anomaly monitor Amazon Resource Name (ARN). </p>
     pub fn monitor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.monitor_arn(input.into());
         self
     }
-    /// <p>Retrieves all of the cost anomalies detected for a specific cost anomaly monitor Amazon Resource Name (ARN).</p>
+    /// <p>Retrieves all of the cost anomalies detected for a specific cost anomaly monitor Amazon Resource Name (ARN). </p>
     pub fn set_monitor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_monitor_arn(input);
         self
     }
-    /// <p>Retrieves all of the cost anomalies detected for a specific cost anomaly monitor Amazon Resource Name (ARN).</p>
+    /// <p>Retrieves all of the cost anomalies detected for a specific cost anomaly monitor Amazon Resource Name (ARN). </p>
     pub fn get_monitor_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_monitor_arn()
     }
-    /// <p>Assigns the start and end dates for retrieving cost anomalies. The returned anomaly object will have an <code>AnomalyEndDate</code> in the specified time range.</p>
+    /// <p>Assigns the start and end dates for retrieving cost anomalies. The returned anomaly object will have an <code>AnomalyEndDate</code> in the specified time range. </p>
     pub fn date_interval(mut self, input: crate::types::AnomalyDateInterval) -> Self {
         self.inner = self.inner.date_interval(input);
         self
     }
-    /// <p>Assigns the start and end dates for retrieving cost anomalies. The returned anomaly object will have an <code>AnomalyEndDate</code> in the specified time range.</p>
+    /// <p>Assigns the start and end dates for retrieving cost anomalies. The returned anomaly object will have an <code>AnomalyEndDate</code> in the specified time range. </p>
     pub fn set_date_interval(mut self, input: ::std::option::Option<crate::types::AnomalyDateInterval>) -> Self {
         self.inner = self.inner.set_date_interval(input);
         self
     }
-    /// <p>Assigns the start and end dates for retrieving cost anomalies. The returned anomaly object will have an <code>AnomalyEndDate</code> in the specified time range.</p>
+    /// <p>Assigns the start and end dates for retrieving cost anomalies. The returned anomaly object will have an <code>AnomalyEndDate</code> in the specified time range. </p>
     pub fn get_date_interval(&self) -> &::std::option::Option<crate::types::AnomalyDateInterval> {
         self.inner.get_date_interval()
     }
-    /// <p>Filters anomaly results by the feedback field on the anomaly object.</p>
+    /// <p>Filters anomaly results by the feedback field on the anomaly object. </p>
     pub fn feedback(mut self, input: crate::types::AnomalyFeedbackType) -> Self {
         self.inner = self.inner.feedback(input);
         self
     }
-    /// <p>Filters anomaly results by the feedback field on the anomaly object.</p>
+    /// <p>Filters anomaly results by the feedback field on the anomaly object. </p>
     pub fn set_feedback(mut self, input: ::std::option::Option<crate::types::AnomalyFeedbackType>) -> Self {
         self.inner = self.inner.set_feedback(input);
         self
     }
-    /// <p>Filters anomaly results by the feedback field on the anomaly object.</p>
+    /// <p>Filters anomaly results by the feedback field on the anomaly object. </p>
     pub fn get_feedback(&self) -> &::std::option::Option<crate::types::AnomalyFeedbackType> {
         self.inner.get_feedback()
     }
-    /// <p>Filters anomaly results by the total impact field on the anomaly object. For example, you can filter anomalies <code>GREATER_THAN 200.00</code> to retrieve anomalies, with an estimated dollar impact greater than 200.</p>
+    /// <p>Filters anomaly results by the total impact field on the anomaly object. For example, you can filter anomalies <code>GREATER_THAN 200.00</code> to retrieve anomalies, with an estimated dollar impact greater than 200. </p>
     pub fn total_impact(mut self, input: crate::types::TotalImpactFilter) -> Self {
         self.inner = self.inner.total_impact(input);
         self
     }
-    /// <p>Filters anomaly results by the total impact field on the anomaly object. For example, you can filter anomalies <code>GREATER_THAN 200.00</code> to retrieve anomalies, with an estimated dollar impact greater than 200.</p>
+    /// <p>Filters anomaly results by the total impact field on the anomaly object. For example, you can filter anomalies <code>GREATER_THAN 200.00</code> to retrieve anomalies, with an estimated dollar impact greater than 200. </p>
     pub fn set_total_impact(mut self, input: ::std::option::Option<crate::types::TotalImpactFilter>) -> Self {
         self.inner = self.inner.set_total_impact(input);
         self
     }
-    /// <p>Filters anomaly results by the total impact field on the anomaly object. For example, you can filter anomalies <code>GREATER_THAN 200.00</code> to retrieve anomalies, with an estimated dollar impact greater than 200.</p>
+    /// <p>Filters anomaly results by the total impact field on the anomaly object. For example, you can filter anomalies <code>GREATER_THAN 200.00</code> to retrieve anomalies, with an estimated dollar impact greater than 200. </p>
     pub fn get_total_impact(&self) -> &::std::option::Option<crate::types::TotalImpactFilter> {
         self.inner.get_total_impact()
     }
-    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_page_token(input.into());
         self
     }
-    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_page_token(input);
         self
     }
-    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_page_token()
     }
-    /// <p>The number of entries a paginated response contains.</p>
+    /// <p>The number of entries a paginated response contains. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The number of entries a paginated response contains.</p>
+    /// <p>The number of entries a paginated response contains. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The number of entries a paginated response contains.</p>
+    /// <p>The number of entries a paginated response contains. </p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

@@ -5,9 +5,9 @@
 pub struct ListAvailableManagedRuleGroupVersionsOutput {
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     pub next_marker: ::std::option::Option<::std::string::String>,
-    /// <p>The versions that are currently available for the specified managed rule group. If you specified a <code>Limit</code> in your request, this might not be the full list.</p>
+    /// <p>The versions that are currently available for the specified managed rule group. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
     pub versions: ::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleGroupVersion>>,
-    /// <p>The name of the version that's currently set as the default.</p>
+    /// <p>The name of the version that's currently set as the default. </p>
     pub current_default_version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -16,13 +16,13 @@ impl ListAvailableManagedRuleGroupVersionsOutput {
     pub fn next_marker(&self) -> ::std::option::Option<&str> {
         self.next_marker.as_deref()
     }
-    /// <p>The versions that are currently available for the specified managed rule group. If you specified a <code>Limit</code> in your request, this might not be the full list.</p>
+    /// <p>The versions that are currently available for the specified managed rule group. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.versions.is_none()`.
     pub fn versions(&self) -> &[crate::types::ManagedRuleGroupVersion] {
         self.versions.as_deref().unwrap_or_default()
     }
-    /// <p>The name of the version that's currently set as the default.</p>
+    /// <p>The name of the version that's currently set as the default. </p>
     pub fn current_default_version(&self) -> ::std::option::Option<&str> {
         self.current_default_version.as_deref()
     }
@@ -67,33 +67,33 @@ impl ListAvailableManagedRuleGroupVersionsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_versions`](Self::set_versions).
     ///
-    /// <p>The versions that are currently available for the specified managed rule group. If you specified a <code>Limit</code> in your request, this might not be the full list.</p>
+    /// <p>The versions that are currently available for the specified managed rule group. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
     pub fn versions(mut self, input: crate::types::ManagedRuleGroupVersion) -> Self {
         let mut v = self.versions.unwrap_or_default();
         v.push(input);
         self.versions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The versions that are currently available for the specified managed rule group. If you specified a <code>Limit</code> in your request, this might not be the full list.</p>
+    /// <p>The versions that are currently available for the specified managed rule group. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
     pub fn set_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleGroupVersion>>) -> Self {
         self.versions = input;
         self
     }
-    /// <p>The versions that are currently available for the specified managed rule group. If you specified a <code>Limit</code> in your request, this might not be the full list.</p>
+    /// <p>The versions that are currently available for the specified managed rule group. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
     pub fn get_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleGroupVersion>> {
         &self.versions
     }
-    /// <p>The name of the version that's currently set as the default.</p>
+    /// <p>The name of the version that's currently set as the default. </p>
     pub fn current_default_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.current_default_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the version that's currently set as the default.</p>
+    /// <p>The name of the version that's currently set as the default. </p>
     pub fn set_current_default_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.current_default_version = input;
         self
     }
-    /// <p>The name of the version that's currently set as the default.</p>
+    /// <p>The name of the version that's currently set as the default. </p>
     pub fn get_current_default_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.current_default_version
     }

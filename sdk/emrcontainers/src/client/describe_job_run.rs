@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeJobRun`](crate::operation::describe_job_run::builders::DescribeJobRunFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::describe_job_run::builders::DescribeJobRunFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::describe_job_run::builders::DescribeJobRunFluentBuilder::set_id):<br>required: **true**<br><p>The ID of the job run request.</p><br>
+    ///   - [`id(impl Into<String>)`](crate::operation::describe_job_run::builders::DescribeJobRunFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::describe_job_run::builders::DescribeJobRunFluentBuilder::set_id):<br>required: **true**<br><p>The ID of the job run request. </p><br>
     ///   - [`virtual_cluster_id(impl Into<String>)`](crate::operation::describe_job_run::builders::DescribeJobRunFluentBuilder::virtual_cluster_id) / [`set_virtual_cluster_id(Option<String>)`](crate::operation::describe_job_run::builders::DescribeJobRunFluentBuilder::set_virtual_cluster_id):<br>required: **true**<br><p>The ID of the virtual cluster for which the job run is submitted.</p><br>
     /// - On success, responds with [`DescribeJobRunOutput`](crate::operation::describe_job_run::DescribeJobRunOutput) with field(s):
     ///   - [`job_run(Option<JobRun>)`](crate::operation::describe_job_run::DescribeJobRunOutput::job_run): <p>The output displays information about a job run.</p>

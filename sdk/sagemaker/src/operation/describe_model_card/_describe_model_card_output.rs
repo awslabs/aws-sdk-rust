@@ -13,14 +13,10 @@ pub struct DescribeModelCardOutput {
     pub content: ::std::option::Option<::std::string::String>,
     /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Draft</code>: The model card is a work in progress.</p></li>
-    /// <li>
-    /// <p><code>PendingReview</code>: The model card is pending review.</p></li>
-    /// <li>
-    /// <p><code>Approved</code>: The model card is approved.</p></li>
-    /// <li>
-    /// <p><code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p></li>
+    /// <li> <p> <code>Draft</code>: The model card is a work in progress.</p> </li>
+    /// <li> <p> <code>PendingReview</code>: The model card is pending review.</p> </li>
+    /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li>
+    /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li>
     /// </ul>
     pub model_card_status: ::std::option::Option<crate::types::ModelCardStatus>,
     /// <p>The security configuration used to protect model card content.</p>
@@ -35,18 +31,12 @@ pub struct DescribeModelCardOutput {
     pub last_modified_by: ::std::option::Option<crate::types::UserContext>,
     /// <p>The processing status of model card deletion. The <code>ModelCardProcessingStatus</code> updates throughout the different deletion steps.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>DeletePending</code>: Model card deletion request received.</p></li>
-    /// <li>
-    /// <p><code>DeleteInProgress</code>: Model card deletion is in progress.</p></li>
-    /// <li>
-    /// <p><code>ContentDeleted</code>: Deleted model card content.</p></li>
-    /// <li>
-    /// <p><code>ExportJobsDeleted</code>: Deleted all export jobs associated with the model card.</p></li>
-    /// <li>
-    /// <p><code>DeleteCompleted</code>: Successfully deleted the model card.</p></li>
-    /// <li>
-    /// <p><code>DeleteFailed</code>: The model card failed to delete.</p></li>
+    /// <li> <p> <code>DeletePending</code>: Model card deletion request received.</p> </li>
+    /// <li> <p> <code>DeleteInProgress</code>: Model card deletion is in progress.</p> </li>
+    /// <li> <p> <code>ContentDeleted</code>: Deleted model card content.</p> </li>
+    /// <li> <p> <code>ExportJobsDeleted</code>: Deleted all export jobs associated with the model card.</p> </li>
+    /// <li> <p> <code>DeleteCompleted</code>: Successfully deleted the model card.</p> </li>
+    /// <li> <p> <code>DeleteFailed</code>: The model card failed to delete.</p> </li>
     /// </ul>
     pub model_card_processing_status: ::std::option::Option<crate::types::ModelCardProcessingStatus>,
     _request_id: Option<String>,
@@ -70,14 +60,10 @@ impl DescribeModelCardOutput {
     }
     /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Draft</code>: The model card is a work in progress.</p></li>
-    /// <li>
-    /// <p><code>PendingReview</code>: The model card is pending review.</p></li>
-    /// <li>
-    /// <p><code>Approved</code>: The model card is approved.</p></li>
-    /// <li>
-    /// <p><code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p></li>
+    /// <li> <p> <code>Draft</code>: The model card is a work in progress.</p> </li>
+    /// <li> <p> <code>PendingReview</code>: The model card is pending review.</p> </li>
+    /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li>
+    /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li>
     /// </ul>
     pub fn model_card_status(&self) -> ::std::option::Option<&crate::types::ModelCardStatus> {
         self.model_card_status.as_ref()
@@ -104,18 +90,12 @@ impl DescribeModelCardOutput {
     }
     /// <p>The processing status of model card deletion. The <code>ModelCardProcessingStatus</code> updates throughout the different deletion steps.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>DeletePending</code>: Model card deletion request received.</p></li>
-    /// <li>
-    /// <p><code>DeleteInProgress</code>: Model card deletion is in progress.</p></li>
-    /// <li>
-    /// <p><code>ContentDeleted</code>: Deleted model card content.</p></li>
-    /// <li>
-    /// <p><code>ExportJobsDeleted</code>: Deleted all export jobs associated with the model card.</p></li>
-    /// <li>
-    /// <p><code>DeleteCompleted</code>: Successfully deleted the model card.</p></li>
-    /// <li>
-    /// <p><code>DeleteFailed</code>: The model card failed to delete.</p></li>
+    /// <li> <p> <code>DeletePending</code>: Model card deletion request received.</p> </li>
+    /// <li> <p> <code>DeleteInProgress</code>: Model card deletion is in progress.</p> </li>
+    /// <li> <p> <code>ContentDeleted</code>: Deleted model card content.</p> </li>
+    /// <li> <p> <code>ExportJobsDeleted</code>: Deleted all export jobs associated with the model card.</p> </li>
+    /// <li> <p> <code>DeleteCompleted</code>: Successfully deleted the model card.</p> </li>
+    /// <li> <p> <code>DeleteFailed</code>: The model card failed to delete.</p> </li>
     /// </ul>
     pub fn model_card_processing_status(&self) -> ::std::option::Option<&crate::types::ModelCardProcessingStatus> {
         self.model_card_processing_status.as_ref()
@@ -231,14 +211,10 @@ impl DescribeModelCardOutputBuilder {
     }
     /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Draft</code>: The model card is a work in progress.</p></li>
-    /// <li>
-    /// <p><code>PendingReview</code>: The model card is pending review.</p></li>
-    /// <li>
-    /// <p><code>Approved</code>: The model card is approved.</p></li>
-    /// <li>
-    /// <p><code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p></li>
+    /// <li> <p> <code>Draft</code>: The model card is a work in progress.</p> </li>
+    /// <li> <p> <code>PendingReview</code>: The model card is pending review.</p> </li>
+    /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li>
+    /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn model_card_status(mut self, input: crate::types::ModelCardStatus) -> Self {
@@ -247,14 +223,10 @@ impl DescribeModelCardOutputBuilder {
     }
     /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Draft</code>: The model card is a work in progress.</p></li>
-    /// <li>
-    /// <p><code>PendingReview</code>: The model card is pending review.</p></li>
-    /// <li>
-    /// <p><code>Approved</code>: The model card is approved.</p></li>
-    /// <li>
-    /// <p><code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p></li>
+    /// <li> <p> <code>Draft</code>: The model card is a work in progress.</p> </li>
+    /// <li> <p> <code>PendingReview</code>: The model card is pending review.</p> </li>
+    /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li>
+    /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li>
     /// </ul>
     pub fn set_model_card_status(mut self, input: ::std::option::Option<crate::types::ModelCardStatus>) -> Self {
         self.model_card_status = input;
@@ -262,14 +234,10 @@ impl DescribeModelCardOutputBuilder {
     }
     /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Draft</code>: The model card is a work in progress.</p></li>
-    /// <li>
-    /// <p><code>PendingReview</code>: The model card is pending review.</p></li>
-    /// <li>
-    /// <p><code>Approved</code>: The model card is approved.</p></li>
-    /// <li>
-    /// <p><code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p></li>
+    /// <li> <p> <code>Draft</code>: The model card is a work in progress.</p> </li>
+    /// <li> <p> <code>PendingReview</code>: The model card is pending review.</p> </li>
+    /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li>
+    /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li>
     /// </ul>
     pub fn get_model_card_status(&self) -> &::std::option::Option<crate::types::ModelCardStatus> {
         &self.model_card_status
@@ -348,18 +316,12 @@ impl DescribeModelCardOutputBuilder {
     }
     /// <p>The processing status of model card deletion. The <code>ModelCardProcessingStatus</code> updates throughout the different deletion steps.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>DeletePending</code>: Model card deletion request received.</p></li>
-    /// <li>
-    /// <p><code>DeleteInProgress</code>: Model card deletion is in progress.</p></li>
-    /// <li>
-    /// <p><code>ContentDeleted</code>: Deleted model card content.</p></li>
-    /// <li>
-    /// <p><code>ExportJobsDeleted</code>: Deleted all export jobs associated with the model card.</p></li>
-    /// <li>
-    /// <p><code>DeleteCompleted</code>: Successfully deleted the model card.</p></li>
-    /// <li>
-    /// <p><code>DeleteFailed</code>: The model card failed to delete.</p></li>
+    /// <li> <p> <code>DeletePending</code>: Model card deletion request received.</p> </li>
+    /// <li> <p> <code>DeleteInProgress</code>: Model card deletion is in progress.</p> </li>
+    /// <li> <p> <code>ContentDeleted</code>: Deleted model card content.</p> </li>
+    /// <li> <p> <code>ExportJobsDeleted</code>: Deleted all export jobs associated with the model card.</p> </li>
+    /// <li> <p> <code>DeleteCompleted</code>: Successfully deleted the model card.</p> </li>
+    /// <li> <p> <code>DeleteFailed</code>: The model card failed to delete.</p> </li>
     /// </ul>
     pub fn model_card_processing_status(mut self, input: crate::types::ModelCardProcessingStatus) -> Self {
         self.model_card_processing_status = ::std::option::Option::Some(input);
@@ -367,18 +329,12 @@ impl DescribeModelCardOutputBuilder {
     }
     /// <p>The processing status of model card deletion. The <code>ModelCardProcessingStatus</code> updates throughout the different deletion steps.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>DeletePending</code>: Model card deletion request received.</p></li>
-    /// <li>
-    /// <p><code>DeleteInProgress</code>: Model card deletion is in progress.</p></li>
-    /// <li>
-    /// <p><code>ContentDeleted</code>: Deleted model card content.</p></li>
-    /// <li>
-    /// <p><code>ExportJobsDeleted</code>: Deleted all export jobs associated with the model card.</p></li>
-    /// <li>
-    /// <p><code>DeleteCompleted</code>: Successfully deleted the model card.</p></li>
-    /// <li>
-    /// <p><code>DeleteFailed</code>: The model card failed to delete.</p></li>
+    /// <li> <p> <code>DeletePending</code>: Model card deletion request received.</p> </li>
+    /// <li> <p> <code>DeleteInProgress</code>: Model card deletion is in progress.</p> </li>
+    /// <li> <p> <code>ContentDeleted</code>: Deleted model card content.</p> </li>
+    /// <li> <p> <code>ExportJobsDeleted</code>: Deleted all export jobs associated with the model card.</p> </li>
+    /// <li> <p> <code>DeleteCompleted</code>: Successfully deleted the model card.</p> </li>
+    /// <li> <p> <code>DeleteFailed</code>: The model card failed to delete.</p> </li>
     /// </ul>
     pub fn set_model_card_processing_status(mut self, input: ::std::option::Option<crate::types::ModelCardProcessingStatus>) -> Self {
         self.model_card_processing_status = input;
@@ -386,18 +342,12 @@ impl DescribeModelCardOutputBuilder {
     }
     /// <p>The processing status of model card deletion. The <code>ModelCardProcessingStatus</code> updates throughout the different deletion steps.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>DeletePending</code>: Model card deletion request received.</p></li>
-    /// <li>
-    /// <p><code>DeleteInProgress</code>: Model card deletion is in progress.</p></li>
-    /// <li>
-    /// <p><code>ContentDeleted</code>: Deleted model card content.</p></li>
-    /// <li>
-    /// <p><code>ExportJobsDeleted</code>: Deleted all export jobs associated with the model card.</p></li>
-    /// <li>
-    /// <p><code>DeleteCompleted</code>: Successfully deleted the model card.</p></li>
-    /// <li>
-    /// <p><code>DeleteFailed</code>: The model card failed to delete.</p></li>
+    /// <li> <p> <code>DeletePending</code>: Model card deletion request received.</p> </li>
+    /// <li> <p> <code>DeleteInProgress</code>: Model card deletion is in progress.</p> </li>
+    /// <li> <p> <code>ContentDeleted</code>: Deleted model card content.</p> </li>
+    /// <li> <p> <code>ExportJobsDeleted</code>: Deleted all export jobs associated with the model card.</p> </li>
+    /// <li> <p> <code>DeleteCompleted</code>: Successfully deleted the model card.</p> </li>
+    /// <li> <p> <code>DeleteFailed</code>: The model card failed to delete.</p> </li>
     /// </ul>
     pub fn get_model_card_processing_status(&self) -> &::std::option::Option<crate::types::ModelCardProcessingStatus> {
         &self.model_card_processing_status

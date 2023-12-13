@@ -23,7 +23,7 @@ impl StopCanaryInputBuilder {
 /// Fluent builder constructing a request to `StopCanary`.
 ///
 /// <p>Stops the canary to prevent all future runs. If the canary is currently running,the run that is in progress completes on its own, publishes metrics, and uploads artifacts, but it is not recorded in Synthetics as a completed run.</p>
-/// <p>You can use <code>StartCanary</code> to start it running again with the canary’s current schedule at any point in the future.</p>
+/// <p>You can use <code>StartCanary</code> to start it running again with the canary’s current schedule at any point in the future. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopCanaryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

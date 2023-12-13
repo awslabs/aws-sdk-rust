@@ -8,9 +8,9 @@ pub struct KeyspaceSummary {
     pub keyspace_name: ::std::string::String,
     /// <p>The unique identifier of the keyspace in the format of an Amazon Resource Name (ARN).</p>
     pub resource_arn: ::std::string::String,
-    /// <p>This property specifies if a keyspace is a single Region keyspace or a multi-Region keyspace. The available values are <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>.</p>
+    /// <p> This property specifies if a keyspace is a single Region keyspace or a multi-Region keyspace. The available values are <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>. </p>
     pub replication_strategy: crate::types::Rs,
-    /// <p>If the <code>replicationStrategy</code> of the keyspace is <code>MULTI_REGION</code>, a list of replication Regions is returned.</p>
+    /// <p> If the <code>replicationStrategy</code> of the keyspace is <code>MULTI_REGION</code>, a list of replication Regions is returned. </p>
     pub replication_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl KeyspaceSummary {
@@ -24,11 +24,11 @@ impl KeyspaceSummary {
         use std::ops::Deref;
         self.resource_arn.deref()
     }
-    /// <p>This property specifies if a keyspace is a single Region keyspace or a multi-Region keyspace. The available values are <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>.</p>
+    /// <p> This property specifies if a keyspace is a single Region keyspace or a multi-Region keyspace. The available values are <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>. </p>
     pub fn replication_strategy(&self) -> &crate::types::Rs {
         &self.replication_strategy
     }
-    /// <p>If the <code>replicationStrategy</code> of the keyspace is <code>MULTI_REGION</code>, a list of replication Regions is returned.</p>
+    /// <p> If the <code>replicationStrategy</code> of the keyspace is <code>MULTI_REGION</code>, a list of replication Regions is returned. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replication_regions.is_none()`.
     pub fn replication_regions(&self) -> &[::std::string::String] {
@@ -82,18 +82,18 @@ impl KeyspaceSummaryBuilder {
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }
-    /// <p>This property specifies if a keyspace is a single Region keyspace or a multi-Region keyspace. The available values are <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>.</p>
+    /// <p> This property specifies if a keyspace is a single Region keyspace or a multi-Region keyspace. The available values are <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>. </p>
     /// This field is required.
     pub fn replication_strategy(mut self, input: crate::types::Rs) -> Self {
         self.replication_strategy = ::std::option::Option::Some(input);
         self
     }
-    /// <p>This property specifies if a keyspace is a single Region keyspace or a multi-Region keyspace. The available values are <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>.</p>
+    /// <p> This property specifies if a keyspace is a single Region keyspace or a multi-Region keyspace. The available values are <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>. </p>
     pub fn set_replication_strategy(mut self, input: ::std::option::Option<crate::types::Rs>) -> Self {
         self.replication_strategy = input;
         self
     }
-    /// <p>This property specifies if a keyspace is a single Region keyspace or a multi-Region keyspace. The available values are <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>.</p>
+    /// <p> This property specifies if a keyspace is a single Region keyspace or a multi-Region keyspace. The available values are <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>. </p>
     pub fn get_replication_strategy(&self) -> &::std::option::Option<crate::types::Rs> {
         &self.replication_strategy
     }
@@ -101,19 +101,19 @@ impl KeyspaceSummaryBuilder {
     ///
     /// To override the contents of this collection use [`set_replication_regions`](Self::set_replication_regions).
     ///
-    /// <p>If the <code>replicationStrategy</code> of the keyspace is <code>MULTI_REGION</code>, a list of replication Regions is returned.</p>
+    /// <p> If the <code>replicationStrategy</code> of the keyspace is <code>MULTI_REGION</code>, a list of replication Regions is returned. </p>
     pub fn replication_regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.replication_regions.unwrap_or_default();
         v.push(input.into());
         self.replication_regions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>If the <code>replicationStrategy</code> of the keyspace is <code>MULTI_REGION</code>, a list of replication Regions is returned.</p>
+    /// <p> If the <code>replicationStrategy</code> of the keyspace is <code>MULTI_REGION</code>, a list of replication Regions is returned. </p>
     pub fn set_replication_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.replication_regions = input;
         self
     }
-    /// <p>If the <code>replicationStrategy</code> of the keyspace is <code>MULTI_REGION</code>, a list of replication Regions is returned.</p>
+    /// <p> If the <code>replicationStrategy</code> of the keyspace is <code>MULTI_REGION</code>, a list of replication Regions is returned. </p>
     pub fn get_replication_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.replication_regions
     }

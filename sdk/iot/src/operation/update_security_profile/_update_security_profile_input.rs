@@ -11,7 +11,7 @@ pub struct UpdateSecurityProfileInput {
     pub behaviors: ::std::option::Option<::std::vec::Vec<crate::types::Behavior>>,
     /// <p>Where the alerts are sent. (Alerts are always sent to the console.)</p>
     pub alert_targets: ::std::option::Option<::std::collections::HashMap<crate::types::AlertTargetType, crate::types::AlertTarget>>,
-    /// <p><i>Please use <code>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i></p>
+    /// <p> <i>Please use <code>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i> </p>
     /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
     #[deprecated(note = "Use additionalMetricsToRetainV2.")]
     pub additional_metrics_to_retain: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -49,7 +49,7 @@ impl UpdateSecurityProfileInput {
     pub fn alert_targets(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::AlertTargetType, crate::types::AlertTarget>> {
         self.alert_targets.as_ref()
     }
-    /// <p><i>Please use <code>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i></p>
+    /// <p> <i>Please use <code>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i> </p>
     /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_metrics_to_retain.is_none()`.
@@ -189,7 +189,7 @@ impl UpdateSecurityProfileInputBuilder {
     ///
     /// To override the contents of this collection use [`set_additional_metrics_to_retain`](Self::set_additional_metrics_to_retain).
     ///
-    /// <p><i>Please use <code>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i></p>
+    /// <p> <i>Please use <code>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i> </p>
     /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
     #[deprecated(note = "Use additionalMetricsToRetainV2.")]
     pub fn additional_metrics_to_retain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -198,14 +198,14 @@ impl UpdateSecurityProfileInputBuilder {
         self.additional_metrics_to_retain = ::std::option::Option::Some(v);
         self
     }
-    /// <p><i>Please use <code>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i></p>
+    /// <p> <i>Please use <code>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i> </p>
     /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
     #[deprecated(note = "Use additionalMetricsToRetainV2.")]
     pub fn set_additional_metrics_to_retain(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.additional_metrics_to_retain = input;
         self
     }
-    /// <p><i>Please use <code>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i></p>
+    /// <p> <i>Please use <code>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i> </p>
     /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
     #[deprecated(note = "Use additionalMetricsToRetainV2.")]
     pub fn get_additional_metrics_to_retain(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {

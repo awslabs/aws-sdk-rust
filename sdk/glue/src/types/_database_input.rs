@@ -8,7 +8,7 @@ pub struct DatabaseInput {
     pub name: ::std::string::String,
     /// <p>A description of the database.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The location of the database (for example, an HDFS path).</p>
+    /// <p>The location of the database (for example, an HDFS path). </p>
     pub location_uri: ::std::option::Option<::std::string::String>,
     /// <p>These key-value pairs define parameters and properties of the database.</p>
     /// <p>These key-value pairs define parameters and properties of the database.</p>
@@ -30,7 +30,7 @@ impl DatabaseInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The location of the database (for example, an HDFS path).</p>
+    /// <p>The location of the database (for example, an HDFS path). </p>
     pub fn location_uri(&self) -> ::std::option::Option<&str> {
         self.location_uri.as_deref()
     }
@@ -103,17 +103,17 @@ impl DatabaseInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The location of the database (for example, an HDFS path).</p>
+    /// <p>The location of the database (for example, an HDFS path). </p>
     pub fn location_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location_uri = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The location of the database (for example, an HDFS path).</p>
+    /// <p>The location of the database (for example, an HDFS path). </p>
     pub fn set_location_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location_uri = input;
         self
     }
-    /// <p>The location of the database (for example, an HDFS path).</p>
+    /// <p>The location of the database (for example, an HDFS path). </p>
     pub fn get_location_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.location_uri
     }

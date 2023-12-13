@@ -23,13 +23,11 @@ impl CreateModelPackageInputBuilder {
 /// Fluent builder constructing a request to `CreateModelPackage`.
 ///
 /// <p>Creates a model package that you can use to create SageMaker models or list on Amazon Web Services Marketplace, or a versioned model that is part of a model group. Buyers can subscribe to model packages listed on Amazon Web Services Marketplace to create models in SageMaker.</p>
-/// <p>To create a model package by specifying a Docker container that contains your inference code and the Amazon S3 location of your model artifacts, provide values for <code>InferenceSpecification</code>. To create a model from an algorithm resource that you created or subscribed to in Amazon Web Services Marketplace, provide a value for <code>SourceAlgorithmSpecification</code>.</p><note>
+/// <p>To create a model package by specifying a Docker container that contains your inference code and the Amazon S3 location of your model artifacts, provide values for <code>InferenceSpecification</code>. To create a model from an algorithm resource that you created or subscribed to in Amazon Web Services Marketplace, provide a value for <code>SourceAlgorithmSpecification</code>.</p> <note>
 /// <p>There are two types of model packages:</p>
 /// <ul>
-/// <li>
-/// <p>Versioned - a model that is part of a model group in the model registry.</p></li>
-/// <li>
-/// <p>Unversioned - a model package that is not part of a model group.</p></li>
+/// <li> <p>Versioned - a model that is part of a model group in the model registry.</p> </li>
+/// <li> <p>Unversioned - a model package that is not part of a model group.</p> </li>
 /// </ul>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -167,12 +165,9 @@ impl CreateModelPackageFluentBuilder {
     }
     /// <p>Specifies details about inference jobs that can be run with models based on this model package, including the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>The Amazon ECR paths of containers that contain the inference code and model artifacts.</p></li>
-    /// <li>
-    /// <p>The instance types that the model package supports for transform jobs and real-time endpoints used for inference.</p></li>
-    /// <li>
-    /// <p>The input and output content formats that the model package supports for inference.</p></li>
+    /// <li> <p>The Amazon ECR paths of containers that contain the inference code and model artifacts.</p> </li>
+    /// <li> <p>The instance types that the model package supports for transform jobs and real-time endpoints used for inference.</p> </li>
+    /// <li> <p>The input and output content formats that the model package supports for inference.</p> </li>
     /// </ul>
     pub fn inference_specification(mut self, input: crate::types::InferenceSpecification) -> Self {
         self.inner = self.inner.inference_specification(input);
@@ -180,12 +175,9 @@ impl CreateModelPackageFluentBuilder {
     }
     /// <p>Specifies details about inference jobs that can be run with models based on this model package, including the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>The Amazon ECR paths of containers that contain the inference code and model artifacts.</p></li>
-    /// <li>
-    /// <p>The instance types that the model package supports for transform jobs and real-time endpoints used for inference.</p></li>
-    /// <li>
-    /// <p>The input and output content formats that the model package supports for inference.</p></li>
+    /// <li> <p>The Amazon ECR paths of containers that contain the inference code and model artifacts.</p> </li>
+    /// <li> <p>The instance types that the model package supports for transform jobs and real-time endpoints used for inference.</p> </li>
+    /// <li> <p>The input and output content formats that the model package supports for inference.</p> </li>
     /// </ul>
     pub fn set_inference_specification(mut self, input: ::std::option::Option<crate::types::InferenceSpecification>) -> Self {
         self.inner = self.inner.set_inference_specification(input);
@@ -193,12 +185,9 @@ impl CreateModelPackageFluentBuilder {
     }
     /// <p>Specifies details about inference jobs that can be run with models based on this model package, including the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>The Amazon ECR paths of containers that contain the inference code and model artifacts.</p></li>
-    /// <li>
-    /// <p>The instance types that the model package supports for transform jobs and real-time endpoints used for inference.</p></li>
-    /// <li>
-    /// <p>The input and output content formats that the model package supports for inference.</p></li>
+    /// <li> <p>The Amazon ECR paths of containers that contain the inference code and model artifacts.</p> </li>
+    /// <li> <p>The instance types that the model package supports for transform jobs and real-time endpoints used for inference.</p> </li>
+    /// <li> <p>The input and output content formats that the model package supports for inference.</p> </li>
     /// </ul>
     pub fn get_inference_specification(&self) -> &::std::option::Option<crate::types::InferenceSpecification> {
         self.inner.get_inference_specification()
@@ -253,19 +242,19 @@ impl CreateModelPackageFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A list of key value pairs associated with the model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
-    /// <p>If you supply <code>ModelPackageGroupName</code>, your model package belongs to the model group you specify and uses the tags associated with the model group. In this case, you cannot supply a <code>tag</code> argument.</p>
+    /// <p>If you supply <code>ModelPackageGroupName</code>, your model package belongs to the model group you specify and uses the tags associated with the model group. In this case, you cannot supply a <code>tag</code> argument. </p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
     /// <p>A list of key value pairs associated with the model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
-    /// <p>If you supply <code>ModelPackageGroupName</code>, your model package belongs to the model group you specify and uses the tags associated with the model group. In this case, you cannot supply a <code>tag</code> argument.</p>
+    /// <p>If you supply <code>ModelPackageGroupName</code>, your model package belongs to the model group you specify and uses the tags associated with the model group. In this case, you cannot supply a <code>tag</code> argument. </p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>A list of key value pairs associated with the model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
-    /// <p>If you supply <code>ModelPackageGroupName</code>, your model package belongs to the model group you specify and uses the tags associated with the model group. In this case, you cannot supply a <code>tag</code> argument.</p>
+    /// <p>If you supply <code>ModelPackageGroupName</code>, your model package belongs to the model group you specify and uses the tags associated with the model group. In this case, you cannot supply a <code>tag</code> argument. </p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
@@ -358,17 +347,17 @@ impl CreateModelPackageFluentBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_customer_metadata_properties()
     }
-    /// <p>Represents the drift check baselines that can be used when the model monitor is set using the model package. For more information, see the topic on <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon SageMaker Developer Guide</i>.</p>
+    /// <p>Represents the drift check baselines that can be used when the model monitor is set using the model package. For more information, see the topic on <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon SageMaker Developer Guide</i>. </p>
     pub fn drift_check_baselines(mut self, input: crate::types::DriftCheckBaselines) -> Self {
         self.inner = self.inner.drift_check_baselines(input);
         self
     }
-    /// <p>Represents the drift check baselines that can be used when the model monitor is set using the model package. For more information, see the topic on <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon SageMaker Developer Guide</i>.</p>
+    /// <p>Represents the drift check baselines that can be used when the model monitor is set using the model package. For more information, see the topic on <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon SageMaker Developer Guide</i>. </p>
     pub fn set_drift_check_baselines(mut self, input: ::std::option::Option<crate::types::DriftCheckBaselines>) -> Self {
         self.inner = self.inner.set_drift_check_baselines(input);
         self
     }
-    /// <p>Represents the drift check baselines that can be used when the model monitor is set using the model package. For more information, see the topic on <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon SageMaker Developer Guide</i>.</p>
+    /// <p>Represents the drift check baselines that can be used when the model monitor is set using the model package. For more information, see the topic on <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon SageMaker Developer Guide</i>. </p>
     pub fn get_drift_check_baselines(&self) -> &::std::option::Option<crate::types::DriftCheckBaselines> {
         self.inner.get_drift_check_baselines()
     }
@@ -421,12 +410,12 @@ impl CreateModelPackageFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_additional_inference_specifications`](Self::set_additional_inference_specifications).
     ///
-    /// <p>An array of additional Inference Specification objects. Each additional Inference Specification specifies artifacts based on this model package that can be used on inference endpoints. Generally used with SageMaker Neo to store the compiled artifacts.</p>
+    /// <p>An array of additional Inference Specification objects. Each additional Inference Specification specifies artifacts based on this model package that can be used on inference endpoints. Generally used with SageMaker Neo to store the compiled artifacts. </p>
     pub fn additional_inference_specifications(mut self, input: crate::types::AdditionalInferenceSpecificationDefinition) -> Self {
         self.inner = self.inner.additional_inference_specifications(input);
         self
     }
-    /// <p>An array of additional Inference Specification objects. Each additional Inference Specification specifies artifacts based on this model package that can be used on inference endpoints. Generally used with SageMaker Neo to store the compiled artifacts.</p>
+    /// <p>An array of additional Inference Specification objects. Each additional Inference Specification specifies artifacts based on this model package that can be used on inference endpoints. Generally used with SageMaker Neo to store the compiled artifacts. </p>
     pub fn set_additional_inference_specifications(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalInferenceSpecificationDefinition>>,
@@ -434,7 +423,7 @@ impl CreateModelPackageFluentBuilder {
         self.inner = self.inner.set_additional_inference_specifications(input);
         self
     }
-    /// <p>An array of additional Inference Specification objects. Each additional Inference Specification specifies artifacts based on this model package that can be used on inference endpoints. Generally used with SageMaker Neo to store the compiled artifacts.</p>
+    /// <p>An array of additional Inference Specification objects. Each additional Inference Specification specifies artifacts based on this model package that can be used on inference endpoints. Generally used with SageMaker Neo to store the compiled artifacts. </p>
     pub fn get_additional_inference_specifications(
         &self,
     ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdditionalInferenceSpecificationDefinition>> {

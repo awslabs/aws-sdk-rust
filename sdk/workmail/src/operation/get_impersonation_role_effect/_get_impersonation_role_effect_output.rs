@@ -5,7 +5,7 @@
 pub struct GetImpersonationRoleEffectOutput {
     /// <p>The impersonation role type.</p>
     pub r#type: ::std::option::Option<crate::types::ImpersonationRoleType>,
-    /// <p><code></code>Effect of the impersonation role on the target user based on its rules. Available effects are <code>ALLOW</code> or <code>DENY</code>.</p>
+    /// <p> <code></code>Effect of the impersonation role on the target user based on its rules. Available effects are <code>ALLOW</code> or <code>DENY</code>.</p>
     pub effect: ::std::option::Option<crate::types::AccessEffect>,
     /// <p>A list of the rules that match the input and produce the configured effect.</p>
     pub matched_rules: ::std::option::Option<::std::vec::Vec<crate::types::ImpersonationMatchedRule>>,
@@ -16,7 +16,7 @@ impl GetImpersonationRoleEffectOutput {
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::ImpersonationRoleType> {
         self.r#type.as_ref()
     }
-    /// <p><code></code>Effect of the impersonation role on the target user based on its rules. Available effects are <code>ALLOW</code> or <code>DENY</code>.</p>
+    /// <p> <code></code>Effect of the impersonation role on the target user based on its rules. Available effects are <code>ALLOW</code> or <code>DENY</code>.</p>
     pub fn effect(&self) -> ::std::option::Option<&crate::types::AccessEffect> {
         self.effect.as_ref()
     }
@@ -63,17 +63,17 @@ impl GetImpersonationRoleEffectOutputBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ImpersonationRoleType> {
         &self.r#type
     }
-    /// <p><code></code>Effect of the impersonation role on the target user based on its rules. Available effects are <code>ALLOW</code> or <code>DENY</code>.</p>
+    /// <p> <code></code>Effect of the impersonation role on the target user based on its rules. Available effects are <code>ALLOW</code> or <code>DENY</code>.</p>
     pub fn effect(mut self, input: crate::types::AccessEffect) -> Self {
         self.effect = ::std::option::Option::Some(input);
         self
     }
-    /// <p><code></code>Effect of the impersonation role on the target user based on its rules. Available effects are <code>ALLOW</code> or <code>DENY</code>.</p>
+    /// <p> <code></code>Effect of the impersonation role on the target user based on its rules. Available effects are <code>ALLOW</code> or <code>DENY</code>.</p>
     pub fn set_effect(mut self, input: ::std::option::Option<crate::types::AccessEffect>) -> Self {
         self.effect = input;
         self
     }
-    /// <p><code></code>Effect of the impersonation role on the target user based on its rules. Available effects are <code>ALLOW</code> or <code>DENY</code>.</p>
+    /// <p> <code></code>Effect of the impersonation role on the target user based on its rules. Available effects are <code>ALLOW</code> or <code>DENY</code>.</p>
     pub fn get_effect(&self) -> &::std::option::Option<crate::types::AccessEffect> {
         &self.effect
     }

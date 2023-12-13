@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TaskExecutionResultDetail {
-    /// <p>The total time in milliseconds that DataSync spent in the PREPARING phase.</p>
+    /// <p>The total time in milliseconds that DataSync spent in the PREPARING phase. </p>
     pub prepare_duration: ::std::option::Option<i64>,
     /// <p>The status of the PREPARING phase.</p>
     pub prepare_status: ::std::option::Option<crate::types::PhaseStatus>,
@@ -20,11 +20,11 @@ pub struct TaskExecutionResultDetail {
     pub verify_status: ::std::option::Option<crate::types::PhaseStatus>,
     /// <p>Errors that DataSync encountered during execution of the task. You can use this error code to help troubleshoot issues.</p>
     pub error_code: ::std::option::Option<::std::string::String>,
-    /// <p>Detailed description of an error that was encountered during the task execution. You can use this information to help troubleshoot issues.</p>
+    /// <p>Detailed description of an error that was encountered during the task execution. You can use this information to help troubleshoot issues. </p>
     pub error_detail: ::std::option::Option<::std::string::String>,
 }
 impl TaskExecutionResultDetail {
-    /// <p>The total time in milliseconds that DataSync spent in the PREPARING phase.</p>
+    /// <p>The total time in milliseconds that DataSync spent in the PREPARING phase. </p>
     pub fn prepare_duration(&self) -> ::std::option::Option<i64> {
         self.prepare_duration
     }
@@ -56,7 +56,7 @@ impl TaskExecutionResultDetail {
     pub fn error_code(&self) -> ::std::option::Option<&str> {
         self.error_code.as_deref()
     }
-    /// <p>Detailed description of an error that was encountered during the task execution. You can use this information to help troubleshoot issues.</p>
+    /// <p>Detailed description of an error that was encountered during the task execution. You can use this information to help troubleshoot issues. </p>
     pub fn error_detail(&self) -> ::std::option::Option<&str> {
         self.error_detail.as_deref()
     }
@@ -83,17 +83,17 @@ pub struct TaskExecutionResultDetailBuilder {
     pub(crate) error_detail: ::std::option::Option<::std::string::String>,
 }
 impl TaskExecutionResultDetailBuilder {
-    /// <p>The total time in milliseconds that DataSync spent in the PREPARING phase.</p>
+    /// <p>The total time in milliseconds that DataSync spent in the PREPARING phase. </p>
     pub fn prepare_duration(mut self, input: i64) -> Self {
         self.prepare_duration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The total time in milliseconds that DataSync spent in the PREPARING phase.</p>
+    /// <p>The total time in milliseconds that DataSync spent in the PREPARING phase. </p>
     pub fn set_prepare_duration(mut self, input: ::std::option::Option<i64>) -> Self {
         self.prepare_duration = input;
         self
     }
-    /// <p>The total time in milliseconds that DataSync spent in the PREPARING phase.</p>
+    /// <p>The total time in milliseconds that DataSync spent in the PREPARING phase. </p>
     pub fn get_prepare_duration(&self) -> &::std::option::Option<i64> {
         &self.prepare_duration
     }
@@ -195,17 +195,17 @@ impl TaskExecutionResultDetailBuilder {
     pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.error_code
     }
-    /// <p>Detailed description of an error that was encountered during the task execution. You can use this information to help troubleshoot issues.</p>
+    /// <p>Detailed description of an error that was encountered during the task execution. You can use this information to help troubleshoot issues. </p>
     pub fn error_detail(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_detail = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Detailed description of an error that was encountered during the task execution. You can use this information to help troubleshoot issues.</p>
+    /// <p>Detailed description of an error that was encountered during the task execution. You can use this information to help troubleshoot issues. </p>
     pub fn set_error_detail(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_detail = input;
         self
     }
-    /// <p>Detailed description of an error that was encountered during the task execution. You can use this information to help troubleshoot issues.</p>
+    /// <p>Detailed description of an error that was encountered during the task execution. You can use this information to help troubleshoot issues. </p>
     pub fn get_error_detail(&self) -> &::std::option::Option<::std::string::String> {
         &self.error_detail
     }

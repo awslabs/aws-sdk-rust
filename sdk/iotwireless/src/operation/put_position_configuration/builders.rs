@@ -22,7 +22,7 @@ impl PutPositionConfigurationInputBuilder {
 }
 /// Fluent builder constructing a request to `PutPositionConfiguration`.
 ///
-/// <p>Put position configuration for a given resource.</p><important>
+/// <p>Put position configuration for a given resource.</p> <important>
 /// <p>This action is no longer supported. Calls to update the position configuration should use the <a href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateResourcePosition.html">UpdateResourcePosition</a> API operation instead.</p>
 /// </important>
 #[deprecated(note = "This operation is no longer supported.")]

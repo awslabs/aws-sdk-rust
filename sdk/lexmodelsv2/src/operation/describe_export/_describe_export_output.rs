@@ -7,7 +7,7 @@ pub struct DescribeExportOutput {
     pub export_id: ::std::option::Option<::std::string::String>,
     /// <p>The bot, bot ID, and optional locale ID of the exported bot or bot locale.</p>
     pub resource_specification: ::std::option::Option<crate::types::ExportResourceSpecification>,
-    /// <p>The file format used in the files that describe the resource.</p>
+    /// <p>The file format used in the files that describe the resource. </p>
     pub file_format: ::std::option::Option<crate::types::ImportExportFileFormat>,
     /// <p>The status of the export. When the status is <code>Complete</code> the export archive file is available for download.</p>
     pub export_status: ::std::option::Option<crate::types::ExportStatus>,
@@ -30,7 +30,7 @@ impl DescribeExportOutput {
     pub fn resource_specification(&self) -> ::std::option::Option<&crate::types::ExportResourceSpecification> {
         self.resource_specification.as_ref()
     }
-    /// <p>The file format used in the files that describe the resource.</p>
+    /// <p>The file format used in the files that describe the resource. </p>
     pub fn file_format(&self) -> ::std::option::Option<&crate::types::ImportExportFileFormat> {
         self.file_format.as_ref()
     }
@@ -112,17 +112,17 @@ impl DescribeExportOutputBuilder {
     pub fn get_resource_specification(&self) -> &::std::option::Option<crate::types::ExportResourceSpecification> {
         &self.resource_specification
     }
-    /// <p>The file format used in the files that describe the resource.</p>
+    /// <p>The file format used in the files that describe the resource. </p>
     pub fn file_format(mut self, input: crate::types::ImportExportFileFormat) -> Self {
         self.file_format = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The file format used in the files that describe the resource.</p>
+    /// <p>The file format used in the files that describe the resource. </p>
     pub fn set_file_format(mut self, input: ::std::option::Option<crate::types::ImportExportFileFormat>) -> Self {
         self.file_format = input;
         self
     }
-    /// <p>The file format used in the files that describe the resource.</p>
+    /// <p>The file format used in the files that describe the resource. </p>
     pub fn get_file_format(&self) -> &::std::option::Option<crate::types::ImportExportFileFormat> {
         &self.file_format
     }

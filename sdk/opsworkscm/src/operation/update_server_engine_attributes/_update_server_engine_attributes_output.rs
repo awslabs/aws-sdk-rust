@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateServerEngineAttributesOutput {
-    /// <p>Contains the response to an <code>UpdateServerEngineAttributes</code> request.</p>
+    /// <p>Contains the response to an <code>UpdateServerEngineAttributes</code> request. </p>
     pub server: ::std::option::Option<crate::types::Server>,
     _request_id: Option<String>,
 }
 impl UpdateServerEngineAttributesOutput {
-    /// <p>Contains the response to an <code>UpdateServerEngineAttributes</code> request.</p>
+    /// <p>Contains the response to an <code>UpdateServerEngineAttributes</code> request. </p>
     pub fn server(&self) -> ::std::option::Option<&crate::types::Server> {
         self.server.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct UpdateServerEngineAttributesOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateServerEngineAttributesOutputBuilder {
-    /// <p>Contains the response to an <code>UpdateServerEngineAttributes</code> request.</p>
+    /// <p>Contains the response to an <code>UpdateServerEngineAttributes</code> request. </p>
     pub fn server(mut self, input: crate::types::Server) -> Self {
         self.server = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Contains the response to an <code>UpdateServerEngineAttributes</code> request.</p>
+    /// <p>Contains the response to an <code>UpdateServerEngineAttributes</code> request. </p>
     pub fn set_server(mut self, input: ::std::option::Option<crate::types::Server>) -> Self {
         self.server = input;
         self
     }
-    /// <p>Contains the response to an <code>UpdateServerEngineAttributes</code> request.</p>
+    /// <p>Contains the response to an <code>UpdateServerEngineAttributes</code> request. </p>
     pub fn get_server(&self) -> &::std::option::Option<crate::types::Server> {
         &self.server
     }

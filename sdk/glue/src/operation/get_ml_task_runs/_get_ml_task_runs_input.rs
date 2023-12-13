@@ -7,7 +7,7 @@ pub struct GetMlTaskRunsInput {
     pub transform_id: ::std::option::Option<::std::string::String>,
     /// <p>A token for pagination of the results. The default is empty.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum number of results to return.</p>
+    /// <p>The maximum number of results to return. </p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The filter criteria, in the <code>TaskRunFilterCriteria</code> structure, for the task run.</p>
     pub filter: ::std::option::Option<crate::types::TaskRunFilterCriteria>,
@@ -23,7 +23,7 @@ impl GetMlTaskRunsInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return.</p>
+    /// <p>The maximum number of results to return. </p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -83,17 +83,17 @@ impl GetMlTaskRunsInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>The maximum number of results to return.</p>
+    /// <p>The maximum number of results to return. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of results to return.</p>
+    /// <p>The maximum number of results to return. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of results to return.</p>
+    /// <p>The maximum number of results to return. </p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

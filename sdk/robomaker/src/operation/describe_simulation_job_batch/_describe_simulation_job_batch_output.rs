@@ -17,7 +17,7 @@ pub struct DescribeSimulationJobBatchOutput {
     /// InProgress
     /// </dt>
     /// <dd>
-    /// <p>The simulation job batch is in progress.</p>
+    /// <p>The simulation job batch is in progress. </p>
     /// </dd>
     /// <dt>
     /// Failed
@@ -29,7 +29,7 @@ pub struct DescribeSimulationJobBatchOutput {
     /// Completed
     /// </dt>
     /// <dd>
-    /// <p>The simulation batch job completed. A batch is complete when (1) there are no pending simulation job requests in the batch and none of the failed simulation job requests are due to <code>InternalServiceError</code> and (2) when all created simulation jobs have reached a terminal state (for example, <code>Completed</code> or <code>Failed</code>).</p>
+    /// <p>The simulation batch job completed. A batch is complete when (1) there are no pending simulation job requests in the batch and none of the failed simulation job requests are due to <code>InternalServiceError</code> and (2) when all created simulation jobs have reached a terminal state (for example, <code>Completed</code> or <code>Failed</code>). </p>
     /// </dd>
     /// <dt>
     /// Canceled
@@ -54,7 +54,7 @@ pub struct DescribeSimulationJobBatchOutput {
     /// </dt>
     /// <dd>
     /// <p>The simulation job batch is timing out.</p>
-    /// <p>If a batch timing out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), the batch status will be <code>Failed</code>. If there are no such failing request, the batch status will be <code>TimedOut</code>.</p>
+    /// <p>If a batch timing out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), the batch status will be <code>Failed</code>. If there are no such failing request, the batch status will be <code>TimedOut</code>. </p>
     /// </dd>
     /// <dt>
     /// TimedOut
@@ -76,7 +76,7 @@ pub struct DescribeSimulationJobBatchOutput {
     pub failure_code: ::std::option::Option<crate::types::SimulationJobBatchErrorCode>,
     /// <p>The reason the simulation job batch failed.</p>
     pub failure_reason: ::std::option::Option<::std::string::String>,
-    /// <p>A list of failed create simulation job requests. The request failed to be created into a simulation job. Failed requests do not have a simulation job ID.</p>
+    /// <p>A list of failed create simulation job requests. The request failed to be created into a simulation job. Failed requests do not have a simulation job ID. </p>
     pub failed_requests: ::std::option::Option<::std::vec::Vec<crate::types::FailedCreateSimulationJobRequest>>,
     /// <p>A list of pending simulation job requests. These requests have not yet been created into simulation jobs.</p>
     pub pending_requests: ::std::option::Option<::std::vec::Vec<crate::types::SimulationJobRequest>>,
@@ -103,7 +103,7 @@ impl DescribeSimulationJobBatchOutput {
     /// InProgress
     /// </dt>
     /// <dd>
-    /// <p>The simulation job batch is in progress.</p>
+    /// <p>The simulation job batch is in progress. </p>
     /// </dd>
     /// <dt>
     /// Failed
@@ -115,7 +115,7 @@ impl DescribeSimulationJobBatchOutput {
     /// Completed
     /// </dt>
     /// <dd>
-    /// <p>The simulation batch job completed. A batch is complete when (1) there are no pending simulation job requests in the batch and none of the failed simulation job requests are due to <code>InternalServiceError</code> and (2) when all created simulation jobs have reached a terminal state (for example, <code>Completed</code> or <code>Failed</code>).</p>
+    /// <p>The simulation batch job completed. A batch is complete when (1) there are no pending simulation job requests in the batch and none of the failed simulation job requests are due to <code>InternalServiceError</code> and (2) when all created simulation jobs have reached a terminal state (for example, <code>Completed</code> or <code>Failed</code>). </p>
     /// </dd>
     /// <dt>
     /// Canceled
@@ -140,7 +140,7 @@ impl DescribeSimulationJobBatchOutput {
     /// </dt>
     /// <dd>
     /// <p>The simulation job batch is timing out.</p>
-    /// <p>If a batch timing out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), the batch status will be <code>Failed</code>. If there are no such failing request, the batch status will be <code>TimedOut</code>.</p>
+    /// <p>If a batch timing out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), the batch status will be <code>Failed</code>. If there are no such failing request, the batch status will be <code>TimedOut</code>. </p>
     /// </dd>
     /// <dt>
     /// TimedOut
@@ -176,7 +176,7 @@ impl DescribeSimulationJobBatchOutput {
     pub fn failure_reason(&self) -> ::std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
-    /// <p>A list of failed create simulation job requests. The request failed to be created into a simulation job. Failed requests do not have a simulation job ID.</p>
+    /// <p>A list of failed create simulation job requests. The request failed to be created into a simulation job. Failed requests do not have a simulation job ID. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed_requests.is_none()`.
     pub fn failed_requests(&self) -> &[crate::types::FailedCreateSimulationJobRequest] {
@@ -256,7 +256,7 @@ impl DescribeSimulationJobBatchOutputBuilder {
     /// InProgress
     /// </dt>
     /// <dd>
-    /// <p>The simulation job batch is in progress.</p>
+    /// <p>The simulation job batch is in progress. </p>
     /// </dd>
     /// <dt>
     /// Failed
@@ -268,7 +268,7 @@ impl DescribeSimulationJobBatchOutputBuilder {
     /// Completed
     /// </dt>
     /// <dd>
-    /// <p>The simulation batch job completed. A batch is complete when (1) there are no pending simulation job requests in the batch and none of the failed simulation job requests are due to <code>InternalServiceError</code> and (2) when all created simulation jobs have reached a terminal state (for example, <code>Completed</code> or <code>Failed</code>).</p>
+    /// <p>The simulation batch job completed. A batch is complete when (1) there are no pending simulation job requests in the batch and none of the failed simulation job requests are due to <code>InternalServiceError</code> and (2) when all created simulation jobs have reached a terminal state (for example, <code>Completed</code> or <code>Failed</code>). </p>
     /// </dd>
     /// <dt>
     /// Canceled
@@ -293,7 +293,7 @@ impl DescribeSimulationJobBatchOutputBuilder {
     /// </dt>
     /// <dd>
     /// <p>The simulation job batch is timing out.</p>
-    /// <p>If a batch timing out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), the batch status will be <code>Failed</code>. If there are no such failing request, the batch status will be <code>TimedOut</code>.</p>
+    /// <p>If a batch timing out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), the batch status will be <code>Failed</code>. If there are no such failing request, the batch status will be <code>TimedOut</code>. </p>
     /// </dd>
     /// <dt>
     /// TimedOut
@@ -318,7 +318,7 @@ impl DescribeSimulationJobBatchOutputBuilder {
     /// InProgress
     /// </dt>
     /// <dd>
-    /// <p>The simulation job batch is in progress.</p>
+    /// <p>The simulation job batch is in progress. </p>
     /// </dd>
     /// <dt>
     /// Failed
@@ -330,7 +330,7 @@ impl DescribeSimulationJobBatchOutputBuilder {
     /// Completed
     /// </dt>
     /// <dd>
-    /// <p>The simulation batch job completed. A batch is complete when (1) there are no pending simulation job requests in the batch and none of the failed simulation job requests are due to <code>InternalServiceError</code> and (2) when all created simulation jobs have reached a terminal state (for example, <code>Completed</code> or <code>Failed</code>).</p>
+    /// <p>The simulation batch job completed. A batch is complete when (1) there are no pending simulation job requests in the batch and none of the failed simulation job requests are due to <code>InternalServiceError</code> and (2) when all created simulation jobs have reached a terminal state (for example, <code>Completed</code> or <code>Failed</code>). </p>
     /// </dd>
     /// <dt>
     /// Canceled
@@ -355,7 +355,7 @@ impl DescribeSimulationJobBatchOutputBuilder {
     /// </dt>
     /// <dd>
     /// <p>The simulation job batch is timing out.</p>
-    /// <p>If a batch timing out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), the batch status will be <code>Failed</code>. If there are no such failing request, the batch status will be <code>TimedOut</code>.</p>
+    /// <p>If a batch timing out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), the batch status will be <code>Failed</code>. If there are no such failing request, the batch status will be <code>TimedOut</code>. </p>
     /// </dd>
     /// <dt>
     /// TimedOut
@@ -380,7 +380,7 @@ impl DescribeSimulationJobBatchOutputBuilder {
     /// InProgress
     /// </dt>
     /// <dd>
-    /// <p>The simulation job batch is in progress.</p>
+    /// <p>The simulation job batch is in progress. </p>
     /// </dd>
     /// <dt>
     /// Failed
@@ -392,7 +392,7 @@ impl DescribeSimulationJobBatchOutputBuilder {
     /// Completed
     /// </dt>
     /// <dd>
-    /// <p>The simulation batch job completed. A batch is complete when (1) there are no pending simulation job requests in the batch and none of the failed simulation job requests are due to <code>InternalServiceError</code> and (2) when all created simulation jobs have reached a terminal state (for example, <code>Completed</code> or <code>Failed</code>).</p>
+    /// <p>The simulation batch job completed. A batch is complete when (1) there are no pending simulation job requests in the batch and none of the failed simulation job requests are due to <code>InternalServiceError</code> and (2) when all created simulation jobs have reached a terminal state (for example, <code>Completed</code> or <code>Failed</code>). </p>
     /// </dd>
     /// <dt>
     /// Canceled
@@ -417,7 +417,7 @@ impl DescribeSimulationJobBatchOutputBuilder {
     /// </dt>
     /// <dd>
     /// <p>The simulation job batch is timing out.</p>
-    /// <p>If a batch timing out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), the batch status will be <code>Failed</code>. If there are no such failing request, the batch status will be <code>TimedOut</code>.</p>
+    /// <p>If a batch timing out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), the batch status will be <code>Failed</code>. If there are no such failing request, the batch status will be <code>TimedOut</code>. </p>
     /// </dd>
     /// <dt>
     /// TimedOut
@@ -517,19 +517,19 @@ impl DescribeSimulationJobBatchOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_failed_requests`](Self::set_failed_requests).
     ///
-    /// <p>A list of failed create simulation job requests. The request failed to be created into a simulation job. Failed requests do not have a simulation job ID.</p>
+    /// <p>A list of failed create simulation job requests. The request failed to be created into a simulation job. Failed requests do not have a simulation job ID. </p>
     pub fn failed_requests(mut self, input: crate::types::FailedCreateSimulationJobRequest) -> Self {
         let mut v = self.failed_requests.unwrap_or_default();
         v.push(input);
         self.failed_requests = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of failed create simulation job requests. The request failed to be created into a simulation job. Failed requests do not have a simulation job ID.</p>
+    /// <p>A list of failed create simulation job requests. The request failed to be created into a simulation job. Failed requests do not have a simulation job ID. </p>
     pub fn set_failed_requests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FailedCreateSimulationJobRequest>>) -> Self {
         self.failed_requests = input;
         self
     }
-    /// <p>A list of failed create simulation job requests. The request failed to be created into a simulation job. Failed requests do not have a simulation job ID.</p>
+    /// <p>A list of failed create simulation job requests. The request failed to be created into a simulation job. Failed requests do not have a simulation job ID. </p>
     pub fn get_failed_requests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedCreateSimulationJobRequest>> {
         &self.failed_requests
     }

@@ -25,12 +25,9 @@ impl DescribeEndpointsInputBuilder {
 /// <p>DescribeEndpoints returns a list of available endpoints to make Timestream API calls against. This API is available through both Write and Query.</p>
 /// <p>Because the Timestream SDKs are designed to transparently work with the service’s architecture, including the management and mapping of the service endpoints, <i>it is not recommended that you use this API unless</i>:</p>
 /// <ul>
-/// <li>
-/// <p>You are using <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/VPCEndpoints">VPC endpoints (Amazon Web Services PrivateLink) with Timestream </a></p></li>
-/// <li>
-/// <p>Your application uses a programming language that does not yet have SDK support</p></li>
-/// <li>
-/// <p>You require better control over the client-side implementation</p></li>
+/// <li> <p>You are using <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/VPCEndpoints">VPC endpoints (Amazon Web Services PrivateLink) with Timestream </a> </p> </li>
+/// <li> <p>Your application uses a programming language that does not yet have SDK support</p> </li>
+/// <li> <p>You require better control over the client-side implementation</p> </li>
 /// </ul>
 /// <p>For detailed information on how and when to use and implement DescribeEndpoints, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/Using.API.html#Using-API.endpoint-discovery">The Endpoint Discovery Pattern</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

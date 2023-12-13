@@ -246,7 +246,7 @@ pub enum TestMigrationError {
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
     /// <p>The requested replication group is not in the <code>available</code> state.</p>
     InvalidReplicationGroupStateFault(crate::types::error::InvalidReplicationGroupStateFault),
-    /// <p>The targeted replication group is not available.</p>
+    /// <p>The targeted replication group is not available. </p>
     ReplicationGroupAlreadyUnderMigrationFault(crate::types::error::ReplicationGroupAlreadyUnderMigrationFault),
     /// <p>The specified replication group does not exist.</p>
     ReplicationGroupNotFoundFault(crate::types::error::ReplicationGroupNotFoundFault),

@@ -3,27 +3,23 @@
 /// <p>Describes a security group rule.</p>
 /// <p>You must specify exactly one of the following parameters, based on the rule type:</p>
 /// <ul>
-/// <li>
-/// <p>CidrIpv4</p></li>
-/// <li>
-/// <p>CidrIpv6</p></li>
-/// <li>
-/// <p>PrefixListId</p></li>
-/// <li>
-/// <p>ReferencedGroupId</p></li>
+/// <li> <p>CidrIpv4</p> </li>
+/// <li> <p>CidrIpv6</p> </li>
+/// <li> <p>PrefixListId</p> </li>
+/// <li> <p>ReferencedGroupId</p> </li>
 /// </ul>
 /// <p>When you modify a rule, you cannot change the rule type. For example, if the rule uses an IPv4 address range, you must use <code>CidrIpv4</code> to specify a new IPv4 address range.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SecurityGroupRuleRequest {
-    /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>, <code>icmpv6</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>).</p>
+    /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>, <code>icmpv6</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). </p>
     /// <p>Use <code>-1</code> to specify all protocols.</p>
     pub ip_protocol: ::std::option::Option<::std::string::String>,
     /// <p>If the protocol is TCP or UDP, this is the start of the port range. If the protocol is ICMP or ICMPv6, this is the type number. A value of -1 indicates all ICMP/ICMPv6 types. If you specify all ICMP/ICMPv6 types, you must specify all ICMP/ICMPv6 codes.</p>
     pub from_port: ::std::option::Option<i32>,
     /// <p>If the protocol is TCP or UDP, this is the end of the port range. If the protocol is ICMP or ICMPv6, this is the code. A value of -1 indicates all ICMP/ICMPv6 codes. If you specify all ICMP/ICMPv6 types, you must specify all ICMP/ICMPv6 codes.</p>
     pub to_port: ::std::option::Option<i32>,
-    /// <p>The IPv4 CIDR range. To specify a single IPv4 address, use the /32 prefix length.</p>
+    /// <p>The IPv4 CIDR range. To specify a single IPv4 address, use the /32 prefix length. </p>
     pub cidr_ipv4: ::std::option::Option<::std::string::String>,
     /// <p>The IPv6 CIDR range. To specify a single IPv6 address, use the /128 prefix length.</p>
     pub cidr_ipv6: ::std::option::Option<::std::string::String>,
@@ -35,7 +31,7 @@ pub struct SecurityGroupRuleRequest {
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl SecurityGroupRuleRequest {
-    /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>, <code>icmpv6</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>).</p>
+    /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>, <code>icmpv6</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). </p>
     /// <p>Use <code>-1</code> to specify all protocols.</p>
     pub fn ip_protocol(&self) -> ::std::option::Option<&str> {
         self.ip_protocol.as_deref()
@@ -48,7 +44,7 @@ impl SecurityGroupRuleRequest {
     pub fn to_port(&self) -> ::std::option::Option<i32> {
         self.to_port
     }
-    /// <p>The IPv4 CIDR range. To specify a single IPv4 address, use the /32 prefix length.</p>
+    /// <p>The IPv4 CIDR range. To specify a single IPv4 address, use the /32 prefix length. </p>
     pub fn cidr_ipv4(&self) -> ::std::option::Option<&str> {
         self.cidr_ipv4.as_deref()
     }
@@ -90,19 +86,19 @@ pub struct SecurityGroupRuleRequestBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
 }
 impl SecurityGroupRuleRequestBuilder {
-    /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>, <code>icmpv6</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>).</p>
+    /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>, <code>icmpv6</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). </p>
     /// <p>Use <code>-1</code> to specify all protocols.</p>
     pub fn ip_protocol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_protocol = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>, <code>icmpv6</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>).</p>
+    /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>, <code>icmpv6</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). </p>
     /// <p>Use <code>-1</code> to specify all protocols.</p>
     pub fn set_ip_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_protocol = input;
         self
     }
-    /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>, <code>icmpv6</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>).</p>
+    /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>, <code>icmpv6</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). </p>
     /// <p>Use <code>-1</code> to specify all protocols.</p>
     pub fn get_ip_protocol(&self) -> &::std::option::Option<::std::string::String> {
         &self.ip_protocol
@@ -135,17 +131,17 @@ impl SecurityGroupRuleRequestBuilder {
     pub fn get_to_port(&self) -> &::std::option::Option<i32> {
         &self.to_port
     }
-    /// <p>The IPv4 CIDR range. To specify a single IPv4 address, use the /32 prefix length.</p>
+    /// <p>The IPv4 CIDR range. To specify a single IPv4 address, use the /32 prefix length. </p>
     pub fn cidr_ipv4(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cidr_ipv4 = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The IPv4 CIDR range. To specify a single IPv4 address, use the /32 prefix length.</p>
+    /// <p>The IPv4 CIDR range. To specify a single IPv4 address, use the /32 prefix length. </p>
     pub fn set_cidr_ipv4(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cidr_ipv4 = input;
         self
     }
-    /// <p>The IPv4 CIDR range. To specify a single IPv4 address, use the /32 prefix length.</p>
+    /// <p>The IPv4 CIDR range. To specify a single IPv4 address, use the /32 prefix length. </p>
     pub fn get_cidr_ipv4(&self) -> &::std::option::Option<::std::string::String> {
         &self.cidr_ipv4
     }

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDataSourceInput {
-    /// <p>The identifier of the Amazon Q application the data source will be attached to.</p>
+    /// <p> The identifier of the Amazon Q application the data source will be attached to.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the index that you want to use with the data source connector.</p>
     pub index_id: ::std::option::Option<::std::string::String>,
@@ -18,18 +18,18 @@ pub struct CreateDataSourceInput {
     /// <p>A list of key-value pairs that identify or categorize the data source connector. You can also use tags to help control access to the data source connector. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Sets the frequency for Amazon Q to check the documents in your data source repository and update your index. If you don't set a schedule, Amazon Q won't periodically update the index.</p>
-    /// <p>Specify a <code>cron-</code> format schedule string or an empty string to indicate that the index is updated on demand. You can't specify the <code>Schedule</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
+    /// <p>Specify a <code>cron-</code> format schedule string or an empty string to indicate that the index is updated on demand. You can't specify the <code>Schedule</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception. </p>
     pub sync_schedule: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access the data source and required resources.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>A token you provide to identify a request to create a data source connector. Multiple calls to the <code>CreateDataSource</code> API with the same client token will create only one data source connector.</p>
+    /// <p>A token you provide to identify a request to create a data source connector. Multiple calls to the <code>CreateDataSource</code> API with the same client token will create only one data source connector. </p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Provides the configuration information for altering document metadata and content during the document ingestion process.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/custom-document-enrichment.html">Custom document enrichment</a>.</p>
     pub document_enrichment_configuration: ::std::option::Option<crate::types::DocumentEnrichmentConfiguration>,
 }
 impl CreateDataSourceInput {
-    /// <p>The identifier of the Amazon Q application the data source will be attached to.</p>
+    /// <p> The identifier of the Amazon Q application the data source will be attached to.</p>
     pub fn application_id(&self) -> ::std::option::Option<&str> {
         self.application_id.as_deref()
     }
@@ -60,7 +60,7 @@ impl CreateDataSourceInput {
         self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Sets the frequency for Amazon Q to check the documents in your data source repository and update your index. If you don't set a schedule, Amazon Q won't periodically update the index.</p>
-    /// <p>Specify a <code>cron-</code> format schedule string or an empty string to indicate that the index is updated on demand. You can't specify the <code>Schedule</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
+    /// <p>Specify a <code>cron-</code> format schedule string or an empty string to indicate that the index is updated on demand. You can't specify the <code>Schedule</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception. </p>
     pub fn sync_schedule(&self) -> ::std::option::Option<&str> {
         self.sync_schedule.as_deref()
     }
@@ -68,7 +68,7 @@ impl CreateDataSourceInput {
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>A token you provide to identify a request to create a data source connector. Multiple calls to the <code>CreateDataSource</code> API with the same client token will create only one data source connector.</p>
+    /// <p>A token you provide to identify a request to create a data source connector. Multiple calls to the <code>CreateDataSource</code> API with the same client token will create only one data source connector. </p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -102,18 +102,18 @@ pub struct CreateDataSourceInputBuilder {
     pub(crate) document_enrichment_configuration: ::std::option::Option<crate::types::DocumentEnrichmentConfiguration>,
 }
 impl CreateDataSourceInputBuilder {
-    /// <p>The identifier of the Amazon Q application the data source will be attached to.</p>
+    /// <p> The identifier of the Amazon Q application the data source will be attached to.</p>
     /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q application the data source will be attached to.</p>
+    /// <p> The identifier of the Amazon Q application the data source will be attached to.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
-    /// <p>The identifier of the Amazon Q application the data source will be attached to.</p>
+    /// <p> The identifier of the Amazon Q application the data source will be attached to.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_id
     }
@@ -211,19 +211,19 @@ impl CreateDataSourceInputBuilder {
         &self.tags
     }
     /// <p>Sets the frequency for Amazon Q to check the documents in your data source repository and update your index. If you don't set a schedule, Amazon Q won't periodically update the index.</p>
-    /// <p>Specify a <code>cron-</code> format schedule string or an empty string to indicate that the index is updated on demand. You can't specify the <code>Schedule</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
+    /// <p>Specify a <code>cron-</code> format schedule string or an empty string to indicate that the index is updated on demand. You can't specify the <code>Schedule</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception. </p>
     pub fn sync_schedule(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sync_schedule = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Sets the frequency for Amazon Q to check the documents in your data source repository and update your index. If you don't set a schedule, Amazon Q won't periodically update the index.</p>
-    /// <p>Specify a <code>cron-</code> format schedule string or an empty string to indicate that the index is updated on demand. You can't specify the <code>Schedule</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
+    /// <p>Specify a <code>cron-</code> format schedule string or an empty string to indicate that the index is updated on demand. You can't specify the <code>Schedule</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception. </p>
     pub fn set_sync_schedule(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sync_schedule = input;
         self
     }
     /// <p>Sets the frequency for Amazon Q to check the documents in your data source repository and update your index. If you don't set a schedule, Amazon Q won't periodically update the index.</p>
-    /// <p>Specify a <code>cron-</code> format schedule string or an empty string to indicate that the index is updated on demand. You can't specify the <code>Schedule</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
+    /// <p>Specify a <code>cron-</code> format schedule string or an empty string to indicate that the index is updated on demand. You can't specify the <code>Schedule</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception. </p>
     pub fn get_sync_schedule(&self) -> &::std::option::Option<::std::string::String> {
         &self.sync_schedule
     }
@@ -241,17 +241,17 @@ impl CreateDataSourceInputBuilder {
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
-    /// <p>A token you provide to identify a request to create a data source connector. Multiple calls to the <code>CreateDataSource</code> API with the same client token will create only one data source connector.</p>
+    /// <p>A token you provide to identify a request to create a data source connector. Multiple calls to the <code>CreateDataSource</code> API with the same client token will create only one data source connector. </p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A token you provide to identify a request to create a data source connector. Multiple calls to the <code>CreateDataSource</code> API with the same client token will create only one data source connector.</p>
+    /// <p>A token you provide to identify a request to create a data source connector. Multiple calls to the <code>CreateDataSource</code> API with the same client token will create only one data source connector. </p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p>A token you provide to identify a request to create a data source connector. Multiple calls to the <code>CreateDataSource</code> API with the same client token will create only one data source connector.</p>
+    /// <p>A token you provide to identify a request to create a data source connector. Multiple calls to the <code>CreateDataSource</code> API with the same client token will create only one data source connector. </p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }

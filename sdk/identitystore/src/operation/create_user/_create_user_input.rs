@@ -9,7 +9,7 @@ pub struct CreateUserInput {
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>An object containing the name of the user.</p>
     pub name: ::std::option::Option<crate::types::Name>,
-    /// <p>A string containing the name of the user. This value is typically formatted for display when the user is referenced. For example, "John Doe."</p>
+    /// <p>A string containing the name of the user. This value is typically formatted for display when the user is referenced. For example, "John Doe." </p>
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>A string containing an alternate name for the user.</p>
     pub nick_name: ::std::option::Option<::std::string::String>,
@@ -45,7 +45,7 @@ impl CreateUserInput {
     pub fn name(&self) -> ::std::option::Option<&crate::types::Name> {
         self.name.as_ref()
     }
-    /// <p>A string containing the name of the user. This value is typically formatted for display when the user is referenced. For example, "John Doe."</p>
+    /// <p>A string containing the name of the user. This value is typically formatted for display when the user is referenced. For example, "John Doe." </p>
     pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
@@ -186,17 +186,17 @@ impl CreateUserInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<crate::types::Name> {
         &self.name
     }
-    /// <p>A string containing the name of the user. This value is typically formatted for display when the user is referenced. For example, "John Doe."</p>
+    /// <p>A string containing the name of the user. This value is typically formatted for display when the user is referenced. For example, "John Doe." </p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A string containing the name of the user. This value is typically formatted for display when the user is referenced. For example, "John Doe."</p>
+    /// <p>A string containing the name of the user. This value is typically formatted for display when the user is referenced. For example, "John Doe." </p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
     }
-    /// <p>A string containing the name of the user. This value is typically formatted for display when the user is referenced. For example, "John Doe."</p>
+    /// <p>A string containing the name of the user. This value is typically formatted for display when the user is referenced. For example, "John Doe." </p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }

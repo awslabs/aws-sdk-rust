@@ -136,20 +136,20 @@ impl DescribeAgentsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example:</p>
-    /// <p><code>{"key": "collectionStatus", "value": "STARTED"}</code></p>
+    /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p>
+    /// <p> <code>{"key": "collectionStatus", "value": "STARTED"}</code> </p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example:</p>
-    /// <p><code>{"key": "collectionStatus", "value": "STARTED"}</code></p>
+    /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p>
+    /// <p> <code>{"key": "collectionStatus", "value": "STARTED"}</code> </p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
-    /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example:</p>
-    /// <p><code>{"key": "collectionStatus", "value": "STARTED"}</code></p>
+    /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p>
+    /// <p> <code>{"key": "collectionStatus", "value": "STARTED"}</code> </p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()
     }

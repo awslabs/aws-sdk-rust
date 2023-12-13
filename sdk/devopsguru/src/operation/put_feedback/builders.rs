@@ -22,7 +22,7 @@ impl PutFeedbackInputBuilder {
 }
 /// Fluent builder constructing a request to `PutFeedback`.
 ///
-/// <p>Collects customer feedback about the specified insight.</p>
+/// <p> Collects customer feedback about the specified insight. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutFeedbackFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl PutFeedbackFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The feedback from customers is about the recommendations in this insight.</p>
+    /// <p> The feedback from customers is about the recommendations in this insight. </p>
     pub fn insight_feedback(mut self, input: crate::types::InsightFeedback) -> Self {
         self.inner = self.inner.insight_feedback(input);
         self
     }
-    /// <p>The feedback from customers is about the recommendations in this insight.</p>
+    /// <p> The feedback from customers is about the recommendations in this insight. </p>
     pub fn set_insight_feedback(mut self, input: ::std::option::Option<crate::types::InsightFeedback>) -> Self {
         self.inner = self.inner.set_insight_feedback(input);
         self
     }
-    /// <p>The feedback from customers is about the recommendations in this insight.</p>
+    /// <p> The feedback from customers is about the recommendations in this insight. </p>
     pub fn get_insight_feedback(&self) -> &::std::option::Option<crate::types::InsightFeedback> {
         self.inner.get_insight_feedback()
     }

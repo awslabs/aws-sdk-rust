@@ -24,10 +24,10 @@ impl CreatePortfolioShareInputBuilder {
 ///
 /// <p>Shares the specified portfolio with the specified account or organization node. Shares to an organization node can only be created by the management account of an organization or by a delegated administrator. You can share portfolios to an organization, an organizational unit, or a specific account.</p>
 /// <p>Note that if a delegated admin is de-registered, they can no longer create portfolio shares.</p>
-/// <p><code>AWSOrganizationsAccess</code> must be enabled in order to create a portfolio share to an organization node.</p>
+/// <p> <code>AWSOrganizationsAccess</code> must be enabled in order to create a portfolio share to an organization node.</p>
 /// <p>You can't share a shared resource, including portfolios that contain a shared product.</p>
-/// <p>If the portfolio share with the specified account or organization node already exists, this action will have no effect and will not return an error. To update an existing share, you must use the <code> UpdatePortfolioShare</code> API instead.</p><note>
-/// <p>When you associate a principal with portfolio, a potential privilege escalation path may occur when that portfolio is then shared with other accounts. For a user in a recipient account who is <i>not</i> an Service Catalog Admin, but still has the ability to create Principals (Users/Groups/Roles), that user could create a role that matches a principal name association for the portfolio. Although this user may not know which principal names are associated through Service Catalog, they may be able to guess the user. If this potential escalation path is a concern, then Service Catalog recommends using <code>PrincipalType</code> as <code>IAM</code>. With this configuration, the <code>PrincipalARN</code> must already exist in the recipient account before it can be associated.</p>
+/// <p>If the portfolio share with the specified account or organization node already exists, this action will have no effect and will not return an error. To update an existing share, you must use the <code> UpdatePortfolioShare</code> API instead. </p> <note>
+/// <p>When you associate a principal with portfolio, a potential privilege escalation path may occur when that portfolio is then shared with other accounts. For a user in a recipient account who is <i>not</i> an Service Catalog Admin, but still has the ability to create Principals (Users/Groups/Roles), that user could create a role that matches a principal name association for the portfolio. Although this user may not know which principal names are associated through Service Catalog, they may be able to guess the user. If this potential escalation path is a concern, then Service Catalog recommends using <code>PrincipalType</code> as <code>IAM</code>. With this configuration, the <code>PrincipalARN</code> must already exist in the recipient account before it can be associated. </p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreatePortfolioShareFluentBuilder {
@@ -116,10 +116,8 @@ impl CreatePortfolioShareFluentBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>jp</code> - Japanese</p></li>
-    /// <li>
-    /// <p><code>zh</code> - Chinese</p></li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accept_language(input.into());
@@ -127,10 +125,8 @@ impl CreatePortfolioShareFluentBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>jp</code> - Japanese</p></li>
-    /// <li>
-    /// <p><code>zh</code> - Chinese</p></li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_accept_language(input);
@@ -138,10 +134,8 @@ impl CreatePortfolioShareFluentBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>jp</code> - Japanese</p></li>
-    /// <li>
-    /// <p><code>zh</code> - Chinese</p></li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_accept_language()
@@ -202,20 +196,20 @@ impl CreatePortfolioShareFluentBuilder {
     pub fn get_share_tag_options(&self) -> &::std::option::Option<bool> {
         self.inner.get_share_tag_options()
     }
-    /// <p>Enables or disables <code>Principal</code> sharing when creating the portfolio share. If this flag is not provided, principal sharing is disabled.</p>
-    /// <p>When you enable Principal Name Sharing for a portfolio share, the share recipient account end users with a principal that matches any of the associated IAM patterns can provision products from the portfolio. Once shared, the share recipient can view associations of <code>PrincipalType</code>: <code>IAM_PATTERN</code> on their portfolio. You can create the principals in the recipient account before or after creating the share.</p>
+    /// <p>Enables or disables <code>Principal</code> sharing when creating the portfolio share. If this flag is not provided, principal sharing is disabled. </p>
+    /// <p>When you enable Principal Name Sharing for a portfolio share, the share recipient account end users with a principal that matches any of the associated IAM patterns can provision products from the portfolio. Once shared, the share recipient can view associations of <code>PrincipalType</code>: <code>IAM_PATTERN</code> on their portfolio. You can create the principals in the recipient account before or after creating the share. </p>
     pub fn share_principals(mut self, input: bool) -> Self {
         self.inner = self.inner.share_principals(input);
         self
     }
-    /// <p>Enables or disables <code>Principal</code> sharing when creating the portfolio share. If this flag is not provided, principal sharing is disabled.</p>
-    /// <p>When you enable Principal Name Sharing for a portfolio share, the share recipient account end users with a principal that matches any of the associated IAM patterns can provision products from the portfolio. Once shared, the share recipient can view associations of <code>PrincipalType</code>: <code>IAM_PATTERN</code> on their portfolio. You can create the principals in the recipient account before or after creating the share.</p>
+    /// <p>Enables or disables <code>Principal</code> sharing when creating the portfolio share. If this flag is not provided, principal sharing is disabled. </p>
+    /// <p>When you enable Principal Name Sharing for a portfolio share, the share recipient account end users with a principal that matches any of the associated IAM patterns can provision products from the portfolio. Once shared, the share recipient can view associations of <code>PrincipalType</code>: <code>IAM_PATTERN</code> on their portfolio. You can create the principals in the recipient account before or after creating the share. </p>
     pub fn set_share_principals(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_share_principals(input);
         self
     }
-    /// <p>Enables or disables <code>Principal</code> sharing when creating the portfolio share. If this flag is not provided, principal sharing is disabled.</p>
-    /// <p>When you enable Principal Name Sharing for a portfolio share, the share recipient account end users with a principal that matches any of the associated IAM patterns can provision products from the portfolio. Once shared, the share recipient can view associations of <code>PrincipalType</code>: <code>IAM_PATTERN</code> on their portfolio. You can create the principals in the recipient account before or after creating the share.</p>
+    /// <p>Enables or disables <code>Principal</code> sharing when creating the portfolio share. If this flag is not provided, principal sharing is disabled. </p>
+    /// <p>When you enable Principal Name Sharing for a portfolio share, the share recipient account end users with a principal that matches any of the associated IAM patterns can provision products from the portfolio. Once shared, the share recipient can view associations of <code>PrincipalType</code>: <code>IAM_PATTERN</code> on their portfolio. You can create the principals in the recipient account before or after creating the share. </p>
     pub fn get_share_principals(&self) -> &::std::option::Option<bool> {
         self.inner.get_share_principals()
     }

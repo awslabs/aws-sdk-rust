@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteConfigurationPolicy`](crate::operation::delete_configuration_policy::builders::DeleteConfigurationPolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`identifier(impl Into<String>)`](crate::operation::delete_configuration_policy::builders::DeleteConfigurationPolicyFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::delete_configuration_policy::builders::DeleteConfigurationPolicyFluentBuilder::set_identifier):<br>required: **true**<br><p>The Amazon Resource Name (ARN) or universally unique identifier (UUID) of the configuration policy.</p><br>
+    ///   - [`identifier(impl Into<String>)`](crate::operation::delete_configuration_policy::builders::DeleteConfigurationPolicyFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::delete_configuration_policy::builders::DeleteConfigurationPolicyFluentBuilder::set_identifier):<br>required: **true**<br><p> The Amazon Resource Name (ARN) or universally unique identifier (UUID) of the configuration policy. </p><br>
     /// - On success, responds with [`DeleteConfigurationPolicyOutput`](crate::operation::delete_configuration_policy::DeleteConfigurationPolicyOutput)
     /// - On failure, responds with [`SdkError<DeleteConfigurationPolicyError>`](crate::operation::delete_configuration_policy::DeleteConfigurationPolicyError)
     pub fn delete_configuration_policy(&self) -> crate::operation::delete_configuration_policy::builders::DeleteConfigurationPolicyFluentBuilder {

@@ -6,7 +6,7 @@ pub struct DescribeAssetModelOutput {
     /// <p>The ID of the asset model, in UUID format.</p>
     pub asset_model_id: ::std::string::String,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p>
-    /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code></p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code> </p>
     pub asset_model_arn: ::std::string::String,
     /// <p>The name of the asset model.</p>
     pub asset_model_name: ::std::string::String,
@@ -27,10 +27,8 @@ pub struct DescribeAssetModelOutput {
     pub asset_model_status: ::std::option::Option<crate::types::AssetModelStatus>,
     /// <p>The type of asset model.</p>
     /// <ul>
-    /// <li>
-    /// <p><b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p></li>
-    /// <li>
-    /// <p><b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model.</p></li>
+    /// <li> <p> <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p> </li>
+    /// <li> <p> <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model. </p> </li>
     /// </ul>
     pub asset_model_type: ::std::option::Option<crate::types::AssetModelType>,
     /// <p>The list of the immediate child custom composite model summaries for the asset model.</p>
@@ -46,7 +44,7 @@ impl DescribeAssetModelOutput {
         self.asset_model_id.deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p>
-    /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code></p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code> </p>
     pub fn asset_model_arn(&self) -> &str {
         use std::ops::Deref;
         self.asset_model_arn.deref()
@@ -92,10 +90,8 @@ impl DescribeAssetModelOutput {
     }
     /// <p>The type of asset model.</p>
     /// <ul>
-    /// <li>
-    /// <p><b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p></li>
-    /// <li>
-    /// <p><b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model.</p></li>
+    /// <li> <p> <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p> </li>
+    /// <li> <p> <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model. </p> </li>
     /// </ul>
     pub fn asset_model_type(&self) -> ::std::option::Option<&crate::types::AssetModelType> {
         self.asset_model_type.as_ref()
@@ -159,20 +155,20 @@ impl DescribeAssetModelOutputBuilder {
         &self.asset_model_id
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p>
-    /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code></p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code> </p>
     /// This field is required.
     pub fn asset_model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_model_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p>
-    /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code></p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code> </p>
     pub fn set_asset_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.asset_model_arn = input;
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p>
-    /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code></p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code> </p>
     pub fn get_asset_model_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.asset_model_arn
     }
@@ -316,10 +312,8 @@ impl DescribeAssetModelOutputBuilder {
     }
     /// <p>The type of asset model.</p>
     /// <ul>
-    /// <li>
-    /// <p><b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p></li>
-    /// <li>
-    /// <p><b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model.</p></li>
+    /// <li> <p> <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p> </li>
+    /// <li> <p> <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model. </p> </li>
     /// </ul>
     pub fn asset_model_type(mut self, input: crate::types::AssetModelType) -> Self {
         self.asset_model_type = ::std::option::Option::Some(input);
@@ -327,10 +321,8 @@ impl DescribeAssetModelOutputBuilder {
     }
     /// <p>The type of asset model.</p>
     /// <ul>
-    /// <li>
-    /// <p><b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p></li>
-    /// <li>
-    /// <p><b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model.</p></li>
+    /// <li> <p> <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p> </li>
+    /// <li> <p> <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model. </p> </li>
     /// </ul>
     pub fn set_asset_model_type(mut self, input: ::std::option::Option<crate::types::AssetModelType>) -> Self {
         self.asset_model_type = input;
@@ -338,10 +330,8 @@ impl DescribeAssetModelOutputBuilder {
     }
     /// <p>The type of asset model.</p>
     /// <ul>
-    /// <li>
-    /// <p><b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p></li>
-    /// <li>
-    /// <p><b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model.</p></li>
+    /// <li> <p> <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p> </li>
+    /// <li> <p> <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model. </p> </li>
     /// </ul>
     pub fn get_asset_model_type(&self) -> &::std::option::Option<crate::types::AssetModelType> {
         &self.asset_model_type

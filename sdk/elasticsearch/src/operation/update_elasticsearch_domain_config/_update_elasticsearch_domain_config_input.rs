@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateElasticsearchDomainConfigInput {
-    /// <p>The name of the Elasticsearch domain that you are updating.</p>
+    /// <p>The name of the Elasticsearch domain that you are updating. </p>
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The type and number of instances to instantiate for the domain cluster.</p>
     pub elasticsearch_cluster_config: ::std::option::Option<crate::types::ElasticsearchClusterConfig>,
-    /// <p>Specify the type and size of the EBS volume that you want to use.</p>
+    /// <p>Specify the type and size of the EBS volume that you want to use. </p>
     pub ebs_options: ::std::option::Option<crate::types::EbsOptions>,
-    /// <p>Option to set the time, in UTC format, for the daily automated snapshot. Default value is <code>0</code> hours.</p>
+    /// <p>Option to set the time, in UTC format, for the daily automated snapshot. Default value is <code>0</code> hours. </p>
     pub snapshot_options: ::std::option::Option<crate::types::SnapshotOptions>,
     /// <p>Options to specify the subnets and security groups for VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html#es-creating-vpc" target="_blank">Creating a VPC</a> in <i>VPC Endpoints for Amazon Elasticsearch Service Domains</i></p>
     pub vpc_options: ::std::option::Option<crate::types::VpcOptions>,
@@ -32,11 +32,11 @@ pub struct UpdateElasticsearchDomainConfigInput {
     pub encryption_at_rest_options: ::std::option::Option<crate::types::EncryptionAtRestOptions>,
     /// <p>Specifies Auto-Tune options.</p>
     pub auto_tune_options: ::std::option::Option<crate::types::AutoTuneOptions>,
-    /// <p>This flag, when set to True, specifies whether the <code>UpdateElasticsearchDomain</code> request should return the results of validation checks without actually applying the change. This flag, when set to True, specifies the deployment mechanism through which the update shall be applied on the domain. This will not actually perform the Update.</p>
+    /// <p> This flag, when set to True, specifies whether the <code>UpdateElasticsearchDomain</code> request should return the results of validation checks without actually applying the change. This flag, when set to True, specifies the deployment mechanism through which the update shall be applied on the domain. This will not actually perform the Update. </p>
     pub dry_run: ::std::option::Option<bool>,
 }
 impl UpdateElasticsearchDomainConfigInput {
-    /// <p>The name of the Elasticsearch domain that you are updating.</p>
+    /// <p>The name of the Elasticsearch domain that you are updating. </p>
     pub fn domain_name(&self) -> ::std::option::Option<&str> {
         self.domain_name.as_deref()
     }
@@ -44,11 +44,11 @@ impl UpdateElasticsearchDomainConfigInput {
     pub fn elasticsearch_cluster_config(&self) -> ::std::option::Option<&crate::types::ElasticsearchClusterConfig> {
         self.elasticsearch_cluster_config.as_ref()
     }
-    /// <p>Specify the type and size of the EBS volume that you want to use.</p>
+    /// <p>Specify the type and size of the EBS volume that you want to use. </p>
     pub fn ebs_options(&self) -> ::std::option::Option<&crate::types::EbsOptions> {
         self.ebs_options.as_ref()
     }
-    /// <p>Option to set the time, in UTC format, for the daily automated snapshot. Default value is <code>0</code> hours.</p>
+    /// <p>Option to set the time, in UTC format, for the daily automated snapshot. Default value is <code>0</code> hours. </p>
     pub fn snapshot_options(&self) -> ::std::option::Option<&crate::types::SnapshotOptions> {
         self.snapshot_options.as_ref()
     }
@@ -94,7 +94,7 @@ impl UpdateElasticsearchDomainConfigInput {
     pub fn auto_tune_options(&self) -> ::std::option::Option<&crate::types::AutoTuneOptions> {
         self.auto_tune_options.as_ref()
     }
-    /// <p>This flag, when set to True, specifies whether the <code>UpdateElasticsearchDomain</code> request should return the results of validation checks without actually applying the change. This flag, when set to True, specifies the deployment mechanism through which the update shall be applied on the domain. This will not actually perform the Update.</p>
+    /// <p> This flag, when set to True, specifies whether the <code>UpdateElasticsearchDomain</code> request should return the results of validation checks without actually applying the change. This flag, when set to True, specifies the deployment mechanism through which the update shall be applied on the domain. This will not actually perform the Update. </p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
@@ -127,18 +127,18 @@ pub struct UpdateElasticsearchDomainConfigInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl UpdateElasticsearchDomainConfigInputBuilder {
-    /// <p>The name of the Elasticsearch domain that you are updating.</p>
+    /// <p>The name of the Elasticsearch domain that you are updating. </p>
     /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the Elasticsearch domain that you are updating.</p>
+    /// <p>The name of the Elasticsearch domain that you are updating. </p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
     }
-    /// <p>The name of the Elasticsearch domain that you are updating.</p>
+    /// <p>The name of the Elasticsearch domain that you are updating. </p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_name
     }
@@ -156,31 +156,31 @@ impl UpdateElasticsearchDomainConfigInputBuilder {
     pub fn get_elasticsearch_cluster_config(&self) -> &::std::option::Option<crate::types::ElasticsearchClusterConfig> {
         &self.elasticsearch_cluster_config
     }
-    /// <p>Specify the type and size of the EBS volume that you want to use.</p>
+    /// <p>Specify the type and size of the EBS volume that you want to use. </p>
     pub fn ebs_options(mut self, input: crate::types::EbsOptions) -> Self {
         self.ebs_options = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specify the type and size of the EBS volume that you want to use.</p>
+    /// <p>Specify the type and size of the EBS volume that you want to use. </p>
     pub fn set_ebs_options(mut self, input: ::std::option::Option<crate::types::EbsOptions>) -> Self {
         self.ebs_options = input;
         self
     }
-    /// <p>Specify the type and size of the EBS volume that you want to use.</p>
+    /// <p>Specify the type and size of the EBS volume that you want to use. </p>
     pub fn get_ebs_options(&self) -> &::std::option::Option<crate::types::EbsOptions> {
         &self.ebs_options
     }
-    /// <p>Option to set the time, in UTC format, for the daily automated snapshot. Default value is <code>0</code> hours.</p>
+    /// <p>Option to set the time, in UTC format, for the daily automated snapshot. Default value is <code>0</code> hours. </p>
     pub fn snapshot_options(mut self, input: crate::types::SnapshotOptions) -> Self {
         self.snapshot_options = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Option to set the time, in UTC format, for the daily automated snapshot. Default value is <code>0</code> hours.</p>
+    /// <p>Option to set the time, in UTC format, for the daily automated snapshot. Default value is <code>0</code> hours. </p>
     pub fn set_snapshot_options(mut self, input: ::std::option::Option<crate::types::SnapshotOptions>) -> Self {
         self.snapshot_options = input;
         self
     }
-    /// <p>Option to set the time, in UTC format, for the daily automated snapshot. Default value is <code>0</code> hours.</p>
+    /// <p>Option to set the time, in UTC format, for the daily automated snapshot. Default value is <code>0</code> hours. </p>
     pub fn get_snapshot_options(&self) -> &::std::option::Option<crate::types::SnapshotOptions> {
         &self.snapshot_options
     }
@@ -348,17 +348,17 @@ impl UpdateElasticsearchDomainConfigInputBuilder {
     pub fn get_auto_tune_options(&self) -> &::std::option::Option<crate::types::AutoTuneOptions> {
         &self.auto_tune_options
     }
-    /// <p>This flag, when set to True, specifies whether the <code>UpdateElasticsearchDomain</code> request should return the results of validation checks without actually applying the change. This flag, when set to True, specifies the deployment mechanism through which the update shall be applied on the domain. This will not actually perform the Update.</p>
+    /// <p> This flag, when set to True, specifies whether the <code>UpdateElasticsearchDomain</code> request should return the results of validation checks without actually applying the change. This flag, when set to True, specifies the deployment mechanism through which the update shall be applied on the domain. This will not actually perform the Update. </p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
         self
     }
-    /// <p>This flag, when set to True, specifies whether the <code>UpdateElasticsearchDomain</code> request should return the results of validation checks without actually applying the change. This flag, when set to True, specifies the deployment mechanism through which the update shall be applied on the domain. This will not actually perform the Update.</p>
+    /// <p> This flag, when set to True, specifies whether the <code>UpdateElasticsearchDomain</code> request should return the results of validation checks without actually applying the change. This flag, when set to True, specifies the deployment mechanism through which the update shall be applied on the domain. This will not actually perform the Update. </p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
     }
-    /// <p>This flag, when set to True, specifies whether the <code>UpdateElasticsearchDomain</code> request should return the results of validation checks without actually applying the change. This flag, when set to True, specifies the deployment mechanism through which the update shall be applied on the domain. This will not actually perform the Update.</p>
+    /// <p> This flag, when set to True, specifies whether the <code>UpdateElasticsearchDomain</code> request should return the results of validation checks without actually applying the change. This flag, when set to True, specifies the deployment mechanism through which the update shall be applied on the domain. This will not actually perform the Update. </p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }

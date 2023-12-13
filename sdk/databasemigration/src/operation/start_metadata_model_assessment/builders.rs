@@ -22,7 +22,7 @@ impl StartMetadataModelAssessmentInputBuilder {
 }
 /// Fluent builder constructing a request to `StartMetadataModelAssessment`.
 ///
-/// <p>Creates a database migration assessment report by assessing the migration complexity for your source database. A database migration assessment report summarizes all of the schema conversion tasks. It also details the action items for database objects that can't be converted to the database engine of your target database instance.</p>
+/// <p>Creates a database migration assessment report by assessing the migration complexity for your source database. A database migration assessment report summarizes all of the schema conversion tasks. It also details the action items for database objects that can't be converted to the database engine of your target database instance. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartMetadataModelAssessmentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

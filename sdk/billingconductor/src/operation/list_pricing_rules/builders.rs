@@ -22,7 +22,7 @@ impl ListPricingRulesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListPricingRules`.
 ///
-/// <p>Describes a pricing rule that can be associated to a pricing plan, or set of pricing plans.</p>
+/// <p> Describes a pricing rule that can be associated to a pricing plan, or set of pricing plans. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListPricingRulesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,59 +114,59 @@ impl ListPricingRulesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_pricing_rules::paginator::ListPricingRulesPaginator {
         crate::operation::list_pricing_rules::paginator::ListPricingRulesPaginator::new(self.handle, self.inner)
     }
-    /// <p>The preferred billing period to get the pricing plan.</p>
+    /// <p> The preferred billing period to get the pricing plan. </p>
     pub fn billing_period(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.billing_period(input.into());
         self
     }
-    /// <p>The preferred billing period to get the pricing plan.</p>
+    /// <p> The preferred billing period to get the pricing plan. </p>
     pub fn set_billing_period(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_billing_period(input);
         self
     }
-    /// <p>The preferred billing period to get the pricing plan.</p>
+    /// <p> The preferred billing period to get the pricing plan. </p>
     pub fn get_billing_period(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_billing_period()
     }
-    /// <p>A <code>DescribePricingRuleFilter</code> that specifies the Amazon Resource Name (ARNs) of pricing rules to retrieve pricing rules information.</p>
+    /// <p> A <code>DescribePricingRuleFilter</code> that specifies the Amazon Resource Name (ARNs) of pricing rules to retrieve pricing rules information. </p>
     pub fn filters(mut self, input: crate::types::ListPricingRulesFilter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>A <code>DescribePricingRuleFilter</code> that specifies the Amazon Resource Name (ARNs) of pricing rules to retrieve pricing rules information.</p>
+    /// <p> A <code>DescribePricingRuleFilter</code> that specifies the Amazon Resource Name (ARNs) of pricing rules to retrieve pricing rules information. </p>
     pub fn set_filters(mut self, input: ::std::option::Option<crate::types::ListPricingRulesFilter>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
-    /// <p>A <code>DescribePricingRuleFilter</code> that specifies the Amazon Resource Name (ARNs) of pricing rules to retrieve pricing rules information.</p>
+    /// <p> A <code>DescribePricingRuleFilter</code> that specifies the Amazon Resource Name (ARNs) of pricing rules to retrieve pricing rules information. </p>
     pub fn get_filters(&self) -> &::std::option::Option<crate::types::ListPricingRulesFilter> {
         self.inner.get_filters()
     }
-    /// <p>The maximum number of pricing rules to retrieve.</p>
+    /// <p> The maximum number of pricing rules to retrieve. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of pricing rules to retrieve.</p>
+    /// <p> The maximum number of pricing rules to retrieve. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The maximum number of pricing rules to retrieve.</p>
+    /// <p> The maximum number of pricing rules to retrieve. </p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p>The pagination token that's used on subsequent call to get pricing rules.</p>
+    /// <p> The pagination token that's used on subsequent call to get pricing rules. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>The pagination token that's used on subsequent call to get pricing rules.</p>
+    /// <p> The pagination token that's used on subsequent call to get pricing rules. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>The pagination token that's used on subsequent call to get pricing rules.</p>
+    /// <p> The pagination token that's used on subsequent call to get pricing rules. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

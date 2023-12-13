@@ -9,36 +9,25 @@ pub struct StreamDescription {
     /// <p>A timestamp, in ISO 8601 format, for this stream.</p>
     /// <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p>
     /// <ul>
-    /// <li>
-    /// <p>the Amazon Web Services customer ID.</p></li>
-    /// <li>
-    /// <p>the table name</p></li>
-    /// <li>
-    /// <p>the <code>StreamLabel</code></p></li>
+    /// <li> <p>the Amazon Web Services customer ID.</p> </li>
+    /// <li> <p>the table name</p> </li>
+    /// <li> <p>the <code>StreamLabel</code> </p> </li>
     /// </ul>
     pub stream_label: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the current status of the stream:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ENABLING</code> - Streams is currently being enabled on the DynamoDB table.</p></li>
-    /// <li>
-    /// <p><code>ENABLED</code> - the stream is enabled.</p></li>
-    /// <li>
-    /// <p><code>DISABLING</code> - Streams is currently being disabled on the DynamoDB table.</p></li>
-    /// <li>
-    /// <p><code>DISABLED</code> - the stream is disabled.</p></li>
+    /// <li> <p> <code>ENABLING</code> - Streams is currently being enabled on the DynamoDB table.</p> </li>
+    /// <li> <p> <code>ENABLED</code> - the stream is enabled.</p> </li>
+    /// <li> <p> <code>DISABLING</code> - Streams is currently being disabled on the DynamoDB table.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - the stream is disabled.</p> </li>
     /// </ul>
     pub stream_status: ::std::option::Option<crate::types::StreamStatus>,
     /// <p>Indicates the format of the records within this stream:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>KEYS_ONLY</code> - only the key attributes of items that were modified in the DynamoDB table.</p></li>
-    /// <li>
-    /// <p><code>NEW_IMAGE</code> - entire items from the table, as they appeared after they were modified.</p></li>
-    /// <li>
-    /// <p><code>OLD_IMAGE</code> - entire items from the table, as they appeared before they were modified.</p></li>
-    /// <li>
-    /// <p><code>NEW_AND_OLD_IMAGES</code> - both the new and the old images of the items from the table.</p></li>
+    /// <li> <p> <code>KEYS_ONLY</code> - only the key attributes of items that were modified in the DynamoDB table.</p> </li>
+    /// <li> <p> <code>NEW_IMAGE</code> - entire items from the table, as they appeared after they were modified.</p> </li>
+    /// <li> <p> <code>OLD_IMAGE</code> - entire items from the table, as they appeared before they were modified.</p> </li>
+    /// <li> <p> <code>NEW_AND_OLD_IMAGES</code> - both the new and the old images of the items from the table.</p> </li>
     /// </ul>
     pub stream_view_type: ::std::option::Option<crate::types::StreamViewType>,
     /// <p>The date and time when the request to create this stream was issued.</p>
@@ -62,40 +51,29 @@ impl StreamDescription {
     /// <p>A timestamp, in ISO 8601 format, for this stream.</p>
     /// <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p>
     /// <ul>
-    /// <li>
-    /// <p>the Amazon Web Services customer ID.</p></li>
-    /// <li>
-    /// <p>the table name</p></li>
-    /// <li>
-    /// <p>the <code>StreamLabel</code></p></li>
+    /// <li> <p>the Amazon Web Services customer ID.</p> </li>
+    /// <li> <p>the table name</p> </li>
+    /// <li> <p>the <code>StreamLabel</code> </p> </li>
     /// </ul>
     pub fn stream_label(&self) -> ::std::option::Option<&str> {
         self.stream_label.as_deref()
     }
     /// <p>Indicates the current status of the stream:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ENABLING</code> - Streams is currently being enabled on the DynamoDB table.</p></li>
-    /// <li>
-    /// <p><code>ENABLED</code> - the stream is enabled.</p></li>
-    /// <li>
-    /// <p><code>DISABLING</code> - Streams is currently being disabled on the DynamoDB table.</p></li>
-    /// <li>
-    /// <p><code>DISABLED</code> - the stream is disabled.</p></li>
+    /// <li> <p> <code>ENABLING</code> - Streams is currently being enabled on the DynamoDB table.</p> </li>
+    /// <li> <p> <code>ENABLED</code> - the stream is enabled.</p> </li>
+    /// <li> <p> <code>DISABLING</code> - Streams is currently being disabled on the DynamoDB table.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - the stream is disabled.</p> </li>
     /// </ul>
     pub fn stream_status(&self) -> ::std::option::Option<&crate::types::StreamStatus> {
         self.stream_status.as_ref()
     }
     /// <p>Indicates the format of the records within this stream:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>KEYS_ONLY</code> - only the key attributes of items that were modified in the DynamoDB table.</p></li>
-    /// <li>
-    /// <p><code>NEW_IMAGE</code> - entire items from the table, as they appeared after they were modified.</p></li>
-    /// <li>
-    /// <p><code>OLD_IMAGE</code> - entire items from the table, as they appeared before they were modified.</p></li>
-    /// <li>
-    /// <p><code>NEW_AND_OLD_IMAGES</code> - both the new and the old images of the items from the table.</p></li>
+    /// <li> <p> <code>KEYS_ONLY</code> - only the key attributes of items that were modified in the DynamoDB table.</p> </li>
+    /// <li> <p> <code>NEW_IMAGE</code> - entire items from the table, as they appeared after they were modified.</p> </li>
+    /// <li> <p> <code>OLD_IMAGE</code> - entire items from the table, as they appeared before they were modified.</p> </li>
+    /// <li> <p> <code>NEW_AND_OLD_IMAGES</code> - both the new and the old images of the items from the table.</p> </li>
     /// </ul>
     pub fn stream_view_type(&self) -> ::std::option::Option<&crate::types::StreamViewType> {
         self.stream_view_type.as_ref()
@@ -166,12 +144,9 @@ impl StreamDescriptionBuilder {
     /// <p>A timestamp, in ISO 8601 format, for this stream.</p>
     /// <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p>
     /// <ul>
-    /// <li>
-    /// <p>the Amazon Web Services customer ID.</p></li>
-    /// <li>
-    /// <p>the table name</p></li>
-    /// <li>
-    /// <p>the <code>StreamLabel</code></p></li>
+    /// <li> <p>the Amazon Web Services customer ID.</p> </li>
+    /// <li> <p>the table name</p> </li>
+    /// <li> <p>the <code>StreamLabel</code> </p> </li>
     /// </ul>
     pub fn stream_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_label = ::std::option::Option::Some(input.into());
@@ -180,12 +155,9 @@ impl StreamDescriptionBuilder {
     /// <p>A timestamp, in ISO 8601 format, for this stream.</p>
     /// <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p>
     /// <ul>
-    /// <li>
-    /// <p>the Amazon Web Services customer ID.</p></li>
-    /// <li>
-    /// <p>the table name</p></li>
-    /// <li>
-    /// <p>the <code>StreamLabel</code></p></li>
+    /// <li> <p>the Amazon Web Services customer ID.</p> </li>
+    /// <li> <p>the table name</p> </li>
+    /// <li> <p>the <code>StreamLabel</code> </p> </li>
     /// </ul>
     pub fn set_stream_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_label = input;
@@ -194,26 +166,19 @@ impl StreamDescriptionBuilder {
     /// <p>A timestamp, in ISO 8601 format, for this stream.</p>
     /// <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p>
     /// <ul>
-    /// <li>
-    /// <p>the Amazon Web Services customer ID.</p></li>
-    /// <li>
-    /// <p>the table name</p></li>
-    /// <li>
-    /// <p>the <code>StreamLabel</code></p></li>
+    /// <li> <p>the Amazon Web Services customer ID.</p> </li>
+    /// <li> <p>the table name</p> </li>
+    /// <li> <p>the <code>StreamLabel</code> </p> </li>
     /// </ul>
     pub fn get_stream_label(&self) -> &::std::option::Option<::std::string::String> {
         &self.stream_label
     }
     /// <p>Indicates the current status of the stream:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ENABLING</code> - Streams is currently being enabled on the DynamoDB table.</p></li>
-    /// <li>
-    /// <p><code>ENABLED</code> - the stream is enabled.</p></li>
-    /// <li>
-    /// <p><code>DISABLING</code> - Streams is currently being disabled on the DynamoDB table.</p></li>
-    /// <li>
-    /// <p><code>DISABLED</code> - the stream is disabled.</p></li>
+    /// <li> <p> <code>ENABLING</code> - Streams is currently being enabled on the DynamoDB table.</p> </li>
+    /// <li> <p> <code>ENABLED</code> - the stream is enabled.</p> </li>
+    /// <li> <p> <code>DISABLING</code> - Streams is currently being disabled on the DynamoDB table.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - the stream is disabled.</p> </li>
     /// </ul>
     pub fn stream_status(mut self, input: crate::types::StreamStatus) -> Self {
         self.stream_status = ::std::option::Option::Some(input);
@@ -221,14 +186,10 @@ impl StreamDescriptionBuilder {
     }
     /// <p>Indicates the current status of the stream:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ENABLING</code> - Streams is currently being enabled on the DynamoDB table.</p></li>
-    /// <li>
-    /// <p><code>ENABLED</code> - the stream is enabled.</p></li>
-    /// <li>
-    /// <p><code>DISABLING</code> - Streams is currently being disabled on the DynamoDB table.</p></li>
-    /// <li>
-    /// <p><code>DISABLED</code> - the stream is disabled.</p></li>
+    /// <li> <p> <code>ENABLING</code> - Streams is currently being enabled on the DynamoDB table.</p> </li>
+    /// <li> <p> <code>ENABLED</code> - the stream is enabled.</p> </li>
+    /// <li> <p> <code>DISABLING</code> - Streams is currently being disabled on the DynamoDB table.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - the stream is disabled.</p> </li>
     /// </ul>
     pub fn set_stream_status(mut self, input: ::std::option::Option<crate::types::StreamStatus>) -> Self {
         self.stream_status = input;
@@ -236,28 +197,20 @@ impl StreamDescriptionBuilder {
     }
     /// <p>Indicates the current status of the stream:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ENABLING</code> - Streams is currently being enabled on the DynamoDB table.</p></li>
-    /// <li>
-    /// <p><code>ENABLED</code> - the stream is enabled.</p></li>
-    /// <li>
-    /// <p><code>DISABLING</code> - Streams is currently being disabled on the DynamoDB table.</p></li>
-    /// <li>
-    /// <p><code>DISABLED</code> - the stream is disabled.</p></li>
+    /// <li> <p> <code>ENABLING</code> - Streams is currently being enabled on the DynamoDB table.</p> </li>
+    /// <li> <p> <code>ENABLED</code> - the stream is enabled.</p> </li>
+    /// <li> <p> <code>DISABLING</code> - Streams is currently being disabled on the DynamoDB table.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - the stream is disabled.</p> </li>
     /// </ul>
     pub fn get_stream_status(&self) -> &::std::option::Option<crate::types::StreamStatus> {
         &self.stream_status
     }
     /// <p>Indicates the format of the records within this stream:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>KEYS_ONLY</code> - only the key attributes of items that were modified in the DynamoDB table.</p></li>
-    /// <li>
-    /// <p><code>NEW_IMAGE</code> - entire items from the table, as they appeared after they were modified.</p></li>
-    /// <li>
-    /// <p><code>OLD_IMAGE</code> - entire items from the table, as they appeared before they were modified.</p></li>
-    /// <li>
-    /// <p><code>NEW_AND_OLD_IMAGES</code> - both the new and the old images of the items from the table.</p></li>
+    /// <li> <p> <code>KEYS_ONLY</code> - only the key attributes of items that were modified in the DynamoDB table.</p> </li>
+    /// <li> <p> <code>NEW_IMAGE</code> - entire items from the table, as they appeared after they were modified.</p> </li>
+    /// <li> <p> <code>OLD_IMAGE</code> - entire items from the table, as they appeared before they were modified.</p> </li>
+    /// <li> <p> <code>NEW_AND_OLD_IMAGES</code> - both the new and the old images of the items from the table.</p> </li>
     /// </ul>
     pub fn stream_view_type(mut self, input: crate::types::StreamViewType) -> Self {
         self.stream_view_type = ::std::option::Option::Some(input);
@@ -265,14 +218,10 @@ impl StreamDescriptionBuilder {
     }
     /// <p>Indicates the format of the records within this stream:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>KEYS_ONLY</code> - only the key attributes of items that were modified in the DynamoDB table.</p></li>
-    /// <li>
-    /// <p><code>NEW_IMAGE</code> - entire items from the table, as they appeared after they were modified.</p></li>
-    /// <li>
-    /// <p><code>OLD_IMAGE</code> - entire items from the table, as they appeared before they were modified.</p></li>
-    /// <li>
-    /// <p><code>NEW_AND_OLD_IMAGES</code> - both the new and the old images of the items from the table.</p></li>
+    /// <li> <p> <code>KEYS_ONLY</code> - only the key attributes of items that were modified in the DynamoDB table.</p> </li>
+    /// <li> <p> <code>NEW_IMAGE</code> - entire items from the table, as they appeared after they were modified.</p> </li>
+    /// <li> <p> <code>OLD_IMAGE</code> - entire items from the table, as they appeared before they were modified.</p> </li>
+    /// <li> <p> <code>NEW_AND_OLD_IMAGES</code> - both the new and the old images of the items from the table.</p> </li>
     /// </ul>
     pub fn set_stream_view_type(mut self, input: ::std::option::Option<crate::types::StreamViewType>) -> Self {
         self.stream_view_type = input;
@@ -280,14 +229,10 @@ impl StreamDescriptionBuilder {
     }
     /// <p>Indicates the format of the records within this stream:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>KEYS_ONLY</code> - only the key attributes of items that were modified in the DynamoDB table.</p></li>
-    /// <li>
-    /// <p><code>NEW_IMAGE</code> - entire items from the table, as they appeared after they were modified.</p></li>
-    /// <li>
-    /// <p><code>OLD_IMAGE</code> - entire items from the table, as they appeared before they were modified.</p></li>
-    /// <li>
-    /// <p><code>NEW_AND_OLD_IMAGES</code> - both the new and the old images of the items from the table.</p></li>
+    /// <li> <p> <code>KEYS_ONLY</code> - only the key attributes of items that were modified in the DynamoDB table.</p> </li>
+    /// <li> <p> <code>NEW_IMAGE</code> - entire items from the table, as they appeared after they were modified.</p> </li>
+    /// <li> <p> <code>OLD_IMAGE</code> - entire items from the table, as they appeared before they were modified.</p> </li>
+    /// <li> <p> <code>NEW_AND_OLD_IMAGES</code> - both the new and the old images of the items from the table.</p> </li>
     /// </ul>
     pub fn get_stream_view_type(&self) -> &::std::option::Option<crate::types::StreamViewType> {
         &self.stream_view_type

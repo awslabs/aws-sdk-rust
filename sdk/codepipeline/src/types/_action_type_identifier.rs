@@ -6,18 +6,12 @@
 pub struct ActionTypeIdentifier {
     /// <p>Defines what kind of action can be taken in the stage, one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Source</code></p></li>
-    /// <li>
-    /// <p><code>Build</code></p></li>
-    /// <li>
-    /// <p><code>Test</code></p></li>
-    /// <li>
-    /// <p><code>Deploy</code></p></li>
-    /// <li>
-    /// <p><code>Approval</code></p></li>
-    /// <li>
-    /// <p><code>Invoke</code></p></li>
+    /// <li> <p> <code>Source</code> </p> </li>
+    /// <li> <p> <code>Build</code> </p> </li>
+    /// <li> <p> <code>Test</code> </p> </li>
+    /// <li> <p> <code>Deploy</code> </p> </li>
+    /// <li> <p> <code>Approval</code> </p> </li>
+    /// <li> <p> <code>Invoke</code> </p> </li>
     /// </ul>
     pub category: crate::types::ActionCategory,
     /// <p>The creator of the action type being called: <code>AWS</code> or <code>ThirdParty</code>.</p>
@@ -30,18 +24,12 @@ pub struct ActionTypeIdentifier {
 impl ActionTypeIdentifier {
     /// <p>Defines what kind of action can be taken in the stage, one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Source</code></p></li>
-    /// <li>
-    /// <p><code>Build</code></p></li>
-    /// <li>
-    /// <p><code>Test</code></p></li>
-    /// <li>
-    /// <p><code>Deploy</code></p></li>
-    /// <li>
-    /// <p><code>Approval</code></p></li>
-    /// <li>
-    /// <p><code>Invoke</code></p></li>
+    /// <li> <p> <code>Source</code> </p> </li>
+    /// <li> <p> <code>Build</code> </p> </li>
+    /// <li> <p> <code>Test</code> </p> </li>
+    /// <li> <p> <code>Deploy</code> </p> </li>
+    /// <li> <p> <code>Approval</code> </p> </li>
+    /// <li> <p> <code>Invoke</code> </p> </li>
     /// </ul>
     pub fn category(&self) -> &crate::types::ActionCategory {
         &self.category
@@ -81,18 +69,12 @@ pub struct ActionTypeIdentifierBuilder {
 impl ActionTypeIdentifierBuilder {
     /// <p>Defines what kind of action can be taken in the stage, one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Source</code></p></li>
-    /// <li>
-    /// <p><code>Build</code></p></li>
-    /// <li>
-    /// <p><code>Test</code></p></li>
-    /// <li>
-    /// <p><code>Deploy</code></p></li>
-    /// <li>
-    /// <p><code>Approval</code></p></li>
-    /// <li>
-    /// <p><code>Invoke</code></p></li>
+    /// <li> <p> <code>Source</code> </p> </li>
+    /// <li> <p> <code>Build</code> </p> </li>
+    /// <li> <p> <code>Test</code> </p> </li>
+    /// <li> <p> <code>Deploy</code> </p> </li>
+    /// <li> <p> <code>Approval</code> </p> </li>
+    /// <li> <p> <code>Invoke</code> </p> </li>
     /// </ul>
     /// This field is required.
     pub fn category(mut self, input: crate::types::ActionCategory) -> Self {
@@ -101,18 +83,12 @@ impl ActionTypeIdentifierBuilder {
     }
     /// <p>Defines what kind of action can be taken in the stage, one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Source</code></p></li>
-    /// <li>
-    /// <p><code>Build</code></p></li>
-    /// <li>
-    /// <p><code>Test</code></p></li>
-    /// <li>
-    /// <p><code>Deploy</code></p></li>
-    /// <li>
-    /// <p><code>Approval</code></p></li>
-    /// <li>
-    /// <p><code>Invoke</code></p></li>
+    /// <li> <p> <code>Source</code> </p> </li>
+    /// <li> <p> <code>Build</code> </p> </li>
+    /// <li> <p> <code>Test</code> </p> </li>
+    /// <li> <p> <code>Deploy</code> </p> </li>
+    /// <li> <p> <code>Approval</code> </p> </li>
+    /// <li> <p> <code>Invoke</code> </p> </li>
     /// </ul>
     pub fn set_category(mut self, input: ::std::option::Option<crate::types::ActionCategory>) -> Self {
         self.category = input;
@@ -120,18 +96,12 @@ impl ActionTypeIdentifierBuilder {
     }
     /// <p>Defines what kind of action can be taken in the stage, one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Source</code></p></li>
-    /// <li>
-    /// <p><code>Build</code></p></li>
-    /// <li>
-    /// <p><code>Test</code></p></li>
-    /// <li>
-    /// <p><code>Deploy</code></p></li>
-    /// <li>
-    /// <p><code>Approval</code></p></li>
-    /// <li>
-    /// <p><code>Invoke</code></p></li>
+    /// <li> <p> <code>Source</code> </p> </li>
+    /// <li> <p> <code>Build</code> </p> </li>
+    /// <li> <p> <code>Test</code> </p> </li>
+    /// <li> <p> <code>Deploy</code> </p> </li>
+    /// <li> <p> <code>Approval</code> </p> </li>
+    /// <li> <p> <code>Invoke</code> </p> </li>
     /// </ul>
     pub fn get_category(&self) -> &::std::option::Option<crate::types::ActionCategory> {
         &self.category

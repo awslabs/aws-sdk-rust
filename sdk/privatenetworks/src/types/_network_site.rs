@@ -22,9 +22,9 @@ pub struct NetworkSite {
     pub current_plan: ::std::option::Option<crate::types::SitePlan>,
     /// <p>The creation time of the network site.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The parent Availability Zone for the network site.</p>
+    /// <p> The parent Availability Zone for the network site. </p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
-    /// <p>The parent Availability Zone ID for the network site.</p>
+    /// <p> The parent Availability Zone ID for the network site. </p>
     pub availability_zone_id: ::std::option::Option<::std::string::String>,
 }
 impl NetworkSite {
@@ -67,11 +67,11 @@ impl NetworkSite {
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The parent Availability Zone for the network site.</p>
+    /// <p> The parent Availability Zone for the network site. </p>
     pub fn availability_zone(&self) -> ::std::option::Option<&str> {
         self.availability_zone.as_deref()
     }
-    /// <p>The parent Availability Zone ID for the network site.</p>
+    /// <p> The parent Availability Zone ID for the network site. </p>
     pub fn availability_zone_id(&self) -> ::std::option::Option<&str> {
         self.availability_zone_id.as_deref()
     }
@@ -230,31 +230,31 @@ impl NetworkSiteBuilder {
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
-    /// <p>The parent Availability Zone for the network site.</p>
+    /// <p> The parent Availability Zone for the network site. </p>
     pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The parent Availability Zone for the network site.</p>
+    /// <p> The parent Availability Zone for the network site. </p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
-    /// <p>The parent Availability Zone for the network site.</p>
+    /// <p> The parent Availability Zone for the network site. </p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         &self.availability_zone
     }
-    /// <p>The parent Availability Zone ID for the network site.</p>
+    /// <p> The parent Availability Zone ID for the network site. </p>
     pub fn availability_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The parent Availability Zone ID for the network site.</p>
+    /// <p> The parent Availability Zone ID for the network site. </p>
     pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone_id = input;
         self
     }
-    /// <p>The parent Availability Zone ID for the network site.</p>
+    /// <p> The parent Availability Zone ID for the network site. </p>
     pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.availability_zone_id
     }

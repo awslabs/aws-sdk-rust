@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetProgrammaticAccessCredentialsInput {
-    /// <p>The time duration in which the credentials remain valid.</p>
+    /// <p>The time duration in which the credentials remain valid. </p>
     pub duration_in_minutes: ::std::option::Option<i64>,
     /// <p>The FinSpace environment identifier.</p>
     pub environment_id: ::std::option::Option<::std::string::String>,
 }
 impl GetProgrammaticAccessCredentialsInput {
-    /// <p>The time duration in which the credentials remain valid.</p>
+    /// <p>The time duration in which the credentials remain valid. </p>
     pub fn duration_in_minutes(&self) -> ::std::option::Option<i64> {
         self.duration_in_minutes
     }
@@ -34,17 +34,17 @@ pub struct GetProgrammaticAccessCredentialsInputBuilder {
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
 }
 impl GetProgrammaticAccessCredentialsInputBuilder {
-    /// <p>The time duration in which the credentials remain valid.</p>
+    /// <p>The time duration in which the credentials remain valid. </p>
     pub fn duration_in_minutes(mut self, input: i64) -> Self {
         self.duration_in_minutes = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time duration in which the credentials remain valid.</p>
+    /// <p>The time duration in which the credentials remain valid. </p>
     pub fn set_duration_in_minutes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.duration_in_minutes = input;
         self
     }
-    /// <p>The time duration in which the credentials remain valid.</p>
+    /// <p>The time duration in which the credentials remain valid. </p>
     pub fn get_duration_in_minutes(&self) -> &::std::option::Option<i64> {
         &self.duration_in_minutes
     }

@@ -16,31 +16,21 @@ pub struct AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails {
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>The volume size, in GiBs. The following are the supported volumes sizes for each volume type:</p>
     /// <ul>
-    /// <li>
-    /// <p>gp2 and gp3: 1-16,384</p></li>
-    /// <li>
-    /// <p>io1: 4-16,384</p></li>
-    /// <li>
-    /// <p>st1 and sc1: 125-16,384</p></li>
-    /// <li>
-    /// <p>standard: 1-1,024</p></li>
+    /// <li> <p>gp2 and gp3: 1-16,384</p> </li>
+    /// <li> <p>io1: 4-16,384</p> </li>
+    /// <li> <p>st1 and sc1: 125-16,384</p> </li>
+    /// <li> <p>standard: 1-1,024</p> </li>
     /// </ul>
     /// <p>You must specify either <code>SnapshotId</code> or <code>VolumeSize</code>. If you specify both <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size must be equal or greater than the size of the snapshot.</p>
     pub volume_size: ::std::option::Option<i32>,
     /// <p>The volume type. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>gp2</code></p></li>
-    /// <li>
-    /// <p><code>gp3</code></p></li>
-    /// <li>
-    /// <p><code>io1</code></p></li>
-    /// <li>
-    /// <p><code>sc1</code></p></li>
-    /// <li>
-    /// <p><code>st1</code></p></li>
-    /// <li>
-    /// <p><code>standard</code></p></li>
+    /// <li> <p> <code>gp2</code> </p> </li>
+    /// <li> <p> <code>gp3</code> </p> </li>
+    /// <li> <p> <code>io1</code> </p> </li>
+    /// <li> <p> <code>sc1</code> </p> </li>
+    /// <li> <p> <code>st1</code> </p> </li>
+    /// <li> <p> <code>standard</code> </p> </li>
     /// </ul>
     pub volume_type: ::std::option::Option<::std::string::String>,
 }
@@ -65,14 +55,10 @@ impl AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails {
     }
     /// <p>The volume size, in GiBs. The following are the supported volumes sizes for each volume type:</p>
     /// <ul>
-    /// <li>
-    /// <p>gp2 and gp3: 1-16,384</p></li>
-    /// <li>
-    /// <p>io1: 4-16,384</p></li>
-    /// <li>
-    /// <p>st1 and sc1: 125-16,384</p></li>
-    /// <li>
-    /// <p>standard: 1-1,024</p></li>
+    /// <li> <p>gp2 and gp3: 1-16,384</p> </li>
+    /// <li> <p>io1: 4-16,384</p> </li>
+    /// <li> <p>st1 and sc1: 125-16,384</p> </li>
+    /// <li> <p>standard: 1-1,024</p> </li>
     /// </ul>
     /// <p>You must specify either <code>SnapshotId</code> or <code>VolumeSize</code>. If you specify both <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size must be equal or greater than the size of the snapshot.</p>
     pub fn volume_size(&self) -> ::std::option::Option<i32> {
@@ -80,18 +66,12 @@ impl AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails {
     }
     /// <p>The volume type. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>gp2</code></p></li>
-    /// <li>
-    /// <p><code>gp3</code></p></li>
-    /// <li>
-    /// <p><code>io1</code></p></li>
-    /// <li>
-    /// <p><code>sc1</code></p></li>
-    /// <li>
-    /// <p><code>st1</code></p></li>
-    /// <li>
-    /// <p><code>standard</code></p></li>
+    /// <li> <p> <code>gp2</code> </p> </li>
+    /// <li> <p> <code>gp3</code> </p> </li>
+    /// <li> <p> <code>io1</code> </p> </li>
+    /// <li> <p> <code>sc1</code> </p> </li>
+    /// <li> <p> <code>st1</code> </p> </li>
+    /// <li> <p> <code>standard</code> </p> </li>
     /// </ul>
     pub fn volume_type(&self) -> ::std::option::Option<&str> {
         self.volume_type.as_deref()
@@ -180,14 +160,10 @@ impl AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetailsBuilder {
     }
     /// <p>The volume size, in GiBs. The following are the supported volumes sizes for each volume type:</p>
     /// <ul>
-    /// <li>
-    /// <p>gp2 and gp3: 1-16,384</p></li>
-    /// <li>
-    /// <p>io1: 4-16,384</p></li>
-    /// <li>
-    /// <p>st1 and sc1: 125-16,384</p></li>
-    /// <li>
-    /// <p>standard: 1-1,024</p></li>
+    /// <li> <p>gp2 and gp3: 1-16,384</p> </li>
+    /// <li> <p>io1: 4-16,384</p> </li>
+    /// <li> <p>st1 and sc1: 125-16,384</p> </li>
+    /// <li> <p>standard: 1-1,024</p> </li>
     /// </ul>
     /// <p>You must specify either <code>SnapshotId</code> or <code>VolumeSize</code>. If you specify both <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size must be equal or greater than the size of the snapshot.</p>
     pub fn volume_size(mut self, input: i32) -> Self {
@@ -196,14 +172,10 @@ impl AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetailsBuilder {
     }
     /// <p>The volume size, in GiBs. The following are the supported volumes sizes for each volume type:</p>
     /// <ul>
-    /// <li>
-    /// <p>gp2 and gp3: 1-16,384</p></li>
-    /// <li>
-    /// <p>io1: 4-16,384</p></li>
-    /// <li>
-    /// <p>st1 and sc1: 125-16,384</p></li>
-    /// <li>
-    /// <p>standard: 1-1,024</p></li>
+    /// <li> <p>gp2 and gp3: 1-16,384</p> </li>
+    /// <li> <p>io1: 4-16,384</p> </li>
+    /// <li> <p>st1 and sc1: 125-16,384</p> </li>
+    /// <li> <p>standard: 1-1,024</p> </li>
     /// </ul>
     /// <p>You must specify either <code>SnapshotId</code> or <code>VolumeSize</code>. If you specify both <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size must be equal or greater than the size of the snapshot.</p>
     pub fn set_volume_size(mut self, input: ::std::option::Option<i32>) -> Self {
@@ -212,14 +184,10 @@ impl AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetailsBuilder {
     }
     /// <p>The volume size, in GiBs. The following are the supported volumes sizes for each volume type:</p>
     /// <ul>
-    /// <li>
-    /// <p>gp2 and gp3: 1-16,384</p></li>
-    /// <li>
-    /// <p>io1: 4-16,384</p></li>
-    /// <li>
-    /// <p>st1 and sc1: 125-16,384</p></li>
-    /// <li>
-    /// <p>standard: 1-1,024</p></li>
+    /// <li> <p>gp2 and gp3: 1-16,384</p> </li>
+    /// <li> <p>io1: 4-16,384</p> </li>
+    /// <li> <p>st1 and sc1: 125-16,384</p> </li>
+    /// <li> <p>standard: 1-1,024</p> </li>
     /// </ul>
     /// <p>You must specify either <code>SnapshotId</code> or <code>VolumeSize</code>. If you specify both <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size must be equal or greater than the size of the snapshot.</p>
     pub fn get_volume_size(&self) -> &::std::option::Option<i32> {
@@ -227,18 +195,12 @@ impl AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetailsBuilder {
     }
     /// <p>The volume type. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>gp2</code></p></li>
-    /// <li>
-    /// <p><code>gp3</code></p></li>
-    /// <li>
-    /// <p><code>io1</code></p></li>
-    /// <li>
-    /// <p><code>sc1</code></p></li>
-    /// <li>
-    /// <p><code>st1</code></p></li>
-    /// <li>
-    /// <p><code>standard</code></p></li>
+    /// <li> <p> <code>gp2</code> </p> </li>
+    /// <li> <p> <code>gp3</code> </p> </li>
+    /// <li> <p> <code>io1</code> </p> </li>
+    /// <li> <p> <code>sc1</code> </p> </li>
+    /// <li> <p> <code>st1</code> </p> </li>
+    /// <li> <p> <code>standard</code> </p> </li>
     /// </ul>
     pub fn volume_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_type = ::std::option::Option::Some(input.into());
@@ -246,18 +208,12 @@ impl AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetailsBuilder {
     }
     /// <p>The volume type. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>gp2</code></p></li>
-    /// <li>
-    /// <p><code>gp3</code></p></li>
-    /// <li>
-    /// <p><code>io1</code></p></li>
-    /// <li>
-    /// <p><code>sc1</code></p></li>
-    /// <li>
-    /// <p><code>st1</code></p></li>
-    /// <li>
-    /// <p><code>standard</code></p></li>
+    /// <li> <p> <code>gp2</code> </p> </li>
+    /// <li> <p> <code>gp3</code> </p> </li>
+    /// <li> <p> <code>io1</code> </p> </li>
+    /// <li> <p> <code>sc1</code> </p> </li>
+    /// <li> <p> <code>st1</code> </p> </li>
+    /// <li> <p> <code>standard</code> </p> </li>
     /// </ul>
     pub fn set_volume_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_type = input;
@@ -265,18 +221,12 @@ impl AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetailsBuilder {
     }
     /// <p>The volume type. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>gp2</code></p></li>
-    /// <li>
-    /// <p><code>gp3</code></p></li>
-    /// <li>
-    /// <p><code>io1</code></p></li>
-    /// <li>
-    /// <p><code>sc1</code></p></li>
-    /// <li>
-    /// <p><code>st1</code></p></li>
-    /// <li>
-    /// <p><code>standard</code></p></li>
+    /// <li> <p> <code>gp2</code> </p> </li>
+    /// <li> <p> <code>gp3</code> </p> </li>
+    /// <li> <p> <code>io1</code> </p> </li>
+    /// <li> <p> <code>sc1</code> </p> </li>
+    /// <li> <p> <code>st1</code> </p> </li>
+    /// <li> <p> <code>standard</code> </p> </li>
     /// </ul>
     pub fn get_volume_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.volume_type

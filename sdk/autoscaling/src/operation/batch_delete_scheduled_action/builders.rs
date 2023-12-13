@@ -126,17 +126,17 @@ impl BatchDeleteScheduledActionFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_scheduled_action_names`](Self::set_scheduled_action_names).
     ///
-    /// <p>The names of the scheduled actions to delete. The maximum number allowed is 50.</p>
+    /// <p>The names of the scheduled actions to delete. The maximum number allowed is 50. </p>
     pub fn scheduled_action_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.scheduled_action_names(input.into());
         self
     }
-    /// <p>The names of the scheduled actions to delete. The maximum number allowed is 50.</p>
+    /// <p>The names of the scheduled actions to delete. The maximum number allowed is 50. </p>
     pub fn set_scheduled_action_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_scheduled_action_names(input);
         self
     }
-    /// <p>The names of the scheduled actions to delete. The maximum number allowed is 50.</p>
+    /// <p>The names of the scheduled actions to delete. The maximum number allowed is 50. </p>
     pub fn get_scheduled_action_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_scheduled_action_names()
     }

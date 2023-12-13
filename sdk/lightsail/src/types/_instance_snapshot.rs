@@ -20,7 +20,7 @@ pub struct InstanceSnapshot {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The state the snapshot is in.</p>
     pub state: ::std::option::Option<crate::types::InstanceSnapshotState>,
-    /// <p>The progress of the snapshot.</p><note>
+    /// <p>The progress of the snapshot.</p> <note>
     /// <p>This is populated only for disk snapshots, and is <code>null</code> for instance snapshots.</p>
     /// </note>
     pub progress: ::std::option::Option<::std::string::String>,
@@ -74,7 +74,7 @@ impl InstanceSnapshot {
     pub fn state(&self) -> ::std::option::Option<&crate::types::InstanceSnapshotState> {
         self.state.as_ref()
     }
-    /// <p>The progress of the snapshot.</p><note>
+    /// <p>The progress of the snapshot.</p> <note>
     /// <p>This is populated only for disk snapshots, and is <code>null</code> for instance snapshots.</p>
     /// </note>
     pub fn progress(&self) -> ::std::option::Option<&str> {
@@ -258,21 +258,21 @@ impl InstanceSnapshotBuilder {
     pub fn get_state(&self) -> &::std::option::Option<crate::types::InstanceSnapshotState> {
         &self.state
     }
-    /// <p>The progress of the snapshot.</p><note>
+    /// <p>The progress of the snapshot.</p> <note>
     /// <p>This is populated only for disk snapshots, and is <code>null</code> for instance snapshots.</p>
     /// </note>
     pub fn progress(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.progress = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The progress of the snapshot.</p><note>
+    /// <p>The progress of the snapshot.</p> <note>
     /// <p>This is populated only for disk snapshots, and is <code>null</code> for instance snapshots.</p>
     /// </note>
     pub fn set_progress(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.progress = input;
         self
     }
-    /// <p>The progress of the snapshot.</p><note>
+    /// <p>The progress of the snapshot.</p> <note>
     /// <p>This is populated only for disk snapshots, and is <code>null</code> for instance snapshots.</p>
     /// </note>
     pub fn get_progress(&self) -> &::std::option::Option<::std::string::String> {

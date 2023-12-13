@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CertificateAuthentication {
-    /// <p>The ARN of the client certificate.</p>
+    /// <p>The ARN of the client certificate. </p>
     pub client_root_certificate_chain: ::std::option::Option<::std::string::String>,
 }
 impl CertificateAuthentication {
-    /// <p>The ARN of the client certificate.</p>
+    /// <p>The ARN of the client certificate. </p>
     pub fn client_root_certificate_chain(&self) -> ::std::option::Option<&str> {
         self.client_root_certificate_chain.as_deref()
     }
@@ -27,17 +27,17 @@ pub struct CertificateAuthenticationBuilder {
     pub(crate) client_root_certificate_chain: ::std::option::Option<::std::string::String>,
 }
 impl CertificateAuthenticationBuilder {
-    /// <p>The ARN of the client certificate.</p>
+    /// <p>The ARN of the client certificate. </p>
     pub fn client_root_certificate_chain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_root_certificate_chain = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the client certificate.</p>
+    /// <p>The ARN of the client certificate. </p>
     pub fn set_client_root_certificate_chain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_root_certificate_chain = input;
         self
     }
-    /// <p>The ARN of the client certificate.</p>
+    /// <p>The ARN of the client certificate. </p>
     pub fn get_client_root_certificate_chain(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_root_certificate_chain
     }

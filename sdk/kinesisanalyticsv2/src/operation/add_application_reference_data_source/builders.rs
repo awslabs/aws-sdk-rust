@@ -137,17 +137,17 @@ impl AddApplicationReferenceDataSourceFluentBuilder {
     pub fn get_current_application_version_id(&self) -> &::std::option::Option<i64> {
         self.inner.get_current_application_version_id()
     }
-    /// <p>The reference data source can be an object in your Amazon S3 bucket. Kinesis Data Analytics reads the object and copies the data into the in-application table that is created. You provide an S3 bucket, object key name, and the resulting in-application table that is created.</p>
+    /// <p>The reference data source can be an object in your Amazon S3 bucket. Kinesis Data Analytics reads the object and copies the data into the in-application table that is created. You provide an S3 bucket, object key name, and the resulting in-application table that is created. </p>
     pub fn reference_data_source(mut self, input: crate::types::ReferenceDataSource) -> Self {
         self.inner = self.inner.reference_data_source(input);
         self
     }
-    /// <p>The reference data source can be an object in your Amazon S3 bucket. Kinesis Data Analytics reads the object and copies the data into the in-application table that is created. You provide an S3 bucket, object key name, and the resulting in-application table that is created.</p>
+    /// <p>The reference data source can be an object in your Amazon S3 bucket. Kinesis Data Analytics reads the object and copies the data into the in-application table that is created. You provide an S3 bucket, object key name, and the resulting in-application table that is created. </p>
     pub fn set_reference_data_source(mut self, input: ::std::option::Option<crate::types::ReferenceDataSource>) -> Self {
         self.inner = self.inner.set_reference_data_source(input);
         self
     }
-    /// <p>The reference data source can be an object in your Amazon S3 bucket. Kinesis Data Analytics reads the object and copies the data into the in-application table that is created. You provide an S3 bucket, object key name, and the resulting in-application table that is created.</p>
+    /// <p>The reference data source can be an object in your Amazon S3 bucket. Kinesis Data Analytics reads the object and copies the data into the in-application table that is created. You provide an S3 bucket, object key name, and the resulting in-application table that is created. </p>
     pub fn get_reference_data_source(&self) -> &::std::option::Option<crate::types::ReferenceDataSource> {
         self.inner.get_reference_data_source()
     }

@@ -22,7 +22,7 @@ impl UpdateServerConfigInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateServerConfig`.
 ///
-/// <p>Updates the configuration of the specified server.</p>
+/// <p> Updates the configuration of the specified server. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateServerConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl UpdateServerConfigFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the server.</p>
+    /// <p> The ID of the server. </p>
     pub fn server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.server_id(input.into());
         self
     }
-    /// <p>The ID of the server.</p>
+    /// <p> The ID of the server. </p>
     pub fn set_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_server_id(input);
         self
     }
-    /// <p>The ID of the server.</p>
+    /// <p> The ID of the server. </p>
     pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_server_id()
     }
-    /// <p>The preferred strategy options for the application component. See the response from <code>GetServerStrategies</code>.</p>
+    /// <p> The preferred strategy options for the application component. See the response from <code>GetServerStrategies</code>.</p>
     pub fn strategy_option(mut self, input: crate::types::StrategyOption) -> Self {
         self.inner = self.inner.strategy_option(input);
         self
     }
-    /// <p>The preferred strategy options for the application component. See the response from <code>GetServerStrategies</code>.</p>
+    /// <p> The preferred strategy options for the application component. See the response from <code>GetServerStrategies</code>.</p>
     pub fn set_strategy_option(mut self, input: ::std::option::Option<crate::types::StrategyOption>) -> Self {
         self.inner = self.inner.set_strategy_option(input);
         self
     }
-    /// <p>The preferred strategy options for the application component. See the response from <code>GetServerStrategies</code>.</p>
+    /// <p> The preferred strategy options for the application component. See the response from <code>GetServerStrategies</code>.</p>
     pub fn get_strategy_option(&self) -> &::std::option::Option<crate::types::StrategyOption> {
         self.inner.get_strategy_option()
     }

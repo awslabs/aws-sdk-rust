@@ -22,7 +22,7 @@ impl GetResourcePolicyInputBuilder {
 }
 /// Fluent builder constructing a request to `GetResourcePolicy`.
 ///
-/// <p>Gets a resource policy that is identified by its resource ARN.</p>
+/// <p> Gets a resource policy that is identified by its resource ARN. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetResourcePolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl GetResourcePolicyFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ARN of the resource that is associated with the resource policy.</p>
+    /// <p> The ARN of the resource that is associated with the resource policy. </p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());
         self
     }
-    /// <p>The ARN of the resource that is associated with the resource policy.</p>
+    /// <p> The ARN of the resource that is associated with the resource policy. </p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
-    /// <p>The ARN of the resource that is associated with the resource policy.</p>
+    /// <p> The ARN of the resource that is associated with the resource policy. </p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_arn()
     }

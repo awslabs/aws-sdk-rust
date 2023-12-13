@@ -108,17 +108,17 @@ impl UpdateSiteFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID or the Amazon Resource Name (ARN) of the site.</p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
     pub fn site_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.site_id(input.into());
         self
     }
-    /// <p>The ID or the Amazon Resource Name (ARN) of the site.</p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
     pub fn set_site_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_site_id(input);
         self
     }
-    /// <p>The ID or the Amazon Resource Name (ARN) of the site.</p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
     pub fn get_site_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_site_id()
     }

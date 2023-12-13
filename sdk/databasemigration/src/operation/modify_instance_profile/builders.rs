@@ -22,7 +22,7 @@ impl ModifyInstanceProfileInputBuilder {
 }
 /// Fluent builder constructing a request to `ModifyInstanceProfile`.
 ///
-/// <p>Modifies the specified instance profile using the provided parameters.</p><note>
+/// <p>Modifies the specified instance profile using the provided parameters.</p> <note>
 /// <p>All migration projects associated with the instance profile must be deleted or modified before you can modify the instance profile.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

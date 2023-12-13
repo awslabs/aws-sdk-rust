@@ -7,12 +7,9 @@ pub struct MetricQuery {
     /// <p>The name of a Performance Insights metric to be measured.</p>
     /// <p>Valid values for <code>Metric</code> are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>db.load.avg</code> - A scaled representation of the number of active sessions for the database engine.</p></li>
-    /// <li>
-    /// <p><code>db.sampledload.avg</code> - The raw number of active sessions for the database engine.</p></li>
-    /// <li>
-    /// <p>The counter metrics listed in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS">Performance Insights operating system counters</a> in the <i>Amazon Aurora User Guide</i>.</p></li>
+    /// <li> <p> <code>db.load.avg</code> - A scaled representation of the number of active sessions for the database engine.</p> </li>
+    /// <li> <p> <code>db.sampledload.avg</code> - The raw number of active sessions for the database engine.</p> </li>
+    /// <li> <p>The counter metrics listed in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS">Performance Insights operating system counters</a> in the <i>Amazon Aurora User Guide</i>.</p> </li>
     /// </ul>
     /// <p>If the number of active sessions is less than an internal Performance Insights threshold, <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you can query <code>db.load.avg</code> only.</p>
     pub metric: ::std::string::String,
@@ -20,10 +17,8 @@ pub struct MetricQuery {
     pub group_by: ::std::option::Option<crate::types::DimensionGroup>,
     /// <p>One or more filters to apply in the request. Restrictions:</p>
     /// <ul>
-    /// <li>
-    /// <p>Any number of filters by the same dimension, as specified in the <code>GroupBy</code> parameter.</p></li>
-    /// <li>
-    /// <p>A single filter for any other dimension in this dimension group.</p></li>
+    /// <li> <p>Any number of filters by the same dimension, as specified in the <code>GroupBy</code> parameter.</p> </li>
+    /// <li> <p>A single filter for any other dimension in this dimension group.</p> </li>
     /// </ul>
     pub filter: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -31,12 +26,9 @@ impl MetricQuery {
     /// <p>The name of a Performance Insights metric to be measured.</p>
     /// <p>Valid values for <code>Metric</code> are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>db.load.avg</code> - A scaled representation of the number of active sessions for the database engine.</p></li>
-    /// <li>
-    /// <p><code>db.sampledload.avg</code> - The raw number of active sessions for the database engine.</p></li>
-    /// <li>
-    /// <p>The counter metrics listed in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS">Performance Insights operating system counters</a> in the <i>Amazon Aurora User Guide</i>.</p></li>
+    /// <li> <p> <code>db.load.avg</code> - A scaled representation of the number of active sessions for the database engine.</p> </li>
+    /// <li> <p> <code>db.sampledload.avg</code> - The raw number of active sessions for the database engine.</p> </li>
+    /// <li> <p>The counter metrics listed in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS">Performance Insights operating system counters</a> in the <i>Amazon Aurora User Guide</i>.</p> </li>
     /// </ul>
     /// <p>If the number of active sessions is less than an internal Performance Insights threshold, <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you can query <code>db.load.avg</code> only.</p>
     pub fn metric(&self) -> &str {
@@ -49,10 +41,8 @@ impl MetricQuery {
     }
     /// <p>One or more filters to apply in the request. Restrictions:</p>
     /// <ul>
-    /// <li>
-    /// <p>Any number of filters by the same dimension, as specified in the <code>GroupBy</code> parameter.</p></li>
-    /// <li>
-    /// <p>A single filter for any other dimension in this dimension group.</p></li>
+    /// <li> <p>Any number of filters by the same dimension, as specified in the <code>GroupBy</code> parameter.</p> </li>
+    /// <li> <p>A single filter for any other dimension in this dimension group.</p> </li>
     /// </ul>
     pub fn filter(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.filter.as_ref()
@@ -77,12 +67,9 @@ impl MetricQueryBuilder {
     /// <p>The name of a Performance Insights metric to be measured.</p>
     /// <p>Valid values for <code>Metric</code> are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>db.load.avg</code> - A scaled representation of the number of active sessions for the database engine.</p></li>
-    /// <li>
-    /// <p><code>db.sampledload.avg</code> - The raw number of active sessions for the database engine.</p></li>
-    /// <li>
-    /// <p>The counter metrics listed in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS">Performance Insights operating system counters</a> in the <i>Amazon Aurora User Guide</i>.</p></li>
+    /// <li> <p> <code>db.load.avg</code> - A scaled representation of the number of active sessions for the database engine.</p> </li>
+    /// <li> <p> <code>db.sampledload.avg</code> - The raw number of active sessions for the database engine.</p> </li>
+    /// <li> <p>The counter metrics listed in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS">Performance Insights operating system counters</a> in the <i>Amazon Aurora User Guide</i>.</p> </li>
     /// </ul>
     /// <p>If the number of active sessions is less than an internal Performance Insights threshold, <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you can query <code>db.load.avg</code> only.</p>
     /// This field is required.
@@ -93,12 +80,9 @@ impl MetricQueryBuilder {
     /// <p>The name of a Performance Insights metric to be measured.</p>
     /// <p>Valid values for <code>Metric</code> are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>db.load.avg</code> - A scaled representation of the number of active sessions for the database engine.</p></li>
-    /// <li>
-    /// <p><code>db.sampledload.avg</code> - The raw number of active sessions for the database engine.</p></li>
-    /// <li>
-    /// <p>The counter metrics listed in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS">Performance Insights operating system counters</a> in the <i>Amazon Aurora User Guide</i>.</p></li>
+    /// <li> <p> <code>db.load.avg</code> - A scaled representation of the number of active sessions for the database engine.</p> </li>
+    /// <li> <p> <code>db.sampledload.avg</code> - The raw number of active sessions for the database engine.</p> </li>
+    /// <li> <p>The counter metrics listed in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS">Performance Insights operating system counters</a> in the <i>Amazon Aurora User Guide</i>.</p> </li>
     /// </ul>
     /// <p>If the number of active sessions is less than an internal Performance Insights threshold, <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you can query <code>db.load.avg</code> only.</p>
     pub fn set_metric(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -108,12 +92,9 @@ impl MetricQueryBuilder {
     /// <p>The name of a Performance Insights metric to be measured.</p>
     /// <p>Valid values for <code>Metric</code> are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>db.load.avg</code> - A scaled representation of the number of active sessions for the database engine.</p></li>
-    /// <li>
-    /// <p><code>db.sampledload.avg</code> - The raw number of active sessions for the database engine.</p></li>
-    /// <li>
-    /// <p>The counter metrics listed in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS">Performance Insights operating system counters</a> in the <i>Amazon Aurora User Guide</i>.</p></li>
+    /// <li> <p> <code>db.load.avg</code> - A scaled representation of the number of active sessions for the database engine.</p> </li>
+    /// <li> <p> <code>db.sampledload.avg</code> - The raw number of active sessions for the database engine.</p> </li>
+    /// <li> <p>The counter metrics listed in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS">Performance Insights operating system counters</a> in the <i>Amazon Aurora User Guide</i>.</p> </li>
     /// </ul>
     /// <p>If the number of active sessions is less than an internal Performance Insights threshold, <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you can query <code>db.load.avg</code> only.</p>
     pub fn get_metric(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,10 +120,8 @@ impl MetricQueryBuilder {
     ///
     /// <p>One or more filters to apply in the request. Restrictions:</p>
     /// <ul>
-    /// <li>
-    /// <p>Any number of filters by the same dimension, as specified in the <code>GroupBy</code> parameter.</p></li>
-    /// <li>
-    /// <p>A single filter for any other dimension in this dimension group.</p></li>
+    /// <li> <p>Any number of filters by the same dimension, as specified in the <code>GroupBy</code> parameter.</p> </li>
+    /// <li> <p>A single filter for any other dimension in this dimension group.</p> </li>
     /// </ul>
     pub fn filter(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.filter.unwrap_or_default();
@@ -152,10 +131,8 @@ impl MetricQueryBuilder {
     }
     /// <p>One or more filters to apply in the request. Restrictions:</p>
     /// <ul>
-    /// <li>
-    /// <p>Any number of filters by the same dimension, as specified in the <code>GroupBy</code> parameter.</p></li>
-    /// <li>
-    /// <p>A single filter for any other dimension in this dimension group.</p></li>
+    /// <li> <p>Any number of filters by the same dimension, as specified in the <code>GroupBy</code> parameter.</p> </li>
+    /// <li> <p>A single filter for any other dimension in this dimension group.</p> </li>
     /// </ul>
     pub fn set_filter(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.filter = input;
@@ -163,10 +140,8 @@ impl MetricQueryBuilder {
     }
     /// <p>One or more filters to apply in the request. Restrictions:</p>
     /// <ul>
-    /// <li>
-    /// <p>Any number of filters by the same dimension, as specified in the <code>GroupBy</code> parameter.</p></li>
-    /// <li>
-    /// <p>A single filter for any other dimension in this dimension group.</p></li>
+    /// <li> <p>Any number of filters by the same dimension, as specified in the <code>GroupBy</code> parameter.</p> </li>
+    /// <li> <p>A single filter for any other dimension in this dimension group.</p> </li>
     /// </ul>
     pub fn get_filter(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.filter

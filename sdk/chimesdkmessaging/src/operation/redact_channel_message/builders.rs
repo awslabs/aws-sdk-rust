@@ -22,7 +22,7 @@ impl RedactChannelMessageInputBuilder {
 }
 /// Fluent builder constructing a request to `RedactChannelMessage`.
 ///
-/// <p>Redacts message content, but not metadata. The message exists in the back end, but the action returns null content, and the state shows as redacted.</p><note>
+/// <p>Redacts message content, but not metadata. The message exists in the back end, but the action returns null content, and the state shows as redacted.</p> <note>
 /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

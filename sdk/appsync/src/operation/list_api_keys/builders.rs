@@ -22,7 +22,7 @@ impl ListApiKeysInputBuilder {
 }
 /// Fluent builder constructing a request to `ListApiKeys`.
 ///
-/// <p>Lists the API keys for a given API.</p><note>
+/// <p>Lists the API keys for a given API.</p> <note>
 /// <p>API keys are deleted automatically 60 days after they expire. However, they may still be included in the response until they have actually been deleted. You can safely call <code>DeleteApiKey</code> to manually delete a key before it's automatically deleted.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

@@ -5,21 +5,21 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MobileSdkRelease {
-    /// <p>The release version.</p>
+    /// <p>The release version. </p>
     pub release_version: ::std::option::Option<::std::string::String>,
-    /// <p>The timestamp of the release.</p>
+    /// <p>The timestamp of the release. </p>
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Notes describing the release.</p>
     pub release_notes: ::std::option::Option<::std::string::String>,
-    /// <p>Tags that are associated with the release.</p>
+    /// <p>Tags that are associated with the release. </p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl MobileSdkRelease {
-    /// <p>The release version.</p>
+    /// <p>The release version. </p>
     pub fn release_version(&self) -> ::std::option::Option<&str> {
         self.release_version.as_deref()
     }
-    /// <p>The timestamp of the release.</p>
+    /// <p>The timestamp of the release. </p>
     pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
@@ -27,7 +27,7 @@ impl MobileSdkRelease {
     pub fn release_notes(&self) -> ::std::option::Option<&str> {
         self.release_notes.as_deref()
     }
-    /// <p>Tags that are associated with the release.</p>
+    /// <p>Tags that are associated with the release. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
     pub fn tags(&self) -> &[crate::types::Tag] {
@@ -51,31 +51,31 @@ pub struct MobileSdkReleaseBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl MobileSdkReleaseBuilder {
-    /// <p>The release version.</p>
+    /// <p>The release version. </p>
     pub fn release_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.release_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The release version.</p>
+    /// <p>The release version. </p>
     pub fn set_release_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.release_version = input;
         self
     }
-    /// <p>The release version.</p>
+    /// <p>The release version. </p>
     pub fn get_release_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.release_version
     }
-    /// <p>The timestamp of the release.</p>
+    /// <p>The timestamp of the release. </p>
     pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.timestamp = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The timestamp of the release.</p>
+    /// <p>The timestamp of the release. </p>
     pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.timestamp = input;
         self
     }
-    /// <p>The timestamp of the release.</p>
+    /// <p>The timestamp of the release. </p>
     pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.timestamp
     }
@@ -97,19 +97,19 @@ impl MobileSdkReleaseBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>Tags that are associated with the release.</p>
+    /// <p>Tags that are associated with the release. </p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
         self.tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Tags that are associated with the release.</p>
+    /// <p>Tags that are associated with the release. </p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>Tags that are associated with the release.</p>
+    /// <p>Tags that are associated with the release. </p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }

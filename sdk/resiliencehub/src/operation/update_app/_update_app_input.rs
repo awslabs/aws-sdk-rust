@@ -11,7 +11,7 @@ pub struct UpdateAppInput {
     pub policy_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies if the resiliency policy ARN should be cleared.</p>
     pub clear_resiliency_policy_arn: ::std::option::Option<bool>,
-    /// <p>Assessment execution schedule with 'Daily' or 'Disabled' values.</p>
+    /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
     pub assessment_schedule: ::std::option::Option<crate::types::AppAssessmentScheduleType>,
     /// <p>Defines the roles and credentials that Resilience Hub would use while creating an application, importing its resources, and running an assessment.</p>
     pub permission_model: ::std::option::Option<crate::types::PermissionModel>,
@@ -35,7 +35,7 @@ impl UpdateAppInput {
     pub fn clear_resiliency_policy_arn(&self) -> ::std::option::Option<bool> {
         self.clear_resiliency_policy_arn
     }
-    /// <p>Assessment execution schedule with 'Daily' or 'Disabled' values.</p>
+    /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
     pub fn assessment_schedule(&self) -> ::std::option::Option<&crate::types::AppAssessmentScheduleType> {
         self.assessment_schedule.as_ref()
     }
@@ -127,17 +127,17 @@ impl UpdateAppInputBuilder {
     pub fn get_clear_resiliency_policy_arn(&self) -> &::std::option::Option<bool> {
         &self.clear_resiliency_policy_arn
     }
-    /// <p>Assessment execution schedule with 'Daily' or 'Disabled' values.</p>
+    /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
     pub fn assessment_schedule(mut self, input: crate::types::AppAssessmentScheduleType) -> Self {
         self.assessment_schedule = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Assessment execution schedule with 'Daily' or 'Disabled' values.</p>
+    /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
     pub fn set_assessment_schedule(mut self, input: ::std::option::Option<crate::types::AppAssessmentScheduleType>) -> Self {
         self.assessment_schedule = input;
         self
     }
-    /// <p>Assessment execution schedule with 'Daily' or 'Disabled' values.</p>
+    /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
     pub fn get_assessment_schedule(&self) -> &::std::option::Option<crate::types::AppAssessmentScheduleType> {
         &self.assessment_schedule
     }

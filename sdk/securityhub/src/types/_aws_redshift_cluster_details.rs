@@ -12,16 +12,11 @@ pub struct AwsRedshiftClusterDetails {
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The availability status of the cluster for queries. Possible values are the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Available</code> - The cluster is available for queries.</p></li>
-    /// <li>
-    /// <p><code>Unavailable</code> - The cluster is not available for queries.</p></li>
-    /// <li>
-    /// <p><code>Maintenance</code> - The cluster is intermittently available for queries due to maintenance activities.</p></li>
-    /// <li>
-    /// <p><code>Modifying</code> -The cluster is intermittently available for queries due to changes that modify the cluster.</p></li>
-    /// <li>
-    /// <p><code>Failed</code> - The cluster failed and is not available for queries.</p></li>
+    /// <li> <p> <code>Available</code> - The cluster is available for queries.</p> </li>
+    /// <li> <p> <code>Unavailable</code> - The cluster is not available for queries.</p> </li>
+    /// <li> <p> <code>Maintenance</code> - The cluster is intermittently available for queries due to maintenance activities.</p> </li>
+    /// <li> <p> <code>Modifying</code> -The cluster is intermittently available for queries due to changes that modify the cluster.</p> </li>
+    /// <li> <p> <code>Failed</code> - The cluster failed and is not available for queries.</p> </li>
     /// </ul>
     pub cluster_availability_status: ::std::option::Option<::std::string::String>,
     /// <p>Indicates when the cluster was created.</p>
@@ -42,7 +37,7 @@ pub struct AwsRedshiftClusterDetails {
     /// <p>Information about the destination Region and retention period for the cross-Region snapshot copy.</p>
     pub cluster_snapshot_copy_status: ::std::option::Option<crate::types::AwsRedshiftClusterClusterSnapshotCopyStatus>,
     /// <p>The current status of the cluster.</p>
-    /// <p>Valid values: <code>available</code> | <code>available, prep-for-resize</code> | <code>available, resize-cleanup</code> |<code> cancelling-resize</code> | <code>creating</code> | <code>deleting</code> | <code>final-snapshot</code> | <code>hardware-failure</code> | <code>incompatible-hsm</code> |<code> incompatible-network</code> | <code>incompatible-parameters</code> | <code>incompatible-restore</code> | <code>modifying</code> | <code>paused</code> | <code>rebooting</code> | <code>renaming</code> | <code>resizing</code> | <code>rotating-keys</code> | <code>storage-full</code> | <code>updating-hsm</code></p>
+    /// <p>Valid values: <code>available</code> | <code>available, prep-for-resize</code> | <code>available, resize-cleanup</code> |<code> cancelling-resize</code> | <code>creating</code> | <code>deleting</code> | <code>final-snapshot</code> | <code>hardware-failure</code> | <code>incompatible-hsm</code> |<code> incompatible-network</code> | <code>incompatible-parameters</code> | <code>incompatible-restore</code> | <code>modifying</code> | <code>paused</code> | <code>rebooting</code> | <code>renaming</code> | <code>resizing</code> | <code>rotating-keys</code> | <code>storage-full</code> | <code>updating-hsm</code> </p>
     pub cluster_status: ::std::option::Option<::std::string::String>,
     /// <p>The name of the subnet group that is associated with the cluster. This parameter is valid only when the cluster is in a VPC.</p>
     pub cluster_subnet_group_name: ::std::option::Option<::std::string::String>,
@@ -68,7 +63,7 @@ pub struct AwsRedshiftClusterDetails {
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub expected_next_snapshot_schedule_time: ::std::option::Option<::std::string::String>,
     /// <p>The status of the next expected snapshot.</p>
-    /// <p>Valid values: <code>OnTrack</code> | <code>Pending</code></p>
+    /// <p>Valid values: <code>OnTrack</code> | <code>Pending</code> </p>
     pub expected_next_snapshot_schedule_time_status: ::std::option::Option<::std::string::String>,
     /// <p>Information about whether the Amazon Redshift cluster finished applying any changes to hardware security module (HSM) settings that were specified in a modify cluster command.</p>
     pub hsm_status: ::std::option::Option<crate::types::AwsRedshiftClusterHsmStatus>,
@@ -97,9 +92,11 @@ pub struct AwsRedshiftClusterDetails {
     /// <p>A list of changes to the cluster that are currently pending.</p>
     pub pending_modified_values: ::std::option::Option<crate::types::AwsRedshiftClusterPendingModifiedValues>,
     /// <p>The weekly time range, in Universal Coordinated Time (UTC), during which system maintenance can occur.</p>
-    /// <p>Format: <code> <i><day></day></i>:HH:MM-<i><day></day></i>:HH:MM</code></p>
-    /// <p>For the day values, use <code>mon</code> | <code>tue</code> | <code>wed</code> | <code>thu</code> | <code>fri</code> | <code>sat</code> | <code>sun</code></p>
-    /// <p>For example, <code>sun:09:32-sun:10:02</code></p>
+    /// <p>Format: <code> <i>
+    /// <day></day></i>:HH:MM-<i>
+    /// <day></day></i>:HH:MM</code> </p>
+    /// <p>For the day values, use <code>mon</code> | <code>tue</code> | <code>wed</code> | <code>thu</code> | <code>fri</code> | <code>sat</code> | <code>sun</code> </p>
+    /// <p>For example, <code>sun:09:32-sun:10:02</code> </p>
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>Whether the cluster can be accessed from a public network.</p>
     pub publicly_accessible: ::std::option::Option<bool>,
@@ -110,7 +107,7 @@ pub struct AwsRedshiftClusterDetails {
     /// <p>A unique identifier for the cluster snapshot schedule.</p>
     pub snapshot_schedule_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the cluster snapshot schedule.</p>
-    /// <p>Valid values: <code>MODIFYING</code> | <code>ACTIVE</code> | <code>FAILED</code></p>
+    /// <p>Valid values: <code>MODIFYING</code> | <code>ACTIVE</code> | <code>FAILED</code> </p>
     pub snapshot_schedule_state: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the VPC that the cluster is in, if the cluster is in a VPC.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
@@ -134,16 +131,11 @@ impl AwsRedshiftClusterDetails {
     }
     /// <p>The availability status of the cluster for queries. Possible values are the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Available</code> - The cluster is available for queries.</p></li>
-    /// <li>
-    /// <p><code>Unavailable</code> - The cluster is not available for queries.</p></li>
-    /// <li>
-    /// <p><code>Maintenance</code> - The cluster is intermittently available for queries due to maintenance activities.</p></li>
-    /// <li>
-    /// <p><code>Modifying</code> -The cluster is intermittently available for queries due to changes that modify the cluster.</p></li>
-    /// <li>
-    /// <p><code>Failed</code> - The cluster failed and is not available for queries.</p></li>
+    /// <li> <p> <code>Available</code> - The cluster is available for queries.</p> </li>
+    /// <li> <p> <code>Unavailable</code> - The cluster is not available for queries.</p> </li>
+    /// <li> <p> <code>Maintenance</code> - The cluster is intermittently available for queries due to maintenance activities.</p> </li>
+    /// <li> <p> <code>Modifying</code> -The cluster is intermittently available for queries due to changes that modify the cluster.</p> </li>
+    /// <li> <p> <code>Failed</code> - The cluster failed and is not available for queries.</p> </li>
     /// </ul>
     pub fn cluster_availability_status(&self) -> ::std::option::Option<&str> {
         self.cluster_availability_status.as_deref()
@@ -188,7 +180,7 @@ impl AwsRedshiftClusterDetails {
         self.cluster_snapshot_copy_status.as_ref()
     }
     /// <p>The current status of the cluster.</p>
-    /// <p>Valid values: <code>available</code> | <code>available, prep-for-resize</code> | <code>available, resize-cleanup</code> |<code> cancelling-resize</code> | <code>creating</code> | <code>deleting</code> | <code>final-snapshot</code> | <code>hardware-failure</code> | <code>incompatible-hsm</code> |<code> incompatible-network</code> | <code>incompatible-parameters</code> | <code>incompatible-restore</code> | <code>modifying</code> | <code>paused</code> | <code>rebooting</code> | <code>renaming</code> | <code>resizing</code> | <code>rotating-keys</code> | <code>storage-full</code> | <code>updating-hsm</code></p>
+    /// <p>Valid values: <code>available</code> | <code>available, prep-for-resize</code> | <code>available, resize-cleanup</code> |<code> cancelling-resize</code> | <code>creating</code> | <code>deleting</code> | <code>final-snapshot</code> | <code>hardware-failure</code> | <code>incompatible-hsm</code> |<code> incompatible-network</code> | <code>incompatible-parameters</code> | <code>incompatible-restore</code> | <code>modifying</code> | <code>paused</code> | <code>rebooting</code> | <code>renaming</code> | <code>resizing</code> | <code>rotating-keys</code> | <code>storage-full</code> | <code>updating-hsm</code> </p>
     pub fn cluster_status(&self) -> ::std::option::Option<&str> {
         self.cluster_status.as_deref()
     }
@@ -238,7 +230,7 @@ impl AwsRedshiftClusterDetails {
         self.expected_next_snapshot_schedule_time.as_deref()
     }
     /// <p>The status of the next expected snapshot.</p>
-    /// <p>Valid values: <code>OnTrack</code> | <code>Pending</code></p>
+    /// <p>Valid values: <code>OnTrack</code> | <code>Pending</code> </p>
     pub fn expected_next_snapshot_schedule_time_status(&self) -> ::std::option::Option<&str> {
         self.expected_next_snapshot_schedule_time_status.as_deref()
     }
@@ -295,9 +287,11 @@ impl AwsRedshiftClusterDetails {
         self.pending_modified_values.as_ref()
     }
     /// <p>The weekly time range, in Universal Coordinated Time (UTC), during which system maintenance can occur.</p>
-    /// <p>Format: <code> <i><day></day></i>:HH:MM-<i><day></day></i>:HH:MM</code></p>
-    /// <p>For the day values, use <code>mon</code> | <code>tue</code> | <code>wed</code> | <code>thu</code> | <code>fri</code> | <code>sat</code> | <code>sun</code></p>
-    /// <p>For example, <code>sun:09:32-sun:10:02</code></p>
+    /// <p>Format: <code> <i>
+    /// <day></day></i>:HH:MM-<i>
+    /// <day></day></i>:HH:MM</code> </p>
+    /// <p>For the day values, use <code>mon</code> | <code>tue</code> | <code>wed</code> | <code>thu</code> | <code>fri</code> | <code>sat</code> | <code>sun</code> </p>
+    /// <p>For example, <code>sun:09:32-sun:10:02</code> </p>
     pub fn preferred_maintenance_window(&self) -> ::std::option::Option<&str> {
         self.preferred_maintenance_window.as_deref()
     }
@@ -318,7 +312,7 @@ impl AwsRedshiftClusterDetails {
         self.snapshot_schedule_identifier.as_deref()
     }
     /// <p>The current state of the cluster snapshot schedule.</p>
-    /// <p>Valid values: <code>MODIFYING</code> | <code>ACTIVE</code> | <code>FAILED</code></p>
+    /// <p>Valid values: <code>MODIFYING</code> | <code>ACTIVE</code> | <code>FAILED</code> </p>
     pub fn snapshot_schedule_state(&self) -> ::std::option::Option<&str> {
         self.snapshot_schedule_state.as_deref()
     }
@@ -438,16 +432,11 @@ impl AwsRedshiftClusterDetailsBuilder {
     }
     /// <p>The availability status of the cluster for queries. Possible values are the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Available</code> - The cluster is available for queries.</p></li>
-    /// <li>
-    /// <p><code>Unavailable</code> - The cluster is not available for queries.</p></li>
-    /// <li>
-    /// <p><code>Maintenance</code> - The cluster is intermittently available for queries due to maintenance activities.</p></li>
-    /// <li>
-    /// <p><code>Modifying</code> -The cluster is intermittently available for queries due to changes that modify the cluster.</p></li>
-    /// <li>
-    /// <p><code>Failed</code> - The cluster failed and is not available for queries.</p></li>
+    /// <li> <p> <code>Available</code> - The cluster is available for queries.</p> </li>
+    /// <li> <p> <code>Unavailable</code> - The cluster is not available for queries.</p> </li>
+    /// <li> <p> <code>Maintenance</code> - The cluster is intermittently available for queries due to maintenance activities.</p> </li>
+    /// <li> <p> <code>Modifying</code> -The cluster is intermittently available for queries due to changes that modify the cluster.</p> </li>
+    /// <li> <p> <code>Failed</code> - The cluster failed and is not available for queries.</p> </li>
     /// </ul>
     pub fn cluster_availability_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_availability_status = ::std::option::Option::Some(input.into());
@@ -455,16 +444,11 @@ impl AwsRedshiftClusterDetailsBuilder {
     }
     /// <p>The availability status of the cluster for queries. Possible values are the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Available</code> - The cluster is available for queries.</p></li>
-    /// <li>
-    /// <p><code>Unavailable</code> - The cluster is not available for queries.</p></li>
-    /// <li>
-    /// <p><code>Maintenance</code> - The cluster is intermittently available for queries due to maintenance activities.</p></li>
-    /// <li>
-    /// <p><code>Modifying</code> -The cluster is intermittently available for queries due to changes that modify the cluster.</p></li>
-    /// <li>
-    /// <p><code>Failed</code> - The cluster failed and is not available for queries.</p></li>
+    /// <li> <p> <code>Available</code> - The cluster is available for queries.</p> </li>
+    /// <li> <p> <code>Unavailable</code> - The cluster is not available for queries.</p> </li>
+    /// <li> <p> <code>Maintenance</code> - The cluster is intermittently available for queries due to maintenance activities.</p> </li>
+    /// <li> <p> <code>Modifying</code> -The cluster is intermittently available for queries due to changes that modify the cluster.</p> </li>
+    /// <li> <p> <code>Failed</code> - The cluster failed and is not available for queries.</p> </li>
     /// </ul>
     pub fn set_cluster_availability_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_availability_status = input;
@@ -472,16 +456,11 @@ impl AwsRedshiftClusterDetailsBuilder {
     }
     /// <p>The availability status of the cluster for queries. Possible values are the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Available</code> - The cluster is available for queries.</p></li>
-    /// <li>
-    /// <p><code>Unavailable</code> - The cluster is not available for queries.</p></li>
-    /// <li>
-    /// <p><code>Maintenance</code> - The cluster is intermittently available for queries due to maintenance activities.</p></li>
-    /// <li>
-    /// <p><code>Modifying</code> -The cluster is intermittently available for queries due to changes that modify the cluster.</p></li>
-    /// <li>
-    /// <p><code>Failed</code> - The cluster failed and is not available for queries.</p></li>
+    /// <li> <p> <code>Available</code> - The cluster is available for queries.</p> </li>
+    /// <li> <p> <code>Unavailable</code> - The cluster is not available for queries.</p> </li>
+    /// <li> <p> <code>Maintenance</code> - The cluster is intermittently available for queries due to maintenance activities.</p> </li>
+    /// <li> <p> <code>Modifying</code> -The cluster is intermittently available for queries due to changes that modify the cluster.</p> </li>
+    /// <li> <p> <code>Failed</code> - The cluster failed and is not available for queries.</p> </li>
     /// </ul>
     pub fn get_cluster_availability_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_availability_status
@@ -629,19 +608,19 @@ impl AwsRedshiftClusterDetailsBuilder {
         &self.cluster_snapshot_copy_status
     }
     /// <p>The current status of the cluster.</p>
-    /// <p>Valid values: <code>available</code> | <code>available, prep-for-resize</code> | <code>available, resize-cleanup</code> |<code> cancelling-resize</code> | <code>creating</code> | <code>deleting</code> | <code>final-snapshot</code> | <code>hardware-failure</code> | <code>incompatible-hsm</code> |<code> incompatible-network</code> | <code>incompatible-parameters</code> | <code>incompatible-restore</code> | <code>modifying</code> | <code>paused</code> | <code>rebooting</code> | <code>renaming</code> | <code>resizing</code> | <code>rotating-keys</code> | <code>storage-full</code> | <code>updating-hsm</code></p>
+    /// <p>Valid values: <code>available</code> | <code>available, prep-for-resize</code> | <code>available, resize-cleanup</code> |<code> cancelling-resize</code> | <code>creating</code> | <code>deleting</code> | <code>final-snapshot</code> | <code>hardware-failure</code> | <code>incompatible-hsm</code> |<code> incompatible-network</code> | <code>incompatible-parameters</code> | <code>incompatible-restore</code> | <code>modifying</code> | <code>paused</code> | <code>rebooting</code> | <code>renaming</code> | <code>resizing</code> | <code>rotating-keys</code> | <code>storage-full</code> | <code>updating-hsm</code> </p>
     pub fn cluster_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The current status of the cluster.</p>
-    /// <p>Valid values: <code>available</code> | <code>available, prep-for-resize</code> | <code>available, resize-cleanup</code> |<code> cancelling-resize</code> | <code>creating</code> | <code>deleting</code> | <code>final-snapshot</code> | <code>hardware-failure</code> | <code>incompatible-hsm</code> |<code> incompatible-network</code> | <code>incompatible-parameters</code> | <code>incompatible-restore</code> | <code>modifying</code> | <code>paused</code> | <code>rebooting</code> | <code>renaming</code> | <code>resizing</code> | <code>rotating-keys</code> | <code>storage-full</code> | <code>updating-hsm</code></p>
+    /// <p>Valid values: <code>available</code> | <code>available, prep-for-resize</code> | <code>available, resize-cleanup</code> |<code> cancelling-resize</code> | <code>creating</code> | <code>deleting</code> | <code>final-snapshot</code> | <code>hardware-failure</code> | <code>incompatible-hsm</code> |<code> incompatible-network</code> | <code>incompatible-parameters</code> | <code>incompatible-restore</code> | <code>modifying</code> | <code>paused</code> | <code>rebooting</code> | <code>renaming</code> | <code>resizing</code> | <code>rotating-keys</code> | <code>storage-full</code> | <code>updating-hsm</code> </p>
     pub fn set_cluster_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_status = input;
         self
     }
     /// <p>The current status of the cluster.</p>
-    /// <p>Valid values: <code>available</code> | <code>available, prep-for-resize</code> | <code>available, resize-cleanup</code> |<code> cancelling-resize</code> | <code>creating</code> | <code>deleting</code> | <code>final-snapshot</code> | <code>hardware-failure</code> | <code>incompatible-hsm</code> |<code> incompatible-network</code> | <code>incompatible-parameters</code> | <code>incompatible-restore</code> | <code>modifying</code> | <code>paused</code> | <code>rebooting</code> | <code>renaming</code> | <code>resizing</code> | <code>rotating-keys</code> | <code>storage-full</code> | <code>updating-hsm</code></p>
+    /// <p>Valid values: <code>available</code> | <code>available, prep-for-resize</code> | <code>available, resize-cleanup</code> |<code> cancelling-resize</code> | <code>creating</code> | <code>deleting</code> | <code>final-snapshot</code> | <code>hardware-failure</code> | <code>incompatible-hsm</code> |<code> incompatible-network</code> | <code>incompatible-parameters</code> | <code>incompatible-restore</code> | <code>modifying</code> | <code>paused</code> | <code>rebooting</code> | <code>renaming</code> | <code>resizing</code> | <code>rotating-keys</code> | <code>storage-full</code> | <code>updating-hsm</code> </p>
     pub fn get_cluster_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_status
     }
@@ -806,19 +785,19 @@ impl AwsRedshiftClusterDetailsBuilder {
         &self.expected_next_snapshot_schedule_time
     }
     /// <p>The status of the next expected snapshot.</p>
-    /// <p>Valid values: <code>OnTrack</code> | <code>Pending</code></p>
+    /// <p>Valid values: <code>OnTrack</code> | <code>Pending</code> </p>
     pub fn expected_next_snapshot_schedule_time_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expected_next_snapshot_schedule_time_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the next expected snapshot.</p>
-    /// <p>Valid values: <code>OnTrack</code> | <code>Pending</code></p>
+    /// <p>Valid values: <code>OnTrack</code> | <code>Pending</code> </p>
     pub fn set_expected_next_snapshot_schedule_time_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expected_next_snapshot_schedule_time_status = input;
         self
     }
     /// <p>The status of the next expected snapshot.</p>
-    /// <p>Valid values: <code>OnTrack</code> | <code>Pending</code></p>
+    /// <p>Valid values: <code>OnTrack</code> | <code>Pending</code> </p>
     pub fn get_expected_next_snapshot_schedule_time_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.expected_next_snapshot_schedule_time_status
     }
@@ -1001,25 +980,31 @@ impl AwsRedshiftClusterDetailsBuilder {
         &self.pending_modified_values
     }
     /// <p>The weekly time range, in Universal Coordinated Time (UTC), during which system maintenance can occur.</p>
-    /// <p>Format: <code> <i><day></day></i>:HH:MM-<i><day></day></i>:HH:MM</code></p>
-    /// <p>For the day values, use <code>mon</code> | <code>tue</code> | <code>wed</code> | <code>thu</code> | <code>fri</code> | <code>sat</code> | <code>sun</code></p>
-    /// <p>For example, <code>sun:09:32-sun:10:02</code></p>
+    /// <p>Format: <code> <i>
+    /// <day></day></i>:HH:MM-<i>
+    /// <day></day></i>:HH:MM</code> </p>
+    /// <p>For the day values, use <code>mon</code> | <code>tue</code> | <code>wed</code> | <code>thu</code> | <code>fri</code> | <code>sat</code> | <code>sun</code> </p>
+    /// <p>For example, <code>sun:09:32-sun:10:02</code> </p>
     pub fn preferred_maintenance_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_maintenance_window = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The weekly time range, in Universal Coordinated Time (UTC), during which system maintenance can occur.</p>
-    /// <p>Format: <code> <i><day></day></i>:HH:MM-<i><day></day></i>:HH:MM</code></p>
-    /// <p>For the day values, use <code>mon</code> | <code>tue</code> | <code>wed</code> | <code>thu</code> | <code>fri</code> | <code>sat</code> | <code>sun</code></p>
-    /// <p>For example, <code>sun:09:32-sun:10:02</code></p>
+    /// <p>Format: <code> <i>
+    /// <day></day></i>:HH:MM-<i>
+    /// <day></day></i>:HH:MM</code> </p>
+    /// <p>For the day values, use <code>mon</code> | <code>tue</code> | <code>wed</code> | <code>thu</code> | <code>fri</code> | <code>sat</code> | <code>sun</code> </p>
+    /// <p>For example, <code>sun:09:32-sun:10:02</code> </p>
     pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_maintenance_window = input;
         self
     }
     /// <p>The weekly time range, in Universal Coordinated Time (UTC), during which system maintenance can occur.</p>
-    /// <p>Format: <code> <i><day></day></i>:HH:MM-<i><day></day></i>:HH:MM</code></p>
-    /// <p>For the day values, use <code>mon</code> | <code>tue</code> | <code>wed</code> | <code>thu</code> | <code>fri</code> | <code>sat</code> | <code>sun</code></p>
-    /// <p>For example, <code>sun:09:32-sun:10:02</code></p>
+    /// <p>Format: <code> <i>
+    /// <day></day></i>:HH:MM-<i>
+    /// <day></day></i>:HH:MM</code> </p>
+    /// <p>For the day values, use <code>mon</code> | <code>tue</code> | <code>wed</code> | <code>thu</code> | <code>fri</code> | <code>sat</code> | <code>sun</code> </p>
+    /// <p>For example, <code>sun:09:32-sun:10:02</code> </p>
     pub fn get_preferred_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
         &self.preferred_maintenance_window
     }
@@ -1080,19 +1065,19 @@ impl AwsRedshiftClusterDetailsBuilder {
         &self.snapshot_schedule_identifier
     }
     /// <p>The current state of the cluster snapshot schedule.</p>
-    /// <p>Valid values: <code>MODIFYING</code> | <code>ACTIVE</code> | <code>FAILED</code></p>
+    /// <p>Valid values: <code>MODIFYING</code> | <code>ACTIVE</code> | <code>FAILED</code> </p>
     pub fn snapshot_schedule_state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_schedule_state = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The current state of the cluster snapshot schedule.</p>
-    /// <p>Valid values: <code>MODIFYING</code> | <code>ACTIVE</code> | <code>FAILED</code></p>
+    /// <p>Valid values: <code>MODIFYING</code> | <code>ACTIVE</code> | <code>FAILED</code> </p>
     pub fn set_snapshot_schedule_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_schedule_state = input;
         self
     }
     /// <p>The current state of the cluster snapshot schedule.</p>
-    /// <p>Valid values: <code>MODIFYING</code> | <code>ACTIVE</code> | <code>FAILED</code></p>
+    /// <p>Valid values: <code>MODIFYING</code> | <code>ACTIVE</code> | <code>FAILED</code> </p>
     pub fn get_snapshot_schedule_state(&self) -> &::std::option::Option<::std::string::String> {
         &self.snapshot_schedule_state
     }

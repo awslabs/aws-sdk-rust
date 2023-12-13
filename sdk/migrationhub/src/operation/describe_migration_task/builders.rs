@@ -108,31 +108,31 @@ impl DescribeMigrationTaskFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the ProgressUpdateStream.</p>
+    /// <p>The name of the ProgressUpdateStream. </p>
     pub fn progress_update_stream(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.progress_update_stream(input.into());
         self
     }
-    /// <p>The name of the ProgressUpdateStream.</p>
+    /// <p>The name of the ProgressUpdateStream. </p>
     pub fn set_progress_update_stream(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_progress_update_stream(input);
         self
     }
-    /// <p>The name of the ProgressUpdateStream.</p>
+    /// <p>The name of the ProgressUpdateStream. </p>
     pub fn get_progress_update_stream(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_progress_update_stream()
     }
-    /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i></p>
+    /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>
     pub fn migration_task_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.migration_task_name(input.into());
         self
     }
-    /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i></p>
+    /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>
     pub fn set_migration_task_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_migration_task_name(input);
         self
     }
-    /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i></p>
+    /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>
     pub fn get_migration_task_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_migration_task_name()
     }

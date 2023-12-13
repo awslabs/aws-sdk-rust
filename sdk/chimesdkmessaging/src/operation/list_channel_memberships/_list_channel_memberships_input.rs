@@ -13,7 +13,7 @@ pub struct ListChannelMembershipsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub chime_bearer: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the SubChannel in the request.</p><note>
+    /// <p>The ID of the SubChannel in the request.</p> <note>
     /// <p>Only required when listing a user's memberships in a particular sub-channel of an elastic channel.</p>
     /// </note>
     pub sub_channel_id: ::std::option::Option<::std::string::String>,
@@ -39,7 +39,7 @@ impl ListChannelMembershipsInput {
     pub fn chime_bearer(&self) -> ::std::option::Option<&str> {
         self.chime_bearer.as_deref()
     }
-    /// <p>The ID of the SubChannel in the request.</p><note>
+    /// <p>The ID of the SubChannel in the request.</p> <note>
     /// <p>Only required when listing a user's memberships in a particular sub-channel of an elastic channel.</p>
     /// </note>
     pub fn sub_channel_id(&self) -> ::std::option::Option<&str> {
@@ -149,21 +149,21 @@ impl ListChannelMembershipsInputBuilder {
     pub fn get_chime_bearer(&self) -> &::std::option::Option<::std::string::String> {
         &self.chime_bearer
     }
-    /// <p>The ID of the SubChannel in the request.</p><note>
+    /// <p>The ID of the SubChannel in the request.</p> <note>
     /// <p>Only required when listing a user's memberships in a particular sub-channel of an elastic channel.</p>
     /// </note>
     pub fn sub_channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sub_channel_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the SubChannel in the request.</p><note>
+    /// <p>The ID of the SubChannel in the request.</p> <note>
     /// <p>Only required when listing a user's memberships in a particular sub-channel of an elastic channel.</p>
     /// </note>
     pub fn set_sub_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sub_channel_id = input;
         self
     }
-    /// <p>The ID of the SubChannel in the request.</p><note>
+    /// <p>The ID of the SubChannel in the request.</p> <note>
     /// <p>Only required when listing a user's memberships in a particular sub-channel of an elastic channel.</p>
     /// </note>
     pub fn get_sub_channel_id(&self) -> &::std::option::Option<::std::string::String> {

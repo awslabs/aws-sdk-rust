@@ -7,7 +7,7 @@ pub struct UpdateAuthorizerInput {
     pub authorizer_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the authorizer's Lambda function.</p>
     pub authorizer_function_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The key used to extract the token from the HTTP headers.</p>
+    /// <p>The key used to extract the token from the HTTP headers. </p>
     pub token_key_name: ::std::option::Option<::std::string::String>,
     /// <p>The public keys used to verify the token signature.</p>
     pub token_signing_public_keys: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -25,7 +25,7 @@ impl UpdateAuthorizerInput {
     pub fn authorizer_function_arn(&self) -> ::std::option::Option<&str> {
         self.authorizer_function_arn.as_deref()
     }
-    /// <p>The key used to extract the token from the HTTP headers.</p>
+    /// <p>The key used to extract the token from the HTTP headers. </p>
     pub fn token_key_name(&self) -> ::std::option::Option<&str> {
         self.token_key_name.as_deref()
     }
@@ -90,17 +90,17 @@ impl UpdateAuthorizerInputBuilder {
     pub fn get_authorizer_function_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.authorizer_function_arn
     }
-    /// <p>The key used to extract the token from the HTTP headers.</p>
+    /// <p>The key used to extract the token from the HTTP headers. </p>
     pub fn token_key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.token_key_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The key used to extract the token from the HTTP headers.</p>
+    /// <p>The key used to extract the token from the HTTP headers. </p>
     pub fn set_token_key_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.token_key_name = input;
         self
     }
-    /// <p>The key used to extract the token from the HTTP headers.</p>
+    /// <p>The key used to extract the token from the HTTP headers. </p>
     pub fn get_token_key_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.token_key_name
     }

@@ -22,7 +22,7 @@ impl DeleteControlInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteControl`.
 ///
-/// <p>Deletes a custom control in Audit Manager.</p><important>
+/// <p> Deletes a custom control in Audit Manager. </p> <important>
 /// <p>When you invoke this operation, the custom control is deleted from any frameworks or assessments that it’s currently part of. As a result, Audit Manager will stop collecting evidence for that custom control in all of your assessments. This includes assessments that you previously created before you deleted the custom control.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -110,17 +110,17 @@ impl DeleteControlFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier for the control.</p>
+    /// <p> The unique identifier for the control. </p>
     pub fn control_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.control_id(input.into());
         self
     }
-    /// <p>The unique identifier for the control.</p>
+    /// <p> The unique identifier for the control. </p>
     pub fn set_control_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_control_id(input);
         self
     }
-    /// <p>The unique identifier for the control.</p>
+    /// <p> The unique identifier for the control. </p>
     pub fn get_control_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_control_id()
     }

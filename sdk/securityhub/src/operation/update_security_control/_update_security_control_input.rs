@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSecurityControlInput {
-    /// <p>The Amazon Resource Name (ARN) or ID of the control to update.</p>
+    /// <p> The Amazon Resource Name (ARN) or ID of the control to update. </p>
     pub security_control_id: ::std::option::Option<::std::string::String>,
-    /// <p>An object that specifies which security control parameters to update.</p>
+    /// <p> An object that specifies which security control parameters to update. </p>
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ParameterConfiguration>>,
-    /// <p>The most recent reason for updating the properties of the security control. This field accepts alphanumeric characters in addition to white spaces, dashes, and underscores.</p>
+    /// <p> The most recent reason for updating the properties of the security control. This field accepts alphanumeric characters in addition to white spaces, dashes, and underscores. </p>
     pub last_update_reason: ::std::option::Option<::std::string::String>,
 }
 impl UpdateSecurityControlInput {
-    /// <p>The Amazon Resource Name (ARN) or ID of the control to update.</p>
+    /// <p> The Amazon Resource Name (ARN) or ID of the control to update. </p>
     pub fn security_control_id(&self) -> ::std::option::Option<&str> {
         self.security_control_id.as_deref()
     }
-    /// <p>An object that specifies which security control parameters to update.</p>
+    /// <p> An object that specifies which security control parameters to update. </p>
     pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ParameterConfiguration>> {
         self.parameters.as_ref()
     }
-    /// <p>The most recent reason for updating the properties of the security control. This field accepts alphanumeric characters in addition to white spaces, dashes, and underscores.</p>
+    /// <p> The most recent reason for updating the properties of the security control. This field accepts alphanumeric characters in addition to white spaces, dashes, and underscores. </p>
     pub fn last_update_reason(&self) -> ::std::option::Option<&str> {
         self.last_update_reason.as_deref()
     }
@@ -40,18 +40,18 @@ pub struct UpdateSecurityControlInputBuilder {
     pub(crate) last_update_reason: ::std::option::Option<::std::string::String>,
 }
 impl UpdateSecurityControlInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) or ID of the control to update.</p>
+    /// <p> The Amazon Resource Name (ARN) or ID of the control to update. </p>
     /// This field is required.
     pub fn security_control_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_control_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) or ID of the control to update.</p>
+    /// <p> The Amazon Resource Name (ARN) or ID of the control to update. </p>
     pub fn set_security_control_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.security_control_id = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) or ID of the control to update.</p>
+    /// <p> The Amazon Resource Name (ARN) or ID of the control to update. </p>
     pub fn get_security_control_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.security_control_id
     }
@@ -59,14 +59,14 @@ impl UpdateSecurityControlInputBuilder {
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
-    /// <p>An object that specifies which security control parameters to update.</p>
+    /// <p> An object that specifies which security control parameters to update. </p>
     pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ParameterConfiguration) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.parameters = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>An object that specifies which security control parameters to update.</p>
+    /// <p> An object that specifies which security control parameters to update. </p>
     pub fn set_parameters(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ParameterConfiguration>>,
@@ -74,21 +74,21 @@ impl UpdateSecurityControlInputBuilder {
         self.parameters = input;
         self
     }
-    /// <p>An object that specifies which security control parameters to update.</p>
+    /// <p> An object that specifies which security control parameters to update. </p>
     pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ParameterConfiguration>> {
         &self.parameters
     }
-    /// <p>The most recent reason for updating the properties of the security control. This field accepts alphanumeric characters in addition to white spaces, dashes, and underscores.</p>
+    /// <p> The most recent reason for updating the properties of the security control. This field accepts alphanumeric characters in addition to white spaces, dashes, and underscores. </p>
     pub fn last_update_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_update_reason = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The most recent reason for updating the properties of the security control. This field accepts alphanumeric characters in addition to white spaces, dashes, and underscores.</p>
+    /// <p> The most recent reason for updating the properties of the security control. This field accepts alphanumeric characters in addition to white spaces, dashes, and underscores. </p>
     pub fn set_last_update_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_update_reason = input;
         self
     }
-    /// <p>The most recent reason for updating the properties of the security control. This field accepts alphanumeric characters in addition to white spaces, dashes, and underscores.</p>
+    /// <p> The most recent reason for updating the properties of the security control. This field accepts alphanumeric characters in addition to white spaces, dashes, and underscores. </p>
     pub fn get_last_update_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_update_reason
     }

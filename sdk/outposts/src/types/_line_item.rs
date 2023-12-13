@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LineItem {
-    /// <p>The ID of the catalog item.</p>
+    /// <p> The ID of the catalog item.</p>
     pub catalog_item_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the line item.</p>
     pub line_item_id: ::std::option::Option<::std::string::String>,
@@ -12,9 +12,9 @@ pub struct LineItem {
     pub quantity: ::std::option::Option<i32>,
     /// <p>The status of the line item.</p>
     pub status: ::std::option::Option<crate::types::LineItemStatus>,
-    /// <p>Information about a line item shipment.</p>
+    /// <p> Information about a line item shipment. </p>
     pub shipment_information: ::std::option::Option<crate::types::ShipmentInformation>,
-    /// <p>Information about assets.</p>
+    /// <p> Information about assets. </p>
     pub asset_information_list: ::std::option::Option<::std::vec::Vec<crate::types::LineItemAssetInformation>>,
     /// <p>The ID of the previous line item.</p>
     pub previous_line_item_id: ::std::option::Option<::std::string::String>,
@@ -22,7 +22,7 @@ pub struct LineItem {
     pub previous_order_id: ::std::option::Option<::std::string::String>,
 }
 impl LineItem {
-    /// <p>The ID of the catalog item.</p>
+    /// <p> The ID of the catalog item.</p>
     pub fn catalog_item_id(&self) -> ::std::option::Option<&str> {
         self.catalog_item_id.as_deref()
     }
@@ -38,11 +38,11 @@ impl LineItem {
     pub fn status(&self) -> ::std::option::Option<&crate::types::LineItemStatus> {
         self.status.as_ref()
     }
-    /// <p>Information about a line item shipment.</p>
+    /// <p> Information about a line item shipment. </p>
     pub fn shipment_information(&self) -> ::std::option::Option<&crate::types::ShipmentInformation> {
         self.shipment_information.as_ref()
     }
-    /// <p>Information about assets.</p>
+    /// <p> Information about assets. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.asset_information_list.is_none()`.
     pub fn asset_information_list(&self) -> &[crate::types::LineItemAssetInformation] {
@@ -78,17 +78,17 @@ pub struct LineItemBuilder {
     pub(crate) previous_order_id: ::std::option::Option<::std::string::String>,
 }
 impl LineItemBuilder {
-    /// <p>The ID of the catalog item.</p>
+    /// <p> The ID of the catalog item.</p>
     pub fn catalog_item_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.catalog_item_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the catalog item.</p>
+    /// <p> The ID of the catalog item.</p>
     pub fn set_catalog_item_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.catalog_item_id = input;
         self
     }
-    /// <p>The ID of the catalog item.</p>
+    /// <p> The ID of the catalog item.</p>
     pub fn get_catalog_item_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.catalog_item_id
     }
@@ -134,17 +134,17 @@ impl LineItemBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::LineItemStatus> {
         &self.status
     }
-    /// <p>Information about a line item shipment.</p>
+    /// <p> Information about a line item shipment. </p>
     pub fn shipment_information(mut self, input: crate::types::ShipmentInformation) -> Self {
         self.shipment_information = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Information about a line item shipment.</p>
+    /// <p> Information about a line item shipment. </p>
     pub fn set_shipment_information(mut self, input: ::std::option::Option<crate::types::ShipmentInformation>) -> Self {
         self.shipment_information = input;
         self
     }
-    /// <p>Information about a line item shipment.</p>
+    /// <p> Information about a line item shipment. </p>
     pub fn get_shipment_information(&self) -> &::std::option::Option<crate::types::ShipmentInformation> {
         &self.shipment_information
     }
@@ -152,19 +152,19 @@ impl LineItemBuilder {
     ///
     /// To override the contents of this collection use [`set_asset_information_list`](Self::set_asset_information_list).
     ///
-    /// <p>Information about assets.</p>
+    /// <p> Information about assets. </p>
     pub fn asset_information_list(mut self, input: crate::types::LineItemAssetInformation) -> Self {
         let mut v = self.asset_information_list.unwrap_or_default();
         v.push(input);
         self.asset_information_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Information about assets.</p>
+    /// <p> Information about assets. </p>
     pub fn set_asset_information_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LineItemAssetInformation>>) -> Self {
         self.asset_information_list = input;
         self
     }
-    /// <p>Information about assets.</p>
+    /// <p> Information about assets. </p>
     pub fn get_asset_information_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LineItemAssetInformation>> {
         &self.asset_information_list
     }

@@ -3,43 +3,34 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateKxVolumeOutput {
-    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume.</p>
+    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume. </p>
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the volume.</p>
     pub volume_name: ::std::option::Option<::std::string::String>,
-    /// <p>The type of file system volume. Currently, FinSpace only supports <code>NAS_1</code> volume type.</p>
+    /// <p> The type of file system volume. Currently, FinSpace only supports <code>NAS_1</code> volume type. </p>
     pub volume_type: ::std::option::Option<crate::types::KxVolumeType>,
-    /// <p>The ARN identifier of the volume.</p>
+    /// <p> The ARN identifier of the volume. </p>
     pub volume_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the configuration for the Network attached storage (NAS_1) file system volume.</p>
+    /// <p> Specifies the configuration for the Network attached storage (NAS_1) file system volume.</p>
     pub nas1_configuration: ::std::option::Option<crate::types::KxNas1Configuration>,
     /// <p>The status of volume creation.</p>
     /// <ul>
-    /// <li>
-    /// <p>CREATING – The volume creation is in progress.</p></li>
-    /// <li>
-    /// <p>CREATE_FAILED – The volume creation has failed.</p></li>
-    /// <li>
-    /// <p>ACTIVE – The volume is active.</p></li>
-    /// <li>
-    /// <p>UPDATING – The volume is in the process of being updated.</p></li>
-    /// <li>
-    /// <p>UPDATE_FAILED – The update action failed.</p></li>
-    /// <li>
-    /// <p>UPDATED – The volume is successfully updated.</p></li>
-    /// <li>
-    /// <p>DELETING – The volume is in the process of being deleted.</p></li>
-    /// <li>
-    /// <p>DELETE_FAILED – The system failed to delete the volume.</p></li>
-    /// <li>
-    /// <p>DELETED – The volume is successfully deleted.</p></li>
+    /// <li> <p>CREATING – The volume creation is in progress.</p> </li>
+    /// <li> <p>CREATE_FAILED – The volume creation has failed.</p> </li>
+    /// <li> <p>ACTIVE – The volume is active.</p> </li>
+    /// <li> <p>UPDATING – The volume is in the process of being updated.</p> </li>
+    /// <li> <p>UPDATE_FAILED – The update action failed.</p> </li>
+    /// <li> <p>UPDATED – The volume is successfully updated.</p> </li>
+    /// <li> <p>DELETING – The volume is in the process of being deleted.</p> </li>
+    /// <li> <p>DELETE_FAILED – The system failed to delete the volume.</p> </li>
+    /// <li> <p>DELETED – The volume is successfully deleted.</p> </li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::KxVolumeStatus>,
-    /// <p>The error message when a failed state occurs.</p>
+    /// <p>The error message when a failed state occurs. </p>
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>The number of availability zones you want to assign per cluster. Currently, FinSpace only support <code>SINGLE</code> for volumes.</p>
     pub az_mode: ::std::option::Option<crate::types::KxAzMode>,
-    /// <p>A description of the volume.</p>
+    /// <p> A description of the volume. </p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the availability zones.</p>
     pub availability_zone_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -48,7 +39,7 @@ pub struct CreateKxVolumeOutput {
     _request_id: Option<String>,
 }
 impl CreateKxVolumeOutput {
-    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume.</p>
+    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume. </p>
     pub fn environment_id(&self) -> ::std::option::Option<&str> {
         self.environment_id.as_deref()
     }
@@ -56,43 +47,34 @@ impl CreateKxVolumeOutput {
     pub fn volume_name(&self) -> ::std::option::Option<&str> {
         self.volume_name.as_deref()
     }
-    /// <p>The type of file system volume. Currently, FinSpace only supports <code>NAS_1</code> volume type.</p>
+    /// <p> The type of file system volume. Currently, FinSpace only supports <code>NAS_1</code> volume type. </p>
     pub fn volume_type(&self) -> ::std::option::Option<&crate::types::KxVolumeType> {
         self.volume_type.as_ref()
     }
-    /// <p>The ARN identifier of the volume.</p>
+    /// <p> The ARN identifier of the volume. </p>
     pub fn volume_arn(&self) -> ::std::option::Option<&str> {
         self.volume_arn.as_deref()
     }
-    /// <p>Specifies the configuration for the Network attached storage (NAS_1) file system volume.</p>
+    /// <p> Specifies the configuration for the Network attached storage (NAS_1) file system volume.</p>
     pub fn nas1_configuration(&self) -> ::std::option::Option<&crate::types::KxNas1Configuration> {
         self.nas1_configuration.as_ref()
     }
     /// <p>The status of volume creation.</p>
     /// <ul>
-    /// <li>
-    /// <p>CREATING – The volume creation is in progress.</p></li>
-    /// <li>
-    /// <p>CREATE_FAILED – The volume creation has failed.</p></li>
-    /// <li>
-    /// <p>ACTIVE – The volume is active.</p></li>
-    /// <li>
-    /// <p>UPDATING – The volume is in the process of being updated.</p></li>
-    /// <li>
-    /// <p>UPDATE_FAILED – The update action failed.</p></li>
-    /// <li>
-    /// <p>UPDATED – The volume is successfully updated.</p></li>
-    /// <li>
-    /// <p>DELETING – The volume is in the process of being deleted.</p></li>
-    /// <li>
-    /// <p>DELETE_FAILED – The system failed to delete the volume.</p></li>
-    /// <li>
-    /// <p>DELETED – The volume is successfully deleted.</p></li>
+    /// <li> <p>CREATING – The volume creation is in progress.</p> </li>
+    /// <li> <p>CREATE_FAILED – The volume creation has failed.</p> </li>
+    /// <li> <p>ACTIVE – The volume is active.</p> </li>
+    /// <li> <p>UPDATING – The volume is in the process of being updated.</p> </li>
+    /// <li> <p>UPDATE_FAILED – The update action failed.</p> </li>
+    /// <li> <p>UPDATED – The volume is successfully updated.</p> </li>
+    /// <li> <p>DELETING – The volume is in the process of being deleted.</p> </li>
+    /// <li> <p>DELETE_FAILED – The system failed to delete the volume.</p> </li>
+    /// <li> <p>DELETED – The volume is successfully deleted.</p> </li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::KxVolumeStatus> {
         self.status.as_ref()
     }
-    /// <p>The error message when a failed state occurs.</p>
+    /// <p>The error message when a failed state occurs. </p>
     pub fn status_reason(&self) -> ::std::option::Option<&str> {
         self.status_reason.as_deref()
     }
@@ -100,7 +82,7 @@ impl CreateKxVolumeOutput {
     pub fn az_mode(&self) -> ::std::option::Option<&crate::types::KxAzMode> {
         self.az_mode.as_ref()
     }
-    /// <p>A description of the volume.</p>
+    /// <p> A description of the volume. </p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -145,17 +127,17 @@ pub struct CreateKxVolumeOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateKxVolumeOutputBuilder {
-    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume.</p>
+    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume. </p>
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume.</p>
+    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume. </p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_id = input;
         self
     }
-    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume.</p>
+    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume. </p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.environment_id
     }
@@ -173,68 +155,59 @@ impl CreateKxVolumeOutputBuilder {
     pub fn get_volume_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.volume_name
     }
-    /// <p>The type of file system volume. Currently, FinSpace only supports <code>NAS_1</code> volume type.</p>
+    /// <p> The type of file system volume. Currently, FinSpace only supports <code>NAS_1</code> volume type. </p>
     pub fn volume_type(mut self, input: crate::types::KxVolumeType) -> Self {
         self.volume_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of file system volume. Currently, FinSpace only supports <code>NAS_1</code> volume type.</p>
+    /// <p> The type of file system volume. Currently, FinSpace only supports <code>NAS_1</code> volume type. </p>
     pub fn set_volume_type(mut self, input: ::std::option::Option<crate::types::KxVolumeType>) -> Self {
         self.volume_type = input;
         self
     }
-    /// <p>The type of file system volume. Currently, FinSpace only supports <code>NAS_1</code> volume type.</p>
+    /// <p> The type of file system volume. Currently, FinSpace only supports <code>NAS_1</code> volume type. </p>
     pub fn get_volume_type(&self) -> &::std::option::Option<crate::types::KxVolumeType> {
         &self.volume_type
     }
-    /// <p>The ARN identifier of the volume.</p>
+    /// <p> The ARN identifier of the volume. </p>
     pub fn volume_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN identifier of the volume.</p>
+    /// <p> The ARN identifier of the volume. </p>
     pub fn set_volume_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_arn = input;
         self
     }
-    /// <p>The ARN identifier of the volume.</p>
+    /// <p> The ARN identifier of the volume. </p>
     pub fn get_volume_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.volume_arn
     }
-    /// <p>Specifies the configuration for the Network attached storage (NAS_1) file system volume.</p>
+    /// <p> Specifies the configuration for the Network attached storage (NAS_1) file system volume.</p>
     pub fn nas1_configuration(mut self, input: crate::types::KxNas1Configuration) -> Self {
         self.nas1_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the configuration for the Network attached storage (NAS_1) file system volume.</p>
+    /// <p> Specifies the configuration for the Network attached storage (NAS_1) file system volume.</p>
     pub fn set_nas1_configuration(mut self, input: ::std::option::Option<crate::types::KxNas1Configuration>) -> Self {
         self.nas1_configuration = input;
         self
     }
-    /// <p>Specifies the configuration for the Network attached storage (NAS_1) file system volume.</p>
+    /// <p> Specifies the configuration for the Network attached storage (NAS_1) file system volume.</p>
     pub fn get_nas1_configuration(&self) -> &::std::option::Option<crate::types::KxNas1Configuration> {
         &self.nas1_configuration
     }
     /// <p>The status of volume creation.</p>
     /// <ul>
-    /// <li>
-    /// <p>CREATING – The volume creation is in progress.</p></li>
-    /// <li>
-    /// <p>CREATE_FAILED – The volume creation has failed.</p></li>
-    /// <li>
-    /// <p>ACTIVE – The volume is active.</p></li>
-    /// <li>
-    /// <p>UPDATING – The volume is in the process of being updated.</p></li>
-    /// <li>
-    /// <p>UPDATE_FAILED – The update action failed.</p></li>
-    /// <li>
-    /// <p>UPDATED – The volume is successfully updated.</p></li>
-    /// <li>
-    /// <p>DELETING – The volume is in the process of being deleted.</p></li>
-    /// <li>
-    /// <p>DELETE_FAILED – The system failed to delete the volume.</p></li>
-    /// <li>
-    /// <p>DELETED – The volume is successfully deleted.</p></li>
+    /// <li> <p>CREATING – The volume creation is in progress.</p> </li>
+    /// <li> <p>CREATE_FAILED – The volume creation has failed.</p> </li>
+    /// <li> <p>ACTIVE – The volume is active.</p> </li>
+    /// <li> <p>UPDATING – The volume is in the process of being updated.</p> </li>
+    /// <li> <p>UPDATE_FAILED – The update action failed.</p> </li>
+    /// <li> <p>UPDATED – The volume is successfully updated.</p> </li>
+    /// <li> <p>DELETING – The volume is in the process of being deleted.</p> </li>
+    /// <li> <p>DELETE_FAILED – The system failed to delete the volume.</p> </li>
+    /// <li> <p>DELETED – The volume is successfully deleted.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::KxVolumeStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -242,24 +215,15 @@ impl CreateKxVolumeOutputBuilder {
     }
     /// <p>The status of volume creation.</p>
     /// <ul>
-    /// <li>
-    /// <p>CREATING – The volume creation is in progress.</p></li>
-    /// <li>
-    /// <p>CREATE_FAILED – The volume creation has failed.</p></li>
-    /// <li>
-    /// <p>ACTIVE – The volume is active.</p></li>
-    /// <li>
-    /// <p>UPDATING – The volume is in the process of being updated.</p></li>
-    /// <li>
-    /// <p>UPDATE_FAILED – The update action failed.</p></li>
-    /// <li>
-    /// <p>UPDATED – The volume is successfully updated.</p></li>
-    /// <li>
-    /// <p>DELETING – The volume is in the process of being deleted.</p></li>
-    /// <li>
-    /// <p>DELETE_FAILED – The system failed to delete the volume.</p></li>
-    /// <li>
-    /// <p>DELETED – The volume is successfully deleted.</p></li>
+    /// <li> <p>CREATING – The volume creation is in progress.</p> </li>
+    /// <li> <p>CREATE_FAILED – The volume creation has failed.</p> </li>
+    /// <li> <p>ACTIVE – The volume is active.</p> </li>
+    /// <li> <p>UPDATING – The volume is in the process of being updated.</p> </li>
+    /// <li> <p>UPDATE_FAILED – The update action failed.</p> </li>
+    /// <li> <p>UPDATED – The volume is successfully updated.</p> </li>
+    /// <li> <p>DELETING – The volume is in the process of being deleted.</p> </li>
+    /// <li> <p>DELETE_FAILED – The system failed to delete the volume.</p> </li>
+    /// <li> <p>DELETED – The volume is successfully deleted.</p> </li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::KxVolumeStatus>) -> Self {
         self.status = input;
@@ -267,39 +231,30 @@ impl CreateKxVolumeOutputBuilder {
     }
     /// <p>The status of volume creation.</p>
     /// <ul>
-    /// <li>
-    /// <p>CREATING – The volume creation is in progress.</p></li>
-    /// <li>
-    /// <p>CREATE_FAILED – The volume creation has failed.</p></li>
-    /// <li>
-    /// <p>ACTIVE – The volume is active.</p></li>
-    /// <li>
-    /// <p>UPDATING – The volume is in the process of being updated.</p></li>
-    /// <li>
-    /// <p>UPDATE_FAILED – The update action failed.</p></li>
-    /// <li>
-    /// <p>UPDATED – The volume is successfully updated.</p></li>
-    /// <li>
-    /// <p>DELETING – The volume is in the process of being deleted.</p></li>
-    /// <li>
-    /// <p>DELETE_FAILED – The system failed to delete the volume.</p></li>
-    /// <li>
-    /// <p>DELETED – The volume is successfully deleted.</p></li>
+    /// <li> <p>CREATING – The volume creation is in progress.</p> </li>
+    /// <li> <p>CREATE_FAILED – The volume creation has failed.</p> </li>
+    /// <li> <p>ACTIVE – The volume is active.</p> </li>
+    /// <li> <p>UPDATING – The volume is in the process of being updated.</p> </li>
+    /// <li> <p>UPDATE_FAILED – The update action failed.</p> </li>
+    /// <li> <p>UPDATED – The volume is successfully updated.</p> </li>
+    /// <li> <p>DELETING – The volume is in the process of being deleted.</p> </li>
+    /// <li> <p>DELETE_FAILED – The system failed to delete the volume.</p> </li>
+    /// <li> <p>DELETED – The volume is successfully deleted.</p> </li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::KxVolumeStatus> {
         &self.status
     }
-    /// <p>The error message when a failed state occurs.</p>
+    /// <p>The error message when a failed state occurs. </p>
     pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The error message when a failed state occurs.</p>
+    /// <p>The error message when a failed state occurs. </p>
     pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_reason = input;
         self
     }
-    /// <p>The error message when a failed state occurs.</p>
+    /// <p>The error message when a failed state occurs. </p>
     pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_reason
     }
@@ -317,17 +272,17 @@ impl CreateKxVolumeOutputBuilder {
     pub fn get_az_mode(&self) -> &::std::option::Option<crate::types::KxAzMode> {
         &self.az_mode
     }
-    /// <p>A description of the volume.</p>
+    /// <p> A description of the volume. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A description of the volume.</p>
+    /// <p> A description of the volume. </p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>A description of the volume.</p>
+    /// <p> A description of the volume. </p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }

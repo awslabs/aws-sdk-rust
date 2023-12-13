@@ -12,7 +12,7 @@ pub struct ExternalEvaluation {
     pub compliance_type: crate::types::ComplianceType,
     /// <p>Supplementary information about the reason of compliance. For example, this task was completed on a specific date.</p>
     pub annotation: ::std::option::Option<::std::string::String>,
-    /// <p>The time when the compliance was recorded.</p>
+    /// <p>The time when the compliance was recorded. </p>
     pub ordering_timestamp: ::aws_smithy_types::DateTime,
 }
 impl ExternalEvaluation {
@@ -34,7 +34,7 @@ impl ExternalEvaluation {
     pub fn annotation(&self) -> ::std::option::Option<&str> {
         self.annotation.as_deref()
     }
-    /// <p>The time when the compliance was recorded.</p>
+    /// <p>The time when the compliance was recorded. </p>
     pub fn ordering_timestamp(&self) -> &::aws_smithy_types::DateTime {
         &self.ordering_timestamp
     }
@@ -116,18 +116,18 @@ impl ExternalEvaluationBuilder {
     pub fn get_annotation(&self) -> &::std::option::Option<::std::string::String> {
         &self.annotation
     }
-    /// <p>The time when the compliance was recorded.</p>
+    /// <p>The time when the compliance was recorded. </p>
     /// This field is required.
     pub fn ordering_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.ordering_timestamp = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time when the compliance was recorded.</p>
+    /// <p>The time when the compliance was recorded. </p>
     pub fn set_ordering_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.ordering_timestamp = input;
         self
     }
-    /// <p>The time when the compliance was recorded.</p>
+    /// <p>The time when the compliance was recorded. </p>
     pub fn get_ordering_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.ordering_timestamp
     }

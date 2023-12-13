@@ -4,20 +4,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActionTypeId {
-    /// <p>A category defines what kind of action can be taken in the stage, and constrains the provider type for the action. Valid categories are limited to one of the following values.</p>
+    /// <p>A category defines what kind of action can be taken in the stage, and constrains the provider type for the action. Valid categories are limited to one of the following values. </p>
     /// <ul>
-    /// <li>
-    /// <p>Source</p></li>
-    /// <li>
-    /// <p>Build</p></li>
-    /// <li>
-    /// <p>Test</p></li>
-    /// <li>
-    /// <p>Deploy</p></li>
-    /// <li>
-    /// <p>Invoke</p></li>
-    /// <li>
-    /// <p>Approval</p></li>
+    /// <li> <p>Source</p> </li>
+    /// <li> <p>Build</p> </li>
+    /// <li> <p>Test</p> </li>
+    /// <li> <p>Deploy</p> </li>
+    /// <li> <p>Invoke</p> </li>
+    /// <li> <p>Approval</p> </li>
     /// </ul>
     pub category: crate::types::ActionCategory,
     /// <p>The creator of the action being called. There are three valid values for the <code>Owner</code> field in the action category section within your pipeline structure: <code>AWS</code>, <code>ThirdParty</code>, and <code>Custom</code>. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers">Valid Action Types and Providers in CodePipeline</a>.</p>
@@ -28,20 +22,14 @@ pub struct ActionTypeId {
     pub version: ::std::string::String,
 }
 impl ActionTypeId {
-    /// <p>A category defines what kind of action can be taken in the stage, and constrains the provider type for the action. Valid categories are limited to one of the following values.</p>
+    /// <p>A category defines what kind of action can be taken in the stage, and constrains the provider type for the action. Valid categories are limited to one of the following values. </p>
     /// <ul>
-    /// <li>
-    /// <p>Source</p></li>
-    /// <li>
-    /// <p>Build</p></li>
-    /// <li>
-    /// <p>Test</p></li>
-    /// <li>
-    /// <p>Deploy</p></li>
-    /// <li>
-    /// <p>Invoke</p></li>
-    /// <li>
-    /// <p>Approval</p></li>
+    /// <li> <p>Source</p> </li>
+    /// <li> <p>Build</p> </li>
+    /// <li> <p>Test</p> </li>
+    /// <li> <p>Deploy</p> </li>
+    /// <li> <p>Invoke</p> </li>
+    /// <li> <p>Approval</p> </li>
     /// </ul>
     pub fn category(&self) -> &crate::types::ActionCategory {
         &self.category
@@ -78,59 +66,41 @@ pub struct ActionTypeIdBuilder {
     pub(crate) version: ::std::option::Option<::std::string::String>,
 }
 impl ActionTypeIdBuilder {
-    /// <p>A category defines what kind of action can be taken in the stage, and constrains the provider type for the action. Valid categories are limited to one of the following values.</p>
+    /// <p>A category defines what kind of action can be taken in the stage, and constrains the provider type for the action. Valid categories are limited to one of the following values. </p>
     /// <ul>
-    /// <li>
-    /// <p>Source</p></li>
-    /// <li>
-    /// <p>Build</p></li>
-    /// <li>
-    /// <p>Test</p></li>
-    /// <li>
-    /// <p>Deploy</p></li>
-    /// <li>
-    /// <p>Invoke</p></li>
-    /// <li>
-    /// <p>Approval</p></li>
+    /// <li> <p>Source</p> </li>
+    /// <li> <p>Build</p> </li>
+    /// <li> <p>Test</p> </li>
+    /// <li> <p>Deploy</p> </li>
+    /// <li> <p>Invoke</p> </li>
+    /// <li> <p>Approval</p> </li>
     /// </ul>
     /// This field is required.
     pub fn category(mut self, input: crate::types::ActionCategory) -> Self {
         self.category = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A category defines what kind of action can be taken in the stage, and constrains the provider type for the action. Valid categories are limited to one of the following values.</p>
+    /// <p>A category defines what kind of action can be taken in the stage, and constrains the provider type for the action. Valid categories are limited to one of the following values. </p>
     /// <ul>
-    /// <li>
-    /// <p>Source</p></li>
-    /// <li>
-    /// <p>Build</p></li>
-    /// <li>
-    /// <p>Test</p></li>
-    /// <li>
-    /// <p>Deploy</p></li>
-    /// <li>
-    /// <p>Invoke</p></li>
-    /// <li>
-    /// <p>Approval</p></li>
+    /// <li> <p>Source</p> </li>
+    /// <li> <p>Build</p> </li>
+    /// <li> <p>Test</p> </li>
+    /// <li> <p>Deploy</p> </li>
+    /// <li> <p>Invoke</p> </li>
+    /// <li> <p>Approval</p> </li>
     /// </ul>
     pub fn set_category(mut self, input: ::std::option::Option<crate::types::ActionCategory>) -> Self {
         self.category = input;
         self
     }
-    /// <p>A category defines what kind of action can be taken in the stage, and constrains the provider type for the action. Valid categories are limited to one of the following values.</p>
+    /// <p>A category defines what kind of action can be taken in the stage, and constrains the provider type for the action. Valid categories are limited to one of the following values. </p>
     /// <ul>
-    /// <li>
-    /// <p>Source</p></li>
-    /// <li>
-    /// <p>Build</p></li>
-    /// <li>
-    /// <p>Test</p></li>
-    /// <li>
-    /// <p>Deploy</p></li>
-    /// <li>
-    /// <p>Invoke</p></li>
-    /// <li>
-    /// <p>Approval</p></li>
+    /// <li> <p>Source</p> </li>
+    /// <li> <p>Build</p> </li>
+    /// <li> <p>Test</p> </li>
+    /// <li> <p>Deploy</p> </li>
+    /// <li> <p>Invoke</p> </li>
+    /// <li> <p>Approval</p> </li>
     /// </ul>
     pub fn get_category(&self) -> &::std::option::Option<crate::types::ActionCategory> {
         &self.category

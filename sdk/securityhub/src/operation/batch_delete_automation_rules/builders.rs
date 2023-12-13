@@ -22,7 +22,7 @@ impl BatchDeleteAutomationRulesInputBuilder {
 }
 /// Fluent builder constructing a request to `BatchDeleteAutomationRules`.
 ///
-/// <p>Deletes one or more automation rules.</p>
+/// <p> Deletes one or more automation rules. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchDeleteAutomationRulesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -112,17 +112,17 @@ impl BatchDeleteAutomationRulesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_automation_rules_arns`](Self::set_automation_rules_arns).
     ///
-    /// <p>A list of Amazon Resource Names (ARNs) for the rules that are to be deleted.</p>
+    /// <p> A list of Amazon Resource Names (ARNs) for the rules that are to be deleted. </p>
     pub fn automation_rules_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.automation_rules_arns(input.into());
         self
     }
-    /// <p>A list of Amazon Resource Names (ARNs) for the rules that are to be deleted.</p>
+    /// <p> A list of Amazon Resource Names (ARNs) for the rules that are to be deleted. </p>
     pub fn set_automation_rules_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_automation_rules_arns(input);
         self
     }
-    /// <p>A list of Amazon Resource Names (ARNs) for the rules that are to be deleted.</p>
+    /// <p> A list of Amazon Resource Names (ARNs) for the rules that are to be deleted. </p>
     pub fn get_automation_rules_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_automation_rules_arns()
     }

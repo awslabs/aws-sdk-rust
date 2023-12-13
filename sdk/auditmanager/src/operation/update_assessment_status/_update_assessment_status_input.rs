@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAssessmentStatusInput {
-    /// <p>The unique identifier for the assessment.</p>
+    /// <p> The unique identifier for the assessment. </p>
     pub assessment_id: ::std::option::Option<::std::string::String>,
-    /// <p>The current status of the assessment.</p>
+    /// <p> The current status of the assessment. </p>
     pub status: ::std::option::Option<crate::types::AssessmentStatus>,
 }
 impl UpdateAssessmentStatusInput {
-    /// <p>The unique identifier for the assessment.</p>
+    /// <p> The unique identifier for the assessment. </p>
     pub fn assessment_id(&self) -> ::std::option::Option<&str> {
         self.assessment_id.as_deref()
     }
-    /// <p>The current status of the assessment.</p>
+    /// <p> The current status of the assessment. </p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::AssessmentStatus> {
         self.status.as_ref()
     }
@@ -33,33 +33,33 @@ pub struct UpdateAssessmentStatusInputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::AssessmentStatus>,
 }
 impl UpdateAssessmentStatusInputBuilder {
-    /// <p>The unique identifier for the assessment.</p>
+    /// <p> The unique identifier for the assessment. </p>
     /// This field is required.
     pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier for the assessment.</p>
+    /// <p> The unique identifier for the assessment. </p>
     pub fn set_assessment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assessment_id = input;
         self
     }
-    /// <p>The unique identifier for the assessment.</p>
+    /// <p> The unique identifier for the assessment. </p>
     pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.assessment_id
     }
-    /// <p>The current status of the assessment.</p>
+    /// <p> The current status of the assessment. </p>
     /// This field is required.
     pub fn status(mut self, input: crate::types::AssessmentStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current status of the assessment.</p>
+    /// <p> The current status of the assessment. </p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AssessmentStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The current status of the assessment.</p>
+    /// <p> The current status of the assessment. </p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AssessmentStatus> {
         &self.status
     }

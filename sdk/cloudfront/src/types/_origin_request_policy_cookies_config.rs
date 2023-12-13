@@ -6,14 +6,10 @@
 pub struct OriginRequestPolicyCookiesConfig {
     /// <p>Determines whether cookies in viewer requests are included in requests that CloudFront sends to the origin. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>none</code> – No cookies in viewer requests are included in requests that CloudFront sends to the origin. Even when this field is set to <code>none</code>, any cookies that are listed in a <code>CachePolicy</code> <i>are</i> included in origin requests.</p></li>
-    /// <li>
-    /// <p><code>whitelist</code> – Only the cookies in viewer requests that are listed in the <code>CookieNames</code> type are included in requests that CloudFront sends to the origin.</p></li>
-    /// <li>
-    /// <p><code>all</code> – All cookies in viewer requests are included in requests that CloudFront sends to the origin.</p></li>
-    /// <li>
-    /// <p><code>allExcept</code> – All cookies in viewer requests are included in requests that CloudFront sends to the origin, <i> <b>except</b> </i> for those listed in the <code>CookieNames</code> type, which are not included.</p></li>
+    /// <li> <p> <code>none</code> – No cookies in viewer requests are included in requests that CloudFront sends to the origin. Even when this field is set to <code>none</code>, any cookies that are listed in a <code>CachePolicy</code> <i>are</i> included in origin requests.</p> </li>
+    /// <li> <p> <code>whitelist</code> – Only the cookies in viewer requests that are listed in the <code>CookieNames</code> type are included in requests that CloudFront sends to the origin.</p> </li>
+    /// <li> <p> <code>all</code> – All cookies in viewer requests are included in requests that CloudFront sends to the origin.</p> </li>
+    /// <li> <p> <code>allExcept</code> – All cookies in viewer requests are included in requests that CloudFront sends to the origin, <i> <b>except</b> </i> for those listed in the <code>CookieNames</code> type, which are not included.</p> </li>
     /// </ul>
     pub cookie_behavior: crate::types::OriginRequestPolicyCookieBehavior,
     /// <p>Contains a list of cookie names.</p>
@@ -22,14 +18,10 @@ pub struct OriginRequestPolicyCookiesConfig {
 impl OriginRequestPolicyCookiesConfig {
     /// <p>Determines whether cookies in viewer requests are included in requests that CloudFront sends to the origin. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>none</code> – No cookies in viewer requests are included in requests that CloudFront sends to the origin. Even when this field is set to <code>none</code>, any cookies that are listed in a <code>CachePolicy</code> <i>are</i> included in origin requests.</p></li>
-    /// <li>
-    /// <p><code>whitelist</code> – Only the cookies in viewer requests that are listed in the <code>CookieNames</code> type are included in requests that CloudFront sends to the origin.</p></li>
-    /// <li>
-    /// <p><code>all</code> – All cookies in viewer requests are included in requests that CloudFront sends to the origin.</p></li>
-    /// <li>
-    /// <p><code>allExcept</code> – All cookies in viewer requests are included in requests that CloudFront sends to the origin, <i> <b>except</b> </i> for those listed in the <code>CookieNames</code> type, which are not included.</p></li>
+    /// <li> <p> <code>none</code> – No cookies in viewer requests are included in requests that CloudFront sends to the origin. Even when this field is set to <code>none</code>, any cookies that are listed in a <code>CachePolicy</code> <i>are</i> included in origin requests.</p> </li>
+    /// <li> <p> <code>whitelist</code> – Only the cookies in viewer requests that are listed in the <code>CookieNames</code> type are included in requests that CloudFront sends to the origin.</p> </li>
+    /// <li> <p> <code>all</code> – All cookies in viewer requests are included in requests that CloudFront sends to the origin.</p> </li>
+    /// <li> <p> <code>allExcept</code> – All cookies in viewer requests are included in requests that CloudFront sends to the origin, <i> <b>except</b> </i> for those listed in the <code>CookieNames</code> type, which are not included.</p> </li>
     /// </ul>
     pub fn cookie_behavior(&self) -> &crate::types::OriginRequestPolicyCookieBehavior {
         &self.cookie_behavior
@@ -56,14 +48,10 @@ pub struct OriginRequestPolicyCookiesConfigBuilder {
 impl OriginRequestPolicyCookiesConfigBuilder {
     /// <p>Determines whether cookies in viewer requests are included in requests that CloudFront sends to the origin. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>none</code> – No cookies in viewer requests are included in requests that CloudFront sends to the origin. Even when this field is set to <code>none</code>, any cookies that are listed in a <code>CachePolicy</code> <i>are</i> included in origin requests.</p></li>
-    /// <li>
-    /// <p><code>whitelist</code> – Only the cookies in viewer requests that are listed in the <code>CookieNames</code> type are included in requests that CloudFront sends to the origin.</p></li>
-    /// <li>
-    /// <p><code>all</code> – All cookies in viewer requests are included in requests that CloudFront sends to the origin.</p></li>
-    /// <li>
-    /// <p><code>allExcept</code> – All cookies in viewer requests are included in requests that CloudFront sends to the origin, <i> <b>except</b> </i> for those listed in the <code>CookieNames</code> type, which are not included.</p></li>
+    /// <li> <p> <code>none</code> – No cookies in viewer requests are included in requests that CloudFront sends to the origin. Even when this field is set to <code>none</code>, any cookies that are listed in a <code>CachePolicy</code> <i>are</i> included in origin requests.</p> </li>
+    /// <li> <p> <code>whitelist</code> – Only the cookies in viewer requests that are listed in the <code>CookieNames</code> type are included in requests that CloudFront sends to the origin.</p> </li>
+    /// <li> <p> <code>all</code> – All cookies in viewer requests are included in requests that CloudFront sends to the origin.</p> </li>
+    /// <li> <p> <code>allExcept</code> – All cookies in viewer requests are included in requests that CloudFront sends to the origin, <i> <b>except</b> </i> for those listed in the <code>CookieNames</code> type, which are not included.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn cookie_behavior(mut self, input: crate::types::OriginRequestPolicyCookieBehavior) -> Self {
@@ -72,14 +60,10 @@ impl OriginRequestPolicyCookiesConfigBuilder {
     }
     /// <p>Determines whether cookies in viewer requests are included in requests that CloudFront sends to the origin. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>none</code> – No cookies in viewer requests are included in requests that CloudFront sends to the origin. Even when this field is set to <code>none</code>, any cookies that are listed in a <code>CachePolicy</code> <i>are</i> included in origin requests.</p></li>
-    /// <li>
-    /// <p><code>whitelist</code> – Only the cookies in viewer requests that are listed in the <code>CookieNames</code> type are included in requests that CloudFront sends to the origin.</p></li>
-    /// <li>
-    /// <p><code>all</code> – All cookies in viewer requests are included in requests that CloudFront sends to the origin.</p></li>
-    /// <li>
-    /// <p><code>allExcept</code> – All cookies in viewer requests are included in requests that CloudFront sends to the origin, <i> <b>except</b> </i> for those listed in the <code>CookieNames</code> type, which are not included.</p></li>
+    /// <li> <p> <code>none</code> – No cookies in viewer requests are included in requests that CloudFront sends to the origin. Even when this field is set to <code>none</code>, any cookies that are listed in a <code>CachePolicy</code> <i>are</i> included in origin requests.</p> </li>
+    /// <li> <p> <code>whitelist</code> – Only the cookies in viewer requests that are listed in the <code>CookieNames</code> type are included in requests that CloudFront sends to the origin.</p> </li>
+    /// <li> <p> <code>all</code> – All cookies in viewer requests are included in requests that CloudFront sends to the origin.</p> </li>
+    /// <li> <p> <code>allExcept</code> – All cookies in viewer requests are included in requests that CloudFront sends to the origin, <i> <b>except</b> </i> for those listed in the <code>CookieNames</code> type, which are not included.</p> </li>
     /// </ul>
     pub fn set_cookie_behavior(mut self, input: ::std::option::Option<crate::types::OriginRequestPolicyCookieBehavior>) -> Self {
         self.cookie_behavior = input;
@@ -87,14 +71,10 @@ impl OriginRequestPolicyCookiesConfigBuilder {
     }
     /// <p>Determines whether cookies in viewer requests are included in requests that CloudFront sends to the origin. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>none</code> – No cookies in viewer requests are included in requests that CloudFront sends to the origin. Even when this field is set to <code>none</code>, any cookies that are listed in a <code>CachePolicy</code> <i>are</i> included in origin requests.</p></li>
-    /// <li>
-    /// <p><code>whitelist</code> – Only the cookies in viewer requests that are listed in the <code>CookieNames</code> type are included in requests that CloudFront sends to the origin.</p></li>
-    /// <li>
-    /// <p><code>all</code> – All cookies in viewer requests are included in requests that CloudFront sends to the origin.</p></li>
-    /// <li>
-    /// <p><code>allExcept</code> – All cookies in viewer requests are included in requests that CloudFront sends to the origin, <i> <b>except</b> </i> for those listed in the <code>CookieNames</code> type, which are not included.</p></li>
+    /// <li> <p> <code>none</code> – No cookies in viewer requests are included in requests that CloudFront sends to the origin. Even when this field is set to <code>none</code>, any cookies that are listed in a <code>CachePolicy</code> <i>are</i> included in origin requests.</p> </li>
+    /// <li> <p> <code>whitelist</code> – Only the cookies in viewer requests that are listed in the <code>CookieNames</code> type are included in requests that CloudFront sends to the origin.</p> </li>
+    /// <li> <p> <code>all</code> – All cookies in viewer requests are included in requests that CloudFront sends to the origin.</p> </li>
+    /// <li> <p> <code>allExcept</code> – All cookies in viewer requests are included in requests that CloudFront sends to the origin, <i> <b>except</b> </i> for those listed in the <code>CookieNames</code> type, which are not included.</p> </li>
     /// </ul>
     pub fn get_cookie_behavior(&self) -> &::std::option::Option<crate::types::OriginRequestPolicyCookieBehavior> {
         &self.cookie_behavior

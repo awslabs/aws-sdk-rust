@@ -14,7 +14,7 @@ pub struct ClusterSummary {
     pub normalized_instance_hours: ::std::option::Option<i32>,
     /// <p>The Amazon Resource Name of the cluster.</p>
     pub cluster_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the Outpost where the cluster is launched.</p>
+    /// <p> The Amazon Resource Name (ARN) of the Outpost where the cluster is launched. </p>
     pub outpost_arn: ::std::option::Option<::std::string::String>,
 }
 impl ClusterSummary {
@@ -38,7 +38,7 @@ impl ClusterSummary {
     pub fn cluster_arn(&self) -> ::std::option::Option<&str> {
         self.cluster_arn.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Outpost where the cluster is launched.</p>
+    /// <p> The Amazon Resource Name (ARN) of the Outpost where the cluster is launched. </p>
     pub fn outpost_arn(&self) -> ::std::option::Option<&str> {
         self.outpost_arn.as_deref()
     }
@@ -132,17 +132,17 @@ impl ClusterSummaryBuilder {
     pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_arn
     }
-    /// <p>The Amazon Resource Name (ARN) of the Outpost where the cluster is launched.</p>
+    /// <p> The Amazon Resource Name (ARN) of the Outpost where the cluster is launched. </p>
     pub fn outpost_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outpost_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Outpost where the cluster is launched.</p>
+    /// <p> The Amazon Resource Name (ARN) of the Outpost where the cluster is launched. </p>
     pub fn set_outpost_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outpost_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Outpost where the cluster is launched.</p>
+    /// <p> The Amazon Resource Name (ARN) of the Outpost where the cluster is launched. </p>
     pub fn get_outpost_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.outpost_arn
     }

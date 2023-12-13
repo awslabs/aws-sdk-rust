@@ -6,20 +6,16 @@
 pub struct LastRunErrorStatus {
     /// <p>Specifies whether any account- or bucket-level access errors occurred when the job ran. For a recurring job, this value indicates the error status of the job's most recent run. Possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>ERROR - One or more errors occurred. Amazon Macie didn't process all the data specified for the job.</p></li>
-    /// <li>
-    /// <p>NONE - No errors occurred. Macie processed all the data specified for the job.</p></li>
+    /// <li><p>ERROR - One or more errors occurred. Amazon Macie didn't process all the data specified for the job.</p></li>
+    /// <li><p>NONE - No errors occurred. Macie processed all the data specified for the job.</p></li>
     /// </ul>
     pub code: ::std::option::Option<crate::types::LastRunErrorStatusCode>,
 }
 impl LastRunErrorStatus {
     /// <p>Specifies whether any account- or bucket-level access errors occurred when the job ran. For a recurring job, this value indicates the error status of the job's most recent run. Possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>ERROR - One or more errors occurred. Amazon Macie didn't process all the data specified for the job.</p></li>
-    /// <li>
-    /// <p>NONE - No errors occurred. Macie processed all the data specified for the job.</p></li>
+    /// <li><p>ERROR - One or more errors occurred. Amazon Macie didn't process all the data specified for the job.</p></li>
+    /// <li><p>NONE - No errors occurred. Macie processed all the data specified for the job.</p></li>
     /// </ul>
     pub fn code(&self) -> ::std::option::Option<&crate::types::LastRunErrorStatusCode> {
         self.code.as_ref()
@@ -41,10 +37,8 @@ pub struct LastRunErrorStatusBuilder {
 impl LastRunErrorStatusBuilder {
     /// <p>Specifies whether any account- or bucket-level access errors occurred when the job ran. For a recurring job, this value indicates the error status of the job's most recent run. Possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>ERROR - One or more errors occurred. Amazon Macie didn't process all the data specified for the job.</p></li>
-    /// <li>
-    /// <p>NONE - No errors occurred. Macie processed all the data specified for the job.</p></li>
+    /// <li><p>ERROR - One or more errors occurred. Amazon Macie didn't process all the data specified for the job.</p></li>
+    /// <li><p>NONE - No errors occurred. Macie processed all the data specified for the job.</p></li>
     /// </ul>
     pub fn code(mut self, input: crate::types::LastRunErrorStatusCode) -> Self {
         self.code = ::std::option::Option::Some(input);
@@ -52,10 +46,8 @@ impl LastRunErrorStatusBuilder {
     }
     /// <p>Specifies whether any account- or bucket-level access errors occurred when the job ran. For a recurring job, this value indicates the error status of the job's most recent run. Possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>ERROR - One or more errors occurred. Amazon Macie didn't process all the data specified for the job.</p></li>
-    /// <li>
-    /// <p>NONE - No errors occurred. Macie processed all the data specified for the job.</p></li>
+    /// <li><p>ERROR - One or more errors occurred. Amazon Macie didn't process all the data specified for the job.</p></li>
+    /// <li><p>NONE - No errors occurred. Macie processed all the data specified for the job.</p></li>
     /// </ul>
     pub fn set_code(mut self, input: ::std::option::Option<crate::types::LastRunErrorStatusCode>) -> Self {
         self.code = input;
@@ -63,10 +55,8 @@ impl LastRunErrorStatusBuilder {
     }
     /// <p>Specifies whether any account- or bucket-level access errors occurred when the job ran. For a recurring job, this value indicates the error status of the job's most recent run. Possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>ERROR - One or more errors occurred. Amazon Macie didn't process all the data specified for the job.</p></li>
-    /// <li>
-    /// <p>NONE - No errors occurred. Macie processed all the data specified for the job.</p></li>
+    /// <li><p>ERROR - One or more errors occurred. Amazon Macie didn't process all the data specified for the job.</p></li>
+    /// <li><p>NONE - No errors occurred. Macie processed all the data specified for the job.</p></li>
     /// </ul>
     pub fn get_code(&self) -> &::std::option::Option<crate::types::LastRunErrorStatusCode> {
         &self.code

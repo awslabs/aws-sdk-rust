@@ -15,8 +15,8 @@ pub struct ConfigurationProfileSummary {
     /// <p>The types of validators in the configuration profile.</p>
     pub validator_types: ::std::option::Option<::std::vec::Vec<crate::types::ValidatorType>>,
     /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
-    /// <p><code>AWS.AppConfig.FeatureFlags</code></p>
-    /// <p><code>AWS.Freeform</code></p>
+    /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p>
+    /// <p> <code>AWS.Freeform</code> </p>
     pub r#type: ::std::option::Option<::std::string::String>,
 }
 impl ConfigurationProfileSummary {
@@ -43,8 +43,8 @@ impl ConfigurationProfileSummary {
         self.validator_types.as_deref().unwrap_or_default()
     }
     /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
-    /// <p><code>AWS.AppConfig.FeatureFlags</code></p>
-    /// <p><code>AWS.Freeform</code></p>
+    /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p>
+    /// <p> <code>AWS.Freeform</code> </p>
     pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
@@ -145,22 +145,22 @@ impl ConfigurationProfileSummaryBuilder {
         &self.validator_types
     }
     /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
-    /// <p><code>AWS.AppConfig.FeatureFlags</code></p>
-    /// <p><code>AWS.Freeform</code></p>
+    /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p>
+    /// <p> <code>AWS.Freeform</code> </p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
-    /// <p><code>AWS.AppConfig.FeatureFlags</code></p>
-    /// <p><code>AWS.Freeform</code></p>
+    /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p>
+    /// <p> <code>AWS.Freeform</code> </p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
-    /// <p><code>AWS.AppConfig.FeatureFlags</code></p>
-    /// <p><code>AWS.Freeform</code></p>
+    /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p>
+    /// <p> <code>AWS.Freeform</code> </p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.r#type
     }

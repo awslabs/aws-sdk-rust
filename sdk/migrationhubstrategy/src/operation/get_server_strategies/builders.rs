@@ -22,7 +22,7 @@ impl GetServerStrategiesInputBuilder {
 }
 /// Fluent builder constructing a request to `GetServerStrategies`.
 ///
-/// <p>Retrieves recommended strategies and tools for the specified server.</p>
+/// <p> Retrieves recommended strategies and tools for the specified server. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetServerStrategiesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl GetServerStrategiesFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the server.</p>
+    /// <p> The ID of the server. </p>
     pub fn server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.server_id(input.into());
         self
     }
-    /// <p>The ID of the server.</p>
+    /// <p> The ID of the server. </p>
     pub fn set_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_server_id(input);
         self
     }
-    /// <p>The ID of the server.</p>
+    /// <p> The ID of the server. </p>
     pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_server_id()
     }

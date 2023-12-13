@@ -14,7 +14,7 @@ pub struct AssociateAddressInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of the network interface. If the instance has more than one network interface, you must specify a network interface ID.</p>
-    /// <p>You can specify either the instance ID or the network interface ID, but not both.</p>
+    /// <p>You can specify either the instance ID or the network interface ID, but not both. </p>
     pub network_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>The primary or secondary private IP address to associate with the Elastic IP address. If no private IP address is specified, the Elastic IP address is associated with the primary private IP address.</p>
     pub private_ip_address: ::std::option::Option<::std::string::String>,
@@ -41,7 +41,7 @@ impl AssociateAddressInput {
         self.dry_run
     }
     /// <p>The ID of the network interface. If the instance has more than one network interface, you must specify a network interface ID.</p>
-    /// <p>You can specify either the instance ID or the network interface ID, but not both.</p>
+    /// <p>You can specify either the instance ID or the network interface ID, but not both. </p>
     pub fn network_interface_id(&self) -> ::std::option::Option<&str> {
         self.network_interface_id.as_deref()
     }
@@ -141,19 +141,19 @@ impl AssociateAddressInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the network interface. If the instance has more than one network interface, you must specify a network interface ID.</p>
-    /// <p>You can specify either the instance ID or the network interface ID, but not both.</p>
+    /// <p>You can specify either the instance ID or the network interface ID, but not both. </p>
     pub fn network_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_interface_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the network interface. If the instance has more than one network interface, you must specify a network interface ID.</p>
-    /// <p>You can specify either the instance ID or the network interface ID, but not both.</p>
+    /// <p>You can specify either the instance ID or the network interface ID, but not both. </p>
     pub fn set_network_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_interface_id = input;
         self
     }
     /// <p>The ID of the network interface. If the instance has more than one network interface, you must specify a network interface ID.</p>
-    /// <p>You can specify either the instance ID or the network interface ID, but not both.</p>
+    /// <p>You can specify either the instance ID or the network interface ID, but not both. </p>
     pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.network_interface_id
     }

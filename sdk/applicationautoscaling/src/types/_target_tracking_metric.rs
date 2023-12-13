@@ -5,7 +5,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TargetTrackingMetric {
-    /// <p>The dimensions for the metric. For the list of available dimensions, see the Amazon Web Services documentation available from the table in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-services-cloudwatch-metrics.html">Amazon Web Services services that publish CloudWatch metrics </a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+    /// <p>The dimensions for the metric. For the list of available dimensions, see the Amazon Web Services documentation available from the table in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-services-cloudwatch-metrics.html">Amazon Web Services services that publish CloudWatch metrics </a> in the <i>Amazon CloudWatch User Guide</i>. </p>
     /// <p>Conditional: If you published your metric with dimensions, you must specify the same dimensions in your scaling policy.</p>
     pub dimensions: ::std::option::Option<::std::vec::Vec<crate::types::TargetTrackingMetricDimension>>,
     /// <p>The name of the metric.</p>
@@ -14,7 +14,7 @@ pub struct TargetTrackingMetric {
     pub namespace: ::std::option::Option<::std::string::String>,
 }
 impl TargetTrackingMetric {
-    /// <p>The dimensions for the metric. For the list of available dimensions, see the Amazon Web Services documentation available from the table in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-services-cloudwatch-metrics.html">Amazon Web Services services that publish CloudWatch metrics </a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+    /// <p>The dimensions for the metric. For the list of available dimensions, see the Amazon Web Services documentation available from the table in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-services-cloudwatch-metrics.html">Amazon Web Services services that publish CloudWatch metrics </a> in the <i>Amazon CloudWatch User Guide</i>. </p>
     /// <p>Conditional: If you published your metric with dimensions, you must specify the same dimensions in your scaling policy.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dimensions.is_none()`.
@@ -50,7 +50,7 @@ impl TargetTrackingMetricBuilder {
     ///
     /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
     ///
-    /// <p>The dimensions for the metric. For the list of available dimensions, see the Amazon Web Services documentation available from the table in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-services-cloudwatch-metrics.html">Amazon Web Services services that publish CloudWatch metrics </a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+    /// <p>The dimensions for the metric. For the list of available dimensions, see the Amazon Web Services documentation available from the table in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-services-cloudwatch-metrics.html">Amazon Web Services services that publish CloudWatch metrics </a> in the <i>Amazon CloudWatch User Guide</i>. </p>
     /// <p>Conditional: If you published your metric with dimensions, you must specify the same dimensions in your scaling policy.</p>
     pub fn dimensions(mut self, input: crate::types::TargetTrackingMetricDimension) -> Self {
         let mut v = self.dimensions.unwrap_or_default();
@@ -58,13 +58,13 @@ impl TargetTrackingMetricBuilder {
         self.dimensions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The dimensions for the metric. For the list of available dimensions, see the Amazon Web Services documentation available from the table in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-services-cloudwatch-metrics.html">Amazon Web Services services that publish CloudWatch metrics </a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+    /// <p>The dimensions for the metric. For the list of available dimensions, see the Amazon Web Services documentation available from the table in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-services-cloudwatch-metrics.html">Amazon Web Services services that publish CloudWatch metrics </a> in the <i>Amazon CloudWatch User Guide</i>. </p>
     /// <p>Conditional: If you published your metric with dimensions, you must specify the same dimensions in your scaling policy.</p>
     pub fn set_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetTrackingMetricDimension>>) -> Self {
         self.dimensions = input;
         self
     }
-    /// <p>The dimensions for the metric. For the list of available dimensions, see the Amazon Web Services documentation available from the table in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-services-cloudwatch-metrics.html">Amazon Web Services services that publish CloudWatch metrics </a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+    /// <p>The dimensions for the metric. For the list of available dimensions, see the Amazon Web Services documentation available from the table in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-services-cloudwatch-metrics.html">Amazon Web Services services that publish CloudWatch metrics </a> in the <i>Amazon CloudWatch User Guide</i>. </p>
     /// <p>Conditional: If you published your metric with dimensions, you must specify the same dimensions in your scaling policy.</p>
     pub fn get_dimensions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetTrackingMetricDimension>> {
         &self.dimensions

@@ -247,7 +247,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetPartitionI
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum GetPartitionIndexesError {
-    /// <p>The <code>CreatePartitions</code> API was called on a table that has indexes enabled.</p>
+    /// <p>The <code>CreatePartitions</code> API was called on a table that has indexes enabled. </p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>A specified entity does not exist</p>
     EntityNotFoundException(crate::types::error::EntityNotFoundException),

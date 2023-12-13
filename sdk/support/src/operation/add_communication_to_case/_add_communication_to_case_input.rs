@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddCommunicationToCaseInput {
-    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></p>
+    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
     pub case_id: ::std::option::Option<::std::string::String>,
     /// <p>The body of an email communication to add to the support case.</p>
     pub communication_body: ::std::option::Option<::std::string::String>,
     /// <p>The email addresses in the CC line of an email to be added to the support case.</p>
     pub cc_email_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The ID of a set of one or more attachments for the communication to add to the case. Create the set by calling <code>AddAttachmentsToSet</code></p>
+    /// <p>The ID of a set of one or more attachments for the communication to add to the case. Create the set by calling <code>AddAttachmentsToSet</code> </p>
     pub attachment_set_id: ::std::option::Option<::std::string::String>,
 }
 impl AddCommunicationToCaseInput {
-    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></p>
+    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
     pub fn case_id(&self) -> ::std::option::Option<&str> {
         self.case_id.as_deref()
     }
@@ -27,7 +27,7 @@ impl AddCommunicationToCaseInput {
     pub fn cc_email_addresses(&self) -> &[::std::string::String] {
         self.cc_email_addresses.as_deref().unwrap_or_default()
     }
-    /// <p>The ID of a set of one or more attachments for the communication to add to the case. Create the set by calling <code>AddAttachmentsToSet</code></p>
+    /// <p>The ID of a set of one or more attachments for the communication to add to the case. Create the set by calling <code>AddAttachmentsToSet</code> </p>
     pub fn attachment_set_id(&self) -> ::std::option::Option<&str> {
         self.attachment_set_id.as_deref()
     }
@@ -49,17 +49,17 @@ pub struct AddCommunicationToCaseInputBuilder {
     pub(crate) attachment_set_id: ::std::option::Option<::std::string::String>,
 }
 impl AddCommunicationToCaseInputBuilder {
-    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></p>
+    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
     pub fn case_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.case_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></p>
+    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
     pub fn set_case_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.case_id = input;
         self
     }
-    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></p>
+    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
     pub fn get_case_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.case_id
     }
@@ -98,17 +98,17 @@ impl AddCommunicationToCaseInputBuilder {
     pub fn get_cc_email_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.cc_email_addresses
     }
-    /// <p>The ID of a set of one or more attachments for the communication to add to the case. Create the set by calling <code>AddAttachmentsToSet</code></p>
+    /// <p>The ID of a set of one or more attachments for the communication to add to the case. Create the set by calling <code>AddAttachmentsToSet</code> </p>
     pub fn attachment_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attachment_set_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of a set of one or more attachments for the communication to add to the case. Create the set by calling <code>AddAttachmentsToSet</code></p>
+    /// <p>The ID of a set of one or more attachments for the communication to add to the case. Create the set by calling <code>AddAttachmentsToSet</code> </p>
     pub fn set_attachment_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attachment_set_id = input;
         self
     }
-    /// <p>The ID of a set of one or more attachments for the communication to add to the case. Create the set by calling <code>AddAttachmentsToSet</code></p>
+    /// <p>The ID of a set of one or more attachments for the communication to add to the case. Create the set by calling <code>AddAttachmentsToSet</code> </p>
     pub fn get_attachment_set_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.attachment_set_id
     }

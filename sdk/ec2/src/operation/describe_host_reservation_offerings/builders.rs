@@ -23,7 +23,7 @@ impl DescribeHostReservationOfferingsInputBuilder {
 /// Fluent builder constructing a request to `DescribeHostReservationOfferings`.
 ///
 /// <p>Describes the Dedicated Host reservations that are available to purchase.</p>
-/// <p>The results describe all of the Dedicated Host reservation offerings, including offerings that might not match the instance family and Region of your Dedicated Hosts. When purchasing an offering, ensure that the instance family and Region of the offering matches that of the Dedicated Hosts with which it is to be associated. For more information about supported instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated Hosts</a> in the <i>Amazon EC2 User Guide</i>.</p>
+/// <p>The results describe all of the Dedicated Host reservation offerings, including offerings that might not match the instance family and Region of your Dedicated Hosts. When purchasing an offering, ensure that the instance family and Region of the offering matches that of the Dedicated Hosts with which it is to be associated. For more information about supported instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated Hosts</a> in the <i>Amazon EC2 User Guide</i>. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeHostReservationOfferingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -121,10 +121,8 @@ impl DescribeHostReservationOfferingsFluentBuilder {
     ///
     /// <p>The filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>instance-family</code> - The instance family of the offering (for example, <code>m4</code>).</p></li>
-    /// <li>
-    /// <p><code>payment-option</code> - The payment option (<code>NoUpfront</code> | <code>PartialUpfront</code> | <code>AllUpfront</code>).</p></li>
+    /// <li> <p> <code>instance-family</code> - The instance family of the offering (for example, <code>m4</code>).</p> </li>
+    /// <li> <p> <code>payment-option</code> - The payment option (<code>NoUpfront</code> | <code>PartialUpfront</code> | <code>AllUpfront</code>).</p> </li>
     /// </ul>
     pub fn filter(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filter(input);
@@ -132,10 +130,8 @@ impl DescribeHostReservationOfferingsFluentBuilder {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>instance-family</code> - The instance family of the offering (for example, <code>m4</code>).</p></li>
-    /// <li>
-    /// <p><code>payment-option</code> - The payment option (<code>NoUpfront</code> | <code>PartialUpfront</code> | <code>AllUpfront</code>).</p></li>
+    /// <li> <p> <code>instance-family</code> - The instance family of the offering (for example, <code>m4</code>).</p> </li>
+    /// <li> <p> <code>payment-option</code> - The payment option (<code>NoUpfront</code> | <code>PartialUpfront</code> | <code>AllUpfront</code>).</p> </li>
     /// </ul>
     pub fn set_filter(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filter(input);
@@ -143,10 +139,8 @@ impl DescribeHostReservationOfferingsFluentBuilder {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>instance-family</code> - The instance family of the offering (for example, <code>m4</code>).</p></li>
-    /// <li>
-    /// <p><code>payment-option</code> - The payment option (<code>NoUpfront</code> | <code>PartialUpfront</code> | <code>AllUpfront</code>).</p></li>
+    /// <li> <p> <code>instance-family</code> - The instance family of the offering (for example, <code>m4</code>).</p> </li>
+    /// <li> <p> <code>payment-option</code> - The payment option (<code>NoUpfront</code> | <code>PartialUpfront</code> | <code>AllUpfront</code>).</p> </li>
     /// </ul>
     pub fn get_filter(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filter()

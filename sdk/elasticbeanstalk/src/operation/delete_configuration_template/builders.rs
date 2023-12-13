@@ -22,7 +22,7 @@ impl DeleteConfigurationTemplateInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteConfigurationTemplate`.
 ///
-/// <p>Deletes the specified configuration template.</p><note>
+/// <p>Deletes the specified configuration template.</p> <note>
 /// <p>When you launch an environment using a configuration template, the environment gets a copy of the template. You can delete or modify the environment's copy of the template without affecting the running environment.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

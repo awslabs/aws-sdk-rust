@@ -22,7 +22,7 @@ impl DeactivateEvaluationFormInputBuilder {
 }
 /// Fluent builder constructing a request to `DeactivateEvaluationForm`.
 ///
-/// <p>Deactivates an evaluation form in the specified Amazon Connect instance. After a form is deactivated, it is no longer available for users to start new evaluations based on the form.</p>
+/// <p>Deactivates an evaluation form in the specified Amazon Connect instance. After a form is deactivated, it is no longer available for users to start new evaluations based on the form. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeactivateEvaluationFormFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

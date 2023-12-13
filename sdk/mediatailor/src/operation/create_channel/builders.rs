@@ -155,22 +155,22 @@ impl CreateChannelFluentBuilder {
         self.inner.get_outputs()
     }
     /// <p>The type of playback mode to use for this channel.</p>
-    /// <p><code>LINEAR</code> - The programs in the schedule play once back-to-back in the schedule.</p>
-    /// <p><code>LOOP</code> - The programs in the schedule play back-to-back in an endless loop. When the last program in the schedule stops playing, playback loops back to the first program in the schedule.</p>
+    /// <p> <code>LINEAR</code> - The programs in the schedule play once back-to-back in the schedule.</p>
+    /// <p> <code>LOOP</code> - The programs in the schedule play back-to-back in an endless loop. When the last program in the schedule stops playing, playback loops back to the first program in the schedule.</p>
     pub fn playback_mode(mut self, input: crate::types::PlaybackMode) -> Self {
         self.inner = self.inner.playback_mode(input);
         self
     }
     /// <p>The type of playback mode to use for this channel.</p>
-    /// <p><code>LINEAR</code> - The programs in the schedule play once back-to-back in the schedule.</p>
-    /// <p><code>LOOP</code> - The programs in the schedule play back-to-back in an endless loop. When the last program in the schedule stops playing, playback loops back to the first program in the schedule.</p>
+    /// <p> <code>LINEAR</code> - The programs in the schedule play once back-to-back in the schedule.</p>
+    /// <p> <code>LOOP</code> - The programs in the schedule play back-to-back in an endless loop. When the last program in the schedule stops playing, playback loops back to the first program in the schedule.</p>
     pub fn set_playback_mode(mut self, input: ::std::option::Option<crate::types::PlaybackMode>) -> Self {
         self.inner = self.inner.set_playback_mode(input);
         self
     }
     /// <p>The type of playback mode to use for this channel.</p>
-    /// <p><code>LINEAR</code> - The programs in the schedule play once back-to-back in the schedule.</p>
-    /// <p><code>LOOP</code> - The programs in the schedule play back-to-back in an endless loop. When the last program in the schedule stops playing, playback loops back to the first program in the schedule.</p>
+    /// <p> <code>LINEAR</code> - The programs in the schedule play once back-to-back in the schedule.</p>
+    /// <p> <code>LOOP</code> - The programs in the schedule play back-to-back in an endless loop. When the last program in the schedule stops playing, playback loops back to the first program in the schedule.</p>
     pub fn get_playback_mode(&self) -> &::std::option::Option<crate::types::PlaybackMode> {
         self.inner.get_playback_mode()
     }

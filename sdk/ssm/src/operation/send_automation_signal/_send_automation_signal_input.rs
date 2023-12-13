@@ -5,15 +5,15 @@
 pub struct SendAutomationSignalInput {
     /// <p>The unique identifier for an existing Automation execution that you want to send the signal to.</p>
     pub automation_execution_id: ::std::option::Option<::std::string::String>,
-    /// <p>The type of signal to send to an Automation execution.</p>
+    /// <p>The type of signal to send to an Automation execution. </p>
     pub signal_type: ::std::option::Option<crate::types::SignalType>,
     /// <p>The data sent with the signal. The data schema depends on the type of signal used in the request.</p>
     /// <p>For <code>Approve</code> and <code>Reject</code> signal types, the payload is an optional comment that you can send with the signal type. For example:</p>
-    /// <p><code>Comment="Looks good"</code></p>
+    /// <p> <code>Comment="Looks good"</code> </p>
     /// <p>For <code>StartStep</code> and <code>Resume</code> signal types, you must send the name of the Automation step to start or resume as the payload. For example:</p>
-    /// <p><code>StepName="step1"</code></p>
+    /// <p> <code>StepName="step1"</code> </p>
     /// <p>For the <code>StopStep</code> signal type, you must send the step execution ID as the payload. For example:</p>
-    /// <p><code>StepExecutionId="97fff367-fc5a-4299-aed8-0123456789ab"</code></p>
+    /// <p> <code>StepExecutionId="97fff367-fc5a-4299-aed8-0123456789ab"</code> </p>
     pub payload: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
 }
 impl SendAutomationSignalInput {
@@ -21,17 +21,17 @@ impl SendAutomationSignalInput {
     pub fn automation_execution_id(&self) -> ::std::option::Option<&str> {
         self.automation_execution_id.as_deref()
     }
-    /// <p>The type of signal to send to an Automation execution.</p>
+    /// <p>The type of signal to send to an Automation execution. </p>
     pub fn signal_type(&self) -> ::std::option::Option<&crate::types::SignalType> {
         self.signal_type.as_ref()
     }
     /// <p>The data sent with the signal. The data schema depends on the type of signal used in the request.</p>
     /// <p>For <code>Approve</code> and <code>Reject</code> signal types, the payload is an optional comment that you can send with the signal type. For example:</p>
-    /// <p><code>Comment="Looks good"</code></p>
+    /// <p> <code>Comment="Looks good"</code> </p>
     /// <p>For <code>StartStep</code> and <code>Resume</code> signal types, you must send the name of the Automation step to start or resume as the payload. For example:</p>
-    /// <p><code>StepName="step1"</code></p>
+    /// <p> <code>StepName="step1"</code> </p>
     /// <p>For the <code>StopStep</code> signal type, you must send the step execution ID as the payload. For example:</p>
-    /// <p><code>StepExecutionId="97fff367-fc5a-4299-aed8-0123456789ab"</code></p>
+    /// <p> <code>StepExecutionId="97fff367-fc5a-4299-aed8-0123456789ab"</code> </p>
     pub fn payload(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.payload.as_ref()
     }
@@ -67,18 +67,18 @@ impl SendAutomationSignalInputBuilder {
     pub fn get_automation_execution_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.automation_execution_id
     }
-    /// <p>The type of signal to send to an Automation execution.</p>
+    /// <p>The type of signal to send to an Automation execution. </p>
     /// This field is required.
     pub fn signal_type(mut self, input: crate::types::SignalType) -> Self {
         self.signal_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of signal to send to an Automation execution.</p>
+    /// <p>The type of signal to send to an Automation execution. </p>
     pub fn set_signal_type(mut self, input: ::std::option::Option<crate::types::SignalType>) -> Self {
         self.signal_type = input;
         self
     }
-    /// <p>The type of signal to send to an Automation execution.</p>
+    /// <p>The type of signal to send to an Automation execution. </p>
     pub fn get_signal_type(&self) -> &::std::option::Option<crate::types::SignalType> {
         &self.signal_type
     }
@@ -88,11 +88,11 @@ impl SendAutomationSignalInputBuilder {
     ///
     /// <p>The data sent with the signal. The data schema depends on the type of signal used in the request.</p>
     /// <p>For <code>Approve</code> and <code>Reject</code> signal types, the payload is an optional comment that you can send with the signal type. For example:</p>
-    /// <p><code>Comment="Looks good"</code></p>
+    /// <p> <code>Comment="Looks good"</code> </p>
     /// <p>For <code>StartStep</code> and <code>Resume</code> signal types, you must send the name of the Automation step to start or resume as the payload. For example:</p>
-    /// <p><code>StepName="step1"</code></p>
+    /// <p> <code>StepName="step1"</code> </p>
     /// <p>For the <code>StopStep</code> signal type, you must send the step execution ID as the payload. For example:</p>
-    /// <p><code>StepExecutionId="97fff367-fc5a-4299-aed8-0123456789ab"</code></p>
+    /// <p> <code>StepExecutionId="97fff367-fc5a-4299-aed8-0123456789ab"</code> </p>
     pub fn payload(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.payload.unwrap_or_default();
         hash_map.insert(k.into(), v);
@@ -101,11 +101,11 @@ impl SendAutomationSignalInputBuilder {
     }
     /// <p>The data sent with the signal. The data schema depends on the type of signal used in the request.</p>
     /// <p>For <code>Approve</code> and <code>Reject</code> signal types, the payload is an optional comment that you can send with the signal type. For example:</p>
-    /// <p><code>Comment="Looks good"</code></p>
+    /// <p> <code>Comment="Looks good"</code> </p>
     /// <p>For <code>StartStep</code> and <code>Resume</code> signal types, you must send the name of the Automation step to start or resume as the payload. For example:</p>
-    /// <p><code>StepName="step1"</code></p>
+    /// <p> <code>StepName="step1"</code> </p>
     /// <p>For the <code>StopStep</code> signal type, you must send the step execution ID as the payload. For example:</p>
-    /// <p><code>StepExecutionId="97fff367-fc5a-4299-aed8-0123456789ab"</code></p>
+    /// <p> <code>StepExecutionId="97fff367-fc5a-4299-aed8-0123456789ab"</code> </p>
     pub fn set_payload(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
@@ -115,11 +115,11 @@ impl SendAutomationSignalInputBuilder {
     }
     /// <p>The data sent with the signal. The data schema depends on the type of signal used in the request.</p>
     /// <p>For <code>Approve</code> and <code>Reject</code> signal types, the payload is an optional comment that you can send with the signal type. For example:</p>
-    /// <p><code>Comment="Looks good"</code></p>
+    /// <p> <code>Comment="Looks good"</code> </p>
     /// <p>For <code>StartStep</code> and <code>Resume</code> signal types, you must send the name of the Automation step to start or resume as the payload. For example:</p>
-    /// <p><code>StepName="step1"</code></p>
+    /// <p> <code>StepName="step1"</code> </p>
     /// <p>For the <code>StopStep</code> signal type, you must send the step execution ID as the payload. For example:</p>
-    /// <p><code>StepExecutionId="97fff367-fc5a-4299-aed8-0123456789ab"</code></p>
+    /// <p> <code>StepExecutionId="97fff367-fc5a-4299-aed8-0123456789ab"</code> </p>
     pub fn get_payload(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         &self.payload
     }

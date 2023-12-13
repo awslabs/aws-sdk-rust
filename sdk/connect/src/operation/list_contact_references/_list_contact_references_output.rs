@@ -5,7 +5,7 @@
 pub struct ListContactReferencesOutput {
     /// <p>Information about the flows.</p>
     pub reference_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceSummary>>,
-    /// <p>If there are additional results, this is the token for the next set of results.</p><important>
+    /// <p>If there are additional results, this is the token for the next set of results.</p> <important>
     /// <p>This is always returned as null in the response.</p>
     /// </important>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -18,7 +18,7 @@ impl ListContactReferencesOutput {
     pub fn reference_summary_list(&self) -> &[crate::types::ReferenceSummary] {
         self.reference_summary_list.as_deref().unwrap_or_default()
     }
-    /// <p>If there are additional results, this is the token for the next set of results.</p><important>
+    /// <p>If there are additional results, this is the token for the next set of results.</p> <important>
     /// <p>This is always returned as null in the response.</p>
     /// </important>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -66,21 +66,21 @@ impl ListContactReferencesOutputBuilder {
     pub fn get_reference_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReferenceSummary>> {
         &self.reference_summary_list
     }
-    /// <p>If there are additional results, this is the token for the next set of results.</p><important>
+    /// <p>If there are additional results, this is the token for the next set of results.</p> <important>
     /// <p>This is always returned as null in the response.</p>
     /// </important>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If there are additional results, this is the token for the next set of results.</p><important>
+    /// <p>If there are additional results, this is the token for the next set of results.</p> <important>
     /// <p>This is always returned as null in the response.</p>
     /// </important>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>If there are additional results, this is the token for the next set of results.</p><important>
+    /// <p>If there are additional results, this is the token for the next set of results.</p> <important>
     /// <p>This is always returned as null in the response.</p>
     /// </important>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {

@@ -4,30 +4,24 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDeploymentsInput {
-    /// <p>The name of an CodeDeploy application associated with the user or Amazon Web Services account.</p><note>
-    /// <p>If <code>applicationName</code> is specified, then <code>deploymentGroupName</code> must be specified. If it is not specified, then <code>deploymentGroupName</code> must not be specified.</p>
+    /// <p>The name of an CodeDeploy application associated with the user or Amazon Web Services account.</p> <note>
+    /// <p>If <code>applicationName</code> is specified, then <code>deploymentGroupName</code> must be specified. If it is not specified, then <code>deploymentGroupName</code> must not be specified. </p>
     /// </note>
     pub application_name: ::std::option::Option<::std::string::String>,
-    /// <p>The name of a deployment group for the specified application.</p><note>
-    /// <p>If <code>deploymentGroupName</code> is specified, then <code>applicationName</code> must be specified. If it is not specified, then <code>applicationName</code> must not be specified.</p>
+    /// <p>The name of a deployment group for the specified application.</p> <note>
+    /// <p>If <code>deploymentGroupName</code> is specified, then <code>applicationName</code> must be specified. If it is not specified, then <code>applicationName</code> must not be specified. </p>
     /// </note>
     pub deployment_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID of an external resource for returning deployments linked to the external resource.</p>
     pub external_id: ::std::option::Option<::std::string::String>,
     /// <p>A subset of deployments to list by status:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Created</code>: Include created deployments in the resulting list.</p></li>
-    /// <li>
-    /// <p><code>Queued</code>: Include queued deployments in the resulting list.</p></li>
-    /// <li>
-    /// <p><code>In Progress</code>: Include in-progress deployments in the resulting list.</p></li>
-    /// <li>
-    /// <p><code>Succeeded</code>: Include successful deployments in the resulting list.</p></li>
-    /// <li>
-    /// <p><code>Failed</code>: Include failed deployments in the resulting list.</p></li>
-    /// <li>
-    /// <p><code>Stopped</code>: Include stopped deployments in the resulting list.</p></li>
+    /// <li> <p> <code>Created</code>: Include created deployments in the resulting list.</p> </li>
+    /// <li> <p> <code>Queued</code>: Include queued deployments in the resulting list.</p> </li>
+    /// <li> <p> <code>In Progress</code>: Include in-progress deployments in the resulting list.</p> </li>
+    /// <li> <p> <code>Succeeded</code>: Include successful deployments in the resulting list.</p> </li>
+    /// <li> <p> <code>Failed</code>: Include failed deployments in the resulting list.</p> </li>
+    /// <li> <p> <code>Stopped</code>: Include stopped deployments in the resulting list.</p> </li>
     /// </ul>
     pub include_only_statuses: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentStatus>>,
     /// <p>A time range (start and end) for returning a subset of the list of deployments.</p>
@@ -36,14 +30,14 @@ pub struct ListDeploymentsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListDeploymentsInput {
-    /// <p>The name of an CodeDeploy application associated with the user or Amazon Web Services account.</p><note>
-    /// <p>If <code>applicationName</code> is specified, then <code>deploymentGroupName</code> must be specified. If it is not specified, then <code>deploymentGroupName</code> must not be specified.</p>
+    /// <p>The name of an CodeDeploy application associated with the user or Amazon Web Services account.</p> <note>
+    /// <p>If <code>applicationName</code> is specified, then <code>deploymentGroupName</code> must be specified. If it is not specified, then <code>deploymentGroupName</code> must not be specified. </p>
     /// </note>
     pub fn application_name(&self) -> ::std::option::Option<&str> {
         self.application_name.as_deref()
     }
-    /// <p>The name of a deployment group for the specified application.</p><note>
-    /// <p>If <code>deploymentGroupName</code> is specified, then <code>applicationName</code> must be specified. If it is not specified, then <code>applicationName</code> must not be specified.</p>
+    /// <p>The name of a deployment group for the specified application.</p> <note>
+    /// <p>If <code>deploymentGroupName</code> is specified, then <code>applicationName</code> must be specified. If it is not specified, then <code>applicationName</code> must not be specified. </p>
     /// </note>
     pub fn deployment_group_name(&self) -> ::std::option::Option<&str> {
         self.deployment_group_name.as_deref()
@@ -54,18 +48,12 @@ impl ListDeploymentsInput {
     }
     /// <p>A subset of deployments to list by status:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Created</code>: Include created deployments in the resulting list.</p></li>
-    /// <li>
-    /// <p><code>Queued</code>: Include queued deployments in the resulting list.</p></li>
-    /// <li>
-    /// <p><code>In Progress</code>: Include in-progress deployments in the resulting list.</p></li>
-    /// <li>
-    /// <p><code>Succeeded</code>: Include successful deployments in the resulting list.</p></li>
-    /// <li>
-    /// <p><code>Failed</code>: Include failed deployments in the resulting list.</p></li>
-    /// <li>
-    /// <p><code>Stopped</code>: Include stopped deployments in the resulting list.</p></li>
+    /// <li> <p> <code>Created</code>: Include created deployments in the resulting list.</p> </li>
+    /// <li> <p> <code>Queued</code>: Include queued deployments in the resulting list.</p> </li>
+    /// <li> <p> <code>In Progress</code>: Include in-progress deployments in the resulting list.</p> </li>
+    /// <li> <p> <code>Succeeded</code>: Include successful deployments in the resulting list.</p> </li>
+    /// <li> <p> <code>Failed</code>: Include failed deployments in the resulting list.</p> </li>
+    /// <li> <p> <code>Stopped</code>: Include stopped deployments in the resulting list.</p> </li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.include_only_statuses.is_none()`.
@@ -100,42 +88,42 @@ pub struct ListDeploymentsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListDeploymentsInputBuilder {
-    /// <p>The name of an CodeDeploy application associated with the user or Amazon Web Services account.</p><note>
-    /// <p>If <code>applicationName</code> is specified, then <code>deploymentGroupName</code> must be specified. If it is not specified, then <code>deploymentGroupName</code> must not be specified.</p>
+    /// <p>The name of an CodeDeploy application associated with the user or Amazon Web Services account.</p> <note>
+    /// <p>If <code>applicationName</code> is specified, then <code>deploymentGroupName</code> must be specified. If it is not specified, then <code>deploymentGroupName</code> must not be specified. </p>
     /// </note>
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of an CodeDeploy application associated with the user or Amazon Web Services account.</p><note>
-    /// <p>If <code>applicationName</code> is specified, then <code>deploymentGroupName</code> must be specified. If it is not specified, then <code>deploymentGroupName</code> must not be specified.</p>
+    /// <p>The name of an CodeDeploy application associated with the user or Amazon Web Services account.</p> <note>
+    /// <p>If <code>applicationName</code> is specified, then <code>deploymentGroupName</code> must be specified. If it is not specified, then <code>deploymentGroupName</code> must not be specified. </p>
     /// </note>
     pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_name = input;
         self
     }
-    /// <p>The name of an CodeDeploy application associated with the user or Amazon Web Services account.</p><note>
-    /// <p>If <code>applicationName</code> is specified, then <code>deploymentGroupName</code> must be specified. If it is not specified, then <code>deploymentGroupName</code> must not be specified.</p>
+    /// <p>The name of an CodeDeploy application associated with the user or Amazon Web Services account.</p> <note>
+    /// <p>If <code>applicationName</code> is specified, then <code>deploymentGroupName</code> must be specified. If it is not specified, then <code>deploymentGroupName</code> must not be specified. </p>
     /// </note>
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_name
     }
-    /// <p>The name of a deployment group for the specified application.</p><note>
-    /// <p>If <code>deploymentGroupName</code> is specified, then <code>applicationName</code> must be specified. If it is not specified, then <code>applicationName</code> must not be specified.</p>
+    /// <p>The name of a deployment group for the specified application.</p> <note>
+    /// <p>If <code>deploymentGroupName</code> is specified, then <code>applicationName</code> must be specified. If it is not specified, then <code>applicationName</code> must not be specified. </p>
     /// </note>
     pub fn deployment_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_group_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of a deployment group for the specified application.</p><note>
-    /// <p>If <code>deploymentGroupName</code> is specified, then <code>applicationName</code> must be specified. If it is not specified, then <code>applicationName</code> must not be specified.</p>
+    /// <p>The name of a deployment group for the specified application.</p> <note>
+    /// <p>If <code>deploymentGroupName</code> is specified, then <code>applicationName</code> must be specified. If it is not specified, then <code>applicationName</code> must not be specified. </p>
     /// </note>
     pub fn set_deployment_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_group_name = input;
         self
     }
-    /// <p>The name of a deployment group for the specified application.</p><note>
-    /// <p>If <code>deploymentGroupName</code> is specified, then <code>applicationName</code> must be specified. If it is not specified, then <code>applicationName</code> must not be specified.</p>
+    /// <p>The name of a deployment group for the specified application.</p> <note>
+    /// <p>If <code>deploymentGroupName</code> is specified, then <code>applicationName</code> must be specified. If it is not specified, then <code>applicationName</code> must not be specified. </p>
     /// </note>
     pub fn get_deployment_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.deployment_group_name
@@ -160,18 +148,12 @@ impl ListDeploymentsInputBuilder {
     ///
     /// <p>A subset of deployments to list by status:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Created</code>: Include created deployments in the resulting list.</p></li>
-    /// <li>
-    /// <p><code>Queued</code>: Include queued deployments in the resulting list.</p></li>
-    /// <li>
-    /// <p><code>In Progress</code>: Include in-progress deployments in the resulting list.</p></li>
-    /// <li>
-    /// <p><code>Succeeded</code>: Include successful deployments in the resulting list.</p></li>
-    /// <li>
-    /// <p><code>Failed</code>: Include failed deployments in the resulting list.</p></li>
-    /// <li>
-    /// <p><code>Stopped</code>: Include stopped deployments in the resulting list.</p></li>
+    /// <li> <p> <code>Created</code>: Include created deployments in the resulting list.</p> </li>
+    /// <li> <p> <code>Queued</code>: Include queued deployments in the resulting list.</p> </li>
+    /// <li> <p> <code>In Progress</code>: Include in-progress deployments in the resulting list.</p> </li>
+    /// <li> <p> <code>Succeeded</code>: Include successful deployments in the resulting list.</p> </li>
+    /// <li> <p> <code>Failed</code>: Include failed deployments in the resulting list.</p> </li>
+    /// <li> <p> <code>Stopped</code>: Include stopped deployments in the resulting list.</p> </li>
     /// </ul>
     pub fn include_only_statuses(mut self, input: crate::types::DeploymentStatus) -> Self {
         let mut v = self.include_only_statuses.unwrap_or_default();
@@ -181,18 +163,12 @@ impl ListDeploymentsInputBuilder {
     }
     /// <p>A subset of deployments to list by status:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Created</code>: Include created deployments in the resulting list.</p></li>
-    /// <li>
-    /// <p><code>Queued</code>: Include queued deployments in the resulting list.</p></li>
-    /// <li>
-    /// <p><code>In Progress</code>: Include in-progress deployments in the resulting list.</p></li>
-    /// <li>
-    /// <p><code>Succeeded</code>: Include successful deployments in the resulting list.</p></li>
-    /// <li>
-    /// <p><code>Failed</code>: Include failed deployments in the resulting list.</p></li>
-    /// <li>
-    /// <p><code>Stopped</code>: Include stopped deployments in the resulting list.</p></li>
+    /// <li> <p> <code>Created</code>: Include created deployments in the resulting list.</p> </li>
+    /// <li> <p> <code>Queued</code>: Include queued deployments in the resulting list.</p> </li>
+    /// <li> <p> <code>In Progress</code>: Include in-progress deployments in the resulting list.</p> </li>
+    /// <li> <p> <code>Succeeded</code>: Include successful deployments in the resulting list.</p> </li>
+    /// <li> <p> <code>Failed</code>: Include failed deployments in the resulting list.</p> </li>
+    /// <li> <p> <code>Stopped</code>: Include stopped deployments in the resulting list.</p> </li>
     /// </ul>
     pub fn set_include_only_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentStatus>>) -> Self {
         self.include_only_statuses = input;
@@ -200,18 +176,12 @@ impl ListDeploymentsInputBuilder {
     }
     /// <p>A subset of deployments to list by status:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Created</code>: Include created deployments in the resulting list.</p></li>
-    /// <li>
-    /// <p><code>Queued</code>: Include queued deployments in the resulting list.</p></li>
-    /// <li>
-    /// <p><code>In Progress</code>: Include in-progress deployments in the resulting list.</p></li>
-    /// <li>
-    /// <p><code>Succeeded</code>: Include successful deployments in the resulting list.</p></li>
-    /// <li>
-    /// <p><code>Failed</code>: Include failed deployments in the resulting list.</p></li>
-    /// <li>
-    /// <p><code>Stopped</code>: Include stopped deployments in the resulting list.</p></li>
+    /// <li> <p> <code>Created</code>: Include created deployments in the resulting list.</p> </li>
+    /// <li> <p> <code>Queued</code>: Include queued deployments in the resulting list.</p> </li>
+    /// <li> <p> <code>In Progress</code>: Include in-progress deployments in the resulting list.</p> </li>
+    /// <li> <p> <code>Succeeded</code>: Include successful deployments in the resulting list.</p> </li>
+    /// <li> <p> <code>Failed</code>: Include failed deployments in the resulting list.</p> </li>
+    /// <li> <p> <code>Stopped</code>: Include stopped deployments in the resulting list.</p> </li>
     /// </ul>
     pub fn get_include_only_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentStatus>> {
         &self.include_only_statuses

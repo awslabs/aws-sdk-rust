@@ -5,7 +5,7 @@
 pub struct SearchRelatedItemsOutput {
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>A list of items related to a case.</p>
+    /// <p>A list of items related to a case. </p>
     pub related_items: ::std::vec::Vec<::std::option::Option<crate::types::SearchRelatedItemsResponseItem>>,
     _request_id: Option<String>,
 }
@@ -14,7 +14,7 @@ impl SearchRelatedItemsOutput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>A list of items related to a case.</p>
+    /// <p>A list of items related to a case. </p>
     pub fn related_items(&self) -> &[::std::option::Option<crate::types::SearchRelatedItemsResponseItem>] {
         use std::ops::Deref;
         self.related_items.deref()
@@ -59,14 +59,14 @@ impl SearchRelatedItemsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_related_items`](Self::set_related_items).
     ///
-    /// <p>A list of items related to a case.</p>
+    /// <p>A list of items related to a case. </p>
     pub fn related_items(mut self, input: ::std::option::Option<crate::types::SearchRelatedItemsResponseItem>) -> Self {
         let mut v = self.related_items.unwrap_or_default();
         v.push(input);
         self.related_items = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of items related to a case.</p>
+    /// <p>A list of items related to a case. </p>
     pub fn set_related_items(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<::std::option::Option<crate::types::SearchRelatedItemsResponseItem>>>,
@@ -74,7 +74,7 @@ impl SearchRelatedItemsOutputBuilder {
         self.related_items = input;
         self
     }
-    /// <p>A list of items related to a case.</p>
+    /// <p>A list of items related to a case. </p>
     pub fn get_related_items(&self) -> &::std::option::Option<::std::vec::Vec<::std::option::Option<crate::types::SearchRelatedItemsResponseItem>>> {
         &self.related_items
     }

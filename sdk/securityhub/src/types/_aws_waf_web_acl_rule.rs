@@ -4,26 +4,26 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsWafWebAclRule {
-    /// <p>Specifies the action that CloudFront or WAF takes when a web request matches the conditions in the rule.</p>
+    /// <p>Specifies the action that CloudFront or WAF takes when a web request matches the conditions in the rule. </p>
     pub action: ::std::option::Option<crate::types::WafAction>,
     /// <p>Rules to exclude from a rule group.</p>
     pub excluded_rules: ::std::option::Option<::std::vec::Vec<crate::types::WafExcludedRule>>,
     /// <p>Use the <code>OverrideAction</code> to test your <code>RuleGroup</code>.</p>
     /// <p>Any rule in a <code>RuleGroup</code> can potentially block a request. If you set the <code>OverrideAction</code> to <code>None</code>, the <code>RuleGroup</code> blocks a request if any individual rule in the <code>RuleGroup</code> matches the request and is configured to block that request.</p>
     /// <p>However, if you first want to test the <code>RuleGroup</code>, set the <code>OverrideAction</code> to <code>Count</code>. The <code>RuleGroup</code> then overrides any block action specified by individual rules contained within the group. Instead of blocking matching requests, those requests are counted.</p>
-    /// <p><code>ActivatedRule</code>|<code>OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a web ACL. In this case you do not use <code>ActivatedRule</code> <code>Action</code>. For all other update requests, <code>ActivatedRule</code> <code>Action</code> is used instead of <code>ActivatedRule</code> <code>OverrideAction</code>.</p>
+    /// <p> <code>ActivatedRule</code>|<code>OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a web ACL. In this case you do not use <code>ActivatedRule</code> <code>Action</code>. For all other update requests, <code>ActivatedRule</code> <code>Action</code> is used instead of <code>ActivatedRule</code> <code>OverrideAction</code>.</p>
     pub override_action: ::std::option::Option<crate::types::WafOverrideAction>,
     /// <p>Specifies the order in which the rules in a web ACL are evaluated. Rules with a lower value for <code>Priority</code> are evaluated before rules with a higher value. The value must be a unique integer. If you add multiple rules to a web ACL, the values do not need to be consecutive.</p>
     pub priority: ::std::option::Option<i32>,
     /// <p>The identifier for a rule.</p>
     pub rule_id: ::std::option::Option<::std::string::String>,
     /// <p>The rule type.</p>
-    /// <p>Valid values: <code>REGULAR</code> | <code>RATE_BASED</code> | <code>GROUP</code></p>
+    /// <p>Valid values: <code>REGULAR</code> | <code>RATE_BASED</code> | <code>GROUP</code> </p>
     /// <p>The default is <code>REGULAR</code>.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
 }
 impl AwsWafWebAclRule {
-    /// <p>Specifies the action that CloudFront or WAF takes when a web request matches the conditions in the rule.</p>
+    /// <p>Specifies the action that CloudFront or WAF takes when a web request matches the conditions in the rule. </p>
     pub fn action(&self) -> ::std::option::Option<&crate::types::WafAction> {
         self.action.as_ref()
     }
@@ -36,7 +36,7 @@ impl AwsWafWebAclRule {
     /// <p>Use the <code>OverrideAction</code> to test your <code>RuleGroup</code>.</p>
     /// <p>Any rule in a <code>RuleGroup</code> can potentially block a request. If you set the <code>OverrideAction</code> to <code>None</code>, the <code>RuleGroup</code> blocks a request if any individual rule in the <code>RuleGroup</code> matches the request and is configured to block that request.</p>
     /// <p>However, if you first want to test the <code>RuleGroup</code>, set the <code>OverrideAction</code> to <code>Count</code>. The <code>RuleGroup</code> then overrides any block action specified by individual rules contained within the group. Instead of blocking matching requests, those requests are counted.</p>
-    /// <p><code>ActivatedRule</code>|<code>OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a web ACL. In this case you do not use <code>ActivatedRule</code> <code>Action</code>. For all other update requests, <code>ActivatedRule</code> <code>Action</code> is used instead of <code>ActivatedRule</code> <code>OverrideAction</code>.</p>
+    /// <p> <code>ActivatedRule</code>|<code>OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a web ACL. In this case you do not use <code>ActivatedRule</code> <code>Action</code>. For all other update requests, <code>ActivatedRule</code> <code>Action</code> is used instead of <code>ActivatedRule</code> <code>OverrideAction</code>.</p>
     pub fn override_action(&self) -> ::std::option::Option<&crate::types::WafOverrideAction> {
         self.override_action.as_ref()
     }
@@ -49,7 +49,7 @@ impl AwsWafWebAclRule {
         self.rule_id.as_deref()
     }
     /// <p>The rule type.</p>
-    /// <p>Valid values: <code>REGULAR</code> | <code>RATE_BASED</code> | <code>GROUP</code></p>
+    /// <p>Valid values: <code>REGULAR</code> | <code>RATE_BASED</code> | <code>GROUP</code> </p>
     /// <p>The default is <code>REGULAR</code>.</p>
     pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
@@ -74,17 +74,17 @@ pub struct AwsWafWebAclRuleBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
 }
 impl AwsWafWebAclRuleBuilder {
-    /// <p>Specifies the action that CloudFront or WAF takes when a web request matches the conditions in the rule.</p>
+    /// <p>Specifies the action that CloudFront or WAF takes when a web request matches the conditions in the rule. </p>
     pub fn action(mut self, input: crate::types::WafAction) -> Self {
         self.action = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the action that CloudFront or WAF takes when a web request matches the conditions in the rule.</p>
+    /// <p>Specifies the action that CloudFront or WAF takes when a web request matches the conditions in the rule. </p>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::WafAction>) -> Self {
         self.action = input;
         self
     }
-    /// <p>Specifies the action that CloudFront or WAF takes when a web request matches the conditions in the rule.</p>
+    /// <p>Specifies the action that CloudFront or WAF takes when a web request matches the conditions in the rule. </p>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::WafAction> {
         &self.action
     }
@@ -111,7 +111,7 @@ impl AwsWafWebAclRuleBuilder {
     /// <p>Use the <code>OverrideAction</code> to test your <code>RuleGroup</code>.</p>
     /// <p>Any rule in a <code>RuleGroup</code> can potentially block a request. If you set the <code>OverrideAction</code> to <code>None</code>, the <code>RuleGroup</code> blocks a request if any individual rule in the <code>RuleGroup</code> matches the request and is configured to block that request.</p>
     /// <p>However, if you first want to test the <code>RuleGroup</code>, set the <code>OverrideAction</code> to <code>Count</code>. The <code>RuleGroup</code> then overrides any block action specified by individual rules contained within the group. Instead of blocking matching requests, those requests are counted.</p>
-    /// <p><code>ActivatedRule</code>|<code>OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a web ACL. In this case you do not use <code>ActivatedRule</code> <code>Action</code>. For all other update requests, <code>ActivatedRule</code> <code>Action</code> is used instead of <code>ActivatedRule</code> <code>OverrideAction</code>.</p>
+    /// <p> <code>ActivatedRule</code>|<code>OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a web ACL. In this case you do not use <code>ActivatedRule</code> <code>Action</code>. For all other update requests, <code>ActivatedRule</code> <code>Action</code> is used instead of <code>ActivatedRule</code> <code>OverrideAction</code>.</p>
     pub fn override_action(mut self, input: crate::types::WafOverrideAction) -> Self {
         self.override_action = ::std::option::Option::Some(input);
         self
@@ -119,7 +119,7 @@ impl AwsWafWebAclRuleBuilder {
     /// <p>Use the <code>OverrideAction</code> to test your <code>RuleGroup</code>.</p>
     /// <p>Any rule in a <code>RuleGroup</code> can potentially block a request. If you set the <code>OverrideAction</code> to <code>None</code>, the <code>RuleGroup</code> blocks a request if any individual rule in the <code>RuleGroup</code> matches the request and is configured to block that request.</p>
     /// <p>However, if you first want to test the <code>RuleGroup</code>, set the <code>OverrideAction</code> to <code>Count</code>. The <code>RuleGroup</code> then overrides any block action specified by individual rules contained within the group. Instead of blocking matching requests, those requests are counted.</p>
-    /// <p><code>ActivatedRule</code>|<code>OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a web ACL. In this case you do not use <code>ActivatedRule</code> <code>Action</code>. For all other update requests, <code>ActivatedRule</code> <code>Action</code> is used instead of <code>ActivatedRule</code> <code>OverrideAction</code>.</p>
+    /// <p> <code>ActivatedRule</code>|<code>OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a web ACL. In this case you do not use <code>ActivatedRule</code> <code>Action</code>. For all other update requests, <code>ActivatedRule</code> <code>Action</code> is used instead of <code>ActivatedRule</code> <code>OverrideAction</code>.</p>
     pub fn set_override_action(mut self, input: ::std::option::Option<crate::types::WafOverrideAction>) -> Self {
         self.override_action = input;
         self
@@ -127,7 +127,7 @@ impl AwsWafWebAclRuleBuilder {
     /// <p>Use the <code>OverrideAction</code> to test your <code>RuleGroup</code>.</p>
     /// <p>Any rule in a <code>RuleGroup</code> can potentially block a request. If you set the <code>OverrideAction</code> to <code>None</code>, the <code>RuleGroup</code> blocks a request if any individual rule in the <code>RuleGroup</code> matches the request and is configured to block that request.</p>
     /// <p>However, if you first want to test the <code>RuleGroup</code>, set the <code>OverrideAction</code> to <code>Count</code>. The <code>RuleGroup</code> then overrides any block action specified by individual rules contained within the group. Instead of blocking matching requests, those requests are counted.</p>
-    /// <p><code>ActivatedRule</code>|<code>OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a web ACL. In this case you do not use <code>ActivatedRule</code> <code>Action</code>. For all other update requests, <code>ActivatedRule</code> <code>Action</code> is used instead of <code>ActivatedRule</code> <code>OverrideAction</code>.</p>
+    /// <p> <code>ActivatedRule</code>|<code>OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a web ACL. In this case you do not use <code>ActivatedRule</code> <code>Action</code>. For all other update requests, <code>ActivatedRule</code> <code>Action</code> is used instead of <code>ActivatedRule</code> <code>OverrideAction</code>.</p>
     pub fn get_override_action(&self) -> &::std::option::Option<crate::types::WafOverrideAction> {
         &self.override_action
     }
@@ -160,21 +160,21 @@ impl AwsWafWebAclRuleBuilder {
         &self.rule_id
     }
     /// <p>The rule type.</p>
-    /// <p>Valid values: <code>REGULAR</code> | <code>RATE_BASED</code> | <code>GROUP</code></p>
+    /// <p>Valid values: <code>REGULAR</code> | <code>RATE_BASED</code> | <code>GROUP</code> </p>
     /// <p>The default is <code>REGULAR</code>.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The rule type.</p>
-    /// <p>Valid values: <code>REGULAR</code> | <code>RATE_BASED</code> | <code>GROUP</code></p>
+    /// <p>Valid values: <code>REGULAR</code> | <code>RATE_BASED</code> | <code>GROUP</code> </p>
     /// <p>The default is <code>REGULAR</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The rule type.</p>
-    /// <p>Valid values: <code>REGULAR</code> | <code>RATE_BASED</code> | <code>GROUP</code></p>
+    /// <p>Valid values: <code>REGULAR</code> | <code>RATE_BASED</code> | <code>GROUP</code> </p>
     /// <p>The default is <code>REGULAR</code>.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.r#type

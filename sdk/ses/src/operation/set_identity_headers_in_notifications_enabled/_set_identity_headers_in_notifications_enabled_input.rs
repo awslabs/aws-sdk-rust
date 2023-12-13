@@ -6,7 +6,7 @@
 pub struct SetIdentityHeadersInNotificationsEnabledInput {
     /// <p>The identity for which to enable or disable headers in notifications. Examples: <code>user@example.com</code>, <code>example.com</code>.</p>
     pub identity: ::std::option::Option<::std::string::String>,
-    /// <p>The notification type for which to enable or disable headers in notifications.</p>
+    /// <p>The notification type for which to enable or disable headers in notifications. </p>
     pub notification_type: ::std::option::Option<crate::types::NotificationType>,
     /// <p>Sets whether Amazon SES includes the original email headers in Amazon SNS notifications of the specified notification type. A value of <code>true</code> specifies that Amazon SES includes headers in notifications, and a value of <code>false</code> specifies that Amazon SES does not include headers in notifications.</p>
     /// <p>This value can only be set when <code>NotificationType</code> is already set to use a particular Amazon SNS topic.</p>
@@ -17,7 +17,7 @@ impl SetIdentityHeadersInNotificationsEnabledInput {
     pub fn identity(&self) -> ::std::option::Option<&str> {
         self.identity.as_deref()
     }
-    /// <p>The notification type for which to enable or disable headers in notifications.</p>
+    /// <p>The notification type for which to enable or disable headers in notifications. </p>
     pub fn notification_type(&self) -> ::std::option::Option<&crate::types::NotificationType> {
         self.notification_type.as_ref()
     }
@@ -59,18 +59,18 @@ impl SetIdentityHeadersInNotificationsEnabledInputBuilder {
     pub fn get_identity(&self) -> &::std::option::Option<::std::string::String> {
         &self.identity
     }
-    /// <p>The notification type for which to enable or disable headers in notifications.</p>
+    /// <p>The notification type for which to enable or disable headers in notifications. </p>
     /// This field is required.
     pub fn notification_type(mut self, input: crate::types::NotificationType) -> Self {
         self.notification_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The notification type for which to enable or disable headers in notifications.</p>
+    /// <p>The notification type for which to enable or disable headers in notifications. </p>
     pub fn set_notification_type(mut self, input: ::std::option::Option<crate::types::NotificationType>) -> Self {
         self.notification_type = input;
         self
     }
-    /// <p>The notification type for which to enable or disable headers in notifications.</p>
+    /// <p>The notification type for which to enable or disable headers in notifications. </p>
     pub fn get_notification_type(&self) -> &::std::option::Option<crate::types::NotificationType> {
         &self.notification_type
     }

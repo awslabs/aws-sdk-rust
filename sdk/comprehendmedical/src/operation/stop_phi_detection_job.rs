@@ -254,9 +254,9 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for StopPHIDetect
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum StopPHIDetectionJobError {
-    /// <p>An internal server error occurred. Retry your request.</p>
+    /// <p> An internal server error occurred. Retry your request. </p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p>The request that you made is invalid. Check your request to determine why it's invalid and then retry the request.</p>
+    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request.</p>
     InvalidRequestException(crate::types::error::InvalidRequestException),
     /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check the ARN and try your request again.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),

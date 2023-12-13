@@ -123,30 +123,33 @@ impl CreatePermissionFluentBuilder {
         self.inner.get_name()
     }
     /// <p>Specifies the name of the resource type that this customer managed permission applies to.</p>
-    /// <p>The format is <code> <i><service-code></service-code></i>:<i><resource-type></resource-type></i> </code> and is not case sensitive. For example, to specify an Amazon EC2 Subnet, you can use the string <code>ec2:subnet</code>. To see the list of valid values for this parameter, query the <code>ListResourceTypes</code> operation.</p>
+    /// <p>The format is <code> <i>
+    /// <service-code></service-code></i>:<i>
+    /// <resource-type></resource-type></i> </code> and is not case sensitive. For example, to specify an Amazon EC2 Subnet, you can use the string <code>ec2:subnet</code>. To see the list of valid values for this parameter, query the <code>ListResourceTypes</code> operation.</p>
     pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_type(input.into());
         self
     }
     /// <p>Specifies the name of the resource type that this customer managed permission applies to.</p>
-    /// <p>The format is <code> <i><service-code></service-code></i>:<i><resource-type></resource-type></i> </code> and is not case sensitive. For example, to specify an Amazon EC2 Subnet, you can use the string <code>ec2:subnet</code>. To see the list of valid values for this parameter, query the <code>ListResourceTypes</code> operation.</p>
+    /// <p>The format is <code> <i>
+    /// <service-code></service-code></i>:<i>
+    /// <resource-type></resource-type></i> </code> and is not case sensitive. For example, to specify an Amazon EC2 Subnet, you can use the string <code>ec2:subnet</code>. To see the list of valid values for this parameter, query the <code>ListResourceTypes</code> operation.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }
     /// <p>Specifies the name of the resource type that this customer managed permission applies to.</p>
-    /// <p>The format is <code> <i><service-code></service-code></i>:<i><resource-type></resource-type></i> </code> and is not case sensitive. For example, to specify an Amazon EC2 Subnet, you can use the string <code>ec2:subnet</code>. To see the list of valid values for this parameter, query the <code>ListResourceTypes</code> operation.</p>
+    /// <p>The format is <code> <i>
+    /// <service-code></service-code></i>:<i>
+    /// <resource-type></resource-type></i> </code> and is not case sensitive. For example, to specify an Amazon EC2 Subnet, you can use the string <code>ec2:subnet</code>. To see the list of valid values for this parameter, query the <code>ListResourceTypes</code> operation.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_type()
     }
     /// <p>A string in JSON format string that contains the following elements of a resource-based policy:</p>
     /// <ul>
-    /// <li>
-    /// <p><b>Effect</b>: must be set to <code>ALLOW</code>.</p></li>
-    /// <li>
-    /// <p><b>Action</b>: specifies the actions that are allowed by this customer managed permission. The list must contain only actions that are supported by the specified resource type. For a list of all actions supported by each resource type, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions, resources, and condition keys for Amazon Web Services services</a> in the <i>Identity and Access Management User Guide</i>.</p></li>
-    /// <li>
-    /// <p><b>Condition</b>: (optional) specifies conditional parameters that must evaluate to true when a user attempts an action for that action to be allowed. For more information about the Condition element, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition.html">IAM policies: Condition element</a> in the <i>Identity and Access Management User Guide</i>.</p></li>
+    /// <li> <p> <b>Effect</b>: must be set to <code>ALLOW</code>.</p> </li>
+    /// <li> <p> <b>Action</b>: specifies the actions that are allowed by this customer managed permission. The list must contain only actions that are supported by the specified resource type. For a list of all actions supported by each resource type, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions, resources, and condition keys for Amazon Web Services services</a> in the <i>Identity and Access Management User Guide</i>.</p> </li>
+    /// <li> <p> <b>Condition</b>: (optional) specifies conditional parameters that must evaluate to true when a user attempts an action for that action to be allowed. For more information about the Condition element, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition.html">IAM policies: Condition element</a> in the <i>Identity and Access Management User Guide</i>.</p> </li>
     /// </ul>
     /// <p>This template can't include either the <code>Resource</code> or <code>Principal</code> elements. Those are both filled in by RAM when it instantiates the resource-based policy on each resource shared using this managed permission. The <code>Resource</code> comes from the ARN of the specific resource that you are sharing. The <code>Principal</code> comes from the list of identities added to the resource share.</p>
     pub fn policy_template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -155,12 +158,9 @@ impl CreatePermissionFluentBuilder {
     }
     /// <p>A string in JSON format string that contains the following elements of a resource-based policy:</p>
     /// <ul>
-    /// <li>
-    /// <p><b>Effect</b>: must be set to <code>ALLOW</code>.</p></li>
-    /// <li>
-    /// <p><b>Action</b>: specifies the actions that are allowed by this customer managed permission. The list must contain only actions that are supported by the specified resource type. For a list of all actions supported by each resource type, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions, resources, and condition keys for Amazon Web Services services</a> in the <i>Identity and Access Management User Guide</i>.</p></li>
-    /// <li>
-    /// <p><b>Condition</b>: (optional) specifies conditional parameters that must evaluate to true when a user attempts an action for that action to be allowed. For more information about the Condition element, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition.html">IAM policies: Condition element</a> in the <i>Identity and Access Management User Guide</i>.</p></li>
+    /// <li> <p> <b>Effect</b>: must be set to <code>ALLOW</code>.</p> </li>
+    /// <li> <p> <b>Action</b>: specifies the actions that are allowed by this customer managed permission. The list must contain only actions that are supported by the specified resource type. For a list of all actions supported by each resource type, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions, resources, and condition keys for Amazon Web Services services</a> in the <i>Identity and Access Management User Guide</i>.</p> </li>
+    /// <li> <p> <b>Condition</b>: (optional) specifies conditional parameters that must evaluate to true when a user attempts an action for that action to be allowed. For more information about the Condition element, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition.html">IAM policies: Condition element</a> in the <i>Identity and Access Management User Guide</i>.</p> </li>
     /// </ul>
     /// <p>This template can't include either the <code>Resource</code> or <code>Principal</code> elements. Those are both filled in by RAM when it instantiates the resource-based policy on each resource shared using this managed permission. The <code>Resource</code> comes from the ARN of the specific resource that you are sharing. The <code>Principal</code> comes from the list of identities added to the resource share.</p>
     pub fn set_policy_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -169,12 +169,9 @@ impl CreatePermissionFluentBuilder {
     }
     /// <p>A string in JSON format string that contains the following elements of a resource-based policy:</p>
     /// <ul>
-    /// <li>
-    /// <p><b>Effect</b>: must be set to <code>ALLOW</code>.</p></li>
-    /// <li>
-    /// <p><b>Action</b>: specifies the actions that are allowed by this customer managed permission. The list must contain only actions that are supported by the specified resource type. For a list of all actions supported by each resource type, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions, resources, and condition keys for Amazon Web Services services</a> in the <i>Identity and Access Management User Guide</i>.</p></li>
-    /// <li>
-    /// <p><b>Condition</b>: (optional) specifies conditional parameters that must evaluate to true when a user attempts an action for that action to be allowed. For more information about the Condition element, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition.html">IAM policies: Condition element</a> in the <i>Identity and Access Management User Guide</i>.</p></li>
+    /// <li> <p> <b>Effect</b>: must be set to <code>ALLOW</code>.</p> </li>
+    /// <li> <p> <b>Action</b>: specifies the actions that are allowed by this customer managed permission. The list must contain only actions that are supported by the specified resource type. For a list of all actions supported by each resource type, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions, resources, and condition keys for Amazon Web Services services</a> in the <i>Identity and Access Management User Guide</i>.</p> </li>
+    /// <li> <p> <b>Condition</b>: (optional) specifies conditional parameters that must evaluate to true when a user attempts an action for that action to be allowed. For more information about the Condition element, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition.html">IAM policies: Condition element</a> in the <i>Identity and Access Management User Guide</i>.</p> </li>
     /// </ul>
     /// <p>This template can't include either the <code>Resource</code> or <code>Principal</code> elements. Those are both filled in by RAM when it instantiates the resource-based policy on each resource shared using this managed permission. The <code>Resource</code> comes from the ARN of the specific resource that you are sharing. The <code>Principal</code> comes from the list of identities added to the resource share.</p>
     pub fn get_policy_template(&self) -> &::std::option::Option<::std::string::String> {

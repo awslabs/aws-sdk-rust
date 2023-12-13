@@ -11,7 +11,7 @@ pub struct UpdateRetrieverInput {
     pub configuration: ::std::option::Option<crate::types::RetrieverConfiguration>,
     /// <p>The name of your retriever.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access the retriever and required resources.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access the retriever and required resources. </p>
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateRetrieverInput {
@@ -31,7 +31,7 @@ impl UpdateRetrieverInput {
     pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access the retriever and required resources.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access the retriever and required resources. </p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -112,17 +112,17 @@ impl UpdateRetrieverInputBuilder {
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }
-    /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access the retriever and required resources.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access the retriever and required resources. </p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access the retriever and required resources.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access the retriever and required resources. </p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access the retriever and required resources.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access the retriever and required resources. </p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }

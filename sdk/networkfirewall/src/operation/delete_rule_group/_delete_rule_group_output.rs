@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteRuleGroupOutput {
-    /// <p>The high-level properties of a rule group. This, along with the <code>RuleGroup</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>.</p>
+    /// <p>The high-level properties of a rule group. This, along with the <code>RuleGroup</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>. </p>
     pub rule_group_response: ::std::option::Option<crate::types::RuleGroupResponse>,
     _request_id: Option<String>,
 }
 impl DeleteRuleGroupOutput {
-    /// <p>The high-level properties of a rule group. This, along with the <code>RuleGroup</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>.</p>
+    /// <p>The high-level properties of a rule group. This, along with the <code>RuleGroup</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>. </p>
     pub fn rule_group_response(&self) -> ::std::option::Option<&crate::types::RuleGroupResponse> {
         self.rule_group_response.as_ref()
     }
@@ -33,18 +33,18 @@ pub struct DeleteRuleGroupOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteRuleGroupOutputBuilder {
-    /// <p>The high-level properties of a rule group. This, along with the <code>RuleGroup</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>.</p>
+    /// <p>The high-level properties of a rule group. This, along with the <code>RuleGroup</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>. </p>
     /// This field is required.
     pub fn rule_group_response(mut self, input: crate::types::RuleGroupResponse) -> Self {
         self.rule_group_response = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The high-level properties of a rule group. This, along with the <code>RuleGroup</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>.</p>
+    /// <p>The high-level properties of a rule group. This, along with the <code>RuleGroup</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>. </p>
     pub fn set_rule_group_response(mut self, input: ::std::option::Option<crate::types::RuleGroupResponse>) -> Self {
         self.rule_group_response = input;
         self
     }
-    /// <p>The high-level properties of a rule group. This, along with the <code>RuleGroup</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>.</p>
+    /// <p>The high-level properties of a rule group. This, along with the <code>RuleGroup</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>. </p>
     pub fn get_rule_group_response(&self) -> &::std::option::Option<crate::types::RuleGroupResponse> {
         &self.rule_group_response
     }

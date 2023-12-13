@@ -271,9 +271,9 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UntagResource
 pub enum UntagResourceError {
     /// <p>An unexpected error occurred while processing the request.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p>The request references a resource that does not exist.</p>
+    /// <p>The request references a resource that does not exist. </p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>The input does not satisfy the constraints specified by an Amazon Web Service.</p>
+    /// <p>The input does not satisfy the constraints specified by an Amazon Web Service. </p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

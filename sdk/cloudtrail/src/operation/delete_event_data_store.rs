@@ -254,9 +254,9 @@ pub enum DeleteEventDataStoreError {
     ConflictException(crate::types::error::ConflictException),
     /// <p>The specified event data store ARN is not valid or does not map to an event data store in your account.</p>
     EventDataStoreArnInvalidException(crate::types::error::EventDataStoreArnInvalidException),
-    /// <p>You cannot delete the event data store because Lake query federation is enabled. To delete the event data store, run the <code>DisableFederation</code> operation to disable Lake query federation on the event data store.</p>
+    /// <p> You cannot delete the event data store because Lake query federation is enabled. To delete the event data store, run the <code>DisableFederation</code> operation to disable Lake query federation on the event data store. </p>
     EventDataStoreFederationEnabledException(crate::types::error::EventDataStoreFederationEnabledException),
-    /// <p>This exception is thrown when you try to update or delete an event data store that currently has an import in progress.</p>
+    /// <p> This exception is thrown when you try to update or delete an event data store that currently has an import in progress. </p>
     EventDataStoreHasOngoingImportException(crate::types::error::EventDataStoreHasOngoingImportException),
     /// <p>The specified event data store was not found.</p>
     EventDataStoreNotFoundException(crate::types::error::EventDataStoreNotFoundException),
@@ -268,7 +268,7 @@ pub enum DeleteEventDataStoreError {
     InsufficientDependencyServiceAccessPermissionException(crate::types::error::InsufficientDependencyServiceAccessPermissionException),
     /// <p>The request includes a parameter that is not valid.</p>
     InvalidParameterException(crate::types::error::InvalidParameterException),
-    /// <p>This exception is thrown when the management account does not have a service-linked role.</p>
+    /// <p> This exception is thrown when the management account does not have a service-linked role. </p>
     NoManagementAccountSlrExistsException(crate::types::error::NoManagementAccountSlrExistsException),
     /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail or event data store is not the management account for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a> or <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create an event data store</a>.</p>
     NotOrganizationMasterAccountException(crate::types::error::NotOrganizationMasterAccountException),

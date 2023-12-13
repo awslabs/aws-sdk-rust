@@ -22,7 +22,7 @@ impl DescribeDbClusterParameterGroupsInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeDBClusterParameterGroups`.
 ///
-/// <p>Returns a list of <code>DBClusterParameterGroup</code> descriptions. If a <code>DBClusterParameterGroupName</code> parameter is specified, the list contains only the description of the specified cluster parameter group.</p>
+/// <p>Returns a list of <code>DBClusterParameterGroup</code> descriptions. If a <code>DBClusterParameterGroupName</code> parameter is specified, the list contains only the description of the specified cluster parameter group. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeDBClusterParameterGroupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -117,8 +117,7 @@ impl DescribeDBClusterParameterGroupsFluentBuilder {
     /// <p>The name of a specific cluster parameter group to return details for.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>If provided, must match the name of an existing <code>DBClusterParameterGroup</code>.</p></li>
+    /// <li> <p>If provided, must match the name of an existing <code>DBClusterParameterGroup</code>.</p> </li>
     /// </ul>
     pub fn db_cluster_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_cluster_parameter_group_name(input.into());
@@ -127,8 +126,7 @@ impl DescribeDBClusterParameterGroupsFluentBuilder {
     /// <p>The name of a specific cluster parameter group to return details for.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>If provided, must match the name of an existing <code>DBClusterParameterGroup</code>.</p></li>
+    /// <li> <p>If provided, must match the name of an existing <code>DBClusterParameterGroup</code>.</p> </li>
     /// </ul>
     pub fn set_db_cluster_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_cluster_parameter_group_name(input);
@@ -137,8 +135,7 @@ impl DescribeDBClusterParameterGroupsFluentBuilder {
     /// <p>The name of a specific cluster parameter group to return details for.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>If provided, must match the name of an existing <code>DBClusterParameterGroup</code>.</p></li>
+    /// <li> <p>If provided, must match the name of an existing <code>DBClusterParameterGroup</code>.</p> </li>
     /// </ul>
     pub fn get_db_cluster_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_cluster_parameter_group_name()
@@ -161,21 +158,21 @@ impl DescribeDBClusterParameterGroupsFluentBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()
     }
-    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.inner = self.inner.max_records(input);
         self
     }
-    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_records(input);
         self
     }
-    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn get_max_records(&self) -> &::std::option::Option<i32> {

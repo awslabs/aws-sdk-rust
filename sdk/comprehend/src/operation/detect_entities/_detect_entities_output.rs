@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DetectEntitiesOutput {
-    /// <p>A collection of entities identified in the input text. For each entity, the response provides the entity text, entity type, where the entity text begins and ends, and the level of confidence that Amazon Comprehend has in the detection.</p>
-    /// <p>If your request uses a custom entity recognition model, Amazon Comprehend detects the entities that the model is trained to recognize. Otherwise, it detects the default entity types. For a list of default entity types, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a> in the Comprehend Developer Guide.</p>
+    /// <p>A collection of entities identified in the input text. For each entity, the response provides the entity text, entity type, where the entity text begins and ends, and the level of confidence that Amazon Comprehend has in the detection. </p>
+    /// <p>If your request uses a custom entity recognition model, Amazon Comprehend detects the entities that the model is trained to recognize. Otherwise, it detects the default entity types. For a list of default entity types, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a> in the Comprehend Developer Guide. </p>
     pub entities: ::std::option::Option<::std::vec::Vec<crate::types::Entity>>,
-    /// <p>Information about the document, discovered during text extraction. This field is present in the response only if your request used the <code>Byte</code> parameter.</p>
+    /// <p>Information about the document, discovered during text extraction. This field is present in the response only if your request used the <code>Byte</code> parameter. </p>
     pub document_metadata: ::std::option::Option<crate::types::DocumentMetadata>,
-    /// <p>The document type for each page in the input document. This field is present in the response only if your request used the <code>Byte</code> parameter.</p>
+    /// <p>The document type for each page in the input document. This field is present in the response only if your request used the <code>Byte</code> parameter. </p>
     pub document_type: ::std::option::Option<::std::vec::Vec<crate::types::DocumentTypeListItem>>,
-    /// <p>Information about each block of text in the input document. Blocks are nested. A page block contains a block for each line of text, which contains a block for each word.</p>
+    /// <p>Information about each block of text in the input document. Blocks are nested. A page block contains a block for each line of text, which contains a block for each word. </p>
     /// <p>The <code>Block</code> content for a Word input document does not include a <code>Geometry</code> field.</p>
     /// <p>The <code>Block</code> field is not present in the response for plain-text inputs.</p>
     pub blocks: ::std::option::Option<::std::vec::Vec<crate::types::Block>>,
@@ -19,24 +19,24 @@ pub struct DetectEntitiesOutput {
     _request_id: Option<String>,
 }
 impl DetectEntitiesOutput {
-    /// <p>A collection of entities identified in the input text. For each entity, the response provides the entity text, entity type, where the entity text begins and ends, and the level of confidence that Amazon Comprehend has in the detection.</p>
-    /// <p>If your request uses a custom entity recognition model, Amazon Comprehend detects the entities that the model is trained to recognize. Otherwise, it detects the default entity types. For a list of default entity types, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a> in the Comprehend Developer Guide.</p>
+    /// <p>A collection of entities identified in the input text. For each entity, the response provides the entity text, entity type, where the entity text begins and ends, and the level of confidence that Amazon Comprehend has in the detection. </p>
+    /// <p>If your request uses a custom entity recognition model, Amazon Comprehend detects the entities that the model is trained to recognize. Otherwise, it detects the default entity types. For a list of default entity types, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a> in the Comprehend Developer Guide. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entities.is_none()`.
     pub fn entities(&self) -> &[crate::types::Entity] {
         self.entities.as_deref().unwrap_or_default()
     }
-    /// <p>Information about the document, discovered during text extraction. This field is present in the response only if your request used the <code>Byte</code> parameter.</p>
+    /// <p>Information about the document, discovered during text extraction. This field is present in the response only if your request used the <code>Byte</code> parameter. </p>
     pub fn document_metadata(&self) -> ::std::option::Option<&crate::types::DocumentMetadata> {
         self.document_metadata.as_ref()
     }
-    /// <p>The document type for each page in the input document. This field is present in the response only if your request used the <code>Byte</code> parameter.</p>
+    /// <p>The document type for each page in the input document. This field is present in the response only if your request used the <code>Byte</code> parameter. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.document_type.is_none()`.
     pub fn document_type(&self) -> &[crate::types::DocumentTypeListItem] {
         self.document_type.as_deref().unwrap_or_default()
     }
-    /// <p>Information about each block of text in the input document. Blocks are nested. A page block contains a block for each line of text, which contains a block for each word.</p>
+    /// <p>Information about each block of text in the input document. Blocks are nested. A page block contains a block for each line of text, which contains a block for each word. </p>
     /// <p>The <code>Block</code> content for a Word input document does not include a <code>Geometry</code> field.</p>
     /// <p>The <code>Block</code> field is not present in the response for plain-text inputs.</p>
     ///
@@ -91,36 +91,36 @@ impl DetectEntitiesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_entities`](Self::set_entities).
     ///
-    /// <p>A collection of entities identified in the input text. For each entity, the response provides the entity text, entity type, where the entity text begins and ends, and the level of confidence that Amazon Comprehend has in the detection.</p>
-    /// <p>If your request uses a custom entity recognition model, Amazon Comprehend detects the entities that the model is trained to recognize. Otherwise, it detects the default entity types. For a list of default entity types, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a> in the Comprehend Developer Guide.</p>
+    /// <p>A collection of entities identified in the input text. For each entity, the response provides the entity text, entity type, where the entity text begins and ends, and the level of confidence that Amazon Comprehend has in the detection. </p>
+    /// <p>If your request uses a custom entity recognition model, Amazon Comprehend detects the entities that the model is trained to recognize. Otherwise, it detects the default entity types. For a list of default entity types, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a> in the Comprehend Developer Guide. </p>
     pub fn entities(mut self, input: crate::types::Entity) -> Self {
         let mut v = self.entities.unwrap_or_default();
         v.push(input);
         self.entities = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A collection of entities identified in the input text. For each entity, the response provides the entity text, entity type, where the entity text begins and ends, and the level of confidence that Amazon Comprehend has in the detection.</p>
-    /// <p>If your request uses a custom entity recognition model, Amazon Comprehend detects the entities that the model is trained to recognize. Otherwise, it detects the default entity types. For a list of default entity types, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a> in the Comprehend Developer Guide.</p>
+    /// <p>A collection of entities identified in the input text. For each entity, the response provides the entity text, entity type, where the entity text begins and ends, and the level of confidence that Amazon Comprehend has in the detection. </p>
+    /// <p>If your request uses a custom entity recognition model, Amazon Comprehend detects the entities that the model is trained to recognize. Otherwise, it detects the default entity types. For a list of default entity types, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a> in the Comprehend Developer Guide. </p>
     pub fn set_entities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Entity>>) -> Self {
         self.entities = input;
         self
     }
-    /// <p>A collection of entities identified in the input text. For each entity, the response provides the entity text, entity type, where the entity text begins and ends, and the level of confidence that Amazon Comprehend has in the detection.</p>
-    /// <p>If your request uses a custom entity recognition model, Amazon Comprehend detects the entities that the model is trained to recognize. Otherwise, it detects the default entity types. For a list of default entity types, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a> in the Comprehend Developer Guide.</p>
+    /// <p>A collection of entities identified in the input text. For each entity, the response provides the entity text, entity type, where the entity text begins and ends, and the level of confidence that Amazon Comprehend has in the detection. </p>
+    /// <p>If your request uses a custom entity recognition model, Amazon Comprehend detects the entities that the model is trained to recognize. Otherwise, it detects the default entity types. For a list of default entity types, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a> in the Comprehend Developer Guide. </p>
     pub fn get_entities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Entity>> {
         &self.entities
     }
-    /// <p>Information about the document, discovered during text extraction. This field is present in the response only if your request used the <code>Byte</code> parameter.</p>
+    /// <p>Information about the document, discovered during text extraction. This field is present in the response only if your request used the <code>Byte</code> parameter. </p>
     pub fn document_metadata(mut self, input: crate::types::DocumentMetadata) -> Self {
         self.document_metadata = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Information about the document, discovered during text extraction. This field is present in the response only if your request used the <code>Byte</code> parameter.</p>
+    /// <p>Information about the document, discovered during text extraction. This field is present in the response only if your request used the <code>Byte</code> parameter. </p>
     pub fn set_document_metadata(mut self, input: ::std::option::Option<crate::types::DocumentMetadata>) -> Self {
         self.document_metadata = input;
         self
     }
-    /// <p>Information about the document, discovered during text extraction. This field is present in the response only if your request used the <code>Byte</code> parameter.</p>
+    /// <p>Information about the document, discovered during text extraction. This field is present in the response only if your request used the <code>Byte</code> parameter. </p>
     pub fn get_document_metadata(&self) -> &::std::option::Option<crate::types::DocumentMetadata> {
         &self.document_metadata
     }
@@ -128,19 +128,19 @@ impl DetectEntitiesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_document_type`](Self::set_document_type).
     ///
-    /// <p>The document type for each page in the input document. This field is present in the response only if your request used the <code>Byte</code> parameter.</p>
+    /// <p>The document type for each page in the input document. This field is present in the response only if your request used the <code>Byte</code> parameter. </p>
     pub fn document_type(mut self, input: crate::types::DocumentTypeListItem) -> Self {
         let mut v = self.document_type.unwrap_or_default();
         v.push(input);
         self.document_type = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The document type for each page in the input document. This field is present in the response only if your request used the <code>Byte</code> parameter.</p>
+    /// <p>The document type for each page in the input document. This field is present in the response only if your request used the <code>Byte</code> parameter. </p>
     pub fn set_document_type(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentTypeListItem>>) -> Self {
         self.document_type = input;
         self
     }
-    /// <p>The document type for each page in the input document. This field is present in the response only if your request used the <code>Byte</code> parameter.</p>
+    /// <p>The document type for each page in the input document. This field is present in the response only if your request used the <code>Byte</code> parameter. </p>
     pub fn get_document_type(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentTypeListItem>> {
         &self.document_type
     }
@@ -148,7 +148,7 @@ impl DetectEntitiesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_blocks`](Self::set_blocks).
     ///
-    /// <p>Information about each block of text in the input document. Blocks are nested. A page block contains a block for each line of text, which contains a block for each word.</p>
+    /// <p>Information about each block of text in the input document. Blocks are nested. A page block contains a block for each line of text, which contains a block for each word. </p>
     /// <p>The <code>Block</code> content for a Word input document does not include a <code>Geometry</code> field.</p>
     /// <p>The <code>Block</code> field is not present in the response for plain-text inputs.</p>
     pub fn blocks(mut self, input: crate::types::Block) -> Self {
@@ -157,14 +157,14 @@ impl DetectEntitiesOutputBuilder {
         self.blocks = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Information about each block of text in the input document. Blocks are nested. A page block contains a block for each line of text, which contains a block for each word.</p>
+    /// <p>Information about each block of text in the input document. Blocks are nested. A page block contains a block for each line of text, which contains a block for each word. </p>
     /// <p>The <code>Block</code> content for a Word input document does not include a <code>Geometry</code> field.</p>
     /// <p>The <code>Block</code> field is not present in the response for plain-text inputs.</p>
     pub fn set_blocks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Block>>) -> Self {
         self.blocks = input;
         self
     }
-    /// <p>Information about each block of text in the input document. Blocks are nested. A page block contains a block for each line of text, which contains a block for each word.</p>
+    /// <p>Information about each block of text in the input document. Blocks are nested. A page block contains a block for each line of text, which contains a block for each word. </p>
     /// <p>The <code>Block</code> content for a Word input document does not include a <code>Geometry</code> field.</p>
     /// <p>The <code>Block</code> field is not present in the response for plain-text inputs.</p>
     pub fn get_blocks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Block>> {

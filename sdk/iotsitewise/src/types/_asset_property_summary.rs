@@ -8,11 +8,11 @@ pub struct AssetPropertySummary {
     pub id: ::std::string::String,
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub alias: ::std::option::Option<::std::string::String>,
-    /// <p>The unit of measure (such as Newtons or RPM) of the asset property.</p>
+    /// <p> The unit of measure (such as Newtons or RPM) of the asset property. </p>
     pub unit: ::std::option::Option<::std::string::String>,
     /// <p>Contains asset property value notification information. When the notification state is enabled, IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting with other services</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub notification: ::std::option::Option<crate::types::PropertyNotification>,
-    /// <p>The ID of the composite model that contains the asset property.</p>
+    /// <p> The ID of the composite model that contains the asset property. </p>
     pub asset_composite_model_id: ::std::option::Option<::std::string::String>,
     /// <p>The structured path to the property from the root of the asset.</p>
     pub path: ::std::option::Option<::std::vec::Vec<crate::types::AssetPropertyPathSegment>>,
@@ -29,7 +29,7 @@ impl AssetPropertySummary {
     pub fn alias(&self) -> ::std::option::Option<&str> {
         self.alias.as_deref()
     }
-    /// <p>The unit of measure (such as Newtons or RPM) of the asset property.</p>
+    /// <p> The unit of measure (such as Newtons or RPM) of the asset property. </p>
     pub fn unit(&self) -> ::std::option::Option<&str> {
         self.unit.as_deref()
     }
@@ -37,7 +37,7 @@ impl AssetPropertySummary {
     pub fn notification(&self) -> ::std::option::Option<&crate::types::PropertyNotification> {
         self.notification.as_ref()
     }
-    /// <p>The ID of the composite model that contains the asset property.</p>
+    /// <p> The ID of the composite model that contains the asset property. </p>
     pub fn asset_composite_model_id(&self) -> ::std::option::Option<&str> {
         self.asset_composite_model_id.as_deref()
     }
@@ -101,17 +101,17 @@ impl AssetPropertySummaryBuilder {
     pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
         &self.alias
     }
-    /// <p>The unit of measure (such as Newtons or RPM) of the asset property.</p>
+    /// <p> The unit of measure (such as Newtons or RPM) of the asset property. </p>
     pub fn unit(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.unit = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unit of measure (such as Newtons or RPM) of the asset property.</p>
+    /// <p> The unit of measure (such as Newtons or RPM) of the asset property. </p>
     pub fn set_unit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.unit = input;
         self
     }
-    /// <p>The unit of measure (such as Newtons or RPM) of the asset property.</p>
+    /// <p> The unit of measure (such as Newtons or RPM) of the asset property. </p>
     pub fn get_unit(&self) -> &::std::option::Option<::std::string::String> {
         &self.unit
     }
@@ -129,17 +129,17 @@ impl AssetPropertySummaryBuilder {
     pub fn get_notification(&self) -> &::std::option::Option<crate::types::PropertyNotification> {
         &self.notification
     }
-    /// <p>The ID of the composite model that contains the asset property.</p>
+    /// <p> The ID of the composite model that contains the asset property. </p>
     pub fn asset_composite_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_composite_model_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the composite model that contains the asset property.</p>
+    /// <p> The ID of the composite model that contains the asset property. </p>
     pub fn set_asset_composite_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.asset_composite_model_id = input;
         self
     }
-    /// <p>The ID of the composite model that contains the asset property.</p>
+    /// <p> The ID of the composite model that contains the asset property. </p>
     pub fn get_asset_composite_model_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.asset_composite_model_id
     }

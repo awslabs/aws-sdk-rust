@@ -16,14 +16,10 @@ pub struct Service {
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of service.</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, <code>AWS::EC2::Instance</code> for an application running on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an Amazon DynamoDB table that the application used.</p></li>
-    /// <li>
-    /// <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, <code>AWS::DynamoDB</code> for downstream calls to Amazon DynamoDB that didn't target a specific table.</p></li>
-    /// <li>
-    /// <p><code>client</code> - Represents the clients that sent requests to a root service.</p></li>
-    /// <li>
-    /// <p><code>remote</code> - A downstream service of indeterminate type.</p></li>
+    /// <li> <p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, <code>AWS::EC2::Instance</code> for an application running on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an Amazon DynamoDB table that the application used.</p> </li>
+    /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, <code>AWS::DynamoDB</code> for downstream calls to Amazon DynamoDB that didn't target a specific table.</p> </li>
+    /// <li> <p> <code>client</code> - Represents the clients that sent requests to a root service.</p> </li>
+    /// <li> <p> <code>remote</code> - A downstream service of indeterminate type.</p> </li>
     /// </ul>
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The service's state.</p>
@@ -66,14 +62,10 @@ impl Service {
     }
     /// <p>The type of service.</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, <code>AWS::EC2::Instance</code> for an application running on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an Amazon DynamoDB table that the application used.</p></li>
-    /// <li>
-    /// <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, <code>AWS::DynamoDB</code> for downstream calls to Amazon DynamoDB that didn't target a specific table.</p></li>
-    /// <li>
-    /// <p><code>client</code> - Represents the clients that sent requests to a root service.</p></li>
-    /// <li>
-    /// <p><code>remote</code> - A downstream service of indeterminate type.</p></li>
+    /// <li> <p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, <code>AWS::EC2::Instance</code> for an application running on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an Amazon DynamoDB table that the application used.</p> </li>
+    /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, <code>AWS::DynamoDB</code> for downstream calls to Amazon DynamoDB that didn't target a specific table.</p> </li>
+    /// <li> <p> <code>client</code> - Represents the clients that sent requests to a root service.</p> </li>
+    /// <li> <p> <code>remote</code> - A downstream service of indeterminate type.</p> </li>
     /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
@@ -217,14 +209,10 @@ impl ServiceBuilder {
     }
     /// <p>The type of service.</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, <code>AWS::EC2::Instance</code> for an application running on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an Amazon DynamoDB table that the application used.</p></li>
-    /// <li>
-    /// <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, <code>AWS::DynamoDB</code> for downstream calls to Amazon DynamoDB that didn't target a specific table.</p></li>
-    /// <li>
-    /// <p><code>client</code> - Represents the clients that sent requests to a root service.</p></li>
-    /// <li>
-    /// <p><code>remote</code> - A downstream service of indeterminate type.</p></li>
+    /// <li> <p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, <code>AWS::EC2::Instance</code> for an application running on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an Amazon DynamoDB table that the application used.</p> </li>
+    /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, <code>AWS::DynamoDB</code> for downstream calls to Amazon DynamoDB that didn't target a specific table.</p> </li>
+    /// <li> <p> <code>client</code> - Represents the clients that sent requests to a root service.</p> </li>
+    /// <li> <p> <code>remote</code> - A downstream service of indeterminate type.</p> </li>
     /// </ul>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -232,14 +220,10 @@ impl ServiceBuilder {
     }
     /// <p>The type of service.</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, <code>AWS::EC2::Instance</code> for an application running on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an Amazon DynamoDB table that the application used.</p></li>
-    /// <li>
-    /// <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, <code>AWS::DynamoDB</code> for downstream calls to Amazon DynamoDB that didn't target a specific table.</p></li>
-    /// <li>
-    /// <p><code>client</code> - Represents the clients that sent requests to a root service.</p></li>
-    /// <li>
-    /// <p><code>remote</code> - A downstream service of indeterminate type.</p></li>
+    /// <li> <p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, <code>AWS::EC2::Instance</code> for an application running on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an Amazon DynamoDB table that the application used.</p> </li>
+    /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, <code>AWS::DynamoDB</code> for downstream calls to Amazon DynamoDB that didn't target a specific table.</p> </li>
+    /// <li> <p> <code>client</code> - Represents the clients that sent requests to a root service.</p> </li>
+    /// <li> <p> <code>remote</code> - A downstream service of indeterminate type.</p> </li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
@@ -247,14 +231,10 @@ impl ServiceBuilder {
     }
     /// <p>The type of service.</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, <code>AWS::EC2::Instance</code> for an application running on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an Amazon DynamoDB table that the application used.</p></li>
-    /// <li>
-    /// <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, <code>AWS::DynamoDB</code> for downstream calls to Amazon DynamoDB that didn't target a specific table.</p></li>
-    /// <li>
-    /// <p><code>client</code> - Represents the clients that sent requests to a root service.</p></li>
-    /// <li>
-    /// <p><code>remote</code> - A downstream service of indeterminate type.</p></li>
+    /// <li> <p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, <code>AWS::EC2::Instance</code> for an application running on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an Amazon DynamoDB table that the application used.</p> </li>
+    /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, <code>AWS::DynamoDB</code> for downstream calls to Amazon DynamoDB that didn't target a specific table.</p> </li>
+    /// <li> <p> <code>client</code> - Represents the clients that sent requests to a root service.</p> </li>
+    /// <li> <p> <code>remote</code> - A downstream service of indeterminate type.</p> </li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.r#type

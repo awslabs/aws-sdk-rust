@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLabelOutput {
-    /// <p>The ID of the label that you have created.</p>
+    /// <p> The ID of the label that you have created. </p>
     pub label_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateLabelOutput {
-    /// <p>The ID of the label that you have created.</p>
+    /// <p> The ID of the label that you have created. </p>
     pub fn label_id(&self) -> ::std::option::Option<&str> {
         self.label_id.as_deref()
     }
@@ -33,17 +33,17 @@ pub struct CreateLabelOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateLabelOutputBuilder {
-    /// <p>The ID of the label that you have created.</p>
+    /// <p> The ID of the label that you have created. </p>
     pub fn label_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the label that you have created.</p>
+    /// <p> The ID of the label that you have created. </p>
     pub fn set_label_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.label_id = input;
         self
     }
-    /// <p>The ID of the label that you have created.</p>
+    /// <p> The ID of the label that you have created. </p>
     pub fn get_label_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.label_id
     }

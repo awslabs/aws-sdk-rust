@@ -22,7 +22,7 @@ impl DescribeUserInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeUser`.
 ///
-/// <p>Returns information about a user, given the user name.</p>
+/// <p>Returns information about a user, given the user name. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeUserFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

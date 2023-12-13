@@ -118,80 +118,53 @@ impl DescribeFleetAdvisorSchemasFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>If you specify any of the following filters, the output includes information for only those schemas that meet the filter criteria:</p>
+    /// <p> If you specify any of the following filters, the output includes information for only those schemas that meet the filter criteria:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>complexity</code> – The schema's complexity, for example <code>Simple</code>.</p></li>
-    /// <li>
-    /// <p><code>database-id</code> – The ID of the schema's database.</p></li>
-    /// <li>
-    /// <p><code>database-ip-address</code> – The IP address of the schema's database.</p></li>
-    /// <li>
-    /// <p><code>database-name</code> – The name of the schema's database.</p></li>
-    /// <li>
-    /// <p><code>database-engine</code> – The name of the schema database's engine.</p></li>
-    /// <li>
-    /// <p><code>original-schema-name</code> – The name of the schema's database's main schema.</p></li>
-    /// <li>
-    /// <p><code>schema-id</code> – The ID of the schema, for example <code>15</code>.</p></li>
-    /// <li>
-    /// <p><code>schema-name</code> – The name of the schema.</p></li>
-    /// <li>
-    /// <p><code>server-ip-address</code> – The IP address of the schema database's server.</p></li>
+    /// <li> <p> <code>complexity</code> – The schema's complexity, for example <code>Simple</code>.</p> </li>
+    /// <li> <p> <code>database-id</code> – The ID of the schema's database.</p> </li>
+    /// <li> <p> <code>database-ip-address</code> – The IP address of the schema's database.</p> </li>
+    /// <li> <p> <code>database-name</code> – The name of the schema's database.</p> </li>
+    /// <li> <p> <code>database-engine</code> – The name of the schema database's engine.</p> </li>
+    /// <li> <p> <code>original-schema-name</code> – The name of the schema's database's main schema.</p> </li>
+    /// <li> <p> <code>schema-id</code> – The ID of the schema, for example <code>15</code>.</p> </li>
+    /// <li> <p> <code>schema-name</code> – The name of the schema.</p> </li>
+    /// <li> <p> <code>server-ip-address</code> – The IP address of the schema database's server.</p> </li>
     /// </ul>
-    /// <p>An example is: <code>describe-fleet-advisor-schemas --filter Name="schema-id",Values="50"</code></p>
+    /// <p>An example is: <code>describe-fleet-advisor-schemas --filter Name="schema-id",Values="50"</code> </p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>If you specify any of the following filters, the output includes information for only those schemas that meet the filter criteria:</p>
+    /// <p> If you specify any of the following filters, the output includes information for only those schemas that meet the filter criteria:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>complexity</code> – The schema's complexity, for example <code>Simple</code>.</p></li>
-    /// <li>
-    /// <p><code>database-id</code> – The ID of the schema's database.</p></li>
-    /// <li>
-    /// <p><code>database-ip-address</code> – The IP address of the schema's database.</p></li>
-    /// <li>
-    /// <p><code>database-name</code> – The name of the schema's database.</p></li>
-    /// <li>
-    /// <p><code>database-engine</code> – The name of the schema database's engine.</p></li>
-    /// <li>
-    /// <p><code>original-schema-name</code> – The name of the schema's database's main schema.</p></li>
-    /// <li>
-    /// <p><code>schema-id</code> – The ID of the schema, for example <code>15</code>.</p></li>
-    /// <li>
-    /// <p><code>schema-name</code> – The name of the schema.</p></li>
-    /// <li>
-    /// <p><code>server-ip-address</code> – The IP address of the schema database's server.</p></li>
+    /// <li> <p> <code>complexity</code> – The schema's complexity, for example <code>Simple</code>.</p> </li>
+    /// <li> <p> <code>database-id</code> – The ID of the schema's database.</p> </li>
+    /// <li> <p> <code>database-ip-address</code> – The IP address of the schema's database.</p> </li>
+    /// <li> <p> <code>database-name</code> – The name of the schema's database.</p> </li>
+    /// <li> <p> <code>database-engine</code> – The name of the schema database's engine.</p> </li>
+    /// <li> <p> <code>original-schema-name</code> – The name of the schema's database's main schema.</p> </li>
+    /// <li> <p> <code>schema-id</code> – The ID of the schema, for example <code>15</code>.</p> </li>
+    /// <li> <p> <code>schema-name</code> – The name of the schema.</p> </li>
+    /// <li> <p> <code>server-ip-address</code> – The IP address of the schema database's server.</p> </li>
     /// </ul>
-    /// <p>An example is: <code>describe-fleet-advisor-schemas --filter Name="schema-id",Values="50"</code></p>
+    /// <p>An example is: <code>describe-fleet-advisor-schemas --filter Name="schema-id",Values="50"</code> </p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
-    /// <p>If you specify any of the following filters, the output includes information for only those schemas that meet the filter criteria:</p>
+    /// <p> If you specify any of the following filters, the output includes information for only those schemas that meet the filter criteria:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>complexity</code> – The schema's complexity, for example <code>Simple</code>.</p></li>
-    /// <li>
-    /// <p><code>database-id</code> – The ID of the schema's database.</p></li>
-    /// <li>
-    /// <p><code>database-ip-address</code> – The IP address of the schema's database.</p></li>
-    /// <li>
-    /// <p><code>database-name</code> – The name of the schema's database.</p></li>
-    /// <li>
-    /// <p><code>database-engine</code> – The name of the schema database's engine.</p></li>
-    /// <li>
-    /// <p><code>original-schema-name</code> – The name of the schema's database's main schema.</p></li>
-    /// <li>
-    /// <p><code>schema-id</code> – The ID of the schema, for example <code>15</code>.</p></li>
-    /// <li>
-    /// <p><code>schema-name</code> – The name of the schema.</p></li>
-    /// <li>
-    /// <p><code>server-ip-address</code> – The IP address of the schema database's server.</p></li>
+    /// <li> <p> <code>complexity</code> – The schema's complexity, for example <code>Simple</code>.</p> </li>
+    /// <li> <p> <code>database-id</code> – The ID of the schema's database.</p> </li>
+    /// <li> <p> <code>database-ip-address</code> – The IP address of the schema's database.</p> </li>
+    /// <li> <p> <code>database-name</code> – The name of the schema's database.</p> </li>
+    /// <li> <p> <code>database-engine</code> – The name of the schema database's engine.</p> </li>
+    /// <li> <p> <code>original-schema-name</code> – The name of the schema's database's main schema.</p> </li>
+    /// <li> <p> <code>schema-id</code> – The ID of the schema, for example <code>15</code>.</p> </li>
+    /// <li> <p> <code>schema-name</code> – The name of the schema.</p> </li>
+    /// <li> <p> <code>server-ip-address</code> – The IP address of the schema database's server.</p> </li>
     /// </ul>
-    /// <p>An example is: <code>describe-fleet-advisor-schemas --filter Name="schema-id",Values="50"</code></p>
+    /// <p>An example is: <code>describe-fleet-advisor-schemas --filter Name="schema-id",Values="50"</code> </p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()
     }
@@ -209,17 +182,17 @@ impl DescribeFleetAdvisorSchemasFluentBuilder {
     pub fn get_max_records(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_records()
     }
-    /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
+    /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
+    /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
+    /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

@@ -5,7 +5,7 @@
 pub struct CopyBackupToRegionInput {
     /// <p>The AWS region that will contain your copied CloudHSM cluster backup.</p>
     pub destination_region: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the backup that will be copied to the destination region.</p>
+    /// <p>The ID of the backup that will be copied to the destination region. </p>
     pub backup_id: ::std::option::Option<::std::string::String>,
     /// <p>Tags to apply to the destination backup during creation. If you specify tags, only these tags will be applied to the destination backup. If you do not specify tags, the service copies tags from the source backup to the destination backup.</p>
     pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -15,7 +15,7 @@ impl CopyBackupToRegionInput {
     pub fn destination_region(&self) -> ::std::option::Option<&str> {
         self.destination_region.as_deref()
     }
-    /// <p>The ID of the backup that will be copied to the destination region.</p>
+    /// <p>The ID of the backup that will be copied to the destination region. </p>
     pub fn backup_id(&self) -> ::std::option::Option<&str> {
         self.backup_id.as_deref()
     }
@@ -57,18 +57,18 @@ impl CopyBackupToRegionInputBuilder {
     pub fn get_destination_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination_region
     }
-    /// <p>The ID of the backup that will be copied to the destination region.</p>
+    /// <p>The ID of the backup that will be copied to the destination region. </p>
     /// This field is required.
     pub fn backup_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the backup that will be copied to the destination region.</p>
+    /// <p>The ID of the backup that will be copied to the destination region. </p>
     pub fn set_backup_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_id = input;
         self
     }
-    /// <p>The ID of the backup that will be copied to the destination region.</p>
+    /// <p>The ID of the backup that will be copied to the destination region. </p>
     pub fn get_backup_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.backup_id
     }

@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceGroup {
     /// <p>The state of the propagation process for the resource group. The states includes:</p>
-    /// <p><code>CREATING </code>if the resource group is in the process of being created.</p>
-    /// <p><code>CREATE_COMPLETE</code> if the resource group was created successfully.</p>
-    /// <p><code>CREATE_FAILED</code> if the resource group failed to be created.</p>
-    /// <p><code>UPDATING</code> if the resource group is in the process of being updated.</p>
-    /// <p><code>UPDATE_COMPLETE</code> if the resource group updated successfully.</p>
-    /// <p><code>UPDATE_FAILED</code> if the resource group could not update successfully.</p>
+    /// <p> <code>CREATING </code>if the resource group is in the process of being created.</p>
+    /// <p> <code>CREATE_COMPLETE</code> if the resource group was created successfully.</p>
+    /// <p> <code>CREATE_FAILED</code> if the resource group failed to be created.</p>
+    /// <p> <code>UPDATING</code> if the resource group is in the process of being updated.</p>
+    /// <p> <code>UPDATE_COMPLETE</code> if the resource group updated successfully.</p>
+    /// <p> <code>UPDATE_FAILED</code> if the resource group could not update successfully.</p>
     pub state: ::std::option::Option<crate::types::ResourceGroupState>,
     /// <p>The Amazon resource name (ARN) of the resource group.</p>
     pub arn: ::std::option::Option<::std::string::String>,
@@ -19,12 +19,12 @@ pub struct ResourceGroup {
 }
 impl ResourceGroup {
     /// <p>The state of the propagation process for the resource group. The states includes:</p>
-    /// <p><code>CREATING </code>if the resource group is in the process of being created.</p>
-    /// <p><code>CREATE_COMPLETE</code> if the resource group was created successfully.</p>
-    /// <p><code>CREATE_FAILED</code> if the resource group failed to be created.</p>
-    /// <p><code>UPDATING</code> if the resource group is in the process of being updated.</p>
-    /// <p><code>UPDATE_COMPLETE</code> if the resource group updated successfully.</p>
-    /// <p><code>UPDATE_FAILED</code> if the resource group could not update successfully.</p>
+    /// <p> <code>CREATING </code>if the resource group is in the process of being created.</p>
+    /// <p> <code>CREATE_COMPLETE</code> if the resource group was created successfully.</p>
+    /// <p> <code>CREATE_FAILED</code> if the resource group failed to be created.</p>
+    /// <p> <code>UPDATING</code> if the resource group is in the process of being updated.</p>
+    /// <p> <code>UPDATE_COMPLETE</code> if the resource group updated successfully.</p>
+    /// <p> <code>UPDATE_FAILED</code> if the resource group could not update successfully.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::ResourceGroupState> {
         self.state.as_ref()
     }
@@ -54,34 +54,34 @@ pub struct ResourceGroupBuilder {
 }
 impl ResourceGroupBuilder {
     /// <p>The state of the propagation process for the resource group. The states includes:</p>
-    /// <p><code>CREATING </code>if the resource group is in the process of being created.</p>
-    /// <p><code>CREATE_COMPLETE</code> if the resource group was created successfully.</p>
-    /// <p><code>CREATE_FAILED</code> if the resource group failed to be created.</p>
-    /// <p><code>UPDATING</code> if the resource group is in the process of being updated.</p>
-    /// <p><code>UPDATE_COMPLETE</code> if the resource group updated successfully.</p>
-    /// <p><code>UPDATE_FAILED</code> if the resource group could not update successfully.</p>
+    /// <p> <code>CREATING </code>if the resource group is in the process of being created.</p>
+    /// <p> <code>CREATE_COMPLETE</code> if the resource group was created successfully.</p>
+    /// <p> <code>CREATE_FAILED</code> if the resource group failed to be created.</p>
+    /// <p> <code>UPDATING</code> if the resource group is in the process of being updated.</p>
+    /// <p> <code>UPDATE_COMPLETE</code> if the resource group updated successfully.</p>
+    /// <p> <code>UPDATE_FAILED</code> if the resource group could not update successfully.</p>
     pub fn state(mut self, input: crate::types::ResourceGroupState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state of the propagation process for the resource group. The states includes:</p>
-    /// <p><code>CREATING </code>if the resource group is in the process of being created.</p>
-    /// <p><code>CREATE_COMPLETE</code> if the resource group was created successfully.</p>
-    /// <p><code>CREATE_FAILED</code> if the resource group failed to be created.</p>
-    /// <p><code>UPDATING</code> if the resource group is in the process of being updated.</p>
-    /// <p><code>UPDATE_COMPLETE</code> if the resource group updated successfully.</p>
-    /// <p><code>UPDATE_FAILED</code> if the resource group could not update successfully.</p>
+    /// <p> <code>CREATING </code>if the resource group is in the process of being created.</p>
+    /// <p> <code>CREATE_COMPLETE</code> if the resource group was created successfully.</p>
+    /// <p> <code>CREATE_FAILED</code> if the resource group failed to be created.</p>
+    /// <p> <code>UPDATING</code> if the resource group is in the process of being updated.</p>
+    /// <p> <code>UPDATE_COMPLETE</code> if the resource group updated successfully.</p>
+    /// <p> <code>UPDATE_FAILED</code> if the resource group could not update successfully.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ResourceGroupState>) -> Self {
         self.state = input;
         self
     }
     /// <p>The state of the propagation process for the resource group. The states includes:</p>
-    /// <p><code>CREATING </code>if the resource group is in the process of being created.</p>
-    /// <p><code>CREATE_COMPLETE</code> if the resource group was created successfully.</p>
-    /// <p><code>CREATE_FAILED</code> if the resource group failed to be created.</p>
-    /// <p><code>UPDATING</code> if the resource group is in the process of being updated.</p>
-    /// <p><code>UPDATE_COMPLETE</code> if the resource group updated successfully.</p>
-    /// <p><code>UPDATE_FAILED</code> if the resource group could not update successfully.</p>
+    /// <p> <code>CREATING </code>if the resource group is in the process of being created.</p>
+    /// <p> <code>CREATE_COMPLETE</code> if the resource group was created successfully.</p>
+    /// <p> <code>CREATE_FAILED</code> if the resource group failed to be created.</p>
+    /// <p> <code>UPDATING</code> if the resource group is in the process of being updated.</p>
+    /// <p> <code>UPDATE_COMPLETE</code> if the resource group updated successfully.</p>
+    /// <p> <code>UPDATE_FAILED</code> if the resource group could not update successfully.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ResourceGroupState> {
         &self.state
     }

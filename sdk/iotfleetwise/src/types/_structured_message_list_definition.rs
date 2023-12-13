@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StructuredMessageListDefinition {
-    /// <p>The name of the structured message list definition.</p>
+    /// <p>The name of the structured message list definition. </p>
     pub name: ::std::string::String,
     /// <p>The member type of the structured message list definition.</p>
     pub member_type: ::std::option::Option<crate::types::StructuredMessage>,
@@ -14,7 +14,7 @@ pub struct StructuredMessageListDefinition {
     pub capacity: i32,
 }
 impl StructuredMessageListDefinition {
-    /// <p>The name of the structured message list definition.</p>
+    /// <p>The name of the structured message list definition. </p>
     pub fn name(&self) -> &str {
         use std::ops::Deref;
         self.name.deref()
@@ -49,18 +49,18 @@ pub struct StructuredMessageListDefinitionBuilder {
     pub(crate) capacity: ::std::option::Option<i32>,
 }
 impl StructuredMessageListDefinitionBuilder {
-    /// <p>The name of the structured message list definition.</p>
+    /// <p>The name of the structured message list definition. </p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the structured message list definition.</p>
+    /// <p>The name of the structured message list definition. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the structured message list definition.</p>
+    /// <p>The name of the structured message list definition. </p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

@@ -9,20 +9,13 @@ pub struct ClusterParameterStatus {
     /// <p>The status of the parameter that indicates whether the parameter is in sync with the database, waiting for a cluster reboot, or encountered an error when being applied.</p>
     /// <p>The following are possible statuses and descriptions.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>in-sync</code>: The parameter value is in sync with the database.</p></li>
-    /// <li>
-    /// <p><code>pending-reboot</code>: The parameter value will be applied after the cluster reboots.</p></li>
-    /// <li>
-    /// <p><code>applying</code>: The parameter value is being applied to the database.</p></li>
-    /// <li>
-    /// <p><code>invalid-parameter</code>: Cannot apply the parameter value because it has an invalid value or syntax.</p></li>
-    /// <li>
-    /// <p><code>apply-deferred</code>: The parameter contains static property changes. The changes are deferred until the cluster reboots.</p></li>
-    /// <li>
-    /// <p><code>apply-error</code>: Cannot connect to the cluster. The parameter change will be applied after the cluster reboots.</p></li>
-    /// <li>
-    /// <p><code>unknown-error</code>: Cannot apply the parameter change right now. The change will be applied after the cluster reboots.</p></li>
+    /// <li> <p> <code>in-sync</code>: The parameter value is in sync with the database.</p> </li>
+    /// <li> <p> <code>pending-reboot</code>: The parameter value will be applied after the cluster reboots.</p> </li>
+    /// <li> <p> <code>applying</code>: The parameter value is being applied to the database.</p> </li>
+    /// <li> <p> <code>invalid-parameter</code>: Cannot apply the parameter value because it has an invalid value or syntax.</p> </li>
+    /// <li> <p> <code>apply-deferred</code>: The parameter contains static property changes. The changes are deferred until the cluster reboots.</p> </li>
+    /// <li> <p> <code>apply-error</code>: Cannot connect to the cluster. The parameter change will be applied after the cluster reboots.</p> </li>
+    /// <li> <p> <code>unknown-error</code>: Cannot apply the parameter change right now. The change will be applied after the cluster reboots.</p> </li>
     /// </ul>
     pub parameter_apply_status: ::std::option::Option<::std::string::String>,
     /// <p>The error that prevented the parameter from being applied to the database.</p>
@@ -36,20 +29,13 @@ impl ClusterParameterStatus {
     /// <p>The status of the parameter that indicates whether the parameter is in sync with the database, waiting for a cluster reboot, or encountered an error when being applied.</p>
     /// <p>The following are possible statuses and descriptions.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>in-sync</code>: The parameter value is in sync with the database.</p></li>
-    /// <li>
-    /// <p><code>pending-reboot</code>: The parameter value will be applied after the cluster reboots.</p></li>
-    /// <li>
-    /// <p><code>applying</code>: The parameter value is being applied to the database.</p></li>
-    /// <li>
-    /// <p><code>invalid-parameter</code>: Cannot apply the parameter value because it has an invalid value or syntax.</p></li>
-    /// <li>
-    /// <p><code>apply-deferred</code>: The parameter contains static property changes. The changes are deferred until the cluster reboots.</p></li>
-    /// <li>
-    /// <p><code>apply-error</code>: Cannot connect to the cluster. The parameter change will be applied after the cluster reboots.</p></li>
-    /// <li>
-    /// <p><code>unknown-error</code>: Cannot apply the parameter change right now. The change will be applied after the cluster reboots.</p></li>
+    /// <li> <p> <code>in-sync</code>: The parameter value is in sync with the database.</p> </li>
+    /// <li> <p> <code>pending-reboot</code>: The parameter value will be applied after the cluster reboots.</p> </li>
+    /// <li> <p> <code>applying</code>: The parameter value is being applied to the database.</p> </li>
+    /// <li> <p> <code>invalid-parameter</code>: Cannot apply the parameter value because it has an invalid value or syntax.</p> </li>
+    /// <li> <p> <code>apply-deferred</code>: The parameter contains static property changes. The changes are deferred until the cluster reboots.</p> </li>
+    /// <li> <p> <code>apply-error</code>: Cannot connect to the cluster. The parameter change will be applied after the cluster reboots.</p> </li>
+    /// <li> <p> <code>unknown-error</code>: Cannot apply the parameter change right now. The change will be applied after the cluster reboots.</p> </li>
     /// </ul>
     pub fn parameter_apply_status(&self) -> ::std::option::Option<&str> {
         self.parameter_apply_status.as_deref()
@@ -92,20 +78,13 @@ impl ClusterParameterStatusBuilder {
     /// <p>The status of the parameter that indicates whether the parameter is in sync with the database, waiting for a cluster reboot, or encountered an error when being applied.</p>
     /// <p>The following are possible statuses and descriptions.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>in-sync</code>: The parameter value is in sync with the database.</p></li>
-    /// <li>
-    /// <p><code>pending-reboot</code>: The parameter value will be applied after the cluster reboots.</p></li>
-    /// <li>
-    /// <p><code>applying</code>: The parameter value is being applied to the database.</p></li>
-    /// <li>
-    /// <p><code>invalid-parameter</code>: Cannot apply the parameter value because it has an invalid value or syntax.</p></li>
-    /// <li>
-    /// <p><code>apply-deferred</code>: The parameter contains static property changes. The changes are deferred until the cluster reboots.</p></li>
-    /// <li>
-    /// <p><code>apply-error</code>: Cannot connect to the cluster. The parameter change will be applied after the cluster reboots.</p></li>
-    /// <li>
-    /// <p><code>unknown-error</code>: Cannot apply the parameter change right now. The change will be applied after the cluster reboots.</p></li>
+    /// <li> <p> <code>in-sync</code>: The parameter value is in sync with the database.</p> </li>
+    /// <li> <p> <code>pending-reboot</code>: The parameter value will be applied after the cluster reboots.</p> </li>
+    /// <li> <p> <code>applying</code>: The parameter value is being applied to the database.</p> </li>
+    /// <li> <p> <code>invalid-parameter</code>: Cannot apply the parameter value because it has an invalid value or syntax.</p> </li>
+    /// <li> <p> <code>apply-deferred</code>: The parameter contains static property changes. The changes are deferred until the cluster reboots.</p> </li>
+    /// <li> <p> <code>apply-error</code>: Cannot connect to the cluster. The parameter change will be applied after the cluster reboots.</p> </li>
+    /// <li> <p> <code>unknown-error</code>: Cannot apply the parameter change right now. The change will be applied after the cluster reboots.</p> </li>
     /// </ul>
     pub fn parameter_apply_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_apply_status = ::std::option::Option::Some(input.into());
@@ -114,20 +93,13 @@ impl ClusterParameterStatusBuilder {
     /// <p>The status of the parameter that indicates whether the parameter is in sync with the database, waiting for a cluster reboot, or encountered an error when being applied.</p>
     /// <p>The following are possible statuses and descriptions.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>in-sync</code>: The parameter value is in sync with the database.</p></li>
-    /// <li>
-    /// <p><code>pending-reboot</code>: The parameter value will be applied after the cluster reboots.</p></li>
-    /// <li>
-    /// <p><code>applying</code>: The parameter value is being applied to the database.</p></li>
-    /// <li>
-    /// <p><code>invalid-parameter</code>: Cannot apply the parameter value because it has an invalid value or syntax.</p></li>
-    /// <li>
-    /// <p><code>apply-deferred</code>: The parameter contains static property changes. The changes are deferred until the cluster reboots.</p></li>
-    /// <li>
-    /// <p><code>apply-error</code>: Cannot connect to the cluster. The parameter change will be applied after the cluster reboots.</p></li>
-    /// <li>
-    /// <p><code>unknown-error</code>: Cannot apply the parameter change right now. The change will be applied after the cluster reboots.</p></li>
+    /// <li> <p> <code>in-sync</code>: The parameter value is in sync with the database.</p> </li>
+    /// <li> <p> <code>pending-reboot</code>: The parameter value will be applied after the cluster reboots.</p> </li>
+    /// <li> <p> <code>applying</code>: The parameter value is being applied to the database.</p> </li>
+    /// <li> <p> <code>invalid-parameter</code>: Cannot apply the parameter value because it has an invalid value or syntax.</p> </li>
+    /// <li> <p> <code>apply-deferred</code>: The parameter contains static property changes. The changes are deferred until the cluster reboots.</p> </li>
+    /// <li> <p> <code>apply-error</code>: Cannot connect to the cluster. The parameter change will be applied after the cluster reboots.</p> </li>
+    /// <li> <p> <code>unknown-error</code>: Cannot apply the parameter change right now. The change will be applied after the cluster reboots.</p> </li>
     /// </ul>
     pub fn set_parameter_apply_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_apply_status = input;
@@ -136,20 +108,13 @@ impl ClusterParameterStatusBuilder {
     /// <p>The status of the parameter that indicates whether the parameter is in sync with the database, waiting for a cluster reboot, or encountered an error when being applied.</p>
     /// <p>The following are possible statuses and descriptions.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>in-sync</code>: The parameter value is in sync with the database.</p></li>
-    /// <li>
-    /// <p><code>pending-reboot</code>: The parameter value will be applied after the cluster reboots.</p></li>
-    /// <li>
-    /// <p><code>applying</code>: The parameter value is being applied to the database.</p></li>
-    /// <li>
-    /// <p><code>invalid-parameter</code>: Cannot apply the parameter value because it has an invalid value or syntax.</p></li>
-    /// <li>
-    /// <p><code>apply-deferred</code>: The parameter contains static property changes. The changes are deferred until the cluster reboots.</p></li>
-    /// <li>
-    /// <p><code>apply-error</code>: Cannot connect to the cluster. The parameter change will be applied after the cluster reboots.</p></li>
-    /// <li>
-    /// <p><code>unknown-error</code>: Cannot apply the parameter change right now. The change will be applied after the cluster reboots.</p></li>
+    /// <li> <p> <code>in-sync</code>: The parameter value is in sync with the database.</p> </li>
+    /// <li> <p> <code>pending-reboot</code>: The parameter value will be applied after the cluster reboots.</p> </li>
+    /// <li> <p> <code>applying</code>: The parameter value is being applied to the database.</p> </li>
+    /// <li> <p> <code>invalid-parameter</code>: Cannot apply the parameter value because it has an invalid value or syntax.</p> </li>
+    /// <li> <p> <code>apply-deferred</code>: The parameter contains static property changes. The changes are deferred until the cluster reboots.</p> </li>
+    /// <li> <p> <code>apply-error</code>: Cannot connect to the cluster. The parameter change will be applied after the cluster reboots.</p> </li>
+    /// <li> <p> <code>unknown-error</code>: Cannot apply the parameter change right now. The change will be applied after the cluster reboots.</p> </li>
     /// </ul>
     pub fn get_parameter_apply_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.parameter_apply_status

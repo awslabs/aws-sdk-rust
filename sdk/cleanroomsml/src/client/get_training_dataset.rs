@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`update_time(DateTime)`](crate::operation::get_training_dataset::GetTrainingDatasetOutput::update_time): <p>The most recent time at which the training dataset was updated.</p>
     ///   - [`training_dataset_arn(String)`](crate::operation::get_training_dataset::GetTrainingDatasetOutput::training_dataset_arn): <p>The Amazon Resource Name (ARN) of the training dataset.</p>
     ///   - [`name(String)`](crate::operation::get_training_dataset::GetTrainingDatasetOutput::name): <p>The name of the training dataset.</p>
-    ///   - [`training_data(Vec::<Dataset>)`](crate::operation::get_training_dataset::GetTrainingDatasetOutput::training_data): <p>Metadata about the requested training data.</p>
+    ///   - [`training_data(Vec::<Dataset>)`](crate::operation::get_training_dataset::GetTrainingDatasetOutput::training_data): <p>Metadata about the requested training data. </p>
     ///   - [`status(TrainingDatasetStatus)`](crate::operation::get_training_dataset::GetTrainingDatasetOutput::status): <p>The status of the training dataset.</p>
     ///   - [`role_arn(String)`](crate::operation::get_training_dataset::GetTrainingDatasetOutput::role_arn): <p>The IAM role used to read the training data.</p>
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_training_dataset::GetTrainingDatasetOutput::tags): <p>The tags that are assigned to this training dataset.</p>

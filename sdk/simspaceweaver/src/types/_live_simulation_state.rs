@@ -6,7 +6,7 @@
 pub struct LiveSimulationState {
     /// <p>A list of domains for the simulation. For more information about domains, see <a href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains">Key concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.</p>
     pub domains: ::std::option::Option<::std::vec::Vec<crate::types::Domain>>,
-    /// <p>A list of simulation clocks.</p><note>
+    /// <p>A list of simulation clocks.</p> <note>
     /// <p>At this time, a simulation has only one clock.</p>
     /// </note>
     pub clocks: ::std::option::Option<::std::vec::Vec<crate::types::SimulationClock>>,
@@ -18,7 +18,7 @@ impl LiveSimulationState {
     pub fn domains(&self) -> &[crate::types::Domain] {
         self.domains.as_deref().unwrap_or_default()
     }
-    /// <p>A list of simulation clocks.</p><note>
+    /// <p>A list of simulation clocks.</p> <note>
     /// <p>At this time, a simulation has only one clock.</p>
     /// </note>
     ///
@@ -66,7 +66,7 @@ impl LiveSimulationStateBuilder {
     ///
     /// To override the contents of this collection use [`set_clocks`](Self::set_clocks).
     ///
-    /// <p>A list of simulation clocks.</p><note>
+    /// <p>A list of simulation clocks.</p> <note>
     /// <p>At this time, a simulation has only one clock.</p>
     /// </note>
     pub fn clocks(mut self, input: crate::types::SimulationClock) -> Self {
@@ -75,14 +75,14 @@ impl LiveSimulationStateBuilder {
         self.clocks = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of simulation clocks.</p><note>
+    /// <p>A list of simulation clocks.</p> <note>
     /// <p>At this time, a simulation has only one clock.</p>
     /// </note>
     pub fn set_clocks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SimulationClock>>) -> Self {
         self.clocks = input;
         self
     }
-    /// <p>A list of simulation clocks.</p><note>
+    /// <p>A list of simulation clocks.</p> <note>
     /// <p>At this time, a simulation has only one clock.</p>
     /// </note>
     pub fn get_clocks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SimulationClock>> {

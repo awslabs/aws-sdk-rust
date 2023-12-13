@@ -4,9 +4,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PrefixConfig {
-    /// <p>Determines the format of the prefix, and whether it applies to the file name, file path, or both.</p>
+    /// <p>Determines the format of the prefix, and whether it applies to the file name, file path, or both. </p>
     pub prefix_type: ::std::option::Option<crate::types::PrefixType>,
-    /// <p>Determines the level of granularity for the date and time that's included in the prefix.</p>
+    /// <p>Determines the level of granularity for the date and time that's included in the prefix. </p>
     pub prefix_format: ::std::option::Option<crate::types::PrefixFormat>,
     /// <p>Specifies whether the destination file path includes either or both of the following elements:</p>
     /// <dl>
@@ -22,23 +22,20 @@ pub struct PrefixConfig {
     /// <dd>
     /// <p>The version number of your data schema. Amazon AppFlow assigns this version number. The version number increases by one when you change any of the following settings in your flow configuration:</p>
     /// <ul>
-    /// <li>
-    /// <p>Source-to-destination field mappings</p></li>
-    /// <li>
-    /// <p>Field data types</p></li>
-    /// <li>
-    /// <p>Partition keys</p></li>
+    /// <li> <p>Source-to-destination field mappings</p> </li>
+    /// <li> <p>Field data types</p> </li>
+    /// <li> <p>Partition keys</p> </li>
     /// </ul>
     /// </dd>
     /// </dl>
     pub path_prefix_hierarchy: ::std::option::Option<::std::vec::Vec<crate::types::PathPrefix>>,
 }
 impl PrefixConfig {
-    /// <p>Determines the format of the prefix, and whether it applies to the file name, file path, or both.</p>
+    /// <p>Determines the format of the prefix, and whether it applies to the file name, file path, or both. </p>
     pub fn prefix_type(&self) -> ::std::option::Option<&crate::types::PrefixType> {
         self.prefix_type.as_ref()
     }
-    /// <p>Determines the level of granularity for the date and time that's included in the prefix.</p>
+    /// <p>Determines the level of granularity for the date and time that's included in the prefix. </p>
     pub fn prefix_format(&self) -> ::std::option::Option<&crate::types::PrefixFormat> {
         self.prefix_format.as_ref()
     }
@@ -56,12 +53,9 @@ impl PrefixConfig {
     /// <dd>
     /// <p>The version number of your data schema. Amazon AppFlow assigns this version number. The version number increases by one when you change any of the following settings in your flow configuration:</p>
     /// <ul>
-    /// <li>
-    /// <p>Source-to-destination field mappings</p></li>
-    /// <li>
-    /// <p>Field data types</p></li>
-    /// <li>
-    /// <p>Partition keys</p></li>
+    /// <li> <p>Source-to-destination field mappings</p> </li>
+    /// <li> <p>Field data types</p> </li>
+    /// <li> <p>Partition keys</p> </li>
     /// </ul>
     /// </dd>
     /// </dl>
@@ -87,31 +81,31 @@ pub struct PrefixConfigBuilder {
     pub(crate) path_prefix_hierarchy: ::std::option::Option<::std::vec::Vec<crate::types::PathPrefix>>,
 }
 impl PrefixConfigBuilder {
-    /// <p>Determines the format of the prefix, and whether it applies to the file name, file path, or both.</p>
+    /// <p>Determines the format of the prefix, and whether it applies to the file name, file path, or both. </p>
     pub fn prefix_type(mut self, input: crate::types::PrefixType) -> Self {
         self.prefix_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Determines the format of the prefix, and whether it applies to the file name, file path, or both.</p>
+    /// <p>Determines the format of the prefix, and whether it applies to the file name, file path, or both. </p>
     pub fn set_prefix_type(mut self, input: ::std::option::Option<crate::types::PrefixType>) -> Self {
         self.prefix_type = input;
         self
     }
-    /// <p>Determines the format of the prefix, and whether it applies to the file name, file path, or both.</p>
+    /// <p>Determines the format of the prefix, and whether it applies to the file name, file path, or both. </p>
     pub fn get_prefix_type(&self) -> &::std::option::Option<crate::types::PrefixType> {
         &self.prefix_type
     }
-    /// <p>Determines the level of granularity for the date and time that's included in the prefix.</p>
+    /// <p>Determines the level of granularity for the date and time that's included in the prefix. </p>
     pub fn prefix_format(mut self, input: crate::types::PrefixFormat) -> Self {
         self.prefix_format = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Determines the level of granularity for the date and time that's included in the prefix.</p>
+    /// <p>Determines the level of granularity for the date and time that's included in the prefix. </p>
     pub fn set_prefix_format(mut self, input: ::std::option::Option<crate::types::PrefixFormat>) -> Self {
         self.prefix_format = input;
         self
     }
-    /// <p>Determines the level of granularity for the date and time that's included in the prefix.</p>
+    /// <p>Determines the level of granularity for the date and time that's included in the prefix. </p>
     pub fn get_prefix_format(&self) -> &::std::option::Option<crate::types::PrefixFormat> {
         &self.prefix_format
     }
@@ -133,12 +127,9 @@ impl PrefixConfigBuilder {
     /// <dd>
     /// <p>The version number of your data schema. Amazon AppFlow assigns this version number. The version number increases by one when you change any of the following settings in your flow configuration:</p>
     /// <ul>
-    /// <li>
-    /// <p>Source-to-destination field mappings</p></li>
-    /// <li>
-    /// <p>Field data types</p></li>
-    /// <li>
-    /// <p>Partition keys</p></li>
+    /// <li> <p>Source-to-destination field mappings</p> </li>
+    /// <li> <p>Field data types</p> </li>
+    /// <li> <p>Partition keys</p> </li>
     /// </ul>
     /// </dd>
     /// </dl>
@@ -162,12 +153,9 @@ impl PrefixConfigBuilder {
     /// <dd>
     /// <p>The version number of your data schema. Amazon AppFlow assigns this version number. The version number increases by one when you change any of the following settings in your flow configuration:</p>
     /// <ul>
-    /// <li>
-    /// <p>Source-to-destination field mappings</p></li>
-    /// <li>
-    /// <p>Field data types</p></li>
-    /// <li>
-    /// <p>Partition keys</p></li>
+    /// <li> <p>Source-to-destination field mappings</p> </li>
+    /// <li> <p>Field data types</p> </li>
+    /// <li> <p>Partition keys</p> </li>
     /// </ul>
     /// </dd>
     /// </dl>
@@ -189,12 +177,9 @@ impl PrefixConfigBuilder {
     /// <dd>
     /// <p>The version number of your data schema. Amazon AppFlow assigns this version number. The version number increases by one when you change any of the following settings in your flow configuration:</p>
     /// <ul>
-    /// <li>
-    /// <p>Source-to-destination field mappings</p></li>
-    /// <li>
-    /// <p>Field data types</p></li>
-    /// <li>
-    /// <p>Partition keys</p></li>
+    /// <li> <p>Source-to-destination field mappings</p> </li>
+    /// <li> <p>Field data types</p> </li>
+    /// <li> <p>Partition keys</p> </li>
     /// </ul>
     /// </dd>
     /// </dl>

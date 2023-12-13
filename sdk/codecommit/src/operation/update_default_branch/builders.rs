@@ -22,7 +22,7 @@ impl UpdateDefaultBranchInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateDefaultBranch`.
 ///
-/// <p>Sets or changes the default branch name for the specified repository.</p><note>
+/// <p>Sets or changes the default branch name for the specified repository.</p> <note>
 /// <p>If you use this operation to change the default branch name to the current default branch name, a success message is returned even though the default branch did not change.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

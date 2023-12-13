@@ -249,7 +249,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for BatchDeleteCl
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum BatchDeleteClusterSnapshotsError {
-    /// <p>The maximum number for a batch delete of snapshots has been reached. The limit is 100.</p>
+    /// <p>The maximum number for a batch delete of snapshots has been reached. The limit is 100. </p>
     BatchDeleteRequestSizeExceededFault(crate::types::error::BatchDeleteRequestSizeExceededFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

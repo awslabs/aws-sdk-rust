@@ -5,45 +5,35 @@
 pub struct UpdateIpSetInput {
     /// <p>The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
-    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
+    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance. </p>
+    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
     /// <ul>
-    /// <li>
-    /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.</p></li>
-    /// <li>
-    /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1.</p></li>
+    /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+    /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
     /// </ul>
     pub scope: ::std::option::Option<crate::types::Scope>,
     /// <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
     pub id: ::std::option::Option<::std::string::String>,
-    /// <p>A description of the IP set that helps with identification.</p>
+    /// <p>A description of the IP set that helps with identification. </p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses that you want WAF to inspect for in incoming requests. All addresses must be specified using Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for <code>/0</code>.</p>
-    /// <p>Example address strings:</p>
+    /// <p>Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses that you want WAF to inspect for in incoming requests. All addresses must be specified using Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for <code>/0</code>. </p>
+    /// <p>Example address strings: </p>
     /// <ul>
-    /// <li>
-    /// <p>For requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p></li>
-    /// <li>
-    /// <p>For requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p></li>
-    /// <li>
-    /// <p>For requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p></li>
-    /// <li>
-    /// <p>For requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p></li>
+    /// <li> <p>For requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li>
+    /// <li> <p>For requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li>
+    /// <li> <p>For requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li>
+    /// <li> <p>For requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>
     /// </ul>
     /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
-    /// <p>Example JSON <code>Addresses</code> specifications:</p>
+    /// <p>Example JSON <code>Addresses</code> specifications: </p>
     /// <ul>
-    /// <li>
-    /// <p>Empty array: <code>"Addresses": []</code></p></li>
-    /// <li>
-    /// <p>Array with one address: <code>"Addresses": ["192.0.2.44/32"]</code></p></li>
-    /// <li>
-    /// <p>Array with three addresses: <code>"Addresses": ["192.0.2.44/32", "192.0.2.0/24", "192.0.0.0/16"]</code></p></li>
-    /// <li>
-    /// <p>INVALID specification: <code>"Addresses": [""]</code> INVALID</p></li>
+    /// <li> <p>Empty array: <code>"Addresses": []</code> </p> </li>
+    /// <li> <p>Array with one address: <code>"Addresses": ["192.0.2.44/32"]</code> </p> </li>
+    /// <li> <p>Array with three addresses: <code>"Addresses": ["192.0.2.44/32", "192.0.2.0/24", "192.0.0.0/16"]</code> </p> </li>
+    /// <li> <p>INVALID specification: <code>"Addresses": [""]</code> INVALID </p> </li>
     /// </ul>
     pub addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation.</p>
+    /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
     pub lock_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateIpSetInput {
@@ -51,13 +41,11 @@ impl UpdateIpSetInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
-    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
+    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance. </p>
+    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
     /// <ul>
-    /// <li>
-    /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.</p></li>
-    /// <li>
-    /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1.</p></li>
+    /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+    /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
     /// </ul>
     pub fn scope(&self) -> ::std::option::Option<&crate::types::Scope> {
         self.scope.as_ref()
@@ -66,40 +54,32 @@ impl UpdateIpSetInput {
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>A description of the IP set that helps with identification.</p>
+    /// <p>A description of the IP set that helps with identification. </p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses that you want WAF to inspect for in incoming requests. All addresses must be specified using Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for <code>/0</code>.</p>
-    /// <p>Example address strings:</p>
+    /// <p>Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses that you want WAF to inspect for in incoming requests. All addresses must be specified using Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for <code>/0</code>. </p>
+    /// <p>Example address strings: </p>
     /// <ul>
-    /// <li>
-    /// <p>For requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p></li>
-    /// <li>
-    /// <p>For requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p></li>
-    /// <li>
-    /// <p>For requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p></li>
-    /// <li>
-    /// <p>For requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p></li>
+    /// <li> <p>For requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li>
+    /// <li> <p>For requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li>
+    /// <li> <p>For requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li>
+    /// <li> <p>For requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>
     /// </ul>
     /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
-    /// <p>Example JSON <code>Addresses</code> specifications:</p>
+    /// <p>Example JSON <code>Addresses</code> specifications: </p>
     /// <ul>
-    /// <li>
-    /// <p>Empty array: <code>"Addresses": []</code></p></li>
-    /// <li>
-    /// <p>Array with one address: <code>"Addresses": ["192.0.2.44/32"]</code></p></li>
-    /// <li>
-    /// <p>Array with three addresses: <code>"Addresses": ["192.0.2.44/32", "192.0.2.0/24", "192.0.0.0/16"]</code></p></li>
-    /// <li>
-    /// <p>INVALID specification: <code>"Addresses": [""]</code> INVALID</p></li>
+    /// <li> <p>Empty array: <code>"Addresses": []</code> </p> </li>
+    /// <li> <p>Array with one address: <code>"Addresses": ["192.0.2.44/32"]</code> </p> </li>
+    /// <li> <p>Array with three addresses: <code>"Addresses": ["192.0.2.44/32", "192.0.2.0/24", "192.0.0.0/16"]</code> </p> </li>
+    /// <li> <p>INVALID specification: <code>"Addresses": [""]</code> INVALID </p> </li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.addresses.is_none()`.
     pub fn addresses(&self) -> &[::std::string::String] {
         self.addresses.as_deref().unwrap_or_default()
     }
-    /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation.</p>
+    /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
     pub fn lock_token(&self) -> ::std::option::Option<&str> {
         self.lock_token.as_deref()
     }
@@ -138,38 +118,32 @@ impl UpdateIpSetInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
-    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
+    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance. </p>
+    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
     /// <ul>
-    /// <li>
-    /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.</p></li>
-    /// <li>
-    /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1.</p></li>
+    /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+    /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
     /// </ul>
     /// This field is required.
     pub fn scope(mut self, input: crate::types::Scope) -> Self {
         self.scope = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
-    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
+    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance. </p>
+    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
     /// <ul>
-    /// <li>
-    /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.</p></li>
-    /// <li>
-    /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1.</p></li>
+    /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+    /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
     /// </ul>
     pub fn set_scope(mut self, input: ::std::option::Option<crate::types::Scope>) -> Self {
         self.scope = input;
         self
     }
-    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
-    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
+    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance. </p>
+    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
     /// <ul>
-    /// <li>
-    /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.</p></li>
-    /// <li>
-    /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1.</p></li>
+    /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+    /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
     /// </ul>
     pub fn get_scope(&self) -> &::std::option::Option<crate::types::Scope> {
         &self.scope
@@ -189,17 +163,17 @@ impl UpdateIpSetInputBuilder {
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
-    /// <p>A description of the IP set that helps with identification.</p>
+    /// <p>A description of the IP set that helps with identification. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A description of the IP set that helps with identification.</p>
+    /// <p>A description of the IP set that helps with identification. </p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>A description of the IP set that helps with identification.</p>
+    /// <p>A description of the IP set that helps with identification. </p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
@@ -207,29 +181,21 @@ impl UpdateIpSetInputBuilder {
     ///
     /// To override the contents of this collection use [`set_addresses`](Self::set_addresses).
     ///
-    /// <p>Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses that you want WAF to inspect for in incoming requests. All addresses must be specified using Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for <code>/0</code>.</p>
-    /// <p>Example address strings:</p>
+    /// <p>Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses that you want WAF to inspect for in incoming requests. All addresses must be specified using Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for <code>/0</code>. </p>
+    /// <p>Example address strings: </p>
     /// <ul>
-    /// <li>
-    /// <p>For requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p></li>
-    /// <li>
-    /// <p>For requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p></li>
-    /// <li>
-    /// <p>For requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p></li>
-    /// <li>
-    /// <p>For requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p></li>
+    /// <li> <p>For requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li>
+    /// <li> <p>For requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li>
+    /// <li> <p>For requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li>
+    /// <li> <p>For requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>
     /// </ul>
     /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
-    /// <p>Example JSON <code>Addresses</code> specifications:</p>
+    /// <p>Example JSON <code>Addresses</code> specifications: </p>
     /// <ul>
-    /// <li>
-    /// <p>Empty array: <code>"Addresses": []</code></p></li>
-    /// <li>
-    /// <p>Array with one address: <code>"Addresses": ["192.0.2.44/32"]</code></p></li>
-    /// <li>
-    /// <p>Array with three addresses: <code>"Addresses": ["192.0.2.44/32", "192.0.2.0/24", "192.0.0.0/16"]</code></p></li>
-    /// <li>
-    /// <p>INVALID specification: <code>"Addresses": [""]</code> INVALID</p></li>
+    /// <li> <p>Empty array: <code>"Addresses": []</code> </p> </li>
+    /// <li> <p>Array with one address: <code>"Addresses": ["192.0.2.44/32"]</code> </p> </li>
+    /// <li> <p>Array with three addresses: <code>"Addresses": ["192.0.2.44/32", "192.0.2.0/24", "192.0.0.0/16"]</code> </p> </li>
+    /// <li> <p>INVALID specification: <code>"Addresses": [""]</code> INVALID </p> </li>
     /// </ul>
     pub fn addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.addresses.unwrap_or_default();
@@ -237,73 +203,57 @@ impl UpdateIpSetInputBuilder {
         self.addresses = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses that you want WAF to inspect for in incoming requests. All addresses must be specified using Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for <code>/0</code>.</p>
-    /// <p>Example address strings:</p>
+    /// <p>Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses that you want WAF to inspect for in incoming requests. All addresses must be specified using Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for <code>/0</code>. </p>
+    /// <p>Example address strings: </p>
     /// <ul>
-    /// <li>
-    /// <p>For requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p></li>
-    /// <li>
-    /// <p>For requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p></li>
-    /// <li>
-    /// <p>For requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p></li>
-    /// <li>
-    /// <p>For requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p></li>
+    /// <li> <p>For requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li>
+    /// <li> <p>For requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li>
+    /// <li> <p>For requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li>
+    /// <li> <p>For requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>
     /// </ul>
     /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
-    /// <p>Example JSON <code>Addresses</code> specifications:</p>
+    /// <p>Example JSON <code>Addresses</code> specifications: </p>
     /// <ul>
-    /// <li>
-    /// <p>Empty array: <code>"Addresses": []</code></p></li>
-    /// <li>
-    /// <p>Array with one address: <code>"Addresses": ["192.0.2.44/32"]</code></p></li>
-    /// <li>
-    /// <p>Array with three addresses: <code>"Addresses": ["192.0.2.44/32", "192.0.2.0/24", "192.0.0.0/16"]</code></p></li>
-    /// <li>
-    /// <p>INVALID specification: <code>"Addresses": [""]</code> INVALID</p></li>
+    /// <li> <p>Empty array: <code>"Addresses": []</code> </p> </li>
+    /// <li> <p>Array with one address: <code>"Addresses": ["192.0.2.44/32"]</code> </p> </li>
+    /// <li> <p>Array with three addresses: <code>"Addresses": ["192.0.2.44/32", "192.0.2.0/24", "192.0.0.0/16"]</code> </p> </li>
+    /// <li> <p>INVALID specification: <code>"Addresses": [""]</code> INVALID </p> </li>
     /// </ul>
     pub fn set_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.addresses = input;
         self
     }
-    /// <p>Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses that you want WAF to inspect for in incoming requests. All addresses must be specified using Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for <code>/0</code>.</p>
-    /// <p>Example address strings:</p>
+    /// <p>Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses that you want WAF to inspect for in incoming requests. All addresses must be specified using Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for <code>/0</code>. </p>
+    /// <p>Example address strings: </p>
     /// <ul>
-    /// <li>
-    /// <p>For requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p></li>
-    /// <li>
-    /// <p>For requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p></li>
-    /// <li>
-    /// <p>For requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p></li>
-    /// <li>
-    /// <p>For requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p></li>
+    /// <li> <p>For requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li>
+    /// <li> <p>For requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li>
+    /// <li> <p>For requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li>
+    /// <li> <p>For requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>
     /// </ul>
     /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
-    /// <p>Example JSON <code>Addresses</code> specifications:</p>
+    /// <p>Example JSON <code>Addresses</code> specifications: </p>
     /// <ul>
-    /// <li>
-    /// <p>Empty array: <code>"Addresses": []</code></p></li>
-    /// <li>
-    /// <p>Array with one address: <code>"Addresses": ["192.0.2.44/32"]</code></p></li>
-    /// <li>
-    /// <p>Array with three addresses: <code>"Addresses": ["192.0.2.44/32", "192.0.2.0/24", "192.0.0.0/16"]</code></p></li>
-    /// <li>
-    /// <p>INVALID specification: <code>"Addresses": [""]</code> INVALID</p></li>
+    /// <li> <p>Empty array: <code>"Addresses": []</code> </p> </li>
+    /// <li> <p>Array with one address: <code>"Addresses": ["192.0.2.44/32"]</code> </p> </li>
+    /// <li> <p>Array with three addresses: <code>"Addresses": ["192.0.2.44/32", "192.0.2.0/24", "192.0.0.0/16"]</code> </p> </li>
+    /// <li> <p>INVALID specification: <code>"Addresses": [""]</code> INVALID </p> </li>
     /// </ul>
     pub fn get_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.addresses
     }
-    /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation.</p>
+    /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
     /// This field is required.
     pub fn lock_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lock_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation.</p>
+    /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
     pub fn set_lock_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lock_token = input;
         self
     }
-    /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation.</p>
+    /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
     pub fn get_lock_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.lock_token
     }

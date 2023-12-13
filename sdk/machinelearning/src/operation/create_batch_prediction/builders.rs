@@ -22,8 +22,8 @@ impl CreateBatchPredictionInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateBatchPrediction`.
 ///
-/// <p>Generates predictions for a group of observations. The observations to process exist in one or more data files referenced by a <code>DataSource</code>. This operation creates a new <code>BatchPrediction</code>, and uses an <code>MLModel</code> and the data files referenced by the <code>DataSource</code> as information sources.</p>
-/// <p><code>CreateBatchPrediction</code> is an asynchronous operation. In response to <code>CreateBatchPrediction</code>, Amazon Machine Learning (Amazon ML) immediately returns and sets the <code>BatchPrediction</code> status to <code>PENDING</code>. After the <code>BatchPrediction</code> completes, Amazon ML sets the status to <code>COMPLETED</code>.</p>
+/// <p>Generates predictions for a group of observations. The observations to process exist in one or more data files referenced by a <code>DataSource</code>. This operation creates a new <code>BatchPrediction</code>, and uses an <code>MLModel</code> and the data files referenced by the <code>DataSource</code> as information sources. </p>
+/// <p> <code>CreateBatchPrediction</code> is an asynchronous operation. In response to <code>CreateBatchPrediction</code>, Amazon Machine Learning (Amazon ML) immediately returns and sets the <code>BatchPrediction</code> status to <code>PENDING</code>. After the <code>BatchPrediction</code> completes, Amazon ML sets the status to <code>COMPLETED</code>. </p>
 /// <p>You can poll for status updates by using the <code>GetBatchPrediction</code> operation and checking the <code>Status</code> parameter of the result. After the <code>COMPLETED</code> status appears, the results are available in the location specified by the <code>OutputUri</code> parameter.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateBatchPredictionFluentBuilder {
@@ -138,17 +138,17 @@ impl CreateBatchPredictionFluentBuilder {
     pub fn get_batch_prediction_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_batch_prediction_name()
     }
-    /// <p>The ID of the <code>MLModel</code> that will generate predictions for the group of observations.</p>
+    /// <p>The ID of the <code>MLModel</code> that will generate predictions for the group of observations. </p>
     pub fn ml_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ml_model_id(input.into());
         self
     }
-    /// <p>The ID of the <code>MLModel</code> that will generate predictions for the group of observations.</p>
+    /// <p>The ID of the <code>MLModel</code> that will generate predictions for the group of observations. </p>
     pub fn set_ml_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ml_model_id(input);
         self
     }
-    /// <p>The ID of the <code>MLModel</code> that will generate predictions for the group of observations.</p>
+    /// <p>The ID of the <code>MLModel</code> that will generate predictions for the group of observations. </p>
     pub fn get_ml_model_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_ml_model_id()
     }

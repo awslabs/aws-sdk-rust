@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`ip_restriction_rule_map(Option<HashMap::<String, String>>)`](crate::operation::describe_ip_restriction::DescribeIpRestrictionOutput::ip_restriction_rule_map): <p>A map that describes the IP rules with CIDR range and description.</p>
     ///   - [`enabled(Option<bool>)`](crate::operation::describe_ip_restriction::DescribeIpRestrictionOutput::enabled): <p>A value that specifies whether IP rules are turned on.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::describe_ip_restriction::DescribeIpRestrictionOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
-    ///   - [`status(i32)`](crate::operation::describe_ip_restriction::DescribeIpRestrictionOutput::status): <p>The HTTP status of the request.</p>
+    ///   - [`status(i32)`](crate::operation::describe_ip_restriction::DescribeIpRestrictionOutput::status): <p>The HTTP status of the request. </p>
     /// - On failure, responds with [`SdkError<DescribeIpRestrictionError>`](crate::operation::describe_ip_restriction::DescribeIpRestrictionError)
     pub fn describe_ip_restriction(&self) -> crate::operation::describe_ip_restriction::builders::DescribeIpRestrictionFluentBuilder {
         crate::operation::describe_ip_restriction::builders::DescribeIpRestrictionFluentBuilder::new(self.handle.clone())

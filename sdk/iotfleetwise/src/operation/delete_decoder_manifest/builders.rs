@@ -22,7 +22,7 @@ impl DeleteDecoderManifestInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteDecoderManifest`.
 ///
-/// <p>Deletes a decoder manifest. You can't delete a decoder manifest if it has vehicles associated with it.</p><note>
+/// <p> Deletes a decoder manifest. You can't delete a decoder manifest if it has vehicles associated with it. </p> <note>
 /// <p>If the decoder manifest is successfully deleted, Amazon Web Services IoT FleetWise sends back an HTTP 200 response with an empty body.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -110,17 +110,17 @@ impl DeleteDecoderManifestFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the decoder manifest to delete.</p>
+    /// <p> The name of the decoder manifest to delete. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of the decoder manifest to delete.</p>
+    /// <p> The name of the decoder manifest to delete. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name of the decoder manifest to delete.</p>
+    /// <p> The name of the decoder manifest to delete. </p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }

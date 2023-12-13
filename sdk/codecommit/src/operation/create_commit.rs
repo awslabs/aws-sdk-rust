@@ -251,7 +251,7 @@ pub enum CreateCommitError {
     BranchNameIsTagNameException(crate::types::error::BranchNameIsTagNameException),
     /// <p>A branch name is required, but was not specified.</p>
     BranchNameRequiredException(crate::types::error::BranchNameRequiredException),
-    /// <p>The commit message is too long. Provide a shorter string.</p>
+    /// <p>The commit message is too long. Provide a shorter string. </p>
     CommitMessageLengthExceededException(crate::types::error::CommitMessageLengthExceededException),
     /// <p>A file cannot be added to the repository because the specified path name has the same name as a file that already exists in this repository. Either provide a different name for the file, or specify a different path for the file.</p>
     DirectoryNameConflictsWithFileNameException(crate::types::error::DirectoryNameConflictsWithFileNameException),
@@ -287,19 +287,19 @@ pub enum CreateCommitError {
     InvalidDeletionParameterException(crate::types::error::InvalidDeletionParameterException),
     /// <p>The specified email address either contains one or more characters that are not allowed, or it exceeds the maximum number of characters allowed for an email address.</p>
     InvalidEmailException(crate::types::error::InvalidEmailException),
-    /// <p>The specified file mode permission is not valid. For a list of valid file mode permissions, see <code>PutFile</code>.</p>
+    /// <p>The specified file mode permission is not valid. For a list of valid file mode permissions, see <code>PutFile</code>. </p>
     InvalidFileModeException(crate::types::error::InvalidFileModeException),
     /// <p>The parent commit ID is not valid. The commit ID cannot be empty, and must match the head commit ID for the branch of the repository where you want to add or update a file.</p>
     InvalidParentCommitIdException(crate::types::error::InvalidParentCommitIdException),
     /// <p>The specified path is not valid.</p>
     InvalidPathException(crate::types::error::InvalidPathException),
-    /// <p>A specified repository name is not valid.</p><note>
+    /// <p>A specified repository name is not valid.</p> <note>
     /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::types::error::InvalidRepositoryNameException),
     /// <p>The number of specified files to change as part of this commit exceeds the maximum number of files that can be changed in a single commit. Consider using a Git client for these changes.</p>
     MaximumFileEntriesExceededException(crate::types::error::MaximumFileEntriesExceededException),
-    /// <p>The user name is not valid because it has exceeded the character limit for author names.</p>
+    /// <p>The user name is not valid because it has exceeded the character limit for author names. </p>
     NameLengthExceededException(crate::types::error::NameLengthExceededException),
     /// <p>The commit cannot be created because no changes will be made to the repository as a result of this commit. A commit must contain at least one change.</p>
     NoChangeException(crate::types::error::NoChangeException),

@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteScheduledQueryInput {
-    /// <p>The ARN of the scheduled query.</p>
+    /// <p>The ARN of the scheduled query. </p>
     pub scheduled_query_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteScheduledQueryInput {
-    /// <p>The ARN of the scheduled query.</p>
+    /// <p>The ARN of the scheduled query. </p>
     pub fn scheduled_query_arn(&self) -> ::std::option::Option<&str> {
         self.scheduled_query_arn.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct DeleteScheduledQueryInputBuilder {
     pub(crate) scheduled_query_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteScheduledQueryInputBuilder {
-    /// <p>The ARN of the scheduled query.</p>
+    /// <p>The ARN of the scheduled query. </p>
     /// This field is required.
     pub fn scheduled_query_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scheduled_query_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the scheduled query.</p>
+    /// <p>The ARN of the scheduled query. </p>
     pub fn set_scheduled_query_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scheduled_query_arn = input;
         self
     }
-    /// <p>The ARN of the scheduled query.</p>
+    /// <p>The ARN of the scheduled query. </p>
     pub fn get_scheduled_query_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.scheduled_query_arn
     }

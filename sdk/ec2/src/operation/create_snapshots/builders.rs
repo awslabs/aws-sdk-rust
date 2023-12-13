@@ -110,17 +110,17 @@ impl CreateSnapshotsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>A description propagated to every snapshot specified by the instance.</p>
+    /// <p> A description propagated to every snapshot specified by the instance.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>A description propagated to every snapshot specified by the instance.</p>
+    /// <p> A description propagated to every snapshot specified by the instance.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>A description propagated to every snapshot specified by the instance.</p>
+    /// <p> A description propagated to every snapshot specified by the instance.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
@@ -140,12 +140,9 @@ impl CreateSnapshotsFluentBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Outpost on which to create the local snapshots.</p>
     /// <ul>
-    /// <li>
-    /// <p>To create snapshots from an instance in a Region, omit this parameter. The snapshots are created in the same Region as the instance.</p></li>
-    /// <li>
-    /// <p>To create snapshots from an instance on an Outpost and store the snapshots in the Region, omit this parameter. The snapshots are created in the Region for the Outpost.</p></li>
-    /// <li>
-    /// <p>To create snapshots from an instance on an Outpost and store the snapshots on an Outpost, specify the ARN of the destination Outpost. The snapshots must be created on the same Outpost as the instance.</p></li>
+    /// <li> <p>To create snapshots from an instance in a Region, omit this parameter. The snapshots are created in the same Region as the instance.</p> </li>
+    /// <li> <p>To create snapshots from an instance on an Outpost and store the snapshots in the Region, omit this parameter. The snapshots are created in the Region for the Outpost.</p> </li>
+    /// <li> <p>To create snapshots from an instance on an Outpost and store the snapshots on an Outpost, specify the ARN of the destination Outpost. The snapshots must be created on the same Outpost as the instance.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-multivol-snapshot"> Create multi-volume local snapshots from instances on an Outpost</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub fn outpost_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -154,12 +151,9 @@ impl CreateSnapshotsFluentBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Outpost on which to create the local snapshots.</p>
     /// <ul>
-    /// <li>
-    /// <p>To create snapshots from an instance in a Region, omit this parameter. The snapshots are created in the same Region as the instance.</p></li>
-    /// <li>
-    /// <p>To create snapshots from an instance on an Outpost and store the snapshots in the Region, omit this parameter. The snapshots are created in the Region for the Outpost.</p></li>
-    /// <li>
-    /// <p>To create snapshots from an instance on an Outpost and store the snapshots on an Outpost, specify the ARN of the destination Outpost. The snapshots must be created on the same Outpost as the instance.</p></li>
+    /// <li> <p>To create snapshots from an instance in a Region, omit this parameter. The snapshots are created in the same Region as the instance.</p> </li>
+    /// <li> <p>To create snapshots from an instance on an Outpost and store the snapshots in the Region, omit this parameter. The snapshots are created in the Region for the Outpost.</p> </li>
+    /// <li> <p>To create snapshots from an instance on an Outpost and store the snapshots on an Outpost, specify the ARN of the destination Outpost. The snapshots must be created on the same Outpost as the instance.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-multivol-snapshot"> Create multi-volume local snapshots from instances on an Outpost</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub fn set_outpost_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -168,12 +162,9 @@ impl CreateSnapshotsFluentBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Outpost on which to create the local snapshots.</p>
     /// <ul>
-    /// <li>
-    /// <p>To create snapshots from an instance in a Region, omit this parameter. The snapshots are created in the same Region as the instance.</p></li>
-    /// <li>
-    /// <p>To create snapshots from an instance on an Outpost and store the snapshots in the Region, omit this parameter. The snapshots are created in the Region for the Outpost.</p></li>
-    /// <li>
-    /// <p>To create snapshots from an instance on an Outpost and store the snapshots on an Outpost, specify the ARN of the destination Outpost. The snapshots must be created on the same Outpost as the instance.</p></li>
+    /// <li> <p>To create snapshots from an instance in a Region, omit this parameter. The snapshots are created in the same Region as the instance.</p> </li>
+    /// <li> <p>To create snapshots from an instance on an Outpost and store the snapshots in the Region, omit this parameter. The snapshots are created in the Region for the Outpost.</p> </li>
+    /// <li> <p>To create snapshots from an instance on an Outpost and store the snapshots on an Outpost, specify the ARN of the destination Outpost. The snapshots must be created on the same Outpost as the instance.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-multivol-snapshot"> Create multi-volume local snapshots from instances on an Outpost</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub fn get_outpost_arn(&self) -> &::std::option::Option<::std::string::String> {

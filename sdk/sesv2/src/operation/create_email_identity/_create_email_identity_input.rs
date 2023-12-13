@@ -11,7 +11,7 @@ pub struct CreateEmailIdentityInput {
     /// <p>If your request includes this object, Amazon SES configures the identity to use Bring Your Own DKIM (BYODKIM) for DKIM authentication purposes, or, configures the key length to be used for <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p>
     /// <p>You can only specify this object if the email identity is a domain, as opposed to an address.</p>
     pub dkim_signing_attributes: ::std::option::Option<crate::types::DkimSigningAttributes>,
-    /// <p>The configuration set to use by default when sending from this identity. Note that any configuration set defined in the email sending request takes precedence.</p>
+    /// <p>The configuration set to use by default when sending from this identity. Note that any configuration set defined in the email sending request takes precedence. </p>
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
 }
 impl CreateEmailIdentityInput {
@@ -30,7 +30,7 @@ impl CreateEmailIdentityInput {
     pub fn dkim_signing_attributes(&self) -> ::std::option::Option<&crate::types::DkimSigningAttributes> {
         self.dkim_signing_attributes.as_ref()
     }
-    /// <p>The configuration set to use by default when sending from this identity. Note that any configuration set defined in the email sending request takes precedence.</p>
+    /// <p>The configuration set to use by default when sending from this identity. Note that any configuration set defined in the email sending request takes precedence. </p>
     pub fn configuration_set_name(&self) -> ::std::option::Option<&str> {
         self.configuration_set_name.as_deref()
     }
@@ -104,17 +104,17 @@ impl CreateEmailIdentityInputBuilder {
     pub fn get_dkim_signing_attributes(&self) -> &::std::option::Option<crate::types::DkimSigningAttributes> {
         &self.dkim_signing_attributes
     }
-    /// <p>The configuration set to use by default when sending from this identity. Note that any configuration set defined in the email sending request takes precedence.</p>
+    /// <p>The configuration set to use by default when sending from this identity. Note that any configuration set defined in the email sending request takes precedence. </p>
     pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The configuration set to use by default when sending from this identity. Note that any configuration set defined in the email sending request takes precedence.</p>
+    /// <p>The configuration set to use by default when sending from this identity. Note that any configuration set defined in the email sending request takes precedence. </p>
     pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_set_name = input;
         self
     }
-    /// <p>The configuration set to use by default when sending from this identity. Note that any configuration set defined in the email sending request takes precedence.</p>
+    /// <p>The configuration set to use by default when sending from this identity. Note that any configuration set defined in the email sending request takes precedence. </p>
     pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.configuration_set_name
     }

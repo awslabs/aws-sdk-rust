@@ -7,12 +7,9 @@ pub struct AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails 
     /// <p>The options to use to configure the log router.</p>
     /// <p>The valid option keys are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>enable-ecs-log-metadata</code>. The value can be <code>true</code> or <code>false</code>.</p></li>
-    /// <li>
-    /// <p><code>config-file-type</code>. The value can be <code>s3</code> or <code>file</code>.</p></li>
-    /// <li>
-    /// <p><code>config-file-value</code>. The value is either an S3 ARN or a file path.</p></li>
+    /// <li> <p> <code>enable-ecs-log-metadata</code>. The value can be <code>true</code> or <code>false</code>.</p> </li>
+    /// <li> <p> <code>config-file-type</code>. The value can be <code>s3</code> or <code>file</code>.</p> </li>
+    /// <li> <p> <code>config-file-value</code>. The value is either an S3 ARN or a file path.</p> </li>
     /// </ul>
     pub options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The log router to use. Valid values are <code>fluentbit</code> or <code>fluentd</code>.</p>
@@ -22,12 +19,9 @@ impl AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails {
     /// <p>The options to use to configure the log router.</p>
     /// <p>The valid option keys are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>enable-ecs-log-metadata</code>. The value can be <code>true</code> or <code>false</code>.</p></li>
-    /// <li>
-    /// <p><code>config-file-type</code>. The value can be <code>s3</code> or <code>file</code>.</p></li>
-    /// <li>
-    /// <p><code>config-file-value</code>. The value is either an S3 ARN or a file path.</p></li>
+    /// <li> <p> <code>enable-ecs-log-metadata</code>. The value can be <code>true</code> or <code>false</code>.</p> </li>
+    /// <li> <p> <code>config-file-type</code>. The value can be <code>s3</code> or <code>file</code>.</p> </li>
+    /// <li> <p> <code>config-file-value</code>. The value is either an S3 ARN or a file path.</p> </li>
     /// </ul>
     pub fn options(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.options.as_ref()
@@ -59,12 +53,9 @@ impl AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetailsBuilder
     /// <p>The options to use to configure the log router.</p>
     /// <p>The valid option keys are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>enable-ecs-log-metadata</code>. The value can be <code>true</code> or <code>false</code>.</p></li>
-    /// <li>
-    /// <p><code>config-file-type</code>. The value can be <code>s3</code> or <code>file</code>.</p></li>
-    /// <li>
-    /// <p><code>config-file-value</code>. The value is either an S3 ARN or a file path.</p></li>
+    /// <li> <p> <code>enable-ecs-log-metadata</code>. The value can be <code>true</code> or <code>false</code>.</p> </li>
+    /// <li> <p> <code>config-file-type</code>. The value can be <code>s3</code> or <code>file</code>.</p> </li>
+    /// <li> <p> <code>config-file-value</code>. The value is either an S3 ARN or a file path.</p> </li>
     /// </ul>
     pub fn options(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.options.unwrap_or_default();
@@ -75,12 +66,9 @@ impl AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetailsBuilder
     /// <p>The options to use to configure the log router.</p>
     /// <p>The valid option keys are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>enable-ecs-log-metadata</code>. The value can be <code>true</code> or <code>false</code>.</p></li>
-    /// <li>
-    /// <p><code>config-file-type</code>. The value can be <code>s3</code> or <code>file</code>.</p></li>
-    /// <li>
-    /// <p><code>config-file-value</code>. The value is either an S3 ARN or a file path.</p></li>
+    /// <li> <p> <code>enable-ecs-log-metadata</code>. The value can be <code>true</code> or <code>false</code>.</p> </li>
+    /// <li> <p> <code>config-file-type</code>. The value can be <code>s3</code> or <code>file</code>.</p> </li>
+    /// <li> <p> <code>config-file-value</code>. The value is either an S3 ARN or a file path.</p> </li>
     /// </ul>
     pub fn set_options(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.options = input;
@@ -89,12 +77,9 @@ impl AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetailsBuilder
     /// <p>The options to use to configure the log router.</p>
     /// <p>The valid option keys are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>enable-ecs-log-metadata</code>. The value can be <code>true</code> or <code>false</code>.</p></li>
-    /// <li>
-    /// <p><code>config-file-type</code>. The value can be <code>s3</code> or <code>file</code>.</p></li>
-    /// <li>
-    /// <p><code>config-file-value</code>. The value is either an S3 ARN or a file path.</p></li>
+    /// <li> <p> <code>enable-ecs-log-metadata</code>. The value can be <code>true</code> or <code>false</code>.</p> </li>
+    /// <li> <p> <code>config-file-type</code>. The value can be <code>s3</code> or <code>file</code>.</p> </li>
+    /// <li> <p> <code>config-file-value</code>. The value is either an S3 ARN or a file path.</p> </li>
     /// </ul>
     pub fn get_options(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.options

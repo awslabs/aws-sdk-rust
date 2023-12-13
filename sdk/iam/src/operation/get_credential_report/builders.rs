@@ -22,7 +22,7 @@ impl GetCredentialReportInputBuilder {
 }
 /// Fluent builder constructing a request to `GetCredentialReport`.
 ///
-/// <p>Retrieves a credential report for the Amazon Web Services account. For more information about the credential report, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting credential reports</a> in the <i>IAM User Guide</i>.</p>
+/// <p> Retrieves a credential report for the Amazon Web Services account. For more information about the credential report, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting credential reports</a> in the <i>IAM User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetCredentialReportFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

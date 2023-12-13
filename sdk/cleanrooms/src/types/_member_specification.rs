@@ -10,7 +10,7 @@ pub struct MemberSpecification {
     pub member_abilities: ::std::vec::Vec<crate::types::MemberAbility>,
     /// <p>The member's display name.</p>
     pub display_name: ::std::string::String,
-    /// <p>The collaboration member's payment responsibilities set by the collaboration creator.</p>
+    /// <p>The collaboration member's payment responsibilities set by the collaboration creator. </p>
     /// <p>If the collaboration creator hasn't speciﬁed anyone as the member paying for query compute costs, then the member who can query is the default payer.</p>
     pub payment_configuration: ::std::option::Option<crate::types::PaymentConfiguration>,
 }
@@ -30,7 +30,7 @@ impl MemberSpecification {
         use std::ops::Deref;
         self.display_name.deref()
     }
-    /// <p>The collaboration member's payment responsibilities set by the collaboration creator.</p>
+    /// <p>The collaboration member's payment responsibilities set by the collaboration creator. </p>
     /// <p>If the collaboration creator hasn't speciﬁed anyone as the member paying for query compute costs, then the member who can query is the default payer.</p>
     pub fn payment_configuration(&self) -> ::std::option::Option<&crate::types::PaymentConfiguration> {
         self.payment_configuration.as_ref()
@@ -103,19 +103,19 @@ impl MemberSpecificationBuilder {
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }
-    /// <p>The collaboration member's payment responsibilities set by the collaboration creator.</p>
+    /// <p>The collaboration member's payment responsibilities set by the collaboration creator. </p>
     /// <p>If the collaboration creator hasn't speciﬁed anyone as the member paying for query compute costs, then the member who can query is the default payer.</p>
     pub fn payment_configuration(mut self, input: crate::types::PaymentConfiguration) -> Self {
         self.payment_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The collaboration member's payment responsibilities set by the collaboration creator.</p>
+    /// <p>The collaboration member's payment responsibilities set by the collaboration creator. </p>
     /// <p>If the collaboration creator hasn't speciﬁed anyone as the member paying for query compute costs, then the member who can query is the default payer.</p>
     pub fn set_payment_configuration(mut self, input: ::std::option::Option<crate::types::PaymentConfiguration>) -> Self {
         self.payment_configuration = input;
         self
     }
-    /// <p>The collaboration member's payment responsibilities set by the collaboration creator.</p>
+    /// <p>The collaboration member's payment responsibilities set by the collaboration creator. </p>
     /// <p>If the collaboration creator hasn't speciﬁed anyone as the member paying for query compute costs, then the member who can query is the default payer.</p>
     pub fn get_payment_configuration(&self) -> &::std::option::Option<crate::types::PaymentConfiguration> {
         &self.payment_configuration

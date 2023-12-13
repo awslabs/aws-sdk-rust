@@ -7,7 +7,7 @@
 pub struct RegionOfInterest {
     /// <p>The box representing a region of interest on screen.</p>
     pub bounding_box: ::std::option::Option<crate::types::BoundingBox>,
-    /// <p>Specifies a shape made up of up to 10 <code>Point</code> objects to define a region of interest.</p>
+    /// <p> Specifies a shape made up of up to 10 <code>Point</code> objects to define a region of interest. </p>
     pub polygon: ::std::option::Option<::std::vec::Vec<crate::types::Point>>,
 }
 impl RegionOfInterest {
@@ -15,7 +15,7 @@ impl RegionOfInterest {
     pub fn bounding_box(&self) -> ::std::option::Option<&crate::types::BoundingBox> {
         self.bounding_box.as_ref()
     }
-    /// <p>Specifies a shape made up of up to 10 <code>Point</code> objects to define a region of interest.</p>
+    /// <p> Specifies a shape made up of up to 10 <code>Point</code> objects to define a region of interest. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.polygon.is_none()`.
     pub fn polygon(&self) -> &[crate::types::Point] {
@@ -55,19 +55,19 @@ impl RegionOfInterestBuilder {
     ///
     /// To override the contents of this collection use [`set_polygon`](Self::set_polygon).
     ///
-    /// <p>Specifies a shape made up of up to 10 <code>Point</code> objects to define a region of interest.</p>
+    /// <p> Specifies a shape made up of up to 10 <code>Point</code> objects to define a region of interest. </p>
     pub fn polygon(mut self, input: crate::types::Point) -> Self {
         let mut v = self.polygon.unwrap_or_default();
         v.push(input);
         self.polygon = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Specifies a shape made up of up to 10 <code>Point</code> objects to define a region of interest.</p>
+    /// <p> Specifies a shape made up of up to 10 <code>Point</code> objects to define a region of interest. </p>
     pub fn set_polygon(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Point>>) -> Self {
         self.polygon = input;
         self
     }
-    /// <p>Specifies a shape made up of up to 10 <code>Point</code> objects to define a region of interest.</p>
+    /// <p> Specifies a shape made up of up to 10 <code>Point</code> objects to define a region of interest. </p>
     pub fn get_polygon(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Point>> {
         &self.polygon
     }

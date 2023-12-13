@@ -6,7 +6,7 @@ pub struct DescribeLocationFsxOpenZfsOutput {
     /// <p>The ARN of the FSx for OpenZFS location that was described.</p>
     pub location_arn: ::std::option::Option<::std::string::String>,
     /// <p>The uniform resource identifier (URI) of the FSx for OpenZFS location that was described.</p>
-    /// <p>Example: <code>fsxz://us-west-2.fs-1234567890abcdef02/fsx/folderA/folder</code></p>
+    /// <p>Example: <code>fsxz://us-west-2.fs-1234567890abcdef02/fsx/folderA/folder</code> </p>
     pub location_uri: ::std::option::Option<::std::string::String>,
     /// <p>The ARNs of the security groups that are configured for the FSx for OpenZFS file system.</p>
     pub security_group_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -22,7 +22,7 @@ impl DescribeLocationFsxOpenZfsOutput {
         self.location_arn.as_deref()
     }
     /// <p>The uniform resource identifier (URI) of the FSx for OpenZFS location that was described.</p>
-    /// <p>Example: <code>fsxz://us-west-2.fs-1234567890abcdef02/fsx/folderA/folder</code></p>
+    /// <p>Example: <code>fsxz://us-west-2.fs-1234567890abcdef02/fsx/folderA/folder</code> </p>
     pub fn location_uri(&self) -> ::std::option::Option<&str> {
         self.location_uri.as_deref()
     }
@@ -80,19 +80,19 @@ impl DescribeLocationFsxOpenZfsOutputBuilder {
         &self.location_arn
     }
     /// <p>The uniform resource identifier (URI) of the FSx for OpenZFS location that was described.</p>
-    /// <p>Example: <code>fsxz://us-west-2.fs-1234567890abcdef02/fsx/folderA/folder</code></p>
+    /// <p>Example: <code>fsxz://us-west-2.fs-1234567890abcdef02/fsx/folderA/folder</code> </p>
     pub fn location_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The uniform resource identifier (URI) of the FSx for OpenZFS location that was described.</p>
-    /// <p>Example: <code>fsxz://us-west-2.fs-1234567890abcdef02/fsx/folderA/folder</code></p>
+    /// <p>Example: <code>fsxz://us-west-2.fs-1234567890abcdef02/fsx/folderA/folder</code> </p>
     pub fn set_location_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location_uri = input;
         self
     }
     /// <p>The uniform resource identifier (URI) of the FSx for OpenZFS location that was described.</p>
-    /// <p>Example: <code>fsxz://us-west-2.fs-1234567890abcdef02/fsx/folderA/folder</code></p>
+    /// <p>Example: <code>fsxz://us-west-2.fs-1234567890abcdef02/fsx/folderA/folder</code> </p>
     pub fn get_location_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.location_uri
     }

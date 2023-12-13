@@ -7,12 +7,10 @@ pub struct ListDeploymentsInput {
     pub target_arn: ::std::option::Option<::std::string::String>,
     /// <p>The filter for the list of deployments. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ALL</code> – The list includes all deployments.</p></li>
-    /// <li>
-    /// <p><code>LATEST_ONLY</code> – The list includes only the latest revision of each deployment.</p></li>
+    /// <li> <p> <code>ALL</code> – The list includes all deployments.</p> </li>
+    /// <li> <p> <code>LATEST_ONLY</code> – The list includes only the latest revision of each deployment.</p> </li>
     /// </ul>
-    /// <p>Default: <code>LATEST_ONLY</code></p>
+    /// <p>Default: <code>LATEST_ONLY</code> </p>
     pub history_filter: ::std::option::Option<crate::types::DeploymentHistoryFilter>,
     /// <p>The parent deployment's target <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.</p>
     pub parent_target_arn: ::std::option::Option<::std::string::String>,
@@ -28,12 +26,10 @@ impl ListDeploymentsInput {
     }
     /// <p>The filter for the list of deployments. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ALL</code> – The list includes all deployments.</p></li>
-    /// <li>
-    /// <p><code>LATEST_ONLY</code> – The list includes only the latest revision of each deployment.</p></li>
+    /// <li> <p> <code>ALL</code> – The list includes all deployments.</p> </li>
+    /// <li> <p> <code>LATEST_ONLY</code> – The list includes only the latest revision of each deployment.</p> </li>
     /// </ul>
-    /// <p>Default: <code>LATEST_ONLY</code></p>
+    /// <p>Default: <code>LATEST_ONLY</code> </p>
     pub fn history_filter(&self) -> ::std::option::Option<&crate::types::DeploymentHistoryFilter> {
         self.history_filter.as_ref()
     }
@@ -84,36 +80,30 @@ impl ListDeploymentsInputBuilder {
     }
     /// <p>The filter for the list of deployments. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ALL</code> – The list includes all deployments.</p></li>
-    /// <li>
-    /// <p><code>LATEST_ONLY</code> – The list includes only the latest revision of each deployment.</p></li>
+    /// <li> <p> <code>ALL</code> – The list includes all deployments.</p> </li>
+    /// <li> <p> <code>LATEST_ONLY</code> – The list includes only the latest revision of each deployment.</p> </li>
     /// </ul>
-    /// <p>Default: <code>LATEST_ONLY</code></p>
+    /// <p>Default: <code>LATEST_ONLY</code> </p>
     pub fn history_filter(mut self, input: crate::types::DeploymentHistoryFilter) -> Self {
         self.history_filter = ::std::option::Option::Some(input);
         self
     }
     /// <p>The filter for the list of deployments. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ALL</code> – The list includes all deployments.</p></li>
-    /// <li>
-    /// <p><code>LATEST_ONLY</code> – The list includes only the latest revision of each deployment.</p></li>
+    /// <li> <p> <code>ALL</code> – The list includes all deployments.</p> </li>
+    /// <li> <p> <code>LATEST_ONLY</code> – The list includes only the latest revision of each deployment.</p> </li>
     /// </ul>
-    /// <p>Default: <code>LATEST_ONLY</code></p>
+    /// <p>Default: <code>LATEST_ONLY</code> </p>
     pub fn set_history_filter(mut self, input: ::std::option::Option<crate::types::DeploymentHistoryFilter>) -> Self {
         self.history_filter = input;
         self
     }
     /// <p>The filter for the list of deployments. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ALL</code> – The list includes all deployments.</p></li>
-    /// <li>
-    /// <p><code>LATEST_ONLY</code> – The list includes only the latest revision of each deployment.</p></li>
+    /// <li> <p> <code>ALL</code> – The list includes all deployments.</p> </li>
+    /// <li> <p> <code>LATEST_ONLY</code> – The list includes only the latest revision of each deployment.</p> </li>
     /// </ul>
-    /// <p>Default: <code>LATEST_ONLY</code></p>
+    /// <p>Default: <code>LATEST_ONLY</code> </p>
     pub fn get_history_filter(&self) -> &::std::option::Option<crate::types::DeploymentHistoryFilter> {
         &self.history_filter
     }

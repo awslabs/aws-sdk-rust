@@ -10,23 +10,23 @@ pub struct GameSessionConnectionInfo {
     pub ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The DNS identifier assigned to the instance that is running the game session. Values have the following format:</p>
     /// <ul>
-    /// <li>
-    /// <p>TLS-enabled fleets: <code><unique identifier>
+    /// <li> <p>TLS-enabled fleets: <code>
+    /// <unique identifier>
     /// .
     /// <region identifier>
     /// .amazongamelift.com
     /// </region>
-    /// </unique></code>.</p></li>
-    /// <li>
-    /// <p>Non-TLS-enabled fleets: <code>ec2-<unique identifier>
+    /// </unique></code>.</p> </li>
+    /// <li> <p>Non-TLS-enabled fleets: <code>ec2-
+    /// <unique identifier>
     /// .compute.amazonaws.com
-    /// </unique></code>. (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon EC2 Instance IP Addressing</a>.)</p></li>
+    /// </unique></code>. (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon EC2 Instance IP Addressing</a>.)</p> </li>
     /// </ul>
     /// <p>When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP address.</p>
     pub dns_name: ::std::option::Option<::std::string::String>,
     /// <p>The port number for the game session. To connect to a Amazon GameLift game server, an app needs both the IP address and port number.</p>
     pub port: ::std::option::Option<i32>,
-    /// <p>A collection of player session IDs, one for each player ID that was included in the original matchmaking request.</p>
+    /// <p>A collection of player session IDs, one for each player ID that was included in the original matchmaking request. </p>
     pub matched_player_sessions: ::std::option::Option<::std::vec::Vec<crate::types::MatchedPlayerSession>>,
 }
 impl GameSessionConnectionInfo {
@@ -40,17 +40,17 @@ impl GameSessionConnectionInfo {
     }
     /// <p>The DNS identifier assigned to the instance that is running the game session. Values have the following format:</p>
     /// <ul>
-    /// <li>
-    /// <p>TLS-enabled fleets: <code><unique identifier>
+    /// <li> <p>TLS-enabled fleets: <code>
+    /// <unique identifier>
     /// .
     /// <region identifier>
     /// .amazongamelift.com
     /// </region>
-    /// </unique></code>.</p></li>
-    /// <li>
-    /// <p>Non-TLS-enabled fleets: <code>ec2-<unique identifier>
+    /// </unique></code>.</p> </li>
+    /// <li> <p>Non-TLS-enabled fleets: <code>ec2-
+    /// <unique identifier>
     /// .compute.amazonaws.com
-    /// </unique></code>. (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon EC2 Instance IP Addressing</a>.)</p></li>
+    /// </unique></code>. (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon EC2 Instance IP Addressing</a>.)</p> </li>
     /// </ul>
     /// <p>When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP address.</p>
     pub fn dns_name(&self) -> ::std::option::Option<&str> {
@@ -60,7 +60,7 @@ impl GameSessionConnectionInfo {
     pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
     }
-    /// <p>A collection of player session IDs, one for each player ID that was included in the original matchmaking request.</p>
+    /// <p>A collection of player session IDs, one for each player ID that was included in the original matchmaking request. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.matched_player_sessions.is_none()`.
     pub fn matched_player_sessions(&self) -> &[crate::types::MatchedPlayerSession] {
@@ -126,17 +126,17 @@ impl GameSessionConnectionInfoBuilder {
     }
     /// <p>The DNS identifier assigned to the instance that is running the game session. Values have the following format:</p>
     /// <ul>
-    /// <li>
-    /// <p>TLS-enabled fleets: <code><unique identifier>
+    /// <li> <p>TLS-enabled fleets: <code>
+    /// <unique identifier>
     /// .
     /// <region identifier>
     /// .amazongamelift.com
     /// </region>
-    /// </unique></code>.</p></li>
-    /// <li>
-    /// <p>Non-TLS-enabled fleets: <code>ec2-<unique identifier>
+    /// </unique></code>.</p> </li>
+    /// <li> <p>Non-TLS-enabled fleets: <code>ec2-
+    /// <unique identifier>
     /// .compute.amazonaws.com
-    /// </unique></code>. (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon EC2 Instance IP Addressing</a>.)</p></li>
+    /// </unique></code>. (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon EC2 Instance IP Addressing</a>.)</p> </li>
     /// </ul>
     /// <p>When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP address.</p>
     pub fn dns_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -145,17 +145,17 @@ impl GameSessionConnectionInfoBuilder {
     }
     /// <p>The DNS identifier assigned to the instance that is running the game session. Values have the following format:</p>
     /// <ul>
-    /// <li>
-    /// <p>TLS-enabled fleets: <code><unique identifier>
+    /// <li> <p>TLS-enabled fleets: <code>
+    /// <unique identifier>
     /// .
     /// <region identifier>
     /// .amazongamelift.com
     /// </region>
-    /// </unique></code>.</p></li>
-    /// <li>
-    /// <p>Non-TLS-enabled fleets: <code>ec2-<unique identifier>
+    /// </unique></code>.</p> </li>
+    /// <li> <p>Non-TLS-enabled fleets: <code>ec2-
+    /// <unique identifier>
     /// .compute.amazonaws.com
-    /// </unique></code>. (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon EC2 Instance IP Addressing</a>.)</p></li>
+    /// </unique></code>. (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon EC2 Instance IP Addressing</a>.)</p> </li>
     /// </ul>
     /// <p>When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP address.</p>
     pub fn set_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -164,17 +164,17 @@ impl GameSessionConnectionInfoBuilder {
     }
     /// <p>The DNS identifier assigned to the instance that is running the game session. Values have the following format:</p>
     /// <ul>
-    /// <li>
-    /// <p>TLS-enabled fleets: <code><unique identifier>
+    /// <li> <p>TLS-enabled fleets: <code>
+    /// <unique identifier>
     /// .
     /// <region identifier>
     /// .amazongamelift.com
     /// </region>
-    /// </unique></code>.</p></li>
-    /// <li>
-    /// <p>Non-TLS-enabled fleets: <code>ec2-<unique identifier>
+    /// </unique></code>.</p> </li>
+    /// <li> <p>Non-TLS-enabled fleets: <code>ec2-
+    /// <unique identifier>
     /// .compute.amazonaws.com
-    /// </unique></code>. (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon EC2 Instance IP Addressing</a>.)</p></li>
+    /// </unique></code>. (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon EC2 Instance IP Addressing</a>.)</p> </li>
     /// </ul>
     /// <p>When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP address.</p>
     pub fn get_dns_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -198,19 +198,19 @@ impl GameSessionConnectionInfoBuilder {
     ///
     /// To override the contents of this collection use [`set_matched_player_sessions`](Self::set_matched_player_sessions).
     ///
-    /// <p>A collection of player session IDs, one for each player ID that was included in the original matchmaking request.</p>
+    /// <p>A collection of player session IDs, one for each player ID that was included in the original matchmaking request. </p>
     pub fn matched_player_sessions(mut self, input: crate::types::MatchedPlayerSession) -> Self {
         let mut v = self.matched_player_sessions.unwrap_or_default();
         v.push(input);
         self.matched_player_sessions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A collection of player session IDs, one for each player ID that was included in the original matchmaking request.</p>
+    /// <p>A collection of player session IDs, one for each player ID that was included in the original matchmaking request. </p>
     pub fn set_matched_player_sessions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MatchedPlayerSession>>) -> Self {
         self.matched_player_sessions = input;
         self
     }
-    /// <p>A collection of player session IDs, one for each player ID that was included in the original matchmaking request.</p>
+    /// <p>A collection of player session IDs, one for each player ID that was included in the original matchmaking request. </p>
     pub fn get_matched_player_sessions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MatchedPlayerSession>> {
         &self.matched_player_sessions
     }

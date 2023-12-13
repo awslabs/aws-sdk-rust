@@ -6,9 +6,9 @@
 pub struct NodeConfiguration {
     /// <p>The Amazon Managed Blockchain instance type for the node.</p>
     pub instance_type: ::std::string::String,
-    /// <p>The Availability Zone in which the node exists. Required for Ethereum nodes.</p>
+    /// <p>The Availability Zone in which the node exists. Required for Ethereum nodes. </p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
-    /// <p>Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on Managed Blockchain.</p>
+    /// <p>Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on Managed Blockchain. </p>
     pub log_publishing_configuration: ::std::option::Option<crate::types::NodeLogPublishingConfiguration>,
     /// <p>The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>. When using an Amazon Managed Blockchain network with Hyperledger Fabric version 1.4 or later, the default is <code>CouchDB</code>.</p>
     /// <p>Applies only to Hyperledger Fabric.</p>
@@ -20,11 +20,11 @@ impl NodeConfiguration {
         use std::ops::Deref;
         self.instance_type.deref()
     }
-    /// <p>The Availability Zone in which the node exists. Required for Ethereum nodes.</p>
+    /// <p>The Availability Zone in which the node exists. Required for Ethereum nodes. </p>
     pub fn availability_zone(&self) -> ::std::option::Option<&str> {
         self.availability_zone.as_deref()
     }
-    /// <p>Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on Managed Blockchain.</p>
+    /// <p>Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on Managed Blockchain. </p>
     pub fn log_publishing_configuration(&self) -> ::std::option::Option<&crate::types::NodeLogPublishingConfiguration> {
         self.log_publishing_configuration.as_ref()
     }
@@ -66,31 +66,31 @@ impl NodeConfigurationBuilder {
     pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_type
     }
-    /// <p>The Availability Zone in which the node exists. Required for Ethereum nodes.</p>
+    /// <p>The Availability Zone in which the node exists. Required for Ethereum nodes. </p>
     pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Availability Zone in which the node exists. Required for Ethereum nodes.</p>
+    /// <p>The Availability Zone in which the node exists. Required for Ethereum nodes. </p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
-    /// <p>The Availability Zone in which the node exists. Required for Ethereum nodes.</p>
+    /// <p>The Availability Zone in which the node exists. Required for Ethereum nodes. </p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         &self.availability_zone
     }
-    /// <p>Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on Managed Blockchain.</p>
+    /// <p>Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on Managed Blockchain. </p>
     pub fn log_publishing_configuration(mut self, input: crate::types::NodeLogPublishingConfiguration) -> Self {
         self.log_publishing_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on Managed Blockchain.</p>
+    /// <p>Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on Managed Blockchain. </p>
     pub fn set_log_publishing_configuration(mut self, input: ::std::option::Option<crate::types::NodeLogPublishingConfiguration>) -> Self {
         self.log_publishing_configuration = input;
         self
     }
-    /// <p>Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on Managed Blockchain.</p>
+    /// <p>Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on Managed Blockchain. </p>
     pub fn get_log_publishing_configuration(&self) -> &::std::option::Option<crate::types::NodeLogPublishingConfiguration> {
         &self.log_publishing_configuration
     }

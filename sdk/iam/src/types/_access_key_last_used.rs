@@ -7,32 +7,23 @@
 pub struct AccessKeyLastUsed {
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the access key was most recently used. This field is null in the following situations:</p>
     /// <ul>
-    /// <li>
-    /// <p>The user does not have an access key.</p></li>
-    /// <li>
-    /// <p>An access key exists but has not been used since IAM began tracking this information.</p></li>
-    /// <li>
-    /// <p>There is no sign-in data associated with the user.</p></li>
+    /// <li> <p>The user does not have an access key.</p> </li>
+    /// <li> <p>An access key exists but has not been used since IAM began tracking this information.</p> </li>
+    /// <li> <p>There is no sign-in data associated with the user.</p> </li>
     /// </ul>
     pub last_used_date: ::aws_smithy_types::DateTime,
     /// <p>The name of the Amazon Web Services service with which this access key was most recently used. The value of this field is "N/A" in the following situations:</p>
     /// <ul>
-    /// <li>
-    /// <p>The user does not have an access key.</p></li>
-    /// <li>
-    /// <p>An access key exists but has not been used since IAM started tracking this information.</p></li>
-    /// <li>
-    /// <p>There is no sign-in data associated with the user.</p></li>
+    /// <li> <p>The user does not have an access key.</p> </li>
+    /// <li> <p>An access key exists but has not been used since IAM started tracking this information.</p> </li>
+    /// <li> <p>There is no sign-in data associated with the user.</p> </li>
     /// </ul>
     pub service_name: ::std::string::String,
     /// <p>The Amazon Web Services Region where this access key was most recently used. The value for this field is "N/A" in the following situations:</p>
     /// <ul>
-    /// <li>
-    /// <p>The user does not have an access key.</p></li>
-    /// <li>
-    /// <p>An access key exists but has not been used since IAM began tracking this information.</p></li>
-    /// <li>
-    /// <p>There is no sign-in data associated with the user.</p></li>
+    /// <li> <p>The user does not have an access key.</p> </li>
+    /// <li> <p>An access key exists but has not been used since IAM began tracking this information.</p> </li>
+    /// <li> <p>There is no sign-in data associated with the user.</p> </li>
     /// </ul>
     /// <p>For more information about Amazon Web Services Regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and endpoints</a> in the Amazon Web Services General Reference.</p>
     pub region: ::std::string::String,
@@ -40,24 +31,18 @@ pub struct AccessKeyLastUsed {
 impl AccessKeyLastUsed {
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the access key was most recently used. This field is null in the following situations:</p>
     /// <ul>
-    /// <li>
-    /// <p>The user does not have an access key.</p></li>
-    /// <li>
-    /// <p>An access key exists but has not been used since IAM began tracking this information.</p></li>
-    /// <li>
-    /// <p>There is no sign-in data associated with the user.</p></li>
+    /// <li> <p>The user does not have an access key.</p> </li>
+    /// <li> <p>An access key exists but has not been used since IAM began tracking this information.</p> </li>
+    /// <li> <p>There is no sign-in data associated with the user.</p> </li>
     /// </ul>
     pub fn last_used_date(&self) -> &::aws_smithy_types::DateTime {
         &self.last_used_date
     }
     /// <p>The name of the Amazon Web Services service with which this access key was most recently used. The value of this field is "N/A" in the following situations:</p>
     /// <ul>
-    /// <li>
-    /// <p>The user does not have an access key.</p></li>
-    /// <li>
-    /// <p>An access key exists but has not been used since IAM started tracking this information.</p></li>
-    /// <li>
-    /// <p>There is no sign-in data associated with the user.</p></li>
+    /// <li> <p>The user does not have an access key.</p> </li>
+    /// <li> <p>An access key exists but has not been used since IAM started tracking this information.</p> </li>
+    /// <li> <p>There is no sign-in data associated with the user.</p> </li>
     /// </ul>
     pub fn service_name(&self) -> &str {
         use std::ops::Deref;
@@ -65,12 +50,9 @@ impl AccessKeyLastUsed {
     }
     /// <p>The Amazon Web Services Region where this access key was most recently used. The value for this field is "N/A" in the following situations:</p>
     /// <ul>
-    /// <li>
-    /// <p>The user does not have an access key.</p></li>
-    /// <li>
-    /// <p>An access key exists but has not been used since IAM began tracking this information.</p></li>
-    /// <li>
-    /// <p>There is no sign-in data associated with the user.</p></li>
+    /// <li> <p>The user does not have an access key.</p> </li>
+    /// <li> <p>An access key exists but has not been used since IAM began tracking this information.</p> </li>
+    /// <li> <p>There is no sign-in data associated with the user.</p> </li>
     /// </ul>
     /// <p>For more information about Amazon Web Services Regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and endpoints</a> in the Amazon Web Services General Reference.</p>
     pub fn region(&self) -> &str {
@@ -96,12 +78,9 @@ pub struct AccessKeyLastUsedBuilder {
 impl AccessKeyLastUsedBuilder {
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the access key was most recently used. This field is null in the following situations:</p>
     /// <ul>
-    /// <li>
-    /// <p>The user does not have an access key.</p></li>
-    /// <li>
-    /// <p>An access key exists but has not been used since IAM began tracking this information.</p></li>
-    /// <li>
-    /// <p>There is no sign-in data associated with the user.</p></li>
+    /// <li> <p>The user does not have an access key.</p> </li>
+    /// <li> <p>An access key exists but has not been used since IAM began tracking this information.</p> </li>
+    /// <li> <p>There is no sign-in data associated with the user.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn last_used_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -110,12 +89,9 @@ impl AccessKeyLastUsedBuilder {
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the access key was most recently used. This field is null in the following situations:</p>
     /// <ul>
-    /// <li>
-    /// <p>The user does not have an access key.</p></li>
-    /// <li>
-    /// <p>An access key exists but has not been used since IAM began tracking this information.</p></li>
-    /// <li>
-    /// <p>There is no sign-in data associated with the user.</p></li>
+    /// <li> <p>The user does not have an access key.</p> </li>
+    /// <li> <p>An access key exists but has not been used since IAM began tracking this information.</p> </li>
+    /// <li> <p>There is no sign-in data associated with the user.</p> </li>
     /// </ul>
     pub fn set_last_used_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_used_date = input;
@@ -123,24 +99,18 @@ impl AccessKeyLastUsedBuilder {
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the access key was most recently used. This field is null in the following situations:</p>
     /// <ul>
-    /// <li>
-    /// <p>The user does not have an access key.</p></li>
-    /// <li>
-    /// <p>An access key exists but has not been used since IAM began tracking this information.</p></li>
-    /// <li>
-    /// <p>There is no sign-in data associated with the user.</p></li>
+    /// <li> <p>The user does not have an access key.</p> </li>
+    /// <li> <p>An access key exists but has not been used since IAM began tracking this information.</p> </li>
+    /// <li> <p>There is no sign-in data associated with the user.</p> </li>
     /// </ul>
     pub fn get_last_used_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_used_date
     }
     /// <p>The name of the Amazon Web Services service with which this access key was most recently used. The value of this field is "N/A" in the following situations:</p>
     /// <ul>
-    /// <li>
-    /// <p>The user does not have an access key.</p></li>
-    /// <li>
-    /// <p>An access key exists but has not been used since IAM started tracking this information.</p></li>
-    /// <li>
-    /// <p>There is no sign-in data associated with the user.</p></li>
+    /// <li> <p>The user does not have an access key.</p> </li>
+    /// <li> <p>An access key exists but has not been used since IAM started tracking this information.</p> </li>
+    /// <li> <p>There is no sign-in data associated with the user.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -149,12 +119,9 @@ impl AccessKeyLastUsedBuilder {
     }
     /// <p>The name of the Amazon Web Services service with which this access key was most recently used. The value of this field is "N/A" in the following situations:</p>
     /// <ul>
-    /// <li>
-    /// <p>The user does not have an access key.</p></li>
-    /// <li>
-    /// <p>An access key exists but has not been used since IAM started tracking this information.</p></li>
-    /// <li>
-    /// <p>There is no sign-in data associated with the user.</p></li>
+    /// <li> <p>The user does not have an access key.</p> </li>
+    /// <li> <p>An access key exists but has not been used since IAM started tracking this information.</p> </li>
+    /// <li> <p>There is no sign-in data associated with the user.</p> </li>
     /// </ul>
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_name = input;
@@ -162,24 +129,18 @@ impl AccessKeyLastUsedBuilder {
     }
     /// <p>The name of the Amazon Web Services service with which this access key was most recently used. The value of this field is "N/A" in the following situations:</p>
     /// <ul>
-    /// <li>
-    /// <p>The user does not have an access key.</p></li>
-    /// <li>
-    /// <p>An access key exists but has not been used since IAM started tracking this information.</p></li>
-    /// <li>
-    /// <p>There is no sign-in data associated with the user.</p></li>
+    /// <li> <p>The user does not have an access key.</p> </li>
+    /// <li> <p>An access key exists but has not been used since IAM started tracking this information.</p> </li>
+    /// <li> <p>There is no sign-in data associated with the user.</p> </li>
     /// </ul>
     pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_name
     }
     /// <p>The Amazon Web Services Region where this access key was most recently used. The value for this field is "N/A" in the following situations:</p>
     /// <ul>
-    /// <li>
-    /// <p>The user does not have an access key.</p></li>
-    /// <li>
-    /// <p>An access key exists but has not been used since IAM began tracking this information.</p></li>
-    /// <li>
-    /// <p>There is no sign-in data associated with the user.</p></li>
+    /// <li> <p>The user does not have an access key.</p> </li>
+    /// <li> <p>An access key exists but has not been used since IAM began tracking this information.</p> </li>
+    /// <li> <p>There is no sign-in data associated with the user.</p> </li>
     /// </ul>
     /// <p>For more information about Amazon Web Services Regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and endpoints</a> in the Amazon Web Services General Reference.</p>
     /// This field is required.
@@ -189,12 +150,9 @@ impl AccessKeyLastUsedBuilder {
     }
     /// <p>The Amazon Web Services Region where this access key was most recently used. The value for this field is "N/A" in the following situations:</p>
     /// <ul>
-    /// <li>
-    /// <p>The user does not have an access key.</p></li>
-    /// <li>
-    /// <p>An access key exists but has not been used since IAM began tracking this information.</p></li>
-    /// <li>
-    /// <p>There is no sign-in data associated with the user.</p></li>
+    /// <li> <p>The user does not have an access key.</p> </li>
+    /// <li> <p>An access key exists but has not been used since IAM began tracking this information.</p> </li>
+    /// <li> <p>There is no sign-in data associated with the user.</p> </li>
     /// </ul>
     /// <p>For more information about Amazon Web Services Regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and endpoints</a> in the Amazon Web Services General Reference.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -203,12 +161,9 @@ impl AccessKeyLastUsedBuilder {
     }
     /// <p>The Amazon Web Services Region where this access key was most recently used. The value for this field is "N/A" in the following situations:</p>
     /// <ul>
-    /// <li>
-    /// <p>The user does not have an access key.</p></li>
-    /// <li>
-    /// <p>An access key exists but has not been used since IAM began tracking this information.</p></li>
-    /// <li>
-    /// <p>There is no sign-in data associated with the user.</p></li>
+    /// <li> <p>The user does not have an access key.</p> </li>
+    /// <li> <p>An access key exists but has not been used since IAM began tracking this information.</p> </li>
+    /// <li> <p>There is no sign-in data associated with the user.</p> </li>
     /// </ul>
     /// <p>For more information about Amazon Web Services Regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and endpoints</a> in the Amazon Web Services General Reference.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {

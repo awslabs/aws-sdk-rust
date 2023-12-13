@@ -5,7 +5,7 @@
 pub struct ListAddonsOutput {
     /// <p>A list of installed add-ons.</p>
     pub addons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The <code>nextToken</code> value to include in a future <code>ListAddons</code> request. When the results of a <code>ListAddons</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p><note>
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListAddons</code> request. When the results of a <code>ListAddons</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p> <note>
     /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -18,7 +18,7 @@ impl ListAddonsOutput {
     pub fn addons(&self) -> &[::std::string::String] {
         self.addons.as_deref().unwrap_or_default()
     }
-    /// <p>The <code>nextToken</code> value to include in a future <code>ListAddons</code> request. When the results of a <code>ListAddons</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p><note>
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListAddons</code> request. When the results of a <code>ListAddons</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p> <note>
     /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -66,21 +66,21 @@ impl ListAddonsOutputBuilder {
     pub fn get_addons(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.addons
     }
-    /// <p>The <code>nextToken</code> value to include in a future <code>ListAddons</code> request. When the results of a <code>ListAddons</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p><note>
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListAddons</code> request. When the results of a <code>ListAddons</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p> <note>
     /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The <code>nextToken</code> value to include in a future <code>ListAddons</code> request. When the results of a <code>ListAddons</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p><note>
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListAddons</code> request. When the results of a <code>ListAddons</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p> <note>
     /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The <code>nextToken</code> value to include in a future <code>ListAddons</code> request. When the results of a <code>ListAddons</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p><note>
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListAddons</code> request. When the results of a <code>ListAddons</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p> <note>
     /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {

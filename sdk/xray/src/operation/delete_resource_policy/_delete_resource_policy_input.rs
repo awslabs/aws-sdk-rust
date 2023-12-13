@@ -5,7 +5,7 @@
 pub struct DeleteResourcePolicyInput {
     /// <p>The name of the resource policy to delete.</p>
     pub policy_name: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies a specific policy revision to delete. Provide a <code>PolicyRevisionId</code> to ensure an atomic delete operation. If the provided revision id does not match the latest policy revision id, an <code>InvalidPolicyRevisionIdException</code> exception is returned.</p>
+    /// <p>Specifies a specific policy revision to delete. Provide a <code>PolicyRevisionId</code> to ensure an atomic delete operation. If the provided revision id does not match the latest policy revision id, an <code>InvalidPolicyRevisionIdException</code> exception is returned. </p>
     pub policy_revision_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteResourcePolicyInput {
@@ -13,7 +13,7 @@ impl DeleteResourcePolicyInput {
     pub fn policy_name(&self) -> ::std::option::Option<&str> {
         self.policy_name.as_deref()
     }
-    /// <p>Specifies a specific policy revision to delete. Provide a <code>PolicyRevisionId</code> to ensure an atomic delete operation. If the provided revision id does not match the latest policy revision id, an <code>InvalidPolicyRevisionIdException</code> exception is returned.</p>
+    /// <p>Specifies a specific policy revision to delete. Provide a <code>PolicyRevisionId</code> to ensure an atomic delete operation. If the provided revision id does not match the latest policy revision id, an <code>InvalidPolicyRevisionIdException</code> exception is returned. </p>
     pub fn policy_revision_id(&self) -> ::std::option::Option<&str> {
         self.policy_revision_id.as_deref()
     }
@@ -48,17 +48,17 @@ impl DeleteResourcePolicyInputBuilder {
     pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_name
     }
-    /// <p>Specifies a specific policy revision to delete. Provide a <code>PolicyRevisionId</code> to ensure an atomic delete operation. If the provided revision id does not match the latest policy revision id, an <code>InvalidPolicyRevisionIdException</code> exception is returned.</p>
+    /// <p>Specifies a specific policy revision to delete. Provide a <code>PolicyRevisionId</code> to ensure an atomic delete operation. If the provided revision id does not match the latest policy revision id, an <code>InvalidPolicyRevisionIdException</code> exception is returned. </p>
     pub fn policy_revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_revision_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies a specific policy revision to delete. Provide a <code>PolicyRevisionId</code> to ensure an atomic delete operation. If the provided revision id does not match the latest policy revision id, an <code>InvalidPolicyRevisionIdException</code> exception is returned.</p>
+    /// <p>Specifies a specific policy revision to delete. Provide a <code>PolicyRevisionId</code> to ensure an atomic delete operation. If the provided revision id does not match the latest policy revision id, an <code>InvalidPolicyRevisionIdException</code> exception is returned. </p>
     pub fn set_policy_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_revision_id = input;
         self
     }
-    /// <p>Specifies a specific policy revision to delete. Provide a <code>PolicyRevisionId</code> to ensure an atomic delete operation. If the provided revision id does not match the latest policy revision id, an <code>InvalidPolicyRevisionIdException</code> exception is returned.</p>
+    /// <p>Specifies a specific policy revision to delete. Provide a <code>PolicyRevisionId</code> to ensure an atomic delete operation. If the provided revision id does not match the latest policy revision id, an <code>InvalidPolicyRevisionIdException</code> exception is returned. </p>
     pub fn get_policy_revision_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_revision_id
     }

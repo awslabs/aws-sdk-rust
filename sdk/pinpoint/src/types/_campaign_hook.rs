@@ -8,10 +8,8 @@ pub struct CampaignHook {
     pub lambda_function_name: ::std::option::Option<::std::string::String>,
     /// <p>The mode that Amazon Pinpoint uses to invoke the AWS Lambda function. Possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>FILTER - Invoke the function to customize the segment that's used by a campaign.</p></li>
-    /// <li>
-    /// <p>DELIVERY - (Deprecated) Previously, invoked the function to send a campaign through a custom channel. This functionality is not supported anymore. To send a campaign through a custom channel, use the CustomDeliveryConfiguration and CampaignCustomMessage objects of the campaign.</p></li>
+    /// <li><p>FILTER - Invoke the function to customize the segment that's used by a campaign.</p></li>
+    /// <li><p>DELIVERY - (Deprecated) Previously, invoked the function to send a campaign through a custom channel. This functionality is not supported anymore. To send a campaign through a custom channel, use the CustomDeliveryConfiguration and CampaignCustomMessage objects of the campaign.</p></li>
     /// </ul>
     pub mode: ::std::option::Option<crate::types::Mode>,
     /// <p>The web URL that Amazon Pinpoint calls to invoke the AWS Lambda function over HTTPS.</p>
@@ -24,10 +22,8 @@ impl CampaignHook {
     }
     /// <p>The mode that Amazon Pinpoint uses to invoke the AWS Lambda function. Possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>FILTER - Invoke the function to customize the segment that's used by a campaign.</p></li>
-    /// <li>
-    /// <p>DELIVERY - (Deprecated) Previously, invoked the function to send a campaign through a custom channel. This functionality is not supported anymore. To send a campaign through a custom channel, use the CustomDeliveryConfiguration and CampaignCustomMessage objects of the campaign.</p></li>
+    /// <li><p>FILTER - Invoke the function to customize the segment that's used by a campaign.</p></li>
+    /// <li><p>DELIVERY - (Deprecated) Previously, invoked the function to send a campaign through a custom channel. This functionality is not supported anymore. To send a campaign through a custom channel, use the CustomDeliveryConfiguration and CampaignCustomMessage objects of the campaign.</p></li>
     /// </ul>
     pub fn mode(&self) -> ::std::option::Option<&crate::types::Mode> {
         self.mode.as_ref()
@@ -69,10 +65,8 @@ impl CampaignHookBuilder {
     }
     /// <p>The mode that Amazon Pinpoint uses to invoke the AWS Lambda function. Possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>FILTER - Invoke the function to customize the segment that's used by a campaign.</p></li>
-    /// <li>
-    /// <p>DELIVERY - (Deprecated) Previously, invoked the function to send a campaign through a custom channel. This functionality is not supported anymore. To send a campaign through a custom channel, use the CustomDeliveryConfiguration and CampaignCustomMessage objects of the campaign.</p></li>
+    /// <li><p>FILTER - Invoke the function to customize the segment that's used by a campaign.</p></li>
+    /// <li><p>DELIVERY - (Deprecated) Previously, invoked the function to send a campaign through a custom channel. This functionality is not supported anymore. To send a campaign through a custom channel, use the CustomDeliveryConfiguration and CampaignCustomMessage objects of the campaign.</p></li>
     /// </ul>
     pub fn mode(mut self, input: crate::types::Mode) -> Self {
         self.mode = ::std::option::Option::Some(input);
@@ -80,10 +74,8 @@ impl CampaignHookBuilder {
     }
     /// <p>The mode that Amazon Pinpoint uses to invoke the AWS Lambda function. Possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>FILTER - Invoke the function to customize the segment that's used by a campaign.</p></li>
-    /// <li>
-    /// <p>DELIVERY - (Deprecated) Previously, invoked the function to send a campaign through a custom channel. This functionality is not supported anymore. To send a campaign through a custom channel, use the CustomDeliveryConfiguration and CampaignCustomMessage objects of the campaign.</p></li>
+    /// <li><p>FILTER - Invoke the function to customize the segment that's used by a campaign.</p></li>
+    /// <li><p>DELIVERY - (Deprecated) Previously, invoked the function to send a campaign through a custom channel. This functionality is not supported anymore. To send a campaign through a custom channel, use the CustomDeliveryConfiguration and CampaignCustomMessage objects of the campaign.</p></li>
     /// </ul>
     pub fn set_mode(mut self, input: ::std::option::Option<crate::types::Mode>) -> Self {
         self.mode = input;
@@ -91,10 +83,8 @@ impl CampaignHookBuilder {
     }
     /// <p>The mode that Amazon Pinpoint uses to invoke the AWS Lambda function. Possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>FILTER - Invoke the function to customize the segment that's used by a campaign.</p></li>
-    /// <li>
-    /// <p>DELIVERY - (Deprecated) Previously, invoked the function to send a campaign through a custom channel. This functionality is not supported anymore. To send a campaign through a custom channel, use the CustomDeliveryConfiguration and CampaignCustomMessage objects of the campaign.</p></li>
+    /// <li><p>FILTER - Invoke the function to customize the segment that's used by a campaign.</p></li>
+    /// <li><p>DELIVERY - (Deprecated) Previously, invoked the function to send a campaign through a custom channel. This functionality is not supported anymore. To send a campaign through a custom channel, use the CustomDeliveryConfiguration and CampaignCustomMessage objects of the campaign.</p></li>
     /// </ul>
     pub fn get_mode(&self) -> &::std::option::Option<crate::types::Mode> {
         &self.mode

@@ -22,7 +22,7 @@ impl DescribeConnectorInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeConnector`.
 ///
-/// <p>Describes the connector that's identified by the <code>ConnectorId.</code></p>
+/// <p>Describes the connector that's identified by the <code>ConnectorId.</code> </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeConnectorFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

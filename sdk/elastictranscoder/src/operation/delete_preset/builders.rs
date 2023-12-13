@@ -22,7 +22,7 @@ impl DeletePresetInputBuilder {
 }
 /// Fluent builder constructing a request to `DeletePreset`.
 ///
-/// <p>The DeletePreset operation removes a preset that you've added in an AWS region.</p><note>
+/// <p>The DeletePreset operation removes a preset that you've added in an AWS region.</p> <note>
 /// <p>You can't delete the default presets that are included with Elastic Transcoder.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

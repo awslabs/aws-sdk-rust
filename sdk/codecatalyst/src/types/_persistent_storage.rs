@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PersistentStorage {
-    /// <p>The size of the persistent storage in gigabytes (specifically GiB).</p><note>
+    /// <p>The size of the persistent storage in gigabytes (specifically GiB).</p> <note>
     /// <p>Valid values for storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p>
     /// </note>
     pub size_in_gib: i32,
 }
 impl PersistentStorage {
-    /// <p>The size of the persistent storage in gigabytes (specifically GiB).</p><note>
+    /// <p>The size of the persistent storage in gigabytes (specifically GiB).</p> <note>
     /// <p>Valid values for storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p>
     /// </note>
     pub fn size_in_gib(&self) -> i32 {
@@ -31,7 +31,7 @@ pub struct PersistentStorageBuilder {
     pub(crate) size_in_gib: ::std::option::Option<i32>,
 }
 impl PersistentStorageBuilder {
-    /// <p>The size of the persistent storage in gigabytes (specifically GiB).</p><note>
+    /// <p>The size of the persistent storage in gigabytes (specifically GiB).</p> <note>
     /// <p>Valid values for storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p>
     /// </note>
     /// This field is required.
@@ -39,14 +39,14 @@ impl PersistentStorageBuilder {
         self.size_in_gib = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The size of the persistent storage in gigabytes (specifically GiB).</p><note>
+    /// <p>The size of the persistent storage in gigabytes (specifically GiB).</p> <note>
     /// <p>Valid values for storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p>
     /// </note>
     pub fn set_size_in_gib(mut self, input: ::std::option::Option<i32>) -> Self {
         self.size_in_gib = input;
         self
     }
-    /// <p>The size of the persistent storage in gigabytes (specifically GiB).</p><note>
+    /// <p>The size of the persistent storage in gigabytes (specifically GiB).</p> <note>
     /// <p>Valid values for storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p>
     /// </note>
     pub fn get_size_in_gib(&self) -> &::std::option::Option<i32> {

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateModelExplainabilityJobDefinitionInput {
-    /// <p>The name of the model explainability job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
+    /// <p> The name of the model explainability job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
     pub job_definition_name: ::std::option::Option<::std::string::String>,
     /// <p>The baseline configuration for a model explainability job.</p>
     pub model_explainability_baseline_config: ::std::option::Option<crate::types::ModelExplainabilityBaselineConfig>,
@@ -25,7 +25,7 @@ pub struct CreateModelExplainabilityJobDefinitionInput {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateModelExplainabilityJobDefinitionInput {
-    /// <p>The name of the model explainability job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
+    /// <p> The name of the model explainability job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
     pub fn job_definition_name(&self) -> ::std::option::Option<&str> {
         self.job_definition_name.as_deref()
     }
@@ -91,18 +91,18 @@ pub struct CreateModelExplainabilityJobDefinitionInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateModelExplainabilityJobDefinitionInputBuilder {
-    /// <p>The name of the model explainability job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
+    /// <p> The name of the model explainability job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
     /// This field is required.
     pub fn job_definition_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_definition_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the model explainability job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
+    /// <p> The name of the model explainability job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
     pub fn set_job_definition_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_definition_name = input;
         self
     }
-    /// <p>The name of the model explainability job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
+    /// <p> The name of the model explainability job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
     pub fn get_job_definition_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_definition_name
     }

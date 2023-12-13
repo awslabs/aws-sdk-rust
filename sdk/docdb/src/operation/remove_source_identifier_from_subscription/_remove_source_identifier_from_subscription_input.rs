@@ -6,7 +6,7 @@
 pub struct RemoveSourceIdentifierFromSubscriptionInput {
     /// <p>The name of the Amazon DocumentDB event notification subscription that you want to remove a source identifier from.</p>
     pub subscription_name: ::std::option::Option<::std::string::String>,
-    /// <p>The source identifier to be removed from the subscription, such as the instance identifier for an instance, or the name of a security group.</p>
+    /// <p> The source identifier to be removed from the subscription, such as the instance identifier for an instance, or the name of a security group. </p>
     pub source_identifier: ::std::option::Option<::std::string::String>,
 }
 impl RemoveSourceIdentifierFromSubscriptionInput {
@@ -14,7 +14,7 @@ impl RemoveSourceIdentifierFromSubscriptionInput {
     pub fn subscription_name(&self) -> ::std::option::Option<&str> {
         self.subscription_name.as_deref()
     }
-    /// <p>The source identifier to be removed from the subscription, such as the instance identifier for an instance, or the name of a security group.</p>
+    /// <p> The source identifier to be removed from the subscription, such as the instance identifier for an instance, or the name of a security group. </p>
     pub fn source_identifier(&self) -> ::std::option::Option<&str> {
         self.source_identifier.as_deref()
     }
@@ -49,18 +49,18 @@ impl RemoveSourceIdentifierFromSubscriptionInputBuilder {
     pub fn get_subscription_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.subscription_name
     }
-    /// <p>The source identifier to be removed from the subscription, such as the instance identifier for an instance, or the name of a security group.</p>
+    /// <p> The source identifier to be removed from the subscription, such as the instance identifier for an instance, or the name of a security group. </p>
     /// This field is required.
     pub fn source_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The source identifier to be removed from the subscription, such as the instance identifier for an instance, or the name of a security group.</p>
+    /// <p> The source identifier to be removed from the subscription, such as the instance identifier for an instance, or the name of a security group. </p>
     pub fn set_source_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_identifier = input;
         self
     }
-    /// <p>The source identifier to be removed from the subscription, such as the instance identifier for an instance, or the name of a security group.</p>
+    /// <p> The source identifier to be removed from the subscription, such as the instance identifier for an instance, or the name of a security group. </p>
     pub fn get_source_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_identifier
     }

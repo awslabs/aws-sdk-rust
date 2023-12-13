@@ -138,19 +138,19 @@ impl CreateGlobalClusterFluentBuilder {
         self.inner.get_source_db_cluster_identifier()
     }
     /// <p>The name of the database engine to be used in the global database.</p>
-    /// <p>Valid values: <code>neptune</code></p>
+    /// <p>Valid values: <code>neptune</code> </p>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.engine(input.into());
         self
     }
     /// <p>The name of the database engine to be used in the global database.</p>
-    /// <p>Valid values: <code>neptune</code></p>
+    /// <p>Valid values: <code>neptune</code> </p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_engine(input);
         self
     }
     /// <p>The name of the database engine to be used in the global database.</p>
-    /// <p>Valid values: <code>neptune</code></p>
+    /// <p>Valid values: <code>neptune</code> </p>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_engine()
     }

@@ -108,17 +108,17 @@ impl ReplaceVpnTunnelFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the Site-to-Site VPN connection.</p>
+    /// <p>The ID of the Site-to-Site VPN connection. </p>
     pub fn vpn_connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpn_connection_id(input.into());
         self
     }
-    /// <p>The ID of the Site-to-Site VPN connection.</p>
+    /// <p>The ID of the Site-to-Site VPN connection. </p>
     pub fn set_vpn_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpn_connection_id(input);
         self
     }
-    /// <p>The ID of the Site-to-Site VPN connection.</p>
+    /// <p>The ID of the Site-to-Site VPN connection. </p>
     pub fn get_vpn_connection_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_vpn_connection_id()
     }

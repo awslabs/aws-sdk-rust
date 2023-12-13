@@ -7,7 +7,7 @@ pub struct UpdateRuleGroupInput {
     pub rule_group_id: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>RuleGroupUpdate</code> objects that you want to insert into or delete from a <code>RuleGroup</code>.</p>
     /// <p>You can only insert <code>REGULAR</code> rules into a rule group.</p>
-    /// <p><code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.</p>
+    /// <p> <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.</p>
     pub updates: ::std::option::Option<::std::vec::Vec<crate::types::RuleGroupUpdate>>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub change_token: ::std::option::Option<::std::string::String>,
@@ -19,7 +19,7 @@ impl UpdateRuleGroupInput {
     }
     /// <p>An array of <code>RuleGroupUpdate</code> objects that you want to insert into or delete from a <code>RuleGroup</code>.</p>
     /// <p>You can only insert <code>REGULAR</code> rules into a rule group.</p>
-    /// <p><code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.</p>
+    /// <p> <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.updates.is_none()`.
     pub fn updates(&self) -> &[crate::types::RuleGroupUpdate] {
@@ -67,7 +67,7 @@ impl UpdateRuleGroupInputBuilder {
     ///
     /// <p>An array of <code>RuleGroupUpdate</code> objects that you want to insert into or delete from a <code>RuleGroup</code>.</p>
     /// <p>You can only insert <code>REGULAR</code> rules into a rule group.</p>
-    /// <p><code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.</p>
+    /// <p> <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.</p>
     pub fn updates(mut self, input: crate::types::RuleGroupUpdate) -> Self {
         let mut v = self.updates.unwrap_or_default();
         v.push(input);
@@ -76,14 +76,14 @@ impl UpdateRuleGroupInputBuilder {
     }
     /// <p>An array of <code>RuleGroupUpdate</code> objects that you want to insert into or delete from a <code>RuleGroup</code>.</p>
     /// <p>You can only insert <code>REGULAR</code> rules into a rule group.</p>
-    /// <p><code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.</p>
+    /// <p> <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.</p>
     pub fn set_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RuleGroupUpdate>>) -> Self {
         self.updates = input;
         self
     }
     /// <p>An array of <code>RuleGroupUpdate</code> objects that you want to insert into or delete from a <code>RuleGroup</code>.</p>
     /// <p>You can only insert <code>REGULAR</code> rules into a rule group.</p>
-    /// <p><code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.</p>
+    /// <p> <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.</p>
     pub fn get_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleGroupUpdate>> {
         &self.updates
     }

@@ -9,7 +9,7 @@ pub struct Place {
     pub label: ::std::option::Option<::std::string::String>,
     /// <p>Places uses a point geometry to specify a location or a Place.</p>
     pub geometry: ::std::option::Option<crate::types::PlaceGeometry>,
-    /// <p>The numerical portion of an address, such as a building number.</p>
+    /// <p>The numerical portion of an address, such as a building number. </p>
     pub address_number: ::std::option::Option<::std::string::String>,
     /// <p>The name for a street or a road to identify a location. For example, <code>Main Street</code>.</p>
     pub street: ::std::option::Option<::std::string::String>,
@@ -23,20 +23,20 @@ pub struct Place {
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>A country/region specified using <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit country/region code. For example, <code>CAN</code>.</p>
     pub country: ::std::option::Option<::std::string::String>,
-    /// <p>A group of numbers and letters in a country-specific format, which accompanies the address for the purpose of identifying a location.</p>
+    /// <p>A group of numbers and letters in a country-specific format, which accompanies the address for the purpose of identifying a location. </p>
     pub postal_code: ::std::option::Option<::std::string::String>,
-    /// <p><code>True</code> if the result is interpolated from other known places.</p>
-    /// <p><code>False</code> if the Place is a known place.</p>
+    /// <p> <code>True</code> if the result is interpolated from other known places.</p>
+    /// <p> <code>False</code> if the Place is a known place.</p>
     /// <p>Not returned when the partner does not provide the information.</p>
-    /// <p>For example, returns <code>False</code> for an address location that is found in the partner data, but returns <code>True</code> if an address does not exist in the partner data and its location is calculated by interpolating between other known addresses.</p>
+    /// <p>For example, returns <code>False</code> for an address location that is found in the partner data, but returns <code>True</code> if an address does not exist in the partner data and its location is calculated by interpolating between other known addresses. </p>
     pub interpolated: ::std::option::Option<bool>,
     /// <p>The time zone in which the <code>Place</code> is located. Returned only when using HERE or Grab as the selected partner.</p>
     pub time_zone: ::std::option::Option<crate::types::TimeZone>,
-    /// <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.</p><note>
+    /// <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.</p> <note>
     /// <p>Returned only for a place index that uses Esri as a data provider.</p>
     /// </note>
     pub unit_type: ::std::option::Option<::std::string::String>,
-    /// <p>For addresses with multiple units, the unit identifier. Can include numbers and letters, for example <code>3B</code> or <code>Unit 123</code>.</p><note>
+    /// <p>For addresses with multiple units, the unit identifier. Can include numbers and letters, for example <code>3B</code> or <code>Unit 123</code>.</p> <note>
     /// <p>Returned only for a place index that uses Esri or Grab as a data provider. Is not returned for <code>SearchPlaceIndexForPosition</code>.</p>
     /// </note>
     pub unit_number: ::std::option::Option<::std::string::String>,
@@ -45,7 +45,7 @@ pub struct Place {
     pub categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Categories from the data provider that describe the Place that are not mapped to any Amazon Location categories.</p>
     pub supplemental_categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>An area that's part of a larger municipality. For example, <code>Blissville </code> is a submunicipality in the Queen County in New York.</p><note>
+    /// <p>An area that's part of a larger municipality. For example, <code>Blissville </code> is a submunicipality in the Queen County in New York.</p> <note>
     /// <p>This property supported by Esri and OpenData. The Esri property is <code>district</code>, and the OpenData property is <code>borough</code>.</p>
     /// </note>
     pub sub_municipality: ::std::option::Option<::std::string::String>,
@@ -59,7 +59,7 @@ impl Place {
     pub fn geometry(&self) -> ::std::option::Option<&crate::types::PlaceGeometry> {
         self.geometry.as_ref()
     }
-    /// <p>The numerical portion of an address, such as a building number.</p>
+    /// <p>The numerical portion of an address, such as a building number. </p>
     pub fn address_number(&self) -> ::std::option::Option<&str> {
         self.address_number.as_deref()
     }
@@ -87,14 +87,14 @@ impl Place {
     pub fn country(&self) -> ::std::option::Option<&str> {
         self.country.as_deref()
     }
-    /// <p>A group of numbers and letters in a country-specific format, which accompanies the address for the purpose of identifying a location.</p>
+    /// <p>A group of numbers and letters in a country-specific format, which accompanies the address for the purpose of identifying a location. </p>
     pub fn postal_code(&self) -> ::std::option::Option<&str> {
         self.postal_code.as_deref()
     }
-    /// <p><code>True</code> if the result is interpolated from other known places.</p>
-    /// <p><code>False</code> if the Place is a known place.</p>
+    /// <p> <code>True</code> if the result is interpolated from other known places.</p>
+    /// <p> <code>False</code> if the Place is a known place.</p>
     /// <p>Not returned when the partner does not provide the information.</p>
-    /// <p>For example, returns <code>False</code> for an address location that is found in the partner data, but returns <code>True</code> if an address does not exist in the partner data and its location is calculated by interpolating between other known addresses.</p>
+    /// <p>For example, returns <code>False</code> for an address location that is found in the partner data, but returns <code>True</code> if an address does not exist in the partner data and its location is calculated by interpolating between other known addresses. </p>
     pub fn interpolated(&self) -> ::std::option::Option<bool> {
         self.interpolated
     }
@@ -102,13 +102,13 @@ impl Place {
     pub fn time_zone(&self) -> ::std::option::Option<&crate::types::TimeZone> {
         self.time_zone.as_ref()
     }
-    /// <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.</p><note>
+    /// <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.</p> <note>
     /// <p>Returned only for a place index that uses Esri as a data provider.</p>
     /// </note>
     pub fn unit_type(&self) -> ::std::option::Option<&str> {
         self.unit_type.as_deref()
     }
-    /// <p>For addresses with multiple units, the unit identifier. Can include numbers and letters, for example <code>3B</code> or <code>Unit 123</code>.</p><note>
+    /// <p>For addresses with multiple units, the unit identifier. Can include numbers and letters, for example <code>3B</code> or <code>Unit 123</code>.</p> <note>
     /// <p>Returned only for a place index that uses Esri or Grab as a data provider. Is not returned for <code>SearchPlaceIndexForPosition</code>.</p>
     /// </note>
     pub fn unit_number(&self) -> ::std::option::Option<&str> {
@@ -127,7 +127,7 @@ impl Place {
     pub fn supplemental_categories(&self) -> &[::std::string::String] {
         self.supplemental_categories.as_deref().unwrap_or_default()
     }
-    /// <p>An area that's part of a larger municipality. For example, <code>Blissville </code> is a submunicipality in the Queen County in New York.</p><note>
+    /// <p>An area that's part of a larger municipality. For example, <code>Blissville </code> is a submunicipality in the Queen County in New York.</p> <note>
     /// <p>This property supported by Esri and OpenData. The Esri property is <code>district</code>, and the OpenData property is <code>borough</code>.</p>
     /// </note>
     pub fn sub_municipality(&self) -> ::std::option::Option<&str> {
@@ -193,17 +193,17 @@ impl PlaceBuilder {
     pub fn get_geometry(&self) -> &::std::option::Option<crate::types::PlaceGeometry> {
         &self.geometry
     }
-    /// <p>The numerical portion of an address, such as a building number.</p>
+    /// <p>The numerical portion of an address, such as a building number. </p>
     pub fn address_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.address_number = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The numerical portion of an address, such as a building number.</p>
+    /// <p>The numerical portion of an address, such as a building number. </p>
     pub fn set_address_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.address_number = input;
         self
     }
-    /// <p>The numerical portion of an address, such as a building number.</p>
+    /// <p>The numerical portion of an address, such as a building number. </p>
     pub fn get_address_number(&self) -> &::std::option::Option<::std::string::String> {
         &self.address_number
     }
@@ -291,40 +291,40 @@ impl PlaceBuilder {
     pub fn get_country(&self) -> &::std::option::Option<::std::string::String> {
         &self.country
     }
-    /// <p>A group of numbers and letters in a country-specific format, which accompanies the address for the purpose of identifying a location.</p>
+    /// <p>A group of numbers and letters in a country-specific format, which accompanies the address for the purpose of identifying a location. </p>
     pub fn postal_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.postal_code = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A group of numbers and letters in a country-specific format, which accompanies the address for the purpose of identifying a location.</p>
+    /// <p>A group of numbers and letters in a country-specific format, which accompanies the address for the purpose of identifying a location. </p>
     pub fn set_postal_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.postal_code = input;
         self
     }
-    /// <p>A group of numbers and letters in a country-specific format, which accompanies the address for the purpose of identifying a location.</p>
+    /// <p>A group of numbers and letters in a country-specific format, which accompanies the address for the purpose of identifying a location. </p>
     pub fn get_postal_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.postal_code
     }
-    /// <p><code>True</code> if the result is interpolated from other known places.</p>
-    /// <p><code>False</code> if the Place is a known place.</p>
+    /// <p> <code>True</code> if the result is interpolated from other known places.</p>
+    /// <p> <code>False</code> if the Place is a known place.</p>
     /// <p>Not returned when the partner does not provide the information.</p>
-    /// <p>For example, returns <code>False</code> for an address location that is found in the partner data, but returns <code>True</code> if an address does not exist in the partner data and its location is calculated by interpolating between other known addresses.</p>
+    /// <p>For example, returns <code>False</code> for an address location that is found in the partner data, but returns <code>True</code> if an address does not exist in the partner data and its location is calculated by interpolating between other known addresses. </p>
     pub fn interpolated(mut self, input: bool) -> Self {
         self.interpolated = ::std::option::Option::Some(input);
         self
     }
-    /// <p><code>True</code> if the result is interpolated from other known places.</p>
-    /// <p><code>False</code> if the Place is a known place.</p>
+    /// <p> <code>True</code> if the result is interpolated from other known places.</p>
+    /// <p> <code>False</code> if the Place is a known place.</p>
     /// <p>Not returned when the partner does not provide the information.</p>
-    /// <p>For example, returns <code>False</code> for an address location that is found in the partner data, but returns <code>True</code> if an address does not exist in the partner data and its location is calculated by interpolating between other known addresses.</p>
+    /// <p>For example, returns <code>False</code> for an address location that is found in the partner data, but returns <code>True</code> if an address does not exist in the partner data and its location is calculated by interpolating between other known addresses. </p>
     pub fn set_interpolated(mut self, input: ::std::option::Option<bool>) -> Self {
         self.interpolated = input;
         self
     }
-    /// <p><code>True</code> if the result is interpolated from other known places.</p>
-    /// <p><code>False</code> if the Place is a known place.</p>
+    /// <p> <code>True</code> if the result is interpolated from other known places.</p>
+    /// <p> <code>False</code> if the Place is a known place.</p>
     /// <p>Not returned when the partner does not provide the information.</p>
-    /// <p>For example, returns <code>False</code> for an address location that is found in the partner data, but returns <code>True</code> if an address does not exist in the partner data and its location is calculated by interpolating between other known addresses.</p>
+    /// <p>For example, returns <code>False</code> for an address location that is found in the partner data, but returns <code>True</code> if an address does not exist in the partner data and its location is calculated by interpolating between other known addresses. </p>
     pub fn get_interpolated(&self) -> &::std::option::Option<bool> {
         &self.interpolated
     }
@@ -342,41 +342,41 @@ impl PlaceBuilder {
     pub fn get_time_zone(&self) -> &::std::option::Option<crate::types::TimeZone> {
         &self.time_zone
     }
-    /// <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.</p><note>
+    /// <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.</p> <note>
     /// <p>Returned only for a place index that uses Esri as a data provider.</p>
     /// </note>
     pub fn unit_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.unit_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.</p><note>
+    /// <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.</p> <note>
     /// <p>Returned only for a place index that uses Esri as a data provider.</p>
     /// </note>
     pub fn set_unit_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.unit_type = input;
         self
     }
-    /// <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.</p><note>
+    /// <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.</p> <note>
     /// <p>Returned only for a place index that uses Esri as a data provider.</p>
     /// </note>
     pub fn get_unit_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.unit_type
     }
-    /// <p>For addresses with multiple units, the unit identifier. Can include numbers and letters, for example <code>3B</code> or <code>Unit 123</code>.</p><note>
+    /// <p>For addresses with multiple units, the unit identifier. Can include numbers and letters, for example <code>3B</code> or <code>Unit 123</code>.</p> <note>
     /// <p>Returned only for a place index that uses Esri or Grab as a data provider. Is not returned for <code>SearchPlaceIndexForPosition</code>.</p>
     /// </note>
     pub fn unit_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.unit_number = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>For addresses with multiple units, the unit identifier. Can include numbers and letters, for example <code>3B</code> or <code>Unit 123</code>.</p><note>
+    /// <p>For addresses with multiple units, the unit identifier. Can include numbers and letters, for example <code>3B</code> or <code>Unit 123</code>.</p> <note>
     /// <p>Returned only for a place index that uses Esri or Grab as a data provider. Is not returned for <code>SearchPlaceIndexForPosition</code>.</p>
     /// </note>
     pub fn set_unit_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.unit_number = input;
         self
     }
-    /// <p>For addresses with multiple units, the unit identifier. Can include numbers and letters, for example <code>3B</code> or <code>Unit 123</code>.</p><note>
+    /// <p>For addresses with multiple units, the unit identifier. Can include numbers and letters, for example <code>3B</code> or <code>Unit 123</code>.</p> <note>
     /// <p>Returned only for a place index that uses Esri or Grab as a data provider. Is not returned for <code>SearchPlaceIndexForPosition</code>.</p>
     /// </note>
     pub fn get_unit_number(&self) -> &::std::option::Option<::std::string::String> {
@@ -425,21 +425,21 @@ impl PlaceBuilder {
     pub fn get_supplemental_categories(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.supplemental_categories
     }
-    /// <p>An area that's part of a larger municipality. For example, <code>Blissville </code> is a submunicipality in the Queen County in New York.</p><note>
+    /// <p>An area that's part of a larger municipality. For example, <code>Blissville </code> is a submunicipality in the Queen County in New York.</p> <note>
     /// <p>This property supported by Esri and OpenData. The Esri property is <code>district</code>, and the OpenData property is <code>borough</code>.</p>
     /// </note>
     pub fn sub_municipality(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sub_municipality = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An area that's part of a larger municipality. For example, <code>Blissville </code> is a submunicipality in the Queen County in New York.</p><note>
+    /// <p>An area that's part of a larger municipality. For example, <code>Blissville </code> is a submunicipality in the Queen County in New York.</p> <note>
     /// <p>This property supported by Esri and OpenData. The Esri property is <code>district</code>, and the OpenData property is <code>borough</code>.</p>
     /// </note>
     pub fn set_sub_municipality(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sub_municipality = input;
         self
     }
-    /// <p>An area that's part of a larger municipality. For example, <code>Blissville </code> is a submunicipality in the Queen County in New York.</p><note>
+    /// <p>An area that's part of a larger municipality. For example, <code>Blissville </code> is a submunicipality in the Queen County in New York.</p> <note>
     /// <p>This property supported by Esri and OpenData. The Esri property is <code>district</code>, and the OpenData property is <code>borough</code>.</p>
     /// </note>
     pub fn get_sub_municipality(&self) -> &::std::option::Option<::std::string::String> {

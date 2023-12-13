@@ -23,7 +23,7 @@ impl DeleteAwsLogSourceInputBuilder {
 /// Fluent builder constructing a request to `DeleteAwsLogSource`.
 ///
 /// <p>Removes a natively supported Amazon Web Service as an Amazon Security Lake source. You can remove a source for one or more Regions. When you remove the source, Security Lake stops collecting data from that source in the specified Regions and accounts, and subscribers can no longer consume new data from the source. However, subscribers can still consume data that Security Lake collected from the source before removal.</p>
-/// <p>You can choose any source type in any Amazon Web Services Region for either accounts that are part of a trusted organization or standalone accounts.</p>
+/// <p>You can choose any source type in any Amazon Web Services Region for either accounts that are part of a trusted organization or standalone accounts. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAwsLogSourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

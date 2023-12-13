@@ -17,11 +17,9 @@ pub struct CoverageEc2InstanceDetails {
     pub agent_details: ::std::option::Option<crate::types::AgentDetails>,
     /// <p>Indicates how the GuardDuty security agent is managed for this resource.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AUTO_MANAGED</code> indicates that GuardDuty deploys and manages updates for this resource.</p></li>
-    /// <li>
-    /// <p><code>MANUAL</code> indicates that you are responsible to deploy, update, and manage the GuardDuty security agent updates for this resource.</p></li>
-    /// </ul><note>
+    /// <li> <p> <code>AUTO_MANAGED</code> indicates that GuardDuty deploys and manages updates for this resource.</p> </li>
+    /// <li> <p> <code>MANUAL</code> indicates that you are responsible to deploy, update, and manage the GuardDuty security agent updates for this resource.</p> </li>
+    /// </ul> <note>
     /// <p>The <code>DISABLED</code> status doesn't apply to Amazon EC2 instances and Amazon EKS clusters that run on Amazon EC2 instances.</p>
     /// </note>
     pub management_type: ::std::option::Option<crate::types::ManagementType>,
@@ -45,11 +43,9 @@ impl CoverageEc2InstanceDetails {
     }
     /// <p>Indicates how the GuardDuty security agent is managed for this resource.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AUTO_MANAGED</code> indicates that GuardDuty deploys and manages updates for this resource.</p></li>
-    /// <li>
-    /// <p><code>MANUAL</code> indicates that you are responsible to deploy, update, and manage the GuardDuty security agent updates for this resource.</p></li>
-    /// </ul><note>
+    /// <li> <p> <code>AUTO_MANAGED</code> indicates that GuardDuty deploys and manages updates for this resource.</p> </li>
+    /// <li> <p> <code>MANUAL</code> indicates that you are responsible to deploy, update, and manage the GuardDuty security agent updates for this resource.</p> </li>
+    /// </ul> <note>
     /// <p>The <code>DISABLED</code> status doesn't apply to Amazon EC2 instances and Amazon EKS clusters that run on Amazon EC2 instances.</p>
     /// </note>
     pub fn management_type(&self) -> ::std::option::Option<&crate::types::ManagementType> {
@@ -132,11 +128,9 @@ impl CoverageEc2InstanceDetailsBuilder {
     }
     /// <p>Indicates how the GuardDuty security agent is managed for this resource.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AUTO_MANAGED</code> indicates that GuardDuty deploys and manages updates for this resource.</p></li>
-    /// <li>
-    /// <p><code>MANUAL</code> indicates that you are responsible to deploy, update, and manage the GuardDuty security agent updates for this resource.</p></li>
-    /// </ul><note>
+    /// <li> <p> <code>AUTO_MANAGED</code> indicates that GuardDuty deploys and manages updates for this resource.</p> </li>
+    /// <li> <p> <code>MANUAL</code> indicates that you are responsible to deploy, update, and manage the GuardDuty security agent updates for this resource.</p> </li>
+    /// </ul> <note>
     /// <p>The <code>DISABLED</code> status doesn't apply to Amazon EC2 instances and Amazon EKS clusters that run on Amazon EC2 instances.</p>
     /// </note>
     pub fn management_type(mut self, input: crate::types::ManagementType) -> Self {
@@ -145,11 +139,9 @@ impl CoverageEc2InstanceDetailsBuilder {
     }
     /// <p>Indicates how the GuardDuty security agent is managed for this resource.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AUTO_MANAGED</code> indicates that GuardDuty deploys and manages updates for this resource.</p></li>
-    /// <li>
-    /// <p><code>MANUAL</code> indicates that you are responsible to deploy, update, and manage the GuardDuty security agent updates for this resource.</p></li>
-    /// </ul><note>
+    /// <li> <p> <code>AUTO_MANAGED</code> indicates that GuardDuty deploys and manages updates for this resource.</p> </li>
+    /// <li> <p> <code>MANUAL</code> indicates that you are responsible to deploy, update, and manage the GuardDuty security agent updates for this resource.</p> </li>
+    /// </ul> <note>
     /// <p>The <code>DISABLED</code> status doesn't apply to Amazon EC2 instances and Amazon EKS clusters that run on Amazon EC2 instances.</p>
     /// </note>
     pub fn set_management_type(mut self, input: ::std::option::Option<crate::types::ManagementType>) -> Self {
@@ -158,11 +150,9 @@ impl CoverageEc2InstanceDetailsBuilder {
     }
     /// <p>Indicates how the GuardDuty security agent is managed for this resource.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AUTO_MANAGED</code> indicates that GuardDuty deploys and manages updates for this resource.</p></li>
-    /// <li>
-    /// <p><code>MANUAL</code> indicates that you are responsible to deploy, update, and manage the GuardDuty security agent updates for this resource.</p></li>
-    /// </ul><note>
+    /// <li> <p> <code>AUTO_MANAGED</code> indicates that GuardDuty deploys and manages updates for this resource.</p> </li>
+    /// <li> <p> <code>MANUAL</code> indicates that you are responsible to deploy, update, and manage the GuardDuty security agent updates for this resource.</p> </li>
+    /// </ul> <note>
     /// <p>The <code>DISABLED</code> status doesn't apply to Amazon EC2 instances and Amazon EKS clusters that run on Amazon EC2 instances.</p>
     /// </note>
     pub fn get_management_type(&self) -> &::std::option::Option<crate::types::ManagementType> {

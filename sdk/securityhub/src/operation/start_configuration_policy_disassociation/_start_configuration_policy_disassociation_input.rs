@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartConfigurationPolicyDisassociationInput {
-    /// <p>The identifier of the target account, organizational unit, or the root to disassociate from the specified configuration.</p>
+    /// <p> The identifier of the target account, organizational unit, or the root to disassociate from the specified configuration. </p>
     pub target: ::std::option::Option<crate::types::Target>,
-    /// <p>The Amazon Resource Name (ARN) or universally unique identifier (UUID) of the configuration policy.</p>
+    /// <p> The Amazon Resource Name (ARN) or universally unique identifier (UUID) of the configuration policy. </p>
     pub configuration_policy_identifier: ::std::option::Option<::std::string::String>,
 }
 impl StartConfigurationPolicyDisassociationInput {
-    /// <p>The identifier of the target account, organizational unit, or the root to disassociate from the specified configuration.</p>
+    /// <p> The identifier of the target account, organizational unit, or the root to disassociate from the specified configuration. </p>
     pub fn target(&self) -> ::std::option::Option<&crate::types::Target> {
         self.target.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) or universally unique identifier (UUID) of the configuration policy.</p>
+    /// <p> The Amazon Resource Name (ARN) or universally unique identifier (UUID) of the configuration policy. </p>
     pub fn configuration_policy_identifier(&self) -> ::std::option::Option<&str> {
         self.configuration_policy_identifier.as_deref()
     }
@@ -33,32 +33,32 @@ pub struct StartConfigurationPolicyDisassociationInputBuilder {
     pub(crate) configuration_policy_identifier: ::std::option::Option<::std::string::String>,
 }
 impl StartConfigurationPolicyDisassociationInputBuilder {
-    /// <p>The identifier of the target account, organizational unit, or the root to disassociate from the specified configuration.</p>
+    /// <p> The identifier of the target account, organizational unit, or the root to disassociate from the specified configuration. </p>
     pub fn target(mut self, input: crate::types::Target) -> Self {
         self.target = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The identifier of the target account, organizational unit, or the root to disassociate from the specified configuration.</p>
+    /// <p> The identifier of the target account, organizational unit, or the root to disassociate from the specified configuration. </p>
     pub fn set_target(mut self, input: ::std::option::Option<crate::types::Target>) -> Self {
         self.target = input;
         self
     }
-    /// <p>The identifier of the target account, organizational unit, or the root to disassociate from the specified configuration.</p>
+    /// <p> The identifier of the target account, organizational unit, or the root to disassociate from the specified configuration. </p>
     pub fn get_target(&self) -> &::std::option::Option<crate::types::Target> {
         &self.target
     }
-    /// <p>The Amazon Resource Name (ARN) or universally unique identifier (UUID) of the configuration policy.</p>
+    /// <p> The Amazon Resource Name (ARN) or universally unique identifier (UUID) of the configuration policy. </p>
     /// This field is required.
     pub fn configuration_policy_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_policy_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) or universally unique identifier (UUID) of the configuration policy.</p>
+    /// <p> The Amazon Resource Name (ARN) or universally unique identifier (UUID) of the configuration policy. </p>
     pub fn set_configuration_policy_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_policy_identifier = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) or universally unique identifier (UUID) of the configuration policy.</p>
+    /// <p> The Amazon Resource Name (ARN) or universally unique identifier (UUID) of the configuration policy. </p>
     pub fn get_configuration_policy_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.configuration_policy_identifier
     }

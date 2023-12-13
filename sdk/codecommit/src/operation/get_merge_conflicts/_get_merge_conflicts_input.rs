@@ -9,7 +9,7 @@ pub struct GetMergeConflictsInput {
     pub destination_commit_specifier: ::std::option::Option<::std::string::String>,
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
     pub source_commit_specifier: ::std::option::Option<::std::string::String>,
-    /// <p>The merge option or strategy you want to use to merge the code.</p>
+    /// <p>The merge option or strategy you want to use to merge the code. </p>
     pub merge_option: ::std::option::Option<crate::types::MergeOptionTypeEnum>,
     /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
     pub conflict_detail_level: ::std::option::Option<crate::types::ConflictDetailLevelTypeEnum>,
@@ -33,7 +33,7 @@ impl GetMergeConflictsInput {
     pub fn source_commit_specifier(&self) -> ::std::option::Option<&str> {
         self.source_commit_specifier.as_deref()
     }
-    /// <p>The merge option or strategy you want to use to merge the code.</p>
+    /// <p>The merge option or strategy you want to use to merge the code. </p>
     pub fn merge_option(&self) -> ::std::option::Option<&crate::types::MergeOptionTypeEnum> {
         self.merge_option.as_ref()
     }
@@ -120,18 +120,18 @@ impl GetMergeConflictsInputBuilder {
     pub fn get_source_commit_specifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_commit_specifier
     }
-    /// <p>The merge option or strategy you want to use to merge the code.</p>
+    /// <p>The merge option or strategy you want to use to merge the code. </p>
     /// This field is required.
     pub fn merge_option(mut self, input: crate::types::MergeOptionTypeEnum) -> Self {
         self.merge_option = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The merge option or strategy you want to use to merge the code.</p>
+    /// <p>The merge option or strategy you want to use to merge the code. </p>
     pub fn set_merge_option(mut self, input: ::std::option::Option<crate::types::MergeOptionTypeEnum>) -> Self {
         self.merge_option = input;
         self
     }
-    /// <p>The merge option or strategy you want to use to merge the code.</p>
+    /// <p>The merge option or strategy you want to use to merge the code. </p>
     pub fn get_merge_option(&self) -> &::std::option::Option<crate::types::MergeOptionTypeEnum> {
         &self.merge_option
     }

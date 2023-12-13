@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDomainAssociation`](crate::operation::get_domain_association::builders::GetDomainAssociationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`app_id(impl Into<String>)`](crate::operation::get_domain_association::builders::GetDomainAssociationFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::get_domain_association::builders::GetDomainAssociationFluentBuilder::set_app_id):<br>required: **true**<br><p>The unique id for an Amplify app.</p><br>
-    ///   - [`domain_name(impl Into<String>)`](crate::operation::get_domain_association::builders::GetDomainAssociationFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::get_domain_association::builders::GetDomainAssociationFluentBuilder::set_domain_name):<br>required: **true**<br><p>The name of the domain.</p><br>
+    ///   - [`app_id(impl Into<String>)`](crate::operation::get_domain_association::builders::GetDomainAssociationFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::get_domain_association::builders::GetDomainAssociationFluentBuilder::set_app_id):<br>required: **true**<br><p> The unique id for an Amplify app. </p><br>
+    ///   - [`domain_name(impl Into<String>)`](crate::operation::get_domain_association::builders::GetDomainAssociationFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::get_domain_association::builders::GetDomainAssociationFluentBuilder::set_domain_name):<br>required: **true**<br><p> The name of the domain. </p><br>
     /// - On success, responds with [`GetDomainAssociationOutput`](crate::operation::get_domain_association::GetDomainAssociationOutput) with field(s):
-    ///   - [`domain_association(Option<DomainAssociation>)`](crate::operation::get_domain_association::GetDomainAssociationOutput::domain_association): <p>Describes the structure of a domain association, which associates a custom domain with an Amplify app.</p>
+    ///   - [`domain_association(Option<DomainAssociation>)`](crate::operation::get_domain_association::GetDomainAssociationOutput::domain_association): <p> Describes the structure of a domain association, which associates a custom domain with an Amplify app. </p>
     /// - On failure, responds with [`SdkError<GetDomainAssociationError>`](crate::operation::get_domain_association::GetDomainAssociationError)
     pub fn get_domain_association(&self) -> crate::operation::get_domain_association::builders::GetDomainAssociationFluentBuilder {
         crate::operation::get_domain_association::builders::GetDomainAssociationFluentBuilder::new(self.handle.clone())

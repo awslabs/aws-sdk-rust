@@ -8,7 +8,7 @@ pub struct EnvironmentVariable {
     pub key: ::std::string::String,
     /// <p>(Optional) The environment variable's value, which can be left empty. If you specify a value, it can contain up to 256 characters, which must all be printable.</p>
     pub value: ::std::string::String,
-    /// <p>(Optional) Whether the variable's value will be returned by the <code>DescribeApps</code> action. To conceal an environment variable's value, set <code>Secure</code> to <code>true</code>. <code>DescribeApps</code> then returns <code>*****FILTERED*****</code> instead of the actual value. The default value for <code>Secure</code> is <code>false</code>.</p>
+    /// <p>(Optional) Whether the variable's value will be returned by the <code>DescribeApps</code> action. To conceal an environment variable's value, set <code>Secure</code> to <code>true</code>. <code>DescribeApps</code> then returns <code>*****FILTERED*****</code> instead of the actual value. The default value for <code>Secure</code> is <code>false</code>. </p>
     pub secure: ::std::option::Option<bool>,
 }
 impl EnvironmentVariable {
@@ -22,7 +22,7 @@ impl EnvironmentVariable {
         use std::ops::Deref;
         self.value.deref()
     }
-    /// <p>(Optional) Whether the variable's value will be returned by the <code>DescribeApps</code> action. To conceal an environment variable's value, set <code>Secure</code> to <code>true</code>. <code>DescribeApps</code> then returns <code>*****FILTERED*****</code> instead of the actual value. The default value for <code>Secure</code> is <code>false</code>.</p>
+    /// <p>(Optional) Whether the variable's value will be returned by the <code>DescribeApps</code> action. To conceal an environment variable's value, set <code>Secure</code> to <code>true</code>. <code>DescribeApps</code> then returns <code>*****FILTERED*****</code> instead of the actual value. The default value for <code>Secure</code> is <code>false</code>. </p>
     pub fn secure(&self) -> ::std::option::Option<bool> {
         self.secure
     }
@@ -73,17 +73,17 @@ impl EnvironmentVariableBuilder {
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.value
     }
-    /// <p>(Optional) Whether the variable's value will be returned by the <code>DescribeApps</code> action. To conceal an environment variable's value, set <code>Secure</code> to <code>true</code>. <code>DescribeApps</code> then returns <code>*****FILTERED*****</code> instead of the actual value. The default value for <code>Secure</code> is <code>false</code>.</p>
+    /// <p>(Optional) Whether the variable's value will be returned by the <code>DescribeApps</code> action. To conceal an environment variable's value, set <code>Secure</code> to <code>true</code>. <code>DescribeApps</code> then returns <code>*****FILTERED*****</code> instead of the actual value. The default value for <code>Secure</code> is <code>false</code>. </p>
     pub fn secure(mut self, input: bool) -> Self {
         self.secure = ::std::option::Option::Some(input);
         self
     }
-    /// <p>(Optional) Whether the variable's value will be returned by the <code>DescribeApps</code> action. To conceal an environment variable's value, set <code>Secure</code> to <code>true</code>. <code>DescribeApps</code> then returns <code>*****FILTERED*****</code> instead of the actual value. The default value for <code>Secure</code> is <code>false</code>.</p>
+    /// <p>(Optional) Whether the variable's value will be returned by the <code>DescribeApps</code> action. To conceal an environment variable's value, set <code>Secure</code> to <code>true</code>. <code>DescribeApps</code> then returns <code>*****FILTERED*****</code> instead of the actual value. The default value for <code>Secure</code> is <code>false</code>. </p>
     pub fn set_secure(mut self, input: ::std::option::Option<bool>) -> Self {
         self.secure = input;
         self
     }
-    /// <p>(Optional) Whether the variable's value will be returned by the <code>DescribeApps</code> action. To conceal an environment variable's value, set <code>Secure</code> to <code>true</code>. <code>DescribeApps</code> then returns <code>*****FILTERED*****</code> instead of the actual value. The default value for <code>Secure</code> is <code>false</code>.</p>
+    /// <p>(Optional) Whether the variable's value will be returned by the <code>DescribeApps</code> action. To conceal an environment variable's value, set <code>Secure</code> to <code>true</code>. <code>DescribeApps</code> then returns <code>*****FILTERED*****</code> instead of the actual value. The default value for <code>Secure</code> is <code>false</code>. </p>
     pub fn get_secure(&self) -> &::std::option::Option<bool> {
         &self.secure
     }

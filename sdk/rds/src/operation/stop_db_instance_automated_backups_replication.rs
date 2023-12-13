@@ -253,7 +253,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for StopDBInstanc
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum StopDBInstanceAutomatedBackupsReplicationError {
-    /// <p><code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
+    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
     DbInstanceNotFoundFault(crate::types::error::DbInstanceNotFoundFault),
     /// <p>The DB instance isn't in a valid state.</p>
     InvalidDbInstanceStateFault(crate::types::error::InvalidDbInstanceStateFault),

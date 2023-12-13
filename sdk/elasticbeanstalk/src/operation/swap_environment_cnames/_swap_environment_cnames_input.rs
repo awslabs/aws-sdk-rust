@@ -5,36 +5,36 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SwapEnvironmentCnamEsInput {
     /// <p>The ID of the source environment.</p>
-    /// <p>Condition: You must specify at least the <code>SourceEnvironmentID</code> or the <code>SourceEnvironmentName</code>. You may also specify both. If you specify the <code>SourceEnvironmentId</code>, you must specify the <code>DestinationEnvironmentId</code>.</p>
+    /// <p> Condition: You must specify at least the <code>SourceEnvironmentID</code> or the <code>SourceEnvironmentName</code>. You may also specify both. If you specify the <code>SourceEnvironmentId</code>, you must specify the <code>DestinationEnvironmentId</code>. </p>
     pub source_environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the source environment.</p>
-    /// <p>Condition: You must specify at least the <code>SourceEnvironmentID</code> or the <code>SourceEnvironmentName</code>. You may also specify both. If you specify the <code>SourceEnvironmentName</code>, you must specify the <code>DestinationEnvironmentName</code>.</p>
+    /// <p> Condition: You must specify at least the <code>SourceEnvironmentID</code> or the <code>SourceEnvironmentName</code>. You may also specify both. If you specify the <code>SourceEnvironmentName</code>, you must specify the <code>DestinationEnvironmentName</code>. </p>
     pub source_environment_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the destination environment.</p>
-    /// <p>Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the <code>SourceEnvironmentId</code> with the <code>DestinationEnvironmentId</code>.</p>
+    /// <p> Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the <code>SourceEnvironmentId</code> with the <code>DestinationEnvironmentId</code>. </p>
     pub destination_environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the destination environment.</p>
-    /// <p>Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the <code>SourceEnvironmentName</code> with the <code>DestinationEnvironmentName</code>.</p>
+    /// <p> Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the <code>SourceEnvironmentName</code> with the <code>DestinationEnvironmentName</code>. </p>
     pub destination_environment_name: ::std::option::Option<::std::string::String>,
 }
 impl SwapEnvironmentCnamEsInput {
     /// <p>The ID of the source environment.</p>
-    /// <p>Condition: You must specify at least the <code>SourceEnvironmentID</code> or the <code>SourceEnvironmentName</code>. You may also specify both. If you specify the <code>SourceEnvironmentId</code>, you must specify the <code>DestinationEnvironmentId</code>.</p>
+    /// <p> Condition: You must specify at least the <code>SourceEnvironmentID</code> or the <code>SourceEnvironmentName</code>. You may also specify both. If you specify the <code>SourceEnvironmentId</code>, you must specify the <code>DestinationEnvironmentId</code>. </p>
     pub fn source_environment_id(&self) -> ::std::option::Option<&str> {
         self.source_environment_id.as_deref()
     }
     /// <p>The name of the source environment.</p>
-    /// <p>Condition: You must specify at least the <code>SourceEnvironmentID</code> or the <code>SourceEnvironmentName</code>. You may also specify both. If you specify the <code>SourceEnvironmentName</code>, you must specify the <code>DestinationEnvironmentName</code>.</p>
+    /// <p> Condition: You must specify at least the <code>SourceEnvironmentID</code> or the <code>SourceEnvironmentName</code>. You may also specify both. If you specify the <code>SourceEnvironmentName</code>, you must specify the <code>DestinationEnvironmentName</code>. </p>
     pub fn source_environment_name(&self) -> ::std::option::Option<&str> {
         self.source_environment_name.as_deref()
     }
     /// <p>The ID of the destination environment.</p>
-    /// <p>Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the <code>SourceEnvironmentId</code> with the <code>DestinationEnvironmentId</code>.</p>
+    /// <p> Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the <code>SourceEnvironmentId</code> with the <code>DestinationEnvironmentId</code>. </p>
     pub fn destination_environment_id(&self) -> ::std::option::Option<&str> {
         self.destination_environment_id.as_deref()
     }
     /// <p>The name of the destination environment.</p>
-    /// <p>Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the <code>SourceEnvironmentName</code> with the <code>DestinationEnvironmentName</code>.</p>
+    /// <p> Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the <code>SourceEnvironmentName</code> with the <code>DestinationEnvironmentName</code>. </p>
     pub fn destination_environment_name(&self) -> ::std::option::Option<&str> {
         self.destination_environment_name.as_deref()
     }
@@ -57,70 +57,70 @@ pub struct SwapEnvironmentCnamEsInputBuilder {
 }
 impl SwapEnvironmentCnamEsInputBuilder {
     /// <p>The ID of the source environment.</p>
-    /// <p>Condition: You must specify at least the <code>SourceEnvironmentID</code> or the <code>SourceEnvironmentName</code>. You may also specify both. If you specify the <code>SourceEnvironmentId</code>, you must specify the <code>DestinationEnvironmentId</code>.</p>
+    /// <p> Condition: You must specify at least the <code>SourceEnvironmentID</code> or the <code>SourceEnvironmentName</code>. You may also specify both. If you specify the <code>SourceEnvironmentId</code>, you must specify the <code>DestinationEnvironmentId</code>. </p>
     pub fn source_environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_environment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the source environment.</p>
-    /// <p>Condition: You must specify at least the <code>SourceEnvironmentID</code> or the <code>SourceEnvironmentName</code>. You may also specify both. If you specify the <code>SourceEnvironmentId</code>, you must specify the <code>DestinationEnvironmentId</code>.</p>
+    /// <p> Condition: You must specify at least the <code>SourceEnvironmentID</code> or the <code>SourceEnvironmentName</code>. You may also specify both. If you specify the <code>SourceEnvironmentId</code>, you must specify the <code>DestinationEnvironmentId</code>. </p>
     pub fn set_source_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_environment_id = input;
         self
     }
     /// <p>The ID of the source environment.</p>
-    /// <p>Condition: You must specify at least the <code>SourceEnvironmentID</code> or the <code>SourceEnvironmentName</code>. You may also specify both. If you specify the <code>SourceEnvironmentId</code>, you must specify the <code>DestinationEnvironmentId</code>.</p>
+    /// <p> Condition: You must specify at least the <code>SourceEnvironmentID</code> or the <code>SourceEnvironmentName</code>. You may also specify both. If you specify the <code>SourceEnvironmentId</code>, you must specify the <code>DestinationEnvironmentId</code>. </p>
     pub fn get_source_environment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_environment_id
     }
     /// <p>The name of the source environment.</p>
-    /// <p>Condition: You must specify at least the <code>SourceEnvironmentID</code> or the <code>SourceEnvironmentName</code>. You may also specify both. If you specify the <code>SourceEnvironmentName</code>, you must specify the <code>DestinationEnvironmentName</code>.</p>
+    /// <p> Condition: You must specify at least the <code>SourceEnvironmentID</code> or the <code>SourceEnvironmentName</code>. You may also specify both. If you specify the <code>SourceEnvironmentName</code>, you must specify the <code>DestinationEnvironmentName</code>. </p>
     pub fn source_environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the source environment.</p>
-    /// <p>Condition: You must specify at least the <code>SourceEnvironmentID</code> or the <code>SourceEnvironmentName</code>. You may also specify both. If you specify the <code>SourceEnvironmentName</code>, you must specify the <code>DestinationEnvironmentName</code>.</p>
+    /// <p> Condition: You must specify at least the <code>SourceEnvironmentID</code> or the <code>SourceEnvironmentName</code>. You may also specify both. If you specify the <code>SourceEnvironmentName</code>, you must specify the <code>DestinationEnvironmentName</code>. </p>
     pub fn set_source_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_environment_name = input;
         self
     }
     /// <p>The name of the source environment.</p>
-    /// <p>Condition: You must specify at least the <code>SourceEnvironmentID</code> or the <code>SourceEnvironmentName</code>. You may also specify both. If you specify the <code>SourceEnvironmentName</code>, you must specify the <code>DestinationEnvironmentName</code>.</p>
+    /// <p> Condition: You must specify at least the <code>SourceEnvironmentID</code> or the <code>SourceEnvironmentName</code>. You may also specify both. If you specify the <code>SourceEnvironmentName</code>, you must specify the <code>DestinationEnvironmentName</code>. </p>
     pub fn get_source_environment_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_environment_name
     }
     /// <p>The ID of the destination environment.</p>
-    /// <p>Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the <code>SourceEnvironmentId</code> with the <code>DestinationEnvironmentId</code>.</p>
+    /// <p> Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the <code>SourceEnvironmentId</code> with the <code>DestinationEnvironmentId</code>. </p>
     pub fn destination_environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_environment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the destination environment.</p>
-    /// <p>Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the <code>SourceEnvironmentId</code> with the <code>DestinationEnvironmentId</code>.</p>
+    /// <p> Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the <code>SourceEnvironmentId</code> with the <code>DestinationEnvironmentId</code>. </p>
     pub fn set_destination_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_environment_id = input;
         self
     }
     /// <p>The ID of the destination environment.</p>
-    /// <p>Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the <code>SourceEnvironmentId</code> with the <code>DestinationEnvironmentId</code>.</p>
+    /// <p> Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the <code>SourceEnvironmentId</code> with the <code>DestinationEnvironmentId</code>. </p>
     pub fn get_destination_environment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination_environment_id
     }
     /// <p>The name of the destination environment.</p>
-    /// <p>Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the <code>SourceEnvironmentName</code> with the <code>DestinationEnvironmentName</code>.</p>
+    /// <p> Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the <code>SourceEnvironmentName</code> with the <code>DestinationEnvironmentName</code>. </p>
     pub fn destination_environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the destination environment.</p>
-    /// <p>Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the <code>SourceEnvironmentName</code> with the <code>DestinationEnvironmentName</code>.</p>
+    /// <p> Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the <code>SourceEnvironmentName</code> with the <code>DestinationEnvironmentName</code>. </p>
     pub fn set_destination_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_environment_name = input;
         self
     }
     /// <p>The name of the destination environment.</p>
-    /// <p>Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the <code>SourceEnvironmentName</code> with the <code>DestinationEnvironmentName</code>.</p>
+    /// <p> Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the <code>SourceEnvironmentName</code> with the <code>DestinationEnvironmentName</code>. </p>
     pub fn get_destination_environment_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination_environment_name
     }

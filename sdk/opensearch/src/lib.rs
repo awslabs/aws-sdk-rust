@@ -12,7 +12,6 @@
 #![allow(clippy::result_large_err)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
-#![cfg_attr(docsrs, feature(doc_auto_cfg))]
 //! Use the Amazon OpenSearch Service configuration API to create, configure, and manage OpenSearch Service domains.
 //!
 //! For sample code that uses the configuration API, see the [_Amazon OpenSearch Service Developer Guide_](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/opensearch-configuration-samples.html). The guide also contains [sample code](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/request-signing.html) for sending signed HTTP requests to the OpenSearch APIs. The endpoint for configuration service requests is Region specific: es._region_.amazonaws.com. For example, es.us-east-1.amazonaws.com. For a current list of supported Regions and endpoints, see [Amazon Web Services service endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#service-regions).
@@ -28,8 +27,8 @@
 //!
 //! ```toml
 //! [dependencies]
-//! aws-config = { version = "1.1.0", features = ["behavior-version-latest"] }
-//! aws-sdk-opensearch = "1.6.0"
+//! aws-config = { version = "1.0.3", features = ["behavior-version-latest"] }
+//! aws-sdk-opensearch = "1.7.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -189,11 +188,11 @@ pub(crate) mod protocol_serde;
 
 mod serialization_settings;
 
-mod endpoint_lib;
-
 mod lens;
 
 mod serde_util;
+
+mod endpoint_lib;
 
 mod json_errors;
 

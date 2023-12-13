@@ -22,8 +22,8 @@ impl DeleteVirtualMfaDeviceInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteVirtualMFADevice`.
 ///
-/// <p>Deletes a virtual MFA device.</p><note>
-/// <p>You must deactivate a user's virtual MFA device before you can delete it. For information about deactivating MFA devices, see <code>DeactivateMFADevice</code>.</p>
+/// <p>Deletes a virtual MFA device.</p> <note>
+/// <p> You must deactivate a user's virtual MFA device before you can delete it. For information about deactivating MFA devices, see <code>DeactivateMFADevice</code>. </p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteVirtualMFADeviceFluentBuilder {

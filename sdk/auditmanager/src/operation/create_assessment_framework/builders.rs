@@ -22,7 +22,7 @@ impl CreateAssessmentFrameworkInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateAssessmentFramework`.
 ///
-/// <p>Creates a custom framework in Audit Manager.</p>
+/// <p> Creates a custom framework in Audit Manager. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateAssessmentFrameworkFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,45 +108,45 @@ impl CreateAssessmentFrameworkFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the new custom framework.</p>
+    /// <p> The name of the new custom framework. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of the new custom framework.</p>
+    /// <p> The name of the new custom framework. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name of the new custom framework.</p>
+    /// <p> The name of the new custom framework. </p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>An optional description for the new custom framework.</p>
+    /// <p> An optional description for the new custom framework. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>An optional description for the new custom framework.</p>
+    /// <p> An optional description for the new custom framework. </p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>An optional description for the new custom framework.</p>
+    /// <p> An optional description for the new custom framework. </p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p>The compliance type that the new custom framework supports, such as CIS or HIPAA.</p>
+    /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
     pub fn compliance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.compliance_type(input.into());
         self
     }
-    /// <p>The compliance type that the new custom framework supports, such as CIS or HIPAA.</p>
+    /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
     pub fn set_compliance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_compliance_type(input);
         self
     }
-    /// <p>The compliance type that the new custom framework supports, such as CIS or HIPAA.</p>
+    /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
     pub fn get_compliance_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_compliance_type()
     }
@@ -154,17 +154,17 @@ impl CreateAssessmentFrameworkFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_control_sets`](Self::set_control_sets).
     ///
-    /// <p>The control sets that are associated with the framework.</p>
+    /// <p> The control sets that are associated with the framework. </p>
     pub fn control_sets(mut self, input: crate::types::CreateAssessmentFrameworkControlSet) -> Self {
         self.inner = self.inner.control_sets(input);
         self
     }
-    /// <p>The control sets that are associated with the framework.</p>
+    /// <p> The control sets that are associated with the framework. </p>
     pub fn set_control_sets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CreateAssessmentFrameworkControlSet>>) -> Self {
         self.inner = self.inner.set_control_sets(input);
         self
     }
-    /// <p>The control sets that are associated with the framework.</p>
+    /// <p> The control sets that are associated with the framework. </p>
     pub fn get_control_sets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateAssessmentFrameworkControlSet>> {
         self.inner.get_control_sets()
     }
@@ -172,17 +172,17 @@ impl CreateAssessmentFrameworkFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The tags that are associated with the framework.</p>
+    /// <p> The tags that are associated with the framework. </p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
-    /// <p>The tags that are associated with the framework.</p>
+    /// <p> The tags that are associated with the framework. </p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>The tags that are associated with the framework.</p>
+    /// <p> The tags that are associated with the framework. </p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }

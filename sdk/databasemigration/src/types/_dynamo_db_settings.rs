@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DynamoDbSettings {
-    /// <p>The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
+    /// <p> The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
     pub service_access_role_arn: ::std::string::String,
 }
 impl DynamoDbSettings {
-    /// <p>The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
+    /// <p> The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
     pub fn service_access_role_arn(&self) -> &str {
         use std::ops::Deref;
         self.service_access_role_arn.deref()
@@ -28,18 +28,18 @@ pub struct DynamoDbSettingsBuilder {
     pub(crate) service_access_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl DynamoDbSettingsBuilder {
-    /// <p>The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
+    /// <p> The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
     /// This field is required.
     pub fn service_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_access_role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
+    /// <p> The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
     pub fn set_service_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_access_role_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
+    /// <p> The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
     pub fn get_service_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_access_role_arn
     }

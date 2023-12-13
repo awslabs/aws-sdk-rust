@@ -7,10 +7,8 @@ pub struct UpdateRecipeJobInput {
     pub encryption_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The encryption mode for the job, which can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p></li>
-    /// <li>
-    /// <p><code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p></li>
+    /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
+    /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
     /// </ul>
     pub encryption_mode: ::std::option::Option<crate::types::EncryptionMode>,
     /// <p>The name of the job to update.</p>
@@ -21,7 +19,7 @@ pub struct UpdateRecipeJobInput {
     pub max_capacity: ::std::option::Option<i32>,
     /// <p>The maximum number of times to retry the job after a job run fails.</p>
     pub max_retries: ::std::option::Option<i32>,
-    /// <p>One or more artifacts that represent the output from running the job.</p>
+    /// <p>One or more artifacts that represent the output from running the job. </p>
     pub outputs: ::std::option::Option<::std::vec::Vec<crate::types::Output>>,
     /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
     pub data_catalog_outputs: ::std::option::Option<::std::vec::Vec<crate::types::DataCatalogOutput>>,
@@ -39,10 +37,8 @@ impl UpdateRecipeJobInput {
     }
     /// <p>The encryption mode for the job, which can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p></li>
-    /// <li>
-    /// <p><code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p></li>
+    /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
+    /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
     /// </ul>
     pub fn encryption_mode(&self) -> ::std::option::Option<&crate::types::EncryptionMode> {
         self.encryption_mode.as_ref()
@@ -63,7 +59,7 @@ impl UpdateRecipeJobInput {
     pub fn max_retries(&self) -> ::std::option::Option<i32> {
         self.max_retries
     }
-    /// <p>One or more artifacts that represent the output from running the job.</p>
+    /// <p>One or more artifacts that represent the output from running the job. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outputs.is_none()`.
     pub fn outputs(&self) -> &[crate::types::Output] {
@@ -130,10 +126,8 @@ impl UpdateRecipeJobInputBuilder {
     }
     /// <p>The encryption mode for the job, which can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p></li>
-    /// <li>
-    /// <p><code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p></li>
+    /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
+    /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
     /// </ul>
     pub fn encryption_mode(mut self, input: crate::types::EncryptionMode) -> Self {
         self.encryption_mode = ::std::option::Option::Some(input);
@@ -141,10 +135,8 @@ impl UpdateRecipeJobInputBuilder {
     }
     /// <p>The encryption mode for the job, which can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p></li>
-    /// <li>
-    /// <p><code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p></li>
+    /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
+    /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
     /// </ul>
     pub fn set_encryption_mode(mut self, input: ::std::option::Option<crate::types::EncryptionMode>) -> Self {
         self.encryption_mode = input;
@@ -152,10 +144,8 @@ impl UpdateRecipeJobInputBuilder {
     }
     /// <p>The encryption mode for the job, which can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p></li>
-    /// <li>
-    /// <p><code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p></li>
+    /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
+    /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
     /// </ul>
     pub fn get_encryption_mode(&self) -> &::std::option::Option<crate::types::EncryptionMode> {
         &self.encryption_mode
@@ -221,19 +211,19 @@ impl UpdateRecipeJobInputBuilder {
     ///
     /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
     ///
-    /// <p>One or more artifacts that represent the output from running the job.</p>
+    /// <p>One or more artifacts that represent the output from running the job. </p>
     pub fn outputs(mut self, input: crate::types::Output) -> Self {
         let mut v = self.outputs.unwrap_or_default();
         v.push(input);
         self.outputs = ::std::option::Option::Some(v);
         self
     }
-    /// <p>One or more artifacts that represent the output from running the job.</p>
+    /// <p>One or more artifacts that represent the output from running the job. </p>
     pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Output>>) -> Self {
         self.outputs = input;
         self
     }
-    /// <p>One or more artifacts that represent the output from running the job.</p>
+    /// <p>One or more artifacts that represent the output from running the job. </p>
     pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Output>> {
         &self.outputs
     }

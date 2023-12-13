@@ -9,16 +9,11 @@ pub struct DescribeTrafficMirrorTargetsInput {
     pub dry_run: ::std::option::Option<bool>,
     /// <p>One or more filters. The possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>description</code>: The Traffic Mirror target description.</p></li>
-    /// <li>
-    /// <p><code>network-interface-id</code>: The ID of the Traffic Mirror session network interface.</p></li>
-    /// <li>
-    /// <p><code>network-load-balancer-arn</code>: The Amazon Resource Name (ARN) of the Network Load Balancer that is associated with the session.</p></li>
-    /// <li>
-    /// <p><code>owner-id</code>: The ID of the account that owns the Traffic Mirror session.</p></li>
-    /// <li>
-    /// <p><code>traffic-mirror-target-id</code>: The ID of the Traffic Mirror target.</p></li>
+    /// <li> <p> <code>description</code>: The Traffic Mirror target description.</p> </li>
+    /// <li> <p> <code>network-interface-id</code>: The ID of the Traffic Mirror session network interface.</p> </li>
+    /// <li> <p> <code>network-load-balancer-arn</code>: The Amazon Resource Name (ARN) of the Network Load Balancer that is associated with the session.</p> </li>
+    /// <li> <p> <code>owner-id</code>: The ID of the account that owns the Traffic Mirror session.</p> </li>
+    /// <li> <p> <code>traffic-mirror-target-id</code>: The ID of the Traffic Mirror target.</p> </li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
@@ -39,16 +34,11 @@ impl DescribeTrafficMirrorTargetsInput {
     }
     /// <p>One or more filters. The possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>description</code>: The Traffic Mirror target description.</p></li>
-    /// <li>
-    /// <p><code>network-interface-id</code>: The ID of the Traffic Mirror session network interface.</p></li>
-    /// <li>
-    /// <p><code>network-load-balancer-arn</code>: The Amazon Resource Name (ARN) of the Network Load Balancer that is associated with the session.</p></li>
-    /// <li>
-    /// <p><code>owner-id</code>: The ID of the account that owns the Traffic Mirror session.</p></li>
-    /// <li>
-    /// <p><code>traffic-mirror-target-id</code>: The ID of the Traffic Mirror target.</p></li>
+    /// <li> <p> <code>description</code>: The Traffic Mirror target description.</p> </li>
+    /// <li> <p> <code>network-interface-id</code>: The ID of the Traffic Mirror session network interface.</p> </li>
+    /// <li> <p> <code>network-load-balancer-arn</code>: The Amazon Resource Name (ARN) of the Network Load Balancer that is associated with the session.</p> </li>
+    /// <li> <p> <code>owner-id</code>: The ID of the account that owns the Traffic Mirror session.</p> </li>
+    /// <li> <p> <code>traffic-mirror-target-id</code>: The ID of the Traffic Mirror target.</p> </li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
@@ -122,16 +112,11 @@ impl DescribeTrafficMirrorTargetsInputBuilder {
     ///
     /// <p>One or more filters. The possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>description</code>: The Traffic Mirror target description.</p></li>
-    /// <li>
-    /// <p><code>network-interface-id</code>: The ID of the Traffic Mirror session network interface.</p></li>
-    /// <li>
-    /// <p><code>network-load-balancer-arn</code>: The Amazon Resource Name (ARN) of the Network Load Balancer that is associated with the session.</p></li>
-    /// <li>
-    /// <p><code>owner-id</code>: The ID of the account that owns the Traffic Mirror session.</p></li>
-    /// <li>
-    /// <p><code>traffic-mirror-target-id</code>: The ID of the Traffic Mirror target.</p></li>
+    /// <li> <p> <code>description</code>: The Traffic Mirror target description.</p> </li>
+    /// <li> <p> <code>network-interface-id</code>: The ID of the Traffic Mirror session network interface.</p> </li>
+    /// <li> <p> <code>network-load-balancer-arn</code>: The Amazon Resource Name (ARN) of the Network Load Balancer that is associated with the session.</p> </li>
+    /// <li> <p> <code>owner-id</code>: The ID of the account that owns the Traffic Mirror session.</p> </li>
+    /// <li> <p> <code>traffic-mirror-target-id</code>: The ID of the Traffic Mirror target.</p> </li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
@@ -141,16 +126,11 @@ impl DescribeTrafficMirrorTargetsInputBuilder {
     }
     /// <p>One or more filters. The possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>description</code>: The Traffic Mirror target description.</p></li>
-    /// <li>
-    /// <p><code>network-interface-id</code>: The ID of the Traffic Mirror session network interface.</p></li>
-    /// <li>
-    /// <p><code>network-load-balancer-arn</code>: The Amazon Resource Name (ARN) of the Network Load Balancer that is associated with the session.</p></li>
-    /// <li>
-    /// <p><code>owner-id</code>: The ID of the account that owns the Traffic Mirror session.</p></li>
-    /// <li>
-    /// <p><code>traffic-mirror-target-id</code>: The ID of the Traffic Mirror target.</p></li>
+    /// <li> <p> <code>description</code>: The Traffic Mirror target description.</p> </li>
+    /// <li> <p> <code>network-interface-id</code>: The ID of the Traffic Mirror session network interface.</p> </li>
+    /// <li> <p> <code>network-load-balancer-arn</code>: The Amazon Resource Name (ARN) of the Network Load Balancer that is associated with the session.</p> </li>
+    /// <li> <p> <code>owner-id</code>: The ID of the account that owns the Traffic Mirror session.</p> </li>
+    /// <li> <p> <code>traffic-mirror-target-id</code>: The ID of the Traffic Mirror target.</p> </li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
@@ -158,16 +138,11 @@ impl DescribeTrafficMirrorTargetsInputBuilder {
     }
     /// <p>One or more filters. The possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>description</code>: The Traffic Mirror target description.</p></li>
-    /// <li>
-    /// <p><code>network-interface-id</code>: The ID of the Traffic Mirror session network interface.</p></li>
-    /// <li>
-    /// <p><code>network-load-balancer-arn</code>: The Amazon Resource Name (ARN) of the Network Load Balancer that is associated with the session.</p></li>
-    /// <li>
-    /// <p><code>owner-id</code>: The ID of the account that owns the Traffic Mirror session.</p></li>
-    /// <li>
-    /// <p><code>traffic-mirror-target-id</code>: The ID of the Traffic Mirror target.</p></li>
+    /// <li> <p> <code>description</code>: The Traffic Mirror target description.</p> </li>
+    /// <li> <p> <code>network-interface-id</code>: The ID of the Traffic Mirror session network interface.</p> </li>
+    /// <li> <p> <code>network-load-balancer-arn</code>: The Amazon Resource Name (ARN) of the Network Load Balancer that is associated with the session.</p> </li>
+    /// <li> <p> <code>owner-id</code>: The ID of the account that owns the Traffic Mirror session.</p> </li>
+    /// <li> <p> <code>traffic-mirror-target-id</code>: The ID of the Traffic Mirror target.</p> </li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters

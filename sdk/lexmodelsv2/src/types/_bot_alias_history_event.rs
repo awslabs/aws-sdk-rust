@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BotAliasHistoryEvent {
-    /// <p>The version of the bot that was used in the event.</p>
+    /// <p>The version of the bot that was used in the event. </p>
     pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the event started.</p>
     pub start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -12,7 +12,7 @@ pub struct BotAliasHistoryEvent {
     pub end_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl BotAliasHistoryEvent {
-    /// <p>The version of the bot that was used in the event.</p>
+    /// <p>The version of the bot that was used in the event. </p>
     pub fn bot_version(&self) -> ::std::option::Option<&str> {
         self.bot_version.as_deref()
     }
@@ -41,17 +41,17 @@ pub struct BotAliasHistoryEventBuilder {
     pub(crate) end_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl BotAliasHistoryEventBuilder {
-    /// <p>The version of the bot that was used in the event.</p>
+    /// <p>The version of the bot that was used in the event. </p>
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The version of the bot that was used in the event.</p>
+    /// <p>The version of the bot that was used in the event. </p>
     pub fn set_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_version = input;
         self
     }
-    /// <p>The version of the bot that was used in the event.</p>
+    /// <p>The version of the bot that was used in the event. </p>
     pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.bot_version
     }

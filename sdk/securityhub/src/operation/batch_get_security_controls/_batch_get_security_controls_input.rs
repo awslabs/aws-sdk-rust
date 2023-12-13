@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetSecurityControlsInput {
-    /// <p>A list of security controls (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters). The security control ID or Amazon Resource Name (ARN) is the same across standards.</p>
+    /// <p> A list of security controls (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters). The security control ID or Amazon Resource Name (ARN) is the same across standards. </p>
     pub security_control_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchGetSecurityControlsInput {
-    /// <p>A list of security controls (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters). The security control ID or Amazon Resource Name (ARN) is the same across standards.</p>
+    /// <p> A list of security controls (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters). The security control ID or Amazon Resource Name (ARN) is the same across standards. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_control_ids.is_none()`.
     pub fn security_control_ids(&self) -> &[::std::string::String] {
@@ -32,19 +32,19 @@ impl BatchGetSecurityControlsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_security_control_ids`](Self::set_security_control_ids).
     ///
-    /// <p>A list of security controls (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters). The security control ID or Amazon Resource Name (ARN) is the same across standards.</p>
+    /// <p> A list of security controls (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters). The security control ID or Amazon Resource Name (ARN) is the same across standards. </p>
     pub fn security_control_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_control_ids.unwrap_or_default();
         v.push(input.into());
         self.security_control_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of security controls (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters). The security control ID or Amazon Resource Name (ARN) is the same across standards.</p>
+    /// <p> A list of security controls (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters). The security control ID or Amazon Resource Name (ARN) is the same across standards. </p>
     pub fn set_security_control_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_control_ids = input;
         self
     }
-    /// <p>A list of security controls (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters). The security control ID or Amazon Resource Name (ARN) is the same across standards.</p>
+    /// <p> A list of security controls (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters). The security control ID or Amazon Resource Name (ARN) is the same across standards. </p>
     pub fn get_security_control_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_control_ids
     }

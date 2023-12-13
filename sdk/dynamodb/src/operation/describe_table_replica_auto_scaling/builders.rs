@@ -22,7 +22,7 @@ impl DescribeTableReplicaAutoScalingInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeTableReplicaAutoScaling`.
 ///
-/// <p>Describes auto scaling settings across replicas of the global table at once.</p><important>
+/// <p>Describes auto scaling settings across replicas of the global table at once.</p> <important>
 /// <p>This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version 2019.11.21 (Current)</a> of global tables.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

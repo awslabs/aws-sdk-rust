@@ -22,44 +22,28 @@ pub struct PipelineExecutionStepMetadata {
     pub callback: ::std::option::Option<crate::types::CallbackStepMetadata>,
     /// <p>The Amazon Resource Name (ARN) of the Lambda function that was run by this step execution and a list of output parameters.</p>
     pub lambda: ::std::option::Option<crate::types::LambdaStepMetadata>,
-    /// <p>The configurations and outcomes of the check step execution. This includes:</p>
+    /// <p>The configurations and outcomes of the check step execution. This includes: </p>
     /// <ul>
-    /// <li>
-    /// <p>The type of the check conducted.</p></li>
-    /// <li>
-    /// <p>The Amazon S3 URIs of baseline constraints and statistics files to be used for the drift check.</p></li>
-    /// <li>
-    /// <p>The Amazon S3 URIs of newly calculated baseline constraints and statistics.</p></li>
-    /// <li>
-    /// <p>The model package group name provided.</p></li>
-    /// <li>
-    /// <p>The Amazon S3 URI of the violation report if violations detected.</p></li>
-    /// <li>
-    /// <p>The Amazon Resource Name (ARN) of check processing job initiated by the step execution.</p></li>
-    /// <li>
-    /// <p>The Boolean flags indicating if the drift check is skipped.</p></li>
-    /// <li>
-    /// <p>If step property <code>BaselineUsedForDriftCheck</code> is set the same as <code>CalculatedBaseline</code>.</p></li>
+    /// <li> <p>The type of the check conducted.</p> </li>
+    /// <li> <p>The Amazon S3 URIs of baseline constraints and statistics files to be used for the drift check.</p> </li>
+    /// <li> <p>The Amazon S3 URIs of newly calculated baseline constraints and statistics.</p> </li>
+    /// <li> <p>The model package group name provided.</p> </li>
+    /// <li> <p>The Amazon S3 URI of the violation report if violations detected.</p> </li>
+    /// <li> <p>The Amazon Resource Name (ARN) of check processing job initiated by the step execution.</p> </li>
+    /// <li> <p>The Boolean flags indicating if the drift check is skipped.</p> </li>
+    /// <li> <p>If step property <code>BaselineUsedForDriftCheck</code> is set the same as <code>CalculatedBaseline</code>.</p> </li>
     /// </ul>
     pub quality_check: ::std::option::Option<crate::types::QualityCheckStepMetadata>,
-    /// <p>Container for the metadata for a Clarify check step. The configurations and outcomes of the check step execution. This includes:</p>
+    /// <p>Container for the metadata for a Clarify check step. The configurations and outcomes of the check step execution. This includes: </p>
     /// <ul>
-    /// <li>
-    /// <p>The type of the check conducted,</p></li>
-    /// <li>
-    /// <p>The Amazon S3 URIs of baseline constraints and statistics files to be used for the drift check.</p></li>
-    /// <li>
-    /// <p>The Amazon S3 URIs of newly calculated baseline constraints and statistics.</p></li>
-    /// <li>
-    /// <p>The model package group name provided.</p></li>
-    /// <li>
-    /// <p>The Amazon S3 URI of the violation report if violations detected.</p></li>
-    /// <li>
-    /// <p>The Amazon Resource Name (ARN) of check processing job initiated by the step execution.</p></li>
-    /// <li>
-    /// <p>The boolean flags indicating if the drift check is skipped.</p></li>
-    /// <li>
-    /// <p>If step property <code>BaselineUsedForDriftCheck</code> is set the same as <code>CalculatedBaseline</code>.</p></li>
+    /// <li> <p>The type of the check conducted,</p> </li>
+    /// <li> <p>The Amazon S3 URIs of baseline constraints and statistics files to be used for the drift check.</p> </li>
+    /// <li> <p>The Amazon S3 URIs of newly calculated baseline constraints and statistics.</p> </li>
+    /// <li> <p>The model package group name provided.</p> </li>
+    /// <li> <p>The Amazon S3 URI of the violation report if violations detected.</p> </li>
+    /// <li> <p>The Amazon Resource Name (ARN) of check processing job initiated by the step execution.</p> </li>
+    /// <li> <p>The boolean flags indicating if the drift check is skipped.</p> </li>
+    /// <li> <p>If step property <code>BaselineUsedForDriftCheck</code> is set the same as <code>CalculatedBaseline</code>.</p> </li>
     /// </ul>
     pub clarify_check: ::std::option::Option<crate::types::ClarifyCheckStepMetadata>,
     /// <p>The configurations and outcomes of an Amazon EMR step execution.</p>
@@ -106,46 +90,30 @@ impl PipelineExecutionStepMetadata {
     pub fn lambda(&self) -> ::std::option::Option<&crate::types::LambdaStepMetadata> {
         self.lambda.as_ref()
     }
-    /// <p>The configurations and outcomes of the check step execution. This includes:</p>
+    /// <p>The configurations and outcomes of the check step execution. This includes: </p>
     /// <ul>
-    /// <li>
-    /// <p>The type of the check conducted.</p></li>
-    /// <li>
-    /// <p>The Amazon S3 URIs of baseline constraints and statistics files to be used for the drift check.</p></li>
-    /// <li>
-    /// <p>The Amazon S3 URIs of newly calculated baseline constraints and statistics.</p></li>
-    /// <li>
-    /// <p>The model package group name provided.</p></li>
-    /// <li>
-    /// <p>The Amazon S3 URI of the violation report if violations detected.</p></li>
-    /// <li>
-    /// <p>The Amazon Resource Name (ARN) of check processing job initiated by the step execution.</p></li>
-    /// <li>
-    /// <p>The Boolean flags indicating if the drift check is skipped.</p></li>
-    /// <li>
-    /// <p>If step property <code>BaselineUsedForDriftCheck</code> is set the same as <code>CalculatedBaseline</code>.</p></li>
+    /// <li> <p>The type of the check conducted.</p> </li>
+    /// <li> <p>The Amazon S3 URIs of baseline constraints and statistics files to be used for the drift check.</p> </li>
+    /// <li> <p>The Amazon S3 URIs of newly calculated baseline constraints and statistics.</p> </li>
+    /// <li> <p>The model package group name provided.</p> </li>
+    /// <li> <p>The Amazon S3 URI of the violation report if violations detected.</p> </li>
+    /// <li> <p>The Amazon Resource Name (ARN) of check processing job initiated by the step execution.</p> </li>
+    /// <li> <p>The Boolean flags indicating if the drift check is skipped.</p> </li>
+    /// <li> <p>If step property <code>BaselineUsedForDriftCheck</code> is set the same as <code>CalculatedBaseline</code>.</p> </li>
     /// </ul>
     pub fn quality_check(&self) -> ::std::option::Option<&crate::types::QualityCheckStepMetadata> {
         self.quality_check.as_ref()
     }
-    /// <p>Container for the metadata for a Clarify check step. The configurations and outcomes of the check step execution. This includes:</p>
+    /// <p>Container for the metadata for a Clarify check step. The configurations and outcomes of the check step execution. This includes: </p>
     /// <ul>
-    /// <li>
-    /// <p>The type of the check conducted,</p></li>
-    /// <li>
-    /// <p>The Amazon S3 URIs of baseline constraints and statistics files to be used for the drift check.</p></li>
-    /// <li>
-    /// <p>The Amazon S3 URIs of newly calculated baseline constraints and statistics.</p></li>
-    /// <li>
-    /// <p>The model package group name provided.</p></li>
-    /// <li>
-    /// <p>The Amazon S3 URI of the violation report if violations detected.</p></li>
-    /// <li>
-    /// <p>The Amazon Resource Name (ARN) of check processing job initiated by the step execution.</p></li>
-    /// <li>
-    /// <p>The boolean flags indicating if the drift check is skipped.</p></li>
-    /// <li>
-    /// <p>If step property <code>BaselineUsedForDriftCheck</code> is set the same as <code>CalculatedBaseline</code>.</p></li>
+    /// <li> <p>The type of the check conducted,</p> </li>
+    /// <li> <p>The Amazon S3 URIs of baseline constraints and statistics files to be used for the drift check.</p> </li>
+    /// <li> <p>The Amazon S3 URIs of newly calculated baseline constraints and statistics.</p> </li>
+    /// <li> <p>The model package group name provided.</p> </li>
+    /// <li> <p>The Amazon S3 URI of the violation report if violations detected.</p> </li>
+    /// <li> <p>The Amazon Resource Name (ARN) of check processing job initiated by the step execution.</p> </li>
+    /// <li> <p>The boolean flags indicating if the drift check is skipped.</p> </li>
+    /// <li> <p>If step property <code>BaselineUsedForDriftCheck</code> is set the same as <code>CalculatedBaseline</code>.</p> </li>
     /// </ul>
     pub fn clarify_check(&self) -> ::std::option::Option<&crate::types::ClarifyCheckStepMetadata> {
         self.clarify_check.as_ref()
@@ -316,138 +284,90 @@ impl PipelineExecutionStepMetadataBuilder {
     pub fn get_lambda(&self) -> &::std::option::Option<crate::types::LambdaStepMetadata> {
         &self.lambda
     }
-    /// <p>The configurations and outcomes of the check step execution. This includes:</p>
+    /// <p>The configurations and outcomes of the check step execution. This includes: </p>
     /// <ul>
-    /// <li>
-    /// <p>The type of the check conducted.</p></li>
-    /// <li>
-    /// <p>The Amazon S3 URIs of baseline constraints and statistics files to be used for the drift check.</p></li>
-    /// <li>
-    /// <p>The Amazon S3 URIs of newly calculated baseline constraints and statistics.</p></li>
-    /// <li>
-    /// <p>The model package group name provided.</p></li>
-    /// <li>
-    /// <p>The Amazon S3 URI of the violation report if violations detected.</p></li>
-    /// <li>
-    /// <p>The Amazon Resource Name (ARN) of check processing job initiated by the step execution.</p></li>
-    /// <li>
-    /// <p>The Boolean flags indicating if the drift check is skipped.</p></li>
-    /// <li>
-    /// <p>If step property <code>BaselineUsedForDriftCheck</code> is set the same as <code>CalculatedBaseline</code>.</p></li>
+    /// <li> <p>The type of the check conducted.</p> </li>
+    /// <li> <p>The Amazon S3 URIs of baseline constraints and statistics files to be used for the drift check.</p> </li>
+    /// <li> <p>The Amazon S3 URIs of newly calculated baseline constraints and statistics.</p> </li>
+    /// <li> <p>The model package group name provided.</p> </li>
+    /// <li> <p>The Amazon S3 URI of the violation report if violations detected.</p> </li>
+    /// <li> <p>The Amazon Resource Name (ARN) of check processing job initiated by the step execution.</p> </li>
+    /// <li> <p>The Boolean flags indicating if the drift check is skipped.</p> </li>
+    /// <li> <p>If step property <code>BaselineUsedForDriftCheck</code> is set the same as <code>CalculatedBaseline</code>.</p> </li>
     /// </ul>
     pub fn quality_check(mut self, input: crate::types::QualityCheckStepMetadata) -> Self {
         self.quality_check = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The configurations and outcomes of the check step execution. This includes:</p>
+    /// <p>The configurations and outcomes of the check step execution. This includes: </p>
     /// <ul>
-    /// <li>
-    /// <p>The type of the check conducted.</p></li>
-    /// <li>
-    /// <p>The Amazon S3 URIs of baseline constraints and statistics files to be used for the drift check.</p></li>
-    /// <li>
-    /// <p>The Amazon S3 URIs of newly calculated baseline constraints and statistics.</p></li>
-    /// <li>
-    /// <p>The model package group name provided.</p></li>
-    /// <li>
-    /// <p>The Amazon S3 URI of the violation report if violations detected.</p></li>
-    /// <li>
-    /// <p>The Amazon Resource Name (ARN) of check processing job initiated by the step execution.</p></li>
-    /// <li>
-    /// <p>The Boolean flags indicating if the drift check is skipped.</p></li>
-    /// <li>
-    /// <p>If step property <code>BaselineUsedForDriftCheck</code> is set the same as <code>CalculatedBaseline</code>.</p></li>
+    /// <li> <p>The type of the check conducted.</p> </li>
+    /// <li> <p>The Amazon S3 URIs of baseline constraints and statistics files to be used for the drift check.</p> </li>
+    /// <li> <p>The Amazon S3 URIs of newly calculated baseline constraints and statistics.</p> </li>
+    /// <li> <p>The model package group name provided.</p> </li>
+    /// <li> <p>The Amazon S3 URI of the violation report if violations detected.</p> </li>
+    /// <li> <p>The Amazon Resource Name (ARN) of check processing job initiated by the step execution.</p> </li>
+    /// <li> <p>The Boolean flags indicating if the drift check is skipped.</p> </li>
+    /// <li> <p>If step property <code>BaselineUsedForDriftCheck</code> is set the same as <code>CalculatedBaseline</code>.</p> </li>
     /// </ul>
     pub fn set_quality_check(mut self, input: ::std::option::Option<crate::types::QualityCheckStepMetadata>) -> Self {
         self.quality_check = input;
         self
     }
-    /// <p>The configurations and outcomes of the check step execution. This includes:</p>
+    /// <p>The configurations and outcomes of the check step execution. This includes: </p>
     /// <ul>
-    /// <li>
-    /// <p>The type of the check conducted.</p></li>
-    /// <li>
-    /// <p>The Amazon S3 URIs of baseline constraints and statistics files to be used for the drift check.</p></li>
-    /// <li>
-    /// <p>The Amazon S3 URIs of newly calculated baseline constraints and statistics.</p></li>
-    /// <li>
-    /// <p>The model package group name provided.</p></li>
-    /// <li>
-    /// <p>The Amazon S3 URI of the violation report if violations detected.</p></li>
-    /// <li>
-    /// <p>The Amazon Resource Name (ARN) of check processing job initiated by the step execution.</p></li>
-    /// <li>
-    /// <p>The Boolean flags indicating if the drift check is skipped.</p></li>
-    /// <li>
-    /// <p>If step property <code>BaselineUsedForDriftCheck</code> is set the same as <code>CalculatedBaseline</code>.</p></li>
+    /// <li> <p>The type of the check conducted.</p> </li>
+    /// <li> <p>The Amazon S3 URIs of baseline constraints and statistics files to be used for the drift check.</p> </li>
+    /// <li> <p>The Amazon S3 URIs of newly calculated baseline constraints and statistics.</p> </li>
+    /// <li> <p>The model package group name provided.</p> </li>
+    /// <li> <p>The Amazon S3 URI of the violation report if violations detected.</p> </li>
+    /// <li> <p>The Amazon Resource Name (ARN) of check processing job initiated by the step execution.</p> </li>
+    /// <li> <p>The Boolean flags indicating if the drift check is skipped.</p> </li>
+    /// <li> <p>If step property <code>BaselineUsedForDriftCheck</code> is set the same as <code>CalculatedBaseline</code>.</p> </li>
     /// </ul>
     pub fn get_quality_check(&self) -> &::std::option::Option<crate::types::QualityCheckStepMetadata> {
         &self.quality_check
     }
-    /// <p>Container for the metadata for a Clarify check step. The configurations and outcomes of the check step execution. This includes:</p>
+    /// <p>Container for the metadata for a Clarify check step. The configurations and outcomes of the check step execution. This includes: </p>
     /// <ul>
-    /// <li>
-    /// <p>The type of the check conducted,</p></li>
-    /// <li>
-    /// <p>The Amazon S3 URIs of baseline constraints and statistics files to be used for the drift check.</p></li>
-    /// <li>
-    /// <p>The Amazon S3 URIs of newly calculated baseline constraints and statistics.</p></li>
-    /// <li>
-    /// <p>The model package group name provided.</p></li>
-    /// <li>
-    /// <p>The Amazon S3 URI of the violation report if violations detected.</p></li>
-    /// <li>
-    /// <p>The Amazon Resource Name (ARN) of check processing job initiated by the step execution.</p></li>
-    /// <li>
-    /// <p>The boolean flags indicating if the drift check is skipped.</p></li>
-    /// <li>
-    /// <p>If step property <code>BaselineUsedForDriftCheck</code> is set the same as <code>CalculatedBaseline</code>.</p></li>
+    /// <li> <p>The type of the check conducted,</p> </li>
+    /// <li> <p>The Amazon S3 URIs of baseline constraints and statistics files to be used for the drift check.</p> </li>
+    /// <li> <p>The Amazon S3 URIs of newly calculated baseline constraints and statistics.</p> </li>
+    /// <li> <p>The model package group name provided.</p> </li>
+    /// <li> <p>The Amazon S3 URI of the violation report if violations detected.</p> </li>
+    /// <li> <p>The Amazon Resource Name (ARN) of check processing job initiated by the step execution.</p> </li>
+    /// <li> <p>The boolean flags indicating if the drift check is skipped.</p> </li>
+    /// <li> <p>If step property <code>BaselineUsedForDriftCheck</code> is set the same as <code>CalculatedBaseline</code>.</p> </li>
     /// </ul>
     pub fn clarify_check(mut self, input: crate::types::ClarifyCheckStepMetadata) -> Self {
         self.clarify_check = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Container for the metadata for a Clarify check step. The configurations and outcomes of the check step execution. This includes:</p>
+    /// <p>Container for the metadata for a Clarify check step. The configurations and outcomes of the check step execution. This includes: </p>
     /// <ul>
-    /// <li>
-    /// <p>The type of the check conducted,</p></li>
-    /// <li>
-    /// <p>The Amazon S3 URIs of baseline constraints and statistics files to be used for the drift check.</p></li>
-    /// <li>
-    /// <p>The Amazon S3 URIs of newly calculated baseline constraints and statistics.</p></li>
-    /// <li>
-    /// <p>The model package group name provided.</p></li>
-    /// <li>
-    /// <p>The Amazon S3 URI of the violation report if violations detected.</p></li>
-    /// <li>
-    /// <p>The Amazon Resource Name (ARN) of check processing job initiated by the step execution.</p></li>
-    /// <li>
-    /// <p>The boolean flags indicating if the drift check is skipped.</p></li>
-    /// <li>
-    /// <p>If step property <code>BaselineUsedForDriftCheck</code> is set the same as <code>CalculatedBaseline</code>.</p></li>
+    /// <li> <p>The type of the check conducted,</p> </li>
+    /// <li> <p>The Amazon S3 URIs of baseline constraints and statistics files to be used for the drift check.</p> </li>
+    /// <li> <p>The Amazon S3 URIs of newly calculated baseline constraints and statistics.</p> </li>
+    /// <li> <p>The model package group name provided.</p> </li>
+    /// <li> <p>The Amazon S3 URI of the violation report if violations detected.</p> </li>
+    /// <li> <p>The Amazon Resource Name (ARN) of check processing job initiated by the step execution.</p> </li>
+    /// <li> <p>The boolean flags indicating if the drift check is skipped.</p> </li>
+    /// <li> <p>If step property <code>BaselineUsedForDriftCheck</code> is set the same as <code>CalculatedBaseline</code>.</p> </li>
     /// </ul>
     pub fn set_clarify_check(mut self, input: ::std::option::Option<crate::types::ClarifyCheckStepMetadata>) -> Self {
         self.clarify_check = input;
         self
     }
-    /// <p>Container for the metadata for a Clarify check step. The configurations and outcomes of the check step execution. This includes:</p>
+    /// <p>Container for the metadata for a Clarify check step. The configurations and outcomes of the check step execution. This includes: </p>
     /// <ul>
-    /// <li>
-    /// <p>The type of the check conducted,</p></li>
-    /// <li>
-    /// <p>The Amazon S3 URIs of baseline constraints and statistics files to be used for the drift check.</p></li>
-    /// <li>
-    /// <p>The Amazon S3 URIs of newly calculated baseline constraints and statistics.</p></li>
-    /// <li>
-    /// <p>The model package group name provided.</p></li>
-    /// <li>
-    /// <p>The Amazon S3 URI of the violation report if violations detected.</p></li>
-    /// <li>
-    /// <p>The Amazon Resource Name (ARN) of check processing job initiated by the step execution.</p></li>
-    /// <li>
-    /// <p>The boolean flags indicating if the drift check is skipped.</p></li>
-    /// <li>
-    /// <p>If step property <code>BaselineUsedForDriftCheck</code> is set the same as <code>CalculatedBaseline</code>.</p></li>
+    /// <li> <p>The type of the check conducted,</p> </li>
+    /// <li> <p>The Amazon S3 URIs of baseline constraints and statistics files to be used for the drift check.</p> </li>
+    /// <li> <p>The Amazon S3 URIs of newly calculated baseline constraints and statistics.</p> </li>
+    /// <li> <p>The model package group name provided.</p> </li>
+    /// <li> <p>The Amazon S3 URI of the violation report if violations detected.</p> </li>
+    /// <li> <p>The Amazon Resource Name (ARN) of check processing job initiated by the step execution.</p> </li>
+    /// <li> <p>The boolean flags indicating if the drift check is skipped.</p> </li>
+    /// <li> <p>If step property <code>BaselineUsedForDriftCheck</code> is set the same as <code>CalculatedBaseline</code>.</p> </li>
     /// </ul>
     pub fn get_clarify_check(&self) -> &::std::option::Option<crate::types::ClarifyCheckStepMetadata> {
         &self.clarify_check

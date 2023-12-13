@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DeleteUserInput {
-    /// <p>The email address of the user.</p><note>
+    /// <p>The email address of the user.</p> <note>
     /// <p>Users' email addresses are case-sensitive.</p>
     /// </note>
     pub user_name: ::std::option::Option<::std::string::String>,
@@ -11,7 +11,7 @@ pub struct DeleteUserInput {
     pub authentication_type: ::std::option::Option<crate::types::AuthenticationType>,
 }
 impl DeleteUserInput {
-    /// <p>The email address of the user.</p><note>
+    /// <p>The email address of the user.</p> <note>
     /// <p>Users' email addresses are case-sensitive.</p>
     /// </note>
     pub fn user_name(&self) -> ::std::option::Option<&str> {
@@ -45,7 +45,7 @@ pub struct DeleteUserInputBuilder {
     pub(crate) authentication_type: ::std::option::Option<crate::types::AuthenticationType>,
 }
 impl DeleteUserInputBuilder {
-    /// <p>The email address of the user.</p><note>
+    /// <p>The email address of the user.</p> <note>
     /// <p>Users' email addresses are case-sensitive.</p>
     /// </note>
     /// This field is required.
@@ -53,14 +53,14 @@ impl DeleteUserInputBuilder {
         self.user_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The email address of the user.</p><note>
+    /// <p>The email address of the user.</p> <note>
     /// <p>Users' email addresses are case-sensitive.</p>
     /// </note>
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_name = input;
         self
     }
-    /// <p>The email address of the user.</p><note>
+    /// <p>The email address of the user.</p> <note>
     /// <p>Users' email addresses are case-sensitive.</p>
     /// </note>
     pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {

@@ -10,14 +10,10 @@ pub struct LegendOptions {
     pub title: ::std::option::Option<crate::types::LabelOptions>,
     /// <p>The positions for the legend. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AUTO</code></p></li>
-    /// <li>
-    /// <p><code>RIGHT</code></p></li>
-    /// <li>
-    /// <p><code>BOTTOM</code></p></li>
-    /// <li>
-    /// <p><code>LEFT</code></p></li>
+    /// <li> <p> <code>AUTO</code> </p> </li>
+    /// <li> <p> <code>RIGHT</code> </p> </li>
+    /// <li> <p> <code>BOTTOM</code> </p> </li>
+    /// <li> <p> <code>LEFT</code> </p> </li>
     /// </ul>
     pub position: ::std::option::Option<crate::types::LegendPosition>,
     /// <p>The width of the legend. If this value is omitted, a default width is used when rendering.</p>
@@ -36,14 +32,10 @@ impl LegendOptions {
     }
     /// <p>The positions for the legend. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AUTO</code></p></li>
-    /// <li>
-    /// <p><code>RIGHT</code></p></li>
-    /// <li>
-    /// <p><code>BOTTOM</code></p></li>
-    /// <li>
-    /// <p><code>LEFT</code></p></li>
+    /// <li> <p> <code>AUTO</code> </p> </li>
+    /// <li> <p> <code>RIGHT</code> </p> </li>
+    /// <li> <p> <code>BOTTOM</code> </p> </li>
+    /// <li> <p> <code>LEFT</code> </p> </li>
     /// </ul>
     pub fn position(&self) -> ::std::option::Option<&crate::types::LegendPosition> {
         self.position.as_ref()
@@ -105,14 +97,10 @@ impl LegendOptionsBuilder {
     }
     /// <p>The positions for the legend. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AUTO</code></p></li>
-    /// <li>
-    /// <p><code>RIGHT</code></p></li>
-    /// <li>
-    /// <p><code>BOTTOM</code></p></li>
-    /// <li>
-    /// <p><code>LEFT</code></p></li>
+    /// <li> <p> <code>AUTO</code> </p> </li>
+    /// <li> <p> <code>RIGHT</code> </p> </li>
+    /// <li> <p> <code>BOTTOM</code> </p> </li>
+    /// <li> <p> <code>LEFT</code> </p> </li>
     /// </ul>
     pub fn position(mut self, input: crate::types::LegendPosition) -> Self {
         self.position = ::std::option::Option::Some(input);
@@ -120,14 +108,10 @@ impl LegendOptionsBuilder {
     }
     /// <p>The positions for the legend. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AUTO</code></p></li>
-    /// <li>
-    /// <p><code>RIGHT</code></p></li>
-    /// <li>
-    /// <p><code>BOTTOM</code></p></li>
-    /// <li>
-    /// <p><code>LEFT</code></p></li>
+    /// <li> <p> <code>AUTO</code> </p> </li>
+    /// <li> <p> <code>RIGHT</code> </p> </li>
+    /// <li> <p> <code>BOTTOM</code> </p> </li>
+    /// <li> <p> <code>LEFT</code> </p> </li>
     /// </ul>
     pub fn set_position(mut self, input: ::std::option::Option<crate::types::LegendPosition>) -> Self {
         self.position = input;
@@ -135,14 +119,10 @@ impl LegendOptionsBuilder {
     }
     /// <p>The positions for the legend. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AUTO</code></p></li>
-    /// <li>
-    /// <p><code>RIGHT</code></p></li>
-    /// <li>
-    /// <p><code>BOTTOM</code></p></li>
-    /// <li>
-    /// <p><code>LEFT</code></p></li>
+    /// <li> <p> <code>AUTO</code> </p> </li>
+    /// <li> <p> <code>RIGHT</code> </p> </li>
+    /// <li> <p> <code>BOTTOM</code> </p> </li>
+    /// <li> <p> <code>LEFT</code> </p> </li>
     /// </ul>
     pub fn get_position(&self) -> &::std::option::Option<crate::types::LegendPosition> {
         &self.position

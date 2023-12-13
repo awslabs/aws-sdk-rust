@@ -5,18 +5,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AggregatedLogOddsMetric {
-    /// <p>The names of all the variables.</p>
+    /// <p> The names of all the variables. </p>
     pub variable_names: ::std::vec::Vec<::std::string::String>,
-    /// <p>The relative importance of the variables in the list to the other event variable.</p>
+    /// <p> The relative importance of the variables in the list to the other event variable. </p>
     pub aggregated_variables_importance: f32,
 }
 impl AggregatedLogOddsMetric {
-    /// <p>The names of all the variables.</p>
+    /// <p> The names of all the variables. </p>
     pub fn variable_names(&self) -> &[::std::string::String] {
         use std::ops::Deref;
         self.variable_names.deref()
     }
-    /// <p>The relative importance of the variables in the list to the other event variable.</p>
+    /// <p> The relative importance of the variables in the list to the other event variable. </p>
     pub fn aggregated_variables_importance(&self) -> f32 {
         self.aggregated_variables_importance
     }
@@ -40,34 +40,34 @@ impl AggregatedLogOddsMetricBuilder {
     ///
     /// To override the contents of this collection use [`set_variable_names`](Self::set_variable_names).
     ///
-    /// <p>The names of all the variables.</p>
+    /// <p> The names of all the variables. </p>
     pub fn variable_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.variable_names.unwrap_or_default();
         v.push(input.into());
         self.variable_names = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The names of all the variables.</p>
+    /// <p> The names of all the variables. </p>
     pub fn set_variable_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.variable_names = input;
         self
     }
-    /// <p>The names of all the variables.</p>
+    /// <p> The names of all the variables. </p>
     pub fn get_variable_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.variable_names
     }
-    /// <p>The relative importance of the variables in the list to the other event variable.</p>
+    /// <p> The relative importance of the variables in the list to the other event variable. </p>
     /// This field is required.
     pub fn aggregated_variables_importance(mut self, input: f32) -> Self {
         self.aggregated_variables_importance = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The relative importance of the variables in the list to the other event variable.</p>
+    /// <p> The relative importance of the variables in the list to the other event variable. </p>
     pub fn set_aggregated_variables_importance(mut self, input: ::std::option::Option<f32>) -> Self {
         self.aggregated_variables_importance = input;
         self
     }
-    /// <p>The relative importance of the variables in the list to the other event variable.</p>
+    /// <p> The relative importance of the variables in the list to the other event variable. </p>
     pub fn get_aggregated_variables_importance(&self) -> &::std::option::Option<f32> {
         &self.aggregated_variables_importance
     }

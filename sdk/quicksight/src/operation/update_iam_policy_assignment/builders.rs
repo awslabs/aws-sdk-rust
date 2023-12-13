@@ -22,7 +22,7 @@ impl UpdateIamPolicyAssignmentInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateIAMPolicyAssignment`.
 ///
-/// <p>Updates an existing IAM policy assignment. This operation updates only the optional parameter or parameters that are specified in the request. This overwrites all of the users included in <code>Identities</code>.</p>
+/// <p>Updates an existing IAM policy assignment. This operation updates only the optional parameter or parameters that are specified in the request. This overwrites all of the users included in <code>Identities</code>. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateIAMPolicyAssignmentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl UpdateIAMPolicyAssignmentFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the Amazon Web Services account that contains the IAM policy assignment.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the IAM policy assignment. </p>
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
-    /// <p>The ID of the Amazon Web Services account that contains the IAM policy assignment.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the IAM policy assignment. </p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
-    /// <p>The ID of the Amazon Web Services account that contains the IAM policy assignment.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the IAM policy assignment. </p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_aws_account_id()
     }
@@ -152,12 +152,9 @@ impl UpdateIAMPolicyAssignmentFluentBuilder {
     }
     /// <p>The status of the assignment. Possible values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p></li>
-    /// <li>
-    /// <p><code>DISABLED</code> - This assignment isn't used when creating the data source.</p></li>
-    /// <li>
-    /// <p><code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p></li>
+    /// <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li>
+    /// <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li>
     /// </ul>
     pub fn assignment_status(mut self, input: crate::types::AssignmentStatus) -> Self {
         self.inner = self.inner.assignment_status(input);
@@ -165,12 +162,9 @@ impl UpdateIAMPolicyAssignmentFluentBuilder {
     }
     /// <p>The status of the assignment. Possible values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p></li>
-    /// <li>
-    /// <p><code>DISABLED</code> - This assignment isn't used when creating the data source.</p></li>
-    /// <li>
-    /// <p><code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p></li>
+    /// <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li>
+    /// <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li>
     /// </ul>
     pub fn set_assignment_status(mut self, input: ::std::option::Option<crate::types::AssignmentStatus>) -> Self {
         self.inner = self.inner.set_assignment_status(input);
@@ -178,12 +172,9 @@ impl UpdateIAMPolicyAssignmentFluentBuilder {
     }
     /// <p>The status of the assignment. Possible values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p></li>
-    /// <li>
-    /// <p><code>DISABLED</code> - This assignment isn't used when creating the data source.</p></li>
-    /// <li>
-    /// <p><code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p></li>
+    /// <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li>
+    /// <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li>
     /// </ul>
     pub fn get_assignment_status(&self) -> &::std::option::Option<crate::types::AssignmentStatus> {
         self.inner.get_assignment_status()

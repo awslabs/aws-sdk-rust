@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateProjectOutput {
-    /// <p>The Amazon Resource Name (ARN) of the new project. You can use the ARN to configure IAM access to the project.</p>
+    /// <p>The Amazon Resource Name (ARN) of the new project. You can use the ARN to configure IAM access to the project. </p>
     pub project_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateProjectOutput {
-    /// <p>The Amazon Resource Name (ARN) of the new project. You can use the ARN to configure IAM access to the project.</p>
+    /// <p>The Amazon Resource Name (ARN) of the new project. You can use the ARN to configure IAM access to the project. </p>
     pub fn project_arn(&self) -> ::std::option::Option<&str> {
         self.project_arn.as_deref()
     }
@@ -33,17 +33,17 @@ pub struct CreateProjectOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateProjectOutputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the new project. You can use the ARN to configure IAM access to the project.</p>
+    /// <p>The Amazon Resource Name (ARN) of the new project. You can use the ARN to configure IAM access to the project. </p>
     pub fn project_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the new project. You can use the ARN to configure IAM access to the project.</p>
+    /// <p>The Amazon Resource Name (ARN) of the new project. You can use the ARN to configure IAM access to the project. </p>
     pub fn set_project_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.project_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the new project. You can use the ARN to configure IAM access to the project.</p>
+    /// <p>The Amazon Resource Name (ARN) of the new project. You can use the ARN to configure IAM access to the project. </p>
     pub fn get_project_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.project_arn
     }

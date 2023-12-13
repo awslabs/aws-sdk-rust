@@ -12,7 +12,7 @@ pub struct BatchResourceRequirement {
     /// type="GPU"
     /// </dt>
     /// <dd>
-    /// <p>The number of physical GPUs to reserve for the container. Make sure that the number of GPUs reserved for all containers in a job doesn't exceed the number of available GPUs on the compute resource that the job is launched on.</p><note>
+    /// <p>The number of physical GPUs to reserve for the container. Make sure that the number of GPUs reserved for all containers in a job doesn't exceed the number of available GPUs on the compute resource that the job is launched on.</p> <note>
     /// <p>GPUs aren't available for jobs that are running on Fargate resources.</p>
     /// </note>
     /// </dd>
@@ -20,7 +20,7 @@ pub struct BatchResourceRequirement {
     /// type="MEMORY"
     /// </dt>
     /// <dd>
-    /// <p>The memory hard limit (in MiB) present to the container. This parameter is supported for jobs that are running on EC2 resources. If your container attempts to exceed the memory specified, the container is terminated. This parameter maps to <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container"> Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must specify at least 4 MiB of memory for a job. This is required but can be specified in several places for multi-node parallel (MNP) jobs. It must be specified for each node at least once. This parameter maps to <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container"> Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p><note>
+    /// <p>The memory hard limit (in MiB) present to the container. This parameter is supported for jobs that are running on EC2 resources. If your container attempts to exceed the memory specified, the container is terminated. This parameter maps to <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container"> Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must specify at least 4 MiB of memory for a job. This is required but can be specified in several places for multi-node parallel (MNP) jobs. It must be specified for each node at least once. This parameter maps to <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container"> Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
     /// <p>If you're trying to maximize your resource utilization by providing your jobs as much memory as possible for a particular instance type, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory management</a> in the <i>Batch User Guide</i>.</p>
     /// </note>
     /// <p>For jobs that are running on Fargate resources, then <code>value</code> is the hard limit (in MiB), and must match one of the supported values and the <code>VCPU</code> values must be one of the values supported for that memory value.</p>
@@ -29,85 +29,85 @@ pub struct BatchResourceRequirement {
     /// value = 512
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 0.25</p>
+    /// <p> <code>VCPU</code> = 0.25</p>
     /// </dd>
     /// <dt>
     /// value = 1024
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 0.25 or 0.5</p>
+    /// <p> <code>VCPU</code> = 0.25 or 0.5</p>
     /// </dd>
     /// <dt>
     /// value = 2048
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 0.25, 0.5, or 1</p>
+    /// <p> <code>VCPU</code> = 0.25, 0.5, or 1</p>
     /// </dd>
     /// <dt>
     /// value = 3072
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 0.5, or 1</p>
+    /// <p> <code>VCPU</code> = 0.5, or 1</p>
     /// </dd>
     /// <dt>
     /// value = 4096
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 0.5, 1, or 2</p>
+    /// <p> <code>VCPU</code> = 0.5, 1, or 2</p>
     /// </dd>
     /// <dt>
     /// value = 5120, 6144, or 7168
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 1 or 2</p>
+    /// <p> <code>VCPU</code> = 1 or 2</p>
     /// </dd>
     /// <dt>
     /// value = 8192
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 1, 2, 4, or 8</p>
+    /// <p> <code>VCPU</code> = 1, 2, 4, or 8</p>
     /// </dd>
     /// <dt>
     /// value = 9216, 10240, 11264, 12288, 13312, 14336, or 15360
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 2 or 4</p>
+    /// <p> <code>VCPU</code> = 2 or 4</p>
     /// </dd>
     /// <dt>
     /// value = 16384
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 2, 4, or 8</p>
+    /// <p> <code>VCPU</code> = 2, 4, or 8</p>
     /// </dd>
     /// <dt>
     /// value = 17408, 18432, 19456, 21504, 22528, 23552, 25600, 26624, 27648, 29696, or 30720
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 4</p>
+    /// <p> <code>VCPU</code> = 4</p>
     /// </dd>
     /// <dt>
     /// value = 20480, 24576, or 28672
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 4 or 8</p>
+    /// <p> <code>VCPU</code> = 4 or 8</p>
     /// </dd>
     /// <dt>
     /// value = 36864, 45056, 53248, or 61440
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 8</p>
+    /// <p> <code>VCPU</code> = 8</p>
     /// </dd>
     /// <dt>
     /// value = 32768, 40960, 49152, or 57344
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 8 or 16</p>
+    /// <p> <code>VCPU</code> = 8 or 16</p>
     /// </dd>
     /// <dt>
     /// value = 65536, 73728, 81920, 90112, 98304, 106496, 114688, or 122880
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 16</p>
+    /// <p> <code>VCPU</code> = 16</p>
     /// </dd>
     /// </dl>
     /// </dd>
@@ -123,43 +123,43 @@ pub struct BatchResourceRequirement {
     /// value = 0.25
     /// </dt>
     /// <dd>
-    /// <p><code>MEMORY</code> = 512, 1024, or 2048</p>
+    /// <p> <code>MEMORY</code> = 512, 1024, or 2048</p>
     /// </dd>
     /// <dt>
     /// value = 0.5
     /// </dt>
     /// <dd>
-    /// <p><code>MEMORY</code> = 1024, 2048, 3072, or 4096</p>
+    /// <p> <code>MEMORY</code> = 1024, 2048, 3072, or 4096</p>
     /// </dd>
     /// <dt>
     /// value = 1
     /// </dt>
     /// <dd>
-    /// <p><code>MEMORY</code> = 2048, 3072, 4096, 5120, 6144, 7168, or 8192</p>
+    /// <p> <code>MEMORY</code> = 2048, 3072, 4096, 5120, 6144, 7168, or 8192</p>
     /// </dd>
     /// <dt>
     /// value = 2
     /// </dt>
     /// <dd>
-    /// <p><code>MEMORY</code> = 4096, 5120, 6144, 7168, 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360, or 16384</p>
+    /// <p> <code>MEMORY</code> = 4096, 5120, 6144, 7168, 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360, or 16384</p>
     /// </dd>
     /// <dt>
     /// value = 4
     /// </dt>
     /// <dd>
-    /// <p><code>MEMORY</code> = 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360, 16384, 17408, 18432, 19456, 20480, 21504, 22528, 23552, 24576, 25600, 26624, 27648, 28672, 29696, or 30720</p>
+    /// <p> <code>MEMORY</code> = 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360, 16384, 17408, 18432, 19456, 20480, 21504, 22528, 23552, 24576, 25600, 26624, 27648, 28672, 29696, or 30720</p>
     /// </dd>
     /// <dt>
     /// value = 8
     /// </dt>
     /// <dd>
-    /// <p><code>MEMORY</code> = 16384, 20480, 24576, 28672, 32768, 36864, 40960, 45056, 49152, 53248, 57344, or 61440</p>
+    /// <p> <code>MEMORY</code> = 16384, 20480, 24576, 28672, 32768, 36864, 40960, 45056, 49152, 53248, 57344, or 61440 </p>
     /// </dd>
     /// <dt>
     /// value = 16
     /// </dt>
     /// <dd>
-    /// <p><code>MEMORY</code> = 32768, 40960, 49152, 57344, 65536, 73728, 81920, 90112, 98304, 106496, 114688, or 122880</p>
+    /// <p> <code>MEMORY</code> = 32768, 40960, 49152, 57344, 65536, 73728, 81920, 90112, 98304, 106496, 114688, or 122880 </p>
     /// </dd>
     /// </dl>
     /// </dd>
@@ -177,7 +177,7 @@ impl BatchResourceRequirement {
     /// type="GPU"
     /// </dt>
     /// <dd>
-    /// <p>The number of physical GPUs to reserve for the container. Make sure that the number of GPUs reserved for all containers in a job doesn't exceed the number of available GPUs on the compute resource that the job is launched on.</p><note>
+    /// <p>The number of physical GPUs to reserve for the container. Make sure that the number of GPUs reserved for all containers in a job doesn't exceed the number of available GPUs on the compute resource that the job is launched on.</p> <note>
     /// <p>GPUs aren't available for jobs that are running on Fargate resources.</p>
     /// </note>
     /// </dd>
@@ -185,7 +185,7 @@ impl BatchResourceRequirement {
     /// type="MEMORY"
     /// </dt>
     /// <dd>
-    /// <p>The memory hard limit (in MiB) present to the container. This parameter is supported for jobs that are running on EC2 resources. If your container attempts to exceed the memory specified, the container is terminated. This parameter maps to <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container"> Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must specify at least 4 MiB of memory for a job. This is required but can be specified in several places for multi-node parallel (MNP) jobs. It must be specified for each node at least once. This parameter maps to <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container"> Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p><note>
+    /// <p>The memory hard limit (in MiB) present to the container. This parameter is supported for jobs that are running on EC2 resources. If your container attempts to exceed the memory specified, the container is terminated. This parameter maps to <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container"> Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must specify at least 4 MiB of memory for a job. This is required but can be specified in several places for multi-node parallel (MNP) jobs. It must be specified for each node at least once. This parameter maps to <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container"> Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
     /// <p>If you're trying to maximize your resource utilization by providing your jobs as much memory as possible for a particular instance type, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory management</a> in the <i>Batch User Guide</i>.</p>
     /// </note>
     /// <p>For jobs that are running on Fargate resources, then <code>value</code> is the hard limit (in MiB), and must match one of the supported values and the <code>VCPU</code> values must be one of the values supported for that memory value.</p>
@@ -194,85 +194,85 @@ impl BatchResourceRequirement {
     /// value = 512
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 0.25</p>
+    /// <p> <code>VCPU</code> = 0.25</p>
     /// </dd>
     /// <dt>
     /// value = 1024
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 0.25 or 0.5</p>
+    /// <p> <code>VCPU</code> = 0.25 or 0.5</p>
     /// </dd>
     /// <dt>
     /// value = 2048
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 0.25, 0.5, or 1</p>
+    /// <p> <code>VCPU</code> = 0.25, 0.5, or 1</p>
     /// </dd>
     /// <dt>
     /// value = 3072
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 0.5, or 1</p>
+    /// <p> <code>VCPU</code> = 0.5, or 1</p>
     /// </dd>
     /// <dt>
     /// value = 4096
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 0.5, 1, or 2</p>
+    /// <p> <code>VCPU</code> = 0.5, 1, or 2</p>
     /// </dd>
     /// <dt>
     /// value = 5120, 6144, or 7168
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 1 or 2</p>
+    /// <p> <code>VCPU</code> = 1 or 2</p>
     /// </dd>
     /// <dt>
     /// value = 8192
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 1, 2, 4, or 8</p>
+    /// <p> <code>VCPU</code> = 1, 2, 4, or 8</p>
     /// </dd>
     /// <dt>
     /// value = 9216, 10240, 11264, 12288, 13312, 14336, or 15360
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 2 or 4</p>
+    /// <p> <code>VCPU</code> = 2 or 4</p>
     /// </dd>
     /// <dt>
     /// value = 16384
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 2, 4, or 8</p>
+    /// <p> <code>VCPU</code> = 2, 4, or 8</p>
     /// </dd>
     /// <dt>
     /// value = 17408, 18432, 19456, 21504, 22528, 23552, 25600, 26624, 27648, 29696, or 30720
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 4</p>
+    /// <p> <code>VCPU</code> = 4</p>
     /// </dd>
     /// <dt>
     /// value = 20480, 24576, or 28672
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 4 or 8</p>
+    /// <p> <code>VCPU</code> = 4 or 8</p>
     /// </dd>
     /// <dt>
     /// value = 36864, 45056, 53248, or 61440
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 8</p>
+    /// <p> <code>VCPU</code> = 8</p>
     /// </dd>
     /// <dt>
     /// value = 32768, 40960, 49152, or 57344
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 8 or 16</p>
+    /// <p> <code>VCPU</code> = 8 or 16</p>
     /// </dd>
     /// <dt>
     /// value = 65536, 73728, 81920, 90112, 98304, 106496, 114688, or 122880
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 16</p>
+    /// <p> <code>VCPU</code> = 16</p>
     /// </dd>
     /// </dl>
     /// </dd>
@@ -288,43 +288,43 @@ impl BatchResourceRequirement {
     /// value = 0.25
     /// </dt>
     /// <dd>
-    /// <p><code>MEMORY</code> = 512, 1024, or 2048</p>
+    /// <p> <code>MEMORY</code> = 512, 1024, or 2048</p>
     /// </dd>
     /// <dt>
     /// value = 0.5
     /// </dt>
     /// <dd>
-    /// <p><code>MEMORY</code> = 1024, 2048, 3072, or 4096</p>
+    /// <p> <code>MEMORY</code> = 1024, 2048, 3072, or 4096</p>
     /// </dd>
     /// <dt>
     /// value = 1
     /// </dt>
     /// <dd>
-    /// <p><code>MEMORY</code> = 2048, 3072, 4096, 5120, 6144, 7168, or 8192</p>
+    /// <p> <code>MEMORY</code> = 2048, 3072, 4096, 5120, 6144, 7168, or 8192</p>
     /// </dd>
     /// <dt>
     /// value = 2
     /// </dt>
     /// <dd>
-    /// <p><code>MEMORY</code> = 4096, 5120, 6144, 7168, 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360, or 16384</p>
+    /// <p> <code>MEMORY</code> = 4096, 5120, 6144, 7168, 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360, or 16384</p>
     /// </dd>
     /// <dt>
     /// value = 4
     /// </dt>
     /// <dd>
-    /// <p><code>MEMORY</code> = 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360, 16384, 17408, 18432, 19456, 20480, 21504, 22528, 23552, 24576, 25600, 26624, 27648, 28672, 29696, or 30720</p>
+    /// <p> <code>MEMORY</code> = 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360, 16384, 17408, 18432, 19456, 20480, 21504, 22528, 23552, 24576, 25600, 26624, 27648, 28672, 29696, or 30720</p>
     /// </dd>
     /// <dt>
     /// value = 8
     /// </dt>
     /// <dd>
-    /// <p><code>MEMORY</code> = 16384, 20480, 24576, 28672, 32768, 36864, 40960, 45056, 49152, 53248, 57344, or 61440</p>
+    /// <p> <code>MEMORY</code> = 16384, 20480, 24576, 28672, 32768, 36864, 40960, 45056, 49152, 53248, 57344, or 61440 </p>
     /// </dd>
     /// <dt>
     /// value = 16
     /// </dt>
     /// <dd>
-    /// <p><code>MEMORY</code> = 32768, 40960, 49152, 57344, 65536, 73728, 81920, 90112, 98304, 106496, 114688, or 122880</p>
+    /// <p> <code>MEMORY</code> = 32768, 40960, 49152, 57344, 65536, 73728, 81920, 90112, 98304, 106496, 114688, or 122880 </p>
     /// </dd>
     /// </dl>
     /// </dd>
@@ -370,7 +370,7 @@ impl BatchResourceRequirementBuilder {
     /// type="GPU"
     /// </dt>
     /// <dd>
-    /// <p>The number of physical GPUs to reserve for the container. Make sure that the number of GPUs reserved for all containers in a job doesn't exceed the number of available GPUs on the compute resource that the job is launched on.</p><note>
+    /// <p>The number of physical GPUs to reserve for the container. Make sure that the number of GPUs reserved for all containers in a job doesn't exceed the number of available GPUs on the compute resource that the job is launched on.</p> <note>
     /// <p>GPUs aren't available for jobs that are running on Fargate resources.</p>
     /// </note>
     /// </dd>
@@ -378,7 +378,7 @@ impl BatchResourceRequirementBuilder {
     /// type="MEMORY"
     /// </dt>
     /// <dd>
-    /// <p>The memory hard limit (in MiB) present to the container. This parameter is supported for jobs that are running on EC2 resources. If your container attempts to exceed the memory specified, the container is terminated. This parameter maps to <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container"> Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must specify at least 4 MiB of memory for a job. This is required but can be specified in several places for multi-node parallel (MNP) jobs. It must be specified for each node at least once. This parameter maps to <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container"> Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p><note>
+    /// <p>The memory hard limit (in MiB) present to the container. This parameter is supported for jobs that are running on EC2 resources. If your container attempts to exceed the memory specified, the container is terminated. This parameter maps to <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container"> Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must specify at least 4 MiB of memory for a job. This is required but can be specified in several places for multi-node parallel (MNP) jobs. It must be specified for each node at least once. This parameter maps to <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container"> Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
     /// <p>If you're trying to maximize your resource utilization by providing your jobs as much memory as possible for a particular instance type, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory management</a> in the <i>Batch User Guide</i>.</p>
     /// </note>
     /// <p>For jobs that are running on Fargate resources, then <code>value</code> is the hard limit (in MiB), and must match one of the supported values and the <code>VCPU</code> values must be one of the values supported for that memory value.</p>
@@ -387,85 +387,85 @@ impl BatchResourceRequirementBuilder {
     /// value = 512
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 0.25</p>
+    /// <p> <code>VCPU</code> = 0.25</p>
     /// </dd>
     /// <dt>
     /// value = 1024
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 0.25 or 0.5</p>
+    /// <p> <code>VCPU</code> = 0.25 or 0.5</p>
     /// </dd>
     /// <dt>
     /// value = 2048
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 0.25, 0.5, or 1</p>
+    /// <p> <code>VCPU</code> = 0.25, 0.5, or 1</p>
     /// </dd>
     /// <dt>
     /// value = 3072
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 0.5, or 1</p>
+    /// <p> <code>VCPU</code> = 0.5, or 1</p>
     /// </dd>
     /// <dt>
     /// value = 4096
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 0.5, 1, or 2</p>
+    /// <p> <code>VCPU</code> = 0.5, 1, or 2</p>
     /// </dd>
     /// <dt>
     /// value = 5120, 6144, or 7168
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 1 or 2</p>
+    /// <p> <code>VCPU</code> = 1 or 2</p>
     /// </dd>
     /// <dt>
     /// value = 8192
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 1, 2, 4, or 8</p>
+    /// <p> <code>VCPU</code> = 1, 2, 4, or 8</p>
     /// </dd>
     /// <dt>
     /// value = 9216, 10240, 11264, 12288, 13312, 14336, or 15360
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 2 or 4</p>
+    /// <p> <code>VCPU</code> = 2 or 4</p>
     /// </dd>
     /// <dt>
     /// value = 16384
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 2, 4, or 8</p>
+    /// <p> <code>VCPU</code> = 2, 4, or 8</p>
     /// </dd>
     /// <dt>
     /// value = 17408, 18432, 19456, 21504, 22528, 23552, 25600, 26624, 27648, 29696, or 30720
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 4</p>
+    /// <p> <code>VCPU</code> = 4</p>
     /// </dd>
     /// <dt>
     /// value = 20480, 24576, or 28672
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 4 or 8</p>
+    /// <p> <code>VCPU</code> = 4 or 8</p>
     /// </dd>
     /// <dt>
     /// value = 36864, 45056, 53248, or 61440
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 8</p>
+    /// <p> <code>VCPU</code> = 8</p>
     /// </dd>
     /// <dt>
     /// value = 32768, 40960, 49152, or 57344
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 8 or 16</p>
+    /// <p> <code>VCPU</code> = 8 or 16</p>
     /// </dd>
     /// <dt>
     /// value = 65536, 73728, 81920, 90112, 98304, 106496, 114688, or 122880
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 16</p>
+    /// <p> <code>VCPU</code> = 16</p>
     /// </dd>
     /// </dl>
     /// </dd>
@@ -481,43 +481,43 @@ impl BatchResourceRequirementBuilder {
     /// value = 0.25
     /// </dt>
     /// <dd>
-    /// <p><code>MEMORY</code> = 512, 1024, or 2048</p>
+    /// <p> <code>MEMORY</code> = 512, 1024, or 2048</p>
     /// </dd>
     /// <dt>
     /// value = 0.5
     /// </dt>
     /// <dd>
-    /// <p><code>MEMORY</code> = 1024, 2048, 3072, or 4096</p>
+    /// <p> <code>MEMORY</code> = 1024, 2048, 3072, or 4096</p>
     /// </dd>
     /// <dt>
     /// value = 1
     /// </dt>
     /// <dd>
-    /// <p><code>MEMORY</code> = 2048, 3072, 4096, 5120, 6144, 7168, or 8192</p>
+    /// <p> <code>MEMORY</code> = 2048, 3072, 4096, 5120, 6144, 7168, or 8192</p>
     /// </dd>
     /// <dt>
     /// value = 2
     /// </dt>
     /// <dd>
-    /// <p><code>MEMORY</code> = 4096, 5120, 6144, 7168, 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360, or 16384</p>
+    /// <p> <code>MEMORY</code> = 4096, 5120, 6144, 7168, 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360, or 16384</p>
     /// </dd>
     /// <dt>
     /// value = 4
     /// </dt>
     /// <dd>
-    /// <p><code>MEMORY</code> = 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360, 16384, 17408, 18432, 19456, 20480, 21504, 22528, 23552, 24576, 25600, 26624, 27648, 28672, 29696, or 30720</p>
+    /// <p> <code>MEMORY</code> = 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360, 16384, 17408, 18432, 19456, 20480, 21504, 22528, 23552, 24576, 25600, 26624, 27648, 28672, 29696, or 30720</p>
     /// </dd>
     /// <dt>
     /// value = 8
     /// </dt>
     /// <dd>
-    /// <p><code>MEMORY</code> = 16384, 20480, 24576, 28672, 32768, 36864, 40960, 45056, 49152, 53248, 57344, or 61440</p>
+    /// <p> <code>MEMORY</code> = 16384, 20480, 24576, 28672, 32768, 36864, 40960, 45056, 49152, 53248, 57344, or 61440 </p>
     /// </dd>
     /// <dt>
     /// value = 16
     /// </dt>
     /// <dd>
-    /// <p><code>MEMORY</code> = 32768, 40960, 49152, 57344, 65536, 73728, 81920, 90112, 98304, 106496, 114688, or 122880</p>
+    /// <p> <code>MEMORY</code> = 32768, 40960, 49152, 57344, 65536, 73728, 81920, 90112, 98304, 106496, 114688, or 122880 </p>
     /// </dd>
     /// </dl>
     /// </dd>
@@ -533,7 +533,7 @@ impl BatchResourceRequirementBuilder {
     /// type="GPU"
     /// </dt>
     /// <dd>
-    /// <p>The number of physical GPUs to reserve for the container. Make sure that the number of GPUs reserved for all containers in a job doesn't exceed the number of available GPUs on the compute resource that the job is launched on.</p><note>
+    /// <p>The number of physical GPUs to reserve for the container. Make sure that the number of GPUs reserved for all containers in a job doesn't exceed the number of available GPUs on the compute resource that the job is launched on.</p> <note>
     /// <p>GPUs aren't available for jobs that are running on Fargate resources.</p>
     /// </note>
     /// </dd>
@@ -541,7 +541,7 @@ impl BatchResourceRequirementBuilder {
     /// type="MEMORY"
     /// </dt>
     /// <dd>
-    /// <p>The memory hard limit (in MiB) present to the container. This parameter is supported for jobs that are running on EC2 resources. If your container attempts to exceed the memory specified, the container is terminated. This parameter maps to <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container"> Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must specify at least 4 MiB of memory for a job. This is required but can be specified in several places for multi-node parallel (MNP) jobs. It must be specified for each node at least once. This parameter maps to <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container"> Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p><note>
+    /// <p>The memory hard limit (in MiB) present to the container. This parameter is supported for jobs that are running on EC2 resources. If your container attempts to exceed the memory specified, the container is terminated. This parameter maps to <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container"> Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must specify at least 4 MiB of memory for a job. This is required but can be specified in several places for multi-node parallel (MNP) jobs. It must be specified for each node at least once. This parameter maps to <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container"> Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
     /// <p>If you're trying to maximize your resource utilization by providing your jobs as much memory as possible for a particular instance type, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory management</a> in the <i>Batch User Guide</i>.</p>
     /// </note>
     /// <p>For jobs that are running on Fargate resources, then <code>value</code> is the hard limit (in MiB), and must match one of the supported values and the <code>VCPU</code> values must be one of the values supported for that memory value.</p>
@@ -550,85 +550,85 @@ impl BatchResourceRequirementBuilder {
     /// value = 512
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 0.25</p>
+    /// <p> <code>VCPU</code> = 0.25</p>
     /// </dd>
     /// <dt>
     /// value = 1024
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 0.25 or 0.5</p>
+    /// <p> <code>VCPU</code> = 0.25 or 0.5</p>
     /// </dd>
     /// <dt>
     /// value = 2048
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 0.25, 0.5, or 1</p>
+    /// <p> <code>VCPU</code> = 0.25, 0.5, or 1</p>
     /// </dd>
     /// <dt>
     /// value = 3072
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 0.5, or 1</p>
+    /// <p> <code>VCPU</code> = 0.5, or 1</p>
     /// </dd>
     /// <dt>
     /// value = 4096
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 0.5, 1, or 2</p>
+    /// <p> <code>VCPU</code> = 0.5, 1, or 2</p>
     /// </dd>
     /// <dt>
     /// value = 5120, 6144, or 7168
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 1 or 2</p>
+    /// <p> <code>VCPU</code> = 1 or 2</p>
     /// </dd>
     /// <dt>
     /// value = 8192
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 1, 2, 4, or 8</p>
+    /// <p> <code>VCPU</code> = 1, 2, 4, or 8</p>
     /// </dd>
     /// <dt>
     /// value = 9216, 10240, 11264, 12288, 13312, 14336, or 15360
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 2 or 4</p>
+    /// <p> <code>VCPU</code> = 2 or 4</p>
     /// </dd>
     /// <dt>
     /// value = 16384
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 2, 4, or 8</p>
+    /// <p> <code>VCPU</code> = 2, 4, or 8</p>
     /// </dd>
     /// <dt>
     /// value = 17408, 18432, 19456, 21504, 22528, 23552, 25600, 26624, 27648, 29696, or 30720
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 4</p>
+    /// <p> <code>VCPU</code> = 4</p>
     /// </dd>
     /// <dt>
     /// value = 20480, 24576, or 28672
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 4 or 8</p>
+    /// <p> <code>VCPU</code> = 4 or 8</p>
     /// </dd>
     /// <dt>
     /// value = 36864, 45056, 53248, or 61440
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 8</p>
+    /// <p> <code>VCPU</code> = 8</p>
     /// </dd>
     /// <dt>
     /// value = 32768, 40960, 49152, or 57344
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 8 or 16</p>
+    /// <p> <code>VCPU</code> = 8 or 16</p>
     /// </dd>
     /// <dt>
     /// value = 65536, 73728, 81920, 90112, 98304, 106496, 114688, or 122880
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 16</p>
+    /// <p> <code>VCPU</code> = 16</p>
     /// </dd>
     /// </dl>
     /// </dd>
@@ -644,43 +644,43 @@ impl BatchResourceRequirementBuilder {
     /// value = 0.25
     /// </dt>
     /// <dd>
-    /// <p><code>MEMORY</code> = 512, 1024, or 2048</p>
+    /// <p> <code>MEMORY</code> = 512, 1024, or 2048</p>
     /// </dd>
     /// <dt>
     /// value = 0.5
     /// </dt>
     /// <dd>
-    /// <p><code>MEMORY</code> = 1024, 2048, 3072, or 4096</p>
+    /// <p> <code>MEMORY</code> = 1024, 2048, 3072, or 4096</p>
     /// </dd>
     /// <dt>
     /// value = 1
     /// </dt>
     /// <dd>
-    /// <p><code>MEMORY</code> = 2048, 3072, 4096, 5120, 6144, 7168, or 8192</p>
+    /// <p> <code>MEMORY</code> = 2048, 3072, 4096, 5120, 6144, 7168, or 8192</p>
     /// </dd>
     /// <dt>
     /// value = 2
     /// </dt>
     /// <dd>
-    /// <p><code>MEMORY</code> = 4096, 5120, 6144, 7168, 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360, or 16384</p>
+    /// <p> <code>MEMORY</code> = 4096, 5120, 6144, 7168, 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360, or 16384</p>
     /// </dd>
     /// <dt>
     /// value = 4
     /// </dt>
     /// <dd>
-    /// <p><code>MEMORY</code> = 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360, 16384, 17408, 18432, 19456, 20480, 21504, 22528, 23552, 24576, 25600, 26624, 27648, 28672, 29696, or 30720</p>
+    /// <p> <code>MEMORY</code> = 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360, 16384, 17408, 18432, 19456, 20480, 21504, 22528, 23552, 24576, 25600, 26624, 27648, 28672, 29696, or 30720</p>
     /// </dd>
     /// <dt>
     /// value = 8
     /// </dt>
     /// <dd>
-    /// <p><code>MEMORY</code> = 16384, 20480, 24576, 28672, 32768, 36864, 40960, 45056, 49152, 53248, 57344, or 61440</p>
+    /// <p> <code>MEMORY</code> = 16384, 20480, 24576, 28672, 32768, 36864, 40960, 45056, 49152, 53248, 57344, or 61440 </p>
     /// </dd>
     /// <dt>
     /// value = 16
     /// </dt>
     /// <dd>
-    /// <p><code>MEMORY</code> = 32768, 40960, 49152, 57344, 65536, 73728, 81920, 90112, 98304, 106496, 114688, or 122880</p>
+    /// <p> <code>MEMORY</code> = 32768, 40960, 49152, 57344, 65536, 73728, 81920, 90112, 98304, 106496, 114688, or 122880 </p>
     /// </dd>
     /// </dl>
     /// </dd>
@@ -695,7 +695,7 @@ impl BatchResourceRequirementBuilder {
     /// type="GPU"
     /// </dt>
     /// <dd>
-    /// <p>The number of physical GPUs to reserve for the container. Make sure that the number of GPUs reserved for all containers in a job doesn't exceed the number of available GPUs on the compute resource that the job is launched on.</p><note>
+    /// <p>The number of physical GPUs to reserve for the container. Make sure that the number of GPUs reserved for all containers in a job doesn't exceed the number of available GPUs on the compute resource that the job is launched on.</p> <note>
     /// <p>GPUs aren't available for jobs that are running on Fargate resources.</p>
     /// </note>
     /// </dd>
@@ -703,7 +703,7 @@ impl BatchResourceRequirementBuilder {
     /// type="MEMORY"
     /// </dt>
     /// <dd>
-    /// <p>The memory hard limit (in MiB) present to the container. This parameter is supported for jobs that are running on EC2 resources. If your container attempts to exceed the memory specified, the container is terminated. This parameter maps to <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container"> Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must specify at least 4 MiB of memory for a job. This is required but can be specified in several places for multi-node parallel (MNP) jobs. It must be specified for each node at least once. This parameter maps to <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container"> Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p><note>
+    /// <p>The memory hard limit (in MiB) present to the container. This parameter is supported for jobs that are running on EC2 resources. If your container attempts to exceed the memory specified, the container is terminated. This parameter maps to <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container"> Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must specify at least 4 MiB of memory for a job. This is required but can be specified in several places for multi-node parallel (MNP) jobs. It must be specified for each node at least once. This parameter maps to <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container"> Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
     /// <p>If you're trying to maximize your resource utilization by providing your jobs as much memory as possible for a particular instance type, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory management</a> in the <i>Batch User Guide</i>.</p>
     /// </note>
     /// <p>For jobs that are running on Fargate resources, then <code>value</code> is the hard limit (in MiB), and must match one of the supported values and the <code>VCPU</code> values must be one of the values supported for that memory value.</p>
@@ -712,85 +712,85 @@ impl BatchResourceRequirementBuilder {
     /// value = 512
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 0.25</p>
+    /// <p> <code>VCPU</code> = 0.25</p>
     /// </dd>
     /// <dt>
     /// value = 1024
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 0.25 or 0.5</p>
+    /// <p> <code>VCPU</code> = 0.25 or 0.5</p>
     /// </dd>
     /// <dt>
     /// value = 2048
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 0.25, 0.5, or 1</p>
+    /// <p> <code>VCPU</code> = 0.25, 0.5, or 1</p>
     /// </dd>
     /// <dt>
     /// value = 3072
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 0.5, or 1</p>
+    /// <p> <code>VCPU</code> = 0.5, or 1</p>
     /// </dd>
     /// <dt>
     /// value = 4096
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 0.5, 1, or 2</p>
+    /// <p> <code>VCPU</code> = 0.5, 1, or 2</p>
     /// </dd>
     /// <dt>
     /// value = 5120, 6144, or 7168
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 1 or 2</p>
+    /// <p> <code>VCPU</code> = 1 or 2</p>
     /// </dd>
     /// <dt>
     /// value = 8192
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 1, 2, 4, or 8</p>
+    /// <p> <code>VCPU</code> = 1, 2, 4, or 8</p>
     /// </dd>
     /// <dt>
     /// value = 9216, 10240, 11264, 12288, 13312, 14336, or 15360
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 2 or 4</p>
+    /// <p> <code>VCPU</code> = 2 or 4</p>
     /// </dd>
     /// <dt>
     /// value = 16384
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 2, 4, or 8</p>
+    /// <p> <code>VCPU</code> = 2, 4, or 8</p>
     /// </dd>
     /// <dt>
     /// value = 17408, 18432, 19456, 21504, 22528, 23552, 25600, 26624, 27648, 29696, or 30720
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 4</p>
+    /// <p> <code>VCPU</code> = 4</p>
     /// </dd>
     /// <dt>
     /// value = 20480, 24576, or 28672
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 4 or 8</p>
+    /// <p> <code>VCPU</code> = 4 or 8</p>
     /// </dd>
     /// <dt>
     /// value = 36864, 45056, 53248, or 61440
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 8</p>
+    /// <p> <code>VCPU</code> = 8</p>
     /// </dd>
     /// <dt>
     /// value = 32768, 40960, 49152, or 57344
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 8 or 16</p>
+    /// <p> <code>VCPU</code> = 8 or 16</p>
     /// </dd>
     /// <dt>
     /// value = 65536, 73728, 81920, 90112, 98304, 106496, 114688, or 122880
     /// </dt>
     /// <dd>
-    /// <p><code>VCPU</code> = 16</p>
+    /// <p> <code>VCPU</code> = 16</p>
     /// </dd>
     /// </dl>
     /// </dd>
@@ -806,43 +806,43 @@ impl BatchResourceRequirementBuilder {
     /// value = 0.25
     /// </dt>
     /// <dd>
-    /// <p><code>MEMORY</code> = 512, 1024, or 2048</p>
+    /// <p> <code>MEMORY</code> = 512, 1024, or 2048</p>
     /// </dd>
     /// <dt>
     /// value = 0.5
     /// </dt>
     /// <dd>
-    /// <p><code>MEMORY</code> = 1024, 2048, 3072, or 4096</p>
+    /// <p> <code>MEMORY</code> = 1024, 2048, 3072, or 4096</p>
     /// </dd>
     /// <dt>
     /// value = 1
     /// </dt>
     /// <dd>
-    /// <p><code>MEMORY</code> = 2048, 3072, 4096, 5120, 6144, 7168, or 8192</p>
+    /// <p> <code>MEMORY</code> = 2048, 3072, 4096, 5120, 6144, 7168, or 8192</p>
     /// </dd>
     /// <dt>
     /// value = 2
     /// </dt>
     /// <dd>
-    /// <p><code>MEMORY</code> = 4096, 5120, 6144, 7168, 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360, or 16384</p>
+    /// <p> <code>MEMORY</code> = 4096, 5120, 6144, 7168, 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360, or 16384</p>
     /// </dd>
     /// <dt>
     /// value = 4
     /// </dt>
     /// <dd>
-    /// <p><code>MEMORY</code> = 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360, 16384, 17408, 18432, 19456, 20480, 21504, 22528, 23552, 24576, 25600, 26624, 27648, 28672, 29696, or 30720</p>
+    /// <p> <code>MEMORY</code> = 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360, 16384, 17408, 18432, 19456, 20480, 21504, 22528, 23552, 24576, 25600, 26624, 27648, 28672, 29696, or 30720</p>
     /// </dd>
     /// <dt>
     /// value = 8
     /// </dt>
     /// <dd>
-    /// <p><code>MEMORY</code> = 16384, 20480, 24576, 28672, 32768, 36864, 40960, 45056, 49152, 53248, 57344, or 61440</p>
+    /// <p> <code>MEMORY</code> = 16384, 20480, 24576, 28672, 32768, 36864, 40960, 45056, 49152, 53248, 57344, or 61440 </p>
     /// </dd>
     /// <dt>
     /// value = 16
     /// </dt>
     /// <dd>
-    /// <p><code>MEMORY</code> = 32768, 40960, 49152, 57344, 65536, 73728, 81920, 90112, 98304, 106496, 114688, or 122880</p>
+    /// <p> <code>MEMORY</code> = 32768, 40960, 49152, 57344, 65536, 73728, 81920, 90112, 98304, 106496, 114688, or 122880 </p>
     /// </dd>
     /// </dl>
     /// </dd>

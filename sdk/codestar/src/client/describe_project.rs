@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`id(Option<String>)`](crate::operation::describe_project::DescribeProjectOutput::id): <p>The ID of the project.</p>
     ///   - [`arn(Option<String>)`](crate::operation::describe_project::DescribeProjectOutput::arn): <p>The Amazon Resource Name (ARN) for the project.</p>
     ///   - [`description(Option<String>)`](crate::operation::describe_project::DescribeProjectOutput::description): <p>The description of the project, if any.</p>
-    ///   - [`client_request_token(Option<String>)`](crate::operation::describe_project::DescribeProjectOutput::client_request_token): <p>A user- or system-generated token that identifies the entity that requested project creation.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::operation::describe_project::DescribeProjectOutput::client_request_token): <p>A user- or system-generated token that identifies the entity that requested project creation. </p>
     ///   - [`created_time_stamp(Option<DateTime>)`](crate::operation::describe_project::DescribeProjectOutput::created_time_stamp): <p>The date and time the project was created, in timestamp format.</p>
     ///   - [`stack_id(Option<String>)`](crate::operation::describe_project::DescribeProjectOutput::stack_id): <p>The ID of the primary stack in AWS CloudFormation used to generate resources for the project.</p>
     ///   - [`project_template_id(Option<String>)`](crate::operation::describe_project::DescribeProjectOutput::project_template_id): <p>The ID for the AWS CodeStar project template used to create the project.</p>

@@ -117,8 +117,7 @@ impl DescribeDBParametersFluentBuilder {
     /// <p>The name of a specific DB parameter group to return details for.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>If supplied, must match the name of an existing DBParameterGroup.</p></li>
+    /// <li> <p>If supplied, must match the name of an existing DBParameterGroup.</p> </li>
     /// </ul>
     pub fn db_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_parameter_group_name(input.into());
@@ -127,8 +126,7 @@ impl DescribeDBParametersFluentBuilder {
     /// <p>The name of a specific DB parameter group to return details for.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>If supplied, must match the name of an existing DBParameterGroup.</p></li>
+    /// <li> <p>If supplied, must match the name of an existing DBParameterGroup.</p> </li>
     /// </ul>
     pub fn set_db_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_parameter_group_name(input);
@@ -137,29 +135,28 @@ impl DescribeDBParametersFluentBuilder {
     /// <p>The name of a specific DB parameter group to return details for.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>If supplied, must match the name of an existing DBParameterGroup.</p></li>
+    /// <li> <p>If supplied, must match the name of an existing DBParameterGroup.</p> </li>
     /// </ul>
     pub fn get_db_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_parameter_group_name()
     }
     /// <p>The parameter types to return.</p>
     /// <p>Default: All parameter types returned</p>
-    /// <p>Valid Values: <code>user | system | engine-default</code></p>
+    /// <p>Valid Values: <code>user | system | engine-default</code> </p>
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source(input.into());
         self
     }
     /// <p>The parameter types to return.</p>
     /// <p>Default: All parameter types returned</p>
-    /// <p>Valid Values: <code>user | system | engine-default</code></p>
+    /// <p>Valid Values: <code>user | system | engine-default</code> </p>
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source(input);
         self
     }
     /// <p>The parameter types to return.</p>
     /// <p>Default: All parameter types returned</p>
-    /// <p>Valid Values: <code>user | system | engine-default</code></p>
+    /// <p>Valid Values: <code>user | system | engine-default</code> </p>
     pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source()
     }

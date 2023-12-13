@@ -10,10 +10,8 @@ pub struct ExcludePeriodConfiguration {
     pub granularity: crate::types::TimeGranularity,
     /// <p>The status of the exclude period. Choose from the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ENABLED</code></p></li>
-    /// <li>
-    /// <p><code>DISABLED</code></p></li>
+    /// <li> <p> <code>ENABLED</code> </p> </li>
+    /// <li> <p> <code>DISABLED</code> </p> </li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::WidgetStatus>,
 }
@@ -28,10 +26,8 @@ impl ExcludePeriodConfiguration {
     }
     /// <p>The status of the exclude period. Choose from the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ENABLED</code></p></li>
-    /// <li>
-    /// <p><code>DISABLED</code></p></li>
+    /// <li> <p> <code>ENABLED</code> </p> </li>
+    /// <li> <p> <code>DISABLED</code> </p> </li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::WidgetStatus> {
         self.status.as_ref()
@@ -85,10 +81,8 @@ impl ExcludePeriodConfigurationBuilder {
     }
     /// <p>The status of the exclude period. Choose from the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ENABLED</code></p></li>
-    /// <li>
-    /// <p><code>DISABLED</code></p></li>
+    /// <li> <p> <code>ENABLED</code> </p> </li>
+    /// <li> <p> <code>DISABLED</code> </p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::WidgetStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -96,10 +90,8 @@ impl ExcludePeriodConfigurationBuilder {
     }
     /// <p>The status of the exclude period. Choose from the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ENABLED</code></p></li>
-    /// <li>
-    /// <p><code>DISABLED</code></p></li>
+    /// <li> <p> <code>ENABLED</code> </p> </li>
+    /// <li> <p> <code>DISABLED</code> </p> </li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::WidgetStatus>) -> Self {
         self.status = input;
@@ -107,10 +99,8 @@ impl ExcludePeriodConfigurationBuilder {
     }
     /// <p>The status of the exclude period. Choose from the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ENABLED</code></p></li>
-    /// <li>
-    /// <p><code>DISABLED</code></p></li>
+    /// <li> <p> <code>ENABLED</code> </p> </li>
+    /// <li> <p> <code>DISABLED</code> </p> </li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::WidgetStatus> {
         &self.status

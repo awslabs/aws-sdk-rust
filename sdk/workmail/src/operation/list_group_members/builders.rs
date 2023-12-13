@@ -131,12 +131,9 @@ impl ListGroupMembersFluentBuilder {
     /// <p>The identifier for the group to which the members (users or groups) are associated.</p>
     /// <p>The identifier can accept <i>GroupId</i>, <i>Groupname</i>, or <i>email</i>. The following identity formats are available:</p>
     /// <ul>
-    /// <li>
-    /// <p>Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p></li>
-    /// <li>
-    /// <p>Email address: group@domain.tld</p></li>
-    /// <li>
-    /// <p>Group name: group</p></li>
+    /// <li> <p>Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p> </li>
+    /// <li> <p>Email address: group@domain.tld</p> </li>
+    /// <li> <p>Group name: group</p> </li>
     /// </ul>
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group_id(input.into());
@@ -145,12 +142,9 @@ impl ListGroupMembersFluentBuilder {
     /// <p>The identifier for the group to which the members (users or groups) are associated.</p>
     /// <p>The identifier can accept <i>GroupId</i>, <i>Groupname</i>, or <i>email</i>. The following identity formats are available:</p>
     /// <ul>
-    /// <li>
-    /// <p>Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p></li>
-    /// <li>
-    /// <p>Email address: group@domain.tld</p></li>
-    /// <li>
-    /// <p>Group name: group</p></li>
+    /// <li> <p>Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p> </li>
+    /// <li> <p>Email address: group@domain.tld</p> </li>
+    /// <li> <p>Group name: group</p> </li>
     /// </ul>
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_group_id(input);
@@ -159,27 +153,24 @@ impl ListGroupMembersFluentBuilder {
     /// <p>The identifier for the group to which the members (users or groups) are associated.</p>
     /// <p>The identifier can accept <i>GroupId</i>, <i>Groupname</i>, or <i>email</i>. The following identity formats are available:</p>
     /// <ul>
-    /// <li>
-    /// <p>Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p></li>
-    /// <li>
-    /// <p>Email address: group@domain.tld</p></li>
-    /// <li>
-    /// <p>Group name: group</p></li>
+    /// <li> <p>Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p> </li>
+    /// <li> <p>Email address: group@domain.tld</p> </li>
+    /// <li> <p>Group name: group</p> </li>
     /// </ul>
     pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_group_id()
     }
-    /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
+    /// <p> The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
+    /// <p> The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
+    /// <p> The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

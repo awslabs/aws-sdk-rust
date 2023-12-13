@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFeedbackInput {
-    /// <p>The ID of the insight for which the feedback was provided.</p>
+    /// <p> The ID of the insight for which the feedback was provided. </p>
     pub insight_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeFeedbackInput {
-    /// <p>The ID of the insight for which the feedback was provided.</p>
+    /// <p> The ID of the insight for which the feedback was provided. </p>
     pub fn insight_id(&self) -> ::std::option::Option<&str> {
         self.insight_id.as_deref()
     }
@@ -26,17 +26,17 @@ pub struct DescribeFeedbackInputBuilder {
     pub(crate) insight_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeFeedbackInputBuilder {
-    /// <p>The ID of the insight for which the feedback was provided.</p>
+    /// <p> The ID of the insight for which the feedback was provided. </p>
     pub fn insight_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.insight_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the insight for which the feedback was provided.</p>
+    /// <p> The ID of the insight for which the feedback was provided. </p>
     pub fn set_insight_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.insight_id = input;
         self
     }
-    /// <p>The ID of the insight for which the feedback was provided.</p>
+    /// <p> The ID of the insight for which the feedback was provided. </p>
     pub fn get_insight_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.insight_id
     }

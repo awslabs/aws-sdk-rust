@@ -24,7 +24,7 @@ pub struct JobSummary {
     pub container: ::std::option::Option<crate::types::ContainerSummary>,
     /// <p>The array properties of the job, if it's an array job.</p>
     pub array_properties: ::std::option::Option<crate::types::ArrayPropertiesSummary>,
-    /// <p>The node properties for a single node in a job summary list.</p><note>
+    /// <p>The node properties for a single node in a job summary list.</p> <note>
     /// <p>This isn't applicable to jobs that are running on Fargate resources.</p>
     /// </note>
     pub node_properties: ::std::option::Option<crate::types::NodePropertiesSummary>,
@@ -72,7 +72,7 @@ impl JobSummary {
     pub fn array_properties(&self) -> ::std::option::Option<&crate::types::ArrayPropertiesSummary> {
         self.array_properties.as_ref()
     }
-    /// <p>The node properties for a single node in a job summary list.</p><note>
+    /// <p>The node properties for a single node in a job summary list.</p> <note>
     /// <p>This isn't applicable to jobs that are running on Fargate resources.</p>
     /// </note>
     pub fn node_properties(&self) -> ::std::option::Option<&crate::types::NodePropertiesSummary> {
@@ -250,21 +250,21 @@ impl JobSummaryBuilder {
     pub fn get_array_properties(&self) -> &::std::option::Option<crate::types::ArrayPropertiesSummary> {
         &self.array_properties
     }
-    /// <p>The node properties for a single node in a job summary list.</p><note>
+    /// <p>The node properties for a single node in a job summary list.</p> <note>
     /// <p>This isn't applicable to jobs that are running on Fargate resources.</p>
     /// </note>
     pub fn node_properties(mut self, input: crate::types::NodePropertiesSummary) -> Self {
         self.node_properties = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The node properties for a single node in a job summary list.</p><note>
+    /// <p>The node properties for a single node in a job summary list.</p> <note>
     /// <p>This isn't applicable to jobs that are running on Fargate resources.</p>
     /// </note>
     pub fn set_node_properties(mut self, input: ::std::option::Option<crate::types::NodePropertiesSummary>) -> Self {
         self.node_properties = input;
         self
     }
-    /// <p>The node properties for a single node in a job summary list.</p><note>
+    /// <p>The node properties for a single node in a job summary list.</p> <note>
     /// <p>This isn't applicable to jobs that are running on Fargate resources.</p>
     /// </note>
     pub fn get_node_properties(&self) -> &::std::option::Option<crate::types::NodePropertiesSummary> {

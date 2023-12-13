@@ -24,13 +24,11 @@ impl PublishStateMachineVersionInputBuilder {
 ///
 /// <p>Creates a <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version</a> from the current revision of a state machine. Use versions to create immutable snapshots of your state machine. You can start executions from versions either directly or with an alias. To create an alias, use <code>CreateStateMachineAlias</code>.</p>
 /// <p>You can publish up to 1000 versions for each state machine. You must manually delete unused versions using the <code>DeleteStateMachineVersion</code> API action.</p>
-/// <p><code>PublishStateMachineVersion</code> is an idempotent API. It doesn't create a duplicate state machine version if it already exists for the current revision. Step Functions bases <code>PublishStateMachineVersion</code>'s idempotency check on the <code>stateMachineArn</code>, <code>name</code>, and <code>revisionId</code> parameters. Requests with the same parameters return a successful idempotent response. If you don't specify a <code>revisionId</code>, Step Functions checks for a previously published version of the state machine's current revision.</p>
-/// <p><b>Related operations:</b></p>
+/// <p> <code>PublishStateMachineVersion</code> is an idempotent API. It doesn't create a duplicate state machine version if it already exists for the current revision. Step Functions bases <code>PublishStateMachineVersion</code>'s idempotency check on the <code>stateMachineArn</code>, <code>name</code>, and <code>revisionId</code> parameters. Requests with the same parameters return a successful idempotent response. If you don't specify a <code>revisionId</code>, Step Functions checks for a previously published version of the state machine's current revision.</p>
+/// <p> <b>Related operations:</b> </p>
 /// <ul>
-/// <li>
-/// <p><code>DeleteStateMachineVersion</code></p></li>
-/// <li>
-/// <p><code>ListStateMachineVersions</code></p></li>
+/// <li> <p> <code>DeleteStateMachineVersion</code> </p> </li>
+/// <li> <p> <code>ListStateMachineVersions</code> </p> </li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PublishStateMachineVersionFluentBuilder {
@@ -132,7 +130,7 @@ impl PublishStateMachineVersionFluentBuilder {
         self.inner.get_state_machine_arn()
     }
     /// <p>Only publish the state machine version if the current state machine's revision ID matches the specified ID.</p>
-    /// <p>Use this option to avoid publishing a version if the state machine changed since you last updated it. If the specified revision ID doesn't match the state machine's current revision ID, the API returns <code>ConflictException</code>.</p><note>
+    /// <p>Use this option to avoid publishing a version if the state machine changed since you last updated it. If the specified revision ID doesn't match the state machine's current revision ID, the API returns <code>ConflictException</code>.</p> <note>
     /// <p>To specify an initial revision ID for a state machine with no revision ID assigned, specify the string <code>INITIAL</code> for the <code>revisionId</code> parameter. For example, you can specify a <code>revisionID</code> of <code>INITIAL</code> when you create a state machine using the <code>CreateStateMachine</code> API action.</p>
     /// </note>
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -140,7 +138,7 @@ impl PublishStateMachineVersionFluentBuilder {
         self
     }
     /// <p>Only publish the state machine version if the current state machine's revision ID matches the specified ID.</p>
-    /// <p>Use this option to avoid publishing a version if the state machine changed since you last updated it. If the specified revision ID doesn't match the state machine's current revision ID, the API returns <code>ConflictException</code>.</p><note>
+    /// <p>Use this option to avoid publishing a version if the state machine changed since you last updated it. If the specified revision ID doesn't match the state machine's current revision ID, the API returns <code>ConflictException</code>.</p> <note>
     /// <p>To specify an initial revision ID for a state machine with no revision ID assigned, specify the string <code>INITIAL</code> for the <code>revisionId</code> parameter. For example, you can specify a <code>revisionID</code> of <code>INITIAL</code> when you create a state machine using the <code>CreateStateMachine</code> API action.</p>
     /// </note>
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -148,7 +146,7 @@ impl PublishStateMachineVersionFluentBuilder {
         self
     }
     /// <p>Only publish the state machine version if the current state machine's revision ID matches the specified ID.</p>
-    /// <p>Use this option to avoid publishing a version if the state machine changed since you last updated it. If the specified revision ID doesn't match the state machine's current revision ID, the API returns <code>ConflictException</code>.</p><note>
+    /// <p>Use this option to avoid publishing a version if the state machine changed since you last updated it. If the specified revision ID doesn't match the state machine's current revision ID, the API returns <code>ConflictException</code>.</p> <note>
     /// <p>To specify an initial revision ID for a state machine with no revision ID assigned, specify the string <code>INITIAL</code> for the <code>revisionId</code> parameter. For example, you can specify a <code>revisionID</code> of <code>INITIAL</code> when you create a state machine using the <code>CreateStateMachine</code> API action.</p>
     /// </note>
     pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {

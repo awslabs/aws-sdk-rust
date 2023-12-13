@@ -10,7 +10,7 @@ pub struct CreateThingInput {
     /// <p>The name of the thing type associated with the new thing.</p>
     pub thing_type_name: ::std::option::Option<::std::string::String>,
     /// <p>The attribute payload, which consists of up to three name/value pairs in a JSON document. For example:</p>
-    /// <p><code>{\"attributes\":{\"string1\":\"string2\"}}</code></p>
+    /// <p> <code>{\"attributes\":{\"string1\":\"string2\"}}</code> </p>
     pub attribute_payload: ::std::option::Option<crate::types::AttributePayload>,
     /// <p>The name of the billing group the thing will be added to.</p>
     pub billing_group_name: ::std::option::Option<::std::string::String>,
@@ -26,7 +26,7 @@ impl CreateThingInput {
         self.thing_type_name.as_deref()
     }
     /// <p>The attribute payload, which consists of up to three name/value pairs in a JSON document. For example:</p>
-    /// <p><code>{\"attributes\":{\"string1\":\"string2\"}}</code></p>
+    /// <p> <code>{\"attributes\":{\"string1\":\"string2\"}}</code> </p>
     pub fn attribute_payload(&self) -> ::std::option::Option<&crate::types::AttributePayload> {
         self.attribute_payload.as_ref()
     }
@@ -85,19 +85,19 @@ impl CreateThingInputBuilder {
         &self.thing_type_name
     }
     /// <p>The attribute payload, which consists of up to three name/value pairs in a JSON document. For example:</p>
-    /// <p><code>{\"attributes\":{\"string1\":\"string2\"}}</code></p>
+    /// <p> <code>{\"attributes\":{\"string1\":\"string2\"}}</code> </p>
     pub fn attribute_payload(mut self, input: crate::types::AttributePayload) -> Self {
         self.attribute_payload = ::std::option::Option::Some(input);
         self
     }
     /// <p>The attribute payload, which consists of up to three name/value pairs in a JSON document. For example:</p>
-    /// <p><code>{\"attributes\":{\"string1\":\"string2\"}}</code></p>
+    /// <p> <code>{\"attributes\":{\"string1\":\"string2\"}}</code> </p>
     pub fn set_attribute_payload(mut self, input: ::std::option::Option<crate::types::AttributePayload>) -> Self {
         self.attribute_payload = input;
         self
     }
     /// <p>The attribute payload, which consists of up to three name/value pairs in a JSON document. For example:</p>
-    /// <p><code>{\"attributes\":{\"string1\":\"string2\"}}</code></p>
+    /// <p> <code>{\"attributes\":{\"string1\":\"string2\"}}</code> </p>
     pub fn get_attribute_payload(&self) -> &::std::option::Option<crate::types::AttributePayload> {
         &self.attribute_payload
     }

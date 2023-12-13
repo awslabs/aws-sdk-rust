@@ -22,7 +22,7 @@ impl CreateResourceShareInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateResourceShare`.
 ///
-/// <p>Creates a resource share. You can provide a list of the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> for the resources that you want to share, a list of principals you want to share the resources with, and the permissions to grant those principals.</p><note>
+/// <p>Creates a resource share. You can provide a list of the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> for the resources that you want to share, a list of principals you want to share the resources with, and the permissions to grant those principals.</p> <note>
 /// <p>Sharing a resource makes it available for use by principals outside of the Amazon Web Services account that created the resource. Sharing doesn't change any permissions or quotas that apply to the resource in the account that created it.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -149,17 +149,12 @@ impl CreateResourceShareFluentBuilder {
     /// <p>Specifies a list of one or more principals to associate with the resource share.</p>
     /// <p>You can include the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>An Amazon Web Services account ID, for example: <code>123456789012</code></p></li>
-    /// <li>
-    /// <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code></p></li>
-    /// <li>
-    /// <p>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code></p></li>
-    /// <li>
-    /// <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code></p></li>
-    /// <li>
-    /// <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code></p></li>
-    /// </ul><note>
+    /// <li> <p>An Amazon Web Services account ID, for example: <code>123456789012</code> </p> </li>
+    /// <li> <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
+    /// <li> <p>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code> </p> </li>
+    /// <li> <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code> </p> </li>
+    /// <li> <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code> </p> </li>
+    /// </ul> <note>
     /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
     /// </note>
     pub fn principals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -169,17 +164,12 @@ impl CreateResourceShareFluentBuilder {
     /// <p>Specifies a list of one or more principals to associate with the resource share.</p>
     /// <p>You can include the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>An Amazon Web Services account ID, for example: <code>123456789012</code></p></li>
-    /// <li>
-    /// <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code></p></li>
-    /// <li>
-    /// <p>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code></p></li>
-    /// <li>
-    /// <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code></p></li>
-    /// <li>
-    /// <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code></p></li>
-    /// </ul><note>
+    /// <li> <p>An Amazon Web Services account ID, for example: <code>123456789012</code> </p> </li>
+    /// <li> <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
+    /// <li> <p>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code> </p> </li>
+    /// <li> <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code> </p> </li>
+    /// <li> <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code> </p> </li>
+    /// </ul> <note>
     /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
     /// </note>
     pub fn set_principals(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
@@ -189,17 +179,12 @@ impl CreateResourceShareFluentBuilder {
     /// <p>Specifies a list of one or more principals to associate with the resource share.</p>
     /// <p>You can include the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>An Amazon Web Services account ID, for example: <code>123456789012</code></p></li>
-    /// <li>
-    /// <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code></p></li>
-    /// <li>
-    /// <p>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code></p></li>
-    /// <li>
-    /// <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code></p></li>
-    /// <li>
-    /// <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code></p></li>
-    /// </ul><note>
+    /// <li> <p>An Amazon Web Services account ID, for example: <code>123456789012</code> </p> </li>
+    /// <li> <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
+    /// <li> <p>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code> </p> </li>
+    /// <li> <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code> </p> </li>
+    /// <li> <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code> </p> </li>
+    /// </ul> <note>
     /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
     /// </note>
     pub fn get_principals(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {

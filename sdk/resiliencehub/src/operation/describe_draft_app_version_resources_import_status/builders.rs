@@ -22,7 +22,7 @@ impl DescribeDraftAppVersionResourcesImportStatusInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeDraftAppVersionResourcesImportStatus`.
 ///
-/// <p>Describes the status of importing resources to an application version.</p><note>
+/// <p>Describes the status of importing resources to an application version.</p> <note>
 /// <p>If you get a 404 error with <code>ResourceImportStatusNotFoundAppMetadataException</code>, you must call <code>importResourcesToDraftAppVersion</code> after creating the application and before calling <code>describeDraftAppVersionResourcesImportStatus</code> to obtain the status.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

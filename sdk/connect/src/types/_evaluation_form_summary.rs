@@ -20,7 +20,7 @@ pub struct EvaluationFormSummary {
     pub last_modified_by: ::std::string::String,
     /// <p>The timestamp for when the evaluation form was last activated.</p>
     pub last_activated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The Amazon Resource Name (ARN) of the user who last activated the evaluation form.</p>
+    /// <p> The Amazon Resource Name (ARN) of the user who last activated the evaluation form.</p>
     pub last_activated_by: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the latest evaluation form version.</p>
     pub latest_version: i32,
@@ -65,7 +65,7 @@ impl EvaluationFormSummary {
     pub fn last_activated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_activated_time.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the user who last activated the evaluation form.</p>
+    /// <p> The Amazon Resource Name (ARN) of the user who last activated the evaluation form.</p>
     pub fn last_activated_by(&self) -> ::std::option::Option<&str> {
         self.last_activated_by.as_deref()
     }
@@ -221,17 +221,17 @@ impl EvaluationFormSummaryBuilder {
     pub fn get_last_activated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_activated_time
     }
-    /// <p>The Amazon Resource Name (ARN) of the user who last activated the evaluation form.</p>
+    /// <p> The Amazon Resource Name (ARN) of the user who last activated the evaluation form.</p>
     pub fn last_activated_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_activated_by = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the user who last activated the evaluation form.</p>
+    /// <p> The Amazon Resource Name (ARN) of the user who last activated the evaluation form.</p>
     pub fn set_last_activated_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_activated_by = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the user who last activated the evaluation form.</p>
+    /// <p> The Amazon Resource Name (ARN) of the user who last activated the evaluation form.</p>
     pub fn get_last_activated_by(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_activated_by
     }

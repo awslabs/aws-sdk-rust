@@ -9,11 +9,11 @@ pub struct IdentityProviderConfiguration {
     /// <p>If you enabled fine-grained authorization when you created the data store.</p>
     pub fine_grained_authorization_enabled: bool,
     /// <p>The JSON metadata elements that you want to use in your identity provider configuration. Required elements are listed based on the launch specification of the SMART application. For more information on all possible elements, see <a href="https://build.fhir.org/ig/HL7/smart-app-launch/conformance.html#metadata">Metadata</a> in SMART's App Launch specification.</p>
-    /// <p><code>authorization_endpoint</code>: The URL to the OAuth2 authorization endpoint.</p>
-    /// <p><code>grant_types_supported</code>: An array of grant types that are supported at the token endpoint. You must provide at least one grant type option. Valid options are <code>authorization_code</code> and <code>client_credentials</code>.</p>
-    /// <p><code>token_endpoint</code>: The URL to the OAuth2 token endpoint.</p>
-    /// <p><code>capabilities</code>: An array of strings of the SMART capabilities that the authorization server supports.</p>
-    /// <p><code>code_challenge_methods_supported</code>: An array of strings of supported PKCE code challenge methods. You must include the <code>S256</code> method in the array of PKCE code challenge methods.</p>
+    /// <p> <code>authorization_endpoint</code>: The URL to the OAuth2 authorization endpoint.</p>
+    /// <p> <code>grant_types_supported</code>: An array of grant types that are supported at the token endpoint. You must provide at least one grant type option. Valid options are <code>authorization_code</code> and <code>client_credentials</code>.</p>
+    /// <p> <code>token_endpoint</code>: The URL to the OAuth2 token endpoint.</p>
+    /// <p> <code>capabilities</code>: An array of strings of the SMART capabilities that the authorization server supports.</p>
+    /// <p> <code>code_challenge_methods_supported</code>: An array of strings of supported PKCE code challenge methods. You must include the <code>S256</code> method in the array of PKCE code challenge methods.</p>
     pub metadata: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Lambda function that you want to use to decode the access token created by the authorization server.</p>
     pub idp_lambda_arn: ::std::option::Option<::std::string::String>,
@@ -28,11 +28,11 @@ impl IdentityProviderConfiguration {
         self.fine_grained_authorization_enabled
     }
     /// <p>The JSON metadata elements that you want to use in your identity provider configuration. Required elements are listed based on the launch specification of the SMART application. For more information on all possible elements, see <a href="https://build.fhir.org/ig/HL7/smart-app-launch/conformance.html#metadata">Metadata</a> in SMART's App Launch specification.</p>
-    /// <p><code>authorization_endpoint</code>: The URL to the OAuth2 authorization endpoint.</p>
-    /// <p><code>grant_types_supported</code>: An array of grant types that are supported at the token endpoint. You must provide at least one grant type option. Valid options are <code>authorization_code</code> and <code>client_credentials</code>.</p>
-    /// <p><code>token_endpoint</code>: The URL to the OAuth2 token endpoint.</p>
-    /// <p><code>capabilities</code>: An array of strings of the SMART capabilities that the authorization server supports.</p>
-    /// <p><code>code_challenge_methods_supported</code>: An array of strings of supported PKCE code challenge methods. You must include the <code>S256</code> method in the array of PKCE code challenge methods.</p>
+    /// <p> <code>authorization_endpoint</code>: The URL to the OAuth2 authorization endpoint.</p>
+    /// <p> <code>grant_types_supported</code>: An array of grant types that are supported at the token endpoint. You must provide at least one grant type option. Valid options are <code>authorization_code</code> and <code>client_credentials</code>.</p>
+    /// <p> <code>token_endpoint</code>: The URL to the OAuth2 token endpoint.</p>
+    /// <p> <code>capabilities</code>: An array of strings of the SMART capabilities that the authorization server supports.</p>
+    /// <p> <code>code_challenge_methods_supported</code>: An array of strings of supported PKCE code challenge methods. You must include the <code>S256</code> method in the array of PKCE code challenge methods.</p>
     pub fn metadata(&self) -> ::std::option::Option<&str> {
         self.metadata.as_deref()
     }
@@ -88,31 +88,31 @@ impl IdentityProviderConfigurationBuilder {
         &self.fine_grained_authorization_enabled
     }
     /// <p>The JSON metadata elements that you want to use in your identity provider configuration. Required elements are listed based on the launch specification of the SMART application. For more information on all possible elements, see <a href="https://build.fhir.org/ig/HL7/smart-app-launch/conformance.html#metadata">Metadata</a> in SMART's App Launch specification.</p>
-    /// <p><code>authorization_endpoint</code>: The URL to the OAuth2 authorization endpoint.</p>
-    /// <p><code>grant_types_supported</code>: An array of grant types that are supported at the token endpoint. You must provide at least one grant type option. Valid options are <code>authorization_code</code> and <code>client_credentials</code>.</p>
-    /// <p><code>token_endpoint</code>: The URL to the OAuth2 token endpoint.</p>
-    /// <p><code>capabilities</code>: An array of strings of the SMART capabilities that the authorization server supports.</p>
-    /// <p><code>code_challenge_methods_supported</code>: An array of strings of supported PKCE code challenge methods. You must include the <code>S256</code> method in the array of PKCE code challenge methods.</p>
+    /// <p> <code>authorization_endpoint</code>: The URL to the OAuth2 authorization endpoint.</p>
+    /// <p> <code>grant_types_supported</code>: An array of grant types that are supported at the token endpoint. You must provide at least one grant type option. Valid options are <code>authorization_code</code> and <code>client_credentials</code>.</p>
+    /// <p> <code>token_endpoint</code>: The URL to the OAuth2 token endpoint.</p>
+    /// <p> <code>capabilities</code>: An array of strings of the SMART capabilities that the authorization server supports.</p>
+    /// <p> <code>code_challenge_methods_supported</code>: An array of strings of supported PKCE code challenge methods. You must include the <code>S256</code> method in the array of PKCE code challenge methods.</p>
     pub fn metadata(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metadata = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The JSON metadata elements that you want to use in your identity provider configuration. Required elements are listed based on the launch specification of the SMART application. For more information on all possible elements, see <a href="https://build.fhir.org/ig/HL7/smart-app-launch/conformance.html#metadata">Metadata</a> in SMART's App Launch specification.</p>
-    /// <p><code>authorization_endpoint</code>: The URL to the OAuth2 authorization endpoint.</p>
-    /// <p><code>grant_types_supported</code>: An array of grant types that are supported at the token endpoint. You must provide at least one grant type option. Valid options are <code>authorization_code</code> and <code>client_credentials</code>.</p>
-    /// <p><code>token_endpoint</code>: The URL to the OAuth2 token endpoint.</p>
-    /// <p><code>capabilities</code>: An array of strings of the SMART capabilities that the authorization server supports.</p>
-    /// <p><code>code_challenge_methods_supported</code>: An array of strings of supported PKCE code challenge methods. You must include the <code>S256</code> method in the array of PKCE code challenge methods.</p>
+    /// <p> <code>authorization_endpoint</code>: The URL to the OAuth2 authorization endpoint.</p>
+    /// <p> <code>grant_types_supported</code>: An array of grant types that are supported at the token endpoint. You must provide at least one grant type option. Valid options are <code>authorization_code</code> and <code>client_credentials</code>.</p>
+    /// <p> <code>token_endpoint</code>: The URL to the OAuth2 token endpoint.</p>
+    /// <p> <code>capabilities</code>: An array of strings of the SMART capabilities that the authorization server supports.</p>
+    /// <p> <code>code_challenge_methods_supported</code>: An array of strings of supported PKCE code challenge methods. You must include the <code>S256</code> method in the array of PKCE code challenge methods.</p>
     pub fn set_metadata(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metadata = input;
         self
     }
     /// <p>The JSON metadata elements that you want to use in your identity provider configuration. Required elements are listed based on the launch specification of the SMART application. For more information on all possible elements, see <a href="https://build.fhir.org/ig/HL7/smart-app-launch/conformance.html#metadata">Metadata</a> in SMART's App Launch specification.</p>
-    /// <p><code>authorization_endpoint</code>: The URL to the OAuth2 authorization endpoint.</p>
-    /// <p><code>grant_types_supported</code>: An array of grant types that are supported at the token endpoint. You must provide at least one grant type option. Valid options are <code>authorization_code</code> and <code>client_credentials</code>.</p>
-    /// <p><code>token_endpoint</code>: The URL to the OAuth2 token endpoint.</p>
-    /// <p><code>capabilities</code>: An array of strings of the SMART capabilities that the authorization server supports.</p>
-    /// <p><code>code_challenge_methods_supported</code>: An array of strings of supported PKCE code challenge methods. You must include the <code>S256</code> method in the array of PKCE code challenge methods.</p>
+    /// <p> <code>authorization_endpoint</code>: The URL to the OAuth2 authorization endpoint.</p>
+    /// <p> <code>grant_types_supported</code>: An array of grant types that are supported at the token endpoint. You must provide at least one grant type option. Valid options are <code>authorization_code</code> and <code>client_credentials</code>.</p>
+    /// <p> <code>token_endpoint</code>: The URL to the OAuth2 token endpoint.</p>
+    /// <p> <code>capabilities</code>: An array of strings of the SMART capabilities that the authorization server supports.</p>
+    /// <p> <code>code_challenge_methods_supported</code>: An array of strings of supported PKCE code challenge methods. You must include the <code>S256</code> method in the array of PKCE code challenge methods.</p>
     pub fn get_metadata(&self) -> &::std::option::Option<::std::string::String> {
         &self.metadata
     }

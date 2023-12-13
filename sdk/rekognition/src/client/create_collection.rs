@@ -4,10 +4,10 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`collection_id(impl Into<String>)`](crate::operation::create_collection::builders::CreateCollectionFluentBuilder::collection_id) / [`set_collection_id(Option<String>)`](crate::operation::create_collection::builders::CreateCollectionFluentBuilder::set_collection_id):<br>required: **true**<br><p>ID for the collection that you are creating.</p><br>
-    ///   - [`tags(impl Into<String>, impl Into<String>)`](crate::operation::create_collection::builders::CreateCollectionFluentBuilder::tags) / [`set_tags(Option<HashMap::<String, String>>)`](crate::operation::create_collection::builders::CreateCollectionFluentBuilder::set_tags):<br>required: **false**<br><p>A set of tags (key-value pairs) that you want to attach to the collection.</p><br>
+    ///   - [`tags(impl Into<String>, impl Into<String>)`](crate::operation::create_collection::builders::CreateCollectionFluentBuilder::tags) / [`set_tags(Option<HashMap::<String, String>>)`](crate::operation::create_collection::builders::CreateCollectionFluentBuilder::set_tags):<br>required: **false**<br><p> A set of tags (key-value pairs) that you want to attach to the collection. </p><br>
     /// - On success, responds with [`CreateCollectionOutput`](crate::operation::create_collection::CreateCollectionOutput) with field(s):
     ///   - [`status_code(Option<i32>)`](crate::operation::create_collection::CreateCollectionOutput::status_code): <p>HTTP status code indicating the result of the operation.</p>
-    ///   - [`collection_arn(Option<String>)`](crate::operation::create_collection::CreateCollectionOutput::collection_arn): <p>Amazon Resource Name (ARN) of the collection. You can use this to manage permissions on your resources.</p>
+    ///   - [`collection_arn(Option<String>)`](crate::operation::create_collection::CreateCollectionOutput::collection_arn): <p>Amazon Resource Name (ARN) of the collection. You can use this to manage permissions on your resources. </p>
     ///   - [`face_model_version(Option<String>)`](crate::operation::create_collection::CreateCollectionOutput::face_model_version): <p>Version number of the face detection model associated with the collection you are creating.</p>
     /// - On failure, responds with [`SdkError<CreateCollectionError>`](crate::operation::create_collection::CreateCollectionError)
     pub fn create_collection(&self) -> crate::operation::create_collection::builders::CreateCollectionFluentBuilder {

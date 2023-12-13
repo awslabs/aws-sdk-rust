@@ -7,10 +7,8 @@ pub struct DeleteSchemaVersionsInput {
     pub schema_id: ::std::option::Option<crate::types::SchemaId>,
     /// <p>A version range may be supplied which may be of the format:</p>
     /// <ul>
-    /// <li>
-    /// <p>a single version number, 5</p></li>
-    /// <li>
-    /// <p>a range, 5-8 : deletes versions 5, 6, 7, 8</p></li>
+    /// <li> <p>a single version number, 5</p> </li>
+    /// <li> <p>a range, 5-8 : deletes versions 5, 6, 7, 8</p> </li>
     /// </ul>
     pub versions: ::std::option::Option<::std::string::String>,
 }
@@ -21,10 +19,8 @@ impl DeleteSchemaVersionsInput {
     }
     /// <p>A version range may be supplied which may be of the format:</p>
     /// <ul>
-    /// <li>
-    /// <p>a single version number, 5</p></li>
-    /// <li>
-    /// <p>a range, 5-8 : deletes versions 5, 6, 7, 8</p></li>
+    /// <li> <p>a single version number, 5</p> </li>
+    /// <li> <p>a range, 5-8 : deletes versions 5, 6, 7, 8</p> </li>
     /// </ul>
     pub fn versions(&self) -> ::std::option::Option<&str> {
         self.versions.as_deref()
@@ -62,10 +58,8 @@ impl DeleteSchemaVersionsInputBuilder {
     }
     /// <p>A version range may be supplied which may be of the format:</p>
     /// <ul>
-    /// <li>
-    /// <p>a single version number, 5</p></li>
-    /// <li>
-    /// <p>a range, 5-8 : deletes versions 5, 6, 7, 8</p></li>
+    /// <li> <p>a single version number, 5</p> </li>
+    /// <li> <p>a range, 5-8 : deletes versions 5, 6, 7, 8</p> </li>
     /// </ul>
     /// This field is required.
     pub fn versions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -74,10 +68,8 @@ impl DeleteSchemaVersionsInputBuilder {
     }
     /// <p>A version range may be supplied which may be of the format:</p>
     /// <ul>
-    /// <li>
-    /// <p>a single version number, 5</p></li>
-    /// <li>
-    /// <p>a range, 5-8 : deletes versions 5, 6, 7, 8</p></li>
+    /// <li> <p>a single version number, 5</p> </li>
+    /// <li> <p>a range, 5-8 : deletes versions 5, 6, 7, 8</p> </li>
     /// </ul>
     pub fn set_versions(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.versions = input;
@@ -85,10 +77,8 @@ impl DeleteSchemaVersionsInputBuilder {
     }
     /// <p>A version range may be supplied which may be of the format:</p>
     /// <ul>
-    /// <li>
-    /// <p>a single version number, 5</p></li>
-    /// <li>
-    /// <p>a range, 5-8 : deletes versions 5, 6, 7, 8</p></li>
+    /// <li> <p>a single version number, 5</p> </li>
+    /// <li> <p>a range, 5-8 : deletes versions 5, 6, 7, 8</p> </li>
     /// </ul>
     pub fn get_versions(&self) -> &::std::option::Option<::std::string::String> {
         &self.versions

@@ -8,12 +8,9 @@ pub struct ExecuteCommandConfiguration {
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The log setting to use for redirecting logs for your execute command results. The following log settings are available.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>NONE</code>: The execute command session is not logged.</p></li>
-    /// <li>
-    /// <p><code>DEFAULT</code>: The <code>awslogs</code> configuration in the task definition is used. If no logging parameter is specified, it defaults to this value. If no <code>awslogs</code> log driver is configured in the task definition, the output won't be logged.</p></li>
-    /// <li>
-    /// <p><code>OVERRIDE</code>: Specify the logging details as a part of <code>logConfiguration</code>. If the <code>OVERRIDE</code> logging option is specified, the <code>logConfiguration</code> is required.</p></li>
+    /// <li> <p> <code>NONE</code>: The execute command session is not logged.</p> </li>
+    /// <li> <p> <code>DEFAULT</code>: The <code>awslogs</code> configuration in the task definition is used. If no logging parameter is specified, it defaults to this value. If no <code>awslogs</code> log driver is configured in the task definition, the output won't be logged.</p> </li>
+    /// <li> <p> <code>OVERRIDE</code>: Specify the logging details as a part of <code>logConfiguration</code>. If the <code>OVERRIDE</code> logging option is specified, the <code>logConfiguration</code> is required.</p> </li>
     /// </ul>
     pub logging: ::std::option::Option<crate::types::ExecuteCommandLogging>,
     /// <p>The log configuration for the results of the execute command actions. The logs can be sent to CloudWatch Logs or an Amazon S3 bucket. When <code>logging=OVERRIDE</code> is specified, a <code>logConfiguration</code> must be provided.</p>
@@ -26,12 +23,9 @@ impl ExecuteCommandConfiguration {
     }
     /// <p>The log setting to use for redirecting logs for your execute command results. The following log settings are available.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>NONE</code>: The execute command session is not logged.</p></li>
-    /// <li>
-    /// <p><code>DEFAULT</code>: The <code>awslogs</code> configuration in the task definition is used. If no logging parameter is specified, it defaults to this value. If no <code>awslogs</code> log driver is configured in the task definition, the output won't be logged.</p></li>
-    /// <li>
-    /// <p><code>OVERRIDE</code>: Specify the logging details as a part of <code>logConfiguration</code>. If the <code>OVERRIDE</code> logging option is specified, the <code>logConfiguration</code> is required.</p></li>
+    /// <li> <p> <code>NONE</code>: The execute command session is not logged.</p> </li>
+    /// <li> <p> <code>DEFAULT</code>: The <code>awslogs</code> configuration in the task definition is used. If no logging parameter is specified, it defaults to this value. If no <code>awslogs</code> log driver is configured in the task definition, the output won't be logged.</p> </li>
+    /// <li> <p> <code>OVERRIDE</code>: Specify the logging details as a part of <code>logConfiguration</code>. If the <code>OVERRIDE</code> logging option is specified, the <code>logConfiguration</code> is required.</p> </li>
     /// </ul>
     pub fn logging(&self) -> ::std::option::Option<&crate::types::ExecuteCommandLogging> {
         self.logging.as_ref()
@@ -73,12 +67,9 @@ impl ExecuteCommandConfigurationBuilder {
     }
     /// <p>The log setting to use for redirecting logs for your execute command results. The following log settings are available.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>NONE</code>: The execute command session is not logged.</p></li>
-    /// <li>
-    /// <p><code>DEFAULT</code>: The <code>awslogs</code> configuration in the task definition is used. If no logging parameter is specified, it defaults to this value. If no <code>awslogs</code> log driver is configured in the task definition, the output won't be logged.</p></li>
-    /// <li>
-    /// <p><code>OVERRIDE</code>: Specify the logging details as a part of <code>logConfiguration</code>. If the <code>OVERRIDE</code> logging option is specified, the <code>logConfiguration</code> is required.</p></li>
+    /// <li> <p> <code>NONE</code>: The execute command session is not logged.</p> </li>
+    /// <li> <p> <code>DEFAULT</code>: The <code>awslogs</code> configuration in the task definition is used. If no logging parameter is specified, it defaults to this value. If no <code>awslogs</code> log driver is configured in the task definition, the output won't be logged.</p> </li>
+    /// <li> <p> <code>OVERRIDE</code>: Specify the logging details as a part of <code>logConfiguration</code>. If the <code>OVERRIDE</code> logging option is specified, the <code>logConfiguration</code> is required.</p> </li>
     /// </ul>
     pub fn logging(mut self, input: crate::types::ExecuteCommandLogging) -> Self {
         self.logging = ::std::option::Option::Some(input);
@@ -86,12 +77,9 @@ impl ExecuteCommandConfigurationBuilder {
     }
     /// <p>The log setting to use for redirecting logs for your execute command results. The following log settings are available.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>NONE</code>: The execute command session is not logged.</p></li>
-    /// <li>
-    /// <p><code>DEFAULT</code>: The <code>awslogs</code> configuration in the task definition is used. If no logging parameter is specified, it defaults to this value. If no <code>awslogs</code> log driver is configured in the task definition, the output won't be logged.</p></li>
-    /// <li>
-    /// <p><code>OVERRIDE</code>: Specify the logging details as a part of <code>logConfiguration</code>. If the <code>OVERRIDE</code> logging option is specified, the <code>logConfiguration</code> is required.</p></li>
+    /// <li> <p> <code>NONE</code>: The execute command session is not logged.</p> </li>
+    /// <li> <p> <code>DEFAULT</code>: The <code>awslogs</code> configuration in the task definition is used. If no logging parameter is specified, it defaults to this value. If no <code>awslogs</code> log driver is configured in the task definition, the output won't be logged.</p> </li>
+    /// <li> <p> <code>OVERRIDE</code>: Specify the logging details as a part of <code>logConfiguration</code>. If the <code>OVERRIDE</code> logging option is specified, the <code>logConfiguration</code> is required.</p> </li>
     /// </ul>
     pub fn set_logging(mut self, input: ::std::option::Option<crate::types::ExecuteCommandLogging>) -> Self {
         self.logging = input;
@@ -99,12 +87,9 @@ impl ExecuteCommandConfigurationBuilder {
     }
     /// <p>The log setting to use for redirecting logs for your execute command results. The following log settings are available.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>NONE</code>: The execute command session is not logged.</p></li>
-    /// <li>
-    /// <p><code>DEFAULT</code>: The <code>awslogs</code> configuration in the task definition is used. If no logging parameter is specified, it defaults to this value. If no <code>awslogs</code> log driver is configured in the task definition, the output won't be logged.</p></li>
-    /// <li>
-    /// <p><code>OVERRIDE</code>: Specify the logging details as a part of <code>logConfiguration</code>. If the <code>OVERRIDE</code> logging option is specified, the <code>logConfiguration</code> is required.</p></li>
+    /// <li> <p> <code>NONE</code>: The execute command session is not logged.</p> </li>
+    /// <li> <p> <code>DEFAULT</code>: The <code>awslogs</code> configuration in the task definition is used. If no logging parameter is specified, it defaults to this value. If no <code>awslogs</code> log driver is configured in the task definition, the output won't be logged.</p> </li>
+    /// <li> <p> <code>OVERRIDE</code>: Specify the logging details as a part of <code>logConfiguration</code>. If the <code>OVERRIDE</code> logging option is specified, the <code>logConfiguration</code> is required.</p> </li>
     /// </ul>
     pub fn get_logging(&self) -> &::std::option::Option<crate::types::ExecuteCommandLogging> {
         &self.logging

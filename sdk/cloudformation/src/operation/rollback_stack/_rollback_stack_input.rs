@@ -10,7 +10,7 @@ pub struct RollbackStackInput {
     /// <p>A unique identifier for this <code>RollbackStack</code> request.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This includes newly created resources marked with a deletion policy of <code>Retain</code>.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p>Default: <code>false</code> </p>
     pub retain_except_on_create: ::std::option::Option<bool>,
 }
 impl RollbackStackInput {
@@ -27,7 +27,7 @@ impl RollbackStackInput {
         self.client_request_token.as_deref()
     }
     /// <p>When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This includes newly created resources marked with a deletion policy of <code>Retain</code>.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p>Default: <code>false</code> </p>
     pub fn retain_except_on_create(&self) -> ::std::option::Option<bool> {
         self.retain_except_on_create
     }
@@ -93,19 +93,19 @@ impl RollbackStackInputBuilder {
         &self.client_request_token
     }
     /// <p>When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This includes newly created resources marked with a deletion policy of <code>Retain</code>.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p>Default: <code>false</code> </p>
     pub fn retain_except_on_create(mut self, input: bool) -> Self {
         self.retain_except_on_create = ::std::option::Option::Some(input);
         self
     }
     /// <p>When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This includes newly created resources marked with a deletion policy of <code>Retain</code>.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p>Default: <code>false</code> </p>
     pub fn set_retain_except_on_create(mut self, input: ::std::option::Option<bool>) -> Self {
         self.retain_except_on_create = input;
         self
     }
     /// <p>When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This includes newly created resources marked with a deletion policy of <code>Retain</code>.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p>Default: <code>false</code> </p>
     pub fn get_retain_except_on_create(&self) -> &::std::option::Option<bool> {
         &self.retain_except_on_create
     }

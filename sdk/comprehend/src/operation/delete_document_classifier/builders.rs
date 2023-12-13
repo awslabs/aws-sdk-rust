@@ -24,7 +24,7 @@ impl DeleteDocumentClassifierInputBuilder {
 ///
 /// <p>Deletes a previously created document classifier</p>
 /// <p>Only those classifiers that are in terminated states (IN_ERROR, TRAINED) will be deleted. If an active inference job is using the model, a <code>ResourceInUseException</code> will be returned.</p>
-/// <p>This is an asynchronous action that puts the classifier into a DELETING state, and it is then removed by a background job. Once removed, the classifier disappears from your account and is no longer available for use.</p>
+/// <p>This is an asynchronous action that puts the classifier into a DELETING state, and it is then removed by a background job. Once removed, the classifier disappears from your account and is no longer available for use. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteDocumentClassifierFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -110,17 +110,17 @@ impl DeleteDocumentClassifierFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that identifies the document classifier.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. </p>
     pub fn document_classifier_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.document_classifier_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that identifies the document classifier.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. </p>
     pub fn set_document_classifier_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_document_classifier_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that identifies the document classifier.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. </p>
     pub fn get_document_classifier_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_document_classifier_arn()
     }

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`PutKMSEncryptionKey`](crate::operation::put_kms_encryption_key::builders::PutKMSEncryptionKeyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`kms_encryption_key_arn(impl Into<String>)`](crate::operation::put_kms_encryption_key::builders::PutKMSEncryptionKeyFluentBuilder::kms_encryption_key_arn) / [`set_kms_encryption_key_arn(Option<String>)`](crate::operation::put_kms_encryption_key::builders::PutKMSEncryptionKeyFluentBuilder::set_kms_encryption_key_arn):<br>required: **true**<br><p>The KMS encryption key ARN.</p> <p>The KMS key must be single-Region key. Amazon Fraud Detector does not support multi-Region KMS key.</p><br>
+    ///   - [`kms_encryption_key_arn(impl Into<String>)`](crate::operation::put_kms_encryption_key::builders::PutKMSEncryptionKeyFluentBuilder::kms_encryption_key_arn) / [`set_kms_encryption_key_arn(Option<String>)`](crate::operation::put_kms_encryption_key::builders::PutKMSEncryptionKeyFluentBuilder::set_kms_encryption_key_arn):<br>required: **true**<br><p>The KMS encryption key ARN.</p>  <p>The KMS key must be single-Region key. Amazon Fraud Detector does not support multi-Region KMS key.</p><br>
     /// - On success, responds with [`PutKmsEncryptionKeyOutput`](crate::operation::put_kms_encryption_key::PutKmsEncryptionKeyOutput)
     /// - On failure, responds with [`SdkError<PutKMSEncryptionKeyError>`](crate::operation::put_kms_encryption_key::PutKMSEncryptionKeyError)
     pub fn put_kms_encryption_key(&self) -> crate::operation::put_kms_encryption_key::builders::PutKMSEncryptionKeyFluentBuilder {

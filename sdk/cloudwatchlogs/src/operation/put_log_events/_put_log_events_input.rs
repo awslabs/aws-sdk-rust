@@ -9,7 +9,7 @@ pub struct PutLogEventsInput {
     pub log_stream_name: ::std::option::Option<::std::string::String>,
     /// <p>The log events.</p>
     pub log_events: ::std::option::Option<::std::vec::Vec<crate::types::InputLogEvent>>,
-    /// <p>The sequence token obtained from the response of the previous <code>PutLogEvents</code> call.</p><important>
+    /// <p>The sequence token obtained from the response of the previous <code>PutLogEvents</code> call.</p> <important>
     /// <p>The <code>sequenceToken</code> parameter is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are now accepted and never return <code>InvalidSequenceTokenException</code> or <code>DataAlreadyAcceptedException</code> even if the sequence token is not valid.</p>
     /// </important>
     pub sequence_token: ::std::option::Option<::std::string::String>,
@@ -29,7 +29,7 @@ impl PutLogEventsInput {
     pub fn log_events(&self) -> &[crate::types::InputLogEvent] {
         self.log_events.as_deref().unwrap_or_default()
     }
-    /// <p>The sequence token obtained from the response of the previous <code>PutLogEvents</code> call.</p><important>
+    /// <p>The sequence token obtained from the response of the previous <code>PutLogEvents</code> call.</p> <important>
     /// <p>The <code>sequenceToken</code> parameter is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are now accepted and never return <code>InvalidSequenceTokenException</code> or <code>DataAlreadyAcceptedException</code> even if the sequence token is not valid.</p>
     /// </important>
     pub fn sequence_token(&self) -> ::std::option::Option<&str> {
@@ -103,21 +103,21 @@ impl PutLogEventsInputBuilder {
     pub fn get_log_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputLogEvent>> {
         &self.log_events
     }
-    /// <p>The sequence token obtained from the response of the previous <code>PutLogEvents</code> call.</p><important>
+    /// <p>The sequence token obtained from the response of the previous <code>PutLogEvents</code> call.</p> <important>
     /// <p>The <code>sequenceToken</code> parameter is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are now accepted and never return <code>InvalidSequenceTokenException</code> or <code>DataAlreadyAcceptedException</code> even if the sequence token is not valid.</p>
     /// </important>
     pub fn sequence_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sequence_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The sequence token obtained from the response of the previous <code>PutLogEvents</code> call.</p><important>
+    /// <p>The sequence token obtained from the response of the previous <code>PutLogEvents</code> call.</p> <important>
     /// <p>The <code>sequenceToken</code> parameter is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are now accepted and never return <code>InvalidSequenceTokenException</code> or <code>DataAlreadyAcceptedException</code> even if the sequence token is not valid.</p>
     /// </important>
     pub fn set_sequence_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sequence_token = input;
         self
     }
-    /// <p>The sequence token obtained from the response of the previous <code>PutLogEvents</code> call.</p><important>
+    /// <p>The sequence token obtained from the response of the previous <code>PutLogEvents</code> call.</p> <important>
     /// <p>The <code>sequenceToken</code> parameter is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are now accepted and never return <code>InvalidSequenceTokenException</code> or <code>DataAlreadyAcceptedException</code> even if the sequence token is not valid.</p>
     /// </important>
     pub fn get_sequence_token(&self) -> &::std::option::Option<::std::string::String> {

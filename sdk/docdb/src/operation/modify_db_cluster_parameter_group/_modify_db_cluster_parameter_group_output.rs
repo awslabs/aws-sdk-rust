@@ -7,13 +7,10 @@ pub struct ModifyDbClusterParameterGroupOutput {
     /// <p>The name of a cluster parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be from 1 to 255 letters or numbers.</p></li>
-    /// <li>
-    /// <p>The first character must be a letter.</p></li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
-    /// </ul><note>
+    /// <li> <p>Must be from 1 to 255 letters or numbers.</p> </li>
+    /// <li> <p>The first character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
     pub db_cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
@@ -23,13 +20,10 @@ impl ModifyDbClusterParameterGroupOutput {
     /// <p>The name of a cluster parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be from 1 to 255 letters or numbers.</p></li>
-    /// <li>
-    /// <p>The first character must be a letter.</p></li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
-    /// </ul><note>
+    /// <li> <p>Must be from 1 to 255 letters or numbers.</p> </li>
+    /// <li> <p>The first character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
     pub fn db_cluster_parameter_group_name(&self) -> ::std::option::Option<&str> {
@@ -59,13 +53,10 @@ impl ModifyDbClusterParameterGroupOutputBuilder {
     /// <p>The name of a cluster parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be from 1 to 255 letters or numbers.</p></li>
-    /// <li>
-    /// <p>The first character must be a letter.</p></li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
-    /// </ul><note>
+    /// <li> <p>Must be from 1 to 255 letters or numbers.</p> </li>
+    /// <li> <p>The first character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
     pub fn db_cluster_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -75,13 +66,10 @@ impl ModifyDbClusterParameterGroupOutputBuilder {
     /// <p>The name of a cluster parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be from 1 to 255 letters or numbers.</p></li>
-    /// <li>
-    /// <p>The first character must be a letter.</p></li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
-    /// </ul><note>
+    /// <li> <p>Must be from 1 to 255 letters or numbers.</p> </li>
+    /// <li> <p>The first character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
     pub fn set_db_cluster_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -91,13 +79,10 @@ impl ModifyDbClusterParameterGroupOutputBuilder {
     /// <p>The name of a cluster parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be from 1 to 255 letters or numbers.</p></li>
-    /// <li>
-    /// <p>The first character must be a letter.</p></li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
-    /// </ul><note>
+    /// <li> <p>Must be from 1 to 255 letters or numbers.</p> </li>
+    /// <li> <p>The first character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
     pub fn get_db_cluster_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {

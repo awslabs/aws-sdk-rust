@@ -5,21 +5,21 @@
 pub struct CreateKxVolumeInput {
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume.</p>
+    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume. </p>
     pub environment_id: ::std::option::Option<::std::string::String>,
-    /// <p>The type of file system volume. Currently, FinSpace only supports <code>NAS_1</code> volume type. When you select <code>NAS_1</code> volume type, you must also provide <code>nas1Configuration</code>.</p>
+    /// <p> The type of file system volume. Currently, FinSpace only supports <code>NAS_1</code> volume type. When you select <code>NAS_1</code> volume type, you must also provide <code>nas1Configuration</code>. </p>
     pub volume_type: ::std::option::Option<crate::types::KxVolumeType>,
     /// <p>A unique identifier for the volume.</p>
     pub volume_name: ::std::option::Option<::std::string::String>,
-    /// <p>A description of the volume.</p>
+    /// <p> A description of the volume. </p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the configuration for the Network attached storage (NAS_1) file system volume. This parameter is required when you choose <code>volumeType</code> as <i>NAS_1</i>.</p>
+    /// <p> Specifies the configuration for the Network attached storage (NAS_1) file system volume. This parameter is required when you choose <code>volumeType</code> as <i>NAS_1</i>.</p>
     pub nas1_configuration: ::std::option::Option<crate::types::KxNas1Configuration>,
     /// <p>The number of availability zones you want to assign per cluster. Currently, FinSpace only support <code>SINGLE</code> for volumes.</p>
     pub az_mode: ::std::option::Option<crate::types::KxAzMode>,
     /// <p>The identifier of the availability zones.</p>
     pub availability_zone_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>A list of key-value pairs to label the volume. You can add up to 50 tags to a volume.</p>
+    /// <p> A list of key-value pairs to label the volume. You can add up to 50 tags to a volume. </p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateKxVolumeInput {
@@ -27,11 +27,11 @@ impl CreateKxVolumeInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume.</p>
+    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume. </p>
     pub fn environment_id(&self) -> ::std::option::Option<&str> {
         self.environment_id.as_deref()
     }
-    /// <p>The type of file system volume. Currently, FinSpace only supports <code>NAS_1</code> volume type. When you select <code>NAS_1</code> volume type, you must also provide <code>nas1Configuration</code>.</p>
+    /// <p> The type of file system volume. Currently, FinSpace only supports <code>NAS_1</code> volume type. When you select <code>NAS_1</code> volume type, you must also provide <code>nas1Configuration</code>. </p>
     pub fn volume_type(&self) -> ::std::option::Option<&crate::types::KxVolumeType> {
         self.volume_type.as_ref()
     }
@@ -39,11 +39,11 @@ impl CreateKxVolumeInput {
     pub fn volume_name(&self) -> ::std::option::Option<&str> {
         self.volume_name.as_deref()
     }
-    /// <p>A description of the volume.</p>
+    /// <p> A description of the volume. </p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Specifies the configuration for the Network attached storage (NAS_1) file system volume. This parameter is required when you choose <code>volumeType</code> as <i>NAS_1</i>.</p>
+    /// <p> Specifies the configuration for the Network attached storage (NAS_1) file system volume. This parameter is required when you choose <code>volumeType</code> as <i>NAS_1</i>.</p>
     pub fn nas1_configuration(&self) -> ::std::option::Option<&crate::types::KxNas1Configuration> {
         self.nas1_configuration.as_ref()
     }
@@ -57,7 +57,7 @@ impl CreateKxVolumeInput {
     pub fn availability_zone_ids(&self) -> &[::std::string::String] {
         self.availability_zone_ids.as_deref().unwrap_or_default()
     }
-    /// <p>A list of key-value pairs to label the volume. You can add up to 50 tags to a volume.</p>
+    /// <p> A list of key-value pairs to label the volume. You can add up to 50 tags to a volume. </p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
@@ -98,33 +98,33 @@ impl CreateKxVolumeInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
-    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume.</p>
+    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume. </p>
     /// This field is required.
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume.</p>
+    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume. </p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_id = input;
         self
     }
-    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume.</p>
+    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume. </p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.environment_id
     }
-    /// <p>The type of file system volume. Currently, FinSpace only supports <code>NAS_1</code> volume type. When you select <code>NAS_1</code> volume type, you must also provide <code>nas1Configuration</code>.</p>
+    /// <p> The type of file system volume. Currently, FinSpace only supports <code>NAS_1</code> volume type. When you select <code>NAS_1</code> volume type, you must also provide <code>nas1Configuration</code>. </p>
     /// This field is required.
     pub fn volume_type(mut self, input: crate::types::KxVolumeType) -> Self {
         self.volume_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of file system volume. Currently, FinSpace only supports <code>NAS_1</code> volume type. When you select <code>NAS_1</code> volume type, you must also provide <code>nas1Configuration</code>.</p>
+    /// <p> The type of file system volume. Currently, FinSpace only supports <code>NAS_1</code> volume type. When you select <code>NAS_1</code> volume type, you must also provide <code>nas1Configuration</code>. </p>
     pub fn set_volume_type(mut self, input: ::std::option::Option<crate::types::KxVolumeType>) -> Self {
         self.volume_type = input;
         self
     }
-    /// <p>The type of file system volume. Currently, FinSpace only supports <code>NAS_1</code> volume type. When you select <code>NAS_1</code> volume type, you must also provide <code>nas1Configuration</code>.</p>
+    /// <p> The type of file system volume. Currently, FinSpace only supports <code>NAS_1</code> volume type. When you select <code>NAS_1</code> volume type, you must also provide <code>nas1Configuration</code>. </p>
     pub fn get_volume_type(&self) -> &::std::option::Option<crate::types::KxVolumeType> {
         &self.volume_type
     }
@@ -143,31 +143,31 @@ impl CreateKxVolumeInputBuilder {
     pub fn get_volume_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.volume_name
     }
-    /// <p>A description of the volume.</p>
+    /// <p> A description of the volume. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A description of the volume.</p>
+    /// <p> A description of the volume. </p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>A description of the volume.</p>
+    /// <p> A description of the volume. </p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>Specifies the configuration for the Network attached storage (NAS_1) file system volume. This parameter is required when you choose <code>volumeType</code> as <i>NAS_1</i>.</p>
+    /// <p> Specifies the configuration for the Network attached storage (NAS_1) file system volume. This parameter is required when you choose <code>volumeType</code> as <i>NAS_1</i>.</p>
     pub fn nas1_configuration(mut self, input: crate::types::KxNas1Configuration) -> Self {
         self.nas1_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the configuration for the Network attached storage (NAS_1) file system volume. This parameter is required when you choose <code>volumeType</code> as <i>NAS_1</i>.</p>
+    /// <p> Specifies the configuration for the Network attached storage (NAS_1) file system volume. This parameter is required when you choose <code>volumeType</code> as <i>NAS_1</i>.</p>
     pub fn set_nas1_configuration(mut self, input: ::std::option::Option<crate::types::KxNas1Configuration>) -> Self {
         self.nas1_configuration = input;
         self
     }
-    /// <p>Specifies the configuration for the Network attached storage (NAS_1) file system volume. This parameter is required when you choose <code>volumeType</code> as <i>NAS_1</i>.</p>
+    /// <p> Specifies the configuration for the Network attached storage (NAS_1) file system volume. This parameter is required when you choose <code>volumeType</code> as <i>NAS_1</i>.</p>
     pub fn get_nas1_configuration(&self) -> &::std::option::Option<crate::types::KxNas1Configuration> {
         &self.nas1_configuration
     }
@@ -210,19 +210,19 @@ impl CreateKxVolumeInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A list of key-value pairs to label the volume. You can add up to 50 tags to a volume.</p>
+    /// <p> A list of key-value pairs to label the volume. You can add up to 50 tags to a volume. </p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>A list of key-value pairs to label the volume. You can add up to 50 tags to a volume.</p>
+    /// <p> A list of key-value pairs to label the volume. You can add up to 50 tags to a volume. </p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>A list of key-value pairs to label the volume. You can add up to 50 tags to a volume.</p>
+    /// <p> A list of key-value pairs to label the volume. You can add up to 50 tags to a volume. </p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }

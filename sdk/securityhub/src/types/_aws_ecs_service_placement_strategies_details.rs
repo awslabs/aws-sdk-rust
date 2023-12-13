@@ -13,7 +13,7 @@ pub struct AwsEcsServicePlacementStrategiesDetails {
     /// <p>The <code>random</code> placement strategy randomly places tasks on available candidates.</p>
     /// <p>The <code>spread</code> placement strategy spreads placement across available candidates evenly based on the value of <code>Field</code>.</p>
     /// <p>The <code>binpack</code> strategy places tasks on available candidates that have the least available amount of the resource that is specified in <code>Field</code>.</p>
-    /// <p>Valid values: <code>random</code> | <code>spread</code> | <code>binpack</code></p>
+    /// <p>Valid values: <code>random</code> | <code>spread</code> | <code>binpack</code> </p>
     pub r#type: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsServicePlacementStrategiesDetails {
@@ -28,7 +28,7 @@ impl AwsEcsServicePlacementStrategiesDetails {
     /// <p>The <code>random</code> placement strategy randomly places tasks on available candidates.</p>
     /// <p>The <code>spread</code> placement strategy spreads placement across available candidates evenly based on the value of <code>Field</code>.</p>
     /// <p>The <code>binpack</code> strategy places tasks on available candidates that have the least available amount of the resource that is specified in <code>Field</code>.</p>
-    /// <p>Valid values: <code>random</code> | <code>spread</code> | <code>binpack</code></p>
+    /// <p>Valid values: <code>random</code> | <code>spread</code> | <code>binpack</code> </p>
     pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
@@ -75,7 +75,7 @@ impl AwsEcsServicePlacementStrategiesDetailsBuilder {
     /// <p>The <code>random</code> placement strategy randomly places tasks on available candidates.</p>
     /// <p>The <code>spread</code> placement strategy spreads placement across available candidates evenly based on the value of <code>Field</code>.</p>
     /// <p>The <code>binpack</code> strategy places tasks on available candidates that have the least available amount of the resource that is specified in <code>Field</code>.</p>
-    /// <p>Valid values: <code>random</code> | <code>spread</code> | <code>binpack</code></p>
+    /// <p>Valid values: <code>random</code> | <code>spread</code> | <code>binpack</code> </p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self
@@ -84,7 +84,7 @@ impl AwsEcsServicePlacementStrategiesDetailsBuilder {
     /// <p>The <code>random</code> placement strategy randomly places tasks on available candidates.</p>
     /// <p>The <code>spread</code> placement strategy spreads placement across available candidates evenly based on the value of <code>Field</code>.</p>
     /// <p>The <code>binpack</code> strategy places tasks on available candidates that have the least available amount of the resource that is specified in <code>Field</code>.</p>
-    /// <p>Valid values: <code>random</code> | <code>spread</code> | <code>binpack</code></p>
+    /// <p>Valid values: <code>random</code> | <code>spread</code> | <code>binpack</code> </p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
@@ -93,7 +93,7 @@ impl AwsEcsServicePlacementStrategiesDetailsBuilder {
     /// <p>The <code>random</code> placement strategy randomly places tasks on available candidates.</p>
     /// <p>The <code>spread</code> placement strategy spreads placement across available candidates evenly based on the value of <code>Field</code>.</p>
     /// <p>The <code>binpack</code> strategy places tasks on available candidates that have the least available amount of the resource that is specified in <code>Field</code>.</p>
-    /// <p>Valid values: <code>random</code> | <code>spread</code> | <code>binpack</code></p>
+    /// <p>Valid values: <code>random</code> | <code>spread</code> | <code>binpack</code> </p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.r#type
     }

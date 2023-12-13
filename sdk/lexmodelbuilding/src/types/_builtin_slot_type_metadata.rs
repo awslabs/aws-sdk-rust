@@ -6,7 +6,7 @@
 pub struct BuiltinSlotTypeMetadata {
     /// <p>A unique identifier for the built-in slot type. To find the signature for a slot type, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/slot-type-reference">Slot Type Reference</a> in the <i>Alexa Skills Kit</i>.</p>
     pub signature: ::std::option::Option<::std::string::String>,
-    /// <p>A list of target locales for the slot.</p>
+    /// <p>A list of target locales for the slot. </p>
     pub supported_locales: ::std::option::Option<::std::vec::Vec<crate::types::Locale>>,
 }
 impl BuiltinSlotTypeMetadata {
@@ -14,7 +14,7 @@ impl BuiltinSlotTypeMetadata {
     pub fn signature(&self) -> ::std::option::Option<&str> {
         self.signature.as_deref()
     }
-    /// <p>A list of target locales for the slot.</p>
+    /// <p>A list of target locales for the slot. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_locales.is_none()`.
     pub fn supported_locales(&self) -> &[crate::types::Locale] {
@@ -54,19 +54,19 @@ impl BuiltinSlotTypeMetadataBuilder {
     ///
     /// To override the contents of this collection use [`set_supported_locales`](Self::set_supported_locales).
     ///
-    /// <p>A list of target locales for the slot.</p>
+    /// <p>A list of target locales for the slot. </p>
     pub fn supported_locales(mut self, input: crate::types::Locale) -> Self {
         let mut v = self.supported_locales.unwrap_or_default();
         v.push(input);
         self.supported_locales = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of target locales for the slot.</p>
+    /// <p>A list of target locales for the slot. </p>
     pub fn set_supported_locales(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Locale>>) -> Self {
         self.supported_locales = input;
         self
     }
-    /// <p>A list of target locales for the slot.</p>
+    /// <p>A list of target locales for the slot. </p>
     pub fn get_supported_locales(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Locale>> {
         &self.supported_locales
     }

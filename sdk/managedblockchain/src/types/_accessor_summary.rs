@@ -6,7 +6,7 @@
 pub struct AccessorSummary {
     /// <p>The unique identifier of the accessor.</p>
     pub id: ::std::option::Option<::std::string::String>,
-    /// <p>The type of the accessor.</p><note>
+    /// <p>The type of the accessor.</p> <note>
     /// <p>Currently accessor type is restricted to <code>BILLING_TOKEN</code>.</p>
     /// </note>
     pub r#type: ::std::option::Option<crate::types::AccessorType>,
@@ -24,7 +24,7 @@ impl AccessorSummary {
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The type of the accessor.</p><note>
+    /// <p>The type of the accessor.</p> <note>
     /// <p>Currently accessor type is restricted to <code>BILLING_TOKEN</code>.</p>
     /// </note>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::AccessorType> {
@@ -80,21 +80,21 @@ impl AccessorSummaryBuilder {
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
-    /// <p>The type of the accessor.</p><note>
+    /// <p>The type of the accessor.</p> <note>
     /// <p>Currently accessor type is restricted to <code>BILLING_TOKEN</code>.</p>
     /// </note>
     pub fn r#type(mut self, input: crate::types::AccessorType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of the accessor.</p><note>
+    /// <p>The type of the accessor.</p> <note>
     /// <p>Currently accessor type is restricted to <code>BILLING_TOKEN</code>.</p>
     /// </note>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::AccessorType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The type of the accessor.</p><note>
+    /// <p>The type of the accessor.</p> <note>
     /// <p>Currently accessor type is restricted to <code>BILLING_TOKEN</code>.</p>
     /// </note>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::AccessorType> {

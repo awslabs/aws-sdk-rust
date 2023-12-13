@@ -14,7 +14,7 @@ pub struct UpdateDomainNameOutput {
     pub certificate_upload_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The domain name associated with the regional endpoint for this custom domain name. You set up this association by adding a DNS record that points the custom domain name to this regional domain name. The regional domain name is returned by API Gateway when you create a regional endpoint.</p>
     pub regional_domain_name: ::std::option::Option<::std::string::String>,
-    /// <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see Set up a Regional Custom Domain Name and AWS Regions and Endpoints for API Gateway.</p>
+    /// <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see Set up a Regional Custom Domain Name and AWS Regions and Endpoints for API Gateway. </p>
     pub regional_hosted_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the certificate that will be used for validating the regional domain name.</p>
     pub regional_certificate_name: ::std::option::Option<::std::string::String>,
@@ -22,9 +22,9 @@ pub struct UpdateDomainNameOutput {
     pub regional_certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>The domain name of the Amazon CloudFront distribution associated with this custom domain name for an edge-optimized endpoint. You set up this association when adding a DNS record pointing the custom domain name to this distribution name. For more information about CloudFront distributions, see the Amazon CloudFront documentation.</p>
     pub distribution_domain_name: ::std::option::Option<::std::string::String>,
-    /// <p>The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint. The valid value is <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see Set up a Regional Custom Domain Name and AWS Regions and Endpoints for API Gateway.</p>
+    /// <p>The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint. The valid value is <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see Set up a Regional Custom Domain Name and AWS Regions and Endpoints for API Gateway. </p>
     pub distribution_hosted_zone_id: ::std::option::Option<::std::string::String>,
-    /// <p>The endpoint configuration of this DomainName showing the endpoint types of the domain name.</p>
+    /// <p>The endpoint configuration of this DomainName showing the endpoint types of the domain name. </p>
     pub endpoint_configuration: ::std::option::Option<crate::types::EndpointConfiguration>,
     /// <p>The status of the DomainName migration. The valid values are <code>AVAILABLE</code> and <code>UPDATING</code>. If the status is <code>UPDATING</code>, the domain cannot be modified further until the existing operation is complete. If it is <code>AVAILABLE</code>, the domain can be updated.</p>
     pub domain_name_status: ::std::option::Option<crate::types::DomainNameStatus>,
@@ -61,7 +61,7 @@ impl UpdateDomainNameOutput {
     pub fn regional_domain_name(&self) -> ::std::option::Option<&str> {
         self.regional_domain_name.as_deref()
     }
-    /// <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see Set up a Regional Custom Domain Name and AWS Regions and Endpoints for API Gateway.</p>
+    /// <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see Set up a Regional Custom Domain Name and AWS Regions and Endpoints for API Gateway. </p>
     pub fn regional_hosted_zone_id(&self) -> ::std::option::Option<&str> {
         self.regional_hosted_zone_id.as_deref()
     }
@@ -77,11 +77,11 @@ impl UpdateDomainNameOutput {
     pub fn distribution_domain_name(&self) -> ::std::option::Option<&str> {
         self.distribution_domain_name.as_deref()
     }
-    /// <p>The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint. The valid value is <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see Set up a Regional Custom Domain Name and AWS Regions and Endpoints for API Gateway.</p>
+    /// <p>The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint. The valid value is <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see Set up a Regional Custom Domain Name and AWS Regions and Endpoints for API Gateway. </p>
     pub fn distribution_hosted_zone_id(&self) -> ::std::option::Option<&str> {
         self.distribution_hosted_zone_id.as_deref()
     }
-    /// <p>The endpoint configuration of this DomainName showing the endpoint types of the domain name.</p>
+    /// <p>The endpoint configuration of this DomainName showing the endpoint types of the domain name. </p>
     pub fn endpoint_configuration(&self) -> ::std::option::Option<&crate::types::EndpointConfiguration> {
         self.endpoint_configuration.as_ref()
     }
@@ -216,17 +216,17 @@ impl UpdateDomainNameOutputBuilder {
     pub fn get_regional_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.regional_domain_name
     }
-    /// <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see Set up a Regional Custom Domain Name and AWS Regions and Endpoints for API Gateway.</p>
+    /// <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see Set up a Regional Custom Domain Name and AWS Regions and Endpoints for API Gateway. </p>
     pub fn regional_hosted_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.regional_hosted_zone_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see Set up a Regional Custom Domain Name and AWS Regions and Endpoints for API Gateway.</p>
+    /// <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see Set up a Regional Custom Domain Name and AWS Regions and Endpoints for API Gateway. </p>
     pub fn set_regional_hosted_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.regional_hosted_zone_id = input;
         self
     }
-    /// <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see Set up a Regional Custom Domain Name and AWS Regions and Endpoints for API Gateway.</p>
+    /// <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see Set up a Regional Custom Domain Name and AWS Regions and Endpoints for API Gateway. </p>
     pub fn get_regional_hosted_zone_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.regional_hosted_zone_id
     }
@@ -272,31 +272,31 @@ impl UpdateDomainNameOutputBuilder {
     pub fn get_distribution_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.distribution_domain_name
     }
-    /// <p>The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint. The valid value is <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see Set up a Regional Custom Domain Name and AWS Regions and Endpoints for API Gateway.</p>
+    /// <p>The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint. The valid value is <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see Set up a Regional Custom Domain Name and AWS Regions and Endpoints for API Gateway. </p>
     pub fn distribution_hosted_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.distribution_hosted_zone_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint. The valid value is <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see Set up a Regional Custom Domain Name and AWS Regions and Endpoints for API Gateway.</p>
+    /// <p>The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint. The valid value is <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see Set up a Regional Custom Domain Name and AWS Regions and Endpoints for API Gateway. </p>
     pub fn set_distribution_hosted_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.distribution_hosted_zone_id = input;
         self
     }
-    /// <p>The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint. The valid value is <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see Set up a Regional Custom Domain Name and AWS Regions and Endpoints for API Gateway.</p>
+    /// <p>The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint. The valid value is <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see Set up a Regional Custom Domain Name and AWS Regions and Endpoints for API Gateway. </p>
     pub fn get_distribution_hosted_zone_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.distribution_hosted_zone_id
     }
-    /// <p>The endpoint configuration of this DomainName showing the endpoint types of the domain name.</p>
+    /// <p>The endpoint configuration of this DomainName showing the endpoint types of the domain name. </p>
     pub fn endpoint_configuration(mut self, input: crate::types::EndpointConfiguration) -> Self {
         self.endpoint_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The endpoint configuration of this DomainName showing the endpoint types of the domain name.</p>
+    /// <p>The endpoint configuration of this DomainName showing the endpoint types of the domain name. </p>
     pub fn set_endpoint_configuration(mut self, input: ::std::option::Option<crate::types::EndpointConfiguration>) -> Self {
         self.endpoint_configuration = input;
         self
     }
-    /// <p>The endpoint configuration of this DomainName showing the endpoint types of the domain name.</p>
+    /// <p>The endpoint configuration of this DomainName showing the endpoint types of the domain name. </p>
     pub fn get_endpoint_configuration(&self) -> &::std::option::Option<crate::types::EndpointConfiguration> {
         &self.endpoint_configuration
     }

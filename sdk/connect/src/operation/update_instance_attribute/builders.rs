@@ -123,37 +123,37 @@ impl UpdateInstanceAttributeFluentBuilder {
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_id()
     }
-    /// <p>The type of attribute.</p><note>
+    /// <p>The type of attribute.</p> <note>
     /// <p>Only allowlisted customers can consume USE_CUSTOM_TTS_VOICES. To access this feature, contact Amazon Web Services Support for allowlisting.</p>
     /// </note>
     pub fn attribute_type(mut self, input: crate::types::InstanceAttributeType) -> Self {
         self.inner = self.inner.attribute_type(input);
         self
     }
-    /// <p>The type of attribute.</p><note>
+    /// <p>The type of attribute.</p> <note>
     /// <p>Only allowlisted customers can consume USE_CUSTOM_TTS_VOICES. To access this feature, contact Amazon Web Services Support for allowlisting.</p>
     /// </note>
     pub fn set_attribute_type(mut self, input: ::std::option::Option<crate::types::InstanceAttributeType>) -> Self {
         self.inner = self.inner.set_attribute_type(input);
         self
     }
-    /// <p>The type of attribute.</p><note>
+    /// <p>The type of attribute.</p> <note>
     /// <p>Only allowlisted customers can consume USE_CUSTOM_TTS_VOICES. To access this feature, contact Amazon Web Services Support for allowlisting.</p>
     /// </note>
     pub fn get_attribute_type(&self) -> &::std::option::Option<crate::types::InstanceAttributeType> {
         self.inner.get_attribute_type()
     }
-    /// <p>The value for the attribute. Maximum character limit is 100.</p>
+    /// <p>The value for the attribute. Maximum character limit is 100. </p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.value(input.into());
         self
     }
-    /// <p>The value for the attribute. Maximum character limit is 100.</p>
+    /// <p>The value for the attribute. Maximum character limit is 100. </p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_value(input);
         self
     }
-    /// <p>The value for the attribute. Maximum character limit is 100.</p>
+    /// <p>The value for the attribute. Maximum character limit is 100. </p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_value()
     }

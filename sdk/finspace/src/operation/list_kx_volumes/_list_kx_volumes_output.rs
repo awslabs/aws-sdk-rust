@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListKxVolumesOutput {
-    /// <p>A summary of volumes.</p>
+    /// <p> A summary of volumes. </p>
     pub kx_volume_summaries: ::std::option::Option<::std::vec::Vec<crate::types::KxVolume>>,
     /// <p>A token that indicates where a results page should begin.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListKxVolumesOutput {
-    /// <p>A summary of volumes.</p>
+    /// <p> A summary of volumes. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.kx_volume_summaries.is_none()`.
     pub fn kx_volume_summaries(&self) -> &[crate::types::KxVolume] {
@@ -46,19 +46,19 @@ impl ListKxVolumesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_kx_volume_summaries`](Self::set_kx_volume_summaries).
     ///
-    /// <p>A summary of volumes.</p>
+    /// <p> A summary of volumes. </p>
     pub fn kx_volume_summaries(mut self, input: crate::types::KxVolume) -> Self {
         let mut v = self.kx_volume_summaries.unwrap_or_default();
         v.push(input);
         self.kx_volume_summaries = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A summary of volumes.</p>
+    /// <p> A summary of volumes. </p>
     pub fn set_kx_volume_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KxVolume>>) -> Self {
         self.kx_volume_summaries = input;
         self
     }
-    /// <p>A summary of volumes.</p>
+    /// <p> A summary of volumes. </p>
     pub fn get_kx_volume_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KxVolume>> {
         &self.kx_volume_summaries
     }

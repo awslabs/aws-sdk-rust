@@ -22,7 +22,7 @@ impl StartGuiSessionInputBuilder {
 }
 /// Fluent builder constructing a request to `StartGUISession`.
 ///
-/// <p>Initiates a graphical user interface (GUI) session that’s used to access a virtual computer’s operating system and application. The session will be active for 1 hour. Use this action to resume the session after it expires.</p>
+/// <p>Initiates a graphical user interface (GUI) session that’s used to access a virtual computer’s operating system and application. The session will be active for 1 hour. Use this action to resume the session after it expires. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartGUISessionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

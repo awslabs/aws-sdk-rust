@@ -21,7 +21,7 @@ pub struct AwsEcsServiceDetails {
     /// <p>After a task starts, the amount of time in seconds that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing target health checks.</p>
     pub health_check_grace_period_seconds: ::std::option::Option<i32>,
     /// <p>The launch type that the service uses.</p>
-    /// <p>Valid values: <code>EC2</code> | <code>FARGATE</code> | <code>EXTERNAL</code></p>
+    /// <p>Valid values: <code>EC2</code> | <code>FARGATE</code> | <code>EXTERNAL</code> </p>
     pub launch_type: ::std::option::Option<::std::string::String>,
     /// <p>Information about the load balancers that the service uses.</p>
     pub load_balancers: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsServiceLoadBalancersDetails>>,
@@ -36,14 +36,14 @@ pub struct AwsEcsServiceDetails {
     /// <p>The platform version on which to run the service. Only specified for tasks that are hosted on Fargate. If a platform version is not specified, the <code>LATEST</code> platform version is used by default.</p>
     pub platform_version: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether to propagate the tags from the task definition to the task or from the service to the task. If no value is provided, then tags are not propagated.</p>
-    /// <p>Valid values: <code>TASK_DEFINITION</code> | <code>SERVICE</code></p>
+    /// <p>Valid values: <code>TASK_DEFINITION</code> | <code>SERVICE</code> </p>
     pub propagate_tags: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the IAM role that is associated with the service. The role allows the Amazon ECS container agent to register container instances with an Elastic Load Balancing load balancer.</p>
     pub role: ::std::option::Option<::std::string::String>,
     /// <p>The scheduling strategy to use for the service.</p>
     /// <p>The <code>REPLICA</code> scheduling strategy places and maintains the desired number of tasks across the cluster. By default, the service scheduler spreads tasks across Availability Zones. Task placement strategies and constraints are used to customize task placement decisions.</p>
     /// <p>The <code>DAEMON</code> scheduling strategy deploys exactly one task on each active container instance that meets all of the task placement constraints that are specified in the cluster. The service scheduler also evaluates the task placement constraints for running tasks and stops tasks that do not meet the placement constraints.</p>
-    /// <p>Valid values: <code>REPLICA</code> | <code>DAEMON</code></p>
+    /// <p>Valid values: <code>REPLICA</code> | <code>DAEMON</code> </p>
     pub scheduling_strategy: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the service.</p>
     pub service_arn: ::std::option::Option<::std::string::String>,
@@ -91,7 +91,7 @@ impl AwsEcsServiceDetails {
         self.health_check_grace_period_seconds
     }
     /// <p>The launch type that the service uses.</p>
-    /// <p>Valid values: <code>EC2</code> | <code>FARGATE</code> | <code>EXTERNAL</code></p>
+    /// <p>Valid values: <code>EC2</code> | <code>FARGATE</code> | <code>EXTERNAL</code> </p>
     pub fn launch_type(&self) -> ::std::option::Option<&str> {
         self.launch_type.as_deref()
     }
@@ -126,7 +126,7 @@ impl AwsEcsServiceDetails {
         self.platform_version.as_deref()
     }
     /// <p>Indicates whether to propagate the tags from the task definition to the task or from the service to the task. If no value is provided, then tags are not propagated.</p>
-    /// <p>Valid values: <code>TASK_DEFINITION</code> | <code>SERVICE</code></p>
+    /// <p>Valid values: <code>TASK_DEFINITION</code> | <code>SERVICE</code> </p>
     pub fn propagate_tags(&self) -> ::std::option::Option<&str> {
         self.propagate_tags.as_deref()
     }
@@ -137,7 +137,7 @@ impl AwsEcsServiceDetails {
     /// <p>The scheduling strategy to use for the service.</p>
     /// <p>The <code>REPLICA</code> scheduling strategy places and maintains the desired number of tasks across the cluster. By default, the service scheduler spreads tasks across Availability Zones. Task placement strategies and constraints are used to customize task placement decisions.</p>
     /// <p>The <code>DAEMON</code> scheduling strategy deploys exactly one task on each active container instance that meets all of the task placement constraints that are specified in the cluster. The service scheduler also evaluates the task placement constraints for running tasks and stops tasks that do not meet the placement constraints.</p>
-    /// <p>Valid values: <code>REPLICA</code> | <code>DAEMON</code></p>
+    /// <p>Valid values: <code>REPLICA</code> | <code>DAEMON</code> </p>
     pub fn scheduling_strategy(&self) -> ::std::option::Option<&str> {
         self.scheduling_strategy.as_deref()
     }
@@ -320,19 +320,19 @@ impl AwsEcsServiceDetailsBuilder {
         &self.health_check_grace_period_seconds
     }
     /// <p>The launch type that the service uses.</p>
-    /// <p>Valid values: <code>EC2</code> | <code>FARGATE</code> | <code>EXTERNAL</code></p>
+    /// <p>Valid values: <code>EC2</code> | <code>FARGATE</code> | <code>EXTERNAL</code> </p>
     pub fn launch_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The launch type that the service uses.</p>
-    /// <p>Valid values: <code>EC2</code> | <code>FARGATE</code> | <code>EXTERNAL</code></p>
+    /// <p>Valid values: <code>EC2</code> | <code>FARGATE</code> | <code>EXTERNAL</code> </p>
     pub fn set_launch_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.launch_type = input;
         self
     }
     /// <p>The launch type that the service uses.</p>
-    /// <p>Valid values: <code>EC2</code> | <code>FARGATE</code> | <code>EXTERNAL</code></p>
+    /// <p>Valid values: <code>EC2</code> | <code>FARGATE</code> | <code>EXTERNAL</code> </p>
     pub fn get_launch_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.launch_type
     }
@@ -445,19 +445,19 @@ impl AwsEcsServiceDetailsBuilder {
         &self.platform_version
     }
     /// <p>Indicates whether to propagate the tags from the task definition to the task or from the service to the task. If no value is provided, then tags are not propagated.</p>
-    /// <p>Valid values: <code>TASK_DEFINITION</code> | <code>SERVICE</code></p>
+    /// <p>Valid values: <code>TASK_DEFINITION</code> | <code>SERVICE</code> </p>
     pub fn propagate_tags(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.propagate_tags = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates whether to propagate the tags from the task definition to the task or from the service to the task. If no value is provided, then tags are not propagated.</p>
-    /// <p>Valid values: <code>TASK_DEFINITION</code> | <code>SERVICE</code></p>
+    /// <p>Valid values: <code>TASK_DEFINITION</code> | <code>SERVICE</code> </p>
     pub fn set_propagate_tags(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.propagate_tags = input;
         self
     }
     /// <p>Indicates whether to propagate the tags from the task definition to the task or from the service to the task. If no value is provided, then tags are not propagated.</p>
-    /// <p>Valid values: <code>TASK_DEFINITION</code> | <code>SERVICE</code></p>
+    /// <p>Valid values: <code>TASK_DEFINITION</code> | <code>SERVICE</code> </p>
     pub fn get_propagate_tags(&self) -> &::std::option::Option<::std::string::String> {
         &self.propagate_tags
     }
@@ -478,7 +478,7 @@ impl AwsEcsServiceDetailsBuilder {
     /// <p>The scheduling strategy to use for the service.</p>
     /// <p>The <code>REPLICA</code> scheduling strategy places and maintains the desired number of tasks across the cluster. By default, the service scheduler spreads tasks across Availability Zones. Task placement strategies and constraints are used to customize task placement decisions.</p>
     /// <p>The <code>DAEMON</code> scheduling strategy deploys exactly one task on each active container instance that meets all of the task placement constraints that are specified in the cluster. The service scheduler also evaluates the task placement constraints for running tasks and stops tasks that do not meet the placement constraints.</p>
-    /// <p>Valid values: <code>REPLICA</code> | <code>DAEMON</code></p>
+    /// <p>Valid values: <code>REPLICA</code> | <code>DAEMON</code> </p>
     pub fn scheduling_strategy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scheduling_strategy = ::std::option::Option::Some(input.into());
         self
@@ -486,7 +486,7 @@ impl AwsEcsServiceDetailsBuilder {
     /// <p>The scheduling strategy to use for the service.</p>
     /// <p>The <code>REPLICA</code> scheduling strategy places and maintains the desired number of tasks across the cluster. By default, the service scheduler spreads tasks across Availability Zones. Task placement strategies and constraints are used to customize task placement decisions.</p>
     /// <p>The <code>DAEMON</code> scheduling strategy deploys exactly one task on each active container instance that meets all of the task placement constraints that are specified in the cluster. The service scheduler also evaluates the task placement constraints for running tasks and stops tasks that do not meet the placement constraints.</p>
-    /// <p>Valid values: <code>REPLICA</code> | <code>DAEMON</code></p>
+    /// <p>Valid values: <code>REPLICA</code> | <code>DAEMON</code> </p>
     pub fn set_scheduling_strategy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scheduling_strategy = input;
         self
@@ -494,7 +494,7 @@ impl AwsEcsServiceDetailsBuilder {
     /// <p>The scheduling strategy to use for the service.</p>
     /// <p>The <code>REPLICA</code> scheduling strategy places and maintains the desired number of tasks across the cluster. By default, the service scheduler spreads tasks across Availability Zones. Task placement strategies and constraints are used to customize task placement decisions.</p>
     /// <p>The <code>DAEMON</code> scheduling strategy deploys exactly one task on each active container instance that meets all of the task placement constraints that are specified in the cluster. The service scheduler also evaluates the task placement constraints for running tasks and stops tasks that do not meet the placement constraints.</p>
-    /// <p>Valid values: <code>REPLICA</code> | <code>DAEMON</code></p>
+    /// <p>Valid values: <code>REPLICA</code> | <code>DAEMON</code> </p>
     pub fn get_scheduling_strategy(&self) -> &::std::option::Option<::std::string::String> {
         &self.scheduling_strategy
     }

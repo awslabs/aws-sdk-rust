@@ -25,7 +25,7 @@ impl ListAccessKeysInputBuilder {
 /// <p>Returns information about the access key IDs associated with the specified IAM user. If there is none, the operation returns an empty list.</p>
 /// <p>Although each user is limited to a small number of keys, you can still paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters.</p>
 /// <p>If the <code>UserName</code> is not specified, the user name is determined implicitly based on the Amazon Web Services access key ID used to sign the request. If a temporary access key is used, then <code>UserName</code> is required. If a long-term key is assigned to the user, then <code>UserName</code> is not required.</p>
-/// <p>This operation works for access keys under the Amazon Web Services account. If the Amazon Web Services account has no associated users, the root user returns it's own access key IDs by running this command.</p><note>
+/// <p>This operation works for access keys under the Amazon Web Services account. If the Amazon Web Services account has no associated users, the root user returns it's own access key IDs by running this command.</p> <note>
 /// <p>To ensure the security of your Amazon Web Services account, the secret access key is accessible only during key and user creation.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

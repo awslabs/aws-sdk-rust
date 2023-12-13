@@ -11,7 +11,7 @@ pub struct PutIdentityPolicyInput {
     /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p>
     pub policy_name: ::std::option::Option<::std::string::String>,
     /// <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>
-    /// <p>For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization-policies.html">Amazon SES Developer Guide</a>.</p>
+    /// <p>For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization-policies.html">Amazon SES Developer Guide</a>. </p>
     pub policy: ::std::option::Option<::std::string::String>,
 }
 impl PutIdentityPolicyInput {
@@ -26,7 +26,7 @@ impl PutIdentityPolicyInput {
         self.policy_name.as_deref()
     }
     /// <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>
-    /// <p>For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization-policies.html">Amazon SES Developer Guide</a>.</p>
+    /// <p>For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization-policies.html">Amazon SES Developer Guide</a>. </p>
     pub fn policy(&self) -> ::std::option::Option<&str> {
         self.policy.as_deref()
     }
@@ -84,20 +84,20 @@ impl PutIdentityPolicyInputBuilder {
         &self.policy_name
     }
     /// <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>
-    /// <p>For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization-policies.html">Amazon SES Developer Guide</a>.</p>
+    /// <p>For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization-policies.html">Amazon SES Developer Guide</a>. </p>
     /// This field is required.
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>
-    /// <p>For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization-policies.html">Amazon SES Developer Guide</a>.</p>
+    /// <p>For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization-policies.html">Amazon SES Developer Guide</a>. </p>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy = input;
         self
     }
     /// <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>
-    /// <p>For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization-policies.html">Amazon SES Developer Guide</a>.</p>
+    /// <p>For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization-policies.html">Amazon SES Developer Guide</a>. </p>
     pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy
     }

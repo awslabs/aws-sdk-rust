@@ -6,7 +6,7 @@ pub struct DescribeBudgetPerformanceHistoryOutput {
     /// <p>The history of how often the budget has gone into an <code>ALARM</code> state.</p>
     /// <p>For <code>DAILY</code> budgets, the history saves the state of the budget for the last 60 days. For <code>MONTHLY</code> budgets, the history saves the state of the budget for the current month plus the last 12 months. For <code>QUARTERLY</code> budgets, the history saves the state of the budget for the last four quarters.</p>
     pub budget_performance_history: ::std::option::Option<crate::types::BudgetPerformanceHistory>,
-    /// <p>A generic string.</p>
+    /// <p> A generic string.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -16,7 +16,7 @@ impl DescribeBudgetPerformanceHistoryOutput {
     pub fn budget_performance_history(&self) -> ::std::option::Option<&crate::types::BudgetPerformanceHistory> {
         self.budget_performance_history.as_ref()
     }
-    /// <p>A generic string.</p>
+    /// <p> A generic string.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -59,17 +59,17 @@ impl DescribeBudgetPerformanceHistoryOutputBuilder {
     pub fn get_budget_performance_history(&self) -> &::std::option::Option<crate::types::BudgetPerformanceHistory> {
         &self.budget_performance_history
     }
-    /// <p>A generic string.</p>
+    /// <p> A generic string.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A generic string.</p>
+    /// <p> A generic string.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>A generic string.</p>
+    /// <p> A generic string.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

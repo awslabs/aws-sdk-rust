@@ -5,7 +5,7 @@
 pub struct DescribeUserStackAssociationsInput {
     /// <p>The name of the stack that is associated with the user.</p>
     pub stack_name: ::std::option::Option<::std::string::String>,
-    /// <p>The email address of the user who is associated with the stack.</p><note>
+    /// <p>The email address of the user who is associated with the stack.</p> <note>
     /// <p>Users' email addresses are case-sensitive.</p>
     /// </note>
     pub user_name: ::std::option::Option<::std::string::String>,
@@ -21,7 +21,7 @@ impl DescribeUserStackAssociationsInput {
     pub fn stack_name(&self) -> ::std::option::Option<&str> {
         self.stack_name.as_deref()
     }
-    /// <p>The email address of the user who is associated with the stack.</p><note>
+    /// <p>The email address of the user who is associated with the stack.</p> <note>
     /// <p>Users' email addresses are case-sensitive.</p>
     /// </note>
     pub fn user_name(&self) -> ::std::option::Option<&str> {
@@ -83,21 +83,21 @@ impl DescribeUserStackAssociationsInputBuilder {
     pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.stack_name
     }
-    /// <p>The email address of the user who is associated with the stack.</p><note>
+    /// <p>The email address of the user who is associated with the stack.</p> <note>
     /// <p>Users' email addresses are case-sensitive.</p>
     /// </note>
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The email address of the user who is associated with the stack.</p><note>
+    /// <p>The email address of the user who is associated with the stack.</p> <note>
     /// <p>Users' email addresses are case-sensitive.</p>
     /// </note>
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_name = input;
         self
     }
-    /// <p>The email address of the user who is associated with the stack.</p><note>
+    /// <p>The email address of the user who is associated with the stack.</p> <note>
     /// <p>Users' email addresses are case-sensitive.</p>
     /// </note>
     pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {

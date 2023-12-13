@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFlywheelsInput {
-    /// <p>Filters the flywheels that are returned. You can filter flywheels on their status, or the date and time that they were submitted. You can only set one filter at a time.</p>
+    /// <p>Filters the flywheels that are returned. You can filter flywheels on their status, or the date and time that they were submitted. You can only set one filter at a time. </p>
     pub filter: ::std::option::Option<crate::types::FlywheelFilter>,
     /// <p>Identifies the next page of results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -11,7 +11,7 @@ pub struct ListFlywheelsInput {
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListFlywheelsInput {
-    /// <p>Filters the flywheels that are returned. You can filter flywheels on their status, or the date and time that they were submitted. You can only set one filter at a time.</p>
+    /// <p>Filters the flywheels that are returned. You can filter flywheels on their status, or the date and time that they were submitted. You can only set one filter at a time. </p>
     pub fn filter(&self) -> ::std::option::Option<&crate::types::FlywheelFilter> {
         self.filter.as_ref()
     }
@@ -40,17 +40,17 @@ pub struct ListFlywheelsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ListFlywheelsInputBuilder {
-    /// <p>Filters the flywheels that are returned. You can filter flywheels on their status, or the date and time that they were submitted. You can only set one filter at a time.</p>
+    /// <p>Filters the flywheels that are returned. You can filter flywheels on their status, or the date and time that they were submitted. You can only set one filter at a time. </p>
     pub fn filter(mut self, input: crate::types::FlywheelFilter) -> Self {
         self.filter = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Filters the flywheels that are returned. You can filter flywheels on their status, or the date and time that they were submitted. You can only set one filter at a time.</p>
+    /// <p>Filters the flywheels that are returned. You can filter flywheels on their status, or the date and time that they were submitted. You can only set one filter at a time. </p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::FlywheelFilter>) -> Self {
         self.filter = input;
         self
     }
-    /// <p>Filters the flywheels that are returned. You can filter flywheels on their status, or the date and time that they were submitted. You can only set one filter at a time.</p>
+    /// <p>Filters the flywheels that are returned. You can filter flywheels on their status, or the date and time that they were submitted. You can only set one filter at a time. </p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::FlywheelFilter> {
         &self.filter
     }

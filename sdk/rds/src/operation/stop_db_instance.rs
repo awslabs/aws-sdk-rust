@@ -242,9 +242,9 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for StopDBInstanc
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum StopDBInstanceError {
-    /// <p><code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
+    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
     DbInstanceNotFoundFault(crate::types::error::DbInstanceNotFoundFault),
-    /// <p><code>DBSnapshotIdentifier</code> is already used by an existing snapshot.</p>
+    /// <p> <code>DBSnapshotIdentifier</code> is already used by an existing snapshot.</p>
     DbSnapshotAlreadyExistsFault(crate::types::error::DbSnapshotAlreadyExistsFault),
     /// <p>The requested operation can't be performed while the cluster is in this state.</p>
     InvalidDbClusterStateFault(crate::types::error::InvalidDbClusterStateFault),

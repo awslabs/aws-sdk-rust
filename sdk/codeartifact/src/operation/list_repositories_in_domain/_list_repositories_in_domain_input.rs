@@ -3,41 +3,41 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRepositoriesInDomainInput {
-    /// <p>The name of the domain that contains the returned list of repositories.</p>
+    /// <p> The name of the domain that contains the returned list of repositories. </p>
     pub domain: ::std::option::Option<::std::string::String>,
-    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub domain_owner: ::std::option::Option<::std::string::String>,
-    /// <p>Filter the list of repositories to only include those that are managed by the Amazon Web Services account ID.</p>
+    /// <p> Filter the list of repositories to only include those that are managed by the Amazon Web Services account ID. </p>
     pub administrator_account: ::std::option::Option<::std::string::String>,
-    /// <p>A prefix used to filter returned repositories. Only repositories with names that start with <code>repositoryPrefix</code> are returned.</p>
+    /// <p> A prefix used to filter returned repositories. Only repositories with names that start with <code>repositoryPrefix</code> are returned. </p>
     pub repository_prefix: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum number of results to return per page.</p>
+    /// <p> The maximum number of results to return per page. </p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListRepositoriesInDomainInput {
-    /// <p>The name of the domain that contains the returned list of repositories.</p>
+    /// <p> The name of the domain that contains the returned list of repositories. </p>
     pub fn domain(&self) -> ::std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(&self) -> ::std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
-    /// <p>Filter the list of repositories to only include those that are managed by the Amazon Web Services account ID.</p>
+    /// <p> Filter the list of repositories to only include those that are managed by the Amazon Web Services account ID. </p>
     pub fn administrator_account(&self) -> ::std::option::Option<&str> {
         self.administrator_account.as_deref()
     }
-    /// <p>A prefix used to filter returned repositories. Only repositories with names that start with <code>repositoryPrefix</code> are returned.</p>
+    /// <p> A prefix used to filter returned repositories. Only repositories with names that start with <code>repositoryPrefix</code> are returned. </p>
     pub fn repository_prefix(&self) -> ::std::option::Option<&str> {
         self.repository_prefix.as_deref()
     }
-    /// <p>The maximum number of results to return per page.</p>
+    /// <p> The maximum number of results to return per page. </p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -61,88 +61,88 @@ pub struct ListRepositoriesInDomainInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListRepositoriesInDomainInputBuilder {
-    /// <p>The name of the domain that contains the returned list of repositories.</p>
+    /// <p> The name of the domain that contains the returned list of repositories. </p>
     /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the domain that contains the returned list of repositories.</p>
+    /// <p> The name of the domain that contains the returned list of repositories. </p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain = input;
         self
     }
-    /// <p>The name of the domain that contains the returned list of repositories.</p>
+    /// <p> The name of the domain that contains the returned list of repositories. </p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain
     }
-    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_owner = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn set_domain_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_owner = input;
         self
     }
-    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn get_domain_owner(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_owner
     }
-    /// <p>Filter the list of repositories to only include those that are managed by the Amazon Web Services account ID.</p>
+    /// <p> Filter the list of repositories to only include those that are managed by the Amazon Web Services account ID. </p>
     pub fn administrator_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.administrator_account = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Filter the list of repositories to only include those that are managed by the Amazon Web Services account ID.</p>
+    /// <p> Filter the list of repositories to only include those that are managed by the Amazon Web Services account ID. </p>
     pub fn set_administrator_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.administrator_account = input;
         self
     }
-    /// <p>Filter the list of repositories to only include those that are managed by the Amazon Web Services account ID.</p>
+    /// <p> Filter the list of repositories to only include those that are managed by the Amazon Web Services account ID. </p>
     pub fn get_administrator_account(&self) -> &::std::option::Option<::std::string::String> {
         &self.administrator_account
     }
-    /// <p>A prefix used to filter returned repositories. Only repositories with names that start with <code>repositoryPrefix</code> are returned.</p>
+    /// <p> A prefix used to filter returned repositories. Only repositories with names that start with <code>repositoryPrefix</code> are returned. </p>
     pub fn repository_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_prefix = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A prefix used to filter returned repositories. Only repositories with names that start with <code>repositoryPrefix</code> are returned.</p>
+    /// <p> A prefix used to filter returned repositories. Only repositories with names that start with <code>repositoryPrefix</code> are returned. </p>
     pub fn set_repository_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_prefix = input;
         self
     }
-    /// <p>A prefix used to filter returned repositories. Only repositories with names that start with <code>repositoryPrefix</code> are returned.</p>
+    /// <p> A prefix used to filter returned repositories. Only repositories with names that start with <code>repositoryPrefix</code> are returned. </p>
     pub fn get_repository_prefix(&self) -> &::std::option::Option<::std::string::String> {
         &self.repository_prefix
     }
-    /// <p>The maximum number of results to return per page.</p>
+    /// <p> The maximum number of results to return per page. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of results to return per page.</p>
+    /// <p> The maximum number of results to return per page. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of results to return per page.</p>
+    /// <p> The maximum number of results to return per page. </p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

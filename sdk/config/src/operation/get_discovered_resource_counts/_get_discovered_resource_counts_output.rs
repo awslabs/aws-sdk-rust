@@ -4,14 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDiscoveredResourceCountsOutput {
     /// <p>The total number of resources that Config is recording in the region for your account. If you specify resource types in the request, Config returns only the total number of resources for those resource types.</p>
-    /// <p class="title"><b>Example</b></p>
+    /// <p class="title"> <b>Example</b> </p>
     /// <ol>
-    /// <li>
-    /// <p>Config is recording three resource types in the US East (Ohio) Region for your account: 25 EC2 instances, 20 IAM users, and 15 S3 buckets, for a total of 60 resources.</p></li>
-    /// <li>
-    /// <p>You make a call to the <code>GetDiscoveredResourceCounts</code> action and specify the resource type, <code>"AWS::EC2::Instances"</code>, in the request.</p></li>
-    /// <li>
-    /// <p>Config returns 25 for <code>totalDiscoveredResources</code>.</p></li>
+    /// <li> <p>Config is recording three resource types in the US East (Ohio) Region for your account: 25 EC2 instances, 20 IAM users, and 15 S3 buckets, for a total of 60 resources.</p> </li>
+    /// <li> <p>You make a call to the <code>GetDiscoveredResourceCounts</code> action and specify the resource type, <code>"AWS::EC2::Instances"</code>, in the request.</p> </li>
+    /// <li> <p>Config returns 25 for <code>totalDiscoveredResources</code>.</p> </li>
     /// </ol>
     pub total_discovered_resources: i64,
     /// <p>The list of <code>ResourceCount</code> objects. Each object is listed in descending order by the number of resources.</p>
@@ -22,14 +19,11 @@ pub struct GetDiscoveredResourceCountsOutput {
 }
 impl GetDiscoveredResourceCountsOutput {
     /// <p>The total number of resources that Config is recording in the region for your account. If you specify resource types in the request, Config returns only the total number of resources for those resource types.</p>
-    /// <p class="title"><b>Example</b></p>
+    /// <p class="title"> <b>Example</b> </p>
     /// <ol>
-    /// <li>
-    /// <p>Config is recording three resource types in the US East (Ohio) Region for your account: 25 EC2 instances, 20 IAM users, and 15 S3 buckets, for a total of 60 resources.</p></li>
-    /// <li>
-    /// <p>You make a call to the <code>GetDiscoveredResourceCounts</code> action and specify the resource type, <code>"AWS::EC2::Instances"</code>, in the request.</p></li>
-    /// <li>
-    /// <p>Config returns 25 for <code>totalDiscoveredResources</code>.</p></li>
+    /// <li> <p>Config is recording three resource types in the US East (Ohio) Region for your account: 25 EC2 instances, 20 IAM users, and 15 S3 buckets, for a total of 60 resources.</p> </li>
+    /// <li> <p>You make a call to the <code>GetDiscoveredResourceCounts</code> action and specify the resource type, <code>"AWS::EC2::Instances"</code>, in the request.</p> </li>
+    /// <li> <p>Config returns 25 for <code>totalDiscoveredResources</code>.</p> </li>
     /// </ol>
     pub fn total_discovered_resources(&self) -> i64 {
         self.total_discovered_resources
@@ -68,42 +62,33 @@ pub struct GetDiscoveredResourceCountsOutputBuilder {
 }
 impl GetDiscoveredResourceCountsOutputBuilder {
     /// <p>The total number of resources that Config is recording in the region for your account. If you specify resource types in the request, Config returns only the total number of resources for those resource types.</p>
-    /// <p class="title"><b>Example</b></p>
+    /// <p class="title"> <b>Example</b> </p>
     /// <ol>
-    /// <li>
-    /// <p>Config is recording three resource types in the US East (Ohio) Region for your account: 25 EC2 instances, 20 IAM users, and 15 S3 buckets, for a total of 60 resources.</p></li>
-    /// <li>
-    /// <p>You make a call to the <code>GetDiscoveredResourceCounts</code> action and specify the resource type, <code>"AWS::EC2::Instances"</code>, in the request.</p></li>
-    /// <li>
-    /// <p>Config returns 25 for <code>totalDiscoveredResources</code>.</p></li>
+    /// <li> <p>Config is recording three resource types in the US East (Ohio) Region for your account: 25 EC2 instances, 20 IAM users, and 15 S3 buckets, for a total of 60 resources.</p> </li>
+    /// <li> <p>You make a call to the <code>GetDiscoveredResourceCounts</code> action and specify the resource type, <code>"AWS::EC2::Instances"</code>, in the request.</p> </li>
+    /// <li> <p>Config returns 25 for <code>totalDiscoveredResources</code>.</p> </li>
     /// </ol>
     pub fn total_discovered_resources(mut self, input: i64) -> Self {
         self.total_discovered_resources = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total number of resources that Config is recording in the region for your account. If you specify resource types in the request, Config returns only the total number of resources for those resource types.</p>
-    /// <p class="title"><b>Example</b></p>
+    /// <p class="title"> <b>Example</b> </p>
     /// <ol>
-    /// <li>
-    /// <p>Config is recording three resource types in the US East (Ohio) Region for your account: 25 EC2 instances, 20 IAM users, and 15 S3 buckets, for a total of 60 resources.</p></li>
-    /// <li>
-    /// <p>You make a call to the <code>GetDiscoveredResourceCounts</code> action and specify the resource type, <code>"AWS::EC2::Instances"</code>, in the request.</p></li>
-    /// <li>
-    /// <p>Config returns 25 for <code>totalDiscoveredResources</code>.</p></li>
+    /// <li> <p>Config is recording three resource types in the US East (Ohio) Region for your account: 25 EC2 instances, 20 IAM users, and 15 S3 buckets, for a total of 60 resources.</p> </li>
+    /// <li> <p>You make a call to the <code>GetDiscoveredResourceCounts</code> action and specify the resource type, <code>"AWS::EC2::Instances"</code>, in the request.</p> </li>
+    /// <li> <p>Config returns 25 for <code>totalDiscoveredResources</code>.</p> </li>
     /// </ol>
     pub fn set_total_discovered_resources(mut self, input: ::std::option::Option<i64>) -> Self {
         self.total_discovered_resources = input;
         self
     }
     /// <p>The total number of resources that Config is recording in the region for your account. If you specify resource types in the request, Config returns only the total number of resources for those resource types.</p>
-    /// <p class="title"><b>Example</b></p>
+    /// <p class="title"> <b>Example</b> </p>
     /// <ol>
-    /// <li>
-    /// <p>Config is recording three resource types in the US East (Ohio) Region for your account: 25 EC2 instances, 20 IAM users, and 15 S3 buckets, for a total of 60 resources.</p></li>
-    /// <li>
-    /// <p>You make a call to the <code>GetDiscoveredResourceCounts</code> action and specify the resource type, <code>"AWS::EC2::Instances"</code>, in the request.</p></li>
-    /// <li>
-    /// <p>Config returns 25 for <code>totalDiscoveredResources</code>.</p></li>
+    /// <li> <p>Config is recording three resource types in the US East (Ohio) Region for your account: 25 EC2 instances, 20 IAM users, and 15 S3 buckets, for a total of 60 resources.</p> </li>
+    /// <li> <p>You make a call to the <code>GetDiscoveredResourceCounts</code> action and specify the resource type, <code>"AWS::EC2::Instances"</code>, in the request.</p> </li>
+    /// <li> <p>Config returns 25 for <code>totalDiscoveredResources</code>.</p> </li>
     /// </ol>
     pub fn get_total_discovered_resources(&self) -> &::std::option::Option<i64> {
         &self.total_discovered_resources

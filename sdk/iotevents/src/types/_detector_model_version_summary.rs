@@ -18,7 +18,7 @@ pub struct DetectorModelVersionSummary {
     pub last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the detector model version.</p>
     pub status: ::std::option::Option<crate::types::DetectorModelVersionStatus>,
-    /// <p>Information about the order in which events are evaluated and how actions are executed.</p>
+    /// <p>Information about the order in which events are evaluated and how actions are executed. </p>
     pub evaluation_method: ::std::option::Option<crate::types::EvaluationMethod>,
 }
 impl DetectorModelVersionSummary {
@@ -50,7 +50,7 @@ impl DetectorModelVersionSummary {
     pub fn status(&self) -> ::std::option::Option<&crate::types::DetectorModelVersionStatus> {
         self.status.as_ref()
     }
-    /// <p>Information about the order in which events are evaluated and how actions are executed.</p>
+    /// <p>Information about the order in which events are evaluated and how actions are executed. </p>
     pub fn evaluation_method(&self) -> ::std::option::Option<&crate::types::EvaluationMethod> {
         self.evaluation_method.as_ref()
     }
@@ -174,17 +174,17 @@ impl DetectorModelVersionSummaryBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::DetectorModelVersionStatus> {
         &self.status
     }
-    /// <p>Information about the order in which events are evaluated and how actions are executed.</p>
+    /// <p>Information about the order in which events are evaluated and how actions are executed. </p>
     pub fn evaluation_method(mut self, input: crate::types::EvaluationMethod) -> Self {
         self.evaluation_method = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Information about the order in which events are evaluated and how actions are executed.</p>
+    /// <p>Information about the order in which events are evaluated and how actions are executed. </p>
     pub fn set_evaluation_method(mut self, input: ::std::option::Option<crate::types::EvaluationMethod>) -> Self {
         self.evaluation_method = input;
         self
     }
-    /// <p>Information about the order in which events are evaluated and how actions are executed.</p>
+    /// <p>Information about the order in which events are evaluated and how actions are executed. </p>
     pub fn get_evaluation_method(&self) -> &::std::option::Option<crate::types::EvaluationMethod> {
         &self.evaluation_method
     }

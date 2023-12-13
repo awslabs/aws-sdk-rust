@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePoolsOutput {
-    /// <p>An array of PoolInformation objects that contain the details for the requested pools.</p>
+    /// <p>An array of PoolInformation objects that contain the details for the requested pools. </p>
     pub pools: ::std::option::Option<::std::vec::Vec<crate::types::PoolInformation>>,
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribePoolsOutput {
-    /// <p>An array of PoolInformation objects that contain the details for the requested pools.</p>
+    /// <p>An array of PoolInformation objects that contain the details for the requested pools. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pools.is_none()`.
     pub fn pools(&self) -> &[crate::types::PoolInformation] {
@@ -46,19 +46,19 @@ impl DescribePoolsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_pools`](Self::set_pools).
     ///
-    /// <p>An array of PoolInformation objects that contain the details for the requested pools.</p>
+    /// <p>An array of PoolInformation objects that contain the details for the requested pools. </p>
     pub fn pools(mut self, input: crate::types::PoolInformation) -> Self {
         let mut v = self.pools.unwrap_or_default();
         v.push(input);
         self.pools = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of PoolInformation objects that contain the details for the requested pools.</p>
+    /// <p>An array of PoolInformation objects that contain the details for the requested pools. </p>
     pub fn set_pools(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PoolInformation>>) -> Self {
         self.pools = input;
         self
     }
-    /// <p>An array of PoolInformation objects that contain the details for the requested pools.</p>
+    /// <p>An array of PoolInformation objects that contain the details for the requested pools. </p>
     pub fn get_pools(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PoolInformation>> {
         &self.pools
     }

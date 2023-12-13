@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KinesisFirehoseOutputUpdate {
-    /// <p>The Amazon Resource Name (ARN) of the delivery stream to write to.</p>
+    /// <p>The Amazon Resource Name (ARN) of the delivery stream to write to. </p>
     pub resource_arn_update: ::std::string::String,
 }
 impl KinesisFirehoseOutputUpdate {
-    /// <p>The Amazon Resource Name (ARN) of the delivery stream to write to.</p>
+    /// <p>The Amazon Resource Name (ARN) of the delivery stream to write to. </p>
     pub fn resource_arn_update(&self) -> &str {
         use std::ops::Deref;
         self.resource_arn_update.deref()
@@ -28,18 +28,18 @@ pub struct KinesisFirehoseOutputUpdateBuilder {
     pub(crate) resource_arn_update: ::std::option::Option<::std::string::String>,
 }
 impl KinesisFirehoseOutputUpdateBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the delivery stream to write to.</p>
+    /// <p>The Amazon Resource Name (ARN) of the delivery stream to write to. </p>
     /// This field is required.
     pub fn resource_arn_update(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn_update = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the delivery stream to write to.</p>
+    /// <p>The Amazon Resource Name (ARN) of the delivery stream to write to. </p>
     pub fn set_resource_arn_update(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn_update = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the delivery stream to write to.</p>
+    /// <p>The Amazon Resource Name (ARN) of the delivery stream to write to. </p>
     pub fn get_resource_arn_update(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn_update
     }

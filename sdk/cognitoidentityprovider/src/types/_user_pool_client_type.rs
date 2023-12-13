@@ -37,21 +37,16 @@ pub struct UserPoolClientType {
     pub read_attributes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The writeable attributes.</p>
     pub write_attributes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The authentication flows that you want your user pool client to support. For each app client in your user pool, you can sign in your users with any combination of one or more flows, including with a user name and Secure Remote Password (SRP), a user name and password, or a custom authentication process that you define with Lambda functions.</p><note>
+    /// <p>The authentication flows that you want your user pool client to support. For each app client in your user pool, you can sign in your users with any combination of one or more flows, including with a user name and Secure Remote Password (SRP), a user name and password, or a custom authentication process that you define with Lambda functions.</p> <note>
     /// <p>If you don't specify a value for <code>ExplicitAuthFlows</code>, your user client supports <code>ALLOW_REFRESH_TOKEN_AUTH</code>, <code>ALLOW_USER_SRP_AUTH</code>, and <code>ALLOW_CUSTOM_AUTH</code>.</p>
     /// </note>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow, your app passes a user name and password to Amazon Cognito in the request, instead of using the Secure Remote Password (SRP) protocol to securely transmit the password.</p></li>
-    /// <li>
-    /// <p><code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based authentication.</p></li>
-    /// <li>
-    /// <p><code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Amazon Cognito receives the password in the request instead of using the SRP protocol to verify passwords.</p></li>
-    /// <li>
-    /// <p><code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.</p></li>
-    /// <li>
-    /// <p><code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.</p></li>
+    /// <li> <p> <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow, your app passes a user name and password to Amazon Cognito in the request, instead of using the Secure Remote Password (SRP) protocol to securely transmit the password.</p> </li>
+    /// <li> <p> <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based authentication.</p> </li>
+    /// <li> <p> <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Amazon Cognito receives the password in the request instead of using the SRP protocol to verify passwords.</p> </li>
+    /// <li> <p> <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.</p> </li>
+    /// <li> <p> <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.</p> </li>
     /// </ul>
     /// <p>In some environments, you will see the values <code>ADMIN_NO_SRP_AUTH</code>, <code>CUSTOM_AUTH_FLOW_ONLY</code>, or <code>USER_PASSWORD_AUTH</code>. You can't assign these legacy <code>ExplicitAuthFlows</code> values to user pool clients at the same time as values that begin with <code>ALLOW_</code>, like <code>ALLOW_USER_SRP_AUTH</code>.</p>
     pub explicit_auth_flows: ::std::option::Option<::std::vec::Vec<crate::types::ExplicitAuthFlowsType>>,
@@ -60,12 +55,9 @@ pub struct UserPoolClientType {
     /// <p>A list of allowed redirect (callback) URLs for the IdPs.</p>
     /// <p>A redirect URI must:</p>
     /// <ul>
-    /// <li>
-    /// <p>Be an absolute URI.</p></li>
-    /// <li>
-    /// <p>Be registered with the authorization server.</p></li>
-    /// <li>
-    /// <p>Not include a fragment component.</p></li>
+    /// <li> <p>Be an absolute URI.</p> </li>
+    /// <li> <p>Be registered with the authorization server.</p> </li>
+    /// <li> <p>Not include a fragment component.</p> </li>
     /// </ul>
     /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>
     /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
@@ -76,12 +68,9 @@ pub struct UserPoolClientType {
     /// <p>The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>
     /// <p>A redirect URI must:</p>
     /// <ul>
-    /// <li>
-    /// <p>Be an absolute URI.</p></li>
-    /// <li>
-    /// <p>Be registered with the authorization server.</p></li>
-    /// <li>
-    /// <p>Not include a fragment component.</p></li>
+    /// <li> <p>Be an absolute URI.</p> </li>
+    /// <li> <p>Be registered with the authorization server.</p> </li>
+    /// <li> <p>Not include a fragment component.</p> </li>
     /// </ul>
     /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>
     /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
@@ -112,30 +101,24 @@ pub struct UserPoolClientType {
     /// <p>The OAuth scopes that your app client supports. Possible values that OAuth provides are <code>phone</code>, <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values that Amazon Web Services provides are <code>aws.cognito.signin.user.admin</code>. Amazon Cognito also supports custom scopes that you create in Resource Servers.</p>
     pub allowed_o_auth_scopes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Set to <code>true</code> to use OAuth 2.0 features in your user pool app client.</p>
-    /// <p><code>AllowedOAuthFlowsUserPoolClient</code> must be <code>true</code> before you can configure the following features in your app client.</p>
+    /// <p> <code>AllowedOAuthFlowsUserPoolClient</code> must be <code>true</code> before you can configure the following features in your app client.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CallBackURLs</code>: Callback URLs.</p></li>
-    /// <li>
-    /// <p><code>LogoutURLs</code>: Sign-out redirect URLs.</p></li>
-    /// <li>
-    /// <p><code>AllowedOAuthScopes</code>: OAuth 2.0 scopes.</p></li>
-    /// <li>
-    /// <p><code>AllowedOAuthFlows</code>: Support for authorization code, implicit, and client credentials OAuth 2.0 grants.</p></li>
+    /// <li> <p> <code>CallBackURLs</code>: Callback URLs.</p> </li>
+    /// <li> <p> <code>LogoutURLs</code>: Sign-out redirect URLs.</p> </li>
+    /// <li> <p> <code>AllowedOAuthScopes</code>: OAuth 2.0 scopes.</p> </li>
+    /// <li> <p> <code>AllowedOAuthFlows</code>: Support for authorization code, implicit, and client credentials OAuth 2.0 grants.</p> </li>
     /// </ul>
     /// <p>To use OAuth 2.0 features, configure one of these features in the Amazon Cognito console or set <code>AllowedOAuthFlowsUserPoolClient</code> to <code>true</code> in a <code>CreateUserPoolClient</code> or <code>UpdateUserPoolClient</code> API request. If you don't set a value for <code>AllowedOAuthFlowsUserPoolClient</code> in a request with the CLI or SDKs, it defaults to <code>false</code>.</p>
     pub allowed_o_auth_flows_user_pool_client: ::std::option::Option<bool>,
-    /// <p>The Amazon Pinpoint analytics configuration for the user pool client.</p><note>
+    /// <p>The Amazon Pinpoint analytics configuration for the user pool client.</p> <note>
     /// <p>Amazon Cognito user pools only support sending events to Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of the Region where the user pool resides.</p>
     /// </note>
     pub analytics_configuration: ::std::option::Option<crate::types::AnalyticsConfigurationType>,
     /// <p>Errors and responses that you want Amazon Cognito APIs to return during authentication, account confirmation, and password recovery when the user doesn't exist in the user pool. When set to <code>ENABLED</code> and the user doesn't exist, authentication returns an error indicating either the username or password was incorrect. Account confirmation and password recovery return a response indicating a code was sent to a simulated destination. When set to <code>LEGACY</code>, those APIs return a <code>UserNotFoundException</code> exception if the user doesn't exist in the user pool.</p>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ENABLED</code> - This prevents user existence-related errors.</p></li>
-    /// <li>
-    /// <p><code>LEGACY</code> - This represents the old behavior of Amazon Cognito where user existence related errors aren't prevented.</p></li>
+    /// <li> <p> <code>ENABLED</code> - This prevents user existence-related errors.</p> </li>
+    /// <li> <p> <code>LEGACY</code> - This represents the old behavior of Amazon Cognito where user existence related errors aren't prevented.</p> </li>
     /// </ul>
     pub prevent_user_existence_errors: ::std::option::Option<crate::types::PreventUserExistenceErrorTypes>,
     /// <p>Indicates whether token revocation is activated for the user pool client. When you create a new user pool client, token revocation is activated by default. For more information about revoking tokens, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.</p>
@@ -209,21 +192,16 @@ impl UserPoolClientType {
     pub fn write_attributes(&self) -> &[::std::string::String] {
         self.write_attributes.as_deref().unwrap_or_default()
     }
-    /// <p>The authentication flows that you want your user pool client to support. For each app client in your user pool, you can sign in your users with any combination of one or more flows, including with a user name and Secure Remote Password (SRP), a user name and password, or a custom authentication process that you define with Lambda functions.</p><note>
+    /// <p>The authentication flows that you want your user pool client to support. For each app client in your user pool, you can sign in your users with any combination of one or more flows, including with a user name and Secure Remote Password (SRP), a user name and password, or a custom authentication process that you define with Lambda functions.</p> <note>
     /// <p>If you don't specify a value for <code>ExplicitAuthFlows</code>, your user client supports <code>ALLOW_REFRESH_TOKEN_AUTH</code>, <code>ALLOW_USER_SRP_AUTH</code>, and <code>ALLOW_CUSTOM_AUTH</code>.</p>
     /// </note>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow, your app passes a user name and password to Amazon Cognito in the request, instead of using the Secure Remote Password (SRP) protocol to securely transmit the password.</p></li>
-    /// <li>
-    /// <p><code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based authentication.</p></li>
-    /// <li>
-    /// <p><code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Amazon Cognito receives the password in the request instead of using the SRP protocol to verify passwords.</p></li>
-    /// <li>
-    /// <p><code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.</p></li>
-    /// <li>
-    /// <p><code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.</p></li>
+    /// <li> <p> <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow, your app passes a user name and password to Amazon Cognito in the request, instead of using the Secure Remote Password (SRP) protocol to securely transmit the password.</p> </li>
+    /// <li> <p> <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based authentication.</p> </li>
+    /// <li> <p> <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Amazon Cognito receives the password in the request instead of using the SRP protocol to verify passwords.</p> </li>
+    /// <li> <p> <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.</p> </li>
+    /// <li> <p> <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.</p> </li>
     /// </ul>
     /// <p>In some environments, you will see the values <code>ADMIN_NO_SRP_AUTH</code>, <code>CUSTOM_AUTH_FLOW_ONLY</code>, or <code>USER_PASSWORD_AUTH</code>. You can't assign these legacy <code>ExplicitAuthFlows</code> values to user pool clients at the same time as values that begin with <code>ALLOW_</code>, like <code>ALLOW_USER_SRP_AUTH</code>.</p>
     ///
@@ -240,12 +218,9 @@ impl UserPoolClientType {
     /// <p>A list of allowed redirect (callback) URLs for the IdPs.</p>
     /// <p>A redirect URI must:</p>
     /// <ul>
-    /// <li>
-    /// <p>Be an absolute URI.</p></li>
-    /// <li>
-    /// <p>Be registered with the authorization server.</p></li>
-    /// <li>
-    /// <p>Not include a fragment component.</p></li>
+    /// <li> <p>Be an absolute URI.</p> </li>
+    /// <li> <p>Be registered with the authorization server.</p> </li>
+    /// <li> <p>Not include a fragment component.</p> </li>
     /// </ul>
     /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>
     /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
@@ -264,12 +239,9 @@ impl UserPoolClientType {
     /// <p>The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>
     /// <p>A redirect URI must:</p>
     /// <ul>
-    /// <li>
-    /// <p>Be an absolute URI.</p></li>
-    /// <li>
-    /// <p>Be registered with the authorization server.</p></li>
-    /// <li>
-    /// <p>Not include a fragment component.</p></li>
+    /// <li> <p>Be an absolute URI.</p> </li>
+    /// <li> <p>Be registered with the authorization server.</p> </li>
+    /// <li> <p>Not include a fragment component.</p> </li>
     /// </ul>
     /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>
     /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
@@ -310,22 +282,18 @@ impl UserPoolClientType {
         self.allowed_o_auth_scopes.as_deref().unwrap_or_default()
     }
     /// <p>Set to <code>true</code> to use OAuth 2.0 features in your user pool app client.</p>
-    /// <p><code>AllowedOAuthFlowsUserPoolClient</code> must be <code>true</code> before you can configure the following features in your app client.</p>
+    /// <p> <code>AllowedOAuthFlowsUserPoolClient</code> must be <code>true</code> before you can configure the following features in your app client.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CallBackURLs</code>: Callback URLs.</p></li>
-    /// <li>
-    /// <p><code>LogoutURLs</code>: Sign-out redirect URLs.</p></li>
-    /// <li>
-    /// <p><code>AllowedOAuthScopes</code>: OAuth 2.0 scopes.</p></li>
-    /// <li>
-    /// <p><code>AllowedOAuthFlows</code>: Support for authorization code, implicit, and client credentials OAuth 2.0 grants.</p></li>
+    /// <li> <p> <code>CallBackURLs</code>: Callback URLs.</p> </li>
+    /// <li> <p> <code>LogoutURLs</code>: Sign-out redirect URLs.</p> </li>
+    /// <li> <p> <code>AllowedOAuthScopes</code>: OAuth 2.0 scopes.</p> </li>
+    /// <li> <p> <code>AllowedOAuthFlows</code>: Support for authorization code, implicit, and client credentials OAuth 2.0 grants.</p> </li>
     /// </ul>
     /// <p>To use OAuth 2.0 features, configure one of these features in the Amazon Cognito console or set <code>AllowedOAuthFlowsUserPoolClient</code> to <code>true</code> in a <code>CreateUserPoolClient</code> or <code>UpdateUserPoolClient</code> API request. If you don't set a value for <code>AllowedOAuthFlowsUserPoolClient</code> in a request with the CLI or SDKs, it defaults to <code>false</code>.</p>
     pub fn allowed_o_auth_flows_user_pool_client(&self) -> ::std::option::Option<bool> {
         self.allowed_o_auth_flows_user_pool_client
     }
-    /// <p>The Amazon Pinpoint analytics configuration for the user pool client.</p><note>
+    /// <p>The Amazon Pinpoint analytics configuration for the user pool client.</p> <note>
     /// <p>Amazon Cognito user pools only support sending events to Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of the Region where the user pool resides.</p>
     /// </note>
     pub fn analytics_configuration(&self) -> ::std::option::Option<&crate::types::AnalyticsConfigurationType> {
@@ -334,10 +302,8 @@ impl UserPoolClientType {
     /// <p>Errors and responses that you want Amazon Cognito APIs to return during authentication, account confirmation, and password recovery when the user doesn't exist in the user pool. When set to <code>ENABLED</code> and the user doesn't exist, authentication returns an error indicating either the username or password was incorrect. Account confirmation and password recovery return a response indicating a code was sent to a simulated destination. When set to <code>LEGACY</code>, those APIs return a <code>UserNotFoundException</code> exception if the user doesn't exist in the user pool.</p>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ENABLED</code> - This prevents user existence-related errors.</p></li>
-    /// <li>
-    /// <p><code>LEGACY</code> - This represents the old behavior of Amazon Cognito where user existence related errors aren't prevented.</p></li>
+    /// <li> <p> <code>ENABLED</code> - This prevents user existence-related errors.</p> </li>
+    /// <li> <p> <code>LEGACY</code> - This represents the old behavior of Amazon Cognito where user existence related errors aren't prevented.</p> </li>
     /// </ul>
     pub fn prevent_user_existence_errors(&self) -> ::std::option::Option<&crate::types::PreventUserExistenceErrorTypes> {
         self.prevent_user_existence_errors.as_ref()
@@ -640,21 +606,16 @@ impl UserPoolClientTypeBuilder {
     ///
     /// To override the contents of this collection use [`set_explicit_auth_flows`](Self::set_explicit_auth_flows).
     ///
-    /// <p>The authentication flows that you want your user pool client to support. For each app client in your user pool, you can sign in your users with any combination of one or more flows, including with a user name and Secure Remote Password (SRP), a user name and password, or a custom authentication process that you define with Lambda functions.</p><note>
+    /// <p>The authentication flows that you want your user pool client to support. For each app client in your user pool, you can sign in your users with any combination of one or more flows, including with a user name and Secure Remote Password (SRP), a user name and password, or a custom authentication process that you define with Lambda functions.</p> <note>
     /// <p>If you don't specify a value for <code>ExplicitAuthFlows</code>, your user client supports <code>ALLOW_REFRESH_TOKEN_AUTH</code>, <code>ALLOW_USER_SRP_AUTH</code>, and <code>ALLOW_CUSTOM_AUTH</code>.</p>
     /// </note>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow, your app passes a user name and password to Amazon Cognito in the request, instead of using the Secure Remote Password (SRP) protocol to securely transmit the password.</p></li>
-    /// <li>
-    /// <p><code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based authentication.</p></li>
-    /// <li>
-    /// <p><code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Amazon Cognito receives the password in the request instead of using the SRP protocol to verify passwords.</p></li>
-    /// <li>
-    /// <p><code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.</p></li>
-    /// <li>
-    /// <p><code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.</p></li>
+    /// <li> <p> <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow, your app passes a user name and password to Amazon Cognito in the request, instead of using the Secure Remote Password (SRP) protocol to securely transmit the password.</p> </li>
+    /// <li> <p> <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based authentication.</p> </li>
+    /// <li> <p> <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Amazon Cognito receives the password in the request instead of using the SRP protocol to verify passwords.</p> </li>
+    /// <li> <p> <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.</p> </li>
+    /// <li> <p> <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.</p> </li>
     /// </ul>
     /// <p>In some environments, you will see the values <code>ADMIN_NO_SRP_AUTH</code>, <code>CUSTOM_AUTH_FLOW_ONLY</code>, or <code>USER_PASSWORD_AUTH</code>. You can't assign these legacy <code>ExplicitAuthFlows</code> values to user pool clients at the same time as values that begin with <code>ALLOW_</code>, like <code>ALLOW_USER_SRP_AUTH</code>.</p>
     pub fn explicit_auth_flows(mut self, input: crate::types::ExplicitAuthFlowsType) -> Self {
@@ -663,42 +624,32 @@ impl UserPoolClientTypeBuilder {
         self.explicit_auth_flows = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The authentication flows that you want your user pool client to support. For each app client in your user pool, you can sign in your users with any combination of one or more flows, including with a user name and Secure Remote Password (SRP), a user name and password, or a custom authentication process that you define with Lambda functions.</p><note>
+    /// <p>The authentication flows that you want your user pool client to support. For each app client in your user pool, you can sign in your users with any combination of one or more flows, including with a user name and Secure Remote Password (SRP), a user name and password, or a custom authentication process that you define with Lambda functions.</p> <note>
     /// <p>If you don't specify a value for <code>ExplicitAuthFlows</code>, your user client supports <code>ALLOW_REFRESH_TOKEN_AUTH</code>, <code>ALLOW_USER_SRP_AUTH</code>, and <code>ALLOW_CUSTOM_AUTH</code>.</p>
     /// </note>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow, your app passes a user name and password to Amazon Cognito in the request, instead of using the Secure Remote Password (SRP) protocol to securely transmit the password.</p></li>
-    /// <li>
-    /// <p><code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based authentication.</p></li>
-    /// <li>
-    /// <p><code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Amazon Cognito receives the password in the request instead of using the SRP protocol to verify passwords.</p></li>
-    /// <li>
-    /// <p><code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.</p></li>
-    /// <li>
-    /// <p><code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.</p></li>
+    /// <li> <p> <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow, your app passes a user name and password to Amazon Cognito in the request, instead of using the Secure Remote Password (SRP) protocol to securely transmit the password.</p> </li>
+    /// <li> <p> <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based authentication.</p> </li>
+    /// <li> <p> <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Amazon Cognito receives the password in the request instead of using the SRP protocol to verify passwords.</p> </li>
+    /// <li> <p> <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.</p> </li>
+    /// <li> <p> <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.</p> </li>
     /// </ul>
     /// <p>In some environments, you will see the values <code>ADMIN_NO_SRP_AUTH</code>, <code>CUSTOM_AUTH_FLOW_ONLY</code>, or <code>USER_PASSWORD_AUTH</code>. You can't assign these legacy <code>ExplicitAuthFlows</code> values to user pool clients at the same time as values that begin with <code>ALLOW_</code>, like <code>ALLOW_USER_SRP_AUTH</code>.</p>
     pub fn set_explicit_auth_flows(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExplicitAuthFlowsType>>) -> Self {
         self.explicit_auth_flows = input;
         self
     }
-    /// <p>The authentication flows that you want your user pool client to support. For each app client in your user pool, you can sign in your users with any combination of one or more flows, including with a user name and Secure Remote Password (SRP), a user name and password, or a custom authentication process that you define with Lambda functions.</p><note>
+    /// <p>The authentication flows that you want your user pool client to support. For each app client in your user pool, you can sign in your users with any combination of one or more flows, including with a user name and Secure Remote Password (SRP), a user name and password, or a custom authentication process that you define with Lambda functions.</p> <note>
     /// <p>If you don't specify a value for <code>ExplicitAuthFlows</code>, your user client supports <code>ALLOW_REFRESH_TOKEN_AUTH</code>, <code>ALLOW_USER_SRP_AUTH</code>, and <code>ALLOW_CUSTOM_AUTH</code>.</p>
     /// </note>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow, your app passes a user name and password to Amazon Cognito in the request, instead of using the Secure Remote Password (SRP) protocol to securely transmit the password.</p></li>
-    /// <li>
-    /// <p><code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based authentication.</p></li>
-    /// <li>
-    /// <p><code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Amazon Cognito receives the password in the request instead of using the SRP protocol to verify passwords.</p></li>
-    /// <li>
-    /// <p><code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.</p></li>
-    /// <li>
-    /// <p><code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.</p></li>
+    /// <li> <p> <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow, your app passes a user name and password to Amazon Cognito in the request, instead of using the Secure Remote Password (SRP) protocol to securely transmit the password.</p> </li>
+    /// <li> <p> <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based authentication.</p> </li>
+    /// <li> <p> <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Amazon Cognito receives the password in the request instead of using the SRP protocol to verify passwords.</p> </li>
+    /// <li> <p> <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.</p> </li>
+    /// <li> <p> <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.</p> </li>
     /// </ul>
     /// <p>In some environments, you will see the values <code>ADMIN_NO_SRP_AUTH</code>, <code>CUSTOM_AUTH_FLOW_ONLY</code>, or <code>USER_PASSWORD_AUTH</code>. You can't assign these legacy <code>ExplicitAuthFlows</code> values to user pool clients at the same time as values that begin with <code>ALLOW_</code>, like <code>ALLOW_USER_SRP_AUTH</code>.</p>
     pub fn get_explicit_auth_flows(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExplicitAuthFlowsType>> {
@@ -731,12 +682,9 @@ impl UserPoolClientTypeBuilder {
     /// <p>A list of allowed redirect (callback) URLs for the IdPs.</p>
     /// <p>A redirect URI must:</p>
     /// <ul>
-    /// <li>
-    /// <p>Be an absolute URI.</p></li>
-    /// <li>
-    /// <p>Be registered with the authorization server.</p></li>
-    /// <li>
-    /// <p>Not include a fragment component.</p></li>
+    /// <li> <p>Be an absolute URI.</p> </li>
+    /// <li> <p>Be registered with the authorization server.</p> </li>
+    /// <li> <p>Not include a fragment component.</p> </li>
     /// </ul>
     /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>
     /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
@@ -750,12 +698,9 @@ impl UserPoolClientTypeBuilder {
     /// <p>A list of allowed redirect (callback) URLs for the IdPs.</p>
     /// <p>A redirect URI must:</p>
     /// <ul>
-    /// <li>
-    /// <p>Be an absolute URI.</p></li>
-    /// <li>
-    /// <p>Be registered with the authorization server.</p></li>
-    /// <li>
-    /// <p>Not include a fragment component.</p></li>
+    /// <li> <p>Be an absolute URI.</p> </li>
+    /// <li> <p>Be registered with the authorization server.</p> </li>
+    /// <li> <p>Not include a fragment component.</p> </li>
     /// </ul>
     /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>
     /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
@@ -767,12 +712,9 @@ impl UserPoolClientTypeBuilder {
     /// <p>A list of allowed redirect (callback) URLs for the IdPs.</p>
     /// <p>A redirect URI must:</p>
     /// <ul>
-    /// <li>
-    /// <p>Be an absolute URI.</p></li>
-    /// <li>
-    /// <p>Be registered with the authorization server.</p></li>
-    /// <li>
-    /// <p>Not include a fragment component.</p></li>
+    /// <li> <p>Be an absolute URI.</p> </li>
+    /// <li> <p>Be registered with the authorization server.</p> </li>
+    /// <li> <p>Not include a fragment component.</p> </li>
     /// </ul>
     /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>
     /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
@@ -803,12 +745,9 @@ impl UserPoolClientTypeBuilder {
     /// <p>The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>
     /// <p>A redirect URI must:</p>
     /// <ul>
-    /// <li>
-    /// <p>Be an absolute URI.</p></li>
-    /// <li>
-    /// <p>Be registered with the authorization server.</p></li>
-    /// <li>
-    /// <p>Not include a fragment component.</p></li>
+    /// <li> <p>Be an absolute URI.</p> </li>
+    /// <li> <p>Be registered with the authorization server.</p> </li>
+    /// <li> <p>Not include a fragment component.</p> </li>
     /// </ul>
     /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>
     /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
@@ -820,12 +759,9 @@ impl UserPoolClientTypeBuilder {
     /// <p>The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>
     /// <p>A redirect URI must:</p>
     /// <ul>
-    /// <li>
-    /// <p>Be an absolute URI.</p></li>
-    /// <li>
-    /// <p>Be registered with the authorization server.</p></li>
-    /// <li>
-    /// <p>Not include a fragment component.</p></li>
+    /// <li> <p>Be an absolute URI.</p> </li>
+    /// <li> <p>Be registered with the authorization server.</p> </li>
+    /// <li> <p>Not include a fragment component.</p> </li>
     /// </ul>
     /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>
     /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
@@ -837,12 +773,9 @@ impl UserPoolClientTypeBuilder {
     /// <p>The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>
     /// <p>A redirect URI must:</p>
     /// <ul>
-    /// <li>
-    /// <p>Be an absolute URI.</p></li>
-    /// <li>
-    /// <p>Be registered with the authorization server.</p></li>
-    /// <li>
-    /// <p>Not include a fragment component.</p></li>
+    /// <li> <p>Be an absolute URI.</p> </li>
+    /// <li> <p>Be registered with the authorization server.</p> </li>
+    /// <li> <p>Not include a fragment component.</p> </li>
     /// </ul>
     /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>
     /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
@@ -951,16 +884,12 @@ impl UserPoolClientTypeBuilder {
         &self.allowed_o_auth_scopes
     }
     /// <p>Set to <code>true</code> to use OAuth 2.0 features in your user pool app client.</p>
-    /// <p><code>AllowedOAuthFlowsUserPoolClient</code> must be <code>true</code> before you can configure the following features in your app client.</p>
+    /// <p> <code>AllowedOAuthFlowsUserPoolClient</code> must be <code>true</code> before you can configure the following features in your app client.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CallBackURLs</code>: Callback URLs.</p></li>
-    /// <li>
-    /// <p><code>LogoutURLs</code>: Sign-out redirect URLs.</p></li>
-    /// <li>
-    /// <p><code>AllowedOAuthScopes</code>: OAuth 2.0 scopes.</p></li>
-    /// <li>
-    /// <p><code>AllowedOAuthFlows</code>: Support for authorization code, implicit, and client credentials OAuth 2.0 grants.</p></li>
+    /// <li> <p> <code>CallBackURLs</code>: Callback URLs.</p> </li>
+    /// <li> <p> <code>LogoutURLs</code>: Sign-out redirect URLs.</p> </li>
+    /// <li> <p> <code>AllowedOAuthScopes</code>: OAuth 2.0 scopes.</p> </li>
+    /// <li> <p> <code>AllowedOAuthFlows</code>: Support for authorization code, implicit, and client credentials OAuth 2.0 grants.</p> </li>
     /// </ul>
     /// <p>To use OAuth 2.0 features, configure one of these features in the Amazon Cognito console or set <code>AllowedOAuthFlowsUserPoolClient</code> to <code>true</code> in a <code>CreateUserPoolClient</code> or <code>UpdateUserPoolClient</code> API request. If you don't set a value for <code>AllowedOAuthFlowsUserPoolClient</code> in a request with the CLI or SDKs, it defaults to <code>false</code>.</p>
     pub fn allowed_o_auth_flows_user_pool_client(mut self, input: bool) -> Self {
@@ -968,16 +897,12 @@ impl UserPoolClientTypeBuilder {
         self
     }
     /// <p>Set to <code>true</code> to use OAuth 2.0 features in your user pool app client.</p>
-    /// <p><code>AllowedOAuthFlowsUserPoolClient</code> must be <code>true</code> before you can configure the following features in your app client.</p>
+    /// <p> <code>AllowedOAuthFlowsUserPoolClient</code> must be <code>true</code> before you can configure the following features in your app client.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CallBackURLs</code>: Callback URLs.</p></li>
-    /// <li>
-    /// <p><code>LogoutURLs</code>: Sign-out redirect URLs.</p></li>
-    /// <li>
-    /// <p><code>AllowedOAuthScopes</code>: OAuth 2.0 scopes.</p></li>
-    /// <li>
-    /// <p><code>AllowedOAuthFlows</code>: Support for authorization code, implicit, and client credentials OAuth 2.0 grants.</p></li>
+    /// <li> <p> <code>CallBackURLs</code>: Callback URLs.</p> </li>
+    /// <li> <p> <code>LogoutURLs</code>: Sign-out redirect URLs.</p> </li>
+    /// <li> <p> <code>AllowedOAuthScopes</code>: OAuth 2.0 scopes.</p> </li>
+    /// <li> <p> <code>AllowedOAuthFlows</code>: Support for authorization code, implicit, and client credentials OAuth 2.0 grants.</p> </li>
     /// </ul>
     /// <p>To use OAuth 2.0 features, configure one of these features in the Amazon Cognito console or set <code>AllowedOAuthFlowsUserPoolClient</code> to <code>true</code> in a <code>CreateUserPoolClient</code> or <code>UpdateUserPoolClient</code> API request. If you don't set a value for <code>AllowedOAuthFlowsUserPoolClient</code> in a request with the CLI or SDKs, it defaults to <code>false</code>.</p>
     pub fn set_allowed_o_auth_flows_user_pool_client(mut self, input: ::std::option::Option<bool>) -> Self {
@@ -985,36 +910,32 @@ impl UserPoolClientTypeBuilder {
         self
     }
     /// <p>Set to <code>true</code> to use OAuth 2.0 features in your user pool app client.</p>
-    /// <p><code>AllowedOAuthFlowsUserPoolClient</code> must be <code>true</code> before you can configure the following features in your app client.</p>
+    /// <p> <code>AllowedOAuthFlowsUserPoolClient</code> must be <code>true</code> before you can configure the following features in your app client.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CallBackURLs</code>: Callback URLs.</p></li>
-    /// <li>
-    /// <p><code>LogoutURLs</code>: Sign-out redirect URLs.</p></li>
-    /// <li>
-    /// <p><code>AllowedOAuthScopes</code>: OAuth 2.0 scopes.</p></li>
-    /// <li>
-    /// <p><code>AllowedOAuthFlows</code>: Support for authorization code, implicit, and client credentials OAuth 2.0 grants.</p></li>
+    /// <li> <p> <code>CallBackURLs</code>: Callback URLs.</p> </li>
+    /// <li> <p> <code>LogoutURLs</code>: Sign-out redirect URLs.</p> </li>
+    /// <li> <p> <code>AllowedOAuthScopes</code>: OAuth 2.0 scopes.</p> </li>
+    /// <li> <p> <code>AllowedOAuthFlows</code>: Support for authorization code, implicit, and client credentials OAuth 2.0 grants.</p> </li>
     /// </ul>
     /// <p>To use OAuth 2.0 features, configure one of these features in the Amazon Cognito console or set <code>AllowedOAuthFlowsUserPoolClient</code> to <code>true</code> in a <code>CreateUserPoolClient</code> or <code>UpdateUserPoolClient</code> API request. If you don't set a value for <code>AllowedOAuthFlowsUserPoolClient</code> in a request with the CLI or SDKs, it defaults to <code>false</code>.</p>
     pub fn get_allowed_o_auth_flows_user_pool_client(&self) -> &::std::option::Option<bool> {
         &self.allowed_o_auth_flows_user_pool_client
     }
-    /// <p>The Amazon Pinpoint analytics configuration for the user pool client.</p><note>
+    /// <p>The Amazon Pinpoint analytics configuration for the user pool client.</p> <note>
     /// <p>Amazon Cognito user pools only support sending events to Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of the Region where the user pool resides.</p>
     /// </note>
     pub fn analytics_configuration(mut self, input: crate::types::AnalyticsConfigurationType) -> Self {
         self.analytics_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Amazon Pinpoint analytics configuration for the user pool client.</p><note>
+    /// <p>The Amazon Pinpoint analytics configuration for the user pool client.</p> <note>
     /// <p>Amazon Cognito user pools only support sending events to Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of the Region where the user pool resides.</p>
     /// </note>
     pub fn set_analytics_configuration(mut self, input: ::std::option::Option<crate::types::AnalyticsConfigurationType>) -> Self {
         self.analytics_configuration = input;
         self
     }
-    /// <p>The Amazon Pinpoint analytics configuration for the user pool client.</p><note>
+    /// <p>The Amazon Pinpoint analytics configuration for the user pool client.</p> <note>
     /// <p>Amazon Cognito user pools only support sending events to Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of the Region where the user pool resides.</p>
     /// </note>
     pub fn get_analytics_configuration(&self) -> &::std::option::Option<crate::types::AnalyticsConfigurationType> {
@@ -1023,10 +944,8 @@ impl UserPoolClientTypeBuilder {
     /// <p>Errors and responses that you want Amazon Cognito APIs to return during authentication, account confirmation, and password recovery when the user doesn't exist in the user pool. When set to <code>ENABLED</code> and the user doesn't exist, authentication returns an error indicating either the username or password was incorrect. Account confirmation and password recovery return a response indicating a code was sent to a simulated destination. When set to <code>LEGACY</code>, those APIs return a <code>UserNotFoundException</code> exception if the user doesn't exist in the user pool.</p>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ENABLED</code> - This prevents user existence-related errors.</p></li>
-    /// <li>
-    /// <p><code>LEGACY</code> - This represents the old behavior of Amazon Cognito where user existence related errors aren't prevented.</p></li>
+    /// <li> <p> <code>ENABLED</code> - This prevents user existence-related errors.</p> </li>
+    /// <li> <p> <code>LEGACY</code> - This represents the old behavior of Amazon Cognito where user existence related errors aren't prevented.</p> </li>
     /// </ul>
     pub fn prevent_user_existence_errors(mut self, input: crate::types::PreventUserExistenceErrorTypes) -> Self {
         self.prevent_user_existence_errors = ::std::option::Option::Some(input);
@@ -1035,10 +954,8 @@ impl UserPoolClientTypeBuilder {
     /// <p>Errors and responses that you want Amazon Cognito APIs to return during authentication, account confirmation, and password recovery when the user doesn't exist in the user pool. When set to <code>ENABLED</code> and the user doesn't exist, authentication returns an error indicating either the username or password was incorrect. Account confirmation and password recovery return a response indicating a code was sent to a simulated destination. When set to <code>LEGACY</code>, those APIs return a <code>UserNotFoundException</code> exception if the user doesn't exist in the user pool.</p>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ENABLED</code> - This prevents user existence-related errors.</p></li>
-    /// <li>
-    /// <p><code>LEGACY</code> - This represents the old behavior of Amazon Cognito where user existence related errors aren't prevented.</p></li>
+    /// <li> <p> <code>ENABLED</code> - This prevents user existence-related errors.</p> </li>
+    /// <li> <p> <code>LEGACY</code> - This represents the old behavior of Amazon Cognito where user existence related errors aren't prevented.</p> </li>
     /// </ul>
     pub fn set_prevent_user_existence_errors(mut self, input: ::std::option::Option<crate::types::PreventUserExistenceErrorTypes>) -> Self {
         self.prevent_user_existence_errors = input;
@@ -1047,10 +964,8 @@ impl UserPoolClientTypeBuilder {
     /// <p>Errors and responses that you want Amazon Cognito APIs to return during authentication, account confirmation, and password recovery when the user doesn't exist in the user pool. When set to <code>ENABLED</code> and the user doesn't exist, authentication returns an error indicating either the username or password was incorrect. Account confirmation and password recovery return a response indicating a code was sent to a simulated destination. When set to <code>LEGACY</code>, those APIs return a <code>UserNotFoundException</code> exception if the user doesn't exist in the user pool.</p>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ENABLED</code> - This prevents user existence-related errors.</p></li>
-    /// <li>
-    /// <p><code>LEGACY</code> - This represents the old behavior of Amazon Cognito where user existence related errors aren't prevented.</p></li>
+    /// <li> <p> <code>ENABLED</code> - This prevents user existence-related errors.</p> </li>
+    /// <li> <p> <code>LEGACY</code> - This represents the old behavior of Amazon Cognito where user existence related errors aren't prevented.</p> </li>
     /// </ul>
     pub fn get_prevent_user_existence_errors(&self) -> &::std::option::Option<crate::types::PreventUserExistenceErrorTypes> {
         &self.prevent_user_existence_errors

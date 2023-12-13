@@ -7,7 +7,7 @@ pub struct CreateCodeSigningConfigInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Signing profiles for this code signing configuration.</p>
     pub allowed_publishers: ::std::option::Option<crate::types::AllowedPublishers>,
-    /// <p>The code signing policies define the actions to take if the validation checks fail.</p>
+    /// <p>The code signing policies define the actions to take if the validation checks fail. </p>
     pub code_signing_policies: ::std::option::Option<crate::types::CodeSigningPolicies>,
 }
 impl CreateCodeSigningConfigInput {
@@ -19,7 +19,7 @@ impl CreateCodeSigningConfigInput {
     pub fn allowed_publishers(&self) -> ::std::option::Option<&crate::types::AllowedPublishers> {
         self.allowed_publishers.as_ref()
     }
-    /// <p>The code signing policies define the actions to take if the validation checks fail.</p>
+    /// <p>The code signing policies define the actions to take if the validation checks fail. </p>
     pub fn code_signing_policies(&self) -> ::std::option::Option<&crate::types::CodeSigningPolicies> {
         self.code_signing_policies.as_ref()
     }
@@ -69,17 +69,17 @@ impl CreateCodeSigningConfigInputBuilder {
     pub fn get_allowed_publishers(&self) -> &::std::option::Option<crate::types::AllowedPublishers> {
         &self.allowed_publishers
     }
-    /// <p>The code signing policies define the actions to take if the validation checks fail.</p>
+    /// <p>The code signing policies define the actions to take if the validation checks fail. </p>
     pub fn code_signing_policies(mut self, input: crate::types::CodeSigningPolicies) -> Self {
         self.code_signing_policies = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The code signing policies define the actions to take if the validation checks fail.</p>
+    /// <p>The code signing policies define the actions to take if the validation checks fail. </p>
     pub fn set_code_signing_policies(mut self, input: ::std::option::Option<crate::types::CodeSigningPolicies>) -> Self {
         self.code_signing_policies = input;
         self
     }
-    /// <p>The code signing policies define the actions to take if the validation checks fail.</p>
+    /// <p>The code signing policies define the actions to take if the validation checks fail. </p>
     pub fn get_code_signing_policies(&self) -> &::std::option::Option<crate::types::CodeSigningPolicies> {
         &self.code_signing_policies
     }

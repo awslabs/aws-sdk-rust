@@ -8,7 +8,7 @@ pub enum Condition {
     After(::aws_smithy_types::DateTime),
     /// <p>Before the specified timestamp</p>
     Before(::aws_smithy_types::DateTime),
-    /// <p>The value is equal to the provided string or integer.</p>
+    /// <p>The value is equal to the provided string or integer. </p>
     Equals(crate::types::AttributeValueList),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant

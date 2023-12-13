@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeConfigurationAggregatorSourcesStatusOutput {
-    /// <p>Returns an AggregatedSourceStatus object.</p>
+    /// <p>Returns an AggregatedSourceStatus object. </p>
     pub aggregated_source_status_list: ::std::option::Option<::std::vec::Vec<crate::types::AggregatedSourceStatus>>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeConfigurationAggregatorSourcesStatusOutput {
-    /// <p>Returns an AggregatedSourceStatus object.</p>
+    /// <p>Returns an AggregatedSourceStatus object. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aggregated_source_status_list.is_none()`.
     pub fn aggregated_source_status_list(&self) -> &[crate::types::AggregatedSourceStatus] {
@@ -47,19 +47,19 @@ impl DescribeConfigurationAggregatorSourcesStatusOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_aggregated_source_status_list`](Self::set_aggregated_source_status_list).
     ///
-    /// <p>Returns an AggregatedSourceStatus object.</p>
+    /// <p>Returns an AggregatedSourceStatus object. </p>
     pub fn aggregated_source_status_list(mut self, input: crate::types::AggregatedSourceStatus) -> Self {
         let mut v = self.aggregated_source_status_list.unwrap_or_default();
         v.push(input);
         self.aggregated_source_status_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Returns an AggregatedSourceStatus object.</p>
+    /// <p>Returns an AggregatedSourceStatus object. </p>
     pub fn set_aggregated_source_status_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AggregatedSourceStatus>>) -> Self {
         self.aggregated_source_status_list = input;
         self
     }
-    /// <p>Returns an AggregatedSourceStatus object.</p>
+    /// <p>Returns an AggregatedSourceStatus object. </p>
     pub fn get_aggregated_source_status_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregatedSourceStatus>> {
         &self.aggregated_source_status_list
     }

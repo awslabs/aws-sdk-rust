@@ -6,9 +6,9 @@
 pub struct AuthenticationDescription {
     /// <p>Specifies whether this workspace uses IAM Identity Center, SAML, or both methods to authenticate users to use the Grafana console in the Amazon Managed Grafana workspace.</p>
     pub providers: ::std::vec::Vec<crate::types::AuthenticationProviderTypes>,
-    /// <p>A structure containing information about how this workspace works with SAML, including what attributes within the assertion are to be mapped to user information in the workspace.</p>
+    /// <p>A structure containing information about how this workspace works with SAML, including what attributes within the assertion are to be mapped to user information in the workspace. </p>
     pub saml: ::std::option::Option<crate::types::SamlAuthentication>,
-    /// <p>A structure containing information about how this workspace works with IAM Identity Center.</p>
+    /// <p>A structure containing information about how this workspace works with IAM Identity Center. </p>
     pub aws_sso: ::std::option::Option<crate::types::AwsSsoAuthentication>,
 }
 impl AuthenticationDescription {
@@ -17,11 +17,11 @@ impl AuthenticationDescription {
         use std::ops::Deref;
         self.providers.deref()
     }
-    /// <p>A structure containing information about how this workspace works with SAML, including what attributes within the assertion are to be mapped to user information in the workspace.</p>
+    /// <p>A structure containing information about how this workspace works with SAML, including what attributes within the assertion are to be mapped to user information in the workspace. </p>
     pub fn saml(&self) -> ::std::option::Option<&crate::types::SamlAuthentication> {
         self.saml.as_ref()
     }
-    /// <p>A structure containing information about how this workspace works with IAM Identity Center.</p>
+    /// <p>A structure containing information about how this workspace works with IAM Identity Center. </p>
     pub fn aws_sso(&self) -> ::std::option::Option<&crate::types::AwsSsoAuthentication> {
         self.aws_sso.as_ref()
     }
@@ -62,31 +62,31 @@ impl AuthenticationDescriptionBuilder {
     pub fn get_providers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AuthenticationProviderTypes>> {
         &self.providers
     }
-    /// <p>A structure containing information about how this workspace works with SAML, including what attributes within the assertion are to be mapped to user information in the workspace.</p>
+    /// <p>A structure containing information about how this workspace works with SAML, including what attributes within the assertion are to be mapped to user information in the workspace. </p>
     pub fn saml(mut self, input: crate::types::SamlAuthentication) -> Self {
         self.saml = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A structure containing information about how this workspace works with SAML, including what attributes within the assertion are to be mapped to user information in the workspace.</p>
+    /// <p>A structure containing information about how this workspace works with SAML, including what attributes within the assertion are to be mapped to user information in the workspace. </p>
     pub fn set_saml(mut self, input: ::std::option::Option<crate::types::SamlAuthentication>) -> Self {
         self.saml = input;
         self
     }
-    /// <p>A structure containing information about how this workspace works with SAML, including what attributes within the assertion are to be mapped to user information in the workspace.</p>
+    /// <p>A structure containing information about how this workspace works with SAML, including what attributes within the assertion are to be mapped to user information in the workspace. </p>
     pub fn get_saml(&self) -> &::std::option::Option<crate::types::SamlAuthentication> {
         &self.saml
     }
-    /// <p>A structure containing information about how this workspace works with IAM Identity Center.</p>
+    /// <p>A structure containing information about how this workspace works with IAM Identity Center. </p>
     pub fn aws_sso(mut self, input: crate::types::AwsSsoAuthentication) -> Self {
         self.aws_sso = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A structure containing information about how this workspace works with IAM Identity Center.</p>
+    /// <p>A structure containing information about how this workspace works with IAM Identity Center. </p>
     pub fn set_aws_sso(mut self, input: ::std::option::Option<crate::types::AwsSsoAuthentication>) -> Self {
         self.aws_sso = input;
         self
     }
-    /// <p>A structure containing information about how this workspace works with IAM Identity Center.</p>
+    /// <p>A structure containing information about how this workspace works with IAM Identity Center. </p>
     pub fn get_aws_sso(&self) -> &::std::option::Option<crate::types::AwsSsoAuthentication> {
         &self.aws_sso
     }

@@ -256,7 +256,7 @@ pub enum StartChangeRequestExecutionError {
     AutomationDefinitionVersionNotFoundException(crate::types::error::AutomationDefinitionVersionNotFoundException),
     /// <p>The number of simultaneously running Automation executions exceeded the allowable limit.</p>
     AutomationExecutionLimitExceededException(crate::types::error::AutomationExecutionLimitExceededException),
-    /// <p>Error returned when an idempotent operation is retried and the parameters don't match the original call to the API with the same idempotency token.</p>
+    /// <p>Error returned when an idempotent operation is retried and the parameters don't match the original call to the API with the same idempotency token. </p>
     IdempotentParameterMismatch(crate::types::error::IdempotentParameterMismatch),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::types::error::InternalServerError),

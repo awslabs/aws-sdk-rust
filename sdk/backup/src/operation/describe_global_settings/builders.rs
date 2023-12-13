@@ -22,7 +22,7 @@ impl DescribeGlobalSettingsInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeGlobalSettings`.
 ///
-/// <p>Describes whether the Amazon Web Services account is opted in to cross-account backup. Returns an error if the account is not a member of an Organizations organization. Example: <code>describe-global-settings --region us-west-2</code></p>
+/// <p>Describes whether the Amazon Web Services account is opted in to cross-account backup. Returns an error if the account is not a member of an Organizations organization. Example: <code>describe-global-settings --region us-west-2</code> </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeGlobalSettingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

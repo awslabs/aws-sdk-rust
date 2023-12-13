@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAssetsInput {
-    /// <p>The ID or the Amazon Resource Name (ARN) of the Outpost.</p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
     pub outpost_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Filters the results by the host ID of a Dedicated Host.</p>
     pub host_id_filter: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -15,7 +15,7 @@ pub struct ListAssetsInput {
     pub status_filter: ::std::option::Option<::std::vec::Vec<crate::types::AssetState>>,
 }
 impl ListAssetsInput {
-    /// <p>The ID or the Amazon Resource Name (ARN) of the Outpost.</p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
     pub fn outpost_identifier(&self) -> ::std::option::Option<&str> {
         self.outpost_identifier.as_deref()
     }
@@ -58,18 +58,18 @@ pub struct ListAssetsInputBuilder {
     pub(crate) status_filter: ::std::option::Option<::std::vec::Vec<crate::types::AssetState>>,
 }
 impl ListAssetsInputBuilder {
-    /// <p>The ID or the Amazon Resource Name (ARN) of the Outpost.</p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
     /// This field is required.
     pub fn outpost_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outpost_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID or the Amazon Resource Name (ARN) of the Outpost.</p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
     pub fn set_outpost_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outpost_identifier = input;
         self
     }
-    /// <p>The ID or the Amazon Resource Name (ARN) of the Outpost.</p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
     pub fn get_outpost_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.outpost_identifier
     }

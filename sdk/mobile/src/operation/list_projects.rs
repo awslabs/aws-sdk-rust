@@ -254,15 +254,15 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListProjectsE
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum ListProjectsError {
-    /// <p>The request cannot be processed because some parameter is not valid or the project state prevents the operation from being performed.</p>
+    /// <p> The request cannot be processed because some parameter is not valid or the project state prevents the operation from being performed. </p>
     BadRequestException(crate::types::error::BadRequestException),
-    /// <p>The service has encountered an unexpected error condition which prevents it from servicing the request.</p>
+    /// <p> The service has encountered an unexpected error condition which prevents it from servicing the request. </p>
     InternalFailureException(crate::types::error::InternalFailureException),
-    /// <p>The service is temporarily unavailable. The request should be retried after some time delay.</p>
+    /// <p> The service is temporarily unavailable. The request should be retried after some time delay. </p>
     ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
-    /// <p>Too many requests have been received for this AWS account in too short a time. The request should be retried after some time delay.</p>
+    /// <p> Too many requests have been received for this AWS account in too short a time. The request should be retried after some time delay. </p>
     TooManyRequestsException(crate::types::error::TooManyRequestsException),
-    /// <p>Credentials of the caller are insufficient to authorize the request.</p>
+    /// <p> Credentials of the caller are insufficient to authorize the request. </p>
     UnauthorizedException(crate::types::error::UnauthorizedException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

@@ -12,7 +12,7 @@ pub struct PutAssetPropertyValueEntry {
     pub property_id: ::std::option::Option<::std::string::String>,
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub property_alias: ::std::option::Option<::std::string::String>,
-    /// <p>The list of property values to upload. You can specify up to 10 <code>propertyValues</code> array elements.</p>
+    /// <p>The list of property values to upload. You can specify up to 10 <code>propertyValues</code> array elements. </p>
     pub property_values: ::std::vec::Vec<crate::types::AssetPropertyValue>,
 }
 impl PutAssetPropertyValueEntry {
@@ -33,7 +33,7 @@ impl PutAssetPropertyValueEntry {
     pub fn property_alias(&self) -> ::std::option::Option<&str> {
         self.property_alias.as_deref()
     }
-    /// <p>The list of property values to upload. You can specify up to 10 <code>propertyValues</code> array elements.</p>
+    /// <p>The list of property values to upload. You can specify up to 10 <code>propertyValues</code> array elements. </p>
     pub fn property_values(&self) -> &[crate::types::AssetPropertyValue] {
         use std::ops::Deref;
         self.property_values.deref()
@@ -118,19 +118,19 @@ impl PutAssetPropertyValueEntryBuilder {
     ///
     /// To override the contents of this collection use [`set_property_values`](Self::set_property_values).
     ///
-    /// <p>The list of property values to upload. You can specify up to 10 <code>propertyValues</code> array elements.</p>
+    /// <p>The list of property values to upload. You can specify up to 10 <code>propertyValues</code> array elements. </p>
     pub fn property_values(mut self, input: crate::types::AssetPropertyValue) -> Self {
         let mut v = self.property_values.unwrap_or_default();
         v.push(input);
         self.property_values = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of property values to upload. You can specify up to 10 <code>propertyValues</code> array elements.</p>
+    /// <p>The list of property values to upload. You can specify up to 10 <code>propertyValues</code> array elements. </p>
     pub fn set_property_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetPropertyValue>>) -> Self {
         self.property_values = input;
         self
     }
-    /// <p>The list of property values to upload. You can specify up to 10 <code>propertyValues</code> array elements.</p>
+    /// <p>The list of property values to upload. You can specify up to 10 <code>propertyValues</code> array elements. </p>
     pub fn get_property_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetPropertyValue>> {
         &self.property_values
     }

@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeBundle`](crate::operation::describe_bundle::builders::DescribeBundleFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`bundle_id(impl Into<String>)`](crate::operation::describe_bundle::builders::DescribeBundleFluentBuilder::bundle_id) / [`set_bundle_id(Option<String>)`](crate::operation::describe_bundle::builders::DescribeBundleFluentBuilder::set_bundle_id):<br>required: **true**<br><p>Unique bundle identifier.</p><br>
+    ///   - [`bundle_id(impl Into<String>)`](crate::operation::describe_bundle::builders::DescribeBundleFluentBuilder::bundle_id) / [`set_bundle_id(Option<String>)`](crate::operation::describe_bundle::builders::DescribeBundleFluentBuilder::set_bundle_id):<br>required: **true**<br><p> Unique bundle identifier. </p><br>
     /// - On success, responds with [`DescribeBundleOutput`](crate::operation::describe_bundle::DescribeBundleOutput) with field(s):
-    ///   - [`details(Option<BundleDetails>)`](crate::operation::describe_bundle::DescribeBundleOutput::details): <p>The details of the bundle.</p>
+    ///   - [`details(Option<BundleDetails>)`](crate::operation::describe_bundle::DescribeBundleOutput::details): <p> The details of the bundle. </p>
     /// - On failure, responds with [`SdkError<DescribeBundleError>`](crate::operation::describe_bundle::DescribeBundleError)
     pub fn describe_bundle(&self) -> crate::operation::describe_bundle::builders::DescribeBundleFluentBuilder {
         crate::operation::describe_bundle::builders::DescribeBundleFluentBuilder::new(self.handle.clone())

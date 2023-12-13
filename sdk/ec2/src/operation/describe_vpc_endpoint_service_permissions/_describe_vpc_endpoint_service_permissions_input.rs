@@ -9,10 +9,8 @@ pub struct DescribeVpcEndpointServicePermissionsInput {
     pub service_id: ::std::option::Option<::std::string::String>,
     /// <p>The filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>principal</code> - The ARN of the principal.</p></li>
-    /// <li>
-    /// <p><code>principal-type</code> - The principal type (<code>All</code> | <code>Service</code> | <code>OrganizationUnit</code> | <code>Account</code> | <code>User</code> | <code>Role</code>).</p></li>
+    /// <li> <p> <code>principal</code> - The ARN of the principal.</p> </li>
+    /// <li> <p> <code>principal-type</code> - The principal type (<code>All</code> | <code>Service</code> | <code>OrganizationUnit</code> | <code>Account</code> | <code>User</code> | <code>Role</code>).</p> </li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The maximum number of results to return for the request in a single page. The remaining results of the initial request can be seen by sending another request with the returned <code>NextToken</code> value. This value can be between 5 and 1,000; if <code>MaxResults</code> is given a value larger than 1,000, only 1,000 results are returned.</p>
@@ -31,10 +29,8 @@ impl DescribeVpcEndpointServicePermissionsInput {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>principal</code> - The ARN of the principal.</p></li>
-    /// <li>
-    /// <p><code>principal-type</code> - The principal type (<code>All</code> | <code>Service</code> | <code>OrganizationUnit</code> | <code>Account</code> | <code>User</code> | <code>Role</code>).</p></li>
+    /// <li> <p> <code>principal</code> - The ARN of the principal.</p> </li>
+    /// <li> <p> <code>principal-type</code> - The principal type (<code>All</code> | <code>Service</code> | <code>OrganizationUnit</code> | <code>Account</code> | <code>User</code> | <code>Role</code>).</p> </li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
@@ -103,10 +99,8 @@ impl DescribeVpcEndpointServicePermissionsInputBuilder {
     ///
     /// <p>The filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>principal</code> - The ARN of the principal.</p></li>
-    /// <li>
-    /// <p><code>principal-type</code> - The principal type (<code>All</code> | <code>Service</code> | <code>OrganizationUnit</code> | <code>Account</code> | <code>User</code> | <code>Role</code>).</p></li>
+    /// <li> <p> <code>principal</code> - The ARN of the principal.</p> </li>
+    /// <li> <p> <code>principal-type</code> - The principal type (<code>All</code> | <code>Service</code> | <code>OrganizationUnit</code> | <code>Account</code> | <code>User</code> | <code>Role</code>).</p> </li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
@@ -116,10 +110,8 @@ impl DescribeVpcEndpointServicePermissionsInputBuilder {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>principal</code> - The ARN of the principal.</p></li>
-    /// <li>
-    /// <p><code>principal-type</code> - The principal type (<code>All</code> | <code>Service</code> | <code>OrganizationUnit</code> | <code>Account</code> | <code>User</code> | <code>Role</code>).</p></li>
+    /// <li> <p> <code>principal</code> - The ARN of the principal.</p> </li>
+    /// <li> <p> <code>principal-type</code> - The principal type (<code>All</code> | <code>Service</code> | <code>OrganizationUnit</code> | <code>Account</code> | <code>User</code> | <code>Role</code>).</p> </li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
@@ -127,10 +119,8 @@ impl DescribeVpcEndpointServicePermissionsInputBuilder {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>principal</code> - The ARN of the principal.</p></li>
-    /// <li>
-    /// <p><code>principal-type</code> - The principal type (<code>All</code> | <code>Service</code> | <code>OrganizationUnit</code> | <code>Account</code> | <code>User</code> | <code>Role</code>).</p></li>
+    /// <li> <p> <code>principal</code> - The ARN of the principal.</p> </li>
+    /// <li> <p> <code>principal-type</code> - The principal type (<code>All</code> | <code>Service</code> | <code>OrganizationUnit</code> | <code>Account</code> | <code>User</code> | <code>Role</code>).</p> </li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters

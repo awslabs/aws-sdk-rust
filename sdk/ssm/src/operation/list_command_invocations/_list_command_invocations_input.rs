@@ -13,7 +13,7 @@ pub struct ListCommandInvocationsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>(Optional) One or more filters. Use a filter to return a more specific list of results.</p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::CommandFilter>>,
-    /// <p>(Optional) If set this returns the response of the command executions and any command output. The default value is <code>false</code>.</p>
+    /// <p>(Optional) If set this returns the response of the command executions and any command output. The default value is <code>false</code>. </p>
     pub details: ::std::option::Option<bool>,
 }
 impl ListCommandInvocationsInput {
@@ -39,7 +39,7 @@ impl ListCommandInvocationsInput {
     pub fn filters(&self) -> &[crate::types::CommandFilter] {
         self.filters.as_deref().unwrap_or_default()
     }
-    /// <p>(Optional) If set this returns the response of the command executions and any command output. The default value is <code>false</code>.</p>
+    /// <p>(Optional) If set this returns the response of the command executions and any command output. The default value is <code>false</code>. </p>
     pub fn details(&self) -> ::std::option::Option<bool> {
         self.details
     }
@@ -139,17 +139,17 @@ impl ListCommandInvocationsInputBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CommandFilter>> {
         &self.filters
     }
-    /// <p>(Optional) If set this returns the response of the command executions and any command output. The default value is <code>false</code>.</p>
+    /// <p>(Optional) If set this returns the response of the command executions and any command output. The default value is <code>false</code>. </p>
     pub fn details(mut self, input: bool) -> Self {
         self.details = ::std::option::Option::Some(input);
         self
     }
-    /// <p>(Optional) If set this returns the response of the command executions and any command output. The default value is <code>false</code>.</p>
+    /// <p>(Optional) If set this returns the response of the command executions and any command output. The default value is <code>false</code>. </p>
     pub fn set_details(mut self, input: ::std::option::Option<bool>) -> Self {
         self.details = input;
         self
     }
-    /// <p>(Optional) If set this returns the response of the command executions and any command output. The default value is <code>false</code>.</p>
+    /// <p>(Optional) If set this returns the response of the command executions and any command output. The default value is <code>false</code>. </p>
     pub fn get_details(&self) -> &::std::option::Option<bool> {
         &self.details
     }

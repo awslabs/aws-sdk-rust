@@ -22,7 +22,7 @@ impl AssociateVehicleFleetInputBuilder {
 }
 /// Fluent builder constructing a request to `AssociateVehicleFleet`.
 ///
-/// <p>Adds, or associates, a vehicle with a fleet.</p>
+/// <p> Adds, or associates, a vehicle with a fleet. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateVehicleFleetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl AssociateVehicleFleetFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique ID of the vehicle to associate with the fleet.</p>
+    /// <p> The unique ID of the vehicle to associate with the fleet. </p>
     pub fn vehicle_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vehicle_name(input.into());
         self
     }
-    /// <p>The unique ID of the vehicle to associate with the fleet.</p>
+    /// <p> The unique ID of the vehicle to associate with the fleet. </p>
     pub fn set_vehicle_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vehicle_name(input);
         self
     }
-    /// <p>The unique ID of the vehicle to associate with the fleet.</p>
+    /// <p> The unique ID of the vehicle to associate with the fleet. </p>
     pub fn get_vehicle_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_vehicle_name()
     }
-    /// <p>The ID of a fleet.</p>
+    /// <p> The ID of a fleet. </p>
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fleet_id(input.into());
         self
     }
-    /// <p>The ID of a fleet.</p>
+    /// <p> The ID of a fleet. </p>
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_fleet_id(input);
         self
     }
-    /// <p>The ID of a fleet.</p>
+    /// <p> The ID of a fleet. </p>
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_fleet_id()
     }

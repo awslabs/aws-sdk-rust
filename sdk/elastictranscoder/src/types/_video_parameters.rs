@@ -6,81 +6,61 @@
 pub struct VideoParameters {
     /// <p>The video codec for the output file. Valid values include <code>gif</code>, <code>H.264</code>, <code>mpeg2</code>, <code>vp8</code>, and <code>vp9</code>. You can only specify <code>vp8</code> and <code>vp9</code> when the container type is <code>webm</code>, <code>gif</code> when the container type is <code>gif</code>, and <code>mpeg2</code> when the container type is <code>mpg</code>.</p>
     pub codec: ::std::option::Option<::std::string::String>,
-    /// <p><b>Profile (H.264/VP8/VP9 Only)</b></p>
+    /// <p> <b>Profile (H.264/VP8/VP9 Only)</b> </p>
     /// <p>The H.264 profile that you want to use for the output file. Elastic Transcoder supports the following profiles:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>baseline</code>: The profile most commonly used for videoconferencing and for mobile applications.</p></li>
-    /// <li>
-    /// <p><code>main</code>: The profile used for standard-definition digital TV broadcasts.</p></li>
-    /// <li>
-    /// <p><code>high</code>: The profile used for high-definition digital TV broadcasts and for Blu-ray discs.</p></li>
+    /// <li> <p> <code>baseline</code>: The profile most commonly used for videoconferencing and for mobile applications.</p> </li>
+    /// <li> <p> <code>main</code>: The profile used for standard-definition digital TV broadcasts.</p> </li>
+    /// <li> <p> <code>high</code>: The profile used for high-definition digital TV broadcasts and for Blu-ray discs.</p> </li>
     /// </ul>
-    /// <p><b>Level (H.264 Only)</b></p>
+    /// <p> <b>Level (H.264 Only)</b> </p>
     /// <p>The H.264 level that you want to use for the output file. Elastic Transcoder supports the following levels:</p>
-    /// <p><code>1</code>, <code>1b</code>, <code>1.1</code>, <code>1.2</code>, <code>1.3</code>, <code>2</code>, <code>2.1</code>, <code>2.2</code>, <code>3</code>, <code>3.1</code>, <code>3.2</code>, <code>4</code>, <code>4.1</code></p>
-    /// <p><b>MaxReferenceFrames (H.264 Only)</b></p>
+    /// <p> <code>1</code>, <code>1b</code>, <code>1.1</code>, <code>1.2</code>, <code>1.3</code>, <code>2</code>, <code>2.1</code>, <code>2.2</code>, <code>3</code>, <code>3.1</code>, <code>3.2</code>, <code>4</code>, <code>4.1</code> </p>
+    /// <p> <b>MaxReferenceFrames (H.264 Only)</b> </p>
     /// <p>Applicable only when the value of Video:Codec is H.264. The maximum number of previously decoded frames to use as a reference for decoding future frames. Valid values are integers 0 through 16, but we recommend that you not use a value greater than the following:</p>
-    /// <p><code>Min(Floor(Maximum decoded picture buffer in macroblocks * 256 / (Width in pixels * Height in pixels)), 16)</code></p>
-    /// <p>where <i>Width in pixels</i> and <i>Height in pixels</i> represent either MaxWidth and MaxHeight, or Resolution. <i>Maximum decoded picture buffer in macroblocks</i> depends on the value of the <code>Level</code> object. See the list below. (A macroblock is a block of pixels measuring 16x16.)</p>
+    /// <p> <code>Min(Floor(Maximum decoded picture buffer in macroblocks * 256 / (Width in pixels * Height in pixels)), 16)</code> </p>
+    /// <p>where <i>Width in pixels</i> and <i>Height in pixels</i> represent either MaxWidth and MaxHeight, or Resolution. <i>Maximum decoded picture buffer in macroblocks</i> depends on the value of the <code>Level</code> object. See the list below. (A macroblock is a block of pixels measuring 16x16.) </p>
     /// <ul>
-    /// <li>
-    /// <p>1 - 396</p></li>
-    /// <li>
-    /// <p>1b - 396</p></li>
-    /// <li>
-    /// <p>1.1 - 900</p></li>
-    /// <li>
-    /// <p>1.2 - 2376</p></li>
-    /// <li>
-    /// <p>1.3 - 2376</p></li>
-    /// <li>
-    /// <p>2 - 2376</p></li>
-    /// <li>
-    /// <p>2.1 - 4752</p></li>
-    /// <li>
-    /// <p>2.2 - 8100</p></li>
-    /// <li>
-    /// <p>3 - 8100</p></li>
-    /// <li>
-    /// <p>3.1 - 18000</p></li>
-    /// <li>
-    /// <p>3.2 - 20480</p></li>
-    /// <li>
-    /// <p>4 - 32768</p></li>
-    /// <li>
-    /// <p>4.1 - 32768</p></li>
+    /// <li> <p>1 - 396</p> </li>
+    /// <li> <p>1b - 396</p> </li>
+    /// <li> <p>1.1 - 900</p> </li>
+    /// <li> <p>1.2 - 2376</p> </li>
+    /// <li> <p>1.3 - 2376</p> </li>
+    /// <li> <p>2 - 2376</p> </li>
+    /// <li> <p>2.1 - 4752</p> </li>
+    /// <li> <p>2.2 - 8100</p> </li>
+    /// <li> <p>3 - 8100</p> </li>
+    /// <li> <p>3.1 - 18000</p> </li>
+    /// <li> <p>3.2 - 20480</p> </li>
+    /// <li> <p>4 - 32768</p> </li>
+    /// <li> <p>4.1 - 32768</p> </li>
     /// </ul>
-    /// <p><b>MaxBitRate (Optional, H.264/MPEG2/VP8/VP9 only)</b></p>
+    /// <p> <b>MaxBitRate (Optional, H.264/MPEG2/VP8/VP9 only)</b> </p>
     /// <p>The maximum number of bits per second in a video buffer; the size of the buffer is specified by <code>BufferSize</code>. Specify a value between 16 and 62,500. You can reduce the bandwidth required to stream a video by reducing the maximum bit rate, but this also reduces the quality of the video.</p>
-    /// <p><b>BufferSize (Optional, H.264/MPEG2/VP8/VP9 only)</b></p>
+    /// <p> <b>BufferSize (Optional, H.264/MPEG2/VP8/VP9 only)</b> </p>
     /// <p>The maximum number of bits in any x seconds of the output video. This window is commonly 10 seconds, the standard segment duration when you're using FMP4 or MPEG-TS for the container type of the output video. Specify an integer greater than 0. If you specify <code>MaxBitRate</code> and omit <code>BufferSize</code>, Elastic Transcoder sets <code>BufferSize</code> to 10 times the value of <code>MaxBitRate</code>.</p>
-    /// <p><b>InterlacedMode (Optional, H.264/MPEG2 Only)</b></p>
+    /// <p> <b>InterlacedMode (Optional, H.264/MPEG2 Only)</b> </p>
     /// <p>The interlace mode for the output video.</p>
     /// <p>Interlaced video is used to double the perceived frame rate for a video by interlacing two fields (one field on every other line, the other field on the other lines) so that the human eye registers multiple pictures per frame. Interlacing reduces the bandwidth required for transmitting a video, but can result in blurred images and flickering.</p>
     /// <p>Valid values include <code>Progressive</code> (no interlacing, top to bottom), <code>TopFirst</code> (top field first), <code>BottomFirst</code> (bottom field first), and <code>Auto</code>.</p>
     /// <p>If <code>InterlaceMode</code> is not specified, Elastic Transcoder uses <code>Progressive</code> for the output. If <code>Auto</code> is specified, Elastic Transcoder interlaces the output.</p>
-    /// <p><b>ColorSpaceConversionMode (Optional, H.264/MPEG2 Only)</b></p>
+    /// <p> <b>ColorSpaceConversionMode (Optional, H.264/MPEG2 Only)</b> </p>
     /// <p>The color space conversion Elastic Transcoder applies to the output video. Color spaces are the algorithms used by the computer to store information about how to render color. <code>Bt.601</code> is the standard for standard definition video, while <code>Bt.709</code> is the standard for high definition video.</p>
     /// <p>Valid values include <code>None</code>, <code>Bt709toBt601</code>, <code>Bt601toBt709</code>, and <code>Auto</code>.</p>
     /// <p>If you chose <code>Auto</code> for <code>ColorSpaceConversionMode</code> and your output is interlaced, your frame rate is one of <code>23.97</code>, <code>24</code>, <code>25</code>, <code>29.97</code>, <code>50</code>, or <code>60</code>, your <code>SegmentDuration</code> is null, and you are using one of the resolution changes from the list below, Elastic Transcoder applies the following color space conversions:</p>
     /// <ul>
-    /// <li>
-    /// <p><i>Standard to HD, 720x480 to 1920x1080</i> - Elastic Transcoder applies <code>Bt601ToBt709</code></p></li>
-    /// <li>
-    /// <p><i>Standard to HD, 720x576 to 1920x1080</i> - Elastic Transcoder applies <code>Bt601ToBt709</code></p></li>
-    /// <li>
-    /// <p><i>HD to Standard, 1920x1080 to 720x480</i> - Elastic Transcoder applies <code>Bt709ToBt601</code></p></li>
-    /// <li>
-    /// <p><i>HD to Standard, 1920x1080 to 720x576</i> - Elastic Transcoder applies <code>Bt709ToBt601</code></p></li>
-    /// </ul><note>
+    /// <li> <p> <i>Standard to HD, 720x480 to 1920x1080</i> - Elastic Transcoder applies <code>Bt601ToBt709</code> </p> </li>
+    /// <li> <p> <i>Standard to HD, 720x576 to 1920x1080</i> - Elastic Transcoder applies <code>Bt601ToBt709</code> </p> </li>
+    /// <li> <p> <i>HD to Standard, 1920x1080 to 720x480</i> - Elastic Transcoder applies <code>Bt709ToBt601</code> </p> </li>
+    /// <li> <p> <i>HD to Standard, 1920x1080 to 720x576</i> - Elastic Transcoder applies <code>Bt709ToBt601</code> </p> </li>
+    /// </ul> <note>
     /// <p>Elastic Transcoder may change the behavior of the <code>ColorspaceConversionMode</code> <code>Auto</code> mode in the future. All outputs in a playlist must use the same <code>ColorSpaceConversionMode</code>.</p>
     /// </note>
     /// <p>If you do not specify a <code>ColorSpaceConversionMode</code>, Elastic Transcoder does not change the color space of a file. If you are unsure what <code>ColorSpaceConversionMode</code> was applied to your output file, you can check the <code>AppliedColorSpaceConversion</code> parameter included in your job response. If your job does not have an <code>AppliedColorSpaceConversion</code> in its response, no <code>ColorSpaceConversionMode</code> was applied.</p>
-    /// <p><b>ChromaSubsampling</b></p>
+    /// <p> <b>ChromaSubsampling</b> </p>
     /// <p>The sampling pattern for the chroma (color) channels of the output video. Valid values include <code>yuv420p</code> and <code>yuv422p</code>.</p>
-    /// <p><code>yuv420p</code> samples the chroma information of every other horizontal and every other vertical line, <code>yuv422p</code> samples the color information of every horizontal line and every other vertical line.</p>
-    /// <p><b>LoopCount (Gif Only)</b></p>
+    /// <p> <code>yuv420p</code> samples the chroma information of every other horizontal and every other vertical line, <code>yuv422p</code> samples the color information of every horizontal line and every other vertical line.</p>
+    /// <p> <b>LoopCount (Gif Only)</b> </p>
     /// <p>The number of times you want the output gif to loop. Valid values include <code>Infinite</code> and integers between <code>0</code> and <code>100</code>, inclusive.</p>
     pub codec_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Applicable only when the value of Video:Codec is one of <code>H.264</code>, <code>MPEG2</code>, or <code>VP8</code>.</p>
@@ -92,80 +72,52 @@ pub struct VideoParameters {
     /// <p>Applicable only when the value of Video:Codec is one of <code>H.264</code>, <code>MPEG2</code>, or <code>VP8</code>.</p>
     /// <p>Whether to use a fixed value for <code>FixedGOP</code>. Valid values are <code>true</code> and <code>false</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>true</code>: Elastic Transcoder uses the value of <code>KeyframesMaxDist</code> for the distance between key frames (the number of frames in a group of pictures, or GOP).</p></li>
-    /// <li>
-    /// <p><code>false</code>: The distance between key frames can vary.</p></li>
-    /// </ul><important>
-    /// <p><code>FixedGOP</code> must be set to <code>true</code> for <code>fmp4</code> containers.</p>
+    /// <li> <p> <code>true</code>: Elastic Transcoder uses the value of <code>KeyframesMaxDist</code> for the distance between key frames (the number of frames in a group of pictures, or GOP).</p> </li>
+    /// <li> <p> <code>false</code>: The distance between key frames can vary.</p> </li>
+    /// </ul> <important>
+    /// <p> <code>FixedGOP</code> must be set to <code>true</code> for <code>fmp4</code> containers.</p>
     /// </important>
     pub fixed_gop: ::std::option::Option<::std::string::String>,
     /// <p>The bit rate of the video stream in the output file, in kilobits/second. Valid values depend on the values of <code>Level</code> and <code>Profile</code>. If you specify <code>auto</code>, Elastic Transcoder uses the detected bit rate of the input source. If you specify a value other than <code>auto</code>, we recommend that you specify a value less than or equal to the maximum H.264-compliant value listed for your level and profile:</p>
-    /// <p><i>Level - Maximum video bit rate in kilobits/second (baseline and main Profile) : maximum video bit rate in kilobits/second (high Profile)</i></p>
+    /// <p> <i>Level - Maximum video bit rate in kilobits/second (baseline and main Profile) : maximum video bit rate in kilobits/second (high Profile)</i> </p>
     /// <ul>
-    /// <li>
-    /// <p>1 - 64 : 80</p></li>
-    /// <li>
-    /// <p>1b - 128 : 160</p></li>
-    /// <li>
-    /// <p>1.1 - 192 : 240</p></li>
-    /// <li>
-    /// <p>1.2 - 384 : 480</p></li>
-    /// <li>
-    /// <p>1.3 - 768 : 960</p></li>
-    /// <li>
-    /// <p>2 - 2000 : 2500</p></li>
-    /// <li>
-    /// <p>3 - 10000 : 12500</p></li>
-    /// <li>
-    /// <p>3.1 - 14000 : 17500</p></li>
-    /// <li>
-    /// <p>3.2 - 20000 : 25000</p></li>
-    /// <li>
-    /// <p>4 - 20000 : 25000</p></li>
-    /// <li>
-    /// <p>4.1 - 50000 : 62500</p></li>
+    /// <li> <p>1 - 64 : 80</p> </li>
+    /// <li> <p>1b - 128 : 160</p> </li>
+    /// <li> <p>1.1 - 192 : 240</p> </li>
+    /// <li> <p>1.2 - 384 : 480</p> </li>
+    /// <li> <p>1.3 - 768 : 960</p> </li>
+    /// <li> <p>2 - 2000 : 2500</p> </li>
+    /// <li> <p>3 - 10000 : 12500</p> </li>
+    /// <li> <p>3.1 - 14000 : 17500</p> </li>
+    /// <li> <p>3.2 - 20000 : 25000</p> </li>
+    /// <li> <p>4 - 20000 : 25000</p> </li>
+    /// <li> <p>4.1 - 50000 : 62500</p> </li>
     /// </ul>
     pub bit_rate: ::std::option::Option<::std::string::String>,
     /// <p>The frames per second for the video stream in the output file. Valid values include:</p>
-    /// <p><code>auto</code>, <code>10</code>, <code>15</code>, <code>23.97</code>, <code>24</code>, <code>25</code>, <code>29.97</code>, <code>30</code>, <code>60</code></p>
+    /// <p> <code>auto</code>, <code>10</code>, <code>15</code>, <code>23.97</code>, <code>24</code>, <code>25</code>, <code>29.97</code>, <code>30</code>, <code>60</code> </p>
     /// <p>If you specify <code>auto</code>, Elastic Transcoder uses the detected frame rate of the input source. If you specify a frame rate, we recommend that you perform the following calculation:</p>
-    /// <p><code>Frame rate = maximum recommended decoding speed in luma samples/second / (width in pixels * height in pixels)</code></p>
+    /// <p> <code>Frame rate = maximum recommended decoding speed in luma samples/second / (width in pixels * height in pixels)</code> </p>
     /// <p>where:</p>
     /// <ul>
-    /// <li>
-    /// <p><i>width in pixels</i> and <i>height in pixels</i> represent the Resolution of the output video.</p></li>
-    /// <li>
-    /// <p><i>maximum recommended decoding speed in Luma samples/second</i> is less than or equal to the maximum value listed in the following table, based on the value that you specified for Level.</p></li>
+    /// <li> <p> <i>width in pixels</i> and <i>height in pixels</i> represent the Resolution of the output video.</p> </li>
+    /// <li> <p> <i>maximum recommended decoding speed in Luma samples/second</i> is less than or equal to the maximum value listed in the following table, based on the value that you specified for Level.</p> </li>
     /// </ul>
     /// <p>The maximum recommended decoding speed in Luma samples/second for each level is described in the following list (<i>Level - Decoding speed</i>):</p>
     /// <ul>
-    /// <li>
-    /// <p>1 - 380160</p></li>
-    /// <li>
-    /// <p>1b - 380160</p></li>
-    /// <li>
-    /// <p>1.1 - 76800</p></li>
-    /// <li>
-    /// <p>1.2 - 1536000</p></li>
-    /// <li>
-    /// <p>1.3 - 3041280</p></li>
-    /// <li>
-    /// <p>2 - 3041280</p></li>
-    /// <li>
-    /// <p>2.1 - 5068800</p></li>
-    /// <li>
-    /// <p>2.2 - 5184000</p></li>
-    /// <li>
-    /// <p>3 - 10368000</p></li>
-    /// <li>
-    /// <p>3.1 - 27648000</p></li>
-    /// <li>
-    /// <p>3.2 - 55296000</p></li>
-    /// <li>
-    /// <p>4 - 62914560</p></li>
-    /// <li>
-    /// <p>4.1 - 62914560</p></li>
+    /// <li> <p>1 - 380160</p> </li>
+    /// <li> <p>1b - 380160</p> </li>
+    /// <li> <p>1.1 - 76800</p> </li>
+    /// <li> <p>1.2 - 1536000</p> </li>
+    /// <li> <p>1.3 - 3041280</p> </li>
+    /// <li> <p>2 - 3041280</p> </li>
+    /// <li> <p>2.1 - 5068800</p> </li>
+    /// <li> <p>2.2 - 5184000</p> </li>
+    /// <li> <p>3 - 10368000</p> </li>
+    /// <li> <p>3.1 - 27648000</p> </li>
+    /// <li> <p>3.2 - 55296000</p> </li>
+    /// <li> <p>4 - 62914560</p> </li>
+    /// <li> <p>4.1 - 62914560</p> </li>
     /// </ul>
     pub frame_rate: ::std::option::Option<::std::string::String>,
     /// <p>If you specify <code>auto</code> for <code>FrameRate</code>, Elastic Transcoder uses the frame rate of the input video for the frame rate of the output video. Specify the maximum frame rate that you want Elastic Transcoder to use when the frame rate of the input video is greater than the desired maximum frame rate of the output video. Valid values include: <code>10</code>, <code>15</code>, <code>23.97</code>, <code>24</code>, <code>25</code>, <code>29.97</code>, <code>30</code>, <code>60</code>.</p>
@@ -175,62 +127,42 @@ pub struct VideoParameters {
     /// </important>
     /// <p>The width and height of the video in the output file, in pixels. Valid values are <code>auto</code> and <i>width</i> x <i>height</i>:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>auto</code>: Elastic Transcoder attempts to preserve the width and height of the input file, subject to the following rules.</p></li>
-    /// <li>
-    /// <p><code> <i>width</i> x <i>height</i> </code>: The width and height of the output video in pixels.</p></li>
+    /// <li> <p> <code>auto</code>: Elastic Transcoder attempts to preserve the width and height of the input file, subject to the following rules.</p> </li>
+    /// <li> <p> <code> <i>width</i> x <i>height</i> </code>: The width and height of the output video in pixels.</p> </li>
     /// </ul>
     /// <p>Note the following about specifying the width and height:</p>
     /// <ul>
-    /// <li>
-    /// <p>The width must be an even integer between 128 and 4096, inclusive.</p></li>
-    /// <li>
-    /// <p>The height must be an even integer between 96 and 3072, inclusive.</p></li>
-    /// <li>
-    /// <p>If you specify a resolution that is less than the resolution of the input file, Elastic Transcoder rescales the output file to the lower resolution.</p></li>
-    /// <li>
-    /// <p>If you specify a resolution that is greater than the resolution of the input file, Elastic Transcoder rescales the output to the higher resolution.</p></li>
-    /// <li>
-    /// <p>We recommend that you specify a resolution for which the product of width and height is less than or equal to the applicable value in the following list (<i>List - Max width x height value</i>):</p>
+    /// <li> <p>The width must be an even integer between 128 and 4096, inclusive.</p> </li>
+    /// <li> <p>The height must be an even integer between 96 and 3072, inclusive.</p> </li>
+    /// <li> <p>If you specify a resolution that is less than the resolution of the input file, Elastic Transcoder rescales the output file to the lower resolution.</p> </li>
+    /// <li> <p>If you specify a resolution that is greater than the resolution of the input file, Elastic Transcoder rescales the output to the higher resolution.</p> </li>
+    /// <li> <p>We recommend that you specify a resolution for which the product of width and height is less than or equal to the applicable value in the following list (<i>List - Max width x height value</i>):</p>
     /// <ul>
-    /// <li>
-    /// <p>1 - 25344</p></li>
-    /// <li>
-    /// <p>1b - 25344</p></li>
-    /// <li>
-    /// <p>1.1 - 101376</p></li>
-    /// <li>
-    /// <p>1.2 - 101376</p></li>
-    /// <li>
-    /// <p>1.3 - 101376</p></li>
-    /// <li>
-    /// <p>2 - 101376</p></li>
-    /// <li>
-    /// <p>2.1 - 202752</p></li>
-    /// <li>
-    /// <p>2.2 - 404720</p></li>
-    /// <li>
-    /// <p>3 - 404720</p></li>
-    /// <li>
-    /// <p>3.1 - 921600</p></li>
-    /// <li>
-    /// <p>3.2 - 1310720</p></li>
-    /// <li>
-    /// <p>4 - 2097152</p></li>
-    /// <li>
-    /// <p>4.1 - 2097152</p></li>
-    /// </ul></li>
+    /// <li> <p>1 - 25344</p> </li>
+    /// <li> <p>1b - 25344</p> </li>
+    /// <li> <p>1.1 - 101376</p> </li>
+    /// <li> <p>1.2 - 101376</p> </li>
+    /// <li> <p>1.3 - 101376</p> </li>
+    /// <li> <p>2 - 101376</p> </li>
+    /// <li> <p>2.1 - 202752</p> </li>
+    /// <li> <p>2.2 - 404720</p> </li>
+    /// <li> <p>3 - 404720</p> </li>
+    /// <li> <p>3.1 - 921600</p> </li>
+    /// <li> <p>3.2 - 1310720</p> </li>
+    /// <li> <p>4 - 2097152</p> </li>
+    /// <li> <p>4.1 - 2097152</p> </li>
+    /// </ul> </li>
     /// </ul>
     pub resolution: ::std::option::Option<::std::string::String>,
     /// <important>
     /// <p>To better control resolution and aspect ratio of output videos, we recommend that you use the values <code>MaxWidth</code>, <code>MaxHeight</code>, <code>SizingPolicy</code>, <code>PaddingPolicy</code>, and <code>DisplayAspectRatio</code> instead of <code>Resolution</code> and <code>AspectRatio</code>. The two groups of settings are mutually exclusive. Do not use them together.</p>
     /// </important>
     /// <p>The display aspect ratio of the video in the output file. Valid values include:</p>
-    /// <p><code>auto</code>, <code>1:1</code>, <code>4:3</code>, <code>3:2</code>, <code>16:9</code></p>
+    /// <p> <code>auto</code>, <code>1:1</code>, <code>4:3</code>, <code>3:2</code>, <code>16:9</code> </p>
     /// <p>If you specify <code>auto</code>, Elastic Transcoder tries to preserve the aspect ratio of the input file.</p>
     /// <p>If you specify an aspect ratio for the output file that differs from aspect ratio of the input file, Elastic Transcoder adds pillarboxing (black bars on the sides) or letterboxing (black bars on the top and bottom) to maintain the aspect ratio of the active region of the video.</p>
     pub aspect_ratio: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum width of the output video in pixels. If you specify <code>auto</code>, Elastic Transcoder uses 1920 (Full HD) as the default value. If you specify a numeric value, enter an even integer between 128 and 4096.</p>
+    /// <p> The maximum width of the output video in pixels. If you specify <code>auto</code>, Elastic Transcoder uses 1920 (Full HD) as the default value. If you specify a numeric value, enter an even integer between 128 and 4096. </p>
     pub max_width: ::std::option::Option<::std::string::String>,
     /// <p>The maximum height of the output video in pixels. If you specify <code>auto</code>, Elastic Transcoder uses 1080 (Full HD) as the default value. If you specify a numeric value, enter an even integer between 96 and 3072.</p>
     pub max_height: ::std::option::Option<::std::string::String>,
@@ -238,18 +170,12 @@ pub struct VideoParameters {
     pub display_aspect_ratio: ::std::option::Option<::std::string::String>,
     /// <p>Specify one of the following values to control scaling of the output video:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Fit</code>: Elastic Transcoder scales the output video so it matches the value that you specified in either <code>MaxWidth</code> or <code>MaxHeight</code> without exceeding the other value.</p></li>
-    /// <li>
-    /// <p><code>Fill</code>: Elastic Transcoder scales the output video so it matches the value that you specified in either <code>MaxWidth</code> or <code>MaxHeight</code> and matches or exceeds the other value. Elastic Transcoder centers the output video and then crops it in the dimension (if any) that exceeds the maximum value.</p></li>
-    /// <li>
-    /// <p><code>Stretch</code>: Elastic Transcoder stretches the output video to match the values that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>. If the relative proportions of the input video and the output video are different, the output video will be distorted.</p></li>
-    /// <li>
-    /// <p><code>Keep</code>: Elastic Transcoder does not scale the output video. If either dimension of the input video exceeds the values that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>, Elastic Transcoder crops the output video.</p></li>
-    /// <li>
-    /// <p><code>ShrinkToFit</code>: Elastic Transcoder scales the output video down so that its dimensions match the values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without exceeding either value. If you specify this option, Elastic Transcoder does not scale the video up.</p></li>
-    /// <li>
-    /// <p><code>ShrinkToFill</code>: Elastic Transcoder scales the output video down so that its dimensions match the values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without dropping below either value. If you specify this option, Elastic Transcoder does not scale the video up.</p></li>
+    /// <li> <p> <code>Fit</code>: Elastic Transcoder scales the output video so it matches the value that you specified in either <code>MaxWidth</code> or <code>MaxHeight</code> without exceeding the other value.</p> </li>
+    /// <li> <p> <code>Fill</code>: Elastic Transcoder scales the output video so it matches the value that you specified in either <code>MaxWidth</code> or <code>MaxHeight</code> and matches or exceeds the other value. Elastic Transcoder centers the output video and then crops it in the dimension (if any) that exceeds the maximum value.</p> </li>
+    /// <li> <p> <code>Stretch</code>: Elastic Transcoder stretches the output video to match the values that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>. If the relative proportions of the input video and the output video are different, the output video will be distorted.</p> </li>
+    /// <li> <p> <code>Keep</code>: Elastic Transcoder does not scale the output video. If either dimension of the input video exceeds the values that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>, Elastic Transcoder crops the output video.</p> </li>
+    /// <li> <p> <code>ShrinkToFit</code>: Elastic Transcoder scales the output video down so that its dimensions match the values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without exceeding either value. If you specify this option, Elastic Transcoder does not scale the video up.</p> </li>
+    /// <li> <p> <code>ShrinkToFill</code>: Elastic Transcoder scales the output video down so that its dimensions match the values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without dropping below either value. If you specify this option, Elastic Transcoder does not scale the video up.</p> </li>
     /// </ul>
     pub sizing_policy: ::std::option::Option<::std::string::String>,
     /// <p>When you set <code>PaddingPolicy</code> to <code>Pad</code>, Elastic Transcoder may add black bars to the top and bottom and/or left and right sides of the output video to make the total size of the output video match the values that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>.</p>
@@ -264,81 +190,61 @@ impl VideoParameters {
     pub fn codec(&self) -> ::std::option::Option<&str> {
         self.codec.as_deref()
     }
-    /// <p><b>Profile (H.264/VP8/VP9 Only)</b></p>
+    /// <p> <b>Profile (H.264/VP8/VP9 Only)</b> </p>
     /// <p>The H.264 profile that you want to use for the output file. Elastic Transcoder supports the following profiles:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>baseline</code>: The profile most commonly used for videoconferencing and for mobile applications.</p></li>
-    /// <li>
-    /// <p><code>main</code>: The profile used for standard-definition digital TV broadcasts.</p></li>
-    /// <li>
-    /// <p><code>high</code>: The profile used for high-definition digital TV broadcasts and for Blu-ray discs.</p></li>
+    /// <li> <p> <code>baseline</code>: The profile most commonly used for videoconferencing and for mobile applications.</p> </li>
+    /// <li> <p> <code>main</code>: The profile used for standard-definition digital TV broadcasts.</p> </li>
+    /// <li> <p> <code>high</code>: The profile used for high-definition digital TV broadcasts and for Blu-ray discs.</p> </li>
     /// </ul>
-    /// <p><b>Level (H.264 Only)</b></p>
+    /// <p> <b>Level (H.264 Only)</b> </p>
     /// <p>The H.264 level that you want to use for the output file. Elastic Transcoder supports the following levels:</p>
-    /// <p><code>1</code>, <code>1b</code>, <code>1.1</code>, <code>1.2</code>, <code>1.3</code>, <code>2</code>, <code>2.1</code>, <code>2.2</code>, <code>3</code>, <code>3.1</code>, <code>3.2</code>, <code>4</code>, <code>4.1</code></p>
-    /// <p><b>MaxReferenceFrames (H.264 Only)</b></p>
+    /// <p> <code>1</code>, <code>1b</code>, <code>1.1</code>, <code>1.2</code>, <code>1.3</code>, <code>2</code>, <code>2.1</code>, <code>2.2</code>, <code>3</code>, <code>3.1</code>, <code>3.2</code>, <code>4</code>, <code>4.1</code> </p>
+    /// <p> <b>MaxReferenceFrames (H.264 Only)</b> </p>
     /// <p>Applicable only when the value of Video:Codec is H.264. The maximum number of previously decoded frames to use as a reference for decoding future frames. Valid values are integers 0 through 16, but we recommend that you not use a value greater than the following:</p>
-    /// <p><code>Min(Floor(Maximum decoded picture buffer in macroblocks * 256 / (Width in pixels * Height in pixels)), 16)</code></p>
-    /// <p>where <i>Width in pixels</i> and <i>Height in pixels</i> represent either MaxWidth and MaxHeight, or Resolution. <i>Maximum decoded picture buffer in macroblocks</i> depends on the value of the <code>Level</code> object. See the list below. (A macroblock is a block of pixels measuring 16x16.)</p>
+    /// <p> <code>Min(Floor(Maximum decoded picture buffer in macroblocks * 256 / (Width in pixels * Height in pixels)), 16)</code> </p>
+    /// <p>where <i>Width in pixels</i> and <i>Height in pixels</i> represent either MaxWidth and MaxHeight, or Resolution. <i>Maximum decoded picture buffer in macroblocks</i> depends on the value of the <code>Level</code> object. See the list below. (A macroblock is a block of pixels measuring 16x16.) </p>
     /// <ul>
-    /// <li>
-    /// <p>1 - 396</p></li>
-    /// <li>
-    /// <p>1b - 396</p></li>
-    /// <li>
-    /// <p>1.1 - 900</p></li>
-    /// <li>
-    /// <p>1.2 - 2376</p></li>
-    /// <li>
-    /// <p>1.3 - 2376</p></li>
-    /// <li>
-    /// <p>2 - 2376</p></li>
-    /// <li>
-    /// <p>2.1 - 4752</p></li>
-    /// <li>
-    /// <p>2.2 - 8100</p></li>
-    /// <li>
-    /// <p>3 - 8100</p></li>
-    /// <li>
-    /// <p>3.1 - 18000</p></li>
-    /// <li>
-    /// <p>3.2 - 20480</p></li>
-    /// <li>
-    /// <p>4 - 32768</p></li>
-    /// <li>
-    /// <p>4.1 - 32768</p></li>
+    /// <li> <p>1 - 396</p> </li>
+    /// <li> <p>1b - 396</p> </li>
+    /// <li> <p>1.1 - 900</p> </li>
+    /// <li> <p>1.2 - 2376</p> </li>
+    /// <li> <p>1.3 - 2376</p> </li>
+    /// <li> <p>2 - 2376</p> </li>
+    /// <li> <p>2.1 - 4752</p> </li>
+    /// <li> <p>2.2 - 8100</p> </li>
+    /// <li> <p>3 - 8100</p> </li>
+    /// <li> <p>3.1 - 18000</p> </li>
+    /// <li> <p>3.2 - 20480</p> </li>
+    /// <li> <p>4 - 32768</p> </li>
+    /// <li> <p>4.1 - 32768</p> </li>
     /// </ul>
-    /// <p><b>MaxBitRate (Optional, H.264/MPEG2/VP8/VP9 only)</b></p>
+    /// <p> <b>MaxBitRate (Optional, H.264/MPEG2/VP8/VP9 only)</b> </p>
     /// <p>The maximum number of bits per second in a video buffer; the size of the buffer is specified by <code>BufferSize</code>. Specify a value between 16 and 62,500. You can reduce the bandwidth required to stream a video by reducing the maximum bit rate, but this also reduces the quality of the video.</p>
-    /// <p><b>BufferSize (Optional, H.264/MPEG2/VP8/VP9 only)</b></p>
+    /// <p> <b>BufferSize (Optional, H.264/MPEG2/VP8/VP9 only)</b> </p>
     /// <p>The maximum number of bits in any x seconds of the output video. This window is commonly 10 seconds, the standard segment duration when you're using FMP4 or MPEG-TS for the container type of the output video. Specify an integer greater than 0. If you specify <code>MaxBitRate</code> and omit <code>BufferSize</code>, Elastic Transcoder sets <code>BufferSize</code> to 10 times the value of <code>MaxBitRate</code>.</p>
-    /// <p><b>InterlacedMode (Optional, H.264/MPEG2 Only)</b></p>
+    /// <p> <b>InterlacedMode (Optional, H.264/MPEG2 Only)</b> </p>
     /// <p>The interlace mode for the output video.</p>
     /// <p>Interlaced video is used to double the perceived frame rate for a video by interlacing two fields (one field on every other line, the other field on the other lines) so that the human eye registers multiple pictures per frame. Interlacing reduces the bandwidth required for transmitting a video, but can result in blurred images and flickering.</p>
     /// <p>Valid values include <code>Progressive</code> (no interlacing, top to bottom), <code>TopFirst</code> (top field first), <code>BottomFirst</code> (bottom field first), and <code>Auto</code>.</p>
     /// <p>If <code>InterlaceMode</code> is not specified, Elastic Transcoder uses <code>Progressive</code> for the output. If <code>Auto</code> is specified, Elastic Transcoder interlaces the output.</p>
-    /// <p><b>ColorSpaceConversionMode (Optional, H.264/MPEG2 Only)</b></p>
+    /// <p> <b>ColorSpaceConversionMode (Optional, H.264/MPEG2 Only)</b> </p>
     /// <p>The color space conversion Elastic Transcoder applies to the output video. Color spaces are the algorithms used by the computer to store information about how to render color. <code>Bt.601</code> is the standard for standard definition video, while <code>Bt.709</code> is the standard for high definition video.</p>
     /// <p>Valid values include <code>None</code>, <code>Bt709toBt601</code>, <code>Bt601toBt709</code>, and <code>Auto</code>.</p>
     /// <p>If you chose <code>Auto</code> for <code>ColorSpaceConversionMode</code> and your output is interlaced, your frame rate is one of <code>23.97</code>, <code>24</code>, <code>25</code>, <code>29.97</code>, <code>50</code>, or <code>60</code>, your <code>SegmentDuration</code> is null, and you are using one of the resolution changes from the list below, Elastic Transcoder applies the following color space conversions:</p>
     /// <ul>
-    /// <li>
-    /// <p><i>Standard to HD, 720x480 to 1920x1080</i> - Elastic Transcoder applies <code>Bt601ToBt709</code></p></li>
-    /// <li>
-    /// <p><i>Standard to HD, 720x576 to 1920x1080</i> - Elastic Transcoder applies <code>Bt601ToBt709</code></p></li>
-    /// <li>
-    /// <p><i>HD to Standard, 1920x1080 to 720x480</i> - Elastic Transcoder applies <code>Bt709ToBt601</code></p></li>
-    /// <li>
-    /// <p><i>HD to Standard, 1920x1080 to 720x576</i> - Elastic Transcoder applies <code>Bt709ToBt601</code></p></li>
-    /// </ul><note>
+    /// <li> <p> <i>Standard to HD, 720x480 to 1920x1080</i> - Elastic Transcoder applies <code>Bt601ToBt709</code> </p> </li>
+    /// <li> <p> <i>Standard to HD, 720x576 to 1920x1080</i> - Elastic Transcoder applies <code>Bt601ToBt709</code> </p> </li>
+    /// <li> <p> <i>HD to Standard, 1920x1080 to 720x480</i> - Elastic Transcoder applies <code>Bt709ToBt601</code> </p> </li>
+    /// <li> <p> <i>HD to Standard, 1920x1080 to 720x576</i> - Elastic Transcoder applies <code>Bt709ToBt601</code> </p> </li>
+    /// </ul> <note>
     /// <p>Elastic Transcoder may change the behavior of the <code>ColorspaceConversionMode</code> <code>Auto</code> mode in the future. All outputs in a playlist must use the same <code>ColorSpaceConversionMode</code>.</p>
     /// </note>
     /// <p>If you do not specify a <code>ColorSpaceConversionMode</code>, Elastic Transcoder does not change the color space of a file. If you are unsure what <code>ColorSpaceConversionMode</code> was applied to your output file, you can check the <code>AppliedColorSpaceConversion</code> parameter included in your job response. If your job does not have an <code>AppliedColorSpaceConversion</code> in its response, no <code>ColorSpaceConversionMode</code> was applied.</p>
-    /// <p><b>ChromaSubsampling</b></p>
+    /// <p> <b>ChromaSubsampling</b> </p>
     /// <p>The sampling pattern for the chroma (color) channels of the output video. Valid values include <code>yuv420p</code> and <code>yuv422p</code>.</p>
-    /// <p><code>yuv420p</code> samples the chroma information of every other horizontal and every other vertical line, <code>yuv422p</code> samples the color information of every horizontal line and every other vertical line.</p>
-    /// <p><b>LoopCount (Gif Only)</b></p>
+    /// <p> <code>yuv420p</code> samples the chroma information of every other horizontal and every other vertical line, <code>yuv422p</code> samples the color information of every horizontal line and every other vertical line.</p>
+    /// <p> <b>LoopCount (Gif Only)</b> </p>
     /// <p>The number of times you want the output gif to loop. Valid values include <code>Infinite</code> and integers between <code>0</code> and <code>100</code>, inclusive.</p>
     pub fn codec_options(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.codec_options.as_ref()
@@ -354,84 +260,56 @@ impl VideoParameters {
     /// <p>Applicable only when the value of Video:Codec is one of <code>H.264</code>, <code>MPEG2</code>, or <code>VP8</code>.</p>
     /// <p>Whether to use a fixed value for <code>FixedGOP</code>. Valid values are <code>true</code> and <code>false</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>true</code>: Elastic Transcoder uses the value of <code>KeyframesMaxDist</code> for the distance between key frames (the number of frames in a group of pictures, or GOP).</p></li>
-    /// <li>
-    /// <p><code>false</code>: The distance between key frames can vary.</p></li>
-    /// </ul><important>
-    /// <p><code>FixedGOP</code> must be set to <code>true</code> for <code>fmp4</code> containers.</p>
+    /// <li> <p> <code>true</code>: Elastic Transcoder uses the value of <code>KeyframesMaxDist</code> for the distance between key frames (the number of frames in a group of pictures, or GOP).</p> </li>
+    /// <li> <p> <code>false</code>: The distance between key frames can vary.</p> </li>
+    /// </ul> <important>
+    /// <p> <code>FixedGOP</code> must be set to <code>true</code> for <code>fmp4</code> containers.</p>
     /// </important>
     pub fn fixed_gop(&self) -> ::std::option::Option<&str> {
         self.fixed_gop.as_deref()
     }
     /// <p>The bit rate of the video stream in the output file, in kilobits/second. Valid values depend on the values of <code>Level</code> and <code>Profile</code>. If you specify <code>auto</code>, Elastic Transcoder uses the detected bit rate of the input source. If you specify a value other than <code>auto</code>, we recommend that you specify a value less than or equal to the maximum H.264-compliant value listed for your level and profile:</p>
-    /// <p><i>Level - Maximum video bit rate in kilobits/second (baseline and main Profile) : maximum video bit rate in kilobits/second (high Profile)</i></p>
+    /// <p> <i>Level - Maximum video bit rate in kilobits/second (baseline and main Profile) : maximum video bit rate in kilobits/second (high Profile)</i> </p>
     /// <ul>
-    /// <li>
-    /// <p>1 - 64 : 80</p></li>
-    /// <li>
-    /// <p>1b - 128 : 160</p></li>
-    /// <li>
-    /// <p>1.1 - 192 : 240</p></li>
-    /// <li>
-    /// <p>1.2 - 384 : 480</p></li>
-    /// <li>
-    /// <p>1.3 - 768 : 960</p></li>
-    /// <li>
-    /// <p>2 - 2000 : 2500</p></li>
-    /// <li>
-    /// <p>3 - 10000 : 12500</p></li>
-    /// <li>
-    /// <p>3.1 - 14000 : 17500</p></li>
-    /// <li>
-    /// <p>3.2 - 20000 : 25000</p></li>
-    /// <li>
-    /// <p>4 - 20000 : 25000</p></li>
-    /// <li>
-    /// <p>4.1 - 50000 : 62500</p></li>
+    /// <li> <p>1 - 64 : 80</p> </li>
+    /// <li> <p>1b - 128 : 160</p> </li>
+    /// <li> <p>1.1 - 192 : 240</p> </li>
+    /// <li> <p>1.2 - 384 : 480</p> </li>
+    /// <li> <p>1.3 - 768 : 960</p> </li>
+    /// <li> <p>2 - 2000 : 2500</p> </li>
+    /// <li> <p>3 - 10000 : 12500</p> </li>
+    /// <li> <p>3.1 - 14000 : 17500</p> </li>
+    /// <li> <p>3.2 - 20000 : 25000</p> </li>
+    /// <li> <p>4 - 20000 : 25000</p> </li>
+    /// <li> <p>4.1 - 50000 : 62500</p> </li>
     /// </ul>
     pub fn bit_rate(&self) -> ::std::option::Option<&str> {
         self.bit_rate.as_deref()
     }
     /// <p>The frames per second for the video stream in the output file. Valid values include:</p>
-    /// <p><code>auto</code>, <code>10</code>, <code>15</code>, <code>23.97</code>, <code>24</code>, <code>25</code>, <code>29.97</code>, <code>30</code>, <code>60</code></p>
+    /// <p> <code>auto</code>, <code>10</code>, <code>15</code>, <code>23.97</code>, <code>24</code>, <code>25</code>, <code>29.97</code>, <code>30</code>, <code>60</code> </p>
     /// <p>If you specify <code>auto</code>, Elastic Transcoder uses the detected frame rate of the input source. If you specify a frame rate, we recommend that you perform the following calculation:</p>
-    /// <p><code>Frame rate = maximum recommended decoding speed in luma samples/second / (width in pixels * height in pixels)</code></p>
+    /// <p> <code>Frame rate = maximum recommended decoding speed in luma samples/second / (width in pixels * height in pixels)</code> </p>
     /// <p>where:</p>
     /// <ul>
-    /// <li>
-    /// <p><i>width in pixels</i> and <i>height in pixels</i> represent the Resolution of the output video.</p></li>
-    /// <li>
-    /// <p><i>maximum recommended decoding speed in Luma samples/second</i> is less than or equal to the maximum value listed in the following table, based on the value that you specified for Level.</p></li>
+    /// <li> <p> <i>width in pixels</i> and <i>height in pixels</i> represent the Resolution of the output video.</p> </li>
+    /// <li> <p> <i>maximum recommended decoding speed in Luma samples/second</i> is less than or equal to the maximum value listed in the following table, based on the value that you specified for Level.</p> </li>
     /// </ul>
     /// <p>The maximum recommended decoding speed in Luma samples/second for each level is described in the following list (<i>Level - Decoding speed</i>):</p>
     /// <ul>
-    /// <li>
-    /// <p>1 - 380160</p></li>
-    /// <li>
-    /// <p>1b - 380160</p></li>
-    /// <li>
-    /// <p>1.1 - 76800</p></li>
-    /// <li>
-    /// <p>1.2 - 1536000</p></li>
-    /// <li>
-    /// <p>1.3 - 3041280</p></li>
-    /// <li>
-    /// <p>2 - 3041280</p></li>
-    /// <li>
-    /// <p>2.1 - 5068800</p></li>
-    /// <li>
-    /// <p>2.2 - 5184000</p></li>
-    /// <li>
-    /// <p>3 - 10368000</p></li>
-    /// <li>
-    /// <p>3.1 - 27648000</p></li>
-    /// <li>
-    /// <p>3.2 - 55296000</p></li>
-    /// <li>
-    /// <p>4 - 62914560</p></li>
-    /// <li>
-    /// <p>4.1 - 62914560</p></li>
+    /// <li> <p>1 - 380160</p> </li>
+    /// <li> <p>1b - 380160</p> </li>
+    /// <li> <p>1.1 - 76800</p> </li>
+    /// <li> <p>1.2 - 1536000</p> </li>
+    /// <li> <p>1.3 - 3041280</p> </li>
+    /// <li> <p>2 - 3041280</p> </li>
+    /// <li> <p>2.1 - 5068800</p> </li>
+    /// <li> <p>2.2 - 5184000</p> </li>
+    /// <li> <p>3 - 10368000</p> </li>
+    /// <li> <p>3.1 - 27648000</p> </li>
+    /// <li> <p>3.2 - 55296000</p> </li>
+    /// <li> <p>4 - 62914560</p> </li>
+    /// <li> <p>4.1 - 62914560</p> </li>
     /// </ul>
     pub fn frame_rate(&self) -> ::std::option::Option<&str> {
         self.frame_rate.as_deref()
@@ -445,51 +323,31 @@ impl VideoParameters {
     /// </important>
     /// <p>The width and height of the video in the output file, in pixels. Valid values are <code>auto</code> and <i>width</i> x <i>height</i>:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>auto</code>: Elastic Transcoder attempts to preserve the width and height of the input file, subject to the following rules.</p></li>
-    /// <li>
-    /// <p><code> <i>width</i> x <i>height</i> </code>: The width and height of the output video in pixels.</p></li>
+    /// <li> <p> <code>auto</code>: Elastic Transcoder attempts to preserve the width and height of the input file, subject to the following rules.</p> </li>
+    /// <li> <p> <code> <i>width</i> x <i>height</i> </code>: The width and height of the output video in pixels.</p> </li>
     /// </ul>
     /// <p>Note the following about specifying the width and height:</p>
     /// <ul>
-    /// <li>
-    /// <p>The width must be an even integer between 128 and 4096, inclusive.</p></li>
-    /// <li>
-    /// <p>The height must be an even integer between 96 and 3072, inclusive.</p></li>
-    /// <li>
-    /// <p>If you specify a resolution that is less than the resolution of the input file, Elastic Transcoder rescales the output file to the lower resolution.</p></li>
-    /// <li>
-    /// <p>If you specify a resolution that is greater than the resolution of the input file, Elastic Transcoder rescales the output to the higher resolution.</p></li>
-    /// <li>
-    /// <p>We recommend that you specify a resolution for which the product of width and height is less than or equal to the applicable value in the following list (<i>List - Max width x height value</i>):</p>
+    /// <li> <p>The width must be an even integer between 128 and 4096, inclusive.</p> </li>
+    /// <li> <p>The height must be an even integer between 96 and 3072, inclusive.</p> </li>
+    /// <li> <p>If you specify a resolution that is less than the resolution of the input file, Elastic Transcoder rescales the output file to the lower resolution.</p> </li>
+    /// <li> <p>If you specify a resolution that is greater than the resolution of the input file, Elastic Transcoder rescales the output to the higher resolution.</p> </li>
+    /// <li> <p>We recommend that you specify a resolution for which the product of width and height is less than or equal to the applicable value in the following list (<i>List - Max width x height value</i>):</p>
     /// <ul>
-    /// <li>
-    /// <p>1 - 25344</p></li>
-    /// <li>
-    /// <p>1b - 25344</p></li>
-    /// <li>
-    /// <p>1.1 - 101376</p></li>
-    /// <li>
-    /// <p>1.2 - 101376</p></li>
-    /// <li>
-    /// <p>1.3 - 101376</p></li>
-    /// <li>
-    /// <p>2 - 101376</p></li>
-    /// <li>
-    /// <p>2.1 - 202752</p></li>
-    /// <li>
-    /// <p>2.2 - 404720</p></li>
-    /// <li>
-    /// <p>3 - 404720</p></li>
-    /// <li>
-    /// <p>3.1 - 921600</p></li>
-    /// <li>
-    /// <p>3.2 - 1310720</p></li>
-    /// <li>
-    /// <p>4 - 2097152</p></li>
-    /// <li>
-    /// <p>4.1 - 2097152</p></li>
-    /// </ul></li>
+    /// <li> <p>1 - 25344</p> </li>
+    /// <li> <p>1b - 25344</p> </li>
+    /// <li> <p>1.1 - 101376</p> </li>
+    /// <li> <p>1.2 - 101376</p> </li>
+    /// <li> <p>1.3 - 101376</p> </li>
+    /// <li> <p>2 - 101376</p> </li>
+    /// <li> <p>2.1 - 202752</p> </li>
+    /// <li> <p>2.2 - 404720</p> </li>
+    /// <li> <p>3 - 404720</p> </li>
+    /// <li> <p>3.1 - 921600</p> </li>
+    /// <li> <p>3.2 - 1310720</p> </li>
+    /// <li> <p>4 - 2097152</p> </li>
+    /// <li> <p>4.1 - 2097152</p> </li>
+    /// </ul> </li>
     /// </ul>
     pub fn resolution(&self) -> ::std::option::Option<&str> {
         self.resolution.as_deref()
@@ -498,13 +356,13 @@ impl VideoParameters {
     /// <p>To better control resolution and aspect ratio of output videos, we recommend that you use the values <code>MaxWidth</code>, <code>MaxHeight</code>, <code>SizingPolicy</code>, <code>PaddingPolicy</code>, and <code>DisplayAspectRatio</code> instead of <code>Resolution</code> and <code>AspectRatio</code>. The two groups of settings are mutually exclusive. Do not use them together.</p>
     /// </important>
     /// <p>The display aspect ratio of the video in the output file. Valid values include:</p>
-    /// <p><code>auto</code>, <code>1:1</code>, <code>4:3</code>, <code>3:2</code>, <code>16:9</code></p>
+    /// <p> <code>auto</code>, <code>1:1</code>, <code>4:3</code>, <code>3:2</code>, <code>16:9</code> </p>
     /// <p>If you specify <code>auto</code>, Elastic Transcoder tries to preserve the aspect ratio of the input file.</p>
     /// <p>If you specify an aspect ratio for the output file that differs from aspect ratio of the input file, Elastic Transcoder adds pillarboxing (black bars on the sides) or letterboxing (black bars on the top and bottom) to maintain the aspect ratio of the active region of the video.</p>
     pub fn aspect_ratio(&self) -> ::std::option::Option<&str> {
         self.aspect_ratio.as_deref()
     }
-    /// <p>The maximum width of the output video in pixels. If you specify <code>auto</code>, Elastic Transcoder uses 1920 (Full HD) as the default value. If you specify a numeric value, enter an even integer between 128 and 4096.</p>
+    /// <p> The maximum width of the output video in pixels. If you specify <code>auto</code>, Elastic Transcoder uses 1920 (Full HD) as the default value. If you specify a numeric value, enter an even integer between 128 and 4096. </p>
     pub fn max_width(&self) -> ::std::option::Option<&str> {
         self.max_width.as_deref()
     }
@@ -518,18 +376,12 @@ impl VideoParameters {
     }
     /// <p>Specify one of the following values to control scaling of the output video:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Fit</code>: Elastic Transcoder scales the output video so it matches the value that you specified in either <code>MaxWidth</code> or <code>MaxHeight</code> without exceeding the other value.</p></li>
-    /// <li>
-    /// <p><code>Fill</code>: Elastic Transcoder scales the output video so it matches the value that you specified in either <code>MaxWidth</code> or <code>MaxHeight</code> and matches or exceeds the other value. Elastic Transcoder centers the output video and then crops it in the dimension (if any) that exceeds the maximum value.</p></li>
-    /// <li>
-    /// <p><code>Stretch</code>: Elastic Transcoder stretches the output video to match the values that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>. If the relative proportions of the input video and the output video are different, the output video will be distorted.</p></li>
-    /// <li>
-    /// <p><code>Keep</code>: Elastic Transcoder does not scale the output video. If either dimension of the input video exceeds the values that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>, Elastic Transcoder crops the output video.</p></li>
-    /// <li>
-    /// <p><code>ShrinkToFit</code>: Elastic Transcoder scales the output video down so that its dimensions match the values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without exceeding either value. If you specify this option, Elastic Transcoder does not scale the video up.</p></li>
-    /// <li>
-    /// <p><code>ShrinkToFill</code>: Elastic Transcoder scales the output video down so that its dimensions match the values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without dropping below either value. If you specify this option, Elastic Transcoder does not scale the video up.</p></li>
+    /// <li> <p> <code>Fit</code>: Elastic Transcoder scales the output video so it matches the value that you specified in either <code>MaxWidth</code> or <code>MaxHeight</code> without exceeding the other value.</p> </li>
+    /// <li> <p> <code>Fill</code>: Elastic Transcoder scales the output video so it matches the value that you specified in either <code>MaxWidth</code> or <code>MaxHeight</code> and matches or exceeds the other value. Elastic Transcoder centers the output video and then crops it in the dimension (if any) that exceeds the maximum value.</p> </li>
+    /// <li> <p> <code>Stretch</code>: Elastic Transcoder stretches the output video to match the values that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>. If the relative proportions of the input video and the output video are different, the output video will be distorted.</p> </li>
+    /// <li> <p> <code>Keep</code>: Elastic Transcoder does not scale the output video. If either dimension of the input video exceeds the values that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>, Elastic Transcoder crops the output video.</p> </li>
+    /// <li> <p> <code>ShrinkToFit</code>: Elastic Transcoder scales the output video down so that its dimensions match the values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without exceeding either value. If you specify this option, Elastic Transcoder does not scale the video up.</p> </li>
+    /// <li> <p> <code>ShrinkToFill</code>: Elastic Transcoder scales the output video down so that its dimensions match the values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without dropping below either value. If you specify this option, Elastic Transcoder does not scale the video up.</p> </li>
     /// </ul>
     pub fn sizing_policy(&self) -> ::std::option::Option<&str> {
         self.sizing_policy.as_deref()
@@ -593,81 +445,61 @@ impl VideoParametersBuilder {
     ///
     /// To override the contents of this collection use [`set_codec_options`](Self::set_codec_options).
     ///
-    /// <p><b>Profile (H.264/VP8/VP9 Only)</b></p>
+    /// <p> <b>Profile (H.264/VP8/VP9 Only)</b> </p>
     /// <p>The H.264 profile that you want to use for the output file. Elastic Transcoder supports the following profiles:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>baseline</code>: The profile most commonly used for videoconferencing and for mobile applications.</p></li>
-    /// <li>
-    /// <p><code>main</code>: The profile used for standard-definition digital TV broadcasts.</p></li>
-    /// <li>
-    /// <p><code>high</code>: The profile used for high-definition digital TV broadcasts and for Blu-ray discs.</p></li>
+    /// <li> <p> <code>baseline</code>: The profile most commonly used for videoconferencing and for mobile applications.</p> </li>
+    /// <li> <p> <code>main</code>: The profile used for standard-definition digital TV broadcasts.</p> </li>
+    /// <li> <p> <code>high</code>: The profile used for high-definition digital TV broadcasts and for Blu-ray discs.</p> </li>
     /// </ul>
-    /// <p><b>Level (H.264 Only)</b></p>
+    /// <p> <b>Level (H.264 Only)</b> </p>
     /// <p>The H.264 level that you want to use for the output file. Elastic Transcoder supports the following levels:</p>
-    /// <p><code>1</code>, <code>1b</code>, <code>1.1</code>, <code>1.2</code>, <code>1.3</code>, <code>2</code>, <code>2.1</code>, <code>2.2</code>, <code>3</code>, <code>3.1</code>, <code>3.2</code>, <code>4</code>, <code>4.1</code></p>
-    /// <p><b>MaxReferenceFrames (H.264 Only)</b></p>
+    /// <p> <code>1</code>, <code>1b</code>, <code>1.1</code>, <code>1.2</code>, <code>1.3</code>, <code>2</code>, <code>2.1</code>, <code>2.2</code>, <code>3</code>, <code>3.1</code>, <code>3.2</code>, <code>4</code>, <code>4.1</code> </p>
+    /// <p> <b>MaxReferenceFrames (H.264 Only)</b> </p>
     /// <p>Applicable only when the value of Video:Codec is H.264. The maximum number of previously decoded frames to use as a reference for decoding future frames. Valid values are integers 0 through 16, but we recommend that you not use a value greater than the following:</p>
-    /// <p><code>Min(Floor(Maximum decoded picture buffer in macroblocks * 256 / (Width in pixels * Height in pixels)), 16)</code></p>
-    /// <p>where <i>Width in pixels</i> and <i>Height in pixels</i> represent either MaxWidth and MaxHeight, or Resolution. <i>Maximum decoded picture buffer in macroblocks</i> depends on the value of the <code>Level</code> object. See the list below. (A macroblock is a block of pixels measuring 16x16.)</p>
+    /// <p> <code>Min(Floor(Maximum decoded picture buffer in macroblocks * 256 / (Width in pixels * Height in pixels)), 16)</code> </p>
+    /// <p>where <i>Width in pixels</i> and <i>Height in pixels</i> represent either MaxWidth and MaxHeight, or Resolution. <i>Maximum decoded picture buffer in macroblocks</i> depends on the value of the <code>Level</code> object. See the list below. (A macroblock is a block of pixels measuring 16x16.) </p>
     /// <ul>
-    /// <li>
-    /// <p>1 - 396</p></li>
-    /// <li>
-    /// <p>1b - 396</p></li>
-    /// <li>
-    /// <p>1.1 - 900</p></li>
-    /// <li>
-    /// <p>1.2 - 2376</p></li>
-    /// <li>
-    /// <p>1.3 - 2376</p></li>
-    /// <li>
-    /// <p>2 - 2376</p></li>
-    /// <li>
-    /// <p>2.1 - 4752</p></li>
-    /// <li>
-    /// <p>2.2 - 8100</p></li>
-    /// <li>
-    /// <p>3 - 8100</p></li>
-    /// <li>
-    /// <p>3.1 - 18000</p></li>
-    /// <li>
-    /// <p>3.2 - 20480</p></li>
-    /// <li>
-    /// <p>4 - 32768</p></li>
-    /// <li>
-    /// <p>4.1 - 32768</p></li>
+    /// <li> <p>1 - 396</p> </li>
+    /// <li> <p>1b - 396</p> </li>
+    /// <li> <p>1.1 - 900</p> </li>
+    /// <li> <p>1.2 - 2376</p> </li>
+    /// <li> <p>1.3 - 2376</p> </li>
+    /// <li> <p>2 - 2376</p> </li>
+    /// <li> <p>2.1 - 4752</p> </li>
+    /// <li> <p>2.2 - 8100</p> </li>
+    /// <li> <p>3 - 8100</p> </li>
+    /// <li> <p>3.1 - 18000</p> </li>
+    /// <li> <p>3.2 - 20480</p> </li>
+    /// <li> <p>4 - 32768</p> </li>
+    /// <li> <p>4.1 - 32768</p> </li>
     /// </ul>
-    /// <p><b>MaxBitRate (Optional, H.264/MPEG2/VP8/VP9 only)</b></p>
+    /// <p> <b>MaxBitRate (Optional, H.264/MPEG2/VP8/VP9 only)</b> </p>
     /// <p>The maximum number of bits per second in a video buffer; the size of the buffer is specified by <code>BufferSize</code>. Specify a value between 16 and 62,500. You can reduce the bandwidth required to stream a video by reducing the maximum bit rate, but this also reduces the quality of the video.</p>
-    /// <p><b>BufferSize (Optional, H.264/MPEG2/VP8/VP9 only)</b></p>
+    /// <p> <b>BufferSize (Optional, H.264/MPEG2/VP8/VP9 only)</b> </p>
     /// <p>The maximum number of bits in any x seconds of the output video. This window is commonly 10 seconds, the standard segment duration when you're using FMP4 or MPEG-TS for the container type of the output video. Specify an integer greater than 0. If you specify <code>MaxBitRate</code> and omit <code>BufferSize</code>, Elastic Transcoder sets <code>BufferSize</code> to 10 times the value of <code>MaxBitRate</code>.</p>
-    /// <p><b>InterlacedMode (Optional, H.264/MPEG2 Only)</b></p>
+    /// <p> <b>InterlacedMode (Optional, H.264/MPEG2 Only)</b> </p>
     /// <p>The interlace mode for the output video.</p>
     /// <p>Interlaced video is used to double the perceived frame rate for a video by interlacing two fields (one field on every other line, the other field on the other lines) so that the human eye registers multiple pictures per frame. Interlacing reduces the bandwidth required for transmitting a video, but can result in blurred images and flickering.</p>
     /// <p>Valid values include <code>Progressive</code> (no interlacing, top to bottom), <code>TopFirst</code> (top field first), <code>BottomFirst</code> (bottom field first), and <code>Auto</code>.</p>
     /// <p>If <code>InterlaceMode</code> is not specified, Elastic Transcoder uses <code>Progressive</code> for the output. If <code>Auto</code> is specified, Elastic Transcoder interlaces the output.</p>
-    /// <p><b>ColorSpaceConversionMode (Optional, H.264/MPEG2 Only)</b></p>
+    /// <p> <b>ColorSpaceConversionMode (Optional, H.264/MPEG2 Only)</b> </p>
     /// <p>The color space conversion Elastic Transcoder applies to the output video. Color spaces are the algorithms used by the computer to store information about how to render color. <code>Bt.601</code> is the standard for standard definition video, while <code>Bt.709</code> is the standard for high definition video.</p>
     /// <p>Valid values include <code>None</code>, <code>Bt709toBt601</code>, <code>Bt601toBt709</code>, and <code>Auto</code>.</p>
     /// <p>If you chose <code>Auto</code> for <code>ColorSpaceConversionMode</code> and your output is interlaced, your frame rate is one of <code>23.97</code>, <code>24</code>, <code>25</code>, <code>29.97</code>, <code>50</code>, or <code>60</code>, your <code>SegmentDuration</code> is null, and you are using one of the resolution changes from the list below, Elastic Transcoder applies the following color space conversions:</p>
     /// <ul>
-    /// <li>
-    /// <p><i>Standard to HD, 720x480 to 1920x1080</i> - Elastic Transcoder applies <code>Bt601ToBt709</code></p></li>
-    /// <li>
-    /// <p><i>Standard to HD, 720x576 to 1920x1080</i> - Elastic Transcoder applies <code>Bt601ToBt709</code></p></li>
-    /// <li>
-    /// <p><i>HD to Standard, 1920x1080 to 720x480</i> - Elastic Transcoder applies <code>Bt709ToBt601</code></p></li>
-    /// <li>
-    /// <p><i>HD to Standard, 1920x1080 to 720x576</i> - Elastic Transcoder applies <code>Bt709ToBt601</code></p></li>
-    /// </ul><note>
+    /// <li> <p> <i>Standard to HD, 720x480 to 1920x1080</i> - Elastic Transcoder applies <code>Bt601ToBt709</code> </p> </li>
+    /// <li> <p> <i>Standard to HD, 720x576 to 1920x1080</i> - Elastic Transcoder applies <code>Bt601ToBt709</code> </p> </li>
+    /// <li> <p> <i>HD to Standard, 1920x1080 to 720x480</i> - Elastic Transcoder applies <code>Bt709ToBt601</code> </p> </li>
+    /// <li> <p> <i>HD to Standard, 1920x1080 to 720x576</i> - Elastic Transcoder applies <code>Bt709ToBt601</code> </p> </li>
+    /// </ul> <note>
     /// <p>Elastic Transcoder may change the behavior of the <code>ColorspaceConversionMode</code> <code>Auto</code> mode in the future. All outputs in a playlist must use the same <code>ColorSpaceConversionMode</code>.</p>
     /// </note>
     /// <p>If you do not specify a <code>ColorSpaceConversionMode</code>, Elastic Transcoder does not change the color space of a file. If you are unsure what <code>ColorSpaceConversionMode</code> was applied to your output file, you can check the <code>AppliedColorSpaceConversion</code> parameter included in your job response. If your job does not have an <code>AppliedColorSpaceConversion</code> in its response, no <code>ColorSpaceConversionMode</code> was applied.</p>
-    /// <p><b>ChromaSubsampling</b></p>
+    /// <p> <b>ChromaSubsampling</b> </p>
     /// <p>The sampling pattern for the chroma (color) channels of the output video. Valid values include <code>yuv420p</code> and <code>yuv422p</code>.</p>
-    /// <p><code>yuv420p</code> samples the chroma information of every other horizontal and every other vertical line, <code>yuv422p</code> samples the color information of every horizontal line and every other vertical line.</p>
-    /// <p><b>LoopCount (Gif Only)</b></p>
+    /// <p> <code>yuv420p</code> samples the chroma information of every other horizontal and every other vertical line, <code>yuv422p</code> samples the color information of every horizontal line and every other vertical line.</p>
+    /// <p> <b>LoopCount (Gif Only)</b> </p>
     /// <p>The number of times you want the output gif to loop. Valid values include <code>Infinite</code> and integers between <code>0</code> and <code>100</code>, inclusive.</p>
     pub fn codec_options(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.codec_options.unwrap_or_default();
@@ -675,81 +507,61 @@ impl VideoParametersBuilder {
         self.codec_options = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p><b>Profile (H.264/VP8/VP9 Only)</b></p>
+    /// <p> <b>Profile (H.264/VP8/VP9 Only)</b> </p>
     /// <p>The H.264 profile that you want to use for the output file. Elastic Transcoder supports the following profiles:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>baseline</code>: The profile most commonly used for videoconferencing and for mobile applications.</p></li>
-    /// <li>
-    /// <p><code>main</code>: The profile used for standard-definition digital TV broadcasts.</p></li>
-    /// <li>
-    /// <p><code>high</code>: The profile used for high-definition digital TV broadcasts and for Blu-ray discs.</p></li>
+    /// <li> <p> <code>baseline</code>: The profile most commonly used for videoconferencing and for mobile applications.</p> </li>
+    /// <li> <p> <code>main</code>: The profile used for standard-definition digital TV broadcasts.</p> </li>
+    /// <li> <p> <code>high</code>: The profile used for high-definition digital TV broadcasts and for Blu-ray discs.</p> </li>
     /// </ul>
-    /// <p><b>Level (H.264 Only)</b></p>
+    /// <p> <b>Level (H.264 Only)</b> </p>
     /// <p>The H.264 level that you want to use for the output file. Elastic Transcoder supports the following levels:</p>
-    /// <p><code>1</code>, <code>1b</code>, <code>1.1</code>, <code>1.2</code>, <code>1.3</code>, <code>2</code>, <code>2.1</code>, <code>2.2</code>, <code>3</code>, <code>3.1</code>, <code>3.2</code>, <code>4</code>, <code>4.1</code></p>
-    /// <p><b>MaxReferenceFrames (H.264 Only)</b></p>
+    /// <p> <code>1</code>, <code>1b</code>, <code>1.1</code>, <code>1.2</code>, <code>1.3</code>, <code>2</code>, <code>2.1</code>, <code>2.2</code>, <code>3</code>, <code>3.1</code>, <code>3.2</code>, <code>4</code>, <code>4.1</code> </p>
+    /// <p> <b>MaxReferenceFrames (H.264 Only)</b> </p>
     /// <p>Applicable only when the value of Video:Codec is H.264. The maximum number of previously decoded frames to use as a reference for decoding future frames. Valid values are integers 0 through 16, but we recommend that you not use a value greater than the following:</p>
-    /// <p><code>Min(Floor(Maximum decoded picture buffer in macroblocks * 256 / (Width in pixels * Height in pixels)), 16)</code></p>
-    /// <p>where <i>Width in pixels</i> and <i>Height in pixels</i> represent either MaxWidth and MaxHeight, or Resolution. <i>Maximum decoded picture buffer in macroblocks</i> depends on the value of the <code>Level</code> object. See the list below. (A macroblock is a block of pixels measuring 16x16.)</p>
+    /// <p> <code>Min(Floor(Maximum decoded picture buffer in macroblocks * 256 / (Width in pixels * Height in pixels)), 16)</code> </p>
+    /// <p>where <i>Width in pixels</i> and <i>Height in pixels</i> represent either MaxWidth and MaxHeight, or Resolution. <i>Maximum decoded picture buffer in macroblocks</i> depends on the value of the <code>Level</code> object. See the list below. (A macroblock is a block of pixels measuring 16x16.) </p>
     /// <ul>
-    /// <li>
-    /// <p>1 - 396</p></li>
-    /// <li>
-    /// <p>1b - 396</p></li>
-    /// <li>
-    /// <p>1.1 - 900</p></li>
-    /// <li>
-    /// <p>1.2 - 2376</p></li>
-    /// <li>
-    /// <p>1.3 - 2376</p></li>
-    /// <li>
-    /// <p>2 - 2376</p></li>
-    /// <li>
-    /// <p>2.1 - 4752</p></li>
-    /// <li>
-    /// <p>2.2 - 8100</p></li>
-    /// <li>
-    /// <p>3 - 8100</p></li>
-    /// <li>
-    /// <p>3.1 - 18000</p></li>
-    /// <li>
-    /// <p>3.2 - 20480</p></li>
-    /// <li>
-    /// <p>4 - 32768</p></li>
-    /// <li>
-    /// <p>4.1 - 32768</p></li>
+    /// <li> <p>1 - 396</p> </li>
+    /// <li> <p>1b - 396</p> </li>
+    /// <li> <p>1.1 - 900</p> </li>
+    /// <li> <p>1.2 - 2376</p> </li>
+    /// <li> <p>1.3 - 2376</p> </li>
+    /// <li> <p>2 - 2376</p> </li>
+    /// <li> <p>2.1 - 4752</p> </li>
+    /// <li> <p>2.2 - 8100</p> </li>
+    /// <li> <p>3 - 8100</p> </li>
+    /// <li> <p>3.1 - 18000</p> </li>
+    /// <li> <p>3.2 - 20480</p> </li>
+    /// <li> <p>4 - 32768</p> </li>
+    /// <li> <p>4.1 - 32768</p> </li>
     /// </ul>
-    /// <p><b>MaxBitRate (Optional, H.264/MPEG2/VP8/VP9 only)</b></p>
+    /// <p> <b>MaxBitRate (Optional, H.264/MPEG2/VP8/VP9 only)</b> </p>
     /// <p>The maximum number of bits per second in a video buffer; the size of the buffer is specified by <code>BufferSize</code>. Specify a value between 16 and 62,500. You can reduce the bandwidth required to stream a video by reducing the maximum bit rate, but this also reduces the quality of the video.</p>
-    /// <p><b>BufferSize (Optional, H.264/MPEG2/VP8/VP9 only)</b></p>
+    /// <p> <b>BufferSize (Optional, H.264/MPEG2/VP8/VP9 only)</b> </p>
     /// <p>The maximum number of bits in any x seconds of the output video. This window is commonly 10 seconds, the standard segment duration when you're using FMP4 or MPEG-TS for the container type of the output video. Specify an integer greater than 0. If you specify <code>MaxBitRate</code> and omit <code>BufferSize</code>, Elastic Transcoder sets <code>BufferSize</code> to 10 times the value of <code>MaxBitRate</code>.</p>
-    /// <p><b>InterlacedMode (Optional, H.264/MPEG2 Only)</b></p>
+    /// <p> <b>InterlacedMode (Optional, H.264/MPEG2 Only)</b> </p>
     /// <p>The interlace mode for the output video.</p>
     /// <p>Interlaced video is used to double the perceived frame rate for a video by interlacing two fields (one field on every other line, the other field on the other lines) so that the human eye registers multiple pictures per frame. Interlacing reduces the bandwidth required for transmitting a video, but can result in blurred images and flickering.</p>
     /// <p>Valid values include <code>Progressive</code> (no interlacing, top to bottom), <code>TopFirst</code> (top field first), <code>BottomFirst</code> (bottom field first), and <code>Auto</code>.</p>
     /// <p>If <code>InterlaceMode</code> is not specified, Elastic Transcoder uses <code>Progressive</code> for the output. If <code>Auto</code> is specified, Elastic Transcoder interlaces the output.</p>
-    /// <p><b>ColorSpaceConversionMode (Optional, H.264/MPEG2 Only)</b></p>
+    /// <p> <b>ColorSpaceConversionMode (Optional, H.264/MPEG2 Only)</b> </p>
     /// <p>The color space conversion Elastic Transcoder applies to the output video. Color spaces are the algorithms used by the computer to store information about how to render color. <code>Bt.601</code> is the standard for standard definition video, while <code>Bt.709</code> is the standard for high definition video.</p>
     /// <p>Valid values include <code>None</code>, <code>Bt709toBt601</code>, <code>Bt601toBt709</code>, and <code>Auto</code>.</p>
     /// <p>If you chose <code>Auto</code> for <code>ColorSpaceConversionMode</code> and your output is interlaced, your frame rate is one of <code>23.97</code>, <code>24</code>, <code>25</code>, <code>29.97</code>, <code>50</code>, or <code>60</code>, your <code>SegmentDuration</code> is null, and you are using one of the resolution changes from the list below, Elastic Transcoder applies the following color space conversions:</p>
     /// <ul>
-    /// <li>
-    /// <p><i>Standard to HD, 720x480 to 1920x1080</i> - Elastic Transcoder applies <code>Bt601ToBt709</code></p></li>
-    /// <li>
-    /// <p><i>Standard to HD, 720x576 to 1920x1080</i> - Elastic Transcoder applies <code>Bt601ToBt709</code></p></li>
-    /// <li>
-    /// <p><i>HD to Standard, 1920x1080 to 720x480</i> - Elastic Transcoder applies <code>Bt709ToBt601</code></p></li>
-    /// <li>
-    /// <p><i>HD to Standard, 1920x1080 to 720x576</i> - Elastic Transcoder applies <code>Bt709ToBt601</code></p></li>
-    /// </ul><note>
+    /// <li> <p> <i>Standard to HD, 720x480 to 1920x1080</i> - Elastic Transcoder applies <code>Bt601ToBt709</code> </p> </li>
+    /// <li> <p> <i>Standard to HD, 720x576 to 1920x1080</i> - Elastic Transcoder applies <code>Bt601ToBt709</code> </p> </li>
+    /// <li> <p> <i>HD to Standard, 1920x1080 to 720x480</i> - Elastic Transcoder applies <code>Bt709ToBt601</code> </p> </li>
+    /// <li> <p> <i>HD to Standard, 1920x1080 to 720x576</i> - Elastic Transcoder applies <code>Bt709ToBt601</code> </p> </li>
+    /// </ul> <note>
     /// <p>Elastic Transcoder may change the behavior of the <code>ColorspaceConversionMode</code> <code>Auto</code> mode in the future. All outputs in a playlist must use the same <code>ColorSpaceConversionMode</code>.</p>
     /// </note>
     /// <p>If you do not specify a <code>ColorSpaceConversionMode</code>, Elastic Transcoder does not change the color space of a file. If you are unsure what <code>ColorSpaceConversionMode</code> was applied to your output file, you can check the <code>AppliedColorSpaceConversion</code> parameter included in your job response. If your job does not have an <code>AppliedColorSpaceConversion</code> in its response, no <code>ColorSpaceConversionMode</code> was applied.</p>
-    /// <p><b>ChromaSubsampling</b></p>
+    /// <p> <b>ChromaSubsampling</b> </p>
     /// <p>The sampling pattern for the chroma (color) channels of the output video. Valid values include <code>yuv420p</code> and <code>yuv422p</code>.</p>
-    /// <p><code>yuv420p</code> samples the chroma information of every other horizontal and every other vertical line, <code>yuv422p</code> samples the color information of every horizontal line and every other vertical line.</p>
-    /// <p><b>LoopCount (Gif Only)</b></p>
+    /// <p> <code>yuv420p</code> samples the chroma information of every other horizontal and every other vertical line, <code>yuv422p</code> samples the color information of every horizontal line and every other vertical line.</p>
+    /// <p> <b>LoopCount (Gif Only)</b> </p>
     /// <p>The number of times you want the output gif to loop. Valid values include <code>Infinite</code> and integers between <code>0</code> and <code>100</code>, inclusive.</p>
     pub fn set_codec_options(
         mut self,
@@ -758,81 +570,61 @@ impl VideoParametersBuilder {
         self.codec_options = input;
         self
     }
-    /// <p><b>Profile (H.264/VP8/VP9 Only)</b></p>
+    /// <p> <b>Profile (H.264/VP8/VP9 Only)</b> </p>
     /// <p>The H.264 profile that you want to use for the output file. Elastic Transcoder supports the following profiles:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>baseline</code>: The profile most commonly used for videoconferencing and for mobile applications.</p></li>
-    /// <li>
-    /// <p><code>main</code>: The profile used for standard-definition digital TV broadcasts.</p></li>
-    /// <li>
-    /// <p><code>high</code>: The profile used for high-definition digital TV broadcasts and for Blu-ray discs.</p></li>
+    /// <li> <p> <code>baseline</code>: The profile most commonly used for videoconferencing and for mobile applications.</p> </li>
+    /// <li> <p> <code>main</code>: The profile used for standard-definition digital TV broadcasts.</p> </li>
+    /// <li> <p> <code>high</code>: The profile used for high-definition digital TV broadcasts and for Blu-ray discs.</p> </li>
     /// </ul>
-    /// <p><b>Level (H.264 Only)</b></p>
+    /// <p> <b>Level (H.264 Only)</b> </p>
     /// <p>The H.264 level that you want to use for the output file. Elastic Transcoder supports the following levels:</p>
-    /// <p><code>1</code>, <code>1b</code>, <code>1.1</code>, <code>1.2</code>, <code>1.3</code>, <code>2</code>, <code>2.1</code>, <code>2.2</code>, <code>3</code>, <code>3.1</code>, <code>3.2</code>, <code>4</code>, <code>4.1</code></p>
-    /// <p><b>MaxReferenceFrames (H.264 Only)</b></p>
+    /// <p> <code>1</code>, <code>1b</code>, <code>1.1</code>, <code>1.2</code>, <code>1.3</code>, <code>2</code>, <code>2.1</code>, <code>2.2</code>, <code>3</code>, <code>3.1</code>, <code>3.2</code>, <code>4</code>, <code>4.1</code> </p>
+    /// <p> <b>MaxReferenceFrames (H.264 Only)</b> </p>
     /// <p>Applicable only when the value of Video:Codec is H.264. The maximum number of previously decoded frames to use as a reference for decoding future frames. Valid values are integers 0 through 16, but we recommend that you not use a value greater than the following:</p>
-    /// <p><code>Min(Floor(Maximum decoded picture buffer in macroblocks * 256 / (Width in pixels * Height in pixels)), 16)</code></p>
-    /// <p>where <i>Width in pixels</i> and <i>Height in pixels</i> represent either MaxWidth and MaxHeight, or Resolution. <i>Maximum decoded picture buffer in macroblocks</i> depends on the value of the <code>Level</code> object. See the list below. (A macroblock is a block of pixels measuring 16x16.)</p>
+    /// <p> <code>Min(Floor(Maximum decoded picture buffer in macroblocks * 256 / (Width in pixels * Height in pixels)), 16)</code> </p>
+    /// <p>where <i>Width in pixels</i> and <i>Height in pixels</i> represent either MaxWidth and MaxHeight, or Resolution. <i>Maximum decoded picture buffer in macroblocks</i> depends on the value of the <code>Level</code> object. See the list below. (A macroblock is a block of pixels measuring 16x16.) </p>
     /// <ul>
-    /// <li>
-    /// <p>1 - 396</p></li>
-    /// <li>
-    /// <p>1b - 396</p></li>
-    /// <li>
-    /// <p>1.1 - 900</p></li>
-    /// <li>
-    /// <p>1.2 - 2376</p></li>
-    /// <li>
-    /// <p>1.3 - 2376</p></li>
-    /// <li>
-    /// <p>2 - 2376</p></li>
-    /// <li>
-    /// <p>2.1 - 4752</p></li>
-    /// <li>
-    /// <p>2.2 - 8100</p></li>
-    /// <li>
-    /// <p>3 - 8100</p></li>
-    /// <li>
-    /// <p>3.1 - 18000</p></li>
-    /// <li>
-    /// <p>3.2 - 20480</p></li>
-    /// <li>
-    /// <p>4 - 32768</p></li>
-    /// <li>
-    /// <p>4.1 - 32768</p></li>
+    /// <li> <p>1 - 396</p> </li>
+    /// <li> <p>1b - 396</p> </li>
+    /// <li> <p>1.1 - 900</p> </li>
+    /// <li> <p>1.2 - 2376</p> </li>
+    /// <li> <p>1.3 - 2376</p> </li>
+    /// <li> <p>2 - 2376</p> </li>
+    /// <li> <p>2.1 - 4752</p> </li>
+    /// <li> <p>2.2 - 8100</p> </li>
+    /// <li> <p>3 - 8100</p> </li>
+    /// <li> <p>3.1 - 18000</p> </li>
+    /// <li> <p>3.2 - 20480</p> </li>
+    /// <li> <p>4 - 32768</p> </li>
+    /// <li> <p>4.1 - 32768</p> </li>
     /// </ul>
-    /// <p><b>MaxBitRate (Optional, H.264/MPEG2/VP8/VP9 only)</b></p>
+    /// <p> <b>MaxBitRate (Optional, H.264/MPEG2/VP8/VP9 only)</b> </p>
     /// <p>The maximum number of bits per second in a video buffer; the size of the buffer is specified by <code>BufferSize</code>. Specify a value between 16 and 62,500. You can reduce the bandwidth required to stream a video by reducing the maximum bit rate, but this also reduces the quality of the video.</p>
-    /// <p><b>BufferSize (Optional, H.264/MPEG2/VP8/VP9 only)</b></p>
+    /// <p> <b>BufferSize (Optional, H.264/MPEG2/VP8/VP9 only)</b> </p>
     /// <p>The maximum number of bits in any x seconds of the output video. This window is commonly 10 seconds, the standard segment duration when you're using FMP4 or MPEG-TS for the container type of the output video. Specify an integer greater than 0. If you specify <code>MaxBitRate</code> and omit <code>BufferSize</code>, Elastic Transcoder sets <code>BufferSize</code> to 10 times the value of <code>MaxBitRate</code>.</p>
-    /// <p><b>InterlacedMode (Optional, H.264/MPEG2 Only)</b></p>
+    /// <p> <b>InterlacedMode (Optional, H.264/MPEG2 Only)</b> </p>
     /// <p>The interlace mode for the output video.</p>
     /// <p>Interlaced video is used to double the perceived frame rate for a video by interlacing two fields (one field on every other line, the other field on the other lines) so that the human eye registers multiple pictures per frame. Interlacing reduces the bandwidth required for transmitting a video, but can result in blurred images and flickering.</p>
     /// <p>Valid values include <code>Progressive</code> (no interlacing, top to bottom), <code>TopFirst</code> (top field first), <code>BottomFirst</code> (bottom field first), and <code>Auto</code>.</p>
     /// <p>If <code>InterlaceMode</code> is not specified, Elastic Transcoder uses <code>Progressive</code> for the output. If <code>Auto</code> is specified, Elastic Transcoder interlaces the output.</p>
-    /// <p><b>ColorSpaceConversionMode (Optional, H.264/MPEG2 Only)</b></p>
+    /// <p> <b>ColorSpaceConversionMode (Optional, H.264/MPEG2 Only)</b> </p>
     /// <p>The color space conversion Elastic Transcoder applies to the output video. Color spaces are the algorithms used by the computer to store information about how to render color. <code>Bt.601</code> is the standard for standard definition video, while <code>Bt.709</code> is the standard for high definition video.</p>
     /// <p>Valid values include <code>None</code>, <code>Bt709toBt601</code>, <code>Bt601toBt709</code>, and <code>Auto</code>.</p>
     /// <p>If you chose <code>Auto</code> for <code>ColorSpaceConversionMode</code> and your output is interlaced, your frame rate is one of <code>23.97</code>, <code>24</code>, <code>25</code>, <code>29.97</code>, <code>50</code>, or <code>60</code>, your <code>SegmentDuration</code> is null, and you are using one of the resolution changes from the list below, Elastic Transcoder applies the following color space conversions:</p>
     /// <ul>
-    /// <li>
-    /// <p><i>Standard to HD, 720x480 to 1920x1080</i> - Elastic Transcoder applies <code>Bt601ToBt709</code></p></li>
-    /// <li>
-    /// <p><i>Standard to HD, 720x576 to 1920x1080</i> - Elastic Transcoder applies <code>Bt601ToBt709</code></p></li>
-    /// <li>
-    /// <p><i>HD to Standard, 1920x1080 to 720x480</i> - Elastic Transcoder applies <code>Bt709ToBt601</code></p></li>
-    /// <li>
-    /// <p><i>HD to Standard, 1920x1080 to 720x576</i> - Elastic Transcoder applies <code>Bt709ToBt601</code></p></li>
-    /// </ul><note>
+    /// <li> <p> <i>Standard to HD, 720x480 to 1920x1080</i> - Elastic Transcoder applies <code>Bt601ToBt709</code> </p> </li>
+    /// <li> <p> <i>Standard to HD, 720x576 to 1920x1080</i> - Elastic Transcoder applies <code>Bt601ToBt709</code> </p> </li>
+    /// <li> <p> <i>HD to Standard, 1920x1080 to 720x480</i> - Elastic Transcoder applies <code>Bt709ToBt601</code> </p> </li>
+    /// <li> <p> <i>HD to Standard, 1920x1080 to 720x576</i> - Elastic Transcoder applies <code>Bt709ToBt601</code> </p> </li>
+    /// </ul> <note>
     /// <p>Elastic Transcoder may change the behavior of the <code>ColorspaceConversionMode</code> <code>Auto</code> mode in the future. All outputs in a playlist must use the same <code>ColorSpaceConversionMode</code>.</p>
     /// </note>
     /// <p>If you do not specify a <code>ColorSpaceConversionMode</code>, Elastic Transcoder does not change the color space of a file. If you are unsure what <code>ColorSpaceConversionMode</code> was applied to your output file, you can check the <code>AppliedColorSpaceConversion</code> parameter included in your job response. If your job does not have an <code>AppliedColorSpaceConversion</code> in its response, no <code>ColorSpaceConversionMode</code> was applied.</p>
-    /// <p><b>ChromaSubsampling</b></p>
+    /// <p> <b>ChromaSubsampling</b> </p>
     /// <p>The sampling pattern for the chroma (color) channels of the output video. Valid values include <code>yuv420p</code> and <code>yuv422p</code>.</p>
-    /// <p><code>yuv420p</code> samples the chroma information of every other horizontal and every other vertical line, <code>yuv422p</code> samples the color information of every horizontal line and every other vertical line.</p>
-    /// <p><b>LoopCount (Gif Only)</b></p>
+    /// <p> <code>yuv420p</code> samples the chroma information of every other horizontal and every other vertical line, <code>yuv422p</code> samples the color information of every horizontal line and every other vertical line.</p>
+    /// <p> <b>LoopCount (Gif Only)</b> </p>
     /// <p>The number of times you want the output gif to loop. Valid values include <code>Infinite</code> and integers between <code>0</code> and <code>100</code>, inclusive.</p>
     pub fn get_codec_options(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.codec_options
@@ -866,12 +658,10 @@ impl VideoParametersBuilder {
     /// <p>Applicable only when the value of Video:Codec is one of <code>H.264</code>, <code>MPEG2</code>, or <code>VP8</code>.</p>
     /// <p>Whether to use a fixed value for <code>FixedGOP</code>. Valid values are <code>true</code> and <code>false</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>true</code>: Elastic Transcoder uses the value of <code>KeyframesMaxDist</code> for the distance between key frames (the number of frames in a group of pictures, or GOP).</p></li>
-    /// <li>
-    /// <p><code>false</code>: The distance between key frames can vary.</p></li>
-    /// </ul><important>
-    /// <p><code>FixedGOP</code> must be set to <code>true</code> for <code>fmp4</code> containers.</p>
+    /// <li> <p> <code>true</code>: Elastic Transcoder uses the value of <code>KeyframesMaxDist</code> for the distance between key frames (the number of frames in a group of pictures, or GOP).</p> </li>
+    /// <li> <p> <code>false</code>: The distance between key frames can vary.</p> </li>
+    /// </ul> <important>
+    /// <p> <code>FixedGOP</code> must be set to <code>true</code> for <code>fmp4</code> containers.</p>
     /// </important>
     pub fn fixed_gop(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fixed_gop = ::std::option::Option::Some(input.into());
@@ -880,12 +670,10 @@ impl VideoParametersBuilder {
     /// <p>Applicable only when the value of Video:Codec is one of <code>H.264</code>, <code>MPEG2</code>, or <code>VP8</code>.</p>
     /// <p>Whether to use a fixed value for <code>FixedGOP</code>. Valid values are <code>true</code> and <code>false</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>true</code>: Elastic Transcoder uses the value of <code>KeyframesMaxDist</code> for the distance between key frames (the number of frames in a group of pictures, or GOP).</p></li>
-    /// <li>
-    /// <p><code>false</code>: The distance between key frames can vary.</p></li>
-    /// </ul><important>
-    /// <p><code>FixedGOP</code> must be set to <code>true</code> for <code>fmp4</code> containers.</p>
+    /// <li> <p> <code>true</code>: Elastic Transcoder uses the value of <code>KeyframesMaxDist</code> for the distance between key frames (the number of frames in a group of pictures, or GOP).</p> </li>
+    /// <li> <p> <code>false</code>: The distance between key frames can vary.</p> </li>
+    /// </ul> <important>
+    /// <p> <code>FixedGOP</code> must be set to <code>true</code> for <code>fmp4</code> containers.</p>
     /// </important>
     pub fn set_fixed_gop(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fixed_gop = input;
@@ -894,232 +682,152 @@ impl VideoParametersBuilder {
     /// <p>Applicable only when the value of Video:Codec is one of <code>H.264</code>, <code>MPEG2</code>, or <code>VP8</code>.</p>
     /// <p>Whether to use a fixed value for <code>FixedGOP</code>. Valid values are <code>true</code> and <code>false</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>true</code>: Elastic Transcoder uses the value of <code>KeyframesMaxDist</code> for the distance between key frames (the number of frames in a group of pictures, or GOP).</p></li>
-    /// <li>
-    /// <p><code>false</code>: The distance between key frames can vary.</p></li>
-    /// </ul><important>
-    /// <p><code>FixedGOP</code> must be set to <code>true</code> for <code>fmp4</code> containers.</p>
+    /// <li> <p> <code>true</code>: Elastic Transcoder uses the value of <code>KeyframesMaxDist</code> for the distance between key frames (the number of frames in a group of pictures, or GOP).</p> </li>
+    /// <li> <p> <code>false</code>: The distance between key frames can vary.</p> </li>
+    /// </ul> <important>
+    /// <p> <code>FixedGOP</code> must be set to <code>true</code> for <code>fmp4</code> containers.</p>
     /// </important>
     pub fn get_fixed_gop(&self) -> &::std::option::Option<::std::string::String> {
         &self.fixed_gop
     }
     /// <p>The bit rate of the video stream in the output file, in kilobits/second. Valid values depend on the values of <code>Level</code> and <code>Profile</code>. If you specify <code>auto</code>, Elastic Transcoder uses the detected bit rate of the input source. If you specify a value other than <code>auto</code>, we recommend that you specify a value less than or equal to the maximum H.264-compliant value listed for your level and profile:</p>
-    /// <p><i>Level - Maximum video bit rate in kilobits/second (baseline and main Profile) : maximum video bit rate in kilobits/second (high Profile)</i></p>
+    /// <p> <i>Level - Maximum video bit rate in kilobits/second (baseline and main Profile) : maximum video bit rate in kilobits/second (high Profile)</i> </p>
     /// <ul>
-    /// <li>
-    /// <p>1 - 64 : 80</p></li>
-    /// <li>
-    /// <p>1b - 128 : 160</p></li>
-    /// <li>
-    /// <p>1.1 - 192 : 240</p></li>
-    /// <li>
-    /// <p>1.2 - 384 : 480</p></li>
-    /// <li>
-    /// <p>1.3 - 768 : 960</p></li>
-    /// <li>
-    /// <p>2 - 2000 : 2500</p></li>
-    /// <li>
-    /// <p>3 - 10000 : 12500</p></li>
-    /// <li>
-    /// <p>3.1 - 14000 : 17500</p></li>
-    /// <li>
-    /// <p>3.2 - 20000 : 25000</p></li>
-    /// <li>
-    /// <p>4 - 20000 : 25000</p></li>
-    /// <li>
-    /// <p>4.1 - 50000 : 62500</p></li>
+    /// <li> <p>1 - 64 : 80</p> </li>
+    /// <li> <p>1b - 128 : 160</p> </li>
+    /// <li> <p>1.1 - 192 : 240</p> </li>
+    /// <li> <p>1.2 - 384 : 480</p> </li>
+    /// <li> <p>1.3 - 768 : 960</p> </li>
+    /// <li> <p>2 - 2000 : 2500</p> </li>
+    /// <li> <p>3 - 10000 : 12500</p> </li>
+    /// <li> <p>3.1 - 14000 : 17500</p> </li>
+    /// <li> <p>3.2 - 20000 : 25000</p> </li>
+    /// <li> <p>4 - 20000 : 25000</p> </li>
+    /// <li> <p>4.1 - 50000 : 62500</p> </li>
     /// </ul>
     pub fn bit_rate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bit_rate = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The bit rate of the video stream in the output file, in kilobits/second. Valid values depend on the values of <code>Level</code> and <code>Profile</code>. If you specify <code>auto</code>, Elastic Transcoder uses the detected bit rate of the input source. If you specify a value other than <code>auto</code>, we recommend that you specify a value less than or equal to the maximum H.264-compliant value listed for your level and profile:</p>
-    /// <p><i>Level - Maximum video bit rate in kilobits/second (baseline and main Profile) : maximum video bit rate in kilobits/second (high Profile)</i></p>
+    /// <p> <i>Level - Maximum video bit rate in kilobits/second (baseline and main Profile) : maximum video bit rate in kilobits/second (high Profile)</i> </p>
     /// <ul>
-    /// <li>
-    /// <p>1 - 64 : 80</p></li>
-    /// <li>
-    /// <p>1b - 128 : 160</p></li>
-    /// <li>
-    /// <p>1.1 - 192 : 240</p></li>
-    /// <li>
-    /// <p>1.2 - 384 : 480</p></li>
-    /// <li>
-    /// <p>1.3 - 768 : 960</p></li>
-    /// <li>
-    /// <p>2 - 2000 : 2500</p></li>
-    /// <li>
-    /// <p>3 - 10000 : 12500</p></li>
-    /// <li>
-    /// <p>3.1 - 14000 : 17500</p></li>
-    /// <li>
-    /// <p>3.2 - 20000 : 25000</p></li>
-    /// <li>
-    /// <p>4 - 20000 : 25000</p></li>
-    /// <li>
-    /// <p>4.1 - 50000 : 62500</p></li>
+    /// <li> <p>1 - 64 : 80</p> </li>
+    /// <li> <p>1b - 128 : 160</p> </li>
+    /// <li> <p>1.1 - 192 : 240</p> </li>
+    /// <li> <p>1.2 - 384 : 480</p> </li>
+    /// <li> <p>1.3 - 768 : 960</p> </li>
+    /// <li> <p>2 - 2000 : 2500</p> </li>
+    /// <li> <p>3 - 10000 : 12500</p> </li>
+    /// <li> <p>3.1 - 14000 : 17500</p> </li>
+    /// <li> <p>3.2 - 20000 : 25000</p> </li>
+    /// <li> <p>4 - 20000 : 25000</p> </li>
+    /// <li> <p>4.1 - 50000 : 62500</p> </li>
     /// </ul>
     pub fn set_bit_rate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bit_rate = input;
         self
     }
     /// <p>The bit rate of the video stream in the output file, in kilobits/second. Valid values depend on the values of <code>Level</code> and <code>Profile</code>. If you specify <code>auto</code>, Elastic Transcoder uses the detected bit rate of the input source. If you specify a value other than <code>auto</code>, we recommend that you specify a value less than or equal to the maximum H.264-compliant value listed for your level and profile:</p>
-    /// <p><i>Level - Maximum video bit rate in kilobits/second (baseline and main Profile) : maximum video bit rate in kilobits/second (high Profile)</i></p>
+    /// <p> <i>Level - Maximum video bit rate in kilobits/second (baseline and main Profile) : maximum video bit rate in kilobits/second (high Profile)</i> </p>
     /// <ul>
-    /// <li>
-    /// <p>1 - 64 : 80</p></li>
-    /// <li>
-    /// <p>1b - 128 : 160</p></li>
-    /// <li>
-    /// <p>1.1 - 192 : 240</p></li>
-    /// <li>
-    /// <p>1.2 - 384 : 480</p></li>
-    /// <li>
-    /// <p>1.3 - 768 : 960</p></li>
-    /// <li>
-    /// <p>2 - 2000 : 2500</p></li>
-    /// <li>
-    /// <p>3 - 10000 : 12500</p></li>
-    /// <li>
-    /// <p>3.1 - 14000 : 17500</p></li>
-    /// <li>
-    /// <p>3.2 - 20000 : 25000</p></li>
-    /// <li>
-    /// <p>4 - 20000 : 25000</p></li>
-    /// <li>
-    /// <p>4.1 - 50000 : 62500</p></li>
+    /// <li> <p>1 - 64 : 80</p> </li>
+    /// <li> <p>1b - 128 : 160</p> </li>
+    /// <li> <p>1.1 - 192 : 240</p> </li>
+    /// <li> <p>1.2 - 384 : 480</p> </li>
+    /// <li> <p>1.3 - 768 : 960</p> </li>
+    /// <li> <p>2 - 2000 : 2500</p> </li>
+    /// <li> <p>3 - 10000 : 12500</p> </li>
+    /// <li> <p>3.1 - 14000 : 17500</p> </li>
+    /// <li> <p>3.2 - 20000 : 25000</p> </li>
+    /// <li> <p>4 - 20000 : 25000</p> </li>
+    /// <li> <p>4.1 - 50000 : 62500</p> </li>
     /// </ul>
     pub fn get_bit_rate(&self) -> &::std::option::Option<::std::string::String> {
         &self.bit_rate
     }
     /// <p>The frames per second for the video stream in the output file. Valid values include:</p>
-    /// <p><code>auto</code>, <code>10</code>, <code>15</code>, <code>23.97</code>, <code>24</code>, <code>25</code>, <code>29.97</code>, <code>30</code>, <code>60</code></p>
+    /// <p> <code>auto</code>, <code>10</code>, <code>15</code>, <code>23.97</code>, <code>24</code>, <code>25</code>, <code>29.97</code>, <code>30</code>, <code>60</code> </p>
     /// <p>If you specify <code>auto</code>, Elastic Transcoder uses the detected frame rate of the input source. If you specify a frame rate, we recommend that you perform the following calculation:</p>
-    /// <p><code>Frame rate = maximum recommended decoding speed in luma samples/second / (width in pixels * height in pixels)</code></p>
+    /// <p> <code>Frame rate = maximum recommended decoding speed in luma samples/second / (width in pixels * height in pixels)</code> </p>
     /// <p>where:</p>
     /// <ul>
-    /// <li>
-    /// <p><i>width in pixels</i> and <i>height in pixels</i> represent the Resolution of the output video.</p></li>
-    /// <li>
-    /// <p><i>maximum recommended decoding speed in Luma samples/second</i> is less than or equal to the maximum value listed in the following table, based on the value that you specified for Level.</p></li>
+    /// <li> <p> <i>width in pixels</i> and <i>height in pixels</i> represent the Resolution of the output video.</p> </li>
+    /// <li> <p> <i>maximum recommended decoding speed in Luma samples/second</i> is less than or equal to the maximum value listed in the following table, based on the value that you specified for Level.</p> </li>
     /// </ul>
     /// <p>The maximum recommended decoding speed in Luma samples/second for each level is described in the following list (<i>Level - Decoding speed</i>):</p>
     /// <ul>
-    /// <li>
-    /// <p>1 - 380160</p></li>
-    /// <li>
-    /// <p>1b - 380160</p></li>
-    /// <li>
-    /// <p>1.1 - 76800</p></li>
-    /// <li>
-    /// <p>1.2 - 1536000</p></li>
-    /// <li>
-    /// <p>1.3 - 3041280</p></li>
-    /// <li>
-    /// <p>2 - 3041280</p></li>
-    /// <li>
-    /// <p>2.1 - 5068800</p></li>
-    /// <li>
-    /// <p>2.2 - 5184000</p></li>
-    /// <li>
-    /// <p>3 - 10368000</p></li>
-    /// <li>
-    /// <p>3.1 - 27648000</p></li>
-    /// <li>
-    /// <p>3.2 - 55296000</p></li>
-    /// <li>
-    /// <p>4 - 62914560</p></li>
-    /// <li>
-    /// <p>4.1 - 62914560</p></li>
+    /// <li> <p>1 - 380160</p> </li>
+    /// <li> <p>1b - 380160</p> </li>
+    /// <li> <p>1.1 - 76800</p> </li>
+    /// <li> <p>1.2 - 1536000</p> </li>
+    /// <li> <p>1.3 - 3041280</p> </li>
+    /// <li> <p>2 - 3041280</p> </li>
+    /// <li> <p>2.1 - 5068800</p> </li>
+    /// <li> <p>2.2 - 5184000</p> </li>
+    /// <li> <p>3 - 10368000</p> </li>
+    /// <li> <p>3.1 - 27648000</p> </li>
+    /// <li> <p>3.2 - 55296000</p> </li>
+    /// <li> <p>4 - 62914560</p> </li>
+    /// <li> <p>4.1 - 62914560</p> </li>
     /// </ul>
     pub fn frame_rate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.frame_rate = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The frames per second for the video stream in the output file. Valid values include:</p>
-    /// <p><code>auto</code>, <code>10</code>, <code>15</code>, <code>23.97</code>, <code>24</code>, <code>25</code>, <code>29.97</code>, <code>30</code>, <code>60</code></p>
+    /// <p> <code>auto</code>, <code>10</code>, <code>15</code>, <code>23.97</code>, <code>24</code>, <code>25</code>, <code>29.97</code>, <code>30</code>, <code>60</code> </p>
     /// <p>If you specify <code>auto</code>, Elastic Transcoder uses the detected frame rate of the input source. If you specify a frame rate, we recommend that you perform the following calculation:</p>
-    /// <p><code>Frame rate = maximum recommended decoding speed in luma samples/second / (width in pixels * height in pixels)</code></p>
+    /// <p> <code>Frame rate = maximum recommended decoding speed in luma samples/second / (width in pixels * height in pixels)</code> </p>
     /// <p>where:</p>
     /// <ul>
-    /// <li>
-    /// <p><i>width in pixels</i> and <i>height in pixels</i> represent the Resolution of the output video.</p></li>
-    /// <li>
-    /// <p><i>maximum recommended decoding speed in Luma samples/second</i> is less than or equal to the maximum value listed in the following table, based on the value that you specified for Level.</p></li>
+    /// <li> <p> <i>width in pixels</i> and <i>height in pixels</i> represent the Resolution of the output video.</p> </li>
+    /// <li> <p> <i>maximum recommended decoding speed in Luma samples/second</i> is less than or equal to the maximum value listed in the following table, based on the value that you specified for Level.</p> </li>
     /// </ul>
     /// <p>The maximum recommended decoding speed in Luma samples/second for each level is described in the following list (<i>Level - Decoding speed</i>):</p>
     /// <ul>
-    /// <li>
-    /// <p>1 - 380160</p></li>
-    /// <li>
-    /// <p>1b - 380160</p></li>
-    /// <li>
-    /// <p>1.1 - 76800</p></li>
-    /// <li>
-    /// <p>1.2 - 1536000</p></li>
-    /// <li>
-    /// <p>1.3 - 3041280</p></li>
-    /// <li>
-    /// <p>2 - 3041280</p></li>
-    /// <li>
-    /// <p>2.1 - 5068800</p></li>
-    /// <li>
-    /// <p>2.2 - 5184000</p></li>
-    /// <li>
-    /// <p>3 - 10368000</p></li>
-    /// <li>
-    /// <p>3.1 - 27648000</p></li>
-    /// <li>
-    /// <p>3.2 - 55296000</p></li>
-    /// <li>
-    /// <p>4 - 62914560</p></li>
-    /// <li>
-    /// <p>4.1 - 62914560</p></li>
+    /// <li> <p>1 - 380160</p> </li>
+    /// <li> <p>1b - 380160</p> </li>
+    /// <li> <p>1.1 - 76800</p> </li>
+    /// <li> <p>1.2 - 1536000</p> </li>
+    /// <li> <p>1.3 - 3041280</p> </li>
+    /// <li> <p>2 - 3041280</p> </li>
+    /// <li> <p>2.1 - 5068800</p> </li>
+    /// <li> <p>2.2 - 5184000</p> </li>
+    /// <li> <p>3 - 10368000</p> </li>
+    /// <li> <p>3.1 - 27648000</p> </li>
+    /// <li> <p>3.2 - 55296000</p> </li>
+    /// <li> <p>4 - 62914560</p> </li>
+    /// <li> <p>4.1 - 62914560</p> </li>
     /// </ul>
     pub fn set_frame_rate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.frame_rate = input;
         self
     }
     /// <p>The frames per second for the video stream in the output file. Valid values include:</p>
-    /// <p><code>auto</code>, <code>10</code>, <code>15</code>, <code>23.97</code>, <code>24</code>, <code>25</code>, <code>29.97</code>, <code>30</code>, <code>60</code></p>
+    /// <p> <code>auto</code>, <code>10</code>, <code>15</code>, <code>23.97</code>, <code>24</code>, <code>25</code>, <code>29.97</code>, <code>30</code>, <code>60</code> </p>
     /// <p>If you specify <code>auto</code>, Elastic Transcoder uses the detected frame rate of the input source. If you specify a frame rate, we recommend that you perform the following calculation:</p>
-    /// <p><code>Frame rate = maximum recommended decoding speed in luma samples/second / (width in pixels * height in pixels)</code></p>
+    /// <p> <code>Frame rate = maximum recommended decoding speed in luma samples/second / (width in pixels * height in pixels)</code> </p>
     /// <p>where:</p>
     /// <ul>
-    /// <li>
-    /// <p><i>width in pixels</i> and <i>height in pixels</i> represent the Resolution of the output video.</p></li>
-    /// <li>
-    /// <p><i>maximum recommended decoding speed in Luma samples/second</i> is less than or equal to the maximum value listed in the following table, based on the value that you specified for Level.</p></li>
+    /// <li> <p> <i>width in pixels</i> and <i>height in pixels</i> represent the Resolution of the output video.</p> </li>
+    /// <li> <p> <i>maximum recommended decoding speed in Luma samples/second</i> is less than or equal to the maximum value listed in the following table, based on the value that you specified for Level.</p> </li>
     /// </ul>
     /// <p>The maximum recommended decoding speed in Luma samples/second for each level is described in the following list (<i>Level - Decoding speed</i>):</p>
     /// <ul>
-    /// <li>
-    /// <p>1 - 380160</p></li>
-    /// <li>
-    /// <p>1b - 380160</p></li>
-    /// <li>
-    /// <p>1.1 - 76800</p></li>
-    /// <li>
-    /// <p>1.2 - 1536000</p></li>
-    /// <li>
-    /// <p>1.3 - 3041280</p></li>
-    /// <li>
-    /// <p>2 - 3041280</p></li>
-    /// <li>
-    /// <p>2.1 - 5068800</p></li>
-    /// <li>
-    /// <p>2.2 - 5184000</p></li>
-    /// <li>
-    /// <p>3 - 10368000</p></li>
-    /// <li>
-    /// <p>3.1 - 27648000</p></li>
-    /// <li>
-    /// <p>3.2 - 55296000</p></li>
-    /// <li>
-    /// <p>4 - 62914560</p></li>
-    /// <li>
-    /// <p>4.1 - 62914560</p></li>
+    /// <li> <p>1 - 380160</p> </li>
+    /// <li> <p>1b - 380160</p> </li>
+    /// <li> <p>1.1 - 76800</p> </li>
+    /// <li> <p>1.2 - 1536000</p> </li>
+    /// <li> <p>1.3 - 3041280</p> </li>
+    /// <li> <p>2 - 3041280</p> </li>
+    /// <li> <p>2.1 - 5068800</p> </li>
+    /// <li> <p>2.2 - 5184000</p> </li>
+    /// <li> <p>3 - 10368000</p> </li>
+    /// <li> <p>3.1 - 27648000</p> </li>
+    /// <li> <p>3.2 - 55296000</p> </li>
+    /// <li> <p>4 - 62914560</p> </li>
+    /// <li> <p>4.1 - 62914560</p> </li>
     /// </ul>
     pub fn get_frame_rate(&self) -> &::std::option::Option<::std::string::String> {
         &self.frame_rate
@@ -1143,51 +851,31 @@ impl VideoParametersBuilder {
     /// </important>
     /// <p>The width and height of the video in the output file, in pixels. Valid values are <code>auto</code> and <i>width</i> x <i>height</i>:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>auto</code>: Elastic Transcoder attempts to preserve the width and height of the input file, subject to the following rules.</p></li>
-    /// <li>
-    /// <p><code> <i>width</i> x <i>height</i> </code>: The width and height of the output video in pixels.</p></li>
+    /// <li> <p> <code>auto</code>: Elastic Transcoder attempts to preserve the width and height of the input file, subject to the following rules.</p> </li>
+    /// <li> <p> <code> <i>width</i> x <i>height</i> </code>: The width and height of the output video in pixels.</p> </li>
     /// </ul>
     /// <p>Note the following about specifying the width and height:</p>
     /// <ul>
-    /// <li>
-    /// <p>The width must be an even integer between 128 and 4096, inclusive.</p></li>
-    /// <li>
-    /// <p>The height must be an even integer between 96 and 3072, inclusive.</p></li>
-    /// <li>
-    /// <p>If you specify a resolution that is less than the resolution of the input file, Elastic Transcoder rescales the output file to the lower resolution.</p></li>
-    /// <li>
-    /// <p>If you specify a resolution that is greater than the resolution of the input file, Elastic Transcoder rescales the output to the higher resolution.</p></li>
-    /// <li>
-    /// <p>We recommend that you specify a resolution for which the product of width and height is less than or equal to the applicable value in the following list (<i>List - Max width x height value</i>):</p>
+    /// <li> <p>The width must be an even integer between 128 and 4096, inclusive.</p> </li>
+    /// <li> <p>The height must be an even integer between 96 and 3072, inclusive.</p> </li>
+    /// <li> <p>If you specify a resolution that is less than the resolution of the input file, Elastic Transcoder rescales the output file to the lower resolution.</p> </li>
+    /// <li> <p>If you specify a resolution that is greater than the resolution of the input file, Elastic Transcoder rescales the output to the higher resolution.</p> </li>
+    /// <li> <p>We recommend that you specify a resolution for which the product of width and height is less than or equal to the applicable value in the following list (<i>List - Max width x height value</i>):</p>
     /// <ul>
-    /// <li>
-    /// <p>1 - 25344</p></li>
-    /// <li>
-    /// <p>1b - 25344</p></li>
-    /// <li>
-    /// <p>1.1 - 101376</p></li>
-    /// <li>
-    /// <p>1.2 - 101376</p></li>
-    /// <li>
-    /// <p>1.3 - 101376</p></li>
-    /// <li>
-    /// <p>2 - 101376</p></li>
-    /// <li>
-    /// <p>2.1 - 202752</p></li>
-    /// <li>
-    /// <p>2.2 - 404720</p></li>
-    /// <li>
-    /// <p>3 - 404720</p></li>
-    /// <li>
-    /// <p>3.1 - 921600</p></li>
-    /// <li>
-    /// <p>3.2 - 1310720</p></li>
-    /// <li>
-    /// <p>4 - 2097152</p></li>
-    /// <li>
-    /// <p>4.1 - 2097152</p></li>
-    /// </ul></li>
+    /// <li> <p>1 - 25344</p> </li>
+    /// <li> <p>1b - 25344</p> </li>
+    /// <li> <p>1.1 - 101376</p> </li>
+    /// <li> <p>1.2 - 101376</p> </li>
+    /// <li> <p>1.3 - 101376</p> </li>
+    /// <li> <p>2 - 101376</p> </li>
+    /// <li> <p>2.1 - 202752</p> </li>
+    /// <li> <p>2.2 - 404720</p> </li>
+    /// <li> <p>3 - 404720</p> </li>
+    /// <li> <p>3.1 - 921600</p> </li>
+    /// <li> <p>3.2 - 1310720</p> </li>
+    /// <li> <p>4 - 2097152</p> </li>
+    /// <li> <p>4.1 - 2097152</p> </li>
+    /// </ul> </li>
     /// </ul>
     pub fn resolution(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resolution = ::std::option::Option::Some(input.into());
@@ -1198,51 +886,31 @@ impl VideoParametersBuilder {
     /// </important>
     /// <p>The width and height of the video in the output file, in pixels. Valid values are <code>auto</code> and <i>width</i> x <i>height</i>:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>auto</code>: Elastic Transcoder attempts to preserve the width and height of the input file, subject to the following rules.</p></li>
-    /// <li>
-    /// <p><code> <i>width</i> x <i>height</i> </code>: The width and height of the output video in pixels.</p></li>
+    /// <li> <p> <code>auto</code>: Elastic Transcoder attempts to preserve the width and height of the input file, subject to the following rules.</p> </li>
+    /// <li> <p> <code> <i>width</i> x <i>height</i> </code>: The width and height of the output video in pixels.</p> </li>
     /// </ul>
     /// <p>Note the following about specifying the width and height:</p>
     /// <ul>
-    /// <li>
-    /// <p>The width must be an even integer between 128 and 4096, inclusive.</p></li>
-    /// <li>
-    /// <p>The height must be an even integer between 96 and 3072, inclusive.</p></li>
-    /// <li>
-    /// <p>If you specify a resolution that is less than the resolution of the input file, Elastic Transcoder rescales the output file to the lower resolution.</p></li>
-    /// <li>
-    /// <p>If you specify a resolution that is greater than the resolution of the input file, Elastic Transcoder rescales the output to the higher resolution.</p></li>
-    /// <li>
-    /// <p>We recommend that you specify a resolution for which the product of width and height is less than or equal to the applicable value in the following list (<i>List - Max width x height value</i>):</p>
+    /// <li> <p>The width must be an even integer between 128 and 4096, inclusive.</p> </li>
+    /// <li> <p>The height must be an even integer between 96 and 3072, inclusive.</p> </li>
+    /// <li> <p>If you specify a resolution that is less than the resolution of the input file, Elastic Transcoder rescales the output file to the lower resolution.</p> </li>
+    /// <li> <p>If you specify a resolution that is greater than the resolution of the input file, Elastic Transcoder rescales the output to the higher resolution.</p> </li>
+    /// <li> <p>We recommend that you specify a resolution for which the product of width and height is less than or equal to the applicable value in the following list (<i>List - Max width x height value</i>):</p>
     /// <ul>
-    /// <li>
-    /// <p>1 - 25344</p></li>
-    /// <li>
-    /// <p>1b - 25344</p></li>
-    /// <li>
-    /// <p>1.1 - 101376</p></li>
-    /// <li>
-    /// <p>1.2 - 101376</p></li>
-    /// <li>
-    /// <p>1.3 - 101376</p></li>
-    /// <li>
-    /// <p>2 - 101376</p></li>
-    /// <li>
-    /// <p>2.1 - 202752</p></li>
-    /// <li>
-    /// <p>2.2 - 404720</p></li>
-    /// <li>
-    /// <p>3 - 404720</p></li>
-    /// <li>
-    /// <p>3.1 - 921600</p></li>
-    /// <li>
-    /// <p>3.2 - 1310720</p></li>
-    /// <li>
-    /// <p>4 - 2097152</p></li>
-    /// <li>
-    /// <p>4.1 - 2097152</p></li>
-    /// </ul></li>
+    /// <li> <p>1 - 25344</p> </li>
+    /// <li> <p>1b - 25344</p> </li>
+    /// <li> <p>1.1 - 101376</p> </li>
+    /// <li> <p>1.2 - 101376</p> </li>
+    /// <li> <p>1.3 - 101376</p> </li>
+    /// <li> <p>2 - 101376</p> </li>
+    /// <li> <p>2.1 - 202752</p> </li>
+    /// <li> <p>2.2 - 404720</p> </li>
+    /// <li> <p>3 - 404720</p> </li>
+    /// <li> <p>3.1 - 921600</p> </li>
+    /// <li> <p>3.2 - 1310720</p> </li>
+    /// <li> <p>4 - 2097152</p> </li>
+    /// <li> <p>4.1 - 2097152</p> </li>
+    /// </ul> </li>
     /// </ul>
     pub fn set_resolution(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resolution = input;
@@ -1253,51 +921,31 @@ impl VideoParametersBuilder {
     /// </important>
     /// <p>The width and height of the video in the output file, in pixels. Valid values are <code>auto</code> and <i>width</i> x <i>height</i>:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>auto</code>: Elastic Transcoder attempts to preserve the width and height of the input file, subject to the following rules.</p></li>
-    /// <li>
-    /// <p><code> <i>width</i> x <i>height</i> </code>: The width and height of the output video in pixels.</p></li>
+    /// <li> <p> <code>auto</code>: Elastic Transcoder attempts to preserve the width and height of the input file, subject to the following rules.</p> </li>
+    /// <li> <p> <code> <i>width</i> x <i>height</i> </code>: The width and height of the output video in pixels.</p> </li>
     /// </ul>
     /// <p>Note the following about specifying the width and height:</p>
     /// <ul>
-    /// <li>
-    /// <p>The width must be an even integer between 128 and 4096, inclusive.</p></li>
-    /// <li>
-    /// <p>The height must be an even integer between 96 and 3072, inclusive.</p></li>
-    /// <li>
-    /// <p>If you specify a resolution that is less than the resolution of the input file, Elastic Transcoder rescales the output file to the lower resolution.</p></li>
-    /// <li>
-    /// <p>If you specify a resolution that is greater than the resolution of the input file, Elastic Transcoder rescales the output to the higher resolution.</p></li>
-    /// <li>
-    /// <p>We recommend that you specify a resolution for which the product of width and height is less than or equal to the applicable value in the following list (<i>List - Max width x height value</i>):</p>
+    /// <li> <p>The width must be an even integer between 128 and 4096, inclusive.</p> </li>
+    /// <li> <p>The height must be an even integer between 96 and 3072, inclusive.</p> </li>
+    /// <li> <p>If you specify a resolution that is less than the resolution of the input file, Elastic Transcoder rescales the output file to the lower resolution.</p> </li>
+    /// <li> <p>If you specify a resolution that is greater than the resolution of the input file, Elastic Transcoder rescales the output to the higher resolution.</p> </li>
+    /// <li> <p>We recommend that you specify a resolution for which the product of width and height is less than or equal to the applicable value in the following list (<i>List - Max width x height value</i>):</p>
     /// <ul>
-    /// <li>
-    /// <p>1 - 25344</p></li>
-    /// <li>
-    /// <p>1b - 25344</p></li>
-    /// <li>
-    /// <p>1.1 - 101376</p></li>
-    /// <li>
-    /// <p>1.2 - 101376</p></li>
-    /// <li>
-    /// <p>1.3 - 101376</p></li>
-    /// <li>
-    /// <p>2 - 101376</p></li>
-    /// <li>
-    /// <p>2.1 - 202752</p></li>
-    /// <li>
-    /// <p>2.2 - 404720</p></li>
-    /// <li>
-    /// <p>3 - 404720</p></li>
-    /// <li>
-    /// <p>3.1 - 921600</p></li>
-    /// <li>
-    /// <p>3.2 - 1310720</p></li>
-    /// <li>
-    /// <p>4 - 2097152</p></li>
-    /// <li>
-    /// <p>4.1 - 2097152</p></li>
-    /// </ul></li>
+    /// <li> <p>1 - 25344</p> </li>
+    /// <li> <p>1b - 25344</p> </li>
+    /// <li> <p>1.1 - 101376</p> </li>
+    /// <li> <p>1.2 - 101376</p> </li>
+    /// <li> <p>1.3 - 101376</p> </li>
+    /// <li> <p>2 - 101376</p> </li>
+    /// <li> <p>2.1 - 202752</p> </li>
+    /// <li> <p>2.2 - 404720</p> </li>
+    /// <li> <p>3 - 404720</p> </li>
+    /// <li> <p>3.1 - 921600</p> </li>
+    /// <li> <p>3.2 - 1310720</p> </li>
+    /// <li> <p>4 - 2097152</p> </li>
+    /// <li> <p>4.1 - 2097152</p> </li>
+    /// </ul> </li>
     /// </ul>
     pub fn get_resolution(&self) -> &::std::option::Option<::std::string::String> {
         &self.resolution
@@ -1306,7 +954,7 @@ impl VideoParametersBuilder {
     /// <p>To better control resolution and aspect ratio of output videos, we recommend that you use the values <code>MaxWidth</code>, <code>MaxHeight</code>, <code>SizingPolicy</code>, <code>PaddingPolicy</code>, and <code>DisplayAspectRatio</code> instead of <code>Resolution</code> and <code>AspectRatio</code>. The two groups of settings are mutually exclusive. Do not use them together.</p>
     /// </important>
     /// <p>The display aspect ratio of the video in the output file. Valid values include:</p>
-    /// <p><code>auto</code>, <code>1:1</code>, <code>4:3</code>, <code>3:2</code>, <code>16:9</code></p>
+    /// <p> <code>auto</code>, <code>1:1</code>, <code>4:3</code>, <code>3:2</code>, <code>16:9</code> </p>
     /// <p>If you specify <code>auto</code>, Elastic Transcoder tries to preserve the aspect ratio of the input file.</p>
     /// <p>If you specify an aspect ratio for the output file that differs from aspect ratio of the input file, Elastic Transcoder adds pillarboxing (black bars on the sides) or letterboxing (black bars on the top and bottom) to maintain the aspect ratio of the active region of the video.</p>
     pub fn aspect_ratio(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -1317,7 +965,7 @@ impl VideoParametersBuilder {
     /// <p>To better control resolution and aspect ratio of output videos, we recommend that you use the values <code>MaxWidth</code>, <code>MaxHeight</code>, <code>SizingPolicy</code>, <code>PaddingPolicy</code>, and <code>DisplayAspectRatio</code> instead of <code>Resolution</code> and <code>AspectRatio</code>. The two groups of settings are mutually exclusive. Do not use them together.</p>
     /// </important>
     /// <p>The display aspect ratio of the video in the output file. Valid values include:</p>
-    /// <p><code>auto</code>, <code>1:1</code>, <code>4:3</code>, <code>3:2</code>, <code>16:9</code></p>
+    /// <p> <code>auto</code>, <code>1:1</code>, <code>4:3</code>, <code>3:2</code>, <code>16:9</code> </p>
     /// <p>If you specify <code>auto</code>, Elastic Transcoder tries to preserve the aspect ratio of the input file.</p>
     /// <p>If you specify an aspect ratio for the output file that differs from aspect ratio of the input file, Elastic Transcoder adds pillarboxing (black bars on the sides) or letterboxing (black bars on the top and bottom) to maintain the aspect ratio of the active region of the video.</p>
     pub fn set_aspect_ratio(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -1328,23 +976,23 @@ impl VideoParametersBuilder {
     /// <p>To better control resolution and aspect ratio of output videos, we recommend that you use the values <code>MaxWidth</code>, <code>MaxHeight</code>, <code>SizingPolicy</code>, <code>PaddingPolicy</code>, and <code>DisplayAspectRatio</code> instead of <code>Resolution</code> and <code>AspectRatio</code>. The two groups of settings are mutually exclusive. Do not use them together.</p>
     /// </important>
     /// <p>The display aspect ratio of the video in the output file. Valid values include:</p>
-    /// <p><code>auto</code>, <code>1:1</code>, <code>4:3</code>, <code>3:2</code>, <code>16:9</code></p>
+    /// <p> <code>auto</code>, <code>1:1</code>, <code>4:3</code>, <code>3:2</code>, <code>16:9</code> </p>
     /// <p>If you specify <code>auto</code>, Elastic Transcoder tries to preserve the aspect ratio of the input file.</p>
     /// <p>If you specify an aspect ratio for the output file that differs from aspect ratio of the input file, Elastic Transcoder adds pillarboxing (black bars on the sides) or letterboxing (black bars on the top and bottom) to maintain the aspect ratio of the active region of the video.</p>
     pub fn get_aspect_ratio(&self) -> &::std::option::Option<::std::string::String> {
         &self.aspect_ratio
     }
-    /// <p>The maximum width of the output video in pixels. If you specify <code>auto</code>, Elastic Transcoder uses 1920 (Full HD) as the default value. If you specify a numeric value, enter an even integer between 128 and 4096.</p>
+    /// <p> The maximum width of the output video in pixels. If you specify <code>auto</code>, Elastic Transcoder uses 1920 (Full HD) as the default value. If you specify a numeric value, enter an even integer between 128 and 4096. </p>
     pub fn max_width(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.max_width = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The maximum width of the output video in pixels. If you specify <code>auto</code>, Elastic Transcoder uses 1920 (Full HD) as the default value. If you specify a numeric value, enter an even integer between 128 and 4096.</p>
+    /// <p> The maximum width of the output video in pixels. If you specify <code>auto</code>, Elastic Transcoder uses 1920 (Full HD) as the default value. If you specify a numeric value, enter an even integer between 128 and 4096. </p>
     pub fn set_max_width(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.max_width = input;
         self
     }
-    /// <p>The maximum width of the output video in pixels. If you specify <code>auto</code>, Elastic Transcoder uses 1920 (Full HD) as the default value. If you specify a numeric value, enter an even integer between 128 and 4096.</p>
+    /// <p> The maximum width of the output video in pixels. If you specify <code>auto</code>, Elastic Transcoder uses 1920 (Full HD) as the default value. If you specify a numeric value, enter an even integer between 128 and 4096. </p>
     pub fn get_max_width(&self) -> &::std::option::Option<::std::string::String> {
         &self.max_width
     }
@@ -1378,18 +1026,12 @@ impl VideoParametersBuilder {
     }
     /// <p>Specify one of the following values to control scaling of the output video:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Fit</code>: Elastic Transcoder scales the output video so it matches the value that you specified in either <code>MaxWidth</code> or <code>MaxHeight</code> without exceeding the other value.</p></li>
-    /// <li>
-    /// <p><code>Fill</code>: Elastic Transcoder scales the output video so it matches the value that you specified in either <code>MaxWidth</code> or <code>MaxHeight</code> and matches or exceeds the other value. Elastic Transcoder centers the output video and then crops it in the dimension (if any) that exceeds the maximum value.</p></li>
-    /// <li>
-    /// <p><code>Stretch</code>: Elastic Transcoder stretches the output video to match the values that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>. If the relative proportions of the input video and the output video are different, the output video will be distorted.</p></li>
-    /// <li>
-    /// <p><code>Keep</code>: Elastic Transcoder does not scale the output video. If either dimension of the input video exceeds the values that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>, Elastic Transcoder crops the output video.</p></li>
-    /// <li>
-    /// <p><code>ShrinkToFit</code>: Elastic Transcoder scales the output video down so that its dimensions match the values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without exceeding either value. If you specify this option, Elastic Transcoder does not scale the video up.</p></li>
-    /// <li>
-    /// <p><code>ShrinkToFill</code>: Elastic Transcoder scales the output video down so that its dimensions match the values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without dropping below either value. If you specify this option, Elastic Transcoder does not scale the video up.</p></li>
+    /// <li> <p> <code>Fit</code>: Elastic Transcoder scales the output video so it matches the value that you specified in either <code>MaxWidth</code> or <code>MaxHeight</code> without exceeding the other value.</p> </li>
+    /// <li> <p> <code>Fill</code>: Elastic Transcoder scales the output video so it matches the value that you specified in either <code>MaxWidth</code> or <code>MaxHeight</code> and matches or exceeds the other value. Elastic Transcoder centers the output video and then crops it in the dimension (if any) that exceeds the maximum value.</p> </li>
+    /// <li> <p> <code>Stretch</code>: Elastic Transcoder stretches the output video to match the values that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>. If the relative proportions of the input video and the output video are different, the output video will be distorted.</p> </li>
+    /// <li> <p> <code>Keep</code>: Elastic Transcoder does not scale the output video. If either dimension of the input video exceeds the values that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>, Elastic Transcoder crops the output video.</p> </li>
+    /// <li> <p> <code>ShrinkToFit</code>: Elastic Transcoder scales the output video down so that its dimensions match the values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without exceeding either value. If you specify this option, Elastic Transcoder does not scale the video up.</p> </li>
+    /// <li> <p> <code>ShrinkToFill</code>: Elastic Transcoder scales the output video down so that its dimensions match the values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without dropping below either value. If you specify this option, Elastic Transcoder does not scale the video up.</p> </li>
     /// </ul>
     pub fn sizing_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sizing_policy = ::std::option::Option::Some(input.into());
@@ -1397,18 +1039,12 @@ impl VideoParametersBuilder {
     }
     /// <p>Specify one of the following values to control scaling of the output video:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Fit</code>: Elastic Transcoder scales the output video so it matches the value that you specified in either <code>MaxWidth</code> or <code>MaxHeight</code> without exceeding the other value.</p></li>
-    /// <li>
-    /// <p><code>Fill</code>: Elastic Transcoder scales the output video so it matches the value that you specified in either <code>MaxWidth</code> or <code>MaxHeight</code> and matches or exceeds the other value. Elastic Transcoder centers the output video and then crops it in the dimension (if any) that exceeds the maximum value.</p></li>
-    /// <li>
-    /// <p><code>Stretch</code>: Elastic Transcoder stretches the output video to match the values that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>. If the relative proportions of the input video and the output video are different, the output video will be distorted.</p></li>
-    /// <li>
-    /// <p><code>Keep</code>: Elastic Transcoder does not scale the output video. If either dimension of the input video exceeds the values that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>, Elastic Transcoder crops the output video.</p></li>
-    /// <li>
-    /// <p><code>ShrinkToFit</code>: Elastic Transcoder scales the output video down so that its dimensions match the values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without exceeding either value. If you specify this option, Elastic Transcoder does not scale the video up.</p></li>
-    /// <li>
-    /// <p><code>ShrinkToFill</code>: Elastic Transcoder scales the output video down so that its dimensions match the values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without dropping below either value. If you specify this option, Elastic Transcoder does not scale the video up.</p></li>
+    /// <li> <p> <code>Fit</code>: Elastic Transcoder scales the output video so it matches the value that you specified in either <code>MaxWidth</code> or <code>MaxHeight</code> without exceeding the other value.</p> </li>
+    /// <li> <p> <code>Fill</code>: Elastic Transcoder scales the output video so it matches the value that you specified in either <code>MaxWidth</code> or <code>MaxHeight</code> and matches or exceeds the other value. Elastic Transcoder centers the output video and then crops it in the dimension (if any) that exceeds the maximum value.</p> </li>
+    /// <li> <p> <code>Stretch</code>: Elastic Transcoder stretches the output video to match the values that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>. If the relative proportions of the input video and the output video are different, the output video will be distorted.</p> </li>
+    /// <li> <p> <code>Keep</code>: Elastic Transcoder does not scale the output video. If either dimension of the input video exceeds the values that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>, Elastic Transcoder crops the output video.</p> </li>
+    /// <li> <p> <code>ShrinkToFit</code>: Elastic Transcoder scales the output video down so that its dimensions match the values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without exceeding either value. If you specify this option, Elastic Transcoder does not scale the video up.</p> </li>
+    /// <li> <p> <code>ShrinkToFill</code>: Elastic Transcoder scales the output video down so that its dimensions match the values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without dropping below either value. If you specify this option, Elastic Transcoder does not scale the video up.</p> </li>
     /// </ul>
     pub fn set_sizing_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sizing_policy = input;
@@ -1416,18 +1052,12 @@ impl VideoParametersBuilder {
     }
     /// <p>Specify one of the following values to control scaling of the output video:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Fit</code>: Elastic Transcoder scales the output video so it matches the value that you specified in either <code>MaxWidth</code> or <code>MaxHeight</code> without exceeding the other value.</p></li>
-    /// <li>
-    /// <p><code>Fill</code>: Elastic Transcoder scales the output video so it matches the value that you specified in either <code>MaxWidth</code> or <code>MaxHeight</code> and matches or exceeds the other value. Elastic Transcoder centers the output video and then crops it in the dimension (if any) that exceeds the maximum value.</p></li>
-    /// <li>
-    /// <p><code>Stretch</code>: Elastic Transcoder stretches the output video to match the values that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>. If the relative proportions of the input video and the output video are different, the output video will be distorted.</p></li>
-    /// <li>
-    /// <p><code>Keep</code>: Elastic Transcoder does not scale the output video. If either dimension of the input video exceeds the values that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>, Elastic Transcoder crops the output video.</p></li>
-    /// <li>
-    /// <p><code>ShrinkToFit</code>: Elastic Transcoder scales the output video down so that its dimensions match the values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without exceeding either value. If you specify this option, Elastic Transcoder does not scale the video up.</p></li>
-    /// <li>
-    /// <p><code>ShrinkToFill</code>: Elastic Transcoder scales the output video down so that its dimensions match the values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without dropping below either value. If you specify this option, Elastic Transcoder does not scale the video up.</p></li>
+    /// <li> <p> <code>Fit</code>: Elastic Transcoder scales the output video so it matches the value that you specified in either <code>MaxWidth</code> or <code>MaxHeight</code> without exceeding the other value.</p> </li>
+    /// <li> <p> <code>Fill</code>: Elastic Transcoder scales the output video so it matches the value that you specified in either <code>MaxWidth</code> or <code>MaxHeight</code> and matches or exceeds the other value. Elastic Transcoder centers the output video and then crops it in the dimension (if any) that exceeds the maximum value.</p> </li>
+    /// <li> <p> <code>Stretch</code>: Elastic Transcoder stretches the output video to match the values that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>. If the relative proportions of the input video and the output video are different, the output video will be distorted.</p> </li>
+    /// <li> <p> <code>Keep</code>: Elastic Transcoder does not scale the output video. If either dimension of the input video exceeds the values that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>, Elastic Transcoder crops the output video.</p> </li>
+    /// <li> <p> <code>ShrinkToFit</code>: Elastic Transcoder scales the output video down so that its dimensions match the values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without exceeding either value. If you specify this option, Elastic Transcoder does not scale the video up.</p> </li>
+    /// <li> <p> <code>ShrinkToFill</code>: Elastic Transcoder scales the output video down so that its dimensions match the values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without dropping below either value. If you specify this option, Elastic Transcoder does not scale the video up.</p> </li>
     /// </ul>
     pub fn get_sizing_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.sizing_policy

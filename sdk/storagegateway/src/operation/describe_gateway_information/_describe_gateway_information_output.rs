@@ -35,7 +35,7 @@ pub struct DescribeGatewayInformationOutput {
     /// <p>The type of hardware or software platform on which the gateway is running.</p>
     pub host_environment: ::std::option::Option<crate::types::HostEnvironment>,
     /// <p>The type of endpoint for your gateway.</p>
-    /// <p>Valid Values: <code>STANDARD</code> | <code>FIPS</code></p>
+    /// <p>Valid Values: <code>STANDARD</code> | <code>FIPS</code> </p>
     pub endpoint_type: ::std::option::Option<::std::string::String>,
     /// <p>Date after which this gateway will not receive software updates for new features.</p>
     pub software_updates_end_date: ::std::option::Option<::std::string::String>,
@@ -117,7 +117,7 @@ impl DescribeGatewayInformationOutput {
         self.host_environment.as_ref()
     }
     /// <p>The type of endpoint for your gateway.</p>
-    /// <p>Valid Values: <code>STANDARD</code> | <code>FIPS</code></p>
+    /// <p>Valid Values: <code>STANDARD</code> | <code>FIPS</code> </p>
     pub fn endpoint_type(&self) -> ::std::option::Option<&str> {
         self.endpoint_type.as_deref()
     }
@@ -412,19 +412,19 @@ impl DescribeGatewayInformationOutputBuilder {
         &self.host_environment
     }
     /// <p>The type of endpoint for your gateway.</p>
-    /// <p>Valid Values: <code>STANDARD</code> | <code>FIPS</code></p>
+    /// <p>Valid Values: <code>STANDARD</code> | <code>FIPS</code> </p>
     pub fn endpoint_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of endpoint for your gateway.</p>
-    /// <p>Valid Values: <code>STANDARD</code> | <code>FIPS</code></p>
+    /// <p>Valid Values: <code>STANDARD</code> | <code>FIPS</code> </p>
     pub fn set_endpoint_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_type = input;
         self
     }
     /// <p>The type of endpoint for your gateway.</p>
-    /// <p>Valid Values: <code>STANDARD</code> | <code>FIPS</code></p>
+    /// <p>Valid Values: <code>STANDARD</code> | <code>FIPS</code> </p>
     pub fn get_endpoint_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.endpoint_type
     }

@@ -247,11 +247,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetStatementR
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum GetStatementResultError {
-    /// <p>The Amazon Redshift Data API operation failed due to invalid input.</p>
+    /// <p>The Amazon Redshift Data API operation failed due to invalid input. </p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p>The Amazon Redshift Data API operation failed due to a missing resource.</p>
+    /// <p>The Amazon Redshift Data API operation failed due to a missing resource. </p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>The Amazon Redshift Data API operation failed due to invalid input.</p>
+    /// <p>The Amazon Redshift Data API operation failed due to invalid input. </p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

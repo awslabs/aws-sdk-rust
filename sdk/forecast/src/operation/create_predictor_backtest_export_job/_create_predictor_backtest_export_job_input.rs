@@ -7,23 +7,17 @@ pub struct CreatePredictorBacktestExportJobInput {
     pub predictor_backtest_export_job_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the predictor that you want to export.</p>
     pub predictor_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The destination for an export job. Provide an S3 path, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an Key Management Service (KMS) key (optional).</p>
+    /// <p>The destination for an export job. Provide an S3 path, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an Key Management Service (KMS) key (optional). </p>
     pub destination: ::std::option::Option<crate::types::DataDestination>,
     /// <p>Optional metadata to help you categorize and organize your backtests. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p>
     /// <p>The following restrictions apply to tags:</p>
     /// <ul>
-    /// <li>
-    /// <p>For each resource, each tag key must be unique and each tag key must have one value.</p></li>
-    /// <li>
-    /// <p>Maximum number of tags per resource: 50.</p></li>
-    /// <li>
-    /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p></li>
-    /// <li>
-    /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p></li>
-    /// <li>
-    /// <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply.</p></li>
-    /// <li>
-    /// <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p></li>
+    /// <li> <p>For each resource, each tag key must be unique and each tag key must have one value.</p> </li>
+    /// <li> <p>Maximum number of tags per resource: 50.</p> </li>
+    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li>
+    /// <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li>
     /// </ul>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The format of the exported data, CSV or PARQUET. The default value is CSV.</p>
@@ -38,25 +32,19 @@ impl CreatePredictorBacktestExportJobInput {
     pub fn predictor_arn(&self) -> ::std::option::Option<&str> {
         self.predictor_arn.as_deref()
     }
-    /// <p>The destination for an export job. Provide an S3 path, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an Key Management Service (KMS) key (optional).</p>
+    /// <p>The destination for an export job. Provide an S3 path, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an Key Management Service (KMS) key (optional). </p>
     pub fn destination(&self) -> ::std::option::Option<&crate::types::DataDestination> {
         self.destination.as_ref()
     }
     /// <p>Optional metadata to help you categorize and organize your backtests. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p>
     /// <p>The following restrictions apply to tags:</p>
     /// <ul>
-    /// <li>
-    /// <p>For each resource, each tag key must be unique and each tag key must have one value.</p></li>
-    /// <li>
-    /// <p>Maximum number of tags per resource: 50.</p></li>
-    /// <li>
-    /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p></li>
-    /// <li>
-    /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p></li>
-    /// <li>
-    /// <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply.</p></li>
-    /// <li>
-    /// <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p></li>
+    /// <li> <p>For each resource, each tag key must be unique and each tag key must have one value.</p> </li>
+    /// <li> <p>Maximum number of tags per resource: 50.</p> </li>
+    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li>
+    /// <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
@@ -116,18 +104,18 @@ impl CreatePredictorBacktestExportJobInputBuilder {
     pub fn get_predictor_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.predictor_arn
     }
-    /// <p>The destination for an export job. Provide an S3 path, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an Key Management Service (KMS) key (optional).</p>
+    /// <p>The destination for an export job. Provide an S3 path, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an Key Management Service (KMS) key (optional). </p>
     /// This field is required.
     pub fn destination(mut self, input: crate::types::DataDestination) -> Self {
         self.destination = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The destination for an export job. Provide an S3 path, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an Key Management Service (KMS) key (optional).</p>
+    /// <p>The destination for an export job. Provide an S3 path, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an Key Management Service (KMS) key (optional). </p>
     pub fn set_destination(mut self, input: ::std::option::Option<crate::types::DataDestination>) -> Self {
         self.destination = input;
         self
     }
-    /// <p>The destination for an export job. Provide an S3 path, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an Key Management Service (KMS) key (optional).</p>
+    /// <p>The destination for an export job. Provide an S3 path, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an Key Management Service (KMS) key (optional). </p>
     pub fn get_destination(&self) -> &::std::option::Option<crate::types::DataDestination> {
         &self.destination
     }
@@ -138,18 +126,12 @@ impl CreatePredictorBacktestExportJobInputBuilder {
     /// <p>Optional metadata to help you categorize and organize your backtests. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p>
     /// <p>The following restrictions apply to tags:</p>
     /// <ul>
-    /// <li>
-    /// <p>For each resource, each tag key must be unique and each tag key must have one value.</p></li>
-    /// <li>
-    /// <p>Maximum number of tags per resource: 50.</p></li>
-    /// <li>
-    /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p></li>
-    /// <li>
-    /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p></li>
-    /// <li>
-    /// <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply.</p></li>
-    /// <li>
-    /// <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p></li>
+    /// <li> <p>For each resource, each tag key must be unique and each tag key must have one value.</p> </li>
+    /// <li> <p>Maximum number of tags per resource: 50.</p> </li>
+    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li>
+    /// <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li>
     /// </ul>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
@@ -160,18 +142,12 @@ impl CreatePredictorBacktestExportJobInputBuilder {
     /// <p>Optional metadata to help you categorize and organize your backtests. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p>
     /// <p>The following restrictions apply to tags:</p>
     /// <ul>
-    /// <li>
-    /// <p>For each resource, each tag key must be unique and each tag key must have one value.</p></li>
-    /// <li>
-    /// <p>Maximum number of tags per resource: 50.</p></li>
-    /// <li>
-    /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p></li>
-    /// <li>
-    /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p></li>
-    /// <li>
-    /// <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply.</p></li>
-    /// <li>
-    /// <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p></li>
+    /// <li> <p>For each resource, each tag key must be unique and each tag key must have one value.</p> </li>
+    /// <li> <p>Maximum number of tags per resource: 50.</p> </li>
+    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li>
+    /// <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li>
     /// </ul>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
@@ -180,18 +156,12 @@ impl CreatePredictorBacktestExportJobInputBuilder {
     /// <p>Optional metadata to help you categorize and organize your backtests. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p>
     /// <p>The following restrictions apply to tags:</p>
     /// <ul>
-    /// <li>
-    /// <p>For each resource, each tag key must be unique and each tag key must have one value.</p></li>
-    /// <li>
-    /// <p>Maximum number of tags per resource: 50.</p></li>
-    /// <li>
-    /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p></li>
-    /// <li>
-    /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p></li>
-    /// <li>
-    /// <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply.</p></li>
-    /// <li>
-    /// <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p></li>
+    /// <li> <p>For each resource, each tag key must be unique and each tag key must have one value.</p> </li>
+    /// <li> <p>Maximum number of tags per resource: 50.</p> </li>
+    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li>
+    /// <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li>
     /// </ul>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags

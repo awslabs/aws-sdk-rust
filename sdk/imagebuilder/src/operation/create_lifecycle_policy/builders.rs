@@ -196,17 +196,17 @@ impl CreateLifecyclePolicyFluentBuilder {
     pub fn get_policy_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicyDetail>> {
         self.inner.get_policy_details()
     }
-    /// <p>Selection criteria for the resources that the lifecycle policy applies to.</p>
+    /// <p>Selection criteria for the resources that the lifecycle policy applies to. </p>
     pub fn resource_selection(mut self, input: crate::types::LifecyclePolicyResourceSelection) -> Self {
         self.inner = self.inner.resource_selection(input);
         self
     }
-    /// <p>Selection criteria for the resources that the lifecycle policy applies to.</p>
+    /// <p>Selection criteria for the resources that the lifecycle policy applies to. </p>
     pub fn set_resource_selection(mut self, input: ::std::option::Option<crate::types::LifecyclePolicyResourceSelection>) -> Self {
         self.inner = self.inner.set_resource_selection(input);
         self
     }
-    /// <p>Selection criteria for the resources that the lifecycle policy applies to.</p>
+    /// <p>Selection criteria for the resources that the lifecycle policy applies to. </p>
     pub fn get_resource_selection(&self) -> &::std::option::Option<crate::types::LifecyclePolicyResourceSelection> {
         self.inner.get_resource_selection()
     }

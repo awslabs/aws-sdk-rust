@@ -22,8 +22,8 @@ impl BatchUpsertTableRowsInputBuilder {
 }
 /// Fluent builder constructing a request to `BatchUpsertTableRows`.
 ///
-/// <p>The BatchUpsertTableRows API allows you to upsert one or more rows in a table. The upsert operation takes a filter expression as input and evaluates it to find matching rows on the destination table. If matching rows are found, it will update the cells in the matching rows to new values specified in the request. If no matching rows are found, a new row is added at the end of the table and the cells in that row are set to the new values specified in the request.</p>
-/// <p>You can specify the values to set in some or all of the columns in the table for the matching or newly appended rows. If a column is not explicitly specified for a particular row, then that column will not be updated for that row. To clear out the data in a specific cell, you need to set the value as an empty string ("").</p>
+/// <p> The BatchUpsertTableRows API allows you to upsert one or more rows in a table. The upsert operation takes a filter expression as input and evaluates it to find matching rows on the destination table. If matching rows are found, it will update the cells in the matching rows to new values specified in the request. If no matching rows are found, a new row is added at the end of the table and the cells in that row are set to the new values specified in the request. </p>
+/// <p> You can specify the values to set in some or all of the columns in the table for the matching or newly appended rows. If a column is not explicitly specified for a particular row, then that column will not be updated for that row. To clear out the data in a specific cell, you need to set the value as an empty string (""). </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchUpsertTableRowsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -110,36 +110,36 @@ impl BatchUpsertTableRowsFluentBuilder {
         self
     }
     /// <p>The ID of the workbook where the rows are being upserted.</p>
-    /// <p>If a workbook with the specified id could not be found, this API throws ResourceNotFoundException.</p>
+    /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
     pub fn workbook_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workbook_id(input.into());
         self
     }
     /// <p>The ID of the workbook where the rows are being upserted.</p>
-    /// <p>If a workbook with the specified id could not be found, this API throws ResourceNotFoundException.</p>
+    /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
     pub fn set_workbook_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workbook_id(input);
         self
     }
     /// <p>The ID of the workbook where the rows are being upserted.</p>
-    /// <p>If a workbook with the specified id could not be found, this API throws ResourceNotFoundException.</p>
+    /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
     pub fn get_workbook_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_workbook_id()
     }
     /// <p>The ID of the table where the rows are being upserted.</p>
-    /// <p>If a table with the specified id could not be found, this API throws ResourceNotFoundException.</p>
+    /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
     pub fn table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.table_id(input.into());
         self
     }
     /// <p>The ID of the table where the rows are being upserted.</p>
-    /// <p>If a table with the specified id could not be found, this API throws ResourceNotFoundException.</p>
+    /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
     pub fn set_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_table_id(input);
         self
     }
     /// <p>The ID of the table where the rows are being upserted.</p>
-    /// <p>If a table with the specified id could not be found, this API throws ResourceNotFoundException.</p>
+    /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
     pub fn get_table_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_table_id()
     }
@@ -147,37 +147,37 @@ impl BatchUpsertTableRowsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_rows_to_upsert`](Self::set_rows_to_upsert).
     ///
-    /// <p>The list of rows to upsert in the table. Each item in this list needs to have a batch item id to uniquely identify the element in the request, a filter expression to find the rows to update for that element and the cell values to set for each column in the upserted rows. You need to specify at least one item in this list.</p>
-    /// <p>Note that if one of the filter formulas in the request fails to evaluate because of an error or one of the column ids in any of the rows does not exist in the table, then the request fails and no updates are made to the table.</p>
+    /// <p> The list of rows to upsert in the table. Each item in this list needs to have a batch item id to uniquely identify the element in the request, a filter expression to find the rows to update for that element and the cell values to set for each column in the upserted rows. You need to specify at least one item in this list. </p>
+    /// <p> Note that if one of the filter formulas in the request fails to evaluate because of an error or one of the column ids in any of the rows does not exist in the table, then the request fails and no updates are made to the table. </p>
     pub fn rows_to_upsert(mut self, input: crate::types::UpsertRowData) -> Self {
         self.inner = self.inner.rows_to_upsert(input);
         self
     }
-    /// <p>The list of rows to upsert in the table. Each item in this list needs to have a batch item id to uniquely identify the element in the request, a filter expression to find the rows to update for that element and the cell values to set for each column in the upserted rows. You need to specify at least one item in this list.</p>
-    /// <p>Note that if one of the filter formulas in the request fails to evaluate because of an error or one of the column ids in any of the rows does not exist in the table, then the request fails and no updates are made to the table.</p>
+    /// <p> The list of rows to upsert in the table. Each item in this list needs to have a batch item id to uniquely identify the element in the request, a filter expression to find the rows to update for that element and the cell values to set for each column in the upserted rows. You need to specify at least one item in this list. </p>
+    /// <p> Note that if one of the filter formulas in the request fails to evaluate because of an error or one of the column ids in any of the rows does not exist in the table, then the request fails and no updates are made to the table. </p>
     pub fn set_rows_to_upsert(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpsertRowData>>) -> Self {
         self.inner = self.inner.set_rows_to_upsert(input);
         self
     }
-    /// <p>The list of rows to upsert in the table. Each item in this list needs to have a batch item id to uniquely identify the element in the request, a filter expression to find the rows to update for that element and the cell values to set for each column in the upserted rows. You need to specify at least one item in this list.</p>
-    /// <p>Note that if one of the filter formulas in the request fails to evaluate because of an error or one of the column ids in any of the rows does not exist in the table, then the request fails and no updates are made to the table.</p>
+    /// <p> The list of rows to upsert in the table. Each item in this list needs to have a batch item id to uniquely identify the element in the request, a filter expression to find the rows to update for that element and the cell values to set for each column in the upserted rows. You need to specify at least one item in this list. </p>
+    /// <p> Note that if one of the filter formulas in the request fails to evaluate because of an error or one of the column ids in any of the rows does not exist in the table, then the request fails and no updates are made to the table. </p>
     pub fn get_rows_to_upsert(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpsertRowData>> {
         self.inner.get_rows_to_upsert()
     }
-    /// <p>The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again.</p>
-    /// <p>Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days.</p>
+    /// <p> The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p>
+    /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
-    /// <p>The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again.</p>
-    /// <p>Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days.</p>
+    /// <p> The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p>
+    /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
-    /// <p>The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again.</p>
-    /// <p>Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days.</p>
+    /// <p> The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p>
+    /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_request_token()
     }

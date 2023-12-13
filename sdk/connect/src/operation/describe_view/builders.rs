@@ -24,8 +24,9 @@ impl DescribeViewInputBuilder {
 ///
 /// <p>Retrieves the view for the specified Amazon Connect instance and view identifier.</p>
 /// <p>The view identifier can be supplied as a ViewId or ARN.</p>
-/// <p><code>$SAVED</code> needs to be supplied if a view is unpublished.</p>
-/// <p>The view identifier can contain an optional qualifier, for example, <code><view-id>
+/// <p> <code>$SAVED</code> needs to be supplied if a view is unpublished.</p>
+/// <p>The view identifier can contain an optional qualifier, for example, <code>
+/// <view-id>
 /// :$SAVED
 /// </view-id></code>, which is either an actual version number or an Amazon Connect managed qualifier <code>$SAVED | $LATEST</code>. If it is not supplied, then <code>$LATEST</code> is assumed for customer managed views and an error is returned if there is no published content available. Version 1 is assumed for Amazon Web Services managed views.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

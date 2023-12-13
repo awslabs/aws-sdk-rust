@@ -108,17 +108,17 @@ impl DescribeJobRunFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the job run request.</p>
+    /// <p>The ID of the job run request. </p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
         self
     }
-    /// <p>The ID of the job run request.</p>
+    /// <p>The ID of the job run request. </p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
     }
-    /// <p>The ID of the job run request.</p>
+    /// <p>The ID of the job run request. </p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_id()
     }

@@ -110,7 +110,7 @@ impl SetIdentityNotificationTopicFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identity (email address or domain) for the Amazon SNS topic.</p><important>
+    /// <p>The identity (email address or domain) for the Amazon SNS topic.</p> <important>
     /// <p>You can only specify a verified identity for this parameter.</p>
     /// </important>
     /// <p>You can specify an identity by using its name or by using its Amazon Resource Name (ARN). The following examples are all valid identities: <code>sender@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
@@ -118,7 +118,7 @@ impl SetIdentityNotificationTopicFluentBuilder {
         self.inner = self.inner.identity(input.into());
         self
     }
-    /// <p>The identity (email address or domain) for the Amazon SNS topic.</p><important>
+    /// <p>The identity (email address or domain) for the Amazon SNS topic.</p> <important>
     /// <p>You can only specify a verified identity for this parameter.</p>
     /// </important>
     /// <p>You can specify an identity by using its name or by using its Amazon Resource Name (ARN). The following examples are all valid identities: <code>sender@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
@@ -126,7 +126,7 @@ impl SetIdentityNotificationTopicFluentBuilder {
         self.inner = self.inner.set_identity(input);
         self
     }
-    /// <p>The identity (email address or domain) for the Amazon SNS topic.</p><important>
+    /// <p>The identity (email address or domain) for the Amazon SNS topic.</p> <important>
     /// <p>You can only specify a verified identity for this parameter.</p>
     /// </important>
     /// <p>You can specify an identity by using its name or by using its Amazon Resource Name (ARN). The following examples are all valid identities: <code>sender@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>

@@ -22,7 +22,7 @@ impl GetFirewallRuleGroupPolicyInputBuilder {
 }
 /// Fluent builder constructing a request to `GetFirewallRuleGroupPolicy`.
 ///
-/// <p>Returns the Identity and Access Management (Amazon Web Services IAM) policy for sharing the specified rule group. You can use the policy to share the rule group using Resource Access Manager (RAM).</p>
+/// <p>Returns the Identity and Access Management (Amazon Web Services IAM) policy for sharing the specified rule group. You can use the policy to share the rule group using Resource Access Manager (RAM). </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetFirewallRuleGroupPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

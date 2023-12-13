@@ -22,11 +22,11 @@ impl PutManagedRuleSetVersionsInputBuilder {
 }
 /// Fluent builder constructing a request to `PutManagedRuleSetVersions`.
 ///
-/// <p>Defines the versions of your managed rule set that you are offering to the customers. Customers see your offerings as managed rule groups with versioning.</p><note>
-/// <p>This is intended for use only by vendors of managed rule sets. Vendors are Amazon Web Services and Amazon Web Services Marketplace sellers.</p>
+/// <p>Defines the versions of your managed rule set that you are offering to the customers. Customers see your offerings as managed rule groups with versioning.</p> <note>
+/// <p>This is intended for use only by vendors of managed rule sets. Vendors are Amazon Web Services and Amazon Web Services Marketplace sellers. </p>
 /// <p>Vendors, you can use the managed rule set APIs to provide controlled rollout of your versioned managed rule group offerings for your customers. The APIs are <code>ListManagedRuleSets</code>, <code>GetManagedRuleSet</code>, <code>PutManagedRuleSetVersions</code>, and <code>UpdateManagedRuleSetVersionExpiryDate</code>.</p>
 /// </note>
-/// <p>Customers retrieve their managed rule group list by calling <code>ListAvailableManagedRuleGroups</code>. The name that you provide here for your managed rule set is the name the customer sees for the corresponding managed rule group. Customers can retrieve the available versions for a managed rule group by calling <code>ListAvailableManagedRuleGroupVersions</code>. You provide a rule group specification for each version. For each managed rule set, you must specify a version that you recommend using.</p>
+/// <p>Customers retrieve their managed rule group list by calling <code>ListAvailableManagedRuleGroups</code>. The name that you provide here for your managed rule set is the name the customer sees for the corresponding managed rule group. Customers can retrieve the available versions for a managed rule group by calling <code>ListAvailableManagedRuleGroupVersions</code>. You provide a rule group specification for each version. For each managed rule set, you must specify a version that you recommend using. </p>
 /// <p>To initiate the expiration of a managed rule group version, use <code>UpdateManagedRuleSetVersionExpiryDate</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutManagedRuleSetVersionsFluentBuilder {
@@ -114,53 +114,47 @@ impl PutManagedRuleSetVersionsFluentBuilder {
         self
     }
     /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
-    /// <p>This name is assigned to the corresponding managed rule group, which your customers can access and use.</p>
+    /// <p>This name is assigned to the corresponding managed rule group, which your customers can access and use. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
-    /// <p>This name is assigned to the corresponding managed rule group, which your customers can access and use.</p>
+    /// <p>This name is assigned to the corresponding managed rule group, which your customers can access and use. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
     /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
-    /// <p>This name is assigned to the corresponding managed rule group, which your customers can access and use.</p>
+    /// <p>This name is assigned to the corresponding managed rule group, which your customers can access and use. </p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
-    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
+    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance. </p>
+    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
     /// <ul>
-    /// <li>
-    /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.</p></li>
-    /// <li>
-    /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1.</p></li>
+    /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+    /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
     /// </ul>
     pub fn scope(mut self, input: crate::types::Scope) -> Self {
         self.inner = self.inner.scope(input);
         self
     }
-    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
-    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
+    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance. </p>
+    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
     /// <ul>
-    /// <li>
-    /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.</p></li>
-    /// <li>
-    /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1.</p></li>
+    /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+    /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
     /// </ul>
     pub fn set_scope(mut self, input: ::std::option::Option<crate::types::Scope>) -> Self {
         self.inner = self.inner.set_scope(input);
         self
     }
-    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
-    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
+    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance. </p>
+    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
     /// <ul>
-    /// <li>
-    /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.</p></li>
-    /// <li>
-    /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1.</p></li>
+    /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+    /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
     /// </ul>
     pub fn get_scope(&self) -> &::std::option::Option<crate::types::Scope> {
         self.inner.get_scope()
@@ -179,31 +173,31 @@ impl PutManagedRuleSetVersionsFluentBuilder {
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_id()
     }
-    /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation.</p>
+    /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
     pub fn lock_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.lock_token(input.into());
         self
     }
-    /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation.</p>
+    /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
     pub fn set_lock_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_lock_token(input);
         self
     }
-    /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation.</p>
+    /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
     pub fn get_lock_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_lock_token()
     }
-    /// <p>The version of the named managed rule group that you'd like your customers to choose, from among your version offerings.</p>
+    /// <p>The version of the named managed rule group that you'd like your customers to choose, from among your version offerings. </p>
     pub fn recommended_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.recommended_version(input.into());
         self
     }
-    /// <p>The version of the named managed rule group that you'd like your customers to choose, from among your version offerings.</p>
+    /// <p>The version of the named managed rule group that you'd like your customers to choose, from among your version offerings. </p>
     pub fn set_recommended_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_recommended_version(input);
         self
     }
-    /// <p>The version of the named managed rule group that you'd like your customers to choose, from among your version offerings.</p>
+    /// <p>The version of the named managed rule group that you'd like your customers to choose, from among your version offerings. </p>
     pub fn get_recommended_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_recommended_version()
     }
@@ -211,12 +205,12 @@ impl PutManagedRuleSetVersionsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_versions_to_publish`](Self::set_versions_to_publish).
     ///
-    /// <p>The versions of the named managed rule group that you want to offer to your customers.</p>
+    /// <p>The versions of the named managed rule group that you want to offer to your customers. </p>
     pub fn versions_to_publish(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::VersionToPublish) -> Self {
         self.inner = self.inner.versions_to_publish(k.into(), v);
         self
     }
-    /// <p>The versions of the named managed rule group that you want to offer to your customers.</p>
+    /// <p>The versions of the named managed rule group that you want to offer to your customers. </p>
     pub fn set_versions_to_publish(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::VersionToPublish>>,
@@ -224,7 +218,7 @@ impl PutManagedRuleSetVersionsFluentBuilder {
         self.inner = self.inner.set_versions_to_publish(input);
         self
     }
-    /// <p>The versions of the named managed rule group that you want to offer to your customers.</p>
+    /// <p>The versions of the named managed rule group that you want to offer to your customers. </p>
     pub fn get_versions_to_publish(
         &self,
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::VersionToPublish>> {

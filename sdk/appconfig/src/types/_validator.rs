@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Validator {
-    /// <p>AppConfig supports validators of type <code>JSON_SCHEMA</code> and <code>LAMBDA</code></p>
+    /// <p>AppConfig supports validators of type <code>JSON_SCHEMA</code> and <code>LAMBDA</code> </p>
     pub r#type: crate::types::ValidatorType,
     /// <p>Either the JSON Schema content or the Amazon Resource Name (ARN) of an Lambda function.</p>
     pub content: ::std::string::String,
 }
 impl Validator {
-    /// <p>AppConfig supports validators of type <code>JSON_SCHEMA</code> and <code>LAMBDA</code></p>
+    /// <p>AppConfig supports validators of type <code>JSON_SCHEMA</code> and <code>LAMBDA</code> </p>
     pub fn r#type(&self) -> &crate::types::ValidatorType {
         &self.r#type
     }
@@ -43,18 +43,18 @@ pub struct ValidatorBuilder {
     pub(crate) content: ::std::option::Option<::std::string::String>,
 }
 impl ValidatorBuilder {
-    /// <p>AppConfig supports validators of type <code>JSON_SCHEMA</code> and <code>LAMBDA</code></p>
+    /// <p>AppConfig supports validators of type <code>JSON_SCHEMA</code> and <code>LAMBDA</code> </p>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::ValidatorType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>AppConfig supports validators of type <code>JSON_SCHEMA</code> and <code>LAMBDA</code></p>
+    /// <p>AppConfig supports validators of type <code>JSON_SCHEMA</code> and <code>LAMBDA</code> </p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ValidatorType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>AppConfig supports validators of type <code>JSON_SCHEMA</code> and <code>LAMBDA</code></p>
+    /// <p>AppConfig supports validators of type <code>JSON_SCHEMA</code> and <code>LAMBDA</code> </p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ValidatorType> {
         &self.r#type
     }

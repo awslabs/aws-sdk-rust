@@ -15,10 +15,8 @@ pub struct CreateCapacityReservationInput {
     pub availability_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the tenancy of the Capacity Reservation. A Capacity Reservation can have one of the following tenancy settings:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>default</code> - The Capacity Reservation is created on hardware that is shared with other Amazon Web Services accounts.</p></li>
-    /// <li>
-    /// <p><code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware that is dedicated to a single Amazon Web Services account.</p></li>
+    /// <li> <p> <code>default</code> - The Capacity Reservation is created on hardware that is shared with other Amazon Web Services accounts.</p> </li>
+    /// <li> <p> <code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware that is dedicated to a single Amazon Web Services account.</p> </li>
     /// </ul>
     pub tenancy: ::std::option::Option<crate::types::CapacityReservationTenancy>,
     /// <p>The number of instances for which to reserve capacity.</p>
@@ -26,7 +24,7 @@ pub struct CreateCapacityReservationInput {
     pub instance_count: ::std::option::Option<i32>,
     /// <p>Indicates whether the Capacity Reservation supports EBS-optimized instances. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS- optimized instance.</p>
     pub ebs_optimized: ::std::option::Option<bool>,
-    /// <p><i>Deprecated.</i></p>
+    /// <p> <i>Deprecated.</i> </p>
     pub ephemeral_storage: ::std::option::Option<bool>,
     /// <p>The date and time at which the Capacity Reservation expires. When a Capacity Reservation expires, the reserved capacity is released and you can no longer launch instances into it. The Capacity Reservation's state changes to <code>expired</code> when it reaches its end date and time.</p>
     /// <p>You must provide an <code>EndDate</code> value if <code>EndDateType</code> is <code>limited</code>. Omit <code>EndDate</code> if <code>EndDateType</code> is <code>unlimited</code>.</p>
@@ -34,20 +32,16 @@ pub struct CreateCapacityReservationInput {
     pub end_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates the way in which the Capacity Reservation ends. A Capacity Reservation can have one of the following end types:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>unlimited</code> - The Capacity Reservation remains active until you explicitly cancel it. Do not provide an <code>EndDate</code> if the <code>EndDateType</code> is <code>unlimited</code>.</p></li>
-    /// <li>
-    /// <p><code>limited</code> - The Capacity Reservation expires automatically at a specified date and time. You must provide an <code>EndDate</code> value if the <code>EndDateType</code> value is <code>limited</code>.</p></li>
+    /// <li> <p> <code>unlimited</code> - The Capacity Reservation remains active until you explicitly cancel it. Do not provide an <code>EndDate</code> if the <code>EndDateType</code> is <code>unlimited</code>.</p> </li>
+    /// <li> <p> <code>limited</code> - The Capacity Reservation expires automatically at a specified date and time. You must provide an <code>EndDate</code> value if the <code>EndDateType</code> value is <code>limited</code>.</p> </li>
     /// </ul>
     pub end_date_type: ::std::option::Option<crate::types::EndDateType>,
     /// <p>Indicates the type of instance launches that the Capacity Reservation accepts. The options include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>open</code> - The Capacity Reservation automatically matches all instances that have matching attributes (instance type, platform, and Availability Zone). Instances that have matching attributes run in the Capacity Reservation automatically without specifying any additional parameters.</p></li>
-    /// <li>
-    /// <p><code>targeted</code> - The Capacity Reservation only accepts instances that have matching attributes (instance type, platform, and Availability Zone), and explicitly target the Capacity Reservation. This ensures that only permitted instances can use the reserved capacity.</p></li>
+    /// <li> <p> <code>open</code> - The Capacity Reservation automatically matches all instances that have matching attributes (instance type, platform, and Availability Zone). Instances that have matching attributes run in the Capacity Reservation automatically without specifying any additional parameters.</p> </li>
+    /// <li> <p> <code>targeted</code> - The Capacity Reservation only accepts instances that have matching attributes (instance type, platform, and Availability Zone), and explicitly target the Capacity Reservation. This ensures that only permitted instances can use the reserved capacity. </p> </li>
     /// </ul>
-    /// <p>Default: <code>open</code></p>
+    /// <p>Default: <code>open</code> </p>
     pub instance_match_criteria: ::std::option::Option<crate::types::InstanceMatchCriteria>,
     /// <p>The tags to apply to the Capacity Reservation during launch.</p>
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
@@ -81,10 +75,8 @@ impl CreateCapacityReservationInput {
     }
     /// <p>Indicates the tenancy of the Capacity Reservation. A Capacity Reservation can have one of the following tenancy settings:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>default</code> - The Capacity Reservation is created on hardware that is shared with other Amazon Web Services accounts.</p></li>
-    /// <li>
-    /// <p><code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware that is dedicated to a single Amazon Web Services account.</p></li>
+    /// <li> <p> <code>default</code> - The Capacity Reservation is created on hardware that is shared with other Amazon Web Services accounts.</p> </li>
+    /// <li> <p> <code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware that is dedicated to a single Amazon Web Services account.</p> </li>
     /// </ul>
     pub fn tenancy(&self) -> ::std::option::Option<&crate::types::CapacityReservationTenancy> {
         self.tenancy.as_ref()
@@ -98,7 +90,7 @@ impl CreateCapacityReservationInput {
     pub fn ebs_optimized(&self) -> ::std::option::Option<bool> {
         self.ebs_optimized
     }
-    /// <p><i>Deprecated.</i></p>
+    /// <p> <i>Deprecated.</i> </p>
     pub fn ephemeral_storage(&self) -> ::std::option::Option<bool> {
         self.ephemeral_storage
     }
@@ -110,22 +102,18 @@ impl CreateCapacityReservationInput {
     }
     /// <p>Indicates the way in which the Capacity Reservation ends. A Capacity Reservation can have one of the following end types:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>unlimited</code> - The Capacity Reservation remains active until you explicitly cancel it. Do not provide an <code>EndDate</code> if the <code>EndDateType</code> is <code>unlimited</code>.</p></li>
-    /// <li>
-    /// <p><code>limited</code> - The Capacity Reservation expires automatically at a specified date and time. You must provide an <code>EndDate</code> value if the <code>EndDateType</code> value is <code>limited</code>.</p></li>
+    /// <li> <p> <code>unlimited</code> - The Capacity Reservation remains active until you explicitly cancel it. Do not provide an <code>EndDate</code> if the <code>EndDateType</code> is <code>unlimited</code>.</p> </li>
+    /// <li> <p> <code>limited</code> - The Capacity Reservation expires automatically at a specified date and time. You must provide an <code>EndDate</code> value if the <code>EndDateType</code> value is <code>limited</code>.</p> </li>
     /// </ul>
     pub fn end_date_type(&self) -> ::std::option::Option<&crate::types::EndDateType> {
         self.end_date_type.as_ref()
     }
     /// <p>Indicates the type of instance launches that the Capacity Reservation accepts. The options include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>open</code> - The Capacity Reservation automatically matches all instances that have matching attributes (instance type, platform, and Availability Zone). Instances that have matching attributes run in the Capacity Reservation automatically without specifying any additional parameters.</p></li>
-    /// <li>
-    /// <p><code>targeted</code> - The Capacity Reservation only accepts instances that have matching attributes (instance type, platform, and Availability Zone), and explicitly target the Capacity Reservation. This ensures that only permitted instances can use the reserved capacity.</p></li>
+    /// <li> <p> <code>open</code> - The Capacity Reservation automatically matches all instances that have matching attributes (instance type, platform, and Availability Zone). Instances that have matching attributes run in the Capacity Reservation automatically without specifying any additional parameters.</p> </li>
+    /// <li> <p> <code>targeted</code> - The Capacity Reservation only accepts instances that have matching attributes (instance type, platform, and Availability Zone), and explicitly target the Capacity Reservation. This ensures that only permitted instances can use the reserved capacity. </p> </li>
     /// </ul>
-    /// <p>Default: <code>open</code></p>
+    /// <p>Default: <code>open</code> </p>
     pub fn instance_match_criteria(&self) -> ::std::option::Option<&crate::types::InstanceMatchCriteria> {
         self.instance_match_criteria.as_ref()
     }
@@ -251,10 +239,8 @@ impl CreateCapacityReservationInputBuilder {
     }
     /// <p>Indicates the tenancy of the Capacity Reservation. A Capacity Reservation can have one of the following tenancy settings:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>default</code> - The Capacity Reservation is created on hardware that is shared with other Amazon Web Services accounts.</p></li>
-    /// <li>
-    /// <p><code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware that is dedicated to a single Amazon Web Services account.</p></li>
+    /// <li> <p> <code>default</code> - The Capacity Reservation is created on hardware that is shared with other Amazon Web Services accounts.</p> </li>
+    /// <li> <p> <code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware that is dedicated to a single Amazon Web Services account.</p> </li>
     /// </ul>
     pub fn tenancy(mut self, input: crate::types::CapacityReservationTenancy) -> Self {
         self.tenancy = ::std::option::Option::Some(input);
@@ -262,10 +248,8 @@ impl CreateCapacityReservationInputBuilder {
     }
     /// <p>Indicates the tenancy of the Capacity Reservation. A Capacity Reservation can have one of the following tenancy settings:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>default</code> - The Capacity Reservation is created on hardware that is shared with other Amazon Web Services accounts.</p></li>
-    /// <li>
-    /// <p><code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware that is dedicated to a single Amazon Web Services account.</p></li>
+    /// <li> <p> <code>default</code> - The Capacity Reservation is created on hardware that is shared with other Amazon Web Services accounts.</p> </li>
+    /// <li> <p> <code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware that is dedicated to a single Amazon Web Services account.</p> </li>
     /// </ul>
     pub fn set_tenancy(mut self, input: ::std::option::Option<crate::types::CapacityReservationTenancy>) -> Self {
         self.tenancy = input;
@@ -273,10 +257,8 @@ impl CreateCapacityReservationInputBuilder {
     }
     /// <p>Indicates the tenancy of the Capacity Reservation. A Capacity Reservation can have one of the following tenancy settings:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>default</code> - The Capacity Reservation is created on hardware that is shared with other Amazon Web Services accounts.</p></li>
-    /// <li>
-    /// <p><code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware that is dedicated to a single Amazon Web Services account.</p></li>
+    /// <li> <p> <code>default</code> - The Capacity Reservation is created on hardware that is shared with other Amazon Web Services accounts.</p> </li>
+    /// <li> <p> <code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware that is dedicated to a single Amazon Web Services account.</p> </li>
     /// </ul>
     pub fn get_tenancy(&self) -> &::std::option::Option<crate::types::CapacityReservationTenancy> {
         &self.tenancy
@@ -313,17 +295,17 @@ impl CreateCapacityReservationInputBuilder {
     pub fn get_ebs_optimized(&self) -> &::std::option::Option<bool> {
         &self.ebs_optimized
     }
-    /// <p><i>Deprecated.</i></p>
+    /// <p> <i>Deprecated.</i> </p>
     pub fn ephemeral_storage(mut self, input: bool) -> Self {
         self.ephemeral_storage = ::std::option::Option::Some(input);
         self
     }
-    /// <p><i>Deprecated.</i></p>
+    /// <p> <i>Deprecated.</i> </p>
     pub fn set_ephemeral_storage(mut self, input: ::std::option::Option<bool>) -> Self {
         self.ephemeral_storage = input;
         self
     }
-    /// <p><i>Deprecated.</i></p>
+    /// <p> <i>Deprecated.</i> </p>
     pub fn get_ephemeral_storage(&self) -> &::std::option::Option<bool> {
         &self.ephemeral_storage
     }
@@ -349,10 +331,8 @@ impl CreateCapacityReservationInputBuilder {
     }
     /// <p>Indicates the way in which the Capacity Reservation ends. A Capacity Reservation can have one of the following end types:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>unlimited</code> - The Capacity Reservation remains active until you explicitly cancel it. Do not provide an <code>EndDate</code> if the <code>EndDateType</code> is <code>unlimited</code>.</p></li>
-    /// <li>
-    /// <p><code>limited</code> - The Capacity Reservation expires automatically at a specified date and time. You must provide an <code>EndDate</code> value if the <code>EndDateType</code> value is <code>limited</code>.</p></li>
+    /// <li> <p> <code>unlimited</code> - The Capacity Reservation remains active until you explicitly cancel it. Do not provide an <code>EndDate</code> if the <code>EndDateType</code> is <code>unlimited</code>.</p> </li>
+    /// <li> <p> <code>limited</code> - The Capacity Reservation expires automatically at a specified date and time. You must provide an <code>EndDate</code> value if the <code>EndDateType</code> value is <code>limited</code>.</p> </li>
     /// </ul>
     pub fn end_date_type(mut self, input: crate::types::EndDateType) -> Self {
         self.end_date_type = ::std::option::Option::Some(input);
@@ -360,10 +340,8 @@ impl CreateCapacityReservationInputBuilder {
     }
     /// <p>Indicates the way in which the Capacity Reservation ends. A Capacity Reservation can have one of the following end types:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>unlimited</code> - The Capacity Reservation remains active until you explicitly cancel it. Do not provide an <code>EndDate</code> if the <code>EndDateType</code> is <code>unlimited</code>.</p></li>
-    /// <li>
-    /// <p><code>limited</code> - The Capacity Reservation expires automatically at a specified date and time. You must provide an <code>EndDate</code> value if the <code>EndDateType</code> value is <code>limited</code>.</p></li>
+    /// <li> <p> <code>unlimited</code> - The Capacity Reservation remains active until you explicitly cancel it. Do not provide an <code>EndDate</code> if the <code>EndDateType</code> is <code>unlimited</code>.</p> </li>
+    /// <li> <p> <code>limited</code> - The Capacity Reservation expires automatically at a specified date and time. You must provide an <code>EndDate</code> value if the <code>EndDateType</code> value is <code>limited</code>.</p> </li>
     /// </ul>
     pub fn set_end_date_type(mut self, input: ::std::option::Option<crate::types::EndDateType>) -> Self {
         self.end_date_type = input;
@@ -371,46 +349,38 @@ impl CreateCapacityReservationInputBuilder {
     }
     /// <p>Indicates the way in which the Capacity Reservation ends. A Capacity Reservation can have one of the following end types:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>unlimited</code> - The Capacity Reservation remains active until you explicitly cancel it. Do not provide an <code>EndDate</code> if the <code>EndDateType</code> is <code>unlimited</code>.</p></li>
-    /// <li>
-    /// <p><code>limited</code> - The Capacity Reservation expires automatically at a specified date and time. You must provide an <code>EndDate</code> value if the <code>EndDateType</code> value is <code>limited</code>.</p></li>
+    /// <li> <p> <code>unlimited</code> - The Capacity Reservation remains active until you explicitly cancel it. Do not provide an <code>EndDate</code> if the <code>EndDateType</code> is <code>unlimited</code>.</p> </li>
+    /// <li> <p> <code>limited</code> - The Capacity Reservation expires automatically at a specified date and time. You must provide an <code>EndDate</code> value if the <code>EndDateType</code> value is <code>limited</code>.</p> </li>
     /// </ul>
     pub fn get_end_date_type(&self) -> &::std::option::Option<crate::types::EndDateType> {
         &self.end_date_type
     }
     /// <p>Indicates the type of instance launches that the Capacity Reservation accepts. The options include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>open</code> - The Capacity Reservation automatically matches all instances that have matching attributes (instance type, platform, and Availability Zone). Instances that have matching attributes run in the Capacity Reservation automatically without specifying any additional parameters.</p></li>
-    /// <li>
-    /// <p><code>targeted</code> - The Capacity Reservation only accepts instances that have matching attributes (instance type, platform, and Availability Zone), and explicitly target the Capacity Reservation. This ensures that only permitted instances can use the reserved capacity.</p></li>
+    /// <li> <p> <code>open</code> - The Capacity Reservation automatically matches all instances that have matching attributes (instance type, platform, and Availability Zone). Instances that have matching attributes run in the Capacity Reservation automatically without specifying any additional parameters.</p> </li>
+    /// <li> <p> <code>targeted</code> - The Capacity Reservation only accepts instances that have matching attributes (instance type, platform, and Availability Zone), and explicitly target the Capacity Reservation. This ensures that only permitted instances can use the reserved capacity. </p> </li>
     /// </ul>
-    /// <p>Default: <code>open</code></p>
+    /// <p>Default: <code>open</code> </p>
     pub fn instance_match_criteria(mut self, input: crate::types::InstanceMatchCriteria) -> Self {
         self.instance_match_criteria = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates the type of instance launches that the Capacity Reservation accepts. The options include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>open</code> - The Capacity Reservation automatically matches all instances that have matching attributes (instance type, platform, and Availability Zone). Instances that have matching attributes run in the Capacity Reservation automatically without specifying any additional parameters.</p></li>
-    /// <li>
-    /// <p><code>targeted</code> - The Capacity Reservation only accepts instances that have matching attributes (instance type, platform, and Availability Zone), and explicitly target the Capacity Reservation. This ensures that only permitted instances can use the reserved capacity.</p></li>
+    /// <li> <p> <code>open</code> - The Capacity Reservation automatically matches all instances that have matching attributes (instance type, platform, and Availability Zone). Instances that have matching attributes run in the Capacity Reservation automatically without specifying any additional parameters.</p> </li>
+    /// <li> <p> <code>targeted</code> - The Capacity Reservation only accepts instances that have matching attributes (instance type, platform, and Availability Zone), and explicitly target the Capacity Reservation. This ensures that only permitted instances can use the reserved capacity. </p> </li>
     /// </ul>
-    /// <p>Default: <code>open</code></p>
+    /// <p>Default: <code>open</code> </p>
     pub fn set_instance_match_criteria(mut self, input: ::std::option::Option<crate::types::InstanceMatchCriteria>) -> Self {
         self.instance_match_criteria = input;
         self
     }
     /// <p>Indicates the type of instance launches that the Capacity Reservation accepts. The options include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>open</code> - The Capacity Reservation automatically matches all instances that have matching attributes (instance type, platform, and Availability Zone). Instances that have matching attributes run in the Capacity Reservation automatically without specifying any additional parameters.</p></li>
-    /// <li>
-    /// <p><code>targeted</code> - The Capacity Reservation only accepts instances that have matching attributes (instance type, platform, and Availability Zone), and explicitly target the Capacity Reservation. This ensures that only permitted instances can use the reserved capacity.</p></li>
+    /// <li> <p> <code>open</code> - The Capacity Reservation automatically matches all instances that have matching attributes (instance type, platform, and Availability Zone). Instances that have matching attributes run in the Capacity Reservation automatically without specifying any additional parameters.</p> </li>
+    /// <li> <p> <code>targeted</code> - The Capacity Reservation only accepts instances that have matching attributes (instance type, platform, and Availability Zone), and explicitly target the Capacity Reservation. This ensures that only permitted instances can use the reserved capacity. </p> </li>
     /// </ul>
-    /// <p>Default: <code>open</code></p>
+    /// <p>Default: <code>open</code> </p>
     pub fn get_instance_match_criteria(&self) -> &::std::option::Option<crate::types::InstanceMatchCriteria> {
         &self.instance_match_criteria
     }

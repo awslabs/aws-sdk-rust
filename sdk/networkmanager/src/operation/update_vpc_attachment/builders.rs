@@ -158,17 +158,17 @@ impl UpdateVpcAttachmentFluentBuilder {
     pub fn get_remove_subnet_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_remove_subnet_arns()
     }
-    /// <p>Additional options for updating the VPC attachment.</p>
+    /// <p>Additional options for updating the VPC attachment. </p>
     pub fn options(mut self, input: crate::types::VpcOptions) -> Self {
         self.inner = self.inner.options(input);
         self
     }
-    /// <p>Additional options for updating the VPC attachment.</p>
+    /// <p>Additional options for updating the VPC attachment. </p>
     pub fn set_options(mut self, input: ::std::option::Option<crate::types::VpcOptions>) -> Self {
         self.inner = self.inner.set_options(input);
         self
     }
-    /// <p>Additional options for updating the VPC attachment.</p>
+    /// <p>Additional options for updating the VPC attachment. </p>
     pub fn get_options(&self) -> &::std::option::Option<crate::types::VpcOptions> {
         self.inner.get_options()
     }

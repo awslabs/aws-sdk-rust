@@ -122,17 +122,17 @@ impl AssociateBudgetWithResourceFluentBuilder {
     pub fn get_budget_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_budget_name()
     }
-    /// <p>The resource identifier. Either a portfolio-id or a product-id.</p>
+    /// <p> The resource identifier. Either a portfolio-id or a product-id.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_id(input.into());
         self
     }
-    /// <p>The resource identifier. Either a portfolio-id or a product-id.</p>
+    /// <p> The resource identifier. Either a portfolio-id or a product-id.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_id(input);
         self
     }
-    /// <p>The resource identifier. Either a portfolio-id or a product-id.</p>
+    /// <p> The resource identifier. Either a portfolio-id or a product-id.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_id()
     }

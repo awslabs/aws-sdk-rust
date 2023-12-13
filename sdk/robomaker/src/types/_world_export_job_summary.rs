@@ -18,19 +18,19 @@ pub struct WorldExportJobSummary {
     /// Running
     /// </dt>
     /// <dd>
-    /// <p>The world export job is running.</p>
+    /// <p>The world export job is running. </p>
     /// </dd>
     /// <dt>
     /// Completed
     /// </dt>
     /// <dd>
-    /// <p>The world export job completed.</p>
+    /// <p>The world export job completed. </p>
     /// </dd>
     /// <dt>
     /// Failed
     /// </dt>
     /// <dd>
-    /// <p>The world export job failed. See <code>failureCode</code> for more information.</p>
+    /// <p>The world export job failed. See <code>failureCode</code> for more information. </p>
     /// </dd>
     /// <dt>
     /// Canceled
@@ -70,19 +70,19 @@ impl WorldExportJobSummary {
     /// Running
     /// </dt>
     /// <dd>
-    /// <p>The world export job is running.</p>
+    /// <p>The world export job is running. </p>
     /// </dd>
     /// <dt>
     /// Completed
     /// </dt>
     /// <dd>
-    /// <p>The world export job completed.</p>
+    /// <p>The world export job completed. </p>
     /// </dd>
     /// <dt>
     /// Failed
     /// </dt>
     /// <dd>
-    /// <p>The world export job failed. See <code>failureCode</code> for more information.</p>
+    /// <p>The world export job failed. See <code>failureCode</code> for more information. </p>
     /// </dd>
     /// <dt>
     /// Canceled
@@ -159,19 +159,19 @@ impl WorldExportJobSummaryBuilder {
     /// Running
     /// </dt>
     /// <dd>
-    /// <p>The world export job is running.</p>
+    /// <p>The world export job is running. </p>
     /// </dd>
     /// <dt>
     /// Completed
     /// </dt>
     /// <dd>
-    /// <p>The world export job completed.</p>
+    /// <p>The world export job completed. </p>
     /// </dd>
     /// <dt>
     /// Failed
     /// </dt>
     /// <dd>
-    /// <p>The world export job failed. See <code>failureCode</code> for more information.</p>
+    /// <p>The world export job failed. See <code>failureCode</code> for more information. </p>
     /// </dd>
     /// <dt>
     /// Canceled
@@ -202,19 +202,19 @@ impl WorldExportJobSummaryBuilder {
     /// Running
     /// </dt>
     /// <dd>
-    /// <p>The world export job is running.</p>
+    /// <p>The world export job is running. </p>
     /// </dd>
     /// <dt>
     /// Completed
     /// </dt>
     /// <dd>
-    /// <p>The world export job completed.</p>
+    /// <p>The world export job completed. </p>
     /// </dd>
     /// <dt>
     /// Failed
     /// </dt>
     /// <dd>
-    /// <p>The world export job failed. See <code>failureCode</code> for more information.</p>
+    /// <p>The world export job failed. See <code>failureCode</code> for more information. </p>
     /// </dd>
     /// <dt>
     /// Canceled
@@ -245,19 +245,19 @@ impl WorldExportJobSummaryBuilder {
     /// Running
     /// </dt>
     /// <dd>
-    /// <p>The world export job is running.</p>
+    /// <p>The world export job is running. </p>
     /// </dd>
     /// <dt>
     /// Completed
     /// </dt>
     /// <dd>
-    /// <p>The world export job completed.</p>
+    /// <p>The world export job completed. </p>
     /// </dd>
     /// <dt>
     /// Failed
     /// </dt>
     /// <dd>
-    /// <p>The world export job failed. See <code>failureCode</code> for more information.</p>
+    /// <p>The world export job failed. See <code>failureCode</code> for more information. </p>
     /// </dd>
     /// <dt>
     /// Canceled

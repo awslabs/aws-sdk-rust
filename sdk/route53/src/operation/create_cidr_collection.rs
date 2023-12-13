@@ -245,7 +245,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateCidrCol
 pub enum CreateCidrCollectionError {
     /// <p>A CIDR collection with this name and a different caller reference already exists in this account.</p>
     CidrCollectionAlreadyExistsException(crate::types::error::CidrCollectionAlreadyExistsException),
-    /// <p>Another user submitted a request to create, update, or delete the object at the same time that you did. Retry the request.</p>
+    /// <p>Another user submitted a request to create, update, or delete the object at the same time that you did. Retry the request. </p>
     ConcurrentModification(crate::types::error::ConcurrentModification),
     /// <p>The input is not valid.</p>
     InvalidInput(crate::types::error::InvalidInput),

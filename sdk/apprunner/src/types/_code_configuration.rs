@@ -6,10 +6,8 @@
 pub struct CodeConfiguration {
     /// <p>The source of the App Runner configuration. Values are interpreted as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>REPOSITORY</code> – App Runner reads configuration values from the <code>apprunner.yaml</code> file in the source code repository and ignores <code>CodeConfigurationValues</code>.</p></li>
-    /// <li>
-    /// <p><code>API</code> – App Runner uses configuration values provided in <code>CodeConfigurationValues</code> and ignores the <code>apprunner.yaml</code> file in the source code repository.</p></li>
+    /// <li> <p> <code>REPOSITORY</code> – App Runner reads configuration values from the <code>apprunner.yaml</code> file in the source code repository and ignores <code>CodeConfigurationValues</code>.</p> </li>
+    /// <li> <p> <code>API</code> – App Runner uses configuration values provided in <code>CodeConfigurationValues</code> and ignores the <code>apprunner.yaml</code> file in the source code repository.</p> </li>
     /// </ul>
     pub configuration_source: crate::types::ConfigurationSource,
     /// <p>The basic configuration for building and running the App Runner service. Use it to quickly launch an App Runner service without providing a <code>apprunner.yaml</code> file in the source code repository (or ignoring the file if it exists).</p>
@@ -18,10 +16,8 @@ pub struct CodeConfiguration {
 impl CodeConfiguration {
     /// <p>The source of the App Runner configuration. Values are interpreted as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>REPOSITORY</code> – App Runner reads configuration values from the <code>apprunner.yaml</code> file in the source code repository and ignores <code>CodeConfigurationValues</code>.</p></li>
-    /// <li>
-    /// <p><code>API</code> – App Runner uses configuration values provided in <code>CodeConfigurationValues</code> and ignores the <code>apprunner.yaml</code> file in the source code repository.</p></li>
+    /// <li> <p> <code>REPOSITORY</code> – App Runner reads configuration values from the <code>apprunner.yaml</code> file in the source code repository and ignores <code>CodeConfigurationValues</code>.</p> </li>
+    /// <li> <p> <code>API</code> – App Runner uses configuration values provided in <code>CodeConfigurationValues</code> and ignores the <code>apprunner.yaml</code> file in the source code repository.</p> </li>
     /// </ul>
     pub fn configuration_source(&self) -> &crate::types::ConfigurationSource {
         &self.configuration_source
@@ -48,10 +44,8 @@ pub struct CodeConfigurationBuilder {
 impl CodeConfigurationBuilder {
     /// <p>The source of the App Runner configuration. Values are interpreted as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>REPOSITORY</code> – App Runner reads configuration values from the <code>apprunner.yaml</code> file in the source code repository and ignores <code>CodeConfigurationValues</code>.</p></li>
-    /// <li>
-    /// <p><code>API</code> – App Runner uses configuration values provided in <code>CodeConfigurationValues</code> and ignores the <code>apprunner.yaml</code> file in the source code repository.</p></li>
+    /// <li> <p> <code>REPOSITORY</code> – App Runner reads configuration values from the <code>apprunner.yaml</code> file in the source code repository and ignores <code>CodeConfigurationValues</code>.</p> </li>
+    /// <li> <p> <code>API</code> – App Runner uses configuration values provided in <code>CodeConfigurationValues</code> and ignores the <code>apprunner.yaml</code> file in the source code repository.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn configuration_source(mut self, input: crate::types::ConfigurationSource) -> Self {
@@ -60,10 +54,8 @@ impl CodeConfigurationBuilder {
     }
     /// <p>The source of the App Runner configuration. Values are interpreted as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>REPOSITORY</code> – App Runner reads configuration values from the <code>apprunner.yaml</code> file in the source code repository and ignores <code>CodeConfigurationValues</code>.</p></li>
-    /// <li>
-    /// <p><code>API</code> – App Runner uses configuration values provided in <code>CodeConfigurationValues</code> and ignores the <code>apprunner.yaml</code> file in the source code repository.</p></li>
+    /// <li> <p> <code>REPOSITORY</code> – App Runner reads configuration values from the <code>apprunner.yaml</code> file in the source code repository and ignores <code>CodeConfigurationValues</code>.</p> </li>
+    /// <li> <p> <code>API</code> – App Runner uses configuration values provided in <code>CodeConfigurationValues</code> and ignores the <code>apprunner.yaml</code> file in the source code repository.</p> </li>
     /// </ul>
     pub fn set_configuration_source(mut self, input: ::std::option::Option<crate::types::ConfigurationSource>) -> Self {
         self.configuration_source = input;
@@ -71,10 +63,8 @@ impl CodeConfigurationBuilder {
     }
     /// <p>The source of the App Runner configuration. Values are interpreted as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>REPOSITORY</code> – App Runner reads configuration values from the <code>apprunner.yaml</code> file in the source code repository and ignores <code>CodeConfigurationValues</code>.</p></li>
-    /// <li>
-    /// <p><code>API</code> – App Runner uses configuration values provided in <code>CodeConfigurationValues</code> and ignores the <code>apprunner.yaml</code> file in the source code repository.</p></li>
+    /// <li> <p> <code>REPOSITORY</code> – App Runner reads configuration values from the <code>apprunner.yaml</code> file in the source code repository and ignores <code>CodeConfigurationValues</code>.</p> </li>
+    /// <li> <p> <code>API</code> – App Runner uses configuration values provided in <code>CodeConfigurationValues</code> and ignores the <code>apprunner.yaml</code> file in the source code repository.</p> </li>
     /// </ul>
     pub fn get_configuration_source(&self) -> &::std::option::Option<crate::types::ConfigurationSource> {
         &self.configuration_source

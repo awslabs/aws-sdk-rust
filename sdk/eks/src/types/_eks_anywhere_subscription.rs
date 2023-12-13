@@ -18,7 +18,7 @@ pub struct EksAnywhereSubscription {
     pub license_quantity: i32,
     /// <p>The type of licenses included in the subscription. Valid value is CLUSTER. With the CLUSTER license type, each license covers support for a single EKS Anywhere cluster.</p>
     pub license_type: ::std::option::Option<crate::types::EksAnywhereSubscriptionLicenseType>,
-    /// <p>An EksAnywhereSubscriptionTerm object.</p>
+    /// <p>An EksAnywhereSubscriptionTerm object. </p>
     pub term: ::std::option::Option<crate::types::EksAnywhereSubscriptionTerm>,
     /// <p>The status of a subscription.</p>
     pub status: ::std::option::Option<::std::string::String>,
@@ -58,7 +58,7 @@ impl EksAnywhereSubscription {
     pub fn license_type(&self) -> ::std::option::Option<&crate::types::EksAnywhereSubscriptionLicenseType> {
         self.license_type.as_ref()
     }
-    /// <p>An EksAnywhereSubscriptionTerm object.</p>
+    /// <p>An EksAnywhereSubscriptionTerm object. </p>
     pub fn term(&self) -> ::std::option::Option<&crate::types::EksAnywhereSubscriptionTerm> {
         self.term.as_ref()
     }
@@ -204,17 +204,17 @@ impl EksAnywhereSubscriptionBuilder {
     pub fn get_license_type(&self) -> &::std::option::Option<crate::types::EksAnywhereSubscriptionLicenseType> {
         &self.license_type
     }
-    /// <p>An EksAnywhereSubscriptionTerm object.</p>
+    /// <p>An EksAnywhereSubscriptionTerm object. </p>
     pub fn term(mut self, input: crate::types::EksAnywhereSubscriptionTerm) -> Self {
         self.term = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An EksAnywhereSubscriptionTerm object.</p>
+    /// <p>An EksAnywhereSubscriptionTerm object. </p>
     pub fn set_term(mut self, input: ::std::option::Option<crate::types::EksAnywhereSubscriptionTerm>) -> Self {
         self.term = input;
         self
     }
-    /// <p>An EksAnywhereSubscriptionTerm object.</p>
+    /// <p>An EksAnywhereSubscriptionTerm object. </p>
     pub fn get_term(&self) -> &::std::option::Option<crate::types::EksAnywhereSubscriptionTerm> {
         &self.term
     }

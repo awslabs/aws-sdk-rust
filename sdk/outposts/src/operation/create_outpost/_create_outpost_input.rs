@@ -7,7 +7,7 @@ pub struct CreateOutpostInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the Outpost.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The ID or the Amazon Resource Name (ARN) of the site.</p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
     pub site_id: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zone.</p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ pub struct CreateOutpostInput {
     pub availability_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags to apply to the Outpost.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>The type of hardware for this Outpost.</p>
+    /// <p> The type of hardware for this Outpost. </p>
     pub supported_hardware_type: ::std::option::Option<crate::types::SupportedHardwareType>,
 }
 impl CreateOutpostInput {
@@ -27,7 +27,7 @@ impl CreateOutpostInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The ID or the Amazon Resource Name (ARN) of the site.</p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
     pub fn site_id(&self) -> ::std::option::Option<&str> {
         self.site_id.as_deref()
     }
@@ -43,7 +43,7 @@ impl CreateOutpostInput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
-    /// <p>The type of hardware for this Outpost.</p>
+    /// <p> The type of hardware for this Outpost. </p>
     pub fn supported_hardware_type(&self) -> ::std::option::Option<&crate::types::SupportedHardwareType> {
         self.supported_hardware_type.as_ref()
     }
@@ -97,18 +97,18 @@ impl CreateOutpostInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The ID or the Amazon Resource Name (ARN) of the site.</p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
     /// This field is required.
     pub fn site_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.site_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID or the Amazon Resource Name (ARN) of the site.</p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
     pub fn set_site_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.site_id = input;
         self
     }
-    /// <p>The ID or the Amazon Resource Name (ARN) of the site.</p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
     pub fn get_site_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.site_id
     }
@@ -160,17 +160,17 @@ impl CreateOutpostInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
-    /// <p>The type of hardware for this Outpost.</p>
+    /// <p> The type of hardware for this Outpost. </p>
     pub fn supported_hardware_type(mut self, input: crate::types::SupportedHardwareType) -> Self {
         self.supported_hardware_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of hardware for this Outpost.</p>
+    /// <p> The type of hardware for this Outpost. </p>
     pub fn set_supported_hardware_type(mut self, input: ::std::option::Option<crate::types::SupportedHardwareType>) -> Self {
         self.supported_hardware_type = input;
         self
     }
-    /// <p>The type of hardware for this Outpost.</p>
+    /// <p> The type of hardware for this Outpost. </p>
     pub fn get_supported_hardware_type(&self) -> &::std::option::Option<crate::types::SupportedHardwareType> {
         &self.supported_hardware_type
     }

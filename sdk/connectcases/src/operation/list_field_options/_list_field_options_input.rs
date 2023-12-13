@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFieldOptionsInput {
-    /// <p>The unique identifier of the Cases domain.</p>
+    /// <p>The unique identifier of the Cases domain. </p>
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of a field.</p>
     pub field_id: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ pub struct ListFieldOptionsInput {
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ListFieldOptionsInput {
-    /// <p>The unique identifier of the Cases domain.</p>
+    /// <p>The unique identifier of the Cases domain. </p>
     pub fn domain_id(&self) -> ::std::option::Option<&str> {
         self.domain_id.as_deref()
     }
@@ -56,18 +56,18 @@ pub struct ListFieldOptionsInputBuilder {
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ListFieldOptionsInputBuilder {
-    /// <p>The unique identifier of the Cases domain.</p>
+    /// <p>The unique identifier of the Cases domain. </p>
     /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the Cases domain.</p>
+    /// <p>The unique identifier of the Cases domain. </p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_id = input;
         self
     }
-    /// <p>The unique identifier of the Cases domain.</p>
+    /// <p>The unique identifier of the Cases domain. </p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_id
     }

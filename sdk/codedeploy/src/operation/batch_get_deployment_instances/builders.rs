@@ -23,9 +23,9 @@ impl BatchGetDeploymentInstancesInputBuilder {
 /// Fluent builder constructing a request to `BatchGetDeploymentInstances`.
 ///
 /// <note>
-/// <p>This method works, but is deprecated. Use <code>BatchGetDeploymentTargets</code> instead.</p>
+/// <p> This method works, but is deprecated. Use <code>BatchGetDeploymentTargets</code> instead. </p>
 /// </note>
-/// <p>Returns an array of one or more instances associated with a deployment. This method works with EC2/On-premises and Lambda compute platforms. The newer <code>BatchGetDeploymentTargets</code> works with all compute platforms. The maximum number of instances that can be returned is 25.</p>
+/// <p> Returns an array of one or more instances associated with a deployment. This method works with EC2/On-premises and Lambda compute platforms. The newer <code>BatchGetDeploymentTargets</code> works with all compute platforms. The maximum number of instances that can be returned is 25.</p>
 #[deprecated(note = "This operation is deprecated, use BatchGetDeploymentTargets instead.")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchGetDeploymentInstancesFluentBuilder {
@@ -112,17 +112,17 @@ impl BatchGetDeploymentInstancesFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique ID of a deployment.</p>
+    /// <p> The unique ID of a deployment. </p>
     pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.deployment_id(input.into());
         self
     }
-    /// <p>The unique ID of a deployment.</p>
+    /// <p> The unique ID of a deployment. </p>
     pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_deployment_id(input);
         self
     }
-    /// <p>The unique ID of a deployment.</p>
+    /// <p> The unique ID of a deployment. </p>
     pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_deployment_id()
     }

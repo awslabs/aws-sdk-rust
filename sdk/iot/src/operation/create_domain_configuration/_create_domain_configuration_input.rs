@@ -13,11 +13,11 @@ pub struct CreateDomainConfigurationInput {
     pub validation_certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>An object that specifies the authorization service for a domain.</p>
     pub authorizer_config: ::std::option::Option<crate::types::AuthorizerConfig>,
-    /// <p>The type of service delivered by the endpoint.</p><note>
+    /// <p>The type of service delivered by the endpoint.</p> <note>
     /// <p>Amazon Web Services IoT Core currently supports only the <code>DATA</code> service type.</p>
     /// </note>
     pub service_type: ::std::option::Option<crate::types::ServiceType>,
-    /// <p>Metadata which can be used to manage the domain configuration.</p><note>
+    /// <p>Metadata which can be used to manage the domain configuration.</p> <note>
     /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
     /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
@@ -49,13 +49,13 @@ impl CreateDomainConfigurationInput {
     pub fn authorizer_config(&self) -> ::std::option::Option<&crate::types::AuthorizerConfig> {
         self.authorizer_config.as_ref()
     }
-    /// <p>The type of service delivered by the endpoint.</p><note>
+    /// <p>The type of service delivered by the endpoint.</p> <note>
     /// <p>Amazon Web Services IoT Core currently supports only the <code>DATA</code> service type.</p>
     /// </note>
     pub fn service_type(&self) -> ::std::option::Option<&crate::types::ServiceType> {
         self.service_type.as_ref()
     }
-    /// <p>Metadata which can be used to manage the domain configuration.</p><note>
+    /// <p>Metadata which can be used to manage the domain configuration.</p> <note>
     /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
     /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
@@ -168,21 +168,21 @@ impl CreateDomainConfigurationInputBuilder {
     pub fn get_authorizer_config(&self) -> &::std::option::Option<crate::types::AuthorizerConfig> {
         &self.authorizer_config
     }
-    /// <p>The type of service delivered by the endpoint.</p><note>
+    /// <p>The type of service delivered by the endpoint.</p> <note>
     /// <p>Amazon Web Services IoT Core currently supports only the <code>DATA</code> service type.</p>
     /// </note>
     pub fn service_type(mut self, input: crate::types::ServiceType) -> Self {
         self.service_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of service delivered by the endpoint.</p><note>
+    /// <p>The type of service delivered by the endpoint.</p> <note>
     /// <p>Amazon Web Services IoT Core currently supports only the <code>DATA</code> service type.</p>
     /// </note>
     pub fn set_service_type(mut self, input: ::std::option::Option<crate::types::ServiceType>) -> Self {
         self.service_type = input;
         self
     }
-    /// <p>The type of service delivered by the endpoint.</p><note>
+    /// <p>The type of service delivered by the endpoint.</p> <note>
     /// <p>Amazon Web Services IoT Core currently supports only the <code>DATA</code> service type.</p>
     /// </note>
     pub fn get_service_type(&self) -> &::std::option::Option<crate::types::ServiceType> {
@@ -192,7 +192,7 @@ impl CreateDomainConfigurationInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>Metadata which can be used to manage the domain configuration.</p><note>
+    /// <p>Metadata which can be used to manage the domain configuration.</p> <note>
     /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
     /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
@@ -203,7 +203,7 @@ impl CreateDomainConfigurationInputBuilder {
         self.tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Metadata which can be used to manage the domain configuration.</p><note>
+    /// <p>Metadata which can be used to manage the domain configuration.</p> <note>
     /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
     /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
@@ -212,7 +212,7 @@ impl CreateDomainConfigurationInputBuilder {
         self.tags = input;
         self
     }
-    /// <p>Metadata which can be used to manage the domain configuration.</p><note>
+    /// <p>Metadata which can be used to manage the domain configuration.</p> <note>
     /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
     /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>

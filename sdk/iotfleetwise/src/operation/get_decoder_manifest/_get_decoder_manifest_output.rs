@@ -3,52 +3,52 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDecoderManifestOutput {
-    /// <p>The name of the decoder manifest.</p>
+    /// <p> The name of the decoder manifest. </p>
     pub name: ::std::string::String,
-    /// <p>The Amazon Resource Name (ARN) of the decoder manifest.</p>
+    /// <p> The Amazon Resource Name (ARN) of the decoder manifest. </p>
     pub arn: ::std::string::String,
-    /// <p>A brief description of the decoder manifest.</p>
+    /// <p> A brief description of the decoder manifest.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The ARN of a vehicle model (model manifest) associated with the decoder manifest.</p>
+    /// <p> The ARN of a vehicle model (model manifest) associated with the decoder manifest.</p>
     pub model_manifest_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The state of the decoder manifest. If the status is <code>ACTIVE</code>, the decoder manifest can't be edited. If the status is marked <code>DRAFT</code>, you can edit the decoder manifest.</p>
+    /// <p> The state of the decoder manifest. If the status is <code>ACTIVE</code>, the decoder manifest can't be edited. If the status is marked <code>DRAFT</code>, you can edit the decoder manifest.</p>
     pub status: ::std::option::Option<crate::types::ManifestStatus>,
-    /// <p>The time the decoder manifest was created in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
+    /// <p> The time the decoder manifest was created in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
     pub creation_time: ::aws_smithy_types::DateTime,
-    /// <p>The time the decoder manifest was last updated in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
+    /// <p> The time the decoder manifest was last updated in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
     pub last_modification_time: ::aws_smithy_types::DateTime,
     /// <p>The detailed message for the decoder manifest. When a decoder manifest is in an <code>INVALID</code> status, the message contains detailed reason and help information.</p>
     pub message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetDecoderManifestOutput {
-    /// <p>The name of the decoder manifest.</p>
+    /// <p> The name of the decoder manifest. </p>
     pub fn name(&self) -> &str {
         use std::ops::Deref;
         self.name.deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the decoder manifest.</p>
+    /// <p> The Amazon Resource Name (ARN) of the decoder manifest. </p>
     pub fn arn(&self) -> &str {
         use std::ops::Deref;
         self.arn.deref()
     }
-    /// <p>A brief description of the decoder manifest.</p>
+    /// <p> A brief description of the decoder manifest.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The ARN of a vehicle model (model manifest) associated with the decoder manifest.</p>
+    /// <p> The ARN of a vehicle model (model manifest) associated with the decoder manifest.</p>
     pub fn model_manifest_arn(&self) -> ::std::option::Option<&str> {
         self.model_manifest_arn.as_deref()
     }
-    /// <p>The state of the decoder manifest. If the status is <code>ACTIVE</code>, the decoder manifest can't be edited. If the status is marked <code>DRAFT</code>, you can edit the decoder manifest.</p>
+    /// <p> The state of the decoder manifest. If the status is <code>ACTIVE</code>, the decoder manifest can't be edited. If the status is marked <code>DRAFT</code>, you can edit the decoder manifest.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ManifestStatus> {
         self.status.as_ref()
     }
-    /// <p>The time the decoder manifest was created in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
+    /// <p> The time the decoder manifest was created in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
     pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
         &self.creation_time
     }
-    /// <p>The time the decoder manifest was last updated in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
+    /// <p> The time the decoder manifest was last updated in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
     pub fn last_modification_time(&self) -> &::aws_smithy_types::DateTime {
         &self.last_modification_time
     }
@@ -84,105 +84,105 @@ pub struct GetDecoderManifestOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetDecoderManifestOutputBuilder {
-    /// <p>The name of the decoder manifest.</p>
+    /// <p> The name of the decoder manifest. </p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the decoder manifest.</p>
+    /// <p> The name of the decoder manifest. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the decoder manifest.</p>
+    /// <p> The name of the decoder manifest. </p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The Amazon Resource Name (ARN) of the decoder manifest.</p>
+    /// <p> The Amazon Resource Name (ARN) of the decoder manifest. </p>
     /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the decoder manifest.</p>
+    /// <p> The Amazon Resource Name (ARN) of the decoder manifest. </p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the decoder manifest.</p>
+    /// <p> The Amazon Resource Name (ARN) of the decoder manifest. </p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>A brief description of the decoder manifest.</p>
+    /// <p> A brief description of the decoder manifest.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A brief description of the decoder manifest.</p>
+    /// <p> A brief description of the decoder manifest.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>A brief description of the decoder manifest.</p>
+    /// <p> A brief description of the decoder manifest.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The ARN of a vehicle model (model manifest) associated with the decoder manifest.</p>
+    /// <p> The ARN of a vehicle model (model manifest) associated with the decoder manifest.</p>
     pub fn model_manifest_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_manifest_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of a vehicle model (model manifest) associated with the decoder manifest.</p>
+    /// <p> The ARN of a vehicle model (model manifest) associated with the decoder manifest.</p>
     pub fn set_model_manifest_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_manifest_arn = input;
         self
     }
-    /// <p>The ARN of a vehicle model (model manifest) associated with the decoder manifest.</p>
+    /// <p> The ARN of a vehicle model (model manifest) associated with the decoder manifest.</p>
     pub fn get_model_manifest_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_manifest_arn
     }
-    /// <p>The state of the decoder manifest. If the status is <code>ACTIVE</code>, the decoder manifest can't be edited. If the status is marked <code>DRAFT</code>, you can edit the decoder manifest.</p>
+    /// <p> The state of the decoder manifest. If the status is <code>ACTIVE</code>, the decoder manifest can't be edited. If the status is marked <code>DRAFT</code>, you can edit the decoder manifest.</p>
     pub fn status(mut self, input: crate::types::ManifestStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The state of the decoder manifest. If the status is <code>ACTIVE</code>, the decoder manifest can't be edited. If the status is marked <code>DRAFT</code>, you can edit the decoder manifest.</p>
+    /// <p> The state of the decoder manifest. If the status is <code>ACTIVE</code>, the decoder manifest can't be edited. If the status is marked <code>DRAFT</code>, you can edit the decoder manifest.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ManifestStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The state of the decoder manifest. If the status is <code>ACTIVE</code>, the decoder manifest can't be edited. If the status is marked <code>DRAFT</code>, you can edit the decoder manifest.</p>
+    /// <p> The state of the decoder manifest. If the status is <code>ACTIVE</code>, the decoder manifest can't be edited. If the status is marked <code>DRAFT</code>, you can edit the decoder manifest.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ManifestStatus> {
         &self.status
     }
-    /// <p>The time the decoder manifest was created in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
+    /// <p> The time the decoder manifest was created in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
     /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time the decoder manifest was created in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
+    /// <p> The time the decoder manifest was created in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
-    /// <p>The time the decoder manifest was created in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
+    /// <p> The time the decoder manifest was created in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }
-    /// <p>The time the decoder manifest was last updated in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
+    /// <p> The time the decoder manifest was last updated in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
     /// This field is required.
     pub fn last_modification_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modification_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time the decoder manifest was last updated in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
+    /// <p> The time the decoder manifest was last updated in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
     pub fn set_last_modification_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modification_time = input;
         self
     }
-    /// <p>The time the decoder manifest was last updated in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
+    /// <p> The time the decoder manifest was last updated in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
     pub fn get_last_modification_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modification_time
     }

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeImagePermissionsInput {
-    /// <p>The name of the private image for which to describe permissions. The image must be one that you own.</p>
+    /// <p>The name of the private image for which to describe permissions. The image must be one that you own. </p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The maximum size of each page of results.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -13,7 +13,7 @@ pub struct DescribeImagePermissionsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeImagePermissionsInput {
-    /// <p>The name of the private image for which to describe permissions. The image must be one that you own.</p>
+    /// <p>The name of the private image for which to describe permissions. The image must be one that you own. </p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -49,18 +49,18 @@ pub struct DescribeImagePermissionsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeImagePermissionsInputBuilder {
-    /// <p>The name of the private image for which to describe permissions. The image must be one that you own.</p>
+    /// <p>The name of the private image for which to describe permissions. The image must be one that you own. </p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the private image for which to describe permissions. The image must be one that you own.</p>
+    /// <p>The name of the private image for which to describe permissions. The image must be one that you own. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the private image for which to describe permissions. The image must be one that you own.</p>
+    /// <p>The name of the private image for which to describe permissions. The image must be one that you own. </p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

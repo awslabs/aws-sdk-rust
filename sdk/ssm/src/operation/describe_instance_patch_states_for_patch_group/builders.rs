@@ -146,12 +146,9 @@ impl DescribeInstancePatchStatesForPatchGroupFluentBuilder {
     ///
     /// <p>Each entry in the array is a structure containing:</p>
     /// <ul>
-    /// <li>
-    /// <p>Key (string between 1 and 200 characters)</p></li>
-    /// <li>
-    /// <p>Values (array containing a single string)</p></li>
-    /// <li>
-    /// <p>Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")</p></li>
+    /// <li> <p>Key (string between 1 and 200 characters)</p> </li>
+    /// <li> <p>Values (array containing a single string)</p> </li>
+    /// <li> <p>Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")</p> </li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::InstancePatchStateFilter) -> Self {
         self.inner = self.inner.filters(input);
@@ -159,12 +156,9 @@ impl DescribeInstancePatchStatesForPatchGroupFluentBuilder {
     }
     /// <p>Each entry in the array is a structure containing:</p>
     /// <ul>
-    /// <li>
-    /// <p>Key (string between 1 and 200 characters)</p></li>
-    /// <li>
-    /// <p>Values (array containing a single string)</p></li>
-    /// <li>
-    /// <p>Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")</p></li>
+    /// <li> <p>Key (string between 1 and 200 characters)</p> </li>
+    /// <li> <p>Values (array containing a single string)</p> </li>
+    /// <li> <p>Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")</p> </li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstancePatchStateFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
@@ -172,12 +166,9 @@ impl DescribeInstancePatchStatesForPatchGroupFluentBuilder {
     }
     /// <p>Each entry in the array is a structure containing:</p>
     /// <ul>
-    /// <li>
-    /// <p>Key (string between 1 and 200 characters)</p></li>
-    /// <li>
-    /// <p>Values (array containing a single string)</p></li>
-    /// <li>
-    /// <p>Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")</p></li>
+    /// <li> <p>Key (string between 1 and 200 characters)</p> </li>
+    /// <li> <p>Values (array containing a single string)</p> </li>
+    /// <li> <p>Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")</p> </li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstancePatchStateFilter>> {
         self.inner.get_filters()

@@ -5,7 +5,7 @@
 pub struct ListExportsInput {
     /// <p>The unique identifier that Amazon Lex assigned to the bot.</p>
     pub bot_id: ::std::option::Option<::std::string::String>,
-    /// <p>The version of the bot to list exports for.</p>
+    /// <p>The version of the bot to list exports for. </p>
     pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>Determines the field that the list of exports is sorted by. You can sort by the <code>LastUpdatedDateTime</code> field in ascending or descending order.</p>
     pub sort_by: ::std::option::Option<crate::types::ExportSortBy>,
@@ -13,7 +13,7 @@ pub struct ListExportsInput {
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::ExportFilter>>,
     /// <p>The maximum number of exports to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>If the response from the <code>ListExports</code> operation contains more results that specified in the <code>maxResults</code> parameter, a token is returned in the response.</p>
+    /// <p>If the response from the <code>ListExports</code> operation contains more results that specified in the <code>maxResults</code> parameter, a token is returned in the response. </p>
     /// <p>Use the returned token in the <code>nextToken</code> parameter of a <code>ListExports</code> request to return the next page of results. For a complete set of results, call the <code>ListExports</code> operation until the <code>nextToken</code> returned in the response is null.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the resources that should be exported. If you don't specify a resource type in the <code>filters</code> parameter, both bot locales and custom vocabularies are exported.</p>
@@ -24,7 +24,7 @@ impl ListExportsInput {
     pub fn bot_id(&self) -> ::std::option::Option<&str> {
         self.bot_id.as_deref()
     }
-    /// <p>The version of the bot to list exports for.</p>
+    /// <p>The version of the bot to list exports for. </p>
     pub fn bot_version(&self) -> ::std::option::Option<&str> {
         self.bot_version.as_deref()
     }
@@ -42,7 +42,7 @@ impl ListExportsInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>If the response from the <code>ListExports</code> operation contains more results that specified in the <code>maxResults</code> parameter, a token is returned in the response.</p>
+    /// <p>If the response from the <code>ListExports</code> operation contains more results that specified in the <code>maxResults</code> parameter, a token is returned in the response. </p>
     /// <p>Use the returned token in the <code>nextToken</code> parameter of a <code>ListExports</code> request to return the next page of results. For a complete set of results, call the <code>ListExports</code> operation until the <code>nextToken</code> returned in the response is null.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
@@ -86,17 +86,17 @@ impl ListExportsInputBuilder {
     pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.bot_id
     }
-    /// <p>The version of the bot to list exports for.</p>
+    /// <p>The version of the bot to list exports for. </p>
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The version of the bot to list exports for.</p>
+    /// <p>The version of the bot to list exports for. </p>
     pub fn set_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_version = input;
         self
     }
-    /// <p>The version of the bot to list exports for.</p>
+    /// <p>The version of the bot to list exports for. </p>
     pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.bot_version
     }
@@ -148,19 +148,19 @@ impl ListExportsInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p>If the response from the <code>ListExports</code> operation contains more results that specified in the <code>maxResults</code> parameter, a token is returned in the response.</p>
+    /// <p>If the response from the <code>ListExports</code> operation contains more results that specified in the <code>maxResults</code> parameter, a token is returned in the response. </p>
     /// <p>Use the returned token in the <code>nextToken</code> parameter of a <code>ListExports</code> request to return the next page of results. For a complete set of results, call the <code>ListExports</code> operation until the <code>nextToken</code> returned in the response is null.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If the response from the <code>ListExports</code> operation contains more results that specified in the <code>maxResults</code> parameter, a token is returned in the response.</p>
+    /// <p>If the response from the <code>ListExports</code> operation contains more results that specified in the <code>maxResults</code> parameter, a token is returned in the response. </p>
     /// <p>Use the returned token in the <code>nextToken</code> parameter of a <code>ListExports</code> request to return the next page of results. For a complete set of results, call the <code>ListExports</code> operation until the <code>nextToken</code> returned in the response is null.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>If the response from the <code>ListExports</code> operation contains more results that specified in the <code>maxResults</code> parameter, a token is returned in the response.</p>
+    /// <p>If the response from the <code>ListExports</code> operation contains more results that specified in the <code>maxResults</code> parameter, a token is returned in the response. </p>
     /// <p>Use the returned token in the <code>nextToken</code> parameter of a <code>ListExports</code> request to return the next page of results. For a complete set of results, call the <code>ListExports</code> operation until the <code>nextToken</code> returned in the response is null.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token

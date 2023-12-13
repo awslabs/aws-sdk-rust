@@ -172,22 +172,22 @@ impl CreateMembershipFluentBuilder {
         self.inner.get_default_result_configuration()
     }
     /// <p>The payment responsibilities accepted by the collaboration member.</p>
-    /// <p>Not required if the collaboration member has the member ability to run queries.</p>
-    /// <p>Required if the collaboration member doesn't have the member ability to run queries but is configured as a payer by the collaboration creator.</p>
+    /// <p>Not required if the collaboration member has the member ability to run queries. </p>
+    /// <p>Required if the collaboration member doesn't have the member ability to run queries but is configured as a payer by the collaboration creator. </p>
     pub fn payment_configuration(mut self, input: crate::types::MembershipPaymentConfiguration) -> Self {
         self.inner = self.inner.payment_configuration(input);
         self
     }
     /// <p>The payment responsibilities accepted by the collaboration member.</p>
-    /// <p>Not required if the collaboration member has the member ability to run queries.</p>
-    /// <p>Required if the collaboration member doesn't have the member ability to run queries but is configured as a payer by the collaboration creator.</p>
+    /// <p>Not required if the collaboration member has the member ability to run queries. </p>
+    /// <p>Required if the collaboration member doesn't have the member ability to run queries but is configured as a payer by the collaboration creator. </p>
     pub fn set_payment_configuration(mut self, input: ::std::option::Option<crate::types::MembershipPaymentConfiguration>) -> Self {
         self.inner = self.inner.set_payment_configuration(input);
         self
     }
     /// <p>The payment responsibilities accepted by the collaboration member.</p>
-    /// <p>Not required if the collaboration member has the member ability to run queries.</p>
-    /// <p>Required if the collaboration member doesn't have the member ability to run queries but is configured as a payer by the collaboration creator.</p>
+    /// <p>Not required if the collaboration member has the member ability to run queries. </p>
+    /// <p>Required if the collaboration member doesn't have the member ability to run queries but is configured as a payer by the collaboration creator. </p>
     pub fn get_payment_configuration(&self) -> &::std::option::Option<crate::types::MembershipPaymentConfiguration> {
         self.inner.get_payment_configuration()
     }

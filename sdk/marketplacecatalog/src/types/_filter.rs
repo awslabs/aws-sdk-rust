@@ -7,23 +7,16 @@ pub struct Filter {
     /// <p>For <code>ListEntities</code>, the supported value for this is an <code>EntityId</code>.</p>
     /// <p>For <code>ListChangeSets</code>, the supported values are as follows:</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p><code>ListEntities</code> - This is a list of unique <code>EntityId</code>s.</p>
-    /// <p><code>ListChangeSets</code> - The supported filter names and associated <code>ValueList</code>s is as follows:</p>
+    /// <p> <code>ListEntities</code> - This is a list of unique <code>EntityId</code>s.</p>
+    /// <p> <code>ListChangeSets</code> - The supported filter names and associated <code>ValueList</code>s is as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ChangeSetName</code> - The supported <code>ValueList</code> is a list of non-unique <code>ChangeSetName</code>s. These are defined when you call the <code>StartChangeSet</code> action.</p></li>
-    /// <li>
-    /// <p><code>Status</code> - The supported <code>ValueList</code> is a list of statuses for all change set requests.</p></li>
-    /// <li>
-    /// <p><code>EntityId</code> - The supported <code>ValueList</code> is a list of unique <code>EntityId</code>s.</p></li>
-    /// <li>
-    /// <p><code>BeforeStartTime</code> - The supported <code>ValueList</code> is a list of all change sets that started before the filter value.</p></li>
-    /// <li>
-    /// <p><code>AfterStartTime</code> - The supported <code>ValueList</code> is a list of all change sets that started after the filter value.</p></li>
-    /// <li>
-    /// <p><code>BeforeEndTime</code> - The supported <code>ValueList</code> is a list of all change sets that ended before the filter value.</p></li>
-    /// <li>
-    /// <p><code>AfterEndTime</code> - The supported <code>ValueList</code> is a list of all change sets that ended after the filter value.</p></li>
+    /// <li> <p> <code>ChangeSetName</code> - The supported <code>ValueList</code> is a list of non-unique <code>ChangeSetName</code>s. These are defined when you call the <code>StartChangeSet</code> action.</p> </li>
+    /// <li> <p> <code>Status</code> - The supported <code>ValueList</code> is a list of statuses for all change set requests.</p> </li>
+    /// <li> <p> <code>EntityId</code> - The supported <code>ValueList</code> is a list of unique <code>EntityId</code>s.</p> </li>
+    /// <li> <p> <code>BeforeStartTime</code> - The supported <code>ValueList</code> is a list of all change sets that started before the filter value.</p> </li>
+    /// <li> <p> <code>AfterStartTime</code> - The supported <code>ValueList</code> is a list of all change sets that started after the filter value.</p> </li>
+    /// <li> <p> <code>BeforeEndTime</code> - The supported <code>ValueList</code> is a list of all change sets that ended before the filter value.</p> </li>
+    /// <li> <p> <code>AfterEndTime</code> - The supported <code>ValueList</code> is a list of all change sets that ended after the filter value.</p> </li>
     /// </ul>
     pub value_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -33,23 +26,16 @@ impl Filter {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p><code>ListEntities</code> - This is a list of unique <code>EntityId</code>s.</p>
-    /// <p><code>ListChangeSets</code> - The supported filter names and associated <code>ValueList</code>s is as follows:</p>
+    /// <p> <code>ListEntities</code> - This is a list of unique <code>EntityId</code>s.</p>
+    /// <p> <code>ListChangeSets</code> - The supported filter names and associated <code>ValueList</code>s is as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ChangeSetName</code> - The supported <code>ValueList</code> is a list of non-unique <code>ChangeSetName</code>s. These are defined when you call the <code>StartChangeSet</code> action.</p></li>
-    /// <li>
-    /// <p><code>Status</code> - The supported <code>ValueList</code> is a list of statuses for all change set requests.</p></li>
-    /// <li>
-    /// <p><code>EntityId</code> - The supported <code>ValueList</code> is a list of unique <code>EntityId</code>s.</p></li>
-    /// <li>
-    /// <p><code>BeforeStartTime</code> - The supported <code>ValueList</code> is a list of all change sets that started before the filter value.</p></li>
-    /// <li>
-    /// <p><code>AfterStartTime</code> - The supported <code>ValueList</code> is a list of all change sets that started after the filter value.</p></li>
-    /// <li>
-    /// <p><code>BeforeEndTime</code> - The supported <code>ValueList</code> is a list of all change sets that ended before the filter value.</p></li>
-    /// <li>
-    /// <p><code>AfterEndTime</code> - The supported <code>ValueList</code> is a list of all change sets that ended after the filter value.</p></li>
+    /// <li> <p> <code>ChangeSetName</code> - The supported <code>ValueList</code> is a list of non-unique <code>ChangeSetName</code>s. These are defined when you call the <code>StartChangeSet</code> action.</p> </li>
+    /// <li> <p> <code>Status</code> - The supported <code>ValueList</code> is a list of statuses for all change set requests.</p> </li>
+    /// <li> <p> <code>EntityId</code> - The supported <code>ValueList</code> is a list of unique <code>EntityId</code>s.</p> </li>
+    /// <li> <p> <code>BeforeStartTime</code> - The supported <code>ValueList</code> is a list of all change sets that started before the filter value.</p> </li>
+    /// <li> <p> <code>AfterStartTime</code> - The supported <code>ValueList</code> is a list of all change sets that started after the filter value.</p> </li>
+    /// <li> <p> <code>BeforeEndTime</code> - The supported <code>ValueList</code> is a list of all change sets that ended before the filter value.</p> </li>
+    /// <li> <p> <code>AfterEndTime</code> - The supported <code>ValueList</code> is a list of all change sets that ended after the filter value.</p> </li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.value_list.is_none()`.
@@ -93,23 +79,16 @@ impl FilterBuilder {
     ///
     /// To override the contents of this collection use [`set_value_list`](Self::set_value_list).
     ///
-    /// <p><code>ListEntities</code> - This is a list of unique <code>EntityId</code>s.</p>
-    /// <p><code>ListChangeSets</code> - The supported filter names and associated <code>ValueList</code>s is as follows:</p>
+    /// <p> <code>ListEntities</code> - This is a list of unique <code>EntityId</code>s.</p>
+    /// <p> <code>ListChangeSets</code> - The supported filter names and associated <code>ValueList</code>s is as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ChangeSetName</code> - The supported <code>ValueList</code> is a list of non-unique <code>ChangeSetName</code>s. These are defined when you call the <code>StartChangeSet</code> action.</p></li>
-    /// <li>
-    /// <p><code>Status</code> - The supported <code>ValueList</code> is a list of statuses for all change set requests.</p></li>
-    /// <li>
-    /// <p><code>EntityId</code> - The supported <code>ValueList</code> is a list of unique <code>EntityId</code>s.</p></li>
-    /// <li>
-    /// <p><code>BeforeStartTime</code> - The supported <code>ValueList</code> is a list of all change sets that started before the filter value.</p></li>
-    /// <li>
-    /// <p><code>AfterStartTime</code> - The supported <code>ValueList</code> is a list of all change sets that started after the filter value.</p></li>
-    /// <li>
-    /// <p><code>BeforeEndTime</code> - The supported <code>ValueList</code> is a list of all change sets that ended before the filter value.</p></li>
-    /// <li>
-    /// <p><code>AfterEndTime</code> - The supported <code>ValueList</code> is a list of all change sets that ended after the filter value.</p></li>
+    /// <li> <p> <code>ChangeSetName</code> - The supported <code>ValueList</code> is a list of non-unique <code>ChangeSetName</code>s. These are defined when you call the <code>StartChangeSet</code> action.</p> </li>
+    /// <li> <p> <code>Status</code> - The supported <code>ValueList</code> is a list of statuses for all change set requests.</p> </li>
+    /// <li> <p> <code>EntityId</code> - The supported <code>ValueList</code> is a list of unique <code>EntityId</code>s.</p> </li>
+    /// <li> <p> <code>BeforeStartTime</code> - The supported <code>ValueList</code> is a list of all change sets that started before the filter value.</p> </li>
+    /// <li> <p> <code>AfterStartTime</code> - The supported <code>ValueList</code> is a list of all change sets that started after the filter value.</p> </li>
+    /// <li> <p> <code>BeforeEndTime</code> - The supported <code>ValueList</code> is a list of all change sets that ended before the filter value.</p> </li>
+    /// <li> <p> <code>AfterEndTime</code> - The supported <code>ValueList</code> is a list of all change sets that ended after the filter value.</p> </li>
     /// </ul>
     pub fn value_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.value_list.unwrap_or_default();
@@ -117,45 +96,31 @@ impl FilterBuilder {
         self.value_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p><code>ListEntities</code> - This is a list of unique <code>EntityId</code>s.</p>
-    /// <p><code>ListChangeSets</code> - The supported filter names and associated <code>ValueList</code>s is as follows:</p>
+    /// <p> <code>ListEntities</code> - This is a list of unique <code>EntityId</code>s.</p>
+    /// <p> <code>ListChangeSets</code> - The supported filter names and associated <code>ValueList</code>s is as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ChangeSetName</code> - The supported <code>ValueList</code> is a list of non-unique <code>ChangeSetName</code>s. These are defined when you call the <code>StartChangeSet</code> action.</p></li>
-    /// <li>
-    /// <p><code>Status</code> - The supported <code>ValueList</code> is a list of statuses for all change set requests.</p></li>
-    /// <li>
-    /// <p><code>EntityId</code> - The supported <code>ValueList</code> is a list of unique <code>EntityId</code>s.</p></li>
-    /// <li>
-    /// <p><code>BeforeStartTime</code> - The supported <code>ValueList</code> is a list of all change sets that started before the filter value.</p></li>
-    /// <li>
-    /// <p><code>AfterStartTime</code> - The supported <code>ValueList</code> is a list of all change sets that started after the filter value.</p></li>
-    /// <li>
-    /// <p><code>BeforeEndTime</code> - The supported <code>ValueList</code> is a list of all change sets that ended before the filter value.</p></li>
-    /// <li>
-    /// <p><code>AfterEndTime</code> - The supported <code>ValueList</code> is a list of all change sets that ended after the filter value.</p></li>
+    /// <li> <p> <code>ChangeSetName</code> - The supported <code>ValueList</code> is a list of non-unique <code>ChangeSetName</code>s. These are defined when you call the <code>StartChangeSet</code> action.</p> </li>
+    /// <li> <p> <code>Status</code> - The supported <code>ValueList</code> is a list of statuses for all change set requests.</p> </li>
+    /// <li> <p> <code>EntityId</code> - The supported <code>ValueList</code> is a list of unique <code>EntityId</code>s.</p> </li>
+    /// <li> <p> <code>BeforeStartTime</code> - The supported <code>ValueList</code> is a list of all change sets that started before the filter value.</p> </li>
+    /// <li> <p> <code>AfterStartTime</code> - The supported <code>ValueList</code> is a list of all change sets that started after the filter value.</p> </li>
+    /// <li> <p> <code>BeforeEndTime</code> - The supported <code>ValueList</code> is a list of all change sets that ended before the filter value.</p> </li>
+    /// <li> <p> <code>AfterEndTime</code> - The supported <code>ValueList</code> is a list of all change sets that ended after the filter value.</p> </li>
     /// </ul>
     pub fn set_value_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.value_list = input;
         self
     }
-    /// <p><code>ListEntities</code> - This is a list of unique <code>EntityId</code>s.</p>
-    /// <p><code>ListChangeSets</code> - The supported filter names and associated <code>ValueList</code>s is as follows:</p>
+    /// <p> <code>ListEntities</code> - This is a list of unique <code>EntityId</code>s.</p>
+    /// <p> <code>ListChangeSets</code> - The supported filter names and associated <code>ValueList</code>s is as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ChangeSetName</code> - The supported <code>ValueList</code> is a list of non-unique <code>ChangeSetName</code>s. These are defined when you call the <code>StartChangeSet</code> action.</p></li>
-    /// <li>
-    /// <p><code>Status</code> - The supported <code>ValueList</code> is a list of statuses for all change set requests.</p></li>
-    /// <li>
-    /// <p><code>EntityId</code> - The supported <code>ValueList</code> is a list of unique <code>EntityId</code>s.</p></li>
-    /// <li>
-    /// <p><code>BeforeStartTime</code> - The supported <code>ValueList</code> is a list of all change sets that started before the filter value.</p></li>
-    /// <li>
-    /// <p><code>AfterStartTime</code> - The supported <code>ValueList</code> is a list of all change sets that started after the filter value.</p></li>
-    /// <li>
-    /// <p><code>BeforeEndTime</code> - The supported <code>ValueList</code> is a list of all change sets that ended before the filter value.</p></li>
-    /// <li>
-    /// <p><code>AfterEndTime</code> - The supported <code>ValueList</code> is a list of all change sets that ended after the filter value.</p></li>
+    /// <li> <p> <code>ChangeSetName</code> - The supported <code>ValueList</code> is a list of non-unique <code>ChangeSetName</code>s. These are defined when you call the <code>StartChangeSet</code> action.</p> </li>
+    /// <li> <p> <code>Status</code> - The supported <code>ValueList</code> is a list of statuses for all change set requests.</p> </li>
+    /// <li> <p> <code>EntityId</code> - The supported <code>ValueList</code> is a list of unique <code>EntityId</code>s.</p> </li>
+    /// <li> <p> <code>BeforeStartTime</code> - The supported <code>ValueList</code> is a list of all change sets that started before the filter value.</p> </li>
+    /// <li> <p> <code>AfterStartTime</code> - The supported <code>ValueList</code> is a list of all change sets that started after the filter value.</p> </li>
+    /// <li> <p> <code>BeforeEndTime</code> - The supported <code>ValueList</code> is a list of all change sets that ended before the filter value.</p> </li>
+    /// <li> <p> <code>AfterEndTime</code> - The supported <code>ValueList</code> is a list of all change sets that ended after the filter value.</p> </li>
     /// </ul>
     pub fn get_value_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.value_list

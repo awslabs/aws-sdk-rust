@@ -22,7 +22,7 @@ impl ListConnectorEntitiesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListConnectorEntities`.
 ///
-/// <p>Returns the list of available connector entities supported by Amazon AppFlow. For example, you can query Salesforce for <i>Account</i> and <i>Opportunity</i> entities, or query ServiceNow for the <i>Incident</i> entity.</p>
+/// <p> Returns the list of available connector entities supported by Amazon AppFlow. For example, you can query Salesforce for <i>Account</i> and <i>Opportunity</i> entities, or query ServiceNow for the <i>Incident</i> entity. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListConnectorEntitiesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,45 +108,45 @@ impl ListConnectorEntitiesFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account, and is used to query the downstream connector.</p>
+    /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account, and is used to query the downstream connector. </p>
     pub fn connector_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connector_profile_name(input.into());
         self
     }
-    /// <p>The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account, and is used to query the downstream connector.</p>
+    /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account, and is used to query the downstream connector. </p>
     pub fn set_connector_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connector_profile_name(input);
         self
     }
-    /// <p>The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account, and is used to query the downstream connector.</p>
+    /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account, and is used to query the downstream connector. </p>
     pub fn get_connector_profile_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_connector_profile_name()
     }
-    /// <p>The type of connector, such as Salesforce, Amplitude, and so on.</p>
+    /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
     pub fn connector_type(mut self, input: crate::types::ConnectorType) -> Self {
         self.inner = self.inner.connector_type(input);
         self
     }
-    /// <p>The type of connector, such as Salesforce, Amplitude, and so on.</p>
+    /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
     pub fn set_connector_type(mut self, input: ::std::option::Option<crate::types::ConnectorType>) -> Self {
         self.inner = self.inner.set_connector_type(input);
         self
     }
-    /// <p>The type of connector, such as Salesforce, Amplitude, and so on.</p>
+    /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
     pub fn get_connector_type(&self) -> &::std::option::Option<crate::types::ConnectorType> {
         self.inner.get_connector_type()
     }
-    /// <p>This optional parameter is specific to connector implementation. Some connectors support multiple levels or categories of entities. You can find out the list of roots for such providers by sending a request without the <code>entitiesPath</code> parameter. If the connector supports entities at different roots, this initial request returns the list of roots. Otherwise, this request returns all entities supported by the provider.</p>
+    /// <p> This optional parameter is specific to connector implementation. Some connectors support multiple levels or categories of entities. You can find out the list of roots for such providers by sending a request without the <code>entitiesPath</code> parameter. If the connector supports entities at different roots, this initial request returns the list of roots. Otherwise, this request returns all entities supported by the provider. </p>
     pub fn entities_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.entities_path(input.into());
         self
     }
-    /// <p>This optional parameter is specific to connector implementation. Some connectors support multiple levels or categories of entities. You can find out the list of roots for such providers by sending a request without the <code>entitiesPath</code> parameter. If the connector supports entities at different roots, this initial request returns the list of roots. Otherwise, this request returns all entities supported by the provider.</p>
+    /// <p> This optional parameter is specific to connector implementation. Some connectors support multiple levels or categories of entities. You can find out the list of roots for such providers by sending a request without the <code>entitiesPath</code> parameter. If the connector supports entities at different roots, this initial request returns the list of roots. Otherwise, this request returns all entities supported by the provider. </p>
     pub fn set_entities_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_entities_path(input);
         self
     }
-    /// <p>This optional parameter is specific to connector implementation. Some connectors support multiple levels or categories of entities. You can find out the list of roots for such providers by sending a request without the <code>entitiesPath</code> parameter. If the connector supports entities at different roots, this initial request returns the list of roots. Otherwise, this request returns all entities supported by the provider.</p>
+    /// <p> This optional parameter is specific to connector implementation. Some connectors support multiple levels or categories of entities. You can find out the list of roots for such providers by sending a request without the <code>entitiesPath</code> parameter. If the connector supports entities at different roots, this initial request returns the list of roots. Otherwise, this request returns all entities supported by the provider. </p>
     pub fn get_entities_path(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_entities_path()
     }

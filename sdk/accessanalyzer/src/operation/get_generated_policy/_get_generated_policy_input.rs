@@ -8,7 +8,7 @@ pub struct GetGeneratedPolicyInput {
     /// <p>The level of detail that you want to generate. You can specify whether to generate policies with placeholders for resource ARNs for actions that support resource level granularity in policies.</p>
     /// <p>For example, in the resource section of a policy, you can receive a placeholder such as <code>"Resource":"arn:aws:s3:::${BucketName}"</code> instead of <code>"*"</code>.</p>
     pub include_resource_placeholders: ::std::option::Option<bool>,
-    /// <p>The level of detail that you want to generate. You can specify whether to generate service-level policies.</p>
+    /// <p>The level of detail that you want to generate. You can specify whether to generate service-level policies. </p>
     /// <p>IAM Access Analyzer uses <code>iam:servicelastaccessed</code> to identify services that have been used recently to create this service-level template.</p>
     pub include_service_level_template: ::std::option::Option<bool>,
 }
@@ -22,7 +22,7 @@ impl GetGeneratedPolicyInput {
     pub fn include_resource_placeholders(&self) -> ::std::option::Option<bool> {
         self.include_resource_placeholders
     }
-    /// <p>The level of detail that you want to generate. You can specify whether to generate service-level policies.</p>
+    /// <p>The level of detail that you want to generate. You can specify whether to generate service-level policies. </p>
     /// <p>IAM Access Analyzer uses <code>iam:servicelastaccessed</code> to identify services that have been used recently to create this service-level template.</p>
     pub fn include_service_level_template(&self) -> ::std::option::Option<bool> {
         self.include_service_level_template
@@ -76,19 +76,19 @@ impl GetGeneratedPolicyInputBuilder {
     pub fn get_include_resource_placeholders(&self) -> &::std::option::Option<bool> {
         &self.include_resource_placeholders
     }
-    /// <p>The level of detail that you want to generate. You can specify whether to generate service-level policies.</p>
+    /// <p>The level of detail that you want to generate. You can specify whether to generate service-level policies. </p>
     /// <p>IAM Access Analyzer uses <code>iam:servicelastaccessed</code> to identify services that have been used recently to create this service-level template.</p>
     pub fn include_service_level_template(mut self, input: bool) -> Self {
         self.include_service_level_template = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The level of detail that you want to generate. You can specify whether to generate service-level policies.</p>
+    /// <p>The level of detail that you want to generate. You can specify whether to generate service-level policies. </p>
     /// <p>IAM Access Analyzer uses <code>iam:servicelastaccessed</code> to identify services that have been used recently to create this service-level template.</p>
     pub fn set_include_service_level_template(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_service_level_template = input;
         self
     }
-    /// <p>The level of detail that you want to generate. You can specify whether to generate service-level policies.</p>
+    /// <p>The level of detail that you want to generate. You can specify whether to generate service-level policies. </p>
     /// <p>IAM Access Analyzer uses <code>iam:servicelastaccessed</code> to identify services that have been used recently to create this service-level template.</p>
     pub fn get_include_service_level_template(&self) -> &::std::option::Option<bool> {
         &self.include_service_level_template

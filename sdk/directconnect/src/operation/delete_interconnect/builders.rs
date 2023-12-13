@@ -22,7 +22,7 @@ impl DeleteInterconnectInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteInterconnect`.
 ///
-/// <p>Deletes the specified interconnect.</p><note>
+/// <p>Deletes the specified interconnect.</p> <note>
 /// <p>Intended for use by Direct Connect Partners only.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

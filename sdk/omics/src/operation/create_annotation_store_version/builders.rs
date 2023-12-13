@@ -22,7 +22,7 @@ impl CreateAnnotationStoreVersionInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateAnnotationStoreVersion`.
 ///
-/// <p>Creates a new version of an annotation store.</p>
+/// <p> Creates a new version of an annotation store. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateAnnotationStoreVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,59 +108,59 @@ impl CreateAnnotationStoreVersionFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of an annotation store version from which versions are being created.</p>
+    /// <p> The name of an annotation store version from which versions are being created. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of an annotation store version from which versions are being created.</p>
+    /// <p> The name of an annotation store version from which versions are being created. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name of an annotation store version from which versions are being created.</p>
+    /// <p> The name of an annotation store version from which versions are being created. </p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>The name given to an annotation store version to distinguish it from other versions.</p>
+    /// <p> The name given to an annotation store version to distinguish it from other versions. </p>
     pub fn version_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.version_name(input.into());
         self
     }
-    /// <p>The name given to an annotation store version to distinguish it from other versions.</p>
+    /// <p> The name given to an annotation store version to distinguish it from other versions. </p>
     pub fn set_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_version_name(input);
         self
     }
-    /// <p>The name given to an annotation store version to distinguish it from other versions.</p>
+    /// <p> The name given to an annotation store version to distinguish it from other versions. </p>
     pub fn get_version_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_version_name()
     }
-    /// <p>The description of an annotation store version.</p>
+    /// <p> The description of an annotation store version. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>The description of an annotation store version.</p>
+    /// <p> The description of an annotation store version. </p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>The description of an annotation store version.</p>
+    /// <p> The description of an annotation store version. </p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p>The options for an annotation store version.</p>
+    /// <p> The options for an annotation store version. </p>
     pub fn version_options(mut self, input: crate::types::VersionOptions) -> Self {
         self.inner = self.inner.version_options(input);
         self
     }
-    /// <p>The options for an annotation store version.</p>
+    /// <p> The options for an annotation store version. </p>
     pub fn set_version_options(mut self, input: ::std::option::Option<crate::types::VersionOptions>) -> Self {
         self.inner = self.inner.set_version_options(input);
         self
     }
-    /// <p>The options for an annotation store version.</p>
+    /// <p> The options for an annotation store version. </p>
     pub fn get_version_options(&self) -> &::std::option::Option<crate::types::VersionOptions> {
         self.inner.get_version_options()
     }
@@ -168,17 +168,17 @@ impl CreateAnnotationStoreVersionFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>Any tags added to annotation store version.</p>
+    /// <p> Any tags added to annotation store version. </p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
-    /// <p>Any tags added to annotation store version.</p>
+    /// <p> Any tags added to annotation store version. </p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>Any tags added to annotation store version.</p>
+    /// <p> Any tags added to annotation store version. </p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }

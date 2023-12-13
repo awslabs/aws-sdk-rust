@@ -5,11 +5,11 @@
 pub struct AssociateAnalyticsDataSetOutput {
     /// <p>The identifier of the dataset that was associated.</p>
     pub data_set_id: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of the target account.</p>
+    /// <p>The identifier of the target account. </p>
     pub target_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The Resource Access Manager share ID that is generated.</p>
     pub resource_share_id: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the Resource Access Manager share.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Resource Access Manager share. </p>
     pub resource_share_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -18,7 +18,7 @@ impl AssociateAnalyticsDataSetOutput {
     pub fn data_set_id(&self) -> ::std::option::Option<&str> {
         self.data_set_id.as_deref()
     }
-    /// <p>The identifier of the target account.</p>
+    /// <p>The identifier of the target account. </p>
     pub fn target_account_id(&self) -> ::std::option::Option<&str> {
         self.target_account_id.as_deref()
     }
@@ -26,7 +26,7 @@ impl AssociateAnalyticsDataSetOutput {
     pub fn resource_share_id(&self) -> ::std::option::Option<&str> {
         self.resource_share_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Resource Access Manager share.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Resource Access Manager share. </p>
     pub fn resource_share_arn(&self) -> ::std::option::Option<&str> {
         self.resource_share_arn.as_deref()
     }
@@ -68,17 +68,17 @@ impl AssociateAnalyticsDataSetOutputBuilder {
     pub fn get_data_set_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_set_id
     }
-    /// <p>The identifier of the target account.</p>
+    /// <p>The identifier of the target account. </p>
     pub fn target_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the target account.</p>
+    /// <p>The identifier of the target account. </p>
     pub fn set_target_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_account_id = input;
         self
     }
-    /// <p>The identifier of the target account.</p>
+    /// <p>The identifier of the target account. </p>
     pub fn get_target_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_account_id
     }
@@ -96,17 +96,17 @@ impl AssociateAnalyticsDataSetOutputBuilder {
     pub fn get_resource_share_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_share_id
     }
-    /// <p>The Amazon Resource Name (ARN) of the Resource Access Manager share.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Resource Access Manager share. </p>
     pub fn resource_share_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_share_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Resource Access Manager share.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Resource Access Manager share. </p>
     pub fn set_resource_share_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_share_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Resource Access Manager share.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Resource Access Manager share. </p>
     pub fn get_resource_share_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_share_arn
     }

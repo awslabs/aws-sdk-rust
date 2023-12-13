@@ -5,17 +5,17 @@
 pub struct PutOrganizationConformancePackInput {
     /// <p>Name of the organization conformance pack you want to create.</p>
     pub organization_conformance_pack_name: ::std::option::Option<::std::string::String>,
-    /// <p>Location of file containing the template body. The uri must point to the conformance pack template (max size: 300 KB).</p><note>
+    /// <p>Location of file containing the template body. The uri must point to the conformance pack template (max size: 300 KB).</p> <note>
     /// <p>You must have access to read Amazon S3 bucket. In addition, in order to ensure a successful deployment, the template object must not be in an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html">archived storage class</a> if this parameter is passed.</p>
     /// </note>
     pub template_s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>A string containing full conformance pack template body. Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p>
     pub template_body: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p><note>
+    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p> <note>
     /// <p>This field is optional. If used, it must be prefixed with <code>awsconfigconforms</code>.</p>
     /// </note>
     pub delivery_s3_bucket: ::std::option::Option<::std::string::String>,
-    /// <p>The prefix for the Amazon S3 bucket.</p><note>
+    /// <p>The prefix for the Amazon S3 bucket.</p> <note>
     /// <p>This field is optional.</p>
     /// </note>
     pub delivery_s3_key_prefix: ::std::option::Option<::std::string::String>,
@@ -29,7 +29,7 @@ impl PutOrganizationConformancePackInput {
     pub fn organization_conformance_pack_name(&self) -> ::std::option::Option<&str> {
         self.organization_conformance_pack_name.as_deref()
     }
-    /// <p>Location of file containing the template body. The uri must point to the conformance pack template (max size: 300 KB).</p><note>
+    /// <p>Location of file containing the template body. The uri must point to the conformance pack template (max size: 300 KB).</p> <note>
     /// <p>You must have access to read Amazon S3 bucket. In addition, in order to ensure a successful deployment, the template object must not be in an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html">archived storage class</a> if this parameter is passed.</p>
     /// </note>
     pub fn template_s3_uri(&self) -> ::std::option::Option<&str> {
@@ -39,13 +39,13 @@ impl PutOrganizationConformancePackInput {
     pub fn template_body(&self) -> ::std::option::Option<&str> {
         self.template_body.as_deref()
     }
-    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p><note>
+    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p> <note>
     /// <p>This field is optional. If used, it must be prefixed with <code>awsconfigconforms</code>.</p>
     /// </note>
     pub fn delivery_s3_bucket(&self) -> ::std::option::Option<&str> {
         self.delivery_s3_bucket.as_deref()
     }
-    /// <p>The prefix for the Amazon S3 bucket.</p><note>
+    /// <p>The prefix for the Amazon S3 bucket.</p> <note>
     /// <p>This field is optional.</p>
     /// </note>
     pub fn delivery_s3_key_prefix(&self) -> ::std::option::Option<&str> {
@@ -99,21 +99,21 @@ impl PutOrganizationConformancePackInputBuilder {
     pub fn get_organization_conformance_pack_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.organization_conformance_pack_name
     }
-    /// <p>Location of file containing the template body. The uri must point to the conformance pack template (max size: 300 KB).</p><note>
+    /// <p>Location of file containing the template body. The uri must point to the conformance pack template (max size: 300 KB).</p> <note>
     /// <p>You must have access to read Amazon S3 bucket. In addition, in order to ensure a successful deployment, the template object must not be in an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html">archived storage class</a> if this parameter is passed.</p>
     /// </note>
     pub fn template_s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_s3_uri = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Location of file containing the template body. The uri must point to the conformance pack template (max size: 300 KB).</p><note>
+    /// <p>Location of file containing the template body. The uri must point to the conformance pack template (max size: 300 KB).</p> <note>
     /// <p>You must have access to read Amazon S3 bucket. In addition, in order to ensure a successful deployment, the template object must not be in an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html">archived storage class</a> if this parameter is passed.</p>
     /// </note>
     pub fn set_template_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_s3_uri = input;
         self
     }
-    /// <p>Location of file containing the template body. The uri must point to the conformance pack template (max size: 300 KB).</p><note>
+    /// <p>Location of file containing the template body. The uri must point to the conformance pack template (max size: 300 KB).</p> <note>
     /// <p>You must have access to read Amazon S3 bucket. In addition, in order to ensure a successful deployment, the template object must not be in an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html">archived storage class</a> if this parameter is passed.</p>
     /// </note>
     pub fn get_template_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -133,41 +133,41 @@ impl PutOrganizationConformancePackInputBuilder {
     pub fn get_template_body(&self) -> &::std::option::Option<::std::string::String> {
         &self.template_body
     }
-    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p><note>
+    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p> <note>
     /// <p>This field is optional. If used, it must be prefixed with <code>awsconfigconforms</code>.</p>
     /// </note>
     pub fn delivery_s3_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delivery_s3_bucket = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p><note>
+    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p> <note>
     /// <p>This field is optional. If used, it must be prefixed with <code>awsconfigconforms</code>.</p>
     /// </note>
     pub fn set_delivery_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.delivery_s3_bucket = input;
         self
     }
-    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p><note>
+    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p> <note>
     /// <p>This field is optional. If used, it must be prefixed with <code>awsconfigconforms</code>.</p>
     /// </note>
     pub fn get_delivery_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
         &self.delivery_s3_bucket
     }
-    /// <p>The prefix for the Amazon S3 bucket.</p><note>
+    /// <p>The prefix for the Amazon S3 bucket.</p> <note>
     /// <p>This field is optional.</p>
     /// </note>
     pub fn delivery_s3_key_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delivery_s3_key_prefix = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The prefix for the Amazon S3 bucket.</p><note>
+    /// <p>The prefix for the Amazon S3 bucket.</p> <note>
     /// <p>This field is optional.</p>
     /// </note>
     pub fn set_delivery_s3_key_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.delivery_s3_key_prefix = input;
         self
     }
-    /// <p>The prefix for the Amazon S3 bucket.</p><note>
+    /// <p>The prefix for the Amazon S3 bucket.</p> <note>
     /// <p>This field is optional.</p>
     /// </note>
     pub fn get_delivery_s3_key_prefix(&self) -> &::std::option::Option<::std::string::String> {

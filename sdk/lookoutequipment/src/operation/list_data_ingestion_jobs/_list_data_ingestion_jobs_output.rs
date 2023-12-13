@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDataIngestionJobsOutput {
-    /// <p>An opaque pagination token indicating where to continue the listing of data ingestion jobs.</p>
+    /// <p> An opaque pagination token indicating where to continue the listing of data ingestion jobs. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies information about the specific data ingestion job, including dataset name and status.</p>
+    /// <p>Specifies information about the specific data ingestion job, including dataset name and status. </p>
     pub data_ingestion_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::DataIngestionJobSummary>>,
     _request_id: Option<String>,
 }
 impl ListDataIngestionJobsOutput {
-    /// <p>An opaque pagination token indicating where to continue the listing of data ingestion jobs.</p>
+    /// <p> An opaque pagination token indicating where to continue the listing of data ingestion jobs. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Specifies information about the specific data ingestion job, including dataset name and status.</p>
+    /// <p>Specifies information about the specific data ingestion job, including dataset name and status. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_ingestion_job_summaries.is_none()`.
     pub fn data_ingestion_job_summaries(&self) -> &[crate::types::DataIngestionJobSummary] {
@@ -42,17 +42,17 @@ pub struct ListDataIngestionJobsOutputBuilder {
     _request_id: Option<String>,
 }
 impl ListDataIngestionJobsOutputBuilder {
-    /// <p>An opaque pagination token indicating where to continue the listing of data ingestion jobs.</p>
+    /// <p> An opaque pagination token indicating where to continue the listing of data ingestion jobs. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An opaque pagination token indicating where to continue the listing of data ingestion jobs.</p>
+    /// <p> An opaque pagination token indicating where to continue the listing of data ingestion jobs. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>An opaque pagination token indicating where to continue the listing of data ingestion jobs.</p>
+    /// <p> An opaque pagination token indicating where to continue the listing of data ingestion jobs. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
@@ -60,19 +60,19 @@ impl ListDataIngestionJobsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_data_ingestion_job_summaries`](Self::set_data_ingestion_job_summaries).
     ///
-    /// <p>Specifies information about the specific data ingestion job, including dataset name and status.</p>
+    /// <p>Specifies information about the specific data ingestion job, including dataset name and status. </p>
     pub fn data_ingestion_job_summaries(mut self, input: crate::types::DataIngestionJobSummary) -> Self {
         let mut v = self.data_ingestion_job_summaries.unwrap_or_default();
         v.push(input);
         self.data_ingestion_job_summaries = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Specifies information about the specific data ingestion job, including dataset name and status.</p>
+    /// <p>Specifies information about the specific data ingestion job, including dataset name and status. </p>
     pub fn set_data_ingestion_job_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataIngestionJobSummary>>) -> Self {
         self.data_ingestion_job_summaries = input;
         self
     }
-    /// <p>Specifies information about the specific data ingestion job, including dataset name and status.</p>
+    /// <p>Specifies information about the specific data ingestion job, including dataset name and status. </p>
     pub fn get_data_ingestion_job_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataIngestionJobSummary>> {
         &self.data_ingestion_job_summaries
     }

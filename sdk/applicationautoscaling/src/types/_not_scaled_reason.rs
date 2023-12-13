@@ -7,16 +7,11 @@ pub struct NotScaledReason {
     /// <p>A code that represents the reason for not scaling.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p>AutoScalingAnticipatedFlapping</p></li>
-    /// <li>
-    /// <p>TargetServicePutResourceAsUnscalable</p></li>
-    /// <li>
-    /// <p>AlreadyAtMaxCapacity</p></li>
-    /// <li>
-    /// <p>AlreadyAtMinCapacity</p></li>
-    /// <li>
-    /// <p>AlreadyAtDesiredCapacity</p></li>
+    /// <li> <p>AutoScalingAnticipatedFlapping</p> </li>
+    /// <li> <p>TargetServicePutResourceAsUnscalable</p> </li>
+    /// <li> <p>AlreadyAtMaxCapacity</p> </li>
+    /// <li> <p>AlreadyAtMinCapacity</p> </li>
+    /// <li> <p>AlreadyAtDesiredCapacity</p> </li>
     /// </ul>
     pub code: ::std::string::String,
     /// <p>The maximum capacity.</p>
@@ -30,16 +25,11 @@ impl NotScaledReason {
     /// <p>A code that represents the reason for not scaling.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p>AutoScalingAnticipatedFlapping</p></li>
-    /// <li>
-    /// <p>TargetServicePutResourceAsUnscalable</p></li>
-    /// <li>
-    /// <p>AlreadyAtMaxCapacity</p></li>
-    /// <li>
-    /// <p>AlreadyAtMinCapacity</p></li>
-    /// <li>
-    /// <p>AlreadyAtDesiredCapacity</p></li>
+    /// <li> <p>AutoScalingAnticipatedFlapping</p> </li>
+    /// <li> <p>TargetServicePutResourceAsUnscalable</p> </li>
+    /// <li> <p>AlreadyAtMaxCapacity</p> </li>
+    /// <li> <p>AlreadyAtMinCapacity</p> </li>
+    /// <li> <p>AlreadyAtDesiredCapacity</p> </li>
     /// </ul>
     pub fn code(&self) -> &str {
         use std::ops::Deref;
@@ -78,16 +68,11 @@ impl NotScaledReasonBuilder {
     /// <p>A code that represents the reason for not scaling.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p>AutoScalingAnticipatedFlapping</p></li>
-    /// <li>
-    /// <p>TargetServicePutResourceAsUnscalable</p></li>
-    /// <li>
-    /// <p>AlreadyAtMaxCapacity</p></li>
-    /// <li>
-    /// <p>AlreadyAtMinCapacity</p></li>
-    /// <li>
-    /// <p>AlreadyAtDesiredCapacity</p></li>
+    /// <li> <p>AutoScalingAnticipatedFlapping</p> </li>
+    /// <li> <p>TargetServicePutResourceAsUnscalable</p> </li>
+    /// <li> <p>AlreadyAtMaxCapacity</p> </li>
+    /// <li> <p>AlreadyAtMinCapacity</p> </li>
+    /// <li> <p>AlreadyAtDesiredCapacity</p> </li>
     /// </ul>
     /// This field is required.
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -97,16 +82,11 @@ impl NotScaledReasonBuilder {
     /// <p>A code that represents the reason for not scaling.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p>AutoScalingAnticipatedFlapping</p></li>
-    /// <li>
-    /// <p>TargetServicePutResourceAsUnscalable</p></li>
-    /// <li>
-    /// <p>AlreadyAtMaxCapacity</p></li>
-    /// <li>
-    /// <p>AlreadyAtMinCapacity</p></li>
-    /// <li>
-    /// <p>AlreadyAtDesiredCapacity</p></li>
+    /// <li> <p>AutoScalingAnticipatedFlapping</p> </li>
+    /// <li> <p>TargetServicePutResourceAsUnscalable</p> </li>
+    /// <li> <p>AlreadyAtMaxCapacity</p> </li>
+    /// <li> <p>AlreadyAtMinCapacity</p> </li>
+    /// <li> <p>AlreadyAtDesiredCapacity</p> </li>
     /// </ul>
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.code = input;
@@ -115,16 +95,11 @@ impl NotScaledReasonBuilder {
     /// <p>A code that represents the reason for not scaling.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p>AutoScalingAnticipatedFlapping</p></li>
-    /// <li>
-    /// <p>TargetServicePutResourceAsUnscalable</p></li>
-    /// <li>
-    /// <p>AlreadyAtMaxCapacity</p></li>
-    /// <li>
-    /// <p>AlreadyAtMinCapacity</p></li>
-    /// <li>
-    /// <p>AlreadyAtDesiredCapacity</p></li>
+    /// <li> <p>AutoScalingAnticipatedFlapping</p> </li>
+    /// <li> <p>TargetServicePutResourceAsUnscalable</p> </li>
+    /// <li> <p>AlreadyAtMaxCapacity</p> </li>
+    /// <li> <p>AlreadyAtMinCapacity</p> </li>
+    /// <li> <p>AlreadyAtDesiredCapacity</p> </li>
     /// </ul>
     pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.code

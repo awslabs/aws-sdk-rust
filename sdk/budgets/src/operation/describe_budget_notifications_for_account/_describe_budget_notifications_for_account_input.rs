@@ -5,9 +5,9 @@
 pub struct DescribeBudgetNotificationsForAccountInput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
-    /// <p>An integer that represents how many budgets a paginated response contains. The default is 50.</p>
+    /// <p> An integer that represents how many budgets a paginated response contains. The default is 50. </p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>A generic string.</p>
+    /// <p> A generic string.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeBudgetNotificationsForAccountInput {
@@ -15,11 +15,11 @@ impl DescribeBudgetNotificationsForAccountInput {
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
-    /// <p>An integer that represents how many budgets a paginated response contains. The default is 50.</p>
+    /// <p> An integer that represents how many budgets a paginated response contains. The default is 50. </p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>A generic string.</p>
+    /// <p> A generic string.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -55,31 +55,31 @@ impl DescribeBudgetNotificationsForAccountInputBuilder {
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }
-    /// <p>An integer that represents how many budgets a paginated response contains. The default is 50.</p>
+    /// <p> An integer that represents how many budgets a paginated response contains. The default is 50. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An integer that represents how many budgets a paginated response contains. The default is 50.</p>
+    /// <p> An integer that represents how many budgets a paginated response contains. The default is 50. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>An integer that represents how many budgets a paginated response contains. The default is 50.</p>
+    /// <p> An integer that represents how many budgets a paginated response contains. The default is 50. </p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p>A generic string.</p>
+    /// <p> A generic string.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A generic string.</p>
+    /// <p> A generic string.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>A generic string.</p>
+    /// <p> A generic string.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

@@ -254,17 +254,17 @@ pub enum StartExpenseAnalysisError {
     BadDocumentException(crate::types::error::BadDocumentException),
     /// <p>The document can't be processed because it's too large. The maximum document size for synchronous operations 10 MB. The maximum document size for asynchronous operations is 500 MB for PDF files.</p>
     DocumentTooLargeException(crate::types::error::DocumentTooLargeException),
-    /// <p>A <code>ClientRequestToken</code> input parameter was reused with an operation, but at least one of the other input parameters is different from the previous call to the operation.</p>
+    /// <p>A <code>ClientRequestToken</code> input parameter was reused with an operation, but at least one of the other input parameters is different from the previous call to the operation. </p>
     IdempotentParameterMismatchException(crate::types::error::IdempotentParameterMismatchException),
     /// <p>Amazon Textract experienced a service issue. Try your call again.</p>
     InternalServerError(crate::types::error::InternalServerError),
-    /// <p>Indicates you do not have decrypt permissions with the KMS key entered, or the KMS key was entered incorrectly.</p>
+    /// <p> Indicates you do not have decrypt permissions with the KMS key entered, or the KMS key was entered incorrectly. </p>
     InvalidKmsKeyException(crate::types::error::InvalidKmsKeyException),
     /// <p>An input parameter violated a constraint. For example, in synchronous operations, an <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code> or <code>Bytes</code> values are supplied in the <code>Document</code> request parameter. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::types::error::InvalidParameterException),
-    /// <p>Amazon Textract is unable to access the S3 object that's specified in the request. for more information, <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to Amazon S3</a> For troubleshooting information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a></p>
+    /// <p>Amazon Textract is unable to access the S3 object that's specified in the request. for more information, <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to Amazon S3</a> For troubleshooting information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a> </p>
     InvalidS3ObjectException(crate::types::error::InvalidS3ObjectException),
-    /// <p>An Amazon Textract service limit was exceeded. For example, if you start too many asynchronous jobs concurrently, calls to start operations (<code>StartDocumentTextDetection</code>, for example) raise a LimitExceededException exception (HTTP status code: 400) until the number of concurrently running jobs is below the Amazon Textract service limit.</p>
+    /// <p>An Amazon Textract service limit was exceeded. For example, if you start too many asynchronous jobs concurrently, calls to start operations (<code>StartDocumentTextDetection</code>, for example) raise a LimitExceededException exception (HTTP status code: 400) until the number of concurrently running jobs is below the Amazon Textract service limit. </p>
     LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Textract.</p>
     ProvisionedThroughputExceededException(crate::types::error::ProvisionedThroughputExceededException),

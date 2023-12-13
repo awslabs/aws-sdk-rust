@@ -108,20 +108,20 @@ impl ModifyClusterDbRevisionFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier of a cluster whose database revision you want to modify.</p>
-    /// <p>Example: <code>examplecluster</code></p>
+    /// <p>The unique identifier of a cluster whose database revision you want to modify. </p>
+    /// <p>Example: <code>examplecluster</code> </p>
     pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_identifier(input.into());
         self
     }
-    /// <p>The unique identifier of a cluster whose database revision you want to modify.</p>
-    /// <p>Example: <code>examplecluster</code></p>
+    /// <p>The unique identifier of a cluster whose database revision you want to modify. </p>
+    /// <p>Example: <code>examplecluster</code> </p>
     pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_identifier(input);
         self
     }
-    /// <p>The unique identifier of a cluster whose database revision you want to modify.</p>
-    /// <p>Example: <code>examplecluster</code></p>
+    /// <p>The unique identifier of a cluster whose database revision you want to modify. </p>
+    /// <p>Example: <code>examplecluster</code> </p>
     pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cluster_identifier()
     }

@@ -13,7 +13,7 @@ pub struct CreateSequenceStoreInput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>To ensure that requests don't run multiple times, specify a unique token for each request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// <p>An S3 location that is used to store files that have failed a direct upload.</p>
+    /// <p> An S3 location that is used to store files that have failed a direct upload. </p>
     pub fallback_location: ::std::option::Option<::std::string::String>,
 }
 impl CreateSequenceStoreInput {
@@ -37,7 +37,7 @@ impl CreateSequenceStoreInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>An S3 location that is used to store files that have failed a direct upload.</p>
+    /// <p> An S3 location that is used to store files that have failed a direct upload. </p>
     pub fn fallback_location(&self) -> ::std::option::Option<&str> {
         self.fallback_location.as_deref()
     }
@@ -138,17 +138,17 @@ impl CreateSequenceStoreInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
-    /// <p>An S3 location that is used to store files that have failed a direct upload.</p>
+    /// <p> An S3 location that is used to store files that have failed a direct upload. </p>
     pub fn fallback_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fallback_location = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An S3 location that is used to store files that have failed a direct upload.</p>
+    /// <p> An S3 location that is used to store files that have failed a direct upload. </p>
     pub fn set_fallback_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fallback_location = input;
         self
     }
-    /// <p>An S3 location that is used to store files that have failed a direct upload.</p>
+    /// <p> An S3 location that is used to store files that have failed a direct upload. </p>
     pub fn get_fallback_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.fallback_location
     }

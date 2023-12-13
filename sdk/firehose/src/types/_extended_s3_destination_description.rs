@@ -28,7 +28,7 @@ pub struct ExtendedS3DestinationDescription {
     pub s3_backup_description: ::std::option::Option<crate::types::S3DestinationDescription>,
     /// <p>The serializer, deserializer, and schema for converting data from the JSON format to the Parquet or ORC format before writing it to Amazon S3.</p>
     pub data_format_conversion_configuration: ::std::option::Option<crate::types::DataFormatConversionConfiguration>,
-    /// <p>The configuration of the dynamic partitioning mechanism that creates smaller data sets from the streaming data by partitioning it based on partition keys. Currently, dynamic partitioning is only supported for Amazon S3 destinations.</p>
+    /// <p>The configuration of the dynamic partitioning mechanism that creates smaller data sets from the streaming data by partitioning it based on partition keys. Currently, dynamic partitioning is only supported for Amazon S3 destinations. </p>
     pub dynamic_partitioning_configuration: ::std::option::Option<crate::types::DynamicPartitioningConfiguration>,
 }
 impl ExtendedS3DestinationDescription {
@@ -82,7 +82,7 @@ impl ExtendedS3DestinationDescription {
     pub fn data_format_conversion_configuration(&self) -> ::std::option::Option<&crate::types::DataFormatConversionConfiguration> {
         self.data_format_conversion_configuration.as_ref()
     }
-    /// <p>The configuration of the dynamic partitioning mechanism that creates smaller data sets from the streaming data by partitioning it based on partition keys. Currently, dynamic partitioning is only supported for Amazon S3 destinations.</p>
+    /// <p>The configuration of the dynamic partitioning mechanism that creates smaller data sets from the streaming data by partitioning it based on partition keys. Currently, dynamic partitioning is only supported for Amazon S3 destinations. </p>
     pub fn dynamic_partitioning_configuration(&self) -> ::std::option::Option<&crate::types::DynamicPartitioningConfiguration> {
         self.dynamic_partitioning_configuration.as_ref()
     }
@@ -286,17 +286,17 @@ impl ExtendedS3DestinationDescriptionBuilder {
     pub fn get_data_format_conversion_configuration(&self) -> &::std::option::Option<crate::types::DataFormatConversionConfiguration> {
         &self.data_format_conversion_configuration
     }
-    /// <p>The configuration of the dynamic partitioning mechanism that creates smaller data sets from the streaming data by partitioning it based on partition keys. Currently, dynamic partitioning is only supported for Amazon S3 destinations.</p>
+    /// <p>The configuration of the dynamic partitioning mechanism that creates smaller data sets from the streaming data by partitioning it based on partition keys. Currently, dynamic partitioning is only supported for Amazon S3 destinations. </p>
     pub fn dynamic_partitioning_configuration(mut self, input: crate::types::DynamicPartitioningConfiguration) -> Self {
         self.dynamic_partitioning_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The configuration of the dynamic partitioning mechanism that creates smaller data sets from the streaming data by partitioning it based on partition keys. Currently, dynamic partitioning is only supported for Amazon S3 destinations.</p>
+    /// <p>The configuration of the dynamic partitioning mechanism that creates smaller data sets from the streaming data by partitioning it based on partition keys. Currently, dynamic partitioning is only supported for Amazon S3 destinations. </p>
     pub fn set_dynamic_partitioning_configuration(mut self, input: ::std::option::Option<crate::types::DynamicPartitioningConfiguration>) -> Self {
         self.dynamic_partitioning_configuration = input;
         self
     }
-    /// <p>The configuration of the dynamic partitioning mechanism that creates smaller data sets from the streaming data by partitioning it based on partition keys. Currently, dynamic partitioning is only supported for Amazon S3 destinations.</p>
+    /// <p>The configuration of the dynamic partitioning mechanism that creates smaller data sets from the streaming data by partitioning it based on partition keys. Currently, dynamic partitioning is only supported for Amazon S3 destinations. </p>
     pub fn get_dynamic_partitioning_configuration(&self) -> &::std::option::Option<crate::types::DynamicPartitioningConfiguration> {
         &self.dynamic_partitioning_configuration
     }

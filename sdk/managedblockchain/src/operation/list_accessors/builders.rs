@@ -114,49 +114,49 @@ impl ListAccessorsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_accessors::paginator::ListAccessorsPaginator {
         crate::operation::list_accessors::paginator::ListAccessorsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The maximum number of accessors to list.</p>
+    /// <p> The maximum number of accessors to list.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of accessors to list.</p>
+    /// <p> The maximum number of accessors to list.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The maximum number of accessors to list.</p>
+    /// <p> The maximum number of accessors to list.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    /// <p> The pagination token that indicates the next set of results to retrieve. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    /// <p> The pagination token that indicates the next set of results to retrieve. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    /// <p> The pagination token that indicates the next set of results to retrieve. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>The blockchain network that the <code>Accessor</code> token is created for.</p><note>
+    /// <p>The blockchain network that the <code>Accessor</code> token is created for.</p> <note>
     /// <p>Use the value <code>ETHEREUM_MAINNET_AND_GOERLI</code> for all existing <code>Accessors</code> tokens that were created before the <code>networkType</code> property was introduced.</p>
     /// </note>
     pub fn network_type(mut self, input: crate::types::AccessorNetworkType) -> Self {
         self.inner = self.inner.network_type(input);
         self
     }
-    /// <p>The blockchain network that the <code>Accessor</code> token is created for.</p><note>
+    /// <p>The blockchain network that the <code>Accessor</code> token is created for.</p> <note>
     /// <p>Use the value <code>ETHEREUM_MAINNET_AND_GOERLI</code> for all existing <code>Accessors</code> tokens that were created before the <code>networkType</code> property was introduced.</p>
     /// </note>
     pub fn set_network_type(mut self, input: ::std::option::Option<crate::types::AccessorNetworkType>) -> Self {
         self.inner = self.inner.set_network_type(input);
         self
     }
-    /// <p>The blockchain network that the <code>Accessor</code> token is created for.</p><note>
+    /// <p>The blockchain network that the <code>Accessor</code> token is created for.</p> <note>
     /// <p>Use the value <code>ETHEREUM_MAINNET_AND_GOERLI</code> for all existing <code>Accessors</code> tokens that were created before the <code>networkType</code> property was introduced.</p>
     /// </note>
     pub fn get_network_type(&self) -> &::std::option::Option<crate::types::AccessorNetworkType> {

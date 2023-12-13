@@ -11,7 +11,7 @@ pub struct UpdateVehicleRequestItem {
     /// <p>The ARN of the signal decoder manifest associated with the vehicle to update.</p>
     pub decoder_manifest_arn: ::std::option::Option<::std::string::String>,
     /// <p>Static information about a vehicle in a key-value pair. For example:</p>
-    /// <p><code>"engineType"</code> : <code>"1.3 L R2"</code></p>
+    /// <p> <code>"engineType"</code> : <code>"1.3 L R2"</code> </p>
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The method the specified attributes will update the existing attributes on the vehicle. Use<code>Overwite</code> to replace the vehicle attributes with the specified attributes. Or use <code>Merge</code> to combine all attributes.</p>
     /// <p>This is required if attributes are present in the input.</p>
@@ -32,7 +32,7 @@ impl UpdateVehicleRequestItem {
         self.decoder_manifest_arn.as_deref()
     }
     /// <p>Static information about a vehicle in a key-value pair. For example:</p>
-    /// <p><code>"engineType"</code> : <code>"1.3 L R2"</code></p>
+    /// <p> <code>"engineType"</code> : <code>"1.3 L R2"</code> </p>
     pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
     }
@@ -108,7 +108,7 @@ impl UpdateVehicleRequestItemBuilder {
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
     /// <p>Static information about a vehicle in a key-value pair. For example:</p>
-    /// <p><code>"engineType"</code> : <code>"1.3 L R2"</code></p>
+    /// <p> <code>"engineType"</code> : <code>"1.3 L R2"</code> </p>
     pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
@@ -116,13 +116,13 @@ impl UpdateVehicleRequestItemBuilder {
         self
     }
     /// <p>Static information about a vehicle in a key-value pair. For example:</p>
-    /// <p><code>"engineType"</code> : <code>"1.3 L R2"</code></p>
+    /// <p> <code>"engineType"</code> : <code>"1.3 L R2"</code> </p>
     pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.attributes = input;
         self
     }
     /// <p>Static information about a vehicle in a key-value pair. For example:</p>
-    /// <p><code>"engineType"</code> : <code>"1.3 L R2"</code></p>
+    /// <p> <code>"engineType"</code> : <code>"1.3 L R2"</code> </p>
     pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.attributes
     }

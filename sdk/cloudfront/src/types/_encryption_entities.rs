@@ -6,7 +6,7 @@
 pub struct EncryptionEntities {
     /// <p>Number of field pattern items in a field-level encryption content type-profile mapping.</p>
     pub quantity: i32,
-    /// <p>An array of field patterns in a field-level encryption content type-profile mapping.</p>
+    /// <p>An array of field patterns in a field-level encryption content type-profile mapping. </p>
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::EncryptionEntity>>,
 }
 impl EncryptionEntities {
@@ -14,7 +14,7 @@ impl EncryptionEntities {
     pub fn quantity(&self) -> i32 {
         self.quantity
     }
-    /// <p>An array of field patterns in a field-level encryption content type-profile mapping.</p>
+    /// <p>An array of field patterns in a field-level encryption content type-profile mapping. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
     pub fn items(&self) -> &[crate::types::EncryptionEntity] {
@@ -55,19 +55,19 @@ impl EncryptionEntitiesBuilder {
     ///
     /// To override the contents of this collection use [`set_items`](Self::set_items).
     ///
-    /// <p>An array of field patterns in a field-level encryption content type-profile mapping.</p>
+    /// <p>An array of field patterns in a field-level encryption content type-profile mapping. </p>
     pub fn items(mut self, input: crate::types::EncryptionEntity) -> Self {
         let mut v = self.items.unwrap_or_default();
         v.push(input);
         self.items = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of field patterns in a field-level encryption content type-profile mapping.</p>
+    /// <p>An array of field patterns in a field-level encryption content type-profile mapping. </p>
     pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EncryptionEntity>>) -> Self {
         self.items = input;
         self
     }
-    /// <p>An array of field patterns in a field-level encryption content type-profile mapping.</p>
+    /// <p>An array of field patterns in a field-level encryption content type-profile mapping. </p>
     pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EncryptionEntity>> {
         &self.items
     }

@@ -3,54 +3,33 @@
 /// <p>Information about an Elastic Load Balancing resource limit for your Amazon Web Services account.</p>
 /// <p>For more information, see the following:</p>
 /// <ul>
-/// <li>
-/// <p><a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Quotas for your Application Load Balancers</a></p></li>
-/// <li>
-/// <p><a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-limits.html">Quotas for your Network Load Balancers</a></p></li>
-/// <li>
-/// <p><a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/quotas-limits.html">Quotas for your Gateway Load Balancers</a></p></li>
+/// <li> <p> <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Quotas for your Application Load Balancers</a> </p> </li>
+/// <li> <p> <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-limits.html">Quotas for your Network Load Balancers</a> </p> </li>
+/// <li> <p> <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/quotas-limits.html">Quotas for your Gateway Load Balancers</a> </p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Limit {
     /// <p>The name of the limit. The possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>application-load-balancers</p></li>
-    /// <li>
-    /// <p>condition-values-per-alb-rule</p></li>
-    /// <li>
-    /// <p>condition-wildcards-per-alb-rule</p></li>
-    /// <li>
-    /// <p>gateway-load-balancers</p></li>
-    /// <li>
-    /// <p>gateway-load-balancers-per-vpc</p></li>
-    /// <li>
-    /// <p>geneve-target-groups</p></li>
-    /// <li>
-    /// <p>listeners-per-application-load-balancer</p></li>
-    /// <li>
-    /// <p>listeners-per-network-load-balancer</p></li>
-    /// <li>
-    /// <p>network-load-balancers</p></li>
-    /// <li>
-    /// <p>rules-per-application-load-balancer</p></li>
-    /// <li>
-    /// <p>target-groups</p></li>
-    /// <li>
-    /// <p>target-groups-per-action-on-application-load-balancer</p></li>
-    /// <li>
-    /// <p>target-groups-per-action-on-network-load-balancer</p></li>
-    /// <li>
-    /// <p>target-groups-per-application-load-balancer</p></li>
-    /// <li>
-    /// <p>targets-per-application-load-balancer</p></li>
-    /// <li>
-    /// <p>targets-per-availability-zone-per-gateway-load-balancer</p></li>
-    /// <li>
-    /// <p>targets-per-availability-zone-per-network-load-balancer</p></li>
-    /// <li>
-    /// <p>targets-per-network-load-balancer</p></li>
+    /// <li> <p>application-load-balancers</p> </li>
+    /// <li> <p>condition-values-per-alb-rule</p> </li>
+    /// <li> <p>condition-wildcards-per-alb-rule</p> </li>
+    /// <li> <p>gateway-load-balancers</p> </li>
+    /// <li> <p>gateway-load-balancers-per-vpc</p> </li>
+    /// <li> <p>geneve-target-groups</p> </li>
+    /// <li> <p>listeners-per-application-load-balancer</p> </li>
+    /// <li> <p>listeners-per-network-load-balancer</p> </li>
+    /// <li> <p>network-load-balancers</p> </li>
+    /// <li> <p>rules-per-application-load-balancer</p> </li>
+    /// <li> <p>target-groups</p> </li>
+    /// <li> <p>target-groups-per-action-on-application-load-balancer</p> </li>
+    /// <li> <p>target-groups-per-action-on-network-load-balancer</p> </li>
+    /// <li> <p>target-groups-per-application-load-balancer</p> </li>
+    /// <li> <p>targets-per-application-load-balancer</p> </li>
+    /// <li> <p>targets-per-availability-zone-per-gateway-load-balancer</p> </li>
+    /// <li> <p>targets-per-availability-zone-per-network-load-balancer</p> </li>
+    /// <li> <p>targets-per-network-load-balancer</p> </li>
     /// </ul>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The maximum value of the limit.</p>
@@ -59,42 +38,24 @@ pub struct Limit {
 impl Limit {
     /// <p>The name of the limit. The possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>application-load-balancers</p></li>
-    /// <li>
-    /// <p>condition-values-per-alb-rule</p></li>
-    /// <li>
-    /// <p>condition-wildcards-per-alb-rule</p></li>
-    /// <li>
-    /// <p>gateway-load-balancers</p></li>
-    /// <li>
-    /// <p>gateway-load-balancers-per-vpc</p></li>
-    /// <li>
-    /// <p>geneve-target-groups</p></li>
-    /// <li>
-    /// <p>listeners-per-application-load-balancer</p></li>
-    /// <li>
-    /// <p>listeners-per-network-load-balancer</p></li>
-    /// <li>
-    /// <p>network-load-balancers</p></li>
-    /// <li>
-    /// <p>rules-per-application-load-balancer</p></li>
-    /// <li>
-    /// <p>target-groups</p></li>
-    /// <li>
-    /// <p>target-groups-per-action-on-application-load-balancer</p></li>
-    /// <li>
-    /// <p>target-groups-per-action-on-network-load-balancer</p></li>
-    /// <li>
-    /// <p>target-groups-per-application-load-balancer</p></li>
-    /// <li>
-    /// <p>targets-per-application-load-balancer</p></li>
-    /// <li>
-    /// <p>targets-per-availability-zone-per-gateway-load-balancer</p></li>
-    /// <li>
-    /// <p>targets-per-availability-zone-per-network-load-balancer</p></li>
-    /// <li>
-    /// <p>targets-per-network-load-balancer</p></li>
+    /// <li> <p>application-load-balancers</p> </li>
+    /// <li> <p>condition-values-per-alb-rule</p> </li>
+    /// <li> <p>condition-wildcards-per-alb-rule</p> </li>
+    /// <li> <p>gateway-load-balancers</p> </li>
+    /// <li> <p>gateway-load-balancers-per-vpc</p> </li>
+    /// <li> <p>geneve-target-groups</p> </li>
+    /// <li> <p>listeners-per-application-load-balancer</p> </li>
+    /// <li> <p>listeners-per-network-load-balancer</p> </li>
+    /// <li> <p>network-load-balancers</p> </li>
+    /// <li> <p>rules-per-application-load-balancer</p> </li>
+    /// <li> <p>target-groups</p> </li>
+    /// <li> <p>target-groups-per-action-on-application-load-balancer</p> </li>
+    /// <li> <p>target-groups-per-action-on-network-load-balancer</p> </li>
+    /// <li> <p>target-groups-per-application-load-balancer</p> </li>
+    /// <li> <p>targets-per-application-load-balancer</p> </li>
+    /// <li> <p>targets-per-availability-zone-per-gateway-load-balancer</p> </li>
+    /// <li> <p>targets-per-availability-zone-per-network-load-balancer</p> </li>
+    /// <li> <p>targets-per-network-load-balancer</p> </li>
     /// </ul>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
@@ -121,42 +82,24 @@ pub struct LimitBuilder {
 impl LimitBuilder {
     /// <p>The name of the limit. The possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>application-load-balancers</p></li>
-    /// <li>
-    /// <p>condition-values-per-alb-rule</p></li>
-    /// <li>
-    /// <p>condition-wildcards-per-alb-rule</p></li>
-    /// <li>
-    /// <p>gateway-load-balancers</p></li>
-    /// <li>
-    /// <p>gateway-load-balancers-per-vpc</p></li>
-    /// <li>
-    /// <p>geneve-target-groups</p></li>
-    /// <li>
-    /// <p>listeners-per-application-load-balancer</p></li>
-    /// <li>
-    /// <p>listeners-per-network-load-balancer</p></li>
-    /// <li>
-    /// <p>network-load-balancers</p></li>
-    /// <li>
-    /// <p>rules-per-application-load-balancer</p></li>
-    /// <li>
-    /// <p>target-groups</p></li>
-    /// <li>
-    /// <p>target-groups-per-action-on-application-load-balancer</p></li>
-    /// <li>
-    /// <p>target-groups-per-action-on-network-load-balancer</p></li>
-    /// <li>
-    /// <p>target-groups-per-application-load-balancer</p></li>
-    /// <li>
-    /// <p>targets-per-application-load-balancer</p></li>
-    /// <li>
-    /// <p>targets-per-availability-zone-per-gateway-load-balancer</p></li>
-    /// <li>
-    /// <p>targets-per-availability-zone-per-network-load-balancer</p></li>
-    /// <li>
-    /// <p>targets-per-network-load-balancer</p></li>
+    /// <li> <p>application-load-balancers</p> </li>
+    /// <li> <p>condition-values-per-alb-rule</p> </li>
+    /// <li> <p>condition-wildcards-per-alb-rule</p> </li>
+    /// <li> <p>gateway-load-balancers</p> </li>
+    /// <li> <p>gateway-load-balancers-per-vpc</p> </li>
+    /// <li> <p>geneve-target-groups</p> </li>
+    /// <li> <p>listeners-per-application-load-balancer</p> </li>
+    /// <li> <p>listeners-per-network-load-balancer</p> </li>
+    /// <li> <p>network-load-balancers</p> </li>
+    /// <li> <p>rules-per-application-load-balancer</p> </li>
+    /// <li> <p>target-groups</p> </li>
+    /// <li> <p>target-groups-per-action-on-application-load-balancer</p> </li>
+    /// <li> <p>target-groups-per-action-on-network-load-balancer</p> </li>
+    /// <li> <p>target-groups-per-application-load-balancer</p> </li>
+    /// <li> <p>targets-per-application-load-balancer</p> </li>
+    /// <li> <p>targets-per-availability-zone-per-gateway-load-balancer</p> </li>
+    /// <li> <p>targets-per-availability-zone-per-network-load-balancer</p> </li>
+    /// <li> <p>targets-per-network-load-balancer</p> </li>
     /// </ul>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -164,42 +107,24 @@ impl LimitBuilder {
     }
     /// <p>The name of the limit. The possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>application-load-balancers</p></li>
-    /// <li>
-    /// <p>condition-values-per-alb-rule</p></li>
-    /// <li>
-    /// <p>condition-wildcards-per-alb-rule</p></li>
-    /// <li>
-    /// <p>gateway-load-balancers</p></li>
-    /// <li>
-    /// <p>gateway-load-balancers-per-vpc</p></li>
-    /// <li>
-    /// <p>geneve-target-groups</p></li>
-    /// <li>
-    /// <p>listeners-per-application-load-balancer</p></li>
-    /// <li>
-    /// <p>listeners-per-network-load-balancer</p></li>
-    /// <li>
-    /// <p>network-load-balancers</p></li>
-    /// <li>
-    /// <p>rules-per-application-load-balancer</p></li>
-    /// <li>
-    /// <p>target-groups</p></li>
-    /// <li>
-    /// <p>target-groups-per-action-on-application-load-balancer</p></li>
-    /// <li>
-    /// <p>target-groups-per-action-on-network-load-balancer</p></li>
-    /// <li>
-    /// <p>target-groups-per-application-load-balancer</p></li>
-    /// <li>
-    /// <p>targets-per-application-load-balancer</p></li>
-    /// <li>
-    /// <p>targets-per-availability-zone-per-gateway-load-balancer</p></li>
-    /// <li>
-    /// <p>targets-per-availability-zone-per-network-load-balancer</p></li>
-    /// <li>
-    /// <p>targets-per-network-load-balancer</p></li>
+    /// <li> <p>application-load-balancers</p> </li>
+    /// <li> <p>condition-values-per-alb-rule</p> </li>
+    /// <li> <p>condition-wildcards-per-alb-rule</p> </li>
+    /// <li> <p>gateway-load-balancers</p> </li>
+    /// <li> <p>gateway-load-balancers-per-vpc</p> </li>
+    /// <li> <p>geneve-target-groups</p> </li>
+    /// <li> <p>listeners-per-application-load-balancer</p> </li>
+    /// <li> <p>listeners-per-network-load-balancer</p> </li>
+    /// <li> <p>network-load-balancers</p> </li>
+    /// <li> <p>rules-per-application-load-balancer</p> </li>
+    /// <li> <p>target-groups</p> </li>
+    /// <li> <p>target-groups-per-action-on-application-load-balancer</p> </li>
+    /// <li> <p>target-groups-per-action-on-network-load-balancer</p> </li>
+    /// <li> <p>target-groups-per-application-load-balancer</p> </li>
+    /// <li> <p>targets-per-application-load-balancer</p> </li>
+    /// <li> <p>targets-per-availability-zone-per-gateway-load-balancer</p> </li>
+    /// <li> <p>targets-per-availability-zone-per-network-load-balancer</p> </li>
+    /// <li> <p>targets-per-network-load-balancer</p> </li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
@@ -207,42 +132,24 @@ impl LimitBuilder {
     }
     /// <p>The name of the limit. The possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>application-load-balancers</p></li>
-    /// <li>
-    /// <p>condition-values-per-alb-rule</p></li>
-    /// <li>
-    /// <p>condition-wildcards-per-alb-rule</p></li>
-    /// <li>
-    /// <p>gateway-load-balancers</p></li>
-    /// <li>
-    /// <p>gateway-load-balancers-per-vpc</p></li>
-    /// <li>
-    /// <p>geneve-target-groups</p></li>
-    /// <li>
-    /// <p>listeners-per-application-load-balancer</p></li>
-    /// <li>
-    /// <p>listeners-per-network-load-balancer</p></li>
-    /// <li>
-    /// <p>network-load-balancers</p></li>
-    /// <li>
-    /// <p>rules-per-application-load-balancer</p></li>
-    /// <li>
-    /// <p>target-groups</p></li>
-    /// <li>
-    /// <p>target-groups-per-action-on-application-load-balancer</p></li>
-    /// <li>
-    /// <p>target-groups-per-action-on-network-load-balancer</p></li>
-    /// <li>
-    /// <p>target-groups-per-application-load-balancer</p></li>
-    /// <li>
-    /// <p>targets-per-application-load-balancer</p></li>
-    /// <li>
-    /// <p>targets-per-availability-zone-per-gateway-load-balancer</p></li>
-    /// <li>
-    /// <p>targets-per-availability-zone-per-network-load-balancer</p></li>
-    /// <li>
-    /// <p>targets-per-network-load-balancer</p></li>
+    /// <li> <p>application-load-balancers</p> </li>
+    /// <li> <p>condition-values-per-alb-rule</p> </li>
+    /// <li> <p>condition-wildcards-per-alb-rule</p> </li>
+    /// <li> <p>gateway-load-balancers</p> </li>
+    /// <li> <p>gateway-load-balancers-per-vpc</p> </li>
+    /// <li> <p>geneve-target-groups</p> </li>
+    /// <li> <p>listeners-per-application-load-balancer</p> </li>
+    /// <li> <p>listeners-per-network-load-balancer</p> </li>
+    /// <li> <p>network-load-balancers</p> </li>
+    /// <li> <p>rules-per-application-load-balancer</p> </li>
+    /// <li> <p>target-groups</p> </li>
+    /// <li> <p>target-groups-per-action-on-application-load-balancer</p> </li>
+    /// <li> <p>target-groups-per-action-on-network-load-balancer</p> </li>
+    /// <li> <p>target-groups-per-application-load-balancer</p> </li>
+    /// <li> <p>targets-per-application-load-balancer</p> </li>
+    /// <li> <p>targets-per-availability-zone-per-gateway-load-balancer</p> </li>
+    /// <li> <p>targets-per-availability-zone-per-network-load-balancer</p> </li>
+    /// <li> <p>targets-per-network-load-balancer</p> </li>
     /// </ul>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name

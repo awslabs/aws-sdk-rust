@@ -6,15 +6,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueryFilter {
-    /// <p>The name of a key to search for. The filter returns only the events that match the <code>Name</code> and <code>Values</code> that you specify.</p>
-    /// <p>Valid values for <code>Name</code> are <code>Browser</code> | <code>Device</code> | <code>Country</code> | <code>Page</code> | <code>OS</code> | <code>EventType</code> | <code>Invert</code></p>
+    /// <p>The name of a key to search for. The filter returns only the events that match the <code>Name</code> and <code>Values</code> that you specify. </p>
+    /// <p>Valid values for <code>Name</code> are <code>Browser</code> | <code>Device</code> | <code>Country</code> | <code>Page</code> | <code>OS</code> | <code>EventType</code> | <code>Invert</code> </p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The values of the <code>Name</code> that are to be be included in the returned results.</p>
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl QueryFilter {
-    /// <p>The name of a key to search for. The filter returns only the events that match the <code>Name</code> and <code>Values</code> that you specify.</p>
-    /// <p>Valid values for <code>Name</code> are <code>Browser</code> | <code>Device</code> | <code>Country</code> | <code>Page</code> | <code>OS</code> | <code>EventType</code> | <code>Invert</code></p>
+    /// <p>The name of a key to search for. The filter returns only the events that match the <code>Name</code> and <code>Values</code> that you specify. </p>
+    /// <p>Valid values for <code>Name</code> are <code>Browser</code> | <code>Device</code> | <code>Country</code> | <code>Page</code> | <code>OS</code> | <code>EventType</code> | <code>Invert</code> </p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -40,20 +40,20 @@ pub struct QueryFilterBuilder {
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl QueryFilterBuilder {
-    /// <p>The name of a key to search for. The filter returns only the events that match the <code>Name</code> and <code>Values</code> that you specify.</p>
-    /// <p>Valid values for <code>Name</code> are <code>Browser</code> | <code>Device</code> | <code>Country</code> | <code>Page</code> | <code>OS</code> | <code>EventType</code> | <code>Invert</code></p>
+    /// <p>The name of a key to search for. The filter returns only the events that match the <code>Name</code> and <code>Values</code> that you specify. </p>
+    /// <p>Valid values for <code>Name</code> are <code>Browser</code> | <code>Device</code> | <code>Country</code> | <code>Page</code> | <code>OS</code> | <code>EventType</code> | <code>Invert</code> </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of a key to search for. The filter returns only the events that match the <code>Name</code> and <code>Values</code> that you specify.</p>
-    /// <p>Valid values for <code>Name</code> are <code>Browser</code> | <code>Device</code> | <code>Country</code> | <code>Page</code> | <code>OS</code> | <code>EventType</code> | <code>Invert</code></p>
+    /// <p>The name of a key to search for. The filter returns only the events that match the <code>Name</code> and <code>Values</code> that you specify. </p>
+    /// <p>Valid values for <code>Name</code> are <code>Browser</code> | <code>Device</code> | <code>Country</code> | <code>Page</code> | <code>OS</code> | <code>EventType</code> | <code>Invert</code> </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of a key to search for. The filter returns only the events that match the <code>Name</code> and <code>Values</code> that you specify.</p>
-    /// <p>Valid values for <code>Name</code> are <code>Browser</code> | <code>Device</code> | <code>Country</code> | <code>Page</code> | <code>OS</code> | <code>EventType</code> | <code>Invert</code></p>
+    /// <p>The name of a key to search for. The filter returns only the events that match the <code>Name</code> and <code>Values</code> that you specify. </p>
+    /// <p>Valid values for <code>Name</code> are <code>Browser</code> | <code>Device</code> | <code>Country</code> | <code>Page</code> | <code>OS</code> | <code>EventType</code> | <code>Invert</code> </p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

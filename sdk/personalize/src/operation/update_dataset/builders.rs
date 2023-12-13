@@ -22,7 +22,7 @@ impl UpdateDatasetInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateDataset`.
 ///
-/// <p>Update a dataset to replace its schema with a new or existing one. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/updating-dataset-schema.html">Replacing a dataset's schema</a>.</p>
+/// <p>Update a dataset to replace its schema with a new or existing one. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/updating-dataset-schema.html">Replacing a dataset's schema</a>. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDatasetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

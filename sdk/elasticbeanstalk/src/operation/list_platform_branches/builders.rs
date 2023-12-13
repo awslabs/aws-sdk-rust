@@ -122,34 +122,24 @@ impl ListPlatformBranchesFluentBuilder {
     /// <p>Criteria for restricting the resulting list of platform branches. The filter is evaluated as a logical conjunction (AND) of the separate <code>SearchFilter</code> terms.</p>
     /// <p>The following list shows valid attribute values for each of the <code>SearchFilter</code> terms. Most operators take a single value. The <code>in</code> and <code>not_in</code> operators can take multiple values.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Attribute = BranchName</code>:</p>
+    /// <li> <p> <code>Attribute = BranchName</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Operator</code>: <code>=</code> | <code>!=</code> | <code>begins_with</code> | <code>ends_with</code> | <code>contains</code> | <code>in</code> | <code>not_in</code></p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p><code>Attribute = LifecycleState</code>:</p>
+    /// <li> <p> <code>Operator</code>: <code>=</code> | <code>!=</code> | <code>begins_with</code> | <code>ends_with</code> | <code>contains</code> | <code>in</code> | <code>not_in</code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>Attribute = LifecycleState</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Operator</code>: <code>=</code> | <code>!=</code> | <code>in</code> | <code>not_in</code></p></li>
-    /// <li>
-    /// <p><code>Values</code>: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code></p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p><code>Attribute = PlatformName</code>:</p>
+    /// <li> <p> <code>Operator</code>: <code>=</code> | <code>!=</code> | <code>in</code> | <code>not_in</code> </p> </li>
+    /// <li> <p> <code>Values</code>: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>Attribute = PlatformName</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Operator</code>: <code>=</code> | <code>!=</code> | <code>begins_with</code> | <code>ends_with</code> | <code>contains</code> | <code>in</code> | <code>not_in</code></p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p><code>Attribute = TierType</code>:</p>
+    /// <li> <p> <code>Operator</code>: <code>=</code> | <code>!=</code> | <code>begins_with</code> | <code>ends_with</code> | <code>contains</code> | <code>in</code> | <code>not_in</code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>Attribute = TierType</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Operator</code>: <code>=</code> | <code>!=</code></p></li>
-    /// <li>
-    /// <p><code>Values</code>: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code></p></li>
-    /// </ul></li>
+    /// <li> <p> <code>Operator</code>: <code>=</code> | <code>!=</code> </p> </li>
+    /// <li> <p> <code>Values</code>: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code> </p> </li>
+    /// </ul> </li>
     /// </ul>
     /// <p>Array size: limited to 10 <code>SearchFilter</code> objects.</p>
     /// <p>Within each <code>SearchFilter</code> item, the <code>Values</code> array is limited to 10 items.</p>
@@ -160,34 +150,24 @@ impl ListPlatformBranchesFluentBuilder {
     /// <p>Criteria for restricting the resulting list of platform branches. The filter is evaluated as a logical conjunction (AND) of the separate <code>SearchFilter</code> terms.</p>
     /// <p>The following list shows valid attribute values for each of the <code>SearchFilter</code> terms. Most operators take a single value. The <code>in</code> and <code>not_in</code> operators can take multiple values.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Attribute = BranchName</code>:</p>
+    /// <li> <p> <code>Attribute = BranchName</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Operator</code>: <code>=</code> | <code>!=</code> | <code>begins_with</code> | <code>ends_with</code> | <code>contains</code> | <code>in</code> | <code>not_in</code></p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p><code>Attribute = LifecycleState</code>:</p>
+    /// <li> <p> <code>Operator</code>: <code>=</code> | <code>!=</code> | <code>begins_with</code> | <code>ends_with</code> | <code>contains</code> | <code>in</code> | <code>not_in</code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>Attribute = LifecycleState</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Operator</code>: <code>=</code> | <code>!=</code> | <code>in</code> | <code>not_in</code></p></li>
-    /// <li>
-    /// <p><code>Values</code>: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code></p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p><code>Attribute = PlatformName</code>:</p>
+    /// <li> <p> <code>Operator</code>: <code>=</code> | <code>!=</code> | <code>in</code> | <code>not_in</code> </p> </li>
+    /// <li> <p> <code>Values</code>: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>Attribute = PlatformName</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Operator</code>: <code>=</code> | <code>!=</code> | <code>begins_with</code> | <code>ends_with</code> | <code>contains</code> | <code>in</code> | <code>not_in</code></p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p><code>Attribute = TierType</code>:</p>
+    /// <li> <p> <code>Operator</code>: <code>=</code> | <code>!=</code> | <code>begins_with</code> | <code>ends_with</code> | <code>contains</code> | <code>in</code> | <code>not_in</code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>Attribute = TierType</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Operator</code>: <code>=</code> | <code>!=</code></p></li>
-    /// <li>
-    /// <p><code>Values</code>: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code></p></li>
-    /// </ul></li>
+    /// <li> <p> <code>Operator</code>: <code>=</code> | <code>!=</code> </p> </li>
+    /// <li> <p> <code>Values</code>: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code> </p> </li>
+    /// </ul> </li>
     /// </ul>
     /// <p>Array size: limited to 10 <code>SearchFilter</code> objects.</p>
     /// <p>Within each <code>SearchFilter</code> item, the <code>Values</code> array is limited to 10 items.</p>
@@ -198,34 +178,24 @@ impl ListPlatformBranchesFluentBuilder {
     /// <p>Criteria for restricting the resulting list of platform branches. The filter is evaluated as a logical conjunction (AND) of the separate <code>SearchFilter</code> terms.</p>
     /// <p>The following list shows valid attribute values for each of the <code>SearchFilter</code> terms. Most operators take a single value. The <code>in</code> and <code>not_in</code> operators can take multiple values.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Attribute = BranchName</code>:</p>
+    /// <li> <p> <code>Attribute = BranchName</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Operator</code>: <code>=</code> | <code>!=</code> | <code>begins_with</code> | <code>ends_with</code> | <code>contains</code> | <code>in</code> | <code>not_in</code></p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p><code>Attribute = LifecycleState</code>:</p>
+    /// <li> <p> <code>Operator</code>: <code>=</code> | <code>!=</code> | <code>begins_with</code> | <code>ends_with</code> | <code>contains</code> | <code>in</code> | <code>not_in</code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>Attribute = LifecycleState</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Operator</code>: <code>=</code> | <code>!=</code> | <code>in</code> | <code>not_in</code></p></li>
-    /// <li>
-    /// <p><code>Values</code>: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code></p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p><code>Attribute = PlatformName</code>:</p>
+    /// <li> <p> <code>Operator</code>: <code>=</code> | <code>!=</code> | <code>in</code> | <code>not_in</code> </p> </li>
+    /// <li> <p> <code>Values</code>: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>Attribute = PlatformName</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Operator</code>: <code>=</code> | <code>!=</code> | <code>begins_with</code> | <code>ends_with</code> | <code>contains</code> | <code>in</code> | <code>not_in</code></p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p><code>Attribute = TierType</code>:</p>
+    /// <li> <p> <code>Operator</code>: <code>=</code> | <code>!=</code> | <code>begins_with</code> | <code>ends_with</code> | <code>contains</code> | <code>in</code> | <code>not_in</code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>Attribute = TierType</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Operator</code>: <code>=</code> | <code>!=</code></p></li>
-    /// <li>
-    /// <p><code>Values</code>: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code></p></li>
-    /// </ul></li>
+    /// <li> <p> <code>Operator</code>: <code>=</code> | <code>!=</code> </p> </li>
+    /// <li> <p> <code>Values</code>: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code> </p> </li>
+    /// </ul> </li>
     /// </ul>
     /// <p>Array size: limited to 10 <code>SearchFilter</code> objects.</p>
     /// <p>Within each <code>SearchFilter</code> item, the <code>Values</code> array is limited to 10 items.</p>

@@ -42,7 +42,7 @@ pub struct AwsRdsDbClusterSnapshotDetails {
     pub db_cluster_snapshot_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Whether mapping of IAM accounts to database accounts is enabled.</p>
     pub iam_database_authentication_enabled: ::std::option::Option<bool>,
-    /// <p>Contains the name and values of a manual DB cluster snapshot attribute.</p>
+    /// <p> Contains the name and values of a manual DB cluster snapshot attribute. </p>
     pub db_cluster_snapshot_attributes: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute>>,
 }
 impl AwsRdsDbClusterSnapshotDetails {
@@ -122,7 +122,7 @@ impl AwsRdsDbClusterSnapshotDetails {
     pub fn iam_database_authentication_enabled(&self) -> ::std::option::Option<bool> {
         self.iam_database_authentication_enabled
     }
-    /// <p>Contains the name and values of a manual DB cluster snapshot attribute.</p>
+    /// <p> Contains the name and values of a manual DB cluster snapshot attribute. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.db_cluster_snapshot_attributes.is_none()`.
     pub fn db_cluster_snapshot_attributes(&self) -> &[crate::types::AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute] {
@@ -430,14 +430,14 @@ impl AwsRdsDbClusterSnapshotDetailsBuilder {
     ///
     /// To override the contents of this collection use [`set_db_cluster_snapshot_attributes`](Self::set_db_cluster_snapshot_attributes).
     ///
-    /// <p>Contains the name and values of a manual DB cluster snapshot attribute.</p>
+    /// <p> Contains the name and values of a manual DB cluster snapshot attribute. </p>
     pub fn db_cluster_snapshot_attributes(mut self, input: crate::types::AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute) -> Self {
         let mut v = self.db_cluster_snapshot_attributes.unwrap_or_default();
         v.push(input);
         self.db_cluster_snapshot_attributes = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Contains the name and values of a manual DB cluster snapshot attribute.</p>
+    /// <p> Contains the name and values of a manual DB cluster snapshot attribute. </p>
     pub fn set_db_cluster_snapshot_attributes(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute>>,
@@ -445,7 +445,7 @@ impl AwsRdsDbClusterSnapshotDetailsBuilder {
         self.db_cluster_snapshot_attributes = input;
         self
     }
-    /// <p>Contains the name and values of a manual DB cluster snapshot attribute.</p>
+    /// <p> Contains the name and values of a manual DB cluster snapshot attribute. </p>
     pub fn get_db_cluster_snapshot_attributes(
         &self,
     ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute>> {

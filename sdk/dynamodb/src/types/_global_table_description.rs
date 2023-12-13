@@ -12,14 +12,10 @@ pub struct GlobalTableDescription {
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current state of the global table:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATING</code> - The global table is being created.</p></li>
-    /// <li>
-    /// <p><code>UPDATING</code> - The global table is being updated.</p></li>
-    /// <li>
-    /// <p><code>DELETING</code> - The global table is being deleted.</p></li>
-    /// <li>
-    /// <p><code>ACTIVE</code> - The global table is ready for use.</p></li>
+    /// <li> <p> <code>CREATING</code> - The global table is being created.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - The global table is being updated.</p> </li>
+    /// <li> <p> <code>DELETING</code> - The global table is being deleted.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> - The global table is ready for use.</p> </li>
     /// </ul>
     pub global_table_status: ::std::option::Option<crate::types::GlobalTableStatus>,
     /// <p>The global table name.</p>
@@ -42,14 +38,10 @@ impl GlobalTableDescription {
     }
     /// <p>The current state of the global table:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATING</code> - The global table is being created.</p></li>
-    /// <li>
-    /// <p><code>UPDATING</code> - The global table is being updated.</p></li>
-    /// <li>
-    /// <p><code>DELETING</code> - The global table is being deleted.</p></li>
-    /// <li>
-    /// <p><code>ACTIVE</code> - The global table is ready for use.</p></li>
+    /// <li> <p> <code>CREATING</code> - The global table is being created.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - The global table is being updated.</p> </li>
+    /// <li> <p> <code>DELETING</code> - The global table is being deleted.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> - The global table is ready for use.</p> </li>
     /// </ul>
     pub fn global_table_status(&self) -> ::std::option::Option<&crate::types::GlobalTableStatus> {
         self.global_table_status.as_ref()
@@ -127,14 +119,10 @@ impl GlobalTableDescriptionBuilder {
     }
     /// <p>The current state of the global table:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATING</code> - The global table is being created.</p></li>
-    /// <li>
-    /// <p><code>UPDATING</code> - The global table is being updated.</p></li>
-    /// <li>
-    /// <p><code>DELETING</code> - The global table is being deleted.</p></li>
-    /// <li>
-    /// <p><code>ACTIVE</code> - The global table is ready for use.</p></li>
+    /// <li> <p> <code>CREATING</code> - The global table is being created.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - The global table is being updated.</p> </li>
+    /// <li> <p> <code>DELETING</code> - The global table is being deleted.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> - The global table is ready for use.</p> </li>
     /// </ul>
     pub fn global_table_status(mut self, input: crate::types::GlobalTableStatus) -> Self {
         self.global_table_status = ::std::option::Option::Some(input);
@@ -142,14 +130,10 @@ impl GlobalTableDescriptionBuilder {
     }
     /// <p>The current state of the global table:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATING</code> - The global table is being created.</p></li>
-    /// <li>
-    /// <p><code>UPDATING</code> - The global table is being updated.</p></li>
-    /// <li>
-    /// <p><code>DELETING</code> - The global table is being deleted.</p></li>
-    /// <li>
-    /// <p><code>ACTIVE</code> - The global table is ready for use.</p></li>
+    /// <li> <p> <code>CREATING</code> - The global table is being created.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - The global table is being updated.</p> </li>
+    /// <li> <p> <code>DELETING</code> - The global table is being deleted.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> - The global table is ready for use.</p> </li>
     /// </ul>
     pub fn set_global_table_status(mut self, input: ::std::option::Option<crate::types::GlobalTableStatus>) -> Self {
         self.global_table_status = input;
@@ -157,14 +141,10 @@ impl GlobalTableDescriptionBuilder {
     }
     /// <p>The current state of the global table:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATING</code> - The global table is being created.</p></li>
-    /// <li>
-    /// <p><code>UPDATING</code> - The global table is being updated.</p></li>
-    /// <li>
-    /// <p><code>DELETING</code> - The global table is being deleted.</p></li>
-    /// <li>
-    /// <p><code>ACTIVE</code> - The global table is ready for use.</p></li>
+    /// <li> <p> <code>CREATING</code> - The global table is being created.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - The global table is being updated.</p> </li>
+    /// <li> <p> <code>DELETING</code> - The global table is being deleted.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> - The global table is ready for use.</p> </li>
     /// </ul>
     pub fn get_global_table_status(&self) -> &::std::option::Option<crate::types::GlobalTableStatus> {
         &self.global_table_status

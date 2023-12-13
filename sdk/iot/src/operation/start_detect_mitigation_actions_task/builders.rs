@@ -22,7 +22,7 @@ impl StartDetectMitigationActionsTaskInputBuilder {
 }
 /// Fluent builder constructing a request to `StartDetectMitigationActionsTask`.
 ///
-/// <p>Starts a Device Defender ML Detect mitigation actions task.</p>
+/// <p> Starts a Device Defender ML Detect mitigation actions task. </p>
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">StartDetectMitigationActionsTask</a> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartDetectMitigationActionsTaskFluentBuilder {
@@ -109,31 +109,31 @@ impl StartDetectMitigationActionsTaskFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier of the task.</p>
+    /// <p> The unique identifier of the task. </p>
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.task_id(input.into());
         self
     }
-    /// <p>The unique identifier of the task.</p>
+    /// <p> The unique identifier of the task. </p>
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_task_id(input);
         self
     }
-    /// <p>The unique identifier of the task.</p>
+    /// <p> The unique identifier of the task. </p>
     pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_task_id()
     }
-    /// <p>Specifies the ML Detect findings to which the mitigation actions are applied.</p>
+    /// <p> Specifies the ML Detect findings to which the mitigation actions are applied. </p>
     pub fn target(mut self, input: crate::types::DetectMitigationActionsTaskTarget) -> Self {
         self.inner = self.inner.target(input);
         self
     }
-    /// <p>Specifies the ML Detect findings to which the mitigation actions are applied.</p>
+    /// <p> Specifies the ML Detect findings to which the mitigation actions are applied. </p>
     pub fn set_target(mut self, input: ::std::option::Option<crate::types::DetectMitigationActionsTaskTarget>) -> Self {
         self.inner = self.inner.set_target(input);
         self
     }
-    /// <p>Specifies the ML Detect findings to which the mitigation actions are applied.</p>
+    /// <p> Specifies the ML Detect findings to which the mitigation actions are applied. </p>
     pub fn get_target(&self) -> &::std::option::Option<crate::types::DetectMitigationActionsTaskTarget> {
         self.inner.get_target()
     }
@@ -141,73 +141,73 @@ impl StartDetectMitigationActionsTaskFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_actions`](Self::set_actions).
     ///
-    /// <p>The actions to be performed when a device has unexpected behavior.</p>
+    /// <p> The actions to be performed when a device has unexpected behavior. </p>
     pub fn actions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.actions(input.into());
         self
     }
-    /// <p>The actions to be performed when a device has unexpected behavior.</p>
+    /// <p> The actions to be performed when a device has unexpected behavior. </p>
     pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_actions(input);
         self
     }
-    /// <p>The actions to be performed when a device has unexpected behavior.</p>
+    /// <p> The actions to be performed when a device has unexpected behavior. </p>
     pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_actions()
     }
-    /// <p>Specifies the time period of which violation events occurred between.</p>
+    /// <p> Specifies the time period of which violation events occurred between. </p>
     pub fn violation_event_occurrence_range(mut self, input: crate::types::ViolationEventOccurrenceRange) -> Self {
         self.inner = self.inner.violation_event_occurrence_range(input);
         self
     }
-    /// <p>Specifies the time period of which violation events occurred between.</p>
+    /// <p> Specifies the time period of which violation events occurred between. </p>
     pub fn set_violation_event_occurrence_range(mut self, input: ::std::option::Option<crate::types::ViolationEventOccurrenceRange>) -> Self {
         self.inner = self.inner.set_violation_event_occurrence_range(input);
         self
     }
-    /// <p>Specifies the time period of which violation events occurred between.</p>
+    /// <p> Specifies the time period of which violation events occurred between. </p>
     pub fn get_violation_event_occurrence_range(&self) -> &::std::option::Option<crate::types::ViolationEventOccurrenceRange> {
         self.inner.get_violation_event_occurrence_range()
     }
-    /// <p>Specifies to list only active violations.</p>
+    /// <p> Specifies to list only active violations. </p>
     pub fn include_only_active_violations(mut self, input: bool) -> Self {
         self.inner = self.inner.include_only_active_violations(input);
         self
     }
-    /// <p>Specifies to list only active violations.</p>
+    /// <p> Specifies to list only active violations. </p>
     pub fn set_include_only_active_violations(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_only_active_violations(input);
         self
     }
-    /// <p>Specifies to list only active violations.</p>
+    /// <p> Specifies to list only active violations. </p>
     pub fn get_include_only_active_violations(&self) -> &::std::option::Option<bool> {
         self.inner.get_include_only_active_violations()
     }
-    /// <p>Specifies to include suppressed alerts.</p>
+    /// <p> Specifies to include suppressed alerts. </p>
     pub fn include_suppressed_alerts(mut self, input: bool) -> Self {
         self.inner = self.inner.include_suppressed_alerts(input);
         self
     }
-    /// <p>Specifies to include suppressed alerts.</p>
+    /// <p> Specifies to include suppressed alerts. </p>
     pub fn set_include_suppressed_alerts(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_suppressed_alerts(input);
         self
     }
-    /// <p>Specifies to include suppressed alerts.</p>
+    /// <p> Specifies to include suppressed alerts. </p>
     pub fn get_include_suppressed_alerts(&self) -> &::std::option::Option<bool> {
         self.inner.get_include_suppressed_alerts()
     }
-    /// <p>Each mitigation action task must have a unique client request token. If you try to create a new task with the same token as a task that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
+    /// <p> Each mitigation action task must have a unique client request token. If you try to create a new task with the same token as a task that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request. </p>
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
-    /// <p>Each mitigation action task must have a unique client request token. If you try to create a new task with the same token as a task that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
+    /// <p> Each mitigation action task must have a unique client request token. If you try to create a new task with the same token as a task that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request. </p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
-    /// <p>Each mitigation action task must have a unique client request token. If you try to create a new task with the same token as a task that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
+    /// <p> Each mitigation action task must have a unique client request token. If you try to create a new task with the same token as a task that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request. </p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_request_token()
     }

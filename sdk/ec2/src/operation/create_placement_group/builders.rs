@@ -22,7 +22,7 @@ impl CreatePlacementGroupInputBuilder {
 }
 /// Fluent builder constructing a request to `CreatePlacementGroup`.
 ///
-/// <p>Creates a placement group in which to launch instances. The strategy of the placement group determines how the instances are organized within the group.</p>
+/// <p>Creates a placement group in which to launch instances. The strategy of the placement group determines how the instances are organized within the group. </p>
 /// <p>A <code>cluster</code> placement group is a logical grouping of instances within a single Availability Zone that benefit from low network latency, high network throughput. A <code>spread</code> placement group places instances on distinct hardware. A <code>partition</code> placement group places groups of instances in different partitions, where instances in one partition do not share the same hardware with instances in another partition.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement groups</a> in the <i>Amazon EC2 User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -187,34 +187,28 @@ impl CreatePlacementGroupFluentBuilder {
     pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
     }
-    /// <p>Determines how placement groups spread instances.</p>
+    /// <p>Determines how placement groups spread instances. </p>
     /// <ul>
-    /// <li>
-    /// <p>Host – You can use <code>host</code> only with Outpost placement groups.</p></li>
-    /// <li>
-    /// <p>Rack – No usage restrictions.</p></li>
+    /// <li> <p>Host – You can use <code>host</code> only with Outpost placement groups.</p> </li>
+    /// <li> <p>Rack – No usage restrictions.</p> </li>
     /// </ul>
     pub fn spread_level(mut self, input: crate::types::SpreadLevel) -> Self {
         self.inner = self.inner.spread_level(input);
         self
     }
-    /// <p>Determines how placement groups spread instances.</p>
+    /// <p>Determines how placement groups spread instances. </p>
     /// <ul>
-    /// <li>
-    /// <p>Host – You can use <code>host</code> only with Outpost placement groups.</p></li>
-    /// <li>
-    /// <p>Rack – No usage restrictions.</p></li>
+    /// <li> <p>Host – You can use <code>host</code> only with Outpost placement groups.</p> </li>
+    /// <li> <p>Rack – No usage restrictions.</p> </li>
     /// </ul>
     pub fn set_spread_level(mut self, input: ::std::option::Option<crate::types::SpreadLevel>) -> Self {
         self.inner = self.inner.set_spread_level(input);
         self
     }
-    /// <p>Determines how placement groups spread instances.</p>
+    /// <p>Determines how placement groups spread instances. </p>
     /// <ul>
-    /// <li>
-    /// <p>Host – You can use <code>host</code> only with Outpost placement groups.</p></li>
-    /// <li>
-    /// <p>Rack – No usage restrictions.</p></li>
+    /// <li> <p>Host – You can use <code>host</code> only with Outpost placement groups.</p> </li>
+    /// <li> <p>Rack – No usage restrictions.</p> </li>
     /// </ul>
     pub fn get_spread_level(&self) -> &::std::option::Option<crate::types::SpreadLevel> {
         self.inner.get_spread_level()

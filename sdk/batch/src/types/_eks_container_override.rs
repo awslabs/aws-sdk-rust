@@ -10,7 +10,7 @@ pub struct EksContainerOverride {
     pub command: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The arguments to the entrypoint to send to the container that overrides the default arguments from the Docker image or the job definition. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the <i>Dockerfile reference</i> and <a href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define a command an arguments for a pod</a> in the <i>Kubernetes documentation</i>.</p>
     pub args: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch. Or, you can override the existing environment variables from the Docker image or the job definition.</p><note>
+    /// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch. Or, you can override the existing environment variables from the Docker image or the job definition.</p> <note>
     /// <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for variables that Batch sets.</p>
     /// </note>
     pub env: ::std::option::Option<::std::vec::Vec<crate::types::EksContainerEnvironmentVariable>>,
@@ -34,7 +34,7 @@ impl EksContainerOverride {
     pub fn args(&self) -> &[::std::string::String] {
         self.args.as_deref().unwrap_or_default()
     }
-    /// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch. Or, you can override the existing environment variables from the Docker image or the job definition.</p><note>
+    /// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch. Or, you can override the existing environment variables from the Docker image or the job definition.</p> <note>
     /// <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for variables that Batch sets.</p>
     /// </note>
     ///
@@ -123,7 +123,7 @@ impl EksContainerOverrideBuilder {
     ///
     /// To override the contents of this collection use [`set_env`](Self::set_env).
     ///
-    /// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch. Or, you can override the existing environment variables from the Docker image or the job definition.</p><note>
+    /// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch. Or, you can override the existing environment variables from the Docker image or the job definition.</p> <note>
     /// <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for variables that Batch sets.</p>
     /// </note>
     pub fn env(mut self, input: crate::types::EksContainerEnvironmentVariable) -> Self {
@@ -132,14 +132,14 @@ impl EksContainerOverrideBuilder {
         self.env = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch. Or, you can override the existing environment variables from the Docker image or the job definition.</p><note>
+    /// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch. Or, you can override the existing environment variables from the Docker image or the job definition.</p> <note>
     /// <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for variables that Batch sets.</p>
     /// </note>
     pub fn set_env(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EksContainerEnvironmentVariable>>) -> Self {
         self.env = input;
         self
     }
-    /// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch. Or, you can override the existing environment variables from the Docker image or the job definition.</p><note>
+    /// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch. Or, you can override the existing environment variables from the Docker image or the job definition.</p> <note>
     /// <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for variables that Batch sets.</p>
     /// </note>
     pub fn get_env(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EksContainerEnvironmentVariable>> {

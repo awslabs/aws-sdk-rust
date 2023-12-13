@@ -23,17 +23,13 @@ impl SearchResourcesInputBuilder {
 /// Fluent builder constructing a request to `SearchResources`.
 ///
 /// <p>Returns a list of Amazon Web Services resource identifiers that matches the specified query. The query uses the same format as a resource query in a <code>CreateGroup</code> or <code>UpdateGroupQuery</code> operation.</p>
-/// <p><b>Minimum permissions</b></p>
+/// <p> <b>Minimum permissions</b> </p>
 /// <p>To run this command, you must have the following permissions:</p>
 /// <ul>
-/// <li>
-/// <p><code>resource-groups:SearchResources</code></p></li>
-/// <li>
-/// <p><code>cloudformation:DescribeStacks</code></p></li>
-/// <li>
-/// <p><code>cloudformation:ListStackResources</code></p></li>
-/// <li>
-/// <p><code>tag:GetResources</code></p></li>
+/// <li> <p> <code>resource-groups:SearchResources</code> </p> </li>
+/// <li> <p> <code>cloudformation:DescribeStacks</code> </p> </li>
+/// <li> <p> <code>cloudformation:ListStackResources</code> </p> </li>
+/// <li> <p> <code>tag:GetResources</code> </p> </li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SearchResourcesFluentBuilder {

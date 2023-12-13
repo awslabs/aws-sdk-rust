@@ -9,18 +9,15 @@ pub struct UpdateAddonInput {
     pub addon_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the add-on. The version must match one of the versions returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a>.</p>
     pub addon_version: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of an existing IAM role to bind to the add-on's service account. The role must be assigned the IAM permissions required by the add-on. If you don't specify an existing IAM role, then the add-on uses the permissions assigned to the node IAM role. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon EKS node IAM role</a> in the <i>Amazon EKS User Guide</i>.</p><note>
+    /// <p>The Amazon Resource Name (ARN) of an existing IAM role to bind to the add-on's service account. The role must be assigned the IAM permissions required by the add-on. If you don't specify an existing IAM role, then the add-on uses the permissions assigned to the node IAM role. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon EKS node IAM role</a> in the <i>Amazon EKS User Guide</i>.</p> <note>
     /// <p>To specify an existing IAM role, you must have an IAM OpenID Connect (OIDC) provider created for your cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html">Enabling IAM roles for service accounts on your cluster</a> in the <i>Amazon EKS User Guide</i>.</p>
     /// </note>
     pub service_account_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>How to resolve field value conflicts for an Amazon EKS add-on if you've changed a value from the Amazon EKS default value. Conflicts are handled based on the option you choose:</p>
     /// <ul>
-    /// <li>
-    /// <p><b>None</b> – Amazon EKS doesn't change the value. The update might fail.</p></li>
-    /// <li>
-    /// <p><b>Overwrite</b> – Amazon EKS overwrites the changed value back to the Amazon EKS default value.</p></li>
-    /// <li>
-    /// <p><b>Preserve</b> – Amazon EKS preserves the value. If you choose this option, we recommend that you test any field and value changes on a non-production cluster before updating the add-on on your production cluster.</p></li>
+    /// <li> <p> <b>None</b> – Amazon EKS doesn't change the value. The update might fail.</p> </li>
+    /// <li> <p> <b>Overwrite</b> – Amazon EKS overwrites the changed value back to the Amazon EKS default value.</p> </li>
+    /// <li> <p> <b>Preserve</b> – Amazon EKS preserves the value. If you choose this option, we recommend that you test any field and value changes on a non-production cluster before updating the add-on on your production cluster.</p> </li>
     /// </ul>
     pub resolve_conflicts: ::std::option::Option<crate::types::ResolveConflicts>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -41,7 +38,7 @@ impl UpdateAddonInput {
     pub fn addon_version(&self) -> ::std::option::Option<&str> {
         self.addon_version.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of an existing IAM role to bind to the add-on's service account. The role must be assigned the IAM permissions required by the add-on. If you don't specify an existing IAM role, then the add-on uses the permissions assigned to the node IAM role. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon EKS node IAM role</a> in the <i>Amazon EKS User Guide</i>.</p><note>
+    /// <p>The Amazon Resource Name (ARN) of an existing IAM role to bind to the add-on's service account. The role must be assigned the IAM permissions required by the add-on. If you don't specify an existing IAM role, then the add-on uses the permissions assigned to the node IAM role. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon EKS node IAM role</a> in the <i>Amazon EKS User Guide</i>.</p> <note>
     /// <p>To specify an existing IAM role, you must have an IAM OpenID Connect (OIDC) provider created for your cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html">Enabling IAM roles for service accounts on your cluster</a> in the <i>Amazon EKS User Guide</i>.</p>
     /// </note>
     pub fn service_account_role_arn(&self) -> ::std::option::Option<&str> {
@@ -49,12 +46,9 @@ impl UpdateAddonInput {
     }
     /// <p>How to resolve field value conflicts for an Amazon EKS add-on if you've changed a value from the Amazon EKS default value. Conflicts are handled based on the option you choose:</p>
     /// <ul>
-    /// <li>
-    /// <p><b>None</b> – Amazon EKS doesn't change the value. The update might fail.</p></li>
-    /// <li>
-    /// <p><b>Overwrite</b> – Amazon EKS overwrites the changed value back to the Amazon EKS default value.</p></li>
-    /// <li>
-    /// <p><b>Preserve</b> – Amazon EKS preserves the value. If you choose this option, we recommend that you test any field and value changes on a non-production cluster before updating the add-on on your production cluster.</p></li>
+    /// <li> <p> <b>None</b> – Amazon EKS doesn't change the value. The update might fail.</p> </li>
+    /// <li> <p> <b>Overwrite</b> – Amazon EKS overwrites the changed value back to the Amazon EKS default value.</p> </li>
+    /// <li> <p> <b>Preserve</b> – Amazon EKS preserves the value. If you choose this option, we recommend that you test any field and value changes on a non-production cluster before updating the add-on on your production cluster.</p> </li>
     /// </ul>
     pub fn resolve_conflicts(&self) -> ::std::option::Option<&crate::types::ResolveConflicts> {
         self.resolve_conflicts.as_ref()
@@ -132,21 +126,21 @@ impl UpdateAddonInputBuilder {
     pub fn get_addon_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.addon_version
     }
-    /// <p>The Amazon Resource Name (ARN) of an existing IAM role to bind to the add-on's service account. The role must be assigned the IAM permissions required by the add-on. If you don't specify an existing IAM role, then the add-on uses the permissions assigned to the node IAM role. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon EKS node IAM role</a> in the <i>Amazon EKS User Guide</i>.</p><note>
+    /// <p>The Amazon Resource Name (ARN) of an existing IAM role to bind to the add-on's service account. The role must be assigned the IAM permissions required by the add-on. If you don't specify an existing IAM role, then the add-on uses the permissions assigned to the node IAM role. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon EKS node IAM role</a> in the <i>Amazon EKS User Guide</i>.</p> <note>
     /// <p>To specify an existing IAM role, you must have an IAM OpenID Connect (OIDC) provider created for your cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html">Enabling IAM roles for service accounts on your cluster</a> in the <i>Amazon EKS User Guide</i>.</p>
     /// </note>
     pub fn service_account_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_account_role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of an existing IAM role to bind to the add-on's service account. The role must be assigned the IAM permissions required by the add-on. If you don't specify an existing IAM role, then the add-on uses the permissions assigned to the node IAM role. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon EKS node IAM role</a> in the <i>Amazon EKS User Guide</i>.</p><note>
+    /// <p>The Amazon Resource Name (ARN) of an existing IAM role to bind to the add-on's service account. The role must be assigned the IAM permissions required by the add-on. If you don't specify an existing IAM role, then the add-on uses the permissions assigned to the node IAM role. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon EKS node IAM role</a> in the <i>Amazon EKS User Guide</i>.</p> <note>
     /// <p>To specify an existing IAM role, you must have an IAM OpenID Connect (OIDC) provider created for your cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html">Enabling IAM roles for service accounts on your cluster</a> in the <i>Amazon EKS User Guide</i>.</p>
     /// </note>
     pub fn set_service_account_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_account_role_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of an existing IAM role to bind to the add-on's service account. The role must be assigned the IAM permissions required by the add-on. If you don't specify an existing IAM role, then the add-on uses the permissions assigned to the node IAM role. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon EKS node IAM role</a> in the <i>Amazon EKS User Guide</i>.</p><note>
+    /// <p>The Amazon Resource Name (ARN) of an existing IAM role to bind to the add-on's service account. The role must be assigned the IAM permissions required by the add-on. If you don't specify an existing IAM role, then the add-on uses the permissions assigned to the node IAM role. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon EKS node IAM role</a> in the <i>Amazon EKS User Guide</i>.</p> <note>
     /// <p>To specify an existing IAM role, you must have an IAM OpenID Connect (OIDC) provider created for your cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html">Enabling IAM roles for service accounts on your cluster</a> in the <i>Amazon EKS User Guide</i>.</p>
     /// </note>
     pub fn get_service_account_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -154,12 +148,9 @@ impl UpdateAddonInputBuilder {
     }
     /// <p>How to resolve field value conflicts for an Amazon EKS add-on if you've changed a value from the Amazon EKS default value. Conflicts are handled based on the option you choose:</p>
     /// <ul>
-    /// <li>
-    /// <p><b>None</b> – Amazon EKS doesn't change the value. The update might fail.</p></li>
-    /// <li>
-    /// <p><b>Overwrite</b> – Amazon EKS overwrites the changed value back to the Amazon EKS default value.</p></li>
-    /// <li>
-    /// <p><b>Preserve</b> – Amazon EKS preserves the value. If you choose this option, we recommend that you test any field and value changes on a non-production cluster before updating the add-on on your production cluster.</p></li>
+    /// <li> <p> <b>None</b> – Amazon EKS doesn't change the value. The update might fail.</p> </li>
+    /// <li> <p> <b>Overwrite</b> – Amazon EKS overwrites the changed value back to the Amazon EKS default value.</p> </li>
+    /// <li> <p> <b>Preserve</b> – Amazon EKS preserves the value. If you choose this option, we recommend that you test any field and value changes on a non-production cluster before updating the add-on on your production cluster.</p> </li>
     /// </ul>
     pub fn resolve_conflicts(mut self, input: crate::types::ResolveConflicts) -> Self {
         self.resolve_conflicts = ::std::option::Option::Some(input);
@@ -167,12 +158,9 @@ impl UpdateAddonInputBuilder {
     }
     /// <p>How to resolve field value conflicts for an Amazon EKS add-on if you've changed a value from the Amazon EKS default value. Conflicts are handled based on the option you choose:</p>
     /// <ul>
-    /// <li>
-    /// <p><b>None</b> – Amazon EKS doesn't change the value. The update might fail.</p></li>
-    /// <li>
-    /// <p><b>Overwrite</b> – Amazon EKS overwrites the changed value back to the Amazon EKS default value.</p></li>
-    /// <li>
-    /// <p><b>Preserve</b> – Amazon EKS preserves the value. If you choose this option, we recommend that you test any field and value changes on a non-production cluster before updating the add-on on your production cluster.</p></li>
+    /// <li> <p> <b>None</b> – Amazon EKS doesn't change the value. The update might fail.</p> </li>
+    /// <li> <p> <b>Overwrite</b> – Amazon EKS overwrites the changed value back to the Amazon EKS default value.</p> </li>
+    /// <li> <p> <b>Preserve</b> – Amazon EKS preserves the value. If you choose this option, we recommend that you test any field and value changes on a non-production cluster before updating the add-on on your production cluster.</p> </li>
     /// </ul>
     pub fn set_resolve_conflicts(mut self, input: ::std::option::Option<crate::types::ResolveConflicts>) -> Self {
         self.resolve_conflicts = input;
@@ -180,12 +168,9 @@ impl UpdateAddonInputBuilder {
     }
     /// <p>How to resolve field value conflicts for an Amazon EKS add-on if you've changed a value from the Amazon EKS default value. Conflicts are handled based on the option you choose:</p>
     /// <ul>
-    /// <li>
-    /// <p><b>None</b> – Amazon EKS doesn't change the value. The update might fail.</p></li>
-    /// <li>
-    /// <p><b>Overwrite</b> – Amazon EKS overwrites the changed value back to the Amazon EKS default value.</p></li>
-    /// <li>
-    /// <p><b>Preserve</b> – Amazon EKS preserves the value. If you choose this option, we recommend that you test any field and value changes on a non-production cluster before updating the add-on on your production cluster.</p></li>
+    /// <li> <p> <b>None</b> – Amazon EKS doesn't change the value. The update might fail.</p> </li>
+    /// <li> <p> <b>Overwrite</b> – Amazon EKS overwrites the changed value back to the Amazon EKS default value.</p> </li>
+    /// <li> <p> <b>Preserve</b> – Amazon EKS preserves the value. If you choose this option, we recommend that you test any field and value changes on a non-production cluster before updating the add-on on your production cluster.</p> </li>
     /// </ul>
     pub fn get_resolve_conflicts(&self) -> &::std::option::Option<crate::types::ResolveConflicts> {
         &self.resolve_conflicts

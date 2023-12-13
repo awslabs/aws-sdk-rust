@@ -22,7 +22,7 @@ impl TagResourceInputBuilder {
 }
 /// Fluent builder constructing a request to `TagResource`.
 ///
-/// <p>Adds to or modifies the tags of the specified resource. Tags are metadata which can be used to manage a resource.</p><note>
+/// <p>Adds to or modifies the tags of the specified resource. Tags are metadata which can be used to manage a resource.</p> <note>
 /// <p>Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

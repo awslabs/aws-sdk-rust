@@ -22,10 +22,10 @@ impl SetIdentityDkimEnabledInputBuilder {
 }
 /// Fluent builder constructing a request to `SetIdentityDkimEnabled`.
 ///
-/// <p>Enables or disables Easy DKIM signing of email sent from an identity. If Easy DKIM signing is enabled for a domain, then Amazon SES uses DKIM to sign all email that it sends from addresses on that domain. If Easy DKIM signing is enabled for an email address, then Amazon SES uses DKIM to sign all email it sends from that address.</p><note>
+/// <p>Enables or disables Easy DKIM signing of email sent from an identity. If Easy DKIM signing is enabled for a domain, then Amazon SES uses DKIM to sign all email that it sends from addresses on that domain. If Easy DKIM signing is enabled for an email address, then Amazon SES uses DKIM to sign all email it sends from that address.</p> <note>
 /// <p>For email addresses (for example, <code>user@example.com</code>), you can only enable DKIM signing if the corresponding domain (in this case, <code>example.com</code>) has been set up to use Easy DKIM.</p>
 /// </note>
-/// <p>You can enable DKIM signing for an identity at any time after you start the verification process for the identity, even if the verification process isn't complete.</p>
+/// <p>You can enable DKIM signing for an identity at any time after you start the verification process for the identity, even if the verification process isn't complete. </p>
 /// <p>You can execute this operation no more than once per second.</p>
 /// <p>For more information about Easy DKIM signing, go to the <a href="https://docs.aws.amazon.com/ses/latest/dg/send-email-authentication-dkim-easy.html">Amazon SES Developer Guide</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -127,17 +127,17 @@ impl SetIdentityDkimEnabledFluentBuilder {
     pub fn get_identity(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_identity()
     }
-    /// <p>Sets whether DKIM signing is enabled for an identity. Set to <code>true</code> to enable DKIM signing for this identity; <code>false</code> to disable it.</p>
+    /// <p>Sets whether DKIM signing is enabled for an identity. Set to <code>true</code> to enable DKIM signing for this identity; <code>false</code> to disable it. </p>
     pub fn dkim_enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.dkim_enabled(input);
         self
     }
-    /// <p>Sets whether DKIM signing is enabled for an identity. Set to <code>true</code> to enable DKIM signing for this identity; <code>false</code> to disable it.</p>
+    /// <p>Sets whether DKIM signing is enabled for an identity. Set to <code>true</code> to enable DKIM signing for this identity; <code>false</code> to disable it. </p>
     pub fn set_dkim_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dkim_enabled(input);
         self
     }
-    /// <p>Sets whether DKIM signing is enabled for an identity. Set to <code>true</code> to enable DKIM signing for this identity; <code>false</code> to disable it.</p>
+    /// <p>Sets whether DKIM signing is enabled for an identity. Set to <code>true</code> to enable DKIM signing for this identity; <code>false</code> to disable it. </p>
     pub fn get_dkim_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_dkim_enabled()
     }

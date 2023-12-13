@@ -22,19 +22,17 @@ impl CalculateRouteMatrixInputBuilder {
 }
 /// Fluent builder constructing a request to `CalculateRouteMatrix`.
 ///
-/// <p><a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html"> Calculates a route matrix</a> given the following required parameters: <code>DeparturePositions</code> and <code>DestinationPositions</code>. <code>CalculateRouteMatrix</code> calculates routes and returns the travel time and travel distance from each departure position to each destination position in the request. For example, given departure positions A and B, and destination positions X and Y, <code>CalculateRouteMatrix</code> will return time and distance for routes from A to X, A to Y, B to X, and B to Y (in that order). The number of results returned (and routes calculated) will be the number of <code>DeparturePositions</code> times the number of <code>DestinationPositions</code>.</p><note>
+/// <p> <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html"> Calculates a route matrix</a> given the following required parameters: <code>DeparturePositions</code> and <code>DestinationPositions</code>. <code>CalculateRouteMatrix</code> calculates routes and returns the travel time and travel distance from each departure position to each destination position in the request. For example, given departure positions A and B, and destination positions X and Y, <code>CalculateRouteMatrix</code> will return time and distance for routes from A to X, A to Y, B to X, and B to Y (in that order). The number of results returned (and routes calculated) will be the number of <code>DeparturePositions</code> times the number of <code>DestinationPositions</code>.</p> <note>
 /// <p>Your account is charged for each route calculated, not the number of requests.</p>
 /// </note>
 /// <p>Requires that you first <a href="https://docs.aws.amazon.com/location-routes/latest/APIReference/API_CreateRouteCalculator.html">create a route calculator resource</a>.</p>
 /// <p>By default, a request that doesn't specify a departure time uses the best time of day to travel with the best traffic conditions when calculating routes.</p>
 /// <p>Additional options include:</p>
 /// <ul>
-/// <li>
-/// <p><a href="https://docs.aws.amazon.com/location/latest/developerguide/departure-time.html"> Specifying a departure time</a> using either <code>DepartureTime</code> or <code>DepartNow</code>. This calculates routes based on predictive traffic data at the given time.</p><note>
+/// <li> <p> <a href="https://docs.aws.amazon.com/location/latest/developerguide/departure-time.html"> Specifying a departure time</a> using either <code>DepartureTime</code> or <code>DepartNow</code>. This calculates routes based on predictive traffic data at the given time. </p> <note>
 /// <p>You can't specify both <code>DepartureTime</code> and <code>DepartNow</code> in a single request. Specifying both parameters returns a validation error.</p>
-/// </note></li>
-/// <li>
-/// <p><a href="https://docs.aws.amazon.com/location/latest/developerguide/travel-mode.html">Specifying a travel mode</a> using TravelMode sets the transportation mode used to calculate the routes. This also lets you specify additional route preferences in <code>CarModeOptions</code> if traveling by <code>Car</code>, or <code>TruckModeOptions</code> if traveling by <code>Truck</code>.</p></li>
+/// </note> </li>
+/// <li> <p> <a href="https://docs.aws.amazon.com/location/latest/developerguide/travel-mode.html">Specifying a travel mode</a> using TravelMode sets the transportation mode used to calculate the routes. This also lets you specify additional route preferences in <code>CarModeOptions</code> if traveling by <code>Car</code>, or <code>TruckModeOptions</code> if traveling by <code>Truck</code>.</p> </li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CalculateRouteMatrixFluentBuilder {
@@ -121,17 +119,17 @@ impl CalculateRouteMatrixFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the route calculator resource that you want to use to calculate the route matrix.</p>
+    /// <p>The name of the route calculator resource that you want to use to calculate the route matrix. </p>
     pub fn calculator_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.calculator_name(input.into());
         self
     }
-    /// <p>The name of the route calculator resource that you want to use to calculate the route matrix.</p>
+    /// <p>The name of the route calculator resource that you want to use to calculate the route matrix. </p>
     pub fn set_calculator_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_calculator_name(input);
         self
     }
-    /// <p>The name of the route calculator resource that you want to use to calculate the route matrix.</p>
+    /// <p>The name of the route calculator resource that you want to use to calculate the route matrix. </p>
     pub fn get_calculator_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_calculator_name()
     }
@@ -139,32 +137,32 @@ impl CalculateRouteMatrixFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_departure_positions`](Self::set_departure_positions).
     ///
-    /// <p>The list of departure (origin) positions for the route matrix. An array of points, each of which is itself a 2-value array defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[longitude, latitude]</code>. For example, <code>[-123.115, 49.285]</code>.</p><important>
+    /// <p>The list of departure (origin) positions for the route matrix. An array of points, each of which is itself a 2-value array defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[longitude, latitude]</code>. For example, <code>[-123.115, 49.285]</code>.</p> <important>
     /// <p>Depending on the data provider selected in the route calculator resource there may be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html#matrix-routing-position-limits"> Position restrictions</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     /// </important> <note>
     /// <p>For route calculators that use Esri as the data provider, if you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html"> moves the position to the nearest road</a>. The snapped value is available in the result in <code>SnappedDeparturePositions</code>.</p>
     /// </note>
-    /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code></p>
+    /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
     pub fn departure_positions(mut self, input: ::std::vec::Vec<f64>) -> Self {
         self.inner = self.inner.departure_positions(input);
         self
     }
-    /// <p>The list of departure (origin) positions for the route matrix. An array of points, each of which is itself a 2-value array defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[longitude, latitude]</code>. For example, <code>[-123.115, 49.285]</code>.</p><important>
+    /// <p>The list of departure (origin) positions for the route matrix. An array of points, each of which is itself a 2-value array defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[longitude, latitude]</code>. For example, <code>[-123.115, 49.285]</code>.</p> <important>
     /// <p>Depending on the data provider selected in the route calculator resource there may be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html#matrix-routing-position-limits"> Position restrictions</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     /// </important> <note>
     /// <p>For route calculators that use Esri as the data provider, if you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html"> moves the position to the nearest road</a>. The snapped value is available in the result in <code>SnappedDeparturePositions</code>.</p>
     /// </note>
-    /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code></p>
+    /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
     pub fn set_departure_positions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>>) -> Self {
         self.inner = self.inner.set_departure_positions(input);
         self
     }
-    /// <p>The list of departure (origin) positions for the route matrix. An array of points, each of which is itself a 2-value array defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[longitude, latitude]</code>. For example, <code>[-123.115, 49.285]</code>.</p><important>
+    /// <p>The list of departure (origin) positions for the route matrix. An array of points, each of which is itself a 2-value array defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[longitude, latitude]</code>. For example, <code>[-123.115, 49.285]</code>.</p> <important>
     /// <p>Depending on the data provider selected in the route calculator resource there may be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html#matrix-routing-position-limits"> Position restrictions</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     /// </important> <note>
     /// <p>For route calculators that use Esri as the data provider, if you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html"> moves the position to the nearest road</a>. The snapped value is available in the result in <code>SnappedDeparturePositions</code>.</p>
     /// </note>
-    /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code></p>
+    /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
     pub fn get_departure_positions(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>> {
         self.inner.get_departure_positions()
     }
@@ -172,151 +170,142 @@ impl CalculateRouteMatrixFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_destination_positions`](Self::set_destination_positions).
     ///
-    /// <p>The list of destination positions for the route matrix. An array of points, each of which is itself a 2-value array defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[longitude, latitude]</code>. For example, <code>[-122.339, 47.615]</code></p><important>
+    /// <p>The list of destination positions for the route matrix. An array of points, each of which is itself a 2-value array defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[longitude, latitude]</code>. For example, <code>[-122.339, 47.615]</code> </p> <important>
     /// <p>Depending on the data provider selected in the route calculator resource there may be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html#matrix-routing-position-limits"> Position restrictions</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     /// </important> <note>
     /// <p>For route calculators that use Esri as the data provider, if you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html"> moves the position to the nearest road</a>. The snapped value is available in the result in <code>SnappedDestinationPositions</code>.</p>
     /// </note>
-    /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code></p>
+    /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
     pub fn destination_positions(mut self, input: ::std::vec::Vec<f64>) -> Self {
         self.inner = self.inner.destination_positions(input);
         self
     }
-    /// <p>The list of destination positions for the route matrix. An array of points, each of which is itself a 2-value array defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[longitude, latitude]</code>. For example, <code>[-122.339, 47.615]</code></p><important>
+    /// <p>The list of destination positions for the route matrix. An array of points, each of which is itself a 2-value array defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[longitude, latitude]</code>. For example, <code>[-122.339, 47.615]</code> </p> <important>
     /// <p>Depending on the data provider selected in the route calculator resource there may be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html#matrix-routing-position-limits"> Position restrictions</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     /// </important> <note>
     /// <p>For route calculators that use Esri as the data provider, if you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html"> moves the position to the nearest road</a>. The snapped value is available in the result in <code>SnappedDestinationPositions</code>.</p>
     /// </note>
-    /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code></p>
+    /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
     pub fn set_destination_positions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>>) -> Self {
         self.inner = self.inner.set_destination_positions(input);
         self
     }
-    /// <p>The list of destination positions for the route matrix. An array of points, each of which is itself a 2-value array defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[longitude, latitude]</code>. For example, <code>[-122.339, 47.615]</code></p><important>
+    /// <p>The list of destination positions for the route matrix. An array of points, each of which is itself a 2-value array defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[longitude, latitude]</code>. For example, <code>[-122.339, 47.615]</code> </p> <important>
     /// <p>Depending on the data provider selected in the route calculator resource there may be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html#matrix-routing-position-limits"> Position restrictions</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     /// </important> <note>
     /// <p>For route calculators that use Esri as the data provider, if you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html"> moves the position to the nearest road</a>. The snapped value is available in the result in <code>SnappedDestinationPositions</code>.</p>
     /// </note>
-    /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code></p>
+    /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
     pub fn get_destination_positions(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>> {
         self.inner.get_destination_positions()
     }
     /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p>
-    /// <p>The <code>TravelMode</code> you specify also determines how you specify route preferences:</p>
+    /// <p>The <code>TravelMode</code> you specify also determines how you specify route preferences: </p>
     /// <ul>
-    /// <li>
-    /// <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code> parameter.</p></li>
-    /// <li>
-    /// <p>If traveling by <code>Truck</code> use the <code>TruckModeOptions</code> parameter.</p></li>
-    /// </ul><note>
-    /// <p><code>Bicycle</code> or <code>Motorcycle</code> are only valid when using <code>Grab</code> as a data provider, and only within Southeast Asia.</p>
-    /// <p><code>Truck</code> is not available for Grab.</p>
+    /// <li> <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code> parameter.</p> </li>
+    /// <li> <p>If traveling by <code>Truck</code> use the <code>TruckModeOptions</code> parameter.</p> </li>
+    /// </ul> <note>
+    /// <p> <code>Bicycle</code> or <code>Motorcycle</code> are only valid when using <code>Grab</code> as a data provider, and only within Southeast Asia.</p>
+    /// <p> <code>Truck</code> is not available for Grab.</p>
     /// <p>For more information about using Grab as a data provider, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     /// </note>
-    /// <p>Default Value: <code>Car</code></p>
+    /// <p>Default Value: <code>Car</code> </p>
     pub fn travel_mode(mut self, input: crate::types::TravelMode) -> Self {
         self.inner = self.inner.travel_mode(input);
         self
     }
     /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p>
-    /// <p>The <code>TravelMode</code> you specify also determines how you specify route preferences:</p>
+    /// <p>The <code>TravelMode</code> you specify also determines how you specify route preferences: </p>
     /// <ul>
-    /// <li>
-    /// <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code> parameter.</p></li>
-    /// <li>
-    /// <p>If traveling by <code>Truck</code> use the <code>TruckModeOptions</code> parameter.</p></li>
-    /// </ul><note>
-    /// <p><code>Bicycle</code> or <code>Motorcycle</code> are only valid when using <code>Grab</code> as a data provider, and only within Southeast Asia.</p>
-    /// <p><code>Truck</code> is not available for Grab.</p>
+    /// <li> <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code> parameter.</p> </li>
+    /// <li> <p>If traveling by <code>Truck</code> use the <code>TruckModeOptions</code> parameter.</p> </li>
+    /// </ul> <note>
+    /// <p> <code>Bicycle</code> or <code>Motorcycle</code> are only valid when using <code>Grab</code> as a data provider, and only within Southeast Asia.</p>
+    /// <p> <code>Truck</code> is not available for Grab.</p>
     /// <p>For more information about using Grab as a data provider, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     /// </note>
-    /// <p>Default Value: <code>Car</code></p>
+    /// <p>Default Value: <code>Car</code> </p>
     pub fn set_travel_mode(mut self, input: ::std::option::Option<crate::types::TravelMode>) -> Self {
         self.inner = self.inner.set_travel_mode(input);
         self
     }
     /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p>
-    /// <p>The <code>TravelMode</code> you specify also determines how you specify route preferences:</p>
+    /// <p>The <code>TravelMode</code> you specify also determines how you specify route preferences: </p>
     /// <ul>
-    /// <li>
-    /// <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code> parameter.</p></li>
-    /// <li>
-    /// <p>If traveling by <code>Truck</code> use the <code>TruckModeOptions</code> parameter.</p></li>
-    /// </ul><note>
-    /// <p><code>Bicycle</code> or <code>Motorcycle</code> are only valid when using <code>Grab</code> as a data provider, and only within Southeast Asia.</p>
-    /// <p><code>Truck</code> is not available for Grab.</p>
+    /// <li> <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code> parameter.</p> </li>
+    /// <li> <p>If traveling by <code>Truck</code> use the <code>TruckModeOptions</code> parameter.</p> </li>
+    /// </ul> <note>
+    /// <p> <code>Bicycle</code> or <code>Motorcycle</code> are only valid when using <code>Grab</code> as a data provider, and only within Southeast Asia.</p>
+    /// <p> <code>Truck</code> is not available for Grab.</p>
     /// <p>For more information about using Grab as a data provider, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     /// </note>
-    /// <p>Default Value: <code>Car</code></p>
+    /// <p>Default Value: <code>Car</code> </p>
     pub fn get_travel_mode(&self) -> &::std::option::Option<crate::types::TravelMode> {
         self.inner.get_travel_mode()
     }
-    /// <p>Specifies the desired time of departure. Uses the given time to calculate the route matrix. You can't set both <code>DepartureTime</code> and <code>DepartNow</code>. If neither is set, the best time of day to travel with the best traffic conditions is used to calculate the route matrix.</p><note>
+    /// <p>Specifies the desired time of departure. Uses the given time to calculate the route matrix. You can't set both <code>DepartureTime</code> and <code>DepartNow</code>. If neither is set, the best time of day to travel with the best traffic conditions is used to calculate the route matrix.</p> <note>
     /// <p>Setting a departure time in the past returns a <code>400 ValidationException</code> error.</p>
     /// </note>
     /// <ul>
-    /// <li>
-    /// <p>In <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example, <code>2020–07-2T12:15:20.000Z+01:00</code></p></li>
+    /// <li> <p>In <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
     /// </ul>
     pub fn departure_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.departure_time(input);
         self
     }
-    /// <p>Specifies the desired time of departure. Uses the given time to calculate the route matrix. You can't set both <code>DepartureTime</code> and <code>DepartNow</code>. If neither is set, the best time of day to travel with the best traffic conditions is used to calculate the route matrix.</p><note>
+    /// <p>Specifies the desired time of departure. Uses the given time to calculate the route matrix. You can't set both <code>DepartureTime</code> and <code>DepartNow</code>. If neither is set, the best time of day to travel with the best traffic conditions is used to calculate the route matrix.</p> <note>
     /// <p>Setting a departure time in the past returns a <code>400 ValidationException</code> error.</p>
     /// </note>
     /// <ul>
-    /// <li>
-    /// <p>In <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example, <code>2020–07-2T12:15:20.000Z+01:00</code></p></li>
+    /// <li> <p>In <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
     /// </ul>
     pub fn set_departure_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_departure_time(input);
         self
     }
-    /// <p>Specifies the desired time of departure. Uses the given time to calculate the route matrix. You can't set both <code>DepartureTime</code> and <code>DepartNow</code>. If neither is set, the best time of day to travel with the best traffic conditions is used to calculate the route matrix.</p><note>
+    /// <p>Specifies the desired time of departure. Uses the given time to calculate the route matrix. You can't set both <code>DepartureTime</code> and <code>DepartNow</code>. If neither is set, the best time of day to travel with the best traffic conditions is used to calculate the route matrix.</p> <note>
     /// <p>Setting a departure time in the past returns a <code>400 ValidationException</code> error.</p>
     /// </note>
     /// <ul>
-    /// <li>
-    /// <p>In <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example, <code>2020–07-2T12:15:20.000Z+01:00</code></p></li>
+    /// <li> <p>In <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
     /// </ul>
     pub fn get_departure_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_departure_time()
     }
     /// <p>Sets the time of departure as the current time. Uses the current time to calculate the route matrix. You can't set both <code>DepartureTime</code> and <code>DepartNow</code>. If neither is set, the best time of day to travel with the best traffic conditions is used to calculate the route matrix.</p>
-    /// <p>Default Value: <code>false</code></p>
-    /// <p>Valid Values: <code>false</code> | <code>true</code></p>
+    /// <p>Default Value: <code>false</code> </p>
+    /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
     pub fn depart_now(mut self, input: bool) -> Self {
         self.inner = self.inner.depart_now(input);
         self
     }
     /// <p>Sets the time of departure as the current time. Uses the current time to calculate the route matrix. You can't set both <code>DepartureTime</code> and <code>DepartNow</code>. If neither is set, the best time of day to travel with the best traffic conditions is used to calculate the route matrix.</p>
-    /// <p>Default Value: <code>false</code></p>
-    /// <p>Valid Values: <code>false</code> | <code>true</code></p>
+    /// <p>Default Value: <code>false</code> </p>
+    /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
     pub fn set_depart_now(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_depart_now(input);
         self
     }
     /// <p>Sets the time of departure as the current time. Uses the current time to calculate the route matrix. You can't set both <code>DepartureTime</code> and <code>DepartNow</code>. If neither is set, the best time of day to travel with the best traffic conditions is used to calculate the route matrix.</p>
-    /// <p>Default Value: <code>false</code></p>
-    /// <p>Valid Values: <code>false</code> | <code>true</code></p>
+    /// <p>Default Value: <code>false</code> </p>
+    /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
     pub fn get_depart_now(&self) -> &::std::option::Option<bool> {
         self.inner.get_depart_now()
     }
     /// <p>Set the unit system to specify the distance.</p>
-    /// <p>Default Value: <code>Kilometers</code></p>
+    /// <p>Default Value: <code>Kilometers</code> </p>
     pub fn distance_unit(mut self, input: crate::types::DistanceUnit) -> Self {
         self.inner = self.inner.distance_unit(input);
         self
     }
     /// <p>Set the unit system to specify the distance.</p>
-    /// <p>Default Value: <code>Kilometers</code></p>
+    /// <p>Default Value: <code>Kilometers</code> </p>
     pub fn set_distance_unit(mut self, input: ::std::option::Option<crate::types::DistanceUnit>) -> Self {
         self.inner = self.inner.set_distance_unit(input);
         self
     }
     /// <p>Set the unit system to specify the distance.</p>
-    /// <p>Default Value: <code>Kilometers</code></p>
+    /// <p>Default Value: <code>Kilometers</code> </p>
     pub fn get_distance_unit(&self) -> &::std::option::Option<crate::types::DistanceUnit> {
         self.inner.get_distance_unit()
     }

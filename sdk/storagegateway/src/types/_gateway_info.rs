@@ -11,7 +11,7 @@ pub struct GatewayInfo {
     /// <p>The type of the gateway.</p>
     pub gateway_type: ::std::option::Option<::std::string::String>,
     /// <p>The state of the gateway.</p>
-    /// <p>Valid Values: <code>DISABLED</code> | <code>ACTIVE</code></p>
+    /// <p>Valid Values: <code>DISABLED</code> | <code>ACTIVE</code> </p>
     pub gateway_operational_state: ::std::option::Option<::std::string::String>,
     /// <p>The name of the gateway.</p>
     pub gateway_name: ::std::option::Option<::std::string::String>,
@@ -38,7 +38,7 @@ impl GatewayInfo {
         self.gateway_type.as_deref()
     }
     /// <p>The state of the gateway.</p>
-    /// <p>Valid Values: <code>DISABLED</code> | <code>ACTIVE</code></p>
+    /// <p>Valid Values: <code>DISABLED</code> | <code>ACTIVE</code> </p>
     pub fn gateway_operational_state(&self) -> ::std::option::Option<&str> {
         self.gateway_operational_state.as_deref()
     }
@@ -128,19 +128,19 @@ impl GatewayInfoBuilder {
         &self.gateway_type
     }
     /// <p>The state of the gateway.</p>
-    /// <p>Valid Values: <code>DISABLED</code> | <code>ACTIVE</code></p>
+    /// <p>Valid Values: <code>DISABLED</code> | <code>ACTIVE</code> </p>
     pub fn gateway_operational_state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_operational_state = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The state of the gateway.</p>
-    /// <p>Valid Values: <code>DISABLED</code> | <code>ACTIVE</code></p>
+    /// <p>Valid Values: <code>DISABLED</code> | <code>ACTIVE</code> </p>
     pub fn set_gateway_operational_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_operational_state = input;
         self
     }
     /// <p>The state of the gateway.</p>
-    /// <p>Valid Values: <code>DISABLED</code> | <code>ACTIVE</code></p>
+    /// <p>Valid Values: <code>DISABLED</code> | <code>ACTIVE</code> </p>
     pub fn get_gateway_operational_state(&self) -> &::std::option::Option<::std::string::String> {
         &self.gateway_operational_state
     }

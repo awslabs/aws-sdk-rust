@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum ChatChannel {
-    /// <p>The Amazon SNS targets that Chatbot uses to notify the chat channel of updates to an incident. You can also make updates to the incident through the chat channel by using the Amazon SNS topics.</p>
+    /// <p>The Amazon SNS targets that Chatbot uses to notify the chat channel of updates to an incident. You can also make updates to the incident through the chat channel by using the Amazon SNS topics. </p>
     ChatbotSns(::std::vec::Vec<::std::string::String>),
     /// <p>Used to remove the chat channel from an incident record or response plan.</p>
     Empty(crate::types::EmptyChatChannel),

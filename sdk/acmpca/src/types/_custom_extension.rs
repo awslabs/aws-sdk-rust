@@ -2,12 +2,12 @@
 
 /// <p></p>
 /// <p>Specifies the X.509 extension information for a certificate.</p>
-/// <p>Extensions present in <code>CustomExtensions</code> follow the <code>ApiPassthrough</code> <a href="https://docs.aws.amazon.com/privateca/latest/userguide/UsingTemplates.html#template-order-of-operations">template rules</a>.</p>
+/// <p>Extensions present in <code>CustomExtensions</code> follow the <code>ApiPassthrough</code> <a href="https://docs.aws.amazon.com/privateca/latest/userguide/UsingTemplates.html#template-order-of-operations">template rules</a>. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomExtension {
     /// <p></p>
-    /// <p>Specifies the object identifier (OID) of the X.509 extension. For more information, see the <a href="https://oidref.com/2.5.29">Global OID reference database.</a></p>
+    /// <p>Specifies the object identifier (OID) of the X.509 extension. For more information, see the <a href="https://oidref.com/2.5.29">Global OID reference database.</a> </p>
     pub object_identifier: ::std::string::String,
     /// <p></p>
     /// <p>Specifies the base64-encoded value of the X.509 extension.</p>
@@ -18,7 +18,7 @@ pub struct CustomExtension {
 }
 impl CustomExtension {
     /// <p></p>
-    /// <p>Specifies the object identifier (OID) of the X.509 extension. For more information, see the <a href="https://oidref.com/2.5.29">Global OID reference database.</a></p>
+    /// <p>Specifies the object identifier (OID) of the X.509 extension. For more information, see the <a href="https://oidref.com/2.5.29">Global OID reference database.</a> </p>
     pub fn object_identifier(&self) -> &str {
         use std::ops::Deref;
         self.object_identifier.deref()
@@ -52,20 +52,20 @@ pub struct CustomExtensionBuilder {
 }
 impl CustomExtensionBuilder {
     /// <p></p>
-    /// <p>Specifies the object identifier (OID) of the X.509 extension. For more information, see the <a href="https://oidref.com/2.5.29">Global OID reference database.</a></p>
+    /// <p>Specifies the object identifier (OID) of the X.509 extension. For more information, see the <a href="https://oidref.com/2.5.29">Global OID reference database.</a> </p>
     /// This field is required.
     pub fn object_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p></p>
-    /// <p>Specifies the object identifier (OID) of the X.509 extension. For more information, see the <a href="https://oidref.com/2.5.29">Global OID reference database.</a></p>
+    /// <p>Specifies the object identifier (OID) of the X.509 extension. For more information, see the <a href="https://oidref.com/2.5.29">Global OID reference database.</a> </p>
     pub fn set_object_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.object_identifier = input;
         self
     }
     /// <p></p>
-    /// <p>Specifies the object identifier (OID) of the X.509 extension. For more information, see the <a href="https://oidref.com/2.5.29">Global OID reference database.</a></p>
+    /// <p>Specifies the object identifier (OID) of the X.509 extension. For more information, see the <a href="https://oidref.com/2.5.29">Global OID reference database.</a> </p>
     pub fn get_object_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.object_identifier
     }

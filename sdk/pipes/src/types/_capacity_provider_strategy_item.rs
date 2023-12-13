@@ -8,7 +8,7 @@ pub struct CapacityProviderStrategyItem {
     pub capacity_provider: ::std::string::String,
     /// <p>The weight value designates the relative percentage of the total number of tasks launched that should use the specified capacity provider. The weight value is taken into consideration after the base value, if defined, is satisfied.</p>
     pub weight: i32,
-    /// <p>The base value designates how many tasks, at a minimum, to run on the specified capacity provider. Only one capacity provider in a capacity provider strategy can have a base defined. If no value is specified, the default value of 0 is used.</p>
+    /// <p>The base value designates how many tasks, at a minimum, to run on the specified capacity provider. Only one capacity provider in a capacity provider strategy can have a base defined. If no value is specified, the default value of 0 is used. </p>
     pub base: i32,
 }
 impl CapacityProviderStrategyItem {
@@ -21,7 +21,7 @@ impl CapacityProviderStrategyItem {
     pub fn weight(&self) -> i32 {
         self.weight
     }
-    /// <p>The base value designates how many tasks, at a minimum, to run on the specified capacity provider. Only one capacity provider in a capacity provider strategy can have a base defined. If no value is specified, the default value of 0 is used.</p>
+    /// <p>The base value designates how many tasks, at a minimum, to run on the specified capacity provider. Only one capacity provider in a capacity provider strategy can have a base defined. If no value is specified, the default value of 0 is used. </p>
     pub fn base(&self) -> i32 {
         self.base
     }
@@ -80,17 +80,17 @@ impl CapacityProviderStrategyItemBuilder {
     pub fn get_weight(&self) -> &::std::option::Option<i32> {
         &self.weight
     }
-    /// <p>The base value designates how many tasks, at a minimum, to run on the specified capacity provider. Only one capacity provider in a capacity provider strategy can have a base defined. If no value is specified, the default value of 0 is used.</p>
+    /// <p>The base value designates how many tasks, at a minimum, to run on the specified capacity provider. Only one capacity provider in a capacity provider strategy can have a base defined. If no value is specified, the default value of 0 is used. </p>
     pub fn base(mut self, input: i32) -> Self {
         self.base = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The base value designates how many tasks, at a minimum, to run on the specified capacity provider. Only one capacity provider in a capacity provider strategy can have a base defined. If no value is specified, the default value of 0 is used.</p>
+    /// <p>The base value designates how many tasks, at a minimum, to run on the specified capacity provider. Only one capacity provider in a capacity provider strategy can have a base defined. If no value is specified, the default value of 0 is used. </p>
     pub fn set_base(mut self, input: ::std::option::Option<i32>) -> Self {
         self.base = input;
         self
     }
-    /// <p>The base value designates how many tasks, at a minimum, to run on the specified capacity provider. Only one capacity provider in a capacity provider strategy can have a base defined. If no value is specified, the default value of 0 is used.</p>
+    /// <p>The base value designates how many tasks, at a minimum, to run on the specified capacity provider. Only one capacity provider in a capacity provider strategy can have a base defined. If no value is specified, the default value of 0 is used. </p>
     pub fn get_base(&self) -> &::std::option::Option<i32> {
         &self.base
     }

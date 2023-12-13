@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeProtectionGroupInput {
-    /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it.</p>
+    /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
     pub protection_group_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeProtectionGroupInput {
-    /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it.</p>
+    /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
     pub fn protection_group_id(&self) -> ::std::option::Option<&str> {
         self.protection_group_id.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct DescribeProtectionGroupInputBuilder {
     pub(crate) protection_group_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeProtectionGroupInputBuilder {
-    /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it.</p>
+    /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
     /// This field is required.
     pub fn protection_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.protection_group_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it.</p>
+    /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
     pub fn set_protection_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.protection_group_id = input;
         self
     }
-    /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it.</p>
+    /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
     pub fn get_protection_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.protection_group_id
     }

@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAnnotationStoreVersionsOutput {
-    /// <p>Any errors that occur when attempting to delete an annotation store version.</p>
+    /// <p> Any errors that occur when attempting to delete an annotation store version. </p>
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::VersionDeleteError>>,
     _request_id: Option<String>,
 }
 impl DeleteAnnotationStoreVersionsOutput {
-    /// <p>Any errors that occur when attempting to delete an annotation store version.</p>
+    /// <p> Any errors that occur when attempting to delete an annotation store version. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
     pub fn errors(&self) -> &[crate::types::VersionDeleteError] {
@@ -39,19 +39,19 @@ impl DeleteAnnotationStoreVersionsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
     ///
-    /// <p>Any errors that occur when attempting to delete an annotation store version.</p>
+    /// <p> Any errors that occur when attempting to delete an annotation store version. </p>
     pub fn errors(mut self, input: crate::types::VersionDeleteError) -> Self {
         let mut v = self.errors.unwrap_or_default();
         v.push(input);
         self.errors = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Any errors that occur when attempting to delete an annotation store version.</p>
+    /// <p> Any errors that occur when attempting to delete an annotation store version. </p>
     pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VersionDeleteError>>) -> Self {
         self.errors = input;
         self
     }
-    /// <p>Any errors that occur when attempting to delete an annotation store version.</p>
+    /// <p> Any errors that occur when attempting to delete an annotation store version. </p>
     pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VersionDeleteError>> {
         &self.errors
     }

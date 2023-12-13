@@ -18,7 +18,7 @@ pub struct GeneralName {
     pub uniform_resource_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Represents <code>GeneralName</code> as an IPv4 or IPv6 address.</p>
     pub ip_address: ::std::option::Option<::std::string::String>,
-    /// <p>Represents <code>GeneralName</code> as an object identifier (OID).</p>
+    /// <p> Represents <code>GeneralName</code> as an object identifier (OID).</p>
     pub registered_id: ::std::option::Option<::std::string::String>,
 }
 impl GeneralName {
@@ -50,7 +50,7 @@ impl GeneralName {
     pub fn ip_address(&self) -> ::std::option::Option<&str> {
         self.ip_address.as_deref()
     }
-    /// <p>Represents <code>GeneralName</code> as an object identifier (OID).</p>
+    /// <p> Represents <code>GeneralName</code> as an object identifier (OID).</p>
     pub fn registered_id(&self) -> ::std::option::Option<&str> {
         self.registered_id.as_deref()
     }
@@ -174,17 +174,17 @@ impl GeneralNameBuilder {
     pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.ip_address
     }
-    /// <p>Represents <code>GeneralName</code> as an object identifier (OID).</p>
+    /// <p> Represents <code>GeneralName</code> as an object identifier (OID).</p>
     pub fn registered_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registered_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Represents <code>GeneralName</code> as an object identifier (OID).</p>
+    /// <p> Represents <code>GeneralName</code> as an object identifier (OID).</p>
     pub fn set_registered_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.registered_id = input;
         self
     }
-    /// <p>Represents <code>GeneralName</code> as an object identifier (OID).</p>
+    /// <p> Represents <code>GeneralName</code> as an object identifier (OID).</p>
     pub fn get_registered_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.registered_id
     }

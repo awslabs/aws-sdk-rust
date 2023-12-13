@@ -23,7 +23,7 @@ impl TagResourceInputBuilder {
 /// Fluent builder constructing a request to `TagResource`.
 ///
 /// <p>Attaches tags to a resource.</p>
-/// <p><b>Required permissions: </b> <code>rolesanywhere:TagResource</code>.</p>
+/// <p> <b>Required permissions: </b> <code>rolesanywhere:TagResource</code>. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TagResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

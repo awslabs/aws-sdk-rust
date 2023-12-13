@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutConfigurationInput {
-    /// <p>Associates a <code>TagKey</code> configuration to an account.</p>
+    /// <p> Associates a <code>TagKey</code> configuration to an account. </p>
     pub configuration: ::std::option::Option<crate::types::AppRegistryConfiguration>,
 }
 impl PutConfigurationInput {
-    /// <p>Associates a <code>TagKey</code> configuration to an account.</p>
+    /// <p> Associates a <code>TagKey</code> configuration to an account. </p>
     pub fn configuration(&self) -> ::std::option::Option<&crate::types::AppRegistryConfiguration> {
         self.configuration.as_ref()
     }
@@ -26,18 +26,18 @@ pub struct PutConfigurationInputBuilder {
     pub(crate) configuration: ::std::option::Option<crate::types::AppRegistryConfiguration>,
 }
 impl PutConfigurationInputBuilder {
-    /// <p>Associates a <code>TagKey</code> configuration to an account.</p>
+    /// <p> Associates a <code>TagKey</code> configuration to an account. </p>
     /// This field is required.
     pub fn configuration(mut self, input: crate::types::AppRegistryConfiguration) -> Self {
         self.configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Associates a <code>TagKey</code> configuration to an account.</p>
+    /// <p> Associates a <code>TagKey</code> configuration to an account. </p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::AppRegistryConfiguration>) -> Self {
         self.configuration = input;
         self
     }
-    /// <p>Associates a <code>TagKey</code> configuration to an account.</p>
+    /// <p> Associates a <code>TagKey</code> configuration to an account. </p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::AppRegistryConfiguration> {
         &self.configuration
     }

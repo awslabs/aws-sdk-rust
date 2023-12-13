@@ -14,7 +14,7 @@ pub struct SignalDecoder {
     pub can_signal: ::std::option::Option<crate::types::CanSignal>,
     /// <p>Information about signal decoder using the On-board diagnostic (OBD) II protocol.</p>
     pub obd_signal: ::std::option::Option<crate::types::ObdSignal>,
-    /// <p>The decoding information for a specific message which supports higher order data types.</p>
+    /// <p>The decoding information for a specific message which supports higher order data types. </p>
     pub message_signal: ::std::option::Option<crate::types::MessageSignal>,
 }
 impl SignalDecoder {
@@ -40,7 +40,7 @@ impl SignalDecoder {
     pub fn obd_signal(&self) -> ::std::option::Option<&crate::types::ObdSignal> {
         self.obd_signal.as_ref()
     }
-    /// <p>The decoding information for a specific message which supports higher order data types.</p>
+    /// <p>The decoding information for a specific message which supports higher order data types. </p>
     pub fn message_signal(&self) -> ::std::option::Option<&crate::types::MessageSignal> {
         self.message_signal.as_ref()
     }
@@ -137,17 +137,17 @@ impl SignalDecoderBuilder {
     pub fn get_obd_signal(&self) -> &::std::option::Option<crate::types::ObdSignal> {
         &self.obd_signal
     }
-    /// <p>The decoding information for a specific message which supports higher order data types.</p>
+    /// <p>The decoding information for a specific message which supports higher order data types. </p>
     pub fn message_signal(mut self, input: crate::types::MessageSignal) -> Self {
         self.message_signal = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The decoding information for a specific message which supports higher order data types.</p>
+    /// <p>The decoding information for a specific message which supports higher order data types. </p>
     pub fn set_message_signal(mut self, input: ::std::option::Option<crate::types::MessageSignal>) -> Self {
         self.message_signal = input;
         self
     }
-    /// <p>The decoding information for a specific message which supports higher order data types.</p>
+    /// <p>The decoding information for a specific message which supports higher order data types. </p>
     pub fn get_message_signal(&self) -> &::std::option::Option<crate::types::MessageSignal> {
         &self.message_signal
     }

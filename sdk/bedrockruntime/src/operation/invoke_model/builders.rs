@@ -152,17 +152,17 @@ impl InvokeModelFluentBuilder {
     pub fn get_accept(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_accept()
     }
-    /// <p>Identifier of the model.</p>
+    /// <p>Identifier of the model. </p>
     pub fn model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.model_id(input.into());
         self
     }
-    /// <p>Identifier of the model.</p>
+    /// <p>Identifier of the model. </p>
     pub fn set_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_model_id(input);
         self
     }
-    /// <p>Identifier of the model.</p>
+    /// <p>Identifier of the model. </p>
     pub fn get_model_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_model_id()
     }

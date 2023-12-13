@@ -10,22 +10,15 @@ pub struct ResourceShareAssociation {
     pub resource_share_name: ::std::option::Option<::std::string::String>,
     /// <p>The associated entity. This can be either of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>For a resource association, this is the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource.</p></li>
-    /// <li>
-    /// <p>For principal associations, this is one of the following:</p>
+    /// <li> <p>For a resource association, this is the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource.</p> </li>
+    /// <li> <p>For principal associations, this is one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>The ID of an Amazon Web Services account</p></li>
-    /// <li>
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an organization in Organizations</p></li>
-    /// <li>
-    /// <p>The ARN of an organizational unit (OU) in Organizations</p></li>
-    /// <li>
-    /// <p>The ARN of an IAM role</p></li>
-    /// <li>
-    /// <p>The ARN of an IAM user</p></li>
-    /// </ul></li>
+    /// <li> <p>The ID of an Amazon Web Services account</p> </li>
+    /// <li> <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an organization in Organizations</p> </li>
+    /// <li> <p>The ARN of an organizational unit (OU) in Organizations</p> </li>
+    /// <li> <p>The ARN of an IAM role</p> </li>
+    /// <li> <p>The ARN of an IAM user</p> </li>
+    /// </ul> </li>
     /// </ul>
     pub associated_entity: ::std::option::Option<::std::string::String>,
     /// <p>The type of entity included in this association.</p>
@@ -52,22 +45,15 @@ impl ResourceShareAssociation {
     }
     /// <p>The associated entity. This can be either of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>For a resource association, this is the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource.</p></li>
-    /// <li>
-    /// <p>For principal associations, this is one of the following:</p>
+    /// <li> <p>For a resource association, this is the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource.</p> </li>
+    /// <li> <p>For principal associations, this is one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>The ID of an Amazon Web Services account</p></li>
-    /// <li>
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an organization in Organizations</p></li>
-    /// <li>
-    /// <p>The ARN of an organizational unit (OU) in Organizations</p></li>
-    /// <li>
-    /// <p>The ARN of an IAM role</p></li>
-    /// <li>
-    /// <p>The ARN of an IAM user</p></li>
-    /// </ul></li>
+    /// <li> <p>The ID of an Amazon Web Services account</p> </li>
+    /// <li> <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an organization in Organizations</p> </li>
+    /// <li> <p>The ARN of an organizational unit (OU) in Organizations</p> </li>
+    /// <li> <p>The ARN of an IAM role</p> </li>
+    /// <li> <p>The ARN of an IAM user</p> </li>
+    /// </ul> </li>
     /// </ul>
     pub fn associated_entity(&self) -> ::std::option::Option<&str> {
         self.associated_entity.as_deref()
@@ -149,22 +135,15 @@ impl ResourceShareAssociationBuilder {
     }
     /// <p>The associated entity. This can be either of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>For a resource association, this is the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource.</p></li>
-    /// <li>
-    /// <p>For principal associations, this is one of the following:</p>
+    /// <li> <p>For a resource association, this is the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource.</p> </li>
+    /// <li> <p>For principal associations, this is one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>The ID of an Amazon Web Services account</p></li>
-    /// <li>
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an organization in Organizations</p></li>
-    /// <li>
-    /// <p>The ARN of an organizational unit (OU) in Organizations</p></li>
-    /// <li>
-    /// <p>The ARN of an IAM role</p></li>
-    /// <li>
-    /// <p>The ARN of an IAM user</p></li>
-    /// </ul></li>
+    /// <li> <p>The ID of an Amazon Web Services account</p> </li>
+    /// <li> <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an organization in Organizations</p> </li>
+    /// <li> <p>The ARN of an organizational unit (OU) in Organizations</p> </li>
+    /// <li> <p>The ARN of an IAM role</p> </li>
+    /// <li> <p>The ARN of an IAM user</p> </li>
+    /// </ul> </li>
     /// </ul>
     pub fn associated_entity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.associated_entity = ::std::option::Option::Some(input.into());
@@ -172,22 +151,15 @@ impl ResourceShareAssociationBuilder {
     }
     /// <p>The associated entity. This can be either of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>For a resource association, this is the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource.</p></li>
-    /// <li>
-    /// <p>For principal associations, this is one of the following:</p>
+    /// <li> <p>For a resource association, this is the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource.</p> </li>
+    /// <li> <p>For principal associations, this is one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>The ID of an Amazon Web Services account</p></li>
-    /// <li>
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an organization in Organizations</p></li>
-    /// <li>
-    /// <p>The ARN of an organizational unit (OU) in Organizations</p></li>
-    /// <li>
-    /// <p>The ARN of an IAM role</p></li>
-    /// <li>
-    /// <p>The ARN of an IAM user</p></li>
-    /// </ul></li>
+    /// <li> <p>The ID of an Amazon Web Services account</p> </li>
+    /// <li> <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an organization in Organizations</p> </li>
+    /// <li> <p>The ARN of an organizational unit (OU) in Organizations</p> </li>
+    /// <li> <p>The ARN of an IAM role</p> </li>
+    /// <li> <p>The ARN of an IAM user</p> </li>
+    /// </ul> </li>
     /// </ul>
     pub fn set_associated_entity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.associated_entity = input;
@@ -195,22 +167,15 @@ impl ResourceShareAssociationBuilder {
     }
     /// <p>The associated entity. This can be either of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>For a resource association, this is the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource.</p></li>
-    /// <li>
-    /// <p>For principal associations, this is one of the following:</p>
+    /// <li> <p>For a resource association, this is the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource.</p> </li>
+    /// <li> <p>For principal associations, this is one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>The ID of an Amazon Web Services account</p></li>
-    /// <li>
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an organization in Organizations</p></li>
-    /// <li>
-    /// <p>The ARN of an organizational unit (OU) in Organizations</p></li>
-    /// <li>
-    /// <p>The ARN of an IAM role</p></li>
-    /// <li>
-    /// <p>The ARN of an IAM user</p></li>
-    /// </ul></li>
+    /// <li> <p>The ID of an Amazon Web Services account</p> </li>
+    /// <li> <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an organization in Organizations</p> </li>
+    /// <li> <p>The ARN of an organizational unit (OU) in Organizations</p> </li>
+    /// <li> <p>The ARN of an IAM role</p> </li>
+    /// <li> <p>The ARN of an IAM user</p> </li>
+    /// </ul> </li>
     /// </ul>
     pub fn get_associated_entity(&self) -> &::std::option::Option<::std::string::String> {
         &self.associated_entity

@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchInsightsInput {
-    /// <p>The start of the time range passed in. Returned insights occurred after this time.</p>
+    /// <p> The start of the time range passed in. Returned insights occurred after this time. </p>
     pub start_time_range: ::std::option::Option<crate::types::StartTimeRange>,
-    /// <p>A <code>SearchInsightsFilters</code> object that is used to set the severity and status filters on your insight search.</p>
+    /// <p> A <code>SearchInsightsFilters</code> object that is used to set the severity and status filters on your insight search. </p>
     pub filters: ::std::option::Option<crate::types::SearchInsightsFilters>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>).</p>
+    /// <p> The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p>
     pub r#type: ::std::option::Option<crate::types::InsightType>,
 }
 impl SearchInsightsInput {
-    /// <p>The start of the time range passed in. Returned insights occurred after this time.</p>
+    /// <p> The start of the time range passed in. Returned insights occurred after this time. </p>
     pub fn start_time_range(&self) -> ::std::option::Option<&crate::types::StartTimeRange> {
         self.start_time_range.as_ref()
     }
-    /// <p>A <code>SearchInsightsFilters</code> object that is used to set the severity and status filters on your insight search.</p>
+    /// <p> A <code>SearchInsightsFilters</code> object that is used to set the severity and status filters on your insight search. </p>
     pub fn filters(&self) -> ::std::option::Option<&crate::types::SearchInsightsFilters> {
         self.filters.as_ref()
     }
@@ -31,7 +31,7 @@ impl SearchInsightsInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>).</p>
+    /// <p> The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::InsightType> {
         self.r#type.as_ref()
     }
@@ -54,32 +54,32 @@ pub struct SearchInsightsInputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::InsightType>,
 }
 impl SearchInsightsInputBuilder {
-    /// <p>The start of the time range passed in. Returned insights occurred after this time.</p>
+    /// <p> The start of the time range passed in. Returned insights occurred after this time. </p>
     /// This field is required.
     pub fn start_time_range(mut self, input: crate::types::StartTimeRange) -> Self {
         self.start_time_range = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The start of the time range passed in. Returned insights occurred after this time.</p>
+    /// <p> The start of the time range passed in. Returned insights occurred after this time. </p>
     pub fn set_start_time_range(mut self, input: ::std::option::Option<crate::types::StartTimeRange>) -> Self {
         self.start_time_range = input;
         self
     }
-    /// <p>The start of the time range passed in. Returned insights occurred after this time.</p>
+    /// <p> The start of the time range passed in. Returned insights occurred after this time. </p>
     pub fn get_start_time_range(&self) -> &::std::option::Option<crate::types::StartTimeRange> {
         &self.start_time_range
     }
-    /// <p>A <code>SearchInsightsFilters</code> object that is used to set the severity and status filters on your insight search.</p>
+    /// <p> A <code>SearchInsightsFilters</code> object that is used to set the severity and status filters on your insight search. </p>
     pub fn filters(mut self, input: crate::types::SearchInsightsFilters) -> Self {
         self.filters = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A <code>SearchInsightsFilters</code> object that is used to set the severity and status filters on your insight search.</p>
+    /// <p> A <code>SearchInsightsFilters</code> object that is used to set the severity and status filters on your insight search. </p>
     pub fn set_filters(mut self, input: ::std::option::Option<crate::types::SearchInsightsFilters>) -> Self {
         self.filters = input;
         self
     }
-    /// <p>A <code>SearchInsightsFilters</code> object that is used to set the severity and status filters on your insight search.</p>
+    /// <p> A <code>SearchInsightsFilters</code> object that is used to set the severity and status filters on your insight search. </p>
     pub fn get_filters(&self) -> &::std::option::Option<crate::types::SearchInsightsFilters> {
         &self.filters
     }
@@ -111,18 +111,18 @@ impl SearchInsightsInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>).</p>
+    /// <p> The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::InsightType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>).</p>
+    /// <p> The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::InsightType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>).</p>
+    /// <p> The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::InsightType> {
         &self.r#type
     }

@@ -24,12 +24,9 @@ impl AssociateCreatedArtifactInputBuilder {
 ///
 /// <p>Associates a created artifact of an AWS cloud resource, the target receiving the migration, with the migration task performed by a migration tool. This API has the following traits:</p>
 /// <ul>
-/// <li>
-/// <p>Migration tools can call the <code>AssociateCreatedArtifact</code> operation to indicate which AWS artifact is associated with a migration task.</p></li>
-/// <li>
-/// <p>The created artifact name must be provided in ARN (Amazon Resource Name) format which will contain information about type and region; for example: <code>arn:aws:ec2:us-east-1:488216288981:image/ami-6d0ba87b</code>.</p></li>
-/// <li>
-/// <p>Examples of the AWS resource behind the created artifact are, AMI's, EC2 instance, or DMS endpoint, etc.</p></li>
+/// <li> <p>Migration tools can call the <code>AssociateCreatedArtifact</code> operation to indicate which AWS artifact is associated with a migration task.</p> </li>
+/// <li> <p>The created artifact name must be provided in ARN (Amazon Resource Name) format which will contain information about type and region; for example: <code>arn:aws:ec2:us-east-1:488216288981:image/ami-6d0ba87b</code>.</p> </li>
+/// <li> <p>Examples of the AWS resource behind the created artifact are, AMI's, EC2 instance, or DMS endpoint, etc.</p> </li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateCreatedArtifactFluentBuilder {
@@ -116,45 +113,45 @@ impl AssociateCreatedArtifactFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the ProgressUpdateStream.</p>
+    /// <p>The name of the ProgressUpdateStream. </p>
     pub fn progress_update_stream(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.progress_update_stream(input.into());
         self
     }
-    /// <p>The name of the ProgressUpdateStream.</p>
+    /// <p>The name of the ProgressUpdateStream. </p>
     pub fn set_progress_update_stream(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_progress_update_stream(input);
         self
     }
-    /// <p>The name of the ProgressUpdateStream.</p>
+    /// <p>The name of the ProgressUpdateStream. </p>
     pub fn get_progress_update_stream(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_progress_update_stream()
     }
-    /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i></p>
+    /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
     pub fn migration_task_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.migration_task_name(input.into());
         self
     }
-    /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i></p>
+    /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
     pub fn set_migration_task_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_migration_task_name(input);
         self
     }
-    /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i></p>
+    /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
     pub fn get_migration_task_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_migration_task_name()
     }
-    /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.)</p>
+    /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.) </p>
     pub fn created_artifact(mut self, input: crate::types::CreatedArtifact) -> Self {
         self.inner = self.inner.created_artifact(input);
         self
     }
-    /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.)</p>
+    /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.) </p>
     pub fn set_created_artifact(mut self, input: ::std::option::Option<crate::types::CreatedArtifact>) -> Self {
         self.inner = self.inner.set_created_artifact(input);
         self
     }
-    /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.)</p>
+    /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.) </p>
     pub fn get_created_artifact(&self) -> &::std::option::Option<crate::types::CreatedArtifact> {
         self.inner.get_created_artifact()
     }

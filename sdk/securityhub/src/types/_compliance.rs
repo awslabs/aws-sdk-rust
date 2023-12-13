@@ -9,26 +9,22 @@ pub struct Compliance {
     /// <ul>
     /// <li>
     /// <ul>
-    /// <li>
-    /// <p><code>PASSED</code> - Standards check passed for all evaluated resources.</p></li>
-    /// <li>
-    /// <p><code>WARNING</code> - Some information is missing or this check is not supported for your configuration.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - Standards check failed for at least one evaluated resource.</p></li>
-    /// <li>
-    /// <p><code>NOT_AVAILABLE</code> - Check could not be performed due to a service outage, API error, or because the result of the Config evaluation was <code>NOT_APPLICABLE</code>. If the Config evaluation result was <code>NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically archives the finding.</p></li>
-    /// </ul></li>
+    /// <li> <p> <code>PASSED</code> - Standards check passed for all evaluated resources.</p> </li>
+    /// <li> <p> <code>WARNING</code> - Some information is missing or this check is not supported for your configuration.</p> </li>
+    /// <li> <p> <code>FAILED</code> - Standards check failed for at least one evaluated resource.</p> </li>
+    /// <li> <p> <code>NOT_AVAILABLE</code> - Check could not be performed due to a service outage, API error, or because the result of the Config evaluation was <code>NOT_APPLICABLE</code>. If the Config evaluation result was <code>NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically archives the finding.</p> </li>
+    /// </ul> </li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::ComplianceStatus>,
     /// <p>For a control, the industry or regulatory framework requirements that are related to the control. The check for that control is aligned with these requirements.</p>
     pub related_requirements: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>For findings generated from controls, a list of reasons behind the value of <code>Status</code>. For the list of status reason codes and their meanings, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff">Standards-related information in the ASFF</a> in the <i>Security Hub User Guide</i>.</p>
+    /// <p>For findings generated from controls, a list of reasons behind the value of <code>Status</code>. For the list of status reason codes and their meanings, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff">Standards-related information in the ASFF</a> in the <i>Security Hub User Guide</i>. </p>
     pub status_reasons: ::std::option::Option<::std::vec::Vec<crate::types::StatusReason>>,
-    /// <p>The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web Service and a number, such as APIGateway.5.</p>
+    /// <p> The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web Service and a number, such as APIGateway.5. </p>
     pub security_control_id: ::std::option::Option<::std::string::String>,
-    /// <p>The enabled security standards in which a security control is currently enabled.</p>
+    /// <p>The enabled security standards in which a security control is currently enabled. </p>
     pub associated_standards: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedStandard>>,
-    /// <p>An object that includes security control parameter names and values.</p>
+    /// <p> An object that includes security control parameter names and values. </p>
     pub security_control_parameters: ::std::option::Option<::std::vec::Vec<crate::types::SecurityControlParameter>>,
 }
 impl Compliance {
@@ -37,15 +33,11 @@ impl Compliance {
     /// <ul>
     /// <li>
     /// <ul>
-    /// <li>
-    /// <p><code>PASSED</code> - Standards check passed for all evaluated resources.</p></li>
-    /// <li>
-    /// <p><code>WARNING</code> - Some information is missing or this check is not supported for your configuration.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - Standards check failed for at least one evaluated resource.</p></li>
-    /// <li>
-    /// <p><code>NOT_AVAILABLE</code> - Check could not be performed due to a service outage, API error, or because the result of the Config evaluation was <code>NOT_APPLICABLE</code>. If the Config evaluation result was <code>NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically archives the finding.</p></li>
-    /// </ul></li>
+    /// <li> <p> <code>PASSED</code> - Standards check passed for all evaluated resources.</p> </li>
+    /// <li> <p> <code>WARNING</code> - Some information is missing or this check is not supported for your configuration.</p> </li>
+    /// <li> <p> <code>FAILED</code> - Standards check failed for at least one evaluated resource.</p> </li>
+    /// <li> <p> <code>NOT_AVAILABLE</code> - Check could not be performed due to a service outage, API error, or because the result of the Config evaluation was <code>NOT_APPLICABLE</code>. If the Config evaluation result was <code>NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically archives the finding.</p> </li>
+    /// </ul> </li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ComplianceStatus> {
         self.status.as_ref()
@@ -56,23 +48,23 @@ impl Compliance {
     pub fn related_requirements(&self) -> &[::std::string::String] {
         self.related_requirements.as_deref().unwrap_or_default()
     }
-    /// <p>For findings generated from controls, a list of reasons behind the value of <code>Status</code>. For the list of status reason codes and their meanings, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff">Standards-related information in the ASFF</a> in the <i>Security Hub User Guide</i>.</p>
+    /// <p>For findings generated from controls, a list of reasons behind the value of <code>Status</code>. For the list of status reason codes and their meanings, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff">Standards-related information in the ASFF</a> in the <i>Security Hub User Guide</i>. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.status_reasons.is_none()`.
     pub fn status_reasons(&self) -> &[crate::types::StatusReason] {
         self.status_reasons.as_deref().unwrap_or_default()
     }
-    /// <p>The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web Service and a number, such as APIGateway.5.</p>
+    /// <p> The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web Service and a number, such as APIGateway.5. </p>
     pub fn security_control_id(&self) -> ::std::option::Option<&str> {
         self.security_control_id.as_deref()
     }
-    /// <p>The enabled security standards in which a security control is currently enabled.</p>
+    /// <p>The enabled security standards in which a security control is currently enabled. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associated_standards.is_none()`.
     pub fn associated_standards(&self) -> &[crate::types::AssociatedStandard] {
         self.associated_standards.as_deref().unwrap_or_default()
     }
-    /// <p>An object that includes security control parameter names and values.</p>
+    /// <p> An object that includes security control parameter names and values. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_control_parameters.is_none()`.
     pub fn security_control_parameters(&self) -> &[crate::types::SecurityControlParameter] {
@@ -103,15 +95,11 @@ impl ComplianceBuilder {
     /// <ul>
     /// <li>
     /// <ul>
-    /// <li>
-    /// <p><code>PASSED</code> - Standards check passed for all evaluated resources.</p></li>
-    /// <li>
-    /// <p><code>WARNING</code> - Some information is missing or this check is not supported for your configuration.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - Standards check failed for at least one evaluated resource.</p></li>
-    /// <li>
-    /// <p><code>NOT_AVAILABLE</code> - Check could not be performed due to a service outage, API error, or because the result of the Config evaluation was <code>NOT_APPLICABLE</code>. If the Config evaluation result was <code>NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically archives the finding.</p></li>
-    /// </ul></li>
+    /// <li> <p> <code>PASSED</code> - Standards check passed for all evaluated resources.</p> </li>
+    /// <li> <p> <code>WARNING</code> - Some information is missing or this check is not supported for your configuration.</p> </li>
+    /// <li> <p> <code>FAILED</code> - Standards check failed for at least one evaluated resource.</p> </li>
+    /// <li> <p> <code>NOT_AVAILABLE</code> - Check could not be performed due to a service outage, API error, or because the result of the Config evaluation was <code>NOT_APPLICABLE</code>. If the Config evaluation result was <code>NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically archives the finding.</p> </li>
+    /// </ul> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::ComplianceStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -122,15 +110,11 @@ impl ComplianceBuilder {
     /// <ul>
     /// <li>
     /// <ul>
-    /// <li>
-    /// <p><code>PASSED</code> - Standards check passed for all evaluated resources.</p></li>
-    /// <li>
-    /// <p><code>WARNING</code> - Some information is missing or this check is not supported for your configuration.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - Standards check failed for at least one evaluated resource.</p></li>
-    /// <li>
-    /// <p><code>NOT_AVAILABLE</code> - Check could not be performed due to a service outage, API error, or because the result of the Config evaluation was <code>NOT_APPLICABLE</code>. If the Config evaluation result was <code>NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically archives the finding.</p></li>
-    /// </ul></li>
+    /// <li> <p> <code>PASSED</code> - Standards check passed for all evaluated resources.</p> </li>
+    /// <li> <p> <code>WARNING</code> - Some information is missing or this check is not supported for your configuration.</p> </li>
+    /// <li> <p> <code>FAILED</code> - Standards check failed for at least one evaluated resource.</p> </li>
+    /// <li> <p> <code>NOT_AVAILABLE</code> - Check could not be performed due to a service outage, API error, or because the result of the Config evaluation was <code>NOT_APPLICABLE</code>. If the Config evaluation result was <code>NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically archives the finding.</p> </li>
+    /// </ul> </li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ComplianceStatus>) -> Self {
         self.status = input;
@@ -141,15 +125,11 @@ impl ComplianceBuilder {
     /// <ul>
     /// <li>
     /// <ul>
-    /// <li>
-    /// <p><code>PASSED</code> - Standards check passed for all evaluated resources.</p></li>
-    /// <li>
-    /// <p><code>WARNING</code> - Some information is missing or this check is not supported for your configuration.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - Standards check failed for at least one evaluated resource.</p></li>
-    /// <li>
-    /// <p><code>NOT_AVAILABLE</code> - Check could not be performed due to a service outage, API error, or because the result of the Config evaluation was <code>NOT_APPLICABLE</code>. If the Config evaluation result was <code>NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically archives the finding.</p></li>
-    /// </ul></li>
+    /// <li> <p> <code>PASSED</code> - Standards check passed for all evaluated resources.</p> </li>
+    /// <li> <p> <code>WARNING</code> - Some information is missing or this check is not supported for your configuration.</p> </li>
+    /// <li> <p> <code>FAILED</code> - Standards check failed for at least one evaluated resource.</p> </li>
+    /// <li> <p> <code>NOT_AVAILABLE</code> - Check could not be performed due to a service outage, API error, or because the result of the Config evaluation was <code>NOT_APPLICABLE</code>. If the Config evaluation result was <code>NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically archives the finding.</p> </li>
+    /// </ul> </li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ComplianceStatus> {
         &self.status
@@ -178,33 +158,33 @@ impl ComplianceBuilder {
     ///
     /// To override the contents of this collection use [`set_status_reasons`](Self::set_status_reasons).
     ///
-    /// <p>For findings generated from controls, a list of reasons behind the value of <code>Status</code>. For the list of status reason codes and their meanings, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff">Standards-related information in the ASFF</a> in the <i>Security Hub User Guide</i>.</p>
+    /// <p>For findings generated from controls, a list of reasons behind the value of <code>Status</code>. For the list of status reason codes and their meanings, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff">Standards-related information in the ASFF</a> in the <i>Security Hub User Guide</i>. </p>
     pub fn status_reasons(mut self, input: crate::types::StatusReason) -> Self {
         let mut v = self.status_reasons.unwrap_or_default();
         v.push(input);
         self.status_reasons = ::std::option::Option::Some(v);
         self
     }
-    /// <p>For findings generated from controls, a list of reasons behind the value of <code>Status</code>. For the list of status reason codes and their meanings, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff">Standards-related information in the ASFF</a> in the <i>Security Hub User Guide</i>.</p>
+    /// <p>For findings generated from controls, a list of reasons behind the value of <code>Status</code>. For the list of status reason codes and their meanings, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff">Standards-related information in the ASFF</a> in the <i>Security Hub User Guide</i>. </p>
     pub fn set_status_reasons(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StatusReason>>) -> Self {
         self.status_reasons = input;
         self
     }
-    /// <p>For findings generated from controls, a list of reasons behind the value of <code>Status</code>. For the list of status reason codes and their meanings, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff">Standards-related information in the ASFF</a> in the <i>Security Hub User Guide</i>.</p>
+    /// <p>For findings generated from controls, a list of reasons behind the value of <code>Status</code>. For the list of status reason codes and their meanings, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff">Standards-related information in the ASFF</a> in the <i>Security Hub User Guide</i>. </p>
     pub fn get_status_reasons(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StatusReason>> {
         &self.status_reasons
     }
-    /// <p>The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web Service and a number, such as APIGateway.5.</p>
+    /// <p> The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web Service and a number, such as APIGateway.5. </p>
     pub fn security_control_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_control_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web Service and a number, such as APIGateway.5.</p>
+    /// <p> The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web Service and a number, such as APIGateway.5. </p>
     pub fn set_security_control_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.security_control_id = input;
         self
     }
-    /// <p>The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web Service and a number, such as APIGateway.5.</p>
+    /// <p> The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web Service and a number, such as APIGateway.5. </p>
     pub fn get_security_control_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.security_control_id
     }
@@ -212,19 +192,19 @@ impl ComplianceBuilder {
     ///
     /// To override the contents of this collection use [`set_associated_standards`](Self::set_associated_standards).
     ///
-    /// <p>The enabled security standards in which a security control is currently enabled.</p>
+    /// <p>The enabled security standards in which a security control is currently enabled. </p>
     pub fn associated_standards(mut self, input: crate::types::AssociatedStandard) -> Self {
         let mut v = self.associated_standards.unwrap_or_default();
         v.push(input);
         self.associated_standards = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The enabled security standards in which a security control is currently enabled.</p>
+    /// <p>The enabled security standards in which a security control is currently enabled. </p>
     pub fn set_associated_standards(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedStandard>>) -> Self {
         self.associated_standards = input;
         self
     }
-    /// <p>The enabled security standards in which a security control is currently enabled.</p>
+    /// <p>The enabled security standards in which a security control is currently enabled. </p>
     pub fn get_associated_standards(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociatedStandard>> {
         &self.associated_standards
     }
@@ -232,19 +212,19 @@ impl ComplianceBuilder {
     ///
     /// To override the contents of this collection use [`set_security_control_parameters`](Self::set_security_control_parameters).
     ///
-    /// <p>An object that includes security control parameter names and values.</p>
+    /// <p> An object that includes security control parameter names and values. </p>
     pub fn security_control_parameters(mut self, input: crate::types::SecurityControlParameter) -> Self {
         let mut v = self.security_control_parameters.unwrap_or_default();
         v.push(input);
         self.security_control_parameters = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An object that includes security control parameter names and values.</p>
+    /// <p> An object that includes security control parameter names and values. </p>
     pub fn set_security_control_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SecurityControlParameter>>) -> Self {
         self.security_control_parameters = input;
         self
     }
-    /// <p>An object that includes security control parameter names and values.</p>
+    /// <p> An object that includes security control parameter names and values. </p>
     pub fn get_security_control_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityControlParameter>> {
         &self.security_control_parameters
     }

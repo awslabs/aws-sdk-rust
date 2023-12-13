@@ -6,7 +6,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_notification_channels::builders::ListNotificationChannelsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_notification_channels::builders::ListNotificationChannelsFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p><br>
     /// - On success, responds with [`ListNotificationChannelsOutput`](crate::operation::list_notification_channels::ListNotificationChannelsOutput) with field(s):
-    ///   - [`channels(Option<Vec::<NotificationChannel>>)`](crate::operation::list_notification_channels::ListNotificationChannelsOutput::channels): <p>An array that contains the requested notification channels.</p>
+    ///   - [`channels(Option<Vec::<NotificationChannel>>)`](crate::operation::list_notification_channels::ListNotificationChannelsOutput::channels): <p> An array that contains the requested notification channels. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_notification_channels::ListNotificationChannelsOutput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     /// - On failure, responds with [`SdkError<ListNotificationChannelsError>`](crate::operation::list_notification_channels::ListNotificationChannelsError)
     pub fn list_notification_channels(&self) -> crate::operation::list_notification_channels::builders::ListNotificationChannelsFluentBuilder {

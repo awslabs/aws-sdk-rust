@@ -23,7 +23,7 @@ impl GetMlModelInputBuilder {
 /// Fluent builder constructing a request to `GetMLModel`.
 ///
 /// <p>Returns an <code>MLModel</code> that includes detailed metadata, data source information, and the current status of the <code>MLModel</code>.</p>
-/// <p><code>GetMLModel</code> provides results in normal or verbose format.</p>
+/// <p> <code>GetMLModel</code> provides results in normal or verbose format. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetMLModelFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

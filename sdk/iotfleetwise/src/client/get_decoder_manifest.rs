@@ -3,15 +3,15 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDecoderManifest`](crate::operation::get_decoder_manifest::builders::GetDecoderManifestFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::get_decoder_manifest::builders::GetDecoderManifestFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_decoder_manifest::builders::GetDecoderManifestFluentBuilder::set_name):<br>required: **true**<br><p>The name of the decoder manifest to retrieve information about.</p><br>
+    ///   - [`name(impl Into<String>)`](crate::operation::get_decoder_manifest::builders::GetDecoderManifestFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_decoder_manifest::builders::GetDecoderManifestFluentBuilder::set_name):<br>required: **true**<br><p> The name of the decoder manifest to retrieve information about. </p><br>
     /// - On success, responds with [`GetDecoderManifestOutput`](crate::operation::get_decoder_manifest::GetDecoderManifestOutput) with field(s):
-    ///   - [`name(String)`](crate::operation::get_decoder_manifest::GetDecoderManifestOutput::name): <p>The name of the decoder manifest.</p>
-    ///   - [`arn(String)`](crate::operation::get_decoder_manifest::GetDecoderManifestOutput::arn): <p>The Amazon Resource Name (ARN) of the decoder manifest.</p>
-    ///   - [`description(Option<String>)`](crate::operation::get_decoder_manifest::GetDecoderManifestOutput::description): <p>A brief description of the decoder manifest.</p>
-    ///   - [`model_manifest_arn(Option<String>)`](crate::operation::get_decoder_manifest::GetDecoderManifestOutput::model_manifest_arn): <p>The ARN of a vehicle model (model manifest) associated with the decoder manifest.</p>
-    ///   - [`status(Option<ManifestStatus>)`](crate::operation::get_decoder_manifest::GetDecoderManifestOutput::status): <p>The state of the decoder manifest. If the status is <code>ACTIVE</code>, the decoder manifest can't be edited. If the status is marked <code>DRAFT</code>, you can edit the decoder manifest.</p>
-    ///   - [`creation_time(DateTime)`](crate::operation::get_decoder_manifest::GetDecoderManifestOutput::creation_time): <p>The time the decoder manifest was created in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
-    ///   - [`last_modification_time(DateTime)`](crate::operation::get_decoder_manifest::GetDecoderManifestOutput::last_modification_time): <p>The time the decoder manifest was last updated in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
+    ///   - [`name(String)`](crate::operation::get_decoder_manifest::GetDecoderManifestOutput::name): <p> The name of the decoder manifest. </p>
+    ///   - [`arn(String)`](crate::operation::get_decoder_manifest::GetDecoderManifestOutput::arn): <p> The Amazon Resource Name (ARN) of the decoder manifest. </p>
+    ///   - [`description(Option<String>)`](crate::operation::get_decoder_manifest::GetDecoderManifestOutput::description): <p> A brief description of the decoder manifest.</p>
+    ///   - [`model_manifest_arn(Option<String>)`](crate::operation::get_decoder_manifest::GetDecoderManifestOutput::model_manifest_arn): <p> The ARN of a vehicle model (model manifest) associated with the decoder manifest.</p>
+    ///   - [`status(Option<ManifestStatus>)`](crate::operation::get_decoder_manifest::GetDecoderManifestOutput::status): <p> The state of the decoder manifest. If the status is <code>ACTIVE</code>, the decoder manifest can't be edited. If the status is marked <code>DRAFT</code>, you can edit the decoder manifest.</p>
+    ///   - [`creation_time(DateTime)`](crate::operation::get_decoder_manifest::GetDecoderManifestOutput::creation_time): <p> The time the decoder manifest was created in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
+    ///   - [`last_modification_time(DateTime)`](crate::operation::get_decoder_manifest::GetDecoderManifestOutput::last_modification_time): <p> The time the decoder manifest was last updated in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
     ///   - [`message(Option<String>)`](crate::operation::get_decoder_manifest::GetDecoderManifestOutput::message): <p>The detailed message for the decoder manifest. When a decoder manifest is in an <code>INVALID</code> status, the message contains detailed reason and help information.</p>
     /// - On failure, responds with [`SdkError<GetDecoderManifestError>`](crate::operation::get_decoder_manifest::GetDecoderManifestError)
     pub fn get_decoder_manifest(&self) -> crate::operation::get_decoder_manifest::builders::GetDecoderManifestFluentBuilder {

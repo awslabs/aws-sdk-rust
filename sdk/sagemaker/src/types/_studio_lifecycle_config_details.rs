@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StudioLifecycleConfigDetails {
-    /// <p>The Amazon Resource Name (ARN) of the Lifecycle Configuration.</p>
+    /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configuration.</p>
     pub studio_lifecycle_config_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon SageMaker Studio Lifecycle Configuration.</p>
     pub studio_lifecycle_config_name: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ pub struct StudioLifecycleConfigDetails {
     pub studio_lifecycle_config_app_type: ::std::option::Option<crate::types::StudioLifecycleConfigAppType>,
 }
 impl StudioLifecycleConfigDetails {
-    /// <p>The Amazon Resource Name (ARN) of the Lifecycle Configuration.</p>
+    /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configuration.</p>
     pub fn studio_lifecycle_config_arn(&self) -> ::std::option::Option<&str> {
         self.studio_lifecycle_config_arn.as_deref()
     }
@@ -55,17 +55,17 @@ pub struct StudioLifecycleConfigDetailsBuilder {
     pub(crate) studio_lifecycle_config_app_type: ::std::option::Option<crate::types::StudioLifecycleConfigAppType>,
 }
 impl StudioLifecycleConfigDetailsBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the Lifecycle Configuration.</p>
+    /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configuration.</p>
     pub fn studio_lifecycle_config_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_lifecycle_config_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Lifecycle Configuration.</p>
+    /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configuration.</p>
     pub fn set_studio_lifecycle_config_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.studio_lifecycle_config_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Lifecycle Configuration.</p>
+    /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configuration.</p>
     pub fn get_studio_lifecycle_config_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.studio_lifecycle_config_arn
     }

@@ -5,7 +5,7 @@
 pub struct UpdateChannelFlowInput {
     /// <p>The ARN of the channel flow.</p>
     pub channel_flow_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Information about the processor Lambda functions</p>
+    /// <p>Information about the processor Lambda functions </p>
     pub processors: ::std::option::Option<::std::vec::Vec<crate::types::Processor>>,
     /// <p>The name of the channel flow.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ impl UpdateChannelFlowInput {
     pub fn channel_flow_arn(&self) -> ::std::option::Option<&str> {
         self.channel_flow_arn.as_deref()
     }
-    /// <p>Information about the processor Lambda functions</p>
+    /// <p>Information about the processor Lambda functions </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.processors.is_none()`.
     pub fn processors(&self) -> &[crate::types::Processor] {
@@ -70,19 +70,19 @@ impl UpdateChannelFlowInputBuilder {
     ///
     /// To override the contents of this collection use [`set_processors`](Self::set_processors).
     ///
-    /// <p>Information about the processor Lambda functions</p>
+    /// <p>Information about the processor Lambda functions </p>
     pub fn processors(mut self, input: crate::types::Processor) -> Self {
         let mut v = self.processors.unwrap_or_default();
         v.push(input);
         self.processors = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Information about the processor Lambda functions</p>
+    /// <p>Information about the processor Lambda functions </p>
     pub fn set_processors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Processor>>) -> Self {
         self.processors = input;
         self
     }
-    /// <p>Information about the processor Lambda functions</p>
+    /// <p>Information about the processor Lambda functions </p>
     pub fn get_processors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Processor>> {
         &self.processors
     }

@@ -11,7 +11,7 @@ pub struct FileShareInfo {
     /// <p>The ID of the file share.</p>
     pub file_share_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the file share.</p>
-    /// <p>Valid Values: <code>CREATING</code> | <code>UPDATING</code> | <code>AVAILABLE</code> | <code>DELETING</code></p>
+    /// <p>Valid Values: <code>CREATING</code> | <code>UPDATING</code> | <code>AVAILABLE</code> | <code>DELETING</code> </p>
     pub file_share_status: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: ::std::option::Option<::std::string::String>,
@@ -30,7 +30,7 @@ impl FileShareInfo {
         self.file_share_id.as_deref()
     }
     /// <p>The status of the file share.</p>
-    /// <p>Valid Values: <code>CREATING</code> | <code>UPDATING</code> | <code>AVAILABLE</code> | <code>DELETING</code></p>
+    /// <p>Valid Values: <code>CREATING</code> | <code>UPDATING</code> | <code>AVAILABLE</code> | <code>DELETING</code> </p>
     pub fn file_share_status(&self) -> ::std::option::Option<&str> {
         self.file_share_status.as_deref()
     }
@@ -100,19 +100,19 @@ impl FileShareInfoBuilder {
         &self.file_share_id
     }
     /// <p>The status of the file share.</p>
-    /// <p>Valid Values: <code>CREATING</code> | <code>UPDATING</code> | <code>AVAILABLE</code> | <code>DELETING</code></p>
+    /// <p>Valid Values: <code>CREATING</code> | <code>UPDATING</code> | <code>AVAILABLE</code> | <code>DELETING</code> </p>
     pub fn file_share_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_share_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the file share.</p>
-    /// <p>Valid Values: <code>CREATING</code> | <code>UPDATING</code> | <code>AVAILABLE</code> | <code>DELETING</code></p>
+    /// <p>Valid Values: <code>CREATING</code> | <code>UPDATING</code> | <code>AVAILABLE</code> | <code>DELETING</code> </p>
     pub fn set_file_share_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_share_status = input;
         self
     }
     /// <p>The status of the file share.</p>
-    /// <p>Valid Values: <code>CREATING</code> | <code>UPDATING</code> | <code>AVAILABLE</code> | <code>DELETING</code></p>
+    /// <p>Valid Values: <code>CREATING</code> | <code>UPDATING</code> | <code>AVAILABLE</code> | <code>DELETING</code> </p>
     pub fn get_file_share_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.file_share_status
     }

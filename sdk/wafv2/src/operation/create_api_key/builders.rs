@@ -24,7 +24,7 @@ impl CreateApiKeyInputBuilder {
 ///
 /// <p>Creates an API key that contains a set of token domains.</p>
 /// <p>API keys are required for the integration of the CAPTCHA API in your JavaScript client applications. The API lets you customize the placement and characteristics of the CAPTCHA puzzle for your end users. For more information about the CAPTCHA JavaScript integration, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client application integration</a> in the <i>WAF Developer Guide</i>.</p>
-/// <p>You can use a single key for up to 5 domains. After you generate a key, you can copy it for use in your JavaScript integration.</p>
+/// <p>You can use a single key for up to 5 domains. After you generate a key, you can copy it for use in your JavaScript integration. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateAPIKeyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -110,37 +110,31 @@ impl CreateAPIKeyFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
-    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
+    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance. </p>
+    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
     /// <ul>
-    /// <li>
-    /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.</p></li>
-    /// <li>
-    /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1.</p></li>
+    /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+    /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
     /// </ul>
     pub fn scope(mut self, input: crate::types::Scope) -> Self {
         self.inner = self.inner.scope(input);
         self
     }
-    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
-    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
+    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance. </p>
+    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
     /// <ul>
-    /// <li>
-    /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.</p></li>
-    /// <li>
-    /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1.</p></li>
+    /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+    /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
     /// </ul>
     pub fn set_scope(mut self, input: ::std::option::Option<crate::types::Scope>) -> Self {
         self.inner = self.inner.set_scope(input);
         self
     }
-    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
-    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
+    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance. </p>
+    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
     /// <ul>
-    /// <li>
-    /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.</p></li>
-    /// <li>
-    /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1.</p></li>
+    /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+    /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
     /// </ul>
     pub fn get_scope(&self) -> &::std::option::Option<crate::types::Scope> {
         self.inner.get_scope()
@@ -149,22 +143,22 @@ impl CreateAPIKeyFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_token_domains`](Self::set_token_domains).
     ///
-    /// <p>The client application domains that you want to use this API key for.</p>
-    /// <p>Example JSON: <code>"TokenDomains": ["abc.com", "store.abc.com"]</code></p>
+    /// <p>The client application domains that you want to use this API key for. </p>
+    /// <p>Example JSON: <code>"TokenDomains": ["abc.com", "store.abc.com"]</code> </p>
     /// <p>Public suffixes aren't allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code> as token domains.</p>
     pub fn token_domains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.token_domains(input.into());
         self
     }
-    /// <p>The client application domains that you want to use this API key for.</p>
-    /// <p>Example JSON: <code>"TokenDomains": ["abc.com", "store.abc.com"]</code></p>
+    /// <p>The client application domains that you want to use this API key for. </p>
+    /// <p>Example JSON: <code>"TokenDomains": ["abc.com", "store.abc.com"]</code> </p>
     /// <p>Public suffixes aren't allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code> as token domains.</p>
     pub fn set_token_domains(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_token_domains(input);
         self
     }
-    /// <p>The client application domains that you want to use this API key for.</p>
-    /// <p>Example JSON: <code>"TokenDomains": ["abc.com", "store.abc.com"]</code></p>
+    /// <p>The client application domains that you want to use this API key for. </p>
+    /// <p>Example JSON: <code>"TokenDomains": ["abc.com", "store.abc.com"]</code> </p>
     /// <p>Public suffixes aren't allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code> as token domains.</p>
     pub fn get_token_domains(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_token_domains()

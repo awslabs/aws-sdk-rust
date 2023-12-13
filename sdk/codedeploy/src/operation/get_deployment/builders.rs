@@ -22,8 +22,8 @@ impl GetDeploymentInputBuilder {
 }
 /// Fluent builder constructing a request to `GetDeployment`.
 ///
-/// <p>Gets information about a deployment.</p><note>
-/// <p>The <code>content</code> property of the <code>appSpecContent</code> object in the returned revision is always null. Use <code>GetApplicationRevision</code> and the <code>sha256</code> property of the returned <code>appSpecContent</code> object to get the content of the deployment’s AppSpec file.</p>
+/// <p>Gets information about a deployment.</p> <note>
+/// <p> The <code>content</code> property of the <code>appSpecContent</code> object in the returned revision is always null. Use <code>GetApplicationRevision</code> and the <code>sha256</code> property of the returned <code>appSpecContent</code> object to get the content of the deployment’s AppSpec file. </p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDeploymentFluentBuilder {
@@ -110,17 +110,17 @@ impl GetDeploymentFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique ID of a deployment associated with the user or Amazon Web Services account.</p>
+    /// <p> The unique ID of a deployment associated with the user or Amazon Web Services account. </p>
     pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.deployment_id(input.into());
         self
     }
-    /// <p>The unique ID of a deployment associated with the user or Amazon Web Services account.</p>
+    /// <p> The unique ID of a deployment associated with the user or Amazon Web Services account. </p>
     pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_deployment_id(input);
         self
     }
-    /// <p>The unique ID of a deployment associated with the user or Amazon Web Services account.</p>
+    /// <p> The unique ID of a deployment associated with the user or Amazon Web Services account. </p>
     pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_deployment_id()
     }

@@ -15,14 +15,10 @@ pub struct AppAuthorizationSummary {
     /// <p>The state of the app authorization.</p>
     /// <p>The following states are possible:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PendingConnect</code>: The initial state of the app authorization. The app authorization is created but not yet connected.</p></li>
-    /// <li>
-    /// <p><code>Connected</code>: The app authorization is connected to the application, and is ready to be used.</p></li>
-    /// <li>
-    /// <p><code>ConnectionValidationFailed</code>: The app authorization received a validation exception when trying to connect to the application. If the app authorization is in this state, you should verify the configured credentials and try to connect the app authorization again.</p></li>
-    /// <li>
-    /// <p><code>TokenAutoRotationFailed</code>: AppFabric failed to refresh the access token. If the app authorization is in this state, you should try to reconnect the app authorization.</p></li>
+    /// <li> <p> <code>PendingConnect</code>: The initial state of the app authorization. The app authorization is created but not yet connected.</p> </li>
+    /// <li> <p> <code>Connected</code>: The app authorization is connected to the application, and is ready to be used.</p> </li>
+    /// <li> <p> <code>ConnectionValidationFailed</code>: The app authorization received a validation exception when trying to connect to the application. If the app authorization is in this state, you should verify the configured credentials and try to connect the app authorization again.</p> </li>
+    /// <li> <p> <code>TokenAutoRotationFailed</code>: AppFabric failed to refresh the access token. If the app authorization is in this state, you should try to reconnect the app authorization.</p> </li>
     /// </ul>
     pub status: crate::types::AppAuthorizationStatus,
     /// <p>Timestamp for when the app authorization was last updated.</p>
@@ -51,14 +47,10 @@ impl AppAuthorizationSummary {
     /// <p>The state of the app authorization.</p>
     /// <p>The following states are possible:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PendingConnect</code>: The initial state of the app authorization. The app authorization is created but not yet connected.</p></li>
-    /// <li>
-    /// <p><code>Connected</code>: The app authorization is connected to the application, and is ready to be used.</p></li>
-    /// <li>
-    /// <p><code>ConnectionValidationFailed</code>: The app authorization received a validation exception when trying to connect to the application. If the app authorization is in this state, you should verify the configured credentials and try to connect the app authorization again.</p></li>
-    /// <li>
-    /// <p><code>TokenAutoRotationFailed</code>: AppFabric failed to refresh the access token. If the app authorization is in this state, you should try to reconnect the app authorization.</p></li>
+    /// <li> <p> <code>PendingConnect</code>: The initial state of the app authorization. The app authorization is created but not yet connected.</p> </li>
+    /// <li> <p> <code>Connected</code>: The app authorization is connected to the application, and is ready to be used.</p> </li>
+    /// <li> <p> <code>ConnectionValidationFailed</code>: The app authorization received a validation exception when trying to connect to the application. If the app authorization is in this state, you should verify the configured credentials and try to connect the app authorization again.</p> </li>
+    /// <li> <p> <code>TokenAutoRotationFailed</code>: AppFabric failed to refresh the access token. If the app authorization is in this state, you should try to reconnect the app authorization.</p> </li>
     /// </ul>
     pub fn status(&self) -> &crate::types::AppAuthorizationStatus {
         &self.status
@@ -150,14 +142,10 @@ impl AppAuthorizationSummaryBuilder {
     /// <p>The state of the app authorization.</p>
     /// <p>The following states are possible:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PendingConnect</code>: The initial state of the app authorization. The app authorization is created but not yet connected.</p></li>
-    /// <li>
-    /// <p><code>Connected</code>: The app authorization is connected to the application, and is ready to be used.</p></li>
-    /// <li>
-    /// <p><code>ConnectionValidationFailed</code>: The app authorization received a validation exception when trying to connect to the application. If the app authorization is in this state, you should verify the configured credentials and try to connect the app authorization again.</p></li>
-    /// <li>
-    /// <p><code>TokenAutoRotationFailed</code>: AppFabric failed to refresh the access token. If the app authorization is in this state, you should try to reconnect the app authorization.</p></li>
+    /// <li> <p> <code>PendingConnect</code>: The initial state of the app authorization. The app authorization is created but not yet connected.</p> </li>
+    /// <li> <p> <code>Connected</code>: The app authorization is connected to the application, and is ready to be used.</p> </li>
+    /// <li> <p> <code>ConnectionValidationFailed</code>: The app authorization received a validation exception when trying to connect to the application. If the app authorization is in this state, you should verify the configured credentials and try to connect the app authorization again.</p> </li>
+    /// <li> <p> <code>TokenAutoRotationFailed</code>: AppFabric failed to refresh the access token. If the app authorization is in this state, you should try to reconnect the app authorization.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn status(mut self, input: crate::types::AppAuthorizationStatus) -> Self {
@@ -167,14 +155,10 @@ impl AppAuthorizationSummaryBuilder {
     /// <p>The state of the app authorization.</p>
     /// <p>The following states are possible:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PendingConnect</code>: The initial state of the app authorization. The app authorization is created but not yet connected.</p></li>
-    /// <li>
-    /// <p><code>Connected</code>: The app authorization is connected to the application, and is ready to be used.</p></li>
-    /// <li>
-    /// <p><code>ConnectionValidationFailed</code>: The app authorization received a validation exception when trying to connect to the application. If the app authorization is in this state, you should verify the configured credentials and try to connect the app authorization again.</p></li>
-    /// <li>
-    /// <p><code>TokenAutoRotationFailed</code>: AppFabric failed to refresh the access token. If the app authorization is in this state, you should try to reconnect the app authorization.</p></li>
+    /// <li> <p> <code>PendingConnect</code>: The initial state of the app authorization. The app authorization is created but not yet connected.</p> </li>
+    /// <li> <p> <code>Connected</code>: The app authorization is connected to the application, and is ready to be used.</p> </li>
+    /// <li> <p> <code>ConnectionValidationFailed</code>: The app authorization received a validation exception when trying to connect to the application. If the app authorization is in this state, you should verify the configured credentials and try to connect the app authorization again.</p> </li>
+    /// <li> <p> <code>TokenAutoRotationFailed</code>: AppFabric failed to refresh the access token. If the app authorization is in this state, you should try to reconnect the app authorization.</p> </li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AppAuthorizationStatus>) -> Self {
         self.status = input;
@@ -183,14 +167,10 @@ impl AppAuthorizationSummaryBuilder {
     /// <p>The state of the app authorization.</p>
     /// <p>The following states are possible:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PendingConnect</code>: The initial state of the app authorization. The app authorization is created but not yet connected.</p></li>
-    /// <li>
-    /// <p><code>Connected</code>: The app authorization is connected to the application, and is ready to be used.</p></li>
-    /// <li>
-    /// <p><code>ConnectionValidationFailed</code>: The app authorization received a validation exception when trying to connect to the application. If the app authorization is in this state, you should verify the configured credentials and try to connect the app authorization again.</p></li>
-    /// <li>
-    /// <p><code>TokenAutoRotationFailed</code>: AppFabric failed to refresh the access token. If the app authorization is in this state, you should try to reconnect the app authorization.</p></li>
+    /// <li> <p> <code>PendingConnect</code>: The initial state of the app authorization. The app authorization is created but not yet connected.</p> </li>
+    /// <li> <p> <code>Connected</code>: The app authorization is connected to the application, and is ready to be used.</p> </li>
+    /// <li> <p> <code>ConnectionValidationFailed</code>: The app authorization received a validation exception when trying to connect to the application. If the app authorization is in this state, you should verify the configured credentials and try to connect the app authorization again.</p> </li>
+    /// <li> <p> <code>TokenAutoRotationFailed</code>: AppFabric failed to refresh the access token. If the app authorization is in this state, you should try to reconnect the app authorization.</p> </li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AppAuthorizationStatus> {
         &self.status

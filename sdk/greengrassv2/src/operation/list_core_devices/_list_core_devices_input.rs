@@ -7,10 +7,8 @@ pub struct ListCoreDevicesInput {
     pub thing_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The core device status by which to filter. If you specify this parameter, the list includes only core devices that have this status. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p></li>
-    /// <li>
-    /// <p><code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state on the core device.</p></li>
+    /// <li> <p> <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p> </li>
+    /// <li> <p> <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state on the core device.</p> </li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::CoreDeviceStatus>,
     /// <p>The maximum number of results to be returned per paginated request.</p>
@@ -25,10 +23,8 @@ impl ListCoreDevicesInput {
     }
     /// <p>The core device status by which to filter. If you specify this parameter, the list includes only core devices that have this status. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p></li>
-    /// <li>
-    /// <p><code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state on the core device.</p></li>
+    /// <li> <p> <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p> </li>
+    /// <li> <p> <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state on the core device.</p> </li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::CoreDeviceStatus> {
         self.status.as_ref()
@@ -75,10 +71,8 @@ impl ListCoreDevicesInputBuilder {
     }
     /// <p>The core device status by which to filter. If you specify this parameter, the list includes only core devices that have this status. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p></li>
-    /// <li>
-    /// <p><code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state on the core device.</p></li>
+    /// <li> <p> <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p> </li>
+    /// <li> <p> <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state on the core device.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::CoreDeviceStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -86,10 +80,8 @@ impl ListCoreDevicesInputBuilder {
     }
     /// <p>The core device status by which to filter. If you specify this parameter, the list includes only core devices that have this status. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p></li>
-    /// <li>
-    /// <p><code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state on the core device.</p></li>
+    /// <li> <p> <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p> </li>
+    /// <li> <p> <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state on the core device.</p> </li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::CoreDeviceStatus>) -> Self {
         self.status = input;
@@ -97,10 +89,8 @@ impl ListCoreDevicesInputBuilder {
     }
     /// <p>The core device status by which to filter. If you specify this parameter, the list includes only core devices that have this status. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p></li>
-    /// <li>
-    /// <p><code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state on the core device.</p></li>
+    /// <li> <p> <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p> </li>
+    /// <li> <p> <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state on the core device.</p> </li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::CoreDeviceStatus> {
         &self.status

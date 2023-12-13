@@ -9,12 +9,12 @@ pub struct StartTaskExecutionInput {
     /// <p>Indicates how your transfer task is configured. These options include how DataSync handles files, objects, and their associated metadata during your transfer. You also can specify how to verify data integrity, set bandwidth limits for your task, among other options.</p>
     /// <p>Each option has a default value. Unless you need to, you don't have to configure any of these options before starting your task.</p>
     pub override_options: ::std::option::Option<crate::types::Options>,
-    /// <p>Specifies a list of filter rules that determines which files to include when running a task. The pattern should contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
+    /// <p>Specifies a list of filter rules that determines which files to include when running a task. The pattern should contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
     pub includes: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
-    /// <p>Specifies a list of filter rules that determines which files to exclude from a task. The list contains a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
+    /// <p>Specifies a list of filter rules that determines which files to exclude from a task. The list contains a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
     pub excludes: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
     /// <p>Specifies the tags that you want to apply to the Amazon Resource Name (ARN) representing the task execution.</p>
-    /// <p><i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.</p>
+    /// <p> <i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
     /// <p>Specifies how you want to configure a task report, which provides detailed information about for your DataSync transfer.</p>
     pub task_report_config: ::std::option::Option<crate::types::TaskReportConfig>,
@@ -29,20 +29,20 @@ impl StartTaskExecutionInput {
     pub fn override_options(&self) -> ::std::option::Option<&crate::types::Options> {
         self.override_options.as_ref()
     }
-    /// <p>Specifies a list of filter rules that determines which files to include when running a task. The pattern should contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
+    /// <p>Specifies a list of filter rules that determines which files to include when running a task. The pattern should contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.includes.is_none()`.
     pub fn includes(&self) -> &[crate::types::FilterRule] {
         self.includes.as_deref().unwrap_or_default()
     }
-    /// <p>Specifies a list of filter rules that determines which files to exclude from a task. The list contains a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
+    /// <p>Specifies a list of filter rules that determines which files to exclude from a task. The list contains a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.excludes.is_none()`.
     pub fn excludes(&self) -> &[crate::types::FilterRule] {
         self.excludes.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the tags that you want to apply to the Amazon Resource Name (ARN) representing the task execution.</p>
-    /// <p><i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.</p>
+    /// <p> <i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
     pub fn tags(&self) -> &[crate::types::TagListEntry] {
@@ -108,19 +108,19 @@ impl StartTaskExecutionInputBuilder {
     ///
     /// To override the contents of this collection use [`set_includes`](Self::set_includes).
     ///
-    /// <p>Specifies a list of filter rules that determines which files to include when running a task. The pattern should contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
+    /// <p>Specifies a list of filter rules that determines which files to include when running a task. The pattern should contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
     pub fn includes(mut self, input: crate::types::FilterRule) -> Self {
         let mut v = self.includes.unwrap_or_default();
         v.push(input);
         self.includes = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Specifies a list of filter rules that determines which files to include when running a task. The pattern should contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
+    /// <p>Specifies a list of filter rules that determines which files to include when running a task. The pattern should contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
     pub fn set_includes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>) -> Self {
         self.includes = input;
         self
     }
-    /// <p>Specifies a list of filter rules that determines which files to include when running a task. The pattern should contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
+    /// <p>Specifies a list of filter rules that determines which files to include when running a task. The pattern should contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
     pub fn get_includes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterRule>> {
         &self.includes
     }
@@ -128,19 +128,19 @@ impl StartTaskExecutionInputBuilder {
     ///
     /// To override the contents of this collection use [`set_excludes`](Self::set_excludes).
     ///
-    /// <p>Specifies a list of filter rules that determines which files to exclude from a task. The list contains a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
+    /// <p>Specifies a list of filter rules that determines which files to exclude from a task. The list contains a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
     pub fn excludes(mut self, input: crate::types::FilterRule) -> Self {
         let mut v = self.excludes.unwrap_or_default();
         v.push(input);
         self.excludes = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Specifies a list of filter rules that determines which files to exclude from a task. The list contains a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
+    /// <p>Specifies a list of filter rules that determines which files to exclude from a task. The list contains a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
     pub fn set_excludes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>) -> Self {
         self.excludes = input;
         self
     }
-    /// <p>Specifies a list of filter rules that determines which files to exclude from a task. The list contains a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
+    /// <p>Specifies a list of filter rules that determines which files to exclude from a task. The list contains a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
     pub fn get_excludes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterRule>> {
         &self.excludes
     }
@@ -149,7 +149,7 @@ impl StartTaskExecutionInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Specifies the tags that you want to apply to the Amazon Resource Name (ARN) representing the task execution.</p>
-    /// <p><i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.</p>
+    /// <p> <i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.</p>
     pub fn tags(mut self, input: crate::types::TagListEntry) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
@@ -157,13 +157,13 @@ impl StartTaskExecutionInputBuilder {
         self
     }
     /// <p>Specifies the tags that you want to apply to the Amazon Resource Name (ARN) representing the task execution.</p>
-    /// <p><i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.</p>
+    /// <p> <i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>Specifies the tags that you want to apply to the Amazon Resource Name (ARN) representing the task execution.</p>
-    /// <p><i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.</p>
+    /// <p> <i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>> {
         &self.tags
     }

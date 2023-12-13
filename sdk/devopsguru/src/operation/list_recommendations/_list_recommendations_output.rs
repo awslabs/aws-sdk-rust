@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRecommendationsOutput {
-    /// <p>An array of the requested recommendations.</p>
+    /// <p> An array of the requested recommendations. </p>
     pub recommendations: ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListRecommendationsOutput {
-    /// <p>An array of the requested recommendations.</p>
+    /// <p> An array of the requested recommendations. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recommendations.is_none()`.
     pub fn recommendations(&self) -> &[crate::types::Recommendation] {
@@ -46,19 +46,19 @@ impl ListRecommendationsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_recommendations`](Self::set_recommendations).
     ///
-    /// <p>An array of the requested recommendations.</p>
+    /// <p> An array of the requested recommendations. </p>
     pub fn recommendations(mut self, input: crate::types::Recommendation) -> Self {
         let mut v = self.recommendations.unwrap_or_default();
         v.push(input);
         self.recommendations = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of the requested recommendations.</p>
+    /// <p> An array of the requested recommendations. </p>
     pub fn set_recommendations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>>) -> Self {
         self.recommendations = input;
         self
     }
-    /// <p>An array of the requested recommendations.</p>
+    /// <p> An array of the requested recommendations. </p>
     pub fn get_recommendations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Recommendation>> {
         &self.recommendations
     }

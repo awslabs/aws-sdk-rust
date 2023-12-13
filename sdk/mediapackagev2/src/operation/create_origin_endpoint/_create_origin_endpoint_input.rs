@@ -5,7 +5,7 @@
 pub struct CreateOriginEndpointInput {
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
     pub channel_group_name: ::std::option::Option<::std::string::String>,
-    /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group.</p>
+    /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. </p>
     pub channel_name: ::std::option::Option<::std::string::String>,
     /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and must be unique for your account in the AWS Region and channel. You can't use spaces in the name. You can't change the name after you create the endpoint.</p>
     pub origin_endpoint_name: ::std::option::Option<::std::string::String>,
@@ -24,8 +24,8 @@ pub struct CreateOriginEndpointInput {
     /// <p>A low-latency HLS manifest configuration.</p>
     pub low_latency_hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::CreateLowLatencyHlsManifestConfiguration>>,
     /// <p>A comma-separated list of tag key:value pairs that you define. For example:</p>
-    /// <p><code>"Key1": "Value1",</code></p>
-    /// <p><code>"Key2": "Value2"</code></p>
+    /// <p> <code>"Key1": "Value1",</code> </p>
+    /// <p> <code>"Key2": "Value2"</code> </p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateOriginEndpointInput {
@@ -33,7 +33,7 @@ impl CreateOriginEndpointInput {
     pub fn channel_group_name(&self) -> ::std::option::Option<&str> {
         self.channel_group_name.as_deref()
     }
-    /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group.</p>
+    /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. </p>
     pub fn channel_name(&self) -> ::std::option::Option<&str> {
         self.channel_name.as_deref()
     }
@@ -74,8 +74,8 @@ impl CreateOriginEndpointInput {
         self.low_latency_hls_manifests.as_deref().unwrap_or_default()
     }
     /// <p>A comma-separated list of tag key:value pairs that you define. For example:</p>
-    /// <p><code>"Key1": "Value1",</code></p>
-    /// <p><code>"Key2": "Value2"</code></p>
+    /// <p> <code>"Key1": "Value1",</code> </p>
+    /// <p> <code>"Key2": "Value2"</code> </p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
@@ -119,18 +119,18 @@ impl CreateOriginEndpointInputBuilder {
     pub fn get_channel_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.channel_group_name
     }
-    /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group.</p>
+    /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. </p>
     /// This field is required.
     pub fn channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group.</p>
+    /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. </p>
     pub fn set_channel_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel_name = input;
         self
     }
-    /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group.</p>
+    /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. </p>
     pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.channel_name
     }
@@ -268,8 +268,8 @@ impl CreateOriginEndpointInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A comma-separated list of tag key:value pairs that you define. For example:</p>
-    /// <p><code>"Key1": "Value1",</code></p>
-    /// <p><code>"Key2": "Value2"</code></p>
+    /// <p> <code>"Key1": "Value1",</code> </p>
+    /// <p> <code>"Key2": "Value2"</code> </p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
@@ -277,15 +277,15 @@ impl CreateOriginEndpointInputBuilder {
         self
     }
     /// <p>A comma-separated list of tag key:value pairs that you define. For example:</p>
-    /// <p><code>"Key1": "Value1",</code></p>
-    /// <p><code>"Key2": "Value2"</code></p>
+    /// <p> <code>"Key1": "Value1",</code> </p>
+    /// <p> <code>"Key2": "Value2"</code> </p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>A comma-separated list of tag key:value pairs that you define. For example:</p>
-    /// <p><code>"Key1": "Value1",</code></p>
-    /// <p><code>"Key2": "Value2"</code></p>
+    /// <p> <code>"Key1": "Value1",</code> </p>
+    /// <p> <code>"Key2": "Value2"</code> </p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }

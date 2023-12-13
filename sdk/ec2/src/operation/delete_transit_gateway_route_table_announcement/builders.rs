@@ -115,17 +115,17 @@ impl DeleteTransitGatewayRouteTableAnnouncementFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The transit gateway route table ID that's being deleted.</p>
+    /// <p>The transit gateway route table ID that's being deleted. </p>
     pub fn transit_gateway_route_table_announcement_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.transit_gateway_route_table_announcement_id(input.into());
         self
     }
-    /// <p>The transit gateway route table ID that's being deleted.</p>
+    /// <p>The transit gateway route table ID that's being deleted. </p>
     pub fn set_transit_gateway_route_table_announcement_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_transit_gateway_route_table_announcement_id(input);
         self
     }
-    /// <p>The transit gateway route table ID that's being deleted.</p>
+    /// <p>The transit gateway route table ID that's being deleted. </p>
     pub fn get_transit_gateway_route_table_announcement_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_transit_gateway_route_table_announcement_id()
     }

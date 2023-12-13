@@ -7,7 +7,7 @@ pub struct CreateAdditionalAssignmentsForHitInput {
     pub hit_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of additional assignments to request for this HIT.</p>
     pub number_of_additional_assignments: ::std::option::Option<i32>,
-    /// <p>A unique identifier for this request, which allows you to retry the call on error without extending the HIT multiple times. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the extend HIT already exists in the system from a previous call using the same <code>UniqueRequestToken</code>, subsequent calls will return an error with a message containing the request ID.</p>
+    /// <p> A unique identifier for this request, which allows you to retry the call on error without extending the HIT multiple times. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the extend HIT already exists in the system from a previous call using the same <code>UniqueRequestToken</code>, subsequent calls will return an error with a message containing the request ID. </p>
     pub unique_request_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateAdditionalAssignmentsForHitInput {
@@ -19,7 +19,7 @@ impl CreateAdditionalAssignmentsForHitInput {
     pub fn number_of_additional_assignments(&self) -> ::std::option::Option<i32> {
         self.number_of_additional_assignments
     }
-    /// <p>A unique identifier for this request, which allows you to retry the call on error without extending the HIT multiple times. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the extend HIT already exists in the system from a previous call using the same <code>UniqueRequestToken</code>, subsequent calls will return an error with a message containing the request ID.</p>
+    /// <p> A unique identifier for this request, which allows you to retry the call on error without extending the HIT multiple times. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the extend HIT already exists in the system from a previous call using the same <code>UniqueRequestToken</code>, subsequent calls will return an error with a message containing the request ID. </p>
     pub fn unique_request_token(&self) -> ::std::option::Option<&str> {
         self.unique_request_token.as_deref()
     }
@@ -70,17 +70,17 @@ impl CreateAdditionalAssignmentsForHitInputBuilder {
     pub fn get_number_of_additional_assignments(&self) -> &::std::option::Option<i32> {
         &self.number_of_additional_assignments
     }
-    /// <p>A unique identifier for this request, which allows you to retry the call on error without extending the HIT multiple times. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the extend HIT already exists in the system from a previous call using the same <code>UniqueRequestToken</code>, subsequent calls will return an error with a message containing the request ID.</p>
+    /// <p> A unique identifier for this request, which allows you to retry the call on error without extending the HIT multiple times. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the extend HIT already exists in the system from a previous call using the same <code>UniqueRequestToken</code>, subsequent calls will return an error with a message containing the request ID. </p>
     pub fn unique_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.unique_request_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique identifier for this request, which allows you to retry the call on error without extending the HIT multiple times. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the extend HIT already exists in the system from a previous call using the same <code>UniqueRequestToken</code>, subsequent calls will return an error with a message containing the request ID.</p>
+    /// <p> A unique identifier for this request, which allows you to retry the call on error without extending the HIT multiple times. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the extend HIT already exists in the system from a previous call using the same <code>UniqueRequestToken</code>, subsequent calls will return an error with a message containing the request ID. </p>
     pub fn set_unique_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.unique_request_token = input;
         self
     }
-    /// <p>A unique identifier for this request, which allows you to retry the call on error without extending the HIT multiple times. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the extend HIT already exists in the system from a previous call using the same <code>UniqueRequestToken</code>, subsequent calls will return an error with a message containing the request ID.</p>
+    /// <p> A unique identifier for this request, which allows you to retry the call on error without extending the HIT multiple times. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the extend HIT already exists in the system from a previous call using the same <code>UniqueRequestToken</code>, subsequent calls will return an error with a message containing the request ID. </p>
     pub fn get_unique_request_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.unique_request_token
     }

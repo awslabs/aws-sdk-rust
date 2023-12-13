@@ -11,7 +11,7 @@ pub struct GetLabelDetectionOutput {
     pub video_metadata: ::std::option::Option<crate::types::VideoMetadata>,
     /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of labels.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>An array of labels detected in the video. Each element contains the detected label and the time, in milliseconds from the start of the video, that the label was detected.</p>
+    /// <p>An array of labels detected in the video. Each element contains the detected label and the time, in milliseconds from the start of the video, that the label was detected. </p>
     pub labels: ::std::option::Option<::std::vec::Vec<crate::types::LabelDetection>>,
     /// <p>Version number of the label detection model that was used to detect labels.</p>
     pub label_model_version: ::std::option::Option<::std::string::String>,
@@ -42,7 +42,7 @@ impl GetLabelDetectionOutput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>An array of labels detected in the video. Each element contains the detected label and the time, in milliseconds from the start of the video, that the label was detected.</p>
+    /// <p>An array of labels detected in the video. Each element contains the detected label and the time, in milliseconds from the start of the video, that the label was detected. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.labels.is_none()`.
     pub fn labels(&self) -> &[crate::types::LabelDetection] {
@@ -158,19 +158,19 @@ impl GetLabelDetectionOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_labels`](Self::set_labels).
     ///
-    /// <p>An array of labels detected in the video. Each element contains the detected label and the time, in milliseconds from the start of the video, that the label was detected.</p>
+    /// <p>An array of labels detected in the video. Each element contains the detected label and the time, in milliseconds from the start of the video, that the label was detected. </p>
     pub fn labels(mut self, input: crate::types::LabelDetection) -> Self {
         let mut v = self.labels.unwrap_or_default();
         v.push(input);
         self.labels = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of labels detected in the video. Each element contains the detected label and the time, in milliseconds from the start of the video, that the label was detected.</p>
+    /// <p>An array of labels detected in the video. Each element contains the detected label and the time, in milliseconds from the start of the video, that the label was detected. </p>
     pub fn set_labels(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LabelDetection>>) -> Self {
         self.labels = input;
         self
     }
-    /// <p>An array of labels detected in the video. Each element contains the detected label and the time, in milliseconds from the start of the video, that the label was detected.</p>
+    /// <p>An array of labels detected in the video. Each element contains the detected label and the time, in milliseconds from the start of the video, that the label was detected. </p>
     pub fn get_labels(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LabelDetection>> {
         &self.labels
     }

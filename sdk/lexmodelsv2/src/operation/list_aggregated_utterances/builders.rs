@@ -28,12 +28,9 @@ impl ListAggregatedUtterancesInputBuilder {
 /// <p>Utterances can be aggregated for a bot alias or for a bot version, but not both at the same time.</p>
 /// <p>Utterances statistics are not generated under the following conditions:</p>
 /// <ul>
-/// <li>
-/// <p>The <code>childDirected</code> field was set to true when the bot was created.</p></li>
-/// <li>
-/// <p>You are using slot obfuscation with one or more slots.</p></li>
-/// <li>
-/// <p>You opted out of participating in improving Amazon Lex.</p></li>
+/// <li> <p>The <code>childDirected</code> field was set to true when the bot was created.</p> </li>
+/// <li> <p>You are using slot obfuscation with one or more slots.</p> </li>
+/// <li> <p>You opted out of participating in improving Amazon Lex.</p> </li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAggregatedUtterancesFluentBuilder {

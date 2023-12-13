@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRemediationConfigurationsInput {
-    /// <p>A list of Config rule names of remediation configurations for which you want details.</p>
+    /// <p>A list of Config rule names of remediation configurations for which you want details. </p>
     pub config_rule_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeRemediationConfigurationsInput {
-    /// <p>A list of Config rule names of remediation configurations for which you want details.</p>
+    /// <p>A list of Config rule names of remediation configurations for which you want details. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.config_rule_names.is_none()`.
     pub fn config_rule_names(&self) -> &[::std::string::String] {
@@ -32,19 +32,19 @@ impl DescribeRemediationConfigurationsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_config_rule_names`](Self::set_config_rule_names).
     ///
-    /// <p>A list of Config rule names of remediation configurations for which you want details.</p>
+    /// <p>A list of Config rule names of remediation configurations for which you want details. </p>
     pub fn config_rule_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.config_rule_names.unwrap_or_default();
         v.push(input.into());
         self.config_rule_names = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of Config rule names of remediation configurations for which you want details.</p>
+    /// <p>A list of Config rule names of remediation configurations for which you want details. </p>
     pub fn set_config_rule_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.config_rule_names = input;
         self
     }
-    /// <p>A list of Config rule names of remediation configurations for which you want details.</p>
+    /// <p>A list of Config rule names of remediation configurations for which you want details. </p>
     pub fn get_config_rule_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.config_rule_names
     }

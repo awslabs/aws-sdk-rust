@@ -3,32 +3,30 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateNodeInput {
-    /// <p>The name of the server from which to disassociate the node.</p>
+    /// <p>The name of the server from which to disassociate the node. </p>
     pub server_name: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the client node.</p>
+    /// <p>The name of the client node. </p>
     pub node_name: ::std::option::Option<::std::string::String>,
-    /// <p>Engine attributes that are used for disassociating the node. No attributes are required for Puppet.</p>
-    /// <p class="title"><b>Attributes required in a DisassociateNode request for Chef</b></p>
+    /// <p>Engine attributes that are used for disassociating the node. No attributes are required for Puppet. </p>
+    /// <p class="title"> <b>Attributes required in a DisassociateNode request for Chef</b> </p>
     /// <ul>
-    /// <li>
-    /// <p><code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was associated. By default only one organization named <code>default</code> can exist.</p></li>
+    /// <li> <p> <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was associated. By default only one organization named <code>default</code> can exist. </p> </li>
     /// </ul>
     pub engine_attributes: ::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>>,
 }
 impl DisassociateNodeInput {
-    /// <p>The name of the server from which to disassociate the node.</p>
+    /// <p>The name of the server from which to disassociate the node. </p>
     pub fn server_name(&self) -> ::std::option::Option<&str> {
         self.server_name.as_deref()
     }
-    /// <p>The name of the client node.</p>
+    /// <p>The name of the client node. </p>
     pub fn node_name(&self) -> ::std::option::Option<&str> {
         self.node_name.as_deref()
     }
-    /// <p>Engine attributes that are used for disassociating the node. No attributes are required for Puppet.</p>
-    /// <p class="title"><b>Attributes required in a DisassociateNode request for Chef</b></p>
+    /// <p>Engine attributes that are used for disassociating the node. No attributes are required for Puppet. </p>
+    /// <p class="title"> <b>Attributes required in a DisassociateNode request for Chef</b> </p>
     /// <ul>
-    /// <li>
-    /// <p><code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was associated. By default only one organization named <code>default</code> can exist.</p></li>
+    /// <li> <p> <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was associated. By default only one organization named <code>default</code> can exist. </p> </li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.engine_attributes.is_none()`.
@@ -52,33 +50,33 @@ pub struct DisassociateNodeInputBuilder {
     pub(crate) engine_attributes: ::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>>,
 }
 impl DisassociateNodeInputBuilder {
-    /// <p>The name of the server from which to disassociate the node.</p>
+    /// <p>The name of the server from which to disassociate the node. </p>
     /// This field is required.
     pub fn server_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the server from which to disassociate the node.</p>
+    /// <p>The name of the server from which to disassociate the node. </p>
     pub fn set_server_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_name = input;
         self
     }
-    /// <p>The name of the server from which to disassociate the node.</p>
+    /// <p>The name of the server from which to disassociate the node. </p>
     pub fn get_server_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.server_name
     }
-    /// <p>The name of the client node.</p>
+    /// <p>The name of the client node. </p>
     /// This field is required.
     pub fn node_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the client node.</p>
+    /// <p>The name of the client node. </p>
     pub fn set_node_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.node_name = input;
         self
     }
-    /// <p>The name of the client node.</p>
+    /// <p>The name of the client node. </p>
     pub fn get_node_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.node_name
     }
@@ -86,11 +84,10 @@ impl DisassociateNodeInputBuilder {
     ///
     /// To override the contents of this collection use [`set_engine_attributes`](Self::set_engine_attributes).
     ///
-    /// <p>Engine attributes that are used for disassociating the node. No attributes are required for Puppet.</p>
-    /// <p class="title"><b>Attributes required in a DisassociateNode request for Chef</b></p>
+    /// <p>Engine attributes that are used for disassociating the node. No attributes are required for Puppet. </p>
+    /// <p class="title"> <b>Attributes required in a DisassociateNode request for Chef</b> </p>
     /// <ul>
-    /// <li>
-    /// <p><code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was associated. By default only one organization named <code>default</code> can exist.</p></li>
+    /// <li> <p> <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was associated. By default only one organization named <code>default</code> can exist. </p> </li>
     /// </ul>
     pub fn engine_attributes(mut self, input: crate::types::EngineAttribute) -> Self {
         let mut v = self.engine_attributes.unwrap_or_default();
@@ -98,21 +95,19 @@ impl DisassociateNodeInputBuilder {
         self.engine_attributes = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Engine attributes that are used for disassociating the node. No attributes are required for Puppet.</p>
-    /// <p class="title"><b>Attributes required in a DisassociateNode request for Chef</b></p>
+    /// <p>Engine attributes that are used for disassociating the node. No attributes are required for Puppet. </p>
+    /// <p class="title"> <b>Attributes required in a DisassociateNode request for Chef</b> </p>
     /// <ul>
-    /// <li>
-    /// <p><code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was associated. By default only one organization named <code>default</code> can exist.</p></li>
+    /// <li> <p> <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was associated. By default only one organization named <code>default</code> can exist. </p> </li>
     /// </ul>
     pub fn set_engine_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>>) -> Self {
         self.engine_attributes = input;
         self
     }
-    /// <p>Engine attributes that are used for disassociating the node. No attributes are required for Puppet.</p>
-    /// <p class="title"><b>Attributes required in a DisassociateNode request for Chef</b></p>
+    /// <p>Engine attributes that are used for disassociating the node. No attributes are required for Puppet. </p>
+    /// <p class="title"> <b>Attributes required in a DisassociateNode request for Chef</b> </p>
     /// <ul>
-    /// <li>
-    /// <p><code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was associated. By default only one organization named <code>default</code> can exist.</p></li>
+    /// <li> <p> <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was associated. By default only one organization named <code>default</code> can exist. </p> </li>
     /// </ul>
     pub fn get_engine_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>> {
         &self.engine_attributes

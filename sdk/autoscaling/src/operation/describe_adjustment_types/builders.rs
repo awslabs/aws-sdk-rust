@@ -25,12 +25,9 @@ impl DescribeAdjustmentTypesInputBuilder {
 /// <p>Describes the available adjustment types for step scaling and simple scaling policies.</p>
 /// <p>The following adjustment types are supported:</p>
 /// <ul>
-/// <li>
-/// <p><code>ChangeInCapacity</code></p></li>
-/// <li>
-/// <p><code>ExactCapacity</code></p></li>
-/// <li>
-/// <p><code>PercentChangeInCapacity</code></p></li>
+/// <li> <p> <code>ChangeInCapacity</code> </p> </li>
+/// <li> <p> <code>ExactCapacity</code> </p> </li>
+/// <li> <p> <code>PercentChangeInCapacity</code> </p> </li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAdjustmentTypesFluentBuilder {

@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListImportsOutput {
-    /// <p>The list of returned imports.</p>
+    /// <p> The list of returned imports. </p>
     pub imports: ::std::option::Option<::std::vec::Vec<crate::types::ImportsListItem>>,
-    /// <p>A token you can use to get the next page of import results.</p>
+    /// <p> A token you can use to get the next page of import results. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListImportsOutput {
-    /// <p>The list of returned imports.</p>
+    /// <p> The list of returned imports. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.imports.is_none()`.
     pub fn imports(&self) -> &[crate::types::ImportsListItem] {
         self.imports.as_deref().unwrap_or_default()
     }
-    /// <p>A token you can use to get the next page of import results.</p>
+    /// <p> A token you can use to get the next page of import results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -46,33 +46,33 @@ impl ListImportsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_imports`](Self::set_imports).
     ///
-    /// <p>The list of returned imports.</p>
+    /// <p> The list of returned imports. </p>
     pub fn imports(mut self, input: crate::types::ImportsListItem) -> Self {
         let mut v = self.imports.unwrap_or_default();
         v.push(input);
         self.imports = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of returned imports.</p>
+    /// <p> The list of returned imports. </p>
     pub fn set_imports(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImportsListItem>>) -> Self {
         self.imports = input;
         self
     }
-    /// <p>The list of returned imports.</p>
+    /// <p> The list of returned imports. </p>
     pub fn get_imports(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImportsListItem>> {
         &self.imports
     }
-    /// <p>A token you can use to get the next page of import results.</p>
+    /// <p> A token you can use to get the next page of import results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A token you can use to get the next page of import results.</p>
+    /// <p> A token you can use to get the next page of import results. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>A token you can use to get the next page of import results.</p>
+    /// <p> A token you can use to get the next page of import results. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

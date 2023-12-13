@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateConnectionOutput {
-    /// <p>The Amazon Resource Name (ARN) of the connection to be created. The ARN is used as the connection reference when the connection is shared between Amazon Web Services services.</p><note>
+    /// <p>The Amazon Resource Name (ARN) of the connection to be created. The ARN is used as the connection reference when the connection is shared between Amazon Web Services services.</p> <note>
     /// <p>The ARN is never reused if the connection is deleted.</p>
     /// </note>
     pub connection_arn: ::std::string::String,
@@ -12,7 +12,7 @@ pub struct CreateConnectionOutput {
     _request_id: Option<String>,
 }
 impl CreateConnectionOutput {
-    /// <p>The Amazon Resource Name (ARN) of the connection to be created. The ARN is used as the connection reference when the connection is shared between Amazon Web Services services.</p><note>
+    /// <p>The Amazon Resource Name (ARN) of the connection to be created. The ARN is used as the connection reference when the connection is shared between Amazon Web Services services.</p> <note>
     /// <p>The ARN is never reused if the connection is deleted.</p>
     /// </note>
     pub fn connection_arn(&self) -> &str {
@@ -47,7 +47,7 @@ pub struct CreateConnectionOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateConnectionOutputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the connection to be created. The ARN is used as the connection reference when the connection is shared between Amazon Web Services services.</p><note>
+    /// <p>The Amazon Resource Name (ARN) of the connection to be created. The ARN is used as the connection reference when the connection is shared between Amazon Web Services services.</p> <note>
     /// <p>The ARN is never reused if the connection is deleted.</p>
     /// </note>
     /// This field is required.
@@ -55,14 +55,14 @@ impl CreateConnectionOutputBuilder {
         self.connection_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the connection to be created. The ARN is used as the connection reference when the connection is shared between Amazon Web Services services.</p><note>
+    /// <p>The Amazon Resource Name (ARN) of the connection to be created. The ARN is used as the connection reference when the connection is shared between Amazon Web Services services.</p> <note>
     /// <p>The ARN is never reused if the connection is deleted.</p>
     /// </note>
     pub fn set_connection_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the connection to be created. The ARN is used as the connection reference when the connection is shared between Amazon Web Services services.</p><note>
+    /// <p>The Amazon Resource Name (ARN) of the connection to be created. The ARN is used as the connection reference when the connection is shared between Amazon Web Services services.</p> <note>
     /// <p>The ARN is never reused if the connection is deleted.</p>
     /// </note>
     pub fn get_connection_arn(&self) -> &::std::option::Option<::std::string::String> {

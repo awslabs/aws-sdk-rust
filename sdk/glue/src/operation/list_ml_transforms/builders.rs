@@ -22,7 +22,7 @@ impl ListMlTransformsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListMLTransforms`.
 ///
-/// <p>Retrieves a sortable, filterable list of existing Glue machine learning transforms in this Amazon Web Services account, or the resources with the specified tag. This operation takes the optional <code>Tags</code> field, which you can use as a filter of the responses so that tagged resources can be retrieved as a group. If you choose to use tag filtering, only resources with the tags are retrieved.</p>
+/// <p> Retrieves a sortable, filterable list of existing Glue machine learning transforms in this Amazon Web Services account, or the resources with the specified tag. This operation takes the optional <code>Tags</code> field, which you can use as a filter of the responses so that tagged resources can be retrieved as a group. If you choose to use tag filtering, only resources with the tags are retrieved. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListMLTransformsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

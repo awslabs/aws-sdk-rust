@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCrossAccountAttachmentInput {
-    /// <p>The name of the cross-account attachment.</p>
+    /// <p>The name of the cross-account attachment. </p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The principals to list in the cross-account attachment. A principal can be an Amazon Web Services account number or the Amazon Resource Name (ARN) for an accelerator.</p>
+    /// <p>The principals to list in the cross-account attachment. A principal can be an Amazon Web Services account number or the Amazon Resource Name (ARN) for an accelerator. </p>
     pub principals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The Amazon Resource Names (ARNs) for the resources to list in the cross-account attachment. A resource can be any supported Amazon Web Services resource type for Global Accelerator.</p>
+    /// <p>The Amazon Resource Names (ARNs) for the resources to list in the cross-account attachment. A resource can be any supported Amazon Web Services resource type for Global Accelerator. </p>
     pub resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
     pub idempotency_token: ::std::option::Option<::std::string::String>,
@@ -16,17 +16,17 @@ pub struct CreateCrossAccountAttachmentInput {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateCrossAccountAttachmentInput {
-    /// <p>The name of the cross-account attachment.</p>
+    /// <p>The name of the cross-account attachment. </p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The principals to list in the cross-account attachment. A principal can be an Amazon Web Services account number or the Amazon Resource Name (ARN) for an accelerator.</p>
+    /// <p>The principals to list in the cross-account attachment. A principal can be an Amazon Web Services account number or the Amazon Resource Name (ARN) for an accelerator. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.principals.is_none()`.
     pub fn principals(&self) -> &[::std::string::String] {
         self.principals.as_deref().unwrap_or_default()
     }
-    /// <p>The Amazon Resource Names (ARNs) for the resources to list in the cross-account attachment. A resource can be any supported Amazon Web Services resource type for Global Accelerator.</p>
+    /// <p>The Amazon Resource Names (ARNs) for the resources to list in the cross-account attachment. A resource can be any supported Amazon Web Services resource type for Global Accelerator. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources.is_none()`.
     pub fn resources(&self) -> &[crate::types::Resource] {
@@ -62,18 +62,18 @@ pub struct CreateCrossAccountAttachmentInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateCrossAccountAttachmentInputBuilder {
-    /// <p>The name of the cross-account attachment.</p>
+    /// <p>The name of the cross-account attachment. </p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the cross-account attachment.</p>
+    /// <p>The name of the cross-account attachment. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the cross-account attachment.</p>
+    /// <p>The name of the cross-account attachment. </p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
@@ -81,19 +81,19 @@ impl CreateCrossAccountAttachmentInputBuilder {
     ///
     /// To override the contents of this collection use [`set_principals`](Self::set_principals).
     ///
-    /// <p>The principals to list in the cross-account attachment. A principal can be an Amazon Web Services account number or the Amazon Resource Name (ARN) for an accelerator.</p>
+    /// <p>The principals to list in the cross-account attachment. A principal can be an Amazon Web Services account number or the Amazon Resource Name (ARN) for an accelerator. </p>
     pub fn principals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.principals.unwrap_or_default();
         v.push(input.into());
         self.principals = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The principals to list in the cross-account attachment. A principal can be an Amazon Web Services account number or the Amazon Resource Name (ARN) for an accelerator.</p>
+    /// <p>The principals to list in the cross-account attachment. A principal can be an Amazon Web Services account number or the Amazon Resource Name (ARN) for an accelerator. </p>
     pub fn set_principals(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.principals = input;
         self
     }
-    /// <p>The principals to list in the cross-account attachment. A principal can be an Amazon Web Services account number or the Amazon Resource Name (ARN) for an accelerator.</p>
+    /// <p>The principals to list in the cross-account attachment. A principal can be an Amazon Web Services account number or the Amazon Resource Name (ARN) for an accelerator. </p>
     pub fn get_principals(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.principals
     }
@@ -101,19 +101,19 @@ impl CreateCrossAccountAttachmentInputBuilder {
     ///
     /// To override the contents of this collection use [`set_resources`](Self::set_resources).
     ///
-    /// <p>The Amazon Resource Names (ARNs) for the resources to list in the cross-account attachment. A resource can be any supported Amazon Web Services resource type for Global Accelerator.</p>
+    /// <p>The Amazon Resource Names (ARNs) for the resources to list in the cross-account attachment. A resource can be any supported Amazon Web Services resource type for Global Accelerator. </p>
     pub fn resources(mut self, input: crate::types::Resource) -> Self {
         let mut v = self.resources.unwrap_or_default();
         v.push(input);
         self.resources = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The Amazon Resource Names (ARNs) for the resources to list in the cross-account attachment. A resource can be any supported Amazon Web Services resource type for Global Accelerator.</p>
+    /// <p>The Amazon Resource Names (ARNs) for the resources to list in the cross-account attachment. A resource can be any supported Amazon Web Services resource type for Global Accelerator. </p>
     pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>) -> Self {
         self.resources = input;
         self
     }
-    /// <p>The Amazon Resource Names (ARNs) for the resources to list in the cross-account attachment. A resource can be any supported Amazon Web Services resource type for Global Accelerator.</p>
+    /// <p>The Amazon Resource Names (ARNs) for the resources to list in the cross-account attachment. A resource can be any supported Amazon Web Services resource type for Global Accelerator. </p>
     pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Resource>> {
         &self.resources
     }

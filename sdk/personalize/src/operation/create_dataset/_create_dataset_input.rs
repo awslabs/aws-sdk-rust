@@ -12,16 +12,11 @@ pub struct CreateDatasetInput {
     /// <p>The type of dataset.</p>
     /// <p>One of the following (case insensitive) values:</p>
     /// <ul>
-    /// <li>
-    /// <p>Interactions</p></li>
-    /// <li>
-    /// <p>Items</p></li>
-    /// <li>
-    /// <p>Users</p></li>
-    /// <li>
-    /// <p>Actions</p></li>
-    /// <li>
-    /// <p>Action_Interactions</p></li>
+    /// <li> <p>Interactions</p> </li>
+    /// <li> <p>Items</p> </li>
+    /// <li> <p>Users</p> </li>
+    /// <li> <p>Actions</p> </li>
+    /// <li> <p>Action_Interactions</p> </li>
     /// </ul>
     pub dataset_type: ::std::option::Option<::std::string::String>,
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the dataset.</p>
@@ -43,16 +38,11 @@ impl CreateDatasetInput {
     /// <p>The type of dataset.</p>
     /// <p>One of the following (case insensitive) values:</p>
     /// <ul>
-    /// <li>
-    /// <p>Interactions</p></li>
-    /// <li>
-    /// <p>Items</p></li>
-    /// <li>
-    /// <p>Users</p></li>
-    /// <li>
-    /// <p>Actions</p></li>
-    /// <li>
-    /// <p>Action_Interactions</p></li>
+    /// <li> <p>Interactions</p> </li>
+    /// <li> <p>Items</p> </li>
+    /// <li> <p>Users</p> </li>
+    /// <li> <p>Actions</p> </li>
+    /// <li> <p>Action_Interactions</p> </li>
     /// </ul>
     pub fn dataset_type(&self) -> ::std::option::Option<&str> {
         self.dataset_type.as_deref()
@@ -130,16 +120,11 @@ impl CreateDatasetInputBuilder {
     /// <p>The type of dataset.</p>
     /// <p>One of the following (case insensitive) values:</p>
     /// <ul>
-    /// <li>
-    /// <p>Interactions</p></li>
-    /// <li>
-    /// <p>Items</p></li>
-    /// <li>
-    /// <p>Users</p></li>
-    /// <li>
-    /// <p>Actions</p></li>
-    /// <li>
-    /// <p>Action_Interactions</p></li>
+    /// <li> <p>Interactions</p> </li>
+    /// <li> <p>Items</p> </li>
+    /// <li> <p>Users</p> </li>
+    /// <li> <p>Actions</p> </li>
+    /// <li> <p>Action_Interactions</p> </li>
     /// </ul>
     /// This field is required.
     pub fn dataset_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -149,16 +134,11 @@ impl CreateDatasetInputBuilder {
     /// <p>The type of dataset.</p>
     /// <p>One of the following (case insensitive) values:</p>
     /// <ul>
-    /// <li>
-    /// <p>Interactions</p></li>
-    /// <li>
-    /// <p>Items</p></li>
-    /// <li>
-    /// <p>Users</p></li>
-    /// <li>
-    /// <p>Actions</p></li>
-    /// <li>
-    /// <p>Action_Interactions</p></li>
+    /// <li> <p>Interactions</p> </li>
+    /// <li> <p>Items</p> </li>
+    /// <li> <p>Users</p> </li>
+    /// <li> <p>Actions</p> </li>
+    /// <li> <p>Action_Interactions</p> </li>
     /// </ul>
     pub fn set_dataset_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_type = input;
@@ -167,16 +147,11 @@ impl CreateDatasetInputBuilder {
     /// <p>The type of dataset.</p>
     /// <p>One of the following (case insensitive) values:</p>
     /// <ul>
-    /// <li>
-    /// <p>Interactions</p></li>
-    /// <li>
-    /// <p>Items</p></li>
-    /// <li>
-    /// <p>Users</p></li>
-    /// <li>
-    /// <p>Actions</p></li>
-    /// <li>
-    /// <p>Action_Interactions</p></li>
+    /// <li> <p>Interactions</p> </li>
+    /// <li> <p>Items</p> </li>
+    /// <li> <p>Users</p> </li>
+    /// <li> <p>Actions</p> </li>
+    /// <li> <p>Action_Interactions</p> </li>
     /// </ul>
     pub fn get_dataset_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.dataset_type

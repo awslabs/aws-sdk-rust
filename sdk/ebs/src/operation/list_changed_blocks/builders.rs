@@ -22,7 +22,7 @@ impl ListChangedBlocksInputBuilder {
 }
 /// Fluent builder constructing a request to `ListChangedBlocks`.
 ///
-/// <p>Returns information about the blocks that are different between two Amazon Elastic Block Store snapshots of the same volume/snapshot lineage.</p><note>
+/// <p>Returns information about the blocks that are different between two Amazon Elastic Block Store snapshots of the same volume/snapshot lineage.</p> <note>
 /// <p>You should always retry requests that receive server (<code>5xx</code>) error responses, and <code>ThrottlingException</code> and <code>RequestThrottledException</code> client error responses. For more information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error retries</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -116,41 +116,41 @@ impl ListChangedBlocksFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_changed_blocks::paginator::ListChangedBlocksPaginator {
         crate::operation::list_changed_blocks::paginator::ListChangedBlocksPaginator::new(self.handle, self.inner)
     }
-    /// <p>The ID of the first snapshot to use for the comparison.</p><important>
+    /// <p>The ID of the first snapshot to use for the comparison.</p> <important>
     /// <p>The <code>FirstSnapshotID</code> parameter must be specified with a <code>SecondSnapshotId</code> parameter; otherwise, an error occurs.</p>
     /// </important>
     pub fn first_snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.first_snapshot_id(input.into());
         self
     }
-    /// <p>The ID of the first snapshot to use for the comparison.</p><important>
+    /// <p>The ID of the first snapshot to use for the comparison.</p> <important>
     /// <p>The <code>FirstSnapshotID</code> parameter must be specified with a <code>SecondSnapshotId</code> parameter; otherwise, an error occurs.</p>
     /// </important>
     pub fn set_first_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_first_snapshot_id(input);
         self
     }
-    /// <p>The ID of the first snapshot to use for the comparison.</p><important>
+    /// <p>The ID of the first snapshot to use for the comparison.</p> <important>
     /// <p>The <code>FirstSnapshotID</code> parameter must be specified with a <code>SecondSnapshotId</code> parameter; otherwise, an error occurs.</p>
     /// </important>
     pub fn get_first_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_first_snapshot_id()
     }
-    /// <p>The ID of the second snapshot to use for the comparison.</p><important>
+    /// <p>The ID of the second snapshot to use for the comparison.</p> <important>
     /// <p>The <code>SecondSnapshotId</code> parameter must be specified with a <code>FirstSnapshotID</code> parameter; otherwise, an error occurs.</p>
     /// </important>
     pub fn second_snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.second_snapshot_id(input.into());
         self
     }
-    /// <p>The ID of the second snapshot to use for the comparison.</p><important>
+    /// <p>The ID of the second snapshot to use for the comparison.</p> <important>
     /// <p>The <code>SecondSnapshotId</code> parameter must be specified with a <code>FirstSnapshotID</code> parameter; otherwise, an error occurs.</p>
     /// </important>
     pub fn set_second_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_second_snapshot_id(input);
         self
     }
-    /// <p>The ID of the second snapshot to use for the comparison.</p><important>
+    /// <p>The ID of the second snapshot to use for the comparison.</p> <important>
     /// <p>The <code>SecondSnapshotId</code> parameter must be specified with a <code>FirstSnapshotID</code> parameter; otherwise, an error occurs.</p>
     /// </important>
     pub fn get_second_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {

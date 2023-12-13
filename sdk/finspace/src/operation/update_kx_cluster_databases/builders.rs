@@ -22,7 +22,7 @@ impl UpdateKxClusterDatabasesInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateKxClusterDatabases`.
 ///
-/// <p>Updates the databases mounted on a kdb cluster, which includes the <code>changesetId</code> and all the dbPaths to be cached. This API does not allow you to change a database name or add a database if you created a cluster without one.</p>
+/// <p>Updates the databases mounted on a kdb cluster, which includes the <code>changesetId</code> and all the dbPaths to be cached. This API does not allow you to change a database name or add a database if you created a cluster without one. </p>
 /// <p>Using this API you can point a cluster to a different changeset and modify a list of partitions being cached.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateKxClusterDatabasesFluentBuilder {
@@ -155,31 +155,31 @@ impl UpdateKxClusterDatabasesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_databases`](Self::set_databases).
     ///
-    /// <p>The structure of databases mounted on the cluster.</p>
+    /// <p> The structure of databases mounted on the cluster.</p>
     pub fn databases(mut self, input: crate::types::KxDatabaseConfiguration) -> Self {
         self.inner = self.inner.databases(input);
         self
     }
-    /// <p>The structure of databases mounted on the cluster.</p>
+    /// <p> The structure of databases mounted on the cluster.</p>
     pub fn set_databases(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseConfiguration>>) -> Self {
         self.inner = self.inner.set_databases(input);
         self
     }
-    /// <p>The structure of databases mounted on the cluster.</p>
+    /// <p> The structure of databases mounted on the cluster.</p>
     pub fn get_databases(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseConfiguration>> {
         self.inner.get_databases()
     }
-    /// <p>The configuration that allows you to choose how you want to update the databases on a cluster.</p>
+    /// <p> The configuration that allows you to choose how you want to update the databases on a cluster. </p>
     pub fn deployment_configuration(mut self, input: crate::types::KxDeploymentConfiguration) -> Self {
         self.inner = self.inner.deployment_configuration(input);
         self
     }
-    /// <p>The configuration that allows you to choose how you want to update the databases on a cluster.</p>
+    /// <p> The configuration that allows you to choose how you want to update the databases on a cluster. </p>
     pub fn set_deployment_configuration(mut self, input: ::std::option::Option<crate::types::KxDeploymentConfiguration>) -> Self {
         self.inner = self.inner.set_deployment_configuration(input);
         self
     }
-    /// <p>The configuration that allows you to choose how you want to update the databases on a cluster.</p>
+    /// <p> The configuration that allows you to choose how you want to update the databases on a cluster. </p>
     pub fn get_deployment_configuration(&self) -> &::std::option::Option<crate::types::KxDeploymentConfiguration> {
         self.inner.get_deployment_configuration()
     }

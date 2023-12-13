@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConditionalBranch {
-    /// <p>The name of the branch.</p>
+    /// <p>The name of the branch. </p>
     pub name: ::std::string::String,
     /// <p>Contains the expression to evaluate. If the condition is true, the branch's actions are taken.</p>
     pub condition: ::std::option::Option<crate::types::Condition>,
@@ -14,7 +14,7 @@ pub struct ConditionalBranch {
     pub response: ::std::option::Option<crate::types::ResponseSpecification>,
 }
 impl ConditionalBranch {
-    /// <p>The name of the branch.</p>
+    /// <p>The name of the branch. </p>
     pub fn name(&self) -> &str {
         use std::ops::Deref;
         self.name.deref()
@@ -49,18 +49,18 @@ pub struct ConditionalBranchBuilder {
     pub(crate) response: ::std::option::Option<crate::types::ResponseSpecification>,
 }
 impl ConditionalBranchBuilder {
-    /// <p>The name of the branch.</p>
+    /// <p>The name of the branch. </p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the branch.</p>
+    /// <p>The name of the branch. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the branch.</p>
+    /// <p>The name of the branch. </p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

@@ -8,7 +8,7 @@ pub struct RelatedItem {
     pub identifier: ::std::option::Option<crate::types::ItemIdentifier>,
     /// <p>The title of the related item.</p>
     pub title: ::std::option::Option<::std::string::String>,
-    /// <p>A unique ID for a <code>RelatedItem</code>.</p><important>
+    /// <p>A unique ID for a <code>RelatedItem</code>.</p> <important>
     /// <p>Don't specify this parameter when you add a <code>RelatedItem</code> by using the <code>UpdateRelatedItems</code> API action.</p>
     /// </important>
     pub generated_id: ::std::option::Option<::std::string::String>,
@@ -22,7 +22,7 @@ impl RelatedItem {
     pub fn title(&self) -> ::std::option::Option<&str> {
         self.title.as_deref()
     }
-    /// <p>A unique ID for a <code>RelatedItem</code>.</p><important>
+    /// <p>A unique ID for a <code>RelatedItem</code>.</p> <important>
     /// <p>Don't specify this parameter when you add a <code>RelatedItem</code> by using the <code>UpdateRelatedItems</code> API action.</p>
     /// </important>
     pub fn generated_id(&self) -> ::std::option::Option<&str> {
@@ -74,21 +74,21 @@ impl RelatedItemBuilder {
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
         &self.title
     }
-    /// <p>A unique ID for a <code>RelatedItem</code>.</p><important>
+    /// <p>A unique ID for a <code>RelatedItem</code>.</p> <important>
     /// <p>Don't specify this parameter when you add a <code>RelatedItem</code> by using the <code>UpdateRelatedItems</code> API action.</p>
     /// </important>
     pub fn generated_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.generated_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique ID for a <code>RelatedItem</code>.</p><important>
+    /// <p>A unique ID for a <code>RelatedItem</code>.</p> <important>
     /// <p>Don't specify this parameter when you add a <code>RelatedItem</code> by using the <code>UpdateRelatedItems</code> API action.</p>
     /// </important>
     pub fn set_generated_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.generated_id = input;
         self
     }
-    /// <p>A unique ID for a <code>RelatedItem</code>.</p><important>
+    /// <p>A unique ID for a <code>RelatedItem</code>.</p> <important>
     /// <p>Don't specify this parameter when you add a <code>RelatedItem</code> by using the <code>UpdateRelatedItems</code> API action.</p>
     /// </important>
     pub fn get_generated_id(&self) -> &::std::option::Option<::std::string::String> {

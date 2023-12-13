@@ -7,43 +7,36 @@ pub struct ByteMatchStatement {
     /// <p>A string value that you want WAF to search for. WAF searches only in the part of web requests that you designate for inspection in <code>FieldToMatch</code>. The maximum length of the value is 200 bytes.</p>
     /// <p>Valid values depend on the component that you specify for inspection in <code>FieldToMatch</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Method</code>: The HTTP method that you want WAF to search for. This indicates the type of operation specified in the request.</p></li>
-    /// <li>
-    /// <p><code>UriPath</code>: The value that you want WAF to search for in the URI path, for example, <code>/images/daily-ad.jpg</code>.</p></li>
-    /// <li>
-    /// <p><code>JA3Fingerprint</code>: Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the TLS Client Hello of an incoming request. This fingerprint serves as a unique identifier for the client's TLS configuration. You can use this choice only with a string match <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set to <code>EXACTLY</code>.</p>
-    /// <p>You can obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is able to calculate the fingerprint, it includes it in the logs. For information about the logging fields, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields</a> in the <i>WAF Developer Guide</i>.</p></li>
-    /// <li>
-    /// <p><code>HeaderOrder</code>: The list of header names to match for. WAF creates a string that contains the ordered list of header names, from the headers in the web request, and then matches against that string.</p></li>
+    /// <li> <p> <code>Method</code>: The HTTP method that you want WAF to search for. This indicates the type of operation specified in the request. </p> </li>
+    /// <li> <p> <code>UriPath</code>: The value that you want WAF to search for in the URI path, for example, <code>/images/daily-ad.jpg</code>. </p> </li>
+    /// <li> <p> <code>JA3Fingerprint</code>: Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the TLS Client Hello of an incoming request. This fingerprint serves as a unique identifier for the client's TLS configuration. You can use this choice only with a string match <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set to <code>EXACTLY</code>. </p> <p>You can obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is able to calculate the fingerprint, it includes it in the logs. For information about the logging fields, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields</a> in the <i>WAF Developer Guide</i>. </p> </li>
+    /// <li> <p> <code>HeaderOrder</code>: The list of header names to match for. WAF creates a string that contains the ordered list of header names, from the headers in the web request, and then matches against that string. </p> </li>
     /// </ul>
     /// <p>If <code>SearchString</code> includes alphabetic characters A-Z and a-z, note that the value is case sensitive.</p>
-    /// <p><b>If you're using the WAF API</b></p>
+    /// <p> <b>If you're using the WAF API</b> </p>
     /// <p>Specify a base64-encoded version of the value. The maximum length of the value before you base64-encode it is 200 bytes.</p>
     /// <p>For example, suppose the value of <code>Type</code> is <code>HEADER</code> and the value of <code>Data</code> is <code>User-Agent</code>. If you want to search the <code>User-Agent</code> header for the value <code>BadBot</code>, you base64-encode <code>BadBot</code> using MIME base64-encoding and include the resulting value, <code>QmFkQm90</code>, in the value of <code>SearchString</code>.</p>
-    /// <p><b>If you're using the CLI or one of the Amazon Web Services SDKs</b></p>
+    /// <p> <b>If you're using the CLI or one of the Amazon Web Services SDKs</b> </p>
     /// <p>The value that you want WAF to search for. The SDK automatically base64 encodes the value.</p>
     pub search_string: ::aws_smithy_types::Blob,
-    /// <p>The part of the web request that you want WAF to inspect.</p>
+    /// <p>The part of the web request that you want WAF to inspect. </p>
     pub field_to_match: ::std::option::Option<crate::types::FieldToMatch>,
-    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the transformed component contents.</p>
+    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the transformed component contents. </p>
     pub text_transformations: ::std::vec::Vec<crate::types::TextTransformation>,
     /// <p>The area within the portion of the web request that you want WAF to search for <code>SearchString</code>. Valid values include the following:</p>
-    /// <p><b>CONTAINS</b></p>
+    /// <p> <b>CONTAINS</b> </p>
     /// <p>The specified part of the web request must include the value of <code>SearchString</code>, but the location doesn't matter.</p>
-    /// <p><b>CONTAINS_WORD</b></p>
+    /// <p> <b>CONTAINS_WORD</b> </p>
     /// <p>The specified part of the web request must include the value of <code>SearchString</code>, and <code>SearchString</code> must contain only alphanumeric characters or underscore (A-Z, a-z, 0-9, or _). In addition, <code>SearchString</code> must be a word, which means that both of the following are true:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SearchString</code> is at the beginning of the specified part of the web request or is preceded by a character other than an alphanumeric character or underscore (_). Examples include the value of a header and <code>;BadBot</code>.</p></li>
-    /// <li>
-    /// <p><code>SearchString</code> is at the end of the specified part of the web request or is followed by a character other than an alphanumeric character or underscore (_), for example, <code>BadBot;</code> and <code>-BadBot;</code>.</p></li>
+    /// <li> <p> <code>SearchString</code> is at the beginning of the specified part of the web request or is preceded by a character other than an alphanumeric character or underscore (_). Examples include the value of a header and <code>;BadBot</code>.</p> </li>
+    /// <li> <p> <code>SearchString</code> is at the end of the specified part of the web request or is followed by a character other than an alphanumeric character or underscore (_), for example, <code>BadBot;</code> and <code>-BadBot;</code>.</p> </li>
     /// </ul>
-    /// <p><b>EXACTLY</b></p>
+    /// <p> <b>EXACTLY</b> </p>
     /// <p>The value of the specified part of the web request must exactly match the value of <code>SearchString</code>.</p>
-    /// <p><b>STARTS_WITH</b></p>
+    /// <p> <b>STARTS_WITH</b> </p>
     /// <p>The value of <code>SearchString</code> must appear at the beginning of the specified part of the web request.</p>
-    /// <p><b>ENDS_WITH</b></p>
+    /// <p> <b>ENDS_WITH</b> </p>
     /// <p>The value of <code>SearchString</code> must appear at the end of the specified part of the web request.</p>
     pub positional_constraint: crate::types::PositionalConstraint,
 }
@@ -51,50 +44,43 @@ impl ByteMatchStatement {
     /// <p>A string value that you want WAF to search for. WAF searches only in the part of web requests that you designate for inspection in <code>FieldToMatch</code>. The maximum length of the value is 200 bytes.</p>
     /// <p>Valid values depend on the component that you specify for inspection in <code>FieldToMatch</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Method</code>: The HTTP method that you want WAF to search for. This indicates the type of operation specified in the request.</p></li>
-    /// <li>
-    /// <p><code>UriPath</code>: The value that you want WAF to search for in the URI path, for example, <code>/images/daily-ad.jpg</code>.</p></li>
-    /// <li>
-    /// <p><code>JA3Fingerprint</code>: Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the TLS Client Hello of an incoming request. This fingerprint serves as a unique identifier for the client's TLS configuration. You can use this choice only with a string match <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set to <code>EXACTLY</code>.</p>
-    /// <p>You can obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is able to calculate the fingerprint, it includes it in the logs. For information about the logging fields, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields</a> in the <i>WAF Developer Guide</i>.</p></li>
-    /// <li>
-    /// <p><code>HeaderOrder</code>: The list of header names to match for. WAF creates a string that contains the ordered list of header names, from the headers in the web request, and then matches against that string.</p></li>
+    /// <li> <p> <code>Method</code>: The HTTP method that you want WAF to search for. This indicates the type of operation specified in the request. </p> </li>
+    /// <li> <p> <code>UriPath</code>: The value that you want WAF to search for in the URI path, for example, <code>/images/daily-ad.jpg</code>. </p> </li>
+    /// <li> <p> <code>JA3Fingerprint</code>: Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the TLS Client Hello of an incoming request. This fingerprint serves as a unique identifier for the client's TLS configuration. You can use this choice only with a string match <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set to <code>EXACTLY</code>. </p> <p>You can obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is able to calculate the fingerprint, it includes it in the logs. For information about the logging fields, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields</a> in the <i>WAF Developer Guide</i>. </p> </li>
+    /// <li> <p> <code>HeaderOrder</code>: The list of header names to match for. WAF creates a string that contains the ordered list of header names, from the headers in the web request, and then matches against that string. </p> </li>
     /// </ul>
     /// <p>If <code>SearchString</code> includes alphabetic characters A-Z and a-z, note that the value is case sensitive.</p>
-    /// <p><b>If you're using the WAF API</b></p>
+    /// <p> <b>If you're using the WAF API</b> </p>
     /// <p>Specify a base64-encoded version of the value. The maximum length of the value before you base64-encode it is 200 bytes.</p>
     /// <p>For example, suppose the value of <code>Type</code> is <code>HEADER</code> and the value of <code>Data</code> is <code>User-Agent</code>. If you want to search the <code>User-Agent</code> header for the value <code>BadBot</code>, you base64-encode <code>BadBot</code> using MIME base64-encoding and include the resulting value, <code>QmFkQm90</code>, in the value of <code>SearchString</code>.</p>
-    /// <p><b>If you're using the CLI or one of the Amazon Web Services SDKs</b></p>
+    /// <p> <b>If you're using the CLI or one of the Amazon Web Services SDKs</b> </p>
     /// <p>The value that you want WAF to search for. The SDK automatically base64 encodes the value.</p>
     pub fn search_string(&self) -> &::aws_smithy_types::Blob {
         &self.search_string
     }
-    /// <p>The part of the web request that you want WAF to inspect.</p>
+    /// <p>The part of the web request that you want WAF to inspect. </p>
     pub fn field_to_match(&self) -> ::std::option::Option<&crate::types::FieldToMatch> {
         self.field_to_match.as_ref()
     }
-    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the transformed component contents.</p>
+    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the transformed component contents. </p>
     pub fn text_transformations(&self) -> &[crate::types::TextTransformation] {
         use std::ops::Deref;
         self.text_transformations.deref()
     }
     /// <p>The area within the portion of the web request that you want WAF to search for <code>SearchString</code>. Valid values include the following:</p>
-    /// <p><b>CONTAINS</b></p>
+    /// <p> <b>CONTAINS</b> </p>
     /// <p>The specified part of the web request must include the value of <code>SearchString</code>, but the location doesn't matter.</p>
-    /// <p><b>CONTAINS_WORD</b></p>
+    /// <p> <b>CONTAINS_WORD</b> </p>
     /// <p>The specified part of the web request must include the value of <code>SearchString</code>, and <code>SearchString</code> must contain only alphanumeric characters or underscore (A-Z, a-z, 0-9, or _). In addition, <code>SearchString</code> must be a word, which means that both of the following are true:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SearchString</code> is at the beginning of the specified part of the web request or is preceded by a character other than an alphanumeric character or underscore (_). Examples include the value of a header and <code>;BadBot</code>.</p></li>
-    /// <li>
-    /// <p><code>SearchString</code> is at the end of the specified part of the web request or is followed by a character other than an alphanumeric character or underscore (_), for example, <code>BadBot;</code> and <code>-BadBot;</code>.</p></li>
+    /// <li> <p> <code>SearchString</code> is at the beginning of the specified part of the web request or is preceded by a character other than an alphanumeric character or underscore (_). Examples include the value of a header and <code>;BadBot</code>.</p> </li>
+    /// <li> <p> <code>SearchString</code> is at the end of the specified part of the web request or is followed by a character other than an alphanumeric character or underscore (_), for example, <code>BadBot;</code> and <code>-BadBot;</code>.</p> </li>
     /// </ul>
-    /// <p><b>EXACTLY</b></p>
+    /// <p> <b>EXACTLY</b> </p>
     /// <p>The value of the specified part of the web request must exactly match the value of <code>SearchString</code>.</p>
-    /// <p><b>STARTS_WITH</b></p>
+    /// <p> <b>STARTS_WITH</b> </p>
     /// <p>The value of <code>SearchString</code> must appear at the beginning of the specified part of the web request.</p>
-    /// <p><b>ENDS_WITH</b></p>
+    /// <p> <b>ENDS_WITH</b> </p>
     /// <p>The value of <code>SearchString</code> must appear at the end of the specified part of the web request.</p>
     pub fn positional_constraint(&self) -> &crate::types::PositionalConstraint {
         &self.positional_constraint
@@ -120,21 +106,16 @@ impl ByteMatchStatementBuilder {
     /// <p>A string value that you want WAF to search for. WAF searches only in the part of web requests that you designate for inspection in <code>FieldToMatch</code>. The maximum length of the value is 200 bytes.</p>
     /// <p>Valid values depend on the component that you specify for inspection in <code>FieldToMatch</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Method</code>: The HTTP method that you want WAF to search for. This indicates the type of operation specified in the request.</p></li>
-    /// <li>
-    /// <p><code>UriPath</code>: The value that you want WAF to search for in the URI path, for example, <code>/images/daily-ad.jpg</code>.</p></li>
-    /// <li>
-    /// <p><code>JA3Fingerprint</code>: Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the TLS Client Hello of an incoming request. This fingerprint serves as a unique identifier for the client's TLS configuration. You can use this choice only with a string match <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set to <code>EXACTLY</code>.</p>
-    /// <p>You can obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is able to calculate the fingerprint, it includes it in the logs. For information about the logging fields, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields</a> in the <i>WAF Developer Guide</i>.</p></li>
-    /// <li>
-    /// <p><code>HeaderOrder</code>: The list of header names to match for. WAF creates a string that contains the ordered list of header names, from the headers in the web request, and then matches against that string.</p></li>
+    /// <li> <p> <code>Method</code>: The HTTP method that you want WAF to search for. This indicates the type of operation specified in the request. </p> </li>
+    /// <li> <p> <code>UriPath</code>: The value that you want WAF to search for in the URI path, for example, <code>/images/daily-ad.jpg</code>. </p> </li>
+    /// <li> <p> <code>JA3Fingerprint</code>: Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the TLS Client Hello of an incoming request. This fingerprint serves as a unique identifier for the client's TLS configuration. You can use this choice only with a string match <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set to <code>EXACTLY</code>. </p> <p>You can obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is able to calculate the fingerprint, it includes it in the logs. For information about the logging fields, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields</a> in the <i>WAF Developer Guide</i>. </p> </li>
+    /// <li> <p> <code>HeaderOrder</code>: The list of header names to match for. WAF creates a string that contains the ordered list of header names, from the headers in the web request, and then matches against that string. </p> </li>
     /// </ul>
     /// <p>If <code>SearchString</code> includes alphabetic characters A-Z and a-z, note that the value is case sensitive.</p>
-    /// <p><b>If you're using the WAF API</b></p>
+    /// <p> <b>If you're using the WAF API</b> </p>
     /// <p>Specify a base64-encoded version of the value. The maximum length of the value before you base64-encode it is 200 bytes.</p>
     /// <p>For example, suppose the value of <code>Type</code> is <code>HEADER</code> and the value of <code>Data</code> is <code>User-Agent</code>. If you want to search the <code>User-Agent</code> header for the value <code>BadBot</code>, you base64-encode <code>BadBot</code> using MIME base64-encoding and include the resulting value, <code>QmFkQm90</code>, in the value of <code>SearchString</code>.</p>
-    /// <p><b>If you're using the CLI or one of the Amazon Web Services SDKs</b></p>
+    /// <p> <b>If you're using the CLI or one of the Amazon Web Services SDKs</b> </p>
     /// <p>The value that you want WAF to search for. The SDK automatically base64 encodes the value.</p>
     /// This field is required.
     pub fn search_string(mut self, input: ::aws_smithy_types::Blob) -> Self {
@@ -144,21 +125,16 @@ impl ByteMatchStatementBuilder {
     /// <p>A string value that you want WAF to search for. WAF searches only in the part of web requests that you designate for inspection in <code>FieldToMatch</code>. The maximum length of the value is 200 bytes.</p>
     /// <p>Valid values depend on the component that you specify for inspection in <code>FieldToMatch</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Method</code>: The HTTP method that you want WAF to search for. This indicates the type of operation specified in the request.</p></li>
-    /// <li>
-    /// <p><code>UriPath</code>: The value that you want WAF to search for in the URI path, for example, <code>/images/daily-ad.jpg</code>.</p></li>
-    /// <li>
-    /// <p><code>JA3Fingerprint</code>: Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the TLS Client Hello of an incoming request. This fingerprint serves as a unique identifier for the client's TLS configuration. You can use this choice only with a string match <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set to <code>EXACTLY</code>.</p>
-    /// <p>You can obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is able to calculate the fingerprint, it includes it in the logs. For information about the logging fields, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields</a> in the <i>WAF Developer Guide</i>.</p></li>
-    /// <li>
-    /// <p><code>HeaderOrder</code>: The list of header names to match for. WAF creates a string that contains the ordered list of header names, from the headers in the web request, and then matches against that string.</p></li>
+    /// <li> <p> <code>Method</code>: The HTTP method that you want WAF to search for. This indicates the type of operation specified in the request. </p> </li>
+    /// <li> <p> <code>UriPath</code>: The value that you want WAF to search for in the URI path, for example, <code>/images/daily-ad.jpg</code>. </p> </li>
+    /// <li> <p> <code>JA3Fingerprint</code>: Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the TLS Client Hello of an incoming request. This fingerprint serves as a unique identifier for the client's TLS configuration. You can use this choice only with a string match <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set to <code>EXACTLY</code>. </p> <p>You can obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is able to calculate the fingerprint, it includes it in the logs. For information about the logging fields, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields</a> in the <i>WAF Developer Guide</i>. </p> </li>
+    /// <li> <p> <code>HeaderOrder</code>: The list of header names to match for. WAF creates a string that contains the ordered list of header names, from the headers in the web request, and then matches against that string. </p> </li>
     /// </ul>
     /// <p>If <code>SearchString</code> includes alphabetic characters A-Z and a-z, note that the value is case sensitive.</p>
-    /// <p><b>If you're using the WAF API</b></p>
+    /// <p> <b>If you're using the WAF API</b> </p>
     /// <p>Specify a base64-encoded version of the value. The maximum length of the value before you base64-encode it is 200 bytes.</p>
     /// <p>For example, suppose the value of <code>Type</code> is <code>HEADER</code> and the value of <code>Data</code> is <code>User-Agent</code>. If you want to search the <code>User-Agent</code> header for the value <code>BadBot</code>, you base64-encode <code>BadBot</code> using MIME base64-encoding and include the resulting value, <code>QmFkQm90</code>, in the value of <code>SearchString</code>.</p>
-    /// <p><b>If you're using the CLI or one of the Amazon Web Services SDKs</b></p>
+    /// <p> <b>If you're using the CLI or one of the Amazon Web Services SDKs</b> </p>
     /// <p>The value that you want WAF to search for. The SDK automatically base64 encodes the value.</p>
     pub fn set_search_string(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.search_string = input;
@@ -167,37 +143,32 @@ impl ByteMatchStatementBuilder {
     /// <p>A string value that you want WAF to search for. WAF searches only in the part of web requests that you designate for inspection in <code>FieldToMatch</code>. The maximum length of the value is 200 bytes.</p>
     /// <p>Valid values depend on the component that you specify for inspection in <code>FieldToMatch</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Method</code>: The HTTP method that you want WAF to search for. This indicates the type of operation specified in the request.</p></li>
-    /// <li>
-    /// <p><code>UriPath</code>: The value that you want WAF to search for in the URI path, for example, <code>/images/daily-ad.jpg</code>.</p></li>
-    /// <li>
-    /// <p><code>JA3Fingerprint</code>: Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the TLS Client Hello of an incoming request. This fingerprint serves as a unique identifier for the client's TLS configuration. You can use this choice only with a string match <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set to <code>EXACTLY</code>.</p>
-    /// <p>You can obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is able to calculate the fingerprint, it includes it in the logs. For information about the logging fields, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields</a> in the <i>WAF Developer Guide</i>.</p></li>
-    /// <li>
-    /// <p><code>HeaderOrder</code>: The list of header names to match for. WAF creates a string that contains the ordered list of header names, from the headers in the web request, and then matches against that string.</p></li>
+    /// <li> <p> <code>Method</code>: The HTTP method that you want WAF to search for. This indicates the type of operation specified in the request. </p> </li>
+    /// <li> <p> <code>UriPath</code>: The value that you want WAF to search for in the URI path, for example, <code>/images/daily-ad.jpg</code>. </p> </li>
+    /// <li> <p> <code>JA3Fingerprint</code>: Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the TLS Client Hello of an incoming request. This fingerprint serves as a unique identifier for the client's TLS configuration. You can use this choice only with a string match <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set to <code>EXACTLY</code>. </p> <p>You can obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is able to calculate the fingerprint, it includes it in the logs. For information about the logging fields, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields</a> in the <i>WAF Developer Guide</i>. </p> </li>
+    /// <li> <p> <code>HeaderOrder</code>: The list of header names to match for. WAF creates a string that contains the ordered list of header names, from the headers in the web request, and then matches against that string. </p> </li>
     /// </ul>
     /// <p>If <code>SearchString</code> includes alphabetic characters A-Z and a-z, note that the value is case sensitive.</p>
-    /// <p><b>If you're using the WAF API</b></p>
+    /// <p> <b>If you're using the WAF API</b> </p>
     /// <p>Specify a base64-encoded version of the value. The maximum length of the value before you base64-encode it is 200 bytes.</p>
     /// <p>For example, suppose the value of <code>Type</code> is <code>HEADER</code> and the value of <code>Data</code> is <code>User-Agent</code>. If you want to search the <code>User-Agent</code> header for the value <code>BadBot</code>, you base64-encode <code>BadBot</code> using MIME base64-encoding and include the resulting value, <code>QmFkQm90</code>, in the value of <code>SearchString</code>.</p>
-    /// <p><b>If you're using the CLI or one of the Amazon Web Services SDKs</b></p>
+    /// <p> <b>If you're using the CLI or one of the Amazon Web Services SDKs</b> </p>
     /// <p>The value that you want WAF to search for. The SDK automatically base64 encodes the value.</p>
     pub fn get_search_string(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         &self.search_string
     }
-    /// <p>The part of the web request that you want WAF to inspect.</p>
+    /// <p>The part of the web request that you want WAF to inspect. </p>
     /// This field is required.
     pub fn field_to_match(mut self, input: crate::types::FieldToMatch) -> Self {
         self.field_to_match = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The part of the web request that you want WAF to inspect.</p>
+    /// <p>The part of the web request that you want WAF to inspect. </p>
     pub fn set_field_to_match(mut self, input: ::std::option::Option<crate::types::FieldToMatch>) -> Self {
         self.field_to_match = input;
         self
     }
-    /// <p>The part of the web request that you want WAF to inspect.</p>
+    /// <p>The part of the web request that you want WAF to inspect. </p>
     pub fn get_field_to_match(&self) -> &::std::option::Option<crate::types::FieldToMatch> {
         &self.field_to_match
     }
@@ -205,38 +176,36 @@ impl ByteMatchStatementBuilder {
     ///
     /// To override the contents of this collection use [`set_text_transformations`](Self::set_text_transformations).
     ///
-    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the transformed component contents.</p>
+    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the transformed component contents. </p>
     pub fn text_transformations(mut self, input: crate::types::TextTransformation) -> Self {
         let mut v = self.text_transformations.unwrap_or_default();
         v.push(input);
         self.text_transformations = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the transformed component contents.</p>
+    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the transformed component contents. </p>
     pub fn set_text_transformations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TextTransformation>>) -> Self {
         self.text_transformations = input;
         self
     }
-    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the transformed component contents.</p>
+    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the transformed component contents. </p>
     pub fn get_text_transformations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TextTransformation>> {
         &self.text_transformations
     }
     /// <p>The area within the portion of the web request that you want WAF to search for <code>SearchString</code>. Valid values include the following:</p>
-    /// <p><b>CONTAINS</b></p>
+    /// <p> <b>CONTAINS</b> </p>
     /// <p>The specified part of the web request must include the value of <code>SearchString</code>, but the location doesn't matter.</p>
-    /// <p><b>CONTAINS_WORD</b></p>
+    /// <p> <b>CONTAINS_WORD</b> </p>
     /// <p>The specified part of the web request must include the value of <code>SearchString</code>, and <code>SearchString</code> must contain only alphanumeric characters or underscore (A-Z, a-z, 0-9, or _). In addition, <code>SearchString</code> must be a word, which means that both of the following are true:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SearchString</code> is at the beginning of the specified part of the web request or is preceded by a character other than an alphanumeric character or underscore (_). Examples include the value of a header and <code>;BadBot</code>.</p></li>
-    /// <li>
-    /// <p><code>SearchString</code> is at the end of the specified part of the web request or is followed by a character other than an alphanumeric character or underscore (_), for example, <code>BadBot;</code> and <code>-BadBot;</code>.</p></li>
+    /// <li> <p> <code>SearchString</code> is at the beginning of the specified part of the web request or is preceded by a character other than an alphanumeric character or underscore (_). Examples include the value of a header and <code>;BadBot</code>.</p> </li>
+    /// <li> <p> <code>SearchString</code> is at the end of the specified part of the web request or is followed by a character other than an alphanumeric character or underscore (_), for example, <code>BadBot;</code> and <code>-BadBot;</code>.</p> </li>
     /// </ul>
-    /// <p><b>EXACTLY</b></p>
+    /// <p> <b>EXACTLY</b> </p>
     /// <p>The value of the specified part of the web request must exactly match the value of <code>SearchString</code>.</p>
-    /// <p><b>STARTS_WITH</b></p>
+    /// <p> <b>STARTS_WITH</b> </p>
     /// <p>The value of <code>SearchString</code> must appear at the beginning of the specified part of the web request.</p>
-    /// <p><b>ENDS_WITH</b></p>
+    /// <p> <b>ENDS_WITH</b> </p>
     /// <p>The value of <code>SearchString</code> must appear at the end of the specified part of the web request.</p>
     /// This field is required.
     pub fn positional_constraint(mut self, input: crate::types::PositionalConstraint) -> Self {
@@ -244,42 +213,38 @@ impl ByteMatchStatementBuilder {
         self
     }
     /// <p>The area within the portion of the web request that you want WAF to search for <code>SearchString</code>. Valid values include the following:</p>
-    /// <p><b>CONTAINS</b></p>
+    /// <p> <b>CONTAINS</b> </p>
     /// <p>The specified part of the web request must include the value of <code>SearchString</code>, but the location doesn't matter.</p>
-    /// <p><b>CONTAINS_WORD</b></p>
+    /// <p> <b>CONTAINS_WORD</b> </p>
     /// <p>The specified part of the web request must include the value of <code>SearchString</code>, and <code>SearchString</code> must contain only alphanumeric characters or underscore (A-Z, a-z, 0-9, or _). In addition, <code>SearchString</code> must be a word, which means that both of the following are true:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SearchString</code> is at the beginning of the specified part of the web request or is preceded by a character other than an alphanumeric character or underscore (_). Examples include the value of a header and <code>;BadBot</code>.</p></li>
-    /// <li>
-    /// <p><code>SearchString</code> is at the end of the specified part of the web request or is followed by a character other than an alphanumeric character or underscore (_), for example, <code>BadBot;</code> and <code>-BadBot;</code>.</p></li>
+    /// <li> <p> <code>SearchString</code> is at the beginning of the specified part of the web request or is preceded by a character other than an alphanumeric character or underscore (_). Examples include the value of a header and <code>;BadBot</code>.</p> </li>
+    /// <li> <p> <code>SearchString</code> is at the end of the specified part of the web request or is followed by a character other than an alphanumeric character or underscore (_), for example, <code>BadBot;</code> and <code>-BadBot;</code>.</p> </li>
     /// </ul>
-    /// <p><b>EXACTLY</b></p>
+    /// <p> <b>EXACTLY</b> </p>
     /// <p>The value of the specified part of the web request must exactly match the value of <code>SearchString</code>.</p>
-    /// <p><b>STARTS_WITH</b></p>
+    /// <p> <b>STARTS_WITH</b> </p>
     /// <p>The value of <code>SearchString</code> must appear at the beginning of the specified part of the web request.</p>
-    /// <p><b>ENDS_WITH</b></p>
+    /// <p> <b>ENDS_WITH</b> </p>
     /// <p>The value of <code>SearchString</code> must appear at the end of the specified part of the web request.</p>
     pub fn set_positional_constraint(mut self, input: ::std::option::Option<crate::types::PositionalConstraint>) -> Self {
         self.positional_constraint = input;
         self
     }
     /// <p>The area within the portion of the web request that you want WAF to search for <code>SearchString</code>. Valid values include the following:</p>
-    /// <p><b>CONTAINS</b></p>
+    /// <p> <b>CONTAINS</b> </p>
     /// <p>The specified part of the web request must include the value of <code>SearchString</code>, but the location doesn't matter.</p>
-    /// <p><b>CONTAINS_WORD</b></p>
+    /// <p> <b>CONTAINS_WORD</b> </p>
     /// <p>The specified part of the web request must include the value of <code>SearchString</code>, and <code>SearchString</code> must contain only alphanumeric characters or underscore (A-Z, a-z, 0-9, or _). In addition, <code>SearchString</code> must be a word, which means that both of the following are true:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SearchString</code> is at the beginning of the specified part of the web request or is preceded by a character other than an alphanumeric character or underscore (_). Examples include the value of a header and <code>;BadBot</code>.</p></li>
-    /// <li>
-    /// <p><code>SearchString</code> is at the end of the specified part of the web request or is followed by a character other than an alphanumeric character or underscore (_), for example, <code>BadBot;</code> and <code>-BadBot;</code>.</p></li>
+    /// <li> <p> <code>SearchString</code> is at the beginning of the specified part of the web request or is preceded by a character other than an alphanumeric character or underscore (_). Examples include the value of a header and <code>;BadBot</code>.</p> </li>
+    /// <li> <p> <code>SearchString</code> is at the end of the specified part of the web request or is followed by a character other than an alphanumeric character or underscore (_), for example, <code>BadBot;</code> and <code>-BadBot;</code>.</p> </li>
     /// </ul>
-    /// <p><b>EXACTLY</b></p>
+    /// <p> <b>EXACTLY</b> </p>
     /// <p>The value of the specified part of the web request must exactly match the value of <code>SearchString</code>.</p>
-    /// <p><b>STARTS_WITH</b></p>
+    /// <p> <b>STARTS_WITH</b> </p>
     /// <p>The value of <code>SearchString</code> must appear at the beginning of the specified part of the web request.</p>
-    /// <p><b>ENDS_WITH</b></p>
+    /// <p> <b>ENDS_WITH</b> </p>
     /// <p>The value of <code>SearchString</code> must appear at the end of the specified part of the web request.</p>
     pub fn get_positional_constraint(&self) -> &::std::option::Option<crate::types::PositionalConstraint> {
         &self.positional_constraint

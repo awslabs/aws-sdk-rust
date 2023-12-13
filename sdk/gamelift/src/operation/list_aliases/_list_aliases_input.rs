@@ -6,10 +6,8 @@ pub struct ListAliasesInput {
     /// <p>The routing type to filter results on. Use this parameter to retrieve only aliases with a certain routing type. To retrieve all aliases, leave this parameter empty.</p>
     /// <p>Possible routing types include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><b>SIMPLE</b> -- The alias resolves to one specific fleet. Use this type when routing to active fleets.</p></li>
-    /// <li>
-    /// <p><b>TERMINAL</b> -- The alias does not resolve to a fleet but instead can be used to display a message to the user. A terminal alias throws a TerminalRoutingStrategyException with the <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RoutingStrategy.html">RoutingStrategy</a> message embedded.</p></li>
+    /// <li> <p> <b>SIMPLE</b> -- The alias resolves to one specific fleet. Use this type when routing to active fleets.</p> </li>
+    /// <li> <p> <b>TERMINAL</b> -- The alias does not resolve to a fleet but instead can be used to display a message to the user. A terminal alias throws a TerminalRoutingStrategyException with the <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RoutingStrategy.html">RoutingStrategy</a> message embedded.</p> </li>
     /// </ul>
     pub routing_strategy_type: ::std::option::Option<crate::types::RoutingStrategyType>,
     /// <p>A descriptive label that is associated with an alias. Alias names do not need to be unique.</p>
@@ -23,10 +21,8 @@ impl ListAliasesInput {
     /// <p>The routing type to filter results on. Use this parameter to retrieve only aliases with a certain routing type. To retrieve all aliases, leave this parameter empty.</p>
     /// <p>Possible routing types include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><b>SIMPLE</b> -- The alias resolves to one specific fleet. Use this type when routing to active fleets.</p></li>
-    /// <li>
-    /// <p><b>TERMINAL</b> -- The alias does not resolve to a fleet but instead can be used to display a message to the user. A terminal alias throws a TerminalRoutingStrategyException with the <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RoutingStrategy.html">RoutingStrategy</a> message embedded.</p></li>
+    /// <li> <p> <b>SIMPLE</b> -- The alias resolves to one specific fleet. Use this type when routing to active fleets.</p> </li>
+    /// <li> <p> <b>TERMINAL</b> -- The alias does not resolve to a fleet but instead can be used to display a message to the user. A terminal alias throws a TerminalRoutingStrategyException with the <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RoutingStrategy.html">RoutingStrategy</a> message embedded.</p> </li>
     /// </ul>
     pub fn routing_strategy_type(&self) -> ::std::option::Option<&crate::types::RoutingStrategyType> {
         self.routing_strategy_type.as_ref()
@@ -64,10 +60,8 @@ impl ListAliasesInputBuilder {
     /// <p>The routing type to filter results on. Use this parameter to retrieve only aliases with a certain routing type. To retrieve all aliases, leave this parameter empty.</p>
     /// <p>Possible routing types include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><b>SIMPLE</b> -- The alias resolves to one specific fleet. Use this type when routing to active fleets.</p></li>
-    /// <li>
-    /// <p><b>TERMINAL</b> -- The alias does not resolve to a fleet but instead can be used to display a message to the user. A terminal alias throws a TerminalRoutingStrategyException with the <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RoutingStrategy.html">RoutingStrategy</a> message embedded.</p></li>
+    /// <li> <p> <b>SIMPLE</b> -- The alias resolves to one specific fleet. Use this type when routing to active fleets.</p> </li>
+    /// <li> <p> <b>TERMINAL</b> -- The alias does not resolve to a fleet but instead can be used to display a message to the user. A terminal alias throws a TerminalRoutingStrategyException with the <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RoutingStrategy.html">RoutingStrategy</a> message embedded.</p> </li>
     /// </ul>
     pub fn routing_strategy_type(mut self, input: crate::types::RoutingStrategyType) -> Self {
         self.routing_strategy_type = ::std::option::Option::Some(input);
@@ -76,10 +70,8 @@ impl ListAliasesInputBuilder {
     /// <p>The routing type to filter results on. Use this parameter to retrieve only aliases with a certain routing type. To retrieve all aliases, leave this parameter empty.</p>
     /// <p>Possible routing types include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><b>SIMPLE</b> -- The alias resolves to one specific fleet. Use this type when routing to active fleets.</p></li>
-    /// <li>
-    /// <p><b>TERMINAL</b> -- The alias does not resolve to a fleet but instead can be used to display a message to the user. A terminal alias throws a TerminalRoutingStrategyException with the <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RoutingStrategy.html">RoutingStrategy</a> message embedded.</p></li>
+    /// <li> <p> <b>SIMPLE</b> -- The alias resolves to one specific fleet. Use this type when routing to active fleets.</p> </li>
+    /// <li> <p> <b>TERMINAL</b> -- The alias does not resolve to a fleet but instead can be used to display a message to the user. A terminal alias throws a TerminalRoutingStrategyException with the <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RoutingStrategy.html">RoutingStrategy</a> message embedded.</p> </li>
     /// </ul>
     pub fn set_routing_strategy_type(mut self, input: ::std::option::Option<crate::types::RoutingStrategyType>) -> Self {
         self.routing_strategy_type = input;
@@ -88,10 +80,8 @@ impl ListAliasesInputBuilder {
     /// <p>The routing type to filter results on. Use this parameter to retrieve only aliases with a certain routing type. To retrieve all aliases, leave this parameter empty.</p>
     /// <p>Possible routing types include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><b>SIMPLE</b> -- The alias resolves to one specific fleet. Use this type when routing to active fleets.</p></li>
-    /// <li>
-    /// <p><b>TERMINAL</b> -- The alias does not resolve to a fleet but instead can be used to display a message to the user. A terminal alias throws a TerminalRoutingStrategyException with the <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RoutingStrategy.html">RoutingStrategy</a> message embedded.</p></li>
+    /// <li> <p> <b>SIMPLE</b> -- The alias resolves to one specific fleet. Use this type when routing to active fleets.</p> </li>
+    /// <li> <p> <b>TERMINAL</b> -- The alias does not resolve to a fleet but instead can be used to display a message to the user. A terminal alias throws a TerminalRoutingStrategyException with the <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RoutingStrategy.html">RoutingStrategy</a> message embedded.</p> </li>
     /// </ul>
     pub fn get_routing_strategy_type(&self) -> &::std::option::Option<crate::types::RoutingStrategyType> {
         &self.routing_strategy_type

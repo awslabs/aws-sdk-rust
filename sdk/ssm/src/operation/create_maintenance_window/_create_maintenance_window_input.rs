@@ -5,7 +5,7 @@
 pub struct CreateMaintenanceWindowInput {
     /// <p>The name of the maintenance window.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>An optional description for the maintenance window. We recommend specifying a description to help you organize your maintenance windows.</p>
+    /// <p>An optional description for the maintenance window. We recommend specifying a description to help you organize your maintenance windows. </p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become active. <code>StartDate</code> allows you to delay activation of the maintenance window until the specified future date.</p>
     pub start_date: ::std::option::Option<::std::string::String>,
@@ -17,7 +17,7 @@ pub struct CreateMaintenanceWindowInput {
     pub schedule_timezone: ::std::option::Option<::std::string::String>,
     /// <p>The number of days to wait after the date and time specified by a cron expression before running the maintenance window.</p>
     /// <p>For example, the following cron expression schedules a maintenance window to run on the third Tuesday of every month at 11:30 PM.</p>
-    /// <p><code>cron(30 23 ? * TUE#3 *)</code></p>
+    /// <p> <code>cron(30 23 ? * TUE#3 *)</code> </p>
     /// <p>If the schedule offset is <code>2</code>, the maintenance window won't run until two days later.</p>
     pub schedule_offset: ::std::option::Option<i32>,
     /// <p>The duration of the maintenance window in hours.</p>
@@ -31,13 +31,10 @@ pub struct CreateMaintenanceWindowInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a maintenance window to identify the type of tasks it will run, the types of targets, and the environment it will run in. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Key=TaskType,Value=AgentUpdate</code></p></li>
-    /// <li>
-    /// <p><code>Key=OS,Value=Windows</code></p></li>
-    /// <li>
-    /// <p><code>Key=Environment,Value=Production</code></p></li>
-    /// </ul><note>
+    /// <li> <p> <code>Key=TaskType,Value=AgentUpdate</code> </p> </li>
+    /// <li> <p> <code>Key=OS,Value=Windows</code> </p> </li>
+    /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
+    /// </ul> <note>
     /// <p>To add tags to an existing maintenance window, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -47,7 +44,7 @@ impl CreateMaintenanceWindowInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>An optional description for the maintenance window. We recommend specifying a description to help you organize your maintenance windows.</p>
+    /// <p>An optional description for the maintenance window. We recommend specifying a description to help you organize your maintenance windows. </p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -69,7 +66,7 @@ impl CreateMaintenanceWindowInput {
     }
     /// <p>The number of days to wait after the date and time specified by a cron expression before running the maintenance window.</p>
     /// <p>For example, the following cron expression schedules a maintenance window to run on the third Tuesday of every month at 11:30 PM.</p>
-    /// <p><code>cron(30 23 ? * TUE#3 *)</code></p>
+    /// <p> <code>cron(30 23 ? * TUE#3 *)</code> </p>
     /// <p>If the schedule offset is <code>2</code>, the maintenance window won't run until two days later.</p>
     pub fn schedule_offset(&self) -> ::std::option::Option<i32> {
         self.schedule_offset
@@ -93,13 +90,10 @@ impl CreateMaintenanceWindowInput {
     }
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a maintenance window to identify the type of tasks it will run, the types of targets, and the environment it will run in. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Key=TaskType,Value=AgentUpdate</code></p></li>
-    /// <li>
-    /// <p><code>Key=OS,Value=Windows</code></p></li>
-    /// <li>
-    /// <p><code>Key=Environment,Value=Production</code></p></li>
-    /// </ul><note>
+    /// <li> <p> <code>Key=TaskType,Value=AgentUpdate</code> </p> </li>
+    /// <li> <p> <code>Key=OS,Value=Windows</code> </p> </li>
+    /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
+    /// </ul> <note>
     /// <p>To add tags to an existing maintenance window, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
     ///
@@ -166,17 +160,17 @@ impl CreateMaintenanceWindowInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>An optional description for the maintenance window. We recommend specifying a description to help you organize your maintenance windows.</p>
+    /// <p>An optional description for the maintenance window. We recommend specifying a description to help you organize your maintenance windows. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An optional description for the maintenance window. We recommend specifying a description to help you organize your maintenance windows.</p>
+    /// <p>An optional description for the maintenance window. We recommend specifying a description to help you organize your maintenance windows. </p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>An optional description for the maintenance window. We recommend specifying a description to help you organize your maintenance windows.</p>
+    /// <p>An optional description for the maintenance window. We recommend specifying a description to help you organize your maintenance windows. </p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
@@ -239,7 +233,7 @@ impl CreateMaintenanceWindowInputBuilder {
     }
     /// <p>The number of days to wait after the date and time specified by a cron expression before running the maintenance window.</p>
     /// <p>For example, the following cron expression schedules a maintenance window to run on the third Tuesday of every month at 11:30 PM.</p>
-    /// <p><code>cron(30 23 ? * TUE#3 *)</code></p>
+    /// <p> <code>cron(30 23 ? * TUE#3 *)</code> </p>
     /// <p>If the schedule offset is <code>2</code>, the maintenance window won't run until two days later.</p>
     pub fn schedule_offset(mut self, input: i32) -> Self {
         self.schedule_offset = ::std::option::Option::Some(input);
@@ -247,7 +241,7 @@ impl CreateMaintenanceWindowInputBuilder {
     }
     /// <p>The number of days to wait after the date and time specified by a cron expression before running the maintenance window.</p>
     /// <p>For example, the following cron expression schedules a maintenance window to run on the third Tuesday of every month at 11:30 PM.</p>
-    /// <p><code>cron(30 23 ? * TUE#3 *)</code></p>
+    /// <p> <code>cron(30 23 ? * TUE#3 *)</code> </p>
     /// <p>If the schedule offset is <code>2</code>, the maintenance window won't run until two days later.</p>
     pub fn set_schedule_offset(mut self, input: ::std::option::Option<i32>) -> Self {
         self.schedule_offset = input;
@@ -255,7 +249,7 @@ impl CreateMaintenanceWindowInputBuilder {
     }
     /// <p>The number of days to wait after the date and time specified by a cron expression before running the maintenance window.</p>
     /// <p>For example, the following cron expression schedules a maintenance window to run on the third Tuesday of every month at 11:30 PM.</p>
-    /// <p><code>cron(30 23 ? * TUE#3 *)</code></p>
+    /// <p> <code>cron(30 23 ? * TUE#3 *)</code> </p>
     /// <p>If the schedule offset is <code>2</code>, the maintenance window won't run until two days later.</p>
     pub fn get_schedule_offset(&self) -> &::std::option::Option<i32> {
         &self.schedule_offset
@@ -328,13 +322,10 @@ impl CreateMaintenanceWindowInputBuilder {
     ///
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a maintenance window to identify the type of tasks it will run, the types of targets, and the environment it will run in. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Key=TaskType,Value=AgentUpdate</code></p></li>
-    /// <li>
-    /// <p><code>Key=OS,Value=Windows</code></p></li>
-    /// <li>
-    /// <p><code>Key=Environment,Value=Production</code></p></li>
-    /// </ul><note>
+    /// <li> <p> <code>Key=TaskType,Value=AgentUpdate</code> </p> </li>
+    /// <li> <p> <code>Key=OS,Value=Windows</code> </p> </li>
+    /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
+    /// </ul> <note>
     /// <p>To add tags to an existing maintenance window, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
@@ -345,13 +336,10 @@ impl CreateMaintenanceWindowInputBuilder {
     }
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a maintenance window to identify the type of tasks it will run, the types of targets, and the environment it will run in. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Key=TaskType,Value=AgentUpdate</code></p></li>
-    /// <li>
-    /// <p><code>Key=OS,Value=Windows</code></p></li>
-    /// <li>
-    /// <p><code>Key=Environment,Value=Production</code></p></li>
-    /// </ul><note>
+    /// <li> <p> <code>Key=TaskType,Value=AgentUpdate</code> </p> </li>
+    /// <li> <p> <code>Key=OS,Value=Windows</code> </p> </li>
+    /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
+    /// </ul> <note>
     /// <p>To add tags to an existing maintenance window, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
@@ -360,13 +348,10 @@ impl CreateMaintenanceWindowInputBuilder {
     }
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a maintenance window to identify the type of tasks it will run, the types of targets, and the environment it will run in. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Key=TaskType,Value=AgentUpdate</code></p></li>
-    /// <li>
-    /// <p><code>Key=OS,Value=Windows</code></p></li>
-    /// <li>
-    /// <p><code>Key=Environment,Value=Production</code></p></li>
-    /// </ul><note>
+    /// <li> <p> <code>Key=TaskType,Value=AgentUpdate</code> </p> </li>
+    /// <li> <p> <code>Key=OS,Value=Windows</code> </p> </li>
+    /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
+    /// </ul> <note>
     /// <p>To add tags to an existing maintenance window, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {

@@ -266,7 +266,7 @@ pub enum CreateApprovalRuleTemplateError {
     InvalidApprovalRuleTemplateDescriptionException(crate::types::error::InvalidApprovalRuleTemplateDescriptionException),
     /// <p>The name of the approval rule template is not valid. Template names must be between 1 and 100 valid characters in length. For more information about limits in CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a> in the <i>CodeCommit User Guide</i>.</p>
     InvalidApprovalRuleTemplateNameException(crate::types::error::InvalidApprovalRuleTemplateNameException),
-    /// <p>The maximum number of approval rule templates has been exceeded for this Amazon Web Services Region.</p>
+    /// <p>The maximum number of approval rule templates has been exceeded for this Amazon Web Services Region. </p>
     NumberOfRuleTemplatesExceededException(crate::types::error::NumberOfRuleTemplatesExceededException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

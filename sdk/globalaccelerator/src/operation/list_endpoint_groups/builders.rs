@@ -22,7 +22,7 @@ impl ListEndpointGroupsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListEndpointGroups`.
 ///
-/// <p>List the endpoint groups that are associated with a listener.</p>
+/// <p>List the endpoint groups that are associated with a listener. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListEndpointGroupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

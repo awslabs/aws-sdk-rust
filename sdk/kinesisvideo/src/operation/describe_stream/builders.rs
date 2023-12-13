@@ -22,7 +22,7 @@ impl DescribeStreamInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeStream`.
 ///
-/// <p>Returns the most current information about the specified stream. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
+/// <p>Returns the most current information about the specified stream. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeStreamFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

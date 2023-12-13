@@ -22,7 +22,7 @@ impl UpdateSignalCatalogInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateSignalCatalog`.
 ///
-/// <p>Updates a signal catalog.</p>
+/// <p> Updates a signal catalog. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateSignalCatalogFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl UpdateSignalCatalogFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the signal catalog to update.</p>
+    /// <p> The name of the signal catalog to update. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of the signal catalog to update.</p>
+    /// <p> The name of the signal catalog to update. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name of the signal catalog to update.</p>
+    /// <p> The name of the signal catalog to update. </p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>A brief description of the signal catalog to update.</p>
+    /// <p> A brief description of the signal catalog to update.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>A brief description of the signal catalog to update.</p>
+    /// <p> A brief description of the signal catalog to update.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>A brief description of the signal catalog to update.</p>
+    /// <p> A brief description of the signal catalog to update.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
@@ -140,17 +140,17 @@ impl UpdateSignalCatalogFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_nodes_to_add`](Self::set_nodes_to_add).
     ///
-    /// <p>A list of information about nodes to add to the signal catalog.</p>
+    /// <p> A list of information about nodes to add to the signal catalog. </p>
     pub fn nodes_to_add(mut self, input: crate::types::Node) -> Self {
         self.inner = self.inner.nodes_to_add(input);
         self
     }
-    /// <p>A list of information about nodes to add to the signal catalog.</p>
+    /// <p> A list of information about nodes to add to the signal catalog. </p>
     pub fn set_nodes_to_add(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Node>>) -> Self {
         self.inner = self.inner.set_nodes_to_add(input);
         self
     }
-    /// <p>A list of information about nodes to add to the signal catalog.</p>
+    /// <p> A list of information about nodes to add to the signal catalog. </p>
     pub fn get_nodes_to_add(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Node>> {
         self.inner.get_nodes_to_add()
     }
@@ -158,17 +158,17 @@ impl UpdateSignalCatalogFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_nodes_to_update`](Self::set_nodes_to_update).
     ///
-    /// <p>A list of information about nodes to update in the signal catalog.</p>
+    /// <p> A list of information about nodes to update in the signal catalog. </p>
     pub fn nodes_to_update(mut self, input: crate::types::Node) -> Self {
         self.inner = self.inner.nodes_to_update(input);
         self
     }
-    /// <p>A list of information about nodes to update in the signal catalog.</p>
+    /// <p> A list of information about nodes to update in the signal catalog. </p>
     pub fn set_nodes_to_update(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Node>>) -> Self {
         self.inner = self.inner.set_nodes_to_update(input);
         self
     }
-    /// <p>A list of information about nodes to update in the signal catalog.</p>
+    /// <p> A list of information about nodes to update in the signal catalog. </p>
     pub fn get_nodes_to_update(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Node>> {
         self.inner.get_nodes_to_update()
     }
@@ -176,17 +176,17 @@ impl UpdateSignalCatalogFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_nodes_to_remove`](Self::set_nodes_to_remove).
     ///
-    /// <p>A list of <code>fullyQualifiedName</code> of nodes to remove from the signal catalog.</p>
+    /// <p> A list of <code>fullyQualifiedName</code> of nodes to remove from the signal catalog. </p>
     pub fn nodes_to_remove(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.nodes_to_remove(input.into());
         self
     }
-    /// <p>A list of <code>fullyQualifiedName</code> of nodes to remove from the signal catalog.</p>
+    /// <p> A list of <code>fullyQualifiedName</code> of nodes to remove from the signal catalog. </p>
     pub fn set_nodes_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_nodes_to_remove(input);
         self
     }
-    /// <p>A list of <code>fullyQualifiedName</code> of nodes to remove from the signal catalog.</p>
+    /// <p> A list of <code>fullyQualifiedName</code> of nodes to remove from the signal catalog. </p>
     pub fn get_nodes_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_nodes_to_remove()
     }

@@ -5,7 +5,7 @@
 pub struct DeleteBotLocaleInput {
     /// <p>The unique identifier of the bot that contains the locale.</p>
     pub bot_id: ::std::option::Option<::std::string::String>,
-    /// <p>The version of the bot that contains the locale.</p>
+    /// <p>The version of the bot that contains the locale. </p>
     pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the language and locale that will be deleted. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub locale_id: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ impl DeleteBotLocaleInput {
     pub fn bot_id(&self) -> ::std::option::Option<&str> {
         self.bot_id.as_deref()
     }
-    /// <p>The version of the bot that contains the locale.</p>
+    /// <p>The version of the bot that contains the locale. </p>
     pub fn bot_version(&self) -> ::std::option::Option<&str> {
         self.bot_version.as_deref()
     }
@@ -55,18 +55,18 @@ impl DeleteBotLocaleInputBuilder {
     pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.bot_id
     }
-    /// <p>The version of the bot that contains the locale.</p>
+    /// <p>The version of the bot that contains the locale. </p>
     /// This field is required.
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The version of the bot that contains the locale.</p>
+    /// <p>The version of the bot that contains the locale. </p>
     pub fn set_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_version = input;
         self
     }
-    /// <p>The version of the bot that contains the locale.</p>
+    /// <p>The version of the bot that contains the locale. </p>
     pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.bot_version
     }

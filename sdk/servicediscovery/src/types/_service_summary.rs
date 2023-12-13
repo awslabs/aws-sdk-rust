@@ -38,15 +38,13 @@ pub struct ServiceSummary {
     pub instance_count: ::std::option::Option<i32>,
     /// <p>Information about the Route&nbsp;53 DNS records that you want Cloud Map to create when you register an instance.</p>
     pub dns_config: ::std::option::Option<crate::types::DnsConfig>,
-    /// <p><i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check. If you specify settings for a health check, Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.</p>
+    /// <p> <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check. If you specify settings for a health check, Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.</p>
     pub health_check_config: ::std::option::Option<crate::types::HealthCheckConfig>,
     /// <p>Information about an optional custom health check. A custom health check, which requires that you use a third-party health checker to evaluate the health of your resources, is useful in the following circumstances:</p>
     /// <ul>
-    /// <li>
-    /// <p>You can't use a health check that's defined by <code>HealthCheckConfig</code> because the resource isn't available over the internet. For example, you can use a custom health check when the instance is in an Amazon VPC. (To check the health of resources in a VPC, the health checker must also be in the VPC.)</p></li>
-    /// <li>
-    /// <p>You want to use a third-party health checker regardless of where your resources are located.</p></li>
-    /// </ul><important>
+    /// <li> <p>You can't use a health check that's defined by <code>HealthCheckConfig</code> because the resource isn't available over the internet. For example, you can use a custom health check when the instance is in an Amazon VPC. (To check the health of resources in a VPC, the health checker must also be in the VPC.)</p> </li>
+    /// <li> <p>You want to use a third-party health checker regardless of where your resources are located.</p> </li>
+    /// </ul> <important>
     /// <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p>
     /// </important>
     pub health_check_custom_config: ::std::option::Option<crate::types::HealthCheckCustomConfig>,
@@ -102,17 +100,15 @@ impl ServiceSummary {
     pub fn dns_config(&self) -> ::std::option::Option<&crate::types::DnsConfig> {
         self.dns_config.as_ref()
     }
-    /// <p><i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check. If you specify settings for a health check, Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.</p>
+    /// <p> <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check. If you specify settings for a health check, Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.</p>
     pub fn health_check_config(&self) -> ::std::option::Option<&crate::types::HealthCheckConfig> {
         self.health_check_config.as_ref()
     }
     /// <p>Information about an optional custom health check. A custom health check, which requires that you use a third-party health checker to evaluate the health of your resources, is useful in the following circumstances:</p>
     /// <ul>
-    /// <li>
-    /// <p>You can't use a health check that's defined by <code>HealthCheckConfig</code> because the resource isn't available over the internet. For example, you can use a custom health check when the instance is in an Amazon VPC. (To check the health of resources in a VPC, the health checker must also be in the VPC.)</p></li>
-    /// <li>
-    /// <p>You want to use a third-party health checker regardless of where your resources are located.</p></li>
-    /// </ul><important>
+    /// <li> <p>You can't use a health check that's defined by <code>HealthCheckConfig</code> because the resource isn't available over the internet. For example, you can use a custom health check when the instance is in an Amazon VPC. (To check the health of resources in a VPC, the health checker must also be in the VPC.)</p> </li>
+    /// <li> <p>You want to use a third-party health checker regardless of where your resources are located.</p> </li>
+    /// </ul> <important>
     /// <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p>
     /// </important>
     pub fn health_check_custom_config(&self) -> ::std::option::Option<&crate::types::HealthCheckCustomConfig> {
@@ -304,27 +300,25 @@ impl ServiceSummaryBuilder {
     pub fn get_dns_config(&self) -> &::std::option::Option<crate::types::DnsConfig> {
         &self.dns_config
     }
-    /// <p><i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check. If you specify settings for a health check, Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.</p>
+    /// <p> <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check. If you specify settings for a health check, Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.</p>
     pub fn health_check_config(mut self, input: crate::types::HealthCheckConfig) -> Self {
         self.health_check_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p><i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check. If you specify settings for a health check, Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.</p>
+    /// <p> <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check. If you specify settings for a health check, Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.</p>
     pub fn set_health_check_config(mut self, input: ::std::option::Option<crate::types::HealthCheckConfig>) -> Self {
         self.health_check_config = input;
         self
     }
-    /// <p><i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check. If you specify settings for a health check, Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.</p>
+    /// <p> <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check. If you specify settings for a health check, Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.</p>
     pub fn get_health_check_config(&self) -> &::std::option::Option<crate::types::HealthCheckConfig> {
         &self.health_check_config
     }
     /// <p>Information about an optional custom health check. A custom health check, which requires that you use a third-party health checker to evaluate the health of your resources, is useful in the following circumstances:</p>
     /// <ul>
-    /// <li>
-    /// <p>You can't use a health check that's defined by <code>HealthCheckConfig</code> because the resource isn't available over the internet. For example, you can use a custom health check when the instance is in an Amazon VPC. (To check the health of resources in a VPC, the health checker must also be in the VPC.)</p></li>
-    /// <li>
-    /// <p>You want to use a third-party health checker regardless of where your resources are located.</p></li>
-    /// </ul><important>
+    /// <li> <p>You can't use a health check that's defined by <code>HealthCheckConfig</code> because the resource isn't available over the internet. For example, you can use a custom health check when the instance is in an Amazon VPC. (To check the health of resources in a VPC, the health checker must also be in the VPC.)</p> </li>
+    /// <li> <p>You want to use a third-party health checker regardless of where your resources are located.</p> </li>
+    /// </ul> <important>
     /// <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p>
     /// </important>
     pub fn health_check_custom_config(mut self, input: crate::types::HealthCheckCustomConfig) -> Self {
@@ -333,11 +327,9 @@ impl ServiceSummaryBuilder {
     }
     /// <p>Information about an optional custom health check. A custom health check, which requires that you use a third-party health checker to evaluate the health of your resources, is useful in the following circumstances:</p>
     /// <ul>
-    /// <li>
-    /// <p>You can't use a health check that's defined by <code>HealthCheckConfig</code> because the resource isn't available over the internet. For example, you can use a custom health check when the instance is in an Amazon VPC. (To check the health of resources in a VPC, the health checker must also be in the VPC.)</p></li>
-    /// <li>
-    /// <p>You want to use a third-party health checker regardless of where your resources are located.</p></li>
-    /// </ul><important>
+    /// <li> <p>You can't use a health check that's defined by <code>HealthCheckConfig</code> because the resource isn't available over the internet. For example, you can use a custom health check when the instance is in an Amazon VPC. (To check the health of resources in a VPC, the health checker must also be in the VPC.)</p> </li>
+    /// <li> <p>You want to use a third-party health checker regardless of where your resources are located.</p> </li>
+    /// </ul> <important>
     /// <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p>
     /// </important>
     pub fn set_health_check_custom_config(mut self, input: ::std::option::Option<crate::types::HealthCheckCustomConfig>) -> Self {
@@ -346,11 +338,9 @@ impl ServiceSummaryBuilder {
     }
     /// <p>Information about an optional custom health check. A custom health check, which requires that you use a third-party health checker to evaluate the health of your resources, is useful in the following circumstances:</p>
     /// <ul>
-    /// <li>
-    /// <p>You can't use a health check that's defined by <code>HealthCheckConfig</code> because the resource isn't available over the internet. For example, you can use a custom health check when the instance is in an Amazon VPC. (To check the health of resources in a VPC, the health checker must also be in the VPC.)</p></li>
-    /// <li>
-    /// <p>You want to use a third-party health checker regardless of where your resources are located.</p></li>
-    /// </ul><important>
+    /// <li> <p>You can't use a health check that's defined by <code>HealthCheckConfig</code> because the resource isn't available over the internet. For example, you can use a custom health check when the instance is in an Amazon VPC. (To check the health of resources in a VPC, the health checker must also be in the VPC.)</p> </li>
+    /// <li> <p>You want to use a third-party health checker regardless of where your resources are located.</p> </li>
+    /// </ul> <important>
     /// <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p>
     /// </important>
     pub fn get_health_check_custom_config(&self) -> &::std::option::Option<crate::types::HealthCheckCustomConfig> {

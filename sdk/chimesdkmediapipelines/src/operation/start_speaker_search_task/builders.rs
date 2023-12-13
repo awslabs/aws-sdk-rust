@@ -22,7 +22,7 @@ impl StartSpeakerSearchTaskInputBuilder {
 }
 /// Fluent builder constructing a request to `StartSpeakerSearchTask`.
 ///
-/// <p>Starts a speaker search task.</p><important>
+/// <p>Starts a speaker search task.</p> <important>
 /// <p>Before starting any speaker search tasks, you must provide all notices and obtain all consents from the speaker as required under applicable privacy and biometrics laws, and as required under the <a href="https://aws.amazon.com/service-terms/">AWS service terms</a> for the Amazon Chime SDK.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

@@ -10,12 +10,9 @@ pub struct ContactDetail {
     pub last_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the contact is a person, company, association, or public organization. Note the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>If you specify a value other than <code>PERSON</code>, you must also specify a value for <code>OrganizationName</code>.</p></li>
-    /// <li>
-    /// <p>For some TLDs, the privacy protection available depends on the value that you specify for <code>Contact Type</code>. For the privacy protection settings for your TLD, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i></p></li>
-    /// <li>
-    /// <p>For .es domains, the value of <code>ContactType</code> must be <code>PERSON</code> for all three contacts.</p></li>
+    /// <li> <p>If you specify a value other than <code>PERSON</code>, you must also specify a value for <code>OrganizationName</code>.</p> </li>
+    /// <li> <p>For some TLDs, the privacy protection available depends on the value that you specify for <code>Contact Type</code>. For the privacy protection settings for your TLD, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i> </p> </li>
+    /// <li> <p>For .es domains, the value of <code>ContactType</code> must be <code>PERSON</code> for all three contacts.</p> </li>
     /// </ul>
     pub contact_type: ::std::option::Option<crate::types::ContactType>,
     /// <p>Name of the organization for contact types other than <code>PERSON</code>.</p>
@@ -54,12 +51,9 @@ impl ContactDetail {
     }
     /// <p>Indicates whether the contact is a person, company, association, or public organization. Note the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>If you specify a value other than <code>PERSON</code>, you must also specify a value for <code>OrganizationName</code>.</p></li>
-    /// <li>
-    /// <p>For some TLDs, the privacy protection available depends on the value that you specify for <code>Contact Type</code>. For the privacy protection settings for your TLD, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i></p></li>
-    /// <li>
-    /// <p>For .es domains, the value of <code>ContactType</code> must be <code>PERSON</code> for all three contacts.</p></li>
+    /// <li> <p>If you specify a value other than <code>PERSON</code>, you must also specify a value for <code>OrganizationName</code>.</p> </li>
+    /// <li> <p>For some TLDs, the privacy protection available depends on the value that you specify for <code>Contact Type</code>. For the privacy protection settings for your TLD, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i> </p> </li>
+    /// <li> <p>For .es domains, the value of <code>ContactType</code> must be <code>PERSON</code> for all three contacts.</p> </li>
     /// </ul>
     pub fn contact_type(&self) -> ::std::option::Option<&crate::types::ContactType> {
         self.contact_type.as_ref()
@@ -190,12 +184,9 @@ impl ContactDetailBuilder {
     }
     /// <p>Indicates whether the contact is a person, company, association, or public organization. Note the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>If you specify a value other than <code>PERSON</code>, you must also specify a value for <code>OrganizationName</code>.</p></li>
-    /// <li>
-    /// <p>For some TLDs, the privacy protection available depends on the value that you specify for <code>Contact Type</code>. For the privacy protection settings for your TLD, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i></p></li>
-    /// <li>
-    /// <p>For .es domains, the value of <code>ContactType</code> must be <code>PERSON</code> for all three contacts.</p></li>
+    /// <li> <p>If you specify a value other than <code>PERSON</code>, you must also specify a value for <code>OrganizationName</code>.</p> </li>
+    /// <li> <p>For some TLDs, the privacy protection available depends on the value that you specify for <code>Contact Type</code>. For the privacy protection settings for your TLD, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i> </p> </li>
+    /// <li> <p>For .es domains, the value of <code>ContactType</code> must be <code>PERSON</code> for all three contacts.</p> </li>
     /// </ul>
     pub fn contact_type(mut self, input: crate::types::ContactType) -> Self {
         self.contact_type = ::std::option::Option::Some(input);
@@ -203,12 +194,9 @@ impl ContactDetailBuilder {
     }
     /// <p>Indicates whether the contact is a person, company, association, or public organization. Note the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>If you specify a value other than <code>PERSON</code>, you must also specify a value for <code>OrganizationName</code>.</p></li>
-    /// <li>
-    /// <p>For some TLDs, the privacy protection available depends on the value that you specify for <code>Contact Type</code>. For the privacy protection settings for your TLD, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i></p></li>
-    /// <li>
-    /// <p>For .es domains, the value of <code>ContactType</code> must be <code>PERSON</code> for all three contacts.</p></li>
+    /// <li> <p>If you specify a value other than <code>PERSON</code>, you must also specify a value for <code>OrganizationName</code>.</p> </li>
+    /// <li> <p>For some TLDs, the privacy protection available depends on the value that you specify for <code>Contact Type</code>. For the privacy protection settings for your TLD, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i> </p> </li>
+    /// <li> <p>For .es domains, the value of <code>ContactType</code> must be <code>PERSON</code> for all three contacts.</p> </li>
     /// </ul>
     pub fn set_contact_type(mut self, input: ::std::option::Option<crate::types::ContactType>) -> Self {
         self.contact_type = input;
@@ -216,12 +204,9 @@ impl ContactDetailBuilder {
     }
     /// <p>Indicates whether the contact is a person, company, association, or public organization. Note the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>If you specify a value other than <code>PERSON</code>, you must also specify a value for <code>OrganizationName</code>.</p></li>
-    /// <li>
-    /// <p>For some TLDs, the privacy protection available depends on the value that you specify for <code>Contact Type</code>. For the privacy protection settings for your TLD, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i></p></li>
-    /// <li>
-    /// <p>For .es domains, the value of <code>ContactType</code> must be <code>PERSON</code> for all three contacts.</p></li>
+    /// <li> <p>If you specify a value other than <code>PERSON</code>, you must also specify a value for <code>OrganizationName</code>.</p> </li>
+    /// <li> <p>For some TLDs, the privacy protection available depends on the value that you specify for <code>Contact Type</code>. For the privacy protection settings for your TLD, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i> </p> </li>
+    /// <li> <p>For .es domains, the value of <code>ContactType</code> must be <code>PERSON</code> for all three contacts.</p> </li>
     /// </ul>
     pub fn get_contact_type(&self) -> &::std::option::Option<crate::types::ContactType> {
         &self.contact_type

@@ -22,7 +22,7 @@ impl DisableFederationInputBuilder {
 }
 /// Fluent builder constructing a request to `DisableFederation`.
 ///
-/// <p>Disables Lake query federation on the specified event data store. When you disable federation, CloudTrail removes the metadata associated with the federated event data store in the Glue Data Catalog and removes registration for the federation role ARN and event data store in Lake Formation. No CloudTrail Lake data is deleted when you disable federation.</p>
+/// <p> Disables Lake query federation on the specified event data store. When you disable federation, CloudTrail removes the metadata associated with the federated event data store in the Glue Data Catalog and removes registration for the federation role ARN and event data store in Lake Formation. No CloudTrail Lake data is deleted when you disable federation. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisableFederationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DisableFederationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ARN (or ID suffix of the ARN) of the event data store for which you want to disable Lake query federation.</p>
+    /// <p> The ARN (or ID suffix of the ARN) of the event data store for which you want to disable Lake query federation. </p>
     pub fn event_data_store(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_data_store(input.into());
         self
     }
-    /// <p>The ARN (or ID suffix of the ARN) of the event data store for which you want to disable Lake query federation.</p>
+    /// <p> The ARN (or ID suffix of the ARN) of the event data store for which you want to disable Lake query federation. </p>
     pub fn set_event_data_store(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_event_data_store(input);
         self
     }
-    /// <p>The ARN (or ID suffix of the ARN) of the event data store for which you want to disable Lake query federation.</p>
+    /// <p> The ARN (or ID suffix of the ARN) of the event data store for which you want to disable Lake query federation. </p>
     pub fn get_event_data_store(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_event_data_store()
     }

@@ -22,7 +22,7 @@ impl DeleteBotVersionInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteBotVersion`.
 ///
-/// <p>Deletes a specific version of a bot. To delete all versions of a bot, use the <code>DeleteBot</code> operation.</p>
+/// <p>Deletes a specific version of a bot. To delete all versions of a bot, use the <code>DeleteBot</code> operation. </p>
 /// <p>This operation requires permissions for the <code>lex:DeleteBotVersion</code> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteBotVersionFluentBuilder {

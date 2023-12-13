@@ -3,31 +3,31 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAnomalySubscriptionsInput {
-    /// <p>A list of cost anomaly subscription ARNs.</p>
+    /// <p>A list of cost anomaly subscription ARNs. </p>
     pub subscription_arn_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Cost anomaly monitor ARNs.</p>
+    /// <p>Cost anomaly monitor ARNs. </p>
     pub monitor_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     pub next_page_token: ::std::option::Option<::std::string::String>,
-    /// <p>The number of entries a paginated response contains.</p>
+    /// <p>The number of entries a paginated response contains. </p>
     pub max_results: ::std::option::Option<i32>,
 }
 impl GetAnomalySubscriptionsInput {
-    /// <p>A list of cost anomaly subscription ARNs.</p>
+    /// <p>A list of cost anomaly subscription ARNs. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subscription_arn_list.is_none()`.
     pub fn subscription_arn_list(&self) -> &[::std::string::String] {
         self.subscription_arn_list.as_deref().unwrap_or_default()
     }
-    /// <p>Cost anomaly monitor ARNs.</p>
+    /// <p>Cost anomaly monitor ARNs. </p>
     pub fn monitor_arn(&self) -> ::std::option::Option<&str> {
         self.monitor_arn.as_deref()
     }
-    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     pub fn next_page_token(&self) -> ::std::option::Option<&str> {
         self.next_page_token.as_deref()
     }
-    /// <p>The number of entries a paginated response contains.</p>
+    /// <p>The number of entries a paginated response contains. </p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -53,61 +53,61 @@ impl GetAnomalySubscriptionsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_subscription_arn_list`](Self::set_subscription_arn_list).
     ///
-    /// <p>A list of cost anomaly subscription ARNs.</p>
+    /// <p>A list of cost anomaly subscription ARNs. </p>
     pub fn subscription_arn_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subscription_arn_list.unwrap_or_default();
         v.push(input.into());
         self.subscription_arn_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of cost anomaly subscription ARNs.</p>
+    /// <p>A list of cost anomaly subscription ARNs. </p>
     pub fn set_subscription_arn_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subscription_arn_list = input;
         self
     }
-    /// <p>A list of cost anomaly subscription ARNs.</p>
+    /// <p>A list of cost anomaly subscription ARNs. </p>
     pub fn get_subscription_arn_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.subscription_arn_list
     }
-    /// <p>Cost anomaly monitor ARNs.</p>
+    /// <p>Cost anomaly monitor ARNs. </p>
     pub fn monitor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitor_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Cost anomaly monitor ARNs.</p>
+    /// <p>Cost anomaly monitor ARNs. </p>
     pub fn set_monitor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.monitor_arn = input;
         self
     }
-    /// <p>Cost anomaly monitor ARNs.</p>
+    /// <p>Cost anomaly monitor ARNs. </p>
     pub fn get_monitor_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.monitor_arn
     }
-    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_token = input;
         self
     }
-    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_page_token
     }
-    /// <p>The number of entries a paginated response contains.</p>
+    /// <p>The number of entries a paginated response contains. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of entries a paginated response contains.</p>
+    /// <p>The number of entries a paginated response contains. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The number of entries a paginated response contains.</p>
+    /// <p>The number of entries a paginated response contains. </p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

@@ -10,10 +10,8 @@ pub struct AnalysisReport {
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>List the tags for the Amazon Web Services service for which Performance Insights returns metrics. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>RDS</code></p></li>
-    /// <li>
-    /// <p><code>DOCDB</code></p></li>
+    /// <li> <p> <code>RDS</code> </p> </li>
+    /// <li> <p> <code>DOCDB</code> </p> </li>
     /// </ul>
     pub service_type: ::std::option::Option<crate::types::ServiceType>,
     /// <p>The time you created the analysis report.</p>
@@ -39,10 +37,8 @@ impl AnalysisReport {
     }
     /// <p>List the tags for the Amazon Web Services service for which Performance Insights returns metrics. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>RDS</code></p></li>
-    /// <li>
-    /// <p><code>DOCDB</code></p></li>
+    /// <li> <p> <code>RDS</code> </p> </li>
+    /// <li> <p> <code>DOCDB</code> </p> </li>
     /// </ul>
     pub fn service_type(&self) -> ::std::option::Option<&crate::types::ServiceType> {
         self.service_type.as_ref()
@@ -122,10 +118,8 @@ impl AnalysisReportBuilder {
     }
     /// <p>List the tags for the Amazon Web Services service for which Performance Insights returns metrics. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>RDS</code></p></li>
-    /// <li>
-    /// <p><code>DOCDB</code></p></li>
+    /// <li> <p> <code>RDS</code> </p> </li>
+    /// <li> <p> <code>DOCDB</code> </p> </li>
     /// </ul>
     pub fn service_type(mut self, input: crate::types::ServiceType) -> Self {
         self.service_type = ::std::option::Option::Some(input);
@@ -133,10 +127,8 @@ impl AnalysisReportBuilder {
     }
     /// <p>List the tags for the Amazon Web Services service for which Performance Insights returns metrics. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>RDS</code></p></li>
-    /// <li>
-    /// <p><code>DOCDB</code></p></li>
+    /// <li> <p> <code>RDS</code> </p> </li>
+    /// <li> <p> <code>DOCDB</code> </p> </li>
     /// </ul>
     pub fn set_service_type(mut self, input: ::std::option::Option<crate::types::ServiceType>) -> Self {
         self.service_type = input;
@@ -144,10 +136,8 @@ impl AnalysisReportBuilder {
     }
     /// <p>List the tags for the Amazon Web Services service for which Performance Insights returns metrics. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>RDS</code></p></li>
-    /// <li>
-    /// <p><code>DOCDB</code></p></li>
+    /// <li> <p> <code>RDS</code> </p> </li>
+    /// <li> <p> <code>DOCDB</code> </p> </li>
     /// </ul>
     pub fn get_service_type(&self) -> &::std::option::Option<crate::types::ServiceType> {
         &self.service_type

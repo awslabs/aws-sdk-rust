@@ -5,7 +5,7 @@
 pub struct ListUserSettingsOutput {
     /// <p>The user settings.</p>
     pub user_settings: ::std::option::Option<::std::vec::Vec<crate::types::UserSettingsSummary>>,
-    /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+    /// <p>The pagination token used to retrieve the next page of results for this operation. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -16,7 +16,7 @@ impl ListUserSettingsOutput {
     pub fn user_settings(&self) -> &[crate::types::UserSettingsSummary] {
         self.user_settings.as_deref().unwrap_or_default()
     }
-    /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+    /// <p>The pagination token used to retrieve the next page of results for this operation. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -62,17 +62,17 @@ impl ListUserSettingsOutputBuilder {
     pub fn get_user_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserSettingsSummary>> {
         &self.user_settings
     }
-    /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+    /// <p>The pagination token used to retrieve the next page of results for this operation. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+    /// <p>The pagination token used to retrieve the next page of results for this operation. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+    /// <p>The pagination token used to retrieve the next page of results for this operation. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

@@ -10,12 +10,9 @@ pub struct DbInstanceRole {
     pub feature_name: ::std::option::Option<::std::string::String>,
     /// <p>Information about the state of association between the IAM role and the DB instance. The Status property returns one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ACTIVE</code> - the IAM role ARN is associated with the DB instance and can be used to access other Amazon Web Services services on your behalf.</p></li>
-    /// <li>
-    /// <p><code>PENDING</code> - the IAM role ARN is being associated with the DB instance.</p></li>
-    /// <li>
-    /// <p><code>INVALID</code> - the IAM role ARN is associated with the DB instance, but the DB instance is unable to assume the IAM role in order to access other Amazon Web Services services on your behalf.</p></li>
+    /// <li> <p> <code>ACTIVE</code> - the IAM role ARN is associated with the DB instance and can be used to access other Amazon Web Services services on your behalf.</p> </li>
+    /// <li> <p> <code>PENDING</code> - the IAM role ARN is being associated with the DB instance.</p> </li>
+    /// <li> <p> <code>INVALID</code> - the IAM role ARN is associated with the DB instance, but the DB instance is unable to assume the IAM role in order to access other Amazon Web Services services on your behalf.</p> </li>
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
 }
@@ -30,12 +27,9 @@ impl DbInstanceRole {
     }
     /// <p>Information about the state of association between the IAM role and the DB instance. The Status property returns one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ACTIVE</code> - the IAM role ARN is associated with the DB instance and can be used to access other Amazon Web Services services on your behalf.</p></li>
-    /// <li>
-    /// <p><code>PENDING</code> - the IAM role ARN is being associated with the DB instance.</p></li>
-    /// <li>
-    /// <p><code>INVALID</code> - the IAM role ARN is associated with the DB instance, but the DB instance is unable to assume the IAM role in order to access other Amazon Web Services services on your behalf.</p></li>
+    /// <li> <p> <code>ACTIVE</code> - the IAM role ARN is associated with the DB instance and can be used to access other Amazon Web Services services on your behalf.</p> </li>
+    /// <li> <p> <code>PENDING</code> - the IAM role ARN is being associated with the DB instance.</p> </li>
+    /// <li> <p> <code>INVALID</code> - the IAM role ARN is associated with the DB instance, but the DB instance is unable to assume the IAM role in order to access other Amazon Web Services services on your behalf.</p> </li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
@@ -87,12 +81,9 @@ impl DbInstanceRoleBuilder {
     }
     /// <p>Information about the state of association between the IAM role and the DB instance. The Status property returns one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ACTIVE</code> - the IAM role ARN is associated with the DB instance and can be used to access other Amazon Web Services services on your behalf.</p></li>
-    /// <li>
-    /// <p><code>PENDING</code> - the IAM role ARN is being associated with the DB instance.</p></li>
-    /// <li>
-    /// <p><code>INVALID</code> - the IAM role ARN is associated with the DB instance, but the DB instance is unable to assume the IAM role in order to access other Amazon Web Services services on your behalf.</p></li>
+    /// <li> <p> <code>ACTIVE</code> - the IAM role ARN is associated with the DB instance and can be used to access other Amazon Web Services services on your behalf.</p> </li>
+    /// <li> <p> <code>PENDING</code> - the IAM role ARN is being associated with the DB instance.</p> </li>
+    /// <li> <p> <code>INVALID</code> - the IAM role ARN is associated with the DB instance, but the DB instance is unable to assume the IAM role in order to access other Amazon Web Services services on your behalf.</p> </li>
     /// </ul>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -100,12 +91,9 @@ impl DbInstanceRoleBuilder {
     }
     /// <p>Information about the state of association between the IAM role and the DB instance. The Status property returns one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ACTIVE</code> - the IAM role ARN is associated with the DB instance and can be used to access other Amazon Web Services services on your behalf.</p></li>
-    /// <li>
-    /// <p><code>PENDING</code> - the IAM role ARN is being associated with the DB instance.</p></li>
-    /// <li>
-    /// <p><code>INVALID</code> - the IAM role ARN is associated with the DB instance, but the DB instance is unable to assume the IAM role in order to access other Amazon Web Services services on your behalf.</p></li>
+    /// <li> <p> <code>ACTIVE</code> - the IAM role ARN is associated with the DB instance and can be used to access other Amazon Web Services services on your behalf.</p> </li>
+    /// <li> <p> <code>PENDING</code> - the IAM role ARN is being associated with the DB instance.</p> </li>
+    /// <li> <p> <code>INVALID</code> - the IAM role ARN is associated with the DB instance, but the DB instance is unable to assume the IAM role in order to access other Amazon Web Services services on your behalf.</p> </li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
@@ -113,12 +101,9 @@ impl DbInstanceRoleBuilder {
     }
     /// <p>Information about the state of association between the IAM role and the DB instance. The Status property returns one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ACTIVE</code> - the IAM role ARN is associated with the DB instance and can be used to access other Amazon Web Services services on your behalf.</p></li>
-    /// <li>
-    /// <p><code>PENDING</code> - the IAM role ARN is being associated with the DB instance.</p></li>
-    /// <li>
-    /// <p><code>INVALID</code> - the IAM role ARN is associated with the DB instance, but the DB instance is unable to assume the IAM role in order to access other Amazon Web Services services on your behalf.</p></li>
+    /// <li> <p> <code>ACTIVE</code> - the IAM role ARN is associated with the DB instance and can be used to access other Amazon Web Services services on your behalf.</p> </li>
+    /// <li> <p> <code>PENDING</code> - the IAM role ARN is being associated with the DB instance.</p> </li>
+    /// <li> <p> <code>INVALID</code> - the IAM role ARN is associated with the DB instance, but the DB instance is unable to assume the IAM role in order to access other Amazon Web Services services on your behalf.</p> </li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status

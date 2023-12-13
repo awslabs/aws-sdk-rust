@@ -5,12 +5,9 @@
 pub struct CreateCacheSecurityGroupOutput {
     /// <p>Represents the output of one of the following operations:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AuthorizeCacheSecurityGroupIngress</code></p></li>
-    /// <li>
-    /// <p><code>CreateCacheSecurityGroup</code></p></li>
-    /// <li>
-    /// <p><code>RevokeCacheSecurityGroupIngress</code></p></li>
+    /// <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li>
+    /// <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li>
+    /// <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li>
     /// </ul>
     pub cache_security_group: ::std::option::Option<crate::types::CacheSecurityGroup>,
     _request_id: Option<String>,
@@ -18,12 +15,9 @@ pub struct CreateCacheSecurityGroupOutput {
 impl CreateCacheSecurityGroupOutput {
     /// <p>Represents the output of one of the following operations:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AuthorizeCacheSecurityGroupIngress</code></p></li>
-    /// <li>
-    /// <p><code>CreateCacheSecurityGroup</code></p></li>
-    /// <li>
-    /// <p><code>RevokeCacheSecurityGroupIngress</code></p></li>
+    /// <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li>
+    /// <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li>
+    /// <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li>
     /// </ul>
     pub fn cache_security_group(&self) -> ::std::option::Option<&crate::types::CacheSecurityGroup> {
         self.cache_security_group.as_ref()
@@ -51,12 +45,9 @@ pub struct CreateCacheSecurityGroupOutputBuilder {
 impl CreateCacheSecurityGroupOutputBuilder {
     /// <p>Represents the output of one of the following operations:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AuthorizeCacheSecurityGroupIngress</code></p></li>
-    /// <li>
-    /// <p><code>CreateCacheSecurityGroup</code></p></li>
-    /// <li>
-    /// <p><code>RevokeCacheSecurityGroupIngress</code></p></li>
+    /// <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li>
+    /// <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li>
+    /// <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li>
     /// </ul>
     pub fn cache_security_group(mut self, input: crate::types::CacheSecurityGroup) -> Self {
         self.cache_security_group = ::std::option::Option::Some(input);
@@ -64,12 +55,9 @@ impl CreateCacheSecurityGroupOutputBuilder {
     }
     /// <p>Represents the output of one of the following operations:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AuthorizeCacheSecurityGroupIngress</code></p></li>
-    /// <li>
-    /// <p><code>CreateCacheSecurityGroup</code></p></li>
-    /// <li>
-    /// <p><code>RevokeCacheSecurityGroupIngress</code></p></li>
+    /// <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li>
+    /// <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li>
+    /// <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li>
     /// </ul>
     pub fn set_cache_security_group(mut self, input: ::std::option::Option<crate::types::CacheSecurityGroup>) -> Self {
         self.cache_security_group = input;
@@ -77,12 +65,9 @@ impl CreateCacheSecurityGroupOutputBuilder {
     }
     /// <p>Represents the output of one of the following operations:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AuthorizeCacheSecurityGroupIngress</code></p></li>
-    /// <li>
-    /// <p><code>CreateCacheSecurityGroup</code></p></li>
-    /// <li>
-    /// <p><code>RevokeCacheSecurityGroupIngress</code></p></li>
+    /// <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li>
+    /// <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li>
+    /// <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li>
     /// </ul>
     pub fn get_cache_security_group(&self) -> &::std::option::Option<crate::types::CacheSecurityGroup> {
         &self.cache_security_group

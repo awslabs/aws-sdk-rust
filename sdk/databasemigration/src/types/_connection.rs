@@ -10,14 +10,10 @@ pub struct Connection {
     pub endpoint_arn: ::std::option::Option<::std::string::String>,
     /// <p>The connection status. This parameter can return one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>"successful"</code></p></li>
-    /// <li>
-    /// <p><code>"testing"</code></p></li>
-    /// <li>
-    /// <p><code>"failed"</code></p></li>
-    /// <li>
-    /// <p><code>"deleting"</code></p></li>
+    /// <li> <p> <code>"successful"</code> </p> </li>
+    /// <li> <p> <code>"testing"</code> </p> </li>
+    /// <li> <p> <code>"failed"</code> </p> </li>
+    /// <li> <p> <code>"deleting"</code> </p> </li>
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The error message when the connection last failed.</p>
@@ -38,14 +34,10 @@ impl Connection {
     }
     /// <p>The connection status. This parameter can return one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>"successful"</code></p></li>
-    /// <li>
-    /// <p><code>"testing"</code></p></li>
-    /// <li>
-    /// <p><code>"failed"</code></p></li>
-    /// <li>
-    /// <p><code>"deleting"</code></p></li>
+    /// <li> <p> <code>"successful"</code> </p> </li>
+    /// <li> <p> <code>"testing"</code> </p> </li>
+    /// <li> <p> <code>"failed"</code> </p> </li>
+    /// <li> <p> <code>"deleting"</code> </p> </li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
@@ -112,14 +104,10 @@ impl ConnectionBuilder {
     }
     /// <p>The connection status. This parameter can return one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>"successful"</code></p></li>
-    /// <li>
-    /// <p><code>"testing"</code></p></li>
-    /// <li>
-    /// <p><code>"failed"</code></p></li>
-    /// <li>
-    /// <p><code>"deleting"</code></p></li>
+    /// <li> <p> <code>"successful"</code> </p> </li>
+    /// <li> <p> <code>"testing"</code> </p> </li>
+    /// <li> <p> <code>"failed"</code> </p> </li>
+    /// <li> <p> <code>"deleting"</code> </p> </li>
     /// </ul>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -127,14 +115,10 @@ impl ConnectionBuilder {
     }
     /// <p>The connection status. This parameter can return one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>"successful"</code></p></li>
-    /// <li>
-    /// <p><code>"testing"</code></p></li>
-    /// <li>
-    /// <p><code>"failed"</code></p></li>
-    /// <li>
-    /// <p><code>"deleting"</code></p></li>
+    /// <li> <p> <code>"successful"</code> </p> </li>
+    /// <li> <p> <code>"testing"</code> </p> </li>
+    /// <li> <p> <code>"failed"</code> </p> </li>
+    /// <li> <p> <code>"deleting"</code> </p> </li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
@@ -142,14 +126,10 @@ impl ConnectionBuilder {
     }
     /// <p>The connection status. This parameter can return one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>"successful"</code></p></li>
-    /// <li>
-    /// <p><code>"testing"</code></p></li>
-    /// <li>
-    /// <p><code>"failed"</code></p></li>
-    /// <li>
-    /// <p><code>"deleting"</code></p></li>
+    /// <li> <p> <code>"successful"</code> </p> </li>
+    /// <li> <p> <code>"testing"</code> </p> </li>
+    /// <li> <p> <code>"failed"</code> </p> </li>
+    /// <li> <p> <code>"deleting"</code> </p> </li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status

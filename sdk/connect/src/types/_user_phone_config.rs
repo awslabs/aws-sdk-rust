@@ -8,8 +8,8 @@ pub struct UserPhoneConfig {
     pub phone_type: crate::types::PhoneType,
     /// <p>The Auto accept setting.</p>
     pub auto_accept: bool,
-    /// <p>The After Call Work (ACW) timeout setting, in seconds.</p><note>
-    /// <p>When returned by a <code>SearchUsers</code> call, <code>AfterContactWorkTimeLimit</code> is returned in milliseconds.</p>
+    /// <p>The After Call Work (ACW) timeout setting, in seconds.</p> <note>
+    /// <p>When returned by a <code>SearchUsers</code> call, <code>AfterContactWorkTimeLimit</code> is returned in milliseconds. </p>
     /// </note>
     pub after_contact_work_time_limit: i32,
     /// <p>The phone number for the user's desk phone.</p>
@@ -24,8 +24,8 @@ impl UserPhoneConfig {
     pub fn auto_accept(&self) -> bool {
         self.auto_accept
     }
-    /// <p>The After Call Work (ACW) timeout setting, in seconds.</p><note>
-    /// <p>When returned by a <code>SearchUsers</code> call, <code>AfterContactWorkTimeLimit</code> is returned in milliseconds.</p>
+    /// <p>The After Call Work (ACW) timeout setting, in seconds.</p> <note>
+    /// <p>When returned by a <code>SearchUsers</code> call, <code>AfterContactWorkTimeLimit</code> is returned in milliseconds. </p>
     /// </note>
     pub fn after_contact_work_time_limit(&self) -> i32 {
         self.after_contact_work_time_limit
@@ -81,22 +81,22 @@ impl UserPhoneConfigBuilder {
     pub fn get_auto_accept(&self) -> &::std::option::Option<bool> {
         &self.auto_accept
     }
-    /// <p>The After Call Work (ACW) timeout setting, in seconds.</p><note>
-    /// <p>When returned by a <code>SearchUsers</code> call, <code>AfterContactWorkTimeLimit</code> is returned in milliseconds.</p>
+    /// <p>The After Call Work (ACW) timeout setting, in seconds.</p> <note>
+    /// <p>When returned by a <code>SearchUsers</code> call, <code>AfterContactWorkTimeLimit</code> is returned in milliseconds. </p>
     /// </note>
     pub fn after_contact_work_time_limit(mut self, input: i32) -> Self {
         self.after_contact_work_time_limit = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The After Call Work (ACW) timeout setting, in seconds.</p><note>
-    /// <p>When returned by a <code>SearchUsers</code> call, <code>AfterContactWorkTimeLimit</code> is returned in milliseconds.</p>
+    /// <p>The After Call Work (ACW) timeout setting, in seconds.</p> <note>
+    /// <p>When returned by a <code>SearchUsers</code> call, <code>AfterContactWorkTimeLimit</code> is returned in milliseconds. </p>
     /// </note>
     pub fn set_after_contact_work_time_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.after_contact_work_time_limit = input;
         self
     }
-    /// <p>The After Call Work (ACW) timeout setting, in seconds.</p><note>
-    /// <p>When returned by a <code>SearchUsers</code> call, <code>AfterContactWorkTimeLimit</code> is returned in milliseconds.</p>
+    /// <p>The After Call Work (ACW) timeout setting, in seconds.</p> <note>
+    /// <p>When returned by a <code>SearchUsers</code> call, <code>AfterContactWorkTimeLimit</code> is returned in milliseconds. </p>
     /// </note>
     pub fn get_after_contact_work_time_limit(&self) -> &::std::option::Option<i32> {
         &self.after_contact_work_time_limit

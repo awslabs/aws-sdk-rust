@@ -11,13 +11,11 @@ pub struct UpdateFleetAttributesInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The game session protection policy to apply to all new game sessions created in this fleet. Game sessions that already exist are not affected. You can set protection for individual game sessions using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a> .</p>
     /// <ul>
-    /// <li>
-    /// <p><b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p></li>
-    /// <li>
-    /// <p><b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p></li>
+    /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
+    /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>
     /// </ul>
     pub new_game_session_protection_policy: ::std::option::Option<crate::types::ProtectionPolicy>,
-    /// <p>Policy settings that limit the number of game sessions an individual player can create over a span of time.</p>
+    /// <p>Policy settings that limit the number of game sessions an individual player can create over a span of time. </p>
     pub resource_creation_limit_policy: ::std::option::Option<crate::types::ResourceCreationLimitPolicy>,
     /// <p>The name of a metric group to add this fleet to. Use a metric group in Amazon CloudWatch to aggregate the metrics from multiple fleets. Provide an existing metric group name, or create a new metric group by providing a new name. A fleet can only be in one metric group at a time.</p>
     pub metric_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -39,15 +37,13 @@ impl UpdateFleetAttributesInput {
     }
     /// <p>The game session protection policy to apply to all new game sessions created in this fleet. Game sessions that already exist are not affected. You can set protection for individual game sessions using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a> .</p>
     /// <ul>
-    /// <li>
-    /// <p><b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p></li>
-    /// <li>
-    /// <p><b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p></li>
+    /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
+    /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>
     /// </ul>
     pub fn new_game_session_protection_policy(&self) -> ::std::option::Option<&crate::types::ProtectionPolicy> {
         self.new_game_session_protection_policy.as_ref()
     }
-    /// <p>Policy settings that limit the number of game sessions an individual player can create over a span of time.</p>
+    /// <p>Policy settings that limit the number of game sessions an individual player can create over a span of time. </p>
     pub fn resource_creation_limit_policy(&self) -> ::std::option::Option<&crate::types::ResourceCreationLimitPolicy> {
         self.resource_creation_limit_policy.as_ref()
     }
@@ -127,10 +123,8 @@ impl UpdateFleetAttributesInputBuilder {
     }
     /// <p>The game session protection policy to apply to all new game sessions created in this fleet. Game sessions that already exist are not affected. You can set protection for individual game sessions using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a> .</p>
     /// <ul>
-    /// <li>
-    /// <p><b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p></li>
-    /// <li>
-    /// <p><b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p></li>
+    /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
+    /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>
     /// </ul>
     pub fn new_game_session_protection_policy(mut self, input: crate::types::ProtectionPolicy) -> Self {
         self.new_game_session_protection_policy = ::std::option::Option::Some(input);
@@ -138,10 +132,8 @@ impl UpdateFleetAttributesInputBuilder {
     }
     /// <p>The game session protection policy to apply to all new game sessions created in this fleet. Game sessions that already exist are not affected. You can set protection for individual game sessions using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a> .</p>
     /// <ul>
-    /// <li>
-    /// <p><b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p></li>
-    /// <li>
-    /// <p><b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p></li>
+    /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
+    /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>
     /// </ul>
     pub fn set_new_game_session_protection_policy(mut self, input: ::std::option::Option<crate::types::ProtectionPolicy>) -> Self {
         self.new_game_session_protection_policy = input;
@@ -149,25 +141,23 @@ impl UpdateFleetAttributesInputBuilder {
     }
     /// <p>The game session protection policy to apply to all new game sessions created in this fleet. Game sessions that already exist are not affected. You can set protection for individual game sessions using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a> .</p>
     /// <ul>
-    /// <li>
-    /// <p><b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p></li>
-    /// <li>
-    /// <p><b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p></li>
+    /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
+    /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>
     /// </ul>
     pub fn get_new_game_session_protection_policy(&self) -> &::std::option::Option<crate::types::ProtectionPolicy> {
         &self.new_game_session_protection_policy
     }
-    /// <p>Policy settings that limit the number of game sessions an individual player can create over a span of time.</p>
+    /// <p>Policy settings that limit the number of game sessions an individual player can create over a span of time. </p>
     pub fn resource_creation_limit_policy(mut self, input: crate::types::ResourceCreationLimitPolicy) -> Self {
         self.resource_creation_limit_policy = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Policy settings that limit the number of game sessions an individual player can create over a span of time.</p>
+    /// <p>Policy settings that limit the number of game sessions an individual player can create over a span of time. </p>
     pub fn set_resource_creation_limit_policy(mut self, input: ::std::option::Option<crate::types::ResourceCreationLimitPolicy>) -> Self {
         self.resource_creation_limit_policy = input;
         self
     }
-    /// <p>Policy settings that limit the number of game sessions an individual player can create over a span of time.</p>
+    /// <p>Policy settings that limit the number of game sessions an individual player can create over a span of time. </p>
     pub fn get_resource_creation_limit_policy(&self) -> &::std::option::Option<crate::types::ResourceCreationLimitPolicy> {
         &self.resource_creation_limit_policy
     }

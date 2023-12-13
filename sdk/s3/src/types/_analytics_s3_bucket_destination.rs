@@ -6,8 +6,8 @@
 pub struct AnalyticsS3BucketDestination {
     /// <p>Specifies the file format used when exporting data to Amazon S3.</p>
     pub format: crate::types::AnalyticsS3ExportFileFormat,
-    /// <p>The account ID that owns the destination S3 bucket. If no account ID is provided, the owner is not validated before exporting data.</p><note>
-    /// <p>Although this value is optional, we strongly recommend that you set it to help prevent problems if the destination bucket ownership changes.</p>
+    /// <p>The account ID that owns the destination S3 bucket. If no account ID is provided, the owner is not validated before exporting data.</p> <note>
+    /// <p> Although this value is optional, we strongly recommend that you set it to help prevent problems if the destination bucket ownership changes. </p>
     /// </note>
     pub bucket_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the bucket to which data is exported.</p>
@@ -20,8 +20,8 @@ impl AnalyticsS3BucketDestination {
     pub fn format(&self) -> &crate::types::AnalyticsS3ExportFileFormat {
         &self.format
     }
-    /// <p>The account ID that owns the destination S3 bucket. If no account ID is provided, the owner is not validated before exporting data.</p><note>
-    /// <p>Although this value is optional, we strongly recommend that you set it to help prevent problems if the destination bucket ownership changes.</p>
+    /// <p>The account ID that owns the destination S3 bucket. If no account ID is provided, the owner is not validated before exporting data.</p> <note>
+    /// <p> Although this value is optional, we strongly recommend that you set it to help prevent problems if the destination bucket ownership changes. </p>
     /// </note>
     pub fn bucket_account_id(&self) -> ::std::option::Option<&str> {
         self.bucket_account_id.as_deref()
@@ -68,22 +68,22 @@ impl AnalyticsS3BucketDestinationBuilder {
     pub fn get_format(&self) -> &::std::option::Option<crate::types::AnalyticsS3ExportFileFormat> {
         &self.format
     }
-    /// <p>The account ID that owns the destination S3 bucket. If no account ID is provided, the owner is not validated before exporting data.</p><note>
-    /// <p>Although this value is optional, we strongly recommend that you set it to help prevent problems if the destination bucket ownership changes.</p>
+    /// <p>The account ID that owns the destination S3 bucket. If no account ID is provided, the owner is not validated before exporting data.</p> <note>
+    /// <p> Although this value is optional, we strongly recommend that you set it to help prevent problems if the destination bucket ownership changes. </p>
     /// </note>
     pub fn bucket_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The account ID that owns the destination S3 bucket. If no account ID is provided, the owner is not validated before exporting data.</p><note>
-    /// <p>Although this value is optional, we strongly recommend that you set it to help prevent problems if the destination bucket ownership changes.</p>
+    /// <p>The account ID that owns the destination S3 bucket. If no account ID is provided, the owner is not validated before exporting data.</p> <note>
+    /// <p> Although this value is optional, we strongly recommend that you set it to help prevent problems if the destination bucket ownership changes. </p>
     /// </note>
     pub fn set_bucket_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket_account_id = input;
         self
     }
-    /// <p>The account ID that owns the destination S3 bucket. If no account ID is provided, the owner is not validated before exporting data.</p><note>
-    /// <p>Although this value is optional, we strongly recommend that you set it to help prevent problems if the destination bucket ownership changes.</p>
+    /// <p>The account ID that owns the destination S3 bucket. If no account ID is provided, the owner is not validated before exporting data.</p> <note>
+    /// <p> Although this value is optional, we strongly recommend that you set it to help prevent problems if the destination bucket ownership changes. </p>
     /// </note>
     pub fn get_bucket_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.bucket_account_id

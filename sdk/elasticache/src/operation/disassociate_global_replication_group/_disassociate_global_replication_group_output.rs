@@ -5,8 +5,7 @@
 pub struct DisassociateGlobalReplicationGroupOutput {
     /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
     /// <ul>
-    /// <li>
-    /// <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p></li>
+    /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
     /// </ul>
     pub global_replication_group: ::std::option::Option<crate::types::GlobalReplicationGroup>,
     _request_id: Option<String>,
@@ -14,8 +13,7 @@ pub struct DisassociateGlobalReplicationGroupOutput {
 impl DisassociateGlobalReplicationGroupOutput {
     /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
     /// <ul>
-    /// <li>
-    /// <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p></li>
+    /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
     /// </ul>
     pub fn global_replication_group(&self) -> ::std::option::Option<&crate::types::GlobalReplicationGroup> {
         self.global_replication_group.as_ref()
@@ -43,8 +41,7 @@ pub struct DisassociateGlobalReplicationGroupOutputBuilder {
 impl DisassociateGlobalReplicationGroupOutputBuilder {
     /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
     /// <ul>
-    /// <li>
-    /// <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p></li>
+    /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
     /// </ul>
     pub fn global_replication_group(mut self, input: crate::types::GlobalReplicationGroup) -> Self {
         self.global_replication_group = ::std::option::Option::Some(input);
@@ -52,8 +49,7 @@ impl DisassociateGlobalReplicationGroupOutputBuilder {
     }
     /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
     /// <ul>
-    /// <li>
-    /// <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p></li>
+    /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
     /// </ul>
     pub fn set_global_replication_group(mut self, input: ::std::option::Option<crate::types::GlobalReplicationGroup>) -> Self {
         self.global_replication_group = input;
@@ -61,8 +57,7 @@ impl DisassociateGlobalReplicationGroupOutputBuilder {
     }
     /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
     /// <ul>
-    /// <li>
-    /// <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p></li>
+    /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
     /// </ul>
     pub fn get_global_replication_group(&self) -> &::std::option::Option<crate::types::GlobalReplicationGroup> {
         &self.global_replication_group

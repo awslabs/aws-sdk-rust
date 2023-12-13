@@ -256,7 +256,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for AssociateFace
 pub enum AssociateFacesError {
     /// <p>You are not authorized to perform the action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>A User with the same Id already exists within the collection, or the update or deletion of the User caused an inconsistent state. **</p>
+    /// <p> A User with the same Id already exists within the collection, or the update or deletion of the User caused an inconsistent state. ** </p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>A <code>ClientRequestToken</code> input parameter was reused with an operation, but at least one of the other input parameters is different from the previous call to the operation.</p>
     IdempotentParameterMismatchException(crate::types::error::IdempotentParameterMismatchException),
@@ -269,7 +269,7 @@ pub enum AssociateFacesError {
     /// <p>The resource specified in the request cannot be found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p></p>
-    /// <p>The size of the collection exceeds the allowed limit. For more information, see Guidelines and quotas in Amazon Rekognition in the Amazon Rekognition Developer Guide.</p>
+    /// <p>The size of the collection exceeds the allowed limit. For more information, see Guidelines and quotas in Amazon Rekognition in the Amazon Rekognition Developer Guide. </p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::types::error::ThrottlingException),

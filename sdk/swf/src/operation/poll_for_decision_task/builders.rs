@@ -23,20 +23,17 @@ impl PollForDecisionTaskInputBuilder {
 /// Fluent builder constructing a request to `PollForDecisionTask`.
 ///
 /// <p>Used by deciders to get a <code>DecisionTask</code> from the specified decision <code>taskList</code>. A decision task may be returned for any open workflow execution that is using the specified task list. The task includes a paginated view of the history of the workflow execution. The decider should use the workflow type and the history to determine how to properly handle the task.</p>
-/// <p>This action initiates a long poll, where the service holds the HTTP connection open and responds as soon a task becomes available. If no decision task is available in the specified task list before the timeout of 60 seconds expires, an empty result is returned. An empty result, in this context, means that a DecisionTask is returned, but that the value of taskToken is an empty string.</p><important>
+/// <p>This action initiates a long poll, where the service holds the HTTP connection open and responds as soon a task becomes available. If no decision task is available in the specified task list before the timeout of 60 seconds expires, an empty result is returned. An empty result, in this context, means that a DecisionTask is returned, but that the value of taskToken is an empty string.</p> <important>
 /// <p>Deciders should set their client side socket timeout to at least 70 seconds (10 seconds higher than the timeout).</p>
 /// </important> <important>
 /// <p>Because the number of workflow history events for a single workflow execution might be very large, the result returned might be split up across a number of pages. To retrieve subsequent pages, make additional calls to <code>PollForDecisionTask</code> using the <code>nextPageToken</code> returned by the initial call. Note that you do <i>not</i> call <code>GetWorkflowExecutionHistory</code> with this <code>nextPageToken</code>. Instead, call <code>PollForDecisionTask</code> again.</p>
 /// </important>
-/// <p><b>Access Control</b></p>
+/// <p> <b>Access Control</b> </p>
 /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p>
 /// <ul>
-/// <li>
-/// <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p></li>
-/// <li>
-/// <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p></li>
-/// <li>
-/// <p>Constrain the <code>taskList.name</code> parameter by using a <code>Condition</code> element with the <code>swf:taskList.name</code> key to allow the action to access only certain task lists.</p></li>
+/// <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li>
+/// <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li>
+/// <li> <p>Constrain the <code>taskList.name</code> parameter by using a <code>Condition</code> element with the <code>swf:taskList.name</code> key to allow the action to access only certain task lists.</p> </li>
 /// </ul>
 /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -175,42 +172,42 @@ impl PollForDecisionTaskFluentBuilder {
     pub fn get_identity(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_identity()
     }
-    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>".</p>
-    /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p><note>
+    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+    /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p> <note>
     /// <p>The <code>nextPageToken</code> returned by this action cannot be used with <code>GetWorkflowExecutionHistory</code> to get the next page. You must call <code>PollForDecisionTask</code> again (with the <code>nextPageToken</code>) to retrieve the next page of history records. Calling <code>PollForDecisionTask</code> with a <code>nextPageToken</code> doesn't return a new decision task.</p>
     /// </note>
     pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_page_token(input.into());
         self
     }
-    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>".</p>
-    /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p><note>
+    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+    /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p> <note>
     /// <p>The <code>nextPageToken</code> returned by this action cannot be used with <code>GetWorkflowExecutionHistory</code> to get the next page. You must call <code>PollForDecisionTask</code> again (with the <code>nextPageToken</code>) to retrieve the next page of history records. Calling <code>PollForDecisionTask</code> with a <code>nextPageToken</code> doesn't return a new decision task.</p>
     /// </note>
     pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_page_token(input);
         self
     }
-    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>".</p>
-    /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p><note>
+    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+    /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p> <note>
     /// <p>The <code>nextPageToken</code> returned by this action cannot be used with <code>GetWorkflowExecutionHistory</code> to get the next page. You must call <code>PollForDecisionTask</code> again (with the <code>nextPageToken</code>) to retrieve the next page of history records. Calling <code>PollForDecisionTask</code> with a <code>nextPageToken</code> doesn't return a new decision task.</p>
     /// </note>
     pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_page_token()
     }
-    /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results.</p>
+    /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
     /// <p>This is an upper limit only; the actual number of results returned per call may be fewer than the specified maximum.</p>
     pub fn maximum_page_size(mut self, input: i32) -> Self {
         self.inner = self.inner.maximum_page_size(input);
         self
     }
-    /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results.</p>
+    /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
     /// <p>This is an upper limit only; the actual number of results returned per call may be fewer than the specified maximum.</p>
     pub fn set_maximum_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_maximum_page_size(input);
         self
     }
-    /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results.</p>
+    /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
     /// <p>This is an upper limit only; the actual number of results returned per call may be fewer than the specified maximum.</p>
     pub fn get_maximum_page_size(&self) -> &::std::option::Option<i32> {
         self.inner.get_maximum_page_size()

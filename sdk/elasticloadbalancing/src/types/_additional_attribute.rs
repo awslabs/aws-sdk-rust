@@ -7,8 +7,7 @@ pub struct AdditionalAttribute {
     /// <p>The name of the attribute.</p>
     /// <p>The following attribute is supported.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>elb.http.desyncmitigationmode</code> - Determines how the load balancer handles requests that might pose a security risk to your application. The possible values are <code>monitor</code>, <code>defensive</code>, and <code>strictest</code>. The default is <code>defensive</code>.</p></li>
+    /// <li> <p> <code>elb.http.desyncmitigationmode</code> - Determines how the load balancer handles requests that might pose a security risk to your application. The possible values are <code>monitor</code>, <code>defensive</code>, and <code>strictest</code>. The default is <code>defensive</code>.</p> </li>
     /// </ul>
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>This value of the attribute.</p>
@@ -18,8 +17,7 @@ impl AdditionalAttribute {
     /// <p>The name of the attribute.</p>
     /// <p>The following attribute is supported.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>elb.http.desyncmitigationmode</code> - Determines how the load balancer handles requests that might pose a security risk to your application. The possible values are <code>monitor</code>, <code>defensive</code>, and <code>strictest</code>. The default is <code>defensive</code>.</p></li>
+    /// <li> <p> <code>elb.http.desyncmitigationmode</code> - Determines how the load balancer handles requests that might pose a security risk to your application. The possible values are <code>monitor</code>, <code>defensive</code>, and <code>strictest</code>. The default is <code>defensive</code>.</p> </li>
     /// </ul>
     pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
@@ -47,8 +45,7 @@ impl AdditionalAttributeBuilder {
     /// <p>The name of the attribute.</p>
     /// <p>The following attribute is supported.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>elb.http.desyncmitigationmode</code> - Determines how the load balancer handles requests that might pose a security risk to your application. The possible values are <code>monitor</code>, <code>defensive</code>, and <code>strictest</code>. The default is <code>defensive</code>.</p></li>
+    /// <li> <p> <code>elb.http.desyncmitigationmode</code> - Determines how the load balancer handles requests that might pose a security risk to your application. The possible values are <code>monitor</code>, <code>defensive</code>, and <code>strictest</code>. The default is <code>defensive</code>.</p> </li>
     /// </ul>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
@@ -57,8 +54,7 @@ impl AdditionalAttributeBuilder {
     /// <p>The name of the attribute.</p>
     /// <p>The following attribute is supported.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>elb.http.desyncmitigationmode</code> - Determines how the load balancer handles requests that might pose a security risk to your application. The possible values are <code>monitor</code>, <code>defensive</code>, and <code>strictest</code>. The default is <code>defensive</code>.</p></li>
+    /// <li> <p> <code>elb.http.desyncmitigationmode</code> - Determines how the load balancer handles requests that might pose a security risk to your application. The possible values are <code>monitor</code>, <code>defensive</code>, and <code>strictest</code>. The default is <code>defensive</code>.</p> </li>
     /// </ul>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
@@ -67,8 +63,7 @@ impl AdditionalAttributeBuilder {
     /// <p>The name of the attribute.</p>
     /// <p>The following attribute is supported.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>elb.http.desyncmitigationmode</code> - Determines how the load balancer handles requests that might pose a security risk to your application. The possible values are <code>monitor</code>, <code>defensive</code>, and <code>strictest</code>. The default is <code>defensive</code>.</p></li>
+    /// <li> <p> <code>elb.http.desyncmitigationmode</code> - Determines how the load balancer handles requests that might pose a security risk to your application. The possible values are <code>monitor</code>, <code>defensive</code>, and <code>strictest</code>. The default is <code>defensive</code>.</p> </li>
     /// </ul>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.key

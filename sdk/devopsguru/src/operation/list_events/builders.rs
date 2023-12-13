@@ -22,7 +22,7 @@ impl ListEventsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListEvents`.
 ///
-/// <p>Returns a list of the events emitted by the resources that are evaluated by DevOps Guru. You can use filters to specify which events are returned.</p>
+/// <p> Returns a list of the events emitted by the resources that are evaluated by DevOps Guru. You can use filters to specify which events are returned. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListEventsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,17 +114,17 @@ impl ListEventsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_events::paginator::ListEventsPaginator {
         crate::operation::list_events::paginator::ListEventsPaginator::new(self.handle, self.inner)
     }
-    /// <p>A <code>ListEventsFilters</code> object used to specify which events to return.</p>
+    /// <p> A <code>ListEventsFilters</code> object used to specify which events to return. </p>
     pub fn filters(mut self, input: crate::types::ListEventsFilters) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>A <code>ListEventsFilters</code> object used to specify which events to return.</p>
+    /// <p> A <code>ListEventsFilters</code> object used to specify which events to return. </p>
     pub fn set_filters(mut self, input: ::std::option::Option<crate::types::ListEventsFilters>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
-    /// <p>A <code>ListEventsFilters</code> object used to specify which events to return.</p>
+    /// <p> A <code>ListEventsFilters</code> object used to specify which events to return. </p>
     pub fn get_filters(&self) -> &::std::option::Option<crate::types::ListEventsFilters> {
         self.inner.get_filters()
     }
@@ -156,17 +156,17 @@ impl ListEventsFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>The ID of the Amazon Web Services account.</p>
+    /// <p>The ID of the Amazon Web Services account. </p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_id(input.into());
         self
     }
-    /// <p>The ID of the Amazon Web Services account.</p>
+    /// <p>The ID of the Amazon Web Services account. </p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_account_id(input);
         self
     }
-    /// <p>The ID of the Amazon Web Services account.</p>
+    /// <p>The ID of the Amazon Web Services account. </p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_account_id()
     }

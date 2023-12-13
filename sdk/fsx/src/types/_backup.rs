@@ -8,20 +8,13 @@ pub struct Backup {
     pub backup_id: ::std::option::Option<::std::string::String>,
     /// <p>The lifecycle status of the backup.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AVAILABLE</code> - The backup is fully available.</p></li>
-    /// <li>
-    /// <p><code>PENDING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx hasn't started creating the backup.</p></li>
-    /// <li>
-    /// <p><code>CREATING</code> - Amazon FSx is creating the backup.</p></li>
-    /// <li>
-    /// <p><code>TRANSFERRING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx is transferring the backup to Amazon S3.</p></li>
-    /// <li>
-    /// <p><code>COPYING</code> - Amazon FSx is copying the backup.</p></li>
-    /// <li>
-    /// <p><code>DELETED</code> - Amazon FSx deleted the backup and it's no longer available.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - Amazon FSx couldn't finish the backup.</p></li>
+    /// <li> <p> <code>AVAILABLE</code> - The backup is fully available.</p> </li>
+    /// <li> <p> <code>PENDING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx hasn't started creating the backup.</p> </li>
+    /// <li> <p> <code>CREATING</code> - Amazon FSx is creating the backup.</p> </li>
+    /// <li> <p> <code>TRANSFERRING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx is transferring the backup to Amazon S3.</p> </li>
+    /// <li> <p> <code>COPYING</code> - Amazon FSx is copying the backup.</p> </li>
+    /// <li> <p> <code>DELETED</code> - Amazon FSx deleted the backup and it's no longer available.</p> </li>
+    /// <li> <p> <code>FAILED</code> - Amazon FSx couldn't finish the backup.</p> </li>
     /// </ul>
     pub lifecycle: ::std::option::Option<crate::types::BackupLifecycle>,
     /// <p>Details explaining any failures that occurred when creating a backup.</p>
@@ -32,7 +25,7 @@ pub struct Backup {
     pub progress_percent: ::std::option::Option<i32>,
     /// <p>The time when a particular backup was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The ID of the Key Management Service (KMS) key used to encrypt the backup of the Amazon FSx file system's data at rest.</p>
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt the backup of the Amazon FSx file system's data at rest. </p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the backup resource.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
@@ -60,20 +53,13 @@ impl Backup {
     }
     /// <p>The lifecycle status of the backup.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AVAILABLE</code> - The backup is fully available.</p></li>
-    /// <li>
-    /// <p><code>PENDING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx hasn't started creating the backup.</p></li>
-    /// <li>
-    /// <p><code>CREATING</code> - Amazon FSx is creating the backup.</p></li>
-    /// <li>
-    /// <p><code>TRANSFERRING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx is transferring the backup to Amazon S3.</p></li>
-    /// <li>
-    /// <p><code>COPYING</code> - Amazon FSx is copying the backup.</p></li>
-    /// <li>
-    /// <p><code>DELETED</code> - Amazon FSx deleted the backup and it's no longer available.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - Amazon FSx couldn't finish the backup.</p></li>
+    /// <li> <p> <code>AVAILABLE</code> - The backup is fully available.</p> </li>
+    /// <li> <p> <code>PENDING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx hasn't started creating the backup.</p> </li>
+    /// <li> <p> <code>CREATING</code> - Amazon FSx is creating the backup.</p> </li>
+    /// <li> <p> <code>TRANSFERRING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx is transferring the backup to Amazon S3.</p> </li>
+    /// <li> <p> <code>COPYING</code> - Amazon FSx is copying the backup.</p> </li>
+    /// <li> <p> <code>DELETED</code> - Amazon FSx deleted the backup and it's no longer available.</p> </li>
+    /// <li> <p> <code>FAILED</code> - Amazon FSx couldn't finish the backup.</p> </li>
     /// </ul>
     pub fn lifecycle(&self) -> ::std::option::Option<&crate::types::BackupLifecycle> {
         self.lifecycle.as_ref()
@@ -94,7 +80,7 @@ impl Backup {
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>The ID of the Key Management Service (KMS) key used to encrypt the backup of the Amazon FSx file system's data at rest.</p>
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt the backup of the Amazon FSx file system's data at rest. </p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -183,20 +169,13 @@ impl BackupBuilder {
     }
     /// <p>The lifecycle status of the backup.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AVAILABLE</code> - The backup is fully available.</p></li>
-    /// <li>
-    /// <p><code>PENDING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx hasn't started creating the backup.</p></li>
-    /// <li>
-    /// <p><code>CREATING</code> - Amazon FSx is creating the backup.</p></li>
-    /// <li>
-    /// <p><code>TRANSFERRING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx is transferring the backup to Amazon S3.</p></li>
-    /// <li>
-    /// <p><code>COPYING</code> - Amazon FSx is copying the backup.</p></li>
-    /// <li>
-    /// <p><code>DELETED</code> - Amazon FSx deleted the backup and it's no longer available.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - Amazon FSx couldn't finish the backup.</p></li>
+    /// <li> <p> <code>AVAILABLE</code> - The backup is fully available.</p> </li>
+    /// <li> <p> <code>PENDING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx hasn't started creating the backup.</p> </li>
+    /// <li> <p> <code>CREATING</code> - Amazon FSx is creating the backup.</p> </li>
+    /// <li> <p> <code>TRANSFERRING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx is transferring the backup to Amazon S3.</p> </li>
+    /// <li> <p> <code>COPYING</code> - Amazon FSx is copying the backup.</p> </li>
+    /// <li> <p> <code>DELETED</code> - Amazon FSx deleted the backup and it's no longer available.</p> </li>
+    /// <li> <p> <code>FAILED</code> - Amazon FSx couldn't finish the backup.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn lifecycle(mut self, input: crate::types::BackupLifecycle) -> Self {
@@ -205,20 +184,13 @@ impl BackupBuilder {
     }
     /// <p>The lifecycle status of the backup.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AVAILABLE</code> - The backup is fully available.</p></li>
-    /// <li>
-    /// <p><code>PENDING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx hasn't started creating the backup.</p></li>
-    /// <li>
-    /// <p><code>CREATING</code> - Amazon FSx is creating the backup.</p></li>
-    /// <li>
-    /// <p><code>TRANSFERRING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx is transferring the backup to Amazon S3.</p></li>
-    /// <li>
-    /// <p><code>COPYING</code> - Amazon FSx is copying the backup.</p></li>
-    /// <li>
-    /// <p><code>DELETED</code> - Amazon FSx deleted the backup and it's no longer available.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - Amazon FSx couldn't finish the backup.</p></li>
+    /// <li> <p> <code>AVAILABLE</code> - The backup is fully available.</p> </li>
+    /// <li> <p> <code>PENDING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx hasn't started creating the backup.</p> </li>
+    /// <li> <p> <code>CREATING</code> - Amazon FSx is creating the backup.</p> </li>
+    /// <li> <p> <code>TRANSFERRING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx is transferring the backup to Amazon S3.</p> </li>
+    /// <li> <p> <code>COPYING</code> - Amazon FSx is copying the backup.</p> </li>
+    /// <li> <p> <code>DELETED</code> - Amazon FSx deleted the backup and it's no longer available.</p> </li>
+    /// <li> <p> <code>FAILED</code> - Amazon FSx couldn't finish the backup.</p> </li>
     /// </ul>
     pub fn set_lifecycle(mut self, input: ::std::option::Option<crate::types::BackupLifecycle>) -> Self {
         self.lifecycle = input;
@@ -226,20 +198,13 @@ impl BackupBuilder {
     }
     /// <p>The lifecycle status of the backup.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AVAILABLE</code> - The backup is fully available.</p></li>
-    /// <li>
-    /// <p><code>PENDING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx hasn't started creating the backup.</p></li>
-    /// <li>
-    /// <p><code>CREATING</code> - Amazon FSx is creating the backup.</p></li>
-    /// <li>
-    /// <p><code>TRANSFERRING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx is transferring the backup to Amazon S3.</p></li>
-    /// <li>
-    /// <p><code>COPYING</code> - Amazon FSx is copying the backup.</p></li>
-    /// <li>
-    /// <p><code>DELETED</code> - Amazon FSx deleted the backup and it's no longer available.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - Amazon FSx couldn't finish the backup.</p></li>
+    /// <li> <p> <code>AVAILABLE</code> - The backup is fully available.</p> </li>
+    /// <li> <p> <code>PENDING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx hasn't started creating the backup.</p> </li>
+    /// <li> <p> <code>CREATING</code> - Amazon FSx is creating the backup.</p> </li>
+    /// <li> <p> <code>TRANSFERRING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx is transferring the backup to Amazon S3.</p> </li>
+    /// <li> <p> <code>COPYING</code> - Amazon FSx is copying the backup.</p> </li>
+    /// <li> <p> <code>DELETED</code> - Amazon FSx deleted the backup and it's no longer available.</p> </li>
+    /// <li> <p> <code>FAILED</code> - Amazon FSx couldn't finish the backup.</p> </li>
     /// </ul>
     pub fn get_lifecycle(&self) -> &::std::option::Option<crate::types::BackupLifecycle> {
         &self.lifecycle
@@ -302,17 +267,17 @@ impl BackupBuilder {
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }
-    /// <p>The ID of the Key Management Service (KMS) key used to encrypt the backup of the Amazon FSx file system's data at rest.</p>
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt the backup of the Amazon FSx file system's data at rest. </p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the Key Management Service (KMS) key used to encrypt the backup of the Amazon FSx file system's data at rest.</p>
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt the backup of the Amazon FSx file system's data at rest. </p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
     }
-    /// <p>The ID of the Key Management Service (KMS) key used to encrypt the backup of the Amazon FSx file system's data at rest.</p>
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt the backup of the Amazon FSx file system's data at rest. </p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id
     }

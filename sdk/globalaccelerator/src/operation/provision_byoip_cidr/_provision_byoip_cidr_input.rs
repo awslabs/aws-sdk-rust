@@ -5,7 +5,7 @@
 pub struct ProvisionByoipCidrInput {
     /// <p>The public IPv4 address range, in CIDR notation. The most specific IP prefix that you can specify is /24. The address range cannot overlap with another address range that you've brought to this or another Region.</p>
     pub cidr: ::std::option::Option<::std::string::String>,
-    /// <p>A signed document that proves that you are authorized to bring the specified IP address range to Amazon using BYOIP.</p>
+    /// <p>A signed document that proves that you are authorized to bring the specified IP address range to Amazon using BYOIP. </p>
     pub cidr_authorization_context: ::std::option::Option<crate::types::CidrAuthorizationContext>,
 }
 impl ProvisionByoipCidrInput {
@@ -13,7 +13,7 @@ impl ProvisionByoipCidrInput {
     pub fn cidr(&self) -> ::std::option::Option<&str> {
         self.cidr.as_deref()
     }
-    /// <p>A signed document that proves that you are authorized to bring the specified IP address range to Amazon using BYOIP.</p>
+    /// <p>A signed document that proves that you are authorized to bring the specified IP address range to Amazon using BYOIP. </p>
     pub fn cidr_authorization_context(&self) -> ::std::option::Option<&crate::types::CidrAuthorizationContext> {
         self.cidr_authorization_context.as_ref()
     }
@@ -48,18 +48,18 @@ impl ProvisionByoipCidrInputBuilder {
     pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
         &self.cidr
     }
-    /// <p>A signed document that proves that you are authorized to bring the specified IP address range to Amazon using BYOIP.</p>
+    /// <p>A signed document that proves that you are authorized to bring the specified IP address range to Amazon using BYOIP. </p>
     /// This field is required.
     pub fn cidr_authorization_context(mut self, input: crate::types::CidrAuthorizationContext) -> Self {
         self.cidr_authorization_context = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A signed document that proves that you are authorized to bring the specified IP address range to Amazon using BYOIP.</p>
+    /// <p>A signed document that proves that you are authorized to bring the specified IP address range to Amazon using BYOIP. </p>
     pub fn set_cidr_authorization_context(mut self, input: ::std::option::Option<crate::types::CidrAuthorizationContext>) -> Self {
         self.cidr_authorization_context = input;
         self
     }
-    /// <p>A signed document that proves that you are authorized to bring the specified IP address range to Amazon using BYOIP.</p>
+    /// <p>A signed document that proves that you are authorized to bring the specified IP address range to Amazon using BYOIP. </p>
     pub fn get_cidr_authorization_context(&self) -> &::std::option::Option<crate::types::CidrAuthorizationContext> {
         &self.cidr_authorization_context
     }

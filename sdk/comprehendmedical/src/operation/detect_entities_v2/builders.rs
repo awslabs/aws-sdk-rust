@@ -24,7 +24,7 @@ impl DetectEntitiesV2InputBuilder {
 ///
 /// <p>Inspects the clinical text for a variety of medical entities and returns specific information about them such as entity category, location, and confidence score on that information. Amazon Comprehend Medical only detects medical entities in English language texts.</p>
 /// <p>The <code>DetectEntitiesV2</code> operation replaces the <code>DetectEntities</code> operation. This new action uses a different model for determining the entities in your medical text and changes the way that some entities are returned in the output. You should use the <code>DetectEntitiesV2</code> operation in all new applications.</p>
-/// <p>The <code>DetectEntitiesV2</code> operation returns the <code>Acuity</code> and <code>Direction</code> entities as attributes instead of types.</p>
+/// <p>The <code>DetectEntitiesV2</code> operation returns the <code>Acuity</code> and <code>Direction</code> entities as attributes instead of types. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DetectEntitiesV2FluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

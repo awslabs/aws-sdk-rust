@@ -6,7 +6,7 @@
 pub struct ResolverRule {
     /// <p>The ID that Resolver assigned to the Resolver rule when you created it.</p>
     pub id: ::std::option::Option<::std::string::String>,
-    /// <p>A unique string that you specified when you created the Resolver rule. <code>CreatorRequestId</code> identifies the request and allows failed requests to be retried without the risk of running the operation twice.</p>
+    /// <p>A unique string that you specified when you created the Resolver rule. <code>CreatorRequestId</code> identifies the request and allows failed requests to be retried without the risk of running the operation twice. </p>
     pub creator_request_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN (Amazon Resource Name) for the Resolver rule specified by <code>Id</code>.</p>
     pub arn: ::std::option::Option<::std::string::String>,
@@ -23,7 +23,7 @@ pub struct ResolverRule {
     pub rule_type: ::std::option::Option<crate::types::RuleTypeOption>,
     /// <p>The name for the Resolver rule, which you specified when you created the Resolver rule.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>An array that contains the IP addresses and ports that an outbound endpoint forwards DNS queries to. Typically, these are the IP addresses of DNS resolvers on your network.</p>
+    /// <p>An array that contains the IP addresses and ports that an outbound endpoint forwards DNS queries to. Typically, these are the IP addresses of DNS resolvers on your network. </p>
     pub target_ips: ::std::option::Option<::std::vec::Vec<crate::types::TargetAddress>>,
     /// <p>The ID of the endpoint that the rule is associated with.</p>
     pub resolver_endpoint_id: ::std::option::Option<::std::string::String>,
@@ -41,7 +41,7 @@ impl ResolverRule {
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>A unique string that you specified when you created the Resolver rule. <code>CreatorRequestId</code> identifies the request and allows failed requests to be retried without the risk of running the operation twice.</p>
+    /// <p>A unique string that you specified when you created the Resolver rule. <code>CreatorRequestId</code> identifies the request and allows failed requests to be retried without the risk of running the operation twice. </p>
     pub fn creator_request_id(&self) -> ::std::option::Option<&str> {
         self.creator_request_id.as_deref()
     }
@@ -72,7 +72,7 @@ impl ResolverRule {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>An array that contains the IP addresses and ports that an outbound endpoint forwards DNS queries to. Typically, these are the IP addresses of DNS resolvers on your network.</p>
+    /// <p>An array that contains the IP addresses and ports that an outbound endpoint forwards DNS queries to. Typically, these are the IP addresses of DNS resolvers on your network. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_ips.is_none()`.
     pub fn target_ips(&self) -> &[crate::types::TargetAddress] {
@@ -140,17 +140,17 @@ impl ResolverRuleBuilder {
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
-    /// <p>A unique string that you specified when you created the Resolver rule. <code>CreatorRequestId</code> identifies the request and allows failed requests to be retried without the risk of running the operation twice.</p>
+    /// <p>A unique string that you specified when you created the Resolver rule. <code>CreatorRequestId</code> identifies the request and allows failed requests to be retried without the risk of running the operation twice. </p>
     pub fn creator_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creator_request_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique string that you specified when you created the Resolver rule. <code>CreatorRequestId</code> identifies the request and allows failed requests to be retried without the risk of running the operation twice.</p>
+    /// <p>A unique string that you specified when you created the Resolver rule. <code>CreatorRequestId</code> identifies the request and allows failed requests to be retried without the risk of running the operation twice. </p>
     pub fn set_creator_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creator_request_id = input;
         self
     }
-    /// <p>A unique string that you specified when you created the Resolver rule. <code>CreatorRequestId</code> identifies the request and allows failed requests to be retried without the risk of running the operation twice.</p>
+    /// <p>A unique string that you specified when you created the Resolver rule. <code>CreatorRequestId</code> identifies the request and allows failed requests to be retried without the risk of running the operation twice. </p>
     pub fn get_creator_request_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.creator_request_id
     }
@@ -251,19 +251,19 @@ impl ResolverRuleBuilder {
     ///
     /// To override the contents of this collection use [`set_target_ips`](Self::set_target_ips).
     ///
-    /// <p>An array that contains the IP addresses and ports that an outbound endpoint forwards DNS queries to. Typically, these are the IP addresses of DNS resolvers on your network.</p>
+    /// <p>An array that contains the IP addresses and ports that an outbound endpoint forwards DNS queries to. Typically, these are the IP addresses of DNS resolvers on your network. </p>
     pub fn target_ips(mut self, input: crate::types::TargetAddress) -> Self {
         let mut v = self.target_ips.unwrap_or_default();
         v.push(input);
         self.target_ips = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array that contains the IP addresses and ports that an outbound endpoint forwards DNS queries to. Typically, these are the IP addresses of DNS resolvers on your network.</p>
+    /// <p>An array that contains the IP addresses and ports that an outbound endpoint forwards DNS queries to. Typically, these are the IP addresses of DNS resolvers on your network. </p>
     pub fn set_target_ips(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetAddress>>) -> Self {
         self.target_ips = input;
         self
     }
-    /// <p>An array that contains the IP addresses and ports that an outbound endpoint forwards DNS queries to. Typically, these are the IP addresses of DNS resolvers on your network.</p>
+    /// <p>An array that contains the IP addresses and ports that an outbound endpoint forwards DNS queries to. Typically, these are the IP addresses of DNS resolvers on your network. </p>
     pub fn get_target_ips(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetAddress>> {
         &self.target_ips
     }

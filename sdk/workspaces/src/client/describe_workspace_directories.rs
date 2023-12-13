@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_workspace_directories::builders::DescribeWorkspaceDirectoriesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_workspace_directories::builders::DescribeWorkspaceDirectoriesFluentBuilder::set_next_token):<br>required: **false**<br><p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p><br>
     /// - On success, responds with [`DescribeWorkspaceDirectoriesOutput`](crate::operation::describe_workspace_directories::DescribeWorkspaceDirectoriesOutput) with field(s):
     ///   - [`directories(Option<Vec::<WorkspaceDirectory>>)`](crate::operation::describe_workspace_directories::DescribeWorkspaceDirectoriesOutput::directories): <p>Information about the directories.</p>
-    ///   - [`next_token(Option<String>)`](crate::operation::describe_workspace_directories::DescribeWorkspaceDirectoriesOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
+    ///   - [`next_token(Option<String>)`](crate::operation::describe_workspace_directories::DescribeWorkspaceDirectoriesOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
     /// - On failure, responds with [`SdkError<DescribeWorkspaceDirectoriesError>`](crate::operation::describe_workspace_directories::DescribeWorkspaceDirectoriesError)
     pub fn describe_workspace_directories(
         &self,

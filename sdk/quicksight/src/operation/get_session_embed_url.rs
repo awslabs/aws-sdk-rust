@@ -281,7 +281,7 @@ pub enum GetSessionEmbedUrlError {
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
     /// <p>The user with the provided name isn't found. This error can happen in any operation that requires finding a user based on a provided user name, such as <code>DeleteUser</code>, <code>DescribeUser</code>, and so on.</p>
     QuickSightUserNotFoundException(crate::types::error::QuickSightUserNotFoundException),
-    /// <p>The resource specified already exists.</p>
+    /// <p>The resource specified already exists. </p>
     ResourceExistsException(crate::types::error::ResourceExistsException),
     /// <p>One or more resources can't be found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),

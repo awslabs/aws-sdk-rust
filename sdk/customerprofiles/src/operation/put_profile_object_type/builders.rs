@@ -207,17 +207,17 @@ impl PutProfileObjectTypeFluentBuilder {
     pub fn get_allow_profile_creation(&self) -> &::std::option::Option<bool> {
         self.inner.get_allow_profile_creation()
     }
-    /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up.</p>
+    /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up. </p>
     pub fn source_last_updated_timestamp_format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_last_updated_timestamp_format(input.into());
         self
     }
-    /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up.</p>
+    /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up. </p>
     pub fn set_source_last_updated_timestamp_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_last_updated_timestamp_format(input);
         self
     }
-    /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up.</p>
+    /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up. </p>
     pub fn get_source_last_updated_timestamp_format(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_last_updated_timestamp_format()
     }

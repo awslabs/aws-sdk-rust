@@ -23,7 +23,7 @@ impl CreateVpnConnectionInputBuilder {
 /// Fluent builder constructing a request to `CreateVpnConnection`.
 ///
 /// <p>Creates a VPN connection between an existing virtual private gateway or transit gateway and a customer gateway. The supported connection type is <code>ipsec.1</code>.</p>
-/// <p>The response includes information that you need to give to your network administrator to configure your customer gateway.</p><important>
+/// <p>The response includes information that you need to give to your network administrator to configure your customer gateway.</p> <important>
 /// <p>We strongly recommend that you use HTTPS when calling this operation because the response contains sensitive cryptographic information for configuring your customer gateway device.</p>
 /// </important>
 /// <p>If you decide to shut down your VPN connection for any reason and later create a new VPN connection, you must reconfigure your customer gateway with the new information returned from this call.</p>

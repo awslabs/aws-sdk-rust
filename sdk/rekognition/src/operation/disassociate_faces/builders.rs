@@ -154,17 +154,17 @@ impl DisassociateFacesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_face_ids`](Self::set_face_ids).
     ///
-    /// <p>An array of face IDs to disassociate from the UserID.</p>
+    /// <p>An array of face IDs to disassociate from the UserID. </p>
     pub fn face_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.face_ids(input.into());
         self
     }
-    /// <p>An array of face IDs to disassociate from the UserID.</p>
+    /// <p>An array of face IDs to disassociate from the UserID. </p>
     pub fn set_face_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_face_ids(input);
         self
     }
-    /// <p>An array of face IDs to disassociate from the UserID.</p>
+    /// <p>An array of face IDs to disassociate from the UserID. </p>
     pub fn get_face_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_face_ids()
     }

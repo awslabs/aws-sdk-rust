@@ -22,7 +22,7 @@ impl UpdateChannelMessageInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateChannelMessage`.
 ///
-/// <p>Updates the content of a message.</p><note>
+/// <p>Updates the content of a message.</p> <note>
 /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -138,17 +138,17 @@ impl UpdateChannelMessageFluentBuilder {
     pub fn get_message_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_message_id()
     }
-    /// <p>The content of the channel message.</p>
+    /// <p>The content of the channel message. </p>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.content(input.into());
         self
     }
-    /// <p>The content of the channel message.</p>
+    /// <p>The content of the channel message. </p>
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_content(input);
         self
     }
-    /// <p>The content of the channel message.</p>
+    /// <p>The content of the channel message. </p>
     pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_content()
     }
@@ -180,21 +180,21 @@ impl UpdateChannelMessageFluentBuilder {
     pub fn get_chime_bearer(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_chime_bearer()
     }
-    /// <p>The ID of the SubChannel in the request.</p><note>
+    /// <p>The ID of the SubChannel in the request.</p> <note>
     /// <p>Only required when updating messages in a SubChannel that the user belongs to.</p>
     /// </note>
     pub fn sub_channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sub_channel_id(input.into());
         self
     }
-    /// <p>The ID of the SubChannel in the request.</p><note>
+    /// <p>The ID of the SubChannel in the request.</p> <note>
     /// <p>Only required when updating messages in a SubChannel that the user belongs to.</p>
     /// </note>
     pub fn set_sub_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sub_channel_id(input);
         self
     }
-    /// <p>The ID of the SubChannel in the request.</p><note>
+    /// <p>The ID of the SubChannel in the request.</p> <note>
     /// <p>Only required when updating messages in a SubChannel that the user belongs to.</p>
     /// </note>
     pub fn get_sub_channel_id(&self) -> &::std::option::Option<::std::string::String> {

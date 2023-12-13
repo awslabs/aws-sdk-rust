@@ -24,7 +24,7 @@ pub struct TestRecommendation {
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationItem>>,
     /// <p>Prerequisite of the test recommendation.</p>
     pub prerequisite: ::std::option::Option<::std::string::String>,
-    /// <p>A list of recommended alarms that are used in the test and must be exported before or with the test.</p>
+    /// <p> A list of recommended alarms that are used in the test and must be exported before or with the test. </p>
     pub depends_on_alarms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Status of the recommended test.</p>
     pub recommendation_status: ::std::option::Option<crate::types::RecommendationStatus>,
@@ -73,7 +73,7 @@ impl TestRecommendation {
     pub fn prerequisite(&self) -> ::std::option::Option<&str> {
         self.prerequisite.as_deref()
     }
-    /// <p>A list of recommended alarms that are used in the test and must be exported before or with the test.</p>
+    /// <p> A list of recommended alarms that are used in the test and must be exported before or with the test. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.depends_on_alarms.is_none()`.
     pub fn depends_on_alarms(&self) -> &[::std::string::String] {
@@ -260,19 +260,19 @@ impl TestRecommendationBuilder {
     ///
     /// To override the contents of this collection use [`set_depends_on_alarms`](Self::set_depends_on_alarms).
     ///
-    /// <p>A list of recommended alarms that are used in the test and must be exported before or with the test.</p>
+    /// <p> A list of recommended alarms that are used in the test and must be exported before or with the test. </p>
     pub fn depends_on_alarms(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.depends_on_alarms.unwrap_or_default();
         v.push(input.into());
         self.depends_on_alarms = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of recommended alarms that are used in the test and must be exported before or with the test.</p>
+    /// <p> A list of recommended alarms that are used in the test and must be exported before or with the test. </p>
     pub fn set_depends_on_alarms(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.depends_on_alarms = input;
         self
     }
-    /// <p>A list of recommended alarms that are used in the test and must be exported before or with the test.</p>
+    /// <p> A list of recommended alarms that are used in the test and must be exported before or with the test. </p>
     pub fn get_depends_on_alarms(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.depends_on_alarms
     }

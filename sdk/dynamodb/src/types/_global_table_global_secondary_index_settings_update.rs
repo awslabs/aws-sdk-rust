@@ -6,7 +6,7 @@
 pub struct GlobalTableGlobalSecondaryIndexSettingsUpdate {
     /// <p>The name of the global secondary index. The name must be unique among all other indexes on this table.</p>
     pub index_name: ::std::string::String,
-    /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException.</code></p>
+    /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException.</code> </p>
     pub provisioned_write_capacity_units: ::std::option::Option<i64>,
     /// <p>Auto scaling settings for managing a global secondary index's write capacity units.</p>
     pub provisioned_write_capacity_auto_scaling_settings_update: ::std::option::Option<crate::types::AutoScalingSettingsUpdate>,
@@ -17,7 +17,7 @@ impl GlobalTableGlobalSecondaryIndexSettingsUpdate {
         use std::ops::Deref;
         self.index_name.deref()
     }
-    /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException.</code></p>
+    /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException.</code> </p>
     pub fn provisioned_write_capacity_units(&self) -> ::std::option::Option<i64> {
         self.provisioned_write_capacity_units
     }
@@ -57,17 +57,17 @@ impl GlobalTableGlobalSecondaryIndexSettingsUpdateBuilder {
     pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.index_name
     }
-    /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException.</code></p>
+    /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException.</code> </p>
     pub fn provisioned_write_capacity_units(mut self, input: i64) -> Self {
         self.provisioned_write_capacity_units = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException.</code></p>
+    /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException.</code> </p>
     pub fn set_provisioned_write_capacity_units(mut self, input: ::std::option::Option<i64>) -> Self {
         self.provisioned_write_capacity_units = input;
         self
     }
-    /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException.</code></p>
+    /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException.</code> </p>
     pub fn get_provisioned_write_capacity_units(&self) -> &::std::option::Option<i64> {
         &self.provisioned_write_capacity_units
     }

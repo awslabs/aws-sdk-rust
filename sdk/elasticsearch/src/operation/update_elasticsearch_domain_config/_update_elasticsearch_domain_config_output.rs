@@ -4,18 +4,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateElasticsearchDomainConfigOutput {
-    /// <p>The status of the updated Elasticsearch domain.</p>
+    /// <p>The status of the updated Elasticsearch domain. </p>
     pub domain_config: ::std::option::Option<crate::types::ElasticsearchDomainConfig>,
-    /// <p>Contains result of DryRun.</p>
+    /// <p>Contains result of DryRun. </p>
     pub dry_run_results: ::std::option::Option<crate::types::DryRunResults>,
     _request_id: Option<String>,
 }
 impl UpdateElasticsearchDomainConfigOutput {
-    /// <p>The status of the updated Elasticsearch domain.</p>
+    /// <p>The status of the updated Elasticsearch domain. </p>
     pub fn domain_config(&self) -> ::std::option::Option<&crate::types::ElasticsearchDomainConfig> {
         self.domain_config.as_ref()
     }
-    /// <p>Contains result of DryRun.</p>
+    /// <p>Contains result of DryRun. </p>
     pub fn dry_run_results(&self) -> ::std::option::Option<&crate::types::DryRunResults> {
         self.dry_run_results.as_ref()
     }
@@ -41,32 +41,32 @@ pub struct UpdateElasticsearchDomainConfigOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateElasticsearchDomainConfigOutputBuilder {
-    /// <p>The status of the updated Elasticsearch domain.</p>
+    /// <p>The status of the updated Elasticsearch domain. </p>
     /// This field is required.
     pub fn domain_config(mut self, input: crate::types::ElasticsearchDomainConfig) -> Self {
         self.domain_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the updated Elasticsearch domain.</p>
+    /// <p>The status of the updated Elasticsearch domain. </p>
     pub fn set_domain_config(mut self, input: ::std::option::Option<crate::types::ElasticsearchDomainConfig>) -> Self {
         self.domain_config = input;
         self
     }
-    /// <p>The status of the updated Elasticsearch domain.</p>
+    /// <p>The status of the updated Elasticsearch domain. </p>
     pub fn get_domain_config(&self) -> &::std::option::Option<crate::types::ElasticsearchDomainConfig> {
         &self.domain_config
     }
-    /// <p>Contains result of DryRun.</p>
+    /// <p>Contains result of DryRun. </p>
     pub fn dry_run_results(mut self, input: crate::types::DryRunResults) -> Self {
         self.dry_run_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Contains result of DryRun.</p>
+    /// <p>Contains result of DryRun. </p>
     pub fn set_dry_run_results(mut self, input: ::std::option::Option<crate::types::DryRunResults>) -> Self {
         self.dry_run_results = input;
         self
     }
-    /// <p>Contains result of DryRun.</p>
+    /// <p>Contains result of DryRun. </p>
     pub fn get_dry_run_results(&self) -> &::std::option::Option<crate::types::DryRunResults> {
         &self.dry_run_results
     }

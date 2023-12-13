@@ -22,7 +22,7 @@ impl UpdateHitReviewStatusInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateHITReviewStatus`.
 ///
-/// <p>The <code>UpdateHITReviewStatus</code> operation updates the status of a HIT. If the status is Reviewable, this operation can update the status to Reviewing, or it can revert a Reviewing HIT back to the Reviewable status.</p>
+/// <p> The <code>UpdateHITReviewStatus</code> operation updates the status of a HIT. If the status is Reviewable, this operation can update the status to Reviewing, or it can revert a Reviewing HIT back to the Reviewable status. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateHITReviewStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,48 +108,42 @@ impl UpdateHITReviewStatusFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the HIT to update.</p>
+    /// <p> The ID of the HIT to update. </p>
     pub fn hit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hit_id(input.into());
         self
     }
-    /// <p>The ID of the HIT to update.</p>
+    /// <p> The ID of the HIT to update. </p>
     pub fn set_hit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hit_id(input);
         self
     }
-    /// <p>The ID of the HIT to update.</p>
+    /// <p> The ID of the HIT to update. </p>
     pub fn get_hit_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_hit_id()
     }
-    /// <p>Specifies how to update the HIT status. Default is <code>False</code>.</p>
+    /// <p> Specifies how to update the HIT status. Default is <code>False</code>. </p>
     /// <ul>
-    /// <li>
-    /// <p>Setting this to false will only transition a HIT from <code>Reviewable</code> to <code>Reviewing</code></p></li>
-    /// <li>
-    /// <p>Setting this to true will only transition a HIT from <code>Reviewing</code> to <code>Reviewable</code></p></li>
+    /// <li> <p> Setting this to false will only transition a HIT from <code>Reviewable</code> to <code>Reviewing</code> </p> </li>
+    /// <li> <p> Setting this to true will only transition a HIT from <code>Reviewing</code> to <code>Reviewable</code> </p> </li>
     /// </ul>
     pub fn revert(mut self, input: bool) -> Self {
         self.inner = self.inner.revert(input);
         self
     }
-    /// <p>Specifies how to update the HIT status. Default is <code>False</code>.</p>
+    /// <p> Specifies how to update the HIT status. Default is <code>False</code>. </p>
     /// <ul>
-    /// <li>
-    /// <p>Setting this to false will only transition a HIT from <code>Reviewable</code> to <code>Reviewing</code></p></li>
-    /// <li>
-    /// <p>Setting this to true will only transition a HIT from <code>Reviewing</code> to <code>Reviewable</code></p></li>
+    /// <li> <p> Setting this to false will only transition a HIT from <code>Reviewable</code> to <code>Reviewing</code> </p> </li>
+    /// <li> <p> Setting this to true will only transition a HIT from <code>Reviewing</code> to <code>Reviewable</code> </p> </li>
     /// </ul>
     pub fn set_revert(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_revert(input);
         self
     }
-    /// <p>Specifies how to update the HIT status. Default is <code>False</code>.</p>
+    /// <p> Specifies how to update the HIT status. Default is <code>False</code>. </p>
     /// <ul>
-    /// <li>
-    /// <p>Setting this to false will only transition a HIT from <code>Reviewable</code> to <code>Reviewing</code></p></li>
-    /// <li>
-    /// <p>Setting this to true will only transition a HIT from <code>Reviewing</code> to <code>Reviewable</code></p></li>
+    /// <li> <p> Setting this to false will only transition a HIT from <code>Reviewable</code> to <code>Reviewing</code> </p> </li>
+    /// <li> <p> Setting this to true will only transition a HIT from <code>Reviewing</code> to <code>Reviewable</code> </p> </li>
     /// </ul>
     pub fn get_revert(&self) -> &::std::option::Option<bool> {
         self.inner.get_revert()

@@ -22,10 +22,10 @@ impl DeleteIpamPoolInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteIpamPool`.
 ///
-/// <p>Delete an IPAM pool.</p><note>
+/// <p>Delete an IPAM pool.</p> <note>
 /// <p>You cannot delete an IPAM pool if there are allocations in it or CIDRs provisioned to it. To release allocations, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReleaseIpamPoolAllocation.html">ReleaseIpamPoolAllocation</a>. To deprovision pool CIDRs, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeprovisionIpamPoolCidr.html">DeprovisionIpamPoolCidr</a>.</p>
 /// </note>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/delete-pool-ipam.html">Delete a pool</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/delete-pool-ipam.html">Delete a pool</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteIpamPoolFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -139,21 +139,21 @@ impl DeleteIpamPoolFluentBuilder {
     pub fn get_ipam_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_ipam_pool_id()
     }
-    /// <p>Enables you to quickly delete an IPAM pool and all resources within that pool, including provisioned CIDRs, allocations, and other pools.</p><important>
+    /// <p>Enables you to quickly delete an IPAM pool and all resources within that pool, including provisioned CIDRs, allocations, and other pools.</p> <important>
     /// <p>You can only use this option to delete pools in the private scope or pools in the public scope with a source resource. A source resource is a resource used to provision CIDRs to a resource planning pool.</p>
     /// </important>
     pub fn cascade(mut self, input: bool) -> Self {
         self.inner = self.inner.cascade(input);
         self
     }
-    /// <p>Enables you to quickly delete an IPAM pool and all resources within that pool, including provisioned CIDRs, allocations, and other pools.</p><important>
+    /// <p>Enables you to quickly delete an IPAM pool and all resources within that pool, including provisioned CIDRs, allocations, and other pools.</p> <important>
     /// <p>You can only use this option to delete pools in the private scope or pools in the public scope with a source resource. A source resource is a resource used to provision CIDRs to a resource planning pool.</p>
     /// </important>
     pub fn set_cascade(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_cascade(input);
         self
     }
-    /// <p>Enables you to quickly delete an IPAM pool and all resources within that pool, including provisioned CIDRs, allocations, and other pools.</p><important>
+    /// <p>Enables you to quickly delete an IPAM pool and all resources within that pool, including provisioned CIDRs, allocations, and other pools.</p> <important>
     /// <p>You can only use this option to delete pools in the private scope or pools in the public scope with a source resource. A source resource is a resource used to provision CIDRs to a resource planning pool.</p>
     /// </important>
     pub fn get_cascade(&self) -> &::std::option::Option<bool> {

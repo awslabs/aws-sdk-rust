@@ -8,7 +8,7 @@ pub struct AssociatedRole {
     pub associated_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon S3 bucket in which the Amazon S3 object is stored.</p>
     pub certificate_s3_bucket_name: ::std::option::Option<::std::string::String>,
-    /// <p>The key of the Amazon S3 object ey where the certificate, certificate chain, and encrypted private key bundle is stored. The object key is formated as follows: <code>role_arn</code>/<code>certificate_arn</code>.</p>
+    /// <p>The key of the Amazon S3 object ey where the certificate, certificate chain, and encrypted private key bundle is stored. The object key is formated as follows: <code>role_arn</code>/<code>certificate_arn</code>. </p>
     pub certificate_s3_object_key: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the KMS customer master key (CMK) used to encrypt the private key.</p>
     pub encryption_kms_key_id: ::std::option::Option<::std::string::String>,
@@ -22,7 +22,7 @@ impl AssociatedRole {
     pub fn certificate_s3_bucket_name(&self) -> ::std::option::Option<&str> {
         self.certificate_s3_bucket_name.as_deref()
     }
-    /// <p>The key of the Amazon S3 object ey where the certificate, certificate chain, and encrypted private key bundle is stored. The object key is formated as follows: <code>role_arn</code>/<code>certificate_arn</code>.</p>
+    /// <p>The key of the Amazon S3 object ey where the certificate, certificate chain, and encrypted private key bundle is stored. The object key is formated as follows: <code>role_arn</code>/<code>certificate_arn</code>. </p>
     pub fn certificate_s3_object_key(&self) -> ::std::option::Option<&str> {
         self.certificate_s3_object_key.as_deref()
     }
@@ -76,17 +76,17 @@ impl AssociatedRoleBuilder {
     pub fn get_certificate_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate_s3_bucket_name
     }
-    /// <p>The key of the Amazon S3 object ey where the certificate, certificate chain, and encrypted private key bundle is stored. The object key is formated as follows: <code>role_arn</code>/<code>certificate_arn</code>.</p>
+    /// <p>The key of the Amazon S3 object ey where the certificate, certificate chain, and encrypted private key bundle is stored. The object key is formated as follows: <code>role_arn</code>/<code>certificate_arn</code>. </p>
     pub fn certificate_s3_object_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_s3_object_key = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The key of the Amazon S3 object ey where the certificate, certificate chain, and encrypted private key bundle is stored. The object key is formated as follows: <code>role_arn</code>/<code>certificate_arn</code>.</p>
+    /// <p>The key of the Amazon S3 object ey where the certificate, certificate chain, and encrypted private key bundle is stored. The object key is formated as follows: <code>role_arn</code>/<code>certificate_arn</code>. </p>
     pub fn set_certificate_s3_object_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_s3_object_key = input;
         self
     }
-    /// <p>The key of the Amazon S3 object ey where the certificate, certificate chain, and encrypted private key bundle is stored. The object key is formated as follows: <code>role_arn</code>/<code>certificate_arn</code>.</p>
+    /// <p>The key of the Amazon S3 object ey where the certificate, certificate chain, and encrypted private key bundle is stored. The object key is formated as follows: <code>role_arn</code>/<code>certificate_arn</code>. </p>
     pub fn get_certificate_s3_object_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate_s3_object_key
     }

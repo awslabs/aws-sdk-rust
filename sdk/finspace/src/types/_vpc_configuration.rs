@@ -12,8 +12,7 @@ pub struct VpcConfiguration {
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The IP address type for cluster network configuration parameters. The following type is available:</p>
     /// <ul>
-    /// <li>
-    /// <p>IP_V4 – IP address version 4</p></li>
+    /// <li> <p>IP_V4 – IP address version 4</p> </li>
     /// </ul>
     pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
 }
@@ -36,8 +35,7 @@ impl VpcConfiguration {
     }
     /// <p>The IP address type for cluster network configuration parameters. The following type is available:</p>
     /// <ul>
-    /// <li>
-    /// <p>IP_V4 – IP address version 4</p></li>
+    /// <li> <p>IP_V4 – IP address version 4</p> </li>
     /// </ul>
     pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
         self.ip_address_type.as_ref()
@@ -116,8 +114,7 @@ impl VpcConfigurationBuilder {
     }
     /// <p>The IP address type for cluster network configuration parameters. The following type is available:</p>
     /// <ul>
-    /// <li>
-    /// <p>IP_V4 – IP address version 4</p></li>
+    /// <li> <p>IP_V4 – IP address version 4</p> </li>
     /// </ul>
     pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
         self.ip_address_type = ::std::option::Option::Some(input);
@@ -125,8 +122,7 @@ impl VpcConfigurationBuilder {
     }
     /// <p>The IP address type for cluster network configuration parameters. The following type is available:</p>
     /// <ul>
-    /// <li>
-    /// <p>IP_V4 – IP address version 4</p></li>
+    /// <li> <p>IP_V4 – IP address version 4</p> </li>
     /// </ul>
     pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
         self.ip_address_type = input;
@@ -134,8 +130,7 @@ impl VpcConfigurationBuilder {
     }
     /// <p>The IP address type for cluster network configuration parameters. The following type is available:</p>
     /// <ul>
-    /// <li>
-    /// <p>IP_V4 – IP address version 4</p></li>
+    /// <li> <p>IP_V4 – IP address version 4</p> </li>
     /// </ul>
     pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
         &self.ip_address_type

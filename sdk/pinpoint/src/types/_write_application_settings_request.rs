@@ -18,12 +18,9 @@ pub struct WriteApplicationSettingsRequest {
     pub limits: ::std::option::Option<crate::types::CampaignLimits>,
     /// <p>The default quiet time for campaigns in the application. Quiet time is a specific time range when messages aren't sent to endpoints, if all the following conditions are met:</p>
     /// <ul>
-    /// <li>
-    /// <p>The EndpointDemographic.Timezone property of the endpoint is set to a valid value.</p></li>
-    /// <li>
-    /// <p>The current time in the endpoint's time zone is later than or equal to the time specified by the QuietTime.Start property for the application (or a campaign or journey that has custom quiet time settings).</p></li>
-    /// <li>
-    /// <p>The current time in the endpoint's time zone is earlier than or equal to the time specified by the QuietTime.End property for the application (or a campaign or journey that has custom quiet time settings).</p></li>
+    /// <li><p>The EndpointDemographic.Timezone property of the endpoint is set to a valid value.</p></li>
+    /// <li><p>The current time in the endpoint's time zone is later than or equal to the time specified by the QuietTime.Start property for the application (or a campaign or journey that has custom quiet time settings).</p></li>
+    /// <li><p>The current time in the endpoint's time zone is earlier than or equal to the time specified by the QuietTime.End property for the application (or a campaign or journey that has custom quiet time settings).</p></li>
     /// </ul>
     /// <p>If any of the preceding conditions isn't met, the endpoint will receive messages from a campaign or journey, even if quiet time is enabled.</p>
     /// <p>To override the default quiet time settings for a specific campaign or journey, use the
@@ -56,12 +53,9 @@ impl WriteApplicationSettingsRequest {
     }
     /// <p>The default quiet time for campaigns in the application. Quiet time is a specific time range when messages aren't sent to endpoints, if all the following conditions are met:</p>
     /// <ul>
-    /// <li>
-    /// <p>The EndpointDemographic.Timezone property of the endpoint is set to a valid value.</p></li>
-    /// <li>
-    /// <p>The current time in the endpoint's time zone is later than or equal to the time specified by the QuietTime.Start property for the application (or a campaign or journey that has custom quiet time settings).</p></li>
-    /// <li>
-    /// <p>The current time in the endpoint's time zone is earlier than or equal to the time specified by the QuietTime.End property for the application (or a campaign or journey that has custom quiet time settings).</p></li>
+    /// <li><p>The EndpointDemographic.Timezone property of the endpoint is set to a valid value.</p></li>
+    /// <li><p>The current time in the endpoint's time zone is later than or equal to the time specified by the QuietTime.Start property for the application (or a campaign or journey that has custom quiet time settings).</p></li>
+    /// <li><p>The current time in the endpoint's time zone is earlier than or equal to the time specified by the QuietTime.End property for the application (or a campaign or journey that has custom quiet time settings).</p></li>
     /// </ul>
     /// <p>If any of the preceding conditions isn't met, the endpoint will receive messages from a campaign or journey, even if quiet time is enabled.</p>
     /// <p>To override the default quiet time settings for a specific campaign or journey, use the
@@ -164,12 +158,9 @@ impl WriteApplicationSettingsRequestBuilder {
     }
     /// <p>The default quiet time for campaigns in the application. Quiet time is a specific time range when messages aren't sent to endpoints, if all the following conditions are met:</p>
     /// <ul>
-    /// <li>
-    /// <p>The EndpointDemographic.Timezone property of the endpoint is set to a valid value.</p></li>
-    /// <li>
-    /// <p>The current time in the endpoint's time zone is later than or equal to the time specified by the QuietTime.Start property for the application (or a campaign or journey that has custom quiet time settings).</p></li>
-    /// <li>
-    /// <p>The current time in the endpoint's time zone is earlier than or equal to the time specified by the QuietTime.End property for the application (or a campaign or journey that has custom quiet time settings).</p></li>
+    /// <li><p>The EndpointDemographic.Timezone property of the endpoint is set to a valid value.</p></li>
+    /// <li><p>The current time in the endpoint's time zone is later than or equal to the time specified by the QuietTime.Start property for the application (or a campaign or journey that has custom quiet time settings).</p></li>
+    /// <li><p>The current time in the endpoint's time zone is earlier than or equal to the time specified by the QuietTime.End property for the application (or a campaign or journey that has custom quiet time settings).</p></li>
     /// </ul>
     /// <p>If any of the preceding conditions isn't met, the endpoint will receive messages from a campaign or journey, even if quiet time is enabled.</p>
     /// <p>To override the default quiet time settings for a specific campaign or journey, use the
@@ -181,12 +172,9 @@ impl WriteApplicationSettingsRequestBuilder {
     }
     /// <p>The default quiet time for campaigns in the application. Quiet time is a specific time range when messages aren't sent to endpoints, if all the following conditions are met:</p>
     /// <ul>
-    /// <li>
-    /// <p>The EndpointDemographic.Timezone property of the endpoint is set to a valid value.</p></li>
-    /// <li>
-    /// <p>The current time in the endpoint's time zone is later than or equal to the time specified by the QuietTime.Start property for the application (or a campaign or journey that has custom quiet time settings).</p></li>
-    /// <li>
-    /// <p>The current time in the endpoint's time zone is earlier than or equal to the time specified by the QuietTime.End property for the application (or a campaign or journey that has custom quiet time settings).</p></li>
+    /// <li><p>The EndpointDemographic.Timezone property of the endpoint is set to a valid value.</p></li>
+    /// <li><p>The current time in the endpoint's time zone is later than or equal to the time specified by the QuietTime.Start property for the application (or a campaign or journey that has custom quiet time settings).</p></li>
+    /// <li><p>The current time in the endpoint's time zone is earlier than or equal to the time specified by the QuietTime.End property for the application (or a campaign or journey that has custom quiet time settings).</p></li>
     /// </ul>
     /// <p>If any of the preceding conditions isn't met, the endpoint will receive messages from a campaign or journey, even if quiet time is enabled.</p>
     /// <p>To override the default quiet time settings for a specific campaign or journey, use the
@@ -198,12 +186,9 @@ impl WriteApplicationSettingsRequestBuilder {
     }
     /// <p>The default quiet time for campaigns in the application. Quiet time is a specific time range when messages aren't sent to endpoints, if all the following conditions are met:</p>
     /// <ul>
-    /// <li>
-    /// <p>The EndpointDemographic.Timezone property of the endpoint is set to a valid value.</p></li>
-    /// <li>
-    /// <p>The current time in the endpoint's time zone is later than or equal to the time specified by the QuietTime.Start property for the application (or a campaign or journey that has custom quiet time settings).</p></li>
-    /// <li>
-    /// <p>The current time in the endpoint's time zone is earlier than or equal to the time specified by the QuietTime.End property for the application (or a campaign or journey that has custom quiet time settings).</p></li>
+    /// <li><p>The EndpointDemographic.Timezone property of the endpoint is set to a valid value.</p></li>
+    /// <li><p>The current time in the endpoint's time zone is later than or equal to the time specified by the QuietTime.Start property for the application (or a campaign or journey that has custom quiet time settings).</p></li>
+    /// <li><p>The current time in the endpoint's time zone is earlier than or equal to the time specified by the QuietTime.End property for the application (or a campaign or journey that has custom quiet time settings).</p></li>
     /// </ul>
     /// <p>If any of the preceding conditions isn't met, the endpoint will receive messages from a campaign or journey, even if quiet time is enabled.</p>
     /// <p>To override the default quiet time settings for a specific campaign or journey, use the

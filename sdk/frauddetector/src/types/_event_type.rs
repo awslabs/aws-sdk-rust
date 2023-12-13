@@ -24,7 +24,7 @@ pub struct EventType {
     pub created_time: ::std::option::Option<::std::string::String>,
     /// <p>The entity type ARN.</p>
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p>The event orchestration status.</p>
+    /// <p>The event orchestration status. </p>
     pub event_orchestration: ::std::option::Option<crate::types::EventOrchestration>,
 }
 impl EventType {
@@ -74,7 +74,7 @@ impl EventType {
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The event orchestration status.</p>
+    /// <p>The event orchestration status. </p>
     pub fn event_orchestration(&self) -> ::std::option::Option<&crate::types::EventOrchestration> {
         self.event_orchestration.as_ref()
     }
@@ -278,17 +278,17 @@ impl EventTypeBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>The event orchestration status.</p>
+    /// <p>The event orchestration status. </p>
     pub fn event_orchestration(mut self, input: crate::types::EventOrchestration) -> Self {
         self.event_orchestration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The event orchestration status.</p>
+    /// <p>The event orchestration status. </p>
     pub fn set_event_orchestration(mut self, input: ::std::option::Option<crate::types::EventOrchestration>) -> Self {
         self.event_orchestration = input;
         self
     }
-    /// <p>The event orchestration status.</p>
+    /// <p>The event orchestration status. </p>
     pub fn get_event_orchestration(&self) -> &::std::option::Option<crate::types::EventOrchestration> {
         &self.event_orchestration
     }

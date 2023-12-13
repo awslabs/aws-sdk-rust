@@ -6,7 +6,7 @@
 pub struct ConditionBasedCollectionScheme {
     /// <p>The logical expression used to recognize what data to collect. For example, <code>$variable.Vehicle.OutsideAirTemperature &gt;= 105.0</code>.</p>
     pub expression: ::std::string::String,
-    /// <p>The minimum duration of time between two triggering events to collect data, in milliseconds.</p><note>
+    /// <p>The minimum duration of time between two triggering events to collect data, in milliseconds.</p> <note>
     /// <p>If a signal changes often, you might want to collect data at a slower rate.</p>
     /// </note>
     pub minimum_trigger_interval_ms: ::std::option::Option<i64>,
@@ -21,7 +21,7 @@ impl ConditionBasedCollectionScheme {
         use std::ops::Deref;
         self.expression.deref()
     }
-    /// <p>The minimum duration of time between two triggering events to collect data, in milliseconds.</p><note>
+    /// <p>The minimum duration of time between two triggering events to collect data, in milliseconds.</p> <note>
     /// <p>If a signal changes often, you might want to collect data at a slower rate.</p>
     /// </note>
     pub fn minimum_trigger_interval_ms(&self) -> ::std::option::Option<i64> {
@@ -68,21 +68,21 @@ impl ConditionBasedCollectionSchemeBuilder {
     pub fn get_expression(&self) -> &::std::option::Option<::std::string::String> {
         &self.expression
     }
-    /// <p>The minimum duration of time between two triggering events to collect data, in milliseconds.</p><note>
+    /// <p>The minimum duration of time between two triggering events to collect data, in milliseconds.</p> <note>
     /// <p>If a signal changes often, you might want to collect data at a slower rate.</p>
     /// </note>
     pub fn minimum_trigger_interval_ms(mut self, input: i64) -> Self {
         self.minimum_trigger_interval_ms = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The minimum duration of time between two triggering events to collect data, in milliseconds.</p><note>
+    /// <p>The minimum duration of time between two triggering events to collect data, in milliseconds.</p> <note>
     /// <p>If a signal changes often, you might want to collect data at a slower rate.</p>
     /// </note>
     pub fn set_minimum_trigger_interval_ms(mut self, input: ::std::option::Option<i64>) -> Self {
         self.minimum_trigger_interval_ms = input;
         self
     }
-    /// <p>The minimum duration of time between two triggering events to collect data, in milliseconds.</p><note>
+    /// <p>The minimum duration of time between two triggering events to collect data, in milliseconds.</p> <note>
     /// <p>If a signal changes often, you might want to collect data at a slower rate.</p>
     /// </note>
     pub fn get_minimum_trigger_interval_ms(&self) -> &::std::option::Option<i64> {

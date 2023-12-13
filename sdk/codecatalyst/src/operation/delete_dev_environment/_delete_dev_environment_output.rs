@@ -7,7 +7,7 @@ pub struct DeleteDevEnvironmentOutput {
     pub space_name: ::std::string::String,
     /// <p>The name of the project in the space.</p>
     pub project_name: ::std::string::String,
-    /// <p>The system-generated unique ID of the deleted Dev Environment.</p>
+    /// <p>The system-generated unique ID of the deleted Dev Environment. </p>
     pub id: ::std::string::String,
     _request_id: Option<String>,
 }
@@ -22,7 +22,7 @@ impl DeleteDevEnvironmentOutput {
         use std::ops::Deref;
         self.project_name.deref()
     }
-    /// <p>The system-generated unique ID of the deleted Dev Environment.</p>
+    /// <p>The system-generated unique ID of the deleted Dev Environment. </p>
     pub fn id(&self) -> &str {
         use std::ops::Deref;
         self.id.deref()
@@ -80,18 +80,18 @@ impl DeleteDevEnvironmentOutputBuilder {
     pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.project_name
     }
-    /// <p>The system-generated unique ID of the deleted Dev Environment.</p>
+    /// <p>The system-generated unique ID of the deleted Dev Environment. </p>
     /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The system-generated unique ID of the deleted Dev Environment.</p>
+    /// <p>The system-generated unique ID of the deleted Dev Environment. </p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// <p>The system-generated unique ID of the deleted Dev Environment.</p>
+    /// <p>The system-generated unique ID of the deleted Dev Environment. </p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }

@@ -3,59 +3,59 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAnnotationStoreVersionOutput {
-    /// <p>The annotation store ID.</p>
+    /// <p> The annotation store ID. </p>
     pub store_id: ::std::string::String,
-    /// <p>The annotation store version ID.</p>
+    /// <p> The annotation store version ID. </p>
     pub id: ::std::string::String,
-    /// <p>The status of an annotation store version.</p>
+    /// <p> The status of an annotation store version. </p>
     pub status: crate::types::VersionStatus,
-    /// <p>The name of an annotation store.</p>
+    /// <p> The name of an annotation store. </p>
     pub name: ::std::string::String,
-    /// <p>The name of an annotation store version.</p>
+    /// <p> The name of an annotation store version. </p>
     pub version_name: ::std::string::String,
-    /// <p>The description of an annotation store version.</p>
+    /// <p> The description of an annotation store version. </p>
     pub description: ::std::string::String,
-    /// <p>The time stamp for when an annotation store version was created.</p>
+    /// <p> The time stamp for when an annotation store version was created. </p>
     pub creation_time: ::aws_smithy_types::DateTime,
-    /// <p>The time stamp for when an annotation store version was updated.</p>
+    /// <p> The time stamp for when an annotation store version was updated. </p>
     pub update_time: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
 impl UpdateAnnotationStoreVersionOutput {
-    /// <p>The annotation store ID.</p>
+    /// <p> The annotation store ID. </p>
     pub fn store_id(&self) -> &str {
         use std::ops::Deref;
         self.store_id.deref()
     }
-    /// <p>The annotation store version ID.</p>
+    /// <p> The annotation store version ID. </p>
     pub fn id(&self) -> &str {
         use std::ops::Deref;
         self.id.deref()
     }
-    /// <p>The status of an annotation store version.</p>
+    /// <p> The status of an annotation store version. </p>
     pub fn status(&self) -> &crate::types::VersionStatus {
         &self.status
     }
-    /// <p>The name of an annotation store.</p>
+    /// <p> The name of an annotation store. </p>
     pub fn name(&self) -> &str {
         use std::ops::Deref;
         self.name.deref()
     }
-    /// <p>The name of an annotation store version.</p>
+    /// <p> The name of an annotation store version. </p>
     pub fn version_name(&self) -> &str {
         use std::ops::Deref;
         self.version_name.deref()
     }
-    /// <p>The description of an annotation store version.</p>
+    /// <p> The description of an annotation store version. </p>
     pub fn description(&self) -> &str {
         use std::ops::Deref;
         self.description.deref()
     }
-    /// <p>The time stamp for when an annotation store version was created.</p>
+    /// <p> The time stamp for when an annotation store version was created. </p>
     pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
         &self.creation_time
     }
-    /// <p>The time stamp for when an annotation store version was updated.</p>
+    /// <p> The time stamp for when an annotation store version was updated. </p>
     pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
         &self.update_time
     }
@@ -87,123 +87,123 @@ pub struct UpdateAnnotationStoreVersionOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateAnnotationStoreVersionOutputBuilder {
-    /// <p>The annotation store ID.</p>
+    /// <p> The annotation store ID. </p>
     /// This field is required.
     pub fn store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.store_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The annotation store ID.</p>
+    /// <p> The annotation store ID. </p>
     pub fn set_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.store_id = input;
         self
     }
-    /// <p>The annotation store ID.</p>
+    /// <p> The annotation store ID. </p>
     pub fn get_store_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.store_id
     }
-    /// <p>The annotation store version ID.</p>
+    /// <p> The annotation store version ID. </p>
     /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The annotation store version ID.</p>
+    /// <p> The annotation store version ID. </p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// <p>The annotation store version ID.</p>
+    /// <p> The annotation store version ID. </p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
-    /// <p>The status of an annotation store version.</p>
+    /// <p> The status of an annotation store version. </p>
     /// This field is required.
     pub fn status(mut self, input: crate::types::VersionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of an annotation store version.</p>
+    /// <p> The status of an annotation store version. </p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::VersionStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of an annotation store version.</p>
+    /// <p> The status of an annotation store version. </p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::VersionStatus> {
         &self.status
     }
-    /// <p>The name of an annotation store.</p>
+    /// <p> The name of an annotation store. </p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of an annotation store.</p>
+    /// <p> The name of an annotation store. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of an annotation store.</p>
+    /// <p> The name of an annotation store. </p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The name of an annotation store version.</p>
+    /// <p> The name of an annotation store version. </p>
     /// This field is required.
     pub fn version_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of an annotation store version.</p>
+    /// <p> The name of an annotation store version. </p>
     pub fn set_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_name = input;
         self
     }
-    /// <p>The name of an annotation store version.</p>
+    /// <p> The name of an annotation store version. </p>
     pub fn get_version_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.version_name
     }
-    /// <p>The description of an annotation store version.</p>
+    /// <p> The description of an annotation store version. </p>
     /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The description of an annotation store version.</p>
+    /// <p> The description of an annotation store version. </p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>The description of an annotation store version.</p>
+    /// <p> The description of an annotation store version. </p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The time stamp for when an annotation store version was created.</p>
+    /// <p> The time stamp for when an annotation store version was created. </p>
     /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time stamp for when an annotation store version was created.</p>
+    /// <p> The time stamp for when an annotation store version was created. </p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
-    /// <p>The time stamp for when an annotation store version was created.</p>
+    /// <p> The time stamp for when an annotation store version was created. </p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }
-    /// <p>The time stamp for when an annotation store version was updated.</p>
+    /// <p> The time stamp for when an annotation store version was updated. </p>
     /// This field is required.
     pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time stamp for when an annotation store version was updated.</p>
+    /// <p> The time stamp for when an annotation store version was updated. </p>
     pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_time = input;
         self
     }
-    /// <p>The time stamp for when an annotation store version was updated.</p>
+    /// <p> The time stamp for when an annotation store version was updated. </p>
     pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.update_time
     }

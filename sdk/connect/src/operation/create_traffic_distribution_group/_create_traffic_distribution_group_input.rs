@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTrafficDistributionGroupInput {
-    /// <p>The name for the traffic distribution group.</p>
+    /// <p>The name for the traffic distribution group. </p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description for the traffic distribution group.</p>
     pub description: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ pub struct CreateTrafficDistributionGroupInput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateTrafficDistributionGroupInput {
-    /// <p>The name for the traffic distribution group.</p>
+    /// <p>The name for the traffic distribution group. </p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -54,18 +54,18 @@ pub struct CreateTrafficDistributionGroupInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateTrafficDistributionGroupInputBuilder {
-    /// <p>The name for the traffic distribution group.</p>
+    /// <p>The name for the traffic distribution group. </p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name for the traffic distribution group.</p>
+    /// <p>The name for the traffic distribution group. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name for the traffic distribution group.</p>
+    /// <p>The name for the traffic distribution group. </p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

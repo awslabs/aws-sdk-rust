@@ -24,7 +24,7 @@ impl DeleteDataSourceInputBuilder {
 ///
 /// <p>Assigns the DELETED status to a <code>DataSource</code>, rendering it unusable.</p>
 /// <p>After using the <code>DeleteDataSource</code> operation, you can use the <code>GetDataSource</code> operation to verify that the status of the <code>DataSource</code> changed to DELETED.</p>
-/// <p><b>Caution:</b> The results of the <code>DeleteDataSource</code> operation are irreversible.</p>
+/// <p> <b>Caution:</b> The results of the <code>DeleteDataSource</code> operation are irreversible.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteDataSourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

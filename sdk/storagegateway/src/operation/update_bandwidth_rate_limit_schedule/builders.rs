@@ -22,7 +22,7 @@ impl UpdateBandwidthRateLimitScheduleInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateBandwidthRateLimitSchedule`.
 ///
-/// <p>Updates the bandwidth rate limit schedule for a specified gateway. By default, gateways do not have bandwidth rate limit schedules, which means no bandwidth rate limiting is in effect. Use this to initiate or update a gateway's bandwidth rate limit schedule. This operation is supported for volume, tape, and S3 file gateways. S3 file gateways support bandwidth rate limits for upload only. FSx file gateways do not support bandwidth rate limits.</p>
+/// <p> Updates the bandwidth rate limit schedule for a specified gateway. By default, gateways do not have bandwidth rate limit schedules, which means no bandwidth rate limiting is in effect. Use this to initiate or update a gateway's bandwidth rate limit schedule. This operation is supported for volume, tape, and S3 file gateways. S3 file gateways support bandwidth rate limits for upload only. FSx file gateways do not support bandwidth rate limits.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateBandwidthRateLimitScheduleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -126,12 +126,12 @@ impl UpdateBandwidthRateLimitScheduleFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_bandwidth_rate_limit_intervals`](Self::set_bandwidth_rate_limit_intervals).
     ///
-    /// <p>An array containing bandwidth rate limit schedule intervals for a gateway. When no bandwidth rate limit intervals have been scheduled, the array is empty.</p>
+    /// <p> An array containing bandwidth rate limit schedule intervals for a gateway. When no bandwidth rate limit intervals have been scheduled, the array is empty. </p>
     pub fn bandwidth_rate_limit_intervals(mut self, input: crate::types::BandwidthRateLimitInterval) -> Self {
         self.inner = self.inner.bandwidth_rate_limit_intervals(input);
         self
     }
-    /// <p>An array containing bandwidth rate limit schedule intervals for a gateway. When no bandwidth rate limit intervals have been scheduled, the array is empty.</p>
+    /// <p> An array containing bandwidth rate limit schedule intervals for a gateway. When no bandwidth rate limit intervals have been scheduled, the array is empty. </p>
     pub fn set_bandwidth_rate_limit_intervals(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::BandwidthRateLimitInterval>>,
@@ -139,7 +139,7 @@ impl UpdateBandwidthRateLimitScheduleFluentBuilder {
         self.inner = self.inner.set_bandwidth_rate_limit_intervals(input);
         self
     }
-    /// <p>An array containing bandwidth rate limit schedule intervals for a gateway. When no bandwidth rate limit intervals have been scheduled, the array is empty.</p>
+    /// <p> An array containing bandwidth rate limit schedule intervals for a gateway. When no bandwidth rate limit intervals have been scheduled, the array is empty. </p>
     pub fn get_bandwidth_rate_limit_intervals(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BandwidthRateLimitInterval>> {
         self.inner.get_bandwidth_rate_limit_intervals()
     }

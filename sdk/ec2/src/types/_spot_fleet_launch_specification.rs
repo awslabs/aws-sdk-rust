@@ -11,7 +11,7 @@ pub struct SpotFleetLaunchSpecification {
     /// <p>One or more block devices that are mapped to the Spot Instances. You can't specify both a snapshot ID and an encryption value. This is because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume, it is not blank and its encryption status is used for the volume encryption status.</p>
     pub block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>,
     /// <p>Indicates whether the instances are optimized for EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS Optimized instance.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p>Default: <code>false</code> </p>
     pub ebs_optimized: ::std::option::Option<bool>,
     /// <p>The IAM instance profile.</p>
     pub iam_instance_profile: ::std::option::Option<crate::types::IamInstanceProfileSpecification>,
@@ -25,15 +25,15 @@ pub struct SpotFleetLaunchSpecification {
     pub key_name: ::std::option::Option<::std::string::String>,
     /// <p>Enable or disable monitoring for the instances.</p>
     pub monitoring: ::std::option::Option<crate::types::SpotFleetMonitoring>,
-    /// <p>One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security group IDs using the network interface.</p><note>
-    /// <p><code>SpotFleetLaunchSpecification</code> currently does not support Elastic Fabric Adapter (EFA). To specify an EFA, you must use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a>.</p>
+    /// <p>One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security group IDs using the network interface.</p> <note>
+    /// <p> <code>SpotFleetLaunchSpecification</code> currently does not support Elastic Fabric Adapter (EFA). To specify an EFA, you must use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a>.</p>
     /// </note>
     pub network_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::InstanceNetworkInterfaceSpecification>>,
     /// <p>The placement information.</p>
     pub placement: ::std::option::Option<crate::types::SpotPlacement>,
     /// <p>The ID of the RAM disk. Some kernels require additional drivers at launch. Check the kernel requirements for information about whether you need to specify a RAM disk. To find kernel requirements, refer to the Amazon Web Services Resource Center and search for the kernel ID.</p>
     pub ramdisk_id: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p><important>
+    /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p> <important>
     /// <p>If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify this parameter.</p>
     /// </important>
     pub spot_price: ::std::option::Option<::std::string::String>,
@@ -46,7 +46,7 @@ pub struct SpotFleetLaunchSpecification {
     pub weighted_capacity: ::std::option::Option<f64>,
     /// <p>The tags to apply during creation.</p>
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::SpotFleetTagSpecification>>,
-    /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with those attributes.</p><note>
+    /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with those attributes.</p> <note>
     /// <p>If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.</p>
     /// </note>
     pub instance_requirements: ::std::option::Option<crate::types::InstanceRequirements>,
@@ -69,7 +69,7 @@ impl SpotFleetLaunchSpecification {
         self.block_device_mappings.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether the instances are optimized for EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS Optimized instance.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p>Default: <code>false</code> </p>
     pub fn ebs_optimized(&self) -> ::std::option::Option<bool> {
         self.ebs_optimized
     }
@@ -97,8 +97,8 @@ impl SpotFleetLaunchSpecification {
     pub fn monitoring(&self) -> ::std::option::Option<&crate::types::SpotFleetMonitoring> {
         self.monitoring.as_ref()
     }
-    /// <p>One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security group IDs using the network interface.</p><note>
-    /// <p><code>SpotFleetLaunchSpecification</code> currently does not support Elastic Fabric Adapter (EFA). To specify an EFA, you must use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a>.</p>
+    /// <p>One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security group IDs using the network interface.</p> <note>
+    /// <p> <code>SpotFleetLaunchSpecification</code> currently does not support Elastic Fabric Adapter (EFA). To specify an EFA, you must use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a>.</p>
     /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_interfaces.is_none()`.
@@ -113,7 +113,7 @@ impl SpotFleetLaunchSpecification {
     pub fn ramdisk_id(&self) -> ::std::option::Option<&str> {
         self.ramdisk_id.as_deref()
     }
-    /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p><important>
+    /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p> <important>
     /// <p>If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify this parameter.</p>
     /// </important>
     pub fn spot_price(&self) -> ::std::option::Option<&str> {
@@ -138,7 +138,7 @@ impl SpotFleetLaunchSpecification {
     pub fn tag_specifications(&self) -> &[crate::types::SpotFleetTagSpecification] {
         self.tag_specifications.as_deref().unwrap_or_default()
     }
-    /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with those attributes.</p><note>
+    /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with those attributes.</p> <note>
     /// <p>If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.</p>
     /// </note>
     pub fn instance_requirements(&self) -> ::std::option::Option<&crate::types::InstanceRequirements> {
@@ -257,19 +257,19 @@ impl SpotFleetLaunchSpecificationBuilder {
         &self.block_device_mappings
     }
     /// <p>Indicates whether the instances are optimized for EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS Optimized instance.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p>Default: <code>false</code> </p>
     pub fn ebs_optimized(mut self, input: bool) -> Self {
         self.ebs_optimized = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the instances are optimized for EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS Optimized instance.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p>Default: <code>false</code> </p>
     pub fn set_ebs_optimized(mut self, input: ::std::option::Option<bool>) -> Self {
         self.ebs_optimized = input;
         self
     }
     /// <p>Indicates whether the instances are optimized for EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS Optimized instance.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p>Default: <code>false</code> </p>
     pub fn get_ebs_optimized(&self) -> &::std::option::Option<bool> {
         &self.ebs_optimized
     }
@@ -361,8 +361,8 @@ impl SpotFleetLaunchSpecificationBuilder {
     ///
     /// To override the contents of this collection use [`set_network_interfaces`](Self::set_network_interfaces).
     ///
-    /// <p>One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security group IDs using the network interface.</p><note>
-    /// <p><code>SpotFleetLaunchSpecification</code> currently does not support Elastic Fabric Adapter (EFA). To specify an EFA, you must use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a>.</p>
+    /// <p>One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security group IDs using the network interface.</p> <note>
+    /// <p> <code>SpotFleetLaunchSpecification</code> currently does not support Elastic Fabric Adapter (EFA). To specify an EFA, you must use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a>.</p>
     /// </note>
     pub fn network_interfaces(mut self, input: crate::types::InstanceNetworkInterfaceSpecification) -> Self {
         let mut v = self.network_interfaces.unwrap_or_default();
@@ -370,8 +370,8 @@ impl SpotFleetLaunchSpecificationBuilder {
         self.network_interfaces = ::std::option::Option::Some(v);
         self
     }
-    /// <p>One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security group IDs using the network interface.</p><note>
-    /// <p><code>SpotFleetLaunchSpecification</code> currently does not support Elastic Fabric Adapter (EFA). To specify an EFA, you must use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a>.</p>
+    /// <p>One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security group IDs using the network interface.</p> <note>
+    /// <p> <code>SpotFleetLaunchSpecification</code> currently does not support Elastic Fabric Adapter (EFA). To specify an EFA, you must use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a>.</p>
     /// </note>
     pub fn set_network_interfaces(
         mut self,
@@ -380,8 +380,8 @@ impl SpotFleetLaunchSpecificationBuilder {
         self.network_interfaces = input;
         self
     }
-    /// <p>One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security group IDs using the network interface.</p><note>
-    /// <p><code>SpotFleetLaunchSpecification</code> currently does not support Elastic Fabric Adapter (EFA). To specify an EFA, you must use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a>.</p>
+    /// <p>One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security group IDs using the network interface.</p> <note>
+    /// <p> <code>SpotFleetLaunchSpecification</code> currently does not support Elastic Fabric Adapter (EFA). To specify an EFA, you must use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a>.</p>
     /// </note>
     pub fn get_network_interfaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceNetworkInterfaceSpecification>> {
         &self.network_interfaces
@@ -414,21 +414,21 @@ impl SpotFleetLaunchSpecificationBuilder {
     pub fn get_ramdisk_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.ramdisk_id
     }
-    /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p><important>
+    /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p> <important>
     /// <p>If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify this parameter.</p>
     /// </important>
     pub fn spot_price(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.spot_price = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p><important>
+    /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p> <important>
     /// <p>If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify this parameter.</p>
     /// </important>
     pub fn set_spot_price(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.spot_price = input;
         self
     }
-    /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p><important>
+    /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p> <important>
     /// <p>If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify this parameter.</p>
     /// </important>
     pub fn get_spot_price(&self) -> &::std::option::Option<::std::string::String> {
@@ -499,21 +499,21 @@ impl SpotFleetLaunchSpecificationBuilder {
     pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SpotFleetTagSpecification>> {
         &self.tag_specifications
     }
-    /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with those attributes.</p><note>
+    /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with those attributes.</p> <note>
     /// <p>If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.</p>
     /// </note>
     pub fn instance_requirements(mut self, input: crate::types::InstanceRequirements) -> Self {
         self.instance_requirements = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with those attributes.</p><note>
+    /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with those attributes.</p> <note>
     /// <p>If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.</p>
     /// </note>
     pub fn set_instance_requirements(mut self, input: ::std::option::Option<crate::types::InstanceRequirements>) -> Self {
         self.instance_requirements = input;
         self
     }
-    /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with those attributes.</p><note>
+    /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with those attributes.</p> <note>
     /// <p>If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.</p>
     /// </note>
     pub fn get_instance_requirements(&self) -> &::std::option::Option<crate::types::InstanceRequirements> {

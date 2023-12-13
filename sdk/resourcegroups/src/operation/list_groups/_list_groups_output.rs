@@ -6,7 +6,7 @@ pub struct ListGroupsOutput {
     /// <p>A list of <code>GroupIdentifier</code> objects. Each identifier is an object that contains both the <code>Name</code> and the <code>GroupArn</code>.</p>
     pub group_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>,
     /// <important>
-    /// <p><i> <b>Deprecated - don't use this field. Use the <code>GroupIdentifiers</code> response field instead.</b> </i></p>
+    /// <p> <i> <b>Deprecated - don't use this field. Use the <code>GroupIdentifiers</code> response field instead.</b> </i> </p>
     /// </important>
     #[deprecated(note = "This field is deprecated, use GroupIdentifiers instead.")]
     pub groups: ::std::option::Option<::std::vec::Vec<crate::types::Group>>,
@@ -22,7 +22,7 @@ impl ListGroupsOutput {
         self.group_identifiers.as_deref().unwrap_or_default()
     }
     /// <important>
-    /// <p><i> <b>Deprecated - don't use this field. Use the <code>GroupIdentifiers</code> response field instead.</b> </i></p>
+    /// <p> <i> <b>Deprecated - don't use this field. Use the <code>GroupIdentifiers</code> response field instead.</b> </i> </p>
     /// </important>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups.is_none()`.
@@ -82,7 +82,7 @@ impl ListGroupsOutputBuilder {
     /// To override the contents of this collection use [`set_groups`](Self::set_groups).
     ///
     /// <important>
-    /// <p><i> <b>Deprecated - don't use this field. Use the <code>GroupIdentifiers</code> response field instead.</b> </i></p>
+    /// <p> <i> <b>Deprecated - don't use this field. Use the <code>GroupIdentifiers</code> response field instead.</b> </i> </p>
     /// </important>
     #[deprecated(note = "This field is deprecated, use GroupIdentifiers instead.")]
     pub fn groups(mut self, input: crate::types::Group) -> Self {
@@ -92,7 +92,7 @@ impl ListGroupsOutputBuilder {
         self
     }
     /// <important>
-    /// <p><i> <b>Deprecated - don't use this field. Use the <code>GroupIdentifiers</code> response field instead.</b> </i></p>
+    /// <p> <i> <b>Deprecated - don't use this field. Use the <code>GroupIdentifiers</code> response field instead.</b> </i> </p>
     /// </important>
     #[deprecated(note = "This field is deprecated, use GroupIdentifiers instead.")]
     pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Group>>) -> Self {
@@ -100,7 +100,7 @@ impl ListGroupsOutputBuilder {
         self
     }
     /// <important>
-    /// <p><i> <b>Deprecated - don't use this field. Use the <code>GroupIdentifiers</code> response field instead.</b> </i></p>
+    /// <p> <i> <b>Deprecated - don't use this field. Use the <code>GroupIdentifiers</code> response field instead.</b> </i> </p>
     /// </important>
     #[deprecated(note = "This field is deprecated, use GroupIdentifiers instead.")]
     pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Group>> {

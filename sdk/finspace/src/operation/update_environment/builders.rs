@@ -153,10 +153,8 @@ impl UpdateEnvironmentFluentBuilder {
     }
     /// <p>Authentication mode for the environment.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p></li>
-    /// <li>
-    /// <p><code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p></li>
+    /// <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li>
+    /// <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li>
     /// </ul>
     pub fn federation_mode(mut self, input: crate::types::FederationMode) -> Self {
         self.inner = self.inner.federation_mode(input);
@@ -164,10 +162,8 @@ impl UpdateEnvironmentFluentBuilder {
     }
     /// <p>Authentication mode for the environment.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p></li>
-    /// <li>
-    /// <p><code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p></li>
+    /// <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li>
+    /// <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li>
     /// </ul>
     pub fn set_federation_mode(mut self, input: ::std::option::Option<crate::types::FederationMode>) -> Self {
         self.inner = self.inner.set_federation_mode(input);
@@ -175,10 +171,8 @@ impl UpdateEnvironmentFluentBuilder {
     }
     /// <p>Authentication mode for the environment.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p></li>
-    /// <li>
-    /// <p><code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p></li>
+    /// <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li>
+    /// <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li>
     /// </ul>
     pub fn get_federation_mode(&self) -> &::std::option::Option<crate::types::FederationMode> {
         self.inner.get_federation_mode()

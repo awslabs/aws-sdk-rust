@@ -11,14 +11,11 @@ pub struct GetExportOutput {
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The format of the exported data.</p>
     pub export_type: ::std::option::Option<crate::types::ExportType>,
-    /// <p>The status of the export.</p>
+    /// <p>The status of the export. </p>
     /// <ul>
-    /// <li>
-    /// <p><code>IN_PROGRESS</code> - The export is in progress.</p></li>
-    /// <li>
-    /// <p><code>READY</code> - The export is complete.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - The export could not be completed.</p></li>
+    /// <li> <p> <code>IN_PROGRESS</code> - The export is in progress.</p> </li>
+    /// <li> <p> <code>READY</code> - The export is complete.</p> </li>
+    /// <li> <p> <code>FAILED</code> - The export could not be completed.</p> </li>
     /// </ul>
     pub export_status: ::std::option::Option<crate::types::ExportStatus>,
     /// <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason that it failed to export the resource.</p>
@@ -44,14 +41,11 @@ impl GetExportOutput {
     pub fn export_type(&self) -> ::std::option::Option<&crate::types::ExportType> {
         self.export_type.as_ref()
     }
-    /// <p>The status of the export.</p>
+    /// <p>The status of the export. </p>
     /// <ul>
-    /// <li>
-    /// <p><code>IN_PROGRESS</code> - The export is in progress.</p></li>
-    /// <li>
-    /// <p><code>READY</code> - The export is complete.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - The export could not be completed.</p></li>
+    /// <li> <p> <code>IN_PROGRESS</code> - The export is in progress.</p> </li>
+    /// <li> <p> <code>READY</code> - The export is complete.</p> </li>
+    /// <li> <p> <code>FAILED</code> - The export could not be completed.</p> </li>
     /// </ul>
     pub fn export_status(&self) -> ::std::option::Option<&crate::types::ExportStatus> {
         self.export_status.as_ref()
@@ -147,40 +141,31 @@ impl GetExportOutputBuilder {
     pub fn get_export_type(&self) -> &::std::option::Option<crate::types::ExportType> {
         &self.export_type
     }
-    /// <p>The status of the export.</p>
+    /// <p>The status of the export. </p>
     /// <ul>
-    /// <li>
-    /// <p><code>IN_PROGRESS</code> - The export is in progress.</p></li>
-    /// <li>
-    /// <p><code>READY</code> - The export is complete.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - The export could not be completed.</p></li>
+    /// <li> <p> <code>IN_PROGRESS</code> - The export is in progress.</p> </li>
+    /// <li> <p> <code>READY</code> - The export is complete.</p> </li>
+    /// <li> <p> <code>FAILED</code> - The export could not be completed.</p> </li>
     /// </ul>
     pub fn export_status(mut self, input: crate::types::ExportStatus) -> Self {
         self.export_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the export.</p>
+    /// <p>The status of the export. </p>
     /// <ul>
-    /// <li>
-    /// <p><code>IN_PROGRESS</code> - The export is in progress.</p></li>
-    /// <li>
-    /// <p><code>READY</code> - The export is complete.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - The export could not be completed.</p></li>
+    /// <li> <p> <code>IN_PROGRESS</code> - The export is in progress.</p> </li>
+    /// <li> <p> <code>READY</code> - The export is complete.</p> </li>
+    /// <li> <p> <code>FAILED</code> - The export could not be completed.</p> </li>
     /// </ul>
     pub fn set_export_status(mut self, input: ::std::option::Option<crate::types::ExportStatus>) -> Self {
         self.export_status = input;
         self
     }
-    /// <p>The status of the export.</p>
+    /// <p>The status of the export. </p>
     /// <ul>
-    /// <li>
-    /// <p><code>IN_PROGRESS</code> - The export is in progress.</p></li>
-    /// <li>
-    /// <p><code>READY</code> - The export is complete.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - The export could not be completed.</p></li>
+    /// <li> <p> <code>IN_PROGRESS</code> - The export is in progress.</p> </li>
+    /// <li> <p> <code>READY</code> - The export is complete.</p> </li>
+    /// <li> <p> <code>FAILED</code> - The export could not be completed.</p> </li>
     /// </ul>
     pub fn get_export_status(&self) -> &::std::option::Option<crate::types::ExportStatus> {
         &self.export_status

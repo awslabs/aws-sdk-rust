@@ -10,7 +10,7 @@ pub struct ServiceSoftwareOptions {
     pub new_version: ::std::option::Option<::std::string::String>,
     /// <p>True if you're able to update your service software version. False if you can't update your service software version.</p>
     pub update_available: ::std::option::Option<bool>,
-    /// <p>True if you're able to cancel your service software version update. False if you can't cancel your service software update.</p>
+    /// <p> True if you're able to cancel your service software version update. False if you can't cancel your service software update.</p>
     pub cancellable: ::std::option::Option<bool>,
     /// <p>The status of your service software update.</p>
     pub update_status: ::std::option::Option<crate::types::DeploymentStatus>,
@@ -34,7 +34,7 @@ impl ServiceSoftwareOptions {
     pub fn update_available(&self) -> ::std::option::Option<bool> {
         self.update_available
     }
-    /// <p>True if you're able to cancel your service software version update. False if you can't cancel your service software update.</p>
+    /// <p> True if you're able to cancel your service software version update. False if you can't cancel your service software update.</p>
     pub fn cancellable(&self) -> ::std::option::Option<bool> {
         self.cancellable
     }
@@ -118,17 +118,17 @@ impl ServiceSoftwareOptionsBuilder {
     pub fn get_update_available(&self) -> &::std::option::Option<bool> {
         &self.update_available
     }
-    /// <p>True if you're able to cancel your service software version update. False if you can't cancel your service software update.</p>
+    /// <p> True if you're able to cancel your service software version update. False if you can't cancel your service software update.</p>
     pub fn cancellable(mut self, input: bool) -> Self {
         self.cancellable = ::std::option::Option::Some(input);
         self
     }
-    /// <p>True if you're able to cancel your service software version update. False if you can't cancel your service software update.</p>
+    /// <p> True if you're able to cancel your service software version update. False if you can't cancel your service software update.</p>
     pub fn set_cancellable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.cancellable = input;
         self
     }
-    /// <p>True if you're able to cancel your service software version update. False if you can't cancel your service software update.</p>
+    /// <p> True if you're able to cancel your service software version update. False if you can't cancel your service software update.</p>
     pub fn get_cancellable(&self) -> &::std::option::Option<bool> {
         &self.cancellable
     }

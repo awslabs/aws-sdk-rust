@@ -18,7 +18,7 @@ pub struct GetStageOutput {
     pub cache_cluster_size: ::std::option::Option<crate::types::CacheClusterSize>,
     /// <p>The status of the cache cluster for the stage, if enabled.</p>
     pub cache_cluster_status: ::std::option::Option<crate::types::CacheClusterStatus>,
-    /// <p>A map that defines the method settings for a Stage resource. Keys (designated as <code>/{method_setting_key</code> below) are method paths defined as <code>{resource_path}/{http_method}</code> for an individual method override, or <code>/\*/\*</code> for overriding all methods in the stage.</p>
+    /// <p>A map that defines the method settings for a Stage resource. Keys (designated as <code>/{method_setting_key</code> below) are method paths defined as <code>{resource_path}/{http_method}</code> for an individual method override, or <code>/\*/\*</code> for overriding all methods in the stage. </p>
     pub method_settings: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MethodSetting>>,
     /// <p>A map that defines the stage variables for a Stage resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
     pub variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -69,7 +69,7 @@ impl GetStageOutput {
     pub fn cache_cluster_status(&self) -> ::std::option::Option<&crate::types::CacheClusterStatus> {
         self.cache_cluster_status.as_ref()
     }
-    /// <p>A map that defines the method settings for a Stage resource. Keys (designated as <code>/{method_setting_key</code> below) are method paths defined as <code>{resource_path}/{http_method}</code> for an individual method override, or <code>/\*/\*</code> for overriding all methods in the stage.</p>
+    /// <p>A map that defines the method settings for a Stage resource. Keys (designated as <code>/{method_setting_key</code> below) are method paths defined as <code>{resource_path}/{http_method}</code> for an individual method override, or <code>/\*/\*</code> for overriding all methods in the stage. </p>
     pub fn method_settings(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::MethodSetting>> {
         self.method_settings.as_ref()
     }
@@ -248,14 +248,14 @@ impl GetStageOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_method_settings`](Self::set_method_settings).
     ///
-    /// <p>A map that defines the method settings for a Stage resource. Keys (designated as <code>/{method_setting_key</code> below) are method paths defined as <code>{resource_path}/{http_method}</code> for an individual method override, or <code>/\*/\*</code> for overriding all methods in the stage.</p>
+    /// <p>A map that defines the method settings for a Stage resource. Keys (designated as <code>/{method_setting_key</code> below) are method paths defined as <code>{resource_path}/{http_method}</code> for an individual method override, or <code>/\*/\*</code> for overriding all methods in the stage. </p>
     pub fn method_settings(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::MethodSetting) -> Self {
         let mut hash_map = self.method_settings.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.method_settings = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>A map that defines the method settings for a Stage resource. Keys (designated as <code>/{method_setting_key</code> below) are method paths defined as <code>{resource_path}/{http_method}</code> for an individual method override, or <code>/\*/\*</code> for overriding all methods in the stage.</p>
+    /// <p>A map that defines the method settings for a Stage resource. Keys (designated as <code>/{method_setting_key</code> below) are method paths defined as <code>{resource_path}/{http_method}</code> for an individual method override, or <code>/\*/\*</code> for overriding all methods in the stage. </p>
     pub fn set_method_settings(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MethodSetting>>,
@@ -263,7 +263,7 @@ impl GetStageOutputBuilder {
         self.method_settings = input;
         self
     }
-    /// <p>A map that defines the method settings for a Stage resource. Keys (designated as <code>/{method_setting_key</code> below) are method paths defined as <code>{resource_path}/{http_method}</code> for an individual method override, or <code>/\*/\*</code> for overriding all methods in the stage.</p>
+    /// <p>A map that defines the method settings for a Stage resource. Keys (designated as <code>/{method_setting_key</code> below) are method paths defined as <code>{resource_path}/{http_method}</code> for an individual method override, or <code>/\*/\*</code> for overriding all methods in the stage. </p>
     pub fn get_method_settings(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MethodSetting>> {
         &self.method_settings
     }

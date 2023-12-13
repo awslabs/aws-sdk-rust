@@ -22,7 +22,7 @@ impl AttachRolePolicyInputBuilder {
 }
 /// Fluent builder constructing a request to `AttachRolePolicy`.
 ///
-/// <p>Attaches the specified managed policy to the specified IAM role. When you attach a managed policy to a role, the managed policy becomes part of the role's permission (access) policy.</p><note>
+/// <p>Attaches the specified managed policy to the specified IAM role. When you attach a managed policy to a role, the managed policy becomes part of the role's permission (access) policy.</p> <note>
 /// <p>You cannot use a managed policy as the role's trust policy. The role's trust policy is created at the same time as the role, using <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html"> <code>CreateRole</code> </a>. You can update a role's trust policy using <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAssumeRolePolicy.html"> <code>UpdateAssumerolePolicy</code> </a>.</p>
 /// </note>
 /// <p>Use this operation to attach a <i>managed</i> policy to a role. To embed an inline policy in a role, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_PutRolePolicy.html"> <code>PutRolePolicy</code> </a>. For more information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed policies and inline policies</a> in the <i>IAM User Guide</i>.</p>

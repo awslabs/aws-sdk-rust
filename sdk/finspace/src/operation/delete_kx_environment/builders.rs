@@ -22,7 +22,7 @@ impl DeleteKxEnvironmentInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteKxEnvironment`.
 ///
-/// <p>Deletes the kdb environment. This action is irreversible. Deleting a kdb environment will remove all the associated data and any services running in it.</p>
+/// <p>Deletes the kdb environment. This action is irreversible. Deleting a kdb environment will remove all the associated data and any services running in it. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteKxEnvironmentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

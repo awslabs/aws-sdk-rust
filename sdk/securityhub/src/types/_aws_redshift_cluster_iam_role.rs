@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsRedshiftClusterIamRole {
     /// <p>The status of the IAM role's association with the cluster.</p>
-    /// <p>Valid values: <code>in-sync</code> | <code>adding</code> | <code>removing</code></p>
+    /// <p>Valid values: <code>in-sync</code> | <code>adding</code> | <code>removing</code> </p>
     pub apply_status: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the IAM role.</p>
     pub iam_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl AwsRedshiftClusterIamRole {
     /// <p>The status of the IAM role's association with the cluster.</p>
-    /// <p>Valid values: <code>in-sync</code> | <code>adding</code> | <code>removing</code></p>
+    /// <p>Valid values: <code>in-sync</code> | <code>adding</code> | <code>removing</code> </p>
     pub fn apply_status(&self) -> ::std::option::Option<&str> {
         self.apply_status.as_deref()
     }
@@ -37,19 +37,19 @@ pub struct AwsRedshiftClusterIamRoleBuilder {
 }
 impl AwsRedshiftClusterIamRoleBuilder {
     /// <p>The status of the IAM role's association with the cluster.</p>
-    /// <p>Valid values: <code>in-sync</code> | <code>adding</code> | <code>removing</code></p>
+    /// <p>Valid values: <code>in-sync</code> | <code>adding</code> | <code>removing</code> </p>
     pub fn apply_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.apply_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the IAM role's association with the cluster.</p>
-    /// <p>Valid values: <code>in-sync</code> | <code>adding</code> | <code>removing</code></p>
+    /// <p>Valid values: <code>in-sync</code> | <code>adding</code> | <code>removing</code> </p>
     pub fn set_apply_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.apply_status = input;
         self
     }
     /// <p>The status of the IAM role's association with the cluster.</p>
-    /// <p>Valid values: <code>in-sync</code> | <code>adding</code> | <code>removing</code></p>
+    /// <p>Valid values: <code>in-sync</code> | <code>adding</code> | <code>removing</code> </p>
     pub fn get_apply_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.apply_status
     }

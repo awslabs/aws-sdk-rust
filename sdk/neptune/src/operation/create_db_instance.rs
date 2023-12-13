@@ -245,19 +245,19 @@ pub enum CreateDBInstanceError {
     /// <p>Specified CIDRIP or EC2 security group is not authorized for the specified DB security group.</p>
     /// <p>Neptune may not also be authorized via IAM to perform necessary actions on your behalf.</p>
     AuthorizationNotFoundFault(crate::types::error::AuthorizationNotFoundFault),
-    /// <p><i>DBClusterIdentifier</i> does not refer to an existing DB cluster.</p>
+    /// <p> <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.</p>
     DbClusterNotFoundFault(crate::types::error::DbClusterNotFoundFault),
     /// <p>User already has a DB instance with the given identifier.</p>
     DbInstanceAlreadyExistsFault(crate::types::error::DbInstanceAlreadyExistsFault),
-    /// <p><i>DBParameterGroupName</i> does not refer to an existing DB parameter group.</p>
+    /// <p> <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.</p>
     DbParameterGroupNotFoundFault(crate::types::error::DbParameterGroupNotFoundFault),
-    /// <p><i>DBSecurityGroupName</i> does not refer to an existing DB security group.</p>
+    /// <p> <i>DBSecurityGroupName</i> does not refer to an existing DB security group.</p>
     DbSecurityGroupNotFoundFault(crate::types::error::DbSecurityGroupNotFoundFault),
     /// <p>Subnets in the DB subnet group should cover at least two Availability Zones unless there is only one Availability Zone.</p>
     DbSubnetGroupDoesNotCoverEnoughAZs(crate::types::error::DbSubnetGroupDoesNotCoverEnoughAZs),
-    /// <p><i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.</p>
+    /// <p> <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.</p>
     DbSubnetGroupNotFoundFault(crate::types::error::DbSubnetGroupNotFoundFault),
-    /// <p><i>Domain</i> does not refer to an existing Active Directory Domain.</p>
+    /// <p> <i>Domain</i> does not refer to an existing Active Directory Domain.</p>
     DomainNotFoundFault(crate::types::error::DomainNotFoundFault),
     /// <p>Request would result in user exceeding the allowed number of DB instances.</p>
     InstanceQuotaExceededFault(crate::types::error::InstanceQuotaExceededFault),
@@ -277,7 +277,7 @@ pub enum CreateDBInstanceError {
     ProvisionedIopsNotAvailableInAzFault(crate::types::error::ProvisionedIopsNotAvailableInAzFault),
     /// <p>Request would result in user exceeding the allowed amount of storage available across all DB instances.</p>
     StorageQuotaExceededFault(crate::types::error::StorageQuotaExceededFault),
-    /// <p><i>StorageType</i> specified cannot be associated with the DB Instance.</p>
+    /// <p> <i>StorageType</i> specified cannot be associated with the DB Instance.</p>
     StorageTypeNotSupportedFault(crate::types::error::StorageTypeNotSupportedFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

@@ -22,7 +22,7 @@ impl CreateLocationFsxOpenZfsInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateLocationFsxOpenZfs`.
 ///
-/// <p>Creates an endpoint for an Amazon FSx for OpenZFS file system that DataSync can access for a transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-openzfs-location.html">Creating a location for FSx for OpenZFS</a>.</p><note>
+/// <p>Creates an endpoint for an Amazon FSx for OpenZFS file system that DataSync can access for a transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-openzfs-location.html">Creating a location for FSx for OpenZFS</a>.</p> <note>
 /// <p>Request parameters related to <code>SMB</code> aren't supported with the <code>CreateLocationFsxOpenZfs</code> operation.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

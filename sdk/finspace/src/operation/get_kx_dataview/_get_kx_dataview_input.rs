@@ -5,7 +5,7 @@
 pub struct GetKxDataviewInput {
     /// <p>A unique identifier for the kdb environment, from where you want to retrieve the dataview details.</p>
     pub environment_id: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the database where you created the dataview.</p>
+    /// <p> The name of the database where you created the dataview.</p>
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the dataview.</p>
     pub dataview_name: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ impl GetKxDataviewInput {
     pub fn environment_id(&self) -> ::std::option::Option<&str> {
         self.environment_id.as_deref()
     }
-    /// <p>The name of the database where you created the dataview.</p>
+    /// <p> The name of the database where you created the dataview.</p>
     pub fn database_name(&self) -> ::std::option::Option<&str> {
         self.database_name.as_deref()
     }
@@ -55,18 +55,18 @@ impl GetKxDataviewInputBuilder {
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.environment_id
     }
-    /// <p>The name of the database where you created the dataview.</p>
+    /// <p> The name of the database where you created the dataview.</p>
     /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the database where you created the dataview.</p>
+    /// <p> The name of the database where you created the dataview.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
-    /// <p>The name of the database where you created the dataview.</p>
+    /// <p> The name of the database where you created the dataview.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.database_name
     }

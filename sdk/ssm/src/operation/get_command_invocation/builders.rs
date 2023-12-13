@@ -23,7 +23,7 @@ impl GetCommandInvocationInputBuilder {
 /// Fluent builder constructing a request to `GetCommandInvocation`.
 ///
 /// <p>Returns detailed information about command execution for an invocation or plugin.</p>
-/// <p><code>GetCommandInvocation</code> only gives the execution status of a plugin in a document. To get the command execution status on a specific managed node, use <code>ListCommandInvocations</code>. To get the command execution status across managed nodes, use <code>ListCommands</code>.</p>
+/// <p> <code>GetCommandInvocation</code> only gives the execution status of a plugin in a document. To get the command execution status on a specific managed node, use <code>ListCommandInvocations</code>. To get the command execution status across managed nodes, use <code>ListCommands</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetCommandInvocationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

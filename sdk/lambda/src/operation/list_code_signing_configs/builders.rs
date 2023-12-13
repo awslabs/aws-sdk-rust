@@ -22,7 +22,7 @@ impl ListCodeSigningConfigsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListCodeSigningConfigs`.
 ///
-/// <p>Returns a list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuring-codesigning.html">code signing configurations</a>. A request returns up to 10,000 configurations per call. You can use the <code>MaxItems</code> parameter to return fewer configurations per call.</p>
+/// <p>Returns a list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuring-codesigning.html">code signing configurations</a>. A request returns up to 10,000 configurations per call. You can use the <code>MaxItems</code> parameter to return fewer configurations per call. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListCodeSigningConfigsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

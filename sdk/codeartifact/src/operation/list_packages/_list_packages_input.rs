@@ -3,32 +3,28 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPackagesInput {
-    /// <p>The name of the domain that contains the repository that contains the requested packages.</p>
+    /// <p> The name of the domain that contains the repository that contains the requested packages. </p>
     pub domain: ::std::option::Option<::std::string::String>,
-    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub domain_owner: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the repository that contains the requested packages.</p>
+    /// <p> The name of the repository that contains the requested packages. </p>
     pub repository: ::std::option::Option<::std::string::String>,
     /// <p>The format used to filter requested packages. Only packages from the provided format will be returned.</p>
     pub format: ::std::option::Option<crate::types::PackageFormat>,
     /// <p>The namespace prefix used to filter requested packages. Only packages with a namespace that starts with the provided string value are returned. Note that although this option is called <code>--namespace</code> and not <code>--namespace-prefix</code>, it has prefix-matching behavior.</p>
     /// <p>Each package format uses namespace as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>The namespace of a Maven package is its <code>groupId</code>.</p></li>
-    /// <li>
-    /// <p>The namespace of an npm package is its <code>scope</code>.</p></li>
-    /// <li>
-    /// <p>Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace.</p></li>
-    /// <li>
-    /// <p>The namespace of a generic package is its <code>namespace</code>.</p></li>
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
+    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
     /// </ul>
     pub namespace: ::std::option::Option<::std::string::String>,
-    /// <p>A prefix used to filter requested packages. Only packages with names that start with <code>packagePrefix</code> are returned.</p>
+    /// <p> A prefix used to filter requested packages. Only packages with names that start with <code>packagePrefix</code> are returned. </p>
     pub package_prefix: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum number of results to return per page.</p>
+    /// <p> The maximum number of results to return per page. </p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The value of the <code>Publish</code> package origin control restriction used to filter requested packages. Only packages with the provided restriction are returned. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a>.</p>
     pub publish: ::std::option::Option<crate::types::AllowPublish>,
@@ -36,15 +32,15 @@ pub struct ListPackagesInput {
     pub upstream: ::std::option::Option<crate::types::AllowUpstream>,
 }
 impl ListPackagesInput {
-    /// <p>The name of the domain that contains the repository that contains the requested packages.</p>
+    /// <p> The name of the domain that contains the repository that contains the requested packages. </p>
     pub fn domain(&self) -> ::std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(&self) -> ::std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
-    /// <p>The name of the repository that contains the requested packages.</p>
+    /// <p> The name of the repository that contains the requested packages. </p>
     pub fn repository(&self) -> ::std::option::Option<&str> {
         self.repository.as_deref()
     }
@@ -55,27 +51,23 @@ impl ListPackagesInput {
     /// <p>The namespace prefix used to filter requested packages. Only packages with a namespace that starts with the provided string value are returned. Note that although this option is called <code>--namespace</code> and not <code>--namespace-prefix</code>, it has prefix-matching behavior.</p>
     /// <p>Each package format uses namespace as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>The namespace of a Maven package is its <code>groupId</code>.</p></li>
-    /// <li>
-    /// <p>The namespace of an npm package is its <code>scope</code>.</p></li>
-    /// <li>
-    /// <p>Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace.</p></li>
-    /// <li>
-    /// <p>The namespace of a generic package is its <code>namespace</code>.</p></li>
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
+    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
     /// </ul>
     pub fn namespace(&self) -> ::std::option::Option<&str> {
         self.namespace.as_deref()
     }
-    /// <p>A prefix used to filter requested packages. Only packages with names that start with <code>packagePrefix</code> are returned.</p>
+    /// <p> A prefix used to filter requested packages. Only packages with names that start with <code>packagePrefix</code> are returned. </p>
     pub fn package_prefix(&self) -> ::std::option::Option<&str> {
         self.package_prefix.as_deref()
     }
-    /// <p>The maximum number of results to return per page.</p>
+    /// <p> The maximum number of results to return per page. </p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -111,47 +103,47 @@ pub struct ListPackagesInputBuilder {
     pub(crate) upstream: ::std::option::Option<crate::types::AllowUpstream>,
 }
 impl ListPackagesInputBuilder {
-    /// <p>The name of the domain that contains the repository that contains the requested packages.</p>
+    /// <p> The name of the domain that contains the repository that contains the requested packages. </p>
     /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the domain that contains the repository that contains the requested packages.</p>
+    /// <p> The name of the domain that contains the repository that contains the requested packages. </p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain = input;
         self
     }
-    /// <p>The name of the domain that contains the repository that contains the requested packages.</p>
+    /// <p> The name of the domain that contains the repository that contains the requested packages. </p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain
     }
-    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_owner = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn set_domain_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_owner = input;
         self
     }
-    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn get_domain_owner(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_owner
     }
-    /// <p>The name of the repository that contains the requested packages.</p>
+    /// <p> The name of the repository that contains the requested packages. </p>
     /// This field is required.
     pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the repository that contains the requested packages.</p>
+    /// <p> The name of the repository that contains the requested packages. </p>
     pub fn set_repository(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository = input;
         self
     }
-    /// <p>The name of the repository that contains the requested packages.</p>
+    /// <p> The name of the repository that contains the requested packages. </p>
     pub fn get_repository(&self) -> &::std::option::Option<::std::string::String> {
         &self.repository
     }
@@ -172,14 +164,10 @@ impl ListPackagesInputBuilder {
     /// <p>The namespace prefix used to filter requested packages. Only packages with a namespace that starts with the provided string value are returned. Note that although this option is called <code>--namespace</code> and not <code>--namespace-prefix</code>, it has prefix-matching behavior.</p>
     /// <p>Each package format uses namespace as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>The namespace of a Maven package is its <code>groupId</code>.</p></li>
-    /// <li>
-    /// <p>The namespace of an npm package is its <code>scope</code>.</p></li>
-    /// <li>
-    /// <p>Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace.</p></li>
-    /// <li>
-    /// <p>The namespace of a generic package is its <code>namespace</code>.</p></li>
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
+    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
     /// </ul>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
@@ -188,14 +176,10 @@ impl ListPackagesInputBuilder {
     /// <p>The namespace prefix used to filter requested packages. Only packages with a namespace that starts with the provided string value are returned. Note that although this option is called <code>--namespace</code> and not <code>--namespace-prefix</code>, it has prefix-matching behavior.</p>
     /// <p>Each package format uses namespace as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>The namespace of a Maven package is its <code>groupId</code>.</p></li>
-    /// <li>
-    /// <p>The namespace of an npm package is its <code>scope</code>.</p></li>
-    /// <li>
-    /// <p>Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace.</p></li>
-    /// <li>
-    /// <p>The namespace of a generic package is its <code>namespace</code>.</p></li>
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
+    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
     /// </ul>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace = input;
@@ -204,57 +188,53 @@ impl ListPackagesInputBuilder {
     /// <p>The namespace prefix used to filter requested packages. Only packages with a namespace that starts with the provided string value are returned. Note that although this option is called <code>--namespace</code> and not <code>--namespace-prefix</code>, it has prefix-matching behavior.</p>
     /// <p>Each package format uses namespace as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>The namespace of a Maven package is its <code>groupId</code>.</p></li>
-    /// <li>
-    /// <p>The namespace of an npm package is its <code>scope</code>.</p></li>
-    /// <li>
-    /// <p>Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace.</p></li>
-    /// <li>
-    /// <p>The namespace of a generic package is its <code>namespace</code>.</p></li>
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
+    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
     /// </ul>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         &self.namespace
     }
-    /// <p>A prefix used to filter requested packages. Only packages with names that start with <code>packagePrefix</code> are returned.</p>
+    /// <p> A prefix used to filter requested packages. Only packages with names that start with <code>packagePrefix</code> are returned. </p>
     pub fn package_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_prefix = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A prefix used to filter requested packages. Only packages with names that start with <code>packagePrefix</code> are returned.</p>
+    /// <p> A prefix used to filter requested packages. Only packages with names that start with <code>packagePrefix</code> are returned. </p>
     pub fn set_package_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.package_prefix = input;
         self
     }
-    /// <p>A prefix used to filter requested packages. Only packages with names that start with <code>packagePrefix</code> are returned.</p>
+    /// <p> A prefix used to filter requested packages. Only packages with names that start with <code>packagePrefix</code> are returned. </p>
     pub fn get_package_prefix(&self) -> &::std::option::Option<::std::string::String> {
         &self.package_prefix
     }
-    /// <p>The maximum number of results to return per page.</p>
+    /// <p> The maximum number of results to return per page. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of results to return per page.</p>
+    /// <p> The maximum number of results to return per page. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of results to return per page.</p>
+    /// <p> The maximum number of results to return per page. </p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

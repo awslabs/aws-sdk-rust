@@ -10,12 +10,9 @@ pub struct UnprocessedPreparedStatementName {
     pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>The error message containing the reason why the prepared statement could not be returned. The following error messages are possible:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>INVALID_INPUT</code> - The name of the prepared statement that was provided is not valid (for example, the name is too long).</p></li>
-    /// <li>
-    /// <p><code>STATEMENT_NOT_FOUND</code> - A prepared statement with the name provided could not be found.</p></li>
-    /// <li>
-    /// <p><code>UNAUTHORIZED</code> - The requester does not have permission to access the workgroup that contains the prepared statement.</p></li>
+    /// <li> <p> <code>INVALID_INPUT</code> - The name of the prepared statement that was provided is not valid (for example, the name is too long).</p> </li>
+    /// <li> <p> <code>STATEMENT_NOT_FOUND</code> - A prepared statement with the name provided could not be found.</p> </li>
+    /// <li> <p> <code>UNAUTHORIZED</code> - The requester does not have permission to access the workgroup that contains the prepared statement.</p> </li>
     /// </ul>
     pub error_message: ::std::option::Option<::std::string::String>,
 }
@@ -30,12 +27,9 @@ impl UnprocessedPreparedStatementName {
     }
     /// <p>The error message containing the reason why the prepared statement could not be returned. The following error messages are possible:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>INVALID_INPUT</code> - The name of the prepared statement that was provided is not valid (for example, the name is too long).</p></li>
-    /// <li>
-    /// <p><code>STATEMENT_NOT_FOUND</code> - A prepared statement with the name provided could not be found.</p></li>
-    /// <li>
-    /// <p><code>UNAUTHORIZED</code> - The requester does not have permission to access the workgroup that contains the prepared statement.</p></li>
+    /// <li> <p> <code>INVALID_INPUT</code> - The name of the prepared statement that was provided is not valid (for example, the name is too long).</p> </li>
+    /// <li> <p> <code>STATEMENT_NOT_FOUND</code> - A prepared statement with the name provided could not be found.</p> </li>
+    /// <li> <p> <code>UNAUTHORIZED</code> - The requester does not have permission to access the workgroup that contains the prepared statement.</p> </li>
     /// </ul>
     pub fn error_message(&self) -> ::std::option::Option<&str> {
         self.error_message.as_deref()
@@ -87,12 +81,9 @@ impl UnprocessedPreparedStatementNameBuilder {
     }
     /// <p>The error message containing the reason why the prepared statement could not be returned. The following error messages are possible:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>INVALID_INPUT</code> - The name of the prepared statement that was provided is not valid (for example, the name is too long).</p></li>
-    /// <li>
-    /// <p><code>STATEMENT_NOT_FOUND</code> - A prepared statement with the name provided could not be found.</p></li>
-    /// <li>
-    /// <p><code>UNAUTHORIZED</code> - The requester does not have permission to access the workgroup that contains the prepared statement.</p></li>
+    /// <li> <p> <code>INVALID_INPUT</code> - The name of the prepared statement that was provided is not valid (for example, the name is too long).</p> </li>
+    /// <li> <p> <code>STATEMENT_NOT_FOUND</code> - A prepared statement with the name provided could not be found.</p> </li>
+    /// <li> <p> <code>UNAUTHORIZED</code> - The requester does not have permission to access the workgroup that contains the prepared statement.</p> </li>
     /// </ul>
     pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
@@ -100,12 +91,9 @@ impl UnprocessedPreparedStatementNameBuilder {
     }
     /// <p>The error message containing the reason why the prepared statement could not be returned. The following error messages are possible:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>INVALID_INPUT</code> - The name of the prepared statement that was provided is not valid (for example, the name is too long).</p></li>
-    /// <li>
-    /// <p><code>STATEMENT_NOT_FOUND</code> - A prepared statement with the name provided could not be found.</p></li>
-    /// <li>
-    /// <p><code>UNAUTHORIZED</code> - The requester does not have permission to access the workgroup that contains the prepared statement.</p></li>
+    /// <li> <p> <code>INVALID_INPUT</code> - The name of the prepared statement that was provided is not valid (for example, the name is too long).</p> </li>
+    /// <li> <p> <code>STATEMENT_NOT_FOUND</code> - A prepared statement with the name provided could not be found.</p> </li>
+    /// <li> <p> <code>UNAUTHORIZED</code> - The requester does not have permission to access the workgroup that contains the prepared statement.</p> </li>
     /// </ul>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
@@ -113,12 +101,9 @@ impl UnprocessedPreparedStatementNameBuilder {
     }
     /// <p>The error message containing the reason why the prepared statement could not be returned. The following error messages are possible:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>INVALID_INPUT</code> - The name of the prepared statement that was provided is not valid (for example, the name is too long).</p></li>
-    /// <li>
-    /// <p><code>STATEMENT_NOT_FOUND</code> - A prepared statement with the name provided could not be found.</p></li>
-    /// <li>
-    /// <p><code>UNAUTHORIZED</code> - The requester does not have permission to access the workgroup that contains the prepared statement.</p></li>
+    /// <li> <p> <code>INVALID_INPUT</code> - The name of the prepared statement that was provided is not valid (for example, the name is too long).</p> </li>
+    /// <li> <p> <code>STATEMENT_NOT_FOUND</code> - A prepared statement with the name provided could not be found.</p> </li>
+    /// <li> <p> <code>UNAUTHORIZED</code> - The requester does not have permission to access the workgroup that contains the prepared statement.</p> </li>
     /// </ul>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.error_message

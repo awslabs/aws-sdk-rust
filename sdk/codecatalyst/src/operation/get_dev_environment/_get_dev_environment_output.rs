@@ -7,23 +7,23 @@ pub struct GetDevEnvironmentOutput {
     pub space_name: ::std::string::String,
     /// <p>The name of the project in the space.</p>
     pub project_name: ::std::string::String,
-    /// <p>The system-generated unique ID of the Dev Environment.</p>
+    /// <p>The system-generated unique ID of the Dev Environment. </p>
     pub id: ::std::string::String,
     /// <p>The time when the Dev Environment was last updated, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
     pub last_updated_time: ::aws_smithy_types::DateTime,
-    /// <p>The system-generated unique ID of the user who created the Dev Environment.</p>
+    /// <p>The system-generated unique ID of the user who created the Dev Environment. </p>
     pub creator_id: ::std::string::String,
     /// <p>The current status of the Dev Environment.</p>
     pub status: crate::types::DevEnvironmentStatus,
     /// <p>The reason for the status.</p>
     pub status_reason: ::std::option::Option<::std::string::String>,
-    /// <p>The source repository that contains the branch cloned into the Dev Environment.</p>
+    /// <p>The source repository that contains the branch cloned into the Dev Environment. </p>
     pub repositories: ::std::vec::Vec<crate::types::DevEnvironmentRepositorySummary>,
-    /// <p>The user-specified alias for the Dev Environment.</p>
+    /// <p>The user-specified alias for the Dev Environment. </p>
     pub alias: ::std::option::Option<::std::string::String>,
-    /// <p>Information about the integrated development environment (IDE) configured for the Dev Environment.</p>
+    /// <p>Information about the integrated development environment (IDE) configured for the Dev Environment. </p>
     pub ides: ::std::option::Option<::std::vec::Vec<crate::types::Ide>>,
-    /// <p>The Amazon EC2 instace type to use for the Dev Environment.</p>
+    /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p>
     pub instance_type: crate::types::InstanceType,
     /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes.</p>
     pub inactivity_timeout_minutes: i32,
@@ -44,7 +44,7 @@ impl GetDevEnvironmentOutput {
         use std::ops::Deref;
         self.project_name.deref()
     }
-    /// <p>The system-generated unique ID of the Dev Environment.</p>
+    /// <p>The system-generated unique ID of the Dev Environment. </p>
     pub fn id(&self) -> &str {
         use std::ops::Deref;
         self.id.deref()
@@ -53,7 +53,7 @@ impl GetDevEnvironmentOutput {
     pub fn last_updated_time(&self) -> &::aws_smithy_types::DateTime {
         &self.last_updated_time
     }
-    /// <p>The system-generated unique ID of the user who created the Dev Environment.</p>
+    /// <p>The system-generated unique ID of the user who created the Dev Environment. </p>
     pub fn creator_id(&self) -> &str {
         use std::ops::Deref;
         self.creator_id.deref()
@@ -66,22 +66,22 @@ impl GetDevEnvironmentOutput {
     pub fn status_reason(&self) -> ::std::option::Option<&str> {
         self.status_reason.as_deref()
     }
-    /// <p>The source repository that contains the branch cloned into the Dev Environment.</p>
+    /// <p>The source repository that contains the branch cloned into the Dev Environment. </p>
     pub fn repositories(&self) -> &[crate::types::DevEnvironmentRepositorySummary] {
         use std::ops::Deref;
         self.repositories.deref()
     }
-    /// <p>The user-specified alias for the Dev Environment.</p>
+    /// <p>The user-specified alias for the Dev Environment. </p>
     pub fn alias(&self) -> ::std::option::Option<&str> {
         self.alias.as_deref()
     }
-    /// <p>Information about the integrated development environment (IDE) configured for the Dev Environment.</p>
+    /// <p>Information about the integrated development environment (IDE) configured for the Dev Environment. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ides.is_none()`.
     pub fn ides(&self) -> &[crate::types::Ide] {
         self.ides.as_deref().unwrap_or_default()
     }
-    /// <p>The Amazon EC2 instace type to use for the Dev Environment.</p>
+    /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p>
     pub fn instance_type(&self) -> &crate::types::InstanceType {
         &self.instance_type
     }
@@ -161,18 +161,18 @@ impl GetDevEnvironmentOutputBuilder {
     pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.project_name
     }
-    /// <p>The system-generated unique ID of the Dev Environment.</p>
+    /// <p>The system-generated unique ID of the Dev Environment. </p>
     /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The system-generated unique ID of the Dev Environment.</p>
+    /// <p>The system-generated unique ID of the Dev Environment. </p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// <p>The system-generated unique ID of the Dev Environment.</p>
+    /// <p>The system-generated unique ID of the Dev Environment. </p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
@@ -191,18 +191,18 @@ impl GetDevEnvironmentOutputBuilder {
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_time
     }
-    /// <p>The system-generated unique ID of the user who created the Dev Environment.</p>
+    /// <p>The system-generated unique ID of the user who created the Dev Environment. </p>
     /// This field is required.
     pub fn creator_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creator_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The system-generated unique ID of the user who created the Dev Environment.</p>
+    /// <p>The system-generated unique ID of the user who created the Dev Environment. </p>
     pub fn set_creator_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creator_id = input;
         self
     }
-    /// <p>The system-generated unique ID of the user who created the Dev Environment.</p>
+    /// <p>The system-generated unique ID of the user who created the Dev Environment. </p>
     pub fn get_creator_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.creator_id
     }
@@ -239,33 +239,33 @@ impl GetDevEnvironmentOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_repositories`](Self::set_repositories).
     ///
-    /// <p>The source repository that contains the branch cloned into the Dev Environment.</p>
+    /// <p>The source repository that contains the branch cloned into the Dev Environment. </p>
     pub fn repositories(mut self, input: crate::types::DevEnvironmentRepositorySummary) -> Self {
         let mut v = self.repositories.unwrap_or_default();
         v.push(input);
         self.repositories = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The source repository that contains the branch cloned into the Dev Environment.</p>
+    /// <p>The source repository that contains the branch cloned into the Dev Environment. </p>
     pub fn set_repositories(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DevEnvironmentRepositorySummary>>) -> Self {
         self.repositories = input;
         self
     }
-    /// <p>The source repository that contains the branch cloned into the Dev Environment.</p>
+    /// <p>The source repository that contains the branch cloned into the Dev Environment. </p>
     pub fn get_repositories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DevEnvironmentRepositorySummary>> {
         &self.repositories
     }
-    /// <p>The user-specified alias for the Dev Environment.</p>
+    /// <p>The user-specified alias for the Dev Environment. </p>
     pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The user-specified alias for the Dev Environment.</p>
+    /// <p>The user-specified alias for the Dev Environment. </p>
     pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alias = input;
         self
     }
-    /// <p>The user-specified alias for the Dev Environment.</p>
+    /// <p>The user-specified alias for the Dev Environment. </p>
     pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
         &self.alias
     }
@@ -273,34 +273,34 @@ impl GetDevEnvironmentOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_ides`](Self::set_ides).
     ///
-    /// <p>Information about the integrated development environment (IDE) configured for the Dev Environment.</p>
+    /// <p>Information about the integrated development environment (IDE) configured for the Dev Environment. </p>
     pub fn ides(mut self, input: crate::types::Ide) -> Self {
         let mut v = self.ides.unwrap_or_default();
         v.push(input);
         self.ides = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Information about the integrated development environment (IDE) configured for the Dev Environment.</p>
+    /// <p>Information about the integrated development environment (IDE) configured for the Dev Environment. </p>
     pub fn set_ides(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Ide>>) -> Self {
         self.ides = input;
         self
     }
-    /// <p>Information about the integrated development environment (IDE) configured for the Dev Environment.</p>
+    /// <p>Information about the integrated development environment (IDE) configured for the Dev Environment. </p>
     pub fn get_ides(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Ide>> {
         &self.ides
     }
-    /// <p>The Amazon EC2 instace type to use for the Dev Environment.</p>
+    /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p>
     /// This field is required.
     pub fn instance_type(mut self, input: crate::types::InstanceType) -> Self {
         self.instance_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Amazon EC2 instace type to use for the Dev Environment.</p>
+    /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::InstanceType>) -> Self {
         self.instance_type = input;
         self
     }
-    /// <p>The Amazon EC2 instace type to use for the Dev Environment.</p>
+    /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p>
     pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::InstanceType> {
         &self.instance_type
     }

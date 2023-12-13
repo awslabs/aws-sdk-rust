@@ -6,8 +6,6 @@
 use aws_credential_types::provider::SharedCredentialsProvider;
 use aws_credential_types::Credentials;
 use aws_smithy_async::rt::sleep::{SharedAsyncSleep, TokioSleep};
-use aws_smithy_runtime::client::http::test_util::NeverClient;
-use aws_smithy_runtime::test_util::capture_test_logs::capture_test_logs;
 use aws_smithy_runtime_api::client::result::SdkError;
 use aws_smithy_types::timeout::TimeoutConfig;
 use aws_types::region::Region;
@@ -15,10 +13,9 @@ use aws_types::SdkConfig;
 use std::time::Duration;
 use tokio::time::Instant;
 
-/// Use a 5 second operation timeout on SdkConfig and a 0ms operation timeout on the service config
+/// Use a 5 second operation timeout on SdkConfig and a 0ms connect timeout on the service config
 #[tokio::test]
 async fn timeouts_can_be_set_by_service() {
-    let (_guard, _) = capture_test_logs();
     let sdk_config = SdkConfig::builder()
         .credentials_provider(SharedCredentialsProvider::new(Credentials::for_tests()))
         .region(Region::from_static("us-east-1"))
@@ -28,7 +25,6 @@ async fn timeouts_can_be_set_by_service() {
                 .operation_timeout(Duration::from_secs(5))
                 .build(),
         )
-        .http_client(NeverClient::new())
         // ip that
         .endpoint_url(
             // Emulate a connect timeout error by hitting an unroutable IP
@@ -38,7 +34,7 @@ async fn timeouts_can_be_set_by_service() {
     let config = aws_sdk_s3::config::Builder::from(&sdk_config)
         .timeout_config(
             TimeoutConfig::builder()
-                .operation_timeout(Duration::from_secs(0))
+                .connect_timeout(Duration::from_secs(0))
                 .build(),
         )
         .build();
@@ -52,8 +48,8 @@ async fn timeouts_can_be_set_by_service() {
         .await
         .expect_err("unroutable IP should timeout");
     match err {
-        SdkError::TimeoutError(_err) => { /* ok */ }
-        // if the connect timeout is not respected, this times out after 5 seconds because of the operation timeout with `SdkError::Timeout`
+        SdkError::DispatchFailure(err) => assert!(err.is_timeout()),
+        // if the connect timeout is not respected, this times out after 1 second because of the operation timeout with `SdkError::Timeout`
         _other => panic!("unexpected error: {:?}", _other),
     }
     // there should be a 0ms timeout, we gotta set some stuff up. Just want to make sure

@@ -13,15 +13,13 @@ pub struct EventSubscription {
     /// <p>The status of the Amazon Redshift event notification subscription.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Can be one of the following: active | no-permission | topic-not-exist</p></li>
-    /// <li>
-    /// <p>The status "no-permission" indicates that Amazon Redshift no longer has permission to post to the Amazon SNS topic. The status "topic-not-exist" indicates that the topic was deleted after the subscription was created.</p></li>
+    /// <li> <p>Can be one of the following: active | no-permission | topic-not-exist</p> </li>
+    /// <li> <p>The status "no-permission" indicates that Amazon Redshift no longer has permission to post to the Amazon SNS topic. The status "topic-not-exist" indicates that the topic was deleted after the subscription was created.</p> </li>
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the Amazon Redshift event notification subscription was created.</p>
     pub subscription_creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The source type of the events returned by the Amazon Redshift event notification, such as cluster, cluster-snapshot, cluster-parameter-group, cluster-security-group, or scheduled-action.</p>
+    /// <p>The source type of the events returned by the Amazon Redshift event notification, such as cluster, cluster-snapshot, cluster-parameter-group, cluster-security-group, or scheduled-action. </p>
     pub source_type: ::std::option::Option<::std::string::String>,
     /// <p>A list of the sources that publish events to the Amazon Redshift event notification subscription.</p>
     pub source_ids_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -52,10 +50,8 @@ impl EventSubscription {
     /// <p>The status of the Amazon Redshift event notification subscription.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Can be one of the following: active | no-permission | topic-not-exist</p></li>
-    /// <li>
-    /// <p>The status "no-permission" indicates that Amazon Redshift no longer has permission to post to the Amazon SNS topic. The status "topic-not-exist" indicates that the topic was deleted after the subscription was created.</p></li>
+    /// <li> <p>Can be one of the following: active | no-permission | topic-not-exist</p> </li>
+    /// <li> <p>The status "no-permission" indicates that Amazon Redshift no longer has permission to post to the Amazon SNS topic. The status "topic-not-exist" indicates that the topic was deleted after the subscription was created.</p> </li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
@@ -64,7 +60,7 @@ impl EventSubscription {
     pub fn subscription_creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.subscription_creation_time.as_ref()
     }
-    /// <p>The source type of the events returned by the Amazon Redshift event notification, such as cluster, cluster-snapshot, cluster-parameter-group, cluster-security-group, or scheduled-action.</p>
+    /// <p>The source type of the events returned by the Amazon Redshift event notification, such as cluster, cluster-snapshot, cluster-parameter-group, cluster-security-group, or scheduled-action. </p>
     pub fn source_type(&self) -> ::std::option::Option<&str> {
         self.source_type.as_deref()
     }
@@ -166,10 +162,8 @@ impl EventSubscriptionBuilder {
     /// <p>The status of the Amazon Redshift event notification subscription.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Can be one of the following: active | no-permission | topic-not-exist</p></li>
-    /// <li>
-    /// <p>The status "no-permission" indicates that Amazon Redshift no longer has permission to post to the Amazon SNS topic. The status "topic-not-exist" indicates that the topic was deleted after the subscription was created.</p></li>
+    /// <li> <p>Can be one of the following: active | no-permission | topic-not-exist</p> </li>
+    /// <li> <p>The status "no-permission" indicates that Amazon Redshift no longer has permission to post to the Amazon SNS topic. The status "topic-not-exist" indicates that the topic was deleted after the subscription was created.</p> </li>
     /// </ul>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -178,10 +172,8 @@ impl EventSubscriptionBuilder {
     /// <p>The status of the Amazon Redshift event notification subscription.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Can be one of the following: active | no-permission | topic-not-exist</p></li>
-    /// <li>
-    /// <p>The status "no-permission" indicates that Amazon Redshift no longer has permission to post to the Amazon SNS topic. The status "topic-not-exist" indicates that the topic was deleted after the subscription was created.</p></li>
+    /// <li> <p>Can be one of the following: active | no-permission | topic-not-exist</p> </li>
+    /// <li> <p>The status "no-permission" indicates that Amazon Redshift no longer has permission to post to the Amazon SNS topic. The status "topic-not-exist" indicates that the topic was deleted after the subscription was created.</p> </li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
@@ -190,10 +182,8 @@ impl EventSubscriptionBuilder {
     /// <p>The status of the Amazon Redshift event notification subscription.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Can be one of the following: active | no-permission | topic-not-exist</p></li>
-    /// <li>
-    /// <p>The status "no-permission" indicates that Amazon Redshift no longer has permission to post to the Amazon SNS topic. The status "topic-not-exist" indicates that the topic was deleted after the subscription was created.</p></li>
+    /// <li> <p>Can be one of the following: active | no-permission | topic-not-exist</p> </li>
+    /// <li> <p>The status "no-permission" indicates that Amazon Redshift no longer has permission to post to the Amazon SNS topic. The status "topic-not-exist" indicates that the topic was deleted after the subscription was created.</p> </li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status
@@ -212,17 +202,17 @@ impl EventSubscriptionBuilder {
     pub fn get_subscription_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.subscription_creation_time
     }
-    /// <p>The source type of the events returned by the Amazon Redshift event notification, such as cluster, cluster-snapshot, cluster-parameter-group, cluster-security-group, or scheduled-action.</p>
+    /// <p>The source type of the events returned by the Amazon Redshift event notification, such as cluster, cluster-snapshot, cluster-parameter-group, cluster-security-group, or scheduled-action. </p>
     pub fn source_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The source type of the events returned by the Amazon Redshift event notification, such as cluster, cluster-snapshot, cluster-parameter-group, cluster-security-group, or scheduled-action.</p>
+    /// <p>The source type of the events returned by the Amazon Redshift event notification, such as cluster, cluster-snapshot, cluster-parameter-group, cluster-security-group, or scheduled-action. </p>
     pub fn set_source_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_type = input;
         self
     }
-    /// <p>The source type of the events returned by the Amazon Redshift event notification, such as cluster, cluster-snapshot, cluster-parameter-group, cluster-security-group, or scheduled-action.</p>
+    /// <p>The source type of the events returned by the Amazon Redshift event notification, such as cluster, cluster-snapshot, cluster-parameter-group, cluster-security-group, or scheduled-action. </p>
     pub fn get_source_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_type
     }

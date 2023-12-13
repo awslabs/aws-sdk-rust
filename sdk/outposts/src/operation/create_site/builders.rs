@@ -22,7 +22,7 @@ impl CreateSiteInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateSite`.
 ///
-/// <p>Creates a site for an Outpost.</p>
+/// <p> Creates a site for an Outpost. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateSiteFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -136,17 +136,17 @@ impl CreateSiteFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p>Additional information that you provide about site access requirements, electrician scheduling, personal protective equipment, or regulation of equipment materials that could affect your installation process.</p>
+    /// <p>Additional information that you provide about site access requirements, electrician scheduling, personal protective equipment, or regulation of equipment materials that could affect your installation process. </p>
     pub fn notes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.notes(input.into());
         self
     }
-    /// <p>Additional information that you provide about site access requirements, electrician scheduling, personal protective equipment, or regulation of equipment materials that could affect your installation process.</p>
+    /// <p>Additional information that you provide about site access requirements, electrician scheduling, personal protective equipment, or regulation of equipment materials that could affect your installation process. </p>
     pub fn set_notes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_notes(input);
         self
     }
-    /// <p>Additional information that you provide about site access requirements, electrician scheduling, personal protective equipment, or regulation of equipment materials that could affect your installation process.</p>
+    /// <p>Additional information that you provide about site access requirements, electrician scheduling, personal protective equipment, or regulation of equipment materials that could affect your installation process. </p>
     pub fn get_notes(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_notes()
     }
@@ -154,59 +154,59 @@ impl CreateSiteFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The tags to apply to a site.</p>
+    /// <p> The tags to apply to a site. </p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
-    /// <p>The tags to apply to a site.</p>
+    /// <p> The tags to apply to a site. </p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>The tags to apply to a site.</p>
+    /// <p> The tags to apply to a site. </p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
-    /// <p>The location to install and power on the hardware. This address might be different from the shipping address.</p>
+    /// <p> The location to install and power on the hardware. This address might be different from the shipping address. </p>
     pub fn operating_address(mut self, input: crate::types::Address) -> Self {
         self.inner = self.inner.operating_address(input);
         self
     }
-    /// <p>The location to install and power on the hardware. This address might be different from the shipping address.</p>
+    /// <p> The location to install and power on the hardware. This address might be different from the shipping address. </p>
     pub fn set_operating_address(mut self, input: ::std::option::Option<crate::types::Address>) -> Self {
         self.inner = self.inner.set_operating_address(input);
         self
     }
-    /// <p>The location to install and power on the hardware. This address might be different from the shipping address.</p>
+    /// <p> The location to install and power on the hardware. This address might be different from the shipping address. </p>
     pub fn get_operating_address(&self) -> &::std::option::Option<crate::types::Address> {
         self.inner.get_operating_address()
     }
-    /// <p>The location to ship the hardware. This address might be different from the operating address.</p>
+    /// <p> The location to ship the hardware. This address might be different from the operating address. </p>
     pub fn shipping_address(mut self, input: crate::types::Address) -> Self {
         self.inner = self.inner.shipping_address(input);
         self
     }
-    /// <p>The location to ship the hardware. This address might be different from the operating address.</p>
+    /// <p> The location to ship the hardware. This address might be different from the operating address. </p>
     pub fn set_shipping_address(mut self, input: ::std::option::Option<crate::types::Address>) -> Self {
         self.inner = self.inner.set_shipping_address(input);
         self
     }
-    /// <p>The location to ship the hardware. This address might be different from the operating address.</p>
+    /// <p> The location to ship the hardware. This address might be different from the operating address. </p>
     pub fn get_shipping_address(&self) -> &::std::option::Option<crate::types::Address> {
         self.inner.get_shipping_address()
     }
-    /// <p>Information about the physical and logistical details for the rack at this site. For more information about hardware requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#checklist">Network readiness checklist</a> in the Amazon Web Services Outposts User Guide.</p>
+    /// <p> Information about the physical and logistical details for the rack at this site. For more information about hardware requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#checklist">Network readiness checklist</a> in the Amazon Web Services Outposts User Guide. </p>
     pub fn rack_physical_properties(mut self, input: crate::types::RackPhysicalProperties) -> Self {
         self.inner = self.inner.rack_physical_properties(input);
         self
     }
-    /// <p>Information about the physical and logistical details for the rack at this site. For more information about hardware requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#checklist">Network readiness checklist</a> in the Amazon Web Services Outposts User Guide.</p>
+    /// <p> Information about the physical and logistical details for the rack at this site. For more information about hardware requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#checklist">Network readiness checklist</a> in the Amazon Web Services Outposts User Guide. </p>
     pub fn set_rack_physical_properties(mut self, input: ::std::option::Option<crate::types::RackPhysicalProperties>) -> Self {
         self.inner = self.inner.set_rack_physical_properties(input);
         self
     }
-    /// <p>Information about the physical and logistical details for the rack at this site. For more information about hardware requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#checklist">Network readiness checklist</a> in the Amazon Web Services Outposts User Guide.</p>
+    /// <p> Information about the physical and logistical details for the rack at this site. For more information about hardware requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#checklist">Network readiness checklist</a> in the Amazon Web Services Outposts User Guide. </p>
     pub fn get_rack_physical_properties(&self) -> &::std::option::Option<crate::types::RackPhysicalProperties> {
         self.inner.get_rack_physical_properties()
     }

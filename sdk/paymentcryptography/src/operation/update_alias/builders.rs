@@ -23,17 +23,13 @@ impl UpdateAliasInputBuilder {
 /// Fluent builder constructing a request to `UpdateAlias`.
 ///
 /// <p>Associates an existing Amazon Web Services Payment Cryptography alias with a different key. Each alias is associated with only one Amazon Web Services Payment Cryptography key at a time, although a key can have multiple aliases. The alias and the Amazon Web Services Payment Cryptography key must be in the same Amazon Web Services account and Amazon Web Services Region</p>
-/// <p><b>Cross-account use:</b> This operation can't be used across different Amazon Web Services accounts.</p>
-/// <p><b>Related operations:</b></p>
+/// <p> <b>Cross-account use:</b> This operation can't be used across different Amazon Web Services accounts.</p>
+/// <p> <b>Related operations:</b> </p>
 /// <ul>
-/// <li>
-/// <p><code>CreateAlias</code></p></li>
-/// <li>
-/// <p><code>DeleteAlias</code></p></li>
-/// <li>
-/// <p><code>GetAlias</code></p></li>
-/// <li>
-/// <p><code>ListAliases</code></p></li>
+/// <li> <p> <code>CreateAlias</code> </p> </li>
+/// <li> <p> <code>DeleteAlias</code> </p> </li>
+/// <li> <p> <code>GetAlias</code> </p> </li>
+/// <li> <p> <code>ListAliases</code> </p> </li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAliasFluentBuilder {

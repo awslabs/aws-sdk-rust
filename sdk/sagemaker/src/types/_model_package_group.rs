@@ -16,18 +16,12 @@ pub struct ModelPackageGroup {
     pub created_by: ::std::option::Option<crate::types::UserContext>,
     /// <p>The status of the model group. This can be one of the following values.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PENDING</code> - The model group is pending being created.</p></li>
-    /// <li>
-    /// <p><code>IN_PROGRESS</code> - The model group is in the process of being created.</p></li>
-    /// <li>
-    /// <p><code>COMPLETED</code> - The model group was successfully created.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - The model group failed.</p></li>
-    /// <li>
-    /// <p><code>DELETING</code> - The model group is in the process of being deleted.</p></li>
-    /// <li>
-    /// <p><code>DELETE_FAILED</code> - SageMaker failed to delete the model group.</p></li>
+    /// <li> <p> <code>PENDING</code> - The model group is pending being created.</p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code> - The model group is in the process of being created.</p> </li>
+    /// <li> <p> <code>COMPLETED</code> - The model group was successfully created.</p> </li>
+    /// <li> <p> <code>FAILED</code> - The model group failed.</p> </li>
+    /// <li> <p> <code>DELETING</code> - The model group is in the process of being deleted.</p> </li>
+    /// <li> <p> <code>DELETE_FAILED</code> - SageMaker failed to delete the model group.</p> </li>
     /// </ul>
     pub model_package_group_status: ::std::option::Option<crate::types::ModelPackageGroupStatus>,
     /// <p>A list of the tags associated with the model group. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
@@ -56,18 +50,12 @@ impl ModelPackageGroup {
     }
     /// <p>The status of the model group. This can be one of the following values.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PENDING</code> - The model group is pending being created.</p></li>
-    /// <li>
-    /// <p><code>IN_PROGRESS</code> - The model group is in the process of being created.</p></li>
-    /// <li>
-    /// <p><code>COMPLETED</code> - The model group was successfully created.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - The model group failed.</p></li>
-    /// <li>
-    /// <p><code>DELETING</code> - The model group is in the process of being deleted.</p></li>
-    /// <li>
-    /// <p><code>DELETE_FAILED</code> - SageMaker failed to delete the model group.</p></li>
+    /// <li> <p> <code>PENDING</code> - The model group is pending being created.</p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code> - The model group is in the process of being created.</p> </li>
+    /// <li> <p> <code>COMPLETED</code> - The model group was successfully created.</p> </li>
+    /// <li> <p> <code>FAILED</code> - The model group failed.</p> </li>
+    /// <li> <p> <code>DELETING</code> - The model group is in the process of being deleted.</p> </li>
+    /// <li> <p> <code>DELETE_FAILED</code> - SageMaker failed to delete the model group.</p> </li>
     /// </ul>
     pub fn model_package_group_status(&self) -> ::std::option::Option<&crate::types::ModelPackageGroupStatus> {
         self.model_package_group_status.as_ref()
@@ -171,18 +159,12 @@ impl ModelPackageGroupBuilder {
     }
     /// <p>The status of the model group. This can be one of the following values.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PENDING</code> - The model group is pending being created.</p></li>
-    /// <li>
-    /// <p><code>IN_PROGRESS</code> - The model group is in the process of being created.</p></li>
-    /// <li>
-    /// <p><code>COMPLETED</code> - The model group was successfully created.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - The model group failed.</p></li>
-    /// <li>
-    /// <p><code>DELETING</code> - The model group is in the process of being deleted.</p></li>
-    /// <li>
-    /// <p><code>DELETE_FAILED</code> - SageMaker failed to delete the model group.</p></li>
+    /// <li> <p> <code>PENDING</code> - The model group is pending being created.</p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code> - The model group is in the process of being created.</p> </li>
+    /// <li> <p> <code>COMPLETED</code> - The model group was successfully created.</p> </li>
+    /// <li> <p> <code>FAILED</code> - The model group failed.</p> </li>
+    /// <li> <p> <code>DELETING</code> - The model group is in the process of being deleted.</p> </li>
+    /// <li> <p> <code>DELETE_FAILED</code> - SageMaker failed to delete the model group.</p> </li>
     /// </ul>
     pub fn model_package_group_status(mut self, input: crate::types::ModelPackageGroupStatus) -> Self {
         self.model_package_group_status = ::std::option::Option::Some(input);
@@ -190,18 +172,12 @@ impl ModelPackageGroupBuilder {
     }
     /// <p>The status of the model group. This can be one of the following values.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PENDING</code> - The model group is pending being created.</p></li>
-    /// <li>
-    /// <p><code>IN_PROGRESS</code> - The model group is in the process of being created.</p></li>
-    /// <li>
-    /// <p><code>COMPLETED</code> - The model group was successfully created.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - The model group failed.</p></li>
-    /// <li>
-    /// <p><code>DELETING</code> - The model group is in the process of being deleted.</p></li>
-    /// <li>
-    /// <p><code>DELETE_FAILED</code> - SageMaker failed to delete the model group.</p></li>
+    /// <li> <p> <code>PENDING</code> - The model group is pending being created.</p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code> - The model group is in the process of being created.</p> </li>
+    /// <li> <p> <code>COMPLETED</code> - The model group was successfully created.</p> </li>
+    /// <li> <p> <code>FAILED</code> - The model group failed.</p> </li>
+    /// <li> <p> <code>DELETING</code> - The model group is in the process of being deleted.</p> </li>
+    /// <li> <p> <code>DELETE_FAILED</code> - SageMaker failed to delete the model group.</p> </li>
     /// </ul>
     pub fn set_model_package_group_status(mut self, input: ::std::option::Option<crate::types::ModelPackageGroupStatus>) -> Self {
         self.model_package_group_status = input;
@@ -209,18 +185,12 @@ impl ModelPackageGroupBuilder {
     }
     /// <p>The status of the model group. This can be one of the following values.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PENDING</code> - The model group is pending being created.</p></li>
-    /// <li>
-    /// <p><code>IN_PROGRESS</code> - The model group is in the process of being created.</p></li>
-    /// <li>
-    /// <p><code>COMPLETED</code> - The model group was successfully created.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - The model group failed.</p></li>
-    /// <li>
-    /// <p><code>DELETING</code> - The model group is in the process of being deleted.</p></li>
-    /// <li>
-    /// <p><code>DELETE_FAILED</code> - SageMaker failed to delete the model group.</p></li>
+    /// <li> <p> <code>PENDING</code> - The model group is pending being created.</p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code> - The model group is in the process of being created.</p> </li>
+    /// <li> <p> <code>COMPLETED</code> - The model group was successfully created.</p> </li>
+    /// <li> <p> <code>FAILED</code> - The model group failed.</p> </li>
+    /// <li> <p> <code>DELETING</code> - The model group is in the process of being deleted.</p> </li>
+    /// <li> <p> <code>DELETE_FAILED</code> - SageMaker failed to delete the model group.</p> </li>
     /// </ul>
     pub fn get_model_package_group_status(&self) -> &::std::option::Option<crate::types::ModelPackageGroupStatus> {
         &self.model_package_group_status

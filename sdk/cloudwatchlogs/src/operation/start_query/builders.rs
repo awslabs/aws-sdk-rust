@@ -24,11 +24,11 @@ impl StartQueryInputBuilder {
 ///
 /// <p>Schedules a query of a log group using CloudWatch Logs Insights. You specify the log group and time range to query and the query string to use.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>
-/// <p>After you run a query using <code>StartQuery</code>, the query results are stored by CloudWatch Logs. You can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetQueryResults.html">GetQueryResults</a> to retrieve the results of a query, using the <code>queryId</code> that <code>StartQuery</code> returns.</p>
+/// <p>After you run a query using <code>StartQuery</code>, the query results are stored by CloudWatch Logs. You can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetQueryResults.html">GetQueryResults</a> to retrieve the results of a query, using the <code>queryId</code> that <code>StartQuery</code> returns. </p>
 /// <p>If you have associated a KMS key with the query results in this account, then <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a> uses that key to encrypt the results when it stores them. If no key is associated with query results, the query results are encrypted with the default CloudWatch Logs encryption method.</p>
 /// <p>Queries time out after 60 minutes of runtime. If your queries are timing out, reduce the time range being searched or partition your query into a number of queries.</p>
 /// <p>If you are using CloudWatch cross-account observability, you can use this operation in a monitoring account to start a query in a linked source account. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch cross-account observability</a>. For a cross-account <code>StartQuery</code> operation, the query definition must be defined in the monitoring account.</p>
-/// <p>You can have up to 30 concurrent CloudWatch Logs insights queries, including queries that have been added to dashboards.</p>
+/// <p>You can have up to 30 concurrent CloudWatch Logs insights queries, including queries that have been added to dashboards. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartQueryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,22 +114,22 @@ impl StartQueryFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The log group on which to perform the query.</p><note>
-    /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>.</p>
+    /// <p>The log group on which to perform the query.</p> <note>
+    /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>. </p>
     /// </note>
     pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.log_group_name(input.into());
         self
     }
-    /// <p>The log group on which to perform the query.</p><note>
-    /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>.</p>
+    /// <p>The log group on which to perform the query.</p> <note>
+    /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>. </p>
     /// </note>
     pub fn set_log_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_log_group_name(input);
         self
     }
-    /// <p>The log group on which to perform the query.</p><note>
-    /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>.</p>
+    /// <p>The log group on which to perform the query.</p> <note>
+    /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>. </p>
     /// </note>
     pub fn get_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_log_group_name()
@@ -138,22 +138,22 @@ impl StartQueryFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_log_group_names`](Self::set_log_group_names).
     ///
-    /// <p>The list of log groups to be queried. You can include up to 50 log groups.</p><note>
-    /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>.</p>
+    /// <p>The list of log groups to be queried. You can include up to 50 log groups.</p> <note>
+    /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>. </p>
     /// </note>
     pub fn log_group_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.log_group_names(input.into());
         self
     }
-    /// <p>The list of log groups to be queried. You can include up to 50 log groups.</p><note>
-    /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>.</p>
+    /// <p>The list of log groups to be queried. You can include up to 50 log groups.</p> <note>
+    /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>. </p>
     /// </note>
     pub fn set_log_group_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_log_group_names(input);
         self
     }
-    /// <p>The list of log groups to be queried. You can include up to 50 log groups.</p><note>
-    /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>.</p>
+    /// <p>The list of log groups to be queried. You can include up to 50 log groups.</p> <note>
+    /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>. </p>
     /// </note>
     pub fn get_log_group_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_log_group_names()
@@ -165,7 +165,7 @@ impl StartQueryFluentBuilder {
     /// <p>The list of log groups to query. You can include up to 50 log groups.</p>
     /// <p>You can specify them by the log group name or ARN. If a log group that you're querying is in a source account and you're using a monitoring account, you must specify the ARN of the log group here. The query definition must also be defined in the monitoring account.</p>
     /// <p>If you specify an ARN, the ARN can't end with an asterisk (*).</p>
-    /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>.</p>
+    /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>. </p>
     pub fn log_group_identifiers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.log_group_identifiers(input.into());
         self
@@ -173,7 +173,7 @@ impl StartQueryFluentBuilder {
     /// <p>The list of log groups to query. You can include up to 50 log groups.</p>
     /// <p>You can specify them by the log group name or ARN. If a log group that you're querying is in a source account and you're using a monitoring account, you must specify the ARN of the log group here. The query definition must also be defined in the monitoring account.</p>
     /// <p>If you specify an ARN, the ARN can't end with an asterisk (*).</p>
-    /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>.</p>
+    /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>. </p>
     pub fn set_log_group_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_log_group_identifiers(input);
         self
@@ -181,7 +181,7 @@ impl StartQueryFluentBuilder {
     /// <p>The list of log groups to query. You can include up to 50 log groups.</p>
     /// <p>You can specify them by the log group name or ARN. If a log group that you're querying is in a source account and you're using a monitoring account, you must specify the ARN of the log group here. The query definition must also be defined in the monitoring account.</p>
     /// <p>If you specify an ARN, the ARN can't end with an asterisk (*).</p>
-    /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>.</p>
+    /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>. </p>
     pub fn get_log_group_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_log_group_identifiers()
     }

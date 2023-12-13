@@ -275,7 +275,7 @@ pub enum CreatePullRequestError {
     InvalidDescriptionException(crate::types::error::InvalidDescriptionException),
     /// <p>The specified reference name format is not valid. Reference names must conform to the Git references format (for example, refs/heads/main). For more information, see <a href="https://git-scm.com/book/en/v2/Git-Internals-Git-References">Git Internals - Git References</a> or consult your Git documentation.</p>
     InvalidReferenceNameException(crate::types::error::InvalidReferenceNameException),
-    /// <p>A specified repository name is not valid.</p><note>
+    /// <p>A specified repository name is not valid.</p> <note>
     /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::types::error::InvalidRepositoryNameException),
@@ -293,7 +293,7 @@ pub enum CreatePullRequestError {
     ReferenceDoesNotExistException(crate::types::error::ReferenceDoesNotExistException),
     /// <p>A reference name is required, but none was provided.</p>
     ReferenceNameRequiredException(crate::types::error::ReferenceNameRequiredException),
-    /// <p>The specified reference is not a supported type.</p>
+    /// <p>The specified reference is not a supported type. </p>
     ReferenceTypeNotSupportedException(crate::types::error::ReferenceTypeNotSupportedException),
     /// <p>The specified repository does not exist.</p>
     RepositoryDoesNotExistException(crate::types::error::RepositoryDoesNotExistException),

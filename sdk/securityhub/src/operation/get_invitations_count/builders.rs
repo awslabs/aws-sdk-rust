@@ -22,7 +22,7 @@ impl GetInvitationsCountInputBuilder {
 }
 /// Fluent builder constructing a request to `GetInvitationsCount`.
 ///
-/// <p>Returns the count of all Security Hub membership invitations that were sent to the current member account, not including the currently accepted invitation.</p>
+/// <p>Returns the count of all Security Hub membership invitations that were sent to the current member account, not including the currently accepted invitation. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetInvitationsCountFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

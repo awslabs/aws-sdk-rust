@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteBucketReplicationInput {
-    /// <p>The bucket name.</p>
+    /// <p> The bucket name. </p>
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: ::std::option::Option<::std::string::String>,
 }
 impl DeleteBucketReplicationInput {
-    /// <p>The bucket name.</p>
+    /// <p> The bucket name. </p>
     pub fn bucket(&self) -> ::std::option::Option<&str> {
         self.bucket.as_deref()
     }
@@ -33,18 +33,18 @@ pub struct DeleteBucketReplicationInputBuilder {
     pub(crate) expected_bucket_owner: ::std::option::Option<::std::string::String>,
 }
 impl DeleteBucketReplicationInputBuilder {
-    /// <p>The bucket name.</p>
+    /// <p> The bucket name. </p>
     /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The bucket name.</p>
+    /// <p> The bucket name. </p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket = input;
         self
     }
-    /// <p>The bucket name.</p>
+    /// <p> The bucket name. </p>
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
         &self.bucket
     }

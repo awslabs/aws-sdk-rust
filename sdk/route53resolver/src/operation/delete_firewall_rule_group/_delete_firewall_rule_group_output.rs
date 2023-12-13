@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFirewallRuleGroupOutput {
-    /// <p>A collection of rules used to filter DNS network traffic.</p>
+    /// <p>A collection of rules used to filter DNS network traffic. </p>
     pub firewall_rule_group: ::std::option::Option<crate::types::FirewallRuleGroup>,
     _request_id: Option<String>,
 }
 impl DeleteFirewallRuleGroupOutput {
-    /// <p>A collection of rules used to filter DNS network traffic.</p>
+    /// <p>A collection of rules used to filter DNS network traffic. </p>
     pub fn firewall_rule_group(&self) -> ::std::option::Option<&crate::types::FirewallRuleGroup> {
         self.firewall_rule_group.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct DeleteFirewallRuleGroupOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteFirewallRuleGroupOutputBuilder {
-    /// <p>A collection of rules used to filter DNS network traffic.</p>
+    /// <p>A collection of rules used to filter DNS network traffic. </p>
     pub fn firewall_rule_group(mut self, input: crate::types::FirewallRuleGroup) -> Self {
         self.firewall_rule_group = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A collection of rules used to filter DNS network traffic.</p>
+    /// <p>A collection of rules used to filter DNS network traffic. </p>
     pub fn set_firewall_rule_group(mut self, input: ::std::option::Option<crate::types::FirewallRuleGroup>) -> Self {
         self.firewall_rule_group = input;
         self
     }
-    /// <p>A collection of rules used to filter DNS network traffic.</p>
+    /// <p>A collection of rules used to filter DNS network traffic. </p>
     pub fn get_firewall_rule_group(&self) -> &::std::option::Option<crate::types::FirewallRuleGroup> {
         &self.firewall_rule_group
     }

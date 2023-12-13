@@ -22,7 +22,7 @@ impl DeleteAnalysisSchemeInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteAnalysisScheme`.
 ///
-/// <p>Deletes an analysis scheme. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html" target="_blank">Configuring Analysis Schemes</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
+/// <p>Deletes an analysis scheme. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html" target="_blank">Configuring Analysis Schemes</a> in the <i>Amazon CloudSearch Developer Guide</i>. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAnalysisSchemeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

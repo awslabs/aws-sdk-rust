@@ -8,7 +8,7 @@ pub struct CanaryRunConfigOutput {
     pub timeout_in_seconds: ::std::option::Option<i32>,
     /// <p>The maximum amount of memory available to the canary while it is running, in MB. This value must be a multiple of 64.</p>
     pub memory_in_mb: ::std::option::Option<i32>,
-    /// <p>Displays whether this canary run used active X-Ray tracing.</p>
+    /// <p>Displays whether this canary run used active X-Ray tracing. </p>
     pub active_tracing: ::std::option::Option<bool>,
 }
 impl CanaryRunConfigOutput {
@@ -20,7 +20,7 @@ impl CanaryRunConfigOutput {
     pub fn memory_in_mb(&self) -> ::std::option::Option<i32> {
         self.memory_in_mb
     }
-    /// <p>Displays whether this canary run used active X-Ray tracing.</p>
+    /// <p>Displays whether this canary run used active X-Ray tracing. </p>
     pub fn active_tracing(&self) -> ::std::option::Option<bool> {
         self.active_tracing
     }
@@ -69,17 +69,17 @@ impl CanaryRunConfigOutputBuilder {
     pub fn get_memory_in_mb(&self) -> &::std::option::Option<i32> {
         &self.memory_in_mb
     }
-    /// <p>Displays whether this canary run used active X-Ray tracing.</p>
+    /// <p>Displays whether this canary run used active X-Ray tracing. </p>
     pub fn active_tracing(mut self, input: bool) -> Self {
         self.active_tracing = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Displays whether this canary run used active X-Ray tracing.</p>
+    /// <p>Displays whether this canary run used active X-Ray tracing. </p>
     pub fn set_active_tracing(mut self, input: ::std::option::Option<bool>) -> Self {
         self.active_tracing = input;
         self
     }
-    /// <p>Displays whether this canary run used active X-Ray tracing.</p>
+    /// <p>Displays whether this canary run used active X-Ray tracing. </p>
     pub fn get_active_tracing(&self) -> &::std::option::Option<bool> {
         &self.active_tracing
     }

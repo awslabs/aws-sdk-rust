@@ -22,7 +22,7 @@ impl QuerySchemaVersionMetadataInputBuilder {
 }
 /// Fluent builder constructing a request to `QuerySchemaVersionMetadata`.
 ///
-/// <p>Queries for the schema version metadata information.</p>
+/// <p>Queries for the schema version metadata information. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct QuerySchemaVersionMetadataFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

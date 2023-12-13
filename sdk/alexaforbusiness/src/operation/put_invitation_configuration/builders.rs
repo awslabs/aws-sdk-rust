@@ -123,17 +123,17 @@ impl PutInvitationConfigurationFluentBuilder {
     pub fn get_organization_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_organization_name()
     }
-    /// <p>The email ID of the organization or individual contact that the enrolled user can use.</p>
+    /// <p>The email ID of the organization or individual contact that the enrolled user can use. </p>
     pub fn contact_email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.contact_email(input.into());
         self
     }
-    /// <p>The email ID of the organization or individual contact that the enrolled user can use.</p>
+    /// <p>The email ID of the organization or individual contact that the enrolled user can use. </p>
     pub fn set_contact_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_contact_email(input);
         self
     }
-    /// <p>The email ID of the organization or individual contact that the enrolled user can use.</p>
+    /// <p>The email ID of the organization or individual contact that the enrolled user can use. </p>
     pub fn get_contact_email(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_contact_email()
     }

@@ -7,7 +7,7 @@ pub struct ListPeeringsInput {
     pub core_network_id: ::std::option::Option<::std::string::String>,
     /// <p>Returns a list of a peering requests.</p>
     pub peering_type: ::std::option::Option<crate::types::PeeringType>,
-    /// <p>Returns a list edge locations for the</p>
+    /// <p>Returns a list edge locations for the </p>
     pub edge_location: ::std::option::Option<::std::string::String>,
     /// <p>Returns a list of the peering request states.</p>
     pub state: ::std::option::Option<crate::types::PeeringState>,
@@ -25,7 +25,7 @@ impl ListPeeringsInput {
     pub fn peering_type(&self) -> ::std::option::Option<&crate::types::PeeringType> {
         self.peering_type.as_ref()
     }
-    /// <p>Returns a list edge locations for the</p>
+    /// <p>Returns a list edge locations for the </p>
     pub fn edge_location(&self) -> ::std::option::Option<&str> {
         self.edge_location.as_deref()
     }
@@ -89,17 +89,17 @@ impl ListPeeringsInputBuilder {
     pub fn get_peering_type(&self) -> &::std::option::Option<crate::types::PeeringType> {
         &self.peering_type
     }
-    /// <p>Returns a list edge locations for the</p>
+    /// <p>Returns a list edge locations for the </p>
     pub fn edge_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.edge_location = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Returns a list edge locations for the</p>
+    /// <p>Returns a list edge locations for the </p>
     pub fn set_edge_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.edge_location = input;
         self
     }
-    /// <p>Returns a list edge locations for the</p>
+    /// <p>Returns a list edge locations for the </p>
     pub fn get_edge_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.edge_location
     }

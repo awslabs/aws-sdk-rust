@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ArtifactConfigOutput {
-    /// <p>A structure that contains the configuration of encryption settings for canary artifacts that are stored in Amazon S3.</p>
+    /// <p>A structure that contains the configuration of encryption settings for canary artifacts that are stored in Amazon S3. </p>
     pub s3_encryption: ::std::option::Option<crate::types::S3EncryptionConfig>,
 }
 impl ArtifactConfigOutput {
-    /// <p>A structure that contains the configuration of encryption settings for canary artifacts that are stored in Amazon S3.</p>
+    /// <p>A structure that contains the configuration of encryption settings for canary artifacts that are stored in Amazon S3. </p>
     pub fn s3_encryption(&self) -> ::std::option::Option<&crate::types::S3EncryptionConfig> {
         self.s3_encryption.as_ref()
     }
@@ -27,17 +27,17 @@ pub struct ArtifactConfigOutputBuilder {
     pub(crate) s3_encryption: ::std::option::Option<crate::types::S3EncryptionConfig>,
 }
 impl ArtifactConfigOutputBuilder {
-    /// <p>A structure that contains the configuration of encryption settings for canary artifacts that are stored in Amazon S3.</p>
+    /// <p>A structure that contains the configuration of encryption settings for canary artifacts that are stored in Amazon S3. </p>
     pub fn s3_encryption(mut self, input: crate::types::S3EncryptionConfig) -> Self {
         self.s3_encryption = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A structure that contains the configuration of encryption settings for canary artifacts that are stored in Amazon S3.</p>
+    /// <p>A structure that contains the configuration of encryption settings for canary artifacts that are stored in Amazon S3. </p>
     pub fn set_s3_encryption(mut self, input: ::std::option::Option<crate::types::S3EncryptionConfig>) -> Self {
         self.s3_encryption = input;
         self
     }
-    /// <p>A structure that contains the configuration of encryption settings for canary artifacts that are stored in Amazon S3.</p>
+    /// <p>A structure that contains the configuration of encryption settings for canary artifacts that are stored in Amazon S3. </p>
     pub fn get_s3_encryption(&self) -> &::std::option::Option<crate::types::S3EncryptionConfig> {
         &self.s3_encryption
     }

@@ -8,7 +8,7 @@ pub struct SmsConfiguration {
     pub sender_id: ::std::option::Option<::std::string::String>,
     /// <p>The message that you want to send. The message can be up to 200 characters.</p>
     pub additional_message: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies one or more recipients who receive the message.</p><important>
+    /// <p>Specifies one or more recipients who receive the message.</p> <important>
     /// <p>You must <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/addusers.html">add the users that receive SMS messages to your AWS SSO store</a>.</p>
     /// </important>
     pub recipients: ::std::vec::Vec<crate::types::RecipientDetail>,
@@ -22,7 +22,7 @@ impl SmsConfiguration {
     pub fn additional_message(&self) -> ::std::option::Option<&str> {
         self.additional_message.as_deref()
     }
-    /// <p>Specifies one or more recipients who receive the message.</p><important>
+    /// <p>Specifies one or more recipients who receive the message.</p> <important>
     /// <p>You must <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/addusers.html">add the users that receive SMS messages to your AWS SSO store</a>.</p>
     /// </important>
     pub fn recipients(&self) -> &[crate::types::RecipientDetail] {
@@ -78,7 +78,7 @@ impl SmsConfigurationBuilder {
     ///
     /// To override the contents of this collection use [`set_recipients`](Self::set_recipients).
     ///
-    /// <p>Specifies one or more recipients who receive the message.</p><important>
+    /// <p>Specifies one or more recipients who receive the message.</p> <important>
     /// <p>You must <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/addusers.html">add the users that receive SMS messages to your AWS SSO store</a>.</p>
     /// </important>
     pub fn recipients(mut self, input: crate::types::RecipientDetail) -> Self {
@@ -87,14 +87,14 @@ impl SmsConfigurationBuilder {
         self.recipients = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Specifies one or more recipients who receive the message.</p><important>
+    /// <p>Specifies one or more recipients who receive the message.</p> <important>
     /// <p>You must <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/addusers.html">add the users that receive SMS messages to your AWS SSO store</a>.</p>
     /// </important>
     pub fn set_recipients(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecipientDetail>>) -> Self {
         self.recipients = input;
         self
     }
-    /// <p>Specifies one or more recipients who receive the message.</p><important>
+    /// <p>Specifies one or more recipients who receive the message.</p> <important>
     /// <p>You must <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/addusers.html">add the users that receive SMS messages to your AWS SSO store</a>.</p>
     /// </important>
     pub fn get_recipients(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecipientDetail>> {

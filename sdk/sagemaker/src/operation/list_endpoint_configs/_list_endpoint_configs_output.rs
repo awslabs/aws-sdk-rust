@@ -5,7 +5,7 @@
 pub struct ListEndpointConfigsOutput {
     /// <p>An array of endpoint configurations.</p>
     pub endpoint_configs: ::std::option::Option<::std::vec::Vec<crate::types::EndpointConfigSummary>>,
-    /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of endpoint configurations, use it in the subsequent request</p>
+    /// <p> If the response is truncated, SageMaker returns this token. To retrieve the next set of endpoint configurations, use it in the subsequent request </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -16,7 +16,7 @@ impl ListEndpointConfigsOutput {
     pub fn endpoint_configs(&self) -> &[crate::types::EndpointConfigSummary] {
         self.endpoint_configs.as_deref().unwrap_or_default()
     }
-    /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of endpoint configurations, use it in the subsequent request</p>
+    /// <p> If the response is truncated, SageMaker returns this token. To retrieve the next set of endpoint configurations, use it in the subsequent request </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -62,17 +62,17 @@ impl ListEndpointConfigsOutputBuilder {
     pub fn get_endpoint_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointConfigSummary>> {
         &self.endpoint_configs
     }
-    /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of endpoint configurations, use it in the subsequent request</p>
+    /// <p> If the response is truncated, SageMaker returns this token. To retrieve the next set of endpoint configurations, use it in the subsequent request </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of endpoint configurations, use it in the subsequent request</p>
+    /// <p> If the response is truncated, SageMaker returns this token. To retrieve the next set of endpoint configurations, use it in the subsequent request </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of endpoint configurations, use it in the subsequent request</p>
+    /// <p> If the response is truncated, SageMaker returns this token. To retrieve the next set of endpoint configurations, use it in the subsequent request </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

@@ -136,20 +136,20 @@ impl DeleteThemeFluentBuilder {
     pub fn get_theme_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_theme_id()
     }
-    /// <p>The version of the theme that you want to delete.</p>
-    /// <p><b>Note:</b> If you don't provide a version number, you're using this call to <code>DeleteTheme</code> to delete all versions of the theme.</p>
+    /// <p>The version of the theme that you want to delete. </p>
+    /// <p> <b>Note:</b> If you don't provide a version number, you're using this call to <code>DeleteTheme</code> to delete all versions of the theme.</p>
     pub fn version_number(mut self, input: i64) -> Self {
         self.inner = self.inner.version_number(input);
         self
     }
-    /// <p>The version of the theme that you want to delete.</p>
-    /// <p><b>Note:</b> If you don't provide a version number, you're using this call to <code>DeleteTheme</code> to delete all versions of the theme.</p>
+    /// <p>The version of the theme that you want to delete. </p>
+    /// <p> <b>Note:</b> If you don't provide a version number, you're using this call to <code>DeleteTheme</code> to delete all versions of the theme.</p>
     pub fn set_version_number(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_version_number(input);
         self
     }
-    /// <p>The version of the theme that you want to delete.</p>
-    /// <p><b>Note:</b> If you don't provide a version number, you're using this call to <code>DeleteTheme</code> to delete all versions of the theme.</p>
+    /// <p>The version of the theme that you want to delete. </p>
+    /// <p> <b>Note:</b> If you don't provide a version number, you're using this call to <code>DeleteTheme</code> to delete all versions of the theme.</p>
     pub fn get_version_number(&self) -> &::std::option::Option<i64> {
         self.inner.get_version_number()
     }

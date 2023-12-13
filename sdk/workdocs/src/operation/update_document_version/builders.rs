@@ -22,8 +22,8 @@ impl UpdateDocumentVersionInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateDocumentVersion`.
 ///
-/// <p>Changes the status of the document version to ACTIVE.</p>
-/// <p>Amazon WorkDocs also sets its document container to ACTIVE. This is the last step in a document upload, after the client uploads the document to an S3-presigned URL returned by <code>InitiateDocumentVersionUpload</code>.</p>
+/// <p>Changes the status of the document version to ACTIVE. </p>
+/// <p>Amazon WorkDocs also sets its document container to ACTIVE. This is the last step in a document upload, after the client uploads the document to an S3-presigned URL returned by <code>InitiateDocumentVersionUpload</code>. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDocumentVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

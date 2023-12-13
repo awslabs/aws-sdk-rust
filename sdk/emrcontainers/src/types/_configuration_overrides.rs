@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfigurationOverrides {
-    /// <p>The configurations for the application running by the job run.</p>
+    /// <p>The configurations for the application running by the job run. </p>
     pub application_configuration: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
     /// <p>The configurations for monitoring.</p>
     pub monitoring_configuration: ::std::option::Option<crate::types::MonitoringConfiguration>,
 }
 impl ConfigurationOverrides {
-    /// <p>The configurations for the application running by the job run.</p>
+    /// <p>The configurations for the application running by the job run. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.application_configuration.is_none()`.
     pub fn application_configuration(&self) -> &[crate::types::Configuration] {
@@ -40,19 +40,19 @@ impl ConfigurationOverridesBuilder {
     ///
     /// To override the contents of this collection use [`set_application_configuration`](Self::set_application_configuration).
     ///
-    /// <p>The configurations for the application running by the job run.</p>
+    /// <p>The configurations for the application running by the job run. </p>
     pub fn application_configuration(mut self, input: crate::types::Configuration) -> Self {
         let mut v = self.application_configuration.unwrap_or_default();
         v.push(input);
         self.application_configuration = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The configurations for the application running by the job run.</p>
+    /// <p>The configurations for the application running by the job run. </p>
     pub fn set_application_configuration(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>) -> Self {
         self.application_configuration = input;
         self
     }
-    /// <p>The configurations for the application running by the job run.</p>
+    /// <p>The configurations for the application running by the job run. </p>
     pub fn get_application_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Configuration>> {
         &self.application_configuration
     }

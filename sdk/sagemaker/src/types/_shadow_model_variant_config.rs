@@ -6,7 +6,7 @@
 pub struct ShadowModelVariantConfig {
     /// <p>The name of the shadow variant.</p>
     pub shadow_model_variant_name: ::std::option::Option<::std::string::String>,
-    /// <p>The percentage of inference requests that Amazon SageMaker replicates from the production variant to the shadow variant.</p>
+    /// <p> The percentage of inference requests that Amazon SageMaker replicates from the production variant to the shadow variant. </p>
     pub sampling_percentage: ::std::option::Option<i32>,
 }
 impl ShadowModelVariantConfig {
@@ -14,7 +14,7 @@ impl ShadowModelVariantConfig {
     pub fn shadow_model_variant_name(&self) -> ::std::option::Option<&str> {
         self.shadow_model_variant_name.as_deref()
     }
-    /// <p>The percentage of inference requests that Amazon SageMaker replicates from the production variant to the shadow variant.</p>
+    /// <p> The percentage of inference requests that Amazon SageMaker replicates from the production variant to the shadow variant. </p>
     pub fn sampling_percentage(&self) -> ::std::option::Option<i32> {
         self.sampling_percentage
     }
@@ -49,18 +49,18 @@ impl ShadowModelVariantConfigBuilder {
     pub fn get_shadow_model_variant_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.shadow_model_variant_name
     }
-    /// <p>The percentage of inference requests that Amazon SageMaker replicates from the production variant to the shadow variant.</p>
+    /// <p> The percentage of inference requests that Amazon SageMaker replicates from the production variant to the shadow variant. </p>
     /// This field is required.
     pub fn sampling_percentage(mut self, input: i32) -> Self {
         self.sampling_percentage = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The percentage of inference requests that Amazon SageMaker replicates from the production variant to the shadow variant.</p>
+    /// <p> The percentage of inference requests that Amazon SageMaker replicates from the production variant to the shadow variant. </p>
     pub fn set_sampling_percentage(mut self, input: ::std::option::Option<i32>) -> Self {
         self.sampling_percentage = input;
         self
     }
-    /// <p>The percentage of inference requests that Amazon SageMaker replicates from the production variant to the shadow variant.</p>
+    /// <p> The percentage of inference requests that Amazon SageMaker replicates from the production variant to the shadow variant. </p>
     pub fn get_sampling_percentage(&self) -> &::std::option::Option<i32> {
         &self.sampling_percentage
     }

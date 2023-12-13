@@ -6,12 +6,9 @@
 pub struct GetSqlInjectionMatchSetOutput {
     /// <p>Information about the <code>SqlInjectionMatchSet</code> that you specified in the <code>GetSqlInjectionMatchSet</code> request. For more information, see the following topics:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SqlInjectionMatchSet</code>: Contains <code>Name</code>, <code>SqlInjectionMatchSetId</code>, and an array of <code>SqlInjectionMatchTuple</code> objects</p></li>
-    /// <li>
-    /// <p><code>SqlInjectionMatchTuple</code>: Each <code>SqlInjectionMatchTuple</code> object contains <code>FieldToMatch</code> and <code>TextTransformation</code></p></li>
-    /// <li>
-    /// <p><code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code></p></li>
+    /// <li> <p> <code>SqlInjectionMatchSet</code>: Contains <code>Name</code>, <code>SqlInjectionMatchSetId</code>, and an array of <code>SqlInjectionMatchTuple</code> objects</p> </li>
+    /// <li> <p> <code>SqlInjectionMatchTuple</code>: Each <code>SqlInjectionMatchTuple</code> object contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li>
+    /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
     pub sql_injection_match_set: ::std::option::Option<crate::types::SqlInjectionMatchSet>,
     _request_id: Option<String>,
@@ -19,12 +16,9 @@ pub struct GetSqlInjectionMatchSetOutput {
 impl GetSqlInjectionMatchSetOutput {
     /// <p>Information about the <code>SqlInjectionMatchSet</code> that you specified in the <code>GetSqlInjectionMatchSet</code> request. For more information, see the following topics:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SqlInjectionMatchSet</code>: Contains <code>Name</code>, <code>SqlInjectionMatchSetId</code>, and an array of <code>SqlInjectionMatchTuple</code> objects</p></li>
-    /// <li>
-    /// <p><code>SqlInjectionMatchTuple</code>: Each <code>SqlInjectionMatchTuple</code> object contains <code>FieldToMatch</code> and <code>TextTransformation</code></p></li>
-    /// <li>
-    /// <p><code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code></p></li>
+    /// <li> <p> <code>SqlInjectionMatchSet</code>: Contains <code>Name</code>, <code>SqlInjectionMatchSetId</code>, and an array of <code>SqlInjectionMatchTuple</code> objects</p> </li>
+    /// <li> <p> <code>SqlInjectionMatchTuple</code>: Each <code>SqlInjectionMatchTuple</code> object contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li>
+    /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
     pub fn sql_injection_match_set(&self) -> ::std::option::Option<&crate::types::SqlInjectionMatchSet> {
         self.sql_injection_match_set.as_ref()
@@ -52,12 +46,9 @@ pub struct GetSqlInjectionMatchSetOutputBuilder {
 impl GetSqlInjectionMatchSetOutputBuilder {
     /// <p>Information about the <code>SqlInjectionMatchSet</code> that you specified in the <code>GetSqlInjectionMatchSet</code> request. For more information, see the following topics:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SqlInjectionMatchSet</code>: Contains <code>Name</code>, <code>SqlInjectionMatchSetId</code>, and an array of <code>SqlInjectionMatchTuple</code> objects</p></li>
-    /// <li>
-    /// <p><code>SqlInjectionMatchTuple</code>: Each <code>SqlInjectionMatchTuple</code> object contains <code>FieldToMatch</code> and <code>TextTransformation</code></p></li>
-    /// <li>
-    /// <p><code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code></p></li>
+    /// <li> <p> <code>SqlInjectionMatchSet</code>: Contains <code>Name</code>, <code>SqlInjectionMatchSetId</code>, and an array of <code>SqlInjectionMatchTuple</code> objects</p> </li>
+    /// <li> <p> <code>SqlInjectionMatchTuple</code>: Each <code>SqlInjectionMatchTuple</code> object contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li>
+    /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
     pub fn sql_injection_match_set(mut self, input: crate::types::SqlInjectionMatchSet) -> Self {
         self.sql_injection_match_set = ::std::option::Option::Some(input);
@@ -65,12 +56,9 @@ impl GetSqlInjectionMatchSetOutputBuilder {
     }
     /// <p>Information about the <code>SqlInjectionMatchSet</code> that you specified in the <code>GetSqlInjectionMatchSet</code> request. For more information, see the following topics:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SqlInjectionMatchSet</code>: Contains <code>Name</code>, <code>SqlInjectionMatchSetId</code>, and an array of <code>SqlInjectionMatchTuple</code> objects</p></li>
-    /// <li>
-    /// <p><code>SqlInjectionMatchTuple</code>: Each <code>SqlInjectionMatchTuple</code> object contains <code>FieldToMatch</code> and <code>TextTransformation</code></p></li>
-    /// <li>
-    /// <p><code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code></p></li>
+    /// <li> <p> <code>SqlInjectionMatchSet</code>: Contains <code>Name</code>, <code>SqlInjectionMatchSetId</code>, and an array of <code>SqlInjectionMatchTuple</code> objects</p> </li>
+    /// <li> <p> <code>SqlInjectionMatchTuple</code>: Each <code>SqlInjectionMatchTuple</code> object contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li>
+    /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
     pub fn set_sql_injection_match_set(mut self, input: ::std::option::Option<crate::types::SqlInjectionMatchSet>) -> Self {
         self.sql_injection_match_set = input;
@@ -78,12 +66,9 @@ impl GetSqlInjectionMatchSetOutputBuilder {
     }
     /// <p>Information about the <code>SqlInjectionMatchSet</code> that you specified in the <code>GetSqlInjectionMatchSet</code> request. For more information, see the following topics:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SqlInjectionMatchSet</code>: Contains <code>Name</code>, <code>SqlInjectionMatchSetId</code>, and an array of <code>SqlInjectionMatchTuple</code> objects</p></li>
-    /// <li>
-    /// <p><code>SqlInjectionMatchTuple</code>: Each <code>SqlInjectionMatchTuple</code> object contains <code>FieldToMatch</code> and <code>TextTransformation</code></p></li>
-    /// <li>
-    /// <p><code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code></p></li>
+    /// <li> <p> <code>SqlInjectionMatchSet</code>: Contains <code>Name</code>, <code>SqlInjectionMatchSetId</code>, and an array of <code>SqlInjectionMatchTuple</code> objects</p> </li>
+    /// <li> <p> <code>SqlInjectionMatchTuple</code>: Each <code>SqlInjectionMatchTuple</code> object contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li>
+    /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
     pub fn get_sql_injection_match_set(&self) -> &::std::option::Option<crate::types::SqlInjectionMatchSet> {
         &self.sql_injection_match_set

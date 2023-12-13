@@ -22,16 +22,14 @@ impl CreateSlackChannelConfigurationInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateSlackChannelConfiguration`.
 ///
-/// <p>Creates a Slack channel configuration for your Amazon Web Services account.</p><note>
+/// <p>Creates a Slack channel configuration for your Amazon Web Services account.</p> <note>
 /// <ul>
-/// <li>
-/// <p>You can add up to 5 Slack workspaces for your account.</p></li>
-/// <li>
-/// <p>You can add up to 20 Slack channels for your account.</p></li>
+/// <li> <p>You can add up to 5 Slack workspaces for your account.</p> </li>
+/// <li> <p>You can add up to 20 Slack channels for your account.</p> </li>
 /// </ul>
 /// </note>
-/// <p>A Slack channel can have up to 100 Amazon Web Services accounts. This means that only 100 accounts can add the same Slack channel to the Amazon Web Services Support App. We recommend that you only add the accounts that you need to manage support cases for your organization. This can reduce the notifications about case updates that you receive in the Slack channel.</p><note>
-/// <p>We recommend that you choose a private Slack channel so that only members in that channel have read and write access to your support cases. Anyone in your Slack channel can create, update, or resolve support cases for your account. Users require an invitation to join private channels.</p>
+/// <p>A Slack channel can have up to 100 Amazon Web Services accounts. This means that only 100 accounts can add the same Slack channel to the Amazon Web Services Support App. We recommend that you only add the accounts that you need to manage support cases for your organization. This can reduce the notifications about case updates that you receive in the Slack channel.</p> <note>
+/// <p>We recommend that you choose a private Slack channel so that only members in that channel have read and write access to your support cases. Anyone in your Slack channel can create, update, or resolve support cases for your account. Users require an invitation to join private channels. </p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateSlackChannelConfigurationFluentBuilder {
@@ -205,22 +203,16 @@ impl CreateSlackChannelConfigurationFluentBuilder {
     /// <p>The case severity for a support case that you want to receive notifications.</p>
     /// <p>If you specify <code>high</code> or <code>all</code>, you must specify <code>true</code> for at least one of the following parameters:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>notifyOnAddCorrespondenceToCase</code></p></li>
-    /// <li>
-    /// <p><code>notifyOnCreateOrReopenCase</code></p></li>
-    /// <li>
-    /// <p><code>notifyOnResolveCase</code></p></li>
+    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li>
+    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li>
+    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li>
     /// </ul>
     /// <p>If you specify <code>none</code>, the following parameters must be null or <code>false</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>notifyOnAddCorrespondenceToCase</code></p></li>
-    /// <li>
-    /// <p><code>notifyOnCreateOrReopenCase</code></p></li>
-    /// <li>
-    /// <p><code>notifyOnResolveCase</code></p></li>
-    /// </ul><note>
+    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li>
+    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li>
+    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li>
+    /// </ul> <note>
     /// <p>If you don't specify these parameters in your request, they default to <code>false</code>.</p>
     /// </note>
     pub fn notify_on_case_severity(mut self, input: crate::types::NotificationSeverityLevel) -> Self {
@@ -230,22 +222,16 @@ impl CreateSlackChannelConfigurationFluentBuilder {
     /// <p>The case severity for a support case that you want to receive notifications.</p>
     /// <p>If you specify <code>high</code> or <code>all</code>, you must specify <code>true</code> for at least one of the following parameters:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>notifyOnAddCorrespondenceToCase</code></p></li>
-    /// <li>
-    /// <p><code>notifyOnCreateOrReopenCase</code></p></li>
-    /// <li>
-    /// <p><code>notifyOnResolveCase</code></p></li>
+    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li>
+    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li>
+    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li>
     /// </ul>
     /// <p>If you specify <code>none</code>, the following parameters must be null or <code>false</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>notifyOnAddCorrespondenceToCase</code></p></li>
-    /// <li>
-    /// <p><code>notifyOnCreateOrReopenCase</code></p></li>
-    /// <li>
-    /// <p><code>notifyOnResolveCase</code></p></li>
-    /// </ul><note>
+    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li>
+    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li>
+    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li>
+    /// </ul> <note>
     /// <p>If you don't specify these parameters in your request, they default to <code>false</code>.</p>
     /// </note>
     pub fn set_notify_on_case_severity(mut self, input: ::std::option::Option<crate::types::NotificationSeverityLevel>) -> Self {
@@ -255,22 +241,16 @@ impl CreateSlackChannelConfigurationFluentBuilder {
     /// <p>The case severity for a support case that you want to receive notifications.</p>
     /// <p>If you specify <code>high</code> or <code>all</code>, you must specify <code>true</code> for at least one of the following parameters:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>notifyOnAddCorrespondenceToCase</code></p></li>
-    /// <li>
-    /// <p><code>notifyOnCreateOrReopenCase</code></p></li>
-    /// <li>
-    /// <p><code>notifyOnResolveCase</code></p></li>
+    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li>
+    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li>
+    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li>
     /// </ul>
     /// <p>If you specify <code>none</code>, the following parameters must be null or <code>false</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>notifyOnAddCorrespondenceToCase</code></p></li>
-    /// <li>
-    /// <p><code>notifyOnCreateOrReopenCase</code></p></li>
-    /// <li>
-    /// <p><code>notifyOnResolveCase</code></p></li>
-    /// </ul><note>
+    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li>
+    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li>
+    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li>
+    /// </ul> <note>
     /// <p>If you don't specify these parameters in your request, they default to <code>false</code>.</p>
     /// </note>
     pub fn get_notify_on_case_severity(&self) -> &::std::option::Option<crate::types::NotificationSeverityLevel> {

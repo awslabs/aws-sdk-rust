@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`global_network_id(impl Into<String>)`](crate::operation::update_global_network::builders::UpdateGlobalNetworkFluentBuilder::global_network_id) / [`set_global_network_id(Option<String>)`](crate::operation::update_global_network::builders::UpdateGlobalNetworkFluentBuilder::set_global_network_id):<br>required: **true**<br><p>The ID of your global network.</p><br>
-    ///   - [`description(impl Into<String>)`](crate::operation::update_global_network::builders::UpdateGlobalNetworkFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_global_network::builders::UpdateGlobalNetworkFluentBuilder::set_description):<br>required: **false**<br><p>A description of the global network.</p> <p>Constraints: Maximum length of 256 characters.</p><br>
+    ///   - [`description(impl Into<String>)`](crate::operation::update_global_network::builders::UpdateGlobalNetworkFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_global_network::builders::UpdateGlobalNetworkFluentBuilder::set_description):<br>required: **false**<br><p>A description of the global network.</p>  <p>Constraints: Maximum length of 256 characters.</p><br>
     /// - On success, responds with [`UpdateGlobalNetworkOutput`](crate::operation::update_global_network::UpdateGlobalNetworkOutput) with field(s):
     ///   - [`global_network(Option<GlobalNetwork>)`](crate::operation::update_global_network::UpdateGlobalNetworkOutput::global_network): <p>Information about the global network object.</p>
     /// - On failure, responds with [`SdkError<UpdateGlobalNetworkError>`](crate::operation::update_global_network::UpdateGlobalNetworkError)

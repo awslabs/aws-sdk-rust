@@ -15,7 +15,7 @@ pub struct CreateRunGroupInput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>To ensure that requests don't run multiple times, specify a unique ID for each request.</p>
     pub request_id: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum GPUs that can be used by a run group.</p>
+    /// <p> The maximum GPUs that can be used by a run group. </p>
     pub max_gpus: ::std::option::Option<i32>,
 }
 impl CreateRunGroupInput {
@@ -43,7 +43,7 @@ impl CreateRunGroupInput {
     pub fn request_id(&self) -> ::std::option::Option<&str> {
         self.request_id.as_deref()
     }
-    /// <p>The maximum GPUs that can be used by a run group.</p>
+    /// <p> The maximum GPUs that can be used by a run group. </p>
     pub fn max_gpus(&self) -> ::std::option::Option<i32> {
         self.max_gpus
     }
@@ -159,17 +159,17 @@ impl CreateRunGroupInputBuilder {
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.request_id
     }
-    /// <p>The maximum GPUs that can be used by a run group.</p>
+    /// <p> The maximum GPUs that can be used by a run group. </p>
     pub fn max_gpus(mut self, input: i32) -> Self {
         self.max_gpus = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum GPUs that can be used by a run group.</p>
+    /// <p> The maximum GPUs that can be used by a run group. </p>
     pub fn set_max_gpus(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_gpus = input;
         self
     }
-    /// <p>The maximum GPUs that can be used by a run group.</p>
+    /// <p> The maximum GPUs that can be used by a run group. </p>
     pub fn get_max_gpus(&self) -> &::std::option::Option<i32> {
         &self.max_gpus
     }

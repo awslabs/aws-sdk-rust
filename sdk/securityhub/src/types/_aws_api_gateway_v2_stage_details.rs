@@ -13,7 +13,7 @@ pub struct AwsApiGatewayV2StageDetails {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Default route settings for the stage.</p>
     pub default_route_settings: ::std::option::Option<crate::types::AwsApiGatewayV2RouteSettings>,
-    /// <p>The identifier of the deployment that the stage is associated with.</p>
+    /// <p>The identifier of the deployment that the stage is associated with. </p>
     pub deployment_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates when the stage was most recently updated.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
@@ -26,12 +26,9 @@ pub struct AwsApiGatewayV2StageDetails {
     /// <p>Variable names can have alphanumeric and underscore characters.</p>
     /// <p>Variable values can contain the following characters:</p>
     /// <ul>
-    /// <li>
-    /// <p>Uppercase and lowercase letters</p></li>
-    /// <li>
-    /// <p>Numbers</p></li>
-    /// <li>
-    /// <p>Special characters -._~:/?#&amp;=,</p></li>
+    /// <li> <p>Uppercase and lowercase letters</p> </li>
+    /// <li> <p>Numbers</p> </li>
+    /// <li> <p>Special characters -._~:/?#&amp;=,</p> </li>
     /// </ul>
     pub stage_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Information about settings for logging access for the stage.</p>
@@ -61,7 +58,7 @@ impl AwsApiGatewayV2StageDetails {
     pub fn default_route_settings(&self) -> ::std::option::Option<&crate::types::AwsApiGatewayV2RouteSettings> {
         self.default_route_settings.as_ref()
     }
-    /// <p>The identifier of the deployment that the stage is associated with.</p>
+    /// <p>The identifier of the deployment that the stage is associated with. </p>
     pub fn deployment_id(&self) -> ::std::option::Option<&str> {
         self.deployment_id.as_deref()
     }
@@ -82,12 +79,9 @@ impl AwsApiGatewayV2StageDetails {
     /// <p>Variable names can have alphanumeric and underscore characters.</p>
     /// <p>Variable values can contain the following characters:</p>
     /// <ul>
-    /// <li>
-    /// <p>Uppercase and lowercase letters</p></li>
-    /// <li>
-    /// <p>Numbers</p></li>
-    /// <li>
-    /// <p>Special characters -._~:/?#&amp;=,</p></li>
+    /// <li> <p>Uppercase and lowercase letters</p> </li>
+    /// <li> <p>Numbers</p> </li>
+    /// <li> <p>Special characters -._~:/?#&amp;=,</p> </li>
     /// </ul>
     pub fn stage_variables(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.stage_variables.as_ref()
@@ -194,17 +188,17 @@ impl AwsApiGatewayV2StageDetailsBuilder {
     pub fn get_default_route_settings(&self) -> &::std::option::Option<crate::types::AwsApiGatewayV2RouteSettings> {
         &self.default_route_settings
     }
-    /// <p>The identifier of the deployment that the stage is associated with.</p>
+    /// <p>The identifier of the deployment that the stage is associated with. </p>
     pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the deployment that the stage is associated with.</p>
+    /// <p>The identifier of the deployment that the stage is associated with. </p>
     pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_id = input;
         self
     }
-    /// <p>The identifier of the deployment that the stage is associated with.</p>
+    /// <p>The identifier of the deployment that the stage is associated with. </p>
     pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.deployment_id
     }
@@ -261,12 +255,9 @@ impl AwsApiGatewayV2StageDetailsBuilder {
     /// <p>Variable names can have alphanumeric and underscore characters.</p>
     /// <p>Variable values can contain the following characters:</p>
     /// <ul>
-    /// <li>
-    /// <p>Uppercase and lowercase letters</p></li>
-    /// <li>
-    /// <p>Numbers</p></li>
-    /// <li>
-    /// <p>Special characters -._~:/?#&amp;=,</p></li>
+    /// <li> <p>Uppercase and lowercase letters</p> </li>
+    /// <li> <p>Numbers</p> </li>
+    /// <li> <p>Special characters -._~:/?#&amp;=,</p> </li>
     /// </ul>
     pub fn stage_variables(
         mut self,
@@ -282,12 +273,9 @@ impl AwsApiGatewayV2StageDetailsBuilder {
     /// <p>Variable names can have alphanumeric and underscore characters.</p>
     /// <p>Variable values can contain the following characters:</p>
     /// <ul>
-    /// <li>
-    /// <p>Uppercase and lowercase letters</p></li>
-    /// <li>
-    /// <p>Numbers</p></li>
-    /// <li>
-    /// <p>Special characters -._~:/?#&amp;=,</p></li>
+    /// <li> <p>Uppercase and lowercase letters</p> </li>
+    /// <li> <p>Numbers</p> </li>
+    /// <li> <p>Special characters -._~:/?#&amp;=,</p> </li>
     /// </ul>
     pub fn set_stage_variables(
         mut self,
@@ -300,12 +288,9 @@ impl AwsApiGatewayV2StageDetailsBuilder {
     /// <p>Variable names can have alphanumeric and underscore characters.</p>
     /// <p>Variable values can contain the following characters:</p>
     /// <ul>
-    /// <li>
-    /// <p>Uppercase and lowercase letters</p></li>
-    /// <li>
-    /// <p>Numbers</p></li>
-    /// <li>
-    /// <p>Special characters -._~:/?#&amp;=,</p></li>
+    /// <li> <p>Uppercase and lowercase letters</p> </li>
+    /// <li> <p>Numbers</p> </li>
+    /// <li> <p>Special characters -._~:/?#&amp;=,</p> </li>
     /// </ul>
     pub fn get_stage_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.stage_variables

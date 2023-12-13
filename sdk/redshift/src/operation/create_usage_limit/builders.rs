@@ -136,45 +136,45 @@ impl CreateUsageLimitFluentBuilder {
     pub fn get_feature_type(&self) -> &::std::option::Option<crate::types::UsageLimitFeatureType> {
         self.inner.get_feature_type()
     }
-    /// <p>The type of limit. Depending on the feature type, this can be based on a time duration or data size. If <code>FeatureType</code> is <code>spectrum</code>, then <code>LimitType</code> must be <code>data-scanned</code>. If <code>FeatureType</code> is <code>concurrency-scaling</code>, then <code>LimitType</code> must be <code>time</code>. If <code>FeatureType</code> is <code>cross-region-datasharing</code>, then <code>LimitType</code> must be <code>data-scanned</code>.</p>
+    /// <p>The type of limit. Depending on the feature type, this can be based on a time duration or data size. If <code>FeatureType</code> is <code>spectrum</code>, then <code>LimitType</code> must be <code>data-scanned</code>. If <code>FeatureType</code> is <code>concurrency-scaling</code>, then <code>LimitType</code> must be <code>time</code>. If <code>FeatureType</code> is <code>cross-region-datasharing</code>, then <code>LimitType</code> must be <code>data-scanned</code>. </p>
     pub fn limit_type(mut self, input: crate::types::UsageLimitLimitType) -> Self {
         self.inner = self.inner.limit_type(input);
         self
     }
-    /// <p>The type of limit. Depending on the feature type, this can be based on a time duration or data size. If <code>FeatureType</code> is <code>spectrum</code>, then <code>LimitType</code> must be <code>data-scanned</code>. If <code>FeatureType</code> is <code>concurrency-scaling</code>, then <code>LimitType</code> must be <code>time</code>. If <code>FeatureType</code> is <code>cross-region-datasharing</code>, then <code>LimitType</code> must be <code>data-scanned</code>.</p>
+    /// <p>The type of limit. Depending on the feature type, this can be based on a time duration or data size. If <code>FeatureType</code> is <code>spectrum</code>, then <code>LimitType</code> must be <code>data-scanned</code>. If <code>FeatureType</code> is <code>concurrency-scaling</code>, then <code>LimitType</code> must be <code>time</code>. If <code>FeatureType</code> is <code>cross-region-datasharing</code>, then <code>LimitType</code> must be <code>data-scanned</code>. </p>
     pub fn set_limit_type(mut self, input: ::std::option::Option<crate::types::UsageLimitLimitType>) -> Self {
         self.inner = self.inner.set_limit_type(input);
         self
     }
-    /// <p>The type of limit. Depending on the feature type, this can be based on a time duration or data size. If <code>FeatureType</code> is <code>spectrum</code>, then <code>LimitType</code> must be <code>data-scanned</code>. If <code>FeatureType</code> is <code>concurrency-scaling</code>, then <code>LimitType</code> must be <code>time</code>. If <code>FeatureType</code> is <code>cross-region-datasharing</code>, then <code>LimitType</code> must be <code>data-scanned</code>.</p>
+    /// <p>The type of limit. Depending on the feature type, this can be based on a time duration or data size. If <code>FeatureType</code> is <code>spectrum</code>, then <code>LimitType</code> must be <code>data-scanned</code>. If <code>FeatureType</code> is <code>concurrency-scaling</code>, then <code>LimitType</code> must be <code>time</code>. If <code>FeatureType</code> is <code>cross-region-datasharing</code>, then <code>LimitType</code> must be <code>data-scanned</code>. </p>
     pub fn get_limit_type(&self) -> &::std::option::Option<crate::types::UsageLimitLimitType> {
         self.inner.get_limit_type()
     }
-    /// <p>The limit amount. If time-based, this amount is in minutes. If data-based, this amount is in terabytes (TB). The value must be a positive number.</p>
+    /// <p>The limit amount. If time-based, this amount is in minutes. If data-based, this amount is in terabytes (TB). The value must be a positive number. </p>
     pub fn amount(mut self, input: i64) -> Self {
         self.inner = self.inner.amount(input);
         self
     }
-    /// <p>The limit amount. If time-based, this amount is in minutes. If data-based, this amount is in terabytes (TB). The value must be a positive number.</p>
+    /// <p>The limit amount. If time-based, this amount is in minutes. If data-based, this amount is in terabytes (TB). The value must be a positive number. </p>
     pub fn set_amount(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_amount(input);
         self
     }
-    /// <p>The limit amount. If time-based, this amount is in minutes. If data-based, this amount is in terabytes (TB). The value must be a positive number.</p>
+    /// <p>The limit amount. If time-based, this amount is in minutes. If data-based, this amount is in terabytes (TB). The value must be a positive number. </p>
     pub fn get_amount(&self) -> &::std::option::Option<i64> {
         self.inner.get_amount()
     }
-    /// <p>The time period that the amount applies to. A <code>weekly</code> period begins on Sunday. The default is <code>monthly</code>.</p>
+    /// <p>The time period that the amount applies to. A <code>weekly</code> period begins on Sunday. The default is <code>monthly</code>. </p>
     pub fn period(mut self, input: crate::types::UsageLimitPeriod) -> Self {
         self.inner = self.inner.period(input);
         self
     }
-    /// <p>The time period that the amount applies to. A <code>weekly</code> period begins on Sunday. The default is <code>monthly</code>.</p>
+    /// <p>The time period that the amount applies to. A <code>weekly</code> period begins on Sunday. The default is <code>monthly</code>. </p>
     pub fn set_period(mut self, input: ::std::option::Option<crate::types::UsageLimitPeriod>) -> Self {
         self.inner = self.inner.set_period(input);
         self
     }
-    /// <p>The time period that the amount applies to. A <code>weekly</code> period begins on Sunday. The default is <code>monthly</code>.</p>
+    /// <p>The time period that the amount applies to. A <code>weekly</code> period begins on Sunday. The default is <code>monthly</code>. </p>
     pub fn get_period(&self) -> &::std::option::Option<crate::types::UsageLimitPeriod> {
         self.inner.get_period()
     }

@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendTestEventNotificationInput {
-    /// <p>The notification specification to test. This value is identical to the value you would provide to the UpdateNotificationSettings operation when you establish the notification specification for a HIT type.</p>
+    /// <p> The notification specification to test. This value is identical to the value you would provide to the UpdateNotificationSettings operation when you establish the notification specification for a HIT type. </p>
     pub notification: ::std::option::Option<crate::types::NotificationSpecification>,
-    /// <p>The event to simulate to test the notification specification. This event is included in the test message even if the notification specification does not include the event type. The notification specification does not filter out the test event.</p>
+    /// <p> The event to simulate to test the notification specification. This event is included in the test message even if the notification specification does not include the event type. The notification specification does not filter out the test event. </p>
     pub test_event_type: ::std::option::Option<crate::types::EventType>,
 }
 impl SendTestEventNotificationInput {
-    /// <p>The notification specification to test. This value is identical to the value you would provide to the UpdateNotificationSettings operation when you establish the notification specification for a HIT type.</p>
+    /// <p> The notification specification to test. This value is identical to the value you would provide to the UpdateNotificationSettings operation when you establish the notification specification for a HIT type. </p>
     pub fn notification(&self) -> ::std::option::Option<&crate::types::NotificationSpecification> {
         self.notification.as_ref()
     }
-    /// <p>The event to simulate to test the notification specification. This event is included in the test message even if the notification specification does not include the event type. The notification specification does not filter out the test event.</p>
+    /// <p> The event to simulate to test the notification specification. This event is included in the test message even if the notification specification does not include the event type. The notification specification does not filter out the test event. </p>
     pub fn test_event_type(&self) -> ::std::option::Option<&crate::types::EventType> {
         self.test_event_type.as_ref()
     }
@@ -33,33 +33,33 @@ pub struct SendTestEventNotificationInputBuilder {
     pub(crate) test_event_type: ::std::option::Option<crate::types::EventType>,
 }
 impl SendTestEventNotificationInputBuilder {
-    /// <p>The notification specification to test. This value is identical to the value you would provide to the UpdateNotificationSettings operation when you establish the notification specification for a HIT type.</p>
+    /// <p> The notification specification to test. This value is identical to the value you would provide to the UpdateNotificationSettings operation when you establish the notification specification for a HIT type. </p>
     /// This field is required.
     pub fn notification(mut self, input: crate::types::NotificationSpecification) -> Self {
         self.notification = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The notification specification to test. This value is identical to the value you would provide to the UpdateNotificationSettings operation when you establish the notification specification for a HIT type.</p>
+    /// <p> The notification specification to test. This value is identical to the value you would provide to the UpdateNotificationSettings operation when you establish the notification specification for a HIT type. </p>
     pub fn set_notification(mut self, input: ::std::option::Option<crate::types::NotificationSpecification>) -> Self {
         self.notification = input;
         self
     }
-    /// <p>The notification specification to test. This value is identical to the value you would provide to the UpdateNotificationSettings operation when you establish the notification specification for a HIT type.</p>
+    /// <p> The notification specification to test. This value is identical to the value you would provide to the UpdateNotificationSettings operation when you establish the notification specification for a HIT type. </p>
     pub fn get_notification(&self) -> &::std::option::Option<crate::types::NotificationSpecification> {
         &self.notification
     }
-    /// <p>The event to simulate to test the notification specification. This event is included in the test message even if the notification specification does not include the event type. The notification specification does not filter out the test event.</p>
+    /// <p> The event to simulate to test the notification specification. This event is included in the test message even if the notification specification does not include the event type. The notification specification does not filter out the test event. </p>
     /// This field is required.
     pub fn test_event_type(mut self, input: crate::types::EventType) -> Self {
         self.test_event_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The event to simulate to test the notification specification. This event is included in the test message even if the notification specification does not include the event type. The notification specification does not filter out the test event.</p>
+    /// <p> The event to simulate to test the notification specification. This event is included in the test message even if the notification specification does not include the event type. The notification specification does not filter out the test event. </p>
     pub fn set_test_event_type(mut self, input: ::std::option::Option<crate::types::EventType>) -> Self {
         self.test_event_type = input;
         self
     }
-    /// <p>The event to simulate to test the notification specification. This event is included in the test message even if the notification specification does not include the event type. The notification specification does not filter out the test event.</p>
+    /// <p> The event to simulate to test the notification specification. This event is included in the test message even if the notification specification does not include the event type. The notification specification does not filter out the test event. </p>
     pub fn get_test_event_type(&self) -> &::std::option::Option<crate::types::EventType> {
         &self.test_event_type
     }

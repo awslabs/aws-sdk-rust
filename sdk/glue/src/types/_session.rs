@@ -8,7 +8,7 @@ pub struct Session {
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The time and date when the session was created.</p>
     pub created_on: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The session status.</p>
+    /// <p>The session status. </p>
     pub status: ::std::option::Option<crate::types::SessionStatus>,
     /// <p>The error message displayed during the session.</p>
     pub error_message: ::std::option::Option<::std::string::String>,
@@ -18,13 +18,13 @@ pub struct Session {
     pub role: ::std::option::Option<::std::string::String>,
     /// <p>The command object.See SessionCommand.</p>
     pub command: ::std::option::Option<crate::types::SessionCommand>,
-    /// <p>A map array of key-value pairs. Max is 75 pairs.</p>
+    /// <p>A map array of key-value pairs. Max is 75 pairs. </p>
     pub default_arguments: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The number of connections used for the session.</p>
     pub connections: ::std::option::Option<crate::types::ConnectionsList>,
     /// <p>The code execution progress of the session.</p>
     pub progress: f64,
-    /// <p>The number of Glue data processing units (DPUs) that can be allocated when the job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB memory.</p>
+    /// <p>The number of Glue data processing units (DPUs) that can be allocated when the job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB memory. </p>
     pub max_capacity: ::std::option::Option<f64>,
     /// <p>The name of the SecurityConfiguration structure to be used with the session.</p>
     pub security_configuration: ::std::option::Option<::std::string::String>,
@@ -52,7 +52,7 @@ impl Session {
     pub fn created_on(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_on.as_ref()
     }
-    /// <p>The session status.</p>
+    /// <p>The session status. </p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::SessionStatus> {
         self.status.as_ref()
     }
@@ -72,7 +72,7 @@ impl Session {
     pub fn command(&self) -> ::std::option::Option<&crate::types::SessionCommand> {
         self.command.as_ref()
     }
-    /// <p>A map array of key-value pairs. Max is 75 pairs.</p>
+    /// <p>A map array of key-value pairs. Max is 75 pairs. </p>
     pub fn default_arguments(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.default_arguments.as_ref()
     }
@@ -84,7 +84,7 @@ impl Session {
     pub fn progress(&self) -> f64 {
         self.progress
     }
-    /// <p>The number of Glue data processing units (DPUs) that can be allocated when the job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB memory.</p>
+    /// <p>The number of Glue data processing units (DPUs) that can be allocated when the job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB memory. </p>
     pub fn max_capacity(&self) -> ::std::option::Option<f64> {
         self.max_capacity
     }
@@ -181,17 +181,17 @@ impl SessionBuilder {
     pub fn get_created_on(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_on
     }
-    /// <p>The session status.</p>
+    /// <p>The session status. </p>
     pub fn status(mut self, input: crate::types::SessionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The session status.</p>
+    /// <p>The session status. </p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::SessionStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The session status.</p>
+    /// <p>The session status. </p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::SessionStatus> {
         &self.status
     }
@@ -255,7 +255,7 @@ impl SessionBuilder {
     ///
     /// To override the contents of this collection use [`set_default_arguments`](Self::set_default_arguments).
     ///
-    /// <p>A map array of key-value pairs. Max is 75 pairs.</p>
+    /// <p>A map array of key-value pairs. Max is 75 pairs. </p>
     pub fn default_arguments(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -266,7 +266,7 @@ impl SessionBuilder {
         self.default_arguments = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>A map array of key-value pairs. Max is 75 pairs.</p>
+    /// <p>A map array of key-value pairs. Max is 75 pairs. </p>
     pub fn set_default_arguments(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -274,7 +274,7 @@ impl SessionBuilder {
         self.default_arguments = input;
         self
     }
-    /// <p>A map array of key-value pairs. Max is 75 pairs.</p>
+    /// <p>A map array of key-value pairs. Max is 75 pairs. </p>
     pub fn get_default_arguments(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.default_arguments
     }
@@ -306,17 +306,17 @@ impl SessionBuilder {
     pub fn get_progress(&self) -> &::std::option::Option<f64> {
         &self.progress
     }
-    /// <p>The number of Glue data processing units (DPUs) that can be allocated when the job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB memory.</p>
+    /// <p>The number of Glue data processing units (DPUs) that can be allocated when the job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB memory. </p>
     pub fn max_capacity(mut self, input: f64) -> Self {
         self.max_capacity = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of Glue data processing units (DPUs) that can be allocated when the job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB memory.</p>
+    /// <p>The number of Glue data processing units (DPUs) that can be allocated when the job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB memory. </p>
     pub fn set_max_capacity(mut self, input: ::std::option::Option<f64>) -> Self {
         self.max_capacity = input;
         self
     }
-    /// <p>The number of Glue data processing units (DPUs) that can be allocated when the job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB memory.</p>
+    /// <p>The number of Glue data processing units (DPUs) that can be allocated when the job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB memory. </p>
     pub fn get_max_capacity(&self) -> &::std::option::Option<f64> {
         &self.max_capacity
     }

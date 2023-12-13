@@ -6,7 +6,7 @@
 pub struct DukptDerivationAttributes {
     /// <p>The unique identifier known as Key Serial Number (KSN) that comes from an encrypting device using DUKPT encryption method. The KSN is derived from the encrypting device unique identifier and an internal transaction counter.</p>
     pub key_serial_number: ::std::string::String,
-    /// <p>The key type derived using DUKPT from a Base Derivation Key (BDK) and Key Serial Number (KSN). This must be less than or equal to the strength of the BDK. For example, you can't use <code>AES_128</code> as a derivation type for a BDK of <code>AES_128</code> or <code>TDES_2KEY</code></p>
+    /// <p>The key type derived using DUKPT from a Base Derivation Key (BDK) and Key Serial Number (KSN). This must be less than or equal to the strength of the BDK. For example, you can't use <code>AES_128</code> as a derivation type for a BDK of <code>AES_128</code> or <code>TDES_2KEY</code> </p>
     pub dukpt_key_derivation_type: ::std::option::Option<crate::types::DukptDerivationType>,
     /// <p>The type of use of DUKPT, which can be for incoming data decryption, outgoing data encryption, or both.</p>
     pub dukpt_key_variant: ::std::option::Option<crate::types::DukptKeyVariant>,
@@ -17,7 +17,7 @@ impl DukptDerivationAttributes {
         use std::ops::Deref;
         self.key_serial_number.deref()
     }
-    /// <p>The key type derived using DUKPT from a Base Derivation Key (BDK) and Key Serial Number (KSN). This must be less than or equal to the strength of the BDK. For example, you can't use <code>AES_128</code> as a derivation type for a BDK of <code>AES_128</code> or <code>TDES_2KEY</code></p>
+    /// <p>The key type derived using DUKPT from a Base Derivation Key (BDK) and Key Serial Number (KSN). This must be less than or equal to the strength of the BDK. For example, you can't use <code>AES_128</code> as a derivation type for a BDK of <code>AES_128</code> or <code>TDES_2KEY</code> </p>
     pub fn dukpt_key_derivation_type(&self) -> ::std::option::Option<&crate::types::DukptDerivationType> {
         self.dukpt_key_derivation_type.as_ref()
     }
@@ -57,17 +57,17 @@ impl DukptDerivationAttributesBuilder {
     pub fn get_key_serial_number(&self) -> &::std::option::Option<::std::string::String> {
         &self.key_serial_number
     }
-    /// <p>The key type derived using DUKPT from a Base Derivation Key (BDK) and Key Serial Number (KSN). This must be less than or equal to the strength of the BDK. For example, you can't use <code>AES_128</code> as a derivation type for a BDK of <code>AES_128</code> or <code>TDES_2KEY</code></p>
+    /// <p>The key type derived using DUKPT from a Base Derivation Key (BDK) and Key Serial Number (KSN). This must be less than or equal to the strength of the BDK. For example, you can't use <code>AES_128</code> as a derivation type for a BDK of <code>AES_128</code> or <code>TDES_2KEY</code> </p>
     pub fn dukpt_key_derivation_type(mut self, input: crate::types::DukptDerivationType) -> Self {
         self.dukpt_key_derivation_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The key type derived using DUKPT from a Base Derivation Key (BDK) and Key Serial Number (KSN). This must be less than or equal to the strength of the BDK. For example, you can't use <code>AES_128</code> as a derivation type for a BDK of <code>AES_128</code> or <code>TDES_2KEY</code></p>
+    /// <p>The key type derived using DUKPT from a Base Derivation Key (BDK) and Key Serial Number (KSN). This must be less than or equal to the strength of the BDK. For example, you can't use <code>AES_128</code> as a derivation type for a BDK of <code>AES_128</code> or <code>TDES_2KEY</code> </p>
     pub fn set_dukpt_key_derivation_type(mut self, input: ::std::option::Option<crate::types::DukptDerivationType>) -> Self {
         self.dukpt_key_derivation_type = input;
         self
     }
-    /// <p>The key type derived using DUKPT from a Base Derivation Key (BDK) and Key Serial Number (KSN). This must be less than or equal to the strength of the BDK. For example, you can't use <code>AES_128</code> as a derivation type for a BDK of <code>AES_128</code> or <code>TDES_2KEY</code></p>
+    /// <p>The key type derived using DUKPT from a Base Derivation Key (BDK) and Key Serial Number (KSN). This must be less than or equal to the strength of the BDK. For example, you can't use <code>AES_128</code> as a derivation type for a BDK of <code>AES_128</code> or <code>TDES_2KEY</code> </p>
     pub fn get_dukpt_key_derivation_type(&self) -> &::std::option::Option<crate::types::DukptDerivationType> {
         &self.dukpt_key_derivation_type
     }

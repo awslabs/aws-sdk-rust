@@ -242,12 +242,10 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateHealthC
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreateHealthCheckError {
-    /// <p>The health check you're attempting to create already exists. Amazon Route 53 returns this error when you submit a request that has the following values:</p>
+    /// <p> The health check you're attempting to create already exists. Amazon Route 53 returns this error when you submit a request that has the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>The same value for <code>CallerReference</code> as an existing health check, and one or more values that differ from the existing health check that has the same caller reference.</p></li>
-    /// <li>
-    /// <p>The same value for <code>CallerReference</code> as a health check that you created and later deleted, regardless of the other settings in the request.</p></li>
+    /// <li> <p>The same value for <code>CallerReference</code> as an existing health check, and one or more values that differ from the existing health check that has the same caller reference.</p> </li>
+    /// <li> <p>The same value for <code>CallerReference</code> as a health check that you created and later deleted, regardless of the other settings in the request.</p> </li>
     /// </ul>
     HealthCheckAlreadyExists(crate::types::error::HealthCheckAlreadyExists),
     /// <p>The input is not valid.</p>

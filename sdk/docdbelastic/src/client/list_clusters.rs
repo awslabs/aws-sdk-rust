@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_clusters::builders::ListClustersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_clusters::builders::ListClustersFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of entries to recieve in the response.</p><br>
     /// - On success, responds with [`ListClustersOutput`](crate::operation::list_clusters::ListClustersOutput) with field(s):
     ///   - [`clusters(Option<Vec::<ClusterInList>>)`](crate::operation::list_clusters::ListClustersOutput::clusters): <p>A list of Elastic DocumentDB cluster.</p>
-    ///   - [`next_token(Option<String>)`](crate::operation::list_clusters::ListClustersOutput::next_token): <p>The response will provide a nextToken if there is more data beyond the maxResults.</p> <p>If there is no more data in the responce, the nextToken will not be returned.</p>
+    ///   - [`next_token(Option<String>)`](crate::operation::list_clusters::ListClustersOutput::next_token): <p>The response will provide a nextToken if there is more data beyond the maxResults.</p>  <p>If there is no more data in the responce, the nextToken will not be returned.</p>
     /// - On failure, responds with [`SdkError<ListClustersError>`](crate::operation::list_clusters::ListClustersError)
     pub fn list_clusters(&self) -> crate::operation::list_clusters::builders::ListClustersFluentBuilder {
         crate::operation::list_clusters::builders::ListClustersFluentBuilder::new(self.handle.clone())

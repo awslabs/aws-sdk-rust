@@ -138,12 +138,9 @@ impl CreateIAMPolicyAssignmentFluentBuilder {
     }
     /// <p>The status of the assignment. Possible values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p></li>
-    /// <li>
-    /// <p><code>DISABLED</code> - This assignment isn't used when creating the data source.</p></li>
-    /// <li>
-    /// <p><code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p></li>
+    /// <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li>
+    /// <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li>
     /// </ul>
     pub fn assignment_status(mut self, input: crate::types::AssignmentStatus) -> Self {
         self.inner = self.inner.assignment_status(input);
@@ -151,12 +148,9 @@ impl CreateIAMPolicyAssignmentFluentBuilder {
     }
     /// <p>The status of the assignment. Possible values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p></li>
-    /// <li>
-    /// <p><code>DISABLED</code> - This assignment isn't used when creating the data source.</p></li>
-    /// <li>
-    /// <p><code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p></li>
+    /// <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li>
+    /// <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li>
     /// </ul>
     pub fn set_assignment_status(mut self, input: ::std::option::Option<crate::types::AssignmentStatus>) -> Self {
         self.inner = self.inner.set_assignment_status(input);
@@ -164,12 +158,9 @@ impl CreateIAMPolicyAssignmentFluentBuilder {
     }
     /// <p>The status of the assignment. Possible values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p></li>
-    /// <li>
-    /// <p><code>DISABLED</code> - This assignment isn't used when creating the data source.</p></li>
-    /// <li>
-    /// <p><code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p></li>
+    /// <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li>
+    /// <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li>
     /// </ul>
     pub fn get_assignment_status(&self) -> &::std::option::Option<crate::types::AssignmentStatus> {
         self.inner.get_assignment_status()

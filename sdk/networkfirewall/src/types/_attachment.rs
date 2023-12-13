@@ -4,9 +4,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Attachment {
-    /// <p>The unique identifier of the subnet that you've specified to be used for a firewall endpoint.</p>
+    /// <p>The unique identifier of the subnet that you've specified to be used for a firewall endpoint. </p>
     pub subnet_id: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of the firewall endpoint that Network Firewall has instantiated in the subnet. You use this to identify the firewall endpoint in the VPC route tables, when you redirect the VPC traffic through the endpoint.</p>
+    /// <p>The identifier of the firewall endpoint that Network Firewall has instantiated in the subnet. You use this to identify the firewall endpoint in the VPC route tables, when you redirect the VPC traffic through the endpoint. </p>
     pub endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the firewall endpoint in the subnet. This value reflects both the instantiation of the endpoint in the VPC subnet and the sync states that are reported in the <code>Config</code> settings. When this value is <code>READY</code>, the endpoint is available and configured properly to handle network traffic. When the endpoint isn't available for traffic, this value will reflect its state, for example <code>CREATING</code> or <code>DELETING</code>.</p>
     pub status: ::std::option::Option<crate::types::AttachmentStatus>,
@@ -14,11 +14,11 @@ pub struct Attachment {
     pub status_message: ::std::option::Option<::std::string::String>,
 }
 impl Attachment {
-    /// <p>The unique identifier of the subnet that you've specified to be used for a firewall endpoint.</p>
+    /// <p>The unique identifier of the subnet that you've specified to be used for a firewall endpoint. </p>
     pub fn subnet_id(&self) -> ::std::option::Option<&str> {
         self.subnet_id.as_deref()
     }
-    /// <p>The identifier of the firewall endpoint that Network Firewall has instantiated in the subnet. You use this to identify the firewall endpoint in the VPC route tables, when you redirect the VPC traffic through the endpoint.</p>
+    /// <p>The identifier of the firewall endpoint that Network Firewall has instantiated in the subnet. You use this to identify the firewall endpoint in the VPC route tables, when you redirect the VPC traffic through the endpoint. </p>
     pub fn endpoint_id(&self) -> ::std::option::Option<&str> {
         self.endpoint_id.as_deref()
     }
@@ -48,31 +48,31 @@ pub struct AttachmentBuilder {
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
 }
 impl AttachmentBuilder {
-    /// <p>The unique identifier of the subnet that you've specified to be used for a firewall endpoint.</p>
+    /// <p>The unique identifier of the subnet that you've specified to be used for a firewall endpoint. </p>
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the subnet that you've specified to be used for a firewall endpoint.</p>
+    /// <p>The unique identifier of the subnet that you've specified to be used for a firewall endpoint. </p>
     pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subnet_id = input;
         self
     }
-    /// <p>The unique identifier of the subnet that you've specified to be used for a firewall endpoint.</p>
+    /// <p>The unique identifier of the subnet that you've specified to be used for a firewall endpoint. </p>
     pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.subnet_id
     }
-    /// <p>The identifier of the firewall endpoint that Network Firewall has instantiated in the subnet. You use this to identify the firewall endpoint in the VPC route tables, when you redirect the VPC traffic through the endpoint.</p>
+    /// <p>The identifier of the firewall endpoint that Network Firewall has instantiated in the subnet. You use this to identify the firewall endpoint in the VPC route tables, when you redirect the VPC traffic through the endpoint. </p>
     pub fn endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the firewall endpoint that Network Firewall has instantiated in the subnet. You use this to identify the firewall endpoint in the VPC route tables, when you redirect the VPC traffic through the endpoint.</p>
+    /// <p>The identifier of the firewall endpoint that Network Firewall has instantiated in the subnet. You use this to identify the firewall endpoint in the VPC route tables, when you redirect the VPC traffic through the endpoint. </p>
     pub fn set_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_id = input;
         self
     }
-    /// <p>The identifier of the firewall endpoint that Network Firewall has instantiated in the subnet. You use this to identify the firewall endpoint in the VPC route tables, when you redirect the VPC traffic through the endpoint.</p>
+    /// <p>The identifier of the firewall endpoint that Network Firewall has instantiated in the subnet. You use this to identify the firewall endpoint in the VPC route tables, when you redirect the VPC traffic through the endpoint. </p>
     pub fn get_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.endpoint_id
     }

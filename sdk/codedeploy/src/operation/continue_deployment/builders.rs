@@ -22,7 +22,7 @@ impl ContinueDeploymentInputBuilder {
 }
 /// Fluent builder constructing a request to `ContinueDeployment`.
 ///
-/// <p>For a blue/green deployment, starts the process of rerouting traffic from instances in the original environment to instances in the replacement environment without waiting for a specified wait time to elapse. (Traffic rerouting, which is achieved by registering instances in the replacement environment with the load balancer, can start as soon as all instances have a status of Ready.)</p>
+/// <p>For a blue/green deployment, starts the process of rerouting traffic from instances in the original environment to instances in the replacement environment without waiting for a specified wait time to elapse. (Traffic rerouting, which is achieved by registering instances in the replacement environment with the load balancer, can start as soon as all instances have a status of Ready.) </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ContinueDeploymentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl ContinueDeploymentFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique ID of a blue/green deployment for which you want to start rerouting traffic to the replacement environment.</p>
+    /// <p> The unique ID of a blue/green deployment for which you want to start rerouting traffic to the replacement environment. </p>
     pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.deployment_id(input.into());
         self
     }
-    /// <p>The unique ID of a blue/green deployment for which you want to start rerouting traffic to the replacement environment.</p>
+    /// <p> The unique ID of a blue/green deployment for which you want to start rerouting traffic to the replacement environment. </p>
     pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_deployment_id(input);
         self
     }
-    /// <p>The unique ID of a blue/green deployment for which you want to start rerouting traffic to the replacement environment.</p>
+    /// <p> The unique ID of a blue/green deployment for which you want to start rerouting traffic to the replacement environment. </p>
     pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_deployment_id()
     }
-    /// <p>The status of the deployment's waiting period. <code>READY_WAIT</code> indicates that the deployment is ready to start shifting traffic. <code>TERMINATION_WAIT</code> indicates that the traffic is shifted, but the original target is not terminated.</p>
+    /// <p> The status of the deployment's waiting period. <code>READY_WAIT</code> indicates that the deployment is ready to start shifting traffic. <code>TERMINATION_WAIT</code> indicates that the traffic is shifted, but the original target is not terminated. </p>
     pub fn deployment_wait_type(mut self, input: crate::types::DeploymentWaitType) -> Self {
         self.inner = self.inner.deployment_wait_type(input);
         self
     }
-    /// <p>The status of the deployment's waiting period. <code>READY_WAIT</code> indicates that the deployment is ready to start shifting traffic. <code>TERMINATION_WAIT</code> indicates that the traffic is shifted, but the original target is not terminated.</p>
+    /// <p> The status of the deployment's waiting period. <code>READY_WAIT</code> indicates that the deployment is ready to start shifting traffic. <code>TERMINATION_WAIT</code> indicates that the traffic is shifted, but the original target is not terminated. </p>
     pub fn set_deployment_wait_type(mut self, input: ::std::option::Option<crate::types::DeploymentWaitType>) -> Self {
         self.inner = self.inner.set_deployment_wait_type(input);
         self
     }
-    /// <p>The status of the deployment's waiting period. <code>READY_WAIT</code> indicates that the deployment is ready to start shifting traffic. <code>TERMINATION_WAIT</code> indicates that the traffic is shifted, but the original target is not terminated.</p>
+    /// <p> The status of the deployment's waiting period. <code>READY_WAIT</code> indicates that the deployment is ready to start shifting traffic. <code>TERMINATION_WAIT</code> indicates that the traffic is shifted, but the original target is not terminated. </p>
     pub fn get_deployment_wait_type(&self) -> &::std::option::Option<crate::types::DeploymentWaitType> {
         self.inner.get_deployment_wait_type()
     }

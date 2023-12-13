@@ -3,7 +3,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteServiceLinkedRoleOutput {
-    /// <p>The deletion task identifier that you can use to check the status of the deletion. This identifier is returned in the format <code>task/aws-service-role/<service-principal-name>
+    /// <p>The deletion task identifier that you can use to check the status of the deletion. This identifier is returned in the format <code>task/aws-service-role/
+    /// <service-principal-name>
     /// /
     /// <role-name>
     /// /
@@ -14,7 +15,8 @@ pub struct DeleteServiceLinkedRoleOutput {
     _request_id: Option<String>,
 }
 impl DeleteServiceLinkedRoleOutput {
-    /// <p>The deletion task identifier that you can use to check the status of the deletion. This identifier is returned in the format <code>task/aws-service-role/<service-principal-name>
+    /// <p>The deletion task identifier that you can use to check the status of the deletion. This identifier is returned in the format <code>task/aws-service-role/
+    /// <service-principal-name>
     /// /
     /// <role-name>
     /// /
@@ -46,7 +48,8 @@ pub struct DeleteServiceLinkedRoleOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteServiceLinkedRoleOutputBuilder {
-    /// <p>The deletion task identifier that you can use to check the status of the deletion. This identifier is returned in the format <code>task/aws-service-role/<service-principal-name>
+    /// <p>The deletion task identifier that you can use to check the status of the deletion. This identifier is returned in the format <code>task/aws-service-role/
+    /// <service-principal-name>
     /// /
     /// <role-name>
     /// /
@@ -58,7 +61,8 @@ impl DeleteServiceLinkedRoleOutputBuilder {
         self.deletion_task_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The deletion task identifier that you can use to check the status of the deletion. This identifier is returned in the format <code>task/aws-service-role/<service-principal-name>
+    /// <p>The deletion task identifier that you can use to check the status of the deletion. This identifier is returned in the format <code>task/aws-service-role/
+    /// <service-principal-name>
     /// /
     /// <role-name>
     /// /
@@ -69,7 +73,8 @@ impl DeleteServiceLinkedRoleOutputBuilder {
         self.deletion_task_id = input;
         self
     }
-    /// <p>The deletion task identifier that you can use to check the status of the deletion. This identifier is returned in the format <code>task/aws-service-role/<service-principal-name>
+    /// <p>The deletion task identifier that you can use to check the status of the deletion. This identifier is returned in the format <code>task/aws-service-role/
+    /// <service-principal-name>
     /// /
     /// <role-name>
     /// /

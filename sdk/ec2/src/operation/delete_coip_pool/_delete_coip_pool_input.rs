@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteCoipPoolInput {
-    /// <p>The ID of the CoIP pool that you want to delete.</p>
+    /// <p>The ID of the CoIP pool that you want to delete. </p>
     pub coip_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
 impl DeleteCoipPoolInput {
-    /// <p>The ID of the CoIP pool that you want to delete.</p>
+    /// <p>The ID of the CoIP pool that you want to delete. </p>
     pub fn coip_pool_id(&self) -> ::std::option::Option<&str> {
         self.coip_pool_id.as_deref()
     }
@@ -33,18 +33,18 @@ pub struct DeleteCoipPoolInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl DeleteCoipPoolInputBuilder {
-    /// <p>The ID of the CoIP pool that you want to delete.</p>
+    /// <p>The ID of the CoIP pool that you want to delete. </p>
     /// This field is required.
     pub fn coip_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.coip_pool_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the CoIP pool that you want to delete.</p>
+    /// <p>The ID of the CoIP pool that you want to delete. </p>
     pub fn set_coip_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.coip_pool_id = input;
         self
     }
-    /// <p>The ID of the CoIP pool that you want to delete.</p>
+    /// <p>The ID of the CoIP pool that you want to delete. </p>
     pub fn get_coip_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.coip_pool_id
     }

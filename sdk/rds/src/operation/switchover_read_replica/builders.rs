@@ -111,8 +111,7 @@ impl SwitchoverReadReplicaFluentBuilder {
     /// <p>The DB instance identifier of the current standby database. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must match the identiﬁer of an existing Oracle read replica DB instance.</p></li>
+    /// <li> <p>Must match the identiﬁer of an existing Oracle read replica DB instance.</p> </li>
     /// </ul>
     pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_instance_identifier(input.into());
@@ -121,8 +120,7 @@ impl SwitchoverReadReplicaFluentBuilder {
     /// <p>The DB instance identifier of the current standby database. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must match the identiﬁer of an existing Oracle read replica DB instance.</p></li>
+    /// <li> <p>Must match the identiﬁer of an existing Oracle read replica DB instance.</p> </li>
     /// </ul>
     pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_instance_identifier(input);
@@ -131,8 +129,7 @@ impl SwitchoverReadReplicaFluentBuilder {
     /// <p>The DB instance identifier of the current standby database. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must match the identiﬁer of an existing Oracle read replica DB instance.</p></li>
+    /// <li> <p>Must match the identiﬁer of an existing Oracle read replica DB instance.</p> </li>
     /// </ul>
     pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_instance_identifier()

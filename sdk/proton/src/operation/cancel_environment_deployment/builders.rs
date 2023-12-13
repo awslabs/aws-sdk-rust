@@ -25,12 +25,9 @@ impl CancelEnvironmentDeploymentInputBuilder {
 /// <p>Attempts to cancel an environment deployment on an <code>UpdateEnvironment</code> action, if the deployment is <code>IN_PROGRESS</code>. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-update.html">Update an environment</a> in the <i>Proton User guide</i>.</p>
 /// <p>The following list includes potential cancellation scenarios.</p>
 /// <ul>
-/// <li>
-/// <p>If the cancellation attempt succeeds, the resulting deployment state is <code>CANCELLED</code>.</p></li>
-/// <li>
-/// <p>If the cancellation attempt fails, the resulting deployment state is <code>FAILED</code>.</p></li>
-/// <li>
-/// <p>If the current <code>UpdateEnvironment</code> action succeeds before the cancellation attempt starts, the resulting deployment state is <code>SUCCEEDED</code> and the cancellation attempt has no effect.</p></li>
+/// <li> <p>If the cancellation attempt succeeds, the resulting deployment state is <code>CANCELLED</code>.</p> </li>
+/// <li> <p>If the cancellation attempt fails, the resulting deployment state is <code>FAILED</code>.</p> </li>
+/// <li> <p>If the current <code>UpdateEnvironment</code> action succeeds before the cancellation attempt starts, the resulting deployment state is <code>SUCCEEDED</code> and the cancellation attempt has no effect.</p> </li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CancelEnvironmentDeploymentFluentBuilder {

@@ -11,7 +11,7 @@ pub struct NewTransitVirtualInterfaceAllocation {
     /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
     /// <p>The valid values are 1-2147483647.</p>
     pub asn: i32,
-    /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500. The default value is 1500</p>
+    /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500. The default value is 1500 </p>
     pub mtu: ::std::option::Option<i32>,
     /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
     pub auth_key: ::std::option::Option<::std::string::String>,
@@ -38,7 +38,7 @@ impl NewTransitVirtualInterfaceAllocation {
     pub fn asn(&self) -> i32 {
         self.asn
     }
-    /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500. The default value is 1500</p>
+    /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500. The default value is 1500 </p>
     pub fn mtu(&self) -> ::std::option::Option<i32> {
         self.mtu
     }
@@ -132,17 +132,17 @@ impl NewTransitVirtualInterfaceAllocationBuilder {
     pub fn get_asn(&self) -> &::std::option::Option<i32> {
         &self.asn
     }
-    /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500. The default value is 1500</p>
+    /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500. The default value is 1500 </p>
     pub fn mtu(mut self, input: i32) -> Self {
         self.mtu = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500. The default value is 1500</p>
+    /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500. The default value is 1500 </p>
     pub fn set_mtu(mut self, input: ::std::option::Option<i32>) -> Self {
         self.mtu = input;
         self
     }
-    /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500. The default value is 1500</p>
+    /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500. The default value is 1500 </p>
     pub fn get_mtu(&self) -> &::std::option::Option<i32> {
         &self.mtu
     }

@@ -14,7 +14,7 @@ pub struct SubjectDetail {
     pub x509_subject: ::std::option::Option<::std::string::String>,
     /// <p>The ISO-8601 timestamp of the last time this subject requested temporary session credentials.</p>
     pub last_seen_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The ISO-8601 timestamp when the subject was created.</p>
+    /// <p>The ISO-8601 timestamp when the subject was created. </p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ISO-8601 timestamp when the subject was last updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -44,7 +44,7 @@ impl SubjectDetail {
     pub fn last_seen_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_seen_at.as_ref()
     }
-    /// <p>The ISO-8601 timestamp when the subject was created.</p>
+    /// <p>The ISO-8601 timestamp when the subject was created. </p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
@@ -157,17 +157,17 @@ impl SubjectDetailBuilder {
     pub fn get_last_seen_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_seen_at
     }
-    /// <p>The ISO-8601 timestamp when the subject was created.</p>
+    /// <p>The ISO-8601 timestamp when the subject was created. </p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The ISO-8601 timestamp when the subject was created.</p>
+    /// <p>The ISO-8601 timestamp when the subject was created. </p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
-    /// <p>The ISO-8601 timestamp when the subject was created.</p>
+    /// <p>The ISO-8601 timestamp when the subject was created. </p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }

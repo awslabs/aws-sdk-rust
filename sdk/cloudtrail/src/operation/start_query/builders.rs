@@ -23,7 +23,7 @@ impl StartQueryInputBuilder {
 /// Fluent builder constructing a request to `StartQuery`.
 ///
 /// <p>Starts a CloudTrail Lake query. Use the <code>QueryStatement</code> parameter to provide your SQL query, enclosed in single quotation marks. Use the optional <code>DeliveryS3Uri</code> parameter to deliver the query results to an S3 bucket.</p>
-/// <p><code>StartQuery</code> requires you specify either the <code>QueryStatement</code> parameter, or a <code>QueryAlias</code> and any <code>QueryParameters</code>. In the current release, the <code>QueryAlias</code> and <code>QueryParameters</code> parameters are used only for the queries that populate the CloudTrail Lake dashboards.</p>
+/// <p> <code>StartQuery</code> requires you specify either the <code>QueryStatement</code> parameter, or a <code>QueryAlias</code> and any <code>QueryParameters</code>. In the current release, the <code>QueryAlias</code> and <code>QueryParameters</code> parameters are used only for the queries that populate the CloudTrail Lake dashboards.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartQueryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -123,31 +123,31 @@ impl StartQueryFluentBuilder {
     pub fn get_query_statement(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_query_statement()
     }
-    /// <p>The URI for the S3 bucket where CloudTrail delivers the query results.</p>
+    /// <p> The URI for the S3 bucket where CloudTrail delivers the query results. </p>
     pub fn delivery_s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.delivery_s3_uri(input.into());
         self
     }
-    /// <p>The URI for the S3 bucket where CloudTrail delivers the query results.</p>
+    /// <p> The URI for the S3 bucket where CloudTrail delivers the query results. </p>
     pub fn set_delivery_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_delivery_s3_uri(input);
         self
     }
-    /// <p>The URI for the S3 bucket where CloudTrail delivers the query results.</p>
+    /// <p> The URI for the S3 bucket where CloudTrail delivers the query results. </p>
     pub fn get_delivery_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_delivery_s3_uri()
     }
-    /// <p>The alias that identifies a query template.</p>
+    /// <p> The alias that identifies a query template. </p>
     pub fn query_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.query_alias(input.into());
         self
     }
-    /// <p>The alias that identifies a query template.</p>
+    /// <p> The alias that identifies a query template. </p>
     pub fn set_query_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_query_alias(input);
         self
     }
-    /// <p>The alias that identifies a query template.</p>
+    /// <p> The alias that identifies a query template. </p>
     pub fn get_query_alias(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_query_alias()
     }
@@ -155,17 +155,17 @@ impl StartQueryFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_query_parameters`](Self::set_query_parameters).
     ///
-    /// <p>The query parameters for the specified <code>QueryAlias</code>.</p>
+    /// <p> The query parameters for the specified <code>QueryAlias</code>. </p>
     pub fn query_parameters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.query_parameters(input.into());
         self
     }
-    /// <p>The query parameters for the specified <code>QueryAlias</code>.</p>
+    /// <p> The query parameters for the specified <code>QueryAlias</code>. </p>
     pub fn set_query_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_query_parameters(input);
         self
     }
-    /// <p>The query parameters for the specified <code>QueryAlias</code>.</p>
+    /// <p> The query parameters for the specified <code>QueryAlias</code>. </p>
     pub fn get_query_parameters(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_query_parameters()
     }

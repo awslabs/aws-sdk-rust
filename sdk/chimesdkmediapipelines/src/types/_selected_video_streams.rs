@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SelectedVideoStreams {
-    /// <p>The attendee IDs of the streams selected for a media pipeline.</p>
+    /// <p>The attendee IDs of the streams selected for a media pipeline. </p>
     pub attendee_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The external user IDs of the streams selected for a media pipeline.</p>
     pub external_user_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SelectedVideoStreams {
-    /// <p>The attendee IDs of the streams selected for a media pipeline.</p>
+    /// <p>The attendee IDs of the streams selected for a media pipeline. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attendee_ids.is_none()`.
     pub fn attendee_ids(&self) -> &[::std::string::String] {
@@ -42,19 +42,19 @@ impl SelectedVideoStreamsBuilder {
     ///
     /// To override the contents of this collection use [`set_attendee_ids`](Self::set_attendee_ids).
     ///
-    /// <p>The attendee IDs of the streams selected for a media pipeline.</p>
+    /// <p>The attendee IDs of the streams selected for a media pipeline. </p>
     pub fn attendee_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.attendee_ids.unwrap_or_default();
         v.push(input.into());
         self.attendee_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The attendee IDs of the streams selected for a media pipeline.</p>
+    /// <p>The attendee IDs of the streams selected for a media pipeline. </p>
     pub fn set_attendee_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.attendee_ids = input;
         self
     }
-    /// <p>The attendee IDs of the streams selected for a media pipeline.</p>
+    /// <p>The attendee IDs of the streams selected for a media pipeline. </p>
     pub fn get_attendee_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.attendee_ids
     }

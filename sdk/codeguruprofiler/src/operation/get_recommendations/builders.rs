@@ -22,7 +22,7 @@ impl GetRecommendationsInputBuilder {
 }
 /// Fluent builder constructing a request to `GetRecommendations`.
 ///
-/// <p>Returns a list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_Recommendation.html"> <code>Recommendation</code> </a> objects that contain recommendations for a profiling group for a given time period. A list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_Anomaly.html"> <code>Anomaly</code> </a> objects that contains details about anomalies detected in the profiling group for the same time period is also returned.</p>
+/// <p> Returns a list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_Recommendation.html"> <code>Recommendation</code> </a> objects that contain recommendations for a profiling group for a given time period. A list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_Anomaly.html"> <code>Anomaly</code> </a> objects that contains details about anomalies detected in the profiling group for the same time period is also returned. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetRecommendationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,130 +108,97 @@ impl GetRecommendationsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the profiling group to get analysis data about.</p>
+    /// <p> The name of the profiling group to get analysis data about. </p>
     pub fn profiling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.profiling_group_name(input.into());
         self
     }
-    /// <p>The name of the profiling group to get analysis data about.</p>
+    /// <p> The name of the profiling group to get analysis data about. </p>
     pub fn set_profiling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_profiling_group_name(input);
         self
     }
-    /// <p>The name of the profiling group to get analysis data about.</p>
+    /// <p> The name of the profiling group to get analysis data about. </p>
     pub fn get_profiling_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_profiling_group_name()
     }
-    /// <p>The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
+    /// <p> The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_time(input);
         self
     }
-    /// <p>The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
+    /// <p> The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
-    /// <p>The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
+    /// <p> The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_start_time()
     }
-    /// <p>The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
+    /// <p> The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.end_time(input);
         self
     }
-    /// <p>The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
+    /// <p> The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }
-    /// <p>The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
+    /// <p> The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_end_time()
     }
-    /// <p>The language used to provide analysis. Specify using a string that is one of the following <code>BCP 47</code> language codes.</p>
+    /// <p> The language used to provide analysis. Specify using a string that is one of the following <code>BCP 47</code> language codes. </p>
     /// <ul>
-    /// <li>
-    /// <p><code>de-DE</code> - German, Germany</p></li>
-    /// <li>
-    /// <p><code>en-GB</code> - English, United Kingdom</p></li>
-    /// <li>
-    /// <p><code>en-US</code> - English, United States</p></li>
-    /// <li>
-    /// <p><code>es-ES</code> - Spanish, Spain</p></li>
-    /// <li>
-    /// <p><code>fr-FR</code> - French, France</p></li>
-    /// <li>
-    /// <p><code>it-IT</code> - Italian, Italy</p></li>
-    /// <li>
-    /// <p><code>ja-JP</code> - Japanese, Japan</p></li>
-    /// <li>
-    /// <p><code>ko-KR</code> - Korean, Republic of Korea</p></li>
-    /// <li>
-    /// <p><code>pt-BR</code> - Portugese, Brazil</p></li>
-    /// <li>
-    /// <p><code>zh-CN</code> - Chinese, China</p></li>
-    /// <li>
-    /// <p><code>zh-TW</code> - Chinese, Taiwan</p></li>
+    /// <li> <p> <code>de-DE</code> - German, Germany </p> </li>
+    /// <li> <p> <code>en-GB</code> - English, United Kingdom </p> </li>
+    /// <li> <p> <code>en-US</code> - English, United States </p> </li>
+    /// <li> <p> <code>es-ES</code> - Spanish, Spain </p> </li>
+    /// <li> <p> <code>fr-FR</code> - French, France </p> </li>
+    /// <li> <p> <code>it-IT</code> - Italian, Italy </p> </li>
+    /// <li> <p> <code>ja-JP</code> - Japanese, Japan </p> </li>
+    /// <li> <p> <code>ko-KR</code> - Korean, Republic of Korea </p> </li>
+    /// <li> <p> <code>pt-BR</code> - Portugese, Brazil </p> </li>
+    /// <li> <p> <code>zh-CN</code> - Chinese, China </p> </li>
+    /// <li> <p> <code>zh-TW</code> - Chinese, Taiwan </p> </li>
     /// </ul>
     pub fn locale(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.locale(input.into());
         self
     }
-    /// <p>The language used to provide analysis. Specify using a string that is one of the following <code>BCP 47</code> language codes.</p>
+    /// <p> The language used to provide analysis. Specify using a string that is one of the following <code>BCP 47</code> language codes. </p>
     /// <ul>
-    /// <li>
-    /// <p><code>de-DE</code> - German, Germany</p></li>
-    /// <li>
-    /// <p><code>en-GB</code> - English, United Kingdom</p></li>
-    /// <li>
-    /// <p><code>en-US</code> - English, United States</p></li>
-    /// <li>
-    /// <p><code>es-ES</code> - Spanish, Spain</p></li>
-    /// <li>
-    /// <p><code>fr-FR</code> - French, France</p></li>
-    /// <li>
-    /// <p><code>it-IT</code> - Italian, Italy</p></li>
-    /// <li>
-    /// <p><code>ja-JP</code> - Japanese, Japan</p></li>
-    /// <li>
-    /// <p><code>ko-KR</code> - Korean, Republic of Korea</p></li>
-    /// <li>
-    /// <p><code>pt-BR</code> - Portugese, Brazil</p></li>
-    /// <li>
-    /// <p><code>zh-CN</code> - Chinese, China</p></li>
-    /// <li>
-    /// <p><code>zh-TW</code> - Chinese, Taiwan</p></li>
+    /// <li> <p> <code>de-DE</code> - German, Germany </p> </li>
+    /// <li> <p> <code>en-GB</code> - English, United Kingdom </p> </li>
+    /// <li> <p> <code>en-US</code> - English, United States </p> </li>
+    /// <li> <p> <code>es-ES</code> - Spanish, Spain </p> </li>
+    /// <li> <p> <code>fr-FR</code> - French, France </p> </li>
+    /// <li> <p> <code>it-IT</code> - Italian, Italy </p> </li>
+    /// <li> <p> <code>ja-JP</code> - Japanese, Japan </p> </li>
+    /// <li> <p> <code>ko-KR</code> - Korean, Republic of Korea </p> </li>
+    /// <li> <p> <code>pt-BR</code> - Portugese, Brazil </p> </li>
+    /// <li> <p> <code>zh-CN</code> - Chinese, China </p> </li>
+    /// <li> <p> <code>zh-TW</code> - Chinese, Taiwan </p> </li>
     /// </ul>
     pub fn set_locale(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_locale(input);
         self
     }
-    /// <p>The language used to provide analysis. Specify using a string that is one of the following <code>BCP 47</code> language codes.</p>
+    /// <p> The language used to provide analysis. Specify using a string that is one of the following <code>BCP 47</code> language codes. </p>
     /// <ul>
-    /// <li>
-    /// <p><code>de-DE</code> - German, Germany</p></li>
-    /// <li>
-    /// <p><code>en-GB</code> - English, United Kingdom</p></li>
-    /// <li>
-    /// <p><code>en-US</code> - English, United States</p></li>
-    /// <li>
-    /// <p><code>es-ES</code> - Spanish, Spain</p></li>
-    /// <li>
-    /// <p><code>fr-FR</code> - French, France</p></li>
-    /// <li>
-    /// <p><code>it-IT</code> - Italian, Italy</p></li>
-    /// <li>
-    /// <p><code>ja-JP</code> - Japanese, Japan</p></li>
-    /// <li>
-    /// <p><code>ko-KR</code> - Korean, Republic of Korea</p></li>
-    /// <li>
-    /// <p><code>pt-BR</code> - Portugese, Brazil</p></li>
-    /// <li>
-    /// <p><code>zh-CN</code> - Chinese, China</p></li>
-    /// <li>
-    /// <p><code>zh-TW</code> - Chinese, Taiwan</p></li>
+    /// <li> <p> <code>de-DE</code> - German, Germany </p> </li>
+    /// <li> <p> <code>en-GB</code> - English, United Kingdom </p> </li>
+    /// <li> <p> <code>en-US</code> - English, United States </p> </li>
+    /// <li> <p> <code>es-ES</code> - Spanish, Spain </p> </li>
+    /// <li> <p> <code>fr-FR</code> - French, France </p> </li>
+    /// <li> <p> <code>it-IT</code> - Italian, Italy </p> </li>
+    /// <li> <p> <code>ja-JP</code> - Japanese, Japan </p> </li>
+    /// <li> <p> <code>ko-KR</code> - Korean, Republic of Korea </p> </li>
+    /// <li> <p> <code>pt-BR</code> - Portugese, Brazil </p> </li>
+    /// <li> <p> <code>zh-CN</code> - Chinese, China </p> </li>
+    /// <li> <p> <code>zh-TW</code> - Chinese, Taiwan </p> </li>
     /// </ul>
     pub fn get_locale(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_locale()

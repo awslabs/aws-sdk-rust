@@ -22,7 +22,7 @@ impl CreateBackendEnvironmentInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateBackendEnvironment`.
 ///
-/// <p>Creates a new backend environment for an Amplify app.</p>
+/// <p>Creates a new backend environment for an Amplify app. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateBackendEnvironmentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,59 +108,59 @@ impl CreateBackendEnvironmentFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique ID for an Amplify app.</p>
+    /// <p>The unique ID for an Amplify app. </p>
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_id(input.into());
         self
     }
-    /// <p>The unique ID for an Amplify app.</p>
+    /// <p>The unique ID for an Amplify app. </p>
     pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_id(input);
         self
     }
-    /// <p>The unique ID for an Amplify app.</p>
+    /// <p>The unique ID for an Amplify app. </p>
     pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_app_id()
     }
-    /// <p>The name for the backend environment.</p>
+    /// <p>The name for the backend environment. </p>
     pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_name(input.into());
         self
     }
-    /// <p>The name for the backend environment.</p>
+    /// <p>The name for the backend environment. </p>
     pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_name(input);
         self
     }
-    /// <p>The name for the backend environment.</p>
+    /// <p>The name for the backend environment. </p>
     pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_environment_name()
     }
-    /// <p>The AWS CloudFormation stack name of a backend environment.</p>
+    /// <p>The AWS CloudFormation stack name of a backend environment. </p>
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stack_name(input.into());
         self
     }
-    /// <p>The AWS CloudFormation stack name of a backend environment.</p>
+    /// <p>The AWS CloudFormation stack name of a backend environment. </p>
     pub fn set_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stack_name(input);
         self
     }
-    /// <p>The AWS CloudFormation stack name of a backend environment.</p>
+    /// <p>The AWS CloudFormation stack name of a backend environment. </p>
     pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_stack_name()
     }
-    /// <p>The name of deployment artifacts.</p>
+    /// <p>The name of deployment artifacts. </p>
     pub fn deployment_artifacts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.deployment_artifacts(input.into());
         self
     }
-    /// <p>The name of deployment artifacts.</p>
+    /// <p>The name of deployment artifacts. </p>
     pub fn set_deployment_artifacts(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_deployment_artifacts(input);
         self
     }
-    /// <p>The name of deployment artifacts.</p>
+    /// <p>The name of deployment artifacts. </p>
     pub fn get_deployment_artifacts(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_deployment_artifacts()
     }

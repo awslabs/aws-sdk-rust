@@ -22,7 +22,7 @@ impl ListVoiceProfileDomainsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListVoiceProfileDomains`.
 ///
-/// <p>Lists the specified voice profile domains in the administrator's AWS account.</p>
+/// <p>Lists the specified voice profile domains in the administrator's AWS account. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListVoiceProfileDomainsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

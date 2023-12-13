@@ -22,7 +22,7 @@ impl DeleteComponentInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteComponent`.
 ///
-/// <p>Deletes a version of a component from IoT Greengrass.</p><note>
+/// <p>Deletes a version of a component from IoT Greengrass.</p> <note>
 /// <p>This operation deletes the component's recipe and artifacts. As a result, deployments that refer to this component version will fail. If you have deployments that use this component version, you can remove the component from the deployment or update the deployment to use a valid version.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

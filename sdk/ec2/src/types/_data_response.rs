@@ -10,7 +10,7 @@ pub struct DataResponse {
     pub source: ::std::option::Option<::std::string::String>,
     /// <p>The Region or Availability Zone that's the destination for the data query. For example, <code>eu-west-1</code>.</p>
     pub destination: ::std::option::Option<::std::string::String>,
-    /// <p>The metric used for the network performance request. Only <code>aggregate-latency</code> is supported, which shows network latency during a specified period.</p>
+    /// <p>The metric used for the network performance request. Only <code>aggregate-latency</code> is supported, which shows network latency during a specified period. </p>
     pub metric: ::std::option::Option<crate::types::MetricType>,
     /// <p>The statistic used for the network performance request.</p>
     pub statistic: ::std::option::Option<crate::types::StatisticType>,
@@ -32,7 +32,7 @@ impl DataResponse {
     pub fn destination(&self) -> ::std::option::Option<&str> {
         self.destination.as_deref()
     }
-    /// <p>The metric used for the network performance request. Only <code>aggregate-latency</code> is supported, which shows network latency during a specified period.</p>
+    /// <p>The metric used for the network performance request. Only <code>aggregate-latency</code> is supported, which shows network latency during a specified period. </p>
     pub fn metric(&self) -> ::std::option::Option<&crate::types::MetricType> {
         self.metric.as_ref()
     }
@@ -113,17 +113,17 @@ impl DataResponseBuilder {
     pub fn get_destination(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination
     }
-    /// <p>The metric used for the network performance request. Only <code>aggregate-latency</code> is supported, which shows network latency during a specified period.</p>
+    /// <p>The metric used for the network performance request. Only <code>aggregate-latency</code> is supported, which shows network latency during a specified period. </p>
     pub fn metric(mut self, input: crate::types::MetricType) -> Self {
         self.metric = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The metric used for the network performance request. Only <code>aggregate-latency</code> is supported, which shows network latency during a specified period.</p>
+    /// <p>The metric used for the network performance request. Only <code>aggregate-latency</code> is supported, which shows network latency during a specified period. </p>
     pub fn set_metric(mut self, input: ::std::option::Option<crate::types::MetricType>) -> Self {
         self.metric = input;
         self
     }
-    /// <p>The metric used for the network performance request. Only <code>aggregate-latency</code> is supported, which shows network latency during a specified period.</p>
+    /// <p>The metric used for the network performance request. Only <code>aggregate-latency</code> is supported, which shows network latency during a specified period. </p>
     pub fn get_metric(&self) -> &::std::option::Option<crate::types::MetricType> {
         &self.metric
     }

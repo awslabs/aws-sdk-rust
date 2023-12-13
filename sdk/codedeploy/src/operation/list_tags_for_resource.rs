@@ -248,11 +248,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListTagsForRe
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum ListTagsForResourceError {
-    /// <p>The specified ARN is not supported. For example, it might be an ARN for a resource that is not expected.</p>
+    /// <p> The specified ARN is not supported. For example, it might be an ARN for a resource that is not expected. </p>
     ArnNotSupportedException(crate::types::error::ArnNotSupportedException),
-    /// <p>The specified ARN is not in a valid format.</p>
+    /// <p> The specified ARN is not in a valid format. </p>
     InvalidArnException(crate::types::error::InvalidArnException),
-    /// <p>The ARN of a resource is required, but was not found.</p>
+    /// <p> The ARN of a resource is required, but was not found. </p>
     ResourceArnRequiredException(crate::types::error::ResourceArnRequiredException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

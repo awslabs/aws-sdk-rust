@@ -122,21 +122,21 @@ impl StartDiscoveryJobFluentBuilder {
     pub fn get_storage_system_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_storage_system_arn()
     }
-    /// <p>Specifies in minutes how long you want the discovery job to run.</p><note>
+    /// <p>Specifies in minutes how long you want the discovery job to run.</p> <note>
     /// <p>For more accurate recommendations, we recommend a duration of at least 14 days. Longer durations allow time to collect a sufficient number of data points and provide a realistic representation of storage performance and utilization.</p>
     /// </note>
     pub fn collection_duration_minutes(mut self, input: i32) -> Self {
         self.inner = self.inner.collection_duration_minutes(input);
         self
     }
-    /// <p>Specifies in minutes how long you want the discovery job to run.</p><note>
+    /// <p>Specifies in minutes how long you want the discovery job to run.</p> <note>
     /// <p>For more accurate recommendations, we recommend a duration of at least 14 days. Longer durations allow time to collect a sufficient number of data points and provide a realistic representation of storage performance and utilization.</p>
     /// </note>
     pub fn set_collection_duration_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_collection_duration_minutes(input);
         self
     }
-    /// <p>Specifies in minutes how long you want the discovery job to run.</p><note>
+    /// <p>Specifies in minutes how long you want the discovery job to run.</p> <note>
     /// <p>For more accurate recommendations, we recommend a duration of at least 14 days. Longer durations allow time to collect a sufficient number of data points and provide a realistic representation of storage performance and utilization.</p>
     /// </note>
     pub fn get_collection_duration_minutes(&self) -> &::std::option::Option<i32> {

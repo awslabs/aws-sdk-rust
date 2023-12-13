@@ -8,7 +8,7 @@ pub struct Prompt {
     pub messages: ::std::vec::Vec<crate::types::Message>,
     /// <p>The number of times to prompt the user for information.</p>
     pub max_attempts: i32,
-    /// <p>A response card. Amazon Lex uses this prompt at runtime, in the <code>PostText</code> API response. It substitutes session attributes and slot values for placeholders in the response card. For more information, see <code>ex-resp-card</code>.</p>
+    /// <p>A response card. Amazon Lex uses this prompt at runtime, in the <code>PostText</code> API response. It substitutes session attributes and slot values for placeholders in the response card. For more information, see <code>ex-resp-card</code>. </p>
     pub response_card: ::std::option::Option<::std::string::String>,
 }
 impl Prompt {
@@ -21,7 +21,7 @@ impl Prompt {
     pub fn max_attempts(&self) -> i32 {
         self.max_attempts
     }
-    /// <p>A response card. Amazon Lex uses this prompt at runtime, in the <code>PostText</code> API response. It substitutes session attributes and slot values for placeholders in the response card. For more information, see <code>ex-resp-card</code>.</p>
+    /// <p>A response card. Amazon Lex uses this prompt at runtime, in the <code>PostText</code> API response. It substitutes session attributes and slot values for placeholders in the response card. For more information, see <code>ex-resp-card</code>. </p>
     pub fn response_card(&self) -> ::std::option::Option<&str> {
         self.response_card.as_deref()
     }
@@ -77,17 +77,17 @@ impl PromptBuilder {
     pub fn get_max_attempts(&self) -> &::std::option::Option<i32> {
         &self.max_attempts
     }
-    /// <p>A response card. Amazon Lex uses this prompt at runtime, in the <code>PostText</code> API response. It substitutes session attributes and slot values for placeholders in the response card. For more information, see <code>ex-resp-card</code>.</p>
+    /// <p>A response card. Amazon Lex uses this prompt at runtime, in the <code>PostText</code> API response. It substitutes session attributes and slot values for placeholders in the response card. For more information, see <code>ex-resp-card</code>. </p>
     pub fn response_card(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.response_card = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A response card. Amazon Lex uses this prompt at runtime, in the <code>PostText</code> API response. It substitutes session attributes and slot values for placeholders in the response card. For more information, see <code>ex-resp-card</code>.</p>
+    /// <p>A response card. Amazon Lex uses this prompt at runtime, in the <code>PostText</code> API response. It substitutes session attributes and slot values for placeholders in the response card. For more information, see <code>ex-resp-card</code>. </p>
     pub fn set_response_card(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.response_card = input;
         self
     }
-    /// <p>A response card. Amazon Lex uses this prompt at runtime, in the <code>PostText</code> API response. It substitutes session attributes and slot values for placeholders in the response card. For more information, see <code>ex-resp-card</code>.</p>
+    /// <p>A response card. Amazon Lex uses this prompt at runtime, in the <code>PostText</code> API response. It substitutes session attributes and slot values for placeholders in the response card. For more information, see <code>ex-resp-card</code>. </p>
     pub fn get_response_card(&self) -> &::std::option::Option<::std::string::String> {
         &self.response_card
     }

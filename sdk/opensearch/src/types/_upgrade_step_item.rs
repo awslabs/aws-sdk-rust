@@ -4,26 +4,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpgradeStepItem {
-    /// <p>One of three steps that an upgrade or upgrade eligibility check goes through:</p>
+    /// <p> One of three steps that an upgrade or upgrade eligibility check goes through: </p>
     /// <ul>
-    /// <li>
-    /// <p>PreUpgradeCheck</p></li>
-    /// <li>
-    /// <p>Snapshot</p></li>
-    /// <li>
-    /// <p>Upgrade</p></li>
+    /// <li> <p>PreUpgradeCheck</p> </li>
+    /// <li> <p>Snapshot</p> </li>
+    /// <li> <p>Upgrade</p> </li>
     /// </ul>
     pub upgrade_step: ::std::option::Option<crate::types::UpgradeStep>,
-    /// <p>The current status of the upgrade. The status can take one of the following values:</p>
+    /// <p> The current status of the upgrade. The status can take one of the following values: </p>
     /// <ul>
-    /// <li>
-    /// <p>In Progress</p></li>
-    /// <li>
-    /// <p>Succeeded</p></li>
-    /// <li>
-    /// <p>Succeeded with Issues</p></li>
-    /// <li>
-    /// <p>Failed</p></li>
+    /// <li> <p>In Progress</p> </li>
+    /// <li> <p>Succeeded</p> </li>
+    /// <li> <p>Succeeded with Issues</p> </li>
+    /// <li> <p>Failed</p> </li>
     /// </ul>
     pub upgrade_step_status: ::std::option::Option<crate::types::UpgradeStatus>,
     /// <p>A list of strings containing detailed information about the errors encountered in a particular step.</p>
@@ -32,28 +25,21 @@ pub struct UpgradeStepItem {
     pub progress_percent: ::std::option::Option<f64>,
 }
 impl UpgradeStepItem {
-    /// <p>One of three steps that an upgrade or upgrade eligibility check goes through:</p>
+    /// <p> One of three steps that an upgrade or upgrade eligibility check goes through: </p>
     /// <ul>
-    /// <li>
-    /// <p>PreUpgradeCheck</p></li>
-    /// <li>
-    /// <p>Snapshot</p></li>
-    /// <li>
-    /// <p>Upgrade</p></li>
+    /// <li> <p>PreUpgradeCheck</p> </li>
+    /// <li> <p>Snapshot</p> </li>
+    /// <li> <p>Upgrade</p> </li>
     /// </ul>
     pub fn upgrade_step(&self) -> ::std::option::Option<&crate::types::UpgradeStep> {
         self.upgrade_step.as_ref()
     }
-    /// <p>The current status of the upgrade. The status can take one of the following values:</p>
+    /// <p> The current status of the upgrade. The status can take one of the following values: </p>
     /// <ul>
-    /// <li>
-    /// <p>In Progress</p></li>
-    /// <li>
-    /// <p>Succeeded</p></li>
-    /// <li>
-    /// <p>Succeeded with Issues</p></li>
-    /// <li>
-    /// <p>Failed</p></li>
+    /// <li> <p>In Progress</p> </li>
+    /// <li> <p>Succeeded</p> </li>
+    /// <li> <p>Succeeded with Issues</p> </li>
+    /// <li> <p>Failed</p> </li>
     /// </ul>
     pub fn upgrade_step_status(&self) -> ::std::option::Option<&crate::types::UpgradeStatus> {
         self.upgrade_step_status.as_ref()
@@ -86,84 +72,63 @@ pub struct UpgradeStepItemBuilder {
     pub(crate) progress_percent: ::std::option::Option<f64>,
 }
 impl UpgradeStepItemBuilder {
-    /// <p>One of three steps that an upgrade or upgrade eligibility check goes through:</p>
+    /// <p> One of three steps that an upgrade or upgrade eligibility check goes through: </p>
     /// <ul>
-    /// <li>
-    /// <p>PreUpgradeCheck</p></li>
-    /// <li>
-    /// <p>Snapshot</p></li>
-    /// <li>
-    /// <p>Upgrade</p></li>
+    /// <li> <p>PreUpgradeCheck</p> </li>
+    /// <li> <p>Snapshot</p> </li>
+    /// <li> <p>Upgrade</p> </li>
     /// </ul>
     pub fn upgrade_step(mut self, input: crate::types::UpgradeStep) -> Self {
         self.upgrade_step = ::std::option::Option::Some(input);
         self
     }
-    /// <p>One of three steps that an upgrade or upgrade eligibility check goes through:</p>
+    /// <p> One of three steps that an upgrade or upgrade eligibility check goes through: </p>
     /// <ul>
-    /// <li>
-    /// <p>PreUpgradeCheck</p></li>
-    /// <li>
-    /// <p>Snapshot</p></li>
-    /// <li>
-    /// <p>Upgrade</p></li>
+    /// <li> <p>PreUpgradeCheck</p> </li>
+    /// <li> <p>Snapshot</p> </li>
+    /// <li> <p>Upgrade</p> </li>
     /// </ul>
     pub fn set_upgrade_step(mut self, input: ::std::option::Option<crate::types::UpgradeStep>) -> Self {
         self.upgrade_step = input;
         self
     }
-    /// <p>One of three steps that an upgrade or upgrade eligibility check goes through:</p>
+    /// <p> One of three steps that an upgrade or upgrade eligibility check goes through: </p>
     /// <ul>
-    /// <li>
-    /// <p>PreUpgradeCheck</p></li>
-    /// <li>
-    /// <p>Snapshot</p></li>
-    /// <li>
-    /// <p>Upgrade</p></li>
+    /// <li> <p>PreUpgradeCheck</p> </li>
+    /// <li> <p>Snapshot</p> </li>
+    /// <li> <p>Upgrade</p> </li>
     /// </ul>
     pub fn get_upgrade_step(&self) -> &::std::option::Option<crate::types::UpgradeStep> {
         &self.upgrade_step
     }
-    /// <p>The current status of the upgrade. The status can take one of the following values:</p>
+    /// <p> The current status of the upgrade. The status can take one of the following values: </p>
     /// <ul>
-    /// <li>
-    /// <p>In Progress</p></li>
-    /// <li>
-    /// <p>Succeeded</p></li>
-    /// <li>
-    /// <p>Succeeded with Issues</p></li>
-    /// <li>
-    /// <p>Failed</p></li>
+    /// <li> <p>In Progress</p> </li>
+    /// <li> <p>Succeeded</p> </li>
+    /// <li> <p>Succeeded with Issues</p> </li>
+    /// <li> <p>Failed</p> </li>
     /// </ul>
     pub fn upgrade_step_status(mut self, input: crate::types::UpgradeStatus) -> Self {
         self.upgrade_step_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current status of the upgrade. The status can take one of the following values:</p>
+    /// <p> The current status of the upgrade. The status can take one of the following values: </p>
     /// <ul>
-    /// <li>
-    /// <p>In Progress</p></li>
-    /// <li>
-    /// <p>Succeeded</p></li>
-    /// <li>
-    /// <p>Succeeded with Issues</p></li>
-    /// <li>
-    /// <p>Failed</p></li>
+    /// <li> <p>In Progress</p> </li>
+    /// <li> <p>Succeeded</p> </li>
+    /// <li> <p>Succeeded with Issues</p> </li>
+    /// <li> <p>Failed</p> </li>
     /// </ul>
     pub fn set_upgrade_step_status(mut self, input: ::std::option::Option<crate::types::UpgradeStatus>) -> Self {
         self.upgrade_step_status = input;
         self
     }
-    /// <p>The current status of the upgrade. The status can take one of the following values:</p>
+    /// <p> The current status of the upgrade. The status can take one of the following values: </p>
     /// <ul>
-    /// <li>
-    /// <p>In Progress</p></li>
-    /// <li>
-    /// <p>Succeeded</p></li>
-    /// <li>
-    /// <p>Succeeded with Issues</p></li>
-    /// <li>
-    /// <p>Failed</p></li>
+    /// <li> <p>In Progress</p> </li>
+    /// <li> <p>Succeeded</p> </li>
+    /// <li> <p>Succeeded with Issues</p> </li>
+    /// <li> <p>Failed</p> </li>
     /// </ul>
     pub fn get_upgrade_step_status(&self) -> &::std::option::Option<crate::types::UpgradeStatus> {
         &self.upgrade_step_status

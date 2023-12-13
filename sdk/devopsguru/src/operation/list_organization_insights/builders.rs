@@ -114,17 +114,17 @@ impl ListOrganizationInsightsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_organization_insights::paginator::ListOrganizationInsightsPaginator {
         crate::operation::list_organization_insights::paginator::ListOrganizationInsightsPaginator::new(self.handle, self.inner)
     }
-    /// <p>A filter used by <code>ListInsights</code> to specify which insights to return.</p>
+    /// <p> A filter used by <code>ListInsights</code> to specify which insights to return. </p>
     pub fn status_filter(mut self, input: crate::types::ListInsightsStatusFilter) -> Self {
         self.inner = self.inner.status_filter(input);
         self
     }
-    /// <p>A filter used by <code>ListInsights</code> to specify which insights to return.</p>
+    /// <p> A filter used by <code>ListInsights</code> to specify which insights to return. </p>
     pub fn set_status_filter(mut self, input: ::std::option::Option<crate::types::ListInsightsStatusFilter>) -> Self {
         self.inner = self.inner.set_status_filter(input);
         self
     }
-    /// <p>A filter used by <code>ListInsights</code> to specify which insights to return.</p>
+    /// <p> A filter used by <code>ListInsights</code> to specify which insights to return. </p>
     pub fn get_status_filter(&self) -> &::std::option::Option<crate::types::ListInsightsStatusFilter> {
         self.inner.get_status_filter()
     }
@@ -146,17 +146,17 @@ impl ListOrganizationInsightsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
     ///
-    /// <p>The ID of the Amazon Web Services account.</p>
+    /// <p>The ID of the Amazon Web Services account. </p>
     pub fn account_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_ids(input.into());
         self
     }
-    /// <p>The ID of the Amazon Web Services account.</p>
+    /// <p>The ID of the Amazon Web Services account. </p>
     pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_account_ids(input);
         self
     }
-    /// <p>The ID of the Amazon Web Services account.</p>
+    /// <p>The ID of the Amazon Web Services account. </p>
     pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_account_ids()
     }

@@ -22,7 +22,7 @@ impl CreateScalingPlanInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateScalingPlan`.
 ///
-/// <p>Creates a scaling plan.</p>
+/// <p>Creates a scaling plan. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateScalingPlanFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

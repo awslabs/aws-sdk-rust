@@ -16,7 +16,7 @@ pub struct CreateUserInput {
     pub role: ::std::option::Option<crate::types::UserRole>,
     /// <p>The first name of the new user.</p>
     pub first_name: ::std::option::Option<::std::string::String>,
-    /// <p>The last name of the new user.</p>
+    /// <p>The last name of the new user. </p>
     pub last_name: ::std::option::Option<::std::string::String>,
     /// <p>If this parameter is enabled, the user will be hidden from the address book.</p>
     pub hidden_from_global_address_list: ::std::option::Option<bool>,
@@ -47,7 +47,7 @@ impl CreateUserInput {
     pub fn first_name(&self) -> ::std::option::Option<&str> {
         self.first_name.as_deref()
     }
-    /// <p>The last name of the new user.</p>
+    /// <p>The last name of the new user. </p>
     pub fn last_name(&self) -> ::std::option::Option<&str> {
         self.last_name.as_deref()
     }
@@ -181,17 +181,17 @@ impl CreateUserInputBuilder {
     pub fn get_first_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.first_name
     }
-    /// <p>The last name of the new user.</p>
+    /// <p>The last name of the new user. </p>
     pub fn last_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The last name of the new user.</p>
+    /// <p>The last name of the new user. </p>
     pub fn set_last_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_name = input;
         self
     }
-    /// <p>The last name of the new user.</p>
+    /// <p>The last name of the new user. </p>
     pub fn get_last_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_name
     }

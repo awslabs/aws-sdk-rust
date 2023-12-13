@@ -46,7 +46,7 @@ pub struct Cluster {
     pub sns_topic_status: ::std::option::Option<::std::string::String>,
     /// <p>The number of days for which MemoryDB retains automatic snapshots before deleting them. For example, if you set SnapshotRetentionLimit to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p>
     pub snapshot_retention_limit: ::std::option::Option<i32>,
-    /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
+    /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period. </p>
     pub maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your shard. Example: 05:00-09:00 If you do not specify this parameter, MemoryDB automatically chooses an appropriate time range.</p>
     pub snapshot_window: ::std::option::Option<::std::string::String>,
@@ -146,7 +146,7 @@ impl Cluster {
     pub fn snapshot_retention_limit(&self) -> ::std::option::Option<i32> {
         self.snapshot_retention_limit
     }
-    /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
+    /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period. </p>
     pub fn maintenance_window(&self) -> ::std::option::Option<&str> {
         self.maintenance_window.as_deref()
     }
@@ -512,17 +512,17 @@ impl ClusterBuilder {
     pub fn get_snapshot_retention_limit(&self) -> &::std::option::Option<i32> {
         &self.snapshot_retention_limit
     }
-    /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
+    /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period. </p>
     pub fn maintenance_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.maintenance_window = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
+    /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period. </p>
     pub fn set_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.maintenance_window = input;
         self
     }
-    /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
+    /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period. </p>
     pub fn get_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
         &self.maintenance_window
     }

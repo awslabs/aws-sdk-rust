@@ -7,7 +7,7 @@ pub struct UpdateContactFlowModuleContentInput {
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the flow module.</p>
     pub contact_flow_module_id: ::std::option::Option<::std::string::String>,
-    /// <p>The JSON string that represents the content of the flow. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example flow in Amazon Connect Flow language</a>.</p>
+    /// <p>The JSON string that represents the content of the flow. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example flow in Amazon Connect Flow language</a>. </p>
     pub content: ::std::option::Option<::std::string::String>,
 }
 impl UpdateContactFlowModuleContentInput {
@@ -19,7 +19,7 @@ impl UpdateContactFlowModuleContentInput {
     pub fn contact_flow_module_id(&self) -> ::std::option::Option<&str> {
         self.contact_flow_module_id.as_deref()
     }
-    /// <p>The JSON string that represents the content of the flow. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example flow in Amazon Connect Flow language</a>.</p>
+    /// <p>The JSON string that represents the content of the flow. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example flow in Amazon Connect Flow language</a>. </p>
     pub fn content(&self) -> ::std::option::Option<&str> {
         self.content.as_deref()
     }
@@ -70,18 +70,18 @@ impl UpdateContactFlowModuleContentInputBuilder {
     pub fn get_contact_flow_module_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.contact_flow_module_id
     }
-    /// <p>The JSON string that represents the content of the flow. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example flow in Amazon Connect Flow language</a>.</p>
+    /// <p>The JSON string that represents the content of the flow. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example flow in Amazon Connect Flow language</a>. </p>
     /// This field is required.
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The JSON string that represents the content of the flow. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example flow in Amazon Connect Flow language</a>.</p>
+    /// <p>The JSON string that represents the content of the flow. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example flow in Amazon Connect Flow language</a>. </p>
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content = input;
         self
     }
-    /// <p>The JSON string that represents the content of the flow. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example flow in Amazon Connect Flow language</a>.</p>
+    /// <p>The JSON string that represents the content of the flow. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example flow in Amazon Connect Flow language</a>. </p>
     pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
         &self.content
     }

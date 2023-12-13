@@ -5,7 +5,7 @@
 pub struct DeleteRemediationExceptionsInput {
     /// <p>The name of the Config rule for which you want to delete remediation exception configuration.</p>
     pub config_rule_name: ::std::option::Option<::std::string::String>,
-    /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys.</p>
+    /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys. </p>
     pub resource_keys: ::std::option::Option<::std::vec::Vec<crate::types::RemediationExceptionResourceKey>>,
 }
 impl DeleteRemediationExceptionsInput {
@@ -13,7 +13,7 @@ impl DeleteRemediationExceptionsInput {
     pub fn config_rule_name(&self) -> ::std::option::Option<&str> {
         self.config_rule_name.as_deref()
     }
-    /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys.</p>
+    /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_keys.is_none()`.
     pub fn resource_keys(&self) -> &[crate::types::RemediationExceptionResourceKey] {
@@ -54,19 +54,19 @@ impl DeleteRemediationExceptionsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_resource_keys`](Self::set_resource_keys).
     ///
-    /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys.</p>
+    /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys. </p>
     pub fn resource_keys(mut self, input: crate::types::RemediationExceptionResourceKey) -> Self {
         let mut v = self.resource_keys.unwrap_or_default();
         v.push(input);
         self.resource_keys = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys.</p>
+    /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys. </p>
     pub fn set_resource_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RemediationExceptionResourceKey>>) -> Self {
         self.resource_keys = input;
         self
     }
-    /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys.</p>
+    /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys. </p>
     pub fn get_resource_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RemediationExceptionResourceKey>> {
         &self.resource_keys
     }

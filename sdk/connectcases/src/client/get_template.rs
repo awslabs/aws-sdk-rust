@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetTemplate`](crate::operation::get_template::builders::GetTemplateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_id(impl Into<String>)`](crate::operation::get_template::builders::GetTemplateFluentBuilder::domain_id) / [`set_domain_id(Option<String>)`](crate::operation::get_template::builders::GetTemplateFluentBuilder::set_domain_id):<br>required: **true**<br><p>The unique identifier of the Cases domain.</p><br>
+    ///   - [`domain_id(impl Into<String>)`](crate::operation::get_template::builders::GetTemplateFluentBuilder::domain_id) / [`set_domain_id(Option<String>)`](crate::operation::get_template::builders::GetTemplateFluentBuilder::set_domain_id):<br>required: **true**<br><p>The unique identifier of the Cases domain. </p><br>
     ///   - [`template_id(impl Into<String>)`](crate::operation::get_template::builders::GetTemplateFluentBuilder::template_id) / [`set_template_id(Option<String>)`](crate::operation::get_template::builders::GetTemplateFluentBuilder::set_template_id):<br>required: **true**<br><p>A unique identifier of a template.</p><br>
     /// - On success, responds with [`GetTemplateOutput`](crate::operation::get_template::GetTemplateOutput) with field(s):
     ///   - [`template_id(String)`](crate::operation::get_template::GetTemplateOutput::template_id): <p>A unique identifier of a template.</p>

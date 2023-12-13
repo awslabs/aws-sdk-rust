@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CoreNetworkChangeEvent {
-    /// <p>Describes the type of change event.</p>
+    /// <p>Describes the type of change event. </p>
     pub r#type: ::std::option::Option<crate::types::ChangeType>,
     /// <p>The action taken for the change event.</p>
     pub action: ::std::option::Option<crate::types::ChangeAction>,
@@ -18,7 +18,7 @@ pub struct CoreNetworkChangeEvent {
     pub values: ::std::option::Option<crate::types::CoreNetworkChangeEventValues>,
 }
 impl CoreNetworkChangeEvent {
-    /// <p>Describes the type of change event.</p>
+    /// <p>Describes the type of change event. </p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::ChangeType> {
         self.r#type.as_ref()
     }
@@ -62,17 +62,17 @@ pub struct CoreNetworkChangeEventBuilder {
     pub(crate) values: ::std::option::Option<crate::types::CoreNetworkChangeEventValues>,
 }
 impl CoreNetworkChangeEventBuilder {
-    /// <p>Describes the type of change event.</p>
+    /// <p>Describes the type of change event. </p>
     pub fn r#type(mut self, input: crate::types::ChangeType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Describes the type of change event.</p>
+    /// <p>Describes the type of change event. </p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ChangeType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>Describes the type of change event.</p>
+    /// <p>Describes the type of change event. </p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ChangeType> {
         &self.r#type
     }

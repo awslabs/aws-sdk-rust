@@ -10,20 +10,13 @@ pub struct IdentityResolutionJob {
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the Identity Resolution Job.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PENDING</code>: The Identity Resolution Job is scheduled but has not started yet. If you turn off the Identity Resolution feature in your domain, jobs in the <code>PENDING</code> state are deleted.</p></li>
-    /// <li>
-    /// <p><code>PREPROCESSING</code>: The Identity Resolution Job is loading your data.</p></li>
-    /// <li>
-    /// <p><code>FIND_MATCHING</code>: The Identity Resolution Job is using the machine learning model to identify profiles that belong to the same matching group.</p></li>
-    /// <li>
-    /// <p><code>MERGING</code>: The Identity Resolution Job is merging duplicate profiles.</p></li>
-    /// <li>
-    /// <p><code>COMPLETED</code>: The Identity Resolution Job completed successfully.</p></li>
-    /// <li>
-    /// <p><code>PARTIAL_SUCCESS</code>: There's a system error and not all of the data is merged. The Identity Resolution Job writes a message indicating the source of the problem.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code>: The Identity Resolution Job did not merge any data. It writes a message indicating the source of the problem.</p></li>
+    /// <li> <p> <code>PENDING</code>: The Identity Resolution Job is scheduled but has not started yet. If you turn off the Identity Resolution feature in your domain, jobs in the <code>PENDING</code> state are deleted.</p> </li>
+    /// <li> <p> <code>PREPROCESSING</code>: The Identity Resolution Job is loading your data.</p> </li>
+    /// <li> <p> <code>FIND_MATCHING</code>: The Identity Resolution Job is using the machine learning model to identify profiles that belong to the same matching group.</p> </li>
+    /// <li> <p> <code>MERGING</code>: The Identity Resolution Job is merging duplicate profiles.</p> </li>
+    /// <li> <p> <code>COMPLETED</code>: The Identity Resolution Job completed successfully.</p> </li>
+    /// <li> <p> <code>PARTIAL_SUCCESS</code>: There's a system error and not all of the data is merged. The Identity Resolution Job writes a message indicating the source of the problem.</p> </li>
+    /// <li> <p> <code>FAILED</code>: The Identity Resolution Job did not merge any data. It writes a message indicating the source of the problem.</p> </li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::IdentityResolutionJobStatus>,
     /// <p>The timestamp of when the job was started or will be started.</p>
@@ -48,20 +41,13 @@ impl IdentityResolutionJob {
     }
     /// <p>The status of the Identity Resolution Job.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PENDING</code>: The Identity Resolution Job is scheduled but has not started yet. If you turn off the Identity Resolution feature in your domain, jobs in the <code>PENDING</code> state are deleted.</p></li>
-    /// <li>
-    /// <p><code>PREPROCESSING</code>: The Identity Resolution Job is loading your data.</p></li>
-    /// <li>
-    /// <p><code>FIND_MATCHING</code>: The Identity Resolution Job is using the machine learning model to identify profiles that belong to the same matching group.</p></li>
-    /// <li>
-    /// <p><code>MERGING</code>: The Identity Resolution Job is merging duplicate profiles.</p></li>
-    /// <li>
-    /// <p><code>COMPLETED</code>: The Identity Resolution Job completed successfully.</p></li>
-    /// <li>
-    /// <p><code>PARTIAL_SUCCESS</code>: There's a system error and not all of the data is merged. The Identity Resolution Job writes a message indicating the source of the problem.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code>: The Identity Resolution Job did not merge any data. It writes a message indicating the source of the problem.</p></li>
+    /// <li> <p> <code>PENDING</code>: The Identity Resolution Job is scheduled but has not started yet. If you turn off the Identity Resolution feature in your domain, jobs in the <code>PENDING</code> state are deleted.</p> </li>
+    /// <li> <p> <code>PREPROCESSING</code>: The Identity Resolution Job is loading your data.</p> </li>
+    /// <li> <p> <code>FIND_MATCHING</code>: The Identity Resolution Job is using the machine learning model to identify profiles that belong to the same matching group.</p> </li>
+    /// <li> <p> <code>MERGING</code>: The Identity Resolution Job is merging duplicate profiles.</p> </li>
+    /// <li> <p> <code>COMPLETED</code>: The Identity Resolution Job completed successfully.</p> </li>
+    /// <li> <p> <code>PARTIAL_SUCCESS</code>: There's a system error and not all of the data is merged. The Identity Resolution Job writes a message indicating the source of the problem.</p> </li>
+    /// <li> <p> <code>FAILED</code>: The Identity Resolution Job did not merge any data. It writes a message indicating the source of the problem.</p> </li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::IdentityResolutionJobStatus> {
         self.status.as_ref()
@@ -138,20 +124,13 @@ impl IdentityResolutionJobBuilder {
     }
     /// <p>The status of the Identity Resolution Job.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PENDING</code>: The Identity Resolution Job is scheduled but has not started yet. If you turn off the Identity Resolution feature in your domain, jobs in the <code>PENDING</code> state are deleted.</p></li>
-    /// <li>
-    /// <p><code>PREPROCESSING</code>: The Identity Resolution Job is loading your data.</p></li>
-    /// <li>
-    /// <p><code>FIND_MATCHING</code>: The Identity Resolution Job is using the machine learning model to identify profiles that belong to the same matching group.</p></li>
-    /// <li>
-    /// <p><code>MERGING</code>: The Identity Resolution Job is merging duplicate profiles.</p></li>
-    /// <li>
-    /// <p><code>COMPLETED</code>: The Identity Resolution Job completed successfully.</p></li>
-    /// <li>
-    /// <p><code>PARTIAL_SUCCESS</code>: There's a system error and not all of the data is merged. The Identity Resolution Job writes a message indicating the source of the problem.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code>: The Identity Resolution Job did not merge any data. It writes a message indicating the source of the problem.</p></li>
+    /// <li> <p> <code>PENDING</code>: The Identity Resolution Job is scheduled but has not started yet. If you turn off the Identity Resolution feature in your domain, jobs in the <code>PENDING</code> state are deleted.</p> </li>
+    /// <li> <p> <code>PREPROCESSING</code>: The Identity Resolution Job is loading your data.</p> </li>
+    /// <li> <p> <code>FIND_MATCHING</code>: The Identity Resolution Job is using the machine learning model to identify profiles that belong to the same matching group.</p> </li>
+    /// <li> <p> <code>MERGING</code>: The Identity Resolution Job is merging duplicate profiles.</p> </li>
+    /// <li> <p> <code>COMPLETED</code>: The Identity Resolution Job completed successfully.</p> </li>
+    /// <li> <p> <code>PARTIAL_SUCCESS</code>: There's a system error and not all of the data is merged. The Identity Resolution Job writes a message indicating the source of the problem.</p> </li>
+    /// <li> <p> <code>FAILED</code>: The Identity Resolution Job did not merge any data. It writes a message indicating the source of the problem.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::IdentityResolutionJobStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -159,20 +138,13 @@ impl IdentityResolutionJobBuilder {
     }
     /// <p>The status of the Identity Resolution Job.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PENDING</code>: The Identity Resolution Job is scheduled but has not started yet. If you turn off the Identity Resolution feature in your domain, jobs in the <code>PENDING</code> state are deleted.</p></li>
-    /// <li>
-    /// <p><code>PREPROCESSING</code>: The Identity Resolution Job is loading your data.</p></li>
-    /// <li>
-    /// <p><code>FIND_MATCHING</code>: The Identity Resolution Job is using the machine learning model to identify profiles that belong to the same matching group.</p></li>
-    /// <li>
-    /// <p><code>MERGING</code>: The Identity Resolution Job is merging duplicate profiles.</p></li>
-    /// <li>
-    /// <p><code>COMPLETED</code>: The Identity Resolution Job completed successfully.</p></li>
-    /// <li>
-    /// <p><code>PARTIAL_SUCCESS</code>: There's a system error and not all of the data is merged. The Identity Resolution Job writes a message indicating the source of the problem.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code>: The Identity Resolution Job did not merge any data. It writes a message indicating the source of the problem.</p></li>
+    /// <li> <p> <code>PENDING</code>: The Identity Resolution Job is scheduled but has not started yet. If you turn off the Identity Resolution feature in your domain, jobs in the <code>PENDING</code> state are deleted.</p> </li>
+    /// <li> <p> <code>PREPROCESSING</code>: The Identity Resolution Job is loading your data.</p> </li>
+    /// <li> <p> <code>FIND_MATCHING</code>: The Identity Resolution Job is using the machine learning model to identify profiles that belong to the same matching group.</p> </li>
+    /// <li> <p> <code>MERGING</code>: The Identity Resolution Job is merging duplicate profiles.</p> </li>
+    /// <li> <p> <code>COMPLETED</code>: The Identity Resolution Job completed successfully.</p> </li>
+    /// <li> <p> <code>PARTIAL_SUCCESS</code>: There's a system error and not all of the data is merged. The Identity Resolution Job writes a message indicating the source of the problem.</p> </li>
+    /// <li> <p> <code>FAILED</code>: The Identity Resolution Job did not merge any data. It writes a message indicating the source of the problem.</p> </li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::IdentityResolutionJobStatus>) -> Self {
         self.status = input;
@@ -180,20 +152,13 @@ impl IdentityResolutionJobBuilder {
     }
     /// <p>The status of the Identity Resolution Job.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PENDING</code>: The Identity Resolution Job is scheduled but has not started yet. If you turn off the Identity Resolution feature in your domain, jobs in the <code>PENDING</code> state are deleted.</p></li>
-    /// <li>
-    /// <p><code>PREPROCESSING</code>: The Identity Resolution Job is loading your data.</p></li>
-    /// <li>
-    /// <p><code>FIND_MATCHING</code>: The Identity Resolution Job is using the machine learning model to identify profiles that belong to the same matching group.</p></li>
-    /// <li>
-    /// <p><code>MERGING</code>: The Identity Resolution Job is merging duplicate profiles.</p></li>
-    /// <li>
-    /// <p><code>COMPLETED</code>: The Identity Resolution Job completed successfully.</p></li>
-    /// <li>
-    /// <p><code>PARTIAL_SUCCESS</code>: There's a system error and not all of the data is merged. The Identity Resolution Job writes a message indicating the source of the problem.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code>: The Identity Resolution Job did not merge any data. It writes a message indicating the source of the problem.</p></li>
+    /// <li> <p> <code>PENDING</code>: The Identity Resolution Job is scheduled but has not started yet. If you turn off the Identity Resolution feature in your domain, jobs in the <code>PENDING</code> state are deleted.</p> </li>
+    /// <li> <p> <code>PREPROCESSING</code>: The Identity Resolution Job is loading your data.</p> </li>
+    /// <li> <p> <code>FIND_MATCHING</code>: The Identity Resolution Job is using the machine learning model to identify profiles that belong to the same matching group.</p> </li>
+    /// <li> <p> <code>MERGING</code>: The Identity Resolution Job is merging duplicate profiles.</p> </li>
+    /// <li> <p> <code>COMPLETED</code>: The Identity Resolution Job completed successfully.</p> </li>
+    /// <li> <p> <code>PARTIAL_SUCCESS</code>: There's a system error and not all of the data is merged. The Identity Resolution Job writes a message indicating the source of the problem.</p> </li>
+    /// <li> <p> <code>FAILED</code>: The Identity Resolution Job did not merge any data. It writes a message indicating the source of the problem.</p> </li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::IdentityResolutionJobStatus> {
         &self.status

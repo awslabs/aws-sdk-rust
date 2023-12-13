@@ -7,7 +7,7 @@ pub struct PurchaseReservedNodeOfferingInput {
     /// <p>The unique identifier of the reserved node offering you want to purchase.</p>
     pub reserved_node_offering_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of reserved nodes that you want to purchase.</p>
-    /// <p>Default: <code>1</code></p>
+    /// <p>Default: <code>1</code> </p>
     pub node_count: ::std::option::Option<i32>,
 }
 impl PurchaseReservedNodeOfferingInput {
@@ -16,7 +16,7 @@ impl PurchaseReservedNodeOfferingInput {
         self.reserved_node_offering_id.as_deref()
     }
     /// <p>The number of reserved nodes that you want to purchase.</p>
-    /// <p>Default: <code>1</code></p>
+    /// <p>Default: <code>1</code> </p>
     pub fn node_count(&self) -> ::std::option::Option<i32> {
         self.node_count
     }
@@ -52,19 +52,19 @@ impl PurchaseReservedNodeOfferingInputBuilder {
         &self.reserved_node_offering_id
     }
     /// <p>The number of reserved nodes that you want to purchase.</p>
-    /// <p>Default: <code>1</code></p>
+    /// <p>Default: <code>1</code> </p>
     pub fn node_count(mut self, input: i32) -> Self {
         self.node_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of reserved nodes that you want to purchase.</p>
-    /// <p>Default: <code>1</code></p>
+    /// <p>Default: <code>1</code> </p>
     pub fn set_node_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.node_count = input;
         self
     }
     /// <p>The number of reserved nodes that you want to purchase.</p>
-    /// <p>Default: <code>1</code></p>
+    /// <p>Default: <code>1</code> </p>
     pub fn get_node_count(&self) -> &::std::option::Option<i32> {
         &self.node_count
     }

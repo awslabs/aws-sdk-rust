@@ -112,18 +112,12 @@ impl CreateContactMethodFluentBuilder {
     /// <p>The protocol of the contact method, such as <code>Email</code> or <code>SMS</code> (text messaging).</p>
     /// <p>The <code>SMS</code> protocol is supported only in the following Amazon Web Services Regions.</p>
     /// <ul>
-    /// <li>
-    /// <p>US East (N. Virginia) (<code>us-east-1</code>)</p></li>
-    /// <li>
-    /// <p>US West (Oregon) (<code>us-west-2</code>)</p></li>
-    /// <li>
-    /// <p>Europe (Ireland) (<code>eu-west-1</code>)</p></li>
-    /// <li>
-    /// <p>Asia Pacific (Tokyo) (<code>ap-northeast-1</code>)</p></li>
-    /// <li>
-    /// <p>Asia Pacific (Singapore) (<code>ap-southeast-1</code>)</p></li>
-    /// <li>
-    /// <p>Asia Pacific (Sydney) (<code>ap-southeast-2</code>)</p></li>
+    /// <li> <p>US East (N. Virginia) (<code>us-east-1</code>)</p> </li>
+    /// <li> <p>US West (Oregon) (<code>us-west-2</code>)</p> </li>
+    /// <li> <p>Europe (Ireland) (<code>eu-west-1</code>)</p> </li>
+    /// <li> <p>Asia Pacific (Tokyo) (<code>ap-northeast-1</code>)</p> </li>
+    /// <li> <p>Asia Pacific (Singapore) (<code>ap-southeast-1</code>)</p> </li>
+    /// <li> <p>Asia Pacific (Sydney) (<code>ap-southeast-2</code>)</p> </li>
     /// </ul>
     /// <p>For a list of countries/regions where SMS text messages can be sent, and the latest Amazon Web Services Regions where SMS text messaging is supported, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-supported-regions-countries.html">Supported Regions and Countries</a> in the <i>Amazon SNS Developer Guide</i>.</p>
     /// <p>For more information about notifications in Amazon Lightsail, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in Amazon Lightsail</a>.</p>
@@ -134,18 +128,12 @@ impl CreateContactMethodFluentBuilder {
     /// <p>The protocol of the contact method, such as <code>Email</code> or <code>SMS</code> (text messaging).</p>
     /// <p>The <code>SMS</code> protocol is supported only in the following Amazon Web Services Regions.</p>
     /// <ul>
-    /// <li>
-    /// <p>US East (N. Virginia) (<code>us-east-1</code>)</p></li>
-    /// <li>
-    /// <p>US West (Oregon) (<code>us-west-2</code>)</p></li>
-    /// <li>
-    /// <p>Europe (Ireland) (<code>eu-west-1</code>)</p></li>
-    /// <li>
-    /// <p>Asia Pacific (Tokyo) (<code>ap-northeast-1</code>)</p></li>
-    /// <li>
-    /// <p>Asia Pacific (Singapore) (<code>ap-southeast-1</code>)</p></li>
-    /// <li>
-    /// <p>Asia Pacific (Sydney) (<code>ap-southeast-2</code>)</p></li>
+    /// <li> <p>US East (N. Virginia) (<code>us-east-1</code>)</p> </li>
+    /// <li> <p>US West (Oregon) (<code>us-west-2</code>)</p> </li>
+    /// <li> <p>Europe (Ireland) (<code>eu-west-1</code>)</p> </li>
+    /// <li> <p>Asia Pacific (Tokyo) (<code>ap-northeast-1</code>)</p> </li>
+    /// <li> <p>Asia Pacific (Singapore) (<code>ap-southeast-1</code>)</p> </li>
+    /// <li> <p>Asia Pacific (Sydney) (<code>ap-southeast-2</code>)</p> </li>
     /// </ul>
     /// <p>For a list of countries/regions where SMS text messages can be sent, and the latest Amazon Web Services Regions where SMS text messaging is supported, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-supported-regions-countries.html">Supported Regions and Countries</a> in the <i>Amazon SNS Developer Guide</i>.</p>
     /// <p>For more information about notifications in Amazon Lightsail, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in Amazon Lightsail</a>.</p>
@@ -156,18 +144,12 @@ impl CreateContactMethodFluentBuilder {
     /// <p>The protocol of the contact method, such as <code>Email</code> or <code>SMS</code> (text messaging).</p>
     /// <p>The <code>SMS</code> protocol is supported only in the following Amazon Web Services Regions.</p>
     /// <ul>
-    /// <li>
-    /// <p>US East (N. Virginia) (<code>us-east-1</code>)</p></li>
-    /// <li>
-    /// <p>US West (Oregon) (<code>us-west-2</code>)</p></li>
-    /// <li>
-    /// <p>Europe (Ireland) (<code>eu-west-1</code>)</p></li>
-    /// <li>
-    /// <p>Asia Pacific (Tokyo) (<code>ap-northeast-1</code>)</p></li>
-    /// <li>
-    /// <p>Asia Pacific (Singapore) (<code>ap-southeast-1</code>)</p></li>
-    /// <li>
-    /// <p>Asia Pacific (Sydney) (<code>ap-southeast-2</code>)</p></li>
+    /// <li> <p>US East (N. Virginia) (<code>us-east-1</code>)</p> </li>
+    /// <li> <p>US West (Oregon) (<code>us-west-2</code>)</p> </li>
+    /// <li> <p>Europe (Ireland) (<code>eu-west-1</code>)</p> </li>
+    /// <li> <p>Asia Pacific (Tokyo) (<code>ap-northeast-1</code>)</p> </li>
+    /// <li> <p>Asia Pacific (Singapore) (<code>ap-southeast-1</code>)</p> </li>
+    /// <li> <p>Asia Pacific (Sydney) (<code>ap-southeast-2</code>)</p> </li>
     /// </ul>
     /// <p>For a list of countries/regions where SMS text messages can be sent, and the latest Amazon Web Services Regions where SMS text messaging is supported, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-supported-regions-countries.html">Supported Regions and Countries</a> in the <i>Amazon SNS Developer Guide</i>.</p>
     /// <p>For more information about notifications in Amazon Lightsail, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in Amazon Lightsail</a>.</p>

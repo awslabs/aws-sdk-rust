@@ -22,8 +22,8 @@ impl AssociateHealthCheckInputBuilder {
 }
 /// Fluent builder constructing a request to `AssociateHealthCheck`.
 ///
-/// <p>Adds health-based detection to the Shield Advanced protection for a resource. Shield Advanced health-based detection uses the health of your Amazon Web Services resource to improve responsiveness and accuracy in attack detection and response.</p>
-/// <p>You define the health check in Route&nbsp;53 and then associate it with your Shield Advanced protection. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/ddos-overview.html#ddos-advanced-health-check-option">Shield Advanced Health-Based Detection</a> in the <i>WAF Developer Guide</i>.</p>
+/// <p>Adds health-based detection to the Shield Advanced protection for a resource. Shield Advanced health-based detection uses the health of your Amazon Web Services resource to improve responsiveness and accuracy in attack detection and response. </p>
+/// <p>You define the health check in Route&nbsp;53 and then associate it with your Shield Advanced protection. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/ddos-overview.html#ddos-advanced-health-check-option">Shield Advanced Health-Based Detection</a> in the <i>WAF Developer Guide</i>. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateHealthCheckFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -109,17 +109,17 @@ impl AssociateHealthCheckFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier (ID) for the <code>Protection</code> object to add the health check association to.</p>
+    /// <p>The unique identifier (ID) for the <code>Protection</code> object to add the health check association to. </p>
     pub fn protection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.protection_id(input.into());
         self
     }
-    /// <p>The unique identifier (ID) for the <code>Protection</code> object to add the health check association to.</p>
+    /// <p>The unique identifier (ID) for the <code>Protection</code> object to add the health check association to. </p>
     pub fn set_protection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_protection_id(input);
         self
     }
-    /// <p>The unique identifier (ID) for the <code>Protection</code> object to add the health check association to.</p>
+    /// <p>The unique identifier (ID) for the <code>Protection</code> object to add the health check association to. </p>
     pub fn get_protection_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_protection_id()
     }

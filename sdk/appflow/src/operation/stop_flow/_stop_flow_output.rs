@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopFlowOutput {
-    /// <p>The flow's Amazon Resource Name (ARN).</p>
+    /// <p> The flow's Amazon Resource Name (ARN). </p>
     pub flow_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates the current status of the flow.</p>
+    /// <p> Indicates the current status of the flow. </p>
     pub flow_status: ::std::option::Option<crate::types::FlowStatus>,
     _request_id: Option<String>,
 }
 impl StopFlowOutput {
-    /// <p>The flow's Amazon Resource Name (ARN).</p>
+    /// <p> The flow's Amazon Resource Name (ARN). </p>
     pub fn flow_arn(&self) -> ::std::option::Option<&str> {
         self.flow_arn.as_deref()
     }
-    /// <p>Indicates the current status of the flow.</p>
+    /// <p> Indicates the current status of the flow. </p>
     pub fn flow_status(&self) -> ::std::option::Option<&crate::types::FlowStatus> {
         self.flow_status.as_ref()
     }
@@ -40,31 +40,31 @@ pub struct StopFlowOutputBuilder {
     _request_id: Option<String>,
 }
 impl StopFlowOutputBuilder {
-    /// <p>The flow's Amazon Resource Name (ARN).</p>
+    /// <p> The flow's Amazon Resource Name (ARN). </p>
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The flow's Amazon Resource Name (ARN).</p>
+    /// <p> The flow's Amazon Resource Name (ARN). </p>
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.flow_arn = input;
         self
     }
-    /// <p>The flow's Amazon Resource Name (ARN).</p>
+    /// <p> The flow's Amazon Resource Name (ARN). </p>
     pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.flow_arn
     }
-    /// <p>Indicates the current status of the flow.</p>
+    /// <p> Indicates the current status of the flow. </p>
     pub fn flow_status(mut self, input: crate::types::FlowStatus) -> Self {
         self.flow_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates the current status of the flow.</p>
+    /// <p> Indicates the current status of the flow. </p>
     pub fn set_flow_status(mut self, input: ::std::option::Option<crate::types::FlowStatus>) -> Self {
         self.flow_status = input;
         self
     }
-    /// <p>Indicates the current status of the flow.</p>
+    /// <p> Indicates the current status of the flow. </p>
     pub fn get_flow_status(&self) -> &::std::option::Option<crate::types::FlowStatus> {
         &self.flow_status
     }

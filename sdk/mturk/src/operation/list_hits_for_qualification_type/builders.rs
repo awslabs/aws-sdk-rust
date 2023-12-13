@@ -22,7 +22,7 @@ impl ListHiTsForQualificationTypeInputBuilder {
 }
 /// Fluent builder constructing a request to `ListHITsForQualificationType`.
 ///
-/// <p>The <code>ListHITsForQualificationType</code> operation returns the HITs that use the given Qualification type for a Qualification requirement. The operation returns HITs of any status, except for HITs that have been deleted with the <code>DeleteHIT</code> operation or that have been auto-deleted.</p>
+/// <p> The <code>ListHITsForQualificationType</code> operation returns the HITs that use the given Qualification type for a Qualification requirement. The operation returns HITs of any status, except for HITs that have been deleted with the <code>DeleteHIT</code> operation or that have been auto-deleted. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListHITsForQualificationTypeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,17 +114,17 @@ impl ListHITsForQualificationTypeFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_hits_for_qualification_type::paginator::ListHiTsForQualificationTypePaginator {
         crate::operation::list_hits_for_qualification_type::paginator::ListHiTsForQualificationTypePaginator::new(self.handle, self.inner)
     }
-    /// <p>The ID of the Qualification type to use when querying HITs.</p>
+    /// <p> The ID of the Qualification type to use when querying HITs. </p>
     pub fn qualification_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.qualification_type_id(input.into());
         self
     }
-    /// <p>The ID of the Qualification type to use when querying HITs.</p>
+    /// <p> The ID of the Qualification type to use when querying HITs. </p>
     pub fn set_qualification_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_qualification_type_id(input);
         self
     }
-    /// <p>The ID of the Qualification type to use when querying HITs.</p>
+    /// <p> The ID of the Qualification type to use when querying HITs. </p>
     pub fn get_qualification_type_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_qualification_type_id()
     }
@@ -142,17 +142,17 @@ impl ListHITsForQualificationTypeFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>Limit the number of results returned.</p>
+    /// <p> Limit the number of results returned. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>Limit the number of results returned.</p>
+    /// <p> Limit the number of results returned. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>Limit the number of results returned.</p>
+    /// <p> Limit the number of results returned. </p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

@@ -7,7 +7,7 @@ pub struct DeleteApplicationCloudWatchLoggingOptionInput {
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>The version ID of the Kinesis Analytics application.</p>
     pub current_application_version_id: ::std::option::Option<i64>,
-    /// <p>The <code>CloudWatchLoggingOptionId</code> of the CloudWatch logging option to delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation.</p>
+    /// <p>The <code>CloudWatchLoggingOptionId</code> of the CloudWatch logging option to delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation. </p>
     pub cloud_watch_logging_option_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteApplicationCloudWatchLoggingOptionInput {
@@ -19,7 +19,7 @@ impl DeleteApplicationCloudWatchLoggingOptionInput {
     pub fn current_application_version_id(&self) -> ::std::option::Option<i64> {
         self.current_application_version_id
     }
-    /// <p>The <code>CloudWatchLoggingOptionId</code> of the CloudWatch logging option to delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation.</p>
+    /// <p>The <code>CloudWatchLoggingOptionId</code> of the CloudWatch logging option to delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation. </p>
     pub fn cloud_watch_logging_option_id(&self) -> ::std::option::Option<&str> {
         self.cloud_watch_logging_option_id.as_deref()
     }
@@ -71,18 +71,18 @@ impl DeleteApplicationCloudWatchLoggingOptionInputBuilder {
     pub fn get_current_application_version_id(&self) -> &::std::option::Option<i64> {
         &self.current_application_version_id
     }
-    /// <p>The <code>CloudWatchLoggingOptionId</code> of the CloudWatch logging option to delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation.</p>
+    /// <p>The <code>CloudWatchLoggingOptionId</code> of the CloudWatch logging option to delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation. </p>
     /// This field is required.
     pub fn cloud_watch_logging_option_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cloud_watch_logging_option_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The <code>CloudWatchLoggingOptionId</code> of the CloudWatch logging option to delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation.</p>
+    /// <p>The <code>CloudWatchLoggingOptionId</code> of the CloudWatch logging option to delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation. </p>
     pub fn set_cloud_watch_logging_option_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cloud_watch_logging_option_id = input;
         self
     }
-    /// <p>The <code>CloudWatchLoggingOptionId</code> of the CloudWatch logging option to delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation.</p>
+    /// <p>The <code>CloudWatchLoggingOptionId</code> of the CloudWatch logging option to delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation. </p>
     pub fn get_cloud_watch_logging_option_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.cloud_watch_logging_option_id
     }

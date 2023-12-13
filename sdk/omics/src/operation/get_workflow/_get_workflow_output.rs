@@ -33,9 +33,9 @@ pub struct GetWorkflowOutput {
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The workflow's tags.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>Gets metadata for workflow.</p>
+    /// <p> Gets metadata for workflow. </p>
     pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>The computational accelerator specified to run the workflow.</p>
+    /// <p> The computational accelerator specified to run the workflow. </p>
     pub accelerators: ::std::option::Option<crate::types::Accelerators>,
     _request_id: Option<String>,
 }
@@ -100,11 +100,11 @@ impl GetWorkflowOutput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
-    /// <p>Gets metadata for workflow.</p>
+    /// <p> Gets metadata for workflow. </p>
     pub fn metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.metadata.as_ref()
     }
-    /// <p>The computational accelerator specified to run the workflow.</p>
+    /// <p> The computational accelerator specified to run the workflow. </p>
     pub fn accelerators(&self) -> ::std::option::Option<&crate::types::Accelerators> {
         self.accelerators.as_ref()
     }
@@ -376,33 +376,33 @@ impl GetWorkflowOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
     ///
-    /// <p>Gets metadata for workflow.</p>
+    /// <p> Gets metadata for workflow. </p>
     pub fn metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.metadata.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.metadata = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>Gets metadata for workflow.</p>
+    /// <p> Gets metadata for workflow. </p>
     pub fn set_metadata(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.metadata = input;
         self
     }
-    /// <p>Gets metadata for workflow.</p>
+    /// <p> Gets metadata for workflow. </p>
     pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.metadata
     }
-    /// <p>The computational accelerator specified to run the workflow.</p>
+    /// <p> The computational accelerator specified to run the workflow. </p>
     pub fn accelerators(mut self, input: crate::types::Accelerators) -> Self {
         self.accelerators = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The computational accelerator specified to run the workflow.</p>
+    /// <p> The computational accelerator specified to run the workflow. </p>
     pub fn set_accelerators(mut self, input: ::std::option::Option<crate::types::Accelerators>) -> Self {
         self.accelerators = input;
         self
     }
-    /// <p>The computational accelerator specified to run the workflow.</p>
+    /// <p> The computational accelerator specified to run the workflow. </p>
     pub fn get_accelerators(&self) -> &::std::option::Option<crate::types::Accelerators> {
         &self.accelerators
     }

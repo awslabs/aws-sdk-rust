@@ -245,7 +245,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for TagResourceEn
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum TagResourceError {
-    /// <p>Concurrent modification of the tags associated with an Amazon Comprehend resource is not supported.</p>
+    /// <p>Concurrent modification of the tags associated with an Amazon Comprehend resource is not supported. </p>
     ConcurrentModificationException(crate::types::error::ConcurrentModificationException),
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::types::error::InternalServerException),
@@ -253,7 +253,7 @@ pub enum TagResourceError {
     InvalidRequestException(crate::types::error::InvalidRequestException),
     /// <p>The specified resource ARN was not found. Check the ARN and try your request again.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>The request contains more tags than can be associated with a resource (50 tags per resource). The maximum number of tags includes both existing tags and those included in your current request.</p>
+    /// <p>The request contains more tags than can be associated with a resource (50 tags per resource). The maximum number of tags includes both existing tags and those included in your current request. </p>
     TooManyTagsException(crate::types::error::TooManyTagsException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

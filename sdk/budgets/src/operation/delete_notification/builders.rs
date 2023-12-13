@@ -22,7 +22,7 @@ impl DeleteNotificationInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteNotification`.
 ///
-/// <p>Deletes a notification.</p><important>
+/// <p>Deletes a notification.</p> <important>
 /// <p>Deleting a notification also deletes the subscribers that are associated with the notification.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

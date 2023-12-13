@@ -8,7 +8,7 @@ pub struct ListStreamsInput {
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of streams to return. The upper limit is 100.</p>
     pub limit: ::std::option::Option<i32>,
-    /// <p>The ARN (Amazon Resource Name) of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedStreamArn</code> in the previous operation.</p>
+    /// <p>The ARN (Amazon Resource Name) of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedStreamArn</code> in the previous operation. </p>
     pub exclusive_start_stream_arn: ::std::option::Option<::std::string::String>,
 }
 impl ListStreamsInput {
@@ -20,7 +20,7 @@ impl ListStreamsInput {
     pub fn limit(&self) -> ::std::option::Option<i32> {
         self.limit
     }
-    /// <p>The ARN (Amazon Resource Name) of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedStreamArn</code> in the previous operation.</p>
+    /// <p>The ARN (Amazon Resource Name) of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedStreamArn</code> in the previous operation. </p>
     pub fn exclusive_start_stream_arn(&self) -> ::std::option::Option<&str> {
         self.exclusive_start_stream_arn.as_deref()
     }
@@ -69,17 +69,17 @@ impl ListStreamsInputBuilder {
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
         &self.limit
     }
-    /// <p>The ARN (Amazon Resource Name) of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedStreamArn</code> in the previous operation.</p>
+    /// <p>The ARN (Amazon Resource Name) of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedStreamArn</code> in the previous operation. </p>
     pub fn exclusive_start_stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.exclusive_start_stream_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN (Amazon Resource Name) of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedStreamArn</code> in the previous operation.</p>
+    /// <p>The ARN (Amazon Resource Name) of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedStreamArn</code> in the previous operation. </p>
     pub fn set_exclusive_start_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.exclusive_start_stream_arn = input;
         self
     }
-    /// <p>The ARN (Amazon Resource Name) of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedStreamArn</code> in the previous operation.</p>
+    /// <p>The ARN (Amazon Resource Name) of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedStreamArn</code> in the previous operation. </p>
     pub fn get_exclusive_start_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.exclusive_start_stream_arn
     }

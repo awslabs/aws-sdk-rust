@@ -22,7 +22,7 @@ impl CreateRobotInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateRobot`.
 ///
-/// <p>Creates a robot.</p><important>
+/// <p>Creates a robot.</p> <important>
 /// <p>This API is no longer supported and will throw an error if used.</p>
 /// </important>
 #[deprecated(

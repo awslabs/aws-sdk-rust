@@ -22,7 +22,7 @@ impl GetDomainInputBuilder {
 }
 /// Fluent builder constructing a request to `GetDomain`.
 ///
-/// <p>Returns information about a specific domain if it exists.</p>
+/// <p>Returns information about a specific domain if it exists. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDomainFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -102,17 +102,17 @@ impl GetDomainFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier of the Cases domain.</p>
+    /// <p>The unique identifier of the Cases domain. </p>
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_id(input.into());
         self
     }
-    /// <p>The unique identifier of the Cases domain.</p>
+    /// <p>The unique identifier of the Cases domain. </p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_id(input);
         self
     }
-    /// <p>The unique identifier of the Cases domain.</p>
+    /// <p>The unique identifier of the Cases domain. </p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_id()
     }

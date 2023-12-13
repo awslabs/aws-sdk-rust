@@ -22,38 +22,38 @@ pub struct ReplicationGroup {
     pub snapshotting_cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the status of automatic failover for this Redis replication group.</p>
     pub automatic_failover: ::std::option::Option<crate::types::AutomaticFailoverStatus>,
-    /// <p>A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime: Multi-AZ</a></p>
+    /// <p>A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime: Multi-AZ</a> </p>
     pub multi_az: ::std::option::Option<crate::types::MultiAzStatus>,
     /// <p>The configuration endpoint for this replication group. Use the configuration endpoint to connect to this replication group.</p>
     pub configuration_endpoint: ::std::option::Option<crate::types::Endpoint>,
-    /// <p>The number of days for which ElastiCache retains automatic cluster snapshots before deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p><important>
-    /// <p>If the value of <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned off.</p>
+    /// <p>The number of days for which ElastiCache retains automatic cluster snapshots before deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p> <important>
+    /// <p> If the value of <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned off.</p>
     /// </important>
     pub snapshot_retention_limit: ::std::option::Option<i32>,
     /// <p>The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your node group (shard).</p>
-    /// <p>Example: <code>05:00-09:00</code></p>
-    /// <p>If you do not specify this parameter, ElastiCache automatically chooses an appropriate time range.</p><note>
+    /// <p>Example: <code>05:00-09:00</code> </p>
+    /// <p>If you do not specify this parameter, ElastiCache automatically chooses an appropriate time range.</p> <note>
     /// <p>This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>
     /// </note>
     pub snapshot_window: ::std::option::Option<::std::string::String>,
     /// <p>A flag indicating whether or not this replication group is cluster enabled; i.e., whether its data can be partitioned across multiple shards (API/CLI: node groups).</p>
-    /// <p>Valid values: <code>true</code> | <code>false</code></p>
+    /// <p>Valid values: <code>true</code> | <code>false</code> </p>
     pub cluster_enabled: ::std::option::Option<bool>,
     /// <p>The name of the compute and memory capacity node type for each node in the replication group.</p>
     pub cache_node_type: ::std::option::Option<::std::string::String>,
     /// <p>A flag that enables using an <code>AuthToken</code> (password) when issuing Redis commands.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p>Default: <code>false</code> </p>
     pub auth_token_enabled: ::std::option::Option<bool>,
     /// <p>The date the auth token was last modified</p>
     pub auth_token_last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A flag that enables in-transit encryption when set to <code>true</code>.</p>
-    /// <p><b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p> <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
+    /// <p>Default: <code>false</code> </p>
     pub transit_encryption_enabled: ::std::option::Option<bool>,
     /// <p>A flag that enables encryption at-rest when set to <code>true</code>.</p>
     /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the cluster is created. To enable encryption at-rest on a cluster you must set <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create a cluster.</p>
-    /// <p><b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p> <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
+    /// <p>Default: <code>false</code> </p>
     pub at_rest_encryption_enabled: ::std::option::Option<bool>,
     /// <p>The outpost ARNs of the replication group's member clusters.</p>
     pub member_clusters_outpost_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -63,13 +63,13 @@ pub struct ReplicationGroup {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the user group associated to the replication group.</p>
     pub user_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Returns the destination, format and type of the logs.</p>
+    /// <p>Returns the destination, format and type of the logs. </p>
     pub log_delivery_configurations: ::std::option::Option<::std::vec::Vec<crate::types::LogDeliveryConfiguration>>,
     /// <p>The date and time when the cluster was created.</p>
     pub replication_group_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Enables data tiering. Data tiering is only supported for replication groups using the r6gd node type. This parameter must be set to true when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data tiering</a>.</p>
     pub data_tiering: ::std::option::Option<crate::types::DataTieringStatus>,
-    /// <p>If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.</p>
+    /// <p>If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions. </p>
     pub auto_minor_version_upgrade: ::std::option::Option<bool>,
     /// <p>Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     pub network_type: ::std::option::Option<crate::types::NetworkType>,
@@ -121,7 +121,7 @@ impl ReplicationGroup {
     pub fn automatic_failover(&self) -> ::std::option::Option<&crate::types::AutomaticFailoverStatus> {
         self.automatic_failover.as_ref()
     }
-    /// <p>A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime: Multi-AZ</a></p>
+    /// <p>A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime: Multi-AZ</a> </p>
     pub fn multi_az(&self) -> ::std::option::Option<&crate::types::MultiAzStatus> {
         self.multi_az.as_ref()
     }
@@ -129,22 +129,22 @@ impl ReplicationGroup {
     pub fn configuration_endpoint(&self) -> ::std::option::Option<&crate::types::Endpoint> {
         self.configuration_endpoint.as_ref()
     }
-    /// <p>The number of days for which ElastiCache retains automatic cluster snapshots before deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p><important>
-    /// <p>If the value of <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned off.</p>
+    /// <p>The number of days for which ElastiCache retains automatic cluster snapshots before deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p> <important>
+    /// <p> If the value of <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned off.</p>
     /// </important>
     pub fn snapshot_retention_limit(&self) -> ::std::option::Option<i32> {
         self.snapshot_retention_limit
     }
     /// <p>The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your node group (shard).</p>
-    /// <p>Example: <code>05:00-09:00</code></p>
-    /// <p>If you do not specify this parameter, ElastiCache automatically chooses an appropriate time range.</p><note>
+    /// <p>Example: <code>05:00-09:00</code> </p>
+    /// <p>If you do not specify this parameter, ElastiCache automatically chooses an appropriate time range.</p> <note>
     /// <p>This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>
     /// </note>
     pub fn snapshot_window(&self) -> ::std::option::Option<&str> {
         self.snapshot_window.as_deref()
     }
     /// <p>A flag indicating whether or not this replication group is cluster enabled; i.e., whether its data can be partitioned across multiple shards (API/CLI: node groups).</p>
-    /// <p>Valid values: <code>true</code> | <code>false</code></p>
+    /// <p>Valid values: <code>true</code> | <code>false</code> </p>
     pub fn cluster_enabled(&self) -> ::std::option::Option<bool> {
         self.cluster_enabled
     }
@@ -153,7 +153,7 @@ impl ReplicationGroup {
         self.cache_node_type.as_deref()
     }
     /// <p>A flag that enables using an <code>AuthToken</code> (password) when issuing Redis commands.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p>Default: <code>false</code> </p>
     pub fn auth_token_enabled(&self) -> ::std::option::Option<bool> {
         self.auth_token_enabled
     }
@@ -162,15 +162,15 @@ impl ReplicationGroup {
         self.auth_token_last_modified_date.as_ref()
     }
     /// <p>A flag that enables in-transit encryption when set to <code>true</code>.</p>
-    /// <p><b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p> <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
+    /// <p>Default: <code>false</code> </p>
     pub fn transit_encryption_enabled(&self) -> ::std::option::Option<bool> {
         self.transit_encryption_enabled
     }
     /// <p>A flag that enables encryption at-rest when set to <code>true</code>.</p>
     /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the cluster is created. To enable encryption at-rest on a cluster you must set <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create a cluster.</p>
-    /// <p><b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p> <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
+    /// <p>Default: <code>false</code> </p>
     pub fn at_rest_encryption_enabled(&self) -> ::std::option::Option<bool> {
         self.at_rest_encryption_enabled
     }
@@ -194,7 +194,7 @@ impl ReplicationGroup {
     pub fn user_group_ids(&self) -> &[::std::string::String] {
         self.user_group_ids.as_deref().unwrap_or_default()
     }
-    /// <p>Returns the destination, format and type of the logs.</p>
+    /// <p>Returns the destination, format and type of the logs. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_delivery_configurations.is_none()`.
     pub fn log_delivery_configurations(&self) -> &[crate::types::LogDeliveryConfiguration] {
@@ -208,7 +208,7 @@ impl ReplicationGroup {
     pub fn data_tiering(&self) -> ::std::option::Option<&crate::types::DataTieringStatus> {
         self.data_tiering.as_ref()
     }
-    /// <p>If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.</p>
+    /// <p>If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions. </p>
     pub fn auto_minor_version_upgrade(&self) -> ::std::option::Option<bool> {
         self.auto_minor_version_upgrade
     }
@@ -411,17 +411,17 @@ impl ReplicationGroupBuilder {
     pub fn get_automatic_failover(&self) -> &::std::option::Option<crate::types::AutomaticFailoverStatus> {
         &self.automatic_failover
     }
-    /// <p>A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime: Multi-AZ</a></p>
+    /// <p>A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime: Multi-AZ</a> </p>
     pub fn multi_az(mut self, input: crate::types::MultiAzStatus) -> Self {
         self.multi_az = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime: Multi-AZ</a></p>
+    /// <p>A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime: Multi-AZ</a> </p>
     pub fn set_multi_az(mut self, input: ::std::option::Option<crate::types::MultiAzStatus>) -> Self {
         self.multi_az = input;
         self
     }
-    /// <p>A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime: Multi-AZ</a></p>
+    /// <p>A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime: Multi-AZ</a> </p>
     pub fn get_multi_az(&self) -> &::std::option::Option<crate::types::MultiAzStatus> {
         &self.multi_az
     }
@@ -439,29 +439,29 @@ impl ReplicationGroupBuilder {
     pub fn get_configuration_endpoint(&self) -> &::std::option::Option<crate::types::Endpoint> {
         &self.configuration_endpoint
     }
-    /// <p>The number of days for which ElastiCache retains automatic cluster snapshots before deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p><important>
-    /// <p>If the value of <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned off.</p>
+    /// <p>The number of days for which ElastiCache retains automatic cluster snapshots before deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p> <important>
+    /// <p> If the value of <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned off.</p>
     /// </important>
     pub fn snapshot_retention_limit(mut self, input: i32) -> Self {
         self.snapshot_retention_limit = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of days for which ElastiCache retains automatic cluster snapshots before deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p><important>
-    /// <p>If the value of <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned off.</p>
+    /// <p>The number of days for which ElastiCache retains automatic cluster snapshots before deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p> <important>
+    /// <p> If the value of <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned off.</p>
     /// </important>
     pub fn set_snapshot_retention_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.snapshot_retention_limit = input;
         self
     }
-    /// <p>The number of days for which ElastiCache retains automatic cluster snapshots before deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p><important>
-    /// <p>If the value of <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned off.</p>
+    /// <p>The number of days for which ElastiCache retains automatic cluster snapshots before deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p> <important>
+    /// <p> If the value of <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned off.</p>
     /// </important>
     pub fn get_snapshot_retention_limit(&self) -> &::std::option::Option<i32> {
         &self.snapshot_retention_limit
     }
     /// <p>The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your node group (shard).</p>
-    /// <p>Example: <code>05:00-09:00</code></p>
-    /// <p>If you do not specify this parameter, ElastiCache automatically chooses an appropriate time range.</p><note>
+    /// <p>Example: <code>05:00-09:00</code> </p>
+    /// <p>If you do not specify this parameter, ElastiCache automatically chooses an appropriate time range.</p> <note>
     /// <p>This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>
     /// </note>
     pub fn snapshot_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -469,8 +469,8 @@ impl ReplicationGroupBuilder {
         self
     }
     /// <p>The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your node group (shard).</p>
-    /// <p>Example: <code>05:00-09:00</code></p>
-    /// <p>If you do not specify this parameter, ElastiCache automatically chooses an appropriate time range.</p><note>
+    /// <p>Example: <code>05:00-09:00</code> </p>
+    /// <p>If you do not specify this parameter, ElastiCache automatically chooses an appropriate time range.</p> <note>
     /// <p>This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>
     /// </note>
     pub fn set_snapshot_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -478,27 +478,27 @@ impl ReplicationGroupBuilder {
         self
     }
     /// <p>The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your node group (shard).</p>
-    /// <p>Example: <code>05:00-09:00</code></p>
-    /// <p>If you do not specify this parameter, ElastiCache automatically chooses an appropriate time range.</p><note>
+    /// <p>Example: <code>05:00-09:00</code> </p>
+    /// <p>If you do not specify this parameter, ElastiCache automatically chooses an appropriate time range.</p> <note>
     /// <p>This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>
     /// </note>
     pub fn get_snapshot_window(&self) -> &::std::option::Option<::std::string::String> {
         &self.snapshot_window
     }
     /// <p>A flag indicating whether or not this replication group is cluster enabled; i.e., whether its data can be partitioned across multiple shards (API/CLI: node groups).</p>
-    /// <p>Valid values: <code>true</code> | <code>false</code></p>
+    /// <p>Valid values: <code>true</code> | <code>false</code> </p>
     pub fn cluster_enabled(mut self, input: bool) -> Self {
         self.cluster_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>A flag indicating whether or not this replication group is cluster enabled; i.e., whether its data can be partitioned across multiple shards (API/CLI: node groups).</p>
-    /// <p>Valid values: <code>true</code> | <code>false</code></p>
+    /// <p>Valid values: <code>true</code> | <code>false</code> </p>
     pub fn set_cluster_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.cluster_enabled = input;
         self
     }
     /// <p>A flag indicating whether or not this replication group is cluster enabled; i.e., whether its data can be partitioned across multiple shards (API/CLI: node groups).</p>
-    /// <p>Valid values: <code>true</code> | <code>false</code></p>
+    /// <p>Valid values: <code>true</code> | <code>false</code> </p>
     pub fn get_cluster_enabled(&self) -> &::std::option::Option<bool> {
         &self.cluster_enabled
     }
@@ -517,19 +517,19 @@ impl ReplicationGroupBuilder {
         &self.cache_node_type
     }
     /// <p>A flag that enables using an <code>AuthToken</code> (password) when issuing Redis commands.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p>Default: <code>false</code> </p>
     pub fn auth_token_enabled(mut self, input: bool) -> Self {
         self.auth_token_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>A flag that enables using an <code>AuthToken</code> (password) when issuing Redis commands.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p>Default: <code>false</code> </p>
     pub fn set_auth_token_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auth_token_enabled = input;
         self
     }
     /// <p>A flag that enables using an <code>AuthToken</code> (password) when issuing Redis commands.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p>Default: <code>false</code> </p>
     pub fn get_auth_token_enabled(&self) -> &::std::option::Option<bool> {
         &self.auth_token_enabled
     }
@@ -548,45 +548,45 @@ impl ReplicationGroupBuilder {
         &self.auth_token_last_modified_date
     }
     /// <p>A flag that enables in-transit encryption when set to <code>true</code>.</p>
-    /// <p><b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p> <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
+    /// <p>Default: <code>false</code> </p>
     pub fn transit_encryption_enabled(mut self, input: bool) -> Self {
         self.transit_encryption_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>A flag that enables in-transit encryption when set to <code>true</code>.</p>
-    /// <p><b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p> <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
+    /// <p>Default: <code>false</code> </p>
     pub fn set_transit_encryption_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.transit_encryption_enabled = input;
         self
     }
     /// <p>A flag that enables in-transit encryption when set to <code>true</code>.</p>
-    /// <p><b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p> <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
+    /// <p>Default: <code>false</code> </p>
     pub fn get_transit_encryption_enabled(&self) -> &::std::option::Option<bool> {
         &self.transit_encryption_enabled
     }
     /// <p>A flag that enables encryption at-rest when set to <code>true</code>.</p>
     /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the cluster is created. To enable encryption at-rest on a cluster you must set <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create a cluster.</p>
-    /// <p><b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p> <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
+    /// <p>Default: <code>false</code> </p>
     pub fn at_rest_encryption_enabled(mut self, input: bool) -> Self {
         self.at_rest_encryption_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>A flag that enables encryption at-rest when set to <code>true</code>.</p>
     /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the cluster is created. To enable encryption at-rest on a cluster you must set <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create a cluster.</p>
-    /// <p><b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p> <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
+    /// <p>Default: <code>false</code> </p>
     pub fn set_at_rest_encryption_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.at_rest_encryption_enabled = input;
         self
     }
     /// <p>A flag that enables encryption at-rest when set to <code>true</code>.</p>
     /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the cluster is created. To enable encryption at-rest on a cluster you must set <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create a cluster.</p>
-    /// <p><b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p> <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
+    /// <p>Default: <code>false</code> </p>
     pub fn get_at_rest_encryption_enabled(&self) -> &::std::option::Option<bool> {
         &self.at_rest_encryption_enabled
     }
@@ -662,19 +662,19 @@ impl ReplicationGroupBuilder {
     ///
     /// To override the contents of this collection use [`set_log_delivery_configurations`](Self::set_log_delivery_configurations).
     ///
-    /// <p>Returns the destination, format and type of the logs.</p>
+    /// <p>Returns the destination, format and type of the logs. </p>
     pub fn log_delivery_configurations(mut self, input: crate::types::LogDeliveryConfiguration) -> Self {
         let mut v = self.log_delivery_configurations.unwrap_or_default();
         v.push(input);
         self.log_delivery_configurations = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Returns the destination, format and type of the logs.</p>
+    /// <p>Returns the destination, format and type of the logs. </p>
     pub fn set_log_delivery_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LogDeliveryConfiguration>>) -> Self {
         self.log_delivery_configurations = input;
         self
     }
-    /// <p>Returns the destination, format and type of the logs.</p>
+    /// <p>Returns the destination, format and type of the logs. </p>
     pub fn get_log_delivery_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LogDeliveryConfiguration>> {
         &self.log_delivery_configurations
     }
@@ -706,17 +706,17 @@ impl ReplicationGroupBuilder {
     pub fn get_data_tiering(&self) -> &::std::option::Option<crate::types::DataTieringStatus> {
         &self.data_tiering
     }
-    /// <p>If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.</p>
+    /// <p>If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions. </p>
     pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
         self.auto_minor_version_upgrade = ::std::option::Option::Some(input);
         self
     }
-    /// <p>If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.</p>
+    /// <p>If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions. </p>
     pub fn set_auto_minor_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_minor_version_upgrade = input;
         self
     }
-    /// <p>If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.</p>
+    /// <p>If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions. </p>
     pub fn get_auto_minor_version_upgrade(&self) -> &::std::option::Option<bool> {
         &self.auto_minor_version_upgrade
     }

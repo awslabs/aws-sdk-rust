@@ -22,7 +22,7 @@ impl BatchDeleteAgentsInputBuilder {
 }
 /// Fluent builder constructing a request to `BatchDeleteAgents`.
 ///
-/// <p>Deletes one or more agents or collectors as specified by ID. Deleting an agent or collector does not delete the previously discovered data. To delete the data collected, use <code>StartBatchDeleteConfigurationTask</code>.</p>
+/// <p> Deletes one or more agents or collectors as specified by ID. Deleting an agent or collector does not delete the previously discovered data. To delete the data collected, use <code>StartBatchDeleteConfigurationTask</code>. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchDeleteAgentsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -112,17 +112,17 @@ impl BatchDeleteAgentsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_delete_agents`](Self::set_delete_agents).
     ///
-    /// <p>The list of agents to delete.</p>
+    /// <p> The list of agents to delete. </p>
     pub fn delete_agents(mut self, input: crate::types::DeleteAgent) -> Self {
         self.inner = self.inner.delete_agents(input);
         self
     }
-    /// <p>The list of agents to delete.</p>
+    /// <p> The list of agents to delete. </p>
     pub fn set_delete_agents(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeleteAgent>>) -> Self {
         self.inner = self.inner.set_delete_agents(input);
         self
     }
-    /// <p>The list of agents to delete.</p>
+    /// <p> The list of agents to delete. </p>
     pub fn get_delete_agents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeleteAgent>> {
         self.inner.get_delete_agents()
     }

@@ -3,18 +3,12 @@
 /// <p>A bar chart.</p>
 /// <p>The <code>BarChartVisual</code> structure describes a visual that is a member of the bar chart family. The following charts can be described using this structure:</p>
 /// <ul>
-/// <li>
-/// <p>Horizontal bar chart</p></li>
-/// <li>
-/// <p>Vertical bar chart</p></li>
-/// <li>
-/// <p>Horizontal stacked bar chart</p></li>
-/// <li>
-/// <p>Vertical stacked bar chart</p></li>
-/// <li>
-/// <p>Horizontal stacked 100% bar chart</p></li>
-/// <li>
-/// <p>Vertical stacked 100% bar chart</p></li>
+/// <li> <p>Horizontal bar chart</p> </li>
+/// <li> <p>Vertical bar chart</p> </li>
+/// <li> <p>Horizontal stacked bar chart</p> </li>
+/// <li> <p>Vertical stacked bar chart</p> </li>
+/// <li> <p>Horizontal stacked 100% bar chart</p> </li>
+/// <li> <p>Vertical stacked 100% bar chart</p> </li>
 /// </ul>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/bar-charts.html">Using bar charts</a> in the <i>Amazon QuickSight User Guide</i>.</p>
 #[non_exhaustive]

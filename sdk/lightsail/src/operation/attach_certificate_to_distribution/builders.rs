@@ -24,7 +24,7 @@ impl AttachCertificateToDistributionInputBuilder {
 ///
 /// <p>Attaches an SSL/TLS certificate to your Amazon Lightsail content delivery network (CDN) distribution.</p>
 /// <p>After the certificate is attached, your distribution accepts HTTPS traffic for all of the domains that are associated with the certificate.</p>
-/// <p>Use the <code>CreateCertificate</code> action to create a certificate that you can attach to your distribution.</p><important>
+/// <p>Use the <code>CreateCertificate</code> action to create a certificate that you can attach to your distribution.</p> <important>
 /// <p>Only certificates created in the <code>us-east-1</code> Amazon Web Services Region can be attached to Lightsail distributions. Lightsail distributions are global resources that can reference an origin in any Amazon Web Services Region, and distribute its content globally. However, all distributions are located in the <code>us-east-1</code> Region.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -131,7 +131,7 @@ impl AttachCertificateToDistributionFluentBuilder {
     }
     /// <p>The name of the certificate to attach to a distribution.</p>
     /// <p>Only certificates with a status of <code>ISSUED</code> can be attached to a distribution.</p>
-    /// <p>Use the <code>GetCertificates</code> action to get a list of certificate names that you can specify.</p><note>
+    /// <p>Use the <code>GetCertificates</code> action to get a list of certificate names that you can specify.</p> <note>
     /// <p>This is the name of the certificate resource type and is used only to reference the certificate in other API actions. It can be different than the domain name of the certificate. For example, your certificate name might be <code>WordPress-Blog-Certificate</code> and the domain name of the certificate might be <code>example.com</code>.</p>
     /// </note>
     pub fn certificate_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -140,7 +140,7 @@ impl AttachCertificateToDistributionFluentBuilder {
     }
     /// <p>The name of the certificate to attach to a distribution.</p>
     /// <p>Only certificates with a status of <code>ISSUED</code> can be attached to a distribution.</p>
-    /// <p>Use the <code>GetCertificates</code> action to get a list of certificate names that you can specify.</p><note>
+    /// <p>Use the <code>GetCertificates</code> action to get a list of certificate names that you can specify.</p> <note>
     /// <p>This is the name of the certificate resource type and is used only to reference the certificate in other API actions. It can be different than the domain name of the certificate. For example, your certificate name might be <code>WordPress-Blog-Certificate</code> and the domain name of the certificate might be <code>example.com</code>.</p>
     /// </note>
     pub fn set_certificate_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -149,7 +149,7 @@ impl AttachCertificateToDistributionFluentBuilder {
     }
     /// <p>The name of the certificate to attach to a distribution.</p>
     /// <p>Only certificates with a status of <code>ISSUED</code> can be attached to a distribution.</p>
-    /// <p>Use the <code>GetCertificates</code> action to get a list of certificate names that you can specify.</p><note>
+    /// <p>Use the <code>GetCertificates</code> action to get a list of certificate names that you can specify.</p> <note>
     /// <p>This is the name of the certificate resource type and is used only to reference the certificate in other API actions. It can be different than the domain name of the certificate. For example, your certificate name might be <code>WordPress-Blog-Certificate</code> and the domain name of the certificate might be <code>example.com</code>.</p>
     /// </note>
     pub fn get_certificate_name(&self) -> &::std::option::Option<::std::string::String> {

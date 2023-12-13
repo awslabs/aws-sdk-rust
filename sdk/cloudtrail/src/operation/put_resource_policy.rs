@@ -248,19 +248,16 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PutResourcePo
 pub enum PutResourcePolicyError {
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
     OperationNotPermittedException(crate::types::error::OperationNotPermittedException),
-    /// <p>This exception is thrown when the provided resource does not exist, or the ARN format of the resource is not valid. The following is the valid format for a resource ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/MyChannel</code>.</p>
+    /// <p> This exception is thrown when the provided resource does not exist, or the ARN format of the resource is not valid. The following is the valid format for a resource ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/MyChannel</code>. </p>
     ResourceArnNotValidException(crate::types::error::ResourceArnNotValidException),
     /// <p>This exception is thrown when the specified resource is not found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the resouce-based policy has syntax errors, or contains a principal that is not valid.</p>
+    /// <p> This exception is thrown when the resouce-based policy has syntax errors, or contains a principal that is not valid. </p>
     /// <p>The following are requirements for the resource policy:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contains only one action: cloudtrail-data:PutAuditEvents</p></li>
-    /// <li>
-    /// <p>Contains at least one statement. The policy can have a maximum of 20 statements.</p></li>
-    /// <li>
-    /// <p>Each statement contains at least one principal. A statement can have a maximum of 50 principals.</p></li>
+    /// <li> <p> Contains only one action: cloudtrail-data:PutAuditEvents </p> </li>
+    /// <li> <p> Contains at least one statement. The policy can have a maximum of 20 statements. </p> </li>
+    /// <li> <p> Each statement contains at least one principal. A statement can have a maximum of 50 principals. </p> </li>
     /// </ul>
     ResourcePolicyNotValidException(crate::types::error::ResourcePolicyNotValidException),
     /// <p>This exception is thrown when the specified resource type is not supported by CloudTrail.</p>

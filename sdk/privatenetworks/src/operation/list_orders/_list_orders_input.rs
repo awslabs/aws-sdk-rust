@@ -11,10 +11,8 @@ pub struct ListOrdersInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>The filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>NETWORK_SITE</code> - The Amazon Resource Name (ARN) of the network site.</p></li>
-    /// <li>
-    /// <p><code>STATUS</code> - The status (<code>ACKNOWLEDGING</code> | <code>ACKNOWLEDGED</code> | <code>UNACKNOWLEDGED</code>).</p></li>
+    /// <li> <p> <code>NETWORK_SITE</code> - The Amazon Resource Name (ARN) of the network site.</p> </li>
+    /// <li> <p> <code>STATUS</code> - The status (<code>ACKNOWLEDGING</code> | <code>ACKNOWLEDGED</code> | <code>UNACKNOWLEDGED</code>).</p> </li>
     /// </ul>
     /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
     pub filters: ::std::option::Option<::std::collections::HashMap<crate::types::OrderFilterKeys, ::std::vec::Vec<::std::string::String>>>,
@@ -34,10 +32,8 @@ impl ListOrdersInput {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>NETWORK_SITE</code> - The Amazon Resource Name (ARN) of the network site.</p></li>
-    /// <li>
-    /// <p><code>STATUS</code> - The status (<code>ACKNOWLEDGING</code> | <code>ACKNOWLEDGED</code> | <code>UNACKNOWLEDGED</code>).</p></li>
+    /// <li> <p> <code>NETWORK_SITE</code> - The Amazon Resource Name (ARN) of the network site.</p> </li>
+    /// <li> <p> <code>STATUS</code> - The status (<code>ACKNOWLEDGING</code> | <code>ACKNOWLEDGED</code> | <code>UNACKNOWLEDGED</code>).</p> </li>
     /// </ul>
     /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
     pub fn filters(
@@ -112,10 +108,8 @@ impl ListOrdersInputBuilder {
     ///
     /// <p>The filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>NETWORK_SITE</code> - The Amazon Resource Name (ARN) of the network site.</p></li>
-    /// <li>
-    /// <p><code>STATUS</code> - The status (<code>ACKNOWLEDGING</code> | <code>ACKNOWLEDGED</code> | <code>UNACKNOWLEDGED</code>).</p></li>
+    /// <li> <p> <code>NETWORK_SITE</code> - The Amazon Resource Name (ARN) of the network site.</p> </li>
+    /// <li> <p> <code>STATUS</code> - The status (<code>ACKNOWLEDGING</code> | <code>ACKNOWLEDGED</code> | <code>UNACKNOWLEDGED</code>).</p> </li>
     /// </ul>
     /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
     pub fn filters(mut self, k: crate::types::OrderFilterKeys, v: ::std::vec::Vec<::std::string::String>) -> Self {
@@ -126,10 +120,8 @@ impl ListOrdersInputBuilder {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>NETWORK_SITE</code> - The Amazon Resource Name (ARN) of the network site.</p></li>
-    /// <li>
-    /// <p><code>STATUS</code> - The status (<code>ACKNOWLEDGING</code> | <code>ACKNOWLEDGED</code> | <code>UNACKNOWLEDGED</code>).</p></li>
+    /// <li> <p> <code>NETWORK_SITE</code> - The Amazon Resource Name (ARN) of the network site.</p> </li>
+    /// <li> <p> <code>STATUS</code> - The status (<code>ACKNOWLEDGING</code> | <code>ACKNOWLEDGED</code> | <code>UNACKNOWLEDGED</code>).</p> </li>
     /// </ul>
     /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
     pub fn set_filters(
@@ -141,10 +133,8 @@ impl ListOrdersInputBuilder {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>NETWORK_SITE</code> - The Amazon Resource Name (ARN) of the network site.</p></li>
-    /// <li>
-    /// <p><code>STATUS</code> - The status (<code>ACKNOWLEDGING</code> | <code>ACKNOWLEDGED</code> | <code>UNACKNOWLEDGED</code>).</p></li>
+    /// <li> <p> <code>NETWORK_SITE</code> - The Amazon Resource Name (ARN) of the network site.</p> </li>
+    /// <li> <p> <code>STATUS</code> - The status (<code>ACKNOWLEDGING</code> | <code>ACKNOWLEDGED</code> | <code>UNACKNOWLEDGED</code>).</p> </li>
     /// </ul>
     /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
     pub fn get_filters(

@@ -108,17 +108,17 @@ impl CreateParticipantFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance. </p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance. </p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_id(input);
         self
     }
-    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance. </p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_id()
     }
@@ -150,25 +150,25 @@ impl CreateParticipantFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
-    /// <p>Information identifying the participant.</p><important>
-    /// <p>The only Valid value for <code>ParticipantRole</code> is <code>CUSTOM_BOT</code>.</p>
-    /// <p><code>DisplayName</code> is <b>Required</b>.</p>
+    /// <p>Information identifying the participant.</p> <important>
+    /// <p>The only Valid value for <code>ParticipantRole</code> is <code>CUSTOM_BOT</code>. </p>
+    /// <p> <code>DisplayName</code> is <b>Required</b>.</p>
     /// </important>
     pub fn participant_details(mut self, input: crate::types::ParticipantDetailsToAdd) -> Self {
         self.inner = self.inner.participant_details(input);
         self
     }
-    /// <p>Information identifying the participant.</p><important>
-    /// <p>The only Valid value for <code>ParticipantRole</code> is <code>CUSTOM_BOT</code>.</p>
-    /// <p><code>DisplayName</code> is <b>Required</b>.</p>
+    /// <p>Information identifying the participant.</p> <important>
+    /// <p>The only Valid value for <code>ParticipantRole</code> is <code>CUSTOM_BOT</code>. </p>
+    /// <p> <code>DisplayName</code> is <b>Required</b>.</p>
     /// </important>
     pub fn set_participant_details(mut self, input: ::std::option::Option<crate::types::ParticipantDetailsToAdd>) -> Self {
         self.inner = self.inner.set_participant_details(input);
         self
     }
-    /// <p>Information identifying the participant.</p><important>
-    /// <p>The only Valid value for <code>ParticipantRole</code> is <code>CUSTOM_BOT</code>.</p>
-    /// <p><code>DisplayName</code> is <b>Required</b>.</p>
+    /// <p>Information identifying the participant.</p> <important>
+    /// <p>The only Valid value for <code>ParticipantRole</code> is <code>CUSTOM_BOT</code>. </p>
+    /// <p> <code>DisplayName</code> is <b>Required</b>.</p>
     /// </important>
     pub fn get_participant_details(&self) -> &::std::option::Option<crate::types::ParticipantDetailsToAdd> {
         self.inner.get_participant_details()

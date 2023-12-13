@@ -166,10 +166,8 @@ impl UpdatePortalFluentBuilder {
     }
     /// <p>Contains an image that is one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>An image file. Choose this option to upload a new image.</p></li>
-    /// <li>
-    /// <p>The ID of an existing image. Choose this option to keep an existing image.</p></li>
+    /// <li> <p>An image file. Choose this option to upload a new image.</p> </li>
+    /// <li> <p>The ID of an existing image. Choose this option to keep an existing image.</p> </li>
     /// </ul>
     pub fn portal_logo_image(mut self, input: crate::types::Image) -> Self {
         self.inner = self.inner.portal_logo_image(input);
@@ -177,10 +175,8 @@ impl UpdatePortalFluentBuilder {
     }
     /// <p>Contains an image that is one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>An image file. Choose this option to upload a new image.</p></li>
-    /// <li>
-    /// <p>The ID of an existing image. Choose this option to keep an existing image.</p></li>
+    /// <li> <p>An image file. Choose this option to upload a new image.</p> </li>
+    /// <li> <p>The ID of an existing image. Choose this option to keep an existing image.</p> </li>
     /// </ul>
     pub fn set_portal_logo_image(mut self, input: ::std::option::Option<crate::types::Image>) -> Self {
         self.inner = self.inner.set_portal_logo_image(input);
@@ -188,10 +184,8 @@ impl UpdatePortalFluentBuilder {
     }
     /// <p>Contains an image that is one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>An image file. Choose this option to upload a new image.</p></li>
-    /// <li>
-    /// <p>The ID of an existing image. Choose this option to keep an existing image.</p></li>
+    /// <li> <p>An image file. Choose this option to upload a new image.</p> </li>
+    /// <li> <p>The ID of an existing image. Choose this option to keep an existing image.</p> </li>
     /// </ul>
     pub fn get_portal_logo_image(&self) -> &::std::option::Option<crate::types::Image> {
         self.inner.get_portal_logo_image()

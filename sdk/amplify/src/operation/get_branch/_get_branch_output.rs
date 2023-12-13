@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBranchOutput {
-    /// <p>The branch for an Amplify app, which maps to a third-party repository branch.</p>
+    /// <p> The branch for an Amplify app, which maps to a third-party repository branch. </p>
     pub branch: ::std::option::Option<crate::types::Branch>,
     _request_id: Option<String>,
 }
 impl GetBranchOutput {
-    /// <p>The branch for an Amplify app, which maps to a third-party repository branch.</p>
+    /// <p> The branch for an Amplify app, which maps to a third-party repository branch. </p>
     pub fn branch(&self) -> ::std::option::Option<&crate::types::Branch> {
         self.branch.as_ref()
     }
@@ -33,18 +33,18 @@ pub struct GetBranchOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetBranchOutputBuilder {
-    /// <p>The branch for an Amplify app, which maps to a third-party repository branch.</p>
+    /// <p> The branch for an Amplify app, which maps to a third-party repository branch. </p>
     /// This field is required.
     pub fn branch(mut self, input: crate::types::Branch) -> Self {
         self.branch = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The branch for an Amplify app, which maps to a third-party repository branch.</p>
+    /// <p> The branch for an Amplify app, which maps to a third-party repository branch. </p>
     pub fn set_branch(mut self, input: ::std::option::Option<crate::types::Branch>) -> Self {
         self.branch = input;
         self
     }
-    /// <p>The branch for an Amplify app, which maps to a third-party repository branch.</p>
+    /// <p> The branch for an Amplify app, which maps to a third-party repository branch. </p>
     pub fn get_branch(&self) -> &::std::option::Option<crate::types::Branch> {
         &self.branch
     }

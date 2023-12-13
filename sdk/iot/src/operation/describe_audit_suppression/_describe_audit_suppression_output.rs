@@ -7,11 +7,11 @@ pub struct DescribeAuditSuppressionOutput {
     pub check_name: ::std::option::Option<::std::string::String>,
     /// <p>Information that identifies the noncompliant resource.</p>
     pub resource_identifier: ::std::option::Option<crate::types::ResourceIdentifier>,
-    /// <p>The epoch timestamp in seconds at which this suppression expires.</p>
+    /// <p> The epoch timestamp in seconds at which this suppression expires. </p>
     pub expiration_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Indicates whether a suppression should exist indefinitely or not.</p>
+    /// <p> Indicates whether a suppression should exist indefinitely or not. </p>
     pub suppress_indefinitely: ::std::option::Option<bool>,
-    /// <p>The description of the audit suppression.</p>
+    /// <p> The description of the audit suppression. </p>
     pub description: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -24,15 +24,15 @@ impl DescribeAuditSuppressionOutput {
     pub fn resource_identifier(&self) -> ::std::option::Option<&crate::types::ResourceIdentifier> {
         self.resource_identifier.as_ref()
     }
-    /// <p>The epoch timestamp in seconds at which this suppression expires.</p>
+    /// <p> The epoch timestamp in seconds at which this suppression expires. </p>
     pub fn expiration_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.expiration_date.as_ref()
     }
-    /// <p>Indicates whether a suppression should exist indefinitely or not.</p>
+    /// <p> Indicates whether a suppression should exist indefinitely or not. </p>
     pub fn suppress_indefinitely(&self) -> ::std::option::Option<bool> {
         self.suppress_indefinitely
     }
-    /// <p>The description of the audit suppression.</p>
+    /// <p> The description of the audit suppression. </p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -89,45 +89,45 @@ impl DescribeAuditSuppressionOutputBuilder {
     pub fn get_resource_identifier(&self) -> &::std::option::Option<crate::types::ResourceIdentifier> {
         &self.resource_identifier
     }
-    /// <p>The epoch timestamp in seconds at which this suppression expires.</p>
+    /// <p> The epoch timestamp in seconds at which this suppression expires. </p>
     pub fn expiration_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.expiration_date = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The epoch timestamp in seconds at which this suppression expires.</p>
+    /// <p> The epoch timestamp in seconds at which this suppression expires. </p>
     pub fn set_expiration_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expiration_date = input;
         self
     }
-    /// <p>The epoch timestamp in seconds at which this suppression expires.</p>
+    /// <p> The epoch timestamp in seconds at which this suppression expires. </p>
     pub fn get_expiration_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.expiration_date
     }
-    /// <p>Indicates whether a suppression should exist indefinitely or not.</p>
+    /// <p> Indicates whether a suppression should exist indefinitely or not. </p>
     pub fn suppress_indefinitely(mut self, input: bool) -> Self {
         self.suppress_indefinitely = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether a suppression should exist indefinitely or not.</p>
+    /// <p> Indicates whether a suppression should exist indefinitely or not. </p>
     pub fn set_suppress_indefinitely(mut self, input: ::std::option::Option<bool>) -> Self {
         self.suppress_indefinitely = input;
         self
     }
-    /// <p>Indicates whether a suppression should exist indefinitely or not.</p>
+    /// <p> Indicates whether a suppression should exist indefinitely or not. </p>
     pub fn get_suppress_indefinitely(&self) -> &::std::option::Option<bool> {
         &self.suppress_indefinitely
     }
-    /// <p>The description of the audit suppression.</p>
+    /// <p> The description of the audit suppression. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The description of the audit suppression.</p>
+    /// <p> The description of the audit suppression. </p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>The description of the audit suppression.</p>
+    /// <p> The description of the audit suppression. </p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }

@@ -20,30 +20,18 @@ pub struct IpamResourceDiscovery {
     pub is_default: ::std::option::Option<bool>,
     /// <p>The lifecycle state of the resource discovery.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>create-in-progress</code> - Resource discovery is being created.</p></li>
-    /// <li>
-    /// <p><code>create-complete</code> - Resource discovery creation is complete.</p></li>
-    /// <li>
-    /// <p><code>create-failed</code> - Resource discovery creation has failed.</p></li>
-    /// <li>
-    /// <p><code>modify-in-progress</code> - Resource discovery is being modified.</p></li>
-    /// <li>
-    /// <p><code>modify-complete</code> - Resource discovery modification is complete.</p></li>
-    /// <li>
-    /// <p><code>modify-failed</code> - Resource discovery modification has failed.</p></li>
-    /// <li>
-    /// <p><code>delete-in-progress</code> - Resource discovery is being deleted.</p></li>
-    /// <li>
-    /// <p><code>delete-complete</code> - Resource discovery deletion is complete.</p></li>
-    /// <li>
-    /// <p><code>delete-failed</code> - Resource discovery deletion has failed.</p></li>
-    /// <li>
-    /// <p><code>isolate-in-progress</code> - Amazon Web Services account that created the resource discovery has been removed and the resource discovery is being isolated.</p></li>
-    /// <li>
-    /// <p><code>isolate-complete</code> - Resource discovery isolation is complete.</p></li>
-    /// <li>
-    /// <p><code>restore-in-progress</code> - Amazon Web Services account that created the resource discovery and was isolated has been restored.</p></li>
+    /// <li> <p> <code>create-in-progress</code> - Resource discovery is being created.</p> </li>
+    /// <li> <p> <code>create-complete</code> - Resource discovery creation is complete.</p> </li>
+    /// <li> <p> <code>create-failed</code> - Resource discovery creation has failed.</p> </li>
+    /// <li> <p> <code>modify-in-progress</code> - Resource discovery is being modified.</p> </li>
+    /// <li> <p> <code>modify-complete</code> - Resource discovery modification is complete.</p> </li>
+    /// <li> <p> <code>modify-failed</code> - Resource discovery modification has failed.</p> </li>
+    /// <li> <p> <code>delete-in-progress</code> - Resource discovery is being deleted.</p> </li>
+    /// <li> <p> <code>delete-complete</code> - Resource discovery deletion is complete.</p> </li>
+    /// <li> <p> <code>delete-failed</code> - Resource discovery deletion has failed.</p> </li>
+    /// <li> <p> <code>isolate-in-progress</code> - Amazon Web Services account that created the resource discovery has been removed and the resource discovery is being isolated.</p> </li>
+    /// <li> <p> <code>isolate-complete</code> - Resource discovery isolation is complete.</p> </li>
+    /// <li> <p> <code>restore-in-progress</code> - Amazon Web Services account that created the resource discovery and was isolated has been restored.</p> </li>
     /// </ul>
     pub state: ::std::option::Option<crate::types::IpamResourceDiscoveryState>,
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
@@ -82,30 +70,18 @@ impl IpamResourceDiscovery {
     }
     /// <p>The lifecycle state of the resource discovery.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>create-in-progress</code> - Resource discovery is being created.</p></li>
-    /// <li>
-    /// <p><code>create-complete</code> - Resource discovery creation is complete.</p></li>
-    /// <li>
-    /// <p><code>create-failed</code> - Resource discovery creation has failed.</p></li>
-    /// <li>
-    /// <p><code>modify-in-progress</code> - Resource discovery is being modified.</p></li>
-    /// <li>
-    /// <p><code>modify-complete</code> - Resource discovery modification is complete.</p></li>
-    /// <li>
-    /// <p><code>modify-failed</code> - Resource discovery modification has failed.</p></li>
-    /// <li>
-    /// <p><code>delete-in-progress</code> - Resource discovery is being deleted.</p></li>
-    /// <li>
-    /// <p><code>delete-complete</code> - Resource discovery deletion is complete.</p></li>
-    /// <li>
-    /// <p><code>delete-failed</code> - Resource discovery deletion has failed.</p></li>
-    /// <li>
-    /// <p><code>isolate-in-progress</code> - Amazon Web Services account that created the resource discovery has been removed and the resource discovery is being isolated.</p></li>
-    /// <li>
-    /// <p><code>isolate-complete</code> - Resource discovery isolation is complete.</p></li>
-    /// <li>
-    /// <p><code>restore-in-progress</code> - Amazon Web Services account that created the resource discovery and was isolated has been restored.</p></li>
+    /// <li> <p> <code>create-in-progress</code> - Resource discovery is being created.</p> </li>
+    /// <li> <p> <code>create-complete</code> - Resource discovery creation is complete.</p> </li>
+    /// <li> <p> <code>create-failed</code> - Resource discovery creation has failed.</p> </li>
+    /// <li> <p> <code>modify-in-progress</code> - Resource discovery is being modified.</p> </li>
+    /// <li> <p> <code>modify-complete</code> - Resource discovery modification is complete.</p> </li>
+    /// <li> <p> <code>modify-failed</code> - Resource discovery modification has failed.</p> </li>
+    /// <li> <p> <code>delete-in-progress</code> - Resource discovery is being deleted.</p> </li>
+    /// <li> <p> <code>delete-complete</code> - Resource discovery deletion is complete.</p> </li>
+    /// <li> <p> <code>delete-failed</code> - Resource discovery deletion has failed.</p> </li>
+    /// <li> <p> <code>isolate-in-progress</code> - Amazon Web Services account that created the resource discovery has been removed and the resource discovery is being isolated.</p> </li>
+    /// <li> <p> <code>isolate-complete</code> - Resource discovery isolation is complete.</p> </li>
+    /// <li> <p> <code>restore-in-progress</code> - Amazon Web Services account that created the resource discovery and was isolated has been restored.</p> </li>
     /// </ul>
     pub fn state(&self) -> ::std::option::Option<&crate::types::IpamResourceDiscoveryState> {
         self.state.as_ref()
@@ -245,30 +221,18 @@ impl IpamResourceDiscoveryBuilder {
     }
     /// <p>The lifecycle state of the resource discovery.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>create-in-progress</code> - Resource discovery is being created.</p></li>
-    /// <li>
-    /// <p><code>create-complete</code> - Resource discovery creation is complete.</p></li>
-    /// <li>
-    /// <p><code>create-failed</code> - Resource discovery creation has failed.</p></li>
-    /// <li>
-    /// <p><code>modify-in-progress</code> - Resource discovery is being modified.</p></li>
-    /// <li>
-    /// <p><code>modify-complete</code> - Resource discovery modification is complete.</p></li>
-    /// <li>
-    /// <p><code>modify-failed</code> - Resource discovery modification has failed.</p></li>
-    /// <li>
-    /// <p><code>delete-in-progress</code> - Resource discovery is being deleted.</p></li>
-    /// <li>
-    /// <p><code>delete-complete</code> - Resource discovery deletion is complete.</p></li>
-    /// <li>
-    /// <p><code>delete-failed</code> - Resource discovery deletion has failed.</p></li>
-    /// <li>
-    /// <p><code>isolate-in-progress</code> - Amazon Web Services account that created the resource discovery has been removed and the resource discovery is being isolated.</p></li>
-    /// <li>
-    /// <p><code>isolate-complete</code> - Resource discovery isolation is complete.</p></li>
-    /// <li>
-    /// <p><code>restore-in-progress</code> - Amazon Web Services account that created the resource discovery and was isolated has been restored.</p></li>
+    /// <li> <p> <code>create-in-progress</code> - Resource discovery is being created.</p> </li>
+    /// <li> <p> <code>create-complete</code> - Resource discovery creation is complete.</p> </li>
+    /// <li> <p> <code>create-failed</code> - Resource discovery creation has failed.</p> </li>
+    /// <li> <p> <code>modify-in-progress</code> - Resource discovery is being modified.</p> </li>
+    /// <li> <p> <code>modify-complete</code> - Resource discovery modification is complete.</p> </li>
+    /// <li> <p> <code>modify-failed</code> - Resource discovery modification has failed.</p> </li>
+    /// <li> <p> <code>delete-in-progress</code> - Resource discovery is being deleted.</p> </li>
+    /// <li> <p> <code>delete-complete</code> - Resource discovery deletion is complete.</p> </li>
+    /// <li> <p> <code>delete-failed</code> - Resource discovery deletion has failed.</p> </li>
+    /// <li> <p> <code>isolate-in-progress</code> - Amazon Web Services account that created the resource discovery has been removed and the resource discovery is being isolated.</p> </li>
+    /// <li> <p> <code>isolate-complete</code> - Resource discovery isolation is complete.</p> </li>
+    /// <li> <p> <code>restore-in-progress</code> - Amazon Web Services account that created the resource discovery and was isolated has been restored.</p> </li>
     /// </ul>
     pub fn state(mut self, input: crate::types::IpamResourceDiscoveryState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -276,30 +240,18 @@ impl IpamResourceDiscoveryBuilder {
     }
     /// <p>The lifecycle state of the resource discovery.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>create-in-progress</code> - Resource discovery is being created.</p></li>
-    /// <li>
-    /// <p><code>create-complete</code> - Resource discovery creation is complete.</p></li>
-    /// <li>
-    /// <p><code>create-failed</code> - Resource discovery creation has failed.</p></li>
-    /// <li>
-    /// <p><code>modify-in-progress</code> - Resource discovery is being modified.</p></li>
-    /// <li>
-    /// <p><code>modify-complete</code> - Resource discovery modification is complete.</p></li>
-    /// <li>
-    /// <p><code>modify-failed</code> - Resource discovery modification has failed.</p></li>
-    /// <li>
-    /// <p><code>delete-in-progress</code> - Resource discovery is being deleted.</p></li>
-    /// <li>
-    /// <p><code>delete-complete</code> - Resource discovery deletion is complete.</p></li>
-    /// <li>
-    /// <p><code>delete-failed</code> - Resource discovery deletion has failed.</p></li>
-    /// <li>
-    /// <p><code>isolate-in-progress</code> - Amazon Web Services account that created the resource discovery has been removed and the resource discovery is being isolated.</p></li>
-    /// <li>
-    /// <p><code>isolate-complete</code> - Resource discovery isolation is complete.</p></li>
-    /// <li>
-    /// <p><code>restore-in-progress</code> - Amazon Web Services account that created the resource discovery and was isolated has been restored.</p></li>
+    /// <li> <p> <code>create-in-progress</code> - Resource discovery is being created.</p> </li>
+    /// <li> <p> <code>create-complete</code> - Resource discovery creation is complete.</p> </li>
+    /// <li> <p> <code>create-failed</code> - Resource discovery creation has failed.</p> </li>
+    /// <li> <p> <code>modify-in-progress</code> - Resource discovery is being modified.</p> </li>
+    /// <li> <p> <code>modify-complete</code> - Resource discovery modification is complete.</p> </li>
+    /// <li> <p> <code>modify-failed</code> - Resource discovery modification has failed.</p> </li>
+    /// <li> <p> <code>delete-in-progress</code> - Resource discovery is being deleted.</p> </li>
+    /// <li> <p> <code>delete-complete</code> - Resource discovery deletion is complete.</p> </li>
+    /// <li> <p> <code>delete-failed</code> - Resource discovery deletion has failed.</p> </li>
+    /// <li> <p> <code>isolate-in-progress</code> - Amazon Web Services account that created the resource discovery has been removed and the resource discovery is being isolated.</p> </li>
+    /// <li> <p> <code>isolate-complete</code> - Resource discovery isolation is complete.</p> </li>
+    /// <li> <p> <code>restore-in-progress</code> - Amazon Web Services account that created the resource discovery and was isolated has been restored.</p> </li>
     /// </ul>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::IpamResourceDiscoveryState>) -> Self {
         self.state = input;
@@ -307,30 +259,18 @@ impl IpamResourceDiscoveryBuilder {
     }
     /// <p>The lifecycle state of the resource discovery.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>create-in-progress</code> - Resource discovery is being created.</p></li>
-    /// <li>
-    /// <p><code>create-complete</code> - Resource discovery creation is complete.</p></li>
-    /// <li>
-    /// <p><code>create-failed</code> - Resource discovery creation has failed.</p></li>
-    /// <li>
-    /// <p><code>modify-in-progress</code> - Resource discovery is being modified.</p></li>
-    /// <li>
-    /// <p><code>modify-complete</code> - Resource discovery modification is complete.</p></li>
-    /// <li>
-    /// <p><code>modify-failed</code> - Resource discovery modification has failed.</p></li>
-    /// <li>
-    /// <p><code>delete-in-progress</code> - Resource discovery is being deleted.</p></li>
-    /// <li>
-    /// <p><code>delete-complete</code> - Resource discovery deletion is complete.</p></li>
-    /// <li>
-    /// <p><code>delete-failed</code> - Resource discovery deletion has failed.</p></li>
-    /// <li>
-    /// <p><code>isolate-in-progress</code> - Amazon Web Services account that created the resource discovery has been removed and the resource discovery is being isolated.</p></li>
-    /// <li>
-    /// <p><code>isolate-complete</code> - Resource discovery isolation is complete.</p></li>
-    /// <li>
-    /// <p><code>restore-in-progress</code> - Amazon Web Services account that created the resource discovery and was isolated has been restored.</p></li>
+    /// <li> <p> <code>create-in-progress</code> - Resource discovery is being created.</p> </li>
+    /// <li> <p> <code>create-complete</code> - Resource discovery creation is complete.</p> </li>
+    /// <li> <p> <code>create-failed</code> - Resource discovery creation has failed.</p> </li>
+    /// <li> <p> <code>modify-in-progress</code> - Resource discovery is being modified.</p> </li>
+    /// <li> <p> <code>modify-complete</code> - Resource discovery modification is complete.</p> </li>
+    /// <li> <p> <code>modify-failed</code> - Resource discovery modification has failed.</p> </li>
+    /// <li> <p> <code>delete-in-progress</code> - Resource discovery is being deleted.</p> </li>
+    /// <li> <p> <code>delete-complete</code> - Resource discovery deletion is complete.</p> </li>
+    /// <li> <p> <code>delete-failed</code> - Resource discovery deletion has failed.</p> </li>
+    /// <li> <p> <code>isolate-in-progress</code> - Amazon Web Services account that created the resource discovery has been removed and the resource discovery is being isolated.</p> </li>
+    /// <li> <p> <code>isolate-complete</code> - Resource discovery isolation is complete.</p> </li>
+    /// <li> <p> <code>restore-in-progress</code> - Amazon Web Services account that created the resource discovery and was isolated has been restored.</p> </li>
     /// </ul>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::IpamResourceDiscoveryState> {
         &self.state

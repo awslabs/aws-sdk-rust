@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DistributeDatasetEntriesInput {
-    /// <p>The ARNS for the training dataset and test dataset that you want to use. The datasets must belong to the same project. The test dataset must be empty.</p>
+    /// <p>The ARNS for the training dataset and test dataset that you want to use. The datasets must belong to the same project. The test dataset must be empty. </p>
     pub datasets: ::std::option::Option<::std::vec::Vec<crate::types::DistributeDataset>>,
 }
 impl DistributeDatasetEntriesInput {
-    /// <p>The ARNS for the training dataset and test dataset that you want to use. The datasets must belong to the same project. The test dataset must be empty.</p>
+    /// <p>The ARNS for the training dataset and test dataset that you want to use. The datasets must belong to the same project. The test dataset must be empty. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.datasets.is_none()`.
     pub fn datasets(&self) -> &[crate::types::DistributeDataset] {
@@ -32,19 +32,19 @@ impl DistributeDatasetEntriesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_datasets`](Self::set_datasets).
     ///
-    /// <p>The ARNS for the training dataset and test dataset that you want to use. The datasets must belong to the same project. The test dataset must be empty.</p>
+    /// <p>The ARNS for the training dataset and test dataset that you want to use. The datasets must belong to the same project. The test dataset must be empty. </p>
     pub fn datasets(mut self, input: crate::types::DistributeDataset) -> Self {
         let mut v = self.datasets.unwrap_or_default();
         v.push(input);
         self.datasets = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The ARNS for the training dataset and test dataset that you want to use. The datasets must belong to the same project. The test dataset must be empty.</p>
+    /// <p>The ARNS for the training dataset and test dataset that you want to use. The datasets must belong to the same project. The test dataset must be empty. </p>
     pub fn set_datasets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DistributeDataset>>) -> Self {
         self.datasets = input;
         self
     }
-    /// <p>The ARNS for the training dataset and test dataset that you want to use. The datasets must belong to the same project. The test dataset must be empty.</p>
+    /// <p>The ARNS for the training dataset and test dataset that you want to use. The datasets must belong to the same project. The test dataset must be empty. </p>
     pub fn get_datasets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DistributeDataset>> {
         &self.datasets
     }

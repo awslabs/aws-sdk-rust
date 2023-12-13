@@ -22,7 +22,7 @@ impl UpdateGroupInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateGroup`.
 ///
-/// <p>Changes a group description.</p>
+/// <p>Changes a group description. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

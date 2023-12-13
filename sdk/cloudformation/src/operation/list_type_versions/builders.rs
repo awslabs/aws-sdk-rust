@@ -196,10 +196,8 @@ impl ListTypeVersionsFluentBuilder {
     /// <p>The deprecation status of the extension versions that you want to get summary information about.</p>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>LIVE</code>: The extension version is registered and can be used in CloudFormation operations, dependent on its provisioning behavior and visibility scope.</p></li>
-    /// <li>
-    /// <p><code>DEPRECATED</code>: The extension version has been deregistered and can no longer be used in CloudFormation operations.</p></li>
+    /// <li> <p> <code>LIVE</code>: The extension version is registered and can be used in CloudFormation operations, dependent on its provisioning behavior and visibility scope.</p> </li>
+    /// <li> <p> <code>DEPRECATED</code>: The extension version has been deregistered and can no longer be used in CloudFormation operations.</p> </li>
     /// </ul>
     /// <p>The default is <code>LIVE</code>.</p>
     pub fn deprecated_status(mut self, input: crate::types::DeprecatedStatus) -> Self {
@@ -209,10 +207,8 @@ impl ListTypeVersionsFluentBuilder {
     /// <p>The deprecation status of the extension versions that you want to get summary information about.</p>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>LIVE</code>: The extension version is registered and can be used in CloudFormation operations, dependent on its provisioning behavior and visibility scope.</p></li>
-    /// <li>
-    /// <p><code>DEPRECATED</code>: The extension version has been deregistered and can no longer be used in CloudFormation operations.</p></li>
+    /// <li> <p> <code>LIVE</code>: The extension version is registered and can be used in CloudFormation operations, dependent on its provisioning behavior and visibility scope.</p> </li>
+    /// <li> <p> <code>DEPRECATED</code>: The extension version has been deregistered and can no longer be used in CloudFormation operations.</p> </li>
     /// </ul>
     /// <p>The default is <code>LIVE</code>.</p>
     pub fn set_deprecated_status(mut self, input: ::std::option::Option<crate::types::DeprecatedStatus>) -> Self {
@@ -222,10 +218,8 @@ impl ListTypeVersionsFluentBuilder {
     /// <p>The deprecation status of the extension versions that you want to get summary information about.</p>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>LIVE</code>: The extension version is registered and can be used in CloudFormation operations, dependent on its provisioning behavior and visibility scope.</p></li>
-    /// <li>
-    /// <p><code>DEPRECATED</code>: The extension version has been deregistered and can no longer be used in CloudFormation operations.</p></li>
+    /// <li> <p> <code>LIVE</code>: The extension version is registered and can be used in CloudFormation operations, dependent on its provisioning behavior and visibility scope.</p> </li>
+    /// <li> <p> <code>DEPRECATED</code>: The extension version has been deregistered and can no longer be used in CloudFormation operations.</p> </li>
     /// </ul>
     /// <p>The default is <code>LIVE</code>.</p>
     pub fn get_deprecated_status(&self) -> &::std::option::Option<crate::types::DeprecatedStatus> {

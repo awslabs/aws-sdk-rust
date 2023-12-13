@@ -6,10 +6,8 @@
 pub struct Target {
     /// <p>The target type. Can be an Chatbot topic or Chatbot client.</p>
     /// <ul>
-    /// <li>
-    /// <p>Chatbot topics are specified as <code>SNS</code>.</p></li>
-    /// <li>
-    /// <p>Chatbot clients are specified as <code>AWSChatbotSlack</code>.</p></li>
+    /// <li> <p>Chatbot topics are specified as <code>SNS</code>.</p> </li>
+    /// <li> <p>Chatbot clients are specified as <code>AWSChatbotSlack</code>.</p> </li>
     /// </ul>
     pub target_type: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client.</p>
@@ -18,10 +16,8 @@ pub struct Target {
 impl Target {
     /// <p>The target type. Can be an Chatbot topic or Chatbot client.</p>
     /// <ul>
-    /// <li>
-    /// <p>Chatbot topics are specified as <code>SNS</code>.</p></li>
-    /// <li>
-    /// <p>Chatbot clients are specified as <code>AWSChatbotSlack</code>.</p></li>
+    /// <li> <p>Chatbot topics are specified as <code>SNS</code>.</p> </li>
+    /// <li> <p>Chatbot clients are specified as <code>AWSChatbotSlack</code>.</p> </li>
     /// </ul>
     pub fn target_type(&self) -> ::std::option::Option<&str> {
         self.target_type.as_deref()
@@ -56,10 +52,8 @@ pub struct TargetBuilder {
 impl TargetBuilder {
     /// <p>The target type. Can be an Chatbot topic or Chatbot client.</p>
     /// <ul>
-    /// <li>
-    /// <p>Chatbot topics are specified as <code>SNS</code>.</p></li>
-    /// <li>
-    /// <p>Chatbot clients are specified as <code>AWSChatbotSlack</code>.</p></li>
+    /// <li> <p>Chatbot topics are specified as <code>SNS</code>.</p> </li>
+    /// <li> <p>Chatbot clients are specified as <code>AWSChatbotSlack</code>.</p> </li>
     /// </ul>
     pub fn target_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_type = ::std::option::Option::Some(input.into());
@@ -67,10 +61,8 @@ impl TargetBuilder {
     }
     /// <p>The target type. Can be an Chatbot topic or Chatbot client.</p>
     /// <ul>
-    /// <li>
-    /// <p>Chatbot topics are specified as <code>SNS</code>.</p></li>
-    /// <li>
-    /// <p>Chatbot clients are specified as <code>AWSChatbotSlack</code>.</p></li>
+    /// <li> <p>Chatbot topics are specified as <code>SNS</code>.</p> </li>
+    /// <li> <p>Chatbot clients are specified as <code>AWSChatbotSlack</code>.</p> </li>
     /// </ul>
     pub fn set_target_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_type = input;
@@ -78,10 +70,8 @@ impl TargetBuilder {
     }
     /// <p>The target type. Can be an Chatbot topic or Chatbot client.</p>
     /// <ul>
-    /// <li>
-    /// <p>Chatbot topics are specified as <code>SNS</code>.</p></li>
-    /// <li>
-    /// <p>Chatbot clients are specified as <code>AWSChatbotSlack</code>.</p></li>
+    /// <li> <p>Chatbot topics are specified as <code>SNS</code>.</p> </li>
+    /// <li> <p>Chatbot clients are specified as <code>AWSChatbotSlack</code>.</p> </li>
     /// </ul>
     pub fn get_target_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_type

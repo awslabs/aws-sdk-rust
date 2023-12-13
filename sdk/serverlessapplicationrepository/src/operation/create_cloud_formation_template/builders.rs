@@ -123,19 +123,19 @@ impl CreateCloudFormationTemplateFluentBuilder {
         self.inner.get_application_id()
     }
     /// <p>The semantic version of the application:</p>
-    /// <p><a href="https://semver.org/">https://semver.org/</a></p>
+    /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
     pub fn semantic_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.semantic_version(input.into());
         self
     }
     /// <p>The semantic version of the application:</p>
-    /// <p><a href="https://semver.org/">https://semver.org/</a></p>
+    /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
     pub fn set_semantic_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_semantic_version(input);
         self
     }
     /// <p>The semantic version of the application:</p>
-    /// <p><a href="https://semver.org/">https://semver.org/</a></p>
+    /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
     pub fn get_semantic_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_semantic_version()
     }

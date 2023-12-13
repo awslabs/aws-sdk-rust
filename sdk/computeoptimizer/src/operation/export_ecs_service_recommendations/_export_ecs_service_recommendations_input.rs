@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportEcsServiceRecommendationsInput {
-    /// <p>The Amazon Web Services account IDs for the export Amazon ECS service recommendations.</p>
+    /// <p> The Amazon Web Services account IDs for the export Amazon ECS service recommendations. </p>
     /// <p>If your account is the management account or the delegated administrator of an organization, use this parameter to specify the member account you want to export recommendations to.</p>
     /// <p>This parameter can't be specified together with the include member accounts parameter. The parameters are mutually exclusive.</p>
     /// <p>If this parameter or the include member accounts parameter is omitted, the recommendations for member accounts aren't included in the export.</p>
     /// <p>You can specify multiple account IDs per request.</p>
     pub account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>An array of objects to specify a filter that exports a more specific set of Amazon ECS service recommendations.</p>
+    /// <p> An array of objects to specify a filter that exports a more specific set of Amazon ECS service recommendations. </p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::EcsServiceRecommendationFilter>>,
     /// <p>The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported files</a> in the <i>Compute Optimizer User Guide</i>.</p>
     pub fields_to_export: ::std::option::Option<::std::vec::Vec<crate::types::ExportableEcsServiceField>>,
     /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and key prefix for a recommendations export job.</p>
     /// <p>You must create the destination Amazon S3 bucket for your recommendations export before you create the export job. Compute Optimizer does not create the S3 bucket for you. After you create the S3 bucket, ensure that it has the required permission policy to allow Compute Optimizer to write the export file to it. If you plan to specify an object prefix when you create the export job, you must include the object prefix in the policy that you add to the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html">Amazon S3 Bucket Policy for Compute Optimizer</a> in the <i>Compute Optimizer User Guide</i>.</p>
     pub s3_destination_config: ::std::option::Option<crate::types::S3DestinationConfig>,
-    /// <p>The format of the export file.</p>
+    /// <p> The format of the export file. </p>
     /// <p>The CSV file is the only export file format currently supported.</p>
     pub file_format: ::std::option::Option<crate::types::FileFormat>,
     /// <p>If your account is the management account or the delegated administrator of an organization, this parameter indicates whether to include recommendations for resources in all member accounts of the organization.</p>
@@ -26,7 +26,7 @@ pub struct ExportEcsServiceRecommendationsInput {
     pub include_member_accounts: ::std::option::Option<bool>,
 }
 impl ExportEcsServiceRecommendationsInput {
-    /// <p>The Amazon Web Services account IDs for the export Amazon ECS service recommendations.</p>
+    /// <p> The Amazon Web Services account IDs for the export Amazon ECS service recommendations. </p>
     /// <p>If your account is the management account or the delegated administrator of an organization, use this parameter to specify the member account you want to export recommendations to.</p>
     /// <p>This parameter can't be specified together with the include member accounts parameter. The parameters are mutually exclusive.</p>
     /// <p>If this parameter or the include member accounts parameter is omitted, the recommendations for member accounts aren't included in the export.</p>
@@ -36,7 +36,7 @@ impl ExportEcsServiceRecommendationsInput {
     pub fn account_ids(&self) -> &[::std::string::String] {
         self.account_ids.as_deref().unwrap_or_default()
     }
-    /// <p>An array of objects to specify a filter that exports a more specific set of Amazon ECS service recommendations.</p>
+    /// <p> An array of objects to specify a filter that exports a more specific set of Amazon ECS service recommendations. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
     pub fn filters(&self) -> &[crate::types::EcsServiceRecommendationFilter] {
@@ -53,7 +53,7 @@ impl ExportEcsServiceRecommendationsInput {
     pub fn s3_destination_config(&self) -> ::std::option::Option<&crate::types::S3DestinationConfig> {
         self.s3_destination_config.as_ref()
     }
-    /// <p>The format of the export file.</p>
+    /// <p> The format of the export file. </p>
     /// <p>The CSV file is the only export file format currently supported.</p>
     pub fn file_format(&self) -> ::std::option::Option<&crate::types::FileFormat> {
         self.file_format.as_ref()
@@ -89,7 +89,7 @@ impl ExportEcsServiceRecommendationsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
     ///
-    /// <p>The Amazon Web Services account IDs for the export Amazon ECS service recommendations.</p>
+    /// <p> The Amazon Web Services account IDs for the export Amazon ECS service recommendations. </p>
     /// <p>If your account is the management account or the delegated administrator of an organization, use this parameter to specify the member account you want to export recommendations to.</p>
     /// <p>This parameter can't be specified together with the include member accounts parameter. The parameters are mutually exclusive.</p>
     /// <p>If this parameter or the include member accounts parameter is omitted, the recommendations for member accounts aren't included in the export.</p>
@@ -100,7 +100,7 @@ impl ExportEcsServiceRecommendationsInputBuilder {
         self.account_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The Amazon Web Services account IDs for the export Amazon ECS service recommendations.</p>
+    /// <p> The Amazon Web Services account IDs for the export Amazon ECS service recommendations. </p>
     /// <p>If your account is the management account or the delegated administrator of an organization, use this parameter to specify the member account you want to export recommendations to.</p>
     /// <p>This parameter can't be specified together with the include member accounts parameter. The parameters are mutually exclusive.</p>
     /// <p>If this parameter or the include member accounts parameter is omitted, the recommendations for member accounts aren't included in the export.</p>
@@ -109,7 +109,7 @@ impl ExportEcsServiceRecommendationsInputBuilder {
         self.account_ids = input;
         self
     }
-    /// <p>The Amazon Web Services account IDs for the export Amazon ECS service recommendations.</p>
+    /// <p> The Amazon Web Services account IDs for the export Amazon ECS service recommendations. </p>
     /// <p>If your account is the management account or the delegated administrator of an organization, use this parameter to specify the member account you want to export recommendations to.</p>
     /// <p>This parameter can't be specified together with the include member accounts parameter. The parameters are mutually exclusive.</p>
     /// <p>If this parameter or the include member accounts parameter is omitted, the recommendations for member accounts aren't included in the export.</p>
@@ -121,19 +121,19 @@ impl ExportEcsServiceRecommendationsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>An array of objects to specify a filter that exports a more specific set of Amazon ECS service recommendations.</p>
+    /// <p> An array of objects to specify a filter that exports a more specific set of Amazon ECS service recommendations. </p>
     pub fn filters(mut self, input: crate::types::EcsServiceRecommendationFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
         v.push(input);
         self.filters = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of objects to specify a filter that exports a more specific set of Amazon ECS service recommendations.</p>
+    /// <p> An array of objects to specify a filter that exports a more specific set of Amazon ECS service recommendations. </p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EcsServiceRecommendationFilter>>) -> Self {
         self.filters = input;
         self
     }
-    /// <p>An array of objects to specify a filter that exports a more specific set of Amazon ECS service recommendations.</p>
+    /// <p> An array of objects to specify a filter that exports a more specific set of Amazon ECS service recommendations. </p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EcsServiceRecommendationFilter>> {
         &self.filters
     }
@@ -175,19 +175,19 @@ impl ExportEcsServiceRecommendationsInputBuilder {
     pub fn get_s3_destination_config(&self) -> &::std::option::Option<crate::types::S3DestinationConfig> {
         &self.s3_destination_config
     }
-    /// <p>The format of the export file.</p>
+    /// <p> The format of the export file. </p>
     /// <p>The CSV file is the only export file format currently supported.</p>
     pub fn file_format(mut self, input: crate::types::FileFormat) -> Self {
         self.file_format = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The format of the export file.</p>
+    /// <p> The format of the export file. </p>
     /// <p>The CSV file is the only export file format currently supported.</p>
     pub fn set_file_format(mut self, input: ::std::option::Option<crate::types::FileFormat>) -> Self {
         self.file_format = input;
         self
     }
-    /// <p>The format of the export file.</p>
+    /// <p> The format of the export file. </p>
     /// <p>The CSV file is the only export file format currently supported.</p>
     pub fn get_file_format(&self) -> &::std::option::Option<crate::types::FileFormat> {
         &self.file_format

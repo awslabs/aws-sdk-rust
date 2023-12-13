@@ -7,7 +7,7 @@ pub struct DescribeTemplatePermissionsOutput {
     pub template_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the template.</p>
     pub template_arn: ::std::option::Option<::std::string::String>,
-    /// <p>A list of resource permissions to be set on the template.</p>
+    /// <p>A list of resource permissions to be set on the template. </p>
     pub permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: ::std::option::Option<::std::string::String>,
@@ -24,7 +24,7 @@ impl DescribeTemplatePermissionsOutput {
     pub fn template_arn(&self) -> ::std::option::Option<&str> {
         self.template_arn.as_deref()
     }
-    /// <p>A list of resource permissions to be set on the template.</p>
+    /// <p>A list of resource permissions to be set on the template. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permissions.is_none()`.
     pub fn permissions(&self) -> &[crate::types::ResourcePermission] {
@@ -95,19 +95,19 @@ impl DescribeTemplatePermissionsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
     ///
-    /// <p>A list of resource permissions to be set on the template.</p>
+    /// <p>A list of resource permissions to be set on the template. </p>
     pub fn permissions(mut self, input: crate::types::ResourcePermission) -> Self {
         let mut v = self.permissions.unwrap_or_default();
         v.push(input);
         self.permissions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of resource permissions to be set on the template.</p>
+    /// <p>A list of resource permissions to be set on the template. </p>
     pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
         self.permissions = input;
         self
     }
-    /// <p>A list of resource permissions to be set on the template.</p>
+    /// <p>A list of resource permissions to be set on the template. </p>
     pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
         &self.permissions
     }

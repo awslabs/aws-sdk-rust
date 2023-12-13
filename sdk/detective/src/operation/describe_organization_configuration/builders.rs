@@ -23,7 +23,7 @@ impl DescribeOrganizationConfigurationInputBuilder {
 /// Fluent builder constructing a request to `DescribeOrganizationConfiguration`.
 ///
 /// <p>Returns information about the configuration for the organization behavior graph. Currently indicates whether to automatically enable new organization accounts as member accounts.</p>
-/// <p>Can only be called by the Detective administrator account for the organization.</p>
+/// <p>Can only be called by the Detective administrator account for the organization. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeOrganizationConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

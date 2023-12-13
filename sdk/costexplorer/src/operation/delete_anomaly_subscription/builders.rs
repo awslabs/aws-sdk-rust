@@ -22,7 +22,7 @@ impl DeleteAnomalySubscriptionInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteAnomalySubscription`.
 ///
-/// <p>Deletes a cost anomaly subscription.</p>
+/// <p>Deletes a cost anomaly subscription. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAnomalySubscriptionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DeleteAnomalySubscriptionFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier of the cost anomaly subscription that you want to delete.</p>
+    /// <p>The unique identifier of the cost anomaly subscription that you want to delete. </p>
     pub fn subscription_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subscription_arn(input.into());
         self
     }
-    /// <p>The unique identifier of the cost anomaly subscription that you want to delete.</p>
+    /// <p>The unique identifier of the cost anomaly subscription that you want to delete. </p>
     pub fn set_subscription_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_subscription_arn(input);
         self
     }
-    /// <p>The unique identifier of the cost anomaly subscription that you want to delete.</p>
+    /// <p>The unique identifier of the cost anomaly subscription that you want to delete. </p>
     pub fn get_subscription_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_subscription_arn()
     }

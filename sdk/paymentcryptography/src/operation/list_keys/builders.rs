@@ -24,15 +24,12 @@ impl ListKeysInputBuilder {
 ///
 /// <p>Lists the keys in the caller's Amazon Web Services account and Amazon Web Services Region. You can filter the list of keys.</p>
 /// <p>This is a paginated operation, which means that each response might contain only a subset of all the keys. When the response contains only a subset of keys, it includes a <code>NextToken</code> value. Use this value in a subsequent <code>ListKeys</code> request to get more keys. When you receive a response with no NextToken (or an empty or null value), that means there are no more keys to get.</p>
-/// <p><b>Cross-account use:</b> This operation can't be used across different Amazon Web Services accounts.</p>
-/// <p><b>Related operations:</b></p>
+/// <p> <b>Cross-account use:</b> This operation can't be used across different Amazon Web Services accounts.</p>
+/// <p> <b>Related operations:</b> </p>
 /// <ul>
-/// <li>
-/// <p><code>CreateKey</code></p></li>
-/// <li>
-/// <p><code>DeleteKey</code></p></li>
-/// <li>
-/// <p><code>GetKey</code></p></li>
+/// <li> <p> <code>CreateKey</code> </p> </li>
+/// <li> <p> <code>DeleteKey</code> </p> </li>
+/// <li> <p> <code>GetKey</code> </p> </li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListKeysFluentBuilder {

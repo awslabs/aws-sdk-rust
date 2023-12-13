@@ -23,9 +23,9 @@ impl RegisterAgentInputBuilder {
 /// Fluent builder constructing a request to `RegisterAgent`.
 ///
 /// <note>
-/// <p>For use by AWS Ground Station Agent and shouldn't be called directly.</p>
+/// <p> For use by AWS Ground Station Agent and shouldn't be called directly.</p>
 /// </note>
-/// <p>Registers a new agent with AWS Ground Station.</p>
+/// <p> Registers a new agent with AWS Ground Station. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RegisterAgentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

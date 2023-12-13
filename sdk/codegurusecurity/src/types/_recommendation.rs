@@ -6,7 +6,7 @@
 pub struct Recommendation {
     /// <p>The recommended course of action to remediate the finding.</p>
     pub text: ::std::option::Option<::std::string::String>,
-    /// <p>The URL address to the recommendation for remediating the finding.</p>
+    /// <p>The URL address to the recommendation for remediating the finding. </p>
     pub url: ::std::option::Option<::std::string::String>,
 }
 impl Recommendation {
@@ -14,7 +14,7 @@ impl Recommendation {
     pub fn text(&self) -> ::std::option::Option<&str> {
         self.text.as_deref()
     }
-    /// <p>The URL address to the recommendation for remediating the finding.</p>
+    /// <p>The URL address to the recommendation for remediating the finding. </p>
     pub fn url(&self) -> ::std::option::Option<&str> {
         self.url.as_deref()
     }
@@ -48,17 +48,17 @@ impl RecommendationBuilder {
     pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
         &self.text
     }
-    /// <p>The URL address to the recommendation for remediating the finding.</p>
+    /// <p>The URL address to the recommendation for remediating the finding. </p>
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The URL address to the recommendation for remediating the finding.</p>
+    /// <p>The URL address to the recommendation for remediating the finding. </p>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
     }
-    /// <p>The URL address to the recommendation for remediating the finding.</p>
+    /// <p>The URL address to the recommendation for remediating the finding. </p>
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.url
     }

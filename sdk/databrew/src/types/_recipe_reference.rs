@@ -6,7 +6,7 @@
 pub struct RecipeReference {
     /// <p>The name of the recipe.</p>
     pub name: ::std::string::String,
-    /// <p>The identifier for the version for the recipe.</p>
+    /// <p>The identifier for the version for the recipe. </p>
     pub recipe_version: ::std::option::Option<::std::string::String>,
 }
 impl RecipeReference {
@@ -15,7 +15,7 @@ impl RecipeReference {
         use std::ops::Deref;
         self.name.deref()
     }
-    /// <p>The identifier for the version for the recipe.</p>
+    /// <p>The identifier for the version for the recipe. </p>
     pub fn recipe_version(&self) -> ::std::option::Option<&str> {
         self.recipe_version.as_deref()
     }
@@ -50,17 +50,17 @@ impl RecipeReferenceBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The identifier for the version for the recipe.</p>
+    /// <p>The identifier for the version for the recipe. </p>
     pub fn recipe_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recipe_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier for the version for the recipe.</p>
+    /// <p>The identifier for the version for the recipe. </p>
     pub fn set_recipe_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recipe_version = input;
         self
     }
-    /// <p>The identifier for the version for the recipe.</p>
+    /// <p>The identifier for the version for the recipe. </p>
     pub fn get_recipe_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.recipe_version
     }

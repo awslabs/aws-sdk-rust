@@ -14,15 +14,13 @@ pub struct SearchProfilesInput {
     pub key_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of key values.</p>
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>A list of <code>AdditionalSearchKey</code> objects that are each searchable identifiers of a profile. Each <code>AdditionalSearchKey</code> object contains a <code>KeyName</code> and a list of <code>Values</code> associated with that specific key (i.e., a key-value(s) pair). These additional search keys will be used in conjunction with the <code>LogicalOperator</code> and the required <code>KeyName</code> and <code>Values</code> parameters to search for profiles that satisfy the search criteria.</p>
+    /// <p>A list of <code>AdditionalSearchKey</code> objects that are each searchable identifiers of a profile. Each <code>AdditionalSearchKey</code> object contains a <code>KeyName</code> and a list of <code>Values</code> associated with that specific key (i.e., a key-value(s) pair). These additional search keys will be used in conjunction with the <code>LogicalOperator</code> and the required <code>KeyName</code> and <code>Values</code> parameters to search for profiles that satisfy the search criteria. </p>
     pub additional_search_keys: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalSearchKey>>,
     /// <p>Relationship between all specified search keys that will be used to search for profiles. This includes the required <code>KeyName</code> and <code>Values</code> parameters as well as any key-value(s) pairs specified in the <code>AdditionalSearchKeys</code> list.</p>
     /// <p>This parameter influences which profiles will be returned in the response in the following manner:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AND</code> - The response only includes profiles that match all of the search keys.</p></li>
-    /// <li>
-    /// <p><code>OR</code> - The response includes profiles that match at least one of the search keys.</p></li>
+    /// <li> <p> <code>AND</code> - The response only includes profiles that match all of the search keys.</p> </li>
+    /// <li> <p> <code>OR</code> - The response includes profiles that match at least one of the search keys.</p> </li>
     /// </ul>
     /// <p>The <code>OR</code> relationship is the default behavior if this parameter is not included in the request.</p>
     pub logical_operator: ::std::option::Option<crate::types::LogicalOperator>,
@@ -51,7 +49,7 @@ impl SearchProfilesInput {
     pub fn values(&self) -> &[::std::string::String] {
         self.values.as_deref().unwrap_or_default()
     }
-    /// <p>A list of <code>AdditionalSearchKey</code> objects that are each searchable identifiers of a profile. Each <code>AdditionalSearchKey</code> object contains a <code>KeyName</code> and a list of <code>Values</code> associated with that specific key (i.e., a key-value(s) pair). These additional search keys will be used in conjunction with the <code>LogicalOperator</code> and the required <code>KeyName</code> and <code>Values</code> parameters to search for profiles that satisfy the search criteria.</p>
+    /// <p>A list of <code>AdditionalSearchKey</code> objects that are each searchable identifiers of a profile. Each <code>AdditionalSearchKey</code> object contains a <code>KeyName</code> and a list of <code>Values</code> associated with that specific key (i.e., a key-value(s) pair). These additional search keys will be used in conjunction with the <code>LogicalOperator</code> and the required <code>KeyName</code> and <code>Values</code> parameters to search for profiles that satisfy the search criteria. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_search_keys.is_none()`.
     pub fn additional_search_keys(&self) -> &[crate::types::AdditionalSearchKey] {
@@ -60,10 +58,8 @@ impl SearchProfilesInput {
     /// <p>Relationship between all specified search keys that will be used to search for profiles. This includes the required <code>KeyName</code> and <code>Values</code> parameters as well as any key-value(s) pairs specified in the <code>AdditionalSearchKeys</code> list.</p>
     /// <p>This parameter influences which profiles will be returned in the response in the following manner:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AND</code> - The response only includes profiles that match all of the search keys.</p></li>
-    /// <li>
-    /// <p><code>OR</code> - The response includes profiles that match at least one of the search keys.</p></li>
+    /// <li> <p> <code>AND</code> - The response only includes profiles that match all of the search keys.</p> </li>
+    /// <li> <p> <code>OR</code> - The response includes profiles that match at least one of the search keys.</p> </li>
     /// </ul>
     /// <p>The <code>OR</code> relationship is the default behavior if this parameter is not included in the request.</p>
     pub fn logical_operator(&self) -> ::std::option::Option<&crate::types::LogicalOperator> {
@@ -175,29 +171,27 @@ impl SearchProfilesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_additional_search_keys`](Self::set_additional_search_keys).
     ///
-    /// <p>A list of <code>AdditionalSearchKey</code> objects that are each searchable identifiers of a profile. Each <code>AdditionalSearchKey</code> object contains a <code>KeyName</code> and a list of <code>Values</code> associated with that specific key (i.e., a key-value(s) pair). These additional search keys will be used in conjunction with the <code>LogicalOperator</code> and the required <code>KeyName</code> and <code>Values</code> parameters to search for profiles that satisfy the search criteria.</p>
+    /// <p>A list of <code>AdditionalSearchKey</code> objects that are each searchable identifiers of a profile. Each <code>AdditionalSearchKey</code> object contains a <code>KeyName</code> and a list of <code>Values</code> associated with that specific key (i.e., a key-value(s) pair). These additional search keys will be used in conjunction with the <code>LogicalOperator</code> and the required <code>KeyName</code> and <code>Values</code> parameters to search for profiles that satisfy the search criteria. </p>
     pub fn additional_search_keys(mut self, input: crate::types::AdditionalSearchKey) -> Self {
         let mut v = self.additional_search_keys.unwrap_or_default();
         v.push(input);
         self.additional_search_keys = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of <code>AdditionalSearchKey</code> objects that are each searchable identifiers of a profile. Each <code>AdditionalSearchKey</code> object contains a <code>KeyName</code> and a list of <code>Values</code> associated with that specific key (i.e., a key-value(s) pair). These additional search keys will be used in conjunction with the <code>LogicalOperator</code> and the required <code>KeyName</code> and <code>Values</code> parameters to search for profiles that satisfy the search criteria.</p>
+    /// <p>A list of <code>AdditionalSearchKey</code> objects that are each searchable identifiers of a profile. Each <code>AdditionalSearchKey</code> object contains a <code>KeyName</code> and a list of <code>Values</code> associated with that specific key (i.e., a key-value(s) pair). These additional search keys will be used in conjunction with the <code>LogicalOperator</code> and the required <code>KeyName</code> and <code>Values</code> parameters to search for profiles that satisfy the search criteria. </p>
     pub fn set_additional_search_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalSearchKey>>) -> Self {
         self.additional_search_keys = input;
         self
     }
-    /// <p>A list of <code>AdditionalSearchKey</code> objects that are each searchable identifiers of a profile. Each <code>AdditionalSearchKey</code> object contains a <code>KeyName</code> and a list of <code>Values</code> associated with that specific key (i.e., a key-value(s) pair). These additional search keys will be used in conjunction with the <code>LogicalOperator</code> and the required <code>KeyName</code> and <code>Values</code> parameters to search for profiles that satisfy the search criteria.</p>
+    /// <p>A list of <code>AdditionalSearchKey</code> objects that are each searchable identifiers of a profile. Each <code>AdditionalSearchKey</code> object contains a <code>KeyName</code> and a list of <code>Values</code> associated with that specific key (i.e., a key-value(s) pair). These additional search keys will be used in conjunction with the <code>LogicalOperator</code> and the required <code>KeyName</code> and <code>Values</code> parameters to search for profiles that satisfy the search criteria. </p>
     pub fn get_additional_search_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdditionalSearchKey>> {
         &self.additional_search_keys
     }
     /// <p>Relationship between all specified search keys that will be used to search for profiles. This includes the required <code>KeyName</code> and <code>Values</code> parameters as well as any key-value(s) pairs specified in the <code>AdditionalSearchKeys</code> list.</p>
     /// <p>This parameter influences which profiles will be returned in the response in the following manner:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AND</code> - The response only includes profiles that match all of the search keys.</p></li>
-    /// <li>
-    /// <p><code>OR</code> - The response includes profiles that match at least one of the search keys.</p></li>
+    /// <li> <p> <code>AND</code> - The response only includes profiles that match all of the search keys.</p> </li>
+    /// <li> <p> <code>OR</code> - The response includes profiles that match at least one of the search keys.</p> </li>
     /// </ul>
     /// <p>The <code>OR</code> relationship is the default behavior if this parameter is not included in the request.</p>
     pub fn logical_operator(mut self, input: crate::types::LogicalOperator) -> Self {
@@ -207,10 +201,8 @@ impl SearchProfilesInputBuilder {
     /// <p>Relationship between all specified search keys that will be used to search for profiles. This includes the required <code>KeyName</code> and <code>Values</code> parameters as well as any key-value(s) pairs specified in the <code>AdditionalSearchKeys</code> list.</p>
     /// <p>This parameter influences which profiles will be returned in the response in the following manner:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AND</code> - The response only includes profiles that match all of the search keys.</p></li>
-    /// <li>
-    /// <p><code>OR</code> - The response includes profiles that match at least one of the search keys.</p></li>
+    /// <li> <p> <code>AND</code> - The response only includes profiles that match all of the search keys.</p> </li>
+    /// <li> <p> <code>OR</code> - The response includes profiles that match at least one of the search keys.</p> </li>
     /// </ul>
     /// <p>The <code>OR</code> relationship is the default behavior if this parameter is not included in the request.</p>
     pub fn set_logical_operator(mut self, input: ::std::option::Option<crate::types::LogicalOperator>) -> Self {
@@ -220,10 +212,8 @@ impl SearchProfilesInputBuilder {
     /// <p>Relationship between all specified search keys that will be used to search for profiles. This includes the required <code>KeyName</code> and <code>Values</code> parameters as well as any key-value(s) pairs specified in the <code>AdditionalSearchKeys</code> list.</p>
     /// <p>This parameter influences which profiles will be returned in the response in the following manner:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AND</code> - The response only includes profiles that match all of the search keys.</p></li>
-    /// <li>
-    /// <p><code>OR</code> - The response includes profiles that match at least one of the search keys.</p></li>
+    /// <li> <p> <code>AND</code> - The response only includes profiles that match all of the search keys.</p> </li>
+    /// <li> <p> <code>OR</code> - The response includes profiles that match at least one of the search keys.</p> </li>
     /// </ul>
     /// <p>The <code>OR</code> relationship is the default behavior if this parameter is not included in the request.</p>
     pub fn get_logical_operator(&self) -> &::std::option::Option<crate::types::LogicalOperator> {

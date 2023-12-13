@@ -4,19 +4,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeviceQueueInfo {
-    /// <p>The name of the queue.</p>
+    /// <p>The name of the queue. </p>
     pub queue: crate::types::QueueName,
-    /// <p>The number of jobs or tasks in the queue for a given device.</p>
+    /// <p>The number of jobs or tasks in the queue for a given device. </p>
     pub queue_size: ::std::string::String,
     /// <p>Optional. Specifies the priority of the queue. Tasks in a priority queue are processed before the tasks in a normal queue.</p>
     pub queue_priority: ::std::option::Option<crate::types::QueuePriority>,
 }
 impl DeviceQueueInfo {
-    /// <p>The name of the queue.</p>
+    /// <p>The name of the queue. </p>
     pub fn queue(&self) -> &crate::types::QueueName {
         &self.queue
     }
-    /// <p>The number of jobs or tasks in the queue for a given device.</p>
+    /// <p>The number of jobs or tasks in the queue for a given device. </p>
     pub fn queue_size(&self) -> &str {
         use std::ops::Deref;
         self.queue_size.deref()
@@ -42,33 +42,33 @@ pub struct DeviceQueueInfoBuilder {
     pub(crate) queue_priority: ::std::option::Option<crate::types::QueuePriority>,
 }
 impl DeviceQueueInfoBuilder {
-    /// <p>The name of the queue.</p>
+    /// <p>The name of the queue. </p>
     /// This field is required.
     pub fn queue(mut self, input: crate::types::QueueName) -> Self {
         self.queue = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The name of the queue.</p>
+    /// <p>The name of the queue. </p>
     pub fn set_queue(mut self, input: ::std::option::Option<crate::types::QueueName>) -> Self {
         self.queue = input;
         self
     }
-    /// <p>The name of the queue.</p>
+    /// <p>The name of the queue. </p>
     pub fn get_queue(&self) -> &::std::option::Option<crate::types::QueueName> {
         &self.queue
     }
-    /// <p>The number of jobs or tasks in the queue for a given device.</p>
+    /// <p>The number of jobs or tasks in the queue for a given device. </p>
     /// This field is required.
     pub fn queue_size(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_size = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The number of jobs or tasks in the queue for a given device.</p>
+    /// <p>The number of jobs or tasks in the queue for a given device. </p>
     pub fn set_queue_size(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.queue_size = input;
         self
     }
-    /// <p>The number of jobs or tasks in the queue for a given device.</p>
+    /// <p>The number of jobs or tasks in the queue for a given device. </p>
     pub fn get_queue_size(&self) -> &::std::option::Option<::std::string::String> {
         &self.queue_size
     }

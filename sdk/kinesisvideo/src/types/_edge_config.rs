@@ -6,7 +6,7 @@
 pub struct EdgeConfig {
     /// <p>The "<b>Internet of Things (IoT) Thing</b>" Arn of the stream.</p>
     pub hub_device_arn: ::std::string::String,
-    /// <p>The recorder configuration consists of the local <code>MediaSourceConfig</code> details, that are used as credentials to access the local media files streamed on the camera.</p>
+    /// <p>The recorder configuration consists of the local <code>MediaSourceConfig</code> details, that are used as credentials to access the local media files streamed on the camera. </p>
     pub recorder_config: ::std::option::Option<crate::types::RecorderConfig>,
     /// <p>The uploader configuration contains the <code>ScheduleExpression</code> details that are used to schedule upload jobs for the recorded media files from the Edge Agent to a Kinesis Video Stream.</p>
     pub uploader_config: ::std::option::Option<crate::types::UploaderConfig>,
@@ -19,7 +19,7 @@ impl EdgeConfig {
         use std::ops::Deref;
         self.hub_device_arn.deref()
     }
-    /// <p>The recorder configuration consists of the local <code>MediaSourceConfig</code> details, that are used as credentials to access the local media files streamed on the camera.</p>
+    /// <p>The recorder configuration consists of the local <code>MediaSourceConfig</code> details, that are used as credentials to access the local media files streamed on the camera. </p>
     pub fn recorder_config(&self) -> ::std::option::Option<&crate::types::RecorderConfig> {
         self.recorder_config.as_ref()
     }
@@ -64,18 +64,18 @@ impl EdgeConfigBuilder {
     pub fn get_hub_device_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.hub_device_arn
     }
-    /// <p>The recorder configuration consists of the local <code>MediaSourceConfig</code> details, that are used as credentials to access the local media files streamed on the camera.</p>
+    /// <p>The recorder configuration consists of the local <code>MediaSourceConfig</code> details, that are used as credentials to access the local media files streamed on the camera. </p>
     /// This field is required.
     pub fn recorder_config(mut self, input: crate::types::RecorderConfig) -> Self {
         self.recorder_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The recorder configuration consists of the local <code>MediaSourceConfig</code> details, that are used as credentials to access the local media files streamed on the camera.</p>
+    /// <p>The recorder configuration consists of the local <code>MediaSourceConfig</code> details, that are used as credentials to access the local media files streamed on the camera. </p>
     pub fn set_recorder_config(mut self, input: ::std::option::Option<crate::types::RecorderConfig>) -> Self {
         self.recorder_config = input;
         self
     }
-    /// <p>The recorder configuration consists of the local <code>MediaSourceConfig</code> details, that are used as credentials to access the local media files streamed on the camera.</p>
+    /// <p>The recorder configuration consists of the local <code>MediaSourceConfig</code> details, that are used as credentials to access the local media files streamed on the camera. </p>
     pub fn get_recorder_config(&self) -> &::std::option::Option<crate::types::RecorderConfig> {
         &self.recorder_config
     }

@@ -188,27 +188,19 @@ impl CreateEnvironmentEC2FluentBuilder {
     /// <p>From December 04, 2023, you will be required to include the <code>imageId</code> parameter for the <code>CreateEnvironmentEC2</code> action. This change will be reflected across all direct methods of communicating with the API, such as Amazon Web Services SDK, Amazon Web Services CLI and Amazon Web Services CloudFormation. This change will only affect direct API consumers, and not Cloud9 console users.</p>
     /// <p>From January 22, 2024, Amazon Linux (AL1) will be removed from the list of available image IDs for Cloud9. This is necessary as AL1 will reach the end of maintenance support in December 2023, and as a result will no longer receive security updates. We recommend using Amazon Linux 2 as the AMI to create your environment as it is fully supported. This change will only affect direct API consumers, and not Cloud9 console users.</p>
     /// <p>Since Ubuntu 18.04 has ended standard support as of May 31, 2023, we recommend you choose Ubuntu 22.04.</p>
-    /// <p><b>AMI aliases </b></p>
+    /// <p> <b>AMI aliases </b> </p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon Linux: <code>amazonlinux-1-x86_64</code></p></li>
-    /// <li>
-    /// <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code></p></li>
-    /// <li>
-    /// <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code></p></li>
-    /// <li>
-    /// <p>Ubuntu 22.04: <code>ubuntu-22.04-x86_64</code></p></li>
+    /// <li> <p>Amazon Linux: <code>amazonlinux-1-x86_64</code> </p> </li>
+    /// <li> <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li>
+    /// <li> <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code> </p> </li>
+    /// <li> <p>Ubuntu 22.04: <code>ubuntu-22.04-x86_64</code> </p> </li>
     /// </ul>
-    /// <p><b>SSM paths</b></p>
+    /// <p> <b>SSM paths</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon Linux: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code></p></li>
-    /// <li>
-    /// <p>Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code></p></li>
-    /// <li>
-    /// <p>Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code></p></li>
-    /// <li>
-    /// <p>Ubuntu 22.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-22.04-x86_64</code></p></li>
+    /// <li> <p>Amazon Linux: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </p> </li>
+    /// <li> <p>Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p> </li>
+    /// <li> <p>Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li>
+    /// <li> <p>Ubuntu 22.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-22.04-x86_64</code> </p> </li>
     /// </ul>
     pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.image_id(input.into());
@@ -218,27 +210,19 @@ impl CreateEnvironmentEC2FluentBuilder {
     /// <p>From December 04, 2023, you will be required to include the <code>imageId</code> parameter for the <code>CreateEnvironmentEC2</code> action. This change will be reflected across all direct methods of communicating with the API, such as Amazon Web Services SDK, Amazon Web Services CLI and Amazon Web Services CloudFormation. This change will only affect direct API consumers, and not Cloud9 console users.</p>
     /// <p>From January 22, 2024, Amazon Linux (AL1) will be removed from the list of available image IDs for Cloud9. This is necessary as AL1 will reach the end of maintenance support in December 2023, and as a result will no longer receive security updates. We recommend using Amazon Linux 2 as the AMI to create your environment as it is fully supported. This change will only affect direct API consumers, and not Cloud9 console users.</p>
     /// <p>Since Ubuntu 18.04 has ended standard support as of May 31, 2023, we recommend you choose Ubuntu 22.04.</p>
-    /// <p><b>AMI aliases </b></p>
+    /// <p> <b>AMI aliases </b> </p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon Linux: <code>amazonlinux-1-x86_64</code></p></li>
-    /// <li>
-    /// <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code></p></li>
-    /// <li>
-    /// <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code></p></li>
-    /// <li>
-    /// <p>Ubuntu 22.04: <code>ubuntu-22.04-x86_64</code></p></li>
+    /// <li> <p>Amazon Linux: <code>amazonlinux-1-x86_64</code> </p> </li>
+    /// <li> <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li>
+    /// <li> <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code> </p> </li>
+    /// <li> <p>Ubuntu 22.04: <code>ubuntu-22.04-x86_64</code> </p> </li>
     /// </ul>
-    /// <p><b>SSM paths</b></p>
+    /// <p> <b>SSM paths</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon Linux: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code></p></li>
-    /// <li>
-    /// <p>Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code></p></li>
-    /// <li>
-    /// <p>Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code></p></li>
-    /// <li>
-    /// <p>Ubuntu 22.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-22.04-x86_64</code></p></li>
+    /// <li> <p>Amazon Linux: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </p> </li>
+    /// <li> <p>Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p> </li>
+    /// <li> <p>Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li>
+    /// <li> <p>Ubuntu 22.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-22.04-x86_64</code> </p> </li>
     /// </ul>
     pub fn set_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_image_id(input);
@@ -248,27 +232,19 @@ impl CreateEnvironmentEC2FluentBuilder {
     /// <p>From December 04, 2023, you will be required to include the <code>imageId</code> parameter for the <code>CreateEnvironmentEC2</code> action. This change will be reflected across all direct methods of communicating with the API, such as Amazon Web Services SDK, Amazon Web Services CLI and Amazon Web Services CloudFormation. This change will only affect direct API consumers, and not Cloud9 console users.</p>
     /// <p>From January 22, 2024, Amazon Linux (AL1) will be removed from the list of available image IDs for Cloud9. This is necessary as AL1 will reach the end of maintenance support in December 2023, and as a result will no longer receive security updates. We recommend using Amazon Linux 2 as the AMI to create your environment as it is fully supported. This change will only affect direct API consumers, and not Cloud9 console users.</p>
     /// <p>Since Ubuntu 18.04 has ended standard support as of May 31, 2023, we recommend you choose Ubuntu 22.04.</p>
-    /// <p><b>AMI aliases </b></p>
+    /// <p> <b>AMI aliases </b> </p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon Linux: <code>amazonlinux-1-x86_64</code></p></li>
-    /// <li>
-    /// <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code></p></li>
-    /// <li>
-    /// <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code></p></li>
-    /// <li>
-    /// <p>Ubuntu 22.04: <code>ubuntu-22.04-x86_64</code></p></li>
+    /// <li> <p>Amazon Linux: <code>amazonlinux-1-x86_64</code> </p> </li>
+    /// <li> <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li>
+    /// <li> <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code> </p> </li>
+    /// <li> <p>Ubuntu 22.04: <code>ubuntu-22.04-x86_64</code> </p> </li>
     /// </ul>
-    /// <p><b>SSM paths</b></p>
+    /// <p> <b>SSM paths</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon Linux: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code></p></li>
-    /// <li>
-    /// <p>Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code></p></li>
-    /// <li>
-    /// <p>Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code></p></li>
-    /// <li>
-    /// <p>Ubuntu 22.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-22.04-x86_64</code></p></li>
+    /// <li> <p>Amazon Linux: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </p> </li>
+    /// <li> <p>Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p> </li>
+    /// <li> <p>Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li>
+    /// <li> <p>Ubuntu 22.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-22.04-x86_64</code> </p> </li>
     /// </ul>
     pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_image_id()

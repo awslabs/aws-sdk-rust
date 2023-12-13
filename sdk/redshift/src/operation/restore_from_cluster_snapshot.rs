@@ -256,7 +256,7 @@ pub enum RestoreFromClusterSnapshotError {
     ClusterAlreadyExistsFault(crate::types::error::ClusterAlreadyExistsFault),
     /// <p>The parameter group name does not refer to an existing parameter group.</p>
     ClusterParameterGroupNotFoundFault(crate::types::error::ClusterParameterGroupNotFoundFault),
-    /// <p>The request would exceed the allowed number of cluster instances for this account. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+    /// <p>The request would exceed the allowed number of cluster instances for this account. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
     ClusterQuotaExceededFault(crate::types::error::ClusterQuotaExceededFault),
     /// <p>The cluster security group name does not refer to an existing cluster security group.</p>
     ClusterSecurityGroupNotFoundFault(crate::types::error::ClusterSecurityGroupNotFoundFault),
@@ -274,7 +274,7 @@ pub enum RestoreFromClusterSnapshotError {
     HsmConfigurationNotFoundFault(crate::types::error::HsmConfigurationNotFoundFault),
     /// <p>The number of nodes specified exceeds the allotted capacity of the cluster.</p>
     InsufficientClusterCapacityFault(crate::types::error::InsufficientClusterCapacityFault),
-    /// <p>The specified cluster snapshot is not in the <code>available</code> state, or other accounts are authorized to access the snapshot.</p>
+    /// <p>The specified cluster snapshot is not in the <code>available</code> state, or other accounts are authorized to access the snapshot. </p>
     InvalidClusterSnapshotStateFault(crate::types::error::InvalidClusterSnapshotStateFault),
     /// <p>The cluster subnet group cannot be deleted because it is in use.</p>
     InvalidClusterSubnetGroupStateFault(crate::types::error::InvalidClusterSubnetGroupStateFault),
@@ -298,7 +298,7 @@ pub enum RestoreFromClusterSnapshotError {
     LimitExceededFault(crate::types::error::LimitExceededFault),
     /// <p>The operation would exceed the number of nodes allowed for a cluster.</p>
     NumberOfNodesPerClusterLimitExceededFault(crate::types::error::NumberOfNodesPerClusterLimitExceededFault),
-    /// <p>The operation would exceed the number of nodes allotted to the account. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+    /// <p>The operation would exceed the number of nodes allotted to the account. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
     NumberOfNodesQuotaExceededFault(crate::types::error::NumberOfNodesQuotaExceededFault),
     /// <p>User already has a reservation with the given identifier.</p>
     ReservedNodeAlreadyExistsFault(crate::types::error::ReservedNodeAlreadyExistsFault),
@@ -308,7 +308,7 @@ pub enum RestoreFromClusterSnapshotError {
     ReservedNodeNotFoundFault(crate::types::error::ReservedNodeNotFoundFault),
     /// <p>Specified offering does not exist.</p>
     ReservedNodeOfferingNotFoundFault(crate::types::error::ReservedNodeOfferingNotFoundFault),
-    /// <p>We could not find the specified snapshot schedule.</p>
+    /// <p>We could not find the specified snapshot schedule. </p>
     SnapshotScheduleNotFoundFault(crate::types::error::SnapshotScheduleNotFoundFault),
     /// <p>You have exceeded the number of tags allowed.</p>
     TagLimitExceededFault(crate::types::error::TagLimitExceededFault),

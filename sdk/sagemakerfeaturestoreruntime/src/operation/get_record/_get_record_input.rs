@@ -5,7 +5,7 @@
 pub struct GetRecordInput {
     /// <p>The name or Amazon Resource Name (ARN) of the feature group from which you want to retrieve a record.</p>
     pub feature_group_name: ::std::option::Option<::std::string::String>,
-    /// <p>The value that corresponds to <code>RecordIdentifier</code> type and uniquely identifies the record in the <code>FeatureGroup</code>.</p>
+    /// <p>The value that corresponds to <code>RecordIdentifier</code> type and uniquely identifies the record in the <code>FeatureGroup</code>. </p>
     pub record_identifier_value_as_string: ::std::option::Option<::std::string::String>,
     /// <p>List of names of Features to be retrieved. If not specified, the latest value for all the Features are returned.</p>
     pub feature_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -17,7 +17,7 @@ impl GetRecordInput {
     pub fn feature_group_name(&self) -> ::std::option::Option<&str> {
         self.feature_group_name.as_deref()
     }
-    /// <p>The value that corresponds to <code>RecordIdentifier</code> type and uniquely identifies the record in the <code>FeatureGroup</code>.</p>
+    /// <p>The value that corresponds to <code>RecordIdentifier</code> type and uniquely identifies the record in the <code>FeatureGroup</code>. </p>
     pub fn record_identifier_value_as_string(&self) -> ::std::option::Option<&str> {
         self.record_identifier_value_as_string.as_deref()
     }
@@ -64,18 +64,18 @@ impl GetRecordInputBuilder {
     pub fn get_feature_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.feature_group_name
     }
-    /// <p>The value that corresponds to <code>RecordIdentifier</code> type and uniquely identifies the record in the <code>FeatureGroup</code>.</p>
+    /// <p>The value that corresponds to <code>RecordIdentifier</code> type and uniquely identifies the record in the <code>FeatureGroup</code>. </p>
     /// This field is required.
     pub fn record_identifier_value_as_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.record_identifier_value_as_string = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The value that corresponds to <code>RecordIdentifier</code> type and uniquely identifies the record in the <code>FeatureGroup</code>.</p>
+    /// <p>The value that corresponds to <code>RecordIdentifier</code> type and uniquely identifies the record in the <code>FeatureGroup</code>. </p>
     pub fn set_record_identifier_value_as_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.record_identifier_value_as_string = input;
         self
     }
-    /// <p>The value that corresponds to <code>RecordIdentifier</code> type and uniquely identifies the record in the <code>FeatureGroup</code>.</p>
+    /// <p>The value that corresponds to <code>RecordIdentifier</code> type and uniquely identifies the record in the <code>FeatureGroup</code>. </p>
     pub fn get_record_identifier_value_as_string(&self) -> &::std::option::Option<::std::string::String> {
         &self.record_identifier_value_as_string
     }

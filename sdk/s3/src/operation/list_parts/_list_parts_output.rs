@@ -4,11 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPartsOutput {
     /// <p>If the bucket has a lifecycle rule configured with an action to abort incomplete multipart uploads and the prefix in the lifecycle rule matches the object name in the request, then the response includes this header indicating when the initiated multipart upload will become eligible for abort operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Configuration</a>.</p>
-    /// <p>The response will also include the <code>x-amz-abort-rule-id</code> header that will provide the ID of the lifecycle configuration rule that defines this action.</p><note>
+    /// <p>The response will also include the <code>x-amz-abort-rule-id</code> header that will provide the ID of the lifecycle configuration rule that defines this action.</p> <note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub abort_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>This header is returned along with the <code>x-amz-abort-date</code> header. It identifies applicable lifecycle configuration rule that defines the action to abort incomplete multipart uploads.</p><note>
+    /// <p>This header is returned along with the <code>x-amz-abort-date</code> header. It identifies applicable lifecycle configuration rule that defines the action to abort incomplete multipart uploads.</p> <note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub abort_rule_id: ::std::option::Option<::std::string::String>,
@@ -24,21 +24,21 @@ pub struct ListPartsOutput {
     pub next_part_number_marker: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of parts that were allowed in the response.</p>
     pub max_parts: ::std::option::Option<i32>,
-    /// <p>Indicates whether the returned list of parts is truncated. A true value indicates that the list was truncated. A list can be truncated if the number of parts exceeds the limit returned in the MaxParts element.</p>
+    /// <p> Indicates whether the returned list of parts is truncated. A true value indicates that the list was truncated. A list can be truncated if the number of parts exceeds the limit returned in the MaxParts element.</p>
     pub is_truncated: ::std::option::Option<bool>,
     /// <p>Container for elements related to a particular part. A response can contain zero or more <code>Part</code> elements.</p>
     pub parts: ::std::option::Option<::std::vec::Vec<crate::types::Part>>,
     /// <p>Container element that identifies who initiated the multipart upload. If the initiator is an Amazon Web Services account, this element provides the same information as the <code>Owner</code> element. If the initiator is an IAM User, this element provides the user ARN and display name.</p>
     pub initiator: ::std::option::Option<crate::types::Initiator>,
-    /// <p>Container element that identifies the object owner, after the object is created. If multipart upload is initiated by an IAM user, this element provides the parent account ID and display name.</p><note>
-    /// <p><b>Directory buckets</b> - The bucket owner is returned as the object owner for all the parts.</p>
+    /// <p>Container element that identifies the object owner, after the object is created. If multipart upload is initiated by an IAM user, this element provides the parent account ID and display name.</p> <note>
+    /// <p> <b>Directory buckets</b> - The bucket owner is returned as the object owner for all the parts.</p>
     /// </note>
     pub owner: ::std::option::Option<crate::types::Owner>,
-    /// <p>The class of storage used to store the uploaded object.</p><note>
-    /// <p><b>Directory buckets</b> - Only the S3 Express One Zone storage class is supported by directory buckets to store objects.</p>
+    /// <p>The class of storage used to store the uploaded object.</p> <note>
+    /// <p> <b>Directory buckets</b> - Only the S3 Express One Zone storage class is supported by directory buckets to store objects.</p>
     /// </note>
     pub storage_class: ::std::option::Option<crate::types::StorageClass>,
-    /// <p>If present, indicates that the requester was successfully charged for the request.</p><note>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p> <note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub request_charged: ::std::option::Option<crate::types::RequestCharged>,
@@ -49,13 +49,13 @@ pub struct ListPartsOutput {
 }
 impl ListPartsOutput {
     /// <p>If the bucket has a lifecycle rule configured with an action to abort incomplete multipart uploads and the prefix in the lifecycle rule matches the object name in the request, then the response includes this header indicating when the initiated multipart upload will become eligible for abort operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Configuration</a>.</p>
-    /// <p>The response will also include the <code>x-amz-abort-rule-id</code> header that will provide the ID of the lifecycle configuration rule that defines this action.</p><note>
+    /// <p>The response will also include the <code>x-amz-abort-rule-id</code> header that will provide the ID of the lifecycle configuration rule that defines this action.</p> <note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn abort_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.abort_date.as_ref()
     }
-    /// <p>This header is returned along with the <code>x-amz-abort-date</code> header. It identifies applicable lifecycle configuration rule that defines the action to abort incomplete multipart uploads.</p><note>
+    /// <p>This header is returned along with the <code>x-amz-abort-date</code> header. It identifies applicable lifecycle configuration rule that defines the action to abort incomplete multipart uploads.</p> <note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn abort_rule_id(&self) -> ::std::option::Option<&str> {
@@ -85,7 +85,7 @@ impl ListPartsOutput {
     pub fn max_parts(&self) -> ::std::option::Option<i32> {
         self.max_parts
     }
-    /// <p>Indicates whether the returned list of parts is truncated. A true value indicates that the list was truncated. A list can be truncated if the number of parts exceeds the limit returned in the MaxParts element.</p>
+    /// <p> Indicates whether the returned list of parts is truncated. A true value indicates that the list was truncated. A list can be truncated if the number of parts exceeds the limit returned in the MaxParts element.</p>
     pub fn is_truncated(&self) -> ::std::option::Option<bool> {
         self.is_truncated
     }
@@ -99,19 +99,19 @@ impl ListPartsOutput {
     pub fn initiator(&self) -> ::std::option::Option<&crate::types::Initiator> {
         self.initiator.as_ref()
     }
-    /// <p>Container element that identifies the object owner, after the object is created. If multipart upload is initiated by an IAM user, this element provides the parent account ID and display name.</p><note>
-    /// <p><b>Directory buckets</b> - The bucket owner is returned as the object owner for all the parts.</p>
+    /// <p>Container element that identifies the object owner, after the object is created. If multipart upload is initiated by an IAM user, this element provides the parent account ID and display name.</p> <note>
+    /// <p> <b>Directory buckets</b> - The bucket owner is returned as the object owner for all the parts.</p>
     /// </note>
     pub fn owner(&self) -> ::std::option::Option<&crate::types::Owner> {
         self.owner.as_ref()
     }
-    /// <p>The class of storage used to store the uploaded object.</p><note>
-    /// <p><b>Directory buckets</b> - Only the S3 Express One Zone storage class is supported by directory buckets to store objects.</p>
+    /// <p>The class of storage used to store the uploaded object.</p> <note>
+    /// <p> <b>Directory buckets</b> - Only the S3 Express One Zone storage class is supported by directory buckets to store objects.</p>
     /// </note>
     pub fn storage_class(&self) -> ::std::option::Option<&crate::types::StorageClass> {
         self.storage_class.as_ref()
     }
-    /// <p>If present, indicates that the requester was successfully charged for the request.</p><note>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p> <note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn request_charged(&self) -> ::std::option::Option<&crate::types::RequestCharged> {
@@ -163,7 +163,7 @@ pub struct ListPartsOutputBuilder {
 }
 impl ListPartsOutputBuilder {
     /// <p>If the bucket has a lifecycle rule configured with an action to abort incomplete multipart uploads and the prefix in the lifecycle rule matches the object name in the request, then the response includes this header indicating when the initiated multipart upload will become eligible for abort operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Configuration</a>.</p>
-    /// <p>The response will also include the <code>x-amz-abort-rule-id</code> header that will provide the ID of the lifecycle configuration rule that defines this action.</p><note>
+    /// <p>The response will also include the <code>x-amz-abort-rule-id</code> header that will provide the ID of the lifecycle configuration rule that defines this action.</p> <note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn abort_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -171,7 +171,7 @@ impl ListPartsOutputBuilder {
         self
     }
     /// <p>If the bucket has a lifecycle rule configured with an action to abort incomplete multipart uploads and the prefix in the lifecycle rule matches the object name in the request, then the response includes this header indicating when the initiated multipart upload will become eligible for abort operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Configuration</a>.</p>
-    /// <p>The response will also include the <code>x-amz-abort-rule-id</code> header that will provide the ID of the lifecycle configuration rule that defines this action.</p><note>
+    /// <p>The response will also include the <code>x-amz-abort-rule-id</code> header that will provide the ID of the lifecycle configuration rule that defines this action.</p> <note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_abort_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
@@ -179,27 +179,27 @@ impl ListPartsOutputBuilder {
         self
     }
     /// <p>If the bucket has a lifecycle rule configured with an action to abort incomplete multipart uploads and the prefix in the lifecycle rule matches the object name in the request, then the response includes this header indicating when the initiated multipart upload will become eligible for abort operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Configuration</a>.</p>
-    /// <p>The response will also include the <code>x-amz-abort-rule-id</code> header that will provide the ID of the lifecycle configuration rule that defines this action.</p><note>
+    /// <p>The response will also include the <code>x-amz-abort-rule-id</code> header that will provide the ID of the lifecycle configuration rule that defines this action.</p> <note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn get_abort_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.abort_date
     }
-    /// <p>This header is returned along with the <code>x-amz-abort-date</code> header. It identifies applicable lifecycle configuration rule that defines the action to abort incomplete multipart uploads.</p><note>
+    /// <p>This header is returned along with the <code>x-amz-abort-date</code> header. It identifies applicable lifecycle configuration rule that defines the action to abort incomplete multipart uploads.</p> <note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn abort_rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.abort_rule_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>This header is returned along with the <code>x-amz-abort-date</code> header. It identifies applicable lifecycle configuration rule that defines the action to abort incomplete multipart uploads.</p><note>
+    /// <p>This header is returned along with the <code>x-amz-abort-date</code> header. It identifies applicable lifecycle configuration rule that defines the action to abort incomplete multipart uploads.</p> <note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_abort_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.abort_rule_id = input;
         self
     }
-    /// <p>This header is returned along with the <code>x-amz-abort-date</code> header. It identifies applicable lifecycle configuration rule that defines the action to abort incomplete multipart uploads.</p><note>
+    /// <p>This header is returned along with the <code>x-amz-abort-date</code> header. It identifies applicable lifecycle configuration rule that defines the action to abort incomplete multipart uploads.</p> <note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn get_abort_rule_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -289,17 +289,17 @@ impl ListPartsOutputBuilder {
     pub fn get_max_parts(&self) -> &::std::option::Option<i32> {
         &self.max_parts
     }
-    /// <p>Indicates whether the returned list of parts is truncated. A true value indicates that the list was truncated. A list can be truncated if the number of parts exceeds the limit returned in the MaxParts element.</p>
+    /// <p> Indicates whether the returned list of parts is truncated. A true value indicates that the list was truncated. A list can be truncated if the number of parts exceeds the limit returned in the MaxParts element.</p>
     pub fn is_truncated(mut self, input: bool) -> Self {
         self.is_truncated = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether the returned list of parts is truncated. A true value indicates that the list was truncated. A list can be truncated if the number of parts exceeds the limit returned in the MaxParts element.</p>
+    /// <p> Indicates whether the returned list of parts is truncated. A true value indicates that the list was truncated. A list can be truncated if the number of parts exceeds the limit returned in the MaxParts element.</p>
     pub fn set_is_truncated(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_truncated = input;
         self
     }
-    /// <p>Indicates whether the returned list of parts is truncated. A true value indicates that the list was truncated. A list can be truncated if the number of parts exceeds the limit returned in the MaxParts element.</p>
+    /// <p> Indicates whether the returned list of parts is truncated. A true value indicates that the list was truncated. A list can be truncated if the number of parts exceeds the limit returned in the MaxParts element.</p>
     pub fn get_is_truncated(&self) -> &::std::option::Option<bool> {
         &self.is_truncated
     }
@@ -337,61 +337,61 @@ impl ListPartsOutputBuilder {
     pub fn get_initiator(&self) -> &::std::option::Option<crate::types::Initiator> {
         &self.initiator
     }
-    /// <p>Container element that identifies the object owner, after the object is created. If multipart upload is initiated by an IAM user, this element provides the parent account ID and display name.</p><note>
-    /// <p><b>Directory buckets</b> - The bucket owner is returned as the object owner for all the parts.</p>
+    /// <p>Container element that identifies the object owner, after the object is created. If multipart upload is initiated by an IAM user, this element provides the parent account ID and display name.</p> <note>
+    /// <p> <b>Directory buckets</b> - The bucket owner is returned as the object owner for all the parts.</p>
     /// </note>
     pub fn owner(mut self, input: crate::types::Owner) -> Self {
         self.owner = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Container element that identifies the object owner, after the object is created. If multipart upload is initiated by an IAM user, this element provides the parent account ID and display name.</p><note>
-    /// <p><b>Directory buckets</b> - The bucket owner is returned as the object owner for all the parts.</p>
+    /// <p>Container element that identifies the object owner, after the object is created. If multipart upload is initiated by an IAM user, this element provides the parent account ID and display name.</p> <note>
+    /// <p> <b>Directory buckets</b> - The bucket owner is returned as the object owner for all the parts.</p>
     /// </note>
     pub fn set_owner(mut self, input: ::std::option::Option<crate::types::Owner>) -> Self {
         self.owner = input;
         self
     }
-    /// <p>Container element that identifies the object owner, after the object is created. If multipart upload is initiated by an IAM user, this element provides the parent account ID and display name.</p><note>
-    /// <p><b>Directory buckets</b> - The bucket owner is returned as the object owner for all the parts.</p>
+    /// <p>Container element that identifies the object owner, after the object is created. If multipart upload is initiated by an IAM user, this element provides the parent account ID and display name.</p> <note>
+    /// <p> <b>Directory buckets</b> - The bucket owner is returned as the object owner for all the parts.</p>
     /// </note>
     pub fn get_owner(&self) -> &::std::option::Option<crate::types::Owner> {
         &self.owner
     }
-    /// <p>The class of storage used to store the uploaded object.</p><note>
-    /// <p><b>Directory buckets</b> - Only the S3 Express One Zone storage class is supported by directory buckets to store objects.</p>
+    /// <p>The class of storage used to store the uploaded object.</p> <note>
+    /// <p> <b>Directory buckets</b> - Only the S3 Express One Zone storage class is supported by directory buckets to store objects.</p>
     /// </note>
     pub fn storage_class(mut self, input: crate::types::StorageClass) -> Self {
         self.storage_class = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The class of storage used to store the uploaded object.</p><note>
-    /// <p><b>Directory buckets</b> - Only the S3 Express One Zone storage class is supported by directory buckets to store objects.</p>
+    /// <p>The class of storage used to store the uploaded object.</p> <note>
+    /// <p> <b>Directory buckets</b> - Only the S3 Express One Zone storage class is supported by directory buckets to store objects.</p>
     /// </note>
     pub fn set_storage_class(mut self, input: ::std::option::Option<crate::types::StorageClass>) -> Self {
         self.storage_class = input;
         self
     }
-    /// <p>The class of storage used to store the uploaded object.</p><note>
-    /// <p><b>Directory buckets</b> - Only the S3 Express One Zone storage class is supported by directory buckets to store objects.</p>
+    /// <p>The class of storage used to store the uploaded object.</p> <note>
+    /// <p> <b>Directory buckets</b> - Only the S3 Express One Zone storage class is supported by directory buckets to store objects.</p>
     /// </note>
     pub fn get_storage_class(&self) -> &::std::option::Option<crate::types::StorageClass> {
         &self.storage_class
     }
-    /// <p>If present, indicates that the requester was successfully charged for the request.</p><note>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p> <note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn request_charged(mut self, input: crate::types::RequestCharged) -> Self {
         self.request_charged = ::std::option::Option::Some(input);
         self
     }
-    /// <p>If present, indicates that the requester was successfully charged for the request.</p><note>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p> <note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_request_charged(mut self, input: ::std::option::Option<crate::types::RequestCharged>) -> Self {
         self.request_charged = input;
         self
     }
-    /// <p>If present, indicates that the requester was successfully charged for the request.</p><note>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p> <note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn get_request_charged(&self) -> &::std::option::Option<crate::types::RequestCharged> {

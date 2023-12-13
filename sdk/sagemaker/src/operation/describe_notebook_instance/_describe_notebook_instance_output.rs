@@ -5,13 +5,13 @@
 pub struct DescribeNotebookInstanceOutput {
     /// <p>The Amazon Resource Name (ARN) of the notebook instance.</p>
     pub notebook_instance_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the SageMaker notebook instance.</p>
+    /// <p>The name of the SageMaker notebook instance. </p>
     pub notebook_instance_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the notebook instance.</p>
     pub notebook_instance_status: ::std::option::Option<crate::types::NotebookInstanceStatus>,
     /// <p>If status is <code>Failed</code>, the reason it failed.</p>
     pub failure_reason: ::std::option::Option<::std::string::String>,
-    /// <p>The URL that you use to connect to the Jupyter notebook that is running in your notebook instance.</p>
+    /// <p>The URL that you use to connect to the Jupyter notebook that is running in your notebook instance. </p>
     pub url: ::std::option::Option<::std::string::String>,
     /// <p>The type of ML compute instance running on the notebook instance.</p>
     pub instance_type: ::std::option::Option<crate::types::InstanceType>,
@@ -19,18 +19,18 @@ pub struct DescribeNotebookInstanceOutput {
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the VPC security groups.</p>
     pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM role associated with the instance.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role associated with the instance. </p>
     pub role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Web Services KMS key ID SageMaker uses to encrypt data when storing it on the ML storage volume attached to the instance.</p>
+    /// <p>The Amazon Web Services KMS key ID SageMaker uses to encrypt data when storing it on the ML storage volume attached to the instance. </p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
-    /// <p>The network interface IDs that SageMaker created at the time of creating the instance.</p>
+    /// <p>The network interface IDs that SageMaker created at the time of creating the instance. </p>
     pub network_interface_id: ::std::option::Option<::std::string::String>,
-    /// <p>A timestamp. Use this parameter to retrieve the time when the notebook instance was last modified.</p>
+    /// <p>A timestamp. Use this parameter to retrieve the time when the notebook instance was last modified. </p>
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp. Use this parameter to return the time when the notebook instance was created</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Returns the name of a notebook instance lifecycle configuration.</p>
-    /// <p>For information about notebook instance lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional) Customize a Notebook Instance</a></p>
+    /// <p>For information about notebook instance lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional) Customize a Notebook Instance</a> </p>
     pub notebook_instance_lifecycle_config_name: ::std::option::Option<::std::string::String>,
     /// <p>Describes whether SageMaker provides internet access to the notebook instance. If this value is set to <i>Disabled</i>, the notebook instance does not have internet access, and cannot connect to SageMaker training and endpoint services.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook Instances Are Internet-Enabled by Default</a>.</p>
@@ -43,7 +43,7 @@ pub struct DescribeNotebookInstanceOutput {
     pub default_code_repository: ::std::option::Option<::std::string::String>,
     /// <p>An array of up to three Git repositories associated with the notebook instance. These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
     pub additional_code_repositories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Whether root access is enabled or disabled for users of the notebook instance.</p><note>
+    /// <p>Whether root access is enabled or disabled for users of the notebook instance.</p> <note>
     /// <p>Lifecycle configurations need root access to be able to set up a notebook instance. Because of this, lifecycle configurations associated with a notebook instance always run with root access even if you disable root access for users.</p>
     /// </note>
     pub root_access: ::std::option::Option<crate::types::RootAccess>,
@@ -58,7 +58,7 @@ impl DescribeNotebookInstanceOutput {
     pub fn notebook_instance_arn(&self) -> ::std::option::Option<&str> {
         self.notebook_instance_arn.as_deref()
     }
-    /// <p>The name of the SageMaker notebook instance.</p>
+    /// <p>The name of the SageMaker notebook instance. </p>
     pub fn notebook_instance_name(&self) -> ::std::option::Option<&str> {
         self.notebook_instance_name.as_deref()
     }
@@ -70,7 +70,7 @@ impl DescribeNotebookInstanceOutput {
     pub fn failure_reason(&self) -> ::std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
-    /// <p>The URL that you use to connect to the Jupyter notebook that is running in your notebook instance.</p>
+    /// <p>The URL that you use to connect to the Jupyter notebook that is running in your notebook instance. </p>
     pub fn url(&self) -> ::std::option::Option<&str> {
         self.url.as_deref()
     }
@@ -88,19 +88,19 @@ impl DescribeNotebookInstanceOutput {
     pub fn security_groups(&self) -> &[::std::string::String] {
         self.security_groups.as_deref().unwrap_or_default()
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role associated with the instance.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role associated with the instance. </p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>The Amazon Web Services KMS key ID SageMaker uses to encrypt data when storing it on the ML storage volume attached to the instance.</p>
+    /// <p>The Amazon Web Services KMS key ID SageMaker uses to encrypt data when storing it on the ML storage volume attached to the instance. </p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
-    /// <p>The network interface IDs that SageMaker created at the time of creating the instance.</p>
+    /// <p>The network interface IDs that SageMaker created at the time of creating the instance. </p>
     pub fn network_interface_id(&self) -> ::std::option::Option<&str> {
         self.network_interface_id.as_deref()
     }
-    /// <p>A timestamp. Use this parameter to retrieve the time when the notebook instance was last modified.</p>
+    /// <p>A timestamp. Use this parameter to retrieve the time when the notebook instance was last modified. </p>
     pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
@@ -109,7 +109,7 @@ impl DescribeNotebookInstanceOutput {
         self.creation_time.as_ref()
     }
     /// <p>Returns the name of a notebook instance lifecycle configuration.</p>
-    /// <p>For information about notebook instance lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional) Customize a Notebook Instance</a></p>
+    /// <p>For information about notebook instance lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional) Customize a Notebook Instance</a> </p>
     pub fn notebook_instance_lifecycle_config_name(&self) -> ::std::option::Option<&str> {
         self.notebook_instance_lifecycle_config_name.as_deref()
     }
@@ -138,7 +138,7 @@ impl DescribeNotebookInstanceOutput {
     pub fn additional_code_repositories(&self) -> &[::std::string::String] {
         self.additional_code_repositories.as_deref().unwrap_or_default()
     }
-    /// <p>Whether root access is enabled or disabled for users of the notebook instance.</p><note>
+    /// <p>Whether root access is enabled or disabled for users of the notebook instance.</p> <note>
     /// <p>Lifecycle configurations need root access to be able to set up a notebook instance. Because of this, lifecycle configurations associated with a notebook instance always run with root access even if you disable root access for users.</p>
     /// </note>
     pub fn root_access(&self) -> ::std::option::Option<&crate::types::RootAccess> {
@@ -208,17 +208,17 @@ impl DescribeNotebookInstanceOutputBuilder {
     pub fn get_notebook_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.notebook_instance_arn
     }
-    /// <p>The name of the SageMaker notebook instance.</p>
+    /// <p>The name of the SageMaker notebook instance. </p>
     pub fn notebook_instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notebook_instance_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the SageMaker notebook instance.</p>
+    /// <p>The name of the SageMaker notebook instance. </p>
     pub fn set_notebook_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notebook_instance_name = input;
         self
     }
-    /// <p>The name of the SageMaker notebook instance.</p>
+    /// <p>The name of the SageMaker notebook instance. </p>
     pub fn get_notebook_instance_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.notebook_instance_name
     }
@@ -250,17 +250,17 @@ impl DescribeNotebookInstanceOutputBuilder {
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.failure_reason
     }
-    /// <p>The URL that you use to connect to the Jupyter notebook that is running in your notebook instance.</p>
+    /// <p>The URL that you use to connect to the Jupyter notebook that is running in your notebook instance. </p>
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The URL that you use to connect to the Jupyter notebook that is running in your notebook instance.</p>
+    /// <p>The URL that you use to connect to the Jupyter notebook that is running in your notebook instance. </p>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
     }
-    /// <p>The URL that you use to connect to the Jupyter notebook that is running in your notebook instance.</p>
+    /// <p>The URL that you use to connect to the Jupyter notebook that is running in your notebook instance. </p>
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.url
     }
@@ -312,59 +312,59 @@ impl DescribeNotebookInstanceOutputBuilder {
     pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_groups
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role associated with the instance.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role associated with the instance. </p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role associated with the instance.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role associated with the instance. </p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role associated with the instance.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role associated with the instance. </p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
-    /// <p>The Amazon Web Services KMS key ID SageMaker uses to encrypt data when storing it on the ML storage volume attached to the instance.</p>
+    /// <p>The Amazon Web Services KMS key ID SageMaker uses to encrypt data when storing it on the ML storage volume attached to the instance. </p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Web Services KMS key ID SageMaker uses to encrypt data when storing it on the ML storage volume attached to the instance.</p>
+    /// <p>The Amazon Web Services KMS key ID SageMaker uses to encrypt data when storing it on the ML storage volume attached to the instance. </p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
     }
-    /// <p>The Amazon Web Services KMS key ID SageMaker uses to encrypt data when storing it on the ML storage volume attached to the instance.</p>
+    /// <p>The Amazon Web Services KMS key ID SageMaker uses to encrypt data when storing it on the ML storage volume attached to the instance. </p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id
     }
-    /// <p>The network interface IDs that SageMaker created at the time of creating the instance.</p>
+    /// <p>The network interface IDs that SageMaker created at the time of creating the instance. </p>
     pub fn network_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_interface_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The network interface IDs that SageMaker created at the time of creating the instance.</p>
+    /// <p>The network interface IDs that SageMaker created at the time of creating the instance. </p>
     pub fn set_network_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_interface_id = input;
         self
     }
-    /// <p>The network interface IDs that SageMaker created at the time of creating the instance.</p>
+    /// <p>The network interface IDs that SageMaker created at the time of creating the instance. </p>
     pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.network_interface_id
     }
-    /// <p>A timestamp. Use this parameter to retrieve the time when the notebook instance was last modified.</p>
+    /// <p>A timestamp. Use this parameter to retrieve the time when the notebook instance was last modified. </p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A timestamp. Use this parameter to retrieve the time when the notebook instance was last modified.</p>
+    /// <p>A timestamp. Use this parameter to retrieve the time when the notebook instance was last modified. </p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
-    /// <p>A timestamp. Use this parameter to retrieve the time when the notebook instance was last modified.</p>
+    /// <p>A timestamp. Use this parameter to retrieve the time when the notebook instance was last modified. </p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_time
     }
@@ -383,19 +383,19 @@ impl DescribeNotebookInstanceOutputBuilder {
         &self.creation_time
     }
     /// <p>Returns the name of a notebook instance lifecycle configuration.</p>
-    /// <p>For information about notebook instance lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional) Customize a Notebook Instance</a></p>
+    /// <p>For information about notebook instance lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional) Customize a Notebook Instance</a> </p>
     pub fn notebook_instance_lifecycle_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notebook_instance_lifecycle_config_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Returns the name of a notebook instance lifecycle configuration.</p>
-    /// <p>For information about notebook instance lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional) Customize a Notebook Instance</a></p>
+    /// <p>For information about notebook instance lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional) Customize a Notebook Instance</a> </p>
     pub fn set_notebook_instance_lifecycle_config_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notebook_instance_lifecycle_config_name = input;
         self
     }
     /// <p>Returns the name of a notebook instance lifecycle configuration.</p>
-    /// <p>For information about notebook instance lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional) Customize a Notebook Instance</a></p>
+    /// <p>For information about notebook instance lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional) Customize a Notebook Instance</a> </p>
     pub fn get_notebook_instance_lifecycle_config_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.notebook_instance_lifecycle_config_name
     }
@@ -484,21 +484,21 @@ impl DescribeNotebookInstanceOutputBuilder {
     pub fn get_additional_code_repositories(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.additional_code_repositories
     }
-    /// <p>Whether root access is enabled or disabled for users of the notebook instance.</p><note>
+    /// <p>Whether root access is enabled or disabled for users of the notebook instance.</p> <note>
     /// <p>Lifecycle configurations need root access to be able to set up a notebook instance. Because of this, lifecycle configurations associated with a notebook instance always run with root access even if you disable root access for users.</p>
     /// </note>
     pub fn root_access(mut self, input: crate::types::RootAccess) -> Self {
         self.root_access = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Whether root access is enabled or disabled for users of the notebook instance.</p><note>
+    /// <p>Whether root access is enabled or disabled for users of the notebook instance.</p> <note>
     /// <p>Lifecycle configurations need root access to be able to set up a notebook instance. Because of this, lifecycle configurations associated with a notebook instance always run with root access even if you disable root access for users.</p>
     /// </note>
     pub fn set_root_access(mut self, input: ::std::option::Option<crate::types::RootAccess>) -> Self {
         self.root_access = input;
         self
     }
-    /// <p>Whether root access is enabled or disabled for users of the notebook instance.</p><note>
+    /// <p>Whether root access is enabled or disabled for users of the notebook instance.</p> <note>
     /// <p>Lifecycle configurations need root access to be able to set up a notebook instance. Because of this, lifecycle configurations associated with a notebook instance always run with root access even if you disable root access for users.</p>
     /// </note>
     pub fn get_root_access(&self) -> &::std::option::Option<crate::types::RootAccess> {

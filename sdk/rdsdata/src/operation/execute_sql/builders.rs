@@ -22,7 +22,7 @@ impl ExecuteSqlInputBuilder {
 }
 /// Fluent builder constructing a request to `ExecuteSql`.
 ///
-/// <p>Runs one or more SQL statements.</p><note>
+/// <p>Runs one or more SQL statements.</p> <note>
 /// <p>This operation is deprecated. Use the <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> operation.</p>
 /// </note>
 #[deprecated(note = "The ExecuteSql API is deprecated, please use the ExecuteStatement API.", since = "2019-03-21")]
@@ -143,19 +143,19 @@ impl ExecuteSqlFluentBuilder {
         self.inner.get_aws_secret_store_arn()
     }
     /// <p>One or more SQL statements to run on the DB cluster.</p>
-    /// <p>You can separate SQL statements from each other with a semicolon (;). Any valid SQL statement is permitted, including data definition, data manipulation, and commit statements.</p>
+    /// <p>You can separate SQL statements from each other with a semicolon (;). Any valid SQL statement is permitted, including data definition, data manipulation, and commit statements. </p>
     pub fn sql_statements(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sql_statements(input.into());
         self
     }
     /// <p>One or more SQL statements to run on the DB cluster.</p>
-    /// <p>You can separate SQL statements from each other with a semicolon (;). Any valid SQL statement is permitted, including data definition, data manipulation, and commit statements.</p>
+    /// <p>You can separate SQL statements from each other with a semicolon (;). Any valid SQL statement is permitted, including data definition, data manipulation, and commit statements. </p>
     pub fn set_sql_statements(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sql_statements(input);
         self
     }
     /// <p>One or more SQL statements to run on the DB cluster.</p>
-    /// <p>You can separate SQL statements from each other with a semicolon (;). Any valid SQL statement is permitted, including data definition, data manipulation, and commit statements.</p>
+    /// <p>You can separate SQL statements from each other with a semicolon (;). Any valid SQL statement is permitted, including data definition, data manipulation, and commit statements. </p>
     pub fn get_sql_statements(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_sql_statements()
     }

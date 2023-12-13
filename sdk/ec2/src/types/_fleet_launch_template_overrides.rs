@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FleetLaunchTemplateOverrides {
     /// <p>The instance type.</p>
-    /// <p><code>mac1.metal</code> is not supported as a launch template override.</p><note>
+    /// <p> <code>mac1.metal</code> is not supported as a launch template override.</p> <note>
     /// <p>If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>.</p>
     /// </note>
     pub instance_type: ::std::option::Option<crate::types::InstanceType>,
-    /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p><important>
+    /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price. </p> <important>
     /// <p>If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify this parameter.</p>
     /// </important>
     pub max_price: ::std::option::Option<::std::string::String>,
@@ -26,7 +26,7 @@ pub struct FleetLaunchTemplateOverrides {
     pub priority: ::std::option::Option<f64>,
     /// <p>The location where the instance launched, if applicable.</p>
     pub placement: ::std::option::Option<crate::types::PlacementResponse>,
-    /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with those attributes.</p><note>
+    /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with those attributes.</p> <note>
     /// <p>If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.</p>
     /// </note>
     pub instance_requirements: ::std::option::Option<crate::types::InstanceRequirements>,
@@ -35,13 +35,13 @@ pub struct FleetLaunchTemplateOverrides {
 }
 impl FleetLaunchTemplateOverrides {
     /// <p>The instance type.</p>
-    /// <p><code>mac1.metal</code> is not supported as a launch template override.</p><note>
+    /// <p> <code>mac1.metal</code> is not supported as a launch template override.</p> <note>
     /// <p>If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>.</p>
     /// </note>
     pub fn instance_type(&self) -> ::std::option::Option<&crate::types::InstanceType> {
         self.instance_type.as_ref()
     }
-    /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p><important>
+    /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price. </p> <important>
     /// <p>If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify this parameter.</p>
     /// </important>
     pub fn max_price(&self) -> ::std::option::Option<&str> {
@@ -70,7 +70,7 @@ impl FleetLaunchTemplateOverrides {
     pub fn placement(&self) -> ::std::option::Option<&crate::types::PlacementResponse> {
         self.placement.as_ref()
     }
-    /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with those attributes.</p><note>
+    /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with those attributes.</p> <note>
     /// <p>If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.</p>
     /// </note>
     pub fn instance_requirements(&self) -> ::std::option::Option<&crate::types::InstanceRequirements> {
@@ -104,7 +104,7 @@ pub struct FleetLaunchTemplateOverridesBuilder {
 }
 impl FleetLaunchTemplateOverridesBuilder {
     /// <p>The instance type.</p>
-    /// <p><code>mac1.metal</code> is not supported as a launch template override.</p><note>
+    /// <p> <code>mac1.metal</code> is not supported as a launch template override.</p> <note>
     /// <p>If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>.</p>
     /// </note>
     pub fn instance_type(mut self, input: crate::types::InstanceType) -> Self {
@@ -112,7 +112,7 @@ impl FleetLaunchTemplateOverridesBuilder {
         self
     }
     /// <p>The instance type.</p>
-    /// <p><code>mac1.metal</code> is not supported as a launch template override.</p><note>
+    /// <p> <code>mac1.metal</code> is not supported as a launch template override.</p> <note>
     /// <p>If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>.</p>
     /// </note>
     pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::InstanceType>) -> Self {
@@ -120,27 +120,27 @@ impl FleetLaunchTemplateOverridesBuilder {
         self
     }
     /// <p>The instance type.</p>
-    /// <p><code>mac1.metal</code> is not supported as a launch template override.</p><note>
+    /// <p> <code>mac1.metal</code> is not supported as a launch template override.</p> <note>
     /// <p>If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>.</p>
     /// </note>
     pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::InstanceType> {
         &self.instance_type
     }
-    /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p><important>
+    /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price. </p> <important>
     /// <p>If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify this parameter.</p>
     /// </important>
     pub fn max_price(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.max_price = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p><important>
+    /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price. </p> <important>
     /// <p>If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify this parameter.</p>
     /// </important>
     pub fn set_max_price(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.max_price = input;
         self
     }
-    /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p><important>
+    /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price. </p> <important>
     /// <p>If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify this parameter.</p>
     /// </important>
     pub fn get_max_price(&self) -> &::std::option::Option<::std::string::String> {
@@ -225,21 +225,21 @@ impl FleetLaunchTemplateOverridesBuilder {
     pub fn get_placement(&self) -> &::std::option::Option<crate::types::PlacementResponse> {
         &self.placement
     }
-    /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with those attributes.</p><note>
+    /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with those attributes.</p> <note>
     /// <p>If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.</p>
     /// </note>
     pub fn instance_requirements(mut self, input: crate::types::InstanceRequirements) -> Self {
         self.instance_requirements = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with those attributes.</p><note>
+    /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with those attributes.</p> <note>
     /// <p>If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.</p>
     /// </note>
     pub fn set_instance_requirements(mut self, input: ::std::option::Option<crate::types::InstanceRequirements>) -> Self {
         self.instance_requirements = input;
         self
     }
-    /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with those attributes.</p><note>
+    /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with those attributes.</p> <note>
     /// <p>If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.</p>
     /// </note>
     pub fn get_instance_requirements(&self) -> &::std::option::Option<crate::types::InstanceRequirements> {

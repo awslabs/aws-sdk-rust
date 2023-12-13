@@ -12,7 +12,7 @@ pub struct GoogleDriveConfiguration {
     pub exclusion_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Maps Google Drive data source attributes or field names to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Google Drive fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Google Drive data source field names must exist in your Google Drive custom metadata.</p>
     pub field_mappings: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
-    /// <p>A list of MIME types to exclude from the index. All documents matching the specified MIME type are excluded.</p>
+    /// <p>A list of MIME types to exclude from the index. All documents matching the specified MIME type are excluded. </p>
     /// <p>For a list of MIME types, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-google-drive.html">Using a Google Workspace Drive data source</a>.</p>
     pub exclude_mime_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of email addresses of the users. Documents owned by these users are excluded from the index. Documents shared with excluded users are indexed unless they are excluded in another way.</p>
@@ -44,7 +44,7 @@ impl GoogleDriveConfiguration {
     pub fn field_mappings(&self) -> &[crate::types::DataSourceToIndexFieldMapping] {
         self.field_mappings.as_deref().unwrap_or_default()
     }
-    /// <p>A list of MIME types to exclude from the index. All documents matching the specified MIME type are excluded.</p>
+    /// <p>A list of MIME types to exclude from the index. All documents matching the specified MIME type are excluded. </p>
     /// <p>For a list of MIME types, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-google-drive.html">Using a Google Workspace Drive data source</a>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exclude_mime_types.is_none()`.
@@ -163,7 +163,7 @@ impl GoogleDriveConfigurationBuilder {
     ///
     /// To override the contents of this collection use [`set_exclude_mime_types`](Self::set_exclude_mime_types).
     ///
-    /// <p>A list of MIME types to exclude from the index. All documents matching the specified MIME type are excluded.</p>
+    /// <p>A list of MIME types to exclude from the index. All documents matching the specified MIME type are excluded. </p>
     /// <p>For a list of MIME types, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-google-drive.html">Using a Google Workspace Drive data source</a>.</p>
     pub fn exclude_mime_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.exclude_mime_types.unwrap_or_default();
@@ -171,13 +171,13 @@ impl GoogleDriveConfigurationBuilder {
         self.exclude_mime_types = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of MIME types to exclude from the index. All documents matching the specified MIME type are excluded.</p>
+    /// <p>A list of MIME types to exclude from the index. All documents matching the specified MIME type are excluded. </p>
     /// <p>For a list of MIME types, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-google-drive.html">Using a Google Workspace Drive data source</a>.</p>
     pub fn set_exclude_mime_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.exclude_mime_types = input;
         self
     }
-    /// <p>A list of MIME types to exclude from the index. All documents matching the specified MIME type are excluded.</p>
+    /// <p>A list of MIME types to exclude from the index. All documents matching the specified MIME type are excluded. </p>
     /// <p>For a list of MIME types, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-google-drive.html">Using a Google Workspace Drive data source</a>.</p>
     pub fn get_exclude_mime_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.exclude_mime_types

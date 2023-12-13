@@ -7,24 +7,24 @@ pub struct CreateStreamProcessorInput {
     pub input: ::std::option::Option<crate::types::StreamProcessorInput>,
     /// <p>Kinesis data stream stream or Amazon S3 bucket location to which Amazon Rekognition Video puts the analysis results. If you are using the AWS CLI, the parameter name is <code>StreamProcessorOutput</code>. This must be a <code>S3Destination</code> of an Amazon S3 bucket that you own for a label detection stream processor or a Kinesis data stream ARN for a face search stream processor.</p>
     pub output: ::std::option::Option<crate::types::StreamProcessorOutput>,
-    /// <p>An identifier you assign to the stream processor. You can use <code>Name</code> to manage the stream processor. For example, you can get the current status of the stream processor by calling <code>DescribeStreamProcessor</code>. <code>Name</code> is idempotent. This is required for both face search and label detection stream processors.</p>
+    /// <p>An identifier you assign to the stream processor. You can use <code>Name</code> to manage the stream processor. For example, you can get the current status of the stream processor by calling <code>DescribeStreamProcessor</code>. <code>Name</code> is idempotent. This is required for both face search and label detection stream processors. </p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Input parameters used in a streaming video analyzed by a stream processor. You can use <code>FaceSearch</code> to recognize faces in a streaming video, or you can use <code>ConnectedHome</code> to detect labels.</p>
     pub settings: ::std::option::Option<crate::types::StreamProcessorSettings>,
     /// <p>The Amazon Resource Number (ARN) of the IAM role that allows access to the stream processor. The IAM role provides Rekognition read permissions for a Kinesis stream. It also provides write permissions to an Amazon S3 bucket and Amazon Simple Notification Service topic for a label detection stream processor. This is required for both face search and label detection stream processors.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>A set of tags (key-value pairs) that you want to attach to the stream processor.</p>
+    /// <p> A set of tags (key-value pairs) that you want to attach to the stream processor. </p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the object detection results and completion status of a video analysis operation.</p>
     /// <p>Amazon Rekognition publishes a notification the first time an object of interest or a person is detected in the video stream. For example, if Amazon Rekognition detects a person at second 2, a pet at second 4, and a person again at second 5, Amazon Rekognition sends 2 object class detected notifications, one for a person at second 2 and one for a pet at second 4.</p>
     /// <p>Amazon Rekognition also publishes an an end-of-session notification with a summary when the stream processing session is complete.</p>
     pub notification_channel: ::std::option::Option<crate::types::StreamProcessorNotificationChannel>,
-    /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). This is an optional parameter for label detection stream processors and should not be used to create a face search stream processor. You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt results and data published to your Amazon S3 bucket, which includes image frames and hero images. Your source images are unaffected.</p>
-    /// <p></p>
+    /// <p> The identifier for your AWS Key Management Service key (AWS KMS key). This is an optional parameter for label detection stream processors and should not be used to create a face search stream processor. You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt results and data published to your Amazon S3 bucket, which includes image frames and hero images. Your source images are unaffected. </p>
+    /// <p> </p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies locations in the frames where Amazon Rekognition checks for objects or people. You can specify up to 10 regions of interest, and each region has either a polygon or a bounding box. This is an optional parameter for label detection stream processors and should not be used to create a face search stream processor.</p>
+    /// <p> Specifies locations in the frames where Amazon Rekognition checks for objects or people. You can specify up to 10 regions of interest, and each region has either a polygon or a bounding box. This is an optional parameter for label detection stream processors and should not be used to create a face search stream processor. </p>
     pub regions_of_interest: ::std::option::Option<::std::vec::Vec<crate::types::RegionOfInterest>>,
-    /// <p>Shows whether you are sharing data with Rekognition to improve model performance. You can choose this option at the account level or on a per-stream basis. Note that if you opt out at the account level this setting is ignored on individual streams.</p>
+    /// <p> Shows whether you are sharing data with Rekognition to improve model performance. You can choose this option at the account level or on a per-stream basis. Note that if you opt out at the account level this setting is ignored on individual streams. </p>
     pub data_sharing_preference: ::std::option::Option<crate::types::StreamProcessorDataSharingPreference>,
 }
 impl CreateStreamProcessorInput {
@@ -36,7 +36,7 @@ impl CreateStreamProcessorInput {
     pub fn output(&self) -> ::std::option::Option<&crate::types::StreamProcessorOutput> {
         self.output.as_ref()
     }
-    /// <p>An identifier you assign to the stream processor. You can use <code>Name</code> to manage the stream processor. For example, you can get the current status of the stream processor by calling <code>DescribeStreamProcessor</code>. <code>Name</code> is idempotent. This is required for both face search and label detection stream processors.</p>
+    /// <p>An identifier you assign to the stream processor. You can use <code>Name</code> to manage the stream processor. For example, you can get the current status of the stream processor by calling <code>DescribeStreamProcessor</code>. <code>Name</code> is idempotent. This is required for both face search and label detection stream processors. </p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -48,7 +48,7 @@ impl CreateStreamProcessorInput {
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>A set of tags (key-value pairs) that you want to attach to the stream processor.</p>
+    /// <p> A set of tags (key-value pairs) that you want to attach to the stream processor. </p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
@@ -58,18 +58,18 @@ impl CreateStreamProcessorInput {
     pub fn notification_channel(&self) -> ::std::option::Option<&crate::types::StreamProcessorNotificationChannel> {
         self.notification_channel.as_ref()
     }
-    /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). This is an optional parameter for label detection stream processors and should not be used to create a face search stream processor. You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt results and data published to your Amazon S3 bucket, which includes image frames and hero images. Your source images are unaffected.</p>
-    /// <p></p>
+    /// <p> The identifier for your AWS Key Management Service key (AWS KMS key). This is an optional parameter for label detection stream processors and should not be used to create a face search stream processor. You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt results and data published to your Amazon S3 bucket, which includes image frames and hero images. Your source images are unaffected. </p>
+    /// <p> </p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
-    /// <p>Specifies locations in the frames where Amazon Rekognition checks for objects or people. You can specify up to 10 regions of interest, and each region has either a polygon or a bounding box. This is an optional parameter for label detection stream processors and should not be used to create a face search stream processor.</p>
+    /// <p> Specifies locations in the frames where Amazon Rekognition checks for objects or people. You can specify up to 10 regions of interest, and each region has either a polygon or a bounding box. This is an optional parameter for label detection stream processors and should not be used to create a face search stream processor. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.regions_of_interest.is_none()`.
     pub fn regions_of_interest(&self) -> &[crate::types::RegionOfInterest] {
         self.regions_of_interest.as_deref().unwrap_or_default()
     }
-    /// <p>Shows whether you are sharing data with Rekognition to improve model performance. You can choose this option at the account level or on a per-stream basis. Note that if you opt out at the account level this setting is ignored on individual streams.</p>
+    /// <p> Shows whether you are sharing data with Rekognition to improve model performance. You can choose this option at the account level or on a per-stream basis. Note that if you opt out at the account level this setting is ignored on individual streams. </p>
     pub fn data_sharing_preference(&self) -> ::std::option::Option<&crate::types::StreamProcessorDataSharingPreference> {
         self.data_sharing_preference.as_ref()
     }
@@ -127,18 +127,18 @@ impl CreateStreamProcessorInputBuilder {
     pub fn get_output(&self) -> &::std::option::Option<crate::types::StreamProcessorOutput> {
         &self.output
     }
-    /// <p>An identifier you assign to the stream processor. You can use <code>Name</code> to manage the stream processor. For example, you can get the current status of the stream processor by calling <code>DescribeStreamProcessor</code>. <code>Name</code> is idempotent. This is required for both face search and label detection stream processors.</p>
+    /// <p>An identifier you assign to the stream processor. You can use <code>Name</code> to manage the stream processor. For example, you can get the current status of the stream processor by calling <code>DescribeStreamProcessor</code>. <code>Name</code> is idempotent. This is required for both face search and label detection stream processors. </p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An identifier you assign to the stream processor. You can use <code>Name</code> to manage the stream processor. For example, you can get the current status of the stream processor by calling <code>DescribeStreamProcessor</code>. <code>Name</code> is idempotent. This is required for both face search and label detection stream processors.</p>
+    /// <p>An identifier you assign to the stream processor. You can use <code>Name</code> to manage the stream processor. For example, you can get the current status of the stream processor by calling <code>DescribeStreamProcessor</code>. <code>Name</code> is idempotent. This is required for both face search and label detection stream processors. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>An identifier you assign to the stream processor. You can use <code>Name</code> to manage the stream processor. For example, you can get the current status of the stream processor by calling <code>DescribeStreamProcessor</code>. <code>Name</code> is idempotent. This is required for both face search and label detection stream processors.</p>
+    /// <p>An identifier you assign to the stream processor. You can use <code>Name</code> to manage the stream processor. For example, you can get the current status of the stream processor by calling <code>DescribeStreamProcessor</code>. <code>Name</code> is idempotent. This is required for both face search and label detection stream processors. </p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
@@ -176,19 +176,19 @@ impl CreateStreamProcessorInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A set of tags (key-value pairs) that you want to attach to the stream processor.</p>
+    /// <p> A set of tags (key-value pairs) that you want to attach to the stream processor. </p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>A set of tags (key-value pairs) that you want to attach to the stream processor.</p>
+    /// <p> A set of tags (key-value pairs) that you want to attach to the stream processor. </p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>A set of tags (key-value pairs) that you want to attach to the stream processor.</p>
+    /// <p> A set of tags (key-value pairs) that you want to attach to the stream processor. </p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
@@ -212,20 +212,20 @@ impl CreateStreamProcessorInputBuilder {
     pub fn get_notification_channel(&self) -> &::std::option::Option<crate::types::StreamProcessorNotificationChannel> {
         &self.notification_channel
     }
-    /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). This is an optional parameter for label detection stream processors and should not be used to create a face search stream processor. You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt results and data published to your Amazon S3 bucket, which includes image frames and hero images. Your source images are unaffected.</p>
-    /// <p></p>
+    /// <p> The identifier for your AWS Key Management Service key (AWS KMS key). This is an optional parameter for label detection stream processors and should not be used to create a face search stream processor. You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt results and data published to your Amazon S3 bucket, which includes image frames and hero images. Your source images are unaffected. </p>
+    /// <p> </p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). This is an optional parameter for label detection stream processors and should not be used to create a face search stream processor. You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt results and data published to your Amazon S3 bucket, which includes image frames and hero images. Your source images are unaffected.</p>
-    /// <p></p>
+    /// <p> The identifier for your AWS Key Management Service key (AWS KMS key). This is an optional parameter for label detection stream processors and should not be used to create a face search stream processor. You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt results and data published to your Amazon S3 bucket, which includes image frames and hero images. Your source images are unaffected. </p>
+    /// <p> </p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
     }
-    /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). This is an optional parameter for label detection stream processors and should not be used to create a face search stream processor. You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt results and data published to your Amazon S3 bucket, which includes image frames and hero images. Your source images are unaffected.</p>
-    /// <p></p>
+    /// <p> The identifier for your AWS Key Management Service key (AWS KMS key). This is an optional parameter for label detection stream processors and should not be used to create a face search stream processor. You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt results and data published to your Amazon S3 bucket, which includes image frames and hero images. Your source images are unaffected. </p>
+    /// <p> </p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id
     }
@@ -233,33 +233,33 @@ impl CreateStreamProcessorInputBuilder {
     ///
     /// To override the contents of this collection use [`set_regions_of_interest`](Self::set_regions_of_interest).
     ///
-    /// <p>Specifies locations in the frames where Amazon Rekognition checks for objects or people. You can specify up to 10 regions of interest, and each region has either a polygon or a bounding box. This is an optional parameter for label detection stream processors and should not be used to create a face search stream processor.</p>
+    /// <p> Specifies locations in the frames where Amazon Rekognition checks for objects or people. You can specify up to 10 regions of interest, and each region has either a polygon or a bounding box. This is an optional parameter for label detection stream processors and should not be used to create a face search stream processor. </p>
     pub fn regions_of_interest(mut self, input: crate::types::RegionOfInterest) -> Self {
         let mut v = self.regions_of_interest.unwrap_or_default();
         v.push(input);
         self.regions_of_interest = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Specifies locations in the frames where Amazon Rekognition checks for objects or people. You can specify up to 10 regions of interest, and each region has either a polygon or a bounding box. This is an optional parameter for label detection stream processors and should not be used to create a face search stream processor.</p>
+    /// <p> Specifies locations in the frames where Amazon Rekognition checks for objects or people. You can specify up to 10 regions of interest, and each region has either a polygon or a bounding box. This is an optional parameter for label detection stream processors and should not be used to create a face search stream processor. </p>
     pub fn set_regions_of_interest(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RegionOfInterest>>) -> Self {
         self.regions_of_interest = input;
         self
     }
-    /// <p>Specifies locations in the frames where Amazon Rekognition checks for objects or people. You can specify up to 10 regions of interest, and each region has either a polygon or a bounding box. This is an optional parameter for label detection stream processors and should not be used to create a face search stream processor.</p>
+    /// <p> Specifies locations in the frames where Amazon Rekognition checks for objects or people. You can specify up to 10 regions of interest, and each region has either a polygon or a bounding box. This is an optional parameter for label detection stream processors and should not be used to create a face search stream processor. </p>
     pub fn get_regions_of_interest(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RegionOfInterest>> {
         &self.regions_of_interest
     }
-    /// <p>Shows whether you are sharing data with Rekognition to improve model performance. You can choose this option at the account level or on a per-stream basis. Note that if you opt out at the account level this setting is ignored on individual streams.</p>
+    /// <p> Shows whether you are sharing data with Rekognition to improve model performance. You can choose this option at the account level or on a per-stream basis. Note that if you opt out at the account level this setting is ignored on individual streams. </p>
     pub fn data_sharing_preference(mut self, input: crate::types::StreamProcessorDataSharingPreference) -> Self {
         self.data_sharing_preference = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Shows whether you are sharing data with Rekognition to improve model performance. You can choose this option at the account level or on a per-stream basis. Note that if you opt out at the account level this setting is ignored on individual streams.</p>
+    /// <p> Shows whether you are sharing data with Rekognition to improve model performance. You can choose this option at the account level or on a per-stream basis. Note that if you opt out at the account level this setting is ignored on individual streams. </p>
     pub fn set_data_sharing_preference(mut self, input: ::std::option::Option<crate::types::StreamProcessorDataSharingPreference>) -> Self {
         self.data_sharing_preference = input;
         self
     }
-    /// <p>Shows whether you are sharing data with Rekognition to improve model performance. You can choose this option at the account level or on a per-stream basis. Note that if you opt out at the account level this setting is ignored on individual streams.</p>
+    /// <p> Shows whether you are sharing data with Rekognition to improve model performance. You can choose this option at the account level or on a per-stream basis. Note that if you opt out at the account level this setting is ignored on individual streams. </p>
     pub fn get_data_sharing_preference(&self) -> &::std::option::Option<crate::types::StreamProcessorDataSharingPreference> {
         &self.data_sharing_preference
     }

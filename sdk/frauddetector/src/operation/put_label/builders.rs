@@ -22,7 +22,7 @@ impl PutLabelInputBuilder {
 }
 /// Fluent builder constructing a request to `PutLabel`.
 ///
-/// <p>Creates or updates label. A label classifies an event as fraudulent or legitimate. Labels are associated with event types and used to train supervised machine learning models in Amazon Fraud Detector.</p>
+/// <p>Creates or updates label. A label classifies an event as fraudulent or legitimate. Labels are associated with event types and used to train supervised machine learning models in Amazon Fraud Detector. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutLabelFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

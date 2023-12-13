@@ -20,7 +20,8 @@ pub struct TransformFilterCriteria {
     pub last_modified_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Filter on transforms last modified after this date.</p>
     pub last_modified_after: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Filters on datasets with a specific schema. The <code>Map<column, type></column,></code> object is an array of key-value pairs representing the schema this transform accepts, where <code>Column</code> is the name of a column, and <code>Type</code> is the type of the data such as an integer or string. Has an upper bound of 100 columns.</p>
+    /// <p>Filters on datasets with a specific schema. The <code>Map
+    /// <column, type></column,></code> object is an array of key-value pairs representing the schema this transform accepts, where <code>Column</code> is the name of a column, and <code>Type</code> is the type of the data such as an integer or string. Has an upper bound of 100 columns.</p>
     pub schema: ::std::option::Option<::std::vec::Vec<crate::types::SchemaColumn>>,
 }
 impl TransformFilterCriteria {
@@ -56,7 +57,8 @@ impl TransformFilterCriteria {
     pub fn last_modified_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_after.as_ref()
     }
-    /// <p>Filters on datasets with a specific schema. The <code>Map<column, type></column,></code> object is an array of key-value pairs representing the schema this transform accepts, where <code>Column</code> is the name of a column, and <code>Type</code> is the type of the data such as an integer or string. Has an upper bound of 100 columns.</p>
+    /// <p>Filters on datasets with a specific schema. The <code>Map
+    /// <column, type></column,></code> object is an array of key-value pairs representing the schema this transform accepts, where <code>Column</code> is the name of a column, and <code>Type</code> is the type of the data such as an integer or string. Has an upper bound of 100 columns.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.schema.is_none()`.
     pub fn schema(&self) -> &[crate::types::SchemaColumn] {
@@ -201,19 +203,22 @@ impl TransformFilterCriteriaBuilder {
     ///
     /// To override the contents of this collection use [`set_schema`](Self::set_schema).
     ///
-    /// <p>Filters on datasets with a specific schema. The <code>Map<column, type></column,></code> object is an array of key-value pairs representing the schema this transform accepts, where <code>Column</code> is the name of a column, and <code>Type</code> is the type of the data such as an integer or string. Has an upper bound of 100 columns.</p>
+    /// <p>Filters on datasets with a specific schema. The <code>Map
+    /// <column, type></column,></code> object is an array of key-value pairs representing the schema this transform accepts, where <code>Column</code> is the name of a column, and <code>Type</code> is the type of the data such as an integer or string. Has an upper bound of 100 columns.</p>
     pub fn schema(mut self, input: crate::types::SchemaColumn) -> Self {
         let mut v = self.schema.unwrap_or_default();
         v.push(input);
         self.schema = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Filters on datasets with a specific schema. The <code>Map<column, type></column,></code> object is an array of key-value pairs representing the schema this transform accepts, where <code>Column</code> is the name of a column, and <code>Type</code> is the type of the data such as an integer or string. Has an upper bound of 100 columns.</p>
+    /// <p>Filters on datasets with a specific schema. The <code>Map
+    /// <column, type></column,></code> object is an array of key-value pairs representing the schema this transform accepts, where <code>Column</code> is the name of a column, and <code>Type</code> is the type of the data such as an integer or string. Has an upper bound of 100 columns.</p>
     pub fn set_schema(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SchemaColumn>>) -> Self {
         self.schema = input;
         self
     }
-    /// <p>Filters on datasets with a specific schema. The <code>Map<column, type></column,></code> object is an array of key-value pairs representing the schema this transform accepts, where <code>Column</code> is the name of a column, and <code>Type</code> is the type of the data such as an integer or string. Has an upper bound of 100 columns.</p>
+    /// <p>Filters on datasets with a specific schema. The <code>Map
+    /// <column, type></column,></code> object is an array of key-value pairs representing the schema this transform accepts, where <code>Column</code> is the name of a column, and <code>Type</code> is the type of the data such as an integer or string. Has an upper bound of 100 columns.</p>
     pub fn get_schema(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaColumn>> {
         &self.schema
     }

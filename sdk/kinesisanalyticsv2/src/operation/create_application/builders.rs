@@ -182,17 +182,17 @@ impl CreateApplicationFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_cloud_watch_logging_options`](Self::set_cloud_watch_logging_options).
     ///
-    /// <p>Use this parameter to configure an Amazon CloudWatch log stream to monitor application configuration errors.</p>
+    /// <p>Use this parameter to configure an Amazon CloudWatch log stream to monitor application configuration errors. </p>
     pub fn cloud_watch_logging_options(mut self, input: crate::types::CloudWatchLoggingOption) -> Self {
         self.inner = self.inner.cloud_watch_logging_options(input);
         self
     }
-    /// <p>Use this parameter to configure an Amazon CloudWatch log stream to monitor application configuration errors.</p>
+    /// <p>Use this parameter to configure an Amazon CloudWatch log stream to monitor application configuration errors. </p>
     pub fn set_cloud_watch_logging_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOption>>) -> Self {
         self.inner = self.inner.set_cloud_watch_logging_options(input);
         self
     }
-    /// <p>Use this parameter to configure an Amazon CloudWatch log stream to monitor application configuration errors.</p>
+    /// <p>Use this parameter to configure an Amazon CloudWatch log stream to monitor application configuration errors. </p>
     pub fn get_cloud_watch_logging_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOption>> {
         self.inner.get_cloud_watch_logging_options()
     }

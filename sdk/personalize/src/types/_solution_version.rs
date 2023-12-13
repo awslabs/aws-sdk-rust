@@ -24,7 +24,7 @@ pub struct SolutionVersion {
     pub solution_config: ::std::option::Option<crate::types::SolutionConfig>,
     /// <p>The time used to train the model. You are billed for the time it takes to train a model. This field is visible only after Amazon Personalize successfully trains a model.</p>
     pub training_hours: ::std::option::Option<f64>,
-    /// <p>The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of creating an entirely new one.</p><important>
+    /// <p>The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of creating an entirely new one.</p> <important>
     /// <p>The <code>UPDATE</code> option can only be used when you already have an active solution version created from the input solution using the <code>FULL</code> option and the input solution was trained with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a> recipe or the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p>
     /// </important>
     pub training_mode: ::std::option::Option<crate::types::TrainingMode>,
@@ -33,18 +33,12 @@ pub struct SolutionVersion {
     /// <p>The status of the solution version.</p>
     /// <p>A solution version can be in one of the following states:</p>
     /// <ul>
-    /// <li>
-    /// <p>CREATE PENDING</p></li>
-    /// <li>
-    /// <p>CREATE IN_PROGRESS</p></li>
-    /// <li>
-    /// <p>ACTIVE</p></li>
-    /// <li>
-    /// <p>CREATE FAILED</p></li>
-    /// <li>
-    /// <p>CREATE STOPPING</p></li>
-    /// <li>
-    /// <p>CREATE STOPPED</p></li>
+    /// <li> <p>CREATE PENDING</p> </li>
+    /// <li> <p>CREATE IN_PROGRESS</p> </li>
+    /// <li> <p>ACTIVE</p> </li>
+    /// <li> <p>CREATE FAILED</p> </li>
+    /// <li> <p>CREATE STOPPING</p> </li>
+    /// <li> <p>CREATE STOPPED</p> </li>
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>If training a solution version fails, the reason for the failure.</p>
@@ -95,7 +89,7 @@ impl SolutionVersion {
     pub fn training_hours(&self) -> ::std::option::Option<f64> {
         self.training_hours
     }
-    /// <p>The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of creating an entirely new one.</p><important>
+    /// <p>The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of creating an entirely new one.</p> <important>
     /// <p>The <code>UPDATE</code> option can only be used when you already have an active solution version created from the input solution using the <code>FULL</code> option and the input solution was trained with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a> recipe or the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p>
     /// </important>
     pub fn training_mode(&self) -> ::std::option::Option<&crate::types::TrainingMode> {
@@ -108,18 +102,12 @@ impl SolutionVersion {
     /// <p>The status of the solution version.</p>
     /// <p>A solution version can be in one of the following states:</p>
     /// <ul>
-    /// <li>
-    /// <p>CREATE PENDING</p></li>
-    /// <li>
-    /// <p>CREATE IN_PROGRESS</p></li>
-    /// <li>
-    /// <p>ACTIVE</p></li>
-    /// <li>
-    /// <p>CREATE FAILED</p></li>
-    /// <li>
-    /// <p>CREATE STOPPING</p></li>
-    /// <li>
-    /// <p>CREATE STOPPED</p></li>
+    /// <li> <p>CREATE PENDING</p> </li>
+    /// <li> <p>CREATE IN_PROGRESS</p> </li>
+    /// <li> <p>ACTIVE</p> </li>
+    /// <li> <p>CREATE FAILED</p> </li>
+    /// <li> <p>CREATE STOPPING</p> </li>
+    /// <li> <p>CREATE STOPPED</p> </li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
@@ -306,21 +294,21 @@ impl SolutionVersionBuilder {
     pub fn get_training_hours(&self) -> &::std::option::Option<f64> {
         &self.training_hours
     }
-    /// <p>The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of creating an entirely new one.</p><important>
+    /// <p>The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of creating an entirely new one.</p> <important>
     /// <p>The <code>UPDATE</code> option can only be used when you already have an active solution version created from the input solution using the <code>FULL</code> option and the input solution was trained with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a> recipe or the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p>
     /// </important>
     pub fn training_mode(mut self, input: crate::types::TrainingMode) -> Self {
         self.training_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of creating an entirely new one.</p><important>
+    /// <p>The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of creating an entirely new one.</p> <important>
     /// <p>The <code>UPDATE</code> option can only be used when you already have an active solution version created from the input solution using the <code>FULL</code> option and the input solution was trained with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a> recipe or the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p>
     /// </important>
     pub fn set_training_mode(mut self, input: ::std::option::Option<crate::types::TrainingMode>) -> Self {
         self.training_mode = input;
         self
     }
-    /// <p>The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of creating an entirely new one.</p><important>
+    /// <p>The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of creating an entirely new one.</p> <important>
     /// <p>The <code>UPDATE</code> option can only be used when you already have an active solution version created from the input solution using the <code>FULL</code> option and the input solution was trained with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a> recipe or the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p>
     /// </important>
     pub fn get_training_mode(&self) -> &::std::option::Option<crate::types::TrainingMode> {
@@ -343,18 +331,12 @@ impl SolutionVersionBuilder {
     /// <p>The status of the solution version.</p>
     /// <p>A solution version can be in one of the following states:</p>
     /// <ul>
-    /// <li>
-    /// <p>CREATE PENDING</p></li>
-    /// <li>
-    /// <p>CREATE IN_PROGRESS</p></li>
-    /// <li>
-    /// <p>ACTIVE</p></li>
-    /// <li>
-    /// <p>CREATE FAILED</p></li>
-    /// <li>
-    /// <p>CREATE STOPPING</p></li>
-    /// <li>
-    /// <p>CREATE STOPPED</p></li>
+    /// <li> <p>CREATE PENDING</p> </li>
+    /// <li> <p>CREATE IN_PROGRESS</p> </li>
+    /// <li> <p>ACTIVE</p> </li>
+    /// <li> <p>CREATE FAILED</p> </li>
+    /// <li> <p>CREATE STOPPING</p> </li>
+    /// <li> <p>CREATE STOPPED</p> </li>
     /// </ul>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -363,18 +345,12 @@ impl SolutionVersionBuilder {
     /// <p>The status of the solution version.</p>
     /// <p>A solution version can be in one of the following states:</p>
     /// <ul>
-    /// <li>
-    /// <p>CREATE PENDING</p></li>
-    /// <li>
-    /// <p>CREATE IN_PROGRESS</p></li>
-    /// <li>
-    /// <p>ACTIVE</p></li>
-    /// <li>
-    /// <p>CREATE FAILED</p></li>
-    /// <li>
-    /// <p>CREATE STOPPING</p></li>
-    /// <li>
-    /// <p>CREATE STOPPED</p></li>
+    /// <li> <p>CREATE PENDING</p> </li>
+    /// <li> <p>CREATE IN_PROGRESS</p> </li>
+    /// <li> <p>ACTIVE</p> </li>
+    /// <li> <p>CREATE FAILED</p> </li>
+    /// <li> <p>CREATE STOPPING</p> </li>
+    /// <li> <p>CREATE STOPPED</p> </li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
@@ -383,18 +359,12 @@ impl SolutionVersionBuilder {
     /// <p>The status of the solution version.</p>
     /// <p>A solution version can be in one of the following states:</p>
     /// <ul>
-    /// <li>
-    /// <p>CREATE PENDING</p></li>
-    /// <li>
-    /// <p>CREATE IN_PROGRESS</p></li>
-    /// <li>
-    /// <p>ACTIVE</p></li>
-    /// <li>
-    /// <p>CREATE FAILED</p></li>
-    /// <li>
-    /// <p>CREATE STOPPING</p></li>
-    /// <li>
-    /// <p>CREATE STOPPED</p></li>
+    /// <li> <p>CREATE PENDING</p> </li>
+    /// <li> <p>CREATE IN_PROGRESS</p> </li>
+    /// <li> <p>ACTIVE</p> </li>
+    /// <li> <p>CREATE FAILED</p> </li>
+    /// <li> <p>CREATE STOPPING</p> </li>
+    /// <li> <p>CREATE STOPPED</p> </li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status

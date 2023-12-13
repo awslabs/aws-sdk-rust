@@ -19,20 +19,15 @@ pub struct TrainingJob {
     /// <p>The status of the training job.</p>
     /// <p>Training job statuses are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>InProgress</code> - The training is in progress.</p></li>
-    /// <li>
-    /// <p><code>Completed</code> - The training job has completed.</p></li>
-    /// <li>
-    /// <p><code>Failed</code> - The training job has failed. To see the reason for the failure, see the <code>FailureReason</code> field in the response to a <code>DescribeTrainingJobResponse</code> call.</p></li>
-    /// <li>
-    /// <p><code>Stopping</code> - The training job is stopping.</p></li>
-    /// <li>
-    /// <p><code>Stopped</code> - The training job has stopped.</p></li>
+    /// <li> <p> <code>InProgress</code> - The training is in progress.</p> </li>
+    /// <li> <p> <code>Completed</code> - The training job has completed.</p> </li>
+    /// <li> <p> <code>Failed</code> - The training job has failed. To see the reason for the failure, see the <code>FailureReason</code> field in the response to a <code>DescribeTrainingJobResponse</code> call.</p> </li>
+    /// <li> <p> <code>Stopping</code> - The training job is stopping.</p> </li>
+    /// <li> <p> <code>Stopped</code> - The training job has stopped.</p> </li>
     /// </ul>
-    /// <p>For more detailed information, see <code>SecondaryStatus</code>.</p>
+    /// <p>For more detailed information, see <code>SecondaryStatus</code>. </p>
     pub training_job_status: ::std::option::Option<crate::types::TrainingJobStatus>,
-    /// <p>Provides detailed information about the state of the training job. For detailed information about the secondary status of the training job, see <code>StatusMessage</code> under <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SecondaryStatusTransition.html">SecondaryStatusTransition</a>.</p>
+    /// <p> Provides detailed information about the state of the training job. For detailed information about the secondary status of the training job, see <code>StatusMessage</code> under <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SecondaryStatusTransition.html">SecondaryStatusTransition</a>.</p>
     /// <p>SageMaker provides primary statuses and secondary statuses that apply to each of them:</p>
     /// <dl>
     /// <dt>
@@ -40,14 +35,10 @@ pub struct TrainingJob {
     /// </dt>
     /// <dd>
     /// <ul>
-    /// <li>
-    /// <p><code>Starting</code> - Starting the training job.</p></li>
-    /// <li>
-    /// <p><code>Downloading</code> - An optional stage for algorithms that support <code>File</code> training input mode. It indicates that data is being downloaded to the ML storage volumes.</p></li>
-    /// <li>
-    /// <p><code>Training</code> - Training is in progress.</p></li>
-    /// <li>
-    /// <p><code>Uploading</code> - Training is complete and the model artifacts are being uploaded to the S3 location.</p></li>
+    /// <li> <p> <code>Starting</code> - Starting the training job.</p> </li>
+    /// <li> <p> <code>Downloading</code> - An optional stage for algorithms that support <code>File</code> training input mode. It indicates that data is being downloaded to the ML storage volumes.</p> </li>
+    /// <li> <p> <code>Training</code> - Training is in progress.</p> </li>
+    /// <li> <p> <code>Uploading</code> - Training is complete and the model artifacts are being uploaded to the S3 location.</p> </li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -55,8 +46,7 @@ pub struct TrainingJob {
     /// </dt>
     /// <dd>
     /// <ul>
-    /// <li>
-    /// <p><code>Completed</code> - The training job has completed.</p></li>
+    /// <li> <p> <code>Completed</code> - The training job has completed.</p> </li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -64,8 +54,7 @@ pub struct TrainingJob {
     /// </dt>
     /// <dd>
     /// <ul>
-    /// <li>
-    /// <p><code>Failed</code> - The training job has failed. The reason for the failure is returned in the <code>FailureReason</code> field of <code>DescribeTrainingJobResponse</code>.</p></li>
+    /// <li> <p> <code>Failed</code> - The training job has failed. The reason for the failure is returned in the <code>FailureReason</code> field of <code>DescribeTrainingJobResponse</code>.</p> </li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -73,10 +62,8 @@ pub struct TrainingJob {
     /// </dt>
     /// <dd>
     /// <ul>
-    /// <li>
-    /// <p><code>MaxRuntimeExceeded</code> - The job stopped because it exceeded the maximum allowed runtime.</p></li>
-    /// <li>
-    /// <p><code>Stopped</code> - The training job has stopped.</p></li>
+    /// <li> <p> <code>MaxRuntimeExceeded</code> - The job stopped because it exceeded the maximum allowed runtime.</p> </li>
+    /// <li> <p> <code>Stopped</code> - The training job has stopped.</p> </li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -84,21 +71,17 @@ pub struct TrainingJob {
     /// </dt>
     /// <dd>
     /// <ul>
-    /// <li>
-    /// <p><code>Stopping</code> - Stopping the training job.</p></li>
+    /// <li> <p> <code>Stopping</code> - Stopping the training job.</p> </li>
     /// </ul>
     /// </dd>
-    /// </dl><important>
-    /// <p>Valid values for <code>SecondaryStatus</code> are subject to change.</p>
+    /// </dl> <important>
+    /// <p>Valid values for <code>SecondaryStatus</code> are subject to change. </p>
     /// </important>
     /// <p>We no longer support the following secondary statuses:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>LaunchingMLInstances</code></p></li>
-    /// <li>
-    /// <p><code>PreparingTrainingStack</code></p></li>
-    /// <li>
-    /// <p><code>DownloadingTrainingImage</code></p></li>
+    /// <li> <p> <code>LaunchingMLInstances</code> </p> </li>
+    /// <li> <p> <code>PreparingTrainingStack</code> </p> </li>
+    /// <li> <p> <code>DownloadingTrainingImage</code> </p> </li>
     /// </ul>
     pub secondary_status: ::std::option::Option<crate::types::SecondaryStatus>,
     /// <p>If the training job failed, the reason it failed.</p>
@@ -119,7 +102,7 @@ pub struct TrainingJob {
     /// <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object that specifies the VPC that this training job has access to. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
     pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     /// <p>Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.</p>
-    /// <p>To stop a job, SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost.</p>
+    /// <p>To stop a job, SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p>
     pub stopping_condition: ::std::option::Option<crate::types::StoppingCondition>,
     /// <p>A timestamp that indicates when the training job was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -139,7 +122,7 @@ pub struct TrainingJob {
     pub enable_inter_container_traffic_encryption: ::std::option::Option<bool>,
     /// <p>When true, enables managed spot training using Amazon EC2 Spot instances to run training jobs instead of on-demand instances. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-managed-spot-training.html">Managed Spot Training</a>.</p>
     pub enable_managed_spot_training: ::std::option::Option<bool>,
-    /// <p>Contains information about the output location for managed spot training checkpoint data.</p>
+    /// <p>Contains information about the output location for managed spot training checkpoint data. </p>
     pub checkpoint_config: ::std::option::Option<crate::types::CheckpointConfig>,
     /// <p>The training time in seconds.</p>
     pub training_time_in_seconds: ::std::option::Option<i32>,
@@ -149,12 +132,9 @@ pub struct TrainingJob {
     pub debug_hook_config: ::std::option::Option<crate::types::DebugHookConfig>,
     /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p>
     /// <ul>
-    /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateProcessingJob.html">CreateProcessingJob</a></p></li>
-    /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a></p></li>
-    /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTransformJob.html">CreateTransformJob</a></p></li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateProcessingJob.html">CreateProcessingJob</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTransformJob.html">CreateTransformJob</a> </p> </li>
     /// </ul>
     pub experiment_config: ::std::option::Option<crate::types::ExperimentConfig>,
     /// <p>Information about the debug rule configuration.</p>
@@ -200,22 +180,17 @@ impl TrainingJob {
     /// <p>The status of the training job.</p>
     /// <p>Training job statuses are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>InProgress</code> - The training is in progress.</p></li>
-    /// <li>
-    /// <p><code>Completed</code> - The training job has completed.</p></li>
-    /// <li>
-    /// <p><code>Failed</code> - The training job has failed. To see the reason for the failure, see the <code>FailureReason</code> field in the response to a <code>DescribeTrainingJobResponse</code> call.</p></li>
-    /// <li>
-    /// <p><code>Stopping</code> - The training job is stopping.</p></li>
-    /// <li>
-    /// <p><code>Stopped</code> - The training job has stopped.</p></li>
+    /// <li> <p> <code>InProgress</code> - The training is in progress.</p> </li>
+    /// <li> <p> <code>Completed</code> - The training job has completed.</p> </li>
+    /// <li> <p> <code>Failed</code> - The training job has failed. To see the reason for the failure, see the <code>FailureReason</code> field in the response to a <code>DescribeTrainingJobResponse</code> call.</p> </li>
+    /// <li> <p> <code>Stopping</code> - The training job is stopping.</p> </li>
+    /// <li> <p> <code>Stopped</code> - The training job has stopped.</p> </li>
     /// </ul>
-    /// <p>For more detailed information, see <code>SecondaryStatus</code>.</p>
+    /// <p>For more detailed information, see <code>SecondaryStatus</code>. </p>
     pub fn training_job_status(&self) -> ::std::option::Option<&crate::types::TrainingJobStatus> {
         self.training_job_status.as_ref()
     }
-    /// <p>Provides detailed information about the state of the training job. For detailed information about the secondary status of the training job, see <code>StatusMessage</code> under <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SecondaryStatusTransition.html">SecondaryStatusTransition</a>.</p>
+    /// <p> Provides detailed information about the state of the training job. For detailed information about the secondary status of the training job, see <code>StatusMessage</code> under <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SecondaryStatusTransition.html">SecondaryStatusTransition</a>.</p>
     /// <p>SageMaker provides primary statuses and secondary statuses that apply to each of them:</p>
     /// <dl>
     /// <dt>
@@ -223,14 +198,10 @@ impl TrainingJob {
     /// </dt>
     /// <dd>
     /// <ul>
-    /// <li>
-    /// <p><code>Starting</code> - Starting the training job.</p></li>
-    /// <li>
-    /// <p><code>Downloading</code> - An optional stage for algorithms that support <code>File</code> training input mode. It indicates that data is being downloaded to the ML storage volumes.</p></li>
-    /// <li>
-    /// <p><code>Training</code> - Training is in progress.</p></li>
-    /// <li>
-    /// <p><code>Uploading</code> - Training is complete and the model artifacts are being uploaded to the S3 location.</p></li>
+    /// <li> <p> <code>Starting</code> - Starting the training job.</p> </li>
+    /// <li> <p> <code>Downloading</code> - An optional stage for algorithms that support <code>File</code> training input mode. It indicates that data is being downloaded to the ML storage volumes.</p> </li>
+    /// <li> <p> <code>Training</code> - Training is in progress.</p> </li>
+    /// <li> <p> <code>Uploading</code> - Training is complete and the model artifacts are being uploaded to the S3 location.</p> </li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -238,8 +209,7 @@ impl TrainingJob {
     /// </dt>
     /// <dd>
     /// <ul>
-    /// <li>
-    /// <p><code>Completed</code> - The training job has completed.</p></li>
+    /// <li> <p> <code>Completed</code> - The training job has completed.</p> </li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -247,8 +217,7 @@ impl TrainingJob {
     /// </dt>
     /// <dd>
     /// <ul>
-    /// <li>
-    /// <p><code>Failed</code> - The training job has failed. The reason for the failure is returned in the <code>FailureReason</code> field of <code>DescribeTrainingJobResponse</code>.</p></li>
+    /// <li> <p> <code>Failed</code> - The training job has failed. The reason for the failure is returned in the <code>FailureReason</code> field of <code>DescribeTrainingJobResponse</code>.</p> </li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -256,10 +225,8 @@ impl TrainingJob {
     /// </dt>
     /// <dd>
     /// <ul>
-    /// <li>
-    /// <p><code>MaxRuntimeExceeded</code> - The job stopped because it exceeded the maximum allowed runtime.</p></li>
-    /// <li>
-    /// <p><code>Stopped</code> - The training job has stopped.</p></li>
+    /// <li> <p> <code>MaxRuntimeExceeded</code> - The job stopped because it exceeded the maximum allowed runtime.</p> </li>
+    /// <li> <p> <code>Stopped</code> - The training job has stopped.</p> </li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -267,21 +234,17 @@ impl TrainingJob {
     /// </dt>
     /// <dd>
     /// <ul>
-    /// <li>
-    /// <p><code>Stopping</code> - Stopping the training job.</p></li>
+    /// <li> <p> <code>Stopping</code> - Stopping the training job.</p> </li>
     /// </ul>
     /// </dd>
-    /// </dl><important>
-    /// <p>Valid values for <code>SecondaryStatus</code> are subject to change.</p>
+    /// </dl> <important>
+    /// <p>Valid values for <code>SecondaryStatus</code> are subject to change. </p>
     /// </important>
     /// <p>We no longer support the following secondary statuses:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>LaunchingMLInstances</code></p></li>
-    /// <li>
-    /// <p><code>PreparingTrainingStack</code></p></li>
-    /// <li>
-    /// <p><code>DownloadingTrainingImage</code></p></li>
+    /// <li> <p> <code>LaunchingMLInstances</code> </p> </li>
+    /// <li> <p> <code>PreparingTrainingStack</code> </p> </li>
+    /// <li> <p> <code>DownloadingTrainingImage</code> </p> </li>
     /// </ul>
     pub fn secondary_status(&self) -> ::std::option::Option<&crate::types::SecondaryStatus> {
         self.secondary_status.as_ref()
@@ -322,7 +285,7 @@ impl TrainingJob {
         self.vpc_config.as_ref()
     }
     /// <p>Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.</p>
-    /// <p>To stop a job, SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost.</p>
+    /// <p>To stop a job, SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p>
     pub fn stopping_condition(&self) -> ::std::option::Option<&crate::types::StoppingCondition> {
         self.stopping_condition.as_ref()
     }
@@ -366,7 +329,7 @@ impl TrainingJob {
     pub fn enable_managed_spot_training(&self) -> ::std::option::Option<bool> {
         self.enable_managed_spot_training
     }
-    /// <p>Contains information about the output location for managed spot training checkpoint data.</p>
+    /// <p>Contains information about the output location for managed spot training checkpoint data. </p>
     pub fn checkpoint_config(&self) -> ::std::option::Option<&crate::types::CheckpointConfig> {
         self.checkpoint_config.as_ref()
     }
@@ -384,12 +347,9 @@ impl TrainingJob {
     }
     /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p>
     /// <ul>
-    /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateProcessingJob.html">CreateProcessingJob</a></p></li>
-    /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a></p></li>
-    /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTransformJob.html">CreateTransformJob</a></p></li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateProcessingJob.html">CreateProcessingJob</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTransformJob.html">CreateTransformJob</a> </p> </li>
     /// </ul>
     pub fn experiment_config(&self) -> ::std::option::Option<&crate::types::ExperimentConfig> {
         self.experiment_config.as_ref()
@@ -567,18 +527,13 @@ impl TrainingJobBuilder {
     /// <p>The status of the training job.</p>
     /// <p>Training job statuses are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>InProgress</code> - The training is in progress.</p></li>
-    /// <li>
-    /// <p><code>Completed</code> - The training job has completed.</p></li>
-    /// <li>
-    /// <p><code>Failed</code> - The training job has failed. To see the reason for the failure, see the <code>FailureReason</code> field in the response to a <code>DescribeTrainingJobResponse</code> call.</p></li>
-    /// <li>
-    /// <p><code>Stopping</code> - The training job is stopping.</p></li>
-    /// <li>
-    /// <p><code>Stopped</code> - The training job has stopped.</p></li>
+    /// <li> <p> <code>InProgress</code> - The training is in progress.</p> </li>
+    /// <li> <p> <code>Completed</code> - The training job has completed.</p> </li>
+    /// <li> <p> <code>Failed</code> - The training job has failed. To see the reason for the failure, see the <code>FailureReason</code> field in the response to a <code>DescribeTrainingJobResponse</code> call.</p> </li>
+    /// <li> <p> <code>Stopping</code> - The training job is stopping.</p> </li>
+    /// <li> <p> <code>Stopped</code> - The training job has stopped.</p> </li>
     /// </ul>
-    /// <p>For more detailed information, see <code>SecondaryStatus</code>.</p>
+    /// <p>For more detailed information, see <code>SecondaryStatus</code>. </p>
     pub fn training_job_status(mut self, input: crate::types::TrainingJobStatus) -> Self {
         self.training_job_status = ::std::option::Option::Some(input);
         self
@@ -586,18 +541,13 @@ impl TrainingJobBuilder {
     /// <p>The status of the training job.</p>
     /// <p>Training job statuses are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>InProgress</code> - The training is in progress.</p></li>
-    /// <li>
-    /// <p><code>Completed</code> - The training job has completed.</p></li>
-    /// <li>
-    /// <p><code>Failed</code> - The training job has failed. To see the reason for the failure, see the <code>FailureReason</code> field in the response to a <code>DescribeTrainingJobResponse</code> call.</p></li>
-    /// <li>
-    /// <p><code>Stopping</code> - The training job is stopping.</p></li>
-    /// <li>
-    /// <p><code>Stopped</code> - The training job has stopped.</p></li>
+    /// <li> <p> <code>InProgress</code> - The training is in progress.</p> </li>
+    /// <li> <p> <code>Completed</code> - The training job has completed.</p> </li>
+    /// <li> <p> <code>Failed</code> - The training job has failed. To see the reason for the failure, see the <code>FailureReason</code> field in the response to a <code>DescribeTrainingJobResponse</code> call.</p> </li>
+    /// <li> <p> <code>Stopping</code> - The training job is stopping.</p> </li>
+    /// <li> <p> <code>Stopped</code> - The training job has stopped.</p> </li>
     /// </ul>
-    /// <p>For more detailed information, see <code>SecondaryStatus</code>.</p>
+    /// <p>For more detailed information, see <code>SecondaryStatus</code>. </p>
     pub fn set_training_job_status(mut self, input: ::std::option::Option<crate::types::TrainingJobStatus>) -> Self {
         self.training_job_status = input;
         self
@@ -605,22 +555,17 @@ impl TrainingJobBuilder {
     /// <p>The status of the training job.</p>
     /// <p>Training job statuses are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>InProgress</code> - The training is in progress.</p></li>
-    /// <li>
-    /// <p><code>Completed</code> - The training job has completed.</p></li>
-    /// <li>
-    /// <p><code>Failed</code> - The training job has failed. To see the reason for the failure, see the <code>FailureReason</code> field in the response to a <code>DescribeTrainingJobResponse</code> call.</p></li>
-    /// <li>
-    /// <p><code>Stopping</code> - The training job is stopping.</p></li>
-    /// <li>
-    /// <p><code>Stopped</code> - The training job has stopped.</p></li>
+    /// <li> <p> <code>InProgress</code> - The training is in progress.</p> </li>
+    /// <li> <p> <code>Completed</code> - The training job has completed.</p> </li>
+    /// <li> <p> <code>Failed</code> - The training job has failed. To see the reason for the failure, see the <code>FailureReason</code> field in the response to a <code>DescribeTrainingJobResponse</code> call.</p> </li>
+    /// <li> <p> <code>Stopping</code> - The training job is stopping.</p> </li>
+    /// <li> <p> <code>Stopped</code> - The training job has stopped.</p> </li>
     /// </ul>
-    /// <p>For more detailed information, see <code>SecondaryStatus</code>.</p>
+    /// <p>For more detailed information, see <code>SecondaryStatus</code>. </p>
     pub fn get_training_job_status(&self) -> &::std::option::Option<crate::types::TrainingJobStatus> {
         &self.training_job_status
     }
-    /// <p>Provides detailed information about the state of the training job. For detailed information about the secondary status of the training job, see <code>StatusMessage</code> under <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SecondaryStatusTransition.html">SecondaryStatusTransition</a>.</p>
+    /// <p> Provides detailed information about the state of the training job. For detailed information about the secondary status of the training job, see <code>StatusMessage</code> under <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SecondaryStatusTransition.html">SecondaryStatusTransition</a>.</p>
     /// <p>SageMaker provides primary statuses and secondary statuses that apply to each of them:</p>
     /// <dl>
     /// <dt>
@@ -628,14 +573,10 @@ impl TrainingJobBuilder {
     /// </dt>
     /// <dd>
     /// <ul>
-    /// <li>
-    /// <p><code>Starting</code> - Starting the training job.</p></li>
-    /// <li>
-    /// <p><code>Downloading</code> - An optional stage for algorithms that support <code>File</code> training input mode. It indicates that data is being downloaded to the ML storage volumes.</p></li>
-    /// <li>
-    /// <p><code>Training</code> - Training is in progress.</p></li>
-    /// <li>
-    /// <p><code>Uploading</code> - Training is complete and the model artifacts are being uploaded to the S3 location.</p></li>
+    /// <li> <p> <code>Starting</code> - Starting the training job.</p> </li>
+    /// <li> <p> <code>Downloading</code> - An optional stage for algorithms that support <code>File</code> training input mode. It indicates that data is being downloaded to the ML storage volumes.</p> </li>
+    /// <li> <p> <code>Training</code> - Training is in progress.</p> </li>
+    /// <li> <p> <code>Uploading</code> - Training is complete and the model artifacts are being uploaded to the S3 location.</p> </li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -643,8 +584,7 @@ impl TrainingJobBuilder {
     /// </dt>
     /// <dd>
     /// <ul>
-    /// <li>
-    /// <p><code>Completed</code> - The training job has completed.</p></li>
+    /// <li> <p> <code>Completed</code> - The training job has completed.</p> </li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -652,8 +592,7 @@ impl TrainingJobBuilder {
     /// </dt>
     /// <dd>
     /// <ul>
-    /// <li>
-    /// <p><code>Failed</code> - The training job has failed. The reason for the failure is returned in the <code>FailureReason</code> field of <code>DescribeTrainingJobResponse</code>.</p></li>
+    /// <li> <p> <code>Failed</code> - The training job has failed. The reason for the failure is returned in the <code>FailureReason</code> field of <code>DescribeTrainingJobResponse</code>.</p> </li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -661,10 +600,8 @@ impl TrainingJobBuilder {
     /// </dt>
     /// <dd>
     /// <ul>
-    /// <li>
-    /// <p><code>MaxRuntimeExceeded</code> - The job stopped because it exceeded the maximum allowed runtime.</p></li>
-    /// <li>
-    /// <p><code>Stopped</code> - The training job has stopped.</p></li>
+    /// <li> <p> <code>MaxRuntimeExceeded</code> - The job stopped because it exceeded the maximum allowed runtime.</p> </li>
+    /// <li> <p> <code>Stopped</code> - The training job has stopped.</p> </li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -672,27 +609,23 @@ impl TrainingJobBuilder {
     /// </dt>
     /// <dd>
     /// <ul>
-    /// <li>
-    /// <p><code>Stopping</code> - Stopping the training job.</p></li>
+    /// <li> <p> <code>Stopping</code> - Stopping the training job.</p> </li>
     /// </ul>
     /// </dd>
-    /// </dl><important>
-    /// <p>Valid values for <code>SecondaryStatus</code> are subject to change.</p>
+    /// </dl> <important>
+    /// <p>Valid values for <code>SecondaryStatus</code> are subject to change. </p>
     /// </important>
     /// <p>We no longer support the following secondary statuses:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>LaunchingMLInstances</code></p></li>
-    /// <li>
-    /// <p><code>PreparingTrainingStack</code></p></li>
-    /// <li>
-    /// <p><code>DownloadingTrainingImage</code></p></li>
+    /// <li> <p> <code>LaunchingMLInstances</code> </p> </li>
+    /// <li> <p> <code>PreparingTrainingStack</code> </p> </li>
+    /// <li> <p> <code>DownloadingTrainingImage</code> </p> </li>
     /// </ul>
     pub fn secondary_status(mut self, input: crate::types::SecondaryStatus) -> Self {
         self.secondary_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Provides detailed information about the state of the training job. For detailed information about the secondary status of the training job, see <code>StatusMessage</code> under <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SecondaryStatusTransition.html">SecondaryStatusTransition</a>.</p>
+    /// <p> Provides detailed information about the state of the training job. For detailed information about the secondary status of the training job, see <code>StatusMessage</code> under <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SecondaryStatusTransition.html">SecondaryStatusTransition</a>.</p>
     /// <p>SageMaker provides primary statuses and secondary statuses that apply to each of them:</p>
     /// <dl>
     /// <dt>
@@ -700,14 +633,10 @@ impl TrainingJobBuilder {
     /// </dt>
     /// <dd>
     /// <ul>
-    /// <li>
-    /// <p><code>Starting</code> - Starting the training job.</p></li>
-    /// <li>
-    /// <p><code>Downloading</code> - An optional stage for algorithms that support <code>File</code> training input mode. It indicates that data is being downloaded to the ML storage volumes.</p></li>
-    /// <li>
-    /// <p><code>Training</code> - Training is in progress.</p></li>
-    /// <li>
-    /// <p><code>Uploading</code> - Training is complete and the model artifacts are being uploaded to the S3 location.</p></li>
+    /// <li> <p> <code>Starting</code> - Starting the training job.</p> </li>
+    /// <li> <p> <code>Downloading</code> - An optional stage for algorithms that support <code>File</code> training input mode. It indicates that data is being downloaded to the ML storage volumes.</p> </li>
+    /// <li> <p> <code>Training</code> - Training is in progress.</p> </li>
+    /// <li> <p> <code>Uploading</code> - Training is complete and the model artifacts are being uploaded to the S3 location.</p> </li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -715,8 +644,7 @@ impl TrainingJobBuilder {
     /// </dt>
     /// <dd>
     /// <ul>
-    /// <li>
-    /// <p><code>Completed</code> - The training job has completed.</p></li>
+    /// <li> <p> <code>Completed</code> - The training job has completed.</p> </li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -724,8 +652,7 @@ impl TrainingJobBuilder {
     /// </dt>
     /// <dd>
     /// <ul>
-    /// <li>
-    /// <p><code>Failed</code> - The training job has failed. The reason for the failure is returned in the <code>FailureReason</code> field of <code>DescribeTrainingJobResponse</code>.</p></li>
+    /// <li> <p> <code>Failed</code> - The training job has failed. The reason for the failure is returned in the <code>FailureReason</code> field of <code>DescribeTrainingJobResponse</code>.</p> </li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -733,10 +660,8 @@ impl TrainingJobBuilder {
     /// </dt>
     /// <dd>
     /// <ul>
-    /// <li>
-    /// <p><code>MaxRuntimeExceeded</code> - The job stopped because it exceeded the maximum allowed runtime.</p></li>
-    /// <li>
-    /// <p><code>Stopped</code> - The training job has stopped.</p></li>
+    /// <li> <p> <code>MaxRuntimeExceeded</code> - The job stopped because it exceeded the maximum allowed runtime.</p> </li>
+    /// <li> <p> <code>Stopped</code> - The training job has stopped.</p> </li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -744,27 +669,23 @@ impl TrainingJobBuilder {
     /// </dt>
     /// <dd>
     /// <ul>
-    /// <li>
-    /// <p><code>Stopping</code> - Stopping the training job.</p></li>
+    /// <li> <p> <code>Stopping</code> - Stopping the training job.</p> </li>
     /// </ul>
     /// </dd>
-    /// </dl><important>
-    /// <p>Valid values for <code>SecondaryStatus</code> are subject to change.</p>
+    /// </dl> <important>
+    /// <p>Valid values for <code>SecondaryStatus</code> are subject to change. </p>
     /// </important>
     /// <p>We no longer support the following secondary statuses:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>LaunchingMLInstances</code></p></li>
-    /// <li>
-    /// <p><code>PreparingTrainingStack</code></p></li>
-    /// <li>
-    /// <p><code>DownloadingTrainingImage</code></p></li>
+    /// <li> <p> <code>LaunchingMLInstances</code> </p> </li>
+    /// <li> <p> <code>PreparingTrainingStack</code> </p> </li>
+    /// <li> <p> <code>DownloadingTrainingImage</code> </p> </li>
     /// </ul>
     pub fn set_secondary_status(mut self, input: ::std::option::Option<crate::types::SecondaryStatus>) -> Self {
         self.secondary_status = input;
         self
     }
-    /// <p>Provides detailed information about the state of the training job. For detailed information about the secondary status of the training job, see <code>StatusMessage</code> under <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SecondaryStatusTransition.html">SecondaryStatusTransition</a>.</p>
+    /// <p> Provides detailed information about the state of the training job. For detailed information about the secondary status of the training job, see <code>StatusMessage</code> under <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SecondaryStatusTransition.html">SecondaryStatusTransition</a>.</p>
     /// <p>SageMaker provides primary statuses and secondary statuses that apply to each of them:</p>
     /// <dl>
     /// <dt>
@@ -772,14 +693,10 @@ impl TrainingJobBuilder {
     /// </dt>
     /// <dd>
     /// <ul>
-    /// <li>
-    /// <p><code>Starting</code> - Starting the training job.</p></li>
-    /// <li>
-    /// <p><code>Downloading</code> - An optional stage for algorithms that support <code>File</code> training input mode. It indicates that data is being downloaded to the ML storage volumes.</p></li>
-    /// <li>
-    /// <p><code>Training</code> - Training is in progress.</p></li>
-    /// <li>
-    /// <p><code>Uploading</code> - Training is complete and the model artifacts are being uploaded to the S3 location.</p></li>
+    /// <li> <p> <code>Starting</code> - Starting the training job.</p> </li>
+    /// <li> <p> <code>Downloading</code> - An optional stage for algorithms that support <code>File</code> training input mode. It indicates that data is being downloaded to the ML storage volumes.</p> </li>
+    /// <li> <p> <code>Training</code> - Training is in progress.</p> </li>
+    /// <li> <p> <code>Uploading</code> - Training is complete and the model artifacts are being uploaded to the S3 location.</p> </li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -787,8 +704,7 @@ impl TrainingJobBuilder {
     /// </dt>
     /// <dd>
     /// <ul>
-    /// <li>
-    /// <p><code>Completed</code> - The training job has completed.</p></li>
+    /// <li> <p> <code>Completed</code> - The training job has completed.</p> </li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -796,8 +712,7 @@ impl TrainingJobBuilder {
     /// </dt>
     /// <dd>
     /// <ul>
-    /// <li>
-    /// <p><code>Failed</code> - The training job has failed. The reason for the failure is returned in the <code>FailureReason</code> field of <code>DescribeTrainingJobResponse</code>.</p></li>
+    /// <li> <p> <code>Failed</code> - The training job has failed. The reason for the failure is returned in the <code>FailureReason</code> field of <code>DescribeTrainingJobResponse</code>.</p> </li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -805,10 +720,8 @@ impl TrainingJobBuilder {
     /// </dt>
     /// <dd>
     /// <ul>
-    /// <li>
-    /// <p><code>MaxRuntimeExceeded</code> - The job stopped because it exceeded the maximum allowed runtime.</p></li>
-    /// <li>
-    /// <p><code>Stopped</code> - The training job has stopped.</p></li>
+    /// <li> <p> <code>MaxRuntimeExceeded</code> - The job stopped because it exceeded the maximum allowed runtime.</p> </li>
+    /// <li> <p> <code>Stopped</code> - The training job has stopped.</p> </li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -816,21 +729,17 @@ impl TrainingJobBuilder {
     /// </dt>
     /// <dd>
     /// <ul>
-    /// <li>
-    /// <p><code>Stopping</code> - Stopping the training job.</p></li>
+    /// <li> <p> <code>Stopping</code> - Stopping the training job.</p> </li>
     /// </ul>
     /// </dd>
-    /// </dl><important>
-    /// <p>Valid values for <code>SecondaryStatus</code> are subject to change.</p>
+    /// </dl> <important>
+    /// <p>Valid values for <code>SecondaryStatus</code> are subject to change. </p>
     /// </important>
     /// <p>We no longer support the following secondary statuses:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>LaunchingMLInstances</code></p></li>
-    /// <li>
-    /// <p><code>PreparingTrainingStack</code></p></li>
-    /// <li>
-    /// <p><code>DownloadingTrainingImage</code></p></li>
+    /// <li> <p> <code>LaunchingMLInstances</code> </p> </li>
+    /// <li> <p> <code>PreparingTrainingStack</code> </p> </li>
+    /// <li> <p> <code>DownloadingTrainingImage</code> </p> </li>
     /// </ul>
     pub fn get_secondary_status(&self) -> &::std::option::Option<crate::types::SecondaryStatus> {
         &self.secondary_status
@@ -970,19 +879,19 @@ impl TrainingJobBuilder {
         &self.vpc_config
     }
     /// <p>Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.</p>
-    /// <p>To stop a job, SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost.</p>
+    /// <p>To stop a job, SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p>
     pub fn stopping_condition(mut self, input: crate::types::StoppingCondition) -> Self {
         self.stopping_condition = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.</p>
-    /// <p>To stop a job, SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost.</p>
+    /// <p>To stop a job, SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p>
     pub fn set_stopping_condition(mut self, input: ::std::option::Option<crate::types::StoppingCondition>) -> Self {
         self.stopping_condition = input;
         self
     }
     /// <p>Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.</p>
-    /// <p>To stop a job, SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost.</p>
+    /// <p>To stop a job, SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p>
     pub fn get_stopping_condition(&self) -> &::std::option::Option<crate::types::StoppingCondition> {
         &self.stopping_condition
     }
@@ -1127,17 +1036,17 @@ impl TrainingJobBuilder {
     pub fn get_enable_managed_spot_training(&self) -> &::std::option::Option<bool> {
         &self.enable_managed_spot_training
     }
-    /// <p>Contains information about the output location for managed spot training checkpoint data.</p>
+    /// <p>Contains information about the output location for managed spot training checkpoint data. </p>
     pub fn checkpoint_config(mut self, input: crate::types::CheckpointConfig) -> Self {
         self.checkpoint_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Contains information about the output location for managed spot training checkpoint data.</p>
+    /// <p>Contains information about the output location for managed spot training checkpoint data. </p>
     pub fn set_checkpoint_config(mut self, input: ::std::option::Option<crate::types::CheckpointConfig>) -> Self {
         self.checkpoint_config = input;
         self
     }
-    /// <p>Contains information about the output location for managed spot training checkpoint data.</p>
+    /// <p>Contains information about the output location for managed spot training checkpoint data. </p>
     pub fn get_checkpoint_config(&self) -> &::std::option::Option<crate::types::CheckpointConfig> {
         &self.checkpoint_config
     }
@@ -1185,12 +1094,9 @@ impl TrainingJobBuilder {
     }
     /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p>
     /// <ul>
-    /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateProcessingJob.html">CreateProcessingJob</a></p></li>
-    /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a></p></li>
-    /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTransformJob.html">CreateTransformJob</a></p></li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateProcessingJob.html">CreateProcessingJob</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTransformJob.html">CreateTransformJob</a> </p> </li>
     /// </ul>
     pub fn experiment_config(mut self, input: crate::types::ExperimentConfig) -> Self {
         self.experiment_config = ::std::option::Option::Some(input);
@@ -1198,12 +1104,9 @@ impl TrainingJobBuilder {
     }
     /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p>
     /// <ul>
-    /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateProcessingJob.html">CreateProcessingJob</a></p></li>
-    /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a></p></li>
-    /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTransformJob.html">CreateTransformJob</a></p></li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateProcessingJob.html">CreateProcessingJob</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTransformJob.html">CreateTransformJob</a> </p> </li>
     /// </ul>
     pub fn set_experiment_config(mut self, input: ::std::option::Option<crate::types::ExperimentConfig>) -> Self {
         self.experiment_config = input;
@@ -1211,12 +1114,9 @@ impl TrainingJobBuilder {
     }
     /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p>
     /// <ul>
-    /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateProcessingJob.html">CreateProcessingJob</a></p></li>
-    /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a></p></li>
-    /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTransformJob.html">CreateTransformJob</a></p></li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateProcessingJob.html">CreateProcessingJob</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTransformJob.html">CreateTransformJob</a> </p> </li>
     /// </ul>
     pub fn get_experiment_config(&self) -> &::std::option::Option<crate::types::ExperimentConfig> {
         &self.experiment_config

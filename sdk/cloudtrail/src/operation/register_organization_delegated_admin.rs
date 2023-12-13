@@ -267,7 +267,7 @@ pub enum RegisterOrganizationDelegatedAdminError {
     AccountRegisteredException(crate::types::error::AccountRegisteredException),
     /// <p>This exception is thrown when the management account of an organization is registered as the CloudTrail delegated administrator.</p>
     CannotDelegateManagementAccountException(crate::types::error::CannotDelegateManagementAccountException),
-    /// <p>This exception is thrown when trusted access has not been enabled between CloudTrail and Organizations. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Enabling Trusted Access with Other Amazon Web Services Services</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
+    /// <p>This exception is thrown when trusted access has not been enabled between CloudTrail and Organizations. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Enabling Trusted Access with Other Amazon Web Services Services</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>. </p>
     CloudTrailAccessNotEnabledException(crate::types::error::CloudTrailAccessNotEnabledException),
     /// <p>This exception is thrown when the specified resource is not ready for an operation. This can occur when you try to run an operation on a resource before CloudTrail has time to fully load the resource, or because another operation is modifying the resource. If this exception occurs, wait a few minutes, and then try the operation again.</p>
     ConflictException(crate::types::error::ConflictException),
@@ -277,7 +277,7 @@ pub enum RegisterOrganizationDelegatedAdminError {
     InsufficientDependencyServiceAccessPermissionException(crate::types::error::InsufficientDependencyServiceAccessPermissionException),
     /// <p>The request includes a parameter that is not valid.</p>
     InvalidParameterException(crate::types::error::InvalidParameterException),
-    /// <p>This exception is thrown when the account making the request is not the organization's management account.</p>
+    /// <p> This exception is thrown when the account making the request is not the organization's management account. </p>
     NotOrganizationManagementAccountException(crate::types::error::NotOrganizationManagementAccountException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
     OperationNotPermittedException(crate::types::error::OperationNotPermittedException),

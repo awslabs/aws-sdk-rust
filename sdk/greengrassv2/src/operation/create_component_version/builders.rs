@@ -25,37 +25,21 @@ impl CreateComponentVersionInputBuilder {
 /// <p>Creates a component. Components are software that run on Greengrass core devices. After you develop and test a component on your core device, you can use this operation to upload your component to IoT Greengrass. Then, you can deploy the component to other core devices.</p>
 /// <p>You can use this operation to do the following:</p>
 /// <ul>
-/// <li>
-/// <p><b>Create components from recipes</b></p>
-/// <p>Create a component from a recipe, which is a file that defines the component's metadata, parameters, dependencies, lifecycle, artifacts, and platform capability. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/component-recipe-reference.html">IoT Greengrass component recipe reference</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-/// <p>To create a component from a recipe, specify <code>inlineRecipe</code> when you call this operation.</p></li>
-/// <li>
-/// <p><b>Create components from Lambda functions</b></p>
-/// <p>Create a component from an Lambda function that runs on IoT Greengrass. This creates a recipe and artifacts from the Lambda function's deployment package. You can use this operation to migrate Lambda functions from IoT Greengrass V1 to IoT Greengrass V2.</p>
-/// <p>This function only accepts Lambda functions that use the following runtimes:</p>
+/// <li> <p> <b>Create components from recipes</b> </p> <p>Create a component from a recipe, which is a file that defines the component's metadata, parameters, dependencies, lifecycle, artifacts, and platform capability. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/component-recipe-reference.html">IoT Greengrass component recipe reference</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p> <p>To create a component from a recipe, specify <code>inlineRecipe</code> when you call this operation.</p> </li>
+/// <li> <p> <b>Create components from Lambda functions</b> </p> <p>Create a component from an Lambda function that runs on IoT Greengrass. This creates a recipe and artifacts from the Lambda function's deployment package. You can use this operation to migrate Lambda functions from IoT Greengrass V1 to IoT Greengrass V2.</p> <p>This function only accepts Lambda functions that use the following runtimes:</p>
 /// <ul>
-/// <li>
-/// <p>Python 2.7 – <code>python2.7</code></p></li>
-/// <li>
-/// <p>Python 3.7 – <code>python3.7</code></p></li>
-/// <li>
-/// <p>Python 3.8 – <code>python3.8</code></p></li>
-/// <li>
-/// <p>Python 3.9 – <code>python3.9</code></p></li>
-/// <li>
-/// <p>Java 8 – <code>java8</code></p></li>
-/// <li>
-/// <p>Java 11 – <code>java11</code></p></li>
-/// <li>
-/// <p>Node.js 10 – <code>nodejs10.x</code></p></li>
-/// <li>
-/// <p>Node.js 12 – <code>nodejs12.x</code></p></li>
-/// <li>
-/// <p>Node.js 14 – <code>nodejs14.x</code></p></li>
-/// </ul>
-/// <p>To create a component from a Lambda function, specify <code>lambdaFunction</code> when you call this operation.</p><note>
+/// <li> <p>Python 2.7 – <code>python2.7</code> </p> </li>
+/// <li> <p>Python 3.7 – <code>python3.7</code> </p> </li>
+/// <li> <p>Python 3.8 – <code>python3.8</code> </p> </li>
+/// <li> <p>Python 3.9 – <code>python3.9</code> </p> </li>
+/// <li> <p>Java 8 – <code>java8</code> </p> </li>
+/// <li> <p>Java 11 – <code>java11</code> </p> </li>
+/// <li> <p>Node.js 10 – <code>nodejs10.x</code> </p> </li>
+/// <li> <p>Node.js 12 – <code>nodejs12.x</code> </p> </li>
+/// <li> <p>Node.js 14 – <code>nodejs14.x</code> </p> </li>
+/// </ul> <p>To create a component from a Lambda function, specify <code>lambdaFunction</code> when you call this operation.</p> <note>
 /// <p>IoT Greengrass currently supports Lambda functions on only Linux core devices.</p>
-/// </note></li>
+/// </note> </li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateComponentVersionFluentBuilder {

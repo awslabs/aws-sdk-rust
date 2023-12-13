@@ -11,9 +11,9 @@ pub struct ModifyReplicationInstanceInput {
     /// <p>Indicates whether the changes should be applied immediately or during the next maintenance window.</p>
     pub apply_immediately: ::std::option::Option<bool>,
     /// <p>The compute and memory capacity of the replication instance as defined for the specified replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
-    /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>.</p>
+    /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>. </p>
     pub replication_instance_class: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the VPC security group to be used with the replication instance. The VPC security group must work with the VPC containing the replication instance.</p>
+    /// <p> Specifies the VPC security group to be used with the replication instance. The VPC security group must work with the VPC containing the replication instance. </p>
     pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The weekly time range (in UTC) during which system maintenance can occur, which might result in an outage. Changing this parameter does not result in an outage, except in the following situation, and the change is asynchronously applied as soon as possible. If moving this window to the current time, there must be at least 30 minutes between the current time and end of the window to ensure pending changes are applied.</p>
     /// <p>Default: Uses existing setting</p>
@@ -21,7 +21,7 @@ pub struct ModifyReplicationInstanceInput {
     /// <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p>
     /// <p>Constraints: Must be at least 30 minutes</p>
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies whether the replication instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.</p>
+    /// <p> Specifies whether the replication instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>. </p>
     pub multi_az: ::std::option::Option<bool>,
     /// <p>The engine version number of the replication instance.</p>
     /// <p>When modifying a major engine version of an instance, also set <code>AllowMajorVersionUpgrade</code> to <code>true</code>.</p>
@@ -29,15 +29,12 @@ pub struct ModifyReplicationInstanceInput {
     /// <p>Indicates that major version upgrades are allowed. Changing this parameter does not result in an outage, and the change is asynchronously applied as soon as possible.</p>
     /// <p>This parameter must be set to <code>true</code> when specifying a value for the <code>EngineVersion</code> parameter that is a different major version than the replication instance's current version.</p>
     pub allow_major_version_upgrade: ::std::option::Option<bool>,
-    /// <p>A value that indicates that minor version upgrades are applied automatically to the replication instance during the maintenance window. Changing this parameter doesn't result in an outage, except in the case described following. The change is asynchronously applied as soon as possible.</p>
-    /// <p>An outage does result if these factors apply:</p>
+    /// <p>A value that indicates that minor version upgrades are applied automatically to the replication instance during the maintenance window. Changing this parameter doesn't result in an outage, except in the case described following. The change is asynchronously applied as soon as possible. </p>
+    /// <p>An outage does result if these factors apply: </p>
     /// <ul>
-    /// <li>
-    /// <p>This parameter is set to <code>true</code> during the maintenance window.</p></li>
-    /// <li>
-    /// <p>A newer minor version is available.</p></li>
-    /// <li>
-    /// <p>DMS has enabled automatic patching for the given engine version.</p></li>
+    /// <li> <p>This parameter is set to <code>true</code> during the maintenance window.</p> </li>
+    /// <li> <p>A newer minor version is available. </p> </li>
+    /// <li> <p>DMS has enabled automatic patching for the given engine version. </p> </li>
     /// </ul>
     pub auto_minor_version_upgrade: ::std::option::Option<bool>,
     /// <p>The replication instance identifier. This parameter is stored as a lowercase string.</p>
@@ -59,11 +56,11 @@ impl ModifyReplicationInstanceInput {
         self.apply_immediately
     }
     /// <p>The compute and memory capacity of the replication instance as defined for the specified replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
-    /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>.</p>
+    /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>. </p>
     pub fn replication_instance_class(&self) -> ::std::option::Option<&str> {
         self.replication_instance_class.as_deref()
     }
-    /// <p>Specifies the VPC security group to be used with the replication instance. The VPC security group must work with the VPC containing the replication instance.</p>
+    /// <p> Specifies the VPC security group to be used with the replication instance. The VPC security group must work with the VPC containing the replication instance. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_security_group_ids.is_none()`.
     pub fn vpc_security_group_ids(&self) -> &[::std::string::String] {
@@ -77,7 +74,7 @@ impl ModifyReplicationInstanceInput {
     pub fn preferred_maintenance_window(&self) -> ::std::option::Option<&str> {
         self.preferred_maintenance_window.as_deref()
     }
-    /// <p>Specifies whether the replication instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.</p>
+    /// <p> Specifies whether the replication instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>. </p>
     pub fn multi_az(&self) -> ::std::option::Option<bool> {
         self.multi_az
     }
@@ -91,15 +88,12 @@ impl ModifyReplicationInstanceInput {
     pub fn allow_major_version_upgrade(&self) -> ::std::option::Option<bool> {
         self.allow_major_version_upgrade
     }
-    /// <p>A value that indicates that minor version upgrades are applied automatically to the replication instance during the maintenance window. Changing this parameter doesn't result in an outage, except in the case described following. The change is asynchronously applied as soon as possible.</p>
-    /// <p>An outage does result if these factors apply:</p>
+    /// <p>A value that indicates that minor version upgrades are applied automatically to the replication instance during the maintenance window. Changing this parameter doesn't result in an outage, except in the case described following. The change is asynchronously applied as soon as possible. </p>
+    /// <p>An outage does result if these factors apply: </p>
     /// <ul>
-    /// <li>
-    /// <p>This parameter is set to <code>true</code> during the maintenance window.</p></li>
-    /// <li>
-    /// <p>A newer minor version is available.</p></li>
-    /// <li>
-    /// <p>DMS has enabled automatic patching for the given engine version.</p></li>
+    /// <li> <p>This parameter is set to <code>true</code> during the maintenance window.</p> </li>
+    /// <li> <p>A newer minor version is available. </p> </li>
+    /// <li> <p>DMS has enabled automatic patching for the given engine version. </p> </li>
     /// </ul>
     pub fn auto_minor_version_upgrade(&self) -> ::std::option::Option<bool> {
         self.auto_minor_version_upgrade
@@ -182,19 +176,19 @@ impl ModifyReplicationInstanceInputBuilder {
         &self.apply_immediately
     }
     /// <p>The compute and memory capacity of the replication instance as defined for the specified replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
-    /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>.</p>
+    /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>. </p>
     pub fn replication_instance_class(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_instance_class = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The compute and memory capacity of the replication instance as defined for the specified replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
-    /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>.</p>
+    /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>. </p>
     pub fn set_replication_instance_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_instance_class = input;
         self
     }
     /// <p>The compute and memory capacity of the replication instance as defined for the specified replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
-    /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>.</p>
+    /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>. </p>
     pub fn get_replication_instance_class(&self) -> &::std::option::Option<::std::string::String> {
         &self.replication_instance_class
     }
@@ -202,19 +196,19 @@ impl ModifyReplicationInstanceInputBuilder {
     ///
     /// To override the contents of this collection use [`set_vpc_security_group_ids`](Self::set_vpc_security_group_ids).
     ///
-    /// <p>Specifies the VPC security group to be used with the replication instance. The VPC security group must work with the VPC containing the replication instance.</p>
+    /// <p> Specifies the VPC security group to be used with the replication instance. The VPC security group must work with the VPC containing the replication instance. </p>
     pub fn vpc_security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vpc_security_group_ids.unwrap_or_default();
         v.push(input.into());
         self.vpc_security_group_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Specifies the VPC security group to be used with the replication instance. The VPC security group must work with the VPC containing the replication instance.</p>
+    /// <p> Specifies the VPC security group to be used with the replication instance. The VPC security group must work with the VPC containing the replication instance. </p>
     pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.vpc_security_group_ids = input;
         self
     }
-    /// <p>Specifies the VPC security group to be used with the replication instance. The VPC security group must work with the VPC containing the replication instance.</p>
+    /// <p> Specifies the VPC security group to be used with the replication instance. The VPC security group must work with the VPC containing the replication instance. </p>
     pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.vpc_security_group_ids
     }
@@ -244,17 +238,17 @@ impl ModifyReplicationInstanceInputBuilder {
     pub fn get_preferred_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
         &self.preferred_maintenance_window
     }
-    /// <p>Specifies whether the replication instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.</p>
+    /// <p> Specifies whether the replication instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>. </p>
     pub fn multi_az(mut self, input: bool) -> Self {
         self.multi_az = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether the replication instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.</p>
+    /// <p> Specifies whether the replication instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>. </p>
     pub fn set_multi_az(mut self, input: ::std::option::Option<bool>) -> Self {
         self.multi_az = input;
         self
     }
-    /// <p>Specifies whether the replication instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.</p>
+    /// <p> Specifies whether the replication instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>. </p>
     pub fn get_multi_az(&self) -> &::std::option::Option<bool> {
         &self.multi_az
     }
@@ -292,43 +286,34 @@ impl ModifyReplicationInstanceInputBuilder {
     pub fn get_allow_major_version_upgrade(&self) -> &::std::option::Option<bool> {
         &self.allow_major_version_upgrade
     }
-    /// <p>A value that indicates that minor version upgrades are applied automatically to the replication instance during the maintenance window. Changing this parameter doesn't result in an outage, except in the case described following. The change is asynchronously applied as soon as possible.</p>
-    /// <p>An outage does result if these factors apply:</p>
+    /// <p>A value that indicates that minor version upgrades are applied automatically to the replication instance during the maintenance window. Changing this parameter doesn't result in an outage, except in the case described following. The change is asynchronously applied as soon as possible. </p>
+    /// <p>An outage does result if these factors apply: </p>
     /// <ul>
-    /// <li>
-    /// <p>This parameter is set to <code>true</code> during the maintenance window.</p></li>
-    /// <li>
-    /// <p>A newer minor version is available.</p></li>
-    /// <li>
-    /// <p>DMS has enabled automatic patching for the given engine version.</p></li>
+    /// <li> <p>This parameter is set to <code>true</code> during the maintenance window.</p> </li>
+    /// <li> <p>A newer minor version is available. </p> </li>
+    /// <li> <p>DMS has enabled automatic patching for the given engine version. </p> </li>
     /// </ul>
     pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
         self.auto_minor_version_upgrade = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A value that indicates that minor version upgrades are applied automatically to the replication instance during the maintenance window. Changing this parameter doesn't result in an outage, except in the case described following. The change is asynchronously applied as soon as possible.</p>
-    /// <p>An outage does result if these factors apply:</p>
+    /// <p>A value that indicates that minor version upgrades are applied automatically to the replication instance during the maintenance window. Changing this parameter doesn't result in an outage, except in the case described following. The change is asynchronously applied as soon as possible. </p>
+    /// <p>An outage does result if these factors apply: </p>
     /// <ul>
-    /// <li>
-    /// <p>This parameter is set to <code>true</code> during the maintenance window.</p></li>
-    /// <li>
-    /// <p>A newer minor version is available.</p></li>
-    /// <li>
-    /// <p>DMS has enabled automatic patching for the given engine version.</p></li>
+    /// <li> <p>This parameter is set to <code>true</code> during the maintenance window.</p> </li>
+    /// <li> <p>A newer minor version is available. </p> </li>
+    /// <li> <p>DMS has enabled automatic patching for the given engine version. </p> </li>
     /// </ul>
     pub fn set_auto_minor_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_minor_version_upgrade = input;
         self
     }
-    /// <p>A value that indicates that minor version upgrades are applied automatically to the replication instance during the maintenance window. Changing this parameter doesn't result in an outage, except in the case described following. The change is asynchronously applied as soon as possible.</p>
-    /// <p>An outage does result if these factors apply:</p>
+    /// <p>A value that indicates that minor version upgrades are applied automatically to the replication instance during the maintenance window. Changing this parameter doesn't result in an outage, except in the case described following. The change is asynchronously applied as soon as possible. </p>
+    /// <p>An outage does result if these factors apply: </p>
     /// <ul>
-    /// <li>
-    /// <p>This parameter is set to <code>true</code> during the maintenance window.</p></li>
-    /// <li>
-    /// <p>A newer minor version is available.</p></li>
-    /// <li>
-    /// <p>DMS has enabled automatic patching for the given engine version.</p></li>
+    /// <li> <p>This parameter is set to <code>true</code> during the maintenance window.</p> </li>
+    /// <li> <p>A newer minor version is available. </p> </li>
+    /// <li> <p>DMS has enabled automatic patching for the given engine version. </p> </li>
     /// </ul>
     pub fn get_auto_minor_version_upgrade(&self) -> &::std::option::Option<bool> {
         &self.auto_minor_version_upgrade

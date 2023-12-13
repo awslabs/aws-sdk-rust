@@ -22,8 +22,8 @@ impl CompleteAttachmentUploadInputBuilder {
 }
 /// Fluent builder constructing a request to `CompleteAttachmentUpload`.
 ///
-/// <p>Allows you to confirm that the attachment has been uploaded using the pre-signed URL provided in StartAttachmentUpload API.</p><note>
-/// <p><code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.</p>
+/// <p>Allows you to confirm that the attachment has been uploaded using the pre-signed URL provided in StartAttachmentUpload API. </p> <note>
+/// <p> <code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.</p>
 /// </note>
 /// <p>The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 authentication</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

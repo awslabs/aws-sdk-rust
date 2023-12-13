@@ -23,7 +23,7 @@ impl GetMetricDataInputBuilder {
 /// Fluent builder constructing a request to `GetMetricData`.
 ///
 /// <p>Gets historical metric data from the specified Amazon Connect instance.</p>
-/// <p>For a description of each historical metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p><note>
+/// <p>For a description of each historical metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p> <note>
 /// <p>We recommend using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_GetMetricDataV2.html">GetMetricDataV2</a> API. It provides more flexibility, features, and the ability to query longer time ranges than <code>GetMetricData</code>. Use it to retrieve historical agent and contact metrics for the last 3 months, at varying intervals. You can also use it to build custom dashboards to measure historical queue and agent performance. For example, you can track the number of incoming contacts for the last 7 days, with data split by day, to see how contact volume changed per day of the week.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -165,21 +165,21 @@ impl GetMetricDataFluentBuilder {
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_end_time()
     }
-    /// <p>The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is retrieved only for the resources associated with the queues or channels included in the filter. You can include both queue IDs and queue ARNs in the same request. VOICE, CHAT, and TASK channels are supported.</p><note>
+    /// <p>The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is retrieved only for the resources associated with the queues or channels included in the filter. You can include both queue IDs and queue ARNs in the same request. VOICE, CHAT, and TASK channels are supported.</p> <note>
     /// <p>To filter by <code>Queues</code>, enter the queue ID/ARN, not the name of the queue.</p>
     /// </note>
     pub fn filters(mut self, input: crate::types::Filters) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is retrieved only for the resources associated with the queues or channels included in the filter. You can include both queue IDs and queue ARNs in the same request. VOICE, CHAT, and TASK channels are supported.</p><note>
+    /// <p>The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is retrieved only for the resources associated with the queues or channels included in the filter. You can include both queue IDs and queue ARNs in the same request. VOICE, CHAT, and TASK channels are supported.</p> <note>
     /// <p>To filter by <code>Queues</code>, enter the queue ID/ARN, not the name of the queue.</p>
     /// </note>
     pub fn set_filters(mut self, input: ::std::option::Option<crate::types::Filters>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
-    /// <p>The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is retrieved only for the resources associated with the queues or channels included in the filter. You can include both queue IDs and queue ARNs in the same request. VOICE, CHAT, and TASK channels are supported.</p><note>
+    /// <p>The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is retrieved only for the resources associated with the queues or channels included in the filter. You can include both queue IDs and queue ARNs in the same request. VOICE, CHAT, and TASK channels are supported.</p> <note>
     /// <p>To filter by <code>Queues</code>, enter the queue ID/ARN, not the name of the queue.</p>
     /// </note>
     pub fn get_filters(&self) -> &::std::option::Option<crate::types::Filters> {
@@ -210,8 +210,8 @@ impl GetMetricDataFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_historical_metrics`](Self::set_historical_metrics).
     ///
-    /// <p>The metrics to retrieve. Specify the name, unit, and statistic for each metric. The following historical metrics are available. For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p><note>
-    /// <p>This API does not support a contacts incoming metric (there's no CONTACTS_INCOMING metric missing from the documented list).</p>
+    /// <p>The metrics to retrieve. Specify the name, unit, and statistic for each metric. The following historical metrics are available. For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p> <note>
+    /// <p>This API does not support a contacts incoming metric (there's no CONTACTS_INCOMING metric missing from the documented list). </p>
     /// </note>
     /// <dl>
     /// <dt>
@@ -389,15 +389,15 @@ impl GetMetricDataFluentBuilder {
     /// <p>You can include up to 20 SERVICE_LEVEL metrics in a request.</p>
     /// <p>Unit: PERCENT</p>
     /// <p>Statistic: AVG</p>
-    /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than").</p>
+    /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than"). </p>
     /// </dd>
     /// </dl>
     pub fn historical_metrics(mut self, input: crate::types::HistoricalMetric) -> Self {
         self.inner = self.inner.historical_metrics(input);
         self
     }
-    /// <p>The metrics to retrieve. Specify the name, unit, and statistic for each metric. The following historical metrics are available. For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p><note>
-    /// <p>This API does not support a contacts incoming metric (there's no CONTACTS_INCOMING metric missing from the documented list).</p>
+    /// <p>The metrics to retrieve. Specify the name, unit, and statistic for each metric. The following historical metrics are available. For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p> <note>
+    /// <p>This API does not support a contacts incoming metric (there's no CONTACTS_INCOMING metric missing from the documented list). </p>
     /// </note>
     /// <dl>
     /// <dt>
@@ -575,15 +575,15 @@ impl GetMetricDataFluentBuilder {
     /// <p>You can include up to 20 SERVICE_LEVEL metrics in a request.</p>
     /// <p>Unit: PERCENT</p>
     /// <p>Statistic: AVG</p>
-    /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than").</p>
+    /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than"). </p>
     /// </dd>
     /// </dl>
     pub fn set_historical_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HistoricalMetric>>) -> Self {
         self.inner = self.inner.set_historical_metrics(input);
         self
     }
-    /// <p>The metrics to retrieve. Specify the name, unit, and statistic for each metric. The following historical metrics are available. For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p><note>
-    /// <p>This API does not support a contacts incoming metric (there's no CONTACTS_INCOMING metric missing from the documented list).</p>
+    /// <p>The metrics to retrieve. Specify the name, unit, and statistic for each metric. The following historical metrics are available. For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p> <note>
+    /// <p>This API does not support a contacts incoming metric (there's no CONTACTS_INCOMING metric missing from the documented list). </p>
     /// </note>
     /// <dl>
     /// <dt>
@@ -761,7 +761,7 @@ impl GetMetricDataFluentBuilder {
     /// <p>You can include up to 20 SERVICE_LEVEL metrics in a request.</p>
     /// <p>Unit: PERCENT</p>
     /// <p>Statistic: AVG</p>
-    /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than").</p>
+    /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than"). </p>
     /// </dd>
     /// </dl>
     pub fn get_historical_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HistoricalMetric>> {

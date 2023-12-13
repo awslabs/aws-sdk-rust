@@ -123,17 +123,17 @@ impl UpdateDataSourceFluentBuilder {
     pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_data_source_id()
     }
-    /// <p>A new user-supplied name or description of the <code>DataSource</code> that will replace the current description.</p>
+    /// <p>A new user-supplied name or description of the <code>DataSource</code> that will replace the current description. </p>
     pub fn data_source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data_source_name(input.into());
         self
     }
-    /// <p>A new user-supplied name or description of the <code>DataSource</code> that will replace the current description.</p>
+    /// <p>A new user-supplied name or description of the <code>DataSource</code> that will replace the current description. </p>
     pub fn set_data_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_data_source_name(input);
         self
     }
-    /// <p>A new user-supplied name or description of the <code>DataSource</code> that will replace the current description.</p>
+    /// <p>A new user-supplied name or description of the <code>DataSource</code> that will replace the current description. </p>
     pub fn get_data_source_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_data_source_name()
     }

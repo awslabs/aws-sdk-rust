@@ -22,11 +22,10 @@ impl DeleteMatchmakingRuleSetInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteMatchmakingRuleSet`.
 ///
-/// <p>Deletes an existing matchmaking rule set. To delete the rule set, provide the rule set name. Rule sets cannot be deleted if they are currently being used by a matchmaking configuration.</p>
-/// <p><b>Learn more</b></p>
+/// <p>Deletes an existing matchmaking rule set. To delete the rule set, provide the rule set name. Rule sets cannot be deleted if they are currently being used by a matchmaking configuration. </p>
+/// <p> <b>Learn more</b> </p>
 /// <ul>
-/// <li>
-/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-rulesets.html">Build a rule set</a></p></li>
+/// <li> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-rulesets.html">Build a rule set</a> </p> </li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteMatchmakingRuleSetFluentBuilder {

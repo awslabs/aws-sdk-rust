@@ -18,7 +18,7 @@ pub struct RdsInstanceDetails {
     pub deployment_option: ::std::option::Option<::std::string::String>,
     /// <p>The license model that the recommended reservation supports.</p>
     pub license_model: ::std::option::Option<::std::string::String>,
-    /// <p>Determines whether the recommendation is for a current-generation instance.</p>
+    /// <p>Determines whether the recommendation is for a current-generation instance. </p>
     pub current_generation: bool,
     /// <p>Determines whether the recommended reservation is size flexible.</p>
     pub size_flex_eligible: bool,
@@ -52,7 +52,7 @@ impl RdsInstanceDetails {
     pub fn license_model(&self) -> ::std::option::Option<&str> {
         self.license_model.as_deref()
     }
-    /// <p>Determines whether the recommendation is for a current-generation instance.</p>
+    /// <p>Determines whether the recommendation is for a current-generation instance. </p>
     pub fn current_generation(&self) -> bool {
         self.current_generation
     }
@@ -181,17 +181,17 @@ impl RdsInstanceDetailsBuilder {
     pub fn get_license_model(&self) -> &::std::option::Option<::std::string::String> {
         &self.license_model
     }
-    /// <p>Determines whether the recommendation is for a current-generation instance.</p>
+    /// <p>Determines whether the recommendation is for a current-generation instance. </p>
     pub fn current_generation(mut self, input: bool) -> Self {
         self.current_generation = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Determines whether the recommendation is for a current-generation instance.</p>
+    /// <p>Determines whether the recommendation is for a current-generation instance. </p>
     pub fn set_current_generation(mut self, input: ::std::option::Option<bool>) -> Self {
         self.current_generation = input;
         self
     }
-    /// <p>Determines whether the recommendation is for a current-generation instance.</p>
+    /// <p>Determines whether the recommendation is for a current-generation instance. </p>
     pub fn get_current_generation(&self) -> &::std::option::Option<bool> {
         &self.current_generation
     }

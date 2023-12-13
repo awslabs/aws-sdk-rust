@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCostAllocationTagsOutput {
-    /// <p>A list of cost allocation tags that includes the detailed metadata for each one.</p>
+    /// <p>A list of cost allocation tags that includes the detailed metadata for each one. </p>
     pub cost_allocation_tags: ::std::option::Option<::std::vec::Vec<crate::types::CostAllocationTag>>,
-    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListCostAllocationTagsOutput {
-    /// <p>A list of cost allocation tags that includes the detailed metadata for each one.</p>
+    /// <p>A list of cost allocation tags that includes the detailed metadata for each one. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cost_allocation_tags.is_none()`.
     pub fn cost_allocation_tags(&self) -> &[crate::types::CostAllocationTag] {
         self.cost_allocation_tags.as_deref().unwrap_or_default()
     }
-    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -46,33 +46,33 @@ impl ListCostAllocationTagsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_cost_allocation_tags`](Self::set_cost_allocation_tags).
     ///
-    /// <p>A list of cost allocation tags that includes the detailed metadata for each one.</p>
+    /// <p>A list of cost allocation tags that includes the detailed metadata for each one. </p>
     pub fn cost_allocation_tags(mut self, input: crate::types::CostAllocationTag) -> Self {
         let mut v = self.cost_allocation_tags.unwrap_or_default();
         v.push(input);
         self.cost_allocation_tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of cost allocation tags that includes the detailed metadata for each one.</p>
+    /// <p>A list of cost allocation tags that includes the detailed metadata for each one. </p>
     pub fn set_cost_allocation_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CostAllocationTag>>) -> Self {
         self.cost_allocation_tags = input;
         self
     }
-    /// <p>A list of cost allocation tags that includes the detailed metadata for each one.</p>
+    /// <p>A list of cost allocation tags that includes the detailed metadata for each one. </p>
     pub fn get_cost_allocation_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CostAllocationTag>> {
         &self.cost_allocation_tags
     }
-    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

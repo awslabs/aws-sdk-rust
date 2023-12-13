@@ -243,7 +243,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ModifyDBSnaps
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum ModifyDBSnapshotAttributeError {
-    /// <p><code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.</p>
+    /// <p> <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.</p>
     DbSnapshotNotFoundFault(crate::types::error::DbSnapshotNotFoundFault),
     /// <p>The state of the DB snapshot doesn't allow deletion.</p>
     InvalidDbSnapshotStateFault(crate::types::error::InvalidDbSnapshotStateFault),

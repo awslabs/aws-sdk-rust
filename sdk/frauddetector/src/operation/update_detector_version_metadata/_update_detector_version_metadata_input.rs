@@ -5,7 +5,7 @@
 pub struct UpdateDetectorVersionMetadataInput {
     /// <p>The detector ID.</p>
     pub detector_id: ::std::option::Option<::std::string::String>,
-    /// <p>The detector version ID.</p>
+    /// <p>The detector version ID. </p>
     pub detector_version_id: ::std::option::Option<::std::string::String>,
     /// <p>The description.</p>
     pub description: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ impl UpdateDetectorVersionMetadataInput {
     pub fn detector_id(&self) -> ::std::option::Option<&str> {
         self.detector_id.as_deref()
     }
-    /// <p>The detector version ID.</p>
+    /// <p>The detector version ID. </p>
     pub fn detector_version_id(&self) -> ::std::option::Option<&str> {
         self.detector_version_id.as_deref()
     }
@@ -55,18 +55,18 @@ impl UpdateDetectorVersionMetadataInputBuilder {
     pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.detector_id
     }
-    /// <p>The detector version ID.</p>
+    /// <p>The detector version ID. </p>
     /// This field is required.
     pub fn detector_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_version_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The detector version ID.</p>
+    /// <p>The detector version ID. </p>
     pub fn set_detector_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detector_version_id = input;
         self
     }
-    /// <p>The detector version ID.</p>
+    /// <p>The detector version ID. </p>
     pub fn get_detector_version_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.detector_version_id
     }

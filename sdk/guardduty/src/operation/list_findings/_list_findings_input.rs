@@ -7,106 +7,55 @@ pub struct ListFindingsInput {
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>Represents the criteria used for querying findings. Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>JSON field name</p></li>
-    /// <li>
-    /// <p>accountId</p></li>
-    /// <li>
-    /// <p>region</p></li>
-    /// <li>
-    /// <p>confidence</p></li>
-    /// <li>
-    /// <p>id</p></li>
-    /// <li>
-    /// <p>resource.accessKeyDetails.accessKeyId</p></li>
-    /// <li>
-    /// <p>resource.accessKeyDetails.principalId</p></li>
-    /// <li>
-    /// <p>resource.accessKeyDetails.userName</p></li>
-    /// <li>
-    /// <p>resource.accessKeyDetails.userType</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.iamInstanceProfile.id</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.imageId</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.instanceId</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.publicDnsName</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.publicIp</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.securityGroups.groupId</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.securityGroups.groupName</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.subnetId</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.vpcId</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.tags.key</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.tags.value</p></li>
-    /// <li>
-    /// <p>resource.resourceType</p></li>
-    /// <li>
-    /// <p>service.action.actionType</p></li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.api</p></li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.callerType</p></li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p></li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p></li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p></li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p></li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p></li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.serviceName</p></li>
-    /// <li>
-    /// <p>service.action.dnsRequestAction.domain</p></li>
-    /// <li>
-    /// <p>service.action.dnsRequestAction.domainWithSuffix</p></li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.blocked</p></li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.connectionDirection</p></li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.localPortDetails.port</p></li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.protocol</p></li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p></li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p></li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p></li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p></li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.remotePortDetails.port</p></li>
-    /// <li>
-    /// <p>service.additionalInfo.threatListName</p></li>
-    /// <li>
-    /// <p>service.archived</p>
-    /// <p>When this attribute is set to 'true', only archived findings are listed. When it's set to 'false', only unarchived findings are listed. When this attribute is not set, all existing findings are listed.</p></li>
-    /// <li>
-    /// <p>service.resourceRole</p></li>
-    /// <li>
-    /// <p>severity</p></li>
-    /// <li>
-    /// <p>type</p></li>
-    /// <li>
-    /// <p>updatedAt</p>
-    /// <p>Type: Timestamp in Unix Epoch millisecond format: 1486685375000</p></li>
+    /// <li> <p>JSON field name</p> </li>
+    /// <li> <p>accountId</p> </li>
+    /// <li> <p>region</p> </li>
+    /// <li> <p>confidence</p> </li>
+    /// <li> <p>id</p> </li>
+    /// <li> <p>resource.accessKeyDetails.accessKeyId</p> </li>
+    /// <li> <p>resource.accessKeyDetails.principalId</p> </li>
+    /// <li> <p>resource.accessKeyDetails.userName</p> </li>
+    /// <li> <p>resource.accessKeyDetails.userType</p> </li>
+    /// <li> <p>resource.instanceDetails.iamInstanceProfile.id</p> </li>
+    /// <li> <p>resource.instanceDetails.imageId</p> </li>
+    /// <li> <p>resource.instanceDetails.instanceId</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.publicDnsName</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.publicIp</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupId</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupName</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.subnetId</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.vpcId</p> </li>
+    /// <li> <p>resource.instanceDetails.tags.key</p> </li>
+    /// <li> <p>resource.instanceDetails.tags.value</p> </li>
+    /// <li> <p>resource.resourceType</p> </li>
+    /// <li> <p>service.action.actionType</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.api</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.callerType</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.serviceName</p> </li>
+    /// <li> <p>service.action.dnsRequestAction.domain</p> </li>
+    /// <li> <p>service.action.dnsRequestAction.domainWithSuffix</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.blocked</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.connectionDirection</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.localPortDetails.port</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.protocol</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.remotePortDetails.port</p> </li>
+    /// <li> <p>service.additionalInfo.threatListName</p> </li>
+    /// <li> <p>service.archived</p> <p>When this attribute is set to 'true', only archived findings are listed. When it's set to 'false', only unarchived findings are listed. When this attribute is not set, all existing findings are listed.</p> </li>
+    /// <li> <p>service.resourceRole</p> </li>
+    /// <li> <p>severity</p> </li>
+    /// <li> <p>type</p> </li>
+    /// <li> <p>updatedAt</p> <p>Type: Timestamp in Unix Epoch millisecond format: 1486685375000</p> </li>
     /// </ul>
     pub finding_criteria: ::std::option::Option<crate::types::FindingCriteria>,
     /// <p>Represents the criteria used for sorting findings.</p>
@@ -123,106 +72,55 @@ impl ListFindingsInput {
     }
     /// <p>Represents the criteria used for querying findings. Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>JSON field name</p></li>
-    /// <li>
-    /// <p>accountId</p></li>
-    /// <li>
-    /// <p>region</p></li>
-    /// <li>
-    /// <p>confidence</p></li>
-    /// <li>
-    /// <p>id</p></li>
-    /// <li>
-    /// <p>resource.accessKeyDetails.accessKeyId</p></li>
-    /// <li>
-    /// <p>resource.accessKeyDetails.principalId</p></li>
-    /// <li>
-    /// <p>resource.accessKeyDetails.userName</p></li>
-    /// <li>
-    /// <p>resource.accessKeyDetails.userType</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.iamInstanceProfile.id</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.imageId</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.instanceId</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.publicDnsName</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.publicIp</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.securityGroups.groupId</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.securityGroups.groupName</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.subnetId</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.vpcId</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.tags.key</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.tags.value</p></li>
-    /// <li>
-    /// <p>resource.resourceType</p></li>
-    /// <li>
-    /// <p>service.action.actionType</p></li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.api</p></li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.callerType</p></li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p></li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p></li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p></li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p></li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p></li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.serviceName</p></li>
-    /// <li>
-    /// <p>service.action.dnsRequestAction.domain</p></li>
-    /// <li>
-    /// <p>service.action.dnsRequestAction.domainWithSuffix</p></li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.blocked</p></li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.connectionDirection</p></li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.localPortDetails.port</p></li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.protocol</p></li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p></li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p></li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p></li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p></li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.remotePortDetails.port</p></li>
-    /// <li>
-    /// <p>service.additionalInfo.threatListName</p></li>
-    /// <li>
-    /// <p>service.archived</p>
-    /// <p>When this attribute is set to 'true', only archived findings are listed. When it's set to 'false', only unarchived findings are listed. When this attribute is not set, all existing findings are listed.</p></li>
-    /// <li>
-    /// <p>service.resourceRole</p></li>
-    /// <li>
-    /// <p>severity</p></li>
-    /// <li>
-    /// <p>type</p></li>
-    /// <li>
-    /// <p>updatedAt</p>
-    /// <p>Type: Timestamp in Unix Epoch millisecond format: 1486685375000</p></li>
+    /// <li> <p>JSON field name</p> </li>
+    /// <li> <p>accountId</p> </li>
+    /// <li> <p>region</p> </li>
+    /// <li> <p>confidence</p> </li>
+    /// <li> <p>id</p> </li>
+    /// <li> <p>resource.accessKeyDetails.accessKeyId</p> </li>
+    /// <li> <p>resource.accessKeyDetails.principalId</p> </li>
+    /// <li> <p>resource.accessKeyDetails.userName</p> </li>
+    /// <li> <p>resource.accessKeyDetails.userType</p> </li>
+    /// <li> <p>resource.instanceDetails.iamInstanceProfile.id</p> </li>
+    /// <li> <p>resource.instanceDetails.imageId</p> </li>
+    /// <li> <p>resource.instanceDetails.instanceId</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.publicDnsName</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.publicIp</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupId</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupName</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.subnetId</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.vpcId</p> </li>
+    /// <li> <p>resource.instanceDetails.tags.key</p> </li>
+    /// <li> <p>resource.instanceDetails.tags.value</p> </li>
+    /// <li> <p>resource.resourceType</p> </li>
+    /// <li> <p>service.action.actionType</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.api</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.callerType</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.serviceName</p> </li>
+    /// <li> <p>service.action.dnsRequestAction.domain</p> </li>
+    /// <li> <p>service.action.dnsRequestAction.domainWithSuffix</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.blocked</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.connectionDirection</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.localPortDetails.port</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.protocol</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.remotePortDetails.port</p> </li>
+    /// <li> <p>service.additionalInfo.threatListName</p> </li>
+    /// <li> <p>service.archived</p> <p>When this attribute is set to 'true', only archived findings are listed. When it's set to 'false', only unarchived findings are listed. When this attribute is not set, all existing findings are listed.</p> </li>
+    /// <li> <p>service.resourceRole</p> </li>
+    /// <li> <p>severity</p> </li>
+    /// <li> <p>type</p> </li>
+    /// <li> <p>updatedAt</p> <p>Type: Timestamp in Unix Epoch millisecond format: 1486685375000</p> </li>
     /// </ul>
     pub fn finding_criteria(&self) -> ::std::option::Option<&crate::types::FindingCriteria> {
         self.finding_criteria.as_ref()
@@ -275,106 +173,55 @@ impl ListFindingsInputBuilder {
     }
     /// <p>Represents the criteria used for querying findings. Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>JSON field name</p></li>
-    /// <li>
-    /// <p>accountId</p></li>
-    /// <li>
-    /// <p>region</p></li>
-    /// <li>
-    /// <p>confidence</p></li>
-    /// <li>
-    /// <p>id</p></li>
-    /// <li>
-    /// <p>resource.accessKeyDetails.accessKeyId</p></li>
-    /// <li>
-    /// <p>resource.accessKeyDetails.principalId</p></li>
-    /// <li>
-    /// <p>resource.accessKeyDetails.userName</p></li>
-    /// <li>
-    /// <p>resource.accessKeyDetails.userType</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.iamInstanceProfile.id</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.imageId</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.instanceId</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.publicDnsName</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.publicIp</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.securityGroups.groupId</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.securityGroups.groupName</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.subnetId</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.vpcId</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.tags.key</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.tags.value</p></li>
-    /// <li>
-    /// <p>resource.resourceType</p></li>
-    /// <li>
-    /// <p>service.action.actionType</p></li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.api</p></li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.callerType</p></li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p></li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p></li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p></li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p></li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p></li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.serviceName</p></li>
-    /// <li>
-    /// <p>service.action.dnsRequestAction.domain</p></li>
-    /// <li>
-    /// <p>service.action.dnsRequestAction.domainWithSuffix</p></li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.blocked</p></li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.connectionDirection</p></li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.localPortDetails.port</p></li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.protocol</p></li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p></li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p></li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p></li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p></li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.remotePortDetails.port</p></li>
-    /// <li>
-    /// <p>service.additionalInfo.threatListName</p></li>
-    /// <li>
-    /// <p>service.archived</p>
-    /// <p>When this attribute is set to 'true', only archived findings are listed. When it's set to 'false', only unarchived findings are listed. When this attribute is not set, all existing findings are listed.</p></li>
-    /// <li>
-    /// <p>service.resourceRole</p></li>
-    /// <li>
-    /// <p>severity</p></li>
-    /// <li>
-    /// <p>type</p></li>
-    /// <li>
-    /// <p>updatedAt</p>
-    /// <p>Type: Timestamp in Unix Epoch millisecond format: 1486685375000</p></li>
+    /// <li> <p>JSON field name</p> </li>
+    /// <li> <p>accountId</p> </li>
+    /// <li> <p>region</p> </li>
+    /// <li> <p>confidence</p> </li>
+    /// <li> <p>id</p> </li>
+    /// <li> <p>resource.accessKeyDetails.accessKeyId</p> </li>
+    /// <li> <p>resource.accessKeyDetails.principalId</p> </li>
+    /// <li> <p>resource.accessKeyDetails.userName</p> </li>
+    /// <li> <p>resource.accessKeyDetails.userType</p> </li>
+    /// <li> <p>resource.instanceDetails.iamInstanceProfile.id</p> </li>
+    /// <li> <p>resource.instanceDetails.imageId</p> </li>
+    /// <li> <p>resource.instanceDetails.instanceId</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.publicDnsName</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.publicIp</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupId</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupName</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.subnetId</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.vpcId</p> </li>
+    /// <li> <p>resource.instanceDetails.tags.key</p> </li>
+    /// <li> <p>resource.instanceDetails.tags.value</p> </li>
+    /// <li> <p>resource.resourceType</p> </li>
+    /// <li> <p>service.action.actionType</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.api</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.callerType</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.serviceName</p> </li>
+    /// <li> <p>service.action.dnsRequestAction.domain</p> </li>
+    /// <li> <p>service.action.dnsRequestAction.domainWithSuffix</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.blocked</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.connectionDirection</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.localPortDetails.port</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.protocol</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.remotePortDetails.port</p> </li>
+    /// <li> <p>service.additionalInfo.threatListName</p> </li>
+    /// <li> <p>service.archived</p> <p>When this attribute is set to 'true', only archived findings are listed. When it's set to 'false', only unarchived findings are listed. When this attribute is not set, all existing findings are listed.</p> </li>
+    /// <li> <p>service.resourceRole</p> </li>
+    /// <li> <p>severity</p> </li>
+    /// <li> <p>type</p> </li>
+    /// <li> <p>updatedAt</p> <p>Type: Timestamp in Unix Epoch millisecond format: 1486685375000</p> </li>
     /// </ul>
     pub fn finding_criteria(mut self, input: crate::types::FindingCriteria) -> Self {
         self.finding_criteria = ::std::option::Option::Some(input);
@@ -382,106 +229,55 @@ impl ListFindingsInputBuilder {
     }
     /// <p>Represents the criteria used for querying findings. Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>JSON field name</p></li>
-    /// <li>
-    /// <p>accountId</p></li>
-    /// <li>
-    /// <p>region</p></li>
-    /// <li>
-    /// <p>confidence</p></li>
-    /// <li>
-    /// <p>id</p></li>
-    /// <li>
-    /// <p>resource.accessKeyDetails.accessKeyId</p></li>
-    /// <li>
-    /// <p>resource.accessKeyDetails.principalId</p></li>
-    /// <li>
-    /// <p>resource.accessKeyDetails.userName</p></li>
-    /// <li>
-    /// <p>resource.accessKeyDetails.userType</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.iamInstanceProfile.id</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.imageId</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.instanceId</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.publicDnsName</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.publicIp</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.securityGroups.groupId</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.securityGroups.groupName</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.subnetId</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.vpcId</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.tags.key</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.tags.value</p></li>
-    /// <li>
-    /// <p>resource.resourceType</p></li>
-    /// <li>
-    /// <p>service.action.actionType</p></li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.api</p></li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.callerType</p></li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p></li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p></li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p></li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p></li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p></li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.serviceName</p></li>
-    /// <li>
-    /// <p>service.action.dnsRequestAction.domain</p></li>
-    /// <li>
-    /// <p>service.action.dnsRequestAction.domainWithSuffix</p></li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.blocked</p></li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.connectionDirection</p></li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.localPortDetails.port</p></li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.protocol</p></li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p></li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p></li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p></li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p></li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.remotePortDetails.port</p></li>
-    /// <li>
-    /// <p>service.additionalInfo.threatListName</p></li>
-    /// <li>
-    /// <p>service.archived</p>
-    /// <p>When this attribute is set to 'true', only archived findings are listed. When it's set to 'false', only unarchived findings are listed. When this attribute is not set, all existing findings are listed.</p></li>
-    /// <li>
-    /// <p>service.resourceRole</p></li>
-    /// <li>
-    /// <p>severity</p></li>
-    /// <li>
-    /// <p>type</p></li>
-    /// <li>
-    /// <p>updatedAt</p>
-    /// <p>Type: Timestamp in Unix Epoch millisecond format: 1486685375000</p></li>
+    /// <li> <p>JSON field name</p> </li>
+    /// <li> <p>accountId</p> </li>
+    /// <li> <p>region</p> </li>
+    /// <li> <p>confidence</p> </li>
+    /// <li> <p>id</p> </li>
+    /// <li> <p>resource.accessKeyDetails.accessKeyId</p> </li>
+    /// <li> <p>resource.accessKeyDetails.principalId</p> </li>
+    /// <li> <p>resource.accessKeyDetails.userName</p> </li>
+    /// <li> <p>resource.accessKeyDetails.userType</p> </li>
+    /// <li> <p>resource.instanceDetails.iamInstanceProfile.id</p> </li>
+    /// <li> <p>resource.instanceDetails.imageId</p> </li>
+    /// <li> <p>resource.instanceDetails.instanceId</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.publicDnsName</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.publicIp</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupId</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupName</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.subnetId</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.vpcId</p> </li>
+    /// <li> <p>resource.instanceDetails.tags.key</p> </li>
+    /// <li> <p>resource.instanceDetails.tags.value</p> </li>
+    /// <li> <p>resource.resourceType</p> </li>
+    /// <li> <p>service.action.actionType</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.api</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.callerType</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.serviceName</p> </li>
+    /// <li> <p>service.action.dnsRequestAction.domain</p> </li>
+    /// <li> <p>service.action.dnsRequestAction.domainWithSuffix</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.blocked</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.connectionDirection</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.localPortDetails.port</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.protocol</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.remotePortDetails.port</p> </li>
+    /// <li> <p>service.additionalInfo.threatListName</p> </li>
+    /// <li> <p>service.archived</p> <p>When this attribute is set to 'true', only archived findings are listed. When it's set to 'false', only unarchived findings are listed. When this attribute is not set, all existing findings are listed.</p> </li>
+    /// <li> <p>service.resourceRole</p> </li>
+    /// <li> <p>severity</p> </li>
+    /// <li> <p>type</p> </li>
+    /// <li> <p>updatedAt</p> <p>Type: Timestamp in Unix Epoch millisecond format: 1486685375000</p> </li>
     /// </ul>
     pub fn set_finding_criteria(mut self, input: ::std::option::Option<crate::types::FindingCriteria>) -> Self {
         self.finding_criteria = input;
@@ -489,106 +285,55 @@ impl ListFindingsInputBuilder {
     }
     /// <p>Represents the criteria used for querying findings. Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>JSON field name</p></li>
-    /// <li>
-    /// <p>accountId</p></li>
-    /// <li>
-    /// <p>region</p></li>
-    /// <li>
-    /// <p>confidence</p></li>
-    /// <li>
-    /// <p>id</p></li>
-    /// <li>
-    /// <p>resource.accessKeyDetails.accessKeyId</p></li>
-    /// <li>
-    /// <p>resource.accessKeyDetails.principalId</p></li>
-    /// <li>
-    /// <p>resource.accessKeyDetails.userName</p></li>
-    /// <li>
-    /// <p>resource.accessKeyDetails.userType</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.iamInstanceProfile.id</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.imageId</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.instanceId</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.publicDnsName</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.publicIp</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.securityGroups.groupId</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.securityGroups.groupName</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.subnetId</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.vpcId</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.tags.key</p></li>
-    /// <li>
-    /// <p>resource.instanceDetails.tags.value</p></li>
-    /// <li>
-    /// <p>resource.resourceType</p></li>
-    /// <li>
-    /// <p>service.action.actionType</p></li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.api</p></li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.callerType</p></li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p></li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p></li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p></li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p></li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p></li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.serviceName</p></li>
-    /// <li>
-    /// <p>service.action.dnsRequestAction.domain</p></li>
-    /// <li>
-    /// <p>service.action.dnsRequestAction.domainWithSuffix</p></li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.blocked</p></li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.connectionDirection</p></li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.localPortDetails.port</p></li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.protocol</p></li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p></li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p></li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p></li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p></li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.remotePortDetails.port</p></li>
-    /// <li>
-    /// <p>service.additionalInfo.threatListName</p></li>
-    /// <li>
-    /// <p>service.archived</p>
-    /// <p>When this attribute is set to 'true', only archived findings are listed. When it's set to 'false', only unarchived findings are listed. When this attribute is not set, all existing findings are listed.</p></li>
-    /// <li>
-    /// <p>service.resourceRole</p></li>
-    /// <li>
-    /// <p>severity</p></li>
-    /// <li>
-    /// <p>type</p></li>
-    /// <li>
-    /// <p>updatedAt</p>
-    /// <p>Type: Timestamp in Unix Epoch millisecond format: 1486685375000</p></li>
+    /// <li> <p>JSON field name</p> </li>
+    /// <li> <p>accountId</p> </li>
+    /// <li> <p>region</p> </li>
+    /// <li> <p>confidence</p> </li>
+    /// <li> <p>id</p> </li>
+    /// <li> <p>resource.accessKeyDetails.accessKeyId</p> </li>
+    /// <li> <p>resource.accessKeyDetails.principalId</p> </li>
+    /// <li> <p>resource.accessKeyDetails.userName</p> </li>
+    /// <li> <p>resource.accessKeyDetails.userType</p> </li>
+    /// <li> <p>resource.instanceDetails.iamInstanceProfile.id</p> </li>
+    /// <li> <p>resource.instanceDetails.imageId</p> </li>
+    /// <li> <p>resource.instanceDetails.instanceId</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.publicDnsName</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.publicIp</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupId</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupName</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.subnetId</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.vpcId</p> </li>
+    /// <li> <p>resource.instanceDetails.tags.key</p> </li>
+    /// <li> <p>resource.instanceDetails.tags.value</p> </li>
+    /// <li> <p>resource.resourceType</p> </li>
+    /// <li> <p>service.action.actionType</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.api</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.callerType</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.serviceName</p> </li>
+    /// <li> <p>service.action.dnsRequestAction.domain</p> </li>
+    /// <li> <p>service.action.dnsRequestAction.domainWithSuffix</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.blocked</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.connectionDirection</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.localPortDetails.port</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.protocol</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.remotePortDetails.port</p> </li>
+    /// <li> <p>service.additionalInfo.threatListName</p> </li>
+    /// <li> <p>service.archived</p> <p>When this attribute is set to 'true', only archived findings are listed. When it's set to 'false', only unarchived findings are listed. When this attribute is not set, all existing findings are listed.</p> </li>
+    /// <li> <p>service.resourceRole</p> </li>
+    /// <li> <p>severity</p> </li>
+    /// <li> <p>type</p> </li>
+    /// <li> <p>updatedAt</p> <p>Type: Timestamp in Unix Epoch millisecond format: 1486685375000</p> </li>
     /// </ul>
     pub fn get_finding_criteria(&self) -> &::std::option::Option<crate::types::FindingCriteria> {
         &self.finding_criteria

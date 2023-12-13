@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRoomInput {
-    /// <p>The ARN of the room to update.</p>
+    /// <p>The ARN of the room to update. </p>
     pub room_arn: ::std::option::Option<::std::string::String>,
     /// <p>The updated name for the room.</p>
     pub room_name: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ pub struct UpdateRoomInput {
     pub profile_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateRoomInput {
-    /// <p>The ARN of the room to update.</p>
+    /// <p>The ARN of the room to update. </p>
     pub fn room_arn(&self) -> ::std::option::Option<&str> {
         self.room_arn.as_deref()
     }
@@ -54,17 +54,17 @@ pub struct UpdateRoomInputBuilder {
     pub(crate) profile_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateRoomInputBuilder {
-    /// <p>The ARN of the room to update.</p>
+    /// <p>The ARN of the room to update. </p>
     pub fn room_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.room_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the room to update.</p>
+    /// <p>The ARN of the room to update. </p>
     pub fn set_room_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.room_arn = input;
         self
     }
-    /// <p>The ARN of the room to update.</p>
+    /// <p>The ARN of the room to update. </p>
     pub fn get_room_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.room_arn
     }

@@ -12,18 +12,13 @@ pub struct UpdateIncidentRecordInput {
     /// <p>A longer description of what occurred during the incident.</p>
     pub summary: ::std::option::Option<::std::string::String>,
     /// <p>Defines the impact of the incident to customers and applications. If you provide an impact for an incident, it overwrites the impact provided by the response plan.</p>
-    /// <p class="title"><b>Supported impact codes</b></p>
+    /// <p class="title"> <b>Supported impact codes</b> </p>
     /// <ul>
-    /// <li>
-    /// <p><code>1</code> - Critical</p></li>
-    /// <li>
-    /// <p><code>2</code> - High</p></li>
-    /// <li>
-    /// <p><code>3</code> - Medium</p></li>
-    /// <li>
-    /// <p><code>4</code> - Low</p></li>
-    /// <li>
-    /// <p><code>5</code> - No Impact</p></li>
+    /// <li> <p> <code>1</code> - Critical</p> </li>
+    /// <li> <p> <code>2</code> - High</p> </li>
+    /// <li> <p> <code>3</code> - Medium</p> </li>
+    /// <li> <p> <code>4</code> - Low</p> </li>
+    /// <li> <p> <code>5</code> - No Impact</p> </li>
     /// </ul>
     pub impact: ::std::option::Option<i32>,
     /// <p>The status of the incident. Possible statuses are <code>Open</code> or <code>Resolved</code>.</p>
@@ -52,18 +47,13 @@ impl UpdateIncidentRecordInput {
         self.summary.as_deref()
     }
     /// <p>Defines the impact of the incident to customers and applications. If you provide an impact for an incident, it overwrites the impact provided by the response plan.</p>
-    /// <p class="title"><b>Supported impact codes</b></p>
+    /// <p class="title"> <b>Supported impact codes</b> </p>
     /// <ul>
-    /// <li>
-    /// <p><code>1</code> - Critical</p></li>
-    /// <li>
-    /// <p><code>2</code> - High</p></li>
-    /// <li>
-    /// <p><code>3</code> - Medium</p></li>
-    /// <li>
-    /// <p><code>4</code> - Low</p></li>
-    /// <li>
-    /// <p><code>5</code> - No Impact</p></li>
+    /// <li> <p> <code>1</code> - Critical</p> </li>
+    /// <li> <p> <code>2</code> - High</p> </li>
+    /// <li> <p> <code>3</code> - Medium</p> </li>
+    /// <li> <p> <code>4</code> - Low</p> </li>
+    /// <li> <p> <code>5</code> - No Impact</p> </li>
     /// </ul>
     pub fn impact(&self) -> ::std::option::Option<i32> {
         self.impact
@@ -163,54 +153,39 @@ impl UpdateIncidentRecordInputBuilder {
         &self.summary
     }
     /// <p>Defines the impact of the incident to customers and applications. If you provide an impact for an incident, it overwrites the impact provided by the response plan.</p>
-    /// <p class="title"><b>Supported impact codes</b></p>
+    /// <p class="title"> <b>Supported impact codes</b> </p>
     /// <ul>
-    /// <li>
-    /// <p><code>1</code> - Critical</p></li>
-    /// <li>
-    /// <p><code>2</code> - High</p></li>
-    /// <li>
-    /// <p><code>3</code> - Medium</p></li>
-    /// <li>
-    /// <p><code>4</code> - Low</p></li>
-    /// <li>
-    /// <p><code>5</code> - No Impact</p></li>
+    /// <li> <p> <code>1</code> - Critical</p> </li>
+    /// <li> <p> <code>2</code> - High</p> </li>
+    /// <li> <p> <code>3</code> - Medium</p> </li>
+    /// <li> <p> <code>4</code> - Low</p> </li>
+    /// <li> <p> <code>5</code> - No Impact</p> </li>
     /// </ul>
     pub fn impact(mut self, input: i32) -> Self {
         self.impact = ::std::option::Option::Some(input);
         self
     }
     /// <p>Defines the impact of the incident to customers and applications. If you provide an impact for an incident, it overwrites the impact provided by the response plan.</p>
-    /// <p class="title"><b>Supported impact codes</b></p>
+    /// <p class="title"> <b>Supported impact codes</b> </p>
     /// <ul>
-    /// <li>
-    /// <p><code>1</code> - Critical</p></li>
-    /// <li>
-    /// <p><code>2</code> - High</p></li>
-    /// <li>
-    /// <p><code>3</code> - Medium</p></li>
-    /// <li>
-    /// <p><code>4</code> - Low</p></li>
-    /// <li>
-    /// <p><code>5</code> - No Impact</p></li>
+    /// <li> <p> <code>1</code> - Critical</p> </li>
+    /// <li> <p> <code>2</code> - High</p> </li>
+    /// <li> <p> <code>3</code> - Medium</p> </li>
+    /// <li> <p> <code>4</code> - Low</p> </li>
+    /// <li> <p> <code>5</code> - No Impact</p> </li>
     /// </ul>
     pub fn set_impact(mut self, input: ::std::option::Option<i32>) -> Self {
         self.impact = input;
         self
     }
     /// <p>Defines the impact of the incident to customers and applications. If you provide an impact for an incident, it overwrites the impact provided by the response plan.</p>
-    /// <p class="title"><b>Supported impact codes</b></p>
+    /// <p class="title"> <b>Supported impact codes</b> </p>
     /// <ul>
-    /// <li>
-    /// <p><code>1</code> - Critical</p></li>
-    /// <li>
-    /// <p><code>2</code> - High</p></li>
-    /// <li>
-    /// <p><code>3</code> - Medium</p></li>
-    /// <li>
-    /// <p><code>4</code> - Low</p></li>
-    /// <li>
-    /// <p><code>5</code> - No Impact</p></li>
+    /// <li> <p> <code>1</code> - Critical</p> </li>
+    /// <li> <p> <code>2</code> - High</p> </li>
+    /// <li> <p> <code>3</code> - Medium</p> </li>
+    /// <li> <p> <code>4</code> - Low</p> </li>
+    /// <li> <p> <code>5</code> - No Impact</p> </li>
     /// </ul>
     pub fn get_impact(&self) -> &::std::option::Option<i32> {
         &self.impact

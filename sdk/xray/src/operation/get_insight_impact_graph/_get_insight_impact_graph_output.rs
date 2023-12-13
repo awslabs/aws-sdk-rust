@@ -7,7 +7,7 @@ pub struct GetInsightImpactGraphOutput {
     pub insight_id: ::std::option::Option<::std::string::String>,
     /// <p>The provided start time.</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The provided end time.</p>
+    /// <p>The provided end time. </p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time, in Unix seconds, at which the service graph started.</p>
     pub service_graph_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -28,7 +28,7 @@ impl GetInsightImpactGraphOutput {
     pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>The provided end time.</p>
+    /// <p>The provided end time. </p>
     pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
@@ -105,17 +105,17 @@ impl GetInsightImpactGraphOutputBuilder {
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.start_time
     }
-    /// <p>The provided end time.</p>
+    /// <p>The provided end time. </p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The provided end time.</p>
+    /// <p>The provided end time. </p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
-    /// <p>The provided end time.</p>
+    /// <p>The provided end time. </p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_time
     }

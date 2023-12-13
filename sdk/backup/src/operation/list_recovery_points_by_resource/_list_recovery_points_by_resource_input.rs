@@ -7,7 +7,7 @@ pub struct ListRecoveryPointsByResourceInput {
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum number of items to be returned.</p><note>
+    /// <p>The maximum number of items to be returned.</p> <note>
     /// <p>Amazon RDS requires a value of at least 20.</p>
     /// </note>
     pub max_results: ::std::option::Option<i32>,
@@ -21,7 +21,7 @@ impl ListRecoveryPointsByResourceInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of items to be returned.</p><note>
+    /// <p>The maximum number of items to be returned.</p> <note>
     /// <p>Amazon RDS requires a value of at least 20.</p>
     /// </note>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -73,21 +73,21 @@ impl ListRecoveryPointsByResourceInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>The maximum number of items to be returned.</p><note>
+    /// <p>The maximum number of items to be returned.</p> <note>
     /// <p>Amazon RDS requires a value of at least 20.</p>
     /// </note>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of items to be returned.</p><note>
+    /// <p>The maximum number of items to be returned.</p> <note>
     /// <p>Amazon RDS requires a value of at least 20.</p>
     /// </note>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of items to be returned.</p><note>
+    /// <p>The maximum number of items to be returned.</p> <note>
     /// <p>Amazon RDS requires a value of at least 20.</p>
     /// </note>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {

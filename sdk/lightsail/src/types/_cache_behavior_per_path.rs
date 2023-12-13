@@ -8,31 +8,17 @@ pub struct CacheBehaviorPerPath {
     /// <p>The path to a directory or file to cached, or not cache. Use an asterisk symbol to specify wildcard directories (<code>path/to/assets/*</code>), and file types (<code>*.html, *jpg, *js</code>). Directories and file paths are case-sensitive.</p>
     /// <p>Examples:</p>
     /// <ul>
-    /// <li>
-    /// <p>Specify the following to cache all files in the document root of an Apache web server running on a Lightsail instance.</p>
-    /// <p><code>var/www/html/</code></p></li>
-    /// <li>
-    /// <p>Specify the following file to cache only the index page in the document root of an Apache web server.</p>
-    /// <p><code>var/www/html/index.html</code></p></li>
-    /// <li>
-    /// <p>Specify the following to cache only the .html files in the document root of an Apache web server.</p>
-    /// <p><code>var/www/html/*.html</code></p></li>
-    /// <li>
-    /// <p>Specify the following to cache only the .jpg, .png, and .gif files in the images sub-directory of the document root of an Apache web server.</p>
-    /// <p><code>var/www/html/images/*.jpg</code></p>
-    /// <p><code>var/www/html/images/*.png</code></p>
-    /// <p><code>var/www/html/images/*.gif</code></p>
-    /// <p>Specify the following to cache all files in the images sub-directory of the document root of an Apache web server.</p>
-    /// <p><code>var/www/html/images/</code></p></li>
+    /// <li> <p>Specify the following to cache all files in the document root of an Apache web server running on a Lightsail instance.</p> <p> <code>var/www/html/</code> </p> </li>
+    /// <li> <p>Specify the following file to cache only the index page in the document root of an Apache web server.</p> <p> <code>var/www/html/index.html</code> </p> </li>
+    /// <li> <p>Specify the following to cache only the .html files in the document root of an Apache web server.</p> <p> <code>var/www/html/*.html</code> </p> </li>
+    /// <li> <p>Specify the following to cache only the .jpg, .png, and .gif files in the images sub-directory of the document root of an Apache web server.</p> <p> <code>var/www/html/images/*.jpg</code> </p> <p> <code>var/www/html/images/*.png</code> </p> <p> <code>var/www/html/images/*.gif</code> </p> <p>Specify the following to cache all files in the images sub-directory of the document root of an Apache web server.</p> <p> <code>var/www/html/images/</code> </p> </li>
     /// </ul>
     pub path: ::std::option::Option<::std::string::String>,
     /// <p>The cache behavior for the specified path.</p>
     /// <p>You can specify one of the following per-path cache behaviors:</p>
     /// <ul>
-    /// <li>
-    /// <p><b> <code>cache</code> </b> - This behavior caches the specified path.</p></li>
-    /// <li>
-    /// <p><b> <code>dont-cache</code> </b> - This behavior doesn't cache the specified path.</p></li>
+    /// <li> <p> <b> <code>cache</code> </b> - This behavior caches the specified path. </p> </li>
+    /// <li> <p> <b> <code>dont-cache</code> </b> - This behavior doesn't cache the specified path. </p> </li>
     /// </ul>
     pub behavior: ::std::option::Option<crate::types::BehaviorEnum>,
 }
@@ -40,22 +26,10 @@ impl CacheBehaviorPerPath {
     /// <p>The path to a directory or file to cached, or not cache. Use an asterisk symbol to specify wildcard directories (<code>path/to/assets/*</code>), and file types (<code>*.html, *jpg, *js</code>). Directories and file paths are case-sensitive.</p>
     /// <p>Examples:</p>
     /// <ul>
-    /// <li>
-    /// <p>Specify the following to cache all files in the document root of an Apache web server running on a Lightsail instance.</p>
-    /// <p><code>var/www/html/</code></p></li>
-    /// <li>
-    /// <p>Specify the following file to cache only the index page in the document root of an Apache web server.</p>
-    /// <p><code>var/www/html/index.html</code></p></li>
-    /// <li>
-    /// <p>Specify the following to cache only the .html files in the document root of an Apache web server.</p>
-    /// <p><code>var/www/html/*.html</code></p></li>
-    /// <li>
-    /// <p>Specify the following to cache only the .jpg, .png, and .gif files in the images sub-directory of the document root of an Apache web server.</p>
-    /// <p><code>var/www/html/images/*.jpg</code></p>
-    /// <p><code>var/www/html/images/*.png</code></p>
-    /// <p><code>var/www/html/images/*.gif</code></p>
-    /// <p>Specify the following to cache all files in the images sub-directory of the document root of an Apache web server.</p>
-    /// <p><code>var/www/html/images/</code></p></li>
+    /// <li> <p>Specify the following to cache all files in the document root of an Apache web server running on a Lightsail instance.</p> <p> <code>var/www/html/</code> </p> </li>
+    /// <li> <p>Specify the following file to cache only the index page in the document root of an Apache web server.</p> <p> <code>var/www/html/index.html</code> </p> </li>
+    /// <li> <p>Specify the following to cache only the .html files in the document root of an Apache web server.</p> <p> <code>var/www/html/*.html</code> </p> </li>
+    /// <li> <p>Specify the following to cache only the .jpg, .png, and .gif files in the images sub-directory of the document root of an Apache web server.</p> <p> <code>var/www/html/images/*.jpg</code> </p> <p> <code>var/www/html/images/*.png</code> </p> <p> <code>var/www/html/images/*.gif</code> </p> <p>Specify the following to cache all files in the images sub-directory of the document root of an Apache web server.</p> <p> <code>var/www/html/images/</code> </p> </li>
     /// </ul>
     pub fn path(&self) -> ::std::option::Option<&str> {
         self.path.as_deref()
@@ -63,10 +37,8 @@ impl CacheBehaviorPerPath {
     /// <p>The cache behavior for the specified path.</p>
     /// <p>You can specify one of the following per-path cache behaviors:</p>
     /// <ul>
-    /// <li>
-    /// <p><b> <code>cache</code> </b> - This behavior caches the specified path.</p></li>
-    /// <li>
-    /// <p><b> <code>dont-cache</code> </b> - This behavior doesn't cache the specified path.</p></li>
+    /// <li> <p> <b> <code>cache</code> </b> - This behavior caches the specified path. </p> </li>
+    /// <li> <p> <b> <code>dont-cache</code> </b> - This behavior doesn't cache the specified path. </p> </li>
     /// </ul>
     pub fn behavior(&self) -> ::std::option::Option<&crate::types::BehaviorEnum> {
         self.behavior.as_ref()
@@ -90,22 +62,10 @@ impl CacheBehaviorPerPathBuilder {
     /// <p>The path to a directory or file to cached, or not cache. Use an asterisk symbol to specify wildcard directories (<code>path/to/assets/*</code>), and file types (<code>*.html, *jpg, *js</code>). Directories and file paths are case-sensitive.</p>
     /// <p>Examples:</p>
     /// <ul>
-    /// <li>
-    /// <p>Specify the following to cache all files in the document root of an Apache web server running on a Lightsail instance.</p>
-    /// <p><code>var/www/html/</code></p></li>
-    /// <li>
-    /// <p>Specify the following file to cache only the index page in the document root of an Apache web server.</p>
-    /// <p><code>var/www/html/index.html</code></p></li>
-    /// <li>
-    /// <p>Specify the following to cache only the .html files in the document root of an Apache web server.</p>
-    /// <p><code>var/www/html/*.html</code></p></li>
-    /// <li>
-    /// <p>Specify the following to cache only the .jpg, .png, and .gif files in the images sub-directory of the document root of an Apache web server.</p>
-    /// <p><code>var/www/html/images/*.jpg</code></p>
-    /// <p><code>var/www/html/images/*.png</code></p>
-    /// <p><code>var/www/html/images/*.gif</code></p>
-    /// <p>Specify the following to cache all files in the images sub-directory of the document root of an Apache web server.</p>
-    /// <p><code>var/www/html/images/</code></p></li>
+    /// <li> <p>Specify the following to cache all files in the document root of an Apache web server running on a Lightsail instance.</p> <p> <code>var/www/html/</code> </p> </li>
+    /// <li> <p>Specify the following file to cache only the index page in the document root of an Apache web server.</p> <p> <code>var/www/html/index.html</code> </p> </li>
+    /// <li> <p>Specify the following to cache only the .html files in the document root of an Apache web server.</p> <p> <code>var/www/html/*.html</code> </p> </li>
+    /// <li> <p>Specify the following to cache only the .jpg, .png, and .gif files in the images sub-directory of the document root of an Apache web server.</p> <p> <code>var/www/html/images/*.jpg</code> </p> <p> <code>var/www/html/images/*.png</code> </p> <p> <code>var/www/html/images/*.gif</code> </p> <p>Specify the following to cache all files in the images sub-directory of the document root of an Apache web server.</p> <p> <code>var/www/html/images/</code> </p> </li>
     /// </ul>
     pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.path = ::std::option::Option::Some(input.into());
@@ -114,22 +74,10 @@ impl CacheBehaviorPerPathBuilder {
     /// <p>The path to a directory or file to cached, or not cache. Use an asterisk symbol to specify wildcard directories (<code>path/to/assets/*</code>), and file types (<code>*.html, *jpg, *js</code>). Directories and file paths are case-sensitive.</p>
     /// <p>Examples:</p>
     /// <ul>
-    /// <li>
-    /// <p>Specify the following to cache all files in the document root of an Apache web server running on a Lightsail instance.</p>
-    /// <p><code>var/www/html/</code></p></li>
-    /// <li>
-    /// <p>Specify the following file to cache only the index page in the document root of an Apache web server.</p>
-    /// <p><code>var/www/html/index.html</code></p></li>
-    /// <li>
-    /// <p>Specify the following to cache only the .html files in the document root of an Apache web server.</p>
-    /// <p><code>var/www/html/*.html</code></p></li>
-    /// <li>
-    /// <p>Specify the following to cache only the .jpg, .png, and .gif files in the images sub-directory of the document root of an Apache web server.</p>
-    /// <p><code>var/www/html/images/*.jpg</code></p>
-    /// <p><code>var/www/html/images/*.png</code></p>
-    /// <p><code>var/www/html/images/*.gif</code></p>
-    /// <p>Specify the following to cache all files in the images sub-directory of the document root of an Apache web server.</p>
-    /// <p><code>var/www/html/images/</code></p></li>
+    /// <li> <p>Specify the following to cache all files in the document root of an Apache web server running on a Lightsail instance.</p> <p> <code>var/www/html/</code> </p> </li>
+    /// <li> <p>Specify the following file to cache only the index page in the document root of an Apache web server.</p> <p> <code>var/www/html/index.html</code> </p> </li>
+    /// <li> <p>Specify the following to cache only the .html files in the document root of an Apache web server.</p> <p> <code>var/www/html/*.html</code> </p> </li>
+    /// <li> <p>Specify the following to cache only the .jpg, .png, and .gif files in the images sub-directory of the document root of an Apache web server.</p> <p> <code>var/www/html/images/*.jpg</code> </p> <p> <code>var/www/html/images/*.png</code> </p> <p> <code>var/www/html/images/*.gif</code> </p> <p>Specify the following to cache all files in the images sub-directory of the document root of an Apache web server.</p> <p> <code>var/www/html/images/</code> </p> </li>
     /// </ul>
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.path = input;
@@ -138,22 +86,10 @@ impl CacheBehaviorPerPathBuilder {
     /// <p>The path to a directory or file to cached, or not cache. Use an asterisk symbol to specify wildcard directories (<code>path/to/assets/*</code>), and file types (<code>*.html, *jpg, *js</code>). Directories and file paths are case-sensitive.</p>
     /// <p>Examples:</p>
     /// <ul>
-    /// <li>
-    /// <p>Specify the following to cache all files in the document root of an Apache web server running on a Lightsail instance.</p>
-    /// <p><code>var/www/html/</code></p></li>
-    /// <li>
-    /// <p>Specify the following file to cache only the index page in the document root of an Apache web server.</p>
-    /// <p><code>var/www/html/index.html</code></p></li>
-    /// <li>
-    /// <p>Specify the following to cache only the .html files in the document root of an Apache web server.</p>
-    /// <p><code>var/www/html/*.html</code></p></li>
-    /// <li>
-    /// <p>Specify the following to cache only the .jpg, .png, and .gif files in the images sub-directory of the document root of an Apache web server.</p>
-    /// <p><code>var/www/html/images/*.jpg</code></p>
-    /// <p><code>var/www/html/images/*.png</code></p>
-    /// <p><code>var/www/html/images/*.gif</code></p>
-    /// <p>Specify the following to cache all files in the images sub-directory of the document root of an Apache web server.</p>
-    /// <p><code>var/www/html/images/</code></p></li>
+    /// <li> <p>Specify the following to cache all files in the document root of an Apache web server running on a Lightsail instance.</p> <p> <code>var/www/html/</code> </p> </li>
+    /// <li> <p>Specify the following file to cache only the index page in the document root of an Apache web server.</p> <p> <code>var/www/html/index.html</code> </p> </li>
+    /// <li> <p>Specify the following to cache only the .html files in the document root of an Apache web server.</p> <p> <code>var/www/html/*.html</code> </p> </li>
+    /// <li> <p>Specify the following to cache only the .jpg, .png, and .gif files in the images sub-directory of the document root of an Apache web server.</p> <p> <code>var/www/html/images/*.jpg</code> </p> <p> <code>var/www/html/images/*.png</code> </p> <p> <code>var/www/html/images/*.gif</code> </p> <p>Specify the following to cache all files in the images sub-directory of the document root of an Apache web server.</p> <p> <code>var/www/html/images/</code> </p> </li>
     /// </ul>
     pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.path
@@ -161,10 +97,8 @@ impl CacheBehaviorPerPathBuilder {
     /// <p>The cache behavior for the specified path.</p>
     /// <p>You can specify one of the following per-path cache behaviors:</p>
     /// <ul>
-    /// <li>
-    /// <p><b> <code>cache</code> </b> - This behavior caches the specified path.</p></li>
-    /// <li>
-    /// <p><b> <code>dont-cache</code> </b> - This behavior doesn't cache the specified path.</p></li>
+    /// <li> <p> <b> <code>cache</code> </b> - This behavior caches the specified path. </p> </li>
+    /// <li> <p> <b> <code>dont-cache</code> </b> - This behavior doesn't cache the specified path. </p> </li>
     /// </ul>
     pub fn behavior(mut self, input: crate::types::BehaviorEnum) -> Self {
         self.behavior = ::std::option::Option::Some(input);
@@ -173,10 +107,8 @@ impl CacheBehaviorPerPathBuilder {
     /// <p>The cache behavior for the specified path.</p>
     /// <p>You can specify one of the following per-path cache behaviors:</p>
     /// <ul>
-    /// <li>
-    /// <p><b> <code>cache</code> </b> - This behavior caches the specified path.</p></li>
-    /// <li>
-    /// <p><b> <code>dont-cache</code> </b> - This behavior doesn't cache the specified path.</p></li>
+    /// <li> <p> <b> <code>cache</code> </b> - This behavior caches the specified path. </p> </li>
+    /// <li> <p> <b> <code>dont-cache</code> </b> - This behavior doesn't cache the specified path. </p> </li>
     /// </ul>
     pub fn set_behavior(mut self, input: ::std::option::Option<crate::types::BehaviorEnum>) -> Self {
         self.behavior = input;
@@ -185,10 +117,8 @@ impl CacheBehaviorPerPathBuilder {
     /// <p>The cache behavior for the specified path.</p>
     /// <p>You can specify one of the following per-path cache behaviors:</p>
     /// <ul>
-    /// <li>
-    /// <p><b> <code>cache</code> </b> - This behavior caches the specified path.</p></li>
-    /// <li>
-    /// <p><b> <code>dont-cache</code> </b> - This behavior doesn't cache the specified path.</p></li>
+    /// <li> <p> <b> <code>cache</code> </b> - This behavior caches the specified path. </p> </li>
+    /// <li> <p> <b> <code>dont-cache</code> </b> - This behavior doesn't cache the specified path. </p> </li>
     /// </ul>
     pub fn get_behavior(&self) -> &::std::option::Option<crate::types::BehaviorEnum> {
         &self.behavior

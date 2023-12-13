@@ -22,7 +22,7 @@ impl CreateTapeWithBarcodeInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateTapeWithBarcode`.
 ///
-/// <p>Creates a virtual tape by using your own barcode. You write data to the virtual tape and then archive the tape. A barcode is unique and cannot be reused if it has already been used on a tape. This applies to barcodes used on deleted tapes. This operation is only supported in the tape gateway type.</p><note>
+/// <p>Creates a virtual tape by using your own barcode. You write data to the virtual tape and then archive the tape. A barcode is unique and cannot be reused if it has already been used on a tape. This applies to barcodes used on deleted tapes. This operation is only supported in the tape gateway type.</p> <note>
 /// <p>Cache storage must be allocated to the gateway before you can create a virtual tape. Use the <code>AddCache</code> operation to add cache storage to a gateway.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -124,60 +124,60 @@ impl CreateTapeWithBarcodeFluentBuilder {
     pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_gateway_arn()
     }
-    /// <p>The size, in bytes, of the virtual tape that you want to create.</p><note>
+    /// <p>The size, in bytes, of the virtual tape that you want to create.</p> <note>
     /// <p>The size must be aligned by gigabyte (1024*1024*1024 bytes).</p>
     /// </note>
     pub fn tape_size_in_bytes(mut self, input: i64) -> Self {
         self.inner = self.inner.tape_size_in_bytes(input);
         self
     }
-    /// <p>The size, in bytes, of the virtual tape that you want to create.</p><note>
+    /// <p>The size, in bytes, of the virtual tape that you want to create.</p> <note>
     /// <p>The size must be aligned by gigabyte (1024*1024*1024 bytes).</p>
     /// </note>
     pub fn set_tape_size_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_tape_size_in_bytes(input);
         self
     }
-    /// <p>The size, in bytes, of the virtual tape that you want to create.</p><note>
+    /// <p>The size, in bytes, of the virtual tape that you want to create.</p> <note>
     /// <p>The size must be aligned by gigabyte (1024*1024*1024 bytes).</p>
     /// </note>
     pub fn get_tape_size_in_bytes(&self) -> &::std::option::Option<i64> {
         self.inner.get_tape_size_in_bytes()
     }
-    /// <p>The barcode that you want to assign to the tape.</p><note>
+    /// <p>The barcode that you want to assign to the tape.</p> <note>
     /// <p>Barcodes cannot be reused. This includes barcodes used for tapes that have been deleted.</p>
     /// </note>
     pub fn tape_barcode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tape_barcode(input.into());
         self
     }
-    /// <p>The barcode that you want to assign to the tape.</p><note>
+    /// <p>The barcode that you want to assign to the tape.</p> <note>
     /// <p>Barcodes cannot be reused. This includes barcodes used for tapes that have been deleted.</p>
     /// </note>
     pub fn set_tape_barcode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_tape_barcode(input);
         self
     }
-    /// <p>The barcode that you want to assign to the tape.</p><note>
+    /// <p>The barcode that you want to assign to the tape.</p> <note>
     /// <p>Barcodes cannot be reused. This includes barcodes used for tapes that have been deleted.</p>
     /// </note>
     pub fn get_tape_barcode(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_tape_barcode()
     }
     /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
-    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub fn kms_encrypted(mut self, input: bool) -> Self {
         self.inner = self.inner.kms_encrypted(input);
         self
     }
     /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
-    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub fn set_kms_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_kms_encrypted(input);
         self
     }
     /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
-    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub fn get_kms_encrypted(&self) -> &::std::option::Option<bool> {
         self.inner.get_kms_encrypted()
     }
@@ -227,21 +227,21 @@ impl CreateTapeWithBarcodeFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A list of up to 50 tags that can be assigned to a virtual tape that has a barcode. Each tag is a key-value pair.</p><note>
+    /// <p>A list of up to 50 tags that can be assigned to a virtual tape that has a barcode. Each tag is a key-value pair.</p> <note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
-    /// <p>A list of up to 50 tags that can be assigned to a virtual tape that has a barcode. Each tag is a key-value pair.</p><note>
+    /// <p>A list of up to 50 tags that can be assigned to a virtual tape that has a barcode. Each tag is a key-value pair.</p> <note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>A list of up to 50 tags that can be assigned to a virtual tape that has a barcode. Each tag is a key-value pair.</p><note>
+    /// <p>A list of up to 50 tags that can be assigned to a virtual tape that has a barcode. Each tag is a key-value pair.</p> <note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {

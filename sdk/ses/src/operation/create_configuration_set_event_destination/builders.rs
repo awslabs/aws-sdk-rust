@@ -22,7 +22,7 @@ impl CreateConfigurationSetEventDestinationInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateConfigurationSetEventDestination`.
 ///
-/// <p>Creates a configuration set event destination.</p><note>
+/// <p>Creates a configuration set event destination.</p> <note>
 /// <p>When you create or update an event destination, you must provide one, and only one, destination. The destination can be CloudWatch, Amazon Kinesis Firehose, or Amazon Simple Notification Service (Amazon SNS).</p>
 /// </note>
 /// <p>An event destination is the Amazon Web Services service to which Amazon SES publishes the email sending events associated with a configuration set. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p>

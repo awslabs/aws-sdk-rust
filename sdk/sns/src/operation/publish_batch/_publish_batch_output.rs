@@ -5,7 +5,7 @@
 pub struct PublishBatchOutput {
     /// <p>A list of successful <code>PublishBatch</code> responses.</p>
     pub successful: ::std::option::Option<::std::vec::Vec<crate::types::PublishBatchResultEntry>>,
-    /// <p>A list of failed <code>PublishBatch</code> responses.</p>
+    /// <p>A list of failed <code>PublishBatch</code> responses. </p>
     pub failed: ::std::option::Option<::std::vec::Vec<crate::types::BatchResultErrorEntry>>,
     _request_id: Option<String>,
 }
@@ -16,7 +16,7 @@ impl PublishBatchOutput {
     pub fn successful(&self) -> &[crate::types::PublishBatchResultEntry] {
         self.successful.as_deref().unwrap_or_default()
     }
-    /// <p>A list of failed <code>PublishBatch</code> responses.</p>
+    /// <p>A list of failed <code>PublishBatch</code> responses. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed.is_none()`.
     pub fn failed(&self) -> &[crate::types::BatchResultErrorEntry] {
@@ -68,19 +68,19 @@ impl PublishBatchOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_failed`](Self::set_failed).
     ///
-    /// <p>A list of failed <code>PublishBatch</code> responses.</p>
+    /// <p>A list of failed <code>PublishBatch</code> responses. </p>
     pub fn failed(mut self, input: crate::types::BatchResultErrorEntry) -> Self {
         let mut v = self.failed.unwrap_or_default();
         v.push(input);
         self.failed = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of failed <code>PublishBatch</code> responses.</p>
+    /// <p>A list of failed <code>PublishBatch</code> responses. </p>
     pub fn set_failed(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchResultErrorEntry>>) -> Self {
         self.failed = input;
         self
     }
-    /// <p>A list of failed <code>PublishBatch</code> responses.</p>
+    /// <p>A list of failed <code>PublishBatch</code> responses. </p>
     pub fn get_failed(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchResultErrorEntry>> {
         &self.failed
     }

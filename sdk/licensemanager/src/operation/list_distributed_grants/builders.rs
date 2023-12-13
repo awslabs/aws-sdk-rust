@@ -132,16 +132,11 @@ impl ListDistributedGrantsFluentBuilder {
     ///
     /// <p>Filters to scope the results. The following filters are supported:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>LicenseArn</code></p></li>
-    /// <li>
-    /// <p><code>GrantStatus</code></p></li>
-    /// <li>
-    /// <p><code>GranteePrincipalARN</code></p></li>
-    /// <li>
-    /// <p><code>ProductSKU</code></p></li>
-    /// <li>
-    /// <p><code>LicenseIssuerName</code></p></li>
+    /// <li> <p> <code>LicenseArn</code> </p> </li>
+    /// <li> <p> <code>GrantStatus</code> </p> </li>
+    /// <li> <p> <code>GranteePrincipalARN</code> </p> </li>
+    /// <li> <p> <code>ProductSKU</code> </p> </li>
+    /// <li> <p> <code>LicenseIssuerName</code> </p> </li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
@@ -149,16 +144,11 @@ impl ListDistributedGrantsFluentBuilder {
     }
     /// <p>Filters to scope the results. The following filters are supported:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>LicenseArn</code></p></li>
-    /// <li>
-    /// <p><code>GrantStatus</code></p></li>
-    /// <li>
-    /// <p><code>GranteePrincipalARN</code></p></li>
-    /// <li>
-    /// <p><code>ProductSKU</code></p></li>
-    /// <li>
-    /// <p><code>LicenseIssuerName</code></p></li>
+    /// <li> <p> <code>LicenseArn</code> </p> </li>
+    /// <li> <p> <code>GrantStatus</code> </p> </li>
+    /// <li> <p> <code>GranteePrincipalARN</code> </p> </li>
+    /// <li> <p> <code>ProductSKU</code> </p> </li>
+    /// <li> <p> <code>LicenseIssuerName</code> </p> </li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
@@ -166,16 +156,11 @@ impl ListDistributedGrantsFluentBuilder {
     }
     /// <p>Filters to scope the results. The following filters are supported:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>LicenseArn</code></p></li>
-    /// <li>
-    /// <p><code>GrantStatus</code></p></li>
-    /// <li>
-    /// <p><code>GranteePrincipalARN</code></p></li>
-    /// <li>
-    /// <p><code>ProductSKU</code></p></li>
-    /// <li>
-    /// <p><code>LicenseIssuerName</code></p></li>
+    /// <li> <p> <code>LicenseArn</code> </p> </li>
+    /// <li> <p> <code>GrantStatus</code> </p> </li>
+    /// <li> <p> <code>GranteePrincipalARN</code> </p> </li>
+    /// <li> <p> <code>ProductSKU</code> </p> </li>
+    /// <li> <p> <code>LicenseIssuerName</code> </p> </li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()

@@ -8,7 +8,7 @@ pub struct S3ReferenceDataSourceDescription {
     pub bucket_arn: ::std::string::String,
     /// <p>Amazon S3 object key name.</p>
     pub file_key: ::std::string::String,
-    /// <p>The ARN of the IAM role that Kinesis Data Analytics can assume to read the Amazon S3 object on your behalf to populate the in-application reference table.</p><note>
+    /// <p>The ARN of the IAM role that Kinesis Data Analytics can assume to read the Amazon S3 object on your behalf to populate the in-application reference table. </p> <note>
     /// <p>Provided for backward compatibility. Applications that are created with the current API version have an application-level service execution role rather than a resource-level role.</p>
     /// </note>
     pub reference_role_arn: ::std::option::Option<::std::string::String>,
@@ -24,7 +24,7 @@ impl S3ReferenceDataSourceDescription {
         use std::ops::Deref;
         self.file_key.deref()
     }
-    /// <p>The ARN of the IAM role that Kinesis Data Analytics can assume to read the Amazon S3 object on your behalf to populate the in-application reference table.</p><note>
+    /// <p>The ARN of the IAM role that Kinesis Data Analytics can assume to read the Amazon S3 object on your behalf to populate the in-application reference table. </p> <note>
     /// <p>Provided for backward compatibility. Applications that are created with the current API version have an application-level service execution role rather than a resource-level role.</p>
     /// </note>
     pub fn reference_role_arn(&self) -> ::std::option::Option<&str> {
@@ -77,21 +77,21 @@ impl S3ReferenceDataSourceDescriptionBuilder {
     pub fn get_file_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.file_key
     }
-    /// <p>The ARN of the IAM role that Kinesis Data Analytics can assume to read the Amazon S3 object on your behalf to populate the in-application reference table.</p><note>
+    /// <p>The ARN of the IAM role that Kinesis Data Analytics can assume to read the Amazon S3 object on your behalf to populate the in-application reference table. </p> <note>
     /// <p>Provided for backward compatibility. Applications that are created with the current API version have an application-level service execution role rather than a resource-level role.</p>
     /// </note>
     pub fn reference_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reference_role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the IAM role that Kinesis Data Analytics can assume to read the Amazon S3 object on your behalf to populate the in-application reference table.</p><note>
+    /// <p>The ARN of the IAM role that Kinesis Data Analytics can assume to read the Amazon S3 object on your behalf to populate the in-application reference table. </p> <note>
     /// <p>Provided for backward compatibility. Applications that are created with the current API version have an application-level service execution role rather than a resource-level role.</p>
     /// </note>
     pub fn set_reference_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reference_role_arn = input;
         self
     }
-    /// <p>The ARN of the IAM role that Kinesis Data Analytics can assume to read the Amazon S3 object on your behalf to populate the in-application reference table.</p><note>
+    /// <p>The ARN of the IAM role that Kinesis Data Analytics can assume to read the Amazon S3 object on your behalf to populate the in-application reference table. </p> <note>
     /// <p>Provided for backward compatibility. Applications that are created with the current API version have an application-level service execution role rather than a resource-level role.</p>
     /// </note>
     pub fn get_reference_role_arn(&self) -> &::std::option::Option<::std::string::String> {

@@ -5,9 +5,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Payload {
-    /// <p>The content of the payload. You can use a string expression that includes quoted strings (<code>'<string>
+    /// <p>The content of the payload. You can use a string expression that includes quoted strings (<code>'
+    /// <string>
     /// '
-    /// </string></code>), variables (<code>$variable.<variable-name></variable-name></code>), input values (<code>$input.<input-name>
+    /// </string></code>), variables (<code>$variable.
+    /// <variable-name></variable-name></code>), input values (<code>$input.
+    /// <input-name>
     /// .
     /// <path-to-datum></path-to-datum>
     /// </input-name></code>), string concatenations, and quoted strings that contain <code>${}</code> as the content. The recommended maximum size of a content expression is 1 KB.</p>
@@ -16,9 +19,12 @@ pub struct Payload {
     pub r#type: crate::types::PayloadType,
 }
 impl Payload {
-    /// <p>The content of the payload. You can use a string expression that includes quoted strings (<code>'<string>
+    /// <p>The content of the payload. You can use a string expression that includes quoted strings (<code>'
+    /// <string>
     /// '
-    /// </string></code>), variables (<code>$variable.<variable-name></variable-name></code>), input values (<code>$input.<input-name>
+    /// </string></code>), variables (<code>$variable.
+    /// <variable-name></variable-name></code>), input values (<code>$input.
+    /// <input-name>
     /// .
     /// <path-to-datum></path-to-datum>
     /// </input-name></code>), string concatenations, and quoted strings that contain <code>${}</code> as the content. The recommended maximum size of a content expression is 1 KB.</p>
@@ -46,9 +52,12 @@ pub struct PayloadBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::PayloadType>,
 }
 impl PayloadBuilder {
-    /// <p>The content of the payload. You can use a string expression that includes quoted strings (<code>'<string>
+    /// <p>The content of the payload. You can use a string expression that includes quoted strings (<code>'
+    /// <string>
     /// '
-    /// </string></code>), variables (<code>$variable.<variable-name></variable-name></code>), input values (<code>$input.<input-name>
+    /// </string></code>), variables (<code>$variable.
+    /// <variable-name></variable-name></code>), input values (<code>$input.
+    /// <input-name>
     /// .
     /// <path-to-datum></path-to-datum>
     /// </input-name></code>), string concatenations, and quoted strings that contain <code>${}</code> as the content. The recommended maximum size of a content expression is 1 KB.</p>
@@ -57,9 +66,12 @@ impl PayloadBuilder {
         self.content_expression = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The content of the payload. You can use a string expression that includes quoted strings (<code>'<string>
+    /// <p>The content of the payload. You can use a string expression that includes quoted strings (<code>'
+    /// <string>
     /// '
-    /// </string></code>), variables (<code>$variable.<variable-name></variable-name></code>), input values (<code>$input.<input-name>
+    /// </string></code>), variables (<code>$variable.
+    /// <variable-name></variable-name></code>), input values (<code>$input.
+    /// <input-name>
     /// .
     /// <path-to-datum></path-to-datum>
     /// </input-name></code>), string concatenations, and quoted strings that contain <code>${}</code> as the content. The recommended maximum size of a content expression is 1 KB.</p>
@@ -67,9 +79,12 @@ impl PayloadBuilder {
         self.content_expression = input;
         self
     }
-    /// <p>The content of the payload. You can use a string expression that includes quoted strings (<code>'<string>
+    /// <p>The content of the payload. You can use a string expression that includes quoted strings (<code>'
+    /// <string>
     /// '
-    /// </string></code>), variables (<code>$variable.<variable-name></variable-name></code>), input values (<code>$input.<input-name>
+    /// </string></code>), variables (<code>$variable.
+    /// <variable-name></variable-name></code>), input values (<code>$input.
+    /// <input-name>
     /// .
     /// <path-to-datum></path-to-datum>
     /// </input-name></code>), string concatenations, and quoted strings that contain <code>${}</code> as the content. The recommended maximum size of a content expression is 1 KB.</p>

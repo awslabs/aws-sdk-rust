@@ -259,7 +259,7 @@ pub enum PutCommentReactionError {
     InvalidReactionValueException(crate::types::error::InvalidReactionValueException),
     /// <p>The number of reactions has been exceeded. Reactions are limited to one reaction per user for each individual comment ID.</p>
     ReactionLimitExceededException(crate::types::error::ReactionLimitExceededException),
-    /// <p>A reaction value is required.</p>
+    /// <p>A reaction value is required. </p>
     ReactionValueRequiredException(crate::types::error::ReactionValueRequiredException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

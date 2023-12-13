@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteQueryLoggingConfig`](crate::operation::delete_query_logging_config::builders::DeleteQueryLoggingConfigFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::delete_query_logging_config::builders::DeleteQueryLoggingConfigFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_query_logging_config::builders::DeleteQueryLoggingConfigFluentBuilder::set_id):<br>required: **true**<br><p>The ID of the configuration that you want to delete.</p><br>
+    ///   - [`id(impl Into<String>)`](crate::operation::delete_query_logging_config::builders::DeleteQueryLoggingConfigFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_query_logging_config::builders::DeleteQueryLoggingConfigFluentBuilder::set_id):<br>required: **true**<br><p>The ID of the configuration that you want to delete. </p><br>
     /// - On success, responds with [`DeleteQueryLoggingConfigOutput`](crate::operation::delete_query_logging_config::DeleteQueryLoggingConfigOutput)
     /// - On failure, responds with [`SdkError<DeleteQueryLoggingConfigError>`](crate::operation::delete_query_logging_config::DeleteQueryLoggingConfigError)
     pub fn delete_query_logging_config(&self) -> crate::operation::delete_query_logging_config::builders::DeleteQueryLoggingConfigFluentBuilder {

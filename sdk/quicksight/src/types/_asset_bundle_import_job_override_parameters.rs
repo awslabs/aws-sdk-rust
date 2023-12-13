@@ -10,7 +10,7 @@ pub struct AssetBundleImportJobOverrideParameters {
     pub vpc_connections: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobVpcConnectionOverrideParameters>>,
     /// <p>A list of overrides for any <code>RefreshSchedule</code> resources that are present in the asset bundle that is imported.</p>
     pub refresh_schedules: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobRefreshScheduleOverrideParameters>>,
-    /// <p>A list of overrides for any <code>DataSource</code> resources that are present in the asset bundle that is imported.</p>
+    /// <p> A list of overrides for any <code>DataSource</code> resources that are present in the asset bundle that is imported.</p>
     pub data_sources: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobDataSourceOverrideParameters>>,
     /// <p>A list of overrides for any <code>DataSet</code> resources that are present in the asset bundle that is imported.</p>
     pub data_sets: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobDataSetOverrideParameters>>,
@@ -38,7 +38,7 @@ impl AssetBundleImportJobOverrideParameters {
     pub fn refresh_schedules(&self) -> &[crate::types::AssetBundleImportJobRefreshScheduleOverrideParameters] {
         self.refresh_schedules.as_deref().unwrap_or_default()
     }
-    /// <p>A list of overrides for any <code>DataSource</code> resources that are present in the asset bundle that is imported.</p>
+    /// <p> A list of overrides for any <code>DataSource</code> resources that are present in the asset bundle that is imported.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_sources.is_none()`.
     pub fn data_sources(&self) -> &[crate::types::AssetBundleImportJobDataSourceOverrideParameters] {
@@ -161,14 +161,14 @@ impl AssetBundleImportJobOverrideParametersBuilder {
     ///
     /// To override the contents of this collection use [`set_data_sources`](Self::set_data_sources).
     ///
-    /// <p>A list of overrides for any <code>DataSource</code> resources that are present in the asset bundle that is imported.</p>
+    /// <p> A list of overrides for any <code>DataSource</code> resources that are present in the asset bundle that is imported.</p>
     pub fn data_sources(mut self, input: crate::types::AssetBundleImportJobDataSourceOverrideParameters) -> Self {
         let mut v = self.data_sources.unwrap_or_default();
         v.push(input);
         self.data_sources = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of overrides for any <code>DataSource</code> resources that are present in the asset bundle that is imported.</p>
+    /// <p> A list of overrides for any <code>DataSource</code> resources that are present in the asset bundle that is imported.</p>
     pub fn set_data_sources(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobDataSourceOverrideParameters>>,
@@ -176,7 +176,7 @@ impl AssetBundleImportJobOverrideParametersBuilder {
         self.data_sources = input;
         self
     }
-    /// <p>A list of overrides for any <code>DataSource</code> resources that are present in the asset bundle that is imported.</p>
+    /// <p> A list of overrides for any <code>DataSource</code> resources that are present in the asset bundle that is imported.</p>
     pub fn get_data_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobDataSourceOverrideParameters>> {
         &self.data_sources
     }

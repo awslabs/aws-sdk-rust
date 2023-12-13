@@ -12,14 +12,10 @@ pub struct ExportTask {
     /// <p>The data exported from the snapshot or cluster.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>database</code> - Export all the data from a specified database.</p></li>
-    /// <li>
-    /// <p><code>database.table</code> <i>table-name</i> - Export a table of the snapshot or cluster. This format is valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.</p></li>
-    /// <li>
-    /// <p><code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot or cluster. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p></li>
-    /// <li>
-    /// <p><code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p></li>
+    /// <li> <p> <code>database</code> - Export all the data from a specified database.</p> </li>
+    /// <li> <p> <code>database.table</code> <i>table-name</i> - Export a table of the snapshot or cluster. This format is valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li>
+    /// <li> <p> <code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot or cluster. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
+    /// <li> <p> <code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
     /// </ul>
     pub export_only: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The time when the snapshot was created.</p>
@@ -38,18 +34,12 @@ pub struct ExportTask {
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The progress status of the export task. The status can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CANCELED</code></p></li>
-    /// <li>
-    /// <p><code>CANCELING</code></p></li>
-    /// <li>
-    /// <p><code>COMPLETE</code></p></li>
-    /// <li>
-    /// <p><code>FAILED</code></p></li>
-    /// <li>
-    /// <p><code>IN_PROGRESS</code></p></li>
-    /// <li>
-    /// <p><code>STARTING</code></p></li>
+    /// <li> <p> <code>CANCELED</code> </p> </li>
+    /// <li> <p> <code>CANCELING</code> </p> </li>
+    /// <li> <p> <code>COMPLETE</code> </p> </li>
+    /// <li> <p> <code>FAILED</code> </p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>STARTING</code> </p> </li>
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The progress of the snapshot or cluster export task as a percentage.</p>
@@ -75,14 +65,10 @@ impl ExportTask {
     /// <p>The data exported from the snapshot or cluster.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>database</code> - Export all the data from a specified database.</p></li>
-    /// <li>
-    /// <p><code>database.table</code> <i>table-name</i> - Export a table of the snapshot or cluster. This format is valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.</p></li>
-    /// <li>
-    /// <p><code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot or cluster. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p></li>
-    /// <li>
-    /// <p><code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p></li>
+    /// <li> <p> <code>database</code> - Export all the data from a specified database.</p> </li>
+    /// <li> <p> <code>database.table</code> <i>table-name</i> - Export a table of the snapshot or cluster. This format is valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li>
+    /// <li> <p> <code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot or cluster. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
+    /// <li> <p> <code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.export_only.is_none()`.
@@ -119,18 +105,12 @@ impl ExportTask {
     }
     /// <p>The progress status of the export task. The status can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CANCELED</code></p></li>
-    /// <li>
-    /// <p><code>CANCELING</code></p></li>
-    /// <li>
-    /// <p><code>COMPLETE</code></p></li>
-    /// <li>
-    /// <p><code>FAILED</code></p></li>
-    /// <li>
-    /// <p><code>IN_PROGRESS</code></p></li>
-    /// <li>
-    /// <p><code>STARTING</code></p></li>
+    /// <li> <p> <code>CANCELED</code> </p> </li>
+    /// <li> <p> <code>CANCELING</code> </p> </li>
+    /// <li> <p> <code>COMPLETE</code> </p> </li>
+    /// <li> <p> <code>FAILED</code> </p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>STARTING</code> </p> </li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
@@ -220,14 +200,10 @@ impl ExportTaskBuilder {
     /// <p>The data exported from the snapshot or cluster.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>database</code> - Export all the data from a specified database.</p></li>
-    /// <li>
-    /// <p><code>database.table</code> <i>table-name</i> - Export a table of the snapshot or cluster. This format is valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.</p></li>
-    /// <li>
-    /// <p><code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot or cluster. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p></li>
-    /// <li>
-    /// <p><code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p></li>
+    /// <li> <p> <code>database</code> - Export all the data from a specified database.</p> </li>
+    /// <li> <p> <code>database.table</code> <i>table-name</i> - Export a table of the snapshot or cluster. This format is valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li>
+    /// <li> <p> <code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot or cluster. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
+    /// <li> <p> <code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
     /// </ul>
     pub fn export_only(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.export_only.unwrap_or_default();
@@ -238,14 +214,10 @@ impl ExportTaskBuilder {
     /// <p>The data exported from the snapshot or cluster.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>database</code> - Export all the data from a specified database.</p></li>
-    /// <li>
-    /// <p><code>database.table</code> <i>table-name</i> - Export a table of the snapshot or cluster. This format is valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.</p></li>
-    /// <li>
-    /// <p><code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot or cluster. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p></li>
-    /// <li>
-    /// <p><code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p></li>
+    /// <li> <p> <code>database</code> - Export all the data from a specified database.</p> </li>
+    /// <li> <p> <code>database.table</code> <i>table-name</i> - Export a table of the snapshot or cluster. This format is valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li>
+    /// <li> <p> <code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot or cluster. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
+    /// <li> <p> <code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
     /// </ul>
     pub fn set_export_only(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.export_only = input;
@@ -254,14 +226,10 @@ impl ExportTaskBuilder {
     /// <p>The data exported from the snapshot or cluster.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>database</code> - Export all the data from a specified database.</p></li>
-    /// <li>
-    /// <p><code>database.table</code> <i>table-name</i> - Export a table of the snapshot or cluster. This format is valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.</p></li>
-    /// <li>
-    /// <p><code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot or cluster. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p></li>
-    /// <li>
-    /// <p><code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p></li>
+    /// <li> <p> <code>database</code> - Export all the data from a specified database.</p> </li>
+    /// <li> <p> <code>database.table</code> <i>table-name</i> - Export a table of the snapshot or cluster. This format is valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li>
+    /// <li> <p> <code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot or cluster. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
+    /// <li> <p> <code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
     /// </ul>
     pub fn get_export_only(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.export_only
@@ -366,18 +334,12 @@ impl ExportTaskBuilder {
     }
     /// <p>The progress status of the export task. The status can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CANCELED</code></p></li>
-    /// <li>
-    /// <p><code>CANCELING</code></p></li>
-    /// <li>
-    /// <p><code>COMPLETE</code></p></li>
-    /// <li>
-    /// <p><code>FAILED</code></p></li>
-    /// <li>
-    /// <p><code>IN_PROGRESS</code></p></li>
-    /// <li>
-    /// <p><code>STARTING</code></p></li>
+    /// <li> <p> <code>CANCELED</code> </p> </li>
+    /// <li> <p> <code>CANCELING</code> </p> </li>
+    /// <li> <p> <code>COMPLETE</code> </p> </li>
+    /// <li> <p> <code>FAILED</code> </p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>STARTING</code> </p> </li>
     /// </ul>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -385,18 +347,12 @@ impl ExportTaskBuilder {
     }
     /// <p>The progress status of the export task. The status can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CANCELED</code></p></li>
-    /// <li>
-    /// <p><code>CANCELING</code></p></li>
-    /// <li>
-    /// <p><code>COMPLETE</code></p></li>
-    /// <li>
-    /// <p><code>FAILED</code></p></li>
-    /// <li>
-    /// <p><code>IN_PROGRESS</code></p></li>
-    /// <li>
-    /// <p><code>STARTING</code></p></li>
+    /// <li> <p> <code>CANCELED</code> </p> </li>
+    /// <li> <p> <code>CANCELING</code> </p> </li>
+    /// <li> <p> <code>COMPLETE</code> </p> </li>
+    /// <li> <p> <code>FAILED</code> </p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>STARTING</code> </p> </li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
@@ -404,18 +360,12 @@ impl ExportTaskBuilder {
     }
     /// <p>The progress status of the export task. The status can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CANCELED</code></p></li>
-    /// <li>
-    /// <p><code>CANCELING</code></p></li>
-    /// <li>
-    /// <p><code>COMPLETE</code></p></li>
-    /// <li>
-    /// <p><code>FAILED</code></p></li>
-    /// <li>
-    /// <p><code>IN_PROGRESS</code></p></li>
-    /// <li>
-    /// <p><code>STARTING</code></p></li>
+    /// <li> <p> <code>CANCELED</code> </p> </li>
+    /// <li> <p> <code>CANCELING</code> </p> </li>
+    /// <li> <p> <code>COMPLETE</code> </p> </li>
+    /// <li> <p> <code>FAILED</code> </p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>STARTING</code> </p> </li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status

@@ -22,7 +22,7 @@ impl DecreaseReplicationFactorInputBuilder {
 }
 /// Fluent builder constructing a request to `DecreaseReplicationFactor`.
 ///
-/// <p>Removes one or more nodes from a DAX cluster.</p><note>
+/// <p>Removes one or more nodes from a DAX cluster.</p> <note>
 /// <p>You cannot use <code>DecreaseReplicationFactor</code> to remove the last node in a DAX cluster. If you need to do this, use <code>DeleteCluster</code> instead.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

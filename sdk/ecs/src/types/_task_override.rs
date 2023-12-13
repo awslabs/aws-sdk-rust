@@ -16,13 +16,11 @@ pub struct TaskOverride {
     pub memory: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the role that containers in this task can assume. All containers in this task are granted the permissions that are specified in this role. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Role for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub task_role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The ephemeral storage setting override for the task.</p><note>
+    /// <p>The ephemeral storage setting override for the task.</p> <note>
     /// <p>This parameter is only supported for tasks hosted on Fargate that use the following platform versions:</p>
     /// <ul>
-    /// <li>
-    /// <p>Linux platform version <code>1.4.0</code> or later.</p></li>
-    /// <li>
-    /// <p>Windows platform version <code>1.0.0</code> or later.</p></li>
+    /// <li> <p>Linux platform version <code>1.4.0</code> or later.</p> </li>
+    /// <li> <p>Windows platform version <code>1.0.0</code> or later.</p> </li>
     /// </ul>
     /// </note>
     pub ephemeral_storage: ::std::option::Option<crate::types::EphemeralStorage>,
@@ -56,13 +54,11 @@ impl TaskOverride {
     pub fn task_role_arn(&self) -> ::std::option::Option<&str> {
         self.task_role_arn.as_deref()
     }
-    /// <p>The ephemeral storage setting override for the task.</p><note>
+    /// <p>The ephemeral storage setting override for the task.</p> <note>
     /// <p>This parameter is only supported for tasks hosted on Fargate that use the following platform versions:</p>
     /// <ul>
-    /// <li>
-    /// <p>Linux platform version <code>1.4.0</code> or later.</p></li>
-    /// <li>
-    /// <p>Windows platform version <code>1.0.0</code> or later.</p></li>
+    /// <li> <p>Linux platform version <code>1.4.0</code> or later.</p> </li>
+    /// <li> <p>Windows platform version <code>1.0.0</code> or later.</p> </li>
     /// </ul>
     /// </note>
     pub fn ephemeral_storage(&self) -> ::std::option::Option<&crate::types::EphemeralStorage> {
@@ -188,39 +184,33 @@ impl TaskOverrideBuilder {
     pub fn get_task_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.task_role_arn
     }
-    /// <p>The ephemeral storage setting override for the task.</p><note>
+    /// <p>The ephemeral storage setting override for the task.</p> <note>
     /// <p>This parameter is only supported for tasks hosted on Fargate that use the following platform versions:</p>
     /// <ul>
-    /// <li>
-    /// <p>Linux platform version <code>1.4.0</code> or later.</p></li>
-    /// <li>
-    /// <p>Windows platform version <code>1.0.0</code> or later.</p></li>
+    /// <li> <p>Linux platform version <code>1.4.0</code> or later.</p> </li>
+    /// <li> <p>Windows platform version <code>1.0.0</code> or later.</p> </li>
     /// </ul>
     /// </note>
     pub fn ephemeral_storage(mut self, input: crate::types::EphemeralStorage) -> Self {
         self.ephemeral_storage = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The ephemeral storage setting override for the task.</p><note>
+    /// <p>The ephemeral storage setting override for the task.</p> <note>
     /// <p>This parameter is only supported for tasks hosted on Fargate that use the following platform versions:</p>
     /// <ul>
-    /// <li>
-    /// <p>Linux platform version <code>1.4.0</code> or later.</p></li>
-    /// <li>
-    /// <p>Windows platform version <code>1.0.0</code> or later.</p></li>
+    /// <li> <p>Linux platform version <code>1.4.0</code> or later.</p> </li>
+    /// <li> <p>Windows platform version <code>1.0.0</code> or later.</p> </li>
     /// </ul>
     /// </note>
     pub fn set_ephemeral_storage(mut self, input: ::std::option::Option<crate::types::EphemeralStorage>) -> Self {
         self.ephemeral_storage = input;
         self
     }
-    /// <p>The ephemeral storage setting override for the task.</p><note>
+    /// <p>The ephemeral storage setting override for the task.</p> <note>
     /// <p>This parameter is only supported for tasks hosted on Fargate that use the following platform versions:</p>
     /// <ul>
-    /// <li>
-    /// <p>Linux platform version <code>1.4.0</code> or later.</p></li>
-    /// <li>
-    /// <p>Windows platform version <code>1.0.0</code> or later.</p></li>
+    /// <li> <p>Linux platform version <code>1.4.0</code> or later.</p> </li>
+    /// <li> <p>Windows platform version <code>1.0.0</code> or later.</p> </li>
     /// </ul>
     /// </note>
     pub fn get_ephemeral_storage(&self) -> &::std::option::Option<crate::types::EphemeralStorage> {

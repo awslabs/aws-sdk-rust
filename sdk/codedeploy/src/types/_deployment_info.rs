@@ -6,11 +6,11 @@
 pub struct DeploymentInfo {
     /// <p>The application name.</p>
     pub application_name: ::std::option::Option<::std::string::String>,
-    /// <p>The deployment group name.</p>
+    /// <p> The deployment group name. </p>
     pub deployment_group_name: ::std::option::Option<::std::string::String>,
-    /// <p>The deployment configuration name.</p>
+    /// <p> The deployment configuration name. </p>
     pub deployment_config_name: ::std::option::Option<::std::string::String>,
-    /// <p>The unique ID of a deployment.</p>
+    /// <p> The unique ID of a deployment. </p>
     pub deployment_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the application revision that was deployed to the deployment group before the most recent successful deployment.</p>
     pub previous_revision: ::std::option::Option<crate::types::RevisionLocation>,
@@ -33,20 +33,16 @@ pub struct DeploymentInfo {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The means by which the deployment was created:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>user</code>: A user created the deployment.</p></li>
-    /// <li>
-    /// <p><code>autoscaling</code>: Amazon EC2 Auto Scaling created the deployment.</p></li>
-    /// <li>
-    /// <p><code>codeDeployRollback</code>: A rollback process created the deployment.</p></li>
-    /// <li>
-    /// <p><code>CodeDeployAutoUpdate</code>: An auto-update process created the deployment when it detected outdated Amazon EC2 instances.</p></li>
+    /// <li> <p> <code>user</code>: A user created the deployment.</p> </li>
+    /// <li> <p> <code>autoscaling</code>: Amazon EC2 Auto Scaling created the deployment.</p> </li>
+    /// <li> <p> <code>codeDeployRollback</code>: A rollback process created the deployment.</p> </li>
+    /// <li> <p> <code>CodeDeployAutoUpdate</code>: An auto-update process created the deployment when it detected outdated Amazon EC2 instances.</p> </li>
     /// </ul>
     pub creator: ::std::option::Option<crate::types::DeploymentCreator>,
-    /// <p>If true, then if an <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, or <code>AfterBlockTraffic</code> deployment lifecycle event to an instance fails, then the deployment continues to the next deployment lifecycle event. For example, if <code>ApplicationStop</code> fails, the deployment continues with DownloadBundle. If <code>BeforeBlockTraffic</code> fails, the deployment continues with <code>BlockTraffic</code>. If <code>AfterBlockTraffic</code> fails, the deployment continues with <code>ApplicationStop</code>.</p>
-    /// <p>If false or not specified, then if a lifecycle event fails during a deployment to an instance, that deployment fails. If deployment to that instance is part of an overall deployment and the number of healthy hosts is not less than the minimum number of healthy hosts, then a deployment to the next instance is attempted.</p>
-    /// <p>During a deployment, the CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec file from the previous successful deployment. (All other scripts are run from the AppSpec file in the current deployment.) If one of these scripts contains an error and does not run successfully, the deployment can fail.</p>
-    /// <p>If the cause of the failure is a script from the last successful deployment that will never run successfully, create a new deployment and use <code>ignoreApplicationStopFailures</code> to specify that the <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> failures should be ignored.</p>
+    /// <p> If true, then if an <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, or <code>AfterBlockTraffic</code> deployment lifecycle event to an instance fails, then the deployment continues to the next deployment lifecycle event. For example, if <code>ApplicationStop</code> fails, the deployment continues with DownloadBundle. If <code>BeforeBlockTraffic</code> fails, the deployment continues with <code>BlockTraffic</code>. If <code>AfterBlockTraffic</code> fails, the deployment continues with <code>ApplicationStop</code>. </p>
+    /// <p> If false or not specified, then if a lifecycle event fails during a deployment to an instance, that deployment fails. If deployment to that instance is part of an overall deployment and the number of healthy hosts is not less than the minimum number of healthy hosts, then a deployment to the next instance is attempted. </p>
+    /// <p> During a deployment, the CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec file from the previous successful deployment. (All other scripts are run from the AppSpec file in the current deployment.) If one of these scripts contains an error and does not run successfully, the deployment can fail. </p>
+    /// <p> If the cause of the failure is a script from the last successful deployment that will never run successfully, create a new deployment and use <code>ignoreApplicationStopFailures</code> to specify that the <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> failures should be ignored. </p>
     pub ignore_application_stop_failures: bool,
     /// <p>Information about the automatic rollback configuration associated with the deployment.</p>
     pub auto_rollback_configuration: ::std::option::Option<crate::types::AutoRollbackConfiguration>,
@@ -68,12 +64,9 @@ pub struct DeploymentInfo {
     pub additional_deployment_status_info: ::std::option::Option<::std::string::String>,
     /// <p>Information about how CodeDeploy handles files that already exist in a deployment target location but weren't part of the previous successful deployment.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>DISALLOW</code>: The deployment fails. This is also the default behavior if no option is specified.</p></li>
-    /// <li>
-    /// <p><code>OVERWRITE</code>: The version of the file from the application revision currently being deployed replaces the version already on the instance.</p></li>
-    /// <li>
-    /// <p><code>RETAIN</code>: The version of the file already on the instance is kept and used as part of the new deployment.</p></li>
+    /// <li> <p> <code>DISALLOW</code>: The deployment fails. This is also the default behavior if no option is specified.</p> </li>
+    /// <li> <p> <code>OVERWRITE</code>: The version of the file from the application revision currently being deployed replaces the version already on the instance.</p> </li>
+    /// <li> <p> <code>RETAIN</code>: The version of the file already on the instance is kept and used as part of the new deployment.</p> </li>
     /// </ul>
     pub file_exists_behavior: ::std::option::Option<crate::types::FileExistsBehavior>,
     /// <p>Messages that contain information about the status of a deployment.</p>
@@ -92,15 +85,15 @@ impl DeploymentInfo {
     pub fn application_name(&self) -> ::std::option::Option<&str> {
         self.application_name.as_deref()
     }
-    /// <p>The deployment group name.</p>
+    /// <p> The deployment group name. </p>
     pub fn deployment_group_name(&self) -> ::std::option::Option<&str> {
         self.deployment_group_name.as_deref()
     }
-    /// <p>The deployment configuration name.</p>
+    /// <p> The deployment configuration name. </p>
     pub fn deployment_config_name(&self) -> ::std::option::Option<&str> {
         self.deployment_config_name.as_deref()
     }
-    /// <p>The unique ID of a deployment.</p>
+    /// <p> The unique ID of a deployment. </p>
     pub fn deployment_id(&self) -> ::std::option::Option<&str> {
         self.deployment_id.as_deref()
     }
@@ -143,22 +136,18 @@ impl DeploymentInfo {
     }
     /// <p>The means by which the deployment was created:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>user</code>: A user created the deployment.</p></li>
-    /// <li>
-    /// <p><code>autoscaling</code>: Amazon EC2 Auto Scaling created the deployment.</p></li>
-    /// <li>
-    /// <p><code>codeDeployRollback</code>: A rollback process created the deployment.</p></li>
-    /// <li>
-    /// <p><code>CodeDeployAutoUpdate</code>: An auto-update process created the deployment when it detected outdated Amazon EC2 instances.</p></li>
+    /// <li> <p> <code>user</code>: A user created the deployment.</p> </li>
+    /// <li> <p> <code>autoscaling</code>: Amazon EC2 Auto Scaling created the deployment.</p> </li>
+    /// <li> <p> <code>codeDeployRollback</code>: A rollback process created the deployment.</p> </li>
+    /// <li> <p> <code>CodeDeployAutoUpdate</code>: An auto-update process created the deployment when it detected outdated Amazon EC2 instances.</p> </li>
     /// </ul>
     pub fn creator(&self) -> ::std::option::Option<&crate::types::DeploymentCreator> {
         self.creator.as_ref()
     }
-    /// <p>If true, then if an <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, or <code>AfterBlockTraffic</code> deployment lifecycle event to an instance fails, then the deployment continues to the next deployment lifecycle event. For example, if <code>ApplicationStop</code> fails, the deployment continues with DownloadBundle. If <code>BeforeBlockTraffic</code> fails, the deployment continues with <code>BlockTraffic</code>. If <code>AfterBlockTraffic</code> fails, the deployment continues with <code>ApplicationStop</code>.</p>
-    /// <p>If false or not specified, then if a lifecycle event fails during a deployment to an instance, that deployment fails. If deployment to that instance is part of an overall deployment and the number of healthy hosts is not less than the minimum number of healthy hosts, then a deployment to the next instance is attempted.</p>
-    /// <p>During a deployment, the CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec file from the previous successful deployment. (All other scripts are run from the AppSpec file in the current deployment.) If one of these scripts contains an error and does not run successfully, the deployment can fail.</p>
-    /// <p>If the cause of the failure is a script from the last successful deployment that will never run successfully, create a new deployment and use <code>ignoreApplicationStopFailures</code> to specify that the <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> failures should be ignored.</p>
+    /// <p> If true, then if an <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, or <code>AfterBlockTraffic</code> deployment lifecycle event to an instance fails, then the deployment continues to the next deployment lifecycle event. For example, if <code>ApplicationStop</code> fails, the deployment continues with DownloadBundle. If <code>BeforeBlockTraffic</code> fails, the deployment continues with <code>BlockTraffic</code>. If <code>AfterBlockTraffic</code> fails, the deployment continues with <code>ApplicationStop</code>. </p>
+    /// <p> If false or not specified, then if a lifecycle event fails during a deployment to an instance, that deployment fails. If deployment to that instance is part of an overall deployment and the number of healthy hosts is not less than the minimum number of healthy hosts, then a deployment to the next instance is attempted. </p>
+    /// <p> During a deployment, the CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec file from the previous successful deployment. (All other scripts are run from the AppSpec file in the current deployment.) If one of these scripts contains an error and does not run successfully, the deployment can fail. </p>
+    /// <p> If the cause of the failure is a script from the last successful deployment that will never run successfully, create a new deployment and use <code>ignoreApplicationStopFailures</code> to specify that the <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> failures should be ignored. </p>
     pub fn ignore_application_stop_failures(&self) -> bool {
         self.ignore_application_stop_failures
     }
@@ -200,12 +189,9 @@ impl DeploymentInfo {
     }
     /// <p>Information about how CodeDeploy handles files that already exist in a deployment target location but weren't part of the previous successful deployment.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>DISALLOW</code>: The deployment fails. This is also the default behavior if no option is specified.</p></li>
-    /// <li>
-    /// <p><code>OVERWRITE</code>: The version of the file from the application revision currently being deployed replaces the version already on the instance.</p></li>
-    /// <li>
-    /// <p><code>RETAIN</code>: The version of the file already on the instance is kept and used as part of the new deployment.</p></li>
+    /// <li> <p> <code>DISALLOW</code>: The deployment fails. This is also the default behavior if no option is specified.</p> </li>
+    /// <li> <p> <code>OVERWRITE</code>: The version of the file from the application revision currently being deployed replaces the version already on the instance.</p> </li>
+    /// <li> <p> <code>RETAIN</code>: The version of the file already on the instance is kept and used as part of the new deployment.</p> </li>
     /// </ul>
     pub fn file_exists_behavior(&self) -> ::std::option::Option<&crate::types::FileExistsBehavior> {
         self.file_exists_behavior.as_ref()
@@ -290,45 +276,45 @@ impl DeploymentInfoBuilder {
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_name
     }
-    /// <p>The deployment group name.</p>
+    /// <p> The deployment group name. </p>
     pub fn deployment_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_group_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The deployment group name.</p>
+    /// <p> The deployment group name. </p>
     pub fn set_deployment_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_group_name = input;
         self
     }
-    /// <p>The deployment group name.</p>
+    /// <p> The deployment group name. </p>
     pub fn get_deployment_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.deployment_group_name
     }
-    /// <p>The deployment configuration name.</p>
+    /// <p> The deployment configuration name. </p>
     pub fn deployment_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_config_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The deployment configuration name.</p>
+    /// <p> The deployment configuration name. </p>
     pub fn set_deployment_config_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_config_name = input;
         self
     }
-    /// <p>The deployment configuration name.</p>
+    /// <p> The deployment configuration name. </p>
     pub fn get_deployment_config_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.deployment_config_name
     }
-    /// <p>The unique ID of a deployment.</p>
+    /// <p> The unique ID of a deployment. </p>
     pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique ID of a deployment.</p>
+    /// <p> The unique ID of a deployment. </p>
     pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_id = input;
         self
     }
-    /// <p>The unique ID of a deployment.</p>
+    /// <p> The unique ID of a deployment. </p>
     pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.deployment_id
     }
@@ -463,14 +449,10 @@ impl DeploymentInfoBuilder {
     }
     /// <p>The means by which the deployment was created:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>user</code>: A user created the deployment.</p></li>
-    /// <li>
-    /// <p><code>autoscaling</code>: Amazon EC2 Auto Scaling created the deployment.</p></li>
-    /// <li>
-    /// <p><code>codeDeployRollback</code>: A rollback process created the deployment.</p></li>
-    /// <li>
-    /// <p><code>CodeDeployAutoUpdate</code>: An auto-update process created the deployment when it detected outdated Amazon EC2 instances.</p></li>
+    /// <li> <p> <code>user</code>: A user created the deployment.</p> </li>
+    /// <li> <p> <code>autoscaling</code>: Amazon EC2 Auto Scaling created the deployment.</p> </li>
+    /// <li> <p> <code>codeDeployRollback</code>: A rollback process created the deployment.</p> </li>
+    /// <li> <p> <code>CodeDeployAutoUpdate</code>: An auto-update process created the deployment when it detected outdated Amazon EC2 instances.</p> </li>
     /// </ul>
     pub fn creator(mut self, input: crate::types::DeploymentCreator) -> Self {
         self.creator = ::std::option::Option::Some(input);
@@ -478,14 +460,10 @@ impl DeploymentInfoBuilder {
     }
     /// <p>The means by which the deployment was created:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>user</code>: A user created the deployment.</p></li>
-    /// <li>
-    /// <p><code>autoscaling</code>: Amazon EC2 Auto Scaling created the deployment.</p></li>
-    /// <li>
-    /// <p><code>codeDeployRollback</code>: A rollback process created the deployment.</p></li>
-    /// <li>
-    /// <p><code>CodeDeployAutoUpdate</code>: An auto-update process created the deployment when it detected outdated Amazon EC2 instances.</p></li>
+    /// <li> <p> <code>user</code>: A user created the deployment.</p> </li>
+    /// <li> <p> <code>autoscaling</code>: Amazon EC2 Auto Scaling created the deployment.</p> </li>
+    /// <li> <p> <code>codeDeployRollback</code>: A rollback process created the deployment.</p> </li>
+    /// <li> <p> <code>CodeDeployAutoUpdate</code>: An auto-update process created the deployment when it detected outdated Amazon EC2 instances.</p> </li>
     /// </ul>
     pub fn set_creator(mut self, input: ::std::option::Option<crate::types::DeploymentCreator>) -> Self {
         self.creator = input;
@@ -493,38 +471,34 @@ impl DeploymentInfoBuilder {
     }
     /// <p>The means by which the deployment was created:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>user</code>: A user created the deployment.</p></li>
-    /// <li>
-    /// <p><code>autoscaling</code>: Amazon EC2 Auto Scaling created the deployment.</p></li>
-    /// <li>
-    /// <p><code>codeDeployRollback</code>: A rollback process created the deployment.</p></li>
-    /// <li>
-    /// <p><code>CodeDeployAutoUpdate</code>: An auto-update process created the deployment when it detected outdated Amazon EC2 instances.</p></li>
+    /// <li> <p> <code>user</code>: A user created the deployment.</p> </li>
+    /// <li> <p> <code>autoscaling</code>: Amazon EC2 Auto Scaling created the deployment.</p> </li>
+    /// <li> <p> <code>codeDeployRollback</code>: A rollback process created the deployment.</p> </li>
+    /// <li> <p> <code>CodeDeployAutoUpdate</code>: An auto-update process created the deployment when it detected outdated Amazon EC2 instances.</p> </li>
     /// </ul>
     pub fn get_creator(&self) -> &::std::option::Option<crate::types::DeploymentCreator> {
         &self.creator
     }
-    /// <p>If true, then if an <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, or <code>AfterBlockTraffic</code> deployment lifecycle event to an instance fails, then the deployment continues to the next deployment lifecycle event. For example, if <code>ApplicationStop</code> fails, the deployment continues with DownloadBundle. If <code>BeforeBlockTraffic</code> fails, the deployment continues with <code>BlockTraffic</code>. If <code>AfterBlockTraffic</code> fails, the deployment continues with <code>ApplicationStop</code>.</p>
-    /// <p>If false or not specified, then if a lifecycle event fails during a deployment to an instance, that deployment fails. If deployment to that instance is part of an overall deployment and the number of healthy hosts is not less than the minimum number of healthy hosts, then a deployment to the next instance is attempted.</p>
-    /// <p>During a deployment, the CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec file from the previous successful deployment. (All other scripts are run from the AppSpec file in the current deployment.) If one of these scripts contains an error and does not run successfully, the deployment can fail.</p>
-    /// <p>If the cause of the failure is a script from the last successful deployment that will never run successfully, create a new deployment and use <code>ignoreApplicationStopFailures</code> to specify that the <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> failures should be ignored.</p>
+    /// <p> If true, then if an <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, or <code>AfterBlockTraffic</code> deployment lifecycle event to an instance fails, then the deployment continues to the next deployment lifecycle event. For example, if <code>ApplicationStop</code> fails, the deployment continues with DownloadBundle. If <code>BeforeBlockTraffic</code> fails, the deployment continues with <code>BlockTraffic</code>. If <code>AfterBlockTraffic</code> fails, the deployment continues with <code>ApplicationStop</code>. </p>
+    /// <p> If false or not specified, then if a lifecycle event fails during a deployment to an instance, that deployment fails. If deployment to that instance is part of an overall deployment and the number of healthy hosts is not less than the minimum number of healthy hosts, then a deployment to the next instance is attempted. </p>
+    /// <p> During a deployment, the CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec file from the previous successful deployment. (All other scripts are run from the AppSpec file in the current deployment.) If one of these scripts contains an error and does not run successfully, the deployment can fail. </p>
+    /// <p> If the cause of the failure is a script from the last successful deployment that will never run successfully, create a new deployment and use <code>ignoreApplicationStopFailures</code> to specify that the <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> failures should be ignored. </p>
     pub fn ignore_application_stop_failures(mut self, input: bool) -> Self {
         self.ignore_application_stop_failures = ::std::option::Option::Some(input);
         self
     }
-    /// <p>If true, then if an <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, or <code>AfterBlockTraffic</code> deployment lifecycle event to an instance fails, then the deployment continues to the next deployment lifecycle event. For example, if <code>ApplicationStop</code> fails, the deployment continues with DownloadBundle. If <code>BeforeBlockTraffic</code> fails, the deployment continues with <code>BlockTraffic</code>. If <code>AfterBlockTraffic</code> fails, the deployment continues with <code>ApplicationStop</code>.</p>
-    /// <p>If false or not specified, then if a lifecycle event fails during a deployment to an instance, that deployment fails. If deployment to that instance is part of an overall deployment and the number of healthy hosts is not less than the minimum number of healthy hosts, then a deployment to the next instance is attempted.</p>
-    /// <p>During a deployment, the CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec file from the previous successful deployment. (All other scripts are run from the AppSpec file in the current deployment.) If one of these scripts contains an error and does not run successfully, the deployment can fail.</p>
-    /// <p>If the cause of the failure is a script from the last successful deployment that will never run successfully, create a new deployment and use <code>ignoreApplicationStopFailures</code> to specify that the <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> failures should be ignored.</p>
+    /// <p> If true, then if an <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, or <code>AfterBlockTraffic</code> deployment lifecycle event to an instance fails, then the deployment continues to the next deployment lifecycle event. For example, if <code>ApplicationStop</code> fails, the deployment continues with DownloadBundle. If <code>BeforeBlockTraffic</code> fails, the deployment continues with <code>BlockTraffic</code>. If <code>AfterBlockTraffic</code> fails, the deployment continues with <code>ApplicationStop</code>. </p>
+    /// <p> If false or not specified, then if a lifecycle event fails during a deployment to an instance, that deployment fails. If deployment to that instance is part of an overall deployment and the number of healthy hosts is not less than the minimum number of healthy hosts, then a deployment to the next instance is attempted. </p>
+    /// <p> During a deployment, the CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec file from the previous successful deployment. (All other scripts are run from the AppSpec file in the current deployment.) If one of these scripts contains an error and does not run successfully, the deployment can fail. </p>
+    /// <p> If the cause of the failure is a script from the last successful deployment that will never run successfully, create a new deployment and use <code>ignoreApplicationStopFailures</code> to specify that the <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> failures should be ignored. </p>
     pub fn set_ignore_application_stop_failures(mut self, input: ::std::option::Option<bool>) -> Self {
         self.ignore_application_stop_failures = input;
         self
     }
-    /// <p>If true, then if an <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, or <code>AfterBlockTraffic</code> deployment lifecycle event to an instance fails, then the deployment continues to the next deployment lifecycle event. For example, if <code>ApplicationStop</code> fails, the deployment continues with DownloadBundle. If <code>BeforeBlockTraffic</code> fails, the deployment continues with <code>BlockTraffic</code>. If <code>AfterBlockTraffic</code> fails, the deployment continues with <code>ApplicationStop</code>.</p>
-    /// <p>If false or not specified, then if a lifecycle event fails during a deployment to an instance, that deployment fails. If deployment to that instance is part of an overall deployment and the number of healthy hosts is not less than the minimum number of healthy hosts, then a deployment to the next instance is attempted.</p>
-    /// <p>During a deployment, the CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec file from the previous successful deployment. (All other scripts are run from the AppSpec file in the current deployment.) If one of these scripts contains an error and does not run successfully, the deployment can fail.</p>
-    /// <p>If the cause of the failure is a script from the last successful deployment that will never run successfully, create a new deployment and use <code>ignoreApplicationStopFailures</code> to specify that the <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> failures should be ignored.</p>
+    /// <p> If true, then if an <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, or <code>AfterBlockTraffic</code> deployment lifecycle event to an instance fails, then the deployment continues to the next deployment lifecycle event. For example, if <code>ApplicationStop</code> fails, the deployment continues with DownloadBundle. If <code>BeforeBlockTraffic</code> fails, the deployment continues with <code>BlockTraffic</code>. If <code>AfterBlockTraffic</code> fails, the deployment continues with <code>ApplicationStop</code>. </p>
+    /// <p> If false or not specified, then if a lifecycle event fails during a deployment to an instance, that deployment fails. If deployment to that instance is part of an overall deployment and the number of healthy hosts is not less than the minimum number of healthy hosts, then a deployment to the next instance is attempted. </p>
+    /// <p> During a deployment, the CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec file from the previous successful deployment. (All other scripts are run from the AppSpec file in the current deployment.) If one of these scripts contains an error and does not run successfully, the deployment can fail. </p>
+    /// <p> If the cause of the failure is a script from the last successful deployment that will never run successfully, create a new deployment and use <code>ignoreApplicationStopFailures</code> to specify that the <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> failures should be ignored. </p>
     pub fn get_ignore_application_stop_failures(&self) -> &::std::option::Option<bool> {
         &self.ignore_application_stop_failures
     }
@@ -656,12 +630,9 @@ impl DeploymentInfoBuilder {
     }
     /// <p>Information about how CodeDeploy handles files that already exist in a deployment target location but weren't part of the previous successful deployment.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>DISALLOW</code>: The deployment fails. This is also the default behavior if no option is specified.</p></li>
-    /// <li>
-    /// <p><code>OVERWRITE</code>: The version of the file from the application revision currently being deployed replaces the version already on the instance.</p></li>
-    /// <li>
-    /// <p><code>RETAIN</code>: The version of the file already on the instance is kept and used as part of the new deployment.</p></li>
+    /// <li> <p> <code>DISALLOW</code>: The deployment fails. This is also the default behavior if no option is specified.</p> </li>
+    /// <li> <p> <code>OVERWRITE</code>: The version of the file from the application revision currently being deployed replaces the version already on the instance.</p> </li>
+    /// <li> <p> <code>RETAIN</code>: The version of the file already on the instance is kept and used as part of the new deployment.</p> </li>
     /// </ul>
     pub fn file_exists_behavior(mut self, input: crate::types::FileExistsBehavior) -> Self {
         self.file_exists_behavior = ::std::option::Option::Some(input);
@@ -669,12 +640,9 @@ impl DeploymentInfoBuilder {
     }
     /// <p>Information about how CodeDeploy handles files that already exist in a deployment target location but weren't part of the previous successful deployment.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>DISALLOW</code>: The deployment fails. This is also the default behavior if no option is specified.</p></li>
-    /// <li>
-    /// <p><code>OVERWRITE</code>: The version of the file from the application revision currently being deployed replaces the version already on the instance.</p></li>
-    /// <li>
-    /// <p><code>RETAIN</code>: The version of the file already on the instance is kept and used as part of the new deployment.</p></li>
+    /// <li> <p> <code>DISALLOW</code>: The deployment fails. This is also the default behavior if no option is specified.</p> </li>
+    /// <li> <p> <code>OVERWRITE</code>: The version of the file from the application revision currently being deployed replaces the version already on the instance.</p> </li>
+    /// <li> <p> <code>RETAIN</code>: The version of the file already on the instance is kept and used as part of the new deployment.</p> </li>
     /// </ul>
     pub fn set_file_exists_behavior(mut self, input: ::std::option::Option<crate::types::FileExistsBehavior>) -> Self {
         self.file_exists_behavior = input;
@@ -682,12 +650,9 @@ impl DeploymentInfoBuilder {
     }
     /// <p>Information about how CodeDeploy handles files that already exist in a deployment target location but weren't part of the previous successful deployment.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>DISALLOW</code>: The deployment fails. This is also the default behavior if no option is specified.</p></li>
-    /// <li>
-    /// <p><code>OVERWRITE</code>: The version of the file from the application revision currently being deployed replaces the version already on the instance.</p></li>
-    /// <li>
-    /// <p><code>RETAIN</code>: The version of the file already on the instance is kept and used as part of the new deployment.</p></li>
+    /// <li> <p> <code>DISALLOW</code>: The deployment fails. This is also the default behavior if no option is specified.</p> </li>
+    /// <li> <p> <code>OVERWRITE</code>: The version of the file from the application revision currently being deployed replaces the version already on the instance.</p> </li>
+    /// <li> <p> <code>RETAIN</code>: The version of the file already on the instance is kept and used as part of the new deployment.</p> </li>
     /// </ul>
     pub fn get_file_exists_behavior(&self) -> &::std::option::Option<crate::types::FileExistsBehavior> {
         &self.file_exists_behavior

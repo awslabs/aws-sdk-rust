@@ -6,7 +6,7 @@
 pub struct HumanLoopConfig {
     /// <p>The name of the human review used for this image. This should be kept unique within a region.</p>
     pub human_loop_name: ::std::string::String,
-    /// <p>The Amazon Resource Name (ARN) of the flow definition. You can create a flow definition by using the Amazon Sagemaker <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateFlowDefinition.html">CreateFlowDefinition</a> Operation.</p>
+    /// <p>The Amazon Resource Name (ARN) of the flow definition. You can create a flow definition by using the Amazon Sagemaker <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateFlowDefinition.html">CreateFlowDefinition</a> Operation. </p>
     pub flow_definition_arn: ::std::string::String,
     /// <p>Sets attributes of the input data.</p>
     pub data_attributes: ::std::option::Option<crate::types::HumanLoopDataAttributes>,
@@ -17,7 +17,7 @@ impl HumanLoopConfig {
         use std::ops::Deref;
         self.human_loop_name.deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the flow definition. You can create a flow definition by using the Amazon Sagemaker <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateFlowDefinition.html">CreateFlowDefinition</a> Operation.</p>
+    /// <p>The Amazon Resource Name (ARN) of the flow definition. You can create a flow definition by using the Amazon Sagemaker <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateFlowDefinition.html">CreateFlowDefinition</a> Operation. </p>
     pub fn flow_definition_arn(&self) -> &str {
         use std::ops::Deref;
         self.flow_definition_arn.deref()
@@ -58,18 +58,18 @@ impl HumanLoopConfigBuilder {
     pub fn get_human_loop_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.human_loop_name
     }
-    /// <p>The Amazon Resource Name (ARN) of the flow definition. You can create a flow definition by using the Amazon Sagemaker <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateFlowDefinition.html">CreateFlowDefinition</a> Operation.</p>
+    /// <p>The Amazon Resource Name (ARN) of the flow definition. You can create a flow definition by using the Amazon Sagemaker <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateFlowDefinition.html">CreateFlowDefinition</a> Operation. </p>
     /// This field is required.
     pub fn flow_definition_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_definition_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the flow definition. You can create a flow definition by using the Amazon Sagemaker <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateFlowDefinition.html">CreateFlowDefinition</a> Operation.</p>
+    /// <p>The Amazon Resource Name (ARN) of the flow definition. You can create a flow definition by using the Amazon Sagemaker <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateFlowDefinition.html">CreateFlowDefinition</a> Operation. </p>
     pub fn set_flow_definition_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.flow_definition_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the flow definition. You can create a flow definition by using the Amazon Sagemaker <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateFlowDefinition.html">CreateFlowDefinition</a> Operation.</p>
+    /// <p>The Amazon Resource Name (ARN) of the flow definition. You can create a flow definition by using the Amazon Sagemaker <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateFlowDefinition.html">CreateFlowDefinition</a> Operation. </p>
     pub fn get_flow_definition_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.flow_definition_arn
     }

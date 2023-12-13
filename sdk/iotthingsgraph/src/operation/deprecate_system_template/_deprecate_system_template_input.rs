@@ -5,13 +5,13 @@
 pub struct DeprecateSystemTemplateInput {
     /// <p>The ID of the system to delete.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p><code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code></p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl DeprecateSystemTemplateInput {
     /// <p>The ID of the system to delete.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p><code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code></p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -32,7 +32,7 @@ pub struct DeprecateSystemTemplateInputBuilder {
 impl DeprecateSystemTemplateInputBuilder {
     /// <p>The ID of the system to delete.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p><code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code></p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
     /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -40,14 +40,14 @@ impl DeprecateSystemTemplateInputBuilder {
     }
     /// <p>The ID of the system to delete.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p><code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code></p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The ID of the system to delete.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p><code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code></p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }

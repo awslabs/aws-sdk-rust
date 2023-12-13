@@ -22,7 +22,7 @@ impl ListOperationsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListOperations`.
 ///
-/// <p>Returns information about all of the operations that return an operation ID and that have ever been performed on domains that were registered by the current account.</p>
+/// <p>Returns information about all of the operations that return an operation ID and that have ever been performed on domains that were registered by the current account. </p>
 /// <p>This command runs only in the us-east-1 Region.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListOperationsFluentBuilder {
@@ -164,17 +164,17 @@ impl ListOperationsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_status`](Self::set_status).
     ///
-    /// <p>The status of the operations.</p>
+    /// <p> The status of the operations. </p>
     pub fn status(mut self, input: crate::types::OperationStatus) -> Self {
         self.inner = self.inner.status(input);
         self
     }
-    /// <p>The status of the operations.</p>
+    /// <p> The status of the operations. </p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OperationStatus>>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
-    /// <p>The status of the operations.</p>
+    /// <p> The status of the operations. </p>
     pub fn get_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OperationStatus>> {
         self.inner.get_status()
     }
@@ -182,45 +182,45 @@ impl ListOperationsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_type`](Self::set_type).
     ///
-    /// <p>An arrays of the domains operation types.</p>
+    /// <p> An arrays of the domains operation types. </p>
     pub fn r#type(mut self, input: crate::types::OperationType) -> Self {
         self.inner = self.inner.r#type(input);
         self
     }
-    /// <p>An arrays of the domains operation types.</p>
+    /// <p> An arrays of the domains operation types. </p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OperationType>>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
-    /// <p>An arrays of the domains operation types.</p>
+    /// <p> An arrays of the domains operation types. </p>
     pub fn get_type(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OperationType>> {
         self.inner.get_type()
     }
-    /// <p>The sort type for returned values.</p>
+    /// <p> The sort type for returned values. </p>
     pub fn sort_by(mut self, input: crate::types::ListOperationsSortAttributeName) -> Self {
         self.inner = self.inner.sort_by(input);
         self
     }
-    /// <p>The sort type for returned values.</p>
+    /// <p> The sort type for returned values. </p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ListOperationsSortAttributeName>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
-    /// <p>The sort type for returned values.</p>
+    /// <p> The sort type for returned values. </p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::ListOperationsSortAttributeName> {
         self.inner.get_sort_by()
     }
-    /// <p>The sort order for returned values, either ascending or descending.</p>
+    /// <p> The sort order for returned values, either ascending or descending. </p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.inner = self.inner.sort_order(input);
         self
     }
-    /// <p>The sort order for returned values, either ascending or descending.</p>
+    /// <p> The sort order for returned values, either ascending or descending. </p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
     }
-    /// <p>The sort order for returned values, either ascending or descending.</p>
+    /// <p> The sort order for returned values, either ascending or descending. </p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
         self.inner.get_sort_order()
     }

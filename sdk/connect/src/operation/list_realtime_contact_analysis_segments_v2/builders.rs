@@ -22,7 +22,7 @@ impl ListRealtimeContactAnalysisSegmentsV2InputBuilder {
 }
 /// Fluent builder constructing a request to `ListRealtimeContactAnalysisSegmentsV2`.
 ///
-/// <p>Provides a list of analysis segments for a real-time analysis session.</p>
+/// <p>Provides a list of analysis segments for a real-time analysis session. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListRealtimeContactAnalysisSegmentsV2FluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -137,17 +137,17 @@ impl ListRealtimeContactAnalysisSegmentsV2FluentBuilder {
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_id()
     }
-    /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
+    /// <p>The identifier of the contact in this instance of Amazon Connect. </p>
     pub fn contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.contact_id(input.into());
         self
     }
-    /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
+    /// <p>The identifier of the contact in this instance of Amazon Connect. </p>
     pub fn set_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_contact_id(input);
         self
     }
-    /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
+    /// <p>The identifier of the contact in this instance of Amazon Connect. </p>
     pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_contact_id()
     }

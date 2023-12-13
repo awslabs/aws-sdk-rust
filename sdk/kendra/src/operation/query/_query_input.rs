@@ -5,7 +5,7 @@
 pub struct QueryInput {
     /// <p>The identifier of the index for the search.</p>
     pub index_id: ::std::option::Option<::std::string::String>,
-    /// <p>The input query text for the search. Amazon Kendra truncates queries at 30 token words, which excludes punctuation and stop words. Truncation still applies if you use Boolean or more advanced, complex queries.</p>
+    /// <p>The input query text for the search. Amazon Kendra truncates queries at 30 token words, which excludes punctuation and stop words. Truncation still applies if you use Boolean or more advanced, complex queries. </p>
     pub query_text: ::std::option::Option<::std::string::String>,
     /// <p>Filters search results by document fields/attributes. You can only provide one attribute filter; however, the <code>AndAllFilters</code>, <code>NotFilter</code>, and <code>OrAllFilters</code> parameters contain a list of other filters.</p>
     /// <p>The <code>AttributeFilter</code> parameter means you can create a set of filtering rules that a document must satisfy to be included in the query results.</p>
@@ -29,7 +29,7 @@ pub struct QueryInput {
     pub sorting_configuration: ::std::option::Option<crate::types::SortingConfiguration>,
     /// <p>Provides configuration information to determine how the results of a query are sorted.</p>
     /// <p>You can set upto 3 fields that Amazon Kendra should sort the results on, and specify whether the results should be sorted in ascending or descending order. The sort field quota can be increased.</p>
-    /// <p>If you don't provide a sorting configuration, the results are sorted by the relevance that Amazon Kendra determines for the result. In the case of ties in sorting the results, the results are sorted by relevance.</p>
+    /// <p>If you don't provide a sorting configuration, the results are sorted by the relevance that Amazon Kendra determines for the result. In the case of ties in sorting the results, the results are sorted by relevance. </p>
     pub sorting_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SortingConfiguration>>,
     /// <p>The user context token or user and group information.</p>
     pub user_context: ::std::option::Option<crate::types::UserContext>,
@@ -45,7 +45,7 @@ impl QueryInput {
     pub fn index_id(&self) -> ::std::option::Option<&str> {
         self.index_id.as_deref()
     }
-    /// <p>The input query text for the search. Amazon Kendra truncates queries at 30 token words, which excludes punctuation and stop words. Truncation still applies if you use Boolean or more advanced, complex queries.</p>
+    /// <p>The input query text for the search. Amazon Kendra truncates queries at 30 token words, which excludes punctuation and stop words. Truncation still applies if you use Boolean or more advanced, complex queries. </p>
     pub fn query_text(&self) -> ::std::option::Option<&str> {
         self.query_text.as_deref()
     }
@@ -93,7 +93,7 @@ impl QueryInput {
     }
     /// <p>Provides configuration information to determine how the results of a query are sorted.</p>
     /// <p>You can set upto 3 fields that Amazon Kendra should sort the results on, and specify whether the results should be sorted in ascending or descending order. The sort field quota can be increased.</p>
-    /// <p>If you don't provide a sorting configuration, the results are sorted by the relevance that Amazon Kendra determines for the result. In the case of ties in sorting the results, the results are sorted by relevance.</p>
+    /// <p>If you don't provide a sorting configuration, the results are sorted by the relevance that Amazon Kendra determines for the result. In the case of ties in sorting the results, the results are sorted by relevance. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sorting_configurations.is_none()`.
     pub fn sorting_configurations(&self) -> &[crate::types::SortingConfiguration] {
@@ -159,17 +159,17 @@ impl QueryInputBuilder {
     pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.index_id
     }
-    /// <p>The input query text for the search. Amazon Kendra truncates queries at 30 token words, which excludes punctuation and stop words. Truncation still applies if you use Boolean or more advanced, complex queries.</p>
+    /// <p>The input query text for the search. Amazon Kendra truncates queries at 30 token words, which excludes punctuation and stop words. Truncation still applies if you use Boolean or more advanced, complex queries. </p>
     pub fn query_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_text = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The input query text for the search. Amazon Kendra truncates queries at 30 token words, which excludes punctuation and stop words. Truncation still applies if you use Boolean or more advanced, complex queries.</p>
+    /// <p>The input query text for the search. Amazon Kendra truncates queries at 30 token words, which excludes punctuation and stop words. Truncation still applies if you use Boolean or more advanced, complex queries. </p>
     pub fn set_query_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_text = input;
         self
     }
-    /// <p>The input query text for the search. Amazon Kendra truncates queries at 30 token words, which excludes punctuation and stop words. Truncation still applies if you use Boolean or more advanced, complex queries.</p>
+    /// <p>The input query text for the search. Amazon Kendra truncates queries at 30 token words, which excludes punctuation and stop words. Truncation still applies if you use Boolean or more advanced, complex queries. </p>
     pub fn get_query_text(&self) -> &::std::option::Option<::std::string::String> {
         &self.query_text
     }
@@ -326,7 +326,7 @@ impl QueryInputBuilder {
     ///
     /// <p>Provides configuration information to determine how the results of a query are sorted.</p>
     /// <p>You can set upto 3 fields that Amazon Kendra should sort the results on, and specify whether the results should be sorted in ascending or descending order. The sort field quota can be increased.</p>
-    /// <p>If you don't provide a sorting configuration, the results are sorted by the relevance that Amazon Kendra determines for the result. In the case of ties in sorting the results, the results are sorted by relevance.</p>
+    /// <p>If you don't provide a sorting configuration, the results are sorted by the relevance that Amazon Kendra determines for the result. In the case of ties in sorting the results, the results are sorted by relevance. </p>
     pub fn sorting_configurations(mut self, input: crate::types::SortingConfiguration) -> Self {
         let mut v = self.sorting_configurations.unwrap_or_default();
         v.push(input);
@@ -335,14 +335,14 @@ impl QueryInputBuilder {
     }
     /// <p>Provides configuration information to determine how the results of a query are sorted.</p>
     /// <p>You can set upto 3 fields that Amazon Kendra should sort the results on, and specify whether the results should be sorted in ascending or descending order. The sort field quota can be increased.</p>
-    /// <p>If you don't provide a sorting configuration, the results are sorted by the relevance that Amazon Kendra determines for the result. In the case of ties in sorting the results, the results are sorted by relevance.</p>
+    /// <p>If you don't provide a sorting configuration, the results are sorted by the relevance that Amazon Kendra determines for the result. In the case of ties in sorting the results, the results are sorted by relevance. </p>
     pub fn set_sorting_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SortingConfiguration>>) -> Self {
         self.sorting_configurations = input;
         self
     }
     /// <p>Provides configuration information to determine how the results of a query are sorted.</p>
     /// <p>You can set upto 3 fields that Amazon Kendra should sort the results on, and specify whether the results should be sorted in ascending or descending order. The sort field quota can be increased.</p>
-    /// <p>If you don't provide a sorting configuration, the results are sorted by the relevance that Amazon Kendra determines for the result. In the case of ties in sorting the results, the results are sorted by relevance.</p>
+    /// <p>If you don't provide a sorting configuration, the results are sorted by the relevance that Amazon Kendra determines for the result. In the case of ties in sorting the results, the results are sorted by relevance. </p>
     pub fn get_sorting_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SortingConfiguration>> {
         &self.sorting_configurations
     }

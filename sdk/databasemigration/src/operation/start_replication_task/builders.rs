@@ -23,7 +23,7 @@ impl StartReplicationTaskInputBuilder {
 /// Fluent builder constructing a request to `StartReplicationTask`.
 ///
 /// <p>Starts the replication task.</p>
-/// <p>For more information about DMS tasks, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html">Working with Migration Tasks </a> in the <i>Database Migration Service User Guide.</i></p>
+/// <p>For more information about DMS tasks, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html">Working with Migration Tasks </a> in the <i>Database Migration Service User Guide.</i> </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartReplicationTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -167,10 +167,10 @@ impl StartReplicationTaskFluentBuilder {
         self.inner.get_cdc_start_time()
     }
     /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
-    /// <p>The value can be in date, checkpoint, or LSN/SCN format.</p>
+    /// <p> The value can be in date, checkpoint, or LSN/SCN format.</p>
     /// <p>Date Example: --cdc-start-position “2018-03-08T12:12:12”</p>
     /// <p>Checkpoint Example: --cdc-start-position "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
-    /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p><note>
+    /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
     /// <p>When you use this task setting with a source PostgreSQL database, a logical replication slot should already be created and associated with the source endpoint. You can verify this by setting the <code>slotName</code> extra connection attribute to the name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p>
     /// </note>
     pub fn cdc_start_position(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -178,10 +178,10 @@ impl StartReplicationTaskFluentBuilder {
         self
     }
     /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
-    /// <p>The value can be in date, checkpoint, or LSN/SCN format.</p>
+    /// <p> The value can be in date, checkpoint, or LSN/SCN format.</p>
     /// <p>Date Example: --cdc-start-position “2018-03-08T12:12:12”</p>
     /// <p>Checkpoint Example: --cdc-start-position "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
-    /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p><note>
+    /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
     /// <p>When you use this task setting with a source PostgreSQL database, a logical replication slot should already be created and associated with the source endpoint. You can verify this by setting the <code>slotName</code> extra connection attribute to the name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p>
     /// </note>
     pub fn set_cdc_start_position(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -189,10 +189,10 @@ impl StartReplicationTaskFluentBuilder {
         self
     }
     /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
-    /// <p>The value can be in date, checkpoint, or LSN/SCN format.</p>
+    /// <p> The value can be in date, checkpoint, or LSN/SCN format.</p>
     /// <p>Date Example: --cdc-start-position “2018-03-08T12:12:12”</p>
     /// <p>Checkpoint Example: --cdc-start-position "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
-    /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p><note>
+    /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
     /// <p>When you use this task setting with a source PostgreSQL database, a logical replication slot should already be created and associated with the source endpoint. You can verify this by setting the <code>slotName</code> extra connection attribute to the name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p>
     /// </note>
     pub fn get_cdc_start_position(&self) -> &::std::option::Option<::std::string::String> {

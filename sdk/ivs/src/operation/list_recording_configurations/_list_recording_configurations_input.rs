@@ -5,7 +5,7 @@
 pub struct ListRecordingConfigurationsInput {
     /// <p>The first recording configuration to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>Maximum number of recording configurations to return. Default: your service quota or 100, whichever is smaller.</p>
+    /// <p>Maximum number of recording configurations to return. Default: your service quota or 100, whichever is smaller. </p>
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListRecordingConfigurationsInput {
@@ -13,7 +13,7 @@ impl ListRecordingConfigurationsInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Maximum number of recording configurations to return. Default: your service quota or 100, whichever is smaller.</p>
+    /// <p>Maximum number of recording configurations to return. Default: your service quota or 100, whichever is smaller. </p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -47,17 +47,17 @@ impl ListRecordingConfigurationsInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>Maximum number of recording configurations to return. Default: your service quota or 100, whichever is smaller.</p>
+    /// <p>Maximum number of recording configurations to return. Default: your service quota or 100, whichever is smaller. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Maximum number of recording configurations to return. Default: your service quota or 100, whichever is smaller.</p>
+    /// <p>Maximum number of recording configurations to return. Default: your service quota or 100, whichever is smaller. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>Maximum number of recording configurations to return. Default: your service quota or 100, whichever is smaller.</p>
+    /// <p>Maximum number of recording configurations to return. Default: your service quota or 100, whichever is smaller. </p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

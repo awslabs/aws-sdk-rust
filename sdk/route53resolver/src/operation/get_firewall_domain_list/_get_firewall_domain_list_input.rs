@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFirewallDomainListInput {
-    /// <p>The ID of the domain list.</p>
+    /// <p>The ID of the domain list. </p>
     pub firewall_domain_list_id: ::std::option::Option<::std::string::String>,
 }
 impl GetFirewallDomainListInput {
-    /// <p>The ID of the domain list.</p>
+    /// <p>The ID of the domain list. </p>
     pub fn firewall_domain_list_id(&self) -> ::std::option::Option<&str> {
         self.firewall_domain_list_id.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct GetFirewallDomainListInputBuilder {
     pub(crate) firewall_domain_list_id: ::std::option::Option<::std::string::String>,
 }
 impl GetFirewallDomainListInputBuilder {
-    /// <p>The ID of the domain list.</p>
+    /// <p>The ID of the domain list. </p>
     /// This field is required.
     pub fn firewall_domain_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_domain_list_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the domain list.</p>
+    /// <p>The ID of the domain list. </p>
     pub fn set_firewall_domain_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_domain_list_id = input;
         self
     }
-    /// <p>The ID of the domain list.</p>
+    /// <p>The ID of the domain list. </p>
     pub fn get_firewall_domain_list_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.firewall_domain_list_id
     }

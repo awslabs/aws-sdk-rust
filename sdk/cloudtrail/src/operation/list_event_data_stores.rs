@@ -252,7 +252,7 @@ pub enum ListEventDataStoresError {
     InvalidMaxResultsException(crate::types::error::InvalidMaxResultsException),
     /// <p>A token that is not valid, or a token that was previously used in a request with different parameters. This exception is thrown if the token is not valid.</p>
     InvalidNextTokenException(crate::types::error::InvalidNextTokenException),
-    /// <p>This exception is thrown when the management account does not have a service-linked role.</p>
+    /// <p> This exception is thrown when the management account does not have a service-linked role. </p>
     NoManagementAccountSlrExistsException(crate::types::error::NoManagementAccountSlrExistsException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
     OperationNotPermittedException(crate::types::error::OperationNotPermittedException),

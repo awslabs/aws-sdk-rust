@@ -22,7 +22,7 @@ impl DisassociateAccountsInputBuilder {
 }
 /// Fluent builder constructing a request to `DisassociateAccounts`.
 ///
-/// <p>Removes the specified list of account IDs from the given billing group.</p>
+/// <p>Removes the specified list of account IDs from the given billing group. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateAccountsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DisassociateAccountsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the billing group that the array of account IDs will disassociate from.</p>
+    /// <p>The Amazon Resource Name (ARN) of the billing group that the array of account IDs will disassociate from. </p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the billing group that the array of account IDs will disassociate from.</p>
+    /// <p>The Amazon Resource Name (ARN) of the billing group that the array of account IDs will disassociate from. </p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the billing group that the array of account IDs will disassociate from.</p>
+    /// <p>The Amazon Resource Name (ARN) of the billing group that the array of account IDs will disassociate from. </p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_arn()
     }
@@ -126,17 +126,17 @@ impl DisassociateAccountsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
     ///
-    /// <p>The array of account IDs to disassociate.</p>
+    /// <p>The array of account IDs to disassociate. </p>
     pub fn account_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_ids(input.into());
         self
     }
-    /// <p>The array of account IDs to disassociate.</p>
+    /// <p>The array of account IDs to disassociate. </p>
     pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_account_ids(input);
         self
     }
-    /// <p>The array of account IDs to disassociate.</p>
+    /// <p>The array of account IDs to disassociate. </p>
     pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_account_ids()
     }

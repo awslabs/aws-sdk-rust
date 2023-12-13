@@ -22,7 +22,7 @@ impl CreateModelVersionInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateModelVersion`.
 ///
-/// <p>Creates a version of the model using the specified model type and model id.</p>
+/// <p>Creates a version of the model using the specified model type and model id. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateModelVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl CreateModelVersionFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The model ID.</p>
+    /// <p>The model ID. </p>
     pub fn model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.model_id(input.into());
         self
     }
-    /// <p>The model ID.</p>
+    /// <p>The model ID. </p>
     pub fn set_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_model_id(input);
         self
     }
-    /// <p>The model ID.</p>
+    /// <p>The model ID. </p>
     pub fn get_model_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_model_id()
     }
@@ -136,17 +136,17 @@ impl CreateModelVersionFluentBuilder {
     pub fn get_model_type(&self) -> &::std::option::Option<crate::types::ModelTypeEnum> {
         self.inner.get_model_type()
     }
-    /// <p>The training data source location in Amazon S3.</p>
+    /// <p>The training data source location in Amazon S3. </p>
     pub fn training_data_source(mut self, input: crate::types::TrainingDataSourceEnum) -> Self {
         self.inner = self.inner.training_data_source(input);
         self
     }
-    /// <p>The training data source location in Amazon S3.</p>
+    /// <p>The training data source location in Amazon S3. </p>
     pub fn set_training_data_source(mut self, input: ::std::option::Option<crate::types::TrainingDataSourceEnum>) -> Self {
         self.inner = self.inner.set_training_data_source(input);
         self
     }
-    /// <p>The training data source location in Amazon S3.</p>
+    /// <p>The training data source location in Amazon S3. </p>
     pub fn get_training_data_source(&self) -> &::std::option::Option<crate::types::TrainingDataSourceEnum> {
         self.inner.get_training_data_source()
     }

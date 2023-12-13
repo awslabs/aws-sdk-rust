@@ -282,7 +282,7 @@ pub enum BatchDescribeMergeConflictsError {
     InvalidMaxMergeHunksException(crate::types::error::InvalidMaxMergeHunksException),
     /// <p>The specified merge option is not valid for this operation. Not all merge strategies are supported for all operations.</p>
     InvalidMergeOptionException(crate::types::error::InvalidMergeOptionException),
-    /// <p>A specified repository name is not valid.</p><note>
+    /// <p>A specified repository name is not valid.</p> <note>
     /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::types::error::InvalidRepositoryNameException),

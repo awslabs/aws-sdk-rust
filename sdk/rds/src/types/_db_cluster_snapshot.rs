@@ -21,12 +21,9 @@ pub struct DbClusterSnapshot {
     pub allocated_storage: ::std::option::Option<i32>,
     /// <p>The status of this DB cluster snapshot. Valid statuses are the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>available</code></p></li>
-    /// <li>
-    /// <p><code>copying</code></p></li>
-    /// <li>
-    /// <p><code>creating</code></p></li>
+    /// <li> <p> <code>available</code> </p> </li>
+    /// <li> <p> <code>copying</code> </p> </li>
+    /// <li> <p> <code>creating</code> </p> </li>
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The port that the DB cluster was listening on at the time of the snapshot.</p>
@@ -56,7 +53,7 @@ pub struct DbClusterSnapshot {
     pub source_db_cluster_snapshot_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
     pub iam_database_authentication_enabled: ::std::option::Option<bool>,
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Reserved for future use.</p>
     pub db_system_id: ::std::option::Option<::std::string::String>,
@@ -99,12 +96,9 @@ impl DbClusterSnapshot {
     }
     /// <p>The status of this DB cluster snapshot. Valid statuses are the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>available</code></p></li>
-    /// <li>
-    /// <p><code>copying</code></p></li>
-    /// <li>
-    /// <p><code>creating</code></p></li>
+    /// <li> <p> <code>available</code> </p> </li>
+    /// <li> <p> <code>copying</code> </p> </li>
+    /// <li> <p> <code>creating</code> </p> </li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
@@ -162,7 +156,7 @@ impl DbClusterSnapshot {
     pub fn iam_database_authentication_enabled(&self) -> ::std::option::Option<bool> {
         self.iam_database_authentication_enabled
     }
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_list.is_none()`.
     pub fn tag_list(&self) -> &[crate::types::Tag] {
@@ -326,12 +320,9 @@ impl DbClusterSnapshotBuilder {
     }
     /// <p>The status of this DB cluster snapshot. Valid statuses are the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>available</code></p></li>
-    /// <li>
-    /// <p><code>copying</code></p></li>
-    /// <li>
-    /// <p><code>creating</code></p></li>
+    /// <li> <p> <code>available</code> </p> </li>
+    /// <li> <p> <code>copying</code> </p> </li>
+    /// <li> <p> <code>creating</code> </p> </li>
     /// </ul>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -339,12 +330,9 @@ impl DbClusterSnapshotBuilder {
     }
     /// <p>The status of this DB cluster snapshot. Valid statuses are the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>available</code></p></li>
-    /// <li>
-    /// <p><code>copying</code></p></li>
-    /// <li>
-    /// <p><code>creating</code></p></li>
+    /// <li> <p> <code>available</code> </p> </li>
+    /// <li> <p> <code>copying</code> </p> </li>
+    /// <li> <p> <code>creating</code> </p> </li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
@@ -352,12 +340,9 @@ impl DbClusterSnapshotBuilder {
     }
     /// <p>The status of this DB cluster snapshot. Valid statuses are the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>available</code></p></li>
-    /// <li>
-    /// <p><code>copying</code></p></li>
-    /// <li>
-    /// <p><code>creating</code></p></li>
+    /// <li> <p> <code>available</code> </p> </li>
+    /// <li> <p> <code>copying</code> </p> </li>
+    /// <li> <p> <code>creating</code> </p> </li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status
@@ -551,19 +536,19 @@ impl DbClusterSnapshotBuilder {
     ///
     /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
     ///
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub fn tag_list(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tag_list.unwrap_or_default();
         v.push(input);
         self.tag_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub fn set_tag_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tag_list = input;
         self
     }
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tag_list
     }

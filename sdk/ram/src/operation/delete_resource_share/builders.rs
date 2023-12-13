@@ -22,7 +22,7 @@ impl DeleteResourceShareInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteResourceShare`.
 ///
-/// <p>Deletes the specified resource share.</p><important>
+/// <p>Deletes the specified resource share.</p> <important>
 /// <p>This doesn't delete any of the resources that were associated with the resource share; it only stops the sharing of those resources through this resource share.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

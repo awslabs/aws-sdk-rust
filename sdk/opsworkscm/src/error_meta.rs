@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum Error {
-    /// <p>This occurs when the provided nextToken is not valid.</p>
+    /// <p>This occurs when the provided nextToken is not valid. </p>
     InvalidNextTokenException(crate::types::error::InvalidNextTokenException),
-    /// <p>The resource is in a state that does not allow you to perform a specified action.</p>
+    /// <p>The resource is in a state that does not allow you to perform a specified action. </p>
     InvalidStateException(crate::types::error::InvalidStateException),
-    /// <p>The limit of servers or backups has been reached.</p>
+    /// <p>The limit of servers or backups has been reached. </p>
     LimitExceededException(crate::types::error::LimitExceededException),
-    /// <p>The requested resource cannot be created because it already exists.</p>
+    /// <p>The requested resource cannot be created because it already exists. </p>
     ResourceAlreadyExistsException(crate::types::error::ResourceAlreadyExistsException),
-    /// <p>The requested resource does not exist, or access was denied.</p>
+    /// <p>The requested resource does not exist, or access was denied. </p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>One or more of the provided request parameters are not valid.</p>
+    /// <p>One or more of the provided request parameters are not valid. </p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

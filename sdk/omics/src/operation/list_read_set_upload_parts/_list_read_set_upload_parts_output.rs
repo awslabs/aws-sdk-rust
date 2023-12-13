@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListReadSetUploadPartsOutput {
-    /// <p>Next token returned in the response of a previous ListReadSetUploadParts call. Used to get the next page of results.</p>
+    /// <p> Next token returned in the response of a previous ListReadSetUploadParts call. Used to get the next page of results. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>An array of upload parts.</p>
+    /// <p> An array of upload parts. </p>
     pub parts: ::std::option::Option<::std::vec::Vec<crate::types::ReadSetUploadPartListItem>>,
     _request_id: Option<String>,
 }
 impl ListReadSetUploadPartsOutput {
-    /// <p>Next token returned in the response of a previous ListReadSetUploadParts call. Used to get the next page of results.</p>
+    /// <p> Next token returned in the response of a previous ListReadSetUploadParts call. Used to get the next page of results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>An array of upload parts.</p>
+    /// <p> An array of upload parts. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parts.is_none()`.
     pub fn parts(&self) -> &[crate::types::ReadSetUploadPartListItem] {
@@ -42,17 +42,17 @@ pub struct ListReadSetUploadPartsOutputBuilder {
     _request_id: Option<String>,
 }
 impl ListReadSetUploadPartsOutputBuilder {
-    /// <p>Next token returned in the response of a previous ListReadSetUploadParts call. Used to get the next page of results.</p>
+    /// <p> Next token returned in the response of a previous ListReadSetUploadParts call. Used to get the next page of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Next token returned in the response of a previous ListReadSetUploadParts call. Used to get the next page of results.</p>
+    /// <p> Next token returned in the response of a previous ListReadSetUploadParts call. Used to get the next page of results. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>Next token returned in the response of a previous ListReadSetUploadParts call. Used to get the next page of results.</p>
+    /// <p> Next token returned in the response of a previous ListReadSetUploadParts call. Used to get the next page of results. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
@@ -60,19 +60,19 @@ impl ListReadSetUploadPartsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_parts`](Self::set_parts).
     ///
-    /// <p>An array of upload parts.</p>
+    /// <p> An array of upload parts. </p>
     pub fn parts(mut self, input: crate::types::ReadSetUploadPartListItem) -> Self {
         let mut v = self.parts.unwrap_or_default();
         v.push(input);
         self.parts = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of upload parts.</p>
+    /// <p> An array of upload parts. </p>
     pub fn set_parts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReadSetUploadPartListItem>>) -> Self {
         self.parts = input;
         self
     }
-    /// <p>An array of upload parts.</p>
+    /// <p> An array of upload parts. </p>
     pub fn get_parts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReadSetUploadPartListItem>> {
         &self.parts
     }

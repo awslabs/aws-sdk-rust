@@ -4,49 +4,41 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PipelineOutputConfig {
-    /// <p>The Amazon S3 bucket in which you want Elastic Transcoder to save the transcoded files. Specify this value when all of the following are true:</p>
+    /// <p> The Amazon S3 bucket in which you want Elastic Transcoder to save the transcoded files. Specify this value when all of the following are true:</p>
     /// <ul>
-    /// <li>
-    /// <p>You want to save transcoded files, thumbnails (if any), and playlists (if any) together in one bucket.</p></li>
-    /// <li>
-    /// <p>You do not want to specify the users or groups who have access to the transcoded files, thumbnails, and playlists.</p></li>
-    /// <li>
-    /// <p>You do not want to specify the permissions that Elastic Transcoder grants to the files.</p></li>
-    /// <li>
-    /// <p>You want to associate the transcoded files and thumbnails with the Amazon S3 Standard storage class.</p></li>
+    /// <li> <p>You want to save transcoded files, thumbnails (if any), and playlists (if any) together in one bucket.</p> </li>
+    /// <li> <p>You do not want to specify the users or groups who have access to the transcoded files, thumbnails, and playlists.</p> </li>
+    /// <li> <p>You do not want to specify the permissions that Elastic Transcoder grants to the files.</p> </li>
+    /// <li> <p>You want to associate the transcoded files and thumbnails with the Amazon S3 Standard storage class.</p> </li>
     /// </ul>
-    /// <p>If you want to save transcoded files and playlists in one bucket and thumbnails in another bucket, specify which users can access the transcoded files or the permissions the users have, or change the Amazon S3 storage class, omit OutputBucket and specify values for <code>ContentConfig</code> and <code>ThumbnailConfig</code> instead.</p>
+    /// <p>If you want to save transcoded files and playlists in one bucket and thumbnails in another bucket, specify which users can access the transcoded files or the permissions the users have, or change the Amazon S3 storage class, omit OutputBucket and specify values for <code>ContentConfig</code> and <code>ThumbnailConfig</code> instead. </p>
     pub bucket: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon S3 storage class, <code>Standard</code> or <code>ReducedRedundancy</code>, that you want Elastic Transcoder to assign to the video files and playlists that it stores in your Amazon S3 bucket.</p>
+    /// <p> The Amazon S3 storage class, <code>Standard</code> or <code>ReducedRedundancy</code>, that you want Elastic Transcoder to assign to the video files and playlists that it stores in your Amazon S3 bucket. </p>
     pub storage_class: ::std::option::Option<::std::string::String>,
     /// <p>Optional. The <code>Permissions</code> object specifies which users and/or predefined Amazon S3 groups you want to have access to transcoded files and playlists, and the type of access you want them to have. You can grant permissions to a maximum of 30 users and/or predefined Amazon S3 groups.</p>
     /// <p>If you include <code>Permissions</code>, Elastic Transcoder grants only the permissions that you specify. It does not grant full permissions to the owner of the role specified by <code>Role</code>. If you want that user to have full control, you must explicitly grant full control to the user.</p>
-    /// <p>If you omit <code>Permissions</code>, Elastic Transcoder grants full control over the transcoded files and playlists to the owner of the role specified by <code>Role</code>, and grants no other permissions to any other user or group.</p>
+    /// <p> If you omit <code>Permissions</code>, Elastic Transcoder grants full control over the transcoded files and playlists to the owner of the role specified by <code>Role</code>, and grants no other permissions to any other user or group.</p>
     pub permissions: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
 }
 impl PipelineOutputConfig {
-    /// <p>The Amazon S3 bucket in which you want Elastic Transcoder to save the transcoded files. Specify this value when all of the following are true:</p>
+    /// <p> The Amazon S3 bucket in which you want Elastic Transcoder to save the transcoded files. Specify this value when all of the following are true:</p>
     /// <ul>
-    /// <li>
-    /// <p>You want to save transcoded files, thumbnails (if any), and playlists (if any) together in one bucket.</p></li>
-    /// <li>
-    /// <p>You do not want to specify the users or groups who have access to the transcoded files, thumbnails, and playlists.</p></li>
-    /// <li>
-    /// <p>You do not want to specify the permissions that Elastic Transcoder grants to the files.</p></li>
-    /// <li>
-    /// <p>You want to associate the transcoded files and thumbnails with the Amazon S3 Standard storage class.</p></li>
+    /// <li> <p>You want to save transcoded files, thumbnails (if any), and playlists (if any) together in one bucket.</p> </li>
+    /// <li> <p>You do not want to specify the users or groups who have access to the transcoded files, thumbnails, and playlists.</p> </li>
+    /// <li> <p>You do not want to specify the permissions that Elastic Transcoder grants to the files.</p> </li>
+    /// <li> <p>You want to associate the transcoded files and thumbnails with the Amazon S3 Standard storage class.</p> </li>
     /// </ul>
-    /// <p>If you want to save transcoded files and playlists in one bucket and thumbnails in another bucket, specify which users can access the transcoded files or the permissions the users have, or change the Amazon S3 storage class, omit OutputBucket and specify values for <code>ContentConfig</code> and <code>ThumbnailConfig</code> instead.</p>
+    /// <p>If you want to save transcoded files and playlists in one bucket and thumbnails in another bucket, specify which users can access the transcoded files or the permissions the users have, or change the Amazon S3 storage class, omit OutputBucket and specify values for <code>ContentConfig</code> and <code>ThumbnailConfig</code> instead. </p>
     pub fn bucket(&self) -> ::std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>The Amazon S3 storage class, <code>Standard</code> or <code>ReducedRedundancy</code>, that you want Elastic Transcoder to assign to the video files and playlists that it stores in your Amazon S3 bucket.</p>
+    /// <p> The Amazon S3 storage class, <code>Standard</code> or <code>ReducedRedundancy</code>, that you want Elastic Transcoder to assign to the video files and playlists that it stores in your Amazon S3 bucket. </p>
     pub fn storage_class(&self) -> ::std::option::Option<&str> {
         self.storage_class.as_deref()
     }
     /// <p>Optional. The <code>Permissions</code> object specifies which users and/or predefined Amazon S3 groups you want to have access to transcoded files and playlists, and the type of access you want them to have. You can grant permissions to a maximum of 30 users and/or predefined Amazon S3 groups.</p>
     /// <p>If you include <code>Permissions</code>, Elastic Transcoder grants only the permissions that you specify. It does not grant full permissions to the owner of the role specified by <code>Role</code>. If you want that user to have full control, you must explicitly grant full control to the user.</p>
-    /// <p>If you omit <code>Permissions</code>, Elastic Transcoder grants full control over the transcoded files and playlists to the owner of the role specified by <code>Role</code>, and grants no other permissions to any other user or group.</p>
+    /// <p> If you omit <code>Permissions</code>, Elastic Transcoder grants full control over the transcoded files and playlists to the owner of the role specified by <code>Role</code>, and grants no other permissions to any other user or group.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permissions.is_none()`.
     pub fn permissions(&self) -> &[crate::types::Permission] {
@@ -69,64 +61,52 @@ pub struct PipelineOutputConfigBuilder {
     pub(crate) permissions: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
 }
 impl PipelineOutputConfigBuilder {
-    /// <p>The Amazon S3 bucket in which you want Elastic Transcoder to save the transcoded files. Specify this value when all of the following are true:</p>
+    /// <p> The Amazon S3 bucket in which you want Elastic Transcoder to save the transcoded files. Specify this value when all of the following are true:</p>
     /// <ul>
-    /// <li>
-    /// <p>You want to save transcoded files, thumbnails (if any), and playlists (if any) together in one bucket.</p></li>
-    /// <li>
-    /// <p>You do not want to specify the users or groups who have access to the transcoded files, thumbnails, and playlists.</p></li>
-    /// <li>
-    /// <p>You do not want to specify the permissions that Elastic Transcoder grants to the files.</p></li>
-    /// <li>
-    /// <p>You want to associate the transcoded files and thumbnails with the Amazon S3 Standard storage class.</p></li>
+    /// <li> <p>You want to save transcoded files, thumbnails (if any), and playlists (if any) together in one bucket.</p> </li>
+    /// <li> <p>You do not want to specify the users or groups who have access to the transcoded files, thumbnails, and playlists.</p> </li>
+    /// <li> <p>You do not want to specify the permissions that Elastic Transcoder grants to the files.</p> </li>
+    /// <li> <p>You want to associate the transcoded files and thumbnails with the Amazon S3 Standard storage class.</p> </li>
     /// </ul>
-    /// <p>If you want to save transcoded files and playlists in one bucket and thumbnails in another bucket, specify which users can access the transcoded files or the permissions the users have, or change the Amazon S3 storage class, omit OutputBucket and specify values for <code>ContentConfig</code> and <code>ThumbnailConfig</code> instead.</p>
+    /// <p>If you want to save transcoded files and playlists in one bucket and thumbnails in another bucket, specify which users can access the transcoded files or the permissions the users have, or change the Amazon S3 storage class, omit OutputBucket and specify values for <code>ContentConfig</code> and <code>ThumbnailConfig</code> instead. </p>
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon S3 bucket in which you want Elastic Transcoder to save the transcoded files. Specify this value when all of the following are true:</p>
+    /// <p> The Amazon S3 bucket in which you want Elastic Transcoder to save the transcoded files. Specify this value when all of the following are true:</p>
     /// <ul>
-    /// <li>
-    /// <p>You want to save transcoded files, thumbnails (if any), and playlists (if any) together in one bucket.</p></li>
-    /// <li>
-    /// <p>You do not want to specify the users or groups who have access to the transcoded files, thumbnails, and playlists.</p></li>
-    /// <li>
-    /// <p>You do not want to specify the permissions that Elastic Transcoder grants to the files.</p></li>
-    /// <li>
-    /// <p>You want to associate the transcoded files and thumbnails with the Amazon S3 Standard storage class.</p></li>
+    /// <li> <p>You want to save transcoded files, thumbnails (if any), and playlists (if any) together in one bucket.</p> </li>
+    /// <li> <p>You do not want to specify the users or groups who have access to the transcoded files, thumbnails, and playlists.</p> </li>
+    /// <li> <p>You do not want to specify the permissions that Elastic Transcoder grants to the files.</p> </li>
+    /// <li> <p>You want to associate the transcoded files and thumbnails with the Amazon S3 Standard storage class.</p> </li>
     /// </ul>
-    /// <p>If you want to save transcoded files and playlists in one bucket and thumbnails in another bucket, specify which users can access the transcoded files or the permissions the users have, or change the Amazon S3 storage class, omit OutputBucket and specify values for <code>ContentConfig</code> and <code>ThumbnailConfig</code> instead.</p>
+    /// <p>If you want to save transcoded files and playlists in one bucket and thumbnails in another bucket, specify which users can access the transcoded files or the permissions the users have, or change the Amazon S3 storage class, omit OutputBucket and specify values for <code>ContentConfig</code> and <code>ThumbnailConfig</code> instead. </p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket = input;
         self
     }
-    /// <p>The Amazon S3 bucket in which you want Elastic Transcoder to save the transcoded files. Specify this value when all of the following are true:</p>
+    /// <p> The Amazon S3 bucket in which you want Elastic Transcoder to save the transcoded files. Specify this value when all of the following are true:</p>
     /// <ul>
-    /// <li>
-    /// <p>You want to save transcoded files, thumbnails (if any), and playlists (if any) together in one bucket.</p></li>
-    /// <li>
-    /// <p>You do not want to specify the users or groups who have access to the transcoded files, thumbnails, and playlists.</p></li>
-    /// <li>
-    /// <p>You do not want to specify the permissions that Elastic Transcoder grants to the files.</p></li>
-    /// <li>
-    /// <p>You want to associate the transcoded files and thumbnails with the Amazon S3 Standard storage class.</p></li>
+    /// <li> <p>You want to save transcoded files, thumbnails (if any), and playlists (if any) together in one bucket.</p> </li>
+    /// <li> <p>You do not want to specify the users or groups who have access to the transcoded files, thumbnails, and playlists.</p> </li>
+    /// <li> <p>You do not want to specify the permissions that Elastic Transcoder grants to the files.</p> </li>
+    /// <li> <p>You want to associate the transcoded files and thumbnails with the Amazon S3 Standard storage class.</p> </li>
     /// </ul>
-    /// <p>If you want to save transcoded files and playlists in one bucket and thumbnails in another bucket, specify which users can access the transcoded files or the permissions the users have, or change the Amazon S3 storage class, omit OutputBucket and specify values for <code>ContentConfig</code> and <code>ThumbnailConfig</code> instead.</p>
+    /// <p>If you want to save transcoded files and playlists in one bucket and thumbnails in another bucket, specify which users can access the transcoded files or the permissions the users have, or change the Amazon S3 storage class, omit OutputBucket and specify values for <code>ContentConfig</code> and <code>ThumbnailConfig</code> instead. </p>
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
         &self.bucket
     }
-    /// <p>The Amazon S3 storage class, <code>Standard</code> or <code>ReducedRedundancy</code>, that you want Elastic Transcoder to assign to the video files and playlists that it stores in your Amazon S3 bucket.</p>
+    /// <p> The Amazon S3 storage class, <code>Standard</code> or <code>ReducedRedundancy</code>, that you want Elastic Transcoder to assign to the video files and playlists that it stores in your Amazon S3 bucket. </p>
     pub fn storage_class(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_class = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon S3 storage class, <code>Standard</code> or <code>ReducedRedundancy</code>, that you want Elastic Transcoder to assign to the video files and playlists that it stores in your Amazon S3 bucket.</p>
+    /// <p> The Amazon S3 storage class, <code>Standard</code> or <code>ReducedRedundancy</code>, that you want Elastic Transcoder to assign to the video files and playlists that it stores in your Amazon S3 bucket. </p>
     pub fn set_storage_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_class = input;
         self
     }
-    /// <p>The Amazon S3 storage class, <code>Standard</code> or <code>ReducedRedundancy</code>, that you want Elastic Transcoder to assign to the video files and playlists that it stores in your Amazon S3 bucket.</p>
+    /// <p> The Amazon S3 storage class, <code>Standard</code> or <code>ReducedRedundancy</code>, that you want Elastic Transcoder to assign to the video files and playlists that it stores in your Amazon S3 bucket. </p>
     pub fn get_storage_class(&self) -> &::std::option::Option<::std::string::String> {
         &self.storage_class
     }
@@ -136,7 +116,7 @@ impl PipelineOutputConfigBuilder {
     ///
     /// <p>Optional. The <code>Permissions</code> object specifies which users and/or predefined Amazon S3 groups you want to have access to transcoded files and playlists, and the type of access you want them to have. You can grant permissions to a maximum of 30 users and/or predefined Amazon S3 groups.</p>
     /// <p>If you include <code>Permissions</code>, Elastic Transcoder grants only the permissions that you specify. It does not grant full permissions to the owner of the role specified by <code>Role</code>. If you want that user to have full control, you must explicitly grant full control to the user.</p>
-    /// <p>If you omit <code>Permissions</code>, Elastic Transcoder grants full control over the transcoded files and playlists to the owner of the role specified by <code>Role</code>, and grants no other permissions to any other user or group.</p>
+    /// <p> If you omit <code>Permissions</code>, Elastic Transcoder grants full control over the transcoded files and playlists to the owner of the role specified by <code>Role</code>, and grants no other permissions to any other user or group.</p>
     pub fn permissions(mut self, input: crate::types::Permission) -> Self {
         let mut v = self.permissions.unwrap_or_default();
         v.push(input);
@@ -145,14 +125,14 @@ impl PipelineOutputConfigBuilder {
     }
     /// <p>Optional. The <code>Permissions</code> object specifies which users and/or predefined Amazon S3 groups you want to have access to transcoded files and playlists, and the type of access you want them to have. You can grant permissions to a maximum of 30 users and/or predefined Amazon S3 groups.</p>
     /// <p>If you include <code>Permissions</code>, Elastic Transcoder grants only the permissions that you specify. It does not grant full permissions to the owner of the role specified by <code>Role</code>. If you want that user to have full control, you must explicitly grant full control to the user.</p>
-    /// <p>If you omit <code>Permissions</code>, Elastic Transcoder grants full control over the transcoded files and playlists to the owner of the role specified by <code>Role</code>, and grants no other permissions to any other user or group.</p>
+    /// <p> If you omit <code>Permissions</code>, Elastic Transcoder grants full control over the transcoded files and playlists to the owner of the role specified by <code>Role</code>, and grants no other permissions to any other user or group.</p>
     pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>) -> Self {
         self.permissions = input;
         self
     }
     /// <p>Optional. The <code>Permissions</code> object specifies which users and/or predefined Amazon S3 groups you want to have access to transcoded files and playlists, and the type of access you want them to have. You can grant permissions to a maximum of 30 users and/or predefined Amazon S3 groups.</p>
     /// <p>If you include <code>Permissions</code>, Elastic Transcoder grants only the permissions that you specify. It does not grant full permissions to the owner of the role specified by <code>Role</code>. If you want that user to have full control, you must explicitly grant full control to the user.</p>
-    /// <p>If you omit <code>Permissions</code>, Elastic Transcoder grants full control over the transcoded files and playlists to the owner of the role specified by <code>Role</code>, and grants no other permissions to any other user or group.</p>
+    /// <p> If you omit <code>Permissions</code>, Elastic Transcoder grants full control over the transcoded files and playlists to the owner of the role specified by <code>Role</code>, and grants no other permissions to any other user or group.</p>
     pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Permission>> {
         &self.permissions
     }

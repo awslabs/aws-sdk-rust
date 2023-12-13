@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListLabelsOutput {
-    /// <p>An opaque pagination token indicating where to continue the listing of datasets.</p>
+    /// <p> An opaque pagination token indicating where to continue the listing of datasets. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>A summary of the items in the label group.</p>
+    /// <p> A summary of the items in the label group. </p>
     pub label_summaries: ::std::option::Option<::std::vec::Vec<crate::types::LabelSummary>>,
     _request_id: Option<String>,
 }
 impl ListLabelsOutput {
-    /// <p>An opaque pagination token indicating where to continue the listing of datasets.</p>
+    /// <p> An opaque pagination token indicating where to continue the listing of datasets. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>A summary of the items in the label group.</p>
+    /// <p> A summary of the items in the label group. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.label_summaries.is_none()`.
     pub fn label_summaries(&self) -> &[crate::types::LabelSummary] {
@@ -42,17 +42,17 @@ pub struct ListLabelsOutputBuilder {
     _request_id: Option<String>,
 }
 impl ListLabelsOutputBuilder {
-    /// <p>An opaque pagination token indicating where to continue the listing of datasets.</p>
+    /// <p> An opaque pagination token indicating where to continue the listing of datasets. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An opaque pagination token indicating where to continue the listing of datasets.</p>
+    /// <p> An opaque pagination token indicating where to continue the listing of datasets. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>An opaque pagination token indicating where to continue the listing of datasets.</p>
+    /// <p> An opaque pagination token indicating where to continue the listing of datasets. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
@@ -60,19 +60,19 @@ impl ListLabelsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_label_summaries`](Self::set_label_summaries).
     ///
-    /// <p>A summary of the items in the label group.</p>
+    /// <p> A summary of the items in the label group. </p>
     pub fn label_summaries(mut self, input: crate::types::LabelSummary) -> Self {
         let mut v = self.label_summaries.unwrap_or_default();
         v.push(input);
         self.label_summaries = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A summary of the items in the label group.</p>
+    /// <p> A summary of the items in the label group. </p>
     pub fn set_label_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LabelSummary>>) -> Self {
         self.label_summaries = input;
         self
     }
-    /// <p>A summary of the items in the label group.</p>
+    /// <p> A summary of the items in the label group. </p>
     pub fn get_label_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LabelSummary>> {
         &self.label_summaries
     }

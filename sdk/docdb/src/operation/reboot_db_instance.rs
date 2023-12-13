@@ -242,9 +242,9 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for RebootDBInsta
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum RebootDBInstanceError {
-    /// <p><code>DBInstanceIdentifier</code> doesn't refer to an existing instance.</p>
+    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing instance. </p>
     DbInstanceNotFoundFault(crate::types::error::DbInstanceNotFoundFault),
-    /// <p>The specified instance isn't in the <i>available</i> state.</p>
+    /// <p> The specified instance isn't in the <i>available</i> state. </p>
     InvalidDbInstanceStateFault(crate::types::error::InvalidDbInstanceStateFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

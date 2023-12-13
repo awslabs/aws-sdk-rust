@@ -249,13 +249,13 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateRobotAp
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreateRobotApplicationVersionError {
-    /// <p>The request uses the same client token as a previous, but non-identical request. Do not reuse a client token with different requests, unless the requests are identical.</p>
+    /// <p>The request uses the same client token as a previous, but non-identical request. Do not reuse a client token with different requests, unless the requests are identical. </p>
     IdempotentParameterMismatchException(crate::types::error::IdempotentParameterMismatchException),
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::types::error::InvalidParameterException),
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed.</p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::types::error::ThrottlingException),

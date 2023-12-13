@@ -22,7 +22,7 @@ impl DescribeJobInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeJob`.
 ///
-/// <p>Returns information about a specific job including shipping information, job status, and other important metadata.</p>
+/// <p>Returns information about a specific job including shipping information, job status, and other important metadata. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

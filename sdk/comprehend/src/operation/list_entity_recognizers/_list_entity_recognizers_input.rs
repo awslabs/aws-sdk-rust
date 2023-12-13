@@ -7,7 +7,7 @@ pub struct ListEntityRecognizersInput {
     pub filter: ::std::option::Option<crate::types::EntityRecognizerFilter>,
     /// <p>Identifies the next page of results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum number of results to return on each page. The default is 100.</p>
+    /// <p> The maximum number of results to return on each page. The default is 100.</p>
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListEntityRecognizersInput {
@@ -19,7 +19,7 @@ impl ListEntityRecognizersInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return on each page. The default is 100.</p>
+    /// <p> The maximum number of results to return on each page. The default is 100.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -68,17 +68,17 @@ impl ListEntityRecognizersInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>The maximum number of results to return on each page. The default is 100.</p>
+    /// <p> The maximum number of results to return on each page. The default is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of results to return on each page. The default is 100.</p>
+    /// <p> The maximum number of results to return on each page. The default is 100.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of results to return on each page. The default is 100.</p>
+    /// <p> The maximum number of results to return on each page. The default is 100.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

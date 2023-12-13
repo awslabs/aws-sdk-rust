@@ -22,7 +22,7 @@ impl UpdateAppInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateApp`.
 ///
-/// <p>Updates an existing Amplify app.</p>
+/// <p>Updates an existing Amplify app. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAppFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -102,45 +102,45 @@ impl UpdateAppFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique ID for an Amplify app.</p>
+    /// <p>The unique ID for an Amplify app. </p>
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_id(input.into());
         self
     }
-    /// <p>The unique ID for an Amplify app.</p>
+    /// <p>The unique ID for an Amplify app. </p>
     pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_id(input);
         self
     }
-    /// <p>The unique ID for an Amplify app.</p>
+    /// <p>The unique ID for an Amplify app. </p>
     pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_app_id()
     }
-    /// <p>The name for an Amplify app.</p>
+    /// <p>The name for an Amplify app. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name for an Amplify app.</p>
+    /// <p>The name for an Amplify app. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name for an Amplify app.</p>
+    /// <p>The name for an Amplify app. </p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>The description for an Amplify app.</p>
+    /// <p>The description for an Amplify app. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>The description for an Amplify app.</p>
+    /// <p>The description for an Amplify app. </p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>The description for an Amplify app.</p>
+    /// <p>The description for an Amplify app. </p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
@@ -158,17 +158,17 @@ impl UpdateAppFluentBuilder {
     pub fn get_platform(&self) -> &::std::option::Option<crate::types::Platform> {
         self.inner.get_platform()
     }
-    /// <p>The AWS Identity and Access Management (IAM) service role for an Amplify app.</p>
+    /// <p>The AWS Identity and Access Management (IAM) service role for an Amplify app. </p>
     pub fn iam_service_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.iam_service_role_arn(input.into());
         self
     }
-    /// <p>The AWS Identity and Access Management (IAM) service role for an Amplify app.</p>
+    /// <p>The AWS Identity and Access Management (IAM) service role for an Amplify app. </p>
     pub fn set_iam_service_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_iam_service_role_arn(input);
         self
     }
-    /// <p>The AWS Identity and Access Management (IAM) service role for an Amplify app.</p>
+    /// <p>The AWS Identity and Access Management (IAM) service role for an Amplify app. </p>
     pub fn get_iam_service_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_iam_service_role_arn()
     }
@@ -176,7 +176,7 @@ impl UpdateAppFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_environment_variables`](Self::set_environment_variables).
     ///
-    /// <p>The environment variables for an Amplify app.</p>
+    /// <p>The environment variables for an Amplify app. </p>
     pub fn environment_variables(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -185,7 +185,7 @@ impl UpdateAppFluentBuilder {
         self.inner = self.inner.environment_variables(k.into(), v.into());
         self
     }
-    /// <p>The environment variables for an Amplify app.</p>
+    /// <p>The environment variables for an Amplify app. </p>
     pub fn set_environment_variables(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -193,49 +193,49 @@ impl UpdateAppFluentBuilder {
         self.inner = self.inner.set_environment_variables(input);
         self
     }
-    /// <p>The environment variables for an Amplify app.</p>
+    /// <p>The environment variables for an Amplify app. </p>
     pub fn get_environment_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_environment_variables()
     }
-    /// <p>Enables branch auto-building for an Amplify app.</p>
+    /// <p>Enables branch auto-building for an Amplify app. </p>
     pub fn enable_branch_auto_build(mut self, input: bool) -> Self {
         self.inner = self.inner.enable_branch_auto_build(input);
         self
     }
-    /// <p>Enables branch auto-building for an Amplify app.</p>
+    /// <p>Enables branch auto-building for an Amplify app. </p>
     pub fn set_enable_branch_auto_build(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable_branch_auto_build(input);
         self
     }
-    /// <p>Enables branch auto-building for an Amplify app.</p>
+    /// <p>Enables branch auto-building for an Amplify app. </p>
     pub fn get_enable_branch_auto_build(&self) -> &::std::option::Option<bool> {
         self.inner.get_enable_branch_auto_build()
     }
-    /// <p>Automatically disconnects a branch in the Amplify console when you delete a branch from your Git repository.</p>
+    /// <p>Automatically disconnects a branch in the Amplify console when you delete a branch from your Git repository. </p>
     pub fn enable_branch_auto_deletion(mut self, input: bool) -> Self {
         self.inner = self.inner.enable_branch_auto_deletion(input);
         self
     }
-    /// <p>Automatically disconnects a branch in the Amplify console when you delete a branch from your Git repository.</p>
+    /// <p>Automatically disconnects a branch in the Amplify console when you delete a branch from your Git repository. </p>
     pub fn set_enable_branch_auto_deletion(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable_branch_auto_deletion(input);
         self
     }
-    /// <p>Automatically disconnects a branch in the Amplify console when you delete a branch from your Git repository.</p>
+    /// <p>Automatically disconnects a branch in the Amplify console when you delete a branch from your Git repository. </p>
     pub fn get_enable_branch_auto_deletion(&self) -> &::std::option::Option<bool> {
         self.inner.get_enable_branch_auto_deletion()
     }
-    /// <p>Enables basic authorization for an Amplify app.</p>
+    /// <p>Enables basic authorization for an Amplify app. </p>
     pub fn enable_basic_auth(mut self, input: bool) -> Self {
         self.inner = self.inner.enable_basic_auth(input);
         self
     }
-    /// <p>Enables basic authorization for an Amplify app.</p>
+    /// <p>Enables basic authorization for an Amplify app. </p>
     pub fn set_enable_basic_auth(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable_basic_auth(input);
         self
     }
-    /// <p>Enables basic authorization for an Amplify app.</p>
+    /// <p>Enables basic authorization for an Amplify app. </p>
     pub fn get_enable_basic_auth(&self) -> &::std::option::Option<bool> {
         self.inner.get_enable_basic_auth()
     }
@@ -257,31 +257,31 @@ impl UpdateAppFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_custom_rules`](Self::set_custom_rules).
     ///
-    /// <p>The custom redirect and rewrite rules for an Amplify app.</p>
+    /// <p>The custom redirect and rewrite rules for an Amplify app. </p>
     pub fn custom_rules(mut self, input: crate::types::CustomRule) -> Self {
         self.inner = self.inner.custom_rules(input);
         self
     }
-    /// <p>The custom redirect and rewrite rules for an Amplify app.</p>
+    /// <p>The custom redirect and rewrite rules for an Amplify app. </p>
     pub fn set_custom_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomRule>>) -> Self {
         self.inner = self.inner.set_custom_rules(input);
         self
     }
-    /// <p>The custom redirect and rewrite rules for an Amplify app.</p>
+    /// <p>The custom redirect and rewrite rules for an Amplify app. </p>
     pub fn get_custom_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomRule>> {
         self.inner.get_custom_rules()
     }
-    /// <p>The build specification (build spec) for an Amplify app.</p>
+    /// <p>The build specification (build spec) for an Amplify app. </p>
     pub fn build_spec(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.build_spec(input.into());
         self
     }
-    /// <p>The build specification (build spec) for an Amplify app.</p>
+    /// <p>The build specification (build spec) for an Amplify app. </p>
     pub fn set_build_spec(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_build_spec(input);
         self
     }
-    /// <p>The build specification (build spec) for an Amplify app.</p>
+    /// <p>The build specification (build spec) for an Amplify app. </p>
     pub fn get_build_spec(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_build_spec()
     }
@@ -299,17 +299,17 @@ impl UpdateAppFluentBuilder {
     pub fn get_custom_headers(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_custom_headers()
     }
-    /// <p>Enables automated branch creation for an Amplify app.</p>
+    /// <p>Enables automated branch creation for an Amplify app. </p>
     pub fn enable_auto_branch_creation(mut self, input: bool) -> Self {
         self.inner = self.inner.enable_auto_branch_creation(input);
         self
     }
-    /// <p>Enables automated branch creation for an Amplify app.</p>
+    /// <p>Enables automated branch creation for an Amplify app. </p>
     pub fn set_enable_auto_branch_creation(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable_auto_branch_creation(input);
         self
     }
-    /// <p>Enables automated branch creation for an Amplify app.</p>
+    /// <p>Enables automated branch creation for an Amplify app. </p>
     pub fn get_enable_auto_branch_creation(&self) -> &::std::option::Option<bool> {
         self.inner.get_enable_auto_branch_creation()
     }
@@ -317,31 +317,31 @@ impl UpdateAppFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_auto_branch_creation_patterns`](Self::set_auto_branch_creation_patterns).
     ///
-    /// <p>Describes the automated branch creation glob patterns for an Amplify app.</p>
+    /// <p>Describes the automated branch creation glob patterns for an Amplify app. </p>
     pub fn auto_branch_creation_patterns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.auto_branch_creation_patterns(input.into());
         self
     }
-    /// <p>Describes the automated branch creation glob patterns for an Amplify app.</p>
+    /// <p>Describes the automated branch creation glob patterns for an Amplify app. </p>
     pub fn set_auto_branch_creation_patterns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_auto_branch_creation_patterns(input);
         self
     }
-    /// <p>Describes the automated branch creation glob patterns for an Amplify app.</p>
+    /// <p>Describes the automated branch creation glob patterns for an Amplify app. </p>
     pub fn get_auto_branch_creation_patterns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_auto_branch_creation_patterns()
     }
-    /// <p>The automated branch creation configuration for an Amplify app.</p>
+    /// <p>The automated branch creation configuration for an Amplify app. </p>
     pub fn auto_branch_creation_config(mut self, input: crate::types::AutoBranchCreationConfig) -> Self {
         self.inner = self.inner.auto_branch_creation_config(input);
         self
     }
-    /// <p>The automated branch creation configuration for an Amplify app.</p>
+    /// <p>The automated branch creation configuration for an Amplify app. </p>
     pub fn set_auto_branch_creation_config(mut self, input: ::std::option::Option<crate::types::AutoBranchCreationConfig>) -> Self {
         self.inner = self.inner.set_auto_branch_creation_config(input);
         self
     }
-    /// <p>The automated branch creation configuration for an Amplify app.</p>
+    /// <p>The automated branch creation configuration for an Amplify app. </p>
     pub fn get_auto_branch_creation_config(&self) -> &::std::option::Option<crate::types::AutoBranchCreationConfig> {
         self.inner.get_auto_branch_creation_config()
     }

@@ -22,7 +22,7 @@ pub struct SimulationJobBatchSummary {
     /// InProgress
     /// </dt>
     /// <dd>
-    /// <p>The simulation job batch is in progress.</p>
+    /// <p>The simulation job batch is in progress. </p>
     /// </dd>
     /// <dt>
     /// Failed
@@ -34,7 +34,7 @@ pub struct SimulationJobBatchSummary {
     /// Completed
     /// </dt>
     /// <dd>
-    /// <p>The simulation batch job completed. A batch is complete when (1) there are no pending simulation job requests in the batch and none of the failed simulation job requests are due to <code>InternalServiceError</code> and (2) when all created simulation jobs have reached a terminal state (for example, <code>Completed</code> or <code>Failed</code>).</p>
+    /// <p>The simulation batch job completed. A batch is complete when (1) there are no pending simulation job requests in the batch and none of the failed simulation job requests are due to <code>InternalServiceError</code> and (2) when all created simulation jobs have reached a terminal state (for example, <code>Completed</code> or <code>Failed</code>). </p>
     /// </dd>
     /// <dt>
     /// Canceled
@@ -59,7 +59,7 @@ pub struct SimulationJobBatchSummary {
     /// </dt>
     /// <dd>
     /// <p>The simulation job batch is timing out.</p>
-    /// <p>If a batch timing out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), the batch status will be <code>Failed</code>. If there are no such failing request, the batch status will be <code>TimedOut</code>.</p>
+    /// <p>If a batch timing out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), the batch status will be <code>Failed</code>. If there are no such failing request, the batch status will be <code>TimedOut</code>. </p>
     /// </dd>
     /// <dt>
     /// TimedOut
@@ -101,7 +101,7 @@ impl SimulationJobBatchSummary {
     /// InProgress
     /// </dt>
     /// <dd>
-    /// <p>The simulation job batch is in progress.</p>
+    /// <p>The simulation job batch is in progress. </p>
     /// </dd>
     /// <dt>
     /// Failed
@@ -113,7 +113,7 @@ impl SimulationJobBatchSummary {
     /// Completed
     /// </dt>
     /// <dd>
-    /// <p>The simulation batch job completed. A batch is complete when (1) there are no pending simulation job requests in the batch and none of the failed simulation job requests are due to <code>InternalServiceError</code> and (2) when all created simulation jobs have reached a terminal state (for example, <code>Completed</code> or <code>Failed</code>).</p>
+    /// <p>The simulation batch job completed. A batch is complete when (1) there are no pending simulation job requests in the batch and none of the failed simulation job requests are due to <code>InternalServiceError</code> and (2) when all created simulation jobs have reached a terminal state (for example, <code>Completed</code> or <code>Failed</code>). </p>
     /// </dd>
     /// <dt>
     /// Canceled
@@ -138,7 +138,7 @@ impl SimulationJobBatchSummary {
     /// </dt>
     /// <dd>
     /// <p>The simulation job batch is timing out.</p>
-    /// <p>If a batch timing out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), the batch status will be <code>Failed</code>. If there are no such failing request, the batch status will be <code>TimedOut</code>.</p>
+    /// <p>If a batch timing out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), the batch status will be <code>Failed</code>. If there are no such failing request, the batch status will be <code>TimedOut</code>. </p>
     /// </dd>
     /// <dt>
     /// TimedOut
@@ -237,7 +237,7 @@ impl SimulationJobBatchSummaryBuilder {
     /// InProgress
     /// </dt>
     /// <dd>
-    /// <p>The simulation job batch is in progress.</p>
+    /// <p>The simulation job batch is in progress. </p>
     /// </dd>
     /// <dt>
     /// Failed
@@ -249,7 +249,7 @@ impl SimulationJobBatchSummaryBuilder {
     /// Completed
     /// </dt>
     /// <dd>
-    /// <p>The simulation batch job completed. A batch is complete when (1) there are no pending simulation job requests in the batch and none of the failed simulation job requests are due to <code>InternalServiceError</code> and (2) when all created simulation jobs have reached a terminal state (for example, <code>Completed</code> or <code>Failed</code>).</p>
+    /// <p>The simulation batch job completed. A batch is complete when (1) there are no pending simulation job requests in the batch and none of the failed simulation job requests are due to <code>InternalServiceError</code> and (2) when all created simulation jobs have reached a terminal state (for example, <code>Completed</code> or <code>Failed</code>). </p>
     /// </dd>
     /// <dt>
     /// Canceled
@@ -274,7 +274,7 @@ impl SimulationJobBatchSummaryBuilder {
     /// </dt>
     /// <dd>
     /// <p>The simulation job batch is timing out.</p>
-    /// <p>If a batch timing out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), the batch status will be <code>Failed</code>. If there are no such failing request, the batch status will be <code>TimedOut</code>.</p>
+    /// <p>If a batch timing out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), the batch status will be <code>Failed</code>. If there are no such failing request, the batch status will be <code>TimedOut</code>. </p>
     /// </dd>
     /// <dt>
     /// TimedOut
@@ -299,7 +299,7 @@ impl SimulationJobBatchSummaryBuilder {
     /// InProgress
     /// </dt>
     /// <dd>
-    /// <p>The simulation job batch is in progress.</p>
+    /// <p>The simulation job batch is in progress. </p>
     /// </dd>
     /// <dt>
     /// Failed
@@ -311,7 +311,7 @@ impl SimulationJobBatchSummaryBuilder {
     /// Completed
     /// </dt>
     /// <dd>
-    /// <p>The simulation batch job completed. A batch is complete when (1) there are no pending simulation job requests in the batch and none of the failed simulation job requests are due to <code>InternalServiceError</code> and (2) when all created simulation jobs have reached a terminal state (for example, <code>Completed</code> or <code>Failed</code>).</p>
+    /// <p>The simulation batch job completed. A batch is complete when (1) there are no pending simulation job requests in the batch and none of the failed simulation job requests are due to <code>InternalServiceError</code> and (2) when all created simulation jobs have reached a terminal state (for example, <code>Completed</code> or <code>Failed</code>). </p>
     /// </dd>
     /// <dt>
     /// Canceled
@@ -336,7 +336,7 @@ impl SimulationJobBatchSummaryBuilder {
     /// </dt>
     /// <dd>
     /// <p>The simulation job batch is timing out.</p>
-    /// <p>If a batch timing out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), the batch status will be <code>Failed</code>. If there are no such failing request, the batch status will be <code>TimedOut</code>.</p>
+    /// <p>If a batch timing out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), the batch status will be <code>Failed</code>. If there are no such failing request, the batch status will be <code>TimedOut</code>. </p>
     /// </dd>
     /// <dt>
     /// TimedOut
@@ -361,7 +361,7 @@ impl SimulationJobBatchSummaryBuilder {
     /// InProgress
     /// </dt>
     /// <dd>
-    /// <p>The simulation job batch is in progress.</p>
+    /// <p>The simulation job batch is in progress. </p>
     /// </dd>
     /// <dt>
     /// Failed
@@ -373,7 +373,7 @@ impl SimulationJobBatchSummaryBuilder {
     /// Completed
     /// </dt>
     /// <dd>
-    /// <p>The simulation batch job completed. A batch is complete when (1) there are no pending simulation job requests in the batch and none of the failed simulation job requests are due to <code>InternalServiceError</code> and (2) when all created simulation jobs have reached a terminal state (for example, <code>Completed</code> or <code>Failed</code>).</p>
+    /// <p>The simulation batch job completed. A batch is complete when (1) there are no pending simulation job requests in the batch and none of the failed simulation job requests are due to <code>InternalServiceError</code> and (2) when all created simulation jobs have reached a terminal state (for example, <code>Completed</code> or <code>Failed</code>). </p>
     /// </dd>
     /// <dt>
     /// Canceled
@@ -398,7 +398,7 @@ impl SimulationJobBatchSummaryBuilder {
     /// </dt>
     /// <dd>
     /// <p>The simulation job batch is timing out.</p>
-    /// <p>If a batch timing out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), the batch status will be <code>Failed</code>. If there are no such failing request, the batch status will be <code>TimedOut</code>.</p>
+    /// <p>If a batch timing out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), the batch status will be <code>Failed</code>. If there are no such failing request, the batch status will be <code>TimedOut</code>. </p>
     /// </dd>
     /// <dt>
     /// TimedOut

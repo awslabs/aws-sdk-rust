@@ -11,7 +11,7 @@ pub struct Volume {
     /// <p>Windows containers can mount whole directories on the same drive as <code>$env:ProgramData</code>. Windows containers can't mount directories on a different drive, and mount point can't be across drives. For example, you can mount <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not <code>D:\my\path:C:\my\path</code> or <code>D:\:C:\my\path</code>.</p>
     pub host: ::std::option::Option<crate::types::HostVolumeProperties>,
     /// <p>This parameter is specified when you use Docker volumes.</p>
-    /// <p>Windows containers only support the use of the <code>local</code> driver. To use bind mounts, specify the <code>host</code> parameter instead.</p><note>
+    /// <p>Windows containers only support the use of the <code>local</code> driver. To use bind mounts, specify the <code>host</code> parameter instead.</p> <note>
     /// <p>Docker volumes aren't supported by tasks run on Fargate.</p>
     /// </note>
     pub docker_volume_configuration: ::std::option::Option<crate::types::DockerVolumeConfiguration>,
@@ -32,7 +32,7 @@ impl Volume {
         self.host.as_ref()
     }
     /// <p>This parameter is specified when you use Docker volumes.</p>
-    /// <p>Windows containers only support the use of the <code>local</code> driver. To use bind mounts, specify the <code>host</code> parameter instead.</p><note>
+    /// <p>Windows containers only support the use of the <code>local</code> driver. To use bind mounts, specify the <code>host</code> parameter instead.</p> <note>
     /// <p>Docker volumes aren't supported by tasks run on Fargate.</p>
     /// </note>
     pub fn docker_volume_configuration(&self) -> ::std::option::Option<&crate::types::DockerVolumeConfiguration> {
@@ -100,7 +100,7 @@ impl VolumeBuilder {
         &self.host
     }
     /// <p>This parameter is specified when you use Docker volumes.</p>
-    /// <p>Windows containers only support the use of the <code>local</code> driver. To use bind mounts, specify the <code>host</code> parameter instead.</p><note>
+    /// <p>Windows containers only support the use of the <code>local</code> driver. To use bind mounts, specify the <code>host</code> parameter instead.</p> <note>
     /// <p>Docker volumes aren't supported by tasks run on Fargate.</p>
     /// </note>
     pub fn docker_volume_configuration(mut self, input: crate::types::DockerVolumeConfiguration) -> Self {
@@ -108,7 +108,7 @@ impl VolumeBuilder {
         self
     }
     /// <p>This parameter is specified when you use Docker volumes.</p>
-    /// <p>Windows containers only support the use of the <code>local</code> driver. To use bind mounts, specify the <code>host</code> parameter instead.</p><note>
+    /// <p>Windows containers only support the use of the <code>local</code> driver. To use bind mounts, specify the <code>host</code> parameter instead.</p> <note>
     /// <p>Docker volumes aren't supported by tasks run on Fargate.</p>
     /// </note>
     pub fn set_docker_volume_configuration(mut self, input: ::std::option::Option<crate::types::DockerVolumeConfiguration>) -> Self {
@@ -116,7 +116,7 @@ impl VolumeBuilder {
         self
     }
     /// <p>This parameter is specified when you use Docker volumes.</p>
-    /// <p>Windows containers only support the use of the <code>local</code> driver. To use bind mounts, specify the <code>host</code> parameter instead.</p><note>
+    /// <p>Windows containers only support the use of the <code>local</code> driver. To use bind mounts, specify the <code>host</code> parameter instead.</p> <note>
     /// <p>Docker volumes aren't supported by tasks run on Fargate.</p>
     /// </note>
     pub fn get_docker_volume_configuration(&self) -> &::std::option::Option<crate::types::DockerVolumeConfiguration> {

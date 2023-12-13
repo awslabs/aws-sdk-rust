@@ -118,31 +118,31 @@ impl ListCustomerManagedPolicyReferencesInPermissionSetFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_customer_managed_policy_references_in_permission_set::paginator::ListCustomerManagedPolicyReferencesInPermissionSetPaginator{
         crate::operation::list_customer_managed_policy_references_in_permission_set::paginator::ListCustomerManagedPolicyReferencesInPermissionSetPaginator::new(self.handle, self.inner)
     }
-    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
+    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
     pub fn instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_arn(input.into());
         self
     }
-    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
+    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
     pub fn set_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_arn(input);
         self
     }
-    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
+    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
     pub fn get_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_arn()
     }
-    /// <p>The ARN of the <code>PermissionSet</code>.</p>
+    /// <p>The ARN of the <code>PermissionSet</code>. </p>
     pub fn permission_set_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.permission_set_arn(input.into());
         self
     }
-    /// <p>The ARN of the <code>PermissionSet</code>.</p>
+    /// <p>The ARN of the <code>PermissionSet</code>. </p>
     pub fn set_permission_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_permission_set_arn(input);
         self
     }
-    /// <p>The ARN of the <code>PermissionSet</code>.</p>
+    /// <p>The ARN of the <code>PermissionSet</code>. </p>
     pub fn get_permission_set_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_permission_set_arn()
     }

@@ -109,21 +109,21 @@ impl DeleteContactMethodFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The protocol that will be deleted, such as <code>Email</code> or <code>SMS</code> (text messaging).</p><note>
+    /// <p>The protocol that will be deleted, such as <code>Email</code> or <code>SMS</code> (text messaging).</p> <note>
     /// <p>To delete an <code>Email</code> and an <code>SMS</code> contact method if you added both, you must run separate <code>DeleteContactMethod</code> actions to delete each protocol.</p>
     /// </note>
     pub fn protocol(mut self, input: crate::types::ContactProtocol) -> Self {
         self.inner = self.inner.protocol(input);
         self
     }
-    /// <p>The protocol that will be deleted, such as <code>Email</code> or <code>SMS</code> (text messaging).</p><note>
+    /// <p>The protocol that will be deleted, such as <code>Email</code> or <code>SMS</code> (text messaging).</p> <note>
     /// <p>To delete an <code>Email</code> and an <code>SMS</code> contact method if you added both, you must run separate <code>DeleteContactMethod</code> actions to delete each protocol.</p>
     /// </note>
     pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::ContactProtocol>) -> Self {
         self.inner = self.inner.set_protocol(input);
         self
     }
-    /// <p>The protocol that will be deleted, such as <code>Email</code> or <code>SMS</code> (text messaging).</p><note>
+    /// <p>The protocol that will be deleted, such as <code>Email</code> or <code>SMS</code> (text messaging).</p> <note>
     /// <p>To delete an <code>Email</code> and an <code>SMS</code> contact method if you added both, you must run separate <code>DeleteContactMethod</code> actions to delete each protocol.</p>
     /// </note>
     pub fn get_protocol(&self) -> &::std::option::Option<crate::types::ContactProtocol> {

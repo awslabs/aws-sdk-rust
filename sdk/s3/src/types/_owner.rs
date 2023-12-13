@@ -6,23 +6,15 @@
 pub struct Owner {
     /// <p>Container for the display name of the owner. This value is only supported in the following Amazon Web Services Regions:</p>
     /// <ul>
-    /// <li>
-    /// <p>US East (N. Virginia)</p></li>
-    /// <li>
-    /// <p>US West (N. California)</p></li>
-    /// <li>
-    /// <p>US West (Oregon)</p></li>
-    /// <li>
-    /// <p>Asia Pacific (Singapore)</p></li>
-    /// <li>
-    /// <p>Asia Pacific (Sydney)</p></li>
-    /// <li>
-    /// <p>Asia Pacific (Tokyo)</p></li>
-    /// <li>
-    /// <p>Europe (Ireland)</p></li>
-    /// <li>
-    /// <p>South America (São Paulo)</p></li>
-    /// </ul><note>
+    /// <li> <p>US East (N. Virginia)</p> </li>
+    /// <li> <p>US West (N. California)</p> </li>
+    /// <li> <p>US West (Oregon)</p> </li>
+    /// <li> <p>Asia Pacific (Singapore)</p> </li>
+    /// <li> <p>Asia Pacific (Sydney)</p> </li>
+    /// <li> <p>Asia Pacific (Tokyo)</p> </li>
+    /// <li> <p>Europe (Ireland)</p> </li>
+    /// <li> <p>South America (São Paulo)</p> </li>
+    /// </ul> <note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub display_name: ::std::option::Option<::std::string::String>,
@@ -32,23 +24,15 @@ pub struct Owner {
 impl Owner {
     /// <p>Container for the display name of the owner. This value is only supported in the following Amazon Web Services Regions:</p>
     /// <ul>
-    /// <li>
-    /// <p>US East (N. Virginia)</p></li>
-    /// <li>
-    /// <p>US West (N. California)</p></li>
-    /// <li>
-    /// <p>US West (Oregon)</p></li>
-    /// <li>
-    /// <p>Asia Pacific (Singapore)</p></li>
-    /// <li>
-    /// <p>Asia Pacific (Sydney)</p></li>
-    /// <li>
-    /// <p>Asia Pacific (Tokyo)</p></li>
-    /// <li>
-    /// <p>Europe (Ireland)</p></li>
-    /// <li>
-    /// <p>South America (São Paulo)</p></li>
-    /// </ul><note>
+    /// <li> <p>US East (N. Virginia)</p> </li>
+    /// <li> <p>US West (N. California)</p> </li>
+    /// <li> <p>US West (Oregon)</p> </li>
+    /// <li> <p>Asia Pacific (Singapore)</p> </li>
+    /// <li> <p>Asia Pacific (Sydney)</p> </li>
+    /// <li> <p>Asia Pacific (Tokyo)</p> </li>
+    /// <li> <p>Europe (Ireland)</p> </li>
+    /// <li> <p>South America (São Paulo)</p> </li>
+    /// </ul> <note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn display_name(&self) -> ::std::option::Option<&str> {
@@ -76,23 +60,15 @@ pub struct OwnerBuilder {
 impl OwnerBuilder {
     /// <p>Container for the display name of the owner. This value is only supported in the following Amazon Web Services Regions:</p>
     /// <ul>
-    /// <li>
-    /// <p>US East (N. Virginia)</p></li>
-    /// <li>
-    /// <p>US West (N. California)</p></li>
-    /// <li>
-    /// <p>US West (Oregon)</p></li>
-    /// <li>
-    /// <p>Asia Pacific (Singapore)</p></li>
-    /// <li>
-    /// <p>Asia Pacific (Sydney)</p></li>
-    /// <li>
-    /// <p>Asia Pacific (Tokyo)</p></li>
-    /// <li>
-    /// <p>Europe (Ireland)</p></li>
-    /// <li>
-    /// <p>South America (São Paulo)</p></li>
-    /// </ul><note>
+    /// <li> <p>US East (N. Virginia)</p> </li>
+    /// <li> <p>US West (N. California)</p> </li>
+    /// <li> <p>US West (Oregon)</p> </li>
+    /// <li> <p>Asia Pacific (Singapore)</p> </li>
+    /// <li> <p>Asia Pacific (Sydney)</p> </li>
+    /// <li> <p>Asia Pacific (Tokyo)</p> </li>
+    /// <li> <p>Europe (Ireland)</p> </li>
+    /// <li> <p>South America (São Paulo)</p> </li>
+    /// </ul> <note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -101,23 +77,15 @@ impl OwnerBuilder {
     }
     /// <p>Container for the display name of the owner. This value is only supported in the following Amazon Web Services Regions:</p>
     /// <ul>
-    /// <li>
-    /// <p>US East (N. Virginia)</p></li>
-    /// <li>
-    /// <p>US West (N. California)</p></li>
-    /// <li>
-    /// <p>US West (Oregon)</p></li>
-    /// <li>
-    /// <p>Asia Pacific (Singapore)</p></li>
-    /// <li>
-    /// <p>Asia Pacific (Sydney)</p></li>
-    /// <li>
-    /// <p>Asia Pacific (Tokyo)</p></li>
-    /// <li>
-    /// <p>Europe (Ireland)</p></li>
-    /// <li>
-    /// <p>South America (São Paulo)</p></li>
-    /// </ul><note>
+    /// <li> <p>US East (N. Virginia)</p> </li>
+    /// <li> <p>US West (N. California)</p> </li>
+    /// <li> <p>US West (Oregon)</p> </li>
+    /// <li> <p>Asia Pacific (Singapore)</p> </li>
+    /// <li> <p>Asia Pacific (Sydney)</p> </li>
+    /// <li> <p>Asia Pacific (Tokyo)</p> </li>
+    /// <li> <p>Europe (Ireland)</p> </li>
+    /// <li> <p>South America (São Paulo)</p> </li>
+    /// </ul> <note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -126,23 +94,15 @@ impl OwnerBuilder {
     }
     /// <p>Container for the display name of the owner. This value is only supported in the following Amazon Web Services Regions:</p>
     /// <ul>
-    /// <li>
-    /// <p>US East (N. Virginia)</p></li>
-    /// <li>
-    /// <p>US West (N. California)</p></li>
-    /// <li>
-    /// <p>US West (Oregon)</p></li>
-    /// <li>
-    /// <p>Asia Pacific (Singapore)</p></li>
-    /// <li>
-    /// <p>Asia Pacific (Sydney)</p></li>
-    /// <li>
-    /// <p>Asia Pacific (Tokyo)</p></li>
-    /// <li>
-    /// <p>Europe (Ireland)</p></li>
-    /// <li>
-    /// <p>South America (São Paulo)</p></li>
-    /// </ul><note>
+    /// <li> <p>US East (N. Virginia)</p> </li>
+    /// <li> <p>US West (N. California)</p> </li>
+    /// <li> <p>US West (Oregon)</p> </li>
+    /// <li> <p>Asia Pacific (Singapore)</p> </li>
+    /// <li> <p>Asia Pacific (Sydney)</p> </li>
+    /// <li> <p>Asia Pacific (Tokyo)</p> </li>
+    /// <li> <p>Europe (Ireland)</p> </li>
+    /// <li> <p>South America (São Paulo)</p> </li>
+    /// </ul> <note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {

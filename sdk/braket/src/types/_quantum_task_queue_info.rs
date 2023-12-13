@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QuantumTaskQueueInfo {
-    /// <p>The name of the queue.</p>
+    /// <p>The name of the queue. </p>
     pub queue: crate::types::QueueName,
     /// <p>Current position of the task in the quantum tasks queue.</p>
     pub position: ::std::string::String,
@@ -14,7 +14,7 @@ pub struct QuantumTaskQueueInfo {
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl QuantumTaskQueueInfo {
-    /// <p>The name of the queue.</p>
+    /// <p>The name of the queue. </p>
     pub fn queue(&self) -> &crate::types::QueueName {
         &self.queue
     }
@@ -49,18 +49,18 @@ pub struct QuantumTaskQueueInfoBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
 }
 impl QuantumTaskQueueInfoBuilder {
-    /// <p>The name of the queue.</p>
+    /// <p>The name of the queue. </p>
     /// This field is required.
     pub fn queue(mut self, input: crate::types::QueueName) -> Self {
         self.queue = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The name of the queue.</p>
+    /// <p>The name of the queue. </p>
     pub fn set_queue(mut self, input: ::std::option::Option<crate::types::QueueName>) -> Self {
         self.queue = input;
         self
     }
-    /// <p>The name of the queue.</p>
+    /// <p>The name of the queue. </p>
     pub fn get_queue(&self) -> &::std::option::Option<crate::types::QueueName> {
         &self.queue
     }

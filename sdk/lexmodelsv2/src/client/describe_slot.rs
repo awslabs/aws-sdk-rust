@@ -21,7 +21,7 @@ impl super::Client {
     ///   - [`intent_id(Option<String>)`](crate::operation::describe_slot::DescribeSlotOutput::intent_id): <p>The identifier of the intent associated with the slot.</p>
     ///   - [`creation_date_time(Option<DateTime>)`](crate::operation::describe_slot::DescribeSlotOutput::creation_date_time): <p>A timestamp of the date and time that the slot was created.</p>
     ///   - [`last_updated_date_time(Option<DateTime>)`](crate::operation::describe_slot::DescribeSlotOutput::last_updated_date_time): <p>A timestamp of the date and time that the slot was last updated.</p>
-    ///   - [`multiple_values_setting(Option<MultipleValuesSetting>)`](crate::operation::describe_slot::DescribeSlotOutput::multiple_values_setting): <p>Indicates whether the slot accepts multiple values in a single utterance.</p> <p>If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.</p>
+    ///   - [`multiple_values_setting(Option<MultipleValuesSetting>)`](crate::operation::describe_slot::DescribeSlotOutput::multiple_values_setting): <p>Indicates whether the slot accepts multiple values in a single utterance.</p>  <p>If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.</p>
     ///   - [`sub_slot_setting(Option<SubSlotSetting>)`](crate::operation::describe_slot::DescribeSlotOutput::sub_slot_setting): <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
     /// - On failure, responds with [`SdkError<DescribeSlotError>`](crate::operation::describe_slot::DescribeSlotError)
     pub fn describe_slot(&self) -> crate::operation::describe_slot::builders::DescribeSlotFluentBuilder {

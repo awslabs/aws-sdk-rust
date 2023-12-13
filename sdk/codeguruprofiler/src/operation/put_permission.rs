@@ -269,7 +269,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PutPermission
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum PutPermissionError {
-    /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request.</p>
+    /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request. </p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>The server encountered an internal error and is unable to complete the request.</p>
     InternalServerException(crate::types::error::InternalServerException),

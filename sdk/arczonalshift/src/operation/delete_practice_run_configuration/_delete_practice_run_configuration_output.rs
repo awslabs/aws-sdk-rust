@@ -5,7 +5,7 @@
 pub struct DeletePracticeRunConfigurationOutput {
     /// <p>The Amazon Resource Name (ARN) of the resource that you deleted the practice run for.</p>
     pub arn: ::std::string::String,
-    /// <p>The name of the resource that you deleted the practice run for.</p>
+    /// <p>The name of the resource that you deleted the practice run for. </p>
     pub name: ::std::string::String,
     /// <p>The status of zonal autoshift for the resource.</p>
     pub zonal_autoshift_status: crate::types::ZonalAutoshiftStatus,
@@ -17,7 +17,7 @@ impl DeletePracticeRunConfigurationOutput {
         use std::ops::Deref;
         self.arn.deref()
     }
-    /// <p>The name of the resource that you deleted the practice run for.</p>
+    /// <p>The name of the resource that you deleted the practice run for. </p>
     pub fn name(&self) -> &str {
         use std::ops::Deref;
         self.name.deref()
@@ -64,18 +64,18 @@ impl DeletePracticeRunConfigurationOutputBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>The name of the resource that you deleted the practice run for.</p>
+    /// <p>The name of the resource that you deleted the practice run for. </p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the resource that you deleted the practice run for.</p>
+    /// <p>The name of the resource that you deleted the practice run for. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the resource that you deleted the practice run for.</p>
+    /// <p>The name of the resource that you deleted the practice run for. </p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

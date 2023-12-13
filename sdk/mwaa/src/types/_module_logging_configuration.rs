@@ -6,7 +6,7 @@
 pub struct ModuleLoggingConfiguration {
     /// <p>Indicates whether the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>) is enabled.</p>
     pub enabled: ::std::option::Option<bool>,
-    /// <p>The Apache Airflow log level for the log type (e.g. <code>DagProcessingLogs</code>).</p>
+    /// <p>The Apache Airflow log level for the log type (e.g. <code>DagProcessingLogs</code>). </p>
     pub log_level: ::std::option::Option<crate::types::LoggingLevel>,
     /// <p>The Amazon Resource Name (ARN) for the CloudWatch Logs group where the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>) is published. For example, <code>arn:aws:logs:us-east-1:123456789012:log-group:airflow-MyMWAAEnvironment-MwaaEnvironment-DAGProcessing:*</code>.</p>
     pub cloud_watch_log_group_arn: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ impl ModuleLoggingConfiguration {
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
-    /// <p>The Apache Airflow log level for the log type (e.g. <code>DagProcessingLogs</code>).</p>
+    /// <p>The Apache Airflow log level for the log type (e.g. <code>DagProcessingLogs</code>). </p>
     pub fn log_level(&self) -> ::std::option::Option<&crate::types::LoggingLevel> {
         self.log_level.as_ref()
     }
@@ -55,17 +55,17 @@ impl ModuleLoggingConfigurationBuilder {
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
         &self.enabled
     }
-    /// <p>The Apache Airflow log level for the log type (e.g. <code>DagProcessingLogs</code>).</p>
+    /// <p>The Apache Airflow log level for the log type (e.g. <code>DagProcessingLogs</code>). </p>
     pub fn log_level(mut self, input: crate::types::LoggingLevel) -> Self {
         self.log_level = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Apache Airflow log level for the log type (e.g. <code>DagProcessingLogs</code>).</p>
+    /// <p>The Apache Airflow log level for the log type (e.g. <code>DagProcessingLogs</code>). </p>
     pub fn set_log_level(mut self, input: ::std::option::Option<crate::types::LoggingLevel>) -> Self {
         self.log_level = input;
         self
     }
-    /// <p>The Apache Airflow log level for the log type (e.g. <code>DagProcessingLogs</code>).</p>
+    /// <p>The Apache Airflow log level for the log type (e.g. <code>DagProcessingLogs</code>). </p>
     pub fn get_log_level(&self) -> &::std::option::Option<crate::types::LoggingLevel> {
         &self.log_level
     }

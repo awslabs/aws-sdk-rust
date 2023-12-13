@@ -140,17 +140,17 @@ impl UpdateTemplatePermissionsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_grant_permissions`](Self::set_grant_permissions).
     ///
-    /// <p>A list of resource permissions to be granted on the template.</p>
+    /// <p>A list of resource permissions to be granted on the template. </p>
     pub fn grant_permissions(mut self, input: crate::types::ResourcePermission) -> Self {
         self.inner = self.inner.grant_permissions(input);
         self
     }
-    /// <p>A list of resource permissions to be granted on the template.</p>
+    /// <p>A list of resource permissions to be granted on the template. </p>
     pub fn set_grant_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
         self.inner = self.inner.set_grant_permissions(input);
         self
     }
-    /// <p>A list of resource permissions to be granted on the template.</p>
+    /// <p>A list of resource permissions to be granted on the template. </p>
     pub fn get_grant_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
         self.inner.get_grant_permissions()
     }
@@ -158,17 +158,17 @@ impl UpdateTemplatePermissionsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_revoke_permissions`](Self::set_revoke_permissions).
     ///
-    /// <p>A list of resource permissions to be revoked from the template.</p>
+    /// <p>A list of resource permissions to be revoked from the template. </p>
     pub fn revoke_permissions(mut self, input: crate::types::ResourcePermission) -> Self {
         self.inner = self.inner.revoke_permissions(input);
         self
     }
-    /// <p>A list of resource permissions to be revoked from the template.</p>
+    /// <p>A list of resource permissions to be revoked from the template. </p>
     pub fn set_revoke_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
         self.inner = self.inner.set_revoke_permissions(input);
         self
     }
-    /// <p>A list of resource permissions to be revoked from the template.</p>
+    /// <p>A list of resource permissions to be revoked from the template. </p>
     pub fn get_revoke_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
         self.inner.get_revoke_permissions()
     }

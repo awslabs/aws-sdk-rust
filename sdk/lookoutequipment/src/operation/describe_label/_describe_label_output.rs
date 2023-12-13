@@ -3,56 +3,56 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLabelOutput {
-    /// <p>The name of the requested label group.</p>
+    /// <p> The name of the requested label group. </p>
     pub label_group_name: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the requested label group.</p>
+    /// <p> The Amazon Resource Name (ARN) of the requested label group. </p>
     pub label_group_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the requested label.</p>
+    /// <p> The ID of the requested label. </p>
     pub label_id: ::std::option::Option<::std::string::String>,
-    /// <p>The start time of the requested label.</p>
+    /// <p> The start time of the requested label. </p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The end time of the requested label.</p>
+    /// <p> The end time of the requested label. </p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Indicates whether a labeled event represents an anomaly.</p>
+    /// <p> Indicates whether a labeled event represents an anomaly. </p>
     pub rating: ::std::option::Option<crate::types::LabelRating>,
-    /// <p>Indicates the type of anomaly associated with the label.</p>
+    /// <p> Indicates the type of anomaly associated with the label. </p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
     pub fault_code: ::std::option::Option<::std::string::String>,
     /// <p>Metadata providing additional information about the label.</p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
     pub notes: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates that a label pertains to a particular piece of equipment.</p>
+    /// <p> Indicates that a label pertains to a particular piece of equipment. </p>
     pub equipment: ::std::option::Option<::std::string::String>,
-    /// <p>The time at which the label was created.</p>
+    /// <p> The time at which the label was created. </p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl DescribeLabelOutput {
-    /// <p>The name of the requested label group.</p>
+    /// <p> The name of the requested label group. </p>
     pub fn label_group_name(&self) -> ::std::option::Option<&str> {
         self.label_group_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the requested label group.</p>
+    /// <p> The Amazon Resource Name (ARN) of the requested label group. </p>
     pub fn label_group_arn(&self) -> ::std::option::Option<&str> {
         self.label_group_arn.as_deref()
     }
-    /// <p>The ID of the requested label.</p>
+    /// <p> The ID of the requested label. </p>
     pub fn label_id(&self) -> ::std::option::Option<&str> {
         self.label_id.as_deref()
     }
-    /// <p>The start time of the requested label.</p>
+    /// <p> The start time of the requested label. </p>
     pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>The end time of the requested label.</p>
+    /// <p> The end time of the requested label. </p>
     pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
-    /// <p>Indicates whether a labeled event represents an anomaly.</p>
+    /// <p> Indicates whether a labeled event represents an anomaly. </p>
     pub fn rating(&self) -> ::std::option::Option<&crate::types::LabelRating> {
         self.rating.as_ref()
     }
-    /// <p>Indicates the type of anomaly associated with the label.</p>
+    /// <p> Indicates the type of anomaly associated with the label. </p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
     pub fn fault_code(&self) -> ::std::option::Option<&str> {
         self.fault_code.as_deref()
@@ -62,11 +62,11 @@ impl DescribeLabelOutput {
     pub fn notes(&self) -> ::std::option::Option<&str> {
         self.notes.as_deref()
     }
-    /// <p>Indicates that a label pertains to a particular piece of equipment.</p>
+    /// <p> Indicates that a label pertains to a particular piece of equipment. </p>
     pub fn equipment(&self) -> ::std::option::Option<&str> {
         self.equipment.as_deref()
     }
-    /// <p>The time at which the label was created.</p>
+    /// <p> The time at which the label was created. </p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
@@ -100,103 +100,103 @@ pub struct DescribeLabelOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeLabelOutputBuilder {
-    /// <p>The name of the requested label group.</p>
+    /// <p> The name of the requested label group. </p>
     pub fn label_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label_group_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the requested label group.</p>
+    /// <p> The name of the requested label group. </p>
     pub fn set_label_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.label_group_name = input;
         self
     }
-    /// <p>The name of the requested label group.</p>
+    /// <p> The name of the requested label group. </p>
     pub fn get_label_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.label_group_name
     }
-    /// <p>The Amazon Resource Name (ARN) of the requested label group.</p>
+    /// <p> The Amazon Resource Name (ARN) of the requested label group. </p>
     pub fn label_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label_group_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the requested label group.</p>
+    /// <p> The Amazon Resource Name (ARN) of the requested label group. </p>
     pub fn set_label_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.label_group_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the requested label group.</p>
+    /// <p> The Amazon Resource Name (ARN) of the requested label group. </p>
     pub fn get_label_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.label_group_arn
     }
-    /// <p>The ID of the requested label.</p>
+    /// <p> The ID of the requested label. </p>
     pub fn label_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the requested label.</p>
+    /// <p> The ID of the requested label. </p>
     pub fn set_label_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.label_id = input;
         self
     }
-    /// <p>The ID of the requested label.</p>
+    /// <p> The ID of the requested label. </p>
     pub fn get_label_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.label_id
     }
-    /// <p>The start time of the requested label.</p>
+    /// <p> The start time of the requested label. </p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The start time of the requested label.</p>
+    /// <p> The start time of the requested label. </p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
-    /// <p>The start time of the requested label.</p>
+    /// <p> The start time of the requested label. </p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.start_time
     }
-    /// <p>The end time of the requested label.</p>
+    /// <p> The end time of the requested label. </p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The end time of the requested label.</p>
+    /// <p> The end time of the requested label. </p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
-    /// <p>The end time of the requested label.</p>
+    /// <p> The end time of the requested label. </p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_time
     }
-    /// <p>Indicates whether a labeled event represents an anomaly.</p>
+    /// <p> Indicates whether a labeled event represents an anomaly. </p>
     pub fn rating(mut self, input: crate::types::LabelRating) -> Self {
         self.rating = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether a labeled event represents an anomaly.</p>
+    /// <p> Indicates whether a labeled event represents an anomaly. </p>
     pub fn set_rating(mut self, input: ::std::option::Option<crate::types::LabelRating>) -> Self {
         self.rating = input;
         self
     }
-    /// <p>Indicates whether a labeled event represents an anomaly.</p>
+    /// <p> Indicates whether a labeled event represents an anomaly. </p>
     pub fn get_rating(&self) -> &::std::option::Option<crate::types::LabelRating> {
         &self.rating
     }
-    /// <p>Indicates the type of anomaly associated with the label.</p>
+    /// <p> Indicates the type of anomaly associated with the label. </p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
     pub fn fault_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fault_code = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Indicates the type of anomaly associated with the label.</p>
+    /// <p> Indicates the type of anomaly associated with the label. </p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
     pub fn set_fault_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fault_code = input;
         self
     }
-    /// <p>Indicates the type of anomaly associated with the label.</p>
+    /// <p> Indicates the type of anomaly associated with the label. </p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
     pub fn get_fault_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.fault_code
@@ -218,31 +218,31 @@ impl DescribeLabelOutputBuilder {
     pub fn get_notes(&self) -> &::std::option::Option<::std::string::String> {
         &self.notes
     }
-    /// <p>Indicates that a label pertains to a particular piece of equipment.</p>
+    /// <p> Indicates that a label pertains to a particular piece of equipment. </p>
     pub fn equipment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.equipment = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Indicates that a label pertains to a particular piece of equipment.</p>
+    /// <p> Indicates that a label pertains to a particular piece of equipment. </p>
     pub fn set_equipment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.equipment = input;
         self
     }
-    /// <p>Indicates that a label pertains to a particular piece of equipment.</p>
+    /// <p> Indicates that a label pertains to a particular piece of equipment. </p>
     pub fn get_equipment(&self) -> &::std::option::Option<::std::string::String> {
         &self.equipment
     }
-    /// <p>The time at which the label was created.</p>
+    /// <p> The time at which the label was created. </p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time at which the label was created.</p>
+    /// <p> The time at which the label was created. </p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
-    /// <p>The time at which the label was created.</p>
+    /// <p> The time at which the label was created. </p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }

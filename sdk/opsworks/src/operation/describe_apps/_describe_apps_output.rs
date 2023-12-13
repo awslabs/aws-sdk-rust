@@ -4,12 +4,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAppsOutput {
-    /// <p>An array of <code>App</code> objects that describe the specified apps.</p>
+    /// <p>An array of <code>App</code> objects that describe the specified apps. </p>
     pub apps: ::std::option::Option<::std::vec::Vec<crate::types::App>>,
     _request_id: Option<String>,
 }
 impl DescribeAppsOutput {
-    /// <p>An array of <code>App</code> objects that describe the specified apps.</p>
+    /// <p>An array of <code>App</code> objects that describe the specified apps. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.apps.is_none()`.
     pub fn apps(&self) -> &[crate::types::App] {
@@ -40,19 +40,19 @@ impl DescribeAppsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_apps`](Self::set_apps).
     ///
-    /// <p>An array of <code>App</code> objects that describe the specified apps.</p>
+    /// <p>An array of <code>App</code> objects that describe the specified apps. </p>
     pub fn apps(mut self, input: crate::types::App) -> Self {
         let mut v = self.apps.unwrap_or_default();
         v.push(input);
         self.apps = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of <code>App</code> objects that describe the specified apps.</p>
+    /// <p>An array of <code>App</code> objects that describe the specified apps. </p>
     pub fn set_apps(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::App>>) -> Self {
         self.apps = input;
         self
     }
-    /// <p>An array of <code>App</code> objects that describe the specified apps.</p>
+    /// <p>An array of <code>App</code> objects that describe the specified apps. </p>
     pub fn get_apps(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::App>> {
         &self.apps
     }

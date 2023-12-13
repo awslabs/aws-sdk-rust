@@ -153,8 +153,8 @@ impl CreateWorkspaceFluentBuilder {
     }
     /// <p>When creating a workspace through the Amazon Web Services API, CLI or Amazon Web Services CloudFormation, you must manage IAM roles and provision the permissions that the workspace needs to use Amazon Web Services data sources and notification channels.</p>
     /// <p>You must also specify a <code>workspaceRoleArn</code> for a role that you will manage for the workspace to use when accessing those datasources and notification channels.</p>
-    /// <p>The ability for Amazon Managed Grafana to create and update IAM roles on behalf of the user is supported only in the Amazon Managed Grafana console, where this value may be set to <code>SERVICE_MANAGED</code>.</p><note>
-    /// <p>Use only the <code>CUSTOMER_MANAGED</code> permission type when creating a workspace with the API, CLI or Amazon Web Services CloudFormation.</p>
+    /// <p>The ability for Amazon Managed Grafana to create and update IAM roles on behalf of the user is supported only in the Amazon Managed Grafana console, where this value may be set to <code>SERVICE_MANAGED</code>.</p> <note>
+    /// <p>Use only the <code>CUSTOMER_MANAGED</code> permission type when creating a workspace with the API, CLI or Amazon Web Services CloudFormation. </p>
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a>.</p>
     pub fn permission_type(mut self, input: crate::types::PermissionType) -> Self {
@@ -163,8 +163,8 @@ impl CreateWorkspaceFluentBuilder {
     }
     /// <p>When creating a workspace through the Amazon Web Services API, CLI or Amazon Web Services CloudFormation, you must manage IAM roles and provision the permissions that the workspace needs to use Amazon Web Services data sources and notification channels.</p>
     /// <p>You must also specify a <code>workspaceRoleArn</code> for a role that you will manage for the workspace to use when accessing those datasources and notification channels.</p>
-    /// <p>The ability for Amazon Managed Grafana to create and update IAM roles on behalf of the user is supported only in the Amazon Managed Grafana console, where this value may be set to <code>SERVICE_MANAGED</code>.</p><note>
-    /// <p>Use only the <code>CUSTOMER_MANAGED</code> permission type when creating a workspace with the API, CLI or Amazon Web Services CloudFormation.</p>
+    /// <p>The ability for Amazon Managed Grafana to create and update IAM roles on behalf of the user is supported only in the Amazon Managed Grafana console, where this value may be set to <code>SERVICE_MANAGED</code>.</p> <note>
+    /// <p>Use only the <code>CUSTOMER_MANAGED</code> permission type when creating a workspace with the API, CLI or Amazon Web Services CloudFormation. </p>
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a>.</p>
     pub fn set_permission_type(mut self, input: ::std::option::Option<crate::types::PermissionType>) -> Self {
@@ -173,8 +173,8 @@ impl CreateWorkspaceFluentBuilder {
     }
     /// <p>When creating a workspace through the Amazon Web Services API, CLI or Amazon Web Services CloudFormation, you must manage IAM roles and provision the permissions that the workspace needs to use Amazon Web Services data sources and notification channels.</p>
     /// <p>You must also specify a <code>workspaceRoleArn</code> for a role that you will manage for the workspace to use when accessing those datasources and notification channels.</p>
-    /// <p>The ability for Amazon Managed Grafana to create and update IAM roles on behalf of the user is supported only in the Amazon Managed Grafana console, where this value may be set to <code>SERVICE_MANAGED</code>.</p><note>
-    /// <p>Use only the <code>CUSTOMER_MANAGED</code> permission type when creating a workspace with the API, CLI or Amazon Web Services CloudFormation.</p>
+    /// <p>The ability for Amazon Managed Grafana to create and update IAM roles on behalf of the user is supported only in the Amazon Managed Grafana console, where this value may be set to <code>SERVICE_MANAGED</code>.</p> <note>
+    /// <p>Use only the <code>CUSTOMER_MANAGED</code> permission type when creating a workspace with the API, CLI or Amazon Web Services CloudFormation. </p>
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a>.</p>
     pub fn get_permission_type(&self) -> &::std::option::Option<crate::types::PermissionType> {
@@ -213,19 +213,19 @@ impl CreateWorkspaceFluentBuilder {
         self.inner.get_workspace_data_sources()
     }
     /// <p>A description for the workspace. This is used only to help you identify this workspace.</p>
-    /// <p>Pattern: <code>^[\\p{L}\\p{Z}\\p{N}\\p{P}]{0,2048}$</code></p>
+    /// <p>Pattern: <code>^[\\p{L}\\p{Z}\\p{N}\\p{P}]{0,2048}$</code> </p>
     pub fn workspace_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workspace_description(input.into());
         self
     }
     /// <p>A description for the workspace. This is used only to help you identify this workspace.</p>
-    /// <p>Pattern: <code>^[\\p{L}\\p{Z}\\p{N}\\p{P}]{0,2048}$</code></p>
+    /// <p>Pattern: <code>^[\\p{L}\\p{Z}\\p{N}\\p{P}]{0,2048}$</code> </p>
     pub fn set_workspace_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workspace_description(input);
         self
     }
     /// <p>A description for the workspace. This is used only to help you identify this workspace.</p>
-    /// <p>Pattern: <code>^[\\p{L}\\p{Z}\\p{N}\\p{P}]{0,2048}$</code></p>
+    /// <p>Pattern: <code>^[\\p{L}\\p{Z}\\p{N}\\p{P}]{0,2048}$</code> </p>
     pub fn get_workspace_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_workspace_description()
     }
@@ -282,17 +282,17 @@ impl CreateWorkspaceFluentBuilder {
     pub fn get_workspace_organizational_units(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_workspace_organizational_units()
     }
-    /// <p>Specified the IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from, including both data sources and notification channels. You are responsible for managing the permissions for this role as new data sources or notification channels are added.</p>
+    /// <p>Specified the IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from, including both data sources and notification channels. You are responsible for managing the permissions for this role as new data sources or notification channels are added. </p>
     pub fn workspace_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workspace_role_arn(input.into());
         self
     }
-    /// <p>Specified the IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from, including both data sources and notification channels. You are responsible for managing the permissions for this role as new data sources or notification channels are added.</p>
+    /// <p>Specified the IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from, including both data sources and notification channels. You are responsible for managing the permissions for this role as new data sources or notification channels are added. </p>
     pub fn set_workspace_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workspace_role_arn(input);
         self
     }
-    /// <p>Specified the IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from, including both data sources and notification channels. You are responsible for managing the permissions for this role as new data sources or notification channels are added.</p>
+    /// <p>Specified the IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from, including both data sources and notification channels. You are responsible for managing the permissions for this role as new data sources or notification channels are added. </p>
     pub fn get_workspace_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_workspace_role_arn()
     }
@@ -332,21 +332,21 @@ impl CreateWorkspaceFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
-    /// <p>The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.</p><note>
+    /// <p>The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.</p> <note>
     /// <p>Connecting to a private VPC is not yet available in the Asia Pacific (Seoul) Region (ap-northeast-2).</p>
     /// </note>
     pub fn vpc_configuration(mut self, input: crate::types::VpcConfiguration) -> Self {
         self.inner = self.inner.vpc_configuration(input);
         self
     }
-    /// <p>The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.</p><note>
+    /// <p>The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.</p> <note>
     /// <p>Connecting to a private VPC is not yet available in the Asia Pacific (Seoul) Region (ap-northeast-2).</p>
     /// </note>
     pub fn set_vpc_configuration(mut self, input: ::std::option::Option<crate::types::VpcConfiguration>) -> Self {
         self.inner = self.inner.set_vpc_configuration(input);
         self
     }
-    /// <p>The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.</p><note>
+    /// <p>The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.</p> <note>
     /// <p>Connecting to a private VPC is not yet available in the Asia Pacific (Seoul) Region (ap-northeast-2).</p>
     /// </note>
     pub fn get_vpc_configuration(&self) -> &::std::option::Option<crate::types::VpcConfiguration> {

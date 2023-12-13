@@ -122,17 +122,17 @@ impl UpdateServiceAccessPoliciesFluentBuilder {
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_name()
     }
-    /// <p>The access rules you want to configure. These rules replace any existing rules.</p>
+    /// <p>The access rules you want to configure. These rules replace any existing rules. </p>
     pub fn access_policies(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.access_policies(input.into());
         self
     }
-    /// <p>The access rules you want to configure. These rules replace any existing rules.</p>
+    /// <p>The access rules you want to configure. These rules replace any existing rules. </p>
     pub fn set_access_policies(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_access_policies(input);
         self
     }
-    /// <p>The access rules you want to configure. These rules replace any existing rules.</p>
+    /// <p>The access rules you want to configure. These rules replace any existing rules. </p>
     pub fn get_access_policies(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_access_policies()
     }

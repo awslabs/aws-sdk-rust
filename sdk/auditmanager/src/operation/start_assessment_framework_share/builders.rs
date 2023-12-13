@@ -22,22 +22,18 @@ impl StartAssessmentFrameworkShareInputBuilder {
 }
 /// Fluent builder constructing a request to `StartAssessmentFrameworkShare`.
 ///
-/// <p>Creates a share request for a custom framework in Audit Manager.</p>
+/// <p> Creates a share request for a custom framework in Audit Manager. </p>
 /// <p>The share request specifies a recipient and notifies them that a custom framework is available. Recipients have 120 days to accept or decline the request. If no action is taken, the share request expires.</p>
 /// <p>When you create a share request, Audit Manager stores a snapshot of your custom framework in the US East (N. Virginia) Amazon Web Services Region. Audit Manager also stores a backup of the same snapshot in the US West (Oregon) Amazon Web Services Region.</p>
 /// <p>Audit Manager deletes the snapshot and the backup snapshot when one of the following events occurs:</p>
 /// <ul>
-/// <li>
-/// <p>The sender revokes the share request.</p></li>
-/// <li>
-/// <p>The recipient declines the share request.</p></li>
-/// <li>
-/// <p>The recipient encounters an error and doesn't successfully accept the share request.</p></li>
-/// <li>
-/// <p>The share request expires before the recipient responds to the request.</p></li>
+/// <li> <p>The sender revokes the share request.</p> </li>
+/// <li> <p>The recipient declines the share request.</p> </li>
+/// <li> <p>The recipient encounters an error and doesn't successfully accept the share request.</p> </li>
+/// <li> <p>The share request expires before the recipient responds to the request.</p> </li>
 /// </ul>
-/// <p>When a sender <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/framework-sharing.html#framework-sharing-resend">resends a share request</a>, the snapshot is replaced with an updated version that corresponds with the latest version of the custom framework.</p>
-/// <p>When a recipient accepts a share request, the snapshot is replicated into their Amazon Web Services account under the Amazon Web Services Region that was specified in the share request.</p><important>
+/// <p>When a sender <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/framework-sharing.html#framework-sharing-resend">resends a share request</a>, the snapshot is replaced with an updated version that corresponds with the latest version of the custom framework. </p>
+/// <p>When a recipient accepts a share request, the snapshot is replicated into their Amazon Web Services account under the Amazon Web Services Region that was specified in the share request. </p> <important>
 /// <p>When you invoke the <code>StartAssessmentFrameworkShare</code> API, you are about to share a custom framework with another Amazon Web Services account. You may not share a custom framework that is derived from a standard framework if the standard framework is designated as not eligible for sharing by Amazon Web Services, unless you have obtained permission to do so from the owner of the standard framework. To learn more about which standard frameworks are eligible for sharing, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/share-custom-framework-concepts-and-terminology.html#eligibility">Framework sharing eligibility</a> in the <i>Audit Manager User Guide</i>.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -125,59 +121,59 @@ impl StartAssessmentFrameworkShareFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier for the custom framework to be shared.</p>
+    /// <p> The unique identifier for the custom framework to be shared. </p>
     pub fn framework_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.framework_id(input.into());
         self
     }
-    /// <p>The unique identifier for the custom framework to be shared.</p>
+    /// <p> The unique identifier for the custom framework to be shared. </p>
     pub fn set_framework_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_framework_id(input);
         self
     }
-    /// <p>The unique identifier for the custom framework to be shared.</p>
+    /// <p> The unique identifier for the custom framework to be shared. </p>
     pub fn get_framework_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_framework_id()
     }
-    /// <p>The Amazon Web Services account of the recipient.</p>
+    /// <p> The Amazon Web Services account of the recipient. </p>
     pub fn destination_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_account(input.into());
         self
     }
-    /// <p>The Amazon Web Services account of the recipient.</p>
+    /// <p> The Amazon Web Services account of the recipient. </p>
     pub fn set_destination_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_account(input);
         self
     }
-    /// <p>The Amazon Web Services account of the recipient.</p>
+    /// <p> The Amazon Web Services account of the recipient. </p>
     pub fn get_destination_account(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_destination_account()
     }
-    /// <p>The Amazon Web Services Region of the recipient.</p>
+    /// <p> The Amazon Web Services Region of the recipient. </p>
     pub fn destination_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_region(input.into());
         self
     }
-    /// <p>The Amazon Web Services Region of the recipient.</p>
+    /// <p> The Amazon Web Services Region of the recipient. </p>
     pub fn set_destination_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_region(input);
         self
     }
-    /// <p>The Amazon Web Services Region of the recipient.</p>
+    /// <p> The Amazon Web Services Region of the recipient. </p>
     pub fn get_destination_region(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_destination_region()
     }
-    /// <p>An optional comment from the sender about the share request.</p>
+    /// <p> An optional comment from the sender about the share request. </p>
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.comment(input.into());
         self
     }
-    /// <p>An optional comment from the sender about the share request.</p>
+    /// <p> An optional comment from the sender about the share request. </p>
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_comment(input);
         self
     }
-    /// <p>An optional comment from the sender about the share request.</p>
+    /// <p> An optional comment from the sender about the share request. </p>
     pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_comment()
     }

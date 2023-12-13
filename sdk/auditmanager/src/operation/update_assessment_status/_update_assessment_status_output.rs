@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAssessmentStatusOutput {
-    /// <p>The name of the updated assessment that the <code>UpdateAssessmentStatus</code> API returned.</p>
+    /// <p> The name of the updated assessment that the <code>UpdateAssessmentStatus</code> API returned. </p>
     pub assessment: ::std::option::Option<crate::types::Assessment>,
     _request_id: Option<String>,
 }
 impl UpdateAssessmentStatusOutput {
-    /// <p>The name of the updated assessment that the <code>UpdateAssessmentStatus</code> API returned.</p>
+    /// <p> The name of the updated assessment that the <code>UpdateAssessmentStatus</code> API returned. </p>
     pub fn assessment(&self) -> ::std::option::Option<&crate::types::Assessment> {
         self.assessment.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct UpdateAssessmentStatusOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateAssessmentStatusOutputBuilder {
-    /// <p>The name of the updated assessment that the <code>UpdateAssessmentStatus</code> API returned.</p>
+    /// <p> The name of the updated assessment that the <code>UpdateAssessmentStatus</code> API returned. </p>
     pub fn assessment(mut self, input: crate::types::Assessment) -> Self {
         self.assessment = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The name of the updated assessment that the <code>UpdateAssessmentStatus</code> API returned.</p>
+    /// <p> The name of the updated assessment that the <code>UpdateAssessmentStatus</code> API returned. </p>
     pub fn set_assessment(mut self, input: ::std::option::Option<crate::types::Assessment>) -> Self {
         self.assessment = input;
         self
     }
-    /// <p>The name of the updated assessment that the <code>UpdateAssessmentStatus</code> API returned.</p>
+    /// <p> The name of the updated assessment that the <code>UpdateAssessmentStatus</code> API returned. </p>
     pub fn get_assessment(&self) -> &::std::option::Option<crate::types::Assessment> {
         &self.assessment
     }

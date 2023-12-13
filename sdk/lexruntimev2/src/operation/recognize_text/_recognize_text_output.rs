@@ -5,10 +5,10 @@
 pub struct RecognizeTextOutput {
     /// <p>A list of messages last sent to the user. The messages are ordered based on the order that you returned the messages from your Lambda function or the order that the messages are defined in the bot.</p>
     pub messages: ::std::option::Option<::std::vec::Vec<crate::types::Message>>,
-    /// <p>Represents the current state of the dialog between the user and the bot.</p>
+    /// <p>Represents the current state of the dialog between the user and the bot. </p>
     /// <p>Use this to determine the progress of the conversation and what the next action may be.</p>
     pub session_state: ::std::option::Option<crate::types::SessionState>,
-    /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance.</p>
+    /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance. </p>
     /// <p>Each interpretation includes the intent, a score that indicates now confident Amazon Lex V2 is that the interpretation is the correct one, and an optional sentiment response that indicates the sentiment expressed in the utterance.</p>
     pub interpretations: ::std::option::Option<::std::vec::Vec<crate::types::Interpretation>>,
     /// <p>The attributes sent in the request.</p>
@@ -26,12 +26,12 @@ impl RecognizeTextOutput {
     pub fn messages(&self) -> &[crate::types::Message] {
         self.messages.as_deref().unwrap_or_default()
     }
-    /// <p>Represents the current state of the dialog between the user and the bot.</p>
+    /// <p>Represents the current state of the dialog between the user and the bot. </p>
     /// <p>Use this to determine the progress of the conversation and what the next action may be.</p>
     pub fn session_state(&self) -> ::std::option::Option<&crate::types::SessionState> {
         self.session_state.as_ref()
     }
-    /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance.</p>
+    /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance. </p>
     /// <p>Each interpretation includes the intent, a score that indicates now confident Amazon Lex V2 is that the interpretation is the correct one, and an optional sentiment response that indicates the sentiment expressed in the utterance.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.interpretations.is_none()`.
@@ -96,19 +96,19 @@ impl RecognizeTextOutputBuilder {
     pub fn get_messages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Message>> {
         &self.messages
     }
-    /// <p>Represents the current state of the dialog between the user and the bot.</p>
+    /// <p>Represents the current state of the dialog between the user and the bot. </p>
     /// <p>Use this to determine the progress of the conversation and what the next action may be.</p>
     pub fn session_state(mut self, input: crate::types::SessionState) -> Self {
         self.session_state = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Represents the current state of the dialog between the user and the bot.</p>
+    /// <p>Represents the current state of the dialog between the user and the bot. </p>
     /// <p>Use this to determine the progress of the conversation and what the next action may be.</p>
     pub fn set_session_state(mut self, input: ::std::option::Option<crate::types::SessionState>) -> Self {
         self.session_state = input;
         self
     }
-    /// <p>Represents the current state of the dialog between the user and the bot.</p>
+    /// <p>Represents the current state of the dialog between the user and the bot. </p>
     /// <p>Use this to determine the progress of the conversation and what the next action may be.</p>
     pub fn get_session_state(&self) -> &::std::option::Option<crate::types::SessionState> {
         &self.session_state
@@ -117,7 +117,7 @@ impl RecognizeTextOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_interpretations`](Self::set_interpretations).
     ///
-    /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance.</p>
+    /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance. </p>
     /// <p>Each interpretation includes the intent, a score that indicates now confident Amazon Lex V2 is that the interpretation is the correct one, and an optional sentiment response that indicates the sentiment expressed in the utterance.</p>
     pub fn interpretations(mut self, input: crate::types::Interpretation) -> Self {
         let mut v = self.interpretations.unwrap_or_default();
@@ -125,13 +125,13 @@ impl RecognizeTextOutputBuilder {
         self.interpretations = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance.</p>
+    /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance. </p>
     /// <p>Each interpretation includes the intent, a score that indicates now confident Amazon Lex V2 is that the interpretation is the correct one, and an optional sentiment response that indicates the sentiment expressed in the utterance.</p>
     pub fn set_interpretations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Interpretation>>) -> Self {
         self.interpretations = input;
         self
     }
-    /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance.</p>
+    /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance. </p>
     /// <p>Each interpretation includes the intent, a score that indicates now confident Amazon Lex V2 is that the interpretation is the correct one, and an optional sentiment response that indicates the sentiment expressed in the utterance.</p>
     pub fn get_interpretations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Interpretation>> {
         &self.interpretations

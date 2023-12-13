@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ToxicityDetectionSettings {
-    /// <p>If you include <code>ToxicityDetection</code> in your transcription request, you must also include <code>ToxicityCategories</code>. The only accepted value for this parameter is <code>ALL</code>.</p>
+    /// <p> If you include <code>ToxicityDetection</code> in your transcription request, you must also include <code>ToxicityCategories</code>. The only accepted value for this parameter is <code>ALL</code>.</p>
     pub toxicity_categories: ::std::vec::Vec<crate::types::ToxicityCategory>,
 }
 impl ToxicityDetectionSettings {
-    /// <p>If you include <code>ToxicityDetection</code> in your transcription request, you must also include <code>ToxicityCategories</code>. The only accepted value for this parameter is <code>ALL</code>.</p>
+    /// <p> If you include <code>ToxicityDetection</code> in your transcription request, you must also include <code>ToxicityCategories</code>. The only accepted value for this parameter is <code>ALL</code>.</p>
     pub fn toxicity_categories(&self) -> &[crate::types::ToxicityCategory] {
         use std::ops::Deref;
         self.toxicity_categories.deref()
@@ -32,19 +32,19 @@ impl ToxicityDetectionSettingsBuilder {
     ///
     /// To override the contents of this collection use [`set_toxicity_categories`](Self::set_toxicity_categories).
     ///
-    /// <p>If you include <code>ToxicityDetection</code> in your transcription request, you must also include <code>ToxicityCategories</code>. The only accepted value for this parameter is <code>ALL</code>.</p>
+    /// <p> If you include <code>ToxicityDetection</code> in your transcription request, you must also include <code>ToxicityCategories</code>. The only accepted value for this parameter is <code>ALL</code>.</p>
     pub fn toxicity_categories(mut self, input: crate::types::ToxicityCategory) -> Self {
         let mut v = self.toxicity_categories.unwrap_or_default();
         v.push(input);
         self.toxicity_categories = ::std::option::Option::Some(v);
         self
     }
-    /// <p>If you include <code>ToxicityDetection</code> in your transcription request, you must also include <code>ToxicityCategories</code>. The only accepted value for this parameter is <code>ALL</code>.</p>
+    /// <p> If you include <code>ToxicityDetection</code> in your transcription request, you must also include <code>ToxicityCategories</code>. The only accepted value for this parameter is <code>ALL</code>.</p>
     pub fn set_toxicity_categories(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ToxicityCategory>>) -> Self {
         self.toxicity_categories = input;
         self
     }
-    /// <p>If you include <code>ToxicityDetection</code> in your transcription request, you must also include <code>ToxicityCategories</code>. The only accepted value for this parameter is <code>ALL</code>.</p>
+    /// <p> If you include <code>ToxicityDetection</code> in your transcription request, you must also include <code>ToxicityCategories</code>. The only accepted value for this parameter is <code>ALL</code>.</p>
     pub fn get_toxicity_categories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ToxicityCategory>> {
         &self.toxicity_categories
     }

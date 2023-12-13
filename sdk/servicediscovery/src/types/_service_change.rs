@@ -8,7 +8,7 @@ pub struct ServiceChange {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Information about the Route&nbsp;53 DNS records that you want Cloud Map to create when you register an instance.</p>
     pub dns_config: ::std::option::Option<crate::types::DnsConfigChange>,
-    /// <p><i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check. If you specify settings for a health check, Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.</p>
+    /// <p> <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check. If you specify settings for a health check, Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.</p>
     pub health_check_config: ::std::option::Option<crate::types::HealthCheckConfig>,
 }
 impl ServiceChange {
@@ -20,7 +20,7 @@ impl ServiceChange {
     pub fn dns_config(&self) -> ::std::option::Option<&crate::types::DnsConfigChange> {
         self.dns_config.as_ref()
     }
-    /// <p><i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check. If you specify settings for a health check, Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.</p>
+    /// <p> <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check. If you specify settings for a health check, Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.</p>
     pub fn health_check_config(&self) -> ::std::option::Option<&crate::types::HealthCheckConfig> {
         self.health_check_config.as_ref()
     }
@@ -69,17 +69,17 @@ impl ServiceChangeBuilder {
     pub fn get_dns_config(&self) -> &::std::option::Option<crate::types::DnsConfigChange> {
         &self.dns_config
     }
-    /// <p><i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check. If you specify settings for a health check, Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.</p>
+    /// <p> <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check. If you specify settings for a health check, Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.</p>
     pub fn health_check_config(mut self, input: crate::types::HealthCheckConfig) -> Self {
         self.health_check_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p><i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check. If you specify settings for a health check, Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.</p>
+    /// <p> <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check. If you specify settings for a health check, Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.</p>
     pub fn set_health_check_config(mut self, input: ::std::option::Option<crate::types::HealthCheckConfig>) -> Self {
         self.health_check_config = input;
         self
     }
-    /// <p><i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check. If you specify settings for a health check, Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.</p>
+    /// <p> <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check. If you specify settings for a health check, Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.</p>
     pub fn get_health_check_config(&self) -> &::std::option::Option<crate::types::HealthCheckConfig> {
         &self.health_check_config
     }

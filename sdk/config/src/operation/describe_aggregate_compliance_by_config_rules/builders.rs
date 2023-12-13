@@ -22,7 +22,7 @@ impl DescribeAggregateComplianceByConfigRulesInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeAggregateComplianceByConfigRules`.
 ///
-/// <p>Returns a list of compliant and noncompliant rules with the number of resources for compliant and noncompliant rules. Does not display rules that do not have compliance results.</p><note>
+/// <p>Returns a list of compliant and noncompliant rules with the number of resources for compliant and noncompliant rules. Does not display rules that do not have compliance results. </p> <note>
 /// <p>The results can return an empty result page, but if you have a <code>nextToken</code>, the results are displayed on the next page.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -142,17 +142,17 @@ impl DescribeAggregateComplianceByConfigRulesFluentBuilder {
     pub fn get_configuration_aggregator_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_configuration_aggregator_name()
     }
-    /// <p>Filters the results by ConfigRuleComplianceFilters object.</p>
+    /// <p>Filters the results by ConfigRuleComplianceFilters object. </p>
     pub fn filters(mut self, input: crate::types::ConfigRuleComplianceFilters) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>Filters the results by ConfigRuleComplianceFilters object.</p>
+    /// <p>Filters the results by ConfigRuleComplianceFilters object. </p>
     pub fn set_filters(mut self, input: ::std::option::Option<crate::types::ConfigRuleComplianceFilters>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
-    /// <p>Filters the results by ConfigRuleComplianceFilters object.</p>
+    /// <p>Filters the results by ConfigRuleComplianceFilters object. </p>
     pub fn get_filters(&self) -> &::std::option::Option<crate::types::ConfigRuleComplianceFilters> {
         self.inner.get_filters()
     }

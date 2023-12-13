@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopGameSessionPlacementOutput {
-    /// <p>Object that describes the canceled game session placement, with <code>CANCELLED</code> status and an end time stamp.</p>
+    /// <p>Object that describes the canceled game session placement, with <code>CANCELLED</code> status and an end time stamp. </p>
     pub game_session_placement: ::std::option::Option<crate::types::GameSessionPlacement>,
     _request_id: Option<String>,
 }
 impl StopGameSessionPlacementOutput {
-    /// <p>Object that describes the canceled game session placement, with <code>CANCELLED</code> status and an end time stamp.</p>
+    /// <p>Object that describes the canceled game session placement, with <code>CANCELLED</code> status and an end time stamp. </p>
     pub fn game_session_placement(&self) -> ::std::option::Option<&crate::types::GameSessionPlacement> {
         self.game_session_placement.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct StopGameSessionPlacementOutputBuilder {
     _request_id: Option<String>,
 }
 impl StopGameSessionPlacementOutputBuilder {
-    /// <p>Object that describes the canceled game session placement, with <code>CANCELLED</code> status and an end time stamp.</p>
+    /// <p>Object that describes the canceled game session placement, with <code>CANCELLED</code> status and an end time stamp. </p>
     pub fn game_session_placement(mut self, input: crate::types::GameSessionPlacement) -> Self {
         self.game_session_placement = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Object that describes the canceled game session placement, with <code>CANCELLED</code> status and an end time stamp.</p>
+    /// <p>Object that describes the canceled game session placement, with <code>CANCELLED</code> status and an end time stamp. </p>
     pub fn set_game_session_placement(mut self, input: ::std::option::Option<crate::types::GameSessionPlacement>) -> Self {
         self.game_session_placement = input;
         self
     }
-    /// <p>Object that describes the canceled game session placement, with <code>CANCELLED</code> status and an end time stamp.</p>
+    /// <p>Object that describes the canceled game session placement, with <code>CANCELLED</code> status and an end time stamp. </p>
     pub fn get_game_session_placement(&self) -> &::std::option::Option<crate::types::GameSessionPlacement> {
         &self.game_session_placement
     }

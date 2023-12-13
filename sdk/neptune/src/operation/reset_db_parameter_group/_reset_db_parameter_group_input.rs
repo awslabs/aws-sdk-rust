@@ -6,34 +6,32 @@ pub struct ResetDbParameterGroupInput {
     /// <p>The name of the DB parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must match the name of an existing DBParameterGroup.</p></li>
+    /// <li> <p>Must match the name of an existing DBParameterGroup.</p> </li>
     /// </ul>
     pub db_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether (<code>true</code>) or not (<code>false</code>) to reset all parameters in the DB parameter group to default values.</p>
-    /// <p>Default: <code>true</code></p>
+    /// <p>Default: <code>true</code> </p>
     pub reset_all_parameters: ::std::option::Option<bool>,
     /// <p>To reset the entire DB parameter group, specify the <code>DBParameterGroup</code> name and <code>ResetAllParameters</code> parameters. To reset specific parameters, provide a list of the following: <code>ParameterName</code> and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single request.</p>
-    /// <p>Valid Values (for Apply method): <code>pending-reboot</code></p>
+    /// <p>Valid Values (for Apply method): <code>pending-reboot</code> </p>
     pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
 }
 impl ResetDbParameterGroupInput {
     /// <p>The name of the DB parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must match the name of an existing DBParameterGroup.</p></li>
+    /// <li> <p>Must match the name of an existing DBParameterGroup.</p> </li>
     /// </ul>
     pub fn db_parameter_group_name(&self) -> ::std::option::Option<&str> {
         self.db_parameter_group_name.as_deref()
     }
     /// <p>Specifies whether (<code>true</code>) or not (<code>false</code>) to reset all parameters in the DB parameter group to default values.</p>
-    /// <p>Default: <code>true</code></p>
+    /// <p>Default: <code>true</code> </p>
     pub fn reset_all_parameters(&self) -> ::std::option::Option<bool> {
         self.reset_all_parameters
     }
     /// <p>To reset the entire DB parameter group, specify the <code>DBParameterGroup</code> name and <code>ResetAllParameters</code> parameters. To reset specific parameters, provide a list of the following: <code>ParameterName</code> and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single request.</p>
-    /// <p>Valid Values (for Apply method): <code>pending-reboot</code></p>
+    /// <p>Valid Values (for Apply method): <code>pending-reboot</code> </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
     pub fn parameters(&self) -> &[crate::types::Parameter] {
@@ -59,8 +57,7 @@ impl ResetDbParameterGroupInputBuilder {
     /// <p>The name of the DB parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must match the name of an existing DBParameterGroup.</p></li>
+    /// <li> <p>Must match the name of an existing DBParameterGroup.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn db_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -70,8 +67,7 @@ impl ResetDbParameterGroupInputBuilder {
     /// <p>The name of the DB parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must match the name of an existing DBParameterGroup.</p></li>
+    /// <li> <p>Must match the name of an existing DBParameterGroup.</p> </li>
     /// </ul>
     pub fn set_db_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_parameter_group_name = input;
@@ -80,26 +76,25 @@ impl ResetDbParameterGroupInputBuilder {
     /// <p>The name of the DB parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must match the name of an existing DBParameterGroup.</p></li>
+    /// <li> <p>Must match the name of an existing DBParameterGroup.</p> </li>
     /// </ul>
     pub fn get_db_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_parameter_group_name
     }
     /// <p>Specifies whether (<code>true</code>) or not (<code>false</code>) to reset all parameters in the DB parameter group to default values.</p>
-    /// <p>Default: <code>true</code></p>
+    /// <p>Default: <code>true</code> </p>
     pub fn reset_all_parameters(mut self, input: bool) -> Self {
         self.reset_all_parameters = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether (<code>true</code>) or not (<code>false</code>) to reset all parameters in the DB parameter group to default values.</p>
-    /// <p>Default: <code>true</code></p>
+    /// <p>Default: <code>true</code> </p>
     pub fn set_reset_all_parameters(mut self, input: ::std::option::Option<bool>) -> Self {
         self.reset_all_parameters = input;
         self
     }
     /// <p>Specifies whether (<code>true</code>) or not (<code>false</code>) to reset all parameters in the DB parameter group to default values.</p>
-    /// <p>Default: <code>true</code></p>
+    /// <p>Default: <code>true</code> </p>
     pub fn get_reset_all_parameters(&self) -> &::std::option::Option<bool> {
         &self.reset_all_parameters
     }
@@ -108,7 +103,7 @@ impl ResetDbParameterGroupInputBuilder {
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
     /// <p>To reset the entire DB parameter group, specify the <code>DBParameterGroup</code> name and <code>ResetAllParameters</code> parameters. To reset specific parameters, provide a list of the following: <code>ParameterName</code> and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single request.</p>
-    /// <p>Valid Values (for Apply method): <code>pending-reboot</code></p>
+    /// <p>Valid Values (for Apply method): <code>pending-reboot</code> </p>
     pub fn parameters(mut self, input: crate::types::Parameter) -> Self {
         let mut v = self.parameters.unwrap_or_default();
         v.push(input);
@@ -116,13 +111,13 @@ impl ResetDbParameterGroupInputBuilder {
         self
     }
     /// <p>To reset the entire DB parameter group, specify the <code>DBParameterGroup</code> name and <code>ResetAllParameters</code> parameters. To reset specific parameters, provide a list of the following: <code>ParameterName</code> and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single request.</p>
-    /// <p>Valid Values (for Apply method): <code>pending-reboot</code></p>
+    /// <p>Valid Values (for Apply method): <code>pending-reboot</code> </p>
     pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>) -> Self {
         self.parameters = input;
         self
     }
     /// <p>To reset the entire DB parameter group, specify the <code>DBParameterGroup</code> name and <code>ResetAllParameters</code> parameters. To reset specific parameters, provide a list of the following: <code>ParameterName</code> and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single request.</p>
-    /// <p>Valid Values (for Apply method): <code>pending-reboot</code></p>
+    /// <p>Valid Values (for Apply method): <code>pending-reboot</code> </p>
     pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
         &self.parameters
     }

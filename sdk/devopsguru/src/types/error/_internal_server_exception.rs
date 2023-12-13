@@ -6,12 +6,12 @@
 pub struct InternalServerException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: ::std::string::String,
-    /// <p>The number of seconds after which the action that caused the internal server exception can be retried.</p>
+    /// <p> The number of seconds after which the action that caused the internal server exception can be retried. </p>
     pub retry_after_seconds: i32,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl InternalServerException {
-    /// <p>The number of seconds after which the action that caused the internal server exception can be retried.</p>
+    /// <p> The number of seconds after which the action that caused the internal server exception can be retried. </p>
     pub fn retry_after_seconds(&self) -> i32 {
         self.retry_after_seconds
     }
@@ -74,17 +74,17 @@ impl InternalServerExceptionBuilder {
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
-    /// <p>The number of seconds after which the action that caused the internal server exception can be retried.</p>
+    /// <p> The number of seconds after which the action that caused the internal server exception can be retried. </p>
     pub fn retry_after_seconds(mut self, input: i32) -> Self {
         self.retry_after_seconds = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of seconds after which the action that caused the internal server exception can be retried.</p>
+    /// <p> The number of seconds after which the action that caused the internal server exception can be retried. </p>
     pub fn set_retry_after_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.retry_after_seconds = input;
         self
     }
-    /// <p>The number of seconds after which the action that caused the internal server exception can be retried.</p>
+    /// <p> The number of seconds after which the action that caused the internal server exception can be retried. </p>
     pub fn get_retry_after_seconds(&self) -> &::std::option::Option<i32> {
         &self.retry_after_seconds
     }

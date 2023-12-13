@@ -255,7 +255,7 @@ pub enum DescribeGameSessionsError {
     InvalidRequestException(crate::types::error::InvalidRequestException),
     /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::types::error::NotFoundException),
-    /// <p>The service is unable to resolve the routing for a particular alias because it has a terminal <code>RoutingStrategy</code> associated with it. The message returned in this exception is the message defined in the routing strategy itself. Such requests should only be retried if the routing strategy for the specified alias is modified.</p>
+    /// <p>The service is unable to resolve the routing for a particular alias because it has a terminal <code>RoutingStrategy</code> associated with it. The message returned in this exception is the message defined in the routing strategy itself. Such requests should only be retried if the routing strategy for the specified alias is modified. </p>
     TerminalRoutingStrategyException(crate::types::error::TerminalRoutingStrategyException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::types::error::UnauthorizedException),

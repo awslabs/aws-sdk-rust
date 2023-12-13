@@ -8,7 +8,7 @@ pub struct RegistryAlias {
     pub name: ::std::string::String,
     /// <p>The status of the registry alias.</p>
     pub status: crate::types::RegistryAliasStatus,
-    /// <p>Indicates whether the registry alias is the primary alias for the registry. If true, the alias is the primary registry alias and is displayed in both the repository URL and the image URI used in the <code>docker pull</code> commands on the Amazon ECR Public Gallery.</p><note>
+    /// <p>Indicates whether the registry alias is the primary alias for the registry. If true, the alias is the primary registry alias and is displayed in both the repository URL and the image URI used in the <code>docker pull</code> commands on the Amazon ECR Public Gallery.</p> <note>
     /// <p>A registry alias that isn't the primary registry alias can be used in the repository URI in a <code>docker pull</code> command.</p>
     /// </note>
     pub primary_registry_alias: bool,
@@ -25,7 +25,7 @@ impl RegistryAlias {
     pub fn status(&self) -> &crate::types::RegistryAliasStatus {
         &self.status
     }
-    /// <p>Indicates whether the registry alias is the primary alias for the registry. If true, the alias is the primary registry alias and is displayed in both the repository URL and the image URI used in the <code>docker pull</code> commands on the Amazon ECR Public Gallery.</p><note>
+    /// <p>Indicates whether the registry alias is the primary alias for the registry. If true, the alias is the primary registry alias and is displayed in both the repository URL and the image URI used in the <code>docker pull</code> commands on the Amazon ECR Public Gallery.</p> <note>
     /// <p>A registry alias that isn't the primary registry alias can be used in the repository URI in a <code>docker pull</code> command.</p>
     /// </note>
     pub fn primary_registry_alias(&self) -> bool {
@@ -83,7 +83,7 @@ impl RegistryAliasBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::RegistryAliasStatus> {
         &self.status
     }
-    /// <p>Indicates whether the registry alias is the primary alias for the registry. If true, the alias is the primary registry alias and is displayed in both the repository URL and the image URI used in the <code>docker pull</code> commands on the Amazon ECR Public Gallery.</p><note>
+    /// <p>Indicates whether the registry alias is the primary alias for the registry. If true, the alias is the primary registry alias and is displayed in both the repository URL and the image URI used in the <code>docker pull</code> commands on the Amazon ECR Public Gallery.</p> <note>
     /// <p>A registry alias that isn't the primary registry alias can be used in the repository URI in a <code>docker pull</code> command.</p>
     /// </note>
     /// This field is required.
@@ -91,14 +91,14 @@ impl RegistryAliasBuilder {
         self.primary_registry_alias = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether the registry alias is the primary alias for the registry. If true, the alias is the primary registry alias and is displayed in both the repository URL and the image URI used in the <code>docker pull</code> commands on the Amazon ECR Public Gallery.</p><note>
+    /// <p>Indicates whether the registry alias is the primary alias for the registry. If true, the alias is the primary registry alias and is displayed in both the repository URL and the image URI used in the <code>docker pull</code> commands on the Amazon ECR Public Gallery.</p> <note>
     /// <p>A registry alias that isn't the primary registry alias can be used in the repository URI in a <code>docker pull</code> command.</p>
     /// </note>
     pub fn set_primary_registry_alias(mut self, input: ::std::option::Option<bool>) -> Self {
         self.primary_registry_alias = input;
         self
     }
-    /// <p>Indicates whether the registry alias is the primary alias for the registry. If true, the alias is the primary registry alias and is displayed in both the repository URL and the image URI used in the <code>docker pull</code> commands on the Amazon ECR Public Gallery.</p><note>
+    /// <p>Indicates whether the registry alias is the primary alias for the registry. If true, the alias is the primary registry alias and is displayed in both the repository URL and the image URI used in the <code>docker pull</code> commands on the Amazon ECR Public Gallery.</p> <note>
     /// <p>A registry alias that isn't the primary registry alias can be used in the repository URI in a <code>docker pull</code> command.</p>
     /// </note>
     pub fn get_primary_registry_alias(&self) -> &::std::option::Option<bool> {

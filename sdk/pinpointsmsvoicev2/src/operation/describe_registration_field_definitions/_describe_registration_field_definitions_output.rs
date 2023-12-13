@@ -5,7 +5,7 @@
 pub struct DescribeRegistrationFieldDefinitionsOutput {
     /// <p>The type of registration form. The list of <b>RegistrationTypes</b> can be found using the <code>DescribeRegistrationTypeDefinitions</code> action.</p>
     pub registration_type: ::std::string::String,
-    /// <p>An array of RegistrationFieldDefinitions objects that contain the details for the requested fields.</p>
+    /// <p>An array of RegistrationFieldDefinitions objects that contain the details for the requested fields. </p>
     pub registration_field_definitions: ::std::vec::Vec<crate::types::RegistrationFieldDefinition>,
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -17,7 +17,7 @@ impl DescribeRegistrationFieldDefinitionsOutput {
         use std::ops::Deref;
         self.registration_type.deref()
     }
-    /// <p>An array of RegistrationFieldDefinitions objects that contain the details for the requested fields.</p>
+    /// <p>An array of RegistrationFieldDefinitions objects that contain the details for the requested fields. </p>
     pub fn registration_field_definitions(&self) -> &[crate::types::RegistrationFieldDefinition] {
         use std::ops::Deref;
         self.registration_field_definitions.deref()
@@ -68,14 +68,14 @@ impl DescribeRegistrationFieldDefinitionsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_registration_field_definitions`](Self::set_registration_field_definitions).
     ///
-    /// <p>An array of RegistrationFieldDefinitions objects that contain the details for the requested fields.</p>
+    /// <p>An array of RegistrationFieldDefinitions objects that contain the details for the requested fields. </p>
     pub fn registration_field_definitions(mut self, input: crate::types::RegistrationFieldDefinition) -> Self {
         let mut v = self.registration_field_definitions.unwrap_or_default();
         v.push(input);
         self.registration_field_definitions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of RegistrationFieldDefinitions objects that contain the details for the requested fields.</p>
+    /// <p>An array of RegistrationFieldDefinitions objects that contain the details for the requested fields. </p>
     pub fn set_registration_field_definitions(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::RegistrationFieldDefinition>>,
@@ -83,7 +83,7 @@ impl DescribeRegistrationFieldDefinitionsOutputBuilder {
         self.registration_field_definitions = input;
         self
     }
-    /// <p>An array of RegistrationFieldDefinitions objects that contain the details for the requested fields.</p>
+    /// <p>An array of RegistrationFieldDefinitions objects that contain the details for the requested fields. </p>
     pub fn get_registration_field_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RegistrationFieldDefinition>> {
         &self.registration_field_definitions
     }

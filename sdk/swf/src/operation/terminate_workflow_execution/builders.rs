@@ -22,22 +22,19 @@ impl TerminateWorkflowExecutionInputBuilder {
 }
 /// Fluent builder constructing a request to `TerminateWorkflowExecution`.
 ///
-/// <p>Records a <code>WorkflowExecutionTerminated</code> event and forces closure of the workflow execution identified by the given domain, runId, and workflowId. The child policy, registered with the workflow type or specified when starting this execution, is applied to any open child workflow executions of this workflow execution.</p><important>
+/// <p>Records a <code>WorkflowExecutionTerminated</code> event and forces closure of the workflow execution identified by the given domain, runId, and workflowId. The child policy, registered with the workflow type or specified when starting this execution, is applied to any open child workflow executions of this workflow execution.</p> <important>
 /// <p>If the identified workflow execution was in progress, it is terminated immediately.</p>
 /// </important> <note>
 /// <p>If a runId isn't specified, then the <code>WorkflowExecutionTerminated</code> event is recorded in the history of the current open workflow with the matching workflowId in the domain.</p>
 /// </note> <note>
 /// <p>You should consider using <code>RequestCancelWorkflowExecution</code> action instead because it allows the workflow to gracefully close while <code>TerminateWorkflowExecution</code> doesn't.</p>
 /// </note>
-/// <p><b>Access Control</b></p>
+/// <p> <b>Access Control</b> </p>
 /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p>
 /// <ul>
-/// <li>
-/// <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p></li>
-/// <li>
-/// <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p></li>
-/// <li>
-/// <p>You cannot use an IAM policy to constrain this action's parameters.</p></li>
+/// <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li>
+/// <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li>
+/// <li> <p>You cannot use an IAM policy to constrain this action's parameters.</p> </li>
 /// </ul>
 /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -167,44 +164,41 @@ impl TerminateWorkflowExecutionFluentBuilder {
     pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_run_id()
     }
-    /// <p>A descriptive reason for terminating the workflow execution.</p>
+    /// <p> A descriptive reason for terminating the workflow execution.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reason(input.into());
         self
     }
-    /// <p>A descriptive reason for terminating the workflow execution.</p>
+    /// <p> A descriptive reason for terminating the workflow execution.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_reason(input);
         self
     }
-    /// <p>A descriptive reason for terminating the workflow execution.</p>
+    /// <p> A descriptive reason for terminating the workflow execution.</p>
     pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_reason()
     }
-    /// <p>Details for terminating the workflow execution.</p>
+    /// <p> Details for terminating the workflow execution.</p>
     pub fn details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.details(input.into());
         self
     }
-    /// <p>Details for terminating the workflow execution.</p>
+    /// <p> Details for terminating the workflow execution.</p>
     pub fn set_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_details(input);
         self
     }
-    /// <p>Details for terminating the workflow execution.</p>
+    /// <p> Details for terminating the workflow execution.</p>
     pub fn get_details(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_details()
     }
     /// <p>If set, specifies the policy to use for the child workflow executions of the workflow execution being terminated. This policy overrides the child policy specified for the workflow execution at registration time or when starting the execution.</p>
     /// <p>The supported child policies are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>TERMINATE</code> – The child executions are terminated.</p></li>
-    /// <li>
-    /// <p><code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p></li>
-    /// <li>
-    /// <p><code>ABANDON</code> – No action is taken. The child executions continue to run.</p></li>
-    /// </ul><note>
+    /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li>
+    /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
+    /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
+    /// </ul> <note>
     /// <p>A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.</p>
     /// </note>
     pub fn child_policy(mut self, input: crate::types::ChildPolicy) -> Self {
@@ -214,13 +208,10 @@ impl TerminateWorkflowExecutionFluentBuilder {
     /// <p>If set, specifies the policy to use for the child workflow executions of the workflow execution being terminated. This policy overrides the child policy specified for the workflow execution at registration time or when starting the execution.</p>
     /// <p>The supported child policies are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>TERMINATE</code> – The child executions are terminated.</p></li>
-    /// <li>
-    /// <p><code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p></li>
-    /// <li>
-    /// <p><code>ABANDON</code> – No action is taken. The child executions continue to run.</p></li>
-    /// </ul><note>
+    /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li>
+    /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
+    /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
+    /// </ul> <note>
     /// <p>A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.</p>
     /// </note>
     pub fn set_child_policy(mut self, input: ::std::option::Option<crate::types::ChildPolicy>) -> Self {
@@ -230,13 +221,10 @@ impl TerminateWorkflowExecutionFluentBuilder {
     /// <p>If set, specifies the policy to use for the child workflow executions of the workflow execution being terminated. This policy overrides the child policy specified for the workflow execution at registration time or when starting the execution.</p>
     /// <p>The supported child policies are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>TERMINATE</code> – The child executions are terminated.</p></li>
-    /// <li>
-    /// <p><code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p></li>
-    /// <li>
-    /// <p><code>ABANDON</code> – No action is taken. The child executions continue to run.</p></li>
-    /// </ul><note>
+    /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li>
+    /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
+    /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
+    /// </ul> <note>
     /// <p>A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.</p>
     /// </note>
     pub fn get_child_policy(&self) -> &::std::option::Option<crate::types::ChildPolicy> {

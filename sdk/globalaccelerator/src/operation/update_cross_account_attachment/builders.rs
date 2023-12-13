@@ -24,10 +24,8 @@ impl UpdateCrossAccountAttachmentInputBuilder {
 ///
 /// <p>Update a cross-account attachment to add or remove principals or resources. When you update an attachment to remove a principal (account ID or accelerator) or a resource, Global Accelerator revokes the permission for specific resources by doing the following:</p>
 /// <ul>
-/// <li>
-/// <p>If the principal is an account ID, Global Accelerator reviews every accelerator in the account and removes cross-account endpoints from all accelerators.</p></li>
-/// <li>
-/// <p>If the principal is an accelerator, Global Accelerator reviews just that accelerator and removes cross-account endpoints from it.</p></li>
+/// <li> <p>If the principal is an account ID, Global Accelerator reviews every accelerator in the account and removes cross-account endpoints from all accelerators.</p> </li>
+/// <li> <p>If the principal is an accelerator, Global Accelerator reviews just that accelerator and removes cross-account endpoints from it.</p> </li>
 /// </ul>
 /// <p>If there are overlapping permissions provided by multiple cross-account attachments, Global Accelerator only removes endpoints if there are no current cross-account attachments that provide access permission. For example, if you delete a cross-account attachment that lists an accelerator as a principal, but another cross-account attachment includes the account ID that owns that accelerator, endpoints will not be removed from the accelerator.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -129,17 +127,17 @@ impl UpdateCrossAccountAttachmentFluentBuilder {
     pub fn get_attachment_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_attachment_arn()
     }
-    /// <p>The name of the cross-account attachment.</p>
+    /// <p>The name of the cross-account attachment. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of the cross-account attachment.</p>
+    /// <p>The name of the cross-account attachment. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name of the cross-account attachment.</p>
+    /// <p>The name of the cross-account attachment. </p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }

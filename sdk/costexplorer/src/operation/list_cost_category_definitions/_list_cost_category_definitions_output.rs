@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCostCategoryDefinitionsOutput {
-    /// <p>A reference to a Cost Category that contains enough information to identify the Cost Category.</p>
+    /// <p>A reference to a Cost Category that contains enough information to identify the Cost Category. </p>
     pub cost_category_references: ::std::option::Option<::std::vec::Vec<crate::types::CostCategoryReference>>,
-    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListCostCategoryDefinitionsOutput {
-    /// <p>A reference to a Cost Category that contains enough information to identify the Cost Category.</p>
+    /// <p>A reference to a Cost Category that contains enough information to identify the Cost Category. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cost_category_references.is_none()`.
     pub fn cost_category_references(&self) -> &[crate::types::CostCategoryReference] {
         self.cost_category_references.as_deref().unwrap_or_default()
     }
-    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -46,33 +46,33 @@ impl ListCostCategoryDefinitionsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_cost_category_references`](Self::set_cost_category_references).
     ///
-    /// <p>A reference to a Cost Category that contains enough information to identify the Cost Category.</p>
+    /// <p>A reference to a Cost Category that contains enough information to identify the Cost Category. </p>
     pub fn cost_category_references(mut self, input: crate::types::CostCategoryReference) -> Self {
         let mut v = self.cost_category_references.unwrap_or_default();
         v.push(input);
         self.cost_category_references = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A reference to a Cost Category that contains enough information to identify the Cost Category.</p>
+    /// <p>A reference to a Cost Category that contains enough information to identify the Cost Category. </p>
     pub fn set_cost_category_references(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CostCategoryReference>>) -> Self {
         self.cost_category_references = input;
         self
     }
-    /// <p>A reference to a Cost Category that contains enough information to identify the Cost Category.</p>
+    /// <p>A reference to a Cost Category that contains enough information to identify the Cost Category. </p>
     pub fn get_cost_category_references(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CostCategoryReference>> {
         &self.cost_category_references
     }
-    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

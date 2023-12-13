@@ -7,7 +7,7 @@ pub struct UpdateEndpointInput {
     pub endpoint_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the new model to use when updating an existing endpoint.</p>
     pub desired_model_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The desired number of inference units to be used by the model using this endpoint. Each inference unit represents of a throughput of 100 characters per second.</p>
+    /// <p> The desired number of inference units to be used by the model using this endpoint. Each inference unit represents of a throughput of 100 characters per second.</p>
     pub desired_inference_units: ::std::option::Option<i32>,
     /// <p>Data access role ARN to use in case the new model is encrypted with a customer CMK.</p>
     pub desired_data_access_role_arn: ::std::option::Option<::std::string::String>,
@@ -23,7 +23,7 @@ impl UpdateEndpointInput {
     pub fn desired_model_arn(&self) -> ::std::option::Option<&str> {
         self.desired_model_arn.as_deref()
     }
-    /// <p>The desired number of inference units to be used by the model using this endpoint. Each inference unit represents of a throughput of 100 characters per second.</p>
+    /// <p> The desired number of inference units to be used by the model using this endpoint. Each inference unit represents of a throughput of 100 characters per second.</p>
     pub fn desired_inference_units(&self) -> ::std::option::Option<i32> {
         self.desired_inference_units
     }
@@ -83,17 +83,17 @@ impl UpdateEndpointInputBuilder {
     pub fn get_desired_model_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.desired_model_arn
     }
-    /// <p>The desired number of inference units to be used by the model using this endpoint. Each inference unit represents of a throughput of 100 characters per second.</p>
+    /// <p> The desired number of inference units to be used by the model using this endpoint. Each inference unit represents of a throughput of 100 characters per second.</p>
     pub fn desired_inference_units(mut self, input: i32) -> Self {
         self.desired_inference_units = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The desired number of inference units to be used by the model using this endpoint. Each inference unit represents of a throughput of 100 characters per second.</p>
+    /// <p> The desired number of inference units to be used by the model using this endpoint. Each inference unit represents of a throughput of 100 characters per second.</p>
     pub fn set_desired_inference_units(mut self, input: ::std::option::Option<i32>) -> Self {
         self.desired_inference_units = input;
         self
     }
-    /// <p>The desired number of inference units to be used by the model using this endpoint. Each inference unit represents of a throughput of 100 characters per second.</p>
+    /// <p> The desired number of inference units to be used by the model using this endpoint. Each inference unit represents of a throughput of 100 characters per second.</p>
     pub fn get_desired_inference_units(&self) -> &::std::option::Option<i32> {
         &self.desired_inference_units
     }

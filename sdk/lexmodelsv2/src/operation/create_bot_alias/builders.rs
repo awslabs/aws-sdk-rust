@@ -23,7 +23,7 @@ impl CreateBotAliasInputBuilder {
 /// Fluent builder constructing a request to `CreateBotAlias`.
 ///
 /// <p>Creates an alias for the specified version of a bot. Use an alias to enable you to change the version of a bot without updating applications that use the bot.</p>
-/// <p>For example, you can create an alias called "PROD" that your applications use to call the Amazon Lex bot.</p>
+/// <p>For example, you can create an alias called "PROD" that your applications use to call the Amazon Lex bot. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateBotAliasFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

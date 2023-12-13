@@ -22,7 +22,7 @@ impl GetVariablesInputBuilder {
 }
 /// Fluent builder constructing a request to `GetVariables`.
 ///
-/// <p>Gets all of the variables or the specific variable. This is a paginated API. Providing null <code>maxSizePerPage</code> results in retrieving maximum of 100 records per page. If you provide <code>maxSizePerPage</code> the value must be between 50 and 100. To get the next page result, a provide a pagination token from <code>GetVariablesResult</code> as part of your request. Null pagination token fetches the records from the beginning.</p>
+/// <p>Gets all of the variables or the specific variable. This is a paginated API. Providing null <code>maxSizePerPage</code> results in retrieving maximum of 100 records per page. If you provide <code>maxSizePerPage</code> the value must be between 50 and 100. To get the next page result, a provide a pagination token from <code>GetVariablesResult</code> as part of your request. Null pagination token fetches the records from the beginning. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetVariablesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,45 +114,45 @@ impl GetVariablesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::get_variables::paginator::GetVariablesPaginator {
         crate::operation::get_variables::paginator::GetVariablesPaginator::new(self.handle, self.inner)
     }
-    /// <p>The name of the variable.</p>
+    /// <p>The name of the variable. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of the variable.</p>
+    /// <p>The name of the variable. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name of the variable.</p>
+    /// <p>The name of the variable. </p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>The next page token of the get variable request.</p>
+    /// <p>The next page token of the get variable request. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>The next page token of the get variable request.</p>
+    /// <p>The next page token of the get variable request. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>The next page token of the get variable request.</p>
+    /// <p>The next page token of the get variable request. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>The max size per page determined for the get variable request.</p>
+    /// <p>The max size per page determined for the get variable request. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The max size per page determined for the get variable request.</p>
+    /// <p>The max size per page determined for the get variable request. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The max size per page determined for the get variable request.</p>
+    /// <p>The max size per page determined for the get variable request. </p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

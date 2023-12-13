@@ -3,13 +3,13 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StartInferenceScheduler`](crate::operation::start_inference_scheduler::builders::StartInferenceSchedulerFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`inference_scheduler_name(impl Into<String>)`](crate::operation::start_inference_scheduler::builders::StartInferenceSchedulerFluentBuilder::inference_scheduler_name) / [`set_inference_scheduler_name(Option<String>)`](crate::operation::start_inference_scheduler::builders::StartInferenceSchedulerFluentBuilder::set_inference_scheduler_name):<br>required: **true**<br><p>The name of the inference scheduler to be started.</p><br>
+    ///   - [`inference_scheduler_name(impl Into<String>)`](crate::operation::start_inference_scheduler::builders::StartInferenceSchedulerFluentBuilder::inference_scheduler_name) / [`set_inference_scheduler_name(Option<String>)`](crate::operation::start_inference_scheduler::builders::StartInferenceSchedulerFluentBuilder::set_inference_scheduler_name):<br>required: **true**<br><p>The name of the inference scheduler to be started. </p><br>
     /// - On success, responds with [`StartInferenceSchedulerOutput`](crate::operation::start_inference_scheduler::StartInferenceSchedulerOutput) with field(s):
-    ///   - [`model_arn(Option<String>)`](crate::operation::start_inference_scheduler::StartInferenceSchedulerOutput::model_arn): <p>The Amazon Resource Name (ARN) of the machine learning model being used by the inference scheduler.</p>
-    ///   - [`model_name(Option<String>)`](crate::operation::start_inference_scheduler::StartInferenceSchedulerOutput::model_name): <p>The name of the machine learning model being used by the inference scheduler.</p>
-    ///   - [`inference_scheduler_name(Option<String>)`](crate::operation::start_inference_scheduler::StartInferenceSchedulerOutput::inference_scheduler_name): <p>The name of the inference scheduler being started.</p>
-    ///   - [`inference_scheduler_arn(Option<String>)`](crate::operation::start_inference_scheduler::StartInferenceSchedulerOutput::inference_scheduler_arn): <p>The Amazon Resource Name (ARN) of the inference scheduler being started.</p>
-    ///   - [`status(Option<InferenceSchedulerStatus>)`](crate::operation::start_inference_scheduler::StartInferenceSchedulerOutput::status): <p>Indicates the status of the inference scheduler.</p>
+    ///   - [`model_arn(Option<String>)`](crate::operation::start_inference_scheduler::StartInferenceSchedulerOutput::model_arn): <p>The Amazon Resource Name (ARN) of the machine learning model being used by the inference scheduler. </p>
+    ///   - [`model_name(Option<String>)`](crate::operation::start_inference_scheduler::StartInferenceSchedulerOutput::model_name): <p>The name of the machine learning model being used by the inference scheduler. </p>
+    ///   - [`inference_scheduler_name(Option<String>)`](crate::operation::start_inference_scheduler::StartInferenceSchedulerOutput::inference_scheduler_name): <p>The name of the inference scheduler being started. </p>
+    ///   - [`inference_scheduler_arn(Option<String>)`](crate::operation::start_inference_scheduler::StartInferenceSchedulerOutput::inference_scheduler_arn): <p>The Amazon Resource Name (ARN) of the inference scheduler being started. </p>
+    ///   - [`status(Option<InferenceSchedulerStatus>)`](crate::operation::start_inference_scheduler::StartInferenceSchedulerOutput::status): <p>Indicates the status of the inference scheduler. </p>
     /// - On failure, responds with [`SdkError<StartInferenceSchedulerError>`](crate::operation::start_inference_scheduler::StartInferenceSchedulerError)
     pub fn start_inference_scheduler(&self) -> crate::operation::start_inference_scheduler::builders::StartInferenceSchedulerFluentBuilder {
         crate::operation::start_inference_scheduler::builders::StartInferenceSchedulerFluentBuilder::new(self.handle.clone())

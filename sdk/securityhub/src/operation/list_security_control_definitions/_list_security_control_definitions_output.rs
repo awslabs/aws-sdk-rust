@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSecurityControlDefinitionsOutput {
-    /// <p>An array of controls that apply to the specified standard.</p>
+    /// <p> An array of controls that apply to the specified standard. </p>
     pub security_control_definitions: ::std::option::Option<::std::vec::Vec<crate::types::SecurityControlDefinition>>,
-    /// <p>A pagination parameter that's included in the response only if it was included in the request.</p>
+    /// <p> A pagination parameter that's included in the response only if it was included in the request. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListSecurityControlDefinitionsOutput {
-    /// <p>An array of controls that apply to the specified standard.</p>
+    /// <p> An array of controls that apply to the specified standard. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_control_definitions.is_none()`.
     pub fn security_control_definitions(&self) -> &[crate::types::SecurityControlDefinition] {
         self.security_control_definitions.as_deref().unwrap_or_default()
     }
-    /// <p>A pagination parameter that's included in the response only if it was included in the request.</p>
+    /// <p> A pagination parameter that's included in the response only if it was included in the request. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -46,14 +46,14 @@ impl ListSecurityControlDefinitionsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_security_control_definitions`](Self::set_security_control_definitions).
     ///
-    /// <p>An array of controls that apply to the specified standard.</p>
+    /// <p> An array of controls that apply to the specified standard. </p>
     pub fn security_control_definitions(mut self, input: crate::types::SecurityControlDefinition) -> Self {
         let mut v = self.security_control_definitions.unwrap_or_default();
         v.push(input);
         self.security_control_definitions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of controls that apply to the specified standard.</p>
+    /// <p> An array of controls that apply to the specified standard. </p>
     pub fn set_security_control_definitions(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::SecurityControlDefinition>>,
@@ -61,21 +61,21 @@ impl ListSecurityControlDefinitionsOutputBuilder {
         self.security_control_definitions = input;
         self
     }
-    /// <p>An array of controls that apply to the specified standard.</p>
+    /// <p> An array of controls that apply to the specified standard. </p>
     pub fn get_security_control_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityControlDefinition>> {
         &self.security_control_definitions
     }
-    /// <p>A pagination parameter that's included in the response only if it was included in the request.</p>
+    /// <p> A pagination parameter that's included in the response only if it was included in the request. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A pagination parameter that's included in the response only if it was included in the request.</p>
+    /// <p> A pagination parameter that's included in the response only if it was included in the request. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>A pagination parameter that's included in the response only if it was included in the request.</p>
+    /// <p> A pagination parameter that's included in the response only if it was included in the request. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

@@ -9,12 +9,9 @@ pub struct ListResourceTypesInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>Specifies that you want the results to include only resources that have the specified scope.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ALL</code> – the results include both global and regional resources or resource types.</p></li>
-    /// <li>
-    /// <p><code>GLOBAL</code> – the results include only global resources or resource types.</p></li>
-    /// <li>
-    /// <p><code>REGIONAL</code> – the results include only regional resources or resource types.</p></li>
+    /// <li> <p> <code>ALL</code> – the results include both global and regional resources or resource types.</p> </li>
+    /// <li> <p> <code>GLOBAL</code> – the results include only global resources or resource types.</p> </li>
+    /// <li> <p> <code>REGIONAL</code> – the results include only regional resources or resource types.</p> </li>
     /// </ul>
     /// <p>The default value is <code>ALL</code>.</p>
     pub resource_region_scope: ::std::option::Option<crate::types::ResourceRegionScopeFilter>,
@@ -30,12 +27,9 @@ impl ListResourceTypesInput {
     }
     /// <p>Specifies that you want the results to include only resources that have the specified scope.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ALL</code> – the results include both global and regional resources or resource types.</p></li>
-    /// <li>
-    /// <p><code>GLOBAL</code> – the results include only global resources or resource types.</p></li>
-    /// <li>
-    /// <p><code>REGIONAL</code> – the results include only regional resources or resource types.</p></li>
+    /// <li> <p> <code>ALL</code> – the results include both global and regional resources or resource types.</p> </li>
+    /// <li> <p> <code>GLOBAL</code> – the results include only global resources or resource types.</p> </li>
+    /// <li> <p> <code>REGIONAL</code> – the results include only regional resources or resource types.</p> </li>
     /// </ul>
     /// <p>The default value is <code>ALL</code>.</p>
     pub fn resource_region_scope(&self) -> ::std::option::Option<&crate::types::ResourceRegionScopeFilter> {
@@ -88,12 +82,9 @@ impl ListResourceTypesInputBuilder {
     }
     /// <p>Specifies that you want the results to include only resources that have the specified scope.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ALL</code> – the results include both global and regional resources or resource types.</p></li>
-    /// <li>
-    /// <p><code>GLOBAL</code> – the results include only global resources or resource types.</p></li>
-    /// <li>
-    /// <p><code>REGIONAL</code> – the results include only regional resources or resource types.</p></li>
+    /// <li> <p> <code>ALL</code> – the results include both global and regional resources or resource types.</p> </li>
+    /// <li> <p> <code>GLOBAL</code> – the results include only global resources or resource types.</p> </li>
+    /// <li> <p> <code>REGIONAL</code> – the results include only regional resources or resource types.</p> </li>
     /// </ul>
     /// <p>The default value is <code>ALL</code>.</p>
     pub fn resource_region_scope(mut self, input: crate::types::ResourceRegionScopeFilter) -> Self {
@@ -102,12 +93,9 @@ impl ListResourceTypesInputBuilder {
     }
     /// <p>Specifies that you want the results to include only resources that have the specified scope.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ALL</code> – the results include both global and regional resources or resource types.</p></li>
-    /// <li>
-    /// <p><code>GLOBAL</code> – the results include only global resources or resource types.</p></li>
-    /// <li>
-    /// <p><code>REGIONAL</code> – the results include only regional resources or resource types.</p></li>
+    /// <li> <p> <code>ALL</code> – the results include both global and regional resources or resource types.</p> </li>
+    /// <li> <p> <code>GLOBAL</code> – the results include only global resources or resource types.</p> </li>
+    /// <li> <p> <code>REGIONAL</code> – the results include only regional resources or resource types.</p> </li>
     /// </ul>
     /// <p>The default value is <code>ALL</code>.</p>
     pub fn set_resource_region_scope(mut self, input: ::std::option::Option<crate::types::ResourceRegionScopeFilter>) -> Self {
@@ -116,12 +104,9 @@ impl ListResourceTypesInputBuilder {
     }
     /// <p>Specifies that you want the results to include only resources that have the specified scope.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ALL</code> – the results include both global and regional resources or resource types.</p></li>
-    /// <li>
-    /// <p><code>GLOBAL</code> – the results include only global resources or resource types.</p></li>
-    /// <li>
-    /// <p><code>REGIONAL</code> – the results include only regional resources or resource types.</p></li>
+    /// <li> <p> <code>ALL</code> – the results include both global and regional resources or resource types.</p> </li>
+    /// <li> <p> <code>GLOBAL</code> – the results include only global resources or resource types.</p> </li>
+    /// <li> <p> <code>REGIONAL</code> – the results include only regional resources or resource types.</p> </li>
     /// </ul>
     /// <p>The default value is <code>ALL</code>.</p>
     pub fn get_resource_region_scope(&self) -> &::std::option::Option<crate::types::ResourceRegionScopeFilter> {

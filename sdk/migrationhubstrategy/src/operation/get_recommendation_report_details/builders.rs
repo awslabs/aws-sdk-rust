@@ -22,7 +22,7 @@ impl GetRecommendationReportDetailsInputBuilder {
 }
 /// Fluent builder constructing a request to `GetRecommendationReportDetails`.
 ///
-/// <p>Retrieves detailed information about the specified recommendation report.</p>
+/// <p> Retrieves detailed information about the specified recommendation report. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetRecommendationReportDetailsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl GetRecommendationReportDetailsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The recommendation report generation task <code>id</code> returned by <code>StartRecommendationReportGeneration</code>.</p>
+    /// <p> The recommendation report generation task <code>id</code> returned by <code>StartRecommendationReportGeneration</code>. </p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
         self
     }
-    /// <p>The recommendation report generation task <code>id</code> returned by <code>StartRecommendationReportGeneration</code>.</p>
+    /// <p> The recommendation report generation task <code>id</code> returned by <code>StartRecommendationReportGeneration</code>. </p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
     }
-    /// <p>The recommendation report generation task <code>id</code> returned by <code>StartRecommendationReportGeneration</code>.</p>
+    /// <p> The recommendation report generation task <code>id</code> returned by <code>StartRecommendationReportGeneration</code>. </p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_id()
     }

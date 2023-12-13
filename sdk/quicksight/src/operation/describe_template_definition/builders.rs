@@ -22,8 +22,8 @@ impl DescribeTemplateDefinitionInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeTemplateDefinition`.
 ///
-/// <p>Provides a detailed description of the definition of a template.</p><note>
-/// <p>If you do not need to know details about the content of a template, for instance if you are trying to check the status of a recently created or updated template, use the <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeTemplate.html"> <code>DescribeTemplate</code> </a> instead.</p>
+/// <p>Provides a detailed description of the definition of a template.</p> <note>
+/// <p>If you do not need to know details about the content of a template, for instance if you are trying to check the status of a recently created or updated template, use the <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeTemplate.html"> <code>DescribeTemplate</code> </a> instead. </p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeTemplateDefinitionFluentBuilder {

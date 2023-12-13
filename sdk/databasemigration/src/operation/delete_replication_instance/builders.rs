@@ -22,7 +22,7 @@ impl DeleteReplicationInstanceInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteReplicationInstance`.
 ///
-/// <p>Deletes the specified replication instance.</p><note>
+/// <p>Deletes the specified replication instance.</p> <note>
 /// <p>You must delete any migration tasks that are associated with the replication instance before you can delete it.</p>
 /// </note>
 /// <p></p>

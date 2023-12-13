@@ -23,7 +23,7 @@ impl DeleteHumanLoopInputBuilder {
 /// Fluent builder constructing a request to `DeleteHumanLoop`.
 ///
 /// <p>Deletes the specified human loop for a flow definition.</p>
-/// <p>If the human loop was deleted, this operation will return a <code>ResourceNotFoundException</code>.</p>
+/// <p>If the human loop was deleted, this operation will return a <code>ResourceNotFoundException</code>. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteHumanLoopFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

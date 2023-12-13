@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchCasesInput {
-    /// <p>The unique identifier of the Cases domain.</p>
+    /// <p>The unique identifier of the Cases domain. </p>
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of cases to return. The current maximum supported value is 25. This is also the default value when no other value is provided.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -13,13 +13,13 @@ pub struct SearchCasesInput {
     pub search_term: ::std::option::Option<::std::string::String>,
     /// <p>A list of filter objects.</p>
     pub filter: ::std::option::Option<crate::types::CaseFilter>,
-    /// <p>A list of sorts where each sort specifies a field and their sort order to be applied to the results.</p>
+    /// <p>A list of sorts where each sort specifies a field and their sort order to be applied to the results. </p>
     pub sorts: ::std::option::Option<::std::vec::Vec<crate::types::Sort>>,
     /// <p>The list of field identifiers to be returned as part of the response.</p>
     pub fields: ::std::option::Option<::std::vec::Vec<crate::types::FieldIdentifier>>,
 }
 impl SearchCasesInput {
-    /// <p>The unique identifier of the Cases domain.</p>
+    /// <p>The unique identifier of the Cases domain. </p>
     pub fn domain_id(&self) -> ::std::option::Option<&str> {
         self.domain_id.as_deref()
     }
@@ -39,7 +39,7 @@ impl SearchCasesInput {
     pub fn filter(&self) -> ::std::option::Option<&crate::types::CaseFilter> {
         self.filter.as_ref()
     }
-    /// <p>A list of sorts where each sort specifies a field and their sort order to be applied to the results.</p>
+    /// <p>A list of sorts where each sort specifies a field and their sort order to be applied to the results. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sorts.is_none()`.
     pub fn sorts(&self) -> &[crate::types::Sort] {
@@ -72,18 +72,18 @@ pub struct SearchCasesInputBuilder {
     pub(crate) fields: ::std::option::Option<::std::vec::Vec<crate::types::FieldIdentifier>>,
 }
 impl SearchCasesInputBuilder {
-    /// <p>The unique identifier of the Cases domain.</p>
+    /// <p>The unique identifier of the Cases domain. </p>
     /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the Cases domain.</p>
+    /// <p>The unique identifier of the Cases domain. </p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_id = input;
         self
     }
-    /// <p>The unique identifier of the Cases domain.</p>
+    /// <p>The unique identifier of the Cases domain. </p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_id
     }
@@ -147,19 +147,19 @@ impl SearchCasesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_sorts`](Self::set_sorts).
     ///
-    /// <p>A list of sorts where each sort specifies a field and their sort order to be applied to the results.</p>
+    /// <p>A list of sorts where each sort specifies a field and their sort order to be applied to the results. </p>
     pub fn sorts(mut self, input: crate::types::Sort) -> Self {
         let mut v = self.sorts.unwrap_or_default();
         v.push(input);
         self.sorts = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of sorts where each sort specifies a field and their sort order to be applied to the results.</p>
+    /// <p>A list of sorts where each sort specifies a field and their sort order to be applied to the results. </p>
     pub fn set_sorts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Sort>>) -> Self {
         self.sorts = input;
         self
     }
-    /// <p>A list of sorts where each sort specifies a field and their sort order to be applied to the results.</p>
+    /// <p>A list of sorts where each sort specifies a field and their sort order to be applied to the results. </p>
     pub fn get_sorts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Sort>> {
         &self.sorts
     }

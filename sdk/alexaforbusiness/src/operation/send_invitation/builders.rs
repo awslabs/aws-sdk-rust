@@ -22,7 +22,7 @@ impl SendInvitationInputBuilder {
 }
 /// Fluent builder constructing a request to `SendInvitation`.
 ///
-/// <p>Sends an enrollment invitation email with a URL to a user. The URL is valid for 30 days or until you call this operation again, whichever comes first.</p>
+/// <p>Sends an enrollment invitation email with a URL to a user. The URL is valid for 30 days or until you call this operation again, whichever comes first. </p>
 #[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SendInvitationFluentBuilder {

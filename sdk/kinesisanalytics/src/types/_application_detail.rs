@@ -19,13 +19,13 @@ pub struct ApplicationDetail {
     pub create_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Time stamp when the application was last updated.</p>
     pub last_update_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Describes the application input configuration. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a>.</p>
+    /// <p>Describes the application input configuration. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a>. </p>
     pub input_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::InputDescription>>,
-    /// <p>Describes the application output configuration. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>.</p>
+    /// <p>Describes the application output configuration. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>. </p>
     pub output_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::OutputDescription>>,
-    /// <p>Describes reference data sources configured for the application. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a>.</p>
+    /// <p>Describes reference data sources configured for the application. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a>. </p>
     pub reference_data_source_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceDataSourceDescription>>,
-    /// <p>Describes the CloudWatch log streams that are configured to receive application messages. For more information about using CloudWatch log streams with Amazon Kinesis Analytics applications, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon CloudWatch Logs</a>.</p>
+    /// <p>Describes the CloudWatch log streams that are configured to receive application messages. For more information about using CloudWatch log streams with Amazon Kinesis Analytics applications, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon CloudWatch Logs</a>. </p>
     pub cloud_watch_logging_option_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOptionDescription>>,
     /// <p>Returns the application code that you provided to perform data analysis on any of the in-application streams in your application.</p>
     pub application_code: ::std::option::Option<::std::string::String>,
@@ -59,25 +59,25 @@ impl ApplicationDetail {
     pub fn last_update_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_update_timestamp.as_ref()
     }
-    /// <p>Describes the application input configuration. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a>.</p>
+    /// <p>Describes the application input configuration. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a>. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_descriptions.is_none()`.
     pub fn input_descriptions(&self) -> &[crate::types::InputDescription] {
         self.input_descriptions.as_deref().unwrap_or_default()
     }
-    /// <p>Describes the application output configuration. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>.</p>
+    /// <p>Describes the application output configuration. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_descriptions.is_none()`.
     pub fn output_descriptions(&self) -> &[crate::types::OutputDescription] {
         self.output_descriptions.as_deref().unwrap_or_default()
     }
-    /// <p>Describes reference data sources configured for the application. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a>.</p>
+    /// <p>Describes reference data sources configured for the application. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a>. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reference_data_source_descriptions.is_none()`.
     pub fn reference_data_source_descriptions(&self) -> &[crate::types::ReferenceDataSourceDescription] {
         self.reference_data_source_descriptions.as_deref().unwrap_or_default()
     }
-    /// <p>Describes the CloudWatch log streams that are configured to receive application messages. For more information about using CloudWatch log streams with Amazon Kinesis Analytics applications, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon CloudWatch Logs</a>.</p>
+    /// <p>Describes the CloudWatch log streams that are configured to receive application messages. For more information about using CloudWatch log streams with Amazon Kinesis Analytics applications, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon CloudWatch Logs</a>. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_watch_logging_option_descriptions.is_none()`.
     pub fn cloud_watch_logging_option_descriptions(&self) -> &[crate::types::CloudWatchLoggingOptionDescription] {
@@ -208,19 +208,19 @@ impl ApplicationDetailBuilder {
     ///
     /// To override the contents of this collection use [`set_input_descriptions`](Self::set_input_descriptions).
     ///
-    /// <p>Describes the application input configuration. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a>.</p>
+    /// <p>Describes the application input configuration. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a>. </p>
     pub fn input_descriptions(mut self, input: crate::types::InputDescription) -> Self {
         let mut v = self.input_descriptions.unwrap_or_default();
         v.push(input);
         self.input_descriptions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Describes the application input configuration. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a>.</p>
+    /// <p>Describes the application input configuration. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a>. </p>
     pub fn set_input_descriptions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InputDescription>>) -> Self {
         self.input_descriptions = input;
         self
     }
-    /// <p>Describes the application input configuration. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a>.</p>
+    /// <p>Describes the application input configuration. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a>. </p>
     pub fn get_input_descriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputDescription>> {
         &self.input_descriptions
     }
@@ -228,19 +228,19 @@ impl ApplicationDetailBuilder {
     ///
     /// To override the contents of this collection use [`set_output_descriptions`](Self::set_output_descriptions).
     ///
-    /// <p>Describes the application output configuration. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>.</p>
+    /// <p>Describes the application output configuration. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>. </p>
     pub fn output_descriptions(mut self, input: crate::types::OutputDescription) -> Self {
         let mut v = self.output_descriptions.unwrap_or_default();
         v.push(input);
         self.output_descriptions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Describes the application output configuration. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>.</p>
+    /// <p>Describes the application output configuration. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>. </p>
     pub fn set_output_descriptions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OutputDescription>>) -> Self {
         self.output_descriptions = input;
         self
     }
-    /// <p>Describes the application output configuration. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>.</p>
+    /// <p>Describes the application output configuration. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>. </p>
     pub fn get_output_descriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputDescription>> {
         &self.output_descriptions
     }
@@ -248,14 +248,14 @@ impl ApplicationDetailBuilder {
     ///
     /// To override the contents of this collection use [`set_reference_data_source_descriptions`](Self::set_reference_data_source_descriptions).
     ///
-    /// <p>Describes reference data sources configured for the application. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a>.</p>
+    /// <p>Describes reference data sources configured for the application. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a>. </p>
     pub fn reference_data_source_descriptions(mut self, input: crate::types::ReferenceDataSourceDescription) -> Self {
         let mut v = self.reference_data_source_descriptions.unwrap_or_default();
         v.push(input);
         self.reference_data_source_descriptions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Describes reference data sources configured for the application. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a>.</p>
+    /// <p>Describes reference data sources configured for the application. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a>. </p>
     pub fn set_reference_data_source_descriptions(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceDataSourceDescription>>,
@@ -263,7 +263,7 @@ impl ApplicationDetailBuilder {
         self.reference_data_source_descriptions = input;
         self
     }
-    /// <p>Describes reference data sources configured for the application. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a>.</p>
+    /// <p>Describes reference data sources configured for the application. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a>. </p>
     pub fn get_reference_data_source_descriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReferenceDataSourceDescription>> {
         &self.reference_data_source_descriptions
     }
@@ -271,14 +271,14 @@ impl ApplicationDetailBuilder {
     ///
     /// To override the contents of this collection use [`set_cloud_watch_logging_option_descriptions`](Self::set_cloud_watch_logging_option_descriptions).
     ///
-    /// <p>Describes the CloudWatch log streams that are configured to receive application messages. For more information about using CloudWatch log streams with Amazon Kinesis Analytics applications, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon CloudWatch Logs</a>.</p>
+    /// <p>Describes the CloudWatch log streams that are configured to receive application messages. For more information about using CloudWatch log streams with Amazon Kinesis Analytics applications, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon CloudWatch Logs</a>. </p>
     pub fn cloud_watch_logging_option_descriptions(mut self, input: crate::types::CloudWatchLoggingOptionDescription) -> Self {
         let mut v = self.cloud_watch_logging_option_descriptions.unwrap_or_default();
         v.push(input);
         self.cloud_watch_logging_option_descriptions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Describes the CloudWatch log streams that are configured to receive application messages. For more information about using CloudWatch log streams with Amazon Kinesis Analytics applications, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon CloudWatch Logs</a>.</p>
+    /// <p>Describes the CloudWatch log streams that are configured to receive application messages. For more information about using CloudWatch log streams with Amazon Kinesis Analytics applications, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon CloudWatch Logs</a>. </p>
     pub fn set_cloud_watch_logging_option_descriptions(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOptionDescription>>,
@@ -286,7 +286,7 @@ impl ApplicationDetailBuilder {
         self.cloud_watch_logging_option_descriptions = input;
         self
     }
-    /// <p>Describes the CloudWatch log streams that are configured to receive application messages. For more information about using CloudWatch log streams with Amazon Kinesis Analytics applications, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon CloudWatch Logs</a>.</p>
+    /// <p>Describes the CloudWatch log streams that are configured to receive application messages. For more information about using CloudWatch log streams with Amazon Kinesis Analytics applications, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon CloudWatch Logs</a>. </p>
     pub fn get_cloud_watch_logging_option_descriptions(
         &self,
     ) -> &::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOptionDescription>> {

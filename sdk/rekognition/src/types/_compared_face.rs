@@ -12,11 +12,11 @@ pub struct ComparedFace {
     pub landmarks: ::std::option::Option<::std::vec::Vec<crate::types::Landmark>>,
     /// <p>Indicates the pose of the face as determined by its pitch, roll, and yaw.</p>
     pub pose: ::std::option::Option<crate::types::Pose>,
-    /// <p>Identifies face image brightness and sharpness.</p>
+    /// <p>Identifies face image brightness and sharpness. </p>
     pub quality: ::std::option::Option<crate::types::ImageQuality>,
-    /// <p>The emotions that appear to be expressed on the face, and the confidence level in the determination. Valid values include "Happy", "Sad", "Angry", "Confused", "Disgusted", "Surprised", "Calm", "Unknown", and "Fear".</p>
+    /// <p> The emotions that appear to be expressed on the face, and the confidence level in the determination. Valid values include "Happy", "Sad", "Angry", "Confused", "Disgusted", "Surprised", "Calm", "Unknown", and "Fear". </p>
     pub emotions: ::std::option::Option<::std::vec::Vec<crate::types::Emotion>>,
-    /// <p>Indicates whether or not the face is smiling, and the confidence level in the determination.</p>
+    /// <p> Indicates whether or not the face is smiling, and the confidence level in the determination. </p>
     pub smile: ::std::option::Option<crate::types::Smile>,
 }
 impl ComparedFace {
@@ -38,17 +38,17 @@ impl ComparedFace {
     pub fn pose(&self) -> ::std::option::Option<&crate::types::Pose> {
         self.pose.as_ref()
     }
-    /// <p>Identifies face image brightness and sharpness.</p>
+    /// <p>Identifies face image brightness and sharpness. </p>
     pub fn quality(&self) -> ::std::option::Option<&crate::types::ImageQuality> {
         self.quality.as_ref()
     }
-    /// <p>The emotions that appear to be expressed on the face, and the confidence level in the determination. Valid values include "Happy", "Sad", "Angry", "Confused", "Disgusted", "Surprised", "Calm", "Unknown", and "Fear".</p>
+    /// <p> The emotions that appear to be expressed on the face, and the confidence level in the determination. Valid values include "Happy", "Sad", "Angry", "Confused", "Disgusted", "Surprised", "Calm", "Unknown", and "Fear". </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.emotions.is_none()`.
     pub fn emotions(&self) -> &[crate::types::Emotion] {
         self.emotions.as_deref().unwrap_or_default()
     }
-    /// <p>Indicates whether or not the face is smiling, and the confidence level in the determination.</p>
+    /// <p> Indicates whether or not the face is smiling, and the confidence level in the determination. </p>
     pub fn smile(&self) -> ::std::option::Option<&crate::types::Smile> {
         self.smile.as_ref()
     }
@@ -135,17 +135,17 @@ impl ComparedFaceBuilder {
     pub fn get_pose(&self) -> &::std::option::Option<crate::types::Pose> {
         &self.pose
     }
-    /// <p>Identifies face image brightness and sharpness.</p>
+    /// <p>Identifies face image brightness and sharpness. </p>
     pub fn quality(mut self, input: crate::types::ImageQuality) -> Self {
         self.quality = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Identifies face image brightness and sharpness.</p>
+    /// <p>Identifies face image brightness and sharpness. </p>
     pub fn set_quality(mut self, input: ::std::option::Option<crate::types::ImageQuality>) -> Self {
         self.quality = input;
         self
     }
-    /// <p>Identifies face image brightness and sharpness.</p>
+    /// <p>Identifies face image brightness and sharpness. </p>
     pub fn get_quality(&self) -> &::std::option::Option<crate::types::ImageQuality> {
         &self.quality
     }
@@ -153,33 +153,33 @@ impl ComparedFaceBuilder {
     ///
     /// To override the contents of this collection use [`set_emotions`](Self::set_emotions).
     ///
-    /// <p>The emotions that appear to be expressed on the face, and the confidence level in the determination. Valid values include "Happy", "Sad", "Angry", "Confused", "Disgusted", "Surprised", "Calm", "Unknown", and "Fear".</p>
+    /// <p> The emotions that appear to be expressed on the face, and the confidence level in the determination. Valid values include "Happy", "Sad", "Angry", "Confused", "Disgusted", "Surprised", "Calm", "Unknown", and "Fear". </p>
     pub fn emotions(mut self, input: crate::types::Emotion) -> Self {
         let mut v = self.emotions.unwrap_or_default();
         v.push(input);
         self.emotions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The emotions that appear to be expressed on the face, and the confidence level in the determination. Valid values include "Happy", "Sad", "Angry", "Confused", "Disgusted", "Surprised", "Calm", "Unknown", and "Fear".</p>
+    /// <p> The emotions that appear to be expressed on the face, and the confidence level in the determination. Valid values include "Happy", "Sad", "Angry", "Confused", "Disgusted", "Surprised", "Calm", "Unknown", and "Fear". </p>
     pub fn set_emotions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Emotion>>) -> Self {
         self.emotions = input;
         self
     }
-    /// <p>The emotions that appear to be expressed on the face, and the confidence level in the determination. Valid values include "Happy", "Sad", "Angry", "Confused", "Disgusted", "Surprised", "Calm", "Unknown", and "Fear".</p>
+    /// <p> The emotions that appear to be expressed on the face, and the confidence level in the determination. Valid values include "Happy", "Sad", "Angry", "Confused", "Disgusted", "Surprised", "Calm", "Unknown", and "Fear". </p>
     pub fn get_emotions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Emotion>> {
         &self.emotions
     }
-    /// <p>Indicates whether or not the face is smiling, and the confidence level in the determination.</p>
+    /// <p> Indicates whether or not the face is smiling, and the confidence level in the determination. </p>
     pub fn smile(mut self, input: crate::types::Smile) -> Self {
         self.smile = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether or not the face is smiling, and the confidence level in the determination.</p>
+    /// <p> Indicates whether or not the face is smiling, and the confidence level in the determination. </p>
     pub fn set_smile(mut self, input: ::std::option::Option<crate::types::Smile>) -> Self {
         self.smile = input;
         self
     }
-    /// <p>Indicates whether or not the face is smiling, and the confidence level in the determination.</p>
+    /// <p> Indicates whether or not the face is smiling, and the confidence level in the determination. </p>
     pub fn get_smile(&self) -> &::std::option::Option<crate::types::Smile> {
         &self.smile
     }

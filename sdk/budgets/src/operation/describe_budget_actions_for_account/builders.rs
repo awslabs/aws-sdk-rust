@@ -22,7 +22,7 @@ impl DescribeBudgetActionsForAccountInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeBudgetActionsForAccount`.
 ///
-/// <p>Describes all of the budget actions for an account.</p>
+/// <p> Describes all of the budget actions for an account. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeBudgetActionsForAccountFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -128,31 +128,31 @@ impl DescribeBudgetActionsForAccountFluentBuilder {
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_account_id()
     }
-    /// <p>An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
+    /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
+    /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
+    /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p>A generic string.</p>
+    /// <p> A generic string.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>A generic string.</p>
+    /// <p> A generic string.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>A generic string.</p>
+    /// <p> A generic string.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

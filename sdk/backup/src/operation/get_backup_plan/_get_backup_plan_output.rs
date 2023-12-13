@@ -11,7 +11,7 @@ pub struct GetBackupPlanOutput {
     pub backup_plan_arn: ::std::option::Option<::std::string::String>,
     /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version IDs cannot be edited.</p>
     pub version_id: ::std::option::Option<::std::string::String>,
-    /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice.</p>
+    /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice. </p>
     pub creator_request_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that a backup plan is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -40,7 +40,7 @@ impl GetBackupPlanOutput {
     pub fn version_id(&self) -> ::std::option::Option<&str> {
         self.version_id.as_deref()
     }
-    /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice.</p>
+    /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice. </p>
     pub fn creator_request_id(&self) -> ::std::option::Option<&str> {
         self.creator_request_id.as_deref()
     }
@@ -147,17 +147,17 @@ impl GetBackupPlanOutputBuilder {
     pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.version_id
     }
-    /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice.</p>
+    /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice. </p>
     pub fn creator_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creator_request_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice.</p>
+    /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice. </p>
     pub fn set_creator_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creator_request_id = input;
         self
     }
-    /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice.</p>
+    /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice. </p>
     pub fn get_creator_request_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.creator_request_id
     }

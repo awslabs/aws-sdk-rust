@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum Error {
-    /// <p>User does not have permissions to perform this action.</p>
+    /// <p> User does not have permissions to perform this action. </p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>The request is not understood by the server.</p>
     BadRequestException(crate::types::error::BadRequestException),

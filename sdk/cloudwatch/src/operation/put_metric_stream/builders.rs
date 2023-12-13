@@ -27,14 +27,11 @@ impl PutMetricStreamInputBuilder {
 /// <p>To create a metric stream, you must be signed in to an account that has the <code>iam:PassRole</code> permission and either the <code>CloudWatchFullAccess</code> policy or the <code>cloudwatch:PutMetricStream</code> permission.</p>
 /// <p>When you create or update a metric stream, you choose one of the following:</p>
 /// <ul>
-/// <li>
-/// <p>Stream metrics from all metric namespaces in the account.</p></li>
-/// <li>
-/// <p>Stream metrics from all metric namespaces in the account, except for the namespaces that you list in <code>ExcludeFilters</code>.</p></li>
-/// <li>
-/// <p>Stream metrics from only the metric namespaces that you list in <code>IncludeFilters</code>.</p></li>
+/// <li> <p>Stream metrics from all metric namespaces in the account.</p> </li>
+/// <li> <p>Stream metrics from all metric namespaces in the account, except for the namespaces that you list in <code>ExcludeFilters</code>.</p> </li>
+/// <li> <p>Stream metrics from only the metric namespaces that you list in <code>IncludeFilters</code>.</p> </li>
 /// </ul>
-/// <p>By default, a metric stream always sends the <code>MAX</code>, <code>MIN</code>, <code>SUM</code>, and <code>SAMPLECOUNT</code> statistics for each metric that is streamed. You can use the <code>StatisticsConfigurations</code> parameter to have the metric stream send additional statistics in the stream. Streaming additional statistics incurs additional costs. For more information, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.</p>
+/// <p>By default, a metric stream always sends the <code>MAX</code>, <code>MIN</code>, <code>SUM</code>, and <code>SAMPLECOUNT</code> statistics for each metric that is streamed. You can use the <code>StatisticsConfigurations</code> parameter to have the metric stream send additional statistics in the stream. Streaming additional statistics incurs additional costs. For more information, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>. </p>
 /// <p>When you use <code>PutMetricStream</code> to create a new metric stream, the stream is created in the <code>running</code> state. If you use it to update an existing stream, the state of the stream is not changed.</p>
 /// <p>If you are using CloudWatch cross-account observability and you create a metric stream in a monitoring account, you can choose whether to include metrics from source accounts in the stream. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch cross-account observability</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -200,10 +197,8 @@ impl PutMetricStreamFluentBuilder {
     }
     /// <p>The ARN of an IAM role that this metric stream will use to access Amazon Kinesis Data Firehose resources. This IAM role must already exist and must be in the same account as the metric stream. This IAM role must include the following permissions:</p>
     /// <ul>
-    /// <li>
-    /// <p>firehose:PutRecord</p></li>
-    /// <li>
-    /// <p>firehose:PutRecordBatch</p></li>
+    /// <li> <p>firehose:PutRecord</p> </li>
+    /// <li> <p>firehose:PutRecordBatch</p> </li>
     /// </ul>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
@@ -211,10 +206,8 @@ impl PutMetricStreamFluentBuilder {
     }
     /// <p>The ARN of an IAM role that this metric stream will use to access Amazon Kinesis Data Firehose resources. This IAM role must already exist and must be in the same account as the metric stream. This IAM role must include the following permissions:</p>
     /// <ul>
-    /// <li>
-    /// <p>firehose:PutRecord</p></li>
-    /// <li>
-    /// <p>firehose:PutRecordBatch</p></li>
+    /// <li> <p>firehose:PutRecord</p> </li>
+    /// <li> <p>firehose:PutRecordBatch</p> </li>
     /// </ul>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
@@ -222,10 +215,8 @@ impl PutMetricStreamFluentBuilder {
     }
     /// <p>The ARN of an IAM role that this metric stream will use to access Amazon Kinesis Data Firehose resources. This IAM role must already exist and must be in the same account as the metric stream. This IAM role must include the following permissions:</p>
     /// <ul>
-    /// <li>
-    /// <p>firehose:PutRecord</p></li>
-    /// <li>
-    /// <p>firehose:PutRecordBatch</p></li>
+    /// <li> <p>firehose:PutRecord</p> </li>
+    /// <li> <p>firehose:PutRecordBatch</p> </li>
     /// </ul>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_role_arn()

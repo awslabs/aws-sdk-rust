@@ -23,7 +23,7 @@ pub struct CreateSchemaOutput {
     pub latest_schema_version: ::std::option::Option<i64>,
     /// <p>The next version of the schema associated with the returned schema definition.</p>
     pub next_schema_version: ::std::option::Option<i64>,
-    /// <p>The status of the schema.</p>
+    /// <p>The status of the schema. </p>
     pub schema_status: ::std::option::Option<crate::types::SchemaStatus>,
     /// <p>The tags for the schema.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -74,7 +74,7 @@ impl CreateSchemaOutput {
     pub fn next_schema_version(&self) -> ::std::option::Option<i64> {
         self.next_schema_version
     }
-    /// <p>The status of the schema.</p>
+    /// <p>The status of the schema. </p>
     pub fn schema_status(&self) -> ::std::option::Option<&crate::types::SchemaStatus> {
         self.schema_status.as_ref()
     }
@@ -264,17 +264,17 @@ impl CreateSchemaOutputBuilder {
     pub fn get_next_schema_version(&self) -> &::std::option::Option<i64> {
         &self.next_schema_version
     }
-    /// <p>The status of the schema.</p>
+    /// <p>The status of the schema. </p>
     pub fn schema_status(mut self, input: crate::types::SchemaStatus) -> Self {
         self.schema_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the schema.</p>
+    /// <p>The status of the schema. </p>
     pub fn set_schema_status(mut self, input: ::std::option::Option<crate::types::SchemaStatus>) -> Self {
         self.schema_status = input;
         self
     }
-    /// <p>The status of the schema.</p>
+    /// <p>The status of the schema. </p>
     pub fn get_schema_status(&self) -> &::std::option::Option<crate::types::SchemaStatus> {
         &self.schema_status
     }

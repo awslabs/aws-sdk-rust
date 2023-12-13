@@ -30,7 +30,7 @@ pub struct Address {
     pub customer_owned_ip: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the customer-owned address pool.</p>
     pub customer_owned_ipv4_pool: ::std::option::Option<::std::string::String>,
-    /// <p>The carrier IP address associated. This option is only available for network interfaces which reside in a subnet in a Wavelength Zone (for example an EC2 instance).</p>
+    /// <p>The carrier IP address associated. This option is only available for network interfaces which reside in a subnet in a Wavelength Zone (for example an EC2 instance). </p>
     pub carrier_ip: ::std::option::Option<::std::string::String>,
 }
 impl Address {
@@ -88,7 +88,7 @@ impl Address {
     pub fn customer_owned_ipv4_pool(&self) -> ::std::option::Option<&str> {
         self.customer_owned_ipv4_pool.as_deref()
     }
-    /// <p>The carrier IP address associated. This option is only available for network interfaces which reside in a subnet in a Wavelength Zone (for example an EC2 instance).</p>
+    /// <p>The carrier IP address associated. This option is only available for network interfaces which reside in a subnet in a Wavelength Zone (for example an EC2 instance). </p>
     pub fn carrier_ip(&self) -> ::std::option::Option<&str> {
         self.carrier_ip.as_deref()
     }
@@ -308,17 +308,17 @@ impl AddressBuilder {
     pub fn get_customer_owned_ipv4_pool(&self) -> &::std::option::Option<::std::string::String> {
         &self.customer_owned_ipv4_pool
     }
-    /// <p>The carrier IP address associated. This option is only available for network interfaces which reside in a subnet in a Wavelength Zone (for example an EC2 instance).</p>
+    /// <p>The carrier IP address associated. This option is only available for network interfaces which reside in a subnet in a Wavelength Zone (for example an EC2 instance). </p>
     pub fn carrier_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.carrier_ip = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The carrier IP address associated. This option is only available for network interfaces which reside in a subnet in a Wavelength Zone (for example an EC2 instance).</p>
+    /// <p>The carrier IP address associated. This option is only available for network interfaces which reside in a subnet in a Wavelength Zone (for example an EC2 instance). </p>
     pub fn set_carrier_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.carrier_ip = input;
         self
     }
-    /// <p>The carrier IP address associated. This option is only available for network interfaces which reside in a subnet in a Wavelength Zone (for example an EC2 instance).</p>
+    /// <p>The carrier IP address associated. This option is only available for network interfaces which reside in a subnet in a Wavelength Zone (for example an EC2 instance). </p>
     pub fn get_carrier_ip(&self) -> &::std::option::Option<::std::string::String> {
         &self.carrier_ip
     }

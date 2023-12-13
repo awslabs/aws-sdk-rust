@@ -242,9 +242,9 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateGlobalC
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreateGlobalClusterError {
-    /// <p><code>DBClusterIdentifier</code> doesn't refer to an existing cluster.</p>
+    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing cluster. </p>
     DbClusterNotFoundFault(crate::types::error::DbClusterNotFoundFault),
-    /// <p>The <code>GlobalClusterIdentifier</code> already exists. Choose a new global cluster identifier (unique name) to create a new global cluster.</p>
+    /// <p>The <code>GlobalClusterIdentifier</code> already exists. Choose a new global cluster identifier (unique name) to create a new global cluster. </p>
     GlobalClusterAlreadyExistsFault(crate::types::error::GlobalClusterAlreadyExistsFault),
     /// <p>The number of global clusters for this account is already at the maximum allowed.</p>
     GlobalClusterQuotaExceededFault(crate::types::error::GlobalClusterQuotaExceededFault),

@@ -22,10 +22,10 @@ impl SearchFacesInputBuilder {
 }
 /// Fluent builder constructing a request to `SearchFaces`.
 ///
-/// <p>For a given input face ID, searches for matching faces in the collection the face belongs to. You get a face ID when you add a face to the collection using the <code>IndexFaces</code> operation. The operation compares the features of the input face with faces in the specified collection.</p><note>
+/// <p>For a given input face ID, searches for matching faces in the collection the face belongs to. You get a face ID when you add a face to the collection using the <code>IndexFaces</code> operation. The operation compares the features of the input face with faces in the specified collection. </p> <note>
 /// <p>You can also search faces without indexing faces by using the <code>SearchFacesByImage</code> operation.</p>
 /// </note>
-/// <p>The operation response returns an array of faces that match, ordered by similarity score with the highest similarity first. More specifically, it is an array of metadata for each face match that is found. Along with the metadata, the response also includes a <code>confidence</code> value for each face match, indicating the confidence that the specific face matches the input face.</p>
+/// <p> The operation response returns an array of faces that match, ordered by similarity score with the highest similarity first. More specifically, it is an array of metadata for each face match that is found. Along with the metadata, the response also includes a <code>confidence</code> value for each face match, indicating the confidence that the specific face matches the input face. </p>
 /// <p>For an example, see Searching for a face using its face ID in the Amazon Rekognition Developer Guide.</p>
 /// <p>This operation requires permissions to perform the <code>rekognition:SearchFaces</code> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -155,17 +155,17 @@ impl SearchFacesFluentBuilder {
     pub fn get_max_faces(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_faces()
     }
-    /// <p>Optional value specifying the minimum confidence in the face match to return. For example, don't return any matches where confidence in matches is less than 70%. The default value is 80%.</p>
+    /// <p>Optional value specifying the minimum confidence in the face match to return. For example, don't return any matches where confidence in matches is less than 70%. The default value is 80%. </p>
     pub fn face_match_threshold(mut self, input: f32) -> Self {
         self.inner = self.inner.face_match_threshold(input);
         self
     }
-    /// <p>Optional value specifying the minimum confidence in the face match to return. For example, don't return any matches where confidence in matches is less than 70%. The default value is 80%.</p>
+    /// <p>Optional value specifying the minimum confidence in the face match to return. For example, don't return any matches where confidence in matches is less than 70%. The default value is 80%. </p>
     pub fn set_face_match_threshold(mut self, input: ::std::option::Option<f32>) -> Self {
         self.inner = self.inner.set_face_match_threshold(input);
         self
     }
-    /// <p>Optional value specifying the minimum confidence in the face match to return. For example, don't return any matches where confidence in matches is less than 70%. The default value is 80%.</p>
+    /// <p>Optional value specifying the minimum confidence in the face match to return. For example, don't return any matches where confidence in matches is less than 70%. The default value is 80%. </p>
     pub fn get_face_match_threshold(&self) -> &::std::option::Option<f32> {
         self.inner.get_face_match_threshold()
     }

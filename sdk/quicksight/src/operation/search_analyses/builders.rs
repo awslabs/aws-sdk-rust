@@ -22,7 +22,7 @@ impl SearchAnalysesInputBuilder {
 }
 /// Fluent builder constructing a request to `SearchAnalyses`.
 ///
-/// <p>Searches for analyses that belong to the user specified in the filter.</p><note>
+/// <p>Searches for analyses that belong to the user specified in the filter.</p> <note>
 /// <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -134,17 +134,17 @@ impl SearchAnalysesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>The structure for the search filters that you want to apply to your search.</p>
+    /// <p>The structure for the search filters that you want to apply to your search. </p>
     pub fn filters(mut self, input: crate::types::AnalysisSearchFilter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>The structure for the search filters that you want to apply to your search.</p>
+    /// <p>The structure for the search filters that you want to apply to your search. </p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisSearchFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
-    /// <p>The structure for the search filters that you want to apply to your search.</p>
+    /// <p>The structure for the search filters that you want to apply to your search. </p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalysisSearchFilter>> {
         self.inner.get_filters()
     }

@@ -14,10 +14,8 @@ pub struct Principal {
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates the relationship between the Amazon Web Services account the principal belongs to and the account that owns the resource share:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>True</code> – The two accounts belong to same organization.</p></li>
-    /// <li>
-    /// <p><code>False</code> – The two accounts do not belong to the same organization.</p></li>
+    /// <li> <p> <code>True</code> – The two accounts belong to same organization.</p> </li>
+    /// <li> <p> <code>False</code> – The two accounts do not belong to the same organization.</p> </li>
     /// </ul>
     pub external: ::std::option::Option<bool>,
 }
@@ -40,10 +38,8 @@ impl Principal {
     }
     /// <p>Indicates the relationship between the Amazon Web Services account the principal belongs to and the account that owns the resource share:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>True</code> – The two accounts belong to same organization.</p></li>
-    /// <li>
-    /// <p><code>False</code> – The two accounts do not belong to the same organization.</p></li>
+    /// <li> <p> <code>True</code> – The two accounts belong to same organization.</p> </li>
+    /// <li> <p> <code>False</code> – The two accounts do not belong to the same organization.</p> </li>
     /// </ul>
     pub fn external(&self) -> ::std::option::Option<bool> {
         self.external
@@ -125,10 +121,8 @@ impl PrincipalBuilder {
     }
     /// <p>Indicates the relationship between the Amazon Web Services account the principal belongs to and the account that owns the resource share:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>True</code> – The two accounts belong to same organization.</p></li>
-    /// <li>
-    /// <p><code>False</code> – The two accounts do not belong to the same organization.</p></li>
+    /// <li> <p> <code>True</code> – The two accounts belong to same organization.</p> </li>
+    /// <li> <p> <code>False</code> – The two accounts do not belong to the same organization.</p> </li>
     /// </ul>
     pub fn external(mut self, input: bool) -> Self {
         self.external = ::std::option::Option::Some(input);
@@ -136,10 +130,8 @@ impl PrincipalBuilder {
     }
     /// <p>Indicates the relationship between the Amazon Web Services account the principal belongs to and the account that owns the resource share:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>True</code> – The two accounts belong to same organization.</p></li>
-    /// <li>
-    /// <p><code>False</code> – The two accounts do not belong to the same organization.</p></li>
+    /// <li> <p> <code>True</code> – The two accounts belong to same organization.</p> </li>
+    /// <li> <p> <code>False</code> – The two accounts do not belong to the same organization.</p> </li>
     /// </ul>
     pub fn set_external(mut self, input: ::std::option::Option<bool>) -> Self {
         self.external = input;
@@ -147,10 +139,8 @@ impl PrincipalBuilder {
     }
     /// <p>Indicates the relationship between the Amazon Web Services account the principal belongs to and the account that owns the resource share:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>True</code> – The two accounts belong to same organization.</p></li>
-    /// <li>
-    /// <p><code>False</code> – The two accounts do not belong to the same organization.</p></li>
+    /// <li> <p> <code>True</code> – The two accounts belong to same organization.</p> </li>
+    /// <li> <p> <code>False</code> – The two accounts do not belong to the same organization.</p> </li>
     /// </ul>
     pub fn get_external(&self) -> &::std::option::Option<bool> {
         &self.external

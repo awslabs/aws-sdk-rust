@@ -108,23 +108,23 @@ impl ModifyDBSubnetGroupFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name for the subnet group. This value is stored as a lowercase string. You can't modify the default subnet group.</p>
+    /// <p>The name for the subnet group. This value is stored as a lowercase string. You can't modify the default subnet group. </p>
     /// <p>Constraints: Must match the name of an existing <code>DBSubnetGroup</code>. Must not be default.</p>
-    /// <p>Example: <code>mySubnetgroup</code></p>
+    /// <p>Example: <code>mySubnetgroup</code> </p>
     pub fn db_subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_subnet_group_name(input.into());
         self
     }
-    /// <p>The name for the subnet group. This value is stored as a lowercase string. You can't modify the default subnet group.</p>
+    /// <p>The name for the subnet group. This value is stored as a lowercase string. You can't modify the default subnet group. </p>
     /// <p>Constraints: Must match the name of an existing <code>DBSubnetGroup</code>. Must not be default.</p>
-    /// <p>Example: <code>mySubnetgroup</code></p>
+    /// <p>Example: <code>mySubnetgroup</code> </p>
     pub fn set_db_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_subnet_group_name(input);
         self
     }
-    /// <p>The name for the subnet group. This value is stored as a lowercase string. You can't modify the default subnet group.</p>
+    /// <p>The name for the subnet group. This value is stored as a lowercase string. You can't modify the default subnet group. </p>
     /// <p>Constraints: Must match the name of an existing <code>DBSubnetGroup</code>. Must not be default.</p>
-    /// <p>Example: <code>mySubnetgroup</code></p>
+    /// <p>Example: <code>mySubnetgroup</code> </p>
     pub fn get_db_subnet_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_subnet_group_name()
     }

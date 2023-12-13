@@ -14,20 +14,13 @@ pub struct FileSystem {
     pub file_system_type: ::std::option::Option<crate::types::FileSystemType>,
     /// <p>The lifecycle status of the file system. The following are the possible values and what they mean:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AVAILABLE</code> - The file system is in a healthy state, and is reachable and available for use.</p></li>
-    /// <li>
-    /// <p><code>CREATING</code> - Amazon FSx is creating the new file system.</p></li>
-    /// <li>
-    /// <p><code>DELETING</code> - Amazon FSx is deleting an existing file system.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - An existing file system has experienced an unrecoverable failure. When creating a new file system, Amazon FSx was unable to create the file system.</p></li>
-    /// <li>
-    /// <p><code>MISCONFIGURED</code> - The file system is in a failed but recoverable state.</p></li>
-    /// <li>
-    /// <p><code>MISCONFIGURED_UNAVAILABLE</code> - (Amazon FSx for Windows File Server only) The file system is currently unavailable due to a change in your Active Directory configuration.</p></li>
-    /// <li>
-    /// <p><code>UPDATING</code> - The file system is undergoing a customer-initiated update.</p></li>
+    /// <li> <p> <code>AVAILABLE</code> - The file system is in a healthy state, and is reachable and available for use.</p> </li>
+    /// <li> <p> <code>CREATING</code> - Amazon FSx is creating the new file system.</p> </li>
+    /// <li> <p> <code>DELETING</code> - Amazon FSx is deleting an existing file system.</p> </li>
+    /// <li> <p> <code>FAILED</code> - An existing file system has experienced an unrecoverable failure. When creating a new file system, Amazon FSx was unable to create the file system.</p> </li>
+    /// <li> <p> <code>MISCONFIGURED</code> - The file system is in a failed but recoverable state.</p> </li>
+    /// <li> <p> <code>MISCONFIGURED_UNAVAILABLE</code> - (Amazon FSx for Windows File Server only) The file system is currently unavailable due to a change in your Active Directory configuration.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - The file system is undergoing a customer-initiated update.</p> </li>
     /// </ul>
     pub lifecycle: ::std::option::Option<crate::types::FileSystemLifecycle>,
     /// <p>A structure providing details of any failures that occurred.</p>
@@ -35,29 +28,24 @@ pub struct FileSystem {
     /// <p>The storage capacity of the file system in gibibytes (GiB).</p>
     /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) if the value of <code>StorageCapacity</code> is outside of the minimum or maximum values.</p>
     pub storage_capacity: ::std::option::Option<i32>,
-    /// <p>The type of storage the file system is using. If set to <code>SSD</code>, the file system uses solid state drive storage. If set to <code>HDD</code>, the file system uses hard disk drive storage.</p>
+    /// <p>The type of storage the file system is using. If set to <code>SSD</code>, the file system uses solid state drive storage. If set to <code>HDD</code>, the file system uses hard disk drive storage. </p>
     pub storage_type: ::std::option::Option<crate::types::StorageType>,
     /// <p>The ID of the primary virtual private cloud (VPC) for the file system.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the IDs of the subnets that the file system is accessible from. For the Amazon FSx Windows and ONTAP <code>MULTI_AZ_1</code> file system deployment type, there are two subnet IDs, one for the preferred file server and one for the standby file server. The preferred file server subnet identified in the <code>PreferredSubnetID</code> property. All other file systems have only one subnet ID.</p>
     /// <p>For FSx for Lustre file systems, and Single-AZ Windows file systems, this is the ID of the subnet that contains the file system's endpoint. For <code>MULTI_AZ_1</code> Windows and ONTAP file systems, the file system endpoint is available in the <code>PreferredSubnetID</code>.</p>
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The IDs of the elastic network interfaces from which a specific file system is accessible. The elastic network interface is automatically created in the same virtual private cloud (VPC) that the Amazon FSx file system was created in. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic Network Interfaces</a> in the <i>Amazon EC2 User Guide.</i></p>
+    /// <p>The IDs of the elastic network interfaces from which a specific file system is accessible. The elastic network interface is automatically created in the same virtual private cloud (VPC) that the Amazon FSx file system was created in. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic Network Interfaces</a> in the <i>Amazon EC2 User Guide.</i> </p>
     /// <p>For an Amazon FSx for Windows File Server file system, you can have one network interface ID. For an Amazon FSx for Lustre file system, you can have more than one.</p>
     pub network_interface_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Domain Name System (DNS) name for the file system.</p>
     pub dns_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Key Management Service (KMS) key used to encrypt Amazon FSx file system data. Used as follows with Amazon FSx file system types:</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types only.</p>
-    /// <p><code>SCRATCH_1</code> and <code>SCRATCH_2</code> types are encrypted using the Amazon FSx service KMS key for your account.</p></li>
-    /// <li>
-    /// <p>Amazon FSx for NetApp ONTAP</p></li>
-    /// <li>
-    /// <p>Amazon FSx for OpenZFS</p></li>
-    /// <li>
-    /// <p>Amazon FSx for Windows File Server</p></li>
+    /// <li> <p>Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types only.</p> <p> <code>SCRATCH_1</code> and <code>SCRATCH_2</code> types are encrypted using the Amazon FSx service KMS key for your account.</p> </li>
+    /// <li> <p>Amazon FSx for NetApp ONTAP</p> </li>
+    /// <li> <p>Amazon FSx for OpenZFS</p> </li>
+    /// <li> <p>Amazon FSx for Windows File Server</p> </li>
     /// </ul>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the file system resource.</p>
@@ -96,20 +84,13 @@ impl FileSystem {
     }
     /// <p>The lifecycle status of the file system. The following are the possible values and what they mean:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AVAILABLE</code> - The file system is in a healthy state, and is reachable and available for use.</p></li>
-    /// <li>
-    /// <p><code>CREATING</code> - Amazon FSx is creating the new file system.</p></li>
-    /// <li>
-    /// <p><code>DELETING</code> - Amazon FSx is deleting an existing file system.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - An existing file system has experienced an unrecoverable failure. When creating a new file system, Amazon FSx was unable to create the file system.</p></li>
-    /// <li>
-    /// <p><code>MISCONFIGURED</code> - The file system is in a failed but recoverable state.</p></li>
-    /// <li>
-    /// <p><code>MISCONFIGURED_UNAVAILABLE</code> - (Amazon FSx for Windows File Server only) The file system is currently unavailable due to a change in your Active Directory configuration.</p></li>
-    /// <li>
-    /// <p><code>UPDATING</code> - The file system is undergoing a customer-initiated update.</p></li>
+    /// <li> <p> <code>AVAILABLE</code> - The file system is in a healthy state, and is reachable and available for use.</p> </li>
+    /// <li> <p> <code>CREATING</code> - Amazon FSx is creating the new file system.</p> </li>
+    /// <li> <p> <code>DELETING</code> - Amazon FSx is deleting an existing file system.</p> </li>
+    /// <li> <p> <code>FAILED</code> - An existing file system has experienced an unrecoverable failure. When creating a new file system, Amazon FSx was unable to create the file system.</p> </li>
+    /// <li> <p> <code>MISCONFIGURED</code> - The file system is in a failed but recoverable state.</p> </li>
+    /// <li> <p> <code>MISCONFIGURED_UNAVAILABLE</code> - (Amazon FSx for Windows File Server only) The file system is currently unavailable due to a change in your Active Directory configuration.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - The file system is undergoing a customer-initiated update.</p> </li>
     /// </ul>
     pub fn lifecycle(&self) -> ::std::option::Option<&crate::types::FileSystemLifecycle> {
         self.lifecycle.as_ref()
@@ -123,7 +104,7 @@ impl FileSystem {
     pub fn storage_capacity(&self) -> ::std::option::Option<i32> {
         self.storage_capacity
     }
-    /// <p>The type of storage the file system is using. If set to <code>SSD</code>, the file system uses solid state drive storage. If set to <code>HDD</code>, the file system uses hard disk drive storage.</p>
+    /// <p>The type of storage the file system is using. If set to <code>SSD</code>, the file system uses solid state drive storage. If set to <code>HDD</code>, the file system uses hard disk drive storage. </p>
     pub fn storage_type(&self) -> ::std::option::Option<&crate::types::StorageType> {
         self.storage_type.as_ref()
     }
@@ -138,7 +119,7 @@ impl FileSystem {
     pub fn subnet_ids(&self) -> &[::std::string::String] {
         self.subnet_ids.as_deref().unwrap_or_default()
     }
-    /// <p>The IDs of the elastic network interfaces from which a specific file system is accessible. The elastic network interface is automatically created in the same virtual private cloud (VPC) that the Amazon FSx file system was created in. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic Network Interfaces</a> in the <i>Amazon EC2 User Guide.</i></p>
+    /// <p>The IDs of the elastic network interfaces from which a specific file system is accessible. The elastic network interface is automatically created in the same virtual private cloud (VPC) that the Amazon FSx file system was created in. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic Network Interfaces</a> in the <i>Amazon EC2 User Guide.</i> </p>
     /// <p>For an Amazon FSx for Windows File Server file system, you can have one network interface ID. For an Amazon FSx for Lustre file system, you can have more than one.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_interface_ids.is_none()`.
@@ -151,15 +132,10 @@ impl FileSystem {
     }
     /// <p>The ID of the Key Management Service (KMS) key used to encrypt Amazon FSx file system data. Used as follows with Amazon FSx file system types:</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types only.</p>
-    /// <p><code>SCRATCH_1</code> and <code>SCRATCH_2</code> types are encrypted using the Amazon FSx service KMS key for your account.</p></li>
-    /// <li>
-    /// <p>Amazon FSx for NetApp ONTAP</p></li>
-    /// <li>
-    /// <p>Amazon FSx for OpenZFS</p></li>
-    /// <li>
-    /// <p>Amazon FSx for Windows File Server</p></li>
+    /// <li> <p>Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types only.</p> <p> <code>SCRATCH_1</code> and <code>SCRATCH_2</code> types are encrypted using the Amazon FSx service KMS key for your account.</p> </li>
+    /// <li> <p>Amazon FSx for NetApp ONTAP</p> </li>
+    /// <li> <p>Amazon FSx for OpenZFS</p> </li>
+    /// <li> <p>Amazon FSx for Windows File Server</p> </li>
     /// </ul>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
@@ -293,20 +269,13 @@ impl FileSystemBuilder {
     }
     /// <p>The lifecycle status of the file system. The following are the possible values and what they mean:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AVAILABLE</code> - The file system is in a healthy state, and is reachable and available for use.</p></li>
-    /// <li>
-    /// <p><code>CREATING</code> - Amazon FSx is creating the new file system.</p></li>
-    /// <li>
-    /// <p><code>DELETING</code> - Amazon FSx is deleting an existing file system.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - An existing file system has experienced an unrecoverable failure. When creating a new file system, Amazon FSx was unable to create the file system.</p></li>
-    /// <li>
-    /// <p><code>MISCONFIGURED</code> - The file system is in a failed but recoverable state.</p></li>
-    /// <li>
-    /// <p><code>MISCONFIGURED_UNAVAILABLE</code> - (Amazon FSx for Windows File Server only) The file system is currently unavailable due to a change in your Active Directory configuration.</p></li>
-    /// <li>
-    /// <p><code>UPDATING</code> - The file system is undergoing a customer-initiated update.</p></li>
+    /// <li> <p> <code>AVAILABLE</code> - The file system is in a healthy state, and is reachable and available for use.</p> </li>
+    /// <li> <p> <code>CREATING</code> - Amazon FSx is creating the new file system.</p> </li>
+    /// <li> <p> <code>DELETING</code> - Amazon FSx is deleting an existing file system.</p> </li>
+    /// <li> <p> <code>FAILED</code> - An existing file system has experienced an unrecoverable failure. When creating a new file system, Amazon FSx was unable to create the file system.</p> </li>
+    /// <li> <p> <code>MISCONFIGURED</code> - The file system is in a failed but recoverable state.</p> </li>
+    /// <li> <p> <code>MISCONFIGURED_UNAVAILABLE</code> - (Amazon FSx for Windows File Server only) The file system is currently unavailable due to a change in your Active Directory configuration.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - The file system is undergoing a customer-initiated update.</p> </li>
     /// </ul>
     pub fn lifecycle(mut self, input: crate::types::FileSystemLifecycle) -> Self {
         self.lifecycle = ::std::option::Option::Some(input);
@@ -314,20 +283,13 @@ impl FileSystemBuilder {
     }
     /// <p>The lifecycle status of the file system. The following are the possible values and what they mean:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AVAILABLE</code> - The file system is in a healthy state, and is reachable and available for use.</p></li>
-    /// <li>
-    /// <p><code>CREATING</code> - Amazon FSx is creating the new file system.</p></li>
-    /// <li>
-    /// <p><code>DELETING</code> - Amazon FSx is deleting an existing file system.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - An existing file system has experienced an unrecoverable failure. When creating a new file system, Amazon FSx was unable to create the file system.</p></li>
-    /// <li>
-    /// <p><code>MISCONFIGURED</code> - The file system is in a failed but recoverable state.</p></li>
-    /// <li>
-    /// <p><code>MISCONFIGURED_UNAVAILABLE</code> - (Amazon FSx for Windows File Server only) The file system is currently unavailable due to a change in your Active Directory configuration.</p></li>
-    /// <li>
-    /// <p><code>UPDATING</code> - The file system is undergoing a customer-initiated update.</p></li>
+    /// <li> <p> <code>AVAILABLE</code> - The file system is in a healthy state, and is reachable and available for use.</p> </li>
+    /// <li> <p> <code>CREATING</code> - Amazon FSx is creating the new file system.</p> </li>
+    /// <li> <p> <code>DELETING</code> - Amazon FSx is deleting an existing file system.</p> </li>
+    /// <li> <p> <code>FAILED</code> - An existing file system has experienced an unrecoverable failure. When creating a new file system, Amazon FSx was unable to create the file system.</p> </li>
+    /// <li> <p> <code>MISCONFIGURED</code> - The file system is in a failed but recoverable state.</p> </li>
+    /// <li> <p> <code>MISCONFIGURED_UNAVAILABLE</code> - (Amazon FSx for Windows File Server only) The file system is currently unavailable due to a change in your Active Directory configuration.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - The file system is undergoing a customer-initiated update.</p> </li>
     /// </ul>
     pub fn set_lifecycle(mut self, input: ::std::option::Option<crate::types::FileSystemLifecycle>) -> Self {
         self.lifecycle = input;
@@ -335,20 +297,13 @@ impl FileSystemBuilder {
     }
     /// <p>The lifecycle status of the file system. The following are the possible values and what they mean:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AVAILABLE</code> - The file system is in a healthy state, and is reachable and available for use.</p></li>
-    /// <li>
-    /// <p><code>CREATING</code> - Amazon FSx is creating the new file system.</p></li>
-    /// <li>
-    /// <p><code>DELETING</code> - Amazon FSx is deleting an existing file system.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - An existing file system has experienced an unrecoverable failure. When creating a new file system, Amazon FSx was unable to create the file system.</p></li>
-    /// <li>
-    /// <p><code>MISCONFIGURED</code> - The file system is in a failed but recoverable state.</p></li>
-    /// <li>
-    /// <p><code>MISCONFIGURED_UNAVAILABLE</code> - (Amazon FSx for Windows File Server only) The file system is currently unavailable due to a change in your Active Directory configuration.</p></li>
-    /// <li>
-    /// <p><code>UPDATING</code> - The file system is undergoing a customer-initiated update.</p></li>
+    /// <li> <p> <code>AVAILABLE</code> - The file system is in a healthy state, and is reachable and available for use.</p> </li>
+    /// <li> <p> <code>CREATING</code> - Amazon FSx is creating the new file system.</p> </li>
+    /// <li> <p> <code>DELETING</code> - Amazon FSx is deleting an existing file system.</p> </li>
+    /// <li> <p> <code>FAILED</code> - An existing file system has experienced an unrecoverable failure. When creating a new file system, Amazon FSx was unable to create the file system.</p> </li>
+    /// <li> <p> <code>MISCONFIGURED</code> - The file system is in a failed but recoverable state.</p> </li>
+    /// <li> <p> <code>MISCONFIGURED_UNAVAILABLE</code> - (Amazon FSx for Windows File Server only) The file system is currently unavailable due to a change in your Active Directory configuration.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - The file system is undergoing a customer-initiated update.</p> </li>
     /// </ul>
     pub fn get_lifecycle(&self) -> &::std::option::Option<crate::types::FileSystemLifecycle> {
         &self.lifecycle
@@ -384,17 +339,17 @@ impl FileSystemBuilder {
     pub fn get_storage_capacity(&self) -> &::std::option::Option<i32> {
         &self.storage_capacity
     }
-    /// <p>The type of storage the file system is using. If set to <code>SSD</code>, the file system uses solid state drive storage. If set to <code>HDD</code>, the file system uses hard disk drive storage.</p>
+    /// <p>The type of storage the file system is using. If set to <code>SSD</code>, the file system uses solid state drive storage. If set to <code>HDD</code>, the file system uses hard disk drive storage. </p>
     pub fn storage_type(mut self, input: crate::types::StorageType) -> Self {
         self.storage_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of storage the file system is using. If set to <code>SSD</code>, the file system uses solid state drive storage. If set to <code>HDD</code>, the file system uses hard disk drive storage.</p>
+    /// <p>The type of storage the file system is using. If set to <code>SSD</code>, the file system uses solid state drive storage. If set to <code>HDD</code>, the file system uses hard disk drive storage. </p>
     pub fn set_storage_type(mut self, input: ::std::option::Option<crate::types::StorageType>) -> Self {
         self.storage_type = input;
         self
     }
-    /// <p>The type of storage the file system is using. If set to <code>SSD</code>, the file system uses solid state drive storage. If set to <code>HDD</code>, the file system uses hard disk drive storage.</p>
+    /// <p>The type of storage the file system is using. If set to <code>SSD</code>, the file system uses solid state drive storage. If set to <code>HDD</code>, the file system uses hard disk drive storage. </p>
     pub fn get_storage_type(&self) -> &::std::option::Option<crate::types::StorageType> {
         &self.storage_type
     }
@@ -439,7 +394,7 @@ impl FileSystemBuilder {
     ///
     /// To override the contents of this collection use [`set_network_interface_ids`](Self::set_network_interface_ids).
     ///
-    /// <p>The IDs of the elastic network interfaces from which a specific file system is accessible. The elastic network interface is automatically created in the same virtual private cloud (VPC) that the Amazon FSx file system was created in. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic Network Interfaces</a> in the <i>Amazon EC2 User Guide.</i></p>
+    /// <p>The IDs of the elastic network interfaces from which a specific file system is accessible. The elastic network interface is automatically created in the same virtual private cloud (VPC) that the Amazon FSx file system was created in. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic Network Interfaces</a> in the <i>Amazon EC2 User Guide.</i> </p>
     /// <p>For an Amazon FSx for Windows File Server file system, you can have one network interface ID. For an Amazon FSx for Lustre file system, you can have more than one.</p>
     pub fn network_interface_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.network_interface_ids.unwrap_or_default();
@@ -447,13 +402,13 @@ impl FileSystemBuilder {
         self.network_interface_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The IDs of the elastic network interfaces from which a specific file system is accessible. The elastic network interface is automatically created in the same virtual private cloud (VPC) that the Amazon FSx file system was created in. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic Network Interfaces</a> in the <i>Amazon EC2 User Guide.</i></p>
+    /// <p>The IDs of the elastic network interfaces from which a specific file system is accessible. The elastic network interface is automatically created in the same virtual private cloud (VPC) that the Amazon FSx file system was created in. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic Network Interfaces</a> in the <i>Amazon EC2 User Guide.</i> </p>
     /// <p>For an Amazon FSx for Windows File Server file system, you can have one network interface ID. For an Amazon FSx for Lustre file system, you can have more than one.</p>
     pub fn set_network_interface_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.network_interface_ids = input;
         self
     }
-    /// <p>The IDs of the elastic network interfaces from which a specific file system is accessible. The elastic network interface is automatically created in the same virtual private cloud (VPC) that the Amazon FSx file system was created in. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic Network Interfaces</a> in the <i>Amazon EC2 User Guide.</i></p>
+    /// <p>The IDs of the elastic network interfaces from which a specific file system is accessible. The elastic network interface is automatically created in the same virtual private cloud (VPC) that the Amazon FSx file system was created in. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic Network Interfaces</a> in the <i>Amazon EC2 User Guide.</i> </p>
     /// <p>For an Amazon FSx for Windows File Server file system, you can have one network interface ID. For an Amazon FSx for Lustre file system, you can have more than one.</p>
     pub fn get_network_interface_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.network_interface_ids
@@ -474,15 +429,10 @@ impl FileSystemBuilder {
     }
     /// <p>The ID of the Key Management Service (KMS) key used to encrypt Amazon FSx file system data. Used as follows with Amazon FSx file system types:</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types only.</p>
-    /// <p><code>SCRATCH_1</code> and <code>SCRATCH_2</code> types are encrypted using the Amazon FSx service KMS key for your account.</p></li>
-    /// <li>
-    /// <p>Amazon FSx for NetApp ONTAP</p></li>
-    /// <li>
-    /// <p>Amazon FSx for OpenZFS</p></li>
-    /// <li>
-    /// <p>Amazon FSx for Windows File Server</p></li>
+    /// <li> <p>Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types only.</p> <p> <code>SCRATCH_1</code> and <code>SCRATCH_2</code> types are encrypted using the Amazon FSx service KMS key for your account.</p> </li>
+    /// <li> <p>Amazon FSx for NetApp ONTAP</p> </li>
+    /// <li> <p>Amazon FSx for OpenZFS</p> </li>
+    /// <li> <p>Amazon FSx for Windows File Server</p> </li>
     /// </ul>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
@@ -490,15 +440,10 @@ impl FileSystemBuilder {
     }
     /// <p>The ID of the Key Management Service (KMS) key used to encrypt Amazon FSx file system data. Used as follows with Amazon FSx file system types:</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types only.</p>
-    /// <p><code>SCRATCH_1</code> and <code>SCRATCH_2</code> types are encrypted using the Amazon FSx service KMS key for your account.</p></li>
-    /// <li>
-    /// <p>Amazon FSx for NetApp ONTAP</p></li>
-    /// <li>
-    /// <p>Amazon FSx for OpenZFS</p></li>
-    /// <li>
-    /// <p>Amazon FSx for Windows File Server</p></li>
+    /// <li> <p>Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types only.</p> <p> <code>SCRATCH_1</code> and <code>SCRATCH_2</code> types are encrypted using the Amazon FSx service KMS key for your account.</p> </li>
+    /// <li> <p>Amazon FSx for NetApp ONTAP</p> </li>
+    /// <li> <p>Amazon FSx for OpenZFS</p> </li>
+    /// <li> <p>Amazon FSx for Windows File Server</p> </li>
     /// </ul>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
@@ -506,15 +451,10 @@ impl FileSystemBuilder {
     }
     /// <p>The ID of the Key Management Service (KMS) key used to encrypt Amazon FSx file system data. Used as follows with Amazon FSx file system types:</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types only.</p>
-    /// <p><code>SCRATCH_1</code> and <code>SCRATCH_2</code> types are encrypted using the Amazon FSx service KMS key for your account.</p></li>
-    /// <li>
-    /// <p>Amazon FSx for NetApp ONTAP</p></li>
-    /// <li>
-    /// <p>Amazon FSx for OpenZFS</p></li>
-    /// <li>
-    /// <p>Amazon FSx for Windows File Server</p></li>
+    /// <li> <p>Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types only.</p> <p> <code>SCRATCH_1</code> and <code>SCRATCH_2</code> types are encrypted using the Amazon FSx service KMS key for your account.</p> </li>
+    /// <li> <p>Amazon FSx for NetApp ONTAP</p> </li>
+    /// <li> <p>Amazon FSx for OpenZFS</p> </li>
+    /// <li> <p>Amazon FSx for Windows File Server</p> </li>
     /// </ul>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id

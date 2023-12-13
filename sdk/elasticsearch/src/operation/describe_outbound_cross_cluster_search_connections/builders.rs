@@ -130,7 +130,7 @@ impl DescribeOutboundCrossClusterSearchConnectionsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>A list of filters used to match properties for outbound cross-cluster search connection. Available <code><code>Filter</code></code> names for this operation are:</p>
+    /// <p> A list of filters used to match properties for outbound cross-cluster search connection. Available <code><code>Filter</code></code> names for this operation are: </p>
     /// <ul>
     /// <li>cross-cluster-search-connection-id</li>
     /// <li>destination-domain-info.domain-name</li>
@@ -143,7 +143,7 @@ impl DescribeOutboundCrossClusterSearchConnectionsFluentBuilder {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>A list of filters used to match properties for outbound cross-cluster search connection. Available <code><code>Filter</code></code> names for this operation are:</p>
+    /// <p> A list of filters used to match properties for outbound cross-cluster search connection. Available <code><code>Filter</code></code> names for this operation are: </p>
     /// <ul>
     /// <li>cross-cluster-search-connection-id</li>
     /// <li>destination-domain-info.domain-name</li>
@@ -156,7 +156,7 @@ impl DescribeOutboundCrossClusterSearchConnectionsFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
-    /// <p>A list of filters used to match properties for outbound cross-cluster search connection. Available <code><code>Filter</code></code> names for this operation are:</p>
+    /// <p> A list of filters used to match properties for outbound cross-cluster search connection. Available <code><code>Filter</code></code> names for this operation are: </p>
     /// <ul>
     /// <li>cross-cluster-search-connection-id</li>
     /// <li>destination-domain-info.domain-name</li>
@@ -182,17 +182,17 @@ impl DescribeOutboundCrossClusterSearchConnectionsFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p>NextToken is sent in case the earlier API call results contain the NextToken. It is used for pagination.</p>
+    /// <p> NextToken is sent in case the earlier API call results contain the NextToken. It is used for pagination.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>NextToken is sent in case the earlier API call results contain the NextToken. It is used for pagination.</p>
+    /// <p> NextToken is sent in case the earlier API call results contain the NextToken. It is used for pagination.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>NextToken is sent in case the earlier API call results contain the NextToken. It is used for pagination.</p>
+    /// <p> NextToken is sent in case the earlier API call results contain the NextToken. It is used for pagination.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

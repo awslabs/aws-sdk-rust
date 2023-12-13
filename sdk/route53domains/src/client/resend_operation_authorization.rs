@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ResendOperationAuthorization`](crate::operation::resend_operation_authorization::builders::ResendOperationAuthorizationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`operation_id(impl Into<String>)`](crate::operation::resend_operation_authorization::builders::ResendOperationAuthorizationFluentBuilder::operation_id) / [`set_operation_id(Option<String>)`](crate::operation::resend_operation_authorization::builders::ResendOperationAuthorizationFluentBuilder::set_operation_id):<br>required: **true**<br><p>Operation ID.</p><br>
+    ///   - [`operation_id(impl Into<String>)`](crate::operation::resend_operation_authorization::builders::ResendOperationAuthorizationFluentBuilder::operation_id) / [`set_operation_id(Option<String>)`](crate::operation::resend_operation_authorization::builders::ResendOperationAuthorizationFluentBuilder::set_operation_id):<br>required: **true**<br><p> Operation ID. </p><br>
     /// - On success, responds with [`ResendOperationAuthorizationOutput`](crate::operation::resend_operation_authorization::ResendOperationAuthorizationOutput)
     /// - On failure, responds with [`SdkError<ResendOperationAuthorizationError>`](crate::operation::resend_operation_authorization::ResendOperationAuthorizationError)
     pub fn resend_operation_authorization(

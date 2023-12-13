@@ -29,6 +29,8 @@ pub struct DisconnectSourceServerOutput {
     pub reversed_direction_source_server_arn: ::std::option::Option<::std::string::String>,
     /// <p>ID of the Source Network which is protecting this Source Server's network.</p>
     pub source_network_id: ::std::option::Option<::std::string::String>,
+    /// <p>The version of the DRS agent installed on the source server</p>
+    pub agent_version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DisconnectSourceServerOutput {
@@ -84,6 +86,10 @@ impl DisconnectSourceServerOutput {
     pub fn source_network_id(&self) -> ::std::option::Option<&str> {
         self.source_network_id.as_deref()
     }
+    /// <p>The version of the DRS agent installed on the source server</p>
+    pub fn agent_version(&self) -> ::std::option::Option<&str> {
+        self.agent_version.as_deref()
+    }
 }
 impl ::std::fmt::Debug for DisconnectSourceServerOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -101,6 +107,7 @@ impl ::std::fmt::Debug for DisconnectSourceServerOutput {
         formatter.field("replication_direction", &self.replication_direction);
         formatter.field("reversed_direction_source_server_arn", &self.reversed_direction_source_server_arn);
         formatter.field("source_network_id", &self.source_network_id);
+        formatter.field("agent_version", &self.agent_version);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -134,6 +141,7 @@ pub struct DisconnectSourceServerOutputBuilder {
     pub(crate) replication_direction: ::std::option::Option<crate::types::ReplicationDirection>,
     pub(crate) reversed_direction_source_server_arn: ::std::option::Option<::std::string::String>,
     pub(crate) source_network_id: ::std::option::Option<::std::string::String>,
+    pub(crate) agent_version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DisconnectSourceServerOutputBuilder {
@@ -325,6 +333,20 @@ impl DisconnectSourceServerOutputBuilder {
     pub fn get_source_network_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_network_id
     }
+    /// <p>The version of the DRS agent installed on the source server</p>
+    pub fn agent_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.agent_version = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The version of the DRS agent installed on the source server</p>
+    pub fn set_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.agent_version = input;
+        self
+    }
+    /// <p>The version of the DRS agent installed on the source server</p>
+    pub fn get_agent_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.agent_version
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -350,6 +372,7 @@ impl DisconnectSourceServerOutputBuilder {
             replication_direction: self.replication_direction,
             reversed_direction_source_server_arn: self.reversed_direction_source_server_arn,
             source_network_id: self.source_network_id,
+            agent_version: self.agent_version,
             _request_id: self._request_id,
         }
     }
@@ -370,6 +393,7 @@ impl ::std::fmt::Debug for DisconnectSourceServerOutputBuilder {
         formatter.field("replication_direction", &self.replication_direction);
         formatter.field("reversed_direction_source_server_arn", &self.reversed_direction_source_server_arn);
         formatter.field("source_network_id", &self.source_network_id);
+        formatter.field("agent_version", &self.agent_version);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

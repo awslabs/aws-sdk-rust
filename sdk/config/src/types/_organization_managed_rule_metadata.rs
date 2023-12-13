@@ -10,7 +10,7 @@ pub struct OrganizationManagedRuleMetadata {
     pub rule_identifier: ::std::string::String,
     /// <p>A string, in JSON format, that is passed to your organization Config rule Lambda function.</p>
     pub input_parameters: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum frequency with which Config runs evaluations for a rule. This is for an Config managed rule that is triggered at a periodic frequency.</p><note>
+    /// <p>The maximum frequency with which Config runs evaluations for a rule. This is for an Config managed rule that is triggered at a periodic frequency.</p> <note>
     /// <p>By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid value for the <code>MaximumExecutionFrequency</code> parameter.</p>
     /// </note>
     pub maximum_execution_frequency: ::std::option::Option<crate::types::MaximumExecutionFrequency>,
@@ -18,7 +18,7 @@ pub struct OrganizationManagedRuleMetadata {
     pub resource_types_scope: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the Amazon Web Services resource that was evaluated.</p>
     pub resource_id_scope: ::std::option::Option<::std::string::String>,
-    /// <p>One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values.</p>
+    /// <p>One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values. </p>
     pub tag_key_scope: ::std::option::Option<::std::string::String>,
     /// <p>The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key).</p>
     pub tag_value_scope: ::std::option::Option<::std::string::String>,
@@ -37,7 +37,7 @@ impl OrganizationManagedRuleMetadata {
     pub fn input_parameters(&self) -> ::std::option::Option<&str> {
         self.input_parameters.as_deref()
     }
-    /// <p>The maximum frequency with which Config runs evaluations for a rule. This is for an Config managed rule that is triggered at a periodic frequency.</p><note>
+    /// <p>The maximum frequency with which Config runs evaluations for a rule. This is for an Config managed rule that is triggered at a periodic frequency.</p> <note>
     /// <p>By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid value for the <code>MaximumExecutionFrequency</code> parameter.</p>
     /// </note>
     pub fn maximum_execution_frequency(&self) -> ::std::option::Option<&crate::types::MaximumExecutionFrequency> {
@@ -53,7 +53,7 @@ impl OrganizationManagedRuleMetadata {
     pub fn resource_id_scope(&self) -> ::std::option::Option<&str> {
         self.resource_id_scope.as_deref()
     }
-    /// <p>One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values.</p>
+    /// <p>One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values. </p>
     pub fn tag_key_scope(&self) -> ::std::option::Option<&str> {
         self.tag_key_scope.as_deref()
     }
@@ -126,21 +126,21 @@ impl OrganizationManagedRuleMetadataBuilder {
     pub fn get_input_parameters(&self) -> &::std::option::Option<::std::string::String> {
         &self.input_parameters
     }
-    /// <p>The maximum frequency with which Config runs evaluations for a rule. This is for an Config managed rule that is triggered at a periodic frequency.</p><note>
+    /// <p>The maximum frequency with which Config runs evaluations for a rule. This is for an Config managed rule that is triggered at a periodic frequency.</p> <note>
     /// <p>By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid value for the <code>MaximumExecutionFrequency</code> parameter.</p>
     /// </note>
     pub fn maximum_execution_frequency(mut self, input: crate::types::MaximumExecutionFrequency) -> Self {
         self.maximum_execution_frequency = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum frequency with which Config runs evaluations for a rule. This is for an Config managed rule that is triggered at a periodic frequency.</p><note>
+    /// <p>The maximum frequency with which Config runs evaluations for a rule. This is for an Config managed rule that is triggered at a periodic frequency.</p> <note>
     /// <p>By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid value for the <code>MaximumExecutionFrequency</code> parameter.</p>
     /// </note>
     pub fn set_maximum_execution_frequency(mut self, input: ::std::option::Option<crate::types::MaximumExecutionFrequency>) -> Self {
         self.maximum_execution_frequency = input;
         self
     }
-    /// <p>The maximum frequency with which Config runs evaluations for a rule. This is for an Config managed rule that is triggered at a periodic frequency.</p><note>
+    /// <p>The maximum frequency with which Config runs evaluations for a rule. This is for an Config managed rule that is triggered at a periodic frequency.</p> <note>
     /// <p>By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid value for the <code>MaximumExecutionFrequency</code> parameter.</p>
     /// </note>
     pub fn get_maximum_execution_frequency(&self) -> &::std::option::Option<crate::types::MaximumExecutionFrequency> {
@@ -180,17 +180,17 @@ impl OrganizationManagedRuleMetadataBuilder {
     pub fn get_resource_id_scope(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_id_scope
     }
-    /// <p>One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values.</p>
+    /// <p>One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values. </p>
     pub fn tag_key_scope(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tag_key_scope = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values.</p>
+    /// <p>One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values. </p>
     pub fn set_tag_key_scope(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tag_key_scope = input;
         self
     }
-    /// <p>One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values.</p>
+    /// <p>One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values. </p>
     pub fn get_tag_key_scope(&self) -> &::std::option::Option<::std::string::String> {
         &self.tag_key_scope
     }

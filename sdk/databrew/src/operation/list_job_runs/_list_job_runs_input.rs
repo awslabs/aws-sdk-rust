@@ -5,7 +5,7 @@
 pub struct ListJobRunsInput {
     /// <p>The name of the job.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum number of results to return in this request.</p>
+    /// <p>The maximum number of results to return in this request. </p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ impl ListJobRunsInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The maximum number of results to return in this request.</p>
+    /// <p>The maximum number of results to return in this request. </p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -55,17 +55,17 @@ impl ListJobRunsInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The maximum number of results to return in this request.</p>
+    /// <p>The maximum number of results to return in this request. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of results to return in this request.</p>
+    /// <p>The maximum number of results to return in this request. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of results to return in this request.</p>
+    /// <p>The maximum number of results to return in this request. </p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

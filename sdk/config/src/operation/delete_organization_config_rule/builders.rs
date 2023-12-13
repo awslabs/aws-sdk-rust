@@ -22,7 +22,7 @@ impl DeleteOrganizationConfigRuleInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteOrganizationConfigRule`.
 ///
-/// <p>Deletes the specified organization Config rule and all of its evaluation results from all member accounts in that organization.</p>
+/// <p>Deletes the specified organization Config rule and all of its evaluation results from all member accounts in that organization. </p>
 /// <p>Only a management account and a delegated administrator account can delete an organization Config rule. When calling this API with a delegated administrator, you must ensure Organizations <code>ListDelegatedAdministrator</code> permissions are added.</p>
 /// <p>Config sets the state of a rule to DELETE_IN_PROGRESS until the deletion is complete. You cannot update a rule while it is in this state.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

@@ -23,7 +23,7 @@ impl DescribeContactInputBuilder {
 /// Fluent builder constructing a request to `DescribeContact`.
 ///
 /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
-/// <p>Describes the specified contact.</p><important>
+/// <p>Describes the specified contact. </p> <important>
 /// <p>Contact information remains available in Amazon Connect for 24 months, and then it is deleted.</p>
 /// <p>Only data from November 12, 2021, and later is returned by this API.</p>
 /// </important>

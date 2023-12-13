@@ -22,7 +22,7 @@ impl ExecuteStatementInputBuilder {
 }
 /// Fluent builder constructing a request to `ExecuteStatement`.
 ///
-/// <p>Runs a SQL statement against a database.</p><note>
+/// <p>Runs a SQL statement against a database.</p> <note>
 /// <p>If a call isn't part of a transaction because it doesn't include the <code>transactionID</code> parameter, changes that result from the call are committed automatically.</p>
 /// <p>If the binary response data from the database is more than 1 MB, the call is terminated.</p>
 /// </note>
@@ -170,21 +170,21 @@ impl ExecuteStatementFluentBuilder {
     pub fn get_database(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_database()
     }
-    /// <p>The name of the database schema.</p><note>
+    /// <p>The name of the database schema.</p> <note>
     /// <p>Currently, the <code>schema</code> parameter isn't supported.</p>
     /// </note>
     pub fn schema(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.schema(input.into());
         self
     }
-    /// <p>The name of the database schema.</p><note>
+    /// <p>The name of the database schema.</p> <note>
     /// <p>Currently, the <code>schema</code> parameter isn't supported.</p>
     /// </note>
     pub fn set_schema(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_schema(input);
         self
     }
-    /// <p>The name of the database schema.</p><note>
+    /// <p>The name of the database schema.</p> <note>
     /// <p>Currently, the <code>schema</code> parameter isn't supported.</p>
     /// </note>
     pub fn get_schema(&self) -> &::std::option::Option<::std::string::String> {
@@ -194,21 +194,21 @@ impl ExecuteStatementFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
-    /// <p>The parameters for the SQL statement.</p><note>
+    /// <p>The parameters for the SQL statement.</p> <note>
     /// <p>Array parameters are not supported.</p>
     /// </note>
     pub fn parameters(mut self, input: crate::types::SqlParameter) -> Self {
         self.inner = self.inner.parameters(input);
         self
     }
-    /// <p>The parameters for the SQL statement.</p><note>
+    /// <p>The parameters for the SQL statement.</p> <note>
     /// <p>Array parameters are not supported.</p>
     /// </note>
     pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SqlParameter>>) -> Self {
         self.inner = self.inner.set_parameters(input);
         self
     }
-    /// <p>The parameters for the SQL statement.</p><note>
+    /// <p>The parameters for the SQL statement.</p> <note>
     /// <p>Array parameters are not supported.</p>
     /// </note>
     pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SqlParameter>> {
@@ -245,21 +245,21 @@ impl ExecuteStatementFluentBuilder {
     pub fn get_include_result_metadata(&self) -> &::std::option::Option<bool> {
         self.inner.get_include_result_metadata()
     }
-    /// <p>A value that indicates whether to continue running the statement after the call times out. By default, the statement stops running when the call times out.</p><note>
+    /// <p>A value that indicates whether to continue running the statement after the call times out. By default, the statement stops running when the call times out.</p> <note>
     /// <p>For DDL statements, we recommend continuing to run the statement after the call times out. When a DDL statement terminates before it is finished running, it can result in errors and possibly corrupted data structures.</p>
     /// </note>
     pub fn continue_after_timeout(mut self, input: bool) -> Self {
         self.inner = self.inner.continue_after_timeout(input);
         self
     }
-    /// <p>A value that indicates whether to continue running the statement after the call times out. By default, the statement stops running when the call times out.</p><note>
+    /// <p>A value that indicates whether to continue running the statement after the call times out. By default, the statement stops running when the call times out.</p> <note>
     /// <p>For DDL statements, we recommend continuing to run the statement after the call times out. When a DDL statement terminates before it is finished running, it can result in errors and possibly corrupted data structures.</p>
     /// </note>
     pub fn set_continue_after_timeout(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_continue_after_timeout(input);
         self
     }
-    /// <p>A value that indicates whether to continue running the statement after the call times out. By default, the statement stops running when the call times out.</p><note>
+    /// <p>A value that indicates whether to continue running the statement after the call times out. By default, the statement stops running when the call times out.</p> <note>
     /// <p>For DDL statements, we recommend continuing to run the statement after the call times out. When a DDL statement terminates before it is finished running, it can result in errors and possibly corrupted data structures.</p>
     /// </note>
     pub fn get_continue_after_timeout(&self) -> &::std::option::Option<bool> {

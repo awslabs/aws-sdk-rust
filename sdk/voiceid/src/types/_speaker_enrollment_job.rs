@@ -22,7 +22,7 @@ pub struct SpeakerEnrollmentJob {
     pub output_data_config: ::std::option::Option<crate::types::OutputDataConfig>,
     /// <p>A timestamp of when the speaker enrollment job was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>A timestamp of when the speaker enrollment job ended.</p>
+    /// <p>A timestamp of when the speaker enrollment job ended. </p>
     pub ended_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual registration requests that failed.</p>
     pub failure_details: ::std::option::Option<crate::types::FailureDetails>,
@@ -66,7 +66,7 @@ impl SpeakerEnrollmentJob {
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>A timestamp of when the speaker enrollment job ended.</p>
+    /// <p>A timestamp of when the speaker enrollment job ended. </p>
     pub fn ended_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.ended_at.as_ref()
     }
@@ -248,17 +248,17 @@ impl SpeakerEnrollmentJobBuilder {
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
-    /// <p>A timestamp of when the speaker enrollment job ended.</p>
+    /// <p>A timestamp of when the speaker enrollment job ended. </p>
     pub fn ended_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.ended_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A timestamp of when the speaker enrollment job ended.</p>
+    /// <p>A timestamp of when the speaker enrollment job ended. </p>
     pub fn set_ended_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.ended_at = input;
         self
     }
-    /// <p>A timestamp of when the speaker enrollment job ended.</p>
+    /// <p>A timestamp of when the speaker enrollment job ended. </p>
     pub fn get_ended_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.ended_at
     }

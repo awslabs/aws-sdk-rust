@@ -10,7 +10,7 @@ pub struct ExecuteSqlInput {
     /// <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
     pub aws_secret_store_arn: ::std::option::Option<::std::string::String>,
     /// <p>One or more SQL statements to run on the DB cluster.</p>
-    /// <p>You can separate SQL statements from each other with a semicolon (;). Any valid SQL statement is permitted, including data definition, data manipulation, and commit statements.</p>
+    /// <p>You can separate SQL statements from each other with a semicolon (;). Any valid SQL statement is permitted, including data definition, data manipulation, and commit statements. </p>
     pub sql_statements: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database.</p>
     pub database: ::std::option::Option<::std::string::String>,
@@ -28,7 +28,7 @@ impl ExecuteSqlInput {
         self.aws_secret_store_arn.as_deref()
     }
     /// <p>One or more SQL statements to run on the DB cluster.</p>
-    /// <p>You can separate SQL statements from each other with a semicolon (;). Any valid SQL statement is permitted, including data definition, data manipulation, and commit statements.</p>
+    /// <p>You can separate SQL statements from each other with a semicolon (;). Any valid SQL statement is permitted, including data definition, data manipulation, and commit statements. </p>
     pub fn sql_statements(&self) -> ::std::option::Option<&str> {
         self.sql_statements.as_deref()
     }
@@ -93,20 +93,20 @@ impl ExecuteSqlInputBuilder {
         &self.aws_secret_store_arn
     }
     /// <p>One or more SQL statements to run on the DB cluster.</p>
-    /// <p>You can separate SQL statements from each other with a semicolon (;). Any valid SQL statement is permitted, including data definition, data manipulation, and commit statements.</p>
+    /// <p>You can separate SQL statements from each other with a semicolon (;). Any valid SQL statement is permitted, including data definition, data manipulation, and commit statements. </p>
     /// This field is required.
     pub fn sql_statements(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sql_statements = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>One or more SQL statements to run on the DB cluster.</p>
-    /// <p>You can separate SQL statements from each other with a semicolon (;). Any valid SQL statement is permitted, including data definition, data manipulation, and commit statements.</p>
+    /// <p>You can separate SQL statements from each other with a semicolon (;). Any valid SQL statement is permitted, including data definition, data manipulation, and commit statements. </p>
     pub fn set_sql_statements(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sql_statements = input;
         self
     }
     /// <p>One or more SQL statements to run on the DB cluster.</p>
-    /// <p>You can separate SQL statements from each other with a semicolon (;). Any valid SQL statement is permitted, including data definition, data manipulation, and commit statements.</p>
+    /// <p>You can separate SQL statements from each other with a semicolon (;). Any valid SQL statement is permitted, including data definition, data manipulation, and commit statements. </p>
     pub fn get_sql_statements(&self) -> &::std::option::Option<::std::string::String> {
         &self.sql_statements
     }

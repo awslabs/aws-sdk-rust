@@ -6,132 +6,106 @@
 pub struct ProjectEnvironment {
     /// <p>The type of build environment to use for related builds.</p>
     /// <ul>
-    /// <li>
-    /// <p>The environment type <code>ARM_CONTAINER</code> is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), EU (Ireland), Asia Pacific (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney), and EU (Frankfurt).</p></li>
-    /// <li>
-    /// <p>The environment type <code>LINUX_CONTAINER</code> with compute type <code>build.general1.2xlarge</code> is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).</p></li>
-    /// <li>
-    /// <p>The environment type <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and China (Ningxia).</p></li>
+    /// <li> <p>The environment type <code>ARM_CONTAINER</code> is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), EU (Ireland), Asia Pacific (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney), and EU (Frankfurt).</p> </li>
+    /// <li> <p>The environment type <code>LINUX_CONTAINER</code> with compute type <code>build.general1.2xlarge</code> is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).</p> </li>
+    /// <li> <p>The environment type <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and China (Ningxia).</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p>The environment types <code>ARM_LAMBDA_CONTAINER</code> and <code>LINUX_LAMBDA_CONTAINER</code> are available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Asia Pacific (Mumbai), Asia Pacific (Singapore), Asia Pacific (Sydney), Asia Pacific (Tokyo), EU (Frankfurt), EU (Ireland), and South America (São Paulo).</p></li>
+    /// <li> <p>The environment types <code>ARM_LAMBDA_CONTAINER</code> and <code>LINUX_LAMBDA_CONTAINER</code> are available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Asia Pacific (Mumbai), Asia Pacific (Singapore), Asia Pacific (Sydney), Asia Pacific (Tokyo), EU (Frankfurt), EU (Ireland), and South America (São Paulo).</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p>The environment types <code>WINDOWS_CONTAINER</code> and <code>WINDOWS_SERVER_2019_CONTAINER</code> are available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), and EU (Ireland).</p></li>
+    /// <li> <p>The environment types <code>WINDOWS_CONTAINER</code> and <code>WINDOWS_SERVER_2019_CONTAINER</code> are available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), and EU (Ireland).</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build environment compute types</a> in the <i>CodeBuild user guide</i>.</p>
     pub r#type: crate::types::EnvironmentType,
     /// <p>The image tag or image digest that identifies the Docker image to use for this build project. Use the following formats:</p>
     /// <ul>
-    /// <li>
-    /// <p>For an image tag: <code><registry>
+    /// <li> <p>For an image tag: <code>
+    /// <registry>
     /// /
     /// <repository>
     /// :
     /// <tag></tag>
     /// </repository>
-    /// </registry></code>. For example, in the Docker repository that CodeBuild uses to manage its Docker images, this would be <code>aws/codebuild/standard:4.0</code>.</p></li>
-    /// <li>
-    /// <p>For an image digest: <code><registry>
+    /// </registry></code>. For example, in the Docker repository that CodeBuild uses to manage its Docker images, this would be <code>aws/codebuild/standard:4.0</code>. </p> </li>
+    /// <li> <p>For an image digest: <code>
+    /// <registry>
     /// /
     /// <repository>
     /// @
     /// <digest></digest>
     /// </repository>
-    /// </registry></code>. For example, to specify an image with the digest "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use <code><registry>
+    /// </registry></code>. For example, to specify an image with the digest "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use <code>
+    /// <registry>
     /// /
     /// <repository>
     /// @sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf
     /// </repository>
-    /// </registry></code>.</p></li>
+    /// </registry></code>.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-available.html">Docker images provided by CodeBuild</a> in the <i>CodeBuild user guide</i>.</p>
     pub image: ::std::string::String,
     /// <p>Information about the compute resources the build project uses. Available values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>BUILD_GENERAL1_SMALL</code>: Use up to 3 GB memory and 2 vCPUs for builds.</p></li>
-    /// <li>
-    /// <p><code>BUILD_GENERAL1_MEDIUM</code>: Use up to 7 GB memory and 4 vCPUs for builds.</p></li>
-    /// <li>
-    /// <p><code>BUILD_GENERAL1_LARGE</code>: Use up to 16 GB memory and 8 vCPUs for builds, depending on your environment type.</p></li>
-    /// <li>
-    /// <p><code>BUILD_GENERAL1_2XLARGE</code>: Use up to 145 GB memory, 72 vCPUs, and 824 GB of SSD storage for builds. This compute type supports Docker images up to 100 GB uncompressed.</p></li>
-    /// <li>
-    /// <p><code>BUILD_LAMBDA_1GB</code>: Use up to 1 GB memory for builds. Only available for environment type <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.</p></li>
-    /// <li>
-    /// <p><code>BUILD_LAMBDA_2GB</code>: Use up to 2 GB memory for builds. Only available for environment type <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.</p></li>
-    /// <li>
-    /// <p><code>BUILD_LAMBDA_4GB</code>: Use up to 4 GB memory for builds. Only available for environment type <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.</p></li>
-    /// <li>
-    /// <p><code>BUILD_LAMBDA_8GB</code>: Use up to 8 GB memory for builds. Only available for environment type <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.</p></li>
-    /// <li>
-    /// <p><code>BUILD_LAMBDA_10GB</code>: Use up to 10 GB memory for builds. Only available for environment type <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.</p></li>
+    /// <li> <p> <code>BUILD_GENERAL1_SMALL</code>: Use up to 3 GB memory and 2 vCPUs for builds.</p> </li>
+    /// <li> <p> <code>BUILD_GENERAL1_MEDIUM</code>: Use up to 7 GB memory and 4 vCPUs for builds.</p> </li>
+    /// <li> <p> <code>BUILD_GENERAL1_LARGE</code>: Use up to 16 GB memory and 8 vCPUs for builds, depending on your environment type.</p> </li>
+    /// <li> <p> <code>BUILD_GENERAL1_2XLARGE</code>: Use up to 145 GB memory, 72 vCPUs, and 824 GB of SSD storage for builds. This compute type supports Docker images up to 100 GB uncompressed.</p> </li>
+    /// <li> <p> <code>BUILD_LAMBDA_1GB</code>: Use up to 1 GB memory for builds. Only available for environment type <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.</p> </li>
+    /// <li> <p> <code>BUILD_LAMBDA_2GB</code>: Use up to 2 GB memory for builds. Only available for environment type <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.</p> </li>
+    /// <li> <p> <code>BUILD_LAMBDA_4GB</code>: Use up to 4 GB memory for builds. Only available for environment type <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.</p> </li>
+    /// <li> <p> <code>BUILD_LAMBDA_8GB</code>: Use up to 8 GB memory for builds. Only available for environment type <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.</p> </li>
+    /// <li> <p> <code>BUILD_LAMBDA_10GB</code>: Use up to 10 GB memory for builds. Only available for environment type <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.</p> </li>
     /// </ul>
-    /// <p>If you use <code>BUILD_GENERAL1_SMALL</code>:</p>
+    /// <p> If you use <code>BUILD_GENERAL1_SMALL</code>: </p>
     /// <ul>
-    /// <li>
-    /// <p>For environment type <code>LINUX_CONTAINER</code>, you can use up to 3 GB memory and 2 vCPUs for builds.</p></li>
-    /// <li>
-    /// <p>For environment type <code>LINUX_GPU_CONTAINER</code>, you can use up to 16 GB memory, 4 vCPUs, and 1 NVIDIA A10G Tensor Core GPU for builds.</p></li>
-    /// <li>
-    /// <p>For environment type <code>ARM_CONTAINER</code>, you can use up to 4 GB memory and 2 vCPUs on ARM-based processors for builds.</p></li>
+    /// <li> <p> For environment type <code>LINUX_CONTAINER</code>, you can use up to 3 GB memory and 2 vCPUs for builds. </p> </li>
+    /// <li> <p> For environment type <code>LINUX_GPU_CONTAINER</code>, you can use up to 16 GB memory, 4 vCPUs, and 1 NVIDIA A10G Tensor Core GPU for builds.</p> </li>
+    /// <li> <p> For environment type <code>ARM_CONTAINER</code>, you can use up to 4 GB memory and 2 vCPUs on ARM-based processors for builds.</p> </li>
     /// </ul>
-    /// <p>If you use <code>BUILD_GENERAL1_LARGE</code>:</p>
+    /// <p> If you use <code>BUILD_GENERAL1_LARGE</code>: </p>
     /// <ul>
-    /// <li>
-    /// <p>For environment type <code>LINUX_CONTAINER</code>, you can use up to 15 GB memory and 8 vCPUs for builds.</p></li>
-    /// <li>
-    /// <p>For environment type <code>LINUX_GPU_CONTAINER</code>, you can use up to 255 GB memory, 32 vCPUs, and 4 NVIDIA Tesla V100 GPUs for builds.</p></li>
-    /// <li>
-    /// <p>For environment type <code>ARM_CONTAINER</code>, you can use up to 16 GB memory and 8 vCPUs on ARM-based processors for builds.</p></li>
+    /// <li> <p> For environment type <code>LINUX_CONTAINER</code>, you can use up to 15 GB memory and 8 vCPUs for builds. </p> </li>
+    /// <li> <p> For environment type <code>LINUX_GPU_CONTAINER</code>, you can use up to 255 GB memory, 32 vCPUs, and 4 NVIDIA Tesla V100 GPUs for builds.</p> </li>
+    /// <li> <p> For environment type <code>ARM_CONTAINER</code>, you can use up to 16 GB memory and 8 vCPUs on ARM-based processors for builds.</p> </li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build Environment Compute Types</a> in the <i>CodeBuild User Guide.</i></p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build Environment Compute Types</a> in the <i>CodeBuild User Guide.</i> </p>
     pub compute_type: crate::types::ComputeType,
     /// <p>A set of environment variables to make available to builds for this build project.</p>
     pub environment_variables: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>>,
     /// <p>Enables running the Docker daemon inside a Docker container. Set to true only if the build project is used to build Docker images. Otherwise, a build that attempts to interact with the Docker daemon fails. The default setting is <code>false</code>.</p>
     /// <p>You can initialize the Docker daemon during the install phase of your build by adding one of the following sets of commands to the install phase of your buildspec file:</p>
     /// <p>If the operating system's base image is Ubuntu Linux:</p>
-    /// <p><code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp;</code></p>
-    /// <p><code>- timeout 15 sh -c "until docker info; do echo .; sleep 1; done"</code></p>
+    /// <p> <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp;</code> </p>
+    /// <p> <code>- timeout 15 sh -c "until docker info; do echo .; sleep 1; done"</code> </p>
     /// <p>If the operating system's base image is Alpine Linux and the previous command does not work, add the <code>-t</code> argument to <code>timeout</code>:</p>
-    /// <p><code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp;</code></p>
-    /// <p><code>- timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code></p>
+    /// <p> <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp;</code> </p>
+    /// <p> <code>- timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code> </p>
     pub privileged_mode: ::std::option::Option<bool>,
     /// <p>The ARN of the Amazon S3 bucket, path prefix, and object key that contains the PEM-encoded certificate for the build project. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate">certificate</a> in the <i>CodeBuild User Guide</i>.</p>
     pub certificate: ::std::option::Option<::std::string::String>,
-    /// <p>The credentials for access to a private registry.</p>
+    /// <p> The credentials for access to a private registry.</p>
     pub registry_credential: ::std::option::Option<crate::types::RegistryCredential>,
-    /// <p>The type of credentials CodeBuild uses to pull images in your build. There are two valid values:</p>
+    /// <p> The type of credentials CodeBuild uses to pull images in your build. There are two valid values: </p>
     /// <ul>
-    /// <li>
-    /// <p><code>CODEBUILD</code> specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to trust CodeBuild service principal.</p></li>
-    /// <li>
-    /// <p><code>SERVICE_ROLE</code> specifies that CodeBuild uses your build project's service role.</p></li>
+    /// <li> <p> <code>CODEBUILD</code> specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to trust CodeBuild service principal. </p> </li>
+    /// <li> <p> <code>SERVICE_ROLE</code> specifies that CodeBuild uses your build project's service role. </p> </li>
     /// </ul>
-    /// <p>When you use a cross-account or private registry image, you must use SERVICE_ROLE credentials. When you use an CodeBuild curated image, you must use CODEBUILD credentials.</p>
+    /// <p> When you use a cross-account or private registry image, you must use SERVICE_ROLE credentials. When you use an CodeBuild curated image, you must use CODEBUILD credentials. </p>
     pub image_pull_credentials_type: ::std::option::Option<crate::types::ImagePullCredentialsType>,
 }
 impl ProjectEnvironment {
     /// <p>The type of build environment to use for related builds.</p>
     /// <ul>
-    /// <li>
-    /// <p>The environment type <code>ARM_CONTAINER</code> is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), EU (Ireland), Asia Pacific (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney), and EU (Frankfurt).</p></li>
-    /// <li>
-    /// <p>The environment type <code>LINUX_CONTAINER</code> with compute type <code>build.general1.2xlarge</code> is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).</p></li>
-    /// <li>
-    /// <p>The environment type <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and China (Ningxia).</p></li>
+    /// <li> <p>The environment type <code>ARM_CONTAINER</code> is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), EU (Ireland), Asia Pacific (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney), and EU (Frankfurt).</p> </li>
+    /// <li> <p>The environment type <code>LINUX_CONTAINER</code> with compute type <code>build.general1.2xlarge</code> is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).</p> </li>
+    /// <li> <p>The environment type <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and China (Ningxia).</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p>The environment types <code>ARM_LAMBDA_CONTAINER</code> and <code>LINUX_LAMBDA_CONTAINER</code> are available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Asia Pacific (Mumbai), Asia Pacific (Singapore), Asia Pacific (Sydney), Asia Pacific (Tokyo), EU (Frankfurt), EU (Ireland), and South America (São Paulo).</p></li>
+    /// <li> <p>The environment types <code>ARM_LAMBDA_CONTAINER</code> and <code>LINUX_LAMBDA_CONTAINER</code> are available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Asia Pacific (Mumbai), Asia Pacific (Singapore), Asia Pacific (Sydney), Asia Pacific (Tokyo), EU (Frankfurt), EU (Ireland), and South America (São Paulo).</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p>The environment types <code>WINDOWS_CONTAINER</code> and <code>WINDOWS_SERVER_2019_CONTAINER</code> are available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), and EU (Ireland).</p></li>
+    /// <li> <p>The environment types <code>WINDOWS_CONTAINER</code> and <code>WINDOWS_SERVER_2019_CONTAINER</code> are available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), and EU (Ireland).</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build environment compute types</a> in the <i>CodeBuild user guide</i>.</p>
     pub fn r#type(&self) -> &crate::types::EnvironmentType {
@@ -139,27 +113,28 @@ impl ProjectEnvironment {
     }
     /// <p>The image tag or image digest that identifies the Docker image to use for this build project. Use the following formats:</p>
     /// <ul>
-    /// <li>
-    /// <p>For an image tag: <code><registry>
+    /// <li> <p>For an image tag: <code>
+    /// <registry>
     /// /
     /// <repository>
     /// :
     /// <tag></tag>
     /// </repository>
-    /// </registry></code>. For example, in the Docker repository that CodeBuild uses to manage its Docker images, this would be <code>aws/codebuild/standard:4.0</code>.</p></li>
-    /// <li>
-    /// <p>For an image digest: <code><registry>
+    /// </registry></code>. For example, in the Docker repository that CodeBuild uses to manage its Docker images, this would be <code>aws/codebuild/standard:4.0</code>. </p> </li>
+    /// <li> <p>For an image digest: <code>
+    /// <registry>
     /// /
     /// <repository>
     /// @
     /// <digest></digest>
     /// </repository>
-    /// </registry></code>. For example, to specify an image with the digest "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use <code><registry>
+    /// </registry></code>. For example, to specify an image with the digest "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use <code>
+    /// <registry>
     /// /
     /// <repository>
     /// @sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf
     /// </repository>
-    /// </registry></code>.</p></li>
+    /// </registry></code>.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-available.html">Docker images provided by CodeBuild</a> in the <i>CodeBuild user guide</i>.</p>
     pub fn image(&self) -> &str {
@@ -168,44 +143,29 @@ impl ProjectEnvironment {
     }
     /// <p>Information about the compute resources the build project uses. Available values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>BUILD_GENERAL1_SMALL</code>: Use up to 3 GB memory and 2 vCPUs for builds.</p></li>
-    /// <li>
-    /// <p><code>BUILD_GENERAL1_MEDIUM</code>: Use up to 7 GB memory and 4 vCPUs for builds.</p></li>
-    /// <li>
-    /// <p><code>BUILD_GENERAL1_LARGE</code>: Use up to 16 GB memory and 8 vCPUs for builds, depending on your environment type.</p></li>
-    /// <li>
-    /// <p><code>BUILD_GENERAL1_2XLARGE</code>: Use up to 145 GB memory, 72 vCPUs, and 824 GB of SSD storage for builds. This compute type supports Docker images up to 100 GB uncompressed.</p></li>
-    /// <li>
-    /// <p><code>BUILD_LAMBDA_1GB</code>: Use up to 1 GB memory for builds. Only available for environment type <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.</p></li>
-    /// <li>
-    /// <p><code>BUILD_LAMBDA_2GB</code>: Use up to 2 GB memory for builds. Only available for environment type <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.</p></li>
-    /// <li>
-    /// <p><code>BUILD_LAMBDA_4GB</code>: Use up to 4 GB memory for builds. Only available for environment type <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.</p></li>
-    /// <li>
-    /// <p><code>BUILD_LAMBDA_8GB</code>: Use up to 8 GB memory for builds. Only available for environment type <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.</p></li>
-    /// <li>
-    /// <p><code>BUILD_LAMBDA_10GB</code>: Use up to 10 GB memory for builds. Only available for environment type <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.</p></li>
+    /// <li> <p> <code>BUILD_GENERAL1_SMALL</code>: Use up to 3 GB memory and 2 vCPUs for builds.</p> </li>
+    /// <li> <p> <code>BUILD_GENERAL1_MEDIUM</code>: Use up to 7 GB memory and 4 vCPUs for builds.</p> </li>
+    /// <li> <p> <code>BUILD_GENERAL1_LARGE</code>: Use up to 16 GB memory and 8 vCPUs for builds, depending on your environment type.</p> </li>
+    /// <li> <p> <code>BUILD_GENERAL1_2XLARGE</code>: Use up to 145 GB memory, 72 vCPUs, and 824 GB of SSD storage for builds. This compute type supports Docker images up to 100 GB uncompressed.</p> </li>
+    /// <li> <p> <code>BUILD_LAMBDA_1GB</code>: Use up to 1 GB memory for builds. Only available for environment type <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.</p> </li>
+    /// <li> <p> <code>BUILD_LAMBDA_2GB</code>: Use up to 2 GB memory for builds. Only available for environment type <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.</p> </li>
+    /// <li> <p> <code>BUILD_LAMBDA_4GB</code>: Use up to 4 GB memory for builds. Only available for environment type <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.</p> </li>
+    /// <li> <p> <code>BUILD_LAMBDA_8GB</code>: Use up to 8 GB memory for builds. Only available for environment type <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.</p> </li>
+    /// <li> <p> <code>BUILD_LAMBDA_10GB</code>: Use up to 10 GB memory for builds. Only available for environment type <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.</p> </li>
     /// </ul>
-    /// <p>If you use <code>BUILD_GENERAL1_SMALL</code>:</p>
+    /// <p> If you use <code>BUILD_GENERAL1_SMALL</code>: </p>
     /// <ul>
-    /// <li>
-    /// <p>For environment type <code>LINUX_CONTAINER</code>, you can use up to 3 GB memory and 2 vCPUs for builds.</p></li>
-    /// <li>
-    /// <p>For environment type <code>LINUX_GPU_CONTAINER</code>, you can use up to 16 GB memory, 4 vCPUs, and 1 NVIDIA A10G Tensor Core GPU for builds.</p></li>
-    /// <li>
-    /// <p>For environment type <code>ARM_CONTAINER</code>, you can use up to 4 GB memory and 2 vCPUs on ARM-based processors for builds.</p></li>
+    /// <li> <p> For environment type <code>LINUX_CONTAINER</code>, you can use up to 3 GB memory and 2 vCPUs for builds. </p> </li>
+    /// <li> <p> For environment type <code>LINUX_GPU_CONTAINER</code>, you can use up to 16 GB memory, 4 vCPUs, and 1 NVIDIA A10G Tensor Core GPU for builds.</p> </li>
+    /// <li> <p> For environment type <code>ARM_CONTAINER</code>, you can use up to 4 GB memory and 2 vCPUs on ARM-based processors for builds.</p> </li>
     /// </ul>
-    /// <p>If you use <code>BUILD_GENERAL1_LARGE</code>:</p>
+    /// <p> If you use <code>BUILD_GENERAL1_LARGE</code>: </p>
     /// <ul>
-    /// <li>
-    /// <p>For environment type <code>LINUX_CONTAINER</code>, you can use up to 15 GB memory and 8 vCPUs for builds.</p></li>
-    /// <li>
-    /// <p>For environment type <code>LINUX_GPU_CONTAINER</code>, you can use up to 255 GB memory, 32 vCPUs, and 4 NVIDIA Tesla V100 GPUs for builds.</p></li>
-    /// <li>
-    /// <p>For environment type <code>ARM_CONTAINER</code>, you can use up to 16 GB memory and 8 vCPUs on ARM-based processors for builds.</p></li>
+    /// <li> <p> For environment type <code>LINUX_CONTAINER</code>, you can use up to 15 GB memory and 8 vCPUs for builds. </p> </li>
+    /// <li> <p> For environment type <code>LINUX_GPU_CONTAINER</code>, you can use up to 255 GB memory, 32 vCPUs, and 4 NVIDIA Tesla V100 GPUs for builds.</p> </li>
+    /// <li> <p> For environment type <code>ARM_CONTAINER</code>, you can use up to 16 GB memory and 8 vCPUs on ARM-based processors for builds.</p> </li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build Environment Compute Types</a> in the <i>CodeBuild User Guide.</i></p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build Environment Compute Types</a> in the <i>CodeBuild User Guide.</i> </p>
     pub fn compute_type(&self) -> &crate::types::ComputeType {
         &self.compute_type
     }
@@ -218,11 +178,11 @@ impl ProjectEnvironment {
     /// <p>Enables running the Docker daemon inside a Docker container. Set to true only if the build project is used to build Docker images. Otherwise, a build that attempts to interact with the Docker daemon fails. The default setting is <code>false</code>.</p>
     /// <p>You can initialize the Docker daemon during the install phase of your build by adding one of the following sets of commands to the install phase of your buildspec file:</p>
     /// <p>If the operating system's base image is Ubuntu Linux:</p>
-    /// <p><code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp;</code></p>
-    /// <p><code>- timeout 15 sh -c "until docker info; do echo .; sleep 1; done"</code></p>
+    /// <p> <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp;</code> </p>
+    /// <p> <code>- timeout 15 sh -c "until docker info; do echo .; sleep 1; done"</code> </p>
     /// <p>If the operating system's base image is Alpine Linux and the previous command does not work, add the <code>-t</code> argument to <code>timeout</code>:</p>
-    /// <p><code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp;</code></p>
-    /// <p><code>- timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code></p>
+    /// <p> <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp;</code> </p>
+    /// <p> <code>- timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code> </p>
     pub fn privileged_mode(&self) -> ::std::option::Option<bool> {
         self.privileged_mode
     }
@@ -230,18 +190,16 @@ impl ProjectEnvironment {
     pub fn certificate(&self) -> ::std::option::Option<&str> {
         self.certificate.as_deref()
     }
-    /// <p>The credentials for access to a private registry.</p>
+    /// <p> The credentials for access to a private registry.</p>
     pub fn registry_credential(&self) -> ::std::option::Option<&crate::types::RegistryCredential> {
         self.registry_credential.as_ref()
     }
-    /// <p>The type of credentials CodeBuild uses to pull images in your build. There are two valid values:</p>
+    /// <p> The type of credentials CodeBuild uses to pull images in your build. There are two valid values: </p>
     /// <ul>
-    /// <li>
-    /// <p><code>CODEBUILD</code> specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to trust CodeBuild service principal.</p></li>
-    /// <li>
-    /// <p><code>SERVICE_ROLE</code> specifies that CodeBuild uses your build project's service role.</p></li>
+    /// <li> <p> <code>CODEBUILD</code> specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to trust CodeBuild service principal. </p> </li>
+    /// <li> <p> <code>SERVICE_ROLE</code> specifies that CodeBuild uses your build project's service role. </p> </li>
     /// </ul>
-    /// <p>When you use a cross-account or private registry image, you must use SERVICE_ROLE credentials. When you use an CodeBuild curated image, you must use CODEBUILD credentials.</p>
+    /// <p> When you use a cross-account or private registry image, you must use SERVICE_ROLE credentials. When you use an CodeBuild curated image, you must use CODEBUILD credentials. </p>
     pub fn image_pull_credentials_type(&self) -> ::std::option::Option<&crate::types::ImagePullCredentialsType> {
         self.image_pull_credentials_type.as_ref()
     }
@@ -269,20 +227,15 @@ pub struct ProjectEnvironmentBuilder {
 impl ProjectEnvironmentBuilder {
     /// <p>The type of build environment to use for related builds.</p>
     /// <ul>
-    /// <li>
-    /// <p>The environment type <code>ARM_CONTAINER</code> is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), EU (Ireland), Asia Pacific (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney), and EU (Frankfurt).</p></li>
-    /// <li>
-    /// <p>The environment type <code>LINUX_CONTAINER</code> with compute type <code>build.general1.2xlarge</code> is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).</p></li>
-    /// <li>
-    /// <p>The environment type <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and China (Ningxia).</p></li>
+    /// <li> <p>The environment type <code>ARM_CONTAINER</code> is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), EU (Ireland), Asia Pacific (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney), and EU (Frankfurt).</p> </li>
+    /// <li> <p>The environment type <code>LINUX_CONTAINER</code> with compute type <code>build.general1.2xlarge</code> is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).</p> </li>
+    /// <li> <p>The environment type <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and China (Ningxia).</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p>The environment types <code>ARM_LAMBDA_CONTAINER</code> and <code>LINUX_LAMBDA_CONTAINER</code> are available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Asia Pacific (Mumbai), Asia Pacific (Singapore), Asia Pacific (Sydney), Asia Pacific (Tokyo), EU (Frankfurt), EU (Ireland), and South America (São Paulo).</p></li>
+    /// <li> <p>The environment types <code>ARM_LAMBDA_CONTAINER</code> and <code>LINUX_LAMBDA_CONTAINER</code> are available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Asia Pacific (Mumbai), Asia Pacific (Singapore), Asia Pacific (Sydney), Asia Pacific (Tokyo), EU (Frankfurt), EU (Ireland), and South America (São Paulo).</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p>The environment types <code>WINDOWS_CONTAINER</code> and <code>WINDOWS_SERVER_2019_CONTAINER</code> are available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), and EU (Ireland).</p></li>
+    /// <li> <p>The environment types <code>WINDOWS_CONTAINER</code> and <code>WINDOWS_SERVER_2019_CONTAINER</code> are available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), and EU (Ireland).</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build environment compute types</a> in the <i>CodeBuild user guide</i>.</p>
     /// This field is required.
@@ -292,20 +245,15 @@ impl ProjectEnvironmentBuilder {
     }
     /// <p>The type of build environment to use for related builds.</p>
     /// <ul>
-    /// <li>
-    /// <p>The environment type <code>ARM_CONTAINER</code> is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), EU (Ireland), Asia Pacific (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney), and EU (Frankfurt).</p></li>
-    /// <li>
-    /// <p>The environment type <code>LINUX_CONTAINER</code> with compute type <code>build.general1.2xlarge</code> is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).</p></li>
-    /// <li>
-    /// <p>The environment type <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and China (Ningxia).</p></li>
+    /// <li> <p>The environment type <code>ARM_CONTAINER</code> is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), EU (Ireland), Asia Pacific (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney), and EU (Frankfurt).</p> </li>
+    /// <li> <p>The environment type <code>LINUX_CONTAINER</code> with compute type <code>build.general1.2xlarge</code> is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).</p> </li>
+    /// <li> <p>The environment type <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and China (Ningxia).</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p>The environment types <code>ARM_LAMBDA_CONTAINER</code> and <code>LINUX_LAMBDA_CONTAINER</code> are available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Asia Pacific (Mumbai), Asia Pacific (Singapore), Asia Pacific (Sydney), Asia Pacific (Tokyo), EU (Frankfurt), EU (Ireland), and South America (São Paulo).</p></li>
+    /// <li> <p>The environment types <code>ARM_LAMBDA_CONTAINER</code> and <code>LINUX_LAMBDA_CONTAINER</code> are available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Asia Pacific (Mumbai), Asia Pacific (Singapore), Asia Pacific (Sydney), Asia Pacific (Tokyo), EU (Frankfurt), EU (Ireland), and South America (São Paulo).</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p>The environment types <code>WINDOWS_CONTAINER</code> and <code>WINDOWS_SERVER_2019_CONTAINER</code> are available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), and EU (Ireland).</p></li>
+    /// <li> <p>The environment types <code>WINDOWS_CONTAINER</code> and <code>WINDOWS_SERVER_2019_CONTAINER</code> are available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), and EU (Ireland).</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build environment compute types</a> in the <i>CodeBuild user guide</i>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::EnvironmentType>) -> Self {
@@ -314,20 +262,15 @@ impl ProjectEnvironmentBuilder {
     }
     /// <p>The type of build environment to use for related builds.</p>
     /// <ul>
-    /// <li>
-    /// <p>The environment type <code>ARM_CONTAINER</code> is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), EU (Ireland), Asia Pacific (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney), and EU (Frankfurt).</p></li>
-    /// <li>
-    /// <p>The environment type <code>LINUX_CONTAINER</code> with compute type <code>build.general1.2xlarge</code> is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).</p></li>
-    /// <li>
-    /// <p>The environment type <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and China (Ningxia).</p></li>
+    /// <li> <p>The environment type <code>ARM_CONTAINER</code> is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), EU (Ireland), Asia Pacific (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney), and EU (Frankfurt).</p> </li>
+    /// <li> <p>The environment type <code>LINUX_CONTAINER</code> with compute type <code>build.general1.2xlarge</code> is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).</p> </li>
+    /// <li> <p>The environment type <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and China (Ningxia).</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p>The environment types <code>ARM_LAMBDA_CONTAINER</code> and <code>LINUX_LAMBDA_CONTAINER</code> are available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Asia Pacific (Mumbai), Asia Pacific (Singapore), Asia Pacific (Sydney), Asia Pacific (Tokyo), EU (Frankfurt), EU (Ireland), and South America (São Paulo).</p></li>
+    /// <li> <p>The environment types <code>ARM_LAMBDA_CONTAINER</code> and <code>LINUX_LAMBDA_CONTAINER</code> are available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Asia Pacific (Mumbai), Asia Pacific (Singapore), Asia Pacific (Sydney), Asia Pacific (Tokyo), EU (Frankfurt), EU (Ireland), and South America (São Paulo).</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p>The environment types <code>WINDOWS_CONTAINER</code> and <code>WINDOWS_SERVER_2019_CONTAINER</code> are available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), and EU (Ireland).</p></li>
+    /// <li> <p>The environment types <code>WINDOWS_CONTAINER</code> and <code>WINDOWS_SERVER_2019_CONTAINER</code> are available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), and EU (Ireland).</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build environment compute types</a> in the <i>CodeBuild user guide</i>.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::EnvironmentType> {
@@ -335,27 +278,28 @@ impl ProjectEnvironmentBuilder {
     }
     /// <p>The image tag or image digest that identifies the Docker image to use for this build project. Use the following formats:</p>
     /// <ul>
-    /// <li>
-    /// <p>For an image tag: <code><registry>
+    /// <li> <p>For an image tag: <code>
+    /// <registry>
     /// /
     /// <repository>
     /// :
     /// <tag></tag>
     /// </repository>
-    /// </registry></code>. For example, in the Docker repository that CodeBuild uses to manage its Docker images, this would be <code>aws/codebuild/standard:4.0</code>.</p></li>
-    /// <li>
-    /// <p>For an image digest: <code><registry>
+    /// </registry></code>. For example, in the Docker repository that CodeBuild uses to manage its Docker images, this would be <code>aws/codebuild/standard:4.0</code>. </p> </li>
+    /// <li> <p>For an image digest: <code>
+    /// <registry>
     /// /
     /// <repository>
     /// @
     /// <digest></digest>
     /// </repository>
-    /// </registry></code>. For example, to specify an image with the digest "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use <code><registry>
+    /// </registry></code>. For example, to specify an image with the digest "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use <code>
+    /// <registry>
     /// /
     /// <repository>
     /// @sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf
     /// </repository>
-    /// </registry></code>.</p></li>
+    /// </registry></code>.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-available.html">Docker images provided by CodeBuild</a> in the <i>CodeBuild user guide</i>.</p>
     /// This field is required.
@@ -365,27 +309,28 @@ impl ProjectEnvironmentBuilder {
     }
     /// <p>The image tag or image digest that identifies the Docker image to use for this build project. Use the following formats:</p>
     /// <ul>
-    /// <li>
-    /// <p>For an image tag: <code><registry>
+    /// <li> <p>For an image tag: <code>
+    /// <registry>
     /// /
     /// <repository>
     /// :
     /// <tag></tag>
     /// </repository>
-    /// </registry></code>. For example, in the Docker repository that CodeBuild uses to manage its Docker images, this would be <code>aws/codebuild/standard:4.0</code>.</p></li>
-    /// <li>
-    /// <p>For an image digest: <code><registry>
+    /// </registry></code>. For example, in the Docker repository that CodeBuild uses to manage its Docker images, this would be <code>aws/codebuild/standard:4.0</code>. </p> </li>
+    /// <li> <p>For an image digest: <code>
+    /// <registry>
     /// /
     /// <repository>
     /// @
     /// <digest></digest>
     /// </repository>
-    /// </registry></code>. For example, to specify an image with the digest "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use <code><registry>
+    /// </registry></code>. For example, to specify an image with the digest "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use <code>
+    /// <registry>
     /// /
     /// <repository>
     /// @sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf
     /// </repository>
-    /// </registry></code>.</p></li>
+    /// </registry></code>.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-available.html">Docker images provided by CodeBuild</a> in the <i>CodeBuild user guide</i>.</p>
     pub fn set_image(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -394,27 +339,28 @@ impl ProjectEnvironmentBuilder {
     }
     /// <p>The image tag or image digest that identifies the Docker image to use for this build project. Use the following formats:</p>
     /// <ul>
-    /// <li>
-    /// <p>For an image tag: <code><registry>
+    /// <li> <p>For an image tag: <code>
+    /// <registry>
     /// /
     /// <repository>
     /// :
     /// <tag></tag>
     /// </repository>
-    /// </registry></code>. For example, in the Docker repository that CodeBuild uses to manage its Docker images, this would be <code>aws/codebuild/standard:4.0</code>.</p></li>
-    /// <li>
-    /// <p>For an image digest: <code><registry>
+    /// </registry></code>. For example, in the Docker repository that CodeBuild uses to manage its Docker images, this would be <code>aws/codebuild/standard:4.0</code>. </p> </li>
+    /// <li> <p>For an image digest: <code>
+    /// <registry>
     /// /
     /// <repository>
     /// @
     /// <digest></digest>
     /// </repository>
-    /// </registry></code>. For example, to specify an image with the digest "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use <code><registry>
+    /// </registry></code>. For example, to specify an image with the digest "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use <code>
+    /// <registry>
     /// /
     /// <repository>
     /// @sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf
     /// </repository>
-    /// </registry></code>.</p></li>
+    /// </registry></code>.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-available.html">Docker images provided by CodeBuild</a> in the <i>CodeBuild user guide</i>.</p>
     pub fn get_image(&self) -> &::std::option::Option<::std::string::String> {
@@ -422,44 +368,29 @@ impl ProjectEnvironmentBuilder {
     }
     /// <p>Information about the compute resources the build project uses. Available values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>BUILD_GENERAL1_SMALL</code>: Use up to 3 GB memory and 2 vCPUs for builds.</p></li>
-    /// <li>
-    /// <p><code>BUILD_GENERAL1_MEDIUM</code>: Use up to 7 GB memory and 4 vCPUs for builds.</p></li>
-    /// <li>
-    /// <p><code>BUILD_GENERAL1_LARGE</code>: Use up to 16 GB memory and 8 vCPUs for builds, depending on your environment type.</p></li>
-    /// <li>
-    /// <p><code>BUILD_GENERAL1_2XLARGE</code>: Use up to 145 GB memory, 72 vCPUs, and 824 GB of SSD storage for builds. This compute type supports Docker images up to 100 GB uncompressed.</p></li>
-    /// <li>
-    /// <p><code>BUILD_LAMBDA_1GB</code>: Use up to 1 GB memory for builds. Only available for environment type <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.</p></li>
-    /// <li>
-    /// <p><code>BUILD_LAMBDA_2GB</code>: Use up to 2 GB memory for builds. Only available for environment type <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.</p></li>
-    /// <li>
-    /// <p><code>BUILD_LAMBDA_4GB</code>: Use up to 4 GB memory for builds. Only available for environment type <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.</p></li>
-    /// <li>
-    /// <p><code>BUILD_LAMBDA_8GB</code>: Use up to 8 GB memory for builds. Only available for environment type <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.</p></li>
-    /// <li>
-    /// <p><code>BUILD_LAMBDA_10GB</code>: Use up to 10 GB memory for builds. Only available for environment type <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.</p></li>
+    /// <li> <p> <code>BUILD_GENERAL1_SMALL</code>: Use up to 3 GB memory and 2 vCPUs for builds.</p> </li>
+    /// <li> <p> <code>BUILD_GENERAL1_MEDIUM</code>: Use up to 7 GB memory and 4 vCPUs for builds.</p> </li>
+    /// <li> <p> <code>BUILD_GENERAL1_LARGE</code>: Use up to 16 GB memory and 8 vCPUs for builds, depending on your environment type.</p> </li>
+    /// <li> <p> <code>BUILD_GENERAL1_2XLARGE</code>: Use up to 145 GB memory, 72 vCPUs, and 824 GB of SSD storage for builds. This compute type supports Docker images up to 100 GB uncompressed.</p> </li>
+    /// <li> <p> <code>BUILD_LAMBDA_1GB</code>: Use up to 1 GB memory for builds. Only available for environment type <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.</p> </li>
+    /// <li> <p> <code>BUILD_LAMBDA_2GB</code>: Use up to 2 GB memory for builds. Only available for environment type <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.</p> </li>
+    /// <li> <p> <code>BUILD_LAMBDA_4GB</code>: Use up to 4 GB memory for builds. Only available for environment type <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.</p> </li>
+    /// <li> <p> <code>BUILD_LAMBDA_8GB</code>: Use up to 8 GB memory for builds. Only available for environment type <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.</p> </li>
+    /// <li> <p> <code>BUILD_LAMBDA_10GB</code>: Use up to 10 GB memory for builds. Only available for environment type <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.</p> </li>
     /// </ul>
-    /// <p>If you use <code>BUILD_GENERAL1_SMALL</code>:</p>
+    /// <p> If you use <code>BUILD_GENERAL1_SMALL</code>: </p>
     /// <ul>
-    /// <li>
-    /// <p>For environment type <code>LINUX_CONTAINER</code>, you can use up to 3 GB memory and 2 vCPUs for builds.</p></li>
-    /// <li>
-    /// <p>For environment type <code>LINUX_GPU_CONTAINER</code>, you can use up to 16 GB memory, 4 vCPUs, and 1 NVIDIA A10G Tensor Core GPU for builds.</p></li>
-    /// <li>
-    /// <p>For environment type <code>ARM_CONTAINER</code>, you can use up to 4 GB memory and 2 vCPUs on ARM-based processors for builds.</p></li>
+    /// <li> <p> For environment type <code>LINUX_CONTAINER</code>, you can use up to 3 GB memory and 2 vCPUs for builds. </p> </li>
+    /// <li> <p> For environment type <code>LINUX_GPU_CONTAINER</code>, you can use up to 16 GB memory, 4 vCPUs, and 1 NVIDIA A10G Tensor Core GPU for builds.</p> </li>
+    /// <li> <p> For environment type <code>ARM_CONTAINER</code>, you can use up to 4 GB memory and 2 vCPUs on ARM-based processors for builds.</p> </li>
     /// </ul>
-    /// <p>If you use <code>BUILD_GENERAL1_LARGE</code>:</p>
+    /// <p> If you use <code>BUILD_GENERAL1_LARGE</code>: </p>
     /// <ul>
-    /// <li>
-    /// <p>For environment type <code>LINUX_CONTAINER</code>, you can use up to 15 GB memory and 8 vCPUs for builds.</p></li>
-    /// <li>
-    /// <p>For environment type <code>LINUX_GPU_CONTAINER</code>, you can use up to 255 GB memory, 32 vCPUs, and 4 NVIDIA Tesla V100 GPUs for builds.</p></li>
-    /// <li>
-    /// <p>For environment type <code>ARM_CONTAINER</code>, you can use up to 16 GB memory and 8 vCPUs on ARM-based processors for builds.</p></li>
+    /// <li> <p> For environment type <code>LINUX_CONTAINER</code>, you can use up to 15 GB memory and 8 vCPUs for builds. </p> </li>
+    /// <li> <p> For environment type <code>LINUX_GPU_CONTAINER</code>, you can use up to 255 GB memory, 32 vCPUs, and 4 NVIDIA Tesla V100 GPUs for builds.</p> </li>
+    /// <li> <p> For environment type <code>ARM_CONTAINER</code>, you can use up to 16 GB memory and 8 vCPUs on ARM-based processors for builds.</p> </li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build Environment Compute Types</a> in the <i>CodeBuild User Guide.</i></p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build Environment Compute Types</a> in the <i>CodeBuild User Guide.</i> </p>
     /// This field is required.
     pub fn compute_type(mut self, input: crate::types::ComputeType) -> Self {
         self.compute_type = ::std::option::Option::Some(input);
@@ -467,88 +398,58 @@ impl ProjectEnvironmentBuilder {
     }
     /// <p>Information about the compute resources the build project uses. Available values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>BUILD_GENERAL1_SMALL</code>: Use up to 3 GB memory and 2 vCPUs for builds.</p></li>
-    /// <li>
-    /// <p><code>BUILD_GENERAL1_MEDIUM</code>: Use up to 7 GB memory and 4 vCPUs for builds.</p></li>
-    /// <li>
-    /// <p><code>BUILD_GENERAL1_LARGE</code>: Use up to 16 GB memory and 8 vCPUs for builds, depending on your environment type.</p></li>
-    /// <li>
-    /// <p><code>BUILD_GENERAL1_2XLARGE</code>: Use up to 145 GB memory, 72 vCPUs, and 824 GB of SSD storage for builds. This compute type supports Docker images up to 100 GB uncompressed.</p></li>
-    /// <li>
-    /// <p><code>BUILD_LAMBDA_1GB</code>: Use up to 1 GB memory for builds. Only available for environment type <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.</p></li>
-    /// <li>
-    /// <p><code>BUILD_LAMBDA_2GB</code>: Use up to 2 GB memory for builds. Only available for environment type <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.</p></li>
-    /// <li>
-    /// <p><code>BUILD_LAMBDA_4GB</code>: Use up to 4 GB memory for builds. Only available for environment type <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.</p></li>
-    /// <li>
-    /// <p><code>BUILD_LAMBDA_8GB</code>: Use up to 8 GB memory for builds. Only available for environment type <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.</p></li>
-    /// <li>
-    /// <p><code>BUILD_LAMBDA_10GB</code>: Use up to 10 GB memory for builds. Only available for environment type <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.</p></li>
+    /// <li> <p> <code>BUILD_GENERAL1_SMALL</code>: Use up to 3 GB memory and 2 vCPUs for builds.</p> </li>
+    /// <li> <p> <code>BUILD_GENERAL1_MEDIUM</code>: Use up to 7 GB memory and 4 vCPUs for builds.</p> </li>
+    /// <li> <p> <code>BUILD_GENERAL1_LARGE</code>: Use up to 16 GB memory and 8 vCPUs for builds, depending on your environment type.</p> </li>
+    /// <li> <p> <code>BUILD_GENERAL1_2XLARGE</code>: Use up to 145 GB memory, 72 vCPUs, and 824 GB of SSD storage for builds. This compute type supports Docker images up to 100 GB uncompressed.</p> </li>
+    /// <li> <p> <code>BUILD_LAMBDA_1GB</code>: Use up to 1 GB memory for builds. Only available for environment type <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.</p> </li>
+    /// <li> <p> <code>BUILD_LAMBDA_2GB</code>: Use up to 2 GB memory for builds. Only available for environment type <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.</p> </li>
+    /// <li> <p> <code>BUILD_LAMBDA_4GB</code>: Use up to 4 GB memory for builds. Only available for environment type <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.</p> </li>
+    /// <li> <p> <code>BUILD_LAMBDA_8GB</code>: Use up to 8 GB memory for builds. Only available for environment type <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.</p> </li>
+    /// <li> <p> <code>BUILD_LAMBDA_10GB</code>: Use up to 10 GB memory for builds. Only available for environment type <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.</p> </li>
     /// </ul>
-    /// <p>If you use <code>BUILD_GENERAL1_SMALL</code>:</p>
+    /// <p> If you use <code>BUILD_GENERAL1_SMALL</code>: </p>
     /// <ul>
-    /// <li>
-    /// <p>For environment type <code>LINUX_CONTAINER</code>, you can use up to 3 GB memory and 2 vCPUs for builds.</p></li>
-    /// <li>
-    /// <p>For environment type <code>LINUX_GPU_CONTAINER</code>, you can use up to 16 GB memory, 4 vCPUs, and 1 NVIDIA A10G Tensor Core GPU for builds.</p></li>
-    /// <li>
-    /// <p>For environment type <code>ARM_CONTAINER</code>, you can use up to 4 GB memory and 2 vCPUs on ARM-based processors for builds.</p></li>
+    /// <li> <p> For environment type <code>LINUX_CONTAINER</code>, you can use up to 3 GB memory and 2 vCPUs for builds. </p> </li>
+    /// <li> <p> For environment type <code>LINUX_GPU_CONTAINER</code>, you can use up to 16 GB memory, 4 vCPUs, and 1 NVIDIA A10G Tensor Core GPU for builds.</p> </li>
+    /// <li> <p> For environment type <code>ARM_CONTAINER</code>, you can use up to 4 GB memory and 2 vCPUs on ARM-based processors for builds.</p> </li>
     /// </ul>
-    /// <p>If you use <code>BUILD_GENERAL1_LARGE</code>:</p>
+    /// <p> If you use <code>BUILD_GENERAL1_LARGE</code>: </p>
     /// <ul>
-    /// <li>
-    /// <p>For environment type <code>LINUX_CONTAINER</code>, you can use up to 15 GB memory and 8 vCPUs for builds.</p></li>
-    /// <li>
-    /// <p>For environment type <code>LINUX_GPU_CONTAINER</code>, you can use up to 255 GB memory, 32 vCPUs, and 4 NVIDIA Tesla V100 GPUs for builds.</p></li>
-    /// <li>
-    /// <p>For environment type <code>ARM_CONTAINER</code>, you can use up to 16 GB memory and 8 vCPUs on ARM-based processors for builds.</p></li>
+    /// <li> <p> For environment type <code>LINUX_CONTAINER</code>, you can use up to 15 GB memory and 8 vCPUs for builds. </p> </li>
+    /// <li> <p> For environment type <code>LINUX_GPU_CONTAINER</code>, you can use up to 255 GB memory, 32 vCPUs, and 4 NVIDIA Tesla V100 GPUs for builds.</p> </li>
+    /// <li> <p> For environment type <code>ARM_CONTAINER</code>, you can use up to 16 GB memory and 8 vCPUs on ARM-based processors for builds.</p> </li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build Environment Compute Types</a> in the <i>CodeBuild User Guide.</i></p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build Environment Compute Types</a> in the <i>CodeBuild User Guide.</i> </p>
     pub fn set_compute_type(mut self, input: ::std::option::Option<crate::types::ComputeType>) -> Self {
         self.compute_type = input;
         self
     }
     /// <p>Information about the compute resources the build project uses. Available values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>BUILD_GENERAL1_SMALL</code>: Use up to 3 GB memory and 2 vCPUs for builds.</p></li>
-    /// <li>
-    /// <p><code>BUILD_GENERAL1_MEDIUM</code>: Use up to 7 GB memory and 4 vCPUs for builds.</p></li>
-    /// <li>
-    /// <p><code>BUILD_GENERAL1_LARGE</code>: Use up to 16 GB memory and 8 vCPUs for builds, depending on your environment type.</p></li>
-    /// <li>
-    /// <p><code>BUILD_GENERAL1_2XLARGE</code>: Use up to 145 GB memory, 72 vCPUs, and 824 GB of SSD storage for builds. This compute type supports Docker images up to 100 GB uncompressed.</p></li>
-    /// <li>
-    /// <p><code>BUILD_LAMBDA_1GB</code>: Use up to 1 GB memory for builds. Only available for environment type <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.</p></li>
-    /// <li>
-    /// <p><code>BUILD_LAMBDA_2GB</code>: Use up to 2 GB memory for builds. Only available for environment type <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.</p></li>
-    /// <li>
-    /// <p><code>BUILD_LAMBDA_4GB</code>: Use up to 4 GB memory for builds. Only available for environment type <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.</p></li>
-    /// <li>
-    /// <p><code>BUILD_LAMBDA_8GB</code>: Use up to 8 GB memory for builds. Only available for environment type <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.</p></li>
-    /// <li>
-    /// <p><code>BUILD_LAMBDA_10GB</code>: Use up to 10 GB memory for builds. Only available for environment type <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.</p></li>
+    /// <li> <p> <code>BUILD_GENERAL1_SMALL</code>: Use up to 3 GB memory and 2 vCPUs for builds.</p> </li>
+    /// <li> <p> <code>BUILD_GENERAL1_MEDIUM</code>: Use up to 7 GB memory and 4 vCPUs for builds.</p> </li>
+    /// <li> <p> <code>BUILD_GENERAL1_LARGE</code>: Use up to 16 GB memory and 8 vCPUs for builds, depending on your environment type.</p> </li>
+    /// <li> <p> <code>BUILD_GENERAL1_2XLARGE</code>: Use up to 145 GB memory, 72 vCPUs, and 824 GB of SSD storage for builds. This compute type supports Docker images up to 100 GB uncompressed.</p> </li>
+    /// <li> <p> <code>BUILD_LAMBDA_1GB</code>: Use up to 1 GB memory for builds. Only available for environment type <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.</p> </li>
+    /// <li> <p> <code>BUILD_LAMBDA_2GB</code>: Use up to 2 GB memory for builds. Only available for environment type <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.</p> </li>
+    /// <li> <p> <code>BUILD_LAMBDA_4GB</code>: Use up to 4 GB memory for builds. Only available for environment type <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.</p> </li>
+    /// <li> <p> <code>BUILD_LAMBDA_8GB</code>: Use up to 8 GB memory for builds. Only available for environment type <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.</p> </li>
+    /// <li> <p> <code>BUILD_LAMBDA_10GB</code>: Use up to 10 GB memory for builds. Only available for environment type <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.</p> </li>
     /// </ul>
-    /// <p>If you use <code>BUILD_GENERAL1_SMALL</code>:</p>
+    /// <p> If you use <code>BUILD_GENERAL1_SMALL</code>: </p>
     /// <ul>
-    /// <li>
-    /// <p>For environment type <code>LINUX_CONTAINER</code>, you can use up to 3 GB memory and 2 vCPUs for builds.</p></li>
-    /// <li>
-    /// <p>For environment type <code>LINUX_GPU_CONTAINER</code>, you can use up to 16 GB memory, 4 vCPUs, and 1 NVIDIA A10G Tensor Core GPU for builds.</p></li>
-    /// <li>
-    /// <p>For environment type <code>ARM_CONTAINER</code>, you can use up to 4 GB memory and 2 vCPUs on ARM-based processors for builds.</p></li>
+    /// <li> <p> For environment type <code>LINUX_CONTAINER</code>, you can use up to 3 GB memory and 2 vCPUs for builds. </p> </li>
+    /// <li> <p> For environment type <code>LINUX_GPU_CONTAINER</code>, you can use up to 16 GB memory, 4 vCPUs, and 1 NVIDIA A10G Tensor Core GPU for builds.</p> </li>
+    /// <li> <p> For environment type <code>ARM_CONTAINER</code>, you can use up to 4 GB memory and 2 vCPUs on ARM-based processors for builds.</p> </li>
     /// </ul>
-    /// <p>If you use <code>BUILD_GENERAL1_LARGE</code>:</p>
+    /// <p> If you use <code>BUILD_GENERAL1_LARGE</code>: </p>
     /// <ul>
-    /// <li>
-    /// <p>For environment type <code>LINUX_CONTAINER</code>, you can use up to 15 GB memory and 8 vCPUs for builds.</p></li>
-    /// <li>
-    /// <p>For environment type <code>LINUX_GPU_CONTAINER</code>, you can use up to 255 GB memory, 32 vCPUs, and 4 NVIDIA Tesla V100 GPUs for builds.</p></li>
-    /// <li>
-    /// <p>For environment type <code>ARM_CONTAINER</code>, you can use up to 16 GB memory and 8 vCPUs on ARM-based processors for builds.</p></li>
+    /// <li> <p> For environment type <code>LINUX_CONTAINER</code>, you can use up to 15 GB memory and 8 vCPUs for builds. </p> </li>
+    /// <li> <p> For environment type <code>LINUX_GPU_CONTAINER</code>, you can use up to 255 GB memory, 32 vCPUs, and 4 NVIDIA Tesla V100 GPUs for builds.</p> </li>
+    /// <li> <p> For environment type <code>ARM_CONTAINER</code>, you can use up to 16 GB memory and 8 vCPUs on ARM-based processors for builds.</p> </li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build Environment Compute Types</a> in the <i>CodeBuild User Guide.</i></p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build Environment Compute Types</a> in the <i>CodeBuild User Guide.</i> </p>
     pub fn get_compute_type(&self) -> &::std::option::Option<crate::types::ComputeType> {
         &self.compute_type
     }
@@ -575,11 +476,11 @@ impl ProjectEnvironmentBuilder {
     /// <p>Enables running the Docker daemon inside a Docker container. Set to true only if the build project is used to build Docker images. Otherwise, a build that attempts to interact with the Docker daemon fails. The default setting is <code>false</code>.</p>
     /// <p>You can initialize the Docker daemon during the install phase of your build by adding one of the following sets of commands to the install phase of your buildspec file:</p>
     /// <p>If the operating system's base image is Ubuntu Linux:</p>
-    /// <p><code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp;</code></p>
-    /// <p><code>- timeout 15 sh -c "until docker info; do echo .; sleep 1; done"</code></p>
+    /// <p> <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp;</code> </p>
+    /// <p> <code>- timeout 15 sh -c "until docker info; do echo .; sleep 1; done"</code> </p>
     /// <p>If the operating system's base image is Alpine Linux and the previous command does not work, add the <code>-t</code> argument to <code>timeout</code>:</p>
-    /// <p><code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp;</code></p>
-    /// <p><code>- timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code></p>
+    /// <p> <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp;</code> </p>
+    /// <p> <code>- timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code> </p>
     pub fn privileged_mode(mut self, input: bool) -> Self {
         self.privileged_mode = ::std::option::Option::Some(input);
         self
@@ -587,11 +488,11 @@ impl ProjectEnvironmentBuilder {
     /// <p>Enables running the Docker daemon inside a Docker container. Set to true only if the build project is used to build Docker images. Otherwise, a build that attempts to interact with the Docker daemon fails. The default setting is <code>false</code>.</p>
     /// <p>You can initialize the Docker daemon during the install phase of your build by adding one of the following sets of commands to the install phase of your buildspec file:</p>
     /// <p>If the operating system's base image is Ubuntu Linux:</p>
-    /// <p><code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp;</code></p>
-    /// <p><code>- timeout 15 sh -c "until docker info; do echo .; sleep 1; done"</code></p>
+    /// <p> <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp;</code> </p>
+    /// <p> <code>- timeout 15 sh -c "until docker info; do echo .; sleep 1; done"</code> </p>
     /// <p>If the operating system's base image is Alpine Linux and the previous command does not work, add the <code>-t</code> argument to <code>timeout</code>:</p>
-    /// <p><code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp;</code></p>
-    /// <p><code>- timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code></p>
+    /// <p> <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp;</code> </p>
+    /// <p> <code>- timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code> </p>
     pub fn set_privileged_mode(mut self, input: ::std::option::Option<bool>) -> Self {
         self.privileged_mode = input;
         self
@@ -599,11 +500,11 @@ impl ProjectEnvironmentBuilder {
     /// <p>Enables running the Docker daemon inside a Docker container. Set to true only if the build project is used to build Docker images. Otherwise, a build that attempts to interact with the Docker daemon fails. The default setting is <code>false</code>.</p>
     /// <p>You can initialize the Docker daemon during the install phase of your build by adding one of the following sets of commands to the install phase of your buildspec file:</p>
     /// <p>If the operating system's base image is Ubuntu Linux:</p>
-    /// <p><code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp;</code></p>
-    /// <p><code>- timeout 15 sh -c "until docker info; do echo .; sleep 1; done"</code></p>
+    /// <p> <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp;</code> </p>
+    /// <p> <code>- timeout 15 sh -c "until docker info; do echo .; sleep 1; done"</code> </p>
     /// <p>If the operating system's base image is Alpine Linux and the previous command does not work, add the <code>-t</code> argument to <code>timeout</code>:</p>
-    /// <p><code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp;</code></p>
-    /// <p><code>- timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code></p>
+    /// <p> <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp;</code> </p>
+    /// <p> <code>- timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code> </p>
     pub fn get_privileged_mode(&self) -> &::std::option::Option<bool> {
         &self.privileged_mode
     }
@@ -621,52 +522,46 @@ impl ProjectEnvironmentBuilder {
     pub fn get_certificate(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate
     }
-    /// <p>The credentials for access to a private registry.</p>
+    /// <p> The credentials for access to a private registry.</p>
     pub fn registry_credential(mut self, input: crate::types::RegistryCredential) -> Self {
         self.registry_credential = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The credentials for access to a private registry.</p>
+    /// <p> The credentials for access to a private registry.</p>
     pub fn set_registry_credential(mut self, input: ::std::option::Option<crate::types::RegistryCredential>) -> Self {
         self.registry_credential = input;
         self
     }
-    /// <p>The credentials for access to a private registry.</p>
+    /// <p> The credentials for access to a private registry.</p>
     pub fn get_registry_credential(&self) -> &::std::option::Option<crate::types::RegistryCredential> {
         &self.registry_credential
     }
-    /// <p>The type of credentials CodeBuild uses to pull images in your build. There are two valid values:</p>
+    /// <p> The type of credentials CodeBuild uses to pull images in your build. There are two valid values: </p>
     /// <ul>
-    /// <li>
-    /// <p><code>CODEBUILD</code> specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to trust CodeBuild service principal.</p></li>
-    /// <li>
-    /// <p><code>SERVICE_ROLE</code> specifies that CodeBuild uses your build project's service role.</p></li>
+    /// <li> <p> <code>CODEBUILD</code> specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to trust CodeBuild service principal. </p> </li>
+    /// <li> <p> <code>SERVICE_ROLE</code> specifies that CodeBuild uses your build project's service role. </p> </li>
     /// </ul>
-    /// <p>When you use a cross-account or private registry image, you must use SERVICE_ROLE credentials. When you use an CodeBuild curated image, you must use CODEBUILD credentials.</p>
+    /// <p> When you use a cross-account or private registry image, you must use SERVICE_ROLE credentials. When you use an CodeBuild curated image, you must use CODEBUILD credentials. </p>
     pub fn image_pull_credentials_type(mut self, input: crate::types::ImagePullCredentialsType) -> Self {
         self.image_pull_credentials_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of credentials CodeBuild uses to pull images in your build. There are two valid values:</p>
+    /// <p> The type of credentials CodeBuild uses to pull images in your build. There are two valid values: </p>
     /// <ul>
-    /// <li>
-    /// <p><code>CODEBUILD</code> specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to trust CodeBuild service principal.</p></li>
-    /// <li>
-    /// <p><code>SERVICE_ROLE</code> specifies that CodeBuild uses your build project's service role.</p></li>
+    /// <li> <p> <code>CODEBUILD</code> specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to trust CodeBuild service principal. </p> </li>
+    /// <li> <p> <code>SERVICE_ROLE</code> specifies that CodeBuild uses your build project's service role. </p> </li>
     /// </ul>
-    /// <p>When you use a cross-account or private registry image, you must use SERVICE_ROLE credentials. When you use an CodeBuild curated image, you must use CODEBUILD credentials.</p>
+    /// <p> When you use a cross-account or private registry image, you must use SERVICE_ROLE credentials. When you use an CodeBuild curated image, you must use CODEBUILD credentials. </p>
     pub fn set_image_pull_credentials_type(mut self, input: ::std::option::Option<crate::types::ImagePullCredentialsType>) -> Self {
         self.image_pull_credentials_type = input;
         self
     }
-    /// <p>The type of credentials CodeBuild uses to pull images in your build. There are two valid values:</p>
+    /// <p> The type of credentials CodeBuild uses to pull images in your build. There are two valid values: </p>
     /// <ul>
-    /// <li>
-    /// <p><code>CODEBUILD</code> specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to trust CodeBuild service principal.</p></li>
-    /// <li>
-    /// <p><code>SERVICE_ROLE</code> specifies that CodeBuild uses your build project's service role.</p></li>
+    /// <li> <p> <code>CODEBUILD</code> specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to trust CodeBuild service principal. </p> </li>
+    /// <li> <p> <code>SERVICE_ROLE</code> specifies that CodeBuild uses your build project's service role. </p> </li>
     /// </ul>
-    /// <p>When you use a cross-account or private registry image, you must use SERVICE_ROLE credentials. When you use an CodeBuild curated image, you must use CODEBUILD credentials.</p>
+    /// <p> When you use a cross-account or private registry image, you must use SERVICE_ROLE credentials. When you use an CodeBuild curated image, you must use CODEBUILD credentials. </p>
     pub fn get_image_pull_credentials_type(&self) -> &::std::option::Option<crate::types::ImagePullCredentialsType> {
         &self.image_pull_credentials_type
     }

@@ -6,7 +6,7 @@
 pub struct HttpEndpointDestinationDescription {
     /// <p>The configuration of the specified HTTP endpoint destination.</p>
     pub endpoint_configuration: ::std::option::Option<crate::types::HttpEndpointDescription>,
-    /// <p>Describes buffering options that can be applied to the data before it is delivered to the HTTPS endpoint destination. Kinesis Data Firehose teats these options as hints, and it might choose to use more optimal values. The <code>SizeInMBs</code> and <code>IntervalInSeconds</code> parameters are optional. However, if specify a value for one of them, you must also provide a value for the other.</p>
+    /// <p>Describes buffering options that can be applied to the data before it is delivered to the HTTPS endpoint destination. Kinesis Data Firehose teats these options as hints, and it might choose to use more optimal values. The <code>SizeInMBs</code> and <code>IntervalInSeconds</code> parameters are optional. However, if specify a value for one of them, you must also provide a value for the other. </p>
     pub buffering_hints: ::std::option::Option<crate::types::HttpEndpointBufferingHints>,
     /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
     pub cloud_watch_logging_options: ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
@@ -28,7 +28,7 @@ impl HttpEndpointDestinationDescription {
     pub fn endpoint_configuration(&self) -> ::std::option::Option<&crate::types::HttpEndpointDescription> {
         self.endpoint_configuration.as_ref()
     }
-    /// <p>Describes buffering options that can be applied to the data before it is delivered to the HTTPS endpoint destination. Kinesis Data Firehose teats these options as hints, and it might choose to use more optimal values. The <code>SizeInMBs</code> and <code>IntervalInSeconds</code> parameters are optional. However, if specify a value for one of them, you must also provide a value for the other.</p>
+    /// <p>Describes buffering options that can be applied to the data before it is delivered to the HTTPS endpoint destination. Kinesis Data Firehose teats these options as hints, and it might choose to use more optimal values. The <code>SizeInMBs</code> and <code>IntervalInSeconds</code> parameters are optional. However, if specify a value for one of them, you must also provide a value for the other. </p>
     pub fn buffering_hints(&self) -> ::std::option::Option<&crate::types::HttpEndpointBufferingHints> {
         self.buffering_hints.as_ref()
     }
@@ -97,17 +97,17 @@ impl HttpEndpointDestinationDescriptionBuilder {
     pub fn get_endpoint_configuration(&self) -> &::std::option::Option<crate::types::HttpEndpointDescription> {
         &self.endpoint_configuration
     }
-    /// <p>Describes buffering options that can be applied to the data before it is delivered to the HTTPS endpoint destination. Kinesis Data Firehose teats these options as hints, and it might choose to use more optimal values. The <code>SizeInMBs</code> and <code>IntervalInSeconds</code> parameters are optional. However, if specify a value for one of them, you must also provide a value for the other.</p>
+    /// <p>Describes buffering options that can be applied to the data before it is delivered to the HTTPS endpoint destination. Kinesis Data Firehose teats these options as hints, and it might choose to use more optimal values. The <code>SizeInMBs</code> and <code>IntervalInSeconds</code> parameters are optional. However, if specify a value for one of them, you must also provide a value for the other. </p>
     pub fn buffering_hints(mut self, input: crate::types::HttpEndpointBufferingHints) -> Self {
         self.buffering_hints = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Describes buffering options that can be applied to the data before it is delivered to the HTTPS endpoint destination. Kinesis Data Firehose teats these options as hints, and it might choose to use more optimal values. The <code>SizeInMBs</code> and <code>IntervalInSeconds</code> parameters are optional. However, if specify a value for one of them, you must also provide a value for the other.</p>
+    /// <p>Describes buffering options that can be applied to the data before it is delivered to the HTTPS endpoint destination. Kinesis Data Firehose teats these options as hints, and it might choose to use more optimal values. The <code>SizeInMBs</code> and <code>IntervalInSeconds</code> parameters are optional. However, if specify a value for one of them, you must also provide a value for the other. </p>
     pub fn set_buffering_hints(mut self, input: ::std::option::Option<crate::types::HttpEndpointBufferingHints>) -> Self {
         self.buffering_hints = input;
         self
     }
-    /// <p>Describes buffering options that can be applied to the data before it is delivered to the HTTPS endpoint destination. Kinesis Data Firehose teats these options as hints, and it might choose to use more optimal values. The <code>SizeInMBs</code> and <code>IntervalInSeconds</code> parameters are optional. However, if specify a value for one of them, you must also provide a value for the other.</p>
+    /// <p>Describes buffering options that can be applied to the data before it is delivered to the HTTPS endpoint destination. Kinesis Data Firehose teats these options as hints, and it might choose to use more optimal values. The <code>SizeInMBs</code> and <code>IntervalInSeconds</code> parameters are optional. However, if specify a value for one of them, you must also provide a value for the other. </p>
     pub fn get_buffering_hints(&self) -> &::std::option::Option<crate::types::HttpEndpointBufferingHints> {
         &self.buffering_hints
     }

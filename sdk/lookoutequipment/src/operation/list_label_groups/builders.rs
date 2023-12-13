@@ -22,7 +22,7 @@ impl ListLabelGroupsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListLabelGroups`.
 ///
-/// <p>Returns a list of the label groups.</p>
+/// <p> Returns a list of the label groups. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListLabelGroupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,45 +114,45 @@ impl ListLabelGroupsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_label_groups::paginator::ListLabelGroupsPaginator {
         crate::operation::list_label_groups::paginator::ListLabelGroupsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The beginning of the name of the label groups to be listed.</p>
+    /// <p> The beginning of the name of the label groups to be listed. </p>
     pub fn label_group_name_begins_with(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.label_group_name_begins_with(input.into());
         self
     }
-    /// <p>The beginning of the name of the label groups to be listed.</p>
+    /// <p> The beginning of the name of the label groups to be listed. </p>
     pub fn set_label_group_name_begins_with(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_label_group_name_begins_with(input);
         self
     }
-    /// <p>The beginning of the name of the label groups to be listed.</p>
+    /// <p> The beginning of the name of the label groups to be listed. </p>
     pub fn get_label_group_name_begins_with(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_label_group_name_begins_with()
     }
-    /// <p>An opaque pagination token indicating where to continue the listing of label groups.</p>
+    /// <p> An opaque pagination token indicating where to continue the listing of label groups. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>An opaque pagination token indicating where to continue the listing of label groups.</p>
+    /// <p> An opaque pagination token indicating where to continue the listing of label groups. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>An opaque pagination token indicating where to continue the listing of label groups.</p>
+    /// <p> An opaque pagination token indicating where to continue the listing of label groups. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>Specifies the maximum number of label groups to list.</p>
+    /// <p> Specifies the maximum number of label groups to list. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>Specifies the maximum number of label groups to list.</p>
+    /// <p> Specifies the maximum number of label groups to list. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>Specifies the maximum number of label groups to list.</p>
+    /// <p> Specifies the maximum number of label groups to list. </p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

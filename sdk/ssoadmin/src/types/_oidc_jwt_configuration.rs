@@ -8,7 +8,7 @@ pub struct OidcJwtConfiguration {
     pub issuer_url: ::std::string::String,
     /// <p>The path of the source attribute in the JWT from the trusted token issuer. The attribute mapped by this JMESPath expression is compared against the attribute mapped by <code>IdentityStoreAttributePath</code> when a trusted token issuer token is exchanged for an IAM Identity Center token.</p>
     pub claim_attribute_path: ::std::string::String,
-    /// <p>The path of the destination attribute in a JWT from IAM Identity Center. The attribute mapped by this JMESPath expression is compared against the attribute mapped by <code>ClaimAttributePath</code> when a trusted token issuer token is exchanged for an IAM Identity Center token.</p>
+    /// <p>The path of the destination attribute in a JWT from IAM Identity Center. The attribute mapped by this JMESPath expression is compared against the attribute mapped by <code>ClaimAttributePath</code> when a trusted token issuer token is exchanged for an IAM Identity Center token. </p>
     pub identity_store_attribute_path: ::std::string::String,
     /// <p>The method that the trusted token issuer can use to retrieve the JSON Web Key Set used to verify a JWT.</p>
     pub jwks_retrieval_option: crate::types::JwksRetrievalOption,
@@ -24,7 +24,7 @@ impl OidcJwtConfiguration {
         use std::ops::Deref;
         self.claim_attribute_path.deref()
     }
-    /// <p>The path of the destination attribute in a JWT from IAM Identity Center. The attribute mapped by this JMESPath expression is compared against the attribute mapped by <code>ClaimAttributePath</code> when a trusted token issuer token is exchanged for an IAM Identity Center token.</p>
+    /// <p>The path of the destination attribute in a JWT from IAM Identity Center. The attribute mapped by this JMESPath expression is compared against the attribute mapped by <code>ClaimAttributePath</code> when a trusted token issuer token is exchanged for an IAM Identity Center token. </p>
     pub fn identity_store_attribute_path(&self) -> &str {
         use std::ops::Deref;
         self.identity_store_attribute_path.deref()
@@ -81,18 +81,18 @@ impl OidcJwtConfigurationBuilder {
     pub fn get_claim_attribute_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.claim_attribute_path
     }
-    /// <p>The path of the destination attribute in a JWT from IAM Identity Center. The attribute mapped by this JMESPath expression is compared against the attribute mapped by <code>ClaimAttributePath</code> when a trusted token issuer token is exchanged for an IAM Identity Center token.</p>
+    /// <p>The path of the destination attribute in a JWT from IAM Identity Center. The attribute mapped by this JMESPath expression is compared against the attribute mapped by <code>ClaimAttributePath</code> when a trusted token issuer token is exchanged for an IAM Identity Center token. </p>
     /// This field is required.
     pub fn identity_store_attribute_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_store_attribute_path = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The path of the destination attribute in a JWT from IAM Identity Center. The attribute mapped by this JMESPath expression is compared against the attribute mapped by <code>ClaimAttributePath</code> when a trusted token issuer token is exchanged for an IAM Identity Center token.</p>
+    /// <p>The path of the destination attribute in a JWT from IAM Identity Center. The attribute mapped by this JMESPath expression is compared against the attribute mapped by <code>ClaimAttributePath</code> when a trusted token issuer token is exchanged for an IAM Identity Center token. </p>
     pub fn set_identity_store_attribute_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_store_attribute_path = input;
         self
     }
-    /// <p>The path of the destination attribute in a JWT from IAM Identity Center. The attribute mapped by this JMESPath expression is compared against the attribute mapped by <code>ClaimAttributePath</code> when a trusted token issuer token is exchanged for an IAM Identity Center token.</p>
+    /// <p>The path of the destination attribute in a JWT from IAM Identity Center. The attribute mapped by this JMESPath expression is compared against the attribute mapped by <code>ClaimAttributePath</code> when a trusted token issuer token is exchanged for an IAM Identity Center token. </p>
     pub fn get_identity_store_attribute_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.identity_store_attribute_path
     }

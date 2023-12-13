@@ -22,7 +22,7 @@ impl CreateMultipartReadSetUploadInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateMultipartReadSetUpload`.
 ///
-/// <p>Begins a multipart read set upload.</p>
+/// <p> Begins a multipart read set upload. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateMultipartReadSetUploadFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,129 +108,129 @@ impl CreateMultipartReadSetUploadFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The sequence store ID for the store that is the destination of the multipart uploads.</p>
+    /// <p> The sequence store ID for the store that is the destination of the multipart uploads. </p>
     pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sequence_store_id(input.into());
         self
     }
-    /// <p>The sequence store ID for the store that is the destination of the multipart uploads.</p>
+    /// <p> The sequence store ID for the store that is the destination of the multipart uploads. </p>
     pub fn set_sequence_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sequence_store_id(input);
         self
     }
-    /// <p>The sequence store ID for the store that is the destination of the multipart uploads.</p>
+    /// <p> The sequence store ID for the store that is the destination of the multipart uploads. </p>
     pub fn get_sequence_store_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_sequence_store_id()
     }
-    /// <p>An idempotency token that can be used to avoid triggering multiple multipart uploads.</p>
+    /// <p> An idempotency token that can be used to avoid triggering multiple multipart uploads. </p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p>An idempotency token that can be used to avoid triggering multiple multipart uploads.</p>
+    /// <p> An idempotency token that can be used to avoid triggering multiple multipart uploads. </p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p>An idempotency token that can be used to avoid triggering multiple multipart uploads.</p>
+    /// <p> An idempotency token that can be used to avoid triggering multiple multipart uploads. </p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
-    /// <p>The type of file being uploaded.</p>
+    /// <p> The type of file being uploaded. </p>
     pub fn source_file_type(mut self, input: crate::types::FileType) -> Self {
         self.inner = self.inner.source_file_type(input);
         self
     }
-    /// <p>The type of file being uploaded.</p>
+    /// <p> The type of file being uploaded. </p>
     pub fn set_source_file_type(mut self, input: ::std::option::Option<crate::types::FileType>) -> Self {
         self.inner = self.inner.set_source_file_type(input);
         self
     }
-    /// <p>The type of file being uploaded.</p>
+    /// <p> The type of file being uploaded. </p>
     pub fn get_source_file_type(&self) -> &::std::option::Option<crate::types::FileType> {
         self.inner.get_source_file_type()
     }
-    /// <p>The source's subject ID.</p>
+    /// <p> The source's subject ID. </p>
     pub fn subject_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subject_id(input.into());
         self
     }
-    /// <p>The source's subject ID.</p>
+    /// <p> The source's subject ID. </p>
     pub fn set_subject_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_subject_id(input);
         self
     }
-    /// <p>The source's subject ID.</p>
+    /// <p> The source's subject ID. </p>
     pub fn get_subject_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_subject_id()
     }
-    /// <p>The source's sample ID.</p>
+    /// <p> The source's sample ID. </p>
     pub fn sample_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sample_id(input.into());
         self
     }
-    /// <p>The source's sample ID.</p>
+    /// <p> The source's sample ID. </p>
     pub fn set_sample_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sample_id(input);
         self
     }
-    /// <p>The source's sample ID.</p>
+    /// <p> The source's sample ID. </p>
     pub fn get_sample_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_sample_id()
     }
-    /// <p>Where the source originated.</p>
+    /// <p> Where the source originated. </p>
     pub fn generated_from(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.generated_from(input.into());
         self
     }
-    /// <p>Where the source originated.</p>
+    /// <p> Where the source originated. </p>
     pub fn set_generated_from(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_generated_from(input);
         self
     }
-    /// <p>Where the source originated.</p>
+    /// <p> Where the source originated. </p>
     pub fn get_generated_from(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_generated_from()
     }
-    /// <p>The ARN of the reference.</p>
+    /// <p> The ARN of the reference. </p>
     pub fn reference_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reference_arn(input.into());
         self
     }
-    /// <p>The ARN of the reference.</p>
+    /// <p> The ARN of the reference. </p>
     pub fn set_reference_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_reference_arn(input);
         self
     }
-    /// <p>The ARN of the reference.</p>
+    /// <p> The ARN of the reference. </p>
     pub fn get_reference_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_reference_arn()
     }
-    /// <p>The name of the read set.</p>
+    /// <p> The name of the read set. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of the read set.</p>
+    /// <p> The name of the read set. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name of the read set.</p>
+    /// <p> The name of the read set. </p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>The description of the read set.</p>
+    /// <p> The description of the read set. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>The description of the read set.</p>
+    /// <p> The description of the read set. </p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>The description of the read set.</p>
+    /// <p> The description of the read set. </p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
@@ -238,17 +238,17 @@ impl CreateMultipartReadSetUploadFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>Any tags to add to the read set.</p>
+    /// <p> Any tags to add to the read set. </p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
-    /// <p>Any tags to add to the read set.</p>
+    /// <p> Any tags to add to the read set. </p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>Any tags to add to the read set.</p>
+    /// <p> Any tags to add to the read set. </p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }

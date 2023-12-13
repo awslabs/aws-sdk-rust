@@ -3,50 +3,42 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateKxScalingGroupOutput {
-    /// <p>A unique identifier for the kdb environment, where you create the scaling group.</p>
+    /// <p>A unique identifier for the kdb environment, where you create the scaling group. </p>
     pub environment_id: ::std::option::Option<::std::string::String>,
-    /// <p>A unique identifier for the kdb scaling group.</p>
+    /// <p>A unique identifier for the kdb scaling group. </p>
     pub scaling_group_name: ::std::option::Option<::std::string::String>,
-    /// <p>The memory and CPU capabilities of the scaling group host on which FinSpace Managed kdb clusters will be placed.</p>
+    /// <p> The memory and CPU capabilities of the scaling group host on which FinSpace Managed kdb clusters will be placed. </p>
     pub host_type: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the availability zones.</p>
     pub availability_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of scaling group.</p>
     /// <ul>
-    /// <li>
-    /// <p>CREATING – The scaling group creation is in progress.</p></li>
-    /// <li>
-    /// <p>CREATE_FAILED – The scaling group creation has failed.</p></li>
-    /// <li>
-    /// <p>ACTIVE – The scaling group is active.</p></li>
-    /// <li>
-    /// <p>UPDATING – The scaling group is in the process of being updated.</p></li>
-    /// <li>
-    /// <p>UPDATE_FAILED – The update action failed.</p></li>
-    /// <li>
-    /// <p>DELETING – The scaling group is in the process of being deleted.</p></li>
-    /// <li>
-    /// <p>DELETE_FAILED – The system failed to delete the scaling group.</p></li>
-    /// <li>
-    /// <p>DELETED – The scaling group is successfully deleted.</p></li>
+    /// <li> <p>CREATING – The scaling group creation is in progress.</p> </li>
+    /// <li> <p>CREATE_FAILED – The scaling group creation has failed.</p> </li>
+    /// <li> <p>ACTIVE – The scaling group is active.</p> </li>
+    /// <li> <p>UPDATING – The scaling group is in the process of being updated.</p> </li>
+    /// <li> <p>UPDATE_FAILED – The update action failed.</p> </li>
+    /// <li> <p>DELETING – The scaling group is in the process of being deleted.</p> </li>
+    /// <li> <p>DELETE_FAILED – The system failed to delete the scaling group.</p> </li>
+    /// <li> <p>DELETED – The scaling group is successfully deleted.</p> </li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::KxScalingGroupStatus>,
-    /// <p>The last time that the scaling group was updated in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
+    /// <p> The last time that the scaling group was updated in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000. </p>
     pub last_modified_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The timestamp at which the scaling group was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
+    /// <p> The timestamp at which the scaling group was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl CreateKxScalingGroupOutput {
-    /// <p>A unique identifier for the kdb environment, where you create the scaling group.</p>
+    /// <p>A unique identifier for the kdb environment, where you create the scaling group. </p>
     pub fn environment_id(&self) -> ::std::option::Option<&str> {
         self.environment_id.as_deref()
     }
-    /// <p>A unique identifier for the kdb scaling group.</p>
+    /// <p>A unique identifier for the kdb scaling group. </p>
     pub fn scaling_group_name(&self) -> ::std::option::Option<&str> {
         self.scaling_group_name.as_deref()
     }
-    /// <p>The memory and CPU capabilities of the scaling group host on which FinSpace Managed kdb clusters will be placed.</p>
+    /// <p> The memory and CPU capabilities of the scaling group host on which FinSpace Managed kdb clusters will be placed. </p>
     pub fn host_type(&self) -> ::std::option::Option<&str> {
         self.host_type.as_deref()
     }
@@ -56,31 +48,23 @@ impl CreateKxScalingGroupOutput {
     }
     /// <p>The status of scaling group.</p>
     /// <ul>
-    /// <li>
-    /// <p>CREATING – The scaling group creation is in progress.</p></li>
-    /// <li>
-    /// <p>CREATE_FAILED – The scaling group creation has failed.</p></li>
-    /// <li>
-    /// <p>ACTIVE – The scaling group is active.</p></li>
-    /// <li>
-    /// <p>UPDATING – The scaling group is in the process of being updated.</p></li>
-    /// <li>
-    /// <p>UPDATE_FAILED – The update action failed.</p></li>
-    /// <li>
-    /// <p>DELETING – The scaling group is in the process of being deleted.</p></li>
-    /// <li>
-    /// <p>DELETE_FAILED – The system failed to delete the scaling group.</p></li>
-    /// <li>
-    /// <p>DELETED – The scaling group is successfully deleted.</p></li>
+    /// <li> <p>CREATING – The scaling group creation is in progress.</p> </li>
+    /// <li> <p>CREATE_FAILED – The scaling group creation has failed.</p> </li>
+    /// <li> <p>ACTIVE – The scaling group is active.</p> </li>
+    /// <li> <p>UPDATING – The scaling group is in the process of being updated.</p> </li>
+    /// <li> <p>UPDATE_FAILED – The update action failed.</p> </li>
+    /// <li> <p>DELETING – The scaling group is in the process of being deleted.</p> </li>
+    /// <li> <p>DELETE_FAILED – The system failed to delete the scaling group.</p> </li>
+    /// <li> <p>DELETED – The scaling group is successfully deleted.</p> </li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::KxScalingGroupStatus> {
         self.status.as_ref()
     }
-    /// <p>The last time that the scaling group was updated in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
+    /// <p> The last time that the scaling group was updated in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000. </p>
     pub fn last_modified_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_timestamp.as_ref()
     }
-    /// <p>The timestamp at which the scaling group was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
+    /// <p> The timestamp at which the scaling group was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
@@ -111,45 +95,45 @@ pub struct CreateKxScalingGroupOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateKxScalingGroupOutputBuilder {
-    /// <p>A unique identifier for the kdb environment, where you create the scaling group.</p>
+    /// <p>A unique identifier for the kdb environment, where you create the scaling group. </p>
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique identifier for the kdb environment, where you create the scaling group.</p>
+    /// <p>A unique identifier for the kdb environment, where you create the scaling group. </p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_id = input;
         self
     }
-    /// <p>A unique identifier for the kdb environment, where you create the scaling group.</p>
+    /// <p>A unique identifier for the kdb environment, where you create the scaling group. </p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.environment_id
     }
-    /// <p>A unique identifier for the kdb scaling group.</p>
+    /// <p>A unique identifier for the kdb scaling group. </p>
     pub fn scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scaling_group_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique identifier for the kdb scaling group.</p>
+    /// <p>A unique identifier for the kdb scaling group. </p>
     pub fn set_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scaling_group_name = input;
         self
     }
-    /// <p>A unique identifier for the kdb scaling group.</p>
+    /// <p>A unique identifier for the kdb scaling group. </p>
     pub fn get_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.scaling_group_name
     }
-    /// <p>The memory and CPU capabilities of the scaling group host on which FinSpace Managed kdb clusters will be placed.</p>
+    /// <p> The memory and CPU capabilities of the scaling group host on which FinSpace Managed kdb clusters will be placed. </p>
     pub fn host_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The memory and CPU capabilities of the scaling group host on which FinSpace Managed kdb clusters will be placed.</p>
+    /// <p> The memory and CPU capabilities of the scaling group host on which FinSpace Managed kdb clusters will be placed. </p>
     pub fn set_host_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.host_type = input;
         self
     }
-    /// <p>The memory and CPU capabilities of the scaling group host on which FinSpace Managed kdb clusters will be placed.</p>
+    /// <p> The memory and CPU capabilities of the scaling group host on which FinSpace Managed kdb clusters will be placed. </p>
     pub fn get_host_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.host_type
     }
@@ -169,22 +153,14 @@ impl CreateKxScalingGroupOutputBuilder {
     }
     /// <p>The status of scaling group.</p>
     /// <ul>
-    /// <li>
-    /// <p>CREATING – The scaling group creation is in progress.</p></li>
-    /// <li>
-    /// <p>CREATE_FAILED – The scaling group creation has failed.</p></li>
-    /// <li>
-    /// <p>ACTIVE – The scaling group is active.</p></li>
-    /// <li>
-    /// <p>UPDATING – The scaling group is in the process of being updated.</p></li>
-    /// <li>
-    /// <p>UPDATE_FAILED – The update action failed.</p></li>
-    /// <li>
-    /// <p>DELETING – The scaling group is in the process of being deleted.</p></li>
-    /// <li>
-    /// <p>DELETE_FAILED – The system failed to delete the scaling group.</p></li>
-    /// <li>
-    /// <p>DELETED – The scaling group is successfully deleted.</p></li>
+    /// <li> <p>CREATING – The scaling group creation is in progress.</p> </li>
+    /// <li> <p>CREATE_FAILED – The scaling group creation has failed.</p> </li>
+    /// <li> <p>ACTIVE – The scaling group is active.</p> </li>
+    /// <li> <p>UPDATING – The scaling group is in the process of being updated.</p> </li>
+    /// <li> <p>UPDATE_FAILED – The update action failed.</p> </li>
+    /// <li> <p>DELETING – The scaling group is in the process of being deleted.</p> </li>
+    /// <li> <p>DELETE_FAILED – The system failed to delete the scaling group.</p> </li>
+    /// <li> <p>DELETED – The scaling group is successfully deleted.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::KxScalingGroupStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -192,22 +168,14 @@ impl CreateKxScalingGroupOutputBuilder {
     }
     /// <p>The status of scaling group.</p>
     /// <ul>
-    /// <li>
-    /// <p>CREATING – The scaling group creation is in progress.</p></li>
-    /// <li>
-    /// <p>CREATE_FAILED – The scaling group creation has failed.</p></li>
-    /// <li>
-    /// <p>ACTIVE – The scaling group is active.</p></li>
-    /// <li>
-    /// <p>UPDATING – The scaling group is in the process of being updated.</p></li>
-    /// <li>
-    /// <p>UPDATE_FAILED – The update action failed.</p></li>
-    /// <li>
-    /// <p>DELETING – The scaling group is in the process of being deleted.</p></li>
-    /// <li>
-    /// <p>DELETE_FAILED – The system failed to delete the scaling group.</p></li>
-    /// <li>
-    /// <p>DELETED – The scaling group is successfully deleted.</p></li>
+    /// <li> <p>CREATING – The scaling group creation is in progress.</p> </li>
+    /// <li> <p>CREATE_FAILED – The scaling group creation has failed.</p> </li>
+    /// <li> <p>ACTIVE – The scaling group is active.</p> </li>
+    /// <li> <p>UPDATING – The scaling group is in the process of being updated.</p> </li>
+    /// <li> <p>UPDATE_FAILED – The update action failed.</p> </li>
+    /// <li> <p>DELETING – The scaling group is in the process of being deleted.</p> </li>
+    /// <li> <p>DELETE_FAILED – The system failed to delete the scaling group.</p> </li>
+    /// <li> <p>DELETED – The scaling group is successfully deleted.</p> </li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::KxScalingGroupStatus>) -> Self {
         self.status = input;
@@ -215,51 +183,43 @@ impl CreateKxScalingGroupOutputBuilder {
     }
     /// <p>The status of scaling group.</p>
     /// <ul>
-    /// <li>
-    /// <p>CREATING – The scaling group creation is in progress.</p></li>
-    /// <li>
-    /// <p>CREATE_FAILED – The scaling group creation has failed.</p></li>
-    /// <li>
-    /// <p>ACTIVE – The scaling group is active.</p></li>
-    /// <li>
-    /// <p>UPDATING – The scaling group is in the process of being updated.</p></li>
-    /// <li>
-    /// <p>UPDATE_FAILED – The update action failed.</p></li>
-    /// <li>
-    /// <p>DELETING – The scaling group is in the process of being deleted.</p></li>
-    /// <li>
-    /// <p>DELETE_FAILED – The system failed to delete the scaling group.</p></li>
-    /// <li>
-    /// <p>DELETED – The scaling group is successfully deleted.</p></li>
+    /// <li> <p>CREATING – The scaling group creation is in progress.</p> </li>
+    /// <li> <p>CREATE_FAILED – The scaling group creation has failed.</p> </li>
+    /// <li> <p>ACTIVE – The scaling group is active.</p> </li>
+    /// <li> <p>UPDATING – The scaling group is in the process of being updated.</p> </li>
+    /// <li> <p>UPDATE_FAILED – The update action failed.</p> </li>
+    /// <li> <p>DELETING – The scaling group is in the process of being deleted.</p> </li>
+    /// <li> <p>DELETE_FAILED – The system failed to delete the scaling group.</p> </li>
+    /// <li> <p>DELETED – The scaling group is successfully deleted.</p> </li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::KxScalingGroupStatus> {
         &self.status
     }
-    /// <p>The last time that the scaling group was updated in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
+    /// <p> The last time that the scaling group was updated in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000. </p>
     pub fn last_modified_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_timestamp = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The last time that the scaling group was updated in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
+    /// <p> The last time that the scaling group was updated in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000. </p>
     pub fn set_last_modified_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_timestamp = input;
         self
     }
-    /// <p>The last time that the scaling group was updated in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
+    /// <p> The last time that the scaling group was updated in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000. </p>
     pub fn get_last_modified_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_timestamp
     }
-    /// <p>The timestamp at which the scaling group was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
+    /// <p> The timestamp at which the scaling group was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_timestamp = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The timestamp at which the scaling group was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
+    /// <p> The timestamp at which the scaling group was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_timestamp = input;
         self
     }
-    /// <p>The timestamp at which the scaling group was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
+    /// <p> The timestamp at which the scaling group was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_timestamp
     }

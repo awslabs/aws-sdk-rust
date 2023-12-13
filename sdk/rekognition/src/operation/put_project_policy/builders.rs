@@ -26,9 +26,9 @@ impl PutProjectPolicyInputBuilder {
 /// <p>This operation applies only to Amazon Rekognition Custom Labels.</p>
 /// </note>
 /// <p>Attaches a project policy to a Amazon Rekognition Custom Labels project in a trusting AWS account. A project policy specifies that a trusted AWS account can copy a model version from a trusting AWS account to a project in the trusted AWS account. To copy a model version you use the <code>CopyProjectVersion</code> operation. Only applies to Custom Labels projects.</p>
-/// <p>For more information about the format of a project policy document, see Attaching a project policy (SDK) in the <i>Amazon Rekognition Custom Labels Developer Guide</i>.</p>
+/// <p>For more information about the format of a project policy document, see Attaching a project policy (SDK) in the <i>Amazon Rekognition Custom Labels Developer Guide</i>. </p>
 /// <p>The response from <code>PutProjectPolicy</code> is a revision ID for the project policy. You can attach multiple project policies to a project. You can also update an existing project policy by specifying the policy revision ID of the existing policy.</p>
-/// <p>To remove a project policy from a project, call <code>DeleteProjectPolicy</code>. To get a list of project policies attached to a project, call <code>ListProjectPolicies</code>.</p>
+/// <p>To remove a project policy from a project, call <code>DeleteProjectPolicy</code>. To get a list of project policies attached to a project, call <code>ListProjectPolicies</code>. </p>
 /// <p>You copy a model version by calling <code>CopyProjectVersion</code>.</p>
 /// <p>This operation requires permissions to perform the <code>rekognition:PutProjectPolicy</code> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -158,17 +158,17 @@ impl PutProjectPolicyFluentBuilder {
     pub fn get_policy_revision_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_policy_revision_id()
     }
-    /// <p>A resource policy to add to the model. The policy is a JSON structure that contains one or more statements that define the policy. The policy must follow the IAM syntax. For more information about the contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON policy reference</a>.</p>
+    /// <p>A resource policy to add to the model. The policy is a JSON structure that contains one or more statements that define the policy. The policy must follow the IAM syntax. For more information about the contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON policy reference</a>. </p>
     pub fn policy_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_document(input.into());
         self
     }
-    /// <p>A resource policy to add to the model. The policy is a JSON structure that contains one or more statements that define the policy. The policy must follow the IAM syntax. For more information about the contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON policy reference</a>.</p>
+    /// <p>A resource policy to add to the model. The policy is a JSON structure that contains one or more statements that define the policy. The policy must follow the IAM syntax. For more information about the contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON policy reference</a>. </p>
     pub fn set_policy_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_document(input);
         self
     }
-    /// <p>A resource policy to add to the model. The policy is a JSON structure that contains one or more statements that define the policy. The policy must follow the IAM syntax. For more information about the contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON policy reference</a>.</p>
+    /// <p>A resource policy to add to the model. The policy is a JSON structure that contains one or more statements that define the policy. The policy must follow the IAM syntax. For more information about the contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON policy reference</a>. </p>
     pub fn get_policy_document(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_policy_document()
     }

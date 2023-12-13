@@ -5,7 +5,7 @@
 pub struct GetDataSetImportTaskInput {
     /// <p>The application identifier.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
-    /// <p>The task identifier returned by the <code>CreateDataSetImportTask</code> operation.</p>
+    /// <p>The task identifier returned by the <code>CreateDataSetImportTask</code> operation. </p>
     pub task_id: ::std::option::Option<::std::string::String>,
 }
 impl GetDataSetImportTaskInput {
@@ -13,7 +13,7 @@ impl GetDataSetImportTaskInput {
     pub fn application_id(&self) -> ::std::option::Option<&str> {
         self.application_id.as_deref()
     }
-    /// <p>The task identifier returned by the <code>CreateDataSetImportTask</code> operation.</p>
+    /// <p>The task identifier returned by the <code>CreateDataSetImportTask</code> operation. </p>
     pub fn task_id(&self) -> ::std::option::Option<&str> {
         self.task_id.as_deref()
     }
@@ -48,18 +48,18 @@ impl GetDataSetImportTaskInputBuilder {
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_id
     }
-    /// <p>The task identifier returned by the <code>CreateDataSetImportTask</code> operation.</p>
+    /// <p>The task identifier returned by the <code>CreateDataSetImportTask</code> operation. </p>
     /// This field is required.
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The task identifier returned by the <code>CreateDataSetImportTask</code> operation.</p>
+    /// <p>The task identifier returned by the <code>CreateDataSetImportTask</code> operation. </p>
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_id = input;
         self
     }
-    /// <p>The task identifier returned by the <code>CreateDataSetImportTask</code> operation.</p>
+    /// <p>The task identifier returned by the <code>CreateDataSetImportTask</code> operation. </p>
     pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.task_id
     }

@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateOutpostInput {
-    /// <p>The ID or the Amazon Resource Name (ARN) of the Outpost.</p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
     pub outpost_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Outpost.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the Outpost.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The type of hardware for this Outpost.</p>
+    /// <p> The type of hardware for this Outpost. </p>
     pub supported_hardware_type: ::std::option::Option<crate::types::SupportedHardwareType>,
 }
 impl UpdateOutpostInput {
-    /// <p>The ID or the Amazon Resource Name (ARN) of the Outpost.</p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
     pub fn outpost_id(&self) -> ::std::option::Option<&str> {
         self.outpost_id.as_deref()
     }
@@ -25,7 +25,7 @@ impl UpdateOutpostInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The type of hardware for this Outpost.</p>
+    /// <p> The type of hardware for this Outpost. </p>
     pub fn supported_hardware_type(&self) -> ::std::option::Option<&crate::types::SupportedHardwareType> {
         self.supported_hardware_type.as_ref()
     }
@@ -47,18 +47,18 @@ pub struct UpdateOutpostInputBuilder {
     pub(crate) supported_hardware_type: ::std::option::Option<crate::types::SupportedHardwareType>,
 }
 impl UpdateOutpostInputBuilder {
-    /// <p>The ID or the Amazon Resource Name (ARN) of the Outpost.</p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
     /// This field is required.
     pub fn outpost_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outpost_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID or the Amazon Resource Name (ARN) of the Outpost.</p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
     pub fn set_outpost_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outpost_id = input;
         self
     }
-    /// <p>The ID or the Amazon Resource Name (ARN) of the Outpost.</p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
     pub fn get_outpost_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.outpost_id
     }
@@ -90,17 +90,17 @@ impl UpdateOutpostInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The type of hardware for this Outpost.</p>
+    /// <p> The type of hardware for this Outpost. </p>
     pub fn supported_hardware_type(mut self, input: crate::types::SupportedHardwareType) -> Self {
         self.supported_hardware_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of hardware for this Outpost.</p>
+    /// <p> The type of hardware for this Outpost. </p>
     pub fn set_supported_hardware_type(mut self, input: ::std::option::Option<crate::types::SupportedHardwareType>) -> Self {
         self.supported_hardware_type = input;
         self
     }
-    /// <p>The type of hardware for this Outpost.</p>
+    /// <p> The type of hardware for this Outpost. </p>
     pub fn get_supported_hardware_type(&self) -> &::std::option::Option<crate::types::SupportedHardwareType> {
         &self.supported_hardware_type
     }

@@ -32,29 +32,20 @@ pub struct Alarm {
     /// <p>Specifies how the alarm handles missing data points.</p>
     /// <p>An alarm can treat missing data in the following ways:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>breaching</code> - Assume the missing data is not within the threshold. Missing data counts towards the number of times the metric is not within the threshold.</p></li>
-    /// <li>
-    /// <p><code>notBreaching</code> - Assume the missing data is within the threshold. Missing data does not count towards the number of times the metric is not within the threshold.</p></li>
-    /// <li>
-    /// <p><code>ignore</code> - Ignore the missing data. Maintains the current alarm state.</p></li>
-    /// <li>
-    /// <p><code>missing</code> - Missing data is treated as missing.</p></li>
+    /// <li> <p> <code>breaching</code> - Assume the missing data is not within the threshold. Missing data counts towards the number of times the metric is not within the threshold.</p> </li>
+    /// <li> <p> <code>notBreaching</code> - Assume the missing data is within the threshold. Missing data does not count towards the number of times the metric is not within the threshold.</p> </li>
+    /// <li> <p> <code>ignore</code> - Ignore the missing data. Maintains the current alarm state.</p> </li>
+    /// <li> <p> <code>missing</code> - Missing data is treated as missing.</p> </li>
     /// </ul>
     pub treat_missing_data: ::std::option::Option<crate::types::TreatMissingData>,
     /// <p>The statistic for the metric associated with the alarm.</p>
     /// <p>The following statistics are available:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low volumes of activity for your application.</p></li>
-    /// <li>
-    /// <p><code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high volumes of activity for your application.</p></li>
-    /// <li>
-    /// <p><code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic to determine the total volume of a metric.</p></li>
-    /// <li>
-    /// <p><code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this statistic with the Minimum and Maximum values, you can determine the full scope of a metric and how close the average use is to the Minimum and Maximum values. This comparison helps you to know when to increase or decrease your resources.</p></li>
-    /// <li>
-    /// <p><code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p></li>
+    /// <li> <p> <code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low volumes of activity for your application.</p> </li>
+    /// <li> <p> <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high volumes of activity for your application.</p> </li>
+    /// <li> <p> <code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic to determine the total volume of a metric.</p> </li>
+    /// <li> <p> <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this statistic with the Minimum and Maximum values, you can determine the full scope of a metric and how close the average use is to the Minimum and Maximum values. This comparison helps you to know when to increase or decrease your resources.</p> </li>
+    /// <li> <p> <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p> </li>
     /// </ul>
     pub statistic: ::std::option::Option<crate::types::MetricStatistic>,
     /// <p>The name of the metric associated with the alarm.</p>
@@ -62,12 +53,9 @@ pub struct Alarm {
     /// <p>The current state of the alarm.</p>
     /// <p>An alarm has the following possible states:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ALARM</code> - The metric is outside of the defined threshold.</p></li>
-    /// <li>
-    /// <p><code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough data is available for the metric to determine the alarm state.</p></li>
-    /// <li>
-    /// <p><code>OK</code> - The metric is within the defined threshold.</p></li>
+    /// <li> <p> <code>ALARM</code> - The metric is outside of the defined threshold.</p> </li>
+    /// <li> <p> <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough data is available for the metric to determine the alarm state.</p> </li>
+    /// <li> <p> <code>OK</code> - The metric is within the defined threshold.</p> </li>
     /// </ul>
     pub state: ::std::option::Option<crate::types::AlarmState>,
     /// <p>The unit of the metric associated with the alarm.</p>
@@ -131,14 +119,10 @@ impl Alarm {
     /// <p>Specifies how the alarm handles missing data points.</p>
     /// <p>An alarm can treat missing data in the following ways:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>breaching</code> - Assume the missing data is not within the threshold. Missing data counts towards the number of times the metric is not within the threshold.</p></li>
-    /// <li>
-    /// <p><code>notBreaching</code> - Assume the missing data is within the threshold. Missing data does not count towards the number of times the metric is not within the threshold.</p></li>
-    /// <li>
-    /// <p><code>ignore</code> - Ignore the missing data. Maintains the current alarm state.</p></li>
-    /// <li>
-    /// <p><code>missing</code> - Missing data is treated as missing.</p></li>
+    /// <li> <p> <code>breaching</code> - Assume the missing data is not within the threshold. Missing data counts towards the number of times the metric is not within the threshold.</p> </li>
+    /// <li> <p> <code>notBreaching</code> - Assume the missing data is within the threshold. Missing data does not count towards the number of times the metric is not within the threshold.</p> </li>
+    /// <li> <p> <code>ignore</code> - Ignore the missing data. Maintains the current alarm state.</p> </li>
+    /// <li> <p> <code>missing</code> - Missing data is treated as missing.</p> </li>
     /// </ul>
     pub fn treat_missing_data(&self) -> ::std::option::Option<&crate::types::TreatMissingData> {
         self.treat_missing_data.as_ref()
@@ -146,16 +130,11 @@ impl Alarm {
     /// <p>The statistic for the metric associated with the alarm.</p>
     /// <p>The following statistics are available:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low volumes of activity for your application.</p></li>
-    /// <li>
-    /// <p><code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high volumes of activity for your application.</p></li>
-    /// <li>
-    /// <p><code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic to determine the total volume of a metric.</p></li>
-    /// <li>
-    /// <p><code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this statistic with the Minimum and Maximum values, you can determine the full scope of a metric and how close the average use is to the Minimum and Maximum values. This comparison helps you to know when to increase or decrease your resources.</p></li>
-    /// <li>
-    /// <p><code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p></li>
+    /// <li> <p> <code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low volumes of activity for your application.</p> </li>
+    /// <li> <p> <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high volumes of activity for your application.</p> </li>
+    /// <li> <p> <code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic to determine the total volume of a metric.</p> </li>
+    /// <li> <p> <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this statistic with the Minimum and Maximum values, you can determine the full scope of a metric and how close the average use is to the Minimum and Maximum values. This comparison helps you to know when to increase or decrease your resources.</p> </li>
+    /// <li> <p> <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p> </li>
     /// </ul>
     pub fn statistic(&self) -> ::std::option::Option<&crate::types::MetricStatistic> {
         self.statistic.as_ref()
@@ -167,12 +146,9 @@ impl Alarm {
     /// <p>The current state of the alarm.</p>
     /// <p>An alarm has the following possible states:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ALARM</code> - The metric is outside of the defined threshold.</p></li>
-    /// <li>
-    /// <p><code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough data is available for the metric to determine the alarm state.</p></li>
-    /// <li>
-    /// <p><code>OK</code> - The metric is within the defined threshold.</p></li>
+    /// <li> <p> <code>ALARM</code> - The metric is outside of the defined threshold.</p> </li>
+    /// <li> <p> <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough data is available for the metric to determine the alarm state.</p> </li>
+    /// <li> <p> <code>OK</code> - The metric is within the defined threshold.</p> </li>
     /// </ul>
     pub fn state(&self) -> ::std::option::Option<&crate::types::AlarmState> {
         self.state.as_ref()
@@ -402,14 +378,10 @@ impl AlarmBuilder {
     /// <p>Specifies how the alarm handles missing data points.</p>
     /// <p>An alarm can treat missing data in the following ways:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>breaching</code> - Assume the missing data is not within the threshold. Missing data counts towards the number of times the metric is not within the threshold.</p></li>
-    /// <li>
-    /// <p><code>notBreaching</code> - Assume the missing data is within the threshold. Missing data does not count towards the number of times the metric is not within the threshold.</p></li>
-    /// <li>
-    /// <p><code>ignore</code> - Ignore the missing data. Maintains the current alarm state.</p></li>
-    /// <li>
-    /// <p><code>missing</code> - Missing data is treated as missing.</p></li>
+    /// <li> <p> <code>breaching</code> - Assume the missing data is not within the threshold. Missing data counts towards the number of times the metric is not within the threshold.</p> </li>
+    /// <li> <p> <code>notBreaching</code> - Assume the missing data is within the threshold. Missing data does not count towards the number of times the metric is not within the threshold.</p> </li>
+    /// <li> <p> <code>ignore</code> - Ignore the missing data. Maintains the current alarm state.</p> </li>
+    /// <li> <p> <code>missing</code> - Missing data is treated as missing.</p> </li>
     /// </ul>
     pub fn treat_missing_data(mut self, input: crate::types::TreatMissingData) -> Self {
         self.treat_missing_data = ::std::option::Option::Some(input);
@@ -418,14 +390,10 @@ impl AlarmBuilder {
     /// <p>Specifies how the alarm handles missing data points.</p>
     /// <p>An alarm can treat missing data in the following ways:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>breaching</code> - Assume the missing data is not within the threshold. Missing data counts towards the number of times the metric is not within the threshold.</p></li>
-    /// <li>
-    /// <p><code>notBreaching</code> - Assume the missing data is within the threshold. Missing data does not count towards the number of times the metric is not within the threshold.</p></li>
-    /// <li>
-    /// <p><code>ignore</code> - Ignore the missing data. Maintains the current alarm state.</p></li>
-    /// <li>
-    /// <p><code>missing</code> - Missing data is treated as missing.</p></li>
+    /// <li> <p> <code>breaching</code> - Assume the missing data is not within the threshold. Missing data counts towards the number of times the metric is not within the threshold.</p> </li>
+    /// <li> <p> <code>notBreaching</code> - Assume the missing data is within the threshold. Missing data does not count towards the number of times the metric is not within the threshold.</p> </li>
+    /// <li> <p> <code>ignore</code> - Ignore the missing data. Maintains the current alarm state.</p> </li>
+    /// <li> <p> <code>missing</code> - Missing data is treated as missing.</p> </li>
     /// </ul>
     pub fn set_treat_missing_data(mut self, input: ::std::option::Option<crate::types::TreatMissingData>) -> Self {
         self.treat_missing_data = input;
@@ -434,14 +402,10 @@ impl AlarmBuilder {
     /// <p>Specifies how the alarm handles missing data points.</p>
     /// <p>An alarm can treat missing data in the following ways:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>breaching</code> - Assume the missing data is not within the threshold. Missing data counts towards the number of times the metric is not within the threshold.</p></li>
-    /// <li>
-    /// <p><code>notBreaching</code> - Assume the missing data is within the threshold. Missing data does not count towards the number of times the metric is not within the threshold.</p></li>
-    /// <li>
-    /// <p><code>ignore</code> - Ignore the missing data. Maintains the current alarm state.</p></li>
-    /// <li>
-    /// <p><code>missing</code> - Missing data is treated as missing.</p></li>
+    /// <li> <p> <code>breaching</code> - Assume the missing data is not within the threshold. Missing data counts towards the number of times the metric is not within the threshold.</p> </li>
+    /// <li> <p> <code>notBreaching</code> - Assume the missing data is within the threshold. Missing data does not count towards the number of times the metric is not within the threshold.</p> </li>
+    /// <li> <p> <code>ignore</code> - Ignore the missing data. Maintains the current alarm state.</p> </li>
+    /// <li> <p> <code>missing</code> - Missing data is treated as missing.</p> </li>
     /// </ul>
     pub fn get_treat_missing_data(&self) -> &::std::option::Option<crate::types::TreatMissingData> {
         &self.treat_missing_data
@@ -449,16 +413,11 @@ impl AlarmBuilder {
     /// <p>The statistic for the metric associated with the alarm.</p>
     /// <p>The following statistics are available:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low volumes of activity for your application.</p></li>
-    /// <li>
-    /// <p><code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high volumes of activity for your application.</p></li>
-    /// <li>
-    /// <p><code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic to determine the total volume of a metric.</p></li>
-    /// <li>
-    /// <p><code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this statistic with the Minimum and Maximum values, you can determine the full scope of a metric and how close the average use is to the Minimum and Maximum values. This comparison helps you to know when to increase or decrease your resources.</p></li>
-    /// <li>
-    /// <p><code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p></li>
+    /// <li> <p> <code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low volumes of activity for your application.</p> </li>
+    /// <li> <p> <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high volumes of activity for your application.</p> </li>
+    /// <li> <p> <code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic to determine the total volume of a metric.</p> </li>
+    /// <li> <p> <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this statistic with the Minimum and Maximum values, you can determine the full scope of a metric and how close the average use is to the Minimum and Maximum values. This comparison helps you to know when to increase or decrease your resources.</p> </li>
+    /// <li> <p> <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p> </li>
     /// </ul>
     pub fn statistic(mut self, input: crate::types::MetricStatistic) -> Self {
         self.statistic = ::std::option::Option::Some(input);
@@ -467,16 +426,11 @@ impl AlarmBuilder {
     /// <p>The statistic for the metric associated with the alarm.</p>
     /// <p>The following statistics are available:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low volumes of activity for your application.</p></li>
-    /// <li>
-    /// <p><code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high volumes of activity for your application.</p></li>
-    /// <li>
-    /// <p><code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic to determine the total volume of a metric.</p></li>
-    /// <li>
-    /// <p><code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this statistic with the Minimum and Maximum values, you can determine the full scope of a metric and how close the average use is to the Minimum and Maximum values. This comparison helps you to know when to increase or decrease your resources.</p></li>
-    /// <li>
-    /// <p><code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p></li>
+    /// <li> <p> <code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low volumes of activity for your application.</p> </li>
+    /// <li> <p> <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high volumes of activity for your application.</p> </li>
+    /// <li> <p> <code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic to determine the total volume of a metric.</p> </li>
+    /// <li> <p> <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this statistic with the Minimum and Maximum values, you can determine the full scope of a metric and how close the average use is to the Minimum and Maximum values. This comparison helps you to know when to increase or decrease your resources.</p> </li>
+    /// <li> <p> <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p> </li>
     /// </ul>
     pub fn set_statistic(mut self, input: ::std::option::Option<crate::types::MetricStatistic>) -> Self {
         self.statistic = input;
@@ -485,16 +439,11 @@ impl AlarmBuilder {
     /// <p>The statistic for the metric associated with the alarm.</p>
     /// <p>The following statistics are available:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low volumes of activity for your application.</p></li>
-    /// <li>
-    /// <p><code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high volumes of activity for your application.</p></li>
-    /// <li>
-    /// <p><code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic to determine the total volume of a metric.</p></li>
-    /// <li>
-    /// <p><code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this statistic with the Minimum and Maximum values, you can determine the full scope of a metric and how close the average use is to the Minimum and Maximum values. This comparison helps you to know when to increase or decrease your resources.</p></li>
-    /// <li>
-    /// <p><code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p></li>
+    /// <li> <p> <code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low volumes of activity for your application.</p> </li>
+    /// <li> <p> <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high volumes of activity for your application.</p> </li>
+    /// <li> <p> <code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic to determine the total volume of a metric.</p> </li>
+    /// <li> <p> <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this statistic with the Minimum and Maximum values, you can determine the full scope of a metric and how close the average use is to the Minimum and Maximum values. This comparison helps you to know when to increase or decrease your resources.</p> </li>
+    /// <li> <p> <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p> </li>
     /// </ul>
     pub fn get_statistic(&self) -> &::std::option::Option<crate::types::MetricStatistic> {
         &self.statistic
@@ -516,12 +465,9 @@ impl AlarmBuilder {
     /// <p>The current state of the alarm.</p>
     /// <p>An alarm has the following possible states:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ALARM</code> - The metric is outside of the defined threshold.</p></li>
-    /// <li>
-    /// <p><code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough data is available for the metric to determine the alarm state.</p></li>
-    /// <li>
-    /// <p><code>OK</code> - The metric is within the defined threshold.</p></li>
+    /// <li> <p> <code>ALARM</code> - The metric is outside of the defined threshold.</p> </li>
+    /// <li> <p> <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough data is available for the metric to determine the alarm state.</p> </li>
+    /// <li> <p> <code>OK</code> - The metric is within the defined threshold.</p> </li>
     /// </ul>
     pub fn state(mut self, input: crate::types::AlarmState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -530,12 +476,9 @@ impl AlarmBuilder {
     /// <p>The current state of the alarm.</p>
     /// <p>An alarm has the following possible states:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ALARM</code> - The metric is outside of the defined threshold.</p></li>
-    /// <li>
-    /// <p><code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough data is available for the metric to determine the alarm state.</p></li>
-    /// <li>
-    /// <p><code>OK</code> - The metric is within the defined threshold.</p></li>
+    /// <li> <p> <code>ALARM</code> - The metric is outside of the defined threshold.</p> </li>
+    /// <li> <p> <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough data is available for the metric to determine the alarm state.</p> </li>
+    /// <li> <p> <code>OK</code> - The metric is within the defined threshold.</p> </li>
     /// </ul>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::AlarmState>) -> Self {
         self.state = input;
@@ -544,12 +487,9 @@ impl AlarmBuilder {
     /// <p>The current state of the alarm.</p>
     /// <p>An alarm has the following possible states:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ALARM</code> - The metric is outside of the defined threshold.</p></li>
-    /// <li>
-    /// <p><code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough data is available for the metric to determine the alarm state.</p></li>
-    /// <li>
-    /// <p><code>OK</code> - The metric is within the defined threshold.</p></li>
+    /// <li> <p> <code>ALARM</code> - The metric is outside of the defined threshold.</p> </li>
+    /// <li> <p> <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough data is available for the metric to determine the alarm state.</p> </li>
+    /// <li> <p> <code>OK</code> - The metric is within the defined threshold.</p> </li>
     /// </ul>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::AlarmState> {
         &self.state

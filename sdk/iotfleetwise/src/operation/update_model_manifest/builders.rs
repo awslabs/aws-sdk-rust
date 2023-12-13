@@ -22,7 +22,7 @@ impl UpdateModelManifestInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateModelManifest`.
 ///
-/// <p>Updates a vehicle model (model manifest). If created vehicles are associated with a vehicle model, it can't be updated.</p>
+/// <p> Updates a vehicle model (model manifest). If created vehicles are associated with a vehicle model, it can't be updated.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateModelManifestFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl UpdateModelManifestFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the vehicle model to update.</p>
+    /// <p> The name of the vehicle model to update. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of the vehicle model to update.</p>
+    /// <p> The name of the vehicle model to update. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name of the vehicle model to update.</p>
+    /// <p> The name of the vehicle model to update. </p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>A brief description of the vehicle model.</p>
+    /// <p> A brief description of the vehicle model. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>A brief description of the vehicle model.</p>
+    /// <p> A brief description of the vehicle model. </p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>A brief description of the vehicle model.</p>
+    /// <p> A brief description of the vehicle model. </p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
@@ -140,17 +140,17 @@ impl UpdateModelManifestFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_nodes_to_add`](Self::set_nodes_to_add).
     ///
-    /// <p>A list of <code>fullyQualifiedName</code> of nodes, which are a general abstraction of signals, to add to the vehicle model.</p>
+    /// <p> A list of <code>fullyQualifiedName</code> of nodes, which are a general abstraction of signals, to add to the vehicle model. </p>
     pub fn nodes_to_add(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.nodes_to_add(input.into());
         self
     }
-    /// <p>A list of <code>fullyQualifiedName</code> of nodes, which are a general abstraction of signals, to add to the vehicle model.</p>
+    /// <p> A list of <code>fullyQualifiedName</code> of nodes, which are a general abstraction of signals, to add to the vehicle model. </p>
     pub fn set_nodes_to_add(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_nodes_to_add(input);
         self
     }
-    /// <p>A list of <code>fullyQualifiedName</code> of nodes, which are a general abstraction of signals, to add to the vehicle model.</p>
+    /// <p> A list of <code>fullyQualifiedName</code> of nodes, which are a general abstraction of signals, to add to the vehicle model. </p>
     pub fn get_nodes_to_add(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_nodes_to_add()
     }
@@ -158,31 +158,31 @@ impl UpdateModelManifestFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_nodes_to_remove`](Self::set_nodes_to_remove).
     ///
-    /// <p>A list of <code>fullyQualifiedName</code> of nodes, which are a general abstraction of signals, to remove from the vehicle model.</p>
+    /// <p> A list of <code>fullyQualifiedName</code> of nodes, which are a general abstraction of signals, to remove from the vehicle model. </p>
     pub fn nodes_to_remove(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.nodes_to_remove(input.into());
         self
     }
-    /// <p>A list of <code>fullyQualifiedName</code> of nodes, which are a general abstraction of signals, to remove from the vehicle model.</p>
+    /// <p> A list of <code>fullyQualifiedName</code> of nodes, which are a general abstraction of signals, to remove from the vehicle model. </p>
     pub fn set_nodes_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_nodes_to_remove(input);
         self
     }
-    /// <p>A list of <code>fullyQualifiedName</code> of nodes, which are a general abstraction of signals, to remove from the vehicle model.</p>
+    /// <p> A list of <code>fullyQualifiedName</code> of nodes, which are a general abstraction of signals, to remove from the vehicle model. </p>
     pub fn get_nodes_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_nodes_to_remove()
     }
-    /// <p>The state of the vehicle model. If the status is <code>ACTIVE</code>, the vehicle model can't be edited. If the status is <code>DRAFT</code>, you can edit the vehicle model.</p>
+    /// <p> The state of the vehicle model. If the status is <code>ACTIVE</code>, the vehicle model can't be edited. If the status is <code>DRAFT</code>, you can edit the vehicle model. </p>
     pub fn status(mut self, input: crate::types::ManifestStatus) -> Self {
         self.inner = self.inner.status(input);
         self
     }
-    /// <p>The state of the vehicle model. If the status is <code>ACTIVE</code>, the vehicle model can't be edited. If the status is <code>DRAFT</code>, you can edit the vehicle model.</p>
+    /// <p> The state of the vehicle model. If the status is <code>ACTIVE</code>, the vehicle model can't be edited. If the status is <code>DRAFT</code>, you can edit the vehicle model. </p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ManifestStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
-    /// <p>The state of the vehicle model. If the status is <code>ACTIVE</code>, the vehicle model can't be edited. If the status is <code>DRAFT</code>, you can edit the vehicle model.</p>
+    /// <p> The state of the vehicle model. If the status is <code>ACTIVE</code>, the vehicle model can't be edited. If the status is <code>DRAFT</code>, you can edit the vehicle model. </p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ManifestStatus> {
         self.inner.get_status()
     }

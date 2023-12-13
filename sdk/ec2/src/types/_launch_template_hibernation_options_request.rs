@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LaunchTemplateHibernationOptionsRequest {
     /// <p>If you set this parameter to <code>true</code>, the instance is enabled for hibernation.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p>Default: <code>false</code> </p>
     pub configured: ::std::option::Option<bool>,
 }
 impl LaunchTemplateHibernationOptionsRequest {
     /// <p>If you set this parameter to <code>true</code>, the instance is enabled for hibernation.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p>Default: <code>false</code> </p>
     pub fn configured(&self) -> ::std::option::Option<bool> {
         self.configured
     }
@@ -30,19 +30,19 @@ pub struct LaunchTemplateHibernationOptionsRequestBuilder {
 }
 impl LaunchTemplateHibernationOptionsRequestBuilder {
     /// <p>If you set this parameter to <code>true</code>, the instance is enabled for hibernation.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p>Default: <code>false</code> </p>
     pub fn configured(mut self, input: bool) -> Self {
         self.configured = ::std::option::Option::Some(input);
         self
     }
     /// <p>If you set this parameter to <code>true</code>, the instance is enabled for hibernation.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p>Default: <code>false</code> </p>
     pub fn set_configured(mut self, input: ::std::option::Option<bool>) -> Self {
         self.configured = input;
         self
     }
     /// <p>If you set this parameter to <code>true</code>, the instance is enabled for hibernation.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p>Default: <code>false</code> </p>
     pub fn get_configured(&self) -> &::std::option::Option<bool> {
         &self.configured
     }

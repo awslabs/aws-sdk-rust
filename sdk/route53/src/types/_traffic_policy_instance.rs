@@ -8,7 +8,7 @@ pub struct TrafficPolicyInstance {
     pub id: ::std::string::String,
     /// <p>The ID of the hosted zone that Amazon Route 53 created resource record sets in.</p>
     pub hosted_zone_id: ::std::string::String,
-    /// <p>The DNS name, such as www.example.com, for which Amazon Route 53 responds to queries by using the resource record sets that are associated with this traffic policy instance.</p>
+    /// <p>The DNS name, such as www.example.com, for which Amazon Route 53 responds to queries by using the resource record sets that are associated with this traffic policy instance. </p>
     pub name: ::std::string::String,
     /// <p>The TTL that Amazon Route 53 assigned to all of the resource record sets that it created in the specified hosted zone.</p>
     pub ttl: i64,
@@ -40,7 +40,7 @@ pub struct TrafficPolicyInstance {
     pub traffic_policy_id: ::std::string::String,
     /// <p>The version of the traffic policy that Amazon Route 53 used to create resource record sets in the specified hosted zone.</p>
     pub traffic_policy_version: i32,
-    /// <p>The DNS type that Amazon Route 53 assigned to all of the resource record sets that it created for this traffic policy instance.</p>
+    /// <p>The DNS type that Amazon Route 53 assigned to all of the resource record sets that it created for this traffic policy instance. </p>
     pub traffic_policy_type: crate::types::RrType,
 }
 impl TrafficPolicyInstance {
@@ -54,7 +54,7 @@ impl TrafficPolicyInstance {
         use std::ops::Deref;
         self.hosted_zone_id.deref()
     }
-    /// <p>The DNS name, such as www.example.com, for which Amazon Route 53 responds to queries by using the resource record sets that are associated with this traffic policy instance.</p>
+    /// <p>The DNS name, such as www.example.com, for which Amazon Route 53 responds to queries by using the resource record sets that are associated with this traffic policy instance. </p>
     pub fn name(&self) -> &str {
         use std::ops::Deref;
         self.name.deref()
@@ -102,7 +102,7 @@ impl TrafficPolicyInstance {
     pub fn traffic_policy_version(&self) -> i32 {
         self.traffic_policy_version
     }
-    /// <p>The DNS type that Amazon Route 53 assigned to all of the resource record sets that it created for this traffic policy instance.</p>
+    /// <p>The DNS type that Amazon Route 53 assigned to all of the resource record sets that it created for this traffic policy instance. </p>
     pub fn traffic_policy_type(&self) -> &crate::types::RrType {
         &self.traffic_policy_type
     }
@@ -159,18 +159,18 @@ impl TrafficPolicyInstanceBuilder {
     pub fn get_hosted_zone_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.hosted_zone_id
     }
-    /// <p>The DNS name, such as www.example.com, for which Amazon Route 53 responds to queries by using the resource record sets that are associated with this traffic policy instance.</p>
+    /// <p>The DNS name, such as www.example.com, for which Amazon Route 53 responds to queries by using the resource record sets that are associated with this traffic policy instance. </p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The DNS name, such as www.example.com, for which Amazon Route 53 responds to queries by using the resource record sets that are associated with this traffic policy instance.</p>
+    /// <p>The DNS name, such as www.example.com, for which Amazon Route 53 responds to queries by using the resource record sets that are associated with this traffic policy instance. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The DNS name, such as www.example.com, for which Amazon Route 53 responds to queries by using the resource record sets that are associated with this traffic policy instance.</p>
+    /// <p>The DNS name, such as www.example.com, for which Amazon Route 53 responds to queries by using the resource record sets that are associated with this traffic policy instance. </p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
@@ -309,18 +309,18 @@ impl TrafficPolicyInstanceBuilder {
     pub fn get_traffic_policy_version(&self) -> &::std::option::Option<i32> {
         &self.traffic_policy_version
     }
-    /// <p>The DNS type that Amazon Route 53 assigned to all of the resource record sets that it created for this traffic policy instance.</p>
+    /// <p>The DNS type that Amazon Route 53 assigned to all of the resource record sets that it created for this traffic policy instance. </p>
     /// This field is required.
     pub fn traffic_policy_type(mut self, input: crate::types::RrType) -> Self {
         self.traffic_policy_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The DNS type that Amazon Route 53 assigned to all of the resource record sets that it created for this traffic policy instance.</p>
+    /// <p>The DNS type that Amazon Route 53 assigned to all of the resource record sets that it created for this traffic policy instance. </p>
     pub fn set_traffic_policy_type(mut self, input: ::std::option::Option<crate::types::RrType>) -> Self {
         self.traffic_policy_type = input;
         self
     }
-    /// <p>The DNS type that Amazon Route 53 assigned to all of the resource record sets that it created for this traffic policy instance.</p>
+    /// <p>The DNS type that Amazon Route 53 assigned to all of the resource record sets that it created for this traffic policy instance. </p>
     pub fn get_traffic_policy_type(&self) -> &::std::option::Option<crate::types::RrType> {
         &self.traffic_policy_type
     }

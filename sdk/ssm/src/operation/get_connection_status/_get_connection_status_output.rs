@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetConnectionStatusOutput {
-    /// <p>The ID of the managed node to check connection status.</p>
+    /// <p>The ID of the managed node to check connection status. </p>
     pub target: ::std::option::Option<::std::string::String>,
     /// <p>The status of the connection to the managed node. For example, 'Connected' or 'Not Connected'.</p>
     pub status: ::std::option::Option<crate::types::ConnectionStatus>,
     _request_id: Option<String>,
 }
 impl GetConnectionStatusOutput {
-    /// <p>The ID of the managed node to check connection status.</p>
+    /// <p>The ID of the managed node to check connection status. </p>
     pub fn target(&self) -> ::std::option::Option<&str> {
         self.target.as_deref()
     }
@@ -40,17 +40,17 @@ pub struct GetConnectionStatusOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetConnectionStatusOutputBuilder {
-    /// <p>The ID of the managed node to check connection status.</p>
+    /// <p>The ID of the managed node to check connection status. </p>
     pub fn target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the managed node to check connection status.</p>
+    /// <p>The ID of the managed node to check connection status. </p>
     pub fn set_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target = input;
         self
     }
-    /// <p>The ID of the managed node to check connection status.</p>
+    /// <p>The ID of the managed node to check connection status. </p>
     pub fn get_target(&self) -> &::std::option::Option<::std::string::String> {
         &self.target
     }

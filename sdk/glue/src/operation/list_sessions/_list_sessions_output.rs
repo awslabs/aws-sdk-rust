@@ -3,28 +3,28 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSessionsOutput {
-    /// <p>Returns the ID of the session.</p>
+    /// <p>Returns the ID of the session. </p>
     pub ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Returns the session object.</p>
+    /// <p>Returns the session object. </p>
     pub sessions: ::std::option::Option<::std::vec::Vec<crate::types::Session>>,
-    /// <p>The token for the next set of results, or null if there are no more result.</p>
+    /// <p>The token for the next set of results, or null if there are no more result. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListSessionsOutput {
-    /// <p>Returns the ID of the session.</p>
+    /// <p>Returns the ID of the session. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ids.is_none()`.
     pub fn ids(&self) -> &[::std::string::String] {
         self.ids.as_deref().unwrap_or_default()
     }
-    /// <p>Returns the session object.</p>
+    /// <p>Returns the session object. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sessions.is_none()`.
     pub fn sessions(&self) -> &[crate::types::Session] {
         self.sessions.as_deref().unwrap_or_default()
     }
-    /// <p>The token for the next set of results, or null if there are no more result.</p>
+    /// <p>The token for the next set of results, or null if there are no more result. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -55,19 +55,19 @@ impl ListSessionsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_ids`](Self::set_ids).
     ///
-    /// <p>Returns the ID of the session.</p>
+    /// <p>Returns the ID of the session. </p>
     pub fn ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ids.unwrap_or_default();
         v.push(input.into());
         self.ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Returns the ID of the session.</p>
+    /// <p>Returns the ID of the session. </p>
     pub fn set_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ids = input;
         self
     }
-    /// <p>Returns the ID of the session.</p>
+    /// <p>Returns the ID of the session. </p>
     pub fn get_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.ids
     }
@@ -75,33 +75,33 @@ impl ListSessionsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_sessions`](Self::set_sessions).
     ///
-    /// <p>Returns the session object.</p>
+    /// <p>Returns the session object. </p>
     pub fn sessions(mut self, input: crate::types::Session) -> Self {
         let mut v = self.sessions.unwrap_or_default();
         v.push(input);
         self.sessions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Returns the session object.</p>
+    /// <p>Returns the session object. </p>
     pub fn set_sessions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Session>>) -> Self {
         self.sessions = input;
         self
     }
-    /// <p>Returns the session object.</p>
+    /// <p>Returns the session object. </p>
     pub fn get_sessions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Session>> {
         &self.sessions
     }
-    /// <p>The token for the next set of results, or null if there are no more result.</p>
+    /// <p>The token for the next set of results, or null if there are no more result. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token for the next set of results, or null if there are no more result.</p>
+    /// <p>The token for the next set of results, or null if there are no more result. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The token for the next set of results, or null if there are no more result.</p>
+    /// <p>The token for the next set of results, or null if there are no more result. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

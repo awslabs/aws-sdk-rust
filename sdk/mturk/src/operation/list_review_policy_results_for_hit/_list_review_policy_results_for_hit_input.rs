@@ -5,11 +5,11 @@
 pub struct ListReviewPolicyResultsForHitInput {
     /// <p>The unique identifier of the HIT to retrieve review results for.</p>
     pub hit_id: ::std::option::Option<::std::string::String>,
-    /// <p>The Policy Level(s) to retrieve review results for - HIT or Assignment. If omitted, the default behavior is to retrieve all data for both policy levels. For a list of all the described policies, see Review Policies.</p>
+    /// <p> The Policy Level(s) to retrieve review results for - HIT or Assignment. If omitted, the default behavior is to retrieve all data for both policy levels. For a list of all the described policies, see Review Policies. </p>
     pub policy_levels: ::std::option::Option<::std::vec::Vec<crate::types::ReviewPolicyLevel>>,
-    /// <p>Specify if the operation should retrieve a list of the actions taken executing the Review Policies and their outcomes.</p>
+    /// <p> Specify if the operation should retrieve a list of the actions taken executing the Review Policies and their outcomes. </p>
     pub retrieve_actions: ::std::option::Option<bool>,
-    /// <p>Specify if the operation should retrieve a list of the results computed by the Review Policies.</p>
+    /// <p> Specify if the operation should retrieve a list of the results computed by the Review Policies. </p>
     pub retrieve_results: ::std::option::Option<bool>,
     /// <p>Pagination token</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -21,17 +21,17 @@ impl ListReviewPolicyResultsForHitInput {
     pub fn hit_id(&self) -> ::std::option::Option<&str> {
         self.hit_id.as_deref()
     }
-    /// <p>The Policy Level(s) to retrieve review results for - HIT or Assignment. If omitted, the default behavior is to retrieve all data for both policy levels. For a list of all the described policies, see Review Policies.</p>
+    /// <p> The Policy Level(s) to retrieve review results for - HIT or Assignment. If omitted, the default behavior is to retrieve all data for both policy levels. For a list of all the described policies, see Review Policies. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policy_levels.is_none()`.
     pub fn policy_levels(&self) -> &[crate::types::ReviewPolicyLevel] {
         self.policy_levels.as_deref().unwrap_or_default()
     }
-    /// <p>Specify if the operation should retrieve a list of the actions taken executing the Review Policies and their outcomes.</p>
+    /// <p> Specify if the operation should retrieve a list of the actions taken executing the Review Policies and their outcomes. </p>
     pub fn retrieve_actions(&self) -> ::std::option::Option<bool> {
         self.retrieve_actions
     }
-    /// <p>Specify if the operation should retrieve a list of the results computed by the Review Policies.</p>
+    /// <p> Specify if the operation should retrieve a list of the results computed by the Review Policies. </p>
     pub fn retrieve_results(&self) -> ::std::option::Option<bool> {
         self.retrieve_results
     }
@@ -82,47 +82,47 @@ impl ListReviewPolicyResultsForHitInputBuilder {
     ///
     /// To override the contents of this collection use [`set_policy_levels`](Self::set_policy_levels).
     ///
-    /// <p>The Policy Level(s) to retrieve review results for - HIT or Assignment. If omitted, the default behavior is to retrieve all data for both policy levels. For a list of all the described policies, see Review Policies.</p>
+    /// <p> The Policy Level(s) to retrieve review results for - HIT or Assignment. If omitted, the default behavior is to retrieve all data for both policy levels. For a list of all the described policies, see Review Policies. </p>
     pub fn policy_levels(mut self, input: crate::types::ReviewPolicyLevel) -> Self {
         let mut v = self.policy_levels.unwrap_or_default();
         v.push(input);
         self.policy_levels = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The Policy Level(s) to retrieve review results for - HIT or Assignment. If omitted, the default behavior is to retrieve all data for both policy levels. For a list of all the described policies, see Review Policies.</p>
+    /// <p> The Policy Level(s) to retrieve review results for - HIT or Assignment. If omitted, the default behavior is to retrieve all data for both policy levels. For a list of all the described policies, see Review Policies. </p>
     pub fn set_policy_levels(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReviewPolicyLevel>>) -> Self {
         self.policy_levels = input;
         self
     }
-    /// <p>The Policy Level(s) to retrieve review results for - HIT or Assignment. If omitted, the default behavior is to retrieve all data for both policy levels. For a list of all the described policies, see Review Policies.</p>
+    /// <p> The Policy Level(s) to retrieve review results for - HIT or Assignment. If omitted, the default behavior is to retrieve all data for both policy levels. For a list of all the described policies, see Review Policies. </p>
     pub fn get_policy_levels(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReviewPolicyLevel>> {
         &self.policy_levels
     }
-    /// <p>Specify if the operation should retrieve a list of the actions taken executing the Review Policies and their outcomes.</p>
+    /// <p> Specify if the operation should retrieve a list of the actions taken executing the Review Policies and their outcomes. </p>
     pub fn retrieve_actions(mut self, input: bool) -> Self {
         self.retrieve_actions = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specify if the operation should retrieve a list of the actions taken executing the Review Policies and their outcomes.</p>
+    /// <p> Specify if the operation should retrieve a list of the actions taken executing the Review Policies and their outcomes. </p>
     pub fn set_retrieve_actions(mut self, input: ::std::option::Option<bool>) -> Self {
         self.retrieve_actions = input;
         self
     }
-    /// <p>Specify if the operation should retrieve a list of the actions taken executing the Review Policies and their outcomes.</p>
+    /// <p> Specify if the operation should retrieve a list of the actions taken executing the Review Policies and their outcomes. </p>
     pub fn get_retrieve_actions(&self) -> &::std::option::Option<bool> {
         &self.retrieve_actions
     }
-    /// <p>Specify if the operation should retrieve a list of the results computed by the Review Policies.</p>
+    /// <p> Specify if the operation should retrieve a list of the results computed by the Review Policies. </p>
     pub fn retrieve_results(mut self, input: bool) -> Self {
         self.retrieve_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specify if the operation should retrieve a list of the results computed by the Review Policies.</p>
+    /// <p> Specify if the operation should retrieve a list of the results computed by the Review Policies. </p>
     pub fn set_retrieve_results(mut self, input: ::std::option::Option<bool>) -> Self {
         self.retrieve_results = input;
         self
     }
-    /// <p>Specify if the operation should retrieve a list of the results computed by the Review Policies.</p>
+    /// <p> Specify if the operation should retrieve a list of the results computed by the Review Policies. </p>
     pub fn get_retrieve_results(&self) -> &::std::option::Option<bool> {
         &self.retrieve_results
     }

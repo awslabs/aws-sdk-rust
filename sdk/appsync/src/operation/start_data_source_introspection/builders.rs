@@ -22,7 +22,7 @@ impl StartDataSourceIntrospectionInputBuilder {
 }
 /// Fluent builder constructing a request to `StartDataSourceIntrospection`.
 ///
-/// <p>Creates a new introspection. Returns the <code>introspectionId</code> of the new introspection after its creation.</p>
+/// <p>Creates a new introspection. Returns the <code>introspectionId</code> of the new introspection after its creation. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartDataSourceIntrospectionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

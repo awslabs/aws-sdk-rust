@@ -3,53 +3,45 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSharedProjectsInput {
-    /// <p>The criterion to be used to list build projects shared with the current Amazon Web Services account or user. Valid values include:</p>
+    /// <p> The criterion to be used to list build projects shared with the current Amazon Web Services account or user. Valid values include: </p>
     /// <ul>
-    /// <li>
-    /// <p><code>ARN</code>: List based on the ARN.</p></li>
-    /// <li>
-    /// <p><code>MODIFIED_TIME</code>: List based on when information about the shared project was last changed.</p></li>
+    /// <li> <p> <code>ARN</code>: List based on the ARN. </p> </li>
+    /// <li> <p> <code>MODIFIED_TIME</code>: List based on when information about the shared project was last changed. </p> </li>
     /// </ul>
     pub sort_by: ::std::option::Option<crate::types::SharedResourceSortByType>,
     /// <p>The order in which to list shared build projects. Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ASCENDING</code>: List in ascending order.</p></li>
-    /// <li>
-    /// <p><code>DESCENDING</code>: List in descending order.</p></li>
+    /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li>
+    /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li>
     /// </ul>
     pub sort_order: ::std::option::Option<crate::types::SortOrderType>,
-    /// <p>The maximum number of paginated shared build projects returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>Project</code> objects. The default value is 100.</p>
+    /// <p> The maximum number of paginated shared build projects returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>Project</code> objects. The default value is 100. </p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
+    /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListSharedProjectsInput {
-    /// <p>The criterion to be used to list build projects shared with the current Amazon Web Services account or user. Valid values include:</p>
+    /// <p> The criterion to be used to list build projects shared with the current Amazon Web Services account or user. Valid values include: </p>
     /// <ul>
-    /// <li>
-    /// <p><code>ARN</code>: List based on the ARN.</p></li>
-    /// <li>
-    /// <p><code>MODIFIED_TIME</code>: List based on when information about the shared project was last changed.</p></li>
+    /// <li> <p> <code>ARN</code>: List based on the ARN. </p> </li>
+    /// <li> <p> <code>MODIFIED_TIME</code>: List based on when information about the shared project was last changed. </p> </li>
     /// </ul>
     pub fn sort_by(&self) -> ::std::option::Option<&crate::types::SharedResourceSortByType> {
         self.sort_by.as_ref()
     }
     /// <p>The order in which to list shared build projects. Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ASCENDING</code>: List in ascending order.</p></li>
-    /// <li>
-    /// <p><code>DESCENDING</code>: List in descending order.</p></li>
+    /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li>
+    /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li>
     /// </ul>
     pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrderType> {
         self.sort_order.as_ref()
     }
-    /// <p>The maximum number of paginated shared build projects returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>Project</code> objects. The default value is 100.</p>
+    /// <p> The maximum number of paginated shared build projects returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>Project</code> objects. The default value is 100. </p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
+    /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -71,44 +63,36 @@ pub struct ListSharedProjectsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListSharedProjectsInputBuilder {
-    /// <p>The criterion to be used to list build projects shared with the current Amazon Web Services account or user. Valid values include:</p>
+    /// <p> The criterion to be used to list build projects shared with the current Amazon Web Services account or user. Valid values include: </p>
     /// <ul>
-    /// <li>
-    /// <p><code>ARN</code>: List based on the ARN.</p></li>
-    /// <li>
-    /// <p><code>MODIFIED_TIME</code>: List based on when information about the shared project was last changed.</p></li>
+    /// <li> <p> <code>ARN</code>: List based on the ARN. </p> </li>
+    /// <li> <p> <code>MODIFIED_TIME</code>: List based on when information about the shared project was last changed. </p> </li>
     /// </ul>
     pub fn sort_by(mut self, input: crate::types::SharedResourceSortByType) -> Self {
         self.sort_by = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The criterion to be used to list build projects shared with the current Amazon Web Services account or user. Valid values include:</p>
+    /// <p> The criterion to be used to list build projects shared with the current Amazon Web Services account or user. Valid values include: </p>
     /// <ul>
-    /// <li>
-    /// <p><code>ARN</code>: List based on the ARN.</p></li>
-    /// <li>
-    /// <p><code>MODIFIED_TIME</code>: List based on when information about the shared project was last changed.</p></li>
+    /// <li> <p> <code>ARN</code>: List based on the ARN. </p> </li>
+    /// <li> <p> <code>MODIFIED_TIME</code>: List based on when information about the shared project was last changed. </p> </li>
     /// </ul>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::SharedResourceSortByType>) -> Self {
         self.sort_by = input;
         self
     }
-    /// <p>The criterion to be used to list build projects shared with the current Amazon Web Services account or user. Valid values include:</p>
+    /// <p> The criterion to be used to list build projects shared with the current Amazon Web Services account or user. Valid values include: </p>
     /// <ul>
-    /// <li>
-    /// <p><code>ARN</code>: List based on the ARN.</p></li>
-    /// <li>
-    /// <p><code>MODIFIED_TIME</code>: List based on when information about the shared project was last changed.</p></li>
+    /// <li> <p> <code>ARN</code>: List based on the ARN. </p> </li>
+    /// <li> <p> <code>MODIFIED_TIME</code>: List based on when information about the shared project was last changed. </p> </li>
     /// </ul>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::SharedResourceSortByType> {
         &self.sort_by
     }
     /// <p>The order in which to list shared build projects. Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ASCENDING</code>: List in ascending order.</p></li>
-    /// <li>
-    /// <p><code>DESCENDING</code>: List in descending order.</p></li>
+    /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li>
+    /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li>
     /// </ul>
     pub fn sort_order(mut self, input: crate::types::SortOrderType) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
@@ -116,10 +100,8 @@ impl ListSharedProjectsInputBuilder {
     }
     /// <p>The order in which to list shared build projects. Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ASCENDING</code>: List in ascending order.</p></li>
-    /// <li>
-    /// <p><code>DESCENDING</code>: List in descending order.</p></li>
+    /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li>
+    /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li>
     /// </ul>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrderType>) -> Self {
         self.sort_order = input;
@@ -127,39 +109,37 @@ impl ListSharedProjectsInputBuilder {
     }
     /// <p>The order in which to list shared build projects. Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ASCENDING</code>: List in ascending order.</p></li>
-    /// <li>
-    /// <p><code>DESCENDING</code>: List in descending order.</p></li>
+    /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li>
+    /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li>
     /// </ul>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrderType> {
         &self.sort_order
     }
-    /// <p>The maximum number of paginated shared build projects returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>Project</code> objects. The default value is 100.</p>
+    /// <p> The maximum number of paginated shared build projects returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>Project</code> objects. The default value is 100. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of paginated shared build projects returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>Project</code> objects. The default value is 100.</p>
+    /// <p> The maximum number of paginated shared build projects returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>Project</code> objects. The default value is 100. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of paginated shared build projects returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>Project</code> objects. The default value is 100.</p>
+    /// <p> The maximum number of paginated shared build projects returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>Project</code> objects. The default value is 100. </p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p>During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
+    /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
+    /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
+    /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

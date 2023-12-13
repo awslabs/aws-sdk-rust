@@ -22,7 +22,7 @@ impl CreateConfigurationSetInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateConfigurationSet`.
 ///
-/// <p>Create a configuration set. <i>Configuration sets</i> are groups of rules that you can apply to the emails that you send. You apply a configuration set to an email by specifying the name of the configuration set when you call the Amazon SES API v2. When you apply a configuration set to an email, all of the rules in that configuration set are applied to the email.</p>
+/// <p>Create a configuration set. <i>Configuration sets</i> are groups of rules that you can apply to the emails that you send. You apply a configuration set to an email by specifying the name of the configuration set when you call the Amazon SES API v2. When you apply a configuration set to an email, all of the rules in that configuration set are applied to the email. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateConfigurationSetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRepositoryInput {
-    /// <p>The name of the domain that contains the repository to describe.</p>
+    /// <p> The name of the domain that contains the repository to describe. </p>
     pub domain: ::std::option::Option<::std::string::String>,
-    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub domain_owner: ::std::option::Option<::std::string::String>,
-    /// <p>A string that specifies the name of the requested repository.</p>
+    /// <p> A string that specifies the name of the requested repository. </p>
     pub repository: ::std::option::Option<::std::string::String>,
 }
 impl DescribeRepositoryInput {
-    /// <p>The name of the domain that contains the repository to describe.</p>
+    /// <p> The name of the domain that contains the repository to describe. </p>
     pub fn domain(&self) -> ::std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(&self) -> ::std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
-    /// <p>A string that specifies the name of the requested repository.</p>
+    /// <p> A string that specifies the name of the requested repository. </p>
     pub fn repository(&self) -> ::std::option::Option<&str> {
         self.repository.as_deref()
     }
@@ -40,47 +40,47 @@ pub struct DescribeRepositoryInputBuilder {
     pub(crate) repository: ::std::option::Option<::std::string::String>,
 }
 impl DescribeRepositoryInputBuilder {
-    /// <p>The name of the domain that contains the repository to describe.</p>
+    /// <p> The name of the domain that contains the repository to describe. </p>
     /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the domain that contains the repository to describe.</p>
+    /// <p> The name of the domain that contains the repository to describe. </p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain = input;
         self
     }
-    /// <p>The name of the domain that contains the repository to describe.</p>
+    /// <p> The name of the domain that contains the repository to describe. </p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain
     }
-    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_owner = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn set_domain_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_owner = input;
         self
     }
-    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn get_domain_owner(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_owner
     }
-    /// <p>A string that specifies the name of the requested repository.</p>
+    /// <p> A string that specifies the name of the requested repository. </p>
     /// This field is required.
     pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A string that specifies the name of the requested repository.</p>
+    /// <p> A string that specifies the name of the requested repository. </p>
     pub fn set_repository(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository = input;
         self
     }
-    /// <p>A string that specifies the name of the requested repository.</p>
+    /// <p> A string that specifies the name of the requested repository. </p>
     pub fn get_repository(&self) -> &::std::option::Option<::std::string::String> {
         &self.repository
     }

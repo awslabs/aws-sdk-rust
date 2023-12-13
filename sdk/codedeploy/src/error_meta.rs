@@ -13,7 +13,7 @@ pub enum Error {
     ApplicationLimitExceededException(crate::types::error::ApplicationLimitExceededException),
     /// <p>The minimum number of required application names was not specified.</p>
     ApplicationNameRequiredException(crate::types::error::ApplicationNameRequiredException),
-    /// <p>The specified ARN is not supported. For example, it might be an ARN for a resource that is not expected.</p>
+    /// <p> The specified ARN is not supported. For example, it might be an ARN for a resource that is not expected. </p>
     ArnNotSupportedException(crate::types::error::ArnNotSupportedException),
     /// <p>The maximum number of names or IDs allowed for this request (100) was exceeded.</p>
     BatchLimitExceededException(crate::types::error::BatchLimitExceededException),
@@ -37,7 +37,7 @@ pub enum Error {
     DeploymentGroupAlreadyExistsException(crate::types::error::DeploymentGroupAlreadyExistsException),
     /// <p>The named deployment group with the user or Amazon Web Services account does not exist.</p>
     DeploymentGroupDoesNotExistException(crate::types::error::DeploymentGroupDoesNotExistException),
-    /// <p>The deployment groups limit was exceeded.</p>
+    /// <p> The deployment groups limit was exceeded.</p>
     DeploymentGroupLimitExceededException(crate::types::error::DeploymentGroupLimitExceededException),
     /// <p>The deployment group name was not specified.</p>
     DeploymentGroupNameRequiredException(crate::types::error::DeploymentGroupNameRequiredException),
@@ -49,15 +49,15 @@ pub enum Error {
     DeploymentLimitExceededException(crate::types::error::DeploymentLimitExceededException),
     /// <p>The specified deployment has not started.</p>
     DeploymentNotStartedException(crate::types::error::DeploymentNotStartedException),
-    /// <p>The provided target ID does not belong to the attempted deployment.</p>
+    /// <p> The provided target ID does not belong to the attempted deployment. </p>
     DeploymentTargetDoesNotExistException(crate::types::error::DeploymentTargetDoesNotExistException),
-    /// <p>A deployment target ID was not provided.</p>
+    /// <p> A deployment target ID was not provided. </p>
     DeploymentTargetIdRequiredException(crate::types::error::DeploymentTargetIdRequiredException),
-    /// <p>The maximum number of targets that can be associated with an Amazon ECS or Lambda deployment was exceeded. The target list of both types of deployments must have exactly one item. This exception does not apply to EC2/On-premises deployments.</p>
+    /// <p> The maximum number of targets that can be associated with an Amazon ECS or Lambda deployment was exceeded. The target list of both types of deployments must have exactly one item. This exception does not apply to EC2/On-premises deployments. </p>
     DeploymentTargetListSizeExceededException(crate::types::error::DeploymentTargetListSizeExceededException),
     /// <p>The description is too long.</p>
     DescriptionTooLongException(crate::types::error::DescriptionTooLongException),
-    /// <p>The Amazon ECS service is associated with more than one deployment groups. An Amazon ECS service can be associated with only one deployment group.</p>
+    /// <p> The Amazon ECS service is associated with more than one deployment groups. An Amazon ECS service can be associated with only one deployment group. </p>
     EcsServiceMappingLimitExceededException(crate::types::error::EcsServiceMappingLimitExceededException),
     /// <p>No GitHub account connection exists with the named specified in the call.</p>
     GitHubAccountTokenDoesNotExistException(crate::types::error::GitHubAccountTokenDoesNotExistException),
@@ -87,21 +87,16 @@ pub enum Error {
     InstanceNotRegisteredException(crate::types::error::InstanceNotRegisteredException),
     /// <p>The format of the alarm configuration is invalid. Possible causes include:</p>
     /// <ul>
-    /// <li>
-    /// <p>The alarm list is null.</p></li>
-    /// <li>
-    /// <p>The alarm object is null.</p></li>
-    /// <li>
-    /// <p>The alarm name is empty or null or exceeds the limit of 255 characters.</p></li>
-    /// <li>
-    /// <p>Two alarms with the same name have been specified.</p></li>
-    /// <li>
-    /// <p>The alarm configuration is enabled, but the alarm list is empty.</p></li>
+    /// <li> <p>The alarm list is null.</p> </li>
+    /// <li> <p>The alarm object is null.</p> </li>
+    /// <li> <p>The alarm name is empty or null or exceeds the limit of 255 characters.</p> </li>
+    /// <li> <p>Two alarms with the same name have been specified.</p> </li>
+    /// <li> <p>The alarm configuration is enabled, but the alarm list is empty.</p> </li>
     /// </ul>
     InvalidAlarmConfigException(crate::types::error::InvalidAlarmConfigException),
     /// <p>The application name was specified in an invalid format.</p>
     InvalidApplicationNameException(crate::types::error::InvalidApplicationNameException),
-    /// <p>The specified ARN is not in a valid format.</p>
+    /// <p> The specified ARN is not in a valid format. </p>
     InvalidArnException(crate::types::error::InvalidArnException),
     /// <p>The automatic rollback configuration was specified in an invalid format. For example, automatic rollback is enabled, but an invalid triggering event type or no event types were listed.</p>
     InvalidAutoRollbackConfigException(crate::types::error::InvalidAutoRollbackConfigException),
@@ -127,15 +122,15 @@ pub enum Error {
     InvalidDeploymentStatusException(crate::types::error::InvalidDeploymentStatusException),
     /// <p>An invalid deployment style was specified. Valid deployment types include "IN_PLACE" and "BLUE_GREEN." Valid deployment options include "WITH_TRAFFIC_CONTROL" and "WITHOUT_TRAFFIC_CONTROL."</p>
     InvalidDeploymentStyleException(crate::types::error::InvalidDeploymentStyleException),
-    /// <p>The target ID provided was not valid.</p>
+    /// <p> The target ID provided was not valid. </p>
     InvalidDeploymentTargetIdException(crate::types::error::InvalidDeploymentTargetIdException),
-    /// <p>The wait type is invalid.</p>
+    /// <p> The wait type is invalid. </p>
     InvalidDeploymentWaitTypeException(crate::types::error::InvalidDeploymentWaitTypeException),
     /// <p>A call was submitted that specified both Ec2TagFilters and Ec2TagSet, but only one of these data types can be used in a single call.</p>
     InvalidEc2TagCombinationException(crate::types::error::InvalidEc2TagCombinationException),
     /// <p>The tag was specified in an invalid format.</p>
     InvalidEc2TagException(crate::types::error::InvalidEc2TagException),
-    /// <p>The Amazon ECS service identifier is not valid.</p>
+    /// <p> The Amazon ECS service identifier is not valid. </p>
     InvalidEcsServiceException(crate::types::error::InvalidEcsServiceException),
     /// <p>The external ID was specified in an invalid format.</p>
     InvalidExternalIdException(crate::types::error::InvalidExternalIdException),
@@ -189,27 +184,23 @@ pub enum Error {
     InvalidTagException(crate::types::error::InvalidTagException),
     /// <p>The tag filter was specified in an invalid format.</p>
     InvalidTagFilterException(crate::types::error::InvalidTagFilterException),
-    /// <p>The specified tags are not valid.</p>
+    /// <p> The specified tags are not valid. </p>
     InvalidTagsToAddException(crate::types::error::InvalidTagsToAddException),
-    /// <p>The target filter name is invalid.</p>
+    /// <p> The target filter name is invalid. </p>
     InvalidTargetFilterNameException(crate::types::error::InvalidTargetFilterNameException),
-    /// <p>A target group pair associated with this deployment is not valid.</p>
+    /// <p> A target group pair associated with this deployment is not valid. </p>
     InvalidTargetGroupPairException(crate::types::error::InvalidTargetGroupPairException),
     /// <p>The target instance configuration is invalid. Possible causes include:</p>
     /// <ul>
-    /// <li>
-    /// <p>Configuration data for target instances was entered for an in-place deployment.</p></li>
-    /// <li>
-    /// <p>The limit of 10 tags for a tag type was exceeded.</p></li>
-    /// <li>
-    /// <p>The combined length of the tag names exceeded the limit.</p></li>
-    /// <li>
-    /// <p>A specified tag is not currently applied to any instances.</p></li>
+    /// <li> <p>Configuration data for target instances was entered for an in-place deployment.</p> </li>
+    /// <li> <p>The limit of 10 tags for a tag type was exceeded.</p> </li>
+    /// <li> <p>The combined length of the tag names exceeded the limit. </p> </li>
+    /// <li> <p>A specified tag is not currently applied to any instances.</p> </li>
     /// </ul>
     InvalidTargetInstancesException(crate::types::error::InvalidTargetInstancesException),
     /// <p>The specified time range was specified in an invalid format.</p>
     InvalidTimeRangeException(crate::types::error::InvalidTimeRangeException),
-    /// <p>The configuration that specifies how traffic is routed during a deployment is invalid.</p>
+    /// <p> The configuration that specifies how traffic is routed during a deployment is invalid.</p>
     InvalidTrafficRoutingConfigurationException(crate::types::error::InvalidTrafficRoutingConfigurationException),
     /// <p>The trigger was specified in an invalid format.</p>
     InvalidTriggerConfigException(crate::types::error::InvalidTriggerConfigException),
@@ -225,7 +216,7 @@ pub enum Error {
     MultipleIamArnsProvidedException(crate::types::error::MultipleIamArnsProvidedException),
     /// <p>The API used does not support the deployment.</p>
     OperationNotSupportedException(crate::types::error::OperationNotSupportedException),
-    /// <p>The ARN of a resource is required, but was not found.</p>
+    /// <p> The ARN of a resource is required, but was not found. </p>
     ResourceArnRequiredException(crate::types::error::ResourceArnRequiredException),
     /// <p>The specified resource could not be validated.</p>
     ResourceValidationException(crate::types::error::ResourceValidationException),

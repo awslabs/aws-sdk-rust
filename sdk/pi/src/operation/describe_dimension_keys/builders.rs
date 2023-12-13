@@ -22,7 +22,7 @@ impl DescribeDimensionKeysInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeDimensionKeys`.
 ///
-/// <p>For a specific time period, retrieve the top <code>N</code> dimension keys for a metric.</p><note>
+/// <p>For a specific time period, retrieve the top <code>N</code> dimension keys for a metric. </p> <note>
 /// <p>Each response element returns a maximum of 500 bytes. For larger elements, such as SQL statements, only the first 500 bytes are returned.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -118,10 +118,8 @@ impl DescribeDimensionKeysFluentBuilder {
     }
     /// <p>The Amazon Web Services service for which Performance Insights will return metrics. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>RDS</code></p></li>
-    /// <li>
-    /// <p><code>DOCDB</code></p></li>
+    /// <li> <p> <code>RDS</code> </p> </li>
+    /// <li> <p> <code>DOCDB</code> </p> </li>
     /// </ul>
     pub fn service_type(mut self, input: crate::types::ServiceType) -> Self {
         self.inner = self.inner.service_type(input);
@@ -129,10 +127,8 @@ impl DescribeDimensionKeysFluentBuilder {
     }
     /// <p>The Amazon Web Services service for which Performance Insights will return metrics. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>RDS</code></p></li>
-    /// <li>
-    /// <p><code>DOCDB</code></p></li>
+    /// <li> <p> <code>RDS</code> </p> </li>
+    /// <li> <p> <code>DOCDB</code> </p> </li>
     /// </ul>
     pub fn set_service_type(mut self, input: ::std::option::Option<crate::types::ServiceType>) -> Self {
         self.inner = self.inner.set_service_type(input);
@@ -140,45 +136,43 @@ impl DescribeDimensionKeysFluentBuilder {
     }
     /// <p>The Amazon Web Services service for which Performance Insights will return metrics. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>RDS</code></p></li>
-    /// <li>
-    /// <p><code>DOCDB</code></p></li>
+    /// <li> <p> <code>RDS</code> </p> </li>
+    /// <li> <p> <code>DOCDB</code> </p> </li>
     /// </ul>
     pub fn get_service_type(&self) -> &::std::option::Option<crate::types::ServiceType> {
         self.inner.get_service_type()
     }
     /// <p>An immutable, Amazon Web Services Region-unique identifier for a data source. Performance Insights gathers metrics from this data source.</p>
-    /// <p>To use an Amazon RDS instance as a data source, you specify its <code>DbiResourceId</code> value. For example, specify <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>.</p>
+    /// <p>To use an Amazon RDS instance as a data source, you specify its <code>DbiResourceId</code> value. For example, specify <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>. </p>
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identifier(input.into());
         self
     }
     /// <p>An immutable, Amazon Web Services Region-unique identifier for a data source. Performance Insights gathers metrics from this data source.</p>
-    /// <p>To use an Amazon RDS instance as a data source, you specify its <code>DbiResourceId</code> value. For example, specify <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>.</p>
+    /// <p>To use an Amazon RDS instance as a data source, you specify its <code>DbiResourceId</code> value. For example, specify <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>. </p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identifier(input);
         self
     }
     /// <p>An immutable, Amazon Web Services Region-unique identifier for a data source. Performance Insights gathers metrics from this data source.</p>
-    /// <p>To use an Amazon RDS instance as a data source, you specify its <code>DbiResourceId</code> value. For example, specify <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>.</p>
+    /// <p>To use an Amazon RDS instance as a data source, you specify its <code>DbiResourceId</code> value. For example, specify <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>. </p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_identifier()
     }
-    /// <p>The date and time specifying the beginning of the requested time series data. You must specify a <code>StartTime</code> within the past 7 days. The value specified is <i>inclusive</i>, which means that data points equal to or greater than <code>StartTime</code> are returned.</p>
-    /// <p>The value for <code>StartTime</code> must be earlier than the value for <code>EndTime</code>.</p>
+    /// <p>The date and time specifying the beginning of the requested time series data. You must specify a <code>StartTime</code> within the past 7 days. The value specified is <i>inclusive</i>, which means that data points equal to or greater than <code>StartTime</code> are returned. </p>
+    /// <p>The value for <code>StartTime</code> must be earlier than the value for <code>EndTime</code>. </p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_time(input);
         self
     }
-    /// <p>The date and time specifying the beginning of the requested time series data. You must specify a <code>StartTime</code> within the past 7 days. The value specified is <i>inclusive</i>, which means that data points equal to or greater than <code>StartTime</code> are returned.</p>
-    /// <p>The value for <code>StartTime</code> must be earlier than the value for <code>EndTime</code>.</p>
+    /// <p>The date and time specifying the beginning of the requested time series data. You must specify a <code>StartTime</code> within the past 7 days. The value specified is <i>inclusive</i>, which means that data points equal to or greater than <code>StartTime</code> are returned. </p>
+    /// <p>The value for <code>StartTime</code> must be earlier than the value for <code>EndTime</code>. </p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
-    /// <p>The date and time specifying the beginning of the requested time series data. You must specify a <code>StartTime</code> within the past 7 days. The value specified is <i>inclusive</i>, which means that data points equal to or greater than <code>StartTime</code> are returned.</p>
-    /// <p>The value for <code>StartTime</code> must be earlier than the value for <code>EndTime</code>.</p>
+    /// <p>The date and time specifying the beginning of the requested time series data. You must specify a <code>StartTime</code> within the past 7 days. The value specified is <i>inclusive</i>, which means that data points equal to or greater than <code>StartTime</code> are returned. </p>
+    /// <p>The value for <code>StartTime</code> must be earlier than the value for <code>EndTime</code>. </p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_start_time()
     }
@@ -202,12 +196,10 @@ impl DescribeDimensionKeysFluentBuilder {
     /// <p>The name of a Performance Insights metric to be measured.</p>
     /// <p>Valid values for <code>Metric</code> are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>db.load.avg</code> - A scaled representation of the number of active sessions for the database engine.</p></li>
-    /// <li>
-    /// <p><code>db.sampledload.avg</code> - The raw number of active sessions for the database engine.</p></li>
+    /// <li> <p> <code>db.load.avg</code> - A scaled representation of the number of active sessions for the database engine. </p> </li>
+    /// <li> <p> <code>db.sampledload.avg</code> - The raw number of active sessions for the database engine. </p> </li>
     /// </ul>
-    /// <p>If the number of active sessions is less than an internal Performance Insights threshold, <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you can query <code>db.load.avg</code> only.</p>
+    /// <p>If the number of active sessions is less than an internal Performance Insights threshold, <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you can query <code>db.load.avg</code> only. </p>
     pub fn metric(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.metric(input.into());
         self
@@ -215,12 +207,10 @@ impl DescribeDimensionKeysFluentBuilder {
     /// <p>The name of a Performance Insights metric to be measured.</p>
     /// <p>Valid values for <code>Metric</code> are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>db.load.avg</code> - A scaled representation of the number of active sessions for the database engine.</p></li>
-    /// <li>
-    /// <p><code>db.sampledload.avg</code> - The raw number of active sessions for the database engine.</p></li>
+    /// <li> <p> <code>db.load.avg</code> - A scaled representation of the number of active sessions for the database engine. </p> </li>
+    /// <li> <p> <code>db.sampledload.avg</code> - The raw number of active sessions for the database engine. </p> </li>
     /// </ul>
-    /// <p>If the number of active sessions is less than an internal Performance Insights threshold, <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you can query <code>db.load.avg</code> only.</p>
+    /// <p>If the number of active sessions is less than an internal Performance Insights threshold, <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you can query <code>db.load.avg</code> only. </p>
     pub fn set_metric(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_metric(input);
         self
@@ -228,79 +218,62 @@ impl DescribeDimensionKeysFluentBuilder {
     /// <p>The name of a Performance Insights metric to be measured.</p>
     /// <p>Valid values for <code>Metric</code> are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>db.load.avg</code> - A scaled representation of the number of active sessions for the database engine.</p></li>
-    /// <li>
-    /// <p><code>db.sampledload.avg</code> - The raw number of active sessions for the database engine.</p></li>
+    /// <li> <p> <code>db.load.avg</code> - A scaled representation of the number of active sessions for the database engine. </p> </li>
+    /// <li> <p> <code>db.sampledload.avg</code> - The raw number of active sessions for the database engine. </p> </li>
     /// </ul>
-    /// <p>If the number of active sessions is less than an internal Performance Insights threshold, <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you can query <code>db.load.avg</code> only.</p>
+    /// <p>If the number of active sessions is less than an internal Performance Insights threshold, <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you can query <code>db.load.avg</code> only. </p>
     pub fn get_metric(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_metric()
     }
-    /// <p>The granularity, in seconds, of the data points returned from Performance Insights. A period can be as short as one second, or as long as one day (86400 seconds). Valid values are:</p>
+    /// <p>The granularity, in seconds, of the data points returned from Performance Insights. A period can be as short as one second, or as long as one day (86400 seconds). Valid values are: </p>
     /// <ul>
-    /// <li>
-    /// <p><code>1</code> (one second)</p></li>
-    /// <li>
-    /// <p><code>60</code> (one minute)</p></li>
-    /// <li>
-    /// <p><code>300</code> (five minutes)</p></li>
-    /// <li>
-    /// <p><code>3600</code> (one hour)</p></li>
-    /// <li>
-    /// <p><code>86400</code> (twenty-four hours)</p></li>
+    /// <li> <p> <code>1</code> (one second)</p> </li>
+    /// <li> <p> <code>60</code> (one minute)</p> </li>
+    /// <li> <p> <code>300</code> (five minutes)</p> </li>
+    /// <li> <p> <code>3600</code> (one hour)</p> </li>
+    /// <li> <p> <code>86400</code> (twenty-four hours)</p> </li>
     /// </ul>
-    /// <p>If you don't specify <code>PeriodInSeconds</code>, then Performance Insights chooses a value for you, with a goal of returning roughly 100-200 data points in the response.</p>
+    /// <p>If you don't specify <code>PeriodInSeconds</code>, then Performance Insights chooses a value for you, with a goal of returning roughly 100-200 data points in the response. </p>
     pub fn period_in_seconds(mut self, input: i32) -> Self {
         self.inner = self.inner.period_in_seconds(input);
         self
     }
-    /// <p>The granularity, in seconds, of the data points returned from Performance Insights. A period can be as short as one second, or as long as one day (86400 seconds). Valid values are:</p>
+    /// <p>The granularity, in seconds, of the data points returned from Performance Insights. A period can be as short as one second, or as long as one day (86400 seconds). Valid values are: </p>
     /// <ul>
-    /// <li>
-    /// <p><code>1</code> (one second)</p></li>
-    /// <li>
-    /// <p><code>60</code> (one minute)</p></li>
-    /// <li>
-    /// <p><code>300</code> (five minutes)</p></li>
-    /// <li>
-    /// <p><code>3600</code> (one hour)</p></li>
-    /// <li>
-    /// <p><code>86400</code> (twenty-four hours)</p></li>
+    /// <li> <p> <code>1</code> (one second)</p> </li>
+    /// <li> <p> <code>60</code> (one minute)</p> </li>
+    /// <li> <p> <code>300</code> (five minutes)</p> </li>
+    /// <li> <p> <code>3600</code> (one hour)</p> </li>
+    /// <li> <p> <code>86400</code> (twenty-four hours)</p> </li>
     /// </ul>
-    /// <p>If you don't specify <code>PeriodInSeconds</code>, then Performance Insights chooses a value for you, with a goal of returning roughly 100-200 data points in the response.</p>
+    /// <p>If you don't specify <code>PeriodInSeconds</code>, then Performance Insights chooses a value for you, with a goal of returning roughly 100-200 data points in the response. </p>
     pub fn set_period_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_period_in_seconds(input);
         self
     }
-    /// <p>The granularity, in seconds, of the data points returned from Performance Insights. A period can be as short as one second, or as long as one day (86400 seconds). Valid values are:</p>
+    /// <p>The granularity, in seconds, of the data points returned from Performance Insights. A period can be as short as one second, or as long as one day (86400 seconds). Valid values are: </p>
     /// <ul>
-    /// <li>
-    /// <p><code>1</code> (one second)</p></li>
-    /// <li>
-    /// <p><code>60</code> (one minute)</p></li>
-    /// <li>
-    /// <p><code>300</code> (five minutes)</p></li>
-    /// <li>
-    /// <p><code>3600</code> (one hour)</p></li>
-    /// <li>
-    /// <p><code>86400</code> (twenty-four hours)</p></li>
+    /// <li> <p> <code>1</code> (one second)</p> </li>
+    /// <li> <p> <code>60</code> (one minute)</p> </li>
+    /// <li> <p> <code>300</code> (five minutes)</p> </li>
+    /// <li> <p> <code>3600</code> (one hour)</p> </li>
+    /// <li> <p> <code>86400</code> (twenty-four hours)</p> </li>
     /// </ul>
-    /// <p>If you don't specify <code>PeriodInSeconds</code>, then Performance Insights chooses a value for you, with a goal of returning roughly 100-200 data points in the response.</p>
+    /// <p>If you don't specify <code>PeriodInSeconds</code>, then Performance Insights chooses a value for you, with a goal of returning roughly 100-200 data points in the response. </p>
     pub fn get_period_in_seconds(&self) -> &::std::option::Option<i32> {
         self.inner.get_period_in_seconds()
     }
-    /// <p>A specification for how to aggregate the data points from a query result. You must specify a valid dimension group. Performance Insights returns all dimensions within this group, unless you provide the names of specific dimensions within this group. You can also request that Performance Insights return a limited number of values for a dimension.</p>
+    /// <p>A specification for how to aggregate the data points from a query result. You must specify a valid dimension group. Performance Insights returns all dimensions within this group, unless you provide the names of specific dimensions within this group. You can also request that Performance Insights return a limited number of values for a dimension. </p>
     pub fn group_by(mut self, input: crate::types::DimensionGroup) -> Self {
         self.inner = self.inner.group_by(input);
         self
     }
-    /// <p>A specification for how to aggregate the data points from a query result. You must specify a valid dimension group. Performance Insights returns all dimensions within this group, unless you provide the names of specific dimensions within this group. You can also request that Performance Insights return a limited number of values for a dimension.</p>
+    /// <p>A specification for how to aggregate the data points from a query result. You must specify a valid dimension group. Performance Insights returns all dimensions within this group, unless you provide the names of specific dimensions within this group. You can also request that Performance Insights return a limited number of values for a dimension. </p>
     pub fn set_group_by(mut self, input: ::std::option::Option<crate::types::DimensionGroup>) -> Self {
         self.inner = self.inner.set_group_by(input);
         self
     }
-    /// <p>A specification for how to aggregate the data points from a query result. You must specify a valid dimension group. Performance Insights returns all dimensions within this group, unless you provide the names of specific dimensions within this group. You can also request that Performance Insights return a limited number of values for a dimension.</p>
+    /// <p>A specification for how to aggregate the data points from a query result. You must specify a valid dimension group. Performance Insights returns all dimensions within this group, unless you provide the names of specific dimensions within this group. You can also request that Performance Insights return a limited number of values for a dimension. </p>
     pub fn get_group_by(&self) -> &::std::option::Option<crate::types::DimensionGroup> {
         self.inner.get_group_by()
     }
@@ -308,31 +281,31 @@ impl DescribeDimensionKeysFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_additional_metrics`](Self::set_additional_metrics).
     ///
-    /// <p>Additional metrics for the top <code>N</code> dimension keys. If the specified dimension group in the <code>GroupBy</code> parameter is <code>db.sql_tokenized</code>, you can specify per-SQL metrics to get the values for the top <code>N</code> SQL digests. The response syntax is as follows: <code>"AdditionalMetrics" : { "<i>string</i>" : "<i>string</i>" }</code>.</p>
+    /// <p>Additional metrics for the top <code>N</code> dimension keys. If the specified dimension group in the <code>GroupBy</code> parameter is <code>db.sql_tokenized</code>, you can specify per-SQL metrics to get the values for the top <code>N</code> SQL digests. The response syntax is as follows: <code>"AdditionalMetrics" : { "<i>string</i>" : "<i>string</i>" }</code>. </p>
     pub fn additional_metrics(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.additional_metrics(input.into());
         self
     }
-    /// <p>Additional metrics for the top <code>N</code> dimension keys. If the specified dimension group in the <code>GroupBy</code> parameter is <code>db.sql_tokenized</code>, you can specify per-SQL metrics to get the values for the top <code>N</code> SQL digests. The response syntax is as follows: <code>"AdditionalMetrics" : { "<i>string</i>" : "<i>string</i>" }</code>.</p>
+    /// <p>Additional metrics for the top <code>N</code> dimension keys. If the specified dimension group in the <code>GroupBy</code> parameter is <code>db.sql_tokenized</code>, you can specify per-SQL metrics to get the values for the top <code>N</code> SQL digests. The response syntax is as follows: <code>"AdditionalMetrics" : { "<i>string</i>" : "<i>string</i>" }</code>. </p>
     pub fn set_additional_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_additional_metrics(input);
         self
     }
-    /// <p>Additional metrics for the top <code>N</code> dimension keys. If the specified dimension group in the <code>GroupBy</code> parameter is <code>db.sql_tokenized</code>, you can specify per-SQL metrics to get the values for the top <code>N</code> SQL digests. The response syntax is as follows: <code>"AdditionalMetrics" : { "<i>string</i>" : "<i>string</i>" }</code>.</p>
+    /// <p>Additional metrics for the top <code>N</code> dimension keys. If the specified dimension group in the <code>GroupBy</code> parameter is <code>db.sql_tokenized</code>, you can specify per-SQL metrics to get the values for the top <code>N</code> SQL digests. The response syntax is as follows: <code>"AdditionalMetrics" : { "<i>string</i>" : "<i>string</i>" }</code>. </p>
     pub fn get_additional_metrics(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_additional_metrics()
     }
-    /// <p>For each dimension specified in <code>GroupBy</code>, specify a secondary dimension to further subdivide the partition keys in the response.</p>
+    /// <p>For each dimension specified in <code>GroupBy</code>, specify a secondary dimension to further subdivide the partition keys in the response. </p>
     pub fn partition_by(mut self, input: crate::types::DimensionGroup) -> Self {
         self.inner = self.inner.partition_by(input);
         self
     }
-    /// <p>For each dimension specified in <code>GroupBy</code>, specify a secondary dimension to further subdivide the partition keys in the response.</p>
+    /// <p>For each dimension specified in <code>GroupBy</code>, specify a secondary dimension to further subdivide the partition keys in the response. </p>
     pub fn set_partition_by(mut self, input: ::std::option::Option<crate::types::DimensionGroup>) -> Self {
         self.inner = self.inner.set_partition_by(input);
         self
     }
-    /// <p>For each dimension specified in <code>GroupBy</code>, specify a secondary dimension to further subdivide the partition keys in the response.</p>
+    /// <p>For each dimension specified in <code>GroupBy</code>, specify a secondary dimension to further subdivide the partition keys in the response. </p>
     pub fn get_partition_by(&self) -> &::std::option::Option<crate::types::DimensionGroup> {
         self.inner.get_partition_by()
     }
@@ -342,10 +315,8 @@ impl DescribeDimensionKeysFluentBuilder {
     ///
     /// <p>One or more filters to apply in the request. Restrictions:</p>
     /// <ul>
-    /// <li>
-    /// <p>Any number of filters by the same dimension, as specified in the <code>GroupBy</code> or <code>Partition</code> parameters.</p></li>
-    /// <li>
-    /// <p>A single filter for any other dimension in this dimension group.</p></li>
+    /// <li> <p>Any number of filters by the same dimension, as specified in the <code>GroupBy</code> or <code>Partition</code> parameters.</p> </li>
+    /// <li> <p>A single filter for any other dimension in this dimension group.</p> </li>
     /// </ul>
     pub fn filter(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.filter(k.into(), v.into());
@@ -353,10 +324,8 @@ impl DescribeDimensionKeysFluentBuilder {
     }
     /// <p>One or more filters to apply in the request. Restrictions:</p>
     /// <ul>
-    /// <li>
-    /// <p>Any number of filters by the same dimension, as specified in the <code>GroupBy</code> or <code>Partition</code> parameters.</p></li>
-    /// <li>
-    /// <p>A single filter for any other dimension in this dimension group.</p></li>
+    /// <li> <p>Any number of filters by the same dimension, as specified in the <code>GroupBy</code> or <code>Partition</code> parameters.</p> </li>
+    /// <li> <p>A single filter for any other dimension in this dimension group.</p> </li>
     /// </ul>
     pub fn set_filter(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_filter(input);
@@ -364,25 +333,23 @@ impl DescribeDimensionKeysFluentBuilder {
     }
     /// <p>One or more filters to apply in the request. Restrictions:</p>
     /// <ul>
-    /// <li>
-    /// <p>Any number of filters by the same dimension, as specified in the <code>GroupBy</code> or <code>Partition</code> parameters.</p></li>
-    /// <li>
-    /// <p>A single filter for any other dimension in this dimension group.</p></li>
+    /// <li> <p>Any number of filters by the same dimension, as specified in the <code>GroupBy</code> or <code>Partition</code> parameters.</p> </li>
+    /// <li> <p>A single filter for any other dimension in this dimension group.</p> </li>
     /// </ul>
     pub fn get_filter(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_filter()
     }
-    /// <p>The maximum number of items to return in the response. If more items exist than the specified <code>MaxRecords</code> value, a pagination token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of items to return in the response. If more items exist than the specified <code>MaxRecords</code> value, a pagination token is included in the response so that the remaining results can be retrieved. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of items to return in the response. If more items exist than the specified <code>MaxRecords</code> value, a pagination token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of items to return in the response. If more items exist than the specified <code>MaxRecords</code> value, a pagination token is included in the response so that the remaining results can be retrieved. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The maximum number of items to return in the response. If more items exist than the specified <code>MaxRecords</code> value, a pagination token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of items to return in the response. If more items exist than the specified <code>MaxRecords</code> value, a pagination token is included in the response so that the remaining results can be retrieved. </p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

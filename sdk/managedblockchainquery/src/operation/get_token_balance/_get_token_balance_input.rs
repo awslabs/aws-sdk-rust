@@ -7,7 +7,7 @@ pub struct GetTokenBalanceInput {
     pub token_identifier: ::std::option::Option<crate::types::TokenIdentifier>,
     /// <p>The container for the identifier for the owner.</p>
     pub owner_identifier: ::std::option::Option<crate::types::OwnerIdentifier>,
-    /// <p>The time for when the TokenBalance is requested or the current time if a time is not provided in the request.</p><note>
+    /// <p>The time for when the TokenBalance is requested or the current time if a time is not provided in the request.</p> <note>
     /// <p>This time will only be recorded up to the second.</p>
     /// </note>
     pub at_blockchain_instant: ::std::option::Option<crate::types::BlockchainInstant>,
@@ -21,7 +21,7 @@ impl GetTokenBalanceInput {
     pub fn owner_identifier(&self) -> ::std::option::Option<&crate::types::OwnerIdentifier> {
         self.owner_identifier.as_ref()
     }
-    /// <p>The time for when the TokenBalance is requested or the current time if a time is not provided in the request.</p><note>
+    /// <p>The time for when the TokenBalance is requested or the current time if a time is not provided in the request.</p> <note>
     /// <p>This time will only be recorded up to the second.</p>
     /// </note>
     pub fn at_blockchain_instant(&self) -> ::std::option::Option<&crate::types::BlockchainInstant> {
@@ -74,21 +74,21 @@ impl GetTokenBalanceInputBuilder {
     pub fn get_owner_identifier(&self) -> &::std::option::Option<crate::types::OwnerIdentifier> {
         &self.owner_identifier
     }
-    /// <p>The time for when the TokenBalance is requested or the current time if a time is not provided in the request.</p><note>
+    /// <p>The time for when the TokenBalance is requested or the current time if a time is not provided in the request.</p> <note>
     /// <p>This time will only be recorded up to the second.</p>
     /// </note>
     pub fn at_blockchain_instant(mut self, input: crate::types::BlockchainInstant) -> Self {
         self.at_blockchain_instant = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time for when the TokenBalance is requested or the current time if a time is not provided in the request.</p><note>
+    /// <p>The time for when the TokenBalance is requested or the current time if a time is not provided in the request.</p> <note>
     /// <p>This time will only be recorded up to the second.</p>
     /// </note>
     pub fn set_at_blockchain_instant(mut self, input: ::std::option::Option<crate::types::BlockchainInstant>) -> Self {
         self.at_blockchain_instant = input;
         self
     }
-    /// <p>The time for when the TokenBalance is requested or the current time if a time is not provided in the request.</p><note>
+    /// <p>The time for when the TokenBalance is requested or the current time if a time is not provided in the request.</p> <note>
     /// <p>This time will only be recorded up to the second.</p>
     /// </note>
     pub fn get_at_blockchain_instant(&self) -> &::std::option::Option<crate::types::BlockchainInstant> {

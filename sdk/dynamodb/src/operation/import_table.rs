@@ -254,10 +254,10 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ImportTableEn
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum ImportTableError {
-    /// <p>There was a conflict when importing from the specified S3 source. This can occur when the current import conflicts with a previous import request that had the same client token.</p>
+    /// <p> There was a conflict when importing from the specified S3 source. This can occur when the current import conflicts with a previous import request that had the same client token. </p>
     ImportConflictException(crate::types::error::ImportConflictException),
-    /// <p>There is no limit to the number of daily on-demand backups that can be taken.</p>
-    /// <p>For most purposes, up to 500 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>.</p>
+    /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p>
+    /// <p>For most purposes, up to 500 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
     /// <p>When you are creating a table with one or more secondary indexes, you can have up to 250 such requests running at a time. However, if the table or index specifications are complex, then DynamoDB might temporarily reduce the number of concurrent operations.</p>
     /// <p>When importing into DynamoDB, up to 50 simultaneous import table operations are allowed per account.</p>
     /// <p>There is a soft account quota of 2,500 tables.</p>

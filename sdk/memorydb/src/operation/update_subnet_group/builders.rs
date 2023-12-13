@@ -22,7 +22,7 @@ impl UpdateSubnetGroupInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateSubnetGroup`.
 ///
-/// <p>Updates a subnet group. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/ubnetGroups.Modifying.html">Updating a subnet group</a></p>
+/// <p>Updates a subnet group. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/ubnetGroups.Modifying.html">Updating a subnet group</a> </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateSubnetGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

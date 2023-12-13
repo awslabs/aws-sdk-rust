@@ -154,17 +154,17 @@ impl CreateTemplateGroupAccessControlEntryFluentBuilder {
     pub fn get_group_display_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_group_display_name()
     }
-    /// <p>Allow or deny permissions for an Active Directory group to enroll or autoenroll certificates for a template.</p>
+    /// <p> Allow or deny permissions for an Active Directory group to enroll or autoenroll certificates for a template.</p>
     pub fn access_rights(mut self, input: crate::types::AccessRights) -> Self {
         self.inner = self.inner.access_rights(input);
         self
     }
-    /// <p>Allow or deny permissions for an Active Directory group to enroll or autoenroll certificates for a template.</p>
+    /// <p> Allow or deny permissions for an Active Directory group to enroll or autoenroll certificates for a template.</p>
     pub fn set_access_rights(mut self, input: ::std::option::Option<crate::types::AccessRights>) -> Self {
         self.inner = self.inner.set_access_rights(input);
         self
     }
-    /// <p>Allow or deny permissions for an Active Directory group to enroll or autoenroll certificates for a template.</p>
+    /// <p> Allow or deny permissions for an Active Directory group to enroll or autoenroll certificates for a template.</p>
     pub fn get_access_rights(&self) -> &::std::option::Option<crate::types::AccessRights> {
         self.inner.get_access_rights()
     }

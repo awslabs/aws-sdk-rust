@@ -267,14 +267,14 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetStudioComp
 pub enum GetStudioComponentError {
     /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>Another operation is in progress.</p>
+    /// <p>Another operation is in progress. </p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>An internal error has occurred. Please retry your request.</p>
     InternalServerErrorException(crate::types::error::InternalServerErrorException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
-    /// <p>Please use Amazon Web Services Service Quotas to request an increase.</p>
+    /// <p>Please use Amazon Web Services Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::types::error::ThrottlingException),

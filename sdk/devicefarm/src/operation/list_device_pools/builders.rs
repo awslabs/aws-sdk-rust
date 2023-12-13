@@ -131,10 +131,8 @@ impl ListDevicePoolsFluentBuilder {
     /// <p>The device pools' type.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>CURATED: A device pool that is created and managed by AWS Device Farm.</p></li>
-    /// <li>
-    /// <p>PRIVATE: A device pool that is created and managed by the device pool developer.</p></li>
+    /// <li> <p>CURATED: A device pool that is created and managed by AWS Device Farm.</p> </li>
+    /// <li> <p>PRIVATE: A device pool that is created and managed by the device pool developer.</p> </li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::DevicePoolType) -> Self {
         self.inner = self.inner.r#type(input);
@@ -143,10 +141,8 @@ impl ListDevicePoolsFluentBuilder {
     /// <p>The device pools' type.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>CURATED: A device pool that is created and managed by AWS Device Farm.</p></li>
-    /// <li>
-    /// <p>PRIVATE: A device pool that is created and managed by the device pool developer.</p></li>
+    /// <li> <p>CURATED: A device pool that is created and managed by AWS Device Farm.</p> </li>
+    /// <li> <p>PRIVATE: A device pool that is created and managed by the device pool developer.</p> </li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::DevicePoolType>) -> Self {
         self.inner = self.inner.set_type(input);
@@ -155,10 +151,8 @@ impl ListDevicePoolsFluentBuilder {
     /// <p>The device pools' type.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>CURATED: A device pool that is created and managed by AWS Device Farm.</p></li>
-    /// <li>
-    /// <p>PRIVATE: A device pool that is created and managed by the device pool developer.</p></li>
+    /// <li> <p>CURATED: A device pool that is created and managed by AWS Device Farm.</p> </li>
+    /// <li> <p>PRIVATE: A device pool that is created and managed by the device pool developer.</p> </li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::DevicePoolType> {
         self.inner.get_type()

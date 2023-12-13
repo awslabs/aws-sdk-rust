@@ -9,7 +9,7 @@ pub struct CreateModelVersionOutput {
     pub model_type: ::std::option::Option<crate::types::ModelTypeEnum>,
     /// <p>The model version number of the model version created.</p>
     pub model_version_number: ::std::option::Option<::std::string::String>,
-    /// <p>The model version status.</p>
+    /// <p>The model version status. </p>
     pub status: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -26,7 +26,7 @@ impl CreateModelVersionOutput {
     pub fn model_version_number(&self) -> ::std::option::Option<&str> {
         self.model_version_number.as_deref()
     }
-    /// <p>The model version status.</p>
+    /// <p>The model version status. </p>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
@@ -96,17 +96,17 @@ impl CreateModelVersionOutputBuilder {
     pub fn get_model_version_number(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_version_number
     }
-    /// <p>The model version status.</p>
+    /// <p>The model version status. </p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The model version status.</p>
+    /// <p>The model version status. </p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The model version status.</p>
+    /// <p>The model version status. </p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status
     }

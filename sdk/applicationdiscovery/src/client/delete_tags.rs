@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`configuration_ids(impl Into<String>)`](crate::operation::delete_tags::builders::DeleteTagsFluentBuilder::configuration_ids) / [`set_configuration_ids(Option<Vec::<String>>)`](crate::operation::delete_tags::builders::DeleteTagsFluentBuilder::set_configuration_ids):<br>required: **true**<br><p>A list of configuration items with tags that you want to delete.</p><br>
-    ///   - [`tags(Tag)`](crate::operation::delete_tags::builders::DeleteTagsFluentBuilder::tags) / [`set_tags(Option<Vec::<Tag>>)`](crate::operation::delete_tags::builders::DeleteTagsFluentBuilder::set_tags):<br>required: **false**<br><p>Tags that you want to delete from one or more configuration items. Specify the tags that you want to delete in a <i>key</i>-<i>value</i> format. For example:</p> <p><code>{"key": "serverType", "value": "webServer"}</code></p><br>
+    ///   - [`tags(Tag)`](crate::operation::delete_tags::builders::DeleteTagsFluentBuilder::tags) / [`set_tags(Option<Vec::<Tag>>)`](crate::operation::delete_tags::builders::DeleteTagsFluentBuilder::set_tags):<br>required: **false**<br><p>Tags that you want to delete from one or more configuration items. Specify the tags that you want to delete in a <i>key</i>-<i>value</i> format. For example:</p>  <p> <code>{"key": "serverType", "value": "webServer"}</code> </p><br>
     /// - On success, responds with [`DeleteTagsOutput`](crate::operation::delete_tags::DeleteTagsOutput)
     /// - On failure, responds with [`SdkError<DeleteTagsError>`](crate::operation::delete_tags::DeleteTagsError)
     pub fn delete_tags(&self) -> crate::operation::delete_tags::builders::DeleteTagsFluentBuilder {

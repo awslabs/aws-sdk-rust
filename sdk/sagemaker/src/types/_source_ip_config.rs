@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SourceIpConfig {
     /// <p>A list of one to ten <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Classless Inter-Domain Routing</a> (CIDR) values.</p>
-    /// <p>Maximum: Ten CIDR values</p><note>
+    /// <p>Maximum: Ten CIDR values</p> <note>
     /// <p>The following Length Constraints apply to individual CIDR values in the CIDR value list.</p>
     /// </note>
     pub cidrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SourceIpConfig {
     /// <p>A list of one to ten <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Classless Inter-Domain Routing</a> (CIDR) values.</p>
-    /// <p>Maximum: Ten CIDR values</p><note>
+    /// <p>Maximum: Ten CIDR values</p> <note>
     /// <p>The following Length Constraints apply to individual CIDR values in the CIDR value list.</p>
     /// </note>
     ///
@@ -40,7 +40,7 @@ impl SourceIpConfigBuilder {
     /// To override the contents of this collection use [`set_cidrs`](Self::set_cidrs).
     ///
     /// <p>A list of one to ten <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Classless Inter-Domain Routing</a> (CIDR) values.</p>
-    /// <p>Maximum: Ten CIDR values</p><note>
+    /// <p>Maximum: Ten CIDR values</p> <note>
     /// <p>The following Length Constraints apply to individual CIDR values in the CIDR value list.</p>
     /// </note>
     pub fn cidrs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -50,7 +50,7 @@ impl SourceIpConfigBuilder {
         self
     }
     /// <p>A list of one to ten <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Classless Inter-Domain Routing</a> (CIDR) values.</p>
-    /// <p>Maximum: Ten CIDR values</p><note>
+    /// <p>Maximum: Ten CIDR values</p> <note>
     /// <p>The following Length Constraints apply to individual CIDR values in the CIDR value list.</p>
     /// </note>
     pub fn set_cidrs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
@@ -58,7 +58,7 @@ impl SourceIpConfigBuilder {
         self
     }
     /// <p>A list of one to ten <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Classless Inter-Domain Routing</a> (CIDR) values.</p>
-    /// <p>Maximum: Ten CIDR values</p><note>
+    /// <p>Maximum: Ten CIDR values</p> <note>
     /// <p>The following Length Constraints apply to individual CIDR values in the CIDR value list.</p>
     /// </note>
     pub fn get_cidrs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {

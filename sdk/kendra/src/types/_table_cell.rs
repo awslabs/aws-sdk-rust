@@ -6,11 +6,11 @@
 pub struct TableCell {
     /// <p>The actual value or content within a table cell. A table cell could contain a date value of a year, or a string value of text, for example.</p>
     pub value: ::std::option::Option<::std::string::String>,
-    /// <p><code>TRUE</code> if the response of the table cell is the top answer. This is the cell value or content with the highest confidence score or is the most relevant to the query.</p>
+    /// <p> <code>TRUE</code> if the response of the table cell is the top answer. This is the cell value or content with the highest confidence score or is the most relevant to the query.</p>
     pub top_answer: bool,
-    /// <p><code>TRUE</code> means that the table cell has a high enough confidence and is relevant to the query, so the value or content should be highlighted.</p>
+    /// <p> <code>TRUE</code> means that the table cell has a high enough confidence and is relevant to the query, so the value or content should be highlighted.</p>
     pub highlighted: bool,
-    /// <p><code>TRUE</code> means that the table cell should be treated as a header.</p>
+    /// <p> <code>TRUE</code> means that the table cell should be treated as a header.</p>
     pub header: bool,
 }
 impl TableCell {
@@ -18,15 +18,15 @@ impl TableCell {
     pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
-    /// <p><code>TRUE</code> if the response of the table cell is the top answer. This is the cell value or content with the highest confidence score or is the most relevant to the query.</p>
+    /// <p> <code>TRUE</code> if the response of the table cell is the top answer. This is the cell value or content with the highest confidence score or is the most relevant to the query.</p>
     pub fn top_answer(&self) -> bool {
         self.top_answer
     }
-    /// <p><code>TRUE</code> means that the table cell has a high enough confidence and is relevant to the query, so the value or content should be highlighted.</p>
+    /// <p> <code>TRUE</code> means that the table cell has a high enough confidence and is relevant to the query, so the value or content should be highlighted.</p>
     pub fn highlighted(&self) -> bool {
         self.highlighted
     }
-    /// <p><code>TRUE</code> means that the table cell should be treated as a header.</p>
+    /// <p> <code>TRUE</code> means that the table cell should be treated as a header.</p>
     pub fn header(&self) -> bool {
         self.header
     }
@@ -62,45 +62,45 @@ impl TableCellBuilder {
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.value
     }
-    /// <p><code>TRUE</code> if the response of the table cell is the top answer. This is the cell value or content with the highest confidence score or is the most relevant to the query.</p>
+    /// <p> <code>TRUE</code> if the response of the table cell is the top answer. This is the cell value or content with the highest confidence score or is the most relevant to the query.</p>
     pub fn top_answer(mut self, input: bool) -> Self {
         self.top_answer = ::std::option::Option::Some(input);
         self
     }
-    /// <p><code>TRUE</code> if the response of the table cell is the top answer. This is the cell value or content with the highest confidence score or is the most relevant to the query.</p>
+    /// <p> <code>TRUE</code> if the response of the table cell is the top answer. This is the cell value or content with the highest confidence score or is the most relevant to the query.</p>
     pub fn set_top_answer(mut self, input: ::std::option::Option<bool>) -> Self {
         self.top_answer = input;
         self
     }
-    /// <p><code>TRUE</code> if the response of the table cell is the top answer. This is the cell value or content with the highest confidence score or is the most relevant to the query.</p>
+    /// <p> <code>TRUE</code> if the response of the table cell is the top answer. This is the cell value or content with the highest confidence score or is the most relevant to the query.</p>
     pub fn get_top_answer(&self) -> &::std::option::Option<bool> {
         &self.top_answer
     }
-    /// <p><code>TRUE</code> means that the table cell has a high enough confidence and is relevant to the query, so the value or content should be highlighted.</p>
+    /// <p> <code>TRUE</code> means that the table cell has a high enough confidence and is relevant to the query, so the value or content should be highlighted.</p>
     pub fn highlighted(mut self, input: bool) -> Self {
         self.highlighted = ::std::option::Option::Some(input);
         self
     }
-    /// <p><code>TRUE</code> means that the table cell has a high enough confidence and is relevant to the query, so the value or content should be highlighted.</p>
+    /// <p> <code>TRUE</code> means that the table cell has a high enough confidence and is relevant to the query, so the value or content should be highlighted.</p>
     pub fn set_highlighted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.highlighted = input;
         self
     }
-    /// <p><code>TRUE</code> means that the table cell has a high enough confidence and is relevant to the query, so the value or content should be highlighted.</p>
+    /// <p> <code>TRUE</code> means that the table cell has a high enough confidence and is relevant to the query, so the value or content should be highlighted.</p>
     pub fn get_highlighted(&self) -> &::std::option::Option<bool> {
         &self.highlighted
     }
-    /// <p><code>TRUE</code> means that the table cell should be treated as a header.</p>
+    /// <p> <code>TRUE</code> means that the table cell should be treated as a header.</p>
     pub fn header(mut self, input: bool) -> Self {
         self.header = ::std::option::Option::Some(input);
         self
     }
-    /// <p><code>TRUE</code> means that the table cell should be treated as a header.</p>
+    /// <p> <code>TRUE</code> means that the table cell should be treated as a header.</p>
     pub fn set_header(mut self, input: ::std::option::Option<bool>) -> Self {
         self.header = input;
         self
     }
-    /// <p><code>TRUE</code> means that the table cell should be treated as a header.</p>
+    /// <p> <code>TRUE</code> means that the table cell should be treated as a header.</p>
     pub fn get_header(&self) -> &::std::option::Option<bool> {
         &self.header
     }

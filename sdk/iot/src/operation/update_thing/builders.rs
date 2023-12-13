@@ -141,21 +141,21 @@ impl UpdateThingFluentBuilder {
         self.inner.get_thing_type_name()
     }
     /// <p>A list of thing attributes, a JSON string containing name-value pairs. For example:</p>
-    /// <p><code>{\"attributes\":{\"name1\":\"value2\"}}</code></p>
+    /// <p> <code>{\"attributes\":{\"name1\":\"value2\"}}</code> </p>
     /// <p>This data is used to add new attributes or update existing attributes.</p>
     pub fn attribute_payload(mut self, input: crate::types::AttributePayload) -> Self {
         self.inner = self.inner.attribute_payload(input);
         self
     }
     /// <p>A list of thing attributes, a JSON string containing name-value pairs. For example:</p>
-    /// <p><code>{\"attributes\":{\"name1\":\"value2\"}}</code></p>
+    /// <p> <code>{\"attributes\":{\"name1\":\"value2\"}}</code> </p>
     /// <p>This data is used to add new attributes or update existing attributes.</p>
     pub fn set_attribute_payload(mut self, input: ::std::option::Option<crate::types::AttributePayload>) -> Self {
         self.inner = self.inner.set_attribute_payload(input);
         self
     }
     /// <p>A list of thing attributes, a JSON string containing name-value pairs. For example:</p>
-    /// <p><code>{\"attributes\":{\"name1\":\"value2\"}}</code></p>
+    /// <p> <code>{\"attributes\":{\"name1\":\"value2\"}}</code> </p>
     /// <p>This data is used to add new attributes or update existing attributes.</p>
     pub fn get_attribute_payload(&self) -> &::std::option::Option<crate::types::AttributePayload> {
         self.inner.get_attribute_payload()

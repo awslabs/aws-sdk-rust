@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchNetworkProfilesOutput {
-    /// <p>The network profiles that meet the specified set of filter criteria, in sort order. It is a list of NetworkProfileData objects.</p>
+    /// <p>The network profiles that meet the specified set of filter criteria, in sort order. It is a list of NetworkProfileData objects. </p>
     pub network_profiles: ::std::option::Option<::std::vec::Vec<crate::types::NetworkProfileData>>,
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct SearchNetworkProfilesOutput {
     _request_id: Option<String>,
 }
 impl SearchNetworkProfilesOutput {
-    /// <p>The network profiles that meet the specified set of filter criteria, in sort order. It is a list of NetworkProfileData objects.</p>
+    /// <p>The network profiles that meet the specified set of filter criteria, in sort order. It is a list of NetworkProfileData objects. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_profiles.is_none()`.
     pub fn network_profiles(&self) -> &[crate::types::NetworkProfileData] {
@@ -53,19 +53,19 @@ impl SearchNetworkProfilesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_network_profiles`](Self::set_network_profiles).
     ///
-    /// <p>The network profiles that meet the specified set of filter criteria, in sort order. It is a list of NetworkProfileData objects.</p>
+    /// <p>The network profiles that meet the specified set of filter criteria, in sort order. It is a list of NetworkProfileData objects. </p>
     pub fn network_profiles(mut self, input: crate::types::NetworkProfileData) -> Self {
         let mut v = self.network_profiles.unwrap_or_default();
         v.push(input);
         self.network_profiles = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The network profiles that meet the specified set of filter criteria, in sort order. It is a list of NetworkProfileData objects.</p>
+    /// <p>The network profiles that meet the specified set of filter criteria, in sort order. It is a list of NetworkProfileData objects. </p>
     pub fn set_network_profiles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkProfileData>>) -> Self {
         self.network_profiles = input;
         self
     }
-    /// <p>The network profiles that meet the specified set of filter criteria, in sort order. It is a list of NetworkProfileData objects.</p>
+    /// <p>The network profiles that meet the specified set of filter criteria, in sort order. It is a list of NetworkProfileData objects. </p>
     pub fn get_network_profiles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkProfileData>> {
         &self.network_profiles
     }

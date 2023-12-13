@@ -9,11 +9,11 @@ pub struct PutIntentOutput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>An array of intent slots that are configured for the intent.</p>
     pub slots: ::std::option::Option<::std::vec::Vec<crate::types::Slot>>,
-    /// <p>An array of sample utterances that are configured for the intent.</p>
+    /// <p> An array of sample utterances that are configured for the intent. </p>
     pub sample_utterances: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>If defined in the intent, Amazon Lex prompts the user to confirm the intent before fulfilling it.</p>
     pub confirmation_prompt: ::std::option::Option<crate::types::Prompt>,
-    /// <p>If the user answers "no" to the question defined in <code>confirmationPrompt</code> Amazon Lex responds with this statement to acknowledge that the intent was canceled.</p>
+    /// <p>If the user answers "no" to the question defined in <code>confirmationPrompt</code> Amazon Lex responds with this statement to acknowledge that the intent was canceled. </p>
     pub rejection_statement: ::std::option::Option<crate::types::Statement>,
     /// <p>If defined in the intent, Amazon Lex uses this prompt to solicit additional user activity after the intent is fulfilled.</p>
     pub follow_up_prompt: ::std::option::Option<crate::types::FollowUpPrompt>,
@@ -33,7 +33,7 @@ pub struct PutIntentOutput {
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>Checksum of the <code>$LATEST</code>version of the intent created or updated.</p>
     pub checksum: ::std::option::Option<::std::string::String>,
-    /// <p><code>True</code> if a new version of the intent was created. If the <code>createVersion</code> field was not specified in the request, the <code>createVersion</code> field is set to false in the response.</p>
+    /// <p> <code>True</code> if a new version of the intent was created. If the <code>createVersion</code> field was not specified in the request, the <code>createVersion</code> field is set to false in the response.</p>
     pub create_version: ::std::option::Option<bool>,
     /// <p>Configuration information, if any, required to connect to an Amazon Kendra index and use the <code>AMAZON.KendraSearchIntent</code> intent.</p>
     pub kendra_configuration: ::std::option::Option<crate::types::KendraConfiguration>,
@@ -58,7 +58,7 @@ impl PutIntentOutput {
     pub fn slots(&self) -> &[crate::types::Slot] {
         self.slots.as_deref().unwrap_or_default()
     }
-    /// <p>An array of sample utterances that are configured for the intent.</p>
+    /// <p> An array of sample utterances that are configured for the intent. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sample_utterances.is_none()`.
     pub fn sample_utterances(&self) -> &[::std::string::String] {
@@ -68,7 +68,7 @@ impl PutIntentOutput {
     pub fn confirmation_prompt(&self) -> ::std::option::Option<&crate::types::Prompt> {
         self.confirmation_prompt.as_ref()
     }
-    /// <p>If the user answers "no" to the question defined in <code>confirmationPrompt</code> Amazon Lex responds with this statement to acknowledge that the intent was canceled.</p>
+    /// <p>If the user answers "no" to the question defined in <code>confirmationPrompt</code> Amazon Lex responds with this statement to acknowledge that the intent was canceled. </p>
     pub fn rejection_statement(&self) -> ::std::option::Option<&crate::types::Statement> {
         self.rejection_statement.as_ref()
     }
@@ -108,7 +108,7 @@ impl PutIntentOutput {
     pub fn checksum(&self) -> ::std::option::Option<&str> {
         self.checksum.as_deref()
     }
-    /// <p><code>True</code> if a new version of the intent was created. If the <code>createVersion</code> field was not specified in the request, the <code>createVersion</code> field is set to false in the response.</p>
+    /// <p> <code>True</code> if a new version of the intent was created. If the <code>createVersion</code> field was not specified in the request, the <code>createVersion</code> field is set to false in the response.</p>
     pub fn create_version(&self) -> ::std::option::Option<bool> {
         self.create_version
     }
@@ -219,19 +219,19 @@ impl PutIntentOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_sample_utterances`](Self::set_sample_utterances).
     ///
-    /// <p>An array of sample utterances that are configured for the intent.</p>
+    /// <p> An array of sample utterances that are configured for the intent. </p>
     pub fn sample_utterances(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.sample_utterances.unwrap_or_default();
         v.push(input.into());
         self.sample_utterances = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of sample utterances that are configured for the intent.</p>
+    /// <p> An array of sample utterances that are configured for the intent. </p>
     pub fn set_sample_utterances(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.sample_utterances = input;
         self
     }
-    /// <p>An array of sample utterances that are configured for the intent.</p>
+    /// <p> An array of sample utterances that are configured for the intent. </p>
     pub fn get_sample_utterances(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.sample_utterances
     }
@@ -249,17 +249,17 @@ impl PutIntentOutputBuilder {
     pub fn get_confirmation_prompt(&self) -> &::std::option::Option<crate::types::Prompt> {
         &self.confirmation_prompt
     }
-    /// <p>If the user answers "no" to the question defined in <code>confirmationPrompt</code> Amazon Lex responds with this statement to acknowledge that the intent was canceled.</p>
+    /// <p>If the user answers "no" to the question defined in <code>confirmationPrompt</code> Amazon Lex responds with this statement to acknowledge that the intent was canceled. </p>
     pub fn rejection_statement(mut self, input: crate::types::Statement) -> Self {
         self.rejection_statement = ::std::option::Option::Some(input);
         self
     }
-    /// <p>If the user answers "no" to the question defined in <code>confirmationPrompt</code> Amazon Lex responds with this statement to acknowledge that the intent was canceled.</p>
+    /// <p>If the user answers "no" to the question defined in <code>confirmationPrompt</code> Amazon Lex responds with this statement to acknowledge that the intent was canceled. </p>
     pub fn set_rejection_statement(mut self, input: ::std::option::Option<crate::types::Statement>) -> Self {
         self.rejection_statement = input;
         self
     }
-    /// <p>If the user answers "no" to the question defined in <code>confirmationPrompt</code> Amazon Lex responds with this statement to acknowledge that the intent was canceled.</p>
+    /// <p>If the user answers "no" to the question defined in <code>confirmationPrompt</code> Amazon Lex responds with this statement to acknowledge that the intent was canceled. </p>
     pub fn get_rejection_statement(&self) -> &::std::option::Option<crate::types::Statement> {
         &self.rejection_statement
     }
@@ -389,17 +389,17 @@ impl PutIntentOutputBuilder {
     pub fn get_checksum(&self) -> &::std::option::Option<::std::string::String> {
         &self.checksum
     }
-    /// <p><code>True</code> if a new version of the intent was created. If the <code>createVersion</code> field was not specified in the request, the <code>createVersion</code> field is set to false in the response.</p>
+    /// <p> <code>True</code> if a new version of the intent was created. If the <code>createVersion</code> field was not specified in the request, the <code>createVersion</code> field is set to false in the response.</p>
     pub fn create_version(mut self, input: bool) -> Self {
         self.create_version = ::std::option::Option::Some(input);
         self
     }
-    /// <p><code>True</code> if a new version of the intent was created. If the <code>createVersion</code> field was not specified in the request, the <code>createVersion</code> field is set to false in the response.</p>
+    /// <p> <code>True</code> if a new version of the intent was created. If the <code>createVersion</code> field was not specified in the request, the <code>createVersion</code> field is set to false in the response.</p>
     pub fn set_create_version(mut self, input: ::std::option::Option<bool>) -> Self {
         self.create_version = input;
         self
     }
-    /// <p><code>True</code> if a new version of the intent was created. If the <code>createVersion</code> field was not specified in the request, the <code>createVersion</code> field is set to false in the response.</p>
+    /// <p> <code>True</code> if a new version of the intent was created. If the <code>createVersion</code> field was not specified in the request, the <code>createVersion</code> field is set to false in the response.</p>
     pub fn get_create_version(&self) -> &::std::option::Option<bool> {
         &self.create_version
     }

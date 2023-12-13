@@ -3,27 +3,27 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFirewallRuleGroupAssociationInput {
-    /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>.</p>
+    /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>. </p>
     pub firewall_rule_group_association_id: ::std::option::Option<::std::string::String>,
-    /// <p>The setting that determines the processing order of the rule group among the rule groups that you associate with the specified VPC. DNS Firewall filters VPC traffic starting from the rule group with the lowest numeric priority setting.</p>
+    /// <p>The setting that determines the processing order of the rule group among the rule groups that you associate with the specified VPC. DNS Firewall filters VPC traffic starting from the rule group with the lowest numeric priority setting. </p>
     /// <p>You must specify a unique priority for each rule group that you associate with a single VPC. To make it easier to insert rule groups later, leave space between the numbers, for example, use 100, 200, and so on. You can change the priority setting for a rule group association after you create it.</p>
     pub priority: ::std::option::Option<i32>,
-    /// <p>If enabled, this setting disallows modification or removal of the association, to help prevent against accidentally altering DNS firewall protections.</p>
+    /// <p>If enabled, this setting disallows modification or removal of the association, to help prevent against accidentally altering DNS firewall protections. </p>
     pub mutation_protection: ::std::option::Option<crate::types::MutationProtectionStatus>,
     /// <p>The name of the rule group association.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateFirewallRuleGroupAssociationInput {
-    /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>.</p>
+    /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>. </p>
     pub fn firewall_rule_group_association_id(&self) -> ::std::option::Option<&str> {
         self.firewall_rule_group_association_id.as_deref()
     }
-    /// <p>The setting that determines the processing order of the rule group among the rule groups that you associate with the specified VPC. DNS Firewall filters VPC traffic starting from the rule group with the lowest numeric priority setting.</p>
+    /// <p>The setting that determines the processing order of the rule group among the rule groups that you associate with the specified VPC. DNS Firewall filters VPC traffic starting from the rule group with the lowest numeric priority setting. </p>
     /// <p>You must specify a unique priority for each rule group that you associate with a single VPC. To make it easier to insert rule groups later, leave space between the numbers, for example, use 100, 200, and so on. You can change the priority setting for a rule group association after you create it.</p>
     pub fn priority(&self) -> ::std::option::Option<i32> {
         self.priority
     }
-    /// <p>If enabled, this setting disallows modification or removal of the association, to help prevent against accidentally altering DNS firewall protections.</p>
+    /// <p>If enabled, this setting disallows modification or removal of the association, to help prevent against accidentally altering DNS firewall protections. </p>
     pub fn mutation_protection(&self) -> ::std::option::Option<&crate::types::MutationProtectionStatus> {
         self.mutation_protection.as_ref()
     }
@@ -49,49 +49,49 @@ pub struct UpdateFirewallRuleGroupAssociationInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateFirewallRuleGroupAssociationInputBuilder {
-    /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>.</p>
+    /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>. </p>
     /// This field is required.
     pub fn firewall_rule_group_association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_rule_group_association_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>.</p>
+    /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>. </p>
     pub fn set_firewall_rule_group_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_rule_group_association_id = input;
         self
     }
-    /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>.</p>
+    /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>. </p>
     pub fn get_firewall_rule_group_association_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.firewall_rule_group_association_id
     }
-    /// <p>The setting that determines the processing order of the rule group among the rule groups that you associate with the specified VPC. DNS Firewall filters VPC traffic starting from the rule group with the lowest numeric priority setting.</p>
+    /// <p>The setting that determines the processing order of the rule group among the rule groups that you associate with the specified VPC. DNS Firewall filters VPC traffic starting from the rule group with the lowest numeric priority setting. </p>
     /// <p>You must specify a unique priority for each rule group that you associate with a single VPC. To make it easier to insert rule groups later, leave space between the numbers, for example, use 100, 200, and so on. You can change the priority setting for a rule group association after you create it.</p>
     pub fn priority(mut self, input: i32) -> Self {
         self.priority = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The setting that determines the processing order of the rule group among the rule groups that you associate with the specified VPC. DNS Firewall filters VPC traffic starting from the rule group with the lowest numeric priority setting.</p>
+    /// <p>The setting that determines the processing order of the rule group among the rule groups that you associate with the specified VPC. DNS Firewall filters VPC traffic starting from the rule group with the lowest numeric priority setting. </p>
     /// <p>You must specify a unique priority for each rule group that you associate with a single VPC. To make it easier to insert rule groups later, leave space between the numbers, for example, use 100, 200, and so on. You can change the priority setting for a rule group association after you create it.</p>
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.priority = input;
         self
     }
-    /// <p>The setting that determines the processing order of the rule group among the rule groups that you associate with the specified VPC. DNS Firewall filters VPC traffic starting from the rule group with the lowest numeric priority setting.</p>
+    /// <p>The setting that determines the processing order of the rule group among the rule groups that you associate with the specified VPC. DNS Firewall filters VPC traffic starting from the rule group with the lowest numeric priority setting. </p>
     /// <p>You must specify a unique priority for each rule group that you associate with a single VPC. To make it easier to insert rule groups later, leave space between the numbers, for example, use 100, 200, and so on. You can change the priority setting for a rule group association after you create it.</p>
     pub fn get_priority(&self) -> &::std::option::Option<i32> {
         &self.priority
     }
-    /// <p>If enabled, this setting disallows modification or removal of the association, to help prevent against accidentally altering DNS firewall protections.</p>
+    /// <p>If enabled, this setting disallows modification or removal of the association, to help prevent against accidentally altering DNS firewall protections. </p>
     pub fn mutation_protection(mut self, input: crate::types::MutationProtectionStatus) -> Self {
         self.mutation_protection = ::std::option::Option::Some(input);
         self
     }
-    /// <p>If enabled, this setting disallows modification or removal of the association, to help prevent against accidentally altering DNS firewall protections.</p>
+    /// <p>If enabled, this setting disallows modification or removal of the association, to help prevent against accidentally altering DNS firewall protections. </p>
     pub fn set_mutation_protection(mut self, input: ::std::option::Option<crate::types::MutationProtectionStatus>) -> Self {
         self.mutation_protection = input;
         self
     }
-    /// <p>If enabled, this setting disallows modification or removal of the association, to help prevent against accidentally altering DNS firewall protections.</p>
+    /// <p>If enabled, this setting disallows modification or removal of the association, to help prevent against accidentally altering DNS firewall protections. </p>
     pub fn get_mutation_protection(&self) -> &::std::option::Option<crate::types::MutationProtectionStatus> {
         &self.mutation_protection
     }

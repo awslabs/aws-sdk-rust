@@ -5,7 +5,7 @@
 pub struct StartStudioSsoConfigurationRepairInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// <p>The studio ID.</p>
+    /// <p>The studio ID. </p>
     pub studio_id: ::std::option::Option<::std::string::String>,
 }
 impl StartStudioSsoConfigurationRepairInput {
@@ -13,7 +13,7 @@ impl StartStudioSsoConfigurationRepairInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The studio ID.</p>
+    /// <p>The studio ID. </p>
     pub fn studio_id(&self) -> ::std::option::Option<&str> {
         self.studio_id.as_deref()
     }
@@ -47,18 +47,18 @@ impl StartStudioSsoConfigurationRepairInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
-    /// <p>The studio ID.</p>
+    /// <p>The studio ID. </p>
     /// This field is required.
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The studio ID.</p>
+    /// <p>The studio ID. </p>
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.studio_id = input;
         self
     }
-    /// <p>The studio ID.</p>
+    /// <p>The studio ID. </p>
     pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.studio_id
     }

@@ -7,24 +7,15 @@ pub struct SuspendProcessesInput {
     pub auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     /// <p>One or more of the following processes:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Launch</code></p></li>
-    /// <li>
-    /// <p><code>Terminate</code></p></li>
-    /// <li>
-    /// <p><code>AddToLoadBalancer</code></p></li>
-    /// <li>
-    /// <p><code>AlarmNotification</code></p></li>
-    /// <li>
-    /// <p><code>AZRebalance</code></p></li>
-    /// <li>
-    /// <p><code>HealthCheck</code></p></li>
-    /// <li>
-    /// <p><code>InstanceRefresh</code></p></li>
-    /// <li>
-    /// <p><code>ReplaceUnhealthy</code></p></li>
-    /// <li>
-    /// <p><code>ScheduledActions</code></p></li>
+    /// <li> <p> <code>Launch</code> </p> </li>
+    /// <li> <p> <code>Terminate</code> </p> </li>
+    /// <li> <p> <code>AddToLoadBalancer</code> </p> </li>
+    /// <li> <p> <code>AlarmNotification</code> </p> </li>
+    /// <li> <p> <code>AZRebalance</code> </p> </li>
+    /// <li> <p> <code>HealthCheck</code> </p> </li>
+    /// <li> <p> <code>InstanceRefresh</code> </p> </li>
+    /// <li> <p> <code>ReplaceUnhealthy</code> </p> </li>
+    /// <li> <p> <code>ScheduledActions</code> </p> </li>
     /// </ul>
     /// <p>If you omit this property, all processes are specified.</p>
     pub scaling_processes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -36,24 +27,15 @@ impl SuspendProcessesInput {
     }
     /// <p>One or more of the following processes:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Launch</code></p></li>
-    /// <li>
-    /// <p><code>Terminate</code></p></li>
-    /// <li>
-    /// <p><code>AddToLoadBalancer</code></p></li>
-    /// <li>
-    /// <p><code>AlarmNotification</code></p></li>
-    /// <li>
-    /// <p><code>AZRebalance</code></p></li>
-    /// <li>
-    /// <p><code>HealthCheck</code></p></li>
-    /// <li>
-    /// <p><code>InstanceRefresh</code></p></li>
-    /// <li>
-    /// <p><code>ReplaceUnhealthy</code></p></li>
-    /// <li>
-    /// <p><code>ScheduledActions</code></p></li>
+    /// <li> <p> <code>Launch</code> </p> </li>
+    /// <li> <p> <code>Terminate</code> </p> </li>
+    /// <li> <p> <code>AddToLoadBalancer</code> </p> </li>
+    /// <li> <p> <code>AlarmNotification</code> </p> </li>
+    /// <li> <p> <code>AZRebalance</code> </p> </li>
+    /// <li> <p> <code>HealthCheck</code> </p> </li>
+    /// <li> <p> <code>InstanceRefresh</code> </p> </li>
+    /// <li> <p> <code>ReplaceUnhealthy</code> </p> </li>
+    /// <li> <p> <code>ScheduledActions</code> </p> </li>
     /// </ul>
     /// <p>If you omit this property, all processes are specified.</p>
     ///
@@ -98,24 +80,15 @@ impl SuspendProcessesInputBuilder {
     ///
     /// <p>One or more of the following processes:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Launch</code></p></li>
-    /// <li>
-    /// <p><code>Terminate</code></p></li>
-    /// <li>
-    /// <p><code>AddToLoadBalancer</code></p></li>
-    /// <li>
-    /// <p><code>AlarmNotification</code></p></li>
-    /// <li>
-    /// <p><code>AZRebalance</code></p></li>
-    /// <li>
-    /// <p><code>HealthCheck</code></p></li>
-    /// <li>
-    /// <p><code>InstanceRefresh</code></p></li>
-    /// <li>
-    /// <p><code>ReplaceUnhealthy</code></p></li>
-    /// <li>
-    /// <p><code>ScheduledActions</code></p></li>
+    /// <li> <p> <code>Launch</code> </p> </li>
+    /// <li> <p> <code>Terminate</code> </p> </li>
+    /// <li> <p> <code>AddToLoadBalancer</code> </p> </li>
+    /// <li> <p> <code>AlarmNotification</code> </p> </li>
+    /// <li> <p> <code>AZRebalance</code> </p> </li>
+    /// <li> <p> <code>HealthCheck</code> </p> </li>
+    /// <li> <p> <code>InstanceRefresh</code> </p> </li>
+    /// <li> <p> <code>ReplaceUnhealthy</code> </p> </li>
+    /// <li> <p> <code>ScheduledActions</code> </p> </li>
     /// </ul>
     /// <p>If you omit this property, all processes are specified.</p>
     pub fn scaling_processes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -126,24 +99,15 @@ impl SuspendProcessesInputBuilder {
     }
     /// <p>One or more of the following processes:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Launch</code></p></li>
-    /// <li>
-    /// <p><code>Terminate</code></p></li>
-    /// <li>
-    /// <p><code>AddToLoadBalancer</code></p></li>
-    /// <li>
-    /// <p><code>AlarmNotification</code></p></li>
-    /// <li>
-    /// <p><code>AZRebalance</code></p></li>
-    /// <li>
-    /// <p><code>HealthCheck</code></p></li>
-    /// <li>
-    /// <p><code>InstanceRefresh</code></p></li>
-    /// <li>
-    /// <p><code>ReplaceUnhealthy</code></p></li>
-    /// <li>
-    /// <p><code>ScheduledActions</code></p></li>
+    /// <li> <p> <code>Launch</code> </p> </li>
+    /// <li> <p> <code>Terminate</code> </p> </li>
+    /// <li> <p> <code>AddToLoadBalancer</code> </p> </li>
+    /// <li> <p> <code>AlarmNotification</code> </p> </li>
+    /// <li> <p> <code>AZRebalance</code> </p> </li>
+    /// <li> <p> <code>HealthCheck</code> </p> </li>
+    /// <li> <p> <code>InstanceRefresh</code> </p> </li>
+    /// <li> <p> <code>ReplaceUnhealthy</code> </p> </li>
+    /// <li> <p> <code>ScheduledActions</code> </p> </li>
     /// </ul>
     /// <p>If you omit this property, all processes are specified.</p>
     pub fn set_scaling_processes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
@@ -152,24 +116,15 @@ impl SuspendProcessesInputBuilder {
     }
     /// <p>One or more of the following processes:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Launch</code></p></li>
-    /// <li>
-    /// <p><code>Terminate</code></p></li>
-    /// <li>
-    /// <p><code>AddToLoadBalancer</code></p></li>
-    /// <li>
-    /// <p><code>AlarmNotification</code></p></li>
-    /// <li>
-    /// <p><code>AZRebalance</code></p></li>
-    /// <li>
-    /// <p><code>HealthCheck</code></p></li>
-    /// <li>
-    /// <p><code>InstanceRefresh</code></p></li>
-    /// <li>
-    /// <p><code>ReplaceUnhealthy</code></p></li>
-    /// <li>
-    /// <p><code>ScheduledActions</code></p></li>
+    /// <li> <p> <code>Launch</code> </p> </li>
+    /// <li> <p> <code>Terminate</code> </p> </li>
+    /// <li> <p> <code>AddToLoadBalancer</code> </p> </li>
+    /// <li> <p> <code>AlarmNotification</code> </p> </li>
+    /// <li> <p> <code>AZRebalance</code> </p> </li>
+    /// <li> <p> <code>HealthCheck</code> </p> </li>
+    /// <li> <p> <code>InstanceRefresh</code> </p> </li>
+    /// <li> <p> <code>ReplaceUnhealthy</code> </p> </li>
+    /// <li> <p> <code>ScheduledActions</code> </p> </li>
     /// </ul>
     /// <p>If you omit this property, all processes are specified.</p>
     pub fn get_scaling_processes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {

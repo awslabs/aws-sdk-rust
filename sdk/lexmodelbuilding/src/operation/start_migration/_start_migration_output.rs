@@ -5,11 +5,11 @@
 pub struct StartMigrationOutput {
     /// <p>The name of the Amazon Lex V1 bot that you are migrating to Amazon Lex V2.</p>
     pub v1_bot_name: ::std::option::Option<::std::string::String>,
-    /// <p>The version of the bot to migrate to Amazon Lex V2.</p>
+    /// <p>The version of the bot to migrate to Amazon Lex V2. </p>
     pub v1_bot_version: ::std::option::Option<::std::string::String>,
-    /// <p>The locale used for the Amazon Lex V1 bot.</p>
+    /// <p>The locale used for the Amazon Lex V1 bot. </p>
     pub v1_bot_locale: ::std::option::Option<crate::types::Locale>,
-    /// <p>The unique identifier for the Amazon Lex V2 bot.</p>
+    /// <p>The unique identifier for the Amazon Lex V2 bot. </p>
     pub v2_bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The IAM role that Amazon Lex uses to run the Amazon Lex V2 bot.</p>
     pub v2_bot_role: ::std::option::Option<::std::string::String>,
@@ -26,15 +26,15 @@ impl StartMigrationOutput {
     pub fn v1_bot_name(&self) -> ::std::option::Option<&str> {
         self.v1_bot_name.as_deref()
     }
-    /// <p>The version of the bot to migrate to Amazon Lex V2.</p>
+    /// <p>The version of the bot to migrate to Amazon Lex V2. </p>
     pub fn v1_bot_version(&self) -> ::std::option::Option<&str> {
         self.v1_bot_version.as_deref()
     }
-    /// <p>The locale used for the Amazon Lex V1 bot.</p>
+    /// <p>The locale used for the Amazon Lex V1 bot. </p>
     pub fn v1_bot_locale(&self) -> ::std::option::Option<&crate::types::Locale> {
         self.v1_bot_locale.as_ref()
     }
-    /// <p>The unique identifier for the Amazon Lex V2 bot.</p>
+    /// <p>The unique identifier for the Amazon Lex V2 bot. </p>
     pub fn v2_bot_id(&self) -> ::std::option::Option<&str> {
         self.v2_bot_id.as_deref()
     }
@@ -96,45 +96,45 @@ impl StartMigrationOutputBuilder {
     pub fn get_v1_bot_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.v1_bot_name
     }
-    /// <p>The version of the bot to migrate to Amazon Lex V2.</p>
+    /// <p>The version of the bot to migrate to Amazon Lex V2. </p>
     pub fn v1_bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.v1_bot_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The version of the bot to migrate to Amazon Lex V2.</p>
+    /// <p>The version of the bot to migrate to Amazon Lex V2. </p>
     pub fn set_v1_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.v1_bot_version = input;
         self
     }
-    /// <p>The version of the bot to migrate to Amazon Lex V2.</p>
+    /// <p>The version of the bot to migrate to Amazon Lex V2. </p>
     pub fn get_v1_bot_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.v1_bot_version
     }
-    /// <p>The locale used for the Amazon Lex V1 bot.</p>
+    /// <p>The locale used for the Amazon Lex V1 bot. </p>
     pub fn v1_bot_locale(mut self, input: crate::types::Locale) -> Self {
         self.v1_bot_locale = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The locale used for the Amazon Lex V1 bot.</p>
+    /// <p>The locale used for the Amazon Lex V1 bot. </p>
     pub fn set_v1_bot_locale(mut self, input: ::std::option::Option<crate::types::Locale>) -> Self {
         self.v1_bot_locale = input;
         self
     }
-    /// <p>The locale used for the Amazon Lex V1 bot.</p>
+    /// <p>The locale used for the Amazon Lex V1 bot. </p>
     pub fn get_v1_bot_locale(&self) -> &::std::option::Option<crate::types::Locale> {
         &self.v1_bot_locale
     }
-    /// <p>The unique identifier for the Amazon Lex V2 bot.</p>
+    /// <p>The unique identifier for the Amazon Lex V2 bot. </p>
     pub fn v2_bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.v2_bot_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier for the Amazon Lex V2 bot.</p>
+    /// <p>The unique identifier for the Amazon Lex V2 bot. </p>
     pub fn set_v2_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.v2_bot_id = input;
         self
     }
-    /// <p>The unique identifier for the Amazon Lex V2 bot.</p>
+    /// <p>The unique identifier for the Amazon Lex V2 bot. </p>
     pub fn get_v2_bot_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.v2_bot_id
     }

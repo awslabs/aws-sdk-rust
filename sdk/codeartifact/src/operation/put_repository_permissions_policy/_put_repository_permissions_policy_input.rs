@@ -3,35 +3,35 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutRepositoryPermissionsPolicyInput {
-    /// <p>The name of the domain containing the repository to set the resource policy on.</p>
+    /// <p> The name of the domain containing the repository to set the resource policy on. </p>
     pub domain: ::std::option::Option<::std::string::String>,
-    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub domain_owner: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the repository to set the resource policy on.</p>
+    /// <p> The name of the repository to set the resource policy on. </p>
     pub repository: ::std::option::Option<::std::string::String>,
-    /// <p>Sets the revision of the resource policy that specifies permissions to access the repository. This revision is used for optimistic locking, which prevents others from overwriting your changes to the repository's resource policy.</p>
+    /// <p> Sets the revision of the resource policy that specifies permissions to access the repository. This revision is used for optimistic locking, which prevents others from overwriting your changes to the repository's resource policy. </p>
     pub policy_revision: ::std::option::Option<::std::string::String>,
-    /// <p>A valid displayable JSON Aspen policy string to be set as the access control resource policy on the provided repository.</p>
+    /// <p> A valid displayable JSON Aspen policy string to be set as the access control resource policy on the provided repository. </p>
     pub policy_document: ::std::option::Option<::std::string::String>,
 }
 impl PutRepositoryPermissionsPolicyInput {
-    /// <p>The name of the domain containing the repository to set the resource policy on.</p>
+    /// <p> The name of the domain containing the repository to set the resource policy on. </p>
     pub fn domain(&self) -> ::std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(&self) -> ::std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
-    /// <p>The name of the repository to set the resource policy on.</p>
+    /// <p> The name of the repository to set the resource policy on. </p>
     pub fn repository(&self) -> ::std::option::Option<&str> {
         self.repository.as_deref()
     }
-    /// <p>Sets the revision of the resource policy that specifies permissions to access the repository. This revision is used for optimistic locking, which prevents others from overwriting your changes to the repository's resource policy.</p>
+    /// <p> Sets the revision of the resource policy that specifies permissions to access the repository. This revision is used for optimistic locking, which prevents others from overwriting your changes to the repository's resource policy. </p>
     pub fn policy_revision(&self) -> ::std::option::Option<&str> {
         self.policy_revision.as_deref()
     }
-    /// <p>A valid displayable JSON Aspen policy string to be set as the access control resource policy on the provided repository.</p>
+    /// <p> A valid displayable JSON Aspen policy string to be set as the access control resource policy on the provided repository. </p>
     pub fn policy_document(&self) -> ::std::option::Option<&str> {
         self.policy_document.as_deref()
     }
@@ -54,76 +54,76 @@ pub struct PutRepositoryPermissionsPolicyInputBuilder {
     pub(crate) policy_document: ::std::option::Option<::std::string::String>,
 }
 impl PutRepositoryPermissionsPolicyInputBuilder {
-    /// <p>The name of the domain containing the repository to set the resource policy on.</p>
+    /// <p> The name of the domain containing the repository to set the resource policy on. </p>
     /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the domain containing the repository to set the resource policy on.</p>
+    /// <p> The name of the domain containing the repository to set the resource policy on. </p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain = input;
         self
     }
-    /// <p>The name of the domain containing the repository to set the resource policy on.</p>
+    /// <p> The name of the domain containing the repository to set the resource policy on. </p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain
     }
-    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_owner = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn set_domain_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_owner = input;
         self
     }
-    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn get_domain_owner(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_owner
     }
-    /// <p>The name of the repository to set the resource policy on.</p>
+    /// <p> The name of the repository to set the resource policy on. </p>
     /// This field is required.
     pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the repository to set the resource policy on.</p>
+    /// <p> The name of the repository to set the resource policy on. </p>
     pub fn set_repository(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository = input;
         self
     }
-    /// <p>The name of the repository to set the resource policy on.</p>
+    /// <p> The name of the repository to set the resource policy on. </p>
     pub fn get_repository(&self) -> &::std::option::Option<::std::string::String> {
         &self.repository
     }
-    /// <p>Sets the revision of the resource policy that specifies permissions to access the repository. This revision is used for optimistic locking, which prevents others from overwriting your changes to the repository's resource policy.</p>
+    /// <p> Sets the revision of the resource policy that specifies permissions to access the repository. This revision is used for optimistic locking, which prevents others from overwriting your changes to the repository's resource policy. </p>
     pub fn policy_revision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_revision = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Sets the revision of the resource policy that specifies permissions to access the repository. This revision is used for optimistic locking, which prevents others from overwriting your changes to the repository's resource policy.</p>
+    /// <p> Sets the revision of the resource policy that specifies permissions to access the repository. This revision is used for optimistic locking, which prevents others from overwriting your changes to the repository's resource policy. </p>
     pub fn set_policy_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_revision = input;
         self
     }
-    /// <p>Sets the revision of the resource policy that specifies permissions to access the repository. This revision is used for optimistic locking, which prevents others from overwriting your changes to the repository's resource policy.</p>
+    /// <p> Sets the revision of the resource policy that specifies permissions to access the repository. This revision is used for optimistic locking, which prevents others from overwriting your changes to the repository's resource policy. </p>
     pub fn get_policy_revision(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_revision
     }
-    /// <p>A valid displayable JSON Aspen policy string to be set as the access control resource policy on the provided repository.</p>
+    /// <p> A valid displayable JSON Aspen policy string to be set as the access control resource policy on the provided repository. </p>
     /// This field is required.
     pub fn policy_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_document = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A valid displayable JSON Aspen policy string to be set as the access control resource policy on the provided repository.</p>
+    /// <p> A valid displayable JSON Aspen policy string to be set as the access control resource policy on the provided repository. </p>
     pub fn set_policy_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_document = input;
         self
     }
-    /// <p>A valid displayable JSON Aspen policy string to be set as the access control resource policy on the provided repository.</p>
+    /// <p> A valid displayable JSON Aspen policy string to be set as the access control resource policy on the provided repository. </p>
     pub fn get_policy_document(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_document
     }

@@ -9,7 +9,7 @@ pub struct ClusterParameterGroupStatus {
     /// <p>The status of parameter updates.</p>
     pub parameter_apply_status: ::std::option::Option<::std::string::String>,
     /// <p>The list of parameter statuses.</p>
-    /// <p>For more information about parameters and parameter groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+    /// <p> For more information about parameters and parameter groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
     pub cluster_parameter_status_list: ::std::option::Option<::std::vec::Vec<crate::types::ClusterParameterStatus>>,
 }
 impl ClusterParameterGroupStatus {
@@ -22,7 +22,7 @@ impl ClusterParameterGroupStatus {
         self.parameter_apply_status.as_deref()
     }
     /// <p>The list of parameter statuses.</p>
-    /// <p>For more information about parameters and parameter groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+    /// <p> For more information about parameters and parameter groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cluster_parameter_status_list.is_none()`.
     pub fn cluster_parameter_status_list(&self) -> &[crate::types::ClusterParameterStatus] {
@@ -78,7 +78,7 @@ impl ClusterParameterGroupStatusBuilder {
     /// To override the contents of this collection use [`set_cluster_parameter_status_list`](Self::set_cluster_parameter_status_list).
     ///
     /// <p>The list of parameter statuses.</p>
-    /// <p>For more information about parameters and parameter groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+    /// <p> For more information about parameters and parameter groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
     pub fn cluster_parameter_status_list(mut self, input: crate::types::ClusterParameterStatus) -> Self {
         let mut v = self.cluster_parameter_status_list.unwrap_or_default();
         v.push(input);
@@ -86,13 +86,13 @@ impl ClusterParameterGroupStatusBuilder {
         self
     }
     /// <p>The list of parameter statuses.</p>
-    /// <p>For more information about parameters and parameter groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+    /// <p> For more information about parameters and parameter groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
     pub fn set_cluster_parameter_status_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterParameterStatus>>) -> Self {
         self.cluster_parameter_status_list = input;
         self
     }
     /// <p>The list of parameter statuses.</p>
-    /// <p>For more information about parameters and parameter groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+    /// <p> For more information about parameters and parameter groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
     pub fn get_cluster_parameter_status_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterParameterStatus>> {
         &self.cluster_parameter_status_list
     }

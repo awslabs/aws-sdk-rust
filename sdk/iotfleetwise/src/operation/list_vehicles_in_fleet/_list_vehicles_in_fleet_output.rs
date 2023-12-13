@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListVehiclesInFleetOutput {
-    /// <p>A list of vehicles associated with the fleet.</p>
+    /// <p> A list of vehicles associated with the fleet. </p>
     pub vehicles: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
+    /// <p> The token to retrieve the next set of results, or <code>null</code> if there are no more results. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListVehiclesInFleetOutput {
-    /// <p>A list of vehicles associated with the fleet.</p>
+    /// <p> A list of vehicles associated with the fleet. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vehicles.is_none()`.
     pub fn vehicles(&self) -> &[::std::string::String] {
         self.vehicles.as_deref().unwrap_or_default()
     }
-    /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
+    /// <p> The token to retrieve the next set of results, or <code>null</code> if there are no more results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -46,33 +46,33 @@ impl ListVehiclesInFleetOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_vehicles`](Self::set_vehicles).
     ///
-    /// <p>A list of vehicles associated with the fleet.</p>
+    /// <p> A list of vehicles associated with the fleet. </p>
     pub fn vehicles(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vehicles.unwrap_or_default();
         v.push(input.into());
         self.vehicles = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of vehicles associated with the fleet.</p>
+    /// <p> A list of vehicles associated with the fleet. </p>
     pub fn set_vehicles(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.vehicles = input;
         self
     }
-    /// <p>A list of vehicles associated with the fleet.</p>
+    /// <p> A list of vehicles associated with the fleet. </p>
     pub fn get_vehicles(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.vehicles
     }
-    /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
+    /// <p> The token to retrieve the next set of results, or <code>null</code> if there are no more results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
+    /// <p> The token to retrieve the next set of results, or <code>null</code> if there are no more results. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
+    /// <p> The token to retrieve the next set of results, or <code>null</code> if there are no more results. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

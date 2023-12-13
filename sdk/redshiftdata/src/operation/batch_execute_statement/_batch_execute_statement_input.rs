@@ -5,17 +5,17 @@
 pub struct BatchExecuteStatementInput {
     /// <p>One or more SQL statements to run. The SQL statements are run as a single transaction. They run serially in the order of the array. Subsequent SQL statements don't start until the previous statement in the array completes. If any SQL statement fails, then because they are run as one transaction, all work is rolled back.</p>
     pub sqls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials.</p>
+    /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager.</p>
+    /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
     pub secret_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The database user name. This parameter is required when connecting to a cluster as a database user and authenticating using temporary credentials.</p>
+    /// <p>The database user name. This parameter is required when connecting to a cluster as a database user and authenticating using temporary credentials. </p>
     pub db_user: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials.</p>
+    /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
     pub database: ::std::option::Option<::std::string::String>,
-    /// <p>A value that indicates whether to send an event to the Amazon EventBridge event bus after the SQL statements run.</p>
+    /// <p>A value that indicates whether to send an event to the Amazon EventBridge event bus after the SQL statements run. </p>
     pub with_event: ::std::option::Option<bool>,
-    /// <p>The name of the SQL statements. You can name the SQL statements when you create them to identify the query.</p>
+    /// <p>The name of the SQL statements. You can name the SQL statements when you create them to identify the query. </p>
     pub statement_name: ::std::option::Option<::std::string::String>,
     /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
     pub workgroup_name: ::std::option::Option<::std::string::String>,
@@ -29,27 +29,27 @@ impl BatchExecuteStatementInput {
     pub fn sqls(&self) -> &[::std::string::String] {
         self.sqls.as_deref().unwrap_or_default()
     }
-    /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials.</p>
+    /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
     pub fn cluster_identifier(&self) -> ::std::option::Option<&str> {
         self.cluster_identifier.as_deref()
     }
-    /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager.</p>
+    /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
     pub fn secret_arn(&self) -> ::std::option::Option<&str> {
         self.secret_arn.as_deref()
     }
-    /// <p>The database user name. This parameter is required when connecting to a cluster as a database user and authenticating using temporary credentials.</p>
+    /// <p>The database user name. This parameter is required when connecting to a cluster as a database user and authenticating using temporary credentials. </p>
     pub fn db_user(&self) -> ::std::option::Option<&str> {
         self.db_user.as_deref()
     }
-    /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials.</p>
+    /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
     pub fn database(&self) -> ::std::option::Option<&str> {
         self.database.as_deref()
     }
-    /// <p>A value that indicates whether to send an event to the Amazon EventBridge event bus after the SQL statements run.</p>
+    /// <p>A value that indicates whether to send an event to the Amazon EventBridge event bus after the SQL statements run. </p>
     pub fn with_event(&self) -> ::std::option::Option<bool> {
         self.with_event
     }
-    /// <p>The name of the SQL statements. You can name the SQL statements when you create them to identify the query.</p>
+    /// <p>The name of the SQL statements. You can name the SQL statements when you create them to identify the query. </p>
     pub fn statement_name(&self) -> ::std::option::Option<&str> {
         self.statement_name.as_deref()
     }
@@ -104,88 +104,88 @@ impl BatchExecuteStatementInputBuilder {
     pub fn get_sqls(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.sqls
     }
-    /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials.</p>
+    /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
     pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials.</p>
+    /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
     pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_identifier = input;
         self
     }
-    /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials.</p>
+    /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
     pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_identifier
     }
-    /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager.</p>
+    /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
     pub fn secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager.</p>
+    /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
     pub fn set_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_arn = input;
         self
     }
-    /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager.</p>
+    /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
     pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.secret_arn
     }
-    /// <p>The database user name. This parameter is required when connecting to a cluster as a database user and authenticating using temporary credentials.</p>
+    /// <p>The database user name. This parameter is required when connecting to a cluster as a database user and authenticating using temporary credentials. </p>
     pub fn db_user(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_user = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The database user name. This parameter is required when connecting to a cluster as a database user and authenticating using temporary credentials.</p>
+    /// <p>The database user name. This parameter is required when connecting to a cluster as a database user and authenticating using temporary credentials. </p>
     pub fn set_db_user(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_user = input;
         self
     }
-    /// <p>The database user name. This parameter is required when connecting to a cluster as a database user and authenticating using temporary credentials.</p>
+    /// <p>The database user name. This parameter is required when connecting to a cluster as a database user and authenticating using temporary credentials. </p>
     pub fn get_db_user(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_user
     }
-    /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials.</p>
+    /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
     /// This field is required.
     pub fn database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials.</p>
+    /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
     pub fn set_database(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database = input;
         self
     }
-    /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials.</p>
+    /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
     pub fn get_database(&self) -> &::std::option::Option<::std::string::String> {
         &self.database
     }
-    /// <p>A value that indicates whether to send an event to the Amazon EventBridge event bus after the SQL statements run.</p>
+    /// <p>A value that indicates whether to send an event to the Amazon EventBridge event bus after the SQL statements run. </p>
     pub fn with_event(mut self, input: bool) -> Self {
         self.with_event = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A value that indicates whether to send an event to the Amazon EventBridge event bus after the SQL statements run.</p>
+    /// <p>A value that indicates whether to send an event to the Amazon EventBridge event bus after the SQL statements run. </p>
     pub fn set_with_event(mut self, input: ::std::option::Option<bool>) -> Self {
         self.with_event = input;
         self
     }
-    /// <p>A value that indicates whether to send an event to the Amazon EventBridge event bus after the SQL statements run.</p>
+    /// <p>A value that indicates whether to send an event to the Amazon EventBridge event bus after the SQL statements run. </p>
     pub fn get_with_event(&self) -> &::std::option::Option<bool> {
         &self.with_event
     }
-    /// <p>The name of the SQL statements. You can name the SQL statements when you create them to identify the query.</p>
+    /// <p>The name of the SQL statements. You can name the SQL statements when you create them to identify the query. </p>
     pub fn statement_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.statement_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the SQL statements. You can name the SQL statements when you create them to identify the query.</p>
+    /// <p>The name of the SQL statements. You can name the SQL statements when you create them to identify the query. </p>
     pub fn set_statement_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.statement_name = input;
         self
     }
-    /// <p>The name of the SQL statements. You can name the SQL statements when you create them to identify the query.</p>
+    /// <p>The name of the SQL statements. You can name the SQL statements when you create them to identify the query. </p>
     pub fn get_statement_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.statement_name
     }

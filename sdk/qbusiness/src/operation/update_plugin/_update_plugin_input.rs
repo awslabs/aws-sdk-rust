@@ -9,7 +9,7 @@ pub struct UpdatePluginInput {
     pub plugin_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the plugin.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
-    /// <p>The status of the plugin.</p>
+    /// <p>The status of the plugin. </p>
     pub state: ::std::option::Option<crate::types::PluginState>,
     /// <p>The source URL used for plugin configuration.</p>
     pub server_url: ::std::option::Option<::std::string::String>,
@@ -29,7 +29,7 @@ impl UpdatePluginInput {
     pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p>The status of the plugin.</p>
+    /// <p>The status of the plugin. </p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::PluginState> {
         self.state.as_ref()
     }
@@ -105,17 +105,17 @@ impl UpdatePluginInputBuilder {
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }
-    /// <p>The status of the plugin.</p>
+    /// <p>The status of the plugin. </p>
     pub fn state(mut self, input: crate::types::PluginState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the plugin.</p>
+    /// <p>The status of the plugin. </p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::PluginState>) -> Self {
         self.state = input;
         self
     }
-    /// <p>The status of the plugin.</p>
+    /// <p>The status of the plugin. </p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::PluginState> {
         &self.state
     }

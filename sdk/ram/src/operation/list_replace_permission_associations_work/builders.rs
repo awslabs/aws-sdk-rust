@@ -126,17 +126,17 @@ impl ListReplacePermissionAssociationsWorkFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_work_ids`](Self::set_work_ids).
     ///
-    /// <p>A list of IDs. These values come from the <code>id</code>field of the <code>replacePermissionAssociationsWork</code>structure returned by the <code>ReplacePermissionAssociations</code> operation.</p>
+    /// <p>A list of IDs. These values come from the <code>id</code>field of the <code>replacePermissionAssociationsWork</code>structure returned by the <code>ReplacePermissionAssociations</code> operation. </p>
     pub fn work_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.work_ids(input.into());
         self
     }
-    /// <p>A list of IDs. These values come from the <code>id</code>field of the <code>replacePermissionAssociationsWork</code>structure returned by the <code>ReplacePermissionAssociations</code> operation.</p>
+    /// <p>A list of IDs. These values come from the <code>id</code>field of the <code>replacePermissionAssociationsWork</code>structure returned by the <code>ReplacePermissionAssociations</code> operation. </p>
     pub fn set_work_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_work_ids(input);
         self
     }
-    /// <p>A list of IDs. These values come from the <code>id</code>field of the <code>replacePermissionAssociationsWork</code>structure returned by the <code>ReplacePermissionAssociations</code> operation.</p>
+    /// <p>A list of IDs. These values come from the <code>id</code>field of the <code>replacePermissionAssociationsWork</code>structure returned by the <code>ReplacePermissionAssociations</code> operation. </p>
     pub fn get_work_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_work_ids()
     }

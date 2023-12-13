@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopReplicationToReplica`](crate::operation::stop_replication_to_replica::builders::StopReplicationToReplicaFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`secret_id(impl Into<String>)`](crate::operation::stop_replication_to_replica::builders::StopReplicationToReplicaFluentBuilder::secret_id) / [`set_secret_id(Option<String>)`](crate::operation::stop_replication_to_replica::builders::StopReplicationToReplicaFluentBuilder::set_secret_id):<br>required: **true**<br><p>The ARN of the primary secret.</p><br>
+    ///   - [`secret_id(impl Into<String>)`](crate::operation::stop_replication_to_replica::builders::StopReplicationToReplicaFluentBuilder::secret_id) / [`set_secret_id(Option<String>)`](crate::operation::stop_replication_to_replica::builders::StopReplicationToReplicaFluentBuilder::set_secret_id):<br>required: **true**<br><p>The ARN of the primary secret. </p><br>
     /// - On success, responds with [`StopReplicationToReplicaOutput`](crate::operation::stop_replication_to_replica::StopReplicationToReplicaOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::stop_replication_to_replica::StopReplicationToReplicaOutput::arn): <p>The ARN of the promoted secret. The ARN is the same as the original primary secret except the Region is changed.</p>
     /// - On failure, responds with [`SdkError<StopReplicationToReplicaError>`](crate::operation::stop_replication_to_replica::StopReplicationToReplicaError)

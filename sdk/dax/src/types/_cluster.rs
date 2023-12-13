@@ -8,7 +8,7 @@ pub struct Cluster {
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the cluster.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster. </p>
     pub cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>The total number of nodes in the cluster.</p>
     pub total_nodes: ::std::option::Option<i32>,
@@ -40,9 +40,7 @@ pub struct Cluster {
     pub sse_description: ::std::option::Option<crate::types::SseDescription>,
     /// <p>The type of encryption supported by the cluster's endpoint. Values are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>NONE</code> for no encryption</p>
-    /// <p><code>TLS</code> for Transport Layer Security</p></li>
+    /// <li> <p> <code>NONE</code> for no encryption</p> <p> <code>TLS</code> for Transport Layer Security</p> </li>
     /// </ul>
     pub cluster_endpoint_encryption_type: ::std::option::Option<crate::types::ClusterEndpointEncryptionType>,
 }
@@ -55,7 +53,7 @@ impl Cluster {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster. </p>
     pub fn cluster_arn(&self) -> ::std::option::Option<&str> {
         self.cluster_arn.as_deref()
     }
@@ -123,9 +121,7 @@ impl Cluster {
     }
     /// <p>The type of encryption supported by the cluster's endpoint. Values are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>NONE</code> for no encryption</p>
-    /// <p><code>TLS</code> for Transport Layer Security</p></li>
+    /// <li> <p> <code>NONE</code> for no encryption</p> <p> <code>TLS</code> for Transport Layer Security</p> </li>
     /// </ul>
     pub fn cluster_endpoint_encryption_type(&self) -> ::std::option::Option<&crate::types::ClusterEndpointEncryptionType> {
         self.cluster_endpoint_encryption_type.as_ref()
@@ -190,17 +186,17 @@ impl ClusterBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster. </p>
     pub fn cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster. </p>
     pub fn set_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster. </p>
     pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_arn
     }
@@ -420,9 +416,7 @@ impl ClusterBuilder {
     }
     /// <p>The type of encryption supported by the cluster's endpoint. Values are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>NONE</code> for no encryption</p>
-    /// <p><code>TLS</code> for Transport Layer Security</p></li>
+    /// <li> <p> <code>NONE</code> for no encryption</p> <p> <code>TLS</code> for Transport Layer Security</p> </li>
     /// </ul>
     pub fn cluster_endpoint_encryption_type(mut self, input: crate::types::ClusterEndpointEncryptionType) -> Self {
         self.cluster_endpoint_encryption_type = ::std::option::Option::Some(input);
@@ -430,9 +424,7 @@ impl ClusterBuilder {
     }
     /// <p>The type of encryption supported by the cluster's endpoint. Values are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>NONE</code> for no encryption</p>
-    /// <p><code>TLS</code> for Transport Layer Security</p></li>
+    /// <li> <p> <code>NONE</code> for no encryption</p> <p> <code>TLS</code> for Transport Layer Security</p> </li>
     /// </ul>
     pub fn set_cluster_endpoint_encryption_type(mut self, input: ::std::option::Option<crate::types::ClusterEndpointEncryptionType>) -> Self {
         self.cluster_endpoint_encryption_type = input;
@@ -440,9 +432,7 @@ impl ClusterBuilder {
     }
     /// <p>The type of encryption supported by the cluster's endpoint. Values are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>NONE</code> for no encryption</p>
-    /// <p><code>TLS</code> for Transport Layer Security</p></li>
+    /// <li> <p> <code>NONE</code> for no encryption</p> <p> <code>TLS</code> for Transport Layer Security</p> </li>
     /// </ul>
     pub fn get_cluster_endpoint_encryption_type(&self) -> &::std::option::Option<crate::types::ClusterEndpointEncryptionType> {
         &self.cluster_endpoint_encryption_type

@@ -111,14 +111,11 @@ impl CreateDBInstanceFluentBuilder {
     /// <p>The instance identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li>
-    /// <p>The first character must be a letter.</p></li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>The first character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
-    /// <p>Example: <code>mydbinstance</code></p>
+    /// <p>Example: <code>mydbinstance</code> </p>
     pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_instance_identifier(input.into());
         self
@@ -126,14 +123,11 @@ impl CreateDBInstanceFluentBuilder {
     /// <p>The instance identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li>
-    /// <p>The first character must be a letter.</p></li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>The first character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
-    /// <p>Example: <code>mydbinstance</code></p>
+    /// <p>Example: <code>mydbinstance</code> </p>
     pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_instance_identifier(input);
         self
@@ -141,71 +135,68 @@ impl CreateDBInstanceFluentBuilder {
     /// <p>The instance identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li>
-    /// <p>The first character must be a letter.</p></li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>The first character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
-    /// <p>Example: <code>mydbinstance</code></p>
+    /// <p>Example: <code>mydbinstance</code> </p>
     pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_instance_identifier()
     }
-    /// <p>The compute and memory capacity of the instance; for example, <code>db.r5.large</code>.</p>
+    /// <p>The compute and memory capacity of the instance; for example, <code>db.r5.large</code>. </p>
     pub fn db_instance_class(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_instance_class(input.into());
         self
     }
-    /// <p>The compute and memory capacity of the instance; for example, <code>db.r5.large</code>.</p>
+    /// <p>The compute and memory capacity of the instance; for example, <code>db.r5.large</code>. </p>
     pub fn set_db_instance_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_instance_class(input);
         self
     }
-    /// <p>The compute and memory capacity of the instance; for example, <code>db.r5.large</code>.</p>
+    /// <p>The compute and memory capacity of the instance; for example, <code>db.r5.large</code>. </p>
     pub fn get_db_instance_class(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_instance_class()
     }
     /// <p>The name of the database engine to be used for this instance.</p>
-    /// <p>Valid value: <code>docdb</code></p>
+    /// <p>Valid value: <code>docdb</code> </p>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.engine(input.into());
         self
     }
     /// <p>The name of the database engine to be used for this instance.</p>
-    /// <p>Valid value: <code>docdb</code></p>
+    /// <p>Valid value: <code>docdb</code> </p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_engine(input);
         self
     }
     /// <p>The name of the database engine to be used for this instance.</p>
-    /// <p>Valid value: <code>docdb</code></p>
+    /// <p>Valid value: <code>docdb</code> </p>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_engine()
     }
-    /// <p>The Amazon EC2 Availability Zone that the instance is created in.</p>
+    /// <p>The Amazon EC2 Availability Zone that the instance is created in. </p>
     /// <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.</p>
-    /// <p>Example: <code>us-east-1d</code></p>
+    /// <p>Example: <code>us-east-1d</code> </p>
     pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.availability_zone(input.into());
         self
     }
-    /// <p>The Amazon EC2 Availability Zone that the instance is created in.</p>
+    /// <p>The Amazon EC2 Availability Zone that the instance is created in. </p>
     /// <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.</p>
-    /// <p>Example: <code>us-east-1d</code></p>
+    /// <p>Example: <code>us-east-1d</code> </p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_availability_zone(input);
         self
     }
-    /// <p>The Amazon EC2 Availability Zone that the instance is created in.</p>
+    /// <p>The Amazon EC2 Availability Zone that the instance is created in. </p>
     /// <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.</p>
-    /// <p>Example: <code>us-east-1d</code></p>
+    /// <p>Example: <code>us-east-1d</code> </p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_availability_zone()
     }
     /// <p>The time range each week during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
-    /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code></p>
-    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>
+    /// <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
+    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week. </p>
     /// <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
     pub fn preferred_maintenance_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -213,8 +204,8 @@ impl CreateDBInstanceFluentBuilder {
         self
     }
     /// <p>The time range each week during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
-    /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code></p>
-    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>
+    /// <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
+    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week. </p>
     /// <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
     pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -222,27 +213,27 @@ impl CreateDBInstanceFluentBuilder {
         self
     }
     /// <p>The time range each week during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
-    /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code></p>
-    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>
+    /// <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
+    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week. </p>
     /// <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
     pub fn get_preferred_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_preferred_maintenance_window()
     }
     /// <p>This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does not perform minor version upgrades regardless of the value set.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p>Default: <code>false</code> </p>
     pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
         self.inner = self.inner.auto_minor_version_upgrade(input);
         self
     }
     /// <p>This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does not perform minor version upgrades regardless of the value set.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p>Default: <code>false</code> </p>
     pub fn set_auto_minor_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_auto_minor_version_upgrade(input);
         self
     }
     /// <p>This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does not perform minor version upgrades regardless of the value set.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p>Default: <code>false</code> </p>
     pub fn get_auto_minor_version_upgrade(&self) -> &::std::option::Option<bool> {
         self.inner.get_auto_minor_version_upgrade()
     }

@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeConnectorProfilesOutput {
-    /// <p>Returns information about the connector profiles associated with the flow.</p>
+    /// <p> Returns information about the connector profiles associated with the flow. </p>
     pub connector_profile_details: ::std::option::Option<::std::vec::Vec<crate::types::ConnectorProfile>>,
-    /// <p>The pagination token for the next page of data. If <code>nextToken=null</code>, this means that all records have been fetched.</p>
+    /// <p> The pagination token for the next page of data. If <code>nextToken=null</code>, this means that all records have been fetched. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeConnectorProfilesOutput {
-    /// <p>Returns information about the connector profiles associated with the flow.</p>
+    /// <p> Returns information about the connector profiles associated with the flow. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.connector_profile_details.is_none()`.
     pub fn connector_profile_details(&self) -> &[crate::types::ConnectorProfile] {
         self.connector_profile_details.as_deref().unwrap_or_default()
     }
-    /// <p>The pagination token for the next page of data. If <code>nextToken=null</code>, this means that all records have been fetched.</p>
+    /// <p> The pagination token for the next page of data. If <code>nextToken=null</code>, this means that all records have been fetched. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -46,33 +46,33 @@ impl DescribeConnectorProfilesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_connector_profile_details`](Self::set_connector_profile_details).
     ///
-    /// <p>Returns information about the connector profiles associated with the flow.</p>
+    /// <p> Returns information about the connector profiles associated with the flow. </p>
     pub fn connector_profile_details(mut self, input: crate::types::ConnectorProfile) -> Self {
         let mut v = self.connector_profile_details.unwrap_or_default();
         v.push(input);
         self.connector_profile_details = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Returns information about the connector profiles associated with the flow.</p>
+    /// <p> Returns information about the connector profiles associated with the flow. </p>
     pub fn set_connector_profile_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConnectorProfile>>) -> Self {
         self.connector_profile_details = input;
         self
     }
-    /// <p>Returns information about the connector profiles associated with the flow.</p>
+    /// <p> Returns information about the connector profiles associated with the flow. </p>
     pub fn get_connector_profile_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectorProfile>> {
         &self.connector_profile_details
     }
-    /// <p>The pagination token for the next page of data. If <code>nextToken=null</code>, this means that all records have been fetched.</p>
+    /// <p> The pagination token for the next page of data. If <code>nextToken=null</code>, this means that all records have been fetched. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The pagination token for the next page of data. If <code>nextToken=null</code>, this means that all records have been fetched.</p>
+    /// <p> The pagination token for the next page of data. If <code>nextToken=null</code>, this means that all records have been fetched. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The pagination token for the next page of data. If <code>nextToken=null</code>, this means that all records have been fetched.</p>
+    /// <p> The pagination token for the next page of data. If <code>nextToken=null</code>, this means that all records have been fetched. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

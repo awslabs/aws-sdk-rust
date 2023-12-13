@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TargetGroupConfig {
-    /// <p>The port on which the targets are listening. For HTTP, the default is <code>80</code>. For HTTPS, the default is <code>443</code></p>
+    /// <p>The port on which the targets are listening. For HTTP, the default is <code>80</code>. For HTTPS, the default is <code>443</code> </p>
     pub port: ::std::option::Option<i32>,
     /// <p>The protocol to use for routing traffic to the targets. Default is the protocol of a target group.</p>
     pub protocol: ::std::option::Option<crate::types::TargetGroupProtocol>,
@@ -20,7 +20,7 @@ pub struct TargetGroupConfig {
     pub lambda_event_structure_version: ::std::option::Option<crate::types::LambdaEventStructureVersion>,
 }
 impl TargetGroupConfig {
-    /// <p>The port on which the targets are listening. For HTTP, the default is <code>80</code>. For HTTPS, the default is <code>443</code></p>
+    /// <p>The port on which the targets are listening. For HTTP, the default is <code>80</code>. For HTTPS, the default is <code>443</code> </p>
     pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
     }
@@ -69,17 +69,17 @@ pub struct TargetGroupConfigBuilder {
     pub(crate) lambda_event_structure_version: ::std::option::Option<crate::types::LambdaEventStructureVersion>,
 }
 impl TargetGroupConfigBuilder {
-    /// <p>The port on which the targets are listening. For HTTP, the default is <code>80</code>. For HTTPS, the default is <code>443</code></p>
+    /// <p>The port on which the targets are listening. For HTTP, the default is <code>80</code>. For HTTPS, the default is <code>443</code> </p>
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The port on which the targets are listening. For HTTP, the default is <code>80</code>. For HTTPS, the default is <code>443</code></p>
+    /// <p>The port on which the targets are listening. For HTTP, the default is <code>80</code>. For HTTPS, the default is <code>443</code> </p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
     }
-    /// <p>The port on which the targets are listening. For HTTP, the default is <code>80</code>. For HTTPS, the default is <code>443</code></p>
+    /// <p>The port on which the targets are listening. For HTTP, the default is <code>80</code>. For HTTPS, the default is <code>443</code> </p>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
         &self.port
     }

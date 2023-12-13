@@ -23,7 +23,7 @@ impl DisassociateBotInputBuilder {
 /// Fluent builder constructing a request to `DisassociateBot`.
 ///
 /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
-/// <p>Revokes authorization from the specified instance to access the specified Amazon Lex or Amazon Lex V2 bot.</p>
+/// <p>Revokes authorization from the specified instance to access the specified Amazon Lex or Amazon Lex V2 bot. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateBotFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

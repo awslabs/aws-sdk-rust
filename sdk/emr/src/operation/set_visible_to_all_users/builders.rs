@@ -23,7 +23,7 @@ impl SetVisibleToAllUsersInputBuilder {
 /// Fluent builder constructing a request to `SetVisibleToAllUsers`.
 ///
 /// <important>
-/// <p>The SetVisibleToAllUsers parameter is no longer supported. Your cluster may be visible to all users in your account. To restrict cluster access using an IAM policy, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access-IAM.html">Identity and Access Management for Amazon EMR</a>.</p>
+/// <p>The SetVisibleToAllUsers parameter is no longer supported. Your cluster may be visible to all users in your account. To restrict cluster access using an IAM policy, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access-IAM.html">Identity and Access Management for Amazon EMR</a>. </p>
 /// </important>
 /// <p>Sets the <code>Cluster$VisibleToAllUsers</code> value for an Amazon EMR cluster. When <code>true</code>, IAM principals in the Amazon Web Services account can perform Amazon EMR cluster actions that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform Amazon EMR actions on the cluster, regardless of IAM permissions policies attached to other IAM principals.</p>
 /// <p>This action works on running clusters. When you create a cluster, use the <code>RunJobFlowInput$VisibleToAllUsers</code> parameter.</p>

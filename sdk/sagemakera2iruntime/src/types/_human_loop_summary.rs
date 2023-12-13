@@ -6,7 +6,7 @@
 pub struct HumanLoopSummary {
     /// <p>The name of the human loop.</p>
     pub human_loop_name: ::std::option::Option<::std::string::String>,
-    /// <p>The status of the human loop.</p>
+    /// <p>The status of the human loop. </p>
     pub human_loop_status: ::std::option::Option<crate::types::HumanLoopStatus>,
     /// <p>When Amazon Augmented AI created the human loop.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -20,7 +20,7 @@ impl HumanLoopSummary {
     pub fn human_loop_name(&self) -> ::std::option::Option<&str> {
         self.human_loop_name.as_deref()
     }
-    /// <p>The status of the human loop.</p>
+    /// <p>The status of the human loop. </p>
     pub fn human_loop_status(&self) -> ::std::option::Option<&crate::types::HumanLoopStatus> {
         self.human_loop_status.as_ref()
     }
@@ -69,17 +69,17 @@ impl HumanLoopSummaryBuilder {
     pub fn get_human_loop_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.human_loop_name
     }
-    /// <p>The status of the human loop.</p>
+    /// <p>The status of the human loop. </p>
     pub fn human_loop_status(mut self, input: crate::types::HumanLoopStatus) -> Self {
         self.human_loop_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the human loop.</p>
+    /// <p>The status of the human loop. </p>
     pub fn set_human_loop_status(mut self, input: ::std::option::Option<crate::types::HumanLoopStatus>) -> Self {
         self.human_loop_status = input;
         self
     }
-    /// <p>The status of the human loop.</p>
+    /// <p>The status of the human loop. </p>
     pub fn get_human_loop_status(&self) -> &::std::option::Option<crate::types::HumanLoopStatus> {
         &self.human_loop_status
     }

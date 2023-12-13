@@ -10,7 +10,7 @@ pub struct TemplateShareSummary {
     pub shared_with: ::std::option::Option<::std::string::String>,
     /// <p>The status of the share request.</p>
     pub status: ::std::option::Option<crate::types::ShareStatus>,
-    /// <p>Review template share invitation status message.</p>
+    /// <p>Review template share invitation status message. </p>
     pub status_message: ::std::option::Option<::std::string::String>,
 }
 impl TemplateShareSummary {
@@ -26,7 +26,7 @@ impl TemplateShareSummary {
     pub fn status(&self) -> ::std::option::Option<&crate::types::ShareStatus> {
         self.status.as_ref()
     }
-    /// <p>Review template share invitation status message.</p>
+    /// <p>Review template share invitation status message. </p>
     pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
@@ -90,17 +90,17 @@ impl TemplateShareSummaryBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ShareStatus> {
         &self.status
     }
-    /// <p>Review template share invitation status message.</p>
+    /// <p>Review template share invitation status message. </p>
     pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Review template share invitation status message.</p>
+    /// <p>Review template share invitation status message. </p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
-    /// <p>Review template share invitation status message.</p>
+    /// <p>Review template share invitation status message. </p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_message
     }

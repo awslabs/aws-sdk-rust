@@ -3,37 +3,37 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFlowOutput {
-    /// <p>The flow's Amazon Resource Name (ARN).</p>
+    /// <p> The flow's Amazon Resource Name (ARN). </p>
     pub flow_arn: ::std::option::Option<::std::string::String>,
-    /// <p>A description of the flow.</p>
+    /// <p> A description of the flow. </p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only.</p>
+    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     pub flow_name: ::std::option::Option<::std::string::String>,
-    /// <p>The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key.</p>
+    /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key. </p>
     pub kms_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates the current status of the flow.</p>
+    /// <p> Indicates the current status of the flow. </p>
     pub flow_status: ::std::option::Option<crate::types::FlowStatus>,
-    /// <p>Contains an error message if the flow status is in a suspended or error state. This applies only to scheduled or event-triggered flows.</p>
+    /// <p> Contains an error message if the flow status is in a suspended or error state. This applies only to scheduled or event-triggered flows. </p>
     pub flow_status_message: ::std::option::Option<::std::string::String>,
-    /// <p>The configuration that controls how Amazon AppFlow retrieves data from the source connector.</p>
+    /// <p> The configuration that controls how Amazon AppFlow retrieves data from the source connector. </p>
     pub source_flow_config: ::std::option::Option<crate::types::SourceFlowConfig>,
-    /// <p>The configuration that controls how Amazon AppFlow transfers data to the destination connector.</p>
+    /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination connector. </p>
     pub destination_flow_config_list: ::std::option::Option<::std::vec::Vec<crate::types::DestinationFlowConfig>>,
-    /// <p>Describes the details of the most recent flow run.</p>
+    /// <p> Describes the details of the most recent flow run. </p>
     pub last_run_execution_details: ::std::option::Option<crate::types::ExecutionDetails>,
-    /// <p>The trigger settings that determine how and when the flow runs.</p>
+    /// <p> The trigger settings that determine how and when the flow runs. </p>
     pub trigger_config: ::std::option::Option<crate::types::TriggerConfig>,
-    /// <p>A list of tasks that Amazon AppFlow performs while transferring the data in the flow run.</p>
+    /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
     pub tasks: ::std::option::Option<::std::vec::Vec<crate::types::Task>>,
-    /// <p>Specifies when the flow was created.</p>
+    /// <p> Specifies when the flow was created. </p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Specifies when the flow was last updated.</p>
+    /// <p> Specifies when the flow was last updated. </p>
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The ARN of the user who created the flow.</p>
+    /// <p> The ARN of the user who created the flow. </p>
     pub created_by: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the user name of the account that performed the most recent update.</p>
+    /// <p> Specifies the user name of the account that performed the most recent update. </p>
     pub last_updated_by: ::std::option::Option<::std::string::String>,
-    /// <p>The tags used to organize, track, or control access for your flow.</p>
+    /// <p> The tags used to organize, track, or control access for your flow. </p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's transferred by the associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.</p>
     pub metadata_catalog_config: ::std::option::Option<crate::types::MetadataCatalogConfig>,
@@ -41,82 +41,79 @@ pub struct DescribeFlowOutput {
     pub last_run_metadata_catalog_details: ::std::option::Option<::std::vec::Vec<crate::types::MetadataCatalogDetail>>,
     /// <p>The version number of your data schema. Amazon AppFlow assigns this version number. The version number increases by one when you change any of the following settings in your flow configuration:</p>
     /// <ul>
-    /// <li>
-    /// <p>Source-to-destination field mappings</p></li>
-    /// <li>
-    /// <p>Field data types</p></li>
-    /// <li>
-    /// <p>Partition keys</p></li>
+    /// <li> <p>Source-to-destination field mappings</p> </li>
+    /// <li> <p>Field data types</p> </li>
+    /// <li> <p>Partition keys</p> </li>
     /// </ul>
     pub schema_version: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }
 impl DescribeFlowOutput {
-    /// <p>The flow's Amazon Resource Name (ARN).</p>
+    /// <p> The flow's Amazon Resource Name (ARN). </p>
     pub fn flow_arn(&self) -> ::std::option::Option<&str> {
         self.flow_arn.as_deref()
     }
-    /// <p>A description of the flow.</p>
+    /// <p> A description of the flow. </p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only.</p>
+    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     pub fn flow_name(&self) -> ::std::option::Option<&str> {
         self.flow_name.as_deref()
     }
-    /// <p>The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key.</p>
+    /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key. </p>
     pub fn kms_arn(&self) -> ::std::option::Option<&str> {
         self.kms_arn.as_deref()
     }
-    /// <p>Indicates the current status of the flow.</p>
+    /// <p> Indicates the current status of the flow. </p>
     pub fn flow_status(&self) -> ::std::option::Option<&crate::types::FlowStatus> {
         self.flow_status.as_ref()
     }
-    /// <p>Contains an error message if the flow status is in a suspended or error state. This applies only to scheduled or event-triggered flows.</p>
+    /// <p> Contains an error message if the flow status is in a suspended or error state. This applies only to scheduled or event-triggered flows. </p>
     pub fn flow_status_message(&self) -> ::std::option::Option<&str> {
         self.flow_status_message.as_deref()
     }
-    /// <p>The configuration that controls how Amazon AppFlow retrieves data from the source connector.</p>
+    /// <p> The configuration that controls how Amazon AppFlow retrieves data from the source connector. </p>
     pub fn source_flow_config(&self) -> ::std::option::Option<&crate::types::SourceFlowConfig> {
         self.source_flow_config.as_ref()
     }
-    /// <p>The configuration that controls how Amazon AppFlow transfers data to the destination connector.</p>
+    /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination connector. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destination_flow_config_list.is_none()`.
     pub fn destination_flow_config_list(&self) -> &[crate::types::DestinationFlowConfig] {
         self.destination_flow_config_list.as_deref().unwrap_or_default()
     }
-    /// <p>Describes the details of the most recent flow run.</p>
+    /// <p> Describes the details of the most recent flow run. </p>
     pub fn last_run_execution_details(&self) -> ::std::option::Option<&crate::types::ExecutionDetails> {
         self.last_run_execution_details.as_ref()
     }
-    /// <p>The trigger settings that determine how and when the flow runs.</p>
+    /// <p> The trigger settings that determine how and when the flow runs. </p>
     pub fn trigger_config(&self) -> ::std::option::Option<&crate::types::TriggerConfig> {
         self.trigger_config.as_ref()
     }
-    /// <p>A list of tasks that Amazon AppFlow performs while transferring the data in the flow run.</p>
+    /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tasks.is_none()`.
     pub fn tasks(&self) -> &[crate::types::Task] {
         self.tasks.as_deref().unwrap_or_default()
     }
-    /// <p>Specifies when the flow was created.</p>
+    /// <p> Specifies when the flow was created. </p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>Specifies when the flow was last updated.</p>
+    /// <p> Specifies when the flow was last updated. </p>
     pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
-    /// <p>The ARN of the user who created the flow.</p>
+    /// <p> The ARN of the user who created the flow. </p>
     pub fn created_by(&self) -> ::std::option::Option<&str> {
         self.created_by.as_deref()
     }
-    /// <p>Specifies the user name of the account that performed the most recent update.</p>
+    /// <p> Specifies the user name of the account that performed the most recent update. </p>
     pub fn last_updated_by(&self) -> ::std::option::Option<&str> {
         self.last_updated_by.as_deref()
     }
-    /// <p>The tags used to organize, track, or control access for your flow.</p>
+    /// <p> The tags used to organize, track, or control access for your flow. </p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
@@ -132,12 +129,9 @@ impl DescribeFlowOutput {
     }
     /// <p>The version number of your data schema. Amazon AppFlow assigns this version number. The version number increases by one when you change any of the following settings in your flow configuration:</p>
     /// <ul>
-    /// <li>
-    /// <p>Source-to-destination field mappings</p></li>
-    /// <li>
-    /// <p>Field data types</p></li>
-    /// <li>
-    /// <p>Partition keys</p></li>
+    /// <li> <p>Source-to-destination field mappings</p> </li>
+    /// <li> <p>Field data types</p> </li>
+    /// <li> <p>Partition keys</p> </li>
     /// </ul>
     pub fn schema_version(&self) -> ::std::option::Option<i64> {
         self.schema_version
@@ -181,101 +175,101 @@ pub struct DescribeFlowOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeFlowOutputBuilder {
-    /// <p>The flow's Amazon Resource Name (ARN).</p>
+    /// <p> The flow's Amazon Resource Name (ARN). </p>
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The flow's Amazon Resource Name (ARN).</p>
+    /// <p> The flow's Amazon Resource Name (ARN). </p>
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.flow_arn = input;
         self
     }
-    /// <p>The flow's Amazon Resource Name (ARN).</p>
+    /// <p> The flow's Amazon Resource Name (ARN). </p>
     pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.flow_arn
     }
-    /// <p>A description of the flow.</p>
+    /// <p> A description of the flow. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A description of the flow.</p>
+    /// <p> A description of the flow. </p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>A description of the flow.</p>
+    /// <p> A description of the flow. </p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only.</p>
+    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     pub fn flow_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only.</p>
+    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     pub fn set_flow_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.flow_name = input;
         self
     }
-    /// <p>The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only.</p>
+    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     pub fn get_flow_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.flow_name
     }
-    /// <p>The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key.</p>
+    /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key. </p>
     pub fn kms_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key.</p>
+    /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key. </p>
     pub fn set_kms_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_arn = input;
         self
     }
-    /// <p>The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key.</p>
+    /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key. </p>
     pub fn get_kms_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_arn
     }
-    /// <p>Indicates the current status of the flow.</p>
+    /// <p> Indicates the current status of the flow. </p>
     pub fn flow_status(mut self, input: crate::types::FlowStatus) -> Self {
         self.flow_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates the current status of the flow.</p>
+    /// <p> Indicates the current status of the flow. </p>
     pub fn set_flow_status(mut self, input: ::std::option::Option<crate::types::FlowStatus>) -> Self {
         self.flow_status = input;
         self
     }
-    /// <p>Indicates the current status of the flow.</p>
+    /// <p> Indicates the current status of the flow. </p>
     pub fn get_flow_status(&self) -> &::std::option::Option<crate::types::FlowStatus> {
         &self.flow_status
     }
-    /// <p>Contains an error message if the flow status is in a suspended or error state. This applies only to scheduled or event-triggered flows.</p>
+    /// <p> Contains an error message if the flow status is in a suspended or error state. This applies only to scheduled or event-triggered flows. </p>
     pub fn flow_status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_status_message = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Contains an error message if the flow status is in a suspended or error state. This applies only to scheduled or event-triggered flows.</p>
+    /// <p> Contains an error message if the flow status is in a suspended or error state. This applies only to scheduled or event-triggered flows. </p>
     pub fn set_flow_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.flow_status_message = input;
         self
     }
-    /// <p>Contains an error message if the flow status is in a suspended or error state. This applies only to scheduled or event-triggered flows.</p>
+    /// <p> Contains an error message if the flow status is in a suspended or error state. This applies only to scheduled or event-triggered flows. </p>
     pub fn get_flow_status_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.flow_status_message
     }
-    /// <p>The configuration that controls how Amazon AppFlow retrieves data from the source connector.</p>
+    /// <p> The configuration that controls how Amazon AppFlow retrieves data from the source connector. </p>
     pub fn source_flow_config(mut self, input: crate::types::SourceFlowConfig) -> Self {
         self.source_flow_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The configuration that controls how Amazon AppFlow retrieves data from the source connector.</p>
+    /// <p> The configuration that controls how Amazon AppFlow retrieves data from the source connector. </p>
     pub fn set_source_flow_config(mut self, input: ::std::option::Option<crate::types::SourceFlowConfig>) -> Self {
         self.source_flow_config = input;
         self
     }
-    /// <p>The configuration that controls how Amazon AppFlow retrieves data from the source connector.</p>
+    /// <p> The configuration that controls how Amazon AppFlow retrieves data from the source connector. </p>
     pub fn get_source_flow_config(&self) -> &::std::option::Option<crate::types::SourceFlowConfig> {
         &self.source_flow_config
     }
@@ -283,47 +277,47 @@ impl DescribeFlowOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_destination_flow_config_list`](Self::set_destination_flow_config_list).
     ///
-    /// <p>The configuration that controls how Amazon AppFlow transfers data to the destination connector.</p>
+    /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination connector. </p>
     pub fn destination_flow_config_list(mut self, input: crate::types::DestinationFlowConfig) -> Self {
         let mut v = self.destination_flow_config_list.unwrap_or_default();
         v.push(input);
         self.destination_flow_config_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The configuration that controls how Amazon AppFlow transfers data to the destination connector.</p>
+    /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination connector. </p>
     pub fn set_destination_flow_config_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DestinationFlowConfig>>) -> Self {
         self.destination_flow_config_list = input;
         self
     }
-    /// <p>The configuration that controls how Amazon AppFlow transfers data to the destination connector.</p>
+    /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination connector. </p>
     pub fn get_destination_flow_config_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DestinationFlowConfig>> {
         &self.destination_flow_config_list
     }
-    /// <p>Describes the details of the most recent flow run.</p>
+    /// <p> Describes the details of the most recent flow run. </p>
     pub fn last_run_execution_details(mut self, input: crate::types::ExecutionDetails) -> Self {
         self.last_run_execution_details = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Describes the details of the most recent flow run.</p>
+    /// <p> Describes the details of the most recent flow run. </p>
     pub fn set_last_run_execution_details(mut self, input: ::std::option::Option<crate::types::ExecutionDetails>) -> Self {
         self.last_run_execution_details = input;
         self
     }
-    /// <p>Describes the details of the most recent flow run.</p>
+    /// <p> Describes the details of the most recent flow run. </p>
     pub fn get_last_run_execution_details(&self) -> &::std::option::Option<crate::types::ExecutionDetails> {
         &self.last_run_execution_details
     }
-    /// <p>The trigger settings that determine how and when the flow runs.</p>
+    /// <p> The trigger settings that determine how and when the flow runs. </p>
     pub fn trigger_config(mut self, input: crate::types::TriggerConfig) -> Self {
         self.trigger_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The trigger settings that determine how and when the flow runs.</p>
+    /// <p> The trigger settings that determine how and when the flow runs. </p>
     pub fn set_trigger_config(mut self, input: ::std::option::Option<crate::types::TriggerConfig>) -> Self {
         self.trigger_config = input;
         self
     }
-    /// <p>The trigger settings that determine how and when the flow runs.</p>
+    /// <p> The trigger settings that determine how and when the flow runs. </p>
     pub fn get_trigger_config(&self) -> &::std::option::Option<crate::types::TriggerConfig> {
         &self.trigger_config
     }
@@ -331,75 +325,75 @@ impl DescribeFlowOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_tasks`](Self::set_tasks).
     ///
-    /// <p>A list of tasks that Amazon AppFlow performs while transferring the data in the flow run.</p>
+    /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
     pub fn tasks(mut self, input: crate::types::Task) -> Self {
         let mut v = self.tasks.unwrap_or_default();
         v.push(input);
         self.tasks = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of tasks that Amazon AppFlow performs while transferring the data in the flow run.</p>
+    /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
     pub fn set_tasks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Task>>) -> Self {
         self.tasks = input;
         self
     }
-    /// <p>A list of tasks that Amazon AppFlow performs while transferring the data in the flow run.</p>
+    /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
     pub fn get_tasks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Task>> {
         &self.tasks
     }
-    /// <p>Specifies when the flow was created.</p>
+    /// <p> Specifies when the flow was created. </p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies when the flow was created.</p>
+    /// <p> Specifies when the flow was created. </p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
-    /// <p>Specifies when the flow was created.</p>
+    /// <p> Specifies when the flow was created. </p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
-    /// <p>Specifies when the flow was last updated.</p>
+    /// <p> Specifies when the flow was last updated. </p>
     pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies when the flow was last updated.</p>
+    /// <p> Specifies when the flow was last updated. </p>
     pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_at = input;
         self
     }
-    /// <p>Specifies when the flow was last updated.</p>
+    /// <p> Specifies when the flow was last updated. </p>
     pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_at
     }
-    /// <p>The ARN of the user who created the flow.</p>
+    /// <p> The ARN of the user who created the flow. </p>
     pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_by = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the user who created the flow.</p>
+    /// <p> The ARN of the user who created the flow. </p>
     pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_by = input;
         self
     }
-    /// <p>The ARN of the user who created the flow.</p>
+    /// <p> The ARN of the user who created the flow. </p>
     pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
         &self.created_by
     }
-    /// <p>Specifies the user name of the account that performed the most recent update.</p>
+    /// <p> Specifies the user name of the account that performed the most recent update. </p>
     pub fn last_updated_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_updated_by = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the user name of the account that performed the most recent update.</p>
+    /// <p> Specifies the user name of the account that performed the most recent update. </p>
     pub fn set_last_updated_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_updated_by = input;
         self
     }
-    /// <p>Specifies the user name of the account that performed the most recent update.</p>
+    /// <p> Specifies the user name of the account that performed the most recent update. </p>
     pub fn get_last_updated_by(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_updated_by
     }
@@ -407,19 +401,19 @@ impl DescribeFlowOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The tags used to organize, track, or control access for your flow.</p>
+    /// <p> The tags used to organize, track, or control access for your flow. </p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The tags used to organize, track, or control access for your flow.</p>
+    /// <p> The tags used to organize, track, or control access for your flow. </p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>The tags used to organize, track, or control access for your flow.</p>
+    /// <p> The tags used to organize, track, or control access for your flow. </p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
@@ -462,12 +456,9 @@ impl DescribeFlowOutputBuilder {
     }
     /// <p>The version number of your data schema. Amazon AppFlow assigns this version number. The version number increases by one when you change any of the following settings in your flow configuration:</p>
     /// <ul>
-    /// <li>
-    /// <p>Source-to-destination field mappings</p></li>
-    /// <li>
-    /// <p>Field data types</p></li>
-    /// <li>
-    /// <p>Partition keys</p></li>
+    /// <li> <p>Source-to-destination field mappings</p> </li>
+    /// <li> <p>Field data types</p> </li>
+    /// <li> <p>Partition keys</p> </li>
     /// </ul>
     pub fn schema_version(mut self, input: i64) -> Self {
         self.schema_version = ::std::option::Option::Some(input);
@@ -475,12 +466,9 @@ impl DescribeFlowOutputBuilder {
     }
     /// <p>The version number of your data schema. Amazon AppFlow assigns this version number. The version number increases by one when you change any of the following settings in your flow configuration:</p>
     /// <ul>
-    /// <li>
-    /// <p>Source-to-destination field mappings</p></li>
-    /// <li>
-    /// <p>Field data types</p></li>
-    /// <li>
-    /// <p>Partition keys</p></li>
+    /// <li> <p>Source-to-destination field mappings</p> </li>
+    /// <li> <p>Field data types</p> </li>
+    /// <li> <p>Partition keys</p> </li>
     /// </ul>
     pub fn set_schema_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.schema_version = input;
@@ -488,12 +476,9 @@ impl DescribeFlowOutputBuilder {
     }
     /// <p>The version number of your data schema. Amazon AppFlow assigns this version number. The version number increases by one when you change any of the following settings in your flow configuration:</p>
     /// <ul>
-    /// <li>
-    /// <p>Source-to-destination field mappings</p></li>
-    /// <li>
-    /// <p>Field data types</p></li>
-    /// <li>
-    /// <p>Partition keys</p></li>
+    /// <li> <p>Source-to-destination field mappings</p> </li>
+    /// <li> <p>Field data types</p> </li>
+    /// <li> <p>Partition keys</p> </li>
     /// </ul>
     pub fn get_schema_version(&self) -> &::std::option::Option<i64> {
         &self.schema_version

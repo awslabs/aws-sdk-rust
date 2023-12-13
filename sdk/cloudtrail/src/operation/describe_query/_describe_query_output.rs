@@ -7,7 +7,7 @@ pub struct DescribeQueryOutput {
     pub query_id: ::std::option::Option<::std::string::String>,
     /// <p>The SQL code of a query.</p>
     pub query_string: ::std::option::Option<::std::string::String>,
-    /// <p>The status of a query. Values for <code>QueryStatus</code> include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>CANCELLED</code></p>
+    /// <p>The status of a query. Values for <code>QueryStatus</code> include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>CANCELLED</code> </p>
     pub query_status: ::std::option::Option<crate::types::QueryStatus>,
     /// <p>Metadata about a query, including the number of events that were matched, the total number of events scanned, the query run time in milliseconds, and the query's creation time.</p>
     pub query_statistics: ::std::option::Option<crate::types::QueryStatisticsForDescribeQuery>,
@@ -28,7 +28,7 @@ impl DescribeQueryOutput {
     pub fn query_string(&self) -> ::std::option::Option<&str> {
         self.query_string.as_deref()
     }
-    /// <p>The status of a query. Values for <code>QueryStatus</code> include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>CANCELLED</code></p>
+    /// <p>The status of a query. Values for <code>QueryStatus</code> include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>CANCELLED</code> </p>
     pub fn query_status(&self) -> ::std::option::Option<&crate::types::QueryStatus> {
         self.query_status.as_ref()
     }
@@ -103,17 +103,17 @@ impl DescribeQueryOutputBuilder {
     pub fn get_query_string(&self) -> &::std::option::Option<::std::string::String> {
         &self.query_string
     }
-    /// <p>The status of a query. Values for <code>QueryStatus</code> include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>CANCELLED</code></p>
+    /// <p>The status of a query. Values for <code>QueryStatus</code> include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>CANCELLED</code> </p>
     pub fn query_status(mut self, input: crate::types::QueryStatus) -> Self {
         self.query_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of a query. Values for <code>QueryStatus</code> include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>CANCELLED</code></p>
+    /// <p>The status of a query. Values for <code>QueryStatus</code> include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>CANCELLED</code> </p>
     pub fn set_query_status(mut self, input: ::std::option::Option<crate::types::QueryStatus>) -> Self {
         self.query_status = input;
         self
     }
-    /// <p>The status of a query. Values for <code>QueryStatus</code> include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>CANCELLED</code></p>
+    /// <p>The status of a query. Values for <code>QueryStatus</code> include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>CANCELLED</code> </p>
     pub fn get_query_status(&self) -> &::std::option::Option<crate::types::QueryStatus> {
         &self.query_status
     }

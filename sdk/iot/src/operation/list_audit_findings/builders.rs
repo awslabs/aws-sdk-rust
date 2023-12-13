@@ -213,17 +213,17 @@ impl ListAuditFindingsFluentBuilder {
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_end_time()
     }
-    /// <p>Boolean flag indicating whether only the suppressed findings or the unsuppressed findings should be listed. If this parameter isn't provided, the response will list both suppressed and unsuppressed findings.</p>
+    /// <p> Boolean flag indicating whether only the suppressed findings or the unsuppressed findings should be listed. If this parameter isn't provided, the response will list both suppressed and unsuppressed findings. </p>
     pub fn list_suppressed_findings(mut self, input: bool) -> Self {
         self.inner = self.inner.list_suppressed_findings(input);
         self
     }
-    /// <p>Boolean flag indicating whether only the suppressed findings or the unsuppressed findings should be listed. If this parameter isn't provided, the response will list both suppressed and unsuppressed findings.</p>
+    /// <p> Boolean flag indicating whether only the suppressed findings or the unsuppressed findings should be listed. If this parameter isn't provided, the response will list both suppressed and unsuppressed findings. </p>
     pub fn set_list_suppressed_findings(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_list_suppressed_findings(input);
         self
     }
-    /// <p>Boolean flag indicating whether only the suppressed findings or the unsuppressed findings should be listed. If this parameter isn't provided, the response will list both suppressed and unsuppressed findings.</p>
+    /// <p> Boolean flag indicating whether only the suppressed findings or the unsuppressed findings should be listed. If this parameter isn't provided, the response will list both suppressed and unsuppressed findings. </p>
     pub fn get_list_suppressed_findings(&self) -> &::std::option::Option<bool> {
         self.inner.get_list_suppressed_findings()
     }

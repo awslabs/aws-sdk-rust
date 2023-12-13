@@ -257,7 +257,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DisassociateF
 pub enum DisassociateFacesError {
     /// <p>You are not authorized to perform the action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>A User with the same Id already exists within the collection, or the update or deletion of the User caused an inconsistent state. **</p>
+    /// <p> A User with the same Id already exists within the collection, or the update or deletion of the User caused an inconsistent state. ** </p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>A <code>ClientRequestToken</code> input parameter was reused with an operation, but at least one of the other input parameters is different from the previous call to the operation.</p>
     IdempotentParameterMismatchException(crate::types::error::IdempotentParameterMismatchException),

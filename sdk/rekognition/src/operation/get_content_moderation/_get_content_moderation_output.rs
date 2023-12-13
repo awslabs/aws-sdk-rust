@@ -7,11 +7,11 @@ pub struct GetContentModerationOutput {
     pub job_status: ::std::option::Option<crate::types::VideoJobStatus>,
     /// <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
-    /// <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from <code>GetContentModeration</code>.</p>
+    /// <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from <code>GetContentModeration</code>. </p>
     pub video_metadata: ::std::option::Option<crate::types::VideoMetadata>,
     /// <p>The detected inappropriate, unwanted, or offensive content moderation labels and the time(s) they were detected.</p>
     pub moderation_labels: ::std::option::Option<::std::vec::Vec<crate::types::ContentModerationDetection>>,
-    /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of content moderation labels.</p>
+    /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of content moderation labels. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Version number of the moderation detection model that was used to detect inappropriate, unwanted, or offensive content.</p>
     pub moderation_model_version: ::std::option::Option<::std::string::String>,
@@ -34,7 +34,7 @@ impl GetContentModerationOutput {
     pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
-    /// <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from <code>GetContentModeration</code>.</p>
+    /// <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from <code>GetContentModeration</code>. </p>
     pub fn video_metadata(&self) -> ::std::option::Option<&crate::types::VideoMetadata> {
         self.video_metadata.as_ref()
     }
@@ -44,7 +44,7 @@ impl GetContentModerationOutput {
     pub fn moderation_labels(&self) -> &[crate::types::ContentModerationDetection] {
         self.moderation_labels.as_deref().unwrap_or_default()
     }
-    /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of content moderation labels.</p>
+    /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of content moderation labels. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -126,17 +126,17 @@ impl GetContentModerationOutputBuilder {
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_message
     }
-    /// <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from <code>GetContentModeration</code>.</p>
+    /// <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from <code>GetContentModeration</code>. </p>
     pub fn video_metadata(mut self, input: crate::types::VideoMetadata) -> Self {
         self.video_metadata = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from <code>GetContentModeration</code>.</p>
+    /// <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from <code>GetContentModeration</code>. </p>
     pub fn set_video_metadata(mut self, input: ::std::option::Option<crate::types::VideoMetadata>) -> Self {
         self.video_metadata = input;
         self
     }
-    /// <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from <code>GetContentModeration</code>.</p>
+    /// <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from <code>GetContentModeration</code>. </p>
     pub fn get_video_metadata(&self) -> &::std::option::Option<crate::types::VideoMetadata> {
         &self.video_metadata
     }
@@ -160,17 +160,17 @@ impl GetContentModerationOutputBuilder {
     pub fn get_moderation_labels(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContentModerationDetection>> {
         &self.moderation_labels
     }
-    /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of content moderation labels.</p>
+    /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of content moderation labels. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of content moderation labels.</p>
+    /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of content moderation labels. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of content moderation labels.</p>
+    /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of content moderation labels. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

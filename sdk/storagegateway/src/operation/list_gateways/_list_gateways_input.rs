@@ -2,10 +2,8 @@
 
 /// <p>A JSON object containing zero or more of the following fields:</p>
 /// <ul>
-/// <li>
-/// <p><code>ListGatewaysInput$Limit</code></p></li>
-/// <li>
-/// <p><code>ListGatewaysInput$Marker</code></p></li>
+/// <li> <p> <code>ListGatewaysInput$Limit</code> </p> </li>
+/// <li> <p> <code>ListGatewaysInput$Marker</code> </p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]

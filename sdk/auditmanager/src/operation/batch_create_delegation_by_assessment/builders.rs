@@ -22,7 +22,7 @@ impl BatchCreateDelegationByAssessmentInputBuilder {
 }
 /// Fluent builder constructing a request to `BatchCreateDelegationByAssessment`.
 ///
-/// <p>Creates a batch of delegations for an assessment in Audit Manager.</p>
+/// <p> Creates a batch of delegations for an assessment in Audit Manager. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchCreateDelegationByAssessmentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -112,31 +112,31 @@ impl BatchCreateDelegationByAssessmentFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_create_delegation_requests`](Self::set_create_delegation_requests).
     ///
-    /// <p>The API request to batch create delegations in Audit Manager.</p>
+    /// <p> The API request to batch create delegations in Audit Manager. </p>
     pub fn create_delegation_requests(mut self, input: crate::types::CreateDelegationRequest) -> Self {
         self.inner = self.inner.create_delegation_requests(input);
         self
     }
-    /// <p>The API request to batch create delegations in Audit Manager.</p>
+    /// <p> The API request to batch create delegations in Audit Manager. </p>
     pub fn set_create_delegation_requests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CreateDelegationRequest>>) -> Self {
         self.inner = self.inner.set_create_delegation_requests(input);
         self
     }
-    /// <p>The API request to batch create delegations in Audit Manager.</p>
+    /// <p> The API request to batch create delegations in Audit Manager. </p>
     pub fn get_create_delegation_requests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateDelegationRequest>> {
         self.inner.get_create_delegation_requests()
     }
-    /// <p>The identifier for the assessment.</p>
+    /// <p> The identifier for the assessment. </p>
     pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_id(input.into());
         self
     }
-    /// <p>The identifier for the assessment.</p>
+    /// <p> The identifier for the assessment. </p>
     pub fn set_assessment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assessment_id(input);
         self
     }
-    /// <p>The identifier for the assessment.</p>
+    /// <p> The identifier for the assessment. </p>
     pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_assessment_id()
     }

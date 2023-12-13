@@ -8,7 +8,7 @@ pub struct TransitGatewayConfiguration {
     pub transit_gateway_id: ::std::string::String,
     /// <p>The routing CIDR on behalf of kdb environment. It could be any "/26 range in the 100.64.0.0 CIDR space. After providing, it will be added to the customer's transit gateway routing table so that the traffics could be routed to kdb network.</p>
     pub routable_cidr_space: ::std::string::String,
-    /// <p>The rules that define how you manage the outbound traffic from kdb network to your internal network.</p>
+    /// <p> The rules that define how you manage the outbound traffic from kdb network to your internal network. </p>
     pub attachment_network_acl_configuration: ::std::option::Option<::std::vec::Vec<crate::types::NetworkAclEntry>>,
 }
 impl TransitGatewayConfiguration {
@@ -22,7 +22,7 @@ impl TransitGatewayConfiguration {
         use std::ops::Deref;
         self.routable_cidr_space.deref()
     }
-    /// <p>The rules that define how you manage the outbound traffic from kdb network to your internal network.</p>
+    /// <p> The rules that define how you manage the outbound traffic from kdb network to your internal network. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attachment_network_acl_configuration.is_none()`.
     pub fn attachment_network_acl_configuration(&self) -> &[crate::types::NetworkAclEntry] {
@@ -79,19 +79,19 @@ impl TransitGatewayConfigurationBuilder {
     ///
     /// To override the contents of this collection use [`set_attachment_network_acl_configuration`](Self::set_attachment_network_acl_configuration).
     ///
-    /// <p>The rules that define how you manage the outbound traffic from kdb network to your internal network.</p>
+    /// <p> The rules that define how you manage the outbound traffic from kdb network to your internal network. </p>
     pub fn attachment_network_acl_configuration(mut self, input: crate::types::NetworkAclEntry) -> Self {
         let mut v = self.attachment_network_acl_configuration.unwrap_or_default();
         v.push(input);
         self.attachment_network_acl_configuration = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The rules that define how you manage the outbound traffic from kdb network to your internal network.</p>
+    /// <p> The rules that define how you manage the outbound traffic from kdb network to your internal network. </p>
     pub fn set_attachment_network_acl_configuration(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkAclEntry>>) -> Self {
         self.attachment_network_acl_configuration = input;
         self
     }
-    /// <p>The rules that define how you manage the outbound traffic from kdb network to your internal network.</p>
+    /// <p> The rules that define how you manage the outbound traffic from kdb network to your internal network. </p>
     pub fn get_attachment_network_acl_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkAclEntry>> {
         &self.attachment_network_acl_configuration
     }

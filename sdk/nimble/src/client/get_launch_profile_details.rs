@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`launch_profile_id(impl Into<String>)`](crate::operation::get_launch_profile_details::builders::GetLaunchProfileDetailsFluentBuilder::launch_profile_id) / [`set_launch_profile_id(Option<String>)`](crate::operation::get_launch_profile_details::builders::GetLaunchProfileDetailsFluentBuilder::set_launch_profile_id):<br>required: **true**<br><p>The ID of the launch profile used to control access from the streaming session.</p><br>
-    ///   - [`studio_id(impl Into<String>)`](crate::operation::get_launch_profile_details::builders::GetLaunchProfileDetailsFluentBuilder::studio_id) / [`set_studio_id(Option<String>)`](crate::operation::get_launch_profile_details::builders::GetLaunchProfileDetailsFluentBuilder::set_studio_id):<br>required: **true**<br><p>The studio ID.</p><br>
+    ///   - [`studio_id(impl Into<String>)`](crate::operation::get_launch_profile_details::builders::GetLaunchProfileDetailsFluentBuilder::studio_id) / [`set_studio_id(Option<String>)`](crate::operation::get_launch_profile_details::builders::GetLaunchProfileDetailsFluentBuilder::set_studio_id):<br>required: **true**<br><p>The studio ID. </p><br>
     /// - On success, responds with [`GetLaunchProfileDetailsOutput`](crate::operation::get_launch_profile_details::GetLaunchProfileDetailsOutput) with field(s):
     ///   - [`launch_profile(Option<LaunchProfile>)`](crate::operation::get_launch_profile_details::GetLaunchProfileDetailsOutput::launch_profile): <p>The launch profile.</p>
     ///   - [`streaming_images(Option<Vec::<StreamingImage>>)`](crate::operation::get_launch_profile_details::GetLaunchProfileDetailsOutput::streaming_images): <p>A collection of streaming images.</p>

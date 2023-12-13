@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartQueryOutput {
-    /// <p>The unique ID of the query.</p>
+    /// <p>The unique ID of the query. </p>
     pub query_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl StartQueryOutput {
-    /// <p>The unique ID of the query.</p>
+    /// <p>The unique ID of the query. </p>
     pub fn query_id(&self) -> ::std::option::Option<&str> {
         self.query_id.as_deref()
     }
@@ -33,17 +33,17 @@ pub struct StartQueryOutputBuilder {
     _request_id: Option<String>,
 }
 impl StartQueryOutputBuilder {
-    /// <p>The unique ID of the query.</p>
+    /// <p>The unique ID of the query. </p>
     pub fn query_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique ID of the query.</p>
+    /// <p>The unique ID of the query. </p>
     pub fn set_query_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_id = input;
         self
     }
-    /// <p>The unique ID of the query.</p>
+    /// <p>The unique ID of the query. </p>
     pub fn get_query_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.query_id
     }

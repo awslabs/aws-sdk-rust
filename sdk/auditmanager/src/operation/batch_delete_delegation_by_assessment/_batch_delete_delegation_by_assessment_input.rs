@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDeleteDelegationByAssessmentInput {
-    /// <p>The identifiers for the delegations.</p>
+    /// <p> The identifiers for the delegations. </p>
     pub delegation_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The identifier for the assessment.</p>
+    /// <p> The identifier for the assessment. </p>
     pub assessment_id: ::std::option::Option<::std::string::String>,
 }
 impl BatchDeleteDelegationByAssessmentInput {
-    /// <p>The identifiers for the delegations.</p>
+    /// <p> The identifiers for the delegations. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.delegation_ids.is_none()`.
     pub fn delegation_ids(&self) -> &[::std::string::String] {
         self.delegation_ids.as_deref().unwrap_or_default()
     }
-    /// <p>The identifier for the assessment.</p>
+    /// <p> The identifier for the assessment. </p>
     pub fn assessment_id(&self) -> ::std::option::Option<&str> {
         self.assessment_id.as_deref()
     }
@@ -39,34 +39,34 @@ impl BatchDeleteDelegationByAssessmentInputBuilder {
     ///
     /// To override the contents of this collection use [`set_delegation_ids`](Self::set_delegation_ids).
     ///
-    /// <p>The identifiers for the delegations.</p>
+    /// <p> The identifiers for the delegations. </p>
     pub fn delegation_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.delegation_ids.unwrap_or_default();
         v.push(input.into());
         self.delegation_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The identifiers for the delegations.</p>
+    /// <p> The identifiers for the delegations. </p>
     pub fn set_delegation_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.delegation_ids = input;
         self
     }
-    /// <p>The identifiers for the delegations.</p>
+    /// <p> The identifiers for the delegations. </p>
     pub fn get_delegation_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.delegation_ids
     }
-    /// <p>The identifier for the assessment.</p>
+    /// <p> The identifier for the assessment. </p>
     /// This field is required.
     pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier for the assessment.</p>
+    /// <p> The identifier for the assessment. </p>
     pub fn set_assessment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assessment_id = input;
         self
     }
-    /// <p>The identifier for the assessment.</p>
+    /// <p> The identifier for the assessment. </p>
     pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.assessment_id
     }

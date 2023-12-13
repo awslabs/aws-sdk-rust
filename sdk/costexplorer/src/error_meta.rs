@@ -15,15 +15,15 @@ pub enum Error {
     LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>Your request parameters changed between pages. Try again with the old parameters or without a pagination token.</p>
     RequestChangedException(crate::types::error::RequestChangedException),
-    /// <p>The specified ARN in the request doesn't exist.</p>
+    /// <p> The specified ARN in the request doesn't exist. </p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>You've reached the limit on the number of resources you can create, or exceeded the size of an individual resource.</p>
+    /// <p> You've reached the limit on the number of resources you can create, or exceeded the size of an individual resource. </p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>Can occur if you specify a number of tags for a resource greater than the maximum 50 user tags per resource.</p>
     TooManyTagsException(crate::types::error::TooManyTagsException),
-    /// <p>The cost anomaly monitor does not exist for the account.</p>
+    /// <p>The cost anomaly monitor does not exist for the account. </p>
     UnknownMonitorException(crate::types::error::UnknownMonitorException),
-    /// <p>The cost anomaly subscription does not exist for the account.</p>
+    /// <p>The cost anomaly subscription does not exist for the account. </p>
     UnknownSubscriptionException(crate::types::error::UnknownSubscriptionException),
     /// <p>Cost Explorer was unable to identify the usage unit. Provide <code>UsageType/UsageTypeGroup</code> filter selections that contain matching units, for example: <code>hours</code>.</p>
     UnresolvableUsageUnitException(crate::types::error::UnresolvableUsageUnitException),

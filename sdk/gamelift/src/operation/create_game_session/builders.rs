@@ -23,22 +23,19 @@ impl CreateGameSessionInputBuilder {
 /// Fluent builder constructing a request to `CreateGameSession`.
 ///
 /// <p>Creates a multiplayer game session for players in a specific fleet location. This operation prompts an available server process to start a game session and retrieves connection information for the new game session. As an alternative, consider using the Amazon GameLift game session placement feature with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartGameSessionPlacement.html">StartGameSessionPlacement</a> , which uses the FleetIQ algorithm and queues to optimize the placement process.</p>
-/// <p>When creating a game session, you specify exactly where you want to place it and provide a set of game session configuration settings. The target fleet must be in <code>ACTIVE</code> status.</p>
-/// <p>You can use this operation in the following ways:</p>
+/// <p>When creating a game session, you specify exactly where you want to place it and provide a set of game session configuration settings. The target fleet must be in <code>ACTIVE</code> status. </p>
+/// <p>You can use this operation in the following ways: </p>
 /// <ul>
-/// <li>
-/// <p>To create a game session on an instance in a fleet's home Region, provide a fleet or alias ID along with your game session configuration.</p></li>
-/// <li>
-/// <p>To create a game session on an instance in a fleet's remote location, provide a fleet or alias ID and a location name, along with your game session configuration.</p></li>
-/// <li>
-/// <p>To create a game session on an instance in an Anywhere fleet, specify the fleet's custom location.</p></li>
+/// <li> <p>To create a game session on an instance in a fleet's home Region, provide a fleet or alias ID along with your game session configuration. </p> </li>
+/// <li> <p>To create a game session on an instance in a fleet's remote location, provide a fleet or alias ID and a location name, along with your game session configuration. </p> </li>
+/// <li> <p>To create a game session on an instance in an Anywhere fleet, specify the fleet's custom location.</p> </li>
 /// </ul>
 /// <p>If successful, Amazon GameLift initiates a workflow to start a new game session and returns a <code>GameSession</code> object containing the game session configuration and status. When the game session status is <code>ACTIVE</code>, it is updated with connection information and you can create player sessions for the game session. By default, newly created game sessions are open to new players. You can restrict new player access by using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a> to change the game session's player session creation policy.</p>
 /// <p>Amazon GameLift retains logs for active for 14 days. To access the logs, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetGameSessionLogUrl.html">GetGameSessionLogUrl</a> to download the log files.</p>
-/// <p><i>Available in Amazon GameLift Local.</i></p>
-/// <p><b>Learn more</b></p>
-/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a game session</a></p>
-/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a></p>
+/// <p> <i>Available in Amazon GameLift Local.</i> </p>
+/// <p> <b>Learn more</b> </p>
+/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a game session</a> </p>
+/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateGameSessionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -198,7 +195,7 @@ impl CreateGameSessionFluentBuilder {
     pub fn get_game_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GameProperty>> {
         self.inner.get_game_properties()
     }
-    /// <p>A unique identifier for a player or entity creating the game session.</p>
+    /// <p>A unique identifier for a player or entity creating the game session. </p>
     /// <p>If you add a resource creation limit policy to a fleet, the <code>CreateGameSession</code> operation requires a <code>CreatorId</code>. Amazon GameLift limits the number of game session creation requests with the same <code>CreatorId</code> in a specified time period.</p>
     /// <p>If you your fleet doesn't have a resource creation limit policy and you provide a <code>CreatorId</code> in your <code>CreateGameSession</code> requests, Amazon GameLift limits requests to one request per <code>CreatorId</code> per second.</p>
     /// <p>To not limit <code>CreateGameSession</code> requests with the same <code>CreatorId</code>, don't provide a <code>CreatorId</code> in your <code>CreateGameSession</code> request.</p>
@@ -206,7 +203,7 @@ impl CreateGameSessionFluentBuilder {
         self.inner = self.inner.creator_id(input.into());
         self
     }
-    /// <p>A unique identifier for a player or entity creating the game session.</p>
+    /// <p>A unique identifier for a player or entity creating the game session. </p>
     /// <p>If you add a resource creation limit policy to a fleet, the <code>CreateGameSession</code> operation requires a <code>CreatorId</code>. Amazon GameLift limits the number of game session creation requests with the same <code>CreatorId</code> in a specified time period.</p>
     /// <p>If you your fleet doesn't have a resource creation limit policy and you provide a <code>CreatorId</code> in your <code>CreateGameSession</code> requests, Amazon GameLift limits requests to one request per <code>CreatorId</code> per second.</p>
     /// <p>To not limit <code>CreateGameSession</code> requests with the same <code>CreatorId</code>, don't provide a <code>CreatorId</code> in your <code>CreateGameSession</code> request.</p>
@@ -214,31 +211,32 @@ impl CreateGameSessionFluentBuilder {
         self.inner = self.inner.set_creator_id(input);
         self
     }
-    /// <p>A unique identifier for a player or entity creating the game session.</p>
+    /// <p>A unique identifier for a player or entity creating the game session. </p>
     /// <p>If you add a resource creation limit policy to a fleet, the <code>CreateGameSession</code> operation requires a <code>CreatorId</code>. Amazon GameLift limits the number of game session creation requests with the same <code>CreatorId</code> in a specified time period.</p>
     /// <p>If you your fleet doesn't have a resource creation limit policy and you provide a <code>CreatorId</code> in your <code>CreateGameSession</code> requests, Amazon GameLift limits requests to one request per <code>CreatorId</code> per second.</p>
     /// <p>To not limit <code>CreateGameSession</code> requests with the same <code>CreatorId</code>, don't provide a <code>CreatorId</code> in your <code>CreateGameSession</code> request.</p>
     pub fn get_creator_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_creator_id()
     }
-    /// <p><i>This parameter is deprecated. Use <code>IdempotencyToken</code> instead.</i></p>
+    /// <p> <i>This parameter is deprecated. Use <code>IdempotencyToken</code> instead.</i> </p>
     /// <p>Custom string that uniquely identifies a request for a new game session. Maximum token length is 48 characters. If provided, this string is included in the new game session's ID.</p>
     pub fn game_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.game_session_id(input.into());
         self
     }
-    /// <p><i>This parameter is deprecated. Use <code>IdempotencyToken</code> instead.</i></p>
+    /// <p> <i>This parameter is deprecated. Use <code>IdempotencyToken</code> instead.</i> </p>
     /// <p>Custom string that uniquely identifies a request for a new game session. Maximum token length is 48 characters. If provided, this string is included in the new game session's ID.</p>
     pub fn set_game_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_game_session_id(input);
         self
     }
-    /// <p><i>This parameter is deprecated. Use <code>IdempotencyToken</code> instead.</i></p>
+    /// <p> <i>This parameter is deprecated. Use <code>IdempotencyToken</code> instead.</i> </p>
     /// <p>Custom string that uniquely identifies a request for a new game session. Maximum token length is 48 characters. If provided, this string is included in the new game session's ID.</p>
     pub fn get_game_session_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_game_session_id()
     }
-    /// <p>Custom string that uniquely identifies the new game session request. This is useful for ensuring that game session requests with the same idempotency token are processed only once. Subsequent requests with the same string return the original <code>GameSession</code> object, with an updated status. Maximum token length is 48 characters. If provided, this string is included in the new game session's ID. A game session ARN has the following format: <code>arn:aws:gamelift:<region>
+    /// <p>Custom string that uniquely identifies the new game session request. This is useful for ensuring that game session requests with the same idempotency token are processed only once. Subsequent requests with the same string return the original <code>GameSession</code> object, with an updated status. Maximum token length is 48 characters. If provided, this string is included in the new game session's ID. A game session ARN has the following format: <code>arn:aws:gamelift:
+    /// <region>
     /// ::gamesession/
     /// <fleet id>
     /// /
@@ -249,7 +247,8 @@ impl CreateGameSessionFluentBuilder {
         self.inner = self.inner.idempotency_token(input.into());
         self
     }
-    /// <p>Custom string that uniquely identifies the new game session request. This is useful for ensuring that game session requests with the same idempotency token are processed only once. Subsequent requests with the same string return the original <code>GameSession</code> object, with an updated status. Maximum token length is 48 characters. If provided, this string is included in the new game session's ID. A game session ARN has the following format: <code>arn:aws:gamelift:<region>
+    /// <p>Custom string that uniquely identifies the new game session request. This is useful for ensuring that game session requests with the same idempotency token are processed only once. Subsequent requests with the same string return the original <code>GameSession</code> object, with an updated status. Maximum token length is 48 characters. If provided, this string is included in the new game session's ID. A game session ARN has the following format: <code>arn:aws:gamelift:
+    /// <region>
     /// ::gamesession/
     /// <fleet id>
     /// /
@@ -260,7 +259,8 @@ impl CreateGameSessionFluentBuilder {
         self.inner = self.inner.set_idempotency_token(input);
         self
     }
-    /// <p>Custom string that uniquely identifies the new game session request. This is useful for ensuring that game session requests with the same idempotency token are processed only once. Subsequent requests with the same string return the original <code>GameSession</code> object, with an updated status. Maximum token length is 48 characters. If provided, this string is included in the new game session's ID. A game session ARN has the following format: <code>arn:aws:gamelift:<region>
+    /// <p>Custom string that uniquely identifies the new game session request. This is useful for ensuring that game session requests with the same idempotency token are processed only once. Subsequent requests with the same string return the original <code>GameSession</code> object, with an updated status. Maximum token length is 48 characters. If provided, this string is included in the new game session's ID. A game session ARN has the following format: <code>arn:aws:gamelift:
+    /// <region>
     /// ::gamesession/
     /// <fleet id>
     /// /

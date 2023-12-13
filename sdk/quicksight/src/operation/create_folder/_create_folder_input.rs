@@ -12,7 +12,7 @@ pub struct CreateFolderInput {
     /// <p>The type of folder. By default, <code>folderType</code> is <code>SHARED</code>.</p>
     pub folder_type: ::std::option::Option<crate::types::FolderType>,
     /// <p>The Amazon Resource Name (ARN) for the parent folder.</p>
-    /// <p><code>ParentFolderArn</code> can be null. An empty <code>parentFolderArn</code> creates a root-level folder.</p>
+    /// <p> <code>ParentFolderArn</code> can be null. An empty <code>parentFolderArn</code> creates a root-level folder.</p>
     pub parent_folder_arn: ::std::option::Option<::std::string::String>,
     /// <p>A structure that describes the principals and the resource-level permissions of a folder.</p>
     /// <p>To specify no permissions, omit <code>Permissions</code>.</p>
@@ -40,7 +40,7 @@ impl CreateFolderInput {
         self.folder_type.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) for the parent folder.</p>
-    /// <p><code>ParentFolderArn</code> can be null. An empty <code>parentFolderArn</code> creates a root-level folder.</p>
+    /// <p> <code>ParentFolderArn</code> can be null. An empty <code>parentFolderArn</code> creates a root-level folder.</p>
     pub fn parent_folder_arn(&self) -> ::std::option::Option<&str> {
         self.parent_folder_arn.as_deref()
     }
@@ -142,19 +142,19 @@ impl CreateFolderInputBuilder {
         &self.folder_type
     }
     /// <p>The Amazon Resource Name (ARN) for the parent folder.</p>
-    /// <p><code>ParentFolderArn</code> can be null. An empty <code>parentFolderArn</code> creates a root-level folder.</p>
+    /// <p> <code>ParentFolderArn</code> can be null. An empty <code>parentFolderArn</code> creates a root-level folder.</p>
     pub fn parent_folder_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parent_folder_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the parent folder.</p>
-    /// <p><code>ParentFolderArn</code> can be null. An empty <code>parentFolderArn</code> creates a root-level folder.</p>
+    /// <p> <code>ParentFolderArn</code> can be null. An empty <code>parentFolderArn</code> creates a root-level folder.</p>
     pub fn set_parent_folder_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parent_folder_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the parent folder.</p>
-    /// <p><code>ParentFolderArn</code> can be null. An empty <code>parentFolderArn</code> creates a root-level folder.</p>
+    /// <p> <code>ParentFolderArn</code> can be null. An empty <code>parentFolderArn</code> creates a root-level folder.</p>
     pub fn get_parent_folder_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.parent_folder_arn
     }

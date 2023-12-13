@@ -22,7 +22,7 @@ impl UpdateReportGroupInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateReportGroup`.
 ///
-/// <p>Updates a report group.</p>
+/// <p> Updates a report group. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateReportGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,48 +108,42 @@ impl UpdateReportGroupFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ARN of the report group to update.</p>
+    /// <p> The ARN of the report group to update. </p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.arn(input.into());
         self
     }
-    /// <p>The ARN of the report group to update.</p>
+    /// <p> The ARN of the report group to update. </p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_arn(input);
         self
     }
-    /// <p>The ARN of the report group to update.</p>
+    /// <p> The ARN of the report group to update. </p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_arn()
     }
-    /// <p>Used to specify an updated export type. Valid values are:</p>
+    /// <p> Used to specify an updated export type. Valid values are: </p>
     /// <ul>
-    /// <li>
-    /// <p><code>S3</code>: The report results are exported to an S3 bucket.</p></li>
-    /// <li>
-    /// <p><code>NO_EXPORT</code>: The report results are not exported.</p></li>
+    /// <li> <p> <code>S3</code>: The report results are exported to an S3 bucket. </p> </li>
+    /// <li> <p> <code>NO_EXPORT</code>: The report results are not exported. </p> </li>
     /// </ul>
     pub fn export_config(mut self, input: crate::types::ReportExportConfig) -> Self {
         self.inner = self.inner.export_config(input);
         self
     }
-    /// <p>Used to specify an updated export type. Valid values are:</p>
+    /// <p> Used to specify an updated export type. Valid values are: </p>
     /// <ul>
-    /// <li>
-    /// <p><code>S3</code>: The report results are exported to an S3 bucket.</p></li>
-    /// <li>
-    /// <p><code>NO_EXPORT</code>: The report results are not exported.</p></li>
+    /// <li> <p> <code>S3</code>: The report results are exported to an S3 bucket. </p> </li>
+    /// <li> <p> <code>NO_EXPORT</code>: The report results are not exported. </p> </li>
     /// </ul>
     pub fn set_export_config(mut self, input: ::std::option::Option<crate::types::ReportExportConfig>) -> Self {
         self.inner = self.inner.set_export_config(input);
         self
     }
-    /// <p>Used to specify an updated export type. Valid values are:</p>
+    /// <p> Used to specify an updated export type. Valid values are: </p>
     /// <ul>
-    /// <li>
-    /// <p><code>S3</code>: The report results are exported to an S3 bucket.</p></li>
-    /// <li>
-    /// <p><code>NO_EXPORT</code>: The report results are not exported.</p></li>
+    /// <li> <p> <code>S3</code>: The report results are exported to an S3 bucket. </p> </li>
+    /// <li> <p> <code>NO_EXPORT</code>: The report results are not exported. </p> </li>
     /// </ul>
     pub fn get_export_config(&self) -> &::std::option::Option<crate::types::ReportExportConfig> {
         self.inner.get_export_config()
@@ -158,19 +152,19 @@ impl UpdateReportGroupFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>An updated list of tag key and value pairs associated with this report group.</p>
+    /// <p> An updated list of tag key and value pairs associated with this report group. </p>
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group tags.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
-    /// <p>An updated list of tag key and value pairs associated with this report group.</p>
+    /// <p> An updated list of tag key and value pairs associated with this report group. </p>
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group tags.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>An updated list of tag key and value pairs associated with this report group.</p>
+    /// <p> An updated list of tag key and value pairs associated with this report group. </p>
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group tags.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()

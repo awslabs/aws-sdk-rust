@@ -13,7 +13,7 @@ pub struct LambdaFunctionMemoryRecommendationOption {
     pub projected_utilization_metrics: ::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionMemoryProjectedMetric>>,
     /// <p>An object that describes the savings opportunity for the Lambda function recommendation option. Savings opportunity includes the estimated monthly savings amount and percentage.</p>
     pub savings_opportunity: ::std::option::Option<crate::types::SavingsOpportunity>,
-    /// <p>An object that describes the savings opportunity for the Lambda recommendation option which includes Saving Plans discounts. Savings opportunity includes the estimated monthly savings and percentage.</p>
+    /// <p> An object that describes the savings opportunity for the Lambda recommendation option which includes Saving Plans discounts. Savings opportunity includes the estimated monthly savings and percentage. </p>
     pub savings_opportunity_after_discounts: ::std::option::Option<crate::types::LambdaSavingsOpportunityAfterDiscounts>,
 }
 impl LambdaFunctionMemoryRecommendationOption {
@@ -36,7 +36,7 @@ impl LambdaFunctionMemoryRecommendationOption {
     pub fn savings_opportunity(&self) -> ::std::option::Option<&crate::types::SavingsOpportunity> {
         self.savings_opportunity.as_ref()
     }
-    /// <p>An object that describes the savings opportunity for the Lambda recommendation option which includes Saving Plans discounts. Savings opportunity includes the estimated monthly savings and percentage.</p>
+    /// <p> An object that describes the savings opportunity for the Lambda recommendation option which includes Saving Plans discounts. Savings opportunity includes the estimated monthly savings and percentage. </p>
     pub fn savings_opportunity_after_discounts(&self) -> ::std::option::Option<&crate::types::LambdaSavingsOpportunityAfterDiscounts> {
         self.savings_opportunity_after_discounts.as_ref()
     }
@@ -127,12 +127,12 @@ impl LambdaFunctionMemoryRecommendationOptionBuilder {
     pub fn get_savings_opportunity(&self) -> &::std::option::Option<crate::types::SavingsOpportunity> {
         &self.savings_opportunity
     }
-    /// <p>An object that describes the savings opportunity for the Lambda recommendation option which includes Saving Plans discounts. Savings opportunity includes the estimated monthly savings and percentage.</p>
+    /// <p> An object that describes the savings opportunity for the Lambda recommendation option which includes Saving Plans discounts. Savings opportunity includes the estimated monthly savings and percentage. </p>
     pub fn savings_opportunity_after_discounts(mut self, input: crate::types::LambdaSavingsOpportunityAfterDiscounts) -> Self {
         self.savings_opportunity_after_discounts = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An object that describes the savings opportunity for the Lambda recommendation option which includes Saving Plans discounts. Savings opportunity includes the estimated monthly savings and percentage.</p>
+    /// <p> An object that describes the savings opportunity for the Lambda recommendation option which includes Saving Plans discounts. Savings opportunity includes the estimated monthly savings and percentage. </p>
     pub fn set_savings_opportunity_after_discounts(
         mut self,
         input: ::std::option::Option<crate::types::LambdaSavingsOpportunityAfterDiscounts>,
@@ -140,7 +140,7 @@ impl LambdaFunctionMemoryRecommendationOptionBuilder {
         self.savings_opportunity_after_discounts = input;
         self
     }
-    /// <p>An object that describes the savings opportunity for the Lambda recommendation option which includes Saving Plans discounts. Savings opportunity includes the estimated monthly savings and percentage.</p>
+    /// <p> An object that describes the savings opportunity for the Lambda recommendation option which includes Saving Plans discounts. Savings opportunity includes the estimated monthly savings and percentage. </p>
     pub fn get_savings_opportunity_after_discounts(&self) -> &::std::option::Option<crate::types::LambdaSavingsOpportunityAfterDiscounts> {
         &self.savings_opportunity_after_discounts
     }

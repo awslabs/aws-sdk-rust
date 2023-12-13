@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChangeBatch {
-    /// <p><i>Optional:</i> Any comments you want to include about a change batch request.</p>
+    /// <p> <i>Optional:</i> Any comments you want to include about a change batch request.</p>
     pub comment: ::std::option::Option<::std::string::String>,
     /// <p>Information about the changes to make to the record sets.</p>
     pub changes: ::std::vec::Vec<crate::types::Change>,
 }
 impl ChangeBatch {
-    /// <p><i>Optional:</i> Any comments you want to include about a change batch request.</p>
+    /// <p> <i>Optional:</i> Any comments you want to include about a change batch request.</p>
     pub fn comment(&self) -> ::std::option::Option<&str> {
         self.comment.as_deref()
     }
@@ -35,17 +35,17 @@ pub struct ChangeBatchBuilder {
     pub(crate) changes: ::std::option::Option<::std::vec::Vec<crate::types::Change>>,
 }
 impl ChangeBatchBuilder {
-    /// <p><i>Optional:</i> Any comments you want to include about a change batch request.</p>
+    /// <p> <i>Optional:</i> Any comments you want to include about a change batch request.</p>
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comment = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p><i>Optional:</i> Any comments you want to include about a change batch request.</p>
+    /// <p> <i>Optional:</i> Any comments you want to include about a change batch request.</p>
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.comment = input;
         self
     }
-    /// <p><i>Optional:</i> Any comments you want to include about a change batch request.</p>
+    /// <p> <i>Optional:</i> Any comments you want to include about a change batch request.</p>
     pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
         &self.comment
     }

@@ -22,7 +22,7 @@ impl CreateBackupSelectionInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateBackupSelection`.
 ///
-/// <p>Creates a JSON document that specifies a set of resources to assign to a backup plan. For examples, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/assigning-resources.html#assigning-resources-json">Assigning resources programmatically</a>.</p>
+/// <p>Creates a JSON document that specifies a set of resources to assign to a backup plan. For examples, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/assigning-resources.html#assigning-resources-json">Assigning resources programmatically</a>. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateBackupSelectionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

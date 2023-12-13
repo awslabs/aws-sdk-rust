@@ -13,7 +13,7 @@ pub struct CreateAppInput {
     pub app_name: ::std::option::Option<::std::string::String>,
     /// <p>Each tag consists of a key and an optional value. Tag keys must be unique per resource.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p><note>
+    /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p> <note>
     /// <p>The value of <code>InstanceType</code> passed as part of the <code>ResourceSpec</code> in the <code>CreateApp</code> call overrides the value passed as part of the <code>ResourceSpec</code> configured for the user profile or the domain. If <code>InstanceType</code> is not specified in any of those three <code>ResourceSpec</code> values for a <code>KernelGateway</code> app, the <code>CreateApp</code> call fails with a request validation error.</p>
     /// </note>
     pub resource_spec: ::std::option::Option<crate::types::ResourceSpec>,
@@ -43,7 +43,7 @@ impl CreateAppInput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
-    /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p><note>
+    /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p> <note>
     /// <p>The value of <code>InstanceType</code> passed as part of the <code>ResourceSpec</code> in the <code>CreateApp</code> call overrides the value passed as part of the <code>ResourceSpec</code> configured for the user profile or the domain. If <code>InstanceType</code> is not specified in any of those three <code>ResourceSpec</code> values for a <code>KernelGateway</code> app, the <code>CreateApp</code> call fails with a request validation error.</p>
     /// </note>
     pub fn resource_spec(&self) -> ::std::option::Option<&crate::types::ResourceSpec> {
@@ -153,21 +153,21 @@ impl CreateAppInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
-    /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p><note>
+    /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p> <note>
     /// <p>The value of <code>InstanceType</code> passed as part of the <code>ResourceSpec</code> in the <code>CreateApp</code> call overrides the value passed as part of the <code>ResourceSpec</code> configured for the user profile or the domain. If <code>InstanceType</code> is not specified in any of those three <code>ResourceSpec</code> values for a <code>KernelGateway</code> app, the <code>CreateApp</code> call fails with a request validation error.</p>
     /// </note>
     pub fn resource_spec(mut self, input: crate::types::ResourceSpec) -> Self {
         self.resource_spec = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p><note>
+    /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p> <note>
     /// <p>The value of <code>InstanceType</code> passed as part of the <code>ResourceSpec</code> in the <code>CreateApp</code> call overrides the value passed as part of the <code>ResourceSpec</code> configured for the user profile or the domain. If <code>InstanceType</code> is not specified in any of those three <code>ResourceSpec</code> values for a <code>KernelGateway</code> app, the <code>CreateApp</code> call fails with a request validation error.</p>
     /// </note>
     pub fn set_resource_spec(mut self, input: ::std::option::Option<crate::types::ResourceSpec>) -> Self {
         self.resource_spec = input;
         self
     }
-    /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p><note>
+    /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p> <note>
     /// <p>The value of <code>InstanceType</code> passed as part of the <code>ResourceSpec</code> in the <code>CreateApp</code> call overrides the value passed as part of the <code>ResourceSpec</code> configured for the user profile or the domain. If <code>InstanceType</code> is not specified in any of those three <code>ResourceSpec</code> values for a <code>KernelGateway</code> app, the <code>CreateApp</code> call fails with a request validation error.</p>
     /// </note>
     pub fn get_resource_spec(&self) -> &::std::option::Option<crate::types::ResourceSpec> {

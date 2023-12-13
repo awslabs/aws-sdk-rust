@@ -13,14 +13,10 @@ pub struct CopyImageInput {
     /// <p>The identifier of the symmetric Key Management Service (KMS) KMS key to use when creating encrypted volumes. If this parameter is not specified, your Amazon Web Services managed KMS key for Amazon EBS is used. If you specify a KMS key, you must also set the encrypted state to <code>true</code>.</p>
     /// <p>You can specify a KMS key using any of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>Key ID. For example, 1234abcd-12ab-34cd-56ef-1234567890ab.</p></li>
-    /// <li>
-    /// <p>Key alias. For example, alias/ExampleAlias.</p></li>
-    /// <li>
-    /// <p>Key ARN. For example, arn:aws:kms:us-east-1:012345678910:key/1234abcd-12ab-34cd-56ef-1234567890ab.</p></li>
-    /// <li>
-    /// <p>Alias ARN. For example, arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.</p></li>
+    /// <li> <p>Key ID. For example, 1234abcd-12ab-34cd-56ef-1234567890ab.</p> </li>
+    /// <li> <p>Key alias. For example, alias/ExampleAlias.</p> </li>
+    /// <li> <p>Key ARN. For example, arn:aws:kms:us-east-1:012345678910:key/1234abcd-12ab-34cd-56ef-1234567890ab.</p> </li>
+    /// <li> <p>Alias ARN. For example, arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.</p> </li>
     /// </ul>
     /// <p>Amazon Web Services authenticates the KMS key asynchronously. Therefore, if you specify an identifier that is not valid, the action can appear to complete, but eventually fails.</p>
     /// <p>The specified KMS key must exist in the destination Region.</p>
@@ -40,10 +36,8 @@ pub struct CopyImageInput {
     /// <p>Indicates whether to include your user-defined AMI tags when copying the AMI.</p>
     /// <p>The following tags will not be copied:</p>
     /// <ul>
-    /// <li>
-    /// <p>System tags (prefixed with <code>aws:</code>)</p></li>
-    /// <li>
-    /// <p>For public and shared AMIs, user-defined tags that are attached by other Amazon Web Services accounts</p></li>
+    /// <li> <p>System tags (prefixed with <code>aws:</code>)</p> </li>
+    /// <li> <p>For public and shared AMIs, user-defined tags that are attached by other Amazon Web Services accounts</p> </li>
     /// </ul>
     /// <p>Default: Your user-defined AMI tags are not copied.</p>
     pub copy_image_tags: ::std::option::Option<bool>,
@@ -64,14 +58,10 @@ impl CopyImageInput {
     /// <p>The identifier of the symmetric Key Management Service (KMS) KMS key to use when creating encrypted volumes. If this parameter is not specified, your Amazon Web Services managed KMS key for Amazon EBS is used. If you specify a KMS key, you must also set the encrypted state to <code>true</code>.</p>
     /// <p>You can specify a KMS key using any of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>Key ID. For example, 1234abcd-12ab-34cd-56ef-1234567890ab.</p></li>
-    /// <li>
-    /// <p>Key alias. For example, alias/ExampleAlias.</p></li>
-    /// <li>
-    /// <p>Key ARN. For example, arn:aws:kms:us-east-1:012345678910:key/1234abcd-12ab-34cd-56ef-1234567890ab.</p></li>
-    /// <li>
-    /// <p>Alias ARN. For example, arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.</p></li>
+    /// <li> <p>Key ID. For example, 1234abcd-12ab-34cd-56ef-1234567890ab.</p> </li>
+    /// <li> <p>Key alias. For example, alias/ExampleAlias.</p> </li>
+    /// <li> <p>Key ARN. For example, arn:aws:kms:us-east-1:012345678910:key/1234abcd-12ab-34cd-56ef-1234567890ab.</p> </li>
+    /// <li> <p>Alias ARN. For example, arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.</p> </li>
     /// </ul>
     /// <p>Amazon Web Services authenticates the KMS key asynchronously. Therefore, if you specify an identifier that is not valid, the action can appear to complete, but eventually fails.</p>
     /// <p>The specified KMS key must exist in the destination Region.</p>
@@ -103,10 +93,8 @@ impl CopyImageInput {
     /// <p>Indicates whether to include your user-defined AMI tags when copying the AMI.</p>
     /// <p>The following tags will not be copied:</p>
     /// <ul>
-    /// <li>
-    /// <p>System tags (prefixed with <code>aws:</code>)</p></li>
-    /// <li>
-    /// <p>For public and shared AMIs, user-defined tags that are attached by other Amazon Web Services accounts</p></li>
+    /// <li> <p>System tags (prefixed with <code>aws:</code>)</p> </li>
+    /// <li> <p>For public and shared AMIs, user-defined tags that are attached by other Amazon Web Services accounts</p> </li>
     /// </ul>
     /// <p>Default: Your user-defined AMI tags are not copied.</p>
     pub fn copy_image_tags(&self) -> ::std::option::Option<bool> {
@@ -181,14 +169,10 @@ impl CopyImageInputBuilder {
     /// <p>The identifier of the symmetric Key Management Service (KMS) KMS key to use when creating encrypted volumes. If this parameter is not specified, your Amazon Web Services managed KMS key for Amazon EBS is used. If you specify a KMS key, you must also set the encrypted state to <code>true</code>.</p>
     /// <p>You can specify a KMS key using any of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>Key ID. For example, 1234abcd-12ab-34cd-56ef-1234567890ab.</p></li>
-    /// <li>
-    /// <p>Key alias. For example, alias/ExampleAlias.</p></li>
-    /// <li>
-    /// <p>Key ARN. For example, arn:aws:kms:us-east-1:012345678910:key/1234abcd-12ab-34cd-56ef-1234567890ab.</p></li>
-    /// <li>
-    /// <p>Alias ARN. For example, arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.</p></li>
+    /// <li> <p>Key ID. For example, 1234abcd-12ab-34cd-56ef-1234567890ab.</p> </li>
+    /// <li> <p>Key alias. For example, alias/ExampleAlias.</p> </li>
+    /// <li> <p>Key ARN. For example, arn:aws:kms:us-east-1:012345678910:key/1234abcd-12ab-34cd-56ef-1234567890ab.</p> </li>
+    /// <li> <p>Alias ARN. For example, arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.</p> </li>
     /// </ul>
     /// <p>Amazon Web Services authenticates the KMS key asynchronously. Therefore, if you specify an identifier that is not valid, the action can appear to complete, but eventually fails.</p>
     /// <p>The specified KMS key must exist in the destination Region.</p>
@@ -200,14 +184,10 @@ impl CopyImageInputBuilder {
     /// <p>The identifier of the symmetric Key Management Service (KMS) KMS key to use when creating encrypted volumes. If this parameter is not specified, your Amazon Web Services managed KMS key for Amazon EBS is used. If you specify a KMS key, you must also set the encrypted state to <code>true</code>.</p>
     /// <p>You can specify a KMS key using any of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>Key ID. For example, 1234abcd-12ab-34cd-56ef-1234567890ab.</p></li>
-    /// <li>
-    /// <p>Key alias. For example, alias/ExampleAlias.</p></li>
-    /// <li>
-    /// <p>Key ARN. For example, arn:aws:kms:us-east-1:012345678910:key/1234abcd-12ab-34cd-56ef-1234567890ab.</p></li>
-    /// <li>
-    /// <p>Alias ARN. For example, arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.</p></li>
+    /// <li> <p>Key ID. For example, 1234abcd-12ab-34cd-56ef-1234567890ab.</p> </li>
+    /// <li> <p>Key alias. For example, alias/ExampleAlias.</p> </li>
+    /// <li> <p>Key ARN. For example, arn:aws:kms:us-east-1:012345678910:key/1234abcd-12ab-34cd-56ef-1234567890ab.</p> </li>
+    /// <li> <p>Alias ARN. For example, arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.</p> </li>
     /// </ul>
     /// <p>Amazon Web Services authenticates the KMS key asynchronously. Therefore, if you specify an identifier that is not valid, the action can appear to complete, but eventually fails.</p>
     /// <p>The specified KMS key must exist in the destination Region.</p>
@@ -219,14 +199,10 @@ impl CopyImageInputBuilder {
     /// <p>The identifier of the symmetric Key Management Service (KMS) KMS key to use when creating encrypted volumes. If this parameter is not specified, your Amazon Web Services managed KMS key for Amazon EBS is used. If you specify a KMS key, you must also set the encrypted state to <code>true</code>.</p>
     /// <p>You can specify a KMS key using any of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>Key ID. For example, 1234abcd-12ab-34cd-56ef-1234567890ab.</p></li>
-    /// <li>
-    /// <p>Key alias. For example, alias/ExampleAlias.</p></li>
-    /// <li>
-    /// <p>Key ARN. For example, arn:aws:kms:us-east-1:012345678910:key/1234abcd-12ab-34cd-56ef-1234567890ab.</p></li>
-    /// <li>
-    /// <p>Alias ARN. For example, arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.</p></li>
+    /// <li> <p>Key ID. For example, 1234abcd-12ab-34cd-56ef-1234567890ab.</p> </li>
+    /// <li> <p>Key alias. For example, alias/ExampleAlias.</p> </li>
+    /// <li> <p>Key ARN. For example, arn:aws:kms:us-east-1:012345678910:key/1234abcd-12ab-34cd-56ef-1234567890ab.</p> </li>
+    /// <li> <p>Alias ARN. For example, arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.</p> </li>
     /// </ul>
     /// <p>Amazon Web Services authenticates the KMS key asynchronously. Therefore, if you specify an identifier that is not valid, the action can appear to complete, but eventually fails.</p>
     /// <p>The specified KMS key must exist in the destination Region.</p>
@@ -313,10 +289,8 @@ impl CopyImageInputBuilder {
     /// <p>Indicates whether to include your user-defined AMI tags when copying the AMI.</p>
     /// <p>The following tags will not be copied:</p>
     /// <ul>
-    /// <li>
-    /// <p>System tags (prefixed with <code>aws:</code>)</p></li>
-    /// <li>
-    /// <p>For public and shared AMIs, user-defined tags that are attached by other Amazon Web Services accounts</p></li>
+    /// <li> <p>System tags (prefixed with <code>aws:</code>)</p> </li>
+    /// <li> <p>For public and shared AMIs, user-defined tags that are attached by other Amazon Web Services accounts</p> </li>
     /// </ul>
     /// <p>Default: Your user-defined AMI tags are not copied.</p>
     pub fn copy_image_tags(mut self, input: bool) -> Self {
@@ -326,10 +300,8 @@ impl CopyImageInputBuilder {
     /// <p>Indicates whether to include your user-defined AMI tags when copying the AMI.</p>
     /// <p>The following tags will not be copied:</p>
     /// <ul>
-    /// <li>
-    /// <p>System tags (prefixed with <code>aws:</code>)</p></li>
-    /// <li>
-    /// <p>For public and shared AMIs, user-defined tags that are attached by other Amazon Web Services accounts</p></li>
+    /// <li> <p>System tags (prefixed with <code>aws:</code>)</p> </li>
+    /// <li> <p>For public and shared AMIs, user-defined tags that are attached by other Amazon Web Services accounts</p> </li>
     /// </ul>
     /// <p>Default: Your user-defined AMI tags are not copied.</p>
     pub fn set_copy_image_tags(mut self, input: ::std::option::Option<bool>) -> Self {
@@ -339,10 +311,8 @@ impl CopyImageInputBuilder {
     /// <p>Indicates whether to include your user-defined AMI tags when copying the AMI.</p>
     /// <p>The following tags will not be copied:</p>
     /// <ul>
-    /// <li>
-    /// <p>System tags (prefixed with <code>aws:</code>)</p></li>
-    /// <li>
-    /// <p>For public and shared AMIs, user-defined tags that are attached by other Amazon Web Services accounts</p></li>
+    /// <li> <p>System tags (prefixed with <code>aws:</code>)</p> </li>
+    /// <li> <p>For public and shared AMIs, user-defined tags that are attached by other Amazon Web Services accounts</p> </li>
     /// </ul>
     /// <p>Default: Your user-defined AMI tags are not copied.</p>
     pub fn get_copy_image_tags(&self) -> &::std::option::Option<bool> {

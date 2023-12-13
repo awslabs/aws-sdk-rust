@@ -22,7 +22,7 @@ impl StopSimulationInputBuilder {
 }
 /// Fluent builder constructing a request to `StopSimulation`.
 ///
-/// <p>Stops the given simulation.</p><important>
+/// <p>Stops the given simulation.</p> <important>
 /// <p>You can't restart a simulation after you stop it. If you want to restart a simulation, then you must stop it, delete it, and start a new instance of it.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

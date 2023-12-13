@@ -123,19 +123,19 @@ impl DeleteBandwidthRateLimitFluentBuilder {
         self.inner.get_gateway_arn()
     }
     /// <p>One of the BandwidthType values that indicates the gateway bandwidth rate limit to delete.</p>
-    /// <p>Valid Values: <code>UPLOAD</code> | <code>DOWNLOAD</code> | <code>ALL</code></p>
+    /// <p>Valid Values: <code>UPLOAD</code> | <code>DOWNLOAD</code> | <code>ALL</code> </p>
     pub fn bandwidth_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bandwidth_type(input.into());
         self
     }
     /// <p>One of the BandwidthType values that indicates the gateway bandwidth rate limit to delete.</p>
-    /// <p>Valid Values: <code>UPLOAD</code> | <code>DOWNLOAD</code> | <code>ALL</code></p>
+    /// <p>Valid Values: <code>UPLOAD</code> | <code>DOWNLOAD</code> | <code>ALL</code> </p>
     pub fn set_bandwidth_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bandwidth_type(input);
         self
     }
     /// <p>One of the BandwidthType values that indicates the gateway bandwidth rate limit to delete.</p>
-    /// <p>Valid Values: <code>UPLOAD</code> | <code>DOWNLOAD</code> | <code>ALL</code></p>
+    /// <p>Valid Values: <code>UPLOAD</code> | <code>DOWNLOAD</code> | <code>ALL</code> </p>
     pub fn get_bandwidth_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_bandwidth_type()
     }

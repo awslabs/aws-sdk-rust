@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportDecoderManifestInput {
-    /// <p>The name of the decoder manifest to import.</p>
+    /// <p> The name of the decoder manifest to import. </p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The file to load into an Amazon Web Services account.</p>
+    /// <p> The file to load into an Amazon Web Services account. </p>
     pub network_file_definitions: ::std::option::Option<::std::vec::Vec<crate::types::NetworkFileDefinition>>,
 }
 impl ImportDecoderManifestInput {
-    /// <p>The name of the decoder manifest to import.</p>
+    /// <p> The name of the decoder manifest to import. </p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The file to load into an Amazon Web Services account.</p>
+    /// <p> The file to load into an Amazon Web Services account. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_file_definitions.is_none()`.
     pub fn network_file_definitions(&self) -> &[crate::types::NetworkFileDefinition] {
@@ -35,18 +35,18 @@ pub struct ImportDecoderManifestInputBuilder {
     pub(crate) network_file_definitions: ::std::option::Option<::std::vec::Vec<crate::types::NetworkFileDefinition>>,
 }
 impl ImportDecoderManifestInputBuilder {
-    /// <p>The name of the decoder manifest to import.</p>
+    /// <p> The name of the decoder manifest to import. </p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the decoder manifest to import.</p>
+    /// <p> The name of the decoder manifest to import. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the decoder manifest to import.</p>
+    /// <p> The name of the decoder manifest to import. </p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
@@ -54,19 +54,19 @@ impl ImportDecoderManifestInputBuilder {
     ///
     /// To override the contents of this collection use [`set_network_file_definitions`](Self::set_network_file_definitions).
     ///
-    /// <p>The file to load into an Amazon Web Services account.</p>
+    /// <p> The file to load into an Amazon Web Services account. </p>
     pub fn network_file_definitions(mut self, input: crate::types::NetworkFileDefinition) -> Self {
         let mut v = self.network_file_definitions.unwrap_or_default();
         v.push(input);
         self.network_file_definitions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The file to load into an Amazon Web Services account.</p>
+    /// <p> The file to load into an Amazon Web Services account. </p>
     pub fn set_network_file_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkFileDefinition>>) -> Self {
         self.network_file_definitions = input;
         self
     }
-    /// <p>The file to load into an Amazon Web Services account.</p>
+    /// <p> The file to load into an Amazon Web Services account. </p>
     pub fn get_network_file_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkFileDefinition>> {
         &self.network_file_definitions
     }

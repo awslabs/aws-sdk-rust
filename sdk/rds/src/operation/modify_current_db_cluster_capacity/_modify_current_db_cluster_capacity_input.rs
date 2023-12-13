@@ -6,34 +6,30 @@ pub struct ModifyCurrentDbClusterCapacityInput {
     /// <p>The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must match the identifier of an existing DB cluster.</p></li>
+    /// <li> <p>Must match the identifier of an existing DB cluster.</p> </li>
     /// </ul>
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The DB cluster capacity.</p>
     /// <p>When you change the capacity of a paused Aurora Serverless v1 DB cluster, it automatically resumes.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>For Aurora MySQL, valid capacity values are <code>1</code>, <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>128</code>, and <code>256</code>.</p></li>
-    /// <li>
-    /// <p>For Aurora PostgreSQL, valid capacity values are <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>192</code>, and <code>384</code>.</p></li>
+    /// <li> <p>For Aurora MySQL, valid capacity values are <code>1</code>, <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>128</code>, and <code>256</code>.</p> </li>
+    /// <li> <p>For Aurora PostgreSQL, valid capacity values are <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>192</code>, and <code>384</code>.</p> </li>
     /// </ul>
     pub capacity: ::std::option::Option<i32>,
     /// <p>The amount of time, in seconds, that Aurora Serverless v1 tries to find a scaling point to perform seamless scaling before enforcing the timeout action. The default is 300.</p>
     /// <p>Specify a value between 10 and 600 seconds.</p>
     pub seconds_before_timeout: ::std::option::Option<i32>,
     /// <p>The action to take when the timeout is reached, either <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.</p>
-    /// <p><code>ForceApplyCapacityChange</code>, the default, sets the capacity to the specified value as soon as possible.</p>
-    /// <p><code>RollbackCapacityChange</code> ignores the capacity change if a scaling point isn't found in the timeout period.</p>
+    /// <p> <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the specified value as soon as possible.</p>
+    /// <p> <code>RollbackCapacityChange</code> ignores the capacity change if a scaling point isn't found in the timeout period.</p>
     pub timeout_action: ::std::option::Option<::std::string::String>,
 }
 impl ModifyCurrentDbClusterCapacityInput {
     /// <p>The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must match the identifier of an existing DB cluster.</p></li>
+    /// <li> <p>Must match the identifier of an existing DB cluster.</p> </li>
     /// </ul>
     pub fn db_cluster_identifier(&self) -> ::std::option::Option<&str> {
         self.db_cluster_identifier.as_deref()
@@ -42,10 +38,8 @@ impl ModifyCurrentDbClusterCapacityInput {
     /// <p>When you change the capacity of a paused Aurora Serverless v1 DB cluster, it automatically resumes.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>For Aurora MySQL, valid capacity values are <code>1</code>, <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>128</code>, and <code>256</code>.</p></li>
-    /// <li>
-    /// <p>For Aurora PostgreSQL, valid capacity values are <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>192</code>, and <code>384</code>.</p></li>
+    /// <li> <p>For Aurora MySQL, valid capacity values are <code>1</code>, <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>128</code>, and <code>256</code>.</p> </li>
+    /// <li> <p>For Aurora PostgreSQL, valid capacity values are <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>192</code>, and <code>384</code>.</p> </li>
     /// </ul>
     pub fn capacity(&self) -> ::std::option::Option<i32> {
         self.capacity
@@ -56,8 +50,8 @@ impl ModifyCurrentDbClusterCapacityInput {
         self.seconds_before_timeout
     }
     /// <p>The action to take when the timeout is reached, either <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.</p>
-    /// <p><code>ForceApplyCapacityChange</code>, the default, sets the capacity to the specified value as soon as possible.</p>
-    /// <p><code>RollbackCapacityChange</code> ignores the capacity change if a scaling point isn't found in the timeout period.</p>
+    /// <p> <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the specified value as soon as possible.</p>
+    /// <p> <code>RollbackCapacityChange</code> ignores the capacity change if a scaling point isn't found in the timeout period.</p>
     pub fn timeout_action(&self) -> ::std::option::Option<&str> {
         self.timeout_action.as_deref()
     }
@@ -82,8 +76,7 @@ impl ModifyCurrentDbClusterCapacityInputBuilder {
     /// <p>The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must match the identifier of an existing DB cluster.</p></li>
+    /// <li> <p>Must match the identifier of an existing DB cluster.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -93,8 +86,7 @@ impl ModifyCurrentDbClusterCapacityInputBuilder {
     /// <p>The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must match the identifier of an existing DB cluster.</p></li>
+    /// <li> <p>Must match the identifier of an existing DB cluster.</p> </li>
     /// </ul>
     pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_cluster_identifier = input;
@@ -103,8 +95,7 @@ impl ModifyCurrentDbClusterCapacityInputBuilder {
     /// <p>The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must match the identifier of an existing DB cluster.</p></li>
+    /// <li> <p>Must match the identifier of an existing DB cluster.</p> </li>
     /// </ul>
     pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_cluster_identifier
@@ -113,10 +104,8 @@ impl ModifyCurrentDbClusterCapacityInputBuilder {
     /// <p>When you change the capacity of a paused Aurora Serverless v1 DB cluster, it automatically resumes.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>For Aurora MySQL, valid capacity values are <code>1</code>, <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>128</code>, and <code>256</code>.</p></li>
-    /// <li>
-    /// <p>For Aurora PostgreSQL, valid capacity values are <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>192</code>, and <code>384</code>.</p></li>
+    /// <li> <p>For Aurora MySQL, valid capacity values are <code>1</code>, <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>128</code>, and <code>256</code>.</p> </li>
+    /// <li> <p>For Aurora PostgreSQL, valid capacity values are <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>192</code>, and <code>384</code>.</p> </li>
     /// </ul>
     pub fn capacity(mut self, input: i32) -> Self {
         self.capacity = ::std::option::Option::Some(input);
@@ -126,10 +115,8 @@ impl ModifyCurrentDbClusterCapacityInputBuilder {
     /// <p>When you change the capacity of a paused Aurora Serverless v1 DB cluster, it automatically resumes.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>For Aurora MySQL, valid capacity values are <code>1</code>, <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>128</code>, and <code>256</code>.</p></li>
-    /// <li>
-    /// <p>For Aurora PostgreSQL, valid capacity values are <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>192</code>, and <code>384</code>.</p></li>
+    /// <li> <p>For Aurora MySQL, valid capacity values are <code>1</code>, <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>128</code>, and <code>256</code>.</p> </li>
+    /// <li> <p>For Aurora PostgreSQL, valid capacity values are <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>192</code>, and <code>384</code>.</p> </li>
     /// </ul>
     pub fn set_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.capacity = input;
@@ -139,10 +126,8 @@ impl ModifyCurrentDbClusterCapacityInputBuilder {
     /// <p>When you change the capacity of a paused Aurora Serverless v1 DB cluster, it automatically resumes.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>For Aurora MySQL, valid capacity values are <code>1</code>, <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>128</code>, and <code>256</code>.</p></li>
-    /// <li>
-    /// <p>For Aurora PostgreSQL, valid capacity values are <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>192</code>, and <code>384</code>.</p></li>
+    /// <li> <p>For Aurora MySQL, valid capacity values are <code>1</code>, <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>128</code>, and <code>256</code>.</p> </li>
+    /// <li> <p>For Aurora PostgreSQL, valid capacity values are <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>192</code>, and <code>384</code>.</p> </li>
     /// </ul>
     pub fn get_capacity(&self) -> &::std::option::Option<i32> {
         &self.capacity
@@ -165,22 +150,22 @@ impl ModifyCurrentDbClusterCapacityInputBuilder {
         &self.seconds_before_timeout
     }
     /// <p>The action to take when the timeout is reached, either <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.</p>
-    /// <p><code>ForceApplyCapacityChange</code>, the default, sets the capacity to the specified value as soon as possible.</p>
-    /// <p><code>RollbackCapacityChange</code> ignores the capacity change if a scaling point isn't found in the timeout period.</p>
+    /// <p> <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the specified value as soon as possible.</p>
+    /// <p> <code>RollbackCapacityChange</code> ignores the capacity change if a scaling point isn't found in the timeout period.</p>
     pub fn timeout_action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.timeout_action = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The action to take when the timeout is reached, either <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.</p>
-    /// <p><code>ForceApplyCapacityChange</code>, the default, sets the capacity to the specified value as soon as possible.</p>
-    /// <p><code>RollbackCapacityChange</code> ignores the capacity change if a scaling point isn't found in the timeout period.</p>
+    /// <p> <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the specified value as soon as possible.</p>
+    /// <p> <code>RollbackCapacityChange</code> ignores the capacity change if a scaling point isn't found in the timeout period.</p>
     pub fn set_timeout_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.timeout_action = input;
         self
     }
     /// <p>The action to take when the timeout is reached, either <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.</p>
-    /// <p><code>ForceApplyCapacityChange</code>, the default, sets the capacity to the specified value as soon as possible.</p>
-    /// <p><code>RollbackCapacityChange</code> ignores the capacity change if a scaling point isn't found in the timeout period.</p>
+    /// <p> <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the specified value as soon as possible.</p>
+    /// <p> <code>RollbackCapacityChange</code> ignores the capacity change if a scaling point isn't found in the timeout period.</p>
     pub fn get_timeout_action(&self) -> &::std::option::Option<::std::string::String> {
         &self.timeout_action
     }

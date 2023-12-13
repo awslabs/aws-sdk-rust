@@ -9,7 +9,7 @@ pub struct UpdateVpcAttachmentInput {
     pub add_subnet_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Removes a subnet ARN from the attachment.</p>
     pub remove_subnet_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Additional options for updating the VPC attachment.</p>
+    /// <p>Additional options for updating the VPC attachment. </p>
     pub options: ::std::option::Option<crate::types::VpcOptions>,
 }
 impl UpdateVpcAttachmentInput {
@@ -29,7 +29,7 @@ impl UpdateVpcAttachmentInput {
     pub fn remove_subnet_arns(&self) -> &[::std::string::String] {
         self.remove_subnet_arns.as_deref().unwrap_or_default()
     }
-    /// <p>Additional options for updating the VPC attachment.</p>
+    /// <p>Additional options for updating the VPC attachment. </p>
     pub fn options(&self) -> ::std::option::Option<&crate::types::VpcOptions> {
         self.options.as_ref()
     }
@@ -106,17 +106,17 @@ impl UpdateVpcAttachmentInputBuilder {
     pub fn get_remove_subnet_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.remove_subnet_arns
     }
-    /// <p>Additional options for updating the VPC attachment.</p>
+    /// <p>Additional options for updating the VPC attachment. </p>
     pub fn options(mut self, input: crate::types::VpcOptions) -> Self {
         self.options = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Additional options for updating the VPC attachment.</p>
+    /// <p>Additional options for updating the VPC attachment. </p>
     pub fn set_options(mut self, input: ::std::option::Option<crate::types::VpcOptions>) -> Self {
         self.options = input;
         self
     }
-    /// <p>Additional options for updating the VPC attachment.</p>
+    /// <p>Additional options for updating the VPC attachment. </p>
     pub fn get_options(&self) -> &::std::option::Option<crate::types::VpcOptions> {
         &self.options
     }

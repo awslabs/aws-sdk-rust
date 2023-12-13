@@ -40,7 +40,7 @@ pub struct KafkaStreamingSourceOptions {
     pub add_record_timestamp: ::std::option::Option<::std::string::String>,
     /// <p>When this option is set to 'true', for each batch, it will emit the metrics for the duration between the oldest record received by the topic and the time it arrives in Glue to CloudWatch. The metric's name is "glue.driver.streaming.maxConsumerLagInMs". The default value is 'false'. This option is supported in Glue version 4.0 or later.</p>
     pub emit_consumer_lag_metrics: ::std::option::Option<::std::string::String>,
-    /// <p>The timestamp of the record in the Kafka topic to start reading data from. The possible values are a timestamp string in UTC format of the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code> (where Z represents a UTC timezone offset with a +/-. For example: "2023-04-04T08:00:00+08:00").</p>
+    /// <p>The timestamp of the record in the Kafka topic to start reading data from. The possible values are a timestamp string in UTC format of the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code> (where Z represents a UTC timezone offset with a +/-. For example: "2023-04-04T08:00:00+08:00"). </p>
     /// <p>Only one of <code>StartingTimestamp</code> or <code>StartingOffsets</code> must be set.</p>
     pub starting_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -117,7 +117,7 @@ impl KafkaStreamingSourceOptions {
     pub fn emit_consumer_lag_metrics(&self) -> ::std::option::Option<&str> {
         self.emit_consumer_lag_metrics.as_deref()
     }
-    /// <p>The timestamp of the record in the Kafka topic to start reading data from. The possible values are a timestamp string in UTC format of the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code> (where Z represents a UTC timezone offset with a +/-. For example: "2023-04-04T08:00:00+08:00").</p>
+    /// <p>The timestamp of the record in the Kafka topic to start reading data from. The possible values are a timestamp string in UTC format of the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code> (where Z represents a UTC timezone offset with a +/-. For example: "2023-04-04T08:00:00+08:00"). </p>
     /// <p>Only one of <code>StartingTimestamp</code> or <code>StartingOffsets</code> must be set.</p>
     pub fn starting_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.starting_timestamp.as_ref()
@@ -407,19 +407,19 @@ impl KafkaStreamingSourceOptionsBuilder {
     pub fn get_emit_consumer_lag_metrics(&self) -> &::std::option::Option<::std::string::String> {
         &self.emit_consumer_lag_metrics
     }
-    /// <p>The timestamp of the record in the Kafka topic to start reading data from. The possible values are a timestamp string in UTC format of the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code> (where Z represents a UTC timezone offset with a +/-. For example: "2023-04-04T08:00:00+08:00").</p>
+    /// <p>The timestamp of the record in the Kafka topic to start reading data from. The possible values are a timestamp string in UTC format of the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code> (where Z represents a UTC timezone offset with a +/-. For example: "2023-04-04T08:00:00+08:00"). </p>
     /// <p>Only one of <code>StartingTimestamp</code> or <code>StartingOffsets</code> must be set.</p>
     pub fn starting_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.starting_timestamp = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The timestamp of the record in the Kafka topic to start reading data from. The possible values are a timestamp string in UTC format of the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code> (where Z represents a UTC timezone offset with a +/-. For example: "2023-04-04T08:00:00+08:00").</p>
+    /// <p>The timestamp of the record in the Kafka topic to start reading data from. The possible values are a timestamp string in UTC format of the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code> (where Z represents a UTC timezone offset with a +/-. For example: "2023-04-04T08:00:00+08:00"). </p>
     /// <p>Only one of <code>StartingTimestamp</code> or <code>StartingOffsets</code> must be set.</p>
     pub fn set_starting_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.starting_timestamp = input;
         self
     }
-    /// <p>The timestamp of the record in the Kafka topic to start reading data from. The possible values are a timestamp string in UTC format of the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code> (where Z represents a UTC timezone offset with a +/-. For example: "2023-04-04T08:00:00+08:00").</p>
+    /// <p>The timestamp of the record in the Kafka topic to start reading data from. The possible values are a timestamp string in UTC format of the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code> (where Z represents a UTC timezone offset with a +/-. For example: "2023-04-04T08:00:00+08:00"). </p>
     /// <p>Only one of <code>StartingTimestamp</code> or <code>StartingOffsets</code> must be set.</p>
     pub fn get_starting_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.starting_timestamp

@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFeedbackOutput {
-    /// <p>Information about insight feedback received from a customer.</p>
+    /// <p> Information about insight feedback received from a customer. </p>
     pub insight_feedback: ::std::option::Option<crate::types::InsightFeedback>,
     _request_id: Option<String>,
 }
 impl DescribeFeedbackOutput {
-    /// <p>Information about insight feedback received from a customer.</p>
+    /// <p> Information about insight feedback received from a customer. </p>
     pub fn insight_feedback(&self) -> ::std::option::Option<&crate::types::InsightFeedback> {
         self.insight_feedback.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct DescribeFeedbackOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeFeedbackOutputBuilder {
-    /// <p>Information about insight feedback received from a customer.</p>
+    /// <p> Information about insight feedback received from a customer. </p>
     pub fn insight_feedback(mut self, input: crate::types::InsightFeedback) -> Self {
         self.insight_feedback = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Information about insight feedback received from a customer.</p>
+    /// <p> Information about insight feedback received from a customer. </p>
     pub fn set_insight_feedback(mut self, input: ::std::option::Option<crate::types::InsightFeedback>) -> Self {
         self.insight_feedback = input;
         self
     }
-    /// <p>Information about insight feedback received from a customer.</p>
+    /// <p> Information about insight feedback received from a customer. </p>
     pub fn get_insight_feedback(&self) -> &::std::option::Option<crate::types::InsightFeedback> {
         &self.insight_feedback
     }

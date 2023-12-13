@@ -138,10 +138,8 @@ impl DescribeCoipPoolsFluentBuilder {
     ///
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>coip-pool.local-gateway-route-table-id</code> - The ID of the local gateway route table.</p></li>
-    /// <li>
-    /// <p><code>coip-pool.pool-id</code> - The ID of the address pool.</p></li>
+    /// <li> <p> <code>coip-pool.local-gateway-route-table-id</code> - The ID of the local gateway route table.</p> </li>
+    /// <li> <p> <code>coip-pool.pool-id</code> - The ID of the address pool.</p> </li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
@@ -149,10 +147,8 @@ impl DescribeCoipPoolsFluentBuilder {
     }
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>coip-pool.local-gateway-route-table-id</code> - The ID of the local gateway route table.</p></li>
-    /// <li>
-    /// <p><code>coip-pool.pool-id</code> - The ID of the address pool.</p></li>
+    /// <li> <p> <code>coip-pool.local-gateway-route-table-id</code> - The ID of the local gateway route table.</p> </li>
+    /// <li> <p> <code>coip-pool.pool-id</code> - The ID of the address pool.</p> </li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
@@ -160,10 +156,8 @@ impl DescribeCoipPoolsFluentBuilder {
     }
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>coip-pool.local-gateway-route-table-id</code> - The ID of the local gateway route table.</p></li>
-    /// <li>
-    /// <p><code>coip-pool.pool-id</code> - The ID of the address pool.</p></li>
+    /// <li> <p> <code>coip-pool.local-gateway-route-table-id</code> - The ID of the local gateway route table.</p> </li>
+    /// <li> <p> <code>coip-pool.pool-id</code> - The ID of the address pool.</p> </li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()

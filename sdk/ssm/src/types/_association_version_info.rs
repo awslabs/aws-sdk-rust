@@ -16,7 +16,7 @@ pub struct AssociationVersionInfo {
     pub document_version: ::std::option::Option<::std::string::String>,
     /// <p>Parameters specified when the association version was created.</p>
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
-    /// <p>The targets specified for the association when the association version was created.</p>
+    /// <p>The targets specified for the association when the association version was created. </p>
     pub targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
     /// <p>The cron or rate schedule specified for the association when the association version was created.</p>
     pub schedule_expression: ::std::option::Option<::std::string::String>,
@@ -73,7 +73,7 @@ impl AssociationVersionInfo {
     pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.parameters.as_ref()
     }
-    /// <p>The targets specified for the association when the association version was created.</p>
+    /// <p>The targets specified for the association when the association version was created. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.targets.is_none()`.
     pub fn targets(&self) -> &[crate::types::Target] {
@@ -295,19 +295,19 @@ impl AssociationVersionInfoBuilder {
     ///
     /// To override the contents of this collection use [`set_targets`](Self::set_targets).
     ///
-    /// <p>The targets specified for the association when the association version was created.</p>
+    /// <p>The targets specified for the association when the association version was created. </p>
     pub fn targets(mut self, input: crate::types::Target) -> Self {
         let mut v = self.targets.unwrap_or_default();
         v.push(input);
         self.targets = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The targets specified for the association when the association version was created.</p>
+    /// <p>The targets specified for the association when the association version was created. </p>
     pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>) -> Self {
         self.targets = input;
         self
     }
-    /// <p>The targets specified for the association when the association version was created.</p>
+    /// <p>The targets specified for the association when the association version was created. </p>
     pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Target>> {
         &self.targets
     }

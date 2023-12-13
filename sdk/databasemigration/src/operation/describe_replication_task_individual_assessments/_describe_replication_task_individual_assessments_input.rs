@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeReplicationTaskIndividualAssessmentsInput {
     /// <p>Filters applied to the individual assessments described in the form of key-value pairs.</p>
-    /// <p>Valid filter names: <code>replication-task-assessment-run-arn</code>, <code>replication-task-arn</code>, <code>status</code></p>
+    /// <p>Valid filter names: <code>replication-task-assessment-run-arn</code>, <code>replication-task-arn</code>, <code>status</code> </p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
     pub max_records: ::std::option::Option<i32>,
@@ -14,7 +14,7 @@ pub struct DescribeReplicationTaskIndividualAssessmentsInput {
 }
 impl DescribeReplicationTaskIndividualAssessmentsInput {
     /// <p>Filters applied to the individual assessments described in the form of key-value pairs.</p>
-    /// <p>Valid filter names: <code>replication-task-assessment-run-arn</code>, <code>replication-task-arn</code>, <code>status</code></p>
+    /// <p>Valid filter names: <code>replication-task-assessment-run-arn</code>, <code>replication-task-arn</code>, <code>status</code> </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
     pub fn filters(&self) -> &[crate::types::Filter] {
@@ -51,7 +51,7 @@ impl DescribeReplicationTaskIndividualAssessmentsInputBuilder {
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
     /// <p>Filters applied to the individual assessments described in the form of key-value pairs.</p>
-    /// <p>Valid filter names: <code>replication-task-assessment-run-arn</code>, <code>replication-task-arn</code>, <code>status</code></p>
+    /// <p>Valid filter names: <code>replication-task-assessment-run-arn</code>, <code>replication-task-arn</code>, <code>status</code> </p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
         v.push(input);
@@ -59,13 +59,13 @@ impl DescribeReplicationTaskIndividualAssessmentsInputBuilder {
         self
     }
     /// <p>Filters applied to the individual assessments described in the form of key-value pairs.</p>
-    /// <p>Valid filter names: <code>replication-task-assessment-run-arn</code>, <code>replication-task-arn</code>, <code>status</code></p>
+    /// <p>Valid filter names: <code>replication-task-assessment-run-arn</code>, <code>replication-task-arn</code>, <code>status</code> </p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>Filters applied to the individual assessments described in the form of key-value pairs.</p>
-    /// <p>Valid filter names: <code>replication-task-assessment-run-arn</code>, <code>replication-task-arn</code>, <code>status</code></p>
+    /// <p>Valid filter names: <code>replication-task-assessment-run-arn</code>, <code>replication-task-arn</code>, <code>status</code> </p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters
     }

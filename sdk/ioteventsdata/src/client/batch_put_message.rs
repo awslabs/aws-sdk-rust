@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`BatchPutMessage`](crate::operation::batch_put_message::builders::BatchPutMessageFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`messages(Message)`](crate::operation::batch_put_message::builders::BatchPutMessageFluentBuilder::messages) / [`set_messages(Option<Vec::<Message>>)`](crate::operation::batch_put_message::builders::BatchPutMessageFluentBuilder::set_messages):<br>required: **true**<br><p>The list of messages to send. Each message has the following format: <code>'{ "messageId": "string", "inputName": "string", "payload": "string"}'</code></p><br>
+    ///   - [`messages(Message)`](crate::operation::batch_put_message::builders::BatchPutMessageFluentBuilder::messages) / [`set_messages(Option<Vec::<Message>>)`](crate::operation::batch_put_message::builders::BatchPutMessageFluentBuilder::set_messages):<br>required: **true**<br><p>The list of messages to send. Each message has the following format: <code>'{ "messageId": "string", "inputName": "string", "payload": "string"}'</code> </p><br>
     /// - On success, responds with [`BatchPutMessageOutput`](crate::operation::batch_put_message::BatchPutMessageOutput) with field(s):
     ///   - [`batch_put_message_error_entries(Option<Vec::<BatchPutMessageErrorEntry>>)`](crate::operation::batch_put_message::BatchPutMessageOutput::batch_put_message_error_entries): <p>A list of any errors encountered when sending the messages.</p>
     /// - On failure, responds with [`SdkError<BatchPutMessageError>`](crate::operation::batch_put_message::BatchPutMessageError)

@@ -9,7 +9,7 @@ pub struct CreateAdapterInput {
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The description to be assigned to the adapter being created.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The type of feature that the adapter is being trained on. Currrenly, supported feature types are: <code>QUERIES</code></p>
+    /// <p>The type of feature that the adapter is being trained on. Currrenly, supported feature types are: <code>QUERIES</code> </p>
     pub feature_types: ::std::option::Option<::std::vec::Vec<crate::types::FeatureType>>,
     /// <p>Controls whether or not the adapter should automatically update.</p>
     pub auto_update: ::std::option::Option<crate::types::AutoUpdate>,
@@ -29,7 +29,7 @@ impl CreateAdapterInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The type of feature that the adapter is being trained on. Currrenly, supported feature types are: <code>QUERIES</code></p>
+    /// <p>The type of feature that the adapter is being trained on. Currrenly, supported feature types are: <code>QUERIES</code> </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.feature_types.is_none()`.
     pub fn feature_types(&self) -> &[crate::types::FeatureType] {
@@ -110,19 +110,19 @@ impl CreateAdapterInputBuilder {
     ///
     /// To override the contents of this collection use [`set_feature_types`](Self::set_feature_types).
     ///
-    /// <p>The type of feature that the adapter is being trained on. Currrenly, supported feature types are: <code>QUERIES</code></p>
+    /// <p>The type of feature that the adapter is being trained on. Currrenly, supported feature types are: <code>QUERIES</code> </p>
     pub fn feature_types(mut self, input: crate::types::FeatureType) -> Self {
         let mut v = self.feature_types.unwrap_or_default();
         v.push(input);
         self.feature_types = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The type of feature that the adapter is being trained on. Currrenly, supported feature types are: <code>QUERIES</code></p>
+    /// <p>The type of feature that the adapter is being trained on. Currrenly, supported feature types are: <code>QUERIES</code> </p>
     pub fn set_feature_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FeatureType>>) -> Self {
         self.feature_types = input;
         self
     }
-    /// <p>The type of feature that the adapter is being trained on. Currrenly, supported feature types are: <code>QUERIES</code></p>
+    /// <p>The type of feature that the adapter is being trained on. Currrenly, supported feature types are: <code>QUERIES</code> </p>
     pub fn get_feature_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FeatureType>> {
         &self.feature_types
     }

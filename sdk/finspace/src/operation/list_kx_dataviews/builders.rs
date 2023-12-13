@@ -22,7 +22,7 @@ impl ListKxDataviewsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListKxDataviews`.
 ///
-/// <p>Returns a list of all the dataviews in the database.</p>
+/// <p> Returns a list of all the dataviews in the database.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListKxDataviewsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -128,31 +128,31 @@ impl ListKxDataviewsFluentBuilder {
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_environment_id()
     }
-    /// <p>The name of the database where the dataviews were created.</p>
+    /// <p> The name of the database where the dataviews were created.</p>
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.database_name(input.into());
         self
     }
-    /// <p>The name of the database where the dataviews were created.</p>
+    /// <p> The name of the database where the dataviews were created.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_database_name(input);
         self
     }
-    /// <p>The name of the database where the dataviews were created.</p>
+    /// <p> The name of the database where the dataviews were created.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_database_name()
     }
-    /// <p>A token that indicates where a results page should begin.</p>
+    /// <p> A token that indicates where a results page should begin. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>A token that indicates where a results page should begin.</p>
+    /// <p> A token that indicates where a results page should begin. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>A token that indicates where a results page should begin.</p>
+    /// <p> A token that indicates where a results page should begin. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

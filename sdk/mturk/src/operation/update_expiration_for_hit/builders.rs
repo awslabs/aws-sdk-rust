@@ -22,7 +22,7 @@ impl UpdateExpirationForHitInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateExpirationForHIT`.
 ///
-/// <p>The <code>UpdateExpirationForHIT</code> operation allows you update the expiration time of a HIT. If you update it to a time in the past, the HIT will be immediately expired.</p>
+/// <p> The <code>UpdateExpirationForHIT</code> operation allows you update the expiration time of a HIT. If you update it to a time in the past, the HIT will be immediately expired. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateExpirationForHITFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl UpdateExpirationForHITFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The HIT to update.</p>
+    /// <p> The HIT to update. </p>
     pub fn hit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hit_id(input.into());
         self
     }
-    /// <p>The HIT to update.</p>
+    /// <p> The HIT to update. </p>
     pub fn set_hit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hit_id(input);
         self
     }
-    /// <p>The HIT to update.</p>
+    /// <p> The HIT to update. </p>
     pub fn get_hit_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_hit_id()
     }
-    /// <p>The date and time at which you want the HIT to expire</p>
+    /// <p> The date and time at which you want the HIT to expire </p>
     pub fn expire_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.expire_at(input);
         self
     }
-    /// <p>The date and time at which you want the HIT to expire</p>
+    /// <p> The date and time at which you want the HIT to expire </p>
     pub fn set_expire_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_expire_at(input);
         self
     }
-    /// <p>The date and time at which you want the HIT to expire</p>
+    /// <p> The date and time at which you want the HIT to expire </p>
     pub fn get_expire_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_expire_at()
     }

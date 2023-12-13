@@ -5,10 +5,8 @@
 pub struct CopyProductInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>jp</code> - Japanese</p></li>
-    /// <li>
-    /// <p><code>zh</code> - Chinese</p></li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the source product.</p>
@@ -22,16 +20,14 @@ pub struct CopyProductInput {
         ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<crate::types::ProvisioningArtifactPropertyName, ::std::string::String>>>,
     /// <p>The copy options. If the value is <code>CopyTags</code>, the tags from the source product are copied to the target product.</p>
     pub copy_options: ::std::option::Option<::std::vec::Vec<crate::types::CopyOption>>,
-    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
+    /// <p> A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request. </p>
     pub idempotency_token: ::std::option::Option<::std::string::String>,
 }
 impl CopyProductInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>jp</code> - Japanese</p></li>
-    /// <li>
-    /// <p><code>zh</code> - Chinese</p></li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> ::std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -62,7 +58,7 @@ impl CopyProductInput {
     pub fn copy_options(&self) -> &[crate::types::CopyOption] {
         self.copy_options.as_deref().unwrap_or_default()
     }
-    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
+    /// <p> A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request. </p>
     pub fn idempotency_token(&self) -> ::std::option::Option<&str> {
         self.idempotency_token.as_deref()
     }
@@ -90,10 +86,8 @@ pub struct CopyProductInputBuilder {
 impl CopyProductInputBuilder {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>jp</code> - Japanese</p></li>
-    /// <li>
-    /// <p><code>zh</code> - Chinese</p></li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accept_language = ::std::option::Option::Some(input.into());
@@ -101,10 +95,8 @@ impl CopyProductInputBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>jp</code> - Japanese</p></li>
-    /// <li>
-    /// <p><code>zh</code> - Chinese</p></li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accept_language = input;
@@ -112,10 +104,8 @@ impl CopyProductInputBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>jp</code> - Japanese</p></li>
-    /// <li>
-    /// <p><code>zh</code> - Chinese</p></li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
         &self.accept_language
@@ -214,18 +204,18 @@ impl CopyProductInputBuilder {
     pub fn get_copy_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CopyOption>> {
         &self.copy_options
     }
-    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
+    /// <p> A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request. </p>
     /// This field is required.
     pub fn idempotency_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.idempotency_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
+    /// <p> A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request. </p>
     pub fn set_idempotency_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.idempotency_token = input;
         self
     }
-    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
+    /// <p> A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request. </p>
     pub fn get_idempotency_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.idempotency_token
     }

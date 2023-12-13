@@ -7,20 +7,16 @@ pub struct CreateClusterSnapshotInput {
     /// <p>A unique identifier for the snapshot that you are requesting. This identifier must be unique for all snapshots within the Amazon Web Services account.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Cannot be null, empty, or blank</p></li>
-    /// <li>
-    /// <p>Must contain from 1 to 255 alphanumeric characters or hyphens</p></li>
-    /// <li>
-    /// <p>First character must be a letter</p></li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li> <p>Cannot be null, empty, or blank</p> </li>
+    /// <li> <p>Must contain from 1 to 255 alphanumeric characters or hyphens</p> </li>
+    /// <li> <p>First character must be a letter</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
-    /// <p>Example: <code>my-snapshot-id</code></p>
+    /// <p>Example: <code>my-snapshot-id</code> </p>
     pub snapshot_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The cluster identifier for which you want a snapshot.</p>
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely.</p>
+    /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     /// <p>The default value is -1.</p>
     pub manual_snapshot_retention_period: ::std::option::Option<i32>,
@@ -31,16 +27,12 @@ impl CreateClusterSnapshotInput {
     /// <p>A unique identifier for the snapshot that you are requesting. This identifier must be unique for all snapshots within the Amazon Web Services account.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Cannot be null, empty, or blank</p></li>
-    /// <li>
-    /// <p>Must contain from 1 to 255 alphanumeric characters or hyphens</p></li>
-    /// <li>
-    /// <p>First character must be a letter</p></li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li> <p>Cannot be null, empty, or blank</p> </li>
+    /// <li> <p>Must contain from 1 to 255 alphanumeric characters or hyphens</p> </li>
+    /// <li> <p>First character must be a letter</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
-    /// <p>Example: <code>my-snapshot-id</code></p>
+    /// <p>Example: <code>my-snapshot-id</code> </p>
     pub fn snapshot_identifier(&self) -> ::std::option::Option<&str> {
         self.snapshot_identifier.as_deref()
     }
@@ -48,7 +40,7 @@ impl CreateClusterSnapshotInput {
     pub fn cluster_identifier(&self) -> ::std::option::Option<&str> {
         self.cluster_identifier.as_deref()
     }
-    /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely.</p>
+    /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     /// <p>The default value is -1.</p>
     pub fn manual_snapshot_retention_period(&self) -> ::std::option::Option<i32> {
@@ -81,16 +73,12 @@ impl CreateClusterSnapshotInputBuilder {
     /// <p>A unique identifier for the snapshot that you are requesting. This identifier must be unique for all snapshots within the Amazon Web Services account.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Cannot be null, empty, or blank</p></li>
-    /// <li>
-    /// <p>Must contain from 1 to 255 alphanumeric characters or hyphens</p></li>
-    /// <li>
-    /// <p>First character must be a letter</p></li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li> <p>Cannot be null, empty, or blank</p> </li>
+    /// <li> <p>Must contain from 1 to 255 alphanumeric characters or hyphens</p> </li>
+    /// <li> <p>First character must be a letter</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
-    /// <p>Example: <code>my-snapshot-id</code></p>
+    /// <p>Example: <code>my-snapshot-id</code> </p>
     /// This field is required.
     pub fn snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_identifier = ::std::option::Option::Some(input.into());
@@ -99,16 +87,12 @@ impl CreateClusterSnapshotInputBuilder {
     /// <p>A unique identifier for the snapshot that you are requesting. This identifier must be unique for all snapshots within the Amazon Web Services account.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Cannot be null, empty, or blank</p></li>
-    /// <li>
-    /// <p>Must contain from 1 to 255 alphanumeric characters or hyphens</p></li>
-    /// <li>
-    /// <p>First character must be a letter</p></li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li> <p>Cannot be null, empty, or blank</p> </li>
+    /// <li> <p>Must contain from 1 to 255 alphanumeric characters or hyphens</p> </li>
+    /// <li> <p>First character must be a letter</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
-    /// <p>Example: <code>my-snapshot-id</code></p>
+    /// <p>Example: <code>my-snapshot-id</code> </p>
     pub fn set_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_identifier = input;
         self
@@ -116,16 +100,12 @@ impl CreateClusterSnapshotInputBuilder {
     /// <p>A unique identifier for the snapshot that you are requesting. This identifier must be unique for all snapshots within the Amazon Web Services account.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Cannot be null, empty, or blank</p></li>
-    /// <li>
-    /// <p>Must contain from 1 to 255 alphanumeric characters or hyphens</p></li>
-    /// <li>
-    /// <p>First character must be a letter</p></li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li> <p>Cannot be null, empty, or blank</p> </li>
+    /// <li> <p>Must contain from 1 to 255 alphanumeric characters or hyphens</p> </li>
+    /// <li> <p>First character must be a letter</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
-    /// <p>Example: <code>my-snapshot-id</code></p>
+    /// <p>Example: <code>my-snapshot-id</code> </p>
     pub fn get_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.snapshot_identifier
     }
@@ -144,21 +124,21 @@ impl CreateClusterSnapshotInputBuilder {
     pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_identifier
     }
-    /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely.</p>
+    /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     /// <p>The default value is -1.</p>
     pub fn manual_snapshot_retention_period(mut self, input: i32) -> Self {
         self.manual_snapshot_retention_period = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely.</p>
+    /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     /// <p>The default value is -1.</p>
     pub fn set_manual_snapshot_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.manual_snapshot_retention_period = input;
         self
     }
-    /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely.</p>
+    /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     /// <p>The default value is -1.</p>
     pub fn get_manual_snapshot_retention_period(&self) -> &::std::option::Option<i32> {

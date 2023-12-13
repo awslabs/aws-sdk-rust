@@ -108,17 +108,17 @@ impl CreateDirectoryRegistrationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier of the Active Directory.</p>
+    /// <p> The identifier of the Active Directory.</p>
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.directory_id(input.into());
         self
     }
-    /// <p>The identifier of the Active Directory.</p>
+    /// <p> The identifier of the Active Directory.</p>
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_directory_id(input);
         self
     }
-    /// <p>The identifier of the Active Directory.</p>
+    /// <p> The identifier of the Active Directory.</p>
     pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_directory_id()
     }

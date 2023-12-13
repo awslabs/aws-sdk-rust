@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PipelineSummary {
-    /// <p>The Amazon Resource Name (ARN) of the pipeline.</p>
+    /// <p> The Amazon Resource Name (ARN) of the pipeline.</p>
     pub pipeline_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the pipeline.</p>
     pub pipeline_name: ::std::option::Option<::std::string::String>,
@@ -22,7 +22,7 @@ pub struct PipelineSummary {
     pub last_execution_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl PipelineSummary {
-    /// <p>The Amazon Resource Name (ARN) of the pipeline.</p>
+    /// <p> The Amazon Resource Name (ARN) of the pipeline.</p>
     pub fn pipeline_arn(&self) -> ::std::option::Option<&str> {
         self.pipeline_arn.as_deref()
     }
@@ -76,17 +76,17 @@ pub struct PipelineSummaryBuilder {
     pub(crate) last_execution_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl PipelineSummaryBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the pipeline.</p>
+    /// <p> The Amazon Resource Name (ARN) of the pipeline.</p>
     pub fn pipeline_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the pipeline.</p>
+    /// <p> The Amazon Resource Name (ARN) of the pipeline.</p>
     pub fn set_pipeline_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the pipeline.</p>
+    /// <p> The Amazon Resource Name (ARN) of the pipeline.</p>
     pub fn get_pipeline_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.pipeline_arn
     }

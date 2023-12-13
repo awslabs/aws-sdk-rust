@@ -8,7 +8,7 @@ pub struct UpdateGroupQueryInput {
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name or the ARN of the resource group to query.</p>
     pub group: ::std::option::Option<::std::string::String>,
-    /// <p>The resource query to determine which Amazon Web Services resources are members of this resource group.</p><note>
+    /// <p>The resource query to determine which Amazon Web Services resources are members of this resource group.</p> <note>
     /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
     /// </note>
     pub resource_query: ::std::option::Option<crate::types::ResourceQuery>,
@@ -23,7 +23,7 @@ impl UpdateGroupQueryInput {
     pub fn group(&self) -> ::std::option::Option<&str> {
         self.group.as_deref()
     }
-    /// <p>The resource query to determine which Amazon Web Services resources are members of this resource group.</p><note>
+    /// <p>The resource query to determine which Amazon Web Services resources are members of this resource group.</p> <note>
     /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
     /// </note>
     pub fn resource_query(&self) -> ::std::option::Option<&crate::types::ResourceQuery> {
@@ -77,7 +77,7 @@ impl UpdateGroupQueryInputBuilder {
     pub fn get_group(&self) -> &::std::option::Option<::std::string::String> {
         &self.group
     }
-    /// <p>The resource query to determine which Amazon Web Services resources are members of this resource group.</p><note>
+    /// <p>The resource query to determine which Amazon Web Services resources are members of this resource group.</p> <note>
     /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
     /// </note>
     /// This field is required.
@@ -85,14 +85,14 @@ impl UpdateGroupQueryInputBuilder {
         self.resource_query = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The resource query to determine which Amazon Web Services resources are members of this resource group.</p><note>
+    /// <p>The resource query to determine which Amazon Web Services resources are members of this resource group.</p> <note>
     /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
     /// </note>
     pub fn set_resource_query(mut self, input: ::std::option::Option<crate::types::ResourceQuery>) -> Self {
         self.resource_query = input;
         self
     }
-    /// <p>The resource query to determine which Amazon Web Services resources are members of this resource group.</p><note>
+    /// <p>The resource query to determine which Amazon Web Services resources are members of this resource group.</p> <note>
     /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
     /// </note>
     pub fn get_resource_query(&self) -> &::std::option::Option<crate::types::ResourceQuery> {

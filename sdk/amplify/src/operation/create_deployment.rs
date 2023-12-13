@@ -268,13 +268,13 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateDeploym
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreateDeploymentError {
-    /// <p>A request contains unexpected data.</p>
+    /// <p>A request contains unexpected data. </p>
     BadRequestException(crate::types::error::BadRequestException),
-    /// <p>The service failed to perform an operation due to an internal issue.</p>
+    /// <p>The service failed to perform an operation due to an internal issue. </p>
     InternalFailureException(crate::types::error::InternalFailureException),
-    /// <p>A resource could not be created because service quotas were exceeded.</p>
+    /// <p>A resource could not be created because service quotas were exceeded. </p>
     LimitExceededException(crate::types::error::LimitExceededException),
-    /// <p>An operation failed due to a lack of access.</p>
+    /// <p>An operation failed due to a lack of access. </p>
     UnauthorizedException(crate::types::error::UnauthorizedException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

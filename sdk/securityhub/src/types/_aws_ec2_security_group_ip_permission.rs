@@ -8,10 +8,10 @@ pub struct AwsEc2SecurityGroupIpPermission {
     /// <p>[VPC only] Use <code>-1</code> to specify all protocols.</p>
     /// <p>When authorizing security group rules, specifying <code>-1</code> or a protocol number other than <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or <code>icmpv6</code> allows traffic on all ports, regardless of any port range you specify.</p>
     /// <p>For <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you must specify a port range.</p>
-    /// <p>For <code>icmpv6</code>, the port range is optional. If you omit the port range, traffic for all types and codes is allowed.</p>
+    /// <p>For <code>icmpv6</code>, the port range is optional. If you omit the port range, traffic for all types and codes is allowed. </p>
     pub ip_protocol: ::std::option::Option<::std::string::String>,
     /// <p>The start of the port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number.</p>
-    /// <p>A value of -1 indicates all ICMP/ICMPv6 types. If you specify all ICMP/ICMPv6 types, you must specify all codes.</p>
+    /// <p>A value of -1 indicates all ICMP/ICMPv6 types. If you specify all ICMP/ICMPv6 types, you must specify all codes. </p>
     pub from_port: ::std::option::Option<i32>,
     /// <p>The end of the port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code.</p>
     /// <p>A value of <code>-1</code> indicates all ICMP/ICMPv6 codes. If you specify all ICMP/ICMPv6 types, you must specify all codes.</p>
@@ -30,12 +30,12 @@ impl AwsEc2SecurityGroupIpPermission {
     /// <p>[VPC only] Use <code>-1</code> to specify all protocols.</p>
     /// <p>When authorizing security group rules, specifying <code>-1</code> or a protocol number other than <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or <code>icmpv6</code> allows traffic on all ports, regardless of any port range you specify.</p>
     /// <p>For <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you must specify a port range.</p>
-    /// <p>For <code>icmpv6</code>, the port range is optional. If you omit the port range, traffic for all types and codes is allowed.</p>
+    /// <p>For <code>icmpv6</code>, the port range is optional. If you omit the port range, traffic for all types and codes is allowed. </p>
     pub fn ip_protocol(&self) -> ::std::option::Option<&str> {
         self.ip_protocol.as_deref()
     }
     /// <p>The start of the port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number.</p>
-    /// <p>A value of -1 indicates all ICMP/ICMPv6 types. If you specify all ICMP/ICMPv6 types, you must specify all codes.</p>
+    /// <p>A value of -1 indicates all ICMP/ICMPv6 types. If you specify all ICMP/ICMPv6 types, you must specify all codes. </p>
     pub fn from_port(&self) -> ::std::option::Option<i32> {
         self.from_port
     }
@@ -93,7 +93,7 @@ impl AwsEc2SecurityGroupIpPermissionBuilder {
     /// <p>[VPC only] Use <code>-1</code> to specify all protocols.</p>
     /// <p>When authorizing security group rules, specifying <code>-1</code> or a protocol number other than <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or <code>icmpv6</code> allows traffic on all ports, regardless of any port range you specify.</p>
     /// <p>For <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you must specify a port range.</p>
-    /// <p>For <code>icmpv6</code>, the port range is optional. If you omit the port range, traffic for all types and codes is allowed.</p>
+    /// <p>For <code>icmpv6</code>, the port range is optional. If you omit the port range, traffic for all types and codes is allowed. </p>
     pub fn ip_protocol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_protocol = ::std::option::Option::Some(input.into());
         self
@@ -102,7 +102,7 @@ impl AwsEc2SecurityGroupIpPermissionBuilder {
     /// <p>[VPC only] Use <code>-1</code> to specify all protocols.</p>
     /// <p>When authorizing security group rules, specifying <code>-1</code> or a protocol number other than <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or <code>icmpv6</code> allows traffic on all ports, regardless of any port range you specify.</p>
     /// <p>For <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you must specify a port range.</p>
-    /// <p>For <code>icmpv6</code>, the port range is optional. If you omit the port range, traffic for all types and codes is allowed.</p>
+    /// <p>For <code>icmpv6</code>, the port range is optional. If you omit the port range, traffic for all types and codes is allowed. </p>
     pub fn set_ip_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_protocol = input;
         self
@@ -111,24 +111,24 @@ impl AwsEc2SecurityGroupIpPermissionBuilder {
     /// <p>[VPC only] Use <code>-1</code> to specify all protocols.</p>
     /// <p>When authorizing security group rules, specifying <code>-1</code> or a protocol number other than <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or <code>icmpv6</code> allows traffic on all ports, regardless of any port range you specify.</p>
     /// <p>For <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you must specify a port range.</p>
-    /// <p>For <code>icmpv6</code>, the port range is optional. If you omit the port range, traffic for all types and codes is allowed.</p>
+    /// <p>For <code>icmpv6</code>, the port range is optional. If you omit the port range, traffic for all types and codes is allowed. </p>
     pub fn get_ip_protocol(&self) -> &::std::option::Option<::std::string::String> {
         &self.ip_protocol
     }
     /// <p>The start of the port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number.</p>
-    /// <p>A value of -1 indicates all ICMP/ICMPv6 types. If you specify all ICMP/ICMPv6 types, you must specify all codes.</p>
+    /// <p>A value of -1 indicates all ICMP/ICMPv6 types. If you specify all ICMP/ICMPv6 types, you must specify all codes. </p>
     pub fn from_port(mut self, input: i32) -> Self {
         self.from_port = ::std::option::Option::Some(input);
         self
     }
     /// <p>The start of the port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number.</p>
-    /// <p>A value of -1 indicates all ICMP/ICMPv6 types. If you specify all ICMP/ICMPv6 types, you must specify all codes.</p>
+    /// <p>A value of -1 indicates all ICMP/ICMPv6 types. If you specify all ICMP/ICMPv6 types, you must specify all codes. </p>
     pub fn set_from_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.from_port = input;
         self
     }
     /// <p>The start of the port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number.</p>
-    /// <p>A value of -1 indicates all ICMP/ICMPv6 types. If you specify all ICMP/ICMPv6 types, you must specify all codes.</p>
+    /// <p>A value of -1 indicates all ICMP/ICMPv6 types. If you specify all ICMP/ICMPv6 types, you must specify all codes. </p>
     pub fn get_from_port(&self) -> &::std::option::Option<i32> {
         &self.from_port
     }

@@ -24,23 +24,17 @@ impl PutLifecycleConfigurationInputBuilder {
 ///
 /// <p>Use this action to manage EFS lifecycle management and EFS Intelligent-Tiering. A <code>LifecycleConfiguration</code> consists of one or more <code>LifecyclePolicy</code> objects that define the following:</p>
 /// <ul>
-/// <li>
-/// <p><b>EFS Lifecycle management</b> - When Amazon EFS automatically transitions files in a file system into the lower-cost EFS Infrequent Access (IA) storage class.</p>
-/// <p>To enable EFS Lifecycle management, set the value of <code>TransitionToIA</code> to one of the available options.</p></li>
-/// <li>
-/// <p><b>EFS Intelligent-Tiering</b> - When Amazon EFS automatically transitions files from IA back into the file system's primary storage class (EFS Standard or EFS One Zone Standard).</p>
-/// <p>To enable EFS Intelligent-Tiering, set the value of <code>TransitionToPrimaryStorageClass</code> to <code>AFTER_1_ACCESS</code>.</p></li>
+/// <li> <p> <b>EFS Lifecycle management</b> - When Amazon EFS automatically transitions files in a file system into the lower-cost EFS Infrequent Access (IA) storage class.</p> <p>To enable EFS Lifecycle management, set the value of <code>TransitionToIA</code> to one of the available options.</p> </li>
+/// <li> <p> <b>EFS Intelligent-Tiering</b> - When Amazon EFS automatically transitions files from IA back into the file system's primary storage class (EFS Standard or EFS One Zone Standard).</p> <p>To enable EFS Intelligent-Tiering, set the value of <code>TransitionToPrimaryStorageClass</code> to <code>AFTER_1_ACCESS</code>.</p> </li>
 /// </ul>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/lifecycle-management-efs.html">EFS Lifecycle Management</a>.</p>
 /// <p>Each Amazon EFS file system supports one lifecycle configuration, which applies to all files in the file system. If a <code>LifecycleConfiguration</code> object already exists for the specified file system, a <code>PutLifecycleConfiguration</code> call modifies the existing configuration. A <code>PutLifecycleConfiguration</code> call with an empty <code>LifecyclePolicies</code> array in the request body deletes any existing <code>LifecycleConfiguration</code> and turns off lifecycle management and EFS Intelligent-Tiering for the file system.</p>
-/// <p>In the request, specify the following:</p>
+/// <p>In the request, specify the following: </p>
 /// <ul>
-/// <li>
-/// <p>The ID for the file system for which you are enabling, disabling, or modifying lifecycle management and EFS Intelligent-Tiering.</p></li>
-/// <li>
-/// <p>A <code>LifecyclePolicies</code> array of <code>LifecyclePolicy</code> objects that define when files are moved into IA storage, and when they are moved back to Standard storage.</p><note>
+/// <li> <p>The ID for the file system for which you are enabling, disabling, or modifying lifecycle management and EFS Intelligent-Tiering.</p> </li>
+/// <li> <p>A <code>LifecyclePolicies</code> array of <code>LifecyclePolicy</code> objects that define when files are moved into IA storage, and when they are moved back to Standard storage.</p> <note>
 /// <p>Amazon EFS requires that each <code>LifecyclePolicy</code> object have only have a single transition, so the <code>LifecyclePolicies</code> array needs to be structured with separate <code>LifecyclePolicy</code> objects. See the example requests in the following section for more information.</p>
-/// </note></li>
+/// </note> </li>
 /// </ul>
 /// <p>This operation requires permissions for the <code>elasticfilesystem:PutLifecycleConfiguration</code> operation.</p>
 /// <p>To apply a <code>LifecycleConfiguration</code> object to an encrypted file system, you need the same Key Management Service permissions as when you created the encrypted file system.</p>
@@ -149,11 +143,9 @@ impl PutLifecycleConfigurationFluentBuilder {
     ///
     /// <p>An array of <code>LifecyclePolicy</code> objects that define the file system's <code>LifecycleConfiguration</code> object. A <code>LifecycleConfiguration</code> object informs EFS lifecycle management and EFS Intelligent-Tiering of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>When to move files in the file system from primary storage to the IA storage class.</p></li>
-    /// <li>
-    /// <p>When to move files that are in IA storage to primary storage.</p></li>
-    /// </ul><note>
+    /// <li> <p>When to move files in the file system from primary storage to the IA storage class.</p> </li>
+    /// <li> <p>When to move files that are in IA storage to primary storage.</p> </li>
+    /// </ul> <note>
     /// <p>When using the <code>put-lifecycle-configuration</code> CLI command or the <code>PutLifecycleConfiguration</code> API action, Amazon EFS requires that each <code>LifecyclePolicy</code> object have only a single transition. This means that in a request body, <code>LifecyclePolicies</code> must be structured as an array of <code>LifecyclePolicy</code> objects, one object for each transition, <code>TransitionToIA</code>, <code>TransitionToPrimaryStorageClass</code>. See the example requests in the following section for more information.</p>
     /// </note>
     pub fn lifecycle_policies(mut self, input: crate::types::LifecyclePolicy) -> Self {
@@ -162,11 +154,9 @@ impl PutLifecycleConfigurationFluentBuilder {
     }
     /// <p>An array of <code>LifecyclePolicy</code> objects that define the file system's <code>LifecycleConfiguration</code> object. A <code>LifecycleConfiguration</code> object informs EFS lifecycle management and EFS Intelligent-Tiering of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>When to move files in the file system from primary storage to the IA storage class.</p></li>
-    /// <li>
-    /// <p>When to move files that are in IA storage to primary storage.</p></li>
-    /// </ul><note>
+    /// <li> <p>When to move files in the file system from primary storage to the IA storage class.</p> </li>
+    /// <li> <p>When to move files that are in IA storage to primary storage.</p> </li>
+    /// </ul> <note>
     /// <p>When using the <code>put-lifecycle-configuration</code> CLI command or the <code>PutLifecycleConfiguration</code> API action, Amazon EFS requires that each <code>LifecyclePolicy</code> object have only a single transition. This means that in a request body, <code>LifecyclePolicies</code> must be structured as an array of <code>LifecyclePolicy</code> objects, one object for each transition, <code>TransitionToIA</code>, <code>TransitionToPrimaryStorageClass</code>. See the example requests in the following section for more information.</p>
     /// </note>
     pub fn set_lifecycle_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicy>>) -> Self {
@@ -175,11 +165,9 @@ impl PutLifecycleConfigurationFluentBuilder {
     }
     /// <p>An array of <code>LifecyclePolicy</code> objects that define the file system's <code>LifecycleConfiguration</code> object. A <code>LifecycleConfiguration</code> object informs EFS lifecycle management and EFS Intelligent-Tiering of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>When to move files in the file system from primary storage to the IA storage class.</p></li>
-    /// <li>
-    /// <p>When to move files that are in IA storage to primary storage.</p></li>
-    /// </ul><note>
+    /// <li> <p>When to move files in the file system from primary storage to the IA storage class.</p> </li>
+    /// <li> <p>When to move files that are in IA storage to primary storage.</p> </li>
+    /// </ul> <note>
     /// <p>When using the <code>put-lifecycle-configuration</code> CLI command or the <code>PutLifecycleConfiguration</code> API action, Amazon EFS requires that each <code>LifecyclePolicy</code> object have only a single transition. This means that in a request body, <code>LifecyclePolicies</code> must be structured as an array of <code>LifecyclePolicy</code> objects, one object for each transition, <code>TransitionToIA</code>, <code>TransitionToPrimaryStorageClass</code>. See the example requests in the following section for more information.</p>
     /// </note>
     pub fn get_lifecycle_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicy>> {

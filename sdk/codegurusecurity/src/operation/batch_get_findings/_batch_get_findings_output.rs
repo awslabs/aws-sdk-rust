@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetFindingsOutput {
-    /// <p>A list of all requested findings.</p>
+    /// <p> A list of all requested findings.</p>
     pub findings: ::std::vec::Vec<crate::types::Finding>,
     /// <p>A list of errors for individual findings which were not fetched. Each BatchGetFindingsError contains the <code>scanName</code>, <code>findingId</code>, <code>errorCode</code> and error <code>message</code>.</p>
     pub failed_findings: ::std::vec::Vec<crate::types::BatchGetFindingsError>,
     _request_id: Option<String>,
 }
 impl BatchGetFindingsOutput {
-    /// <p>A list of all requested findings.</p>
+    /// <p> A list of all requested findings.</p>
     pub fn findings(&self) -> &[crate::types::Finding] {
         use std::ops::Deref;
         self.findings.deref()
@@ -46,19 +46,19 @@ impl BatchGetFindingsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_findings`](Self::set_findings).
     ///
-    /// <p>A list of all requested findings.</p>
+    /// <p> A list of all requested findings.</p>
     pub fn findings(mut self, input: crate::types::Finding) -> Self {
         let mut v = self.findings.unwrap_or_default();
         v.push(input);
         self.findings = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of all requested findings.</p>
+    /// <p> A list of all requested findings.</p>
     pub fn set_findings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Finding>>) -> Self {
         self.findings = input;
         self
     }
-    /// <p>A list of all requested findings.</p>
+    /// <p> A list of all requested findings.</p>
     pub fn get_findings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Finding>> {
         &self.findings
     }

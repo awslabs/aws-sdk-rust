@@ -14,7 +14,7 @@ pub struct TerminologyData {
     /// UNI
     /// </dt>
     /// <dd>
-    /// <p>The terminology resource has one source language (for example, the first column in a CSV file), and all of its other languages are target languages.</p>
+    /// <p>The terminology resource has one source language (for example, the first column in a CSV file), and all of its other languages are target languages. </p>
     /// </dd>
     /// <dt>
     /// MULTI
@@ -41,7 +41,7 @@ impl TerminologyData {
     /// UNI
     /// </dt>
     /// <dd>
-    /// <p>The terminology resource has one source language (for example, the first column in a CSV file), and all of its other languages are target languages.</p>
+    /// <p>The terminology resource has one source language (for example, the first column in a CSV file), and all of its other languages are target languages. </p>
     /// </dd>
     /// <dt>
     /// MULTI
@@ -116,7 +116,7 @@ impl TerminologyDataBuilder {
     /// UNI
     /// </dt>
     /// <dd>
-    /// <p>The terminology resource has one source language (for example, the first column in a CSV file), and all of its other languages are target languages.</p>
+    /// <p>The terminology resource has one source language (for example, the first column in a CSV file), and all of its other languages are target languages. </p>
     /// </dd>
     /// <dt>
     /// MULTI
@@ -136,7 +136,7 @@ impl TerminologyDataBuilder {
     /// UNI
     /// </dt>
     /// <dd>
-    /// <p>The terminology resource has one source language (for example, the first column in a CSV file), and all of its other languages are target languages.</p>
+    /// <p>The terminology resource has one source language (for example, the first column in a CSV file), and all of its other languages are target languages. </p>
     /// </dd>
     /// <dt>
     /// MULTI
@@ -156,7 +156,7 @@ impl TerminologyDataBuilder {
     /// UNI
     /// </dt>
     /// <dd>
-    /// <p>The terminology resource has one source language (for example, the first column in a CSV file), and all of its other languages are target languages.</p>
+    /// <p>The terminology resource has one source language (for example, the first column in a CSV file), and all of its other languages are target languages. </p>
     /// </dd>
     /// <dt>
     /// MULTI

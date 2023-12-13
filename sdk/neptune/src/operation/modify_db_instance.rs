@@ -245,19 +245,19 @@ pub enum ModifyDBInstanceError {
     /// <p>Specified CIDRIP or EC2 security group is not authorized for the specified DB security group.</p>
     /// <p>Neptune may not also be authorized via IAM to perform necessary actions on your behalf.</p>
     AuthorizationNotFoundFault(crate::types::error::AuthorizationNotFoundFault),
-    /// <p><i>CertificateIdentifier</i> does not refer to an existing certificate.</p>
+    /// <p> <i>CertificateIdentifier</i> does not refer to an existing certificate.</p>
     CertificateNotFoundFault(crate::types::error::CertificateNotFoundFault),
     /// <p>User already has a DB instance with the given identifier.</p>
     DbInstanceAlreadyExistsFault(crate::types::error::DbInstanceAlreadyExistsFault),
-    /// <p><i>DBInstanceIdentifier</i> does not refer to an existing DB instance.</p>
+    /// <p> <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.</p>
     DbInstanceNotFoundFault(crate::types::error::DbInstanceNotFoundFault),
-    /// <p><i>DBParameterGroupName</i> does not refer to an existing DB parameter group.</p>
+    /// <p> <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.</p>
     DbParameterGroupNotFoundFault(crate::types::error::DbParameterGroupNotFoundFault),
-    /// <p><i>DBSecurityGroupName</i> does not refer to an existing DB security group.</p>
+    /// <p> <i>DBSecurityGroupName</i> does not refer to an existing DB security group.</p>
     DbSecurityGroupNotFoundFault(crate::types::error::DbSecurityGroupNotFoundFault),
     /// <p>The DB upgrade failed because a resource the DB depends on could not be modified.</p>
     DbUpgradeDependencyFailureFault(crate::types::error::DbUpgradeDependencyFailureFault),
-    /// <p><i>Domain</i> does not refer to an existing Active Directory Domain.</p>
+    /// <p> <i>Domain</i> does not refer to an existing Active Directory Domain.</p>
     DomainNotFoundFault(crate::types::error::DomainNotFoundFault),
     /// <p>Specified DB instance class is not available in the specified Availability Zone.</p>
     InsufficientDbInstanceCapacityFault(crate::types::error::InsufficientDbInstanceCapacityFault),
@@ -273,7 +273,7 @@ pub enum ModifyDBInstanceError {
     ProvisionedIopsNotAvailableInAzFault(crate::types::error::ProvisionedIopsNotAvailableInAzFault),
     /// <p>Request would result in user exceeding the allowed amount of storage available across all DB instances.</p>
     StorageQuotaExceededFault(crate::types::error::StorageQuotaExceededFault),
-    /// <p><i>StorageType</i> specified cannot be associated with the DB Instance.</p>
+    /// <p> <i>StorageType</i> specified cannot be associated with the DB Instance.</p>
     StorageTypeNotSupportedFault(crate::types::error::StorageTypeNotSupportedFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

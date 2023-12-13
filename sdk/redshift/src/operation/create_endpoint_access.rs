@@ -245,7 +245,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateEndpoin
 pub enum CreateEndpointAccessError {
     /// <p>You are not authorized to access the cluster.</p>
     AccessToClusterDeniedFault(crate::types::error::AccessToClusterDeniedFault),
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.</p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
     ClusterNotFoundFault(crate::types::error::ClusterNotFoundFault),
     /// <p>The cluster subnet group name does not refer to an existing cluster subnet group.</p>
     ClusterSubnetGroupNotFoundFault(crate::types::error::ClusterSubnetGroupNotFoundFault),
@@ -255,9 +255,9 @@ pub enum CreateEndpointAccessError {
     EndpointsPerAuthorizationLimitExceededFault(crate::types::error::EndpointsPerAuthorizationLimitExceededFault),
     /// <p>The number of Redshift-managed VPC endpoints per cluster has exceeded its limit.</p>
     EndpointsPerClusterLimitExceededFault(crate::types::error::EndpointsPerClusterLimitExceededFault),
-    /// <p>The state of the cluster security group is not <code>available</code>.</p>
+    /// <p>The state of the cluster security group is not <code>available</code>. </p>
     InvalidClusterSecurityGroupStateFault(crate::types::error::InvalidClusterSecurityGroupStateFault),
-    /// <p>The specified cluster is not in the <code>available</code> state.</p>
+    /// <p>The specified cluster is not in the <code>available</code> state. </p>
     InvalidClusterStateFault(crate::types::error::InvalidClusterStateFault),
     /// <p>Your account is not authorized to perform the requested operation.</p>
     UnauthorizedOperation(crate::types::error::UnauthorizedOperation),

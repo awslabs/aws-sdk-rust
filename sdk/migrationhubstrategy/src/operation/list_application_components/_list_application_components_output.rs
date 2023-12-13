@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListApplicationComponentsOutput {
-    /// <p>The list of application components with detailed information about each component.</p>
+    /// <p> The list of application components with detailed information about each component. </p>
     pub application_component_infos: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationComponentDetail>>,
-    /// <p>The token you use to retrieve the next set of results, or null if there are no more results.</p>
+    /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListApplicationComponentsOutput {
-    /// <p>The list of application components with detailed information about each component.</p>
+    /// <p> The list of application components with detailed information about each component. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.application_component_infos.is_none()`.
     pub fn application_component_infos(&self) -> &[crate::types::ApplicationComponentDetail] {
         self.application_component_infos.as_deref().unwrap_or_default()
     }
-    /// <p>The token you use to retrieve the next set of results, or null if there are no more results.</p>
+    /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -46,14 +46,14 @@ impl ListApplicationComponentsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_application_component_infos`](Self::set_application_component_infos).
     ///
-    /// <p>The list of application components with detailed information about each component.</p>
+    /// <p> The list of application components with detailed information about each component. </p>
     pub fn application_component_infos(mut self, input: crate::types::ApplicationComponentDetail) -> Self {
         let mut v = self.application_component_infos.unwrap_or_default();
         v.push(input);
         self.application_component_infos = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of application components with detailed information about each component.</p>
+    /// <p> The list of application components with detailed information about each component. </p>
     pub fn set_application_component_infos(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationComponentDetail>>,
@@ -61,21 +61,21 @@ impl ListApplicationComponentsOutputBuilder {
         self.application_component_infos = input;
         self
     }
-    /// <p>The list of application components with detailed information about each component.</p>
+    /// <p> The list of application components with detailed information about each component. </p>
     pub fn get_application_component_infos(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationComponentDetail>> {
         &self.application_component_infos
     }
-    /// <p>The token you use to retrieve the next set of results, or null if there are no more results.</p>
+    /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token you use to retrieve the next set of results, or null if there are no more results.</p>
+    /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The token you use to retrieve the next set of results, or null if there are no more results.</p>
+    /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

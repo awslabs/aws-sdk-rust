@@ -23,7 +23,7 @@ impl StopTrainingDocumentClassifierInputBuilder {
 /// Fluent builder constructing a request to `StopTrainingDocumentClassifier`.
 ///
 /// <p>Stops a document classifier training job while in progress.</p>
-/// <p>If the training job state is <code>TRAINING</code>, the job is marked for termination and put into the <code>STOP_REQUESTED</code> state. If the training job completes before it can be stopped, it is put into the <code>TRAINED</code>; otherwise the training job is stopped and put into the <code>STOPPED</code> state and the service sends back an HTTP 200 response with an empty HTTP body.</p>
+/// <p>If the training job state is <code>TRAINING</code>, the job is marked for termination and put into the <code>STOP_REQUESTED</code> state. If the training job completes before it can be stopped, it is put into the <code>TRAINED</code>; otherwise the training job is stopped and put into the <code>STOPPED</code> state and the service sends back an HTTP 200 response with an empty HTTP body. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopTrainingDocumentClassifierFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

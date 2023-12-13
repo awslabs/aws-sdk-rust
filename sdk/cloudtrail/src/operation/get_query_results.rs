@@ -259,7 +259,7 @@ pub enum GetQueryResultsError {
     InvalidNextTokenException(crate::types::error::InvalidNextTokenException),
     /// <p>The request includes a parameter that is not valid.</p>
     InvalidParameterException(crate::types::error::InvalidParameterException),
-    /// <p>This exception is thrown when the management account does not have a service-linked role.</p>
+    /// <p> This exception is thrown when the management account does not have a service-linked role. </p>
     NoManagementAccountSlrExistsException(crate::types::error::NoManagementAccountSlrExistsException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
     OperationNotPermittedException(crate::types::error::OperationNotPermittedException),

@@ -6,7 +6,7 @@ pub struct UpdateCodeRepositoryInput {
     /// <p>The name of the Git repository to update.</p>
     pub code_repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The configuration of the git repository, including the URL and the Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository. The secret must have a staging label of <code>AWSCURRENT</code> and must be in the following format:</p>
-    /// <p><code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code></p>
+    /// <p> <code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code> </p>
     pub git_config: ::std::option::Option<crate::types::GitConfigForUpdate>,
 }
 impl UpdateCodeRepositoryInput {
@@ -15,7 +15,7 @@ impl UpdateCodeRepositoryInput {
         self.code_repository_name.as_deref()
     }
     /// <p>The configuration of the git repository, including the URL and the Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository. The secret must have a staging label of <code>AWSCURRENT</code> and must be in the following format:</p>
-    /// <p><code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code></p>
+    /// <p> <code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code> </p>
     pub fn git_config(&self) -> ::std::option::Option<&crate::types::GitConfigForUpdate> {
         self.git_config.as_ref()
     }
@@ -51,19 +51,19 @@ impl UpdateCodeRepositoryInputBuilder {
         &self.code_repository_name
     }
     /// <p>The configuration of the git repository, including the URL and the Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository. The secret must have a staging label of <code>AWSCURRENT</code> and must be in the following format:</p>
-    /// <p><code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code></p>
+    /// <p> <code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code> </p>
     pub fn git_config(mut self, input: crate::types::GitConfigForUpdate) -> Self {
         self.git_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration of the git repository, including the URL and the Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository. The secret must have a staging label of <code>AWSCURRENT</code> and must be in the following format:</p>
-    /// <p><code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code></p>
+    /// <p> <code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code> </p>
     pub fn set_git_config(mut self, input: ::std::option::Option<crate::types::GitConfigForUpdate>) -> Self {
         self.git_config = input;
         self
     }
     /// <p>The configuration of the git repository, including the URL and the Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository. The secret must have a staging label of <code>AWSCURRENT</code> and must be in the following format:</p>
-    /// <p><code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code></p>
+    /// <p> <code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code> </p>
     pub fn get_git_config(&self) -> &::std::option::Option<crate::types::GitConfigForUpdate> {
         &self.git_config
     }

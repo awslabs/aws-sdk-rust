@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListInstalledComponentsOutput {
-    /// <p>A list that summarizes each component on the core device.</p><note>
+    /// <p>A list that summarizes each component on the core device.</p> <note>
     /// <p>Greengrass nucleus v2.7.0 or later is required to get an accurate <code>lastStatusChangeTimestamp</code> response. This response can be inaccurate in earlier Greengrass nucleus versions.</p>
     /// </note> <note>
     /// <p>Greengrass nucleus v2.8.0 or later is required to get an accurate <code>lastInstallationSource</code> and <code>lastReportedTimestamp</code> response. This response can be inaccurate or null in earlier Greengrass nucleus versions.</p>
@@ -14,7 +14,7 @@ pub struct ListInstalledComponentsOutput {
     _request_id: Option<String>,
 }
 impl ListInstalledComponentsOutput {
-    /// <p>A list that summarizes each component on the core device.</p><note>
+    /// <p>A list that summarizes each component on the core device.</p> <note>
     /// <p>Greengrass nucleus v2.7.0 or later is required to get an accurate <code>lastStatusChangeTimestamp</code> response. This response can be inaccurate in earlier Greengrass nucleus versions.</p>
     /// </note> <note>
     /// <p>Greengrass nucleus v2.8.0 or later is required to get an accurate <code>lastInstallationSource</code> and <code>lastReportedTimestamp</code> response. This response can be inaccurate or null in earlier Greengrass nucleus versions.</p>
@@ -54,7 +54,7 @@ impl ListInstalledComponentsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_installed_components`](Self::set_installed_components).
     ///
-    /// <p>A list that summarizes each component on the core device.</p><note>
+    /// <p>A list that summarizes each component on the core device.</p> <note>
     /// <p>Greengrass nucleus v2.7.0 or later is required to get an accurate <code>lastStatusChangeTimestamp</code> response. This response can be inaccurate in earlier Greengrass nucleus versions.</p>
     /// </note> <note>
     /// <p>Greengrass nucleus v2.8.0 or later is required to get an accurate <code>lastInstallationSource</code> and <code>lastReportedTimestamp</code> response. This response can be inaccurate or null in earlier Greengrass nucleus versions.</p>
@@ -65,7 +65,7 @@ impl ListInstalledComponentsOutputBuilder {
         self.installed_components = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list that summarizes each component on the core device.</p><note>
+    /// <p>A list that summarizes each component on the core device.</p> <note>
     /// <p>Greengrass nucleus v2.7.0 or later is required to get an accurate <code>lastStatusChangeTimestamp</code> response. This response can be inaccurate in earlier Greengrass nucleus versions.</p>
     /// </note> <note>
     /// <p>Greengrass nucleus v2.8.0 or later is required to get an accurate <code>lastInstallationSource</code> and <code>lastReportedTimestamp</code> response. This response can be inaccurate or null in earlier Greengrass nucleus versions.</p>
@@ -74,7 +74,7 @@ impl ListInstalledComponentsOutputBuilder {
         self.installed_components = input;
         self
     }
-    /// <p>A list that summarizes each component on the core device.</p><note>
+    /// <p>A list that summarizes each component on the core device.</p> <note>
     /// <p>Greengrass nucleus v2.7.0 or later is required to get an accurate <code>lastStatusChangeTimestamp</code> response. This response can be inaccurate in earlier Greengrass nucleus versions.</p>
     /// </note> <note>
     /// <p>Greengrass nucleus v2.8.0 or later is required to get an accurate <code>lastInstallationSource</code> and <code>lastReportedTimestamp</code> response. This response can be inaccurate or null in earlier Greengrass nucleus versions.</p>

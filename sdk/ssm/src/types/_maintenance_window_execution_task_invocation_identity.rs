@@ -18,7 +18,7 @@ pub struct MaintenanceWindowExecutionTaskInvocationIdentity {
     pub parameters: ::std::option::Option<::std::string::String>,
     /// <p>The status of the task invocation.</p>
     pub status: ::std::option::Option<crate::types::MaintenanceWindowExecutionStatus>,
-    /// <p>The details explaining the status of the task invocation. Not available for all status values.</p>
+    /// <p>The details explaining the status of the task invocation. Not available for all status values. </p>
     pub status_details: ::std::option::Option<::std::string::String>,
     /// <p>The time the invocation started.</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -58,7 +58,7 @@ impl MaintenanceWindowExecutionTaskInvocationIdentity {
     pub fn status(&self) -> ::std::option::Option<&crate::types::MaintenanceWindowExecutionStatus> {
         self.status.as_ref()
     }
-    /// <p>The details explaining the status of the task invocation. Not available for all status values.</p>
+    /// <p>The details explaining the status of the task invocation. Not available for all status values. </p>
     pub fn status_details(&self) -> ::std::option::Option<&str> {
         self.status_details.as_deref()
     }
@@ -220,17 +220,17 @@ impl MaintenanceWindowExecutionTaskInvocationIdentityBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::MaintenanceWindowExecutionStatus> {
         &self.status
     }
-    /// <p>The details explaining the status of the task invocation. Not available for all status values.</p>
+    /// <p>The details explaining the status of the task invocation. Not available for all status values. </p>
     pub fn status_details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_details = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The details explaining the status of the task invocation. Not available for all status values.</p>
+    /// <p>The details explaining the status of the task invocation. Not available for all status values. </p>
     pub fn set_status_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_details = input;
         self
     }
-    /// <p>The details explaining the status of the task invocation. Not available for all status values.</p>
+    /// <p>The details explaining the status of the task invocation. Not available for all status values. </p>
     pub fn get_status_details(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_details
     }

@@ -243,7 +243,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeGloba
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DescribeGlobalClustersError {
-    /// <p>The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database cluster.</p>
+    /// <p>The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database cluster. </p>
     GlobalClusterNotFoundFault(crate::types::error::GlobalClusterNotFoundFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

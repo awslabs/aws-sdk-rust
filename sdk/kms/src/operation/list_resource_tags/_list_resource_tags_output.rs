@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListResourceTagsOutput {
-    /// <p>A list of tags. Each tag consists of a tag key and a tag value.</p><note>
+    /// <p>A list of tags. Each tag consists of a tag key and a tag value.</p> <note>
     /// <p>Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// </note>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -15,7 +15,7 @@ pub struct ListResourceTagsOutput {
     _request_id: Option<String>,
 }
 impl ListResourceTagsOutput {
-    /// <p>A list of tags. Each tag consists of a tag key and a tag value.</p><note>
+    /// <p>A list of tags. Each tag consists of a tag key and a tag value.</p> <note>
     /// <p>Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// </note>
     ///
@@ -59,7 +59,7 @@ impl ListResourceTagsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A list of tags. Each tag consists of a tag key and a tag value.</p><note>
+    /// <p>A list of tags. Each tag consists of a tag key and a tag value.</p> <note>
     /// <p>Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// </note>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
@@ -68,14 +68,14 @@ impl ListResourceTagsOutputBuilder {
         self.tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of tags. Each tag consists of a tag key and a tag value.</p><note>
+    /// <p>A list of tags. Each tag consists of a tag key and a tag value.</p> <note>
     /// <p>Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// </note>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>A list of tags. Each tag consists of a tag key and a tag value.</p><note>
+    /// <p>A list of tags. Each tag consists of a tag key and a tag value.</p> <note>
     /// <p>Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// </note>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {

@@ -7,7 +7,7 @@ pub struct TranslateTextOutput {
     pub translated_text: ::std::string::String,
     /// <p>The language code for the language of the source text.</p>
     pub source_language_code: ::std::string::String,
-    /// <p>The language code for the language of the target text.</p>
+    /// <p>The language code for the language of the target text. </p>
     pub target_language_code: ::std::string::String,
     /// <p>The names of the custom terminologies applied to the input text by Amazon Translate for the translated text response.</p>
     pub applied_terminologies: ::std::option::Option<::std::vec::Vec<crate::types::AppliedTerminology>>,
@@ -26,7 +26,7 @@ impl TranslateTextOutput {
         use std::ops::Deref;
         self.source_language_code.deref()
     }
-    /// <p>The language code for the language of the target text.</p>
+    /// <p>The language code for the language of the target text. </p>
     pub fn target_language_code(&self) -> &str {
         use std::ops::Deref;
         self.target_language_code.deref()
@@ -96,18 +96,18 @@ impl TranslateTextOutputBuilder {
     pub fn get_source_language_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_language_code
     }
-    /// <p>The language code for the language of the target text.</p>
+    /// <p>The language code for the language of the target text. </p>
     /// This field is required.
     pub fn target_language_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_language_code = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The language code for the language of the target text.</p>
+    /// <p>The language code for the language of the target text. </p>
     pub fn set_target_language_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_language_code = input;
         self
     }
-    /// <p>The language code for the language of the target text.</p>
+    /// <p>The language code for the language of the target text. </p>
     pub fn get_target_language_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_language_code
     }

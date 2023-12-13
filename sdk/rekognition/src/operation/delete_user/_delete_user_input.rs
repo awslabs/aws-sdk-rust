@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteUserInput {
-    /// <p>The ID of an existing collection from which the UserID needs to be deleted.</p>
+    /// <p>The ID of an existing collection from which the UserID needs to be deleted. </p>
     pub collection_id: ::std::option::Option<::std::string::String>,
-    /// <p>ID for the UserID to be deleted.</p>
+    /// <p>ID for the UserID to be deleted. </p>
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>Idempotent token used to identify the request to <code>DeleteUser</code>. If you use the same token with multiple <code>DeleteUser </code>requests, the same response is returned. Use ClientRequestToken to prevent the same request from being processed more than once.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteUserInput {
-    /// <p>The ID of an existing collection from which the UserID needs to be deleted.</p>
+    /// <p>The ID of an existing collection from which the UserID needs to be deleted. </p>
     pub fn collection_id(&self) -> ::std::option::Option<&str> {
         self.collection_id.as_deref()
     }
-    /// <p>ID for the UserID to be deleted.</p>
+    /// <p>ID for the UserID to be deleted. </p>
     pub fn user_id(&self) -> ::std::option::Option<&str> {
         self.user_id.as_deref()
     }
@@ -40,33 +40,33 @@ pub struct DeleteUserInputBuilder {
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteUserInputBuilder {
-    /// <p>The ID of an existing collection from which the UserID needs to be deleted.</p>
+    /// <p>The ID of an existing collection from which the UserID needs to be deleted. </p>
     /// This field is required.
     pub fn collection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collection_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of an existing collection from which the UserID needs to be deleted.</p>
+    /// <p>The ID of an existing collection from which the UserID needs to be deleted. </p>
     pub fn set_collection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.collection_id = input;
         self
     }
-    /// <p>The ID of an existing collection from which the UserID needs to be deleted.</p>
+    /// <p>The ID of an existing collection from which the UserID needs to be deleted. </p>
     pub fn get_collection_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.collection_id
     }
-    /// <p>ID for the UserID to be deleted.</p>
+    /// <p>ID for the UserID to be deleted. </p>
     /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>ID for the UserID to be deleted.</p>
+    /// <p>ID for the UserID to be deleted. </p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_id = input;
         self
     }
-    /// <p>ID for the UserID to be deleted.</p>
+    /// <p>ID for the UserID to be deleted. </p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_id
     }

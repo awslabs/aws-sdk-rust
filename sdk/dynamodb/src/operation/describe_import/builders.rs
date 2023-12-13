@@ -22,7 +22,7 @@ impl DescribeImportInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeImport`.
 ///
-/// <p>Represents the properties of the import.</p>
+/// <p> Represents the properties of the import. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeImportFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DescribeImportFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) associated with the table you're importing to.</p>
+    /// <p> The Amazon Resource Name (ARN) associated with the table you're importing to. </p>
     pub fn import_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.import_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) associated with the table you're importing to.</p>
+    /// <p> The Amazon Resource Name (ARN) associated with the table you're importing to. </p>
     pub fn set_import_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_import_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) associated with the table you're importing to.</p>
+    /// <p> The Amazon Resource Name (ARN) associated with the table you're importing to. </p>
     pub fn get_import_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_import_arn()
     }

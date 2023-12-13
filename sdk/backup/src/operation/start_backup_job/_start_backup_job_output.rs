@@ -5,7 +5,7 @@
 pub struct StartBackupJobOutput {
     /// <p>Uniquely identifies a request to Backup to back up a resource.</p>
     pub backup_job_id: ::std::option::Option<::std::string::String>,
-    /// <p><i>Note: This field is only returned for Amazon EFS and Advanced DynamoDB resources.</i></p>
+    /// <p> <i>Note: This field is only returned for Amazon EFS and Advanced DynamoDB resources.</i> </p>
     /// <p>An ARN that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
     pub recovery_point_arn: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that a backup job is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
@@ -19,7 +19,7 @@ impl StartBackupJobOutput {
     pub fn backup_job_id(&self) -> ::std::option::Option<&str> {
         self.backup_job_id.as_deref()
     }
-    /// <p><i>Note: This field is only returned for Amazon EFS and Advanced DynamoDB resources.</i></p>
+    /// <p> <i>Note: This field is only returned for Amazon EFS and Advanced DynamoDB resources.</i> </p>
     /// <p>An ARN that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
     pub fn recovery_point_arn(&self) -> ::std::option::Option<&str> {
         self.recovery_point_arn.as_deref()
@@ -70,19 +70,19 @@ impl StartBackupJobOutputBuilder {
     pub fn get_backup_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.backup_job_id
     }
-    /// <p><i>Note: This field is only returned for Amazon EFS and Advanced DynamoDB resources.</i></p>
+    /// <p> <i>Note: This field is only returned for Amazon EFS and Advanced DynamoDB resources.</i> </p>
     /// <p>An ARN that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
     pub fn recovery_point_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recovery_point_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p><i>Note: This field is only returned for Amazon EFS and Advanced DynamoDB resources.</i></p>
+    /// <p> <i>Note: This field is only returned for Amazon EFS and Advanced DynamoDB resources.</i> </p>
     /// <p>An ARN that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
     pub fn set_recovery_point_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recovery_point_arn = input;
         self
     }
-    /// <p><i>Note: This field is only returned for Amazon EFS and Advanced DynamoDB resources.</i></p>
+    /// <p> <i>Note: This field is only returned for Amazon EFS and Advanced DynamoDB resources.</i> </p>
     /// <p>An ARN that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
     pub fn get_recovery_point_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.recovery_point_arn

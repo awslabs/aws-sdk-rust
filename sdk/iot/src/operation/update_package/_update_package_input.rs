@@ -8,10 +8,10 @@ pub struct UpdatePackageInput {
     /// <p>The package description.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The name of the default package version.</p>
-    /// <p><b>Note:</b> You cannot name a <code>defaultVersion</code> and set <code>unsetDefaultVersion</code> equal to <code>true</code> at the same time.</p>
+    /// <p> <b>Note:</b> You cannot name a <code>defaultVersion</code> and set <code>unsetDefaultVersion</code> equal to <code>true</code> at the same time.</p>
     pub default_version_name: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates whether you want to remove the named default package version from the software package. Set as <code>true</code> to remove the default package version.</p>
-    /// <p><b>Note:</b> You cannot name a <code>defaultVersion</code> and set <code>unsetDefaultVersion</code> equal to <code>true</code> at the same time.</p>
+    /// <p>Indicates whether you want to remove the named default package version from the software package. Set as <code>true</code> to remove the default package version. </p>
+    /// <p> <b>Note:</b> You cannot name a <code>defaultVersion</code> and set <code>unsetDefaultVersion</code> equal to <code>true</code> at the same time.</p>
     pub unset_default_version: ::std::option::Option<bool>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -26,12 +26,12 @@ impl UpdatePackageInput {
         self.description.as_deref()
     }
     /// <p>The name of the default package version.</p>
-    /// <p><b>Note:</b> You cannot name a <code>defaultVersion</code> and set <code>unsetDefaultVersion</code> equal to <code>true</code> at the same time.</p>
+    /// <p> <b>Note:</b> You cannot name a <code>defaultVersion</code> and set <code>unsetDefaultVersion</code> equal to <code>true</code> at the same time.</p>
     pub fn default_version_name(&self) -> ::std::option::Option<&str> {
         self.default_version_name.as_deref()
     }
-    /// <p>Indicates whether you want to remove the named default package version from the software package. Set as <code>true</code> to remove the default package version.</p>
-    /// <p><b>Note:</b> You cannot name a <code>defaultVersion</code> and set <code>unsetDefaultVersion</code> equal to <code>true</code> at the same time.</p>
+    /// <p>Indicates whether you want to remove the named default package version from the software package. Set as <code>true</code> to remove the default package version. </p>
+    /// <p> <b>Note:</b> You cannot name a <code>defaultVersion</code> and set <code>unsetDefaultVersion</code> equal to <code>true</code> at the same time.</p>
     pub fn unset_default_version(&self) -> ::std::option::Option<bool> {
         self.unset_default_version
     }
@@ -99,36 +99,36 @@ impl UpdatePackageInputBuilder {
         &self.description
     }
     /// <p>The name of the default package version.</p>
-    /// <p><b>Note:</b> You cannot name a <code>defaultVersion</code> and set <code>unsetDefaultVersion</code> equal to <code>true</code> at the same time.</p>
+    /// <p> <b>Note:</b> You cannot name a <code>defaultVersion</code> and set <code>unsetDefaultVersion</code> equal to <code>true</code> at the same time.</p>
     pub fn default_version_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_version_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the default package version.</p>
-    /// <p><b>Note:</b> You cannot name a <code>defaultVersion</code> and set <code>unsetDefaultVersion</code> equal to <code>true</code> at the same time.</p>
+    /// <p> <b>Note:</b> You cannot name a <code>defaultVersion</code> and set <code>unsetDefaultVersion</code> equal to <code>true</code> at the same time.</p>
     pub fn set_default_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_version_name = input;
         self
     }
     /// <p>The name of the default package version.</p>
-    /// <p><b>Note:</b> You cannot name a <code>defaultVersion</code> and set <code>unsetDefaultVersion</code> equal to <code>true</code> at the same time.</p>
+    /// <p> <b>Note:</b> You cannot name a <code>defaultVersion</code> and set <code>unsetDefaultVersion</code> equal to <code>true</code> at the same time.</p>
     pub fn get_default_version_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.default_version_name
     }
-    /// <p>Indicates whether you want to remove the named default package version from the software package. Set as <code>true</code> to remove the default package version.</p>
-    /// <p><b>Note:</b> You cannot name a <code>defaultVersion</code> and set <code>unsetDefaultVersion</code> equal to <code>true</code> at the same time.</p>
+    /// <p>Indicates whether you want to remove the named default package version from the software package. Set as <code>true</code> to remove the default package version. </p>
+    /// <p> <b>Note:</b> You cannot name a <code>defaultVersion</code> and set <code>unsetDefaultVersion</code> equal to <code>true</code> at the same time.</p>
     pub fn unset_default_version(mut self, input: bool) -> Self {
         self.unset_default_version = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether you want to remove the named default package version from the software package. Set as <code>true</code> to remove the default package version.</p>
-    /// <p><b>Note:</b> You cannot name a <code>defaultVersion</code> and set <code>unsetDefaultVersion</code> equal to <code>true</code> at the same time.</p>
+    /// <p>Indicates whether you want to remove the named default package version from the software package. Set as <code>true</code> to remove the default package version. </p>
+    /// <p> <b>Note:</b> You cannot name a <code>defaultVersion</code> and set <code>unsetDefaultVersion</code> equal to <code>true</code> at the same time.</p>
     pub fn set_unset_default_version(mut self, input: ::std::option::Option<bool>) -> Self {
         self.unset_default_version = input;
         self
     }
-    /// <p>Indicates whether you want to remove the named default package version from the software package. Set as <code>true</code> to remove the default package version.</p>
-    /// <p><b>Note:</b> You cannot name a <code>defaultVersion</code> and set <code>unsetDefaultVersion</code> equal to <code>true</code> at the same time.</p>
+    /// <p>Indicates whether you want to remove the named default package version from the software package. Set as <code>true</code> to remove the default package version. </p>
+    /// <p> <b>Note:</b> You cannot name a <code>defaultVersion</code> and set <code>unsetDefaultVersion</code> equal to <code>true</code> at the same time.</p>
     pub fn get_unset_default_version(&self) -> &::std::option::Option<bool> {
         &self.unset_default_version
     }

@@ -23,7 +23,7 @@ impl DeleteApplicationReferenceDataSourceInputBuilder {
 /// Fluent builder constructing a request to `DeleteApplicationReferenceDataSource`.
 ///
 /// <p>Deletes a reference data source configuration from the specified SQL-based Kinesis Data Analytics application's configuration.</p>
-/// <p>If the application is running, Kinesis Data Analytics immediately removes the in-application table that you created using the <code>AddApplicationReferenceDataSource</code> operation.</p>
+/// <p>If the application is running, Kinesis Data Analytics immediately removes the in-application table that you created using the <code>AddApplicationReferenceDataSource</code> operation. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteApplicationReferenceDataSourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -140,17 +140,17 @@ impl DeleteApplicationReferenceDataSourceFluentBuilder {
     pub fn get_current_application_version_id(&self) -> &::std::option::Option<i64> {
         self.inner.get_current_application_version_id()
     }
-    /// <p>The ID of the reference data source. When you add a reference data source to your application using the <code>AddApplicationReferenceDataSource</code>, Kinesis Data Analytics assigns an ID. You can use the <code>DescribeApplication</code> operation to get the reference ID.</p>
+    /// <p>The ID of the reference data source. When you add a reference data source to your application using the <code>AddApplicationReferenceDataSource</code>, Kinesis Data Analytics assigns an ID. You can use the <code>DescribeApplication</code> operation to get the reference ID. </p>
     pub fn reference_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reference_id(input.into());
         self
     }
-    /// <p>The ID of the reference data source. When you add a reference data source to your application using the <code>AddApplicationReferenceDataSource</code>, Kinesis Data Analytics assigns an ID. You can use the <code>DescribeApplication</code> operation to get the reference ID.</p>
+    /// <p>The ID of the reference data source. When you add a reference data source to your application using the <code>AddApplicationReferenceDataSource</code>, Kinesis Data Analytics assigns an ID. You can use the <code>DescribeApplication</code> operation to get the reference ID. </p>
     pub fn set_reference_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_reference_id(input);
         self
     }
-    /// <p>The ID of the reference data source. When you add a reference data source to your application using the <code>AddApplicationReferenceDataSource</code>, Kinesis Data Analytics assigns an ID. You can use the <code>DescribeApplication</code> operation to get the reference ID.</p>
+    /// <p>The ID of the reference data source. When you add a reference data source to your application using the <code>AddApplicationReferenceDataSource</code>, Kinesis Data Analytics assigns an ID. You can use the <code>DescribeApplication</code> operation to get the reference ID. </p>
     pub fn get_reference_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_reference_id()
     }

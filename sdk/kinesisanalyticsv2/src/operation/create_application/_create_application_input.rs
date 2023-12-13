@@ -13,7 +13,7 @@ pub struct CreateApplicationInput {
     pub service_execution_role: ::std::option::Option<::std::string::String>,
     /// <p>Use this parameter to configure the application.</p>
     pub application_configuration: ::std::option::Option<crate::types::ApplicationConfiguration>,
-    /// <p>Use this parameter to configure an Amazon CloudWatch log stream to monitor application configuration errors.</p>
+    /// <p>Use this parameter to configure an Amazon CloudWatch log stream to monitor application configuration errors. </p>
     pub cloud_watch_logging_options: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOption>>,
     /// <p>A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an application. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using Tagging</a>.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -41,7 +41,7 @@ impl CreateApplicationInput {
     pub fn application_configuration(&self) -> ::std::option::Option<&crate::types::ApplicationConfiguration> {
         self.application_configuration.as_ref()
     }
-    /// <p>Use this parameter to configure an Amazon CloudWatch log stream to monitor application configuration errors.</p>
+    /// <p>Use this parameter to configure an Amazon CloudWatch log stream to monitor application configuration errors. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_watch_logging_options.is_none()`.
     pub fn cloud_watch_logging_options(&self) -> &[crate::types::CloudWatchLoggingOption] {
@@ -156,19 +156,19 @@ impl CreateApplicationInputBuilder {
     ///
     /// To override the contents of this collection use [`set_cloud_watch_logging_options`](Self::set_cloud_watch_logging_options).
     ///
-    /// <p>Use this parameter to configure an Amazon CloudWatch log stream to monitor application configuration errors.</p>
+    /// <p>Use this parameter to configure an Amazon CloudWatch log stream to monitor application configuration errors. </p>
     pub fn cloud_watch_logging_options(mut self, input: crate::types::CloudWatchLoggingOption) -> Self {
         let mut v = self.cloud_watch_logging_options.unwrap_or_default();
         v.push(input);
         self.cloud_watch_logging_options = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Use this parameter to configure an Amazon CloudWatch log stream to monitor application configuration errors.</p>
+    /// <p>Use this parameter to configure an Amazon CloudWatch log stream to monitor application configuration errors. </p>
     pub fn set_cloud_watch_logging_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOption>>) -> Self {
         self.cloud_watch_logging_options = input;
         self
     }
-    /// <p>Use this parameter to configure an Amazon CloudWatch log stream to monitor application configuration errors.</p>
+    /// <p>Use this parameter to configure an Amazon CloudWatch log stream to monitor application configuration errors. </p>
     pub fn get_cloud_watch_logging_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOption>> {
         &self.cloud_watch_logging_options
     }

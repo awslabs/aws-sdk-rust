@@ -22,7 +22,7 @@ impl StopRetrainingSchedulerInputBuilder {
 }
 /// Fluent builder constructing a request to `StopRetrainingScheduler`.
 ///
-/// <p>Stops a retraining scheduler.</p>
+/// <p>Stops a retraining scheduler. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopRetrainingSchedulerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

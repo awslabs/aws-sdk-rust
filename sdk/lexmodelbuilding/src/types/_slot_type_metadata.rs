@@ -8,7 +8,7 @@ pub struct SlotTypeMetadata {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the slot type.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The date that the slot type was updated. When you create a resource, the creation date and last updated date are the same.</p>
+    /// <p>The date that the slot type was updated. When you create a resource, the creation date and last updated date are the same. </p>
     pub last_updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date that the slot type was created.</p>
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -24,7 +24,7 @@ impl SlotTypeMetadata {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The date that the slot type was updated. When you create a resource, the creation date and last updated date are the same.</p>
+    /// <p>The date that the slot type was updated. When you create a resource, the creation date and last updated date are the same. </p>
     pub fn last_updated_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_date.as_ref()
     }
@@ -83,17 +83,17 @@ impl SlotTypeMetadataBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The date that the slot type was updated. When you create a resource, the creation date and last updated date are the same.</p>
+    /// <p>The date that the slot type was updated. When you create a resource, the creation date and last updated date are the same. </p>
     pub fn last_updated_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_date = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date that the slot type was updated. When you create a resource, the creation date and last updated date are the same.</p>
+    /// <p>The date that the slot type was updated. When you create a resource, the creation date and last updated date are the same. </p>
     pub fn set_last_updated_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_date = input;
         self
     }
-    /// <p>The date that the slot type was updated. When you create a resource, the creation date and last updated date are the same.</p>
+    /// <p>The date that the slot type was updated. When you create a resource, the creation date and last updated date are the same. </p>
     pub fn get_last_updated_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_date
     }

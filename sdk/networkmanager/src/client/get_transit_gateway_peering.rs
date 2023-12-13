@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`peering_id(impl Into<String>)`](crate::operation::get_transit_gateway_peering::builders::GetTransitGatewayPeeringFluentBuilder::peering_id) / [`set_peering_id(Option<String>)`](crate::operation::get_transit_gateway_peering::builders::GetTransitGatewayPeeringFluentBuilder::set_peering_id):<br>required: **true**<br><p>The ID of the peering request.</p><br>
     /// - On success, responds with [`GetTransitGatewayPeeringOutput`](crate::operation::get_transit_gateway_peering::GetTransitGatewayPeeringOutput) with field(s):
-    ///   - [`transit_gateway_peering(Option<TransitGatewayPeering>)`](crate::operation::get_transit_gateway_peering::GetTransitGatewayPeeringOutput::transit_gateway_peering): <p>Returns information about a transit gateway peering.</p>
+    ///   - [`transit_gateway_peering(Option<TransitGatewayPeering>)`](crate::operation::get_transit_gateway_peering::GetTransitGatewayPeeringOutput::transit_gateway_peering): <p>Returns information about a transit gateway peering. </p>
     /// - On failure, responds with [`SdkError<GetTransitGatewayPeeringError>`](crate::operation::get_transit_gateway_peering::GetTransitGatewayPeeringError)
     pub fn get_transit_gateway_peering(&self) -> crate::operation::get_transit_gateway_peering::builders::GetTransitGatewayPeeringFluentBuilder {
         crate::operation::get_transit_gateway_peering::builders::GetTransitGatewayPeeringFluentBuilder::new(self.handle.clone())

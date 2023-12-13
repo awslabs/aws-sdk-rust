@@ -243,13 +243,13 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ResizeCluster
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum ResizeClusterError {
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.</p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
     ClusterNotFoundFault(crate::types::error::ClusterNotFoundFault),
     /// <p>Your request cannot be completed because a dependent internal service is temporarily unavailable. Wait 30 to 60 seconds and try again.</p>
     DependentServiceUnavailableFault(crate::types::error::DependentServiceUnavailableFault),
     /// <p>The number of nodes specified exceeds the allotted capacity of the cluster.</p>
     InsufficientClusterCapacityFault(crate::types::error::InsufficientClusterCapacityFault),
-    /// <p>The specified cluster is not in the <code>available</code> state.</p>
+    /// <p>The specified cluster is not in the <code>available</code> state. </p>
     InvalidClusterStateFault(crate::types::error::InvalidClusterStateFault),
     /// <p>Indicates that the Reserved Node being exchanged is not in an active state.</p>
     InvalidReservedNodeStateFault(crate::types::error::InvalidReservedNodeStateFault),
@@ -257,7 +257,7 @@ pub enum ResizeClusterError {
     LimitExceededFault(crate::types::error::LimitExceededFault),
     /// <p>The operation would exceed the number of nodes allowed for a cluster.</p>
     NumberOfNodesPerClusterLimitExceededFault(crate::types::error::NumberOfNodesPerClusterLimitExceededFault),
-    /// <p>The operation would exceed the number of nodes allotted to the account. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+    /// <p>The operation would exceed the number of nodes allotted to the account. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
     NumberOfNodesQuotaExceededFault(crate::types::error::NumberOfNodesQuotaExceededFault),
     /// <p>User already has a reservation with the given identifier.</p>
     ReservedNodeAlreadyExistsFault(crate::types::error::ReservedNodeAlreadyExistsFault),

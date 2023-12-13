@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OpenTunnelInput {
-    /// <p>A short text description of the tunnel.</p>
+    /// <p>A short text description of the tunnel. </p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A collection of tag metadata.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -13,7 +13,7 @@ pub struct OpenTunnelInput {
     pub timeout_config: ::std::option::Option<crate::types::TimeoutConfig>,
 }
 impl OpenTunnelInput {
-    /// <p>A short text description of the tunnel.</p>
+    /// <p>A short text description of the tunnel. </p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -49,17 +49,17 @@ pub struct OpenTunnelInputBuilder {
     pub(crate) timeout_config: ::std::option::Option<crate::types::TimeoutConfig>,
 }
 impl OpenTunnelInputBuilder {
-    /// <p>A short text description of the tunnel.</p>
+    /// <p>A short text description of the tunnel. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A short text description of the tunnel.</p>
+    /// <p>A short text description of the tunnel. </p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>A short text description of the tunnel.</p>
+    /// <p>A short text description of the tunnel. </p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }

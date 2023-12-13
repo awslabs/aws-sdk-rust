@@ -23,7 +23,7 @@ impl UpdateComponentInputBuilder {
 /// Fluent builder constructing a request to `UpdateComponent`.
 ///
 /// <p>Update a component.</p>
-/// <p>There are a few modes for updating a component. The <code>deploymentType</code> field defines the mode.</p><note>
+/// <p>There are a few modes for updating a component. The <code>deploymentType</code> field defines the mode.</p> <note>
 /// <p>You can't update a component while its deployment status, or the deployment status of a service instance attached to it, is <code>IN_PROGRESS</code>.</p>
 /// </note>
 /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
@@ -130,12 +130,12 @@ impl UpdateComponentFluentBuilder {
     /// <dl>
     /// <dt></dt>
     /// <dd>
-    /// <p><code>NONE</code></p>
+    /// <p> <code>NONE</code> </p>
     /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated. You can only specify <code>description</code> in this mode.</p>
     /// </dd>
     /// <dt></dt>
     /// <dd>
-    /// <p><code>CURRENT_VERSION</code></p>
+    /// <p> <code>CURRENT_VERSION</code> </p>
     /// <p>In this mode, the component is deployed and updated with the new <code>serviceSpec</code>, <code>templateSource</code>, and/or <code>type</code> that you provide. Only requested parameters are updated.</p>
     /// </dd>
     /// </dl>
@@ -147,12 +147,12 @@ impl UpdateComponentFluentBuilder {
     /// <dl>
     /// <dt></dt>
     /// <dd>
-    /// <p><code>NONE</code></p>
+    /// <p> <code>NONE</code> </p>
     /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated. You can only specify <code>description</code> in this mode.</p>
     /// </dd>
     /// <dt></dt>
     /// <dd>
-    /// <p><code>CURRENT_VERSION</code></p>
+    /// <p> <code>CURRENT_VERSION</code> </p>
     /// <p>In this mode, the component is deployed and updated with the new <code>serviceSpec</code>, <code>templateSource</code>, and/or <code>type</code> that you provide. Only requested parameters are updated.</p>
     /// </dd>
     /// </dl>
@@ -164,12 +164,12 @@ impl UpdateComponentFluentBuilder {
     /// <dl>
     /// <dt></dt>
     /// <dd>
-    /// <p><code>NONE</code></p>
+    /// <p> <code>NONE</code> </p>
     /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated. You can only specify <code>description</code> in this mode.</p>
     /// </dd>
     /// <dt></dt>
     /// <dd>
-    /// <p><code>CURRENT_VERSION</code></p>
+    /// <p> <code>CURRENT_VERSION</code> </p>
     /// <p>In this mode, the component is deployed and updated with the new <code>serviceSpec</code>, <code>templateSource</code>, and/or <code>type</code> that you provide. Only requested parameters are updated.</p>
     /// </dd>
     /// </dl>
@@ -232,21 +232,21 @@ impl UpdateComponentFluentBuilder {
     pub fn get_service_spec(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_service_spec()
     }
-    /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p><note>
+    /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p> <note>
     /// <p>Components support a single IaC file, even if you use Terraform as your template language.</p>
     /// </note>
     pub fn template_file(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_file(input.into());
         self
     }
-    /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p><note>
+    /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p> <note>
     /// <p>Components support a single IaC file, even if you use Terraform as your template language.</p>
     /// </note>
     pub fn set_template_file(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_file(input);
         self
     }
-    /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p><note>
+    /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p> <note>
     /// <p>Components support a single IaC file, even if you use Terraform as your template language.</p>
     /// </note>
     pub fn get_template_file(&self) -> &::std::option::Option<::std::string::String> {

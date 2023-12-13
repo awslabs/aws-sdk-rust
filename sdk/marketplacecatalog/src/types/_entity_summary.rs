@@ -14,7 +14,7 @@ pub struct EntitySummary {
     pub entity_arn: ::std::option::Option<::std::string::String>,
     /// <p>The last time the entity was published, using ISO 8601 format (2018-02-27T13:45:22Z).</p>
     pub last_modified_date: ::std::option::Option<::std::string::String>,
-    /// <p>The visibility status of the entity to buyers. This value can be <code>Public</code> (everyone can view the entity), <code>Limited</code> (the entity is visible to limited accounts only), or <code>Restricted</code> (the entity was published and then unpublished and only existing buyers can view it).</p>
+    /// <p>The visibility status of the entity to buyers. This value can be <code>Public</code> (everyone can view the entity), <code>Limited</code> (the entity is visible to limited accounts only), or <code>Restricted</code> (the entity was published and then unpublished and only existing buyers can view it). </p>
     pub visibility: ::std::option::Option<::std::string::String>,
     /// <p>An object that contains summary information about the AMI product.</p>
     pub ami_product_summary: ::std::option::Option<crate::types::AmiProductSummary>,
@@ -50,7 +50,7 @@ impl EntitySummary {
     pub fn last_modified_date(&self) -> ::std::option::Option<&str> {
         self.last_modified_date.as_deref()
     }
-    /// <p>The visibility status of the entity to buyers. This value can be <code>Public</code> (everyone can view the entity), <code>Limited</code> (the entity is visible to limited accounts only), or <code>Restricted</code> (the entity was published and then unpublished and only existing buyers can view it).</p>
+    /// <p>The visibility status of the entity to buyers. This value can be <code>Public</code> (everyone can view the entity), <code>Limited</code> (the entity is visible to limited accounts only), or <code>Restricted</code> (the entity was published and then unpublished and only existing buyers can view it). </p>
     pub fn visibility(&self) -> ::std::option::Option<&str> {
         self.visibility.as_deref()
     }
@@ -174,17 +174,17 @@ impl EntitySummaryBuilder {
     pub fn get_last_modified_date(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_modified_date
     }
-    /// <p>The visibility status of the entity to buyers. This value can be <code>Public</code> (everyone can view the entity), <code>Limited</code> (the entity is visible to limited accounts only), or <code>Restricted</code> (the entity was published and then unpublished and only existing buyers can view it).</p>
+    /// <p>The visibility status of the entity to buyers. This value can be <code>Public</code> (everyone can view the entity), <code>Limited</code> (the entity is visible to limited accounts only), or <code>Restricted</code> (the entity was published and then unpublished and only existing buyers can view it). </p>
     pub fn visibility(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.visibility = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The visibility status of the entity to buyers. This value can be <code>Public</code> (everyone can view the entity), <code>Limited</code> (the entity is visible to limited accounts only), or <code>Restricted</code> (the entity was published and then unpublished and only existing buyers can view it).</p>
+    /// <p>The visibility status of the entity to buyers. This value can be <code>Public</code> (everyone can view the entity), <code>Limited</code> (the entity is visible to limited accounts only), or <code>Restricted</code> (the entity was published and then unpublished and only existing buyers can view it). </p>
     pub fn set_visibility(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.visibility = input;
         self
     }
-    /// <p>The visibility status of the entity to buyers. This value can be <code>Public</code> (everyone can view the entity), <code>Limited</code> (the entity is visible to limited accounts only), or <code>Restricted</code> (the entity was published and then unpublished and only existing buyers can view it).</p>
+    /// <p>The visibility status of the entity to buyers. This value can be <code>Public</code> (everyone can view the entity), <code>Limited</code> (the entity is visible to limited accounts only), or <code>Restricted</code> (the entity was published and then unpublished and only existing buyers can view it). </p>
     pub fn get_visibility(&self) -> &::std::option::Option<::std::string::String> {
         &self.visibility
     }

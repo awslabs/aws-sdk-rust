@@ -19,7 +19,7 @@ impl CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation`.
 ///
-/// <p>Creates a local gateway route table virtual interface group association.</p>
+/// <p> Creates a local gateway route table virtual interface group association. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -93,31 +93,31 @@ impl CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the local gateway route table.</p>
+    /// <p> The ID of the local gateway route table. </p>
     pub fn local_gateway_route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.local_gateway_route_table_id(input.into());
         self
     }
-    /// <p>The ID of the local gateway route table.</p>
+    /// <p> The ID of the local gateway route table. </p>
     pub fn set_local_gateway_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_local_gateway_route_table_id(input);
         self
     }
-    /// <p>The ID of the local gateway route table.</p>
+    /// <p> The ID of the local gateway route table. </p>
     pub fn get_local_gateway_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_local_gateway_route_table_id()
     }
-    /// <p>The ID of the local gateway route table virtual interface group association.</p>
+    /// <p> The ID of the local gateway route table virtual interface group association. </p>
     pub fn local_gateway_virtual_interface_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.local_gateway_virtual_interface_group_id(input.into());
         self
     }
-    /// <p>The ID of the local gateway route table virtual interface group association.</p>
+    /// <p> The ID of the local gateway route table virtual interface group association. </p>
     pub fn set_local_gateway_virtual_interface_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_local_gateway_virtual_interface_group_id(input);
         self
     }
-    /// <p>The ID of the local gateway route table virtual interface group association.</p>
+    /// <p> The ID of the local gateway route table virtual interface group association. </p>
     pub fn get_local_gateway_virtual_interface_group_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_local_gateway_virtual_interface_group_id()
     }
@@ -125,17 +125,17 @@ impl CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
     ///
-    /// <p>The tags assigned to the local gateway route table virtual interface group association.</p>
+    /// <p> The tags assigned to the local gateway route table virtual interface group association. </p>
     pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
         self.inner = self.inner.tag_specifications(input);
         self
     }
-    /// <p>The tags assigned to the local gateway route table virtual interface group association.</p>
+    /// <p> The tags assigned to the local gateway route table virtual interface group association. </p>
     pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
-    /// <p>The tags assigned to the local gateway route table virtual interface group association.</p>
+    /// <p> The tags assigned to the local gateway route table virtual interface group association. </p>
     pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
     }

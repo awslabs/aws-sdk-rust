@@ -16,10 +16,8 @@ pub struct TopBottomRankedComputation {
     pub result_size: ::std::option::Option<i32>,
     /// <p>The computation type. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p>TOP: A top ranked computation.</p></li>
-    /// <li>
-    /// <p>BOTTOM: A bottom ranked computation.</p></li>
+    /// <li> <p>TOP: A top ranked computation.</p> </li>
+    /// <li> <p>BOTTOM: A bottom ranked computation.</p> </li>
     /// </ul>
     pub r#type: crate::types::TopBottomComputationType,
 }
@@ -47,10 +45,8 @@ impl TopBottomRankedComputation {
     }
     /// <p>The computation type. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p>TOP: A top ranked computation.</p></li>
-    /// <li>
-    /// <p>BOTTOM: A bottom ranked computation.</p></li>
+    /// <li> <p>TOP: A top ranked computation.</p> </li>
+    /// <li> <p>BOTTOM: A bottom ranked computation.</p> </li>
     /// </ul>
     pub fn r#type(&self) -> &crate::types::TopBottomComputationType {
         &self.r#type
@@ -148,10 +144,8 @@ impl TopBottomRankedComputationBuilder {
     }
     /// <p>The computation type. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p>TOP: A top ranked computation.</p></li>
-    /// <li>
-    /// <p>BOTTOM: A bottom ranked computation.</p></li>
+    /// <li> <p>TOP: A top ranked computation.</p> </li>
+    /// <li> <p>BOTTOM: A bottom ranked computation.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::TopBottomComputationType) -> Self {
@@ -160,10 +154,8 @@ impl TopBottomRankedComputationBuilder {
     }
     /// <p>The computation type. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p>TOP: A top ranked computation.</p></li>
-    /// <li>
-    /// <p>BOTTOM: A bottom ranked computation.</p></li>
+    /// <li> <p>TOP: A top ranked computation.</p> </li>
+    /// <li> <p>BOTTOM: A bottom ranked computation.</p> </li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::TopBottomComputationType>) -> Self {
         self.r#type = input;
@@ -171,10 +163,8 @@ impl TopBottomRankedComputationBuilder {
     }
     /// <p>The computation type. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p>TOP: A top ranked computation.</p></li>
-    /// <li>
-    /// <p>BOTTOM: A bottom ranked computation.</p></li>
+    /// <li> <p>TOP: A top ranked computation.</p> </li>
+    /// <li> <p>BOTTOM: A bottom ranked computation.</p> </li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::TopBottomComputationType> {
         &self.r#type

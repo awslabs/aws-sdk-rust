@@ -6,72 +6,49 @@
 pub struct OperationFilter {
     /// <p>Specify the operations that you want to get:</p>
     /// <ul>
-    /// <li>
-    /// <p><b>NAMESPACE_ID</b>: Gets operations related to specified namespaces.</p></li>
-    /// <li>
-    /// <p><b>SERVICE_ID</b>: Gets operations related to specified services.</p></li>
-    /// <li>
-    /// <p><b>STATUS</b>: Gets operations based on the status of the operations: <code>SUBMITTED</code>, <code>PENDING</code>, <code>SUCCEED</code>, or <code>FAIL</code>.</p></li>
-    /// <li>
-    /// <p><b>TYPE</b>: Gets specified types of operation.</p></li>
-    /// <li>
-    /// <p><b>UPDATE_DATE</b>: Gets operations that changed status during a specified date/time range.</p></li>
+    /// <li> <p> <b>NAMESPACE_ID</b>: Gets operations related to specified namespaces.</p> </li>
+    /// <li> <p> <b>SERVICE_ID</b>: Gets operations related to specified services.</p> </li>
+    /// <li> <p> <b>STATUS</b>: Gets operations based on the status of the operations: <code>SUBMITTED</code>, <code>PENDING</code>, <code>SUCCEED</code>, or <code>FAIL</code>.</p> </li>
+    /// <li> <p> <b>TYPE</b>: Gets specified types of operation.</p> </li>
+    /// <li> <p> <b>UPDATE_DATE</b>: Gets operations that changed status during a specified date/time range. </p> </li>
     /// </ul>
     pub name: crate::types::OperationFilterName,
-    /// <p>Specify values that are applicable to the value that you specify for <code>Name</code>:</p>
+    /// <p>Specify values that are applicable to the value that you specify for <code>Name</code>: </p>
     /// <ul>
-    /// <li>
-    /// <p><b>NAMESPACE_ID</b>: Specify one namespace ID.</p></li>
-    /// <li>
-    /// <p><b>SERVICE_ID</b>: Specify one service ID.</p></li>
-    /// <li>
-    /// <p><b>STATUS</b>: Specify one or more statuses: <code>SUBMITTED</code>, <code>PENDING</code>, <code>SUCCEED</code>, or <code>FAIL</code>.</p></li>
-    /// <li>
-    /// <p><b>TYPE</b>: Specify one or more of the following types: <code>CREATE_NAMESPACE</code>, <code>DELETE_NAMESPACE</code>, <code>UPDATE_SERVICE</code>, <code>REGISTER_INSTANCE</code>, or <code>DEREGISTER_INSTANCE</code>.</p></li>
-    /// <li>
-    /// <p><b>UPDATE_DATE</b>: Specify a start date and an end date in Unix date/time format and Coordinated Universal Time (UTC). The start date must be the first value.</p></li>
+    /// <li> <p> <b>NAMESPACE_ID</b>: Specify one namespace ID.</p> </li>
+    /// <li> <p> <b>SERVICE_ID</b>: Specify one service ID.</p> </li>
+    /// <li> <p> <b>STATUS</b>: Specify one or more statuses: <code>SUBMITTED</code>, <code>PENDING</code>, <code>SUCCEED</code>, or <code>FAIL</code>.</p> </li>
+    /// <li> <p> <b>TYPE</b>: Specify one or more of the following types: <code>CREATE_NAMESPACE</code>, <code>DELETE_NAMESPACE</code>, <code>UPDATE_SERVICE</code>, <code>REGISTER_INSTANCE</code>, or <code>DEREGISTER_INSTANCE</code>.</p> </li>
+    /// <li> <p> <b>UPDATE_DATE</b>: Specify a start date and an end date in Unix date/time format and Coordinated Universal Time (UTC). The start date must be the first value.</p> </li>
     /// </ul>
     pub values: ::std::vec::Vec<::std::string::String>,
     /// <p>The operator that you want to use to determine whether an operation matches the specified value. Valid values for condition include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>EQ</code>: When you specify <code>EQ</code> for the condition, you can specify only one value. <code>EQ</code> is supported for <code>NAMESPACE_ID</code>, <code>SERVICE_ID</code>, <code>STATUS</code>, and <code>TYPE</code>. <code>EQ</code> is the default condition and can be omitted.</p></li>
-    /// <li>
-    /// <p><code>IN</code>: When you specify <code>IN</code> for the condition, you can specify a list of one or more values. <code>IN</code> is supported for <code>STATUS</code> and <code>TYPE</code>. An operation must match one of the specified values to be returned in the response.</p></li>
-    /// <li>
-    /// <p><code>BETWEEN</code>: Specify a start date and an end date in Unix date/time format and Coordinated Universal Time (UTC). The start date must be the first value. <code>BETWEEN</code> is supported for <code>UPDATE_DATE</code>.</p></li>
+    /// <li> <p> <code>EQ</code>: When you specify <code>EQ</code> for the condition, you can specify only one value. <code>EQ</code> is supported for <code>NAMESPACE_ID</code>, <code>SERVICE_ID</code>, <code>STATUS</code>, and <code>TYPE</code>. <code>EQ</code> is the default condition and can be omitted.</p> </li>
+    /// <li> <p> <code>IN</code>: When you specify <code>IN</code> for the condition, you can specify a list of one or more values. <code>IN</code> is supported for <code>STATUS</code> and <code>TYPE</code>. An operation must match one of the specified values to be returned in the response.</p> </li>
+    /// <li> <p> <code>BETWEEN</code>: Specify a start date and an end date in Unix date/time format and Coordinated Universal Time (UTC). The start date must be the first value. <code>BETWEEN</code> is supported for <code>UPDATE_DATE</code>. </p> </li>
     /// </ul>
     pub condition: ::std::option::Option<crate::types::FilterCondition>,
 }
 impl OperationFilter {
     /// <p>Specify the operations that you want to get:</p>
     /// <ul>
-    /// <li>
-    /// <p><b>NAMESPACE_ID</b>: Gets operations related to specified namespaces.</p></li>
-    /// <li>
-    /// <p><b>SERVICE_ID</b>: Gets operations related to specified services.</p></li>
-    /// <li>
-    /// <p><b>STATUS</b>: Gets operations based on the status of the operations: <code>SUBMITTED</code>, <code>PENDING</code>, <code>SUCCEED</code>, or <code>FAIL</code>.</p></li>
-    /// <li>
-    /// <p><b>TYPE</b>: Gets specified types of operation.</p></li>
-    /// <li>
-    /// <p><b>UPDATE_DATE</b>: Gets operations that changed status during a specified date/time range.</p></li>
+    /// <li> <p> <b>NAMESPACE_ID</b>: Gets operations related to specified namespaces.</p> </li>
+    /// <li> <p> <b>SERVICE_ID</b>: Gets operations related to specified services.</p> </li>
+    /// <li> <p> <b>STATUS</b>: Gets operations based on the status of the operations: <code>SUBMITTED</code>, <code>PENDING</code>, <code>SUCCEED</code>, or <code>FAIL</code>.</p> </li>
+    /// <li> <p> <b>TYPE</b>: Gets specified types of operation.</p> </li>
+    /// <li> <p> <b>UPDATE_DATE</b>: Gets operations that changed status during a specified date/time range. </p> </li>
     /// </ul>
     pub fn name(&self) -> &crate::types::OperationFilterName {
         &self.name
     }
-    /// <p>Specify values that are applicable to the value that you specify for <code>Name</code>:</p>
+    /// <p>Specify values that are applicable to the value that you specify for <code>Name</code>: </p>
     /// <ul>
-    /// <li>
-    /// <p><b>NAMESPACE_ID</b>: Specify one namespace ID.</p></li>
-    /// <li>
-    /// <p><b>SERVICE_ID</b>: Specify one service ID.</p></li>
-    /// <li>
-    /// <p><b>STATUS</b>: Specify one or more statuses: <code>SUBMITTED</code>, <code>PENDING</code>, <code>SUCCEED</code>, or <code>FAIL</code>.</p></li>
-    /// <li>
-    /// <p><b>TYPE</b>: Specify one or more of the following types: <code>CREATE_NAMESPACE</code>, <code>DELETE_NAMESPACE</code>, <code>UPDATE_SERVICE</code>, <code>REGISTER_INSTANCE</code>, or <code>DEREGISTER_INSTANCE</code>.</p></li>
-    /// <li>
-    /// <p><b>UPDATE_DATE</b>: Specify a start date and an end date in Unix date/time format and Coordinated Universal Time (UTC). The start date must be the first value.</p></li>
+    /// <li> <p> <b>NAMESPACE_ID</b>: Specify one namespace ID.</p> </li>
+    /// <li> <p> <b>SERVICE_ID</b>: Specify one service ID.</p> </li>
+    /// <li> <p> <b>STATUS</b>: Specify one or more statuses: <code>SUBMITTED</code>, <code>PENDING</code>, <code>SUCCEED</code>, or <code>FAIL</code>.</p> </li>
+    /// <li> <p> <b>TYPE</b>: Specify one or more of the following types: <code>CREATE_NAMESPACE</code>, <code>DELETE_NAMESPACE</code>, <code>UPDATE_SERVICE</code>, <code>REGISTER_INSTANCE</code>, or <code>DEREGISTER_INSTANCE</code>.</p> </li>
+    /// <li> <p> <b>UPDATE_DATE</b>: Specify a start date and an end date in Unix date/time format and Coordinated Universal Time (UTC). The start date must be the first value.</p> </li>
     /// </ul>
     pub fn values(&self) -> &[::std::string::String] {
         use std::ops::Deref;
@@ -79,12 +56,9 @@ impl OperationFilter {
     }
     /// <p>The operator that you want to use to determine whether an operation matches the specified value. Valid values for condition include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>EQ</code>: When you specify <code>EQ</code> for the condition, you can specify only one value. <code>EQ</code> is supported for <code>NAMESPACE_ID</code>, <code>SERVICE_ID</code>, <code>STATUS</code>, and <code>TYPE</code>. <code>EQ</code> is the default condition and can be omitted.</p></li>
-    /// <li>
-    /// <p><code>IN</code>: When you specify <code>IN</code> for the condition, you can specify a list of one or more values. <code>IN</code> is supported for <code>STATUS</code> and <code>TYPE</code>. An operation must match one of the specified values to be returned in the response.</p></li>
-    /// <li>
-    /// <p><code>BETWEEN</code>: Specify a start date and an end date in Unix date/time format and Coordinated Universal Time (UTC). The start date must be the first value. <code>BETWEEN</code> is supported for <code>UPDATE_DATE</code>.</p></li>
+    /// <li> <p> <code>EQ</code>: When you specify <code>EQ</code> for the condition, you can specify only one value. <code>EQ</code> is supported for <code>NAMESPACE_ID</code>, <code>SERVICE_ID</code>, <code>STATUS</code>, and <code>TYPE</code>. <code>EQ</code> is the default condition and can be omitted.</p> </li>
+    /// <li> <p> <code>IN</code>: When you specify <code>IN</code> for the condition, you can specify a list of one or more values. <code>IN</code> is supported for <code>STATUS</code> and <code>TYPE</code>. An operation must match one of the specified values to be returned in the response.</p> </li>
+    /// <li> <p> <code>BETWEEN</code>: Specify a start date and an end date in Unix date/time format and Coordinated Universal Time (UTC). The start date must be the first value. <code>BETWEEN</code> is supported for <code>UPDATE_DATE</code>. </p> </li>
     /// </ul>
     pub fn condition(&self) -> ::std::option::Option<&crate::types::FilterCondition> {
         self.condition.as_ref()
@@ -108,16 +82,11 @@ pub struct OperationFilterBuilder {
 impl OperationFilterBuilder {
     /// <p>Specify the operations that you want to get:</p>
     /// <ul>
-    /// <li>
-    /// <p><b>NAMESPACE_ID</b>: Gets operations related to specified namespaces.</p></li>
-    /// <li>
-    /// <p><b>SERVICE_ID</b>: Gets operations related to specified services.</p></li>
-    /// <li>
-    /// <p><b>STATUS</b>: Gets operations based on the status of the operations: <code>SUBMITTED</code>, <code>PENDING</code>, <code>SUCCEED</code>, or <code>FAIL</code>.</p></li>
-    /// <li>
-    /// <p><b>TYPE</b>: Gets specified types of operation.</p></li>
-    /// <li>
-    /// <p><b>UPDATE_DATE</b>: Gets operations that changed status during a specified date/time range.</p></li>
+    /// <li> <p> <b>NAMESPACE_ID</b>: Gets operations related to specified namespaces.</p> </li>
+    /// <li> <p> <b>SERVICE_ID</b>: Gets operations related to specified services.</p> </li>
+    /// <li> <p> <b>STATUS</b>: Gets operations based on the status of the operations: <code>SUBMITTED</code>, <code>PENDING</code>, <code>SUCCEED</code>, or <code>FAIL</code>.</p> </li>
+    /// <li> <p> <b>TYPE</b>: Gets specified types of operation.</p> </li>
+    /// <li> <p> <b>UPDATE_DATE</b>: Gets operations that changed status during a specified date/time range. </p> </li>
     /// </ul>
     /// This field is required.
     pub fn name(mut self, input: crate::types::OperationFilterName) -> Self {
@@ -126,16 +95,11 @@ impl OperationFilterBuilder {
     }
     /// <p>Specify the operations that you want to get:</p>
     /// <ul>
-    /// <li>
-    /// <p><b>NAMESPACE_ID</b>: Gets operations related to specified namespaces.</p></li>
-    /// <li>
-    /// <p><b>SERVICE_ID</b>: Gets operations related to specified services.</p></li>
-    /// <li>
-    /// <p><b>STATUS</b>: Gets operations based on the status of the operations: <code>SUBMITTED</code>, <code>PENDING</code>, <code>SUCCEED</code>, or <code>FAIL</code>.</p></li>
-    /// <li>
-    /// <p><b>TYPE</b>: Gets specified types of operation.</p></li>
-    /// <li>
-    /// <p><b>UPDATE_DATE</b>: Gets operations that changed status during a specified date/time range.</p></li>
+    /// <li> <p> <b>NAMESPACE_ID</b>: Gets operations related to specified namespaces.</p> </li>
+    /// <li> <p> <b>SERVICE_ID</b>: Gets operations related to specified services.</p> </li>
+    /// <li> <p> <b>STATUS</b>: Gets operations based on the status of the operations: <code>SUBMITTED</code>, <code>PENDING</code>, <code>SUCCEED</code>, or <code>FAIL</code>.</p> </li>
+    /// <li> <p> <b>TYPE</b>: Gets specified types of operation.</p> </li>
+    /// <li> <p> <b>UPDATE_DATE</b>: Gets operations that changed status during a specified date/time range. </p> </li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::OperationFilterName>) -> Self {
         self.name = input;
@@ -143,16 +107,11 @@ impl OperationFilterBuilder {
     }
     /// <p>Specify the operations that you want to get:</p>
     /// <ul>
-    /// <li>
-    /// <p><b>NAMESPACE_ID</b>: Gets operations related to specified namespaces.</p></li>
-    /// <li>
-    /// <p><b>SERVICE_ID</b>: Gets operations related to specified services.</p></li>
-    /// <li>
-    /// <p><b>STATUS</b>: Gets operations based on the status of the operations: <code>SUBMITTED</code>, <code>PENDING</code>, <code>SUCCEED</code>, or <code>FAIL</code>.</p></li>
-    /// <li>
-    /// <p><b>TYPE</b>: Gets specified types of operation.</p></li>
-    /// <li>
-    /// <p><b>UPDATE_DATE</b>: Gets operations that changed status during a specified date/time range.</p></li>
+    /// <li> <p> <b>NAMESPACE_ID</b>: Gets operations related to specified namespaces.</p> </li>
+    /// <li> <p> <b>SERVICE_ID</b>: Gets operations related to specified services.</p> </li>
+    /// <li> <p> <b>STATUS</b>: Gets operations based on the status of the operations: <code>SUBMITTED</code>, <code>PENDING</code>, <code>SUCCEED</code>, or <code>FAIL</code>.</p> </li>
+    /// <li> <p> <b>TYPE</b>: Gets specified types of operation.</p> </li>
+    /// <li> <p> <b>UPDATE_DATE</b>: Gets operations that changed status during a specified date/time range. </p> </li>
     /// </ul>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::OperationFilterName> {
         &self.name
@@ -161,18 +120,13 @@ impl OperationFilterBuilder {
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
     ///
-    /// <p>Specify values that are applicable to the value that you specify for <code>Name</code>:</p>
+    /// <p>Specify values that are applicable to the value that you specify for <code>Name</code>: </p>
     /// <ul>
-    /// <li>
-    /// <p><b>NAMESPACE_ID</b>: Specify one namespace ID.</p></li>
-    /// <li>
-    /// <p><b>SERVICE_ID</b>: Specify one service ID.</p></li>
-    /// <li>
-    /// <p><b>STATUS</b>: Specify one or more statuses: <code>SUBMITTED</code>, <code>PENDING</code>, <code>SUCCEED</code>, or <code>FAIL</code>.</p></li>
-    /// <li>
-    /// <p><b>TYPE</b>: Specify one or more of the following types: <code>CREATE_NAMESPACE</code>, <code>DELETE_NAMESPACE</code>, <code>UPDATE_SERVICE</code>, <code>REGISTER_INSTANCE</code>, or <code>DEREGISTER_INSTANCE</code>.</p></li>
-    /// <li>
-    /// <p><b>UPDATE_DATE</b>: Specify a start date and an end date in Unix date/time format and Coordinated Universal Time (UTC). The start date must be the first value.</p></li>
+    /// <li> <p> <b>NAMESPACE_ID</b>: Specify one namespace ID.</p> </li>
+    /// <li> <p> <b>SERVICE_ID</b>: Specify one service ID.</p> </li>
+    /// <li> <p> <b>STATUS</b>: Specify one or more statuses: <code>SUBMITTED</code>, <code>PENDING</code>, <code>SUCCEED</code>, or <code>FAIL</code>.</p> </li>
+    /// <li> <p> <b>TYPE</b>: Specify one or more of the following types: <code>CREATE_NAMESPACE</code>, <code>DELETE_NAMESPACE</code>, <code>UPDATE_SERVICE</code>, <code>REGISTER_INSTANCE</code>, or <code>DEREGISTER_INSTANCE</code>.</p> </li>
+    /// <li> <p> <b>UPDATE_DATE</b>: Specify a start date and an end date in Unix date/time format and Coordinated Universal Time (UTC). The start date must be the first value.</p> </li>
     /// </ul>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
@@ -180,47 +134,34 @@ impl OperationFilterBuilder {
         self.values = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Specify values that are applicable to the value that you specify for <code>Name</code>:</p>
+    /// <p>Specify values that are applicable to the value that you specify for <code>Name</code>: </p>
     /// <ul>
-    /// <li>
-    /// <p><b>NAMESPACE_ID</b>: Specify one namespace ID.</p></li>
-    /// <li>
-    /// <p><b>SERVICE_ID</b>: Specify one service ID.</p></li>
-    /// <li>
-    /// <p><b>STATUS</b>: Specify one or more statuses: <code>SUBMITTED</code>, <code>PENDING</code>, <code>SUCCEED</code>, or <code>FAIL</code>.</p></li>
-    /// <li>
-    /// <p><b>TYPE</b>: Specify one or more of the following types: <code>CREATE_NAMESPACE</code>, <code>DELETE_NAMESPACE</code>, <code>UPDATE_SERVICE</code>, <code>REGISTER_INSTANCE</code>, or <code>DEREGISTER_INSTANCE</code>.</p></li>
-    /// <li>
-    /// <p><b>UPDATE_DATE</b>: Specify a start date and an end date in Unix date/time format and Coordinated Universal Time (UTC). The start date must be the first value.</p></li>
+    /// <li> <p> <b>NAMESPACE_ID</b>: Specify one namespace ID.</p> </li>
+    /// <li> <p> <b>SERVICE_ID</b>: Specify one service ID.</p> </li>
+    /// <li> <p> <b>STATUS</b>: Specify one or more statuses: <code>SUBMITTED</code>, <code>PENDING</code>, <code>SUCCEED</code>, or <code>FAIL</code>.</p> </li>
+    /// <li> <p> <b>TYPE</b>: Specify one or more of the following types: <code>CREATE_NAMESPACE</code>, <code>DELETE_NAMESPACE</code>, <code>UPDATE_SERVICE</code>, <code>REGISTER_INSTANCE</code>, or <code>DEREGISTER_INSTANCE</code>.</p> </li>
+    /// <li> <p> <b>UPDATE_DATE</b>: Specify a start date and an end date in Unix date/time format and Coordinated Universal Time (UTC). The start date must be the first value.</p> </li>
     /// </ul>
     pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }
-    /// <p>Specify values that are applicable to the value that you specify for <code>Name</code>:</p>
+    /// <p>Specify values that are applicable to the value that you specify for <code>Name</code>: </p>
     /// <ul>
-    /// <li>
-    /// <p><b>NAMESPACE_ID</b>: Specify one namespace ID.</p></li>
-    /// <li>
-    /// <p><b>SERVICE_ID</b>: Specify one service ID.</p></li>
-    /// <li>
-    /// <p><b>STATUS</b>: Specify one or more statuses: <code>SUBMITTED</code>, <code>PENDING</code>, <code>SUCCEED</code>, or <code>FAIL</code>.</p></li>
-    /// <li>
-    /// <p><b>TYPE</b>: Specify one or more of the following types: <code>CREATE_NAMESPACE</code>, <code>DELETE_NAMESPACE</code>, <code>UPDATE_SERVICE</code>, <code>REGISTER_INSTANCE</code>, or <code>DEREGISTER_INSTANCE</code>.</p></li>
-    /// <li>
-    /// <p><b>UPDATE_DATE</b>: Specify a start date and an end date in Unix date/time format and Coordinated Universal Time (UTC). The start date must be the first value.</p></li>
+    /// <li> <p> <b>NAMESPACE_ID</b>: Specify one namespace ID.</p> </li>
+    /// <li> <p> <b>SERVICE_ID</b>: Specify one service ID.</p> </li>
+    /// <li> <p> <b>STATUS</b>: Specify one or more statuses: <code>SUBMITTED</code>, <code>PENDING</code>, <code>SUCCEED</code>, or <code>FAIL</code>.</p> </li>
+    /// <li> <p> <b>TYPE</b>: Specify one or more of the following types: <code>CREATE_NAMESPACE</code>, <code>DELETE_NAMESPACE</code>, <code>UPDATE_SERVICE</code>, <code>REGISTER_INSTANCE</code>, or <code>DEREGISTER_INSTANCE</code>.</p> </li>
+    /// <li> <p> <b>UPDATE_DATE</b>: Specify a start date and an end date in Unix date/time format and Coordinated Universal Time (UTC). The start date must be the first value.</p> </li>
     /// </ul>
     pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.values
     }
     /// <p>The operator that you want to use to determine whether an operation matches the specified value. Valid values for condition include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>EQ</code>: When you specify <code>EQ</code> for the condition, you can specify only one value. <code>EQ</code> is supported for <code>NAMESPACE_ID</code>, <code>SERVICE_ID</code>, <code>STATUS</code>, and <code>TYPE</code>. <code>EQ</code> is the default condition and can be omitted.</p></li>
-    /// <li>
-    /// <p><code>IN</code>: When you specify <code>IN</code> for the condition, you can specify a list of one or more values. <code>IN</code> is supported for <code>STATUS</code> and <code>TYPE</code>. An operation must match one of the specified values to be returned in the response.</p></li>
-    /// <li>
-    /// <p><code>BETWEEN</code>: Specify a start date and an end date in Unix date/time format and Coordinated Universal Time (UTC). The start date must be the first value. <code>BETWEEN</code> is supported for <code>UPDATE_DATE</code>.</p></li>
+    /// <li> <p> <code>EQ</code>: When you specify <code>EQ</code> for the condition, you can specify only one value. <code>EQ</code> is supported for <code>NAMESPACE_ID</code>, <code>SERVICE_ID</code>, <code>STATUS</code>, and <code>TYPE</code>. <code>EQ</code> is the default condition and can be omitted.</p> </li>
+    /// <li> <p> <code>IN</code>: When you specify <code>IN</code> for the condition, you can specify a list of one or more values. <code>IN</code> is supported for <code>STATUS</code> and <code>TYPE</code>. An operation must match one of the specified values to be returned in the response.</p> </li>
+    /// <li> <p> <code>BETWEEN</code>: Specify a start date and an end date in Unix date/time format and Coordinated Universal Time (UTC). The start date must be the first value. <code>BETWEEN</code> is supported for <code>UPDATE_DATE</code>. </p> </li>
     /// </ul>
     pub fn condition(mut self, input: crate::types::FilterCondition) -> Self {
         self.condition = ::std::option::Option::Some(input);
@@ -228,12 +169,9 @@ impl OperationFilterBuilder {
     }
     /// <p>The operator that you want to use to determine whether an operation matches the specified value. Valid values for condition include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>EQ</code>: When you specify <code>EQ</code> for the condition, you can specify only one value. <code>EQ</code> is supported for <code>NAMESPACE_ID</code>, <code>SERVICE_ID</code>, <code>STATUS</code>, and <code>TYPE</code>. <code>EQ</code> is the default condition and can be omitted.</p></li>
-    /// <li>
-    /// <p><code>IN</code>: When you specify <code>IN</code> for the condition, you can specify a list of one or more values. <code>IN</code> is supported for <code>STATUS</code> and <code>TYPE</code>. An operation must match one of the specified values to be returned in the response.</p></li>
-    /// <li>
-    /// <p><code>BETWEEN</code>: Specify a start date and an end date in Unix date/time format and Coordinated Universal Time (UTC). The start date must be the first value. <code>BETWEEN</code> is supported for <code>UPDATE_DATE</code>.</p></li>
+    /// <li> <p> <code>EQ</code>: When you specify <code>EQ</code> for the condition, you can specify only one value. <code>EQ</code> is supported for <code>NAMESPACE_ID</code>, <code>SERVICE_ID</code>, <code>STATUS</code>, and <code>TYPE</code>. <code>EQ</code> is the default condition and can be omitted.</p> </li>
+    /// <li> <p> <code>IN</code>: When you specify <code>IN</code> for the condition, you can specify a list of one or more values. <code>IN</code> is supported for <code>STATUS</code> and <code>TYPE</code>. An operation must match one of the specified values to be returned in the response.</p> </li>
+    /// <li> <p> <code>BETWEEN</code>: Specify a start date and an end date in Unix date/time format and Coordinated Universal Time (UTC). The start date must be the first value. <code>BETWEEN</code> is supported for <code>UPDATE_DATE</code>. </p> </li>
     /// </ul>
     pub fn set_condition(mut self, input: ::std::option::Option<crate::types::FilterCondition>) -> Self {
         self.condition = input;
@@ -241,12 +179,9 @@ impl OperationFilterBuilder {
     }
     /// <p>The operator that you want to use to determine whether an operation matches the specified value. Valid values for condition include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>EQ</code>: When you specify <code>EQ</code> for the condition, you can specify only one value. <code>EQ</code> is supported for <code>NAMESPACE_ID</code>, <code>SERVICE_ID</code>, <code>STATUS</code>, and <code>TYPE</code>. <code>EQ</code> is the default condition and can be omitted.</p></li>
-    /// <li>
-    /// <p><code>IN</code>: When you specify <code>IN</code> for the condition, you can specify a list of one or more values. <code>IN</code> is supported for <code>STATUS</code> and <code>TYPE</code>. An operation must match one of the specified values to be returned in the response.</p></li>
-    /// <li>
-    /// <p><code>BETWEEN</code>: Specify a start date and an end date in Unix date/time format and Coordinated Universal Time (UTC). The start date must be the first value. <code>BETWEEN</code> is supported for <code>UPDATE_DATE</code>.</p></li>
+    /// <li> <p> <code>EQ</code>: When you specify <code>EQ</code> for the condition, you can specify only one value. <code>EQ</code> is supported for <code>NAMESPACE_ID</code>, <code>SERVICE_ID</code>, <code>STATUS</code>, and <code>TYPE</code>. <code>EQ</code> is the default condition and can be omitted.</p> </li>
+    /// <li> <p> <code>IN</code>: When you specify <code>IN</code> for the condition, you can specify a list of one or more values. <code>IN</code> is supported for <code>STATUS</code> and <code>TYPE</code>. An operation must match one of the specified values to be returned in the response.</p> </li>
+    /// <li> <p> <code>BETWEEN</code>: Specify a start date and an end date in Unix date/time format and Coordinated Universal Time (UTC). The start date must be the first value. <code>BETWEEN</code> is supported for <code>UPDATE_DATE</code>. </p> </li>
     /// </ul>
     pub fn get_condition(&self) -> &::std::option::Option<crate::types::FilterCondition> {
         &self.condition

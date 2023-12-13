@@ -5,9 +5,9 @@
 pub struct CreateVehicleOutput {
     /// <p>The unique ID of the created vehicle.</p>
     pub vehicle_name: ::std::option::Option<::std::string::String>,
-    /// <p>The ARN of the created vehicle.</p>
+    /// <p> The ARN of the created vehicle. </p>
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p>The ARN of a created or validated Amazon Web Services IoT thing.</p>
+    /// <p> The ARN of a created or validated Amazon Web Services IoT thing. </p>
     pub thing_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -16,11 +16,11 @@ impl CreateVehicleOutput {
     pub fn vehicle_name(&self) -> ::std::option::Option<&str> {
         self.vehicle_name.as_deref()
     }
-    /// <p>The ARN of the created vehicle.</p>
+    /// <p> The ARN of the created vehicle. </p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The ARN of a created or validated Amazon Web Services IoT thing.</p>
+    /// <p> The ARN of a created or validated Amazon Web Services IoT thing. </p>
     pub fn thing_arn(&self) -> ::std::option::Option<&str> {
         self.thing_arn.as_deref()
     }
@@ -61,31 +61,31 @@ impl CreateVehicleOutputBuilder {
     pub fn get_vehicle_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.vehicle_name
     }
-    /// <p>The ARN of the created vehicle.</p>
+    /// <p> The ARN of the created vehicle. </p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the created vehicle.</p>
+    /// <p> The ARN of the created vehicle. </p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>The ARN of the created vehicle.</p>
+    /// <p> The ARN of the created vehicle. </p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>The ARN of a created or validated Amazon Web Services IoT thing.</p>
+    /// <p> The ARN of a created or validated Amazon Web Services IoT thing. </p>
     pub fn thing_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of a created or validated Amazon Web Services IoT thing.</p>
+    /// <p> The ARN of a created or validated Amazon Web Services IoT thing. </p>
     pub fn set_thing_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_arn = input;
         self
     }
-    /// <p>The ARN of a created or validated Amazon Web Services IoT thing.</p>
+    /// <p> The ARN of a created or validated Amazon Web Services IoT thing. </p>
     pub fn get_thing_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.thing_arn
     }

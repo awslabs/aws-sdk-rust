@@ -25,29 +25,29 @@ pub struct SelectObjectContentInput {
     /// <p>Describes the format of the data that you want Amazon S3 to return in response.</p>
     pub output_serialization: ::std::option::Option<crate::types::OutputSerialization>,
     /// <p>Specifies the byte range of the object to get the records from. A record is processed when its first byte is contained by the range. This parameter is optional, but when specified, it must not be empty. See RFC 2616, Section 14.35.1 about how to specify the start and end of the range.</p>
-    /// <p><code>ScanRange</code>may be used in the following ways:</p>
+    /// <p> <code>ScanRange</code>may be used in the following ways:</p>
     /// <ul>
-    /// <li>
-    /// <p><code><scanrange>
+    /// <li> <p> <code>
+    /// <scanrange>
     /// <start>
     /// 50
     /// </start>
     /// <end>
     /// 100
     /// </end>
-    /// </scanrange></code> - process only the records starting between the bytes 50 and 100 (inclusive, counting from zero)</p></li>
-    /// <li>
-    /// <p><code><scanrange>
+    /// </scanrange></code> - process only the records starting between the bytes 50 and 100 (inclusive, counting from zero)</p> </li>
+    /// <li> <p> <code>
+    /// <scanrange>
     /// <start>
     /// 50
     /// </start>
-    /// </scanrange></code> - process only the records starting after the byte 50</p></li>
-    /// <li>
-    /// <p><code><scanrange>
+    /// </scanrange></code> - process only the records starting after the byte 50</p> </li>
+    /// <li> <p> <code>
+    /// <scanrange>
     /// <end>
     /// 50
     /// </end>
-    /// </scanrange></code> - process only the records within the last 50 bytes of the file.</p></li>
+    /// </scanrange></code> - process only the records within the last 50 bytes of the file.</p> </li>
     /// </ul>
     pub scan_range: ::std::option::Option<crate::types::ScanRange>,
     /// <p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
@@ -95,29 +95,29 @@ impl SelectObjectContentInput {
         self.output_serialization.as_ref()
     }
     /// <p>Specifies the byte range of the object to get the records from. A record is processed when its first byte is contained by the range. This parameter is optional, but when specified, it must not be empty. See RFC 2616, Section 14.35.1 about how to specify the start and end of the range.</p>
-    /// <p><code>ScanRange</code>may be used in the following ways:</p>
+    /// <p> <code>ScanRange</code>may be used in the following ways:</p>
     /// <ul>
-    /// <li>
-    /// <p><code><scanrange>
+    /// <li> <p> <code>
+    /// <scanrange>
     /// <start>
     /// 50
     /// </start>
     /// <end>
     /// 100
     /// </end>
-    /// </scanrange></code> - process only the records starting between the bytes 50 and 100 (inclusive, counting from zero)</p></li>
-    /// <li>
-    /// <p><code><scanrange>
+    /// </scanrange></code> - process only the records starting between the bytes 50 and 100 (inclusive, counting from zero)</p> </li>
+    /// <li> <p> <code>
+    /// <scanrange>
     /// <start>
     /// 50
     /// </start>
-    /// </scanrange></code> - process only the records starting after the byte 50</p></li>
-    /// <li>
-    /// <p><code><scanrange>
+    /// </scanrange></code> - process only the records starting after the byte 50</p> </li>
+    /// <li> <p> <code>
+    /// <scanrange>
     /// <end>
     /// 50
     /// </end>
-    /// </scanrange></code> - process only the records within the last 50 bytes of the file.</p></li>
+    /// </scanrange></code> - process only the records within the last 50 bytes of the file.</p> </li>
     /// </ul>
     pub fn scan_range(&self) -> ::std::option::Option<&crate::types::ScanRange> {
         self.scan_range.as_ref()
@@ -317,87 +317,87 @@ impl SelectObjectContentInputBuilder {
         &self.output_serialization
     }
     /// <p>Specifies the byte range of the object to get the records from. A record is processed when its first byte is contained by the range. This parameter is optional, but when specified, it must not be empty. See RFC 2616, Section 14.35.1 about how to specify the start and end of the range.</p>
-    /// <p><code>ScanRange</code>may be used in the following ways:</p>
+    /// <p> <code>ScanRange</code>may be used in the following ways:</p>
     /// <ul>
-    /// <li>
-    /// <p><code><scanrange>
+    /// <li> <p> <code>
+    /// <scanrange>
     /// <start>
     /// 50
     /// </start>
     /// <end>
     /// 100
     /// </end>
-    /// </scanrange></code> - process only the records starting between the bytes 50 and 100 (inclusive, counting from zero)</p></li>
-    /// <li>
-    /// <p><code><scanrange>
+    /// </scanrange></code> - process only the records starting between the bytes 50 and 100 (inclusive, counting from zero)</p> </li>
+    /// <li> <p> <code>
+    /// <scanrange>
     /// <start>
     /// 50
     /// </start>
-    /// </scanrange></code> - process only the records starting after the byte 50</p></li>
-    /// <li>
-    /// <p><code><scanrange>
+    /// </scanrange></code> - process only the records starting after the byte 50</p> </li>
+    /// <li> <p> <code>
+    /// <scanrange>
     /// <end>
     /// 50
     /// </end>
-    /// </scanrange></code> - process only the records within the last 50 bytes of the file.</p></li>
+    /// </scanrange></code> - process only the records within the last 50 bytes of the file.</p> </li>
     /// </ul>
     pub fn scan_range(mut self, input: crate::types::ScanRange) -> Self {
         self.scan_range = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the byte range of the object to get the records from. A record is processed when its first byte is contained by the range. This parameter is optional, but when specified, it must not be empty. See RFC 2616, Section 14.35.1 about how to specify the start and end of the range.</p>
-    /// <p><code>ScanRange</code>may be used in the following ways:</p>
+    /// <p> <code>ScanRange</code>may be used in the following ways:</p>
     /// <ul>
-    /// <li>
-    /// <p><code><scanrange>
+    /// <li> <p> <code>
+    /// <scanrange>
     /// <start>
     /// 50
     /// </start>
     /// <end>
     /// 100
     /// </end>
-    /// </scanrange></code> - process only the records starting between the bytes 50 and 100 (inclusive, counting from zero)</p></li>
-    /// <li>
-    /// <p><code><scanrange>
+    /// </scanrange></code> - process only the records starting between the bytes 50 and 100 (inclusive, counting from zero)</p> </li>
+    /// <li> <p> <code>
+    /// <scanrange>
     /// <start>
     /// 50
     /// </start>
-    /// </scanrange></code> - process only the records starting after the byte 50</p></li>
-    /// <li>
-    /// <p><code><scanrange>
+    /// </scanrange></code> - process only the records starting after the byte 50</p> </li>
+    /// <li> <p> <code>
+    /// <scanrange>
     /// <end>
     /// 50
     /// </end>
-    /// </scanrange></code> - process only the records within the last 50 bytes of the file.</p></li>
+    /// </scanrange></code> - process only the records within the last 50 bytes of the file.</p> </li>
     /// </ul>
     pub fn set_scan_range(mut self, input: ::std::option::Option<crate::types::ScanRange>) -> Self {
         self.scan_range = input;
         self
     }
     /// <p>Specifies the byte range of the object to get the records from. A record is processed when its first byte is contained by the range. This parameter is optional, but when specified, it must not be empty. See RFC 2616, Section 14.35.1 about how to specify the start and end of the range.</p>
-    /// <p><code>ScanRange</code>may be used in the following ways:</p>
+    /// <p> <code>ScanRange</code>may be used in the following ways:</p>
     /// <ul>
-    /// <li>
-    /// <p><code><scanrange>
+    /// <li> <p> <code>
+    /// <scanrange>
     /// <start>
     /// 50
     /// </start>
     /// <end>
     /// 100
     /// </end>
-    /// </scanrange></code> - process only the records starting between the bytes 50 and 100 (inclusive, counting from zero)</p></li>
-    /// <li>
-    /// <p><code><scanrange>
+    /// </scanrange></code> - process only the records starting between the bytes 50 and 100 (inclusive, counting from zero)</p> </li>
+    /// <li> <p> <code>
+    /// <scanrange>
     /// <start>
     /// 50
     /// </start>
-    /// </scanrange></code> - process only the records starting after the byte 50</p></li>
-    /// <li>
-    /// <p><code><scanrange>
+    /// </scanrange></code> - process only the records starting after the byte 50</p> </li>
+    /// <li> <p> <code>
+    /// <scanrange>
     /// <end>
     /// 50
     /// </end>
-    /// </scanrange></code> - process only the records within the last 50 bytes of the file.</p></li>
+    /// </scanrange></code> - process only the records within the last 50 bytes of the file.</p> </li>
     /// </ul>
     pub fn get_scan_range(&self) -> &::std::option::Option<crate::types::ScanRange> {
         &self.scan_range

@@ -10,7 +10,7 @@ pub struct SimulationJobRequest {
     pub logging_config: ::std::option::Option<crate::types::LoggingConfig>,
     /// <p>The maximum simulation job duration in seconds. The value must be 8 days (691,200 seconds) or less.</p>
     pub max_job_duration_in_seconds: i64,
-    /// <p>The IAM role name that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf. This is how credentials are passed in to your simulation job.</p>
+    /// <p>The IAM role name that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf. This is how credentials are passed in to your simulation job. </p>
     pub iam_role: ::std::option::Option<::std::string::String>,
     /// <p>The failure behavior the simulation job.</p>
     /// <dl>
@@ -28,14 +28,14 @@ pub struct SimulationJobRequest {
     /// </dd>
     /// </dl>
     pub failure_behavior: ::std::option::Option<crate::types::FailureBehavior>,
-    /// <p>A Boolean indicating whether to use default applications in the simulation job. Default applications include Gazebo, rqt, rviz and terminal access.</p>
+    /// <p>A Boolean indicating whether to use default applications in the simulation job. Default applications include Gazebo, rqt, rviz and terminal access. </p>
     pub use_default_applications: ::std::option::Option<bool>,
     /// <p>The robot applications to use in the simulation job.</p>
     pub robot_applications: ::std::option::Option<::std::vec::Vec<crate::types::RobotApplicationConfig>>,
     /// <p>The simulation applications to use in the simulation job.</p>
     pub simulation_applications: ::std::option::Option<::std::vec::Vec<crate::types::SimulationApplicationConfig>>,
-    /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files are available under <code>/opt/robomaker/datasources/data_source_name</code>.</p><note>
-    /// <p>There is a limit of 100 files and a combined size of 25GB for all <code>DataSourceConfig</code> objects.</p>
+    /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files are available under <code>/opt/robomaker/datasources/data_source_name</code>. </p> <note>
+    /// <p>There is a limit of 100 files and a combined size of 25GB for all <code>DataSourceConfig</code> objects. </p>
     /// </note>
     pub data_sources: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceConfig>>,
     /// <p>If your simulation job accesses resources in a VPC, you provide this parameter identifying the list of security group IDs and subnet IDs. These must belong to the same VPC. You must provide at least one security group and two subnet IDs.</p>
@@ -58,7 +58,7 @@ impl SimulationJobRequest {
     pub fn max_job_duration_in_seconds(&self) -> i64 {
         self.max_job_duration_in_seconds
     }
-    /// <p>The IAM role name that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf. This is how credentials are passed in to your simulation job.</p>
+    /// <p>The IAM role name that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf. This is how credentials are passed in to your simulation job. </p>
     pub fn iam_role(&self) -> ::std::option::Option<&str> {
         self.iam_role.as_deref()
     }
@@ -80,7 +80,7 @@ impl SimulationJobRequest {
     pub fn failure_behavior(&self) -> ::std::option::Option<&crate::types::FailureBehavior> {
         self.failure_behavior.as_ref()
     }
-    /// <p>A Boolean indicating whether to use default applications in the simulation job. Default applications include Gazebo, rqt, rviz and terminal access.</p>
+    /// <p>A Boolean indicating whether to use default applications in the simulation job. Default applications include Gazebo, rqt, rviz and terminal access. </p>
     pub fn use_default_applications(&self) -> ::std::option::Option<bool> {
         self.use_default_applications
     }
@@ -96,8 +96,8 @@ impl SimulationJobRequest {
     pub fn simulation_applications(&self) -> &[crate::types::SimulationApplicationConfig] {
         self.simulation_applications.as_deref().unwrap_or_default()
     }
-    /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files are available under <code>/opt/robomaker/datasources/data_source_name</code>.</p><note>
-    /// <p>There is a limit of 100 files and a combined size of 25GB for all <code>DataSourceConfig</code> objects.</p>
+    /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files are available under <code>/opt/robomaker/datasources/data_source_name</code>. </p> <note>
+    /// <p>There is a limit of 100 files and a combined size of 25GB for all <code>DataSourceConfig</code> objects. </p>
     /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_sources.is_none()`.
@@ -185,17 +185,17 @@ impl SimulationJobRequestBuilder {
     pub fn get_max_job_duration_in_seconds(&self) -> &::std::option::Option<i64> {
         &self.max_job_duration_in_seconds
     }
-    /// <p>The IAM role name that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf. This is how credentials are passed in to your simulation job.</p>
+    /// <p>The IAM role name that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf. This is how credentials are passed in to your simulation job. </p>
     pub fn iam_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_role = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The IAM role name that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf. This is how credentials are passed in to your simulation job.</p>
+    /// <p>The IAM role name that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf. This is how credentials are passed in to your simulation job. </p>
     pub fn set_iam_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iam_role = input;
         self
     }
-    /// <p>The IAM role name that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf. This is how credentials are passed in to your simulation job.</p>
+    /// <p>The IAM role name that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf. This is how credentials are passed in to your simulation job. </p>
     pub fn get_iam_role(&self) -> &::std::option::Option<::std::string::String> {
         &self.iam_role
     }
@@ -255,17 +255,17 @@ impl SimulationJobRequestBuilder {
     pub fn get_failure_behavior(&self) -> &::std::option::Option<crate::types::FailureBehavior> {
         &self.failure_behavior
     }
-    /// <p>A Boolean indicating whether to use default applications in the simulation job. Default applications include Gazebo, rqt, rviz and terminal access.</p>
+    /// <p>A Boolean indicating whether to use default applications in the simulation job. Default applications include Gazebo, rqt, rviz and terminal access. </p>
     pub fn use_default_applications(mut self, input: bool) -> Self {
         self.use_default_applications = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A Boolean indicating whether to use default applications in the simulation job. Default applications include Gazebo, rqt, rviz and terminal access.</p>
+    /// <p>A Boolean indicating whether to use default applications in the simulation job. Default applications include Gazebo, rqt, rviz and terminal access. </p>
     pub fn set_use_default_applications(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_default_applications = input;
         self
     }
-    /// <p>A Boolean indicating whether to use default applications in the simulation job. Default applications include Gazebo, rqt, rviz and terminal access.</p>
+    /// <p>A Boolean indicating whether to use default applications in the simulation job. Default applications include Gazebo, rqt, rviz and terminal access. </p>
     pub fn get_use_default_applications(&self) -> &::std::option::Option<bool> {
         &self.use_default_applications
     }
@@ -313,8 +313,8 @@ impl SimulationJobRequestBuilder {
     ///
     /// To override the contents of this collection use [`set_data_sources`](Self::set_data_sources).
     ///
-    /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files are available under <code>/opt/robomaker/datasources/data_source_name</code>.</p><note>
-    /// <p>There is a limit of 100 files and a combined size of 25GB for all <code>DataSourceConfig</code> objects.</p>
+    /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files are available under <code>/opt/robomaker/datasources/data_source_name</code>. </p> <note>
+    /// <p>There is a limit of 100 files and a combined size of 25GB for all <code>DataSourceConfig</code> objects. </p>
     /// </note>
     pub fn data_sources(mut self, input: crate::types::DataSourceConfig) -> Self {
         let mut v = self.data_sources.unwrap_or_default();
@@ -322,15 +322,15 @@ impl SimulationJobRequestBuilder {
         self.data_sources = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files are available under <code>/opt/robomaker/datasources/data_source_name</code>.</p><note>
-    /// <p>There is a limit of 100 files and a combined size of 25GB for all <code>DataSourceConfig</code> objects.</p>
+    /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files are available under <code>/opt/robomaker/datasources/data_source_name</code>. </p> <note>
+    /// <p>There is a limit of 100 files and a combined size of 25GB for all <code>DataSourceConfig</code> objects. </p>
     /// </note>
     pub fn set_data_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceConfig>>) -> Self {
         self.data_sources = input;
         self
     }
-    /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files are available under <code>/opt/robomaker/datasources/data_source_name</code>.</p><note>
-    /// <p>There is a limit of 100 files and a combined size of 25GB for all <code>DataSourceConfig</code> objects.</p>
+    /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files are available under <code>/opt/robomaker/datasources/data_source_name</code>. </p> <note>
+    /// <p>There is a limit of 100 files and a combined size of 25GB for all <code>DataSourceConfig</code> objects. </p>
     /// </note>
     pub fn get_data_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceConfig>> {
         &self.data_sources

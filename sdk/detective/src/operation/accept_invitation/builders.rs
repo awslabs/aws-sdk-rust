@@ -22,7 +22,7 @@ impl AcceptInvitationInputBuilder {
 }
 /// Fluent builder constructing a request to `AcceptInvitation`.
 ///
-/// <p>Accepts an invitation for the member account to contribute data to a behavior graph. This operation can only be called by an invited member account.</p>
+/// <p>Accepts an invitation for the member account to contribute data to a behavior graph. This operation can only be called by an invited member account. </p>
 /// <p>The request provides the ARN of behavior graph.</p>
 /// <p>The member account status in the graph must be <code>INVITED</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

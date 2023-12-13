@@ -22,8 +22,8 @@ impl UpdateServerInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateServer`.
 ///
-/// <p>Updates settings for a server.</p>
-/// <p>This operation is synchronous.</p>
+/// <p> Updates settings for a server. </p>
+/// <p> This operation is synchronous. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateServerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -109,79 +109,79 @@ impl UpdateServerFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Setting DisableAutomatedBackup to <code>true</code> disables automated or scheduled backups. Automated backups are enabled by default.</p>
+    /// <p>Setting DisableAutomatedBackup to <code>true</code> disables automated or scheduled backups. Automated backups are enabled by default. </p>
     pub fn disable_automated_backup(mut self, input: bool) -> Self {
         self.inner = self.inner.disable_automated_backup(input);
         self
     }
-    /// <p>Setting DisableAutomatedBackup to <code>true</code> disables automated or scheduled backups. Automated backups are enabled by default.</p>
+    /// <p>Setting DisableAutomatedBackup to <code>true</code> disables automated or scheduled backups. Automated backups are enabled by default. </p>
     pub fn set_disable_automated_backup(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_disable_automated_backup(input);
         self
     }
-    /// <p>Setting DisableAutomatedBackup to <code>true</code> disables automated or scheduled backups. Automated backups are enabled by default.</p>
+    /// <p>Setting DisableAutomatedBackup to <code>true</code> disables automated or scheduled backups. Automated backups are enabled by default. </p>
     pub fn get_disable_automated_backup(&self) -> &::std::option::Option<bool> {
         self.inner.get_disable_automated_backup()
     }
-    /// <p>Sets the number of automated backups that you want to keep.</p>
+    /// <p>Sets the number of automated backups that you want to keep. </p>
     pub fn backup_retention_count(mut self, input: i32) -> Self {
         self.inner = self.inner.backup_retention_count(input);
         self
     }
-    /// <p>Sets the number of automated backups that you want to keep.</p>
+    /// <p>Sets the number of automated backups that you want to keep. </p>
     pub fn set_backup_retention_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_backup_retention_count(input);
         self
     }
-    /// <p>Sets the number of automated backups that you want to keep.</p>
+    /// <p>Sets the number of automated backups that you want to keep. </p>
     pub fn get_backup_retention_count(&self) -> &::std::option::Option<i32> {
         self.inner.get_backup_retention_count()
     }
-    /// <p>The name of the server to update.</p>
+    /// <p>The name of the server to update. </p>
     pub fn server_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.server_name(input.into());
         self
     }
-    /// <p>The name of the server to update.</p>
+    /// <p>The name of the server to update. </p>
     pub fn set_server_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_server_name(input);
         self
     }
-    /// <p>The name of the server to update.</p>
+    /// <p>The name of the server to update. </p>
     pub fn get_server_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_server_name()
     }
-    /// <p><code>DDD:HH:MM</code> (weekly start time) or <code>HH:MM</code> (daily start time).</p>
-    /// <p>Time windows always use coordinated universal time (UTC). Valid strings for day of week (<code>DDD</code>) are: <code>Mon</code>, <code>Tue</code>, <code>Wed</code>, <code>Thr</code>, <code>Fri</code>, <code>Sat</code>, or <code>Sun</code>.</p>
+    /// <p> <code>DDD:HH:MM</code> (weekly start time) or <code>HH:MM</code> (daily start time). </p>
+    /// <p> Time windows always use coordinated universal time (UTC). Valid strings for day of week (<code>DDD</code>) are: <code>Mon</code>, <code>Tue</code>, <code>Wed</code>, <code>Thr</code>, <code>Fri</code>, <code>Sat</code>, or <code>Sun</code>.</p>
     pub fn preferred_maintenance_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.preferred_maintenance_window(input.into());
         self
     }
-    /// <p><code>DDD:HH:MM</code> (weekly start time) or <code>HH:MM</code> (daily start time).</p>
-    /// <p>Time windows always use coordinated universal time (UTC). Valid strings for day of week (<code>DDD</code>) are: <code>Mon</code>, <code>Tue</code>, <code>Wed</code>, <code>Thr</code>, <code>Fri</code>, <code>Sat</code>, or <code>Sun</code>.</p>
+    /// <p> <code>DDD:HH:MM</code> (weekly start time) or <code>HH:MM</code> (daily start time). </p>
+    /// <p> Time windows always use coordinated universal time (UTC). Valid strings for day of week (<code>DDD</code>) are: <code>Mon</code>, <code>Tue</code>, <code>Wed</code>, <code>Thr</code>, <code>Fri</code>, <code>Sat</code>, or <code>Sun</code>.</p>
     pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_preferred_maintenance_window(input);
         self
     }
-    /// <p><code>DDD:HH:MM</code> (weekly start time) or <code>HH:MM</code> (daily start time).</p>
-    /// <p>Time windows always use coordinated universal time (UTC). Valid strings for day of week (<code>DDD</code>) are: <code>Mon</code>, <code>Tue</code>, <code>Wed</code>, <code>Thr</code>, <code>Fri</code>, <code>Sat</code>, or <code>Sun</code>.</p>
+    /// <p> <code>DDD:HH:MM</code> (weekly start time) or <code>HH:MM</code> (daily start time). </p>
+    /// <p> Time windows always use coordinated universal time (UTC). Valid strings for day of week (<code>DDD</code>) are: <code>Mon</code>, <code>Tue</code>, <code>Wed</code>, <code>Thr</code>, <code>Fri</code>, <code>Sat</code>, or <code>Sun</code>.</p>
     pub fn get_preferred_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_preferred_maintenance_window()
     }
-    /// <p><code>DDD:HH:MM</code> (weekly start time) or <code>HH:MM</code> (daily start time).</p>
-    /// <p>Time windows always use coordinated universal time (UTC). Valid strings for day of week (<code>DDD</code>) are: <code>Mon</code>, <code>Tue</code>, <code>Wed</code>, <code>Thr</code>, <code>Fri</code>, <code>Sat</code>, or <code>Sun</code>.</p>
+    /// <p> <code>DDD:HH:MM</code> (weekly start time) or <code>HH:MM</code> (daily start time). </p>
+    /// <p> Time windows always use coordinated universal time (UTC). Valid strings for day of week (<code>DDD</code>) are: <code>Mon</code>, <code>Tue</code>, <code>Wed</code>, <code>Thr</code>, <code>Fri</code>, <code>Sat</code>, or <code>Sun</code>.</p>
     pub fn preferred_backup_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.preferred_backup_window(input.into());
         self
     }
-    /// <p><code>DDD:HH:MM</code> (weekly start time) or <code>HH:MM</code> (daily start time).</p>
-    /// <p>Time windows always use coordinated universal time (UTC). Valid strings for day of week (<code>DDD</code>) are: <code>Mon</code>, <code>Tue</code>, <code>Wed</code>, <code>Thr</code>, <code>Fri</code>, <code>Sat</code>, or <code>Sun</code>.</p>
+    /// <p> <code>DDD:HH:MM</code> (weekly start time) or <code>HH:MM</code> (daily start time). </p>
+    /// <p> Time windows always use coordinated universal time (UTC). Valid strings for day of week (<code>DDD</code>) are: <code>Mon</code>, <code>Tue</code>, <code>Wed</code>, <code>Thr</code>, <code>Fri</code>, <code>Sat</code>, or <code>Sun</code>.</p>
     pub fn set_preferred_backup_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_preferred_backup_window(input);
         self
     }
-    /// <p><code>DDD:HH:MM</code> (weekly start time) or <code>HH:MM</code> (daily start time).</p>
-    /// <p>Time windows always use coordinated universal time (UTC). Valid strings for day of week (<code>DDD</code>) are: <code>Mon</code>, <code>Tue</code>, <code>Wed</code>, <code>Thr</code>, <code>Fri</code>, <code>Sat</code>, or <code>Sun</code>.</p>
+    /// <p> <code>DDD:HH:MM</code> (weekly start time) or <code>HH:MM</code> (daily start time). </p>
+    /// <p> Time windows always use coordinated universal time (UTC). Valid strings for day of week (<code>DDD</code>) are: <code>Mon</code>, <code>Tue</code>, <code>Wed</code>, <code>Thr</code>, <code>Fri</code>, <code>Sat</code>, or <code>Sun</code>.</p>
     pub fn get_preferred_backup_window(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_preferred_backup_window()
     }

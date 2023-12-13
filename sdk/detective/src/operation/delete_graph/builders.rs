@@ -23,7 +23,7 @@ impl DeleteGraphInputBuilder {
 /// Fluent builder constructing a request to `DeleteGraph`.
 ///
 /// <p>Disables the specified behavior graph and queues it to be deleted. This operation removes the behavior graph from each member account's list of behavior graphs.</p>
-/// <p><code>DeleteGraph</code> can only be called by the administrator account for a behavior graph.</p>
+/// <p> <code>DeleteGraph</code> can only be called by the administrator account for a behavior graph.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteGraphFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

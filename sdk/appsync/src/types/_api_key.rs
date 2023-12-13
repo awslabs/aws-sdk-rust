@@ -2,33 +2,22 @@
 
 /// <p>Describes an API key.</p>
 /// <p>Customers invoke AppSync GraphQL API operations with API keys as an identity mechanism. There are two key versions:</p>
-/// <p><b>da1</b>: We introduced this version at launch in November 2017. These keys always expire after 7 days. Amazon DynamoDB TTL manages key expiration. These keys ceased to be valid after February 21, 2018, and they should no longer be used.</p>
+/// <p> <b>da1</b>: We introduced this version at launch in November 2017. These keys always expire after 7 days. Amazon DynamoDB TTL manages key expiration. These keys ceased to be valid after February 21, 2018, and they should no longer be used.</p>
 /// <ul>
-/// <li>
-/// <p><code>ListApiKeys</code> returns the expiration time in milliseconds.</p></li>
-/// <li>
-/// <p><code>CreateApiKey</code> returns the expiration time in milliseconds.</p></li>
-/// <li>
-/// <p><code>UpdateApiKey</code> is not available for this key version.</p></li>
-/// <li>
-/// <p><code>DeleteApiKey</code> deletes the item from the table.</p></li>
-/// <li>
-/// <p>Expiration is stored in DynamoDB as milliseconds. This results in a bug where keys are not automatically deleted because DynamoDB expects the TTL to be stored in seconds. As a one-time action, we deleted these keys from the table on February 21, 2018.</p></li>
+/// <li> <p> <code>ListApiKeys</code> returns the expiration time in milliseconds.</p> </li>
+/// <li> <p> <code>CreateApiKey</code> returns the expiration time in milliseconds.</p> </li>
+/// <li> <p> <code>UpdateApiKey</code> is not available for this key version.</p> </li>
+/// <li> <p> <code>DeleteApiKey</code> deletes the item from the table.</p> </li>
+/// <li> <p>Expiration is stored in DynamoDB as milliseconds. This results in a bug where keys are not automatically deleted because DynamoDB expects the TTL to be stored in seconds. As a one-time action, we deleted these keys from the table on February 21, 2018.</p> </li>
 /// </ul>
-/// <p><b>da2</b>: We introduced this version in February 2018 when AppSync added support to extend key expiration.</p>
+/// <p> <b>da2</b>: We introduced this version in February 2018 when AppSync added support to extend key expiration.</p>
 /// <ul>
-/// <li>
-/// <p><code>ListApiKeys</code> returns the expiration time and deletion time in seconds.</p></li>
-/// <li>
-/// <p><code>CreateApiKey</code> returns the expiration time and deletion time in seconds and accepts a user-provided expiration time in seconds.</p></li>
-/// <li>
-/// <p><code>UpdateApiKey</code> returns the expiration time and and deletion time in seconds and accepts a user-provided expiration time in seconds. Expired API keys are kept for 60 days after the expiration time. You can update the key expiration time as long as the key isn't deleted.</p></li>
-/// <li>
-/// <p><code>DeleteApiKey</code> deletes the item from the table.</p></li>
-/// <li>
-/// <p>Expiration is stored in DynamoDB as seconds. After the expiration time, using the key to authenticate will fail. However, you can reinstate the key before deletion.</p></li>
-/// <li>
-/// <p>Deletion is stored in DynamoDB as seconds. The key is deleted after deletion time.</p></li>
+/// <li> <p> <code>ListApiKeys</code> returns the expiration time and deletion time in seconds.</p> </li>
+/// <li> <p> <code>CreateApiKey</code> returns the expiration time and deletion time in seconds and accepts a user-provided expiration time in seconds.</p> </li>
+/// <li> <p> <code>UpdateApiKey</code> returns the expiration time and and deletion time in seconds and accepts a user-provided expiration time in seconds. Expired API keys are kept for 60 days after the expiration time. You can update the key expiration time as long as the key isn't deleted.</p> </li>
+/// <li> <p> <code>DeleteApiKey</code> deletes the item from the table.</p> </li>
+/// <li> <p>Expiration is stored in DynamoDB as seconds. After the expiration time, using the key to authenticate will fail. However, you can reinstate the key before deletion.</p> </li>
+/// <li> <p>Deletion is stored in DynamoDB as seconds. The key is deleted after deletion time.</p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]

@@ -3,16 +3,16 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchUpsertTableRowsOutput {
-    /// <p>A map with the batch item id as the key and the result of the upsert operation as the value. The result of the upsert operation specifies whether existing rows were updated or a new row was appended, along with the list of row ids that were affected.</p>
+    /// <p> A map with the batch item id as the key and the result of the upsert operation as the value. The result of the upsert operation specifies whether existing rows were updated or a new row was appended, along with the list of row ids that were affected. </p>
     pub rows: ::std::collections::HashMap<::std::string::String, crate::types::UpsertRowsResult>,
     /// <p>The updated workbook cursor after updating or appending rows in the table.</p>
     pub workbook_cursor: i64,
-    /// <p>The list of batch items in the request that could not be updated or appended in the table. Each element in this list contains one item from the request that could not be updated in the table along with the reason why that item could not be updated or appended.</p>
+    /// <p> The list of batch items in the request that could not be updated or appended in the table. Each element in this list contains one item from the request that could not be updated in the table along with the reason why that item could not be updated or appended. </p>
     pub failed_batch_items: ::std::option::Option<::std::vec::Vec<crate::types::FailedBatchItem>>,
     _request_id: Option<String>,
 }
 impl BatchUpsertTableRowsOutput {
-    /// <p>A map with the batch item id as the key and the result of the upsert operation as the value. The result of the upsert operation specifies whether existing rows were updated or a new row was appended, along with the list of row ids that were affected.</p>
+    /// <p> A map with the batch item id as the key and the result of the upsert operation as the value. The result of the upsert operation specifies whether existing rows were updated or a new row was appended, along with the list of row ids that were affected. </p>
     pub fn rows(&self) -> &::std::collections::HashMap<::std::string::String, crate::types::UpsertRowsResult> {
         &self.rows
     }
@@ -20,7 +20,7 @@ impl BatchUpsertTableRowsOutput {
     pub fn workbook_cursor(&self) -> i64 {
         self.workbook_cursor
     }
-    /// <p>The list of batch items in the request that could not be updated or appended in the table. Each element in this list contains one item from the request that could not be updated in the table along with the reason why that item could not be updated or appended.</p>
+    /// <p> The list of batch items in the request that could not be updated or appended in the table. Each element in this list contains one item from the request that could not be updated in the table along with the reason why that item could not be updated or appended. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed_batch_items.is_none()`.
     pub fn failed_batch_items(&self) -> &[crate::types::FailedBatchItem] {
@@ -53,14 +53,14 @@ impl BatchUpsertTableRowsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_rows`](Self::set_rows).
     ///
-    /// <p>A map with the batch item id as the key and the result of the upsert operation as the value. The result of the upsert operation specifies whether existing rows were updated or a new row was appended, along with the list of row ids that were affected.</p>
+    /// <p> A map with the batch item id as the key and the result of the upsert operation as the value. The result of the upsert operation specifies whether existing rows were updated or a new row was appended, along with the list of row ids that were affected. </p>
     pub fn rows(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::UpsertRowsResult) -> Self {
         let mut hash_map = self.rows.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.rows = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>A map with the batch item id as the key and the result of the upsert operation as the value. The result of the upsert operation specifies whether existing rows were updated or a new row was appended, along with the list of row ids that were affected.</p>
+    /// <p> A map with the batch item id as the key and the result of the upsert operation as the value. The result of the upsert operation specifies whether existing rows were updated or a new row was appended, along with the list of row ids that were affected. </p>
     pub fn set_rows(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::UpsertRowsResult>>,
@@ -68,7 +68,7 @@ impl BatchUpsertTableRowsOutputBuilder {
         self.rows = input;
         self
     }
-    /// <p>A map with the batch item id as the key and the result of the upsert operation as the value. The result of the upsert operation specifies whether existing rows were updated or a new row was appended, along with the list of row ids that were affected.</p>
+    /// <p> A map with the batch item id as the key and the result of the upsert operation as the value. The result of the upsert operation specifies whether existing rows were updated or a new row was appended, along with the list of row ids that were affected. </p>
     pub fn get_rows(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::UpsertRowsResult>> {
         &self.rows
     }
@@ -91,19 +91,19 @@ impl BatchUpsertTableRowsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_failed_batch_items`](Self::set_failed_batch_items).
     ///
-    /// <p>The list of batch items in the request that could not be updated or appended in the table. Each element in this list contains one item from the request that could not be updated in the table along with the reason why that item could not be updated or appended.</p>
+    /// <p> The list of batch items in the request that could not be updated or appended in the table. Each element in this list contains one item from the request that could not be updated in the table along with the reason why that item could not be updated or appended. </p>
     pub fn failed_batch_items(mut self, input: crate::types::FailedBatchItem) -> Self {
         let mut v = self.failed_batch_items.unwrap_or_default();
         v.push(input);
         self.failed_batch_items = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of batch items in the request that could not be updated or appended in the table. Each element in this list contains one item from the request that could not be updated in the table along with the reason why that item could not be updated or appended.</p>
+    /// <p> The list of batch items in the request that could not be updated or appended in the table. Each element in this list contains one item from the request that could not be updated in the table along with the reason why that item could not be updated or appended. </p>
     pub fn set_failed_batch_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FailedBatchItem>>) -> Self {
         self.failed_batch_items = input;
         self
     }
-    /// <p>The list of batch items in the request that could not be updated or appended in the table. Each element in this list contains one item from the request that could not be updated in the table along with the reason why that item could not be updated or appended.</p>
+    /// <p> The list of batch items in the request that could not be updated or appended in the table. Each element in this list contains one item from the request that could not be updated in the table along with the reason why that item could not be updated or appended. </p>
     pub fn get_failed_batch_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedBatchItem>> {
         &self.failed_batch_items
     }

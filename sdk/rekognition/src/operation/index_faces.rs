@@ -245,11 +245,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for IndexFacesEnd
 pub enum IndexFacesError {
     /// <p>You are not authorized to perform the action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>The input image size exceeds the allowed limit. If you are calling DetectProtectiveEquipment, the image size or resolution exceeds the allowed limit. For more information, see Guidelines and quotas in Amazon Rekognition in the Amazon Rekognition Developer Guide.</p>
+    /// <p>The input image size exceeds the allowed limit. If you are calling DetectProtectiveEquipment, the image size or resolution exceeds the allowed limit. For more information, see Guidelines and quotas in Amazon Rekognition in the Amazon Rekognition Developer Guide. </p>
     ImageTooLargeException(crate::types::error::ImageTooLargeException),
     /// <p>Amazon Rekognition experienced a service issue. Try your call again.</p>
     InternalServerError(crate::types::error::InternalServerError),
-    /// <p>The provided image format is not supported.</p>
+    /// <p>The provided image format is not supported. </p>
     InvalidImageFormatException(crate::types::error::InvalidImageFormatException),
     /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::types::error::InvalidParameterException),
@@ -260,7 +260,7 @@ pub enum IndexFacesError {
     /// <p>The resource specified in the request cannot be found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p></p>
-    /// <p>The size of the collection exceeds the allowed limit. For more information, see Guidelines and quotas in Amazon Rekognition in the Amazon Rekognition Developer Guide.</p>
+    /// <p>The size of the collection exceeds the allowed limit. For more information, see Guidelines and quotas in Amazon Rekognition in the Amazon Rekognition Developer Guide. </p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::types::error::ThrottlingException),

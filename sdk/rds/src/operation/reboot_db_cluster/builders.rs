@@ -25,7 +25,7 @@ impl RebootDbClusterInputBuilder {
 /// <p>You might need to reboot your DB cluster, usually for maintenance reasons. For example, if you make certain modifications, or if you change the DB cluster parameter group associated with the DB cluster, reboot the DB cluster for the changes to take effect.</p>
 /// <p>Rebooting a DB cluster restarts the database engine service. Rebooting a DB cluster results in a momentary outage, during which the DB cluster status is set to rebooting.</p>
 /// <p>Use this operation only for a non-Aurora Multi-AZ DB cluster.</p>
-/// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide.</i></p>
+/// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide.</i> </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RebootDBClusterFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,8 +114,7 @@ impl RebootDBClusterFluentBuilder {
     /// <p>The DB cluster identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must match the identifier of an existing DBCluster.</p></li>
+    /// <li> <p>Must match the identifier of an existing DBCluster.</p> </li>
     /// </ul>
     pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_cluster_identifier(input.into());
@@ -124,8 +123,7 @@ impl RebootDBClusterFluentBuilder {
     /// <p>The DB cluster identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must match the identifier of an existing DBCluster.</p></li>
+    /// <li> <p>Must match the identifier of an existing DBCluster.</p> </li>
     /// </ul>
     pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_cluster_identifier(input);
@@ -134,8 +132,7 @@ impl RebootDBClusterFluentBuilder {
     /// <p>The DB cluster identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must match the identifier of an existing DBCluster.</p></li>
+    /// <li> <p>Must match the identifier of an existing DBCluster.</p> </li>
     /// </ul>
     pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_cluster_identifier()

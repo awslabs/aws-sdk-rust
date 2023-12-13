@@ -15,7 +15,7 @@ pub struct Framework {
     /// <p>The date and time that a framework is created, in ISO 8601 representation. The value of <code>CreationTime</code> is accurate to milliseconds. For example, 2020-07-10T15:00:00.000-08:00 represents the 10th of July 2020 at 3:00 PM 8 hours behind UTC.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The deployment status of a framework. The statuses are:</p>
-    /// <p><code>CREATE_IN_PROGRESS | UPDATE_IN_PROGRESS | DELETE_IN_PROGRESS | COMPLETED | FAILED</code></p>
+    /// <p> <code>CREATE_IN_PROGRESS | UPDATE_IN_PROGRESS | DELETE_IN_PROGRESS | COMPLETED | FAILED</code> </p>
     pub deployment_status: ::std::option::Option<::std::string::String>,
 }
 impl Framework {
@@ -40,7 +40,7 @@ impl Framework {
         self.creation_time.as_ref()
     }
     /// <p>The deployment status of a framework. The statuses are:</p>
-    /// <p><code>CREATE_IN_PROGRESS | UPDATE_IN_PROGRESS | DELETE_IN_PROGRESS | COMPLETED | FAILED</code></p>
+    /// <p> <code>CREATE_IN_PROGRESS | UPDATE_IN_PROGRESS | DELETE_IN_PROGRESS | COMPLETED | FAILED</code> </p>
     pub fn deployment_status(&self) -> ::std::option::Option<&str> {
         self.deployment_status.as_deref()
     }
@@ -135,19 +135,19 @@ impl FrameworkBuilder {
         &self.creation_time
     }
     /// <p>The deployment status of a framework. The statuses are:</p>
-    /// <p><code>CREATE_IN_PROGRESS | UPDATE_IN_PROGRESS | DELETE_IN_PROGRESS | COMPLETED | FAILED</code></p>
+    /// <p> <code>CREATE_IN_PROGRESS | UPDATE_IN_PROGRESS | DELETE_IN_PROGRESS | COMPLETED | FAILED</code> </p>
     pub fn deployment_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The deployment status of a framework. The statuses are:</p>
-    /// <p><code>CREATE_IN_PROGRESS | UPDATE_IN_PROGRESS | DELETE_IN_PROGRESS | COMPLETED | FAILED</code></p>
+    /// <p> <code>CREATE_IN_PROGRESS | UPDATE_IN_PROGRESS | DELETE_IN_PROGRESS | COMPLETED | FAILED</code> </p>
     pub fn set_deployment_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_status = input;
         self
     }
     /// <p>The deployment status of a framework. The statuses are:</p>
-    /// <p><code>CREATE_IN_PROGRESS | UPDATE_IN_PROGRESS | DELETE_IN_PROGRESS | COMPLETED | FAILED</code></p>
+    /// <p> <code>CREATE_IN_PROGRESS | UPDATE_IN_PROGRESS | DELETE_IN_PROGRESS | COMPLETED | FAILED</code> </p>
     pub fn get_deployment_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.deployment_status
     }

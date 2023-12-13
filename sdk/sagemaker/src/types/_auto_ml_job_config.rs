@@ -11,7 +11,7 @@ pub struct AutoMlJobConfig {
     /// <p>The configuration for splitting the input training dataset.</p>
     /// <p>Type: AutoMLDataSplitConfig</p>
     pub data_split_config: ::std::option::Option<crate::types::AutoMlDataSplitConfig>,
-    /// <p>The configuration for generating a candidate for an AutoML job (optional).</p>
+    /// <p>The configuration for generating a candidate for an AutoML job (optional). </p>
     pub candidate_generation_config: ::std::option::Option<crate::types::AutoMlCandidateGenerationConfig>,
     /// <p>The method that Autopilot uses to train the data. You can either specify the mode manually or let Autopilot choose for you based on the dataset size by selecting <code>AUTO</code>. In <code>AUTO</code> mode, Autopilot chooses <code>ENSEMBLING</code> for datasets smaller than 100 MB, and <code>HYPERPARAMETER_TUNING</code> for larger ones.</p>
     /// <p>The <code>ENSEMBLING</code> mode uses a multi-stack ensemble model to predict classification and regression tasks directly from your dataset. This machine learning mode combines several base models to produce an optimal predictive model. It then uses a stacking ensemble method to combine predictions from contributing members. A multi-stack ensemble model can provide better performance over a single model by combining the predictive capabilities of multiple models. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support">Autopilot algorithm support</a> for a list of algorithms supported by <code>ENSEMBLING</code> mode.</p>
@@ -32,7 +32,7 @@ impl AutoMlJobConfig {
     pub fn data_split_config(&self) -> ::std::option::Option<&crate::types::AutoMlDataSplitConfig> {
         self.data_split_config.as_ref()
     }
-    /// <p>The configuration for generating a candidate for an AutoML job (optional).</p>
+    /// <p>The configuration for generating a candidate for an AutoML job (optional). </p>
     pub fn candidate_generation_config(&self) -> ::std::option::Option<&crate::types::AutoMlCandidateGenerationConfig> {
         self.candidate_generation_config.as_ref()
     }
@@ -106,17 +106,17 @@ impl AutoMlJobConfigBuilder {
     pub fn get_data_split_config(&self) -> &::std::option::Option<crate::types::AutoMlDataSplitConfig> {
         &self.data_split_config
     }
-    /// <p>The configuration for generating a candidate for an AutoML job (optional).</p>
+    /// <p>The configuration for generating a candidate for an AutoML job (optional). </p>
     pub fn candidate_generation_config(mut self, input: crate::types::AutoMlCandidateGenerationConfig) -> Self {
         self.candidate_generation_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The configuration for generating a candidate for an AutoML job (optional).</p>
+    /// <p>The configuration for generating a candidate for an AutoML job (optional). </p>
     pub fn set_candidate_generation_config(mut self, input: ::std::option::Option<crate::types::AutoMlCandidateGenerationConfig>) -> Self {
         self.candidate_generation_config = input;
         self
     }
-    /// <p>The configuration for generating a candidate for an AutoML job (optional).</p>
+    /// <p>The configuration for generating a candidate for an AutoML job (optional). </p>
     pub fn get_candidate_generation_config(&self) -> &::std::option::Option<crate::types::AutoMlCandidateGenerationConfig> {
         &self.candidate_generation_config
     }

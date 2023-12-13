@@ -23,7 +23,7 @@ impl GetBundlesInputBuilder {
 /// Fluent builder constructing a request to `GetBundles`.
 ///
 /// <p>Returns the bundles that you can apply to an Amazon Lightsail instance when you create it.</p>
-/// <p>A bundle describes the specifications of an instance, such as the monthly cost, amount of memory, the number of vCPUs, amount of storage space, and monthly network data transfer quota.</p><note>
+/// <p>A bundle describes the specifications of an instance, such as the monthly cost, amount of memory, the number of vCPUs, amount of storage space, and monthly network data transfer quota.</p> <note>
 /// <p>Bundles are referred to as <i>instance plans</i> in the Lightsail console.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -142,21 +142,21 @@ impl GetBundlesFluentBuilder {
     pub fn get_page_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_page_token()
     }
-    /// <p>Returns a list of bundles that are specific to Lightsail for Research.</p><important>
+    /// <p>Returns a list of bundles that are specific to Lightsail for Research.</p> <important>
     /// <p>You must use this parameter to view Lightsail for Research bundles.</p>
     /// </important>
     pub fn app_category(mut self, input: crate::types::AppCategory) -> Self {
         self.inner = self.inner.app_category(input);
         self
     }
-    /// <p>Returns a list of bundles that are specific to Lightsail for Research.</p><important>
+    /// <p>Returns a list of bundles that are specific to Lightsail for Research.</p> <important>
     /// <p>You must use this parameter to view Lightsail for Research bundles.</p>
     /// </important>
     pub fn set_app_category(mut self, input: ::std::option::Option<crate::types::AppCategory>) -> Self {
         self.inner = self.inner.set_app_category(input);
         self
     }
-    /// <p>Returns a list of bundles that are specific to Lightsail for Research.</p><important>
+    /// <p>Returns a list of bundles that are specific to Lightsail for Research.</p> <important>
     /// <p>You must use this parameter to view Lightsail for Research bundles.</p>
     /// </important>
     pub fn get_app_category(&self) -> &::std::option::Option<crate::types::AppCategory> {

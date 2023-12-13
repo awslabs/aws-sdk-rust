@@ -108,17 +108,17 @@ impl GetFirewallRuleGroupAssociationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>.</p>
+    /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>. </p>
     pub fn firewall_rule_group_association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.firewall_rule_group_association_id(input.into());
         self
     }
-    /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>.</p>
+    /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>. </p>
     pub fn set_firewall_rule_group_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_firewall_rule_group_association_id(input);
         self
     }
-    /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>.</p>
+    /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>. </p>
     pub fn get_firewall_rule_group_association_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_firewall_rule_group_association_id()
     }

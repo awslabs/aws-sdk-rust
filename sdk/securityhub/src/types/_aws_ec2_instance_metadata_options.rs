@@ -4,35 +4,35 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2InstanceMetadataOptions {
-    /// <p>Enables or disables the HTTP metadata endpoint on the instance.</p>
+    /// <p>Enables or disables the HTTP metadata endpoint on the instance. </p>
     pub http_endpoint: ::std::option::Option<::std::string::String>,
-    /// <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
+    /// <p>Enables or disables the IPv6 endpoint for the instance metadata service. </p>
     pub http_protocol_ipv6: ::std::option::Option<::std::string::String>,
-    /// <p>The desired HTTP PUT response hop limit for instance metadata requests. The larger the number, the further instance metadata requests can travel.</p>
+    /// <p>The desired HTTP PUT response hop limit for instance metadata requests. The larger the number, the further instance metadata requests can travel. </p>
     pub http_put_response_hop_limit: ::std::option::Option<i32>,
-    /// <p>The state of token usage for your instance metadata requests.</p>
+    /// <p>The state of token usage for your instance metadata requests. </p>
     pub http_tokens: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies whether to allow access to instance tags from the instance metadata.</p>
+    /// <p>Specifies whether to allow access to instance tags from the instance metadata. </p>
     pub instance_metadata_tags: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2InstanceMetadataOptions {
-    /// <p>Enables or disables the HTTP metadata endpoint on the instance.</p>
+    /// <p>Enables or disables the HTTP metadata endpoint on the instance. </p>
     pub fn http_endpoint(&self) -> ::std::option::Option<&str> {
         self.http_endpoint.as_deref()
     }
-    /// <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
+    /// <p>Enables or disables the IPv6 endpoint for the instance metadata service. </p>
     pub fn http_protocol_ipv6(&self) -> ::std::option::Option<&str> {
         self.http_protocol_ipv6.as_deref()
     }
-    /// <p>The desired HTTP PUT response hop limit for instance metadata requests. The larger the number, the further instance metadata requests can travel.</p>
+    /// <p>The desired HTTP PUT response hop limit for instance metadata requests. The larger the number, the further instance metadata requests can travel. </p>
     pub fn http_put_response_hop_limit(&self) -> ::std::option::Option<i32> {
         self.http_put_response_hop_limit
     }
-    /// <p>The state of token usage for your instance metadata requests.</p>
+    /// <p>The state of token usage for your instance metadata requests. </p>
     pub fn http_tokens(&self) -> ::std::option::Option<&str> {
         self.http_tokens.as_deref()
     }
-    /// <p>Specifies whether to allow access to instance tags from the instance metadata.</p>
+    /// <p>Specifies whether to allow access to instance tags from the instance metadata. </p>
     pub fn instance_metadata_tags(&self) -> ::std::option::Option<&str> {
         self.instance_metadata_tags.as_deref()
     }
@@ -55,73 +55,73 @@ pub struct AwsEc2InstanceMetadataOptionsBuilder {
     pub(crate) instance_metadata_tags: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2InstanceMetadataOptionsBuilder {
-    /// <p>Enables or disables the HTTP metadata endpoint on the instance.</p>
+    /// <p>Enables or disables the HTTP metadata endpoint on the instance. </p>
     pub fn http_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.http_endpoint = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Enables or disables the HTTP metadata endpoint on the instance.</p>
+    /// <p>Enables or disables the HTTP metadata endpoint on the instance. </p>
     pub fn set_http_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.http_endpoint = input;
         self
     }
-    /// <p>Enables or disables the HTTP metadata endpoint on the instance.</p>
+    /// <p>Enables or disables the HTTP metadata endpoint on the instance. </p>
     pub fn get_http_endpoint(&self) -> &::std::option::Option<::std::string::String> {
         &self.http_endpoint
     }
-    /// <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
+    /// <p>Enables or disables the IPv6 endpoint for the instance metadata service. </p>
     pub fn http_protocol_ipv6(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.http_protocol_ipv6 = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
+    /// <p>Enables or disables the IPv6 endpoint for the instance metadata service. </p>
     pub fn set_http_protocol_ipv6(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.http_protocol_ipv6 = input;
         self
     }
-    /// <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
+    /// <p>Enables or disables the IPv6 endpoint for the instance metadata service. </p>
     pub fn get_http_protocol_ipv6(&self) -> &::std::option::Option<::std::string::String> {
         &self.http_protocol_ipv6
     }
-    /// <p>The desired HTTP PUT response hop limit for instance metadata requests. The larger the number, the further instance metadata requests can travel.</p>
+    /// <p>The desired HTTP PUT response hop limit for instance metadata requests. The larger the number, the further instance metadata requests can travel. </p>
     pub fn http_put_response_hop_limit(mut self, input: i32) -> Self {
         self.http_put_response_hop_limit = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The desired HTTP PUT response hop limit for instance metadata requests. The larger the number, the further instance metadata requests can travel.</p>
+    /// <p>The desired HTTP PUT response hop limit for instance metadata requests. The larger the number, the further instance metadata requests can travel. </p>
     pub fn set_http_put_response_hop_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.http_put_response_hop_limit = input;
         self
     }
-    /// <p>The desired HTTP PUT response hop limit for instance metadata requests. The larger the number, the further instance metadata requests can travel.</p>
+    /// <p>The desired HTTP PUT response hop limit for instance metadata requests. The larger the number, the further instance metadata requests can travel. </p>
     pub fn get_http_put_response_hop_limit(&self) -> &::std::option::Option<i32> {
         &self.http_put_response_hop_limit
     }
-    /// <p>The state of token usage for your instance metadata requests.</p>
+    /// <p>The state of token usage for your instance metadata requests. </p>
     pub fn http_tokens(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.http_tokens = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The state of token usage for your instance metadata requests.</p>
+    /// <p>The state of token usage for your instance metadata requests. </p>
     pub fn set_http_tokens(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.http_tokens = input;
         self
     }
-    /// <p>The state of token usage for your instance metadata requests.</p>
+    /// <p>The state of token usage for your instance metadata requests. </p>
     pub fn get_http_tokens(&self) -> &::std::option::Option<::std::string::String> {
         &self.http_tokens
     }
-    /// <p>Specifies whether to allow access to instance tags from the instance metadata.</p>
+    /// <p>Specifies whether to allow access to instance tags from the instance metadata. </p>
     pub fn instance_metadata_tags(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_metadata_tags = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies whether to allow access to instance tags from the instance metadata.</p>
+    /// <p>Specifies whether to allow access to instance tags from the instance metadata. </p>
     pub fn set_instance_metadata_tags(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_metadata_tags = input;
         self
     }
-    /// <p>Specifies whether to allow access to instance tags from the instance metadata.</p>
+    /// <p>Specifies whether to allow access to instance tags from the instance metadata. </p>
     pub fn get_instance_metadata_tags(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_metadata_tags
     }

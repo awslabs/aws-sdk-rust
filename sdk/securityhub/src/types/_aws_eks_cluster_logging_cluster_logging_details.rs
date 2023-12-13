@@ -8,16 +8,11 @@ pub struct AwsEksClusterLoggingClusterLoggingDetails {
     pub enabled: ::std::option::Option<bool>,
     /// <p>A list of logging types. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>api</code></p></li>
-    /// <li>
-    /// <p><code>audit</code></p></li>
-    /// <li>
-    /// <p><code>authenticator</code></p></li>
-    /// <li>
-    /// <p><code>controllerManager</code></p></li>
-    /// <li>
-    /// <p><code>scheduler</code></p></li>
+    /// <li> <p> <code>api</code> </p> </li>
+    /// <li> <p> <code>audit</code> </p> </li>
+    /// <li> <p> <code>authenticator</code> </p> </li>
+    /// <li> <p> <code>controllerManager</code> </p> </li>
+    /// <li> <p> <code>scheduler</code> </p> </li>
     /// </ul>
     pub types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -28,16 +23,11 @@ impl AwsEksClusterLoggingClusterLoggingDetails {
     }
     /// <p>A list of logging types. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>api</code></p></li>
-    /// <li>
-    /// <p><code>audit</code></p></li>
-    /// <li>
-    /// <p><code>authenticator</code></p></li>
-    /// <li>
-    /// <p><code>controllerManager</code></p></li>
-    /// <li>
-    /// <p><code>scheduler</code></p></li>
+    /// <li> <p> <code>api</code> </p> </li>
+    /// <li> <p> <code>audit</code> </p> </li>
+    /// <li> <p> <code>authenticator</code> </p> </li>
+    /// <li> <p> <code>controllerManager</code> </p> </li>
+    /// <li> <p> <code>scheduler</code> </p> </li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.types.is_none()`.
@@ -80,16 +70,11 @@ impl AwsEksClusterLoggingClusterLoggingDetailsBuilder {
     ///
     /// <p>A list of logging types. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>api</code></p></li>
-    /// <li>
-    /// <p><code>audit</code></p></li>
-    /// <li>
-    /// <p><code>authenticator</code></p></li>
-    /// <li>
-    /// <p><code>controllerManager</code></p></li>
-    /// <li>
-    /// <p><code>scheduler</code></p></li>
+    /// <li> <p> <code>api</code> </p> </li>
+    /// <li> <p> <code>audit</code> </p> </li>
+    /// <li> <p> <code>authenticator</code> </p> </li>
+    /// <li> <p> <code>controllerManager</code> </p> </li>
+    /// <li> <p> <code>scheduler</code> </p> </li>
     /// </ul>
     pub fn types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.types.unwrap_or_default();
@@ -99,16 +84,11 @@ impl AwsEksClusterLoggingClusterLoggingDetailsBuilder {
     }
     /// <p>A list of logging types. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>api</code></p></li>
-    /// <li>
-    /// <p><code>audit</code></p></li>
-    /// <li>
-    /// <p><code>authenticator</code></p></li>
-    /// <li>
-    /// <p><code>controllerManager</code></p></li>
-    /// <li>
-    /// <p><code>scheduler</code></p></li>
+    /// <li> <p> <code>api</code> </p> </li>
+    /// <li> <p> <code>audit</code> </p> </li>
+    /// <li> <p> <code>authenticator</code> </p> </li>
+    /// <li> <p> <code>controllerManager</code> </p> </li>
+    /// <li> <p> <code>scheduler</code> </p> </li>
     /// </ul>
     pub fn set_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.types = input;
@@ -116,16 +96,11 @@ impl AwsEksClusterLoggingClusterLoggingDetailsBuilder {
     }
     /// <p>A list of logging types. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>api</code></p></li>
-    /// <li>
-    /// <p><code>audit</code></p></li>
-    /// <li>
-    /// <p><code>authenticator</code></p></li>
-    /// <li>
-    /// <p><code>controllerManager</code></p></li>
-    /// <li>
-    /// <p><code>scheduler</code></p></li>
+    /// <li> <p> <code>api</code> </p> </li>
+    /// <li> <p> <code>audit</code> </p> </li>
+    /// <li> <p> <code>authenticator</code> </p> </li>
+    /// <li> <p> <code>controllerManager</code> </p> </li>
+    /// <li> <p> <code>scheduler</code> </p> </li>
     /// </ul>
     pub fn get_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.types

@@ -22,8 +22,8 @@ impl UpdateExperimentInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateExperiment`.
 ///
-/// <p>Updates an Evidently experiment.</p>
-/// <p>Don't use this operation to update an experiment's tag. Instead, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_TagResource.html">TagResource</a>.</p>
+/// <p>Updates an Evidently experiment. </p>
+/// <p>Don't use this operation to update an experiment's tag. Instead, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_TagResource.html">TagResource</a>. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateExperimentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -6,11 +6,11 @@
 pub struct TargetTrackingConfiguration {
     /// <p>A predefined metric. You can specify either a predefined metric or a customized metric.</p>
     pub predefined_scaling_metric_specification: ::std::option::Option<crate::types::PredefinedScalingMetricSpecification>,
-    /// <p>A customized metric. You can specify either a predefined metric or a customized metric.</p>
+    /// <p>A customized metric. You can specify either a predefined metric or a customized metric. </p>
     pub customized_scaling_metric_specification: ::std::option::Option<crate::types::CustomizedScalingMetricSpecification>,
     /// <p>The target value for the metric. Although this property accepts numbers of type Double, it won't accept values that are either too small or too large. Values must be in the range of -2^360 to 2^360.</p>
     pub target_value: f64,
-    /// <p>Indicates whether scale in by the target tracking scaling policy is disabled. If the value is <code>true</code>, scale in is disabled and the target tracking scaling policy doesn't remove capacity from the scalable resource. Otherwise, scale in is enabled and the target tracking scaling policy can remove capacity from the scalable resource.</p>
+    /// <p>Indicates whether scale in by the target tracking scaling policy is disabled. If the value is <code>true</code>, scale in is disabled and the target tracking scaling policy doesn't remove capacity from the scalable resource. Otherwise, scale in is enabled and the target tracking scaling policy can remove capacity from the scalable resource. </p>
     /// <p>The default value is <code>false</code>.</p>
     pub disable_scale_in: ::std::option::Option<bool>,
     /// <p>The amount of time, in seconds, to wait for a previous scale-out activity to take effect. This property is not used if the scalable resource is an Auto Scaling group.</p>
@@ -27,7 +27,7 @@ impl TargetTrackingConfiguration {
     pub fn predefined_scaling_metric_specification(&self) -> ::std::option::Option<&crate::types::PredefinedScalingMetricSpecification> {
         self.predefined_scaling_metric_specification.as_ref()
     }
-    /// <p>A customized metric. You can specify either a predefined metric or a customized metric.</p>
+    /// <p>A customized metric. You can specify either a predefined metric or a customized metric. </p>
     pub fn customized_scaling_metric_specification(&self) -> ::std::option::Option<&crate::types::CustomizedScalingMetricSpecification> {
         self.customized_scaling_metric_specification.as_ref()
     }
@@ -35,7 +35,7 @@ impl TargetTrackingConfiguration {
     pub fn target_value(&self) -> f64 {
         self.target_value
     }
-    /// <p>Indicates whether scale in by the target tracking scaling policy is disabled. If the value is <code>true</code>, scale in is disabled and the target tracking scaling policy doesn't remove capacity from the scalable resource. Otherwise, scale in is enabled and the target tracking scaling policy can remove capacity from the scalable resource.</p>
+    /// <p>Indicates whether scale in by the target tracking scaling policy is disabled. If the value is <code>true</code>, scale in is disabled and the target tracking scaling policy doesn't remove capacity from the scalable resource. Otherwise, scale in is enabled and the target tracking scaling policy can remove capacity from the scalable resource. </p>
     /// <p>The default value is <code>false</code>.</p>
     pub fn disable_scale_in(&self) -> ::std::option::Option<bool> {
         self.disable_scale_in
@@ -92,12 +92,12 @@ impl TargetTrackingConfigurationBuilder {
     pub fn get_predefined_scaling_metric_specification(&self) -> &::std::option::Option<crate::types::PredefinedScalingMetricSpecification> {
         &self.predefined_scaling_metric_specification
     }
-    /// <p>A customized metric. You can specify either a predefined metric or a customized metric.</p>
+    /// <p>A customized metric. You can specify either a predefined metric or a customized metric. </p>
     pub fn customized_scaling_metric_specification(mut self, input: crate::types::CustomizedScalingMetricSpecification) -> Self {
         self.customized_scaling_metric_specification = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A customized metric. You can specify either a predefined metric or a customized metric.</p>
+    /// <p>A customized metric. You can specify either a predefined metric or a customized metric. </p>
     pub fn set_customized_scaling_metric_specification(
         mut self,
         input: ::std::option::Option<crate::types::CustomizedScalingMetricSpecification>,
@@ -105,7 +105,7 @@ impl TargetTrackingConfigurationBuilder {
         self.customized_scaling_metric_specification = input;
         self
     }
-    /// <p>A customized metric. You can specify either a predefined metric or a customized metric.</p>
+    /// <p>A customized metric. You can specify either a predefined metric or a customized metric. </p>
     pub fn get_customized_scaling_metric_specification(&self) -> &::std::option::Option<crate::types::CustomizedScalingMetricSpecification> {
         &self.customized_scaling_metric_specification
     }
@@ -124,19 +124,19 @@ impl TargetTrackingConfigurationBuilder {
     pub fn get_target_value(&self) -> &::std::option::Option<f64> {
         &self.target_value
     }
-    /// <p>Indicates whether scale in by the target tracking scaling policy is disabled. If the value is <code>true</code>, scale in is disabled and the target tracking scaling policy doesn't remove capacity from the scalable resource. Otherwise, scale in is enabled and the target tracking scaling policy can remove capacity from the scalable resource.</p>
+    /// <p>Indicates whether scale in by the target tracking scaling policy is disabled. If the value is <code>true</code>, scale in is disabled and the target tracking scaling policy doesn't remove capacity from the scalable resource. Otherwise, scale in is enabled and the target tracking scaling policy can remove capacity from the scalable resource. </p>
     /// <p>The default value is <code>false</code>.</p>
     pub fn disable_scale_in(mut self, input: bool) -> Self {
         self.disable_scale_in = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether scale in by the target tracking scaling policy is disabled. If the value is <code>true</code>, scale in is disabled and the target tracking scaling policy doesn't remove capacity from the scalable resource. Otherwise, scale in is enabled and the target tracking scaling policy can remove capacity from the scalable resource.</p>
+    /// <p>Indicates whether scale in by the target tracking scaling policy is disabled. If the value is <code>true</code>, scale in is disabled and the target tracking scaling policy doesn't remove capacity from the scalable resource. Otherwise, scale in is enabled and the target tracking scaling policy can remove capacity from the scalable resource. </p>
     /// <p>The default value is <code>false</code>.</p>
     pub fn set_disable_scale_in(mut self, input: ::std::option::Option<bool>) -> Self {
         self.disable_scale_in = input;
         self
     }
-    /// <p>Indicates whether scale in by the target tracking scaling policy is disabled. If the value is <code>true</code>, scale in is disabled and the target tracking scaling policy doesn't remove capacity from the scalable resource. Otherwise, scale in is enabled and the target tracking scaling policy can remove capacity from the scalable resource.</p>
+    /// <p>Indicates whether scale in by the target tracking scaling policy is disabled. If the value is <code>true</code>, scale in is disabled and the target tracking scaling policy doesn't remove capacity from the scalable resource. Otherwise, scale in is enabled and the target tracking scaling policy can remove capacity from the scalable resource. </p>
     /// <p>The default value is <code>false</code>.</p>
     pub fn get_disable_scale_in(&self) -> &::std::option::Option<bool> {
         &self.disable_scale_in

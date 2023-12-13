@@ -24,12 +24,9 @@ impl UpdateVpcIngressConnectionInputBuilder {
 ///
 /// <p>Update an existing App Runner VPC Ingress Connection resource. The VPC Ingress Connection must be in one of the following states to be updated:</p>
 /// <ul>
-/// <li>
-/// <p>AVAILABLE</p></li>
-/// <li>
-/// <p>FAILED_CREATION</p></li>
-/// <li>
-/// <p>FAILED_UPDATE</p></li>
+/// <li> <p> AVAILABLE </p> </li>
+/// <li> <p> FAILED_CREATION </p> </li>
+/// <li> <p> FAILED_UPDATE </p> </li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateVpcIngressConnectionFluentBuilder {

@@ -4,9 +4,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct EntityRecognizerMetadata {
-    /// <p>The number of documents in the input data that were used to train the entity recognizer. Typically this is 80 to 90 percent of the input documents.</p>
+    /// <p> The number of documents in the input data that were used to train the entity recognizer. Typically this is 80 to 90 percent of the input documents.</p>
     pub number_of_trained_documents: ::std::option::Option<i32>,
-    /// <p>The number of documents in the input data that were used to test the entity recognizer. Typically this is 10 to 20 percent of the input documents.</p>
+    /// <p> The number of documents in the input data that were used to test the entity recognizer. Typically this is 10 to 20 percent of the input documents.</p>
     pub number_of_test_documents: ::std::option::Option<i32>,
     /// <p>Detailed information about the accuracy of an entity recognizer.</p>
     pub evaluation_metrics: ::std::option::Option<crate::types::EntityRecognizerEvaluationMetrics>,
@@ -14,11 +14,11 @@ pub struct EntityRecognizerMetadata {
     pub entity_types: ::std::option::Option<::std::vec::Vec<crate::types::EntityRecognizerMetadataEntityTypesListItem>>,
 }
 impl EntityRecognizerMetadata {
-    /// <p>The number of documents in the input data that were used to train the entity recognizer. Typically this is 80 to 90 percent of the input documents.</p>
+    /// <p> The number of documents in the input data that were used to train the entity recognizer. Typically this is 80 to 90 percent of the input documents.</p>
     pub fn number_of_trained_documents(&self) -> ::std::option::Option<i32> {
         self.number_of_trained_documents
     }
-    /// <p>The number of documents in the input data that were used to test the entity recognizer. Typically this is 10 to 20 percent of the input documents.</p>
+    /// <p> The number of documents in the input data that were used to test the entity recognizer. Typically this is 10 to 20 percent of the input documents.</p>
     pub fn number_of_test_documents(&self) -> ::std::option::Option<i32> {
         self.number_of_test_documents
     }
@@ -60,31 +60,31 @@ pub struct EntityRecognizerMetadataBuilder {
     pub(crate) entity_types: ::std::option::Option<::std::vec::Vec<crate::types::EntityRecognizerMetadataEntityTypesListItem>>,
 }
 impl EntityRecognizerMetadataBuilder {
-    /// <p>The number of documents in the input data that were used to train the entity recognizer. Typically this is 80 to 90 percent of the input documents.</p>
+    /// <p> The number of documents in the input data that were used to train the entity recognizer. Typically this is 80 to 90 percent of the input documents.</p>
     pub fn number_of_trained_documents(mut self, input: i32) -> Self {
         self.number_of_trained_documents = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of documents in the input data that were used to train the entity recognizer. Typically this is 80 to 90 percent of the input documents.</p>
+    /// <p> The number of documents in the input data that were used to train the entity recognizer. Typically this is 80 to 90 percent of the input documents.</p>
     pub fn set_number_of_trained_documents(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_trained_documents = input;
         self
     }
-    /// <p>The number of documents in the input data that were used to train the entity recognizer. Typically this is 80 to 90 percent of the input documents.</p>
+    /// <p> The number of documents in the input data that were used to train the entity recognizer. Typically this is 80 to 90 percent of the input documents.</p>
     pub fn get_number_of_trained_documents(&self) -> &::std::option::Option<i32> {
         &self.number_of_trained_documents
     }
-    /// <p>The number of documents in the input data that were used to test the entity recognizer. Typically this is 10 to 20 percent of the input documents.</p>
+    /// <p> The number of documents in the input data that were used to test the entity recognizer. Typically this is 10 to 20 percent of the input documents.</p>
     pub fn number_of_test_documents(mut self, input: i32) -> Self {
         self.number_of_test_documents = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of documents in the input data that were used to test the entity recognizer. Typically this is 10 to 20 percent of the input documents.</p>
+    /// <p> The number of documents in the input data that were used to test the entity recognizer. Typically this is 10 to 20 percent of the input documents.</p>
     pub fn set_number_of_test_documents(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_test_documents = input;
         self
     }
-    /// <p>The number of documents in the input data that were used to test the entity recognizer. Typically this is 10 to 20 percent of the input documents.</p>
+    /// <p> The number of documents in the input data that were used to test the entity recognizer. Typically this is 10 to 20 percent of the input documents.</p>
     pub fn get_number_of_test_documents(&self) -> &::std::option::Option<i32> {
         &self.number_of_test_documents
     }

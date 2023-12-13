@@ -10,15 +10,15 @@ pub struct PublishInput {
     pub qos: ::std::option::Option<i32>,
     /// <p>A Boolean value that determines whether to set the RETAIN flag when the message is published.</p>
     /// <p>Setting the RETAIN flag causes the message to be retained and sent to new subscribers to the topic.</p>
-    /// <p>Valid values: <code>true</code> | <code>false</code></p>
-    /// <p>Default value: <code>false</code></p>
+    /// <p>Valid values: <code>true</code> | <code>false</code> </p>
+    /// <p>Default value: <code>false</code> </p>
     pub retain: ::std::option::Option<bool>,
     /// <p>The message body. MQTT accepts text, binary, and empty (null) message payloads.</p>
     /// <p>Publishing an empty (null) payload with <b>retain</b> = <code>true</code> deletes the retained message identified by <b>topic</b> from Amazon Web Services IoT Core.</p>
     pub payload: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>A JSON string that contains an array of JSON objects. If you don’t use Amazon Web Services SDK or CLI, you must encode the JSON string to base64 format before adding it to the HTTP header. <code>userProperties</code> is an HTTP header value in the API.</p>
     /// <p>The following example <code>userProperties</code> parameter is a JSON string which represents two User Properties. Note that it needs to be base64-encoded:</p>
-    /// <p><code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code></p>
+    /// <p> <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code> </p>
     pub user_properties: ::std::option::Option<::std::string::String>,
     /// <p>An <code>Enum</code> string value that indicates whether the payload is formatted as UTF-8. <code>payloadFormatIndicator</code> is an HTTP header value in the API.</p>
     pub payload_format_indicator: ::std::option::Option<crate::types::PayloadFormatIndicator>,
@@ -42,8 +42,8 @@ impl PublishInput {
     }
     /// <p>A Boolean value that determines whether to set the RETAIN flag when the message is published.</p>
     /// <p>Setting the RETAIN flag causes the message to be retained and sent to new subscribers to the topic.</p>
-    /// <p>Valid values: <code>true</code> | <code>false</code></p>
-    /// <p>Default value: <code>false</code></p>
+    /// <p>Valid values: <code>true</code> | <code>false</code> </p>
+    /// <p>Default value: <code>false</code> </p>
     pub fn retain(&self) -> ::std::option::Option<bool> {
         self.retain
     }
@@ -54,7 +54,7 @@ impl PublishInput {
     }
     /// <p>A JSON string that contains an array of JSON objects. If you don’t use Amazon Web Services SDK or CLI, you must encode the JSON string to base64 format before adding it to the HTTP header. <code>userProperties</code> is an HTTP header value in the API.</p>
     /// <p>The following example <code>userProperties</code> parameter is a JSON string which represents two User Properties. Note that it needs to be base64-encoded:</p>
-    /// <p><code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code></p>
+    /// <p> <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code> </p>
     pub fn user_properties(&self) -> ::std::option::Option<&str> {
         self.user_properties.as_deref()
     }
@@ -133,24 +133,24 @@ impl PublishInputBuilder {
     }
     /// <p>A Boolean value that determines whether to set the RETAIN flag when the message is published.</p>
     /// <p>Setting the RETAIN flag causes the message to be retained and sent to new subscribers to the topic.</p>
-    /// <p>Valid values: <code>true</code> | <code>false</code></p>
-    /// <p>Default value: <code>false</code></p>
+    /// <p>Valid values: <code>true</code> | <code>false</code> </p>
+    /// <p>Default value: <code>false</code> </p>
     pub fn retain(mut self, input: bool) -> Self {
         self.retain = ::std::option::Option::Some(input);
         self
     }
     /// <p>A Boolean value that determines whether to set the RETAIN flag when the message is published.</p>
     /// <p>Setting the RETAIN flag causes the message to be retained and sent to new subscribers to the topic.</p>
-    /// <p>Valid values: <code>true</code> | <code>false</code></p>
-    /// <p>Default value: <code>false</code></p>
+    /// <p>Valid values: <code>true</code> | <code>false</code> </p>
+    /// <p>Default value: <code>false</code> </p>
     pub fn set_retain(mut self, input: ::std::option::Option<bool>) -> Self {
         self.retain = input;
         self
     }
     /// <p>A Boolean value that determines whether to set the RETAIN flag when the message is published.</p>
     /// <p>Setting the RETAIN flag causes the message to be retained and sent to new subscribers to the topic.</p>
-    /// <p>Valid values: <code>true</code> | <code>false</code></p>
-    /// <p>Default value: <code>false</code></p>
+    /// <p>Valid values: <code>true</code> | <code>false</code> </p>
+    /// <p>Default value: <code>false</code> </p>
     pub fn get_retain(&self) -> &::std::option::Option<bool> {
         &self.retain
     }
@@ -173,21 +173,21 @@ impl PublishInputBuilder {
     }
     /// <p>A JSON string that contains an array of JSON objects. If you don’t use Amazon Web Services SDK or CLI, you must encode the JSON string to base64 format before adding it to the HTTP header. <code>userProperties</code> is an HTTP header value in the API.</p>
     /// <p>The following example <code>userProperties</code> parameter is a JSON string which represents two User Properties. Note that it needs to be base64-encoded:</p>
-    /// <p><code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code></p>
+    /// <p> <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code> </p>
     pub fn user_properties(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_properties = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A JSON string that contains an array of JSON objects. If you don’t use Amazon Web Services SDK or CLI, you must encode the JSON string to base64 format before adding it to the HTTP header. <code>userProperties</code> is an HTTP header value in the API.</p>
     /// <p>The following example <code>userProperties</code> parameter is a JSON string which represents two User Properties. Note that it needs to be base64-encoded:</p>
-    /// <p><code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code></p>
+    /// <p> <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code> </p>
     pub fn set_user_properties(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_properties = input;
         self
     }
     /// <p>A JSON string that contains an array of JSON objects. If you don’t use Amazon Web Services SDK or CLI, you must encode the JSON string to base64 format before adding it to the HTTP header. <code>userProperties</code> is an HTTP header value in the API.</p>
     /// <p>The following example <code>userProperties</code> parameter is a JSON string which represents two User Properties. Note that it needs to be base64-encoded:</p>
-    /// <p><code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code></p>
+    /// <p> <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code> </p>
     pub fn get_user_properties(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_properties
     }

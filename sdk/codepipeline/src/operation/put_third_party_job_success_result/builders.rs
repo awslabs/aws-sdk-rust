@@ -164,17 +164,17 @@ impl PutThirdPartyJobSuccessResultFluentBuilder {
     pub fn get_continuation_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_continuation_token()
     }
-    /// <p>The details of the actions taken and results produced on an artifact as it passes through stages in the pipeline.</p>
+    /// <p>The details of the actions taken and results produced on an artifact as it passes through stages in the pipeline. </p>
     pub fn execution_details(mut self, input: crate::types::ExecutionDetails) -> Self {
         self.inner = self.inner.execution_details(input);
         self
     }
-    /// <p>The details of the actions taken and results produced on an artifact as it passes through stages in the pipeline.</p>
+    /// <p>The details of the actions taken and results produced on an artifact as it passes through stages in the pipeline. </p>
     pub fn set_execution_details(mut self, input: ::std::option::Option<crate::types::ExecutionDetails>) -> Self {
         self.inner = self.inner.set_execution_details(input);
         self
     }
-    /// <p>The details of the actions taken and results produced on an artifact as it passes through stages in the pipeline.</p>
+    /// <p>The details of the actions taken and results produced on an artifact as it passes through stages in the pipeline. </p>
     pub fn get_execution_details(&self) -> &::std::option::Option<crate::types::ExecutionDetails> {
         self.inner.get_execution_details()
     }

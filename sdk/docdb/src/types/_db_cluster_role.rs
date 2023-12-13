@@ -8,12 +8,9 @@ pub struct DbClusterRole {
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Describes the state of association between the IAMrole and the cluster. The <code>Status</code> property returns one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ACTIVE</code> - The IAMrole ARN is associated with the cluster and can be used to access other Amazon Web Services services on your behalf.</p></li>
-    /// <li>
-    /// <p><code>PENDING</code> - The IAMrole ARN is being associated with the cluster.</p></li>
-    /// <li>
-    /// <p><code>INVALID</code> - The IAMrole ARN is associated with the cluster, but the cluster cannot assume the IAMrole to access other Amazon Web Services services on your behalf.</p></li>
+    /// <li> <p> <code>ACTIVE</code> - The IAMrole ARN is associated with the cluster and can be used to access other Amazon Web Services services on your behalf.</p> </li>
+    /// <li> <p> <code>PENDING</code> - The IAMrole ARN is being associated with the cluster.</p> </li>
+    /// <li> <p> <code>INVALID</code> - The IAMrole ARN is associated with the cluster, but the cluster cannot assume the IAMrole to access other Amazon Web Services services on your behalf.</p> </li>
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
 }
@@ -24,12 +21,9 @@ impl DbClusterRole {
     }
     /// <p>Describes the state of association between the IAMrole and the cluster. The <code>Status</code> property returns one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ACTIVE</code> - The IAMrole ARN is associated with the cluster and can be used to access other Amazon Web Services services on your behalf.</p></li>
-    /// <li>
-    /// <p><code>PENDING</code> - The IAMrole ARN is being associated with the cluster.</p></li>
-    /// <li>
-    /// <p><code>INVALID</code> - The IAMrole ARN is associated with the cluster, but the cluster cannot assume the IAMrole to access other Amazon Web Services services on your behalf.</p></li>
+    /// <li> <p> <code>ACTIVE</code> - The IAMrole ARN is associated with the cluster and can be used to access other Amazon Web Services services on your behalf.</p> </li>
+    /// <li> <p> <code>PENDING</code> - The IAMrole ARN is being associated with the cluster.</p> </li>
+    /// <li> <p> <code>INVALID</code> - The IAMrole ARN is associated with the cluster, but the cluster cannot assume the IAMrole to access other Amazon Web Services services on your behalf.</p> </li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
@@ -66,12 +60,9 @@ impl DbClusterRoleBuilder {
     }
     /// <p>Describes the state of association between the IAMrole and the cluster. The <code>Status</code> property returns one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ACTIVE</code> - The IAMrole ARN is associated with the cluster and can be used to access other Amazon Web Services services on your behalf.</p></li>
-    /// <li>
-    /// <p><code>PENDING</code> - The IAMrole ARN is being associated with the cluster.</p></li>
-    /// <li>
-    /// <p><code>INVALID</code> - The IAMrole ARN is associated with the cluster, but the cluster cannot assume the IAMrole to access other Amazon Web Services services on your behalf.</p></li>
+    /// <li> <p> <code>ACTIVE</code> - The IAMrole ARN is associated with the cluster and can be used to access other Amazon Web Services services on your behalf.</p> </li>
+    /// <li> <p> <code>PENDING</code> - The IAMrole ARN is being associated with the cluster.</p> </li>
+    /// <li> <p> <code>INVALID</code> - The IAMrole ARN is associated with the cluster, but the cluster cannot assume the IAMrole to access other Amazon Web Services services on your behalf.</p> </li>
     /// </ul>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -79,12 +70,9 @@ impl DbClusterRoleBuilder {
     }
     /// <p>Describes the state of association between the IAMrole and the cluster. The <code>Status</code> property returns one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ACTIVE</code> - The IAMrole ARN is associated with the cluster and can be used to access other Amazon Web Services services on your behalf.</p></li>
-    /// <li>
-    /// <p><code>PENDING</code> - The IAMrole ARN is being associated with the cluster.</p></li>
-    /// <li>
-    /// <p><code>INVALID</code> - The IAMrole ARN is associated with the cluster, but the cluster cannot assume the IAMrole to access other Amazon Web Services services on your behalf.</p></li>
+    /// <li> <p> <code>ACTIVE</code> - The IAMrole ARN is associated with the cluster and can be used to access other Amazon Web Services services on your behalf.</p> </li>
+    /// <li> <p> <code>PENDING</code> - The IAMrole ARN is being associated with the cluster.</p> </li>
+    /// <li> <p> <code>INVALID</code> - The IAMrole ARN is associated with the cluster, but the cluster cannot assume the IAMrole to access other Amazon Web Services services on your behalf.</p> </li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
@@ -92,12 +80,9 @@ impl DbClusterRoleBuilder {
     }
     /// <p>Describes the state of association between the IAMrole and the cluster. The <code>Status</code> property returns one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ACTIVE</code> - The IAMrole ARN is associated with the cluster and can be used to access other Amazon Web Services services on your behalf.</p></li>
-    /// <li>
-    /// <p><code>PENDING</code> - The IAMrole ARN is being associated with the cluster.</p></li>
-    /// <li>
-    /// <p><code>INVALID</code> - The IAMrole ARN is associated with the cluster, but the cluster cannot assume the IAMrole to access other Amazon Web Services services on your behalf.</p></li>
+    /// <li> <p> <code>ACTIVE</code> - The IAMrole ARN is associated with the cluster and can be used to access other Amazon Web Services services on your behalf.</p> </li>
+    /// <li> <p> <code>PENDING</code> - The IAMrole ARN is being associated with the cluster.</p> </li>
+    /// <li> <p> <code>INVALID</code> - The IAMrole ARN is associated with the cluster, but the cluster cannot assume the IAMrole to access other Amazon Web Services services on your behalf.</p> </li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status

@@ -22,7 +22,7 @@ impl DescribeDocumentPermissionInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeDocumentPermission`.
 ///
-/// <p>Describes the permissions for a Amazon Web Services Systems Manager document (SSM document). If you created the document, you are the owner. If a document is shared, it can either be shared privately (by specifying a user's Amazon Web Services account ID) or publicly (<i>All</i>).</p>
+/// <p>Describes the permissions for a Amazon Web Services Systems Manager document (SSM document). If you created the document, you are the owner. If a document is shared, it can either be shared privately (by specifying a user's Amazon Web Services account ID) or publicly (<i>All</i>). </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeDocumentPermissionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

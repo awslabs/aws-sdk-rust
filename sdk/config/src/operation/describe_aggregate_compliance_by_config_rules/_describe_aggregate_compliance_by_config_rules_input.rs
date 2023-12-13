@@ -5,7 +5,7 @@
 pub struct DescribeAggregateComplianceByConfigRulesInput {
     /// <p>The name of the configuration aggregator.</p>
     pub configuration_aggregator_name: ::std::option::Option<::std::string::String>,
-    /// <p>Filters the results by ConfigRuleComplianceFilters object.</p>
+    /// <p>Filters the results by ConfigRuleComplianceFilters object. </p>
     pub filters: ::std::option::Option<crate::types::ConfigRuleComplianceFilters>,
     /// <p>The maximum number of evaluation results returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
     pub limit: ::std::option::Option<i32>,
@@ -17,7 +17,7 @@ impl DescribeAggregateComplianceByConfigRulesInput {
     pub fn configuration_aggregator_name(&self) -> ::std::option::Option<&str> {
         self.configuration_aggregator_name.as_deref()
     }
-    /// <p>Filters the results by ConfigRuleComplianceFilters object.</p>
+    /// <p>Filters the results by ConfigRuleComplianceFilters object. </p>
     pub fn filters(&self) -> ::std::option::Option<&crate::types::ConfigRuleComplianceFilters> {
         self.filters.as_ref()
     }
@@ -63,17 +63,17 @@ impl DescribeAggregateComplianceByConfigRulesInputBuilder {
     pub fn get_configuration_aggregator_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.configuration_aggregator_name
     }
-    /// <p>Filters the results by ConfigRuleComplianceFilters object.</p>
+    /// <p>Filters the results by ConfigRuleComplianceFilters object. </p>
     pub fn filters(mut self, input: crate::types::ConfigRuleComplianceFilters) -> Self {
         self.filters = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Filters the results by ConfigRuleComplianceFilters object.</p>
+    /// <p>Filters the results by ConfigRuleComplianceFilters object. </p>
     pub fn set_filters(mut self, input: ::std::option::Option<crate::types::ConfigRuleComplianceFilters>) -> Self {
         self.filters = input;
         self
     }
-    /// <p>Filters the results by ConfigRuleComplianceFilters object.</p>
+    /// <p>Filters the results by ConfigRuleComplianceFilters object. </p>
     pub fn get_filters(&self) -> &::std::option::Option<crate::types::ConfigRuleComplianceFilters> {
         &self.filters
     }

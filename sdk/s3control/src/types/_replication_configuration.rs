@@ -6,7 +6,7 @@
 pub struct ReplicationConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that S3 on Outposts assumes when replicating objects. For information about S3 replication on Outposts configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/outposts-replication-how-setup.html">Setting up replication</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub role: ::std::string::String,
-    /// <p>A container for one or more replication rules. A replication configuration must have at least one rule and can contain an array of 100 rules at the most.</p>
+    /// <p>A container for one or more replication rules. A replication configuration must have at least one rule and can contain an array of 100 rules at the most. </p>
     pub rules: ::std::vec::Vec<crate::types::ReplicationRule>,
 }
 impl ReplicationConfiguration {
@@ -15,7 +15,7 @@ impl ReplicationConfiguration {
         use std::ops::Deref;
         self.role.deref()
     }
-    /// <p>A container for one or more replication rules. A replication configuration must have at least one rule and can contain an array of 100 rules at the most.</p>
+    /// <p>A container for one or more replication rules. A replication configuration must have at least one rule and can contain an array of 100 rules at the most. </p>
     pub fn rules(&self) -> &[crate::types::ReplicationRule] {
         use std::ops::Deref;
         self.rules.deref()
@@ -55,19 +55,19 @@ impl ReplicationConfigurationBuilder {
     ///
     /// To override the contents of this collection use [`set_rules`](Self::set_rules).
     ///
-    /// <p>A container for one or more replication rules. A replication configuration must have at least one rule and can contain an array of 100 rules at the most.</p>
+    /// <p>A container for one or more replication rules. A replication configuration must have at least one rule and can contain an array of 100 rules at the most. </p>
     pub fn rules(mut self, input: crate::types::ReplicationRule) -> Self {
         let mut v = self.rules.unwrap_or_default();
         v.push(input);
         self.rules = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A container for one or more replication rules. A replication configuration must have at least one rule and can contain an array of 100 rules at the most.</p>
+    /// <p>A container for one or more replication rules. A replication configuration must have at least one rule and can contain an array of 100 rules at the most. </p>
     pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationRule>>) -> Self {
         self.rules = input;
         self
     }
-    /// <p>A container for one or more replication rules. A replication configuration must have at least one rule and can contain an array of 100 rules at the most.</p>
+    /// <p>A container for one or more replication rules. A replication configuration must have at least one rule and can contain an array of 100 rules at the most. </p>
     pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationRule>> {
         &self.rules
     }

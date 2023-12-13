@@ -119,8 +119,7 @@ impl DescribeDBClusterParameterGroupsFluentBuilder {
     /// <p>The name of a specific DB cluster parameter group to return details for.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
+    /// <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li>
     /// </ul>
     pub fn db_cluster_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_cluster_parameter_group_name(input.into());
@@ -129,8 +128,7 @@ impl DescribeDBClusterParameterGroupsFluentBuilder {
     /// <p>The name of a specific DB cluster parameter group to return details for.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
+    /// <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li>
     /// </ul>
     pub fn set_db_cluster_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_cluster_parameter_group_name(input);
@@ -139,8 +137,7 @@ impl DescribeDBClusterParameterGroupsFluentBuilder {
     /// <p>The name of a specific DB cluster parameter group to return details for.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
+    /// <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li>
     /// </ul>
     pub fn get_db_cluster_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_cluster_parameter_group_name()

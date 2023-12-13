@@ -4,12 +4,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEnvironmentResourcesOutput {
-    /// <p>A list of <code>EnvironmentResourceDescription</code>.</p>
+    /// <p> A list of <code>EnvironmentResourceDescription</code>. </p>
     pub environment_resources: ::std::option::Option<crate::types::EnvironmentResourceDescription>,
     _request_id: Option<String>,
 }
 impl DescribeEnvironmentResourcesOutput {
-    /// <p>A list of <code>EnvironmentResourceDescription</code>.</p>
+    /// <p> A list of <code>EnvironmentResourceDescription</code>. </p>
     pub fn environment_resources(&self) -> ::std::option::Option<&crate::types::EnvironmentResourceDescription> {
         self.environment_resources.as_ref()
     }
@@ -34,17 +34,17 @@ pub struct DescribeEnvironmentResourcesOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeEnvironmentResourcesOutputBuilder {
-    /// <p>A list of <code>EnvironmentResourceDescription</code>.</p>
+    /// <p> A list of <code>EnvironmentResourceDescription</code>. </p>
     pub fn environment_resources(mut self, input: crate::types::EnvironmentResourceDescription) -> Self {
         self.environment_resources = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A list of <code>EnvironmentResourceDescription</code>.</p>
+    /// <p> A list of <code>EnvironmentResourceDescription</code>. </p>
     pub fn set_environment_resources(mut self, input: ::std::option::Option<crate::types::EnvironmentResourceDescription>) -> Self {
         self.environment_resources = input;
         self
     }
-    /// <p>A list of <code>EnvironmentResourceDescription</code>.</p>
+    /// <p> A list of <code>EnvironmentResourceDescription</code>. </p>
     pub fn get_environment_resources(&self) -> &::std::option::Option<crate::types::EnvironmentResourceDescription> {
         &self.environment_resources
     }

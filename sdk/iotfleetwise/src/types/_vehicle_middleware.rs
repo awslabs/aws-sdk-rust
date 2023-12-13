@@ -4,18 +4,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VehicleMiddleware {
-    /// <p>The name of the vehicle middleware.</p>
+    /// <p>The name of the vehicle middleware. </p>
     pub name: ::std::string::String,
-    /// <p>The protocol name of the vehicle middleware.</p>
+    /// <p>The protocol name of the vehicle middleware. </p>
     pub protocol_name: crate::types::VehicleMiddlewareProtocol,
 }
 impl VehicleMiddleware {
-    /// <p>The name of the vehicle middleware.</p>
+    /// <p>The name of the vehicle middleware. </p>
     pub fn name(&self) -> &str {
         use std::ops::Deref;
         self.name.deref()
     }
-    /// <p>The protocol name of the vehicle middleware.</p>
+    /// <p>The protocol name of the vehicle middleware. </p>
     pub fn protocol_name(&self) -> &crate::types::VehicleMiddlewareProtocol {
         &self.protocol_name
     }
@@ -35,33 +35,33 @@ pub struct VehicleMiddlewareBuilder {
     pub(crate) protocol_name: ::std::option::Option<crate::types::VehicleMiddlewareProtocol>,
 }
 impl VehicleMiddlewareBuilder {
-    /// <p>The name of the vehicle middleware.</p>
+    /// <p>The name of the vehicle middleware. </p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the vehicle middleware.</p>
+    /// <p>The name of the vehicle middleware. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the vehicle middleware.</p>
+    /// <p>The name of the vehicle middleware. </p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The protocol name of the vehicle middleware.</p>
+    /// <p>The protocol name of the vehicle middleware. </p>
     /// This field is required.
     pub fn protocol_name(mut self, input: crate::types::VehicleMiddlewareProtocol) -> Self {
         self.protocol_name = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The protocol name of the vehicle middleware.</p>
+    /// <p>The protocol name of the vehicle middleware. </p>
     pub fn set_protocol_name(mut self, input: ::std::option::Option<crate::types::VehicleMiddlewareProtocol>) -> Self {
         self.protocol_name = input;
         self
     }
-    /// <p>The protocol name of the vehicle middleware.</p>
+    /// <p>The protocol name of the vehicle middleware. </p>
     pub fn get_protocol_name(&self) -> &::std::option::Option<crate::types::VehicleMiddlewareProtocol> {
         &self.protocol_name
     }

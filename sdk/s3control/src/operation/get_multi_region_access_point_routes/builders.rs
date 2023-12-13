@@ -25,17 +25,12 @@ impl GetMultiRegionAccessPointRoutesInputBuilder {
 /// <p>Returns the routing configuration for a Multi-Region Access Point, indicating which Regions are active or passive.</p>
 /// <p>To obtain routing control changes and failover requests, use the Amazon S3 failover control infrastructure endpoints in these five Amazon Web Services Regions:</p>
 /// <ul>
-/// <li>
-/// <p><code>us-east-1</code></p></li>
-/// <li>
-/// <p><code>us-west-2</code></p></li>
-/// <li>
-/// <p><code>ap-southeast-2</code></p></li>
-/// <li>
-/// <p><code>ap-northeast-1</code></p></li>
-/// <li>
-/// <p><code>eu-west-1</code></p></li>
-/// </ul><note>
+/// <li> <p> <code>us-east-1</code> </p> </li>
+/// <li> <p> <code>us-west-2</code> </p> </li>
+/// <li> <p> <code>ap-southeast-2</code> </p> </li>
+/// <li> <p> <code>ap-northeast-1</code> </p> </li>
+/// <li> <p> <code>eu-west-1</code> </p> </li>
+/// </ul> <note>
 /// <p>Your Amazon S3 bucket does not need to be in these five Regions.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

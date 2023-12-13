@@ -261,7 +261,7 @@ pub enum CreateFHIRDatastoreError {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>Unknown error occurs in the service.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p>The user has exceeded their maximum number of allowed calls to the given API.</p>
+    /// <p>The user has exceeded their maximum number of allowed calls to the given API. </p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>The user input parameter was invalid.</p>
     ValidationException(crate::types::error::ValidationException),

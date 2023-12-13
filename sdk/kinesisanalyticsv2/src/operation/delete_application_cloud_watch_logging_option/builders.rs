@@ -22,7 +22,7 @@ impl DeleteApplicationCloudWatchLoggingOptionInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteApplicationCloudWatchLoggingOption`.
 ///
-/// <p>Deletes an Amazon CloudWatch log stream from an Kinesis Data Analytics application.</p>
+/// <p>Deletes an Amazon CloudWatch log stream from an Kinesis Data Analytics application. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteApplicationCloudWatchLoggingOptionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -143,17 +143,17 @@ impl DeleteApplicationCloudWatchLoggingOptionFluentBuilder {
     pub fn get_current_application_version_id(&self) -> &::std::option::Option<i64> {
         self.inner.get_current_application_version_id()
     }
-    /// <p>The <code>CloudWatchLoggingOptionId</code> of the Amazon CloudWatch logging option to delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the <code>DescribeApplication</code> operation.</p>
+    /// <p>The <code>CloudWatchLoggingOptionId</code> of the Amazon CloudWatch logging option to delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the <code>DescribeApplication</code> operation. </p>
     pub fn cloud_watch_logging_option_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cloud_watch_logging_option_id(input.into());
         self
     }
-    /// <p>The <code>CloudWatchLoggingOptionId</code> of the Amazon CloudWatch logging option to delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the <code>DescribeApplication</code> operation.</p>
+    /// <p>The <code>CloudWatchLoggingOptionId</code> of the Amazon CloudWatch logging option to delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the <code>DescribeApplication</code> operation. </p>
     pub fn set_cloud_watch_logging_option_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cloud_watch_logging_option_id(input);
         self
     }
-    /// <p>The <code>CloudWatchLoggingOptionId</code> of the Amazon CloudWatch logging option to delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the <code>DescribeApplication</code> operation.</p>
+    /// <p>The <code>CloudWatchLoggingOptionId</code> of the Amazon CloudWatch logging option to delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the <code>DescribeApplication</code> operation. </p>
     pub fn get_cloud_watch_logging_option_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cloud_watch_logging_option_id()
     }

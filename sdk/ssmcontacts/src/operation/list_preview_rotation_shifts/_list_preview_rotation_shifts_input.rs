@@ -5,13 +5,13 @@
 pub struct ListPreviewRotationShiftsInput {
     /// <p>The date and time a rotation would begin. The first shift is calculated from this date and time.</p>
     pub rotation_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Used to filter the range of calculated shifts before sending the response back to the user.</p>
+    /// <p>Used to filter the range of calculated shifts before sending the response back to the user. </p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time a rotation shift would end.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The contacts that would be assigned to a rotation.</p>
     pub members: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The time zone the rotation’s activity would be based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul".</p>
+    /// <p>The time zone the rotation’s activity would be based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". </p>
     pub time_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about how long a rotation would last before restarting at the beginning of the shift order.</p>
     pub recurrence: ::std::option::Option<crate::types::RecurrenceSettings>,
@@ -27,7 +27,7 @@ impl ListPreviewRotationShiftsInput {
     pub fn rotation_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.rotation_start_time.as_ref()
     }
-    /// <p>Used to filter the range of calculated shifts before sending the response back to the user.</p>
+    /// <p>Used to filter the range of calculated shifts before sending the response back to the user. </p>
     pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
@@ -41,7 +41,7 @@ impl ListPreviewRotationShiftsInput {
     pub fn members(&self) -> &[::std::string::String] {
         self.members.as_deref().unwrap_or_default()
     }
-    /// <p>The time zone the rotation’s activity would be based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul".</p>
+    /// <p>The time zone the rotation’s activity would be based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". </p>
     pub fn time_zone_id(&self) -> ::std::option::Option<&str> {
         self.time_zone_id.as_deref()
     }
@@ -100,17 +100,17 @@ impl ListPreviewRotationShiftsInputBuilder {
     pub fn get_rotation_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.rotation_start_time
     }
-    /// <p>Used to filter the range of calculated shifts before sending the response back to the user.</p>
+    /// <p>Used to filter the range of calculated shifts before sending the response back to the user. </p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Used to filter the range of calculated shifts before sending the response back to the user.</p>
+    /// <p>Used to filter the range of calculated shifts before sending the response back to the user. </p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
-    /// <p>Used to filter the range of calculated shifts before sending the response back to the user.</p>
+    /// <p>Used to filter the range of calculated shifts before sending the response back to the user. </p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.start_time
     }
@@ -149,18 +149,18 @@ impl ListPreviewRotationShiftsInputBuilder {
     pub fn get_members(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.members
     }
-    /// <p>The time zone the rotation’s activity would be based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul".</p>
+    /// <p>The time zone the rotation’s activity would be based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". </p>
     /// This field is required.
     pub fn time_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.time_zone_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The time zone the rotation’s activity would be based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul".</p>
+    /// <p>The time zone the rotation’s activity would be based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". </p>
     pub fn set_time_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.time_zone_id = input;
         self
     }
-    /// <p>The time zone the rotation’s activity would be based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul".</p>
+    /// <p>The time zone the rotation’s activity would be based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". </p>
     pub fn get_time_zone_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.time_zone_id
     }

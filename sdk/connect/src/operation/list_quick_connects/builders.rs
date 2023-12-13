@@ -22,7 +22,7 @@ impl ListQuickConnectsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListQuickConnects`.
 ///
-/// <p>Provides information about the quick connects for the specified Amazon Connect instance.</p>
+/// <p>Provides information about the quick connects for the specified Amazon Connect instance. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListQuickConnectsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

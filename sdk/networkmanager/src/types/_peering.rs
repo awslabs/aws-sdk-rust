@@ -8,13 +8,13 @@ pub struct Peering {
     pub core_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of a core network.</p>
     pub core_network_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the peering attachment.</p>
+    /// <p>The ID of the peering attachment. </p>
     pub peering_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the account owner.</p>
     pub owner_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of peering. This will be <code>TRANSIT_GATEWAY</code>.</p>
     pub peering_type: ::std::option::Option<crate::types::PeeringType>,
-    /// <p>The current state of the peering connection.</p>
+    /// <p>The current state of the peering connection. </p>
     pub state: ::std::option::Option<crate::types::PeeringState>,
     /// <p>The edge location for the peer.</p>
     pub edge_location: ::std::option::Option<::std::string::String>,
@@ -34,7 +34,7 @@ impl Peering {
     pub fn core_network_arn(&self) -> ::std::option::Option<&str> {
         self.core_network_arn.as_deref()
     }
-    /// <p>The ID of the peering attachment.</p>
+    /// <p>The ID of the peering attachment. </p>
     pub fn peering_id(&self) -> ::std::option::Option<&str> {
         self.peering_id.as_deref()
     }
@@ -46,7 +46,7 @@ impl Peering {
     pub fn peering_type(&self) -> ::std::option::Option<&crate::types::PeeringType> {
         self.peering_type.as_ref()
     }
-    /// <p>The current state of the peering connection.</p>
+    /// <p>The current state of the peering connection. </p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::PeeringState> {
         self.state.as_ref()
     }
@@ -120,17 +120,17 @@ impl PeeringBuilder {
     pub fn get_core_network_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.core_network_arn
     }
-    /// <p>The ID of the peering attachment.</p>
+    /// <p>The ID of the peering attachment. </p>
     pub fn peering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.peering_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the peering attachment.</p>
+    /// <p>The ID of the peering attachment. </p>
     pub fn set_peering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.peering_id = input;
         self
     }
-    /// <p>The ID of the peering attachment.</p>
+    /// <p>The ID of the peering attachment. </p>
     pub fn get_peering_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.peering_id
     }
@@ -162,17 +162,17 @@ impl PeeringBuilder {
     pub fn get_peering_type(&self) -> &::std::option::Option<crate::types::PeeringType> {
         &self.peering_type
     }
-    /// <p>The current state of the peering connection.</p>
+    /// <p>The current state of the peering connection. </p>
     pub fn state(mut self, input: crate::types::PeeringState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current state of the peering connection.</p>
+    /// <p>The current state of the peering connection. </p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::PeeringState>) -> Self {
         self.state = input;
         self
     }
-    /// <p>The current state of the peering connection.</p>
+    /// <p>The current state of the peering connection. </p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::PeeringState> {
         &self.state
     }

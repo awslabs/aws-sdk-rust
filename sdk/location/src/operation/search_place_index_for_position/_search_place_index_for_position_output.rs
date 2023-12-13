@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchPlaceIndexForPositionOutput {
-    /// <p>Contains a summary of the request. Echoes the input values for <code>Position</code>, <code>Language</code>, <code>MaxResults</code>, and the <code>DataSource</code> of the place index.</p>
+    /// <p>Contains a summary of the request. Echoes the input values for <code>Position</code>, <code>Language</code>, <code>MaxResults</code>, and the <code>DataSource</code> of the place index. </p>
     pub summary: ::std::option::Option<crate::types::SearchPlaceIndexForPositionSummary>,
     /// <p>Returns a list of Places closest to the specified position. Each result contains additional information about the Places returned.</p>
     pub results: ::std::vec::Vec<crate::types::SearchForPositionResult>,
     _request_id: Option<String>,
 }
 impl SearchPlaceIndexForPositionOutput {
-    /// <p>Contains a summary of the request. Echoes the input values for <code>Position</code>, <code>Language</code>, <code>MaxResults</code>, and the <code>DataSource</code> of the place index.</p>
+    /// <p>Contains a summary of the request. Echoes the input values for <code>Position</code>, <code>Language</code>, <code>MaxResults</code>, and the <code>DataSource</code> of the place index. </p>
     pub fn summary(&self) -> ::std::option::Option<&crate::types::SearchPlaceIndexForPositionSummary> {
         self.summary.as_ref()
     }
@@ -41,18 +41,18 @@ pub struct SearchPlaceIndexForPositionOutputBuilder {
     _request_id: Option<String>,
 }
 impl SearchPlaceIndexForPositionOutputBuilder {
-    /// <p>Contains a summary of the request. Echoes the input values for <code>Position</code>, <code>Language</code>, <code>MaxResults</code>, and the <code>DataSource</code> of the place index.</p>
+    /// <p>Contains a summary of the request. Echoes the input values for <code>Position</code>, <code>Language</code>, <code>MaxResults</code>, and the <code>DataSource</code> of the place index. </p>
     /// This field is required.
     pub fn summary(mut self, input: crate::types::SearchPlaceIndexForPositionSummary) -> Self {
         self.summary = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Contains a summary of the request. Echoes the input values for <code>Position</code>, <code>Language</code>, <code>MaxResults</code>, and the <code>DataSource</code> of the place index.</p>
+    /// <p>Contains a summary of the request. Echoes the input values for <code>Position</code>, <code>Language</code>, <code>MaxResults</code>, and the <code>DataSource</code> of the place index. </p>
     pub fn set_summary(mut self, input: ::std::option::Option<crate::types::SearchPlaceIndexForPositionSummary>) -> Self {
         self.summary = input;
         self
     }
-    /// <p>Contains a summary of the request. Echoes the input values for <code>Position</code>, <code>Language</code>, <code>MaxResults</code>, and the <code>DataSource</code> of the place index.</p>
+    /// <p>Contains a summary of the request. Echoes the input values for <code>Position</code>, <code>Language</code>, <code>MaxResults</code>, and the <code>DataSource</code> of the place index. </p>
     pub fn get_summary(&self) -> &::std::option::Option<crate::types::SearchPlaceIndexForPositionSummary> {
         &self.summary
     }

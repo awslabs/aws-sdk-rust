@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutReportDefinitionInput {
-    /// <p>Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information.</p>
+    /// <p>Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information. </p>
     pub report_definition: ::std::option::Option<crate::types::ReportDefinition>,
     /// <p>The tags to be assigned to the report definition resource.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl PutReportDefinitionInput {
-    /// <p>Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information.</p>
+    /// <p>Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information. </p>
     pub fn report_definition(&self) -> ::std::option::Option<&crate::types::ReportDefinition> {
         self.report_definition.as_ref()
     }
@@ -36,18 +36,18 @@ pub struct PutReportDefinitionInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl PutReportDefinitionInputBuilder {
-    /// <p>Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information.</p>
+    /// <p>Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information. </p>
     /// This field is required.
     pub fn report_definition(mut self, input: crate::types::ReportDefinition) -> Self {
         self.report_definition = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information.</p>
+    /// <p>Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information. </p>
     pub fn set_report_definition(mut self, input: ::std::option::Option<crate::types::ReportDefinition>) -> Self {
         self.report_definition = input;
         self
     }
-    /// <p>Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information.</p>
+    /// <p>Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information. </p>
     pub fn get_report_definition(&self) -> &::std::option::Option<crate::types::ReportDefinition> {
         &self.report_definition
     }

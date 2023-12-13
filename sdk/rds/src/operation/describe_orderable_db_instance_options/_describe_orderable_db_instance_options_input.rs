@@ -7,38 +7,22 @@ pub struct DescribeOrderableDbInstanceOptionsInput {
     /// <p>The name of the engine to describe DB instance options for.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>aurora-mysql</code></p></li>
-    /// <li>
-    /// <p><code>aurora-postgresql</code></p></li>
-    /// <li>
-    /// <p><code>custom-oracle-ee</code></p></li>
-    /// <li>
-    /// <p><code>db2-ae</code></p></li>
-    /// <li>
-    /// <p><code>db2-se</code></p></li>
-    /// <li>
-    /// <p><code>mariadb</code></p></li>
-    /// <li>
-    /// <p><code>mysql</code></p></li>
-    /// <li>
-    /// <p><code>oracle-ee</code></p></li>
-    /// <li>
-    /// <p><code>oracle-ee-cdb</code></p></li>
-    /// <li>
-    /// <p><code>oracle-se2</code></p></li>
-    /// <li>
-    /// <p><code>oracle-se2-cdb</code></p></li>
-    /// <li>
-    /// <p><code>postgres</code></p></li>
-    /// <li>
-    /// <p><code>sqlserver-ee</code></p></li>
-    /// <li>
-    /// <p><code>sqlserver-se</code></p></li>
-    /// <li>
-    /// <p><code>sqlserver-ex</code></p></li>
-    /// <li>
-    /// <p><code>sqlserver-web</code></p></li>
+    /// <li> <p> <code>aurora-mysql</code> </p> </li>
+    /// <li> <p> <code>aurora-postgresql</code> </p> </li>
+    /// <li> <p> <code>custom-oracle-ee</code> </p> </li>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
+    /// <li> <p> <code>mariadb</code> </p> </li>
+    /// <li> <p> <code>mysql</code> </p> </li>
+    /// <li> <p> <code>oracle-ee</code> </p> </li>
+    /// <li> <p> <code>oracle-ee-cdb</code> </p> </li>
+    /// <li> <p> <code>oracle-se2</code> </p> </li>
+    /// <li> <p> <code>oracle-se2-cdb</code> </p> </li>
+    /// <li> <p> <code>postgres</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ee</code> </p> </li>
+    /// <li> <p> <code>sqlserver-se</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ex</code> </p> </li>
+    /// <li> <p> <code>sqlserver-web</code> </p> </li>
     /// </ul>
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>A filter to include only the available options for the specified engine version.</p>
@@ -68,38 +52,22 @@ impl DescribeOrderableDbInstanceOptionsInput {
     /// <p>The name of the engine to describe DB instance options for.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>aurora-mysql</code></p></li>
-    /// <li>
-    /// <p><code>aurora-postgresql</code></p></li>
-    /// <li>
-    /// <p><code>custom-oracle-ee</code></p></li>
-    /// <li>
-    /// <p><code>db2-ae</code></p></li>
-    /// <li>
-    /// <p><code>db2-se</code></p></li>
-    /// <li>
-    /// <p><code>mariadb</code></p></li>
-    /// <li>
-    /// <p><code>mysql</code></p></li>
-    /// <li>
-    /// <p><code>oracle-ee</code></p></li>
-    /// <li>
-    /// <p><code>oracle-ee-cdb</code></p></li>
-    /// <li>
-    /// <p><code>oracle-se2</code></p></li>
-    /// <li>
-    /// <p><code>oracle-se2-cdb</code></p></li>
-    /// <li>
-    /// <p><code>postgres</code></p></li>
-    /// <li>
-    /// <p><code>sqlserver-ee</code></p></li>
-    /// <li>
-    /// <p><code>sqlserver-se</code></p></li>
-    /// <li>
-    /// <p><code>sqlserver-ex</code></p></li>
-    /// <li>
-    /// <p><code>sqlserver-web</code></p></li>
+    /// <li> <p> <code>aurora-mysql</code> </p> </li>
+    /// <li> <p> <code>aurora-postgresql</code> </p> </li>
+    /// <li> <p> <code>custom-oracle-ee</code> </p> </li>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
+    /// <li> <p> <code>mariadb</code> </p> </li>
+    /// <li> <p> <code>mysql</code> </p> </li>
+    /// <li> <p> <code>oracle-ee</code> </p> </li>
+    /// <li> <p> <code>oracle-ee-cdb</code> </p> </li>
+    /// <li> <p> <code>oracle-se2</code> </p> </li>
+    /// <li> <p> <code>oracle-se2-cdb</code> </p> </li>
+    /// <li> <p> <code>postgres</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ee</code> </p> </li>
+    /// <li> <p> <code>sqlserver-se</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ex</code> </p> </li>
+    /// <li> <p> <code>sqlserver-web</code> </p> </li>
     /// </ul>
     pub fn engine(&self) -> ::std::option::Option<&str> {
         self.engine.as_deref()
@@ -170,38 +138,22 @@ impl DescribeOrderableDbInstanceOptionsInputBuilder {
     /// <p>The name of the engine to describe DB instance options for.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>aurora-mysql</code></p></li>
-    /// <li>
-    /// <p><code>aurora-postgresql</code></p></li>
-    /// <li>
-    /// <p><code>custom-oracle-ee</code></p></li>
-    /// <li>
-    /// <p><code>db2-ae</code></p></li>
-    /// <li>
-    /// <p><code>db2-se</code></p></li>
-    /// <li>
-    /// <p><code>mariadb</code></p></li>
-    /// <li>
-    /// <p><code>mysql</code></p></li>
-    /// <li>
-    /// <p><code>oracle-ee</code></p></li>
-    /// <li>
-    /// <p><code>oracle-ee-cdb</code></p></li>
-    /// <li>
-    /// <p><code>oracle-se2</code></p></li>
-    /// <li>
-    /// <p><code>oracle-se2-cdb</code></p></li>
-    /// <li>
-    /// <p><code>postgres</code></p></li>
-    /// <li>
-    /// <p><code>sqlserver-ee</code></p></li>
-    /// <li>
-    /// <p><code>sqlserver-se</code></p></li>
-    /// <li>
-    /// <p><code>sqlserver-ex</code></p></li>
-    /// <li>
-    /// <p><code>sqlserver-web</code></p></li>
+    /// <li> <p> <code>aurora-mysql</code> </p> </li>
+    /// <li> <p> <code>aurora-postgresql</code> </p> </li>
+    /// <li> <p> <code>custom-oracle-ee</code> </p> </li>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
+    /// <li> <p> <code>mariadb</code> </p> </li>
+    /// <li> <p> <code>mysql</code> </p> </li>
+    /// <li> <p> <code>oracle-ee</code> </p> </li>
+    /// <li> <p> <code>oracle-ee-cdb</code> </p> </li>
+    /// <li> <p> <code>oracle-se2</code> </p> </li>
+    /// <li> <p> <code>oracle-se2-cdb</code> </p> </li>
+    /// <li> <p> <code>postgres</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ee</code> </p> </li>
+    /// <li> <p> <code>sqlserver-se</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ex</code> </p> </li>
+    /// <li> <p> <code>sqlserver-web</code> </p> </li>
     /// </ul>
     /// This field is required.
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -211,38 +163,22 @@ impl DescribeOrderableDbInstanceOptionsInputBuilder {
     /// <p>The name of the engine to describe DB instance options for.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>aurora-mysql</code></p></li>
-    /// <li>
-    /// <p><code>aurora-postgresql</code></p></li>
-    /// <li>
-    /// <p><code>custom-oracle-ee</code></p></li>
-    /// <li>
-    /// <p><code>db2-ae</code></p></li>
-    /// <li>
-    /// <p><code>db2-se</code></p></li>
-    /// <li>
-    /// <p><code>mariadb</code></p></li>
-    /// <li>
-    /// <p><code>mysql</code></p></li>
-    /// <li>
-    /// <p><code>oracle-ee</code></p></li>
-    /// <li>
-    /// <p><code>oracle-ee-cdb</code></p></li>
-    /// <li>
-    /// <p><code>oracle-se2</code></p></li>
-    /// <li>
-    /// <p><code>oracle-se2-cdb</code></p></li>
-    /// <li>
-    /// <p><code>postgres</code></p></li>
-    /// <li>
-    /// <p><code>sqlserver-ee</code></p></li>
-    /// <li>
-    /// <p><code>sqlserver-se</code></p></li>
-    /// <li>
-    /// <p><code>sqlserver-ex</code></p></li>
-    /// <li>
-    /// <p><code>sqlserver-web</code></p></li>
+    /// <li> <p> <code>aurora-mysql</code> </p> </li>
+    /// <li> <p> <code>aurora-postgresql</code> </p> </li>
+    /// <li> <p> <code>custom-oracle-ee</code> </p> </li>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
+    /// <li> <p> <code>mariadb</code> </p> </li>
+    /// <li> <p> <code>mysql</code> </p> </li>
+    /// <li> <p> <code>oracle-ee</code> </p> </li>
+    /// <li> <p> <code>oracle-ee-cdb</code> </p> </li>
+    /// <li> <p> <code>oracle-se2</code> </p> </li>
+    /// <li> <p> <code>oracle-se2-cdb</code> </p> </li>
+    /// <li> <p> <code>postgres</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ee</code> </p> </li>
+    /// <li> <p> <code>sqlserver-se</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ex</code> </p> </li>
+    /// <li> <p> <code>sqlserver-web</code> </p> </li>
     /// </ul>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine = input;
@@ -251,38 +187,22 @@ impl DescribeOrderableDbInstanceOptionsInputBuilder {
     /// <p>The name of the engine to describe DB instance options for.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>aurora-mysql</code></p></li>
-    /// <li>
-    /// <p><code>aurora-postgresql</code></p></li>
-    /// <li>
-    /// <p><code>custom-oracle-ee</code></p></li>
-    /// <li>
-    /// <p><code>db2-ae</code></p></li>
-    /// <li>
-    /// <p><code>db2-se</code></p></li>
-    /// <li>
-    /// <p><code>mariadb</code></p></li>
-    /// <li>
-    /// <p><code>mysql</code></p></li>
-    /// <li>
-    /// <p><code>oracle-ee</code></p></li>
-    /// <li>
-    /// <p><code>oracle-ee-cdb</code></p></li>
-    /// <li>
-    /// <p><code>oracle-se2</code></p></li>
-    /// <li>
-    /// <p><code>oracle-se2-cdb</code></p></li>
-    /// <li>
-    /// <p><code>postgres</code></p></li>
-    /// <li>
-    /// <p><code>sqlserver-ee</code></p></li>
-    /// <li>
-    /// <p><code>sqlserver-se</code></p></li>
-    /// <li>
-    /// <p><code>sqlserver-ex</code></p></li>
-    /// <li>
-    /// <p><code>sqlserver-web</code></p></li>
+    /// <li> <p> <code>aurora-mysql</code> </p> </li>
+    /// <li> <p> <code>aurora-postgresql</code> </p> </li>
+    /// <li> <p> <code>custom-oracle-ee</code> </p> </li>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
+    /// <li> <p> <code>mariadb</code> </p> </li>
+    /// <li> <p> <code>mysql</code> </p> </li>
+    /// <li> <p> <code>oracle-ee</code> </p> </li>
+    /// <li> <p> <code>oracle-ee-cdb</code> </p> </li>
+    /// <li> <p> <code>oracle-se2</code> </p> </li>
+    /// <li> <p> <code>oracle-se2-cdb</code> </p> </li>
+    /// <li> <p> <code>postgres</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ee</code> </p> </li>
+    /// <li> <p> <code>sqlserver-se</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ex</code> </p> </li>
+    /// <li> <p> <code>sqlserver-web</code> </p> </li>
     /// </ul>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine

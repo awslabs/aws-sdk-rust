@@ -9,18 +9,12 @@ pub struct DescribeVpcEndpointConnectionNotificationsInput {
     pub connection_notification_id: ::std::option::Option<::std::string::String>,
     /// <p>The filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>connection-notification-arn</code> - The ARN of the SNS topic for the notification.</p></li>
-    /// <li>
-    /// <p><code>connection-notification-id</code> - The ID of the notification.</p></li>
-    /// <li>
-    /// <p><code>connection-notification-state</code> - The state of the notification (<code>Enabled</code> | <code>Disabled</code>).</p></li>
-    /// <li>
-    /// <p><code>connection-notification-type</code> - The type of notification (<code>Topic</code>).</p></li>
-    /// <li>
-    /// <p><code>service-id</code> - The ID of the endpoint service.</p></li>
-    /// <li>
-    /// <p><code>vpc-endpoint-id</code> - The ID of the VPC endpoint.</p></li>
+    /// <li> <p> <code>connection-notification-arn</code> - The ARN of the SNS topic for the notification.</p> </li>
+    /// <li> <p> <code>connection-notification-id</code> - The ID of the notification.</p> </li>
+    /// <li> <p> <code>connection-notification-state</code> - The state of the notification (<code>Enabled</code> | <code>Disabled</code>).</p> </li>
+    /// <li> <p> <code>connection-notification-type</code> - The type of notification (<code>Topic</code>).</p> </li>
+    /// <li> <p> <code>service-id</code> - The ID of the endpoint service.</p> </li>
+    /// <li> <p> <code>vpc-endpoint-id</code> - The ID of the VPC endpoint.</p> </li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another request with the returned <code>NextToken</code> value.</p>
@@ -39,18 +33,12 @@ impl DescribeVpcEndpointConnectionNotificationsInput {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>connection-notification-arn</code> - The ARN of the SNS topic for the notification.</p></li>
-    /// <li>
-    /// <p><code>connection-notification-id</code> - The ID of the notification.</p></li>
-    /// <li>
-    /// <p><code>connection-notification-state</code> - The state of the notification (<code>Enabled</code> | <code>Disabled</code>).</p></li>
-    /// <li>
-    /// <p><code>connection-notification-type</code> - The type of notification (<code>Topic</code>).</p></li>
-    /// <li>
-    /// <p><code>service-id</code> - The ID of the endpoint service.</p></li>
-    /// <li>
-    /// <p><code>vpc-endpoint-id</code> - The ID of the VPC endpoint.</p></li>
+    /// <li> <p> <code>connection-notification-arn</code> - The ARN of the SNS topic for the notification.</p> </li>
+    /// <li> <p> <code>connection-notification-id</code> - The ID of the notification.</p> </li>
+    /// <li> <p> <code>connection-notification-state</code> - The state of the notification (<code>Enabled</code> | <code>Disabled</code>).</p> </li>
+    /// <li> <p> <code>connection-notification-type</code> - The type of notification (<code>Topic</code>).</p> </li>
+    /// <li> <p> <code>service-id</code> - The ID of the endpoint service.</p> </li>
+    /// <li> <p> <code>vpc-endpoint-id</code> - The ID of the VPC endpoint.</p> </li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
@@ -119,18 +107,12 @@ impl DescribeVpcEndpointConnectionNotificationsInputBuilder {
     ///
     /// <p>The filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>connection-notification-arn</code> - The ARN of the SNS topic for the notification.</p></li>
-    /// <li>
-    /// <p><code>connection-notification-id</code> - The ID of the notification.</p></li>
-    /// <li>
-    /// <p><code>connection-notification-state</code> - The state of the notification (<code>Enabled</code> | <code>Disabled</code>).</p></li>
-    /// <li>
-    /// <p><code>connection-notification-type</code> - The type of notification (<code>Topic</code>).</p></li>
-    /// <li>
-    /// <p><code>service-id</code> - The ID of the endpoint service.</p></li>
-    /// <li>
-    /// <p><code>vpc-endpoint-id</code> - The ID of the VPC endpoint.</p></li>
+    /// <li> <p> <code>connection-notification-arn</code> - The ARN of the SNS topic for the notification.</p> </li>
+    /// <li> <p> <code>connection-notification-id</code> - The ID of the notification.</p> </li>
+    /// <li> <p> <code>connection-notification-state</code> - The state of the notification (<code>Enabled</code> | <code>Disabled</code>).</p> </li>
+    /// <li> <p> <code>connection-notification-type</code> - The type of notification (<code>Topic</code>).</p> </li>
+    /// <li> <p> <code>service-id</code> - The ID of the endpoint service.</p> </li>
+    /// <li> <p> <code>vpc-endpoint-id</code> - The ID of the VPC endpoint.</p> </li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
@@ -140,18 +122,12 @@ impl DescribeVpcEndpointConnectionNotificationsInputBuilder {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>connection-notification-arn</code> - The ARN of the SNS topic for the notification.</p></li>
-    /// <li>
-    /// <p><code>connection-notification-id</code> - The ID of the notification.</p></li>
-    /// <li>
-    /// <p><code>connection-notification-state</code> - The state of the notification (<code>Enabled</code> | <code>Disabled</code>).</p></li>
-    /// <li>
-    /// <p><code>connection-notification-type</code> - The type of notification (<code>Topic</code>).</p></li>
-    /// <li>
-    /// <p><code>service-id</code> - The ID of the endpoint service.</p></li>
-    /// <li>
-    /// <p><code>vpc-endpoint-id</code> - The ID of the VPC endpoint.</p></li>
+    /// <li> <p> <code>connection-notification-arn</code> - The ARN of the SNS topic for the notification.</p> </li>
+    /// <li> <p> <code>connection-notification-id</code> - The ID of the notification.</p> </li>
+    /// <li> <p> <code>connection-notification-state</code> - The state of the notification (<code>Enabled</code> | <code>Disabled</code>).</p> </li>
+    /// <li> <p> <code>connection-notification-type</code> - The type of notification (<code>Topic</code>).</p> </li>
+    /// <li> <p> <code>service-id</code> - The ID of the endpoint service.</p> </li>
+    /// <li> <p> <code>vpc-endpoint-id</code> - The ID of the VPC endpoint.</p> </li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
@@ -159,18 +135,12 @@ impl DescribeVpcEndpointConnectionNotificationsInputBuilder {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>connection-notification-arn</code> - The ARN of the SNS topic for the notification.</p></li>
-    /// <li>
-    /// <p><code>connection-notification-id</code> - The ID of the notification.</p></li>
-    /// <li>
-    /// <p><code>connection-notification-state</code> - The state of the notification (<code>Enabled</code> | <code>Disabled</code>).</p></li>
-    /// <li>
-    /// <p><code>connection-notification-type</code> - The type of notification (<code>Topic</code>).</p></li>
-    /// <li>
-    /// <p><code>service-id</code> - The ID of the endpoint service.</p></li>
-    /// <li>
-    /// <p><code>vpc-endpoint-id</code> - The ID of the VPC endpoint.</p></li>
+    /// <li> <p> <code>connection-notification-arn</code> - The ARN of the SNS topic for the notification.</p> </li>
+    /// <li> <p> <code>connection-notification-id</code> - The ID of the notification.</p> </li>
+    /// <li> <p> <code>connection-notification-state</code> - The state of the notification (<code>Enabled</code> | <code>Disabled</code>).</p> </li>
+    /// <li> <p> <code>connection-notification-type</code> - The type of notification (<code>Topic</code>).</p> </li>
+    /// <li> <p> <code>service-id</code> - The ID of the endpoint service.</p> </li>
+    /// <li> <p> <code>vpc-endpoint-id</code> - The ID of the VPC endpoint.</p> </li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters

@@ -9,20 +9,17 @@ pub struct TerminateWorkflowExecutionInput {
     pub workflow_id: ::std::option::Option<::std::string::String>,
     /// <p>The runId of the workflow execution to terminate.</p>
     pub run_id: ::std::option::Option<::std::string::String>,
-    /// <p>A descriptive reason for terminating the workflow execution.</p>
+    /// <p> A descriptive reason for terminating the workflow execution.</p>
     pub reason: ::std::option::Option<::std::string::String>,
-    /// <p>Details for terminating the workflow execution.</p>
+    /// <p> Details for terminating the workflow execution.</p>
     pub details: ::std::option::Option<::std::string::String>,
     /// <p>If set, specifies the policy to use for the child workflow executions of the workflow execution being terminated. This policy overrides the child policy specified for the workflow execution at registration time or when starting the execution.</p>
     /// <p>The supported child policies are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>TERMINATE</code> – The child executions are terminated.</p></li>
-    /// <li>
-    /// <p><code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p></li>
-    /// <li>
-    /// <p><code>ABANDON</code> – No action is taken. The child executions continue to run.</p></li>
-    /// </ul><note>
+    /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li>
+    /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
+    /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
+    /// </ul> <note>
     /// <p>A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.</p>
     /// </note>
     pub child_policy: ::std::option::Option<crate::types::ChildPolicy>,
@@ -40,24 +37,21 @@ impl TerminateWorkflowExecutionInput {
     pub fn run_id(&self) -> ::std::option::Option<&str> {
         self.run_id.as_deref()
     }
-    /// <p>A descriptive reason for terminating the workflow execution.</p>
+    /// <p> A descriptive reason for terminating the workflow execution.</p>
     pub fn reason(&self) -> ::std::option::Option<&str> {
         self.reason.as_deref()
     }
-    /// <p>Details for terminating the workflow execution.</p>
+    /// <p> Details for terminating the workflow execution.</p>
     pub fn details(&self) -> ::std::option::Option<&str> {
         self.details.as_deref()
     }
     /// <p>If set, specifies the policy to use for the child workflow executions of the workflow execution being terminated. This policy overrides the child policy specified for the workflow execution at registration time or when starting the execution.</p>
     /// <p>The supported child policies are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>TERMINATE</code> – The child executions are terminated.</p></li>
-    /// <li>
-    /// <p><code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p></li>
-    /// <li>
-    /// <p><code>ABANDON</code> – No action is taken. The child executions continue to run.</p></li>
-    /// </ul><note>
+    /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li>
+    /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
+    /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
+    /// </ul> <note>
     /// <p>A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.</p>
     /// </note>
     pub fn child_policy(&self) -> ::std::option::Option<&crate::types::ChildPolicy> {
@@ -127,44 +121,41 @@ impl TerminateWorkflowExecutionInputBuilder {
     pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.run_id
     }
-    /// <p>A descriptive reason for terminating the workflow execution.</p>
+    /// <p> A descriptive reason for terminating the workflow execution.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reason = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A descriptive reason for terminating the workflow execution.</p>
+    /// <p> A descriptive reason for terminating the workflow execution.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason = input;
         self
     }
-    /// <p>A descriptive reason for terminating the workflow execution.</p>
+    /// <p> A descriptive reason for terminating the workflow execution.</p>
     pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.reason
     }
-    /// <p>Details for terminating the workflow execution.</p>
+    /// <p> Details for terminating the workflow execution.</p>
     pub fn details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.details = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Details for terminating the workflow execution.</p>
+    /// <p> Details for terminating the workflow execution.</p>
     pub fn set_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.details = input;
         self
     }
-    /// <p>Details for terminating the workflow execution.</p>
+    /// <p> Details for terminating the workflow execution.</p>
     pub fn get_details(&self) -> &::std::option::Option<::std::string::String> {
         &self.details
     }
     /// <p>If set, specifies the policy to use for the child workflow executions of the workflow execution being terminated. This policy overrides the child policy specified for the workflow execution at registration time or when starting the execution.</p>
     /// <p>The supported child policies are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>TERMINATE</code> – The child executions are terminated.</p></li>
-    /// <li>
-    /// <p><code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p></li>
-    /// <li>
-    /// <p><code>ABANDON</code> – No action is taken. The child executions continue to run.</p></li>
-    /// </ul><note>
+    /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li>
+    /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
+    /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
+    /// </ul> <note>
     /// <p>A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.</p>
     /// </note>
     pub fn child_policy(mut self, input: crate::types::ChildPolicy) -> Self {
@@ -174,13 +165,10 @@ impl TerminateWorkflowExecutionInputBuilder {
     /// <p>If set, specifies the policy to use for the child workflow executions of the workflow execution being terminated. This policy overrides the child policy specified for the workflow execution at registration time or when starting the execution.</p>
     /// <p>The supported child policies are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>TERMINATE</code> – The child executions are terminated.</p></li>
-    /// <li>
-    /// <p><code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p></li>
-    /// <li>
-    /// <p><code>ABANDON</code> – No action is taken. The child executions continue to run.</p></li>
-    /// </ul><note>
+    /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li>
+    /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
+    /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
+    /// </ul> <note>
     /// <p>A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.</p>
     /// </note>
     pub fn set_child_policy(mut self, input: ::std::option::Option<crate::types::ChildPolicy>) -> Self {
@@ -190,13 +178,10 @@ impl TerminateWorkflowExecutionInputBuilder {
     /// <p>If set, specifies the policy to use for the child workflow executions of the workflow execution being terminated. This policy overrides the child policy specified for the workflow execution at registration time or when starting the execution.</p>
     /// <p>The supported child policies are:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>TERMINATE</code> – The child executions are terminated.</p></li>
-    /// <li>
-    /// <p><code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p></li>
-    /// <li>
-    /// <p><code>ABANDON</code> – No action is taken. The child executions continue to run.</p></li>
-    /// </ul><note>
+    /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li>
+    /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
+    /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
+    /// </ul> <note>
     /// <p>A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.</p>
     /// </note>
     pub fn get_child_policy(&self) -> &::std::option::Option<crate::types::ChildPolicy> {

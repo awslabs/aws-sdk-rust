@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ResolveCase`](crate::operation::resolve_case::builders::ResolveCaseFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`case_id(impl Into<String>)`](crate::operation::resolve_case::builders::ResolveCaseFluentBuilder::case_id) / [`set_case_id(Option<String>)`](crate::operation::resolve_case::builders::ResolveCaseFluentBuilder::set_case_id):<br>required: **false**<br><p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></p><br>
+    ///   - [`case_id(impl Into<String>)`](crate::operation::resolve_case::builders::ResolveCaseFluentBuilder::case_id) / [`set_case_id(Option<String>)`](crate::operation::resolve_case::builders::ResolveCaseFluentBuilder::set_case_id):<br>required: **false**<br><p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p><br>
     /// - On success, responds with [`ResolveCaseOutput`](crate::operation::resolve_case::ResolveCaseOutput) with field(s):
     ///   - [`initial_case_status(Option<String>)`](crate::operation::resolve_case::ResolveCaseOutput::initial_case_status): <p>The status of the case when the <code>ResolveCase</code> request was sent.</p>
     ///   - [`final_case_status(Option<String>)`](crate::operation::resolve_case::ResolveCaseOutput::final_case_status): <p>The status of the case after the <code>ResolveCase</code> request was processed.</p>

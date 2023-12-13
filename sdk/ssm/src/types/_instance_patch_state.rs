@@ -23,7 +23,7 @@ pub struct InstancePatchState {
     pub installed_other_count: i32,
     /// <p>The number of patches installed by Patch Manager since the last time the managed node was rebooted.</p>
     pub installed_pending_reboot_count: ::std::option::Option<i32>,
-    /// <p>The number of patches installed on a managed node that are specified in a <code>RejectedPatches</code> list. Patches with a status of <code>InstalledRejected</code> were typically installed before they were added to a <code>RejectedPatches</code> list.</p><note>
+    /// <p>The number of patches installed on a managed node that are specified in a <code>RejectedPatches</code> list. Patches with a status of <code>InstalledRejected</code> were typically installed before they were added to a <code>RejectedPatches</code> list.</p> <note>
     /// <p>If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for <code>RejectedPatchesAction</code>, the value of <code>InstalledRejectedCount</code> will always be <code>0</code> (zero).</p>
     /// </note>
     pub installed_rejected_count: ::std::option::Option<i32>,
@@ -39,24 +39,20 @@ pub struct InstancePatchState {
     pub operation_start_time: ::aws_smithy_types::DateTime,
     /// <p>The time the most recent patching operation completed on the managed node.</p>
     pub operation_end_time: ::aws_smithy_types::DateTime,
-    /// <p>The type of patching operation that was performed: or</p>
+    /// <p>The type of patching operation that was performed: or </p>
     /// <ul>
-    /// <li>
-    /// <p><code>SCAN</code> assesses the patch compliance state.</p></li>
-    /// <li>
-    /// <p><code>INSTALL</code> installs missing patches.</p></li>
+    /// <li> <p> <code>SCAN</code> assesses the patch compliance state.</p> </li>
+    /// <li> <p> <code>INSTALL</code> installs missing patches.</p> </li>
     /// </ul>
     pub operation: crate::types::PatchOperationType,
     /// <p>The time of the last attempt to patch the managed node with <code>NoReboot</code> specified as the reboot option.</p>
     pub last_no_reboot_install_operation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Indicates the reboot option specified in the patch baseline.</p><note>
+    /// <p>Indicates the reboot option specified in the patch baseline.</p> <note>
     /// <p>Reboot options apply to <code>Install</code> operations only. Reboots aren't attempted for Patch Manager <code>Scan</code> operations.</p>
     /// </note>
     /// <ul>
-    /// <li>
-    /// <p><code>RebootIfNeeded</code>: Patch Manager tries to reboot the managed node if it installed any patches, or if any patches are detected with a status of <code>InstalledPendingReboot</code>.</p></li>
-    /// <li>
-    /// <p><code>NoReboot</code>: Patch Manager attempts to install missing packages without trying to reboot the system. Patches installed with this option are assigned a status of <code>InstalledPendingReboot</code>. These patches might not be in effect until a reboot is performed.</p></li>
+    /// <li> <p> <code>RebootIfNeeded</code>: Patch Manager tries to reboot the managed node if it installed any patches, or if any patches are detected with a status of <code>InstalledPendingReboot</code>.</p> </li>
+    /// <li> <p> <code>NoReboot</code>: Patch Manager attempts to install missing packages without trying to reboot the system. Patches installed with this option are assigned a status of <code>InstalledPendingReboot</code>. These patches might not be in effect until a reboot is performed.</p> </li>
     /// </ul>
     pub reboot_option: ::std::option::Option<crate::types::RebootOption>,
     /// <p>The number of patches per node that are specified as <code>Critical</code> for compliance reporting in the patch baseline aren't installed. These patches might be missing, have failed installation, were rejected, or were installed but awaiting a required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
@@ -107,7 +103,7 @@ impl InstancePatchState {
     pub fn installed_pending_reboot_count(&self) -> ::std::option::Option<i32> {
         self.installed_pending_reboot_count
     }
-    /// <p>The number of patches installed on a managed node that are specified in a <code>RejectedPatches</code> list. Patches with a status of <code>InstalledRejected</code> were typically installed before they were added to a <code>RejectedPatches</code> list.</p><note>
+    /// <p>The number of patches installed on a managed node that are specified in a <code>RejectedPatches</code> list. Patches with a status of <code>InstalledRejected</code> were typically installed before they were added to a <code>RejectedPatches</code> list.</p> <note>
     /// <p>If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for <code>RejectedPatchesAction</code>, the value of <code>InstalledRejectedCount</code> will always be <code>0</code> (zero).</p>
     /// </note>
     pub fn installed_rejected_count(&self) -> ::std::option::Option<i32> {
@@ -137,12 +133,10 @@ impl InstancePatchState {
     pub fn operation_end_time(&self) -> &::aws_smithy_types::DateTime {
         &self.operation_end_time
     }
-    /// <p>The type of patching operation that was performed: or</p>
+    /// <p>The type of patching operation that was performed: or </p>
     /// <ul>
-    /// <li>
-    /// <p><code>SCAN</code> assesses the patch compliance state.</p></li>
-    /// <li>
-    /// <p><code>INSTALL</code> installs missing patches.</p></li>
+    /// <li> <p> <code>SCAN</code> assesses the patch compliance state.</p> </li>
+    /// <li> <p> <code>INSTALL</code> installs missing patches.</p> </li>
     /// </ul>
     pub fn operation(&self) -> &crate::types::PatchOperationType {
         &self.operation
@@ -151,14 +145,12 @@ impl InstancePatchState {
     pub fn last_no_reboot_install_operation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_no_reboot_install_operation_time.as_ref()
     }
-    /// <p>Indicates the reboot option specified in the patch baseline.</p><note>
+    /// <p>Indicates the reboot option specified in the patch baseline.</p> <note>
     /// <p>Reboot options apply to <code>Install</code> operations only. Reboots aren't attempted for Patch Manager <code>Scan</code> operations.</p>
     /// </note>
     /// <ul>
-    /// <li>
-    /// <p><code>RebootIfNeeded</code>: Patch Manager tries to reboot the managed node if it installed any patches, or if any patches are detected with a status of <code>InstalledPendingReboot</code>.</p></li>
-    /// <li>
-    /// <p><code>NoReboot</code>: Patch Manager attempts to install missing packages without trying to reboot the system. Patches installed with this option are assigned a status of <code>InstalledPendingReboot</code>. These patches might not be in effect until a reboot is performed.</p></li>
+    /// <li> <p> <code>RebootIfNeeded</code>: Patch Manager tries to reboot the managed node if it installed any patches, or if any patches are detected with a status of <code>InstalledPendingReboot</code>.</p> </li>
+    /// <li> <p> <code>NoReboot</code>: Patch Manager attempts to install missing packages without trying to reboot the system. Patches installed with this option are assigned a status of <code>InstalledPendingReboot</code>. These patches might not be in effect until a reboot is performed.</p> </li>
     /// </ul>
     pub fn reboot_option(&self) -> ::std::option::Option<&crate::types::RebootOption> {
         self.reboot_option.as_ref()
@@ -371,21 +363,21 @@ impl InstancePatchStateBuilder {
     pub fn get_installed_pending_reboot_count(&self) -> &::std::option::Option<i32> {
         &self.installed_pending_reboot_count
     }
-    /// <p>The number of patches installed on a managed node that are specified in a <code>RejectedPatches</code> list. Patches with a status of <code>InstalledRejected</code> were typically installed before they were added to a <code>RejectedPatches</code> list.</p><note>
+    /// <p>The number of patches installed on a managed node that are specified in a <code>RejectedPatches</code> list. Patches with a status of <code>InstalledRejected</code> were typically installed before they were added to a <code>RejectedPatches</code> list.</p> <note>
     /// <p>If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for <code>RejectedPatchesAction</code>, the value of <code>InstalledRejectedCount</code> will always be <code>0</code> (zero).</p>
     /// </note>
     pub fn installed_rejected_count(mut self, input: i32) -> Self {
         self.installed_rejected_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of patches installed on a managed node that are specified in a <code>RejectedPatches</code> list. Patches with a status of <code>InstalledRejected</code> were typically installed before they were added to a <code>RejectedPatches</code> list.</p><note>
+    /// <p>The number of patches installed on a managed node that are specified in a <code>RejectedPatches</code> list. Patches with a status of <code>InstalledRejected</code> were typically installed before they were added to a <code>RejectedPatches</code> list.</p> <note>
     /// <p>If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for <code>RejectedPatchesAction</code>, the value of <code>InstalledRejectedCount</code> will always be <code>0</code> (zero).</p>
     /// </note>
     pub fn set_installed_rejected_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.installed_rejected_count = input;
         self
     }
-    /// <p>The number of patches installed on a managed node that are specified in a <code>RejectedPatches</code> list. Patches with a status of <code>InstalledRejected</code> were typically installed before they were added to a <code>RejectedPatches</code> list.</p><note>
+    /// <p>The number of patches installed on a managed node that are specified in a <code>RejectedPatches</code> list. Patches with a status of <code>InstalledRejected</code> were typically installed before they were added to a <code>RejectedPatches</code> list.</p> <note>
     /// <p>If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for <code>RejectedPatchesAction</code>, the value of <code>InstalledRejectedCount</code> will always be <code>0</code> (zero).</p>
     /// </note>
     pub fn get_installed_rejected_count(&self) -> &::std::option::Option<i32> {
@@ -477,35 +469,29 @@ impl InstancePatchStateBuilder {
     pub fn get_operation_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.operation_end_time
     }
-    /// <p>The type of patching operation that was performed: or</p>
+    /// <p>The type of patching operation that was performed: or </p>
     /// <ul>
-    /// <li>
-    /// <p><code>SCAN</code> assesses the patch compliance state.</p></li>
-    /// <li>
-    /// <p><code>INSTALL</code> installs missing patches.</p></li>
+    /// <li> <p> <code>SCAN</code> assesses the patch compliance state.</p> </li>
+    /// <li> <p> <code>INSTALL</code> installs missing patches.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn operation(mut self, input: crate::types::PatchOperationType) -> Self {
         self.operation = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of patching operation that was performed: or</p>
+    /// <p>The type of patching operation that was performed: or </p>
     /// <ul>
-    /// <li>
-    /// <p><code>SCAN</code> assesses the patch compliance state.</p></li>
-    /// <li>
-    /// <p><code>INSTALL</code> installs missing patches.</p></li>
+    /// <li> <p> <code>SCAN</code> assesses the patch compliance state.</p> </li>
+    /// <li> <p> <code>INSTALL</code> installs missing patches.</p> </li>
     /// </ul>
     pub fn set_operation(mut self, input: ::std::option::Option<crate::types::PatchOperationType>) -> Self {
         self.operation = input;
         self
     }
-    /// <p>The type of patching operation that was performed: or</p>
+    /// <p>The type of patching operation that was performed: or </p>
     /// <ul>
-    /// <li>
-    /// <p><code>SCAN</code> assesses the patch compliance state.</p></li>
-    /// <li>
-    /// <p><code>INSTALL</code> installs missing patches.</p></li>
+    /// <li> <p> <code>SCAN</code> assesses the patch compliance state.</p> </li>
+    /// <li> <p> <code>INSTALL</code> installs missing patches.</p> </li>
     /// </ul>
     pub fn get_operation(&self) -> &::std::option::Option<crate::types::PatchOperationType> {
         &self.operation
@@ -524,40 +510,34 @@ impl InstancePatchStateBuilder {
     pub fn get_last_no_reboot_install_operation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_no_reboot_install_operation_time
     }
-    /// <p>Indicates the reboot option specified in the patch baseline.</p><note>
+    /// <p>Indicates the reboot option specified in the patch baseline.</p> <note>
     /// <p>Reboot options apply to <code>Install</code> operations only. Reboots aren't attempted for Patch Manager <code>Scan</code> operations.</p>
     /// </note>
     /// <ul>
-    /// <li>
-    /// <p><code>RebootIfNeeded</code>: Patch Manager tries to reboot the managed node if it installed any patches, or if any patches are detected with a status of <code>InstalledPendingReboot</code>.</p></li>
-    /// <li>
-    /// <p><code>NoReboot</code>: Patch Manager attempts to install missing packages without trying to reboot the system. Patches installed with this option are assigned a status of <code>InstalledPendingReboot</code>. These patches might not be in effect until a reboot is performed.</p></li>
+    /// <li> <p> <code>RebootIfNeeded</code>: Patch Manager tries to reboot the managed node if it installed any patches, or if any patches are detected with a status of <code>InstalledPendingReboot</code>.</p> </li>
+    /// <li> <p> <code>NoReboot</code>: Patch Manager attempts to install missing packages without trying to reboot the system. Patches installed with this option are assigned a status of <code>InstalledPendingReboot</code>. These patches might not be in effect until a reboot is performed.</p> </li>
     /// </ul>
     pub fn reboot_option(mut self, input: crate::types::RebootOption) -> Self {
         self.reboot_option = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates the reboot option specified in the patch baseline.</p><note>
+    /// <p>Indicates the reboot option specified in the patch baseline.</p> <note>
     /// <p>Reboot options apply to <code>Install</code> operations only. Reboots aren't attempted for Patch Manager <code>Scan</code> operations.</p>
     /// </note>
     /// <ul>
-    /// <li>
-    /// <p><code>RebootIfNeeded</code>: Patch Manager tries to reboot the managed node if it installed any patches, or if any patches are detected with a status of <code>InstalledPendingReboot</code>.</p></li>
-    /// <li>
-    /// <p><code>NoReboot</code>: Patch Manager attempts to install missing packages without trying to reboot the system. Patches installed with this option are assigned a status of <code>InstalledPendingReboot</code>. These patches might not be in effect until a reboot is performed.</p></li>
+    /// <li> <p> <code>RebootIfNeeded</code>: Patch Manager tries to reboot the managed node if it installed any patches, or if any patches are detected with a status of <code>InstalledPendingReboot</code>.</p> </li>
+    /// <li> <p> <code>NoReboot</code>: Patch Manager attempts to install missing packages without trying to reboot the system. Patches installed with this option are assigned a status of <code>InstalledPendingReboot</code>. These patches might not be in effect until a reboot is performed.</p> </li>
     /// </ul>
     pub fn set_reboot_option(mut self, input: ::std::option::Option<crate::types::RebootOption>) -> Self {
         self.reboot_option = input;
         self
     }
-    /// <p>Indicates the reboot option specified in the patch baseline.</p><note>
+    /// <p>Indicates the reboot option specified in the patch baseline.</p> <note>
     /// <p>Reboot options apply to <code>Install</code> operations only. Reboots aren't attempted for Patch Manager <code>Scan</code> operations.</p>
     /// </note>
     /// <ul>
-    /// <li>
-    /// <p><code>RebootIfNeeded</code>: Patch Manager tries to reboot the managed node if it installed any patches, or if any patches are detected with a status of <code>InstalledPendingReboot</code>.</p></li>
-    /// <li>
-    /// <p><code>NoReboot</code>: Patch Manager attempts to install missing packages without trying to reboot the system. Patches installed with this option are assigned a status of <code>InstalledPendingReboot</code>. These patches might not be in effect until a reboot is performed.</p></li>
+    /// <li> <p> <code>RebootIfNeeded</code>: Patch Manager tries to reboot the managed node if it installed any patches, or if any patches are detected with a status of <code>InstalledPendingReboot</code>.</p> </li>
+    /// <li> <p> <code>NoReboot</code>: Patch Manager attempts to install missing packages without trying to reboot the system. Patches installed with this option are assigned a status of <code>InstalledPendingReboot</code>. These patches might not be in effect until a reboot is performed.</p> </li>
     /// </ul>
     pub fn get_reboot_option(&self) -> &::std::option::Option<crate::types::RebootOption> {
         &self.reboot_option

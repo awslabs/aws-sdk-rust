@@ -22,7 +22,7 @@ impl UpdateAssetPropertyInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateAssetProperty`.
 ///
-/// <p>Updates an asset property's alias and notification state.</p><important>
+/// <p>Updates an asset property's alias and notification state.</p> <important>
 /// <p>This operation overwrites the property's existing alias and notification state. To keep your existing property's alias or notification state, you must include the existing values in the UpdateAssetProperty request. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetProperty.html">DescribeAssetProperty</a>.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

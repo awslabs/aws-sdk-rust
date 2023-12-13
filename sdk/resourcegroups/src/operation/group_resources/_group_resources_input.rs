@@ -5,7 +5,7 @@
 pub struct GroupResourcesInput {
     /// <p>The name or the ARN of the resource group to add resources to.</p>
     pub group: ::std::option::Option<::std::string::String>,
-    /// <p>The list of ARNs of the resources to be added to the group.</p>
+    /// <p>The list of ARNs of the resources to be added to the group. </p>
     pub resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl GroupResourcesInput {
@@ -13,7 +13,7 @@ impl GroupResourcesInput {
     pub fn group(&self) -> ::std::option::Option<&str> {
         self.group.as_deref()
     }
-    /// <p>The list of ARNs of the resources to be added to the group.</p>
+    /// <p>The list of ARNs of the resources to be added to the group. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_arns.is_none()`.
     pub fn resource_arns(&self) -> &[::std::string::String] {
@@ -54,19 +54,19 @@ impl GroupResourcesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
     ///
-    /// <p>The list of ARNs of the resources to be added to the group.</p>
+    /// <p>The list of ARNs of the resources to be added to the group. </p>
     pub fn resource_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_arns.unwrap_or_default();
         v.push(input.into());
         self.resource_arns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of ARNs of the resources to be added to the group.</p>
+    /// <p>The list of ARNs of the resources to be added to the group. </p>
     pub fn set_resource_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resource_arns = input;
         self
     }
-    /// <p>The list of ARNs of the resources to be added to the group.</p>
+    /// <p>The list of ARNs of the resources to be added to the group. </p>
     pub fn get_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.resource_arns
     }

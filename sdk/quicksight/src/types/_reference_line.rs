@@ -6,10 +6,8 @@
 pub struct ReferenceLine {
     /// <p>The status of the reference line. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ENABLE</code></p></li>
-    /// <li>
-    /// <p><code>DISABLE</code></p></li>
+    /// <li> <p> <code>ENABLE</code> </p> </li>
+    /// <li> <p> <code>DISABLE</code> </p> </li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::WidgetStatus>,
     /// <p>The data configuration of the reference line.</p>
@@ -22,10 +20,8 @@ pub struct ReferenceLine {
 impl ReferenceLine {
     /// <p>The status of the reference line. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ENABLE</code></p></li>
-    /// <li>
-    /// <p><code>DISABLE</code></p></li>
+    /// <li> <p> <code>ENABLE</code> </p> </li>
+    /// <li> <p> <code>DISABLE</code> </p> </li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::WidgetStatus> {
         self.status.as_ref()
@@ -62,10 +58,8 @@ pub struct ReferenceLineBuilder {
 impl ReferenceLineBuilder {
     /// <p>The status of the reference line. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ENABLE</code></p></li>
-    /// <li>
-    /// <p><code>DISABLE</code></p></li>
+    /// <li> <p> <code>ENABLE</code> </p> </li>
+    /// <li> <p> <code>DISABLE</code> </p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::WidgetStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -73,10 +67,8 @@ impl ReferenceLineBuilder {
     }
     /// <p>The status of the reference line. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ENABLE</code></p></li>
-    /// <li>
-    /// <p><code>DISABLE</code></p></li>
+    /// <li> <p> <code>ENABLE</code> </p> </li>
+    /// <li> <p> <code>DISABLE</code> </p> </li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::WidgetStatus>) -> Self {
         self.status = input;
@@ -84,10 +76,8 @@ impl ReferenceLineBuilder {
     }
     /// <p>The status of the reference line. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ENABLE</code></p></li>
-    /// <li>
-    /// <p><code>DISABLE</code></p></li>
+    /// <li> <p> <code>ENABLE</code> </p> </li>
+    /// <li> <p> <code>DISABLE</code> </p> </li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::WidgetStatus> {
         &self.status

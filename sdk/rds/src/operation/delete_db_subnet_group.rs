@@ -242,7 +242,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteDBSubne
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DeleteDBSubnetGroupError {
-    /// <p><code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.</p>
+    /// <p> <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.</p>
     DbSubnetGroupNotFoundFault(crate::types::error::DbSubnetGroupNotFoundFault),
     /// <p>The DB subnet group cannot be deleted because it's in use.</p>
     InvalidDbSubnetGroupStateFault(crate::types::error::InvalidDbSubnetGroupStateFault),

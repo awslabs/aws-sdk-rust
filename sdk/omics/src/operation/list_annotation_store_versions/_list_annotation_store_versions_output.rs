@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAnnotationStoreVersionsOutput {
-    /// <p>Lists all versions of an annotation store.</p>
+    /// <p> Lists all versions of an annotation store. </p>
     pub annotation_store_versions: ::std::option::Option<::std::vec::Vec<crate::types::AnnotationStoreVersionItem>>,
-    /// <p>Specifies the pagination token from a previous request to retrieve the next page of results.</p>
+    /// <p> Specifies the pagination token from a previous request to retrieve the next page of results. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListAnnotationStoreVersionsOutput {
-    /// <p>Lists all versions of an annotation store.</p>
+    /// <p> Lists all versions of an annotation store. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.annotation_store_versions.is_none()`.
     pub fn annotation_store_versions(&self) -> &[crate::types::AnnotationStoreVersionItem] {
         self.annotation_store_versions.as_deref().unwrap_or_default()
     }
-    /// <p>Specifies the pagination token from a previous request to retrieve the next page of results.</p>
+    /// <p> Specifies the pagination token from a previous request to retrieve the next page of results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -46,33 +46,33 @@ impl ListAnnotationStoreVersionsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_annotation_store_versions`](Self::set_annotation_store_versions).
     ///
-    /// <p>Lists all versions of an annotation store.</p>
+    /// <p> Lists all versions of an annotation store. </p>
     pub fn annotation_store_versions(mut self, input: crate::types::AnnotationStoreVersionItem) -> Self {
         let mut v = self.annotation_store_versions.unwrap_or_default();
         v.push(input);
         self.annotation_store_versions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Lists all versions of an annotation store.</p>
+    /// <p> Lists all versions of an annotation store. </p>
     pub fn set_annotation_store_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnnotationStoreVersionItem>>) -> Self {
         self.annotation_store_versions = input;
         self
     }
-    /// <p>Lists all versions of an annotation store.</p>
+    /// <p> Lists all versions of an annotation store. </p>
     pub fn get_annotation_store_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnnotationStoreVersionItem>> {
         &self.annotation_store_versions
     }
-    /// <p>Specifies the pagination token from a previous request to retrieve the next page of results.</p>
+    /// <p> Specifies the pagination token from a previous request to retrieve the next page of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the pagination token from a previous request to retrieve the next page of results.</p>
+    /// <p> Specifies the pagination token from a previous request to retrieve the next page of results. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>Specifies the pagination token from a previous request to retrieve the next page of results.</p>
+    /// <p> Specifies the pagination token from a previous request to retrieve the next page of results. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

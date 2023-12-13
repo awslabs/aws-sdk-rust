@@ -7,35 +7,29 @@ pub enum Error {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>Timestream was unable to process this request because it contains resource that already exists.</p>
     ConflictException(crate::types::error::ConflictException),
-    /// <p>Timestream was unable to fully process this request because of an internal server error.</p>
+    /// <p> Timestream was unable to fully process this request because of an internal server error.</p>
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The requested endpoint was not valid.</p>
     InvalidEndpointException(crate::types::error::InvalidEndpointException),
-    /// <p>WriteRecords would throw this exception in the following cases:</p>
+    /// <p> WriteRecords would throw this exception in the following cases: </p>
     /// <ul>
-    /// <li>
-    /// <p>Records with duplicate data where there are multiple records with the same dimensions, timestamps, and measure names but:</p>
+    /// <li> <p>Records with duplicate data where there are multiple records with the same dimensions, timestamps, and measure names but: </p>
     /// <ul>
-    /// <li>
-    /// <p>Measure values are different</p></li>
-    /// <li>
-    /// <p>Version is not present in the request <i>or</i> the value of version in the new record is equal to or lower than the existing value</p></li>
+    /// <li> <p>Measure values are different</p> </li>
+    /// <li> <p>Version is not present in the request <i>or</i> the value of version in the new record is equal to or lower than the existing value</p> </li>
+    /// </ul> <p> In this case, if Timestream rejects data, the <code>ExistingVersion</code> field in the <code>RejectedRecords</code> response will indicate the current record’s version. To force an update, you can resend the request with a version for the record set to a value greater than the <code>ExistingVersion</code>.</p> </li>
+    /// <li> <p> Records with timestamps that lie outside the retention duration of the memory store. </p> </li>
+    /// <li> <p> Records with dimensions or measures that exceed the Timestream defined limits. </p> </li>
     /// </ul>
-    /// <p>In this case, if Timestream rejects data, the <code>ExistingVersion</code> field in the <code>RejectedRecords</code> response will indicate the current record’s version. To force an update, you can resend the request with a version for the record set to a value greater than the <code>ExistingVersion</code>.</p></li>
-    /// <li>
-    /// <p>Records with timestamps that lie outside the retention duration of the memory store.</p></li>
-    /// <li>
-    /// <p>Records with dimensions or measures that exceed the Timestream defined limits.</p></li>
-    /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Quotas</a> in the Amazon Timestream Developer Guide.</p>
+    /// <p> For more information, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Quotas</a> in the Amazon Timestream Developer Guide. </p>
     RejectedRecordsException(crate::types::error::RejectedRecordsException),
     /// <p>The operation tried to access a nonexistent resource. The resource might not be specified correctly, or its status might not be ACTIVE.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>The instance quota of resource exceeded for this account.</p>
+    /// <p> The instance quota of resource exceeded for this account.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
-    /// <p>Too many requests were made by a user and they exceeded the service quotas. The request was throttled.</p>
+    /// <p> Too many requests were made by a user and they exceeded the service quotas. The request was throttled.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
-    /// <p>An invalid or malformed request.</p>
+    /// <p> An invalid or malformed request.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

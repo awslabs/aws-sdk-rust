@@ -22,8 +22,8 @@ impl GetGroupMembershipIdInputBuilder {
 }
 /// Fluent builder constructing a request to `GetGroupMembershipId`.
 ///
-/// <p>Retrieves the <code>MembershipId</code> in an identity store.</p><note>
-/// <p>If you have administrator access to a member account, you can use this API from the member account. Read about <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member accounts</a> in the <i>Organizations User Guide</i>.</p>
+/// <p>Retrieves the <code>MembershipId</code> in an identity store.</p> <note>
+/// <p>If you have administrator access to a member account, you can use this API from the member account. Read about <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member accounts</a> in the <i>Organizations User Guide</i>. </p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetGroupMembershipIdFluentBuilder {

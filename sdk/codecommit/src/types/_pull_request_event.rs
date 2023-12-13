@@ -16,7 +16,7 @@ pub struct PullRequestEvent {
     pub pull_request_created_event_metadata: ::std::option::Option<crate::types::PullRequestCreatedEventMetadata>,
     /// <p>Information about the change in status for the pull request event.</p>
     pub pull_request_status_changed_event_metadata: ::std::option::Option<crate::types::PullRequestStatusChangedEventMetadata>,
-    /// <p>Information about the updated source branch for the pull request event.</p>
+    /// <p>Information about the updated source branch for the pull request event. </p>
     pub pull_request_source_reference_updated_event_metadata: ::std::option::Option<crate::types::PullRequestSourceReferenceUpdatedEventMetadata>,
     /// <p>Information about the change in mergability state for the pull request event.</p>
     pub pull_request_merged_state_changed_event_metadata: ::std::option::Option<crate::types::PullRequestMergedStateChangedEventMetadata>,
@@ -52,7 +52,7 @@ impl PullRequestEvent {
     pub fn pull_request_status_changed_event_metadata(&self) -> ::std::option::Option<&crate::types::PullRequestStatusChangedEventMetadata> {
         self.pull_request_status_changed_event_metadata.as_ref()
     }
-    /// <p>Information about the updated source branch for the pull request event.</p>
+    /// <p>Information about the updated source branch for the pull request event. </p>
     pub fn pull_request_source_reference_updated_event_metadata(
         &self,
     ) -> ::std::option::Option<&crate::types::PullRequestSourceReferenceUpdatedEventMetadata> {
@@ -189,7 +189,7 @@ impl PullRequestEventBuilder {
     pub fn get_pull_request_status_changed_event_metadata(&self) -> &::std::option::Option<crate::types::PullRequestStatusChangedEventMetadata> {
         &self.pull_request_status_changed_event_metadata
     }
-    /// <p>Information about the updated source branch for the pull request event.</p>
+    /// <p>Information about the updated source branch for the pull request event. </p>
     pub fn pull_request_source_reference_updated_event_metadata(
         mut self,
         input: crate::types::PullRequestSourceReferenceUpdatedEventMetadata,
@@ -197,7 +197,7 @@ impl PullRequestEventBuilder {
         self.pull_request_source_reference_updated_event_metadata = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Information about the updated source branch for the pull request event.</p>
+    /// <p>Information about the updated source branch for the pull request event. </p>
     pub fn set_pull_request_source_reference_updated_event_metadata(
         mut self,
         input: ::std::option::Option<crate::types::PullRequestSourceReferenceUpdatedEventMetadata>,
@@ -205,7 +205,7 @@ impl PullRequestEventBuilder {
         self.pull_request_source_reference_updated_event_metadata = input;
         self
     }
-    /// <p>Information about the updated source branch for the pull request event.</p>
+    /// <p>Information about the updated source branch for the pull request event. </p>
     pub fn get_pull_request_source_reference_updated_event_metadata(
         &self,
     ) -> &::std::option::Option<crate::types::PullRequestSourceReferenceUpdatedEventMetadata> {

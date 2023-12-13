@@ -22,7 +22,7 @@ impl CancelMailboxExportJobInputBuilder {
 }
 /// Fluent builder constructing a request to `CancelMailboxExportJob`.
 ///
-/// <p>Cancels a mailbox export job.</p><note>
+/// <p>Cancels a mailbox export job.</p> <note>
 /// <p>If the mailbox export job is near completion, it might not be possible to cancel it.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

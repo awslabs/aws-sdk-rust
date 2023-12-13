@@ -6,13 +6,13 @@
 pub struct AdapterVersionDatasetConfig {
     /// <p>The S3 bucket name and file name that identifies the document.</p>
     /// <p>The AWS Region for the S3 bucket that contains the document must match the Region that you use for Amazon Textract operations.</p>
-    /// <p>For Amazon Textract to process a file in an S3 bucket, the user must have permission to access the S3 bucket and file.</p>
+    /// <p>For Amazon Textract to process a file in an S3 bucket, the user must have permission to access the S3 bucket and file. </p>
     pub manifest_s3_object: ::std::option::Option<crate::types::S3Object>,
 }
 impl AdapterVersionDatasetConfig {
     /// <p>The S3 bucket name and file name that identifies the document.</p>
     /// <p>The AWS Region for the S3 bucket that contains the document must match the Region that you use for Amazon Textract operations.</p>
-    /// <p>For Amazon Textract to process a file in an S3 bucket, the user must have permission to access the S3 bucket and file.</p>
+    /// <p>For Amazon Textract to process a file in an S3 bucket, the user must have permission to access the S3 bucket and file. </p>
     pub fn manifest_s3_object(&self) -> ::std::option::Option<&crate::types::S3Object> {
         self.manifest_s3_object.as_ref()
     }
@@ -33,21 +33,21 @@ pub struct AdapterVersionDatasetConfigBuilder {
 impl AdapterVersionDatasetConfigBuilder {
     /// <p>The S3 bucket name and file name that identifies the document.</p>
     /// <p>The AWS Region for the S3 bucket that contains the document must match the Region that you use for Amazon Textract operations.</p>
-    /// <p>For Amazon Textract to process a file in an S3 bucket, the user must have permission to access the S3 bucket and file.</p>
+    /// <p>For Amazon Textract to process a file in an S3 bucket, the user must have permission to access the S3 bucket and file. </p>
     pub fn manifest_s3_object(mut self, input: crate::types::S3Object) -> Self {
         self.manifest_s3_object = ::std::option::Option::Some(input);
         self
     }
     /// <p>The S3 bucket name and file name that identifies the document.</p>
     /// <p>The AWS Region for the S3 bucket that contains the document must match the Region that you use for Amazon Textract operations.</p>
-    /// <p>For Amazon Textract to process a file in an S3 bucket, the user must have permission to access the S3 bucket and file.</p>
+    /// <p>For Amazon Textract to process a file in an S3 bucket, the user must have permission to access the S3 bucket and file. </p>
     pub fn set_manifest_s3_object(mut self, input: ::std::option::Option<crate::types::S3Object>) -> Self {
         self.manifest_s3_object = input;
         self
     }
     /// <p>The S3 bucket name and file name that identifies the document.</p>
     /// <p>The AWS Region for the S3 bucket that contains the document must match the Region that you use for Amazon Textract operations.</p>
-    /// <p>For Amazon Textract to process a file in an S3 bucket, the user must have permission to access the S3 bucket and file.</p>
+    /// <p>For Amazon Textract to process a file in an S3 bucket, the user must have permission to access the S3 bucket and file. </p>
     pub fn get_manifest_s3_object(&self) -> &::std::option::Option<crate::types::S3Object> {
         &self.manifest_s3_object
     }

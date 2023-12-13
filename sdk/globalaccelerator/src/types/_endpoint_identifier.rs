@@ -4,21 +4,21 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EndpointIdentifier {
-    /// <p>An ID for the endpoint. If the endpoint is a Network Load Balancer or Application Load Balancer, this is the Amazon Resource Name (ARN) of the resource. If the endpoint is an Elastic IP address, this is the Elastic IP address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID.</p>
+    /// <p>An ID for the endpoint. If the endpoint is a Network Load Balancer or Application Load Balancer, this is the Amazon Resource Name (ARN) of the resource. If the endpoint is an Elastic IP address, this is the Elastic IP address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID. </p>
     /// <p>An Application Load Balancer can be either internal or internet-facing.</p>
     pub endpoint_id: ::std::string::String,
-    /// <p>Indicates whether client IP address preservation is enabled for an endpoint. The value is true or false.</p>
+    /// <p>Indicates whether client IP address preservation is enabled for an endpoint. The value is true or false. </p>
     /// <p>If the value is set to true, the client's IP address is preserved in the <code>X-Forwarded-For</code> request header as traffic travels to applications on the endpoint fronted by the accelerator.</p>
     pub client_ip_preservation_enabled: ::std::option::Option<bool>,
 }
 impl EndpointIdentifier {
-    /// <p>An ID for the endpoint. If the endpoint is a Network Load Balancer or Application Load Balancer, this is the Amazon Resource Name (ARN) of the resource. If the endpoint is an Elastic IP address, this is the Elastic IP address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID.</p>
+    /// <p>An ID for the endpoint. If the endpoint is a Network Load Balancer or Application Load Balancer, this is the Amazon Resource Name (ARN) of the resource. If the endpoint is an Elastic IP address, this is the Elastic IP address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID. </p>
     /// <p>An Application Load Balancer can be either internal or internet-facing.</p>
     pub fn endpoint_id(&self) -> &str {
         use std::ops::Deref;
         self.endpoint_id.deref()
     }
-    /// <p>Indicates whether client IP address preservation is enabled for an endpoint. The value is true or false.</p>
+    /// <p>Indicates whether client IP address preservation is enabled for an endpoint. The value is true or false. </p>
     /// <p>If the value is set to true, the client's IP address is preserved in the <code>X-Forwarded-For</code> request header as traffic travels to applications on the endpoint fronted by the accelerator.</p>
     pub fn client_ip_preservation_enabled(&self) -> ::std::option::Option<bool> {
         self.client_ip_preservation_enabled
@@ -39,37 +39,37 @@ pub struct EndpointIdentifierBuilder {
     pub(crate) client_ip_preservation_enabled: ::std::option::Option<bool>,
 }
 impl EndpointIdentifierBuilder {
-    /// <p>An ID for the endpoint. If the endpoint is a Network Load Balancer or Application Load Balancer, this is the Amazon Resource Name (ARN) of the resource. If the endpoint is an Elastic IP address, this is the Elastic IP address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID.</p>
+    /// <p>An ID for the endpoint. If the endpoint is a Network Load Balancer or Application Load Balancer, this is the Amazon Resource Name (ARN) of the resource. If the endpoint is an Elastic IP address, this is the Elastic IP address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID. </p>
     /// <p>An Application Load Balancer can be either internal or internet-facing.</p>
     /// This field is required.
     pub fn endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An ID for the endpoint. If the endpoint is a Network Load Balancer or Application Load Balancer, this is the Amazon Resource Name (ARN) of the resource. If the endpoint is an Elastic IP address, this is the Elastic IP address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID.</p>
+    /// <p>An ID for the endpoint. If the endpoint is a Network Load Balancer or Application Load Balancer, this is the Amazon Resource Name (ARN) of the resource. If the endpoint is an Elastic IP address, this is the Elastic IP address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID. </p>
     /// <p>An Application Load Balancer can be either internal or internet-facing.</p>
     pub fn set_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_id = input;
         self
     }
-    /// <p>An ID for the endpoint. If the endpoint is a Network Load Balancer or Application Load Balancer, this is the Amazon Resource Name (ARN) of the resource. If the endpoint is an Elastic IP address, this is the Elastic IP address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID.</p>
+    /// <p>An ID for the endpoint. If the endpoint is a Network Load Balancer or Application Load Balancer, this is the Amazon Resource Name (ARN) of the resource. If the endpoint is an Elastic IP address, this is the Elastic IP address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID. </p>
     /// <p>An Application Load Balancer can be either internal or internet-facing.</p>
     pub fn get_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.endpoint_id
     }
-    /// <p>Indicates whether client IP address preservation is enabled for an endpoint. The value is true or false.</p>
+    /// <p>Indicates whether client IP address preservation is enabled for an endpoint. The value is true or false. </p>
     /// <p>If the value is set to true, the client's IP address is preserved in the <code>X-Forwarded-For</code> request header as traffic travels to applications on the endpoint fronted by the accelerator.</p>
     pub fn client_ip_preservation_enabled(mut self, input: bool) -> Self {
         self.client_ip_preservation_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether client IP address preservation is enabled for an endpoint. The value is true or false.</p>
+    /// <p>Indicates whether client IP address preservation is enabled for an endpoint. The value is true or false. </p>
     /// <p>If the value is set to true, the client's IP address is preserved in the <code>X-Forwarded-For</code> request header as traffic travels to applications on the endpoint fronted by the accelerator.</p>
     pub fn set_client_ip_preservation_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.client_ip_preservation_enabled = input;
         self
     }
-    /// <p>Indicates whether client IP address preservation is enabled for an endpoint. The value is true or false.</p>
+    /// <p>Indicates whether client IP address preservation is enabled for an endpoint. The value is true or false. </p>
     /// <p>If the value is set to true, the client's IP address is preserved in the <code>X-Forwarded-For</code> request header as traffic travels to applications on the endpoint fronted by the accelerator.</p>
     pub fn get_client_ip_preservation_enabled(&self) -> &::std::option::Option<bool> {
         &self.client_ip_preservation_enabled

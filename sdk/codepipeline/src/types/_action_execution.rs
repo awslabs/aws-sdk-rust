@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActionExecution {
-    /// <p>ID of the workflow action execution in the current stage. Use the <code>GetPipelineState</code> action to retrieve the current action execution details of the current stage.</p><note>
+    /// <p>ID of the workflow action execution in the current stage. Use the <code>GetPipelineState</code> action to retrieve the current action execution details of the current stage.</p> <note>
     /// <p>For older executions, this field might be empty. The action execution ID is available for executions run on or after March 2020.</p>
     /// </note>
     pub action_execution_id: ::std::option::Option<::std::string::String>,
@@ -28,7 +28,7 @@ pub struct ActionExecution {
     pub error_details: ::std::option::Option<crate::types::ErrorDetails>,
 }
 impl ActionExecution {
-    /// <p>ID of the workflow action execution in the current stage. Use the <code>GetPipelineState</code> action to retrieve the current action execution details of the current stage.</p><note>
+    /// <p>ID of the workflow action execution in the current stage. Use the <code>GetPipelineState</code> action to retrieve the current action execution details of the current stage.</p> <note>
     /// <p>For older executions, this field might be empty. The action execution ID is available for executions run on or after March 2020.</p>
     /// </note>
     pub fn action_execution_id(&self) -> ::std::option::Option<&str> {
@@ -94,21 +94,21 @@ pub struct ActionExecutionBuilder {
     pub(crate) error_details: ::std::option::Option<crate::types::ErrorDetails>,
 }
 impl ActionExecutionBuilder {
-    /// <p>ID of the workflow action execution in the current stage. Use the <code>GetPipelineState</code> action to retrieve the current action execution details of the current stage.</p><note>
+    /// <p>ID of the workflow action execution in the current stage. Use the <code>GetPipelineState</code> action to retrieve the current action execution details of the current stage.</p> <note>
     /// <p>For older executions, this field might be empty. The action execution ID is available for executions run on or after March 2020.</p>
     /// </note>
     pub fn action_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_execution_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>ID of the workflow action execution in the current stage. Use the <code>GetPipelineState</code> action to retrieve the current action execution details of the current stage.</p><note>
+    /// <p>ID of the workflow action execution in the current stage. Use the <code>GetPipelineState</code> action to retrieve the current action execution details of the current stage.</p> <note>
     /// <p>For older executions, this field might be empty. The action execution ID is available for executions run on or after March 2020.</p>
     /// </note>
     pub fn set_action_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.action_execution_id = input;
         self
     }
-    /// <p>ID of the workflow action execution in the current stage. Use the <code>GetPipelineState</code> action to retrieve the current action execution details of the current stage.</p><note>
+    /// <p>ID of the workflow action execution in the current stage. Use the <code>GetPipelineState</code> action to retrieve the current action execution details of the current stage.</p> <note>
     /// <p>For older executions, this field might be empty. The action execution ID is available for executions run on or after March 2020.</p>
     /// </note>
     pub fn get_action_execution_id(&self) -> &::std::option::Option<::std::string::String> {

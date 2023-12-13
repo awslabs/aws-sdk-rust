@@ -242,7 +242,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeResiz
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DescribeResizeError {
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.</p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
     ClusterNotFoundFault(crate::types::error::ClusterNotFoundFault),
     /// <p>A resize operation for the specified cluster is not found.</p>
     ResizeNotFoundFault(crate::types::error::ResizeNotFoundFault),

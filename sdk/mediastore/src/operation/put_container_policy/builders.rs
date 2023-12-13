@@ -23,7 +23,7 @@ impl PutContainerPolicyInputBuilder {
 /// Fluent builder constructing a request to `PutContainerPolicy`.
 ///
 /// <p>Creates an access policy for the specified container to restrict the users and clients that can access it. For information about the data that is included in an access policy, see the <a href="https://aws.amazon.com/documentation/iam/">AWS Identity and Access Management User Guide</a>.</p>
-/// <p>For this release of the REST API, you can create only one policy for a container. If you enter <code>PutContainerPolicy</code> twice, the second command modifies the existing policy.</p>
+/// <p>For this release of the REST API, you can create only one policy for a container. If you enter <code>PutContainerPolicy</code> twice, the second command modifies the existing policy. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutContainerPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -123,34 +123,28 @@ impl PutContainerPolicyFluentBuilder {
     pub fn get_container_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_container_name()
     }
-    /// <p>The contents of the policy, which includes the following:</p>
+    /// <p>The contents of the policy, which includes the following: </p>
     /// <ul>
-    /// <li>
-    /// <p>One <code>Version</code> tag</p></li>
-    /// <li>
-    /// <p>One <code>Statement</code> tag that contains the standard tags for the policy.</p></li>
+    /// <li> <p>One <code>Version</code> tag</p> </li>
+    /// <li> <p>One <code>Statement</code> tag that contains the standard tags for the policy.</p> </li>
     /// </ul>
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy(input.into());
         self
     }
-    /// <p>The contents of the policy, which includes the following:</p>
+    /// <p>The contents of the policy, which includes the following: </p>
     /// <ul>
-    /// <li>
-    /// <p>One <code>Version</code> tag</p></li>
-    /// <li>
-    /// <p>One <code>Statement</code> tag that contains the standard tags for the policy.</p></li>
+    /// <li> <p>One <code>Version</code> tag</p> </li>
+    /// <li> <p>One <code>Statement</code> tag that contains the standard tags for the policy.</p> </li>
     /// </ul>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy(input);
         self
     }
-    /// <p>The contents of the policy, which includes the following:</p>
+    /// <p>The contents of the policy, which includes the following: </p>
     /// <ul>
-    /// <li>
-    /// <p>One <code>Version</code> tag</p></li>
-    /// <li>
-    /// <p>One <code>Statement</code> tag that contains the standard tags for the policy.</p></li>
+    /// <li> <p>One <code>Version</code> tag</p> </li>
+    /// <li> <p>One <code>Statement</code> tag that contains the standard tags for the policy.</p> </li>
     /// </ul>
     pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_policy()

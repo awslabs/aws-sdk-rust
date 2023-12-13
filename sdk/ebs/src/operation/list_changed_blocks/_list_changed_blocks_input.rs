@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListChangedBlocksInput {
-    /// <p>The ID of the first snapshot to use for the comparison.</p><important>
+    /// <p>The ID of the first snapshot to use for the comparison.</p> <important>
     /// <p>The <code>FirstSnapshotID</code> parameter must be specified with a <code>SecondSnapshotId</code> parameter; otherwise, an error occurs.</p>
     /// </important>
     pub first_snapshot_id: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the second snapshot to use for the comparison.</p><important>
+    /// <p>The ID of the second snapshot to use for the comparison.</p> <important>
     /// <p>The <code>SecondSnapshotId</code> parameter must be specified with a <code>FirstSnapshotID</code> parameter; otherwise, an error occurs.</p>
     /// </important>
     pub second_snapshot_id: ::std::option::Option<::std::string::String>,
@@ -24,13 +24,13 @@ pub struct ListChangedBlocksInput {
     pub starting_block_index: ::std::option::Option<i32>,
 }
 impl ListChangedBlocksInput {
-    /// <p>The ID of the first snapshot to use for the comparison.</p><important>
+    /// <p>The ID of the first snapshot to use for the comparison.</p> <important>
     /// <p>The <code>FirstSnapshotID</code> parameter must be specified with a <code>SecondSnapshotId</code> parameter; otherwise, an error occurs.</p>
     /// </important>
     pub fn first_snapshot_id(&self) -> ::std::option::Option<&str> {
         self.first_snapshot_id.as_deref()
     }
-    /// <p>The ID of the second snapshot to use for the comparison.</p><important>
+    /// <p>The ID of the second snapshot to use for the comparison.</p> <important>
     /// <p>The <code>SecondSnapshotId</code> parameter must be specified with a <code>FirstSnapshotID</code> parameter; otherwise, an error occurs.</p>
     /// </important>
     pub fn second_snapshot_id(&self) -> ::std::option::Option<&str> {
@@ -72,27 +72,27 @@ pub struct ListChangedBlocksInputBuilder {
     pub(crate) starting_block_index: ::std::option::Option<i32>,
 }
 impl ListChangedBlocksInputBuilder {
-    /// <p>The ID of the first snapshot to use for the comparison.</p><important>
+    /// <p>The ID of the first snapshot to use for the comparison.</p> <important>
     /// <p>The <code>FirstSnapshotID</code> parameter must be specified with a <code>SecondSnapshotId</code> parameter; otherwise, an error occurs.</p>
     /// </important>
     pub fn first_snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.first_snapshot_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the first snapshot to use for the comparison.</p><important>
+    /// <p>The ID of the first snapshot to use for the comparison.</p> <important>
     /// <p>The <code>FirstSnapshotID</code> parameter must be specified with a <code>SecondSnapshotId</code> parameter; otherwise, an error occurs.</p>
     /// </important>
     pub fn set_first_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.first_snapshot_id = input;
         self
     }
-    /// <p>The ID of the first snapshot to use for the comparison.</p><important>
+    /// <p>The ID of the first snapshot to use for the comparison.</p> <important>
     /// <p>The <code>FirstSnapshotID</code> parameter must be specified with a <code>SecondSnapshotId</code> parameter; otherwise, an error occurs.</p>
     /// </important>
     pub fn get_first_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.first_snapshot_id
     }
-    /// <p>The ID of the second snapshot to use for the comparison.</p><important>
+    /// <p>The ID of the second snapshot to use for the comparison.</p> <important>
     /// <p>The <code>SecondSnapshotId</code> parameter must be specified with a <code>FirstSnapshotID</code> parameter; otherwise, an error occurs.</p>
     /// </important>
     /// This field is required.
@@ -100,14 +100,14 @@ impl ListChangedBlocksInputBuilder {
         self.second_snapshot_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the second snapshot to use for the comparison.</p><important>
+    /// <p>The ID of the second snapshot to use for the comparison.</p> <important>
     /// <p>The <code>SecondSnapshotId</code> parameter must be specified with a <code>FirstSnapshotID</code> parameter; otherwise, an error occurs.</p>
     /// </important>
     pub fn set_second_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.second_snapshot_id = input;
         self
     }
-    /// <p>The ID of the second snapshot to use for the comparison.</p><important>
+    /// <p>The ID of the second snapshot to use for the comparison.</p> <important>
     /// <p>The <code>SecondSnapshotId</code> parameter must be specified with a <code>FirstSnapshotID</code> parameter; otherwise, an error occurs.</p>
     /// </important>
     pub fn get_second_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {

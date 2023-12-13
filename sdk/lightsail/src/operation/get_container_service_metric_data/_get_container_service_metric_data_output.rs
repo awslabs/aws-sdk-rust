@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetContainerServiceMetricDataOutput {
-    /// <p>The name of the metric returned.</p>
+    /// <p>The name of the metric returned. </p>
     pub metric_name: ::std::option::Option<crate::types::ContainerServiceMetricName>,
     /// <p>An array of objects that describe the metric data returned.</p>
     pub metric_data: ::std::option::Option<::std::vec::Vec<crate::types::MetricDatapoint>>,
     _request_id: Option<String>,
 }
 impl GetContainerServiceMetricDataOutput {
-    /// <p>The name of the metric returned.</p>
+    /// <p>The name of the metric returned. </p>
     pub fn metric_name(&self) -> ::std::option::Option<&crate::types::ContainerServiceMetricName> {
         self.metric_name.as_ref()
     }
@@ -42,17 +42,17 @@ pub struct GetContainerServiceMetricDataOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetContainerServiceMetricDataOutputBuilder {
-    /// <p>The name of the metric returned.</p>
+    /// <p>The name of the metric returned. </p>
     pub fn metric_name(mut self, input: crate::types::ContainerServiceMetricName) -> Self {
         self.metric_name = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The name of the metric returned.</p>
+    /// <p>The name of the metric returned. </p>
     pub fn set_metric_name(mut self, input: ::std::option::Option<crate::types::ContainerServiceMetricName>) -> Self {
         self.metric_name = input;
         self
     }
-    /// <p>The name of the metric returned.</p>
+    /// <p>The name of the metric returned. </p>
     pub fn get_metric_name(&self) -> &::std::option::Option<crate::types::ContainerServiceMetricName> {
         &self.metric_name
     }

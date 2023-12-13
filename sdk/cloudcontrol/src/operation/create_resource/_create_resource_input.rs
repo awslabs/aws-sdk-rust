@@ -16,15 +16,13 @@ pub struct CreateResourceInput {
     /// <p>If you do not specify a client token, one is generated for inclusion in the request.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-idempotency">Ensuring resource operation requests are unique</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// <p>Structured data format representing the desired state of the resource, consisting of that resource's properties and their desired values.</p><note>
+    /// <p>Structured data format representing the desired state of the resource, consisting of that resource's properties and their desired values.</p> <note>
     /// <p>Cloud Control API currently supports JSON as a structured data format.</p>
     /// </note>
     /// <p>Specify the desired state as one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>A JSON blob</p></li>
-    /// <li>
-    /// <p>A local path containing the desired state in JSON data format</p></li>
+    /// <li> <p>A JSON blob</p> </li>
+    /// <li> <p>A local path containing the desired state in JSON data format</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate">Composing the desired state of the resource</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
     /// <p>For more information about the properties of a specific resource, refer to the related topic for the resource in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Resource and property types reference</a> in the <i>CloudFormation Users Guide</i>.</p>
@@ -52,15 +50,13 @@ impl CreateResourceInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>Structured data format representing the desired state of the resource, consisting of that resource's properties and their desired values.</p><note>
+    /// <p>Structured data format representing the desired state of the resource, consisting of that resource's properties and their desired values.</p> <note>
     /// <p>Cloud Control API currently supports JSON as a structured data format.</p>
     /// </note>
     /// <p>Specify the desired state as one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>A JSON blob</p></li>
-    /// <li>
-    /// <p>A local path containing the desired state in JSON data format</p></li>
+    /// <li> <p>A JSON blob</p> </li>
+    /// <li> <p>A local path containing the desired state in JSON data format</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate">Composing the desired state of the resource</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
     /// <p>For more information about the properties of a specific resource, refer to the related topic for the resource in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Resource and property types reference</a> in the <i>CloudFormation Users Guide</i>.</p>
@@ -169,15 +165,13 @@ impl CreateResourceInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
-    /// <p>Structured data format representing the desired state of the resource, consisting of that resource's properties and their desired values.</p><note>
+    /// <p>Structured data format representing the desired state of the resource, consisting of that resource's properties and their desired values.</p> <note>
     /// <p>Cloud Control API currently supports JSON as a structured data format.</p>
     /// </note>
     /// <p>Specify the desired state as one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>A JSON blob</p></li>
-    /// <li>
-    /// <p>A local path containing the desired state in JSON data format</p></li>
+    /// <li> <p>A JSON blob</p> </li>
+    /// <li> <p>A local path containing the desired state in JSON data format</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate">Composing the desired state of the resource</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
     /// <p>For more information about the properties of a specific resource, refer to the related topic for the resource in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Resource and property types reference</a> in the <i>CloudFormation Users Guide</i>.</p>
@@ -186,15 +180,13 @@ impl CreateResourceInputBuilder {
         self.desired_state = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Structured data format representing the desired state of the resource, consisting of that resource's properties and their desired values.</p><note>
+    /// <p>Structured data format representing the desired state of the resource, consisting of that resource's properties and their desired values.</p> <note>
     /// <p>Cloud Control API currently supports JSON as a structured data format.</p>
     /// </note>
     /// <p>Specify the desired state as one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>A JSON blob</p></li>
-    /// <li>
-    /// <p>A local path containing the desired state in JSON data format</p></li>
+    /// <li> <p>A JSON blob</p> </li>
+    /// <li> <p>A local path containing the desired state in JSON data format</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate">Composing the desired state of the resource</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
     /// <p>For more information about the properties of a specific resource, refer to the related topic for the resource in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Resource and property types reference</a> in the <i>CloudFormation Users Guide</i>.</p>
@@ -202,15 +194,13 @@ impl CreateResourceInputBuilder {
         self.desired_state = input;
         self
     }
-    /// <p>Structured data format representing the desired state of the resource, consisting of that resource's properties and their desired values.</p><note>
+    /// <p>Structured data format representing the desired state of the resource, consisting of that resource's properties and their desired values.</p> <note>
     /// <p>Cloud Control API currently supports JSON as a structured data format.</p>
     /// </note>
     /// <p>Specify the desired state as one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>A JSON blob</p></li>
-    /// <li>
-    /// <p>A local path containing the desired state in JSON data format</p></li>
+    /// <li> <p>A JSON blob</p> </li>
+    /// <li> <p>A local path containing the desired state in JSON data format</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate">Composing the desired state of the resource</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
     /// <p>For more information about the properties of a specific resource, refer to the related topic for the resource in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Resource and property types reference</a> in the <i>CloudFormation Users Guide</i>.</p>

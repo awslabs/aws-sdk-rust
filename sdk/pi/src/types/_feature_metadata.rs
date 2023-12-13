@@ -6,36 +6,24 @@
 pub struct FeatureMetadata {
     /// <p>The status of the feature on the DB instance. Possible values include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ENABLED</code> - The feature is enabled on the instance.</p></li>
-    /// <li>
-    /// <p><code>DISABLED</code> - The feature is disabled on the instance.</p></li>
-    /// <li>
-    /// <p><code>UNSUPPORTED</code> - The feature isn't supported on the instance.</p></li>
-    /// <li>
-    /// <p><code>ENABLED_PENDING_REBOOT</code> - The feature is enabled on the instance but requires a reboot to take effect.</p></li>
-    /// <li>
-    /// <p><code>DISABLED_PENDING_REBOOT</code> - The feature is disabled on the instance but requires a reboot to take effect.</p></li>
-    /// <li>
-    /// <p><code>UNKNOWN</code> - The feature status couldn't be determined.</p></li>
+    /// <li> <p> <code>ENABLED</code> - The feature is enabled on the instance.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - The feature is disabled on the instance.</p> </li>
+    /// <li> <p> <code>UNSUPPORTED</code> - The feature isn't supported on the instance.</p> </li>
+    /// <li> <p> <code>ENABLED_PENDING_REBOOT</code> - The feature is enabled on the instance but requires a reboot to take effect.</p> </li>
+    /// <li> <p> <code>DISABLED_PENDING_REBOOT</code> - The feature is disabled on the instance but requires a reboot to take effect.</p> </li>
+    /// <li> <p> <code>UNKNOWN</code> - The feature status couldn't be determined.</p> </li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::FeatureStatus>,
 }
 impl FeatureMetadata {
     /// <p>The status of the feature on the DB instance. Possible values include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ENABLED</code> - The feature is enabled on the instance.</p></li>
-    /// <li>
-    /// <p><code>DISABLED</code> - The feature is disabled on the instance.</p></li>
-    /// <li>
-    /// <p><code>UNSUPPORTED</code> - The feature isn't supported on the instance.</p></li>
-    /// <li>
-    /// <p><code>ENABLED_PENDING_REBOOT</code> - The feature is enabled on the instance but requires a reboot to take effect.</p></li>
-    /// <li>
-    /// <p><code>DISABLED_PENDING_REBOOT</code> - The feature is disabled on the instance but requires a reboot to take effect.</p></li>
-    /// <li>
-    /// <p><code>UNKNOWN</code> - The feature status couldn't be determined.</p></li>
+    /// <li> <p> <code>ENABLED</code> - The feature is enabled on the instance.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - The feature is disabled on the instance.</p> </li>
+    /// <li> <p> <code>UNSUPPORTED</code> - The feature isn't supported on the instance.</p> </li>
+    /// <li> <p> <code>ENABLED_PENDING_REBOOT</code> - The feature is enabled on the instance but requires a reboot to take effect.</p> </li>
+    /// <li> <p> <code>DISABLED_PENDING_REBOOT</code> - The feature is disabled on the instance but requires a reboot to take effect.</p> </li>
+    /// <li> <p> <code>UNKNOWN</code> - The feature status couldn't be determined.</p> </li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::FeatureStatus> {
         self.status.as_ref()
@@ -57,18 +45,12 @@ pub struct FeatureMetadataBuilder {
 impl FeatureMetadataBuilder {
     /// <p>The status of the feature on the DB instance. Possible values include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ENABLED</code> - The feature is enabled on the instance.</p></li>
-    /// <li>
-    /// <p><code>DISABLED</code> - The feature is disabled on the instance.</p></li>
-    /// <li>
-    /// <p><code>UNSUPPORTED</code> - The feature isn't supported on the instance.</p></li>
-    /// <li>
-    /// <p><code>ENABLED_PENDING_REBOOT</code> - The feature is enabled on the instance but requires a reboot to take effect.</p></li>
-    /// <li>
-    /// <p><code>DISABLED_PENDING_REBOOT</code> - The feature is disabled on the instance but requires a reboot to take effect.</p></li>
-    /// <li>
-    /// <p><code>UNKNOWN</code> - The feature status couldn't be determined.</p></li>
+    /// <li> <p> <code>ENABLED</code> - The feature is enabled on the instance.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - The feature is disabled on the instance.</p> </li>
+    /// <li> <p> <code>UNSUPPORTED</code> - The feature isn't supported on the instance.</p> </li>
+    /// <li> <p> <code>ENABLED_PENDING_REBOOT</code> - The feature is enabled on the instance but requires a reboot to take effect.</p> </li>
+    /// <li> <p> <code>DISABLED_PENDING_REBOOT</code> - The feature is disabled on the instance but requires a reboot to take effect.</p> </li>
+    /// <li> <p> <code>UNKNOWN</code> - The feature status couldn't be determined.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::FeatureStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -76,18 +58,12 @@ impl FeatureMetadataBuilder {
     }
     /// <p>The status of the feature on the DB instance. Possible values include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ENABLED</code> - The feature is enabled on the instance.</p></li>
-    /// <li>
-    /// <p><code>DISABLED</code> - The feature is disabled on the instance.</p></li>
-    /// <li>
-    /// <p><code>UNSUPPORTED</code> - The feature isn't supported on the instance.</p></li>
-    /// <li>
-    /// <p><code>ENABLED_PENDING_REBOOT</code> - The feature is enabled on the instance but requires a reboot to take effect.</p></li>
-    /// <li>
-    /// <p><code>DISABLED_PENDING_REBOOT</code> - The feature is disabled on the instance but requires a reboot to take effect.</p></li>
-    /// <li>
-    /// <p><code>UNKNOWN</code> - The feature status couldn't be determined.</p></li>
+    /// <li> <p> <code>ENABLED</code> - The feature is enabled on the instance.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - The feature is disabled on the instance.</p> </li>
+    /// <li> <p> <code>UNSUPPORTED</code> - The feature isn't supported on the instance.</p> </li>
+    /// <li> <p> <code>ENABLED_PENDING_REBOOT</code> - The feature is enabled on the instance but requires a reboot to take effect.</p> </li>
+    /// <li> <p> <code>DISABLED_PENDING_REBOOT</code> - The feature is disabled on the instance but requires a reboot to take effect.</p> </li>
+    /// <li> <p> <code>UNKNOWN</code> - The feature status couldn't be determined.</p> </li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::FeatureStatus>) -> Self {
         self.status = input;
@@ -95,18 +71,12 @@ impl FeatureMetadataBuilder {
     }
     /// <p>The status of the feature on the DB instance. Possible values include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ENABLED</code> - The feature is enabled on the instance.</p></li>
-    /// <li>
-    /// <p><code>DISABLED</code> - The feature is disabled on the instance.</p></li>
-    /// <li>
-    /// <p><code>UNSUPPORTED</code> - The feature isn't supported on the instance.</p></li>
-    /// <li>
-    /// <p><code>ENABLED_PENDING_REBOOT</code> - The feature is enabled on the instance but requires a reboot to take effect.</p></li>
-    /// <li>
-    /// <p><code>DISABLED_PENDING_REBOOT</code> - The feature is disabled on the instance but requires a reboot to take effect.</p></li>
-    /// <li>
-    /// <p><code>UNKNOWN</code> - The feature status couldn't be determined.</p></li>
+    /// <li> <p> <code>ENABLED</code> - The feature is enabled on the instance.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - The feature is disabled on the instance.</p> </li>
+    /// <li> <p> <code>UNSUPPORTED</code> - The feature isn't supported on the instance.</p> </li>
+    /// <li> <p> <code>ENABLED_PENDING_REBOOT</code> - The feature is enabled on the instance but requires a reboot to take effect.</p> </li>
+    /// <li> <p> <code>DISABLED_PENDING_REBOOT</code> - The feature is disabled on the instance but requires a reboot to take effect.</p> </li>
+    /// <li> <p> <code>UNKNOWN</code> - The feature status couldn't be determined.</p> </li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::FeatureStatus> {
         &self.status

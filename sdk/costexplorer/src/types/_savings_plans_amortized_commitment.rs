@@ -8,7 +8,7 @@ pub struct SavingsPlansAmortizedCommitment {
     pub amortized_recurring_commitment: ::std::option::Option<::std::string::String>,
     /// <p>The amortized amount of your Savings Plans commitment that was purchased with an <code>Upfront</code> or <code>PartialUpfront</code> Savings Plans.</p>
     pub amortized_upfront_commitment: ::std::option::Option<::std::string::String>,
-    /// <p>The total amortized amount of your Savings Plans commitment, regardless of your Savings Plans purchase method.</p>
+    /// <p>The total amortized amount of your Savings Plans commitment, regardless of your Savings Plans purchase method. </p>
     pub total_amortized_commitment: ::std::option::Option<::std::string::String>,
 }
 impl SavingsPlansAmortizedCommitment {
@@ -20,7 +20,7 @@ impl SavingsPlansAmortizedCommitment {
     pub fn amortized_upfront_commitment(&self) -> ::std::option::Option<&str> {
         self.amortized_upfront_commitment.as_deref()
     }
-    /// <p>The total amortized amount of your Savings Plans commitment, regardless of your Savings Plans purchase method.</p>
+    /// <p>The total amortized amount of your Savings Plans commitment, regardless of your Savings Plans purchase method. </p>
     pub fn total_amortized_commitment(&self) -> ::std::option::Option<&str> {
         self.total_amortized_commitment.as_deref()
     }
@@ -69,17 +69,17 @@ impl SavingsPlansAmortizedCommitmentBuilder {
     pub fn get_amortized_upfront_commitment(&self) -> &::std::option::Option<::std::string::String> {
         &self.amortized_upfront_commitment
     }
-    /// <p>The total amortized amount of your Savings Plans commitment, regardless of your Savings Plans purchase method.</p>
+    /// <p>The total amortized amount of your Savings Plans commitment, regardless of your Savings Plans purchase method. </p>
     pub fn total_amortized_commitment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.total_amortized_commitment = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The total amortized amount of your Savings Plans commitment, regardless of your Savings Plans purchase method.</p>
+    /// <p>The total amortized amount of your Savings Plans commitment, regardless of your Savings Plans purchase method. </p>
     pub fn set_total_amortized_commitment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.total_amortized_commitment = input;
         self
     }
-    /// <p>The total amortized amount of your Savings Plans commitment, regardless of your Savings Plans purchase method.</p>
+    /// <p>The total amortized amount of your Savings Plans commitment, regardless of your Savings Plans purchase method. </p>
     pub fn get_total_amortized_commitment(&self) -> &::std::option::Option<::std::string::String> {
         &self.total_amortized_commitment
     }

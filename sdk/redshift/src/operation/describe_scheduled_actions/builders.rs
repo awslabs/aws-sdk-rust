@@ -22,7 +22,7 @@ impl DescribeScheduledActionsInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeScheduledActions`.
 ///
-/// <p>Describes properties of scheduled actions.</p>
+/// <p>Describes properties of scheduled actions. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeScheduledActionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,31 +114,31 @@ impl DescribeScheduledActionsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_scheduled_actions::paginator::DescribeScheduledActionsPaginator {
         crate::operation::describe_scheduled_actions::paginator::DescribeScheduledActionsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The name of the scheduled action to retrieve.</p>
+    /// <p>The name of the scheduled action to retrieve. </p>
     pub fn scheduled_action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.scheduled_action_name(input.into());
         self
     }
-    /// <p>The name of the scheduled action to retrieve.</p>
+    /// <p>The name of the scheduled action to retrieve. </p>
     pub fn set_scheduled_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_scheduled_action_name(input);
         self
     }
-    /// <p>The name of the scheduled action to retrieve.</p>
+    /// <p>The name of the scheduled action to retrieve. </p>
     pub fn get_scheduled_action_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_scheduled_action_name()
     }
-    /// <p>The type of the scheduled actions to retrieve.</p>
+    /// <p>The type of the scheduled actions to retrieve. </p>
     pub fn target_action_type(mut self, input: crate::types::ScheduledActionTypeValues) -> Self {
         self.inner = self.inner.target_action_type(input);
         self
     }
-    /// <p>The type of the scheduled actions to retrieve.</p>
+    /// <p>The type of the scheduled actions to retrieve. </p>
     pub fn set_target_action_type(mut self, input: ::std::option::Option<crate::types::ScheduledActionTypeValues>) -> Self {
         self.inner = self.inner.set_target_action_type(input);
         self
     }
-    /// <p>The type of the scheduled actions to retrieve.</p>
+    /// <p>The type of the scheduled actions to retrieve. </p>
     pub fn get_target_action_type(&self) -> &::std::option::Option<crate::types::ScheduledActionTypeValues> {
         self.inner.get_target_action_type()
     }
@@ -170,17 +170,17 @@ impl DescribeScheduledActionsFluentBuilder {
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_end_time()
     }
-    /// <p>If true, retrieve only active scheduled actions. If false, retrieve only disabled scheduled actions.</p>
+    /// <p>If true, retrieve only active scheduled actions. If false, retrieve only disabled scheduled actions. </p>
     pub fn active(mut self, input: bool) -> Self {
         self.inner = self.inner.active(input);
         self
     }
-    /// <p>If true, retrieve only active scheduled actions. If false, retrieve only disabled scheduled actions.</p>
+    /// <p>If true, retrieve only active scheduled actions. If false, retrieve only disabled scheduled actions. </p>
     pub fn set_active(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_active(input);
         self
     }
-    /// <p>If true, retrieve only active scheduled actions. If false, retrieve only disabled scheduled actions.</p>
+    /// <p>If true, retrieve only active scheduled actions. If false, retrieve only disabled scheduled actions. </p>
     pub fn get_active(&self) -> &::std::option::Option<bool> {
         self.inner.get_active()
     }
@@ -188,50 +188,50 @@ impl DescribeScheduledActionsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>List of scheduled action filters.</p>
+    /// <p>List of scheduled action filters. </p>
     pub fn filters(mut self, input: crate::types::ScheduledActionFilter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>List of scheduled action filters.</p>
+    /// <p>List of scheduled action filters. </p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledActionFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
-    /// <p>List of scheduled action filters.</p>
+    /// <p>List of scheduled action filters. </p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduledActionFilter>> {
         self.inner.get_filters()
     }
-    /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeScheduledActions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>
+    /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeScheduledActions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
         self
     }
-    /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeScheduledActions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>
+    /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeScheduledActions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_marker(input);
         self
     }
-    /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeScheduledActions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>
+    /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeScheduledActions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_marker()
     }
-    /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.</p>
-    /// <p>Default: <code>100</code></p>
+    /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
+    /// <p>Default: <code>100</code> </p>
     /// <p>Constraints: minimum 20, maximum 100.</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.inner = self.inner.max_records(input);
         self
     }
-    /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.</p>
-    /// <p>Default: <code>100</code></p>
+    /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
+    /// <p>Default: <code>100</code> </p>
     /// <p>Constraints: minimum 20, maximum 100.</p>
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_records(input);
         self
     }
-    /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.</p>
-    /// <p>Default: <code>100</code></p>
+    /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
+    /// <p>Default: <code>100</code> </p>
     /// <p>Constraints: minimum 20, maximum 100.</p>
     pub fn get_max_records(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_records()

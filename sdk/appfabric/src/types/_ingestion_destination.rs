@@ -15,10 +15,8 @@ pub struct IngestionDestination {
     /// <p>The state of the ingestion destination.</p>
     /// <p>The following states are possible:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Active</code>: The ingestion destination is active and is ready to be used.</p></li>
-    /// <li>
-    /// <p><code>Failed</code>: The ingestion destination has failed. If the ingestion destination is in this state, you should verify the ingestion destination configuration and try again.</p></li>
+    /// <li> <p> <code>Active</code>: The ingestion destination is active and is ready to be used.</p> </li>
+    /// <li> <p> <code>Failed</code>: The ingestion destination has failed. If the ingestion destination is in this state, you should verify the ingestion destination configuration and try again.</p> </li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::IngestionDestinationStatus>,
     /// <p>The reason for the current status of the ingestion destination.</p>
@@ -51,10 +49,8 @@ impl IngestionDestination {
     /// <p>The state of the ingestion destination.</p>
     /// <p>The following states are possible:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Active</code>: The ingestion destination is active and is ready to be used.</p></li>
-    /// <li>
-    /// <p><code>Failed</code>: The ingestion destination has failed. If the ingestion destination is in this state, you should verify the ingestion destination configuration and try again.</p></li>
+    /// <li> <p> <code>Active</code>: The ingestion destination is active and is ready to be used.</p> </li>
+    /// <li> <p> <code>Failed</code>: The ingestion destination has failed. If the ingestion destination is in this state, you should verify the ingestion destination configuration and try again.</p> </li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::IngestionDestinationStatus> {
         self.status.as_ref()
@@ -157,10 +153,8 @@ impl IngestionDestinationBuilder {
     /// <p>The state of the ingestion destination.</p>
     /// <p>The following states are possible:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Active</code>: The ingestion destination is active and is ready to be used.</p></li>
-    /// <li>
-    /// <p><code>Failed</code>: The ingestion destination has failed. If the ingestion destination is in this state, you should verify the ingestion destination configuration and try again.</p></li>
+    /// <li> <p> <code>Active</code>: The ingestion destination is active and is ready to be used.</p> </li>
+    /// <li> <p> <code>Failed</code>: The ingestion destination has failed. If the ingestion destination is in this state, you should verify the ingestion destination configuration and try again.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::IngestionDestinationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -169,10 +163,8 @@ impl IngestionDestinationBuilder {
     /// <p>The state of the ingestion destination.</p>
     /// <p>The following states are possible:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Active</code>: The ingestion destination is active and is ready to be used.</p></li>
-    /// <li>
-    /// <p><code>Failed</code>: The ingestion destination has failed. If the ingestion destination is in this state, you should verify the ingestion destination configuration and try again.</p></li>
+    /// <li> <p> <code>Active</code>: The ingestion destination is active and is ready to be used.</p> </li>
+    /// <li> <p> <code>Failed</code>: The ingestion destination has failed. If the ingestion destination is in this state, you should verify the ingestion destination configuration and try again.</p> </li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::IngestionDestinationStatus>) -> Self {
         self.status = input;
@@ -181,10 +173,8 @@ impl IngestionDestinationBuilder {
     /// <p>The state of the ingestion destination.</p>
     /// <p>The following states are possible:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Active</code>: The ingestion destination is active and is ready to be used.</p></li>
-    /// <li>
-    /// <p><code>Failed</code>: The ingestion destination has failed. If the ingestion destination is in this state, you should verify the ingestion destination configuration and try again.</p></li>
+    /// <li> <p> <code>Active</code>: The ingestion destination is active and is ready to be used.</p> </li>
+    /// <li> <p> <code>Failed</code>: The ingestion destination has failed. If the ingestion destination is in this state, you should verify the ingestion destination configuration and try again.</p> </li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::IngestionDestinationStatus> {
         &self.status

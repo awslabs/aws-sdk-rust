@@ -258,7 +258,7 @@ pub enum UpdateIncidentRecordError {
     ConflictException(crate::types::error::ConflictException),
     /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p>Request references a resource which doesn't exist.</p>
+    /// <p>Request references a resource which doesn't exist. </p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::types::error::ThrottlingException),

@@ -23,7 +23,7 @@ impl DescribePrincipalMappingInputBuilder {
 /// Fluent builder constructing a request to `DescribePrincipalMapping`.
 ///
 /// <p>Describes the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups. This includes information on the status of actions currently processing or yet to be processed, when actions were last updated, when actions were received by Amazon Kendra, the latest action that should process and apply after other actions, and useful error messages if an action could not be processed.</p>
-/// <p><code>DescribePrincipalMapping</code> is currently not supported in the Amazon Web Services GovCloud (US-West) region.</p>
+/// <p> <code>DescribePrincipalMapping</code> is currently not supported in the Amazon Web Services GovCloud (US-West) region.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribePrincipalMappingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

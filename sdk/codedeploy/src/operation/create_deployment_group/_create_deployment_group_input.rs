@@ -9,7 +9,7 @@ pub struct CreateDeploymentGroupInput {
     /// <p>The name of a new deployment group for the specified application.</p>
     pub deployment_group_name: ::std::option::Option<::std::string::String>,
     /// <p>If specified, the deployment configuration name can be either one of the predefined configurations provided with CodeDeploy or a custom deployment configuration that you create by calling the create deployment configuration operation.</p>
-    /// <p><code>CodeDeployDefault.OneAtATime</code> is the default deployment configuration. It is used if a configuration isn't specified for the deployment or deployment group.</p>
+    /// <p> <code>CodeDeployDefault.OneAtATime</code> is the default deployment configuration. It is used if a configuration isn't specified for the deployment or deployment group.</p>
     /// <p>For more information about the predefined deployment configurations in CodeDeploy, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working with Deployment Configurations in CodeDeploy</a> in the <i>CodeDeploy User Guide</i>.</p>
     pub deployment_config_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon EC2 tags on which to filter. The deployment group includes Amazon EC2 instances with any of the specified tags. Cannot be used in the same call as ec2TagSet.</p>
@@ -38,14 +38,15 @@ pub struct CreateDeploymentGroupInput {
     pub load_balancer_info: ::std::option::Option<crate::types::LoadBalancerInfo>,
     /// <p>Information about groups of tags applied to Amazon EC2 instances. The deployment group includes only Amazon EC2 instances identified by all the tag groups. Cannot be used in the same call as <code>ec2TagFilters</code>.</p>
     pub ec2_tag_set: ::std::option::Option<crate::types::Ec2TagSet>,
-    /// <p>The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code><clustername>
+    /// <p> The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code>
+    /// <clustername>
     /// :
     /// <servicename></servicename>
-    /// </clustername></code>.</p>
+    /// </clustername></code>. </p>
     pub ecs_services: ::std::option::Option<::std::vec::Vec<crate::types::EcsService>>,
     /// <p>Information about groups of tags applied to on-premises instances. The deployment group includes only on-premises instances identified by all of the tag groups. Cannot be used in the same call as <code>onPremisesInstanceTagFilters</code>.</p>
     pub on_premises_tag_set: ::std::option::Option<crate::types::OnPremisesTagSet>,
-    /// <p>The metadata that you apply to CodeDeploy deployment groups to help you organize and categorize them. Each tag consists of a key and an optional value, both of which you define.</p>
+    /// <p> The metadata that you apply to CodeDeploy deployment groups to help you organize and categorize them. Each tag consists of a key and an optional value, both of which you define. </p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>This parameter only applies if you are using CodeDeploy with Amazon EC2 Auto Scaling. For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html">Integrating CodeDeploy with Amazon EC2 Auto Scaling</a> in the <i>CodeDeploy User Guide</i>.</p>
     /// <p>Set <code>terminationHookEnabled</code> to <code>true</code> to have CodeDeploy install a termination hook into your Auto Scaling group when you create a deployment group. When this hook is installed, CodeDeploy will perform termination deployments.</p>
@@ -63,7 +64,7 @@ impl CreateDeploymentGroupInput {
         self.deployment_group_name.as_deref()
     }
     /// <p>If specified, the deployment configuration name can be either one of the predefined configurations provided with CodeDeploy or a custom deployment configuration that you create by calling the create deployment configuration operation.</p>
-    /// <p><code>CodeDeployDefault.OneAtATime</code> is the default deployment configuration. It is used if a configuration isn't specified for the deployment or deployment group.</p>
+    /// <p> <code>CodeDeployDefault.OneAtATime</code> is the default deployment configuration. It is used if a configuration isn't specified for the deployment or deployment group.</p>
     /// <p>For more information about the predefined deployment configurations in CodeDeploy, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working with Deployment Configurations in CodeDeploy</a> in the <i>CodeDeploy User Guide</i>.</p>
     pub fn deployment_config_name(&self) -> ::std::option::Option<&str> {
         self.deployment_config_name.as_deref()
@@ -126,10 +127,11 @@ impl CreateDeploymentGroupInput {
     pub fn ec2_tag_set(&self) -> ::std::option::Option<&crate::types::Ec2TagSet> {
         self.ec2_tag_set.as_ref()
     }
-    /// <p>The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code><clustername>
+    /// <p> The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code>
+    /// <clustername>
     /// :
     /// <servicename></servicename>
-    /// </clustername></code>.</p>
+    /// </clustername></code>. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ecs_services.is_none()`.
     pub fn ecs_services(&self) -> &[crate::types::EcsService] {
@@ -139,7 +141,7 @@ impl CreateDeploymentGroupInput {
     pub fn on_premises_tag_set(&self) -> ::std::option::Option<&crate::types::OnPremisesTagSet> {
         self.on_premises_tag_set.as_ref()
     }
-    /// <p>The metadata that you apply to CodeDeploy deployment groups to help you organize and categorize them. Each tag consists of a key and an optional value, both of which you define.</p>
+    /// <p> The metadata that you apply to CodeDeploy deployment groups to help you organize and categorize them. Each tag consists of a key and an optional value, both of which you define. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
     pub fn tags(&self) -> &[crate::types::Tag] {
@@ -216,21 +218,21 @@ impl CreateDeploymentGroupInputBuilder {
         &self.deployment_group_name
     }
     /// <p>If specified, the deployment configuration name can be either one of the predefined configurations provided with CodeDeploy or a custom deployment configuration that you create by calling the create deployment configuration operation.</p>
-    /// <p><code>CodeDeployDefault.OneAtATime</code> is the default deployment configuration. It is used if a configuration isn't specified for the deployment or deployment group.</p>
+    /// <p> <code>CodeDeployDefault.OneAtATime</code> is the default deployment configuration. It is used if a configuration isn't specified for the deployment or deployment group.</p>
     /// <p>For more information about the predefined deployment configurations in CodeDeploy, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working with Deployment Configurations in CodeDeploy</a> in the <i>CodeDeploy User Guide</i>.</p>
     pub fn deployment_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_config_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If specified, the deployment configuration name can be either one of the predefined configurations provided with CodeDeploy or a custom deployment configuration that you create by calling the create deployment configuration operation.</p>
-    /// <p><code>CodeDeployDefault.OneAtATime</code> is the default deployment configuration. It is used if a configuration isn't specified for the deployment or deployment group.</p>
+    /// <p> <code>CodeDeployDefault.OneAtATime</code> is the default deployment configuration. It is used if a configuration isn't specified for the deployment or deployment group.</p>
     /// <p>For more information about the predefined deployment configurations in CodeDeploy, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working with Deployment Configurations in CodeDeploy</a> in the <i>CodeDeploy User Guide</i>.</p>
     pub fn set_deployment_config_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_config_name = input;
         self
     }
     /// <p>If specified, the deployment configuration name can be either one of the predefined configurations provided with CodeDeploy or a custom deployment configuration that you create by calling the create deployment configuration operation.</p>
-    /// <p><code>CodeDeployDefault.OneAtATime</code> is the default deployment configuration. It is used if a configuration isn't specified for the deployment or deployment group.</p>
+    /// <p> <code>CodeDeployDefault.OneAtATime</code> is the default deployment configuration. It is used if a configuration isn't specified for the deployment or deployment group.</p>
     /// <p>For more information about the predefined deployment configurations in CodeDeploy, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working with Deployment Configurations in CodeDeploy</a> in the <i>CodeDeploy User Guide</i>.</p>
     pub fn get_deployment_config_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.deployment_config_name
@@ -438,28 +440,31 @@ impl CreateDeploymentGroupInputBuilder {
     ///
     /// To override the contents of this collection use [`set_ecs_services`](Self::set_ecs_services).
     ///
-    /// <p>The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code><clustername>
+    /// <p> The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code>
+    /// <clustername>
     /// :
     /// <servicename></servicename>
-    /// </clustername></code>.</p>
+    /// </clustername></code>. </p>
     pub fn ecs_services(mut self, input: crate::types::EcsService) -> Self {
         let mut v = self.ecs_services.unwrap_or_default();
         v.push(input);
         self.ecs_services = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code><clustername>
+    /// <p> The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code>
+    /// <clustername>
     /// :
     /// <servicename></servicename>
-    /// </clustername></code>.</p>
+    /// </clustername></code>. </p>
     pub fn set_ecs_services(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EcsService>>) -> Self {
         self.ecs_services = input;
         self
     }
-    /// <p>The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code><clustername>
+    /// <p> The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code>
+    /// <clustername>
     /// :
     /// <servicename></servicename>
-    /// </clustername></code>.</p>
+    /// </clustername></code>. </p>
     pub fn get_ecs_services(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EcsService>> {
         &self.ecs_services
     }
@@ -481,19 +486,19 @@ impl CreateDeploymentGroupInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The metadata that you apply to CodeDeploy deployment groups to help you organize and categorize them. Each tag consists of a key and an optional value, both of which you define.</p>
+    /// <p> The metadata that you apply to CodeDeploy deployment groups to help you organize and categorize them. Each tag consists of a key and an optional value, both of which you define. </p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
         self.tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The metadata that you apply to CodeDeploy deployment groups to help you organize and categorize them. Each tag consists of a key and an optional value, both of which you define.</p>
+    /// <p> The metadata that you apply to CodeDeploy deployment groups to help you organize and categorize them. Each tag consists of a key and an optional value, both of which you define. </p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>The metadata that you apply to CodeDeploy deployment groups to help you organize and categorize them. Each tag consists of a key and an optional value, both of which you define.</p>
+    /// <p> The metadata that you apply to CodeDeploy deployment groups to help you organize and categorize them. Each tag consists of a key and an optional value, both of which you define. </p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }

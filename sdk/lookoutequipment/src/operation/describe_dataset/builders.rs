@@ -108,17 +108,17 @@ impl DescribeDatasetFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the dataset to be described.</p>
+    /// <p>The name of the dataset to be described. </p>
     pub fn dataset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dataset_name(input.into());
         self
     }
-    /// <p>The name of the dataset to be described.</p>
+    /// <p>The name of the dataset to be described. </p>
     pub fn set_dataset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dataset_name(input);
         self
     }
-    /// <p>The name of the dataset to be described.</p>
+    /// <p>The name of the dataset to be described. </p>
     pub fn get_dataset_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_dataset_name()
     }

@@ -18,7 +18,7 @@ pub struct EbsInstanceBlockDeviceSpecification {
     pub volume_size: ::std::option::Option<i32>,
     /// <p>Use to override the device's volume type.</p>
     pub volume_type: ::std::option::Option<crate::types::EbsVolumeType>,
-    /// <p><b>For GP3 volumes only</b> – The throughput in MiB/s that the volume supports.</p>
+    /// <p> <b>For GP3 volumes only</b> – The throughput in MiB/s that the volume supports.</p>
     pub throughput: ::std::option::Option<i32>,
 }
 impl EbsInstanceBlockDeviceSpecification {
@@ -50,7 +50,7 @@ impl EbsInstanceBlockDeviceSpecification {
     pub fn volume_type(&self) -> ::std::option::Option<&crate::types::EbsVolumeType> {
         self.volume_type.as_ref()
     }
-    /// <p><b>For GP3 volumes only</b> – The throughput in MiB/s that the volume supports.</p>
+    /// <p> <b>For GP3 volumes only</b> – The throughput in MiB/s that the volume supports.</p>
     pub fn throughput(&self) -> ::std::option::Option<i32> {
         self.throughput
     }
@@ -174,17 +174,17 @@ impl EbsInstanceBlockDeviceSpecificationBuilder {
     pub fn get_volume_type(&self) -> &::std::option::Option<crate::types::EbsVolumeType> {
         &self.volume_type
     }
-    /// <p><b>For GP3 volumes only</b> – The throughput in MiB/s that the volume supports.</p>
+    /// <p> <b>For GP3 volumes only</b> – The throughput in MiB/s that the volume supports.</p>
     pub fn throughput(mut self, input: i32) -> Self {
         self.throughput = ::std::option::Option::Some(input);
         self
     }
-    /// <p><b>For GP3 volumes only</b> – The throughput in MiB/s that the volume supports.</p>
+    /// <p> <b>For GP3 volumes only</b> – The throughput in MiB/s that the volume supports.</p>
     pub fn set_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
         self.throughput = input;
         self
     }
-    /// <p><b>For GP3 volumes only</b> – The throughput in MiB/s that the volume supports.</p>
+    /// <p> <b>For GP3 volumes only</b> – The throughput in MiB/s that the volume supports.</p>
     pub fn get_throughput(&self) -> &::std::option::Option<i32> {
         &self.throughput
     }

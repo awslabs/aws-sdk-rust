@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAttackOutput {
-    /// <p>The attack that you requested.</p>
+    /// <p>The attack that you requested. </p>
     pub attack: ::std::option::Option<crate::types::AttackDetail>,
     _request_id: Option<String>,
 }
 impl DescribeAttackOutput {
-    /// <p>The attack that you requested.</p>
+    /// <p>The attack that you requested. </p>
     pub fn attack(&self) -> ::std::option::Option<&crate::types::AttackDetail> {
         self.attack.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct DescribeAttackOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeAttackOutputBuilder {
-    /// <p>The attack that you requested.</p>
+    /// <p>The attack that you requested. </p>
     pub fn attack(mut self, input: crate::types::AttackDetail) -> Self {
         self.attack = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The attack that you requested.</p>
+    /// <p>The attack that you requested. </p>
     pub fn set_attack(mut self, input: ::std::option::Option<crate::types::AttackDetail>) -> Self {
         self.attack = input;
         self
     }
-    /// <p>The attack that you requested.</p>
+    /// <p>The attack that you requested. </p>
     pub fn get_attack(&self) -> &::std::option::Option<crate::types::AttackDetail> {
         &self.attack
     }

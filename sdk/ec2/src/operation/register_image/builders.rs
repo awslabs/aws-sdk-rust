@@ -22,23 +22,20 @@ impl RegisterImageInputBuilder {
 }
 /// Fluent builder constructing a request to `RegisterImage`.
 ///
-/// <p>Registers an AMI. When you're creating an AMI, this is the final step you must complete before you can launch an instance from the AMI. For more information about creating AMIs, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html">Create your own AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><note>
+/// <p>Registers an AMI. When you're creating an AMI, this is the final step you must complete before you can launch an instance from the AMI. For more information about creating AMIs, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html">Create your own AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <note>
 /// <p>For Amazon EBS-backed instances, <code>CreateImage</code> creates and registers the AMI in a single request, so you don't have to register the AMI yourself. We recommend that you always use <code>CreateImage</code> unless you have a specific reason to use RegisterImage.</p>
 /// </note>
 /// <p>If needed, you can deregister an AMI at any time. Any modifications you make to an AMI backed by an instance store volume invalidates its registration. If you make changes to an image, deregister the previous image and register the new image.</p>
-/// <p><b>Register a snapshot of a root device volume</b></p>
+/// <p> <b>Register a snapshot of a root device volume</b> </p>
 /// <p>You can use <code>RegisterImage</code> to create an Amazon EBS-backed Linux AMI from a snapshot of a root device volume. You specify the snapshot using a block device mapping. You can't set the encryption state of the volume using the block device mapping. If the snapshot is encrypted, or encryption by default is enabled, the root volume of an instance launched from the AMI is encrypted.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html#creating-launching-ami-from-snapshot">Create a Linux AMI from a snapshot</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIEncryption.html">Use encryption with Amazon EBS-backed AMIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-/// <p><b>Amazon Web Services Marketplace product codes</b></p>
+/// <p> <b>Amazon Web Services Marketplace product codes</b> </p>
 /// <p>If any snapshots have Amazon Web Services Marketplace product codes, they are copied to the new AMI.</p>
 /// <p>Windows and some Linux distributions, such as Red Hat Enterprise Linux (RHEL) and SUSE Linux Enterprise Server (SLES), use the Amazon EC2 billing product code associated with an AMI to verify the subscription status for package updates. To create a new AMI for operating systems that require a billing product code, instead of registering the AMI, do the following to preserve the billing product code association:</p>
 /// <ol>
-/// <li>
-/// <p>Launch an instance from an existing AMI with that billing product code.</p></li>
-/// <li>
-/// <p>Customize the instance.</p></li>
-/// <li>
-/// <p>Create an AMI from the instance using <code>CreateImage</code>.</p></li>
+/// <li> <p>Launch an instance from an existing AMI with that billing product code.</p> </li>
+/// <li> <p>Customize the instance.</p> </li>
+/// <li> <p>Create an AMI from the instance using <code>CreateImage</code>.</p> </li>
 /// </ol>
 /// <p>If you purchase a Reserved Instance to apply to an On-Demand Instance that was launched from an AMI with a billing product code, make sure that the Reserved Instance has the matching billing product code. If you purchase a Reserved Instance without the matching billing product code, the Reserved Instance will not be applied to the On-Demand Instance. For information about how to obtain the platform details and billing information of an AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understand AMI billing information</a> in the <i>Amazon EC2 User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -327,23 +324,23 @@ impl RegisterImageFluentBuilder {
         self.inner.get_sriov_net_support()
     }
     /// <p>The type of virtualization (<code>hvm</code> | <code>paravirtual</code>).</p>
-    /// <p>Default: <code>paravirtual</code></p>
+    /// <p>Default: <code>paravirtual</code> </p>
     pub fn virtualization_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.virtualization_type(input.into());
         self
     }
     /// <p>The type of virtualization (<code>hvm</code> | <code>paravirtual</code>).</p>
-    /// <p>Default: <code>paravirtual</code></p>
+    /// <p>Default: <code>paravirtual</code> </p>
     pub fn set_virtualization_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_virtualization_type(input);
         self
     }
     /// <p>The type of virtualization (<code>hvm</code> | <code>paravirtual</code>).</p>
-    /// <p>Default: <code>paravirtual</code></p>
+    /// <p>Default: <code>paravirtual</code> </p>
     pub fn get_virtualization_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_virtualization_type()
     }
-    /// <p>The boot mode of the AMI. A value of <code>uefi-preferred</code> indicates that the AMI supports both UEFI and Legacy BIOS.</p><note>
+    /// <p>The boot mode of the AMI. A value of <code>uefi-preferred</code> indicates that the AMI supports both UEFI and Legacy BIOS.</p> <note>
     /// <p>The operating system contained in the AMI must be configured to support the specified boot mode.</p>
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
@@ -351,7 +348,7 @@ impl RegisterImageFluentBuilder {
         self.inner = self.inner.boot_mode(input);
         self
     }
-    /// <p>The boot mode of the AMI. A value of <code>uefi-preferred</code> indicates that the AMI supports both UEFI and Legacy BIOS.</p><note>
+    /// <p>The boot mode of the AMI. A value of <code>uefi-preferred</code> indicates that the AMI supports both UEFI and Legacy BIOS.</p> <note>
     /// <p>The operating system contained in the AMI must be configured to support the specified boot mode.</p>
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
@@ -359,7 +356,7 @@ impl RegisterImageFluentBuilder {
         self.inner = self.inner.set_boot_mode(input);
         self
     }
-    /// <p>The boot mode of the AMI. A value of <code>uefi-preferred</code> indicates that the AMI supports both UEFI and Legacy BIOS.</p><note>
+    /// <p>The boot mode of the AMI. A value of <code>uefi-preferred</code> indicates that the AMI supports both UEFI and Legacy BIOS.</p> <note>
     /// <p>The operating system contained in the AMI must be configured to support the specified boot mode.</p>
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
@@ -394,21 +391,21 @@ impl RegisterImageFluentBuilder {
     pub fn get_uefi_data(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_uefi_data()
     }
-    /// <p>Set to <code>v2.0</code> to indicate that IMDSv2 is specified in the AMI. Instances launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code> so that, by default, the instance requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p><note>
+    /// <p>Set to <code>v2.0</code> to indicate that IMDSv2 is specified in the AMI. Instances launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code> so that, by default, the instance requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p> <note>
     /// <p>If you set the value to <code>v2.0</code>, make sure that your AMI software can support IMDSv2.</p>
     /// </note>
     pub fn imds_support(mut self, input: crate::types::ImdsSupportValues) -> Self {
         self.inner = self.inner.imds_support(input);
         self
     }
-    /// <p>Set to <code>v2.0</code> to indicate that IMDSv2 is specified in the AMI. Instances launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code> so that, by default, the instance requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p><note>
+    /// <p>Set to <code>v2.0</code> to indicate that IMDSv2 is specified in the AMI. Instances launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code> so that, by default, the instance requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p> <note>
     /// <p>If you set the value to <code>v2.0</code>, make sure that your AMI software can support IMDSv2.</p>
     /// </note>
     pub fn set_imds_support(mut self, input: ::std::option::Option<crate::types::ImdsSupportValues>) -> Self {
         self.inner = self.inner.set_imds_support(input);
         self
     }
-    /// <p>Set to <code>v2.0</code> to indicate that IMDSv2 is specified in the AMI. Instances launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code> so that, by default, the instance requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p><note>
+    /// <p>Set to <code>v2.0</code> to indicate that IMDSv2 is specified in the AMI. Instances launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code> so that, by default, the instance requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p> <note>
     /// <p>If you set the value to <code>v2.0</code>, make sure that your AMI software can support IMDSv2.</p>
     /// </note>
     pub fn get_imds_support(&self) -> &::std::option::Option<crate::types::ImdsSupportValues> {

@@ -12,12 +12,9 @@ pub struct ChangesetSummary {
     pub dataset_id: ::std::option::Option<::std::string::String>,
     /// <p>Type that indicates how a Changeset is applied to a Dataset.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>REPLACE</code> – Changeset is considered as a replacement to all prior loaded Changesets.</p></li>
-    /// <li>
-    /// <p><code>APPEND</code> – Changeset is considered as an addition to the end of all prior loaded Changesets.</p></li>
-    /// <li>
-    /// <p><code>MODIFY</code> – Changeset is considered as a replacement to a specific prior ingested Changeset.</p></li>
+    /// <li> <p> <code>REPLACE</code> – Changeset is considered as a replacement to all prior loaded Changesets.</p> </li>
+    /// <li> <p> <code>APPEND</code> – Changeset is considered as an addition to the end of all prior loaded Changesets.</p> </li>
+    /// <li> <p> <code>MODIFY</code> – Changeset is considered as a replacement to a specific prior ingested Changeset.</p> </li>
     /// </ul>
     pub change_type: ::std::option::Option<crate::types::ChangeType>,
     /// <p>Options that define the location of the data being ingested.</p>
@@ -28,16 +25,11 @@ pub struct ChangesetSummary {
     pub create_time: i64,
     /// <p>Status of the Changeset ingestion.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PENDING</code> – Changeset is pending creation.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> – Changeset creation has failed.</p></li>
-    /// <li>
-    /// <p><code>SUCCESS</code> – Changeset creation has succeeded.</p></li>
-    /// <li>
-    /// <p><code>RUNNING</code> – Changeset creation is running.</p></li>
-    /// <li>
-    /// <p><code>STOP_REQUESTED</code> – User requested Changeset creation to stop.</p></li>
+    /// <li> <p> <code>PENDING</code> – Changeset is pending creation.</p> </li>
+    /// <li> <p> <code>FAILED</code> – Changeset creation has failed.</p> </li>
+    /// <li> <p> <code>SUCCESS</code> – Changeset creation has succeeded.</p> </li>
+    /// <li> <p> <code>RUNNING</code> – Changeset creation is running.</p> </li>
+    /// <li> <p> <code>STOP_REQUESTED</code> – User requested Changeset creation to stop.</p> </li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::IngestionStatus>,
     /// <p>The structure with error messages.</p>
@@ -66,12 +58,9 @@ impl ChangesetSummary {
     }
     /// <p>Type that indicates how a Changeset is applied to a Dataset.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>REPLACE</code> – Changeset is considered as a replacement to all prior loaded Changesets.</p></li>
-    /// <li>
-    /// <p><code>APPEND</code> – Changeset is considered as an addition to the end of all prior loaded Changesets.</p></li>
-    /// <li>
-    /// <p><code>MODIFY</code> – Changeset is considered as a replacement to a specific prior ingested Changeset.</p></li>
+    /// <li> <p> <code>REPLACE</code> – Changeset is considered as a replacement to all prior loaded Changesets.</p> </li>
+    /// <li> <p> <code>APPEND</code> – Changeset is considered as an addition to the end of all prior loaded Changesets.</p> </li>
+    /// <li> <p> <code>MODIFY</code> – Changeset is considered as a replacement to a specific prior ingested Changeset.</p> </li>
     /// </ul>
     pub fn change_type(&self) -> ::std::option::Option<&crate::types::ChangeType> {
         self.change_type.as_ref()
@@ -90,16 +79,11 @@ impl ChangesetSummary {
     }
     /// <p>Status of the Changeset ingestion.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PENDING</code> – Changeset is pending creation.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> – Changeset creation has failed.</p></li>
-    /// <li>
-    /// <p><code>SUCCESS</code> – Changeset creation has succeeded.</p></li>
-    /// <li>
-    /// <p><code>RUNNING</code> – Changeset creation is running.</p></li>
-    /// <li>
-    /// <p><code>STOP_REQUESTED</code> – User requested Changeset creation to stop.</p></li>
+    /// <li> <p> <code>PENDING</code> – Changeset is pending creation.</p> </li>
+    /// <li> <p> <code>FAILED</code> – Changeset creation has failed.</p> </li>
+    /// <li> <p> <code>SUCCESS</code> – Changeset creation has succeeded.</p> </li>
+    /// <li> <p> <code>RUNNING</code> – Changeset creation is running.</p> </li>
+    /// <li> <p> <code>STOP_REQUESTED</code> – User requested Changeset creation to stop.</p> </li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::IngestionStatus> {
         self.status.as_ref()
@@ -195,12 +179,9 @@ impl ChangesetSummaryBuilder {
     }
     /// <p>Type that indicates how a Changeset is applied to a Dataset.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>REPLACE</code> – Changeset is considered as a replacement to all prior loaded Changesets.</p></li>
-    /// <li>
-    /// <p><code>APPEND</code> – Changeset is considered as an addition to the end of all prior loaded Changesets.</p></li>
-    /// <li>
-    /// <p><code>MODIFY</code> – Changeset is considered as a replacement to a specific prior ingested Changeset.</p></li>
+    /// <li> <p> <code>REPLACE</code> – Changeset is considered as a replacement to all prior loaded Changesets.</p> </li>
+    /// <li> <p> <code>APPEND</code> – Changeset is considered as an addition to the end of all prior loaded Changesets.</p> </li>
+    /// <li> <p> <code>MODIFY</code> – Changeset is considered as a replacement to a specific prior ingested Changeset.</p> </li>
     /// </ul>
     pub fn change_type(mut self, input: crate::types::ChangeType) -> Self {
         self.change_type = ::std::option::Option::Some(input);
@@ -208,12 +189,9 @@ impl ChangesetSummaryBuilder {
     }
     /// <p>Type that indicates how a Changeset is applied to a Dataset.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>REPLACE</code> – Changeset is considered as a replacement to all prior loaded Changesets.</p></li>
-    /// <li>
-    /// <p><code>APPEND</code> – Changeset is considered as an addition to the end of all prior loaded Changesets.</p></li>
-    /// <li>
-    /// <p><code>MODIFY</code> – Changeset is considered as a replacement to a specific prior ingested Changeset.</p></li>
+    /// <li> <p> <code>REPLACE</code> – Changeset is considered as a replacement to all prior loaded Changesets.</p> </li>
+    /// <li> <p> <code>APPEND</code> – Changeset is considered as an addition to the end of all prior loaded Changesets.</p> </li>
+    /// <li> <p> <code>MODIFY</code> – Changeset is considered as a replacement to a specific prior ingested Changeset.</p> </li>
     /// </ul>
     pub fn set_change_type(mut self, input: ::std::option::Option<crate::types::ChangeType>) -> Self {
         self.change_type = input;
@@ -221,12 +199,9 @@ impl ChangesetSummaryBuilder {
     }
     /// <p>Type that indicates how a Changeset is applied to a Dataset.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>REPLACE</code> – Changeset is considered as a replacement to all prior loaded Changesets.</p></li>
-    /// <li>
-    /// <p><code>APPEND</code> – Changeset is considered as an addition to the end of all prior loaded Changesets.</p></li>
-    /// <li>
-    /// <p><code>MODIFY</code> – Changeset is considered as a replacement to a specific prior ingested Changeset.</p></li>
+    /// <li> <p> <code>REPLACE</code> – Changeset is considered as a replacement to all prior loaded Changesets.</p> </li>
+    /// <li> <p> <code>APPEND</code> – Changeset is considered as an addition to the end of all prior loaded Changesets.</p> </li>
+    /// <li> <p> <code>MODIFY</code> – Changeset is considered as a replacement to a specific prior ingested Changeset.</p> </li>
     /// </ul>
     pub fn get_change_type(&self) -> &::std::option::Option<crate::types::ChangeType> {
         &self.change_type
@@ -293,16 +268,11 @@ impl ChangesetSummaryBuilder {
     }
     /// <p>Status of the Changeset ingestion.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PENDING</code> – Changeset is pending creation.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> – Changeset creation has failed.</p></li>
-    /// <li>
-    /// <p><code>SUCCESS</code> – Changeset creation has succeeded.</p></li>
-    /// <li>
-    /// <p><code>RUNNING</code> – Changeset creation is running.</p></li>
-    /// <li>
-    /// <p><code>STOP_REQUESTED</code> – User requested Changeset creation to stop.</p></li>
+    /// <li> <p> <code>PENDING</code> – Changeset is pending creation.</p> </li>
+    /// <li> <p> <code>FAILED</code> – Changeset creation has failed.</p> </li>
+    /// <li> <p> <code>SUCCESS</code> – Changeset creation has succeeded.</p> </li>
+    /// <li> <p> <code>RUNNING</code> – Changeset creation is running.</p> </li>
+    /// <li> <p> <code>STOP_REQUESTED</code> – User requested Changeset creation to stop.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::IngestionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -310,16 +280,11 @@ impl ChangesetSummaryBuilder {
     }
     /// <p>Status of the Changeset ingestion.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PENDING</code> – Changeset is pending creation.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> – Changeset creation has failed.</p></li>
-    /// <li>
-    /// <p><code>SUCCESS</code> – Changeset creation has succeeded.</p></li>
-    /// <li>
-    /// <p><code>RUNNING</code> – Changeset creation is running.</p></li>
-    /// <li>
-    /// <p><code>STOP_REQUESTED</code> – User requested Changeset creation to stop.</p></li>
+    /// <li> <p> <code>PENDING</code> – Changeset is pending creation.</p> </li>
+    /// <li> <p> <code>FAILED</code> – Changeset creation has failed.</p> </li>
+    /// <li> <p> <code>SUCCESS</code> – Changeset creation has succeeded.</p> </li>
+    /// <li> <p> <code>RUNNING</code> – Changeset creation is running.</p> </li>
+    /// <li> <p> <code>STOP_REQUESTED</code> – User requested Changeset creation to stop.</p> </li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::IngestionStatus>) -> Self {
         self.status = input;
@@ -327,16 +292,11 @@ impl ChangesetSummaryBuilder {
     }
     /// <p>Status of the Changeset ingestion.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PENDING</code> – Changeset is pending creation.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> – Changeset creation has failed.</p></li>
-    /// <li>
-    /// <p><code>SUCCESS</code> – Changeset creation has succeeded.</p></li>
-    /// <li>
-    /// <p><code>RUNNING</code> – Changeset creation is running.</p></li>
-    /// <li>
-    /// <p><code>STOP_REQUESTED</code> – User requested Changeset creation to stop.</p></li>
+    /// <li> <p> <code>PENDING</code> – Changeset is pending creation.</p> </li>
+    /// <li> <p> <code>FAILED</code> – Changeset creation has failed.</p> </li>
+    /// <li> <p> <code>SUCCESS</code> – Changeset creation has succeeded.</p> </li>
+    /// <li> <p> <code>RUNNING</code> – Changeset creation is running.</p> </li>
+    /// <li> <p> <code>STOP_REQUESTED</code> – User requested Changeset creation to stop.</p> </li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::IngestionStatus> {
         &self.status

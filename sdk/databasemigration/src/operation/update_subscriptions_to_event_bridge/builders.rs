@@ -109,17 +109,17 @@ impl UpdateSubscriptionsToEventBridgeFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>When set to true, this operation migrates DMS subscriptions for Amazon SNS notifications no matter what your replication instance version is. If not set or set to false, this operation runs only when all your replication instances are from DMS version 3.4.5 or higher.</p>
+    /// <p>When set to true, this operation migrates DMS subscriptions for Amazon SNS notifications no matter what your replication instance version is. If not set or set to false, this operation runs only when all your replication instances are from DMS version 3.4.5 or higher. </p>
     pub fn force_move(mut self, input: bool) -> Self {
         self.inner = self.inner.force_move(input);
         self
     }
-    /// <p>When set to true, this operation migrates DMS subscriptions for Amazon SNS notifications no matter what your replication instance version is. If not set or set to false, this operation runs only when all your replication instances are from DMS version 3.4.5 or higher.</p>
+    /// <p>When set to true, this operation migrates DMS subscriptions for Amazon SNS notifications no matter what your replication instance version is. If not set or set to false, this operation runs only when all your replication instances are from DMS version 3.4.5 or higher. </p>
     pub fn set_force_move(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_force_move(input);
         self
     }
-    /// <p>When set to true, this operation migrates DMS subscriptions for Amazon SNS notifications no matter what your replication instance version is. If not set or set to false, this operation runs only when all your replication instances are from DMS version 3.4.5 or higher.</p>
+    /// <p>When set to true, this operation migrates DMS subscriptions for Amazon SNS notifications no matter what your replication instance version is. If not set or set to false, this operation runs only when all your replication instances are from DMS version 3.4.5 or higher. </p>
     pub fn get_force_move(&self) -> &::std::option::Option<bool> {
         self.inner.get_force_move()
     }

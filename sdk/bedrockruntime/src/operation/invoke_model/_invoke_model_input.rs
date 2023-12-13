@@ -9,7 +9,7 @@ pub struct InvokeModelInput {
     pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>The desired MIME type of the inference body in the response. The default value is <code>application/json</code>.</p>
     pub accept: ::std::option::Option<::std::string::String>,
-    /// <p>Identifier of the model.</p>
+    /// <p>Identifier of the model. </p>
     pub model_id: ::std::option::Option<::std::string::String>,
 }
 impl InvokeModelInput {
@@ -25,7 +25,7 @@ impl InvokeModelInput {
     pub fn accept(&self) -> ::std::option::Option<&str> {
         self.accept.as_deref()
     }
-    /// <p>Identifier of the model.</p>
+    /// <p>Identifier of the model. </p>
     pub fn model_id(&self) -> ::std::option::Option<&str> {
         self.model_id.as_deref()
     }
@@ -100,18 +100,18 @@ impl InvokeModelInputBuilder {
     pub fn get_accept(&self) -> &::std::option::Option<::std::string::String> {
         &self.accept
     }
-    /// <p>Identifier of the model.</p>
+    /// <p>Identifier of the model. </p>
     /// This field is required.
     pub fn model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Identifier of the model.</p>
+    /// <p>Identifier of the model. </p>
     pub fn set_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_id = input;
         self
     }
-    /// <p>Identifier of the model.</p>
+    /// <p>Identifier of the model. </p>
     pub fn get_model_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_id
     }

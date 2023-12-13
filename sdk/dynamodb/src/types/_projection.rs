@@ -6,12 +6,9 @@
 pub struct Projection {
     /// <p>The set of attributes that are projected into the index:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.</p></li>
-    /// <li>
-    /// <p><code>INCLUDE</code> - In addition to the attributes described in <code>KEYS_ONLY</code>, the secondary index will include other non-key attributes that you specify.</p></li>
-    /// <li>
-    /// <p><code>ALL</code> - All of the table attributes are projected into the index.</p></li>
+    /// <li> <p> <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.</p> </li>
+    /// <li> <p> <code>INCLUDE</code> - In addition to the attributes described in <code>KEYS_ONLY</code>, the secondary index will include other non-key attributes that you specify.</p> </li>
+    /// <li> <p> <code>ALL</code> - All of the table attributes are projected into the index.</p> </li>
     /// </ul>
     pub projection_type: ::std::option::Option<crate::types::ProjectionType>,
     /// <p>Represents the non-key attribute names which will be projected into the index.</p>
@@ -21,12 +18,9 @@ pub struct Projection {
 impl Projection {
     /// <p>The set of attributes that are projected into the index:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.</p></li>
-    /// <li>
-    /// <p><code>INCLUDE</code> - In addition to the attributes described in <code>KEYS_ONLY</code>, the secondary index will include other non-key attributes that you specify.</p></li>
-    /// <li>
-    /// <p><code>ALL</code> - All of the table attributes are projected into the index.</p></li>
+    /// <li> <p> <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.</p> </li>
+    /// <li> <p> <code>INCLUDE</code> - In addition to the attributes described in <code>KEYS_ONLY</code>, the secondary index will include other non-key attributes that you specify.</p> </li>
+    /// <li> <p> <code>ALL</code> - All of the table attributes are projected into the index.</p> </li>
     /// </ul>
     pub fn projection_type(&self) -> ::std::option::Option<&crate::types::ProjectionType> {
         self.projection_type.as_ref()
@@ -56,12 +50,9 @@ pub struct ProjectionBuilder {
 impl ProjectionBuilder {
     /// <p>The set of attributes that are projected into the index:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.</p></li>
-    /// <li>
-    /// <p><code>INCLUDE</code> - In addition to the attributes described in <code>KEYS_ONLY</code>, the secondary index will include other non-key attributes that you specify.</p></li>
-    /// <li>
-    /// <p><code>ALL</code> - All of the table attributes are projected into the index.</p></li>
+    /// <li> <p> <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.</p> </li>
+    /// <li> <p> <code>INCLUDE</code> - In addition to the attributes described in <code>KEYS_ONLY</code>, the secondary index will include other non-key attributes that you specify.</p> </li>
+    /// <li> <p> <code>ALL</code> - All of the table attributes are projected into the index.</p> </li>
     /// </ul>
     pub fn projection_type(mut self, input: crate::types::ProjectionType) -> Self {
         self.projection_type = ::std::option::Option::Some(input);
@@ -69,12 +60,9 @@ impl ProjectionBuilder {
     }
     /// <p>The set of attributes that are projected into the index:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.</p></li>
-    /// <li>
-    /// <p><code>INCLUDE</code> - In addition to the attributes described in <code>KEYS_ONLY</code>, the secondary index will include other non-key attributes that you specify.</p></li>
-    /// <li>
-    /// <p><code>ALL</code> - All of the table attributes are projected into the index.</p></li>
+    /// <li> <p> <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.</p> </li>
+    /// <li> <p> <code>INCLUDE</code> - In addition to the attributes described in <code>KEYS_ONLY</code>, the secondary index will include other non-key attributes that you specify.</p> </li>
+    /// <li> <p> <code>ALL</code> - All of the table attributes are projected into the index.</p> </li>
     /// </ul>
     pub fn set_projection_type(mut self, input: ::std::option::Option<crate::types::ProjectionType>) -> Self {
         self.projection_type = input;
@@ -82,12 +70,9 @@ impl ProjectionBuilder {
     }
     /// <p>The set of attributes that are projected into the index:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.</p></li>
-    /// <li>
-    /// <p><code>INCLUDE</code> - In addition to the attributes described in <code>KEYS_ONLY</code>, the secondary index will include other non-key attributes that you specify.</p></li>
-    /// <li>
-    /// <p><code>ALL</code> - All of the table attributes are projected into the index.</p></li>
+    /// <li> <p> <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.</p> </li>
+    /// <li> <p> <code>INCLUDE</code> - In addition to the attributes described in <code>KEYS_ONLY</code>, the secondary index will include other non-key attributes that you specify.</p> </li>
+    /// <li> <p> <code>ALL</code> - All of the table attributes are projected into the index.</p> </li>
     /// </ul>
     pub fn get_projection_type(&self) -> &::std::option::Option<crate::types::ProjectionType> {
         &self.projection_type

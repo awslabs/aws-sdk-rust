@@ -8,9 +8,9 @@ pub struct ServiceSoftwareOptions {
     pub current_version: ::std::option::Option<::std::string::String>,
     /// <p>The new service software version if one is available.</p>
     pub new_version: ::std::option::Option<::std::string::String>,
-    /// <p><code>True</code> if you are able to update you service software version. <code>False</code> if you are not able to update your service software version.</p>
+    /// <p><code>True</code> if you are able to update you service software version. <code>False</code> if you are not able to update your service software version. </p>
     pub update_available: ::std::option::Option<bool>,
-    /// <p><code>True</code> if you are able to cancel your service software version update. <code>False</code> if you are not able to cancel your service software version.</p>
+    /// <p><code>True</code> if you are able to cancel your service software version update. <code>False</code> if you are not able to cancel your service software version. </p>
     pub cancellable: ::std::option::Option<bool>,
     /// <p>The status of your service software update. This field can take the following values: <code>ELIGIBLE</code>, <code>PENDING_UPDATE</code>, <code>IN_PROGRESS</code>, <code>COMPLETED</code>, and <code>NOT_ELIGIBLE</code>.</p>
     pub update_status: ::std::option::Option<crate::types::DeploymentStatus>,
@@ -18,7 +18,7 @@ pub struct ServiceSoftwareOptions {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Timestamp, in Epoch time, until which you can manually request a service software update. After this date, we automatically update your service software.</p>
     pub automated_update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p><code>True</code> if a service software is never automatically updated. <code>False</code> if a service software is automatically updated after <code>AutomatedUpdateDate</code>.</p>
+    /// <p><code>True</code> if a service software is never automatically updated. <code>False</code> if a service software is automatically updated after <code>AutomatedUpdateDate</code>. </p>
     pub optional_deployment: ::std::option::Option<bool>,
 }
 impl ServiceSoftwareOptions {
@@ -30,11 +30,11 @@ impl ServiceSoftwareOptions {
     pub fn new_version(&self) -> ::std::option::Option<&str> {
         self.new_version.as_deref()
     }
-    /// <p><code>True</code> if you are able to update you service software version. <code>False</code> if you are not able to update your service software version.</p>
+    /// <p><code>True</code> if you are able to update you service software version. <code>False</code> if you are not able to update your service software version. </p>
     pub fn update_available(&self) -> ::std::option::Option<bool> {
         self.update_available
     }
-    /// <p><code>True</code> if you are able to cancel your service software version update. <code>False</code> if you are not able to cancel your service software version.</p>
+    /// <p><code>True</code> if you are able to cancel your service software version update. <code>False</code> if you are not able to cancel your service software version. </p>
     pub fn cancellable(&self) -> ::std::option::Option<bool> {
         self.cancellable
     }
@@ -50,7 +50,7 @@ impl ServiceSoftwareOptions {
     pub fn automated_update_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.automated_update_date.as_ref()
     }
-    /// <p><code>True</code> if a service software is never automatically updated. <code>False</code> if a service software is automatically updated after <code>AutomatedUpdateDate</code>.</p>
+    /// <p><code>True</code> if a service software is never automatically updated. <code>False</code> if a service software is automatically updated after <code>AutomatedUpdateDate</code>. </p>
     pub fn optional_deployment(&self) -> ::std::option::Option<bool> {
         self.optional_deployment
     }
@@ -104,31 +104,31 @@ impl ServiceSoftwareOptionsBuilder {
     pub fn get_new_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.new_version
     }
-    /// <p><code>True</code> if you are able to update you service software version. <code>False</code> if you are not able to update your service software version.</p>
+    /// <p><code>True</code> if you are able to update you service software version. <code>False</code> if you are not able to update your service software version. </p>
     pub fn update_available(mut self, input: bool) -> Self {
         self.update_available = ::std::option::Option::Some(input);
         self
     }
-    /// <p><code>True</code> if you are able to update you service software version. <code>False</code> if you are not able to update your service software version.</p>
+    /// <p><code>True</code> if you are able to update you service software version. <code>False</code> if you are not able to update your service software version. </p>
     pub fn set_update_available(mut self, input: ::std::option::Option<bool>) -> Self {
         self.update_available = input;
         self
     }
-    /// <p><code>True</code> if you are able to update you service software version. <code>False</code> if you are not able to update your service software version.</p>
+    /// <p><code>True</code> if you are able to update you service software version. <code>False</code> if you are not able to update your service software version. </p>
     pub fn get_update_available(&self) -> &::std::option::Option<bool> {
         &self.update_available
     }
-    /// <p><code>True</code> if you are able to cancel your service software version update. <code>False</code> if you are not able to cancel your service software version.</p>
+    /// <p><code>True</code> if you are able to cancel your service software version update. <code>False</code> if you are not able to cancel your service software version. </p>
     pub fn cancellable(mut self, input: bool) -> Self {
         self.cancellable = ::std::option::Option::Some(input);
         self
     }
-    /// <p><code>True</code> if you are able to cancel your service software version update. <code>False</code> if you are not able to cancel your service software version.</p>
+    /// <p><code>True</code> if you are able to cancel your service software version update. <code>False</code> if you are not able to cancel your service software version. </p>
     pub fn set_cancellable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.cancellable = input;
         self
     }
-    /// <p><code>True</code> if you are able to cancel your service software version update. <code>False</code> if you are not able to cancel your service software version.</p>
+    /// <p><code>True</code> if you are able to cancel your service software version update. <code>False</code> if you are not able to cancel your service software version. </p>
     pub fn get_cancellable(&self) -> &::std::option::Option<bool> {
         &self.cancellable
     }
@@ -174,17 +174,17 @@ impl ServiceSoftwareOptionsBuilder {
     pub fn get_automated_update_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.automated_update_date
     }
-    /// <p><code>True</code> if a service software is never automatically updated. <code>False</code> if a service software is automatically updated after <code>AutomatedUpdateDate</code>.</p>
+    /// <p><code>True</code> if a service software is never automatically updated. <code>False</code> if a service software is automatically updated after <code>AutomatedUpdateDate</code>. </p>
     pub fn optional_deployment(mut self, input: bool) -> Self {
         self.optional_deployment = ::std::option::Option::Some(input);
         self
     }
-    /// <p><code>True</code> if a service software is never automatically updated. <code>False</code> if a service software is automatically updated after <code>AutomatedUpdateDate</code>.</p>
+    /// <p><code>True</code> if a service software is never automatically updated. <code>False</code> if a service software is automatically updated after <code>AutomatedUpdateDate</code>. </p>
     pub fn set_optional_deployment(mut self, input: ::std::option::Option<bool>) -> Self {
         self.optional_deployment = input;
         self
     }
-    /// <p><code>True</code> if a service software is never automatically updated. <code>False</code> if a service software is automatically updated after <code>AutomatedUpdateDate</code>.</p>
+    /// <p><code>True</code> if a service software is never automatically updated. <code>False</code> if a service software is automatically updated after <code>AutomatedUpdateDate</code>. </p>
     pub fn get_optional_deployment(&self) -> &::std::option::Option<bool> {
         &self.optional_deployment
     }

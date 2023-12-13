@@ -268,13 +268,13 @@ pub enum GetMergeConflictsError {
     InvalidConflictResolutionStrategyException(crate::types::error::InvalidConflictResolutionStrategyException),
     /// <p>The specified continuation token is not valid.</p>
     InvalidContinuationTokenException(crate::types::error::InvalidContinuationTokenException),
-    /// <p>The destination commit specifier is not valid. You must provide a valid branch name, tag, or full commit ID.</p>
+    /// <p>The destination commit specifier is not valid. You must provide a valid branch name, tag, or full commit ID. </p>
     InvalidDestinationCommitSpecifierException(crate::types::error::InvalidDestinationCommitSpecifierException),
     /// <p>The specified value for the number of conflict files to return is not valid.</p>
     InvalidMaxConflictFilesException(crate::types::error::InvalidMaxConflictFilesException),
     /// <p>The specified merge option is not valid for this operation. Not all merge strategies are supported for all operations.</p>
     InvalidMergeOptionException(crate::types::error::InvalidMergeOptionException),
-    /// <p>A specified repository name is not valid.</p><note>
+    /// <p>A specified repository name is not valid.</p> <note>
     /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::types::error::InvalidRepositoryNameException),

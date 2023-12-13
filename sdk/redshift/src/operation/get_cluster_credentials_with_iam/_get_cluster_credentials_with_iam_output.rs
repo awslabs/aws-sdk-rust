@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetClusterCredentialsWithIamOutput {
-    /// <p>A database user name that you provide when you connect to a database. The database user is mapped 1:1 to the source IAM identity.</p>
+    /// <p>A database user name that you provide when you connect to a database. The database user is mapped 1:1 to the source IAM identity. </p>
     pub db_user: ::std::option::Option<::std::string::String>,
     /// <p>A temporary password that you provide when you connect to a database.</p>
     pub db_password: ::std::option::Option<::std::string::String>,
@@ -14,7 +14,7 @@ pub struct GetClusterCredentialsWithIamOutput {
     _request_id: Option<String>,
 }
 impl GetClusterCredentialsWithIamOutput {
-    /// <p>A database user name that you provide when you connect to a database. The database user is mapped 1:1 to the source IAM identity.</p>
+    /// <p>A database user name that you provide when you connect to a database. The database user is mapped 1:1 to the source IAM identity. </p>
     pub fn db_user(&self) -> ::std::option::Option<&str> {
         self.db_user.as_deref()
     }
@@ -65,17 +65,17 @@ pub struct GetClusterCredentialsWithIamOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetClusterCredentialsWithIamOutputBuilder {
-    /// <p>A database user name that you provide when you connect to a database. The database user is mapped 1:1 to the source IAM identity.</p>
+    /// <p>A database user name that you provide when you connect to a database. The database user is mapped 1:1 to the source IAM identity. </p>
     pub fn db_user(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_user = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A database user name that you provide when you connect to a database. The database user is mapped 1:1 to the source IAM identity.</p>
+    /// <p>A database user name that you provide when you connect to a database. The database user is mapped 1:1 to the source IAM identity. </p>
     pub fn set_db_user(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_user = input;
         self
     }
-    /// <p>A database user name that you provide when you connect to a database. The database user is mapped 1:1 to the source IAM identity.</p>
+    /// <p>A database user name that you provide when you connect to a database. The database user is mapped 1:1 to the source IAM identity. </p>
     pub fn get_db_user(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_user
     }

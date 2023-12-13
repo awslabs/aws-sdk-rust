@@ -5,46 +5,36 @@
 pub struct GetInsightSelectorsInput {
     /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the string must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p></li>
-    /// <li>
-    /// <p>Start with a letter or number, and end with a letter or number</p></li>
-    /// <li>
-    /// <p>Be between 3 and 128 characters</p></li>
-    /// <li>
-    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p></li>
-    /// <li>
-    /// <p>Not be in IP address format (for example, 192.168.5.4)</p></li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+    /// <li> <p>Be between 3 and 128 characters</p> </li>
+    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     /// <p>If you specify a trail ARN, it must be in the format:</p>
-    /// <p><code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code></p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     /// <p>You cannot use this parameter with the <code>EventDataStore</code> parameter.</p>
     pub trail_name: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the ARN (or ID suffix of the ARN) of the event data store for which you want to get Insights selectors.</p>
+    /// <p> Specifies the ARN (or ID suffix of the ARN) of the event data store for which you want to get Insights selectors. </p>
     /// <p>You cannot use this parameter with the <code>TrailName</code> parameter.</p>
     pub event_data_store: ::std::option::Option<::std::string::String>,
 }
 impl GetInsightSelectorsInput {
     /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the string must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p></li>
-    /// <li>
-    /// <p>Start with a letter or number, and end with a letter or number</p></li>
-    /// <li>
-    /// <p>Be between 3 and 128 characters</p></li>
-    /// <li>
-    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p></li>
-    /// <li>
-    /// <p>Not be in IP address format (for example, 192.168.5.4)</p></li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+    /// <li> <p>Be between 3 and 128 characters</p> </li>
+    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     /// <p>If you specify a trail ARN, it must be in the format:</p>
-    /// <p><code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code></p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     /// <p>You cannot use this parameter with the <code>EventDataStore</code> parameter.</p>
     pub fn trail_name(&self) -> ::std::option::Option<&str> {
         self.trail_name.as_deref()
     }
-    /// <p>Specifies the ARN (or ID suffix of the ARN) of the event data store for which you want to get Insights selectors.</p>
+    /// <p> Specifies the ARN (or ID suffix of the ARN) of the event data store for which you want to get Insights selectors. </p>
     /// <p>You cannot use this parameter with the <code>TrailName</code> parameter.</p>
     pub fn event_data_store(&self) -> ::std::option::Option<&str> {
         self.event_data_store.as_deref()
@@ -67,19 +57,14 @@ pub struct GetInsightSelectorsInputBuilder {
 impl GetInsightSelectorsInputBuilder {
     /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the string must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p></li>
-    /// <li>
-    /// <p>Start with a letter or number, and end with a letter or number</p></li>
-    /// <li>
-    /// <p>Be between 3 and 128 characters</p></li>
-    /// <li>
-    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p></li>
-    /// <li>
-    /// <p>Not be in IP address format (for example, 192.168.5.4)</p></li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+    /// <li> <p>Be between 3 and 128 characters</p> </li>
+    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     /// <p>If you specify a trail ARN, it must be in the format:</p>
-    /// <p><code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code></p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     /// <p>You cannot use this parameter with the <code>EventDataStore</code> parameter.</p>
     pub fn trail_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trail_name = ::std::option::Option::Some(input.into());
@@ -87,19 +72,14 @@ impl GetInsightSelectorsInputBuilder {
     }
     /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the string must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p></li>
-    /// <li>
-    /// <p>Start with a letter or number, and end with a letter or number</p></li>
-    /// <li>
-    /// <p>Be between 3 and 128 characters</p></li>
-    /// <li>
-    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p></li>
-    /// <li>
-    /// <p>Not be in IP address format (for example, 192.168.5.4)</p></li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+    /// <li> <p>Be between 3 and 128 characters</p> </li>
+    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     /// <p>If you specify a trail ARN, it must be in the format:</p>
-    /// <p><code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code></p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     /// <p>You cannot use this parameter with the <code>EventDataStore</code> parameter.</p>
     pub fn set_trail_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.trail_name = input;
@@ -107,36 +87,31 @@ impl GetInsightSelectorsInputBuilder {
     }
     /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the string must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p></li>
-    /// <li>
-    /// <p>Start with a letter or number, and end with a letter or number</p></li>
-    /// <li>
-    /// <p>Be between 3 and 128 characters</p></li>
-    /// <li>
-    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p></li>
-    /// <li>
-    /// <p>Not be in IP address format (for example, 192.168.5.4)</p></li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+    /// <li> <p>Be between 3 and 128 characters</p> </li>
+    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     /// <p>If you specify a trail ARN, it must be in the format:</p>
-    /// <p><code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code></p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     /// <p>You cannot use this parameter with the <code>EventDataStore</code> parameter.</p>
     pub fn get_trail_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.trail_name
     }
-    /// <p>Specifies the ARN (or ID suffix of the ARN) of the event data store for which you want to get Insights selectors.</p>
+    /// <p> Specifies the ARN (or ID suffix of the ARN) of the event data store for which you want to get Insights selectors. </p>
     /// <p>You cannot use this parameter with the <code>TrailName</code> parameter.</p>
     pub fn event_data_store(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_data_store = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the ARN (or ID suffix of the ARN) of the event data store for which you want to get Insights selectors.</p>
+    /// <p> Specifies the ARN (or ID suffix of the ARN) of the event data store for which you want to get Insights selectors. </p>
     /// <p>You cannot use this parameter with the <code>TrailName</code> parameter.</p>
     pub fn set_event_data_store(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_data_store = input;
         self
     }
-    /// <p>Specifies the ARN (or ID suffix of the ARN) of the event data store for which you want to get Insights selectors.</p>
+    /// <p> Specifies the ARN (or ID suffix of the ARN) of the event data store for which you want to get Insights selectors. </p>
     /// <p>You cannot use this parameter with the <code>TrailName</code> parameter.</p>
     pub fn get_event_data_store(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_data_store

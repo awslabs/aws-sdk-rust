@@ -14,7 +14,7 @@ pub struct Extensions {
     /// <p>The subject alternative name extension allows identities to be bound to the subject of the certificate. These identities may be included in addition to or in place of the identity in the subject field of the certificate.</p>
     pub subject_alternative_names: ::std::option::Option<::std::vec::Vec<crate::types::GeneralName>>,
     /// <p></p>
-    /// <p>Contains a sequence of one or more X.509 extensions, each of which consists of an object identifier (OID), a base64-encoded value, and the critical flag. For more information, see the <a href="https://oidref.com/2.5.29">Global OID reference database.</a></p>
+    /// <p>Contains a sequence of one or more X.509 extensions, each of which consists of an object identifier (OID), a base64-encoded value, and the critical flag. For more information, see the <a href="https://oidref.com/2.5.29">Global OID reference database.</a> </p>
     pub custom_extensions: ::std::option::Option<::std::vec::Vec<crate::types::CustomExtension>>,
 }
 impl Extensions {
@@ -42,7 +42,7 @@ impl Extensions {
         self.subject_alternative_names.as_deref().unwrap_or_default()
     }
     /// <p></p>
-    /// <p>Contains a sequence of one or more X.509 extensions, each of which consists of an object identifier (OID), a base64-encoded value, and the critical flag. For more information, see the <a href="https://oidref.com/2.5.29">Global OID reference database.</a></p>
+    /// <p>Contains a sequence of one or more X.509 extensions, each of which consists of an object identifier (OID), a base64-encoded value, and the critical flag. For more information, see the <a href="https://oidref.com/2.5.29">Global OID reference database.</a> </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_extensions.is_none()`.
     pub fn custom_extensions(&self) -> &[crate::types::CustomExtension] {
@@ -149,7 +149,7 @@ impl ExtensionsBuilder {
     /// To override the contents of this collection use [`set_custom_extensions`](Self::set_custom_extensions).
     ///
     /// <p></p>
-    /// <p>Contains a sequence of one or more X.509 extensions, each of which consists of an object identifier (OID), a base64-encoded value, and the critical flag. For more information, see the <a href="https://oidref.com/2.5.29">Global OID reference database.</a></p>
+    /// <p>Contains a sequence of one or more X.509 extensions, each of which consists of an object identifier (OID), a base64-encoded value, and the critical flag. For more information, see the <a href="https://oidref.com/2.5.29">Global OID reference database.</a> </p>
     pub fn custom_extensions(mut self, input: crate::types::CustomExtension) -> Self {
         let mut v = self.custom_extensions.unwrap_or_default();
         v.push(input);
@@ -157,13 +157,13 @@ impl ExtensionsBuilder {
         self
     }
     /// <p></p>
-    /// <p>Contains a sequence of one or more X.509 extensions, each of which consists of an object identifier (OID), a base64-encoded value, and the critical flag. For more information, see the <a href="https://oidref.com/2.5.29">Global OID reference database.</a></p>
+    /// <p>Contains a sequence of one or more X.509 extensions, each of which consists of an object identifier (OID), a base64-encoded value, and the critical flag. For more information, see the <a href="https://oidref.com/2.5.29">Global OID reference database.</a> </p>
     pub fn set_custom_extensions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomExtension>>) -> Self {
         self.custom_extensions = input;
         self
     }
     /// <p></p>
-    /// <p>Contains a sequence of one or more X.509 extensions, each of which consists of an object identifier (OID), a base64-encoded value, and the critical flag. For more information, see the <a href="https://oidref.com/2.5.29">Global OID reference database.</a></p>
+    /// <p>Contains a sequence of one or more X.509 extensions, each of which consists of an object identifier (OID), a base64-encoded value, and the critical flag. For more information, see the <a href="https://oidref.com/2.5.29">Global OID reference database.</a> </p>
     pub fn get_custom_extensions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomExtension>> {
         &self.custom_extensions
     }

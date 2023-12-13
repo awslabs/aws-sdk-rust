@@ -23,7 +23,7 @@ impl UpdateAutomaticTapeCreationPolicyInputBuilder {
 /// Fluent builder constructing a request to `UpdateAutomaticTapeCreationPolicy`.
 ///
 /// <p>Updates the automatic tape creation policy of a gateway. Use this to update the policy with a new set of automatic tape creation rules. This is only supported for tape gateways.</p>
-/// <p>By default, there is no automatic tape creation policy.</p><note>
+/// <p>By default, there is no automatic tape creation policy.</p> <note>
 /// <p>A gateway can have only one automatic tape creation policy.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

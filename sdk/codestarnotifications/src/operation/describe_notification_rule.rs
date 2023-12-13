@@ -253,7 +253,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeNotif
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DescribeNotificationRuleError {
-    /// <p>AWS CodeStar Notifications can't find a resource that matches the provided ARN.</p>
+    /// <p>AWS CodeStar Notifications can't find a resource that matches the provided ARN. </p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>One or more parameter values are not valid.</p>
     ValidationException(crate::types::error::ValidationException),

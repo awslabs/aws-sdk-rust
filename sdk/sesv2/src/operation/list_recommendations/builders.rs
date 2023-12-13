@@ -119,12 +119,12 @@ impl ListRecommendationsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filter`](Self::set_filter).
     ///
-    /// <p>Filters applied when retrieving recommendations. Can eiter be an individual filter, or combinations of <code>STATUS</code> and <code>IMPACT</code> or <code>STATUS</code> and <code>TYPE</code></p>
+    /// <p>Filters applied when retrieving recommendations. Can eiter be an individual filter, or combinations of <code>STATUS</code> and <code>IMPACT</code> or <code>STATUS</code> and <code>TYPE</code> </p>
     pub fn filter(mut self, k: crate::types::ListRecommendationsFilterKey, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.filter(k, v.into());
         self
     }
-    /// <p>Filters applied when retrieving recommendations. Can eiter be an individual filter, or combinations of <code>STATUS</code> and <code>IMPACT</code> or <code>STATUS</code> and <code>TYPE</code></p>
+    /// <p>Filters applied when retrieving recommendations. Can eiter be an individual filter, or combinations of <code>STATUS</code> and <code>IMPACT</code> or <code>STATUS</code> and <code>TYPE</code> </p>
     pub fn set_filter(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<crate::types::ListRecommendationsFilterKey, ::std::string::String>>,
@@ -132,7 +132,7 @@ impl ListRecommendationsFluentBuilder {
         self.inner = self.inner.set_filter(input);
         self
     }
-    /// <p>Filters applied when retrieving recommendations. Can eiter be an individual filter, or combinations of <code>STATUS</code> and <code>IMPACT</code> or <code>STATUS</code> and <code>TYPE</code></p>
+    /// <p>Filters applied when retrieving recommendations. Can eiter be an individual filter, or combinations of <code>STATUS</code> and <code>IMPACT</code> or <code>STATUS</code> and <code>TYPE</code> </p>
     pub fn get_filter(
         &self,
     ) -> &::std::option::Option<::std::collections::HashMap<crate::types::ListRecommendationsFilterKey, ::std::string::String>> {

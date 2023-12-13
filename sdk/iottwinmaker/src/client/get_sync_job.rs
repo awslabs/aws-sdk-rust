@@ -3,12 +3,12 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetSyncJob`](crate::operation::get_sync_job::builders::GetSyncJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`sync_source(impl Into<String>)`](crate::operation::get_sync_job::builders::GetSyncJobFluentBuilder::sync_source) / [`set_sync_source(Option<String>)`](crate::operation::get_sync_job::builders::GetSyncJobFluentBuilder::set_sync_source):<br>required: **true**<br><p>The sync source.</p><note>  <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p> </note><br>
+    ///   - [`sync_source(impl Into<String>)`](crate::operation::get_sync_job::builders::GetSyncJobFluentBuilder::sync_source) / [`set_sync_source(Option<String>)`](crate::operation::get_sync_job::builders::GetSyncJobFluentBuilder::set_sync_source):<br>required: **true**<br><p>The sync source.</p> <note>   <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p>  </note><br>
     ///   - [`workspace_id(impl Into<String>)`](crate::operation::get_sync_job::builders::GetSyncJobFluentBuilder::workspace_id) / [`set_workspace_id(Option<String>)`](crate::operation::get_sync_job::builders::GetSyncJobFluentBuilder::set_workspace_id):<br>required: **false**<br><p>The workspace ID.</p><br>
     /// - On success, responds with [`GetSyncJobOutput`](crate::operation::get_sync_job::GetSyncJobOutput) with field(s):
     ///   - [`arn(String)`](crate::operation::get_sync_job::GetSyncJobOutput::arn): <p>The sync job ARN.</p>
     ///   - [`workspace_id(String)`](crate::operation::get_sync_job::GetSyncJobOutput::workspace_id): <p>The ID of the workspace that contains the sync job.</p>
-    ///   - [`sync_source(String)`](crate::operation::get_sync_job::GetSyncJobOutput::sync_source): <p>The sync soucre.</p><note>  <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p> </note>
+    ///   - [`sync_source(String)`](crate::operation::get_sync_job::GetSyncJobOutput::sync_source): <p>The sync soucre.</p> <note>   <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p>  </note>
     ///   - [`sync_role(String)`](crate::operation::get_sync_job::GetSyncJobOutput::sync_role): <p>The sync IAM role.</p>
     ///   - [`status(Option<SyncJobStatus>)`](crate::operation::get_sync_job::GetSyncJobOutput::status): <p>The SyncJob response status.</p>
     ///   - [`creation_date_time(DateTime)`](crate::operation::get_sync_job::GetSyncJobOutput::creation_date_time): <p>The creation date and time.</p>

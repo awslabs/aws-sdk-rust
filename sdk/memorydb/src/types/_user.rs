@@ -16,7 +16,7 @@ pub struct User {
     pub minimum_engine_version: ::std::option::Option<::std::string::String>,
     /// <p>Denotes whether the user requires a password to authenticate.</p>
     pub authentication: ::std::option::Option<crate::types::Authentication>,
-    /// <p>The Amazon Resource Name (ARN) of the user.</p>
+    /// <p>The Amazon Resource Name (ARN) of the user. </p>
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl User {
@@ -46,7 +46,7 @@ impl User {
     pub fn authentication(&self) -> ::std::option::Option<&crate::types::Authentication> {
         self.authentication.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the user.</p>
+    /// <p>The Amazon Resource Name (ARN) of the user. </p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -161,17 +161,17 @@ impl UserBuilder {
     pub fn get_authentication(&self) -> &::std::option::Option<crate::types::Authentication> {
         &self.authentication
     }
-    /// <p>The Amazon Resource Name (ARN) of the user.</p>
+    /// <p>The Amazon Resource Name (ARN) of the user. </p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the user.</p>
+    /// <p>The Amazon Resource Name (ARN) of the user. </p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the user.</p>
+    /// <p>The Amazon Resource Name (ARN) of the user. </p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }

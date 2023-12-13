@@ -22,7 +22,7 @@ impl DescribeConformancePackComplianceInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeConformancePackCompliance`.
 ///
-/// <p>Returns compliance details for each rule in that conformance pack.</p><note>
+/// <p>Returns compliance details for each rule in that conformance pack.</p> <note>
 /// <p>You must provide exact rule names.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

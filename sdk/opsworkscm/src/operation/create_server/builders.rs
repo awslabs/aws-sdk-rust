@@ -22,13 +22,13 @@ impl CreateServerInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateServer`.
 ///
-/// <p>Creates and immedately starts a new server. The server is ready to use when it is in the <code>HEALTHY</code> state. By default, you can create a maximum of 10 servers.</p>
-/// <p>This operation is asynchronous.</p>
-/// <p>A <code>LimitExceededException</code> is thrown when you have created the maximum number of servers (10). A <code>ResourceAlreadyExistsException</code> is thrown when a server with the same name already exists in the account. A <code>ResourceNotFoundException</code> is thrown when you specify a backup ID that is not valid or is for a backup that does not exist. A <code>ValidationException</code> is thrown when parameters of the request are not valid.</p>
-/// <p>If you do not specify a security group by adding the <code>SecurityGroupIds</code> parameter, AWS OpsWorks creates a new security group.</p>
-/// <p><i>Chef Automate:</i> The default security group opens the Chef server to the world on TCP port 443. If a KeyName is present, AWS OpsWorks enables SSH access. SSH is also open to the world on TCP port 22.</p>
-/// <p><i>Puppet Enterprise:</i> The default security group opens TCP ports 22, 443, 4433, 8140, 8142, 8143, and 8170. If a KeyName is present, AWS OpsWorks enables SSH access. SSH is also open to the world on TCP port 22.</p>
-/// <p>By default, your server is accessible from any IP address. We recommend that you update your security group rules to allow access from known IP addresses and address ranges only. To edit security group rules, open Security Groups in the navigation pane of the EC2 management console.</p>
+/// <p> Creates and immedately starts a new server. The server is ready to use when it is in the <code>HEALTHY</code> state. By default, you can create a maximum of 10 servers. </p>
+/// <p> This operation is asynchronous. </p>
+/// <p> A <code>LimitExceededException</code> is thrown when you have created the maximum number of servers (10). A <code>ResourceAlreadyExistsException</code> is thrown when a server with the same name already exists in the account. A <code>ResourceNotFoundException</code> is thrown when you specify a backup ID that is not valid or is for a backup that does not exist. A <code>ValidationException</code> is thrown when parameters of the request are not valid. </p>
+/// <p> If you do not specify a security group by adding the <code>SecurityGroupIds</code> parameter, AWS OpsWorks creates a new security group. </p>
+/// <p> <i>Chef Automate:</i> The default security group opens the Chef server to the world on TCP port 443. If a KeyName is present, AWS OpsWorks enables SSH access. SSH is also open to the world on TCP port 22. </p>
+/// <p> <i>Puppet Enterprise:</i> The default security group opens TCP ports 22, 443, 4433, 8140, 8142, 8143, and 8170. If a KeyName is present, AWS OpsWorks enables SSH access. SSH is also open to the world on TCP port 22. </p>
+/// <p>By default, your server is accessible from any IP address. We recommend that you update your security group rules to allow access from known IP addresses and address ranges only. To edit security group rules, open Security Groups in the navigation pane of the EC2 management console. </p>
 /// <p>To specify your own domain for a server, and provide your own self-signed or CA-signed certificate and private key, specify values for <code>CustomDomain</code>, <code>CustomCertificate</code>, and <code>CustomPrivateKey</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateServerFluentBuilder {
@@ -115,17 +115,17 @@ impl CreateServerFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Associate a public IP address with a server that you are launching. Valid values are <code>true</code> or <code>false</code>. The default value is <code>true</code>.</p>
+    /// <p> Associate a public IP address with a server that you are launching. Valid values are <code>true</code> or <code>false</code>. The default value is <code>true</code>. </p>
     pub fn associate_public_ip_address(mut self, input: bool) -> Self {
         self.inner = self.inner.associate_public_ip_address(input);
         self
     }
-    /// <p>Associate a public IP address with a server that you are launching. Valid values are <code>true</code> or <code>false</code>. The default value is <code>true</code>.</p>
+    /// <p> Associate a public IP address with a server that you are launching. Valid values are <code>true</code> or <code>false</code>. The default value is <code>true</code>. </p>
     pub fn set_associate_public_ip_address(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_associate_public_ip_address(input);
         self
     }
-    /// <p>Associate a public IP address with a server that you are launching. Valid values are <code>true</code> or <code>false</code>. The default value is <code>true</code>.</p>
+    /// <p> Associate a public IP address with a server that you are launching. Valid values are <code>true</code> or <code>false</code>. The default value is <code>true</code>. </p>
     pub fn get_associate_public_ip_address(&self) -> &::std::option::Option<bool> {
         self.inner.get_associate_public_ip_address()
     }
@@ -145,16 +145,11 @@ impl CreateServerFluentBuilder {
     }
     /// <p>A PEM-formatted HTTPS certificate. The value can be be a single, self-signed certificate, or a certificate chain. If you specify a custom certificate, you must also specify values for <code>CustomDomain</code> and <code>CustomPrivateKey</code>. The following are requirements for the <code>CustomCertificate</code> value:</p>
     /// <ul>
-    /// <li>
-    /// <p>You can provide either a self-signed, custom certificate, or the full certificate chain.</p></li>
-    /// <li>
-    /// <p>The certificate must be a valid X509 certificate, or a certificate chain in PEM format.</p></li>
-    /// <li>
-    /// <p>The certificate must be valid at the time of upload. A certificate can't be used before its validity period begins (the certificate's <code>NotBefore</code> date), or after it expires (the certificate's <code>NotAfter</code> date).</p></li>
-    /// <li>
-    /// <p>The certificate’s common name or subject alternative names (SANs), if present, must match the value of <code>CustomDomain</code>.</p></li>
-    /// <li>
-    /// <p>The certificate must match the value of <code>CustomPrivateKey</code>.</p></li>
+    /// <li> <p>You can provide either a self-signed, custom certificate, or the full certificate chain.</p> </li>
+    /// <li> <p>The certificate must be a valid X509 certificate, or a certificate chain in PEM format.</p> </li>
+    /// <li> <p>The certificate must be valid at the time of upload. A certificate can't be used before its validity period begins (the certificate's <code>NotBefore</code> date), or after it expires (the certificate's <code>NotAfter</code> date).</p> </li>
+    /// <li> <p>The certificate’s common name or subject alternative names (SANs), if present, must match the value of <code>CustomDomain</code>.</p> </li>
+    /// <li> <p>The certificate must match the value of <code>CustomPrivateKey</code>.</p> </li>
     /// </ul>
     pub fn custom_certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.custom_certificate(input.into());
@@ -162,16 +157,11 @@ impl CreateServerFluentBuilder {
     }
     /// <p>A PEM-formatted HTTPS certificate. The value can be be a single, self-signed certificate, or a certificate chain. If you specify a custom certificate, you must also specify values for <code>CustomDomain</code> and <code>CustomPrivateKey</code>. The following are requirements for the <code>CustomCertificate</code> value:</p>
     /// <ul>
-    /// <li>
-    /// <p>You can provide either a self-signed, custom certificate, or the full certificate chain.</p></li>
-    /// <li>
-    /// <p>The certificate must be a valid X509 certificate, or a certificate chain in PEM format.</p></li>
-    /// <li>
-    /// <p>The certificate must be valid at the time of upload. A certificate can't be used before its validity period begins (the certificate's <code>NotBefore</code> date), or after it expires (the certificate's <code>NotAfter</code> date).</p></li>
-    /// <li>
-    /// <p>The certificate’s common name or subject alternative names (SANs), if present, must match the value of <code>CustomDomain</code>.</p></li>
-    /// <li>
-    /// <p>The certificate must match the value of <code>CustomPrivateKey</code>.</p></li>
+    /// <li> <p>You can provide either a self-signed, custom certificate, or the full certificate chain.</p> </li>
+    /// <li> <p>The certificate must be a valid X509 certificate, or a certificate chain in PEM format.</p> </li>
+    /// <li> <p>The certificate must be valid at the time of upload. A certificate can't be used before its validity period begins (the certificate's <code>NotBefore</code> date), or after it expires (the certificate's <code>NotAfter</code> date).</p> </li>
+    /// <li> <p>The certificate’s common name or subject alternative names (SANs), if present, must match the value of <code>CustomDomain</code>.</p> </li>
+    /// <li> <p>The certificate must match the value of <code>CustomPrivateKey</code>.</p> </li>
     /// </ul>
     pub fn set_custom_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_custom_certificate(input);
@@ -179,16 +169,11 @@ impl CreateServerFluentBuilder {
     }
     /// <p>A PEM-formatted HTTPS certificate. The value can be be a single, self-signed certificate, or a certificate chain. If you specify a custom certificate, you must also specify values for <code>CustomDomain</code> and <code>CustomPrivateKey</code>. The following are requirements for the <code>CustomCertificate</code> value:</p>
     /// <ul>
-    /// <li>
-    /// <p>You can provide either a self-signed, custom certificate, or the full certificate chain.</p></li>
-    /// <li>
-    /// <p>The certificate must be a valid X509 certificate, or a certificate chain in PEM format.</p></li>
-    /// <li>
-    /// <p>The certificate must be valid at the time of upload. A certificate can't be used before its validity period begins (the certificate's <code>NotBefore</code> date), or after it expires (the certificate's <code>NotAfter</code> date).</p></li>
-    /// <li>
-    /// <p>The certificate’s common name or subject alternative names (SANs), if present, must match the value of <code>CustomDomain</code>.</p></li>
-    /// <li>
-    /// <p>The certificate must match the value of <code>CustomPrivateKey</code>.</p></li>
+    /// <li> <p>You can provide either a self-signed, custom certificate, or the full certificate chain.</p> </li>
+    /// <li> <p>The certificate must be a valid X509 certificate, or a certificate chain in PEM format.</p> </li>
+    /// <li> <p>The certificate must be valid at the time of upload. A certificate can't be used before its validity period begins (the certificate's <code>NotBefore</code> date), or after it expires (the certificate's <code>NotAfter</code> date).</p> </li>
+    /// <li> <p>The certificate’s common name or subject alternative names (SANs), if present, must match the value of <code>CustomDomain</code>.</p> </li>
+    /// <li> <p>The certificate must match the value of <code>CustomPrivateKey</code>.</p> </li>
     /// </ul>
     pub fn get_custom_certificate(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_custom_certificate()
@@ -207,59 +192,59 @@ impl CreateServerFluentBuilder {
     pub fn get_custom_private_key(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_custom_private_key()
     }
-    /// <p>Enable or disable scheduled backups. Valid values are <code>true</code> or <code>false</code>. The default value is <code>true</code>.</p>
+    /// <p> Enable or disable scheduled backups. Valid values are <code>true</code> or <code>false</code>. The default value is <code>true</code>. </p>
     pub fn disable_automated_backup(mut self, input: bool) -> Self {
         self.inner = self.inner.disable_automated_backup(input);
         self
     }
-    /// <p>Enable or disable scheduled backups. Valid values are <code>true</code> or <code>false</code>. The default value is <code>true</code>.</p>
+    /// <p> Enable or disable scheduled backups. Valid values are <code>true</code> or <code>false</code>. The default value is <code>true</code>. </p>
     pub fn set_disable_automated_backup(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_disable_automated_backup(input);
         self
     }
-    /// <p>Enable or disable scheduled backups. Valid values are <code>true</code> or <code>false</code>. The default value is <code>true</code>.</p>
+    /// <p> Enable or disable scheduled backups. Valid values are <code>true</code> or <code>false</code>. The default value is <code>true</code>. </p>
     pub fn get_disable_automated_backup(&self) -> &::std::option::Option<bool> {
         self.inner.get_disable_automated_backup()
     }
-    /// <p>The configuration management engine to use. Valid values include <code>ChefAutomate</code> and <code>Puppet</code>.</p>
+    /// <p> The configuration management engine to use. Valid values include <code>ChefAutomate</code> and <code>Puppet</code>. </p>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.engine(input.into());
         self
     }
-    /// <p>The configuration management engine to use. Valid values include <code>ChefAutomate</code> and <code>Puppet</code>.</p>
+    /// <p> The configuration management engine to use. Valid values include <code>ChefAutomate</code> and <code>Puppet</code>. </p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_engine(input);
         self
     }
-    /// <p>The configuration management engine to use. Valid values include <code>ChefAutomate</code> and <code>Puppet</code>.</p>
+    /// <p> The configuration management engine to use. Valid values include <code>ChefAutomate</code> and <code>Puppet</code>. </p>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_engine()
     }
-    /// <p>The engine model of the server. Valid values in this release include <code>Monolithic</code> for Puppet and <code>Single</code> for Chef.</p>
+    /// <p> The engine model of the server. Valid values in this release include <code>Monolithic</code> for Puppet and <code>Single</code> for Chef. </p>
     pub fn engine_model(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.engine_model(input.into());
         self
     }
-    /// <p>The engine model of the server. Valid values in this release include <code>Monolithic</code> for Puppet and <code>Single</code> for Chef.</p>
+    /// <p> The engine model of the server. Valid values in this release include <code>Monolithic</code> for Puppet and <code>Single</code> for Chef. </p>
     pub fn set_engine_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_engine_model(input);
         self
     }
-    /// <p>The engine model of the server. Valid values in this release include <code>Monolithic</code> for Puppet and <code>Single</code> for Chef.</p>
+    /// <p> The engine model of the server. Valid values in this release include <code>Monolithic</code> for Puppet and <code>Single</code> for Chef. </p>
     pub fn get_engine_model(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_engine_model()
     }
-    /// <p>The major release version of the engine that you want to use. For a Chef server, the valid value for EngineVersion is currently <code>2</code>. For a Puppet server, valid values are <code>2019</code> or <code>2017</code>.</p>
+    /// <p> The major release version of the engine that you want to use. For a Chef server, the valid value for EngineVersion is currently <code>2</code>. For a Puppet server, valid values are <code>2019</code> or <code>2017</code>. </p>
     pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.engine_version(input.into());
         self
     }
-    /// <p>The major release version of the engine that you want to use. For a Chef server, the valid value for EngineVersion is currently <code>2</code>. For a Puppet server, valid values are <code>2019</code> or <code>2017</code>.</p>
+    /// <p> The major release version of the engine that you want to use. For a Chef server, the valid value for EngineVersion is currently <code>2</code>. For a Puppet server, valid values are <code>2019</code> or <code>2017</code>. </p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_engine_version(input);
         self
     }
-    /// <p>The major release version of the engine that you want to use. For a Chef server, the valid value for EngineVersion is currently <code>2</code>. For a Puppet server, valid values are <code>2019</code> or <code>2017</code>.</p>
+    /// <p> The major release version of the engine that you want to use. For a Chef server, the valid value for EngineVersion is currently <code>2</code>. For a Puppet server, valid values are <code>2019</code> or <code>2017</code>. </p>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_engine_version()
     }
@@ -267,193 +252,172 @@ impl CreateServerFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_engine_attributes`](Self::set_engine_attributes).
     ///
-    /// <p>Optional engine attributes on a specified server.</p>
-    /// <p class="title"><b>Attributes accepted in a Chef createServer request:</b></p>
+    /// <p>Optional engine attributes on a specified server. </p>
+    /// <p class="title"> <b>Attributes accepted in a Chef createServer request:</b> </p>
     /// <ul>
-    /// <li>
-    /// <p><code>CHEF_AUTOMATE_PIVOTAL_KEY</code>: A base64-encoded RSA public key. The corresponding private key is required to access the Chef API. When no CHEF_AUTOMATE_PIVOTAL_KEY is set, a private key is generated and returned in the response.</p></li>
-    /// <li>
-    /// <p><code>CHEF_AUTOMATE_ADMIN_PASSWORD</code>: The password for the administrative user in the Chef Automate web-based dashboard. The password length is a minimum of eight characters, and a maximum of 32. The password can contain letters, numbers, and special characters (!/@#$%^&amp;+=_). The password must contain at least one lower case letter, one upper case letter, one number, and one special character. When no CHEF_AUTOMATE_ADMIN_PASSWORD is set, one is generated and returned in the response.</p></li>
+    /// <li> <p> <code>CHEF_AUTOMATE_PIVOTAL_KEY</code>: A base64-encoded RSA public key. The corresponding private key is required to access the Chef API. When no CHEF_AUTOMATE_PIVOTAL_KEY is set, a private key is generated and returned in the response. </p> </li>
+    /// <li> <p> <code>CHEF_AUTOMATE_ADMIN_PASSWORD</code>: The password for the administrative user in the Chef Automate web-based dashboard. The password length is a minimum of eight characters, and a maximum of 32. The password can contain letters, numbers, and special characters (!/@#$%^&amp;+=_). The password must contain at least one lower case letter, one upper case letter, one number, and one special character. When no CHEF_AUTOMATE_ADMIN_PASSWORD is set, one is generated and returned in the response.</p> </li>
     /// </ul>
-    /// <p class="title"><b>Attributes accepted in a Puppet createServer request:</b></p>
+    /// <p class="title"> <b>Attributes accepted in a Puppet createServer request:</b> </p>
     /// <ul>
-    /// <li>
-    /// <p><code>PUPPET_ADMIN_PASSWORD</code>: To work with the Puppet Enterprise console, a password must use ASCII characters.</p></li>
-    /// <li>
-    /// <p><code>PUPPET_R10K_REMOTE</code>: The r10k remote is the URL of your control repository (for example, ssh://git@your.git-repo.com:user/control-repo.git). Specifying an r10k remote opens TCP port 8170.</p></li>
-    /// <li>
-    /// <p><code>PUPPET_R10K_PRIVATE_KEY</code>: If you are using a private Git repository, add PUPPET_R10K_PRIVATE_KEY to specify a PEM-encoded private SSH key.</p></li>
+    /// <li> <p> <code>PUPPET_ADMIN_PASSWORD</code>: To work with the Puppet Enterprise console, a password must use ASCII characters.</p> </li>
+    /// <li> <p> <code>PUPPET_R10K_REMOTE</code>: The r10k remote is the URL of your control repository (for example, ssh://git@your.git-repo.com:user/control-repo.git). Specifying an r10k remote opens TCP port 8170.</p> </li>
+    /// <li> <p> <code>PUPPET_R10K_PRIVATE_KEY</code>: If you are using a private Git repository, add PUPPET_R10K_PRIVATE_KEY to specify a PEM-encoded private SSH key.</p> </li>
     /// </ul>
     pub fn engine_attributes(mut self, input: crate::types::EngineAttribute) -> Self {
         self.inner = self.inner.engine_attributes(input);
         self
     }
-    /// <p>Optional engine attributes on a specified server.</p>
-    /// <p class="title"><b>Attributes accepted in a Chef createServer request:</b></p>
+    /// <p>Optional engine attributes on a specified server. </p>
+    /// <p class="title"> <b>Attributes accepted in a Chef createServer request:</b> </p>
     /// <ul>
-    /// <li>
-    /// <p><code>CHEF_AUTOMATE_PIVOTAL_KEY</code>: A base64-encoded RSA public key. The corresponding private key is required to access the Chef API. When no CHEF_AUTOMATE_PIVOTAL_KEY is set, a private key is generated and returned in the response.</p></li>
-    /// <li>
-    /// <p><code>CHEF_AUTOMATE_ADMIN_PASSWORD</code>: The password for the administrative user in the Chef Automate web-based dashboard. The password length is a minimum of eight characters, and a maximum of 32. The password can contain letters, numbers, and special characters (!/@#$%^&amp;+=_). The password must contain at least one lower case letter, one upper case letter, one number, and one special character. When no CHEF_AUTOMATE_ADMIN_PASSWORD is set, one is generated and returned in the response.</p></li>
+    /// <li> <p> <code>CHEF_AUTOMATE_PIVOTAL_KEY</code>: A base64-encoded RSA public key. The corresponding private key is required to access the Chef API. When no CHEF_AUTOMATE_PIVOTAL_KEY is set, a private key is generated and returned in the response. </p> </li>
+    /// <li> <p> <code>CHEF_AUTOMATE_ADMIN_PASSWORD</code>: The password for the administrative user in the Chef Automate web-based dashboard. The password length is a minimum of eight characters, and a maximum of 32. The password can contain letters, numbers, and special characters (!/@#$%^&amp;+=_). The password must contain at least one lower case letter, one upper case letter, one number, and one special character. When no CHEF_AUTOMATE_ADMIN_PASSWORD is set, one is generated and returned in the response.</p> </li>
     /// </ul>
-    /// <p class="title"><b>Attributes accepted in a Puppet createServer request:</b></p>
+    /// <p class="title"> <b>Attributes accepted in a Puppet createServer request:</b> </p>
     /// <ul>
-    /// <li>
-    /// <p><code>PUPPET_ADMIN_PASSWORD</code>: To work with the Puppet Enterprise console, a password must use ASCII characters.</p></li>
-    /// <li>
-    /// <p><code>PUPPET_R10K_REMOTE</code>: The r10k remote is the URL of your control repository (for example, ssh://git@your.git-repo.com:user/control-repo.git). Specifying an r10k remote opens TCP port 8170.</p></li>
-    /// <li>
-    /// <p><code>PUPPET_R10K_PRIVATE_KEY</code>: If you are using a private Git repository, add PUPPET_R10K_PRIVATE_KEY to specify a PEM-encoded private SSH key.</p></li>
+    /// <li> <p> <code>PUPPET_ADMIN_PASSWORD</code>: To work with the Puppet Enterprise console, a password must use ASCII characters.</p> </li>
+    /// <li> <p> <code>PUPPET_R10K_REMOTE</code>: The r10k remote is the URL of your control repository (for example, ssh://git@your.git-repo.com:user/control-repo.git). Specifying an r10k remote opens TCP port 8170.</p> </li>
+    /// <li> <p> <code>PUPPET_R10K_PRIVATE_KEY</code>: If you are using a private Git repository, add PUPPET_R10K_PRIVATE_KEY to specify a PEM-encoded private SSH key.</p> </li>
     /// </ul>
     pub fn set_engine_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>>) -> Self {
         self.inner = self.inner.set_engine_attributes(input);
         self
     }
-    /// <p>Optional engine attributes on a specified server.</p>
-    /// <p class="title"><b>Attributes accepted in a Chef createServer request:</b></p>
+    /// <p>Optional engine attributes on a specified server. </p>
+    /// <p class="title"> <b>Attributes accepted in a Chef createServer request:</b> </p>
     /// <ul>
-    /// <li>
-    /// <p><code>CHEF_AUTOMATE_PIVOTAL_KEY</code>: A base64-encoded RSA public key. The corresponding private key is required to access the Chef API. When no CHEF_AUTOMATE_PIVOTAL_KEY is set, a private key is generated and returned in the response.</p></li>
-    /// <li>
-    /// <p><code>CHEF_AUTOMATE_ADMIN_PASSWORD</code>: The password for the administrative user in the Chef Automate web-based dashboard. The password length is a minimum of eight characters, and a maximum of 32. The password can contain letters, numbers, and special characters (!/@#$%^&amp;+=_). The password must contain at least one lower case letter, one upper case letter, one number, and one special character. When no CHEF_AUTOMATE_ADMIN_PASSWORD is set, one is generated and returned in the response.</p></li>
+    /// <li> <p> <code>CHEF_AUTOMATE_PIVOTAL_KEY</code>: A base64-encoded RSA public key. The corresponding private key is required to access the Chef API. When no CHEF_AUTOMATE_PIVOTAL_KEY is set, a private key is generated and returned in the response. </p> </li>
+    /// <li> <p> <code>CHEF_AUTOMATE_ADMIN_PASSWORD</code>: The password for the administrative user in the Chef Automate web-based dashboard. The password length is a minimum of eight characters, and a maximum of 32. The password can contain letters, numbers, and special characters (!/@#$%^&amp;+=_). The password must contain at least one lower case letter, one upper case letter, one number, and one special character. When no CHEF_AUTOMATE_ADMIN_PASSWORD is set, one is generated and returned in the response.</p> </li>
     /// </ul>
-    /// <p class="title"><b>Attributes accepted in a Puppet createServer request:</b></p>
+    /// <p class="title"> <b>Attributes accepted in a Puppet createServer request:</b> </p>
     /// <ul>
-    /// <li>
-    /// <p><code>PUPPET_ADMIN_PASSWORD</code>: To work with the Puppet Enterprise console, a password must use ASCII characters.</p></li>
-    /// <li>
-    /// <p><code>PUPPET_R10K_REMOTE</code>: The r10k remote is the URL of your control repository (for example, ssh://git@your.git-repo.com:user/control-repo.git). Specifying an r10k remote opens TCP port 8170.</p></li>
-    /// <li>
-    /// <p><code>PUPPET_R10K_PRIVATE_KEY</code>: If you are using a private Git repository, add PUPPET_R10K_PRIVATE_KEY to specify a PEM-encoded private SSH key.</p></li>
+    /// <li> <p> <code>PUPPET_ADMIN_PASSWORD</code>: To work with the Puppet Enterprise console, a password must use ASCII characters.</p> </li>
+    /// <li> <p> <code>PUPPET_R10K_REMOTE</code>: The r10k remote is the URL of your control repository (for example, ssh://git@your.git-repo.com:user/control-repo.git). Specifying an r10k remote opens TCP port 8170.</p> </li>
+    /// <li> <p> <code>PUPPET_R10K_PRIVATE_KEY</code>: If you are using a private Git repository, add PUPPET_R10K_PRIVATE_KEY to specify a PEM-encoded private SSH key.</p> </li>
     /// </ul>
     pub fn get_engine_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>> {
         self.inner.get_engine_attributes()
     }
-    /// <p>The number of automated backups that you want to keep. Whenever a new backup is created, AWS OpsWorks CM deletes the oldest backups if this number is exceeded. The default value is <code>1</code>.</p>
+    /// <p> The number of automated backups that you want to keep. Whenever a new backup is created, AWS OpsWorks CM deletes the oldest backups if this number is exceeded. The default value is <code>1</code>. </p>
     pub fn backup_retention_count(mut self, input: i32) -> Self {
         self.inner = self.inner.backup_retention_count(input);
         self
     }
-    /// <p>The number of automated backups that you want to keep. Whenever a new backup is created, AWS OpsWorks CM deletes the oldest backups if this number is exceeded. The default value is <code>1</code>.</p>
+    /// <p> The number of automated backups that you want to keep. Whenever a new backup is created, AWS OpsWorks CM deletes the oldest backups if this number is exceeded. The default value is <code>1</code>. </p>
     pub fn set_backup_retention_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_backup_retention_count(input);
         self
     }
-    /// <p>The number of automated backups that you want to keep. Whenever a new backup is created, AWS OpsWorks CM deletes the oldest backups if this number is exceeded. The default value is <code>1</code>.</p>
+    /// <p> The number of automated backups that you want to keep. Whenever a new backup is created, AWS OpsWorks CM deletes the oldest backups if this number is exceeded. The default value is <code>1</code>. </p>
     pub fn get_backup_retention_count(&self) -> &::std::option::Option<i32> {
         self.inner.get_backup_retention_count()
     }
-    /// <p>The name of the server. The server name must be unique within your AWS account, within each region. Server names must start with a letter; then letters, numbers, or hyphens (-) are allowed, up to a maximum of 40 characters.</p>
+    /// <p> The name of the server. The server name must be unique within your AWS account, within each region. Server names must start with a letter; then letters, numbers, or hyphens (-) are allowed, up to a maximum of 40 characters. </p>
     pub fn server_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.server_name(input.into());
         self
     }
-    /// <p>The name of the server. The server name must be unique within your AWS account, within each region. Server names must start with a letter; then letters, numbers, or hyphens (-) are allowed, up to a maximum of 40 characters.</p>
+    /// <p> The name of the server. The server name must be unique within your AWS account, within each region. Server names must start with a letter; then letters, numbers, or hyphens (-) are allowed, up to a maximum of 40 characters. </p>
     pub fn set_server_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_server_name(input);
         self
     }
-    /// <p>The name of the server. The server name must be unique within your AWS account, within each region. Server names must start with a letter; then letters, numbers, or hyphens (-) are allowed, up to a maximum of 40 characters.</p>
+    /// <p> The name of the server. The server name must be unique within your AWS account, within each region. Server names must start with a letter; then letters, numbers, or hyphens (-) are allowed, up to a maximum of 40 characters. </p>
     pub fn get_server_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_server_name()
     }
-    /// <p>The ARN of the instance profile that your Amazon EC2 instances use. Although the AWS OpsWorks console typically creates the instance profile for you, if you are using API commands instead, run the service-role-creation.yaml AWS CloudFormation template, located at https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml. This template creates a CloudFormation stack that includes the instance profile you need.</p>
+    /// <p> The ARN of the instance profile that your Amazon EC2 instances use. Although the AWS OpsWorks console typically creates the instance profile for you, if you are using API commands instead, run the service-role-creation.yaml AWS CloudFormation template, located at https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml. This template creates a CloudFormation stack that includes the instance profile you need. </p>
     pub fn instance_profile_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_profile_arn(input.into());
         self
     }
-    /// <p>The ARN of the instance profile that your Amazon EC2 instances use. Although the AWS OpsWorks console typically creates the instance profile for you, if you are using API commands instead, run the service-role-creation.yaml AWS CloudFormation template, located at https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml. This template creates a CloudFormation stack that includes the instance profile you need.</p>
+    /// <p> The ARN of the instance profile that your Amazon EC2 instances use. Although the AWS OpsWorks console typically creates the instance profile for you, if you are using API commands instead, run the service-role-creation.yaml AWS CloudFormation template, located at https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml. This template creates a CloudFormation stack that includes the instance profile you need. </p>
     pub fn set_instance_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_profile_arn(input);
         self
     }
-    /// <p>The ARN of the instance profile that your Amazon EC2 instances use. Although the AWS OpsWorks console typically creates the instance profile for you, if you are using API commands instead, run the service-role-creation.yaml AWS CloudFormation template, located at https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml. This template creates a CloudFormation stack that includes the instance profile you need.</p>
+    /// <p> The ARN of the instance profile that your Amazon EC2 instances use. Although the AWS OpsWorks console typically creates the instance profile for you, if you are using API commands instead, run the service-role-creation.yaml AWS CloudFormation template, located at https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml. This template creates a CloudFormation stack that includes the instance profile you need. </p>
     pub fn get_instance_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_profile_arn()
     }
-    /// <p>The Amazon EC2 instance type to use. For example, <code>m5.large</code>.</p>
+    /// <p> The Amazon EC2 instance type to use. For example, <code>m5.large</code>. </p>
     pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_type(input.into());
         self
     }
-    /// <p>The Amazon EC2 instance type to use. For example, <code>m5.large</code>.</p>
+    /// <p> The Amazon EC2 instance type to use. For example, <code>m5.large</code>. </p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_type(input);
         self
     }
-    /// <p>The Amazon EC2 instance type to use. For example, <code>m5.large</code>.</p>
+    /// <p> The Amazon EC2 instance type to use. For example, <code>m5.large</code>. </p>
     pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_type()
     }
-    /// <p>The Amazon EC2 key pair to set for the instance. This parameter is optional; if desired, you may specify this parameter to connect to your instances by using SSH.</p>
+    /// <p> The Amazon EC2 key pair to set for the instance. This parameter is optional; if desired, you may specify this parameter to connect to your instances by using SSH. </p>
     pub fn key_pair(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.key_pair(input.into());
         self
     }
-    /// <p>The Amazon EC2 key pair to set for the instance. This parameter is optional; if desired, you may specify this parameter to connect to your instances by using SSH.</p>
+    /// <p> The Amazon EC2 key pair to set for the instance. This parameter is optional; if desired, you may specify this parameter to connect to your instances by using SSH. </p>
     pub fn set_key_pair(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_key_pair(input);
         self
     }
-    /// <p>The Amazon EC2 key pair to set for the instance. This parameter is optional; if desired, you may specify this parameter to connect to your instances by using SSH.</p>
+    /// <p> The Amazon EC2 key pair to set for the instance. This parameter is optional; if desired, you may specify this parameter to connect to your instances by using SSH. </p>
     pub fn get_key_pair(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_key_pair()
     }
-    /// <p>The start time for a one-hour period each week during which AWS OpsWorks CM performs maintenance on the instance. Valid values must be specified in the following format: <code>DDD:HH:MM</code>. <code>MM</code> must be specified as <code>00</code>. The specified time is in coordinated universal time (UTC). The default value is a random one-hour period on Tuesday, Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more information.</p>
-    /// <p><b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00 UTC. (8:00 a.m.)</p>
+    /// <p> The start time for a one-hour period each week during which AWS OpsWorks CM performs maintenance on the instance. Valid values must be specified in the following format: <code>DDD:HH:MM</code>. <code>MM</code> must be specified as <code>00</code>. The specified time is in coordinated universal time (UTC). The default value is a random one-hour period on Tuesday, Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more information. </p>
+    /// <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00 UTC. (8:00 a.m.) </p>
     pub fn preferred_maintenance_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.preferred_maintenance_window(input.into());
         self
     }
-    /// <p>The start time for a one-hour period each week during which AWS OpsWorks CM performs maintenance on the instance. Valid values must be specified in the following format: <code>DDD:HH:MM</code>. <code>MM</code> must be specified as <code>00</code>. The specified time is in coordinated universal time (UTC). The default value is a random one-hour period on Tuesday, Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more information.</p>
-    /// <p><b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00 UTC. (8:00 a.m.)</p>
+    /// <p> The start time for a one-hour period each week during which AWS OpsWorks CM performs maintenance on the instance. Valid values must be specified in the following format: <code>DDD:HH:MM</code>. <code>MM</code> must be specified as <code>00</code>. The specified time is in coordinated universal time (UTC). The default value is a random one-hour period on Tuesday, Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more information. </p>
+    /// <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00 UTC. (8:00 a.m.) </p>
     pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_preferred_maintenance_window(input);
         self
     }
-    /// <p>The start time for a one-hour period each week during which AWS OpsWorks CM performs maintenance on the instance. Valid values must be specified in the following format: <code>DDD:HH:MM</code>. <code>MM</code> must be specified as <code>00</code>. The specified time is in coordinated universal time (UTC). The default value is a random one-hour period on Tuesday, Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more information.</p>
-    /// <p><b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00 UTC. (8:00 a.m.)</p>
+    /// <p> The start time for a one-hour period each week during which AWS OpsWorks CM performs maintenance on the instance. Valid values must be specified in the following format: <code>DDD:HH:MM</code>. <code>MM</code> must be specified as <code>00</code>. The specified time is in coordinated universal time (UTC). The default value is a random one-hour period on Tuesday, Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more information. </p>
+    /// <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00 UTC. (8:00 a.m.) </p>
     pub fn get_preferred_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_preferred_maintenance_window()
     }
-    /// <p>The start time for a one-hour period during which AWS OpsWorks CM backs up application-level data on your server if automated backups are enabled. Valid values must be specified in one of the following formats:</p>
+    /// <p> The start time for a one-hour period during which AWS OpsWorks CM backs up application-level data on your server if automated backups are enabled. Valid values must be specified in one of the following formats: </p>
     /// <ul>
-    /// <li>
-    /// <p><code>HH:MM</code> for daily backups</p></li>
-    /// <li>
-    /// <p><code>DDD:HH:MM</code> for weekly backups</p></li>
+    /// <li> <p> <code>HH:MM</code> for daily backups</p> </li>
+    /// <li> <p> <code>DDD:HH:MM</code> for weekly backups</p> </li>
     /// </ul>
-    /// <p><code>MM</code> must be specified as <code>00</code>. The specified time is in coordinated universal time (UTC). The default value is a random, daily start time.</p>
-    /// <p><b>Example:</b> <code>08:00</code>, which represents a daily start time of 08:00 UTC.</p>
-    /// <p><b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00 UTC. (8:00 a.m.)</p>
+    /// <p> <code>MM</code> must be specified as <code>00</code>. The specified time is in coordinated universal time (UTC). The default value is a random, daily start time.</p>
+    /// <p> <b>Example:</b> <code>08:00</code>, which represents a daily start time of 08:00 UTC.</p>
+    /// <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00 UTC. (8:00 a.m.)</p>
     pub fn preferred_backup_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.preferred_backup_window(input.into());
         self
     }
-    /// <p>The start time for a one-hour period during which AWS OpsWorks CM backs up application-level data on your server if automated backups are enabled. Valid values must be specified in one of the following formats:</p>
+    /// <p> The start time for a one-hour period during which AWS OpsWorks CM backs up application-level data on your server if automated backups are enabled. Valid values must be specified in one of the following formats: </p>
     /// <ul>
-    /// <li>
-    /// <p><code>HH:MM</code> for daily backups</p></li>
-    /// <li>
-    /// <p><code>DDD:HH:MM</code> for weekly backups</p></li>
+    /// <li> <p> <code>HH:MM</code> for daily backups</p> </li>
+    /// <li> <p> <code>DDD:HH:MM</code> for weekly backups</p> </li>
     /// </ul>
-    /// <p><code>MM</code> must be specified as <code>00</code>. The specified time is in coordinated universal time (UTC). The default value is a random, daily start time.</p>
-    /// <p><b>Example:</b> <code>08:00</code>, which represents a daily start time of 08:00 UTC.</p>
-    /// <p><b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00 UTC. (8:00 a.m.)</p>
+    /// <p> <code>MM</code> must be specified as <code>00</code>. The specified time is in coordinated universal time (UTC). The default value is a random, daily start time.</p>
+    /// <p> <b>Example:</b> <code>08:00</code>, which represents a daily start time of 08:00 UTC.</p>
+    /// <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00 UTC. (8:00 a.m.)</p>
     pub fn set_preferred_backup_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_preferred_backup_window(input);
         self
     }
-    /// <p>The start time for a one-hour period during which AWS OpsWorks CM backs up application-level data on your server if automated backups are enabled. Valid values must be specified in one of the following formats:</p>
+    /// <p> The start time for a one-hour period during which AWS OpsWorks CM backs up application-level data on your server if automated backups are enabled. Valid values must be specified in one of the following formats: </p>
     /// <ul>
-    /// <li>
-    /// <p><code>HH:MM</code> for daily backups</p></li>
-    /// <li>
-    /// <p><code>DDD:HH:MM</code> for weekly backups</p></li>
+    /// <li> <p> <code>HH:MM</code> for daily backups</p> </li>
+    /// <li> <p> <code>DDD:HH:MM</code> for weekly backups</p> </li>
     /// </ul>
-    /// <p><code>MM</code> must be specified as <code>00</code>. The specified time is in coordinated universal time (UTC). The default value is a random, daily start time.</p>
-    /// <p><b>Example:</b> <code>08:00</code>, which represents a daily start time of 08:00 UTC.</p>
-    /// <p><b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00 UTC. (8:00 a.m.)</p>
+    /// <p> <code>MM</code> must be specified as <code>00</code>. The specified time is in coordinated universal time (UTC). The default value is a random, daily start time.</p>
+    /// <p> <b>Example:</b> <code>08:00</code>, which represents a daily start time of 08:00 UTC.</p>
+    /// <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00 UTC. (8:00 a.m.)</p>
     pub fn get_preferred_backup_window(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_preferred_backup_window()
     }
@@ -461,34 +425,34 @@ impl CreateServerFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
-    /// <p>A list of security group IDs to attach to the Amazon EC2 instance. If you add this parameter, the specified security groups must be within the VPC that is specified by <code>SubnetIds</code>.</p>
-    /// <p>If you do not specify this parameter, AWS OpsWorks CM creates one new security group that uses TCP ports 22 and 443, open to 0.0.0.0/0 (everyone).</p>
+    /// <p> A list of security group IDs to attach to the Amazon EC2 instance. If you add this parameter, the specified security groups must be within the VPC that is specified by <code>SubnetIds</code>. </p>
+    /// <p> If you do not specify this parameter, AWS OpsWorks CM creates one new security group that uses TCP ports 22 and 443, open to 0.0.0.0/0 (everyone). </p>
     pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.security_group_ids(input.into());
         self
     }
-    /// <p>A list of security group IDs to attach to the Amazon EC2 instance. If you add this parameter, the specified security groups must be within the VPC that is specified by <code>SubnetIds</code>.</p>
-    /// <p>If you do not specify this parameter, AWS OpsWorks CM creates one new security group that uses TCP ports 22 and 443, open to 0.0.0.0/0 (everyone).</p>
+    /// <p> A list of security group IDs to attach to the Amazon EC2 instance. If you add this parameter, the specified security groups must be within the VPC that is specified by <code>SubnetIds</code>. </p>
+    /// <p> If you do not specify this parameter, AWS OpsWorks CM creates one new security group that uses TCP ports 22 and 443, open to 0.0.0.0/0 (everyone). </p>
     pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_security_group_ids(input);
         self
     }
-    /// <p>A list of security group IDs to attach to the Amazon EC2 instance. If you add this parameter, the specified security groups must be within the VPC that is specified by <code>SubnetIds</code>.</p>
-    /// <p>If you do not specify this parameter, AWS OpsWorks CM creates one new security group that uses TCP ports 22 and 443, open to 0.0.0.0/0 (everyone).</p>
+    /// <p> A list of security group IDs to attach to the Amazon EC2 instance. If you add this parameter, the specified security groups must be within the VPC that is specified by <code>SubnetIds</code>. </p>
+    /// <p> If you do not specify this parameter, AWS OpsWorks CM creates one new security group that uses TCP ports 22 and 443, open to 0.0.0.0/0 (everyone). </p>
     pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_security_group_ids()
     }
-    /// <p>The service role that the AWS OpsWorks CM service backend uses to work with your account. Although the AWS OpsWorks management console typically creates the service role for you, if you are using the AWS CLI or API commands, run the service-role-creation.yaml AWS CloudFormation template, located at https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml. This template creates a CloudFormation stack that includes the service role and instance profile that you need.</p>
+    /// <p> The service role that the AWS OpsWorks CM service backend uses to work with your account. Although the AWS OpsWorks management console typically creates the service role for you, if you are using the AWS CLI or API commands, run the service-role-creation.yaml AWS CloudFormation template, located at https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml. This template creates a CloudFormation stack that includes the service role and instance profile that you need. </p>
     pub fn service_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_role_arn(input.into());
         self
     }
-    /// <p>The service role that the AWS OpsWorks CM service backend uses to work with your account. Although the AWS OpsWorks management console typically creates the service role for you, if you are using the AWS CLI or API commands, run the service-role-creation.yaml AWS CloudFormation template, located at https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml. This template creates a CloudFormation stack that includes the service role and instance profile that you need.</p>
+    /// <p> The service role that the AWS OpsWorks CM service backend uses to work with your account. Although the AWS OpsWorks management console typically creates the service role for you, if you are using the AWS CLI or API commands, run the service-role-creation.yaml AWS CloudFormation template, located at https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml. This template creates a CloudFormation stack that includes the service role and instance profile that you need. </p>
     pub fn set_service_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_role_arn(input);
         self
     }
-    /// <p>The service role that the AWS OpsWorks CM service backend uses to work with your account. Although the AWS OpsWorks management console typically creates the service role for you, if you are using the AWS CLI or API commands, run the service-role-creation.yaml AWS CloudFormation template, located at https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml. This template creates a CloudFormation stack that includes the service role and instance profile that you need.</p>
+    /// <p> The service role that the AWS OpsWorks CM service backend uses to work with your account. Although the AWS OpsWorks management console typically creates the service role for you, if you are using the AWS CLI or API commands, run the service-role-creation.yaml AWS CloudFormation template, located at https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml. This template creates a CloudFormation stack that includes the service role and instance profile that you need. </p>
     pub fn get_service_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_service_role_arn()
     }
@@ -496,25 +460,25 @@ impl CreateServerFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
     ///
-    /// <p>The IDs of subnets in which to launch the server EC2 instance.</p>
-    /// <p>Amazon EC2-Classic customers: This field is required. All servers must run within a VPC. The VPC must have "Auto Assign Public IP" enabled.</p>
-    /// <p>EC2-VPC customers: This field is optional. If you do not specify subnet IDs, your EC2 instances are created in a default subnet that is selected by Amazon EC2. If you specify subnet IDs, the VPC must have "Auto Assign Public IP" enabled.</p>
+    /// <p> The IDs of subnets in which to launch the server EC2 instance. </p>
+    /// <p> Amazon EC2-Classic customers: This field is required. All servers must run within a VPC. The VPC must have "Auto Assign Public IP" enabled. </p>
+    /// <p> EC2-VPC customers: This field is optional. If you do not specify subnet IDs, your EC2 instances are created in a default subnet that is selected by Amazon EC2. If you specify subnet IDs, the VPC must have "Auto Assign Public IP" enabled. </p>
     /// <p>For more information about supported Amazon EC2 platforms, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>.</p>
     pub fn subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subnet_ids(input.into());
         self
     }
-    /// <p>The IDs of subnets in which to launch the server EC2 instance.</p>
-    /// <p>Amazon EC2-Classic customers: This field is required. All servers must run within a VPC. The VPC must have "Auto Assign Public IP" enabled.</p>
-    /// <p>EC2-VPC customers: This field is optional. If you do not specify subnet IDs, your EC2 instances are created in a default subnet that is selected by Amazon EC2. If you specify subnet IDs, the VPC must have "Auto Assign Public IP" enabled.</p>
+    /// <p> The IDs of subnets in which to launch the server EC2 instance. </p>
+    /// <p> Amazon EC2-Classic customers: This field is required. All servers must run within a VPC. The VPC must have "Auto Assign Public IP" enabled. </p>
+    /// <p> EC2-VPC customers: This field is optional. If you do not specify subnet IDs, your EC2 instances are created in a default subnet that is selected by Amazon EC2. If you specify subnet IDs, the VPC must have "Auto Assign Public IP" enabled. </p>
     /// <p>For more information about supported Amazon EC2 platforms, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>.</p>
     pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_subnet_ids(input);
         self
     }
-    /// <p>The IDs of subnets in which to launch the server EC2 instance.</p>
-    /// <p>Amazon EC2-Classic customers: This field is required. All servers must run within a VPC. The VPC must have "Auto Assign Public IP" enabled.</p>
-    /// <p>EC2-VPC customers: This field is optional. If you do not specify subnet IDs, your EC2 instances are created in a default subnet that is selected by Amazon EC2. If you specify subnet IDs, the VPC must have "Auto Assign Public IP" enabled.</p>
+    /// <p> The IDs of subnets in which to launch the server EC2 instance. </p>
+    /// <p> Amazon EC2-Classic customers: This field is required. All servers must run within a VPC. The VPC must have "Auto Assign Public IP" enabled. </p>
+    /// <p> EC2-VPC customers: This field is optional. If you do not specify subnet IDs, your EC2 instances are created in a default subnet that is selected by Amazon EC2. If you specify subnet IDs, the VPC must have "Auto Assign Public IP" enabled. </p>
     /// <p>For more information about supported Amazon EC2 platforms, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>.</p>
     pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_subnet_ids()
@@ -525,16 +489,11 @@ impl CreateServerFluentBuilder {
     ///
     /// <p>A map that contains tag keys and tag values to attach to an AWS OpsWorks for Chef Automate or AWS OpsWorks for Puppet Enterprise server.</p>
     /// <ul>
-    /// <li>
-    /// <p>The key cannot be empty.</p></li>
-    /// <li>
-    /// <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : / @</code></p></li>
-    /// <li>
-    /// <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : / @</code></p></li>
-    /// <li>
-    /// <p>Leading and trailing white spaces are trimmed from both the key and value.</p></li>
-    /// <li>
-    /// <p>A maximum of 50 user-applied tags is allowed for any AWS OpsWorks-CM server.</p></li>
+    /// <li> <p>The key cannot be empty.</p> </li>
+    /// <li> <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : / @</code> </p> </li>
+    /// <li> <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : / @</code> </p> </li>
+    /// <li> <p>Leading and trailing white spaces are trimmed from both the key and value.</p> </li>
+    /// <li> <p>A maximum of 50 user-applied tags is allowed for any AWS OpsWorks-CM server.</p> </li>
     /// </ul>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
@@ -542,16 +501,11 @@ impl CreateServerFluentBuilder {
     }
     /// <p>A map that contains tag keys and tag values to attach to an AWS OpsWorks for Chef Automate or AWS OpsWorks for Puppet Enterprise server.</p>
     /// <ul>
-    /// <li>
-    /// <p>The key cannot be empty.</p></li>
-    /// <li>
-    /// <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : / @</code></p></li>
-    /// <li>
-    /// <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : / @</code></p></li>
-    /// <li>
-    /// <p>Leading and trailing white spaces are trimmed from both the key and value.</p></li>
-    /// <li>
-    /// <p>A maximum of 50 user-applied tags is allowed for any AWS OpsWorks-CM server.</p></li>
+    /// <li> <p>The key cannot be empty.</p> </li>
+    /// <li> <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : / @</code> </p> </li>
+    /// <li> <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : / @</code> </p> </li>
+    /// <li> <p>Leading and trailing white spaces are trimmed from both the key and value.</p> </li>
+    /// <li> <p>A maximum of 50 user-applied tags is allowed for any AWS OpsWorks-CM server.</p> </li>
     /// </ul>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
@@ -559,31 +513,26 @@ impl CreateServerFluentBuilder {
     }
     /// <p>A map that contains tag keys and tag values to attach to an AWS OpsWorks for Chef Automate or AWS OpsWorks for Puppet Enterprise server.</p>
     /// <ul>
-    /// <li>
-    /// <p>The key cannot be empty.</p></li>
-    /// <li>
-    /// <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : / @</code></p></li>
-    /// <li>
-    /// <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : / @</code></p></li>
-    /// <li>
-    /// <p>Leading and trailing white spaces are trimmed from both the key and value.</p></li>
-    /// <li>
-    /// <p>A maximum of 50 user-applied tags is allowed for any AWS OpsWorks-CM server.</p></li>
+    /// <li> <p>The key cannot be empty.</p> </li>
+    /// <li> <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : / @</code> </p> </li>
+    /// <li> <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : / @</code> </p> </li>
+    /// <li> <p>Leading and trailing white spaces are trimmed from both the key and value.</p> </li>
+    /// <li> <p>A maximum of 50 user-applied tags is allowed for any AWS OpsWorks-CM server.</p> </li>
     /// </ul>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
-    /// <p>If you specify this field, AWS OpsWorks CM creates the server by using the backup represented by BackupId.</p>
+    /// <p> If you specify this field, AWS OpsWorks CM creates the server by using the backup represented by BackupId. </p>
     pub fn backup_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.backup_id(input.into());
         self
     }
-    /// <p>If you specify this field, AWS OpsWorks CM creates the server by using the backup represented by BackupId.</p>
+    /// <p> If you specify this field, AWS OpsWorks CM creates the server by using the backup represented by BackupId. </p>
     pub fn set_backup_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_backup_id(input);
         self
     }
-    /// <p>If you specify this field, AWS OpsWorks CM creates the server by using the backup represented by BackupId.</p>
+    /// <p> If you specify this field, AWS OpsWorks CM creates the server by using the backup represented by BackupId. </p>
     pub fn get_backup_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_backup_id()
     }

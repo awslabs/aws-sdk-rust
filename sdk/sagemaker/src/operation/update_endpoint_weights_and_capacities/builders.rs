@@ -22,7 +22,7 @@ impl UpdateEndpointWeightsAndCapacitiesInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateEndpointWeightsAndCapacities`.
 ///
-/// <p>Updates variant weight of one or more variants associated with an existing endpoint, or capacity of one variant associated with an existing endpoint. When it receives the request, SageMaker sets the endpoint status to <code>Updating</code>. After updating the endpoint, it sets the status to <code>InService</code>. To check the status of an endpoint, use the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeEndpoint.html">DescribeEndpoint</a> API.</p>
+/// <p>Updates variant weight of one or more variants associated with an existing endpoint, or capacity of one variant associated with an existing endpoint. When it receives the request, SageMaker sets the endpoint status to <code>Updating</code>. After updating the endpoint, it sets the status to <code>InService</code>. To check the status of an endpoint, use the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeEndpoint.html">DescribeEndpoint</a> API. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateEndpointWeightsAndCapacitiesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

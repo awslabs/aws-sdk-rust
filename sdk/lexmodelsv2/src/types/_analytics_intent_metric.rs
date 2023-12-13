@@ -6,26 +6,18 @@
 pub struct AnalyticsIntentMetric {
     /// <p>The metric for which you want to get intent summary statistics.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Count</code> – The number of times the intent was invoked.</p></li>
-    /// <li>
-    /// <p><code>Success</code> – The number of times the intent succeeded.</p></li>
-    /// <li>
-    /// <p><code>Failure</code> – The number of times the intent failed.</p></li>
-    /// <li>
-    /// <p><code>Switched</code> – The number of times there was a switch to a different intent.</p></li>
-    /// <li>
-    /// <p><code>Dropped</code> – The number of times the user dropped the intent.</p></li>
+    /// <li> <p> <code>Count</code> – The number of times the intent was invoked.</p> </li>
+    /// <li> <p> <code>Success</code> – The number of times the intent succeeded.</p> </li>
+    /// <li> <p> <code>Failure</code> – The number of times the intent failed.</p> </li>
+    /// <li> <p> <code>Switched</code> – The number of times there was a switch to a different intent.</p> </li>
+    /// <li> <p> <code>Dropped</code> – The number of times the user dropped the intent.</p> </li>
     /// </ul>
     pub name: crate::types::AnalyticsIntentMetricName,
     /// <p>The summary statistic to calculate.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Sum</code> – The total count for the category you provide in <code>name</code>.</p></li>
-    /// <li>
-    /// <p><code>Average</code> – The total count divided by the number of intents in the category you provide in <code>name</code>.</p></li>
-    /// <li>
-    /// <p><code>Max</code> – The highest count in the category you provide in <code>name</code>.</p></li>
+    /// <li> <p> <code>Sum</code> – The total count for the category you provide in <code>name</code>.</p> </li>
+    /// <li> <p> <code>Average</code> – The total count divided by the number of intents in the category you provide in <code>name</code>.</p> </li>
+    /// <li> <p> <code>Max</code> – The highest count in the category you provide in <code>name</code>.</p> </li>
     /// </ul>
     pub statistic: crate::types::AnalyticsMetricStatistic,
     /// <p>Specifies whether to sort the results in ascending or descending order.</p>
@@ -34,28 +26,20 @@ pub struct AnalyticsIntentMetric {
 impl AnalyticsIntentMetric {
     /// <p>The metric for which you want to get intent summary statistics.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Count</code> – The number of times the intent was invoked.</p></li>
-    /// <li>
-    /// <p><code>Success</code> – The number of times the intent succeeded.</p></li>
-    /// <li>
-    /// <p><code>Failure</code> – The number of times the intent failed.</p></li>
-    /// <li>
-    /// <p><code>Switched</code> – The number of times there was a switch to a different intent.</p></li>
-    /// <li>
-    /// <p><code>Dropped</code> – The number of times the user dropped the intent.</p></li>
+    /// <li> <p> <code>Count</code> – The number of times the intent was invoked.</p> </li>
+    /// <li> <p> <code>Success</code> – The number of times the intent succeeded.</p> </li>
+    /// <li> <p> <code>Failure</code> – The number of times the intent failed.</p> </li>
+    /// <li> <p> <code>Switched</code> – The number of times there was a switch to a different intent.</p> </li>
+    /// <li> <p> <code>Dropped</code> – The number of times the user dropped the intent.</p> </li>
     /// </ul>
     pub fn name(&self) -> &crate::types::AnalyticsIntentMetricName {
         &self.name
     }
     /// <p>The summary statistic to calculate.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Sum</code> – The total count for the category you provide in <code>name</code>.</p></li>
-    /// <li>
-    /// <p><code>Average</code> – The total count divided by the number of intents in the category you provide in <code>name</code>.</p></li>
-    /// <li>
-    /// <p><code>Max</code> – The highest count in the category you provide in <code>name</code>.</p></li>
+    /// <li> <p> <code>Sum</code> – The total count for the category you provide in <code>name</code>.</p> </li>
+    /// <li> <p> <code>Average</code> – The total count divided by the number of intents in the category you provide in <code>name</code>.</p> </li>
+    /// <li> <p> <code>Max</code> – The highest count in the category you provide in <code>name</code>.</p> </li>
     /// </ul>
     pub fn statistic(&self) -> &crate::types::AnalyticsMetricStatistic {
         &self.statistic
@@ -83,16 +67,11 @@ pub struct AnalyticsIntentMetricBuilder {
 impl AnalyticsIntentMetricBuilder {
     /// <p>The metric for which you want to get intent summary statistics.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Count</code> – The number of times the intent was invoked.</p></li>
-    /// <li>
-    /// <p><code>Success</code> – The number of times the intent succeeded.</p></li>
-    /// <li>
-    /// <p><code>Failure</code> – The number of times the intent failed.</p></li>
-    /// <li>
-    /// <p><code>Switched</code> – The number of times there was a switch to a different intent.</p></li>
-    /// <li>
-    /// <p><code>Dropped</code> – The number of times the user dropped the intent.</p></li>
+    /// <li> <p> <code>Count</code> – The number of times the intent was invoked.</p> </li>
+    /// <li> <p> <code>Success</code> – The number of times the intent succeeded.</p> </li>
+    /// <li> <p> <code>Failure</code> – The number of times the intent failed.</p> </li>
+    /// <li> <p> <code>Switched</code> – The number of times there was a switch to a different intent.</p> </li>
+    /// <li> <p> <code>Dropped</code> – The number of times the user dropped the intent.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn name(mut self, input: crate::types::AnalyticsIntentMetricName) -> Self {
@@ -101,16 +80,11 @@ impl AnalyticsIntentMetricBuilder {
     }
     /// <p>The metric for which you want to get intent summary statistics.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Count</code> – The number of times the intent was invoked.</p></li>
-    /// <li>
-    /// <p><code>Success</code> – The number of times the intent succeeded.</p></li>
-    /// <li>
-    /// <p><code>Failure</code> – The number of times the intent failed.</p></li>
-    /// <li>
-    /// <p><code>Switched</code> – The number of times there was a switch to a different intent.</p></li>
-    /// <li>
-    /// <p><code>Dropped</code> – The number of times the user dropped the intent.</p></li>
+    /// <li> <p> <code>Count</code> – The number of times the intent was invoked.</p> </li>
+    /// <li> <p> <code>Success</code> – The number of times the intent succeeded.</p> </li>
+    /// <li> <p> <code>Failure</code> – The number of times the intent failed.</p> </li>
+    /// <li> <p> <code>Switched</code> – The number of times there was a switch to a different intent.</p> </li>
+    /// <li> <p> <code>Dropped</code> – The number of times the user dropped the intent.</p> </li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::AnalyticsIntentMetricName>) -> Self {
         self.name = input;
@@ -118,28 +92,20 @@ impl AnalyticsIntentMetricBuilder {
     }
     /// <p>The metric for which you want to get intent summary statistics.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Count</code> – The number of times the intent was invoked.</p></li>
-    /// <li>
-    /// <p><code>Success</code> – The number of times the intent succeeded.</p></li>
-    /// <li>
-    /// <p><code>Failure</code> – The number of times the intent failed.</p></li>
-    /// <li>
-    /// <p><code>Switched</code> – The number of times there was a switch to a different intent.</p></li>
-    /// <li>
-    /// <p><code>Dropped</code> – The number of times the user dropped the intent.</p></li>
+    /// <li> <p> <code>Count</code> – The number of times the intent was invoked.</p> </li>
+    /// <li> <p> <code>Success</code> – The number of times the intent succeeded.</p> </li>
+    /// <li> <p> <code>Failure</code> – The number of times the intent failed.</p> </li>
+    /// <li> <p> <code>Switched</code> – The number of times there was a switch to a different intent.</p> </li>
+    /// <li> <p> <code>Dropped</code> – The number of times the user dropped the intent.</p> </li>
     /// </ul>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::AnalyticsIntentMetricName> {
         &self.name
     }
     /// <p>The summary statistic to calculate.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Sum</code> – The total count for the category you provide in <code>name</code>.</p></li>
-    /// <li>
-    /// <p><code>Average</code> – The total count divided by the number of intents in the category you provide in <code>name</code>.</p></li>
-    /// <li>
-    /// <p><code>Max</code> – The highest count in the category you provide in <code>name</code>.</p></li>
+    /// <li> <p> <code>Sum</code> – The total count for the category you provide in <code>name</code>.</p> </li>
+    /// <li> <p> <code>Average</code> – The total count divided by the number of intents in the category you provide in <code>name</code>.</p> </li>
+    /// <li> <p> <code>Max</code> – The highest count in the category you provide in <code>name</code>.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn statistic(mut self, input: crate::types::AnalyticsMetricStatistic) -> Self {
@@ -148,12 +114,9 @@ impl AnalyticsIntentMetricBuilder {
     }
     /// <p>The summary statistic to calculate.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Sum</code> – The total count for the category you provide in <code>name</code>.</p></li>
-    /// <li>
-    /// <p><code>Average</code> – The total count divided by the number of intents in the category you provide in <code>name</code>.</p></li>
-    /// <li>
-    /// <p><code>Max</code> – The highest count in the category you provide in <code>name</code>.</p></li>
+    /// <li> <p> <code>Sum</code> – The total count for the category you provide in <code>name</code>.</p> </li>
+    /// <li> <p> <code>Average</code> – The total count divided by the number of intents in the category you provide in <code>name</code>.</p> </li>
+    /// <li> <p> <code>Max</code> – The highest count in the category you provide in <code>name</code>.</p> </li>
     /// </ul>
     pub fn set_statistic(mut self, input: ::std::option::Option<crate::types::AnalyticsMetricStatistic>) -> Self {
         self.statistic = input;
@@ -161,12 +124,9 @@ impl AnalyticsIntentMetricBuilder {
     }
     /// <p>The summary statistic to calculate.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Sum</code> – The total count for the category you provide in <code>name</code>.</p></li>
-    /// <li>
-    /// <p><code>Average</code> – The total count divided by the number of intents in the category you provide in <code>name</code>.</p></li>
-    /// <li>
-    /// <p><code>Max</code> – The highest count in the category you provide in <code>name</code>.</p></li>
+    /// <li> <p> <code>Sum</code> – The total count for the category you provide in <code>name</code>.</p> </li>
+    /// <li> <p> <code>Average</code> – The total count divided by the number of intents in the category you provide in <code>name</code>.</p> </li>
+    /// <li> <p> <code>Max</code> – The highest count in the category you provide in <code>name</code>.</p> </li>
     /// </ul>
     pub fn get_statistic(&self) -> &::std::option::Option<crate::types::AnalyticsMetricStatistic> {
         &self.statistic

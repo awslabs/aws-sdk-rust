@@ -6,13 +6,13 @@
 pub struct DatabaseResponse {
     /// <p>The ID of a database in a Fleet Advisor collector inventory.</p>
     pub database_id: ::std::option::Option<::std::string::String>,
-    /// <p>The name of a database in a Fleet Advisor collector inventory.</p>
+    /// <p>The name of a database in a Fleet Advisor collector inventory. </p>
     pub database_name: ::std::option::Option<::std::string::String>,
-    /// <p>The IP address of a database in a Fleet Advisor collector inventory.</p>
+    /// <p>The IP address of a database in a Fleet Advisor collector inventory. </p>
     pub ip_address: ::std::option::Option<::std::string::String>,
-    /// <p>The number of schemas in a Fleet Advisor collector inventory database.</p>
+    /// <p>The number of schemas in a Fleet Advisor collector inventory database. </p>
     pub number_of_schemas: ::std::option::Option<i64>,
-    /// <p>The server name of a database in a Fleet Advisor collector inventory.</p>
+    /// <p>The server name of a database in a Fleet Advisor collector inventory. </p>
     pub server: ::std::option::Option<crate::types::ServerShortInfoResponse>,
     /// <p>The software details of a database in a Fleet Advisor collector inventory, such as database engine and version.</p>
     pub software_details: ::std::option::Option<crate::types::DatabaseInstanceSoftwareDetailsResponse>,
@@ -24,19 +24,19 @@ impl DatabaseResponse {
     pub fn database_id(&self) -> ::std::option::Option<&str> {
         self.database_id.as_deref()
     }
-    /// <p>The name of a database in a Fleet Advisor collector inventory.</p>
+    /// <p>The name of a database in a Fleet Advisor collector inventory. </p>
     pub fn database_name(&self) -> ::std::option::Option<&str> {
         self.database_name.as_deref()
     }
-    /// <p>The IP address of a database in a Fleet Advisor collector inventory.</p>
+    /// <p>The IP address of a database in a Fleet Advisor collector inventory. </p>
     pub fn ip_address(&self) -> ::std::option::Option<&str> {
         self.ip_address.as_deref()
     }
-    /// <p>The number of schemas in a Fleet Advisor collector inventory database.</p>
+    /// <p>The number of schemas in a Fleet Advisor collector inventory database. </p>
     pub fn number_of_schemas(&self) -> ::std::option::Option<i64> {
         self.number_of_schemas
     }
-    /// <p>The server name of a database in a Fleet Advisor collector inventory.</p>
+    /// <p>The server name of a database in a Fleet Advisor collector inventory. </p>
     pub fn server(&self) -> ::std::option::Option<&crate::types::ServerShortInfoResponse> {
         self.server.as_ref()
     }
@@ -85,59 +85,59 @@ impl DatabaseResponseBuilder {
     pub fn get_database_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.database_id
     }
-    /// <p>The name of a database in a Fleet Advisor collector inventory.</p>
+    /// <p>The name of a database in a Fleet Advisor collector inventory. </p>
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of a database in a Fleet Advisor collector inventory.</p>
+    /// <p>The name of a database in a Fleet Advisor collector inventory. </p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
-    /// <p>The name of a database in a Fleet Advisor collector inventory.</p>
+    /// <p>The name of a database in a Fleet Advisor collector inventory. </p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.database_name
     }
-    /// <p>The IP address of a database in a Fleet Advisor collector inventory.</p>
+    /// <p>The IP address of a database in a Fleet Advisor collector inventory. </p>
     pub fn ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_address = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The IP address of a database in a Fleet Advisor collector inventory.</p>
+    /// <p>The IP address of a database in a Fleet Advisor collector inventory. </p>
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_address = input;
         self
     }
-    /// <p>The IP address of a database in a Fleet Advisor collector inventory.</p>
+    /// <p>The IP address of a database in a Fleet Advisor collector inventory. </p>
     pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.ip_address
     }
-    /// <p>The number of schemas in a Fleet Advisor collector inventory database.</p>
+    /// <p>The number of schemas in a Fleet Advisor collector inventory database. </p>
     pub fn number_of_schemas(mut self, input: i64) -> Self {
         self.number_of_schemas = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of schemas in a Fleet Advisor collector inventory database.</p>
+    /// <p>The number of schemas in a Fleet Advisor collector inventory database. </p>
     pub fn set_number_of_schemas(mut self, input: ::std::option::Option<i64>) -> Self {
         self.number_of_schemas = input;
         self
     }
-    /// <p>The number of schemas in a Fleet Advisor collector inventory database.</p>
+    /// <p>The number of schemas in a Fleet Advisor collector inventory database. </p>
     pub fn get_number_of_schemas(&self) -> &::std::option::Option<i64> {
         &self.number_of_schemas
     }
-    /// <p>The server name of a database in a Fleet Advisor collector inventory.</p>
+    /// <p>The server name of a database in a Fleet Advisor collector inventory. </p>
     pub fn server(mut self, input: crate::types::ServerShortInfoResponse) -> Self {
         self.server = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The server name of a database in a Fleet Advisor collector inventory.</p>
+    /// <p>The server name of a database in a Fleet Advisor collector inventory. </p>
     pub fn set_server(mut self, input: ::std::option::Option<crate::types::ServerShortInfoResponse>) -> Self {
         self.server = input;
         self
     }
-    /// <p>The server name of a database in a Fleet Advisor collector inventory.</p>
+    /// <p>The server name of a database in a Fleet Advisor collector inventory. </p>
     pub fn get_server(&self) -> &::std::option::Option<crate::types::ServerShortInfoResponse> {
         &self.server
     }

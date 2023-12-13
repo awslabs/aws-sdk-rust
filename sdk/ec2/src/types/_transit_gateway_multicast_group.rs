@@ -14,7 +14,7 @@ pub struct TransitGatewayMulticastGroup {
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of resource, for example a VPC attachment.</p>
     pub resource_type: ::std::option::Option<crate::types::TransitGatewayAttachmentResourceType>,
-    /// <p>The ID of the Amazon Web Services account that owns the transit gateway multicast domain group resource.</p>
+    /// <p> The ID of the Amazon Web Services account that owns the transit gateway multicast domain group resource.</p>
     pub resource_owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the transit gateway attachment.</p>
     pub network_interface_id: ::std::option::Option<::std::string::String>,
@@ -48,7 +48,7 @@ impl TransitGatewayMulticastGroup {
     pub fn resource_type(&self) -> ::std::option::Option<&crate::types::TransitGatewayAttachmentResourceType> {
         self.resource_type.as_ref()
     }
-    /// <p>The ID of the Amazon Web Services account that owns the transit gateway multicast domain group resource.</p>
+    /// <p> The ID of the Amazon Web Services account that owns the transit gateway multicast domain group resource.</p>
     pub fn resource_owner_id(&self) -> ::std::option::Option<&str> {
         self.resource_owner_id.as_deref()
     }
@@ -167,17 +167,17 @@ impl TransitGatewayMulticastGroupBuilder {
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::TransitGatewayAttachmentResourceType> {
         &self.resource_type
     }
-    /// <p>The ID of the Amazon Web Services account that owns the transit gateway multicast domain group resource.</p>
+    /// <p> The ID of the Amazon Web Services account that owns the transit gateway multicast domain group resource.</p>
     pub fn resource_owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_owner_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the Amazon Web Services account that owns the transit gateway multicast domain group resource.</p>
+    /// <p> The ID of the Amazon Web Services account that owns the transit gateway multicast domain group resource.</p>
     pub fn set_resource_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_owner_id = input;
         self
     }
-    /// <p>The ID of the Amazon Web Services account that owns the transit gateway multicast domain group resource.</p>
+    /// <p> The ID of the Amazon Web Services account that owns the transit gateway multicast domain group resource.</p>
     pub fn get_resource_owner_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_owner_id
     }

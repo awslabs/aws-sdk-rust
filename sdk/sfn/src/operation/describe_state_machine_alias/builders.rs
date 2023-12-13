@@ -23,16 +23,12 @@ impl DescribeStateMachineAliasInputBuilder {
 /// Fluent builder constructing a request to `DescribeStateMachineAlias`.
 ///
 /// <p>Returns details about a state machine <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a>.</p>
-/// <p><b>Related operations:</b></p>
+/// <p> <b>Related operations:</b> </p>
 /// <ul>
-/// <li>
-/// <p><code>CreateStateMachineAlias</code></p></li>
-/// <li>
-/// <p><code>ListStateMachineAliases</code></p></li>
-/// <li>
-/// <p><code>UpdateStateMachineAlias</code></p></li>
-/// <li>
-/// <p><code>DeleteStateMachineAlias</code></p></li>
+/// <li> <p> <code>CreateStateMachineAlias</code> </p> </li>
+/// <li> <p> <code>ListStateMachineAliases</code> </p> </li>
+/// <li> <p> <code>UpdateStateMachineAlias</code> </p> </li>
+/// <li> <p> <code>DeleteStateMachineAlias</code> </p> </li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeStateMachineAliasFluentBuilder {

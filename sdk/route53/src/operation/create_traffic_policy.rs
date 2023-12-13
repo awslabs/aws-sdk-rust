@@ -248,7 +248,7 @@ pub enum CreateTrafficPolicyError {
     InvalidTrafficPolicyDocument(crate::types::error::InvalidTrafficPolicyDocument),
     /// <p>This traffic policy can't be created because the current account has reached the limit on the number of traffic policies.</p>
     /// <p>For information about default limits, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
-    /// <p>To get the current limit for an account, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetAccountLimit.html">GetAccountLimit</a>.</p>
+    /// <p>To get the current limit for an account, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetAccountLimit.html">GetAccountLimit</a>. </p>
     /// <p>To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a> with the Amazon Web Services Support Center.</p>
     TooManyTrafficPolicies(crate::types::error::TooManyTrafficPolicies),
     /// <p>A traffic policy that has the same value for <code>Name</code> already exists.</p>

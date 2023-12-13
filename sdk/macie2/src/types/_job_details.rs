@@ -6,22 +6,16 @@
 pub struct JobDetails {
     /// <p>Specifies whether any one-time or recurring jobs are configured to analyze data in the bucket. Possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>TRUE - The bucket is explicitly included in the bucket definition (S3BucketDefinitionForJob) for one or more jobs and at least one of those jobs has a status other than CANCELLED. Or the bucket matched the bucket criteria (S3BucketCriteriaForJob) for at least one job that previously ran.</p></li>
-    /// <li>
-    /// <p>FALSE - The bucket isn't explicitly included in the bucket definition (S3BucketDefinitionForJob) for any jobs, all the jobs that explicitly include the bucket in their bucket definitions have a status of CANCELLED, or the bucket didn't match the bucket criteria (S3BucketCriteriaForJob) for any jobs that previously ran.</p></li>
-    /// <li>
-    /// <p>UNKNOWN - An exception occurred when Amazon Macie attempted to retrieve job data for the bucket.</p></li>
+    /// <li><p>TRUE - The bucket is explicitly included in the bucket definition (S3BucketDefinitionForJob) for one or more jobs and at least one of those jobs has a status other than CANCELLED. Or the bucket matched the bucket criteria (S3BucketCriteriaForJob) for at least one job that previously ran.</p></li>
+    /// <li><p>FALSE - The bucket isn't explicitly included in the bucket definition (S3BucketDefinitionForJob) for any jobs, all the jobs that explicitly include the bucket in their bucket definitions have a status of CANCELLED, or the bucket didn't match the bucket criteria (S3BucketCriteriaForJob) for any jobs that previously ran.</p></li>
+    /// <li><p>UNKNOWN - An exception occurred when Amazon Macie attempted to retrieve job data for the bucket.</p></li>
     /// </ul>
     pub is_defined_in_job: ::std::option::Option<crate::types::IsDefinedInJob>,
     /// <p>Specifies whether any recurring jobs are configured to analyze data in the bucket. Possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>TRUE - The bucket is explicitly included in the bucket definition (S3BucketDefinitionForJob) for one or more recurring jobs or the bucket matches the bucket criteria (S3BucketCriteriaForJob) for one or more recurring jobs. At least one of those jobs has a status other than CANCELLED.</p></li>
-    /// <li>
-    /// <p>FALSE - The bucket isn't explicitly included in the bucket definition (S3BucketDefinitionForJob) for any recurring jobs, the bucket doesn't match the bucket criteria (S3BucketCriteriaForJob) for any recurring jobs, or all the recurring jobs that are configured to analyze data in the bucket have a status of CANCELLED.</p></li>
-    /// <li>
-    /// <p>UNKNOWN - An exception occurred when Amazon Macie attempted to retrieve job data for the bucket.</p></li>
+    /// <li><p>TRUE - The bucket is explicitly included in the bucket definition (S3BucketDefinitionForJob) for one or more recurring jobs or the bucket matches the bucket criteria (S3BucketCriteriaForJob) for one or more recurring jobs. At least one of those jobs has a status other than CANCELLED.</p></li>
+    /// <li><p>FALSE - The bucket isn't explicitly included in the bucket definition (S3BucketDefinitionForJob) for any recurring jobs, the bucket doesn't match the bucket criteria (S3BucketCriteriaForJob) for any recurring jobs, or all the recurring jobs that are configured to analyze data in the bucket have a status of CANCELLED.</p></li>
+    /// <li><p>UNKNOWN - An exception occurred when Amazon Macie attempted to retrieve job data for the bucket.</p></li>
     /// </ul>
     pub is_monitored_by_job: ::std::option::Option<crate::types::IsMonitoredByJob>,
     /// <p>The unique identifier for the job that ran most recently and is configured to analyze data in the bucket, either the latest run of a recurring job or the only run of a one-time job.</p>
@@ -34,24 +28,18 @@ pub struct JobDetails {
 impl JobDetails {
     /// <p>Specifies whether any one-time or recurring jobs are configured to analyze data in the bucket. Possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>TRUE - The bucket is explicitly included in the bucket definition (S3BucketDefinitionForJob) for one or more jobs and at least one of those jobs has a status other than CANCELLED. Or the bucket matched the bucket criteria (S3BucketCriteriaForJob) for at least one job that previously ran.</p></li>
-    /// <li>
-    /// <p>FALSE - The bucket isn't explicitly included in the bucket definition (S3BucketDefinitionForJob) for any jobs, all the jobs that explicitly include the bucket in their bucket definitions have a status of CANCELLED, or the bucket didn't match the bucket criteria (S3BucketCriteriaForJob) for any jobs that previously ran.</p></li>
-    /// <li>
-    /// <p>UNKNOWN - An exception occurred when Amazon Macie attempted to retrieve job data for the bucket.</p></li>
+    /// <li><p>TRUE - The bucket is explicitly included in the bucket definition (S3BucketDefinitionForJob) for one or more jobs and at least one of those jobs has a status other than CANCELLED. Or the bucket matched the bucket criteria (S3BucketCriteriaForJob) for at least one job that previously ran.</p></li>
+    /// <li><p>FALSE - The bucket isn't explicitly included in the bucket definition (S3BucketDefinitionForJob) for any jobs, all the jobs that explicitly include the bucket in their bucket definitions have a status of CANCELLED, or the bucket didn't match the bucket criteria (S3BucketCriteriaForJob) for any jobs that previously ran.</p></li>
+    /// <li><p>UNKNOWN - An exception occurred when Amazon Macie attempted to retrieve job data for the bucket.</p></li>
     /// </ul>
     pub fn is_defined_in_job(&self) -> ::std::option::Option<&crate::types::IsDefinedInJob> {
         self.is_defined_in_job.as_ref()
     }
     /// <p>Specifies whether any recurring jobs are configured to analyze data in the bucket. Possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>TRUE - The bucket is explicitly included in the bucket definition (S3BucketDefinitionForJob) for one or more recurring jobs or the bucket matches the bucket criteria (S3BucketCriteriaForJob) for one or more recurring jobs. At least one of those jobs has a status other than CANCELLED.</p></li>
-    /// <li>
-    /// <p>FALSE - The bucket isn't explicitly included in the bucket definition (S3BucketDefinitionForJob) for any recurring jobs, the bucket doesn't match the bucket criteria (S3BucketCriteriaForJob) for any recurring jobs, or all the recurring jobs that are configured to analyze data in the bucket have a status of CANCELLED.</p></li>
-    /// <li>
-    /// <p>UNKNOWN - An exception occurred when Amazon Macie attempted to retrieve job data for the bucket.</p></li>
+    /// <li><p>TRUE - The bucket is explicitly included in the bucket definition (S3BucketDefinitionForJob) for one or more recurring jobs or the bucket matches the bucket criteria (S3BucketCriteriaForJob) for one or more recurring jobs. At least one of those jobs has a status other than CANCELLED.</p></li>
+    /// <li><p>FALSE - The bucket isn't explicitly included in the bucket definition (S3BucketDefinitionForJob) for any recurring jobs, the bucket doesn't match the bucket criteria (S3BucketCriteriaForJob) for any recurring jobs, or all the recurring jobs that are configured to analyze data in the bucket have a status of CANCELLED.</p></li>
+    /// <li><p>UNKNOWN - An exception occurred when Amazon Macie attempted to retrieve job data for the bucket.</p></li>
     /// </ul>
     pub fn is_monitored_by_job(&self) -> ::std::option::Option<&crate::types::IsMonitoredByJob> {
         self.is_monitored_by_job.as_ref()
@@ -86,12 +74,9 @@ pub struct JobDetailsBuilder {
 impl JobDetailsBuilder {
     /// <p>Specifies whether any one-time or recurring jobs are configured to analyze data in the bucket. Possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>TRUE - The bucket is explicitly included in the bucket definition (S3BucketDefinitionForJob) for one or more jobs and at least one of those jobs has a status other than CANCELLED. Or the bucket matched the bucket criteria (S3BucketCriteriaForJob) for at least one job that previously ran.</p></li>
-    /// <li>
-    /// <p>FALSE - The bucket isn't explicitly included in the bucket definition (S3BucketDefinitionForJob) for any jobs, all the jobs that explicitly include the bucket in their bucket definitions have a status of CANCELLED, or the bucket didn't match the bucket criteria (S3BucketCriteriaForJob) for any jobs that previously ran.</p></li>
-    /// <li>
-    /// <p>UNKNOWN - An exception occurred when Amazon Macie attempted to retrieve job data for the bucket.</p></li>
+    /// <li><p>TRUE - The bucket is explicitly included in the bucket definition (S3BucketDefinitionForJob) for one or more jobs and at least one of those jobs has a status other than CANCELLED. Or the bucket matched the bucket criteria (S3BucketCriteriaForJob) for at least one job that previously ran.</p></li>
+    /// <li><p>FALSE - The bucket isn't explicitly included in the bucket definition (S3BucketDefinitionForJob) for any jobs, all the jobs that explicitly include the bucket in their bucket definitions have a status of CANCELLED, or the bucket didn't match the bucket criteria (S3BucketCriteriaForJob) for any jobs that previously ran.</p></li>
+    /// <li><p>UNKNOWN - An exception occurred when Amazon Macie attempted to retrieve job data for the bucket.</p></li>
     /// </ul>
     pub fn is_defined_in_job(mut self, input: crate::types::IsDefinedInJob) -> Self {
         self.is_defined_in_job = ::std::option::Option::Some(input);
@@ -99,12 +84,9 @@ impl JobDetailsBuilder {
     }
     /// <p>Specifies whether any one-time or recurring jobs are configured to analyze data in the bucket. Possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>TRUE - The bucket is explicitly included in the bucket definition (S3BucketDefinitionForJob) for one or more jobs and at least one of those jobs has a status other than CANCELLED. Or the bucket matched the bucket criteria (S3BucketCriteriaForJob) for at least one job that previously ran.</p></li>
-    /// <li>
-    /// <p>FALSE - The bucket isn't explicitly included in the bucket definition (S3BucketDefinitionForJob) for any jobs, all the jobs that explicitly include the bucket in their bucket definitions have a status of CANCELLED, or the bucket didn't match the bucket criteria (S3BucketCriteriaForJob) for any jobs that previously ran.</p></li>
-    /// <li>
-    /// <p>UNKNOWN - An exception occurred when Amazon Macie attempted to retrieve job data for the bucket.</p></li>
+    /// <li><p>TRUE - The bucket is explicitly included in the bucket definition (S3BucketDefinitionForJob) for one or more jobs and at least one of those jobs has a status other than CANCELLED. Or the bucket matched the bucket criteria (S3BucketCriteriaForJob) for at least one job that previously ran.</p></li>
+    /// <li><p>FALSE - The bucket isn't explicitly included in the bucket definition (S3BucketDefinitionForJob) for any jobs, all the jobs that explicitly include the bucket in their bucket definitions have a status of CANCELLED, or the bucket didn't match the bucket criteria (S3BucketCriteriaForJob) for any jobs that previously ran.</p></li>
+    /// <li><p>UNKNOWN - An exception occurred when Amazon Macie attempted to retrieve job data for the bucket.</p></li>
     /// </ul>
     pub fn set_is_defined_in_job(mut self, input: ::std::option::Option<crate::types::IsDefinedInJob>) -> Self {
         self.is_defined_in_job = input;
@@ -112,24 +94,18 @@ impl JobDetailsBuilder {
     }
     /// <p>Specifies whether any one-time or recurring jobs are configured to analyze data in the bucket. Possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>TRUE - The bucket is explicitly included in the bucket definition (S3BucketDefinitionForJob) for one or more jobs and at least one of those jobs has a status other than CANCELLED. Or the bucket matched the bucket criteria (S3BucketCriteriaForJob) for at least one job that previously ran.</p></li>
-    /// <li>
-    /// <p>FALSE - The bucket isn't explicitly included in the bucket definition (S3BucketDefinitionForJob) for any jobs, all the jobs that explicitly include the bucket in their bucket definitions have a status of CANCELLED, or the bucket didn't match the bucket criteria (S3BucketCriteriaForJob) for any jobs that previously ran.</p></li>
-    /// <li>
-    /// <p>UNKNOWN - An exception occurred when Amazon Macie attempted to retrieve job data for the bucket.</p></li>
+    /// <li><p>TRUE - The bucket is explicitly included in the bucket definition (S3BucketDefinitionForJob) for one or more jobs and at least one of those jobs has a status other than CANCELLED. Or the bucket matched the bucket criteria (S3BucketCriteriaForJob) for at least one job that previously ran.</p></li>
+    /// <li><p>FALSE - The bucket isn't explicitly included in the bucket definition (S3BucketDefinitionForJob) for any jobs, all the jobs that explicitly include the bucket in their bucket definitions have a status of CANCELLED, or the bucket didn't match the bucket criteria (S3BucketCriteriaForJob) for any jobs that previously ran.</p></li>
+    /// <li><p>UNKNOWN - An exception occurred when Amazon Macie attempted to retrieve job data for the bucket.</p></li>
     /// </ul>
     pub fn get_is_defined_in_job(&self) -> &::std::option::Option<crate::types::IsDefinedInJob> {
         &self.is_defined_in_job
     }
     /// <p>Specifies whether any recurring jobs are configured to analyze data in the bucket. Possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>TRUE - The bucket is explicitly included in the bucket definition (S3BucketDefinitionForJob) for one or more recurring jobs or the bucket matches the bucket criteria (S3BucketCriteriaForJob) for one or more recurring jobs. At least one of those jobs has a status other than CANCELLED.</p></li>
-    /// <li>
-    /// <p>FALSE - The bucket isn't explicitly included in the bucket definition (S3BucketDefinitionForJob) for any recurring jobs, the bucket doesn't match the bucket criteria (S3BucketCriteriaForJob) for any recurring jobs, or all the recurring jobs that are configured to analyze data in the bucket have a status of CANCELLED.</p></li>
-    /// <li>
-    /// <p>UNKNOWN - An exception occurred when Amazon Macie attempted to retrieve job data for the bucket.</p></li>
+    /// <li><p>TRUE - The bucket is explicitly included in the bucket definition (S3BucketDefinitionForJob) for one or more recurring jobs or the bucket matches the bucket criteria (S3BucketCriteriaForJob) for one or more recurring jobs. At least one of those jobs has a status other than CANCELLED.</p></li>
+    /// <li><p>FALSE - The bucket isn't explicitly included in the bucket definition (S3BucketDefinitionForJob) for any recurring jobs, the bucket doesn't match the bucket criteria (S3BucketCriteriaForJob) for any recurring jobs, or all the recurring jobs that are configured to analyze data in the bucket have a status of CANCELLED.</p></li>
+    /// <li><p>UNKNOWN - An exception occurred when Amazon Macie attempted to retrieve job data for the bucket.</p></li>
     /// </ul>
     pub fn is_monitored_by_job(mut self, input: crate::types::IsMonitoredByJob) -> Self {
         self.is_monitored_by_job = ::std::option::Option::Some(input);
@@ -137,12 +113,9 @@ impl JobDetailsBuilder {
     }
     /// <p>Specifies whether any recurring jobs are configured to analyze data in the bucket. Possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>TRUE - The bucket is explicitly included in the bucket definition (S3BucketDefinitionForJob) for one or more recurring jobs or the bucket matches the bucket criteria (S3BucketCriteriaForJob) for one or more recurring jobs. At least one of those jobs has a status other than CANCELLED.</p></li>
-    /// <li>
-    /// <p>FALSE - The bucket isn't explicitly included in the bucket definition (S3BucketDefinitionForJob) for any recurring jobs, the bucket doesn't match the bucket criteria (S3BucketCriteriaForJob) for any recurring jobs, or all the recurring jobs that are configured to analyze data in the bucket have a status of CANCELLED.</p></li>
-    /// <li>
-    /// <p>UNKNOWN - An exception occurred when Amazon Macie attempted to retrieve job data for the bucket.</p></li>
+    /// <li><p>TRUE - The bucket is explicitly included in the bucket definition (S3BucketDefinitionForJob) for one or more recurring jobs or the bucket matches the bucket criteria (S3BucketCriteriaForJob) for one or more recurring jobs. At least one of those jobs has a status other than CANCELLED.</p></li>
+    /// <li><p>FALSE - The bucket isn't explicitly included in the bucket definition (S3BucketDefinitionForJob) for any recurring jobs, the bucket doesn't match the bucket criteria (S3BucketCriteriaForJob) for any recurring jobs, or all the recurring jobs that are configured to analyze data in the bucket have a status of CANCELLED.</p></li>
+    /// <li><p>UNKNOWN - An exception occurred when Amazon Macie attempted to retrieve job data for the bucket.</p></li>
     /// </ul>
     pub fn set_is_monitored_by_job(mut self, input: ::std::option::Option<crate::types::IsMonitoredByJob>) -> Self {
         self.is_monitored_by_job = input;
@@ -150,12 +123,9 @@ impl JobDetailsBuilder {
     }
     /// <p>Specifies whether any recurring jobs are configured to analyze data in the bucket. Possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>TRUE - The bucket is explicitly included in the bucket definition (S3BucketDefinitionForJob) for one or more recurring jobs or the bucket matches the bucket criteria (S3BucketCriteriaForJob) for one or more recurring jobs. At least one of those jobs has a status other than CANCELLED.</p></li>
-    /// <li>
-    /// <p>FALSE - The bucket isn't explicitly included in the bucket definition (S3BucketDefinitionForJob) for any recurring jobs, the bucket doesn't match the bucket criteria (S3BucketCriteriaForJob) for any recurring jobs, or all the recurring jobs that are configured to analyze data in the bucket have a status of CANCELLED.</p></li>
-    /// <li>
-    /// <p>UNKNOWN - An exception occurred when Amazon Macie attempted to retrieve job data for the bucket.</p></li>
+    /// <li><p>TRUE - The bucket is explicitly included in the bucket definition (S3BucketDefinitionForJob) for one or more recurring jobs or the bucket matches the bucket criteria (S3BucketCriteriaForJob) for one or more recurring jobs. At least one of those jobs has a status other than CANCELLED.</p></li>
+    /// <li><p>FALSE - The bucket isn't explicitly included in the bucket definition (S3BucketDefinitionForJob) for any recurring jobs, the bucket doesn't match the bucket criteria (S3BucketCriteriaForJob) for any recurring jobs, or all the recurring jobs that are configured to analyze data in the bucket have a status of CANCELLED.</p></li>
+    /// <li><p>UNKNOWN - An exception occurred when Amazon Macie attempted to retrieve job data for the bucket.</p></li>
     /// </ul>
     pub fn get_is_monitored_by_job(&self) -> &::std::option::Option<crate::types::IsMonitoredByJob> {
         &self.is_monitored_by_job

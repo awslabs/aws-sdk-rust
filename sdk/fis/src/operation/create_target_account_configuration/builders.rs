@@ -22,7 +22,7 @@ impl CreateTargetAccountConfigurationInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateTargetAccountConfiguration`.
 ///
-/// <p>Creates a target account configuration for the experiment template. A target account configuration is required when <code>accountTargeting</code> of <code>experimentOptions</code> is set to <code>multi-account</code>. For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/experiment-options.html">experiment options</a> in the <i>Fault Injection Simulator User Guide</i>.</p>
+/// <p>Creates a target account configuration for the experiment template. A target account configuration is required when <code>accountTargeting</code> of <code>experimentOptions</code> is set to <code>multi-account</code>. For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/experiment-options.html">experiment options</a> in the <i>Fault Injection Simulator User Guide</i>. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateTargetAccountConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

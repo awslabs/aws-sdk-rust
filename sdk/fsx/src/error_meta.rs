@@ -55,9 +55,9 @@ pub enum Error {
     MissingFileSystemConfiguration(crate::types::error::MissingFileSystemConfiguration),
     /// <p>A volume configuration is required for this operation.</p>
     MissingVolumeConfiguration(crate::types::error::MissingVolumeConfiguration),
-    /// <p>The resource specified for the tagging operation is not a resource type owned by Amazon FSx. Use the API of the relevant service to perform the operation.</p>
+    /// <p>The resource specified for the tagging operation is not a resource type owned by Amazon FSx. Use the API of the relevant service to perform the operation. </p>
     NotServiceResourceError(crate::types::error::NotServiceResourceError),
-    /// <p>The resource specified does not support tagging.</p>
+    /// <p>The resource specified does not support tagging. </p>
     ResourceDoesNotSupportTagging(crate::types::error::ResourceDoesNotSupportTagging),
     /// <p>The resource specified by the Amazon Resource Name (ARN) can't be found.</p>
     ResourceNotFound(crate::types::error::ResourceNotFound),

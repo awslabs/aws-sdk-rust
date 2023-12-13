@@ -6,41 +6,33 @@
 pub struct RevisionLocation {
     /// <p>The type of application revision:</p>
     /// <ul>
-    /// <li>
-    /// <p>S3: An application revision stored in Amazon S3.</p></li>
-    /// <li>
-    /// <p>GitHub: An application revision stored in GitHub (EC2/On-premises deployments only).</p></li>
-    /// <li>
-    /// <p>String: A YAML-formatted or JSON-formatted string (Lambda deployments only).</p></li>
-    /// <li>
-    /// <p>AppSpecContent: An <code>AppSpecContent</code> object that contains the contents of an AppSpec file for an Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML stored as a RawString.</p></li>
+    /// <li> <p>S3: An application revision stored in Amazon S3.</p> </li>
+    /// <li> <p>GitHub: An application revision stored in GitHub (EC2/On-premises deployments only).</p> </li>
+    /// <li> <p>String: A YAML-formatted or JSON-formatted string (Lambda deployments only).</p> </li>
+    /// <li> <p>AppSpecContent: An <code>AppSpecContent</code> object that contains the contents of an AppSpec file for an Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML stored as a RawString.</p> </li>
     /// </ul>
     pub revision_type: ::std::option::Option<crate::types::RevisionLocationType>,
-    /// <p>Information about the location of a revision stored in Amazon S3.</p>
+    /// <p>Information about the location of a revision stored in Amazon S3. </p>
     pub s3_location: ::std::option::Option<crate::types::S3Location>,
     /// <p>Information about the location of application artifacts stored in GitHub.</p>
     pub git_hub_location: ::std::option::Option<crate::types::GitHubLocation>,
     /// <p>Information about the location of an Lambda deployment revision stored as a RawString.</p>
     pub string: ::std::option::Option<crate::types::RawString>,
-    /// <p>The content of an AppSpec file for an Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML and stored as a RawString.</p>
+    /// <p> The content of an AppSpec file for an Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML and stored as a RawString. </p>
     pub app_spec_content: ::std::option::Option<crate::types::AppSpecContent>,
 }
 impl RevisionLocation {
     /// <p>The type of application revision:</p>
     /// <ul>
-    /// <li>
-    /// <p>S3: An application revision stored in Amazon S3.</p></li>
-    /// <li>
-    /// <p>GitHub: An application revision stored in GitHub (EC2/On-premises deployments only).</p></li>
-    /// <li>
-    /// <p>String: A YAML-formatted or JSON-formatted string (Lambda deployments only).</p></li>
-    /// <li>
-    /// <p>AppSpecContent: An <code>AppSpecContent</code> object that contains the contents of an AppSpec file for an Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML stored as a RawString.</p></li>
+    /// <li> <p>S3: An application revision stored in Amazon S3.</p> </li>
+    /// <li> <p>GitHub: An application revision stored in GitHub (EC2/On-premises deployments only).</p> </li>
+    /// <li> <p>String: A YAML-formatted or JSON-formatted string (Lambda deployments only).</p> </li>
+    /// <li> <p>AppSpecContent: An <code>AppSpecContent</code> object that contains the contents of an AppSpec file for an Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML stored as a RawString.</p> </li>
     /// </ul>
     pub fn revision_type(&self) -> ::std::option::Option<&crate::types::RevisionLocationType> {
         self.revision_type.as_ref()
     }
-    /// <p>Information about the location of a revision stored in Amazon S3.</p>
+    /// <p>Information about the location of a revision stored in Amazon S3. </p>
     pub fn s3_location(&self) -> ::std::option::Option<&crate::types::S3Location> {
         self.s3_location.as_ref()
     }
@@ -52,7 +44,7 @@ impl RevisionLocation {
     pub fn string(&self) -> ::std::option::Option<&crate::types::RawString> {
         self.string.as_ref()
     }
-    /// <p>The content of an AppSpec file for an Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML and stored as a RawString.</p>
+    /// <p> The content of an AppSpec file for an Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML and stored as a RawString. </p>
     pub fn app_spec_content(&self) -> ::std::option::Option<&crate::types::AppSpecContent> {
         self.app_spec_content.as_ref()
     }
@@ -77,14 +69,10 @@ pub struct RevisionLocationBuilder {
 impl RevisionLocationBuilder {
     /// <p>The type of application revision:</p>
     /// <ul>
-    /// <li>
-    /// <p>S3: An application revision stored in Amazon S3.</p></li>
-    /// <li>
-    /// <p>GitHub: An application revision stored in GitHub (EC2/On-premises deployments only).</p></li>
-    /// <li>
-    /// <p>String: A YAML-formatted or JSON-formatted string (Lambda deployments only).</p></li>
-    /// <li>
-    /// <p>AppSpecContent: An <code>AppSpecContent</code> object that contains the contents of an AppSpec file for an Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML stored as a RawString.</p></li>
+    /// <li> <p>S3: An application revision stored in Amazon S3.</p> </li>
+    /// <li> <p>GitHub: An application revision stored in GitHub (EC2/On-premises deployments only).</p> </li>
+    /// <li> <p>String: A YAML-formatted or JSON-formatted string (Lambda deployments only).</p> </li>
+    /// <li> <p>AppSpecContent: An <code>AppSpecContent</code> object that contains the contents of an AppSpec file for an Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML stored as a RawString.</p> </li>
     /// </ul>
     pub fn revision_type(mut self, input: crate::types::RevisionLocationType) -> Self {
         self.revision_type = ::std::option::Option::Some(input);
@@ -92,14 +80,10 @@ impl RevisionLocationBuilder {
     }
     /// <p>The type of application revision:</p>
     /// <ul>
-    /// <li>
-    /// <p>S3: An application revision stored in Amazon S3.</p></li>
-    /// <li>
-    /// <p>GitHub: An application revision stored in GitHub (EC2/On-premises deployments only).</p></li>
-    /// <li>
-    /// <p>String: A YAML-formatted or JSON-formatted string (Lambda deployments only).</p></li>
-    /// <li>
-    /// <p>AppSpecContent: An <code>AppSpecContent</code> object that contains the contents of an AppSpec file for an Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML stored as a RawString.</p></li>
+    /// <li> <p>S3: An application revision stored in Amazon S3.</p> </li>
+    /// <li> <p>GitHub: An application revision stored in GitHub (EC2/On-premises deployments only).</p> </li>
+    /// <li> <p>String: A YAML-formatted or JSON-formatted string (Lambda deployments only).</p> </li>
+    /// <li> <p>AppSpecContent: An <code>AppSpecContent</code> object that contains the contents of an AppSpec file for an Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML stored as a RawString.</p> </li>
     /// </ul>
     pub fn set_revision_type(mut self, input: ::std::option::Option<crate::types::RevisionLocationType>) -> Self {
         self.revision_type = input;
@@ -107,29 +91,25 @@ impl RevisionLocationBuilder {
     }
     /// <p>The type of application revision:</p>
     /// <ul>
-    /// <li>
-    /// <p>S3: An application revision stored in Amazon S3.</p></li>
-    /// <li>
-    /// <p>GitHub: An application revision stored in GitHub (EC2/On-premises deployments only).</p></li>
-    /// <li>
-    /// <p>String: A YAML-formatted or JSON-formatted string (Lambda deployments only).</p></li>
-    /// <li>
-    /// <p>AppSpecContent: An <code>AppSpecContent</code> object that contains the contents of an AppSpec file for an Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML stored as a RawString.</p></li>
+    /// <li> <p>S3: An application revision stored in Amazon S3.</p> </li>
+    /// <li> <p>GitHub: An application revision stored in GitHub (EC2/On-premises deployments only).</p> </li>
+    /// <li> <p>String: A YAML-formatted or JSON-formatted string (Lambda deployments only).</p> </li>
+    /// <li> <p>AppSpecContent: An <code>AppSpecContent</code> object that contains the contents of an AppSpec file for an Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML stored as a RawString.</p> </li>
     /// </ul>
     pub fn get_revision_type(&self) -> &::std::option::Option<crate::types::RevisionLocationType> {
         &self.revision_type
     }
-    /// <p>Information about the location of a revision stored in Amazon S3.</p>
+    /// <p>Information about the location of a revision stored in Amazon S3. </p>
     pub fn s3_location(mut self, input: crate::types::S3Location) -> Self {
         self.s3_location = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Information about the location of a revision stored in Amazon S3.</p>
+    /// <p>Information about the location of a revision stored in Amazon S3. </p>
     pub fn set_s3_location(mut self, input: ::std::option::Option<crate::types::S3Location>) -> Self {
         self.s3_location = input;
         self
     }
-    /// <p>Information about the location of a revision stored in Amazon S3.</p>
+    /// <p>Information about the location of a revision stored in Amazon S3. </p>
     pub fn get_s3_location(&self) -> &::std::option::Option<crate::types::S3Location> {
         &self.s3_location
     }
@@ -161,17 +141,17 @@ impl RevisionLocationBuilder {
     pub fn get_string(&self) -> &::std::option::Option<crate::types::RawString> {
         &self.string
     }
-    /// <p>The content of an AppSpec file for an Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML and stored as a RawString.</p>
+    /// <p> The content of an AppSpec file for an Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML and stored as a RawString. </p>
     pub fn app_spec_content(mut self, input: crate::types::AppSpecContent) -> Self {
         self.app_spec_content = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The content of an AppSpec file for an Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML and stored as a RawString.</p>
+    /// <p> The content of an AppSpec file for an Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML and stored as a RawString. </p>
     pub fn set_app_spec_content(mut self, input: ::std::option::Option<crate::types::AppSpecContent>) -> Self {
         self.app_spec_content = input;
         self
     }
-    /// <p>The content of an AppSpec file for an Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML and stored as a RawString.</p>
+    /// <p> The content of an AppSpec file for an Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML and stored as a RawString. </p>
     pub fn get_app_spec_content(&self) -> &::std::option::Option<crate::types::AppSpecContent> {
         &self.app_spec_content
     }

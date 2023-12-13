@@ -22,7 +22,7 @@ impl ListDomainsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListDomains`.
 ///
-/// <p>Lists all the domains in the Amazon Web Services account.</p>
+/// <p>Lists all the domains in the Amazon Web Services account. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListDomainsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

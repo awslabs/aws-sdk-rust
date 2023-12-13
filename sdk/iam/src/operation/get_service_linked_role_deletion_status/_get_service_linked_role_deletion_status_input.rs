@@ -3,7 +3,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetServiceLinkedRoleDeletionStatusInput {
-    /// <p>The deletion task identifier. This identifier is returned by the <code>DeleteServiceLinkedRole</code> operation in the format <code>task/aws-service-role/<service-principal-name>
+    /// <p>The deletion task identifier. This identifier is returned by the <code>DeleteServiceLinkedRole</code> operation in the format <code>task/aws-service-role/
+    /// <service-principal-name>
     /// /
     /// <role-name>
     /// /
@@ -13,7 +14,8 @@ pub struct GetServiceLinkedRoleDeletionStatusInput {
     pub deletion_task_id: ::std::option::Option<::std::string::String>,
 }
 impl GetServiceLinkedRoleDeletionStatusInput {
-    /// <p>The deletion task identifier. This identifier is returned by the <code>DeleteServiceLinkedRole</code> operation in the format <code>task/aws-service-role/<service-principal-name>
+    /// <p>The deletion task identifier. This identifier is returned by the <code>DeleteServiceLinkedRole</code> operation in the format <code>task/aws-service-role/
+    /// <service-principal-name>
     /// /
     /// <role-name>
     /// /
@@ -38,7 +40,8 @@ pub struct GetServiceLinkedRoleDeletionStatusInputBuilder {
     pub(crate) deletion_task_id: ::std::option::Option<::std::string::String>,
 }
 impl GetServiceLinkedRoleDeletionStatusInputBuilder {
-    /// <p>The deletion task identifier. This identifier is returned by the <code>DeleteServiceLinkedRole</code> operation in the format <code>task/aws-service-role/<service-principal-name>
+    /// <p>The deletion task identifier. This identifier is returned by the <code>DeleteServiceLinkedRole</code> operation in the format <code>task/aws-service-role/
+    /// <service-principal-name>
     /// /
     /// <role-name>
     /// /
@@ -50,7 +53,8 @@ impl GetServiceLinkedRoleDeletionStatusInputBuilder {
         self.deletion_task_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The deletion task identifier. This identifier is returned by the <code>DeleteServiceLinkedRole</code> operation in the format <code>task/aws-service-role/<service-principal-name>
+    /// <p>The deletion task identifier. This identifier is returned by the <code>DeleteServiceLinkedRole</code> operation in the format <code>task/aws-service-role/
+    /// <service-principal-name>
     /// /
     /// <role-name>
     /// /
@@ -61,7 +65,8 @@ impl GetServiceLinkedRoleDeletionStatusInputBuilder {
         self.deletion_task_id = input;
         self
     }
-    /// <p>The deletion task identifier. This identifier is returned by the <code>DeleteServiceLinkedRole</code> operation in the format <code>task/aws-service-role/<service-principal-name>
+    /// <p>The deletion task identifier. This identifier is returned by the <code>DeleteServiceLinkedRole</code> operation in the format <code>task/aws-service-role/
+    /// <service-principal-name>
     /// /
     /// <role-name>
     /// /

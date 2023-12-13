@@ -22,7 +22,7 @@ impl GetPortfolioSummaryInputBuilder {
 }
 /// Fluent builder constructing a request to `GetPortfolioSummary`.
 ///
-/// <p>Retrieves overall summary including the number of servers to rehost and the overall number of anti-patterns.</p>
+/// <p> Retrieves overall summary including the number of servers to rehost and the overall number of anti-patterns. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetPortfolioSummaryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

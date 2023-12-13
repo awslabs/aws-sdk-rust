@@ -22,9 +22,9 @@ impl GetIceServerConfigInputBuilder {
 }
 /// Fluent builder constructing a request to `GetIceServerConfig`.
 ///
-/// <p>Gets the Interactive Connectivity Establishment (ICE) server configuration information, including URIs, username, and password which can be used to configure the WebRTC connection. The ICE component uses this configuration information to setup the WebRTC connection, including authenticating with the Traversal Using Relays around NAT (TURN) relay server.</p>
+/// <p>Gets the Interactive Connectivity Establishment (ICE) server configuration information, including URIs, username, and password which can be used to configure the WebRTC connection. The ICE component uses this configuration information to setup the WebRTC connection, including authenticating with the Traversal Using Relays around NAT (TURN) relay server. </p>
 /// <p>TURN is a protocol that is used to improve the connectivity of peer-to-peer applications. By providing a cloud-based relay service, TURN ensures that a connection can be established even when one or more peers are incapable of a direct peer-to-peer connection. For more information, see <a href="https://tools.ietf.org/html/draft-uberti-rtcweb-turn-rest-00">A REST API For Access To TURN Services</a>.</p>
-/// <p>You can invoke this API to establish a fallback mechanism in case either of the peers is unable to establish a direct peer-to-peer connection over a signaling channel. You must specify either a signaling channel ARN or the client ID in order to invoke this API.</p>
+/// <p> You can invoke this API to establish a fallback mechanism in case either of the peers is unable to establish a direct peer-to-peer connection over a signaling channel. You must specify either a signaling channel ARN or the client ID in order to invoke this API.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetIceServerConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -110,17 +110,17 @@ impl GetIceServerConfigFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ARN of the signaling channel to be used for the peer-to-peer connection between configured peers.</p>
+    /// <p>The ARN of the signaling channel to be used for the peer-to-peer connection between configured peers. </p>
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.channel_arn(input.into());
         self
     }
-    /// <p>The ARN of the signaling channel to be used for the peer-to-peer connection between configured peers.</p>
+    /// <p>The ARN of the signaling channel to be used for the peer-to-peer connection between configured peers. </p>
     pub fn set_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_channel_arn(input);
         self
     }
-    /// <p>The ARN of the signaling channel to be used for the peer-to-peer connection between configured peers.</p>
+    /// <p>The ARN of the signaling channel to be used for the peer-to-peer connection between configured peers. </p>
     pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_channel_arn()
     }

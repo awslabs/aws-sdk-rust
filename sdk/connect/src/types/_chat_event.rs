@@ -2,56 +2,45 @@
 
 /// <p>Chat integration event containing payload to perform different chat actions such as:</p>
 /// <ul>
-/// <li>
-/// <p>Sending a chat message</p></li>
-/// <li>
-/// <p>Sending a chat event, such as typing</p></li>
-/// <li>
-/// <p>Disconnecting from a chat</p></li>
+/// <li> <p>Sending a chat message</p> </li>
+/// <li> <p>Sending a chat event, such as typing</p> </li>
+/// <li> <p>Disconnecting from a chat</p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChatEvent {
-    /// <p>Type of chat integration event.</p>
+    /// <p>Type of chat integration event. </p>
     pub r#type: crate::types::ChatEventType,
-    /// <p>Type of content. This is required when <code>Type</code> is <code>MESSAGE</code> or <code>EVENT</code>.</p>
+    /// <p>Type of content. This is required when <code>Type</code> is <code>MESSAGE</code> or <code>EVENT</code>. </p>
     /// <ul>
-    /// <li>
-    /// <p>For allowed message content types, see the <code>ContentType</code> parameter in the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_SendMessage.html">SendMessage</a> topic in the <i>Amazon Connect Participant Service API Reference</i>.</p></li>
-    /// <li>
-    /// <p>For allowed event content types, see the <code>ContentType</code> parameter in the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_SendEvent.html">SendEvent</a> topic in the <i>Amazon Connect Participant Service API Reference</i>.</p></li>
+    /// <li> <p>For allowed message content types, see the <code>ContentType</code> parameter in the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_SendMessage.html">SendMessage</a> topic in the <i>Amazon Connect Participant Service API Reference</i>.</p> </li>
+    /// <li> <p>For allowed event content types, see the <code>ContentType</code> parameter in the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_SendEvent.html">SendEvent</a> topic in the <i>Amazon Connect Participant Service API Reference</i>. </p> </li>
     /// </ul>
     pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>Content of the message or event. This is required when <code>Type</code> is <code>MESSAGE</code> and for certain <code>ContentTypes</code> when <code>Type</code> is <code>EVENT</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p>For allowed message content, see the <code>Content</code> parameter in the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_SendMessage.html">SendMessage</a> topic in the <i>Amazon Connect Participant Service API Reference</i>.</p></li>
-    /// <li>
-    /// <p>For allowed event content, see the <code>Content</code> parameter in the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_SendEvent.html">SendEvent</a> topic in the <i>Amazon Connect Participant Service API Reference</i>.</p></li>
+    /// <li> <p>For allowed message content, see the <code>Content</code> parameter in the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_SendMessage.html">SendMessage</a> topic in the <i>Amazon Connect Participant Service API Reference</i>.</p> </li>
+    /// <li> <p>For allowed event content, see the <code>Content</code> parameter in the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_SendEvent.html">SendEvent</a> topic in the <i>Amazon Connect Participant Service API Reference</i>. </p> </li>
     /// </ul>
     pub content: ::std::option::Option<::std::string::String>,
 }
 impl ChatEvent {
-    /// <p>Type of chat integration event.</p>
+    /// <p>Type of chat integration event. </p>
     pub fn r#type(&self) -> &crate::types::ChatEventType {
         &self.r#type
     }
-    /// <p>Type of content. This is required when <code>Type</code> is <code>MESSAGE</code> or <code>EVENT</code>.</p>
+    /// <p>Type of content. This is required when <code>Type</code> is <code>MESSAGE</code> or <code>EVENT</code>. </p>
     /// <ul>
-    /// <li>
-    /// <p>For allowed message content types, see the <code>ContentType</code> parameter in the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_SendMessage.html">SendMessage</a> topic in the <i>Amazon Connect Participant Service API Reference</i>.</p></li>
-    /// <li>
-    /// <p>For allowed event content types, see the <code>ContentType</code> parameter in the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_SendEvent.html">SendEvent</a> topic in the <i>Amazon Connect Participant Service API Reference</i>.</p></li>
+    /// <li> <p>For allowed message content types, see the <code>ContentType</code> parameter in the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_SendMessage.html">SendMessage</a> topic in the <i>Amazon Connect Participant Service API Reference</i>.</p> </li>
+    /// <li> <p>For allowed event content types, see the <code>ContentType</code> parameter in the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_SendEvent.html">SendEvent</a> topic in the <i>Amazon Connect Participant Service API Reference</i>. </p> </li>
     /// </ul>
     pub fn content_type(&self) -> ::std::option::Option<&str> {
         self.content_type.as_deref()
     }
     /// <p>Content of the message or event. This is required when <code>Type</code> is <code>MESSAGE</code> and for certain <code>ContentTypes</code> when <code>Type</code> is <code>EVENT</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p>For allowed message content, see the <code>Content</code> parameter in the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_SendMessage.html">SendMessage</a> topic in the <i>Amazon Connect Participant Service API Reference</i>.</p></li>
-    /// <li>
-    /// <p>For allowed event content, see the <code>Content</code> parameter in the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_SendEvent.html">SendEvent</a> topic in the <i>Amazon Connect Participant Service API Reference</i>.</p></li>
+    /// <li> <p>For allowed message content, see the <code>Content</code> parameter in the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_SendMessage.html">SendMessage</a> topic in the <i>Amazon Connect Participant Service API Reference</i>.</p> </li>
+    /// <li> <p>For allowed event content, see the <code>Content</code> parameter in the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_SendEvent.html">SendEvent</a> topic in the <i>Amazon Connect Participant Service API Reference</i>. </p> </li>
     /// </ul>
     pub fn content(&self) -> ::std::option::Option<&str> {
         self.content.as_deref()
@@ -73,59 +62,51 @@ pub struct ChatEventBuilder {
     pub(crate) content: ::std::option::Option<::std::string::String>,
 }
 impl ChatEventBuilder {
-    /// <p>Type of chat integration event.</p>
+    /// <p>Type of chat integration event. </p>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::ChatEventType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Type of chat integration event.</p>
+    /// <p>Type of chat integration event. </p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ChatEventType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>Type of chat integration event.</p>
+    /// <p>Type of chat integration event. </p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ChatEventType> {
         &self.r#type
     }
-    /// <p>Type of content. This is required when <code>Type</code> is <code>MESSAGE</code> or <code>EVENT</code>.</p>
+    /// <p>Type of content. This is required when <code>Type</code> is <code>MESSAGE</code> or <code>EVENT</code>. </p>
     /// <ul>
-    /// <li>
-    /// <p>For allowed message content types, see the <code>ContentType</code> parameter in the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_SendMessage.html">SendMessage</a> topic in the <i>Amazon Connect Participant Service API Reference</i>.</p></li>
-    /// <li>
-    /// <p>For allowed event content types, see the <code>ContentType</code> parameter in the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_SendEvent.html">SendEvent</a> topic in the <i>Amazon Connect Participant Service API Reference</i>.</p></li>
+    /// <li> <p>For allowed message content types, see the <code>ContentType</code> parameter in the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_SendMessage.html">SendMessage</a> topic in the <i>Amazon Connect Participant Service API Reference</i>.</p> </li>
+    /// <li> <p>For allowed event content types, see the <code>ContentType</code> parameter in the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_SendEvent.html">SendEvent</a> topic in the <i>Amazon Connect Participant Service API Reference</i>. </p> </li>
     /// </ul>
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Type of content. This is required when <code>Type</code> is <code>MESSAGE</code> or <code>EVENT</code>.</p>
+    /// <p>Type of content. This is required when <code>Type</code> is <code>MESSAGE</code> or <code>EVENT</code>. </p>
     /// <ul>
-    /// <li>
-    /// <p>For allowed message content types, see the <code>ContentType</code> parameter in the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_SendMessage.html">SendMessage</a> topic in the <i>Amazon Connect Participant Service API Reference</i>.</p></li>
-    /// <li>
-    /// <p>For allowed event content types, see the <code>ContentType</code> parameter in the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_SendEvent.html">SendEvent</a> topic in the <i>Amazon Connect Participant Service API Reference</i>.</p></li>
+    /// <li> <p>For allowed message content types, see the <code>ContentType</code> parameter in the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_SendMessage.html">SendMessage</a> topic in the <i>Amazon Connect Participant Service API Reference</i>.</p> </li>
+    /// <li> <p>For allowed event content types, see the <code>ContentType</code> parameter in the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_SendEvent.html">SendEvent</a> topic in the <i>Amazon Connect Participant Service API Reference</i>. </p> </li>
     /// </ul>
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_type = input;
         self
     }
-    /// <p>Type of content. This is required when <code>Type</code> is <code>MESSAGE</code> or <code>EVENT</code>.</p>
+    /// <p>Type of content. This is required when <code>Type</code> is <code>MESSAGE</code> or <code>EVENT</code>. </p>
     /// <ul>
-    /// <li>
-    /// <p>For allowed message content types, see the <code>ContentType</code> parameter in the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_SendMessage.html">SendMessage</a> topic in the <i>Amazon Connect Participant Service API Reference</i>.</p></li>
-    /// <li>
-    /// <p>For allowed event content types, see the <code>ContentType</code> parameter in the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_SendEvent.html">SendEvent</a> topic in the <i>Amazon Connect Participant Service API Reference</i>.</p></li>
+    /// <li> <p>For allowed message content types, see the <code>ContentType</code> parameter in the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_SendMessage.html">SendMessage</a> topic in the <i>Amazon Connect Participant Service API Reference</i>.</p> </li>
+    /// <li> <p>For allowed event content types, see the <code>ContentType</code> parameter in the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_SendEvent.html">SendEvent</a> topic in the <i>Amazon Connect Participant Service API Reference</i>. </p> </li>
     /// </ul>
     pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.content_type
     }
     /// <p>Content of the message or event. This is required when <code>Type</code> is <code>MESSAGE</code> and for certain <code>ContentTypes</code> when <code>Type</code> is <code>EVENT</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p>For allowed message content, see the <code>Content</code> parameter in the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_SendMessage.html">SendMessage</a> topic in the <i>Amazon Connect Participant Service API Reference</i>.</p></li>
-    /// <li>
-    /// <p>For allowed event content, see the <code>Content</code> parameter in the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_SendEvent.html">SendEvent</a> topic in the <i>Amazon Connect Participant Service API Reference</i>.</p></li>
+    /// <li> <p>For allowed message content, see the <code>Content</code> parameter in the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_SendMessage.html">SendMessage</a> topic in the <i>Amazon Connect Participant Service API Reference</i>.</p> </li>
+    /// <li> <p>For allowed event content, see the <code>Content</code> parameter in the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_SendEvent.html">SendEvent</a> topic in the <i>Amazon Connect Participant Service API Reference</i>. </p> </li>
     /// </ul>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
@@ -133,10 +114,8 @@ impl ChatEventBuilder {
     }
     /// <p>Content of the message or event. This is required when <code>Type</code> is <code>MESSAGE</code> and for certain <code>ContentTypes</code> when <code>Type</code> is <code>EVENT</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p>For allowed message content, see the <code>Content</code> parameter in the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_SendMessage.html">SendMessage</a> topic in the <i>Amazon Connect Participant Service API Reference</i>.</p></li>
-    /// <li>
-    /// <p>For allowed event content, see the <code>Content</code> parameter in the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_SendEvent.html">SendEvent</a> topic in the <i>Amazon Connect Participant Service API Reference</i>.</p></li>
+    /// <li> <p>For allowed message content, see the <code>Content</code> parameter in the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_SendMessage.html">SendMessage</a> topic in the <i>Amazon Connect Participant Service API Reference</i>.</p> </li>
+    /// <li> <p>For allowed event content, see the <code>Content</code> parameter in the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_SendEvent.html">SendEvent</a> topic in the <i>Amazon Connect Participant Service API Reference</i>. </p> </li>
     /// </ul>
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content = input;
@@ -144,10 +123,8 @@ impl ChatEventBuilder {
     }
     /// <p>Content of the message or event. This is required when <code>Type</code> is <code>MESSAGE</code> and for certain <code>ContentTypes</code> when <code>Type</code> is <code>EVENT</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p>For allowed message content, see the <code>Content</code> parameter in the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_SendMessage.html">SendMessage</a> topic in the <i>Amazon Connect Participant Service API Reference</i>.</p></li>
-    /// <li>
-    /// <p>For allowed event content, see the <code>Content</code> parameter in the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_SendEvent.html">SendEvent</a> topic in the <i>Amazon Connect Participant Service API Reference</i>.</p></li>
+    /// <li> <p>For allowed message content, see the <code>Content</code> parameter in the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_SendMessage.html">SendMessage</a> topic in the <i>Amazon Connect Participant Service API Reference</i>.</p> </li>
+    /// <li> <p>For allowed event content, see the <code>Content</code> parameter in the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_SendEvent.html">SendEvent</a> topic in the <i>Amazon Connect Participant Service API Reference</i>. </p> </li>
     /// </ul>
     pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
         &self.content

@@ -22,7 +22,7 @@ impl DeleteCoipPoolInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteCoipPool`.
 ///
-/// <p>Deletes a pool of customer-owned IP (CoIP) addresses.</p>
+/// <p>Deletes a pool of customer-owned IP (CoIP) addresses. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteCoipPoolFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DeleteCoipPoolFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the CoIP pool that you want to delete.</p>
+    /// <p>The ID of the CoIP pool that you want to delete. </p>
     pub fn coip_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.coip_pool_id(input.into());
         self
     }
-    /// <p>The ID of the CoIP pool that you want to delete.</p>
+    /// <p>The ID of the CoIP pool that you want to delete. </p>
     pub fn set_coip_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_coip_pool_id(input);
         self
     }
-    /// <p>The ID of the CoIP pool that you want to delete.</p>
+    /// <p>The ID of the CoIP pool that you want to delete. </p>
     pub fn get_coip_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_coip_pool_id()
     }

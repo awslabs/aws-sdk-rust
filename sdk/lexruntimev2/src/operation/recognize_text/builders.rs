@@ -26,12 +26,9 @@ impl RecognizeTextInputBuilder {
 /// <p>In response, Amazon Lex V2 returns the next message to convey to the user and an optional response card to display.</p>
 /// <p>If the optional post-fulfillment response is specified, the messages are returned as follows. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_PostFulfillmentStatusSpecification.html">PostFulfillmentStatusSpecification</a>.</p>
 /// <ul>
-/// <li>
-/// <p><b>Success message</b> - Returned if the Lambda function completes successfully and the intent state is fulfilled or ready fulfillment if the message is present.</p></li>
-/// <li>
-/// <p><b>Failed message</b> - The failed message is returned if the Lambda function throws an exception or if the Lambda function returns a failed intent state without a message.</p></li>
-/// <li>
-/// <p><b>Timeout message</b> - If you don't configure a timeout message and a timeout, and the Lambda function doesn't return within 30 seconds, the timeout message is returned. If you configure a timeout, the timeout message is returned when the period times out.</p></li>
+/// <li> <p> <b>Success message</b> - Returned if the Lambda function completes successfully and the intent state is fulfilled or ready fulfillment if the message is present.</p> </li>
+/// <li> <p> <b>Failed message</b> - The failed message is returned if the Lambda function throws an exception or if the Lambda function returns a failed intent state without a message.</p> </li>
+/// <li> <p> <b>Timeout message</b> - If you don't configure a timeout message and a timeout, and the Lambda function doesn't return within 30 seconds, the timeout message is returned. If you configure a timeout, the timeout message is returned when the period times out. </p> </li>
 /// </ul>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/streaming-progress.html#progress-complete.html">Completion message</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -207,7 +204,7 @@ impl RecognizeTextFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_request_attributes`](Self::set_request_attributes).
     ///
-    /// <p>Request-specific information passed between the client application and Amazon Lex V2</p>
+    /// <p>Request-specific information passed between the client application and Amazon Lex V2 </p>
     /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
     pub fn request_attributes(
         mut self,
@@ -217,7 +214,7 @@ impl RecognizeTextFluentBuilder {
         self.inner = self.inner.request_attributes(k.into(), v.into());
         self
     }
-    /// <p>Request-specific information passed between the client application and Amazon Lex V2</p>
+    /// <p>Request-specific information passed between the client application and Amazon Lex V2 </p>
     /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
     pub fn set_request_attributes(
         mut self,
@@ -226,7 +223,7 @@ impl RecognizeTextFluentBuilder {
         self.inner = self.inner.set_request_attributes(input);
         self
     }
-    /// <p>Request-specific information passed between the client application and Amazon Lex V2</p>
+    /// <p>Request-specific information passed between the client application and Amazon Lex V2 </p>
     /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
     pub fn get_request_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_request_attributes()

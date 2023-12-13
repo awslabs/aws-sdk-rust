@@ -22,7 +22,7 @@ impl DeleteWorkspaceImageInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteWorkspaceImage`.
 ///
-/// <p>Deletes the specified image from your account. To delete an image, you must first delete any bundles that are associated with the image and unshare the image if it is shared with other accounts.</p>
+/// <p>Deletes the specified image from your account. To delete an image, you must first delete any bundles that are associated with the image and unshare the image if it is shared with other accounts. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteWorkspaceImageFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

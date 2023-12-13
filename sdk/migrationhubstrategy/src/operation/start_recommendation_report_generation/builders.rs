@@ -22,7 +22,7 @@ impl StartRecommendationReportGenerationInputBuilder {
 }
 /// Fluent builder constructing a request to `StartRecommendationReportGeneration`.
 ///
-/// <p>Starts generating a recommendation report.</p>
+/// <p> Starts generating a recommendation report. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartRecommendationReportGenerationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -109,17 +109,17 @@ impl StartRecommendationReportGenerationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The output format for the recommendation report file. The default format is Microsoft Excel.</p>
+    /// <p> The output format for the recommendation report file. The default format is Microsoft Excel. </p>
     pub fn output_format(mut self, input: crate::types::OutputFormat) -> Self {
         self.inner = self.inner.output_format(input);
         self
     }
-    /// <p>The output format for the recommendation report file. The default format is Microsoft Excel.</p>
+    /// <p> The output format for the recommendation report file. The default format is Microsoft Excel. </p>
     pub fn set_output_format(mut self, input: ::std::option::Option<crate::types::OutputFormat>) -> Self {
         self.inner = self.inner.set_output_format(input);
         self
     }
-    /// <p>The output format for the recommendation report file. The default format is Microsoft Excel.</p>
+    /// <p> The output format for the recommendation report file. The default format is Microsoft Excel. </p>
     pub fn get_output_format(&self) -> &::std::option::Option<crate::types::OutputFormat> {
         self.inner.get_output_format()
     }
@@ -127,17 +127,17 @@ impl StartRecommendationReportGenerationFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_group_id_filter`](Self::set_group_id_filter).
     ///
-    /// <p>Groups the resources in the recommendation report with a unique name.</p>
+    /// <p> Groups the resources in the recommendation report with a unique name. </p>
     pub fn group_id_filter(mut self, input: crate::types::Group) -> Self {
         self.inner = self.inner.group_id_filter(input);
         self
     }
-    /// <p>Groups the resources in the recommendation report with a unique name.</p>
+    /// <p> Groups the resources in the recommendation report with a unique name. </p>
     pub fn set_group_id_filter(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Group>>) -> Self {
         self.inner = self.inner.set_group_id_filter(input);
         self
     }
-    /// <p>Groups the resources in the recommendation report with a unique name.</p>
+    /// <p> Groups the resources in the recommendation report with a unique name. </p>
     pub fn get_group_id_filter(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Group>> {
         self.inner.get_group_id_filter()
     }

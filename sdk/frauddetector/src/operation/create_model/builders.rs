@@ -122,31 +122,31 @@ impl CreateModelFluentBuilder {
     pub fn get_model_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_model_id()
     }
-    /// <p>The model type.</p>
+    /// <p>The model type. </p>
     pub fn model_type(mut self, input: crate::types::ModelTypeEnum) -> Self {
         self.inner = self.inner.model_type(input);
         self
     }
-    /// <p>The model type.</p>
+    /// <p>The model type. </p>
     pub fn set_model_type(mut self, input: ::std::option::Option<crate::types::ModelTypeEnum>) -> Self {
         self.inner = self.inner.set_model_type(input);
         self
     }
-    /// <p>The model type.</p>
+    /// <p>The model type. </p>
     pub fn get_model_type(&self) -> &::std::option::Option<crate::types::ModelTypeEnum> {
         self.inner.get_model_type()
     }
-    /// <p>The model description.</p>
+    /// <p>The model description. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>The model description.</p>
+    /// <p>The model description. </p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>The model description.</p>
+    /// <p>The model description. </p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }

@@ -11,16 +11,11 @@ pub struct GetShardIteratorInput {
     /// <p>Determines how the shard iterator is used to start reading data records from the shard.</p>
     /// <p>The following are the valid Amazon Kinesis shard iterator types:</p>
     /// <ul>
-    /// <li>
-    /// <p>AT_SEQUENCE_NUMBER - Start reading from the position denoted by a specific sequence number, provided in the value <code>StartingSequenceNumber</code>.</p></li>
-    /// <li>
-    /// <p>AFTER_SEQUENCE_NUMBER - Start reading right after the position denoted by a specific sequence number, provided in the value <code>StartingSequenceNumber</code>.</p></li>
-    /// <li>
-    /// <p>AT_TIMESTAMP - Start reading from the position denoted by a specific time stamp, provided in the value <code>Timestamp</code>.</p></li>
-    /// <li>
-    /// <p>TRIM_HORIZON - Start reading at the last untrimmed record in the shard in the system, which is the oldest data record in the shard.</p></li>
-    /// <li>
-    /// <p>LATEST - Start reading just after the most recent record in the shard, so that you always read the most recent data in the shard.</p></li>
+    /// <li> <p>AT_SEQUENCE_NUMBER - Start reading from the position denoted by a specific sequence number, provided in the value <code>StartingSequenceNumber</code>.</p> </li>
+    /// <li> <p>AFTER_SEQUENCE_NUMBER - Start reading right after the position denoted by a specific sequence number, provided in the value <code>StartingSequenceNumber</code>.</p> </li>
+    /// <li> <p>AT_TIMESTAMP - Start reading from the position denoted by a specific time stamp, provided in the value <code>Timestamp</code>.</p> </li>
+    /// <li> <p>TRIM_HORIZON - Start reading at the last untrimmed record in the shard in the system, which is the oldest data record in the shard.</p> </li>
+    /// <li> <p>LATEST - Start reading just after the most recent record in the shard, so that you always read the most recent data in the shard.</p> </li>
     /// </ul>
     pub shard_iterator_type: ::std::option::Option<crate::types::ShardIteratorType>,
     /// <p>The sequence number of the data record in the shard from which to start reading. Used with shard iterator type AT_SEQUENCE_NUMBER and AFTER_SEQUENCE_NUMBER.</p>
@@ -42,16 +37,11 @@ impl GetShardIteratorInput {
     /// <p>Determines how the shard iterator is used to start reading data records from the shard.</p>
     /// <p>The following are the valid Amazon Kinesis shard iterator types:</p>
     /// <ul>
-    /// <li>
-    /// <p>AT_SEQUENCE_NUMBER - Start reading from the position denoted by a specific sequence number, provided in the value <code>StartingSequenceNumber</code>.</p></li>
-    /// <li>
-    /// <p>AFTER_SEQUENCE_NUMBER - Start reading right after the position denoted by a specific sequence number, provided in the value <code>StartingSequenceNumber</code>.</p></li>
-    /// <li>
-    /// <p>AT_TIMESTAMP - Start reading from the position denoted by a specific time stamp, provided in the value <code>Timestamp</code>.</p></li>
-    /// <li>
-    /// <p>TRIM_HORIZON - Start reading at the last untrimmed record in the shard in the system, which is the oldest data record in the shard.</p></li>
-    /// <li>
-    /// <p>LATEST - Start reading just after the most recent record in the shard, so that you always read the most recent data in the shard.</p></li>
+    /// <li> <p>AT_SEQUENCE_NUMBER - Start reading from the position denoted by a specific sequence number, provided in the value <code>StartingSequenceNumber</code>.</p> </li>
+    /// <li> <p>AFTER_SEQUENCE_NUMBER - Start reading right after the position denoted by a specific sequence number, provided in the value <code>StartingSequenceNumber</code>.</p> </li>
+    /// <li> <p>AT_TIMESTAMP - Start reading from the position denoted by a specific time stamp, provided in the value <code>Timestamp</code>.</p> </li>
+    /// <li> <p>TRIM_HORIZON - Start reading at the last untrimmed record in the shard in the system, which is the oldest data record in the shard.</p> </li>
+    /// <li> <p>LATEST - Start reading just after the most recent record in the shard, so that you always read the most recent data in the shard.</p> </li>
     /// </ul>
     pub fn shard_iterator_type(&self) -> ::std::option::Option<&crate::types::ShardIteratorType> {
         self.shard_iterator_type.as_ref()
@@ -120,16 +110,11 @@ impl GetShardIteratorInputBuilder {
     /// <p>Determines how the shard iterator is used to start reading data records from the shard.</p>
     /// <p>The following are the valid Amazon Kinesis shard iterator types:</p>
     /// <ul>
-    /// <li>
-    /// <p>AT_SEQUENCE_NUMBER - Start reading from the position denoted by a specific sequence number, provided in the value <code>StartingSequenceNumber</code>.</p></li>
-    /// <li>
-    /// <p>AFTER_SEQUENCE_NUMBER - Start reading right after the position denoted by a specific sequence number, provided in the value <code>StartingSequenceNumber</code>.</p></li>
-    /// <li>
-    /// <p>AT_TIMESTAMP - Start reading from the position denoted by a specific time stamp, provided in the value <code>Timestamp</code>.</p></li>
-    /// <li>
-    /// <p>TRIM_HORIZON - Start reading at the last untrimmed record in the shard in the system, which is the oldest data record in the shard.</p></li>
-    /// <li>
-    /// <p>LATEST - Start reading just after the most recent record in the shard, so that you always read the most recent data in the shard.</p></li>
+    /// <li> <p>AT_SEQUENCE_NUMBER - Start reading from the position denoted by a specific sequence number, provided in the value <code>StartingSequenceNumber</code>.</p> </li>
+    /// <li> <p>AFTER_SEQUENCE_NUMBER - Start reading right after the position denoted by a specific sequence number, provided in the value <code>StartingSequenceNumber</code>.</p> </li>
+    /// <li> <p>AT_TIMESTAMP - Start reading from the position denoted by a specific time stamp, provided in the value <code>Timestamp</code>.</p> </li>
+    /// <li> <p>TRIM_HORIZON - Start reading at the last untrimmed record in the shard in the system, which is the oldest data record in the shard.</p> </li>
+    /// <li> <p>LATEST - Start reading just after the most recent record in the shard, so that you always read the most recent data in the shard.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn shard_iterator_type(mut self, input: crate::types::ShardIteratorType) -> Self {
@@ -139,16 +124,11 @@ impl GetShardIteratorInputBuilder {
     /// <p>Determines how the shard iterator is used to start reading data records from the shard.</p>
     /// <p>The following are the valid Amazon Kinesis shard iterator types:</p>
     /// <ul>
-    /// <li>
-    /// <p>AT_SEQUENCE_NUMBER - Start reading from the position denoted by a specific sequence number, provided in the value <code>StartingSequenceNumber</code>.</p></li>
-    /// <li>
-    /// <p>AFTER_SEQUENCE_NUMBER - Start reading right after the position denoted by a specific sequence number, provided in the value <code>StartingSequenceNumber</code>.</p></li>
-    /// <li>
-    /// <p>AT_TIMESTAMP - Start reading from the position denoted by a specific time stamp, provided in the value <code>Timestamp</code>.</p></li>
-    /// <li>
-    /// <p>TRIM_HORIZON - Start reading at the last untrimmed record in the shard in the system, which is the oldest data record in the shard.</p></li>
-    /// <li>
-    /// <p>LATEST - Start reading just after the most recent record in the shard, so that you always read the most recent data in the shard.</p></li>
+    /// <li> <p>AT_SEQUENCE_NUMBER - Start reading from the position denoted by a specific sequence number, provided in the value <code>StartingSequenceNumber</code>.</p> </li>
+    /// <li> <p>AFTER_SEQUENCE_NUMBER - Start reading right after the position denoted by a specific sequence number, provided in the value <code>StartingSequenceNumber</code>.</p> </li>
+    /// <li> <p>AT_TIMESTAMP - Start reading from the position denoted by a specific time stamp, provided in the value <code>Timestamp</code>.</p> </li>
+    /// <li> <p>TRIM_HORIZON - Start reading at the last untrimmed record in the shard in the system, which is the oldest data record in the shard.</p> </li>
+    /// <li> <p>LATEST - Start reading just after the most recent record in the shard, so that you always read the most recent data in the shard.</p> </li>
     /// </ul>
     pub fn set_shard_iterator_type(mut self, input: ::std::option::Option<crate::types::ShardIteratorType>) -> Self {
         self.shard_iterator_type = input;
@@ -157,16 +137,11 @@ impl GetShardIteratorInputBuilder {
     /// <p>Determines how the shard iterator is used to start reading data records from the shard.</p>
     /// <p>The following are the valid Amazon Kinesis shard iterator types:</p>
     /// <ul>
-    /// <li>
-    /// <p>AT_SEQUENCE_NUMBER - Start reading from the position denoted by a specific sequence number, provided in the value <code>StartingSequenceNumber</code>.</p></li>
-    /// <li>
-    /// <p>AFTER_SEQUENCE_NUMBER - Start reading right after the position denoted by a specific sequence number, provided in the value <code>StartingSequenceNumber</code>.</p></li>
-    /// <li>
-    /// <p>AT_TIMESTAMP - Start reading from the position denoted by a specific time stamp, provided in the value <code>Timestamp</code>.</p></li>
-    /// <li>
-    /// <p>TRIM_HORIZON - Start reading at the last untrimmed record in the shard in the system, which is the oldest data record in the shard.</p></li>
-    /// <li>
-    /// <p>LATEST - Start reading just after the most recent record in the shard, so that you always read the most recent data in the shard.</p></li>
+    /// <li> <p>AT_SEQUENCE_NUMBER - Start reading from the position denoted by a specific sequence number, provided in the value <code>StartingSequenceNumber</code>.</p> </li>
+    /// <li> <p>AFTER_SEQUENCE_NUMBER - Start reading right after the position denoted by a specific sequence number, provided in the value <code>StartingSequenceNumber</code>.</p> </li>
+    /// <li> <p>AT_TIMESTAMP - Start reading from the position denoted by a specific time stamp, provided in the value <code>Timestamp</code>.</p> </li>
+    /// <li> <p>TRIM_HORIZON - Start reading at the last untrimmed record in the shard in the system, which is the oldest data record in the shard.</p> </li>
+    /// <li> <p>LATEST - Start reading just after the most recent record in the shard, so that you always read the most recent data in the shard.</p> </li>
     /// </ul>
     pub fn get_shard_iterator_type(&self) -> &::std::option::Option<crate::types::ShardIteratorType> {
         &self.shard_iterator_type

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAccessPointOutput {
-    /// <p>The ARN of the access point.</p><note>
+    /// <p>The ARN of the access point.</p> <note>
     /// <p>This is only supported by Amazon S3 on Outposts.</p>
     /// </note>
     pub access_point_arn: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct CreateAccessPointOutput {
     _request_id: Option<String>,
 }
 impl CreateAccessPointOutput {
-    /// <p>The ARN of the access point.</p><note>
+    /// <p>The ARN of the access point.</p> <note>
     /// <p>This is only supported by Amazon S3 on Outposts.</p>
     /// </note>
     pub fn access_point_arn(&self) -> ::std::option::Option<&str> {
@@ -44,21 +44,21 @@ pub struct CreateAccessPointOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateAccessPointOutputBuilder {
-    /// <p>The ARN of the access point.</p><note>
+    /// <p>The ARN of the access point.</p> <note>
     /// <p>This is only supported by Amazon S3 on Outposts.</p>
     /// </note>
     pub fn access_point_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_point_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the access point.</p><note>
+    /// <p>The ARN of the access point.</p> <note>
     /// <p>This is only supported by Amazon S3 on Outposts.</p>
     /// </note>
     pub fn set_access_point_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_point_arn = input;
         self
     }
-    /// <p>The ARN of the access point.</p><note>
+    /// <p>The ARN of the access point.</p> <note>
     /// <p>This is only supported by Amazon S3 on Outposts.</p>
     /// </note>
     pub fn get_access_point_arn(&self) -> &::std::option::Option<::std::string::String> {

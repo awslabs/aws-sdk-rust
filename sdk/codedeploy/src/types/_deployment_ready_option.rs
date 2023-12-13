@@ -6,10 +6,8 @@
 pub struct DeploymentReadyOption {
     /// <p>Information about when to reroute traffic from an original environment to a replacement environment in a blue/green deployment.</p>
     /// <ul>
-    /// <li>
-    /// <p>CONTINUE_DEPLOYMENT: Register new instances with the load balancer immediately after the new application revision is installed on the instances in the replacement environment.</p></li>
-    /// <li>
-    /// <p>STOP_DEPLOYMENT: Do not register new instances with a load balancer unless traffic rerouting is started using <code>ContinueDeployment</code>. If traffic rerouting is not started before the end of the specified wait period, the deployment status is changed to Stopped.</p></li>
+    /// <li> <p>CONTINUE_DEPLOYMENT: Register new instances with the load balancer immediately after the new application revision is installed on the instances in the replacement environment.</p> </li>
+    /// <li> <p>STOP_DEPLOYMENT: Do not register new instances with a load balancer unless traffic rerouting is started using <code>ContinueDeployment</code>. If traffic rerouting is not started before the end of the specified wait period, the deployment status is changed to Stopped.</p> </li>
     /// </ul>
     pub action_on_timeout: ::std::option::Option<crate::types::DeploymentReadyAction>,
     /// <p>The number of minutes to wait before the status of a blue/green deployment is changed to Stopped if rerouting is not started manually. Applies only to the <code>STOP_DEPLOYMENT</code> option for <code>actionOnTimeout</code>.</p>
@@ -18,10 +16,8 @@ pub struct DeploymentReadyOption {
 impl DeploymentReadyOption {
     /// <p>Information about when to reroute traffic from an original environment to a replacement environment in a blue/green deployment.</p>
     /// <ul>
-    /// <li>
-    /// <p>CONTINUE_DEPLOYMENT: Register new instances with the load balancer immediately after the new application revision is installed on the instances in the replacement environment.</p></li>
-    /// <li>
-    /// <p>STOP_DEPLOYMENT: Do not register new instances with a load balancer unless traffic rerouting is started using <code>ContinueDeployment</code>. If traffic rerouting is not started before the end of the specified wait period, the deployment status is changed to Stopped.</p></li>
+    /// <li> <p>CONTINUE_DEPLOYMENT: Register new instances with the load balancer immediately after the new application revision is installed on the instances in the replacement environment.</p> </li>
+    /// <li> <p>STOP_DEPLOYMENT: Do not register new instances with a load balancer unless traffic rerouting is started using <code>ContinueDeployment</code>. If traffic rerouting is not started before the end of the specified wait period, the deployment status is changed to Stopped.</p> </li>
     /// </ul>
     pub fn action_on_timeout(&self) -> ::std::option::Option<&crate::types::DeploymentReadyAction> {
         self.action_on_timeout.as_ref()
@@ -48,10 +44,8 @@ pub struct DeploymentReadyOptionBuilder {
 impl DeploymentReadyOptionBuilder {
     /// <p>Information about when to reroute traffic from an original environment to a replacement environment in a blue/green deployment.</p>
     /// <ul>
-    /// <li>
-    /// <p>CONTINUE_DEPLOYMENT: Register new instances with the load balancer immediately after the new application revision is installed on the instances in the replacement environment.</p></li>
-    /// <li>
-    /// <p>STOP_DEPLOYMENT: Do not register new instances with a load balancer unless traffic rerouting is started using <code>ContinueDeployment</code>. If traffic rerouting is not started before the end of the specified wait period, the deployment status is changed to Stopped.</p></li>
+    /// <li> <p>CONTINUE_DEPLOYMENT: Register new instances with the load balancer immediately after the new application revision is installed on the instances in the replacement environment.</p> </li>
+    /// <li> <p>STOP_DEPLOYMENT: Do not register new instances with a load balancer unless traffic rerouting is started using <code>ContinueDeployment</code>. If traffic rerouting is not started before the end of the specified wait period, the deployment status is changed to Stopped.</p> </li>
     /// </ul>
     pub fn action_on_timeout(mut self, input: crate::types::DeploymentReadyAction) -> Self {
         self.action_on_timeout = ::std::option::Option::Some(input);
@@ -59,10 +53,8 @@ impl DeploymentReadyOptionBuilder {
     }
     /// <p>Information about when to reroute traffic from an original environment to a replacement environment in a blue/green deployment.</p>
     /// <ul>
-    /// <li>
-    /// <p>CONTINUE_DEPLOYMENT: Register new instances with the load balancer immediately after the new application revision is installed on the instances in the replacement environment.</p></li>
-    /// <li>
-    /// <p>STOP_DEPLOYMENT: Do not register new instances with a load balancer unless traffic rerouting is started using <code>ContinueDeployment</code>. If traffic rerouting is not started before the end of the specified wait period, the deployment status is changed to Stopped.</p></li>
+    /// <li> <p>CONTINUE_DEPLOYMENT: Register new instances with the load balancer immediately after the new application revision is installed on the instances in the replacement environment.</p> </li>
+    /// <li> <p>STOP_DEPLOYMENT: Do not register new instances with a load balancer unless traffic rerouting is started using <code>ContinueDeployment</code>. If traffic rerouting is not started before the end of the specified wait period, the deployment status is changed to Stopped.</p> </li>
     /// </ul>
     pub fn set_action_on_timeout(mut self, input: ::std::option::Option<crate::types::DeploymentReadyAction>) -> Self {
         self.action_on_timeout = input;
@@ -70,10 +62,8 @@ impl DeploymentReadyOptionBuilder {
     }
     /// <p>Information about when to reroute traffic from an original environment to a replacement environment in a blue/green deployment.</p>
     /// <ul>
-    /// <li>
-    /// <p>CONTINUE_DEPLOYMENT: Register new instances with the load balancer immediately after the new application revision is installed on the instances in the replacement environment.</p></li>
-    /// <li>
-    /// <p>STOP_DEPLOYMENT: Do not register new instances with a load balancer unless traffic rerouting is started using <code>ContinueDeployment</code>. If traffic rerouting is not started before the end of the specified wait period, the deployment status is changed to Stopped.</p></li>
+    /// <li> <p>CONTINUE_DEPLOYMENT: Register new instances with the load balancer immediately after the new application revision is installed on the instances in the replacement environment.</p> </li>
+    /// <li> <p>STOP_DEPLOYMENT: Do not register new instances with a load balancer unless traffic rerouting is started using <code>ContinueDeployment</code>. If traffic rerouting is not started before the end of the specified wait period, the deployment status is changed to Stopped.</p> </li>
     /// </ul>
     pub fn get_action_on_timeout(&self) -> &::std::option::Option<crate::types::DeploymentReadyAction> {
         &self.action_on_timeout

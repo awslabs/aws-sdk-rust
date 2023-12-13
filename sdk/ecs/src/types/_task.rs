@@ -27,22 +27,13 @@ pub struct Task {
     /// <p>If you use the Fargate launch type, this field is required. You must use one of the following values. These values determine the range of supported values for the <code>memory</code> parameter:</p>
     /// <p>The CPU units cannot be less than 1 vCPU when you use Windows containers on Fargate.</p>
     /// <ul>
-    /// <li>
-    /// <p>256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p></li>
-    /// <li>
-    /// <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)</p></li>
-    /// <li>
-    /// <p>1024 (1 vCPU) - Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p></li>
-    /// <li>
-    /// <p>2048 (2 vCPU) - Available <code>memory</code> values: 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB)</p></li>
-    /// <li>
-    /// <p>4096 (4 vCPU) - Available <code>memory</code> values: 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB)</p></li>
-    /// <li>
-    /// <p>8192 (8 vCPU) - Available <code>memory</code> values: 16 GB and 60 GB in 4 GB increments</p>
-    /// <p>This option requires Linux platform <code>1.4.0</code> or later.</p></li>
-    /// <li>
-    /// <p>16384 (16vCPU) - Available <code>memory</code> values: 32GB and 120 GB in 8 GB increments</p>
-    /// <p>This option requires Linux platform <code>1.4.0</code> or later.</p></li>
+    /// <li> <p>256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p> </li>
+    /// <li> <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)</p> </li>
+    /// <li> <p>1024 (1 vCPU) - Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p> </li>
+    /// <li> <p>2048 (2 vCPU) - Available <code>memory</code> values: 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB)</p> </li>
+    /// <li> <p>4096 (4 vCPU) - Available <code>memory</code> values: 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB)</p> </li>
+    /// <li> <p>8192 (8 vCPU) - Available <code>memory</code> values: 16 GB and 60 GB in 4 GB increments</p> <p>This option requires Linux platform <code>1.4.0</code> or later.</p> </li>
+    /// <li> <p>16384 (16vCPU) - Available <code>memory</code> values: 32GB and 120 GB in 8 GB increments</p> <p>This option requires Linux platform <code>1.4.0</code> or later.</p> </li>
     /// </ul>
     pub cpu: ::std::option::Option<::std::string::String>,
     /// <p>The Unix timestamp for the time when the task was created. More specifically, it's for the time when the task entered the <code>PENDING</code> state.</p>
@@ -55,7 +46,7 @@ pub struct Task {
     pub execution_stopped_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name of the task group that's associated with the task.</p>
     pub group: ::std::option::Option<::std::string::String>,
-    /// <p>The health status for the task. It's determined by the health of the essential containers in the task. If all essential containers in the task are reporting as <code>HEALTHY</code>, the task status also reports as <code>HEALTHY</code>. If any essential containers in the task are reporting as <code>UNHEALTHY</code> or <code>UNKNOWN</code>, the task status also reports as <code>UNHEALTHY</code> or <code>UNKNOWN</code>.</p><note>
+    /// <p>The health status for the task. It's determined by the health of the essential containers in the task. If all essential containers in the task are reporting as <code>HEALTHY</code>, the task status also reports as <code>HEALTHY</code>. If any essential containers in the task are reporting as <code>UNHEALTHY</code> or <code>UNKNOWN</code>, the task status also reports as <code>UNHEALTHY</code> or <code>UNKNOWN</code>.</p> <note>
     /// <p>The Amazon ECS container agent doesn't monitor or report on Docker health checks that are embedded in a container image and not specified in the container definition. For example, this includes those specified in a parent image or from the image's Dockerfile. Health check parameters that are specified in a container definition override any Docker health checks that are found in the container image.</p>
     /// </note>
     pub health_status: ::std::option::Option<crate::types::HealthStatus>,
@@ -69,30 +60,21 @@ pub struct Task {
     /// <p>If you use the EC2 launch type, this field is optional.</p>
     /// <p>If you use the Fargate launch type, this field is required. You must use one of the following values. The value that you choose determines the range of supported values for the <code>cpu</code> parameter.</p>
     /// <ul>
-    /// <li>
-    /// <p>512 (0.5 GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p></li>
-    /// <li>
-    /// <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available <code>cpu</code> values: 512 (.5 vCPU)</p></li>
-    /// <li>
-    /// <p>2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available <code>cpu</code> values: 1024 (1 vCPU)</p></li>
-    /// <li>
-    /// <p>Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values: 2048 (2 vCPU)</p></li>
-    /// <li>
-    /// <p>Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values: 4096 (4 vCPU)</p></li>
-    /// <li>
-    /// <p>Between 16 GB and 60 GB in 4 GB increments - Available <code>cpu</code> values: 8192 (8 vCPU)</p>
-    /// <p>This option requires Linux platform <code>1.4.0</code> or later.</p></li>
-    /// <li>
-    /// <p>Between 32GB and 120 GB in 8 GB increments - Available <code>cpu</code> values: 16384 (16 vCPU)</p>
-    /// <p>This option requires Linux platform <code>1.4.0</code> or later.</p></li>
+    /// <li> <p>512 (0.5 GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p> </li>
+    /// <li> <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available <code>cpu</code> values: 512 (.5 vCPU)</p> </li>
+    /// <li> <p>2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available <code>cpu</code> values: 1024 (1 vCPU)</p> </li>
+    /// <li> <p>Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values: 2048 (2 vCPU)</p> </li>
+    /// <li> <p>Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values: 4096 (4 vCPU)</p> </li>
+    /// <li> <p>Between 16 GB and 60 GB in 4 GB increments - Available <code>cpu</code> values: 8192 (8 vCPU)</p> <p>This option requires Linux platform <code>1.4.0</code> or later.</p> </li>
+    /// <li> <p>Between 32GB and 120 GB in 8 GB increments - Available <code>cpu</code> values: 16384 (16 vCPU)</p> <p>This option requires Linux platform <code>1.4.0</code> or later.</p> </li>
     /// </ul>
     pub memory: ::std::option::Option<::std::string::String>,
     /// <p>One or more container overrides.</p>
     pub overrides: ::std::option::Option<crate::types::TaskOverride>,
     /// <p>The platform version where your task runs on. A platform version is only specified for tasks that use the Fargate launch type. If you didn't specify one, the <code>LATEST</code> platform version is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub platform_version: ::std::option::Option<::std::string::String>,
-    /// <p>The operating system that your tasks are running on. A platform family is specified only for tasks that use the Fargate launch type.</p>
-    /// <p>All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service (for example, <code>LINUX.</code>).</p>
+    /// <p>The operating system that your tasks are running on. A platform family is specified only for tasks that use the Fargate launch type. </p>
+    /// <p> All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service (for example, <code>LINUX.</code>).</p>
     pub platform_family: ::std::option::Option<::std::string::String>,
     /// <p>The Unix timestamp for the time when the container image pull began.</p>
     pub pull_started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -102,22 +84,16 @@ pub struct Task {
     pub started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The tag specified when a task is started. If an Amazon ECS service started the task, the <code>startedBy</code> parameter contains the deployment ID of that service.</p>
     pub started_by: ::std::option::Option<::std::string::String>,
-    /// <p>The stop code indicating why a task was stopped. The <code>stoppedReason</code> might contain additional details.</p>
+    /// <p>The stop code indicating why a task was stopped. The <code>stoppedReason</code> might contain additional details. </p>
     /// <p>For more information about stop code, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/stopped-task-error-codes.html">Stopped tasks error codes</a> in the <i>Amazon ECS User Guide</i>.</p>
     /// <p>The following are valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>TaskFailedToStart</code></p></li>
-    /// <li>
-    /// <p><code>EssentialContainerExited</code></p></li>
-    /// <li>
-    /// <p><code>UserInitiated</code></p></li>
-    /// <li>
-    /// <p><code>TerminationNotice</code></p></li>
-    /// <li>
-    /// <p><code>ServiceSchedulerInitiated</code></p></li>
-    /// <li>
-    /// <p><code>SpotInterruption</code></p></li>
+    /// <li> <p> <code>TaskFailedToStart</code> </p> </li>
+    /// <li> <p> <code>EssentialContainerExited</code> </p> </li>
+    /// <li> <p> <code>UserInitiated</code> </p> </li>
+    /// <li> <p> <code>TerminationNotice</code> </p> </li>
+    /// <li> <p> <code>ServiceSchedulerInitiated</code> </p> </li>
+    /// <li> <p> <code>SpotInterruption</code> </p> </li>
     /// </ul>
     pub stop_code: ::std::option::Option<crate::types::TaskStopCode>,
     /// <p>The Unix timestamp for the time when the task was stopped. More specifically, it's for the time when the task transitioned from the <code>RUNNING</code> state to the <code>STOPPED</code> state.</p>
@@ -129,20 +105,13 @@ pub struct Task {
     /// <p>The metadata that you apply to the task to help you categorize and organize the task. Each tag consists of a key and an optional value. You define both the key and value.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
-    /// <li>
-    /// <p>Maximum number of tags per resource - 50</p></li>
-    /// <li>
-    /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p></li>
-    /// <li>
-    /// <p>Maximum key length - 128 Unicode characters in UTF-8</p></li>
-    /// <li>
-    /// <p>Maximum value length - 256 Unicode characters in UTF-8</p></li>
-    /// <li>
-    /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p></li>
-    /// <li>
-    /// <p>Tag keys and values are case-sensitive.</p></li>
-    /// <li>
-    /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
+    /// <li> <p>Maximum number of tags per resource - 50</p> </li>
+    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+    /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
+    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
     /// </ul>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The Amazon Resource Name (ARN) of the task.</p>
@@ -202,22 +171,13 @@ impl Task {
     /// <p>If you use the Fargate launch type, this field is required. You must use one of the following values. These values determine the range of supported values for the <code>memory</code> parameter:</p>
     /// <p>The CPU units cannot be less than 1 vCPU when you use Windows containers on Fargate.</p>
     /// <ul>
-    /// <li>
-    /// <p>256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p></li>
-    /// <li>
-    /// <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)</p></li>
-    /// <li>
-    /// <p>1024 (1 vCPU) - Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p></li>
-    /// <li>
-    /// <p>2048 (2 vCPU) - Available <code>memory</code> values: 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB)</p></li>
-    /// <li>
-    /// <p>4096 (4 vCPU) - Available <code>memory</code> values: 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB)</p></li>
-    /// <li>
-    /// <p>8192 (8 vCPU) - Available <code>memory</code> values: 16 GB and 60 GB in 4 GB increments</p>
-    /// <p>This option requires Linux platform <code>1.4.0</code> or later.</p></li>
-    /// <li>
-    /// <p>16384 (16vCPU) - Available <code>memory</code> values: 32GB and 120 GB in 8 GB increments</p>
-    /// <p>This option requires Linux platform <code>1.4.0</code> or later.</p></li>
+    /// <li> <p>256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p> </li>
+    /// <li> <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)</p> </li>
+    /// <li> <p>1024 (1 vCPU) - Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p> </li>
+    /// <li> <p>2048 (2 vCPU) - Available <code>memory</code> values: 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB)</p> </li>
+    /// <li> <p>4096 (4 vCPU) - Available <code>memory</code> values: 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB)</p> </li>
+    /// <li> <p>8192 (8 vCPU) - Available <code>memory</code> values: 16 GB and 60 GB in 4 GB increments</p> <p>This option requires Linux platform <code>1.4.0</code> or later.</p> </li>
+    /// <li> <p>16384 (16vCPU) - Available <code>memory</code> values: 32GB and 120 GB in 8 GB increments</p> <p>This option requires Linux platform <code>1.4.0</code> or later.</p> </li>
     /// </ul>
     pub fn cpu(&self) -> ::std::option::Option<&str> {
         self.cpu.as_deref()
@@ -242,7 +202,7 @@ impl Task {
     pub fn group(&self) -> ::std::option::Option<&str> {
         self.group.as_deref()
     }
-    /// <p>The health status for the task. It's determined by the health of the essential containers in the task. If all essential containers in the task are reporting as <code>HEALTHY</code>, the task status also reports as <code>HEALTHY</code>. If any essential containers in the task are reporting as <code>UNHEALTHY</code> or <code>UNKNOWN</code>, the task status also reports as <code>UNHEALTHY</code> or <code>UNKNOWN</code>.</p><note>
+    /// <p>The health status for the task. It's determined by the health of the essential containers in the task. If all essential containers in the task are reporting as <code>HEALTHY</code>, the task status also reports as <code>HEALTHY</code>. If any essential containers in the task are reporting as <code>UNHEALTHY</code> or <code>UNKNOWN</code>, the task status also reports as <code>UNHEALTHY</code> or <code>UNKNOWN</code>.</p> <note>
     /// <p>The Amazon ECS container agent doesn't monitor or report on Docker health checks that are embedded in a container image and not specified in the container definition. For example, this includes those specified in a parent image or from the image's Dockerfile. Health check parameters that are specified in a container definition override any Docker health checks that are found in the container image.</p>
     /// </note>
     pub fn health_status(&self) -> ::std::option::Option<&crate::types::HealthStatus> {
@@ -266,22 +226,13 @@ impl Task {
     /// <p>If you use the EC2 launch type, this field is optional.</p>
     /// <p>If you use the Fargate launch type, this field is required. You must use one of the following values. The value that you choose determines the range of supported values for the <code>cpu</code> parameter.</p>
     /// <ul>
-    /// <li>
-    /// <p>512 (0.5 GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p></li>
-    /// <li>
-    /// <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available <code>cpu</code> values: 512 (.5 vCPU)</p></li>
-    /// <li>
-    /// <p>2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available <code>cpu</code> values: 1024 (1 vCPU)</p></li>
-    /// <li>
-    /// <p>Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values: 2048 (2 vCPU)</p></li>
-    /// <li>
-    /// <p>Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values: 4096 (4 vCPU)</p></li>
-    /// <li>
-    /// <p>Between 16 GB and 60 GB in 4 GB increments - Available <code>cpu</code> values: 8192 (8 vCPU)</p>
-    /// <p>This option requires Linux platform <code>1.4.0</code> or later.</p></li>
-    /// <li>
-    /// <p>Between 32GB and 120 GB in 8 GB increments - Available <code>cpu</code> values: 16384 (16 vCPU)</p>
-    /// <p>This option requires Linux platform <code>1.4.0</code> or later.</p></li>
+    /// <li> <p>512 (0.5 GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p> </li>
+    /// <li> <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available <code>cpu</code> values: 512 (.5 vCPU)</p> </li>
+    /// <li> <p>2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available <code>cpu</code> values: 1024 (1 vCPU)</p> </li>
+    /// <li> <p>Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values: 2048 (2 vCPU)</p> </li>
+    /// <li> <p>Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values: 4096 (4 vCPU)</p> </li>
+    /// <li> <p>Between 16 GB and 60 GB in 4 GB increments - Available <code>cpu</code> values: 8192 (8 vCPU)</p> <p>This option requires Linux platform <code>1.4.0</code> or later.</p> </li>
+    /// <li> <p>Between 32GB and 120 GB in 8 GB increments - Available <code>cpu</code> values: 16384 (16 vCPU)</p> <p>This option requires Linux platform <code>1.4.0</code> or later.</p> </li>
     /// </ul>
     pub fn memory(&self) -> ::std::option::Option<&str> {
         self.memory.as_deref()
@@ -294,8 +245,8 @@ impl Task {
     pub fn platform_version(&self) -> ::std::option::Option<&str> {
         self.platform_version.as_deref()
     }
-    /// <p>The operating system that your tasks are running on. A platform family is specified only for tasks that use the Fargate launch type.</p>
-    /// <p>All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service (for example, <code>LINUX.</code>).</p>
+    /// <p>The operating system that your tasks are running on. A platform family is specified only for tasks that use the Fargate launch type. </p>
+    /// <p> All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service (for example, <code>LINUX.</code>).</p>
     pub fn platform_family(&self) -> ::std::option::Option<&str> {
         self.platform_family.as_deref()
     }
@@ -315,22 +266,16 @@ impl Task {
     pub fn started_by(&self) -> ::std::option::Option<&str> {
         self.started_by.as_deref()
     }
-    /// <p>The stop code indicating why a task was stopped. The <code>stoppedReason</code> might contain additional details.</p>
+    /// <p>The stop code indicating why a task was stopped. The <code>stoppedReason</code> might contain additional details. </p>
     /// <p>For more information about stop code, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/stopped-task-error-codes.html">Stopped tasks error codes</a> in the <i>Amazon ECS User Guide</i>.</p>
     /// <p>The following are valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>TaskFailedToStart</code></p></li>
-    /// <li>
-    /// <p><code>EssentialContainerExited</code></p></li>
-    /// <li>
-    /// <p><code>UserInitiated</code></p></li>
-    /// <li>
-    /// <p><code>TerminationNotice</code></p></li>
-    /// <li>
-    /// <p><code>ServiceSchedulerInitiated</code></p></li>
-    /// <li>
-    /// <p><code>SpotInterruption</code></p></li>
+    /// <li> <p> <code>TaskFailedToStart</code> </p> </li>
+    /// <li> <p> <code>EssentialContainerExited</code> </p> </li>
+    /// <li> <p> <code>UserInitiated</code> </p> </li>
+    /// <li> <p> <code>TerminationNotice</code> </p> </li>
+    /// <li> <p> <code>ServiceSchedulerInitiated</code> </p> </li>
+    /// <li> <p> <code>SpotInterruption</code> </p> </li>
     /// </ul>
     pub fn stop_code(&self) -> ::std::option::Option<&crate::types::TaskStopCode> {
         self.stop_code.as_ref()
@@ -350,20 +295,13 @@ impl Task {
     /// <p>The metadata that you apply to the task to help you categorize and organize the task. Each tag consists of a key and an optional value. You define both the key and value.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
-    /// <li>
-    /// <p>Maximum number of tags per resource - 50</p></li>
-    /// <li>
-    /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p></li>
-    /// <li>
-    /// <p>Maximum key length - 128 Unicode characters in UTF-8</p></li>
-    /// <li>
-    /// <p>Maximum value length - 256 Unicode characters in UTF-8</p></li>
-    /// <li>
-    /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p></li>
-    /// <li>
-    /// <p>Tag keys and values are case-sensitive.</p></li>
-    /// <li>
-    /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
+    /// <li> <p>Maximum number of tags per resource - 50</p> </li>
+    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+    /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
+    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
@@ -585,22 +523,13 @@ impl TaskBuilder {
     /// <p>If you use the Fargate launch type, this field is required. You must use one of the following values. These values determine the range of supported values for the <code>memory</code> parameter:</p>
     /// <p>The CPU units cannot be less than 1 vCPU when you use Windows containers on Fargate.</p>
     /// <ul>
-    /// <li>
-    /// <p>256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p></li>
-    /// <li>
-    /// <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)</p></li>
-    /// <li>
-    /// <p>1024 (1 vCPU) - Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p></li>
-    /// <li>
-    /// <p>2048 (2 vCPU) - Available <code>memory</code> values: 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB)</p></li>
-    /// <li>
-    /// <p>4096 (4 vCPU) - Available <code>memory</code> values: 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB)</p></li>
-    /// <li>
-    /// <p>8192 (8 vCPU) - Available <code>memory</code> values: 16 GB and 60 GB in 4 GB increments</p>
-    /// <p>This option requires Linux platform <code>1.4.0</code> or later.</p></li>
-    /// <li>
-    /// <p>16384 (16vCPU) - Available <code>memory</code> values: 32GB and 120 GB in 8 GB increments</p>
-    /// <p>This option requires Linux platform <code>1.4.0</code> or later.</p></li>
+    /// <li> <p>256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p> </li>
+    /// <li> <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)</p> </li>
+    /// <li> <p>1024 (1 vCPU) - Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p> </li>
+    /// <li> <p>2048 (2 vCPU) - Available <code>memory</code> values: 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB)</p> </li>
+    /// <li> <p>4096 (4 vCPU) - Available <code>memory</code> values: 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB)</p> </li>
+    /// <li> <p>8192 (8 vCPU) - Available <code>memory</code> values: 16 GB and 60 GB in 4 GB increments</p> <p>This option requires Linux platform <code>1.4.0</code> or later.</p> </li>
+    /// <li> <p>16384 (16vCPU) - Available <code>memory</code> values: 32GB and 120 GB in 8 GB increments</p> <p>This option requires Linux platform <code>1.4.0</code> or later.</p> </li>
     /// </ul>
     pub fn cpu(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cpu = ::std::option::Option::Some(input.into());
@@ -611,22 +540,13 @@ impl TaskBuilder {
     /// <p>If you use the Fargate launch type, this field is required. You must use one of the following values. These values determine the range of supported values for the <code>memory</code> parameter:</p>
     /// <p>The CPU units cannot be less than 1 vCPU when you use Windows containers on Fargate.</p>
     /// <ul>
-    /// <li>
-    /// <p>256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p></li>
-    /// <li>
-    /// <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)</p></li>
-    /// <li>
-    /// <p>1024 (1 vCPU) - Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p></li>
-    /// <li>
-    /// <p>2048 (2 vCPU) - Available <code>memory</code> values: 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB)</p></li>
-    /// <li>
-    /// <p>4096 (4 vCPU) - Available <code>memory</code> values: 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB)</p></li>
-    /// <li>
-    /// <p>8192 (8 vCPU) - Available <code>memory</code> values: 16 GB and 60 GB in 4 GB increments</p>
-    /// <p>This option requires Linux platform <code>1.4.0</code> or later.</p></li>
-    /// <li>
-    /// <p>16384 (16vCPU) - Available <code>memory</code> values: 32GB and 120 GB in 8 GB increments</p>
-    /// <p>This option requires Linux platform <code>1.4.0</code> or later.</p></li>
+    /// <li> <p>256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p> </li>
+    /// <li> <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)</p> </li>
+    /// <li> <p>1024 (1 vCPU) - Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p> </li>
+    /// <li> <p>2048 (2 vCPU) - Available <code>memory</code> values: 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB)</p> </li>
+    /// <li> <p>4096 (4 vCPU) - Available <code>memory</code> values: 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB)</p> </li>
+    /// <li> <p>8192 (8 vCPU) - Available <code>memory</code> values: 16 GB and 60 GB in 4 GB increments</p> <p>This option requires Linux platform <code>1.4.0</code> or later.</p> </li>
+    /// <li> <p>16384 (16vCPU) - Available <code>memory</code> values: 32GB and 120 GB in 8 GB increments</p> <p>This option requires Linux platform <code>1.4.0</code> or later.</p> </li>
     /// </ul>
     pub fn set_cpu(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cpu = input;
@@ -637,22 +557,13 @@ impl TaskBuilder {
     /// <p>If you use the Fargate launch type, this field is required. You must use one of the following values. These values determine the range of supported values for the <code>memory</code> parameter:</p>
     /// <p>The CPU units cannot be less than 1 vCPU when you use Windows containers on Fargate.</p>
     /// <ul>
-    /// <li>
-    /// <p>256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p></li>
-    /// <li>
-    /// <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)</p></li>
-    /// <li>
-    /// <p>1024 (1 vCPU) - Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p></li>
-    /// <li>
-    /// <p>2048 (2 vCPU) - Available <code>memory</code> values: 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB)</p></li>
-    /// <li>
-    /// <p>4096 (4 vCPU) - Available <code>memory</code> values: 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB)</p></li>
-    /// <li>
-    /// <p>8192 (8 vCPU) - Available <code>memory</code> values: 16 GB and 60 GB in 4 GB increments</p>
-    /// <p>This option requires Linux platform <code>1.4.0</code> or later.</p></li>
-    /// <li>
-    /// <p>16384 (16vCPU) - Available <code>memory</code> values: 32GB and 120 GB in 8 GB increments</p>
-    /// <p>This option requires Linux platform <code>1.4.0</code> or later.</p></li>
+    /// <li> <p>256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p> </li>
+    /// <li> <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)</p> </li>
+    /// <li> <p>1024 (1 vCPU) - Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p> </li>
+    /// <li> <p>2048 (2 vCPU) - Available <code>memory</code> values: 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB)</p> </li>
+    /// <li> <p>4096 (4 vCPU) - Available <code>memory</code> values: 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB)</p> </li>
+    /// <li> <p>8192 (8 vCPU) - Available <code>memory</code> values: 16 GB and 60 GB in 4 GB increments</p> <p>This option requires Linux platform <code>1.4.0</code> or later.</p> </li>
+    /// <li> <p>16384 (16vCPU) - Available <code>memory</code> values: 32GB and 120 GB in 8 GB increments</p> <p>This option requires Linux platform <code>1.4.0</code> or later.</p> </li>
     /// </ul>
     pub fn get_cpu(&self) -> &::std::option::Option<::std::string::String> {
         &self.cpu
@@ -727,21 +638,21 @@ impl TaskBuilder {
     pub fn get_group(&self) -> &::std::option::Option<::std::string::String> {
         &self.group
     }
-    /// <p>The health status for the task. It's determined by the health of the essential containers in the task. If all essential containers in the task are reporting as <code>HEALTHY</code>, the task status also reports as <code>HEALTHY</code>. If any essential containers in the task are reporting as <code>UNHEALTHY</code> or <code>UNKNOWN</code>, the task status also reports as <code>UNHEALTHY</code> or <code>UNKNOWN</code>.</p><note>
+    /// <p>The health status for the task. It's determined by the health of the essential containers in the task. If all essential containers in the task are reporting as <code>HEALTHY</code>, the task status also reports as <code>HEALTHY</code>. If any essential containers in the task are reporting as <code>UNHEALTHY</code> or <code>UNKNOWN</code>, the task status also reports as <code>UNHEALTHY</code> or <code>UNKNOWN</code>.</p> <note>
     /// <p>The Amazon ECS container agent doesn't monitor or report on Docker health checks that are embedded in a container image and not specified in the container definition. For example, this includes those specified in a parent image or from the image's Dockerfile. Health check parameters that are specified in a container definition override any Docker health checks that are found in the container image.</p>
     /// </note>
     pub fn health_status(mut self, input: crate::types::HealthStatus) -> Self {
         self.health_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The health status for the task. It's determined by the health of the essential containers in the task. If all essential containers in the task are reporting as <code>HEALTHY</code>, the task status also reports as <code>HEALTHY</code>. If any essential containers in the task are reporting as <code>UNHEALTHY</code> or <code>UNKNOWN</code>, the task status also reports as <code>UNHEALTHY</code> or <code>UNKNOWN</code>.</p><note>
+    /// <p>The health status for the task. It's determined by the health of the essential containers in the task. If all essential containers in the task are reporting as <code>HEALTHY</code>, the task status also reports as <code>HEALTHY</code>. If any essential containers in the task are reporting as <code>UNHEALTHY</code> or <code>UNKNOWN</code>, the task status also reports as <code>UNHEALTHY</code> or <code>UNKNOWN</code>.</p> <note>
     /// <p>The Amazon ECS container agent doesn't monitor or report on Docker health checks that are embedded in a container image and not specified in the container definition. For example, this includes those specified in a parent image or from the image's Dockerfile. Health check parameters that are specified in a container definition override any Docker health checks that are found in the container image.</p>
     /// </note>
     pub fn set_health_status(mut self, input: ::std::option::Option<crate::types::HealthStatus>) -> Self {
         self.health_status = input;
         self
     }
-    /// <p>The health status for the task. It's determined by the health of the essential containers in the task. If all essential containers in the task are reporting as <code>HEALTHY</code>, the task status also reports as <code>HEALTHY</code>. If any essential containers in the task are reporting as <code>UNHEALTHY</code> or <code>UNKNOWN</code>, the task status also reports as <code>UNHEALTHY</code> or <code>UNKNOWN</code>.</p><note>
+    /// <p>The health status for the task. It's determined by the health of the essential containers in the task. If all essential containers in the task are reporting as <code>HEALTHY</code>, the task status also reports as <code>HEALTHY</code>. If any essential containers in the task are reporting as <code>UNHEALTHY</code> or <code>UNKNOWN</code>, the task status also reports as <code>UNHEALTHY</code> or <code>UNKNOWN</code>.</p> <note>
     /// <p>The Amazon ECS container agent doesn't monitor or report on Docker health checks that are embedded in a container image and not specified in the container definition. For example, this includes those specified in a parent image or from the image's Dockerfile. Health check parameters that are specified in a container definition override any Docker health checks that are found in the container image.</p>
     /// </note>
     pub fn get_health_status(&self) -> &::std::option::Option<crate::types::HealthStatus> {
@@ -799,22 +710,13 @@ impl TaskBuilder {
     /// <p>If you use the EC2 launch type, this field is optional.</p>
     /// <p>If you use the Fargate launch type, this field is required. You must use one of the following values. The value that you choose determines the range of supported values for the <code>cpu</code> parameter.</p>
     /// <ul>
-    /// <li>
-    /// <p>512 (0.5 GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p></li>
-    /// <li>
-    /// <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available <code>cpu</code> values: 512 (.5 vCPU)</p></li>
-    /// <li>
-    /// <p>2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available <code>cpu</code> values: 1024 (1 vCPU)</p></li>
-    /// <li>
-    /// <p>Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values: 2048 (2 vCPU)</p></li>
-    /// <li>
-    /// <p>Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values: 4096 (4 vCPU)</p></li>
-    /// <li>
-    /// <p>Between 16 GB and 60 GB in 4 GB increments - Available <code>cpu</code> values: 8192 (8 vCPU)</p>
-    /// <p>This option requires Linux platform <code>1.4.0</code> or later.</p></li>
-    /// <li>
-    /// <p>Between 32GB and 120 GB in 8 GB increments - Available <code>cpu</code> values: 16384 (16 vCPU)</p>
-    /// <p>This option requires Linux platform <code>1.4.0</code> or later.</p></li>
+    /// <li> <p>512 (0.5 GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p> </li>
+    /// <li> <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available <code>cpu</code> values: 512 (.5 vCPU)</p> </li>
+    /// <li> <p>2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available <code>cpu</code> values: 1024 (1 vCPU)</p> </li>
+    /// <li> <p>Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values: 2048 (2 vCPU)</p> </li>
+    /// <li> <p>Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values: 4096 (4 vCPU)</p> </li>
+    /// <li> <p>Between 16 GB and 60 GB in 4 GB increments - Available <code>cpu</code> values: 8192 (8 vCPU)</p> <p>This option requires Linux platform <code>1.4.0</code> or later.</p> </li>
+    /// <li> <p>Between 32GB and 120 GB in 8 GB increments - Available <code>cpu</code> values: 16384 (16 vCPU)</p> <p>This option requires Linux platform <code>1.4.0</code> or later.</p> </li>
     /// </ul>
     pub fn memory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.memory = ::std::option::Option::Some(input.into());
@@ -824,22 +726,13 @@ impl TaskBuilder {
     /// <p>If you use the EC2 launch type, this field is optional.</p>
     /// <p>If you use the Fargate launch type, this field is required. You must use one of the following values. The value that you choose determines the range of supported values for the <code>cpu</code> parameter.</p>
     /// <ul>
-    /// <li>
-    /// <p>512 (0.5 GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p></li>
-    /// <li>
-    /// <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available <code>cpu</code> values: 512 (.5 vCPU)</p></li>
-    /// <li>
-    /// <p>2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available <code>cpu</code> values: 1024 (1 vCPU)</p></li>
-    /// <li>
-    /// <p>Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values: 2048 (2 vCPU)</p></li>
-    /// <li>
-    /// <p>Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values: 4096 (4 vCPU)</p></li>
-    /// <li>
-    /// <p>Between 16 GB and 60 GB in 4 GB increments - Available <code>cpu</code> values: 8192 (8 vCPU)</p>
-    /// <p>This option requires Linux platform <code>1.4.0</code> or later.</p></li>
-    /// <li>
-    /// <p>Between 32GB and 120 GB in 8 GB increments - Available <code>cpu</code> values: 16384 (16 vCPU)</p>
-    /// <p>This option requires Linux platform <code>1.4.0</code> or later.</p></li>
+    /// <li> <p>512 (0.5 GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p> </li>
+    /// <li> <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available <code>cpu</code> values: 512 (.5 vCPU)</p> </li>
+    /// <li> <p>2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available <code>cpu</code> values: 1024 (1 vCPU)</p> </li>
+    /// <li> <p>Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values: 2048 (2 vCPU)</p> </li>
+    /// <li> <p>Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values: 4096 (4 vCPU)</p> </li>
+    /// <li> <p>Between 16 GB and 60 GB in 4 GB increments - Available <code>cpu</code> values: 8192 (8 vCPU)</p> <p>This option requires Linux platform <code>1.4.0</code> or later.</p> </li>
+    /// <li> <p>Between 32GB and 120 GB in 8 GB increments - Available <code>cpu</code> values: 16384 (16 vCPU)</p> <p>This option requires Linux platform <code>1.4.0</code> or later.</p> </li>
     /// </ul>
     pub fn set_memory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.memory = input;
@@ -849,22 +742,13 @@ impl TaskBuilder {
     /// <p>If you use the EC2 launch type, this field is optional.</p>
     /// <p>If you use the Fargate launch type, this field is required. You must use one of the following values. The value that you choose determines the range of supported values for the <code>cpu</code> parameter.</p>
     /// <ul>
-    /// <li>
-    /// <p>512 (0.5 GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p></li>
-    /// <li>
-    /// <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available <code>cpu</code> values: 512 (.5 vCPU)</p></li>
-    /// <li>
-    /// <p>2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available <code>cpu</code> values: 1024 (1 vCPU)</p></li>
-    /// <li>
-    /// <p>Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values: 2048 (2 vCPU)</p></li>
-    /// <li>
-    /// <p>Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values: 4096 (4 vCPU)</p></li>
-    /// <li>
-    /// <p>Between 16 GB and 60 GB in 4 GB increments - Available <code>cpu</code> values: 8192 (8 vCPU)</p>
-    /// <p>This option requires Linux platform <code>1.4.0</code> or later.</p></li>
-    /// <li>
-    /// <p>Between 32GB and 120 GB in 8 GB increments - Available <code>cpu</code> values: 16384 (16 vCPU)</p>
-    /// <p>This option requires Linux platform <code>1.4.0</code> or later.</p></li>
+    /// <li> <p>512 (0.5 GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p> </li>
+    /// <li> <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available <code>cpu</code> values: 512 (.5 vCPU)</p> </li>
+    /// <li> <p>2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available <code>cpu</code> values: 1024 (1 vCPU)</p> </li>
+    /// <li> <p>Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values: 2048 (2 vCPU)</p> </li>
+    /// <li> <p>Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values: 4096 (4 vCPU)</p> </li>
+    /// <li> <p>Between 16 GB and 60 GB in 4 GB increments - Available <code>cpu</code> values: 8192 (8 vCPU)</p> <p>This option requires Linux platform <code>1.4.0</code> or later.</p> </li>
+    /// <li> <p>Between 32GB and 120 GB in 8 GB increments - Available <code>cpu</code> values: 16384 (16 vCPU)</p> <p>This option requires Linux platform <code>1.4.0</code> or later.</p> </li>
     /// </ul>
     pub fn get_memory(&self) -> &::std::option::Option<::std::string::String> {
         &self.memory
@@ -897,20 +781,20 @@ impl TaskBuilder {
     pub fn get_platform_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.platform_version
     }
-    /// <p>The operating system that your tasks are running on. A platform family is specified only for tasks that use the Fargate launch type.</p>
-    /// <p>All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service (for example, <code>LINUX.</code>).</p>
+    /// <p>The operating system that your tasks are running on. A platform family is specified only for tasks that use the Fargate launch type. </p>
+    /// <p> All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service (for example, <code>LINUX.</code>).</p>
     pub fn platform_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform_family = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The operating system that your tasks are running on. A platform family is specified only for tasks that use the Fargate launch type.</p>
-    /// <p>All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service (for example, <code>LINUX.</code>).</p>
+    /// <p>The operating system that your tasks are running on. A platform family is specified only for tasks that use the Fargate launch type. </p>
+    /// <p> All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service (for example, <code>LINUX.</code>).</p>
     pub fn set_platform_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.platform_family = input;
         self
     }
-    /// <p>The operating system that your tasks are running on. A platform family is specified only for tasks that use the Fargate launch type.</p>
-    /// <p>All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service (for example, <code>LINUX.</code>).</p>
+    /// <p>The operating system that your tasks are running on. A platform family is specified only for tasks that use the Fargate launch type. </p>
+    /// <p> All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service (for example, <code>LINUX.</code>).</p>
     pub fn get_platform_family(&self) -> &::std::option::Option<::std::string::String> {
         &self.platform_family
     }
@@ -970,64 +854,46 @@ impl TaskBuilder {
     pub fn get_started_by(&self) -> &::std::option::Option<::std::string::String> {
         &self.started_by
     }
-    /// <p>The stop code indicating why a task was stopped. The <code>stoppedReason</code> might contain additional details.</p>
+    /// <p>The stop code indicating why a task was stopped. The <code>stoppedReason</code> might contain additional details. </p>
     /// <p>For more information about stop code, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/stopped-task-error-codes.html">Stopped tasks error codes</a> in the <i>Amazon ECS User Guide</i>.</p>
     /// <p>The following are valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>TaskFailedToStart</code></p></li>
-    /// <li>
-    /// <p><code>EssentialContainerExited</code></p></li>
-    /// <li>
-    /// <p><code>UserInitiated</code></p></li>
-    /// <li>
-    /// <p><code>TerminationNotice</code></p></li>
-    /// <li>
-    /// <p><code>ServiceSchedulerInitiated</code></p></li>
-    /// <li>
-    /// <p><code>SpotInterruption</code></p></li>
+    /// <li> <p> <code>TaskFailedToStart</code> </p> </li>
+    /// <li> <p> <code>EssentialContainerExited</code> </p> </li>
+    /// <li> <p> <code>UserInitiated</code> </p> </li>
+    /// <li> <p> <code>TerminationNotice</code> </p> </li>
+    /// <li> <p> <code>ServiceSchedulerInitiated</code> </p> </li>
+    /// <li> <p> <code>SpotInterruption</code> </p> </li>
     /// </ul>
     pub fn stop_code(mut self, input: crate::types::TaskStopCode) -> Self {
         self.stop_code = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The stop code indicating why a task was stopped. The <code>stoppedReason</code> might contain additional details.</p>
+    /// <p>The stop code indicating why a task was stopped. The <code>stoppedReason</code> might contain additional details. </p>
     /// <p>For more information about stop code, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/stopped-task-error-codes.html">Stopped tasks error codes</a> in the <i>Amazon ECS User Guide</i>.</p>
     /// <p>The following are valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>TaskFailedToStart</code></p></li>
-    /// <li>
-    /// <p><code>EssentialContainerExited</code></p></li>
-    /// <li>
-    /// <p><code>UserInitiated</code></p></li>
-    /// <li>
-    /// <p><code>TerminationNotice</code></p></li>
-    /// <li>
-    /// <p><code>ServiceSchedulerInitiated</code></p></li>
-    /// <li>
-    /// <p><code>SpotInterruption</code></p></li>
+    /// <li> <p> <code>TaskFailedToStart</code> </p> </li>
+    /// <li> <p> <code>EssentialContainerExited</code> </p> </li>
+    /// <li> <p> <code>UserInitiated</code> </p> </li>
+    /// <li> <p> <code>TerminationNotice</code> </p> </li>
+    /// <li> <p> <code>ServiceSchedulerInitiated</code> </p> </li>
+    /// <li> <p> <code>SpotInterruption</code> </p> </li>
     /// </ul>
     pub fn set_stop_code(mut self, input: ::std::option::Option<crate::types::TaskStopCode>) -> Self {
         self.stop_code = input;
         self
     }
-    /// <p>The stop code indicating why a task was stopped. The <code>stoppedReason</code> might contain additional details.</p>
+    /// <p>The stop code indicating why a task was stopped. The <code>stoppedReason</code> might contain additional details. </p>
     /// <p>For more information about stop code, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/stopped-task-error-codes.html">Stopped tasks error codes</a> in the <i>Amazon ECS User Guide</i>.</p>
     /// <p>The following are valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>TaskFailedToStart</code></p></li>
-    /// <li>
-    /// <p><code>EssentialContainerExited</code></p></li>
-    /// <li>
-    /// <p><code>UserInitiated</code></p></li>
-    /// <li>
-    /// <p><code>TerminationNotice</code></p></li>
-    /// <li>
-    /// <p><code>ServiceSchedulerInitiated</code></p></li>
-    /// <li>
-    /// <p><code>SpotInterruption</code></p></li>
+    /// <li> <p> <code>TaskFailedToStart</code> </p> </li>
+    /// <li> <p> <code>EssentialContainerExited</code> </p> </li>
+    /// <li> <p> <code>UserInitiated</code> </p> </li>
+    /// <li> <p> <code>TerminationNotice</code> </p> </li>
+    /// <li> <p> <code>ServiceSchedulerInitiated</code> </p> </li>
+    /// <li> <p> <code>SpotInterruption</code> </p> </li>
     /// </ul>
     pub fn get_stop_code(&self) -> &::std::option::Option<crate::types::TaskStopCode> {
         &self.stop_code
@@ -1081,20 +947,13 @@ impl TaskBuilder {
     /// <p>The metadata that you apply to the task to help you categorize and organize the task. Each tag consists of a key and an optional value. You define both the key and value.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
-    /// <li>
-    /// <p>Maximum number of tags per resource - 50</p></li>
-    /// <li>
-    /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p></li>
-    /// <li>
-    /// <p>Maximum key length - 128 Unicode characters in UTF-8</p></li>
-    /// <li>
-    /// <p>Maximum value length - 256 Unicode characters in UTF-8</p></li>
-    /// <li>
-    /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p></li>
-    /// <li>
-    /// <p>Tag keys and values are case-sensitive.</p></li>
-    /// <li>
-    /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
+    /// <li> <p>Maximum number of tags per resource - 50</p> </li>
+    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+    /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
+    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
     /// </ul>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
@@ -1105,20 +964,13 @@ impl TaskBuilder {
     /// <p>The metadata that you apply to the task to help you categorize and organize the task. Each tag consists of a key and an optional value. You define both the key and value.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
-    /// <li>
-    /// <p>Maximum number of tags per resource - 50</p></li>
-    /// <li>
-    /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p></li>
-    /// <li>
-    /// <p>Maximum key length - 128 Unicode characters in UTF-8</p></li>
-    /// <li>
-    /// <p>Maximum value length - 256 Unicode characters in UTF-8</p></li>
-    /// <li>
-    /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p></li>
-    /// <li>
-    /// <p>Tag keys and values are case-sensitive.</p></li>
-    /// <li>
-    /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
+    /// <li> <p>Maximum number of tags per resource - 50</p> </li>
+    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+    /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
+    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
     /// </ul>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
@@ -1127,20 +979,13 @@ impl TaskBuilder {
     /// <p>The metadata that you apply to the task to help you categorize and organize the task. Each tag consists of a key and an optional value. You define both the key and value.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
-    /// <li>
-    /// <p>Maximum number of tags per resource - 50</p></li>
-    /// <li>
-    /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p></li>
-    /// <li>
-    /// <p>Maximum key length - 128 Unicode characters in UTF-8</p></li>
-    /// <li>
-    /// <p>Maximum value length - 256 Unicode characters in UTF-8</p></li>
-    /// <li>
-    /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p></li>
-    /// <li>
-    /// <p>Tag keys and values are case-sensitive.</p></li>
-    /// <li>
-    /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
+    /// <li> <p>Maximum number of tags per resource - 50</p> </li>
+    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+    /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
+    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
     /// </ul>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags

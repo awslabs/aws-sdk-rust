@@ -22,7 +22,7 @@ impl GetUserDetailsInputBuilder {
 }
 /// Fluent builder constructing a request to `GetUserDetails`.
 ///
-/// <p>Returns information about a user.</p>
+/// <p>Returns information about a user. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetUserDetailsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl GetUserDetailsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The system-generated unique ID of the user.</p>
+    /// <p>The system-generated unique ID of the user. </p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
         self
     }
-    /// <p>The system-generated unique ID of the user.</p>
+    /// <p>The system-generated unique ID of the user. </p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
     }
-    /// <p>The system-generated unique ID of the user.</p>
+    /// <p>The system-generated unique ID of the user. </p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_id()
     }

@@ -22,7 +22,7 @@ impl StopAssessmentInputBuilder {
 }
 /// Fluent builder constructing a request to `StopAssessment`.
 ///
-/// <p>Stops the assessment of an on-premises environment.</p>
+/// <p> Stops the assessment of an on-premises environment. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopAssessmentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl StopAssessmentFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The <code>assessmentId</code> returned by <code>StartAssessment</code>.</p>
+    /// <p> The <code>assessmentId</code> returned by <code>StartAssessment</code>. </p>
     pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_id(input.into());
         self
     }
-    /// <p>The <code>assessmentId</code> returned by <code>StartAssessment</code>.</p>
+    /// <p> The <code>assessmentId</code> returned by <code>StartAssessment</code>. </p>
     pub fn set_assessment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assessment_id(input);
         self
     }
-    /// <p>The <code>assessmentId</code> returned by <code>StartAssessment</code>.</p>
+    /// <p> The <code>assessmentId</code> returned by <code>StartAssessment</code>. </p>
     pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_assessment_id()
     }

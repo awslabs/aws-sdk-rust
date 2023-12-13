@@ -8,12 +8,9 @@ pub struct ProductViewDetail {
     pub product_view_summary: ::std::option::Option<crate::types::ProductViewSummary>,
     /// <p>The status of the product.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AVAILABLE</code> - The product is ready for use.</p></li>
-    /// <li>
-    /// <p><code>CREATING</code> - Product creation has started; the product is not ready for use.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - An action failed.</p></li>
+    /// <li> <p> <code>AVAILABLE</code> - The product is ready for use.</p> </li>
+    /// <li> <p> <code>CREATING</code> - Product creation has started; the product is not ready for use.</p> </li>
+    /// <li> <p> <code>FAILED</code> - An action failed.</p> </li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::Status>,
     /// <p>The ARN of the product.</p>
@@ -30,12 +27,9 @@ impl ProductViewDetail {
     }
     /// <p>The status of the product.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AVAILABLE</code> - The product is ready for use.</p></li>
-    /// <li>
-    /// <p><code>CREATING</code> - Product creation has started; the product is not ready for use.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - An action failed.</p></li>
+    /// <li> <p> <code>AVAILABLE</code> - The product is ready for use.</p> </li>
+    /// <li> <p> <code>CREATING</code> - Product creation has started; the product is not ready for use.</p> </li>
+    /// <li> <p> <code>FAILED</code> - An action failed.</p> </li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::Status> {
         self.status.as_ref()
@@ -87,12 +81,9 @@ impl ProductViewDetailBuilder {
     }
     /// <p>The status of the product.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AVAILABLE</code> - The product is ready for use.</p></li>
-    /// <li>
-    /// <p><code>CREATING</code> - Product creation has started; the product is not ready for use.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - An action failed.</p></li>
+    /// <li> <p> <code>AVAILABLE</code> - The product is ready for use.</p> </li>
+    /// <li> <p> <code>CREATING</code> - Product creation has started; the product is not ready for use.</p> </li>
+    /// <li> <p> <code>FAILED</code> - An action failed.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::Status) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -100,12 +91,9 @@ impl ProductViewDetailBuilder {
     }
     /// <p>The status of the product.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AVAILABLE</code> - The product is ready for use.</p></li>
-    /// <li>
-    /// <p><code>CREATING</code> - Product creation has started; the product is not ready for use.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - An action failed.</p></li>
+    /// <li> <p> <code>AVAILABLE</code> - The product is ready for use.</p> </li>
+    /// <li> <p> <code>CREATING</code> - Product creation has started; the product is not ready for use.</p> </li>
+    /// <li> <p> <code>FAILED</code> - An action failed.</p> </li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
         self.status = input;
@@ -113,12 +101,9 @@ impl ProductViewDetailBuilder {
     }
     /// <p>The status of the product.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AVAILABLE</code> - The product is ready for use.</p></li>
-    /// <li>
-    /// <p><code>CREATING</code> - Product creation has started; the product is not ready for use.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - An action failed.</p></li>
+    /// <li> <p> <code>AVAILABLE</code> - The product is ready for use.</p> </li>
+    /// <li> <p> <code>CREATING</code> - Product creation has started; the product is not ready for use.</p> </li>
+    /// <li> <p> <code>FAILED</code> - An action failed.</p> </li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
         &self.status

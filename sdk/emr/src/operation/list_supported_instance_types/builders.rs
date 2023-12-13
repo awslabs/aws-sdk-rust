@@ -22,7 +22,7 @@ impl ListSupportedInstanceTypesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListSupportedInstanceTypes`.
 ///
-/// <p>A list of the instance types that Amazon EMR supports. You can filter the list by Amazon Web Services Region and Amazon EMR release.</p>
+/// <p>A list of the instance types that Amazon EMR supports. You can filter the list by Amazon Web Services Region and Amazon EMR release. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListSupportedInstanceTypesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

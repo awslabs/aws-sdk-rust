@@ -23,8 +23,8 @@ impl StartDocumentAnalysisInputBuilder {
 /// Fluent builder constructing a request to `StartDocumentAnalysis`.
 ///
 /// <p>Starts the asynchronous analysis of an input document for relationships between detected items such as key-value pairs, tables, and selection elements.</p>
-/// <p><code>StartDocumentAnalysis</code> can analyze text in documents that are in JPEG, PNG, TIFF, and PDF format. The documents are stored in an Amazon S3 bucket. Use <code>DocumentLocation</code> to specify the bucket name and file name of the document.</p>
-/// <p><code>StartDocumentAnalysis</code> returns a job identifier (<code>JobId</code>) that you use to get the results of the operation. When text analysis is finished, Amazon Textract publishes a completion status to the Amazon Simple Notification Service (Amazon SNS) topic that you specify in <code>NotificationChannel</code>. To get the results of the text analysis operation, first check that the status value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call <code>GetDocumentAnalysis</code>, and pass the job identifier (<code>JobId</code>) from the initial call to <code>StartDocumentAnalysis</code>.</p>
+/// <p> <code>StartDocumentAnalysis</code> can analyze text in documents that are in JPEG, PNG, TIFF, and PDF format. The documents are stored in an Amazon S3 bucket. Use <code>DocumentLocation</code> to specify the bucket name and file name of the document. </p>
+/// <p> <code>StartDocumentAnalysis</code> returns a job identifier (<code>JobId</code>) that you use to get the results of the operation. When text analysis is finished, Amazon Textract publishes a completion status to the Amazon Simple Notification Service (Amazon SNS) topic that you specify in <code>NotificationChannel</code>. To get the results of the text analysis operation, first check that the status value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call <code>GetDocumentAnalysis</code>, and pass the job identifier (<code>JobId</code>) from the initial call to <code>StartDocumentAnalysis</code>.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works-analyzing.html">Document Text Analysis</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartDocumentAnalysisFluentBuilder {
@@ -129,17 +129,17 @@ impl StartDocumentAnalysisFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_feature_types`](Self::set_feature_types).
     ///
-    /// <p>A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that are detected in the input document. Add FORMS to return detected form data. To perform both types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All lines and words detected in the document are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>).</p>
+    /// <p>A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that are detected in the input document. Add FORMS to return detected form data. To perform both types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All lines and words detected in the document are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>). </p>
     pub fn feature_types(mut self, input: crate::types::FeatureType) -> Self {
         self.inner = self.inner.feature_types(input);
         self
     }
-    /// <p>A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that are detected in the input document. Add FORMS to return detected form data. To perform both types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All lines and words detected in the document are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>).</p>
+    /// <p>A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that are detected in the input document. Add FORMS to return detected form data. To perform both types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All lines and words detected in the document are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>). </p>
     pub fn set_feature_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FeatureType>>) -> Self {
         self.inner = self.inner.set_feature_types(input);
         self
     }
-    /// <p>A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that are detected in the input document. Add FORMS to return detected form data. To perform both types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All lines and words detected in the document are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>).</p>
+    /// <p>A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that are detected in the input document. Add FORMS to return detected form data. To perform both types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All lines and words detected in the document are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>). </p>
     pub fn get_feature_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FeatureType>> {
         self.inner.get_feature_types()
     }
@@ -171,17 +171,17 @@ impl StartDocumentAnalysisFluentBuilder {
     pub fn get_job_tag(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_job_tag()
     }
-    /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to.</p>
+    /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to. </p>
     pub fn notification_channel(mut self, input: crate::types::NotificationChannel) -> Self {
         self.inner = self.inner.notification_channel(input);
         self
     }
-    /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to.</p>
+    /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to. </p>
     pub fn set_notification_channel(mut self, input: ::std::option::Option<crate::types::NotificationChannel>) -> Self {
         self.inner = self.inner.set_notification_channel(input);
         self
     }
-    /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to.</p>
+    /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to. </p>
     pub fn get_notification_channel(&self) -> &::std::option::Option<crate::types::NotificationChannel> {
         self.inner.get_notification_channel()
     }

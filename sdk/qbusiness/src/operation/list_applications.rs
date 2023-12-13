@@ -253,7 +253,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListApplicati
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum ListApplicationsError {
-    /// <p>You don't have access to perform this action. Make sure you have the required permission policies and user accounts and try again.</p>
+    /// <p> You don't have access to perform this action. Make sure you have the required permission policies and user accounts and try again.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>An issue occurred with the internal server used for your Amazon Q service. Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a> for help.</p>
     InternalServerException(crate::types::error::InternalServerException),

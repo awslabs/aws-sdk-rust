@@ -22,7 +22,7 @@ impl DeletePlatformApplicationInputBuilder {
 }
 /// Fluent builder constructing a request to `DeletePlatformApplication`.
 ///
-/// <p>Deletes a platform application object for one of the supported push notification services, such as APNS and GCM (Firebase Cloud Messaging). For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>.</p>
+/// <p>Deletes a platform application object for one of the supported push notification services, such as APNS and GCM (Firebase Cloud Messaging). For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeletePlatformApplicationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

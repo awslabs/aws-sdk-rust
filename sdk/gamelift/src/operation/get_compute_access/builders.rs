@@ -23,11 +23,11 @@ impl GetComputeAccessInputBuilder {
 /// Fluent builder constructing a request to `GetComputeAccess`.
 ///
 /// <p>Requests authorization to remotely connect to a compute resource in an Amazon GameLift fleet. Call this action to connect to an instance in a managed EC2 fleet if the fleet's game build uses Amazon GameLift server SDK 5.x or later. To connect to instances with game builds that use server SDK 4.x or earlier, call <code>GetInstanceAccess</code>.</p>
-/// <p>To request access to a compute, identify the specific EC2 instance and the fleet it belongs to. You can retrieve instances for a managed EC2 fleet by calling <code>ListCompute</code>.</p>
+/// <p>To request access to a compute, identify the specific EC2 instance and the fleet it belongs to. You can retrieve instances for a managed EC2 fleet by calling <code>ListCompute</code>. </p>
 /// <p>If successful, this operation returns a set of temporary Amazon Web Services credentials, including a two-part access key and a session token. Use these credentials with Amazon EC2 Systems Manager (SSM) to start a session with the compute. For more details, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-sessions-start.html#sessions-start-cli"> Starting a session (CLI)</a> in the <i>Amazon EC2 Systems Manager User Guide</i>.</p>
-/// <p><b>Learn more</b></p>
-/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-remote-access.html">Remotely connect to fleet instances</a></p>
-/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-debug.html">Debug fleet issues</a></p>
+/// <p> <b>Learn more</b> </p>
+/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-remote-access.html">Remotely connect to fleet instances</a> </p>
+/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-debug.html">Debug fleet issues</a> </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetComputeAccessFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -11,7 +11,7 @@ pub struct DescribeProjectOutput {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The description of the project, if any.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>A user- or system-generated token that identifies the entity that requested project creation.</p>
+    /// <p>A user- or system-generated token that identifies the entity that requested project creation. </p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the project was created, in timestamp format.</p>
     pub created_time_stamp: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -40,7 +40,7 @@ impl DescribeProjectOutput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>A user- or system-generated token that identifies the entity that requested project creation.</p>
+    /// <p>A user- or system-generated token that identifies the entity that requested project creation. </p>
     pub fn client_request_token(&self) -> ::std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -161,17 +161,17 @@ impl DescribeProjectOutputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>A user- or system-generated token that identifies the entity that requested project creation.</p>
+    /// <p>A user- or system-generated token that identifies the entity that requested project creation. </p>
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A user- or system-generated token that identifies the entity that requested project creation.</p>
+    /// <p>A user- or system-generated token that identifies the entity that requested project creation. </p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
-    /// <p>A user- or system-generated token that identifies the entity that requested project creation.</p>
+    /// <p>A user- or system-generated token that identifies the entity that requested project creation. </p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_request_token
     }

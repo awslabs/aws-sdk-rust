@@ -7,28 +7,22 @@
 pub struct MessageTag {
     /// <p>The name of the tag. The name must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p></li>
-    /// <li>
-    /// <p>Contain 256 characters or fewer.</p></li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
+    /// <li> <p>Contain 256 characters or fewer.</p> </li>
     /// </ul>
     pub name: ::std::string::String,
     /// <p>The value of the tag. The value must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p></li>
-    /// <li>
-    /// <p>Contain 256 characters or fewer.</p></li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
+    /// <li> <p>Contain 256 characters or fewer.</p> </li>
     /// </ul>
     pub value: ::std::string::String,
 }
 impl MessageTag {
     /// <p>The name of the tag. The name must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p></li>
-    /// <li>
-    /// <p>Contain 256 characters or fewer.</p></li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
+    /// <li> <p>Contain 256 characters or fewer.</p> </li>
     /// </ul>
     pub fn name(&self) -> &str {
         use std::ops::Deref;
@@ -36,10 +30,8 @@ impl MessageTag {
     }
     /// <p>The value of the tag. The value must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p></li>
-    /// <li>
-    /// <p>Contain 256 characters or fewer.</p></li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
+    /// <li> <p>Contain 256 characters or fewer.</p> </li>
     /// </ul>
     pub fn value(&self) -> &str {
         use std::ops::Deref;
@@ -63,10 +55,8 @@ pub struct MessageTagBuilder {
 impl MessageTagBuilder {
     /// <p>The name of the tag. The name must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p></li>
-    /// <li>
-    /// <p>Contain 256 characters or fewer.</p></li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
+    /// <li> <p>Contain 256 characters or fewer.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -75,10 +65,8 @@ impl MessageTagBuilder {
     }
     /// <p>The name of the tag. The name must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p></li>
-    /// <li>
-    /// <p>Contain 256 characters or fewer.</p></li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
+    /// <li> <p>Contain 256 characters or fewer.</p> </li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
@@ -86,20 +74,16 @@ impl MessageTagBuilder {
     }
     /// <p>The name of the tag. The name must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p></li>
-    /// <li>
-    /// <p>Contain 256 characters or fewer.</p></li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
+    /// <li> <p>Contain 256 characters or fewer.</p> </li>
     /// </ul>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
     /// <p>The value of the tag. The value must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p></li>
-    /// <li>
-    /// <p>Contain 256 characters or fewer.</p></li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
+    /// <li> <p>Contain 256 characters or fewer.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -108,10 +92,8 @@ impl MessageTagBuilder {
     }
     /// <p>The value of the tag. The value must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p></li>
-    /// <li>
-    /// <p>Contain 256 characters or fewer.</p></li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
+    /// <li> <p>Contain 256 characters or fewer.</p> </li>
     /// </ul>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
@@ -119,10 +101,8 @@ impl MessageTagBuilder {
     }
     /// <p>The value of the tag. The value must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p></li>
-    /// <li>
-    /// <p>Contain 256 characters or fewer.</p></li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
+    /// <li> <p>Contain 256 characters or fewer.</p> </li>
     /// </ul>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.value

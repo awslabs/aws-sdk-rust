@@ -22,10 +22,10 @@ impl BatchCreateVehicleInputBuilder {
 }
 /// Fluent builder constructing a request to `BatchCreateVehicle`.
 ///
-/// <p>Creates a group, or batch, of vehicles.</p><note>
-/// <p>You must specify a decoder manifest and a vehicle model (model manifest) for each vehicle.</p>
+/// <p> Creates a group, or batch, of vehicles. </p> <note>
+/// <p> You must specify a decoder manifest and a vehicle model (model manifest) for each vehicle. </p>
 /// </note>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/create-vehicles-cli.html">Create multiple vehicles (AWS CLI)</a> in the <i>Amazon Web Services IoT FleetWise Developer Guide</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/create-vehicles-cli.html">Create multiple vehicles (AWS CLI)</a> in the <i>Amazon Web Services IoT FleetWise Developer Guide</i>. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchCreateVehicleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -115,17 +115,17 @@ impl BatchCreateVehicleFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_vehicles`](Self::set_vehicles).
     ///
-    /// <p>A list of information about each vehicle to create. For more information, see the API data type.</p>
+    /// <p> A list of information about each vehicle to create. For more information, see the API data type.</p>
     pub fn vehicles(mut self, input: crate::types::CreateVehicleRequestItem) -> Self {
         self.inner = self.inner.vehicles(input);
         self
     }
-    /// <p>A list of information about each vehicle to create. For more information, see the API data type.</p>
+    /// <p> A list of information about each vehicle to create. For more information, see the API data type.</p>
     pub fn set_vehicles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CreateVehicleRequestItem>>) -> Self {
         self.inner = self.inner.set_vehicles(input);
         self
     }
-    /// <p>A list of information about each vehicle to create. For more information, see the API data type.</p>
+    /// <p> A list of information about each vehicle to create. For more information, see the API data type.</p>
     pub fn get_vehicles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateVehicleRequestItem>> {
         self.inner.get_vehicles()
     }

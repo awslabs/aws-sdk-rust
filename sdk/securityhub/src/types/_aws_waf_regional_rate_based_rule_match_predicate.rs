@@ -11,20 +11,13 @@ pub struct AwsWafRegionalRateBasedRuleMatchPredicate {
     pub negated: ::std::option::Option<bool>,
     /// <p>The type of predicate. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ByteMatch</code></p></li>
-    /// <li>
-    /// <p><code>GeoMatch</code></p></li>
-    /// <li>
-    /// <p><code>IPMatch</code></p></li>
-    /// <li>
-    /// <p><code>RegexMatch</code></p></li>
-    /// <li>
-    /// <p><code>SizeConstraint</code></p></li>
-    /// <li>
-    /// <p><code>SqlInjectionMatch</code></p></li>
-    /// <li>
-    /// <p><code>XssMatch</code></p></li>
+    /// <li> <p> <code>ByteMatch</code> </p> </li>
+    /// <li> <p> <code>GeoMatch</code> </p> </li>
+    /// <li> <p> <code>IPMatch</code> </p> </li>
+    /// <li> <p> <code>RegexMatch</code> </p> </li>
+    /// <li> <p> <code>SizeConstraint</code> </p> </li>
+    /// <li> <p> <code>SqlInjectionMatch</code> </p> </li>
+    /// <li> <p> <code>XssMatch</code> </p> </li>
     /// </ul>
     pub r#type: ::std::option::Option<::std::string::String>,
 }
@@ -40,20 +33,13 @@ impl AwsWafRegionalRateBasedRuleMatchPredicate {
     }
     /// <p>The type of predicate. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ByteMatch</code></p></li>
-    /// <li>
-    /// <p><code>GeoMatch</code></p></li>
-    /// <li>
-    /// <p><code>IPMatch</code></p></li>
-    /// <li>
-    /// <p><code>RegexMatch</code></p></li>
-    /// <li>
-    /// <p><code>SizeConstraint</code></p></li>
-    /// <li>
-    /// <p><code>SqlInjectionMatch</code></p></li>
-    /// <li>
-    /// <p><code>XssMatch</code></p></li>
+    /// <li> <p> <code>ByteMatch</code> </p> </li>
+    /// <li> <p> <code>GeoMatch</code> </p> </li>
+    /// <li> <p> <code>IPMatch</code> </p> </li>
+    /// <li> <p> <code>RegexMatch</code> </p> </li>
+    /// <li> <p> <code>SizeConstraint</code> </p> </li>
+    /// <li> <p> <code>SqlInjectionMatch</code> </p> </li>
+    /// <li> <p> <code>XssMatch</code> </p> </li>
     /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
@@ -108,20 +94,13 @@ impl AwsWafRegionalRateBasedRuleMatchPredicateBuilder {
     }
     /// <p>The type of predicate. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ByteMatch</code></p></li>
-    /// <li>
-    /// <p><code>GeoMatch</code></p></li>
-    /// <li>
-    /// <p><code>IPMatch</code></p></li>
-    /// <li>
-    /// <p><code>RegexMatch</code></p></li>
-    /// <li>
-    /// <p><code>SizeConstraint</code></p></li>
-    /// <li>
-    /// <p><code>SqlInjectionMatch</code></p></li>
-    /// <li>
-    /// <p><code>XssMatch</code></p></li>
+    /// <li> <p> <code>ByteMatch</code> </p> </li>
+    /// <li> <p> <code>GeoMatch</code> </p> </li>
+    /// <li> <p> <code>IPMatch</code> </p> </li>
+    /// <li> <p> <code>RegexMatch</code> </p> </li>
+    /// <li> <p> <code>SizeConstraint</code> </p> </li>
+    /// <li> <p> <code>SqlInjectionMatch</code> </p> </li>
+    /// <li> <p> <code>XssMatch</code> </p> </li>
     /// </ul>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -129,20 +108,13 @@ impl AwsWafRegionalRateBasedRuleMatchPredicateBuilder {
     }
     /// <p>The type of predicate. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ByteMatch</code></p></li>
-    /// <li>
-    /// <p><code>GeoMatch</code></p></li>
-    /// <li>
-    /// <p><code>IPMatch</code></p></li>
-    /// <li>
-    /// <p><code>RegexMatch</code></p></li>
-    /// <li>
-    /// <p><code>SizeConstraint</code></p></li>
-    /// <li>
-    /// <p><code>SqlInjectionMatch</code></p></li>
-    /// <li>
-    /// <p><code>XssMatch</code></p></li>
+    /// <li> <p> <code>ByteMatch</code> </p> </li>
+    /// <li> <p> <code>GeoMatch</code> </p> </li>
+    /// <li> <p> <code>IPMatch</code> </p> </li>
+    /// <li> <p> <code>RegexMatch</code> </p> </li>
+    /// <li> <p> <code>SizeConstraint</code> </p> </li>
+    /// <li> <p> <code>SqlInjectionMatch</code> </p> </li>
+    /// <li> <p> <code>XssMatch</code> </p> </li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
@@ -150,20 +122,13 @@ impl AwsWafRegionalRateBasedRuleMatchPredicateBuilder {
     }
     /// <p>The type of predicate. Valid values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ByteMatch</code></p></li>
-    /// <li>
-    /// <p><code>GeoMatch</code></p></li>
-    /// <li>
-    /// <p><code>IPMatch</code></p></li>
-    /// <li>
-    /// <p><code>RegexMatch</code></p></li>
-    /// <li>
-    /// <p><code>SizeConstraint</code></p></li>
-    /// <li>
-    /// <p><code>SqlInjectionMatch</code></p></li>
-    /// <li>
-    /// <p><code>XssMatch</code></p></li>
+    /// <li> <p> <code>ByteMatch</code> </p> </li>
+    /// <li> <p> <code>GeoMatch</code> </p> </li>
+    /// <li> <p> <code>IPMatch</code> </p> </li>
+    /// <li> <p> <code>RegexMatch</code> </p> </li>
+    /// <li> <p> <code>SizeConstraint</code> </p> </li>
+    /// <li> <p> <code>SqlInjectionMatch</code> </p> </li>
+    /// <li> <p> <code>XssMatch</code> </p> </li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.r#type

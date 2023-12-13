@@ -17,7 +17,7 @@ pub struct CreateDataSourceOutput {
     pub domain_id: ::std::string::String,
     /// <p>The ID of the Amazon DataZone project to which the data source is added.</p>
     pub project_id: ::std::string::String,
-    /// <p>The unique identifier of the Amazon DataZone environment to which the data source publishes assets.</p>
+    /// <p>The unique identifier of the Amazon DataZone environment to which the data source publishes assets. </p>
     pub environment_id: ::std::string::String,
     /// <p>Specifies the configuration of the data source. It can be set to either <code>glueRunConfiguration</code> or <code>redshiftRunConfiguration</code>.</p>
     pub configuration: ::std::option::Option<crate::types::DataSourceConfigurationOutput>,
@@ -78,7 +78,7 @@ impl CreateDataSourceOutput {
         use std::ops::Deref;
         self.project_id.deref()
     }
-    /// <p>The unique identifier of the Amazon DataZone environment to which the data source publishes assets.</p>
+    /// <p>The unique identifier of the Amazon DataZone environment to which the data source publishes assets. </p>
     pub fn environment_id(&self) -> &str {
         use std::ops::Deref;
         self.environment_id.deref()
@@ -302,18 +302,18 @@ impl CreateDataSourceOutputBuilder {
     pub fn get_project_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.project_id
     }
-    /// <p>The unique identifier of the Amazon DataZone environment to which the data source publishes assets.</p>
+    /// <p>The unique identifier of the Amazon DataZone environment to which the data source publishes assets. </p>
     /// This field is required.
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the Amazon DataZone environment to which the data source publishes assets.</p>
+    /// <p>The unique identifier of the Amazon DataZone environment to which the data source publishes assets. </p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_id = input;
         self
     }
-    /// <p>The unique identifier of the Amazon DataZone environment to which the data source publishes assets.</p>
+    /// <p>The unique identifier of the Amazon DataZone environment to which the data source publishes assets. </p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.environment_id
     }

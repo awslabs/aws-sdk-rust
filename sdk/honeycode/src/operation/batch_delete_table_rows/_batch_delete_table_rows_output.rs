@@ -5,7 +5,7 @@
 pub struct BatchDeleteTableRowsOutput {
     /// <p>The updated workbook cursor after deleting the rows from the table.</p>
     pub workbook_cursor: i64,
-    /// <p>The list of row ids in the request that could not be deleted from the table. Each element in this list contains one row id from the request that could not be deleted along with the reason why that item could not be deleted.</p>
+    /// <p> The list of row ids in the request that could not be deleted from the table. Each element in this list contains one row id from the request that could not be deleted along with the reason why that item could not be deleted. </p>
     pub failed_batch_items: ::std::option::Option<::std::vec::Vec<crate::types::FailedBatchItem>>,
     _request_id: Option<String>,
 }
@@ -14,7 +14,7 @@ impl BatchDeleteTableRowsOutput {
     pub fn workbook_cursor(&self) -> i64 {
         self.workbook_cursor
     }
-    /// <p>The list of row ids in the request that could not be deleted from the table. Each element in this list contains one row id from the request that could not be deleted along with the reason why that item could not be deleted.</p>
+    /// <p> The list of row ids in the request that could not be deleted from the table. Each element in this list contains one row id from the request that could not be deleted along with the reason why that item could not be deleted. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed_batch_items.is_none()`.
     pub fn failed_batch_items(&self) -> &[crate::types::FailedBatchItem] {
@@ -61,19 +61,19 @@ impl BatchDeleteTableRowsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_failed_batch_items`](Self::set_failed_batch_items).
     ///
-    /// <p>The list of row ids in the request that could not be deleted from the table. Each element in this list contains one row id from the request that could not be deleted along with the reason why that item could not be deleted.</p>
+    /// <p> The list of row ids in the request that could not be deleted from the table. Each element in this list contains one row id from the request that could not be deleted along with the reason why that item could not be deleted. </p>
     pub fn failed_batch_items(mut self, input: crate::types::FailedBatchItem) -> Self {
         let mut v = self.failed_batch_items.unwrap_or_default();
         v.push(input);
         self.failed_batch_items = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of row ids in the request that could not be deleted from the table. Each element in this list contains one row id from the request that could not be deleted along with the reason why that item could not be deleted.</p>
+    /// <p> The list of row ids in the request that could not be deleted from the table. Each element in this list contains one row id from the request that could not be deleted along with the reason why that item could not be deleted. </p>
     pub fn set_failed_batch_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FailedBatchItem>>) -> Self {
         self.failed_batch_items = input;
         self
     }
-    /// <p>The list of row ids in the request that could not be deleted from the table. Each element in this list contains one row id from the request that could not be deleted along with the reason why that item could not be deleted.</p>
+    /// <p> The list of row ids in the request that could not be deleted from the table. Each element in this list contains one row id from the request that could not be deleted along with the reason why that item could not be deleted. </p>
     pub fn get_failed_batch_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedBatchItem>> {
         &self.failed_batch_items
     }

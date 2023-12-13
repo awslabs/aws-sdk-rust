@@ -14,7 +14,7 @@ pub struct StorageDescriptor {
     pub input_format: ::std::option::Option<::std::string::String>,
     /// <p>The output format: <code>SequenceFileOutputFormat</code> (binary), or <code>IgnoreKeyTextOutputFormat</code>, or a custom format.</p>
     pub output_format: ::std::option::Option<::std::string::String>,
-    /// <p><code>True</code> if the data in the table is compressed, or <code>False</code> if not.</p>
+    /// <p> <code>True</code> if the data in the table is compressed, or <code>False</code> if not.</p>
     pub compressed: bool,
     /// <p>Must be specified if the table contains any dimension columns.</p>
     pub number_of_buckets: i32,
@@ -28,7 +28,7 @@ pub struct StorageDescriptor {
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The information about values that appear frequently in a column (skewed values).</p>
     pub skewed_info: ::std::option::Option<crate::types::SkewedInfo>,
-    /// <p><code>True</code> if the table data is stored in subdirectories, or <code>False</code> if not.</p>
+    /// <p> <code>True</code> if the table data is stored in subdirectories, or <code>False</code> if not.</p>
     pub stored_as_sub_directories: bool,
     /// <p>An object that references a schema stored in the Glue Schema Registry.</p>
     /// <p>When creating a table, you can pass an empty list of columns for the schema, and instead use a schema reference.</p>
@@ -59,7 +59,7 @@ impl StorageDescriptor {
     pub fn output_format(&self) -> ::std::option::Option<&str> {
         self.output_format.as_deref()
     }
-    /// <p><code>True</code> if the data in the table is compressed, or <code>False</code> if not.</p>
+    /// <p> <code>True</code> if the data in the table is compressed, or <code>False</code> if not.</p>
     pub fn compressed(&self) -> bool {
         self.compressed
     }
@@ -91,7 +91,7 @@ impl StorageDescriptor {
     pub fn skewed_info(&self) -> ::std::option::Option<&crate::types::SkewedInfo> {
         self.skewed_info.as_ref()
     }
-    /// <p><code>True</code> if the table data is stored in subdirectories, or <code>False</code> if not.</p>
+    /// <p> <code>True</code> if the table data is stored in subdirectories, or <code>False</code> if not.</p>
     pub fn stored_as_sub_directories(&self) -> bool {
         self.stored_as_sub_directories
     }
@@ -210,17 +210,17 @@ impl StorageDescriptorBuilder {
     pub fn get_output_format(&self) -> &::std::option::Option<::std::string::String> {
         &self.output_format
     }
-    /// <p><code>True</code> if the data in the table is compressed, or <code>False</code> if not.</p>
+    /// <p> <code>True</code> if the data in the table is compressed, or <code>False</code> if not.</p>
     pub fn compressed(mut self, input: bool) -> Self {
         self.compressed = ::std::option::Option::Some(input);
         self
     }
-    /// <p><code>True</code> if the data in the table is compressed, or <code>False</code> if not.</p>
+    /// <p> <code>True</code> if the data in the table is compressed, or <code>False</code> if not.</p>
     pub fn set_compressed(mut self, input: ::std::option::Option<bool>) -> Self {
         self.compressed = input;
         self
     }
-    /// <p><code>True</code> if the data in the table is compressed, or <code>False</code> if not.</p>
+    /// <p> <code>True</code> if the data in the table is compressed, or <code>False</code> if not.</p>
     pub fn get_compressed(&self) -> &::std::option::Option<bool> {
         &self.compressed
     }
@@ -326,17 +326,17 @@ impl StorageDescriptorBuilder {
     pub fn get_skewed_info(&self) -> &::std::option::Option<crate::types::SkewedInfo> {
         &self.skewed_info
     }
-    /// <p><code>True</code> if the table data is stored in subdirectories, or <code>False</code> if not.</p>
+    /// <p> <code>True</code> if the table data is stored in subdirectories, or <code>False</code> if not.</p>
     pub fn stored_as_sub_directories(mut self, input: bool) -> Self {
         self.stored_as_sub_directories = ::std::option::Option::Some(input);
         self
     }
-    /// <p><code>True</code> if the table data is stored in subdirectories, or <code>False</code> if not.</p>
+    /// <p> <code>True</code> if the table data is stored in subdirectories, or <code>False</code> if not.</p>
     pub fn set_stored_as_sub_directories(mut self, input: ::std::option::Option<bool>) -> Self {
         self.stored_as_sub_directories = input;
         self
     }
-    /// <p><code>True</code> if the table data is stored in subdirectories, or <code>False</code> if not.</p>
+    /// <p> <code>True</code> if the table data is stored in subdirectories, or <code>False</code> if not.</p>
     pub fn get_stored_as_sub_directories(&self) -> &::std::option::Option<bool> {
         &self.stored_as_sub_directories
     }

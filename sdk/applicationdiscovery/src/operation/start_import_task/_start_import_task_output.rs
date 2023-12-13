@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartImportTaskOutput {
-    /// <p>An array of information related to the import task request including status information, times, IDs, the Amazon S3 Object URL for the import file, and more.</p>
+    /// <p>An array of information related to the import task request including status information, times, IDs, the Amazon S3 Object URL for the import file, and more. </p>
     pub task: ::std::option::Option<crate::types::ImportTask>,
     _request_id: Option<String>,
 }
 impl StartImportTaskOutput {
-    /// <p>An array of information related to the import task request including status information, times, IDs, the Amazon S3 Object URL for the import file, and more.</p>
+    /// <p>An array of information related to the import task request including status information, times, IDs, the Amazon S3 Object URL for the import file, and more. </p>
     pub fn task(&self) -> ::std::option::Option<&crate::types::ImportTask> {
         self.task.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct StartImportTaskOutputBuilder {
     _request_id: Option<String>,
 }
 impl StartImportTaskOutputBuilder {
-    /// <p>An array of information related to the import task request including status information, times, IDs, the Amazon S3 Object URL for the import file, and more.</p>
+    /// <p>An array of information related to the import task request including status information, times, IDs, the Amazon S3 Object URL for the import file, and more. </p>
     pub fn task(mut self, input: crate::types::ImportTask) -> Self {
         self.task = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An array of information related to the import task request including status information, times, IDs, the Amazon S3 Object URL for the import file, and more.</p>
+    /// <p>An array of information related to the import task request including status information, times, IDs, the Amazon S3 Object URL for the import file, and more. </p>
     pub fn set_task(mut self, input: ::std::option::Option<crate::types::ImportTask>) -> Self {
         self.task = input;
         self
     }
-    /// <p>An array of information related to the import task request including status information, times, IDs, the Amazon S3 Object URL for the import file, and more.</p>
+    /// <p>An array of information related to the import task request including status information, times, IDs, the Amazon S3 Object URL for the import file, and more. </p>
     pub fn get_task(&self) -> &::std::option::Option<crate::types::ImportTask> {
         &self.task
     }

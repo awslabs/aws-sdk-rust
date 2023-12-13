@@ -6,7 +6,7 @@
 pub struct StageSession {
     /// <p>ID of the session within the stage.</p>
     pub session_id: ::std::option::Option<::std::string::String>,
-    /// <p>ISO 8601 timestamp (returned as a string) when this stage session began.</p>
+    /// <p> ISO 8601 timestamp (returned as a string) when this stage session began.</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>ISO 8601 timestamp (returned as a string) when the stage session ended. This is null if the stage is active.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -16,7 +16,7 @@ impl StageSession {
     pub fn session_id(&self) -> ::std::option::Option<&str> {
         self.session_id.as_deref()
     }
-    /// <p>ISO 8601 timestamp (returned as a string) when this stage session began.</p>
+    /// <p> ISO 8601 timestamp (returned as a string) when this stage session began.</p>
     pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
@@ -55,17 +55,17 @@ impl StageSessionBuilder {
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.session_id
     }
-    /// <p>ISO 8601 timestamp (returned as a string) when this stage session began.</p>
+    /// <p> ISO 8601 timestamp (returned as a string) when this stage session began.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>ISO 8601 timestamp (returned as a string) when this stage session began.</p>
+    /// <p> ISO 8601 timestamp (returned as a string) when this stage session began.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
-    /// <p>ISO 8601 timestamp (returned as a string) when this stage session began.</p>
+    /// <p> ISO 8601 timestamp (returned as a string) when this stage session began.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.start_time
     }

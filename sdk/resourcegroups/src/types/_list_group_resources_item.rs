@@ -6,7 +6,7 @@
 pub struct ListGroupResourcesItem {
     /// <p>A structure that contains the ARN of a resource and its resource type.</p>
     pub identifier: ::std::option::Option<crate::types::ResourceIdentifier>,
-    /// <p>A structure that contains the status of this resource's membership in the group.</p><note>
+    /// <p>A structure that contains the status of this resource's membership in the group.</p> <note>
     /// <p>This field is present in the response only if the group is of type <code>AWS::EC2::HostManagement</code>.</p>
     /// </note>
     pub status: ::std::option::Option<crate::types::ResourceStatus>,
@@ -16,7 +16,7 @@ impl ListGroupResourcesItem {
     pub fn identifier(&self) -> ::std::option::Option<&crate::types::ResourceIdentifier> {
         self.identifier.as_ref()
     }
-    /// <p>A structure that contains the status of this resource's membership in the group.</p><note>
+    /// <p>A structure that contains the status of this resource's membership in the group.</p> <note>
     /// <p>This field is present in the response only if the group is of type <code>AWS::EC2::HostManagement</code>.</p>
     /// </note>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ResourceStatus> {
@@ -52,21 +52,21 @@ impl ListGroupResourcesItemBuilder {
     pub fn get_identifier(&self) -> &::std::option::Option<crate::types::ResourceIdentifier> {
         &self.identifier
     }
-    /// <p>A structure that contains the status of this resource's membership in the group.</p><note>
+    /// <p>A structure that contains the status of this resource's membership in the group.</p> <note>
     /// <p>This field is present in the response only if the group is of type <code>AWS::EC2::HostManagement</code>.</p>
     /// </note>
     pub fn status(mut self, input: crate::types::ResourceStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A structure that contains the status of this resource's membership in the group.</p><note>
+    /// <p>A structure that contains the status of this resource's membership in the group.</p> <note>
     /// <p>This field is present in the response only if the group is of type <code>AWS::EC2::HostManagement</code>.</p>
     /// </note>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ResourceStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>A structure that contains the status of this resource's membership in the group.</p><note>
+    /// <p>A structure that contains the status of this resource's membership in the group.</p> <note>
     /// <p>This field is present in the response only if the group is of type <code>AWS::EC2::HostManagement</code>.</p>
     /// </note>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ResourceStatus> {

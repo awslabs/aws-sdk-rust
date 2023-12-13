@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateNodeOutput {
-    /// <p>Contains a token which can be passed to the <code>DescribeNodeAssociationStatus</code> API call to get the status of the disassociation request.</p>
+    /// <p>Contains a token which can be passed to the <code>DescribeNodeAssociationStatus</code> API call to get the status of the disassociation request. </p>
     pub node_association_status_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DisassociateNodeOutput {
-    /// <p>Contains a token which can be passed to the <code>DescribeNodeAssociationStatus</code> API call to get the status of the disassociation request.</p>
+    /// <p>Contains a token which can be passed to the <code>DescribeNodeAssociationStatus</code> API call to get the status of the disassociation request. </p>
     pub fn node_association_status_token(&self) -> ::std::option::Option<&str> {
         self.node_association_status_token.as_deref()
     }
@@ -33,17 +33,17 @@ pub struct DisassociateNodeOutputBuilder {
     _request_id: Option<String>,
 }
 impl DisassociateNodeOutputBuilder {
-    /// <p>Contains a token which can be passed to the <code>DescribeNodeAssociationStatus</code> API call to get the status of the disassociation request.</p>
+    /// <p>Contains a token which can be passed to the <code>DescribeNodeAssociationStatus</code> API call to get the status of the disassociation request. </p>
     pub fn node_association_status_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_association_status_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Contains a token which can be passed to the <code>DescribeNodeAssociationStatus</code> API call to get the status of the disassociation request.</p>
+    /// <p>Contains a token which can be passed to the <code>DescribeNodeAssociationStatus</code> API call to get the status of the disassociation request. </p>
     pub fn set_node_association_status_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.node_association_status_token = input;
         self
     }
-    /// <p>Contains a token which can be passed to the <code>DescribeNodeAssociationStatus</code> API call to get the status of the disassociation request.</p>
+    /// <p>Contains a token which can be passed to the <code>DescribeNodeAssociationStatus</code> API call to get the status of the disassociation request. </p>
     pub fn get_node_association_status_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.node_association_status_token
     }

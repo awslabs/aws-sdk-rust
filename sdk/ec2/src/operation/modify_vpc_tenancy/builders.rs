@@ -124,17 +124,17 @@ impl ModifyVpcTenancyFluentBuilder {
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_vpc_id()
     }
-    /// <p>The instance tenancy attribute for the VPC.</p>
+    /// <p>The instance tenancy attribute for the VPC. </p>
     pub fn instance_tenancy(mut self, input: crate::types::VpcTenancy) -> Self {
         self.inner = self.inner.instance_tenancy(input);
         self
     }
-    /// <p>The instance tenancy attribute for the VPC.</p>
+    /// <p>The instance tenancy attribute for the VPC. </p>
     pub fn set_instance_tenancy(mut self, input: ::std::option::Option<crate::types::VpcTenancy>) -> Self {
         self.inner = self.inner.set_instance_tenancy(input);
         self
     }
-    /// <p>The instance tenancy attribute for the VPC.</p>
+    /// <p>The instance tenancy attribute for the VPC. </p>
     pub fn get_instance_tenancy(&self) -> &::std::option::Option<crate::types::VpcTenancy> {
         self.inner.get_instance_tenancy()
     }

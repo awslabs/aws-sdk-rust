@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeValidDbInstanceModificationsOutput {
-    /// <p>Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the <code>DescribeValidDBInstanceModifications</code> action. You can use this information when you call <code>ModifyDBInstance</code>.</p>
+    /// <p>Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the <code>DescribeValidDBInstanceModifications</code> action. You can use this information when you call <code>ModifyDBInstance</code>. </p>
     pub valid_db_instance_modifications_message: ::std::option::Option<crate::types::ValidDbInstanceModificationsMessage>,
     _request_id: Option<String>,
 }
 impl DescribeValidDbInstanceModificationsOutput {
-    /// <p>Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the <code>DescribeValidDBInstanceModifications</code> action. You can use this information when you call <code>ModifyDBInstance</code>.</p>
+    /// <p>Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the <code>DescribeValidDBInstanceModifications</code> action. You can use this information when you call <code>ModifyDBInstance</code>. </p>
     pub fn valid_db_instance_modifications_message(&self) -> ::std::option::Option<&crate::types::ValidDbInstanceModificationsMessage> {
         self.valid_db_instance_modifications_message.as_ref()
     }
@@ -33,12 +33,12 @@ pub struct DescribeValidDbInstanceModificationsOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeValidDbInstanceModificationsOutputBuilder {
-    /// <p>Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the <code>DescribeValidDBInstanceModifications</code> action. You can use this information when you call <code>ModifyDBInstance</code>.</p>
+    /// <p>Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the <code>DescribeValidDBInstanceModifications</code> action. You can use this information when you call <code>ModifyDBInstance</code>. </p>
     pub fn valid_db_instance_modifications_message(mut self, input: crate::types::ValidDbInstanceModificationsMessage) -> Self {
         self.valid_db_instance_modifications_message = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the <code>DescribeValidDBInstanceModifications</code> action. You can use this information when you call <code>ModifyDBInstance</code>.</p>
+    /// <p>Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the <code>DescribeValidDBInstanceModifications</code> action. You can use this information when you call <code>ModifyDBInstance</code>. </p>
     pub fn set_valid_db_instance_modifications_message(
         mut self,
         input: ::std::option::Option<crate::types::ValidDbInstanceModificationsMessage>,
@@ -46,7 +46,7 @@ impl DescribeValidDbInstanceModificationsOutputBuilder {
         self.valid_db_instance_modifications_message = input;
         self
     }
-    /// <p>Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the <code>DescribeValidDBInstanceModifications</code> action. You can use this information when you call <code>ModifyDBInstance</code>.</p>
+    /// <p>Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the <code>DescribeValidDBInstanceModifications</code> action. You can use this information when you call <code>ModifyDBInstance</code>. </p>
     pub fn get_valid_db_instance_modifications_message(&self) -> &::std::option::Option<crate::types::ValidDbInstanceModificationsMessage> {
         &self.valid_db_instance_modifications_message
     }

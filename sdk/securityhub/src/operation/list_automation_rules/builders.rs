@@ -22,7 +22,7 @@ impl ListAutomationRulesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListAutomationRules`.
 ///
-/// <p>A list of automation rules and their metadata for the calling account.</p>
+/// <p> A list of automation rules and their metadata for the calling account. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAutomationRulesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl ListAutomationRulesFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>A token to specify where to start paginating the response. This is the <code>NextToken</code> from a previously truncated response. On your first call to the <code>ListAutomationRules</code> API, set the value of this parameter to <code>NULL</code>.</p>
+    /// <p> A token to specify where to start paginating the response. This is the <code>NextToken</code> from a previously truncated response. On your first call to the <code>ListAutomationRules</code> API, set the value of this parameter to <code>NULL</code>. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>A token to specify where to start paginating the response. This is the <code>NextToken</code> from a previously truncated response. On your first call to the <code>ListAutomationRules</code> API, set the value of this parameter to <code>NULL</code>.</p>
+    /// <p> A token to specify where to start paginating the response. This is the <code>NextToken</code> from a previously truncated response. On your first call to the <code>ListAutomationRules</code> API, set the value of this parameter to <code>NULL</code>. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>A token to specify where to start paginating the response. This is the <code>NextToken</code> from a previously truncated response. On your first call to the <code>ListAutomationRules</code> API, set the value of this parameter to <code>NULL</code>.</p>
+    /// <p> A token to specify where to start paginating the response. This is the <code>NextToken</code> from a previously truncated response. On your first call to the <code>ListAutomationRules</code> API, set the value of this parameter to <code>NULL</code>. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>The maximum number of rules to return in the response. This currently ranges from 1 to 100.</p>
+    /// <p> The maximum number of rules to return in the response. This currently ranges from 1 to 100. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of rules to return in the response. This currently ranges from 1 to 100.</p>
+    /// <p> The maximum number of rules to return in the response. This currently ranges from 1 to 100. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The maximum number of rules to return in the response. This currently ranges from 1 to 100.</p>
+    /// <p> The maximum number of rules to return in the response. This currently ranges from 1 to 100. </p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

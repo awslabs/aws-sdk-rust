@@ -22,7 +22,7 @@ impl DescribeDbClusterEndpointsInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeDBClusterEndpoints`.
 ///
-/// <p>Returns information about endpoints for an Amazon Aurora DB cluster.</p><note>
+/// <p>Returns information about endpoints for an Amazon Aurora DB cluster.</p> <note>
 /// <p>This action only applies to Aurora DB clusters.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

@@ -25,21 +25,13 @@ impl GetInsightRuleReportInputBuilder {
 /// <p>This operation returns the time series data collected by a Contributor Insights rule. The data includes the identity and number of contributors to the log group.</p>
 /// <p>You can also optionally return one or more statistics about each data point in the time series. These statistics can include the following:</p>
 /// <ul>
-/// <li>
-/// <p><code>UniqueContributors</code> -- the number of unique contributors for each data point.</p></li>
-/// <li>
-/// <p><code>MaxContributorValue</code> -- the value of the top contributor for each data point. The identity of the contributor might change for each data point in the graph.</p>
-/// <p>If this rule aggregates by COUNT, the top contributor for each data point is the contributor with the most occurrences in that period. If the rule aggregates by SUM, the top contributor is the contributor with the highest sum in the log field specified by the rule's <code>Value</code>, during that period.</p></li>
-/// <li>
-/// <p><code>SampleCount</code> -- the number of data points matched by the rule.</p></li>
-/// <li>
-/// <p><code>Sum</code> -- the sum of the values from all contributors during the time period represented by that data point.</p></li>
-/// <li>
-/// <p><code>Minimum</code> -- the minimum value from a single observation during the time period represented by that data point.</p></li>
-/// <li>
-/// <p><code>Maximum</code> -- the maximum value from a single observation during the time period represented by that data point.</p></li>
-/// <li>
-/// <p><code>Average</code> -- the average value from all contributors during the time period represented by that data point.</p></li>
+/// <li> <p> <code>UniqueContributors</code> -- the number of unique contributors for each data point.</p> </li>
+/// <li> <p> <code>MaxContributorValue</code> -- the value of the top contributor for each data point. The identity of the contributor might change for each data point in the graph.</p> <p>If this rule aggregates by COUNT, the top contributor for each data point is the contributor with the most occurrences in that period. If the rule aggregates by SUM, the top contributor is the contributor with the highest sum in the log field specified by the rule's <code>Value</code>, during that period.</p> </li>
+/// <li> <p> <code>SampleCount</code> -- the number of data points matched by the rule.</p> </li>
+/// <li> <p> <code>Sum</code> -- the sum of the values from all contributors during the time period represented by that data point.</p> </li>
+/// <li> <p> <code>Minimum</code> -- the minimum value from a single observation during the time period represented by that data point.</p> </li>
+/// <li> <p> <code>Maximum</code> -- the maximum value from a single observation during the time period represented by that data point.</p> </li>
+/// <li> <p> <code>Average</code> -- the average value from all contributors during the time period represented by that data point.</p> </li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetInsightRuleReportFluentBuilder {
@@ -202,21 +194,13 @@ impl GetInsightRuleReportFluentBuilder {
     ///
     /// <p>Specifies which metrics to use for aggregation of contributor values for the report. You can specify one or more of the following metrics:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>UniqueContributors</code> -- the number of unique contributors for each data point.</p></li>
-    /// <li>
-    /// <p><code>MaxContributorValue</code> -- the value of the top contributor for each data point. The identity of the contributor might change for each data point in the graph.</p>
-    /// <p>If this rule aggregates by COUNT, the top contributor for each data point is the contributor with the most occurrences in that period. If the rule aggregates by SUM, the top contributor is the contributor with the highest sum in the log field specified by the rule's <code>Value</code>, during that period.</p></li>
-    /// <li>
-    /// <p><code>SampleCount</code> -- the number of data points matched by the rule.</p></li>
-    /// <li>
-    /// <p><code>Sum</code> -- the sum of the values from all contributors during the time period represented by that data point.</p></li>
-    /// <li>
-    /// <p><code>Minimum</code> -- the minimum value from a single observation during the time period represented by that data point.</p></li>
-    /// <li>
-    /// <p><code>Maximum</code> -- the maximum value from a single observation during the time period represented by that data point.</p></li>
-    /// <li>
-    /// <p><code>Average</code> -- the average value from all contributors during the time period represented by that data point.</p></li>
+    /// <li> <p> <code>UniqueContributors</code> -- the number of unique contributors for each data point.</p> </li>
+    /// <li> <p> <code>MaxContributorValue</code> -- the value of the top contributor for each data point. The identity of the contributor might change for each data point in the graph.</p> <p>If this rule aggregates by COUNT, the top contributor for each data point is the contributor with the most occurrences in that period. If the rule aggregates by SUM, the top contributor is the contributor with the highest sum in the log field specified by the rule's <code>Value</code>, during that period.</p> </li>
+    /// <li> <p> <code>SampleCount</code> -- the number of data points matched by the rule.</p> </li>
+    /// <li> <p> <code>Sum</code> -- the sum of the values from all contributors during the time period represented by that data point.</p> </li>
+    /// <li> <p> <code>Minimum</code> -- the minimum value from a single observation during the time period represented by that data point.</p> </li>
+    /// <li> <p> <code>Maximum</code> -- the maximum value from a single observation during the time period represented by that data point.</p> </li>
+    /// <li> <p> <code>Average</code> -- the average value from all contributors during the time period represented by that data point.</p> </li>
     /// </ul>
     pub fn metrics(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.metrics(input.into());
@@ -224,21 +208,13 @@ impl GetInsightRuleReportFluentBuilder {
     }
     /// <p>Specifies which metrics to use for aggregation of contributor values for the report. You can specify one or more of the following metrics:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>UniqueContributors</code> -- the number of unique contributors for each data point.</p></li>
-    /// <li>
-    /// <p><code>MaxContributorValue</code> -- the value of the top contributor for each data point. The identity of the contributor might change for each data point in the graph.</p>
-    /// <p>If this rule aggregates by COUNT, the top contributor for each data point is the contributor with the most occurrences in that period. If the rule aggregates by SUM, the top contributor is the contributor with the highest sum in the log field specified by the rule's <code>Value</code>, during that period.</p></li>
-    /// <li>
-    /// <p><code>SampleCount</code> -- the number of data points matched by the rule.</p></li>
-    /// <li>
-    /// <p><code>Sum</code> -- the sum of the values from all contributors during the time period represented by that data point.</p></li>
-    /// <li>
-    /// <p><code>Minimum</code> -- the minimum value from a single observation during the time period represented by that data point.</p></li>
-    /// <li>
-    /// <p><code>Maximum</code> -- the maximum value from a single observation during the time period represented by that data point.</p></li>
-    /// <li>
-    /// <p><code>Average</code> -- the average value from all contributors during the time period represented by that data point.</p></li>
+    /// <li> <p> <code>UniqueContributors</code> -- the number of unique contributors for each data point.</p> </li>
+    /// <li> <p> <code>MaxContributorValue</code> -- the value of the top contributor for each data point. The identity of the contributor might change for each data point in the graph.</p> <p>If this rule aggregates by COUNT, the top contributor for each data point is the contributor with the most occurrences in that period. If the rule aggregates by SUM, the top contributor is the contributor with the highest sum in the log field specified by the rule's <code>Value</code>, during that period.</p> </li>
+    /// <li> <p> <code>SampleCount</code> -- the number of data points matched by the rule.</p> </li>
+    /// <li> <p> <code>Sum</code> -- the sum of the values from all contributors during the time period represented by that data point.</p> </li>
+    /// <li> <p> <code>Minimum</code> -- the minimum value from a single observation during the time period represented by that data point.</p> </li>
+    /// <li> <p> <code>Maximum</code> -- the maximum value from a single observation during the time period represented by that data point.</p> </li>
+    /// <li> <p> <code>Average</code> -- the average value from all contributors during the time period represented by that data point.</p> </li>
     /// </ul>
     pub fn set_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_metrics(input);
@@ -246,21 +222,13 @@ impl GetInsightRuleReportFluentBuilder {
     }
     /// <p>Specifies which metrics to use for aggregation of contributor values for the report. You can specify one or more of the following metrics:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>UniqueContributors</code> -- the number of unique contributors for each data point.</p></li>
-    /// <li>
-    /// <p><code>MaxContributorValue</code> -- the value of the top contributor for each data point. The identity of the contributor might change for each data point in the graph.</p>
-    /// <p>If this rule aggregates by COUNT, the top contributor for each data point is the contributor with the most occurrences in that period. If the rule aggregates by SUM, the top contributor is the contributor with the highest sum in the log field specified by the rule's <code>Value</code>, during that period.</p></li>
-    /// <li>
-    /// <p><code>SampleCount</code> -- the number of data points matched by the rule.</p></li>
-    /// <li>
-    /// <p><code>Sum</code> -- the sum of the values from all contributors during the time period represented by that data point.</p></li>
-    /// <li>
-    /// <p><code>Minimum</code> -- the minimum value from a single observation during the time period represented by that data point.</p></li>
-    /// <li>
-    /// <p><code>Maximum</code> -- the maximum value from a single observation during the time period represented by that data point.</p></li>
-    /// <li>
-    /// <p><code>Average</code> -- the average value from all contributors during the time period represented by that data point.</p></li>
+    /// <li> <p> <code>UniqueContributors</code> -- the number of unique contributors for each data point.</p> </li>
+    /// <li> <p> <code>MaxContributorValue</code> -- the value of the top contributor for each data point. The identity of the contributor might change for each data point in the graph.</p> <p>If this rule aggregates by COUNT, the top contributor for each data point is the contributor with the most occurrences in that period. If the rule aggregates by SUM, the top contributor is the contributor with the highest sum in the log field specified by the rule's <code>Value</code>, during that period.</p> </li>
+    /// <li> <p> <code>SampleCount</code> -- the number of data points matched by the rule.</p> </li>
+    /// <li> <p> <code>Sum</code> -- the sum of the values from all contributors during the time period represented by that data point.</p> </li>
+    /// <li> <p> <code>Minimum</code> -- the minimum value from a single observation during the time period represented by that data point.</p> </li>
+    /// <li> <p> <code>Maximum</code> -- the maximum value from a single observation during the time period represented by that data point.</p> </li>
+    /// <li> <p> <code>Average</code> -- the average value from all contributors during the time period represented by that data point.</p> </li>
     /// </ul>
     pub fn get_metrics(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_metrics()

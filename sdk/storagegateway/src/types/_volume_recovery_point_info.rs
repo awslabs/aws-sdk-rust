@@ -8,7 +8,7 @@ pub struct VolumeRecoveryPointInfo {
     pub volume_arn: ::std::option::Option<::std::string::String>,
     /// <p>The size of the volume in bytes.</p>
     pub volume_size_in_bytes: i64,
-    /// <p>The size of the data stored on the volume in bytes.</p><note>
+    /// <p>The size of the data stored on the volume in bytes.</p> <note>
     /// <p>This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.</p>
     /// </note>
     pub volume_usage_in_bytes: i64,
@@ -24,7 +24,7 @@ impl VolumeRecoveryPointInfo {
     pub fn volume_size_in_bytes(&self) -> i64 {
         self.volume_size_in_bytes
     }
-    /// <p>The size of the data stored on the volume in bytes.</p><note>
+    /// <p>The size of the data stored on the volume in bytes.</p> <note>
     /// <p>This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.</p>
     /// </note>
     pub fn volume_usage_in_bytes(&self) -> i64 {
@@ -80,21 +80,21 @@ impl VolumeRecoveryPointInfoBuilder {
     pub fn get_volume_size_in_bytes(&self) -> &::std::option::Option<i64> {
         &self.volume_size_in_bytes
     }
-    /// <p>The size of the data stored on the volume in bytes.</p><note>
+    /// <p>The size of the data stored on the volume in bytes.</p> <note>
     /// <p>This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.</p>
     /// </note>
     pub fn volume_usage_in_bytes(mut self, input: i64) -> Self {
         self.volume_usage_in_bytes = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The size of the data stored on the volume in bytes.</p><note>
+    /// <p>The size of the data stored on the volume in bytes.</p> <note>
     /// <p>This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.</p>
     /// </note>
     pub fn set_volume_usage_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.volume_usage_in_bytes = input;
         self
     }
-    /// <p>The size of the data stored on the volume in bytes.</p><note>
+    /// <p>The size of the data stored on the volume in bytes.</p> <note>
     /// <p>This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.</p>
     /// </note>
     pub fn get_volume_usage_in_bytes(&self) -> &::std::option::Option<i64> {

@@ -3,25 +3,25 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDetectorVersionStatusInput {
-    /// <p>The detector ID.</p>
+    /// <p>The detector ID. </p>
     pub detector_id: ::std::option::Option<::std::string::String>,
-    /// <p>The detector version ID.</p>
+    /// <p>The detector version ID. </p>
     pub detector_version_id: ::std::option::Option<::std::string::String>,
     /// <p>The new status.</p>
-    /// <p>The only supported values are <code>ACTIVE</code> and <code>INACTIVE</code></p>
+    /// <p>The only supported values are <code>ACTIVE</code> and <code>INACTIVE</code> </p>
     pub status: ::std::option::Option<crate::types::DetectorVersionStatus>,
 }
 impl UpdateDetectorVersionStatusInput {
-    /// <p>The detector ID.</p>
+    /// <p>The detector ID. </p>
     pub fn detector_id(&self) -> ::std::option::Option<&str> {
         self.detector_id.as_deref()
     }
-    /// <p>The detector version ID.</p>
+    /// <p>The detector version ID. </p>
     pub fn detector_version_id(&self) -> ::std::option::Option<&str> {
         self.detector_version_id.as_deref()
     }
     /// <p>The new status.</p>
-    /// <p>The only supported values are <code>ACTIVE</code> and <code>INACTIVE</code></p>
+    /// <p>The only supported values are <code>ACTIVE</code> and <code>INACTIVE</code> </p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::DetectorVersionStatus> {
         self.status.as_ref()
     }
@@ -42,51 +42,51 @@ pub struct UpdateDetectorVersionStatusInputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::DetectorVersionStatus>,
 }
 impl UpdateDetectorVersionStatusInputBuilder {
-    /// <p>The detector ID.</p>
+    /// <p>The detector ID. </p>
     /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The detector ID.</p>
+    /// <p>The detector ID. </p>
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detector_id = input;
         self
     }
-    /// <p>The detector ID.</p>
+    /// <p>The detector ID. </p>
     pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.detector_id
     }
-    /// <p>The detector version ID.</p>
+    /// <p>The detector version ID. </p>
     /// This field is required.
     pub fn detector_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_version_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The detector version ID.</p>
+    /// <p>The detector version ID. </p>
     pub fn set_detector_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detector_version_id = input;
         self
     }
-    /// <p>The detector version ID.</p>
+    /// <p>The detector version ID. </p>
     pub fn get_detector_version_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.detector_version_id
     }
     /// <p>The new status.</p>
-    /// <p>The only supported values are <code>ACTIVE</code> and <code>INACTIVE</code></p>
+    /// <p>The only supported values are <code>ACTIVE</code> and <code>INACTIVE</code> </p>
     /// This field is required.
     pub fn status(mut self, input: crate::types::DetectorVersionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The new status.</p>
-    /// <p>The only supported values are <code>ACTIVE</code> and <code>INACTIVE</code></p>
+    /// <p>The only supported values are <code>ACTIVE</code> and <code>INACTIVE</code> </p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::DetectorVersionStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The new status.</p>
-    /// <p>The only supported values are <code>ACTIVE</code> and <code>INACTIVE</code></p>
+    /// <p>The only supported values are <code>ACTIVE</code> and <code>INACTIVE</code> </p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::DetectorVersionStatus> {
         &self.status
     }

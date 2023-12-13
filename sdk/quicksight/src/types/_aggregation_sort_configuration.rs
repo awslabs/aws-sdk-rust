@@ -8,10 +8,8 @@ pub struct AggregationSortConfiguration {
     pub column: ::std::option::Option<crate::types::ColumnIdentifier>,
     /// <p>The sort direction of values.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ASC</code>: Sort in ascending order.</p></li>
-    /// <li>
-    /// <p><code>DESC</code>: Sort in descending order.</p></li>
+    /// <li> <p> <code>ASC</code>: Sort in ascending order.</p> </li>
+    /// <li> <p> <code>DESC</code>: Sort in descending order.</p> </li>
     /// </ul>
     pub sort_direction: crate::types::SortDirection,
     /// <p>The function that aggregates the values in <code>Column</code>.</p>
@@ -24,10 +22,8 @@ impl AggregationSortConfiguration {
     }
     /// <p>The sort direction of values.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ASC</code>: Sort in ascending order.</p></li>
-    /// <li>
-    /// <p><code>DESC</code>: Sort in descending order.</p></li>
+    /// <li> <p> <code>ASC</code>: Sort in ascending order.</p> </li>
+    /// <li> <p> <code>DESC</code>: Sort in descending order.</p> </li>
     /// </ul>
     pub fn sort_direction(&self) -> &crate::types::SortDirection {
         &self.sort_direction
@@ -70,10 +66,8 @@ impl AggregationSortConfigurationBuilder {
     }
     /// <p>The sort direction of values.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ASC</code>: Sort in ascending order.</p></li>
-    /// <li>
-    /// <p><code>DESC</code>: Sort in descending order.</p></li>
+    /// <li> <p> <code>ASC</code>: Sort in ascending order.</p> </li>
+    /// <li> <p> <code>DESC</code>: Sort in descending order.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn sort_direction(mut self, input: crate::types::SortDirection) -> Self {
@@ -82,10 +76,8 @@ impl AggregationSortConfigurationBuilder {
     }
     /// <p>The sort direction of values.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ASC</code>: Sort in ascending order.</p></li>
-    /// <li>
-    /// <p><code>DESC</code>: Sort in descending order.</p></li>
+    /// <li> <p> <code>ASC</code>: Sort in ascending order.</p> </li>
+    /// <li> <p> <code>DESC</code>: Sort in descending order.</p> </li>
     /// </ul>
     pub fn set_sort_direction(mut self, input: ::std::option::Option<crate::types::SortDirection>) -> Self {
         self.sort_direction = input;
@@ -93,10 +85,8 @@ impl AggregationSortConfigurationBuilder {
     }
     /// <p>The sort direction of values.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ASC</code>: Sort in ascending order.</p></li>
-    /// <li>
-    /// <p><code>DESC</code>: Sort in descending order.</p></li>
+    /// <li> <p> <code>ASC</code>: Sort in ascending order.</p> </li>
+    /// <li> <p> <code>DESC</code>: Sort in descending order.</p> </li>
     /// </ul>
     pub fn get_sort_direction(&self) -> &::std::option::Option<crate::types::SortDirection> {
         &self.sort_direction

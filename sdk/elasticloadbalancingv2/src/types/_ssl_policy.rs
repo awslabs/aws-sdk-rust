@@ -10,7 +10,7 @@ pub struct SslPolicy {
     pub ciphers: ::std::option::Option<::std::vec::Vec<crate::types::Cipher>>,
     /// <p>The name of the policy.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The supported load balancers.</p>
+    /// <p> The supported load balancers. </p>
     pub supported_load_balancer_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SslPolicy {
@@ -30,7 +30,7 @@ impl SslPolicy {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The supported load balancers.</p>
+    /// <p> The supported load balancers. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_load_balancer_types.is_none()`.
     pub fn supported_load_balancer_types(&self) -> &[::std::string::String] {
@@ -112,19 +112,19 @@ impl SslPolicyBuilder {
     ///
     /// To override the contents of this collection use [`set_supported_load_balancer_types`](Self::set_supported_load_balancer_types).
     ///
-    /// <p>The supported load balancers.</p>
+    /// <p> The supported load balancers. </p>
     pub fn supported_load_balancer_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.supported_load_balancer_types.unwrap_or_default();
         v.push(input.into());
         self.supported_load_balancer_types = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The supported load balancers.</p>
+    /// <p> The supported load balancers. </p>
     pub fn set_supported_load_balancer_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.supported_load_balancer_types = input;
         self
     }
-    /// <p>The supported load balancers.</p>
+    /// <p> The supported load balancers. </p>
     pub fn get_supported_load_balancer_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.supported_load_balancer_types
     }

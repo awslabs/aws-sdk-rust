@@ -7,7 +7,7 @@ pub struct CreateLaunchProfileInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The description.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the IDs of the EC2 subnets where streaming sessions will be accessible from. These subnets must support the specified instance types.</p>
+    /// <p>Specifies the IDs of the EC2 subnets where streaming sessions will be accessible from. These subnets must support the specified instance types. </p>
     pub ec2_subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
     pub launch_profile_protocol_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -17,7 +17,7 @@ pub struct CreateLaunchProfileInput {
     pub stream_configuration: ::std::option::Option<crate::types::StreamConfigurationCreate>,
     /// <p>Unique identifiers for a collection of studio components that can be used with this launch profile.</p>
     pub studio_component_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The studio ID.</p>
+    /// <p>The studio ID. </p>
     pub studio_id: ::std::option::Option<::std::string::String>,
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -31,7 +31,7 @@ impl CreateLaunchProfileInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Specifies the IDs of the EC2 subnets where streaming sessions will be accessible from. These subnets must support the specified instance types.</p>
+    /// <p>Specifies the IDs of the EC2 subnets where streaming sessions will be accessible from. These subnets must support the specified instance types. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ec2_subnet_ids.is_none()`.
     pub fn ec2_subnet_ids(&self) -> &[::std::string::String] {
@@ -57,7 +57,7 @@ impl CreateLaunchProfileInput {
     pub fn studio_component_ids(&self) -> &[::std::string::String] {
         self.studio_component_ids.as_deref().unwrap_or_default()
     }
-    /// <p>The studio ID.</p>
+    /// <p>The studio ID. </p>
     pub fn studio_id(&self) -> ::std::option::Option<&str> {
         self.studio_id.as_deref()
     }
@@ -135,19 +135,19 @@ impl CreateLaunchProfileInputBuilder {
     ///
     /// To override the contents of this collection use [`set_ec2_subnet_ids`](Self::set_ec2_subnet_ids).
     ///
-    /// <p>Specifies the IDs of the EC2 subnets where streaming sessions will be accessible from. These subnets must support the specified instance types.</p>
+    /// <p>Specifies the IDs of the EC2 subnets where streaming sessions will be accessible from. These subnets must support the specified instance types. </p>
     pub fn ec2_subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ec2_subnet_ids.unwrap_or_default();
         v.push(input.into());
         self.ec2_subnet_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Specifies the IDs of the EC2 subnets where streaming sessions will be accessible from. These subnets must support the specified instance types.</p>
+    /// <p>Specifies the IDs of the EC2 subnets where streaming sessions will be accessible from. These subnets must support the specified instance types. </p>
     pub fn set_ec2_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ec2_subnet_ids = input;
         self
     }
-    /// <p>Specifies the IDs of the EC2 subnets where streaming sessions will be accessible from. These subnets must support the specified instance types.</p>
+    /// <p>Specifies the IDs of the EC2 subnets where streaming sessions will be accessible from. These subnets must support the specified instance types. </p>
     pub fn get_ec2_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.ec2_subnet_ids
     }
@@ -221,18 +221,18 @@ impl CreateLaunchProfileInputBuilder {
     pub fn get_studio_component_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.studio_component_ids
     }
-    /// <p>The studio ID.</p>
+    /// <p>The studio ID. </p>
     /// This field is required.
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The studio ID.</p>
+    /// <p>The studio ID. </p>
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.studio_id = input;
         self
     }
-    /// <p>The studio ID.</p>
+    /// <p>The studio ID. </p>
     pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.studio_id
     }

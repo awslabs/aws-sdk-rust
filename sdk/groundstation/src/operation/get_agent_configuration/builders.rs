@@ -23,7 +23,7 @@ impl GetAgentConfigurationInputBuilder {
 /// Fluent builder constructing a request to `GetAgentConfiguration`.
 ///
 /// <note>
-/// <p>For use by AWS Ground Station Agent and shouldn't be called directly.</p>
+/// <p> For use by AWS Ground Station Agent and shouldn't be called directly.</p>
 /// </note>
 /// <p>Gets the latest configuration information for a registered agent.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCustomMetricsOutput {
-    /// <p>The name of the custom metric.</p>
+    /// <p> The name of the custom metric. </p>
     pub metric_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
+    /// <p> A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListCustomMetricsOutput {
-    /// <p>The name of the custom metric.</p>
+    /// <p> The name of the custom metric. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_names.is_none()`.
     pub fn metric_names(&self) -> &[::std::string::String] {
         self.metric_names.as_deref().unwrap_or_default()
     }
-    /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
+    /// <p> A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -46,33 +46,33 @@ impl ListCustomMetricsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_metric_names`](Self::set_metric_names).
     ///
-    /// <p>The name of the custom metric.</p>
+    /// <p> The name of the custom metric. </p>
     pub fn metric_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.metric_names.unwrap_or_default();
         v.push(input.into());
         self.metric_names = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The name of the custom metric.</p>
+    /// <p> The name of the custom metric. </p>
     pub fn set_metric_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.metric_names = input;
         self
     }
-    /// <p>The name of the custom metric.</p>
+    /// <p> The name of the custom metric. </p>
     pub fn get_metric_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.metric_names
     }
-    /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
+    /// <p> A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
+    /// <p> A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
+    /// <p> A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

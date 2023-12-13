@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAccountAssociationsOutput {
-    /// <p>The list of linked accounts in the payer account.</p>
+    /// <p> The list of linked accounts in the payer account. </p>
     pub linked_accounts: ::std::option::Option<::std::vec::Vec<crate::types::AccountAssociationsListElement>>,
-    /// <p>The pagination token that's used on subsequent calls to get accounts.</p>
+    /// <p> The pagination token that's used on subsequent calls to get accounts. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListAccountAssociationsOutput {
-    /// <p>The list of linked accounts in the payer account.</p>
+    /// <p> The list of linked accounts in the payer account. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.linked_accounts.is_none()`.
     pub fn linked_accounts(&self) -> &[crate::types::AccountAssociationsListElement] {
         self.linked_accounts.as_deref().unwrap_or_default()
     }
-    /// <p>The pagination token that's used on subsequent calls to get accounts.</p>
+    /// <p> The pagination token that's used on subsequent calls to get accounts. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -46,33 +46,33 @@ impl ListAccountAssociationsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_linked_accounts`](Self::set_linked_accounts).
     ///
-    /// <p>The list of linked accounts in the payer account.</p>
+    /// <p> The list of linked accounts in the payer account. </p>
     pub fn linked_accounts(mut self, input: crate::types::AccountAssociationsListElement) -> Self {
         let mut v = self.linked_accounts.unwrap_or_default();
         v.push(input);
         self.linked_accounts = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of linked accounts in the payer account.</p>
+    /// <p> The list of linked accounts in the payer account. </p>
     pub fn set_linked_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccountAssociationsListElement>>) -> Self {
         self.linked_accounts = input;
         self
     }
-    /// <p>The list of linked accounts in the payer account.</p>
+    /// <p> The list of linked accounts in the payer account. </p>
     pub fn get_linked_accounts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountAssociationsListElement>> {
         &self.linked_accounts
     }
-    /// <p>The pagination token that's used on subsequent calls to get accounts.</p>
+    /// <p> The pagination token that's used on subsequent calls to get accounts. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The pagination token that's used on subsequent calls to get accounts.</p>
+    /// <p> The pagination token that's used on subsequent calls to get accounts. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The pagination token that's used on subsequent calls to get accounts.</p>
+    /// <p> The pagination token that's used on subsequent calls to get accounts. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

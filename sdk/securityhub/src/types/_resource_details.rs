@@ -95,7 +95,7 @@ pub struct ResourceDetails {
     pub aws_rds_db_cluster: ::std::option::Option<crate::types::AwsRdsDbClusterDetails>,
     /// <p>Details about an Amazon ECS cluster.</p>
     pub aws_ecs_cluster: ::std::option::Option<crate::types::AwsEcsClusterDetails>,
-    /// <p>Provides information about a Docker container that's part of a task.</p>
+    /// <p>Provides information about a Docker container that's part of a task. </p>
     pub aws_ecs_container: ::std::option::Option<crate::types::AwsEcsContainerDetails>,
     /// <p>Details about a task definition. A task definition describes the container and volume definitions of an Amazon Elastic Container Service task.</p>
     pub aws_ecs_task_definition: ::std::option::Option<crate::types::AwsEcsTaskDefinitionDetails>,
@@ -103,10 +103,8 @@ pub struct ResourceDetails {
     pub container: ::std::option::Option<crate::types::ContainerDetails>,
     /// <p>Details about a resource that are not available in a type-specific details object. Use the <code>Other</code> object in the following cases.</p>
     /// <ul>
-    /// <li>
-    /// <p>The type-specific object does not contain all of the fields that you want to populate. In this case, first use the type-specific object to populate those fields. Use the <code>Other</code> object to populate the fields that are missing from the type-specific object.</p></li>
-    /// <li>
-    /// <p>The resource type does not have a corresponding object. This includes resources for which the type is <code>Other</code>.</p></li>
+    /// <li> <p>The type-specific object does not contain all of the fields that you want to populate. In this case, first use the type-specific object to populate those fields. Use the <code>Other</code> object to populate the fields that are missing from the type-specific object.</p> </li>
+    /// <li> <p>The resource type does not have a corresponding object. This includes resources for which the type is <code>Other</code>. </p> </li>
     /// </ul>
     pub other: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Details about an RDS event notification subscription.</p>
@@ -145,71 +143,71 @@ pub struct ResourceDetails {
     pub aws_kinesis_stream: ::std::option::Option<crate::types::AwsKinesisStreamDetails>,
     /// <p>Details about an Amazon EC2 transit gateway that interconnects your virtual private clouds (VPC) and on-premises networks.</p>
     pub aws_ec2_transit_gateway: ::std::option::Option<crate::types::AwsEc2TransitGatewayDetails>,
-    /// <p>Details about an Amazon EFS access point. An access point is an application-specific view into an EFS file system that applies an operating system user and group, and a file system path, to any file system request made through the access point.</p>
+    /// <p>Details about an Amazon EFS access point. An access point is an application-specific view into an EFS file system that applies an operating system user and group, and a file system path, to any file system request made through the access point. </p>
     pub aws_efs_access_point: ::std::option::Option<crate::types::AwsEfsAccessPointDetails>,
     /// <p>Details about an CloudFormation stack. A stack is a collection of Amazon Web Services resources that you can manage as a single unit.</p>
     pub aws_cloud_formation_stack: ::std::option::Option<crate::types::AwsCloudFormationStackDetails>,
     /// <p>Details about an Amazon CloudWatch alarm. An alarm allows you to monitor and receive alerts about your Amazon Web Services resources and applications across multiple Regions.</p>
     pub aws_cloud_watch_alarm: ::std::option::Option<crate::types::AwsCloudWatchAlarmDetails>,
-    /// <p>Details about an Amazon EC2 VPC peering connection. A VPC peering connection is a networking connection between two VPCs that enables you to route traffic between them privately.</p>
+    /// <p>Details about an Amazon EC2 VPC peering connection. A VPC peering connection is a networking connection between two VPCs that enables you to route traffic between them privately. </p>
     pub aws_ec2_vpc_peering_connection: ::std::option::Option<crate::types::AwsEc2VpcPeeringConnectionDetails>,
-    /// <p>Details about an WAF rule group for Regional resources.</p>
+    /// <p>Details about an WAF rule group for Regional resources. </p>
     pub aws_waf_regional_rule_group: ::std::option::Option<crate::types::AwsWafRegionalRuleGroupDetails>,
-    /// <p>Details about an WAF rule for Regional resources.</p>
+    /// <p>Details about an WAF rule for Regional resources. </p>
     pub aws_waf_regional_rule: ::std::option::Option<crate::types::AwsWafRegionalRuleDetails>,
-    /// <p>Details about an WAF web access control list (web ACL) for Regional resources.</p>
+    /// <p>Details about an WAF web access control list (web ACL) for Regional resources. </p>
     pub aws_waf_regional_web_acl: ::std::option::Option<crate::types::AwsWafRegionalWebAclDetails>,
-    /// <p>Details about an WAF rule for global resources.</p>
+    /// <p>Details about an WAF rule for global resources. </p>
     pub aws_waf_rule: ::std::option::Option<crate::types::AwsWafRuleDetails>,
-    /// <p>Details about an WAF rule group for global resources.</p>
+    /// <p>Details about an WAF rule group for global resources. </p>
     pub aws_waf_rule_group: ::std::option::Option<crate::types::AwsWafRuleGroupDetails>,
-    /// <p>Details about a task in a cluster.</p>
+    /// <p>Details about a task in a cluster. </p>
     pub aws_ecs_task: ::std::option::Option<crate::types::AwsEcsTaskDetails>,
-    /// <p>Provides details about an Backup backup vault.</p>
+    /// <p>Provides details about an Backup backup vault. </p>
     pub aws_backup_backup_vault: ::std::option::Option<crate::types::AwsBackupBackupVaultDetails>,
-    /// <p>Provides details about an Backup backup plan.</p>
+    /// <p>Provides details about an Backup backup plan. </p>
     pub aws_backup_backup_plan: ::std::option::Option<crate::types::AwsBackupBackupPlanDetails>,
-    /// <p>Provides details about an Backup backup, or recovery point.</p>
+    /// <p>Provides details about an Backup backup, or recovery point. </p>
     pub aws_backup_recovery_point: ::std::option::Option<crate::types::AwsBackupRecoveryPointDetails>,
-    /// <p>Specifies the properties for creating an Amazon Elastic Compute Cloud (Amazon EC2) launch template.</p>
+    /// <p> Specifies the properties for creating an Amazon Elastic Compute Cloud (Amazon EC2) launch template. </p>
     pub aws_ec2_launch_template: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDetails>,
-    /// <p>Provides details about an Amazon SageMaker notebook instance.</p>
+    /// <p> Provides details about an Amazon SageMaker notebook instance. </p>
     pub aws_sage_maker_notebook_instance: ::std::option::Option<crate::types::AwsSageMakerNotebookInstanceDetails>,
-    /// <p>Details about an WAFv2 web Access Control List (ACL).</p>
+    /// <p> Details about an WAFv2 web Access Control List (ACL). </p>
     pub aws_wafv2_web_acl: ::std::option::Option<crate::types::AwsWafv2WebAclDetails>,
-    /// <p>Details about an WAFv2 rule group.</p>
+    /// <p> Details about an WAFv2 rule group. </p>
     pub aws_wafv2_rule_group: ::std::option::Option<crate::types::AwsWafv2RuleGroupDetails>,
-    /// <p>Provides details about a route table. A route table contains a set of rules, called routes, that determine where to direct network traffic from your subnet or gateway.</p>
+    /// <p> Provides details about a route table. A route table contains a set of rules, called routes, that determine where to direct network traffic from your subnet or gateway. </p>
     pub aws_ec2_route_table: ::std::option::Option<crate::types::AwsEc2RouteTableDetails>,
-    /// <p>Provides details about AppSync message broker. A message broker allows software applications and components to communicate using various programming languages, operating systems, and formal messaging protocols.</p>
+    /// <p> Provides details about AppSync message broker. A message broker allows software applications and components to communicate using various programming languages, operating systems, and formal messaging protocols. </p>
     pub aws_amazon_mq_broker: ::std::option::Option<crate::types::AwsAmazonMqBrokerDetails>,
-    /// <p>Provides details about an AppSync Graph QL API, which lets you query multiple databases, microservices, and APIs from a single GraphQL endpoint.</p>
+    /// <p> Provides details about an AppSync Graph QL API, which lets you query multiple databases, microservices, and APIs from a single GraphQL endpoint. </p>
     pub aws_app_sync_graph_ql_api: ::std::option::Option<crate::types::AwsAppSyncGraphQlApiDetails>,
-    /// <p>A schema defines the structure of events that are sent to Amazon EventBridge. Schema registries are containers for schemas. They collect and organize schemas so that your schemas are in logical groups.</p>
+    /// <p> A schema defines the structure of events that are sent to Amazon EventBridge. Schema registries are containers for schemas. They collect and organize schemas so that your schemas are in logical groups. </p>
     pub aws_event_schemas_registry: ::std::option::Option<crate::types::AwsEventSchemasRegistryDetails>,
-    /// <p>Provides details about an Amazon GuardDuty detector. A detector is an object that represents the GuardDuty service. A detector is required for GuardDuty to become operational.</p>
+    /// <p> Provides details about an Amazon GuardDuty detector. A detector is an object that represents the GuardDuty service. A detector is required for GuardDuty to become operational. </p>
     pub aws_guard_duty_detector: ::std::option::Option<crate::types::AwsGuardDutyDetectorDetails>,
-    /// <p>Provides details about an Step Functions state machine, which is a workflow consisting of a series of event-driven steps.</p>
+    /// <p> Provides details about an Step Functions state machine, which is a workflow consisting of a series of event-driven steps. </p>
     pub aws_step_function_state_machine: ::std::option::Option<crate::types::AwsStepFunctionStateMachineDetails>,
-    /// <p>Provides information about an Amazon Athena workgroup. A workgroup helps you separate users, teams, applications, or workloads. It also helps you set limits on data processing and track costs.</p>
+    /// <p> Provides information about an Amazon Athena workgroup. A workgroup helps you separate users, teams, applications, or workloads. It also helps you set limits on data processing and track costs. </p>
     pub aws_athena_work_group: ::std::option::Option<crate::types::AwsAthenaWorkGroupDetails>,
-    /// <p>Provides details about Amazon EventBridge event bus for an endpoint. An event bus is a router that receives events and delivers them to zero or more destinations, or targets.</p>
+    /// <p> Provides details about Amazon EventBridge event bus for an endpoint. An event bus is a router that receives events and delivers them to zero or more destinations, or targets.</p>
     pub aws_events_eventbus: ::std::option::Option<crate::types::AwsEventsEventbusDetails>,
-    /// <p>Provides details about an Database Migration Service (DMS) endpoint. An endpoint provides connection, data store type, and location information about your data store.</p>
+    /// <p> Provides details about an Database Migration Service (DMS) endpoint. An endpoint provides connection, data store type, and location information about your data store.</p>
     pub aws_dms_endpoint: ::std::option::Option<crate::types::AwsDmsEndpointDetails>,
-    /// <p>Provides details about an Amazon EventBridge global endpoint. The endpoint can improve your application’s availability by making it Regional-fault tolerant.</p>
+    /// <p> Provides details about an Amazon EventBridge global endpoint. The endpoint can improve your application’s availability by making it Regional-fault tolerant.</p>
     pub aws_events_endpoint: ::std::option::Option<crate::types::AwsEventsEndpointDetails>,
-    /// <p>Provides details about an DMS replication task. A replication task moves a set of data from the source endpoint to the target endpoint.</p>
+    /// <p> Provides details about an DMS replication task. A replication task moves a set of data from the source endpoint to the target endpoint.</p>
     pub aws_dms_replication_task: ::std::option::Option<crate::types::AwsDmsReplicationTaskDetails>,
-    /// <p>Provides details about an DMS replication instance. DMS uses a replication instance to connect to your source data store, read the source data, and format the data for consumption by the target data store.</p>
+    /// <p> Provides details about an DMS replication instance. DMS uses a replication instance to connect to your source data store, read the source data, and format the data for consumption by the target data store.</p>
     pub aws_dms_replication_instance: ::std::option::Option<crate::types::AwsDmsReplicationInstanceDetails>,
-    /// <p>Provides details about an Amazon Route&nbsp;53 hosted zone, including the four name servers assigned to the hosted zone. A hosted zone represents a collection of records that can be managed together, belonging to a single parent domain name.</p>
+    /// <p> Provides details about an Amazon Route&nbsp;53 hosted zone, including the four name servers assigned to the hosted zone. A hosted zone represents a collection of records that can be managed together, belonging to a single parent domain name.</p>
     pub aws_route53_hosted_zone: ::std::option::Option<crate::types::AwsRoute53HostedZoneDetails>,
-    /// <p>Provides details about an Amazon Managed Streaming for Apache Kafka (Amazon MSK) cluster.</p>
+    /// <p> Provides details about an Amazon Managed Streaming for Apache Kafka (Amazon MSK) cluster.</p>
     pub aws_msk_cluster: ::std::option::Option<crate::types::AwsMskClusterDetails>,
-    /// <p>Provides details about an Amazon Simple Storage Service (Amazon S3) access point. S3 access points are named network endpoints that are attached to S3 buckets that you can use to perform S3 object operations.</p>
+    /// <p> Provides details about an Amazon Simple Storage Service (Amazon S3) access point. S3 access points are named network endpoints that are attached to S3 buckets that you can use to perform S3 object operations. </p>
     pub aws_s3_access_point: ::std::option::Option<crate::types::AwsS3AccessPointDetails>,
-    /// <p>Provides details about an Client VPN endpoint. A Client VPN endpoint is the resource that you create and configure to enable and manage client VPN sessions. It's the termination point for all client VPN sessions.</p>
+    /// <p> Provides details about an Client VPN endpoint. A Client VPN endpoint is the resource that you create and configure to enable and manage client VPN sessions. It's the termination point for all client VPN sessions. </p>
     pub aws_ec2_client_vpn_endpoint: ::std::option::Option<crate::types::AwsEc2ClientVpnEndpointDetails>,
 }
 impl ResourceDetails {
@@ -389,7 +387,7 @@ impl ResourceDetails {
     pub fn aws_ecs_cluster(&self) -> ::std::option::Option<&crate::types::AwsEcsClusterDetails> {
         self.aws_ecs_cluster.as_ref()
     }
-    /// <p>Provides information about a Docker container that's part of a task.</p>
+    /// <p>Provides information about a Docker container that's part of a task. </p>
     pub fn aws_ecs_container(&self) -> ::std::option::Option<&crate::types::AwsEcsContainerDetails> {
         self.aws_ecs_container.as_ref()
     }
@@ -403,10 +401,8 @@ impl ResourceDetails {
     }
     /// <p>Details about a resource that are not available in a type-specific details object. Use the <code>Other</code> object in the following cases.</p>
     /// <ul>
-    /// <li>
-    /// <p>The type-specific object does not contain all of the fields that you want to populate. In this case, first use the type-specific object to populate those fields. Use the <code>Other</code> object to populate the fields that are missing from the type-specific object.</p></li>
-    /// <li>
-    /// <p>The resource type does not have a corresponding object. This includes resources for which the type is <code>Other</code>.</p></li>
+    /// <li> <p>The type-specific object does not contain all of the fields that you want to populate. In this case, first use the type-specific object to populate those fields. Use the <code>Other</code> object to populate the fields that are missing from the type-specific object.</p> </li>
+    /// <li> <p>The resource type does not have a corresponding object. This includes resources for which the type is <code>Other</code>. </p> </li>
     /// </ul>
     pub fn other(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.other.as_ref()
@@ -483,7 +479,7 @@ impl ResourceDetails {
     pub fn aws_ec2_transit_gateway(&self) -> ::std::option::Option<&crate::types::AwsEc2TransitGatewayDetails> {
         self.aws_ec2_transit_gateway.as_ref()
     }
-    /// <p>Details about an Amazon EFS access point. An access point is an application-specific view into an EFS file system that applies an operating system user and group, and a file system path, to any file system request made through the access point.</p>
+    /// <p>Details about an Amazon EFS access point. An access point is an application-specific view into an EFS file system that applies an operating system user and group, and a file system path, to any file system request made through the access point. </p>
     pub fn aws_efs_access_point(&self) -> ::std::option::Option<&crate::types::AwsEfsAccessPointDetails> {
         self.aws_efs_access_point.as_ref()
     }
@@ -495,123 +491,123 @@ impl ResourceDetails {
     pub fn aws_cloud_watch_alarm(&self) -> ::std::option::Option<&crate::types::AwsCloudWatchAlarmDetails> {
         self.aws_cloud_watch_alarm.as_ref()
     }
-    /// <p>Details about an Amazon EC2 VPC peering connection. A VPC peering connection is a networking connection between two VPCs that enables you to route traffic between them privately.</p>
+    /// <p>Details about an Amazon EC2 VPC peering connection. A VPC peering connection is a networking connection between two VPCs that enables you to route traffic between them privately. </p>
     pub fn aws_ec2_vpc_peering_connection(&self) -> ::std::option::Option<&crate::types::AwsEc2VpcPeeringConnectionDetails> {
         self.aws_ec2_vpc_peering_connection.as_ref()
     }
-    /// <p>Details about an WAF rule group for Regional resources.</p>
+    /// <p>Details about an WAF rule group for Regional resources. </p>
     pub fn aws_waf_regional_rule_group(&self) -> ::std::option::Option<&crate::types::AwsWafRegionalRuleGroupDetails> {
         self.aws_waf_regional_rule_group.as_ref()
     }
-    /// <p>Details about an WAF rule for Regional resources.</p>
+    /// <p>Details about an WAF rule for Regional resources. </p>
     pub fn aws_waf_regional_rule(&self) -> ::std::option::Option<&crate::types::AwsWafRegionalRuleDetails> {
         self.aws_waf_regional_rule.as_ref()
     }
-    /// <p>Details about an WAF web access control list (web ACL) for Regional resources.</p>
+    /// <p>Details about an WAF web access control list (web ACL) for Regional resources. </p>
     pub fn aws_waf_regional_web_acl(&self) -> ::std::option::Option<&crate::types::AwsWafRegionalWebAclDetails> {
         self.aws_waf_regional_web_acl.as_ref()
     }
-    /// <p>Details about an WAF rule for global resources.</p>
+    /// <p>Details about an WAF rule for global resources. </p>
     pub fn aws_waf_rule(&self) -> ::std::option::Option<&crate::types::AwsWafRuleDetails> {
         self.aws_waf_rule.as_ref()
     }
-    /// <p>Details about an WAF rule group for global resources.</p>
+    /// <p>Details about an WAF rule group for global resources. </p>
     pub fn aws_waf_rule_group(&self) -> ::std::option::Option<&crate::types::AwsWafRuleGroupDetails> {
         self.aws_waf_rule_group.as_ref()
     }
-    /// <p>Details about a task in a cluster.</p>
+    /// <p>Details about a task in a cluster. </p>
     pub fn aws_ecs_task(&self) -> ::std::option::Option<&crate::types::AwsEcsTaskDetails> {
         self.aws_ecs_task.as_ref()
     }
-    /// <p>Provides details about an Backup backup vault.</p>
+    /// <p>Provides details about an Backup backup vault. </p>
     pub fn aws_backup_backup_vault(&self) -> ::std::option::Option<&crate::types::AwsBackupBackupVaultDetails> {
         self.aws_backup_backup_vault.as_ref()
     }
-    /// <p>Provides details about an Backup backup plan.</p>
+    /// <p>Provides details about an Backup backup plan. </p>
     pub fn aws_backup_backup_plan(&self) -> ::std::option::Option<&crate::types::AwsBackupBackupPlanDetails> {
         self.aws_backup_backup_plan.as_ref()
     }
-    /// <p>Provides details about an Backup backup, or recovery point.</p>
+    /// <p>Provides details about an Backup backup, or recovery point. </p>
     pub fn aws_backup_recovery_point(&self) -> ::std::option::Option<&crate::types::AwsBackupRecoveryPointDetails> {
         self.aws_backup_recovery_point.as_ref()
     }
-    /// <p>Specifies the properties for creating an Amazon Elastic Compute Cloud (Amazon EC2) launch template.</p>
+    /// <p> Specifies the properties for creating an Amazon Elastic Compute Cloud (Amazon EC2) launch template. </p>
     pub fn aws_ec2_launch_template(&self) -> ::std::option::Option<&crate::types::AwsEc2LaunchTemplateDetails> {
         self.aws_ec2_launch_template.as_ref()
     }
-    /// <p>Provides details about an Amazon SageMaker notebook instance.</p>
+    /// <p> Provides details about an Amazon SageMaker notebook instance. </p>
     pub fn aws_sage_maker_notebook_instance(&self) -> ::std::option::Option<&crate::types::AwsSageMakerNotebookInstanceDetails> {
         self.aws_sage_maker_notebook_instance.as_ref()
     }
-    /// <p>Details about an WAFv2 web Access Control List (ACL).</p>
+    /// <p> Details about an WAFv2 web Access Control List (ACL). </p>
     pub fn aws_wafv2_web_acl(&self) -> ::std::option::Option<&crate::types::AwsWafv2WebAclDetails> {
         self.aws_wafv2_web_acl.as_ref()
     }
-    /// <p>Details about an WAFv2 rule group.</p>
+    /// <p> Details about an WAFv2 rule group. </p>
     pub fn aws_wafv2_rule_group(&self) -> ::std::option::Option<&crate::types::AwsWafv2RuleGroupDetails> {
         self.aws_wafv2_rule_group.as_ref()
     }
-    /// <p>Provides details about a route table. A route table contains a set of rules, called routes, that determine where to direct network traffic from your subnet or gateway.</p>
+    /// <p> Provides details about a route table. A route table contains a set of rules, called routes, that determine where to direct network traffic from your subnet or gateway. </p>
     pub fn aws_ec2_route_table(&self) -> ::std::option::Option<&crate::types::AwsEc2RouteTableDetails> {
         self.aws_ec2_route_table.as_ref()
     }
-    /// <p>Provides details about AppSync message broker. A message broker allows software applications and components to communicate using various programming languages, operating systems, and formal messaging protocols.</p>
+    /// <p> Provides details about AppSync message broker. A message broker allows software applications and components to communicate using various programming languages, operating systems, and formal messaging protocols. </p>
     pub fn aws_amazon_mq_broker(&self) -> ::std::option::Option<&crate::types::AwsAmazonMqBrokerDetails> {
         self.aws_amazon_mq_broker.as_ref()
     }
-    /// <p>Provides details about an AppSync Graph QL API, which lets you query multiple databases, microservices, and APIs from a single GraphQL endpoint.</p>
+    /// <p> Provides details about an AppSync Graph QL API, which lets you query multiple databases, microservices, and APIs from a single GraphQL endpoint. </p>
     pub fn aws_app_sync_graph_ql_api(&self) -> ::std::option::Option<&crate::types::AwsAppSyncGraphQlApiDetails> {
         self.aws_app_sync_graph_ql_api.as_ref()
     }
-    /// <p>A schema defines the structure of events that are sent to Amazon EventBridge. Schema registries are containers for schemas. They collect and organize schemas so that your schemas are in logical groups.</p>
+    /// <p> A schema defines the structure of events that are sent to Amazon EventBridge. Schema registries are containers for schemas. They collect and organize schemas so that your schemas are in logical groups. </p>
     pub fn aws_event_schemas_registry(&self) -> ::std::option::Option<&crate::types::AwsEventSchemasRegistryDetails> {
         self.aws_event_schemas_registry.as_ref()
     }
-    /// <p>Provides details about an Amazon GuardDuty detector. A detector is an object that represents the GuardDuty service. A detector is required for GuardDuty to become operational.</p>
+    /// <p> Provides details about an Amazon GuardDuty detector. A detector is an object that represents the GuardDuty service. A detector is required for GuardDuty to become operational. </p>
     pub fn aws_guard_duty_detector(&self) -> ::std::option::Option<&crate::types::AwsGuardDutyDetectorDetails> {
         self.aws_guard_duty_detector.as_ref()
     }
-    /// <p>Provides details about an Step Functions state machine, which is a workflow consisting of a series of event-driven steps.</p>
+    /// <p> Provides details about an Step Functions state machine, which is a workflow consisting of a series of event-driven steps. </p>
     pub fn aws_step_function_state_machine(&self) -> ::std::option::Option<&crate::types::AwsStepFunctionStateMachineDetails> {
         self.aws_step_function_state_machine.as_ref()
     }
-    /// <p>Provides information about an Amazon Athena workgroup. A workgroup helps you separate users, teams, applications, or workloads. It also helps you set limits on data processing and track costs.</p>
+    /// <p> Provides information about an Amazon Athena workgroup. A workgroup helps you separate users, teams, applications, or workloads. It also helps you set limits on data processing and track costs. </p>
     pub fn aws_athena_work_group(&self) -> ::std::option::Option<&crate::types::AwsAthenaWorkGroupDetails> {
         self.aws_athena_work_group.as_ref()
     }
-    /// <p>Provides details about Amazon EventBridge event bus for an endpoint. An event bus is a router that receives events and delivers them to zero or more destinations, or targets.</p>
+    /// <p> Provides details about Amazon EventBridge event bus for an endpoint. An event bus is a router that receives events and delivers them to zero or more destinations, or targets.</p>
     pub fn aws_events_eventbus(&self) -> ::std::option::Option<&crate::types::AwsEventsEventbusDetails> {
         self.aws_events_eventbus.as_ref()
     }
-    /// <p>Provides details about an Database Migration Service (DMS) endpoint. An endpoint provides connection, data store type, and location information about your data store.</p>
+    /// <p> Provides details about an Database Migration Service (DMS) endpoint. An endpoint provides connection, data store type, and location information about your data store.</p>
     pub fn aws_dms_endpoint(&self) -> ::std::option::Option<&crate::types::AwsDmsEndpointDetails> {
         self.aws_dms_endpoint.as_ref()
     }
-    /// <p>Provides details about an Amazon EventBridge global endpoint. The endpoint can improve your application’s availability by making it Regional-fault tolerant.</p>
+    /// <p> Provides details about an Amazon EventBridge global endpoint. The endpoint can improve your application’s availability by making it Regional-fault tolerant.</p>
     pub fn aws_events_endpoint(&self) -> ::std::option::Option<&crate::types::AwsEventsEndpointDetails> {
         self.aws_events_endpoint.as_ref()
     }
-    /// <p>Provides details about an DMS replication task. A replication task moves a set of data from the source endpoint to the target endpoint.</p>
+    /// <p> Provides details about an DMS replication task. A replication task moves a set of data from the source endpoint to the target endpoint.</p>
     pub fn aws_dms_replication_task(&self) -> ::std::option::Option<&crate::types::AwsDmsReplicationTaskDetails> {
         self.aws_dms_replication_task.as_ref()
     }
-    /// <p>Provides details about an DMS replication instance. DMS uses a replication instance to connect to your source data store, read the source data, and format the data for consumption by the target data store.</p>
+    /// <p> Provides details about an DMS replication instance. DMS uses a replication instance to connect to your source data store, read the source data, and format the data for consumption by the target data store.</p>
     pub fn aws_dms_replication_instance(&self) -> ::std::option::Option<&crate::types::AwsDmsReplicationInstanceDetails> {
         self.aws_dms_replication_instance.as_ref()
     }
-    /// <p>Provides details about an Amazon Route&nbsp;53 hosted zone, including the four name servers assigned to the hosted zone. A hosted zone represents a collection of records that can be managed together, belonging to a single parent domain name.</p>
+    /// <p> Provides details about an Amazon Route&nbsp;53 hosted zone, including the four name servers assigned to the hosted zone. A hosted zone represents a collection of records that can be managed together, belonging to a single parent domain name.</p>
     pub fn aws_route53_hosted_zone(&self) -> ::std::option::Option<&crate::types::AwsRoute53HostedZoneDetails> {
         self.aws_route53_hosted_zone.as_ref()
     }
-    /// <p>Provides details about an Amazon Managed Streaming for Apache Kafka (Amazon MSK) cluster.</p>
+    /// <p> Provides details about an Amazon Managed Streaming for Apache Kafka (Amazon MSK) cluster.</p>
     pub fn aws_msk_cluster(&self) -> ::std::option::Option<&crate::types::AwsMskClusterDetails> {
         self.aws_msk_cluster.as_ref()
     }
-    /// <p>Provides details about an Amazon Simple Storage Service (Amazon S3) access point. S3 access points are named network endpoints that are attached to S3 buckets that you can use to perform S3 object operations.</p>
+    /// <p> Provides details about an Amazon Simple Storage Service (Amazon S3) access point. S3 access points are named network endpoints that are attached to S3 buckets that you can use to perform S3 object operations. </p>
     pub fn aws_s3_access_point(&self) -> ::std::option::Option<&crate::types::AwsS3AccessPointDetails> {
         self.aws_s3_access_point.as_ref()
     }
-    /// <p>Provides details about an Client VPN endpoint. A Client VPN endpoint is the resource that you create and configure to enable and manage client VPN sessions. It's the termination point for all client VPN sessions.</p>
+    /// <p> Provides details about an Client VPN endpoint. A Client VPN endpoint is the resource that you create and configure to enable and manage client VPN sessions. It's the termination point for all client VPN sessions. </p>
     pub fn aws_ec2_client_vpn_endpoint(&self) -> ::std::option::Option<&crate::types::AwsEc2ClientVpnEndpointDetails> {
         self.aws_ec2_client_vpn_endpoint.as_ref()
     }
@@ -1356,17 +1352,17 @@ impl ResourceDetailsBuilder {
     pub fn get_aws_ecs_cluster(&self) -> &::std::option::Option<crate::types::AwsEcsClusterDetails> {
         &self.aws_ecs_cluster
     }
-    /// <p>Provides information about a Docker container that's part of a task.</p>
+    /// <p>Provides information about a Docker container that's part of a task. </p>
     pub fn aws_ecs_container(mut self, input: crate::types::AwsEcsContainerDetails) -> Self {
         self.aws_ecs_container = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Provides information about a Docker container that's part of a task.</p>
+    /// <p>Provides information about a Docker container that's part of a task. </p>
     pub fn set_aws_ecs_container(mut self, input: ::std::option::Option<crate::types::AwsEcsContainerDetails>) -> Self {
         self.aws_ecs_container = input;
         self
     }
-    /// <p>Provides information about a Docker container that's part of a task.</p>
+    /// <p>Provides information about a Docker container that's part of a task. </p>
     pub fn get_aws_ecs_container(&self) -> &::std::option::Option<crate::types::AwsEcsContainerDetails> {
         &self.aws_ecs_container
     }
@@ -1404,10 +1400,8 @@ impl ResourceDetailsBuilder {
     ///
     /// <p>Details about a resource that are not available in a type-specific details object. Use the <code>Other</code> object in the following cases.</p>
     /// <ul>
-    /// <li>
-    /// <p>The type-specific object does not contain all of the fields that you want to populate. In this case, first use the type-specific object to populate those fields. Use the <code>Other</code> object to populate the fields that are missing from the type-specific object.</p></li>
-    /// <li>
-    /// <p>The resource type does not have a corresponding object. This includes resources for which the type is <code>Other</code>.</p></li>
+    /// <li> <p>The type-specific object does not contain all of the fields that you want to populate. In this case, first use the type-specific object to populate those fields. Use the <code>Other</code> object to populate the fields that are missing from the type-specific object.</p> </li>
+    /// <li> <p>The resource type does not have a corresponding object. This includes resources for which the type is <code>Other</code>. </p> </li>
     /// </ul>
     pub fn other(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.other.unwrap_or_default();
@@ -1417,10 +1411,8 @@ impl ResourceDetailsBuilder {
     }
     /// <p>Details about a resource that are not available in a type-specific details object. Use the <code>Other</code> object in the following cases.</p>
     /// <ul>
-    /// <li>
-    /// <p>The type-specific object does not contain all of the fields that you want to populate. In this case, first use the type-specific object to populate those fields. Use the <code>Other</code> object to populate the fields that are missing from the type-specific object.</p></li>
-    /// <li>
-    /// <p>The resource type does not have a corresponding object. This includes resources for which the type is <code>Other</code>.</p></li>
+    /// <li> <p>The type-specific object does not contain all of the fields that you want to populate. In this case, first use the type-specific object to populate those fields. Use the <code>Other</code> object to populate the fields that are missing from the type-specific object.</p> </li>
+    /// <li> <p>The resource type does not have a corresponding object. This includes resources for which the type is <code>Other</code>. </p> </li>
     /// </ul>
     pub fn set_other(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.other = input;
@@ -1428,10 +1420,8 @@ impl ResourceDetailsBuilder {
     }
     /// <p>Details about a resource that are not available in a type-specific details object. Use the <code>Other</code> object in the following cases.</p>
     /// <ul>
-    /// <li>
-    /// <p>The type-specific object does not contain all of the fields that you want to populate. In this case, first use the type-specific object to populate those fields. Use the <code>Other</code> object to populate the fields that are missing from the type-specific object.</p></li>
-    /// <li>
-    /// <p>The resource type does not have a corresponding object. This includes resources for which the type is <code>Other</code>.</p></li>
+    /// <li> <p>The type-specific object does not contain all of the fields that you want to populate. In this case, first use the type-specific object to populate those fields. Use the <code>Other</code> object to populate the fields that are missing from the type-specific object.</p> </li>
+    /// <li> <p>The resource type does not have a corresponding object. This includes resources for which the type is <code>Other</code>. </p> </li>
     /// </ul>
     pub fn get_other(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.other
@@ -1694,17 +1684,17 @@ impl ResourceDetailsBuilder {
     pub fn get_aws_ec2_transit_gateway(&self) -> &::std::option::Option<crate::types::AwsEc2TransitGatewayDetails> {
         &self.aws_ec2_transit_gateway
     }
-    /// <p>Details about an Amazon EFS access point. An access point is an application-specific view into an EFS file system that applies an operating system user and group, and a file system path, to any file system request made through the access point.</p>
+    /// <p>Details about an Amazon EFS access point. An access point is an application-specific view into an EFS file system that applies an operating system user and group, and a file system path, to any file system request made through the access point. </p>
     pub fn aws_efs_access_point(mut self, input: crate::types::AwsEfsAccessPointDetails) -> Self {
         self.aws_efs_access_point = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Details about an Amazon EFS access point. An access point is an application-specific view into an EFS file system that applies an operating system user and group, and a file system path, to any file system request made through the access point.</p>
+    /// <p>Details about an Amazon EFS access point. An access point is an application-specific view into an EFS file system that applies an operating system user and group, and a file system path, to any file system request made through the access point. </p>
     pub fn set_aws_efs_access_point(mut self, input: ::std::option::Option<crate::types::AwsEfsAccessPointDetails>) -> Self {
         self.aws_efs_access_point = input;
         self
     }
-    /// <p>Details about an Amazon EFS access point. An access point is an application-specific view into an EFS file system that applies an operating system user and group, and a file system path, to any file system request made through the access point.</p>
+    /// <p>Details about an Amazon EFS access point. An access point is an application-specific view into an EFS file system that applies an operating system user and group, and a file system path, to any file system request made through the access point. </p>
     pub fn get_aws_efs_access_point(&self) -> &::std::option::Option<crate::types::AwsEfsAccessPointDetails> {
         &self.aws_efs_access_point
     }
@@ -1736,423 +1726,423 @@ impl ResourceDetailsBuilder {
     pub fn get_aws_cloud_watch_alarm(&self) -> &::std::option::Option<crate::types::AwsCloudWatchAlarmDetails> {
         &self.aws_cloud_watch_alarm
     }
-    /// <p>Details about an Amazon EC2 VPC peering connection. A VPC peering connection is a networking connection between two VPCs that enables you to route traffic between them privately.</p>
+    /// <p>Details about an Amazon EC2 VPC peering connection. A VPC peering connection is a networking connection between two VPCs that enables you to route traffic between them privately. </p>
     pub fn aws_ec2_vpc_peering_connection(mut self, input: crate::types::AwsEc2VpcPeeringConnectionDetails) -> Self {
         self.aws_ec2_vpc_peering_connection = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Details about an Amazon EC2 VPC peering connection. A VPC peering connection is a networking connection between two VPCs that enables you to route traffic between them privately.</p>
+    /// <p>Details about an Amazon EC2 VPC peering connection. A VPC peering connection is a networking connection between two VPCs that enables you to route traffic between them privately. </p>
     pub fn set_aws_ec2_vpc_peering_connection(mut self, input: ::std::option::Option<crate::types::AwsEc2VpcPeeringConnectionDetails>) -> Self {
         self.aws_ec2_vpc_peering_connection = input;
         self
     }
-    /// <p>Details about an Amazon EC2 VPC peering connection. A VPC peering connection is a networking connection between two VPCs that enables you to route traffic between them privately.</p>
+    /// <p>Details about an Amazon EC2 VPC peering connection. A VPC peering connection is a networking connection between two VPCs that enables you to route traffic between them privately. </p>
     pub fn get_aws_ec2_vpc_peering_connection(&self) -> &::std::option::Option<crate::types::AwsEc2VpcPeeringConnectionDetails> {
         &self.aws_ec2_vpc_peering_connection
     }
-    /// <p>Details about an WAF rule group for Regional resources.</p>
+    /// <p>Details about an WAF rule group for Regional resources. </p>
     pub fn aws_waf_regional_rule_group(mut self, input: crate::types::AwsWafRegionalRuleGroupDetails) -> Self {
         self.aws_waf_regional_rule_group = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Details about an WAF rule group for Regional resources.</p>
+    /// <p>Details about an WAF rule group for Regional resources. </p>
     pub fn set_aws_waf_regional_rule_group(mut self, input: ::std::option::Option<crate::types::AwsWafRegionalRuleGroupDetails>) -> Self {
         self.aws_waf_regional_rule_group = input;
         self
     }
-    /// <p>Details about an WAF rule group for Regional resources.</p>
+    /// <p>Details about an WAF rule group for Regional resources. </p>
     pub fn get_aws_waf_regional_rule_group(&self) -> &::std::option::Option<crate::types::AwsWafRegionalRuleGroupDetails> {
         &self.aws_waf_regional_rule_group
     }
-    /// <p>Details about an WAF rule for Regional resources.</p>
+    /// <p>Details about an WAF rule for Regional resources. </p>
     pub fn aws_waf_regional_rule(mut self, input: crate::types::AwsWafRegionalRuleDetails) -> Self {
         self.aws_waf_regional_rule = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Details about an WAF rule for Regional resources.</p>
+    /// <p>Details about an WAF rule for Regional resources. </p>
     pub fn set_aws_waf_regional_rule(mut self, input: ::std::option::Option<crate::types::AwsWafRegionalRuleDetails>) -> Self {
         self.aws_waf_regional_rule = input;
         self
     }
-    /// <p>Details about an WAF rule for Regional resources.</p>
+    /// <p>Details about an WAF rule for Regional resources. </p>
     pub fn get_aws_waf_regional_rule(&self) -> &::std::option::Option<crate::types::AwsWafRegionalRuleDetails> {
         &self.aws_waf_regional_rule
     }
-    /// <p>Details about an WAF web access control list (web ACL) for Regional resources.</p>
+    /// <p>Details about an WAF web access control list (web ACL) for Regional resources. </p>
     pub fn aws_waf_regional_web_acl(mut self, input: crate::types::AwsWafRegionalWebAclDetails) -> Self {
         self.aws_waf_regional_web_acl = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Details about an WAF web access control list (web ACL) for Regional resources.</p>
+    /// <p>Details about an WAF web access control list (web ACL) for Regional resources. </p>
     pub fn set_aws_waf_regional_web_acl(mut self, input: ::std::option::Option<crate::types::AwsWafRegionalWebAclDetails>) -> Self {
         self.aws_waf_regional_web_acl = input;
         self
     }
-    /// <p>Details about an WAF web access control list (web ACL) for Regional resources.</p>
+    /// <p>Details about an WAF web access control list (web ACL) for Regional resources. </p>
     pub fn get_aws_waf_regional_web_acl(&self) -> &::std::option::Option<crate::types::AwsWafRegionalWebAclDetails> {
         &self.aws_waf_regional_web_acl
     }
-    /// <p>Details about an WAF rule for global resources.</p>
+    /// <p>Details about an WAF rule for global resources. </p>
     pub fn aws_waf_rule(mut self, input: crate::types::AwsWafRuleDetails) -> Self {
         self.aws_waf_rule = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Details about an WAF rule for global resources.</p>
+    /// <p>Details about an WAF rule for global resources. </p>
     pub fn set_aws_waf_rule(mut self, input: ::std::option::Option<crate::types::AwsWafRuleDetails>) -> Self {
         self.aws_waf_rule = input;
         self
     }
-    /// <p>Details about an WAF rule for global resources.</p>
+    /// <p>Details about an WAF rule for global resources. </p>
     pub fn get_aws_waf_rule(&self) -> &::std::option::Option<crate::types::AwsWafRuleDetails> {
         &self.aws_waf_rule
     }
-    /// <p>Details about an WAF rule group for global resources.</p>
+    /// <p>Details about an WAF rule group for global resources. </p>
     pub fn aws_waf_rule_group(mut self, input: crate::types::AwsWafRuleGroupDetails) -> Self {
         self.aws_waf_rule_group = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Details about an WAF rule group for global resources.</p>
+    /// <p>Details about an WAF rule group for global resources. </p>
     pub fn set_aws_waf_rule_group(mut self, input: ::std::option::Option<crate::types::AwsWafRuleGroupDetails>) -> Self {
         self.aws_waf_rule_group = input;
         self
     }
-    /// <p>Details about an WAF rule group for global resources.</p>
+    /// <p>Details about an WAF rule group for global resources. </p>
     pub fn get_aws_waf_rule_group(&self) -> &::std::option::Option<crate::types::AwsWafRuleGroupDetails> {
         &self.aws_waf_rule_group
     }
-    /// <p>Details about a task in a cluster.</p>
+    /// <p>Details about a task in a cluster. </p>
     pub fn aws_ecs_task(mut self, input: crate::types::AwsEcsTaskDetails) -> Self {
         self.aws_ecs_task = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Details about a task in a cluster.</p>
+    /// <p>Details about a task in a cluster. </p>
     pub fn set_aws_ecs_task(mut self, input: ::std::option::Option<crate::types::AwsEcsTaskDetails>) -> Self {
         self.aws_ecs_task = input;
         self
     }
-    /// <p>Details about a task in a cluster.</p>
+    /// <p>Details about a task in a cluster. </p>
     pub fn get_aws_ecs_task(&self) -> &::std::option::Option<crate::types::AwsEcsTaskDetails> {
         &self.aws_ecs_task
     }
-    /// <p>Provides details about an Backup backup vault.</p>
+    /// <p>Provides details about an Backup backup vault. </p>
     pub fn aws_backup_backup_vault(mut self, input: crate::types::AwsBackupBackupVaultDetails) -> Self {
         self.aws_backup_backup_vault = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Provides details about an Backup backup vault.</p>
+    /// <p>Provides details about an Backup backup vault. </p>
     pub fn set_aws_backup_backup_vault(mut self, input: ::std::option::Option<crate::types::AwsBackupBackupVaultDetails>) -> Self {
         self.aws_backup_backup_vault = input;
         self
     }
-    /// <p>Provides details about an Backup backup vault.</p>
+    /// <p>Provides details about an Backup backup vault. </p>
     pub fn get_aws_backup_backup_vault(&self) -> &::std::option::Option<crate::types::AwsBackupBackupVaultDetails> {
         &self.aws_backup_backup_vault
     }
-    /// <p>Provides details about an Backup backup plan.</p>
+    /// <p>Provides details about an Backup backup plan. </p>
     pub fn aws_backup_backup_plan(mut self, input: crate::types::AwsBackupBackupPlanDetails) -> Self {
         self.aws_backup_backup_plan = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Provides details about an Backup backup plan.</p>
+    /// <p>Provides details about an Backup backup plan. </p>
     pub fn set_aws_backup_backup_plan(mut self, input: ::std::option::Option<crate::types::AwsBackupBackupPlanDetails>) -> Self {
         self.aws_backup_backup_plan = input;
         self
     }
-    /// <p>Provides details about an Backup backup plan.</p>
+    /// <p>Provides details about an Backup backup plan. </p>
     pub fn get_aws_backup_backup_plan(&self) -> &::std::option::Option<crate::types::AwsBackupBackupPlanDetails> {
         &self.aws_backup_backup_plan
     }
-    /// <p>Provides details about an Backup backup, or recovery point.</p>
+    /// <p>Provides details about an Backup backup, or recovery point. </p>
     pub fn aws_backup_recovery_point(mut self, input: crate::types::AwsBackupRecoveryPointDetails) -> Self {
         self.aws_backup_recovery_point = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Provides details about an Backup backup, or recovery point.</p>
+    /// <p>Provides details about an Backup backup, or recovery point. </p>
     pub fn set_aws_backup_recovery_point(mut self, input: ::std::option::Option<crate::types::AwsBackupRecoveryPointDetails>) -> Self {
         self.aws_backup_recovery_point = input;
         self
     }
-    /// <p>Provides details about an Backup backup, or recovery point.</p>
+    /// <p>Provides details about an Backup backup, or recovery point. </p>
     pub fn get_aws_backup_recovery_point(&self) -> &::std::option::Option<crate::types::AwsBackupRecoveryPointDetails> {
         &self.aws_backup_recovery_point
     }
-    /// <p>Specifies the properties for creating an Amazon Elastic Compute Cloud (Amazon EC2) launch template.</p>
+    /// <p> Specifies the properties for creating an Amazon Elastic Compute Cloud (Amazon EC2) launch template. </p>
     pub fn aws_ec2_launch_template(mut self, input: crate::types::AwsEc2LaunchTemplateDetails) -> Self {
         self.aws_ec2_launch_template = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the properties for creating an Amazon Elastic Compute Cloud (Amazon EC2) launch template.</p>
+    /// <p> Specifies the properties for creating an Amazon Elastic Compute Cloud (Amazon EC2) launch template. </p>
     pub fn set_aws_ec2_launch_template(mut self, input: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDetails>) -> Self {
         self.aws_ec2_launch_template = input;
         self
     }
-    /// <p>Specifies the properties for creating an Amazon Elastic Compute Cloud (Amazon EC2) launch template.</p>
+    /// <p> Specifies the properties for creating an Amazon Elastic Compute Cloud (Amazon EC2) launch template. </p>
     pub fn get_aws_ec2_launch_template(&self) -> &::std::option::Option<crate::types::AwsEc2LaunchTemplateDetails> {
         &self.aws_ec2_launch_template
     }
-    /// <p>Provides details about an Amazon SageMaker notebook instance.</p>
+    /// <p> Provides details about an Amazon SageMaker notebook instance. </p>
     pub fn aws_sage_maker_notebook_instance(mut self, input: crate::types::AwsSageMakerNotebookInstanceDetails) -> Self {
         self.aws_sage_maker_notebook_instance = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Provides details about an Amazon SageMaker notebook instance.</p>
+    /// <p> Provides details about an Amazon SageMaker notebook instance. </p>
     pub fn set_aws_sage_maker_notebook_instance(mut self, input: ::std::option::Option<crate::types::AwsSageMakerNotebookInstanceDetails>) -> Self {
         self.aws_sage_maker_notebook_instance = input;
         self
     }
-    /// <p>Provides details about an Amazon SageMaker notebook instance.</p>
+    /// <p> Provides details about an Amazon SageMaker notebook instance. </p>
     pub fn get_aws_sage_maker_notebook_instance(&self) -> &::std::option::Option<crate::types::AwsSageMakerNotebookInstanceDetails> {
         &self.aws_sage_maker_notebook_instance
     }
-    /// <p>Details about an WAFv2 web Access Control List (ACL).</p>
+    /// <p> Details about an WAFv2 web Access Control List (ACL). </p>
     pub fn aws_wafv2_web_acl(mut self, input: crate::types::AwsWafv2WebAclDetails) -> Self {
         self.aws_wafv2_web_acl = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Details about an WAFv2 web Access Control List (ACL).</p>
+    /// <p> Details about an WAFv2 web Access Control List (ACL). </p>
     pub fn set_aws_wafv2_web_acl(mut self, input: ::std::option::Option<crate::types::AwsWafv2WebAclDetails>) -> Self {
         self.aws_wafv2_web_acl = input;
         self
     }
-    /// <p>Details about an WAFv2 web Access Control List (ACL).</p>
+    /// <p> Details about an WAFv2 web Access Control List (ACL). </p>
     pub fn get_aws_wafv2_web_acl(&self) -> &::std::option::Option<crate::types::AwsWafv2WebAclDetails> {
         &self.aws_wafv2_web_acl
     }
-    /// <p>Details about an WAFv2 rule group.</p>
+    /// <p> Details about an WAFv2 rule group. </p>
     pub fn aws_wafv2_rule_group(mut self, input: crate::types::AwsWafv2RuleGroupDetails) -> Self {
         self.aws_wafv2_rule_group = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Details about an WAFv2 rule group.</p>
+    /// <p> Details about an WAFv2 rule group. </p>
     pub fn set_aws_wafv2_rule_group(mut self, input: ::std::option::Option<crate::types::AwsWafv2RuleGroupDetails>) -> Self {
         self.aws_wafv2_rule_group = input;
         self
     }
-    /// <p>Details about an WAFv2 rule group.</p>
+    /// <p> Details about an WAFv2 rule group. </p>
     pub fn get_aws_wafv2_rule_group(&self) -> &::std::option::Option<crate::types::AwsWafv2RuleGroupDetails> {
         &self.aws_wafv2_rule_group
     }
-    /// <p>Provides details about a route table. A route table contains a set of rules, called routes, that determine where to direct network traffic from your subnet or gateway.</p>
+    /// <p> Provides details about a route table. A route table contains a set of rules, called routes, that determine where to direct network traffic from your subnet or gateway. </p>
     pub fn aws_ec2_route_table(mut self, input: crate::types::AwsEc2RouteTableDetails) -> Self {
         self.aws_ec2_route_table = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Provides details about a route table. A route table contains a set of rules, called routes, that determine where to direct network traffic from your subnet or gateway.</p>
+    /// <p> Provides details about a route table. A route table contains a set of rules, called routes, that determine where to direct network traffic from your subnet or gateway. </p>
     pub fn set_aws_ec2_route_table(mut self, input: ::std::option::Option<crate::types::AwsEc2RouteTableDetails>) -> Self {
         self.aws_ec2_route_table = input;
         self
     }
-    /// <p>Provides details about a route table. A route table contains a set of rules, called routes, that determine where to direct network traffic from your subnet or gateway.</p>
+    /// <p> Provides details about a route table. A route table contains a set of rules, called routes, that determine where to direct network traffic from your subnet or gateway. </p>
     pub fn get_aws_ec2_route_table(&self) -> &::std::option::Option<crate::types::AwsEc2RouteTableDetails> {
         &self.aws_ec2_route_table
     }
-    /// <p>Provides details about AppSync message broker. A message broker allows software applications and components to communicate using various programming languages, operating systems, and formal messaging protocols.</p>
+    /// <p> Provides details about AppSync message broker. A message broker allows software applications and components to communicate using various programming languages, operating systems, and formal messaging protocols. </p>
     pub fn aws_amazon_mq_broker(mut self, input: crate::types::AwsAmazonMqBrokerDetails) -> Self {
         self.aws_amazon_mq_broker = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Provides details about AppSync message broker. A message broker allows software applications and components to communicate using various programming languages, operating systems, and formal messaging protocols.</p>
+    /// <p> Provides details about AppSync message broker. A message broker allows software applications and components to communicate using various programming languages, operating systems, and formal messaging protocols. </p>
     pub fn set_aws_amazon_mq_broker(mut self, input: ::std::option::Option<crate::types::AwsAmazonMqBrokerDetails>) -> Self {
         self.aws_amazon_mq_broker = input;
         self
     }
-    /// <p>Provides details about AppSync message broker. A message broker allows software applications and components to communicate using various programming languages, operating systems, and formal messaging protocols.</p>
+    /// <p> Provides details about AppSync message broker. A message broker allows software applications and components to communicate using various programming languages, operating systems, and formal messaging protocols. </p>
     pub fn get_aws_amazon_mq_broker(&self) -> &::std::option::Option<crate::types::AwsAmazonMqBrokerDetails> {
         &self.aws_amazon_mq_broker
     }
-    /// <p>Provides details about an AppSync Graph QL API, which lets you query multiple databases, microservices, and APIs from a single GraphQL endpoint.</p>
+    /// <p> Provides details about an AppSync Graph QL API, which lets you query multiple databases, microservices, and APIs from a single GraphQL endpoint. </p>
     pub fn aws_app_sync_graph_ql_api(mut self, input: crate::types::AwsAppSyncGraphQlApiDetails) -> Self {
         self.aws_app_sync_graph_ql_api = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Provides details about an AppSync Graph QL API, which lets you query multiple databases, microservices, and APIs from a single GraphQL endpoint.</p>
+    /// <p> Provides details about an AppSync Graph QL API, which lets you query multiple databases, microservices, and APIs from a single GraphQL endpoint. </p>
     pub fn set_aws_app_sync_graph_ql_api(mut self, input: ::std::option::Option<crate::types::AwsAppSyncGraphQlApiDetails>) -> Self {
         self.aws_app_sync_graph_ql_api = input;
         self
     }
-    /// <p>Provides details about an AppSync Graph QL API, which lets you query multiple databases, microservices, and APIs from a single GraphQL endpoint.</p>
+    /// <p> Provides details about an AppSync Graph QL API, which lets you query multiple databases, microservices, and APIs from a single GraphQL endpoint. </p>
     pub fn get_aws_app_sync_graph_ql_api(&self) -> &::std::option::Option<crate::types::AwsAppSyncGraphQlApiDetails> {
         &self.aws_app_sync_graph_ql_api
     }
-    /// <p>A schema defines the structure of events that are sent to Amazon EventBridge. Schema registries are containers for schemas. They collect and organize schemas so that your schemas are in logical groups.</p>
+    /// <p> A schema defines the structure of events that are sent to Amazon EventBridge. Schema registries are containers for schemas. They collect and organize schemas so that your schemas are in logical groups. </p>
     pub fn aws_event_schemas_registry(mut self, input: crate::types::AwsEventSchemasRegistryDetails) -> Self {
         self.aws_event_schemas_registry = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A schema defines the structure of events that are sent to Amazon EventBridge. Schema registries are containers for schemas. They collect and organize schemas so that your schemas are in logical groups.</p>
+    /// <p> A schema defines the structure of events that are sent to Amazon EventBridge. Schema registries are containers for schemas. They collect and organize schemas so that your schemas are in logical groups. </p>
     pub fn set_aws_event_schemas_registry(mut self, input: ::std::option::Option<crate::types::AwsEventSchemasRegistryDetails>) -> Self {
         self.aws_event_schemas_registry = input;
         self
     }
-    /// <p>A schema defines the structure of events that are sent to Amazon EventBridge. Schema registries are containers for schemas. They collect and organize schemas so that your schemas are in logical groups.</p>
+    /// <p> A schema defines the structure of events that are sent to Amazon EventBridge. Schema registries are containers for schemas. They collect and organize schemas so that your schemas are in logical groups. </p>
     pub fn get_aws_event_schemas_registry(&self) -> &::std::option::Option<crate::types::AwsEventSchemasRegistryDetails> {
         &self.aws_event_schemas_registry
     }
-    /// <p>Provides details about an Amazon GuardDuty detector. A detector is an object that represents the GuardDuty service. A detector is required for GuardDuty to become operational.</p>
+    /// <p> Provides details about an Amazon GuardDuty detector. A detector is an object that represents the GuardDuty service. A detector is required for GuardDuty to become operational. </p>
     pub fn aws_guard_duty_detector(mut self, input: crate::types::AwsGuardDutyDetectorDetails) -> Self {
         self.aws_guard_duty_detector = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Provides details about an Amazon GuardDuty detector. A detector is an object that represents the GuardDuty service. A detector is required for GuardDuty to become operational.</p>
+    /// <p> Provides details about an Amazon GuardDuty detector. A detector is an object that represents the GuardDuty service. A detector is required for GuardDuty to become operational. </p>
     pub fn set_aws_guard_duty_detector(mut self, input: ::std::option::Option<crate::types::AwsGuardDutyDetectorDetails>) -> Self {
         self.aws_guard_duty_detector = input;
         self
     }
-    /// <p>Provides details about an Amazon GuardDuty detector. A detector is an object that represents the GuardDuty service. A detector is required for GuardDuty to become operational.</p>
+    /// <p> Provides details about an Amazon GuardDuty detector. A detector is an object that represents the GuardDuty service. A detector is required for GuardDuty to become operational. </p>
     pub fn get_aws_guard_duty_detector(&self) -> &::std::option::Option<crate::types::AwsGuardDutyDetectorDetails> {
         &self.aws_guard_duty_detector
     }
-    /// <p>Provides details about an Step Functions state machine, which is a workflow consisting of a series of event-driven steps.</p>
+    /// <p> Provides details about an Step Functions state machine, which is a workflow consisting of a series of event-driven steps. </p>
     pub fn aws_step_function_state_machine(mut self, input: crate::types::AwsStepFunctionStateMachineDetails) -> Self {
         self.aws_step_function_state_machine = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Provides details about an Step Functions state machine, which is a workflow consisting of a series of event-driven steps.</p>
+    /// <p> Provides details about an Step Functions state machine, which is a workflow consisting of a series of event-driven steps. </p>
     pub fn set_aws_step_function_state_machine(mut self, input: ::std::option::Option<crate::types::AwsStepFunctionStateMachineDetails>) -> Self {
         self.aws_step_function_state_machine = input;
         self
     }
-    /// <p>Provides details about an Step Functions state machine, which is a workflow consisting of a series of event-driven steps.</p>
+    /// <p> Provides details about an Step Functions state machine, which is a workflow consisting of a series of event-driven steps. </p>
     pub fn get_aws_step_function_state_machine(&self) -> &::std::option::Option<crate::types::AwsStepFunctionStateMachineDetails> {
         &self.aws_step_function_state_machine
     }
-    /// <p>Provides information about an Amazon Athena workgroup. A workgroup helps you separate users, teams, applications, or workloads. It also helps you set limits on data processing and track costs.</p>
+    /// <p> Provides information about an Amazon Athena workgroup. A workgroup helps you separate users, teams, applications, or workloads. It also helps you set limits on data processing and track costs. </p>
     pub fn aws_athena_work_group(mut self, input: crate::types::AwsAthenaWorkGroupDetails) -> Self {
         self.aws_athena_work_group = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Provides information about an Amazon Athena workgroup. A workgroup helps you separate users, teams, applications, or workloads. It also helps you set limits on data processing and track costs.</p>
+    /// <p> Provides information about an Amazon Athena workgroup. A workgroup helps you separate users, teams, applications, or workloads. It also helps you set limits on data processing and track costs. </p>
     pub fn set_aws_athena_work_group(mut self, input: ::std::option::Option<crate::types::AwsAthenaWorkGroupDetails>) -> Self {
         self.aws_athena_work_group = input;
         self
     }
-    /// <p>Provides information about an Amazon Athena workgroup. A workgroup helps you separate users, teams, applications, or workloads. It also helps you set limits on data processing and track costs.</p>
+    /// <p> Provides information about an Amazon Athena workgroup. A workgroup helps you separate users, teams, applications, or workloads. It also helps you set limits on data processing and track costs. </p>
     pub fn get_aws_athena_work_group(&self) -> &::std::option::Option<crate::types::AwsAthenaWorkGroupDetails> {
         &self.aws_athena_work_group
     }
-    /// <p>Provides details about Amazon EventBridge event bus for an endpoint. An event bus is a router that receives events and delivers them to zero or more destinations, or targets.</p>
+    /// <p> Provides details about Amazon EventBridge event bus for an endpoint. An event bus is a router that receives events and delivers them to zero or more destinations, or targets.</p>
     pub fn aws_events_eventbus(mut self, input: crate::types::AwsEventsEventbusDetails) -> Self {
         self.aws_events_eventbus = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Provides details about Amazon EventBridge event bus for an endpoint. An event bus is a router that receives events and delivers them to zero or more destinations, or targets.</p>
+    /// <p> Provides details about Amazon EventBridge event bus for an endpoint. An event bus is a router that receives events and delivers them to zero or more destinations, or targets.</p>
     pub fn set_aws_events_eventbus(mut self, input: ::std::option::Option<crate::types::AwsEventsEventbusDetails>) -> Self {
         self.aws_events_eventbus = input;
         self
     }
-    /// <p>Provides details about Amazon EventBridge event bus for an endpoint. An event bus is a router that receives events and delivers them to zero or more destinations, or targets.</p>
+    /// <p> Provides details about Amazon EventBridge event bus for an endpoint. An event bus is a router that receives events and delivers them to zero or more destinations, or targets.</p>
     pub fn get_aws_events_eventbus(&self) -> &::std::option::Option<crate::types::AwsEventsEventbusDetails> {
         &self.aws_events_eventbus
     }
-    /// <p>Provides details about an Database Migration Service (DMS) endpoint. An endpoint provides connection, data store type, and location information about your data store.</p>
+    /// <p> Provides details about an Database Migration Service (DMS) endpoint. An endpoint provides connection, data store type, and location information about your data store.</p>
     pub fn aws_dms_endpoint(mut self, input: crate::types::AwsDmsEndpointDetails) -> Self {
         self.aws_dms_endpoint = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Provides details about an Database Migration Service (DMS) endpoint. An endpoint provides connection, data store type, and location information about your data store.</p>
+    /// <p> Provides details about an Database Migration Service (DMS) endpoint. An endpoint provides connection, data store type, and location information about your data store.</p>
     pub fn set_aws_dms_endpoint(mut self, input: ::std::option::Option<crate::types::AwsDmsEndpointDetails>) -> Self {
         self.aws_dms_endpoint = input;
         self
     }
-    /// <p>Provides details about an Database Migration Service (DMS) endpoint. An endpoint provides connection, data store type, and location information about your data store.</p>
+    /// <p> Provides details about an Database Migration Service (DMS) endpoint. An endpoint provides connection, data store type, and location information about your data store.</p>
     pub fn get_aws_dms_endpoint(&self) -> &::std::option::Option<crate::types::AwsDmsEndpointDetails> {
         &self.aws_dms_endpoint
     }
-    /// <p>Provides details about an Amazon EventBridge global endpoint. The endpoint can improve your application’s availability by making it Regional-fault tolerant.</p>
+    /// <p> Provides details about an Amazon EventBridge global endpoint. The endpoint can improve your application’s availability by making it Regional-fault tolerant.</p>
     pub fn aws_events_endpoint(mut self, input: crate::types::AwsEventsEndpointDetails) -> Self {
         self.aws_events_endpoint = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Provides details about an Amazon EventBridge global endpoint. The endpoint can improve your application’s availability by making it Regional-fault tolerant.</p>
+    /// <p> Provides details about an Amazon EventBridge global endpoint. The endpoint can improve your application’s availability by making it Regional-fault tolerant.</p>
     pub fn set_aws_events_endpoint(mut self, input: ::std::option::Option<crate::types::AwsEventsEndpointDetails>) -> Self {
         self.aws_events_endpoint = input;
         self
     }
-    /// <p>Provides details about an Amazon EventBridge global endpoint. The endpoint can improve your application’s availability by making it Regional-fault tolerant.</p>
+    /// <p> Provides details about an Amazon EventBridge global endpoint. The endpoint can improve your application’s availability by making it Regional-fault tolerant.</p>
     pub fn get_aws_events_endpoint(&self) -> &::std::option::Option<crate::types::AwsEventsEndpointDetails> {
         &self.aws_events_endpoint
     }
-    /// <p>Provides details about an DMS replication task. A replication task moves a set of data from the source endpoint to the target endpoint.</p>
+    /// <p> Provides details about an DMS replication task. A replication task moves a set of data from the source endpoint to the target endpoint.</p>
     pub fn aws_dms_replication_task(mut self, input: crate::types::AwsDmsReplicationTaskDetails) -> Self {
         self.aws_dms_replication_task = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Provides details about an DMS replication task. A replication task moves a set of data from the source endpoint to the target endpoint.</p>
+    /// <p> Provides details about an DMS replication task. A replication task moves a set of data from the source endpoint to the target endpoint.</p>
     pub fn set_aws_dms_replication_task(mut self, input: ::std::option::Option<crate::types::AwsDmsReplicationTaskDetails>) -> Self {
         self.aws_dms_replication_task = input;
         self
     }
-    /// <p>Provides details about an DMS replication task. A replication task moves a set of data from the source endpoint to the target endpoint.</p>
+    /// <p> Provides details about an DMS replication task. A replication task moves a set of data from the source endpoint to the target endpoint.</p>
     pub fn get_aws_dms_replication_task(&self) -> &::std::option::Option<crate::types::AwsDmsReplicationTaskDetails> {
         &self.aws_dms_replication_task
     }
-    /// <p>Provides details about an DMS replication instance. DMS uses a replication instance to connect to your source data store, read the source data, and format the data for consumption by the target data store.</p>
+    /// <p> Provides details about an DMS replication instance. DMS uses a replication instance to connect to your source data store, read the source data, and format the data for consumption by the target data store.</p>
     pub fn aws_dms_replication_instance(mut self, input: crate::types::AwsDmsReplicationInstanceDetails) -> Self {
         self.aws_dms_replication_instance = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Provides details about an DMS replication instance. DMS uses a replication instance to connect to your source data store, read the source data, and format the data for consumption by the target data store.</p>
+    /// <p> Provides details about an DMS replication instance. DMS uses a replication instance to connect to your source data store, read the source data, and format the data for consumption by the target data store.</p>
     pub fn set_aws_dms_replication_instance(mut self, input: ::std::option::Option<crate::types::AwsDmsReplicationInstanceDetails>) -> Self {
         self.aws_dms_replication_instance = input;
         self
     }
-    /// <p>Provides details about an DMS replication instance. DMS uses a replication instance to connect to your source data store, read the source data, and format the data for consumption by the target data store.</p>
+    /// <p> Provides details about an DMS replication instance. DMS uses a replication instance to connect to your source data store, read the source data, and format the data for consumption by the target data store.</p>
     pub fn get_aws_dms_replication_instance(&self) -> &::std::option::Option<crate::types::AwsDmsReplicationInstanceDetails> {
         &self.aws_dms_replication_instance
     }
-    /// <p>Provides details about an Amazon Route&nbsp;53 hosted zone, including the four name servers assigned to the hosted zone. A hosted zone represents a collection of records that can be managed together, belonging to a single parent domain name.</p>
+    /// <p> Provides details about an Amazon Route&nbsp;53 hosted zone, including the four name servers assigned to the hosted zone. A hosted zone represents a collection of records that can be managed together, belonging to a single parent domain name.</p>
     pub fn aws_route53_hosted_zone(mut self, input: crate::types::AwsRoute53HostedZoneDetails) -> Self {
         self.aws_route53_hosted_zone = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Provides details about an Amazon Route&nbsp;53 hosted zone, including the four name servers assigned to the hosted zone. A hosted zone represents a collection of records that can be managed together, belonging to a single parent domain name.</p>
+    /// <p> Provides details about an Amazon Route&nbsp;53 hosted zone, including the four name servers assigned to the hosted zone. A hosted zone represents a collection of records that can be managed together, belonging to a single parent domain name.</p>
     pub fn set_aws_route53_hosted_zone(mut self, input: ::std::option::Option<crate::types::AwsRoute53HostedZoneDetails>) -> Self {
         self.aws_route53_hosted_zone = input;
         self
     }
-    /// <p>Provides details about an Amazon Route&nbsp;53 hosted zone, including the four name servers assigned to the hosted zone. A hosted zone represents a collection of records that can be managed together, belonging to a single parent domain name.</p>
+    /// <p> Provides details about an Amazon Route&nbsp;53 hosted zone, including the four name servers assigned to the hosted zone. A hosted zone represents a collection of records that can be managed together, belonging to a single parent domain name.</p>
     pub fn get_aws_route53_hosted_zone(&self) -> &::std::option::Option<crate::types::AwsRoute53HostedZoneDetails> {
         &self.aws_route53_hosted_zone
     }
-    /// <p>Provides details about an Amazon Managed Streaming for Apache Kafka (Amazon MSK) cluster.</p>
+    /// <p> Provides details about an Amazon Managed Streaming for Apache Kafka (Amazon MSK) cluster.</p>
     pub fn aws_msk_cluster(mut self, input: crate::types::AwsMskClusterDetails) -> Self {
         self.aws_msk_cluster = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Provides details about an Amazon Managed Streaming for Apache Kafka (Amazon MSK) cluster.</p>
+    /// <p> Provides details about an Amazon Managed Streaming for Apache Kafka (Amazon MSK) cluster.</p>
     pub fn set_aws_msk_cluster(mut self, input: ::std::option::Option<crate::types::AwsMskClusterDetails>) -> Self {
         self.aws_msk_cluster = input;
         self
     }
-    /// <p>Provides details about an Amazon Managed Streaming for Apache Kafka (Amazon MSK) cluster.</p>
+    /// <p> Provides details about an Amazon Managed Streaming for Apache Kafka (Amazon MSK) cluster.</p>
     pub fn get_aws_msk_cluster(&self) -> &::std::option::Option<crate::types::AwsMskClusterDetails> {
         &self.aws_msk_cluster
     }
-    /// <p>Provides details about an Amazon Simple Storage Service (Amazon S3) access point. S3 access points are named network endpoints that are attached to S3 buckets that you can use to perform S3 object operations.</p>
+    /// <p> Provides details about an Amazon Simple Storage Service (Amazon S3) access point. S3 access points are named network endpoints that are attached to S3 buckets that you can use to perform S3 object operations. </p>
     pub fn aws_s3_access_point(mut self, input: crate::types::AwsS3AccessPointDetails) -> Self {
         self.aws_s3_access_point = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Provides details about an Amazon Simple Storage Service (Amazon S3) access point. S3 access points are named network endpoints that are attached to S3 buckets that you can use to perform S3 object operations.</p>
+    /// <p> Provides details about an Amazon Simple Storage Service (Amazon S3) access point. S3 access points are named network endpoints that are attached to S3 buckets that you can use to perform S3 object operations. </p>
     pub fn set_aws_s3_access_point(mut self, input: ::std::option::Option<crate::types::AwsS3AccessPointDetails>) -> Self {
         self.aws_s3_access_point = input;
         self
     }
-    /// <p>Provides details about an Amazon Simple Storage Service (Amazon S3) access point. S3 access points are named network endpoints that are attached to S3 buckets that you can use to perform S3 object operations.</p>
+    /// <p> Provides details about an Amazon Simple Storage Service (Amazon S3) access point. S3 access points are named network endpoints that are attached to S3 buckets that you can use to perform S3 object operations. </p>
     pub fn get_aws_s3_access_point(&self) -> &::std::option::Option<crate::types::AwsS3AccessPointDetails> {
         &self.aws_s3_access_point
     }
-    /// <p>Provides details about an Client VPN endpoint. A Client VPN endpoint is the resource that you create and configure to enable and manage client VPN sessions. It's the termination point for all client VPN sessions.</p>
+    /// <p> Provides details about an Client VPN endpoint. A Client VPN endpoint is the resource that you create and configure to enable and manage client VPN sessions. It's the termination point for all client VPN sessions. </p>
     pub fn aws_ec2_client_vpn_endpoint(mut self, input: crate::types::AwsEc2ClientVpnEndpointDetails) -> Self {
         self.aws_ec2_client_vpn_endpoint = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Provides details about an Client VPN endpoint. A Client VPN endpoint is the resource that you create and configure to enable and manage client VPN sessions. It's the termination point for all client VPN sessions.</p>
+    /// <p> Provides details about an Client VPN endpoint. A Client VPN endpoint is the resource that you create and configure to enable and manage client VPN sessions. It's the termination point for all client VPN sessions. </p>
     pub fn set_aws_ec2_client_vpn_endpoint(mut self, input: ::std::option::Option<crate::types::AwsEc2ClientVpnEndpointDetails>) -> Self {
         self.aws_ec2_client_vpn_endpoint = input;
         self
     }
-    /// <p>Provides details about an Client VPN endpoint. A Client VPN endpoint is the resource that you create and configure to enable and manage client VPN sessions. It's the termination point for all client VPN sessions.</p>
+    /// <p> Provides details about an Client VPN endpoint. A Client VPN endpoint is the resource that you create and configure to enable and manage client VPN sessions. It's the termination point for all client VPN sessions. </p>
     pub fn get_aws_ec2_client_vpn_endpoint(&self) -> &::std::option::Option<crate::types::AwsEc2ClientVpnEndpointDetails> {
         &self.aws_ec2_client_vpn_endpoint
     }

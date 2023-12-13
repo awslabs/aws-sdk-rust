@@ -258,7 +258,7 @@ pub enum DiscoverInputSchemaError {
     InvalidArgumentException(crate::types::error::InvalidArgumentException),
     /// <p>Discovery failed to get a record from the streaming source because of the Amazon Kinesis Streams ProvisionedThroughputExceededException. For more information, see <a href="https://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetRecords.html">GetRecords</a> in the Amazon Kinesis Streams API Reference.</p>
     ResourceProvisionedThroughputExceededException(crate::types::error::ResourceProvisionedThroughputExceededException),
-    /// <p>The service is unavailable. Back off and retry the operation.</p>
+    /// <p>The service is unavailable. Back off and retry the operation. </p>
     ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
     /// <p>Data format is not valid. Amazon Kinesis Analytics is not able to detect schema for the given streaming source.</p>
     UnableToDetectSchemaException(crate::types::error::UnableToDetectSchemaException),

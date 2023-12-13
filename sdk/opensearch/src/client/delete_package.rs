@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`package_id(impl Into<String>)`](crate::operation::delete_package::builders::DeletePackageFluentBuilder::package_id) / [`set_package_id(Option<String>)`](crate::operation::delete_package::builders::DeletePackageFluentBuilder::set_package_id):<br>required: **true**<br><p>The internal ID of the package you want to delete. Use <code>DescribePackages</code> to find this value.</p><br>
     /// - On success, responds with [`DeletePackageOutput`](crate::operation::delete_package::DeletePackageOutput) with field(s):
-    ///   - [`package_details(Option<PackageDetails>)`](crate::operation::delete_package::DeletePackageOutput::package_details): <p>Information about the deleted package.</p>
+    ///   - [`package_details(Option<PackageDetails>)`](crate::operation::delete_package::DeletePackageOutput::package_details): <p> Information about the deleted package.</p>
     /// - On failure, responds with [`SdkError<DeletePackageError>`](crate::operation::delete_package::DeletePackageError)
     pub fn delete_package(&self) -> crate::operation::delete_package::builders::DeletePackageFluentBuilder {
         crate::operation::delete_package::builders::DeletePackageFluentBuilder::new(self.handle.clone())

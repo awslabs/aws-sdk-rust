@@ -6,14 +6,10 @@
 pub struct FpgaImageState {
     /// <p>The state. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>pending</code> - AFI bitstream generation is in progress.</p></li>
-    /// <li>
-    /// <p><code>available</code> - The AFI is available for use.</p></li>
-    /// <li>
-    /// <p><code>failed</code> - AFI bitstream generation failed.</p></li>
-    /// <li>
-    /// <p><code>unavailable</code> - The AFI is no longer available for use.</p></li>
+    /// <li> <p> <code>pending</code> - AFI bitstream generation is in progress.</p> </li>
+    /// <li> <p> <code>available</code> - The AFI is available for use.</p> </li>
+    /// <li> <p> <code>failed</code> - AFI bitstream generation failed.</p> </li>
+    /// <li> <p> <code>unavailable</code> - The AFI is no longer available for use.</p> </li>
     /// </ul>
     pub code: ::std::option::Option<crate::types::FpgaImageStateCode>,
     /// <p>If the state is <code>failed</code>, this is the error message.</p>
@@ -22,14 +18,10 @@ pub struct FpgaImageState {
 impl FpgaImageState {
     /// <p>The state. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>pending</code> - AFI bitstream generation is in progress.</p></li>
-    /// <li>
-    /// <p><code>available</code> - The AFI is available for use.</p></li>
-    /// <li>
-    /// <p><code>failed</code> - AFI bitstream generation failed.</p></li>
-    /// <li>
-    /// <p><code>unavailable</code> - The AFI is no longer available for use.</p></li>
+    /// <li> <p> <code>pending</code> - AFI bitstream generation is in progress.</p> </li>
+    /// <li> <p> <code>available</code> - The AFI is available for use.</p> </li>
+    /// <li> <p> <code>failed</code> - AFI bitstream generation failed.</p> </li>
+    /// <li> <p> <code>unavailable</code> - The AFI is no longer available for use.</p> </li>
     /// </ul>
     pub fn code(&self) -> ::std::option::Option<&crate::types::FpgaImageStateCode> {
         self.code.as_ref()
@@ -56,14 +48,10 @@ pub struct FpgaImageStateBuilder {
 impl FpgaImageStateBuilder {
     /// <p>The state. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>pending</code> - AFI bitstream generation is in progress.</p></li>
-    /// <li>
-    /// <p><code>available</code> - The AFI is available for use.</p></li>
-    /// <li>
-    /// <p><code>failed</code> - AFI bitstream generation failed.</p></li>
-    /// <li>
-    /// <p><code>unavailable</code> - The AFI is no longer available for use.</p></li>
+    /// <li> <p> <code>pending</code> - AFI bitstream generation is in progress.</p> </li>
+    /// <li> <p> <code>available</code> - The AFI is available for use.</p> </li>
+    /// <li> <p> <code>failed</code> - AFI bitstream generation failed.</p> </li>
+    /// <li> <p> <code>unavailable</code> - The AFI is no longer available for use.</p> </li>
     /// </ul>
     pub fn code(mut self, input: crate::types::FpgaImageStateCode) -> Self {
         self.code = ::std::option::Option::Some(input);
@@ -71,14 +59,10 @@ impl FpgaImageStateBuilder {
     }
     /// <p>The state. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>pending</code> - AFI bitstream generation is in progress.</p></li>
-    /// <li>
-    /// <p><code>available</code> - The AFI is available for use.</p></li>
-    /// <li>
-    /// <p><code>failed</code> - AFI bitstream generation failed.</p></li>
-    /// <li>
-    /// <p><code>unavailable</code> - The AFI is no longer available for use.</p></li>
+    /// <li> <p> <code>pending</code> - AFI bitstream generation is in progress.</p> </li>
+    /// <li> <p> <code>available</code> - The AFI is available for use.</p> </li>
+    /// <li> <p> <code>failed</code> - AFI bitstream generation failed.</p> </li>
+    /// <li> <p> <code>unavailable</code> - The AFI is no longer available for use.</p> </li>
     /// </ul>
     pub fn set_code(mut self, input: ::std::option::Option<crate::types::FpgaImageStateCode>) -> Self {
         self.code = input;
@@ -86,14 +70,10 @@ impl FpgaImageStateBuilder {
     }
     /// <p>The state. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>pending</code> - AFI bitstream generation is in progress.</p></li>
-    /// <li>
-    /// <p><code>available</code> - The AFI is available for use.</p></li>
-    /// <li>
-    /// <p><code>failed</code> - AFI bitstream generation failed.</p></li>
-    /// <li>
-    /// <p><code>unavailable</code> - The AFI is no longer available for use.</p></li>
+    /// <li> <p> <code>pending</code> - AFI bitstream generation is in progress.</p> </li>
+    /// <li> <p> <code>available</code> - The AFI is available for use.</p> </li>
+    /// <li> <p> <code>failed</code> - AFI bitstream generation failed.</p> </li>
+    /// <li> <p> <code>unavailable</code> - The AFI is no longer available for use.</p> </li>
     /// </ul>
     pub fn get_code(&self) -> &::std::option::Option<crate::types::FpgaImageStateCode> {
         &self.code

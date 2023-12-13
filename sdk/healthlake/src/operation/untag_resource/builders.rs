@@ -22,7 +22,7 @@ impl UntagResourceInputBuilder {
 }
 /// Fluent builder constructing a request to `UntagResource`.
 ///
-/// <p>Removes tags from a data store.</p>
+/// <p> Removes tags from a data store. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UntagResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -126,17 +126,17 @@ impl UntagResourceFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
     ///
-    /// <p>The keys for the tags to be removed from the HealthLake data store.</p>
+    /// <p> The keys for the tags to be removed from the HealthLake data store. </p>
     pub fn tag_keys(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tag_keys(input.into());
         self
     }
-    /// <p>The keys for the tags to be removed from the HealthLake data store.</p>
+    /// <p> The keys for the tags to be removed from the HealthLake data store. </p>
     pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_tag_keys(input);
         self
     }
-    /// <p>The keys for the tags to be removed from the HealthLake data store.</p>
+    /// <p> The keys for the tags to be removed from the HealthLake data store. </p>
     pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_tag_keys()
     }

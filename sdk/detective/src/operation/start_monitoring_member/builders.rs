@@ -25,10 +25,8 @@ impl StartMonitoringMemberInputBuilder {
 /// <p>Sends a request to enable data ingest for a member account that has a status of <code>ACCEPTED_BUT_DISABLED</code>.</p>
 /// <p>For valid member accounts, the status is updated as follows.</p>
 /// <ul>
-/// <li>
-/// <p>If Detective enabled the member account, then the new status is <code>ENABLED</code>.</p></li>
-/// <li>
-/// <p>If Detective cannot enable the member account, the status remains <code>ACCEPTED_BUT_DISABLED</code>.</p></li>
+/// <li> <p>If Detective enabled the member account, then the new status is <code>ENABLED</code>.</p> </li>
+/// <li> <p>If Detective cannot enable the member account, the status remains <code>ACCEPTED_BUT_DISABLED</code>. </p> </li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartMonitoringMemberFluentBuilder {
@@ -130,19 +128,19 @@ impl StartMonitoringMemberFluentBuilder {
         self.inner.get_graph_arn()
     }
     /// <p>The account ID of the member account to try to enable.</p>
-    /// <p>The account must be an invited member account with a status of <code>ACCEPTED_BUT_DISABLED</code>.</p>
+    /// <p>The account must be an invited member account with a status of <code>ACCEPTED_BUT_DISABLED</code>. </p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_id(input.into());
         self
     }
     /// <p>The account ID of the member account to try to enable.</p>
-    /// <p>The account must be an invited member account with a status of <code>ACCEPTED_BUT_DISABLED</code>.</p>
+    /// <p>The account must be an invited member account with a status of <code>ACCEPTED_BUT_DISABLED</code>. </p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_account_id(input);
         self
     }
     /// <p>The account ID of the member account to try to enable.</p>
-    /// <p>The account must be an invited member account with a status of <code>ACCEPTED_BUT_DISABLED</code>.</p>
+    /// <p>The account must be an invited member account with a status of <code>ACCEPTED_BUT_DISABLED</code>. </p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_account_id()
     }

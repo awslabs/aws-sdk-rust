@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDataSourceSyncJobsInput {
-    /// <p>The identifier of the data source connector.</p>
+    /// <p> The identifier of the data source connector.</p>
     pub data_source_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Amazon Q application connected to the data source.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
@@ -13,15 +13,15 @@ pub struct ListDataSourceSyncJobsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of synchronization jobs to return in the response.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>The start time of the data source connector sync.</p>
+    /// <p> The start time of the data source connector sync. </p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The end time of the data source connector sync.</p>
+    /// <p> The end time of the data source connector sync.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Only returns synchronization jobs with the <code>Status</code> field equal to the specified status.</p>
     pub status_filter: ::std::option::Option<crate::types::DataSourceSyncJobStatus>,
 }
 impl ListDataSourceSyncJobsInput {
-    /// <p>The identifier of the data source connector.</p>
+    /// <p> The identifier of the data source connector.</p>
     pub fn data_source_id(&self) -> ::std::option::Option<&str> {
         self.data_source_id.as_deref()
     }
@@ -41,11 +41,11 @@ impl ListDataSourceSyncJobsInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The start time of the data source connector sync.</p>
+    /// <p> The start time of the data source connector sync. </p>
     pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>The end time of the data source connector sync.</p>
+    /// <p> The end time of the data source connector sync.</p>
     pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
@@ -75,18 +75,18 @@ pub struct ListDataSourceSyncJobsInputBuilder {
     pub(crate) status_filter: ::std::option::Option<crate::types::DataSourceSyncJobStatus>,
 }
 impl ListDataSourceSyncJobsInputBuilder {
-    /// <p>The identifier of the data source connector.</p>
+    /// <p> The identifier of the data source connector.</p>
     /// This field is required.
     pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the data source connector.</p>
+    /// <p> The identifier of the data source connector.</p>
     pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_source_id = input;
         self
     }
-    /// <p>The identifier of the data source connector.</p>
+    /// <p> The identifier of the data source connector.</p>
     pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_source_id
     }
@@ -148,31 +148,31 @@ impl ListDataSourceSyncJobsInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p>The start time of the data source connector sync.</p>
+    /// <p> The start time of the data source connector sync. </p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The start time of the data source connector sync.</p>
+    /// <p> The start time of the data source connector sync. </p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
-    /// <p>The start time of the data source connector sync.</p>
+    /// <p> The start time of the data source connector sync. </p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.start_time
     }
-    /// <p>The end time of the data source connector sync.</p>
+    /// <p> The end time of the data source connector sync.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The end time of the data source connector sync.</p>
+    /// <p> The end time of the data source connector sync.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
-    /// <p>The end time of the data source connector sync.</p>
+    /// <p> The end time of the data source connector sync.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_time
     }

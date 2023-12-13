@@ -4,49 +4,49 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssetListing {
-    /// <p>The identifier of an asset published in an Amazon DataZone catalog.</p>
+    /// <p>The identifier of an asset published in an Amazon DataZone catalog. </p>
     pub asset_id: ::std::option::Option<::std::string::String>,
-    /// <p>The revision of an asset published in an Amazon DataZone catalog.</p>
+    /// <p>The revision of an asset published in an Amazon DataZone catalog. </p>
     pub asset_revision: ::std::option::Option<::std::string::String>,
-    /// <p>The type of an asset published in an Amazon DataZone catalog.</p>
+    /// <p>The type of an asset published in an Amazon DataZone catalog. </p>
     pub asset_type: ::std::option::Option<::std::string::String>,
-    /// <p>The timestamp of when an asset published in an Amazon DataZone catalog was created.</p>
+    /// <p>The timestamp of when an asset published in an Amazon DataZone catalog was created. </p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The metadata forms attached to an asset published in an Amazon DataZone catalog.</p>
+    /// <p>The metadata forms attached to an asset published in an Amazon DataZone catalog. </p>
     pub forms: ::std::option::Option<::std::string::String>,
-    /// <p>The glossary terms attached to an asset published in an Amazon DataZone catalog.</p>
+    /// <p>The glossary terms attached to an asset published in an Amazon DataZone catalog. </p>
     pub glossary_terms: ::std::option::Option<::std::vec::Vec<crate::types::DetailedGlossaryTerm>>,
-    /// <p>The identifier of the project where an asset published in an Amazon DataZone catalog exists.</p>
+    /// <p>The identifier of the project where an asset published in an Amazon DataZone catalog exists. </p>
     pub owning_project_id: ::std::option::Option<::std::string::String>,
 }
 impl AssetListing {
-    /// <p>The identifier of an asset published in an Amazon DataZone catalog.</p>
+    /// <p>The identifier of an asset published in an Amazon DataZone catalog. </p>
     pub fn asset_id(&self) -> ::std::option::Option<&str> {
         self.asset_id.as_deref()
     }
-    /// <p>The revision of an asset published in an Amazon DataZone catalog.</p>
+    /// <p>The revision of an asset published in an Amazon DataZone catalog. </p>
     pub fn asset_revision(&self) -> ::std::option::Option<&str> {
         self.asset_revision.as_deref()
     }
-    /// <p>The type of an asset published in an Amazon DataZone catalog.</p>
+    /// <p>The type of an asset published in an Amazon DataZone catalog. </p>
     pub fn asset_type(&self) -> ::std::option::Option<&str> {
         self.asset_type.as_deref()
     }
-    /// <p>The timestamp of when an asset published in an Amazon DataZone catalog was created.</p>
+    /// <p>The timestamp of when an asset published in an Amazon DataZone catalog was created. </p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The metadata forms attached to an asset published in an Amazon DataZone catalog.</p>
+    /// <p>The metadata forms attached to an asset published in an Amazon DataZone catalog. </p>
     pub fn forms(&self) -> ::std::option::Option<&str> {
         self.forms.as_deref()
     }
-    /// <p>The glossary terms attached to an asset published in an Amazon DataZone catalog.</p>
+    /// <p>The glossary terms attached to an asset published in an Amazon DataZone catalog. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.glossary_terms.is_none()`.
     pub fn glossary_terms(&self) -> &[crate::types::DetailedGlossaryTerm] {
         self.glossary_terms.as_deref().unwrap_or_default()
     }
-    /// <p>The identifier of the project where an asset published in an Amazon DataZone catalog exists.</p>
+    /// <p>The identifier of the project where an asset published in an Amazon DataZone catalog exists. </p>
     pub fn owning_project_id(&self) -> ::std::option::Option<&str> {
         self.owning_project_id.as_deref()
     }
@@ -71,73 +71,73 @@ pub struct AssetListingBuilder {
     pub(crate) owning_project_id: ::std::option::Option<::std::string::String>,
 }
 impl AssetListingBuilder {
-    /// <p>The identifier of an asset published in an Amazon DataZone catalog.</p>
+    /// <p>The identifier of an asset published in an Amazon DataZone catalog. </p>
     pub fn asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of an asset published in an Amazon DataZone catalog.</p>
+    /// <p>The identifier of an asset published in an Amazon DataZone catalog. </p>
     pub fn set_asset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.asset_id = input;
         self
     }
-    /// <p>The identifier of an asset published in an Amazon DataZone catalog.</p>
+    /// <p>The identifier of an asset published in an Amazon DataZone catalog. </p>
     pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.asset_id
     }
-    /// <p>The revision of an asset published in an Amazon DataZone catalog.</p>
+    /// <p>The revision of an asset published in an Amazon DataZone catalog. </p>
     pub fn asset_revision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_revision = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The revision of an asset published in an Amazon DataZone catalog.</p>
+    /// <p>The revision of an asset published in an Amazon DataZone catalog. </p>
     pub fn set_asset_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.asset_revision = input;
         self
     }
-    /// <p>The revision of an asset published in an Amazon DataZone catalog.</p>
+    /// <p>The revision of an asset published in an Amazon DataZone catalog. </p>
     pub fn get_asset_revision(&self) -> &::std::option::Option<::std::string::String> {
         &self.asset_revision
     }
-    /// <p>The type of an asset published in an Amazon DataZone catalog.</p>
+    /// <p>The type of an asset published in an Amazon DataZone catalog. </p>
     pub fn asset_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The type of an asset published in an Amazon DataZone catalog.</p>
+    /// <p>The type of an asset published in an Amazon DataZone catalog. </p>
     pub fn set_asset_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.asset_type = input;
         self
     }
-    /// <p>The type of an asset published in an Amazon DataZone catalog.</p>
+    /// <p>The type of an asset published in an Amazon DataZone catalog. </p>
     pub fn get_asset_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.asset_type
     }
-    /// <p>The timestamp of when an asset published in an Amazon DataZone catalog was created.</p>
+    /// <p>The timestamp of when an asset published in an Amazon DataZone catalog was created. </p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The timestamp of when an asset published in an Amazon DataZone catalog was created.</p>
+    /// <p>The timestamp of when an asset published in an Amazon DataZone catalog was created. </p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
-    /// <p>The timestamp of when an asset published in an Amazon DataZone catalog was created.</p>
+    /// <p>The timestamp of when an asset published in an Amazon DataZone catalog was created. </p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
-    /// <p>The metadata forms attached to an asset published in an Amazon DataZone catalog.</p>
+    /// <p>The metadata forms attached to an asset published in an Amazon DataZone catalog. </p>
     pub fn forms(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.forms = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The metadata forms attached to an asset published in an Amazon DataZone catalog.</p>
+    /// <p>The metadata forms attached to an asset published in an Amazon DataZone catalog. </p>
     pub fn set_forms(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.forms = input;
         self
     }
-    /// <p>The metadata forms attached to an asset published in an Amazon DataZone catalog.</p>
+    /// <p>The metadata forms attached to an asset published in an Amazon DataZone catalog. </p>
     pub fn get_forms(&self) -> &::std::option::Option<::std::string::String> {
         &self.forms
     }
@@ -145,33 +145,33 @@ impl AssetListingBuilder {
     ///
     /// To override the contents of this collection use [`set_glossary_terms`](Self::set_glossary_terms).
     ///
-    /// <p>The glossary terms attached to an asset published in an Amazon DataZone catalog.</p>
+    /// <p>The glossary terms attached to an asset published in an Amazon DataZone catalog. </p>
     pub fn glossary_terms(mut self, input: crate::types::DetailedGlossaryTerm) -> Self {
         let mut v = self.glossary_terms.unwrap_or_default();
         v.push(input);
         self.glossary_terms = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The glossary terms attached to an asset published in an Amazon DataZone catalog.</p>
+    /// <p>The glossary terms attached to an asset published in an Amazon DataZone catalog. </p>
     pub fn set_glossary_terms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DetailedGlossaryTerm>>) -> Self {
         self.glossary_terms = input;
         self
     }
-    /// <p>The glossary terms attached to an asset published in an Amazon DataZone catalog.</p>
+    /// <p>The glossary terms attached to an asset published in an Amazon DataZone catalog. </p>
     pub fn get_glossary_terms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DetailedGlossaryTerm>> {
         &self.glossary_terms
     }
-    /// <p>The identifier of the project where an asset published in an Amazon DataZone catalog exists.</p>
+    /// <p>The identifier of the project where an asset published in an Amazon DataZone catalog exists. </p>
     pub fn owning_project_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owning_project_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the project where an asset published in an Amazon DataZone catalog exists.</p>
+    /// <p>The identifier of the project where an asset published in an Amazon DataZone catalog exists. </p>
     pub fn set_owning_project_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owning_project_id = input;
         self
     }
-    /// <p>The identifier of the project where an asset published in an Amazon DataZone catalog exists.</p>
+    /// <p>The identifier of the project where an asset published in an Amazon DataZone catalog exists. </p>
     pub fn get_owning_project_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.owning_project_id
     }

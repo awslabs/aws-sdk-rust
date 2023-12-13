@@ -9,12 +9,9 @@ pub struct UpdateIdentityProviderSettingsInput {
     pub product: ::std::option::Option<::std::string::String>,
     /// <p>Updates the registered identity provider’s product related configuration settings. You can update any combination of settings in a single operation such as the:</p>
     /// <ul>
-    /// <li>
-    /// <p>Subnets which you want to add to provision VPC endpoints.</p></li>
-    /// <li>
-    /// <p>Subnets which you want to remove the VPC endpoints from.</p></li>
-    /// <li>
-    /// <p>Security group ID which permits traffic to the VPC endpoints.</p></li>
+    /// <li> <p>Subnets which you want to add to provision VPC endpoints.</p> </li>
+    /// <li> <p>Subnets which you want to remove the VPC endpoints from.</p> </li>
+    /// <li> <p>Security group ID which permits traffic to the VPC endpoints.</p> </li>
     /// </ul>
     pub update_settings: ::std::option::Option<crate::types::UpdateSettings>,
 }
@@ -29,12 +26,9 @@ impl UpdateIdentityProviderSettingsInput {
     }
     /// <p>Updates the registered identity provider’s product related configuration settings. You can update any combination of settings in a single operation such as the:</p>
     /// <ul>
-    /// <li>
-    /// <p>Subnets which you want to add to provision VPC endpoints.</p></li>
-    /// <li>
-    /// <p>Subnets which you want to remove the VPC endpoints from.</p></li>
-    /// <li>
-    /// <p>Security group ID which permits traffic to the VPC endpoints.</p></li>
+    /// <li> <p>Subnets which you want to add to provision VPC endpoints.</p> </li>
+    /// <li> <p>Subnets which you want to remove the VPC endpoints from.</p> </li>
+    /// <li> <p>Security group ID which permits traffic to the VPC endpoints.</p> </li>
     /// </ul>
     pub fn update_settings(&self) -> ::std::option::Option<&crate::types::UpdateSettings> {
         self.update_settings.as_ref()
@@ -88,12 +82,9 @@ impl UpdateIdentityProviderSettingsInputBuilder {
     }
     /// <p>Updates the registered identity provider’s product related configuration settings. You can update any combination of settings in a single operation such as the:</p>
     /// <ul>
-    /// <li>
-    /// <p>Subnets which you want to add to provision VPC endpoints.</p></li>
-    /// <li>
-    /// <p>Subnets which you want to remove the VPC endpoints from.</p></li>
-    /// <li>
-    /// <p>Security group ID which permits traffic to the VPC endpoints.</p></li>
+    /// <li> <p>Subnets which you want to add to provision VPC endpoints.</p> </li>
+    /// <li> <p>Subnets which you want to remove the VPC endpoints from.</p> </li>
+    /// <li> <p>Security group ID which permits traffic to the VPC endpoints.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn update_settings(mut self, input: crate::types::UpdateSettings) -> Self {
@@ -102,12 +93,9 @@ impl UpdateIdentityProviderSettingsInputBuilder {
     }
     /// <p>Updates the registered identity provider’s product related configuration settings. You can update any combination of settings in a single operation such as the:</p>
     /// <ul>
-    /// <li>
-    /// <p>Subnets which you want to add to provision VPC endpoints.</p></li>
-    /// <li>
-    /// <p>Subnets which you want to remove the VPC endpoints from.</p></li>
-    /// <li>
-    /// <p>Security group ID which permits traffic to the VPC endpoints.</p></li>
+    /// <li> <p>Subnets which you want to add to provision VPC endpoints.</p> </li>
+    /// <li> <p>Subnets which you want to remove the VPC endpoints from.</p> </li>
+    /// <li> <p>Security group ID which permits traffic to the VPC endpoints.</p> </li>
     /// </ul>
     pub fn set_update_settings(mut self, input: ::std::option::Option<crate::types::UpdateSettings>) -> Self {
         self.update_settings = input;
@@ -115,12 +103,9 @@ impl UpdateIdentityProviderSettingsInputBuilder {
     }
     /// <p>Updates the registered identity provider’s product related configuration settings. You can update any combination of settings in a single operation such as the:</p>
     /// <ul>
-    /// <li>
-    /// <p>Subnets which you want to add to provision VPC endpoints.</p></li>
-    /// <li>
-    /// <p>Subnets which you want to remove the VPC endpoints from.</p></li>
-    /// <li>
-    /// <p>Security group ID which permits traffic to the VPC endpoints.</p></li>
+    /// <li> <p>Subnets which you want to add to provision VPC endpoints.</p> </li>
+    /// <li> <p>Subnets which you want to remove the VPC endpoints from.</p> </li>
+    /// <li> <p>Security group ID which permits traffic to the VPC endpoints.</p> </li>
     /// </ul>
     pub fn get_update_settings(&self) -> &::std::option::Option<crate::types::UpdateSettings> {
         &self.update_settings

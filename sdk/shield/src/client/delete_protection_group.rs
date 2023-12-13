@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteProtectionGroup`](crate::operation::delete_protection_group::builders::DeleteProtectionGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`protection_group_id(impl Into<String>)`](crate::operation::delete_protection_group::builders::DeleteProtectionGroupFluentBuilder::protection_group_id) / [`set_protection_group_id(Option<String>)`](crate::operation::delete_protection_group::builders::DeleteProtectionGroupFluentBuilder::set_protection_group_id):<br>required: **true**<br><p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it.</p><br>
+    ///   - [`protection_group_id(impl Into<String>)`](crate::operation::delete_protection_group::builders::DeleteProtectionGroupFluentBuilder::protection_group_id) / [`set_protection_group_id(Option<String>)`](crate::operation::delete_protection_group::builders::DeleteProtectionGroupFluentBuilder::set_protection_group_id):<br>required: **true**<br><p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p><br>
     /// - On success, responds with [`DeleteProtectionGroupOutput`](crate::operation::delete_protection_group::DeleteProtectionGroupOutput)
     /// - On failure, responds with [`SdkError<DeleteProtectionGroupError>`](crate::operation::delete_protection_group::DeleteProtectionGroupError)
     pub fn delete_protection_group(&self) -> crate::operation::delete_protection_group::builders::DeleteProtectionGroupFluentBuilder {

@@ -106,17 +106,17 @@ impl CreateLagFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The number of physical dedicated connections initially provisioned and bundled by the LAG. You can have a maximum of four connections when the port speed is 1G or 10G, or two when the port speed is 100G.</p>
+    /// <p>The number of physical dedicated connections initially provisioned and bundled by the LAG. You can have a maximum of four connections when the port speed is 1G or 10G, or two when the port speed is 100G. </p>
     pub fn number_of_connections(mut self, input: i32) -> Self {
         self.inner = self.inner.number_of_connections(input);
         self
     }
-    /// <p>The number of physical dedicated connections initially provisioned and bundled by the LAG. You can have a maximum of four connections when the port speed is 1G or 10G, or two when the port speed is 100G.</p>
+    /// <p>The number of physical dedicated connections initially provisioned and bundled by the LAG. You can have a maximum of four connections when the port speed is 1G or 10G, or two when the port speed is 100G. </p>
     pub fn set_number_of_connections(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_number_of_connections(input);
         self
     }
-    /// <p>The number of physical dedicated connections initially provisioned and bundled by the LAG. You can have a maximum of four connections when the port speed is 1G or 10G, or two when the port speed is 100G.</p>
+    /// <p>The number of physical dedicated connections initially provisioned and bundled by the LAG. You can have a maximum of four connections when the port speed is 1G or 10G, or two when the port speed is 100G. </p>
     pub fn get_number_of_connections(&self) -> &::std::option::Option<i32> {
         self.inner.get_number_of_connections()
     }
@@ -134,17 +134,17 @@ impl CreateLagFluentBuilder {
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_location()
     }
-    /// <p>The bandwidth of the individual physical dedicated connections bundled by the LAG. The possible values are 1Gbps and 10Gbps.</p>
+    /// <p>The bandwidth of the individual physical dedicated connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
     pub fn connections_bandwidth(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connections_bandwidth(input.into());
         self
     }
-    /// <p>The bandwidth of the individual physical dedicated connections bundled by the LAG. The possible values are 1Gbps and 10Gbps.</p>
+    /// <p>The bandwidth of the individual physical dedicated connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
     pub fn set_connections_bandwidth(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connections_bandwidth(input);
         self
     }
-    /// <p>The bandwidth of the individual physical dedicated connections bundled by the LAG. The possible values are 1Gbps and 10Gbps.</p>
+    /// <p>The bandwidth of the individual physical dedicated connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
     pub fn get_connections_bandwidth(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_connections_bandwidth()
     }
@@ -226,21 +226,21 @@ impl CreateLagFluentBuilder {
     pub fn get_provider_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_provider_name()
     }
-    /// <p>Indicates whether the connection will support MAC Security (MACsec).</p><note>
+    /// <p>Indicates whether the connection will support MAC Security (MACsec).</p> <note>
     /// <p>All connections in the LAG must be capable of supporting MAC Security (MACsec). For information about MAC Security (MACsec) prerequisties, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>
     /// </note>
     pub fn request_mac_sec(mut self, input: bool) -> Self {
         self.inner = self.inner.request_mac_sec(input);
         self
     }
-    /// <p>Indicates whether the connection will support MAC Security (MACsec).</p><note>
+    /// <p>Indicates whether the connection will support MAC Security (MACsec).</p> <note>
     /// <p>All connections in the LAG must be capable of supporting MAC Security (MACsec). For information about MAC Security (MACsec) prerequisties, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>
     /// </note>
     pub fn set_request_mac_sec(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_request_mac_sec(input);
         self
     }
-    /// <p>Indicates whether the connection will support MAC Security (MACsec).</p><note>
+    /// <p>Indicates whether the connection will support MAC Security (MACsec).</p> <note>
     /// <p>All connections in the LAG must be capable of supporting MAC Security (MACsec). For information about MAC Security (MACsec) prerequisties, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>
     /// </note>
     pub fn get_request_mac_sec(&self) -> &::std::option::Option<bool> {

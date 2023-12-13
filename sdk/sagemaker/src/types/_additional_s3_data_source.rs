@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdditionalS3DataSource {
-    /// <p>The data type of the additional data source that you specify for use in inference or training.</p>
+    /// <p>The data type of the additional data source that you specify for use in inference or training. </p>
     pub s3_data_type: ::std::option::Option<crate::types::AdditionalS3DataSourceDataType>,
     /// <p>The uniform resource identifier (URI) used to identify an additional data source used in inference or training.</p>
     pub s3_uri: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct AdditionalS3DataSource {
     pub compression_type: ::std::option::Option<crate::types::CompressionType>,
 }
 impl AdditionalS3DataSource {
-    /// <p>The data type of the additional data source that you specify for use in inference or training.</p>
+    /// <p>The data type of the additional data source that you specify for use in inference or training. </p>
     pub fn s3_data_type(&self) -> ::std::option::Option<&crate::types::AdditionalS3DataSourceDataType> {
         self.s3_data_type.as_ref()
     }
@@ -41,18 +41,18 @@ pub struct AdditionalS3DataSourceBuilder {
     pub(crate) compression_type: ::std::option::Option<crate::types::CompressionType>,
 }
 impl AdditionalS3DataSourceBuilder {
-    /// <p>The data type of the additional data source that you specify for use in inference or training.</p>
+    /// <p>The data type of the additional data source that you specify for use in inference or training. </p>
     /// This field is required.
     pub fn s3_data_type(mut self, input: crate::types::AdditionalS3DataSourceDataType) -> Self {
         self.s3_data_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The data type of the additional data source that you specify for use in inference or training.</p>
+    /// <p>The data type of the additional data source that you specify for use in inference or training. </p>
     pub fn set_s3_data_type(mut self, input: ::std::option::Option<crate::types::AdditionalS3DataSourceDataType>) -> Self {
         self.s3_data_type = input;
         self
     }
-    /// <p>The data type of the additional data source that you specify for use in inference or training.</p>
+    /// <p>The data type of the additional data source that you specify for use in inference or training. </p>
     pub fn get_s3_data_type(&self) -> &::std::option::Option<crate::types::AdditionalS3DataSourceDataType> {
         &self.s3_data_type
     }

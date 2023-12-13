@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DomainTransferability {
-    /// <p>Whether the domain name can be transferred to Route 53.</p><note>
+    /// <p>Whether the domain name can be transferred to Route 53.</p> <note>
     /// <p>You can transfer only domains that have a value of <code>TRANSFERABLE</code> or <code>Transferable</code>.</p>
     /// </note>
     /// <p>Valid values:</p>
@@ -37,7 +37,7 @@ pub struct DomainTransferability {
     /// DOMAIN_IN_ANOTHER_ACCOUNT
     /// </dt>
     /// <dd>
-    /// <p>the domain exists in another Amazon Web Services account.</p>
+    /// <p> the domain exists in another Amazon Web Services account.</p>
     /// </dd>
     /// <dt>
     /// PREMIUM_DOMAIN
@@ -49,7 +49,7 @@ pub struct DomainTransferability {
     pub transferable: ::std::option::Option<crate::types::Transferable>,
 }
 impl DomainTransferability {
-    /// <p>Whether the domain name can be transferred to Route 53.</p><note>
+    /// <p>Whether the domain name can be transferred to Route 53.</p> <note>
     /// <p>You can transfer only domains that have a value of <code>TRANSFERABLE</code> or <code>Transferable</code>.</p>
     /// </note>
     /// <p>Valid values:</p>
@@ -82,7 +82,7 @@ impl DomainTransferability {
     /// DOMAIN_IN_ANOTHER_ACCOUNT
     /// </dt>
     /// <dd>
-    /// <p>the domain exists in another Amazon Web Services account.</p>
+    /// <p> the domain exists in another Amazon Web Services account.</p>
     /// </dd>
     /// <dt>
     /// PREMIUM_DOMAIN
@@ -109,7 +109,7 @@ pub struct DomainTransferabilityBuilder {
     pub(crate) transferable: ::std::option::Option<crate::types::Transferable>,
 }
 impl DomainTransferabilityBuilder {
-    /// <p>Whether the domain name can be transferred to Route 53.</p><note>
+    /// <p>Whether the domain name can be transferred to Route 53.</p> <note>
     /// <p>You can transfer only domains that have a value of <code>TRANSFERABLE</code> or <code>Transferable</code>.</p>
     /// </note>
     /// <p>Valid values:</p>
@@ -142,7 +142,7 @@ impl DomainTransferabilityBuilder {
     /// DOMAIN_IN_ANOTHER_ACCOUNT
     /// </dt>
     /// <dd>
-    /// <p>the domain exists in another Amazon Web Services account.</p>
+    /// <p> the domain exists in another Amazon Web Services account.</p>
     /// </dd>
     /// <dt>
     /// PREMIUM_DOMAIN
@@ -155,7 +155,7 @@ impl DomainTransferabilityBuilder {
         self.transferable = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Whether the domain name can be transferred to Route 53.</p><note>
+    /// <p>Whether the domain name can be transferred to Route 53.</p> <note>
     /// <p>You can transfer only domains that have a value of <code>TRANSFERABLE</code> or <code>Transferable</code>.</p>
     /// </note>
     /// <p>Valid values:</p>
@@ -188,7 +188,7 @@ impl DomainTransferabilityBuilder {
     /// DOMAIN_IN_ANOTHER_ACCOUNT
     /// </dt>
     /// <dd>
-    /// <p>the domain exists in another Amazon Web Services account.</p>
+    /// <p> the domain exists in another Amazon Web Services account.</p>
     /// </dd>
     /// <dt>
     /// PREMIUM_DOMAIN
@@ -201,7 +201,7 @@ impl DomainTransferabilityBuilder {
         self.transferable = input;
         self
     }
-    /// <p>Whether the domain name can be transferred to Route 53.</p><note>
+    /// <p>Whether the domain name can be transferred to Route 53.</p> <note>
     /// <p>You can transfer only domains that have a value of <code>TRANSFERABLE</code> or <code>Transferable</code>.</p>
     /// </note>
     /// <p>Valid values:</p>
@@ -234,7 +234,7 @@ impl DomainTransferabilityBuilder {
     /// DOMAIN_IN_ANOTHER_ACCOUNT
     /// </dt>
     /// <dd>
-    /// <p>the domain exists in another Amazon Web Services account.</p>
+    /// <p> the domain exists in another Amazon Web Services account.</p>
     /// </dd>
     /// <dt>
     /// PREMIUM_DOMAIN

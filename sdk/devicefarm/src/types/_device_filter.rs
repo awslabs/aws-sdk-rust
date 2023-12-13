@@ -13,63 +13,63 @@ pub struct DeviceFilter {
     /// </dt>
     /// <dd>
     /// <p>The Amazon Resource Name (ARN) of the device (for example, <code>arn:aws:devicefarm:us-west-2::device:12345Example</code>).</p>
-    /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code></p>
+    /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p>
     /// </dd>
     /// <dt>
     /// PLATFORM
     /// </dt>
     /// <dd>
     /// <p>The device platform. Valid values are ANDROID or IOS.</p>
-    /// <p>Supported operators: <code>EQUALS</code></p>
+    /// <p>Supported operators: <code>EQUALS</code> </p>
     /// </dd>
     /// <dt>
     /// OS_VERSION
     /// </dt>
     /// <dd>
     /// <p>The operating system version (for example, 10.3.2).</p>
-    /// <p>Supported operators: <code>EQUALS</code>, <code>GREATER_THAN</code>, <code>GREATER_THAN_OR_EQUALS</code>, <code>IN</code>, <code>LESS_THAN</code>, <code>LESS_THAN_OR_EQUALS</code>, <code>NOT_IN</code></p>
+    /// <p>Supported operators: <code>EQUALS</code>, <code>GREATER_THAN</code>, <code>GREATER_THAN_OR_EQUALS</code>, <code>IN</code>, <code>LESS_THAN</code>, <code>LESS_THAN_OR_EQUALS</code>, <code>NOT_IN</code> </p>
     /// </dd>
     /// <dt>
     /// MODEL
     /// </dt>
     /// <dd>
     /// <p>The device model (for example, iPad 5th Gen).</p>
-    /// <p>Supported operators: <code>CONTAINS</code>, <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code></p>
+    /// <p>Supported operators: <code>CONTAINS</code>, <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p>
     /// </dd>
     /// <dt>
     /// AVAILABILITY
     /// </dt>
     /// <dd>
     /// <p>The current availability of the device. Valid values are AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p>
-    /// <p>Supported operators: <code>EQUALS</code></p>
+    /// <p>Supported operators: <code>EQUALS</code> </p>
     /// </dd>
     /// <dt>
     /// FORM_FACTOR
     /// </dt>
     /// <dd>
     /// <p>The device form factor. Valid values are PHONE or TABLET.</p>
-    /// <p>Supported operators: <code>EQUALS</code></p>
+    /// <p>Supported operators: <code>EQUALS</code> </p>
     /// </dd>
     /// <dt>
     /// MANUFACTURER
     /// </dt>
     /// <dd>
     /// <p>The device manufacturer (for example, Apple).</p>
-    /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code></p>
+    /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p>
     /// </dd>
     /// <dt>
     /// REMOTE_ACCESS_ENABLED
     /// </dt>
     /// <dd>
     /// <p>Whether the device is enabled for remote access. Valid values are TRUE or FALSE.</p>
-    /// <p>Supported operators: <code>EQUALS</code></p>
+    /// <p>Supported operators: <code>EQUALS</code> </p>
     /// </dd>
     /// <dt>
     /// REMOTE_DEBUG_ENABLED
     /// </dt>
     /// <dd>
     /// <p>Whether the device is enabled for remote debugging. Valid values are TRUE or FALSE.</p>
-    /// <p>Supported operators: <code>EQUALS</code></p>
+    /// <p>Supported operators: <code>EQUALS</code> </p>
     /// <p>Because remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>, this filter is ignored.</p>
     /// </dd>
     /// <dt>
@@ -77,44 +77,38 @@ pub struct DeviceFilter {
     /// </dt>
     /// <dd>
     /// <p>The Amazon Resource Name (ARN) of the device instance.</p>
-    /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code></p>
+    /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p>
     /// </dd>
     /// <dt>
     /// INSTANCE_LABELS
     /// </dt>
     /// <dd>
     /// <p>The label of the device instance.</p>
-    /// <p>Supported operators: <code>CONTAINS</code></p>
+    /// <p>Supported operators: <code>CONTAINS</code> </p>
     /// </dd>
     /// <dt>
     /// FLEET_TYPE
     /// </dt>
     /// <dd>
     /// <p>The fleet type. Valid values are PUBLIC or PRIVATE.</p>
-    /// <p>Supported operators: <code>EQUALS</code></p>
+    /// <p>Supported operators: <code>EQUALS</code> </p>
     /// </dd>
     /// </dl>
     pub attribute: crate::types::DeviceFilterAttribute,
     /// <p>Specifies how Device Farm compares the filter's attribute to the value. See the attribute descriptions.</p>
     pub operator: crate::types::RuleOperator,
     /// <p>An array of one or more filter values used in a device filter.</p>
-    /// <p class="title"><b>Operator Values</b></p>
+    /// <p class="title"> <b>Operator Values</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>The IN and NOT_IN operators can take a values array that has more than one element.</p></li>
-    /// <li>
-    /// <p>The other operators require an array with a single element.</p></li>
+    /// <li> <p>The IN and NOT_IN operators can take a values array that has more than one element.</p> </li>
+    /// <li> <p>The other operators require an array with a single element.</p> </li>
     /// </ul>
-    /// <p class="title"><b>Attribute Values</b></p>
+    /// <p class="title"> <b>Attribute Values</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>The PLATFORM attribute can be set to ANDROID or IOS.</p></li>
-    /// <li>
-    /// <p>The AVAILABILITY attribute can be set to AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p></li>
-    /// <li>
-    /// <p>The FORM_FACTOR attribute can be set to PHONE or TABLET.</p></li>
-    /// <li>
-    /// <p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p></li>
+    /// <li> <p>The PLATFORM attribute can be set to ANDROID or IOS.</p> </li>
+    /// <li> <p>The AVAILABILITY attribute can be set to AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p> </li>
+    /// <li> <p>The FORM_FACTOR attribute can be set to PHONE or TABLET.</p> </li>
+    /// <li> <p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p> </li>
     /// </ul>
     pub values: ::std::vec::Vec<::std::string::String>,
 }
@@ -127,63 +121,63 @@ impl DeviceFilter {
     /// </dt>
     /// <dd>
     /// <p>The Amazon Resource Name (ARN) of the device (for example, <code>arn:aws:devicefarm:us-west-2::device:12345Example</code>).</p>
-    /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code></p>
+    /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p>
     /// </dd>
     /// <dt>
     /// PLATFORM
     /// </dt>
     /// <dd>
     /// <p>The device platform. Valid values are ANDROID or IOS.</p>
-    /// <p>Supported operators: <code>EQUALS</code></p>
+    /// <p>Supported operators: <code>EQUALS</code> </p>
     /// </dd>
     /// <dt>
     /// OS_VERSION
     /// </dt>
     /// <dd>
     /// <p>The operating system version (for example, 10.3.2).</p>
-    /// <p>Supported operators: <code>EQUALS</code>, <code>GREATER_THAN</code>, <code>GREATER_THAN_OR_EQUALS</code>, <code>IN</code>, <code>LESS_THAN</code>, <code>LESS_THAN_OR_EQUALS</code>, <code>NOT_IN</code></p>
+    /// <p>Supported operators: <code>EQUALS</code>, <code>GREATER_THAN</code>, <code>GREATER_THAN_OR_EQUALS</code>, <code>IN</code>, <code>LESS_THAN</code>, <code>LESS_THAN_OR_EQUALS</code>, <code>NOT_IN</code> </p>
     /// </dd>
     /// <dt>
     /// MODEL
     /// </dt>
     /// <dd>
     /// <p>The device model (for example, iPad 5th Gen).</p>
-    /// <p>Supported operators: <code>CONTAINS</code>, <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code></p>
+    /// <p>Supported operators: <code>CONTAINS</code>, <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p>
     /// </dd>
     /// <dt>
     /// AVAILABILITY
     /// </dt>
     /// <dd>
     /// <p>The current availability of the device. Valid values are AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p>
-    /// <p>Supported operators: <code>EQUALS</code></p>
+    /// <p>Supported operators: <code>EQUALS</code> </p>
     /// </dd>
     /// <dt>
     /// FORM_FACTOR
     /// </dt>
     /// <dd>
     /// <p>The device form factor. Valid values are PHONE or TABLET.</p>
-    /// <p>Supported operators: <code>EQUALS</code></p>
+    /// <p>Supported operators: <code>EQUALS</code> </p>
     /// </dd>
     /// <dt>
     /// MANUFACTURER
     /// </dt>
     /// <dd>
     /// <p>The device manufacturer (for example, Apple).</p>
-    /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code></p>
+    /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p>
     /// </dd>
     /// <dt>
     /// REMOTE_ACCESS_ENABLED
     /// </dt>
     /// <dd>
     /// <p>Whether the device is enabled for remote access. Valid values are TRUE or FALSE.</p>
-    /// <p>Supported operators: <code>EQUALS</code></p>
+    /// <p>Supported operators: <code>EQUALS</code> </p>
     /// </dd>
     /// <dt>
     /// REMOTE_DEBUG_ENABLED
     /// </dt>
     /// <dd>
     /// <p>Whether the device is enabled for remote debugging. Valid values are TRUE or FALSE.</p>
-    /// <p>Supported operators: <code>EQUALS</code></p>
+    /// <p>Supported operators: <code>EQUALS</code> </p>
     /// <p>Because remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>, this filter is ignored.</p>
     /// </dd>
     /// <dt>
@@ -191,21 +185,21 @@ impl DeviceFilter {
     /// </dt>
     /// <dd>
     /// <p>The Amazon Resource Name (ARN) of the device instance.</p>
-    /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code></p>
+    /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p>
     /// </dd>
     /// <dt>
     /// INSTANCE_LABELS
     /// </dt>
     /// <dd>
     /// <p>The label of the device instance.</p>
-    /// <p>Supported operators: <code>CONTAINS</code></p>
+    /// <p>Supported operators: <code>CONTAINS</code> </p>
     /// </dd>
     /// <dt>
     /// FLEET_TYPE
     /// </dt>
     /// <dd>
     /// <p>The fleet type. Valid values are PUBLIC or PRIVATE.</p>
-    /// <p>Supported operators: <code>EQUALS</code></p>
+    /// <p>Supported operators: <code>EQUALS</code> </p>
     /// </dd>
     /// </dl>
     pub fn attribute(&self) -> &crate::types::DeviceFilterAttribute {
@@ -216,23 +210,17 @@ impl DeviceFilter {
         &self.operator
     }
     /// <p>An array of one or more filter values used in a device filter.</p>
-    /// <p class="title"><b>Operator Values</b></p>
+    /// <p class="title"> <b>Operator Values</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>The IN and NOT_IN operators can take a values array that has more than one element.</p></li>
-    /// <li>
-    /// <p>The other operators require an array with a single element.</p></li>
+    /// <li> <p>The IN and NOT_IN operators can take a values array that has more than one element.</p> </li>
+    /// <li> <p>The other operators require an array with a single element.</p> </li>
     /// </ul>
-    /// <p class="title"><b>Attribute Values</b></p>
+    /// <p class="title"> <b>Attribute Values</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>The PLATFORM attribute can be set to ANDROID or IOS.</p></li>
-    /// <li>
-    /// <p>The AVAILABILITY attribute can be set to AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p></li>
-    /// <li>
-    /// <p>The FORM_FACTOR attribute can be set to PHONE or TABLET.</p></li>
-    /// <li>
-    /// <p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p></li>
+    /// <li> <p>The PLATFORM attribute can be set to ANDROID or IOS.</p> </li>
+    /// <li> <p>The AVAILABILITY attribute can be set to AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p> </li>
+    /// <li> <p>The FORM_FACTOR attribute can be set to PHONE or TABLET.</p> </li>
+    /// <li> <p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p> </li>
     /// </ul>
     pub fn values(&self) -> &[::std::string::String] {
         use std::ops::Deref;
@@ -263,63 +251,63 @@ impl DeviceFilterBuilder {
     /// </dt>
     /// <dd>
     /// <p>The Amazon Resource Name (ARN) of the device (for example, <code>arn:aws:devicefarm:us-west-2::device:12345Example</code>).</p>
-    /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code></p>
+    /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p>
     /// </dd>
     /// <dt>
     /// PLATFORM
     /// </dt>
     /// <dd>
     /// <p>The device platform. Valid values are ANDROID or IOS.</p>
-    /// <p>Supported operators: <code>EQUALS</code></p>
+    /// <p>Supported operators: <code>EQUALS</code> </p>
     /// </dd>
     /// <dt>
     /// OS_VERSION
     /// </dt>
     /// <dd>
     /// <p>The operating system version (for example, 10.3.2).</p>
-    /// <p>Supported operators: <code>EQUALS</code>, <code>GREATER_THAN</code>, <code>GREATER_THAN_OR_EQUALS</code>, <code>IN</code>, <code>LESS_THAN</code>, <code>LESS_THAN_OR_EQUALS</code>, <code>NOT_IN</code></p>
+    /// <p>Supported operators: <code>EQUALS</code>, <code>GREATER_THAN</code>, <code>GREATER_THAN_OR_EQUALS</code>, <code>IN</code>, <code>LESS_THAN</code>, <code>LESS_THAN_OR_EQUALS</code>, <code>NOT_IN</code> </p>
     /// </dd>
     /// <dt>
     /// MODEL
     /// </dt>
     /// <dd>
     /// <p>The device model (for example, iPad 5th Gen).</p>
-    /// <p>Supported operators: <code>CONTAINS</code>, <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code></p>
+    /// <p>Supported operators: <code>CONTAINS</code>, <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p>
     /// </dd>
     /// <dt>
     /// AVAILABILITY
     /// </dt>
     /// <dd>
     /// <p>The current availability of the device. Valid values are AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p>
-    /// <p>Supported operators: <code>EQUALS</code></p>
+    /// <p>Supported operators: <code>EQUALS</code> </p>
     /// </dd>
     /// <dt>
     /// FORM_FACTOR
     /// </dt>
     /// <dd>
     /// <p>The device form factor. Valid values are PHONE or TABLET.</p>
-    /// <p>Supported operators: <code>EQUALS</code></p>
+    /// <p>Supported operators: <code>EQUALS</code> </p>
     /// </dd>
     /// <dt>
     /// MANUFACTURER
     /// </dt>
     /// <dd>
     /// <p>The device manufacturer (for example, Apple).</p>
-    /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code></p>
+    /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p>
     /// </dd>
     /// <dt>
     /// REMOTE_ACCESS_ENABLED
     /// </dt>
     /// <dd>
     /// <p>Whether the device is enabled for remote access. Valid values are TRUE or FALSE.</p>
-    /// <p>Supported operators: <code>EQUALS</code></p>
+    /// <p>Supported operators: <code>EQUALS</code> </p>
     /// </dd>
     /// <dt>
     /// REMOTE_DEBUG_ENABLED
     /// </dt>
     /// <dd>
     /// <p>Whether the device is enabled for remote debugging. Valid values are TRUE or FALSE.</p>
-    /// <p>Supported operators: <code>EQUALS</code></p>
+    /// <p>Supported operators: <code>EQUALS</code> </p>
     /// <p>Because remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>, this filter is ignored.</p>
     /// </dd>
     /// <dt>
@@ -327,21 +315,21 @@ impl DeviceFilterBuilder {
     /// </dt>
     /// <dd>
     /// <p>The Amazon Resource Name (ARN) of the device instance.</p>
-    /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code></p>
+    /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p>
     /// </dd>
     /// <dt>
     /// INSTANCE_LABELS
     /// </dt>
     /// <dd>
     /// <p>The label of the device instance.</p>
-    /// <p>Supported operators: <code>CONTAINS</code></p>
+    /// <p>Supported operators: <code>CONTAINS</code> </p>
     /// </dd>
     /// <dt>
     /// FLEET_TYPE
     /// </dt>
     /// <dd>
     /// <p>The fleet type. Valid values are PUBLIC or PRIVATE.</p>
-    /// <p>Supported operators: <code>EQUALS</code></p>
+    /// <p>Supported operators: <code>EQUALS</code> </p>
     /// </dd>
     /// </dl>
     /// This field is required.
@@ -357,63 +345,63 @@ impl DeviceFilterBuilder {
     /// </dt>
     /// <dd>
     /// <p>The Amazon Resource Name (ARN) of the device (for example, <code>arn:aws:devicefarm:us-west-2::device:12345Example</code>).</p>
-    /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code></p>
+    /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p>
     /// </dd>
     /// <dt>
     /// PLATFORM
     /// </dt>
     /// <dd>
     /// <p>The device platform. Valid values are ANDROID or IOS.</p>
-    /// <p>Supported operators: <code>EQUALS</code></p>
+    /// <p>Supported operators: <code>EQUALS</code> </p>
     /// </dd>
     /// <dt>
     /// OS_VERSION
     /// </dt>
     /// <dd>
     /// <p>The operating system version (for example, 10.3.2).</p>
-    /// <p>Supported operators: <code>EQUALS</code>, <code>GREATER_THAN</code>, <code>GREATER_THAN_OR_EQUALS</code>, <code>IN</code>, <code>LESS_THAN</code>, <code>LESS_THAN_OR_EQUALS</code>, <code>NOT_IN</code></p>
+    /// <p>Supported operators: <code>EQUALS</code>, <code>GREATER_THAN</code>, <code>GREATER_THAN_OR_EQUALS</code>, <code>IN</code>, <code>LESS_THAN</code>, <code>LESS_THAN_OR_EQUALS</code>, <code>NOT_IN</code> </p>
     /// </dd>
     /// <dt>
     /// MODEL
     /// </dt>
     /// <dd>
     /// <p>The device model (for example, iPad 5th Gen).</p>
-    /// <p>Supported operators: <code>CONTAINS</code>, <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code></p>
+    /// <p>Supported operators: <code>CONTAINS</code>, <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p>
     /// </dd>
     /// <dt>
     /// AVAILABILITY
     /// </dt>
     /// <dd>
     /// <p>The current availability of the device. Valid values are AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p>
-    /// <p>Supported operators: <code>EQUALS</code></p>
+    /// <p>Supported operators: <code>EQUALS</code> </p>
     /// </dd>
     /// <dt>
     /// FORM_FACTOR
     /// </dt>
     /// <dd>
     /// <p>The device form factor. Valid values are PHONE or TABLET.</p>
-    /// <p>Supported operators: <code>EQUALS</code></p>
+    /// <p>Supported operators: <code>EQUALS</code> </p>
     /// </dd>
     /// <dt>
     /// MANUFACTURER
     /// </dt>
     /// <dd>
     /// <p>The device manufacturer (for example, Apple).</p>
-    /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code></p>
+    /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p>
     /// </dd>
     /// <dt>
     /// REMOTE_ACCESS_ENABLED
     /// </dt>
     /// <dd>
     /// <p>Whether the device is enabled for remote access. Valid values are TRUE or FALSE.</p>
-    /// <p>Supported operators: <code>EQUALS</code></p>
+    /// <p>Supported operators: <code>EQUALS</code> </p>
     /// </dd>
     /// <dt>
     /// REMOTE_DEBUG_ENABLED
     /// </dt>
     /// <dd>
     /// <p>Whether the device is enabled for remote debugging. Valid values are TRUE or FALSE.</p>
-    /// <p>Supported operators: <code>EQUALS</code></p>
+    /// <p>Supported operators: <code>EQUALS</code> </p>
     /// <p>Because remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>, this filter is ignored.</p>
     /// </dd>
     /// <dt>
@@ -421,21 +409,21 @@ impl DeviceFilterBuilder {
     /// </dt>
     /// <dd>
     /// <p>The Amazon Resource Name (ARN) of the device instance.</p>
-    /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code></p>
+    /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p>
     /// </dd>
     /// <dt>
     /// INSTANCE_LABELS
     /// </dt>
     /// <dd>
     /// <p>The label of the device instance.</p>
-    /// <p>Supported operators: <code>CONTAINS</code></p>
+    /// <p>Supported operators: <code>CONTAINS</code> </p>
     /// </dd>
     /// <dt>
     /// FLEET_TYPE
     /// </dt>
     /// <dd>
     /// <p>The fleet type. Valid values are PUBLIC or PRIVATE.</p>
-    /// <p>Supported operators: <code>EQUALS</code></p>
+    /// <p>Supported operators: <code>EQUALS</code> </p>
     /// </dd>
     /// </dl>
     pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::DeviceFilterAttribute>) -> Self {
@@ -450,63 +438,63 @@ impl DeviceFilterBuilder {
     /// </dt>
     /// <dd>
     /// <p>The Amazon Resource Name (ARN) of the device (for example, <code>arn:aws:devicefarm:us-west-2::device:12345Example</code>).</p>
-    /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code></p>
+    /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p>
     /// </dd>
     /// <dt>
     /// PLATFORM
     /// </dt>
     /// <dd>
     /// <p>The device platform. Valid values are ANDROID or IOS.</p>
-    /// <p>Supported operators: <code>EQUALS</code></p>
+    /// <p>Supported operators: <code>EQUALS</code> </p>
     /// </dd>
     /// <dt>
     /// OS_VERSION
     /// </dt>
     /// <dd>
     /// <p>The operating system version (for example, 10.3.2).</p>
-    /// <p>Supported operators: <code>EQUALS</code>, <code>GREATER_THAN</code>, <code>GREATER_THAN_OR_EQUALS</code>, <code>IN</code>, <code>LESS_THAN</code>, <code>LESS_THAN_OR_EQUALS</code>, <code>NOT_IN</code></p>
+    /// <p>Supported operators: <code>EQUALS</code>, <code>GREATER_THAN</code>, <code>GREATER_THAN_OR_EQUALS</code>, <code>IN</code>, <code>LESS_THAN</code>, <code>LESS_THAN_OR_EQUALS</code>, <code>NOT_IN</code> </p>
     /// </dd>
     /// <dt>
     /// MODEL
     /// </dt>
     /// <dd>
     /// <p>The device model (for example, iPad 5th Gen).</p>
-    /// <p>Supported operators: <code>CONTAINS</code>, <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code></p>
+    /// <p>Supported operators: <code>CONTAINS</code>, <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p>
     /// </dd>
     /// <dt>
     /// AVAILABILITY
     /// </dt>
     /// <dd>
     /// <p>The current availability of the device. Valid values are AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p>
-    /// <p>Supported operators: <code>EQUALS</code></p>
+    /// <p>Supported operators: <code>EQUALS</code> </p>
     /// </dd>
     /// <dt>
     /// FORM_FACTOR
     /// </dt>
     /// <dd>
     /// <p>The device form factor. Valid values are PHONE or TABLET.</p>
-    /// <p>Supported operators: <code>EQUALS</code></p>
+    /// <p>Supported operators: <code>EQUALS</code> </p>
     /// </dd>
     /// <dt>
     /// MANUFACTURER
     /// </dt>
     /// <dd>
     /// <p>The device manufacturer (for example, Apple).</p>
-    /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code></p>
+    /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p>
     /// </dd>
     /// <dt>
     /// REMOTE_ACCESS_ENABLED
     /// </dt>
     /// <dd>
     /// <p>Whether the device is enabled for remote access. Valid values are TRUE or FALSE.</p>
-    /// <p>Supported operators: <code>EQUALS</code></p>
+    /// <p>Supported operators: <code>EQUALS</code> </p>
     /// </dd>
     /// <dt>
     /// REMOTE_DEBUG_ENABLED
     /// </dt>
     /// <dd>
     /// <p>Whether the device is enabled for remote debugging. Valid values are TRUE or FALSE.</p>
-    /// <p>Supported operators: <code>EQUALS</code></p>
+    /// <p>Supported operators: <code>EQUALS</code> </p>
     /// <p>Because remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>, this filter is ignored.</p>
     /// </dd>
     /// <dt>
@@ -514,21 +502,21 @@ impl DeviceFilterBuilder {
     /// </dt>
     /// <dd>
     /// <p>The Amazon Resource Name (ARN) of the device instance.</p>
-    /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code></p>
+    /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p>
     /// </dd>
     /// <dt>
     /// INSTANCE_LABELS
     /// </dt>
     /// <dd>
     /// <p>The label of the device instance.</p>
-    /// <p>Supported operators: <code>CONTAINS</code></p>
+    /// <p>Supported operators: <code>CONTAINS</code> </p>
     /// </dd>
     /// <dt>
     /// FLEET_TYPE
     /// </dt>
     /// <dd>
     /// <p>The fleet type. Valid values are PUBLIC or PRIVATE.</p>
-    /// <p>Supported operators: <code>EQUALS</code></p>
+    /// <p>Supported operators: <code>EQUALS</code> </p>
     /// </dd>
     /// </dl>
     pub fn get_attribute(&self) -> &::std::option::Option<crate::types::DeviceFilterAttribute> {
@@ -554,23 +542,17 @@ impl DeviceFilterBuilder {
     /// To override the contents of this collection use [`set_values`](Self::set_values).
     ///
     /// <p>An array of one or more filter values used in a device filter.</p>
-    /// <p class="title"><b>Operator Values</b></p>
+    /// <p class="title"> <b>Operator Values</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>The IN and NOT_IN operators can take a values array that has more than one element.</p></li>
-    /// <li>
-    /// <p>The other operators require an array with a single element.</p></li>
+    /// <li> <p>The IN and NOT_IN operators can take a values array that has more than one element.</p> </li>
+    /// <li> <p>The other operators require an array with a single element.</p> </li>
     /// </ul>
-    /// <p class="title"><b>Attribute Values</b></p>
+    /// <p class="title"> <b>Attribute Values</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>The PLATFORM attribute can be set to ANDROID or IOS.</p></li>
-    /// <li>
-    /// <p>The AVAILABILITY attribute can be set to AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p></li>
-    /// <li>
-    /// <p>The FORM_FACTOR attribute can be set to PHONE or TABLET.</p></li>
-    /// <li>
-    /// <p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p></li>
+    /// <li> <p>The PLATFORM attribute can be set to ANDROID or IOS.</p> </li>
+    /// <li> <p>The AVAILABILITY attribute can be set to AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p> </li>
+    /// <li> <p>The FORM_FACTOR attribute can be set to PHONE or TABLET.</p> </li>
+    /// <li> <p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p> </li>
     /// </ul>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
@@ -579,46 +561,34 @@ impl DeviceFilterBuilder {
         self
     }
     /// <p>An array of one or more filter values used in a device filter.</p>
-    /// <p class="title"><b>Operator Values</b></p>
+    /// <p class="title"> <b>Operator Values</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>The IN and NOT_IN operators can take a values array that has more than one element.</p></li>
-    /// <li>
-    /// <p>The other operators require an array with a single element.</p></li>
+    /// <li> <p>The IN and NOT_IN operators can take a values array that has more than one element.</p> </li>
+    /// <li> <p>The other operators require an array with a single element.</p> </li>
     /// </ul>
-    /// <p class="title"><b>Attribute Values</b></p>
+    /// <p class="title"> <b>Attribute Values</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>The PLATFORM attribute can be set to ANDROID or IOS.</p></li>
-    /// <li>
-    /// <p>The AVAILABILITY attribute can be set to AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p></li>
-    /// <li>
-    /// <p>The FORM_FACTOR attribute can be set to PHONE or TABLET.</p></li>
-    /// <li>
-    /// <p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p></li>
+    /// <li> <p>The PLATFORM attribute can be set to ANDROID or IOS.</p> </li>
+    /// <li> <p>The AVAILABILITY attribute can be set to AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p> </li>
+    /// <li> <p>The FORM_FACTOR attribute can be set to PHONE or TABLET.</p> </li>
+    /// <li> <p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p> </li>
     /// </ul>
     pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }
     /// <p>An array of one or more filter values used in a device filter.</p>
-    /// <p class="title"><b>Operator Values</b></p>
+    /// <p class="title"> <b>Operator Values</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>The IN and NOT_IN operators can take a values array that has more than one element.</p></li>
-    /// <li>
-    /// <p>The other operators require an array with a single element.</p></li>
+    /// <li> <p>The IN and NOT_IN operators can take a values array that has more than one element.</p> </li>
+    /// <li> <p>The other operators require an array with a single element.</p> </li>
     /// </ul>
-    /// <p class="title"><b>Attribute Values</b></p>
+    /// <p class="title"> <b>Attribute Values</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>The PLATFORM attribute can be set to ANDROID or IOS.</p></li>
-    /// <li>
-    /// <p>The AVAILABILITY attribute can be set to AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p></li>
-    /// <li>
-    /// <p>The FORM_FACTOR attribute can be set to PHONE or TABLET.</p></li>
-    /// <li>
-    /// <p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p></li>
+    /// <li> <p>The PLATFORM attribute can be set to ANDROID or IOS.</p> </li>
+    /// <li> <p>The AVAILABILITY attribute can be set to AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p> </li>
+    /// <li> <p>The FORM_FACTOR attribute can be set to PHONE or TABLET.</p> </li>
+    /// <li> <p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p> </li>
     /// </ul>
     pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.values

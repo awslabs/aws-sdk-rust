@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SavingsPlansUtilizationByTime {
-    /// <p>The time period of the request.</p>
+    /// <p>The time period of the request. </p>
     pub time_period: ::std::option::Option<crate::types::DateInterval>,
     /// <p>A ratio of your effectiveness of using existing Savings Plans to apply to workloads that are Savings Plans eligible.</p>
     pub utilization: ::std::option::Option<crate::types::SavingsPlansUtilization>,
@@ -14,7 +14,7 @@ pub struct SavingsPlansUtilizationByTime {
     pub amortized_commitment: ::std::option::Option<crate::types::SavingsPlansAmortizedCommitment>,
 }
 impl SavingsPlansUtilizationByTime {
-    /// <p>The time period of the request.</p>
+    /// <p>The time period of the request. </p>
     pub fn time_period(&self) -> ::std::option::Option<&crate::types::DateInterval> {
         self.time_period.as_ref()
     }
@@ -48,18 +48,18 @@ pub struct SavingsPlansUtilizationByTimeBuilder {
     pub(crate) amortized_commitment: ::std::option::Option<crate::types::SavingsPlansAmortizedCommitment>,
 }
 impl SavingsPlansUtilizationByTimeBuilder {
-    /// <p>The time period of the request.</p>
+    /// <p>The time period of the request. </p>
     /// This field is required.
     pub fn time_period(mut self, input: crate::types::DateInterval) -> Self {
         self.time_period = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time period of the request.</p>
+    /// <p>The time period of the request. </p>
     pub fn set_time_period(mut self, input: ::std::option::Option<crate::types::DateInterval>) -> Self {
         self.time_period = input;
         self
     }
-    /// <p>The time period of the request.</p>
+    /// <p>The time period of the request. </p>
     pub fn get_time_period(&self) -> &::std::option::Option<crate::types::DateInterval> {
         &self.time_period
     }

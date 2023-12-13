@@ -114,17 +114,17 @@ impl ListRotationShiftsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_rotation_shifts::paginator::ListRotationShiftsPaginator {
         crate::operation::list_rotation_shifts::paginator::ListRotationShiftsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The Amazon Resource Name (ARN) of the rotation to retrieve shift information about.</p>
+    /// <p>The Amazon Resource Name (ARN) of the rotation to retrieve shift information about. </p>
     pub fn rotation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.rotation_id(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the rotation to retrieve shift information about.</p>
+    /// <p>The Amazon Resource Name (ARN) of the rotation to retrieve shift information about. </p>
     pub fn set_rotation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_rotation_id(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the rotation to retrieve shift information about.</p>
+    /// <p>The Amazon Resource Name (ARN) of the rotation to retrieve shift information about. </p>
     pub fn get_rotation_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_rotation_id()
     }

@@ -22,7 +22,7 @@ impl DescribeAcceleratorInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeAccelerator`.
 ///
-/// <p>Describe an accelerator.</p>
+/// <p>Describe an accelerator. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAcceleratorFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

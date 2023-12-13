@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDecoderManifestSignalsOutput {
-    /// <p>Information about a list of signals to decode.</p>
+    /// <p> Information about a list of signals to decode. </p>
     pub signal_decoders: ::std::option::Option<::std::vec::Vec<crate::types::SignalDecoder>>,
-    /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
+    /// <p> The token to retrieve the next set of results, or <code>null</code> if there are no more results. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListDecoderManifestSignalsOutput {
-    /// <p>Information about a list of signals to decode.</p>
+    /// <p> Information about a list of signals to decode. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.signal_decoders.is_none()`.
     pub fn signal_decoders(&self) -> &[crate::types::SignalDecoder] {
         self.signal_decoders.as_deref().unwrap_or_default()
     }
-    /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
+    /// <p> The token to retrieve the next set of results, or <code>null</code> if there are no more results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -46,33 +46,33 @@ impl ListDecoderManifestSignalsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_signal_decoders`](Self::set_signal_decoders).
     ///
-    /// <p>Information about a list of signals to decode.</p>
+    /// <p> Information about a list of signals to decode. </p>
     pub fn signal_decoders(mut self, input: crate::types::SignalDecoder) -> Self {
         let mut v = self.signal_decoders.unwrap_or_default();
         v.push(input);
         self.signal_decoders = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Information about a list of signals to decode.</p>
+    /// <p> Information about a list of signals to decode. </p>
     pub fn set_signal_decoders(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SignalDecoder>>) -> Self {
         self.signal_decoders = input;
         self
     }
-    /// <p>Information about a list of signals to decode.</p>
+    /// <p> Information about a list of signals to decode. </p>
     pub fn get_signal_decoders(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SignalDecoder>> {
         &self.signal_decoders
     }
-    /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
+    /// <p> The token to retrieve the next set of results, or <code>null</code> if there are no more results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
+    /// <p> The token to retrieve the next set of results, or <code>null</code> if there are no more results. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
+    /// <p> The token to retrieve the next set of results, or <code>null</code> if there are no more results. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

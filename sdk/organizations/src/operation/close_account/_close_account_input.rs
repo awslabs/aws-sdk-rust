@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloseAccountInput {
-    /// <p>Retrieves the Amazon Web Services account Id for the current <code>CloseAccount</code> API request.</p>
+    /// <p>Retrieves the Amazon Web Services account Id for the current <code>CloseAccount</code> API request. </p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl CloseAccountInput {
-    /// <p>Retrieves the Amazon Web Services account Id for the current <code>CloseAccount</code> API request.</p>
+    /// <p>Retrieves the Amazon Web Services account Id for the current <code>CloseAccount</code> API request. </p>
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct CloseAccountInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
 impl CloseAccountInputBuilder {
-    /// <p>Retrieves the Amazon Web Services account Id for the current <code>CloseAccount</code> API request.</p>
+    /// <p>Retrieves the Amazon Web Services account Id for the current <code>CloseAccount</code> API request. </p>
     /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Retrieves the Amazon Web Services account Id for the current <code>CloseAccount</code> API request.</p>
+    /// <p>Retrieves the Amazon Web Services account Id for the current <code>CloseAccount</code> API request. </p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
-    /// <p>Retrieves the Amazon Web Services account Id for the current <code>CloseAccount</code> API request.</p>
+    /// <p>Retrieves the Amazon Web Services account Id for the current <code>CloseAccount</code> API request. </p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }

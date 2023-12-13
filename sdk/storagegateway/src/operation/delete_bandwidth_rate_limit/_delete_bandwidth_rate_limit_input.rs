@@ -2,8 +2,7 @@
 
 /// <p>A JSON object containing the following fields:</p>
 /// <ul>
-/// <li>
-/// <p><code>DeleteBandwidthRateLimitInput$BandwidthType</code></p></li>
+/// <li> <p> <code>DeleteBandwidthRateLimitInput$BandwidthType</code> </p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
@@ -11,7 +10,7 @@ pub struct DeleteBandwidthRateLimitInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>One of the BandwidthType values that indicates the gateway bandwidth rate limit to delete.</p>
-    /// <p>Valid Values: <code>UPLOAD</code> | <code>DOWNLOAD</code> | <code>ALL</code></p>
+    /// <p>Valid Values: <code>UPLOAD</code> | <code>DOWNLOAD</code> | <code>ALL</code> </p>
     pub bandwidth_type: ::std::option::Option<::std::string::String>,
 }
 impl DeleteBandwidthRateLimitInput {
@@ -20,7 +19,7 @@ impl DeleteBandwidthRateLimitInput {
         self.gateway_arn.as_deref()
     }
     /// <p>One of the BandwidthType values that indicates the gateway bandwidth rate limit to delete.</p>
-    /// <p>Valid Values: <code>UPLOAD</code> | <code>DOWNLOAD</code> | <code>ALL</code></p>
+    /// <p>Valid Values: <code>UPLOAD</code> | <code>DOWNLOAD</code> | <code>ALL</code> </p>
     pub fn bandwidth_type(&self) -> ::std::option::Option<&str> {
         self.bandwidth_type.as_deref()
     }
@@ -56,20 +55,20 @@ impl DeleteBandwidthRateLimitInputBuilder {
         &self.gateway_arn
     }
     /// <p>One of the BandwidthType values that indicates the gateway bandwidth rate limit to delete.</p>
-    /// <p>Valid Values: <code>UPLOAD</code> | <code>DOWNLOAD</code> | <code>ALL</code></p>
+    /// <p>Valid Values: <code>UPLOAD</code> | <code>DOWNLOAD</code> | <code>ALL</code> </p>
     /// This field is required.
     pub fn bandwidth_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bandwidth_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>One of the BandwidthType values that indicates the gateway bandwidth rate limit to delete.</p>
-    /// <p>Valid Values: <code>UPLOAD</code> | <code>DOWNLOAD</code> | <code>ALL</code></p>
+    /// <p>Valid Values: <code>UPLOAD</code> | <code>DOWNLOAD</code> | <code>ALL</code> </p>
     pub fn set_bandwidth_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bandwidth_type = input;
         self
     }
     /// <p>One of the BandwidthType values that indicates the gateway bandwidth rate limit to delete.</p>
-    /// <p>Valid Values: <code>UPLOAD</code> | <code>DOWNLOAD</code> | <code>ALL</code></p>
+    /// <p>Valid Values: <code>UPLOAD</code> | <code>DOWNLOAD</code> | <code>ALL</code> </p>
     pub fn get_bandwidth_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.bandwidth_type
     }

@@ -9,9 +9,9 @@ pub struct ParameterDefinition {
     /// <p>An array containing the list of values allowed for the parameter.</p>
     pub allowed_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A string that explains a constraint when the constraint is violated. For example, without a constraint description, a parameter that has an allowed pattern of [A-Za-z0-9]+ displays the following error message when the user specifies an invalid value:</p>
-    /// <p>Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+</p>
+    /// <p> Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+ </p>
     /// <p>By adding a constraint description, such as "must contain only uppercase and lowercase letters and numbers," you can display the following customized error message:</p>
-    /// <p>Malformed input-Parameter MyParameter must contain only uppercase and lowercase letters and numbers.</p>
+    /// <p> Malformed input-Parameter MyParameter must contain only uppercase and lowercase letters and numbers. </p>
     pub constraint_description: ::std::option::Option<::std::string::String>,
     /// <p>A value of the appropriate type for the template to use if no value is specified when a stack is created. If you define constraints for the parameter, you must specify a value that adheres to those constraints.</p>
     pub default_value: ::std::option::Option<::std::string::String>,
@@ -32,14 +32,14 @@ pub struct ParameterDefinition {
     /// <p>A list of AWS SAM resources that use this parameter.</p>
     pub referenced_by_resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The type of the parameter.</p>
-    /// <p>Valid values: String | Number | List&lt;Number&gt; | CommaDelimitedList</p>
-    /// <p>String: A literal string.</p>
+    /// <p>Valid values: String | Number | List&lt;Number&gt; | CommaDelimitedList </p>
+    /// <p> String: A literal string.</p>
     /// <p>For example, users can specify "MyUserName".</p>
-    /// <p>Number: An integer or float. AWS CloudFormation validates the parameter value as a number. However, when you use the parameter elsewhere in your template (for example, by using the Ref intrinsic function), the parameter value becomes a string.</p>
+    /// <p> Number: An integer or float. AWS CloudFormation validates the parameter value as a number. However, when you use the parameter elsewhere in your template (for example, by using the Ref intrinsic function), the parameter value becomes a string.</p>
     /// <p>For example, users might specify "8888".</p>
-    /// <p>List&lt;Number&gt;: An array of integers or floats that are separated by commas. AWS CloudFormation validates the parameter value as numbers. However, when you use the parameter elsewhere in your template (for example, by using the Ref intrinsic function), the parameter value becomes a list of strings.</p>
+    /// <p> List&lt;Number&gt;: An array of integers or floats that are separated by commas. AWS CloudFormation validates the parameter value as numbers. However, when you use the parameter elsewhere in your template (for example, by using the Ref intrinsic function), the parameter value becomes a list of strings.</p>
     /// <p>For example, users might specify "80,20", and then Ref results in ["80","20"].</p>
-    /// <p>CommaDelimitedList: An array of literal strings that are separated by commas. The total number of strings should be one more than the total number of commas. Also, each member string is space-trimmed.</p>
+    /// <p> CommaDelimitedList: An array of literal strings that are separated by commas. The total number of strings should be one more than the total number of commas. Also, each member string is space-trimmed.</p>
     /// <p>For example, users might specify "test,dev,prod", and then Ref results in ["test","dev","prod"].</p>
     pub r#type: ::std::option::Option<::std::string::String>,
 }
@@ -55,9 +55,9 @@ impl ParameterDefinition {
         self.allowed_values.as_deref().unwrap_or_default()
     }
     /// <p>A string that explains a constraint when the constraint is violated. For example, without a constraint description, a parameter that has an allowed pattern of [A-Za-z0-9]+ displays the following error message when the user specifies an invalid value:</p>
-    /// <p>Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+</p>
+    /// <p> Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+ </p>
     /// <p>By adding a constraint description, such as "must contain only uppercase and lowercase letters and numbers," you can display the following customized error message:</p>
-    /// <p>Malformed input-Parameter MyParameter must contain only uppercase and lowercase letters and numbers.</p>
+    /// <p> Malformed input-Parameter MyParameter must contain only uppercase and lowercase letters and numbers. </p>
     pub fn constraint_description(&self) -> ::std::option::Option<&str> {
         self.constraint_description.as_deref()
     }
@@ -100,14 +100,14 @@ impl ParameterDefinition {
         self.referenced_by_resources.as_deref().unwrap_or_default()
     }
     /// <p>The type of the parameter.</p>
-    /// <p>Valid values: String | Number | List&lt;Number&gt; | CommaDelimitedList</p>
-    /// <p>String: A literal string.</p>
+    /// <p>Valid values: String | Number | List&lt;Number&gt; | CommaDelimitedList </p>
+    /// <p> String: A literal string.</p>
     /// <p>For example, users can specify "MyUserName".</p>
-    /// <p>Number: An integer or float. AWS CloudFormation validates the parameter value as a number. However, when you use the parameter elsewhere in your template (for example, by using the Ref intrinsic function), the parameter value becomes a string.</p>
+    /// <p> Number: An integer or float. AWS CloudFormation validates the parameter value as a number. However, when you use the parameter elsewhere in your template (for example, by using the Ref intrinsic function), the parameter value becomes a string.</p>
     /// <p>For example, users might specify "8888".</p>
-    /// <p>List&lt;Number&gt;: An array of integers or floats that are separated by commas. AWS CloudFormation validates the parameter value as numbers. However, when you use the parameter elsewhere in your template (for example, by using the Ref intrinsic function), the parameter value becomes a list of strings.</p>
+    /// <p> List&lt;Number&gt;: An array of integers or floats that are separated by commas. AWS CloudFormation validates the parameter value as numbers. However, when you use the parameter elsewhere in your template (for example, by using the Ref intrinsic function), the parameter value becomes a list of strings.</p>
     /// <p>For example, users might specify "80,20", and then Ref results in ["80","20"].</p>
-    /// <p>CommaDelimitedList: An array of literal strings that are separated by commas. The total number of strings should be one more than the total number of commas. Also, each member string is space-trimmed.</p>
+    /// <p> CommaDelimitedList: An array of literal strings that are separated by commas. The total number of strings should be one more than the total number of commas. Also, each member string is space-trimmed.</p>
     /// <p>For example, users might specify "test,dev,prod", and then Ref results in ["test","dev","prod"].</p>
     pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
@@ -174,25 +174,25 @@ impl ParameterDefinitionBuilder {
         &self.allowed_values
     }
     /// <p>A string that explains a constraint when the constraint is violated. For example, without a constraint description, a parameter that has an allowed pattern of [A-Za-z0-9]+ displays the following error message when the user specifies an invalid value:</p>
-    /// <p>Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+</p>
+    /// <p> Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+ </p>
     /// <p>By adding a constraint description, such as "must contain only uppercase and lowercase letters and numbers," you can display the following customized error message:</p>
-    /// <p>Malformed input-Parameter MyParameter must contain only uppercase and lowercase letters and numbers.</p>
+    /// <p> Malformed input-Parameter MyParameter must contain only uppercase and lowercase letters and numbers. </p>
     pub fn constraint_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.constraint_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string that explains a constraint when the constraint is violated. For example, without a constraint description, a parameter that has an allowed pattern of [A-Za-z0-9]+ displays the following error message when the user specifies an invalid value:</p>
-    /// <p>Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+</p>
+    /// <p> Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+ </p>
     /// <p>By adding a constraint description, such as "must contain only uppercase and lowercase letters and numbers," you can display the following customized error message:</p>
-    /// <p>Malformed input-Parameter MyParameter must contain only uppercase and lowercase letters and numbers.</p>
+    /// <p> Malformed input-Parameter MyParameter must contain only uppercase and lowercase letters and numbers. </p>
     pub fn set_constraint_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.constraint_description = input;
         self
     }
     /// <p>A string that explains a constraint when the constraint is violated. For example, without a constraint description, a parameter that has an allowed pattern of [A-Za-z0-9]+ displays the following error message when the user specifies an invalid value:</p>
-    /// <p>Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+</p>
+    /// <p> Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+ </p>
     /// <p>By adding a constraint description, such as "must contain only uppercase and lowercase letters and numbers," you can display the following customized error message:</p>
-    /// <p>Malformed input-Parameter MyParameter must contain only uppercase and lowercase letters and numbers.</p>
+    /// <p> Malformed input-Parameter MyParameter must contain only uppercase and lowercase letters and numbers. </p>
     pub fn get_constraint_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.constraint_description
     }
@@ -330,42 +330,42 @@ impl ParameterDefinitionBuilder {
         &self.referenced_by_resources
     }
     /// <p>The type of the parameter.</p>
-    /// <p>Valid values: String | Number | List&lt;Number&gt; | CommaDelimitedList</p>
-    /// <p>String: A literal string.</p>
+    /// <p>Valid values: String | Number | List&lt;Number&gt; | CommaDelimitedList </p>
+    /// <p> String: A literal string.</p>
     /// <p>For example, users can specify "MyUserName".</p>
-    /// <p>Number: An integer or float. AWS CloudFormation validates the parameter value as a number. However, when you use the parameter elsewhere in your template (for example, by using the Ref intrinsic function), the parameter value becomes a string.</p>
+    /// <p> Number: An integer or float. AWS CloudFormation validates the parameter value as a number. However, when you use the parameter elsewhere in your template (for example, by using the Ref intrinsic function), the parameter value becomes a string.</p>
     /// <p>For example, users might specify "8888".</p>
-    /// <p>List&lt;Number&gt;: An array of integers or floats that are separated by commas. AWS CloudFormation validates the parameter value as numbers. However, when you use the parameter elsewhere in your template (for example, by using the Ref intrinsic function), the parameter value becomes a list of strings.</p>
+    /// <p> List&lt;Number&gt;: An array of integers or floats that are separated by commas. AWS CloudFormation validates the parameter value as numbers. However, when you use the parameter elsewhere in your template (for example, by using the Ref intrinsic function), the parameter value becomes a list of strings.</p>
     /// <p>For example, users might specify "80,20", and then Ref results in ["80","20"].</p>
-    /// <p>CommaDelimitedList: An array of literal strings that are separated by commas. The total number of strings should be one more than the total number of commas. Also, each member string is space-trimmed.</p>
+    /// <p> CommaDelimitedList: An array of literal strings that are separated by commas. The total number of strings should be one more than the total number of commas. Also, each member string is space-trimmed.</p>
     /// <p>For example, users might specify "test,dev,prod", and then Ref results in ["test","dev","prod"].</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of the parameter.</p>
-    /// <p>Valid values: String | Number | List&lt;Number&gt; | CommaDelimitedList</p>
-    /// <p>String: A literal string.</p>
+    /// <p>Valid values: String | Number | List&lt;Number&gt; | CommaDelimitedList </p>
+    /// <p> String: A literal string.</p>
     /// <p>For example, users can specify "MyUserName".</p>
-    /// <p>Number: An integer or float. AWS CloudFormation validates the parameter value as a number. However, when you use the parameter elsewhere in your template (for example, by using the Ref intrinsic function), the parameter value becomes a string.</p>
+    /// <p> Number: An integer or float. AWS CloudFormation validates the parameter value as a number. However, when you use the parameter elsewhere in your template (for example, by using the Ref intrinsic function), the parameter value becomes a string.</p>
     /// <p>For example, users might specify "8888".</p>
-    /// <p>List&lt;Number&gt;: An array of integers or floats that are separated by commas. AWS CloudFormation validates the parameter value as numbers. However, when you use the parameter elsewhere in your template (for example, by using the Ref intrinsic function), the parameter value becomes a list of strings.</p>
+    /// <p> List&lt;Number&gt;: An array of integers or floats that are separated by commas. AWS CloudFormation validates the parameter value as numbers. However, when you use the parameter elsewhere in your template (for example, by using the Ref intrinsic function), the parameter value becomes a list of strings.</p>
     /// <p>For example, users might specify "80,20", and then Ref results in ["80","20"].</p>
-    /// <p>CommaDelimitedList: An array of literal strings that are separated by commas. The total number of strings should be one more than the total number of commas. Also, each member string is space-trimmed.</p>
+    /// <p> CommaDelimitedList: An array of literal strings that are separated by commas. The total number of strings should be one more than the total number of commas. Also, each member string is space-trimmed.</p>
     /// <p>For example, users might specify "test,dev,prod", and then Ref results in ["test","dev","prod"].</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The type of the parameter.</p>
-    /// <p>Valid values: String | Number | List&lt;Number&gt; | CommaDelimitedList</p>
-    /// <p>String: A literal string.</p>
+    /// <p>Valid values: String | Number | List&lt;Number&gt; | CommaDelimitedList </p>
+    /// <p> String: A literal string.</p>
     /// <p>For example, users can specify "MyUserName".</p>
-    /// <p>Number: An integer or float. AWS CloudFormation validates the parameter value as a number. However, when you use the parameter elsewhere in your template (for example, by using the Ref intrinsic function), the parameter value becomes a string.</p>
+    /// <p> Number: An integer or float. AWS CloudFormation validates the parameter value as a number. However, when you use the parameter elsewhere in your template (for example, by using the Ref intrinsic function), the parameter value becomes a string.</p>
     /// <p>For example, users might specify "8888".</p>
-    /// <p>List&lt;Number&gt;: An array of integers or floats that are separated by commas. AWS CloudFormation validates the parameter value as numbers. However, when you use the parameter elsewhere in your template (for example, by using the Ref intrinsic function), the parameter value becomes a list of strings.</p>
+    /// <p> List&lt;Number&gt;: An array of integers or floats that are separated by commas. AWS CloudFormation validates the parameter value as numbers. However, when you use the parameter elsewhere in your template (for example, by using the Ref intrinsic function), the parameter value becomes a list of strings.</p>
     /// <p>For example, users might specify "80,20", and then Ref results in ["80","20"].</p>
-    /// <p>CommaDelimitedList: An array of literal strings that are separated by commas. The total number of strings should be one more than the total number of commas. Also, each member string is space-trimmed.</p>
+    /// <p> CommaDelimitedList: An array of literal strings that are separated by commas. The total number of strings should be one more than the total number of commas. Also, each member string is space-trimmed.</p>
     /// <p>For example, users might specify "test,dev,prod", and then Ref results in ["test","dev","prod"].</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.r#type

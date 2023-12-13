@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_metric_sets::builders::ListMetricSetsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_metric_sets::builders::ListMetricSetsFluentBuilder::set_next_token):<br>required: **false**<br><p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p><br>
     /// - On success, responds with [`ListMetricSetsOutput`](crate::operation::list_metric_sets::ListMetricSetsOutput) with field(s):
     ///   - [`metric_set_summary_list(Option<Vec::<MetricSetSummary>>)`](crate::operation::list_metric_sets::ListMetricSetsOutput::metric_set_summary_list): <p>A list of the datasets in the AWS Region, with configuration details for each.</p>
-    ///   - [`next_token(Option<String>)`](crate::operation::list_metric_sets::ListMetricSetsOutput::next_token): <p>If the response is truncated, the list call returns this token. To retrieve the next set of results, use the token in the next list request.</p>
+    ///   - [`next_token(Option<String>)`](crate::operation::list_metric_sets::ListMetricSetsOutput::next_token): <p>If the response is truncated, the list call returns this token. To retrieve the next set of results, use the token in the next list request. </p>
     /// - On failure, responds with [`SdkError<ListMetricSetsError>`](crate::operation::list_metric_sets::ListMetricSetsError)
     pub fn list_metric_sets(&self) -> crate::operation::list_metric_sets::builders::ListMetricSetsFluentBuilder {
         crate::operation::list_metric_sets::builders::ListMetricSetsFluentBuilder::new(self.handle.clone())

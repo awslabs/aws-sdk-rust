@@ -5,11 +5,11 @@
 pub struct ListDetectMitigationActionsTasksInput {
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>The token for the next set of results.</p>
+    /// <p> The token for the next set of results. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both.</p>
+    /// <p> A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both. </p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The end of the time period for which ML Detect mitigation actions tasks are returned.</p>
+    /// <p> The end of the time period for which ML Detect mitigation actions tasks are returned. </p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ListDetectMitigationActionsTasksInput {
@@ -17,15 +17,15 @@ impl ListDetectMitigationActionsTasksInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The token for the next set of results.</p>
+    /// <p> The token for the next set of results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both.</p>
+    /// <p> A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both. </p>
     pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>The end of the time period for which ML Detect mitigation actions tasks are returned.</p>
+    /// <p> The end of the time period for which ML Detect mitigation actions tasks are returned. </p>
     pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
@@ -61,47 +61,47 @@ impl ListDetectMitigationActionsTasksInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p>The token for the next set of results.</p>
+    /// <p> The token for the next set of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token for the next set of results.</p>
+    /// <p> The token for the next set of results. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The token for the next set of results.</p>
+    /// <p> The token for the next set of results. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both.</p>
+    /// <p> A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both. </p>
     /// This field is required.
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both.</p>
+    /// <p> A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both. </p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
-    /// <p>A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both.</p>
+    /// <p> A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both. </p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.start_time
     }
-    /// <p>The end of the time period for which ML Detect mitigation actions tasks are returned.</p>
+    /// <p> The end of the time period for which ML Detect mitigation actions tasks are returned. </p>
     /// This field is required.
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The end of the time period for which ML Detect mitigation actions tasks are returned.</p>
+    /// <p> The end of the time period for which ML Detect mitigation actions tasks are returned. </p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
-    /// <p>The end of the time period for which ML Detect mitigation actions tasks are returned.</p>
+    /// <p> The end of the time period for which ML Detect mitigation actions tasks are returned. </p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_time
     }

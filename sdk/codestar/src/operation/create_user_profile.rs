@@ -246,7 +246,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateUserPro
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreateUserProfileError {
-    /// <p>A user profile with that name already exists in this region for the AWS account. AWS CodeStar user profile names must be unique within a region for the AWS account.</p>
+    /// <p>A user profile with that name already exists in this region for the AWS account. AWS CodeStar user profile names must be unique within a region for the AWS account. </p>
     UserProfileAlreadyExistsException(crate::types::error::UserProfileAlreadyExistsException),
     /// <p>The specified input is either not valid, or it could not be validated.</p>
     ValidationException(crate::types::error::ValidationException),

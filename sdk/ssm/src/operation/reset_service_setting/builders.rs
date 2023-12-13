@@ -22,9 +22,9 @@ impl ResetServiceSettingInputBuilder {
 }
 /// Fluent builder constructing a request to `ResetServiceSetting`.
 ///
-/// <p><code>ServiceSetting</code> is an account-level setting for an Amazon Web Services service. This setting defines how a user interacts with or uses a service or a feature of a service. For example, if an Amazon Web Services service charges money to the account based on feature or service usage, then the Amazon Web Services service team might create a default setting of "false". This means the user can't use this feature unless they change the setting to "true" and intentionally opt in for a paid feature.</p>
-/// <p>Services map a <code>SettingId</code> object to a setting value. Amazon Web Services services teams define the default value for a <code>SettingId</code>. You can't create a new <code>SettingId</code>, but you can overwrite the default value if you have the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the <code>GetServiceSetting</code> API operation to view the current value. Use the <code>UpdateServiceSetting</code> API operation to change the default setting.</p>
-/// <p>Reset the service setting for the account to the default value as provisioned by the Amazon Web Services service team.</p>
+/// <p> <code>ServiceSetting</code> is an account-level setting for an Amazon Web Services service. This setting defines how a user interacts with or uses a service or a feature of a service. For example, if an Amazon Web Services service charges money to the account based on feature or service usage, then the Amazon Web Services service team might create a default setting of "false". This means the user can't use this feature unless they change the setting to "true" and intentionally opt in for a paid feature.</p>
+/// <p>Services map a <code>SettingId</code> object to a setting value. Amazon Web Services services teams define the default value for a <code>SettingId</code>. You can't create a new <code>SettingId</code>, but you can overwrite the default value if you have the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the <code>GetServiceSetting</code> API operation to view the current value. Use the <code>UpdateServiceSetting</code> API operation to change the default setting. </p>
+/// <p>Reset the service setting for the account to the default value as provisioned by the Amazon Web Services service team. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ResetServiceSettingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -112,22 +112,14 @@ impl ResetServiceSettingFluentBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the service setting to reset. The setting ID can be one of the following.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>/ssm/managed-instance/default-ec2-instance-management-role</code></p></li>
-    /// <li>
-    /// <p><code>/ssm/automation/customer-script-log-destination</code></p></li>
-    /// <li>
-    /// <p><code>/ssm/automation/customer-script-log-group-name</code></p></li>
-    /// <li>
-    /// <p><code>/ssm/documents/console/public-sharing-permission</code></p></li>
-    /// <li>
-    /// <p><code>/ssm/managed-instance/activation-tier</code></p></li>
-    /// <li>
-    /// <p><code>/ssm/opsinsights/opscenter</code></p></li>
-    /// <li>
-    /// <p><code>/ssm/parameter-store/default-parameter-tier</code></p></li>
-    /// <li>
-    /// <p><code>/ssm/parameter-store/high-throughput-enabled</code></p></li>
+    /// <li> <p> <code>/ssm/managed-instance/default-ec2-instance-management-role</code> </p> </li>
+    /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code> </p> </li>
+    /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code> </p> </li>
+    /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code> </p> </li>
+    /// <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li>
+    /// <li> <p> <code>/ssm/opsinsights/opscenter</code> </p> </li>
+    /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li>
+    /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li>
     /// </ul>
     pub fn setting_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.setting_id(input.into());
@@ -135,22 +127,14 @@ impl ResetServiceSettingFluentBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the service setting to reset. The setting ID can be one of the following.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>/ssm/managed-instance/default-ec2-instance-management-role</code></p></li>
-    /// <li>
-    /// <p><code>/ssm/automation/customer-script-log-destination</code></p></li>
-    /// <li>
-    /// <p><code>/ssm/automation/customer-script-log-group-name</code></p></li>
-    /// <li>
-    /// <p><code>/ssm/documents/console/public-sharing-permission</code></p></li>
-    /// <li>
-    /// <p><code>/ssm/managed-instance/activation-tier</code></p></li>
-    /// <li>
-    /// <p><code>/ssm/opsinsights/opscenter</code></p></li>
-    /// <li>
-    /// <p><code>/ssm/parameter-store/default-parameter-tier</code></p></li>
-    /// <li>
-    /// <p><code>/ssm/parameter-store/high-throughput-enabled</code></p></li>
+    /// <li> <p> <code>/ssm/managed-instance/default-ec2-instance-management-role</code> </p> </li>
+    /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code> </p> </li>
+    /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code> </p> </li>
+    /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code> </p> </li>
+    /// <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li>
+    /// <li> <p> <code>/ssm/opsinsights/opscenter</code> </p> </li>
+    /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li>
+    /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li>
     /// </ul>
     pub fn set_setting_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_setting_id(input);
@@ -158,22 +142,14 @@ impl ResetServiceSettingFluentBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the service setting to reset. The setting ID can be one of the following.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>/ssm/managed-instance/default-ec2-instance-management-role</code></p></li>
-    /// <li>
-    /// <p><code>/ssm/automation/customer-script-log-destination</code></p></li>
-    /// <li>
-    /// <p><code>/ssm/automation/customer-script-log-group-name</code></p></li>
-    /// <li>
-    /// <p><code>/ssm/documents/console/public-sharing-permission</code></p></li>
-    /// <li>
-    /// <p><code>/ssm/managed-instance/activation-tier</code></p></li>
-    /// <li>
-    /// <p><code>/ssm/opsinsights/opscenter</code></p></li>
-    /// <li>
-    /// <p><code>/ssm/parameter-store/default-parameter-tier</code></p></li>
-    /// <li>
-    /// <p><code>/ssm/parameter-store/high-throughput-enabled</code></p></li>
+    /// <li> <p> <code>/ssm/managed-instance/default-ec2-instance-management-role</code> </p> </li>
+    /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code> </p> </li>
+    /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code> </p> </li>
+    /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code> </p> </li>
+    /// <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li>
+    /// <li> <p> <code>/ssm/opsinsights/opscenter</code> </p> </li>
+    /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li>
+    /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li>
     /// </ul>
     pub fn get_setting_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_setting_id()

@@ -22,7 +22,7 @@ impl ListObjectAttributesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListObjectAttributes`.
 ///
-/// <p>Lists all attributes that are associated with an object.</p>
+/// <p>Lists all attributes that are associated with an object. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListObjectAttributesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

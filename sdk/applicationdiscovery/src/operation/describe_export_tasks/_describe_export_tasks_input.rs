@@ -7,8 +7,7 @@ pub struct DescribeExportTasksInput {
     pub export_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AgentId</code> - ID of the agent whose collected data will be exported</p></li>
+    /// <li> <p> <code>AgentId</code> - ID of the agent whose collected data will be exported</p> </li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::ExportFilter>>,
     /// <p>The maximum number of volume results returned by <code>DescribeExportTasks</code> in paginated output. When this parameter is used, <code>DescribeExportTasks</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element.</p>
@@ -25,8 +24,7 @@ impl DescribeExportTasksInput {
     }
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AgentId</code> - ID of the agent whose collected data will be exported</p></li>
+    /// <li> <p> <code>AgentId</code> - ID of the agent whose collected data will be exported</p> </li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
@@ -85,8 +83,7 @@ impl DescribeExportTasksInputBuilder {
     ///
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AgentId</code> - ID of the agent whose collected data will be exported</p></li>
+    /// <li> <p> <code>AgentId</code> - ID of the agent whose collected data will be exported</p> </li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::ExportFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
@@ -96,8 +93,7 @@ impl DescribeExportTasksInputBuilder {
     }
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AgentId</code> - ID of the agent whose collected data will be exported</p></li>
+    /// <li> <p> <code>AgentId</code> - ID of the agent whose collected data will be exported</p> </li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExportFilter>>) -> Self {
         self.filters = input;
@@ -105,8 +101,7 @@ impl DescribeExportTasksInputBuilder {
     }
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AgentId</code> - ID of the agent whose collected data will be exported</p></li>
+    /// <li> <p> <code>AgentId</code> - ID of the agent whose collected data will be exported</p> </li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExportFilter>> {
         &self.filters

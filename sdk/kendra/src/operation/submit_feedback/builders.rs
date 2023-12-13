@@ -23,7 +23,7 @@ impl SubmitFeedbackInputBuilder {
 /// Fluent builder constructing a request to `SubmitFeedback`.
 ///
 /// <p>Enables you to provide feedback to Amazon Kendra to improve the performance of your index.</p>
-/// <p><code>SubmitFeedback</code> is currently not supported in the Amazon Web Services GovCloud (US-West) region.</p>
+/// <p> <code>SubmitFeedback</code> is currently not supported in the Amazon Web Services GovCloud (US-West) region.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SubmitFeedbackFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -141,17 +141,17 @@ impl SubmitFeedbackFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_click_feedback_items`](Self::set_click_feedback_items).
     ///
-    /// <p>Tells Amazon Kendra that a particular search result link was chosen by the user.</p>
+    /// <p>Tells Amazon Kendra that a particular search result link was chosen by the user. </p>
     pub fn click_feedback_items(mut self, input: crate::types::ClickFeedback) -> Self {
         self.inner = self.inner.click_feedback_items(input);
         self
     }
-    /// <p>Tells Amazon Kendra that a particular search result link was chosen by the user.</p>
+    /// <p>Tells Amazon Kendra that a particular search result link was chosen by the user. </p>
     pub fn set_click_feedback_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClickFeedback>>) -> Self {
         self.inner = self.inner.set_click_feedback_items(input);
         self
     }
-    /// <p>Tells Amazon Kendra that a particular search result link was chosen by the user.</p>
+    /// <p>Tells Amazon Kendra that a particular search result link was chosen by the user. </p>
     pub fn get_click_feedback_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClickFeedback>> {
         self.inner.get_click_feedback_items()
     }

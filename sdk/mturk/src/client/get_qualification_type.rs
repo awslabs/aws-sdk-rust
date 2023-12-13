@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`qualification_type_id(impl Into<String>)`](crate::operation::get_qualification_type::builders::GetQualificationTypeFluentBuilder::qualification_type_id) / [`set_qualification_type_id(Option<String>)`](crate::operation::get_qualification_type::builders::GetQualificationTypeFluentBuilder::set_qualification_type_id):<br>required: **true**<br><p>The ID of the QualificationType.</p><br>
     /// - On success, responds with [`GetQualificationTypeOutput`](crate::operation::get_qualification_type::GetQualificationTypeOutput) with field(s):
-    ///   - [`qualification_type(Option<QualificationType>)`](crate::operation::get_qualification_type::GetQualificationTypeOutput::qualification_type): <p>The returned Qualification Type</p>
+    ///   - [`qualification_type(Option<QualificationType>)`](crate::operation::get_qualification_type::GetQualificationTypeOutput::qualification_type): <p> The returned Qualification Type</p>
     /// - On failure, responds with [`SdkError<GetQualificationTypeError>`](crate::operation::get_qualification_type::GetQualificationTypeError)
     pub fn get_qualification_type(&self) -> crate::operation::get_qualification_type::builders::GetQualificationTypeFluentBuilder {
         crate::operation::get_qualification_type::builders::GetQualificationTypeFluentBuilder::new(self.handle.clone())

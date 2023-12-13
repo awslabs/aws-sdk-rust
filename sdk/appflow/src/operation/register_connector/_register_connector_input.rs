@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterConnectorInput {
-    /// <p>The name of the connector. The name is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account.</p>
+    /// <p> The name of the connector. The name is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account.</p>
     pub connector_label: ::std::option::Option<::std::string::String>,
     /// <p>A description about the connector that's being registered.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The provisioning type of the connector. Currently the only supported value is LAMBDA.</p>
+    /// <p>The provisioning type of the connector. Currently the only supported value is LAMBDA. </p>
     pub connector_provisioning_type: ::std::option::Option<crate::types::ConnectorProvisioningType>,
     /// <p>The provisioning type of the connector. Currently the only supported value is LAMBDA.</p>
     pub connector_provisioning_config: ::std::option::Option<crate::types::ConnectorProvisioningConfig>,
@@ -17,7 +17,7 @@ pub struct RegisterConnectorInput {
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl RegisterConnectorInput {
-    /// <p>The name of the connector. The name is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account.</p>
+    /// <p> The name of the connector. The name is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account.</p>
     pub fn connector_label(&self) -> ::std::option::Option<&str> {
         self.connector_label.as_deref()
     }
@@ -25,7 +25,7 @@ impl RegisterConnectorInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The provisioning type of the connector. Currently the only supported value is LAMBDA.</p>
+    /// <p>The provisioning type of the connector. Currently the only supported value is LAMBDA. </p>
     pub fn connector_provisioning_type(&self) -> ::std::option::Option<&crate::types::ConnectorProvisioningType> {
         self.connector_provisioning_type.as_ref()
     }
@@ -58,17 +58,17 @@ pub struct RegisterConnectorInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl RegisterConnectorInputBuilder {
-    /// <p>The name of the connector. The name is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account.</p>
+    /// <p> The name of the connector. The name is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account.</p>
     pub fn connector_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_label = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the connector. The name is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account.</p>
+    /// <p> The name of the connector. The name is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account.</p>
     pub fn set_connector_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connector_label = input;
         self
     }
-    /// <p>The name of the connector. The name is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account.</p>
+    /// <p> The name of the connector. The name is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account.</p>
     pub fn get_connector_label(&self) -> &::std::option::Option<::std::string::String> {
         &self.connector_label
     }
@@ -86,17 +86,17 @@ impl RegisterConnectorInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The provisioning type of the connector. Currently the only supported value is LAMBDA.</p>
+    /// <p>The provisioning type of the connector. Currently the only supported value is LAMBDA. </p>
     pub fn connector_provisioning_type(mut self, input: crate::types::ConnectorProvisioningType) -> Self {
         self.connector_provisioning_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The provisioning type of the connector. Currently the only supported value is LAMBDA.</p>
+    /// <p>The provisioning type of the connector. Currently the only supported value is LAMBDA. </p>
     pub fn set_connector_provisioning_type(mut self, input: ::std::option::Option<crate::types::ConnectorProvisioningType>) -> Self {
         self.connector_provisioning_type = input;
         self
     }
-    /// <p>The provisioning type of the connector. Currently the only supported value is LAMBDA.</p>
+    /// <p>The provisioning type of the connector. Currently the only supported value is LAMBDA. </p>
     pub fn get_connector_provisioning_type(&self) -> &::std::option::Option<crate::types::ConnectorProvisioningType> {
         &self.connector_provisioning_type
     }

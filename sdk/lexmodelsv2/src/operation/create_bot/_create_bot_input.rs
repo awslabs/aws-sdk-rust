@@ -11,7 +11,7 @@ pub struct CreateBotInput {
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Provides information on additional privacy protections Amazon Lex should use with the bot's data.</p>
     pub data_privacy: ::std::option::Option<crate::types::DataPrivacy>,
-    /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot.</p>
+    /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot. </p>
     /// <p>A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p>
     /// <p>You can specify between 60 (1 minute) and 86,400 (24 hours) seconds.</p>
     pub idle_session_ttl_in_seconds: ::std::option::Option<i32>,
@@ -41,7 +41,7 @@ impl CreateBotInput {
     pub fn data_privacy(&self) -> ::std::option::Option<&crate::types::DataPrivacy> {
         self.data_privacy.as_ref()
     }
-    /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot.</p>
+    /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot. </p>
     /// <p>A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p>
     /// <p>You can specify between 60 (1 minute) and 86,400 (24 hours) seconds.</p>
     pub fn idle_session_ttl_in_seconds(&self) -> ::std::option::Option<i32> {
@@ -147,7 +147,7 @@ impl CreateBotInputBuilder {
     pub fn get_data_privacy(&self) -> &::std::option::Option<crate::types::DataPrivacy> {
         &self.data_privacy
     }
-    /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot.</p>
+    /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot. </p>
     /// <p>A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p>
     /// <p>You can specify between 60 (1 minute) and 86,400 (24 hours) seconds.</p>
     /// This field is required.
@@ -155,14 +155,14 @@ impl CreateBotInputBuilder {
         self.idle_session_ttl_in_seconds = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot.</p>
+    /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot. </p>
     /// <p>A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p>
     /// <p>You can specify between 60 (1 minute) and 86,400 (24 hours) seconds.</p>
     pub fn set_idle_session_ttl_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.idle_session_ttl_in_seconds = input;
         self
     }
-    /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot.</p>
+    /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot. </p>
     /// <p>A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p>
     /// <p>You can specify between 60 (1 minute) and 86,400 (24 hours) seconds.</p>
     pub fn get_idle_session_ttl_in_seconds(&self) -> &::std::option::Option<i32> {

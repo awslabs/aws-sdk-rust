@@ -22,7 +22,7 @@ impl CreateGroupMembershipInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateGroupMembership`.
 ///
-/// <p>Adds an Amazon QuickSight user to an Amazon QuickSight group.</p>
+/// <p>Adds an Amazon QuickSight user to an Amazon QuickSight group. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateGroupMembershipFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

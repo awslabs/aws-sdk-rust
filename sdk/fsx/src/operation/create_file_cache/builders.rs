@@ -23,13 +23,11 @@ impl CreateFileCacheInputBuilder {
 /// Fluent builder constructing a request to `CreateFileCache`.
 ///
 /// <p>Creates a new Amazon File Cache resource.</p>
-/// <p>You can use this operation with a client request token in the request that Amazon File Cache uses to ensure idempotent creation. If a cache with the specified client request token exists and the parameters match, <code>CreateFileCache</code> returns the description of the existing cache. If a cache with the specified client request token exists and the parameters don't match, this call returns <code>IncompatibleParameterError</code>. If a file cache with the specified client request token doesn't exist, <code>CreateFileCache</code> does the following:</p>
+/// <p>You can use this operation with a client request token in the request that Amazon File Cache uses to ensure idempotent creation. If a cache with the specified client request token exists and the parameters match, <code>CreateFileCache</code> returns the description of the existing cache. If a cache with the specified client request token exists and the parameters don't match, this call returns <code>IncompatibleParameterError</code>. If a file cache with the specified client request token doesn't exist, <code>CreateFileCache</code> does the following: </p>
 /// <ul>
-/// <li>
-/// <p>Creates a new, empty Amazon File Cache resourcewith an assigned ID, and an initial lifecycle state of <code>CREATING</code>.</p></li>
-/// <li>
-/// <p>Returns the description of the cache in JSON format.</p></li>
-/// </ul><note>
+/// <li> <p>Creates a new, empty Amazon File Cache resourcewith an assigned ID, and an initial lifecycle state of <code>CREATING</code>.</p> </li>
+/// <li> <p>Returns the description of the cache in JSON format.</p> </li>
+/// </ul> <note>
 /// <p>The <code>CreateFileCache</code> call returns while the cache's lifecycle state is still <code>CREATING</code>. You can check the cache creation status by calling the <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeFileCaches.html">DescribeFileCaches</a> operation, which returns the cache state along with other information.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -279,10 +277,8 @@ impl CreateFileCacheFluentBuilder {
     /// <p>A list of up to 8 configurations for data repository associations (DRAs) to be created during the cache creation. The DRAs link the cache to either an Amazon S3 data repository or a Network File System (NFS) data repository that supports the NFSv3 protocol.</p>
     /// <p>The DRA configurations must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>All configurations on the list must be of the same data repository type, either all S3 or all NFS. A cache can't link to different data repository types at the same time.</p></li>
-    /// <li>
-    /// <p>An NFS DRA must link to an NFS file system that supports the NFSv3 protocol.</p></li>
+    /// <li> <p>All configurations on the list must be of the same data repository type, either all S3 or all NFS. A cache can't link to different data repository types at the same time.</p> </li>
+    /// <li> <p>An NFS DRA must link to an NFS file system that supports the NFSv3 protocol.</p> </li>
     /// </ul>
     /// <p>DRA automatic import and automatic export is not supported.</p>
     pub fn data_repository_associations(mut self, input: crate::types::FileCacheDataRepositoryAssociation) -> Self {
@@ -292,10 +288,8 @@ impl CreateFileCacheFluentBuilder {
     /// <p>A list of up to 8 configurations for data repository associations (DRAs) to be created during the cache creation. The DRAs link the cache to either an Amazon S3 data repository or a Network File System (NFS) data repository that supports the NFSv3 protocol.</p>
     /// <p>The DRA configurations must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>All configurations on the list must be of the same data repository type, either all S3 or all NFS. A cache can't link to different data repository types at the same time.</p></li>
-    /// <li>
-    /// <p>An NFS DRA must link to an NFS file system that supports the NFSv3 protocol.</p></li>
+    /// <li> <p>All configurations on the list must be of the same data repository type, either all S3 or all NFS. A cache can't link to different data repository types at the same time.</p> </li>
+    /// <li> <p>An NFS DRA must link to an NFS file system that supports the NFSv3 protocol.</p> </li>
     /// </ul>
     /// <p>DRA automatic import and automatic export is not supported.</p>
     pub fn set_data_repository_associations(
@@ -308,10 +302,8 @@ impl CreateFileCacheFluentBuilder {
     /// <p>A list of up to 8 configurations for data repository associations (DRAs) to be created during the cache creation. The DRAs link the cache to either an Amazon S3 data repository or a Network File System (NFS) data repository that supports the NFSv3 protocol.</p>
     /// <p>The DRA configurations must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>All configurations on the list must be of the same data repository type, either all S3 or all NFS. A cache can't link to different data repository types at the same time.</p></li>
-    /// <li>
-    /// <p>An NFS DRA must link to an NFS file system that supports the NFSv3 protocol.</p></li>
+    /// <li> <p>All configurations on the list must be of the same data repository type, either all S3 or all NFS. A cache can't link to different data repository types at the same time.</p> </li>
+    /// <li> <p>An NFS DRA must link to an NFS file system that supports the NFSv3 protocol.</p> </li>
     /// </ul>
     /// <p>DRA automatic import and automatic export is not supported.</p>
     pub fn get_data_repository_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FileCacheDataRepositoryAssociation>> {

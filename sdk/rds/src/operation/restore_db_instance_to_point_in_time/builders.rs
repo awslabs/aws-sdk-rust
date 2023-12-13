@@ -23,7 +23,7 @@ impl RestoreDbInstanceToPointInTimeInputBuilder {
 /// Fluent builder constructing a request to `RestoreDBInstanceToPointInTime`.
 ///
 /// <p>Restores a DB instance to an arbitrary point in time. You can restore to any point in time before the time identified by the <code>LatestRestorableTime</code> property. You can restore to a point up to the number of days specified by the <code>BackupRetentionPeriod</code> property.</p>
-/// <p>The target database is created with most of the original configuration, but in a system-selected Availability Zone, with the default security group, the default subnet group, and the default DB parameter group. By default, the new DB instance is created as a single-AZ deployment except when the instance is a SQL Server instance that has an option group that is associated with mirroring; in this case, the instance becomes a mirrored deployment and not a single-AZ deployment.</p><note>
+/// <p>The target database is created with most of the original configuration, but in a system-selected Availability Zone, with the default security group, the default subnet group, and the default DB parameter group. By default, the new DB instance is created as a single-AZ deployment except when the instance is a SQL Server instance that has an option group that is associated with mirroring; in this case, the instance becomes a mirrored deployment and not a single-AZ deployment.</p> <note>
 /// <p>This operation doesn't apply to Aurora MySQL and Aurora PostgreSQL. For Aurora, use <code>RestoreDBClusterToPointInTime</code>.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -114,8 +114,7 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// <p>The identifier of the source DB instance from which to restore.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must match the identifier of an existing DB instance.</p></li>
+    /// <li> <p>Must match the identifier of an existing DB instance.</p> </li>
     /// </ul>
     pub fn source_db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_db_instance_identifier(input.into());
@@ -124,8 +123,7 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// <p>The identifier of the source DB instance from which to restore.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must match the identifier of an existing DB instance.</p></li>
+    /// <li> <p>Must match the identifier of an existing DB instance.</p> </li>
     /// </ul>
     pub fn set_source_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_db_instance_identifier(input);
@@ -134,8 +132,7 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// <p>The identifier of the source DB instance from which to restore.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must match the identifier of an existing DB instance.</p></li>
+    /// <li> <p>Must match the identifier of an existing DB instance.</p> </li>
     /// </ul>
     pub fn get_source_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_db_instance_identifier()
@@ -143,12 +140,9 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// <p>The name of the new DB instance to create.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li>
-    /// <p>First character must be a letter.</p></li>
-    /// <li>
-    /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     pub fn target_db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_db_instance_identifier(input.into());
@@ -157,12 +151,9 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// <p>The name of the new DB instance to create.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li>
-    /// <p>First character must be a letter.</p></li>
-    /// <li>
-    /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     pub fn set_target_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_db_instance_identifier(input);
@@ -171,12 +162,9 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// <p>The name of the new DB instance to create.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li>
-    /// <p>First character must be a letter.</p></li>
-    /// <li>
-    /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     pub fn get_target_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_target_db_instance_identifier()
@@ -184,14 +172,11 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// <p>The date and time to restore from.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be a time in Universal Coordinated Time (UTC) format.</p></li>
-    /// <li>
-    /// <p>Must be before the latest restorable time for the DB instance.</p></li>
-    /// <li>
-    /// <p>Can't be specified if the <code>UseLatestRestorableTime</code> parameter is enabled.</p></li>
+    /// <li> <p>Must be a time in Universal Coordinated Time (UTC) format.</p> </li>
+    /// <li> <p>Must be before the latest restorable time for the DB instance.</p> </li>
+    /// <li> <p>Can't be specified if the <code>UseLatestRestorableTime</code> parameter is enabled.</p> </li>
     /// </ul>
-    /// <p>Example: <code>2009-09-07T23:45:00Z</code></p>
+    /// <p>Example: <code>2009-09-07T23:45:00Z</code> </p>
     pub fn restore_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.restore_time(input);
         self
@@ -199,14 +184,11 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// <p>The date and time to restore from.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be a time in Universal Coordinated Time (UTC) format.</p></li>
-    /// <li>
-    /// <p>Must be before the latest restorable time for the DB instance.</p></li>
-    /// <li>
-    /// <p>Can't be specified if the <code>UseLatestRestorableTime</code> parameter is enabled.</p></li>
+    /// <li> <p>Must be a time in Universal Coordinated Time (UTC) format.</p> </li>
+    /// <li> <p>Must be before the latest restorable time for the DB instance.</p> </li>
+    /// <li> <p>Can't be specified if the <code>UseLatestRestorableTime</code> parameter is enabled.</p> </li>
     /// </ul>
-    /// <p>Example: <code>2009-09-07T23:45:00Z</code></p>
+    /// <p>Example: <code>2009-09-07T23:45:00Z</code> </p>
     pub fn set_restore_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_restore_time(input);
         self
@@ -214,22 +196,18 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// <p>The date and time to restore from.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be a time in Universal Coordinated Time (UTC) format.</p></li>
-    /// <li>
-    /// <p>Must be before the latest restorable time for the DB instance.</p></li>
-    /// <li>
-    /// <p>Can't be specified if the <code>UseLatestRestorableTime</code> parameter is enabled.</p></li>
+    /// <li> <p>Must be a time in Universal Coordinated Time (UTC) format.</p> </li>
+    /// <li> <p>Must be before the latest restorable time for the DB instance.</p> </li>
+    /// <li> <p>Can't be specified if the <code>UseLatestRestorableTime</code> parameter is enabled.</p> </li>
     /// </ul>
-    /// <p>Example: <code>2009-09-07T23:45:00Z</code></p>
+    /// <p>Example: <code>2009-09-07T23:45:00Z</code> </p>
     pub fn get_restore_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_restore_time()
     }
     /// <p>Specifies whether the DB instance is restored from the latest backup time. By default, the DB instance isn't restored from the latest backup time.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Can't be specified if the <code>RestoreTime</code> parameter is provided.</p></li>
+    /// <li> <p>Can't be specified if the <code>RestoreTime</code> parameter is provided.</p> </li>
     /// </ul>
     pub fn use_latest_restorable_time(mut self, input: bool) -> Self {
         self.inner = self.inner.use_latest_restorable_time(input);
@@ -238,8 +216,7 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// <p>Specifies whether the DB instance is restored from the latest backup time. By default, the DB instance isn't restored from the latest backup time.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Can't be specified if the <code>RestoreTime</code> parameter is provided.</p></li>
+    /// <li> <p>Can't be specified if the <code>RestoreTime</code> parameter is provided.</p> </li>
     /// </ul>
     pub fn set_use_latest_restorable_time(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_use_latest_restorable_time(input);
@@ -248,8 +225,7 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// <p>Specifies whether the DB instance is restored from the latest backup time. By default, the DB instance isn't restored from the latest backup time.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Can't be specified if the <code>RestoreTime</code> parameter is provided.</p></li>
+    /// <li> <p>Can't be specified if the <code>RestoreTime</code> parameter is provided.</p> </li>
     /// </ul>
     pub fn get_use_latest_restorable_time(&self) -> &::std::option::Option<bool> {
         self.inner.get_use_latest_restorable_time()
@@ -275,8 +251,7 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// <p>Default: The same port as the original DB instance.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>The value must be <code>1150-65535</code>.</p></li>
+    /// <li> <p>The value must be <code>1150-65535</code>.</p> </li>
     /// </ul>
     pub fn port(mut self, input: i32) -> Self {
         self.inner = self.inner.port(input);
@@ -286,8 +261,7 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// <p>Default: The same port as the original DB instance.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>The value must be <code>1150-65535</code>.</p></li>
+    /// <li> <p>The value must be <code>1150-65535</code>.</p> </li>
     /// </ul>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_port(input);
@@ -297,8 +271,7 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// <p>Default: The same port as the original DB instance.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>The value must be <code>1150-65535</code>.</p></li>
+    /// <li> <p>The value must be <code>1150-65535</code>.</p> </li>
     /// </ul>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
         self.inner.get_port()
@@ -307,10 +280,9 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// <p>Default: A random, system-chosen Availability Zone.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>You can't specify the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.</p></li>
+    /// <li> <p>You can't specify the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.</p> </li>
     /// </ul>
-    /// <p>Example: <code>us-east-1a</code></p>
+    /// <p>Example: <code>us-east-1a</code> </p>
     pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.availability_zone(input.into());
         self
@@ -319,10 +291,9 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// <p>Default: A random, system-chosen Availability Zone.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>You can't specify the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.</p></li>
+    /// <li> <p>You can't specify the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.</p> </li>
     /// </ul>
-    /// <p>Example: <code>us-east-1a</code></p>
+    /// <p>Example: <code>us-east-1a</code> </p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_availability_zone(input);
         self
@@ -331,20 +302,18 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// <p>Default: A random, system-chosen Availability Zone.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>You can't specify the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.</p></li>
+    /// <li> <p>You can't specify the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.</p> </li>
     /// </ul>
-    /// <p>Example: <code>us-east-1a</code></p>
+    /// <p>Example: <code>us-east-1a</code> </p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_availability_zone()
     }
     /// <p>The DB subnet group name to use for the new instance.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>If supplied, must match the name of an existing DB subnet group.</p></li>
+    /// <li> <p>If supplied, must match the name of an existing DB subnet group.</p> </li>
     /// </ul>
-    /// <p>Example: <code>mydbsubnetgroup</code></p>
+    /// <p>Example: <code>mydbsubnetgroup</code> </p>
     pub fn db_subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_subnet_group_name(input.into());
         self
@@ -352,10 +321,9 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// <p>The DB subnet group name to use for the new instance.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>If supplied, must match the name of an existing DB subnet group.</p></li>
+    /// <li> <p>If supplied, must match the name of an existing DB subnet group.</p> </li>
     /// </ul>
-    /// <p>Example: <code>mydbsubnetgroup</code></p>
+    /// <p>Example: <code>mydbsubnetgroup</code> </p>
     pub fn set_db_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_subnet_group_name(input);
         self
@@ -363,10 +331,9 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// <p>The DB subnet group name to use for the new instance.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>If supplied, must match the name of an existing DB subnet group.</p></li>
+    /// <li> <p>If supplied, must match the name of an existing DB subnet group.</p> </li>
     /// </ul>
-    /// <p>Example: <code>mydbsubnetgroup</code></p>
+    /// <p>Example: <code>mydbsubnetgroup</code> </p>
     pub fn get_db_subnet_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_subnet_group_name()
     }
@@ -374,8 +341,7 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>You can't specify the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.</p></li>
+    /// <li> <p>You can't specify the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.</p> </li>
     /// </ul>
     pub fn multi_az(mut self, input: bool) -> Self {
         self.inner = self.inner.multi_az(input);
@@ -385,8 +351,7 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>You can't specify the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.</p></li>
+    /// <li> <p>You can't specify the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.</p> </li>
     /// </ul>
     pub fn set_multi_az(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_multi_az(input);
@@ -396,8 +361,7 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>You can't specify the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.</p></li>
+    /// <li> <p>You can't specify the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.</p> </li>
     /// </ul>
     pub fn get_multi_az(&self) -> &::std::option::Option<bool> {
         self.inner.get_multi_az()
@@ -444,7 +408,7 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     }
     /// <p>The license model information for the restored DB instance.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    /// <p>Valid Values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code></p>
+    /// <p>Valid Values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code> </p>
     /// <p>Default: Same as the source.</p>
     pub fn license_model(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.license_model(input.into());
@@ -452,7 +416,7 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     }
     /// <p>The license model information for the restored DB instance.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    /// <p>Valid Values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code></p>
+    /// <p>Valid Values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code> </p>
     /// <p>Default: Same as the source.</p>
     pub fn set_license_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_license_model(input);
@@ -460,7 +424,7 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     }
     /// <p>The license model information for the restored DB instance.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    /// <p>Valid Values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code></p>
+    /// <p>Valid Values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code> </p>
     /// <p>Default: Same as the source.</p>
     pub fn get_license_model(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_license_model()
@@ -468,14 +432,10 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// <p>The database name for the restored DB instance.</p>
     /// <p>This parameter doesn't apply to the following DB instances:</p>
     /// <ul>
-    /// <li>
-    /// <p>RDS Custom</p></li>
-    /// <li>
-    /// <p>RDS for Db2</p></li>
-    /// <li>
-    /// <p>RDS for MariaDB</p></li>
-    /// <li>
-    /// <p>RDS for MySQL</p></li>
+    /// <li> <p>RDS Custom</p> </li>
+    /// <li> <p>RDS for Db2</p> </li>
+    /// <li> <p>RDS for MariaDB</p> </li>
+    /// <li> <p>RDS for MySQL</p> </li>
     /// </ul>
     pub fn db_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_name(input.into());
@@ -484,14 +444,10 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// <p>The database name for the restored DB instance.</p>
     /// <p>This parameter doesn't apply to the following DB instances:</p>
     /// <ul>
-    /// <li>
-    /// <p>RDS Custom</p></li>
-    /// <li>
-    /// <p>RDS for Db2</p></li>
-    /// <li>
-    /// <p>RDS for MariaDB</p></li>
-    /// <li>
-    /// <p>RDS for MySQL</p></li>
+    /// <li> <p>RDS Custom</p> </li>
+    /// <li> <p>RDS for Db2</p> </li>
+    /// <li> <p>RDS for MariaDB</p> </li>
+    /// <li> <p>RDS for MySQL</p> </li>
     /// </ul>
     pub fn set_db_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_name(input);
@@ -500,14 +456,10 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// <p>The database name for the restored DB instance.</p>
     /// <p>This parameter doesn't apply to the following DB instances:</p>
     /// <ul>
-    /// <li>
-    /// <p>RDS Custom</p></li>
-    /// <li>
-    /// <p>RDS for Db2</p></li>
-    /// <li>
-    /// <p>RDS for MariaDB</p></li>
-    /// <li>
-    /// <p>RDS for MySQL</p></li>
+    /// <li> <p>RDS Custom</p> </li>
+    /// <li> <p>RDS for Db2</p> </li>
+    /// <li> <p>RDS for MariaDB</p> </li>
+    /// <li> <p>RDS for MySQL</p> </li>
     /// </ul>
     pub fn get_db_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_name()
@@ -516,38 +468,24 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>db2-ae</code></p></li>
-    /// <li>
-    /// <p><code>db2-se</code></p></li>
-    /// <li>
-    /// <p><code>mariadb</code></p></li>
-    /// <li>
-    /// <p><code>mysql</code></p></li>
-    /// <li>
-    /// <p><code>oracle-ee</code></p></li>
-    /// <li>
-    /// <p><code>oracle-ee-cdb</code></p></li>
-    /// <li>
-    /// <p><code>oracle-se2</code></p></li>
-    /// <li>
-    /// <p><code>oracle-se2-cdb</code></p></li>
-    /// <li>
-    /// <p><code>postgres</code></p></li>
-    /// <li>
-    /// <p><code>sqlserver-ee</code></p></li>
-    /// <li>
-    /// <p><code>sqlserver-se</code></p></li>
-    /// <li>
-    /// <p><code>sqlserver-ex</code></p></li>
-    /// <li>
-    /// <p><code>sqlserver-web</code></p></li>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
+    /// <li> <p> <code>mariadb</code> </p> </li>
+    /// <li> <p> <code>mysql</code> </p> </li>
+    /// <li> <p> <code>oracle-ee</code> </p> </li>
+    /// <li> <p> <code>oracle-ee-cdb</code> </p> </li>
+    /// <li> <p> <code>oracle-se2</code> </p> </li>
+    /// <li> <p> <code>oracle-se2-cdb</code> </p> </li>
+    /// <li> <p> <code>postgres</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ee</code> </p> </li>
+    /// <li> <p> <code>sqlserver-se</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ex</code> </p> </li>
+    /// <li> <p> <code>sqlserver-web</code> </p> </li>
     /// </ul>
     /// <p>Default: The same as source</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be compatible with the engine of the source.</p></li>
+    /// <li> <p>Must be compatible with the engine of the source.</p> </li>
     /// </ul>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.engine(input.into());
@@ -557,38 +495,24 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>db2-ae</code></p></li>
-    /// <li>
-    /// <p><code>db2-se</code></p></li>
-    /// <li>
-    /// <p><code>mariadb</code></p></li>
-    /// <li>
-    /// <p><code>mysql</code></p></li>
-    /// <li>
-    /// <p><code>oracle-ee</code></p></li>
-    /// <li>
-    /// <p><code>oracle-ee-cdb</code></p></li>
-    /// <li>
-    /// <p><code>oracle-se2</code></p></li>
-    /// <li>
-    /// <p><code>oracle-se2-cdb</code></p></li>
-    /// <li>
-    /// <p><code>postgres</code></p></li>
-    /// <li>
-    /// <p><code>sqlserver-ee</code></p></li>
-    /// <li>
-    /// <p><code>sqlserver-se</code></p></li>
-    /// <li>
-    /// <p><code>sqlserver-ex</code></p></li>
-    /// <li>
-    /// <p><code>sqlserver-web</code></p></li>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
+    /// <li> <p> <code>mariadb</code> </p> </li>
+    /// <li> <p> <code>mysql</code> </p> </li>
+    /// <li> <p> <code>oracle-ee</code> </p> </li>
+    /// <li> <p> <code>oracle-ee-cdb</code> </p> </li>
+    /// <li> <p> <code>oracle-se2</code> </p> </li>
+    /// <li> <p> <code>oracle-se2-cdb</code> </p> </li>
+    /// <li> <p> <code>postgres</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ee</code> </p> </li>
+    /// <li> <p> <code>sqlserver-se</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ex</code> </p> </li>
+    /// <li> <p> <code>sqlserver-web</code> </p> </li>
     /// </ul>
     /// <p>Default: The same as source</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be compatible with the engine of the source.</p></li>
+    /// <li> <p>Must be compatible with the engine of the source.</p> </li>
     /// </ul>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_engine(input);
@@ -598,38 +522,24 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>db2-ae</code></p></li>
-    /// <li>
-    /// <p><code>db2-se</code></p></li>
-    /// <li>
-    /// <p><code>mariadb</code></p></li>
-    /// <li>
-    /// <p><code>mysql</code></p></li>
-    /// <li>
-    /// <p><code>oracle-ee</code></p></li>
-    /// <li>
-    /// <p><code>oracle-ee-cdb</code></p></li>
-    /// <li>
-    /// <p><code>oracle-se2</code></p></li>
-    /// <li>
-    /// <p><code>oracle-se2-cdb</code></p></li>
-    /// <li>
-    /// <p><code>postgres</code></p></li>
-    /// <li>
-    /// <p><code>sqlserver-ee</code></p></li>
-    /// <li>
-    /// <p><code>sqlserver-se</code></p></li>
-    /// <li>
-    /// <p><code>sqlserver-ex</code></p></li>
-    /// <li>
-    /// <p><code>sqlserver-web</code></p></li>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
+    /// <li> <p> <code>mariadb</code> </p> </li>
+    /// <li> <p> <code>mysql</code> </p> </li>
+    /// <li> <p> <code>oracle-ee</code> </p> </li>
+    /// <li> <p> <code>oracle-ee-cdb</code> </p> </li>
+    /// <li> <p> <code>oracle-se2</code> </p> </li>
+    /// <li> <p> <code>oracle-se2-cdb</code> </p> </li>
+    /// <li> <p> <code>postgres</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ee</code> </p> </li>
+    /// <li> <p> <code>sqlserver-se</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ex</code> </p> </li>
+    /// <li> <p> <code>sqlserver-web</code> </p> </li>
     /// </ul>
     /// <p>Default: The same as source</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be compatible with the engine of the source.</p></li>
+    /// <li> <p>Must be compatible with the engine of the source.</p> </li>
     /// </ul>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_engine()
@@ -638,8 +548,7 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// <p>This setting doesn't apply to SQL Server.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be an integer greater than 1000.</p></li>
+    /// <li> <p>Must be an integer greater than 1000.</p> </li>
     /// </ul>
     pub fn iops(mut self, input: i32) -> Self {
         self.inner = self.inner.iops(input);
@@ -649,8 +558,7 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// <p>This setting doesn't apply to SQL Server.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be an integer greater than 1000.</p></li>
+    /// <li> <p>Must be an integer greater than 1000.</p> </li>
     /// </ul>
     pub fn set_iops(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_iops(input);
@@ -660,8 +568,7 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// <p>This setting doesn't apply to SQL Server.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be an integer greater than 1000.</p></li>
+    /// <li> <p>Must be an integer greater than 1000.</p> </li>
     /// </ul>
     pub fn get_iops(&self) -> &::std::option::Option<i32> {
         self.inner.get_iops()
@@ -704,51 +611,48 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
     /// <p>The storage type to associate with the DB instance.</p>
-    /// <p>Valid Values: <code>gp2 | gp3 | io1 | standard</code></p>
+    /// <p>Valid Values: <code>gp2 | gp3 | io1 | standard</code> </p>
     /// <p>Default: <code>io1</code>, if the <code>Iops</code> parameter is specified. Otherwise, <code>gp2</code>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p></li>
+    /// <li> <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p> </li>
     /// </ul>
     pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.storage_type(input.into());
         self
     }
     /// <p>The storage type to associate with the DB instance.</p>
-    /// <p>Valid Values: <code>gp2 | gp3 | io1 | standard</code></p>
+    /// <p>Valid Values: <code>gp2 | gp3 | io1 | standard</code> </p>
     /// <p>Default: <code>io1</code>, if the <code>Iops</code> parameter is specified. Otherwise, <code>gp2</code>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p></li>
+    /// <li> <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p> </li>
     /// </ul>
     pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_storage_type(input);
         self
     }
     /// <p>The storage type to associate with the DB instance.</p>
-    /// <p>Valid Values: <code>gp2 | gp3 | io1 | standard</code></p>
+    /// <p>Valid Values: <code>gp2 | gp3 | io1 | standard</code> </p>
     /// <p>Default: <code>io1</code>, if the <code>Iops</code> parameter is specified. Otherwise, <code>gp2</code>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p></li>
+    /// <li> <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p> </li>
     /// </ul>
     pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_storage_type()
@@ -848,10 +752,9 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// <p>The fully qualified domain name (FQDN) of an Active Directory domain.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Can't be longer than 64 characters.</p></li>
+    /// <li> <p>Can't be longer than 64 characters.</p> </li>
     /// </ul>
-    /// <p>Example: <code>mymanagedADtest.mymanagedAD.mydomain</code></p>
+    /// <p>Example: <code>mymanagedADtest.mymanagedAD.mydomain</code> </p>
     pub fn domain_fqdn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_fqdn(input.into());
         self
@@ -859,10 +762,9 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// <p>The fully qualified domain name (FQDN) of an Active Directory domain.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Can't be longer than 64 characters.</p></li>
+    /// <li> <p>Can't be longer than 64 characters.</p> </li>
     /// </ul>
-    /// <p>Example: <code>mymanagedADtest.mymanagedAD.mydomain</code></p>
+    /// <p>Example: <code>mymanagedADtest.mymanagedAD.mydomain</code> </p>
     pub fn set_domain_fqdn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_fqdn(input);
         self
@@ -870,22 +772,19 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// <p>The fully qualified domain name (FQDN) of an Active Directory domain.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Can't be longer than 64 characters.</p></li>
+    /// <li> <p>Can't be longer than 64 characters.</p> </li>
     /// </ul>
-    /// <p>Example: <code>mymanagedADtest.mymanagedAD.mydomain</code></p>
+    /// <p>Example: <code>mymanagedADtest.mymanagedAD.mydomain</code> </p>
     pub fn get_domain_fqdn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_fqdn()
     }
     /// <p>The Active Directory organizational unit for your DB instance to join.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be in the distinguished name format.</p></li>
-    /// <li>
-    /// <p>Can't be longer than 64 characters.</p></li>
+    /// <li> <p>Must be in the distinguished name format.</p> </li>
+    /// <li> <p>Can't be longer than 64 characters.</p> </li>
     /// </ul>
-    /// <p>Example: <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code></p>
+    /// <p>Example: <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code> </p>
     pub fn domain_ou(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_ou(input.into());
         self
@@ -893,12 +792,10 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// <p>The Active Directory organizational unit for your DB instance to join.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be in the distinguished name format.</p></li>
-    /// <li>
-    /// <p>Can't be longer than 64 characters.</p></li>
+    /// <li> <p>Must be in the distinguished name format.</p> </li>
+    /// <li> <p>Can't be longer than 64 characters.</p> </li>
     /// </ul>
-    /// <p>Example: <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code></p>
+    /// <p>Example: <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code> </p>
     pub fn set_domain_ou(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_ou(input);
         self
@@ -906,22 +803,19 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// <p>The Active Directory organizational unit for your DB instance to join.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be in the distinguished name format.</p></li>
-    /// <li>
-    /// <p>Can't be longer than 64 characters.</p></li>
+    /// <li> <p>Must be in the distinguished name format.</p> </li>
+    /// <li> <p>Can't be longer than 64 characters.</p> </li>
     /// </ul>
-    /// <p>Example: <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code></p>
+    /// <p>Example: <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code> </p>
     pub fn get_domain_ou(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_ou()
     }
     /// <p>The ARN for the Secrets Manager secret with the credentials for the user joining the domain.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Can't be longer than 64 characters.</p></li>
+    /// <li> <p>Can't be longer than 64 characters.</p> </li>
     /// </ul>
-    /// <p>Example: <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code></p>
+    /// <p>Example: <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code> </p>
     pub fn domain_auth_secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_auth_secret_arn(input.into());
         self
@@ -929,10 +823,9 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// <p>The ARN for the Secrets Manager secret with the credentials for the user joining the domain.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Can't be longer than 64 characters.</p></li>
+    /// <li> <p>Can't be longer than 64 characters.</p> </li>
     /// </ul>
-    /// <p>Example: <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code></p>
+    /// <p>Example: <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code> </p>
     pub fn set_domain_auth_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_auth_secret_arn(input);
         self
@@ -940,10 +833,9 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// <p>The ARN for the Secrets Manager secret with the credentials for the user joining the domain.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Can't be longer than 64 characters.</p></li>
+    /// <li> <p>Can't be longer than 64 characters.</p> </li>
     /// </ul>
-    /// <p>Example: <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code></p>
+    /// <p>Example: <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code> </p>
     pub fn get_domain_auth_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_auth_secret_arn()
     }
@@ -954,10 +846,9 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// <p>The IPv4 DNS IP addresses of your primary and secondary Active Directory domain controllers.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Two IP addresses must be provided. If there isn't a secondary domain controller, use the IP address of the primary domain controller for both entries in the list.</p></li>
+    /// <li> <p>Two IP addresses must be provided. If there isn't a secondary domain controller, use the IP address of the primary domain controller for both entries in the list.</p> </li>
     /// </ul>
-    /// <p>Example: <code>123.124.125.126,234.235.236.237</code></p>
+    /// <p>Example: <code>123.124.125.126,234.235.236.237</code> </p>
     pub fn domain_dns_ips(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_dns_ips(input.into());
         self
@@ -965,10 +856,9 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// <p>The IPv4 DNS IP addresses of your primary and secondary Active Directory domain controllers.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Two IP addresses must be provided. If there isn't a secondary domain controller, use the IP address of the primary domain controller for both entries in the list.</p></li>
+    /// <li> <p>Two IP addresses must be provided. If there isn't a secondary domain controller, use the IP address of the primary domain controller for both entries in the list.</p> </li>
     /// </ul>
-    /// <p>Example: <code>123.124.125.126,234.235.236.237</code></p>
+    /// <p>Example: <code>123.124.125.126,234.235.236.237</code> </p>
     pub fn set_domain_dns_ips(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_domain_dns_ips(input);
         self
@@ -976,30 +866,29 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// <p>The IPv4 DNS IP addresses of your primary and secondary Active Directory domain controllers.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Two IP addresses must be provided. If there isn't a secondary domain controller, use the IP address of the primary domain controller for both entries in the list.</p></li>
+    /// <li> <p>Two IP addresses must be provided. If there isn't a secondary domain controller, use the IP address of the primary domain controller for both entries in the list.</p> </li>
     /// </ul>
-    /// <p>Example: <code>123.124.125.126,234.235.236.237</code></p>
+    /// <p>Example: <code>123.124.125.126,234.235.236.237</code> </p>
     pub fn get_domain_dns_ips(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_domain_dns_ips()
     }
     /// <p>Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    /// <p>For more information about IAM database authentication, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>For more information about IAM database authentication, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub fn enable_iam_database_authentication(mut self, input: bool) -> Self {
         self.inner = self.inner.enable_iam_database_authentication(input);
         self
     }
     /// <p>Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    /// <p>For more information about IAM database authentication, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>For more information about IAM database authentication, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub fn set_enable_iam_database_authentication(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable_iam_database_authentication(input);
         self
     }
     /// <p>Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    /// <p>For more information about IAM database authentication, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>For more information about IAM database authentication, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub fn get_enable_iam_database_authentication(&self) -> &::std::option::Option<bool> {
         self.inner.get_enable_iam_database_authentication()
     }
@@ -1067,14 +956,10 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>If supplied, must match the name of an existing DB parameter group.</p></li>
-    /// <li>
-    /// <p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
-    /// <li>
-    /// <p>First character must be a letter.</p></li>
-    /// <li>
-    /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li> <p>If supplied, must match the name of an existing DB parameter group.</p> </li>
+    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     pub fn db_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_parameter_group_name(input.into());
@@ -1085,14 +970,10 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>If supplied, must match the name of an existing DB parameter group.</p></li>
-    /// <li>
-    /// <p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
-    /// <li>
-    /// <p>First character must be a letter.</p></li>
-    /// <li>
-    /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li> <p>If supplied, must match the name of an existing DB parameter group.</p> </li>
+    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     pub fn set_db_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_parameter_group_name(input);
@@ -1103,14 +984,10 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>If supplied, must match the name of an existing DB parameter group.</p></li>
-    /// <li>
-    /// <p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
-    /// <li>
-    /// <p>First character must be a letter.</p></li>
-    /// <li>
-    /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li> <p>If supplied, must match the name of an existing DB parameter group.</p> </li>
+    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     pub fn get_db_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_parameter_group_name()
@@ -1208,12 +1085,9 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     }
     /// <p>The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance. The instance profile must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>The profile must exist in your account.</p></li>
-    /// <li>
-    /// <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p></li>
-    /// <li>
-    /// <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p></li>
+    /// <li> <p>The profile must exist in your account.</p> </li>
+    /// <li> <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p> </li>
+    /// <li> <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p> </li>
     /// </ul>
     /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting is required for RDS Custom.</p>
@@ -1223,12 +1097,9 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     }
     /// <p>The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance. The instance profile must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>The profile must exist in your account.</p></li>
-    /// <li>
-    /// <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p></li>
-    /// <li>
-    /// <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p></li>
+    /// <li> <p>The profile must exist in your account.</p> </li>
+    /// <li> <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p> </li>
+    /// <li> <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p> </li>
     /// </ul>
     /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting is required for RDS Custom.</p>
@@ -1238,12 +1109,9 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     }
     /// <p>The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance. The instance profile must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>The profile must exist in your account.</p></li>
-    /// <li>
-    /// <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p></li>
-    /// <li>
-    /// <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p></li>
+    /// <li> <p>The profile must exist in your account.</p> </li>
+    /// <li> <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p> </li>
+    /// <li> <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p> </li>
     /// </ul>
     /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting is required for RDS Custom.</p>
@@ -1253,12 +1121,10 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// <p>The location for storing automated backups and manual snapshots for the restored DB instance.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>outposts</code> (Amazon Web Services Outposts)</p></li>
-    /// <li>
-    /// <p><code>region</code> (Amazon Web Services Region)</p></li>
+    /// <li> <p> <code>outposts</code> (Amazon Web Services Outposts)</p> </li>
+    /// <li> <p> <code>region</code> (Amazon Web Services Region)</p> </li>
     /// </ul>
-    /// <p>Default: <code>region</code></p>
+    /// <p>Default: <code>region</code> </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub fn backup_target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.backup_target(input.into());
@@ -1267,12 +1133,10 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// <p>The location for storing automated backups and manual snapshots for the restored DB instance.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>outposts</code> (Amazon Web Services Outposts)</p></li>
-    /// <li>
-    /// <p><code>region</code> (Amazon Web Services Region)</p></li>
+    /// <li> <p> <code>outposts</code> (Amazon Web Services Outposts)</p> </li>
+    /// <li> <p> <code>region</code> (Amazon Web Services Region)</p> </li>
     /// </ul>
-    /// <p>Default: <code>region</code></p>
+    /// <p>Default: <code>region</code> </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub fn set_backup_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_backup_target(input);
@@ -1281,25 +1145,21 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// <p>The location for storing automated backups and manual snapshots for the restored DB instance.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>outposts</code> (Amazon Web Services Outposts)</p></li>
-    /// <li>
-    /// <p><code>region</code> (Amazon Web Services Region)</p></li>
+    /// <li> <p> <code>outposts</code> (Amazon Web Services Outposts)</p> </li>
+    /// <li> <p> <code>region</code> (Amazon Web Services Region)</p> </li>
     /// </ul>
-    /// <p>Default: <code>region</code></p>
+    /// <p>Default: <code>region</code> </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub fn get_backup_target(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_backup_target()
     }
     /// <p>The network type of the DB instance.</p>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>IPV4</code></p></li>
-    /// <li>
-    /// <p><code>DUAL</code></p></li>
+    /// <li> <p> <code>IPV4</code> </p> </li>
+    /// <li> <p> <code>DUAL</code> </p> </li>
     /// </ul>
     pub fn network_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.network_type(input.into());
@@ -1307,13 +1167,11 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     }
     /// <p>The network type of the DB instance.</p>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>IPV4</code></p></li>
-    /// <li>
-    /// <p><code>DUAL</code></p></li>
+    /// <li> <p> <code>IPV4</code> </p> </li>
+    /// <li> <p> <code>DUAL</code> </p> </li>
     /// </ul>
     pub fn set_network_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_network_type(input);
@@ -1321,13 +1179,11 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     }
     /// <p>The network type of the DB instance.</p>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>IPV4</code></p></li>
-    /// <li>
-    /// <p><code>DUAL</code></p></li>
+    /// <li> <p> <code>IPV4</code> </p> </li>
+    /// <li> <p> <code>DUAL</code> </p> </li>
     /// </ul>
     pub fn get_network_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_network_type()
@@ -1349,21 +1205,21 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     pub fn get_storage_throughput(&self) -> &::std::option::Option<i32> {
         self.inner.get_storage_throughput()
     }
-    /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p><note>
+    /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p> <note>
     /// <p>Be sure to allocate enough storage for your new DB instance so that the restore operation can succeed. You can also allocate additional storage for future growth.</p>
     /// </note>
     pub fn allocated_storage(mut self, input: i32) -> Self {
         self.inner = self.inner.allocated_storage(input);
         self
     }
-    /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p><note>
+    /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p> <note>
     /// <p>Be sure to allocate enough storage for your new DB instance so that the restore operation can succeed. You can also allocate additional storage for future growth.</p>
     /// </note>
     pub fn set_allocated_storage(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_allocated_storage(input);
         self
     }
-    /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p><note>
+    /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p> <note>
     /// <p>Be sure to allocate enough storage for your new DB instance so that the restore operation can succeed. You can also allocate additional storage for future growth.</p>
     /// </note>
     pub fn get_allocated_storage(&self) -> &::std::option::Option<i32> {

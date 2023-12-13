@@ -22,7 +22,7 @@ impl PutResourcePolicyInputBuilder {
 }
 /// Fluent builder constructing a request to `PutResourcePolicy`.
 ///
-/// <p>Sets the resource policy to grant one or more Amazon Web Services services and accounts permissions to access X-Ray. Each resource policy will be associated with a specific Amazon Web Services account. Each Amazon Web Services account can have a maximum of 5 resource policies, and each policy name must be unique within that account. The maximum size of each resource policy is 5KB.</p>
+/// <p> Sets the resource policy to grant one or more Amazon Web Services services and accounts permissions to access X-Ray. Each resource policy will be associated with a specific Amazon Web Services account. Each Amazon Web Services account can have a maximum of 5 resource policies, and each policy name must be unique within that account. The maximum size of each resource policy is 5KB. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutResourcePolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -137,23 +137,23 @@ impl PutResourcePolicyFluentBuilder {
         self.inner.get_policy_document()
     }
     /// <p>Specifies a specific policy revision, to ensure an atomic create operation. By default the resource policy is created if it does not exist, or updated with an incremented revision id. The revision id is unique to each policy in the account.</p>
-    /// <p>If the policy revision id does not match the latest revision id, the operation will fail with an <code>InvalidPolicyRevisionIdException</code> exception. You can also provide a <code>PolicyRevisionId</code> of 0. In this case, the operation will fail with an <code>InvalidPolicyRevisionIdException</code> exception if a resource policy with the same name already exists.</p>
+    /// <p>If the policy revision id does not match the latest revision id, the operation will fail with an <code>InvalidPolicyRevisionIdException</code> exception. You can also provide a <code>PolicyRevisionId</code> of 0. In this case, the operation will fail with an <code>InvalidPolicyRevisionIdException</code> exception if a resource policy with the same name already exists. </p>
     pub fn policy_revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_revision_id(input.into());
         self
     }
     /// <p>Specifies a specific policy revision, to ensure an atomic create operation. By default the resource policy is created if it does not exist, or updated with an incremented revision id. The revision id is unique to each policy in the account.</p>
-    /// <p>If the policy revision id does not match the latest revision id, the operation will fail with an <code>InvalidPolicyRevisionIdException</code> exception. You can also provide a <code>PolicyRevisionId</code> of 0. In this case, the operation will fail with an <code>InvalidPolicyRevisionIdException</code> exception if a resource policy with the same name already exists.</p>
+    /// <p>If the policy revision id does not match the latest revision id, the operation will fail with an <code>InvalidPolicyRevisionIdException</code> exception. You can also provide a <code>PolicyRevisionId</code> of 0. In this case, the operation will fail with an <code>InvalidPolicyRevisionIdException</code> exception if a resource policy with the same name already exists. </p>
     pub fn set_policy_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_revision_id(input);
         self
     }
     /// <p>Specifies a specific policy revision, to ensure an atomic create operation. By default the resource policy is created if it does not exist, or updated with an incremented revision id. The revision id is unique to each policy in the account.</p>
-    /// <p>If the policy revision id does not match the latest revision id, the operation will fail with an <code>InvalidPolicyRevisionIdException</code> exception. You can also provide a <code>PolicyRevisionId</code> of 0. In this case, the operation will fail with an <code>InvalidPolicyRevisionIdException</code> exception if a resource policy with the same name already exists.</p>
+    /// <p>If the policy revision id does not match the latest revision id, the operation will fail with an <code>InvalidPolicyRevisionIdException</code> exception. You can also provide a <code>PolicyRevisionId</code> of 0. In this case, the operation will fail with an <code>InvalidPolicyRevisionIdException</code> exception if a resource policy with the same name already exists. </p>
     pub fn get_policy_revision_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_policy_revision_id()
     }
-    /// <p>A flag to indicate whether to bypass the resource policy lockout safety check.</p><important>
+    /// <p>A flag to indicate whether to bypass the resource policy lockout safety check.</p> <important>
     /// <p>Setting this value to true increases the risk that the policy becomes unmanageable. Do not set this value to true indiscriminately.</p>
     /// </important>
     /// <p>Use this parameter only when you include a policy in the request and you intend to prevent the principal that is making the request from making a subsequent <code>PutResourcePolicy</code> request.</p>
@@ -162,7 +162,7 @@ impl PutResourcePolicyFluentBuilder {
         self.inner = self.inner.bypass_policy_lockout_check(input);
         self
     }
-    /// <p>A flag to indicate whether to bypass the resource policy lockout safety check.</p><important>
+    /// <p>A flag to indicate whether to bypass the resource policy lockout safety check.</p> <important>
     /// <p>Setting this value to true increases the risk that the policy becomes unmanageable. Do not set this value to true indiscriminately.</p>
     /// </important>
     /// <p>Use this parameter only when you include a policy in the request and you intend to prevent the principal that is making the request from making a subsequent <code>PutResourcePolicy</code> request.</p>
@@ -171,7 +171,7 @@ impl PutResourcePolicyFluentBuilder {
         self.inner = self.inner.set_bypass_policy_lockout_check(input);
         self
     }
-    /// <p>A flag to indicate whether to bypass the resource policy lockout safety check.</p><important>
+    /// <p>A flag to indicate whether to bypass the resource policy lockout safety check.</p> <important>
     /// <p>Setting this value to true increases the risk that the policy becomes unmanageable. Do not set this value to true indiscriminately.</p>
     /// </important>
     /// <p>Use this parameter only when you include a policy in the request and you intend to prevent the principal that is making the request from making a subsequent <code>PutResourcePolicy</code> request.</p>

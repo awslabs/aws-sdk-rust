@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendBulkTemplatedEmailOutput {
-    /// <p>One object per intended recipient. Check each response object and retry any messages with a failure status. (Note that order of responses will be respective to order of destinations in the request.)Receipt rules enable you to specify which actions</p>
+    /// <p>One object per intended recipient. Check each response object and retry any messages with a failure status. (Note that order of responses will be respective to order of destinations in the request.)Receipt rules enable you to specify which actions </p>
     pub status: ::std::vec::Vec<crate::types::BulkEmailDestinationStatus>,
     _request_id: Option<String>,
 }
 impl SendBulkTemplatedEmailOutput {
-    /// <p>One object per intended recipient. Check each response object and retry any messages with a failure status. (Note that order of responses will be respective to order of destinations in the request.)Receipt rules enable you to specify which actions</p>
+    /// <p>One object per intended recipient. Check each response object and retry any messages with a failure status. (Note that order of responses will be respective to order of destinations in the request.)Receipt rules enable you to specify which actions </p>
     pub fn status(&self) -> &[crate::types::BulkEmailDestinationStatus] {
         use std::ops::Deref;
         self.status.deref()
@@ -38,19 +38,19 @@ impl SendBulkTemplatedEmailOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_status`](Self::set_status).
     ///
-    /// <p>One object per intended recipient. Check each response object and retry any messages with a failure status. (Note that order of responses will be respective to order of destinations in the request.)Receipt rules enable you to specify which actions</p>
+    /// <p>One object per intended recipient. Check each response object and retry any messages with a failure status. (Note that order of responses will be respective to order of destinations in the request.)Receipt rules enable you to specify which actions </p>
     pub fn status(mut self, input: crate::types::BulkEmailDestinationStatus) -> Self {
         let mut v = self.status.unwrap_or_default();
         v.push(input);
         self.status = ::std::option::Option::Some(v);
         self
     }
-    /// <p>One object per intended recipient. Check each response object and retry any messages with a failure status. (Note that order of responses will be respective to order of destinations in the request.)Receipt rules enable you to specify which actions</p>
+    /// <p>One object per intended recipient. Check each response object and retry any messages with a failure status. (Note that order of responses will be respective to order of destinations in the request.)Receipt rules enable you to specify which actions </p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BulkEmailDestinationStatus>>) -> Self {
         self.status = input;
         self
     }
-    /// <p>One object per intended recipient. Check each response object and retry any messages with a failure status. (Note that order of responses will be respective to order of destinations in the request.)Receipt rules enable you to specify which actions</p>
+    /// <p>One object per intended recipient. Check each response object and retry any messages with a failure status. (Note that order of responses will be respective to order of destinations in the request.)Receipt rules enable you to specify which actions </p>
     pub fn get_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BulkEmailDestinationStatus>> {
         &self.status
     }

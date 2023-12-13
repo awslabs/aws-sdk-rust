@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDocumentClassifierInput {
-    /// <p>The Amazon Resource Name (ARN) that identifies the document classifier.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. </p>
     pub document_classifier_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDocumentClassifierInput {
-    /// <p>The Amazon Resource Name (ARN) that identifies the document classifier.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. </p>
     pub fn document_classifier_arn(&self) -> ::std::option::Option<&str> {
         self.document_classifier_arn.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct DeleteDocumentClassifierInputBuilder {
     pub(crate) document_classifier_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDocumentClassifierInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) that identifies the document classifier.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. </p>
     /// This field is required.
     pub fn document_classifier_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_classifier_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that identifies the document classifier.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. </p>
     pub fn set_document_classifier_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document_classifier_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that identifies the document classifier.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. </p>
     pub fn get_document_classifier_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.document_classifier_arn
     }

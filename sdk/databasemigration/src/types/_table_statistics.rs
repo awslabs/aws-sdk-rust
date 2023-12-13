@@ -50,28 +50,17 @@ pub struct TableStatistics {
     /// <p>The validation state of the table.</p>
     /// <p>This parameter can have the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>Not enabled – Validation isn't enabled for the table in the migration task.</p></li>
-    /// <li>
-    /// <p>Pending records – Some records in the table are waiting for validation.</p></li>
-    /// <li>
-    /// <p>Mismatched records – Some records in the table don't match between the source and target.</p></li>
-    /// <li>
-    /// <p>Suspended records – Some records in the table couldn't be validated.</p></li>
-    /// <li>
-    /// <p>No primary key –The table couldn't be validated because it has no primary key.</p></li>
-    /// <li>
-    /// <p>Table error – The table wasn't validated because it's in an error state and some data wasn't migrated.</p></li>
-    /// <li>
-    /// <p>Validated – All rows in the table are validated. If the table is updated, the status can change from Validated.</p></li>
-    /// <li>
-    /// <p>Error – The table couldn't be validated because of an unexpected error.</p></li>
-    /// <li>
-    /// <p>Pending validation – The table is waiting validation.</p></li>
-    /// <li>
-    /// <p>Preparing table – Preparing the table enabled in the migration task for validation.</p></li>
-    /// <li>
-    /// <p>Pending revalidation – All rows in the table are pending validation after the table was updated.</p></li>
+    /// <li> <p>Not enabled – Validation isn't enabled for the table in the migration task.</p> </li>
+    /// <li> <p>Pending records – Some records in the table are waiting for validation.</p> </li>
+    /// <li> <p>Mismatched records – Some records in the table don't match between the source and target.</p> </li>
+    /// <li> <p>Suspended records – Some records in the table couldn't be validated.</p> </li>
+    /// <li> <p>No primary key –The table couldn't be validated because it has no primary key.</p> </li>
+    /// <li> <p>Table error – The table wasn't validated because it's in an error state and some data wasn't migrated.</p> </li>
+    /// <li> <p>Validated – All rows in the table are validated. If the table is updated, the status can change from Validated.</p> </li>
+    /// <li> <p>Error – The table couldn't be validated because of an unexpected error.</p> </li>
+    /// <li> <p>Pending validation – The table is waiting validation.</p> </li>
+    /// <li> <p>Preparing table – Preparing the table enabled in the migration task for validation.</p> </li>
+    /// <li> <p>Pending revalidation – All rows in the table are pending validation after the table was updated.</p> </li>
     /// </ul>
     pub validation_state: ::std::option::Option<::std::string::String>,
     /// <p>Additional details about the state of validation.</p>
@@ -166,28 +155,17 @@ impl TableStatistics {
     /// <p>The validation state of the table.</p>
     /// <p>This parameter can have the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>Not enabled – Validation isn't enabled for the table in the migration task.</p></li>
-    /// <li>
-    /// <p>Pending records – Some records in the table are waiting for validation.</p></li>
-    /// <li>
-    /// <p>Mismatched records – Some records in the table don't match between the source and target.</p></li>
-    /// <li>
-    /// <p>Suspended records – Some records in the table couldn't be validated.</p></li>
-    /// <li>
-    /// <p>No primary key –The table couldn't be validated because it has no primary key.</p></li>
-    /// <li>
-    /// <p>Table error – The table wasn't validated because it's in an error state and some data wasn't migrated.</p></li>
-    /// <li>
-    /// <p>Validated – All rows in the table are validated. If the table is updated, the status can change from Validated.</p></li>
-    /// <li>
-    /// <p>Error – The table couldn't be validated because of an unexpected error.</p></li>
-    /// <li>
-    /// <p>Pending validation – The table is waiting validation.</p></li>
-    /// <li>
-    /// <p>Preparing table – Preparing the table enabled in the migration task for validation.</p></li>
-    /// <li>
-    /// <p>Pending revalidation – All rows in the table are pending validation after the table was updated.</p></li>
+    /// <li> <p>Not enabled – Validation isn't enabled for the table in the migration task.</p> </li>
+    /// <li> <p>Pending records – Some records in the table are waiting for validation.</p> </li>
+    /// <li> <p>Mismatched records – Some records in the table don't match between the source and target.</p> </li>
+    /// <li> <p>Suspended records – Some records in the table couldn't be validated.</p> </li>
+    /// <li> <p>No primary key –The table couldn't be validated because it has no primary key.</p> </li>
+    /// <li> <p>Table error – The table wasn't validated because it's in an error state and some data wasn't migrated.</p> </li>
+    /// <li> <p>Validated – All rows in the table are validated. If the table is updated, the status can change from Validated.</p> </li>
+    /// <li> <p>Error – The table couldn't be validated because of an unexpected error.</p> </li>
+    /// <li> <p>Pending validation – The table is waiting validation.</p> </li>
+    /// <li> <p>Preparing table – Preparing the table enabled in the migration task for validation.</p> </li>
+    /// <li> <p>Pending revalidation – All rows in the table are pending validation after the table was updated.</p> </li>
     /// </ul>
     pub fn validation_state(&self) -> ::std::option::Option<&str> {
         self.validation_state.as_deref()
@@ -533,28 +511,17 @@ impl TableStatisticsBuilder {
     /// <p>The validation state of the table.</p>
     /// <p>This parameter can have the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>Not enabled – Validation isn't enabled for the table in the migration task.</p></li>
-    /// <li>
-    /// <p>Pending records – Some records in the table are waiting for validation.</p></li>
-    /// <li>
-    /// <p>Mismatched records – Some records in the table don't match between the source and target.</p></li>
-    /// <li>
-    /// <p>Suspended records – Some records in the table couldn't be validated.</p></li>
-    /// <li>
-    /// <p>No primary key –The table couldn't be validated because it has no primary key.</p></li>
-    /// <li>
-    /// <p>Table error – The table wasn't validated because it's in an error state and some data wasn't migrated.</p></li>
-    /// <li>
-    /// <p>Validated – All rows in the table are validated. If the table is updated, the status can change from Validated.</p></li>
-    /// <li>
-    /// <p>Error – The table couldn't be validated because of an unexpected error.</p></li>
-    /// <li>
-    /// <p>Pending validation – The table is waiting validation.</p></li>
-    /// <li>
-    /// <p>Preparing table – Preparing the table enabled in the migration task for validation.</p></li>
-    /// <li>
-    /// <p>Pending revalidation – All rows in the table are pending validation after the table was updated.</p></li>
+    /// <li> <p>Not enabled – Validation isn't enabled for the table in the migration task.</p> </li>
+    /// <li> <p>Pending records – Some records in the table are waiting for validation.</p> </li>
+    /// <li> <p>Mismatched records – Some records in the table don't match between the source and target.</p> </li>
+    /// <li> <p>Suspended records – Some records in the table couldn't be validated.</p> </li>
+    /// <li> <p>No primary key –The table couldn't be validated because it has no primary key.</p> </li>
+    /// <li> <p>Table error – The table wasn't validated because it's in an error state and some data wasn't migrated.</p> </li>
+    /// <li> <p>Validated – All rows in the table are validated. If the table is updated, the status can change from Validated.</p> </li>
+    /// <li> <p>Error – The table couldn't be validated because of an unexpected error.</p> </li>
+    /// <li> <p>Pending validation – The table is waiting validation.</p> </li>
+    /// <li> <p>Preparing table – Preparing the table enabled in the migration task for validation.</p> </li>
+    /// <li> <p>Pending revalidation – All rows in the table are pending validation after the table was updated.</p> </li>
     /// </ul>
     pub fn validation_state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.validation_state = ::std::option::Option::Some(input.into());
@@ -563,28 +530,17 @@ impl TableStatisticsBuilder {
     /// <p>The validation state of the table.</p>
     /// <p>This parameter can have the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>Not enabled – Validation isn't enabled for the table in the migration task.</p></li>
-    /// <li>
-    /// <p>Pending records – Some records in the table are waiting for validation.</p></li>
-    /// <li>
-    /// <p>Mismatched records – Some records in the table don't match between the source and target.</p></li>
-    /// <li>
-    /// <p>Suspended records – Some records in the table couldn't be validated.</p></li>
-    /// <li>
-    /// <p>No primary key –The table couldn't be validated because it has no primary key.</p></li>
-    /// <li>
-    /// <p>Table error – The table wasn't validated because it's in an error state and some data wasn't migrated.</p></li>
-    /// <li>
-    /// <p>Validated – All rows in the table are validated. If the table is updated, the status can change from Validated.</p></li>
-    /// <li>
-    /// <p>Error – The table couldn't be validated because of an unexpected error.</p></li>
-    /// <li>
-    /// <p>Pending validation – The table is waiting validation.</p></li>
-    /// <li>
-    /// <p>Preparing table – Preparing the table enabled in the migration task for validation.</p></li>
-    /// <li>
-    /// <p>Pending revalidation – All rows in the table are pending validation after the table was updated.</p></li>
+    /// <li> <p>Not enabled – Validation isn't enabled for the table in the migration task.</p> </li>
+    /// <li> <p>Pending records – Some records in the table are waiting for validation.</p> </li>
+    /// <li> <p>Mismatched records – Some records in the table don't match between the source and target.</p> </li>
+    /// <li> <p>Suspended records – Some records in the table couldn't be validated.</p> </li>
+    /// <li> <p>No primary key –The table couldn't be validated because it has no primary key.</p> </li>
+    /// <li> <p>Table error – The table wasn't validated because it's in an error state and some data wasn't migrated.</p> </li>
+    /// <li> <p>Validated – All rows in the table are validated. If the table is updated, the status can change from Validated.</p> </li>
+    /// <li> <p>Error – The table couldn't be validated because of an unexpected error.</p> </li>
+    /// <li> <p>Pending validation – The table is waiting validation.</p> </li>
+    /// <li> <p>Preparing table – Preparing the table enabled in the migration task for validation.</p> </li>
+    /// <li> <p>Pending revalidation – All rows in the table are pending validation after the table was updated.</p> </li>
     /// </ul>
     pub fn set_validation_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.validation_state = input;
@@ -593,28 +549,17 @@ impl TableStatisticsBuilder {
     /// <p>The validation state of the table.</p>
     /// <p>This parameter can have the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>Not enabled – Validation isn't enabled for the table in the migration task.</p></li>
-    /// <li>
-    /// <p>Pending records – Some records in the table are waiting for validation.</p></li>
-    /// <li>
-    /// <p>Mismatched records – Some records in the table don't match between the source and target.</p></li>
-    /// <li>
-    /// <p>Suspended records – Some records in the table couldn't be validated.</p></li>
-    /// <li>
-    /// <p>No primary key –The table couldn't be validated because it has no primary key.</p></li>
-    /// <li>
-    /// <p>Table error – The table wasn't validated because it's in an error state and some data wasn't migrated.</p></li>
-    /// <li>
-    /// <p>Validated – All rows in the table are validated. If the table is updated, the status can change from Validated.</p></li>
-    /// <li>
-    /// <p>Error – The table couldn't be validated because of an unexpected error.</p></li>
-    /// <li>
-    /// <p>Pending validation – The table is waiting validation.</p></li>
-    /// <li>
-    /// <p>Preparing table – Preparing the table enabled in the migration task for validation.</p></li>
-    /// <li>
-    /// <p>Pending revalidation – All rows in the table are pending validation after the table was updated.</p></li>
+    /// <li> <p>Not enabled – Validation isn't enabled for the table in the migration task.</p> </li>
+    /// <li> <p>Pending records – Some records in the table are waiting for validation.</p> </li>
+    /// <li> <p>Mismatched records – Some records in the table don't match between the source and target.</p> </li>
+    /// <li> <p>Suspended records – Some records in the table couldn't be validated.</p> </li>
+    /// <li> <p>No primary key –The table couldn't be validated because it has no primary key.</p> </li>
+    /// <li> <p>Table error – The table wasn't validated because it's in an error state and some data wasn't migrated.</p> </li>
+    /// <li> <p>Validated – All rows in the table are validated. If the table is updated, the status can change from Validated.</p> </li>
+    /// <li> <p>Error – The table couldn't be validated because of an unexpected error.</p> </li>
+    /// <li> <p>Pending validation – The table is waiting validation.</p> </li>
+    /// <li> <p>Preparing table – Preparing the table enabled in the migration task for validation.</p> </li>
+    /// <li> <p>Pending revalidation – All rows in the table are pending validation after the table was updated.</p> </li>
     /// </ul>
     pub fn get_validation_state(&self) -> &::std::option::Option<::std::string::String> {
         &self.validation_state

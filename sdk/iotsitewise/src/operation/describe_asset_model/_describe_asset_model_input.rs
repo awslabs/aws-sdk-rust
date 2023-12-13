@@ -5,7 +5,7 @@
 pub struct DescribeAssetModelInput {
     /// <p>The ID of the asset model. This can be either the actual ID in UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub asset_model_id: ::std::option::Option<::std::string::String>,
-    /// <p>Whether or not to exclude asset model properties from the response.</p>
+    /// <p> Whether or not to exclude asset model properties from the response. </p>
     pub exclude_properties: ::std::option::Option<bool>,
 }
 impl DescribeAssetModelInput {
@@ -13,7 +13,7 @@ impl DescribeAssetModelInput {
     pub fn asset_model_id(&self) -> ::std::option::Option<&str> {
         self.asset_model_id.as_deref()
     }
-    /// <p>Whether or not to exclude asset model properties from the response.</p>
+    /// <p> Whether or not to exclude asset model properties from the response. </p>
     pub fn exclude_properties(&self) -> ::std::option::Option<bool> {
         self.exclude_properties
     }
@@ -48,17 +48,17 @@ impl DescribeAssetModelInputBuilder {
     pub fn get_asset_model_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.asset_model_id
     }
-    /// <p>Whether or not to exclude asset model properties from the response.</p>
+    /// <p> Whether or not to exclude asset model properties from the response. </p>
     pub fn exclude_properties(mut self, input: bool) -> Self {
         self.exclude_properties = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Whether or not to exclude asset model properties from the response.</p>
+    /// <p> Whether or not to exclude asset model properties from the response. </p>
     pub fn set_exclude_properties(mut self, input: ::std::option::Option<bool>) -> Self {
         self.exclude_properties = input;
         self
     }
-    /// <p>Whether or not to exclude asset model properties from the response.</p>
+    /// <p> Whether or not to exclude asset model properties from the response. </p>
     pub fn get_exclude_properties(&self) -> &::std::option::Option<bool> {
         &self.exclude_properties
     }

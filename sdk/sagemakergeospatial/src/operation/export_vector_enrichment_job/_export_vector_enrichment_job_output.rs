@@ -11,7 +11,7 @@ pub struct ExportVectorEnrichmentJobOutput {
     pub execution_role_arn: ::std::string::String,
     /// <p>The status of the results the Vector Enrichment job being exported.</p>
     pub export_status: crate::types::VectorEnrichmentJobExportStatus,
-    /// <p>Output location information for exporting Vector Enrichment Job results.</p>
+    /// <p>Output location information for exporting Vector Enrichment Job results. </p>
     pub output_config: ::std::option::Option<crate::types::ExportVectorEnrichmentJobOutputConfig>,
     _request_id: Option<String>,
 }
@@ -34,7 +34,7 @@ impl ExportVectorEnrichmentJobOutput {
     pub fn export_status(&self) -> &crate::types::VectorEnrichmentJobExportStatus {
         &self.export_status
     }
-    /// <p>Output location information for exporting Vector Enrichment Job results.</p>
+    /// <p>Output location information for exporting Vector Enrichment Job results. </p>
     pub fn output_config(&self) -> ::std::option::Option<&crate::types::ExportVectorEnrichmentJobOutputConfig> {
         self.output_config.as_ref()
     }
@@ -123,18 +123,18 @@ impl ExportVectorEnrichmentJobOutputBuilder {
     pub fn get_export_status(&self) -> &::std::option::Option<crate::types::VectorEnrichmentJobExportStatus> {
         &self.export_status
     }
-    /// <p>Output location information for exporting Vector Enrichment Job results.</p>
+    /// <p>Output location information for exporting Vector Enrichment Job results. </p>
     /// This field is required.
     pub fn output_config(mut self, input: crate::types::ExportVectorEnrichmentJobOutputConfig) -> Self {
         self.output_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Output location information for exporting Vector Enrichment Job results.</p>
+    /// <p>Output location information for exporting Vector Enrichment Job results. </p>
     pub fn set_output_config(mut self, input: ::std::option::Option<crate::types::ExportVectorEnrichmentJobOutputConfig>) -> Self {
         self.output_config = input;
         self
     }
-    /// <p>Output location information for exporting Vector Enrichment Job results.</p>
+    /// <p>Output location information for exporting Vector Enrichment Job results. </p>
     pub fn get_output_config(&self) -> &::std::option::Option<crate::types::ExportVectorEnrichmentJobOutputConfig> {
         &self.output_config
     }

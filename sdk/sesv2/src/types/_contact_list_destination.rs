@@ -8,10 +8,8 @@ pub struct ContactListDestination {
     pub contact_list_name: ::std::string::String,
     /// <p>&gt;The type of action to perform on the addresses. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>PUT: add the addresses to the contact list. If the record already exists, it will override it with the new value.</p></li>
-    /// <li>
-    /// <p>DELETE: remove the addresses from the contact list.</p></li>
+    /// <li> <p>PUT: add the addresses to the contact list. If the record already exists, it will override it with the new value.</p> </li>
+    /// <li> <p>DELETE: remove the addresses from the contact list.</p> </li>
     /// </ul>
     pub contact_list_import_action: crate::types::ContactListImportAction,
 }
@@ -23,10 +21,8 @@ impl ContactListDestination {
     }
     /// <p>&gt;The type of action to perform on the addresses. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>PUT: add the addresses to the contact list. If the record already exists, it will override it with the new value.</p></li>
-    /// <li>
-    /// <p>DELETE: remove the addresses from the contact list.</p></li>
+    /// <li> <p>PUT: add the addresses to the contact list. If the record already exists, it will override it with the new value.</p> </li>
+    /// <li> <p>DELETE: remove the addresses from the contact list.</p> </li>
     /// </ul>
     pub fn contact_list_import_action(&self) -> &crate::types::ContactListImportAction {
         &self.contact_list_import_action
@@ -64,10 +60,8 @@ impl ContactListDestinationBuilder {
     }
     /// <p>&gt;The type of action to perform on the addresses. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>PUT: add the addresses to the contact list. If the record already exists, it will override it with the new value.</p></li>
-    /// <li>
-    /// <p>DELETE: remove the addresses from the contact list.</p></li>
+    /// <li> <p>PUT: add the addresses to the contact list. If the record already exists, it will override it with the new value.</p> </li>
+    /// <li> <p>DELETE: remove the addresses from the contact list.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn contact_list_import_action(mut self, input: crate::types::ContactListImportAction) -> Self {
@@ -76,10 +70,8 @@ impl ContactListDestinationBuilder {
     }
     /// <p>&gt;The type of action to perform on the addresses. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>PUT: add the addresses to the contact list. If the record already exists, it will override it with the new value.</p></li>
-    /// <li>
-    /// <p>DELETE: remove the addresses from the contact list.</p></li>
+    /// <li> <p>PUT: add the addresses to the contact list. If the record already exists, it will override it with the new value.</p> </li>
+    /// <li> <p>DELETE: remove the addresses from the contact list.</p> </li>
     /// </ul>
     pub fn set_contact_list_import_action(mut self, input: ::std::option::Option<crate::types::ContactListImportAction>) -> Self {
         self.contact_list_import_action = input;
@@ -87,10 +79,8 @@ impl ContactListDestinationBuilder {
     }
     /// <p>&gt;The type of action to perform on the addresses. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>PUT: add the addresses to the contact list. If the record already exists, it will override it with the new value.</p></li>
-    /// <li>
-    /// <p>DELETE: remove the addresses from the contact list.</p></li>
+    /// <li> <p>PUT: add the addresses to the contact list. If the record already exists, it will override it with the new value.</p> </li>
+    /// <li> <p>DELETE: remove the addresses from the contact list.</p> </li>
     /// </ul>
     pub fn get_contact_list_import_action(&self) -> &::std::option::Option<crate::types::ContactListImportAction> {
         &self.contact_list_import_action

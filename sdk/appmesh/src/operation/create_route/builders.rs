@@ -23,7 +23,7 @@ impl CreateRouteInputBuilder {
 /// Fluent builder constructing a request to `CreateRoute`.
 ///
 /// <p>Creates a route that is associated with a virtual router.</p>
-/// <p>You can route several different protocols and define a retry policy for a route. Traffic can be routed to one or more virtual nodes.</p>
+/// <p> You can route several different protocols and define a retry policy for a route. Traffic can be routed to one or more virtual nodes.</p>
 /// <p>For more information about routes, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/routes.html">Routes</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateRouteFluentBuilder {

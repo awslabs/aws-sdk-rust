@@ -7,7 +7,7 @@ pub struct ImportResourcesToDraftAppVersionInput {
     pub app_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Names (ARNs) for the resources.</p>
     pub source_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>A list of terraform file s3 URLs you need to import.</p>
+    /// <p> A list of terraform file s3 URLs you need to import. </p>
     pub terraform_sources: ::std::option::Option<::std::vec::Vec<crate::types::TerraformSource>>,
     /// <p>The import strategy you would like to set to import resources into Resilience Hub application.</p>
     pub import_strategy: ::std::option::Option<crate::types::ResourceImportStrategyType>,
@@ -25,7 +25,7 @@ impl ImportResourcesToDraftAppVersionInput {
     pub fn source_arns(&self) -> &[::std::string::String] {
         self.source_arns.as_deref().unwrap_or_default()
     }
-    /// <p>A list of terraform file s3 URLs you need to import.</p>
+    /// <p> A list of terraform file s3 URLs you need to import. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.terraform_sources.is_none()`.
     pub fn terraform_sources(&self) -> &[crate::types::TerraformSource] {
@@ -99,19 +99,19 @@ impl ImportResourcesToDraftAppVersionInputBuilder {
     ///
     /// To override the contents of this collection use [`set_terraform_sources`](Self::set_terraform_sources).
     ///
-    /// <p>A list of terraform file s3 URLs you need to import.</p>
+    /// <p> A list of terraform file s3 URLs you need to import. </p>
     pub fn terraform_sources(mut self, input: crate::types::TerraformSource) -> Self {
         let mut v = self.terraform_sources.unwrap_or_default();
         v.push(input);
         self.terraform_sources = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of terraform file s3 URLs you need to import.</p>
+    /// <p> A list of terraform file s3 URLs you need to import. </p>
     pub fn set_terraform_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TerraformSource>>) -> Self {
         self.terraform_sources = input;
         self
     }
-    /// <p>A list of terraform file s3 URLs you need to import.</p>
+    /// <p> A list of terraform file s3 URLs you need to import. </p>
     pub fn get_terraform_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TerraformSource>> {
         &self.terraform_sources
     }

@@ -7,14 +7,10 @@ pub struct R53HostedZoneDeletionState {
     /// <p>The status code for the deletion state.</p>
     /// <p>Following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SUCCEEDED</code> - The hosted zone was successfully deleted.</p></li>
-    /// <li>
-    /// <p><code>PENDING</code> - The hosted zone deletion is in progress.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - The hosted zone deletion failed.</p></li>
-    /// <li>
-    /// <p><code>STARTED</code> - The hosted zone deletion started.</p></li>
+    /// <li> <p> <code>SUCCEEDED</code> - The hosted zone was successfully deleted.</p> </li>
+    /// <li> <p> <code>PENDING</code> - The hosted zone deletion is in progress.</p> </li>
+    /// <li> <p> <code>FAILED</code> - The hosted zone deletion failed.</p> </li>
+    /// <li> <p> <code>STARTED</code> - The hosted zone deletion started.</p> </li>
     /// </ul>
     pub code: ::std::option::Option<crate::types::R53HostedZoneDeletionStateCode>,
     /// <p>The message that describes the reason for the status code.</p>
@@ -24,14 +20,10 @@ impl R53HostedZoneDeletionState {
     /// <p>The status code for the deletion state.</p>
     /// <p>Following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SUCCEEDED</code> - The hosted zone was successfully deleted.</p></li>
-    /// <li>
-    /// <p><code>PENDING</code> - The hosted zone deletion is in progress.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - The hosted zone deletion failed.</p></li>
-    /// <li>
-    /// <p><code>STARTED</code> - The hosted zone deletion started.</p></li>
+    /// <li> <p> <code>SUCCEEDED</code> - The hosted zone was successfully deleted.</p> </li>
+    /// <li> <p> <code>PENDING</code> - The hosted zone deletion is in progress.</p> </li>
+    /// <li> <p> <code>FAILED</code> - The hosted zone deletion failed.</p> </li>
+    /// <li> <p> <code>STARTED</code> - The hosted zone deletion started.</p> </li>
     /// </ul>
     pub fn code(&self) -> ::std::option::Option<&crate::types::R53HostedZoneDeletionStateCode> {
         self.code.as_ref()
@@ -59,14 +51,10 @@ impl R53HostedZoneDeletionStateBuilder {
     /// <p>The status code for the deletion state.</p>
     /// <p>Following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SUCCEEDED</code> - The hosted zone was successfully deleted.</p></li>
-    /// <li>
-    /// <p><code>PENDING</code> - The hosted zone deletion is in progress.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - The hosted zone deletion failed.</p></li>
-    /// <li>
-    /// <p><code>STARTED</code> - The hosted zone deletion started.</p></li>
+    /// <li> <p> <code>SUCCEEDED</code> - The hosted zone was successfully deleted.</p> </li>
+    /// <li> <p> <code>PENDING</code> - The hosted zone deletion is in progress.</p> </li>
+    /// <li> <p> <code>FAILED</code> - The hosted zone deletion failed.</p> </li>
+    /// <li> <p> <code>STARTED</code> - The hosted zone deletion started.</p> </li>
     /// </ul>
     pub fn code(mut self, input: crate::types::R53HostedZoneDeletionStateCode) -> Self {
         self.code = ::std::option::Option::Some(input);
@@ -75,14 +63,10 @@ impl R53HostedZoneDeletionStateBuilder {
     /// <p>The status code for the deletion state.</p>
     /// <p>Following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SUCCEEDED</code> - The hosted zone was successfully deleted.</p></li>
-    /// <li>
-    /// <p><code>PENDING</code> - The hosted zone deletion is in progress.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - The hosted zone deletion failed.</p></li>
-    /// <li>
-    /// <p><code>STARTED</code> - The hosted zone deletion started.</p></li>
+    /// <li> <p> <code>SUCCEEDED</code> - The hosted zone was successfully deleted.</p> </li>
+    /// <li> <p> <code>PENDING</code> - The hosted zone deletion is in progress.</p> </li>
+    /// <li> <p> <code>FAILED</code> - The hosted zone deletion failed.</p> </li>
+    /// <li> <p> <code>STARTED</code> - The hosted zone deletion started.</p> </li>
     /// </ul>
     pub fn set_code(mut self, input: ::std::option::Option<crate::types::R53HostedZoneDeletionStateCode>) -> Self {
         self.code = input;
@@ -91,14 +75,10 @@ impl R53HostedZoneDeletionStateBuilder {
     /// <p>The status code for the deletion state.</p>
     /// <p>Following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SUCCEEDED</code> - The hosted zone was successfully deleted.</p></li>
-    /// <li>
-    /// <p><code>PENDING</code> - The hosted zone deletion is in progress.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - The hosted zone deletion failed.</p></li>
-    /// <li>
-    /// <p><code>STARTED</code> - The hosted zone deletion started.</p></li>
+    /// <li> <p> <code>SUCCEEDED</code> - The hosted zone was successfully deleted.</p> </li>
+    /// <li> <p> <code>PENDING</code> - The hosted zone deletion is in progress.</p> </li>
+    /// <li> <p> <code>FAILED</code> - The hosted zone deletion failed.</p> </li>
+    /// <li> <p> <code>STARTED</code> - The hosted zone deletion started.</p> </li>
     /// </ul>
     pub fn get_code(&self) -> &::std::option::Option<crate::types::R53HostedZoneDeletionStateCode> {
         &self.code

@@ -13,7 +13,7 @@ pub struct DescribeMergeConflictsInput {
     pub merge_option: ::std::option::Option<crate::types::MergeOptionTypeEnum>,
     /// <p>The maximum number of merge hunks to include in the output.</p>
     pub max_merge_hunks: ::std::option::Option<i32>,
-    /// <p>The path of the target files used to describe the conflicts.</p>
+    /// <p>The path of the target files used to describe the conflicts. </p>
     pub file_path: ::std::option::Option<::std::string::String>,
     /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
     pub conflict_detail_level: ::std::option::Option<crate::types::ConflictDetailLevelTypeEnum>,
@@ -43,7 +43,7 @@ impl DescribeMergeConflictsInput {
     pub fn max_merge_hunks(&self) -> ::std::option::Option<i32> {
         self.max_merge_hunks
     }
-    /// <p>The path of the target files used to describe the conflicts.</p>
+    /// <p>The path of the target files used to describe the conflicts. </p>
     pub fn file_path(&self) -> ::std::option::Option<&str> {
         self.file_path.as_deref()
     }
@@ -156,18 +156,18 @@ impl DescribeMergeConflictsInputBuilder {
     pub fn get_max_merge_hunks(&self) -> &::std::option::Option<i32> {
         &self.max_merge_hunks
     }
-    /// <p>The path of the target files used to describe the conflicts.</p>
+    /// <p>The path of the target files used to describe the conflicts. </p>
     /// This field is required.
     pub fn file_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_path = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The path of the target files used to describe the conflicts.</p>
+    /// <p>The path of the target files used to describe the conflicts. </p>
     pub fn set_file_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_path = input;
         self
     }
-    /// <p>The path of the target files used to describe the conflicts.</p>
+    /// <p>The path of the target files used to describe the conflicts. </p>
     pub fn get_file_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.file_path
     }

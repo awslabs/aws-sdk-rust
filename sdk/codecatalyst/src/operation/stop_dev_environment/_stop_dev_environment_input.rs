@@ -7,7 +7,7 @@ pub struct StopDevEnvironmentInput {
     pub space_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the project in the space.</p>
     pub project_name: ::std::option::Option<::std::string::String>,
-    /// <p>The system-generated unique ID of the Dev Environment.</p>
+    /// <p>The system-generated unique ID of the Dev Environment. </p>
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl StopDevEnvironmentInput {
@@ -19,7 +19,7 @@ impl StopDevEnvironmentInput {
     pub fn project_name(&self) -> ::std::option::Option<&str> {
         self.project_name.as_deref()
     }
-    /// <p>The system-generated unique ID of the Dev Environment.</p>
+    /// <p>The system-generated unique ID of the Dev Environment. </p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -70,18 +70,18 @@ impl StopDevEnvironmentInputBuilder {
     pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.project_name
     }
-    /// <p>The system-generated unique ID of the Dev Environment.</p>
+    /// <p>The system-generated unique ID of the Dev Environment. </p>
     /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The system-generated unique ID of the Dev Environment.</p>
+    /// <p>The system-generated unique ID of the Dev Environment. </p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// <p>The system-generated unique ID of the Dev Environment.</p>
+    /// <p>The system-generated unique ID of the Dev Environment. </p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }

@@ -8,7 +8,7 @@ pub struct AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails {
     pub capabilities: ::std::option::Option<crate::types::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails>,
     /// <p>The host devices to expose to the container.</p>
     pub devices: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails>>,
-    /// <p>Whether to run an <code>init</code> process inside the container that forwards signals and reaps processes.</p>
+    /// <p>Whether to run an <code>init</code> process inside the container that forwards signals and reaps processes. </p>
     pub init_process_enabled: ::std::option::Option<bool>,
     /// <p>The total amount of swap memory (in MiB) that a container can use.</p>
     pub max_swap: ::std::option::Option<i32>,
@@ -30,7 +30,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails {
     pub fn devices(&self) -> &[crate::types::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails] {
         self.devices.as_deref().unwrap_or_default()
     }
-    /// <p>Whether to run an <code>init</code> process inside the container that forwards signals and reaps processes.</p>
+    /// <p>Whether to run an <code>init</code> process inside the container that forwards signals and reaps processes. </p>
     pub fn init_process_enabled(&self) -> ::std::option::Option<bool> {
         self.init_process_enabled
     }
@@ -117,17 +117,17 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetailsBuilder {
     ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails>> {
         &self.devices
     }
-    /// <p>Whether to run an <code>init</code> process inside the container that forwards signals and reaps processes.</p>
+    /// <p>Whether to run an <code>init</code> process inside the container that forwards signals and reaps processes. </p>
     pub fn init_process_enabled(mut self, input: bool) -> Self {
         self.init_process_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Whether to run an <code>init</code> process inside the container that forwards signals and reaps processes.</p>
+    /// <p>Whether to run an <code>init</code> process inside the container that forwards signals and reaps processes. </p>
     pub fn set_init_process_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.init_process_enabled = input;
         self
     }
-    /// <p>Whether to run an <code>init</code> process inside the container that forwards signals and reaps processes.</p>
+    /// <p>Whether to run an <code>init</code> process inside the container that forwards signals and reaps processes. </p>
     pub fn get_init_process_enabled(&self) -> &::std::option::Option<bool> {
         &self.init_process_enabled
     }

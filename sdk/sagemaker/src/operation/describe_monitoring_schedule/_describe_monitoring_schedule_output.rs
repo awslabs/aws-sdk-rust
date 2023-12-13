@@ -11,14 +11,10 @@ pub struct DescribeMonitoringScheduleOutput {
     pub monitoring_schedule_status: ::std::option::Option<crate::types::ScheduleStatus>,
     /// <p>The type of the monitoring job that this schedule runs. This is one of the following values.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>DATA_QUALITY</code> - The schedule is for a data quality monitoring job.</p></li>
-    /// <li>
-    /// <p><code>MODEL_QUALITY</code> - The schedule is for a model quality monitoring job.</p></li>
-    /// <li>
-    /// <p><code>MODEL_BIAS</code> - The schedule is for a bias monitoring job.</p></li>
-    /// <li>
-    /// <p><code>MODEL_EXPLAINABILITY</code> - The schedule is for an explainability monitoring job.</p></li>
+    /// <li> <p> <code>DATA_QUALITY</code> - The schedule is for a data quality monitoring job.</p> </li>
+    /// <li> <p> <code>MODEL_QUALITY</code> - The schedule is for a model quality monitoring job.</p> </li>
+    /// <li> <p> <code>MODEL_BIAS</code> - The schedule is for a bias monitoring job.</p> </li>
+    /// <li> <p> <code>MODEL_EXPLAINABILITY</code> - The schedule is for an explainability monitoring job.</p> </li>
     /// </ul>
     pub monitoring_type: ::std::option::Option<crate::types::MonitoringType>,
     /// <p>A string, up to one KB in size, that contains the reason a monitoring job failed, if it failed.</p>
@@ -29,7 +25,7 @@ pub struct DescribeMonitoringScheduleOutput {
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The configuration object that specifies the monitoring schedule and defines the monitoring job.</p>
     pub monitoring_schedule_config: ::std::option::Option<crate::types::MonitoringScheduleConfig>,
-    /// <p>The name of the endpoint for the monitoring job.</p>
+    /// <p> The name of the endpoint for the monitoring job.</p>
     pub endpoint_name: ::std::option::Option<::std::string::String>,
     /// <p>Describes metadata on the last execution to run, if there was one.</p>
     pub last_monitoring_execution_summary: ::std::option::Option<crate::types::MonitoringExecutionSummary>,
@@ -50,14 +46,10 @@ impl DescribeMonitoringScheduleOutput {
     }
     /// <p>The type of the monitoring job that this schedule runs. This is one of the following values.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>DATA_QUALITY</code> - The schedule is for a data quality monitoring job.</p></li>
-    /// <li>
-    /// <p><code>MODEL_QUALITY</code> - The schedule is for a model quality monitoring job.</p></li>
-    /// <li>
-    /// <p><code>MODEL_BIAS</code> - The schedule is for a bias monitoring job.</p></li>
-    /// <li>
-    /// <p><code>MODEL_EXPLAINABILITY</code> - The schedule is for an explainability monitoring job.</p></li>
+    /// <li> <p> <code>DATA_QUALITY</code> - The schedule is for a data quality monitoring job.</p> </li>
+    /// <li> <p> <code>MODEL_QUALITY</code> - The schedule is for a model quality monitoring job.</p> </li>
+    /// <li> <p> <code>MODEL_BIAS</code> - The schedule is for a bias monitoring job.</p> </li>
+    /// <li> <p> <code>MODEL_EXPLAINABILITY</code> - The schedule is for an explainability monitoring job.</p> </li>
     /// </ul>
     pub fn monitoring_type(&self) -> ::std::option::Option<&crate::types::MonitoringType> {
         self.monitoring_type.as_ref()
@@ -78,7 +70,7 @@ impl DescribeMonitoringScheduleOutput {
     pub fn monitoring_schedule_config(&self) -> ::std::option::Option<&crate::types::MonitoringScheduleConfig> {
         self.monitoring_schedule_config.as_ref()
     }
-    /// <p>The name of the endpoint for the monitoring job.</p>
+    /// <p> The name of the endpoint for the monitoring job.</p>
     pub fn endpoint_name(&self) -> ::std::option::Option<&str> {
         self.endpoint_name.as_deref()
     }
@@ -163,14 +155,10 @@ impl DescribeMonitoringScheduleOutputBuilder {
     }
     /// <p>The type of the monitoring job that this schedule runs. This is one of the following values.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>DATA_QUALITY</code> - The schedule is for a data quality monitoring job.</p></li>
-    /// <li>
-    /// <p><code>MODEL_QUALITY</code> - The schedule is for a model quality monitoring job.</p></li>
-    /// <li>
-    /// <p><code>MODEL_BIAS</code> - The schedule is for a bias monitoring job.</p></li>
-    /// <li>
-    /// <p><code>MODEL_EXPLAINABILITY</code> - The schedule is for an explainability monitoring job.</p></li>
+    /// <li> <p> <code>DATA_QUALITY</code> - The schedule is for a data quality monitoring job.</p> </li>
+    /// <li> <p> <code>MODEL_QUALITY</code> - The schedule is for a model quality monitoring job.</p> </li>
+    /// <li> <p> <code>MODEL_BIAS</code> - The schedule is for a bias monitoring job.</p> </li>
+    /// <li> <p> <code>MODEL_EXPLAINABILITY</code> - The schedule is for an explainability monitoring job.</p> </li>
     /// </ul>
     pub fn monitoring_type(mut self, input: crate::types::MonitoringType) -> Self {
         self.monitoring_type = ::std::option::Option::Some(input);
@@ -178,14 +166,10 @@ impl DescribeMonitoringScheduleOutputBuilder {
     }
     /// <p>The type of the monitoring job that this schedule runs. This is one of the following values.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>DATA_QUALITY</code> - The schedule is for a data quality monitoring job.</p></li>
-    /// <li>
-    /// <p><code>MODEL_QUALITY</code> - The schedule is for a model quality monitoring job.</p></li>
-    /// <li>
-    /// <p><code>MODEL_BIAS</code> - The schedule is for a bias monitoring job.</p></li>
-    /// <li>
-    /// <p><code>MODEL_EXPLAINABILITY</code> - The schedule is for an explainability monitoring job.</p></li>
+    /// <li> <p> <code>DATA_QUALITY</code> - The schedule is for a data quality monitoring job.</p> </li>
+    /// <li> <p> <code>MODEL_QUALITY</code> - The schedule is for a model quality monitoring job.</p> </li>
+    /// <li> <p> <code>MODEL_BIAS</code> - The schedule is for a bias monitoring job.</p> </li>
+    /// <li> <p> <code>MODEL_EXPLAINABILITY</code> - The schedule is for an explainability monitoring job.</p> </li>
     /// </ul>
     pub fn set_monitoring_type(mut self, input: ::std::option::Option<crate::types::MonitoringType>) -> Self {
         self.monitoring_type = input;
@@ -193,14 +177,10 @@ impl DescribeMonitoringScheduleOutputBuilder {
     }
     /// <p>The type of the monitoring job that this schedule runs. This is one of the following values.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>DATA_QUALITY</code> - The schedule is for a data quality monitoring job.</p></li>
-    /// <li>
-    /// <p><code>MODEL_QUALITY</code> - The schedule is for a model quality monitoring job.</p></li>
-    /// <li>
-    /// <p><code>MODEL_BIAS</code> - The schedule is for a bias monitoring job.</p></li>
-    /// <li>
-    /// <p><code>MODEL_EXPLAINABILITY</code> - The schedule is for an explainability monitoring job.</p></li>
+    /// <li> <p> <code>DATA_QUALITY</code> - The schedule is for a data quality monitoring job.</p> </li>
+    /// <li> <p> <code>MODEL_QUALITY</code> - The schedule is for a model quality monitoring job.</p> </li>
+    /// <li> <p> <code>MODEL_BIAS</code> - The schedule is for a bias monitoring job.</p> </li>
+    /// <li> <p> <code>MODEL_EXPLAINABILITY</code> - The schedule is for an explainability monitoring job.</p> </li>
     /// </ul>
     pub fn get_monitoring_type(&self) -> &::std::option::Option<crate::types::MonitoringType> {
         &self.monitoring_type
@@ -264,17 +244,17 @@ impl DescribeMonitoringScheduleOutputBuilder {
     pub fn get_monitoring_schedule_config(&self) -> &::std::option::Option<crate::types::MonitoringScheduleConfig> {
         &self.monitoring_schedule_config
     }
-    /// <p>The name of the endpoint for the monitoring job.</p>
+    /// <p> The name of the endpoint for the monitoring job.</p>
     pub fn endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the endpoint for the monitoring job.</p>
+    /// <p> The name of the endpoint for the monitoring job.</p>
     pub fn set_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_name = input;
         self
     }
-    /// <p>The name of the endpoint for the monitoring job.</p>
+    /// <p> The name of the endpoint for the monitoring job.</p>
     pub fn get_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.endpoint_name
     }

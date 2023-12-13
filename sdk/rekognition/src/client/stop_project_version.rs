@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopProjectVersion`](crate::operation::stop_project_version::builders::StopProjectVersionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`project_version_arn(impl Into<String>)`](crate::operation::stop_project_version::builders::StopProjectVersionFluentBuilder::project_version_arn) / [`set_project_version_arn(Option<String>)`](crate::operation::stop_project_version::builders::StopProjectVersionFluentBuilder::set_project_version_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the model version that you want to stop.</p> <p>This operation requires permissions to perform the <code>rekognition:StopProjectVersion</code> action.</p><br>
+    ///   - [`project_version_arn(impl Into<String>)`](crate::operation::stop_project_version::builders::StopProjectVersionFluentBuilder::project_version_arn) / [`set_project_version_arn(Option<String>)`](crate::operation::stop_project_version::builders::StopProjectVersionFluentBuilder::set_project_version_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the model version that you want to stop.</p>  <p>This operation requires permissions to perform the <code>rekognition:StopProjectVersion</code> action.</p><br>
     /// - On success, responds with [`StopProjectVersionOutput`](crate::operation::stop_project_version::StopProjectVersionOutput) with field(s):
-    ///   - [`status(Option<ProjectVersionStatus>)`](crate::operation::stop_project_version::StopProjectVersionOutput::status): <p>The current status of the stop operation.</p>
+    ///   - [`status(Option<ProjectVersionStatus>)`](crate::operation::stop_project_version::StopProjectVersionOutput::status): <p>The current status of the stop operation. </p>
     /// - On failure, responds with [`SdkError<StopProjectVersionError>`](crate::operation::stop_project_version::StopProjectVersionError)
     pub fn stop_project_version(&self) -> crate::operation::stop_project_version::builders::StopProjectVersionFluentBuilder {
         crate::operation::stop_project_version::builders::StopProjectVersionFluentBuilder::new(self.handle.clone())

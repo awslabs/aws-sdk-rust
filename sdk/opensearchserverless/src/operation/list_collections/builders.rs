@@ -22,7 +22,7 @@ impl ListCollectionsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListCollections`.
 ///
-/// <p>Lists all OpenSearch Serverless collections. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html">Creating and managing Amazon OpenSearch Serverless collections</a>.</p><note>
+/// <p>Lists all OpenSearch Serverless collections. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html">Creating and managing Amazon OpenSearch Serverless collections</a>.</p> <note>
 /// <p>Make sure to include an empty request body {} if you don't include any collection filters in the request.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -116,17 +116,17 @@ impl ListCollectionsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_collections::paginator::ListCollectionsPaginator {
         crate::operation::list_collections::paginator::ListCollectionsPaginator::new(self.handle, self.inner)
     }
-    /// <p>A list of filter names and values that you can use for requests.</p>
+    /// <p> A list of filter names and values that you can use for requests.</p>
     pub fn collection_filters(mut self, input: crate::types::CollectionFilters) -> Self {
         self.inner = self.inner.collection_filters(input);
         self
     }
-    /// <p>A list of filter names and values that you can use for requests.</p>
+    /// <p> A list of filter names and values that you can use for requests.</p>
     pub fn set_collection_filters(mut self, input: ::std::option::Option<crate::types::CollectionFilters>) -> Self {
         self.inner = self.inner.set_collection_filters(input);
         self
     }
-    /// <p>A list of filter names and values that you can use for requests.</p>
+    /// <p> A list of filter names and values that you can use for requests.</p>
     pub fn get_collection_filters(&self) -> &::std::option::Option<crate::types::CollectionFilters> {
         self.inner.get_collection_filters()
     }

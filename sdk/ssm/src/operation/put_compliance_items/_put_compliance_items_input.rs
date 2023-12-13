@@ -16,7 +16,7 @@ pub struct PutComplianceItemsInput {
     /// <p>MD5 or SHA-256 content hash. The content hash is used to determine if existing information should be overwritten or ignored. If the content hashes match, the request to put compliance information is ignored.</p>
     pub item_content_hash: ::std::option::Option<::std::string::String>,
     /// <p>The mode for uploading compliance items. You can specify <code>COMPLETE</code> or <code>PARTIAL</code>. In <code>COMPLETE</code> mode, the system overwrites all existing compliance information for the resource. You must provide a full list of compliance items each time you send the request.</p>
-    /// <p>In <code>PARTIAL</code> mode, the system overwrites compliance information for a specific association. The association must be configured with <code>SyncCompliance</code> set to <code>MANUAL</code>. By default, all requests use <code>COMPLETE</code> mode.</p><note>
+    /// <p>In <code>PARTIAL</code> mode, the system overwrites compliance information for a specific association. The association must be configured with <code>SyncCompliance</code> set to <code>MANUAL</code>. By default, all requests use <code>COMPLETE</code> mode.</p> <note>
     /// <p>This attribute is only valid for association compliance.</p>
     /// </note>
     pub upload_type: ::std::option::Option<crate::types::ComplianceUploadType>,
@@ -49,7 +49,7 @@ impl PutComplianceItemsInput {
         self.item_content_hash.as_deref()
     }
     /// <p>The mode for uploading compliance items. You can specify <code>COMPLETE</code> or <code>PARTIAL</code>. In <code>COMPLETE</code> mode, the system overwrites all existing compliance information for the resource. You must provide a full list of compliance items each time you send the request.</p>
-    /// <p>In <code>PARTIAL</code> mode, the system overwrites compliance information for a specific association. The association must be configured with <code>SyncCompliance</code> set to <code>MANUAL</code>. By default, all requests use <code>COMPLETE</code> mode.</p><note>
+    /// <p>In <code>PARTIAL</code> mode, the system overwrites compliance information for a specific association. The association must be configured with <code>SyncCompliance</code> set to <code>MANUAL</code>. By default, all requests use <code>COMPLETE</code> mode.</p> <note>
     /// <p>This attribute is only valid for association compliance.</p>
     /// </note>
     pub fn upload_type(&self) -> ::std::option::Option<&crate::types::ComplianceUploadType> {
@@ -171,7 +171,7 @@ impl PutComplianceItemsInputBuilder {
         &self.item_content_hash
     }
     /// <p>The mode for uploading compliance items. You can specify <code>COMPLETE</code> or <code>PARTIAL</code>. In <code>COMPLETE</code> mode, the system overwrites all existing compliance information for the resource. You must provide a full list of compliance items each time you send the request.</p>
-    /// <p>In <code>PARTIAL</code> mode, the system overwrites compliance information for a specific association. The association must be configured with <code>SyncCompliance</code> set to <code>MANUAL</code>. By default, all requests use <code>COMPLETE</code> mode.</p><note>
+    /// <p>In <code>PARTIAL</code> mode, the system overwrites compliance information for a specific association. The association must be configured with <code>SyncCompliance</code> set to <code>MANUAL</code>. By default, all requests use <code>COMPLETE</code> mode.</p> <note>
     /// <p>This attribute is only valid for association compliance.</p>
     /// </note>
     pub fn upload_type(mut self, input: crate::types::ComplianceUploadType) -> Self {
@@ -179,7 +179,7 @@ impl PutComplianceItemsInputBuilder {
         self
     }
     /// <p>The mode for uploading compliance items. You can specify <code>COMPLETE</code> or <code>PARTIAL</code>. In <code>COMPLETE</code> mode, the system overwrites all existing compliance information for the resource. You must provide a full list of compliance items each time you send the request.</p>
-    /// <p>In <code>PARTIAL</code> mode, the system overwrites compliance information for a specific association. The association must be configured with <code>SyncCompliance</code> set to <code>MANUAL</code>. By default, all requests use <code>COMPLETE</code> mode.</p><note>
+    /// <p>In <code>PARTIAL</code> mode, the system overwrites compliance information for a specific association. The association must be configured with <code>SyncCompliance</code> set to <code>MANUAL</code>. By default, all requests use <code>COMPLETE</code> mode.</p> <note>
     /// <p>This attribute is only valid for association compliance.</p>
     /// </note>
     pub fn set_upload_type(mut self, input: ::std::option::Option<crate::types::ComplianceUploadType>) -> Self {
@@ -187,7 +187,7 @@ impl PutComplianceItemsInputBuilder {
         self
     }
     /// <p>The mode for uploading compliance items. You can specify <code>COMPLETE</code> or <code>PARTIAL</code>. In <code>COMPLETE</code> mode, the system overwrites all existing compliance information for the resource. You must provide a full list of compliance items each time you send the request.</p>
-    /// <p>In <code>PARTIAL</code> mode, the system overwrites compliance information for a specific association. The association must be configured with <code>SyncCompliance</code> set to <code>MANUAL</code>. By default, all requests use <code>COMPLETE</code> mode.</p><note>
+    /// <p>In <code>PARTIAL</code> mode, the system overwrites compliance information for a specific association. The association must be configured with <code>SyncCompliance</code> set to <code>MANUAL</code>. By default, all requests use <code>COMPLETE</code> mode.</p> <note>
     /// <p>This attribute is only valid for association compliance.</p>
     /// </note>
     pub fn get_upload_type(&self) -> &::std::option::Option<crate::types::ComplianceUploadType> {

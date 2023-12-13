@@ -14,10 +14,8 @@ pub struct PeriodToDateComputation {
     pub value: ::std::option::Option<crate::types::MeasureField>,
     /// <p>The time granularity setup of period to date computation. Choose from the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p>YEAR: Year to date.</p></li>
-    /// <li>
-    /// <p>MONTH: Month to date.</p></li>
+    /// <li> <p>YEAR: Year to date.</p> </li>
+    /// <li> <p>MONTH: Month to date.</p> </li>
     /// </ul>
     pub period_time_granularity: ::std::option::Option<crate::types::TimeGranularity>,
 }
@@ -41,10 +39,8 @@ impl PeriodToDateComputation {
     }
     /// <p>The time granularity setup of period to date computation. Choose from the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p>YEAR: Year to date.</p></li>
-    /// <li>
-    /// <p>MONTH: Month to date.</p></li>
+    /// <li> <p>YEAR: Year to date.</p> </li>
+    /// <li> <p>MONTH: Month to date.</p> </li>
     /// </ul>
     pub fn period_time_granularity(&self) -> ::std::option::Option<&crate::types::TimeGranularity> {
         self.period_time_granularity.as_ref()
@@ -127,10 +123,8 @@ impl PeriodToDateComputationBuilder {
     }
     /// <p>The time granularity setup of period to date computation. Choose from the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p>YEAR: Year to date.</p></li>
-    /// <li>
-    /// <p>MONTH: Month to date.</p></li>
+    /// <li> <p>YEAR: Year to date.</p> </li>
+    /// <li> <p>MONTH: Month to date.</p> </li>
     /// </ul>
     pub fn period_time_granularity(mut self, input: crate::types::TimeGranularity) -> Self {
         self.period_time_granularity = ::std::option::Option::Some(input);
@@ -138,10 +132,8 @@ impl PeriodToDateComputationBuilder {
     }
     /// <p>The time granularity setup of period to date computation. Choose from the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p>YEAR: Year to date.</p></li>
-    /// <li>
-    /// <p>MONTH: Month to date.</p></li>
+    /// <li> <p>YEAR: Year to date.</p> </li>
+    /// <li> <p>MONTH: Month to date.</p> </li>
     /// </ul>
     pub fn set_period_time_granularity(mut self, input: ::std::option::Option<crate::types::TimeGranularity>) -> Self {
         self.period_time_granularity = input;
@@ -149,10 +141,8 @@ impl PeriodToDateComputationBuilder {
     }
     /// <p>The time granularity setup of period to date computation. Choose from the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p>YEAR: Year to date.</p></li>
-    /// <li>
-    /// <p>MONTH: Month to date.</p></li>
+    /// <li> <p>YEAR: Year to date.</p> </li>
+    /// <li> <p>MONTH: Month to date.</p> </li>
     /// </ul>
     pub fn get_period_time_granularity(&self) -> &::std::option::Option<crate::types::TimeGranularity> {
         &self.period_time_granularity

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteInventoryInput {
-    /// <p>The name of the custom inventory type for which you want to delete either all previously collected data or the inventory type itself.</p>
+    /// <p>The name of the custom inventory type for which you want to delete either all previously collected data or the inventory type itself. </p>
     pub type_name: ::std::option::Option<::std::string::String>,
     /// <p>Use the <code>SchemaDeleteOption</code> to delete a custom inventory type (schema). If you don't choose this option, the system only deletes existing inventory data associated with the custom inventory type. Choose one of the following options:</p>
     /// <p>DisableSchema: If you choose this option, the system ignores all inventory data for the specified version, and any earlier versions. To enable this schema again, you must call the <code>PutInventory</code> operation for a version greater than the disabled version.</p>
@@ -15,7 +15,7 @@ pub struct DeleteInventoryInput {
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteInventoryInput {
-    /// <p>The name of the custom inventory type for which you want to delete either all previously collected data or the inventory type itself.</p>
+    /// <p>The name of the custom inventory type for which you want to delete either all previously collected data or the inventory type itself. </p>
     pub fn type_name(&self) -> ::std::option::Option<&str> {
         self.type_name.as_deref()
     }
@@ -51,18 +51,18 @@ pub struct DeleteInventoryInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteInventoryInputBuilder {
-    /// <p>The name of the custom inventory type for which you want to delete either all previously collected data or the inventory type itself.</p>
+    /// <p>The name of the custom inventory type for which you want to delete either all previously collected data or the inventory type itself. </p>
     /// This field is required.
     pub fn type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.type_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the custom inventory type for which you want to delete either all previously collected data or the inventory type itself.</p>
+    /// <p>The name of the custom inventory type for which you want to delete either all previously collected data or the inventory type itself. </p>
     pub fn set_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.type_name = input;
         self
     }
-    /// <p>The name of the custom inventory type for which you want to delete either all previously collected data or the inventory type itself.</p>
+    /// <p>The name of the custom inventory type for which you want to delete either all previously collected data or the inventory type itself. </p>
     pub fn get_type_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.type_name
     }

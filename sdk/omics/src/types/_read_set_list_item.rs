@@ -28,11 +28,11 @@ pub struct ReadSetListItem {
     pub sequence_information: ::std::option::Option<crate::types::SequenceInformation>,
     /// <p>When the read set was created.</p>
     pub creation_time: ::aws_smithy_types::DateTime,
-    /// <p>The status for a read set. It provides more detail as to why the read set has a status.</p>
+    /// <p> The status for a read set. It provides more detail as to why the read set has a status. </p>
     pub status_message: ::std::option::Option<::std::string::String>,
-    /// <p>The creation type of the read set.</p>
+    /// <p> The creation type of the read set. </p>
     pub creation_type: ::std::option::Option<crate::types::CreationType>,
-    /// <p>The entity tag (ETag) is a hash of the object representing its semantic content.</p>
+    /// <p> The entity tag (ETag) is a hash of the object representing its semantic content. </p>
     pub etag: ::std::option::Option<crate::types::ETag>,
 }
 impl ReadSetListItem {
@@ -87,15 +87,15 @@ impl ReadSetListItem {
     pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
         &self.creation_time
     }
-    /// <p>The status for a read set. It provides more detail as to why the read set has a status.</p>
+    /// <p> The status for a read set. It provides more detail as to why the read set has a status. </p>
     pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
-    /// <p>The creation type of the read set.</p>
+    /// <p> The creation type of the read set. </p>
     pub fn creation_type(&self) -> ::std::option::Option<&crate::types::CreationType> {
         self.creation_type.as_ref()
     }
-    /// <p>The entity tag (ETag) is a hash of the object representing its semantic content.</p>
+    /// <p> The entity tag (ETag) is a hash of the object representing its semantic content. </p>
     pub fn etag(&self) -> ::std::option::Option<&crate::types::ETag> {
         self.etag.as_ref()
     }
@@ -302,45 +302,45 @@ impl ReadSetListItemBuilder {
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }
-    /// <p>The status for a read set. It provides more detail as to why the read set has a status.</p>
+    /// <p> The status for a read set. It provides more detail as to why the read set has a status. </p>
     pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The status for a read set. It provides more detail as to why the read set has a status.</p>
+    /// <p> The status for a read set. It provides more detail as to why the read set has a status. </p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
-    /// <p>The status for a read set. It provides more detail as to why the read set has a status.</p>
+    /// <p> The status for a read set. It provides more detail as to why the read set has a status. </p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_message
     }
-    /// <p>The creation type of the read set.</p>
+    /// <p> The creation type of the read set. </p>
     pub fn creation_type(mut self, input: crate::types::CreationType) -> Self {
         self.creation_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The creation type of the read set.</p>
+    /// <p> The creation type of the read set. </p>
     pub fn set_creation_type(mut self, input: ::std::option::Option<crate::types::CreationType>) -> Self {
         self.creation_type = input;
         self
     }
-    /// <p>The creation type of the read set.</p>
+    /// <p> The creation type of the read set. </p>
     pub fn get_creation_type(&self) -> &::std::option::Option<crate::types::CreationType> {
         &self.creation_type
     }
-    /// <p>The entity tag (ETag) is a hash of the object representing its semantic content.</p>
+    /// <p> The entity tag (ETag) is a hash of the object representing its semantic content. </p>
     pub fn etag(mut self, input: crate::types::ETag) -> Self {
         self.etag = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The entity tag (ETag) is a hash of the object representing its semantic content.</p>
+    /// <p> The entity tag (ETag) is a hash of the object representing its semantic content. </p>
     pub fn set_etag(mut self, input: ::std::option::Option<crate::types::ETag>) -> Self {
         self.etag = input;
         self
     }
-    /// <p>The entity tag (ETag) is a hash of the object representing its semantic content.</p>
+    /// <p> The entity tag (ETag) is a hash of the object representing its semantic content. </p>
     pub fn get_etag(&self) -> &::std::option::Option<crate::types::ETag> {
         &self.etag
     }

@@ -7,24 +7,18 @@ pub struct DescribeNatGatewaysInput {
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>nat-gateway-id</code> - The ID of the NAT gateway.</p></li>
-    /// <li>
-    /// <p><code>state</code> - The state of the NAT gateway (<code>pending</code> | <code>failed</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p></li>
-    /// <li>
-    /// <p><code>subnet-id</code> - The ID of the subnet in which the NAT gateway resides.</p></li>
-    /// <li>
-    /// <p><code>tag</code>:<key>
+    /// <li> <p> <code>nat-gateway-id</code> - The ID of the NAT gateway.</p> </li>
+    /// <li> <p> <code>state</code> - The state of the NAT gateway (<code>pending</code> | <code>failed</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p> </li>
+    /// <li> <p> <code>subnet-id</code> - The ID of the subnet in which the NAT gateway resides.</p> </li>
+    /// <li> <p> <code>tag</code>:<key>
     /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
     /// <code>Owner</code> and the value
     /// <code>TeamA</code>, specify
     /// <code>tag:Owner</code> for the filter name and
     /// <code>TeamA</code> for the filter value.
-    /// </key></p></li>
-    /// <li>
-    /// <p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
-    /// <li>
-    /// <p><code>vpc-id</code> - The ID of the VPC in which the NAT gateway resides.</p></li>
+    /// </key></p> </li>
+    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
+    /// <li> <p> <code>vpc-id</code> - The ID of the VPC in which the NAT gateway resides.</p> </li>
     /// </ul>
     pub filter: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
@@ -41,24 +35,18 @@ impl DescribeNatGatewaysInput {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>nat-gateway-id</code> - The ID of the NAT gateway.</p></li>
-    /// <li>
-    /// <p><code>state</code> - The state of the NAT gateway (<code>pending</code> | <code>failed</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p></li>
-    /// <li>
-    /// <p><code>subnet-id</code> - The ID of the subnet in which the NAT gateway resides.</p></li>
-    /// <li>
-    /// <p><code>tag</code>:<key>
+    /// <li> <p> <code>nat-gateway-id</code> - The ID of the NAT gateway.</p> </li>
+    /// <li> <p> <code>state</code> - The state of the NAT gateway (<code>pending</code> | <code>failed</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p> </li>
+    /// <li> <p> <code>subnet-id</code> - The ID of the subnet in which the NAT gateway resides.</p> </li>
+    /// <li> <p> <code>tag</code>:<key>
     /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
     /// <code>Owner</code> and the value
     /// <code>TeamA</code>, specify
     /// <code>tag:Owner</code> for the filter name and
     /// <code>TeamA</code> for the filter value.
-    /// </key></p></li>
-    /// <li>
-    /// <p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
-    /// <li>
-    /// <p><code>vpc-id</code> - The ID of the VPC in which the NAT gateway resides.</p></li>
+    /// </key></p> </li>
+    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
+    /// <li> <p> <code>vpc-id</code> - The ID of the VPC in which the NAT gateway resides.</p> </li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filter.is_none()`.
@@ -118,24 +106,18 @@ impl DescribeNatGatewaysInputBuilder {
     ///
     /// <p>The filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>nat-gateway-id</code> - The ID of the NAT gateway.</p></li>
-    /// <li>
-    /// <p><code>state</code> - The state of the NAT gateway (<code>pending</code> | <code>failed</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p></li>
-    /// <li>
-    /// <p><code>subnet-id</code> - The ID of the subnet in which the NAT gateway resides.</p></li>
-    /// <li>
-    /// <p><code>tag</code>:<key>
+    /// <li> <p> <code>nat-gateway-id</code> - The ID of the NAT gateway.</p> </li>
+    /// <li> <p> <code>state</code> - The state of the NAT gateway (<code>pending</code> | <code>failed</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p> </li>
+    /// <li> <p> <code>subnet-id</code> - The ID of the subnet in which the NAT gateway resides.</p> </li>
+    /// <li> <p> <code>tag</code>:<key>
     /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
     /// <code>Owner</code> and the value
     /// <code>TeamA</code>, specify
     /// <code>tag:Owner</code> for the filter name and
     /// <code>TeamA</code> for the filter value.
-    /// </key></p></li>
-    /// <li>
-    /// <p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
-    /// <li>
-    /// <p><code>vpc-id</code> - The ID of the VPC in which the NAT gateway resides.</p></li>
+    /// </key></p> </li>
+    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
+    /// <li> <p> <code>vpc-id</code> - The ID of the VPC in which the NAT gateway resides.</p> </li>
     /// </ul>
     pub fn filter(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filter.unwrap_or_default();
@@ -145,24 +127,18 @@ impl DescribeNatGatewaysInputBuilder {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>nat-gateway-id</code> - The ID of the NAT gateway.</p></li>
-    /// <li>
-    /// <p><code>state</code> - The state of the NAT gateway (<code>pending</code> | <code>failed</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p></li>
-    /// <li>
-    /// <p><code>subnet-id</code> - The ID of the subnet in which the NAT gateway resides.</p></li>
-    /// <li>
-    /// <p><code>tag</code>:<key>
+    /// <li> <p> <code>nat-gateway-id</code> - The ID of the NAT gateway.</p> </li>
+    /// <li> <p> <code>state</code> - The state of the NAT gateway (<code>pending</code> | <code>failed</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p> </li>
+    /// <li> <p> <code>subnet-id</code> - The ID of the subnet in which the NAT gateway resides.</p> </li>
+    /// <li> <p> <code>tag</code>:<key>
     /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
     /// <code>Owner</code> and the value
     /// <code>TeamA</code>, specify
     /// <code>tag:Owner</code> for the filter name and
     /// <code>TeamA</code> for the filter value.
-    /// </key></p></li>
-    /// <li>
-    /// <p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
-    /// <li>
-    /// <p><code>vpc-id</code> - The ID of the VPC in which the NAT gateway resides.</p></li>
+    /// </key></p> </li>
+    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
+    /// <li> <p> <code>vpc-id</code> - The ID of the VPC in which the NAT gateway resides.</p> </li>
     /// </ul>
     pub fn set_filter(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filter = input;
@@ -170,24 +146,18 @@ impl DescribeNatGatewaysInputBuilder {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>nat-gateway-id</code> - The ID of the NAT gateway.</p></li>
-    /// <li>
-    /// <p><code>state</code> - The state of the NAT gateway (<code>pending</code> | <code>failed</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p></li>
-    /// <li>
-    /// <p><code>subnet-id</code> - The ID of the subnet in which the NAT gateway resides.</p></li>
-    /// <li>
-    /// <p><code>tag</code>:<key>
+    /// <li> <p> <code>nat-gateway-id</code> - The ID of the NAT gateway.</p> </li>
+    /// <li> <p> <code>state</code> - The state of the NAT gateway (<code>pending</code> | <code>failed</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p> </li>
+    /// <li> <p> <code>subnet-id</code> - The ID of the subnet in which the NAT gateway resides.</p> </li>
+    /// <li> <p> <code>tag</code>:<key>
     /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
     /// <code>Owner</code> and the value
     /// <code>TeamA</code>, specify
     /// <code>tag:Owner</code> for the filter name and
     /// <code>TeamA</code> for the filter value.
-    /// </key></p></li>
-    /// <li>
-    /// <p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
-    /// <li>
-    /// <p><code>vpc-id</code> - The ID of the VPC in which the NAT gateway resides.</p></li>
+    /// </key></p> </li>
+    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
+    /// <li> <p> <code>vpc-id</code> - The ID of the VPC in which the NAT gateway resides.</p> </li>
     /// </ul>
     pub fn get_filter(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filter

@@ -10,7 +10,7 @@ pub struct ColumnStatisticsData {
     pub boolean_column_statistics_data: ::std::option::Option<crate::types::BooleanColumnStatisticsData>,
     /// <p>Date column statistics data.</p>
     pub date_column_statistics_data: ::std::option::Option<crate::types::DateColumnStatisticsData>,
-    /// <p>Decimal column statistics data. UnscaledValues within are Base64-encoded binary objects storing big-endian, two's complement representations of the decimal's unscaled value.</p>
+    /// <p> Decimal column statistics data. UnscaledValues within are Base64-encoded binary objects storing big-endian, two's complement representations of the decimal's unscaled value. </p>
     pub decimal_column_statistics_data: ::std::option::Option<crate::types::DecimalColumnStatisticsData>,
     /// <p>Double column statistics data.</p>
     pub double_column_statistics_data: ::std::option::Option<crate::types::DoubleColumnStatisticsData>,
@@ -34,7 +34,7 @@ impl ColumnStatisticsData {
     pub fn date_column_statistics_data(&self) -> ::std::option::Option<&crate::types::DateColumnStatisticsData> {
         self.date_column_statistics_data.as_ref()
     }
-    /// <p>Decimal column statistics data. UnscaledValues within are Base64-encoded binary objects storing big-endian, two's complement representations of the decimal's unscaled value.</p>
+    /// <p> Decimal column statistics data. UnscaledValues within are Base64-encoded binary objects storing big-endian, two's complement representations of the decimal's unscaled value. </p>
     pub fn decimal_column_statistics_data(&self) -> ::std::option::Option<&crate::types::DecimalColumnStatisticsData> {
         self.decimal_column_statistics_data.as_ref()
     }
@@ -119,17 +119,17 @@ impl ColumnStatisticsDataBuilder {
     pub fn get_date_column_statistics_data(&self) -> &::std::option::Option<crate::types::DateColumnStatisticsData> {
         &self.date_column_statistics_data
     }
-    /// <p>Decimal column statistics data. UnscaledValues within are Base64-encoded binary objects storing big-endian, two's complement representations of the decimal's unscaled value.</p>
+    /// <p> Decimal column statistics data. UnscaledValues within are Base64-encoded binary objects storing big-endian, two's complement representations of the decimal's unscaled value. </p>
     pub fn decimal_column_statistics_data(mut self, input: crate::types::DecimalColumnStatisticsData) -> Self {
         self.decimal_column_statistics_data = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Decimal column statistics data. UnscaledValues within are Base64-encoded binary objects storing big-endian, two's complement representations of the decimal's unscaled value.</p>
+    /// <p> Decimal column statistics data. UnscaledValues within are Base64-encoded binary objects storing big-endian, two's complement representations of the decimal's unscaled value. </p>
     pub fn set_decimal_column_statistics_data(mut self, input: ::std::option::Option<crate::types::DecimalColumnStatisticsData>) -> Self {
         self.decimal_column_statistics_data = input;
         self
     }
-    /// <p>Decimal column statistics data. UnscaledValues within are Base64-encoded binary objects storing big-endian, two's complement representations of the decimal's unscaled value.</p>
+    /// <p> Decimal column statistics data. UnscaledValues within are Base64-encoded binary objects storing big-endian, two's complement representations of the decimal's unscaled value. </p>
     pub fn get_decimal_column_statistics_data(&self) -> &::std::option::Option<crate::types::DecimalColumnStatisticsData> {
         &self.decimal_column_statistics_data
     }

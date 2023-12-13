@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteScheduledActionInput {
-    /// <p>The name of the scheduled action to delete.</p>
+    /// <p>The name of the scheduled action to delete. </p>
     pub scheduled_action_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteScheduledActionInput {
-    /// <p>The name of the scheduled action to delete.</p>
+    /// <p>The name of the scheduled action to delete. </p>
     pub fn scheduled_action_name(&self) -> ::std::option::Option<&str> {
         self.scheduled_action_name.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct DeleteScheduledActionInputBuilder {
     pub(crate) scheduled_action_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteScheduledActionInputBuilder {
-    /// <p>The name of the scheduled action to delete.</p>
+    /// <p>The name of the scheduled action to delete. </p>
     /// This field is required.
     pub fn scheduled_action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scheduled_action_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the scheduled action to delete.</p>
+    /// <p>The name of the scheduled action to delete. </p>
     pub fn set_scheduled_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scheduled_action_name = input;
         self
     }
-    /// <p>The name of the scheduled action to delete.</p>
+    /// <p>The name of the scheduled action to delete. </p>
     pub fn get_scheduled_action_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.scheduled_action_name
     }

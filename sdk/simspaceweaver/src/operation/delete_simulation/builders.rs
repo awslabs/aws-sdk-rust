@@ -22,7 +22,7 @@ impl DeleteSimulationInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteSimulation`.
 ///
-/// <p>Deletes all SimSpace Weaver resources assigned to the given simulation.</p><note>
+/// <p>Deletes all SimSpace Weaver resources assigned to the given simulation.</p> <note>
 /// <p>Your simulation uses resources in other Amazon Web Services. This API operation doesn't delete resources in other Amazon Web Services.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

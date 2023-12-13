@@ -22,8 +22,8 @@ impl DisassociateQualificationFromWorkerInputBuilder {
 }
 /// Fluent builder constructing a request to `DisassociateQualificationFromWorker`.
 ///
-/// <p>The <code>DisassociateQualificationFromWorker</code> revokes a previously granted Qualification from a user.</p>
-/// <p>You can provide a text message explaining why the Qualification was revoked. The user who had the Qualification can see this message.</p>
+/// <p> The <code>DisassociateQualificationFromWorker</code> revokes a previously granted Qualification from a user. </p>
+/// <p> You can provide a text message explaining why the Qualification was revoked. The user who had the Qualification can see this message. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateQualificationFromWorkerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

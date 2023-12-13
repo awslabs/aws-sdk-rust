@@ -260,7 +260,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateTraffic
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreateTrafficPolicyVersionError {
-    /// <p>Another user submitted a request to create, update, or delete the object at the same time that you did. Retry the request.</p>
+    /// <p>Another user submitted a request to create, update, or delete the object at the same time that you did. Retry the request. </p>
     ConcurrentModification(crate::types::error::ConcurrentModification),
     /// <p>The input is not valid.</p>
     InvalidInput(crate::types::error::InvalidInput),

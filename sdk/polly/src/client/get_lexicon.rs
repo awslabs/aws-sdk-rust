@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::operation::get_lexicon::builders::GetLexiconFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_lexicon::builders::GetLexiconFluentBuilder::set_name):<br>required: **true**<br><p>Name of the lexicon.</p><br>
     /// - On success, responds with [`GetLexiconOutput`](crate::operation::get_lexicon::GetLexiconOutput) with field(s):
-    ///   - [`lexicon(Option<Lexicon>)`](crate::operation::get_lexicon::GetLexiconOutput::lexicon): <p>Lexicon object that provides name and the string content of the lexicon.</p>
+    ///   - [`lexicon(Option<Lexicon>)`](crate::operation::get_lexicon::GetLexiconOutput::lexicon): <p>Lexicon object that provides name and the string content of the lexicon. </p>
     ///   - [`lexicon_attributes(Option<LexiconAttributes>)`](crate::operation::get_lexicon::GetLexiconOutput::lexicon_attributes): <p>Metadata of the lexicon, including phonetic alphabetic used, language code, lexicon ARN, number of lexemes defined in the lexicon, and size of lexicon in bytes.</p>
     /// - On failure, responds with [`SdkError<GetLexiconError>`](crate::operation::get_lexicon::GetLexiconError)
     pub fn get_lexicon(&self) -> crate::operation::get_lexicon::builders::GetLexiconFluentBuilder {

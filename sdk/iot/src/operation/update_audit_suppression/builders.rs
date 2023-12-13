@@ -22,7 +22,7 @@ impl UpdateAuditSuppressionInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateAuditSuppression`.
 ///
-/// <p>Updates a Device Defender audit suppression.</p>
+/// <p> Updates a Device Defender audit suppression. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAuditSuppressionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -136,45 +136,45 @@ impl UpdateAuditSuppressionFluentBuilder {
     pub fn get_resource_identifier(&self) -> &::std::option::Option<crate::types::ResourceIdentifier> {
         self.inner.get_resource_identifier()
     }
-    /// <p>The expiration date (epoch timestamp in seconds) that you want the suppression to adhere to.</p>
+    /// <p> The expiration date (epoch timestamp in seconds) that you want the suppression to adhere to. </p>
     pub fn expiration_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.expiration_date(input);
         self
     }
-    /// <p>The expiration date (epoch timestamp in seconds) that you want the suppression to adhere to.</p>
+    /// <p> The expiration date (epoch timestamp in seconds) that you want the suppression to adhere to. </p>
     pub fn set_expiration_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_expiration_date(input);
         self
     }
-    /// <p>The expiration date (epoch timestamp in seconds) that you want the suppression to adhere to.</p>
+    /// <p> The expiration date (epoch timestamp in seconds) that you want the suppression to adhere to. </p>
     pub fn get_expiration_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_expiration_date()
     }
-    /// <p>Indicates whether a suppression should exist indefinitely or not.</p>
+    /// <p> Indicates whether a suppression should exist indefinitely or not. </p>
     pub fn suppress_indefinitely(mut self, input: bool) -> Self {
         self.inner = self.inner.suppress_indefinitely(input);
         self
     }
-    /// <p>Indicates whether a suppression should exist indefinitely or not.</p>
+    /// <p> Indicates whether a suppression should exist indefinitely or not. </p>
     pub fn set_suppress_indefinitely(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_suppress_indefinitely(input);
         self
     }
-    /// <p>Indicates whether a suppression should exist indefinitely or not.</p>
+    /// <p> Indicates whether a suppression should exist indefinitely or not. </p>
     pub fn get_suppress_indefinitely(&self) -> &::std::option::Option<bool> {
         self.inner.get_suppress_indefinitely()
     }
-    /// <p>The description of the audit suppression.</p>
+    /// <p> The description of the audit suppression. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>The description of the audit suppression.</p>
+    /// <p> The description of the audit suppression. </p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>The description of the audit suppression.</p>
+    /// <p> The description of the audit suppression. </p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }

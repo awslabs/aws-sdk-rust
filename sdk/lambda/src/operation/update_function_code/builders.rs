@@ -26,7 +26,7 @@ impl UpdateFunctionCodeInputBuilder {
 /// <p>If the function's package type is <code>Image</code>, then you must specify the code package in <code>ImageUri</code> as the URI of a <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container image</a> in the Amazon ECR registry.</p>
 /// <p>If the function's package type is <code>Zip</code>, then you must specify the deployment package as a <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html#gettingstarted-package-zip">.zip file archive</a>. Enter the Amazon S3 bucket and key of the code .zip file location. You can also provide the function code inline using the <code>ZipFile</code> field.</p>
 /// <p>The code in the deployment package must be compatible with the target instruction set architecture of the function (<code>x86-64</code> or <code>arm64</code>).</p>
-/// <p>The function's code is locked when you publish a version. You can't modify the code of a published version, only the unpublished version.</p><note>
+/// <p>The function's code is locked when you publish a version. You can't modify the code of a published version, only the unpublished version.</p> <note>
 /// <p>For a function defined as a container image, Lambda resolves the image tag to an image digest. In Amazon ECR, if you update the image tag to a new image, Lambda does not automatically update the function.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -115,14 +115,11 @@ impl UpdateFunctionCodeFluentBuilder {
         self
     }
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title"><b>Name formats</b></p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p><b>Function name</b> – <code>my-function</code>.</p></li>
-    /// <li>
-    /// <p><b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p></li>
-    /// <li>
-    /// <p><b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p></li>
+    /// <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -130,14 +127,11 @@ impl UpdateFunctionCodeFluentBuilder {
         self
     }
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title"><b>Name formats</b></p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p><b>Function name</b> – <code>my-function</code>.</p></li>
-    /// <li>
-    /// <p><b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p></li>
-    /// <li>
-    /// <p><b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p></li>
+    /// <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -145,14 +139,11 @@ impl UpdateFunctionCodeFluentBuilder {
         self
     }
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title"><b>Name formats</b></p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p><b>Function name</b> – <code>my-function</code>.</p></li>
-    /// <li>
-    /// <p><b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p></li>
-    /// <li>
-    /// <p><b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p></li>
+    /// <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn get_function_name(&self) -> &::std::option::Option<::std::string::String> {

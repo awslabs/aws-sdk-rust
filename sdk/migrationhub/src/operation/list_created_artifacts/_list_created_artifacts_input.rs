@@ -3,9 +3,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCreatedArtifactsInput {
-    /// <p>The name of the ProgressUpdateStream.</p>
+    /// <p>The name of the ProgressUpdateStream. </p>
     pub progress_update_stream: ::std::option::Option<::std::string::String>,
-    /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i></p>
+    /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
     pub migration_task_name: ::std::option::Option<::std::string::String>,
     /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct ListCreatedArtifactsInput {
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListCreatedArtifactsInput {
-    /// <p>The name of the ProgressUpdateStream.</p>
+    /// <p>The name of the ProgressUpdateStream. </p>
     pub fn progress_update_stream(&self) -> ::std::option::Option<&str> {
         self.progress_update_stream.as_deref()
     }
-    /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i></p>
+    /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
     pub fn migration_task_name(&self) -> ::std::option::Option<&str> {
         self.migration_task_name.as_deref()
     }
@@ -47,33 +47,33 @@ pub struct ListCreatedArtifactsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ListCreatedArtifactsInputBuilder {
-    /// <p>The name of the ProgressUpdateStream.</p>
+    /// <p>The name of the ProgressUpdateStream. </p>
     /// This field is required.
     pub fn progress_update_stream(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.progress_update_stream = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the ProgressUpdateStream.</p>
+    /// <p>The name of the ProgressUpdateStream. </p>
     pub fn set_progress_update_stream(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.progress_update_stream = input;
         self
     }
-    /// <p>The name of the ProgressUpdateStream.</p>
+    /// <p>The name of the ProgressUpdateStream. </p>
     pub fn get_progress_update_stream(&self) -> &::std::option::Option<::std::string::String> {
         &self.progress_update_stream
     }
-    /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i></p>
+    /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
     /// This field is required.
     pub fn migration_task_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.migration_task_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i></p>
+    /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
     pub fn set_migration_task_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.migration_task_name = input;
         self
     }
-    /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i></p>
+    /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
     pub fn get_migration_task_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.migration_task_name
     }

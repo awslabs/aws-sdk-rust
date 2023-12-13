@@ -10,7 +10,7 @@ pub struct WorkspaceImage {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the image.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The operating system that the image is running.</p>
+    /// <p>The operating system that the image is running. </p>
     pub operating_system: ::std::option::Option<crate::types::OperatingSystem>,
     /// <p>The status of the image.</p>
     pub state: ::std::option::Option<crate::types::WorkspaceImageState>,
@@ -42,7 +42,7 @@ impl WorkspaceImage {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The operating system that the image is running.</p>
+    /// <p>The operating system that the image is running. </p>
     pub fn operating_system(&self) -> ::std::option::Option<&crate::types::OperatingSystem> {
         self.operating_system.as_ref()
     }
@@ -148,17 +148,17 @@ impl WorkspaceImageBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The operating system that the image is running.</p>
+    /// <p>The operating system that the image is running. </p>
     pub fn operating_system(mut self, input: crate::types::OperatingSystem) -> Self {
         self.operating_system = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The operating system that the image is running.</p>
+    /// <p>The operating system that the image is running. </p>
     pub fn set_operating_system(mut self, input: ::std::option::Option<crate::types::OperatingSystem>) -> Self {
         self.operating_system = input;
         self
     }
-    /// <p>The operating system that the image is running.</p>
+    /// <p>The operating system that the image is running. </p>
     pub fn get_operating_system(&self) -> &::std::option::Option<crate::types::OperatingSystem> {
         &self.operating_system
     }

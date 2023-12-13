@@ -259,7 +259,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteCostCat
 pub enum DeleteCostCategoryDefinitionError {
     /// <p>You made too many calls in a short period of time. Try again later.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
-    /// <p>The specified ARN in the request doesn't exist.</p>
+    /// <p> The specified ARN in the request doesn't exist. </p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

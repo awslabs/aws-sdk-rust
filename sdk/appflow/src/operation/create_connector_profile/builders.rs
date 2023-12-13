@@ -22,7 +22,7 @@ impl CreateConnectorProfileInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateConnectorProfile`.
 ///
-/// <p>Creates a new connector profile associated with your Amazon Web Services account. There is a soft quota of 100 connector profiles per Amazon Web Services account. If you need more connector profiles than this quota allows, you can submit a request to the Amazon AppFlow team through the Amazon AppFlow support channel. In each connector profile that you create, you can provide the credentials and properties for only one connector.</p>
+/// <p> Creates a new connector profile associated with your Amazon Web Services account. There is a soft quota of 100 connector profiles per Amazon Web Services account. If you need more connector profiles than this quota allows, you can submit a request to the Amazon AppFlow team through the Amazon AppFlow support channel. In each connector profile that you create, you can provide the credentials and properties for only one connector.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateConnectorProfileFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,45 +108,45 @@ impl CreateConnectorProfileFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in your Amazon Web Services account.</p>
+    /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in your Amazon Web Services account. </p>
     pub fn connector_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connector_profile_name(input.into());
         self
     }
-    /// <p>The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in your Amazon Web Services account.</p>
+    /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in your Amazon Web Services account. </p>
     pub fn set_connector_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connector_profile_name(input);
         self
     }
-    /// <p>The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in your Amazon Web Services account.</p>
+    /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in your Amazon Web Services account. </p>
     pub fn get_connector_profile_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_connector_profile_name()
     }
-    /// <p>The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key.</p>
+    /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key. </p>
     pub fn kms_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_arn(input.into());
         self
     }
-    /// <p>The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key.</p>
+    /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key. </p>
     pub fn set_kms_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_arn(input);
         self
     }
-    /// <p>The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key.</p>
+    /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key. </p>
     pub fn get_kms_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_kms_arn()
     }
-    /// <p>The type of connector, such as Salesforce, Amplitude, and so on.</p>
+    /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
     pub fn connector_type(mut self, input: crate::types::ConnectorType) -> Self {
         self.inner = self.inner.connector_type(input);
         self
     }
-    /// <p>The type of connector, such as Salesforce, Amplitude, and so on.</p>
+    /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
     pub fn set_connector_type(mut self, input: ::std::option::Option<crate::types::ConnectorType>) -> Self {
         self.inner = self.inner.set_connector_type(input);
         self
     }
-    /// <p>The type of connector, such as Salesforce, Amplitude, and so on.</p>
+    /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
     pub fn get_connector_type(&self) -> &::std::option::Option<crate::types::ConnectorType> {
         self.inner.get_connector_type()
     }
@@ -164,31 +164,31 @@ impl CreateConnectorProfileFluentBuilder {
     pub fn get_connector_label(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_connector_label()
     }
-    /// <p>Indicates the connection mode and specifies whether it is public or private. Private flows use Amazon Web Services PrivateLink to route data over Amazon Web Services infrastructure without exposing it to the public internet.</p>
+    /// <p> Indicates the connection mode and specifies whether it is public or private. Private flows use Amazon Web Services PrivateLink to route data over Amazon Web Services infrastructure without exposing it to the public internet. </p>
     pub fn connection_mode(mut self, input: crate::types::ConnectionMode) -> Self {
         self.inner = self.inner.connection_mode(input);
         self
     }
-    /// <p>Indicates the connection mode and specifies whether it is public or private. Private flows use Amazon Web Services PrivateLink to route data over Amazon Web Services infrastructure without exposing it to the public internet.</p>
+    /// <p> Indicates the connection mode and specifies whether it is public or private. Private flows use Amazon Web Services PrivateLink to route data over Amazon Web Services infrastructure without exposing it to the public internet. </p>
     pub fn set_connection_mode(mut self, input: ::std::option::Option<crate::types::ConnectionMode>) -> Self {
         self.inner = self.inner.set_connection_mode(input);
         self
     }
-    /// <p>Indicates the connection mode and specifies whether it is public or private. Private flows use Amazon Web Services PrivateLink to route data over Amazon Web Services infrastructure without exposing it to the public internet.</p>
+    /// <p> Indicates the connection mode and specifies whether it is public or private. Private flows use Amazon Web Services PrivateLink to route data over Amazon Web Services infrastructure without exposing it to the public internet. </p>
     pub fn get_connection_mode(&self) -> &::std::option::Option<crate::types::ConnectionMode> {
         self.inner.get_connection_mode()
     }
-    /// <p>Defines the connector-specific configuration and credentials.</p>
+    /// <p> Defines the connector-specific configuration and credentials. </p>
     pub fn connector_profile_config(mut self, input: crate::types::ConnectorProfileConfig) -> Self {
         self.inner = self.inner.connector_profile_config(input);
         self
     }
-    /// <p>Defines the connector-specific configuration and credentials.</p>
+    /// <p> Defines the connector-specific configuration and credentials. </p>
     pub fn set_connector_profile_config(mut self, input: ::std::option::Option<crate::types::ConnectorProfileConfig>) -> Self {
         self.inner = self.inner.set_connector_profile_config(input);
         self
     }
-    /// <p>Defines the connector-specific configuration and credentials.</p>
+    /// <p> Defines the connector-specific configuration and credentials. </p>
     pub fn get_connector_profile_config(&self) -> &::std::option::Option<crate::types::ConnectorProfileConfig> {
         self.inner.get_connector_profile_config()
     }

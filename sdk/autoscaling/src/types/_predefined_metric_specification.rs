@@ -6,35 +6,29 @@
 pub struct PredefinedMetricSpecification {
     /// <p>The metric type. The following predefined metrics are available:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ASGAverageCPUUtilization</code> - Average CPU utilization of the Auto Scaling group.</p></li>
-    /// <li>
-    /// <p><code>ASGAverageNetworkIn</code> - Average number of bytes received on all network interfaces by the Auto Scaling group.</p></li>
-    /// <li>
-    /// <p><code>ASGAverageNetworkOut</code> - Average number of bytes sent out on all network interfaces by the Auto Scaling group.</p></li>
-    /// <li>
-    /// <p><code>ALBRequestCountPerTarget</code> - Average Application Load Balancer request count per target for your Auto Scaling group.</p></li>
+    /// <li> <p> <code>ASGAverageCPUUtilization</code> - Average CPU utilization of the Auto Scaling group.</p> </li>
+    /// <li> <p> <code>ASGAverageNetworkIn</code> - Average number of bytes received on all network interfaces by the Auto Scaling group.</p> </li>
+    /// <li> <p> <code>ASGAverageNetworkOut</code> - Average number of bytes sent out on all network interfaces by the Auto Scaling group.</p> </li>
+    /// <li> <p> <code>ALBRequestCountPerTarget</code> - Average Application Load Balancer request count per target for your Auto Scaling group.</p> </li>
     /// </ul>
     pub predefined_metric_type: ::std::option::Option<crate::types::MetricType>,
     /// <p>A label that uniquely identifies a specific Application Load Balancer target group from which to determine the average request count served by your Auto Scaling group. You can't specify a resource label unless the target group is attached to the Auto Scaling group.</p>
     /// <p>You create the resource label by appending the final portion of the load balancer ARN and the final portion of the target group ARN into a single value, separated by a forward slash (/). The format of the resource label is:</p>
-    /// <p><code>app/my-alb/778d41231b141a0f/targetgroup/my-alb-target-group/943f017f100becff</code>.</p>
+    /// <p> <code>app/my-alb/778d41231b141a0f/targetgroup/my-alb-target-group/943f017f100becff</code>.</p>
     /// <p>Where:</p>
     /// <ul>
-    /// <li>
-    /// <p>app/<load-balancer-name>
+    /// <li> <p>app/<load-balancer-name>
     /// /
     /// <load-balancer-id>
     /// is the final portion of the load balancer ARN
     /// </load-balancer-id>
-    /// </load-balancer-name></p></li>
-    /// <li>
-    /// <p>targetgroup/<target-group-name>
+    /// </load-balancer-name></p> </li>
+    /// <li> <p>targetgroup/<target-group-name>
     /// /
     /// <target-group-id>
     /// is the final portion of the target group ARN.
     /// </target-group-id>
-    /// </target-group-name></p></li>
+    /// </target-group-name></p> </li>
     /// </ul>
     /// <p>To find the ARN for an Application Load Balancer, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> API operation. To find the ARN for the target group, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
     pub resource_label: ::std::option::Option<::std::string::String>,
@@ -42,37 +36,31 @@ pub struct PredefinedMetricSpecification {
 impl PredefinedMetricSpecification {
     /// <p>The metric type. The following predefined metrics are available:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ASGAverageCPUUtilization</code> - Average CPU utilization of the Auto Scaling group.</p></li>
-    /// <li>
-    /// <p><code>ASGAverageNetworkIn</code> - Average number of bytes received on all network interfaces by the Auto Scaling group.</p></li>
-    /// <li>
-    /// <p><code>ASGAverageNetworkOut</code> - Average number of bytes sent out on all network interfaces by the Auto Scaling group.</p></li>
-    /// <li>
-    /// <p><code>ALBRequestCountPerTarget</code> - Average Application Load Balancer request count per target for your Auto Scaling group.</p></li>
+    /// <li> <p> <code>ASGAverageCPUUtilization</code> - Average CPU utilization of the Auto Scaling group.</p> </li>
+    /// <li> <p> <code>ASGAverageNetworkIn</code> - Average number of bytes received on all network interfaces by the Auto Scaling group.</p> </li>
+    /// <li> <p> <code>ASGAverageNetworkOut</code> - Average number of bytes sent out on all network interfaces by the Auto Scaling group.</p> </li>
+    /// <li> <p> <code>ALBRequestCountPerTarget</code> - Average Application Load Balancer request count per target for your Auto Scaling group.</p> </li>
     /// </ul>
     pub fn predefined_metric_type(&self) -> ::std::option::Option<&crate::types::MetricType> {
         self.predefined_metric_type.as_ref()
     }
     /// <p>A label that uniquely identifies a specific Application Load Balancer target group from which to determine the average request count served by your Auto Scaling group. You can't specify a resource label unless the target group is attached to the Auto Scaling group.</p>
     /// <p>You create the resource label by appending the final portion of the load balancer ARN and the final portion of the target group ARN into a single value, separated by a forward slash (/). The format of the resource label is:</p>
-    /// <p><code>app/my-alb/778d41231b141a0f/targetgroup/my-alb-target-group/943f017f100becff</code>.</p>
+    /// <p> <code>app/my-alb/778d41231b141a0f/targetgroup/my-alb-target-group/943f017f100becff</code>.</p>
     /// <p>Where:</p>
     /// <ul>
-    /// <li>
-    /// <p>app/<load-balancer-name>
+    /// <li> <p>app/<load-balancer-name>
     /// /
     /// <load-balancer-id>
     /// is the final portion of the load balancer ARN
     /// </load-balancer-id>
-    /// </load-balancer-name></p></li>
-    /// <li>
-    /// <p>targetgroup/<target-group-name>
+    /// </load-balancer-name></p> </li>
+    /// <li> <p>targetgroup/<target-group-name>
     /// /
     /// <target-group-id>
     /// is the final portion of the target group ARN.
     /// </target-group-id>
-    /// </target-group-name></p></li>
+    /// </target-group-name></p> </li>
     /// </ul>
     /// <p>To find the ARN for an Application Load Balancer, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> API operation. To find the ARN for the target group, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
     pub fn resource_label(&self) -> ::std::option::Option<&str> {
@@ -96,14 +84,10 @@ pub struct PredefinedMetricSpecificationBuilder {
 impl PredefinedMetricSpecificationBuilder {
     /// <p>The metric type. The following predefined metrics are available:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ASGAverageCPUUtilization</code> - Average CPU utilization of the Auto Scaling group.</p></li>
-    /// <li>
-    /// <p><code>ASGAverageNetworkIn</code> - Average number of bytes received on all network interfaces by the Auto Scaling group.</p></li>
-    /// <li>
-    /// <p><code>ASGAverageNetworkOut</code> - Average number of bytes sent out on all network interfaces by the Auto Scaling group.</p></li>
-    /// <li>
-    /// <p><code>ALBRequestCountPerTarget</code> - Average Application Load Balancer request count per target for your Auto Scaling group.</p></li>
+    /// <li> <p> <code>ASGAverageCPUUtilization</code> - Average CPU utilization of the Auto Scaling group.</p> </li>
+    /// <li> <p> <code>ASGAverageNetworkIn</code> - Average number of bytes received on all network interfaces by the Auto Scaling group.</p> </li>
+    /// <li> <p> <code>ASGAverageNetworkOut</code> - Average number of bytes sent out on all network interfaces by the Auto Scaling group.</p> </li>
+    /// <li> <p> <code>ALBRequestCountPerTarget</code> - Average Application Load Balancer request count per target for your Auto Scaling group.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn predefined_metric_type(mut self, input: crate::types::MetricType) -> Self {
@@ -112,14 +96,10 @@ impl PredefinedMetricSpecificationBuilder {
     }
     /// <p>The metric type. The following predefined metrics are available:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ASGAverageCPUUtilization</code> - Average CPU utilization of the Auto Scaling group.</p></li>
-    /// <li>
-    /// <p><code>ASGAverageNetworkIn</code> - Average number of bytes received on all network interfaces by the Auto Scaling group.</p></li>
-    /// <li>
-    /// <p><code>ASGAverageNetworkOut</code> - Average number of bytes sent out on all network interfaces by the Auto Scaling group.</p></li>
-    /// <li>
-    /// <p><code>ALBRequestCountPerTarget</code> - Average Application Load Balancer request count per target for your Auto Scaling group.</p></li>
+    /// <li> <p> <code>ASGAverageCPUUtilization</code> - Average CPU utilization of the Auto Scaling group.</p> </li>
+    /// <li> <p> <code>ASGAverageNetworkIn</code> - Average number of bytes received on all network interfaces by the Auto Scaling group.</p> </li>
+    /// <li> <p> <code>ASGAverageNetworkOut</code> - Average number of bytes sent out on all network interfaces by the Auto Scaling group.</p> </li>
+    /// <li> <p> <code>ALBRequestCountPerTarget</code> - Average Application Load Balancer request count per target for your Auto Scaling group.</p> </li>
     /// </ul>
     pub fn set_predefined_metric_type(mut self, input: ::std::option::Option<crate::types::MetricType>) -> Self {
         self.predefined_metric_type = input;
@@ -127,37 +107,31 @@ impl PredefinedMetricSpecificationBuilder {
     }
     /// <p>The metric type. The following predefined metrics are available:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ASGAverageCPUUtilization</code> - Average CPU utilization of the Auto Scaling group.</p></li>
-    /// <li>
-    /// <p><code>ASGAverageNetworkIn</code> - Average number of bytes received on all network interfaces by the Auto Scaling group.</p></li>
-    /// <li>
-    /// <p><code>ASGAverageNetworkOut</code> - Average number of bytes sent out on all network interfaces by the Auto Scaling group.</p></li>
-    /// <li>
-    /// <p><code>ALBRequestCountPerTarget</code> - Average Application Load Balancer request count per target for your Auto Scaling group.</p></li>
+    /// <li> <p> <code>ASGAverageCPUUtilization</code> - Average CPU utilization of the Auto Scaling group.</p> </li>
+    /// <li> <p> <code>ASGAverageNetworkIn</code> - Average number of bytes received on all network interfaces by the Auto Scaling group.</p> </li>
+    /// <li> <p> <code>ASGAverageNetworkOut</code> - Average number of bytes sent out on all network interfaces by the Auto Scaling group.</p> </li>
+    /// <li> <p> <code>ALBRequestCountPerTarget</code> - Average Application Load Balancer request count per target for your Auto Scaling group.</p> </li>
     /// </ul>
     pub fn get_predefined_metric_type(&self) -> &::std::option::Option<crate::types::MetricType> {
         &self.predefined_metric_type
     }
     /// <p>A label that uniquely identifies a specific Application Load Balancer target group from which to determine the average request count served by your Auto Scaling group. You can't specify a resource label unless the target group is attached to the Auto Scaling group.</p>
     /// <p>You create the resource label by appending the final portion of the load balancer ARN and the final portion of the target group ARN into a single value, separated by a forward slash (/). The format of the resource label is:</p>
-    /// <p><code>app/my-alb/778d41231b141a0f/targetgroup/my-alb-target-group/943f017f100becff</code>.</p>
+    /// <p> <code>app/my-alb/778d41231b141a0f/targetgroup/my-alb-target-group/943f017f100becff</code>.</p>
     /// <p>Where:</p>
     /// <ul>
-    /// <li>
-    /// <p>app/<load-balancer-name>
+    /// <li> <p>app/<load-balancer-name>
     /// /
     /// <load-balancer-id>
     /// is the final portion of the load balancer ARN
     /// </load-balancer-id>
-    /// </load-balancer-name></p></li>
-    /// <li>
-    /// <p>targetgroup/<target-group-name>
+    /// </load-balancer-name></p> </li>
+    /// <li> <p>targetgroup/<target-group-name>
     /// /
     /// <target-group-id>
     /// is the final portion of the target group ARN.
     /// </target-group-id>
-    /// </target-group-name></p></li>
+    /// </target-group-name></p> </li>
     /// </ul>
     /// <p>To find the ARN for an Application Load Balancer, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> API operation. To find the ARN for the target group, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
     pub fn resource_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -166,23 +140,21 @@ impl PredefinedMetricSpecificationBuilder {
     }
     /// <p>A label that uniquely identifies a specific Application Load Balancer target group from which to determine the average request count served by your Auto Scaling group. You can't specify a resource label unless the target group is attached to the Auto Scaling group.</p>
     /// <p>You create the resource label by appending the final portion of the load balancer ARN and the final portion of the target group ARN into a single value, separated by a forward slash (/). The format of the resource label is:</p>
-    /// <p><code>app/my-alb/778d41231b141a0f/targetgroup/my-alb-target-group/943f017f100becff</code>.</p>
+    /// <p> <code>app/my-alb/778d41231b141a0f/targetgroup/my-alb-target-group/943f017f100becff</code>.</p>
     /// <p>Where:</p>
     /// <ul>
-    /// <li>
-    /// <p>app/<load-balancer-name>
+    /// <li> <p>app/<load-balancer-name>
     /// /
     /// <load-balancer-id>
     /// is the final portion of the load balancer ARN
     /// </load-balancer-id>
-    /// </load-balancer-name></p></li>
-    /// <li>
-    /// <p>targetgroup/<target-group-name>
+    /// </load-balancer-name></p> </li>
+    /// <li> <p>targetgroup/<target-group-name>
     /// /
     /// <target-group-id>
     /// is the final portion of the target group ARN.
     /// </target-group-id>
-    /// </target-group-name></p></li>
+    /// </target-group-name></p> </li>
     /// </ul>
     /// <p>To find the ARN for an Application Load Balancer, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> API operation. To find the ARN for the target group, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
     pub fn set_resource_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -191,23 +163,21 @@ impl PredefinedMetricSpecificationBuilder {
     }
     /// <p>A label that uniquely identifies a specific Application Load Balancer target group from which to determine the average request count served by your Auto Scaling group. You can't specify a resource label unless the target group is attached to the Auto Scaling group.</p>
     /// <p>You create the resource label by appending the final portion of the load balancer ARN and the final portion of the target group ARN into a single value, separated by a forward slash (/). The format of the resource label is:</p>
-    /// <p><code>app/my-alb/778d41231b141a0f/targetgroup/my-alb-target-group/943f017f100becff</code>.</p>
+    /// <p> <code>app/my-alb/778d41231b141a0f/targetgroup/my-alb-target-group/943f017f100becff</code>.</p>
     /// <p>Where:</p>
     /// <ul>
-    /// <li>
-    /// <p>app/<load-balancer-name>
+    /// <li> <p>app/<load-balancer-name>
     /// /
     /// <load-balancer-id>
     /// is the final portion of the load balancer ARN
     /// </load-balancer-id>
-    /// </load-balancer-name></p></li>
-    /// <li>
-    /// <p>targetgroup/<target-group-name>
+    /// </load-balancer-name></p> </li>
+    /// <li> <p>targetgroup/<target-group-name>
     /// /
     /// <target-group-id>
     /// is the final portion of the target group ARN.
     /// </target-group-id>
-    /// </target-group-name></p></li>
+    /// </target-group-name></p> </li>
     /// </ul>
     /// <p>To find the ARN for an Application Load Balancer, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> API operation. To find the ARN for the target group, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
     pub fn get_resource_label(&self) -> &::std::option::Option<::std::string::String> {

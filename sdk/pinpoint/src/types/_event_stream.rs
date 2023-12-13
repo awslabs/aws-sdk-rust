@@ -13,14 +13,14 @@ pub struct EventStream {
     /// account-id
     /// </replaceable>:stream/<replaceable>
     /// stream_name
-    /// </replaceable></p>
+    /// </replaceable> </p>
     /// <p>For a Kinesis Data Firehose delivery stream, the ARN format is: arn:aws:firehose:<replaceable>
     /// region
     /// </replaceable>:<replaceable>
     /// account-id
     /// </replaceable>:deliverystream/<replaceable>
     /// stream_name
-    /// </replaceable></p>
+    /// </replaceable> </p>
     pub destination_stream_arn: ::std::option::Option<::std::string::String>,
     /// <p>(Deprecated) Your AWS account ID, which you assigned to an external ID key in an IAM trust policy. Amazon Pinpoint previously used this value to assume an IAM role when publishing event data, but we removed this requirement. We don't recommend use of external IDs for IAM roles that are assumed by Amazon Pinpoint.</p>
     pub external_id: ::std::option::Option<::std::string::String>,
@@ -43,14 +43,14 @@ impl EventStream {
     /// account-id
     /// </replaceable>:stream/<replaceable>
     /// stream_name
-    /// </replaceable></p>
+    /// </replaceable> </p>
     /// <p>For a Kinesis Data Firehose delivery stream, the ARN format is: arn:aws:firehose:<replaceable>
     /// region
     /// </replaceable>:<replaceable>
     /// account-id
     /// </replaceable>:deliverystream/<replaceable>
     /// stream_name
-    /// </replaceable></p>
+    /// </replaceable> </p>
     pub fn destination_stream_arn(&self) -> ::std::option::Option<&str> {
         self.destination_stream_arn.as_deref()
     }
@@ -112,14 +112,14 @@ impl EventStreamBuilder {
     /// account-id
     /// </replaceable>:stream/<replaceable>
     /// stream_name
-    /// </replaceable></p>
+    /// </replaceable> </p>
     /// <p>For a Kinesis Data Firehose delivery stream, the ARN format is: arn:aws:firehose:<replaceable>
     /// region
     /// </replaceable>:<replaceable>
     /// account-id
     /// </replaceable>:deliverystream/<replaceable>
     /// stream_name
-    /// </replaceable></p>
+    /// </replaceable> </p>
     /// This field is required.
     pub fn destination_stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_stream_arn = ::std::option::Option::Some(input.into());
@@ -132,14 +132,14 @@ impl EventStreamBuilder {
     /// account-id
     /// </replaceable>:stream/<replaceable>
     /// stream_name
-    /// </replaceable></p>
+    /// </replaceable> </p>
     /// <p>For a Kinesis Data Firehose delivery stream, the ARN format is: arn:aws:firehose:<replaceable>
     /// region
     /// </replaceable>:<replaceable>
     /// account-id
     /// </replaceable>:deliverystream/<replaceable>
     /// stream_name
-    /// </replaceable></p>
+    /// </replaceable> </p>
     pub fn set_destination_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_stream_arn = input;
         self
@@ -151,14 +151,14 @@ impl EventStreamBuilder {
     /// account-id
     /// </replaceable>:stream/<replaceable>
     /// stream_name
-    /// </replaceable></p>
+    /// </replaceable> </p>
     /// <p>For a Kinesis Data Firehose delivery stream, the ARN format is: arn:aws:firehose:<replaceable>
     /// region
     /// </replaceable>:<replaceable>
     /// account-id
     /// </replaceable>:deliverystream/<replaceable>
     /// stream_name
-    /// </replaceable></p>
+    /// </replaceable> </p>
     pub fn get_destination_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination_stream_arn
     }

@@ -245,7 +245,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeImpor
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DescribeImportError {
-    /// <p>The specified import was not found.</p>
+    /// <p> The specified import was not found. </p>
     ImportNotFoundException(crate::types::error::ImportNotFoundException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

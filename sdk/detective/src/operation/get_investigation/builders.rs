@@ -22,7 +22,7 @@ impl GetInvestigationInputBuilder {
 }
 /// Fluent builder constructing a request to `GetInvestigation`.
 ///
-/// <p>Returns the investigation results of an investigation for a behavior graph.</p>
+/// <p>Returns the investigation results of an investigation for a behavior graph. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetInvestigationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -22,7 +22,7 @@ impl DescribeInsightInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeInsight`.
 ///
-/// <p>Returns details about an insight that you specify using its ID.</p>
+/// <p> Returns details about an insight that you specify using its ID. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeInsightFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DescribeInsightFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the insight.</p>
+    /// <p> The ID of the insight. </p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
         self
     }
-    /// <p>The ID of the insight.</p>
+    /// <p> The ID of the insight. </p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
     }
-    /// <p>The ID of the insight.</p>
+    /// <p> The ID of the insight. </p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_id()
     }

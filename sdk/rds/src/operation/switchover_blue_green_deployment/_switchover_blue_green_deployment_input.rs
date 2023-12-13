@@ -6,8 +6,7 @@ pub struct SwitchoverBlueGreenDeploymentInput {
     /// <p>The unique identifier of the blue/green deployment.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must match an existing blue/green deployment identifier.</p></li>
+    /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
     /// </ul>
     pub blue_green_deployment_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The amount of time, in seconds, for the switchover to complete.</p>
@@ -19,8 +18,7 @@ impl SwitchoverBlueGreenDeploymentInput {
     /// <p>The unique identifier of the blue/green deployment.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must match an existing blue/green deployment identifier.</p></li>
+    /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
     /// </ul>
     pub fn blue_green_deployment_identifier(&self) -> ::std::option::Option<&str> {
         self.blue_green_deployment_identifier.as_deref()
@@ -50,8 +48,7 @@ impl SwitchoverBlueGreenDeploymentInputBuilder {
     /// <p>The unique identifier of the blue/green deployment.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must match an existing blue/green deployment identifier.</p></li>
+    /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn blue_green_deployment_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -61,8 +58,7 @@ impl SwitchoverBlueGreenDeploymentInputBuilder {
     /// <p>The unique identifier of the blue/green deployment.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must match an existing blue/green deployment identifier.</p></li>
+    /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
     /// </ul>
     pub fn set_blue_green_deployment_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.blue_green_deployment_identifier = input;
@@ -71,8 +67,7 @@ impl SwitchoverBlueGreenDeploymentInputBuilder {
     /// <p>The unique identifier of the blue/green deployment.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must match an existing blue/green deployment identifier.</p></li>
+    /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
     /// </ul>
     pub fn get_blue_green_deployment_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.blue_green_deployment_identifier

@@ -271,7 +271,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UntagResource
 pub enum UntagResourceError {
     /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again.</p>
     BadRequestException(crate::types::error::BadRequestException),
-    /// <p>There was a conflict processing the request. Try your request again.</p>
+    /// <p> There was a conflict processing the request. Try your request again. </p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>An internal Amazon Lex error occurred. Try your request again.</p>
     InternalFailureException(crate::types::error::InternalFailureException),

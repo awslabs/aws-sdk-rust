@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartImportFileTaskOutput {
-    /// <p>The ID for a specific import task. The ID is unique within an AWS account.</p>
+    /// <p> The ID for a specific import task. The ID is unique within an AWS account. </p>
     pub id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl StartImportFileTaskOutput {
-    /// <p>The ID for a specific import task. The ID is unique within an AWS account.</p>
+    /// <p> The ID for a specific import task. The ID is unique within an AWS account. </p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -33,17 +33,17 @@ pub struct StartImportFileTaskOutputBuilder {
     _request_id: Option<String>,
 }
 impl StartImportFileTaskOutputBuilder {
-    /// <p>The ID for a specific import task. The ID is unique within an AWS account.</p>
+    /// <p> The ID for a specific import task. The ID is unique within an AWS account. </p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID for a specific import task. The ID is unique within an AWS account.</p>
+    /// <p> The ID for a specific import task. The ID is unique within an AWS account. </p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// <p>The ID for a specific import task. The ID is unique within an AWS account.</p>
+    /// <p> The ID for a specific import task. The ID is unique within an AWS account. </p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }

@@ -8,7 +8,7 @@ pub struct RawMetricData {
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The time that the metric was recorded.</p>
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The metric step (epoch).</p>
+    /// <p>The metric step (epoch). </p>
     pub step: ::std::option::Option<i32>,
     /// <p>The metric value.</p>
     pub value: ::std::option::Option<f64>,
@@ -22,7 +22,7 @@ impl RawMetricData {
     pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
-    /// <p>The metric step (epoch).</p>
+    /// <p>The metric step (epoch). </p>
     pub fn step(&self) -> ::std::option::Option<i32> {
         self.step
     }
@@ -78,17 +78,17 @@ impl RawMetricDataBuilder {
     pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.timestamp
     }
-    /// <p>The metric step (epoch).</p>
+    /// <p>The metric step (epoch). </p>
     pub fn step(mut self, input: i32) -> Self {
         self.step = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The metric step (epoch).</p>
+    /// <p>The metric step (epoch). </p>
     pub fn set_step(mut self, input: ::std::option::Option<i32>) -> Self {
         self.step = input;
         self
     }
-    /// <p>The metric step (epoch).</p>
+    /// <p>The metric step (epoch). </p>
     pub fn get_step(&self) -> &::std::option::Option<i32> {
         &self.step
     }

@@ -247,7 +247,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListOpsMetada
 pub enum ListOpsMetadataError {
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::types::error::InternalServerError),
-    /// <p>One of the arguments passed is invalid.</p>
+    /// <p>One of the arguments passed is invalid. </p>
     OpsMetadataInvalidArgumentException(crate::types::error::OpsMetadataInvalidArgumentException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

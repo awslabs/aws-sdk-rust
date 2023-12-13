@@ -22,7 +22,7 @@ impl ListTagsForResourceInputBuilder {
 }
 /// Fluent builder constructing a request to `ListTagsForResource`.
 ///
-/// <p>Lists tags for one health check or hosted zone.</p>
+/// <p>Lists tags for one health check or hosted zone. </p>
 /// <p>For information about using tags for cost allocation, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>Billing and Cost Management User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTagsForResourceFluentBuilder {
@@ -111,10 +111,8 @@ impl ListTagsForResourceFluentBuilder {
     }
     /// <p>The type of the resource.</p>
     /// <ul>
-    /// <li>
-    /// <p>The resource type for health checks is <code>healthcheck</code>.</p></li>
-    /// <li>
-    /// <p>The resource type for hosted zones is <code>hostedzone</code>.</p></li>
+    /// <li> <p>The resource type for health checks is <code>healthcheck</code>.</p> </li>
+    /// <li> <p>The resource type for hosted zones is <code>hostedzone</code>.</p> </li>
     /// </ul>
     pub fn resource_type(mut self, input: crate::types::TagResourceType) -> Self {
         self.inner = self.inner.resource_type(input);
@@ -122,10 +120,8 @@ impl ListTagsForResourceFluentBuilder {
     }
     /// <p>The type of the resource.</p>
     /// <ul>
-    /// <li>
-    /// <p>The resource type for health checks is <code>healthcheck</code>.</p></li>
-    /// <li>
-    /// <p>The resource type for hosted zones is <code>hostedzone</code>.</p></li>
+    /// <li> <p>The resource type for health checks is <code>healthcheck</code>.</p> </li>
+    /// <li> <p>The resource type for hosted zones is <code>hostedzone</code>.</p> </li>
     /// </ul>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::TagResourceType>) -> Self {
         self.inner = self.inner.set_resource_type(input);
@@ -133,10 +129,8 @@ impl ListTagsForResourceFluentBuilder {
     }
     /// <p>The type of the resource.</p>
     /// <ul>
-    /// <li>
-    /// <p>The resource type for health checks is <code>healthcheck</code>.</p></li>
-    /// <li>
-    /// <p>The resource type for hosted zones is <code>hostedzone</code>.</p></li>
+    /// <li> <p>The resource type for health checks is <code>healthcheck</code>.</p> </li>
+    /// <li> <p>The resource type for hosted zones is <code>hostedzone</code>.</p> </li>
     /// </ul>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::TagResourceType> {
         self.inner.get_resource_type()

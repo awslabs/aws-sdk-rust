@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LifecycleConfiguration {
-    /// <p>A lifecycle rule for individual objects in an Outposts bucket.</p>
+    /// <p>A lifecycle rule for individual objects in an Outposts bucket. </p>
     pub rules: ::std::option::Option<::std::vec::Vec<crate::types::LifecycleRule>>,
 }
 impl LifecycleConfiguration {
-    /// <p>A lifecycle rule for individual objects in an Outposts bucket.</p>
+    /// <p>A lifecycle rule for individual objects in an Outposts bucket. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rules.is_none()`.
     pub fn rules(&self) -> &[crate::types::LifecycleRule] {
@@ -33,19 +33,19 @@ impl LifecycleConfigurationBuilder {
     ///
     /// To override the contents of this collection use [`set_rules`](Self::set_rules).
     ///
-    /// <p>A lifecycle rule for individual objects in an Outposts bucket.</p>
+    /// <p>A lifecycle rule for individual objects in an Outposts bucket. </p>
     pub fn rules(mut self, input: crate::types::LifecycleRule) -> Self {
         let mut v = self.rules.unwrap_or_default();
         v.push(input);
         self.rules = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A lifecycle rule for individual objects in an Outposts bucket.</p>
+    /// <p>A lifecycle rule for individual objects in an Outposts bucket. </p>
     pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LifecycleRule>>) -> Self {
         self.rules = input;
         self
     }
-    /// <p>A lifecycle rule for individual objects in an Outposts bucket.</p>
+    /// <p>A lifecycle rule for individual objects in an Outposts bucket. </p>
     pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LifecycleRule>> {
         &self.rules
     }

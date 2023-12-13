@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BotMetadata {
-    /// <p>The name of the bot.</p>
+    /// <p>The name of the bot. </p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the bot.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The status of the bot.</p>
     pub status: ::std::option::Option<crate::types::Status>,
-    /// <p>The date that the bot was updated. When you create a bot, the creation date and last updated date are the same.</p>
+    /// <p>The date that the bot was updated. When you create a bot, the creation date and last updated date are the same. </p>
     pub last_updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date that the bot was created.</p>
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -18,7 +18,7 @@ pub struct BotMetadata {
     pub version: ::std::option::Option<::std::string::String>,
 }
 impl BotMetadata {
-    /// <p>The name of the bot.</p>
+    /// <p>The name of the bot. </p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -30,7 +30,7 @@ impl BotMetadata {
     pub fn status(&self) -> ::std::option::Option<&crate::types::Status> {
         self.status.as_ref()
     }
-    /// <p>The date that the bot was updated. When you create a bot, the creation date and last updated date are the same.</p>
+    /// <p>The date that the bot was updated. When you create a bot, the creation date and last updated date are the same. </p>
     pub fn last_updated_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_date.as_ref()
     }
@@ -62,17 +62,17 @@ pub struct BotMetadataBuilder {
     pub(crate) version: ::std::option::Option<::std::string::String>,
 }
 impl BotMetadataBuilder {
-    /// <p>The name of the bot.</p>
+    /// <p>The name of the bot. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the bot.</p>
+    /// <p>The name of the bot. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the bot.</p>
+    /// <p>The name of the bot. </p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
@@ -104,17 +104,17 @@ impl BotMetadataBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
         &self.status
     }
-    /// <p>The date that the bot was updated. When you create a bot, the creation date and last updated date are the same.</p>
+    /// <p>The date that the bot was updated. When you create a bot, the creation date and last updated date are the same. </p>
     pub fn last_updated_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_date = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date that the bot was updated. When you create a bot, the creation date and last updated date are the same.</p>
+    /// <p>The date that the bot was updated. When you create a bot, the creation date and last updated date are the same. </p>
     pub fn set_last_updated_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_date = input;
         self
     }
-    /// <p>The date that the bot was updated. When you create a bot, the creation date and last updated date are the same.</p>
+    /// <p>The date that the bot was updated. When you create a bot, the creation date and last updated date are the same. </p>
     pub fn get_last_updated_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_date
     }

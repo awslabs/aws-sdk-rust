@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeregisterOrganizationAdminAccountInput {
-    /// <p>The identifier for the administrator account.</p>
+    /// <p> The identifier for the administrator account. </p>
     pub admin_account_id: ::std::option::Option<::std::string::String>,
 }
 impl DeregisterOrganizationAdminAccountInput {
-    /// <p>The identifier for the administrator account.</p>
+    /// <p> The identifier for the administrator account. </p>
     pub fn admin_account_id(&self) -> ::std::option::Option<&str> {
         self.admin_account_id.as_deref()
     }
@@ -26,17 +26,17 @@ pub struct DeregisterOrganizationAdminAccountInputBuilder {
     pub(crate) admin_account_id: ::std::option::Option<::std::string::String>,
 }
 impl DeregisterOrganizationAdminAccountInputBuilder {
-    /// <p>The identifier for the administrator account.</p>
+    /// <p> The identifier for the administrator account. </p>
     pub fn admin_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.admin_account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier for the administrator account.</p>
+    /// <p> The identifier for the administrator account. </p>
     pub fn set_admin_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.admin_account_id = input;
         self
     }
-    /// <p>The identifier for the administrator account.</p>
+    /// <p> The identifier for the administrator account. </p>
     pub fn get_admin_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.admin_account_id
     }

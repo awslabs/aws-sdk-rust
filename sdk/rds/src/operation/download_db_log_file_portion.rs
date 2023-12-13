@@ -243,9 +243,9 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DownloadDBLog
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DownloadDBLogFilePortionError {
-    /// <p><code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
+    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
     DbInstanceNotFoundFault(crate::types::error::DbInstanceNotFoundFault),
-    /// <p><code>LogFileName</code> doesn't refer to an existing DB log file.</p>
+    /// <p> <code>LogFileName</code> doesn't refer to an existing DB log file.</p>
     DbLogFileNotFoundFault(crate::types::error::DbLogFileNotFoundFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

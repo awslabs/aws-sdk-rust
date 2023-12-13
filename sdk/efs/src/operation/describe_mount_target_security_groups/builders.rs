@@ -25,10 +25,8 @@ impl DescribeMountTargetSecurityGroupsInputBuilder {
 /// <p>Returns the security groups currently in effect for a mount target. This operation requires that the network interface of the mount target has been created and the lifecycle state of the mount target is not <code>deleted</code>.</p>
 /// <p>This operation requires permissions for the following actions:</p>
 /// <ul>
-/// <li>
-/// <p><code>elasticfilesystem:DescribeMountTargetSecurityGroups</code> action on the mount target's file system.</p></li>
-/// <li>
-/// <p><code>ec2:DescribeNetworkInterfaceAttribute</code> action on the mount target's network interface.</p></li>
+/// <li> <p> <code>elasticfilesystem:DescribeMountTargetSecurityGroups</code> action on the mount target's file system. </p> </li>
+/// <li> <p> <code>ec2:DescribeNetworkInterfaceAttribute</code> action on the mount target's network interface. </p> </li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeMountTargetSecurityGroupsFluentBuilder {

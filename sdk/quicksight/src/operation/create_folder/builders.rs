@@ -165,19 +165,19 @@ impl CreateFolderFluentBuilder {
         self.inner.get_folder_type()
     }
     /// <p>The Amazon Resource Name (ARN) for the parent folder.</p>
-    /// <p><code>ParentFolderArn</code> can be null. An empty <code>parentFolderArn</code> creates a root-level folder.</p>
+    /// <p> <code>ParentFolderArn</code> can be null. An empty <code>parentFolderArn</code> creates a root-level folder.</p>
     pub fn parent_folder_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.parent_folder_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the parent folder.</p>
-    /// <p><code>ParentFolderArn</code> can be null. An empty <code>parentFolderArn</code> creates a root-level folder.</p>
+    /// <p> <code>ParentFolderArn</code> can be null. An empty <code>parentFolderArn</code> creates a root-level folder.</p>
     pub fn set_parent_folder_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_parent_folder_arn(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the parent folder.</p>
-    /// <p><code>ParentFolderArn</code> can be null. An empty <code>parentFolderArn</code> creates a root-level folder.</p>
+    /// <p> <code>ParentFolderArn</code> can be null. An empty <code>parentFolderArn</code> creates a root-level folder.</p>
     pub fn get_parent_folder_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_parent_folder_arn()
     }

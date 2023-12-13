@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LifecycleRuleFilter {
-    /// <p>Prefix identifying one or more objects to which the rule applies.</p><important>
+    /// <p>Prefix identifying one or more objects to which the rule applies.</p> <important>
     /// <p>When you're using XML requests, you must replace special characters (such as carriage returns) in object keys with their equivalent XML entity codes. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML-related object key constraints</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// </important>
     pub prefix: ::std::option::Option<::std::string::String>,
@@ -18,7 +18,7 @@ pub struct LifecycleRuleFilter {
     pub object_size_less_than: ::std::option::Option<i64>,
 }
 impl LifecycleRuleFilter {
-    /// <p>Prefix identifying one or more objects to which the rule applies.</p><important>
+    /// <p>Prefix identifying one or more objects to which the rule applies.</p> <important>
     /// <p>When you're using XML requests, you must replace special characters (such as carriage returns) in object keys with their equivalent XML entity codes. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML-related object key constraints</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// </important>
     pub fn prefix(&self) -> ::std::option::Option<&str> {
@@ -59,21 +59,21 @@ pub struct LifecycleRuleFilterBuilder {
     pub(crate) object_size_less_than: ::std::option::Option<i64>,
 }
 impl LifecycleRuleFilterBuilder {
-    /// <p>Prefix identifying one or more objects to which the rule applies.</p><important>
+    /// <p>Prefix identifying one or more objects to which the rule applies.</p> <important>
     /// <p>When you're using XML requests, you must replace special characters (such as carriage returns) in object keys with their equivalent XML entity codes. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML-related object key constraints</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// </important>
     pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prefix = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Prefix identifying one or more objects to which the rule applies.</p><important>
+    /// <p>Prefix identifying one or more objects to which the rule applies.</p> <important>
     /// <p>When you're using XML requests, you must replace special characters (such as carriage returns) in object keys with their equivalent XML entity codes. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML-related object key constraints</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// </important>
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prefix = input;
         self
     }
-    /// <p>Prefix identifying one or more objects to which the rule applies.</p><important>
+    /// <p>Prefix identifying one or more objects to which the rule applies.</p> <important>
     /// <p>When you're using XML requests, you must replace special characters (such as carriage returns) in object keys with their equivalent XML entity codes. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML-related object key constraints</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// </important>
     pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {

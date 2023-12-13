@@ -261,7 +261,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for AssociateDele
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum AssociateDelegationSignerToDomainError {
-    /// <p>This error is returned if you call <code>AssociateDelegationSignerToDomain</code> when the specified domain has reached the maximum number of DS records. You can't add any additional DS records unless you delete an existing one first.</p>
+    /// <p> This error is returned if you call <code>AssociateDelegationSignerToDomain</code> when the specified domain has reached the maximum number of DS records. You can't add any additional DS records unless you delete an existing one first. </p>
     DnssecLimitExceeded(crate::types::error::DnssecLimitExceeded),
     /// <p>The request is already in progress for the domain.</p>
     DuplicateRequest(crate::types::error::DuplicateRequest),

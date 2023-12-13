@@ -128,17 +128,17 @@ impl ListSpeechSynthesisTasksFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p>The pagination token to use in the next request to continue the listing of speech synthesis tasks.</p>
+    /// <p>The pagination token to use in the next request to continue the listing of speech synthesis tasks. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>The pagination token to use in the next request to continue the listing of speech synthesis tasks.</p>
+    /// <p>The pagination token to use in the next request to continue the listing of speech synthesis tasks. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>The pagination token to use in the next request to continue the listing of speech synthesis tasks.</p>
+    /// <p>The pagination token to use in the next request to continue the listing of speech synthesis tasks. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

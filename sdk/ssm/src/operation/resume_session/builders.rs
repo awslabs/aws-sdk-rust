@@ -22,7 +22,7 @@ impl ResumeSessionInputBuilder {
 }
 /// Fluent builder constructing a request to `ResumeSession`.
 ///
-/// <p>Reconnects a session to a managed node after it has been disconnected. Connections can be resumed for disconnected sessions, but not terminated sessions.</p><note>
+/// <p>Reconnects a session to a managed node after it has been disconnected. Connections can be resumed for disconnected sessions, but not terminated sessions.</p> <note>
 /// <p>This command is primarily for use by client machines to automatically reconnect during intermittent network issues. It isn't intended for any other use.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

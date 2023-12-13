@@ -136,17 +136,17 @@ impl StartJobRunFluentBuilder {
     pub fn get_virtual_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_virtual_cluster_id()
     }
-    /// <p>The client idempotency token of the job run request.</p>
+    /// <p>The client idempotency token of the job run request. </p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p>The client idempotency token of the job run request.</p>
+    /// <p>The client idempotency token of the job run request. </p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p>The client idempotency token of the job run request.</p>
+    /// <p>The client idempotency token of the job run request. </p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }

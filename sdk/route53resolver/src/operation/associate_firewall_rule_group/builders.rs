@@ -22,7 +22,7 @@ impl AssociateFirewallRuleGroupInputBuilder {
 }
 /// Fluent builder constructing a request to `AssociateFirewallRuleGroup`.
 ///
-/// <p>Associates a <code>FirewallRuleGroup</code> with a VPC, to provide DNS filtering for the VPC.</p>
+/// <p>Associates a <code>FirewallRuleGroup</code> with a VPC, to provide DNS filtering for the VPC. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateFirewallRuleGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,63 +108,63 @@ impl AssociateFirewallRuleGroupFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp.</p>
+    /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
     pub fn creator_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.creator_request_id(input.into());
         self
     }
-    /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp.</p>
+    /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
     pub fn set_creator_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_creator_request_id(input);
         self
     }
-    /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp.</p>
+    /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
     pub fn get_creator_request_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_creator_request_id()
     }
-    /// <p>The unique identifier of the firewall rule group.</p>
+    /// <p>The unique identifier of the firewall rule group. </p>
     pub fn firewall_rule_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.firewall_rule_group_id(input.into());
         self
     }
-    /// <p>The unique identifier of the firewall rule group.</p>
+    /// <p>The unique identifier of the firewall rule group. </p>
     pub fn set_firewall_rule_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_firewall_rule_group_id(input);
         self
     }
-    /// <p>The unique identifier of the firewall rule group.</p>
+    /// <p>The unique identifier of the firewall rule group. </p>
     pub fn get_firewall_rule_group_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_firewall_rule_group_id()
     }
-    /// <p>The unique identifier of the VPC that you want to associate with the rule group.</p>
+    /// <p>The unique identifier of the VPC that you want to associate with the rule group. </p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_id(input.into());
         self
     }
-    /// <p>The unique identifier of the VPC that you want to associate with the rule group.</p>
+    /// <p>The unique identifier of the VPC that you want to associate with the rule group. </p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpc_id(input);
         self
     }
-    /// <p>The unique identifier of the VPC that you want to associate with the rule group.</p>
+    /// <p>The unique identifier of the VPC that you want to associate with the rule group. </p>
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_vpc_id()
     }
-    /// <p>The setting that determines the processing order of the rule group among the rule groups that you associate with the specified VPC. DNS Firewall filters VPC traffic starting from the rule group with the lowest numeric priority setting.</p>
+    /// <p>The setting that determines the processing order of the rule group among the rule groups that you associate with the specified VPC. DNS Firewall filters VPC traffic starting from the rule group with the lowest numeric priority setting. </p>
     /// <p>You must specify a unique priority for each rule group that you associate with a single VPC. To make it easier to insert rule groups later, leave space between the numbers, for example, use 101, 200, and so on. You can change the priority setting for a rule group association after you create it.</p>
     /// <p>The allowed values for <code>Priority</code> are between 100 and 9900.</p>
     pub fn priority(mut self, input: i32) -> Self {
         self.inner = self.inner.priority(input);
         self
     }
-    /// <p>The setting that determines the processing order of the rule group among the rule groups that you associate with the specified VPC. DNS Firewall filters VPC traffic starting from the rule group with the lowest numeric priority setting.</p>
+    /// <p>The setting that determines the processing order of the rule group among the rule groups that you associate with the specified VPC. DNS Firewall filters VPC traffic starting from the rule group with the lowest numeric priority setting. </p>
     /// <p>You must specify a unique priority for each rule group that you associate with a single VPC. To make it easier to insert rule groups later, leave space between the numbers, for example, use 101, 200, and so on. You can change the priority setting for a rule group association after you create it.</p>
     /// <p>The allowed values for <code>Priority</code> are between 100 and 9900.</p>
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_priority(input);
         self
     }
-    /// <p>The setting that determines the processing order of the rule group among the rule groups that you associate with the specified VPC. DNS Firewall filters VPC traffic starting from the rule group with the lowest numeric priority setting.</p>
+    /// <p>The setting that determines the processing order of the rule group among the rule groups that you associate with the specified VPC. DNS Firewall filters VPC traffic starting from the rule group with the lowest numeric priority setting. </p>
     /// <p>You must specify a unique priority for each rule group that you associate with a single VPC. To make it easier to insert rule groups later, leave space between the numbers, for example, use 101, 200, and so on. You can change the priority setting for a rule group association after you create it.</p>
     /// <p>The allowed values for <code>Priority</code> are between 100 and 9900.</p>
     pub fn get_priority(&self) -> &::std::option::Option<i32> {
@@ -184,17 +184,17 @@ impl AssociateFirewallRuleGroupFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>If enabled, this setting disallows modification or removal of the association, to help prevent against accidentally altering DNS firewall protections. When you create the association, the default setting is <code>DISABLED</code>.</p>
+    /// <p>If enabled, this setting disallows modification or removal of the association, to help prevent against accidentally altering DNS firewall protections. When you create the association, the default setting is <code>DISABLED</code>. </p>
     pub fn mutation_protection(mut self, input: crate::types::MutationProtectionStatus) -> Self {
         self.inner = self.inner.mutation_protection(input);
         self
     }
-    /// <p>If enabled, this setting disallows modification or removal of the association, to help prevent against accidentally altering DNS firewall protections. When you create the association, the default setting is <code>DISABLED</code>.</p>
+    /// <p>If enabled, this setting disallows modification or removal of the association, to help prevent against accidentally altering DNS firewall protections. When you create the association, the default setting is <code>DISABLED</code>. </p>
     pub fn set_mutation_protection(mut self, input: ::std::option::Option<crate::types::MutationProtectionStatus>) -> Self {
         self.inner = self.inner.set_mutation_protection(input);
         self
     }
-    /// <p>If enabled, this setting disallows modification or removal of the association, to help prevent against accidentally altering DNS firewall protections. When you create the association, the default setting is <code>DISABLED</code>.</p>
+    /// <p>If enabled, this setting disallows modification or removal of the association, to help prevent against accidentally altering DNS firewall protections. When you create the association, the default setting is <code>DISABLED</code>. </p>
     pub fn get_mutation_protection(&self) -> &::std::option::Option<crate::types::MutationProtectionStatus> {
         self.inner.get_mutation_protection()
     }
@@ -202,17 +202,17 @@ impl AssociateFirewallRuleGroupFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A list of the tag keys and values that you want to associate with the rule group association.</p>
+    /// <p>A list of the tag keys and values that you want to associate with the rule group association. </p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
-    /// <p>A list of the tag keys and values that you want to associate with the rule group association.</p>
+    /// <p>A list of the tag keys and values that you want to associate with the rule group association. </p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>A list of the tag keys and values that you want to associate with the rule group association.</p>
+    /// <p>A list of the tag keys and values that you want to associate with the rule group association. </p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }

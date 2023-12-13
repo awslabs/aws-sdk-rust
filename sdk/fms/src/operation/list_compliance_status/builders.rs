@@ -22,7 +22,7 @@ impl ListComplianceStatusInputBuilder {
 }
 /// Fluent builder constructing a request to `ListComplianceStatus`.
 ///
-/// <p>Returns an array of <code>PolicyComplianceStatus</code> objects. Use <code>PolicyComplianceStatus</code> to get a summary of which member accounts are protected by the specified policy.</p>
+/// <p>Returns an array of <code>PolicyComplianceStatus</code> objects. Use <code>PolicyComplianceStatus</code> to get a summary of which member accounts are protected by the specified policy. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListComplianceStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

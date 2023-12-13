@@ -22,7 +22,7 @@ impl DeleteEksAnywhereSubscriptionInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteEksAnywhereSubscription`.
 ///
-/// <p>Deletes an expired or inactive subscription. Deleting inactive subscriptions removes them from the Amazon Web Services Management Console view and from list/describe API responses. Subscriptions can only be cancelled within 7 days of creation and are cancelled by creating a ticket in the Amazon Web Services Support Center.</p>
+/// <p>Deletes an expired or inactive subscription. Deleting inactive subscriptions removes them from the Amazon Web Services Management Console view and from list/describe API responses. Subscriptions can only be cancelled within 7 days of creation and are cancelled by creating a ticket in the Amazon Web Services Support Center. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteEksAnywhereSubscriptionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

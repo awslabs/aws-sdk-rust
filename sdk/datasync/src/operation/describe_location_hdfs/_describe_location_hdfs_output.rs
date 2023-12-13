@@ -7,23 +7,23 @@ pub struct DescribeLocationHdfsOutput {
     pub location_arn: ::std::option::Option<::std::string::String>,
     /// <p>The URI of the HDFS cluster location.</p>
     pub location_uri: ::std::option::Option<::std::string::String>,
-    /// <p>The NameNode that manage the HDFS namespace.</p>
+    /// <p>The NameNode that manage the HDFS namespace. </p>
     pub name_nodes: ::std::option::Option<::std::vec::Vec<crate::types::HdfsNameNode>>,
-    /// <p>The size of the data blocks to write into the HDFS cluster.</p>
+    /// <p>The size of the data blocks to write into the HDFS cluster. </p>
     pub block_size: ::std::option::Option<i32>,
-    /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster.</p>
+    /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster. </p>
     pub replication_factor: ::std::option::Option<i32>,
-    /// <p>The URI of the HDFS cluster's Key Management Server (KMS).</p>
+    /// <p> The URI of the HDFS cluster's Key Management Server (KMS). </p>
     pub kms_key_provider_uri: ::std::option::Option<::std::string::String>,
-    /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer protection settings configured on the Hadoop Distributed File System (HDFS) cluster.</p>
+    /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer protection settings configured on the Hadoop Distributed File System (HDFS) cluster. </p>
     pub qop_configuration: ::std::option::Option<crate::types::QopConfiguration>,
-    /// <p>The type of authentication used to determine the identity of the user.</p>
+    /// <p>The type of authentication used to determine the identity of the user. </p>
     pub authentication_type: ::std::option::Option<crate::types::HdfsAuthenticationType>,
     /// <p>The user name used to identify the client on the host operating system. This parameter is used if the <code>AuthenticationType</code> is defined as <code>SIMPLE</code>.</p>
     pub simple_user: ::std::option::Option<::std::string::String>,
     /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster. This parameter is used if the <code>AuthenticationType</code> is defined as <code>KERBEROS</code>.</p>
     pub kerberos_principal: ::std::option::Option<::std::string::String>,
-    /// <p>The ARNs of the agents that are used to connect to the HDFS cluster.</p>
+    /// <p>The ARNs of the agents that are used to connect to the HDFS cluster. </p>
     pub agent_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The time that the HDFS location was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -38,29 +38,29 @@ impl DescribeLocationHdfsOutput {
     pub fn location_uri(&self) -> ::std::option::Option<&str> {
         self.location_uri.as_deref()
     }
-    /// <p>The NameNode that manage the HDFS namespace.</p>
+    /// <p>The NameNode that manage the HDFS namespace. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.name_nodes.is_none()`.
     pub fn name_nodes(&self) -> &[crate::types::HdfsNameNode] {
         self.name_nodes.as_deref().unwrap_or_default()
     }
-    /// <p>The size of the data blocks to write into the HDFS cluster.</p>
+    /// <p>The size of the data blocks to write into the HDFS cluster. </p>
     pub fn block_size(&self) -> ::std::option::Option<i32> {
         self.block_size
     }
-    /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster.</p>
+    /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster. </p>
     pub fn replication_factor(&self) -> ::std::option::Option<i32> {
         self.replication_factor
     }
-    /// <p>The URI of the HDFS cluster's Key Management Server (KMS).</p>
+    /// <p> The URI of the HDFS cluster's Key Management Server (KMS). </p>
     pub fn kms_key_provider_uri(&self) -> ::std::option::Option<&str> {
         self.kms_key_provider_uri.as_deref()
     }
-    /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer protection settings configured on the Hadoop Distributed File System (HDFS) cluster.</p>
+    /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer protection settings configured on the Hadoop Distributed File System (HDFS) cluster. </p>
     pub fn qop_configuration(&self) -> ::std::option::Option<&crate::types::QopConfiguration> {
         self.qop_configuration.as_ref()
     }
-    /// <p>The type of authentication used to determine the identity of the user.</p>
+    /// <p>The type of authentication used to determine the identity of the user. </p>
     pub fn authentication_type(&self) -> ::std::option::Option<&crate::types::HdfsAuthenticationType> {
         self.authentication_type.as_ref()
     }
@@ -72,7 +72,7 @@ impl DescribeLocationHdfsOutput {
     pub fn kerberos_principal(&self) -> ::std::option::Option<&str> {
         self.kerberos_principal.as_deref()
     }
-    /// <p>The ARNs of the agents that are used to connect to the HDFS cluster.</p>
+    /// <p>The ARNs of the agents that are used to connect to the HDFS cluster. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.agent_arns.is_none()`.
     pub fn agent_arns(&self) -> &[::std::string::String] {
@@ -146,89 +146,89 @@ impl DescribeLocationHdfsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_name_nodes`](Self::set_name_nodes).
     ///
-    /// <p>The NameNode that manage the HDFS namespace.</p>
+    /// <p>The NameNode that manage the HDFS namespace. </p>
     pub fn name_nodes(mut self, input: crate::types::HdfsNameNode) -> Self {
         let mut v = self.name_nodes.unwrap_or_default();
         v.push(input);
         self.name_nodes = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The NameNode that manage the HDFS namespace.</p>
+    /// <p>The NameNode that manage the HDFS namespace. </p>
     pub fn set_name_nodes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HdfsNameNode>>) -> Self {
         self.name_nodes = input;
         self
     }
-    /// <p>The NameNode that manage the HDFS namespace.</p>
+    /// <p>The NameNode that manage the HDFS namespace. </p>
     pub fn get_name_nodes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HdfsNameNode>> {
         &self.name_nodes
     }
-    /// <p>The size of the data blocks to write into the HDFS cluster.</p>
+    /// <p>The size of the data blocks to write into the HDFS cluster. </p>
     pub fn block_size(mut self, input: i32) -> Self {
         self.block_size = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The size of the data blocks to write into the HDFS cluster.</p>
+    /// <p>The size of the data blocks to write into the HDFS cluster. </p>
     pub fn set_block_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.block_size = input;
         self
     }
-    /// <p>The size of the data blocks to write into the HDFS cluster.</p>
+    /// <p>The size of the data blocks to write into the HDFS cluster. </p>
     pub fn get_block_size(&self) -> &::std::option::Option<i32> {
         &self.block_size
     }
-    /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster.</p>
+    /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster. </p>
     pub fn replication_factor(mut self, input: i32) -> Self {
         self.replication_factor = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster.</p>
+    /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster. </p>
     pub fn set_replication_factor(mut self, input: ::std::option::Option<i32>) -> Self {
         self.replication_factor = input;
         self
     }
-    /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster.</p>
+    /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster. </p>
     pub fn get_replication_factor(&self) -> &::std::option::Option<i32> {
         &self.replication_factor
     }
-    /// <p>The URI of the HDFS cluster's Key Management Server (KMS).</p>
+    /// <p> The URI of the HDFS cluster's Key Management Server (KMS). </p>
     pub fn kms_key_provider_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_provider_uri = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The URI of the HDFS cluster's Key Management Server (KMS).</p>
+    /// <p> The URI of the HDFS cluster's Key Management Server (KMS). </p>
     pub fn set_kms_key_provider_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_provider_uri = input;
         self
     }
-    /// <p>The URI of the HDFS cluster's Key Management Server (KMS).</p>
+    /// <p> The URI of the HDFS cluster's Key Management Server (KMS). </p>
     pub fn get_kms_key_provider_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_provider_uri
     }
-    /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer protection settings configured on the Hadoop Distributed File System (HDFS) cluster.</p>
+    /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer protection settings configured on the Hadoop Distributed File System (HDFS) cluster. </p>
     pub fn qop_configuration(mut self, input: crate::types::QopConfiguration) -> Self {
         self.qop_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer protection settings configured on the Hadoop Distributed File System (HDFS) cluster.</p>
+    /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer protection settings configured on the Hadoop Distributed File System (HDFS) cluster. </p>
     pub fn set_qop_configuration(mut self, input: ::std::option::Option<crate::types::QopConfiguration>) -> Self {
         self.qop_configuration = input;
         self
     }
-    /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer protection settings configured on the Hadoop Distributed File System (HDFS) cluster.</p>
+    /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer protection settings configured on the Hadoop Distributed File System (HDFS) cluster. </p>
     pub fn get_qop_configuration(&self) -> &::std::option::Option<crate::types::QopConfiguration> {
         &self.qop_configuration
     }
-    /// <p>The type of authentication used to determine the identity of the user.</p>
+    /// <p>The type of authentication used to determine the identity of the user. </p>
     pub fn authentication_type(mut self, input: crate::types::HdfsAuthenticationType) -> Self {
         self.authentication_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of authentication used to determine the identity of the user.</p>
+    /// <p>The type of authentication used to determine the identity of the user. </p>
     pub fn set_authentication_type(mut self, input: ::std::option::Option<crate::types::HdfsAuthenticationType>) -> Self {
         self.authentication_type = input;
         self
     }
-    /// <p>The type of authentication used to determine the identity of the user.</p>
+    /// <p>The type of authentication used to determine the identity of the user. </p>
     pub fn get_authentication_type(&self) -> &::std::option::Option<crate::types::HdfsAuthenticationType> {
         &self.authentication_type
     }
@@ -264,19 +264,19 @@ impl DescribeLocationHdfsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_agent_arns`](Self::set_agent_arns).
     ///
-    /// <p>The ARNs of the agents that are used to connect to the HDFS cluster.</p>
+    /// <p>The ARNs of the agents that are used to connect to the HDFS cluster. </p>
     pub fn agent_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.agent_arns.unwrap_or_default();
         v.push(input.into());
         self.agent_arns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The ARNs of the agents that are used to connect to the HDFS cluster.</p>
+    /// <p>The ARNs of the agents that are used to connect to the HDFS cluster. </p>
     pub fn set_agent_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.agent_arns = input;
         self
     }
-    /// <p>The ARNs of the agents that are used to connect to the HDFS cluster.</p>
+    /// <p>The ARNs of the agents that are used to connect to the HDFS cluster. </p>
     pub fn get_agent_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.agent_arns
     }

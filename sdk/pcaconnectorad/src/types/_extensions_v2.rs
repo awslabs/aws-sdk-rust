@@ -6,7 +6,7 @@
 pub struct ExtensionsV2 {
     /// <p>The key usage extension defines the purpose (e.g., encipherment, signature, certificate signing) of the key contained in the certificate.</p>
     pub key_usage: ::std::option::Option<crate::types::KeyUsage>,
-    /// <p>Application policies specify what the certificate is used for and its purpose.</p>
+    /// <p>Application policies specify what the certificate is used for and its purpose. </p>
     pub application_policies: ::std::option::Option<crate::types::ApplicationPolicies>,
 }
 impl ExtensionsV2 {
@@ -14,7 +14,7 @@ impl ExtensionsV2 {
     pub fn key_usage(&self) -> ::std::option::Option<&crate::types::KeyUsage> {
         self.key_usage.as_ref()
     }
-    /// <p>Application policies specify what the certificate is used for and its purpose.</p>
+    /// <p>Application policies specify what the certificate is used for and its purpose. </p>
     pub fn application_policies(&self) -> ::std::option::Option<&crate::types::ApplicationPolicies> {
         self.application_policies.as_ref()
     }
@@ -49,17 +49,17 @@ impl ExtensionsV2Builder {
     pub fn get_key_usage(&self) -> &::std::option::Option<crate::types::KeyUsage> {
         &self.key_usage
     }
-    /// <p>Application policies specify what the certificate is used for and its purpose.</p>
+    /// <p>Application policies specify what the certificate is used for and its purpose. </p>
     pub fn application_policies(mut self, input: crate::types::ApplicationPolicies) -> Self {
         self.application_policies = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Application policies specify what the certificate is used for and its purpose.</p>
+    /// <p>Application policies specify what the certificate is used for and its purpose. </p>
     pub fn set_application_policies(mut self, input: ::std::option::Option<crate::types::ApplicationPolicies>) -> Self {
         self.application_policies = input;
         self
     }
-    /// <p>Application policies specify what the certificate is used for and its purpose.</p>
+    /// <p>Application policies specify what the certificate is used for and its purpose. </p>
     pub fn get_application_policies(&self) -> &::std::option::Option<crate::types::ApplicationPolicies> {
         &self.application_policies
     }

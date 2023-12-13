@@ -22,7 +22,7 @@ impl RegisterInstanceEventNotificationAttributesInputBuilder {
 }
 /// Fluent builder constructing a request to `RegisterInstanceEventNotificationAttributes`.
 ///
-/// <p>Registers a set of tag keys to include in scheduled event notifications for your resources.</p>
+/// <p>Registers a set of tag keys to include in scheduled event notifications for your resources. </p>
 /// <p>To remove tags, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeregisterInstanceEventNotificationAttributes.html">DeregisterInstanceEventNotificationAttributes</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RegisterInstanceEventNotificationAttributesFluentBuilder {

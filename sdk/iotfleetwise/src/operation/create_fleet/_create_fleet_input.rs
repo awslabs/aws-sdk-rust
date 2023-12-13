@@ -3,25 +3,25 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFleetInput {
-    /// <p>The unique ID of the fleet to create.</p>
+    /// <p> The unique ID of the fleet to create. </p>
     pub fleet_id: ::std::option::Option<::std::string::String>,
-    /// <p>A brief description of the fleet to create.</p>
+    /// <p> A brief description of the fleet to create. </p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of a signal catalog.</p>
+    /// <p> The Amazon Resource Name (ARN) of a signal catalog. </p>
     pub signal_catalog_arn: ::std::option::Option<::std::string::String>,
     /// <p>Metadata that can be used to manage the fleet.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateFleetInput {
-    /// <p>The unique ID of the fleet to create.</p>
+    /// <p> The unique ID of the fleet to create. </p>
     pub fn fleet_id(&self) -> ::std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
-    /// <p>A brief description of the fleet to create.</p>
+    /// <p> A brief description of the fleet to create. </p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of a signal catalog.</p>
+    /// <p> The Amazon Resource Name (ARN) of a signal catalog. </p>
     pub fn signal_catalog_arn(&self) -> ::std::option::Option<&str> {
         self.signal_catalog_arn.as_deref()
     }
@@ -49,47 +49,47 @@ pub struct CreateFleetInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateFleetInputBuilder {
-    /// <p>The unique ID of the fleet to create.</p>
+    /// <p> The unique ID of the fleet to create. </p>
     /// This field is required.
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique ID of the fleet to create.</p>
+    /// <p> The unique ID of the fleet to create. </p>
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fleet_id = input;
         self
     }
-    /// <p>The unique ID of the fleet to create.</p>
+    /// <p> The unique ID of the fleet to create. </p>
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.fleet_id
     }
-    /// <p>A brief description of the fleet to create.</p>
+    /// <p> A brief description of the fleet to create. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A brief description of the fleet to create.</p>
+    /// <p> A brief description of the fleet to create. </p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>A brief description of the fleet to create.</p>
+    /// <p> A brief description of the fleet to create. </p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The Amazon Resource Name (ARN) of a signal catalog.</p>
+    /// <p> The Amazon Resource Name (ARN) of a signal catalog. </p>
     /// This field is required.
     pub fn signal_catalog_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.signal_catalog_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of a signal catalog.</p>
+    /// <p> The Amazon Resource Name (ARN) of a signal catalog. </p>
     pub fn set_signal_catalog_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.signal_catalog_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of a signal catalog.</p>
+    /// <p> The Amazon Resource Name (ARN) of a signal catalog. </p>
     pub fn get_signal_catalog_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.signal_catalog_arn
     }

@@ -19,7 +19,7 @@ pub struct DescribeSigningJobOutput {
     pub profile_version: ::std::option::Option<::std::string::String>,
     /// <p>A list of any overrides that were applied to the signing operation.</p>
     pub overrides: ::std::option::Option<crate::types::SigningPlatformOverrides>,
-    /// <p>Map of user-assigned key-value pairs used during signing. These values contain any information that you specified for use in your signing job.</p>
+    /// <p>Map of user-assigned key-value pairs used during signing. These values contain any information that you specified for use in your signing job. </p>
     pub signing_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Date and time that the signing job was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -76,7 +76,7 @@ impl DescribeSigningJobOutput {
     pub fn overrides(&self) -> ::std::option::Option<&crate::types::SigningPlatformOverrides> {
         self.overrides.as_ref()
     }
-    /// <p>Map of user-assigned key-value pairs used during signing. These values contain any information that you specified for use in your signing job.</p>
+    /// <p>Map of user-assigned key-value pairs used during signing. These values contain any information that you specified for use in your signing job. </p>
     pub fn signing_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.signing_parameters.as_ref()
     }
@@ -275,7 +275,7 @@ impl DescribeSigningJobOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_signing_parameters`](Self::set_signing_parameters).
     ///
-    /// <p>Map of user-assigned key-value pairs used during signing. These values contain any information that you specified for use in your signing job.</p>
+    /// <p>Map of user-assigned key-value pairs used during signing. These values contain any information that you specified for use in your signing job. </p>
     pub fn signing_parameters(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -286,7 +286,7 @@ impl DescribeSigningJobOutputBuilder {
         self.signing_parameters = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>Map of user-assigned key-value pairs used during signing. These values contain any information that you specified for use in your signing job.</p>
+    /// <p>Map of user-assigned key-value pairs used during signing. These values contain any information that you specified for use in your signing job. </p>
     pub fn set_signing_parameters(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -294,7 +294,7 @@ impl DescribeSigningJobOutputBuilder {
         self.signing_parameters = input;
         self
     }
-    /// <p>Map of user-assigned key-value pairs used during signing. These values contain any information that you specified for use in your signing job.</p>
+    /// <p>Map of user-assigned key-value pairs used during signing. These values contain any information that you specified for use in your signing job. </p>
     pub fn get_signing_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.signing_parameters
     }

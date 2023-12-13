@@ -22,7 +22,7 @@ impl GetResolverRulePolicyInputBuilder {
 }
 /// Fluent builder constructing a request to `GetResolverRulePolicy`.
 ///
-/// <p>Gets information about the Resolver rule policy for a specified rule. A Resolver rule policy includes the rule that you want to share with another account, the account that you want to share the rule with, and the Resolver operations that you want to allow the account to use.</p>
+/// <p>Gets information about the Resolver rule policy for a specified rule. A Resolver rule policy includes the rule that you want to share with another account, the account that you want to share the rule with, and the Resolver operations that you want to allow the account to use. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetResolverRulePolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

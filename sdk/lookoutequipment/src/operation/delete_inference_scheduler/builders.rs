@@ -108,17 +108,17 @@ impl DeleteInferenceSchedulerFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the inference scheduler to be deleted.</p>
+    /// <p>The name of the inference scheduler to be deleted. </p>
     pub fn inference_scheduler_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.inference_scheduler_name(input.into());
         self
     }
-    /// <p>The name of the inference scheduler to be deleted.</p>
+    /// <p>The name of the inference scheduler to be deleted. </p>
     pub fn set_inference_scheduler_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_inference_scheduler_name(input);
         self
     }
-    /// <p>The name of the inference scheduler to be deleted.</p>
+    /// <p>The name of the inference scheduler to be deleted. </p>
     pub fn get_inference_scheduler_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_inference_scheduler_name()
     }

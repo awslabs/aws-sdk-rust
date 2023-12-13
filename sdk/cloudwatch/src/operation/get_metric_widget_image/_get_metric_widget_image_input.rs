@@ -9,21 +9,26 @@ pub struct GetMetricWidgetImageInput {
     pub metric_widget: ::std::option::Option<::std::string::String>,
     /// <p>The format of the resulting image. Only PNG images are supported.</p>
     /// <p>The default is <code>png</code>. If you specify <code>png</code>, the API returns an HTTP response with the content-type set to <code>text/xml</code>. The image data is in a <code>MetricWidgetImage</code> field. For example:</p>
-    /// <p><code> <getmetricwidgetimageresponse xmlns="<URLstring">
+    /// <p> <code>
+    /// <getmetricwidgetimageresponse xmlns="<URLstring">
     /// &gt;
-    /// </getmetricwidgetimageresponse></code></p>
-    /// <p><code> <getmetricwidgetimageresult></getmetricwidgetimageresult></code></p>
-    /// <p><code> <metricwidgetimage></metricwidgetimage></code></p>
-    /// <p><code> iVBORw0KGgoAAAANSUhEUgAAAlgAAAGQEAYAAAAip...</code></p>
-    /// <p><code> </code></p>
-    /// <p><code> </code></p>
-    /// <p><code> <responsemetadata></responsemetadata></code></p>
-    /// <p><code> <requestid>
+    /// </getmetricwidgetimageresponse></code> </p>
+    /// <p> <code>
+    /// <getmetricwidgetimageresult></getmetricwidgetimageresult></code> </p>
+    /// <p> <code>
+    /// <metricwidgetimage></metricwidgetimage></code> </p>
+    /// <p> <code> iVBORw0KGgoAAAANSUhEUgAAAlgAAAGQEAYAAAAip...</code> </p>
+    /// <p> <code> </code> </p>
+    /// <p> <code> </code> </p>
+    /// <p> <code>
+    /// <responsemetadata></responsemetadata></code> </p>
+    /// <p> <code>
+    /// <requestid>
     /// 6f0d4192-4d42-11e8-82c1-f539a07e0e3b
-    /// </requestid></code></p>
-    /// <p><code> </code></p>
-    /// <p><code></code></p>
-    /// <p>The <code>image/png</code> setting is intended only for custom HTTP requests. For most use cases, and all actions using an Amazon Web Services SDK, you should use <code>png</code>. If you specify <code>image/png</code>, the HTTP response has a content-type set to <code>image/png</code>, and the body of the response is a PNG image.</p>
+    /// </requestid></code> </p>
+    /// <p> <code> </code> </p>
+    /// <p> <code></code> </p>
+    /// <p>The <code>image/png</code> setting is intended only for custom HTTP requests. For most use cases, and all actions using an Amazon Web Services SDK, you should use <code>png</code>. If you specify <code>image/png</code>, the HTTP response has a content-type set to <code>image/png</code>, and the body of the response is a PNG image. </p>
     pub output_format: ::std::option::Option<::std::string::String>,
 }
 impl GetMetricWidgetImageInput {
@@ -35,21 +40,26 @@ impl GetMetricWidgetImageInput {
     }
     /// <p>The format of the resulting image. Only PNG images are supported.</p>
     /// <p>The default is <code>png</code>. If you specify <code>png</code>, the API returns an HTTP response with the content-type set to <code>text/xml</code>. The image data is in a <code>MetricWidgetImage</code> field. For example:</p>
-    /// <p><code> <getmetricwidgetimageresponse xmlns="<URLstring">
+    /// <p> <code>
+    /// <getmetricwidgetimageresponse xmlns="<URLstring">
     /// &gt;
-    /// </getmetricwidgetimageresponse></code></p>
-    /// <p><code> <getmetricwidgetimageresult></getmetricwidgetimageresult></code></p>
-    /// <p><code> <metricwidgetimage></metricwidgetimage></code></p>
-    /// <p><code> iVBORw0KGgoAAAANSUhEUgAAAlgAAAGQEAYAAAAip...</code></p>
-    /// <p><code> </code></p>
-    /// <p><code> </code></p>
-    /// <p><code> <responsemetadata></responsemetadata></code></p>
-    /// <p><code> <requestid>
+    /// </getmetricwidgetimageresponse></code> </p>
+    /// <p> <code>
+    /// <getmetricwidgetimageresult></getmetricwidgetimageresult></code> </p>
+    /// <p> <code>
+    /// <metricwidgetimage></metricwidgetimage></code> </p>
+    /// <p> <code> iVBORw0KGgoAAAANSUhEUgAAAlgAAAGQEAYAAAAip...</code> </p>
+    /// <p> <code> </code> </p>
+    /// <p> <code> </code> </p>
+    /// <p> <code>
+    /// <responsemetadata></responsemetadata></code> </p>
+    /// <p> <code>
+    /// <requestid>
     /// 6f0d4192-4d42-11e8-82c1-f539a07e0e3b
-    /// </requestid></code></p>
-    /// <p><code> </code></p>
-    /// <p><code></code></p>
-    /// <p>The <code>image/png</code> setting is intended only for custom HTTP requests. For most use cases, and all actions using an Amazon Web Services SDK, you should use <code>png</code>. If you specify <code>image/png</code>, the HTTP response has a content-type set to <code>image/png</code>, and the body of the response is a PNG image.</p>
+    /// </requestid></code> </p>
+    /// <p> <code> </code> </p>
+    /// <p> <code></code> </p>
+    /// <p>The <code>image/png</code> setting is intended only for custom HTTP requests. For most use cases, and all actions using an Amazon Web Services SDK, you should use <code>png</code>. If you specify <code>image/png</code>, the HTTP response has a content-type set to <code>image/png</code>, and the body of the response is a PNG image. </p>
     pub fn output_format(&self) -> ::std::option::Option<&str> {
         self.output_format.as_deref()
     }
@@ -92,63 +102,78 @@ impl GetMetricWidgetImageInputBuilder {
     }
     /// <p>The format of the resulting image. Only PNG images are supported.</p>
     /// <p>The default is <code>png</code>. If you specify <code>png</code>, the API returns an HTTP response with the content-type set to <code>text/xml</code>. The image data is in a <code>MetricWidgetImage</code> field. For example:</p>
-    /// <p><code> <getmetricwidgetimageresponse xmlns="<URLstring">
+    /// <p> <code>
+    /// <getmetricwidgetimageresponse xmlns="<URLstring">
     /// &gt;
-    /// </getmetricwidgetimageresponse></code></p>
-    /// <p><code> <getmetricwidgetimageresult></getmetricwidgetimageresult></code></p>
-    /// <p><code> <metricwidgetimage></metricwidgetimage></code></p>
-    /// <p><code> iVBORw0KGgoAAAANSUhEUgAAAlgAAAGQEAYAAAAip...</code></p>
-    /// <p><code> </code></p>
-    /// <p><code> </code></p>
-    /// <p><code> <responsemetadata></responsemetadata></code></p>
-    /// <p><code> <requestid>
+    /// </getmetricwidgetimageresponse></code> </p>
+    /// <p> <code>
+    /// <getmetricwidgetimageresult></getmetricwidgetimageresult></code> </p>
+    /// <p> <code>
+    /// <metricwidgetimage></metricwidgetimage></code> </p>
+    /// <p> <code> iVBORw0KGgoAAAANSUhEUgAAAlgAAAGQEAYAAAAip...</code> </p>
+    /// <p> <code> </code> </p>
+    /// <p> <code> </code> </p>
+    /// <p> <code>
+    /// <responsemetadata></responsemetadata></code> </p>
+    /// <p> <code>
+    /// <requestid>
     /// 6f0d4192-4d42-11e8-82c1-f539a07e0e3b
-    /// </requestid></code></p>
-    /// <p><code> </code></p>
-    /// <p><code></code></p>
-    /// <p>The <code>image/png</code> setting is intended only for custom HTTP requests. For most use cases, and all actions using an Amazon Web Services SDK, you should use <code>png</code>. If you specify <code>image/png</code>, the HTTP response has a content-type set to <code>image/png</code>, and the body of the response is a PNG image.</p>
+    /// </requestid></code> </p>
+    /// <p> <code> </code> </p>
+    /// <p> <code></code> </p>
+    /// <p>The <code>image/png</code> setting is intended only for custom HTTP requests. For most use cases, and all actions using an Amazon Web Services SDK, you should use <code>png</code>. If you specify <code>image/png</code>, the HTTP response has a content-type set to <code>image/png</code>, and the body of the response is a PNG image. </p>
     pub fn output_format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_format = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The format of the resulting image. Only PNG images are supported.</p>
     /// <p>The default is <code>png</code>. If you specify <code>png</code>, the API returns an HTTP response with the content-type set to <code>text/xml</code>. The image data is in a <code>MetricWidgetImage</code> field. For example:</p>
-    /// <p><code> <getmetricwidgetimageresponse xmlns="<URLstring">
+    /// <p> <code>
+    /// <getmetricwidgetimageresponse xmlns="<URLstring">
     /// &gt;
-    /// </getmetricwidgetimageresponse></code></p>
-    /// <p><code> <getmetricwidgetimageresult></getmetricwidgetimageresult></code></p>
-    /// <p><code> <metricwidgetimage></metricwidgetimage></code></p>
-    /// <p><code> iVBORw0KGgoAAAANSUhEUgAAAlgAAAGQEAYAAAAip...</code></p>
-    /// <p><code> </code></p>
-    /// <p><code> </code></p>
-    /// <p><code> <responsemetadata></responsemetadata></code></p>
-    /// <p><code> <requestid>
+    /// </getmetricwidgetimageresponse></code> </p>
+    /// <p> <code>
+    /// <getmetricwidgetimageresult></getmetricwidgetimageresult></code> </p>
+    /// <p> <code>
+    /// <metricwidgetimage></metricwidgetimage></code> </p>
+    /// <p> <code> iVBORw0KGgoAAAANSUhEUgAAAlgAAAGQEAYAAAAip...</code> </p>
+    /// <p> <code> </code> </p>
+    /// <p> <code> </code> </p>
+    /// <p> <code>
+    /// <responsemetadata></responsemetadata></code> </p>
+    /// <p> <code>
+    /// <requestid>
     /// 6f0d4192-4d42-11e8-82c1-f539a07e0e3b
-    /// </requestid></code></p>
-    /// <p><code> </code></p>
-    /// <p><code></code></p>
-    /// <p>The <code>image/png</code> setting is intended only for custom HTTP requests. For most use cases, and all actions using an Amazon Web Services SDK, you should use <code>png</code>. If you specify <code>image/png</code>, the HTTP response has a content-type set to <code>image/png</code>, and the body of the response is a PNG image.</p>
+    /// </requestid></code> </p>
+    /// <p> <code> </code> </p>
+    /// <p> <code></code> </p>
+    /// <p>The <code>image/png</code> setting is intended only for custom HTTP requests. For most use cases, and all actions using an Amazon Web Services SDK, you should use <code>png</code>. If you specify <code>image/png</code>, the HTTP response has a content-type set to <code>image/png</code>, and the body of the response is a PNG image. </p>
     pub fn set_output_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_format = input;
         self
     }
     /// <p>The format of the resulting image. Only PNG images are supported.</p>
     /// <p>The default is <code>png</code>. If you specify <code>png</code>, the API returns an HTTP response with the content-type set to <code>text/xml</code>. The image data is in a <code>MetricWidgetImage</code> field. For example:</p>
-    /// <p><code> <getmetricwidgetimageresponse xmlns="<URLstring">
+    /// <p> <code>
+    /// <getmetricwidgetimageresponse xmlns="<URLstring">
     /// &gt;
-    /// </getmetricwidgetimageresponse></code></p>
-    /// <p><code> <getmetricwidgetimageresult></getmetricwidgetimageresult></code></p>
-    /// <p><code> <metricwidgetimage></metricwidgetimage></code></p>
-    /// <p><code> iVBORw0KGgoAAAANSUhEUgAAAlgAAAGQEAYAAAAip...</code></p>
-    /// <p><code> </code></p>
-    /// <p><code> </code></p>
-    /// <p><code> <responsemetadata></responsemetadata></code></p>
-    /// <p><code> <requestid>
+    /// </getmetricwidgetimageresponse></code> </p>
+    /// <p> <code>
+    /// <getmetricwidgetimageresult></getmetricwidgetimageresult></code> </p>
+    /// <p> <code>
+    /// <metricwidgetimage></metricwidgetimage></code> </p>
+    /// <p> <code> iVBORw0KGgoAAAANSUhEUgAAAlgAAAGQEAYAAAAip...</code> </p>
+    /// <p> <code> </code> </p>
+    /// <p> <code> </code> </p>
+    /// <p> <code>
+    /// <responsemetadata></responsemetadata></code> </p>
+    /// <p> <code>
+    /// <requestid>
     /// 6f0d4192-4d42-11e8-82c1-f539a07e0e3b
-    /// </requestid></code></p>
-    /// <p><code> </code></p>
-    /// <p><code></code></p>
-    /// <p>The <code>image/png</code> setting is intended only for custom HTTP requests. For most use cases, and all actions using an Amazon Web Services SDK, you should use <code>png</code>. If you specify <code>image/png</code>, the HTTP response has a content-type set to <code>image/png</code>, and the body of the response is a PNG image.</p>
+    /// </requestid></code> </p>
+    /// <p> <code> </code> </p>
+    /// <p> <code></code> </p>
+    /// <p>The <code>image/png</code> setting is intended only for custom HTTP requests. For most use cases, and all actions using an Amazon Web Services SDK, you should use <code>png</code>. If you specify <code>image/png</code>, the HTTP response has a content-type set to <code>image/png</code>, and the body of the response is a PNG image. </p>
     pub fn get_output_format(&self) -> &::std::option::Option<::std::string::String> {
         &self.output_format
     }

@@ -22,7 +22,7 @@ impl DeleteApplicationInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteApplication`.
 ///
-/// <p>Deletes a Fleet Hub for AWS IoT Device Management web application.</p><note>
+/// <p>Deletes a Fleet Hub for AWS IoT Device Management web application.</p> <note>
 /// <p>Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

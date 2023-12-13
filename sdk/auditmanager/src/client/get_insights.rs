@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder takes no input, just [`send`](crate::operation::get_insights::builders::GetInsightsFluentBuilder::send) it.
     /// - On success, responds with [`GetInsightsOutput`](crate::operation::get_insights::GetInsightsOutput) with field(s):
-    ///   - [`insights(Option<Insights>)`](crate::operation::get_insights::GetInsightsOutput::insights): <p>The analytics data that the <code>GetInsights</code> API returned.</p>
+    ///   - [`insights(Option<Insights>)`](crate::operation::get_insights::GetInsightsOutput::insights): <p>The analytics data that the <code>GetInsights</code> API returned. </p>
     /// - On failure, responds with [`SdkError<GetInsightsError>`](crate::operation::get_insights::GetInsightsError)
     pub fn get_insights(&self) -> crate::operation::get_insights::builders::GetInsightsFluentBuilder {
         crate::operation::get_insights::builders::GetInsightsFluentBuilder::new(self.handle.clone())

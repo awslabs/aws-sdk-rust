@@ -22,10 +22,10 @@ impl CreateActivityInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateActivity`.
 ///
-/// <p>Creates an activity. An activity is a task that you write in any programming language and host on any machine that has access to Step Functions. Activities must poll Step Functions using the <code>GetActivityTask</code> API action and respond using <code>SendTask*</code> API actions. This function lets Step Functions know the existence of your activity and returns an identifier for use in a state machine and when polling from the activity.</p><note>
+/// <p>Creates an activity. An activity is a task that you write in any programming language and host on any machine that has access to Step Functions. Activities must poll Step Functions using the <code>GetActivityTask</code> API action and respond using <code>SendTask*</code> API actions. This function lets Step Functions know the existence of your activity and returns an identifier for use in a state machine and when polling from the activity.</p> <note>
 /// <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p>
 /// </note> <note>
-/// <p><code>CreateActivity</code> is an idempotent API. Subsequent requests won’t create a duplicate resource if it was already created. <code>CreateActivity</code>'s idempotency check is based on the activity <code>name</code>. If a following request has different <code>tags</code> values, Step Functions will ignore these differences and treat it as an idempotent request of the previous. In this case, <code>tags</code> will not be updated, even if they are different.</p>
+/// <p> <code>CreateActivity</code> is an idempotent API. Subsequent requests won’t create a duplicate resource if it was already created. <code>CreateActivity</code>'s idempotency check is based on the activity <code>name</code>. If a following request has different <code>tags</code> values, Step Functions will ignore these differences and treat it as an idempotent request of the previous. In this case, <code>tags</code> will not be updated, even if they are different.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateActivityFluentBuilder {
@@ -115,16 +115,11 @@ impl CreateActivityFluentBuilder {
     /// <p>The name of the activity to create. This name must be unique for your Amazon Web Services account and region for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.</p>
     /// <p>A name must <i>not</i> contain:</p>
     /// <ul>
-    /// <li>
-    /// <p>white space</p></li>
-    /// <li>
-    /// <p>brackets <code>&lt; &gt; { } [ ]</code></p></li>
-    /// <li>
-    /// <p>wildcard characters <code>? *</code></p></li>
-    /// <li>
-    /// <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code></p></li>
-    /// <li>
-    /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p></li>
+    /// <li> <p>white space</p> </li>
+    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
+    /// <li> <p>wildcard characters <code>? *</code> </p> </li>
+    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
+    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -134,16 +129,11 @@ impl CreateActivityFluentBuilder {
     /// <p>The name of the activity to create. This name must be unique for your Amazon Web Services account and region for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.</p>
     /// <p>A name must <i>not</i> contain:</p>
     /// <ul>
-    /// <li>
-    /// <p>white space</p></li>
-    /// <li>
-    /// <p>brackets <code>&lt; &gt; { } [ ]</code></p></li>
-    /// <li>
-    /// <p>wildcard characters <code>? *</code></p></li>
-    /// <li>
-    /// <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code></p></li>
-    /// <li>
-    /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p></li>
+    /// <li> <p>white space</p> </li>
+    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
+    /// <li> <p>wildcard characters <code>? *</code> </p> </li>
+    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
+    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -153,16 +143,11 @@ impl CreateActivityFluentBuilder {
     /// <p>The name of the activity to create. This name must be unique for your Amazon Web Services account and region for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.</p>
     /// <p>A name must <i>not</i> contain:</p>
     /// <ul>
-    /// <li>
-    /// <p>white space</p></li>
-    /// <li>
-    /// <p>brackets <code>&lt; &gt; { } [ ]</code></p></li>
-    /// <li>
-    /// <p>wildcard characters <code>? *</code></p></li>
-    /// <li>
-    /// <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code></p></li>
-    /// <li>
-    /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p></li>
+    /// <li> <p>white space</p> </li>
+    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
+    /// <li> <p>wildcard characters <code>? *</code> </p> </li>
+    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
+    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {

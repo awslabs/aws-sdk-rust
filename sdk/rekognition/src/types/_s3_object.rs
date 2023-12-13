@@ -2,7 +2,7 @@
 
 /// <p>Provides the S3 bucket name and object name.</p>
 /// <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p>
-/// <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see How Amazon Rekognition works with IAM in the Amazon Rekognition Developer Guide.</p>
+/// <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see How Amazon Rekognition works with IAM in the Amazon Rekognition Developer Guide. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Object {
@@ -10,7 +10,7 @@ pub struct S3Object {
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>S3 object key name.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>If the bucket is versioning enabled, you can specify the object version.</p>
+    /// <p>If the bucket is versioning enabled, you can specify the object version. </p>
     pub version: ::std::option::Option<::std::string::String>,
 }
 impl S3Object {
@@ -22,7 +22,7 @@ impl S3Object {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>If the bucket is versioning enabled, you can specify the object version.</p>
+    /// <p>If the bucket is versioning enabled, you can specify the object version. </p>
     pub fn version(&self) -> ::std::option::Option<&str> {
         self.version.as_deref()
     }
@@ -71,17 +71,17 @@ impl S3ObjectBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>If the bucket is versioning enabled, you can specify the object version.</p>
+    /// <p>If the bucket is versioning enabled, you can specify the object version. </p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If the bucket is versioning enabled, you can specify the object version.</p>
+    /// <p>If the bucket is versioning enabled, you can specify the object version. </p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
     }
-    /// <p>If the bucket is versioning enabled, you can specify the object version.</p>
+    /// <p>If the bucket is versioning enabled, you can specify the object version. </p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.version
     }

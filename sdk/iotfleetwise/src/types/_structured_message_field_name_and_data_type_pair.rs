@@ -4,18 +4,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StructuredMessageFieldNameAndDataTypePair {
-    /// <p>The field name of the structured message. It determines how a data value is referenced in the target language.</p>
+    /// <p>The field name of the structured message. It determines how a data value is referenced in the target language. </p>
     pub field_name: ::std::string::String,
-    /// <p>The data type.</p>
+    /// <p>The data type. </p>
     pub data_type: ::std::option::Option<crate::types::StructuredMessage>,
 }
 impl StructuredMessageFieldNameAndDataTypePair {
-    /// <p>The field name of the structured message. It determines how a data value is referenced in the target language.</p>
+    /// <p>The field name of the structured message. It determines how a data value is referenced in the target language. </p>
     pub fn field_name(&self) -> &str {
         use std::ops::Deref;
         self.field_name.deref()
     }
-    /// <p>The data type.</p>
+    /// <p>The data type. </p>
     pub fn data_type(&self) -> ::std::option::Option<&crate::types::StructuredMessage> {
         self.data_type.as_ref()
     }
@@ -35,33 +35,33 @@ pub struct StructuredMessageFieldNameAndDataTypePairBuilder {
     pub(crate) data_type: ::std::option::Option<crate::types::StructuredMessage>,
 }
 impl StructuredMessageFieldNameAndDataTypePairBuilder {
-    /// <p>The field name of the structured message. It determines how a data value is referenced in the target language.</p>
+    /// <p>The field name of the structured message. It determines how a data value is referenced in the target language. </p>
     /// This field is required.
     pub fn field_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.field_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The field name of the structured message. It determines how a data value is referenced in the target language.</p>
+    /// <p>The field name of the structured message. It determines how a data value is referenced in the target language. </p>
     pub fn set_field_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.field_name = input;
         self
     }
-    /// <p>The field name of the structured message. It determines how a data value is referenced in the target language.</p>
+    /// <p>The field name of the structured message. It determines how a data value is referenced in the target language. </p>
     pub fn get_field_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.field_name
     }
-    /// <p>The data type.</p>
+    /// <p>The data type. </p>
     /// This field is required.
     pub fn data_type(mut self, input: crate::types::StructuredMessage) -> Self {
         self.data_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The data type.</p>
+    /// <p>The data type. </p>
     pub fn set_data_type(mut self, input: ::std::option::Option<crate::types::StructuredMessage>) -> Self {
         self.data_type = input;
         self
     }
-    /// <p>The data type.</p>
+    /// <p>The data type. </p>
     pub fn get_data_type(&self) -> &::std::option::Option<crate::types::StructuredMessage> {
         &self.data_type
     }

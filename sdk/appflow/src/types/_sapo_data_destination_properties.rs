@@ -9,11 +9,11 @@ pub struct SapoDataDestinationProperties {
     /// <p>Determines how Amazon AppFlow handles the success response that it gets from the connector after placing data.</p>
     /// <p>For example, this setting would determine where to write the response from a destination connector upon a successful insert operation.</p>
     pub success_response_handling_config: ::std::option::Option<crate::types::SuccessResponseHandlingConfig>,
-    /// <p>A list of field names that can be used as an ID field when performing a write operation.</p>
+    /// <p> A list of field names that can be used as an ID field when performing a write operation. </p>
     pub id_field_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The settings that determine how Amazon AppFlow handles an error when placing data in the destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details.</p>
+    /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
     pub error_handling_config: ::std::option::Option<crate::types::ErrorHandlingConfig>,
-    /// <p>The possible write operations in the destination connector. When this value is not provided, this defaults to the <code>INSERT</code> operation.</p>
+    /// <p> The possible write operations in the destination connector. When this value is not provided, this defaults to the <code>INSERT</code> operation. </p>
     pub write_operation_type: ::std::option::Option<crate::types::WriteOperationType>,
 }
 impl SapoDataDestinationProperties {
@@ -27,17 +27,17 @@ impl SapoDataDestinationProperties {
     pub fn success_response_handling_config(&self) -> ::std::option::Option<&crate::types::SuccessResponseHandlingConfig> {
         self.success_response_handling_config.as_ref()
     }
-    /// <p>A list of field names that can be used as an ID field when performing a write operation.</p>
+    /// <p> A list of field names that can be used as an ID field when performing a write operation. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.id_field_names.is_none()`.
     pub fn id_field_names(&self) -> &[::std::string::String] {
         self.id_field_names.as_deref().unwrap_or_default()
     }
-    /// <p>The settings that determine how Amazon AppFlow handles an error when placing data in the destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details.</p>
+    /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
     pub fn error_handling_config(&self) -> ::std::option::Option<&crate::types::ErrorHandlingConfig> {
         self.error_handling_config.as_ref()
     }
-    /// <p>The possible write operations in the destination connector. When this value is not provided, this defaults to the <code>INSERT</code> operation.</p>
+    /// <p> The possible write operations in the destination connector. When this value is not provided, this defaults to the <code>INSERT</code> operation. </p>
     pub fn write_operation_type(&self) -> ::std::option::Option<&crate::types::WriteOperationType> {
         self.write_operation_type.as_ref()
     }
@@ -96,47 +96,47 @@ impl SapoDataDestinationPropertiesBuilder {
     ///
     /// To override the contents of this collection use [`set_id_field_names`](Self::set_id_field_names).
     ///
-    /// <p>A list of field names that can be used as an ID field when performing a write operation.</p>
+    /// <p> A list of field names that can be used as an ID field when performing a write operation. </p>
     pub fn id_field_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.id_field_names.unwrap_or_default();
         v.push(input.into());
         self.id_field_names = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of field names that can be used as an ID field when performing a write operation.</p>
+    /// <p> A list of field names that can be used as an ID field when performing a write operation. </p>
     pub fn set_id_field_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.id_field_names = input;
         self
     }
-    /// <p>A list of field names that can be used as an ID field when performing a write operation.</p>
+    /// <p> A list of field names that can be used as an ID field when performing a write operation. </p>
     pub fn get_id_field_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.id_field_names
     }
-    /// <p>The settings that determine how Amazon AppFlow handles an error when placing data in the destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details.</p>
+    /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
     pub fn error_handling_config(mut self, input: crate::types::ErrorHandlingConfig) -> Self {
         self.error_handling_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The settings that determine how Amazon AppFlow handles an error when placing data in the destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details.</p>
+    /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
     pub fn set_error_handling_config(mut self, input: ::std::option::Option<crate::types::ErrorHandlingConfig>) -> Self {
         self.error_handling_config = input;
         self
     }
-    /// <p>The settings that determine how Amazon AppFlow handles an error when placing data in the destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details.</p>
+    /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
     pub fn get_error_handling_config(&self) -> &::std::option::Option<crate::types::ErrorHandlingConfig> {
         &self.error_handling_config
     }
-    /// <p>The possible write operations in the destination connector. When this value is not provided, this defaults to the <code>INSERT</code> operation.</p>
+    /// <p> The possible write operations in the destination connector. When this value is not provided, this defaults to the <code>INSERT</code> operation. </p>
     pub fn write_operation_type(mut self, input: crate::types::WriteOperationType) -> Self {
         self.write_operation_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The possible write operations in the destination connector. When this value is not provided, this defaults to the <code>INSERT</code> operation.</p>
+    /// <p> The possible write operations in the destination connector. When this value is not provided, this defaults to the <code>INSERT</code> operation. </p>
     pub fn set_write_operation_type(mut self, input: ::std::option::Option<crate::types::WriteOperationType>) -> Self {
         self.write_operation_type = input;
         self
     }
-    /// <p>The possible write operations in the destination connector. When this value is not provided, this defaults to the <code>INSERT</code> operation.</p>
+    /// <p> The possible write operations in the destination connector. When this value is not provided, this defaults to the <code>INSERT</code> operation. </p>
     pub fn get_write_operation_type(&self) -> &::std::option::Option<crate::types::WriteOperationType> {
         &self.write_operation_type
     }

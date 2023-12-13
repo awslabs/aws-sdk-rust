@@ -44,7 +44,7 @@ pub struct SimulationJob {
     pub max_job_duration_in_seconds: i64,
     /// <p>The simulation job execution duration in milliseconds.</p>
     pub simulation_time_millis: i64,
-    /// <p>The IAM role that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf. This is how credentials are passed in to your simulation job.</p>
+    /// <p>The IAM role that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf. This is how credentials are passed in to your simulation job. </p>
     pub iam_role: ::std::option::Option<::std::string::String>,
     /// <p>A list of robot applications.</p>
     pub robot_applications: ::std::option::Option<::std::vec::Vec<crate::types::RobotApplicationConfig>>,
@@ -128,7 +128,7 @@ impl SimulationJob {
     pub fn simulation_time_millis(&self) -> i64 {
         self.simulation_time_millis
     }
-    /// <p>The IAM role that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf. This is how credentials are passed in to your simulation job.</p>
+    /// <p>The IAM role that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf. This is how credentials are passed in to your simulation job. </p>
     pub fn iam_role(&self) -> ::std::option::Option<&str> {
         self.iam_role.as_deref()
     }
@@ -425,17 +425,17 @@ impl SimulationJobBuilder {
     pub fn get_simulation_time_millis(&self) -> &::std::option::Option<i64> {
         &self.simulation_time_millis
     }
-    /// <p>The IAM role that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf. This is how credentials are passed in to your simulation job.</p>
+    /// <p>The IAM role that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf. This is how credentials are passed in to your simulation job. </p>
     pub fn iam_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_role = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The IAM role that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf. This is how credentials are passed in to your simulation job.</p>
+    /// <p>The IAM role that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf. This is how credentials are passed in to your simulation job. </p>
     pub fn set_iam_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iam_role = input;
         self
     }
-    /// <p>The IAM role that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf. This is how credentials are passed in to your simulation job.</p>
+    /// <p>The IAM role that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf. This is how credentials are passed in to your simulation job. </p>
     pub fn get_iam_role(&self) -> &::std::option::Option<::std::string::String> {
         &self.iam_role
     }

@@ -17,14 +17,11 @@ pub struct GetBotChannelAssociationOutput {
     pub r#type: ::std::option::Option<crate::types::ChannelType>,
     /// <p>Provides information that the messaging platform needs to communicate with the Amazon Lex bot.</p>
     pub bot_configuration: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>The status of the bot channel.</p>
+    /// <p>The status of the bot channel. </p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATED</code> - The channel has been created and is ready for use.</p></li>
-    /// <li>
-    /// <p><code>IN_PROGRESS</code> - Channel creation is in progress.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - There was an error creating the channel. For information about the reason for the failure, see the <code>failureReason</code> field.</p></li>
+    /// <li> <p> <code>CREATED</code> - The channel has been created and is ready for use.</p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code> - Channel creation is in progress.</p> </li>
+    /// <li> <p> <code>FAILED</code> - There was an error creating the channel. For information about the reason for the failure, see the <code>failureReason</code> field.</p> </li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::ChannelStatus>,
     /// <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason that it failed to create the association.</p>
@@ -60,14 +57,11 @@ impl GetBotChannelAssociationOutput {
     pub fn bot_configuration(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.bot_configuration.as_ref()
     }
-    /// <p>The status of the bot channel.</p>
+    /// <p>The status of the bot channel. </p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATED</code> - The channel has been created and is ready for use.</p></li>
-    /// <li>
-    /// <p><code>IN_PROGRESS</code> - Channel creation is in progress.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - There was an error creating the channel. For information about the reason for the failure, see the <code>failureReason</code> field.</p></li>
+    /// <li> <p> <code>CREATED</code> - The channel has been created and is ready for use.</p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code> - Channel creation is in progress.</p> </li>
+    /// <li> <p> <code>FAILED</code> - There was an error creating the channel. For information about the reason for the failure, see the <code>failureReason</code> field.</p> </li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ChannelStatus> {
         self.status.as_ref()
@@ -232,40 +226,31 @@ impl GetBotChannelAssociationOutputBuilder {
     pub fn get_bot_configuration(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.bot_configuration
     }
-    /// <p>The status of the bot channel.</p>
+    /// <p>The status of the bot channel. </p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATED</code> - The channel has been created and is ready for use.</p></li>
-    /// <li>
-    /// <p><code>IN_PROGRESS</code> - Channel creation is in progress.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - There was an error creating the channel. For information about the reason for the failure, see the <code>failureReason</code> field.</p></li>
+    /// <li> <p> <code>CREATED</code> - The channel has been created and is ready for use.</p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code> - Channel creation is in progress.</p> </li>
+    /// <li> <p> <code>FAILED</code> - There was an error creating the channel. For information about the reason for the failure, see the <code>failureReason</code> field.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::ChannelStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the bot channel.</p>
+    /// <p>The status of the bot channel. </p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATED</code> - The channel has been created and is ready for use.</p></li>
-    /// <li>
-    /// <p><code>IN_PROGRESS</code> - Channel creation is in progress.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - There was an error creating the channel. For information about the reason for the failure, see the <code>failureReason</code> field.</p></li>
+    /// <li> <p> <code>CREATED</code> - The channel has been created and is ready for use.</p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code> - Channel creation is in progress.</p> </li>
+    /// <li> <p> <code>FAILED</code> - There was an error creating the channel. For information about the reason for the failure, see the <code>failureReason</code> field.</p> </li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ChannelStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of the bot channel.</p>
+    /// <p>The status of the bot channel. </p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATED</code> - The channel has been created and is ready for use.</p></li>
-    /// <li>
-    /// <p><code>IN_PROGRESS</code> - Channel creation is in progress.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> - There was an error creating the channel. For information about the reason for the failure, see the <code>failureReason</code> field.</p></li>
+    /// <li> <p> <code>CREATED</code> - The channel has been created and is ready for use.</p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code> - Channel creation is in progress.</p> </li>
+    /// <li> <p> <code>FAILED</code> - There was an error creating the channel. For information about the reason for the failure, see the <code>failureReason</code> field.</p> </li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ChannelStatus> {
         &self.status

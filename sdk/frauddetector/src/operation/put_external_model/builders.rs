@@ -22,7 +22,7 @@ impl PutExternalModelInputBuilder {
 }
 /// Fluent builder constructing a request to `PutExternalModel`.
 ///
-/// <p>Creates or updates an Amazon SageMaker model endpoint. You can also use this action to update the configuration of the model endpoint, including the IAM role and/or the mapped variables.</p>
+/// <p>Creates or updates an Amazon SageMaker model endpoint. You can also use this action to update the configuration of the model endpoint, including the IAM role and/or the mapped variables. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutExternalModelFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

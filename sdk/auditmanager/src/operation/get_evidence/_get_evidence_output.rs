@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEvidenceOutput {
-    /// <p>The evidence that the <code>GetEvidence</code> API returned.</p>
+    /// <p> The evidence that the <code>GetEvidence</code> API returned. </p>
     pub evidence: ::std::option::Option<crate::types::Evidence>,
     _request_id: Option<String>,
 }
 impl GetEvidenceOutput {
-    /// <p>The evidence that the <code>GetEvidence</code> API returned.</p>
+    /// <p> The evidence that the <code>GetEvidence</code> API returned. </p>
     pub fn evidence(&self) -> ::std::option::Option<&crate::types::Evidence> {
         self.evidence.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct GetEvidenceOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetEvidenceOutputBuilder {
-    /// <p>The evidence that the <code>GetEvidence</code> API returned.</p>
+    /// <p> The evidence that the <code>GetEvidence</code> API returned. </p>
     pub fn evidence(mut self, input: crate::types::Evidence) -> Self {
         self.evidence = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The evidence that the <code>GetEvidence</code> API returned.</p>
+    /// <p> The evidence that the <code>GetEvidence</code> API returned. </p>
     pub fn set_evidence(mut self, input: ::std::option::Option<crate::types::Evidence>) -> Self {
         self.evidence = input;
         self
     }
-    /// <p>The evidence that the <code>GetEvidence</code> API returned.</p>
+    /// <p> The evidence that the <code>GetEvidence</code> API returned. </p>
     pub fn get_evidence(&self) -> &::std::option::Option<crate::types::Evidence> {
         &self.evidence
     }

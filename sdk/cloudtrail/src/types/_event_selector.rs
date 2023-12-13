@@ -7,10 +7,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventSelector {
     /// <p>Specify if you want your trail to log read-only events, write-only events, or all. For example, the EC2 <code>GetConsoleOutput</code> is a read-only API operation and <code>RunInstances</code> is a write-only API operation.</p>
-    /// <p>By default, the value is <code>All</code>.</p>
+    /// <p> By default, the value is <code>All</code>.</p>
     pub read_write_type: ::std::option::Option<crate::types::ReadWriteType>,
     /// <p>Specify if you want your event selector to include management events for your trail.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html">Management Events</a> in the <i>CloudTrail User Guide</i>.</p>
+    /// <p> For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html">Management Events</a> in the <i>CloudTrail User Guide</i>.</p>
     /// <p>By default, the value is <code>true</code>.</p>
     /// <p>The first copy of management events is free. You are charged for additional copies of management events that you are logging on any subsequent trail in the same Region. For more information about CloudTrail pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">CloudTrail Pricing</a>.</p>
     pub include_management_events: ::std::option::Option<bool>,
@@ -22,12 +22,12 @@ pub struct EventSelector {
 }
 impl EventSelector {
     /// <p>Specify if you want your trail to log read-only events, write-only events, or all. For example, the EC2 <code>GetConsoleOutput</code> is a read-only API operation and <code>RunInstances</code> is a write-only API operation.</p>
-    /// <p>By default, the value is <code>All</code>.</p>
+    /// <p> By default, the value is <code>All</code>.</p>
     pub fn read_write_type(&self) -> ::std::option::Option<&crate::types::ReadWriteType> {
         self.read_write_type.as_ref()
     }
     /// <p>Specify if you want your event selector to include management events for your trail.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html">Management Events</a> in the <i>CloudTrail User Guide</i>.</p>
+    /// <p> For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html">Management Events</a> in the <i>CloudTrail User Guide</i>.</p>
     /// <p>By default, the value is <code>true</code>.</p>
     /// <p>The first copy of management events is free. You are charged for additional copies of management events that you are logging on any subsequent trail in the same Region. For more information about CloudTrail pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">CloudTrail Pricing</a>.</p>
     pub fn include_management_events(&self) -> ::std::option::Option<bool> {
@@ -65,24 +65,24 @@ pub struct EventSelectorBuilder {
 }
 impl EventSelectorBuilder {
     /// <p>Specify if you want your trail to log read-only events, write-only events, or all. For example, the EC2 <code>GetConsoleOutput</code> is a read-only API operation and <code>RunInstances</code> is a write-only API operation.</p>
-    /// <p>By default, the value is <code>All</code>.</p>
+    /// <p> By default, the value is <code>All</code>.</p>
     pub fn read_write_type(mut self, input: crate::types::ReadWriteType) -> Self {
         self.read_write_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specify if you want your trail to log read-only events, write-only events, or all. For example, the EC2 <code>GetConsoleOutput</code> is a read-only API operation and <code>RunInstances</code> is a write-only API operation.</p>
-    /// <p>By default, the value is <code>All</code>.</p>
+    /// <p> By default, the value is <code>All</code>.</p>
     pub fn set_read_write_type(mut self, input: ::std::option::Option<crate::types::ReadWriteType>) -> Self {
         self.read_write_type = input;
         self
     }
     /// <p>Specify if you want your trail to log read-only events, write-only events, or all. For example, the EC2 <code>GetConsoleOutput</code> is a read-only API operation and <code>RunInstances</code> is a write-only API operation.</p>
-    /// <p>By default, the value is <code>All</code>.</p>
+    /// <p> By default, the value is <code>All</code>.</p>
     pub fn get_read_write_type(&self) -> &::std::option::Option<crate::types::ReadWriteType> {
         &self.read_write_type
     }
     /// <p>Specify if you want your event selector to include management events for your trail.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html">Management Events</a> in the <i>CloudTrail User Guide</i>.</p>
+    /// <p> For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html">Management Events</a> in the <i>CloudTrail User Guide</i>.</p>
     /// <p>By default, the value is <code>true</code>.</p>
     /// <p>The first copy of management events is free. You are charged for additional copies of management events that you are logging on any subsequent trail in the same Region. For more information about CloudTrail pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">CloudTrail Pricing</a>.</p>
     pub fn include_management_events(mut self, input: bool) -> Self {
@@ -90,7 +90,7 @@ impl EventSelectorBuilder {
         self
     }
     /// <p>Specify if you want your event selector to include management events for your trail.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html">Management Events</a> in the <i>CloudTrail User Guide</i>.</p>
+    /// <p> For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html">Management Events</a> in the <i>CloudTrail User Guide</i>.</p>
     /// <p>By default, the value is <code>true</code>.</p>
     /// <p>The first copy of management events is free. You are charged for additional copies of management events that you are logging on any subsequent trail in the same Region. For more information about CloudTrail pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">CloudTrail Pricing</a>.</p>
     pub fn set_include_management_events(mut self, input: ::std::option::Option<bool>) -> Self {
@@ -98,7 +98,7 @@ impl EventSelectorBuilder {
         self
     }
     /// <p>Specify if you want your event selector to include management events for your trail.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html">Management Events</a> in the <i>CloudTrail User Guide</i>.</p>
+    /// <p> For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html">Management Events</a> in the <i>CloudTrail User Guide</i>.</p>
     /// <p>By default, the value is <code>true</code>.</p>
     /// <p>The first copy of management events is free. You are charged for additional copies of management events that you are logging on any subsequent trail in the same Region. For more information about CloudTrail pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">CloudTrail Pricing</a>.</p>
     pub fn get_include_management_events(&self) -> &::std::option::Option<bool> {

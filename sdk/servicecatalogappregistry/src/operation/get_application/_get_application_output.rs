@@ -19,9 +19,9 @@ pub struct GetApplicationOutput {
     pub associated_resource_count: i32,
     /// <p>Key-value pairs associated with the application.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>The information about the integration of the application with other services, such as Resource Groups.</p>
+    /// <p> The information about the integration of the application with other services, such as Resource Groups. </p>
     pub integrations: ::std::option::Option<crate::types::Integrations>,
-    /// <p>A key-value pair that identifies an associated resource.</p>
+    /// <p> A key-value pair that identifies an associated resource. </p>
     pub application_tag: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
@@ -58,11 +58,11 @@ impl GetApplicationOutput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
-    /// <p>The information about the integration of the application with other services, such as Resource Groups.</p>
+    /// <p> The information about the integration of the application with other services, such as Resource Groups. </p>
     pub fn integrations(&self) -> ::std::option::Option<&crate::types::Integrations> {
         self.integrations.as_ref()
     }
-    /// <p>A key-value pair that identifies an associated resource.</p>
+    /// <p> A key-value pair that identifies an associated resource. </p>
     pub fn application_tag(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.application_tag.as_ref()
     }
@@ -214,17 +214,17 @@ impl GetApplicationOutputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
-    /// <p>The information about the integration of the application with other services, such as Resource Groups.</p>
+    /// <p> The information about the integration of the application with other services, such as Resource Groups. </p>
     pub fn integrations(mut self, input: crate::types::Integrations) -> Self {
         self.integrations = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The information about the integration of the application with other services, such as Resource Groups.</p>
+    /// <p> The information about the integration of the application with other services, such as Resource Groups. </p>
     pub fn set_integrations(mut self, input: ::std::option::Option<crate::types::Integrations>) -> Self {
         self.integrations = input;
         self
     }
-    /// <p>The information about the integration of the application with other services, such as Resource Groups.</p>
+    /// <p> The information about the integration of the application with other services, such as Resource Groups. </p>
     pub fn get_integrations(&self) -> &::std::option::Option<crate::types::Integrations> {
         &self.integrations
     }
@@ -232,7 +232,7 @@ impl GetApplicationOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_application_tag`](Self::set_application_tag).
     ///
-    /// <p>A key-value pair that identifies an associated resource.</p>
+    /// <p> A key-value pair that identifies an associated resource. </p>
     pub fn application_tag(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -243,7 +243,7 @@ impl GetApplicationOutputBuilder {
         self.application_tag = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>A key-value pair that identifies an associated resource.</p>
+    /// <p> A key-value pair that identifies an associated resource. </p>
     pub fn set_application_tag(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -251,7 +251,7 @@ impl GetApplicationOutputBuilder {
         self.application_tag = input;
         self
     }
-    /// <p>A key-value pair that identifies an associated resource.</p>
+    /// <p> A key-value pair that identifies an associated resource. </p>
     pub fn get_application_tag(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.application_tag
     }

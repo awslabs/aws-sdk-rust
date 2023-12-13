@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScheduleConfiguration {
-    /// <p>An expression that denotes when to trigger the scheduled query run. This can be a cron expression or a rate expression.</p>
+    /// <p>An expression that denotes when to trigger the scheduled query run. This can be a cron expression or a rate expression. </p>
     pub schedule_expression: ::std::string::String,
 }
 impl ScheduleConfiguration {
-    /// <p>An expression that denotes when to trigger the scheduled query run. This can be a cron expression or a rate expression.</p>
+    /// <p>An expression that denotes when to trigger the scheduled query run. This can be a cron expression or a rate expression. </p>
     pub fn schedule_expression(&self) -> &str {
         use std::ops::Deref;
         self.schedule_expression.deref()
@@ -28,18 +28,18 @@ pub struct ScheduleConfigurationBuilder {
     pub(crate) schedule_expression: ::std::option::Option<::std::string::String>,
 }
 impl ScheduleConfigurationBuilder {
-    /// <p>An expression that denotes when to trigger the scheduled query run. This can be a cron expression or a rate expression.</p>
+    /// <p>An expression that denotes when to trigger the scheduled query run. This can be a cron expression or a rate expression. </p>
     /// This field is required.
     pub fn schedule_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schedule_expression = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An expression that denotes when to trigger the scheduled query run. This can be a cron expression or a rate expression.</p>
+    /// <p>An expression that denotes when to trigger the scheduled query run. This can be a cron expression or a rate expression. </p>
     pub fn set_schedule_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schedule_expression = input;
         self
     }
-    /// <p>An expression that denotes when to trigger the scheduled query run. This can be a cron expression or a rate expression.</p>
+    /// <p>An expression that denotes when to trigger the scheduled query run. This can be a cron expression or a rate expression. </p>
     pub fn get_schedule_expression(&self) -> &::std::option::Option<::std::string::String> {
         &self.schedule_expression
     }

@@ -22,7 +22,7 @@ impl ModifyGlobalClusterInputBuilder {
 }
 /// Fluent builder constructing a request to `ModifyGlobalCluster`.
 ///
-/// <p>Modify a setting for an Amazon DocumentDB global cluster. You can change one or more configuration parameters (for example: deletion protection), or the global cluster identifier by specifying these parameters and the new values in the request.</p><note>
+/// <p>Modify a setting for an Amazon DocumentDB global cluster. You can change one or more configuration parameters (for example: deletion protection), or the global cluster identifier by specifying these parameters and the new values in the request.</p> <note>
 /// <p>This action only applies to Amazon DocumentDB clusters.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -113,8 +113,7 @@ impl ModifyGlobalClusterFluentBuilder {
     /// <p>The identifier for the global cluster being modified. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must match the identifier of an existing global cluster.</p></li>
+    /// <li> <p>Must match the identifier of an existing global cluster.</p> </li>
     /// </ul>
     pub fn global_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.global_cluster_identifier(input.into());
@@ -123,8 +122,7 @@ impl ModifyGlobalClusterFluentBuilder {
     /// <p>The identifier for the global cluster being modified. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must match the identifier of an existing global cluster.</p></li>
+    /// <li> <p>Must match the identifier of an existing global cluster.</p> </li>
     /// </ul>
     pub fn set_global_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_global_cluster_identifier(input);
@@ -133,58 +131,48 @@ impl ModifyGlobalClusterFluentBuilder {
     /// <p>The identifier for the global cluster being modified. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must match the identifier of an existing global cluster.</p></li>
+    /// <li> <p>Must match the identifier of an existing global cluster.</p> </li>
     /// </ul>
     pub fn get_global_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_global_cluster_identifier()
     }
     /// <p>The new identifier for a global cluster when you modify a global cluster. This value is stored as a lowercase string.</p>
     /// <ul>
-    /// <li>
-    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens</p>
-    /// <p>The first character must be a letter</p>
-    /// <p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> <p>The first character must be a letter</p> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
-    /// <p>Example: <code>my-cluster2</code></p>
+    /// <p>Example: <code>my-cluster2</code> </p>
     pub fn new_global_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.new_global_cluster_identifier(input.into());
         self
     }
     /// <p>The new identifier for a global cluster when you modify a global cluster. This value is stored as a lowercase string.</p>
     /// <ul>
-    /// <li>
-    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens</p>
-    /// <p>The first character must be a letter</p>
-    /// <p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> <p>The first character must be a letter</p> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
-    /// <p>Example: <code>my-cluster2</code></p>
+    /// <p>Example: <code>my-cluster2</code> </p>
     pub fn set_new_global_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_new_global_cluster_identifier(input);
         self
     }
     /// <p>The new identifier for a global cluster when you modify a global cluster. This value is stored as a lowercase string.</p>
     /// <ul>
-    /// <li>
-    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens</p>
-    /// <p>The first character must be a letter</p>
-    /// <p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> <p>The first character must be a letter</p> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
-    /// <p>Example: <code>my-cluster2</code></p>
+    /// <p>Example: <code>my-cluster2</code> </p>
     pub fn get_new_global_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_new_global_cluster_identifier()
     }
-    /// <p>Indicates if the global cluster has deletion protection enabled. The global cluster can't be deleted when deletion protection is enabled.</p>
+    /// <p>Indicates if the global cluster has deletion protection enabled. The global cluster can't be deleted when deletion protection is enabled. </p>
     pub fn deletion_protection(mut self, input: bool) -> Self {
         self.inner = self.inner.deletion_protection(input);
         self
     }
-    /// <p>Indicates if the global cluster has deletion protection enabled. The global cluster can't be deleted when deletion protection is enabled.</p>
+    /// <p>Indicates if the global cluster has deletion protection enabled. The global cluster can't be deleted when deletion protection is enabled. </p>
     pub fn set_deletion_protection(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_deletion_protection(input);
         self
     }
-    /// <p>Indicates if the global cluster has deletion protection enabled. The global cluster can't be deleted when deletion protection is enabled.</p>
+    /// <p>Indicates if the global cluster has deletion protection enabled. The global cluster can't be deleted when deletion protection is enabled. </p>
     pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
         self.inner.get_deletion_protection()
     }

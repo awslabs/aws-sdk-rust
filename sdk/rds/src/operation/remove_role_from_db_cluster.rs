@@ -242,7 +242,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for RemoveRoleFro
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum RemoveRoleFromDBClusterError {
-    /// <p><code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
+    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
     DbClusterNotFoundFault(crate::types::error::DbClusterNotFoundFault),
     /// <p>The specified IAM role Amazon Resource Name (ARN) isn't associated with the specified DB cluster.</p>
     DbClusterRoleNotFoundFault(crate::types::error::DbClusterRoleNotFoundFault),

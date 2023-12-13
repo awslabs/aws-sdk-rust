@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSessionInput {
-    /// <p>The ID of the session.</p>
+    /// <p>The ID of the session. </p>
     pub id: ::std::option::Option<::std::string::String>,
-    /// <p>The origin of the request.</p>
+    /// <p>The origin of the request. </p>
     pub request_origin: ::std::option::Option<::std::string::String>,
 }
 impl GetSessionInput {
-    /// <p>The ID of the session.</p>
+    /// <p>The ID of the session. </p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The origin of the request.</p>
+    /// <p>The origin of the request. </p>
     pub fn request_origin(&self) -> ::std::option::Option<&str> {
         self.request_origin.as_deref()
     }
@@ -33,32 +33,32 @@ pub struct GetSessionInputBuilder {
     pub(crate) request_origin: ::std::option::Option<::std::string::String>,
 }
 impl GetSessionInputBuilder {
-    /// <p>The ID of the session.</p>
+    /// <p>The ID of the session. </p>
     /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the session.</p>
+    /// <p>The ID of the session. </p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// <p>The ID of the session.</p>
+    /// <p>The ID of the session. </p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
-    /// <p>The origin of the request.</p>
+    /// <p>The origin of the request. </p>
     pub fn request_origin(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_origin = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The origin of the request.</p>
+    /// <p>The origin of the request. </p>
     pub fn set_request_origin(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.request_origin = input;
         self
     }
-    /// <p>The origin of the request.</p>
+    /// <p>The origin of the request. </p>
     pub fn get_request_origin(&self) -> &::std::option::Option<::std::string::String> {
         &self.request_origin
     }

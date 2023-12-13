@@ -256,7 +256,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListTagsForRe
 pub enum ListTagsForResourceError {
     /// <p>Request processing failed due to an error or failure with the service.</p>
     InternalServiceError(crate::types::error::InternalServiceError),
-    /// <p>The request is not valid.</p>
+    /// <p>The request is not valid. </p>
     InvalidRequestException(crate::types::error::InvalidRequestException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),

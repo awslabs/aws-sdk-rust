@@ -22,7 +22,7 @@ impl DisassociateConnectPeerInputBuilder {
 }
 /// Fluent builder constructing a request to `DisassociateConnectPeer`.
 ///
-/// <p>Disassociates a core network Connect peer from a device and a link.</p>
+/// <p>Disassociates a core network Connect peer from a device and a link. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateConnectPeerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

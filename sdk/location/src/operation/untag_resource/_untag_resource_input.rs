@@ -5,8 +5,7 @@
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource from which you want to remove tags.</p>
     /// <ul>
-    /// <li>
-    /// <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code></p></li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code> </p> </li>
     /// </ul>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The list of tag keys to remove from the specified resource.</p>
@@ -15,8 +14,7 @@ pub struct UntagResourceInput {
 impl UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource from which you want to remove tags.</p>
     /// <ul>
-    /// <li>
-    /// <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code></p></li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code> </p> </li>
     /// </ul>
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
@@ -45,8 +43,7 @@ pub struct UntagResourceInputBuilder {
 impl UntagResourceInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the resource from which you want to remove tags.</p>
     /// <ul>
-    /// <li>
-    /// <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code></p></li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code> </p> </li>
     /// </ul>
     /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,8 +52,7 @@ impl UntagResourceInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the resource from which you want to remove tags.</p>
     /// <ul>
-    /// <li>
-    /// <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code></p></li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code> </p> </li>
     /// </ul>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
@@ -64,8 +60,7 @@ impl UntagResourceInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the resource from which you want to remove tags.</p>
     /// <ul>
-    /// <li>
-    /// <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code></p></li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code> </p> </li>
     /// </ul>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn

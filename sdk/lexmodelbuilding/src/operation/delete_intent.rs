@@ -256,7 +256,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteIntentE
 pub enum DeleteIntentError {
     /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again.</p>
     BadRequestException(crate::types::error::BadRequestException),
-    /// <p>There was a conflict processing the request. Try your request again.</p>
+    /// <p> There was a conflict processing the request. Try your request again. </p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>An internal Amazon Lex error occurred. Try your request again.</p>
     InternalFailureException(crate::types::error::InternalFailureException),
@@ -266,9 +266,9 @@ pub enum DeleteIntentError {
     NotFoundException(crate::types::error::NotFoundException),
     /// <p>The resource that you are attempting to delete is referred to by another resource. Use this information to remove references to the resource that you are trying to delete.</p>
     /// <p>The body of the exception contains a JSON object that describes the resource.</p>
-    /// <p><code>{ "resourceType": BOT | BOTALIAS | BOTCHANNEL | INTENT,</code></p>
-    /// <p><code>"resourceReference": {</code></p>
-    /// <p><code>"name": <i>string</i>, "version": <i>string</i> } }</code></p>
+    /// <p> <code>{ "resourceType": BOT | BOTALIAS | BOTCHANNEL | INTENT,</code> </p>
+    /// <p> <code>"resourceReference": {</code> </p>
+    /// <p> <code>"name": <i>string</i>, "version": <i>string</i> } }</code> </p>
     ResourceInUseException(crate::types::error::ResourceInUseException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

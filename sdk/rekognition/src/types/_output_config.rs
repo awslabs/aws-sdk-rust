@@ -6,7 +6,7 @@
 pub struct OutputConfig {
     /// <p>The S3 bucket where training output is placed.</p>
     pub s3_bucket: ::std::option::Option<::std::string::String>,
-    /// <p>The prefix applied to the training output files.</p>
+    /// <p>The prefix applied to the training output files. </p>
     pub s3_key_prefix: ::std::option::Option<::std::string::String>,
 }
 impl OutputConfig {
@@ -14,7 +14,7 @@ impl OutputConfig {
     pub fn s3_bucket(&self) -> ::std::option::Option<&str> {
         self.s3_bucket.as_deref()
     }
-    /// <p>The prefix applied to the training output files.</p>
+    /// <p>The prefix applied to the training output files. </p>
     pub fn s3_key_prefix(&self) -> ::std::option::Option<&str> {
         self.s3_key_prefix.as_deref()
     }
@@ -48,17 +48,17 @@ impl OutputConfigBuilder {
     pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3_bucket
     }
-    /// <p>The prefix applied to the training output files.</p>
+    /// <p>The prefix applied to the training output files. </p>
     pub fn s3_key_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_key_prefix = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The prefix applied to the training output files.</p>
+    /// <p>The prefix applied to the training output files. </p>
     pub fn set_s3_key_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_key_prefix = input;
         self
     }
-    /// <p>The prefix applied to the training output files.</p>
+    /// <p>The prefix applied to the training output files. </p>
     pub fn get_s3_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3_key_prefix
     }

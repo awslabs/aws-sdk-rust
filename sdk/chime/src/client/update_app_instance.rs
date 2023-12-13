@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`name(impl Into<String>)`](crate::operation::update_app_instance::builders::UpdateAppInstanceFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_app_instance::builders::UpdateAppInstanceFluentBuilder::set_name):<br>required: **true**<br><p>The name that you want to change.</p><br>
     ///   - [`metadata(impl Into<String>)`](crate::operation::update_app_instance::builders::UpdateAppInstanceFluentBuilder::metadata) / [`set_metadata(Option<String>)`](crate::operation::update_app_instance::builders::UpdateAppInstanceFluentBuilder::set_metadata):<br>required: **false**<br><p>The metadata that you want to change.</p><br>
     /// - On success, responds with [`UpdateAppInstanceOutput`](crate::operation::update_app_instance::UpdateAppInstanceOutput) with field(s):
-    ///   - [`app_instance_arn(Option<String>)`](crate::operation::update_app_instance::UpdateAppInstanceOutput::app_instance_arn): <p>The ARN of the <code>AppInstance</code>.</p>
+    ///   - [`app_instance_arn(Option<String>)`](crate::operation::update_app_instance::UpdateAppInstanceOutput::app_instance_arn): <p>The ARN of the <code>AppInstance</code>. </p>
     /// - On failure, responds with [`SdkError<UpdateAppInstanceError>`](crate::operation::update_app_instance::UpdateAppInstanceError)
     #[deprecated(note = "Replaced by UpdateAppInstance in the Amazon Chime SDK Identity Namespace")]
     pub fn update_app_instance(&self) -> crate::operation::update_app_instance::builders::UpdateAppInstanceFluentBuilder {

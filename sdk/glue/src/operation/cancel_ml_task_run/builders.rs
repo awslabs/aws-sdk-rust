@@ -22,7 +22,7 @@ impl CancelMlTaskRunInputBuilder {
 }
 /// Fluent builder constructing a request to `CancelMLTaskRun`.
 ///
-/// <p>Cancels (stops) a task run. Machine learning task runs are asynchronous tasks that Glue runs on your behalf as part of various machine learning workflows. You can cancel a machine learning task run at any time by calling <code>CancelMLTaskRun</code> with a task run's parent transform's <code>TransformID</code> and the task run's <code>TaskRunId</code>.</p>
+/// <p>Cancels (stops) a task run. Machine learning task runs are asynchronous tasks that Glue runs on your behalf as part of various machine learning workflows. You can cancel a machine learning task run at any time by calling <code>CancelMLTaskRun</code> with a task run's parent transform's <code>TransformID</code> and the task run's <code>TaskRunId</code>. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CancelMLTaskRunFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -17,27 +17,19 @@ pub struct MemberDetail {
     pub administrator_id: ::std::option::Option<::std::string::String>,
     /// <p>The current membership status of the member account. The status can have one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>INVITED</code> - For invited accounts only. Indicates that the member was sent an invitation but has not yet responded.</p></li>
-    /// <li>
-    /// <p><code>VERIFICATION_IN_PROGRESS</code> - For invited accounts only, indicates that Detective is verifying that the account identifier and email address provided for the member account match. If they do match, then Detective sends the invitation. If the email address and account identifier don't match, then the member cannot be added to the behavior graph.</p>
-    /// <p>For organization accounts in the organization behavior graph, indicates that Detective is verifying that the account belongs to the organization.</p></li>
-    /// <li>
-    /// <p><code>VERIFICATION_FAILED</code> - For invited accounts only. Indicates that the account and email address provided for the member account do not match, and Detective did not send an invitation to the account.</p></li>
-    /// <li>
-    /// <p><code>ENABLED</code> - Indicates that the member account currently contributes data to the behavior graph. For invited accounts, the member account accepted the invitation. For organization accounts in the organization behavior graph, the Detective administrator account enabled the organization account as a member account.</p></li>
-    /// <li>
-    /// <p><code>ACCEPTED_BUT_DISABLED</code> - The account accepted the invitation, or was enabled by the Detective administrator account, but is prevented from contributing data to the behavior graph. <code>DisabledReason</code> provides the reason why the member account is not enabled.</p></li>
+    /// <li> <p> <code>INVITED</code> - For invited accounts only. Indicates that the member was sent an invitation but has not yet responded.</p> </li>
+    /// <li> <p> <code>VERIFICATION_IN_PROGRESS</code> - For invited accounts only, indicates that Detective is verifying that the account identifier and email address provided for the member account match. If they do match, then Detective sends the invitation. If the email address and account identifier don't match, then the member cannot be added to the behavior graph.</p> <p>For organization accounts in the organization behavior graph, indicates that Detective is verifying that the account belongs to the organization.</p> </li>
+    /// <li> <p> <code>VERIFICATION_FAILED</code> - For invited accounts only. Indicates that the account and email address provided for the member account do not match, and Detective did not send an invitation to the account.</p> </li>
+    /// <li> <p> <code>ENABLED</code> - Indicates that the member account currently contributes data to the behavior graph. For invited accounts, the member account accepted the invitation. For organization accounts in the organization behavior graph, the Detective administrator account enabled the organization account as a member account.</p> </li>
+    /// <li> <p> <code>ACCEPTED_BUT_DISABLED</code> - The account accepted the invitation, or was enabled by the Detective administrator account, but is prevented from contributing data to the behavior graph. <code>DisabledReason</code> provides the reason why the member account is not enabled.</p> </li>
     /// </ul>
     /// <p>Invited accounts that declined an invitation or that were removed from the behavior graph are not included. In the organization behavior graph, organization accounts that the Detective administrator account did not enable are not included.</p>
     pub status: ::std::option::Option<crate::types::MemberStatus>,
     /// <p>For member accounts with a status of <code>ACCEPTED_BUT_DISABLED</code>, the reason that the member account is not enabled.</p>
     /// <p>The reason can have one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>VOLUME_TOO_HIGH</code> - Indicates that adding the member account would cause the data volume for the behavior graph to be too high.</p></li>
-    /// <li>
-    /// <p><code>VOLUME_UNKNOWN</code> - Indicates that Detective is unable to verify the data volume for the member account. This is usually because the member account is not enrolled in Amazon GuardDuty.</p></li>
+    /// <li> <p> <code>VOLUME_TOO_HIGH</code> - Indicates that adding the member account would cause the data volume for the behavior graph to be too high.</p> </li>
+    /// <li> <p> <code>VOLUME_UNKNOWN</code> - Indicates that Detective is unable to verify the data volume for the member account. This is usually because the member account is not enrolled in Amazon GuardDuty. </p> </li>
     /// </ul>
     pub disabled_reason: ::std::option::Option<crate::types::MemberDisabledReason>,
     /// <p>For invited accounts, the date and time that Detective sent the invitation to the account. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
@@ -52,7 +44,7 @@ pub struct MemberDetail {
     pub volume_usage_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The member account data volume as a percentage of the maximum allowed data volume. 0 indicates 0 percent, and 100 indicates 100 percent.</p>
     /// <p>Note that this is not the percentage of the behavior graph data volume.</p>
-    /// <p>For example, the data volume for the behavior graph is 80 GB per day. The maximum data volume is 160 GB per day. If the data volume for the member account is 40 GB per day, then <code>PercentOfGraphUtilization</code> is 25. It represents 25% of the maximum allowed data volume.</p>
+    /// <p>For example, the data volume for the behavior graph is 80 GB per day. The maximum data volume is 160 GB per day. If the data volume for the member account is 40 GB per day, then <code>PercentOfGraphUtilization</code> is 25. It represents 25% of the maximum allowed data volume. </p>
     #[deprecated(note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead.")]
     pub percent_of_graph_utilization: ::std::option::Option<f64>,
     /// <p>The date and time when the graph utilization percentage was last updated. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
@@ -60,7 +52,7 @@ pub struct MemberDetail {
     pub percent_of_graph_utilization_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The type of behavior graph membership.</p>
     /// <p>For an organization account in the organization behavior graph, the type is <code>ORGANIZATION</code>.</p>
-    /// <p>For an account that was invited to a behavior graph, the type is <code>INVITATION</code>.</p>
+    /// <p>For an account that was invited to a behavior graph, the type is <code>INVITATION</code>. </p>
     pub invitation_type: ::std::option::Option<crate::types::InvitationType>,
     /// <p>Details on the volume of usage for each data source package in a behavior graph.</p>
     pub volume_usage_by_datasource_package:
@@ -93,17 +85,11 @@ impl MemberDetail {
     }
     /// <p>The current membership status of the member account. The status can have one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>INVITED</code> - For invited accounts only. Indicates that the member was sent an invitation but has not yet responded.</p></li>
-    /// <li>
-    /// <p><code>VERIFICATION_IN_PROGRESS</code> - For invited accounts only, indicates that Detective is verifying that the account identifier and email address provided for the member account match. If they do match, then Detective sends the invitation. If the email address and account identifier don't match, then the member cannot be added to the behavior graph.</p>
-    /// <p>For organization accounts in the organization behavior graph, indicates that Detective is verifying that the account belongs to the organization.</p></li>
-    /// <li>
-    /// <p><code>VERIFICATION_FAILED</code> - For invited accounts only. Indicates that the account and email address provided for the member account do not match, and Detective did not send an invitation to the account.</p></li>
-    /// <li>
-    /// <p><code>ENABLED</code> - Indicates that the member account currently contributes data to the behavior graph. For invited accounts, the member account accepted the invitation. For organization accounts in the organization behavior graph, the Detective administrator account enabled the organization account as a member account.</p></li>
-    /// <li>
-    /// <p><code>ACCEPTED_BUT_DISABLED</code> - The account accepted the invitation, or was enabled by the Detective administrator account, but is prevented from contributing data to the behavior graph. <code>DisabledReason</code> provides the reason why the member account is not enabled.</p></li>
+    /// <li> <p> <code>INVITED</code> - For invited accounts only. Indicates that the member was sent an invitation but has not yet responded.</p> </li>
+    /// <li> <p> <code>VERIFICATION_IN_PROGRESS</code> - For invited accounts only, indicates that Detective is verifying that the account identifier and email address provided for the member account match. If they do match, then Detective sends the invitation. If the email address and account identifier don't match, then the member cannot be added to the behavior graph.</p> <p>For organization accounts in the organization behavior graph, indicates that Detective is verifying that the account belongs to the organization.</p> </li>
+    /// <li> <p> <code>VERIFICATION_FAILED</code> - For invited accounts only. Indicates that the account and email address provided for the member account do not match, and Detective did not send an invitation to the account.</p> </li>
+    /// <li> <p> <code>ENABLED</code> - Indicates that the member account currently contributes data to the behavior graph. For invited accounts, the member account accepted the invitation. For organization accounts in the organization behavior graph, the Detective administrator account enabled the organization account as a member account.</p> </li>
+    /// <li> <p> <code>ACCEPTED_BUT_DISABLED</code> - The account accepted the invitation, or was enabled by the Detective administrator account, but is prevented from contributing data to the behavior graph. <code>DisabledReason</code> provides the reason why the member account is not enabled.</p> </li>
     /// </ul>
     /// <p>Invited accounts that declined an invitation or that were removed from the behavior graph are not included. In the organization behavior graph, organization accounts that the Detective administrator account did not enable are not included.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::MemberStatus> {
@@ -112,10 +98,8 @@ impl MemberDetail {
     /// <p>For member accounts with a status of <code>ACCEPTED_BUT_DISABLED</code>, the reason that the member account is not enabled.</p>
     /// <p>The reason can have one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>VOLUME_TOO_HIGH</code> - Indicates that adding the member account would cause the data volume for the behavior graph to be too high.</p></li>
-    /// <li>
-    /// <p><code>VOLUME_UNKNOWN</code> - Indicates that Detective is unable to verify the data volume for the member account. This is usually because the member account is not enrolled in Amazon GuardDuty.</p></li>
+    /// <li> <p> <code>VOLUME_TOO_HIGH</code> - Indicates that adding the member account would cause the data volume for the behavior graph to be too high.</p> </li>
+    /// <li> <p> <code>VOLUME_UNKNOWN</code> - Indicates that Detective is unable to verify the data volume for the member account. This is usually because the member account is not enrolled in Amazon GuardDuty. </p> </li>
     /// </ul>
     pub fn disabled_reason(&self) -> ::std::option::Option<&crate::types::MemberDisabledReason> {
         self.disabled_reason.as_ref()
@@ -140,7 +124,7 @@ impl MemberDetail {
     }
     /// <p>The member account data volume as a percentage of the maximum allowed data volume. 0 indicates 0 percent, and 100 indicates 100 percent.</p>
     /// <p>Note that this is not the percentage of the behavior graph data volume.</p>
-    /// <p>For example, the data volume for the behavior graph is 80 GB per day. The maximum data volume is 160 GB per day. If the data volume for the member account is 40 GB per day, then <code>PercentOfGraphUtilization</code> is 25. It represents 25% of the maximum allowed data volume.</p>
+    /// <p>For example, the data volume for the behavior graph is 80 GB per day. The maximum data volume is 160 GB per day. If the data volume for the member account is 40 GB per day, then <code>PercentOfGraphUtilization</code> is 25. It represents 25% of the maximum allowed data volume. </p>
     #[deprecated(note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead.")]
     pub fn percent_of_graph_utilization(&self) -> ::std::option::Option<f64> {
         self.percent_of_graph_utilization
@@ -152,7 +136,7 @@ impl MemberDetail {
     }
     /// <p>The type of behavior graph membership.</p>
     /// <p>For an organization account in the organization behavior graph, the type is <code>ORGANIZATION</code>.</p>
-    /// <p>For an account that was invited to a behavior graph, the type is <code>INVITATION</code>.</p>
+    /// <p>For an account that was invited to a behavior graph, the type is <code>INVITATION</code>. </p>
     pub fn invitation_type(&self) -> ::std::option::Option<&crate::types::InvitationType> {
         self.invitation_type.as_ref()
     }
@@ -300,17 +284,11 @@ impl MemberDetailBuilder {
     }
     /// <p>The current membership status of the member account. The status can have one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>INVITED</code> - For invited accounts only. Indicates that the member was sent an invitation but has not yet responded.</p></li>
-    /// <li>
-    /// <p><code>VERIFICATION_IN_PROGRESS</code> - For invited accounts only, indicates that Detective is verifying that the account identifier and email address provided for the member account match. If they do match, then Detective sends the invitation. If the email address and account identifier don't match, then the member cannot be added to the behavior graph.</p>
-    /// <p>For organization accounts in the organization behavior graph, indicates that Detective is verifying that the account belongs to the organization.</p></li>
-    /// <li>
-    /// <p><code>VERIFICATION_FAILED</code> - For invited accounts only. Indicates that the account and email address provided for the member account do not match, and Detective did not send an invitation to the account.</p></li>
-    /// <li>
-    /// <p><code>ENABLED</code> - Indicates that the member account currently contributes data to the behavior graph. For invited accounts, the member account accepted the invitation. For organization accounts in the organization behavior graph, the Detective administrator account enabled the organization account as a member account.</p></li>
-    /// <li>
-    /// <p><code>ACCEPTED_BUT_DISABLED</code> - The account accepted the invitation, or was enabled by the Detective administrator account, but is prevented from contributing data to the behavior graph. <code>DisabledReason</code> provides the reason why the member account is not enabled.</p></li>
+    /// <li> <p> <code>INVITED</code> - For invited accounts only. Indicates that the member was sent an invitation but has not yet responded.</p> </li>
+    /// <li> <p> <code>VERIFICATION_IN_PROGRESS</code> - For invited accounts only, indicates that Detective is verifying that the account identifier and email address provided for the member account match. If they do match, then Detective sends the invitation. If the email address and account identifier don't match, then the member cannot be added to the behavior graph.</p> <p>For organization accounts in the organization behavior graph, indicates that Detective is verifying that the account belongs to the organization.</p> </li>
+    /// <li> <p> <code>VERIFICATION_FAILED</code> - For invited accounts only. Indicates that the account and email address provided for the member account do not match, and Detective did not send an invitation to the account.</p> </li>
+    /// <li> <p> <code>ENABLED</code> - Indicates that the member account currently contributes data to the behavior graph. For invited accounts, the member account accepted the invitation. For organization accounts in the organization behavior graph, the Detective administrator account enabled the organization account as a member account.</p> </li>
+    /// <li> <p> <code>ACCEPTED_BUT_DISABLED</code> - The account accepted the invitation, or was enabled by the Detective administrator account, but is prevented from contributing data to the behavior graph. <code>DisabledReason</code> provides the reason why the member account is not enabled.</p> </li>
     /// </ul>
     /// <p>Invited accounts that declined an invitation or that were removed from the behavior graph are not included. In the organization behavior graph, organization accounts that the Detective administrator account did not enable are not included.</p>
     pub fn status(mut self, input: crate::types::MemberStatus) -> Self {
@@ -319,17 +297,11 @@ impl MemberDetailBuilder {
     }
     /// <p>The current membership status of the member account. The status can have one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>INVITED</code> - For invited accounts only. Indicates that the member was sent an invitation but has not yet responded.</p></li>
-    /// <li>
-    /// <p><code>VERIFICATION_IN_PROGRESS</code> - For invited accounts only, indicates that Detective is verifying that the account identifier and email address provided for the member account match. If they do match, then Detective sends the invitation. If the email address and account identifier don't match, then the member cannot be added to the behavior graph.</p>
-    /// <p>For organization accounts in the organization behavior graph, indicates that Detective is verifying that the account belongs to the organization.</p></li>
-    /// <li>
-    /// <p><code>VERIFICATION_FAILED</code> - For invited accounts only. Indicates that the account and email address provided for the member account do not match, and Detective did not send an invitation to the account.</p></li>
-    /// <li>
-    /// <p><code>ENABLED</code> - Indicates that the member account currently contributes data to the behavior graph. For invited accounts, the member account accepted the invitation. For organization accounts in the organization behavior graph, the Detective administrator account enabled the organization account as a member account.</p></li>
-    /// <li>
-    /// <p><code>ACCEPTED_BUT_DISABLED</code> - The account accepted the invitation, or was enabled by the Detective administrator account, but is prevented from contributing data to the behavior graph. <code>DisabledReason</code> provides the reason why the member account is not enabled.</p></li>
+    /// <li> <p> <code>INVITED</code> - For invited accounts only. Indicates that the member was sent an invitation but has not yet responded.</p> </li>
+    /// <li> <p> <code>VERIFICATION_IN_PROGRESS</code> - For invited accounts only, indicates that Detective is verifying that the account identifier and email address provided for the member account match. If they do match, then Detective sends the invitation. If the email address and account identifier don't match, then the member cannot be added to the behavior graph.</p> <p>For organization accounts in the organization behavior graph, indicates that Detective is verifying that the account belongs to the organization.</p> </li>
+    /// <li> <p> <code>VERIFICATION_FAILED</code> - For invited accounts only. Indicates that the account and email address provided for the member account do not match, and Detective did not send an invitation to the account.</p> </li>
+    /// <li> <p> <code>ENABLED</code> - Indicates that the member account currently contributes data to the behavior graph. For invited accounts, the member account accepted the invitation. For organization accounts in the organization behavior graph, the Detective administrator account enabled the organization account as a member account.</p> </li>
+    /// <li> <p> <code>ACCEPTED_BUT_DISABLED</code> - The account accepted the invitation, or was enabled by the Detective administrator account, but is prevented from contributing data to the behavior graph. <code>DisabledReason</code> provides the reason why the member account is not enabled.</p> </li>
     /// </ul>
     /// <p>Invited accounts that declined an invitation or that were removed from the behavior graph are not included. In the organization behavior graph, organization accounts that the Detective administrator account did not enable are not included.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::MemberStatus>) -> Self {
@@ -338,17 +310,11 @@ impl MemberDetailBuilder {
     }
     /// <p>The current membership status of the member account. The status can have one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>INVITED</code> - For invited accounts only. Indicates that the member was sent an invitation but has not yet responded.</p></li>
-    /// <li>
-    /// <p><code>VERIFICATION_IN_PROGRESS</code> - For invited accounts only, indicates that Detective is verifying that the account identifier and email address provided for the member account match. If they do match, then Detective sends the invitation. If the email address and account identifier don't match, then the member cannot be added to the behavior graph.</p>
-    /// <p>For organization accounts in the organization behavior graph, indicates that Detective is verifying that the account belongs to the organization.</p></li>
-    /// <li>
-    /// <p><code>VERIFICATION_FAILED</code> - For invited accounts only. Indicates that the account and email address provided for the member account do not match, and Detective did not send an invitation to the account.</p></li>
-    /// <li>
-    /// <p><code>ENABLED</code> - Indicates that the member account currently contributes data to the behavior graph. For invited accounts, the member account accepted the invitation. For organization accounts in the organization behavior graph, the Detective administrator account enabled the organization account as a member account.</p></li>
-    /// <li>
-    /// <p><code>ACCEPTED_BUT_DISABLED</code> - The account accepted the invitation, or was enabled by the Detective administrator account, but is prevented from contributing data to the behavior graph. <code>DisabledReason</code> provides the reason why the member account is not enabled.</p></li>
+    /// <li> <p> <code>INVITED</code> - For invited accounts only. Indicates that the member was sent an invitation but has not yet responded.</p> </li>
+    /// <li> <p> <code>VERIFICATION_IN_PROGRESS</code> - For invited accounts only, indicates that Detective is verifying that the account identifier and email address provided for the member account match. If they do match, then Detective sends the invitation. If the email address and account identifier don't match, then the member cannot be added to the behavior graph.</p> <p>For organization accounts in the organization behavior graph, indicates that Detective is verifying that the account belongs to the organization.</p> </li>
+    /// <li> <p> <code>VERIFICATION_FAILED</code> - For invited accounts only. Indicates that the account and email address provided for the member account do not match, and Detective did not send an invitation to the account.</p> </li>
+    /// <li> <p> <code>ENABLED</code> - Indicates that the member account currently contributes data to the behavior graph. For invited accounts, the member account accepted the invitation. For organization accounts in the organization behavior graph, the Detective administrator account enabled the organization account as a member account.</p> </li>
+    /// <li> <p> <code>ACCEPTED_BUT_DISABLED</code> - The account accepted the invitation, or was enabled by the Detective administrator account, but is prevented from contributing data to the behavior graph. <code>DisabledReason</code> provides the reason why the member account is not enabled.</p> </li>
     /// </ul>
     /// <p>Invited accounts that declined an invitation or that were removed from the behavior graph are not included. In the organization behavior graph, organization accounts that the Detective administrator account did not enable are not included.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::MemberStatus> {
@@ -357,10 +323,8 @@ impl MemberDetailBuilder {
     /// <p>For member accounts with a status of <code>ACCEPTED_BUT_DISABLED</code>, the reason that the member account is not enabled.</p>
     /// <p>The reason can have one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>VOLUME_TOO_HIGH</code> - Indicates that adding the member account would cause the data volume for the behavior graph to be too high.</p></li>
-    /// <li>
-    /// <p><code>VOLUME_UNKNOWN</code> - Indicates that Detective is unable to verify the data volume for the member account. This is usually because the member account is not enrolled in Amazon GuardDuty.</p></li>
+    /// <li> <p> <code>VOLUME_TOO_HIGH</code> - Indicates that adding the member account would cause the data volume for the behavior graph to be too high.</p> </li>
+    /// <li> <p> <code>VOLUME_UNKNOWN</code> - Indicates that Detective is unable to verify the data volume for the member account. This is usually because the member account is not enrolled in Amazon GuardDuty. </p> </li>
     /// </ul>
     pub fn disabled_reason(mut self, input: crate::types::MemberDisabledReason) -> Self {
         self.disabled_reason = ::std::option::Option::Some(input);
@@ -369,10 +333,8 @@ impl MemberDetailBuilder {
     /// <p>For member accounts with a status of <code>ACCEPTED_BUT_DISABLED</code>, the reason that the member account is not enabled.</p>
     /// <p>The reason can have one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>VOLUME_TOO_HIGH</code> - Indicates that adding the member account would cause the data volume for the behavior graph to be too high.</p></li>
-    /// <li>
-    /// <p><code>VOLUME_UNKNOWN</code> - Indicates that Detective is unable to verify the data volume for the member account. This is usually because the member account is not enrolled in Amazon GuardDuty.</p></li>
+    /// <li> <p> <code>VOLUME_TOO_HIGH</code> - Indicates that adding the member account would cause the data volume for the behavior graph to be too high.</p> </li>
+    /// <li> <p> <code>VOLUME_UNKNOWN</code> - Indicates that Detective is unable to verify the data volume for the member account. This is usually because the member account is not enrolled in Amazon GuardDuty. </p> </li>
     /// </ul>
     pub fn set_disabled_reason(mut self, input: ::std::option::Option<crate::types::MemberDisabledReason>) -> Self {
         self.disabled_reason = input;
@@ -381,10 +343,8 @@ impl MemberDetailBuilder {
     /// <p>For member accounts with a status of <code>ACCEPTED_BUT_DISABLED</code>, the reason that the member account is not enabled.</p>
     /// <p>The reason can have one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>VOLUME_TOO_HIGH</code> - Indicates that adding the member account would cause the data volume for the behavior graph to be too high.</p></li>
-    /// <li>
-    /// <p><code>VOLUME_UNKNOWN</code> - Indicates that Detective is unable to verify the data volume for the member account. This is usually because the member account is not enrolled in Amazon GuardDuty.</p></li>
+    /// <li> <p> <code>VOLUME_TOO_HIGH</code> - Indicates that adding the member account would cause the data volume for the behavior graph to be too high.</p> </li>
+    /// <li> <p> <code>VOLUME_UNKNOWN</code> - Indicates that Detective is unable to verify the data volume for the member account. This is usually because the member account is not enrolled in Amazon GuardDuty. </p> </li>
     /// </ul>
     pub fn get_disabled_reason(&self) -> &::std::option::Option<crate::types::MemberDisabledReason> {
         &self.disabled_reason
@@ -453,7 +413,7 @@ impl MemberDetailBuilder {
     }
     /// <p>The member account data volume as a percentage of the maximum allowed data volume. 0 indicates 0 percent, and 100 indicates 100 percent.</p>
     /// <p>Note that this is not the percentage of the behavior graph data volume.</p>
-    /// <p>For example, the data volume for the behavior graph is 80 GB per day. The maximum data volume is 160 GB per day. If the data volume for the member account is 40 GB per day, then <code>PercentOfGraphUtilization</code> is 25. It represents 25% of the maximum allowed data volume.</p>
+    /// <p>For example, the data volume for the behavior graph is 80 GB per day. The maximum data volume is 160 GB per day. If the data volume for the member account is 40 GB per day, then <code>PercentOfGraphUtilization</code> is 25. It represents 25% of the maximum allowed data volume. </p>
     #[deprecated(note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead.")]
     pub fn percent_of_graph_utilization(mut self, input: f64) -> Self {
         self.percent_of_graph_utilization = ::std::option::Option::Some(input);
@@ -461,7 +421,7 @@ impl MemberDetailBuilder {
     }
     /// <p>The member account data volume as a percentage of the maximum allowed data volume. 0 indicates 0 percent, and 100 indicates 100 percent.</p>
     /// <p>Note that this is not the percentage of the behavior graph data volume.</p>
-    /// <p>For example, the data volume for the behavior graph is 80 GB per day. The maximum data volume is 160 GB per day. If the data volume for the member account is 40 GB per day, then <code>PercentOfGraphUtilization</code> is 25. It represents 25% of the maximum allowed data volume.</p>
+    /// <p>For example, the data volume for the behavior graph is 80 GB per day. The maximum data volume is 160 GB per day. If the data volume for the member account is 40 GB per day, then <code>PercentOfGraphUtilization</code> is 25. It represents 25% of the maximum allowed data volume. </p>
     #[deprecated(note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead.")]
     pub fn set_percent_of_graph_utilization(mut self, input: ::std::option::Option<f64>) -> Self {
         self.percent_of_graph_utilization = input;
@@ -469,7 +429,7 @@ impl MemberDetailBuilder {
     }
     /// <p>The member account data volume as a percentage of the maximum allowed data volume. 0 indicates 0 percent, and 100 indicates 100 percent.</p>
     /// <p>Note that this is not the percentage of the behavior graph data volume.</p>
-    /// <p>For example, the data volume for the behavior graph is 80 GB per day. The maximum data volume is 160 GB per day. If the data volume for the member account is 40 GB per day, then <code>PercentOfGraphUtilization</code> is 25. It represents 25% of the maximum allowed data volume.</p>
+    /// <p>For example, the data volume for the behavior graph is 80 GB per day. The maximum data volume is 160 GB per day. If the data volume for the member account is 40 GB per day, then <code>PercentOfGraphUtilization</code> is 25. It represents 25% of the maximum allowed data volume. </p>
     #[deprecated(note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead.")]
     pub fn get_percent_of_graph_utilization(&self) -> &::std::option::Option<f64> {
         &self.percent_of_graph_utilization
@@ -493,21 +453,21 @@ impl MemberDetailBuilder {
     }
     /// <p>The type of behavior graph membership.</p>
     /// <p>For an organization account in the organization behavior graph, the type is <code>ORGANIZATION</code>.</p>
-    /// <p>For an account that was invited to a behavior graph, the type is <code>INVITATION</code>.</p>
+    /// <p>For an account that was invited to a behavior graph, the type is <code>INVITATION</code>. </p>
     pub fn invitation_type(mut self, input: crate::types::InvitationType) -> Self {
         self.invitation_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of behavior graph membership.</p>
     /// <p>For an organization account in the organization behavior graph, the type is <code>ORGANIZATION</code>.</p>
-    /// <p>For an account that was invited to a behavior graph, the type is <code>INVITATION</code>.</p>
+    /// <p>For an account that was invited to a behavior graph, the type is <code>INVITATION</code>. </p>
     pub fn set_invitation_type(mut self, input: ::std::option::Option<crate::types::InvitationType>) -> Self {
         self.invitation_type = input;
         self
     }
     /// <p>The type of behavior graph membership.</p>
     /// <p>For an organization account in the organization behavior graph, the type is <code>ORGANIZATION</code>.</p>
-    /// <p>For an account that was invited to a behavior graph, the type is <code>INVITATION</code>.</p>
+    /// <p>For an account that was invited to a behavior graph, the type is <code>INVITATION</code>. </p>
     pub fn get_invitation_type(&self) -> &::std::option::Option<crate::types::InvitationType> {
         &self.invitation_type
     }

@@ -7,7 +7,7 @@ pub struct DescribeDryRunProgressOutput {
     pub dry_run_progress_status: ::std::option::Option<crate::types::DryRunProgressStatus>,
     /// <p>Details about the changes you're planning to make on the domain.</p>
     pub dry_run_config: ::std::option::Option<crate::types::DomainStatus>,
-    /// <p>The results of the dry run.</p>
+    /// <p>The results of the dry run. </p>
     pub dry_run_results: ::std::option::Option<crate::types::DryRunResults>,
     _request_id: Option<String>,
 }
@@ -20,7 +20,7 @@ impl DescribeDryRunProgressOutput {
     pub fn dry_run_config(&self) -> ::std::option::Option<&crate::types::DomainStatus> {
         self.dry_run_config.as_ref()
     }
-    /// <p>The results of the dry run.</p>
+    /// <p>The results of the dry run. </p>
     pub fn dry_run_results(&self) -> ::std::option::Option<&crate::types::DryRunResults> {
         self.dry_run_results.as_ref()
     }
@@ -75,17 +75,17 @@ impl DescribeDryRunProgressOutputBuilder {
     pub fn get_dry_run_config(&self) -> &::std::option::Option<crate::types::DomainStatus> {
         &self.dry_run_config
     }
-    /// <p>The results of the dry run.</p>
+    /// <p>The results of the dry run. </p>
     pub fn dry_run_results(mut self, input: crate::types::DryRunResults) -> Self {
         self.dry_run_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The results of the dry run.</p>
+    /// <p>The results of the dry run. </p>
     pub fn set_dry_run_results(mut self, input: ::std::option::Option<crate::types::DryRunResults>) -> Self {
         self.dry_run_results = input;
         self
     }
-    /// <p>The results of the dry run.</p>
+    /// <p>The results of the dry run. </p>
     pub fn get_dry_run_results(&self) -> &::std::option::Option<crate::types::DryRunResults> {
         &self.dry_run_results
     }

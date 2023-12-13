@@ -22,7 +22,7 @@ impl UpdateApplicationComponentConfigInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateApplicationComponentConfig`.
 ///
-/// <p>Updates the configuration of an application component.</p>
+/// <p> Updates the configuration of an application component. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateApplicationComponentConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,45 +108,45 @@ impl UpdateApplicationComponentConfigFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the application component. The ID is unique within an AWS account.</p>
+    /// <p> The ID of the application component. The ID is unique within an AWS account. </p>
     pub fn application_component_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_component_id(input.into());
         self
     }
-    /// <p>The ID of the application component. The ID is unique within an AWS account.</p>
+    /// <p> The ID of the application component. The ID is unique within an AWS account. </p>
     pub fn set_application_component_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_component_id(input);
         self
     }
-    /// <p>The ID of the application component. The ID is unique within an AWS account.</p>
+    /// <p> The ID of the application component. The ID is unique within an AWS account. </p>
     pub fn get_application_component_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_component_id()
     }
-    /// <p>Indicates whether the application component has been included for server recommendation or not.</p>
+    /// <p> Indicates whether the application component has been included for server recommendation or not. </p>
     pub fn inclusion_status(mut self, input: crate::types::InclusionStatus) -> Self {
         self.inner = self.inner.inclusion_status(input);
         self
     }
-    /// <p>Indicates whether the application component has been included for server recommendation or not.</p>
+    /// <p> Indicates whether the application component has been included for server recommendation or not. </p>
     pub fn set_inclusion_status(mut self, input: ::std::option::Option<crate::types::InclusionStatus>) -> Self {
         self.inner = self.inner.set_inclusion_status(input);
         self
     }
-    /// <p>Indicates whether the application component has been included for server recommendation or not.</p>
+    /// <p> Indicates whether the application component has been included for server recommendation or not. </p>
     pub fn get_inclusion_status(&self) -> &::std::option::Option<crate::types::InclusionStatus> {
         self.inner.get_inclusion_status()
     }
-    /// <p>The preferred strategy options for the application component. Use values from the <code>GetApplicationComponentStrategies</code> response.</p>
+    /// <p> The preferred strategy options for the application component. Use values from the <code>GetApplicationComponentStrategies</code> response. </p>
     pub fn strategy_option(mut self, input: crate::types::StrategyOption) -> Self {
         self.inner = self.inner.strategy_option(input);
         self
     }
-    /// <p>The preferred strategy options for the application component. Use values from the <code>GetApplicationComponentStrategies</code> response.</p>
+    /// <p> The preferred strategy options for the application component. Use values from the <code>GetApplicationComponentStrategies</code> response. </p>
     pub fn set_strategy_option(mut self, input: ::std::option::Option<crate::types::StrategyOption>) -> Self {
         self.inner = self.inner.set_strategy_option(input);
         self
     }
-    /// <p>The preferred strategy options for the application component. Use values from the <code>GetApplicationComponentStrategies</code> response.</p>
+    /// <p> The preferred strategy options for the application component. Use values from the <code>GetApplicationComponentStrategies</code> response. </p>
     pub fn get_strategy_option(&self) -> &::std::option::Option<crate::types::StrategyOption> {
         self.inner.get_strategy_option()
     }
@@ -154,31 +154,31 @@ impl UpdateApplicationComponentConfigFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_source_code_list`](Self::set_source_code_list).
     ///
-    /// <p>The list of source code configurations to update for the application component.</p>
+    /// <p> The list of source code configurations to update for the application component. </p>
     pub fn source_code_list(mut self, input: crate::types::SourceCode) -> Self {
         self.inner = self.inner.source_code_list(input);
         self
     }
-    /// <p>The list of source code configurations to update for the application component.</p>
+    /// <p> The list of source code configurations to update for the application component. </p>
     pub fn set_source_code_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SourceCode>>) -> Self {
         self.inner = self.inner.set_source_code_list(input);
         self
     }
-    /// <p>The list of source code configurations to update for the application component.</p>
+    /// <p> The list of source code configurations to update for the application component. </p>
     pub fn get_source_code_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SourceCode>> {
         self.inner.get_source_code_list()
     }
-    /// <p>Database credentials.</p>
+    /// <p> Database credentials. </p>
     pub fn secrets_manager_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.secrets_manager_key(input.into());
         self
     }
-    /// <p>Database credentials.</p>
+    /// <p> Database credentials. </p>
     pub fn set_secrets_manager_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_secrets_manager_key(input);
         self
     }
-    /// <p>Database credentials.</p>
+    /// <p> Database credentials. </p>
     pub fn get_secrets_manager_key(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_secrets_manager_key()
     }

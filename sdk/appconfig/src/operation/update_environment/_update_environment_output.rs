@@ -11,7 +11,7 @@ pub struct UpdateEnvironmentOutput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the environment.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The state of the environment. An environment can be in one of the following states: <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or <code>ROLLED_BACK</code></p>
+    /// <p>The state of the environment. An environment can be in one of the following states: <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or <code>ROLLED_BACK</code> </p>
     pub state: ::std::option::Option<crate::types::EnvironmentState>,
     /// <p>Amazon CloudWatch alarms monitored during the deployment.</p>
     pub monitors: ::std::option::Option<::std::vec::Vec<crate::types::Monitor>>,
@@ -34,7 +34,7 @@ impl UpdateEnvironmentOutput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The state of the environment. An environment can be in one of the following states: <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or <code>ROLLED_BACK</code></p>
+    /// <p>The state of the environment. An environment can be in one of the following states: <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or <code>ROLLED_BACK</code> </p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::EnvironmentState> {
         self.state.as_ref()
     }
@@ -126,17 +126,17 @@ impl UpdateEnvironmentOutputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The state of the environment. An environment can be in one of the following states: <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or <code>ROLLED_BACK</code></p>
+    /// <p>The state of the environment. An environment can be in one of the following states: <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or <code>ROLLED_BACK</code> </p>
     pub fn state(mut self, input: crate::types::EnvironmentState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The state of the environment. An environment can be in one of the following states: <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or <code>ROLLED_BACK</code></p>
+    /// <p>The state of the environment. An environment can be in one of the following states: <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or <code>ROLLED_BACK</code> </p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::EnvironmentState>) -> Self {
         self.state = input;
         self
     }
-    /// <p>The state of the environment. An environment can be in one of the following states: <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or <code>ROLLED_BACK</code></p>
+    /// <p>The state of the environment. An environment can be in one of the following states: <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or <code>ROLLED_BACK</code> </p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::EnvironmentState> {
         &self.state
     }

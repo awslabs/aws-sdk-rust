@@ -11,7 +11,7 @@ pub struct StartFraudsterRegistrationJobInput {
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the Job output file. Refer to the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-fraudster-watchlist.html">Create and edit a fraudster watchlist</a> documentation for the permissions needed in this role.</p>
     pub data_access_role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The registration config containing details such as the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster.</p>
+    /// <p>The registration config containing details such as the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster. </p>
     pub registration_config: ::std::option::Option<crate::types::RegistrationConfig>,
     /// <p>The input data config containing an S3 URI for the input manifest file that contains the list of fraudster registration requests.</p>
     pub input_data_config: ::std::option::Option<crate::types::InputDataConfig>,
@@ -35,7 +35,7 @@ impl StartFraudsterRegistrationJobInput {
     pub fn data_access_role_arn(&self) -> ::std::option::Option<&str> {
         self.data_access_role_arn.as_deref()
     }
-    /// <p>The registration config containing details such as the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster.</p>
+    /// <p>The registration config containing details such as the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster. </p>
     pub fn registration_config(&self) -> ::std::option::Option<&crate::types::RegistrationConfig> {
         self.registration_config.as_ref()
     }
@@ -139,17 +139,17 @@ impl StartFraudsterRegistrationJobInputBuilder {
     pub fn get_data_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_access_role_arn
     }
-    /// <p>The registration config containing details such as the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster.</p>
+    /// <p>The registration config containing details such as the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster. </p>
     pub fn registration_config(mut self, input: crate::types::RegistrationConfig) -> Self {
         self.registration_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The registration config containing details such as the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster.</p>
+    /// <p>The registration config containing details such as the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster. </p>
     pub fn set_registration_config(mut self, input: ::std::option::Option<crate::types::RegistrationConfig>) -> Self {
         self.registration_config = input;
         self
     }
-    /// <p>The registration config containing details such as the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster.</p>
+    /// <p>The registration config containing details such as the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster. </p>
     pub fn get_registration_config(&self) -> &::std::option::Option<crate::types::RegistrationConfig> {
         &self.registration_config
     }

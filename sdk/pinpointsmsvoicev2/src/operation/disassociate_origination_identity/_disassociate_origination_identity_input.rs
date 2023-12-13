@@ -7,7 +7,7 @@ pub struct DisassociateOriginationIdentityInput {
     pub pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> find the values for PhoneNumberId and PhoneNumberArn, or use <code>DescribeSenderIds</code> to get the values for SenderId and SenderIdArn.</p>
     pub origination_identity: ::std::option::Option<::std::string::String>,
-    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
+    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
     pub iso_country_code: ::std::option::Option<::std::string::String>,
     /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -21,7 +21,7 @@ impl DisassociateOriginationIdentityInput {
     pub fn origination_identity(&self) -> ::std::option::Option<&str> {
         self.origination_identity.as_deref()
     }
-    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
+    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
     pub fn iso_country_code(&self) -> ::std::option::Option<&str> {
         self.iso_country_code.as_deref()
     }
@@ -77,18 +77,18 @@ impl DisassociateOriginationIdentityInputBuilder {
     pub fn get_origination_identity(&self) -> &::std::option::Option<::std::string::String> {
         &self.origination_identity
     }
-    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
+    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
     /// This field is required.
     pub fn iso_country_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iso_country_code = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
+    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
     pub fn set_iso_country_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iso_country_code = input;
         self
     }
-    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
+    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
     pub fn get_iso_country_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.iso_country_code
     }

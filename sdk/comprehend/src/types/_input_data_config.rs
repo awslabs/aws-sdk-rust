@@ -4,22 +4,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputDataConfig {
-    /// <p>The Amazon S3 URI for the input data. The URI must be in same Region as the API endpoint that you are calling. The URI can point to a single input file or it can provide the prefix for a collection of data files.</p>
+    /// <p>The Amazon S3 URI for the input data. The URI must be in same Region as the API endpoint that you are calling. The URI can point to a single input file or it can provide the prefix for a collection of data files. </p>
     /// <p>For example, if you use the URI <code>S3://bucketName/prefix</code>, if the prefix is a single file, Amazon Comprehend uses that file as input. If more than one file begins with the prefix, Amazon Comprehend uses all of them as input.</p>
     pub s3_uri: ::std::string::String,
     /// <p>Specifies how the text in an input file should be processed:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ONE_DOC_PER_FILE</code> - Each file is considered a separate document. Use this option when you are processing large documents, such as newspaper articles or scientific papers.</p></li>
-    /// <li>
-    /// <p><code>ONE_DOC_PER_LINE</code> - Each line in a file is considered a separate document. Use this option when you are processing many short documents, such as text messages.</p></li>
+    /// <li> <p> <code>ONE_DOC_PER_FILE</code> - Each file is considered a separate document. Use this option when you are processing large documents, such as newspaper articles or scientific papers.</p> </li>
+    /// <li> <p> <code>ONE_DOC_PER_LINE</code> - Each line in a file is considered a separate document. Use this option when you are processing many short documents, such as text messages.</p> </li>
     /// </ul>
     pub input_format: ::std::option::Option<crate::types::InputFormat>,
     /// <p>Provides configuration parameters to override the default actions for extracting text from PDF documents and image files.</p>
     pub document_reader_config: ::std::option::Option<crate::types::DocumentReaderConfig>,
 }
 impl InputDataConfig {
-    /// <p>The Amazon S3 URI for the input data. The URI must be in same Region as the API endpoint that you are calling. The URI can point to a single input file or it can provide the prefix for a collection of data files.</p>
+    /// <p>The Amazon S3 URI for the input data. The URI must be in same Region as the API endpoint that you are calling. The URI can point to a single input file or it can provide the prefix for a collection of data files. </p>
     /// <p>For example, if you use the URI <code>S3://bucketName/prefix</code>, if the prefix is a single file, Amazon Comprehend uses that file as input. If more than one file begins with the prefix, Amazon Comprehend uses all of them as input.</p>
     pub fn s3_uri(&self) -> &str {
         use std::ops::Deref;
@@ -27,10 +25,8 @@ impl InputDataConfig {
     }
     /// <p>Specifies how the text in an input file should be processed:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ONE_DOC_PER_FILE</code> - Each file is considered a separate document. Use this option when you are processing large documents, such as newspaper articles or scientific papers.</p></li>
-    /// <li>
-    /// <p><code>ONE_DOC_PER_LINE</code> - Each line in a file is considered a separate document. Use this option when you are processing many short documents, such as text messages.</p></li>
+    /// <li> <p> <code>ONE_DOC_PER_FILE</code> - Each file is considered a separate document. Use this option when you are processing large documents, such as newspaper articles or scientific papers.</p> </li>
+    /// <li> <p> <code>ONE_DOC_PER_LINE</code> - Each line in a file is considered a separate document. Use this option when you are processing many short documents, such as text messages.</p> </li>
     /// </ul>
     pub fn input_format(&self) -> ::std::option::Option<&crate::types::InputFormat> {
         self.input_format.as_ref()
@@ -56,30 +52,28 @@ pub struct InputDataConfigBuilder {
     pub(crate) document_reader_config: ::std::option::Option<crate::types::DocumentReaderConfig>,
 }
 impl InputDataConfigBuilder {
-    /// <p>The Amazon S3 URI for the input data. The URI must be in same Region as the API endpoint that you are calling. The URI can point to a single input file or it can provide the prefix for a collection of data files.</p>
+    /// <p>The Amazon S3 URI for the input data. The URI must be in same Region as the API endpoint that you are calling. The URI can point to a single input file or it can provide the prefix for a collection of data files. </p>
     /// <p>For example, if you use the URI <code>S3://bucketName/prefix</code>, if the prefix is a single file, Amazon Comprehend uses that file as input. If more than one file begins with the prefix, Amazon Comprehend uses all of them as input.</p>
     /// This field is required.
     pub fn s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_uri = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon S3 URI for the input data. The URI must be in same Region as the API endpoint that you are calling. The URI can point to a single input file or it can provide the prefix for a collection of data files.</p>
+    /// <p>The Amazon S3 URI for the input data. The URI must be in same Region as the API endpoint that you are calling. The URI can point to a single input file or it can provide the prefix for a collection of data files. </p>
     /// <p>For example, if you use the URI <code>S3://bucketName/prefix</code>, if the prefix is a single file, Amazon Comprehend uses that file as input. If more than one file begins with the prefix, Amazon Comprehend uses all of them as input.</p>
     pub fn set_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_uri = input;
         self
     }
-    /// <p>The Amazon S3 URI for the input data. The URI must be in same Region as the API endpoint that you are calling. The URI can point to a single input file or it can provide the prefix for a collection of data files.</p>
+    /// <p>The Amazon S3 URI for the input data. The URI must be in same Region as the API endpoint that you are calling. The URI can point to a single input file or it can provide the prefix for a collection of data files. </p>
     /// <p>For example, if you use the URI <code>S3://bucketName/prefix</code>, if the prefix is a single file, Amazon Comprehend uses that file as input. If more than one file begins with the prefix, Amazon Comprehend uses all of them as input.</p>
     pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3_uri
     }
     /// <p>Specifies how the text in an input file should be processed:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ONE_DOC_PER_FILE</code> - Each file is considered a separate document. Use this option when you are processing large documents, such as newspaper articles or scientific papers.</p></li>
-    /// <li>
-    /// <p><code>ONE_DOC_PER_LINE</code> - Each line in a file is considered a separate document. Use this option when you are processing many short documents, such as text messages.</p></li>
+    /// <li> <p> <code>ONE_DOC_PER_FILE</code> - Each file is considered a separate document. Use this option when you are processing large documents, such as newspaper articles or scientific papers.</p> </li>
+    /// <li> <p> <code>ONE_DOC_PER_LINE</code> - Each line in a file is considered a separate document. Use this option when you are processing many short documents, such as text messages.</p> </li>
     /// </ul>
     pub fn input_format(mut self, input: crate::types::InputFormat) -> Self {
         self.input_format = ::std::option::Option::Some(input);
@@ -87,10 +81,8 @@ impl InputDataConfigBuilder {
     }
     /// <p>Specifies how the text in an input file should be processed:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ONE_DOC_PER_FILE</code> - Each file is considered a separate document. Use this option when you are processing large documents, such as newspaper articles or scientific papers.</p></li>
-    /// <li>
-    /// <p><code>ONE_DOC_PER_LINE</code> - Each line in a file is considered a separate document. Use this option when you are processing many short documents, such as text messages.</p></li>
+    /// <li> <p> <code>ONE_DOC_PER_FILE</code> - Each file is considered a separate document. Use this option when you are processing large documents, such as newspaper articles or scientific papers.</p> </li>
+    /// <li> <p> <code>ONE_DOC_PER_LINE</code> - Each line in a file is considered a separate document. Use this option when you are processing many short documents, such as text messages.</p> </li>
     /// </ul>
     pub fn set_input_format(mut self, input: ::std::option::Option<crate::types::InputFormat>) -> Self {
         self.input_format = input;
@@ -98,10 +90,8 @@ impl InputDataConfigBuilder {
     }
     /// <p>Specifies how the text in an input file should be processed:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ONE_DOC_PER_FILE</code> - Each file is considered a separate document. Use this option when you are processing large documents, such as newspaper articles or scientific papers.</p></li>
-    /// <li>
-    /// <p><code>ONE_DOC_PER_LINE</code> - Each line in a file is considered a separate document. Use this option when you are processing many short documents, such as text messages.</p></li>
+    /// <li> <p> <code>ONE_DOC_PER_FILE</code> - Each file is considered a separate document. Use this option when you are processing large documents, such as newspaper articles or scientific papers.</p> </li>
+    /// <li> <p> <code>ONE_DOC_PER_LINE</code> - Each line in a file is considered a separate document. Use this option when you are processing many short documents, such as text messages.</p> </li>
     /// </ul>
     pub fn get_input_format(&self) -> &::std::option::Option<crate::types::InputFormat> {
         &self.input_format

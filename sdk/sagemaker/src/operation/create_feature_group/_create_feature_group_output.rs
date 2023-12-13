@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFeatureGroupOutput {
-    /// <p>The Amazon Resource Name (ARN) of the <code>FeatureGroup</code>. This is a unique identifier for the feature group.</p>
+    /// <p>The Amazon Resource Name (ARN) of the <code>FeatureGroup</code>. This is a unique identifier for the feature group. </p>
     pub feature_group_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateFeatureGroupOutput {
-    /// <p>The Amazon Resource Name (ARN) of the <code>FeatureGroup</code>. This is a unique identifier for the feature group.</p>
+    /// <p>The Amazon Resource Name (ARN) of the <code>FeatureGroup</code>. This is a unique identifier for the feature group. </p>
     pub fn feature_group_arn(&self) -> ::std::option::Option<&str> {
         self.feature_group_arn.as_deref()
     }
@@ -33,18 +33,18 @@ pub struct CreateFeatureGroupOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateFeatureGroupOutputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the <code>FeatureGroup</code>. This is a unique identifier for the feature group.</p>
+    /// <p>The Amazon Resource Name (ARN) of the <code>FeatureGroup</code>. This is a unique identifier for the feature group. </p>
     /// This field is required.
     pub fn feature_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_group_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the <code>FeatureGroup</code>. This is a unique identifier for the feature group.</p>
+    /// <p>The Amazon Resource Name (ARN) of the <code>FeatureGroup</code>. This is a unique identifier for the feature group. </p>
     pub fn set_feature_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.feature_group_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the <code>FeatureGroup</code>. This is a unique identifier for the feature group.</p>
+    /// <p>The Amazon Resource Name (ARN) of the <code>FeatureGroup</code>. This is a unique identifier for the feature group. </p>
     pub fn get_feature_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.feature_group_arn
     }

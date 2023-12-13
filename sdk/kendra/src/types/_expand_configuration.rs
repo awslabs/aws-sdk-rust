@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExpandConfiguration {
-    /// <p>The number of collapsed search result groups to expand. If you set this value to 10, for example, only the first 10 out of 100 result groups will have expand functionality.</p>
+    /// <p>The number of collapsed search result groups to expand. If you set this value to 10, for example, only the first 10 out of 100 result groups will have expand functionality. </p>
     pub max_result_items_to_expand: ::std::option::Option<i32>,
     /// <p>The number of expanded results to show per collapsed primary document. For instance, if you set this value to 3, then at most 3 results per collapsed group will be displayed.</p>
     pub max_expanded_results_per_item: ::std::option::Option<i32>,
 }
 impl ExpandConfiguration {
-    /// <p>The number of collapsed search result groups to expand. If you set this value to 10, for example, only the first 10 out of 100 result groups will have expand functionality.</p>
+    /// <p>The number of collapsed search result groups to expand. If you set this value to 10, for example, only the first 10 out of 100 result groups will have expand functionality. </p>
     pub fn max_result_items_to_expand(&self) -> ::std::option::Option<i32> {
         self.max_result_items_to_expand
     }
@@ -34,17 +34,17 @@ pub struct ExpandConfigurationBuilder {
     pub(crate) max_expanded_results_per_item: ::std::option::Option<i32>,
 }
 impl ExpandConfigurationBuilder {
-    /// <p>The number of collapsed search result groups to expand. If you set this value to 10, for example, only the first 10 out of 100 result groups will have expand functionality.</p>
+    /// <p>The number of collapsed search result groups to expand. If you set this value to 10, for example, only the first 10 out of 100 result groups will have expand functionality. </p>
     pub fn max_result_items_to_expand(mut self, input: i32) -> Self {
         self.max_result_items_to_expand = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of collapsed search result groups to expand. If you set this value to 10, for example, only the first 10 out of 100 result groups will have expand functionality.</p>
+    /// <p>The number of collapsed search result groups to expand. If you set this value to 10, for example, only the first 10 out of 100 result groups will have expand functionality. </p>
     pub fn set_max_result_items_to_expand(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_result_items_to_expand = input;
         self
     }
-    /// <p>The number of collapsed search result groups to expand. If you set this value to 10, for example, only the first 10 out of 100 result groups will have expand functionality.</p>
+    /// <p>The number of collapsed search result groups to expand. If you set this value to 10, for example, only the first 10 out of 100 result groups will have expand functionality. </p>
     pub fn get_max_result_items_to_expand(&self) -> &::std::option::Option<i32> {
         &self.max_result_items_to_expand
     }

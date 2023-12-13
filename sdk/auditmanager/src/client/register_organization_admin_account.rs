@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RegisterOrganizationAdminAccount`](crate::operation::register_organization_admin_account::builders::RegisterOrganizationAdminAccountFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`admin_account_id(impl Into<String>)`](crate::operation::register_organization_admin_account::builders::RegisterOrganizationAdminAccountFluentBuilder::admin_account_id) / [`set_admin_account_id(Option<String>)`](crate::operation::register_organization_admin_account::builders::RegisterOrganizationAdminAccountFluentBuilder::set_admin_account_id):<br>required: **true**<br><p>The identifier for the delegated administrator account.</p><br>
+    ///   - [`admin_account_id(impl Into<String>)`](crate::operation::register_organization_admin_account::builders::RegisterOrganizationAdminAccountFluentBuilder::admin_account_id) / [`set_admin_account_id(Option<String>)`](crate::operation::register_organization_admin_account::builders::RegisterOrganizationAdminAccountFluentBuilder::set_admin_account_id):<br>required: **true**<br><p> The identifier for the delegated administrator account. </p><br>
     /// - On success, responds with [`RegisterOrganizationAdminAccountOutput`](crate::operation::register_organization_admin_account::RegisterOrganizationAdminAccountOutput) with field(s):
-    ///   - [`admin_account_id(Option<String>)`](crate::operation::register_organization_admin_account::RegisterOrganizationAdminAccountOutput::admin_account_id): <p>The identifier for the delegated administrator account.</p>
-    ///   - [`organization_id(Option<String>)`](crate::operation::register_organization_admin_account::RegisterOrganizationAdminAccountOutput::organization_id): <p>The identifier for the organization.</p>
+    ///   - [`admin_account_id(Option<String>)`](crate::operation::register_organization_admin_account::RegisterOrganizationAdminAccountOutput::admin_account_id): <p> The identifier for the delegated administrator account. </p>
+    ///   - [`organization_id(Option<String>)`](crate::operation::register_organization_admin_account::RegisterOrganizationAdminAccountOutput::organization_id): <p> The identifier for the organization. </p>
     /// - On failure, responds with [`SdkError<RegisterOrganizationAdminAccountError>`](crate::operation::register_organization_admin_account::RegisterOrganizationAdminAccountError)
     pub fn register_organization_admin_account(
         &self,

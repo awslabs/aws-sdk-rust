@@ -4,12 +4,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteOutboundCrossClusterSearchConnectionOutput {
-    /// <p>Specifies the <code><code>OutboundCrossClusterSearchConnection</code></code> of deleted outbound connection.</p>
+    /// <p>Specifies the <code><code>OutboundCrossClusterSearchConnection</code></code> of deleted outbound connection. </p>
     pub cross_cluster_search_connection: ::std::option::Option<crate::types::OutboundCrossClusterSearchConnection>,
     _request_id: Option<String>,
 }
 impl DeleteOutboundCrossClusterSearchConnectionOutput {
-    /// <p>Specifies the <code><code>OutboundCrossClusterSearchConnection</code></code> of deleted outbound connection.</p>
+    /// <p>Specifies the <code><code>OutboundCrossClusterSearchConnection</code></code> of deleted outbound connection. </p>
     pub fn cross_cluster_search_connection(&self) -> ::std::option::Option<&crate::types::OutboundCrossClusterSearchConnection> {
         self.cross_cluster_search_connection.as_ref()
     }
@@ -36,17 +36,17 @@ pub struct DeleteOutboundCrossClusterSearchConnectionOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteOutboundCrossClusterSearchConnectionOutputBuilder {
-    /// <p>Specifies the <code><code>OutboundCrossClusterSearchConnection</code></code> of deleted outbound connection.</p>
+    /// <p>Specifies the <code><code>OutboundCrossClusterSearchConnection</code></code> of deleted outbound connection. </p>
     pub fn cross_cluster_search_connection(mut self, input: crate::types::OutboundCrossClusterSearchConnection) -> Self {
         self.cross_cluster_search_connection = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the <code><code>OutboundCrossClusterSearchConnection</code></code> of deleted outbound connection.</p>
+    /// <p>Specifies the <code><code>OutboundCrossClusterSearchConnection</code></code> of deleted outbound connection. </p>
     pub fn set_cross_cluster_search_connection(mut self, input: ::std::option::Option<crate::types::OutboundCrossClusterSearchConnection>) -> Self {
         self.cross_cluster_search_connection = input;
         self
     }
-    /// <p>Specifies the <code><code>OutboundCrossClusterSearchConnection</code></code> of deleted outbound connection.</p>
+    /// <p>Specifies the <code><code>OutboundCrossClusterSearchConnection</code></code> of deleted outbound connection. </p>
     pub fn get_cross_cluster_search_connection(&self) -> &::std::option::Option<crate::types::OutboundCrossClusterSearchConnection> {
         &self.cross_cluster_search_connection
     }

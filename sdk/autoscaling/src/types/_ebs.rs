@@ -7,38 +7,32 @@ pub struct Ebs {
     /// <p>The snapshot ID of the volume to use.</p>
     /// <p>You must specify either a <code>VolumeSize</code> or a <code>SnapshotId</code>.</p>
     pub snapshot_id: ::std::option::Option<::std::string::String>,
-    /// <p>The volume size, in GiBs. The following are the supported volumes sizes for each volume type:</p>
+    /// <p>The volume size, in GiBs. The following are the supported volumes sizes for each volume type: </p>
     /// <ul>
-    /// <li>
-    /// <p><code>gp2</code> and <code>gp3</code>: 1-16,384</p></li>
-    /// <li>
-    /// <p><code>io1</code>: 4-16,384</p></li>
-    /// <li>
-    /// <p><code>st1</code> and <code>sc1</code>: 125-16,384</p></li>
-    /// <li>
-    /// <p><code>standard</code>: 1-1,024</p></li>
+    /// <li> <p> <code>gp2</code> and <code>gp3</code>: 1-16,384</p> </li>
+    /// <li> <p> <code>io1</code>: 4-16,384</p> </li>
+    /// <li> <p> <code>st1</code> and <code>sc1</code>: 125-16,384</p> </li>
+    /// <li> <p> <code>standard</code>: 1-1,024</p> </li>
     /// </ul>
     /// <p>You must specify either a <code>SnapshotId</code> or a <code>VolumeSize</code>. If you specify both <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size must be equal or greater than the size of the snapshot.</p>
     pub volume_size: ::std::option::Option<i32>,
     /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
-    /// <p>Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> | <code>sc1</code> | <code>gp3</code></p>
+    /// <p>Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> | <code>sc1</code> | <code>gp3</code> </p>
     pub volume_type: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the volume is deleted on instance termination. For Amazon EC2 Auto Scaling, the default value is <code>true</code>.</p>
     pub delete_on_termination: ::std::option::Option<bool>,
-    /// <p>The number of input/output (I/O) operations per second (IOPS) to provision for the volume. For <code>gp3</code> and <code>io1</code> volumes, this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting.</p>
-    /// <p>The following are the supported values for each volume type:</p>
+    /// <p>The number of input/output (I/O) operations per second (IOPS) to provision for the volume. For <code>gp3</code> and <code>io1</code> volumes, this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting. </p>
+    /// <p>The following are the supported values for each volume type: </p>
     /// <ul>
-    /// <li>
-    /// <p><code>gp3</code>: 3,000-16,000 IOPS</p></li>
-    /// <li>
-    /// <p><code>io1</code>: 100-64,000 IOPS</p></li>
+    /// <li> <p> <code>gp3</code>: 3,000-16,000 IOPS</p> </li>
+    /// <li> <p> <code>io1</code>: 100-64,000 IOPS</p> </li>
     /// </ul>
-    /// <p>For <code>io1</code> volumes, we guarantee 64,000 IOPS only for <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances built on the Nitro System</a>. Other instance families guarantee performance up to 32,000 IOPS.</p>
-    /// <p><code>Iops</code> is supported when the volume type is <code>gp3</code> or <code>io1</code> and required only when the volume type is <code>io1</code>. (Not used with <code>standard</code>, <code>gp2</code>, <code>st1</code>, or <code>sc1</code> volumes.)</p>
+    /// <p>For <code>io1</code> volumes, we guarantee 64,000 IOPS only for <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances built on the Nitro System</a>. Other instance families guarantee performance up to 32,000 IOPS. </p>
+    /// <p> <code>Iops</code> is supported when the volume type is <code>gp3</code> or <code>io1</code> and required only when the volume type is <code>io1</code>. (Not used with <code>standard</code>, <code>gp2</code>, <code>st1</code>, or <code>sc1</code> volumes.) </p>
     pub iops: ::std::option::Option<i32>,
-    /// <p>Specifies whether the volume should be encrypted. Encrypted EBS volumes can only be attached to instances that support Amazon EBS encryption. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported instance types</a>. If your AMI uses encrypted volumes, you can also only launch it on supported instance types.</p><note>
+    /// <p>Specifies whether the volume should be encrypted. Encrypted EBS volumes can only be attached to instances that support Amazon EBS encryption. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported instance types</a>. If your AMI uses encrypted volumes, you can also only launch it on supported instance types.</p> <note>
     /// <p>If you are creating a volume from a snapshot, you cannot create an unencrypted volume from an encrypted snapshot. Also, you cannot specify a KMS key ID when using a launch configuration.</p>
-    /// <p>If you enable encryption by default, the EBS volumes that you create are always encrypted, either using the Amazon Web Services managed KMS key or a customer-managed KMS key, regardless of whether the snapshot was encrypted.</p>
+    /// <p>If you enable encryption by default, the EBS volumes that you create are always encrypted, either using the Amazon Web Services managed KMS key or a customer-managed KMS key, regardless of whether the snapshot was encrypted. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-data-protection.html#encryption">Use Amazon Web Services KMS keys to encrypt Amazon EBS volumes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// </note>
     pub encrypted: ::std::option::Option<bool>,
@@ -51,23 +45,19 @@ impl Ebs {
     pub fn snapshot_id(&self) -> ::std::option::Option<&str> {
         self.snapshot_id.as_deref()
     }
-    /// <p>The volume size, in GiBs. The following are the supported volumes sizes for each volume type:</p>
+    /// <p>The volume size, in GiBs. The following are the supported volumes sizes for each volume type: </p>
     /// <ul>
-    /// <li>
-    /// <p><code>gp2</code> and <code>gp3</code>: 1-16,384</p></li>
-    /// <li>
-    /// <p><code>io1</code>: 4-16,384</p></li>
-    /// <li>
-    /// <p><code>st1</code> and <code>sc1</code>: 125-16,384</p></li>
-    /// <li>
-    /// <p><code>standard</code>: 1-1,024</p></li>
+    /// <li> <p> <code>gp2</code> and <code>gp3</code>: 1-16,384</p> </li>
+    /// <li> <p> <code>io1</code>: 4-16,384</p> </li>
+    /// <li> <p> <code>st1</code> and <code>sc1</code>: 125-16,384</p> </li>
+    /// <li> <p> <code>standard</code>: 1-1,024</p> </li>
     /// </ul>
     /// <p>You must specify either a <code>SnapshotId</code> or a <code>VolumeSize</code>. If you specify both <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size must be equal or greater than the size of the snapshot.</p>
     pub fn volume_size(&self) -> ::std::option::Option<i32> {
         self.volume_size
     }
     /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
-    /// <p>Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> | <code>sc1</code> | <code>gp3</code></p>
+    /// <p>Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> | <code>sc1</code> | <code>gp3</code> </p>
     pub fn volume_type(&self) -> ::std::option::Option<&str> {
         self.volume_type.as_deref()
     }
@@ -75,22 +65,20 @@ impl Ebs {
     pub fn delete_on_termination(&self) -> ::std::option::Option<bool> {
         self.delete_on_termination
     }
-    /// <p>The number of input/output (I/O) operations per second (IOPS) to provision for the volume. For <code>gp3</code> and <code>io1</code> volumes, this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting.</p>
-    /// <p>The following are the supported values for each volume type:</p>
+    /// <p>The number of input/output (I/O) operations per second (IOPS) to provision for the volume. For <code>gp3</code> and <code>io1</code> volumes, this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting. </p>
+    /// <p>The following are the supported values for each volume type: </p>
     /// <ul>
-    /// <li>
-    /// <p><code>gp3</code>: 3,000-16,000 IOPS</p></li>
-    /// <li>
-    /// <p><code>io1</code>: 100-64,000 IOPS</p></li>
+    /// <li> <p> <code>gp3</code>: 3,000-16,000 IOPS</p> </li>
+    /// <li> <p> <code>io1</code>: 100-64,000 IOPS</p> </li>
     /// </ul>
-    /// <p>For <code>io1</code> volumes, we guarantee 64,000 IOPS only for <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances built on the Nitro System</a>. Other instance families guarantee performance up to 32,000 IOPS.</p>
-    /// <p><code>Iops</code> is supported when the volume type is <code>gp3</code> or <code>io1</code> and required only when the volume type is <code>io1</code>. (Not used with <code>standard</code>, <code>gp2</code>, <code>st1</code>, or <code>sc1</code> volumes.)</p>
+    /// <p>For <code>io1</code> volumes, we guarantee 64,000 IOPS only for <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances built on the Nitro System</a>. Other instance families guarantee performance up to 32,000 IOPS. </p>
+    /// <p> <code>Iops</code> is supported when the volume type is <code>gp3</code> or <code>io1</code> and required only when the volume type is <code>io1</code>. (Not used with <code>standard</code>, <code>gp2</code>, <code>st1</code>, or <code>sc1</code> volumes.) </p>
     pub fn iops(&self) -> ::std::option::Option<i32> {
         self.iops
     }
-    /// <p>Specifies whether the volume should be encrypted. Encrypted EBS volumes can only be attached to instances that support Amazon EBS encryption. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported instance types</a>. If your AMI uses encrypted volumes, you can also only launch it on supported instance types.</p><note>
+    /// <p>Specifies whether the volume should be encrypted. Encrypted EBS volumes can only be attached to instances that support Amazon EBS encryption. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported instance types</a>. If your AMI uses encrypted volumes, you can also only launch it on supported instance types.</p> <note>
     /// <p>If you are creating a volume from a snapshot, you cannot create an unencrypted volume from an encrypted snapshot. Also, you cannot specify a KMS key ID when using a launch configuration.</p>
-    /// <p>If you enable encryption by default, the EBS volumes that you create are always encrypted, either using the Amazon Web Services managed KMS key or a customer-managed KMS key, regardless of whether the snapshot was encrypted.</p>
+    /// <p>If you enable encryption by default, the EBS volumes that you create are always encrypted, either using the Amazon Web Services managed KMS key or a customer-managed KMS key, regardless of whether the snapshot was encrypted. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-data-protection.html#encryption">Use Amazon Web Services KMS keys to encrypt Amazon EBS volumes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// </note>
     pub fn encrypted(&self) -> ::std::option::Option<bool> {
@@ -138,67 +126,55 @@ impl EbsBuilder {
     pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.snapshot_id
     }
-    /// <p>The volume size, in GiBs. The following are the supported volumes sizes for each volume type:</p>
+    /// <p>The volume size, in GiBs. The following are the supported volumes sizes for each volume type: </p>
     /// <ul>
-    /// <li>
-    /// <p><code>gp2</code> and <code>gp3</code>: 1-16,384</p></li>
-    /// <li>
-    /// <p><code>io1</code>: 4-16,384</p></li>
-    /// <li>
-    /// <p><code>st1</code> and <code>sc1</code>: 125-16,384</p></li>
-    /// <li>
-    /// <p><code>standard</code>: 1-1,024</p></li>
+    /// <li> <p> <code>gp2</code> and <code>gp3</code>: 1-16,384</p> </li>
+    /// <li> <p> <code>io1</code>: 4-16,384</p> </li>
+    /// <li> <p> <code>st1</code> and <code>sc1</code>: 125-16,384</p> </li>
+    /// <li> <p> <code>standard</code>: 1-1,024</p> </li>
     /// </ul>
     /// <p>You must specify either a <code>SnapshotId</code> or a <code>VolumeSize</code>. If you specify both <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size must be equal or greater than the size of the snapshot.</p>
     pub fn volume_size(mut self, input: i32) -> Self {
         self.volume_size = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The volume size, in GiBs. The following are the supported volumes sizes for each volume type:</p>
+    /// <p>The volume size, in GiBs. The following are the supported volumes sizes for each volume type: </p>
     /// <ul>
-    /// <li>
-    /// <p><code>gp2</code> and <code>gp3</code>: 1-16,384</p></li>
-    /// <li>
-    /// <p><code>io1</code>: 4-16,384</p></li>
-    /// <li>
-    /// <p><code>st1</code> and <code>sc1</code>: 125-16,384</p></li>
-    /// <li>
-    /// <p><code>standard</code>: 1-1,024</p></li>
+    /// <li> <p> <code>gp2</code> and <code>gp3</code>: 1-16,384</p> </li>
+    /// <li> <p> <code>io1</code>: 4-16,384</p> </li>
+    /// <li> <p> <code>st1</code> and <code>sc1</code>: 125-16,384</p> </li>
+    /// <li> <p> <code>standard</code>: 1-1,024</p> </li>
     /// </ul>
     /// <p>You must specify either a <code>SnapshotId</code> or a <code>VolumeSize</code>. If you specify both <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size must be equal or greater than the size of the snapshot.</p>
     pub fn set_volume_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.volume_size = input;
         self
     }
-    /// <p>The volume size, in GiBs. The following are the supported volumes sizes for each volume type:</p>
+    /// <p>The volume size, in GiBs. The following are the supported volumes sizes for each volume type: </p>
     /// <ul>
-    /// <li>
-    /// <p><code>gp2</code> and <code>gp3</code>: 1-16,384</p></li>
-    /// <li>
-    /// <p><code>io1</code>: 4-16,384</p></li>
-    /// <li>
-    /// <p><code>st1</code> and <code>sc1</code>: 125-16,384</p></li>
-    /// <li>
-    /// <p><code>standard</code>: 1-1,024</p></li>
+    /// <li> <p> <code>gp2</code> and <code>gp3</code>: 1-16,384</p> </li>
+    /// <li> <p> <code>io1</code>: 4-16,384</p> </li>
+    /// <li> <p> <code>st1</code> and <code>sc1</code>: 125-16,384</p> </li>
+    /// <li> <p> <code>standard</code>: 1-1,024</p> </li>
     /// </ul>
     /// <p>You must specify either a <code>SnapshotId</code> or a <code>VolumeSize</code>. If you specify both <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size must be equal or greater than the size of the snapshot.</p>
     pub fn get_volume_size(&self) -> &::std::option::Option<i32> {
         &self.volume_size
     }
     /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
-    /// <p>Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> | <code>sc1</code> | <code>gp3</code></p>
+    /// <p>Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> | <code>sc1</code> | <code>gp3</code> </p>
     pub fn volume_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
-    /// <p>Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> | <code>sc1</code> | <code>gp3</code></p>
+    /// <p>Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> | <code>sc1</code> | <code>gp3</code> </p>
     pub fn set_volume_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_type = input;
         self
     }
     /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
-    /// <p>Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> | <code>sc1</code> | <code>gp3</code></p>
+    /// <p>Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> | <code>sc1</code> | <code>gp3</code> </p>
     pub fn get_volume_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.volume_type
     }
@@ -216,68 +192,62 @@ impl EbsBuilder {
     pub fn get_delete_on_termination(&self) -> &::std::option::Option<bool> {
         &self.delete_on_termination
     }
-    /// <p>The number of input/output (I/O) operations per second (IOPS) to provision for the volume. For <code>gp3</code> and <code>io1</code> volumes, this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting.</p>
-    /// <p>The following are the supported values for each volume type:</p>
+    /// <p>The number of input/output (I/O) operations per second (IOPS) to provision for the volume. For <code>gp3</code> and <code>io1</code> volumes, this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting. </p>
+    /// <p>The following are the supported values for each volume type: </p>
     /// <ul>
-    /// <li>
-    /// <p><code>gp3</code>: 3,000-16,000 IOPS</p></li>
-    /// <li>
-    /// <p><code>io1</code>: 100-64,000 IOPS</p></li>
+    /// <li> <p> <code>gp3</code>: 3,000-16,000 IOPS</p> </li>
+    /// <li> <p> <code>io1</code>: 100-64,000 IOPS</p> </li>
     /// </ul>
-    /// <p>For <code>io1</code> volumes, we guarantee 64,000 IOPS only for <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances built on the Nitro System</a>. Other instance families guarantee performance up to 32,000 IOPS.</p>
-    /// <p><code>Iops</code> is supported when the volume type is <code>gp3</code> or <code>io1</code> and required only when the volume type is <code>io1</code>. (Not used with <code>standard</code>, <code>gp2</code>, <code>st1</code>, or <code>sc1</code> volumes.)</p>
+    /// <p>For <code>io1</code> volumes, we guarantee 64,000 IOPS only for <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances built on the Nitro System</a>. Other instance families guarantee performance up to 32,000 IOPS. </p>
+    /// <p> <code>Iops</code> is supported when the volume type is <code>gp3</code> or <code>io1</code> and required only when the volume type is <code>io1</code>. (Not used with <code>standard</code>, <code>gp2</code>, <code>st1</code>, or <code>sc1</code> volumes.) </p>
     pub fn iops(mut self, input: i32) -> Self {
         self.iops = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of input/output (I/O) operations per second (IOPS) to provision for the volume. For <code>gp3</code> and <code>io1</code> volumes, this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting.</p>
-    /// <p>The following are the supported values for each volume type:</p>
+    /// <p>The number of input/output (I/O) operations per second (IOPS) to provision for the volume. For <code>gp3</code> and <code>io1</code> volumes, this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting. </p>
+    /// <p>The following are the supported values for each volume type: </p>
     /// <ul>
-    /// <li>
-    /// <p><code>gp3</code>: 3,000-16,000 IOPS</p></li>
-    /// <li>
-    /// <p><code>io1</code>: 100-64,000 IOPS</p></li>
+    /// <li> <p> <code>gp3</code>: 3,000-16,000 IOPS</p> </li>
+    /// <li> <p> <code>io1</code>: 100-64,000 IOPS</p> </li>
     /// </ul>
-    /// <p>For <code>io1</code> volumes, we guarantee 64,000 IOPS only for <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances built on the Nitro System</a>. Other instance families guarantee performance up to 32,000 IOPS.</p>
-    /// <p><code>Iops</code> is supported when the volume type is <code>gp3</code> or <code>io1</code> and required only when the volume type is <code>io1</code>. (Not used with <code>standard</code>, <code>gp2</code>, <code>st1</code>, or <code>sc1</code> volumes.)</p>
+    /// <p>For <code>io1</code> volumes, we guarantee 64,000 IOPS only for <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances built on the Nitro System</a>. Other instance families guarantee performance up to 32,000 IOPS. </p>
+    /// <p> <code>Iops</code> is supported when the volume type is <code>gp3</code> or <code>io1</code> and required only when the volume type is <code>io1</code>. (Not used with <code>standard</code>, <code>gp2</code>, <code>st1</code>, or <code>sc1</code> volumes.) </p>
     pub fn set_iops(mut self, input: ::std::option::Option<i32>) -> Self {
         self.iops = input;
         self
     }
-    /// <p>The number of input/output (I/O) operations per second (IOPS) to provision for the volume. For <code>gp3</code> and <code>io1</code> volumes, this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting.</p>
-    /// <p>The following are the supported values for each volume type:</p>
+    /// <p>The number of input/output (I/O) operations per second (IOPS) to provision for the volume. For <code>gp3</code> and <code>io1</code> volumes, this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting. </p>
+    /// <p>The following are the supported values for each volume type: </p>
     /// <ul>
-    /// <li>
-    /// <p><code>gp3</code>: 3,000-16,000 IOPS</p></li>
-    /// <li>
-    /// <p><code>io1</code>: 100-64,000 IOPS</p></li>
+    /// <li> <p> <code>gp3</code>: 3,000-16,000 IOPS</p> </li>
+    /// <li> <p> <code>io1</code>: 100-64,000 IOPS</p> </li>
     /// </ul>
-    /// <p>For <code>io1</code> volumes, we guarantee 64,000 IOPS only for <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances built on the Nitro System</a>. Other instance families guarantee performance up to 32,000 IOPS.</p>
-    /// <p><code>Iops</code> is supported when the volume type is <code>gp3</code> or <code>io1</code> and required only when the volume type is <code>io1</code>. (Not used with <code>standard</code>, <code>gp2</code>, <code>st1</code>, or <code>sc1</code> volumes.)</p>
+    /// <p>For <code>io1</code> volumes, we guarantee 64,000 IOPS only for <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances built on the Nitro System</a>. Other instance families guarantee performance up to 32,000 IOPS. </p>
+    /// <p> <code>Iops</code> is supported when the volume type is <code>gp3</code> or <code>io1</code> and required only when the volume type is <code>io1</code>. (Not used with <code>standard</code>, <code>gp2</code>, <code>st1</code>, or <code>sc1</code> volumes.) </p>
     pub fn get_iops(&self) -> &::std::option::Option<i32> {
         &self.iops
     }
-    /// <p>Specifies whether the volume should be encrypted. Encrypted EBS volumes can only be attached to instances that support Amazon EBS encryption. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported instance types</a>. If your AMI uses encrypted volumes, you can also only launch it on supported instance types.</p><note>
+    /// <p>Specifies whether the volume should be encrypted. Encrypted EBS volumes can only be attached to instances that support Amazon EBS encryption. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported instance types</a>. If your AMI uses encrypted volumes, you can also only launch it on supported instance types.</p> <note>
     /// <p>If you are creating a volume from a snapshot, you cannot create an unencrypted volume from an encrypted snapshot. Also, you cannot specify a KMS key ID when using a launch configuration.</p>
-    /// <p>If you enable encryption by default, the EBS volumes that you create are always encrypted, either using the Amazon Web Services managed KMS key or a customer-managed KMS key, regardless of whether the snapshot was encrypted.</p>
+    /// <p>If you enable encryption by default, the EBS volumes that you create are always encrypted, either using the Amazon Web Services managed KMS key or a customer-managed KMS key, regardless of whether the snapshot was encrypted. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-data-protection.html#encryption">Use Amazon Web Services KMS keys to encrypt Amazon EBS volumes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// </note>
     pub fn encrypted(mut self, input: bool) -> Self {
         self.encrypted = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether the volume should be encrypted. Encrypted EBS volumes can only be attached to instances that support Amazon EBS encryption. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported instance types</a>. If your AMI uses encrypted volumes, you can also only launch it on supported instance types.</p><note>
+    /// <p>Specifies whether the volume should be encrypted. Encrypted EBS volumes can only be attached to instances that support Amazon EBS encryption. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported instance types</a>. If your AMI uses encrypted volumes, you can also only launch it on supported instance types.</p> <note>
     /// <p>If you are creating a volume from a snapshot, you cannot create an unencrypted volume from an encrypted snapshot. Also, you cannot specify a KMS key ID when using a launch configuration.</p>
-    /// <p>If you enable encryption by default, the EBS volumes that you create are always encrypted, either using the Amazon Web Services managed KMS key or a customer-managed KMS key, regardless of whether the snapshot was encrypted.</p>
+    /// <p>If you enable encryption by default, the EBS volumes that you create are always encrypted, either using the Amazon Web Services managed KMS key or a customer-managed KMS key, regardless of whether the snapshot was encrypted. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-data-protection.html#encryption">Use Amazon Web Services KMS keys to encrypt Amazon EBS volumes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// </note>
     pub fn set_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.encrypted = input;
         self
     }
-    /// <p>Specifies whether the volume should be encrypted. Encrypted EBS volumes can only be attached to instances that support Amazon EBS encryption. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported instance types</a>. If your AMI uses encrypted volumes, you can also only launch it on supported instance types.</p><note>
+    /// <p>Specifies whether the volume should be encrypted. Encrypted EBS volumes can only be attached to instances that support Amazon EBS encryption. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported instance types</a>. If your AMI uses encrypted volumes, you can also only launch it on supported instance types.</p> <note>
     /// <p>If you are creating a volume from a snapshot, you cannot create an unencrypted volume from an encrypted snapshot. Also, you cannot specify a KMS key ID when using a launch configuration.</p>
-    /// <p>If you enable encryption by default, the EBS volumes that you create are always encrypted, either using the Amazon Web Services managed KMS key or a customer-managed KMS key, regardless of whether the snapshot was encrypted.</p>
+    /// <p>If you enable encryption by default, the EBS volumes that you create are always encrypted, either using the Amazon Web Services managed KMS key or a customer-managed KMS key, regardless of whether the snapshot was encrypted. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-data-protection.html#encryption">Use Amazon Web Services KMS keys to encrypt Amazon EBS volumes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// </note>
     pub fn get_encrypted(&self) -> &::std::option::Option<bool> {

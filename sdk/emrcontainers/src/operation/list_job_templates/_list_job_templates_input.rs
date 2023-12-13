@@ -5,11 +5,11 @@
 pub struct ListJobTemplatesInput {
     /// <p>The date and time after which the job templates were created.</p>
     pub created_after: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The date and time before which the job templates were created.</p>
+    /// <p> The date and time before which the job templates were created.</p>
     pub created_before: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The maximum number of job templates that can be listed.</p>
+    /// <p> The maximum number of job templates that can be listed.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>The token for the next set of job templates to return.</p>
+    /// <p> The token for the next set of job templates to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListJobTemplatesInput {
@@ -17,15 +17,15 @@ impl ListJobTemplatesInput {
     pub fn created_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_after.as_ref()
     }
-    /// <p>The date and time before which the job templates were created.</p>
+    /// <p> The date and time before which the job templates were created.</p>
     pub fn created_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_before.as_ref()
     }
-    /// <p>The maximum number of job templates that can be listed.</p>
+    /// <p> The maximum number of job templates that can be listed.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The token for the next set of job templates to return.</p>
+    /// <p> The token for the next set of job templates to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -61,45 +61,45 @@ impl ListJobTemplatesInputBuilder {
     pub fn get_created_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_after
     }
-    /// <p>The date and time before which the job templates were created.</p>
+    /// <p> The date and time before which the job templates were created.</p>
     pub fn created_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_before = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time before which the job templates were created.</p>
+    /// <p> The date and time before which the job templates were created.</p>
     pub fn set_created_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_before = input;
         self
     }
-    /// <p>The date and time before which the job templates were created.</p>
+    /// <p> The date and time before which the job templates were created.</p>
     pub fn get_created_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_before
     }
-    /// <p>The maximum number of job templates that can be listed.</p>
+    /// <p> The maximum number of job templates that can be listed.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of job templates that can be listed.</p>
+    /// <p> The maximum number of job templates that can be listed.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of job templates that can be listed.</p>
+    /// <p> The maximum number of job templates that can be listed.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p>The token for the next set of job templates to return.</p>
+    /// <p> The token for the next set of job templates to return.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token for the next set of job templates to return.</p>
+    /// <p> The token for the next set of job templates to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The token for the next set of job templates to return.</p>
+    /// <p> The token for the next set of job templates to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

@@ -2,10 +2,8 @@
 
 /// <p>A JSON object containing one or more of the following fields:</p>
 /// <ul>
-/// <li>
-/// <p><code>DeleteChapCredentialsInput$InitiatorName</code></p></li>
-/// <li>
-/// <p><code>DeleteChapCredentialsInput$TargetARN</code></p></li>
+/// <li> <p> <code>DeleteChapCredentialsInput$InitiatorName</code> </p> </li>
+/// <li> <p> <code>DeleteChapCredentialsInput$TargetARN</code> </p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]

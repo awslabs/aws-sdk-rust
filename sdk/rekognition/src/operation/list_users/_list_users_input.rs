@@ -5,7 +5,7 @@
 pub struct ListUsersInput {
     /// <p>The ID of an existing collection.</p>
     pub collection_id: ::std::option::Option<::std::string::String>,
-    /// <p>Maximum number of UsersID to return.</p>
+    /// <p>Maximum number of UsersID to return. </p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>Pagingation token to receive the next set of UsersID.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ impl ListUsersInput {
     pub fn collection_id(&self) -> ::std::option::Option<&str> {
         self.collection_id.as_deref()
     }
-    /// <p>Maximum number of UsersID to return.</p>
+    /// <p>Maximum number of UsersID to return. </p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -55,17 +55,17 @@ impl ListUsersInputBuilder {
     pub fn get_collection_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.collection_id
     }
-    /// <p>Maximum number of UsersID to return.</p>
+    /// <p>Maximum number of UsersID to return. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Maximum number of UsersID to return.</p>
+    /// <p>Maximum number of UsersID to return. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>Maximum number of UsersID to return.</p>
+    /// <p>Maximum number of UsersID to return. </p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

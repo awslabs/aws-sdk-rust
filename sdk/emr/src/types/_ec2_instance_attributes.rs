@@ -10,7 +10,7 @@ pub struct Ec2InstanceAttributes {
     pub ec2_subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>Applies to clusters configured with the instance fleets option. Specifies the unique identifier of one or more Amazon EC2 subnets in which to launch Amazon EC2 cluster instances. Subnets must exist within the same VPC. Amazon EMR chooses the Amazon EC2 subnet with the best fit from among the list of <code>RequestedEc2SubnetIds</code>, and then launches all cluster instances within that Subnet. If this value is not specified, and the account and Region support EC2-Classic networks, the cluster launches instances in the EC2-Classic network and uses <code>RequestedEc2AvailabilityZones</code> instead of this setting. If EC2-Classic is not supported, and no Subnet is specified, Amazon EMR chooses the subnet for you. <code>RequestedEc2SubnetIDs</code> and <code>RequestedEc2AvailabilityZones</code> cannot be specified together.</p>
     pub requested_ec2_subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The Availability Zone in which the cluster will run.</p>
+    /// <p>The Availability Zone in which the cluster will run. </p>
     pub ec2_availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>Applies to clusters configured with the instance fleets option. Specifies one or more Availability Zones in which to launch Amazon EC2 cluster instances when the EC2-Classic network configuration is supported. Amazon EMR chooses the Availability Zone with the best fit from among the list of <code>RequestedEc2AvailabilityZones</code>, and then launches all cluster instances within that Availability Zone. If you do not specify this value, Amazon EMR chooses the Availability Zone for you. <code>RequestedEc2SubnetIDs</code> and <code>RequestedEc2AvailabilityZones</code> cannot be specified together.</p>
     pub requested_ec2_availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -42,7 +42,7 @@ impl Ec2InstanceAttributes {
     pub fn requested_ec2_subnet_ids(&self) -> &[::std::string::String] {
         self.requested_ec2_subnet_ids.as_deref().unwrap_or_default()
     }
-    /// <p>The Availability Zone in which the cluster will run.</p>
+    /// <p>The Availability Zone in which the cluster will run. </p>
     pub fn ec2_availability_zone(&self) -> ::std::option::Option<&str> {
         self.ec2_availability_zone.as_deref()
     }
@@ -153,17 +153,17 @@ impl Ec2InstanceAttributesBuilder {
     pub fn get_requested_ec2_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.requested_ec2_subnet_ids
     }
-    /// <p>The Availability Zone in which the cluster will run.</p>
+    /// <p>The Availability Zone in which the cluster will run. </p>
     pub fn ec2_availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ec2_availability_zone = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Availability Zone in which the cluster will run.</p>
+    /// <p>The Availability Zone in which the cluster will run. </p>
     pub fn set_ec2_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ec2_availability_zone = input;
         self
     }
-    /// <p>The Availability Zone in which the cluster will run.</p>
+    /// <p>The Availability Zone in which the cluster will run. </p>
     pub fn get_ec2_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         &self.ec2_availability_zone
     }

@@ -126,17 +126,17 @@ impl DeleteApplicationFluentBuilder {
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_name()
     }
-    /// <p>You can use the <code>DescribeApplication</code> operation to get this value.</p>
+    /// <p> You can use the <code>DescribeApplication</code> operation to get this value. </p>
     pub fn create_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.create_timestamp(input);
         self
     }
-    /// <p>You can use the <code>DescribeApplication</code> operation to get this value.</p>
+    /// <p> You can use the <code>DescribeApplication</code> operation to get this value. </p>
     pub fn set_create_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_create_timestamp(input);
         self
     }
-    /// <p>You can use the <code>DescribeApplication</code> operation to get this value.</p>
+    /// <p> You can use the <code>DescribeApplication</code> operation to get this value. </p>
     pub fn get_create_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_create_timestamp()
     }

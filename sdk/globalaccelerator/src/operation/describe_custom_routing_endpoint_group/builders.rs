@@ -22,7 +22,7 @@ impl DescribeCustomRoutingEndpointGroupInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeCustomRoutingEndpointGroup`.
 ///
-/// <p>Describe an endpoint group for a custom routing accelerator.</p>
+/// <p>Describe an endpoint group for a custom routing accelerator. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeCustomRoutingEndpointGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

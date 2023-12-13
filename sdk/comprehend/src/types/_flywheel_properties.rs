@@ -12,7 +12,7 @@ pub struct FlywheelProperties {
     pub data_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Configuration about the model associated with a flywheel.</p>
     pub task_config: ::std::option::Option<crate::types::TaskConfig>,
-    /// <p>Amazon S3 URI of the data lake location.</p>
+    /// <p>Amazon S3 URI of the data lake location. </p>
     pub data_lake_s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>Data security configuration.</p>
     pub data_security_config: ::std::option::Option<crate::types::DataSecurityConfig>,
@@ -46,7 +46,7 @@ impl FlywheelProperties {
     pub fn task_config(&self) -> ::std::option::Option<&crate::types::TaskConfig> {
         self.task_config.as_ref()
     }
-    /// <p>Amazon S3 URI of the data lake location.</p>
+    /// <p>Amazon S3 URI of the data lake location. </p>
     pub fn data_lake_s3_uri(&self) -> ::std::option::Option<&str> {
         self.data_lake_s3_uri.as_deref()
     }
@@ -160,17 +160,17 @@ impl FlywheelPropertiesBuilder {
     pub fn get_task_config(&self) -> &::std::option::Option<crate::types::TaskConfig> {
         &self.task_config
     }
-    /// <p>Amazon S3 URI of the data lake location.</p>
+    /// <p>Amazon S3 URI of the data lake location. </p>
     pub fn data_lake_s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_lake_s3_uri = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Amazon S3 URI of the data lake location.</p>
+    /// <p>Amazon S3 URI of the data lake location. </p>
     pub fn set_data_lake_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_lake_s3_uri = input;
         self
     }
-    /// <p>Amazon S3 URI of the data lake location.</p>
+    /// <p>Amazon S3 URI of the data lake location. </p>
     pub fn get_data_lake_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_lake_s3_uri
     }

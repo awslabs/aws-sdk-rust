@@ -7,22 +7,14 @@ pub struct DescribeLocalGatewayVirtualInterfacesInput {
     pub local_gateway_virtual_interface_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>local-address</code> - The local address.</p></li>
-    /// <li>
-    /// <p><code>local-bgp-asn</code> - The Border Gateway Protocol (BGP) Autonomous System Number (ASN) of the local gateway.</p></li>
-    /// <li>
-    /// <p><code>local-gateway-id</code> - The ID of the local gateway.</p></li>
-    /// <li>
-    /// <p><code>local-gateway-virtual-interface-id</code> - The ID of the virtual interface.</p></li>
-    /// <li>
-    /// <p><code>owner-id</code> - The ID of the Amazon Web Services account that owns the local gateway virtual interface.</p></li>
-    /// <li>
-    /// <p><code>peer-address</code> - The peer address.</p></li>
-    /// <li>
-    /// <p><code>peer-bgp-asn</code> - The peer BGP ASN.</p></li>
-    /// <li>
-    /// <p><code>vlan</code> - The ID of the VLAN.</p></li>
+    /// <li> <p> <code>local-address</code> - The local address.</p> </li>
+    /// <li> <p> <code>local-bgp-asn</code> - The Border Gateway Protocol (BGP) Autonomous System Number (ASN) of the local gateway.</p> </li>
+    /// <li> <p> <code>local-gateway-id</code> - The ID of the local gateway.</p> </li>
+    /// <li> <p> <code>local-gateway-virtual-interface-id</code> - The ID of the virtual interface.</p> </li>
+    /// <li> <p> <code>owner-id</code> - The ID of the Amazon Web Services account that owns the local gateway virtual interface.</p> </li>
+    /// <li> <p> <code>peer-address</code> - The peer address.</p> </li>
+    /// <li> <p> <code>peer-bgp-asn</code> - The peer BGP ASN.</p> </li>
+    /// <li> <p> <code>vlan</code> - The ID of the VLAN.</p> </li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
@@ -41,22 +33,14 @@ impl DescribeLocalGatewayVirtualInterfacesInput {
     }
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>local-address</code> - The local address.</p></li>
-    /// <li>
-    /// <p><code>local-bgp-asn</code> - The Border Gateway Protocol (BGP) Autonomous System Number (ASN) of the local gateway.</p></li>
-    /// <li>
-    /// <p><code>local-gateway-id</code> - The ID of the local gateway.</p></li>
-    /// <li>
-    /// <p><code>local-gateway-virtual-interface-id</code> - The ID of the virtual interface.</p></li>
-    /// <li>
-    /// <p><code>owner-id</code> - The ID of the Amazon Web Services account that owns the local gateway virtual interface.</p></li>
-    /// <li>
-    /// <p><code>peer-address</code> - The peer address.</p></li>
-    /// <li>
-    /// <p><code>peer-bgp-asn</code> - The peer BGP ASN.</p></li>
-    /// <li>
-    /// <p><code>vlan</code> - The ID of the VLAN.</p></li>
+    /// <li> <p> <code>local-address</code> - The local address.</p> </li>
+    /// <li> <p> <code>local-bgp-asn</code> - The Border Gateway Protocol (BGP) Autonomous System Number (ASN) of the local gateway.</p> </li>
+    /// <li> <p> <code>local-gateway-id</code> - The ID of the local gateway.</p> </li>
+    /// <li> <p> <code>local-gateway-virtual-interface-id</code> - The ID of the virtual interface.</p> </li>
+    /// <li> <p> <code>owner-id</code> - The ID of the Amazon Web Services account that owns the local gateway virtual interface.</p> </li>
+    /// <li> <p> <code>peer-address</code> - The peer address.</p> </li>
+    /// <li> <p> <code>peer-bgp-asn</code> - The peer BGP ASN.</p> </li>
+    /// <li> <p> <code>vlan</code> - The ID of the VLAN.</p> </li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
@@ -120,22 +104,14 @@ impl DescribeLocalGatewayVirtualInterfacesInputBuilder {
     ///
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>local-address</code> - The local address.</p></li>
-    /// <li>
-    /// <p><code>local-bgp-asn</code> - The Border Gateway Protocol (BGP) Autonomous System Number (ASN) of the local gateway.</p></li>
-    /// <li>
-    /// <p><code>local-gateway-id</code> - The ID of the local gateway.</p></li>
-    /// <li>
-    /// <p><code>local-gateway-virtual-interface-id</code> - The ID of the virtual interface.</p></li>
-    /// <li>
-    /// <p><code>owner-id</code> - The ID of the Amazon Web Services account that owns the local gateway virtual interface.</p></li>
-    /// <li>
-    /// <p><code>peer-address</code> - The peer address.</p></li>
-    /// <li>
-    /// <p><code>peer-bgp-asn</code> - The peer BGP ASN.</p></li>
-    /// <li>
-    /// <p><code>vlan</code> - The ID of the VLAN.</p></li>
+    /// <li> <p> <code>local-address</code> - The local address.</p> </li>
+    /// <li> <p> <code>local-bgp-asn</code> - The Border Gateway Protocol (BGP) Autonomous System Number (ASN) of the local gateway.</p> </li>
+    /// <li> <p> <code>local-gateway-id</code> - The ID of the local gateway.</p> </li>
+    /// <li> <p> <code>local-gateway-virtual-interface-id</code> - The ID of the virtual interface.</p> </li>
+    /// <li> <p> <code>owner-id</code> - The ID of the Amazon Web Services account that owns the local gateway virtual interface.</p> </li>
+    /// <li> <p> <code>peer-address</code> - The peer address.</p> </li>
+    /// <li> <p> <code>peer-bgp-asn</code> - The peer BGP ASN.</p> </li>
+    /// <li> <p> <code>vlan</code> - The ID of the VLAN.</p> </li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
@@ -145,22 +121,14 @@ impl DescribeLocalGatewayVirtualInterfacesInputBuilder {
     }
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>local-address</code> - The local address.</p></li>
-    /// <li>
-    /// <p><code>local-bgp-asn</code> - The Border Gateway Protocol (BGP) Autonomous System Number (ASN) of the local gateway.</p></li>
-    /// <li>
-    /// <p><code>local-gateway-id</code> - The ID of the local gateway.</p></li>
-    /// <li>
-    /// <p><code>local-gateway-virtual-interface-id</code> - The ID of the virtual interface.</p></li>
-    /// <li>
-    /// <p><code>owner-id</code> - The ID of the Amazon Web Services account that owns the local gateway virtual interface.</p></li>
-    /// <li>
-    /// <p><code>peer-address</code> - The peer address.</p></li>
-    /// <li>
-    /// <p><code>peer-bgp-asn</code> - The peer BGP ASN.</p></li>
-    /// <li>
-    /// <p><code>vlan</code> - The ID of the VLAN.</p></li>
+    /// <li> <p> <code>local-address</code> - The local address.</p> </li>
+    /// <li> <p> <code>local-bgp-asn</code> - The Border Gateway Protocol (BGP) Autonomous System Number (ASN) of the local gateway.</p> </li>
+    /// <li> <p> <code>local-gateway-id</code> - The ID of the local gateway.</p> </li>
+    /// <li> <p> <code>local-gateway-virtual-interface-id</code> - The ID of the virtual interface.</p> </li>
+    /// <li> <p> <code>owner-id</code> - The ID of the Amazon Web Services account that owns the local gateway virtual interface.</p> </li>
+    /// <li> <p> <code>peer-address</code> - The peer address.</p> </li>
+    /// <li> <p> <code>peer-bgp-asn</code> - The peer BGP ASN.</p> </li>
+    /// <li> <p> <code>vlan</code> - The ID of the VLAN.</p> </li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
@@ -168,22 +136,14 @@ impl DescribeLocalGatewayVirtualInterfacesInputBuilder {
     }
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>local-address</code> - The local address.</p></li>
-    /// <li>
-    /// <p><code>local-bgp-asn</code> - The Border Gateway Protocol (BGP) Autonomous System Number (ASN) of the local gateway.</p></li>
-    /// <li>
-    /// <p><code>local-gateway-id</code> - The ID of the local gateway.</p></li>
-    /// <li>
-    /// <p><code>local-gateway-virtual-interface-id</code> - The ID of the virtual interface.</p></li>
-    /// <li>
-    /// <p><code>owner-id</code> - The ID of the Amazon Web Services account that owns the local gateway virtual interface.</p></li>
-    /// <li>
-    /// <p><code>peer-address</code> - The peer address.</p></li>
-    /// <li>
-    /// <p><code>peer-bgp-asn</code> - The peer BGP ASN.</p></li>
-    /// <li>
-    /// <p><code>vlan</code> - The ID of the VLAN.</p></li>
+    /// <li> <p> <code>local-address</code> - The local address.</p> </li>
+    /// <li> <p> <code>local-bgp-asn</code> - The Border Gateway Protocol (BGP) Autonomous System Number (ASN) of the local gateway.</p> </li>
+    /// <li> <p> <code>local-gateway-id</code> - The ID of the local gateway.</p> </li>
+    /// <li> <p> <code>local-gateway-virtual-interface-id</code> - The ID of the virtual interface.</p> </li>
+    /// <li> <p> <code>owner-id</code> - The ID of the Amazon Web Services account that owns the local gateway virtual interface.</p> </li>
+    /// <li> <p> <code>peer-address</code> - The peer address.</p> </li>
+    /// <li> <p> <code>peer-bgp-asn</code> - The peer BGP ASN.</p> </li>
+    /// <li> <p> <code>vlan</code> - The ID of the VLAN.</p> </li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters

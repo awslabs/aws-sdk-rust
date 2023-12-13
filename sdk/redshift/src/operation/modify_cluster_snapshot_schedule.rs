@@ -249,11 +249,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ModifyCluster
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum ModifyClusterSnapshotScheduleError {
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.</p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
     ClusterNotFoundFault(crate::types::error::ClusterNotFoundFault),
     /// <p>The cluster snapshot schedule state is not valid.</p>
     InvalidClusterSnapshotScheduleStateFault(crate::types::error::InvalidClusterSnapshotScheduleStateFault),
-    /// <p>We could not find the specified snapshot schedule.</p>
+    /// <p>We could not find the specified snapshot schedule. </p>
     SnapshotScheduleNotFoundFault(crate::types::error::SnapshotScheduleNotFoundFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

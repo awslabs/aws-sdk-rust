@@ -6,7 +6,7 @@
 pub struct VpcPeeringConnectionStatus {
     /// <p>Code indicating the status of a VPC peering connection.</p>
     pub code: ::std::option::Option<::std::string::String>,
-    /// <p>Additional messaging associated with the connection status.</p>
+    /// <p>Additional messaging associated with the connection status. </p>
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl VpcPeeringConnectionStatus {
@@ -14,7 +14,7 @@ impl VpcPeeringConnectionStatus {
     pub fn code(&self) -> ::std::option::Option<&str> {
         self.code.as_deref()
     }
-    /// <p>Additional messaging associated with the connection status.</p>
+    /// <p>Additional messaging associated with the connection status. </p>
     pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
@@ -48,17 +48,17 @@ impl VpcPeeringConnectionStatusBuilder {
     pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.code
     }
-    /// <p>Additional messaging associated with the connection status.</p>
+    /// <p>Additional messaging associated with the connection status. </p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Additional messaging associated with the connection status.</p>
+    /// <p>Additional messaging associated with the connection status. </p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
-    /// <p>Additional messaging associated with the connection status.</p>
+    /// <p>Additional messaging associated with the connection status. </p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }

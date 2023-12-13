@@ -22,7 +22,7 @@ impl GetSamplingTargetsInputBuilder {
 }
 /// Fluent builder constructing a request to `GetSamplingTargets`.
 ///
-/// <p>Requests a sampling quota for rules that the service is using to sample requests.</p>
+/// <p>Requests a sampling quota for rules that the service is using to sample requests. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetSamplingTargetsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

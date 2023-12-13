@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSiteInput {
-    /// <p>The ID or the Amazon Resource Name (ARN) of the site.</p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
     pub site_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the site.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -13,7 +13,7 @@ pub struct UpdateSiteInput {
     pub notes: ::std::option::Option<::std::string::String>,
 }
 impl UpdateSiteInput {
-    /// <p>The ID or the Amazon Resource Name (ARN) of the site.</p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
     pub fn site_id(&self) -> ::std::option::Option<&str> {
         self.site_id.as_deref()
     }
@@ -47,18 +47,18 @@ pub struct UpdateSiteInputBuilder {
     pub(crate) notes: ::std::option::Option<::std::string::String>,
 }
 impl UpdateSiteInputBuilder {
-    /// <p>The ID or the Amazon Resource Name (ARN) of the site.</p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
     /// This field is required.
     pub fn site_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.site_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID or the Amazon Resource Name (ARN) of the site.</p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
     pub fn set_site_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.site_id = input;
         self
     }
-    /// <p>The ID or the Amazon Resource Name (ARN) of the site.</p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
     pub fn get_site_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.site_id
     }

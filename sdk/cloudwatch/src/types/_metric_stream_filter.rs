@@ -8,7 +8,7 @@ pub struct MetricStreamFilter {
     /// <p>The name of the metric namespace for this filter.</p>
     /// <p>The namespace can contain only ASCII printable characters (ASCII range 32 through 126). It must contain at least one non-whitespace character.</p>
     pub namespace: ::std::option::Option<::std::string::String>,
-    /// <p>The names of the metrics to either include or exclude from the metric stream.</p>
+    /// <p>The names of the metrics to either include or exclude from the metric stream. </p>
     /// <p>If you omit this parameter, all metrics in the namespace are included or excluded, depending on whether this filter is specified as an exclude filter or an include filter.</p>
     /// <p>Each metric name can contain only ASCII printable characters (ASCII range 32 through 126). Each metric name must contain at least one non-whitespace character.</p>
     pub metric_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -19,7 +19,7 @@ impl MetricStreamFilter {
     pub fn namespace(&self) -> ::std::option::Option<&str> {
         self.namespace.as_deref()
     }
-    /// <p>The names of the metrics to either include or exclude from the metric stream.</p>
+    /// <p>The names of the metrics to either include or exclude from the metric stream. </p>
     /// <p>If you omit this parameter, all metrics in the namespace are included or excluded, depending on whether this filter is specified as an exclude filter or an include filter.</p>
     /// <p>Each metric name can contain only ASCII printable characters (ASCII range 32 through 126). Each metric name must contain at least one non-whitespace character.</p>
     ///
@@ -64,7 +64,7 @@ impl MetricStreamFilterBuilder {
     ///
     /// To override the contents of this collection use [`set_metric_names`](Self::set_metric_names).
     ///
-    /// <p>The names of the metrics to either include or exclude from the metric stream.</p>
+    /// <p>The names of the metrics to either include or exclude from the metric stream. </p>
     /// <p>If you omit this parameter, all metrics in the namespace are included or excluded, depending on whether this filter is specified as an exclude filter or an include filter.</p>
     /// <p>Each metric name can contain only ASCII printable characters (ASCII range 32 through 126). Each metric name must contain at least one non-whitespace character.</p>
     pub fn metric_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -73,14 +73,14 @@ impl MetricStreamFilterBuilder {
         self.metric_names = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The names of the metrics to either include or exclude from the metric stream.</p>
+    /// <p>The names of the metrics to either include or exclude from the metric stream. </p>
     /// <p>If you omit this parameter, all metrics in the namespace are included or excluded, depending on whether this filter is specified as an exclude filter or an include filter.</p>
     /// <p>Each metric name can contain only ASCII printable characters (ASCII range 32 through 126). Each metric name must contain at least one non-whitespace character.</p>
     pub fn set_metric_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.metric_names = input;
         self
     }
-    /// <p>The names of the metrics to either include or exclude from the metric stream.</p>
+    /// <p>The names of the metrics to either include or exclude from the metric stream. </p>
     /// <p>If you omit this parameter, all metrics in the namespace are included or excluded, depending on whether this filter is specified as an exclude filter or an include filter.</p>
     /// <p>Each metric name can contain only ASCII printable characters (ASCII range 32 through 126). Each metric name must contain at least one non-whitespace character.</p>
     pub fn get_metric_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {

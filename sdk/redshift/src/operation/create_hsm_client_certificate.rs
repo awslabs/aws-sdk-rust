@@ -251,7 +251,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateHsmClie
 pub enum CreateHsmClientCertificateError {
     /// <p>There is already an existing Amazon Redshift HSM client certificate with the specified identifier.</p>
     HsmClientCertificateAlreadyExistsFault(crate::types::error::HsmClientCertificateAlreadyExistsFault),
-    /// <p>The quota for HSM client certificates has been reached. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+    /// <p>The quota for HSM client certificates has been reached. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
     HsmClientCertificateQuotaExceededFault(crate::types::error::HsmClientCertificateQuotaExceededFault),
     /// <p>The tag is invalid.</p>
     InvalidTagFault(crate::types::error::InvalidTagFault),

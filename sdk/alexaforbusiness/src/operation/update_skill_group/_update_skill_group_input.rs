@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSkillGroupInput {
-    /// <p>The ARN of the skill group to update.</p>
+    /// <p>The ARN of the skill group to update. </p>
     pub skill_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The updated name for the skill group.</p>
     pub skill_group_name: ::std::option::Option<::std::string::String>,
@@ -11,7 +11,7 @@ pub struct UpdateSkillGroupInput {
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl UpdateSkillGroupInput {
-    /// <p>The ARN of the skill group to update.</p>
+    /// <p>The ARN of the skill group to update. </p>
     pub fn skill_group_arn(&self) -> ::std::option::Option<&str> {
         self.skill_group_arn.as_deref()
     }
@@ -40,17 +40,17 @@ pub struct UpdateSkillGroupInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
 }
 impl UpdateSkillGroupInputBuilder {
-    /// <p>The ARN of the skill group to update.</p>
+    /// <p>The ARN of the skill group to update. </p>
     pub fn skill_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.skill_group_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the skill group to update.</p>
+    /// <p>The ARN of the skill group to update. </p>
     pub fn set_skill_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.skill_group_arn = input;
         self
     }
-    /// <p>The ARN of the skill group to update.</p>
+    /// <p>The ARN of the skill group to update. </p>
     pub fn get_skill_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.skill_group_arn
     }

@@ -6,18 +6,15 @@
 pub struct EnvironmentVariable {
     /// <p>The name or key of the environment variable.</p>
     pub name: ::std::string::String,
-    /// <p>The value of the environment variable.</p><important>
-    /// <p>We strongly discourage the use of <code>PLAINTEXT</code> environment variables to store sensitive values, especially Amazon Web Services secret key IDs. <code>PLAINTEXT</code> environment variables can be displayed in plain text using the CodeBuild console and the CLI. For sensitive values, we recommend you use an environment variable of type <code>PARAMETER_STORE</code> or <code>SECRETS_MANAGER</code>.</p>
+    /// <p>The value of the environment variable.</p> <important>
+    /// <p>We strongly discourage the use of <code>PLAINTEXT</code> environment variables to store sensitive values, especially Amazon Web Services secret key IDs. <code>PLAINTEXT</code> environment variables can be displayed in plain text using the CodeBuild console and the CLI. For sensitive values, we recommend you use an environment variable of type <code>PARAMETER_STORE</code> or <code>SECRETS_MANAGER</code>. </p>
     /// </important>
     pub value: ::std::string::String,
     /// <p>The type of environment variable. Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PARAMETER_STORE</code>: An environment variable stored in Systems Manager Parameter Store. For environment variables of this type, specify the name of the parameter as the <code>value</code> of the EnvironmentVariable. The parameter value will be substituted for the name at runtime. You can also define Parameter Store environment variables in the buildspec. To learn how to do so, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.parameter-store">env/parameter-store</a> in the <i>CodeBuild User Guide</i>.</p></li>
-    /// <li>
-    /// <p><code>PLAINTEXT</code>: An environment variable in plain text format. This is the default value.</p></li>
-    /// <li>
-    /// <p><code>SECRETS_MANAGER</code>: An environment variable stored in Secrets Manager. For environment variables of this type, specify the name of the secret as the <code>value</code> of the EnvironmentVariable. The secret value will be substituted for the name at runtime. You can also define Secrets Manager environment variables in the buildspec. To learn how to do so, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.secrets-manager">env/secrets-manager</a> in the <i>CodeBuild User Guide</i>.</p></li>
+    /// <li> <p> <code>PARAMETER_STORE</code>: An environment variable stored in Systems Manager Parameter Store. For environment variables of this type, specify the name of the parameter as the <code>value</code> of the EnvironmentVariable. The parameter value will be substituted for the name at runtime. You can also define Parameter Store environment variables in the buildspec. To learn how to do so, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.parameter-store">env/parameter-store</a> in the <i>CodeBuild User Guide</i>.</p> </li>
+    /// <li> <p> <code>PLAINTEXT</code>: An environment variable in plain text format. This is the default value.</p> </li>
+    /// <li> <p> <code>SECRETS_MANAGER</code>: An environment variable stored in Secrets Manager. For environment variables of this type, specify the name of the secret as the <code>value</code> of the EnvironmentVariable. The secret value will be substituted for the name at runtime. You can also define Secrets Manager environment variables in the buildspec. To learn how to do so, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.secrets-manager">env/secrets-manager</a> in the <i>CodeBuild User Guide</i>.</p> </li>
     /// </ul>
     pub r#type: ::std::option::Option<crate::types::EnvironmentVariableType>,
 }
@@ -27,8 +24,8 @@ impl EnvironmentVariable {
         use std::ops::Deref;
         self.name.deref()
     }
-    /// <p>The value of the environment variable.</p><important>
-    /// <p>We strongly discourage the use of <code>PLAINTEXT</code> environment variables to store sensitive values, especially Amazon Web Services secret key IDs. <code>PLAINTEXT</code> environment variables can be displayed in plain text using the CodeBuild console and the CLI. For sensitive values, we recommend you use an environment variable of type <code>PARAMETER_STORE</code> or <code>SECRETS_MANAGER</code>.</p>
+    /// <p>The value of the environment variable.</p> <important>
+    /// <p>We strongly discourage the use of <code>PLAINTEXT</code> environment variables to store sensitive values, especially Amazon Web Services secret key IDs. <code>PLAINTEXT</code> environment variables can be displayed in plain text using the CodeBuild console and the CLI. For sensitive values, we recommend you use an environment variable of type <code>PARAMETER_STORE</code> or <code>SECRETS_MANAGER</code>. </p>
     /// </important>
     pub fn value(&self) -> &str {
         use std::ops::Deref;
@@ -36,12 +33,9 @@ impl EnvironmentVariable {
     }
     /// <p>The type of environment variable. Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PARAMETER_STORE</code>: An environment variable stored in Systems Manager Parameter Store. For environment variables of this type, specify the name of the parameter as the <code>value</code> of the EnvironmentVariable. The parameter value will be substituted for the name at runtime. You can also define Parameter Store environment variables in the buildspec. To learn how to do so, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.parameter-store">env/parameter-store</a> in the <i>CodeBuild User Guide</i>.</p></li>
-    /// <li>
-    /// <p><code>PLAINTEXT</code>: An environment variable in plain text format. This is the default value.</p></li>
-    /// <li>
-    /// <p><code>SECRETS_MANAGER</code>: An environment variable stored in Secrets Manager. For environment variables of this type, specify the name of the secret as the <code>value</code> of the EnvironmentVariable. The secret value will be substituted for the name at runtime. You can also define Secrets Manager environment variables in the buildspec. To learn how to do so, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.secrets-manager">env/secrets-manager</a> in the <i>CodeBuild User Guide</i>.</p></li>
+    /// <li> <p> <code>PARAMETER_STORE</code>: An environment variable stored in Systems Manager Parameter Store. For environment variables of this type, specify the name of the parameter as the <code>value</code> of the EnvironmentVariable. The parameter value will be substituted for the name at runtime. You can also define Parameter Store environment variables in the buildspec. To learn how to do so, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.parameter-store">env/parameter-store</a> in the <i>CodeBuild User Guide</i>.</p> </li>
+    /// <li> <p> <code>PLAINTEXT</code>: An environment variable in plain text format. This is the default value.</p> </li>
+    /// <li> <p> <code>SECRETS_MANAGER</code>: An environment variable stored in Secrets Manager. For environment variables of this type, specify the name of the secret as the <code>value</code> of the EnvironmentVariable. The secret value will be substituted for the name at runtime. You can also define Secrets Manager environment variables in the buildspec. To learn how to do so, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.secrets-manager">env/secrets-manager</a> in the <i>CodeBuild User Guide</i>.</p> </li>
     /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::EnvironmentVariableType> {
         self.r#type.as_ref()
@@ -78,35 +72,32 @@ impl EnvironmentVariableBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The value of the environment variable.</p><important>
-    /// <p>We strongly discourage the use of <code>PLAINTEXT</code> environment variables to store sensitive values, especially Amazon Web Services secret key IDs. <code>PLAINTEXT</code> environment variables can be displayed in plain text using the CodeBuild console and the CLI. For sensitive values, we recommend you use an environment variable of type <code>PARAMETER_STORE</code> or <code>SECRETS_MANAGER</code>.</p>
+    /// <p>The value of the environment variable.</p> <important>
+    /// <p>We strongly discourage the use of <code>PLAINTEXT</code> environment variables to store sensitive values, especially Amazon Web Services secret key IDs. <code>PLAINTEXT</code> environment variables can be displayed in plain text using the CodeBuild console and the CLI. For sensitive values, we recommend you use an environment variable of type <code>PARAMETER_STORE</code> or <code>SECRETS_MANAGER</code>. </p>
     /// </important>
     /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The value of the environment variable.</p><important>
-    /// <p>We strongly discourage the use of <code>PLAINTEXT</code> environment variables to store sensitive values, especially Amazon Web Services secret key IDs. <code>PLAINTEXT</code> environment variables can be displayed in plain text using the CodeBuild console and the CLI. For sensitive values, we recommend you use an environment variable of type <code>PARAMETER_STORE</code> or <code>SECRETS_MANAGER</code>.</p>
+    /// <p>The value of the environment variable.</p> <important>
+    /// <p>We strongly discourage the use of <code>PLAINTEXT</code> environment variables to store sensitive values, especially Amazon Web Services secret key IDs. <code>PLAINTEXT</code> environment variables can be displayed in plain text using the CodeBuild console and the CLI. For sensitive values, we recommend you use an environment variable of type <code>PARAMETER_STORE</code> or <code>SECRETS_MANAGER</code>. </p>
     /// </important>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }
-    /// <p>The value of the environment variable.</p><important>
-    /// <p>We strongly discourage the use of <code>PLAINTEXT</code> environment variables to store sensitive values, especially Amazon Web Services secret key IDs. <code>PLAINTEXT</code> environment variables can be displayed in plain text using the CodeBuild console and the CLI. For sensitive values, we recommend you use an environment variable of type <code>PARAMETER_STORE</code> or <code>SECRETS_MANAGER</code>.</p>
+    /// <p>The value of the environment variable.</p> <important>
+    /// <p>We strongly discourage the use of <code>PLAINTEXT</code> environment variables to store sensitive values, especially Amazon Web Services secret key IDs. <code>PLAINTEXT</code> environment variables can be displayed in plain text using the CodeBuild console and the CLI. For sensitive values, we recommend you use an environment variable of type <code>PARAMETER_STORE</code> or <code>SECRETS_MANAGER</code>. </p>
     /// </important>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.value
     }
     /// <p>The type of environment variable. Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PARAMETER_STORE</code>: An environment variable stored in Systems Manager Parameter Store. For environment variables of this type, specify the name of the parameter as the <code>value</code> of the EnvironmentVariable. The parameter value will be substituted for the name at runtime. You can also define Parameter Store environment variables in the buildspec. To learn how to do so, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.parameter-store">env/parameter-store</a> in the <i>CodeBuild User Guide</i>.</p></li>
-    /// <li>
-    /// <p><code>PLAINTEXT</code>: An environment variable in plain text format. This is the default value.</p></li>
-    /// <li>
-    /// <p><code>SECRETS_MANAGER</code>: An environment variable stored in Secrets Manager. For environment variables of this type, specify the name of the secret as the <code>value</code> of the EnvironmentVariable. The secret value will be substituted for the name at runtime. You can also define Secrets Manager environment variables in the buildspec. To learn how to do so, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.secrets-manager">env/secrets-manager</a> in the <i>CodeBuild User Guide</i>.</p></li>
+    /// <li> <p> <code>PARAMETER_STORE</code>: An environment variable stored in Systems Manager Parameter Store. For environment variables of this type, specify the name of the parameter as the <code>value</code> of the EnvironmentVariable. The parameter value will be substituted for the name at runtime. You can also define Parameter Store environment variables in the buildspec. To learn how to do so, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.parameter-store">env/parameter-store</a> in the <i>CodeBuild User Guide</i>.</p> </li>
+    /// <li> <p> <code>PLAINTEXT</code>: An environment variable in plain text format. This is the default value.</p> </li>
+    /// <li> <p> <code>SECRETS_MANAGER</code>: An environment variable stored in Secrets Manager. For environment variables of this type, specify the name of the secret as the <code>value</code> of the EnvironmentVariable. The secret value will be substituted for the name at runtime. You can also define Secrets Manager environment variables in the buildspec. To learn how to do so, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.secrets-manager">env/secrets-manager</a> in the <i>CodeBuild User Guide</i>.</p> </li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::EnvironmentVariableType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -114,12 +105,9 @@ impl EnvironmentVariableBuilder {
     }
     /// <p>The type of environment variable. Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PARAMETER_STORE</code>: An environment variable stored in Systems Manager Parameter Store. For environment variables of this type, specify the name of the parameter as the <code>value</code> of the EnvironmentVariable. The parameter value will be substituted for the name at runtime. You can also define Parameter Store environment variables in the buildspec. To learn how to do so, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.parameter-store">env/parameter-store</a> in the <i>CodeBuild User Guide</i>.</p></li>
-    /// <li>
-    /// <p><code>PLAINTEXT</code>: An environment variable in plain text format. This is the default value.</p></li>
-    /// <li>
-    /// <p><code>SECRETS_MANAGER</code>: An environment variable stored in Secrets Manager. For environment variables of this type, specify the name of the secret as the <code>value</code> of the EnvironmentVariable. The secret value will be substituted for the name at runtime. You can also define Secrets Manager environment variables in the buildspec. To learn how to do so, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.secrets-manager">env/secrets-manager</a> in the <i>CodeBuild User Guide</i>.</p></li>
+    /// <li> <p> <code>PARAMETER_STORE</code>: An environment variable stored in Systems Manager Parameter Store. For environment variables of this type, specify the name of the parameter as the <code>value</code> of the EnvironmentVariable. The parameter value will be substituted for the name at runtime. You can also define Parameter Store environment variables in the buildspec. To learn how to do so, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.parameter-store">env/parameter-store</a> in the <i>CodeBuild User Guide</i>.</p> </li>
+    /// <li> <p> <code>PLAINTEXT</code>: An environment variable in plain text format. This is the default value.</p> </li>
+    /// <li> <p> <code>SECRETS_MANAGER</code>: An environment variable stored in Secrets Manager. For environment variables of this type, specify the name of the secret as the <code>value</code> of the EnvironmentVariable. The secret value will be substituted for the name at runtime. You can also define Secrets Manager environment variables in the buildspec. To learn how to do so, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.secrets-manager">env/secrets-manager</a> in the <i>CodeBuild User Guide</i>.</p> </li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::EnvironmentVariableType>) -> Self {
         self.r#type = input;
@@ -127,12 +115,9 @@ impl EnvironmentVariableBuilder {
     }
     /// <p>The type of environment variable. Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PARAMETER_STORE</code>: An environment variable stored in Systems Manager Parameter Store. For environment variables of this type, specify the name of the parameter as the <code>value</code> of the EnvironmentVariable. The parameter value will be substituted for the name at runtime. You can also define Parameter Store environment variables in the buildspec. To learn how to do so, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.parameter-store">env/parameter-store</a> in the <i>CodeBuild User Guide</i>.</p></li>
-    /// <li>
-    /// <p><code>PLAINTEXT</code>: An environment variable in plain text format. This is the default value.</p></li>
-    /// <li>
-    /// <p><code>SECRETS_MANAGER</code>: An environment variable stored in Secrets Manager. For environment variables of this type, specify the name of the secret as the <code>value</code> of the EnvironmentVariable. The secret value will be substituted for the name at runtime. You can also define Secrets Manager environment variables in the buildspec. To learn how to do so, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.secrets-manager">env/secrets-manager</a> in the <i>CodeBuild User Guide</i>.</p></li>
+    /// <li> <p> <code>PARAMETER_STORE</code>: An environment variable stored in Systems Manager Parameter Store. For environment variables of this type, specify the name of the parameter as the <code>value</code> of the EnvironmentVariable. The parameter value will be substituted for the name at runtime. You can also define Parameter Store environment variables in the buildspec. To learn how to do so, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.parameter-store">env/parameter-store</a> in the <i>CodeBuild User Guide</i>.</p> </li>
+    /// <li> <p> <code>PLAINTEXT</code>: An environment variable in plain text format. This is the default value.</p> </li>
+    /// <li> <p> <code>SECRETS_MANAGER</code>: An environment variable stored in Secrets Manager. For environment variables of this type, specify the name of the secret as the <code>value</code> of the EnvironmentVariable. The secret value will be substituted for the name at runtime. You can also define Secrets Manager environment variables in the buildspec. To learn how to do so, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.secrets-manager">env/secrets-manager</a> in the <i>CodeBuild User Guide</i>.</p> </li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::EnvironmentVariableType> {
         &self.r#type

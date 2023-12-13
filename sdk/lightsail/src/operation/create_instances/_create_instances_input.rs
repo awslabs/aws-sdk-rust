@@ -3,22 +3,22 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateInstancesInput {
-    /// <p>The names to use for your new Lightsail instances. Separate multiple values using quotation marks and commas, for example: <code>["MyFirstInstance","MySecondInstance"]</code></p>
+    /// <p>The names to use for your new Lightsail instances. Separate multiple values using quotation marks and commas, for example: <code>["MyFirstInstance","MySecondInstance"]</code> </p>
     pub instance_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Availability Zone in which to create your instance. Use the following format: <code>us-east-2a</code> (case sensitive). You can get a list of Availability Zones by using the <a href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get regions</a> operation. Be sure to add the <code>include Availability Zones</code> parameter to your request.</p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
-    /// <p>(Deprecated) The name for your custom image.</p><note>
+    /// <p>(Deprecated) The name for your custom image.</p> <note>
     /// <p>In releases prior to June 12, 2017, this parameter was ignored by the API. It is now deprecated.</p>
     /// </note>
     #[deprecated]
     pub custom_image_name: ::std::option::Option<::std::string::String>,
-    /// <p>The ID for a virtual private server image (e.g., <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>). Use the <code>get blueprints</code> operation to return a list of available images (or <i>blueprints</i>).</p><note>
+    /// <p>The ID for a virtual private server image (e.g., <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>). Use the <code>get blueprints</code> operation to return a list of available images (or <i>blueprints</i>).</p> <note>
     /// <p>Use active blueprints when creating new instances. Inactive blueprints are listed to support customers with existing instances and are not necessarily available to create new instances. Blueprints are marked inactive when they become outdated due to operating system updates or new application releases.</p>
     /// </note>
     pub blueprint_id: ::std::option::Option<::std::string::String>,
     /// <p>The bundle of specification information for your virtual private server (or <i>instance</i>), including the pricing plan (e.g., <code>micro_1_0</code>).</p>
     pub bundle_id: ::std::option::Option<::std::string::String>,
-    /// <p>A launch script you can create that configures a server with additional user data. For example, you might want to run <code>apt-get -y update</code>.</p><note>
+    /// <p>A launch script you can create that configures a server with additional user data. For example, you might want to run <code>apt-get -y update</code>.</p> <note>
     /// <p>Depending on the machine image you choose, the command to get software on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Amazon Lightsail Developer Guide</a>.</p>
     /// </note>
     pub user_data: ::std::option::Option<::std::string::String>,
@@ -35,7 +35,7 @@ pub struct CreateInstancesInput {
     pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
 }
 impl CreateInstancesInput {
-    /// <p>The names to use for your new Lightsail instances. Separate multiple values using quotation marks and commas, for example: <code>["MyFirstInstance","MySecondInstance"]</code></p>
+    /// <p>The names to use for your new Lightsail instances. Separate multiple values using quotation marks and commas, for example: <code>["MyFirstInstance","MySecondInstance"]</code> </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_names.is_none()`.
     pub fn instance_names(&self) -> &[::std::string::String] {
@@ -45,14 +45,14 @@ impl CreateInstancesInput {
     pub fn availability_zone(&self) -> ::std::option::Option<&str> {
         self.availability_zone.as_deref()
     }
-    /// <p>(Deprecated) The name for your custom image.</p><note>
+    /// <p>(Deprecated) The name for your custom image.</p> <note>
     /// <p>In releases prior to June 12, 2017, this parameter was ignored by the API. It is now deprecated.</p>
     /// </note>
     #[deprecated]
     pub fn custom_image_name(&self) -> ::std::option::Option<&str> {
         self.custom_image_name.as_deref()
     }
-    /// <p>The ID for a virtual private server image (e.g., <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>). Use the <code>get blueprints</code> operation to return a list of available images (or <i>blueprints</i>).</p><note>
+    /// <p>The ID for a virtual private server image (e.g., <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>). Use the <code>get blueprints</code> operation to return a list of available images (or <i>blueprints</i>).</p> <note>
     /// <p>Use active blueprints when creating new instances. Inactive blueprints are listed to support customers with existing instances and are not necessarily available to create new instances. Blueprints are marked inactive when they become outdated due to operating system updates or new application releases.</p>
     /// </note>
     pub fn blueprint_id(&self) -> ::std::option::Option<&str> {
@@ -62,7 +62,7 @@ impl CreateInstancesInput {
     pub fn bundle_id(&self) -> ::std::option::Option<&str> {
         self.bundle_id.as_deref()
     }
-    /// <p>A launch script you can create that configures a server with additional user data. For example, you might want to run <code>apt-get -y update</code>.</p><note>
+    /// <p>A launch script you can create that configures a server with additional user data. For example, you might want to run <code>apt-get -y update</code>.</p> <note>
     /// <p>Depending on the machine image you choose, the command to get software on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Amazon Lightsail Developer Guide</a>.</p>
     /// </note>
     pub fn user_data(&self) -> ::std::option::Option<&str> {
@@ -119,19 +119,19 @@ impl CreateInstancesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_instance_names`](Self::set_instance_names).
     ///
-    /// <p>The names to use for your new Lightsail instances. Separate multiple values using quotation marks and commas, for example: <code>["MyFirstInstance","MySecondInstance"]</code></p>
+    /// <p>The names to use for your new Lightsail instances. Separate multiple values using quotation marks and commas, for example: <code>["MyFirstInstance","MySecondInstance"]</code> </p>
     pub fn instance_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.instance_names.unwrap_or_default();
         v.push(input.into());
         self.instance_names = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The names to use for your new Lightsail instances. Separate multiple values using quotation marks and commas, for example: <code>["MyFirstInstance","MySecondInstance"]</code></p>
+    /// <p>The names to use for your new Lightsail instances. Separate multiple values using quotation marks and commas, for example: <code>["MyFirstInstance","MySecondInstance"]</code> </p>
     pub fn set_instance_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.instance_names = input;
         self
     }
-    /// <p>The names to use for your new Lightsail instances. Separate multiple values using quotation marks and commas, for example: <code>["MyFirstInstance","MySecondInstance"]</code></p>
+    /// <p>The names to use for your new Lightsail instances. Separate multiple values using quotation marks and commas, for example: <code>["MyFirstInstance","MySecondInstance"]</code> </p>
     pub fn get_instance_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.instance_names
     }
@@ -150,7 +150,7 @@ impl CreateInstancesInputBuilder {
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         &self.availability_zone
     }
-    /// <p>(Deprecated) The name for your custom image.</p><note>
+    /// <p>(Deprecated) The name for your custom image.</p> <note>
     /// <p>In releases prior to June 12, 2017, this parameter was ignored by the API. It is now deprecated.</p>
     /// </note>
     #[deprecated]
@@ -158,7 +158,7 @@ impl CreateInstancesInputBuilder {
         self.custom_image_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>(Deprecated) The name for your custom image.</p><note>
+    /// <p>(Deprecated) The name for your custom image.</p> <note>
     /// <p>In releases prior to June 12, 2017, this parameter was ignored by the API. It is now deprecated.</p>
     /// </note>
     #[deprecated]
@@ -166,14 +166,14 @@ impl CreateInstancesInputBuilder {
         self.custom_image_name = input;
         self
     }
-    /// <p>(Deprecated) The name for your custom image.</p><note>
+    /// <p>(Deprecated) The name for your custom image.</p> <note>
     /// <p>In releases prior to June 12, 2017, this parameter was ignored by the API. It is now deprecated.</p>
     /// </note>
     #[deprecated]
     pub fn get_custom_image_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.custom_image_name
     }
-    /// <p>The ID for a virtual private server image (e.g., <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>). Use the <code>get blueprints</code> operation to return a list of available images (or <i>blueprints</i>).</p><note>
+    /// <p>The ID for a virtual private server image (e.g., <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>). Use the <code>get blueprints</code> operation to return a list of available images (or <i>blueprints</i>).</p> <note>
     /// <p>Use active blueprints when creating new instances. Inactive blueprints are listed to support customers with existing instances and are not necessarily available to create new instances. Blueprints are marked inactive when they become outdated due to operating system updates or new application releases.</p>
     /// </note>
     /// This field is required.
@@ -181,14 +181,14 @@ impl CreateInstancesInputBuilder {
         self.blueprint_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID for a virtual private server image (e.g., <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>). Use the <code>get blueprints</code> operation to return a list of available images (or <i>blueprints</i>).</p><note>
+    /// <p>The ID for a virtual private server image (e.g., <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>). Use the <code>get blueprints</code> operation to return a list of available images (or <i>blueprints</i>).</p> <note>
     /// <p>Use active blueprints when creating new instances. Inactive blueprints are listed to support customers with existing instances and are not necessarily available to create new instances. Blueprints are marked inactive when they become outdated due to operating system updates or new application releases.</p>
     /// </note>
     pub fn set_blueprint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.blueprint_id = input;
         self
     }
-    /// <p>The ID for a virtual private server image (e.g., <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>). Use the <code>get blueprints</code> operation to return a list of available images (or <i>blueprints</i>).</p><note>
+    /// <p>The ID for a virtual private server image (e.g., <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>). Use the <code>get blueprints</code> operation to return a list of available images (or <i>blueprints</i>).</p> <note>
     /// <p>Use active blueprints when creating new instances. Inactive blueprints are listed to support customers with existing instances and are not necessarily available to create new instances. Blueprints are marked inactive when they become outdated due to operating system updates or new application releases.</p>
     /// </note>
     pub fn get_blueprint_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -209,21 +209,21 @@ impl CreateInstancesInputBuilder {
     pub fn get_bundle_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.bundle_id
     }
-    /// <p>A launch script you can create that configures a server with additional user data. For example, you might want to run <code>apt-get -y update</code>.</p><note>
+    /// <p>A launch script you can create that configures a server with additional user data. For example, you might want to run <code>apt-get -y update</code>.</p> <note>
     /// <p>Depending on the machine image you choose, the command to get software on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Amazon Lightsail Developer Guide</a>.</p>
     /// </note>
     pub fn user_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_data = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A launch script you can create that configures a server with additional user data. For example, you might want to run <code>apt-get -y update</code>.</p><note>
+    /// <p>A launch script you can create that configures a server with additional user data. For example, you might want to run <code>apt-get -y update</code>.</p> <note>
     /// <p>Depending on the machine image you choose, the command to get software on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Amazon Lightsail Developer Guide</a>.</p>
     /// </note>
     pub fn set_user_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_data = input;
         self
     }
-    /// <p>A launch script you can create that configures a server with additional user data. For example, you might want to run <code>apt-get -y update</code>.</p><note>
+    /// <p>A launch script you can create that configures a server with additional user data. For example, you might want to run <code>apt-get -y update</code>.</p> <note>
     /// <p>Depending on the machine image you choose, the command to get software on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Amazon Lightsail Developer Guide</a>.</p>
     /// </note>
     pub fn get_user_data(&self) -> &::std::option::Option<::std::string::String> {

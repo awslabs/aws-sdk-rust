@@ -22,7 +22,7 @@ impl CreateUserInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateUser`.
 ///
-/// <p>Creates an ActiveMQ user.</p><important>
+/// <p>Creates an ActiveMQ user.</p> <important>
 /// <p>Do not add personally identifiable information (PII) or other confidential or sensitive information in broker usernames. Broker usernames are accessible to other Amazon Web Services services, including CloudWatch Logs. Broker usernames are not intended to be used for private or sensitive data.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

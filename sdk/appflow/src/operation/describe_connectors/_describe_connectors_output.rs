@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeConnectorsOutput {
-    /// <p>The configuration that is applied to the connectors used in the flow.</p>
+    /// <p> The configuration that is applied to the connectors used in the flow. </p>
     pub connector_configurations:
         ::std::option::Option<::std::collections::HashMap<crate::types::ConnectorType, crate::types::ConnectorConfiguration>>,
     /// <p>Information about the connectors supported in Amazon AppFlow.</p>
     pub connectors: ::std::option::Option<::std::vec::Vec<crate::types::ConnectorDetail>>,
-    /// <p>The pagination token for the next page of data.</p>
+    /// <p> The pagination token for the next page of data. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeConnectorsOutput {
-    /// <p>The configuration that is applied to the connectors used in the flow.</p>
+    /// <p> The configuration that is applied to the connectors used in the flow. </p>
     pub fn connector_configurations(
         &self,
     ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::ConnectorType, crate::types::ConnectorConfiguration>> {
@@ -25,7 +25,7 @@ impl DescribeConnectorsOutput {
     pub fn connectors(&self) -> &[crate::types::ConnectorDetail] {
         self.connectors.as_deref().unwrap_or_default()
     }
-    /// <p>The pagination token for the next page of data.</p>
+    /// <p> The pagination token for the next page of data. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -57,14 +57,14 @@ impl DescribeConnectorsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_connector_configurations`](Self::set_connector_configurations).
     ///
-    /// <p>The configuration that is applied to the connectors used in the flow.</p>
+    /// <p> The configuration that is applied to the connectors used in the flow. </p>
     pub fn connector_configurations(mut self, k: crate::types::ConnectorType, v: crate::types::ConnectorConfiguration) -> Self {
         let mut hash_map = self.connector_configurations.unwrap_or_default();
         hash_map.insert(k, v);
         self.connector_configurations = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The configuration that is applied to the connectors used in the flow.</p>
+    /// <p> The configuration that is applied to the connectors used in the flow. </p>
     pub fn set_connector_configurations(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<crate::types::ConnectorType, crate::types::ConnectorConfiguration>>,
@@ -72,7 +72,7 @@ impl DescribeConnectorsOutputBuilder {
         self.connector_configurations = input;
         self
     }
-    /// <p>The configuration that is applied to the connectors used in the flow.</p>
+    /// <p> The configuration that is applied to the connectors used in the flow. </p>
     pub fn get_connector_configurations(
         &self,
     ) -> &::std::option::Option<::std::collections::HashMap<crate::types::ConnectorType, crate::types::ConnectorConfiguration>> {
@@ -98,17 +98,17 @@ impl DescribeConnectorsOutputBuilder {
     pub fn get_connectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectorDetail>> {
         &self.connectors
     }
-    /// <p>The pagination token for the next page of data.</p>
+    /// <p> The pagination token for the next page of data. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The pagination token for the next page of data.</p>
+    /// <p> The pagination token for the next page of data. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The pagination token for the next page of data.</p>
+    /// <p> The pagination token for the next page of data. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

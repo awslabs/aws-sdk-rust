@@ -7,11 +7,11 @@ pub struct StartDevEnvironmentInput {
     pub space_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the project in the space.</p>
     pub project_name: ::std::option::Option<::std::string::String>,
-    /// <p>The system-generated unique ID of the Dev Environment.</p>
+    /// <p>The system-generated unique ID of the Dev Environment. </p>
     pub id: ::std::option::Option<::std::string::String>,
-    /// <p>Information about the integrated development environment (IDE) configured for a Dev Environment.</p>
+    /// <p>Information about the integrated development environment (IDE) configured for a Dev Environment. </p>
     pub ides: ::std::option::Option<::std::vec::Vec<crate::types::IdeConfiguration>>,
-    /// <p>The Amazon EC2 instace type to use for the Dev Environment.</p>
+    /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p>
     pub instance_type: ::std::option::Option<crate::types::InstanceType>,
     /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. Only whole integers are allowed. Dev Environments consume compute minutes when running.</p>
     pub inactivity_timeout_minutes: ::std::option::Option<i32>,
@@ -25,17 +25,17 @@ impl StartDevEnvironmentInput {
     pub fn project_name(&self) -> ::std::option::Option<&str> {
         self.project_name.as_deref()
     }
-    /// <p>The system-generated unique ID of the Dev Environment.</p>
+    /// <p>The system-generated unique ID of the Dev Environment. </p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>Information about the integrated development environment (IDE) configured for a Dev Environment.</p>
+    /// <p>Information about the integrated development environment (IDE) configured for a Dev Environment. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ides.is_none()`.
     pub fn ides(&self) -> &[crate::types::IdeConfiguration] {
         self.ides.as_deref().unwrap_or_default()
     }
-    /// <p>The Amazon EC2 instace type to use for the Dev Environment.</p>
+    /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p>
     pub fn instance_type(&self) -> ::std::option::Option<&crate::types::InstanceType> {
         self.instance_type.as_ref()
     }
@@ -93,18 +93,18 @@ impl StartDevEnvironmentInputBuilder {
     pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.project_name
     }
-    /// <p>The system-generated unique ID of the Dev Environment.</p>
+    /// <p>The system-generated unique ID of the Dev Environment. </p>
     /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The system-generated unique ID of the Dev Environment.</p>
+    /// <p>The system-generated unique ID of the Dev Environment. </p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// <p>The system-generated unique ID of the Dev Environment.</p>
+    /// <p>The system-generated unique ID of the Dev Environment. </p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
@@ -112,33 +112,33 @@ impl StartDevEnvironmentInputBuilder {
     ///
     /// To override the contents of this collection use [`set_ides`](Self::set_ides).
     ///
-    /// <p>Information about the integrated development environment (IDE) configured for a Dev Environment.</p>
+    /// <p>Information about the integrated development environment (IDE) configured for a Dev Environment. </p>
     pub fn ides(mut self, input: crate::types::IdeConfiguration) -> Self {
         let mut v = self.ides.unwrap_or_default();
         v.push(input);
         self.ides = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Information about the integrated development environment (IDE) configured for a Dev Environment.</p>
+    /// <p>Information about the integrated development environment (IDE) configured for a Dev Environment. </p>
     pub fn set_ides(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IdeConfiguration>>) -> Self {
         self.ides = input;
         self
     }
-    /// <p>Information about the integrated development environment (IDE) configured for a Dev Environment.</p>
+    /// <p>Information about the integrated development environment (IDE) configured for a Dev Environment. </p>
     pub fn get_ides(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IdeConfiguration>> {
         &self.ides
     }
-    /// <p>The Amazon EC2 instace type to use for the Dev Environment.</p>
+    /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p>
     pub fn instance_type(mut self, input: crate::types::InstanceType) -> Self {
         self.instance_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Amazon EC2 instace type to use for the Dev Environment.</p>
+    /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::InstanceType>) -> Self {
         self.instance_type = input;
         self
     }
-    /// <p>The Amazon EC2 instace type to use for the Dev Environment.</p>
+    /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p>
     pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::InstanceType> {
         &self.instance_type
     }

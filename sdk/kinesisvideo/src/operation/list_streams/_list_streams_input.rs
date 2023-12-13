@@ -7,7 +7,7 @@ pub struct ListStreamsInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>If you specify this parameter, when the result of a <code>ListStreams</code> operation is truncated, the call returns the <code>NextToken</code> in the response. To get another batch of streams, provide this token in your next request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>Optional: Returns only streams that satisfy a specific condition. Currently, you can specify only the prefix of a stream name as a condition.</p>
+    /// <p>Optional: Returns only streams that satisfy a specific condition. Currently, you can specify only the prefix of a stream name as a condition. </p>
     pub stream_name_condition: ::std::option::Option<crate::types::StreamNameCondition>,
 }
 impl ListStreamsInput {
@@ -19,7 +19,7 @@ impl ListStreamsInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Optional: Returns only streams that satisfy a specific condition. Currently, you can specify only the prefix of a stream name as a condition.</p>
+    /// <p>Optional: Returns only streams that satisfy a specific condition. Currently, you can specify only the prefix of a stream name as a condition. </p>
     pub fn stream_name_condition(&self) -> ::std::option::Option<&crate::types::StreamNameCondition> {
         self.stream_name_condition.as_ref()
     }
@@ -68,17 +68,17 @@ impl ListStreamsInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>Optional: Returns only streams that satisfy a specific condition. Currently, you can specify only the prefix of a stream name as a condition.</p>
+    /// <p>Optional: Returns only streams that satisfy a specific condition. Currently, you can specify only the prefix of a stream name as a condition. </p>
     pub fn stream_name_condition(mut self, input: crate::types::StreamNameCondition) -> Self {
         self.stream_name_condition = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Optional: Returns only streams that satisfy a specific condition. Currently, you can specify only the prefix of a stream name as a condition.</p>
+    /// <p>Optional: Returns only streams that satisfy a specific condition. Currently, you can specify only the prefix of a stream name as a condition. </p>
     pub fn set_stream_name_condition(mut self, input: ::std::option::Option<crate::types::StreamNameCondition>) -> Self {
         self.stream_name_condition = input;
         self
     }
-    /// <p>Optional: Returns only streams that satisfy a specific condition. Currently, you can specify only the prefix of a stream name as a condition.</p>
+    /// <p>Optional: Returns only streams that satisfy a specific condition. Currently, you can specify only the prefix of a stream name as a condition. </p>
     pub fn get_stream_name_condition(&self) -> &::std::option::Option<crate::types::StreamNameCondition> {
         &self.stream_name_condition
     }

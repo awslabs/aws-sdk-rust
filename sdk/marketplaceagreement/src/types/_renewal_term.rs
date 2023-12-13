@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RenewalTerm {
-    /// <p>Category of the term being updated.</p>
+    /// <p>Category of the term being updated. </p>
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>Additional parameters specified by the acceptor while accepting the term.</p>
     pub configuration: ::std::option::Option<crate::types::RenewalTermConfiguration>,
 }
 impl RenewalTerm {
-    /// <p>Category of the term being updated.</p>
+    /// <p>Category of the term being updated. </p>
     pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
@@ -34,17 +34,17 @@ pub struct RenewalTermBuilder {
     pub(crate) configuration: ::std::option::Option<crate::types::RenewalTermConfiguration>,
 }
 impl RenewalTermBuilder {
-    /// <p>Category of the term being updated.</p>
+    /// <p>Category of the term being updated. </p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Category of the term being updated.</p>
+    /// <p>Category of the term being updated. </p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>Category of the term being updated.</p>
+    /// <p>Category of the term being updated. </p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.r#type
     }

@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeBackupsOutput {
-    /// <p>Contains the response to a <code>DescribeBackups</code> request.</p>
+    /// <p>Contains the response to a <code>DescribeBackups</code> request. </p>
     pub backups: ::std::option::Option<::std::vec::Vec<crate::types::Backup>>,
     /// <p>This is not currently implemented for <code>DescribeBackups</code> requests.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeBackupsOutput {
-    /// <p>Contains the response to a <code>DescribeBackups</code> request.</p>
+    /// <p>Contains the response to a <code>DescribeBackups</code> request. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.backups.is_none()`.
     pub fn backups(&self) -> &[crate::types::Backup] {
@@ -46,19 +46,19 @@ impl DescribeBackupsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_backups`](Self::set_backups).
     ///
-    /// <p>Contains the response to a <code>DescribeBackups</code> request.</p>
+    /// <p>Contains the response to a <code>DescribeBackups</code> request. </p>
     pub fn backups(mut self, input: crate::types::Backup) -> Self {
         let mut v = self.backups.unwrap_or_default();
         v.push(input);
         self.backups = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Contains the response to a <code>DescribeBackups</code> request.</p>
+    /// <p>Contains the response to a <code>DescribeBackups</code> request. </p>
     pub fn set_backups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Backup>>) -> Self {
         self.backups = input;
         self
     }
-    /// <p>Contains the response to a <code>DescribeBackups</code> request.</p>
+    /// <p>Contains the response to a <code>DescribeBackups</code> request. </p>
     pub fn get_backups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Backup>> {
         &self.backups
     }

@@ -3,24 +3,24 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteIndexOutput {
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index that you successfully started the deletion process.</p><note>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index that you successfully started the deletion process.</p> <note>
     /// <p>This operation is asynchronous. To check its status, call the <code>GetIndex</code> operation.</p>
     /// </note>
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates the current state of the index.</p>
+    /// <p>Indicates the current state of the index. </p>
     pub state: ::std::option::Option<crate::types::IndexState>,
     /// <p>The date and time when you last updated this index.</p>
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl DeleteIndexOutput {
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index that you successfully started the deletion process.</p><note>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index that you successfully started the deletion process.</p> <note>
     /// <p>This operation is asynchronous. To check its status, call the <code>GetIndex</code> operation.</p>
     /// </note>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>Indicates the current state of the index.</p>
+    /// <p>Indicates the current state of the index. </p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::IndexState> {
         self.state.as_ref()
     }
@@ -51,37 +51,37 @@ pub struct DeleteIndexOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteIndexOutputBuilder {
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index that you successfully started the deletion process.</p><note>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index that you successfully started the deletion process.</p> <note>
     /// <p>This operation is asynchronous. To check its status, call the <code>GetIndex</code> operation.</p>
     /// </note>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index that you successfully started the deletion process.</p><note>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index that you successfully started the deletion process.</p> <note>
     /// <p>This operation is asynchronous. To check its status, call the <code>GetIndex</code> operation.</p>
     /// </note>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index that you successfully started the deletion process.</p><note>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index that you successfully started the deletion process.</p> <note>
     /// <p>This operation is asynchronous. To check its status, call the <code>GetIndex</code> operation.</p>
     /// </note>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>Indicates the current state of the index.</p>
+    /// <p>Indicates the current state of the index. </p>
     pub fn state(mut self, input: crate::types::IndexState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates the current state of the index.</p>
+    /// <p>Indicates the current state of the index. </p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::IndexState>) -> Self {
         self.state = input;
         self
     }
-    /// <p>Indicates the current state of the index.</p>
+    /// <p>Indicates the current state of the index. </p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::IndexState> {
         &self.state
     }

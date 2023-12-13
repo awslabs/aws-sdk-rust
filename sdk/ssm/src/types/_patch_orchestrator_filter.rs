@@ -2,14 +2,10 @@
 
 /// <p>Defines a filter used in Patch Manager APIs. Supported filter keys depend on the API operation that includes the filter. Patch Manager API operations that use <code>PatchOrchestratorFilter</code> include the following:</p>
 /// <ul>
-/// <li>
-/// <p><code>DescribeAvailablePatches</code></p></li>
-/// <li>
-/// <p><code>DescribeInstancePatches</code></p></li>
-/// <li>
-/// <p><code>DescribePatchBaselines</code></p></li>
-/// <li>
-/// <p><code>DescribePatchGroups</code></p></li>
+/// <li> <p> <code>DescribeAvailablePatches</code> </p> </li>
+/// <li> <p> <code>DescribeInstancePatches</code> </p> </li>
+/// <li> <p> <code>DescribePatchBaselines</code> </p> </li>
+/// <li> <p> <code>DescribePatchGroups</code> </p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]

@@ -3,11 +3,11 @@ impl super::Client {
     /// Constructs a fluent builder for the [`BatchGetField`](crate::operation::batch_get_field::builders::BatchGetFieldFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_id(impl Into<String>)`](crate::operation::batch_get_field::builders::BatchGetFieldFluentBuilder::domain_id) / [`set_domain_id(Option<String>)`](crate::operation::batch_get_field::builders::BatchGetFieldFluentBuilder::set_domain_id):<br>required: **true**<br><p>The unique identifier of the Cases domain.</p><br>
-    ///   - [`fields(FieldIdentifier)`](crate::operation::batch_get_field::builders::BatchGetFieldFluentBuilder::fields) / [`set_fields(Option<Vec::<FieldIdentifier>>)`](crate::operation::batch_get_field::builders::BatchGetFieldFluentBuilder::set_fields):<br>required: **true**<br><p>A list of unique field identifiers.</p><br>
+    ///   - [`domain_id(impl Into<String>)`](crate::operation::batch_get_field::builders::BatchGetFieldFluentBuilder::domain_id) / [`set_domain_id(Option<String>)`](crate::operation::batch_get_field::builders::BatchGetFieldFluentBuilder::set_domain_id):<br>required: **true**<br><p>The unique identifier of the Cases domain. </p><br>
+    ///   - [`fields(FieldIdentifier)`](crate::operation::batch_get_field::builders::BatchGetFieldFluentBuilder::fields) / [`set_fields(Option<Vec::<FieldIdentifier>>)`](crate::operation::batch_get_field::builders::BatchGetFieldFluentBuilder::set_fields):<br>required: **true**<br><p>A list of unique field identifiers. </p><br>
     /// - On success, responds with [`BatchGetFieldOutput`](crate::operation::batch_get_field::BatchGetFieldOutput) with field(s):
-    ///   - [`fields(Vec::<GetFieldResponse>)`](crate::operation::batch_get_field::BatchGetFieldOutput::fields): <p>A list of detailed field information.</p>
-    ///   - [`errors(Vec::<FieldError>)`](crate::operation::batch_get_field::BatchGetFieldOutput::errors): <p>A list of field errors.</p>
+    ///   - [`fields(Vec::<GetFieldResponse>)`](crate::operation::batch_get_field::BatchGetFieldOutput::fields): <p>A list of detailed field information. </p>
+    ///   - [`errors(Vec::<FieldError>)`](crate::operation::batch_get_field::BatchGetFieldOutput::errors): <p>A list of field errors. </p>
     /// - On failure, responds with [`SdkError<BatchGetFieldError>`](crate::operation::batch_get_field::BatchGetFieldError)
     pub fn batch_get_field(&self) -> crate::operation::batch_get_field::builders::BatchGetFieldFluentBuilder {
         crate::operation::batch_get_field::builders::BatchGetFieldFluentBuilder::new(self.handle.clone())

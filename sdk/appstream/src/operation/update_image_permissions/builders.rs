@@ -22,7 +22,7 @@ impl UpdateImagePermissionsInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateImagePermissions`.
 ///
-/// <p>Adds or updates permissions for the specified private image.</p>
+/// <p>Adds or updates permissions for the specified private image. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateImagePermissionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

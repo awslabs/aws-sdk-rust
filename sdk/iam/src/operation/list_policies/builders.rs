@@ -25,7 +25,7 @@ impl ListPoliciesInputBuilder {
 /// <p>Lists all the managed policies that are available in your Amazon Web Services account, including your own customer-defined managed policies and all Amazon Web Services managed policies.</p>
 /// <p>You can filter the list of policies that is returned using the optional <code>OnlyAttached</code>, <code>Scope</code>, and <code>PathPrefix</code> parameters. For example, to list only the customer managed policies in your Amazon Web Services account, set <code>Scope</code> to <code>Local</code>. To list only Amazon Web Services managed policies, set <code>Scope</code> to <code>AWS</code>.</p>
 /// <p>You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters.</p>
-/// <p>For more information about managed policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed policies and inline policies</a> in the <i>IAM User Guide</i>.</p><note>
+/// <p>For more information about managed policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed policies and inline policies</a> in the <i>IAM User Guide</i>.</p> <note>
 /// <p>IAM resource-listing operations return a subset of the available attributes for the resource. For example, this operation does not return tags, even though they are an attribute of the returned object. To view all of the information for a customer manged policy, see <code>GetPolicy</code>.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -172,21 +172,21 @@ impl ListPoliciesFluentBuilder {
     }
     /// <p>The policy usage method to use for filtering the results.</p>
     /// <p>To list only permissions policies, set&nbsp;<code>PolicyUsageFilter</code>&nbsp;to&nbsp;<code>PermissionsPolicy</code>. To list only the policies used to set permissions boundaries, set&nbsp;the value to&nbsp;<code>PermissionsBoundary</code>.</p>
-    /// <p>This parameter is optional. If it is not included, all policies are returned.</p>
+    /// <p>This parameter is optional. If it is not included, all policies are returned. </p>
     pub fn policy_usage_filter(mut self, input: crate::types::PolicyUsageType) -> Self {
         self.inner = self.inner.policy_usage_filter(input);
         self
     }
     /// <p>The policy usage method to use for filtering the results.</p>
     /// <p>To list only permissions policies, set&nbsp;<code>PolicyUsageFilter</code>&nbsp;to&nbsp;<code>PermissionsPolicy</code>. To list only the policies used to set permissions boundaries, set&nbsp;the value to&nbsp;<code>PermissionsBoundary</code>.</p>
-    /// <p>This parameter is optional. If it is not included, all policies are returned.</p>
+    /// <p>This parameter is optional. If it is not included, all policies are returned. </p>
     pub fn set_policy_usage_filter(mut self, input: ::std::option::Option<crate::types::PolicyUsageType>) -> Self {
         self.inner = self.inner.set_policy_usage_filter(input);
         self
     }
     /// <p>The policy usage method to use for filtering the results.</p>
     /// <p>To list only permissions policies, set&nbsp;<code>PolicyUsageFilter</code>&nbsp;to&nbsp;<code>PermissionsPolicy</code>. To list only the policies used to set permissions boundaries, set&nbsp;the value to&nbsp;<code>PermissionsBoundary</code>.</p>
-    /// <p>This parameter is optional. If it is not included, all policies are returned.</p>
+    /// <p>This parameter is optional. If it is not included, all policies are returned. </p>
     pub fn get_policy_usage_filter(&self) -> &::std::option::Option<crate::types::PolicyUsageType> {
         self.inner.get_policy_usage_filter()
     }

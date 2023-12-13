@@ -14,12 +14,9 @@ pub struct Schedule {
     pub is_local_time: ::std::option::Option<bool>,
     /// <p>The default quiet time for the campaign. Quiet time is a specific time range when a campaign doesn't send messages to endpoints, if all the following conditions are met:</p>
     /// <ul>
-    /// <li>
-    /// <p>The EndpointDemographic.Timezone property of the endpoint is set to a valid value.</p></li>
-    /// <li>
-    /// <p>The current time in the endpoint's time zone is later than or equal to the time specified by the QuietTime.Start property for the campaign.</p></li>
-    /// <li>
-    /// <p>The current time in the endpoint's time zone is earlier than or equal to the time specified by the QuietTime.End property for the campaign.</p></li>
+    /// <li><p>The EndpointDemographic.Timezone property of the endpoint is set to a valid value.</p></li>
+    /// <li><p>The current time in the endpoint's time zone is later than or equal to the time specified by the QuietTime.Start property for the campaign.</p></li>
+    /// <li><p>The current time in the endpoint's time zone is earlier than or equal to the time specified by the QuietTime.End property for the campaign.</p></li>
     /// </ul>
     /// <p>If any of the preceding conditions isn't met, the endpoint will receive messages from the campaign, even if quiet time is enabled.</p>
     pub quiet_time: ::std::option::Option<crate::types::QuietTime>,
@@ -47,12 +44,9 @@ impl Schedule {
     }
     /// <p>The default quiet time for the campaign. Quiet time is a specific time range when a campaign doesn't send messages to endpoints, if all the following conditions are met:</p>
     /// <ul>
-    /// <li>
-    /// <p>The EndpointDemographic.Timezone property of the endpoint is set to a valid value.</p></li>
-    /// <li>
-    /// <p>The current time in the endpoint's time zone is later than or equal to the time specified by the QuietTime.Start property for the campaign.</p></li>
-    /// <li>
-    /// <p>The current time in the endpoint's time zone is earlier than or equal to the time specified by the QuietTime.End property for the campaign.</p></li>
+    /// <li><p>The EndpointDemographic.Timezone property of the endpoint is set to a valid value.</p></li>
+    /// <li><p>The current time in the endpoint's time zone is later than or equal to the time specified by the QuietTime.Start property for the campaign.</p></li>
+    /// <li><p>The current time in the endpoint's time zone is earlier than or equal to the time specified by the QuietTime.End property for the campaign.</p></li>
     /// </ul>
     /// <p>If any of the preceding conditions isn't met, the endpoint will receive messages from the campaign, even if quiet time is enabled.</p>
     pub fn quiet_time(&self) -> ::std::option::Option<&crate::types::QuietTime> {
@@ -145,12 +139,9 @@ impl ScheduleBuilder {
     }
     /// <p>The default quiet time for the campaign. Quiet time is a specific time range when a campaign doesn't send messages to endpoints, if all the following conditions are met:</p>
     /// <ul>
-    /// <li>
-    /// <p>The EndpointDemographic.Timezone property of the endpoint is set to a valid value.</p></li>
-    /// <li>
-    /// <p>The current time in the endpoint's time zone is later than or equal to the time specified by the QuietTime.Start property for the campaign.</p></li>
-    /// <li>
-    /// <p>The current time in the endpoint's time zone is earlier than or equal to the time specified by the QuietTime.End property for the campaign.</p></li>
+    /// <li><p>The EndpointDemographic.Timezone property of the endpoint is set to a valid value.</p></li>
+    /// <li><p>The current time in the endpoint's time zone is later than or equal to the time specified by the QuietTime.Start property for the campaign.</p></li>
+    /// <li><p>The current time in the endpoint's time zone is earlier than or equal to the time specified by the QuietTime.End property for the campaign.</p></li>
     /// </ul>
     /// <p>If any of the preceding conditions isn't met, the endpoint will receive messages from the campaign, even if quiet time is enabled.</p>
     pub fn quiet_time(mut self, input: crate::types::QuietTime) -> Self {
@@ -159,12 +150,9 @@ impl ScheduleBuilder {
     }
     /// <p>The default quiet time for the campaign. Quiet time is a specific time range when a campaign doesn't send messages to endpoints, if all the following conditions are met:</p>
     /// <ul>
-    /// <li>
-    /// <p>The EndpointDemographic.Timezone property of the endpoint is set to a valid value.</p></li>
-    /// <li>
-    /// <p>The current time in the endpoint's time zone is later than or equal to the time specified by the QuietTime.Start property for the campaign.</p></li>
-    /// <li>
-    /// <p>The current time in the endpoint's time zone is earlier than or equal to the time specified by the QuietTime.End property for the campaign.</p></li>
+    /// <li><p>The EndpointDemographic.Timezone property of the endpoint is set to a valid value.</p></li>
+    /// <li><p>The current time in the endpoint's time zone is later than or equal to the time specified by the QuietTime.Start property for the campaign.</p></li>
+    /// <li><p>The current time in the endpoint's time zone is earlier than or equal to the time specified by the QuietTime.End property for the campaign.</p></li>
     /// </ul>
     /// <p>If any of the preceding conditions isn't met, the endpoint will receive messages from the campaign, even if quiet time is enabled.</p>
     pub fn set_quiet_time(mut self, input: ::std::option::Option<crate::types::QuietTime>) -> Self {
@@ -173,12 +161,9 @@ impl ScheduleBuilder {
     }
     /// <p>The default quiet time for the campaign. Quiet time is a specific time range when a campaign doesn't send messages to endpoints, if all the following conditions are met:</p>
     /// <ul>
-    /// <li>
-    /// <p>The EndpointDemographic.Timezone property of the endpoint is set to a valid value.</p></li>
-    /// <li>
-    /// <p>The current time in the endpoint's time zone is later than or equal to the time specified by the QuietTime.Start property for the campaign.</p></li>
-    /// <li>
-    /// <p>The current time in the endpoint's time zone is earlier than or equal to the time specified by the QuietTime.End property for the campaign.</p></li>
+    /// <li><p>The EndpointDemographic.Timezone property of the endpoint is set to a valid value.</p></li>
+    /// <li><p>The current time in the endpoint's time zone is later than or equal to the time specified by the QuietTime.Start property for the campaign.</p></li>
+    /// <li><p>The current time in the endpoint's time zone is earlier than or equal to the time specified by the QuietTime.End property for the campaign.</p></li>
     /// </ul>
     /// <p>If any of the preceding conditions isn't met, the endpoint will receive messages from the campaign, even if quiet time is enabled.</p>
     pub fn get_quiet_time(&self) -> &::std::option::Option<crate::types::QuietTime> {

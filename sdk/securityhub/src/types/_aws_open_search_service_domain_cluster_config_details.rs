@@ -24,7 +24,7 @@ pub struct AwsOpenSearchServiceDomainClusterConfigDetails {
     /// <p>Whether to enable zone awareness for the OpenSearch domain. When zone awareness is enabled, OpenSearch Service allocates the cluster's nodes and replica index shards across Availability Zones (AZs) in the same Region. This prevents data loss and minimizes downtime if a node or data center fails.</p>
     pub zone_awareness_enabled: ::std::option::Option<bool>,
     /// <p>The hardware configuration of the computer that hosts the dedicated master node.</p>
-    /// <p>If this attribute is specified, then <code>DedicatedMasterEnabled</code> must be <code>true</code>.</p>
+    /// <p>If this attribute is specified, then <code>DedicatedMasterEnabled</code> must be <code>true</code>. </p>
     pub dedicated_master_type: ::std::option::Option<::std::string::String>,
 }
 impl AwsOpenSearchServiceDomainClusterConfigDetails {
@@ -66,7 +66,7 @@ impl AwsOpenSearchServiceDomainClusterConfigDetails {
         self.zone_awareness_enabled
     }
     /// <p>The hardware configuration of the computer that hosts the dedicated master node.</p>
-    /// <p>If this attribute is specified, then <code>DedicatedMasterEnabled</code> must be <code>true</code>.</p>
+    /// <p>If this attribute is specified, then <code>DedicatedMasterEnabled</code> must be <code>true</code>. </p>
     pub fn dedicated_master_type(&self) -> ::std::option::Option<&str> {
         self.dedicated_master_type.as_deref()
     }
@@ -229,19 +229,19 @@ impl AwsOpenSearchServiceDomainClusterConfigDetailsBuilder {
         &self.zone_awareness_enabled
     }
     /// <p>The hardware configuration of the computer that hosts the dedicated master node.</p>
-    /// <p>If this attribute is specified, then <code>DedicatedMasterEnabled</code> must be <code>true</code>.</p>
+    /// <p>If this attribute is specified, then <code>DedicatedMasterEnabled</code> must be <code>true</code>. </p>
     pub fn dedicated_master_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dedicated_master_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The hardware configuration of the computer that hosts the dedicated master node.</p>
-    /// <p>If this attribute is specified, then <code>DedicatedMasterEnabled</code> must be <code>true</code>.</p>
+    /// <p>If this attribute is specified, then <code>DedicatedMasterEnabled</code> must be <code>true</code>. </p>
     pub fn set_dedicated_master_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dedicated_master_type = input;
         self
     }
     /// <p>The hardware configuration of the computer that hosts the dedicated master node.</p>
-    /// <p>If this attribute is specified, then <code>DedicatedMasterEnabled</code> must be <code>true</code>.</p>
+    /// <p>If this attribute is specified, then <code>DedicatedMasterEnabled</code> must be <code>true</code>. </p>
     pub fn get_dedicated_master_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.dedicated_master_type
     }

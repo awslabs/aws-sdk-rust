@@ -5,7 +5,7 @@
 pub struct UpdateCustomKeyStoreInput {
     /// <p>Identifies the custom key store that you want to update. Enter the ID of the custom key store. To find the ID of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
     pub custom_key_store_id: ::std::option::Option<::std::string::String>,
-    /// <p>Changes the friendly name of the custom key store to the value that you specify. The custom key store name must be unique in the Amazon Web Services account.</p><important>
+    /// <p>Changes the friendly name of the custom key store to the value that you specify. The custom key store name must be unique in the Amazon Web Services account.</p> <important>
     /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
     /// </important>
     /// <p>To change this value, an CloudHSM key store must be disconnected. An external key store can be connected or disconnected.</p>
@@ -38,7 +38,7 @@ pub struct UpdateCustomKeyStoreInput {
     /// <p>You can change this value when the external key store is connected or disconnected.</p>
     pub xks_proxy_authentication_credential: ::std::option::Option<crate::types::XksProxyAuthenticationCredentialType>,
     /// <p>Changes the connectivity setting for the external key store. To indicate that the external key store proxy uses a Amazon VPC endpoint service to communicate with KMS, specify <code>VPC_ENDPOINT_SERVICE</code>. Otherwise, specify <code>PUBLIC_ENDPOINT</code>.</p>
-    /// <p>If you change the <code>XksProxyConnectivity</code> to <code>VPC_ENDPOINT_SERVICE</code>, you must also change the <code>XksProxyUriEndpoint</code> and add an <code>XksProxyVpcEndpointServiceName</code> value.</p>
+    /// <p>If you change the <code>XksProxyConnectivity</code> to <code>VPC_ENDPOINT_SERVICE</code>, you must also change the <code>XksProxyUriEndpoint</code> and add an <code>XksProxyVpcEndpointServiceName</code> value. </p>
     /// <p>If you change the <code>XksProxyConnectivity</code> to <code>PUBLIC_ENDPOINT</code>, you must also change the <code>XksProxyUriEndpoint</code> and specify a null or empty string for the <code>XksProxyVpcEndpointServiceName</code> value.</p>
     /// <p>To change this value, the external key store must be disconnected.</p>
     pub xks_proxy_connectivity: ::std::option::Option<crate::types::XksProxyConnectivityType>,
@@ -48,7 +48,7 @@ impl UpdateCustomKeyStoreInput {
     pub fn custom_key_store_id(&self) -> ::std::option::Option<&str> {
         self.custom_key_store_id.as_deref()
     }
-    /// <p>Changes the friendly name of the custom key store to the value that you specify. The custom key store name must be unique in the Amazon Web Services account.</p><important>
+    /// <p>Changes the friendly name of the custom key store to the value that you specify. The custom key store name must be unique in the Amazon Web Services account.</p> <important>
     /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
     /// </important>
     /// <p>To change this value, an CloudHSM key store must be disconnected. An external key store can be connected or disconnected.</p>
@@ -95,7 +95,7 @@ impl UpdateCustomKeyStoreInput {
         self.xks_proxy_authentication_credential.as_ref()
     }
     /// <p>Changes the connectivity setting for the external key store. To indicate that the external key store proxy uses a Amazon VPC endpoint service to communicate with KMS, specify <code>VPC_ENDPOINT_SERVICE</code>. Otherwise, specify <code>PUBLIC_ENDPOINT</code>.</p>
-    /// <p>If you change the <code>XksProxyConnectivity</code> to <code>VPC_ENDPOINT_SERVICE</code>, you must also change the <code>XksProxyUriEndpoint</code> and add an <code>XksProxyVpcEndpointServiceName</code> value.</p>
+    /// <p>If you change the <code>XksProxyConnectivity</code> to <code>VPC_ENDPOINT_SERVICE</code>, you must also change the <code>XksProxyUriEndpoint</code> and add an <code>XksProxyVpcEndpointServiceName</code> value. </p>
     /// <p>If you change the <code>XksProxyConnectivity</code> to <code>PUBLIC_ENDPOINT</code>, you must also change the <code>XksProxyUriEndpoint</code> and specify a null or empty string for the <code>XksProxyVpcEndpointServiceName</code> value.</p>
     /// <p>To change this value, the external key store must be disconnected.</p>
     pub fn xks_proxy_connectivity(&self) -> ::std::option::Option<&crate::types::XksProxyConnectivityType> {
@@ -154,7 +154,7 @@ impl UpdateCustomKeyStoreInputBuilder {
     pub fn get_custom_key_store_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.custom_key_store_id
     }
-    /// <p>Changes the friendly name of the custom key store to the value that you specify. The custom key store name must be unique in the Amazon Web Services account.</p><important>
+    /// <p>Changes the friendly name of the custom key store to the value that you specify. The custom key store name must be unique in the Amazon Web Services account.</p> <important>
     /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
     /// </important>
     /// <p>To change this value, an CloudHSM key store must be disconnected. An external key store can be connected or disconnected.</p>
@@ -162,7 +162,7 @@ impl UpdateCustomKeyStoreInputBuilder {
         self.new_custom_key_store_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Changes the friendly name of the custom key store to the value that you specify. The custom key store name must be unique in the Amazon Web Services account.</p><important>
+    /// <p>Changes the friendly name of the custom key store to the value that you specify. The custom key store name must be unique in the Amazon Web Services account.</p> <important>
     /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
     /// </important>
     /// <p>To change this value, an CloudHSM key store must be disconnected. An external key store can be connected or disconnected.</p>
@@ -170,7 +170,7 @@ impl UpdateCustomKeyStoreInputBuilder {
         self.new_custom_key_store_name = input;
         self
     }
-    /// <p>Changes the friendly name of the custom key store to the value that you specify. The custom key store name must be unique in the Amazon Web Services account.</p><important>
+    /// <p>Changes the friendly name of the custom key store to the value that you specify. The custom key store name must be unique in the Amazon Web Services account.</p> <important>
     /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
     /// </important>
     /// <p>To change this value, an CloudHSM key store must be disconnected. An external key store can be connected or disconnected.</p>
@@ -310,7 +310,7 @@ impl UpdateCustomKeyStoreInputBuilder {
         &self.xks_proxy_authentication_credential
     }
     /// <p>Changes the connectivity setting for the external key store. To indicate that the external key store proxy uses a Amazon VPC endpoint service to communicate with KMS, specify <code>VPC_ENDPOINT_SERVICE</code>. Otherwise, specify <code>PUBLIC_ENDPOINT</code>.</p>
-    /// <p>If you change the <code>XksProxyConnectivity</code> to <code>VPC_ENDPOINT_SERVICE</code>, you must also change the <code>XksProxyUriEndpoint</code> and add an <code>XksProxyVpcEndpointServiceName</code> value.</p>
+    /// <p>If you change the <code>XksProxyConnectivity</code> to <code>VPC_ENDPOINT_SERVICE</code>, you must also change the <code>XksProxyUriEndpoint</code> and add an <code>XksProxyVpcEndpointServiceName</code> value. </p>
     /// <p>If you change the <code>XksProxyConnectivity</code> to <code>PUBLIC_ENDPOINT</code>, you must also change the <code>XksProxyUriEndpoint</code> and specify a null or empty string for the <code>XksProxyVpcEndpointServiceName</code> value.</p>
     /// <p>To change this value, the external key store must be disconnected.</p>
     pub fn xks_proxy_connectivity(mut self, input: crate::types::XksProxyConnectivityType) -> Self {
@@ -318,7 +318,7 @@ impl UpdateCustomKeyStoreInputBuilder {
         self
     }
     /// <p>Changes the connectivity setting for the external key store. To indicate that the external key store proxy uses a Amazon VPC endpoint service to communicate with KMS, specify <code>VPC_ENDPOINT_SERVICE</code>. Otherwise, specify <code>PUBLIC_ENDPOINT</code>.</p>
-    /// <p>If you change the <code>XksProxyConnectivity</code> to <code>VPC_ENDPOINT_SERVICE</code>, you must also change the <code>XksProxyUriEndpoint</code> and add an <code>XksProxyVpcEndpointServiceName</code> value.</p>
+    /// <p>If you change the <code>XksProxyConnectivity</code> to <code>VPC_ENDPOINT_SERVICE</code>, you must also change the <code>XksProxyUriEndpoint</code> and add an <code>XksProxyVpcEndpointServiceName</code> value. </p>
     /// <p>If you change the <code>XksProxyConnectivity</code> to <code>PUBLIC_ENDPOINT</code>, you must also change the <code>XksProxyUriEndpoint</code> and specify a null or empty string for the <code>XksProxyVpcEndpointServiceName</code> value.</p>
     /// <p>To change this value, the external key store must be disconnected.</p>
     pub fn set_xks_proxy_connectivity(mut self, input: ::std::option::Option<crate::types::XksProxyConnectivityType>) -> Self {
@@ -326,7 +326,7 @@ impl UpdateCustomKeyStoreInputBuilder {
         self
     }
     /// <p>Changes the connectivity setting for the external key store. To indicate that the external key store proxy uses a Amazon VPC endpoint service to communicate with KMS, specify <code>VPC_ENDPOINT_SERVICE</code>. Otherwise, specify <code>PUBLIC_ENDPOINT</code>.</p>
-    /// <p>If you change the <code>XksProxyConnectivity</code> to <code>VPC_ENDPOINT_SERVICE</code>, you must also change the <code>XksProxyUriEndpoint</code> and add an <code>XksProxyVpcEndpointServiceName</code> value.</p>
+    /// <p>If you change the <code>XksProxyConnectivity</code> to <code>VPC_ENDPOINT_SERVICE</code>, you must also change the <code>XksProxyUriEndpoint</code> and add an <code>XksProxyVpcEndpointServiceName</code> value. </p>
     /// <p>If you change the <code>XksProxyConnectivity</code> to <code>PUBLIC_ENDPOINT</code>, you must also change the <code>XksProxyUriEndpoint</code> and specify a null or empty string for the <code>XksProxyVpcEndpointServiceName</code> value.</p>
     /// <p>To change this value, the external key store must be disconnected.</p>
     pub fn get_xks_proxy_connectivity(&self) -> &::std::option::Option<crate::types::XksProxyConnectivityType> {

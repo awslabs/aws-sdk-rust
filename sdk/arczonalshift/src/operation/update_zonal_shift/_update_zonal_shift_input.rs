@@ -11,10 +11,8 @@ pub struct UpdateZonalShiftInput {
     /// <p>If you want to still keep traffic away from an Availability Zone, you can update the zonal shift and set a new expiration. You can also cancel a zonal shift, before it expires, for example, if you're ready to restore traffic to the Availability Zone.</p>
     /// <p>To set a length of time for a zonal shift to be active, specify a whole number, and then one of the following, with no space:</p>
     /// <ul>
-    /// <li>
-    /// <p><b>A lowercase letter m:</b> To specify that the value is in minutes.</p></li>
-    /// <li>
-    /// <p><b>A lowercase letter h:</b> To specify that the value is in hours.</p></li>
+    /// <li> <p> <b>A lowercase letter m:</b> To specify that the value is in minutes.</p> </li>
+    /// <li> <p> <b>A lowercase letter h:</b> To specify that the value is in hours.</p> </li>
     /// </ul>
     /// <p>For example: <code>20h</code> means the zonal shift expires in 20 hours. <code>120m</code> means the zonal shift expires in 120 minutes (2 hours).</p>
     pub expires_in: ::std::option::Option<::std::string::String>,
@@ -32,10 +30,8 @@ impl UpdateZonalShiftInput {
     /// <p>If you want to still keep traffic away from an Availability Zone, you can update the zonal shift and set a new expiration. You can also cancel a zonal shift, before it expires, for example, if you're ready to restore traffic to the Availability Zone.</p>
     /// <p>To set a length of time for a zonal shift to be active, specify a whole number, and then one of the following, with no space:</p>
     /// <ul>
-    /// <li>
-    /// <p><b>A lowercase letter m:</b> To specify that the value is in minutes.</p></li>
-    /// <li>
-    /// <p><b>A lowercase letter h:</b> To specify that the value is in hours.</p></li>
+    /// <li> <p> <b>A lowercase letter m:</b> To specify that the value is in minutes.</p> </li>
+    /// <li> <p> <b>A lowercase letter h:</b> To specify that the value is in hours.</p> </li>
     /// </ul>
     /// <p>For example: <code>20h</code> means the zonal shift expires in 20 hours. <code>120m</code> means the zonal shift expires in 120 minutes (2 hours).</p>
     pub fn expires_in(&self) -> ::std::option::Option<&str> {
@@ -91,10 +87,8 @@ impl UpdateZonalShiftInputBuilder {
     /// <p>If you want to still keep traffic away from an Availability Zone, you can update the zonal shift and set a new expiration. You can also cancel a zonal shift, before it expires, for example, if you're ready to restore traffic to the Availability Zone.</p>
     /// <p>To set a length of time for a zonal shift to be active, specify a whole number, and then one of the following, with no space:</p>
     /// <ul>
-    /// <li>
-    /// <p><b>A lowercase letter m:</b> To specify that the value is in minutes.</p></li>
-    /// <li>
-    /// <p><b>A lowercase letter h:</b> To specify that the value is in hours.</p></li>
+    /// <li> <p> <b>A lowercase letter m:</b> To specify that the value is in minutes.</p> </li>
+    /// <li> <p> <b>A lowercase letter h:</b> To specify that the value is in hours.</p> </li>
     /// </ul>
     /// <p>For example: <code>20h</code> means the zonal shift expires in 20 hours. <code>120m</code> means the zonal shift expires in 120 minutes (2 hours).</p>
     pub fn expires_in(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -105,10 +99,8 @@ impl UpdateZonalShiftInputBuilder {
     /// <p>If you want to still keep traffic away from an Availability Zone, you can update the zonal shift and set a new expiration. You can also cancel a zonal shift, before it expires, for example, if you're ready to restore traffic to the Availability Zone.</p>
     /// <p>To set a length of time for a zonal shift to be active, specify a whole number, and then one of the following, with no space:</p>
     /// <ul>
-    /// <li>
-    /// <p><b>A lowercase letter m:</b> To specify that the value is in minutes.</p></li>
-    /// <li>
-    /// <p><b>A lowercase letter h:</b> To specify that the value is in hours.</p></li>
+    /// <li> <p> <b>A lowercase letter m:</b> To specify that the value is in minutes.</p> </li>
+    /// <li> <p> <b>A lowercase letter h:</b> To specify that the value is in hours.</p> </li>
     /// </ul>
     /// <p>For example: <code>20h</code> means the zonal shift expires in 20 hours. <code>120m</code> means the zonal shift expires in 120 minutes (2 hours).</p>
     pub fn set_expires_in(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -119,10 +111,8 @@ impl UpdateZonalShiftInputBuilder {
     /// <p>If you want to still keep traffic away from an Availability Zone, you can update the zonal shift and set a new expiration. You can also cancel a zonal shift, before it expires, for example, if you're ready to restore traffic to the Availability Zone.</p>
     /// <p>To set a length of time for a zonal shift to be active, specify a whole number, and then one of the following, with no space:</p>
     /// <ul>
-    /// <li>
-    /// <p><b>A lowercase letter m:</b> To specify that the value is in minutes.</p></li>
-    /// <li>
-    /// <p><b>A lowercase letter h:</b> To specify that the value is in hours.</p></li>
+    /// <li> <p> <b>A lowercase letter m:</b> To specify that the value is in minutes.</p> </li>
+    /// <li> <p> <b>A lowercase letter h:</b> To specify that the value is in hours.</p> </li>
     /// </ul>
     /// <p>For example: <code>20h</code> means the zonal shift expires in 20 hours. <code>120m</code> means the zonal shift expires in 120 minutes (2 hours).</p>
     pub fn get_expires_in(&self) -> &::std::option::Option<::std::string::String> {

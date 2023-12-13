@@ -22,7 +22,7 @@ impl DeleteCacheSubnetGroupInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteCacheSubnetGroup`.
 ///
-/// <p>Deletes a cache subnet group.</p><note>
+/// <p>Deletes a cache subnet group.</p> <note>
 /// <p>You cannot delete a default cache subnet group or one that is associated with any clusters.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

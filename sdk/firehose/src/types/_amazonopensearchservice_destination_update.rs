@@ -4,22 +4,22 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AmazonopensearchserviceDestinationUpdate {
-    /// <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Amazon OpenSearch Service Configuration API and for indexing documents.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Amazon OpenSearch Service Configuration API and for indexing documents. </p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the Amazon OpenSearch Service domain. The IAM role must have permissions for DescribeDomain, DescribeDomains, and DescribeDomainConfig after assuming the IAM role specified in RoleARN.</p>
     pub domain_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The endpoint to use when communicating with the cluster. Specify either this ClusterEndpoint or the DomainARN field.</p>
+    /// <p>The endpoint to use when communicating with the cluster. Specify either this ClusterEndpoint or the DomainARN field. </p>
     pub cluster_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon OpenSearch Service index name.</p>
     pub index_name: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon OpenSearch Service type name. For Elasticsearch 6.x, there can be only one type per index. If you try to specify a new type for an existing index that already has another type, Kinesis Data Firehose returns an error during runtime.</p>
-    /// <p>If you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream, Kinesis Data Firehose still delivers data to Elasticsearch with the old index name and type name. If you want to update your delivery stream with a new index name, provide an empty string for TypeName.</p>
+    /// <p>The Amazon OpenSearch Service type name. For Elasticsearch 6.x, there can be only one type per index. If you try to specify a new type for an existing index that already has another type, Kinesis Data Firehose returns an error during runtime. </p>
+    /// <p>If you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream, Kinesis Data Firehose still delivers data to Elasticsearch with the old index name and type name. If you want to update your delivery stream with a new index name, provide an empty string for TypeName. </p>
     pub type_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon OpenSearch Service index rotation period. Index rotation appends a timestamp to IndexName to facilitate the expiration of old data.</p>
     pub index_rotation_period: ::std::option::Option<crate::types::AmazonopensearchserviceIndexRotationPeriod>,
-    /// <p>The buffering options. If no value is specified, AmazonopensearchBufferingHints object default values are used.</p>
+    /// <p>The buffering options. If no value is specified, AmazonopensearchBufferingHints object default values are used. </p>
     pub buffering_hints: ::std::option::Option<crate::types::AmazonopensearchserviceBufferingHints>,
-    /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon OpenSearch Service. The default value is 300 (5 minutes).</p>
+    /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon OpenSearch Service. The default value is 300 (5 minutes). </p>
     pub retry_options: ::std::option::Option<crate::types::AmazonopensearchserviceRetryOptions>,
     /// <p>Describes an update for a destination in Amazon S3.</p>
     pub s3_update: ::std::option::Option<crate::types::S3DestinationUpdate>,
@@ -31,7 +31,7 @@ pub struct AmazonopensearchserviceDestinationUpdate {
     pub document_id_options: ::std::option::Option<crate::types::DocumentIdOptions>,
 }
 impl AmazonopensearchserviceDestinationUpdate {
-    /// <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Amazon OpenSearch Service Configuration API and for indexing documents.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Amazon OpenSearch Service Configuration API and for indexing documents. </p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -39,7 +39,7 @@ impl AmazonopensearchserviceDestinationUpdate {
     pub fn domain_arn(&self) -> ::std::option::Option<&str> {
         self.domain_arn.as_deref()
     }
-    /// <p>The endpoint to use when communicating with the cluster. Specify either this ClusterEndpoint or the DomainARN field.</p>
+    /// <p>The endpoint to use when communicating with the cluster. Specify either this ClusterEndpoint or the DomainARN field. </p>
     pub fn cluster_endpoint(&self) -> ::std::option::Option<&str> {
         self.cluster_endpoint.as_deref()
     }
@@ -47,8 +47,8 @@ impl AmazonopensearchserviceDestinationUpdate {
     pub fn index_name(&self) -> ::std::option::Option<&str> {
         self.index_name.as_deref()
     }
-    /// <p>The Amazon OpenSearch Service type name. For Elasticsearch 6.x, there can be only one type per index. If you try to specify a new type for an existing index that already has another type, Kinesis Data Firehose returns an error during runtime.</p>
-    /// <p>If you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream, Kinesis Data Firehose still delivers data to Elasticsearch with the old index name and type name. If you want to update your delivery stream with a new index name, provide an empty string for TypeName.</p>
+    /// <p>The Amazon OpenSearch Service type name. For Elasticsearch 6.x, there can be only one type per index. If you try to specify a new type for an existing index that already has another type, Kinesis Data Firehose returns an error during runtime. </p>
+    /// <p>If you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream, Kinesis Data Firehose still delivers data to Elasticsearch with the old index name and type name. If you want to update your delivery stream with a new index name, provide an empty string for TypeName. </p>
     pub fn type_name(&self) -> ::std::option::Option<&str> {
         self.type_name.as_deref()
     }
@@ -56,11 +56,11 @@ impl AmazonopensearchserviceDestinationUpdate {
     pub fn index_rotation_period(&self) -> ::std::option::Option<&crate::types::AmazonopensearchserviceIndexRotationPeriod> {
         self.index_rotation_period.as_ref()
     }
-    /// <p>The buffering options. If no value is specified, AmazonopensearchBufferingHints object default values are used.</p>
+    /// <p>The buffering options. If no value is specified, AmazonopensearchBufferingHints object default values are used. </p>
     pub fn buffering_hints(&self) -> ::std::option::Option<&crate::types::AmazonopensearchserviceBufferingHints> {
         self.buffering_hints.as_ref()
     }
-    /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon OpenSearch Service. The default value is 300 (5 minutes).</p>
+    /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon OpenSearch Service. The default value is 300 (5 minutes). </p>
     pub fn retry_options(&self) -> ::std::option::Option<&crate::types::AmazonopensearchserviceRetryOptions> {
         self.retry_options.as_ref()
     }
@@ -106,17 +106,17 @@ pub struct AmazonopensearchserviceDestinationUpdateBuilder {
     pub(crate) document_id_options: ::std::option::Option<crate::types::DocumentIdOptions>,
 }
 impl AmazonopensearchserviceDestinationUpdateBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Amazon OpenSearch Service Configuration API and for indexing documents.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Amazon OpenSearch Service Configuration API and for indexing documents. </p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Amazon OpenSearch Service Configuration API and for indexing documents.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Amazon OpenSearch Service Configuration API and for indexing documents. </p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Amazon OpenSearch Service Configuration API and for indexing documents.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Amazon OpenSearch Service Configuration API and for indexing documents. </p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
@@ -134,17 +134,17 @@ impl AmazonopensearchserviceDestinationUpdateBuilder {
     pub fn get_domain_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_arn
     }
-    /// <p>The endpoint to use when communicating with the cluster. Specify either this ClusterEndpoint or the DomainARN field.</p>
+    /// <p>The endpoint to use when communicating with the cluster. Specify either this ClusterEndpoint or the DomainARN field. </p>
     pub fn cluster_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_endpoint = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The endpoint to use when communicating with the cluster. Specify either this ClusterEndpoint or the DomainARN field.</p>
+    /// <p>The endpoint to use when communicating with the cluster. Specify either this ClusterEndpoint or the DomainARN field. </p>
     pub fn set_cluster_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_endpoint = input;
         self
     }
-    /// <p>The endpoint to use when communicating with the cluster. Specify either this ClusterEndpoint or the DomainARN field.</p>
+    /// <p>The endpoint to use when communicating with the cluster. Specify either this ClusterEndpoint or the DomainARN field. </p>
     pub fn get_cluster_endpoint(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_endpoint
     }
@@ -162,20 +162,20 @@ impl AmazonopensearchserviceDestinationUpdateBuilder {
     pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.index_name
     }
-    /// <p>The Amazon OpenSearch Service type name. For Elasticsearch 6.x, there can be only one type per index. If you try to specify a new type for an existing index that already has another type, Kinesis Data Firehose returns an error during runtime.</p>
-    /// <p>If you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream, Kinesis Data Firehose still delivers data to Elasticsearch with the old index name and type name. If you want to update your delivery stream with a new index name, provide an empty string for TypeName.</p>
+    /// <p>The Amazon OpenSearch Service type name. For Elasticsearch 6.x, there can be only one type per index. If you try to specify a new type for an existing index that already has another type, Kinesis Data Firehose returns an error during runtime. </p>
+    /// <p>If you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream, Kinesis Data Firehose still delivers data to Elasticsearch with the old index name and type name. If you want to update your delivery stream with a new index name, provide an empty string for TypeName. </p>
     pub fn type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.type_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon OpenSearch Service type name. For Elasticsearch 6.x, there can be only one type per index. If you try to specify a new type for an existing index that already has another type, Kinesis Data Firehose returns an error during runtime.</p>
-    /// <p>If you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream, Kinesis Data Firehose still delivers data to Elasticsearch with the old index name and type name. If you want to update your delivery stream with a new index name, provide an empty string for TypeName.</p>
+    /// <p>The Amazon OpenSearch Service type name. For Elasticsearch 6.x, there can be only one type per index. If you try to specify a new type for an existing index that already has another type, Kinesis Data Firehose returns an error during runtime. </p>
+    /// <p>If you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream, Kinesis Data Firehose still delivers data to Elasticsearch with the old index name and type name. If you want to update your delivery stream with a new index name, provide an empty string for TypeName. </p>
     pub fn set_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.type_name = input;
         self
     }
-    /// <p>The Amazon OpenSearch Service type name. For Elasticsearch 6.x, there can be only one type per index. If you try to specify a new type for an existing index that already has another type, Kinesis Data Firehose returns an error during runtime.</p>
-    /// <p>If you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream, Kinesis Data Firehose still delivers data to Elasticsearch with the old index name and type name. If you want to update your delivery stream with a new index name, provide an empty string for TypeName.</p>
+    /// <p>The Amazon OpenSearch Service type name. For Elasticsearch 6.x, there can be only one type per index. If you try to specify a new type for an existing index that already has another type, Kinesis Data Firehose returns an error during runtime. </p>
+    /// <p>If you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream, Kinesis Data Firehose still delivers data to Elasticsearch with the old index name and type name. If you want to update your delivery stream with a new index name, provide an empty string for TypeName. </p>
     pub fn get_type_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.type_name
     }
@@ -193,31 +193,31 @@ impl AmazonopensearchserviceDestinationUpdateBuilder {
     pub fn get_index_rotation_period(&self) -> &::std::option::Option<crate::types::AmazonopensearchserviceIndexRotationPeriod> {
         &self.index_rotation_period
     }
-    /// <p>The buffering options. If no value is specified, AmazonopensearchBufferingHints object default values are used.</p>
+    /// <p>The buffering options. If no value is specified, AmazonopensearchBufferingHints object default values are used. </p>
     pub fn buffering_hints(mut self, input: crate::types::AmazonopensearchserviceBufferingHints) -> Self {
         self.buffering_hints = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The buffering options. If no value is specified, AmazonopensearchBufferingHints object default values are used.</p>
+    /// <p>The buffering options. If no value is specified, AmazonopensearchBufferingHints object default values are used. </p>
     pub fn set_buffering_hints(mut self, input: ::std::option::Option<crate::types::AmazonopensearchserviceBufferingHints>) -> Self {
         self.buffering_hints = input;
         self
     }
-    /// <p>The buffering options. If no value is specified, AmazonopensearchBufferingHints object default values are used.</p>
+    /// <p>The buffering options. If no value is specified, AmazonopensearchBufferingHints object default values are used. </p>
     pub fn get_buffering_hints(&self) -> &::std::option::Option<crate::types::AmazonopensearchserviceBufferingHints> {
         &self.buffering_hints
     }
-    /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon OpenSearch Service. The default value is 300 (5 minutes).</p>
+    /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon OpenSearch Service. The default value is 300 (5 minutes). </p>
     pub fn retry_options(mut self, input: crate::types::AmazonopensearchserviceRetryOptions) -> Self {
         self.retry_options = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon OpenSearch Service. The default value is 300 (5 minutes).</p>
+    /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon OpenSearch Service. The default value is 300 (5 minutes). </p>
     pub fn set_retry_options(mut self, input: ::std::option::Option<crate::types::AmazonopensearchserviceRetryOptions>) -> Self {
         self.retry_options = input;
         self
     }
-    /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon OpenSearch Service. The default value is 300 (5 minutes).</p>
+    /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon OpenSearch Service. The default value is 300 (5 minutes). </p>
     pub fn get_retry_options(&self) -> &::std::option::Option<crate::types::AmazonopensearchserviceRetryOptions> {
         &self.retry_options
     }

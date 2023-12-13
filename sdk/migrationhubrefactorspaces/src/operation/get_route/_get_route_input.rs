@@ -5,7 +5,7 @@
 pub struct GetRouteInput {
     /// <p>The ID of the environment.</p>
     pub environment_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the application.</p>
+    /// <p>The ID of the application. </p>
     pub application_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the route.</p>
     pub route_identifier: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ impl GetRouteInput {
     pub fn environment_identifier(&self) -> ::std::option::Option<&str> {
         self.environment_identifier.as_deref()
     }
-    /// <p>The ID of the application.</p>
+    /// <p>The ID of the application. </p>
     pub fn application_identifier(&self) -> ::std::option::Option<&str> {
         self.application_identifier.as_deref()
     }
@@ -55,18 +55,18 @@ impl GetRouteInputBuilder {
     pub fn get_environment_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.environment_identifier
     }
-    /// <p>The ID of the application.</p>
+    /// <p>The ID of the application. </p>
     /// This field is required.
     pub fn application_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the application.</p>
+    /// <p>The ID of the application. </p>
     pub fn set_application_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_identifier = input;
         self
     }
-    /// <p>The ID of the application.</p>
+    /// <p>The ID of the application. </p>
     pub fn get_application_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_identifier
     }

@@ -22,7 +22,7 @@ impl CreateStageInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateStage`.
 ///
-/// <p>Creates a new Stage resource that references a pre-existing Deployment for the API.</p>
+/// <p>Creates a new Stage resource that references a pre-existing Deployment for the API. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateStageFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

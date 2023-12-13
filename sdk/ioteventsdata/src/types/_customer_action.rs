@@ -6,16 +6,11 @@
 pub struct CustomerAction {
     /// <p>The name of the action. The action name can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SNOOZE</code> - When you snooze the alarm, the alarm state changes to <code>SNOOZE_DISABLED</code>.</p></li>
-    /// <li>
-    /// <p><code>ENABLE</code> - When you enable the alarm, the alarm state changes to <code>NORMAL</code>.</p></li>
-    /// <li>
-    /// <p><code>DISABLE</code> - When you disable the alarm, the alarm state changes to <code>DISABLED</code>.</p></li>
-    /// <li>
-    /// <p><code>ACKNOWLEDGE</code> - When you acknowledge the alarm, the alarm state changes to <code>ACKNOWLEDGED</code>.</p></li>
-    /// <li>
-    /// <p><code>RESET</code> - When you reset the alarm, the alarm state changes to <code>NORMAL</code>.</p></li>
+    /// <li> <p> <code>SNOOZE</code> - When you snooze the alarm, the alarm state changes to <code>SNOOZE_DISABLED</code>.</p> </li>
+    /// <li> <p> <code>ENABLE</code> - When you enable the alarm, the alarm state changes to <code>NORMAL</code>.</p> </li>
+    /// <li> <p> <code>DISABLE</code> - When you disable the alarm, the alarm state changes to <code>DISABLED</code>.</p> </li>
+    /// <li> <p> <code>ACKNOWLEDGE</code> - When you acknowledge the alarm, the alarm state changes to <code>ACKNOWLEDGED</code>.</p> </li>
+    /// <li> <p> <code>RESET</code> - When you reset the alarm, the alarm state changes to <code>NORMAL</code>.</p> </li>
     /// </ul>
     /// <p>For more information, see the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_AlarmState.html">AlarmState</a> API.</p>
     pub action_name: ::std::option::Option<crate::types::CustomerActionName>,
@@ -33,16 +28,11 @@ pub struct CustomerAction {
 impl CustomerAction {
     /// <p>The name of the action. The action name can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SNOOZE</code> - When you snooze the alarm, the alarm state changes to <code>SNOOZE_DISABLED</code>.</p></li>
-    /// <li>
-    /// <p><code>ENABLE</code> - When you enable the alarm, the alarm state changes to <code>NORMAL</code>.</p></li>
-    /// <li>
-    /// <p><code>DISABLE</code> - When you disable the alarm, the alarm state changes to <code>DISABLED</code>.</p></li>
-    /// <li>
-    /// <p><code>ACKNOWLEDGE</code> - When you acknowledge the alarm, the alarm state changes to <code>ACKNOWLEDGED</code>.</p></li>
-    /// <li>
-    /// <p><code>RESET</code> - When you reset the alarm, the alarm state changes to <code>NORMAL</code>.</p></li>
+    /// <li> <p> <code>SNOOZE</code> - When you snooze the alarm, the alarm state changes to <code>SNOOZE_DISABLED</code>.</p> </li>
+    /// <li> <p> <code>ENABLE</code> - When you enable the alarm, the alarm state changes to <code>NORMAL</code>.</p> </li>
+    /// <li> <p> <code>DISABLE</code> - When you disable the alarm, the alarm state changes to <code>DISABLED</code>.</p> </li>
+    /// <li> <p> <code>ACKNOWLEDGE</code> - When you acknowledge the alarm, the alarm state changes to <code>ACKNOWLEDGED</code>.</p> </li>
+    /// <li> <p> <code>RESET</code> - When you reset the alarm, the alarm state changes to <code>NORMAL</code>.</p> </li>
     /// </ul>
     /// <p>For more information, see the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_AlarmState.html">AlarmState</a> API.</p>
     pub fn action_name(&self) -> ::std::option::Option<&crate::types::CustomerActionName> {
@@ -90,16 +80,11 @@ pub struct CustomerActionBuilder {
 impl CustomerActionBuilder {
     /// <p>The name of the action. The action name can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SNOOZE</code> - When you snooze the alarm, the alarm state changes to <code>SNOOZE_DISABLED</code>.</p></li>
-    /// <li>
-    /// <p><code>ENABLE</code> - When you enable the alarm, the alarm state changes to <code>NORMAL</code>.</p></li>
-    /// <li>
-    /// <p><code>DISABLE</code> - When you disable the alarm, the alarm state changes to <code>DISABLED</code>.</p></li>
-    /// <li>
-    /// <p><code>ACKNOWLEDGE</code> - When you acknowledge the alarm, the alarm state changes to <code>ACKNOWLEDGED</code>.</p></li>
-    /// <li>
-    /// <p><code>RESET</code> - When you reset the alarm, the alarm state changes to <code>NORMAL</code>.</p></li>
+    /// <li> <p> <code>SNOOZE</code> - When you snooze the alarm, the alarm state changes to <code>SNOOZE_DISABLED</code>.</p> </li>
+    /// <li> <p> <code>ENABLE</code> - When you enable the alarm, the alarm state changes to <code>NORMAL</code>.</p> </li>
+    /// <li> <p> <code>DISABLE</code> - When you disable the alarm, the alarm state changes to <code>DISABLED</code>.</p> </li>
+    /// <li> <p> <code>ACKNOWLEDGE</code> - When you acknowledge the alarm, the alarm state changes to <code>ACKNOWLEDGED</code>.</p> </li>
+    /// <li> <p> <code>RESET</code> - When you reset the alarm, the alarm state changes to <code>NORMAL</code>.</p> </li>
     /// </ul>
     /// <p>For more information, see the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_AlarmState.html">AlarmState</a> API.</p>
     pub fn action_name(mut self, input: crate::types::CustomerActionName) -> Self {
@@ -108,16 +93,11 @@ impl CustomerActionBuilder {
     }
     /// <p>The name of the action. The action name can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SNOOZE</code> - When you snooze the alarm, the alarm state changes to <code>SNOOZE_DISABLED</code>.</p></li>
-    /// <li>
-    /// <p><code>ENABLE</code> - When you enable the alarm, the alarm state changes to <code>NORMAL</code>.</p></li>
-    /// <li>
-    /// <p><code>DISABLE</code> - When you disable the alarm, the alarm state changes to <code>DISABLED</code>.</p></li>
-    /// <li>
-    /// <p><code>ACKNOWLEDGE</code> - When you acknowledge the alarm, the alarm state changes to <code>ACKNOWLEDGED</code>.</p></li>
-    /// <li>
-    /// <p><code>RESET</code> - When you reset the alarm, the alarm state changes to <code>NORMAL</code>.</p></li>
+    /// <li> <p> <code>SNOOZE</code> - When you snooze the alarm, the alarm state changes to <code>SNOOZE_DISABLED</code>.</p> </li>
+    /// <li> <p> <code>ENABLE</code> - When you enable the alarm, the alarm state changes to <code>NORMAL</code>.</p> </li>
+    /// <li> <p> <code>DISABLE</code> - When you disable the alarm, the alarm state changes to <code>DISABLED</code>.</p> </li>
+    /// <li> <p> <code>ACKNOWLEDGE</code> - When you acknowledge the alarm, the alarm state changes to <code>ACKNOWLEDGED</code>.</p> </li>
+    /// <li> <p> <code>RESET</code> - When you reset the alarm, the alarm state changes to <code>NORMAL</code>.</p> </li>
     /// </ul>
     /// <p>For more information, see the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_AlarmState.html">AlarmState</a> API.</p>
     pub fn set_action_name(mut self, input: ::std::option::Option<crate::types::CustomerActionName>) -> Self {
@@ -126,16 +106,11 @@ impl CustomerActionBuilder {
     }
     /// <p>The name of the action. The action name can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SNOOZE</code> - When you snooze the alarm, the alarm state changes to <code>SNOOZE_DISABLED</code>.</p></li>
-    /// <li>
-    /// <p><code>ENABLE</code> - When you enable the alarm, the alarm state changes to <code>NORMAL</code>.</p></li>
-    /// <li>
-    /// <p><code>DISABLE</code> - When you disable the alarm, the alarm state changes to <code>DISABLED</code>.</p></li>
-    /// <li>
-    /// <p><code>ACKNOWLEDGE</code> - When you acknowledge the alarm, the alarm state changes to <code>ACKNOWLEDGED</code>.</p></li>
-    /// <li>
-    /// <p><code>RESET</code> - When you reset the alarm, the alarm state changes to <code>NORMAL</code>.</p></li>
+    /// <li> <p> <code>SNOOZE</code> - When you snooze the alarm, the alarm state changes to <code>SNOOZE_DISABLED</code>.</p> </li>
+    /// <li> <p> <code>ENABLE</code> - When you enable the alarm, the alarm state changes to <code>NORMAL</code>.</p> </li>
+    /// <li> <p> <code>DISABLE</code> - When you disable the alarm, the alarm state changes to <code>DISABLED</code>.</p> </li>
+    /// <li> <p> <code>ACKNOWLEDGE</code> - When you acknowledge the alarm, the alarm state changes to <code>ACKNOWLEDGED</code>.</p> </li>
+    /// <li> <p> <code>RESET</code> - When you reset the alarm, the alarm state changes to <code>NORMAL</code>.</p> </li>
     /// </ul>
     /// <p>For more information, see the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_AlarmState.html">AlarmState</a> API.</p>
     pub fn get_action_name(&self) -> &::std::option::Option<crate::types::CustomerActionName> {

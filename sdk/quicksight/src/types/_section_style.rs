@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SectionStyle {
     /// <p>The height of a section.</p>
-    /// <p>Heights can only be defined for header and footer sections. The default height margin is 0.5 inches.</p>
+    /// <p>Heights can only be defined for header and footer sections. The default height margin is 0.5 inches. </p>
     pub height: ::std::option::Option<::std::string::String>,
     /// <p>The spacing between section content and its top, bottom, left, and right edges.</p>
     /// <p>There is no padding by default.</p>
@@ -13,7 +13,7 @@ pub struct SectionStyle {
 }
 impl SectionStyle {
     /// <p>The height of a section.</p>
-    /// <p>Heights can only be defined for header and footer sections. The default height margin is 0.5 inches.</p>
+    /// <p>Heights can only be defined for header and footer sections. The default height margin is 0.5 inches. </p>
     pub fn height(&self) -> ::std::option::Option<&str> {
         self.height.as_deref()
     }
@@ -39,19 +39,19 @@ pub struct SectionStyleBuilder {
 }
 impl SectionStyleBuilder {
     /// <p>The height of a section.</p>
-    /// <p>Heights can only be defined for header and footer sections. The default height margin is 0.5 inches.</p>
+    /// <p>Heights can only be defined for header and footer sections. The default height margin is 0.5 inches. </p>
     pub fn height(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.height = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The height of a section.</p>
-    /// <p>Heights can only be defined for header and footer sections. The default height margin is 0.5 inches.</p>
+    /// <p>Heights can only be defined for header and footer sections. The default height margin is 0.5 inches. </p>
     pub fn set_height(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.height = input;
         self
     }
     /// <p>The height of a section.</p>
-    /// <p>Heights can only be defined for header and footer sections. The default height margin is 0.5 inches.</p>
+    /// <p>Heights can only be defined for header and footer sections. The default height margin is 0.5 inches. </p>
     pub fn get_height(&self) -> &::std::option::Option<::std::string::String> {
         &self.height
     }

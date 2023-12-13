@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAccountStatusOutput {
-    /// <p>The status of the Amazon Web Services account.</p>
+    /// <p> The status of the Amazon Web Services account. </p>
     pub status: ::std::option::Option<crate::types::AccountStatus>,
     _request_id: Option<String>,
 }
 impl GetAccountStatusOutput {
-    /// <p>The status of the Amazon Web Services account.</p>
+    /// <p> The status of the Amazon Web Services account. </p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::AccountStatus> {
         self.status.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct GetAccountStatusOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetAccountStatusOutputBuilder {
-    /// <p>The status of the Amazon Web Services account.</p>
+    /// <p> The status of the Amazon Web Services account. </p>
     pub fn status(mut self, input: crate::types::AccountStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the Amazon Web Services account.</p>
+    /// <p> The status of the Amazon Web Services account. </p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AccountStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of the Amazon Web Services account.</p>
+    /// <p> The status of the Amazon Web Services account. </p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AccountStatus> {
         &self.status
     }

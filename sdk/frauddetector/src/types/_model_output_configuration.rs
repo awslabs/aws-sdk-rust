@@ -6,9 +6,9 @@
 pub struct ModelOutputConfiguration {
     /// <p>The format of the model output configuration.</p>
     pub format: crate::types::ModelOutputDataFormat,
-    /// <p>A map of JSON keys in response from SageMaker to the Amazon Fraud Detector variables.</p>
+    /// <p>A map of JSON keys in response from SageMaker to the Amazon Fraud Detector variables. </p>
     pub json_key_to_variable_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>A map of CSV index values in the SageMaker response to the Amazon Fraud Detector variables.</p>
+    /// <p>A map of CSV index values in the SageMaker response to the Amazon Fraud Detector variables. </p>
     pub csv_index_to_variable_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ModelOutputConfiguration {
@@ -16,11 +16,11 @@ impl ModelOutputConfiguration {
     pub fn format(&self) -> &crate::types::ModelOutputDataFormat {
         &self.format
     }
-    /// <p>A map of JSON keys in response from SageMaker to the Amazon Fraud Detector variables.</p>
+    /// <p>A map of JSON keys in response from SageMaker to the Amazon Fraud Detector variables. </p>
     pub fn json_key_to_variable_map(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.json_key_to_variable_map.as_ref()
     }
-    /// <p>A map of CSV index values in the SageMaker response to the Amazon Fraud Detector variables.</p>
+    /// <p>A map of CSV index values in the SageMaker response to the Amazon Fraud Detector variables. </p>
     pub fn csv_index_to_variable_map(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.csv_index_to_variable_map.as_ref()
     }
@@ -60,7 +60,7 @@ impl ModelOutputConfigurationBuilder {
     ///
     /// To override the contents of this collection use [`set_json_key_to_variable_map`](Self::set_json_key_to_variable_map).
     ///
-    /// <p>A map of JSON keys in response from SageMaker to the Amazon Fraud Detector variables.</p>
+    /// <p>A map of JSON keys in response from SageMaker to the Amazon Fraud Detector variables. </p>
     pub fn json_key_to_variable_map(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -71,7 +71,7 @@ impl ModelOutputConfigurationBuilder {
         self.json_key_to_variable_map = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>A map of JSON keys in response from SageMaker to the Amazon Fraud Detector variables.</p>
+    /// <p>A map of JSON keys in response from SageMaker to the Amazon Fraud Detector variables. </p>
     pub fn set_json_key_to_variable_map(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -79,7 +79,7 @@ impl ModelOutputConfigurationBuilder {
         self.json_key_to_variable_map = input;
         self
     }
-    /// <p>A map of JSON keys in response from SageMaker to the Amazon Fraud Detector variables.</p>
+    /// <p>A map of JSON keys in response from SageMaker to the Amazon Fraud Detector variables. </p>
     pub fn get_json_key_to_variable_map(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.json_key_to_variable_map
     }
@@ -87,7 +87,7 @@ impl ModelOutputConfigurationBuilder {
     ///
     /// To override the contents of this collection use [`set_csv_index_to_variable_map`](Self::set_csv_index_to_variable_map).
     ///
-    /// <p>A map of CSV index values in the SageMaker response to the Amazon Fraud Detector variables.</p>
+    /// <p>A map of CSV index values in the SageMaker response to the Amazon Fraud Detector variables. </p>
     pub fn csv_index_to_variable_map(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -98,7 +98,7 @@ impl ModelOutputConfigurationBuilder {
         self.csv_index_to_variable_map = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>A map of CSV index values in the SageMaker response to the Amazon Fraud Detector variables.</p>
+    /// <p>A map of CSV index values in the SageMaker response to the Amazon Fraud Detector variables. </p>
     pub fn set_csv_index_to_variable_map(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -106,7 +106,7 @@ impl ModelOutputConfigurationBuilder {
         self.csv_index_to_variable_map = input;
         self
     }
-    /// <p>A map of CSV index values in the SageMaker response to the Amazon Fraud Detector variables.</p>
+    /// <p>A map of CSV index values in the SageMaker response to the Amazon Fraud Detector variables. </p>
     pub fn get_csv_index_to_variable_map(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.csv_index_to_variable_map
     }

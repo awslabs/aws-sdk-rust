@@ -22,8 +22,8 @@ impl PutDedicatedIpInPoolInputBuilder {
 }
 /// Fluent builder constructing a request to `PutDedicatedIpInPool`.
 ///
-/// <p>Move a dedicated IP address to an existing dedicated IP pool.</p><note>
-/// <p>The dedicated IP address that you specify must already exist, and must be associated with your Amazon Web Services account.</p>
+/// <p>Move a dedicated IP address to an existing dedicated IP pool.</p> <note>
+/// <p>The dedicated IP address that you specify must already exist, and must be associated with your Amazon Web Services account. </p>
 /// <p>The dedicated IP pool you specify must already exist. You can create a new pool by using the <code>CreateDedicatedIpPool</code> operation.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

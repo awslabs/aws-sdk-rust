@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartChangeRequestExecutionOutput {
-    /// <p>The unique ID of a runbook workflow operation. (A runbook workflow is a type of Automation operation.)</p>
+    /// <p>The unique ID of a runbook workflow operation. (A runbook workflow is a type of Automation operation.) </p>
     pub automation_execution_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl StartChangeRequestExecutionOutput {
-    /// <p>The unique ID of a runbook workflow operation. (A runbook workflow is a type of Automation operation.)</p>
+    /// <p>The unique ID of a runbook workflow operation. (A runbook workflow is a type of Automation operation.) </p>
     pub fn automation_execution_id(&self) -> ::std::option::Option<&str> {
         self.automation_execution_id.as_deref()
     }
@@ -33,17 +33,17 @@ pub struct StartChangeRequestExecutionOutputBuilder {
     _request_id: Option<String>,
 }
 impl StartChangeRequestExecutionOutputBuilder {
-    /// <p>The unique ID of a runbook workflow operation. (A runbook workflow is a type of Automation operation.)</p>
+    /// <p>The unique ID of a runbook workflow operation. (A runbook workflow is a type of Automation operation.) </p>
     pub fn automation_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.automation_execution_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique ID of a runbook workflow operation. (A runbook workflow is a type of Automation operation.)</p>
+    /// <p>The unique ID of a runbook workflow operation. (A runbook workflow is a type of Automation operation.) </p>
     pub fn set_automation_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.automation_execution_id = input;
         self
     }
-    /// <p>The unique ID of a runbook workflow operation. (A runbook workflow is a type of Automation operation.)</p>
+    /// <p>The unique ID of a runbook workflow operation. (A runbook workflow is a type of Automation operation.) </p>
     pub fn get_automation_execution_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.automation_execution_id
     }

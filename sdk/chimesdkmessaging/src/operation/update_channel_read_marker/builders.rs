@@ -22,7 +22,7 @@ impl UpdateChannelReadMarkerInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateChannelReadMarker`.
 ///
-/// <p>The details of the time when a user last read messages in a channel.</p><note>
+/// <p>The details of the time when a user last read messages in a channel.</p> <note>
 /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

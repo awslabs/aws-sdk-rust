@@ -20,13 +20,13 @@ pub struct TableInput {
     pub storage_descriptor: ::std::option::Option<crate::types::StorageDescriptor>,
     /// <p>A list of columns by which the table is partitioned. Only primitive types are supported as partition keys.</p>
     /// <p>When you create a table used by Amazon Athena, and you do not specify any <code>partitionKeys</code>, you must at least set the value of <code>partitionKeys</code> to an empty list. For example:</p>
-    /// <p><code>"PartitionKeys": []</code></p>
+    /// <p> <code>"PartitionKeys": []</code> </p>
     pub partition_keys: ::std::option::Option<::std::vec::Vec<crate::types::Column>>,
     /// <p>Included for Apache Hive compatibility. Not used in the normal course of Glue operations. If the table is a <code>VIRTUAL_VIEW</code>, certain Athena configuration encoded in base64.</p>
     pub view_original_text: ::std::option::Option<::std::string::String>,
     /// <p>Included for Apache Hive compatibility. Not used in the normal course of Glue operations.</p>
     pub view_expanded_text: ::std::option::Option<::std::string::String>,
-    /// <p>The type of this table. Glue will create tables with the <code>EXTERNAL_TABLE</code> type. Other services, such as Athena, may create tables with additional table types.</p>
+    /// <p>The type of this table. Glue will create tables with the <code>EXTERNAL_TABLE</code> type. Other services, such as Athena, may create tables with additional table types. </p>
     /// <p>Glue related table types:</p>
     /// <dl>
     /// <dt>
@@ -80,7 +80,7 @@ impl TableInput {
     }
     /// <p>A list of columns by which the table is partitioned. Only primitive types are supported as partition keys.</p>
     /// <p>When you create a table used by Amazon Athena, and you do not specify any <code>partitionKeys</code>, you must at least set the value of <code>partitionKeys</code> to an empty list. For example:</p>
-    /// <p><code>"PartitionKeys": []</code></p>
+    /// <p> <code>"PartitionKeys": []</code> </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.partition_keys.is_none()`.
     pub fn partition_keys(&self) -> &[crate::types::Column] {
@@ -94,7 +94,7 @@ impl TableInput {
     pub fn view_expanded_text(&self) -> ::std::option::Option<&str> {
         self.view_expanded_text.as_deref()
     }
-    /// <p>The type of this table. Glue will create tables with the <code>EXTERNAL_TABLE</code> type. Other services, such as Athena, may create tables with additional table types.</p>
+    /// <p>The type of this table. Glue will create tables with the <code>EXTERNAL_TABLE</code> type. Other services, such as Athena, may create tables with additional table types. </p>
     /// <p>Glue related table types:</p>
     /// <dl>
     /// <dt>
@@ -253,7 +253,7 @@ impl TableInputBuilder {
     ///
     /// <p>A list of columns by which the table is partitioned. Only primitive types are supported as partition keys.</p>
     /// <p>When you create a table used by Amazon Athena, and you do not specify any <code>partitionKeys</code>, you must at least set the value of <code>partitionKeys</code> to an empty list. For example:</p>
-    /// <p><code>"PartitionKeys": []</code></p>
+    /// <p> <code>"PartitionKeys": []</code> </p>
     pub fn partition_keys(mut self, input: crate::types::Column) -> Self {
         let mut v = self.partition_keys.unwrap_or_default();
         v.push(input);
@@ -262,14 +262,14 @@ impl TableInputBuilder {
     }
     /// <p>A list of columns by which the table is partitioned. Only primitive types are supported as partition keys.</p>
     /// <p>When you create a table used by Amazon Athena, and you do not specify any <code>partitionKeys</code>, you must at least set the value of <code>partitionKeys</code> to an empty list. For example:</p>
-    /// <p><code>"PartitionKeys": []</code></p>
+    /// <p> <code>"PartitionKeys": []</code> </p>
     pub fn set_partition_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Column>>) -> Self {
         self.partition_keys = input;
         self
     }
     /// <p>A list of columns by which the table is partitioned. Only primitive types are supported as partition keys.</p>
     /// <p>When you create a table used by Amazon Athena, and you do not specify any <code>partitionKeys</code>, you must at least set the value of <code>partitionKeys</code> to an empty list. For example:</p>
-    /// <p><code>"PartitionKeys": []</code></p>
+    /// <p> <code>"PartitionKeys": []</code> </p>
     pub fn get_partition_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Column>> {
         &self.partition_keys
     }
@@ -301,7 +301,7 @@ impl TableInputBuilder {
     pub fn get_view_expanded_text(&self) -> &::std::option::Option<::std::string::String> {
         &self.view_expanded_text
     }
-    /// <p>The type of this table. Glue will create tables with the <code>EXTERNAL_TABLE</code> type. Other services, such as Athena, may create tables with additional table types.</p>
+    /// <p>The type of this table. Glue will create tables with the <code>EXTERNAL_TABLE</code> type. Other services, such as Athena, may create tables with additional table types. </p>
     /// <p>Glue related table types:</p>
     /// <dl>
     /// <dt>
@@ -321,7 +321,7 @@ impl TableInputBuilder {
         self.table_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The type of this table. Glue will create tables with the <code>EXTERNAL_TABLE</code> type. Other services, such as Athena, may create tables with additional table types.</p>
+    /// <p>The type of this table. Glue will create tables with the <code>EXTERNAL_TABLE</code> type. Other services, such as Athena, may create tables with additional table types. </p>
     /// <p>Glue related table types:</p>
     /// <dl>
     /// <dt>
@@ -341,7 +341,7 @@ impl TableInputBuilder {
         self.table_type = input;
         self
     }
-    /// <p>The type of this table. Glue will create tables with the <code>EXTERNAL_TABLE</code> type. Other services, such as Athena, may create tables with additional table types.</p>
+    /// <p>The type of this table. Glue will create tables with the <code>EXTERNAL_TABLE</code> type. Other services, such as Athena, may create tables with additional table types. </p>
     /// <p>Glue related table types:</p>
     /// <dl>
     /// <dt>

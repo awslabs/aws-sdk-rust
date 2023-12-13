@@ -26,18 +26,12 @@ impl CreateIntentInputBuilder {
 /// <p>To define the interaction between the user and your bot, you define one or more intents. For example, for a pizza ordering bot you would create an <code>OrderPizza</code> intent.</p>
 /// <p>When you create an intent, you must provide a name. You can optionally provide the following:</p>
 /// <ul>
-/// <li>
-/// <p>Sample utterances. For example, "I want to order a pizza" and "Can I order a pizza." You can't provide utterances for built-in intents.</p></li>
-/// <li>
-/// <p>Information to be gathered. You specify slots for the information that you bot requests from the user. You can specify standard slot types, such as date and time, or custom slot types for your application.</p></li>
-/// <li>
-/// <p>How the intent is fulfilled. You can provide a Lambda function or configure the intent to return the intent information to your client application. If you use a Lambda function, Amazon Lex invokes the function when all of the intent information is available.</p></li>
-/// <li>
-/// <p>A confirmation prompt to send to the user to confirm an intent. For example, "Shall I order your pizza?"</p></li>
-/// <li>
-/// <p>A conclusion statement to send to the user after the intent is fulfilled. For example, "I ordered your pizza."</p></li>
-/// <li>
-/// <p>A follow-up prompt that asks the user for additional activity. For example, "Do you want a drink with your pizza?"</p></li>
+/// <li> <p>Sample utterances. For example, "I want to order a pizza" and "Can I order a pizza." You can't provide utterances for built-in intents.</p> </li>
+/// <li> <p>Information to be gathered. You specify slots for the information that you bot requests from the user. You can specify standard slot types, such as date and time, or custom slot types for your application.</p> </li>
+/// <li> <p>How the intent is fulfilled. You can provide a Lambda function or configure the intent to return the intent information to your client application. If you use a Lambda function, Amazon Lex invokes the function when all of the intent information is available.</p> </li>
+/// <li> <p>A confirmation prompt to send to the user to confirm an intent. For example, "Shall I order your pizza?"</p> </li>
+/// <li> <p>A conclusion statement to send to the user after the intent is fulfilled. For example, "I ordered your pizza."</p> </li>
+/// <li> <p>A follow-up prompt that asks the user for additional activity. For example, "Do you want a drink with your pizza?"</p> </li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateIntentFluentBuilder {
@@ -170,20 +164,20 @@ impl CreateIntentFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_sample_utterances`](Self::set_sample_utterances).
     ///
-    /// <p>An array of strings that a user might say to signal the intent. For example, "I want a pizza", or "I want a {PizzaSize} pizza".</p>
-    /// <p>In an utterance, slot names are enclosed in curly braces ("{", "}") to indicate where they should be displayed in the utterance shown to the user..</p>
+    /// <p>An array of strings that a user might say to signal the intent. For example, "I want a pizza", or "I want a {PizzaSize} pizza". </p>
+    /// <p>In an utterance, slot names are enclosed in curly braces ("{", "}") to indicate where they should be displayed in the utterance shown to the user.. </p>
     pub fn sample_utterances(mut self, input: crate::types::SampleUtterance) -> Self {
         self.inner = self.inner.sample_utterances(input);
         self
     }
-    /// <p>An array of strings that a user might say to signal the intent. For example, "I want a pizza", or "I want a {PizzaSize} pizza".</p>
-    /// <p>In an utterance, slot names are enclosed in curly braces ("{", "}") to indicate where they should be displayed in the utterance shown to the user..</p>
+    /// <p>An array of strings that a user might say to signal the intent. For example, "I want a pizza", or "I want a {PizzaSize} pizza". </p>
+    /// <p>In an utterance, slot names are enclosed in curly braces ("{", "}") to indicate where they should be displayed in the utterance shown to the user.. </p>
     pub fn set_sample_utterances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SampleUtterance>>) -> Self {
         self.inner = self.inner.set_sample_utterances(input);
         self
     }
-    /// <p>An array of strings that a user might say to signal the intent. For example, "I want a pizza", or "I want a {PizzaSize} pizza".</p>
-    /// <p>In an utterance, slot names are enclosed in curly braces ("{", "}") to indicate where they should be displayed in the utterance shown to the user..</p>
+    /// <p>An array of strings that a user might say to signal the intent. For example, "I want a pizza", or "I want a {PizzaSize} pizza". </p>
+    /// <p>In an utterance, slot names are enclosed in curly braces ("{", "}") to indicate where they should be displayed in the utterance shown to the user.. </p>
     pub fn get_sample_utterances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SampleUtterance>> {
         self.inner.get_sample_utterances()
     }
@@ -256,7 +250,7 @@ impl CreateIntentFluentBuilder {
     /// <p>A list of contexts that must be active for this intent to be considered by Amazon Lex.</p>
     /// <p>When an intent has an input context list, Amazon Lex only considers using the intent in an interaction with the user when the specified contexts are included in the active context list for the session. If the contexts are not active, then Amazon Lex will not use the intent.</p>
     /// <p>A context can be automatically activated using the <code>outputContexts</code> property or it can be set at runtime.</p>
-    /// <p>For example, if there are two intents with different input contexts that respond to the same utterances, only the intent with the active context will respond.</p>
+    /// <p> For example, if there are two intents with different input contexts that respond to the same utterances, only the intent with the active context will respond.</p>
     /// <p>An intent may have up to 5 input contexts. If an intent has multiple input contexts, all of the contexts must be active to consider the intent.</p>
     pub fn input_contexts(mut self, input: crate::types::InputContext) -> Self {
         self.inner = self.inner.input_contexts(input);
@@ -265,7 +259,7 @@ impl CreateIntentFluentBuilder {
     /// <p>A list of contexts that must be active for this intent to be considered by Amazon Lex.</p>
     /// <p>When an intent has an input context list, Amazon Lex only considers using the intent in an interaction with the user when the specified contexts are included in the active context list for the session. If the contexts are not active, then Amazon Lex will not use the intent.</p>
     /// <p>A context can be automatically activated using the <code>outputContexts</code> property or it can be set at runtime.</p>
-    /// <p>For example, if there are two intents with different input contexts that respond to the same utterances, only the intent with the active context will respond.</p>
+    /// <p> For example, if there are two intents with different input contexts that respond to the same utterances, only the intent with the active context will respond.</p>
     /// <p>An intent may have up to 5 input contexts. If an intent has multiple input contexts, all of the contexts must be active to consider the intent.</p>
     pub fn set_input_contexts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InputContext>>) -> Self {
         self.inner = self.inner.set_input_contexts(input);
@@ -274,7 +268,7 @@ impl CreateIntentFluentBuilder {
     /// <p>A list of contexts that must be active for this intent to be considered by Amazon Lex.</p>
     /// <p>When an intent has an input context list, Amazon Lex only considers using the intent in an interaction with the user when the specified contexts are included in the active context list for the session. If the contexts are not active, then Amazon Lex will not use the intent.</p>
     /// <p>A context can be automatically activated using the <code>outputContexts</code> property or it can be set at runtime.</p>
-    /// <p>For example, if there are two intents with different input contexts that respond to the same utterances, only the intent with the active context will respond.</p>
+    /// <p> For example, if there are two intents with different input contexts that respond to the same utterances, only the intent with the active context will respond.</p>
     /// <p>An intent may have up to 5 input contexts. If an intent has multiple input contexts, all of the contexts must be active to consider the intent.</p>
     pub fn get_input_contexts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputContext>> {
         self.inner.get_input_contexts()
@@ -284,21 +278,21 @@ impl CreateIntentFluentBuilder {
     /// To override the contents of this collection use [`set_output_contexts`](Self::set_output_contexts).
     ///
     /// <p>A lists of contexts that the intent activates when it is fulfilled.</p>
-    /// <p>You can use an output context to indicate the intents that Amazon Lex should consider for the next turn of the conversation with a customer.</p>
+    /// <p>You can use an output context to indicate the intents that Amazon Lex should consider for the next turn of the conversation with a customer. </p>
     /// <p>When you use the <code>outputContextsList</code> property, all of the contexts specified in the list are activated when the intent is fulfilled. You can set up to 10 output contexts. You can also set the number of conversation turns that the context should be active, or the length of time that the context should be active.</p>
     pub fn output_contexts(mut self, input: crate::types::OutputContext) -> Self {
         self.inner = self.inner.output_contexts(input);
         self
     }
     /// <p>A lists of contexts that the intent activates when it is fulfilled.</p>
-    /// <p>You can use an output context to indicate the intents that Amazon Lex should consider for the next turn of the conversation with a customer.</p>
+    /// <p>You can use an output context to indicate the intents that Amazon Lex should consider for the next turn of the conversation with a customer. </p>
     /// <p>When you use the <code>outputContextsList</code> property, all of the contexts specified in the list are activated when the intent is fulfilled. You can set up to 10 output contexts. You can also set the number of conversation turns that the context should be active, or the length of time that the context should be active.</p>
     pub fn set_output_contexts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OutputContext>>) -> Self {
         self.inner = self.inner.set_output_contexts(input);
         self
     }
     /// <p>A lists of contexts that the intent activates when it is fulfilled.</p>
-    /// <p>You can use an output context to indicate the intents that Amazon Lex should consider for the next turn of the conversation with a customer.</p>
+    /// <p>You can use an output context to indicate the intents that Amazon Lex should consider for the next turn of the conversation with a customer. </p>
     /// <p>When you use the <code>outputContextsList</code> property, all of the contexts specified in the list are activated when the intent is fulfilled. You can set up to 10 output contexts. You can also set the number of conversation turns that the context should be active, or the length of time that the context should be active.</p>
     pub fn get_output_contexts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputContext>> {
         self.inner.get_output_contexts()

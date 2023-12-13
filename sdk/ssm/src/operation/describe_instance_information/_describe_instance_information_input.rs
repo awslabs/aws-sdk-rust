@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeInstanceInformationInput {
-    /// <p>This is a legacy method. We recommend that you don't use this method. Instead, use the <code>Filters</code> data type. <code>Filters</code> enables you to return node information by filtering based on tags applied to managed nodes.</p><note>
-    /// <p>Attempting to use <code>InstanceInformationFilterList</code> and <code>Filters</code> leads to an exception error.</p>
+    /// <p>This is a legacy method. We recommend that you don't use this method. Instead, use the <code>Filters</code> data type. <code>Filters</code> enables you to return node information by filtering based on tags applied to managed nodes.</p> <note>
+    /// <p>Attempting to use <code>InstanceInformationFilterList</code> and <code>Filters</code> leads to an exception error. </p>
     /// </note>
     pub instance_information_filter_list: ::std::option::Option<::std::vec::Vec<crate::types::InstanceInformationFilter>>,
     /// <p>One or more filters. Use a filter to return a more specific list of managed nodes. You can filter based on tags applied to your managed nodes. Tag filters can't be combined with other filter types. Use this <code>Filters</code> data type instead of <code>InstanceInformationFilterList</code>, which is deprecated.</p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::InstanceInformationStringFilter>>,
-    /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results. The default value is 10 items.</p>
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results. The default value is 10 items. </p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeInstanceInformationInput {
-    /// <p>This is a legacy method. We recommend that you don't use this method. Instead, use the <code>Filters</code> data type. <code>Filters</code> enables you to return node information by filtering based on tags applied to managed nodes.</p><note>
-    /// <p>Attempting to use <code>InstanceInformationFilterList</code> and <code>Filters</code> leads to an exception error.</p>
+    /// <p>This is a legacy method. We recommend that you don't use this method. Instead, use the <code>Filters</code> data type. <code>Filters</code> enables you to return node information by filtering based on tags applied to managed nodes.</p> <note>
+    /// <p>Attempting to use <code>InstanceInformationFilterList</code> and <code>Filters</code> leads to an exception error. </p>
     /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_information_filter_list.is_none()`.
@@ -29,7 +29,7 @@ impl DescribeInstanceInformationInput {
     pub fn filters(&self) -> &[crate::types::InstanceInformationStringFilter] {
         self.filters.as_deref().unwrap_or_default()
     }
-    /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results. The default value is 10 items.</p>
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results. The default value is 10 items. </p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -59,8 +59,8 @@ impl DescribeInstanceInformationInputBuilder {
     ///
     /// To override the contents of this collection use [`set_instance_information_filter_list`](Self::set_instance_information_filter_list).
     ///
-    /// <p>This is a legacy method. We recommend that you don't use this method. Instead, use the <code>Filters</code> data type. <code>Filters</code> enables you to return node information by filtering based on tags applied to managed nodes.</p><note>
-    /// <p>Attempting to use <code>InstanceInformationFilterList</code> and <code>Filters</code> leads to an exception error.</p>
+    /// <p>This is a legacy method. We recommend that you don't use this method. Instead, use the <code>Filters</code> data type. <code>Filters</code> enables you to return node information by filtering based on tags applied to managed nodes.</p> <note>
+    /// <p>Attempting to use <code>InstanceInformationFilterList</code> and <code>Filters</code> leads to an exception error. </p>
     /// </note>
     pub fn instance_information_filter_list(mut self, input: crate::types::InstanceInformationFilter) -> Self {
         let mut v = self.instance_information_filter_list.unwrap_or_default();
@@ -68,8 +68,8 @@ impl DescribeInstanceInformationInputBuilder {
         self.instance_information_filter_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p>This is a legacy method. We recommend that you don't use this method. Instead, use the <code>Filters</code> data type. <code>Filters</code> enables you to return node information by filtering based on tags applied to managed nodes.</p><note>
-    /// <p>Attempting to use <code>InstanceInformationFilterList</code> and <code>Filters</code> leads to an exception error.</p>
+    /// <p>This is a legacy method. We recommend that you don't use this method. Instead, use the <code>Filters</code> data type. <code>Filters</code> enables you to return node information by filtering based on tags applied to managed nodes.</p> <note>
+    /// <p>Attempting to use <code>InstanceInformationFilterList</code> and <code>Filters</code> leads to an exception error. </p>
     /// </note>
     pub fn set_instance_information_filter_list(
         mut self,
@@ -78,8 +78,8 @@ impl DescribeInstanceInformationInputBuilder {
         self.instance_information_filter_list = input;
         self
     }
-    /// <p>This is a legacy method. We recommend that you don't use this method. Instead, use the <code>Filters</code> data type. <code>Filters</code> enables you to return node information by filtering based on tags applied to managed nodes.</p><note>
-    /// <p>Attempting to use <code>InstanceInformationFilterList</code> and <code>Filters</code> leads to an exception error.</p>
+    /// <p>This is a legacy method. We recommend that you don't use this method. Instead, use the <code>Filters</code> data type. <code>Filters</code> enables you to return node information by filtering based on tags applied to managed nodes.</p> <note>
+    /// <p>Attempting to use <code>InstanceInformationFilterList</code> and <code>Filters</code> leads to an exception error. </p>
     /// </note>
     pub fn get_instance_information_filter_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceInformationFilter>> {
         &self.instance_information_filter_list
@@ -104,17 +104,17 @@ impl DescribeInstanceInformationInputBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceInformationStringFilter>> {
         &self.filters
     }
-    /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results. The default value is 10 items.</p>
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results. The default value is 10 items. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results. The default value is 10 items.</p>
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results. The default value is 10 items. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results. The default value is 10 items.</p>
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results. The default value is 10 items. </p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

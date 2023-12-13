@@ -243,11 +243,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateCluster
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreateClusterSubnetGroupError {
-    /// <p>A <i>ClusterSubnetGroupName</i> is already used by an existing cluster subnet group.</p>
+    /// <p>A <i>ClusterSubnetGroupName</i> is already used by an existing cluster subnet group. </p>
     ClusterSubnetGroupAlreadyExistsFault(crate::types::error::ClusterSubnetGroupAlreadyExistsFault),
-    /// <p>The request would result in user exceeding the allowed number of cluster subnet groups. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+    /// <p>The request would result in user exceeding the allowed number of cluster subnet groups. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
     ClusterSubnetGroupQuotaExceededFault(crate::types::error::ClusterSubnetGroupQuotaExceededFault),
-    /// <p>The request would result in user exceeding the allowed number of subnets in a cluster subnet groups. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+    /// <p>The request would result in user exceeding the allowed number of subnets in a cluster subnet groups. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
     ClusterSubnetQuotaExceededFault(crate::types::error::ClusterSubnetQuotaExceededFault),
     /// <p>The request cannot be completed because a dependent service is throttling requests made by Amazon Redshift on your behalf. Wait and retry the request.</p>
     DependentServiceRequestThrottlingFault(crate::types::error::DependentServiceRequestThrottlingFault),

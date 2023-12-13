@@ -6,16 +6,12 @@
 pub struct ReplicaGlobalSecondaryIndexSettingsDescription {
     /// <p>The name of the global secondary index. The name must be unique among all other indexes on this table.</p>
     pub index_name: ::std::string::String,
-    /// <p>The current status of the global secondary index:</p>
+    /// <p> The current status of the global secondary index:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATING</code> - The global secondary index is being created.</p></li>
-    /// <li>
-    /// <p><code>UPDATING</code> - The global secondary index is being updated.</p></li>
-    /// <li>
-    /// <p><code>DELETING</code> - The global secondary index is being deleted.</p></li>
-    /// <li>
-    /// <p><code>ACTIVE</code> - The global secondary index is ready for use.</p></li>
+    /// <li> <p> <code>CREATING</code> - The global secondary index is being created.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - The global secondary index is being updated.</p> </li>
+    /// <li> <p> <code>DELETING</code> - The global secondary index is being deleted.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> - The global secondary index is ready for use.</p> </li>
     /// </ul>
     pub index_status: ::std::option::Option<crate::types::IndexStatus>,
     /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
@@ -33,16 +29,12 @@ impl ReplicaGlobalSecondaryIndexSettingsDescription {
         use std::ops::Deref;
         self.index_name.deref()
     }
-    /// <p>The current status of the global secondary index:</p>
+    /// <p> The current status of the global secondary index:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATING</code> - The global secondary index is being created.</p></li>
-    /// <li>
-    /// <p><code>UPDATING</code> - The global secondary index is being updated.</p></li>
-    /// <li>
-    /// <p><code>DELETING</code> - The global secondary index is being deleted.</p></li>
-    /// <li>
-    /// <p><code>ACTIVE</code> - The global secondary index is ready for use.</p></li>
+    /// <li> <p> <code>CREATING</code> - The global secondary index is being created.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - The global secondary index is being updated.</p> </li>
+    /// <li> <p> <code>DELETING</code> - The global secondary index is being deleted.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> - The global secondary index is ready for use.</p> </li>
     /// </ul>
     pub fn index_status(&self) -> ::std::option::Option<&crate::types::IndexStatus> {
         self.index_status.as_ref()
@@ -98,46 +90,34 @@ impl ReplicaGlobalSecondaryIndexSettingsDescriptionBuilder {
     pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.index_name
     }
-    /// <p>The current status of the global secondary index:</p>
+    /// <p> The current status of the global secondary index:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATING</code> - The global secondary index is being created.</p></li>
-    /// <li>
-    /// <p><code>UPDATING</code> - The global secondary index is being updated.</p></li>
-    /// <li>
-    /// <p><code>DELETING</code> - The global secondary index is being deleted.</p></li>
-    /// <li>
-    /// <p><code>ACTIVE</code> - The global secondary index is ready for use.</p></li>
+    /// <li> <p> <code>CREATING</code> - The global secondary index is being created.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - The global secondary index is being updated.</p> </li>
+    /// <li> <p> <code>DELETING</code> - The global secondary index is being deleted.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> - The global secondary index is ready for use.</p> </li>
     /// </ul>
     pub fn index_status(mut self, input: crate::types::IndexStatus) -> Self {
         self.index_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current status of the global secondary index:</p>
+    /// <p> The current status of the global secondary index:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATING</code> - The global secondary index is being created.</p></li>
-    /// <li>
-    /// <p><code>UPDATING</code> - The global secondary index is being updated.</p></li>
-    /// <li>
-    /// <p><code>DELETING</code> - The global secondary index is being deleted.</p></li>
-    /// <li>
-    /// <p><code>ACTIVE</code> - The global secondary index is ready for use.</p></li>
+    /// <li> <p> <code>CREATING</code> - The global secondary index is being created.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - The global secondary index is being updated.</p> </li>
+    /// <li> <p> <code>DELETING</code> - The global secondary index is being deleted.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> - The global secondary index is ready for use.</p> </li>
     /// </ul>
     pub fn set_index_status(mut self, input: ::std::option::Option<crate::types::IndexStatus>) -> Self {
         self.index_status = input;
         self
     }
-    /// <p>The current status of the global secondary index:</p>
+    /// <p> The current status of the global secondary index:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>CREATING</code> - The global secondary index is being created.</p></li>
-    /// <li>
-    /// <p><code>UPDATING</code> - The global secondary index is being updated.</p></li>
-    /// <li>
-    /// <p><code>DELETING</code> - The global secondary index is being deleted.</p></li>
-    /// <li>
-    /// <p><code>ACTIVE</code> - The global secondary index is ready for use.</p></li>
+    /// <li> <p> <code>CREATING</code> - The global secondary index is being created.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - The global secondary index is being updated.</p> </li>
+    /// <li> <p> <code>DELETING</code> - The global secondary index is being deleted.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> - The global secondary index is ready for use.</p> </li>
     /// </ul>
     pub fn get_index_status(&self) -> &::std::option::Option<crate::types::IndexStatus> {
         &self.index_status

@@ -7,7 +7,7 @@
 pub struct TemplateSsmDocumentDetails {
     /// <p>The name or Amazon Resource Name (ARN) of the SSM document to use to create a conformance pack. If you use the document name, Config checks only your account and Amazon Web Services Region for the SSM document. If you want to use an SSM document from another Region or account, you must provide the ARN.</p>
     pub document_name: ::std::string::String,
-    /// <p>The version of the SSM document to use to create a conformance pack. By default, Config uses the latest version.</p><note>
+    /// <p>The version of the SSM document to use to create a conformance pack. By default, Config uses the latest version.</p> <note>
     /// <p>This field is optional.</p>
     /// </note>
     pub document_version: ::std::option::Option<::std::string::String>,
@@ -18,7 +18,7 @@ impl TemplateSsmDocumentDetails {
         use std::ops::Deref;
         self.document_name.deref()
     }
-    /// <p>The version of the SSM document to use to create a conformance pack. By default, Config uses the latest version.</p><note>
+    /// <p>The version of the SSM document to use to create a conformance pack. By default, Config uses the latest version.</p> <note>
     /// <p>This field is optional.</p>
     /// </note>
     pub fn document_version(&self) -> ::std::option::Option<&str> {
@@ -55,21 +55,21 @@ impl TemplateSsmDocumentDetailsBuilder {
     pub fn get_document_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.document_name
     }
-    /// <p>The version of the SSM document to use to create a conformance pack. By default, Config uses the latest version.</p><note>
+    /// <p>The version of the SSM document to use to create a conformance pack. By default, Config uses the latest version.</p> <note>
     /// <p>This field is optional.</p>
     /// </note>
     pub fn document_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The version of the SSM document to use to create a conformance pack. By default, Config uses the latest version.</p><note>
+    /// <p>The version of the SSM document to use to create a conformance pack. By default, Config uses the latest version.</p> <note>
     /// <p>This field is optional.</p>
     /// </note>
     pub fn set_document_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document_version = input;
         self
     }
-    /// <p>The version of the SSM document to use to create a conformance pack. By default, Config uses the latest version.</p><note>
+    /// <p>The version of the SSM document to use to create a conformance pack. By default, Config uses the latest version.</p> <note>
     /// <p>This field is optional.</p>
     /// </note>
     pub fn get_document_version(&self) -> &::std::option::Option<::std::string::String> {

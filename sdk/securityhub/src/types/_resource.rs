@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Resource {
     /// <p>The type of the resource that details are provided for. If possible, set <code>Type</code> to one of the supported resource types. For example, if the resource is an EC2 instance, then set <code>Type</code> to <code>AwsEc2Instance</code>.</p>
-    /// <p>If the resource does not match any of the provided types, then set <code>Type</code> to <code>Other</code>.</p>
+    /// <p>If the resource does not match any of the provided types, then set <code>Type</code> to <code>Other</code>. </p>
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The canonical identifier for the given resource type.</p>
     pub id: ::std::option::Option<::std::string::String>,
@@ -21,14 +21,14 @@ pub struct Resource {
     pub data_classification: ::std::option::Option<crate::types::DataClassificationDetails>,
     /// <p>Additional details about the resource related to a finding.</p>
     pub details: ::std::option::Option<crate::types::ResourceDetails>,
-    /// <p>The name of the application that is related to a finding.</p>
+    /// <p> The name of the application that is related to a finding. </p>
     pub application_name: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the application that is related to a finding.</p>
+    /// <p> The Amazon Resource Name (ARN) of the application that is related to a finding. </p>
     pub application_arn: ::std::option::Option<::std::string::String>,
 }
 impl Resource {
     /// <p>The type of the resource that details are provided for. If possible, set <code>Type</code> to one of the supported resource types. For example, if the resource is an EC2 instance, then set <code>Type</code> to <code>AwsEc2Instance</code>.</p>
-    /// <p>If the resource does not match any of the provided types, then set <code>Type</code> to <code>Other</code>.</p>
+    /// <p>If the resource does not match any of the provided types, then set <code>Type</code> to <code>Other</code>. </p>
     pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
@@ -60,11 +60,11 @@ impl Resource {
     pub fn details(&self) -> ::std::option::Option<&crate::types::ResourceDetails> {
         self.details.as_ref()
     }
-    /// <p>The name of the application that is related to a finding.</p>
+    /// <p> The name of the application that is related to a finding. </p>
     pub fn application_name(&self) -> ::std::option::Option<&str> {
         self.application_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the application that is related to a finding.</p>
+    /// <p> The Amazon Resource Name (ARN) of the application that is related to a finding. </p>
     pub fn application_arn(&self) -> ::std::option::Option<&str> {
         self.application_arn.as_deref()
     }
@@ -93,20 +93,20 @@ pub struct ResourceBuilder {
 }
 impl ResourceBuilder {
     /// <p>The type of the resource that details are provided for. If possible, set <code>Type</code> to one of the supported resource types. For example, if the resource is an EC2 instance, then set <code>Type</code> to <code>AwsEc2Instance</code>.</p>
-    /// <p>If the resource does not match any of the provided types, then set <code>Type</code> to <code>Other</code>.</p>
+    /// <p>If the resource does not match any of the provided types, then set <code>Type</code> to <code>Other</code>. </p>
     /// This field is required.
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of the resource that details are provided for. If possible, set <code>Type</code> to one of the supported resource types. For example, if the resource is an EC2 instance, then set <code>Type</code> to <code>AwsEc2Instance</code>.</p>
-    /// <p>If the resource does not match any of the provided types, then set <code>Type</code> to <code>Other</code>.</p>
+    /// <p>If the resource does not match any of the provided types, then set <code>Type</code> to <code>Other</code>. </p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The type of the resource that details are provided for. If possible, set <code>Type</code> to one of the supported resource types. For example, if the resource is an EC2 instance, then set <code>Type</code> to <code>AwsEc2Instance</code>.</p>
-    /// <p>If the resource does not match any of the provided types, then set <code>Type</code> to <code>Other</code>.</p>
+    /// <p>If the resource does not match any of the provided types, then set <code>Type</code> to <code>Other</code>. </p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.r#type
     }
@@ -215,31 +215,31 @@ impl ResourceBuilder {
     pub fn get_details(&self) -> &::std::option::Option<crate::types::ResourceDetails> {
         &self.details
     }
-    /// <p>The name of the application that is related to a finding.</p>
+    /// <p> The name of the application that is related to a finding. </p>
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the application that is related to a finding.</p>
+    /// <p> The name of the application that is related to a finding. </p>
     pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_name = input;
         self
     }
-    /// <p>The name of the application that is related to a finding.</p>
+    /// <p> The name of the application that is related to a finding. </p>
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_name
     }
-    /// <p>The Amazon Resource Name (ARN) of the application that is related to a finding.</p>
+    /// <p> The Amazon Resource Name (ARN) of the application that is related to a finding. </p>
     pub fn application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the application that is related to a finding.</p>
+    /// <p> The Amazon Resource Name (ARN) of the application that is related to a finding. </p>
     pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the application that is related to a finding.</p>
+    /// <p> The Amazon Resource Name (ARN) of the application that is related to a finding. </p>
     pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_arn
     }

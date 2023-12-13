@@ -250,23 +250,23 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for RestoreTableF
 pub enum RestoreTableFromBackupError {
     /// <p>There is another ongoing conflicting backup control plane operation on the table. The backup is either being created, deleted or restored to a table.</p>
     BackupInUseException(crate::types::error::BackupInUseException),
-    /// <p>Backup not found for the given BackupARN.</p>
+    /// <p>Backup not found for the given BackupARN. </p>
     BackupNotFoundException(crate::types::error::BackupNotFoundException),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::types::error::InternalServerError),
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::types::error::InvalidEndpointException),
-    /// <p>There is no limit to the number of daily on-demand backups that can be taken.</p>
-    /// <p>For most purposes, up to 500 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>.</p>
+    /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p>
+    /// <p>For most purposes, up to 500 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
     /// <p>When you are creating a table with one or more secondary indexes, you can have up to 250 such requests running at a time. However, if the table or index specifications are complex, then DynamoDB might temporarily reduce the number of concurrent operations.</p>
     /// <p>When importing into DynamoDB, up to 50 simultaneous import table operations are allowed per account.</p>
     /// <p>There is a soft account quota of 2,500 tables.</p>
     /// <p>GetRecords was called with a value of more than 1000 for the limit request parameter.</p>
     /// <p>More than 2 processes are reading from the same streams shard at the same time. Exceeding this limit may result in request throttling.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
-    /// <p>A target table with the specified name already exists.</p>
+    /// <p>A target table with the specified name already exists. </p>
     TableAlreadyExistsException(crate::types::error::TableAlreadyExistsException),
-    /// <p>A target table with the specified name is either being created or deleted.</p>
+    /// <p>A target table with the specified name is either being created or deleted. </p>
     TableInUseException(crate::types::error::TableInUseException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

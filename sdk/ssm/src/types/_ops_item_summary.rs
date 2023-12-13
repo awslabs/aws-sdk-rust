@@ -22,7 +22,7 @@ pub struct OpsItemSummary {
     pub ops_item_id: ::std::option::Option<::std::string::String>,
     /// <p>A short heading that describes the nature of the OpsItem and the impacted resource.</p>
     pub title: ::std::option::Option<::std::string::String>,
-    /// <p>Operational data is custom data that provides useful reference details about the OpsItem.</p>
+    /// <p>Operational data is custom data that provides useful reference details about the OpsItem. </p>
     pub operational_data: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::OpsItemDataValue>>,
     /// <p>A list of OpsItems by category.</p>
     pub category: ::std::option::Option<::std::string::String>,
@@ -30,15 +30,9 @@ pub struct OpsItemSummary {
     pub severity: ::std::option::Option<::std::string::String>,
     /// <p>The type of OpsItem. Systems Manager supports the following types of OpsItems:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>/aws/issue</code></p>
-    /// <p>This type of OpsItem is used for default OpsItems created by OpsCenter.</p></li>
-    /// <li>
-    /// <p><code>/aws/changerequest</code></p>
-    /// <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests.</p></li>
-    /// <li>
-    /// <p><code>/aws/insight</code></p>
-    /// <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems.</p></li>
+    /// <li> <p> <code>/aws/issue</code> </p> <p>This type of OpsItem is used for default OpsItems created by OpsCenter. </p> </li>
+    /// <li> <p> <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests. </p> </li>
+    /// <li> <p> <code>/aws/insight</code> </p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li>
     /// </ul>
     pub ops_item_type: ::std::option::Option<::std::string::String>,
     /// <p>The time a runbook workflow started. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>
@@ -87,7 +81,7 @@ impl OpsItemSummary {
     pub fn title(&self) -> ::std::option::Option<&str> {
         self.title.as_deref()
     }
-    /// <p>Operational data is custom data that provides useful reference details about the OpsItem.</p>
+    /// <p>Operational data is custom data that provides useful reference details about the OpsItem. </p>
     pub fn operational_data(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::OpsItemDataValue>> {
         self.operational_data.as_ref()
     }
@@ -101,15 +95,9 @@ impl OpsItemSummary {
     }
     /// <p>The type of OpsItem. Systems Manager supports the following types of OpsItems:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>/aws/issue</code></p>
-    /// <p>This type of OpsItem is used for default OpsItems created by OpsCenter.</p></li>
-    /// <li>
-    /// <p><code>/aws/changerequest</code></p>
-    /// <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests.</p></li>
-    /// <li>
-    /// <p><code>/aws/insight</code></p>
-    /// <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems.</p></li>
+    /// <li> <p> <code>/aws/issue</code> </p> <p>This type of OpsItem is used for default OpsItems created by OpsCenter. </p> </li>
+    /// <li> <p> <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests. </p> </li>
+    /// <li> <p> <code>/aws/insight</code> </p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li>
     /// </ul>
     pub fn ops_item_type(&self) -> ::std::option::Option<&str> {
         self.ops_item_type.as_deref()
@@ -291,14 +279,14 @@ impl OpsItemSummaryBuilder {
     ///
     /// To override the contents of this collection use [`set_operational_data`](Self::set_operational_data).
     ///
-    /// <p>Operational data is custom data that provides useful reference details about the OpsItem.</p>
+    /// <p>Operational data is custom data that provides useful reference details about the OpsItem. </p>
     pub fn operational_data(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::OpsItemDataValue) -> Self {
         let mut hash_map = self.operational_data.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.operational_data = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>Operational data is custom data that provides useful reference details about the OpsItem.</p>
+    /// <p>Operational data is custom data that provides useful reference details about the OpsItem. </p>
     pub fn set_operational_data(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::OpsItemDataValue>>,
@@ -306,7 +294,7 @@ impl OpsItemSummaryBuilder {
         self.operational_data = input;
         self
     }
-    /// <p>Operational data is custom data that provides useful reference details about the OpsItem.</p>
+    /// <p>Operational data is custom data that provides useful reference details about the OpsItem. </p>
     pub fn get_operational_data(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::OpsItemDataValue>> {
         &self.operational_data
     }
@@ -340,15 +328,9 @@ impl OpsItemSummaryBuilder {
     }
     /// <p>The type of OpsItem. Systems Manager supports the following types of OpsItems:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>/aws/issue</code></p>
-    /// <p>This type of OpsItem is used for default OpsItems created by OpsCenter.</p></li>
-    /// <li>
-    /// <p><code>/aws/changerequest</code></p>
-    /// <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests.</p></li>
-    /// <li>
-    /// <p><code>/aws/insight</code></p>
-    /// <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems.</p></li>
+    /// <li> <p> <code>/aws/issue</code> </p> <p>This type of OpsItem is used for default OpsItems created by OpsCenter. </p> </li>
+    /// <li> <p> <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests. </p> </li>
+    /// <li> <p> <code>/aws/insight</code> </p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li>
     /// </ul>
     pub fn ops_item_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ops_item_type = ::std::option::Option::Some(input.into());
@@ -356,15 +338,9 @@ impl OpsItemSummaryBuilder {
     }
     /// <p>The type of OpsItem. Systems Manager supports the following types of OpsItems:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>/aws/issue</code></p>
-    /// <p>This type of OpsItem is used for default OpsItems created by OpsCenter.</p></li>
-    /// <li>
-    /// <p><code>/aws/changerequest</code></p>
-    /// <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests.</p></li>
-    /// <li>
-    /// <p><code>/aws/insight</code></p>
-    /// <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems.</p></li>
+    /// <li> <p> <code>/aws/issue</code> </p> <p>This type of OpsItem is used for default OpsItems created by OpsCenter. </p> </li>
+    /// <li> <p> <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests. </p> </li>
+    /// <li> <p> <code>/aws/insight</code> </p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li>
     /// </ul>
     pub fn set_ops_item_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ops_item_type = input;
@@ -372,15 +348,9 @@ impl OpsItemSummaryBuilder {
     }
     /// <p>The type of OpsItem. Systems Manager supports the following types of OpsItems:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>/aws/issue</code></p>
-    /// <p>This type of OpsItem is used for default OpsItems created by OpsCenter.</p></li>
-    /// <li>
-    /// <p><code>/aws/changerequest</code></p>
-    /// <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests.</p></li>
-    /// <li>
-    /// <p><code>/aws/insight</code></p>
-    /// <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems.</p></li>
+    /// <li> <p> <code>/aws/issue</code> </p> <p>This type of OpsItem is used for default OpsItems created by OpsCenter. </p> </li>
+    /// <li> <p> <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests. </p> </li>
+    /// <li> <p> <code>/aws/insight</code> </p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li>
     /// </ul>
     pub fn get_ops_item_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.ops_item_type

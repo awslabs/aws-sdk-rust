@@ -4,19 +4,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KxUser {
-    /// <p>The Amazon Resource Name (ARN) that identifies the user. For more information about ARNs and how to use ARNs in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
+    /// <p> The Amazon Resource Name (ARN) that identifies the user. For more information about ARNs and how to use ARNs in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>. </p>
     pub user_arn: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the user.</p>
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>The IAM role ARN that is associated with the user.</p>
     pub iam_role: ::std::option::Option<::std::string::String>,
-    /// <p>The timestamp at which the kdb user was created.</p>
+    /// <p>The timestamp at which the kdb user was created. </p>
     pub create_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The timestamp at which the kdb user was updated.</p>
+    /// <p>The timestamp at which the kdb user was updated. </p>
     pub update_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl KxUser {
-    /// <p>The Amazon Resource Name (ARN) that identifies the user. For more information about ARNs and how to use ARNs in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
+    /// <p> The Amazon Resource Name (ARN) that identifies the user. For more information about ARNs and how to use ARNs in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>. </p>
     pub fn user_arn(&self) -> ::std::option::Option<&str> {
         self.user_arn.as_deref()
     }
@@ -28,11 +28,11 @@ impl KxUser {
     pub fn iam_role(&self) -> ::std::option::Option<&str> {
         self.iam_role.as_deref()
     }
-    /// <p>The timestamp at which the kdb user was created.</p>
+    /// <p>The timestamp at which the kdb user was created. </p>
     pub fn create_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.create_timestamp.as_ref()
     }
-    /// <p>The timestamp at which the kdb user was updated.</p>
+    /// <p>The timestamp at which the kdb user was updated. </p>
     pub fn update_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.update_timestamp.as_ref()
     }
@@ -55,17 +55,17 @@ pub struct KxUserBuilder {
     pub(crate) update_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl KxUserBuilder {
-    /// <p>The Amazon Resource Name (ARN) that identifies the user. For more information about ARNs and how to use ARNs in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
+    /// <p> The Amazon Resource Name (ARN) that identifies the user. For more information about ARNs and how to use ARNs in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>. </p>
     pub fn user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that identifies the user. For more information about ARNs and how to use ARNs in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
+    /// <p> The Amazon Resource Name (ARN) that identifies the user. For more information about ARNs and how to use ARNs in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>. </p>
     pub fn set_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that identifies the user. For more information about ARNs and how to use ARNs in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
+    /// <p> The Amazon Resource Name (ARN) that identifies the user. For more information about ARNs and how to use ARNs in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>. </p>
     pub fn get_user_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_arn
     }
@@ -97,31 +97,31 @@ impl KxUserBuilder {
     pub fn get_iam_role(&self) -> &::std::option::Option<::std::string::String> {
         &self.iam_role
     }
-    /// <p>The timestamp at which the kdb user was created.</p>
+    /// <p>The timestamp at which the kdb user was created. </p>
     pub fn create_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_timestamp = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The timestamp at which the kdb user was created.</p>
+    /// <p>The timestamp at which the kdb user was created. </p>
     pub fn set_create_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_timestamp = input;
         self
     }
-    /// <p>The timestamp at which the kdb user was created.</p>
+    /// <p>The timestamp at which the kdb user was created. </p>
     pub fn get_create_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.create_timestamp
     }
-    /// <p>The timestamp at which the kdb user was updated.</p>
+    /// <p>The timestamp at which the kdb user was updated. </p>
     pub fn update_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_timestamp = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The timestamp at which the kdb user was updated.</p>
+    /// <p>The timestamp at which the kdb user was updated. </p>
     pub fn set_update_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_timestamp = input;
         self
     }
-    /// <p>The timestamp at which the kdb user was updated.</p>
+    /// <p>The timestamp at which the kdb user was updated. </p>
     pub fn get_update_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.update_timestamp
     }

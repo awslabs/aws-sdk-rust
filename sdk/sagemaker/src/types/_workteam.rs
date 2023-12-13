@@ -6,7 +6,7 @@
 pub struct Workteam {
     /// <p>The name of the work team.</p>
     pub workteam_name: ::std::option::Option<::std::string::String>,
-    /// <p>A list of <code>MemberDefinition</code> objects that contains objects that identify the workers that make up the work team.</p>
+    /// <p>A list of <code>MemberDefinition</code> objects that contains objects that identify the workers that make up the work team. </p>
     /// <p>Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP). For private workforces created using Amazon Cognito use <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC identity provider (IdP) use <code>OidcMemberDefinition</code>.</p>
     pub member_definitions: ::std::option::Option<::std::vec::Vec<crate::types::MemberDefinition>>,
     /// <p>The Amazon Resource Name (ARN) that identifies the work team.</p>
@@ -31,7 +31,7 @@ impl Workteam {
     pub fn workteam_name(&self) -> ::std::option::Option<&str> {
         self.workteam_name.as_deref()
     }
-    /// <p>A list of <code>MemberDefinition</code> objects that contains objects that identify the workers that make up the work team.</p>
+    /// <p>A list of <code>MemberDefinition</code> objects that contains objects that identify the workers that make up the work team. </p>
     /// <p>Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP). For private workforces created using Amazon Cognito use <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC identity provider (IdP) use <code>OidcMemberDefinition</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.member_definitions.is_none()`.
@@ -115,7 +115,7 @@ impl WorkteamBuilder {
     ///
     /// To override the contents of this collection use [`set_member_definitions`](Self::set_member_definitions).
     ///
-    /// <p>A list of <code>MemberDefinition</code> objects that contains objects that identify the workers that make up the work team.</p>
+    /// <p>A list of <code>MemberDefinition</code> objects that contains objects that identify the workers that make up the work team. </p>
     /// <p>Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP). For private workforces created using Amazon Cognito use <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC identity provider (IdP) use <code>OidcMemberDefinition</code>.</p>
     pub fn member_definitions(mut self, input: crate::types::MemberDefinition) -> Self {
         let mut v = self.member_definitions.unwrap_or_default();
@@ -123,13 +123,13 @@ impl WorkteamBuilder {
         self.member_definitions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of <code>MemberDefinition</code> objects that contains objects that identify the workers that make up the work team.</p>
+    /// <p>A list of <code>MemberDefinition</code> objects that contains objects that identify the workers that make up the work team. </p>
     /// <p>Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP). For private workforces created using Amazon Cognito use <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC identity provider (IdP) use <code>OidcMemberDefinition</code>.</p>
     pub fn set_member_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MemberDefinition>>) -> Self {
         self.member_definitions = input;
         self
     }
-    /// <p>A list of <code>MemberDefinition</code> objects that contains objects that identify the workers that make up the work team.</p>
+    /// <p>A list of <code>MemberDefinition</code> objects that contains objects that identify the workers that make up the work team. </p>
     /// <p>Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP). For private workforces created using Amazon Cognito use <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC identity provider (IdP) use <code>OidcMemberDefinition</code>.</p>
     pub fn get_member_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberDefinition>> {
         &self.member_definitions

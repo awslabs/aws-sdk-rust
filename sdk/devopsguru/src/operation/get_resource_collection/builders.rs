@@ -22,7 +22,7 @@ impl GetResourceCollectionInputBuilder {
 }
 /// Fluent builder constructing a request to `GetResourceCollection`.
 ///
-/// <p>Returns lists Amazon Web Services resources that are of the specified resource collection type. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks.</p>
+/// <p> Returns lists Amazon Web Services resources that are of the specified resource collection type. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetResourceCollectionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,17 +114,17 @@ impl GetResourceCollectionFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::get_resource_collection::paginator::GetResourceCollectionPaginator {
         crate::operation::get_resource_collection::paginator::GetResourceCollectionPaginator::new(self.handle, self.inner)
     }
-    /// <p>The type of Amazon Web Services resource collections to return. The one valid value is <code>CLOUD_FORMATION</code> for Amazon Web Services CloudFormation stacks.</p>
+    /// <p> The type of Amazon Web Services resource collections to return. The one valid value is <code>CLOUD_FORMATION</code> for Amazon Web Services CloudFormation stacks. </p>
     pub fn resource_collection_type(mut self, input: crate::types::ResourceCollectionType) -> Self {
         self.inner = self.inner.resource_collection_type(input);
         self
     }
-    /// <p>The type of Amazon Web Services resource collections to return. The one valid value is <code>CLOUD_FORMATION</code> for Amazon Web Services CloudFormation stacks.</p>
+    /// <p> The type of Amazon Web Services resource collections to return. The one valid value is <code>CLOUD_FORMATION</code> for Amazon Web Services CloudFormation stacks. </p>
     pub fn set_resource_collection_type(mut self, input: ::std::option::Option<crate::types::ResourceCollectionType>) -> Self {
         self.inner = self.inner.set_resource_collection_type(input);
         self
     }
-    /// <p>The type of Amazon Web Services resource collections to return. The one valid value is <code>CLOUD_FORMATION</code> for Amazon Web Services CloudFormation stacks.</p>
+    /// <p> The type of Amazon Web Services resource collections to return. The one valid value is <code>CLOUD_FORMATION</code> for Amazon Web Services CloudFormation stacks. </p>
     pub fn get_resource_collection_type(&self) -> &::std::option::Option<crate::types::ResourceCollectionType> {
         self.inner.get_resource_collection_type()
     }

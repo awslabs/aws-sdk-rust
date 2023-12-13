@@ -5,12 +5,9 @@
 pub struct DescribeSnapshotTierStatusInput {
     /// <p>The filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>snapshot-id</code> - The snapshot ID.</p></li>
-    /// <li>
-    /// <p><code>volume-id</code> - The ID of the volume the snapshot is for.</p></li>
-    /// <li>
-    /// <p><code>last-tiering-operation</code> - The state of the last archive or restore action. (<code>archival-in-progress</code> | <code>archival-completed</code> | <code>archival-failed</code> | <code>permanent-restore-in-progress</code> | <code>permanent-restore-completed</code> | <code>permanent-restore-failed</code> | <code>temporary-restore-in-progress</code> | <code>temporary-restore-completed</code> | <code>temporary-restore-failed</code>)</p></li>
+    /// <li> <p> <code>snapshot-id</code> - The snapshot ID.</p> </li>
+    /// <li> <p> <code>volume-id</code> - The ID of the volume the snapshot is for.</p> </li>
+    /// <li> <p> <code>last-tiering-operation</code> - The state of the last archive or restore action. (<code>archival-in-progress</code> | <code>archival-completed</code> | <code>archival-failed</code> | <code>permanent-restore-in-progress</code> | <code>permanent-restore-completed</code> | <code>permanent-restore-failed</code> | <code>temporary-restore-in-progress</code> | <code>temporary-restore-completed</code> | <code>temporary-restore-failed</code>)</p> </li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -23,12 +20,9 @@ pub struct DescribeSnapshotTierStatusInput {
 impl DescribeSnapshotTierStatusInput {
     /// <p>The filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>snapshot-id</code> - The snapshot ID.</p></li>
-    /// <li>
-    /// <p><code>volume-id</code> - The ID of the volume the snapshot is for.</p></li>
-    /// <li>
-    /// <p><code>last-tiering-operation</code> - The state of the last archive or restore action. (<code>archival-in-progress</code> | <code>archival-completed</code> | <code>archival-failed</code> | <code>permanent-restore-in-progress</code> | <code>permanent-restore-completed</code> | <code>permanent-restore-failed</code> | <code>temporary-restore-in-progress</code> | <code>temporary-restore-completed</code> | <code>temporary-restore-failed</code>)</p></li>
+    /// <li> <p> <code>snapshot-id</code> - The snapshot ID.</p> </li>
+    /// <li> <p> <code>volume-id</code> - The ID of the volume the snapshot is for.</p> </li>
+    /// <li> <p> <code>last-tiering-operation</code> - The state of the last archive or restore action. (<code>archival-in-progress</code> | <code>archival-completed</code> | <code>archival-failed</code> | <code>permanent-restore-in-progress</code> | <code>permanent-restore-completed</code> | <code>permanent-restore-failed</code> | <code>temporary-restore-in-progress</code> | <code>temporary-restore-completed</code> | <code>temporary-restore-failed</code>)</p> </li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
@@ -71,12 +65,9 @@ impl DescribeSnapshotTierStatusInputBuilder {
     ///
     /// <p>The filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>snapshot-id</code> - The snapshot ID.</p></li>
-    /// <li>
-    /// <p><code>volume-id</code> - The ID of the volume the snapshot is for.</p></li>
-    /// <li>
-    /// <p><code>last-tiering-operation</code> - The state of the last archive or restore action. (<code>archival-in-progress</code> | <code>archival-completed</code> | <code>archival-failed</code> | <code>permanent-restore-in-progress</code> | <code>permanent-restore-completed</code> | <code>permanent-restore-failed</code> | <code>temporary-restore-in-progress</code> | <code>temporary-restore-completed</code> | <code>temporary-restore-failed</code>)</p></li>
+    /// <li> <p> <code>snapshot-id</code> - The snapshot ID.</p> </li>
+    /// <li> <p> <code>volume-id</code> - The ID of the volume the snapshot is for.</p> </li>
+    /// <li> <p> <code>last-tiering-operation</code> - The state of the last archive or restore action. (<code>archival-in-progress</code> | <code>archival-completed</code> | <code>archival-failed</code> | <code>permanent-restore-in-progress</code> | <code>permanent-restore-completed</code> | <code>permanent-restore-failed</code> | <code>temporary-restore-in-progress</code> | <code>temporary-restore-completed</code> | <code>temporary-restore-failed</code>)</p> </li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
@@ -86,12 +77,9 @@ impl DescribeSnapshotTierStatusInputBuilder {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>snapshot-id</code> - The snapshot ID.</p></li>
-    /// <li>
-    /// <p><code>volume-id</code> - The ID of the volume the snapshot is for.</p></li>
-    /// <li>
-    /// <p><code>last-tiering-operation</code> - The state of the last archive or restore action. (<code>archival-in-progress</code> | <code>archival-completed</code> | <code>archival-failed</code> | <code>permanent-restore-in-progress</code> | <code>permanent-restore-completed</code> | <code>permanent-restore-failed</code> | <code>temporary-restore-in-progress</code> | <code>temporary-restore-completed</code> | <code>temporary-restore-failed</code>)</p></li>
+    /// <li> <p> <code>snapshot-id</code> - The snapshot ID.</p> </li>
+    /// <li> <p> <code>volume-id</code> - The ID of the volume the snapshot is for.</p> </li>
+    /// <li> <p> <code>last-tiering-operation</code> - The state of the last archive or restore action. (<code>archival-in-progress</code> | <code>archival-completed</code> | <code>archival-failed</code> | <code>permanent-restore-in-progress</code> | <code>permanent-restore-completed</code> | <code>permanent-restore-failed</code> | <code>temporary-restore-in-progress</code> | <code>temporary-restore-completed</code> | <code>temporary-restore-failed</code>)</p> </li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
@@ -99,12 +87,9 @@ impl DescribeSnapshotTierStatusInputBuilder {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>snapshot-id</code> - The snapshot ID.</p></li>
-    /// <li>
-    /// <p><code>volume-id</code> - The ID of the volume the snapshot is for.</p></li>
-    /// <li>
-    /// <p><code>last-tiering-operation</code> - The state of the last archive or restore action. (<code>archival-in-progress</code> | <code>archival-completed</code> | <code>archival-failed</code> | <code>permanent-restore-in-progress</code> | <code>permanent-restore-completed</code> | <code>permanent-restore-failed</code> | <code>temporary-restore-in-progress</code> | <code>temporary-restore-completed</code> | <code>temporary-restore-failed</code>)</p></li>
+    /// <li> <p> <code>snapshot-id</code> - The snapshot ID.</p> </li>
+    /// <li> <p> <code>volume-id</code> - The ID of the volume the snapshot is for.</p> </li>
+    /// <li> <p> <code>last-tiering-operation</code> - The state of the last archive or restore action. (<code>archival-in-progress</code> | <code>archival-completed</code> | <code>archival-failed</code> | <code>permanent-restore-in-progress</code> | <code>permanent-restore-completed</code> | <code>permanent-restore-failed</code> | <code>temporary-restore-in-progress</code> | <code>temporary-restore-completed</code> | <code>temporary-restore-failed</code>)</p> </li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters

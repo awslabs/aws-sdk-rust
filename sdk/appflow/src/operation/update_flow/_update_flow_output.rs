@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFlowOutput {
-    /// <p>Indicates the current status of the flow.</p>
+    /// <p>Indicates the current status of the flow. </p>
     pub flow_status: ::std::option::Option<crate::types::FlowStatus>,
     _request_id: Option<String>,
 }
 impl UpdateFlowOutput {
-    /// <p>Indicates the current status of the flow.</p>
+    /// <p>Indicates the current status of the flow. </p>
     pub fn flow_status(&self) -> ::std::option::Option<&crate::types::FlowStatus> {
         self.flow_status.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct UpdateFlowOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateFlowOutputBuilder {
-    /// <p>Indicates the current status of the flow.</p>
+    /// <p>Indicates the current status of the flow. </p>
     pub fn flow_status(mut self, input: crate::types::FlowStatus) -> Self {
         self.flow_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates the current status of the flow.</p>
+    /// <p>Indicates the current status of the flow. </p>
     pub fn set_flow_status(mut self, input: ::std::option::Option<crate::types::FlowStatus>) -> Self {
         self.flow_status = input;
         self
     }
-    /// <p>Indicates the current status of the flow.</p>
+    /// <p>Indicates the current status of the flow. </p>
     pub fn get_flow_status(&self) -> &::std::option::Option<crate::types::FlowStatus> {
         &self.flow_status
     }

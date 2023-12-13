@@ -9,13 +9,13 @@ pub struct PlatformBranchSummary {
     /// <p>The name of the platform branch.</p>
     pub branch_name: ::std::option::Option<::std::string::String>,
     /// <p>The support life cycle state of the platform branch.</p>
-    /// <p>Possible values: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code></p>
+    /// <p>Possible values: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code> </p>
     pub lifecycle_state: ::std::option::Option<::std::string::String>,
     /// <p>An ordinal number that designates the order in which platform branches have been added to a platform. This can be helpful, for example, if your code calls the <code>ListPlatformBranches</code> action and then displays a list of platform branches.</p>
     /// <p>A larger <code>BranchOrder</code> value designates a newer platform branch within the platform.</p>
     pub branch_order: i32,
     /// <p>The environment tiers that platform versions in this branch support.</p>
-    /// <p>Possible values: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code></p>
+    /// <p>Possible values: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code> </p>
     pub supported_tier_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl PlatformBranchSummary {
@@ -28,7 +28,7 @@ impl PlatformBranchSummary {
         self.branch_name.as_deref()
     }
     /// <p>The support life cycle state of the platform branch.</p>
-    /// <p>Possible values: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code></p>
+    /// <p>Possible values: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code> </p>
     pub fn lifecycle_state(&self) -> ::std::option::Option<&str> {
         self.lifecycle_state.as_deref()
     }
@@ -38,7 +38,7 @@ impl PlatformBranchSummary {
         self.branch_order
     }
     /// <p>The environment tiers that platform versions in this branch support.</p>
-    /// <p>Possible values: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code></p>
+    /// <p>Possible values: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code> </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_tier_list.is_none()`.
     pub fn supported_tier_list(&self) -> &[::std::string::String] {
@@ -92,19 +92,19 @@ impl PlatformBranchSummaryBuilder {
         &self.branch_name
     }
     /// <p>The support life cycle state of the platform branch.</p>
-    /// <p>Possible values: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code></p>
+    /// <p>Possible values: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code> </p>
     pub fn lifecycle_state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lifecycle_state = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The support life cycle state of the platform branch.</p>
-    /// <p>Possible values: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code></p>
+    /// <p>Possible values: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code> </p>
     pub fn set_lifecycle_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lifecycle_state = input;
         self
     }
     /// <p>The support life cycle state of the platform branch.</p>
-    /// <p>Possible values: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code></p>
+    /// <p>Possible values: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code> </p>
     pub fn get_lifecycle_state(&self) -> &::std::option::Option<::std::string::String> {
         &self.lifecycle_state
     }
@@ -130,7 +130,7 @@ impl PlatformBranchSummaryBuilder {
     /// To override the contents of this collection use [`set_supported_tier_list`](Self::set_supported_tier_list).
     ///
     /// <p>The environment tiers that platform versions in this branch support.</p>
-    /// <p>Possible values: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code></p>
+    /// <p>Possible values: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code> </p>
     pub fn supported_tier_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.supported_tier_list.unwrap_or_default();
         v.push(input.into());
@@ -138,13 +138,13 @@ impl PlatformBranchSummaryBuilder {
         self
     }
     /// <p>The environment tiers that platform versions in this branch support.</p>
-    /// <p>Possible values: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code></p>
+    /// <p>Possible values: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code> </p>
     pub fn set_supported_tier_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.supported_tier_list = input;
         self
     }
     /// <p>The environment tiers that platform versions in this branch support.</p>
-    /// <p>Possible values: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code></p>
+    /// <p>Possible values: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code> </p>
     pub fn get_supported_tier_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.supported_tier_list
     }

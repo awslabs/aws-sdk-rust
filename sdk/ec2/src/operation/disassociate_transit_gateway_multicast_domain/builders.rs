@@ -22,7 +22,7 @@ impl DisassociateTransitGatewayMulticastDomainInputBuilder {
 }
 /// Fluent builder constructing a request to `DisassociateTransitGatewayMulticastDomain`.
 ///
-/// <p>Disassociates the specified subnets from the transit gateway multicast domain.</p>
+/// <p>Disassociates the specified subnets from the transit gateway multicast domain. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateTransitGatewayMulticastDomainFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

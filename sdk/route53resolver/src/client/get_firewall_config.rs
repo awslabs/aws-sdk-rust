@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`resource_id(impl Into<String>)`](crate::operation::get_firewall_config::builders::GetFirewallConfigFluentBuilder::resource_id) / [`set_resource_id(Option<String>)`](crate::operation::get_firewall_config::builders::GetFirewallConfigFluentBuilder::set_resource_id):<br>required: **true**<br><p>The ID of the VPC from Amazon VPC that the configuration is for.</p><br>
     /// - On success, responds with [`GetFirewallConfigOutput`](crate::operation::get_firewall_config::GetFirewallConfigOutput) with field(s):
-    ///   - [`firewall_config(Option<FirewallConfig>)`](crate::operation::get_firewall_config::GetFirewallConfigOutput::firewall_config): <p>Configuration of the firewall behavior provided by DNS Firewall for a single VPC from AmazonVPC.</p>
+    ///   - [`firewall_config(Option<FirewallConfig>)`](crate::operation::get_firewall_config::GetFirewallConfigOutput::firewall_config): <p>Configuration of the firewall behavior provided by DNS Firewall for a single VPC from AmazonVPC. </p>
     /// - On failure, responds with [`SdkError<GetFirewallConfigError>`](crate::operation::get_firewall_config::GetFirewallConfigError)
     pub fn get_firewall_config(&self) -> crate::operation::get_firewall_config::builders::GetFirewallConfigFluentBuilder {
         crate::operation::get_firewall_config::builders::GetFirewallConfigFluentBuilder::new(self.handle.clone())

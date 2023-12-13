@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetServerStrategiesInput {
-    /// <p>The ID of the server.</p>
+    /// <p> The ID of the server. </p>
     pub server_id: ::std::option::Option<::std::string::String>,
 }
 impl GetServerStrategiesInput {
-    /// <p>The ID of the server.</p>
+    /// <p> The ID of the server. </p>
     pub fn server_id(&self) -> ::std::option::Option<&str> {
         self.server_id.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct GetServerStrategiesInputBuilder {
     pub(crate) server_id: ::std::option::Option<::std::string::String>,
 }
 impl GetServerStrategiesInputBuilder {
-    /// <p>The ID of the server.</p>
+    /// <p> The ID of the server. </p>
     /// This field is required.
     pub fn server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the server.</p>
+    /// <p> The ID of the server. </p>
     pub fn set_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_id = input;
         self
     }
-    /// <p>The ID of the server.</p>
+    /// <p> The ID of the server. </p>
     pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.server_id
     }

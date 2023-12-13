@@ -4,17 +4,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SchemaConfiguration {
-    /// <p>The role that Kinesis Data Firehose can use to access Amazon Web Services Glue. This role must be in the same account you use for Kinesis Data Firehose. Cross-account roles aren't allowed.</p><important>
+    /// <p>The role that Kinesis Data Firehose can use to access Amazon Web Services Glue. This role must be in the same account you use for Kinesis Data Firehose. Cross-account roles aren't allowed.</p> <important>
     /// <p>If the <code>SchemaConfiguration</code> request parameter is used as part of invoking the <code>CreateDeliveryStream</code> API, then the <code>RoleARN</code> property is required and its value must be specified.</p>
     /// </important>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services Glue Data Catalog. If you don't supply this, the Amazon Web Services account ID is used by default.</p>
     pub catalog_id: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the name of the Amazon Web Services Glue database that contains the schema for the output data.</p><important>
+    /// <p>Specifies the name of the Amazon Web Services Glue database that contains the schema for the output data.</p> <important>
     /// <p>If the <code>SchemaConfiguration</code> request parameter is used as part of invoking the <code>CreateDeliveryStream</code> API, then the <code>DatabaseName</code> property is required and its value must be specified.</p>
     /// </important>
     pub database_name: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the Amazon Web Services Glue table that contains the column information that constitutes your data schema.</p><important>
+    /// <p>Specifies the Amazon Web Services Glue table that contains the column information that constitutes your data schema.</p> <important>
     /// <p>If the <code>SchemaConfiguration</code> request parameter is used as part of invoking the <code>CreateDeliveryStream</code> API, then the <code>TableName</code> property is required and its value must be specified.</p>
     /// </important>
     pub table_name: ::std::option::Option<::std::string::String>,
@@ -24,7 +24,7 @@ pub struct SchemaConfiguration {
     pub version_id: ::std::option::Option<::std::string::String>,
 }
 impl SchemaConfiguration {
-    /// <p>The role that Kinesis Data Firehose can use to access Amazon Web Services Glue. This role must be in the same account you use for Kinesis Data Firehose. Cross-account roles aren't allowed.</p><important>
+    /// <p>The role that Kinesis Data Firehose can use to access Amazon Web Services Glue. This role must be in the same account you use for Kinesis Data Firehose. Cross-account roles aren't allowed.</p> <important>
     /// <p>If the <code>SchemaConfiguration</code> request parameter is used as part of invoking the <code>CreateDeliveryStream</code> API, then the <code>RoleARN</code> property is required and its value must be specified.</p>
     /// </important>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
@@ -34,13 +34,13 @@ impl SchemaConfiguration {
     pub fn catalog_id(&self) -> ::std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
-    /// <p>Specifies the name of the Amazon Web Services Glue database that contains the schema for the output data.</p><important>
+    /// <p>Specifies the name of the Amazon Web Services Glue database that contains the schema for the output data.</p> <important>
     /// <p>If the <code>SchemaConfiguration</code> request parameter is used as part of invoking the <code>CreateDeliveryStream</code> API, then the <code>DatabaseName</code> property is required and its value must be specified.</p>
     /// </important>
     pub fn database_name(&self) -> ::std::option::Option<&str> {
         self.database_name.as_deref()
     }
-    /// <p>Specifies the Amazon Web Services Glue table that contains the column information that constitutes your data schema.</p><important>
+    /// <p>Specifies the Amazon Web Services Glue table that contains the column information that constitutes your data schema.</p> <important>
     /// <p>If the <code>SchemaConfiguration</code> request parameter is used as part of invoking the <code>CreateDeliveryStream</code> API, then the <code>TableName</code> property is required and its value must be specified.</p>
     /// </important>
     pub fn table_name(&self) -> ::std::option::Option<&str> {
@@ -74,21 +74,21 @@ pub struct SchemaConfigurationBuilder {
     pub(crate) version_id: ::std::option::Option<::std::string::String>,
 }
 impl SchemaConfigurationBuilder {
-    /// <p>The role that Kinesis Data Firehose can use to access Amazon Web Services Glue. This role must be in the same account you use for Kinesis Data Firehose. Cross-account roles aren't allowed.</p><important>
+    /// <p>The role that Kinesis Data Firehose can use to access Amazon Web Services Glue. This role must be in the same account you use for Kinesis Data Firehose. Cross-account roles aren't allowed.</p> <important>
     /// <p>If the <code>SchemaConfiguration</code> request parameter is used as part of invoking the <code>CreateDeliveryStream</code> API, then the <code>RoleARN</code> property is required and its value must be specified.</p>
     /// </important>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The role that Kinesis Data Firehose can use to access Amazon Web Services Glue. This role must be in the same account you use for Kinesis Data Firehose. Cross-account roles aren't allowed.</p><important>
+    /// <p>The role that Kinesis Data Firehose can use to access Amazon Web Services Glue. This role must be in the same account you use for Kinesis Data Firehose. Cross-account roles aren't allowed.</p> <important>
     /// <p>If the <code>SchemaConfiguration</code> request parameter is used as part of invoking the <code>CreateDeliveryStream</code> API, then the <code>RoleARN</code> property is required and its value must be specified.</p>
     /// </important>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// <p>The role that Kinesis Data Firehose can use to access Amazon Web Services Glue. This role must be in the same account you use for Kinesis Data Firehose. Cross-account roles aren't allowed.</p><important>
+    /// <p>The role that Kinesis Data Firehose can use to access Amazon Web Services Glue. This role must be in the same account you use for Kinesis Data Firehose. Cross-account roles aren't allowed.</p> <important>
     /// <p>If the <code>SchemaConfiguration</code> request parameter is used as part of invoking the <code>CreateDeliveryStream</code> API, then the <code>RoleARN</code> property is required and its value must be specified.</p>
     /// </important>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,41 +108,41 @@ impl SchemaConfigurationBuilder {
     pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.catalog_id
     }
-    /// <p>Specifies the name of the Amazon Web Services Glue database that contains the schema for the output data.</p><important>
+    /// <p>Specifies the name of the Amazon Web Services Glue database that contains the schema for the output data.</p> <important>
     /// <p>If the <code>SchemaConfiguration</code> request parameter is used as part of invoking the <code>CreateDeliveryStream</code> API, then the <code>DatabaseName</code> property is required and its value must be specified.</p>
     /// </important>
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the name of the Amazon Web Services Glue database that contains the schema for the output data.</p><important>
+    /// <p>Specifies the name of the Amazon Web Services Glue database that contains the schema for the output data.</p> <important>
     /// <p>If the <code>SchemaConfiguration</code> request parameter is used as part of invoking the <code>CreateDeliveryStream</code> API, then the <code>DatabaseName</code> property is required and its value must be specified.</p>
     /// </important>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
-    /// <p>Specifies the name of the Amazon Web Services Glue database that contains the schema for the output data.</p><important>
+    /// <p>Specifies the name of the Amazon Web Services Glue database that contains the schema for the output data.</p> <important>
     /// <p>If the <code>SchemaConfiguration</code> request parameter is used as part of invoking the <code>CreateDeliveryStream</code> API, then the <code>DatabaseName</code> property is required and its value must be specified.</p>
     /// </important>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.database_name
     }
-    /// <p>Specifies the Amazon Web Services Glue table that contains the column information that constitutes your data schema.</p><important>
+    /// <p>Specifies the Amazon Web Services Glue table that contains the column information that constitutes your data schema.</p> <important>
     /// <p>If the <code>SchemaConfiguration</code> request parameter is used as part of invoking the <code>CreateDeliveryStream</code> API, then the <code>TableName</code> property is required and its value must be specified.</p>
     /// </important>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the Amazon Web Services Glue table that contains the column information that constitutes your data schema.</p><important>
+    /// <p>Specifies the Amazon Web Services Glue table that contains the column information that constitutes your data schema.</p> <important>
     /// <p>If the <code>SchemaConfiguration</code> request parameter is used as part of invoking the <code>CreateDeliveryStream</code> API, then the <code>TableName</code> property is required and its value must be specified.</p>
     /// </important>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
     }
-    /// <p>Specifies the Amazon Web Services Glue table that contains the column information that constitutes your data schema.</p><important>
+    /// <p>Specifies the Amazon Web Services Glue table that contains the column information that constitutes your data schema.</p> <important>
     /// <p>If the <code>SchemaConfiguration</code> request parameter is used as part of invoking the <code>CreateDeliveryStream</code> API, then the <code>TableName</code> property is required and its value must be specified.</p>
     /// </important>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {

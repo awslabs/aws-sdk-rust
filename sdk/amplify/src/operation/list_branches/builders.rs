@@ -22,7 +22,7 @@ impl ListBranchesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListBranches`.
 ///
-/// <p>Lists the branches of an Amplify app.</p>
+/// <p> Lists the branches of an Amplify app. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListBranchesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,45 +114,45 @@ impl ListBranchesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_branches::paginator::ListBranchesPaginator {
         crate::operation::list_branches::paginator::ListBranchesPaginator::new(self.handle, self.inner)
     }
-    /// <p>The unique ID for an Amplify app.</p>
+    /// <p>The unique ID for an Amplify app. </p>
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_id(input.into());
         self
     }
-    /// <p>The unique ID for an Amplify app.</p>
+    /// <p>The unique ID for an Amplify app. </p>
     pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_id(input);
         self
     }
-    /// <p>The unique ID for an Amplify app.</p>
+    /// <p>The unique ID for an Amplify app. </p>
     pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_app_id()
     }
-    /// <p>A pagination token. Set to null to start listing branches from the start. If a non-null pagination token is returned in a result, pass its value in here to list more branches.</p>
+    /// <p>A pagination token. Set to null to start listing branches from the start. If a non-null pagination token is returned in a result, pass its value in here to list more branches. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>A pagination token. Set to null to start listing branches from the start. If a non-null pagination token is returned in a result, pass its value in here to list more branches.</p>
+    /// <p>A pagination token. Set to null to start listing branches from the start. If a non-null pagination token is returned in a result, pass its value in here to list more branches. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>A pagination token. Set to null to start listing branches from the start. If a non-null pagination token is returned in a result, pass its value in here to list more branches.</p>
+    /// <p>A pagination token. Set to null to start listing branches from the start. If a non-null pagination token is returned in a result, pass its value in here to list more branches. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>The maximum number of records to list in a single response.</p>
+    /// <p> The maximum number of records to list in a single response. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of records to list in a single response.</p>
+    /// <p> The maximum number of records to list in a single response. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The maximum number of records to list in a single response.</p>
+    /// <p> The maximum number of records to list in a single response. </p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

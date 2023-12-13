@@ -25,7 +25,7 @@ impl DeletePrincipalMappingInputBuilder {
 /// <p>Deletes a group so that all users and sub groups that belong to the group can no longer access documents only available to that group.</p>
 /// <p>For example, after deleting the group "Summer Interns", all interns who belonged to that group no longer see intern-only documents in their search results.</p>
 /// <p>If you want to delete or replace users or sub groups of a group, you need to use the <code>PutPrincipalMapping</code> operation. For example, if a user in the group "Engineering" leaves the engineering team and another user takes their place, you provide an updated list of users or sub groups that belong to the "Engineering" group when calling <code>PutPrincipalMapping</code>. You can update your internal list of users or sub groups and input this list when calling <code>PutPrincipalMapping</code>.</p>
-/// <p><code>DeletePrincipalMapping</code> is currently not supported in the Amazon Web Services GovCloud (US-West) region.</p>
+/// <p> <code>DeletePrincipalMapping</code> is currently not supported in the Amazon Web Services GovCloud (US-West) region.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeletePrincipalMappingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -158,21 +158,21 @@ impl DeletePrincipalMappingFluentBuilder {
     }
     /// <p>The timestamp identifier you specify to ensure Amazon Kendra does not override the latest <code>DELETE</code> action with previous actions. The highest number ID, which is the ordering ID, is the latest action you want to process and apply on top of other actions with lower number IDs. This prevents previous actions with lower number IDs from possibly overriding the latest action.</p>
     /// <p>The ordering ID can be the Unix time of the last update you made to a group members list. You would then provide this list when calling <code>PutPrincipalMapping</code>. This ensures your <code>DELETE</code> action for that updated group with the latest members list doesn't get overwritten by earlier <code>DELETE</code> actions for the same group which are yet to be processed.</p>
-    /// <p>The default ordering ID is the current Unix time in milliseconds that the action was received by Amazon Kendra.</p>
+    /// <p>The default ordering ID is the current Unix time in milliseconds that the action was received by Amazon Kendra. </p>
     pub fn ordering_id(mut self, input: i64) -> Self {
         self.inner = self.inner.ordering_id(input);
         self
     }
     /// <p>The timestamp identifier you specify to ensure Amazon Kendra does not override the latest <code>DELETE</code> action with previous actions. The highest number ID, which is the ordering ID, is the latest action you want to process and apply on top of other actions with lower number IDs. This prevents previous actions with lower number IDs from possibly overriding the latest action.</p>
     /// <p>The ordering ID can be the Unix time of the last update you made to a group members list. You would then provide this list when calling <code>PutPrincipalMapping</code>. This ensures your <code>DELETE</code> action for that updated group with the latest members list doesn't get overwritten by earlier <code>DELETE</code> actions for the same group which are yet to be processed.</p>
-    /// <p>The default ordering ID is the current Unix time in milliseconds that the action was received by Amazon Kendra.</p>
+    /// <p>The default ordering ID is the current Unix time in milliseconds that the action was received by Amazon Kendra. </p>
     pub fn set_ordering_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_ordering_id(input);
         self
     }
     /// <p>The timestamp identifier you specify to ensure Amazon Kendra does not override the latest <code>DELETE</code> action with previous actions. The highest number ID, which is the ordering ID, is the latest action you want to process and apply on top of other actions with lower number IDs. This prevents previous actions with lower number IDs from possibly overriding the latest action.</p>
     /// <p>The ordering ID can be the Unix time of the last update you made to a group members list. You would then provide this list when calling <code>PutPrincipalMapping</code>. This ensures your <code>DELETE</code> action for that updated group with the latest members list doesn't get overwritten by earlier <code>DELETE</code> actions for the same group which are yet to be processed.</p>
-    /// <p>The default ordering ID is the current Unix time in milliseconds that the action was received by Amazon Kendra.</p>
+    /// <p>The default ordering ID is the current Unix time in milliseconds that the action was received by Amazon Kendra. </p>
     pub fn get_ordering_id(&self) -> &::std::option::Option<i64> {
         self.inner.get_ordering_id()
     }

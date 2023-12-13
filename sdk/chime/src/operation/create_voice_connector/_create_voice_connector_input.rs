@@ -5,7 +5,7 @@
 pub struct CreateVoiceConnectorInput {
     /// <p>The name of the Amazon Chime Voice Connector.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The AWS Region in which the Amazon Chime Voice Connector is created. Default value: <code>us-east-1</code> .</p>
+    /// <p> The AWS Region in which the Amazon Chime Voice Connector is created. Default value: <code>us-east-1</code> . </p>
     pub aws_region: ::std::option::Option<crate::types::VoiceConnectorAwsRegion>,
     /// <p>When enabled, requires encryption for the Amazon Chime Voice Connector.</p>
     pub require_encryption: ::std::option::Option<bool>,
@@ -15,7 +15,7 @@ impl CreateVoiceConnectorInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The AWS Region in which the Amazon Chime Voice Connector is created. Default value: <code>us-east-1</code> .</p>
+    /// <p> The AWS Region in which the Amazon Chime Voice Connector is created. Default value: <code>us-east-1</code> . </p>
     pub fn aws_region(&self) -> ::std::option::Option<&crate::types::VoiceConnectorAwsRegion> {
         self.aws_region.as_ref()
     }
@@ -55,17 +55,17 @@ impl CreateVoiceConnectorInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The AWS Region in which the Amazon Chime Voice Connector is created. Default value: <code>us-east-1</code> .</p>
+    /// <p> The AWS Region in which the Amazon Chime Voice Connector is created. Default value: <code>us-east-1</code> . </p>
     pub fn aws_region(mut self, input: crate::types::VoiceConnectorAwsRegion) -> Self {
         self.aws_region = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The AWS Region in which the Amazon Chime Voice Connector is created. Default value: <code>us-east-1</code> .</p>
+    /// <p> The AWS Region in which the Amazon Chime Voice Connector is created. Default value: <code>us-east-1</code> . </p>
     pub fn set_aws_region(mut self, input: ::std::option::Option<crate::types::VoiceConnectorAwsRegion>) -> Self {
         self.aws_region = input;
         self
     }
-    /// <p>The AWS Region in which the Amazon Chime Voice Connector is created. Default value: <code>us-east-1</code> .</p>
+    /// <p> The AWS Region in which the Amazon Chime Voice Connector is created. Default value: <code>us-east-1</code> . </p>
     pub fn get_aws_region(&self) -> &::std::option::Option<crate::types::VoiceConnectorAwsRegion> {
         &self.aws_region
     }

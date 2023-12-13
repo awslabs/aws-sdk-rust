@@ -22,7 +22,7 @@ pub struct ScheduledUpdateGroupActionRequest {
     pub max_size: ::std::option::Option<i32>,
     /// <p>The desired capacity is the initial capacity of the Auto Scaling group after the scheduled action runs and the capacity it attempts to maintain.</p>
     pub desired_capacity: ::std::option::Option<i32>,
-    /// <p>Specifies the time zone for a cron expression. If a time zone is not provided, UTC is used by default.</p>
+    /// <p>Specifies the time zone for a cron expression. If a time zone is not provided, UTC is used by default. </p>
     /// <p>Valid values are the canonical names of the IANA time zones, derived from the IANA Time Zone Database (such as <code>Etc/GMT+9</code> or <code>Pacific/Tahiti</code>). For more information, see <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</a>.</p>
     pub time_zone: ::std::option::Option<::std::string::String>,
 }
@@ -59,7 +59,7 @@ impl ScheduledUpdateGroupActionRequest {
     pub fn desired_capacity(&self) -> ::std::option::Option<i32> {
         self.desired_capacity
     }
-    /// <p>Specifies the time zone for a cron expression. If a time zone is not provided, UTC is used by default.</p>
+    /// <p>Specifies the time zone for a cron expression. If a time zone is not provided, UTC is used by default. </p>
     /// <p>Valid values are the canonical names of the IANA time zones, derived from the IANA Time Zone Database (such as <code>Etc/GMT+9</code> or <code>Pacific/Tahiti</code>). For more information, see <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</a>.</p>
     pub fn time_zone(&self) -> ::std::option::Option<&str> {
         self.time_zone.as_deref()
@@ -197,19 +197,19 @@ impl ScheduledUpdateGroupActionRequestBuilder {
     pub fn get_desired_capacity(&self) -> &::std::option::Option<i32> {
         &self.desired_capacity
     }
-    /// <p>Specifies the time zone for a cron expression. If a time zone is not provided, UTC is used by default.</p>
+    /// <p>Specifies the time zone for a cron expression. If a time zone is not provided, UTC is used by default. </p>
     /// <p>Valid values are the canonical names of the IANA time zones, derived from the IANA Time Zone Database (such as <code>Etc/GMT+9</code> or <code>Pacific/Tahiti</code>). For more information, see <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</a>.</p>
     pub fn time_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.time_zone = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the time zone for a cron expression. If a time zone is not provided, UTC is used by default.</p>
+    /// <p>Specifies the time zone for a cron expression. If a time zone is not provided, UTC is used by default. </p>
     /// <p>Valid values are the canonical names of the IANA time zones, derived from the IANA Time Zone Database (such as <code>Etc/GMT+9</code> or <code>Pacific/Tahiti</code>). For more information, see <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</a>.</p>
     pub fn set_time_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.time_zone = input;
         self
     }
-    /// <p>Specifies the time zone for a cron expression. If a time zone is not provided, UTC is used by default.</p>
+    /// <p>Specifies the time zone for a cron expression. If a time zone is not provided, UTC is used by default. </p>
     /// <p>Valid values are the canonical names of the IANA time zones, derived from the IANA Time Zone Database (such as <code>Etc/GMT+9</code> or <code>Pacific/Tahiti</code>). For more information, see <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</a>.</p>
     pub fn get_time_zone(&self) -> &::std::option::Option<::std::string::String> {
         &self.time_zone

@@ -128,17 +128,17 @@ impl GetMaintenanceWindowExecutionTaskInvocationFluentBuilder {
     pub fn get_window_execution_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_window_execution_id()
     }
-    /// <p>The ID of the specific task in the maintenance window task that should be retrieved.</p>
+    /// <p>The ID of the specific task in the maintenance window task that should be retrieved. </p>
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.task_id(input.into());
         self
     }
-    /// <p>The ID of the specific task in the maintenance window task that should be retrieved.</p>
+    /// <p>The ID of the specific task in the maintenance window task that should be retrieved. </p>
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_task_id(input);
         self
     }
-    /// <p>The ID of the specific task in the maintenance window task that should be retrieved.</p>
+    /// <p>The ID of the specific task in the maintenance window task that should be retrieved. </p>
     pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_task_id()
     }

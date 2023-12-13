@@ -7,10 +7,8 @@ pub struct DeleteClusterParameterGroupInput {
     /// <p>The name of the parameter group to be deleted.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be the name of an existing cluster parameter group.</p></li>
-    /// <li>
-    /// <p>Cannot delete a default cluster parameter group.</p></li>
+    /// <li> <p>Must be the name of an existing cluster parameter group.</p> </li>
+    /// <li> <p>Cannot delete a default cluster parameter group.</p> </li>
     /// </ul>
     pub parameter_group_name: ::std::option::Option<::std::string::String>,
 }
@@ -18,10 +16,8 @@ impl DeleteClusterParameterGroupInput {
     /// <p>The name of the parameter group to be deleted.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be the name of an existing cluster parameter group.</p></li>
-    /// <li>
-    /// <p>Cannot delete a default cluster parameter group.</p></li>
+    /// <li> <p>Must be the name of an existing cluster parameter group.</p> </li>
+    /// <li> <p>Cannot delete a default cluster parameter group.</p> </li>
     /// </ul>
     pub fn parameter_group_name(&self) -> ::std::option::Option<&str> {
         self.parameter_group_name.as_deref()
@@ -44,10 +40,8 @@ impl DeleteClusterParameterGroupInputBuilder {
     /// <p>The name of the parameter group to be deleted.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be the name of an existing cluster parameter group.</p></li>
-    /// <li>
-    /// <p>Cannot delete a default cluster parameter group.</p></li>
+    /// <li> <p>Must be the name of an existing cluster parameter group.</p> </li>
+    /// <li> <p>Cannot delete a default cluster parameter group.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -57,10 +51,8 @@ impl DeleteClusterParameterGroupInputBuilder {
     /// <p>The name of the parameter group to be deleted.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be the name of an existing cluster parameter group.</p></li>
-    /// <li>
-    /// <p>Cannot delete a default cluster parameter group.</p></li>
+    /// <li> <p>Must be the name of an existing cluster parameter group.</p> </li>
+    /// <li> <p>Cannot delete a default cluster parameter group.</p> </li>
     /// </ul>
     pub fn set_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_group_name = input;
@@ -69,10 +61,8 @@ impl DeleteClusterParameterGroupInputBuilder {
     /// <p>The name of the parameter group to be deleted.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be the name of an existing cluster parameter group.</p></li>
-    /// <li>
-    /// <p>Cannot delete a default cluster parameter group.</p></li>
+    /// <li> <p>Must be the name of an existing cluster parameter group.</p> </li>
+    /// <li> <p>Cannot delete a default cluster parameter group.</p> </li>
     /// </ul>
     pub fn get_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.parameter_group_name

@@ -16,9 +16,11 @@ pub struct DirectoryDescription {
     pub edition: ::std::option::Option<crate::types::DirectoryEdition>,
     /// <p>The alias for the directory. If no alias has been created for the directory, the alias is the directory identifier, such as <code>d-XXXXXXXXXX</code>.</p>
     pub alias: ::std::option::Option<::std::string::String>,
-    /// <p>The access URL for the directory, such as <code>http://<alias>
+    /// <p>The access URL for the directory, such as <code>http://
+    /// <alias>
     /// .awsapps.com
-    /// </alias></code>. If no alias has been created for the directory, <code><alias></alias></code> is the directory identifier, such as <code>d-XXXXXXXXXX</code>.</p>
+    /// </alias></code>. If no alias has been created for the directory, <code>
+    /// <alias></alias></code> is the directory identifier, such as <code>d-XXXXXXXXXX</code>.</p>
     pub access_url: ::std::option::Option<::std::string::String>,
     /// <p>The description for the directory.</p>
     pub description: ::std::option::Option<::std::string::String>,
@@ -84,9 +86,11 @@ impl DirectoryDescription {
     pub fn alias(&self) -> ::std::option::Option<&str> {
         self.alias.as_deref()
     }
-    /// <p>The access URL for the directory, such as <code>http://<alias>
+    /// <p>The access URL for the directory, such as <code>http://
+    /// <alias>
     /// .awsapps.com
-    /// </alias></code>. If no alias has been created for the directory, <code><alias></alias></code> is the directory identifier, such as <code>d-XXXXXXXXXX</code>.</p>
+    /// </alias></code>. If no alias has been created for the directory, <code>
+    /// <alias></alias></code> is the directory identifier, such as <code>d-XXXXXXXXXX</code>.</p>
     pub fn access_url(&self) -> ::std::option::Option<&str> {
         self.access_url.as_deref()
     }
@@ -324,23 +328,29 @@ impl DirectoryDescriptionBuilder {
     pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
         &self.alias
     }
-    /// <p>The access URL for the directory, such as <code>http://<alias>
+    /// <p>The access URL for the directory, such as <code>http://
+    /// <alias>
     /// .awsapps.com
-    /// </alias></code>. If no alias has been created for the directory, <code><alias></alias></code> is the directory identifier, such as <code>d-XXXXXXXXXX</code>.</p>
+    /// </alias></code>. If no alias has been created for the directory, <code>
+    /// <alias></alias></code> is the directory identifier, such as <code>d-XXXXXXXXXX</code>.</p>
     pub fn access_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The access URL for the directory, such as <code>http://<alias>
+    /// <p>The access URL for the directory, such as <code>http://
+    /// <alias>
     /// .awsapps.com
-    /// </alias></code>. If no alias has been created for the directory, <code><alias></alias></code> is the directory identifier, such as <code>d-XXXXXXXXXX</code>.</p>
+    /// </alias></code>. If no alias has been created for the directory, <code>
+    /// <alias></alias></code> is the directory identifier, such as <code>d-XXXXXXXXXX</code>.</p>
     pub fn set_access_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_url = input;
         self
     }
-    /// <p>The access URL for the directory, such as <code>http://<alias>
+    /// <p>The access URL for the directory, such as <code>http://
+    /// <alias>
     /// .awsapps.com
-    /// </alias></code>. If no alias has been created for the directory, <code><alias></alias></code> is the directory identifier, such as <code>d-XXXXXXXXXX</code>.</p>
+    /// </alias></code>. If no alias has been created for the directory, <code>
+    /// <alias></alias></code> is the directory identifier, such as <code>d-XXXXXXXXXX</code>.</p>
     pub fn get_access_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.access_url
     }

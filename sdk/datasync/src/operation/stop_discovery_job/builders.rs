@@ -109,17 +109,17 @@ impl StopDiscoveryJobFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want to stop.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want to stop. </p>
     pub fn discovery_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.discovery_job_arn(input.into());
         self
     }
-    /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want to stop.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want to stop. </p>
     pub fn set_discovery_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_discovery_job_arn(input);
         self
     }
-    /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want to stop.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want to stop. </p>
     pub fn get_discovery_job_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_discovery_job_arn()
     }

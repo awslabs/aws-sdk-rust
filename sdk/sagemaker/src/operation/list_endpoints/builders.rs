@@ -212,45 +212,45 @@ impl ListEndpointsFluentBuilder {
     pub fn get_creation_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_creation_time_after()
     }
-    /// <p>A filter that returns only endpoints that were modified before the specified timestamp.</p>
+    /// <p> A filter that returns only endpoints that were modified before the specified timestamp. </p>
     pub fn last_modified_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.last_modified_time_before(input);
         self
     }
-    /// <p>A filter that returns only endpoints that were modified before the specified timestamp.</p>
+    /// <p> A filter that returns only endpoints that were modified before the specified timestamp. </p>
     pub fn set_last_modified_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_last_modified_time_before(input);
         self
     }
-    /// <p>A filter that returns only endpoints that were modified before the specified timestamp.</p>
+    /// <p> A filter that returns only endpoints that were modified before the specified timestamp. </p>
     pub fn get_last_modified_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_last_modified_time_before()
     }
-    /// <p>A filter that returns only endpoints that were modified after the specified timestamp.</p>
+    /// <p> A filter that returns only endpoints that were modified after the specified timestamp. </p>
     pub fn last_modified_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.last_modified_time_after(input);
         self
     }
-    /// <p>A filter that returns only endpoints that were modified after the specified timestamp.</p>
+    /// <p> A filter that returns only endpoints that were modified after the specified timestamp. </p>
     pub fn set_last_modified_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_last_modified_time_after(input);
         self
     }
-    /// <p>A filter that returns only endpoints that were modified after the specified timestamp.</p>
+    /// <p> A filter that returns only endpoints that were modified after the specified timestamp. </p>
     pub fn get_last_modified_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_last_modified_time_after()
     }
-    /// <p>A filter that returns only endpoints with the specified status.</p>
+    /// <p> A filter that returns only endpoints with the specified status.</p>
     pub fn status_equals(mut self, input: crate::types::EndpointStatus) -> Self {
         self.inner = self.inner.status_equals(input);
         self
     }
-    /// <p>A filter that returns only endpoints with the specified status.</p>
+    /// <p> A filter that returns only endpoints with the specified status.</p>
     pub fn set_status_equals(mut self, input: ::std::option::Option<crate::types::EndpointStatus>) -> Self {
         self.inner = self.inner.set_status_equals(input);
         self
     }
-    /// <p>A filter that returns only endpoints with the specified status.</p>
+    /// <p> A filter that returns only endpoints with the specified status.</p>
     pub fn get_status_equals(&self) -> &::std::option::Option<crate::types::EndpointStatus> {
         self.inner.get_status_equals()
     }

@@ -22,7 +22,7 @@ impl GetCaseInputBuilder {
 }
 /// Fluent builder constructing a request to `GetCase`.
 ///
-/// <p>Returns information about a specific case if it exists.</p>
+/// <p>Returns information about a specific case if it exists. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetCaseFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -119,17 +119,17 @@ impl GetCaseFluentBuilder {
     pub fn get_case_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_case_id()
     }
-    /// <p>The unique identifier of the Cases domain.</p>
+    /// <p>The unique identifier of the Cases domain. </p>
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_id(input.into());
         self
     }
-    /// <p>The unique identifier of the Cases domain.</p>
+    /// <p>The unique identifier of the Cases domain. </p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_id(input);
         self
     }
-    /// <p>The unique identifier of the Cases domain.</p>
+    /// <p>The unique identifier of the Cases domain. </p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_id()
     }
@@ -137,17 +137,17 @@ impl GetCaseFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_fields`](Self::set_fields).
     ///
-    /// <p>A list of unique field identifiers.</p>
+    /// <p>A list of unique field identifiers. </p>
     pub fn fields(mut self, input: crate::types::FieldIdentifier) -> Self {
         self.inner = self.inner.fields(input);
         self
     }
-    /// <p>A list of unique field identifiers.</p>
+    /// <p>A list of unique field identifiers. </p>
     pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FieldIdentifier>>) -> Self {
         self.inner = self.inner.set_fields(input);
         self
     }
-    /// <p>A list of unique field identifiers.</p>
+    /// <p>A list of unique field identifiers. </p>
     pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldIdentifier>> {
         self.inner.get_fields()
     }

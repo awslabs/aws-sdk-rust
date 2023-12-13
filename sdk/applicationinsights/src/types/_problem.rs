@@ -26,9 +26,9 @@ pub struct Problem {
     pub resource_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Feedback provided by the user about the problem.</p>
     pub feedback: ::std::option::Option<::std::collections::HashMap<crate::types::FeedbackKey, crate::types::FeedbackValue>>,
-    /// <p>The number of times that the same problem reoccurred after the first time it was resolved.</p>
+    /// <p> The number of times that the same problem reoccurred after the first time it was resolved. </p>
     pub recurring_count: ::std::option::Option<i64>,
-    /// <p>The last time that the problem reoccurred after its last resolution.</p>
+    /// <p> The last time that the problem reoccurred after its last resolution. </p>
     pub last_recurrence_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies whether or not you can view the problem. Updates to ignored problems do not generate notifications.</p>
     pub visibility: ::std::option::Option<crate::types::Visibility>,
@@ -80,11 +80,11 @@ impl Problem {
     pub fn feedback(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::FeedbackKey, crate::types::FeedbackValue>> {
         self.feedback.as_ref()
     }
-    /// <p>The number of times that the same problem reoccurred after the first time it was resolved.</p>
+    /// <p> The number of times that the same problem reoccurred after the first time it was resolved. </p>
     pub fn recurring_count(&self) -> ::std::option::Option<i64> {
         self.recurring_count
     }
-    /// <p>The last time that the problem reoccurred after its last resolution.</p>
+    /// <p> The last time that the problem reoccurred after its last resolution. </p>
     pub fn last_recurrence_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_recurrence_time.as_ref()
     }
@@ -288,31 +288,31 @@ impl ProblemBuilder {
     pub fn get_feedback(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::FeedbackKey, crate::types::FeedbackValue>> {
         &self.feedback
     }
-    /// <p>The number of times that the same problem reoccurred after the first time it was resolved.</p>
+    /// <p> The number of times that the same problem reoccurred after the first time it was resolved. </p>
     pub fn recurring_count(mut self, input: i64) -> Self {
         self.recurring_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of times that the same problem reoccurred after the first time it was resolved.</p>
+    /// <p> The number of times that the same problem reoccurred after the first time it was resolved. </p>
     pub fn set_recurring_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.recurring_count = input;
         self
     }
-    /// <p>The number of times that the same problem reoccurred after the first time it was resolved.</p>
+    /// <p> The number of times that the same problem reoccurred after the first time it was resolved. </p>
     pub fn get_recurring_count(&self) -> &::std::option::Option<i64> {
         &self.recurring_count
     }
-    /// <p>The last time that the problem reoccurred after its last resolution.</p>
+    /// <p> The last time that the problem reoccurred after its last resolution. </p>
     pub fn last_recurrence_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_recurrence_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The last time that the problem reoccurred after its last resolution.</p>
+    /// <p> The last time that the problem reoccurred after its last resolution. </p>
     pub fn set_last_recurrence_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_recurrence_time = input;
         self
     }
-    /// <p>The last time that the problem reoccurred after its last resolution.</p>
+    /// <p> The last time that the problem reoccurred after its last resolution. </p>
     pub fn get_last_recurrence_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_recurrence_time
     }

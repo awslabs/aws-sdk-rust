@@ -14,7 +14,7 @@ pub struct PipelineActivity {
     pub add_attributes: ::std::option::Option<crate::types::AddAttributesActivity>,
     /// <p>Removes attributes from a message.</p>
     pub remove_attributes: ::std::option::Option<crate::types::RemoveAttributesActivity>,
-    /// <p>Used to create a new message using only the specified attributes from the original message.</p>
+    /// <p>Used to create a new message using only the specified attributes from the original message. </p>
     pub select_attributes: ::std::option::Option<crate::types::SelectAttributesActivity>,
     /// <p>Filters a message based on its attributes.</p>
     pub filter: ::std::option::Option<crate::types::FilterActivity>,
@@ -46,7 +46,7 @@ impl PipelineActivity {
     pub fn remove_attributes(&self) -> ::std::option::Option<&crate::types::RemoveAttributesActivity> {
         self.remove_attributes.as_ref()
     }
-    /// <p>Used to create a new message using only the specified attributes from the original message.</p>
+    /// <p>Used to create a new message using only the specified attributes from the original message. </p>
     pub fn select_attributes(&self) -> ::std::option::Option<&crate::types::SelectAttributesActivity> {
         self.select_attributes.as_ref()
     }
@@ -160,17 +160,17 @@ impl PipelineActivityBuilder {
     pub fn get_remove_attributes(&self) -> &::std::option::Option<crate::types::RemoveAttributesActivity> {
         &self.remove_attributes
     }
-    /// <p>Used to create a new message using only the specified attributes from the original message.</p>
+    /// <p>Used to create a new message using only the specified attributes from the original message. </p>
     pub fn select_attributes(mut self, input: crate::types::SelectAttributesActivity) -> Self {
         self.select_attributes = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Used to create a new message using only the specified attributes from the original message.</p>
+    /// <p>Used to create a new message using only the specified attributes from the original message. </p>
     pub fn set_select_attributes(mut self, input: ::std::option::Option<crate::types::SelectAttributesActivity>) -> Self {
         self.select_attributes = input;
         self
     }
-    /// <p>Used to create a new message using only the specified attributes from the original message.</p>
+    /// <p>Used to create a new message using only the specified attributes from the original message. </p>
     pub fn get_select_attributes(&self) -> &::std::option::Option<crate::types::SelectAttributesActivity> {
         &self.select_attributes
     }

@@ -14,7 +14,7 @@ pub struct FaqSummary {
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Unix timestamp when the FAQ was last updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The file type used to create the FAQ.</p>
+    /// <p>The file type used to create the FAQ. </p>
     pub file_format: ::std::option::Option<crate::types::FaqFileFormat>,
     /// <p>The code for a language. This shows a supported language for the FAQ document as part of the summary information for FAQs. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
     pub language_code: ::std::option::Option<::std::string::String>,
@@ -40,7 +40,7 @@ impl FaqSummary {
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
-    /// <p>The file type used to create the FAQ.</p>
+    /// <p>The file type used to create the FAQ. </p>
     pub fn file_format(&self) -> ::std::option::Option<&crate::types::FaqFileFormat> {
         self.file_format.as_ref()
     }
@@ -139,17 +139,17 @@ impl FaqSummaryBuilder {
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }
-    /// <p>The file type used to create the FAQ.</p>
+    /// <p>The file type used to create the FAQ. </p>
     pub fn file_format(mut self, input: crate::types::FaqFileFormat) -> Self {
         self.file_format = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The file type used to create the FAQ.</p>
+    /// <p>The file type used to create the FAQ. </p>
     pub fn set_file_format(mut self, input: ::std::option::Option<crate::types::FaqFileFormat>) -> Self {
         self.file_format = input;
         self
     }
-    /// <p>The file type used to create the FAQ.</p>
+    /// <p>The file type used to create the FAQ. </p>
     pub fn get_file_format(&self) -> &::std::option::Option<crate::types::FaqFileFormat> {
         &self.file_format
     }

@@ -22,7 +22,7 @@ impl BatchDetectEntitiesInputBuilder {
 }
 /// Fluent builder constructing a request to `BatchDetectEntities`.
 ///
-/// <p>Inspects the text of a batch of documents for named entities and returns information about them. For more information about named entities, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a> in the Comprehend Developer Guide.</p>
+/// <p>Inspects the text of a batch of documents for named entities and returns information about them. For more information about named entities, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a> in the Comprehend Developer Guide. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchDetectEntitiesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

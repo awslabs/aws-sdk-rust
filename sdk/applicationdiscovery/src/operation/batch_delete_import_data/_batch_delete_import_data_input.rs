@@ -5,7 +5,7 @@
 pub struct BatchDeleteImportDataInput {
     /// <p>The IDs for the import tasks that you want to delete.</p>
     pub import_task_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Set to <code>true</code> to remove the deleted import task from <code>DescribeImportTasks</code>.</p>
+    /// <p> Set to <code>true</code> to remove the deleted import task from <code>DescribeImportTasks</code>. </p>
     pub delete_history: ::std::option::Option<bool>,
 }
 impl BatchDeleteImportDataInput {
@@ -15,7 +15,7 @@ impl BatchDeleteImportDataInput {
     pub fn import_task_ids(&self) -> &[::std::string::String] {
         self.import_task_ids.as_deref().unwrap_or_default()
     }
-    /// <p>Set to <code>true</code> to remove the deleted import task from <code>DescribeImportTasks</code>.</p>
+    /// <p> Set to <code>true</code> to remove the deleted import task from <code>DescribeImportTasks</code>. </p>
     pub fn delete_history(&self) -> ::std::option::Option<bool> {
         self.delete_history
     }
@@ -55,17 +55,17 @@ impl BatchDeleteImportDataInputBuilder {
     pub fn get_import_task_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.import_task_ids
     }
-    /// <p>Set to <code>true</code> to remove the deleted import task from <code>DescribeImportTasks</code>.</p>
+    /// <p> Set to <code>true</code> to remove the deleted import task from <code>DescribeImportTasks</code>. </p>
     pub fn delete_history(mut self, input: bool) -> Self {
         self.delete_history = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Set to <code>true</code> to remove the deleted import task from <code>DescribeImportTasks</code>.</p>
+    /// <p> Set to <code>true</code> to remove the deleted import task from <code>DescribeImportTasks</code>. </p>
     pub fn set_delete_history(mut self, input: ::std::option::Option<bool>) -> Self {
         self.delete_history = input;
         self
     }
-    /// <p>Set to <code>true</code> to remove the deleted import task from <code>DescribeImportTasks</code>.</p>
+    /// <p> Set to <code>true</code> to remove the deleted import task from <code>DescribeImportTasks</code>. </p>
     pub fn get_delete_history(&self) -> &::std::option::Option<bool> {
         &self.delete_history
     }

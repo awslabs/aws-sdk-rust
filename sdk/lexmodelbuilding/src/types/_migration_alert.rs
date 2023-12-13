@@ -6,10 +6,8 @@
 pub struct MigrationAlert {
     /// <p>The type of alert. There are two kinds of alerts:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ERROR</code> - There was an issue with the migration that can't be resolved. The migration stops.</p></li>
-    /// <li>
-    /// <p><code>WARN</code> - There was an issue with the migration that requires manual changes to the new Amazon Lex V2 bot. The migration continues.</p></li>
+    /// <li> <p> <code>ERROR</code> - There was an issue with the migration that can't be resolved. The migration stops.</p> </li>
+    /// <li> <p> <code>WARN</code> - There was an issue with the migration that requires manual changes to the new Amazon Lex V2 bot. The migration continues.</p> </li>
     /// </ul>
     pub r#type: ::std::option::Option<crate::types::MigrationAlertType>,
     /// <p>A message that describes why the alert was issued.</p>
@@ -22,10 +20,8 @@ pub struct MigrationAlert {
 impl MigrationAlert {
     /// <p>The type of alert. There are two kinds of alerts:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ERROR</code> - There was an issue with the migration that can't be resolved. The migration stops.</p></li>
-    /// <li>
-    /// <p><code>WARN</code> - There was an issue with the migration that requires manual changes to the new Amazon Lex V2 bot. The migration continues.</p></li>
+    /// <li> <p> <code>ERROR</code> - There was an issue with the migration that can't be resolved. The migration stops.</p> </li>
+    /// <li> <p> <code>WARN</code> - There was an issue with the migration that requires manual changes to the new Amazon Lex V2 bot. The migration continues.</p> </li>
     /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::MigrationAlertType> {
         self.r#type.as_ref()
@@ -66,10 +62,8 @@ pub struct MigrationAlertBuilder {
 impl MigrationAlertBuilder {
     /// <p>The type of alert. There are two kinds of alerts:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ERROR</code> - There was an issue with the migration that can't be resolved. The migration stops.</p></li>
-    /// <li>
-    /// <p><code>WARN</code> - There was an issue with the migration that requires manual changes to the new Amazon Lex V2 bot. The migration continues.</p></li>
+    /// <li> <p> <code>ERROR</code> - There was an issue with the migration that can't be resolved. The migration stops.</p> </li>
+    /// <li> <p> <code>WARN</code> - There was an issue with the migration that requires manual changes to the new Amazon Lex V2 bot. The migration continues.</p> </li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::MigrationAlertType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -77,10 +71,8 @@ impl MigrationAlertBuilder {
     }
     /// <p>The type of alert. There are two kinds of alerts:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ERROR</code> - There was an issue with the migration that can't be resolved. The migration stops.</p></li>
-    /// <li>
-    /// <p><code>WARN</code> - There was an issue with the migration that requires manual changes to the new Amazon Lex V2 bot. The migration continues.</p></li>
+    /// <li> <p> <code>ERROR</code> - There was an issue with the migration that can't be resolved. The migration stops.</p> </li>
+    /// <li> <p> <code>WARN</code> - There was an issue with the migration that requires manual changes to the new Amazon Lex V2 bot. The migration continues.</p> </li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::MigrationAlertType>) -> Self {
         self.r#type = input;
@@ -88,10 +80,8 @@ impl MigrationAlertBuilder {
     }
     /// <p>The type of alert. There are two kinds of alerts:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>ERROR</code> - There was an issue with the migration that can't be resolved. The migration stops.</p></li>
-    /// <li>
-    /// <p><code>WARN</code> - There was an issue with the migration that requires manual changes to the new Amazon Lex V2 bot. The migration continues.</p></li>
+    /// <li> <p> <code>ERROR</code> - There was an issue with the migration that can't be resolved. The migration stops.</p> </li>
+    /// <li> <p> <code>WARN</code> - There was an issue with the migration that requires manual changes to the new Amazon Lex V2 bot. The migration continues.</p> </li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::MigrationAlertType> {
         &self.r#type

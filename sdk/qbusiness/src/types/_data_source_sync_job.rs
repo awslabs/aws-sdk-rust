@@ -12,7 +12,7 @@ pub struct DataSourceSyncJob {
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the synchronization job. When the <code>Status</code> field is set to <code>SUCCEEDED</code>, the synchronization job is done. If the status code is <code>FAILED</code>, the <code>ErrorCode</code> and <code>ErrorMessage</code> fields give you the reason for the failure.</p>
     pub status: ::std::option::Option<crate::types::DataSourceSyncJobStatus>,
-    /// <p>If the <code>Status</code> field is set to <code>FAILED</code>, the <code>ErrorCode</code> field indicates the reason the synchronization failed.</p>
+    /// <p>If the <code>Status</code> field is set to <code>FAILED</code>, the <code>ErrorCode</code> field indicates the reason the synchronization failed. </p>
     pub error: ::std::option::Option<crate::types::ErrorDetail>,
     /// <p>If the reason that the synchronization failed is due to an error with the underlying data source, this field contains a code that identifies the error.</p>
     pub data_source_error_code: ::std::option::Option<::std::string::String>,
@@ -36,7 +36,7 @@ impl DataSourceSyncJob {
     pub fn status(&self) -> ::std::option::Option<&crate::types::DataSourceSyncJobStatus> {
         self.status.as_ref()
     }
-    /// <p>If the <code>Status</code> field is set to <code>FAILED</code>, the <code>ErrorCode</code> field indicates the reason the synchronization failed.</p>
+    /// <p>If the <code>Status</code> field is set to <code>FAILED</code>, the <code>ErrorCode</code> field indicates the reason the synchronization failed. </p>
     pub fn error(&self) -> ::std::option::Option<&crate::types::ErrorDetail> {
         self.error.as_ref()
     }
@@ -125,17 +125,17 @@ impl DataSourceSyncJobBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::DataSourceSyncJobStatus> {
         &self.status
     }
-    /// <p>If the <code>Status</code> field is set to <code>FAILED</code>, the <code>ErrorCode</code> field indicates the reason the synchronization failed.</p>
+    /// <p>If the <code>Status</code> field is set to <code>FAILED</code>, the <code>ErrorCode</code> field indicates the reason the synchronization failed. </p>
     pub fn error(mut self, input: crate::types::ErrorDetail) -> Self {
         self.error = ::std::option::Option::Some(input);
         self
     }
-    /// <p>If the <code>Status</code> field is set to <code>FAILED</code>, the <code>ErrorCode</code> field indicates the reason the synchronization failed.</p>
+    /// <p>If the <code>Status</code> field is set to <code>FAILED</code>, the <code>ErrorCode</code> field indicates the reason the synchronization failed. </p>
     pub fn set_error(mut self, input: ::std::option::Option<crate::types::ErrorDetail>) -> Self {
         self.error = input;
         self
     }
-    /// <p>If the <code>Status</code> field is set to <code>FAILED</code>, the <code>ErrorCode</code> field indicates the reason the synchronization failed.</p>
+    /// <p>If the <code>Status</code> field is set to <code>FAILED</code>, the <code>ErrorCode</code> field indicates the reason the synchronization failed. </p>
     pub fn get_error(&self) -> &::std::option::Option<crate::types::ErrorDetail> {
         &self.error
     }

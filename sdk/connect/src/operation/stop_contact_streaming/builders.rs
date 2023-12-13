@@ -22,7 +22,7 @@ impl StopContactStreamingInputBuilder {
 }
 /// Fluent builder constructing a request to `StopContactStreaming`.
 ///
-/// <p>Ends message streaming on a specified contact. To restart message streaming on that contact, call the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartContactStreaming.html">StartContactStreaming</a> API.</p>
+/// <p> Ends message streaming on a specified contact. To restart message streaming on that contact, call the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartContactStreaming.html">StartContactStreaming</a> API. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopContactStreamingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -136,17 +136,17 @@ impl StopContactStreamingFluentBuilder {
     pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_contact_id()
     }
-    /// <p>The identifier of the streaming configuration enabled.</p>
+    /// <p>The identifier of the streaming configuration enabled. </p>
     pub fn streaming_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.streaming_id(input.into());
         self
     }
-    /// <p>The identifier of the streaming configuration enabled.</p>
+    /// <p>The identifier of the streaming configuration enabled. </p>
     pub fn set_streaming_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_streaming_id(input);
         self
     }
-    /// <p>The identifier of the streaming configuration enabled.</p>
+    /// <p>The identifier of the streaming configuration enabled. </p>
     pub fn get_streaming_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_streaming_id()
     }

@@ -23,7 +23,7 @@ impl DeleteConfigurationSetInputBuilder {
 /// Fluent builder constructing a request to `DeleteConfigurationSet`.
 ///
 /// <p>Deletes an existing configuration set.</p>
-/// <p>A configuration set is a set of rules that you apply to voice and SMS messages that you send. In a configuration set, you can specify a destination for specific types of events related to voice and SMS messages.</p>
+/// <p>A configuration set is a set of rules that you apply to voice and SMS messages that you send. In a configuration set, you can specify a destination for specific types of events related to voice and SMS messages. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteConfigurationSetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

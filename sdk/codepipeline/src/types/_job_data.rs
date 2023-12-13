@@ -8,7 +8,7 @@ pub struct JobData {
     pub action_type_id: ::std::option::Option<crate::types::ActionTypeId>,
     /// <p>Represents information about an action configuration.</p>
     pub action_configuration: ::std::option::Option<crate::types::ActionConfiguration>,
-    /// <p>Represents information about a pipeline to a job worker.</p><note>
+    /// <p>Represents information about a pipeline to a job worker.</p> <note>
     /// <p>Includes <code>pipelineArn</code> and <code>pipelineExecutionId</code> for custom jobs.</p>
     /// </note>
     pub pipeline_context: ::std::option::Option<crate::types::PipelineContext>,
@@ -20,7 +20,7 @@ pub struct JobData {
     pub artifact_credentials: ::std::option::Option<crate::types::AwsSessionCredentials>,
     /// <p>A system-generated token, such as a deployment ID, required by a job to continue the job asynchronously.</p>
     pub continuation_token: ::std::option::Option<::std::string::String>,
-    /// <p>Represents information about the key used to encrypt data in the artifact store, such as an KMS key.</p>
+    /// <p>Represents information about the key used to encrypt data in the artifact store, such as an KMS key. </p>
     pub encryption_key: ::std::option::Option<crate::types::EncryptionKey>,
 }
 impl JobData {
@@ -32,7 +32,7 @@ impl JobData {
     pub fn action_configuration(&self) -> ::std::option::Option<&crate::types::ActionConfiguration> {
         self.action_configuration.as_ref()
     }
-    /// <p>Represents information about a pipeline to a job worker.</p><note>
+    /// <p>Represents information about a pipeline to a job worker.</p> <note>
     /// <p>Includes <code>pipelineArn</code> and <code>pipelineExecutionId</code> for custom jobs.</p>
     /// </note>
     pub fn pipeline_context(&self) -> ::std::option::Option<&crate::types::PipelineContext> {
@@ -58,7 +58,7 @@ impl JobData {
     pub fn continuation_token(&self) -> ::std::option::Option<&str> {
         self.continuation_token.as_deref()
     }
-    /// <p>Represents information about the key used to encrypt data in the artifact store, such as an KMS key.</p>
+    /// <p>Represents information about the key used to encrypt data in the artifact store, such as an KMS key. </p>
     pub fn encryption_key(&self) -> ::std::option::Option<&crate::types::EncryptionKey> {
         self.encryption_key.as_ref()
     }
@@ -126,21 +126,21 @@ impl JobDataBuilder {
     pub fn get_action_configuration(&self) -> &::std::option::Option<crate::types::ActionConfiguration> {
         &self.action_configuration
     }
-    /// <p>Represents information about a pipeline to a job worker.</p><note>
+    /// <p>Represents information about a pipeline to a job worker.</p> <note>
     /// <p>Includes <code>pipelineArn</code> and <code>pipelineExecutionId</code> for custom jobs.</p>
     /// </note>
     pub fn pipeline_context(mut self, input: crate::types::PipelineContext) -> Self {
         self.pipeline_context = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Represents information about a pipeline to a job worker.</p><note>
+    /// <p>Represents information about a pipeline to a job worker.</p> <note>
     /// <p>Includes <code>pipelineArn</code> and <code>pipelineExecutionId</code> for custom jobs.</p>
     /// </note>
     pub fn set_pipeline_context(mut self, input: ::std::option::Option<crate::types::PipelineContext>) -> Self {
         self.pipeline_context = input;
         self
     }
-    /// <p>Represents information about a pipeline to a job worker.</p><note>
+    /// <p>Represents information about a pipeline to a job worker.</p> <note>
     /// <p>Includes <code>pipelineArn</code> and <code>pipelineExecutionId</code> for custom jobs.</p>
     /// </note>
     pub fn get_pipeline_context(&self) -> &::std::option::Option<crate::types::PipelineContext> {
@@ -214,17 +214,17 @@ impl JobDataBuilder {
     pub fn get_continuation_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.continuation_token
     }
-    /// <p>Represents information about the key used to encrypt data in the artifact store, such as an KMS key.</p>
+    /// <p>Represents information about the key used to encrypt data in the artifact store, such as an KMS key. </p>
     pub fn encryption_key(mut self, input: crate::types::EncryptionKey) -> Self {
         self.encryption_key = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Represents information about the key used to encrypt data in the artifact store, such as an KMS key.</p>
+    /// <p>Represents information about the key used to encrypt data in the artifact store, such as an KMS key. </p>
     pub fn set_encryption_key(mut self, input: ::std::option::Option<crate::types::EncryptionKey>) -> Self {
         self.encryption_key = input;
         self
     }
-    /// <p>Represents information about the key used to encrypt data in the artifact store, such as an KMS key.</p>
+    /// <p>Represents information about the key used to encrypt data in the artifact store, such as an KMS key. </p>
     pub fn get_encryption_key(&self) -> &::std::option::Option<crate::types::EncryptionKey> {
         &self.encryption_key
     }

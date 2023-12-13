@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDbClusterSnapshotOutput {
-    /// <p>Detailed information about a cluster snapshot.</p>
+    /// <p>Detailed information about a cluster snapshot. </p>
     pub db_cluster_snapshot: ::std::option::Option<crate::types::DbClusterSnapshot>,
     _request_id: Option<String>,
 }
 impl CreateDbClusterSnapshotOutput {
-    /// <p>Detailed information about a cluster snapshot.</p>
+    /// <p>Detailed information about a cluster snapshot. </p>
     pub fn db_cluster_snapshot(&self) -> ::std::option::Option<&crate::types::DbClusterSnapshot> {
         self.db_cluster_snapshot.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct CreateDbClusterSnapshotOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateDbClusterSnapshotOutputBuilder {
-    /// <p>Detailed information about a cluster snapshot.</p>
+    /// <p>Detailed information about a cluster snapshot. </p>
     pub fn db_cluster_snapshot(mut self, input: crate::types::DbClusterSnapshot) -> Self {
         self.db_cluster_snapshot = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Detailed information about a cluster snapshot.</p>
+    /// <p>Detailed information about a cluster snapshot. </p>
     pub fn set_db_cluster_snapshot(mut self, input: ::std::option::Option<crate::types::DbClusterSnapshot>) -> Self {
         self.db_cluster_snapshot = input;
         self
     }
-    /// <p>Detailed information about a cluster snapshot.</p>
+    /// <p>Detailed information about a cluster snapshot. </p>
     pub fn get_db_cluster_snapshot(&self) -> &::std::option::Option<crate::types::DbClusterSnapshot> {
         &self.db_cluster_snapshot
     }

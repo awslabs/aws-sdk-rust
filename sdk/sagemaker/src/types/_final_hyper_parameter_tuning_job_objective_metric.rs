@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FinalHyperParameterTuningJobObjectiveMetric {
-    /// <p>Select if you want to minimize or maximize the objective metric during hyperparameter tuning.</p>
+    /// <p>Select if you want to minimize or maximize the objective metric during hyperparameter tuning. </p>
     pub r#type: ::std::option::Option<crate::types::HyperParameterTuningJobObjectiveType>,
     /// <p>The name of the objective metric. For SageMaker built-in algorithms, metrics are defined per algorithm. See the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/xgboost-tuning.html">metrics for XGBoost</a> as an example. You can also use a custom algorithm for training and define your own metrics. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics-variables.html">Define metrics and environment variables</a>.</p>
     pub metric_name: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct FinalHyperParameterTuningJobObjectiveMetric {
     pub value: ::std::option::Option<f32>,
 }
 impl FinalHyperParameterTuningJobObjectiveMetric {
-    /// <p>Select if you want to minimize or maximize the objective metric during hyperparameter tuning.</p>
+    /// <p>Select if you want to minimize or maximize the objective metric during hyperparameter tuning. </p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::HyperParameterTuningJobObjectiveType> {
         self.r#type.as_ref()
     }
@@ -41,17 +41,17 @@ pub struct FinalHyperParameterTuningJobObjectiveMetricBuilder {
     pub(crate) value: ::std::option::Option<f32>,
 }
 impl FinalHyperParameterTuningJobObjectiveMetricBuilder {
-    /// <p>Select if you want to minimize or maximize the objective metric during hyperparameter tuning.</p>
+    /// <p>Select if you want to minimize or maximize the objective metric during hyperparameter tuning. </p>
     pub fn r#type(mut self, input: crate::types::HyperParameterTuningJobObjectiveType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Select if you want to minimize or maximize the objective metric during hyperparameter tuning.</p>
+    /// <p>Select if you want to minimize or maximize the objective metric during hyperparameter tuning. </p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::HyperParameterTuningJobObjectiveType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>Select if you want to minimize or maximize the objective metric during hyperparameter tuning.</p>
+    /// <p>Select if you want to minimize or maximize the objective metric during hyperparameter tuning. </p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::HyperParameterTuningJobObjectiveType> {
         &self.r#type
     }

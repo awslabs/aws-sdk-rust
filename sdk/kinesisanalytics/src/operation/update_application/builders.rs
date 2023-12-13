@@ -25,8 +25,8 @@ impl UpdateApplicationInputBuilder {
 /// <note>
 /// <p>This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL applications. Version 2 of the API supports SQL and Java applications. For more information about version 2, see <a href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics API V2 Documentation</a>.</p>
 /// </note>
-/// <p>Updates an existing Amazon Kinesis Analytics application. Using this API, you can update application code, input configuration, and output configuration.</p>
-/// <p>Note that Amazon Kinesis Analytics updates the <code>CurrentApplicationVersionId</code> each time you update your application.</p>
+/// <p>Updates an existing Amazon Kinesis Analytics application. Using this API, you can update application code, input configuration, and output configuration. </p>
+/// <p>Note that Amazon Kinesis Analytics updates the <code>CurrentApplicationVersionId</code> each time you update your application. </p>
 /// <p>This operation requires permission for the <code>kinesisanalytics:UpdateApplication</code> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateApplicationFluentBuilder {

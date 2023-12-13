@@ -26,10 +26,8 @@ pub struct PivotTableOptions {
     pub collapsed_row_dimensions_visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>The layout for the row dimension headers of a pivot table. Choose one of the following options.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>TABULAR</code>: (Default) Each row field is displayed in a separate column.</p></li>
-    /// <li>
-    /// <p><code>HIERARCHY</code>: All row fields are displayed in a single column. Indentation is used to differentiate row headers of different fields.</p></li>
+    /// <li> <p> <code>TABULAR</code>: (Default) Each row field is displayed in a separate column.</p> </li>
+    /// <li> <p> <code>HIERARCHY</code>: All row fields are displayed in a single column. Indentation is used to differentiate row headers of different fields.</p> </li>
     /// </ul>
     pub rows_layout: ::std::option::Option<crate::types::PivotTableRowsLayout>,
     /// <p>The options for the label that is located above the row headers. This option is only applicable when <code>RowsLayout</code> is set to <code>HIERARCHY</code>.</p>
@@ -80,10 +78,8 @@ impl PivotTableOptions {
     }
     /// <p>The layout for the row dimension headers of a pivot table. Choose one of the following options.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>TABULAR</code>: (Default) Each row field is displayed in a separate column.</p></li>
-    /// <li>
-    /// <p><code>HIERARCHY</code>: All row fields are displayed in a single column. Indentation is used to differentiate row headers of different fields.</p></li>
+    /// <li> <p> <code>TABULAR</code>: (Default) Each row field is displayed in a separate column.</p> </li>
+    /// <li> <p> <code>HIERARCHY</code>: All row fields are displayed in a single column. Indentation is used to differentiate row headers of different fields.</p> </li>
     /// </ul>
     pub fn rows_layout(&self) -> ::std::option::Option<&crate::types::PivotTableRowsLayout> {
         self.rows_layout.as_ref()
@@ -265,10 +261,8 @@ impl PivotTableOptionsBuilder {
     }
     /// <p>The layout for the row dimension headers of a pivot table. Choose one of the following options.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>TABULAR</code>: (Default) Each row field is displayed in a separate column.</p></li>
-    /// <li>
-    /// <p><code>HIERARCHY</code>: All row fields are displayed in a single column. Indentation is used to differentiate row headers of different fields.</p></li>
+    /// <li> <p> <code>TABULAR</code>: (Default) Each row field is displayed in a separate column.</p> </li>
+    /// <li> <p> <code>HIERARCHY</code>: All row fields are displayed in a single column. Indentation is used to differentiate row headers of different fields.</p> </li>
     /// </ul>
     pub fn rows_layout(mut self, input: crate::types::PivotTableRowsLayout) -> Self {
         self.rows_layout = ::std::option::Option::Some(input);
@@ -276,10 +270,8 @@ impl PivotTableOptionsBuilder {
     }
     /// <p>The layout for the row dimension headers of a pivot table. Choose one of the following options.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>TABULAR</code>: (Default) Each row field is displayed in a separate column.</p></li>
-    /// <li>
-    /// <p><code>HIERARCHY</code>: All row fields are displayed in a single column. Indentation is used to differentiate row headers of different fields.</p></li>
+    /// <li> <p> <code>TABULAR</code>: (Default) Each row field is displayed in a separate column.</p> </li>
+    /// <li> <p> <code>HIERARCHY</code>: All row fields are displayed in a single column. Indentation is used to differentiate row headers of different fields.</p> </li>
     /// </ul>
     pub fn set_rows_layout(mut self, input: ::std::option::Option<crate::types::PivotTableRowsLayout>) -> Self {
         self.rows_layout = input;
@@ -287,10 +279,8 @@ impl PivotTableOptionsBuilder {
     }
     /// <p>The layout for the row dimension headers of a pivot table. Choose one of the following options.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>TABULAR</code>: (Default) Each row field is displayed in a separate column.</p></li>
-    /// <li>
-    /// <p><code>HIERARCHY</code>: All row fields are displayed in a single column. Indentation is used to differentiate row headers of different fields.</p></li>
+    /// <li> <p> <code>TABULAR</code>: (Default) Each row field is displayed in a separate column.</p> </li>
+    /// <li> <p> <code>HIERARCHY</code>: All row fields are displayed in a single column. Indentation is used to differentiate row headers of different fields.</p> </li>
     /// </ul>
     pub fn get_rows_layout(&self) -> &::std::option::Option<crate::types::PivotTableRowsLayout> {
         &self.rows_layout

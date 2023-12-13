@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LayoutConfiguration {
-    /// <p>Unique identifier of a layout.</p>
+    /// <p> Unique identifier of a layout. </p>
     pub default_layout: ::std::option::Option<::std::string::String>,
 }
 impl LayoutConfiguration {
-    /// <p>Unique identifier of a layout.</p>
+    /// <p> Unique identifier of a layout. </p>
     pub fn default_layout(&self) -> ::std::option::Option<&str> {
         self.default_layout.as_deref()
     }
@@ -27,17 +27,17 @@ pub struct LayoutConfigurationBuilder {
     pub(crate) default_layout: ::std::option::Option<::std::string::String>,
 }
 impl LayoutConfigurationBuilder {
-    /// <p>Unique identifier of a layout.</p>
+    /// <p> Unique identifier of a layout. </p>
     pub fn default_layout(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_layout = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Unique identifier of a layout.</p>
+    /// <p> Unique identifier of a layout. </p>
     pub fn set_default_layout(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_layout = input;
         self
     }
-    /// <p>Unique identifier of a layout.</p>
+    /// <p> Unique identifier of a layout. </p>
     pub fn get_default_layout(&self) -> &::std::option::Option<::std::string::String> {
         &self.default_layout
     }

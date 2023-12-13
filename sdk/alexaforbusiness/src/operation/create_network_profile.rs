@@ -269,7 +269,7 @@ pub enum CreateNetworkProfileError {
     ConcurrentModificationException(crate::types::error::ConcurrentModificationException),
     /// <p>The Certificate Authority can't issue or revoke a certificate.</p>
     InvalidCertificateAuthorityException(crate::types::error::InvalidCertificateAuthorityException),
-    /// <p>The service linked role is locked for deletion.</p>
+    /// <p>The service linked role is locked for deletion. </p>
     InvalidServiceLinkedRoleStateException(crate::types::error::InvalidServiceLinkedRoleStateException),
     /// <p>You are performing an action that would put you beyond your account's limits.</p>
     LimitExceededException(crate::types::error::LimitExceededException),

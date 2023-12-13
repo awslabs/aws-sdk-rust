@@ -6,7 +6,7 @@
 pub struct NetworkFrameworkAttributes {
     /// <p>Attributes of Hyperledger Fabric for a Managed Blockchain network that uses Hyperledger Fabric.</p>
     pub fabric: ::std::option::Option<crate::types::NetworkFabricAttributes>,
-    /// <p>Attributes of an Ethereum network for Managed Blockchain resources participating in an Ethereum network.</p>
+    /// <p>Attributes of an Ethereum network for Managed Blockchain resources participating in an Ethereum network. </p>
     pub ethereum: ::std::option::Option<crate::types::NetworkEthereumAttributes>,
 }
 impl NetworkFrameworkAttributes {
@@ -14,7 +14,7 @@ impl NetworkFrameworkAttributes {
     pub fn fabric(&self) -> ::std::option::Option<&crate::types::NetworkFabricAttributes> {
         self.fabric.as_ref()
     }
-    /// <p>Attributes of an Ethereum network for Managed Blockchain resources participating in an Ethereum network.</p>
+    /// <p>Attributes of an Ethereum network for Managed Blockchain resources participating in an Ethereum network. </p>
     pub fn ethereum(&self) -> ::std::option::Option<&crate::types::NetworkEthereumAttributes> {
         self.ethereum.as_ref()
     }
@@ -48,17 +48,17 @@ impl NetworkFrameworkAttributesBuilder {
     pub fn get_fabric(&self) -> &::std::option::Option<crate::types::NetworkFabricAttributes> {
         &self.fabric
     }
-    /// <p>Attributes of an Ethereum network for Managed Blockchain resources participating in an Ethereum network.</p>
+    /// <p>Attributes of an Ethereum network for Managed Blockchain resources participating in an Ethereum network. </p>
     pub fn ethereum(mut self, input: crate::types::NetworkEthereumAttributes) -> Self {
         self.ethereum = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Attributes of an Ethereum network for Managed Blockchain resources participating in an Ethereum network.</p>
+    /// <p>Attributes of an Ethereum network for Managed Blockchain resources participating in an Ethereum network. </p>
     pub fn set_ethereum(mut self, input: ::std::option::Option<crate::types::NetworkEthereumAttributes>) -> Self {
         self.ethereum = input;
         self
     }
-    /// <p>Attributes of an Ethereum network for Managed Blockchain resources participating in an Ethereum network.</p>
+    /// <p>Attributes of an Ethereum network for Managed Blockchain resources participating in an Ethereum network. </p>
     pub fn get_ethereum(&self) -> &::std::option::Option<crate::types::NetworkEthereumAttributes> {
         &self.ethereum
     }

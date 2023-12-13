@@ -7,7 +7,7 @@ pub struct WebCrawlerConfiguration {
     /// <p>Specifies the seed or starting point URLs of the websites or the sitemap URLs of the websites you want to crawl.</p>
     /// <p>You can include website subdomains. You can list up to 100 seed URLs and up to three sitemap URLs.</p>
     /// <p>You can only crawl websites that use the secure communication protocol, Hypertext Transfer Protocol Secure (HTTPS). If you receive an error when crawling a website, it could be that the website is blocked from crawling.</p>
-    /// <p><i>When selecting websites to index, you must adhere to the <a href="https://aws.amazon.com/aup/">Amazon Acceptable Use Policy</a> and all other Amazon terms. Remember that you must only use Amazon Kendra Web Crawler to index your own web pages, or web pages that you have authorization to index.</i></p>
+    /// <p> <i>When selecting websites to index, you must adhere to the <a href="https://aws.amazon.com/aup/">Amazon Acceptable Use Policy</a> and all other Amazon terms. Remember that you must only use Amazon Kendra Web Crawler to index your own web pages, or web pages that you have authorization to index.</i> </p>
     pub urls: ::std::option::Option<crate::types::Urls>,
     /// <p>The 'depth' or number of levels from the seed level to crawl. For example, the seed URL page is depth 1 and any hyperlinks on this page that are also crawled are depth 2.</p>
     pub crawl_depth: ::std::option::Option<i32>,
@@ -40,7 +40,7 @@ impl WebCrawlerConfiguration {
     /// <p>Specifies the seed or starting point URLs of the websites or the sitemap URLs of the websites you want to crawl.</p>
     /// <p>You can include website subdomains. You can list up to 100 seed URLs and up to three sitemap URLs.</p>
     /// <p>You can only crawl websites that use the secure communication protocol, Hypertext Transfer Protocol Secure (HTTPS). If you receive an error when crawling a website, it could be that the website is blocked from crawling.</p>
-    /// <p><i>When selecting websites to index, you must adhere to the <a href="https://aws.amazon.com/aup/">Amazon Acceptable Use Policy</a> and all other Amazon terms. Remember that you must only use Amazon Kendra Web Crawler to index your own web pages, or web pages that you have authorization to index.</i></p>
+    /// <p> <i>When selecting websites to index, you must adhere to the <a href="https://aws.amazon.com/aup/">Amazon Acceptable Use Policy</a> and all other Amazon terms. Remember that you must only use Amazon Kendra Web Crawler to index your own web pages, or web pages that you have authorization to index.</i> </p>
     pub fn urls(&self) -> ::std::option::Option<&crate::types::Urls> {
         self.urls.as_ref()
     }
@@ -116,7 +116,7 @@ impl WebCrawlerConfigurationBuilder {
     /// <p>Specifies the seed or starting point URLs of the websites or the sitemap URLs of the websites you want to crawl.</p>
     /// <p>You can include website subdomains. You can list up to 100 seed URLs and up to three sitemap URLs.</p>
     /// <p>You can only crawl websites that use the secure communication protocol, Hypertext Transfer Protocol Secure (HTTPS). If you receive an error when crawling a website, it could be that the website is blocked from crawling.</p>
-    /// <p><i>When selecting websites to index, you must adhere to the <a href="https://aws.amazon.com/aup/">Amazon Acceptable Use Policy</a> and all other Amazon terms. Remember that you must only use Amazon Kendra Web Crawler to index your own web pages, or web pages that you have authorization to index.</i></p>
+    /// <p> <i>When selecting websites to index, you must adhere to the <a href="https://aws.amazon.com/aup/">Amazon Acceptable Use Policy</a> and all other Amazon terms. Remember that you must only use Amazon Kendra Web Crawler to index your own web pages, or web pages that you have authorization to index.</i> </p>
     /// This field is required.
     pub fn urls(mut self, input: crate::types::Urls) -> Self {
         self.urls = ::std::option::Option::Some(input);
@@ -125,7 +125,7 @@ impl WebCrawlerConfigurationBuilder {
     /// <p>Specifies the seed or starting point URLs of the websites or the sitemap URLs of the websites you want to crawl.</p>
     /// <p>You can include website subdomains. You can list up to 100 seed URLs and up to three sitemap URLs.</p>
     /// <p>You can only crawl websites that use the secure communication protocol, Hypertext Transfer Protocol Secure (HTTPS). If you receive an error when crawling a website, it could be that the website is blocked from crawling.</p>
-    /// <p><i>When selecting websites to index, you must adhere to the <a href="https://aws.amazon.com/aup/">Amazon Acceptable Use Policy</a> and all other Amazon terms. Remember that you must only use Amazon Kendra Web Crawler to index your own web pages, or web pages that you have authorization to index.</i></p>
+    /// <p> <i>When selecting websites to index, you must adhere to the <a href="https://aws.amazon.com/aup/">Amazon Acceptable Use Policy</a> and all other Amazon terms. Remember that you must only use Amazon Kendra Web Crawler to index your own web pages, or web pages that you have authorization to index.</i> </p>
     pub fn set_urls(mut self, input: ::std::option::Option<crate::types::Urls>) -> Self {
         self.urls = input;
         self
@@ -133,7 +133,7 @@ impl WebCrawlerConfigurationBuilder {
     /// <p>Specifies the seed or starting point URLs of the websites or the sitemap URLs of the websites you want to crawl.</p>
     /// <p>You can include website subdomains. You can list up to 100 seed URLs and up to three sitemap URLs.</p>
     /// <p>You can only crawl websites that use the secure communication protocol, Hypertext Transfer Protocol Secure (HTTPS). If you receive an error when crawling a website, it could be that the website is blocked from crawling.</p>
-    /// <p><i>When selecting websites to index, you must adhere to the <a href="https://aws.amazon.com/aup/">Amazon Acceptable Use Policy</a> and all other Amazon terms. Remember that you must only use Amazon Kendra Web Crawler to index your own web pages, or web pages that you have authorization to index.</i></p>
+    /// <p> <i>When selecting websites to index, you must adhere to the <a href="https://aws.amazon.com/aup/">Amazon Acceptable Use Policy</a> and all other Amazon terms. Remember that you must only use Amazon Kendra Web Crawler to index your own web pages, or web pages that you have authorization to index.</i> </p>
     pub fn get_urls(&self) -> &::std::option::Option<crate::types::Urls> {
         &self.urls
     }

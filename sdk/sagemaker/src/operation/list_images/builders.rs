@@ -170,17 +170,17 @@ impl ListImagesFluentBuilder {
     pub fn get_last_modified_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_last_modified_time_before()
     }
-    /// <p>The maximum number of images to return in the response. The default value is 10.</p>
+    /// <p>The maximum number of images to return in the response. The default value is 10. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of images to return in the response. The default value is 10.</p>
+    /// <p>The maximum number of images to return in the response. The default value is 10. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The maximum number of images to return in the response. The default value is 10.</p>
+    /// <p>The maximum number of images to return in the response. The default value is 10. </p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

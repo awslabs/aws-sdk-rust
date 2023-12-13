@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClaimGameServerInput {
-    /// <p>A unique identifier for the game server group where the game server is running. If you are not specifying a game server to claim, this value identifies where you want Amazon GameLift FleetIQ to look for an available game server to claim.</p>
+    /// <p>A unique identifier for the game server group where the game server is running. If you are not specifying a game server to claim, this value identifies where you want Amazon GameLift FleetIQ to look for an available game server to claim. </p>
     pub game_server_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A custom string that uniquely identifies the game server to claim. If this parameter is left empty, Amazon GameLift FleetIQ searches for an available game server in the specified game server group.</p>
     pub game_server_id: ::std::option::Option<::std::string::String>,
-    /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers.</p>
+    /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers. </p>
     pub game_server_data: ::std::option::Option<::std::string::String>,
     /// <p>Object that restricts how a claimed game server is chosen.</p>
     pub filter_option: ::std::option::Option<crate::types::ClaimFilterOption>,
 }
 impl ClaimGameServerInput {
-    /// <p>A unique identifier for the game server group where the game server is running. If you are not specifying a game server to claim, this value identifies where you want Amazon GameLift FleetIQ to look for an available game server to claim.</p>
+    /// <p>A unique identifier for the game server group where the game server is running. If you are not specifying a game server to claim, this value identifies where you want Amazon GameLift FleetIQ to look for an available game server to claim. </p>
     pub fn game_server_group_name(&self) -> ::std::option::Option<&str> {
         self.game_server_group_name.as_deref()
     }
@@ -21,7 +21,7 @@ impl ClaimGameServerInput {
     pub fn game_server_id(&self) -> ::std::option::Option<&str> {
         self.game_server_id.as_deref()
     }
-    /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers.</p>
+    /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers. </p>
     pub fn game_server_data(&self) -> ::std::option::Option<&str> {
         self.game_server_data.as_deref()
     }
@@ -47,18 +47,18 @@ pub struct ClaimGameServerInputBuilder {
     pub(crate) filter_option: ::std::option::Option<crate::types::ClaimFilterOption>,
 }
 impl ClaimGameServerInputBuilder {
-    /// <p>A unique identifier for the game server group where the game server is running. If you are not specifying a game server to claim, this value identifies where you want Amazon GameLift FleetIQ to look for an available game server to claim.</p>
+    /// <p>A unique identifier for the game server group where the game server is running. If you are not specifying a game server to claim, this value identifies where you want Amazon GameLift FleetIQ to look for an available game server to claim. </p>
     /// This field is required.
     pub fn game_server_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_server_group_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique identifier for the game server group where the game server is running. If you are not specifying a game server to claim, this value identifies where you want Amazon GameLift FleetIQ to look for an available game server to claim.</p>
+    /// <p>A unique identifier for the game server group where the game server is running. If you are not specifying a game server to claim, this value identifies where you want Amazon GameLift FleetIQ to look for an available game server to claim. </p>
     pub fn set_game_server_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.game_server_group_name = input;
         self
     }
-    /// <p>A unique identifier for the game server group where the game server is running. If you are not specifying a game server to claim, this value identifies where you want Amazon GameLift FleetIQ to look for an available game server to claim.</p>
+    /// <p>A unique identifier for the game server group where the game server is running. If you are not specifying a game server to claim, this value identifies where you want Amazon GameLift FleetIQ to look for an available game server to claim. </p>
     pub fn get_game_server_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.game_server_group_name
     }
@@ -76,17 +76,17 @@ impl ClaimGameServerInputBuilder {
     pub fn get_game_server_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.game_server_id
     }
-    /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers.</p>
+    /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers. </p>
     pub fn game_server_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_server_data = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers.</p>
+    /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers. </p>
     pub fn set_game_server_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.game_server_data = input;
         self
     }
-    /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers.</p>
+    /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers. </p>
     pub fn get_game_server_data(&self) -> &::std::option::Option<::std::string::String> {
         &self.game_server_data
     }

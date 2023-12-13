@@ -8,9 +8,9 @@ pub struct AttackSummary {
     pub attack_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN (Amazon Resource Name) of the resource that was attacked.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The start time of the attack, in Unix time in seconds.</p>
+    /// <p>The start time of the attack, in Unix time in seconds. </p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The end time of the attack, in Unix time in seconds.</p>
+    /// <p>The end time of the attack, in Unix time in seconds. </p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The list of attacks for a specified time period.</p>
     pub attack_vectors: ::std::option::Option<::std::vec::Vec<crate::types::AttackVectorDescription>>,
@@ -24,11 +24,11 @@ impl AttackSummary {
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The start time of the attack, in Unix time in seconds.</p>
+    /// <p>The start time of the attack, in Unix time in seconds. </p>
     pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>The end time of the attack, in Unix time in seconds.</p>
+    /// <p>The end time of the attack, in Unix time in seconds. </p>
     pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
@@ -85,31 +85,31 @@ impl AttackSummaryBuilder {
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }
-    /// <p>The start time of the attack, in Unix time in seconds.</p>
+    /// <p>The start time of the attack, in Unix time in seconds. </p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The start time of the attack, in Unix time in seconds.</p>
+    /// <p>The start time of the attack, in Unix time in seconds. </p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
-    /// <p>The start time of the attack, in Unix time in seconds.</p>
+    /// <p>The start time of the attack, in Unix time in seconds. </p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.start_time
     }
-    /// <p>The end time of the attack, in Unix time in seconds.</p>
+    /// <p>The end time of the attack, in Unix time in seconds. </p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The end time of the attack, in Unix time in seconds.</p>
+    /// <p>The end time of the attack, in Unix time in seconds. </p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
-    /// <p>The end time of the attack, in Unix time in seconds.</p>
+    /// <p>The end time of the attack, in Unix time in seconds. </p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_time
     }

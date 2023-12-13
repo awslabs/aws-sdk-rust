@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`opt_out_list_name(Option<String>)`](crate::operation::delete_opted_out_number::DeleteOptedOutNumberOutput::opt_out_list_name): <p>The OptOutListName that the phone number was removed from.</p>
     ///   - [`opted_out_number(Option<String>)`](crate::operation::delete_opted_out_number::DeleteOptedOutNumberOutput::opted_out_number): <p>The phone number that was removed from the OptOutList.</p>
     ///   - [`opted_out_timestamp(Option<DateTime>)`](crate::operation::delete_opted_out_number::DeleteOptedOutNumberOutput::opted_out_timestamp): <p>The time that the number was removed at, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    ///   - [`end_user_opted_out(bool)`](crate::operation::delete_opted_out_number::DeleteOptedOutNumberOutput::end_user_opted_out): <p>This is true if it was the end user who requested their phone number be removed.</p>
+    ///   - [`end_user_opted_out(bool)`](crate::operation::delete_opted_out_number::DeleteOptedOutNumberOutput::end_user_opted_out): <p>This is true if it was the end user who requested their phone number be removed. </p>
     /// - On failure, responds with [`SdkError<DeleteOptedOutNumberError>`](crate::operation::delete_opted_out_number::DeleteOptedOutNumberError)
     pub fn delete_opted_out_number(&self) -> crate::operation::delete_opted_out_number::builders::DeleteOptedOutNumberFluentBuilder {
         crate::operation::delete_opted_out_number::builders::DeleteOptedOutNumberFluentBuilder::new(self.handle.clone())

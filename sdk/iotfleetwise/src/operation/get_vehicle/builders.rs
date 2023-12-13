@@ -22,7 +22,7 @@ impl GetVehicleInputBuilder {
 }
 /// Fluent builder constructing a request to `GetVehicle`.
 ///
-/// <p>Retrieves information about a vehicle.</p>
+/// <p> Retrieves information about a vehicle. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetVehicleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl GetVehicleFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the vehicle to retrieve information about.</p>
+    /// <p> The ID of the vehicle to retrieve information about. </p>
     pub fn vehicle_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vehicle_name(input.into());
         self
     }
-    /// <p>The ID of the vehicle to retrieve information about.</p>
+    /// <p> The ID of the vehicle to retrieve information about. </p>
     pub fn set_vehicle_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vehicle_name(input);
         self
     }
-    /// <p>The ID of the vehicle to retrieve information about.</p>
+    /// <p> The ID of the vehicle to retrieve information about. </p>
     pub fn get_vehicle_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_vehicle_name()
     }

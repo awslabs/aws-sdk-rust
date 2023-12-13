@@ -25,13 +25,11 @@ impl CreateFileSystemFromBackupInputBuilder {
 /// <p>Creates a new Amazon FSx for Lustre, Amazon FSx for Windows File Server, or Amazon FSx for OpenZFS file system from an existing Amazon FSx backup.</p>
 /// <p>If a file system with the specified client request token exists and the parameters match, this operation returns the description of the file system. If a file system with the specified client request token exists but the parameters don't match, this call returns <code>IncompatibleParameterError</code>. If a file system with the specified client request token doesn't exist, this operation does the following:</p>
 /// <ul>
-/// <li>
-/// <p>Creates a new Amazon FSx file system from backup with an assigned ID, and an initial lifecycle state of <code>CREATING</code>.</p></li>
-/// <li>
-/// <p>Returns the description of the file system.</p></li>
+/// <li> <p>Creates a new Amazon FSx file system from backup with an assigned ID, and an initial lifecycle state of <code>CREATING</code>.</p> </li>
+/// <li> <p>Returns the description of the file system.</p> </li>
 /// </ul>
 /// <p>Parameters like the Active Directory, default share name, automatic backup, and backup settings default to the parameters of the file system that was backed up, unless overridden. You can explicitly supply other settings.</p>
-/// <p>By using the idempotent operation, you can retry a <code>CreateFileSystemFromBackup</code> call without the risk of creating an extra file system. This approach can be useful when an initial call fails in a way that makes it unclear whether a file system was created. Examples are if a transport level timeout occurred, or your connection was reset. If you use the same client request token and the initial call created a file system, the client receives a success message as long as the parameters are the same.</p><note>
+/// <p>By using the idempotent operation, you can retry a <code>CreateFileSystemFromBackup</code> call without the risk of creating an extra file system. This approach can be useful when an initial call fails in a way that makes it unclear whether a file system was created. Examples are if a transport level timeout occurred, or your connection was reset. If you use the same client request token and the initial call created a file system, the client receives a success message as long as the parameters are the same.</p> <note>
 /// <p>The <code>CreateFileSystemFromBackup</code> call returns while the file system's lifecycle state is still <code>CREATING</code>. You can check the file-system creation status by calling the <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeFileSystems.html"> DescribeFileSystems</a> operation, which returns the file system state along with other information.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -218,51 +216,39 @@ impl CreateFileSystemFromBackupFluentBuilder {
     pub fn get_windows_configuration(&self) -> &::std::option::Option<crate::types::CreateFileSystemWindowsConfiguration> {
         self.inner.get_windows_configuration()
     }
-    /// <p>The Lustre configuration for the file system being created.</p><note>
+    /// <p>The Lustre configuration for the file system being created.</p> <note>
     /// <p>The following parameters are not supported for file systems with a data repository association created with .</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AutoImportPolicy</code></p></li>
-    /// <li>
-    /// <p><code>ExportPath</code></p></li>
-    /// <li>
-    /// <p><code>ImportedFileChunkSize</code></p></li>
-    /// <li>
-    /// <p><code>ImportPath</code></p></li>
+    /// <li> <p> <code>AutoImportPolicy</code> </p> </li>
+    /// <li> <p> <code>ExportPath</code> </p> </li>
+    /// <li> <p> <code>ImportedFileChunkSize</code> </p> </li>
+    /// <li> <p> <code>ImportPath</code> </p> </li>
     /// </ul>
     /// </note>
     pub fn lustre_configuration(mut self, input: crate::types::CreateFileSystemLustreConfiguration) -> Self {
         self.inner = self.inner.lustre_configuration(input);
         self
     }
-    /// <p>The Lustre configuration for the file system being created.</p><note>
+    /// <p>The Lustre configuration for the file system being created.</p> <note>
     /// <p>The following parameters are not supported for file systems with a data repository association created with .</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AutoImportPolicy</code></p></li>
-    /// <li>
-    /// <p><code>ExportPath</code></p></li>
-    /// <li>
-    /// <p><code>ImportedFileChunkSize</code></p></li>
-    /// <li>
-    /// <p><code>ImportPath</code></p></li>
+    /// <li> <p> <code>AutoImportPolicy</code> </p> </li>
+    /// <li> <p> <code>ExportPath</code> </p> </li>
+    /// <li> <p> <code>ImportedFileChunkSize</code> </p> </li>
+    /// <li> <p> <code>ImportPath</code> </p> </li>
     /// </ul>
     /// </note>
     pub fn set_lustre_configuration(mut self, input: ::std::option::Option<crate::types::CreateFileSystemLustreConfiguration>) -> Self {
         self.inner = self.inner.set_lustre_configuration(input);
         self
     }
-    /// <p>The Lustre configuration for the file system being created.</p><note>
+    /// <p>The Lustre configuration for the file system being created.</p> <note>
     /// <p>The following parameters are not supported for file systems with a data repository association created with .</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AutoImportPolicy</code></p></li>
-    /// <li>
-    /// <p><code>ExportPath</code></p></li>
-    /// <li>
-    /// <p><code>ImportedFileChunkSize</code></p></li>
-    /// <li>
-    /// <p><code>ImportPath</code></p></li>
+    /// <li> <p> <code>AutoImportPolicy</code> </p> </li>
+    /// <li> <p> <code>ExportPath</code> </p> </li>
+    /// <li> <p> <code>ImportedFileChunkSize</code> </p> </li>
+    /// <li> <p> <code>ImportPath</code> </p> </li>
     /// </ul>
     /// </note>
     pub fn get_lustre_configuration(&self) -> &::std::option::Option<crate::types::CreateFileSystemLustreConfiguration> {
@@ -270,12 +256,10 @@ impl CreateFileSystemFromBackupFluentBuilder {
     }
     /// <p>Sets the storage type for the Windows or OpenZFS file system that you're creating from a backup. Valid values are <code>SSD</code> and <code>HDD</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p>Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all Windows and OpenZFS deployment types.</p></li>
-    /// <li>
-    /// <p>Set to <code>HDD</code> to use hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> FSx for Windows File Server file system deployment types.</p></li>
+    /// <li> <p>Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all Windows and OpenZFS deployment types.</p> </li>
+    /// <li> <p>Set to <code>HDD</code> to use hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> FSx for Windows File Server file system deployment types.</p> </li>
     /// </ul>
-    /// <p>The default value is <code>SSD</code>.</p><note>
+    /// <p> The default value is <code>SSD</code>. </p> <note>
     /// <p>HDD and SSD storage types have different minimum storage capacity requirements. A restored file system's storage capacity is tied to the file system that was backed up. You can create a file system that uses HDD storage from a backup of a file system that used SSD storage if the original SSD file system had a storage capacity of at least 2000 GiB.</p>
     /// </note>
     pub fn storage_type(mut self, input: crate::types::StorageType) -> Self {
@@ -284,12 +268,10 @@ impl CreateFileSystemFromBackupFluentBuilder {
     }
     /// <p>Sets the storage type for the Windows or OpenZFS file system that you're creating from a backup. Valid values are <code>SSD</code> and <code>HDD</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p>Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all Windows and OpenZFS deployment types.</p></li>
-    /// <li>
-    /// <p>Set to <code>HDD</code> to use hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> FSx for Windows File Server file system deployment types.</p></li>
+    /// <li> <p>Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all Windows and OpenZFS deployment types.</p> </li>
+    /// <li> <p>Set to <code>HDD</code> to use hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> FSx for Windows File Server file system deployment types.</p> </li>
     /// </ul>
-    /// <p>The default value is <code>SSD</code>.</p><note>
+    /// <p> The default value is <code>SSD</code>. </p> <note>
     /// <p>HDD and SSD storage types have different minimum storage capacity requirements. A restored file system's storage capacity is tied to the file system that was backed up. You can create a file system that uses HDD storage from a backup of a file system that used SSD storage if the original SSD file system had a storage capacity of at least 2000 GiB.</p>
     /// </note>
     pub fn set_storage_type(mut self, input: ::std::option::Option<crate::types::StorageType>) -> Self {
@@ -298,12 +280,10 @@ impl CreateFileSystemFromBackupFluentBuilder {
     }
     /// <p>Sets the storage type for the Windows or OpenZFS file system that you're creating from a backup. Valid values are <code>SSD</code> and <code>HDD</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p>Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all Windows and OpenZFS deployment types.</p></li>
-    /// <li>
-    /// <p>Set to <code>HDD</code> to use hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> FSx for Windows File Server file system deployment types.</p></li>
+    /// <li> <p>Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all Windows and OpenZFS deployment types.</p> </li>
+    /// <li> <p>Set to <code>HDD</code> to use hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> FSx for Windows File Server file system deployment types.</p> </li>
     /// </ul>
-    /// <p>The default value is <code>SSD</code>.</p><note>
+    /// <p> The default value is <code>SSD</code>. </p> <note>
     /// <p>HDD and SSD storage types have different minimum storage capacity requirements. A restored file system's storage capacity is tied to the file system that was backed up. You can create a file system that uses HDD storage from a backup of a file system that used SSD storage if the original SSD file system had a storage capacity of at least 2000 GiB.</p>
     /// </note>
     pub fn get_storage_type(&self) -> &::std::option::Option<crate::types::StorageType> {
@@ -311,15 +291,10 @@ impl CreateFileSystemFromBackupFluentBuilder {
     }
     /// <p>Specifies the ID of the Key Management Service (KMS) key to use for encrypting data on Amazon FSx file systems, as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types only.</p>
-    /// <p><code>SCRATCH_1</code> and <code>SCRATCH_2</code> types are encrypted using the Amazon FSx service KMS key for your account.</p></li>
-    /// <li>
-    /// <p>Amazon FSx for NetApp ONTAP</p></li>
-    /// <li>
-    /// <p>Amazon FSx for OpenZFS</p></li>
-    /// <li>
-    /// <p>Amazon FSx for Windows File Server</p></li>
+    /// <li> <p>Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types only.</p> <p> <code>SCRATCH_1</code> and <code>SCRATCH_2</code> types are encrypted using the Amazon FSx service KMS key for your account.</p> </li>
+    /// <li> <p>Amazon FSx for NetApp ONTAP</p> </li>
+    /// <li> <p>Amazon FSx for OpenZFS</p> </li>
+    /// <li> <p>Amazon FSx for Windows File Server</p> </li>
     /// </ul>
     /// <p>If a <code>KmsKeyId</code> isn't specified, the Amazon FSx-managed KMS key for your account is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>Key Management Service API Reference</i>.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -328,15 +303,10 @@ impl CreateFileSystemFromBackupFluentBuilder {
     }
     /// <p>Specifies the ID of the Key Management Service (KMS) key to use for encrypting data on Amazon FSx file systems, as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types only.</p>
-    /// <p><code>SCRATCH_1</code> and <code>SCRATCH_2</code> types are encrypted using the Amazon FSx service KMS key for your account.</p></li>
-    /// <li>
-    /// <p>Amazon FSx for NetApp ONTAP</p></li>
-    /// <li>
-    /// <p>Amazon FSx for OpenZFS</p></li>
-    /// <li>
-    /// <p>Amazon FSx for Windows File Server</p></li>
+    /// <li> <p>Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types only.</p> <p> <code>SCRATCH_1</code> and <code>SCRATCH_2</code> types are encrypted using the Amazon FSx service KMS key for your account.</p> </li>
+    /// <li> <p>Amazon FSx for NetApp ONTAP</p> </li>
+    /// <li> <p>Amazon FSx for OpenZFS</p> </li>
+    /// <li> <p>Amazon FSx for Windows File Server</p> </li>
     /// </ul>
     /// <p>If a <code>KmsKeyId</code> isn't specified, the Amazon FSx-managed KMS key for your account is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>Key Management Service API Reference</i>.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -345,15 +315,10 @@ impl CreateFileSystemFromBackupFluentBuilder {
     }
     /// <p>Specifies the ID of the Key Management Service (KMS) key to use for encrypting data on Amazon FSx file systems, as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types only.</p>
-    /// <p><code>SCRATCH_1</code> and <code>SCRATCH_2</code> types are encrypted using the Amazon FSx service KMS key for your account.</p></li>
-    /// <li>
-    /// <p>Amazon FSx for NetApp ONTAP</p></li>
-    /// <li>
-    /// <p>Amazon FSx for OpenZFS</p></li>
-    /// <li>
-    /// <p>Amazon FSx for Windows File Server</p></li>
+    /// <li> <p>Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types only.</p> <p> <code>SCRATCH_1</code> and <code>SCRATCH_2</code> types are encrypted using the Amazon FSx service KMS key for your account.</p> </li>
+    /// <li> <p>Amazon FSx for NetApp ONTAP</p> </li>
+    /// <li> <p>Amazon FSx for OpenZFS</p> </li>
+    /// <li> <p>Amazon FSx for Windows File Server</p> </li>
     /// </ul>
     /// <p>If a <code>KmsKeyId</code> isn't specified, the Amazon FSx-managed KMS key for your account is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>Key Management Service API Reference</i>.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -376,34 +341,34 @@ impl CreateFileSystemFromBackupFluentBuilder {
     pub fn get_file_system_type_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_file_system_type_version()
     }
-    /// <p>The OpenZFS configuration for the file system that's being created.</p>
+    /// <p>The OpenZFS configuration for the file system that's being created. </p>
     pub fn open_zfs_configuration(mut self, input: crate::types::CreateFileSystemOpenZfsConfiguration) -> Self {
         self.inner = self.inner.open_zfs_configuration(input);
         self
     }
-    /// <p>The OpenZFS configuration for the file system that's being created.</p>
+    /// <p>The OpenZFS configuration for the file system that's being created. </p>
     pub fn set_open_zfs_configuration(mut self, input: ::std::option::Option<crate::types::CreateFileSystemOpenZfsConfiguration>) -> Self {
         self.inner = self.inner.set_open_zfs_configuration(input);
         self
     }
-    /// <p>The OpenZFS configuration for the file system that's being created.</p>
+    /// <p>The OpenZFS configuration for the file system that's being created. </p>
     pub fn get_open_zfs_configuration(&self) -> &::std::option::Option<crate::types::CreateFileSystemOpenZfsConfiguration> {
         self.inner.get_open_zfs_configuration()
     }
     /// <p>Sets the storage capacity of the OpenZFS file system that you're creating from a backup, in gibibytes (GiB). Valid values are from 64 GiB up to 524,288 GiB (512 TiB). However, the value that you specify must be equal to or greater than the backup's storage capacity value. If you don't use the <code>StorageCapacity</code> parameter, the default is the backup's <code>StorageCapacity</code> value.</p>
-    /// <p>If used to create a file system other than OpenZFS, you must provide a value that matches the backup's <code>StorageCapacity</code> value. If you provide any other value, Amazon FSx responds with with an HTTP status code 400 Bad Request.</p>
+    /// <p>If used to create a file system other than OpenZFS, you must provide a value that matches the backup's <code>StorageCapacity</code> value. If you provide any other value, Amazon FSx responds with with an HTTP status code 400 Bad Request. </p>
     pub fn storage_capacity(mut self, input: i32) -> Self {
         self.inner = self.inner.storage_capacity(input);
         self
     }
     /// <p>Sets the storage capacity of the OpenZFS file system that you're creating from a backup, in gibibytes (GiB). Valid values are from 64 GiB up to 524,288 GiB (512 TiB). However, the value that you specify must be equal to or greater than the backup's storage capacity value. If you don't use the <code>StorageCapacity</code> parameter, the default is the backup's <code>StorageCapacity</code> value.</p>
-    /// <p>If used to create a file system other than OpenZFS, you must provide a value that matches the backup's <code>StorageCapacity</code> value. If you provide any other value, Amazon FSx responds with with an HTTP status code 400 Bad Request.</p>
+    /// <p>If used to create a file system other than OpenZFS, you must provide a value that matches the backup's <code>StorageCapacity</code> value. If you provide any other value, Amazon FSx responds with with an HTTP status code 400 Bad Request. </p>
     pub fn set_storage_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_storage_capacity(input);
         self
     }
     /// <p>Sets the storage capacity of the OpenZFS file system that you're creating from a backup, in gibibytes (GiB). Valid values are from 64 GiB up to 524,288 GiB (512 TiB). However, the value that you specify must be equal to or greater than the backup's storage capacity value. If you don't use the <code>StorageCapacity</code> parameter, the default is the backup's <code>StorageCapacity</code> value.</p>
-    /// <p>If used to create a file system other than OpenZFS, you must provide a value that matches the backup's <code>StorageCapacity</code> value. If you provide any other value, Amazon FSx responds with with an HTTP status code 400 Bad Request.</p>
+    /// <p>If used to create a file system other than OpenZFS, you must provide a value that matches the backup's <code>StorageCapacity</code> value. If you provide any other value, Amazon FSx responds with with an HTTP status code 400 Bad Request. </p>
     pub fn get_storage_capacity(&self) -> &::std::option::Option<i32> {
         self.inner.get_storage_capacity()
     }

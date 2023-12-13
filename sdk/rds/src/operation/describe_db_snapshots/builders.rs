@@ -117,8 +117,7 @@ impl DescribeDBSnapshotsFluentBuilder {
     /// <p>The ID of the DB instance to retrieve the list of DB snapshots for. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>If supplied, must match the identifier of an existing DBInstance.</p></li>
+    /// <li> <p>If supplied, must match the identifier of an existing DBInstance.</p> </li>
     /// </ul>
     pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_instance_identifier(input.into());
@@ -127,8 +126,7 @@ impl DescribeDBSnapshotsFluentBuilder {
     /// <p>The ID of the DB instance to retrieve the list of DB snapshots for. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>If supplied, must match the identifier of an existing DBInstance.</p></li>
+    /// <li> <p>If supplied, must match the identifier of an existing DBInstance.</p> </li>
     /// </ul>
     pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_instance_identifier(input);
@@ -137,8 +135,7 @@ impl DescribeDBSnapshotsFluentBuilder {
     /// <p>The ID of the DB instance to retrieve the list of DB snapshots for. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>If supplied, must match the identifier of an existing DBInstance.</p></li>
+    /// <li> <p>If supplied, must match the identifier of an existing DBInstance.</p> </li>
     /// </ul>
     pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_instance_identifier()
@@ -146,10 +143,8 @@ impl DescribeDBSnapshotsFluentBuilder {
     /// <p>A specific DB snapshot identifier to describe. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>If supplied, must match the identifier of an existing DBSnapshot.</p></li>
-    /// <li>
-    /// <p>If this identifier is for an automated snapshot, the <code>SnapshotType</code> parameter must also be specified.</p></li>
+    /// <li> <p>If supplied, must match the identifier of an existing DBSnapshot.</p> </li>
+    /// <li> <p>If this identifier is for an automated snapshot, the <code>SnapshotType</code> parameter must also be specified.</p> </li>
     /// </ul>
     pub fn db_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_snapshot_identifier(input.into());
@@ -158,10 +153,8 @@ impl DescribeDBSnapshotsFluentBuilder {
     /// <p>A specific DB snapshot identifier to describe. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>If supplied, must match the identifier of an existing DBSnapshot.</p></li>
-    /// <li>
-    /// <p>If this identifier is for an automated snapshot, the <code>SnapshotType</code> parameter must also be specified.</p></li>
+    /// <li> <p>If supplied, must match the identifier of an existing DBSnapshot.</p> </li>
+    /// <li> <p>If this identifier is for an automated snapshot, the <code>SnapshotType</code> parameter must also be specified.</p> </li>
     /// </ul>
     pub fn set_db_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_snapshot_identifier(input);
@@ -170,28 +163,19 @@ impl DescribeDBSnapshotsFluentBuilder {
     /// <p>A specific DB snapshot identifier to describe. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>If supplied, must match the identifier of an existing DBSnapshot.</p></li>
-    /// <li>
-    /// <p>If this identifier is for an automated snapshot, the <code>SnapshotType</code> parameter must also be specified.</p></li>
+    /// <li> <p>If supplied, must match the identifier of an existing DBSnapshot.</p> </li>
+    /// <li> <p>If this identifier is for an automated snapshot, the <code>SnapshotType</code> parameter must also be specified.</p> </li>
     /// </ul>
     pub fn get_db_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_snapshot_identifier()
     }
     /// <p>The type of snapshots to be returned. You can specify one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>automated</code> - Return all DB snapshots that have been automatically taken by Amazon RDS for my Amazon Web Services account.</p></li>
-    /// <li>
-    /// <p><code>manual</code> - Return all DB snapshots that have been taken by my Amazon Web Services account.</p></li>
-    /// <li>
-    /// <p><code>shared</code> - Return all manual DB snapshots that have been shared to my Amazon Web Services account.</p></li>
-    /// <li>
-    /// <p><code>public</code> - Return all DB snapshots that have been marked as public.</p></li>
-    /// <li>
-    /// <p><code>awsbackup</code> - Return the DB snapshots managed by the Amazon Web Services Backup service.</p>
-    /// <p>For information about Amazon Web Services Backup, see the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html"> <i>Amazon Web Services Backup Developer Guide.</i> </a></p>
-    /// <p>The <code>awsbackup</code> type does not apply to Aurora.</p></li>
+    /// <li> <p> <code>automated</code> - Return all DB snapshots that have been automatically taken by Amazon RDS for my Amazon Web Services account.</p> </li>
+    /// <li> <p> <code>manual</code> - Return all DB snapshots that have been taken by my Amazon Web Services account.</p> </li>
+    /// <li> <p> <code>shared</code> - Return all manual DB snapshots that have been shared to my Amazon Web Services account.</p> </li>
+    /// <li> <p> <code>public</code> - Return all DB snapshots that have been marked as public.</p> </li>
+    /// <li> <p> <code>awsbackup</code> - Return the DB snapshots managed by the Amazon Web Services Backup service.</p> <p>For information about Amazon Web Services Backup, see the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html"> <i>Amazon Web Services Backup Developer Guide.</i> </a> </p> <p>The <code>awsbackup</code> type does not apply to Aurora.</p> </li>
     /// </ul>
     /// <p>If you don't specify a <code>SnapshotType</code> value, then both automated and manual snapshots are returned. Shared and public DB snapshots are not included in the returned results by default. You can include shared snapshots with these results by enabling the <code>IncludeShared</code> parameter. You can include public snapshots with these results by enabling the <code>IncludePublic</code> parameter.</p>
     /// <p>The <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply for <code>SnapshotType</code> values of <code>manual</code> or <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>shared</code>. The <code>IncludeShared</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>public</code>.</p>
@@ -201,18 +185,11 @@ impl DescribeDBSnapshotsFluentBuilder {
     }
     /// <p>The type of snapshots to be returned. You can specify one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>automated</code> - Return all DB snapshots that have been automatically taken by Amazon RDS for my Amazon Web Services account.</p></li>
-    /// <li>
-    /// <p><code>manual</code> - Return all DB snapshots that have been taken by my Amazon Web Services account.</p></li>
-    /// <li>
-    /// <p><code>shared</code> - Return all manual DB snapshots that have been shared to my Amazon Web Services account.</p></li>
-    /// <li>
-    /// <p><code>public</code> - Return all DB snapshots that have been marked as public.</p></li>
-    /// <li>
-    /// <p><code>awsbackup</code> - Return the DB snapshots managed by the Amazon Web Services Backup service.</p>
-    /// <p>For information about Amazon Web Services Backup, see the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html"> <i>Amazon Web Services Backup Developer Guide.</i> </a></p>
-    /// <p>The <code>awsbackup</code> type does not apply to Aurora.</p></li>
+    /// <li> <p> <code>automated</code> - Return all DB snapshots that have been automatically taken by Amazon RDS for my Amazon Web Services account.</p> </li>
+    /// <li> <p> <code>manual</code> - Return all DB snapshots that have been taken by my Amazon Web Services account.</p> </li>
+    /// <li> <p> <code>shared</code> - Return all manual DB snapshots that have been shared to my Amazon Web Services account.</p> </li>
+    /// <li> <p> <code>public</code> - Return all DB snapshots that have been marked as public.</p> </li>
+    /// <li> <p> <code>awsbackup</code> - Return the DB snapshots managed by the Amazon Web Services Backup service.</p> <p>For information about Amazon Web Services Backup, see the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html"> <i>Amazon Web Services Backup Developer Guide.</i> </a> </p> <p>The <code>awsbackup</code> type does not apply to Aurora.</p> </li>
     /// </ul>
     /// <p>If you don't specify a <code>SnapshotType</code> value, then both automated and manual snapshots are returned. Shared and public DB snapshots are not included in the returned results by default. You can include shared snapshots with these results by enabling the <code>IncludeShared</code> parameter. You can include public snapshots with these results by enabling the <code>IncludePublic</code> parameter.</p>
     /// <p>The <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply for <code>SnapshotType</code> values of <code>manual</code> or <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>shared</code>. The <code>IncludeShared</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>public</code>.</p>
@@ -222,18 +199,11 @@ impl DescribeDBSnapshotsFluentBuilder {
     }
     /// <p>The type of snapshots to be returned. You can specify one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>automated</code> - Return all DB snapshots that have been automatically taken by Amazon RDS for my Amazon Web Services account.</p></li>
-    /// <li>
-    /// <p><code>manual</code> - Return all DB snapshots that have been taken by my Amazon Web Services account.</p></li>
-    /// <li>
-    /// <p><code>shared</code> - Return all manual DB snapshots that have been shared to my Amazon Web Services account.</p></li>
-    /// <li>
-    /// <p><code>public</code> - Return all DB snapshots that have been marked as public.</p></li>
-    /// <li>
-    /// <p><code>awsbackup</code> - Return the DB snapshots managed by the Amazon Web Services Backup service.</p>
-    /// <p>For information about Amazon Web Services Backup, see the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html"> <i>Amazon Web Services Backup Developer Guide.</i> </a></p>
-    /// <p>The <code>awsbackup</code> type does not apply to Aurora.</p></li>
+    /// <li> <p> <code>automated</code> - Return all DB snapshots that have been automatically taken by Amazon RDS for my Amazon Web Services account.</p> </li>
+    /// <li> <p> <code>manual</code> - Return all DB snapshots that have been taken by my Amazon Web Services account.</p> </li>
+    /// <li> <p> <code>shared</code> - Return all manual DB snapshots that have been shared to my Amazon Web Services account.</p> </li>
+    /// <li> <p> <code>public</code> - Return all DB snapshots that have been marked as public.</p> </li>
+    /// <li> <p> <code>awsbackup</code> - Return the DB snapshots managed by the Amazon Web Services Backup service.</p> <p>For information about Amazon Web Services Backup, see the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html"> <i>Amazon Web Services Backup Developer Guide.</i> </a> </p> <p>The <code>awsbackup</code> type does not apply to Aurora.</p> </li>
     /// </ul>
     /// <p>If you don't specify a <code>SnapshotType</code> value, then both automated and manual snapshots are returned. Shared and public DB snapshots are not included in the returned results by default. You can include shared snapshots with these results by enabling the <code>IncludeShared</code> parameter. You can include public snapshots with these results by enabling the <code>IncludePublic</code> parameter.</p>
     /// <p>The <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply for <code>SnapshotType</code> values of <code>manual</code> or <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>shared</code>. The <code>IncludeShared</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>public</code>.</p>
@@ -247,16 +217,11 @@ impl DescribeDBSnapshotsFluentBuilder {
     /// <p>A filter that specifies one or more DB snapshots to describe.</p>
     /// <p>Supported filters:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names (ARNs).</p></li>
-    /// <li>
-    /// <p><code>db-snapshot-id</code> - Accepts DB snapshot identifiers.</p></li>
-    /// <li>
-    /// <p><code>dbi-resource-id</code> - Accepts identifiers of source DB instances.</p></li>
-    /// <li>
-    /// <p><code>snapshot-type</code> - Accepts types of DB snapshots.</p></li>
-    /// <li>
-    /// <p><code>engine</code> - Accepts names of database engines.</p></li>
+    /// <li> <p> <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names (ARNs).</p> </li>
+    /// <li> <p> <code>db-snapshot-id</code> - Accepts DB snapshot identifiers.</p> </li>
+    /// <li> <p> <code>dbi-resource-id</code> - Accepts identifiers of source DB instances.</p> </li>
+    /// <li> <p> <code>snapshot-type</code> - Accepts types of DB snapshots.</p> </li>
+    /// <li> <p> <code>engine</code> - Accepts names of database engines.</p> </li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
@@ -265,16 +230,11 @@ impl DescribeDBSnapshotsFluentBuilder {
     /// <p>A filter that specifies one or more DB snapshots to describe.</p>
     /// <p>Supported filters:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names (ARNs).</p></li>
-    /// <li>
-    /// <p><code>db-snapshot-id</code> - Accepts DB snapshot identifiers.</p></li>
-    /// <li>
-    /// <p><code>dbi-resource-id</code> - Accepts identifiers of source DB instances.</p></li>
-    /// <li>
-    /// <p><code>snapshot-type</code> - Accepts types of DB snapshots.</p></li>
-    /// <li>
-    /// <p><code>engine</code> - Accepts names of database engines.</p></li>
+    /// <li> <p> <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names (ARNs).</p> </li>
+    /// <li> <p> <code>db-snapshot-id</code> - Accepts DB snapshot identifiers.</p> </li>
+    /// <li> <p> <code>dbi-resource-id</code> - Accepts identifiers of source DB instances.</p> </li>
+    /// <li> <p> <code>snapshot-type</code> - Accepts types of DB snapshots.</p> </li>
+    /// <li> <p> <code>engine</code> - Accepts names of database engines.</p> </li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
@@ -283,16 +243,11 @@ impl DescribeDBSnapshotsFluentBuilder {
     /// <p>A filter that specifies one or more DB snapshots to describe.</p>
     /// <p>Supported filters:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names (ARNs).</p></li>
-    /// <li>
-    /// <p><code>db-snapshot-id</code> - Accepts DB snapshot identifiers.</p></li>
-    /// <li>
-    /// <p><code>dbi-resource-id</code> - Accepts identifiers of source DB instances.</p></li>
-    /// <li>
-    /// <p><code>snapshot-type</code> - Accepts types of DB snapshots.</p></li>
-    /// <li>
-    /// <p><code>engine</code> - Accepts names of database engines.</p></li>
+    /// <li> <p> <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names (ARNs).</p> </li>
+    /// <li> <p> <code>db-snapshot-id</code> - Accepts DB snapshot identifiers.</p> </li>
+    /// <li> <p> <code>dbi-resource-id</code> - Accepts identifiers of source DB instances.</p> </li>
+    /// <li> <p> <code>snapshot-type</code> - Accepts types of DB snapshots.</p> </li>
+    /// <li> <p> <code>engine</code> - Accepts names of database engines.</p> </li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()

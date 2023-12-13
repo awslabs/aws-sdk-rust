@@ -4,14 +4,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDataSourcesOutput {
-    /// <p>A list of <code>DataSource</code> that meet the search criteria.</p>
+    /// <p>A list of <code>DataSource</code> that meet the search criteria. </p>
     pub results: ::std::option::Option<::std::vec::Vec<crate::types::DataSource>>,
     /// <p>An ID of the next page in the paginated results that indicates at least one more page follows.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeDataSourcesOutput {
-    /// <p>A list of <code>DataSource</code> that meet the search criteria.</p>
+    /// <p>A list of <code>DataSource</code> that meet the search criteria. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.results.is_none()`.
     pub fn results(&self) -> &[crate::types::DataSource] {
@@ -47,19 +47,19 @@ impl DescribeDataSourcesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_results`](Self::set_results).
     ///
-    /// <p>A list of <code>DataSource</code> that meet the search criteria.</p>
+    /// <p>A list of <code>DataSource</code> that meet the search criteria. </p>
     pub fn results(mut self, input: crate::types::DataSource) -> Self {
         let mut v = self.results.unwrap_or_default();
         v.push(input);
         self.results = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of <code>DataSource</code> that meet the search criteria.</p>
+    /// <p>A list of <code>DataSource</code> that meet the search criteria. </p>
     pub fn set_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataSource>>) -> Self {
         self.results = input;
         self
     }
-    /// <p>A list of <code>DataSource</code> that meet the search criteria.</p>
+    /// <p>A list of <code>DataSource</code> that meet the search criteria. </p>
     pub fn get_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSource>> {
         &self.results
     }

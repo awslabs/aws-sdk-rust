@@ -23,12 +23,10 @@ impl CreateEnvironmentInputBuilder {
 /// Fluent builder constructing a request to `CreateEnvironment`.
 ///
 /// <p>Deploy a new environment. An Proton environment is created from an environment template that defines infrastructure and resources that can be shared across services.</p>
-/// <p class="title"><b>You can provision environments using the following methods:</b></p>
+/// <p class="title"> <b>You can provision environments using the following methods:</b> </p>
 /// <ul>
-/// <li>
-/// <p>Amazon Web Services-managed provisioning: Proton makes direct calls to provision your resources.</p></li>
-/// <li>
-/// <p>Self-managed provisioning: Proton makes pull requests on your repository to provide compiled infrastructure as code (IaC) files that your IaC engine uses to provision resources.</p></li>
+/// <li> <p>Amazon Web Services-managed provisioning: Proton makes direct calls to provision your resources.</p> </li>
+/// <li> <p>Self-managed provisioning: Proton makes pull requests on your repository to provide compiled infrastructure as code (IaC) files that your IaC engine uses to provision resources.</p> </li>
 /// </ul>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-environments.html">Environments</a> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html">Provisioning methods</a> in the <i>Proton User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

@@ -17,7 +17,7 @@ pub struct Container {
     /// </name>
     /// </account>
     /// </region></p>
-    /// <p>For example: arn:aws:mediastore:us-west-2:111122223333:container/movies</p>
+    /// <p>For example: arn:aws:mediastore:us-west-2:111122223333:container/movies </p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the container.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -44,7 +44,7 @@ impl Container {
     /// </name>
     /// </account>
     /// </region></p>
-    /// <p>For example: arn:aws:mediastore:us-west-2:111122223333:container/movies</p>
+    /// <p>For example: arn:aws:mediastore:us-west-2:111122223333:container/movies </p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -117,7 +117,7 @@ impl ContainerBuilder {
     /// </name>
     /// </account>
     /// </region></p>
-    /// <p>For example: arn:aws:mediastore:us-west-2:111122223333:container/movies</p>
+    /// <p>For example: arn:aws:mediastore:us-west-2:111122223333:container/movies </p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -131,7 +131,7 @@ impl ContainerBuilder {
     /// </name>
     /// </account>
     /// </region></p>
-    /// <p>For example: arn:aws:mediastore:us-west-2:111122223333:container/movies</p>
+    /// <p>For example: arn:aws:mediastore:us-west-2:111122223333:container/movies </p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
@@ -145,7 +145,7 @@ impl ContainerBuilder {
     /// </name>
     /// </account>
     /// </region></p>
-    /// <p>For example: arn:aws:mediastore:us-west-2:111122223333:container/movies</p>
+    /// <p>For example: arn:aws:mediastore:us-west-2:111122223333:container/movies </p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }

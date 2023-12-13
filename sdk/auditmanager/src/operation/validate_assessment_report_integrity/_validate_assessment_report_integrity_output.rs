@@ -3,36 +3,36 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidateAssessmentReportIntegrityOutput {
-    /// <p>Specifies whether the signature key is valid.</p>
+    /// <p> Specifies whether the signature key is valid. </p>
     pub signature_valid: ::std::option::Option<bool>,
-    /// <p>The signature algorithm that's used to code sign the assessment report file.</p>
+    /// <p> The signature algorithm that's used to code sign the assessment report file. </p>
     pub signature_algorithm: ::std::option::Option<::std::string::String>,
-    /// <p>The date and time signature that specifies when the assessment report was created.</p>
+    /// <p> The date and time signature that specifies when the assessment report was created. </p>
     pub signature_date_time: ::std::option::Option<::std::string::String>,
-    /// <p>The unique identifier for the validation signature key.</p>
+    /// <p> The unique identifier for the validation signature key. </p>
     pub signature_key_id: ::std::option::Option<::std::string::String>,
-    /// <p>Represents any errors that occurred when validating the assessment report.</p>
+    /// <p> Represents any errors that occurred when validating the assessment report. </p>
     pub validation_errors: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl ValidateAssessmentReportIntegrityOutput {
-    /// <p>Specifies whether the signature key is valid.</p>
+    /// <p> Specifies whether the signature key is valid. </p>
     pub fn signature_valid(&self) -> ::std::option::Option<bool> {
         self.signature_valid
     }
-    /// <p>The signature algorithm that's used to code sign the assessment report file.</p>
+    /// <p> The signature algorithm that's used to code sign the assessment report file. </p>
     pub fn signature_algorithm(&self) -> ::std::option::Option<&str> {
         self.signature_algorithm.as_deref()
     }
-    /// <p>The date and time signature that specifies when the assessment report was created.</p>
+    /// <p> The date and time signature that specifies when the assessment report was created. </p>
     pub fn signature_date_time(&self) -> ::std::option::Option<&str> {
         self.signature_date_time.as_deref()
     }
-    /// <p>The unique identifier for the validation signature key.</p>
+    /// <p> The unique identifier for the validation signature key. </p>
     pub fn signature_key_id(&self) -> ::std::option::Option<&str> {
         self.signature_key_id.as_deref()
     }
-    /// <p>Represents any errors that occurred when validating the assessment report.</p>
+    /// <p> Represents any errors that occurred when validating the assessment report. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.validation_errors.is_none()`.
     pub fn validation_errors(&self) -> &[::std::string::String] {
@@ -63,59 +63,59 @@ pub struct ValidateAssessmentReportIntegrityOutputBuilder {
     _request_id: Option<String>,
 }
 impl ValidateAssessmentReportIntegrityOutputBuilder {
-    /// <p>Specifies whether the signature key is valid.</p>
+    /// <p> Specifies whether the signature key is valid. </p>
     pub fn signature_valid(mut self, input: bool) -> Self {
         self.signature_valid = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether the signature key is valid.</p>
+    /// <p> Specifies whether the signature key is valid. </p>
     pub fn set_signature_valid(mut self, input: ::std::option::Option<bool>) -> Self {
         self.signature_valid = input;
         self
     }
-    /// <p>Specifies whether the signature key is valid.</p>
+    /// <p> Specifies whether the signature key is valid. </p>
     pub fn get_signature_valid(&self) -> &::std::option::Option<bool> {
         &self.signature_valid
     }
-    /// <p>The signature algorithm that's used to code sign the assessment report file.</p>
+    /// <p> The signature algorithm that's used to code sign the assessment report file. </p>
     pub fn signature_algorithm(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.signature_algorithm = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The signature algorithm that's used to code sign the assessment report file.</p>
+    /// <p> The signature algorithm that's used to code sign the assessment report file. </p>
     pub fn set_signature_algorithm(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.signature_algorithm = input;
         self
     }
-    /// <p>The signature algorithm that's used to code sign the assessment report file.</p>
+    /// <p> The signature algorithm that's used to code sign the assessment report file. </p>
     pub fn get_signature_algorithm(&self) -> &::std::option::Option<::std::string::String> {
         &self.signature_algorithm
     }
-    /// <p>The date and time signature that specifies when the assessment report was created.</p>
+    /// <p> The date and time signature that specifies when the assessment report was created. </p>
     pub fn signature_date_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.signature_date_time = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The date and time signature that specifies when the assessment report was created.</p>
+    /// <p> The date and time signature that specifies when the assessment report was created. </p>
     pub fn set_signature_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.signature_date_time = input;
         self
     }
-    /// <p>The date and time signature that specifies when the assessment report was created.</p>
+    /// <p> The date and time signature that specifies when the assessment report was created. </p>
     pub fn get_signature_date_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.signature_date_time
     }
-    /// <p>The unique identifier for the validation signature key.</p>
+    /// <p> The unique identifier for the validation signature key. </p>
     pub fn signature_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.signature_key_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier for the validation signature key.</p>
+    /// <p> The unique identifier for the validation signature key. </p>
     pub fn set_signature_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.signature_key_id = input;
         self
     }
-    /// <p>The unique identifier for the validation signature key.</p>
+    /// <p> The unique identifier for the validation signature key. </p>
     pub fn get_signature_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.signature_key_id
     }
@@ -123,19 +123,19 @@ impl ValidateAssessmentReportIntegrityOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_validation_errors`](Self::set_validation_errors).
     ///
-    /// <p>Represents any errors that occurred when validating the assessment report.</p>
+    /// <p> Represents any errors that occurred when validating the assessment report. </p>
     pub fn validation_errors(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.validation_errors.unwrap_or_default();
         v.push(input.into());
         self.validation_errors = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Represents any errors that occurred when validating the assessment report.</p>
+    /// <p> Represents any errors that occurred when validating the assessment report. </p>
     pub fn set_validation_errors(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.validation_errors = input;
         self
     }
-    /// <p>Represents any errors that occurred when validating the assessment report.</p>
+    /// <p> Represents any errors that occurred when validating the assessment report. </p>
     pub fn get_validation_errors(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.validation_errors
     }

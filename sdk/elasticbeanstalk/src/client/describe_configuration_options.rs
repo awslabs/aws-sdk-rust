@@ -12,7 +12,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeConfigurationOptionsOutput`](crate::operation::describe_configuration_options::DescribeConfigurationOptionsOutput) with field(s):
     ///   - [`solution_stack_name(Option<String>)`](crate::operation::describe_configuration_options::DescribeConfigurationOptionsOutput::solution_stack_name): <p>The name of the solution stack these configuration options belong to.</p>
     ///   - [`platform_arn(Option<String>)`](crate::operation::describe_configuration_options::DescribeConfigurationOptionsOutput::platform_arn): <p>The ARN of the platform version.</p>
-    ///   - [`options(Option<Vec::<ConfigurationOptionDescription>>)`](crate::operation::describe_configuration_options::DescribeConfigurationOptionsOutput::options): <p>A list of <code>ConfigurationOptionDescription</code>.</p>
+    ///   - [`options(Option<Vec::<ConfigurationOptionDescription>>)`](crate::operation::describe_configuration_options::DescribeConfigurationOptionsOutput::options): <p> A list of <code>ConfigurationOptionDescription</code>. </p>
     /// - On failure, responds with [`SdkError<DescribeConfigurationOptionsError>`](crate::operation::describe_configuration_options::DescribeConfigurationOptionsError)
     pub fn describe_configuration_options(
         &self,

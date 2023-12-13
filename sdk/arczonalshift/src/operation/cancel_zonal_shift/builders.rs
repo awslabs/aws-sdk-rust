@@ -23,7 +23,7 @@ impl CancelZonalShiftInputBuilder {
 /// Fluent builder constructing a request to `CancelZonalShift`.
 ///
 /// <p>Cancel a zonal shift in Amazon Route 53 Application Recovery Controller. To cancel the zonal shift, specify the zonal shift ID.</p>
-/// <p>A zonal shift can be one that you've started for a resource in your Amazon Web Services account in an Amazon Web Services Region, or it can be a zonal shift started by a practice run with zonal autoshift.</p>
+/// <p>A zonal shift can be one that you've started for a resource in your Amazon Web Services account in an Amazon Web Services Region, or it can be a zonal shift started by a practice run with zonal autoshift. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CancelZonalShiftFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

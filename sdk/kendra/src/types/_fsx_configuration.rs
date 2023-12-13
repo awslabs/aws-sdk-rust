@@ -13,10 +13,8 @@ pub struct FsxConfiguration {
     pub vpc_configuration: ::std::option::Option<crate::types::DataSourceVpcConfiguration>,
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Amazon FSx file system. Windows is currently the only supported type. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
-    /// <li>
-    /// <p>username—The Active Directory user name, along with the Domain Name System (DNS) domain name. For example, <i>user@corp.example.com</i>. The Active Directory user account must have read and mounting access to the Amazon FSx file system for Windows.</p></li>
-    /// <li>
-    /// <p>password—The password of the Active Directory user account with read and mounting access to the Amazon FSx Windows file system.</p></li>
+    /// <li> <p>username—The Active Directory user name, along with the Domain Name System (DNS) domain name. For example, <i>user@corp.example.com</i>. The Active Directory user account must have read and mounting access to the Amazon FSx file system for Windows.</p> </li>
+    /// <li> <p>password—The password of the Active Directory user account with read and mounting access to the Amazon FSx Windows file system.</p> </li>
     /// </ul>
     pub secret_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of regular expression patterns to include certain files in your Amazon FSx file system. Files that match the patterns are included in the index. Files that don't match the patterns are excluded from the index. If a file matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
@@ -43,10 +41,8 @@ impl FsxConfiguration {
     }
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Amazon FSx file system. Windows is currently the only supported type. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
-    /// <li>
-    /// <p>username—The Active Directory user name, along with the Domain Name System (DNS) domain name. For example, <i>user@corp.example.com</i>. The Active Directory user account must have read and mounting access to the Amazon FSx file system for Windows.</p></li>
-    /// <li>
-    /// <p>password—The password of the Active Directory user account with read and mounting access to the Amazon FSx Windows file system.</p></li>
+    /// <li> <p>username—The Active Directory user name, along with the Domain Name System (DNS) domain name. For example, <i>user@corp.example.com</i>. The Active Directory user account must have read and mounting access to the Amazon FSx file system for Windows.</p> </li>
+    /// <li> <p>password—The password of the Active Directory user account with read and mounting access to the Amazon FSx Windows file system.</p> </li>
     /// </ul>
     pub fn secret_arn(&self) -> ::std::option::Option<&str> {
         self.secret_arn.as_deref()
@@ -140,10 +136,8 @@ impl FsxConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Amazon FSx file system. Windows is currently the only supported type. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
-    /// <li>
-    /// <p>username—The Active Directory user name, along with the Domain Name System (DNS) domain name. For example, <i>user@corp.example.com</i>. The Active Directory user account must have read and mounting access to the Amazon FSx file system for Windows.</p></li>
-    /// <li>
-    /// <p>password—The password of the Active Directory user account with read and mounting access to the Amazon FSx Windows file system.</p></li>
+    /// <li> <p>username—The Active Directory user name, along with the Domain Name System (DNS) domain name. For example, <i>user@corp.example.com</i>. The Active Directory user account must have read and mounting access to the Amazon FSx file system for Windows.</p> </li>
+    /// <li> <p>password—The password of the Active Directory user account with read and mounting access to the Amazon FSx Windows file system.</p> </li>
     /// </ul>
     pub fn secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_arn = ::std::option::Option::Some(input.into());
@@ -151,10 +145,8 @@ impl FsxConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Amazon FSx file system. Windows is currently the only supported type. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
-    /// <li>
-    /// <p>username—The Active Directory user name, along with the Domain Name System (DNS) domain name. For example, <i>user@corp.example.com</i>. The Active Directory user account must have read and mounting access to the Amazon FSx file system for Windows.</p></li>
-    /// <li>
-    /// <p>password—The password of the Active Directory user account with read and mounting access to the Amazon FSx Windows file system.</p></li>
+    /// <li> <p>username—The Active Directory user name, along with the Domain Name System (DNS) domain name. For example, <i>user@corp.example.com</i>. The Active Directory user account must have read and mounting access to the Amazon FSx file system for Windows.</p> </li>
+    /// <li> <p>password—The password of the Active Directory user account with read and mounting access to the Amazon FSx Windows file system.</p> </li>
     /// </ul>
     pub fn set_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_arn = input;
@@ -162,10 +154,8 @@ impl FsxConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Amazon FSx file system. Windows is currently the only supported type. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
-    /// <li>
-    /// <p>username—The Active Directory user name, along with the Domain Name System (DNS) domain name. For example, <i>user@corp.example.com</i>. The Active Directory user account must have read and mounting access to the Amazon FSx file system for Windows.</p></li>
-    /// <li>
-    /// <p>password—The password of the Active Directory user account with read and mounting access to the Amazon FSx Windows file system.</p></li>
+    /// <li> <p>username—The Active Directory user name, along with the Domain Name System (DNS) domain name. For example, <i>user@corp.example.com</i>. The Active Directory user account must have read and mounting access to the Amazon FSx file system for Windows.</p> </li>
+    /// <li> <p>password—The password of the Active Directory user account with read and mounting access to the Amazon FSx Windows file system.</p> </li>
     /// </ul>
     pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.secret_arn

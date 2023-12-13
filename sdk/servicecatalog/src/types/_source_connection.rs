@@ -4,17 +4,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SourceConnection {
-    /// <p>The only supported <code>SourceConnection</code> type is Codestar.</p>
+    /// <p>The only supported <code>SourceConnection</code> type is Codestar. </p>
     pub r#type: ::std::option::Option<crate::types::SourceType>,
-    /// <p>The connection details based on the connection <code>Type</code>.</p>
+    /// <p>The connection details based on the connection <code>Type</code>. </p>
     pub connection_parameters: ::std::option::Option<crate::types::SourceConnectionParameters>,
 }
 impl SourceConnection {
-    /// <p>The only supported <code>SourceConnection</code> type is Codestar.</p>
+    /// <p>The only supported <code>SourceConnection</code> type is Codestar. </p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::SourceType> {
         self.r#type.as_ref()
     }
-    /// <p>The connection details based on the connection <code>Type</code>.</p>
+    /// <p>The connection details based on the connection <code>Type</code>. </p>
     pub fn connection_parameters(&self) -> ::std::option::Option<&crate::types::SourceConnectionParameters> {
         self.connection_parameters.as_ref()
     }
@@ -34,32 +34,32 @@ pub struct SourceConnectionBuilder {
     pub(crate) connection_parameters: ::std::option::Option<crate::types::SourceConnectionParameters>,
 }
 impl SourceConnectionBuilder {
-    /// <p>The only supported <code>SourceConnection</code> type is Codestar.</p>
+    /// <p>The only supported <code>SourceConnection</code> type is Codestar. </p>
     pub fn r#type(mut self, input: crate::types::SourceType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The only supported <code>SourceConnection</code> type is Codestar.</p>
+    /// <p>The only supported <code>SourceConnection</code> type is Codestar. </p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::SourceType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The only supported <code>SourceConnection</code> type is Codestar.</p>
+    /// <p>The only supported <code>SourceConnection</code> type is Codestar. </p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::SourceType> {
         &self.r#type
     }
-    /// <p>The connection details based on the connection <code>Type</code>.</p>
+    /// <p>The connection details based on the connection <code>Type</code>. </p>
     /// This field is required.
     pub fn connection_parameters(mut self, input: crate::types::SourceConnectionParameters) -> Self {
         self.connection_parameters = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The connection details based on the connection <code>Type</code>.</p>
+    /// <p>The connection details based on the connection <code>Type</code>. </p>
     pub fn set_connection_parameters(mut self, input: ::std::option::Option<crate::types::SourceConnectionParameters>) -> Self {
         self.connection_parameters = input;
         self
     }
-    /// <p>The connection details based on the connection <code>Type</code>.</p>
+    /// <p>The connection details based on the connection <code>Type</code>. </p>
     pub fn get_connection_parameters(&self) -> &::std::option::Option<crate::types::SourceConnectionParameters> {
         &self.connection_parameters
     }

@@ -34,7 +34,7 @@ pub struct InstanceNetworkInterfaceSpecification {
     /// <p>You can only assign a carrier IP address to a network interface that is in a subnet in a Wavelength Zone. For more information about carrier IP addresses, see <a href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#provider-owned-ip">Carrier IP address</a> in the <i>Amazon Web Services Wavelength Developer Guide</i>.</p>
     pub associate_carrier_ip_address: ::std::option::Option<bool>,
     /// <p>The type of network interface.</p>
-    /// <p>Valid values: <code>interface</code> | <code>efa</code></p>
+    /// <p>Valid values: <code>interface</code> | <code>efa</code> </p>
     pub interface_type: ::std::option::Option<::std::string::String>,
     /// <p>The index of the network card. Some instance types support multiple network cards. The primary network interface must be assigned to network card index 0. The default is network card index 0.</p>
     /// <p>If you are using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html">RequestSpotInstances</a> to create Spot Instances, omit this parameter because you can’t specify the network card index when using this API. To specify the network card index, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.</p>
@@ -117,7 +117,7 @@ impl InstanceNetworkInterfaceSpecification {
         self.associate_carrier_ip_address
     }
     /// <p>The type of network interface.</p>
-    /// <p>Valid values: <code>interface</code> | <code>efa</code></p>
+    /// <p>Valid values: <code>interface</code> | <code>efa</code> </p>
     pub fn interface_type(&self) -> ::std::option::Option<&str> {
         self.interface_type.as_deref()
     }
@@ -404,19 +404,19 @@ impl InstanceNetworkInterfaceSpecificationBuilder {
         &self.associate_carrier_ip_address
     }
     /// <p>The type of network interface.</p>
-    /// <p>Valid values: <code>interface</code> | <code>efa</code></p>
+    /// <p>Valid values: <code>interface</code> | <code>efa</code> </p>
     pub fn interface_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.interface_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of network interface.</p>
-    /// <p>Valid values: <code>interface</code> | <code>efa</code></p>
+    /// <p>Valid values: <code>interface</code> | <code>efa</code> </p>
     pub fn set_interface_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.interface_type = input;
         self
     }
     /// <p>The type of network interface.</p>
-    /// <p>Valid values: <code>interface</code> | <code>efa</code></p>
+    /// <p>Valid values: <code>interface</code> | <code>efa</code> </p>
     pub fn get_interface_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.interface_type
     }

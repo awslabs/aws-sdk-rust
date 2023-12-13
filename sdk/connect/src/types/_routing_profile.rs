@@ -24,7 +24,7 @@ pub struct RoutingProfile {
     pub number_of_associated_queues: ::std::option::Option<i64>,
     /// <p>The number of associated users in routing profile.</p>
     pub number_of_associated_users: ::std::option::Option<i64>,
-    /// <p>Whether agents with this routing profile will have their routing order calculated based on <i>time since their last inbound contact</i> or <i>longest idle time</i>.</p>
+    /// <p>Whether agents with this routing profile will have their routing order calculated based on <i>time since their last inbound contact</i> or <i>longest idle time</i>. </p>
     pub agent_availability_timer: ::std::option::Option<crate::types::AgentAvailabilityTimer>,
     /// <p>The timestamp when this resource was last modified.</p>
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -76,7 +76,7 @@ impl RoutingProfile {
     pub fn number_of_associated_users(&self) -> ::std::option::Option<i64> {
         self.number_of_associated_users
     }
-    /// <p>Whether agents with this routing profile will have their routing order calculated based on <i>time since their last inbound contact</i> or <i>longest idle time</i>.</p>
+    /// <p>Whether agents with this routing profile will have their routing order calculated based on <i>time since their last inbound contact</i> or <i>longest idle time</i>. </p>
     pub fn agent_availability_timer(&self) -> ::std::option::Option<&crate::types::AgentAvailabilityTimer> {
         self.agent_availability_timer.as_ref()
     }
@@ -272,17 +272,17 @@ impl RoutingProfileBuilder {
     pub fn get_number_of_associated_users(&self) -> &::std::option::Option<i64> {
         &self.number_of_associated_users
     }
-    /// <p>Whether agents with this routing profile will have their routing order calculated based on <i>time since their last inbound contact</i> or <i>longest idle time</i>.</p>
+    /// <p>Whether agents with this routing profile will have their routing order calculated based on <i>time since their last inbound contact</i> or <i>longest idle time</i>. </p>
     pub fn agent_availability_timer(mut self, input: crate::types::AgentAvailabilityTimer) -> Self {
         self.agent_availability_timer = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Whether agents with this routing profile will have their routing order calculated based on <i>time since their last inbound contact</i> or <i>longest idle time</i>.</p>
+    /// <p>Whether agents with this routing profile will have their routing order calculated based on <i>time since their last inbound contact</i> or <i>longest idle time</i>. </p>
     pub fn set_agent_availability_timer(mut self, input: ::std::option::Option<crate::types::AgentAvailabilityTimer>) -> Self {
         self.agent_availability_timer = input;
         self
     }
-    /// <p>Whether agents with this routing profile will have their routing order calculated based on <i>time since their last inbound contact</i> or <i>longest idle time</i>.</p>
+    /// <p>Whether agents with this routing profile will have their routing order calculated based on <i>time since their last inbound contact</i> or <i>longest idle time</i>. </p>
     pub fn get_agent_availability_timer(&self) -> &::std::option::Option<crate::types::AgentAvailabilityTimer> {
         &self.agent_availability_timer
     }

@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeImageAttributeInput {
     /// <p>The AMI attribute.</p>
-    /// <p><b>Note</b>: The <code>blockDeviceMapping</code> attribute is deprecated. Using this attribute returns the <code>Client.AuthFailure</code> error. To get information about the block device mappings for an AMI, use the <code>DescribeImages</code> action.</p>
+    /// <p> <b>Note</b>: The <code>blockDeviceMapping</code> attribute is deprecated. Using this attribute returns the <code>Client.AuthFailure</code> error. To get information about the block device mappings for an AMI, use the <code>DescribeImages</code> action.</p>
     pub attribute: ::std::option::Option<crate::types::ImageAttributeName>,
     /// <p>The ID of the AMI.</p>
     pub image_id: ::std::option::Option<::std::string::String>,
@@ -14,7 +14,7 @@ pub struct DescribeImageAttributeInput {
 }
 impl DescribeImageAttributeInput {
     /// <p>The AMI attribute.</p>
-    /// <p><b>Note</b>: The <code>blockDeviceMapping</code> attribute is deprecated. Using this attribute returns the <code>Client.AuthFailure</code> error. To get information about the block device mappings for an AMI, use the <code>DescribeImages</code> action.</p>
+    /// <p> <b>Note</b>: The <code>blockDeviceMapping</code> attribute is deprecated. Using this attribute returns the <code>Client.AuthFailure</code> error. To get information about the block device mappings for an AMI, use the <code>DescribeImages</code> action.</p>
     pub fn attribute(&self) -> ::std::option::Option<&crate::types::ImageAttributeName> {
         self.attribute.as_ref()
     }
@@ -44,20 +44,20 @@ pub struct DescribeImageAttributeInputBuilder {
 }
 impl DescribeImageAttributeInputBuilder {
     /// <p>The AMI attribute.</p>
-    /// <p><b>Note</b>: The <code>blockDeviceMapping</code> attribute is deprecated. Using this attribute returns the <code>Client.AuthFailure</code> error. To get information about the block device mappings for an AMI, use the <code>DescribeImages</code> action.</p>
+    /// <p> <b>Note</b>: The <code>blockDeviceMapping</code> attribute is deprecated. Using this attribute returns the <code>Client.AuthFailure</code> error. To get information about the block device mappings for an AMI, use the <code>DescribeImages</code> action.</p>
     /// This field is required.
     pub fn attribute(mut self, input: crate::types::ImageAttributeName) -> Self {
         self.attribute = ::std::option::Option::Some(input);
         self
     }
     /// <p>The AMI attribute.</p>
-    /// <p><b>Note</b>: The <code>blockDeviceMapping</code> attribute is deprecated. Using this attribute returns the <code>Client.AuthFailure</code> error. To get information about the block device mappings for an AMI, use the <code>DescribeImages</code> action.</p>
+    /// <p> <b>Note</b>: The <code>blockDeviceMapping</code> attribute is deprecated. Using this attribute returns the <code>Client.AuthFailure</code> error. To get information about the block device mappings for an AMI, use the <code>DescribeImages</code> action.</p>
     pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::ImageAttributeName>) -> Self {
         self.attribute = input;
         self
     }
     /// <p>The AMI attribute.</p>
-    /// <p><b>Note</b>: The <code>blockDeviceMapping</code> attribute is deprecated. Using this attribute returns the <code>Client.AuthFailure</code> error. To get information about the block device mappings for an AMI, use the <code>DescribeImages</code> action.</p>
+    /// <p> <b>Note</b>: The <code>blockDeviceMapping</code> attribute is deprecated. Using this attribute returns the <code>Client.AuthFailure</code> error. To get information about the block device mappings for an AMI, use the <code>DescribeImages</code> action.</p>
     pub fn get_attribute(&self) -> &::std::option::Option<crate::types::ImageAttributeName> {
         &self.attribute
     }

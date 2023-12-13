@@ -14,12 +14,9 @@ pub struct AccessPreview {
     pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The status of the access preview.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Creating</code> - The access preview creation is in progress.</p></li>
-    /// <li>
-    /// <p><code>Completed</code> - The access preview is complete. You can preview findings for external access to the resource.</p></li>
-    /// <li>
-    /// <p><code>Failed</code> - The access preview creation has failed.</p></li>
+    /// <li> <p> <code>Creating</code> - The access preview creation is in progress.</p> </li>
+    /// <li> <p> <code>Completed</code> - The access preview is complete. You can preview findings for external access to the resource.</p> </li>
+    /// <li> <p> <code>Failed</code> - The access preview creation has failed.</p> </li>
     /// </ul>
     pub status: crate::types::AccessPreviewStatus,
     /// <p>Provides more details about the current status of the access preview.</p>
@@ -47,12 +44,9 @@ impl AccessPreview {
     }
     /// <p>The status of the access preview.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Creating</code> - The access preview creation is in progress.</p></li>
-    /// <li>
-    /// <p><code>Completed</code> - The access preview is complete. You can preview findings for external access to the resource.</p></li>
-    /// <li>
-    /// <p><code>Failed</code> - The access preview creation has failed.</p></li>
+    /// <li> <p> <code>Creating</code> - The access preview creation is in progress.</p> </li>
+    /// <li> <p> <code>Completed</code> - The access preview is complete. You can preview findings for external access to the resource.</p> </li>
+    /// <li> <p> <code>Failed</code> - The access preview creation has failed.</p> </li>
     /// </ul>
     pub fn status(&self) -> &crate::types::AccessPreviewStatus {
         &self.status
@@ -152,12 +146,9 @@ impl AccessPreviewBuilder {
     }
     /// <p>The status of the access preview.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Creating</code> - The access preview creation is in progress.</p></li>
-    /// <li>
-    /// <p><code>Completed</code> - The access preview is complete. You can preview findings for external access to the resource.</p></li>
-    /// <li>
-    /// <p><code>Failed</code> - The access preview creation has failed.</p></li>
+    /// <li> <p> <code>Creating</code> - The access preview creation is in progress.</p> </li>
+    /// <li> <p> <code>Completed</code> - The access preview is complete. You can preview findings for external access to the resource.</p> </li>
+    /// <li> <p> <code>Failed</code> - The access preview creation has failed.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn status(mut self, input: crate::types::AccessPreviewStatus) -> Self {
@@ -166,12 +157,9 @@ impl AccessPreviewBuilder {
     }
     /// <p>The status of the access preview.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Creating</code> - The access preview creation is in progress.</p></li>
-    /// <li>
-    /// <p><code>Completed</code> - The access preview is complete. You can preview findings for external access to the resource.</p></li>
-    /// <li>
-    /// <p><code>Failed</code> - The access preview creation has failed.</p></li>
+    /// <li> <p> <code>Creating</code> - The access preview creation is in progress.</p> </li>
+    /// <li> <p> <code>Completed</code> - The access preview is complete. You can preview findings for external access to the resource.</p> </li>
+    /// <li> <p> <code>Failed</code> - The access preview creation has failed.</p> </li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AccessPreviewStatus>) -> Self {
         self.status = input;
@@ -179,12 +167,9 @@ impl AccessPreviewBuilder {
     }
     /// <p>The status of the access preview.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>Creating</code> - The access preview creation is in progress.</p></li>
-    /// <li>
-    /// <p><code>Completed</code> - The access preview is complete. You can preview findings for external access to the resource.</p></li>
-    /// <li>
-    /// <p><code>Failed</code> - The access preview creation has failed.</p></li>
+    /// <li> <p> <code>Creating</code> - The access preview creation is in progress.</p> </li>
+    /// <li> <p> <code>Completed</code> - The access preview is complete. You can preview findings for external access to the resource.</p> </li>
+    /// <li> <p> <code>Failed</code> - The access preview creation has failed.</p> </li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AccessPreviewStatus> {
         &self.status

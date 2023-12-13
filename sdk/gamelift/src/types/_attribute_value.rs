@@ -10,7 +10,7 @@ pub struct AttributeValue {
     pub n: ::std::option::Option<f64>,
     /// <p>For a list of up to 100 strings. Maximum length for each string is 100 characters. Duplicate values are not recognized; all occurrences of the repeated value after the first of a repeated value are ignored.</p>
     pub sl: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>For a map of up to 10 data type:value pairs. Maximum length for each string value is 100 characters.</p>
+    /// <p>For a map of up to 10 data type:value pairs. Maximum length for each string value is 100 characters. </p>
     pub sdm: ::std::option::Option<::std::collections::HashMap<::std::string::String, f64>>,
 }
 impl AttributeValue {
@@ -28,7 +28,7 @@ impl AttributeValue {
     pub fn sl(&self) -> &[::std::string::String] {
         self.sl.as_deref().unwrap_or_default()
     }
-    /// <p>For a map of up to 10 data type:value pairs. Maximum length for each string value is 100 characters.</p>
+    /// <p>For a map of up to 10 data type:value pairs. Maximum length for each string value is 100 characters. </p>
     pub fn sdm(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, f64>> {
         self.sdm.as_ref()
     }
@@ -102,19 +102,19 @@ impl AttributeValueBuilder {
     ///
     /// To override the contents of this collection use [`set_sdm`](Self::set_sdm).
     ///
-    /// <p>For a map of up to 10 data type:value pairs. Maximum length for each string value is 100 characters.</p>
+    /// <p>For a map of up to 10 data type:value pairs. Maximum length for each string value is 100 characters. </p>
     pub fn sdm(mut self, k: impl ::std::convert::Into<::std::string::String>, v: f64) -> Self {
         let mut hash_map = self.sdm.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.sdm = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>For a map of up to 10 data type:value pairs. Maximum length for each string value is 100 characters.</p>
+    /// <p>For a map of up to 10 data type:value pairs. Maximum length for each string value is 100 characters. </p>
     pub fn set_sdm(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, f64>>) -> Self {
         self.sdm = input;
         self
     }
-    /// <p>For a map of up to 10 data type:value pairs. Maximum length for each string value is 100 characters.</p>
+    /// <p>For a map of up to 10 data type:value pairs. Maximum length for each string value is 100 characters. </p>
     pub fn get_sdm(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, f64>> {
         &self.sdm
     }

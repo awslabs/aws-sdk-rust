@@ -10,16 +10,11 @@ pub struct S3Location {
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The file type of the application revision. Must be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>tar</code>: A tar archive file.</p></li>
-    /// <li>
-    /// <p><code>tgz</code>: A compressed tar archive file.</p></li>
-    /// <li>
-    /// <p><code>zip</code>: A zip archive file.</p></li>
-    /// <li>
-    /// <p><code>YAML</code>: A YAML-formatted file.</p></li>
-    /// <li>
-    /// <p><code>JSON</code>: A JSON-formatted file.</p></li>
+    /// <li> <p> <code>tar</code>: A tar archive file.</p> </li>
+    /// <li> <p> <code>tgz</code>: A compressed tar archive file.</p> </li>
+    /// <li> <p> <code>zip</code>: A zip archive file.</p> </li>
+    /// <li> <p> <code>YAML</code>: A YAML-formatted file.</p> </li>
+    /// <li> <p> <code>JSON</code>: A JSON-formatted file.</p> </li>
     /// </ul>
     pub bundle_type: ::std::option::Option<crate::types::BundleType>,
     /// <p>A specific version of the Amazon S3 object that represents the bundled artifacts for the application revision.</p>
@@ -40,16 +35,11 @@ impl S3Location {
     }
     /// <p>The file type of the application revision. Must be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>tar</code>: A tar archive file.</p></li>
-    /// <li>
-    /// <p><code>tgz</code>: A compressed tar archive file.</p></li>
-    /// <li>
-    /// <p><code>zip</code>: A zip archive file.</p></li>
-    /// <li>
-    /// <p><code>YAML</code>: A YAML-formatted file.</p></li>
-    /// <li>
-    /// <p><code>JSON</code>: A JSON-formatted file.</p></li>
+    /// <li> <p> <code>tar</code>: A tar archive file.</p> </li>
+    /// <li> <p> <code>tgz</code>: A compressed tar archive file.</p> </li>
+    /// <li> <p> <code>zip</code>: A zip archive file.</p> </li>
+    /// <li> <p> <code>YAML</code>: A YAML-formatted file.</p> </li>
+    /// <li> <p> <code>JSON</code>: A JSON-formatted file.</p> </li>
     /// </ul>
     pub fn bundle_type(&self) -> ::std::option::Option<&crate::types::BundleType> {
         self.bundle_type.as_ref()
@@ -113,16 +103,11 @@ impl S3LocationBuilder {
     }
     /// <p>The file type of the application revision. Must be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>tar</code>: A tar archive file.</p></li>
-    /// <li>
-    /// <p><code>tgz</code>: A compressed tar archive file.</p></li>
-    /// <li>
-    /// <p><code>zip</code>: A zip archive file.</p></li>
-    /// <li>
-    /// <p><code>YAML</code>: A YAML-formatted file.</p></li>
-    /// <li>
-    /// <p><code>JSON</code>: A JSON-formatted file.</p></li>
+    /// <li> <p> <code>tar</code>: A tar archive file.</p> </li>
+    /// <li> <p> <code>tgz</code>: A compressed tar archive file.</p> </li>
+    /// <li> <p> <code>zip</code>: A zip archive file.</p> </li>
+    /// <li> <p> <code>YAML</code>: A YAML-formatted file.</p> </li>
+    /// <li> <p> <code>JSON</code>: A JSON-formatted file.</p> </li>
     /// </ul>
     pub fn bundle_type(mut self, input: crate::types::BundleType) -> Self {
         self.bundle_type = ::std::option::Option::Some(input);
@@ -130,16 +115,11 @@ impl S3LocationBuilder {
     }
     /// <p>The file type of the application revision. Must be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>tar</code>: A tar archive file.</p></li>
-    /// <li>
-    /// <p><code>tgz</code>: A compressed tar archive file.</p></li>
-    /// <li>
-    /// <p><code>zip</code>: A zip archive file.</p></li>
-    /// <li>
-    /// <p><code>YAML</code>: A YAML-formatted file.</p></li>
-    /// <li>
-    /// <p><code>JSON</code>: A JSON-formatted file.</p></li>
+    /// <li> <p> <code>tar</code>: A tar archive file.</p> </li>
+    /// <li> <p> <code>tgz</code>: A compressed tar archive file.</p> </li>
+    /// <li> <p> <code>zip</code>: A zip archive file.</p> </li>
+    /// <li> <p> <code>YAML</code>: A YAML-formatted file.</p> </li>
+    /// <li> <p> <code>JSON</code>: A JSON-formatted file.</p> </li>
     /// </ul>
     pub fn set_bundle_type(mut self, input: ::std::option::Option<crate::types::BundleType>) -> Self {
         self.bundle_type = input;
@@ -147,16 +127,11 @@ impl S3LocationBuilder {
     }
     /// <p>The file type of the application revision. Must be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>tar</code>: A tar archive file.</p></li>
-    /// <li>
-    /// <p><code>tgz</code>: A compressed tar archive file.</p></li>
-    /// <li>
-    /// <p><code>zip</code>: A zip archive file.</p></li>
-    /// <li>
-    /// <p><code>YAML</code>: A YAML-formatted file.</p></li>
-    /// <li>
-    /// <p><code>JSON</code>: A JSON-formatted file.</p></li>
+    /// <li> <p> <code>tar</code>: A tar archive file.</p> </li>
+    /// <li> <p> <code>tgz</code>: A compressed tar archive file.</p> </li>
+    /// <li> <p> <code>zip</code>: A zip archive file.</p> </li>
+    /// <li> <p> <code>YAML</code>: A YAML-formatted file.</p> </li>
+    /// <li> <p> <code>JSON</code>: A JSON-formatted file.</p> </li>
     /// </ul>
     pub fn get_bundle_type(&self) -> &::std::option::Option<crate::types::BundleType> {
         &self.bundle_type

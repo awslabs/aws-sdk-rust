@@ -5,11 +5,11 @@
 pub struct GetTranscriptInput {
     /// <p>The contactId from the current contact chain for which transcript is needed.</p>
     pub contact_id: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum number of results to return in the page. Default: 10.</p>
+    /// <p>The maximum number of results to return in the page. Default: 10. </p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The pagination token. Use the value returned previously in the next subsequent request to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>The direction from StartPosition from which to retrieve message. Default: BACKWARD when no StartPosition is provided, FORWARD with StartPosition.</p>
+    /// <p>The direction from StartPosition from which to retrieve message. Default: BACKWARD when no StartPosition is provided, FORWARD with StartPosition. </p>
     pub scan_direction: ::std::option::Option<crate::types::ScanDirection>,
     /// <p>The sort order for the records. Default: DESCENDING.</p>
     pub sort_order: ::std::option::Option<crate::types::SortKey>,
@@ -23,7 +23,7 @@ impl GetTranscriptInput {
     pub fn contact_id(&self) -> ::std::option::Option<&str> {
         self.contact_id.as_deref()
     }
-    /// <p>The maximum number of results to return in the page. Default: 10.</p>
+    /// <p>The maximum number of results to return in the page. Default: 10. </p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -31,7 +31,7 @@ impl GetTranscriptInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The direction from StartPosition from which to retrieve message. Default: BACKWARD when no StartPosition is provided, FORWARD with StartPosition.</p>
+    /// <p>The direction from StartPosition from which to retrieve message. Default: BACKWARD when no StartPosition is provided, FORWARD with StartPosition. </p>
     pub fn scan_direction(&self) -> ::std::option::Option<&crate::types::ScanDirection> {
         self.scan_direction.as_ref()
     }
@@ -82,17 +82,17 @@ impl GetTranscriptInputBuilder {
     pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.contact_id
     }
-    /// <p>The maximum number of results to return in the page. Default: 10.</p>
+    /// <p>The maximum number of results to return in the page. Default: 10. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of results to return in the page. Default: 10.</p>
+    /// <p>The maximum number of results to return in the page. Default: 10. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of results to return in the page. Default: 10.</p>
+    /// <p>The maximum number of results to return in the page. Default: 10. </p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
@@ -110,17 +110,17 @@ impl GetTranscriptInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>The direction from StartPosition from which to retrieve message. Default: BACKWARD when no StartPosition is provided, FORWARD with StartPosition.</p>
+    /// <p>The direction from StartPosition from which to retrieve message. Default: BACKWARD when no StartPosition is provided, FORWARD with StartPosition. </p>
     pub fn scan_direction(mut self, input: crate::types::ScanDirection) -> Self {
         self.scan_direction = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The direction from StartPosition from which to retrieve message. Default: BACKWARD when no StartPosition is provided, FORWARD with StartPosition.</p>
+    /// <p>The direction from StartPosition from which to retrieve message. Default: BACKWARD when no StartPosition is provided, FORWARD with StartPosition. </p>
     pub fn set_scan_direction(mut self, input: ::std::option::Option<crate::types::ScanDirection>) -> Self {
         self.scan_direction = input;
         self
     }
-    /// <p>The direction from StartPosition from which to retrieve message. Default: BACKWARD when no StartPosition is provided, FORWARD with StartPosition.</p>
+    /// <p>The direction from StartPosition from which to retrieve message. Default: BACKWARD when no StartPosition is provided, FORWARD with StartPosition. </p>
     pub fn get_scan_direction(&self) -> &::std::option::Option<crate::types::ScanDirection> {
         &self.scan_direction
     }

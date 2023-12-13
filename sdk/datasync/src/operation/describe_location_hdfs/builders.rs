@@ -22,7 +22,7 @@ impl DescribeLocationHdfsInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeLocationHdfs`.
 ///
-/// <p>Returns metadata, such as the authentication information about the Hadoop Distributed File System (HDFS) location.</p>
+/// <p>Returns metadata, such as the authentication information about the Hadoop Distributed File System (HDFS) location. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeLocationHdfsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

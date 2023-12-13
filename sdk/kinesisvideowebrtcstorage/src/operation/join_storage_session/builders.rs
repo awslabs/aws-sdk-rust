@@ -22,11 +22,11 @@ impl JoinStorageSessionInputBuilder {
 }
 /// Fluent builder constructing a request to `JoinStorageSession`.
 ///
-/// <p>Join the ongoing one way-video and/or multi-way audio WebRTC session as a video producing device for an input channel. If there’s no existing session for the channel, a new streaming session needs to be created, and the Amazon Resource Name (ARN) of the signaling channel must be provided.</p>
+/// <p> Join the ongoing one way-video and/or multi-way audio WebRTC session as a video producing device for an input channel. If there’s no existing session for the channel, a new streaming session needs to be created, and the Amazon Resource Name (ARN) of the signaling channel must be provided. </p>
 /// <p>Currently for the <code>SINGLE_MASTER</code> type, a video producing device is able to ingest both audio and video media into a stream, while viewers can only ingest audio. Both a video producing device and viewers can join the session first, and wait for other participants.</p>
 /// <p>While participants are having peer to peer conversations through webRTC, the ingested media session will be stored into the Kinesis Video Stream. Multiple viewers are able to playback real-time media.</p>
-/// <p>Customers can also use existing Kinesis Video Streams features like <code>HLS</code> or <code>DASH</code> playback, Image generation, and more with ingested WebRTC media.</p><note>
-/// <p>Assume that only one video producing device client can be associated with a session for the channel. If more than one client joins the session of a specific channel as a video producing device, the most recent client request takes precedence.</p>
+/// <p>Customers can also use existing Kinesis Video Streams features like <code>HLS</code> or <code>DASH</code> playback, Image generation, and more with ingested WebRTC media.</p> <note>
+/// <p>Assume that only one video producing device client can be associated with a session for the channel. If more than one client joins the session of a specific channel as a video producing device, the most recent client request takes precedence. </p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct JoinStorageSessionFluentBuilder {
@@ -113,17 +113,17 @@ impl JoinStorageSessionFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the signaling channel.</p>
+    /// <p> The Amazon Resource Name (ARN) of the signaling channel. </p>
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.channel_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the signaling channel.</p>
+    /// <p> The Amazon Resource Name (ARN) of the signaling channel. </p>
     pub fn set_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_channel_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the signaling channel.</p>
+    /// <p> The Amazon Resource Name (ARN) of the signaling channel. </p>
     pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_channel_arn()
     }

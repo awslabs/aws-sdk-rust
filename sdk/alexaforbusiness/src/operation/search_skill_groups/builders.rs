@@ -129,17 +129,17 @@ impl SearchSkillGroupsFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. </p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
@@ -147,17 +147,17 @@ impl SearchSkillGroupsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>The filters to use to list a specified set of skill groups. The supported filter key is SkillGroupName.</p>
+    /// <p>The filters to use to list a specified set of skill groups. The supported filter key is SkillGroupName. </p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>The filters to use to list a specified set of skill groups. The supported filter key is SkillGroupName.</p>
+    /// <p>The filters to use to list a specified set of skill groups. The supported filter key is SkillGroupName. </p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
-    /// <p>The filters to use to list a specified set of skill groups. The supported filter key is SkillGroupName.</p>
+    /// <p>The filters to use to list a specified set of skill groups. The supported filter key is SkillGroupName. </p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()
     }
@@ -165,17 +165,17 @@ impl SearchSkillGroupsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_sort_criteria`](Self::set_sort_criteria).
     ///
-    /// <p>The sort order to use in listing the specified set of skill groups. The supported sort key is SkillGroupName.</p>
+    /// <p>The sort order to use in listing the specified set of skill groups. The supported sort key is SkillGroupName. </p>
     pub fn sort_criteria(mut self, input: crate::types::Sort) -> Self {
         self.inner = self.inner.sort_criteria(input);
         self
     }
-    /// <p>The sort order to use in listing the specified set of skill groups. The supported sort key is SkillGroupName.</p>
+    /// <p>The sort order to use in listing the specified set of skill groups. The supported sort key is SkillGroupName. </p>
     pub fn set_sort_criteria(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Sort>>) -> Self {
         self.inner = self.inner.set_sort_criteria(input);
         self
     }
-    /// <p>The sort order to use in listing the specified set of skill groups. The supported sort key is SkillGroupName.</p>
+    /// <p>The sort order to use in listing the specified set of skill groups. The supported sort key is SkillGroupName. </p>
     pub fn get_sort_criteria(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Sort>> {
         self.inner.get_sort_criteria()
     }

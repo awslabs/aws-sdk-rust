@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetRepositoriesInput {
-    /// <p>The names of the repositories to get information about.</p><note>
+    /// <p>The names of the repositories to get information about.</p> <note>
     /// <p>The length constraint limit is for each string in the array. The array itself can be empty.</p>
     /// </note>
     pub repository_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchGetRepositoriesInput {
-    /// <p>The names of the repositories to get information about.</p><note>
+    /// <p>The names of the repositories to get information about.</p> <note>
     /// <p>The length constraint limit is for each string in the array. The array itself can be empty.</p>
     /// </note>
     ///
@@ -37,7 +37,7 @@ impl BatchGetRepositoriesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_repository_names`](Self::set_repository_names).
     ///
-    /// <p>The names of the repositories to get information about.</p><note>
+    /// <p>The names of the repositories to get information about.</p> <note>
     /// <p>The length constraint limit is for each string in the array. The array itself can be empty.</p>
     /// </note>
     pub fn repository_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -46,14 +46,14 @@ impl BatchGetRepositoriesInputBuilder {
         self.repository_names = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The names of the repositories to get information about.</p><note>
+    /// <p>The names of the repositories to get information about.</p> <note>
     /// <p>The length constraint limit is for each string in the array. The array itself can be empty.</p>
     /// </note>
     pub fn set_repository_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.repository_names = input;
         self
     }
-    /// <p>The names of the repositories to get information about.</p><note>
+    /// <p>The names of the repositories to get information about.</p> <note>
     /// <p>The length constraint limit is for each string in the array. The array itself can be empty.</p>
     /// </note>
     pub fn get_repository_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {

@@ -21,14 +21,10 @@ pub struct UpdateReplicationJobInput {
     pub encrypted: ::std::option::Option<bool>,
     /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>KMS key ID</p></li>
-    /// <li>
-    /// <p>KMS key alias</p></li>
-    /// <li>
-    /// <p>ARN referring to the KMS key ID</p></li>
-    /// <li>
-    /// <p>ARN referring to the KMS key alias</p></li>
+    /// <li> <p>KMS key ID</p> </li>
+    /// <li> <p>KMS key alias</p> </li>
+    /// <li> <p>ARN referring to the KMS key ID</p> </li>
+    /// <li> <p>ARN referring to the KMS key alias</p> </li>
     /// </ul>
     /// <p>If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
@@ -68,14 +64,10 @@ impl UpdateReplicationJobInput {
     }
     /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>KMS key ID</p></li>
-    /// <li>
-    /// <p>KMS key alias</p></li>
-    /// <li>
-    /// <p>ARN referring to the KMS key ID</p></li>
-    /// <li>
-    /// <p>ARN referring to the KMS key alias</p></li>
+    /// <li> <p>KMS key ID</p> </li>
+    /// <li> <p>KMS key alias</p> </li>
+    /// <li> <p>ARN referring to the KMS key ID</p> </li>
+    /// <li> <p>ARN referring to the KMS key alias</p> </li>
     /// </ul>
     /// <p>If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used.</p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
@@ -219,14 +211,10 @@ impl UpdateReplicationJobInputBuilder {
     }
     /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>KMS key ID</p></li>
-    /// <li>
-    /// <p>KMS key alias</p></li>
-    /// <li>
-    /// <p>ARN referring to the KMS key ID</p></li>
-    /// <li>
-    /// <p>ARN referring to the KMS key alias</p></li>
+    /// <li> <p>KMS key ID</p> </li>
+    /// <li> <p>KMS key alias</p> </li>
+    /// <li> <p>ARN referring to the KMS key ID</p> </li>
+    /// <li> <p>ARN referring to the KMS key alias</p> </li>
     /// </ul>
     /// <p>If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -235,14 +223,10 @@ impl UpdateReplicationJobInputBuilder {
     }
     /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>KMS key ID</p></li>
-    /// <li>
-    /// <p>KMS key alias</p></li>
-    /// <li>
-    /// <p>ARN referring to the KMS key ID</p></li>
-    /// <li>
-    /// <p>ARN referring to the KMS key alias</p></li>
+    /// <li> <p>KMS key ID</p> </li>
+    /// <li> <p>KMS key alias</p> </li>
+    /// <li> <p>ARN referring to the KMS key ID</p> </li>
+    /// <li> <p>ARN referring to the KMS key alias</p> </li>
     /// </ul>
     /// <p>If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -251,14 +235,10 @@ impl UpdateReplicationJobInputBuilder {
     }
     /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>KMS key ID</p></li>
-    /// <li>
-    /// <p>KMS key alias</p></li>
-    /// <li>
-    /// <p>ARN referring to the KMS key ID</p></li>
-    /// <li>
-    /// <p>ARN referring to the KMS key alias</p></li>
+    /// <li> <p>KMS key ID</p> </li>
+    /// <li> <p>KMS key alias</p> </li>
+    /// <li> <p>ARN referring to the KMS key ID</p> </li>
+    /// <li> <p>ARN referring to the KMS key alias</p> </li>
     /// </ul>
     /// <p>If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {

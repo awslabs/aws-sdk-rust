@@ -6,7 +6,7 @@
 pub struct PostDialogCodeHookInvocationSpecification {
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
     pub success_response: ::std::option::Option<crate::types::ResponseSpecification>,
-    /// <p>Specifics the next step the bot runs after the dialog code hook finishes successfully.</p>
+    /// <p>Specifics the next step the bot runs after the dialog code hook finishes successfully. </p>
     pub success_next_step: ::std::option::Option<crate::types::DialogState>,
     /// <p>A list of conditional branches to evaluate after the dialog code hook finishes successfully.</p>
     pub success_conditional: ::std::option::Option<crate::types::ConditionalSpecification>,
@@ -28,7 +28,7 @@ impl PostDialogCodeHookInvocationSpecification {
     pub fn success_response(&self) -> ::std::option::Option<&crate::types::ResponseSpecification> {
         self.success_response.as_ref()
     }
-    /// <p>Specifics the next step the bot runs after the dialog code hook finishes successfully.</p>
+    /// <p>Specifics the next step the bot runs after the dialog code hook finishes successfully. </p>
     pub fn success_next_step(&self) -> ::std::option::Option<&crate::types::DialogState> {
         self.success_next_step.as_ref()
     }
@@ -97,17 +97,17 @@ impl PostDialogCodeHookInvocationSpecificationBuilder {
     pub fn get_success_response(&self) -> &::std::option::Option<crate::types::ResponseSpecification> {
         &self.success_response
     }
-    /// <p>Specifics the next step the bot runs after the dialog code hook finishes successfully.</p>
+    /// <p>Specifics the next step the bot runs after the dialog code hook finishes successfully. </p>
     pub fn success_next_step(mut self, input: crate::types::DialogState) -> Self {
         self.success_next_step = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifics the next step the bot runs after the dialog code hook finishes successfully.</p>
+    /// <p>Specifics the next step the bot runs after the dialog code hook finishes successfully. </p>
     pub fn set_success_next_step(mut self, input: ::std::option::Option<crate::types::DialogState>) -> Self {
         self.success_next_step = input;
         self
     }
-    /// <p>Specifics the next step the bot runs after the dialog code hook finishes successfully.</p>
+    /// <p>Specifics the next step the bot runs after the dialog code hook finishes successfully. </p>
     pub fn get_success_next_step(&self) -> &::std::option::Option<crate::types::DialogState> {
         &self.success_next_step
     }

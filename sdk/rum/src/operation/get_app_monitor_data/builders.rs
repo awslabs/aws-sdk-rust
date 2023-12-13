@@ -160,17 +160,17 @@ impl GetAppMonitorDataFluentBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QueryFilter>> {
         self.inner.get_filters()
     }
-    /// <p>The maximum number of results to return in one operation.</p>
+    /// <p>The maximum number of results to return in one operation. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of results to return in one operation.</p>
+    /// <p>The maximum number of results to return in one operation. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The maximum number of results to return in one operation.</p>
+    /// <p>The maximum number of results to return in one operation. </p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

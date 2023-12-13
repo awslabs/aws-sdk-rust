@@ -24,10 +24,8 @@ impl GetCachePolicyInputBuilder {
 ///
 /// <p>Gets a cache policy, including the following metadata:</p>
 /// <ul>
-/// <li>
-/// <p>The policy's identifier.</p></li>
-/// <li>
-/// <p>The date and time when the policy was last modified.</p></li>
+/// <li> <p>The policy's identifier.</p> </li>
+/// <li> <p>The date and time when the policy was last modified.</p> </li>
 /// </ul>
 /// <p>To get a cache policy, you must provide the policy's identifier. If the cache policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

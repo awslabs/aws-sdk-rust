@@ -8,10 +8,8 @@ pub struct GameSessionDetail {
     pub game_session: ::std::option::Option<crate::types::GameSession>,
     /// <p>Current status of protection for the game session.</p>
     /// <ul>
-    /// <li>
-    /// <p><b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p></li>
-    /// <li>
-    /// <p><b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p></li>
+    /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
+    /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>
     /// </ul>
     pub protection_policy: ::std::option::Option<crate::types::ProtectionPolicy>,
 }
@@ -22,10 +20,8 @@ impl GameSessionDetail {
     }
     /// <p>Current status of protection for the game session.</p>
     /// <ul>
-    /// <li>
-    /// <p><b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p></li>
-    /// <li>
-    /// <p><b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p></li>
+    /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
+    /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>
     /// </ul>
     pub fn protection_policy(&self) -> ::std::option::Option<&crate::types::ProtectionPolicy> {
         self.protection_policy.as_ref()
@@ -62,10 +58,8 @@ impl GameSessionDetailBuilder {
     }
     /// <p>Current status of protection for the game session.</p>
     /// <ul>
-    /// <li>
-    /// <p><b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p></li>
-    /// <li>
-    /// <p><b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p></li>
+    /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
+    /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>
     /// </ul>
     pub fn protection_policy(mut self, input: crate::types::ProtectionPolicy) -> Self {
         self.protection_policy = ::std::option::Option::Some(input);
@@ -73,10 +67,8 @@ impl GameSessionDetailBuilder {
     }
     /// <p>Current status of protection for the game session.</p>
     /// <ul>
-    /// <li>
-    /// <p><b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p></li>
-    /// <li>
-    /// <p><b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p></li>
+    /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
+    /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>
     /// </ul>
     pub fn set_protection_policy(mut self, input: ::std::option::Option<crate::types::ProtectionPolicy>) -> Self {
         self.protection_policy = input;
@@ -84,10 +76,8 @@ impl GameSessionDetailBuilder {
     }
     /// <p>Current status of protection for the game session.</p>
     /// <ul>
-    /// <li>
-    /// <p><b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p></li>
-    /// <li>
-    /// <p><b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p></li>
+    /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
+    /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>
     /// </ul>
     pub fn get_protection_policy(&self) -> &::std::option::Option<crate::types::ProtectionPolicy> {
         &self.protection_policy

@@ -22,7 +22,7 @@ impl DeleteFirewallRuleGroupInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteFirewallRuleGroup`.
 ///
-/// <p>Deletes the specified firewall rule group.</p>
+/// <p>Deletes the specified firewall rule group. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteFirewallRuleGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DeleteFirewallRuleGroupFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier of the firewall rule group that you want to delete.</p>
+    /// <p>The unique identifier of the firewall rule group that you want to delete. </p>
     pub fn firewall_rule_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.firewall_rule_group_id(input.into());
         self
     }
-    /// <p>The unique identifier of the firewall rule group that you want to delete.</p>
+    /// <p>The unique identifier of the firewall rule group that you want to delete. </p>
     pub fn set_firewall_rule_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_firewall_rule_group_id(input);
         self
     }
-    /// <p>The unique identifier of the firewall rule group that you want to delete.</p>
+    /// <p>The unique identifier of the firewall rule group that you want to delete. </p>
     pub fn get_firewall_rule_group_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_firewall_rule_group_id()
     }

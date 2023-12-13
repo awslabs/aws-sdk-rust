@@ -24,12 +24,9 @@ impl NotifyMigrationTaskStateInputBuilder {
 ///
 /// <p>Notifies Migration Hub of the current status, progress, or other detail regarding a migration task. This API has the following traits:</p>
 /// <ul>
-/// <li>
-/// <p>Migration tools will call the <code>NotifyMigrationTaskState</code> API to share the latest progress and status.</p></li>
-/// <li>
-/// <p><code>MigrationTaskName</code> is used for addressing updates to the correct target.</p></li>
-/// <li>
-/// <p><code>ProgressUpdateStream</code> is used for access control and to provide a namespace for each migration tool.</p></li>
+/// <li> <p>Migration tools will call the <code>NotifyMigrationTaskState</code> API to share the latest progress and status.</p> </li>
+/// <li> <p> <code>MigrationTaskName</code> is used for addressing updates to the correct target.</p> </li>
+/// <li> <p> <code>ProgressUpdateStream</code> is used for access control and to provide a namespace for each migration tool.</p> </li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct NotifyMigrationTaskStateFluentBuilder {
@@ -116,31 +113,31 @@ impl NotifyMigrationTaskStateFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the ProgressUpdateStream.</p>
+    /// <p>The name of the ProgressUpdateStream. </p>
     pub fn progress_update_stream(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.progress_update_stream(input.into());
         self
     }
-    /// <p>The name of the ProgressUpdateStream.</p>
+    /// <p>The name of the ProgressUpdateStream. </p>
     pub fn set_progress_update_stream(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_progress_update_stream(input);
         self
     }
-    /// <p>The name of the ProgressUpdateStream.</p>
+    /// <p>The name of the ProgressUpdateStream. </p>
     pub fn get_progress_update_stream(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_progress_update_stream()
     }
-    /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i></p>
+    /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
     pub fn migration_task_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.migration_task_name(input.into());
         self
     }
-    /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i></p>
+    /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
     pub fn set_migration_task_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_migration_task_name(input);
         self
     }
-    /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i></p>
+    /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
     pub fn get_migration_task_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_migration_task_name()
     }

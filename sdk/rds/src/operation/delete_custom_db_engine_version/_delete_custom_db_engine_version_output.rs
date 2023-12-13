@@ -39,12 +39,13 @@ pub struct DeleteCustomDbEngineVersionOutput {
     /// <p>A list of features supported by the DB engine.</p>
     /// <p>The supported features vary by DB engine and DB engine version.</p>
     /// <p>To determine the supported features for a specific DB engine and DB engine version using the CLI, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine <engine_name>
+    /// <p> <code>aws rds describe-db-engine-versions --engine
+    /// <engine_name>
     /// --engine-version
     /// <engine_version></engine_version>
-    /// </engine_name></code></p>
+    /// </engine_name></code> </p>
     /// <p>For example, to determine the supported features for RDS for PostgreSQL version 13.3 using the CLI, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine postgres --engine-version 13.3</code></p>
+    /// <p> <code>aws rds describe-db-engine-versions --engine postgres --engine-version 13.3</code> </p>
     /// <p>The supported features are listed under <code>SupportedFeatureNames</code> in the output.</p>
     pub supported_feature_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The status of the DB engine version, either <code>available</code> or <code>deprecated</code>.</p>
@@ -65,11 +66,11 @@ pub struct DeleteCustomDbEngineVersionOutput {
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The creation time of the DB engine version.</p>
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Indicates whether the engine version supports Babelfish for Aurora PostgreSQL.</p>
     pub supports_babelfish: ::std::option::Option<bool>,
-    /// <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>. </p>
     pub custom_db_engine_version_manifest: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
     pub supports_certificate_rotation_without_restart: ::std::option::Option<bool>,
@@ -163,12 +164,13 @@ impl DeleteCustomDbEngineVersionOutput {
     /// <p>A list of features supported by the DB engine.</p>
     /// <p>The supported features vary by DB engine and DB engine version.</p>
     /// <p>To determine the supported features for a specific DB engine and DB engine version using the CLI, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine <engine_name>
+    /// <p> <code>aws rds describe-db-engine-versions --engine
+    /// <engine_name>
     /// --engine-version
     /// <engine_version></engine_version>
-    /// </engine_name></code></p>
+    /// </engine_name></code> </p>
     /// <p>For example, to determine the supported features for RDS for PostgreSQL version 13.3 using the CLI, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine postgres --engine-version 13.3</code></p>
+    /// <p> <code>aws rds describe-db-engine-versions --engine postgres --engine-version 13.3</code> </p>
     /// <p>The supported features are listed under <code>SupportedFeatureNames</code> in the output.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_feature_names.is_none()`.
@@ -211,7 +213,7 @@ impl DeleteCustomDbEngineVersionOutput {
     pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_list.is_none()`.
     pub fn tag_list(&self) -> &[crate::types::Tag] {
@@ -221,7 +223,7 @@ impl DeleteCustomDbEngineVersionOutput {
     pub fn supports_babelfish(&self) -> ::std::option::Option<bool> {
         self.supports_babelfish
     }
-    /// <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>. </p>
     pub fn custom_db_engine_version_manifest(&self) -> ::std::option::Option<&str> {
         self.custom_db_engine_version_manifest.as_deref()
     }
@@ -565,12 +567,13 @@ impl DeleteCustomDbEngineVersionOutputBuilder {
     /// <p>A list of features supported by the DB engine.</p>
     /// <p>The supported features vary by DB engine and DB engine version.</p>
     /// <p>To determine the supported features for a specific DB engine and DB engine version using the CLI, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine <engine_name>
+    /// <p> <code>aws rds describe-db-engine-versions --engine
+    /// <engine_name>
     /// --engine-version
     /// <engine_version></engine_version>
-    /// </engine_name></code></p>
+    /// </engine_name></code> </p>
     /// <p>For example, to determine the supported features for RDS for PostgreSQL version 13.3 using the CLI, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine postgres --engine-version 13.3</code></p>
+    /// <p> <code>aws rds describe-db-engine-versions --engine postgres --engine-version 13.3</code> </p>
     /// <p>The supported features are listed under <code>SupportedFeatureNames</code> in the output.</p>
     pub fn supported_feature_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.supported_feature_names.unwrap_or_default();
@@ -581,12 +584,13 @@ impl DeleteCustomDbEngineVersionOutputBuilder {
     /// <p>A list of features supported by the DB engine.</p>
     /// <p>The supported features vary by DB engine and DB engine version.</p>
     /// <p>To determine the supported features for a specific DB engine and DB engine version using the CLI, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine <engine_name>
+    /// <p> <code>aws rds describe-db-engine-versions --engine
+    /// <engine_name>
     /// --engine-version
     /// <engine_version></engine_version>
-    /// </engine_name></code></p>
+    /// </engine_name></code> </p>
     /// <p>For example, to determine the supported features for RDS for PostgreSQL version 13.3 using the CLI, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine postgres --engine-version 13.3</code></p>
+    /// <p> <code>aws rds describe-db-engine-versions --engine postgres --engine-version 13.3</code> </p>
     /// <p>The supported features are listed under <code>SupportedFeatureNames</code> in the output.</p>
     pub fn set_supported_feature_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.supported_feature_names = input;
@@ -595,12 +599,13 @@ impl DeleteCustomDbEngineVersionOutputBuilder {
     /// <p>A list of features supported by the DB engine.</p>
     /// <p>The supported features vary by DB engine and DB engine version.</p>
     /// <p>To determine the supported features for a specific DB engine and DB engine version using the CLI, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine <engine_name>
+    /// <p> <code>aws rds describe-db-engine-versions --engine
+    /// <engine_name>
     /// --engine-version
     /// <engine_version></engine_version>
-    /// </engine_name></code></p>
+    /// </engine_name></code> </p>
     /// <p>For example, to determine the supported features for RDS for PostgreSQL version 13.3 using the CLI, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine postgres --engine-version 13.3</code></p>
+    /// <p> <code>aws rds describe-db-engine-versions --engine postgres --engine-version 13.3</code> </p>
     /// <p>The supported features are listed under <code>SupportedFeatureNames</code> in the output.</p>
     pub fn get_supported_feature_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.supported_feature_names
@@ -735,19 +740,19 @@ impl DeleteCustomDbEngineVersionOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
     ///
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub fn tag_list(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tag_list.unwrap_or_default();
         v.push(input);
         self.tag_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub fn set_tag_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tag_list = input;
         self
     }
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tag_list
     }
@@ -765,17 +770,17 @@ impl DeleteCustomDbEngineVersionOutputBuilder {
     pub fn get_supports_babelfish(&self) -> &::std::option::Option<bool> {
         &self.supports_babelfish
     }
-    /// <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>. </p>
     pub fn custom_db_engine_version_manifest(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_db_engine_version_manifest = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>. </p>
     pub fn set_custom_db_engine_version_manifest(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_db_engine_version_manifest = input;
         self
     }
-    /// <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>. </p>
     pub fn get_custom_db_engine_version_manifest(&self) -> &::std::option::Option<::std::string::String> {
         &self.custom_db_engine_version_manifest
     }

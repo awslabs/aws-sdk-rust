@@ -23,7 +23,7 @@ impl ListIdentitiesInputBuilder {
 /// Fluent builder constructing a request to `ListIdentities`.
 ///
 /// <p>Returns a list containing all of the identities (email addresses and domains) for your Amazon Web Services account in the current Amazon Web Services Region, regardless of verification status.</p>
-/// <p>You can execute this operation no more than once per second.</p><note>
+/// <p>You can execute this operation no more than once per second.</p> <note>
 /// <p>It's recommended that for successive pagination calls of this API, you continue to the use the same parameter/value pairs as used in the original call, e.g., if you used <code>IdentityType=Domain</code> in the the original call and received a <code>NextToken</code> in the response, you should continue providing the <code>IdentityType=Domain</code> parameter for further <code>NextToken</code> calls; however, if you didn't provide the <code>IdentityType</code> parameter in the original call, then continue to not provide it for successive pagination calls. Using this protocol will ensure consistent results.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

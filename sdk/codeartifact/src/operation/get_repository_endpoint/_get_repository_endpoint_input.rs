@@ -3,29 +3,29 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRepositoryEndpointInput {
-    /// <p>The name of the domain that contains the repository.</p>
+    /// <p> The name of the domain that contains the repository. </p>
     pub domain: ::std::option::Option<::std::string::String>,
-    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain that contains the repository. It does not include dashes or spaces.</p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain that contains the repository. It does not include dashes or spaces. </p>
     pub domain_owner: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the repository.</p>
+    /// <p> The name of the repository. </p>
     pub repository: ::std::option::Option<::std::string::String>,
-    /// <p>Returns which endpoint of a repository to return. A repository has one endpoint for each package format.</p>
+    /// <p> Returns which endpoint of a repository to return. A repository has one endpoint for each package format. </p>
     pub format: ::std::option::Option<crate::types::PackageFormat>,
 }
 impl GetRepositoryEndpointInput {
-    /// <p>The name of the domain that contains the repository.</p>
+    /// <p> The name of the domain that contains the repository. </p>
     pub fn domain(&self) -> ::std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain that contains the repository. It does not include dashes or spaces.</p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain that contains the repository. It does not include dashes or spaces. </p>
     pub fn domain_owner(&self) -> ::std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
-    /// <p>The name of the repository.</p>
+    /// <p> The name of the repository. </p>
     pub fn repository(&self) -> ::std::option::Option<&str> {
         self.repository.as_deref()
     }
-    /// <p>Returns which endpoint of a repository to return. A repository has one endpoint for each package format.</p>
+    /// <p> Returns which endpoint of a repository to return. A repository has one endpoint for each package format. </p>
     pub fn format(&self) -> ::std::option::Option<&crate::types::PackageFormat> {
         self.format.as_ref()
     }
@@ -47,62 +47,62 @@ pub struct GetRepositoryEndpointInputBuilder {
     pub(crate) format: ::std::option::Option<crate::types::PackageFormat>,
 }
 impl GetRepositoryEndpointInputBuilder {
-    /// <p>The name of the domain that contains the repository.</p>
+    /// <p> The name of the domain that contains the repository. </p>
     /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the domain that contains the repository.</p>
+    /// <p> The name of the domain that contains the repository. </p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain = input;
         self
     }
-    /// <p>The name of the domain that contains the repository.</p>
+    /// <p> The name of the domain that contains the repository. </p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain
     }
-    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain that contains the repository. It does not include dashes or spaces.</p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain that contains the repository. It does not include dashes or spaces. </p>
     pub fn domain_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_owner = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain that contains the repository. It does not include dashes or spaces.</p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain that contains the repository. It does not include dashes or spaces. </p>
     pub fn set_domain_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_owner = input;
         self
     }
-    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain that contains the repository. It does not include dashes or spaces.</p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain that contains the repository. It does not include dashes or spaces. </p>
     pub fn get_domain_owner(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_owner
     }
-    /// <p>The name of the repository.</p>
+    /// <p> The name of the repository. </p>
     /// This field is required.
     pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the repository.</p>
+    /// <p> The name of the repository. </p>
     pub fn set_repository(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository = input;
         self
     }
-    /// <p>The name of the repository.</p>
+    /// <p> The name of the repository. </p>
     pub fn get_repository(&self) -> &::std::option::Option<::std::string::String> {
         &self.repository
     }
-    /// <p>Returns which endpoint of a repository to return. A repository has one endpoint for each package format.</p>
+    /// <p> Returns which endpoint of a repository to return. A repository has one endpoint for each package format. </p>
     /// This field is required.
     pub fn format(mut self, input: crate::types::PackageFormat) -> Self {
         self.format = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Returns which endpoint of a repository to return. A repository has one endpoint for each package format.</p>
+    /// <p> Returns which endpoint of a repository to return. A repository has one endpoint for each package format. </p>
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::PackageFormat>) -> Self {
         self.format = input;
         self
     }
-    /// <p>Returns which endpoint of a repository to return. A repository has one endpoint for each package format.</p>
+    /// <p> Returns which endpoint of a repository to return. A repository has one endpoint for each package format. </p>
     pub fn get_format(&self) -> &::std::option::Option<crate::types::PackageFormat> {
         &self.format
     }

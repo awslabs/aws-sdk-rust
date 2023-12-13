@@ -22,7 +22,7 @@ impl ListDatabasesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListDatabases`.
 ///
-/// <p>Returns a list of your Timestream databases. <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Service quotas apply</a>. See <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.list-db.html">code sample</a> for details.</p>
+/// <p>Returns a list of your Timestream databases. <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Service quotas apply</a>. See <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.list-db.html">code sample</a> for details. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListDatabasesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

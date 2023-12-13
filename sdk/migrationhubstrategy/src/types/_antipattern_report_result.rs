@@ -6,7 +6,7 @@
 pub struct AntipatternReportResult {
     /// <p>The analyzer name.</p>
     pub analyzer_name: ::std::option::Option<crate::types::AnalyzerNameUnion>,
-    /// <p>Contains the S3 bucket name and the Amazon S3 key name.</p>
+    /// <p> Contains the S3 bucket name and the Amazon S3 key name. </p>
     pub anti_pattern_report_s3_object: ::std::option::Option<crate::types::S3Object>,
     /// <p>The status of the anti-pattern report generation.</p>
     pub antipattern_report_status: ::std::option::Option<crate::types::AntipatternReportStatus>,
@@ -18,7 +18,7 @@ impl AntipatternReportResult {
     pub fn analyzer_name(&self) -> ::std::option::Option<&crate::types::AnalyzerNameUnion> {
         self.analyzer_name.as_ref()
     }
-    /// <p>Contains the S3 bucket name and the Amazon S3 key name.</p>
+    /// <p> Contains the S3 bucket name and the Amazon S3 key name. </p>
     pub fn anti_pattern_report_s3_object(&self) -> ::std::option::Option<&crate::types::S3Object> {
         self.anti_pattern_report_s3_object.as_ref()
     }
@@ -62,17 +62,17 @@ impl AntipatternReportResultBuilder {
     pub fn get_analyzer_name(&self) -> &::std::option::Option<crate::types::AnalyzerNameUnion> {
         &self.analyzer_name
     }
-    /// <p>Contains the S3 bucket name and the Amazon S3 key name.</p>
+    /// <p> Contains the S3 bucket name and the Amazon S3 key name. </p>
     pub fn anti_pattern_report_s3_object(mut self, input: crate::types::S3Object) -> Self {
         self.anti_pattern_report_s3_object = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Contains the S3 bucket name and the Amazon S3 key name.</p>
+    /// <p> Contains the S3 bucket name and the Amazon S3 key name. </p>
     pub fn set_anti_pattern_report_s3_object(mut self, input: ::std::option::Option<crate::types::S3Object>) -> Self {
         self.anti_pattern_report_s3_object = input;
         self
     }
-    /// <p>Contains the S3 bucket name and the Amazon S3 key name.</p>
+    /// <p> Contains the S3 bucket name and the Amazon S3 key name. </p>
     pub fn get_anti_pattern_report_s3_object(&self) -> &::std::option::Option<crate::types::S3Object> {
         &self.anti_pattern_report_s3_object
     }

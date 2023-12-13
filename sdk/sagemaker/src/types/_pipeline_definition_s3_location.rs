@@ -6,7 +6,7 @@
 pub struct PipelineDefinitionS3Location {
     /// <p>Name of the S3 bucket.</p>
     pub bucket: ::std::option::Option<::std::string::String>,
-    /// <p>The object key (or key name) uniquely identifies the object in an S3 bucket.</p>
+    /// <p>The object key (or key name) uniquely identifies the object in an S3 bucket. </p>
     pub object_key: ::std::option::Option<::std::string::String>,
     /// <p>Version Id of the pipeline definition file. If not specified, Amazon SageMaker will retrieve the latest version.</p>
     pub version_id: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ impl PipelineDefinitionS3Location {
     pub fn bucket(&self) -> ::std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>The object key (or key name) uniquely identifies the object in an S3 bucket.</p>
+    /// <p>The object key (or key name) uniquely identifies the object in an S3 bucket. </p>
     pub fn object_key(&self) -> ::std::option::Option<&str> {
         self.object_key.as_deref()
     }
@@ -56,18 +56,18 @@ impl PipelineDefinitionS3LocationBuilder {
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
         &self.bucket
     }
-    /// <p>The object key (or key name) uniquely identifies the object in an S3 bucket.</p>
+    /// <p>The object key (or key name) uniquely identifies the object in an S3 bucket. </p>
     /// This field is required.
     pub fn object_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_key = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The object key (or key name) uniquely identifies the object in an S3 bucket.</p>
+    /// <p>The object key (or key name) uniquely identifies the object in an S3 bucket. </p>
     pub fn set_object_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.object_key = input;
         self
     }
-    /// <p>The object key (or key name) uniquely identifies the object in an S3 bucket.</p>
+    /// <p>The object key (or key name) uniquely identifies the object in an S3 bucket. </p>
     pub fn get_object_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.object_key
     }

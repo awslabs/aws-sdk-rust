@@ -13,7 +13,7 @@ pub struct GetIndexOutput {
     /// <p>A list of the Amazon Web Services Regions that replicate their content to the index in this Region.</p>
     pub replicating_from: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>This response value is present only if this index is <code>Type=LOCAL</code>.</p>
-    /// <p>The Amazon Web Services Region that contains the aggregator index, if one exists. If an aggregator index does exist then the Region in which you called this operation replicates its index information to the Region specified in this response value.</p>
+    /// <p>The Amazon Web Services Region that contains the aggregator index, if one exists. If an aggregator index does exist then the Region in which you called this operation replicates its index information to the Region specified in this response value. </p>
     pub replicating_to: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The date and time when the index was originally created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -44,7 +44,7 @@ impl GetIndexOutput {
         self.replicating_from.as_deref().unwrap_or_default()
     }
     /// <p>This response value is present only if this index is <code>Type=LOCAL</code>.</p>
-    /// <p>The Amazon Web Services Region that contains the aggregator index, if one exists. If an aggregator index does exist then the Region in which you called this operation replicates its index information to the Region specified in this response value.</p>
+    /// <p>The Amazon Web Services Region that contains the aggregator index, if one exists. If an aggregator index does exist then the Region in which you called this operation replicates its index information to the Region specified in this response value. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replicating_to.is_none()`.
     pub fn replicating_to(&self) -> &[::std::string::String] {
@@ -175,7 +175,7 @@ impl GetIndexOutputBuilder {
     /// To override the contents of this collection use [`set_replicating_to`](Self::set_replicating_to).
     ///
     /// <p>This response value is present only if this index is <code>Type=LOCAL</code>.</p>
-    /// <p>The Amazon Web Services Region that contains the aggregator index, if one exists. If an aggregator index does exist then the Region in which you called this operation replicates its index information to the Region specified in this response value.</p>
+    /// <p>The Amazon Web Services Region that contains the aggregator index, if one exists. If an aggregator index does exist then the Region in which you called this operation replicates its index information to the Region specified in this response value. </p>
     pub fn replicating_to(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.replicating_to.unwrap_or_default();
         v.push(input.into());
@@ -183,13 +183,13 @@ impl GetIndexOutputBuilder {
         self
     }
     /// <p>This response value is present only if this index is <code>Type=LOCAL</code>.</p>
-    /// <p>The Amazon Web Services Region that contains the aggregator index, if one exists. If an aggregator index does exist then the Region in which you called this operation replicates its index information to the Region specified in this response value.</p>
+    /// <p>The Amazon Web Services Region that contains the aggregator index, if one exists. If an aggregator index does exist then the Region in which you called this operation replicates its index information to the Region specified in this response value. </p>
     pub fn set_replicating_to(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.replicating_to = input;
         self
     }
     /// <p>This response value is present only if this index is <code>Type=LOCAL</code>.</p>
-    /// <p>The Amazon Web Services Region that contains the aggregator index, if one exists. If an aggregator index does exist then the Region in which you called this operation replicates its index information to the Region specified in this response value.</p>
+    /// <p>The Amazon Web Services Region that contains the aggregator index, if one exists. If an aggregator index does exist then the Region in which you called this operation replicates its index information to the Region specified in this response value. </p>
     pub fn get_replicating_to(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.replicating_to
     }

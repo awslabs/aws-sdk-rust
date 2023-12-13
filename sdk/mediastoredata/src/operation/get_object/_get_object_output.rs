@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub struct GetObjectOutput {
-    /// <p>The bytes of the object.</p>
+    /// <p>The bytes of the object. </p>
     pub body: ::aws_smithy_types::byte_stream::ByteStream,
     /// <p>An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP spec at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
     /// <p>Headers with a custom user-defined value are also accepted.</p>
@@ -23,7 +23,7 @@ pub struct GetObjectOutput {
     _request_id: Option<String>,
 }
 impl GetObjectOutput {
-    /// <p>The bytes of the object.</p>
+    /// <p>The bytes of the object. </p>
     pub fn body(&self) -> &::aws_smithy_types::byte_stream::ByteStream {
         &self.body
     }
@@ -84,17 +84,17 @@ pub struct GetObjectOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetObjectOutputBuilder {
-    /// <p>The bytes of the object.</p>
+    /// <p>The bytes of the object. </p>
     pub fn body(mut self, input: ::aws_smithy_types::byte_stream::ByteStream) -> Self {
         self.body = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The bytes of the object.</p>
+    /// <p>The bytes of the object. </p>
     pub fn set_body(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
         self.body = input;
         self
     }
-    /// <p>The bytes of the object.</p>
+    /// <p>The bytes of the object. </p>
     pub fn get_body(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
         &self.body
     }

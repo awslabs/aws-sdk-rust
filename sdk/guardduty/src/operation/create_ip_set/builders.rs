@@ -123,19 +123,19 @@ impl CreateIPSetFluentBuilder {
         self.inner.get_detector_id()
     }
     /// <p>The user-friendly name to identify the IPSet.</p>
-    /// <p>Allowed characters are alphanumeric, whitespace, dash (-), and underscores (_).</p>
+    /// <p> Allowed characters are alphanumeric, whitespace, dash (-), and underscores (_).</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>The user-friendly name to identify the IPSet.</p>
-    /// <p>Allowed characters are alphanumeric, whitespace, dash (-), and underscores (_).</p>
+    /// <p> Allowed characters are alphanumeric, whitespace, dash (-), and underscores (_).</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
     /// <p>The user-friendly name to identify the IPSet.</p>
-    /// <p>Allowed characters are alphanumeric, whitespace, dash (-), and underscores (_).</p>
+    /// <p> Allowed characters are alphanumeric, whitespace, dash (-), and underscores (_).</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
@@ -153,17 +153,17 @@ impl CreateIPSetFluentBuilder {
     pub fn get_format(&self) -> &::std::option::Option<crate::types::IpSetFormat> {
         self.inner.get_format()
     }
-    /// <p>The URI of the file that contains the IPSet.</p>
+    /// <p>The URI of the file that contains the IPSet. </p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.location(input.into());
         self
     }
-    /// <p>The URI of the file that contains the IPSet.</p>
+    /// <p>The URI of the file that contains the IPSet. </p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_location(input);
         self
     }
-    /// <p>The URI of the file that contains the IPSet.</p>
+    /// <p>The URI of the file that contains the IPSet. </p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_location()
     }

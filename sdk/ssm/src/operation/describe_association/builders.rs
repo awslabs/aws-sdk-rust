@@ -150,17 +150,17 @@ impl DescribeAssociationFluentBuilder {
     pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_association_id()
     }
-    /// <p>Specify the association version to retrieve. To view the latest version, either specify <code>$LATEST</code> for this parameter, or omit this parameter. To view a list of all associations for a managed node, use <code>ListAssociations</code>. To get a list of versions for a specific association, use <code>ListAssociationVersions</code>.</p>
+    /// <p>Specify the association version to retrieve. To view the latest version, either specify <code>$LATEST</code> for this parameter, or omit this parameter. To view a list of all associations for a managed node, use <code>ListAssociations</code>. To get a list of versions for a specific association, use <code>ListAssociationVersions</code>. </p>
     pub fn association_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.association_version(input.into());
         self
     }
-    /// <p>Specify the association version to retrieve. To view the latest version, either specify <code>$LATEST</code> for this parameter, or omit this parameter. To view a list of all associations for a managed node, use <code>ListAssociations</code>. To get a list of versions for a specific association, use <code>ListAssociationVersions</code>.</p>
+    /// <p>Specify the association version to retrieve. To view the latest version, either specify <code>$LATEST</code> for this parameter, or omit this parameter. To view a list of all associations for a managed node, use <code>ListAssociations</code>. To get a list of versions for a specific association, use <code>ListAssociationVersions</code>. </p>
     pub fn set_association_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_association_version(input);
         self
     }
-    /// <p>Specify the association version to retrieve. To view the latest version, either specify <code>$LATEST</code> for this parameter, or omit this parameter. To view a list of all associations for a managed node, use <code>ListAssociations</code>. To get a list of versions for a specific association, use <code>ListAssociationVersions</code>.</p>
+    /// <p>Specify the association version to retrieve. To view the latest version, either specify <code>$LATEST</code> for this parameter, or omit this parameter. To view a list of all associations for a managed node, use <code>ListAssociations</code>. To get a list of versions for a specific association, use <code>ListAssociationVersions</code>. </p>
     pub fn get_association_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_association_version()
     }

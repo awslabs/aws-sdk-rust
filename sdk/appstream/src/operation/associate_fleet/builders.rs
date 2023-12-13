@@ -108,17 +108,17 @@ impl AssociateFleetFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the fleet.</p>
+    /// <p>The name of the fleet. </p>
     pub fn fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fleet_name(input.into());
         self
     }
-    /// <p>The name of the fleet.</p>
+    /// <p>The name of the fleet. </p>
     pub fn set_fleet_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_fleet_name(input);
         self
     }
-    /// <p>The name of the fleet.</p>
+    /// <p>The name of the fleet. </p>
     pub fn get_fleet_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_fleet_name()
     }

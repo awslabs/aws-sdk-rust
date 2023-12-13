@@ -257,7 +257,7 @@ pub enum CreateRepositoryError {
     EncryptionKeyUnavailableException(crate::types::error::EncryptionKeyUnavailableException),
     /// <p>The specified repository description is not valid.</p>
     InvalidRepositoryDescriptionException(crate::types::error::InvalidRepositoryDescriptionException),
-    /// <p>A specified repository name is not valid.</p><note>
+    /// <p>A specified repository name is not valid.</p> <note>
     /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::types::error::InvalidRepositoryNameException),

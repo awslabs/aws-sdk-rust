@@ -9,16 +9,11 @@ pub struct DkimAttributes {
     pub signing_enabled: bool,
     /// <p>Describes whether or not Amazon SES has successfully located the DKIM records in the DNS records for the domain. The status can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet detected the DKIM records in the DNS configuration for the domain.</p></li>
-    /// <li>
-    /// <p><code>SUCCESS</code> – The verification process completed successfully.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> – The verification process failed. This typically occurs when Amazon SES fails to find the DKIM records in the DNS configuration of the domain.</p></li>
-    /// <li>
-    /// <p><code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the DKIM authentication status of the domain.</p></li>
-    /// <li>
-    /// <p><code>NOT_STARTED</code> – The DKIM verification process hasn't been initiated for the domain.</p></li>
+    /// <li> <p> <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet detected the DKIM records in the DNS configuration for the domain.</p> </li>
+    /// <li> <p> <code>SUCCESS</code> – The verification process completed successfully.</p> </li>
+    /// <li> <p> <code>FAILED</code> – The verification process failed. This typically occurs when Amazon SES fails to find the DKIM records in the DNS configuration of the domain.</p> </li>
+    /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the DKIM authentication status of the domain.</p> </li>
+    /// <li> <p> <code>NOT_STARTED</code> – The DKIM verification process hasn't been initiated for the domain.</p> </li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::DkimStatus>,
     /// <p>If you used <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a> to configure DKIM authentication for the domain, then this object contains a set of unique strings that you use to create a set of CNAME records that you add to the DNS configuration for your domain. When Amazon SES detects these records in the DNS configuration for your domain, the DKIM authentication process is complete.</p>
@@ -27,10 +22,8 @@ pub struct DkimAttributes {
     pub tokens: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A string that indicates how DKIM was configured for the identity. These are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AWS_SES</code> – Indicates that DKIM was configured for the identity by using <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p></li>
-    /// <li>
-    /// <p><code>EXTERNAL</code> – Indicates that DKIM was configured for the identity by using Bring Your Own DKIM (BYODKIM).</p></li>
+    /// <li> <p> <code>AWS_SES</code> – Indicates that DKIM was configured for the identity by using <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p> </li>
+    /// <li> <p> <code>EXTERNAL</code> – Indicates that DKIM was configured for the identity by using Bring Your Own DKIM (BYODKIM).</p> </li>
     /// </ul>
     pub signing_attributes_origin: ::std::option::Option<crate::types::DkimSigningAttributesOrigin>,
     /// <p>[Easy DKIM] The key length of the future DKIM key pair to be generated. This can be changed at most once per day.</p>
@@ -47,16 +40,11 @@ impl DkimAttributes {
     }
     /// <p>Describes whether or not Amazon SES has successfully located the DKIM records in the DNS records for the domain. The status can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet detected the DKIM records in the DNS configuration for the domain.</p></li>
-    /// <li>
-    /// <p><code>SUCCESS</code> – The verification process completed successfully.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> – The verification process failed. This typically occurs when Amazon SES fails to find the DKIM records in the DNS configuration of the domain.</p></li>
-    /// <li>
-    /// <p><code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the DKIM authentication status of the domain.</p></li>
-    /// <li>
-    /// <p><code>NOT_STARTED</code> – The DKIM verification process hasn't been initiated for the domain.</p></li>
+    /// <li> <p> <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet detected the DKIM records in the DNS configuration for the domain.</p> </li>
+    /// <li> <p> <code>SUCCESS</code> – The verification process completed successfully.</p> </li>
+    /// <li> <p> <code>FAILED</code> – The verification process failed. This typically occurs when Amazon SES fails to find the DKIM records in the DNS configuration of the domain.</p> </li>
+    /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the DKIM authentication status of the domain.</p> </li>
+    /// <li> <p> <code>NOT_STARTED</code> – The DKIM verification process hasn't been initiated for the domain.</p> </li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::DkimStatus> {
         self.status.as_ref()
@@ -71,10 +59,8 @@ impl DkimAttributes {
     }
     /// <p>A string that indicates how DKIM was configured for the identity. These are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AWS_SES</code> – Indicates that DKIM was configured for the identity by using <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p></li>
-    /// <li>
-    /// <p><code>EXTERNAL</code> – Indicates that DKIM was configured for the identity by using Bring Your Own DKIM (BYODKIM).</p></li>
+    /// <li> <p> <code>AWS_SES</code> – Indicates that DKIM was configured for the identity by using <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p> </li>
+    /// <li> <p> <code>EXTERNAL</code> – Indicates that DKIM was configured for the identity by using Bring Your Own DKIM (BYODKIM).</p> </li>
     /// </ul>
     pub fn signing_attributes_origin(&self) -> ::std::option::Option<&crate::types::DkimSigningAttributesOrigin> {
         self.signing_attributes_origin.as_ref()
@@ -128,16 +114,11 @@ impl DkimAttributesBuilder {
     }
     /// <p>Describes whether or not Amazon SES has successfully located the DKIM records in the DNS records for the domain. The status can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet detected the DKIM records in the DNS configuration for the domain.</p></li>
-    /// <li>
-    /// <p><code>SUCCESS</code> – The verification process completed successfully.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> – The verification process failed. This typically occurs when Amazon SES fails to find the DKIM records in the DNS configuration of the domain.</p></li>
-    /// <li>
-    /// <p><code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the DKIM authentication status of the domain.</p></li>
-    /// <li>
-    /// <p><code>NOT_STARTED</code> – The DKIM verification process hasn't been initiated for the domain.</p></li>
+    /// <li> <p> <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet detected the DKIM records in the DNS configuration for the domain.</p> </li>
+    /// <li> <p> <code>SUCCESS</code> – The verification process completed successfully.</p> </li>
+    /// <li> <p> <code>FAILED</code> – The verification process failed. This typically occurs when Amazon SES fails to find the DKIM records in the DNS configuration of the domain.</p> </li>
+    /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the DKIM authentication status of the domain.</p> </li>
+    /// <li> <p> <code>NOT_STARTED</code> – The DKIM verification process hasn't been initiated for the domain.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::DkimStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -145,16 +126,11 @@ impl DkimAttributesBuilder {
     }
     /// <p>Describes whether or not Amazon SES has successfully located the DKIM records in the DNS records for the domain. The status can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet detected the DKIM records in the DNS configuration for the domain.</p></li>
-    /// <li>
-    /// <p><code>SUCCESS</code> – The verification process completed successfully.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> – The verification process failed. This typically occurs when Amazon SES fails to find the DKIM records in the DNS configuration of the domain.</p></li>
-    /// <li>
-    /// <p><code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the DKIM authentication status of the domain.</p></li>
-    /// <li>
-    /// <p><code>NOT_STARTED</code> – The DKIM verification process hasn't been initiated for the domain.</p></li>
+    /// <li> <p> <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet detected the DKIM records in the DNS configuration for the domain.</p> </li>
+    /// <li> <p> <code>SUCCESS</code> – The verification process completed successfully.</p> </li>
+    /// <li> <p> <code>FAILED</code> – The verification process failed. This typically occurs when Amazon SES fails to find the DKIM records in the DNS configuration of the domain.</p> </li>
+    /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the DKIM authentication status of the domain.</p> </li>
+    /// <li> <p> <code>NOT_STARTED</code> – The DKIM verification process hasn't been initiated for the domain.</p> </li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::DkimStatus>) -> Self {
         self.status = input;
@@ -162,16 +138,11 @@ impl DkimAttributesBuilder {
     }
     /// <p>Describes whether or not Amazon SES has successfully located the DKIM records in the DNS records for the domain. The status can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet detected the DKIM records in the DNS configuration for the domain.</p></li>
-    /// <li>
-    /// <p><code>SUCCESS</code> – The verification process completed successfully.</p></li>
-    /// <li>
-    /// <p><code>FAILED</code> – The verification process failed. This typically occurs when Amazon SES fails to find the DKIM records in the DNS configuration of the domain.</p></li>
-    /// <li>
-    /// <p><code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the DKIM authentication status of the domain.</p></li>
-    /// <li>
-    /// <p><code>NOT_STARTED</code> – The DKIM verification process hasn't been initiated for the domain.</p></li>
+    /// <li> <p> <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet detected the DKIM records in the DNS configuration for the domain.</p> </li>
+    /// <li> <p> <code>SUCCESS</code> – The verification process completed successfully.</p> </li>
+    /// <li> <p> <code>FAILED</code> – The verification process failed. This typically occurs when Amazon SES fails to find the DKIM records in the DNS configuration of the domain.</p> </li>
+    /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the DKIM authentication status of the domain.</p> </li>
+    /// <li> <p> <code>NOT_STARTED</code> – The DKIM verification process hasn't been initiated for the domain.</p> </li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::DkimStatus> {
         &self.status
@@ -204,10 +175,8 @@ impl DkimAttributesBuilder {
     }
     /// <p>A string that indicates how DKIM was configured for the identity. These are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AWS_SES</code> – Indicates that DKIM was configured for the identity by using <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p></li>
-    /// <li>
-    /// <p><code>EXTERNAL</code> – Indicates that DKIM was configured for the identity by using Bring Your Own DKIM (BYODKIM).</p></li>
+    /// <li> <p> <code>AWS_SES</code> – Indicates that DKIM was configured for the identity by using <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p> </li>
+    /// <li> <p> <code>EXTERNAL</code> – Indicates that DKIM was configured for the identity by using Bring Your Own DKIM (BYODKIM).</p> </li>
     /// </ul>
     pub fn signing_attributes_origin(mut self, input: crate::types::DkimSigningAttributesOrigin) -> Self {
         self.signing_attributes_origin = ::std::option::Option::Some(input);
@@ -215,10 +184,8 @@ impl DkimAttributesBuilder {
     }
     /// <p>A string that indicates how DKIM was configured for the identity. These are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AWS_SES</code> – Indicates that DKIM was configured for the identity by using <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p></li>
-    /// <li>
-    /// <p><code>EXTERNAL</code> – Indicates that DKIM was configured for the identity by using Bring Your Own DKIM (BYODKIM).</p></li>
+    /// <li> <p> <code>AWS_SES</code> – Indicates that DKIM was configured for the identity by using <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p> </li>
+    /// <li> <p> <code>EXTERNAL</code> – Indicates that DKIM was configured for the identity by using Bring Your Own DKIM (BYODKIM).</p> </li>
     /// </ul>
     pub fn set_signing_attributes_origin(mut self, input: ::std::option::Option<crate::types::DkimSigningAttributesOrigin>) -> Self {
         self.signing_attributes_origin = input;
@@ -226,10 +193,8 @@ impl DkimAttributesBuilder {
     }
     /// <p>A string that indicates how DKIM was configured for the identity. These are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AWS_SES</code> – Indicates that DKIM was configured for the identity by using <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p></li>
-    /// <li>
-    /// <p><code>EXTERNAL</code> – Indicates that DKIM was configured for the identity by using Bring Your Own DKIM (BYODKIM).</p></li>
+    /// <li> <p> <code>AWS_SES</code> – Indicates that DKIM was configured for the identity by using <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p> </li>
+    /// <li> <p> <code>EXTERNAL</code> – Indicates that DKIM was configured for the identity by using Bring Your Own DKIM (BYODKIM).</p> </li>
     /// </ul>
     pub fn get_signing_attributes_origin(&self) -> &::std::option::Option<crate::types::DkimSigningAttributesOrigin> {
         &self.signing_attributes_origin

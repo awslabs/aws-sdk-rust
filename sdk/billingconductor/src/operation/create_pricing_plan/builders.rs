@@ -22,7 +22,7 @@ impl CreatePricingPlanInputBuilder {
 }
 /// Fluent builder constructing a request to `CreatePricingPlan`.
 ///
-/// <p>Creates a pricing plan that is used for computing Amazon Web Services charges for billing groups.</p>
+/// <p>Creates a pricing plan that is used for computing Amazon Web Services charges for billing groups. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreatePricingPlanFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,45 +108,45 @@ impl CreatePricingPlanFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update.</p>
+    /// <p> The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p>The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update.</p>
+    /// <p> The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p>The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update.</p>
+    /// <p> The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
-    /// <p>The name of the pricing plan. The names must be unique to each pricing plan.</p>
+    /// <p>The name of the pricing plan. The names must be unique to each pricing plan. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of the pricing plan. The names must be unique to each pricing plan.</p>
+    /// <p>The name of the pricing plan. The names must be unique to each pricing plan. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name of the pricing plan. The names must be unique to each pricing plan.</p>
+    /// <p>The name of the pricing plan. The names must be unique to each pricing plan. </p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>The description of the pricing plan.</p>
+    /// <p>The description of the pricing plan. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>The description of the pricing plan.</p>
+    /// <p>The description of the pricing plan. </p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>The description of the pricing plan.</p>
+    /// <p>The description of the pricing plan. </p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
@@ -154,17 +154,17 @@ impl CreatePricingPlanFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_pricing_rule_arns`](Self::set_pricing_rule_arns).
     ///
-    /// <p>A list of Amazon Resource Names (ARNs) that define the pricing plan parameters.</p>
+    /// <p> A list of Amazon Resource Names (ARNs) that define the pricing plan parameters. </p>
     pub fn pricing_rule_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pricing_rule_arns(input.into());
         self
     }
-    /// <p>A list of Amazon Resource Names (ARNs) that define the pricing plan parameters.</p>
+    /// <p> A list of Amazon Resource Names (ARNs) that define the pricing plan parameters. </p>
     pub fn set_pricing_rule_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_pricing_rule_arns(input);
         self
     }
-    /// <p>A list of Amazon Resource Names (ARNs) that define the pricing plan parameters.</p>
+    /// <p> A list of Amazon Resource Names (ARNs) that define the pricing plan parameters. </p>
     pub fn get_pricing_rule_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_pricing_rule_arns()
     }
@@ -172,17 +172,17 @@ impl CreatePricingPlanFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A map that contains tag keys and tag values that are attached to a pricing plan.</p>
+    /// <p> A map that contains tag keys and tag values that are attached to a pricing plan. </p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
-    /// <p>A map that contains tag keys and tag values that are attached to a pricing plan.</p>
+    /// <p> A map that contains tag keys and tag values that are attached to a pricing plan. </p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>A map that contains tag keys and tag values that are attached to a pricing plan.</p>
+    /// <p> A map that contains tag keys and tag values that are attached to a pricing plan. </p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }

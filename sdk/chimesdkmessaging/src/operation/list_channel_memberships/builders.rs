@@ -22,7 +22,7 @@ impl ListChannelMembershipsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListChannelMemberships`.
 ///
-/// <p>Lists all channel memberships in a channel.</p><note>
+/// <p>Lists all channel memberships in a channel.</p> <note>
 /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p>
 /// </note>
 /// <p>If you want to list the channels to which a specific app instance user belongs, see the <a href="https://docs.aws.amazon.com/chime/latest/APIReference/API_messaging-chime_ListChannelMembershipsForAppInstanceUser.html">ListChannelMembershipsForAppInstanceUser</a> API.</p>
@@ -187,21 +187,21 @@ impl ListChannelMembershipsFluentBuilder {
     pub fn get_chime_bearer(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_chime_bearer()
     }
-    /// <p>The ID of the SubChannel in the request.</p><note>
+    /// <p>The ID of the SubChannel in the request.</p> <note>
     /// <p>Only required when listing a user's memberships in a particular sub-channel of an elastic channel.</p>
     /// </note>
     pub fn sub_channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sub_channel_id(input.into());
         self
     }
-    /// <p>The ID of the SubChannel in the request.</p><note>
+    /// <p>The ID of the SubChannel in the request.</p> <note>
     /// <p>Only required when listing a user's memberships in a particular sub-channel of an elastic channel.</p>
     /// </note>
     pub fn set_sub_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sub_channel_id(input);
         self
     }
-    /// <p>The ID of the SubChannel in the request.</p><note>
+    /// <p>The ID of the SubChannel in the request.</p> <note>
     /// <p>Only required when listing a user's memberships in a particular sub-channel of an elastic channel.</p>
     /// </note>
     pub fn get_sub_channel_id(&self) -> &::std::option::Option<::std::string::String> {

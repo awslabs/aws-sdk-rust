@@ -258,24 +258,19 @@ pub enum CreateDeploymentGroupError {
     DeploymentConfigDoesNotExistException(crate::types::error::DeploymentConfigDoesNotExistException),
     /// <p>A deployment group with the specified name with the user or Amazon Web Services account already exists.</p>
     DeploymentGroupAlreadyExistsException(crate::types::error::DeploymentGroupAlreadyExistsException),
-    /// <p>The deployment groups limit was exceeded.</p>
+    /// <p> The deployment groups limit was exceeded.</p>
     DeploymentGroupLimitExceededException(crate::types::error::DeploymentGroupLimitExceededException),
     /// <p>The deployment group name was not specified.</p>
     DeploymentGroupNameRequiredException(crate::types::error::DeploymentGroupNameRequiredException),
-    /// <p>The Amazon ECS service is associated with more than one deployment groups. An Amazon ECS service can be associated with only one deployment group.</p>
+    /// <p> The Amazon ECS service is associated with more than one deployment groups. An Amazon ECS service can be associated with only one deployment group. </p>
     EcsServiceMappingLimitExceededException(crate::types::error::EcsServiceMappingLimitExceededException),
     /// <p>The format of the alarm configuration is invalid. Possible causes include:</p>
     /// <ul>
-    /// <li>
-    /// <p>The alarm list is null.</p></li>
-    /// <li>
-    /// <p>The alarm object is null.</p></li>
-    /// <li>
-    /// <p>The alarm name is empty or null or exceeds the limit of 255 characters.</p></li>
-    /// <li>
-    /// <p>Two alarms with the same name have been specified.</p></li>
-    /// <li>
-    /// <p>The alarm configuration is enabled, but the alarm list is empty.</p></li>
+    /// <li> <p>The alarm list is null.</p> </li>
+    /// <li> <p>The alarm object is null.</p> </li>
+    /// <li> <p>The alarm name is empty or null or exceeds the limit of 255 characters.</p> </li>
+    /// <li> <p>Two alarms with the same name have been specified.</p> </li>
+    /// <li> <p>The alarm configuration is enabled, but the alarm list is empty.</p> </li>
     /// </ul>
     InvalidAlarmConfigException(crate::types::error::InvalidAlarmConfigException),
     /// <p>The application name was specified in an invalid format.</p>
@@ -296,7 +291,7 @@ pub enum CreateDeploymentGroupError {
     InvalidEc2TagCombinationException(crate::types::error::InvalidEc2TagCombinationException),
     /// <p>The tag was specified in an invalid format.</p>
     InvalidEc2TagException(crate::types::error::InvalidEc2TagException),
-    /// <p>The Amazon ECS service identifier is not valid.</p>
+    /// <p> The Amazon ECS service identifier is not valid. </p>
     InvalidEcsServiceException(crate::types::error::InvalidEcsServiceException),
     /// <p>The input was specified in an invalid format.</p>
     InvalidInputException(crate::types::error::InvalidInputException),
@@ -308,11 +303,11 @@ pub enum CreateDeploymentGroupError {
     InvalidRoleException(crate::types::error::InvalidRoleException),
     /// <p>The tag was specified in an invalid format.</p>
     InvalidTagException(crate::types::error::InvalidTagException),
-    /// <p>The specified tags are not valid.</p>
+    /// <p> The specified tags are not valid. </p>
     InvalidTagsToAddException(crate::types::error::InvalidTagsToAddException),
-    /// <p>A target group pair associated with this deployment is not valid.</p>
+    /// <p> A target group pair associated with this deployment is not valid. </p>
     InvalidTargetGroupPairException(crate::types::error::InvalidTargetGroupPairException),
-    /// <p>The configuration that specifies how traffic is routed during a deployment is invalid.</p>
+    /// <p> The configuration that specifies how traffic is routed during a deployment is invalid.</p>
     InvalidTrafficRoutingConfigurationException(crate::types::error::InvalidTrafficRoutingConfigurationException),
     /// <p>The trigger was specified in an invalid format.</p>
     InvalidTriggerConfigException(crate::types::error::InvalidTriggerConfigException),

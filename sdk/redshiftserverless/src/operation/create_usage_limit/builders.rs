@@ -22,7 +22,7 @@ impl CreateUsageLimitInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateUsageLimit`.
 ///
-/// <p>Creates a usage limit for a specified Amazon Redshift Serverless usage type. The usage limit is identified by the returned usage limit identifier.</p>
+/// <p>Creates a usage limit for a specified Amazon Redshift Serverless usage type. The usage limit is identified by the returned usage limit identifier. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateUsageLimitFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

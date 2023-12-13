@@ -7,11 +7,10 @@ pub struct UpdateTrackerOutput {
     pub tracker_name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the updated tracker resource. Used to specify a resource across AWS.</p>
     /// <ul>
-    /// <li>
-    /// <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code></p></li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
     /// </ul>
     pub tracker_arn: ::std::string::String,
-    /// <p>The timestamp for when the tracker resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+    /// <p>The timestamp for when the tracker resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub update_time: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
@@ -23,14 +22,13 @@ impl UpdateTrackerOutput {
     }
     /// <p>The Amazon Resource Name (ARN) of the updated tracker resource. Used to specify a resource across AWS.</p>
     /// <ul>
-    /// <li>
-    /// <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code></p></li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
     /// </ul>
     pub fn tracker_arn(&self) -> &str {
         use std::ops::Deref;
         self.tracker_arn.deref()
     }
-    /// <p>The timestamp for when the tracker resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+    /// <p>The timestamp for when the tracker resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
         &self.update_time
     }
@@ -74,8 +72,7 @@ impl UpdateTrackerOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the updated tracker resource. Used to specify a resource across AWS.</p>
     /// <ul>
-    /// <li>
-    /// <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code></p></li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
     /// </ul>
     /// This field is required.
     pub fn tracker_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -84,8 +81,7 @@ impl UpdateTrackerOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the updated tracker resource. Used to specify a resource across AWS.</p>
     /// <ul>
-    /// <li>
-    /// <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code></p></li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
     /// </ul>
     pub fn set_tracker_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tracker_arn = input;
@@ -93,24 +89,23 @@ impl UpdateTrackerOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the updated tracker resource. Used to specify a resource across AWS.</p>
     /// <ul>
-    /// <li>
-    /// <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code></p></li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
     /// </ul>
     pub fn get_tracker_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.tracker_arn
     }
-    /// <p>The timestamp for when the tracker resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+    /// <p>The timestamp for when the tracker resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     /// This field is required.
     pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The timestamp for when the tracker resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+    /// <p>The timestamp for when the tracker resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_time = input;
         self
     }
-    /// <p>The timestamp for when the tracker resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+    /// <p>The timestamp for when the tracker resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.update_time
     }

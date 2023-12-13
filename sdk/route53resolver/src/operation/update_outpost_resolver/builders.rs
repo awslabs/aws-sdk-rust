@@ -150,17 +150,17 @@ impl UpdateOutpostResolverFluentBuilder {
     pub fn get_instance_count(&self) -> &::std::option::Option<i32> {
         self.inner.get_instance_count()
     }
-    /// <p>Amazon EC2 instance type.</p>
+    /// <p> Amazon EC2 instance type. </p>
     pub fn preferred_instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.preferred_instance_type(input.into());
         self
     }
-    /// <p>Amazon EC2 instance type.</p>
+    /// <p> Amazon EC2 instance type. </p>
     pub fn set_preferred_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_preferred_instance_type(input);
         self
     }
-    /// <p>Amazon EC2 instance type.</p>
+    /// <p> Amazon EC2 instance type. </p>
     pub fn get_preferred_instance_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_preferred_instance_type()
     }

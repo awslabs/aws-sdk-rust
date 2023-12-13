@@ -6,7 +6,7 @@
 pub struct ResourceKey {
     /// <p>The resource type.</p>
     pub resource_type: crate::types::ResourceType,
-    /// <p>The ID of the resource (for example., sg-xxxxxx).</p>
+    /// <p>The ID of the resource (for example., sg-xxxxxx). </p>
     pub resource_id: ::std::string::String,
 }
 impl ResourceKey {
@@ -14,7 +14,7 @@ impl ResourceKey {
     pub fn resource_type(&self) -> &crate::types::ResourceType {
         &self.resource_type
     }
-    /// <p>The ID of the resource (for example., sg-xxxxxx).</p>
+    /// <p>The ID of the resource (for example., sg-xxxxxx). </p>
     pub fn resource_id(&self) -> &str {
         use std::ops::Deref;
         self.resource_id.deref()
@@ -50,18 +50,18 @@ impl ResourceKeyBuilder {
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
         &self.resource_type
     }
-    /// <p>The ID of the resource (for example., sg-xxxxxx).</p>
+    /// <p>The ID of the resource (for example., sg-xxxxxx). </p>
     /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the resource (for example., sg-xxxxxx).</p>
+    /// <p>The ID of the resource (for example., sg-xxxxxx). </p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
     }
-    /// <p>The ID of the resource (for example., sg-xxxxxx).</p>
+    /// <p>The ID of the resource (for example., sg-xxxxxx). </p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_id
     }

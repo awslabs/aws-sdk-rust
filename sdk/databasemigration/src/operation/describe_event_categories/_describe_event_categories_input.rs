@@ -4,14 +4,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEventCategoriesInput {
-    /// <p>The type of DMS resource that generates events.</p>
+    /// <p> The type of DMS resource that generates events. </p>
     /// <p>Valid values: replication-instance | replication-task</p>
     pub source_type: ::std::option::Option<::std::string::String>,
     /// <p>Filters applied to the event categories.</p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
 }
 impl DescribeEventCategoriesInput {
-    /// <p>The type of DMS resource that generates events.</p>
+    /// <p> The type of DMS resource that generates events. </p>
     /// <p>Valid values: replication-instance | replication-task</p>
     pub fn source_type(&self) -> ::std::option::Option<&str> {
         self.source_type.as_deref()
@@ -38,19 +38,19 @@ pub struct DescribeEventCategoriesInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
 }
 impl DescribeEventCategoriesInputBuilder {
-    /// <p>The type of DMS resource that generates events.</p>
+    /// <p> The type of DMS resource that generates events. </p>
     /// <p>Valid values: replication-instance | replication-task</p>
     pub fn source_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The type of DMS resource that generates events.</p>
+    /// <p> The type of DMS resource that generates events. </p>
     /// <p>Valid values: replication-instance | replication-task</p>
     pub fn set_source_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_type = input;
         self
     }
-    /// <p>The type of DMS resource that generates events.</p>
+    /// <p> The type of DMS resource that generates events. </p>
     /// <p>Valid values: replication-instance | replication-task</p>
     pub fn get_source_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_type

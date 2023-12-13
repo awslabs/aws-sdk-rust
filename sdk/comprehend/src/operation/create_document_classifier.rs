@@ -276,9 +276,9 @@ pub enum CreateDocumentClassifierError {
     ResourceLimitExceededException(crate::types::error::ResourceLimitExceededException),
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::types::error::TooManyRequestsException),
-    /// <p>The request contains more tags than can be associated with a resource (50 tags per resource). The maximum number of tags includes both existing tags and those included in your current request.</p>
+    /// <p>The request contains more tags than can be associated with a resource (50 tags per resource). The maximum number of tags includes both existing tags and those included in your current request. </p>
     TooManyTagsException(crate::types::error::TooManyTagsException),
-    /// <p>Amazon Comprehend can't process the language of the input text. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported languages</a> in the Comprehend Developer Guide.</p>
+    /// <p>Amazon Comprehend can't process the language of the input text. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported languages</a> in the Comprehend Developer Guide. </p>
     UnsupportedLanguageException(crate::types::error::UnsupportedLanguageException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

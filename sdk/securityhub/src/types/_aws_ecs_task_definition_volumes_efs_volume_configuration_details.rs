@@ -10,7 +10,7 @@ pub struct AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails {
     pub filesystem_id: ::std::option::Option<::std::string::String>,
     /// <p>The directory within the Amazon EFS file system to mount as the root directory inside the host.</p>
     pub root_directory: ::std::option::Option<::std::string::String>,
-    /// <p>Whether to enable encryption for Amazon EFS data in transit between the Amazon ECS host and the Amazon EFS server.</p>
+    /// <p>Whether to enable encryption for Amazon EFS data in transit between the Amazon ECS host and the Amazon EFS server. </p>
     pub transit_encryption: ::std::option::Option<::std::string::String>,
     /// <p>The port to use when sending encrypted data between the Amazon ECS host and the Amazon EFS server.</p>
     pub transit_encryption_port: ::std::option::Option<i32>,
@@ -30,7 +30,7 @@ impl AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails {
     pub fn root_directory(&self) -> ::std::option::Option<&str> {
         self.root_directory.as_deref()
     }
-    /// <p>Whether to enable encryption for Amazon EFS data in transit between the Amazon ECS host and the Amazon EFS server.</p>
+    /// <p>Whether to enable encryption for Amazon EFS data in transit between the Amazon ECS host and the Amazon EFS server. </p>
     pub fn transit_encryption(&self) -> ::std::option::Option<&str> {
         self.transit_encryption.as_deref()
     }
@@ -104,17 +104,17 @@ impl AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetailsBuilder {
     pub fn get_root_directory(&self) -> &::std::option::Option<::std::string::String> {
         &self.root_directory
     }
-    /// <p>Whether to enable encryption for Amazon EFS data in transit between the Amazon ECS host and the Amazon EFS server.</p>
+    /// <p>Whether to enable encryption for Amazon EFS data in transit between the Amazon ECS host and the Amazon EFS server. </p>
     pub fn transit_encryption(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_encryption = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Whether to enable encryption for Amazon EFS data in transit between the Amazon ECS host and the Amazon EFS server.</p>
+    /// <p>Whether to enable encryption for Amazon EFS data in transit between the Amazon ECS host and the Amazon EFS server. </p>
     pub fn set_transit_encryption(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transit_encryption = input;
         self
     }
-    /// <p>Whether to enable encryption for Amazon EFS data in transit between the Amazon ECS host and the Amazon EFS server.</p>
+    /// <p>Whether to enable encryption for Amazon EFS data in transit between the Amazon ECS host and the Amazon EFS server. </p>
     pub fn get_transit_encryption(&self) -> &::std::option::Option<::std::string::String> {
         &self.transit_encryption
     }

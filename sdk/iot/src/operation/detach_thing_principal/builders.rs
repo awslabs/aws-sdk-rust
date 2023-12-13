@@ -22,7 +22,7 @@ impl DetachThingPrincipalInputBuilder {
 }
 /// Fluent builder constructing a request to `DetachThingPrincipal`.
 ///
-/// <p>Detaches the specified principal from the specified thing. A principal can be X.509 certificates, IAM users, groups, and roles, Amazon Cognito identities or federated identities.</p><note>
+/// <p>Detaches the specified principal from the specified thing. A principal can be X.509 certificates, IAM users, groups, and roles, Amazon Cognito identities or federated identities.</p> <note>
 /// <p>This call is asynchronous. It might take several seconds for the detachment to propagate.</p>
 /// </note>
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DetachThingPrincipal</a> action.</p>

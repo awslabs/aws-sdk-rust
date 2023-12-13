@@ -22,9 +22,9 @@ impl DescribeComputeInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeCompute`.
 ///
-/// <p>Retrieves properties for a compute resource in an Amazon GameLift fleet. Call <code>ListCompute</code> to get a list of compute resources in a fleet. You can request information for computes in either managed EC2 fleets or Anywhere fleets.</p>
+/// <p>Retrieves properties for a compute resource in an Amazon GameLift fleet. Call <code>ListCompute</code> to get a list of compute resources in a fleet. You can request information for computes in either managed EC2 fleets or Anywhere fleets. </p>
 /// <p>To request compute properties, specify the compute name and fleet ID.</p>
-/// <p>If successful, this operation returns details for the requested compute resource. For managed EC2 fleets, this operation returns the fleet's EC2 instances. For Anywhere fleets, this operation returns the fleet's registered computes.</p>
+/// <p>If successful, this operation returns details for the requested compute resource. For managed EC2 fleets, this operation returns the fleet's EC2 instances. For Anywhere fleets, this operation returns the fleet's registered computes. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeComputeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

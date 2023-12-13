@@ -6,26 +6,18 @@
 pub struct WindowsAuditLogConfiguration {
     /// <p>Sets which attempt type is logged by Amazon FSx for file and folder accesses.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SUCCESS_ONLY</code> - only successful attempts to access files or folders are logged.</p></li>
-    /// <li>
-    /// <p><code>FAILURE_ONLY</code> - only failed attempts to access files or folders are logged.</p></li>
-    /// <li>
-    /// <p><code>SUCCESS_AND_FAILURE</code> - both successful attempts and failed attempts to access files or folders are logged.</p></li>
-    /// <li>
-    /// <p><code>DISABLED</code> - access auditing of files and folders is turned off.</p></li>
+    /// <li> <p> <code>SUCCESS_ONLY</code> - only successful attempts to access files or folders are logged.</p> </li>
+    /// <li> <p> <code>FAILURE_ONLY</code> - only failed attempts to access files or folders are logged.</p> </li>
+    /// <li> <p> <code>SUCCESS_AND_FAILURE</code> - both successful attempts and failed attempts to access files or folders are logged.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - access auditing of files and folders is turned off.</p> </li>
     /// </ul>
     pub file_access_audit_log_level: ::std::option::Option<crate::types::WindowsAccessAuditLogLevel>,
     /// <p>Sets which attempt type is logged by Amazon FSx for file share accesses.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SUCCESS_ONLY</code> - only successful attempts to access file shares are logged.</p></li>
-    /// <li>
-    /// <p><code>FAILURE_ONLY</code> - only failed attempts to access file shares are logged.</p></li>
-    /// <li>
-    /// <p><code>SUCCESS_AND_FAILURE</code> - both successful attempts and failed attempts to access file shares are logged.</p></li>
-    /// <li>
-    /// <p><code>DISABLED</code> - access auditing of file shares is turned off.</p></li>
+    /// <li> <p> <code>SUCCESS_ONLY</code> - only successful attempts to access file shares are logged.</p> </li>
+    /// <li> <p> <code>FAILURE_ONLY</code> - only failed attempts to access file shares are logged.</p> </li>
+    /// <li> <p> <code>SUCCESS_AND_FAILURE</code> - both successful attempts and failed attempts to access file shares are logged.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - access auditing of file shares is turned off.</p> </li>
     /// </ul>
     pub file_share_access_audit_log_level: ::std::option::Option<crate::types::WindowsAccessAuditLogLevel>,
     /// <p>The Amazon Resource Name (ARN) for the destination of the audit logs. The destination can be any Amazon CloudWatch Logs log group ARN or Amazon Kinesis Data Firehose delivery stream ARN.</p>
@@ -36,28 +28,20 @@ pub struct WindowsAuditLogConfiguration {
 impl WindowsAuditLogConfiguration {
     /// <p>Sets which attempt type is logged by Amazon FSx for file and folder accesses.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SUCCESS_ONLY</code> - only successful attempts to access files or folders are logged.</p></li>
-    /// <li>
-    /// <p><code>FAILURE_ONLY</code> - only failed attempts to access files or folders are logged.</p></li>
-    /// <li>
-    /// <p><code>SUCCESS_AND_FAILURE</code> - both successful attempts and failed attempts to access files or folders are logged.</p></li>
-    /// <li>
-    /// <p><code>DISABLED</code> - access auditing of files and folders is turned off.</p></li>
+    /// <li> <p> <code>SUCCESS_ONLY</code> - only successful attempts to access files or folders are logged.</p> </li>
+    /// <li> <p> <code>FAILURE_ONLY</code> - only failed attempts to access files or folders are logged.</p> </li>
+    /// <li> <p> <code>SUCCESS_AND_FAILURE</code> - both successful attempts and failed attempts to access files or folders are logged.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - access auditing of files and folders is turned off.</p> </li>
     /// </ul>
     pub fn file_access_audit_log_level(&self) -> ::std::option::Option<&crate::types::WindowsAccessAuditLogLevel> {
         self.file_access_audit_log_level.as_ref()
     }
     /// <p>Sets which attempt type is logged by Amazon FSx for file share accesses.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SUCCESS_ONLY</code> - only successful attempts to access file shares are logged.</p></li>
-    /// <li>
-    /// <p><code>FAILURE_ONLY</code> - only failed attempts to access file shares are logged.</p></li>
-    /// <li>
-    /// <p><code>SUCCESS_AND_FAILURE</code> - both successful attempts and failed attempts to access file shares are logged.</p></li>
-    /// <li>
-    /// <p><code>DISABLED</code> - access auditing of file shares is turned off.</p></li>
+    /// <li> <p> <code>SUCCESS_ONLY</code> - only successful attempts to access file shares are logged.</p> </li>
+    /// <li> <p> <code>FAILURE_ONLY</code> - only failed attempts to access file shares are logged.</p> </li>
+    /// <li> <p> <code>SUCCESS_AND_FAILURE</code> - both successful attempts and failed attempts to access file shares are logged.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - access auditing of file shares is turned off.</p> </li>
     /// </ul>
     pub fn file_share_access_audit_log_level(&self) -> ::std::option::Option<&crate::types::WindowsAccessAuditLogLevel> {
         self.file_share_access_audit_log_level.as_ref()
@@ -87,14 +71,10 @@ pub struct WindowsAuditLogConfigurationBuilder {
 impl WindowsAuditLogConfigurationBuilder {
     /// <p>Sets which attempt type is logged by Amazon FSx for file and folder accesses.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SUCCESS_ONLY</code> - only successful attempts to access files or folders are logged.</p></li>
-    /// <li>
-    /// <p><code>FAILURE_ONLY</code> - only failed attempts to access files or folders are logged.</p></li>
-    /// <li>
-    /// <p><code>SUCCESS_AND_FAILURE</code> - both successful attempts and failed attempts to access files or folders are logged.</p></li>
-    /// <li>
-    /// <p><code>DISABLED</code> - access auditing of files and folders is turned off.</p></li>
+    /// <li> <p> <code>SUCCESS_ONLY</code> - only successful attempts to access files or folders are logged.</p> </li>
+    /// <li> <p> <code>FAILURE_ONLY</code> - only failed attempts to access files or folders are logged.</p> </li>
+    /// <li> <p> <code>SUCCESS_AND_FAILURE</code> - both successful attempts and failed attempts to access files or folders are logged.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - access auditing of files and folders is turned off.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn file_access_audit_log_level(mut self, input: crate::types::WindowsAccessAuditLogLevel) -> Self {
@@ -103,14 +83,10 @@ impl WindowsAuditLogConfigurationBuilder {
     }
     /// <p>Sets which attempt type is logged by Amazon FSx for file and folder accesses.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SUCCESS_ONLY</code> - only successful attempts to access files or folders are logged.</p></li>
-    /// <li>
-    /// <p><code>FAILURE_ONLY</code> - only failed attempts to access files or folders are logged.</p></li>
-    /// <li>
-    /// <p><code>SUCCESS_AND_FAILURE</code> - both successful attempts and failed attempts to access files or folders are logged.</p></li>
-    /// <li>
-    /// <p><code>DISABLED</code> - access auditing of files and folders is turned off.</p></li>
+    /// <li> <p> <code>SUCCESS_ONLY</code> - only successful attempts to access files or folders are logged.</p> </li>
+    /// <li> <p> <code>FAILURE_ONLY</code> - only failed attempts to access files or folders are logged.</p> </li>
+    /// <li> <p> <code>SUCCESS_AND_FAILURE</code> - both successful attempts and failed attempts to access files or folders are logged.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - access auditing of files and folders is turned off.</p> </li>
     /// </ul>
     pub fn set_file_access_audit_log_level(mut self, input: ::std::option::Option<crate::types::WindowsAccessAuditLogLevel>) -> Self {
         self.file_access_audit_log_level = input;
@@ -118,28 +94,20 @@ impl WindowsAuditLogConfigurationBuilder {
     }
     /// <p>Sets which attempt type is logged by Amazon FSx for file and folder accesses.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SUCCESS_ONLY</code> - only successful attempts to access files or folders are logged.</p></li>
-    /// <li>
-    /// <p><code>FAILURE_ONLY</code> - only failed attempts to access files or folders are logged.</p></li>
-    /// <li>
-    /// <p><code>SUCCESS_AND_FAILURE</code> - both successful attempts and failed attempts to access files or folders are logged.</p></li>
-    /// <li>
-    /// <p><code>DISABLED</code> - access auditing of files and folders is turned off.</p></li>
+    /// <li> <p> <code>SUCCESS_ONLY</code> - only successful attempts to access files or folders are logged.</p> </li>
+    /// <li> <p> <code>FAILURE_ONLY</code> - only failed attempts to access files or folders are logged.</p> </li>
+    /// <li> <p> <code>SUCCESS_AND_FAILURE</code> - both successful attempts and failed attempts to access files or folders are logged.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - access auditing of files and folders is turned off.</p> </li>
     /// </ul>
     pub fn get_file_access_audit_log_level(&self) -> &::std::option::Option<crate::types::WindowsAccessAuditLogLevel> {
         &self.file_access_audit_log_level
     }
     /// <p>Sets which attempt type is logged by Amazon FSx for file share accesses.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SUCCESS_ONLY</code> - only successful attempts to access file shares are logged.</p></li>
-    /// <li>
-    /// <p><code>FAILURE_ONLY</code> - only failed attempts to access file shares are logged.</p></li>
-    /// <li>
-    /// <p><code>SUCCESS_AND_FAILURE</code> - both successful attempts and failed attempts to access file shares are logged.</p></li>
-    /// <li>
-    /// <p><code>DISABLED</code> - access auditing of file shares is turned off.</p></li>
+    /// <li> <p> <code>SUCCESS_ONLY</code> - only successful attempts to access file shares are logged.</p> </li>
+    /// <li> <p> <code>FAILURE_ONLY</code> - only failed attempts to access file shares are logged.</p> </li>
+    /// <li> <p> <code>SUCCESS_AND_FAILURE</code> - both successful attempts and failed attempts to access file shares are logged.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - access auditing of file shares is turned off.</p> </li>
     /// </ul>
     /// This field is required.
     pub fn file_share_access_audit_log_level(mut self, input: crate::types::WindowsAccessAuditLogLevel) -> Self {
@@ -148,14 +116,10 @@ impl WindowsAuditLogConfigurationBuilder {
     }
     /// <p>Sets which attempt type is logged by Amazon FSx for file share accesses.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SUCCESS_ONLY</code> - only successful attempts to access file shares are logged.</p></li>
-    /// <li>
-    /// <p><code>FAILURE_ONLY</code> - only failed attempts to access file shares are logged.</p></li>
-    /// <li>
-    /// <p><code>SUCCESS_AND_FAILURE</code> - both successful attempts and failed attempts to access file shares are logged.</p></li>
-    /// <li>
-    /// <p><code>DISABLED</code> - access auditing of file shares is turned off.</p></li>
+    /// <li> <p> <code>SUCCESS_ONLY</code> - only successful attempts to access file shares are logged.</p> </li>
+    /// <li> <p> <code>FAILURE_ONLY</code> - only failed attempts to access file shares are logged.</p> </li>
+    /// <li> <p> <code>SUCCESS_AND_FAILURE</code> - both successful attempts and failed attempts to access file shares are logged.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - access auditing of file shares is turned off.</p> </li>
     /// </ul>
     pub fn set_file_share_access_audit_log_level(mut self, input: ::std::option::Option<crate::types::WindowsAccessAuditLogLevel>) -> Self {
         self.file_share_access_audit_log_level = input;
@@ -163,14 +127,10 @@ impl WindowsAuditLogConfigurationBuilder {
     }
     /// <p>Sets which attempt type is logged by Amazon FSx for file share accesses.</p>
     /// <ul>
-    /// <li>
-    /// <p><code>SUCCESS_ONLY</code> - only successful attempts to access file shares are logged.</p></li>
-    /// <li>
-    /// <p><code>FAILURE_ONLY</code> - only failed attempts to access file shares are logged.</p></li>
-    /// <li>
-    /// <p><code>SUCCESS_AND_FAILURE</code> - both successful attempts and failed attempts to access file shares are logged.</p></li>
-    /// <li>
-    /// <p><code>DISABLED</code> - access auditing of file shares is turned off.</p></li>
+    /// <li> <p> <code>SUCCESS_ONLY</code> - only successful attempts to access file shares are logged.</p> </li>
+    /// <li> <p> <code>FAILURE_ONLY</code> - only failed attempts to access file shares are logged.</p> </li>
+    /// <li> <p> <code>SUCCESS_AND_FAILURE</code> - both successful attempts and failed attempts to access file shares are logged.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - access auditing of file shares is turned off.</p> </li>
     /// </ul>
     pub fn get_file_share_access_audit_log_level(&self) -> &::std::option::Option<crate::types::WindowsAccessAuditLogLevel> {
         &self.file_share_access_audit_log_level

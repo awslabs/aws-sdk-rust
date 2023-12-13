@@ -24,7 +24,7 @@ impl UpdateLayoutInputBuilder {
 ///
 /// <p>Updates the attributes of an existing layout.</p>
 /// <p>If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.</p>
-/// <p>A <code>ValidationException</code> is returned when you add non-existent <code>fieldIds</code> to a layout.</p><note>
+/// <p>A <code>ValidationException</code> is returned when you add non-existent <code>fieldIds</code> to a layout.</p> <note>
 /// <p>Title and Status fields cannot be part of layouts because they are not configurable.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -112,17 +112,17 @@ impl UpdateLayoutFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier of the Cases domain.</p>
+    /// <p>The unique identifier of the Cases domain. </p>
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_id(input.into());
         self
     }
-    /// <p>The unique identifier of the Cases domain.</p>
+    /// <p>The unique identifier of the Cases domain. </p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_id(input);
         self
     }
-    /// <p>The unique identifier of the Cases domain.</p>
+    /// <p>The unique identifier of the Cases domain. </p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_id()
     }

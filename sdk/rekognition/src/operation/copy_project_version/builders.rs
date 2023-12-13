@@ -25,11 +25,11 @@ impl CopyProjectVersionInputBuilder {
 /// <note>
 /// <p>This operation applies only to Amazon Rekognition Custom Labels.</p>
 /// </note>
-/// <p>Copies a version of an Amazon Rekognition Custom Labels model from a source project to a destination project. The source and destination projects can be in different AWS accounts but must be in the same AWS Region. You can't copy a model to another AWS service.</p>
+/// <p>Copies a version of an Amazon Rekognition Custom Labels model from a source project to a destination project. The source and destination projects can be in different AWS accounts but must be in the same AWS Region. You can't copy a model to another AWS service. </p>
 /// <p>To copy a model version to a different AWS account, you need to create a resource-based policy known as a <i>project policy</i>. You attach the project policy to the source project by calling <code>PutProjectPolicy</code>. The project policy gives permission to copy the model version from a trusting AWS account to a trusted account.</p>
-/// <p>For more information creating and attaching a project policy, see Attaching a project policy (SDK) in the <i>Amazon Rekognition Custom Labels Developer Guide</i>.</p>
-/// <p>If you are copying a model version to a project in the same AWS account, you don't need to create a project policy.</p><note>
-/// <p>Copying project versions is supported only for Custom Labels models.</p>
+/// <p>For more information creating and attaching a project policy, see Attaching a project policy (SDK) in the <i>Amazon Rekognition Custom Labels Developer Guide</i>. </p>
+/// <p>If you are copying a model version to a project in the same AWS account, you don't need to create a project policy.</p> <note>
+/// <p>Copying project versions is supported only for Custom Labels models. </p>
 /// <p>To copy a model, the destination project, source project, and source model version must already exist.</p>
 /// </note>
 /// <p>Copying a model version takes a while to complete. To get the current status, call <code>DescribeProjectVersions</code> and check the value of <code>Status</code> in the <code>ProjectVersionDescription</code> object. The copy operation has finished when the value of <code>Status</code> is <code>COPYING_COMPLETED</code>.</p>
@@ -147,17 +147,17 @@ impl CopyProjectVersionFluentBuilder {
     pub fn get_source_project_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_project_version_arn()
     }
-    /// <p>The ARN of the project in the trusted AWS account that you want to copy the model version to.</p>
+    /// <p>The ARN of the project in the trusted AWS account that you want to copy the model version to. </p>
     pub fn destination_project_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_project_arn(input.into());
         self
     }
-    /// <p>The ARN of the project in the trusted AWS account that you want to copy the model version to.</p>
+    /// <p>The ARN of the project in the trusted AWS account that you want to copy the model version to. </p>
     pub fn set_destination_project_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_project_arn(input);
         self
     }
-    /// <p>The ARN of the project in the trusted AWS account that you want to copy the model version to.</p>
+    /// <p>The ARN of the project in the trusted AWS account that you want to copy the model version to. </p>
     pub fn get_destination_project_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_destination_project_arn()
     }
@@ -193,31 +193,27 @@ impl CopyProjectVersionFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The key-value tags to assign to the model version.</p>
+    /// <p>The key-value tags to assign to the model version. </p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
-    /// <p>The key-value tags to assign to the model version.</p>
+    /// <p>The key-value tags to assign to the model version. </p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>The key-value tags to assign to the model version.</p>
+    /// <p>The key-value tags to assign to the model version. </p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt training results and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p>
     /// <p>If you choose to use your own KMS key, you need the following permissions on the KMS key.</p>
     /// <ul>
-    /// <li>
-    /// <p>kms:CreateGrant</p></li>
-    /// <li>
-    /// <p>kms:DescribeKey</p></li>
-    /// <li>
-    /// <p>kms:GenerateDataKey</p></li>
-    /// <li>
-    /// <p>kms:Decrypt</p></li>
+    /// <li> <p>kms:CreateGrant</p> </li>
+    /// <li> <p>kms:DescribeKey</p> </li>
+    /// <li> <p>kms:GenerateDataKey</p> </li>
+    /// <li> <p>kms:Decrypt</p> </li>
     /// </ul>
     /// <p>If you don't specify a value for <code>KmsKeyId</code>, images copied into the service are encrypted using a key that AWS owns and manages.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -227,14 +223,10 @@ impl CopyProjectVersionFluentBuilder {
     /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt training results and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p>
     /// <p>If you choose to use your own KMS key, you need the following permissions on the KMS key.</p>
     /// <ul>
-    /// <li>
-    /// <p>kms:CreateGrant</p></li>
-    /// <li>
-    /// <p>kms:DescribeKey</p></li>
-    /// <li>
-    /// <p>kms:GenerateDataKey</p></li>
-    /// <li>
-    /// <p>kms:Decrypt</p></li>
+    /// <li> <p>kms:CreateGrant</p> </li>
+    /// <li> <p>kms:DescribeKey</p> </li>
+    /// <li> <p>kms:GenerateDataKey</p> </li>
+    /// <li> <p>kms:Decrypt</p> </li>
     /// </ul>
     /// <p>If you don't specify a value for <code>KmsKeyId</code>, images copied into the service are encrypted using a key that AWS owns and manages.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -244,14 +236,10 @@ impl CopyProjectVersionFluentBuilder {
     /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt training results and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p>
     /// <p>If you choose to use your own KMS key, you need the following permissions on the KMS key.</p>
     /// <ul>
-    /// <li>
-    /// <p>kms:CreateGrant</p></li>
-    /// <li>
-    /// <p>kms:DescribeKey</p></li>
-    /// <li>
-    /// <p>kms:GenerateDataKey</p></li>
-    /// <li>
-    /// <p>kms:Decrypt</p></li>
+    /// <li> <p>kms:CreateGrant</p> </li>
+    /// <li> <p>kms:DescribeKey</p> </li>
+    /// <li> <p>kms:GenerateDataKey</p> </li>
+    /// <li> <p>kms:Decrypt</p> </li>
     /// </ul>
     /// <p>If you don't specify a value for <code>KmsKeyId</code>, images copied into the service are encrypted using a key that AWS owns and manages.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {

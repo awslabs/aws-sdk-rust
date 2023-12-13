@@ -9,7 +9,7 @@ pub struct MergeBranchesBySquashInput {
     pub source_commit_specifier: ::std::option::Option<::std::string::String>,
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
     pub destination_commit_specifier: ::std::option::Option<::std::string::String>,
-    /// <p>The branch where the merge is applied.</p>
+    /// <p>The branch where the merge is applied. </p>
     pub target_branch: ::std::option::Option<::std::string::String>,
     /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
     pub conflict_detail_level: ::std::option::Option<crate::types::ConflictDetailLevelTypeEnum>,
@@ -39,7 +39,7 @@ impl MergeBranchesBySquashInput {
     pub fn destination_commit_specifier(&self) -> ::std::option::Option<&str> {
         self.destination_commit_specifier.as_deref()
     }
-    /// <p>The branch where the merge is applied.</p>
+    /// <p>The branch where the merge is applied. </p>
     pub fn target_branch(&self) -> ::std::option::Option<&str> {
         self.target_branch.as_deref()
     }
@@ -141,17 +141,17 @@ impl MergeBranchesBySquashInputBuilder {
     pub fn get_destination_commit_specifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination_commit_specifier
     }
-    /// <p>The branch where the merge is applied.</p>
+    /// <p>The branch where the merge is applied. </p>
     pub fn target_branch(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_branch = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The branch where the merge is applied.</p>
+    /// <p>The branch where the merge is applied. </p>
     pub fn set_target_branch(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_branch = input;
         self
     }
-    /// <p>The branch where the merge is applied.</p>
+    /// <p>The branch where the merge is applied. </p>
     pub fn get_target_branch(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_branch
     }

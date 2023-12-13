@@ -4,14 +4,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfluenceAttachmentConfiguration {
-    /// <p><code>TRUE</code> to index attachments of pages and blogs in Confluence.</p>
+    /// <p> <code>TRUE</code> to index attachments of pages and blogs in Confluence.</p>
     pub crawl_attachments: bool,
     /// <p>Maps attributes or field names of Confluence attachments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Confluence data source field names must exist in your Confluence custom metadata.</p>
     /// <p>If you specify the <code>AttachentFieldMappings</code> parameter, you must specify at least one field mapping.</p>
     pub attachment_field_mappings: ::std::option::Option<::std::vec::Vec<crate::types::ConfluenceAttachmentToIndexFieldMapping>>,
 }
 impl ConfluenceAttachmentConfiguration {
-    /// <p><code>TRUE</code> to index attachments of pages and blogs in Confluence.</p>
+    /// <p> <code>TRUE</code> to index attachments of pages and blogs in Confluence.</p>
     pub fn crawl_attachments(&self) -> bool {
         self.crawl_attachments
     }
@@ -38,17 +38,17 @@ pub struct ConfluenceAttachmentConfigurationBuilder {
     pub(crate) attachment_field_mappings: ::std::option::Option<::std::vec::Vec<crate::types::ConfluenceAttachmentToIndexFieldMapping>>,
 }
 impl ConfluenceAttachmentConfigurationBuilder {
-    /// <p><code>TRUE</code> to index attachments of pages and blogs in Confluence.</p>
+    /// <p> <code>TRUE</code> to index attachments of pages and blogs in Confluence.</p>
     pub fn crawl_attachments(mut self, input: bool) -> Self {
         self.crawl_attachments = ::std::option::Option::Some(input);
         self
     }
-    /// <p><code>TRUE</code> to index attachments of pages and blogs in Confluence.</p>
+    /// <p> <code>TRUE</code> to index attachments of pages and blogs in Confluence.</p>
     pub fn set_crawl_attachments(mut self, input: ::std::option::Option<bool>) -> Self {
         self.crawl_attachments = input;
         self
     }
-    /// <p><code>TRUE</code> to index attachments of pages and blogs in Confluence.</p>
+    /// <p> <code>TRUE</code> to index attachments of pages and blogs in Confluence.</p>
     pub fn get_crawl_attachments(&self) -> &::std::option::Option<bool> {
         &self.crawl_attachments
     }

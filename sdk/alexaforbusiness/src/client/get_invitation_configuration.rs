@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder takes no input, just [`send`](crate::operation::get_invitation_configuration::builders::GetInvitationConfigurationFluentBuilder::send) it.
     /// - On success, responds with [`GetInvitationConfigurationOutput`](crate::operation::get_invitation_configuration::GetInvitationConfigurationOutput) with field(s):
     ///   - [`organization_name(Option<String>)`](crate::operation::get_invitation_configuration::GetInvitationConfigurationOutput::organization_name): <p>The name of the organization sending the enrollment invite to a user.</p>
-    ///   - [`contact_email(Option<String>)`](crate::operation::get_invitation_configuration::GetInvitationConfigurationOutput::contact_email): <p>The email ID of the organization or individual contact that the enrolled user can use.</p>
+    ///   - [`contact_email(Option<String>)`](crate::operation::get_invitation_configuration::GetInvitationConfigurationOutput::contact_email): <p>The email ID of the organization or individual contact that the enrolled user can use. </p>
     ///   - [`private_skill_ids(Option<Vec::<String>>)`](crate::operation::get_invitation_configuration::GetInvitationConfigurationOutput::private_skill_ids): <p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>
     /// - On failure, responds with [`SdkError<GetInvitationConfigurationError>`](crate::operation::get_invitation_configuration::GetInvitationConfigurationError)
     #[deprecated(note = "Alexa For Business is no longer supported")]

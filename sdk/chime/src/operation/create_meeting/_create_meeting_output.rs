@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateMeetingOutput {
-    /// <p>The meeting information, including the meeting ID and <code>MediaPlacement</code> .</p>
+    /// <p> The meeting information, including the meeting ID and <code>MediaPlacement</code> . </p>
     pub meeting: ::std::option::Option<crate::types::Meeting>,
     _request_id: Option<String>,
 }
 impl CreateMeetingOutput {
-    /// <p>The meeting information, including the meeting ID and <code>MediaPlacement</code> .</p>
+    /// <p> The meeting information, including the meeting ID and <code>MediaPlacement</code> . </p>
     pub fn meeting(&self) -> ::std::option::Option<&crate::types::Meeting> {
         self.meeting.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct CreateMeetingOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateMeetingOutputBuilder {
-    /// <p>The meeting information, including the meeting ID and <code>MediaPlacement</code> .</p>
+    /// <p> The meeting information, including the meeting ID and <code>MediaPlacement</code> . </p>
     pub fn meeting(mut self, input: crate::types::Meeting) -> Self {
         self.meeting = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The meeting information, including the meeting ID and <code>MediaPlacement</code> .</p>
+    /// <p> The meeting information, including the meeting ID and <code>MediaPlacement</code> . </p>
     pub fn set_meeting(mut self, input: ::std::option::Option<crate::types::Meeting>) -> Self {
         self.meeting = input;
         self
     }
-    /// <p>The meeting information, including the meeting ID and <code>MediaPlacement</code> .</p>
+    /// <p> The meeting information, including the meeting ID and <code>MediaPlacement</code> . </p>
     pub fn get_meeting(&self) -> &::std::option::Option<crate::types::Meeting> {
         &self.meeting
     }

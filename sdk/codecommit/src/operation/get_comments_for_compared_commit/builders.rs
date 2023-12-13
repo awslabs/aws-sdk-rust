@@ -22,7 +22,7 @@ impl GetCommentsForComparedCommitInputBuilder {
 }
 /// Fluent builder constructing a request to `GetCommentsForComparedCommit`.
 ///
-/// <p>Returns information about comments made on the comparison between two commits.</p><note>
+/// <p>Returns information about comments made on the comparison between two commits.</p> <note>
 /// <p>Reaction counts might include numbers from user identities who were deleted after the reaction was made. For a count of reactions from active identities, use GetCommentReactions.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -158,17 +158,17 @@ impl GetCommentsForComparedCommitFluentBuilder {
     pub fn get_after_commit_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_after_commit_id()
     }
-    /// <p>An enumeration token that when provided in a request, returns the next batch of the results.</p>
+    /// <p>An enumeration token that when provided in a request, returns the next batch of the results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>An enumeration token that when provided in a request, returns the next batch of the results.</p>
+    /// <p>An enumeration token that when provided in a request, returns the next batch of the results. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>An enumeration token that when provided in a request, returns the next batch of the results.</p>
+    /// <p>An enumeration token that when provided in a request, returns the next batch of the results. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

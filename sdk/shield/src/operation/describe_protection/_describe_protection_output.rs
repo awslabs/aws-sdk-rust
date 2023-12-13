@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeProtectionOutput {
-    /// <p>The <code>Protection</code> that you requested.</p>
+    /// <p>The <code>Protection</code> that you requested. </p>
     pub protection: ::std::option::Option<crate::types::Protection>,
     _request_id: Option<String>,
 }
 impl DescribeProtectionOutput {
-    /// <p>The <code>Protection</code> that you requested.</p>
+    /// <p>The <code>Protection</code> that you requested. </p>
     pub fn protection(&self) -> ::std::option::Option<&crate::types::Protection> {
         self.protection.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct DescribeProtectionOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeProtectionOutputBuilder {
-    /// <p>The <code>Protection</code> that you requested.</p>
+    /// <p>The <code>Protection</code> that you requested. </p>
     pub fn protection(mut self, input: crate::types::Protection) -> Self {
         self.protection = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The <code>Protection</code> that you requested.</p>
+    /// <p>The <code>Protection</code> that you requested. </p>
     pub fn set_protection(mut self, input: ::std::option::Option<crate::types::Protection>) -> Self {
         self.protection = input;
         self
     }
-    /// <p>The <code>Protection</code> that you requested.</p>
+    /// <p>The <code>Protection</code> that you requested. </p>
     pub fn get_protection(&self) -> &::std::option::Option<crate::types::Protection> {
         &self.protection
     }

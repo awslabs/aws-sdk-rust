@@ -8,11 +8,11 @@ pub struct SpeakerSummary {
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The client-provided identifier for the speaker.</p>
     pub customer_speaker_id: ::std::option::Option<::std::string::String>,
-    /// <p>The service-generated identifier for the speaker.</p>
+    /// <p>The service-generated identifier for the speaker. </p>
     pub generated_speaker_id: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the speaker.</p>
     pub status: ::std::option::Option<crate::types::SpeakerStatus>,
-    /// <p>A timestamp showing the speaker's creation time.</p>
+    /// <p>A timestamp showing the speaker's creation time. </p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp showing the speaker's last update.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -28,7 +28,7 @@ impl SpeakerSummary {
     pub fn customer_speaker_id(&self) -> ::std::option::Option<&str> {
         self.customer_speaker_id.as_deref()
     }
-    /// <p>The service-generated identifier for the speaker.</p>
+    /// <p>The service-generated identifier for the speaker. </p>
     pub fn generated_speaker_id(&self) -> ::std::option::Option<&str> {
         self.generated_speaker_id.as_deref()
     }
@@ -36,7 +36,7 @@ impl SpeakerSummary {
     pub fn status(&self) -> ::std::option::Option<&crate::types::SpeakerStatus> {
         self.status.as_ref()
     }
-    /// <p>A timestamp showing the speaker's creation time.</p>
+    /// <p>A timestamp showing the speaker's creation time. </p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
@@ -110,17 +110,17 @@ impl SpeakerSummaryBuilder {
     pub fn get_customer_speaker_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.customer_speaker_id
     }
-    /// <p>The service-generated identifier for the speaker.</p>
+    /// <p>The service-generated identifier for the speaker. </p>
     pub fn generated_speaker_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.generated_speaker_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The service-generated identifier for the speaker.</p>
+    /// <p>The service-generated identifier for the speaker. </p>
     pub fn set_generated_speaker_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.generated_speaker_id = input;
         self
     }
-    /// <p>The service-generated identifier for the speaker.</p>
+    /// <p>The service-generated identifier for the speaker. </p>
     pub fn get_generated_speaker_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.generated_speaker_id
     }
@@ -138,17 +138,17 @@ impl SpeakerSummaryBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::SpeakerStatus> {
         &self.status
     }
-    /// <p>A timestamp showing the speaker's creation time.</p>
+    /// <p>A timestamp showing the speaker's creation time. </p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A timestamp showing the speaker's creation time.</p>
+    /// <p>A timestamp showing the speaker's creation time. </p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
-    /// <p>A timestamp showing the speaker's creation time.</p>
+    /// <p>A timestamp showing the speaker's creation time. </p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }

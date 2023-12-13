@@ -22,7 +22,7 @@ impl UpdatePullRequestStatusInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdatePullRequestStatus`.
 ///
-/// <p>Updates the status of a pull request.</p>
+/// <p>Updates the status of a pull request. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdatePullRequestStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

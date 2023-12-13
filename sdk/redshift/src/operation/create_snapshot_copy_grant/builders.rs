@@ -23,7 +23,7 @@ impl CreateSnapshotCopyGrantInputBuilder {
 /// Fluent builder constructing a request to `CreateSnapshotCopyGrant`.
 ///
 /// <p>Creates a snapshot copy grant that permits Amazon Redshift to use an encrypted symmetric key from Key Management Service (KMS) to encrypt copied snapshots in a destination region.</p>
-/// <p>For more information about managing snapshot copy grants, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+/// <p> For more information about managing snapshot copy grants, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateSnapshotCopyGrantFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -112,16 +112,11 @@ impl CreateSnapshotCopyGrantFluentBuilder {
     /// <p>The name of the snapshot copy grant. This name must be unique in the region for the Amazon Web Services account.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p></li>
-    /// <li>
-    /// <p>Alphabetic characters must be lowercase.</p></li>
-    /// <li>
-    /// <p>First character must be a letter.</p></li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
-    /// <li>
-    /// <p>Must be unique for all clusters within an Amazon Web Services account.</p></li>
+    /// <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li>
+    /// <li> <p>Alphabetic characters must be lowercase.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li> <p>Must be unique for all clusters within an Amazon Web Services account.</p> </li>
     /// </ul>
     pub fn snapshot_copy_grant_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.snapshot_copy_grant_name(input.into());
@@ -130,16 +125,11 @@ impl CreateSnapshotCopyGrantFluentBuilder {
     /// <p>The name of the snapshot copy grant. This name must be unique in the region for the Amazon Web Services account.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p></li>
-    /// <li>
-    /// <p>Alphabetic characters must be lowercase.</p></li>
-    /// <li>
-    /// <p>First character must be a letter.</p></li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
-    /// <li>
-    /// <p>Must be unique for all clusters within an Amazon Web Services account.</p></li>
+    /// <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li>
+    /// <li> <p>Alphabetic characters must be lowercase.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li> <p>Must be unique for all clusters within an Amazon Web Services account.</p> </li>
     /// </ul>
     pub fn set_snapshot_copy_grant_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_snapshot_copy_grant_name(input);
@@ -148,16 +138,11 @@ impl CreateSnapshotCopyGrantFluentBuilder {
     /// <p>The name of the snapshot copy grant. This name must be unique in the region for the Amazon Web Services account.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p></li>
-    /// <li>
-    /// <p>Alphabetic characters must be lowercase.</p></li>
-    /// <li>
-    /// <p>First character must be a letter.</p></li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
-    /// <li>
-    /// <p>Must be unique for all clusters within an Amazon Web Services account.</p></li>
+    /// <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li>
+    /// <li> <p>Alphabetic characters must be lowercase.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li> <p>Must be unique for all clusters within an Amazon Web Services account.</p> </li>
     /// </ul>
     pub fn get_snapshot_copy_grant_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_snapshot_copy_grant_name()

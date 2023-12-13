@@ -22,16 +22,13 @@ impl UpdateLoggingConfigurationInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateLoggingConfiguration`.
 ///
-/// <p>Sets the logging configuration for the specified firewall.</p>
-/// <p>To change the logging configuration, retrieve the <code>LoggingConfiguration</code> by calling <code>DescribeLoggingConfiguration</code>, then change it and provide the modified object to this update call. You must change the logging configuration one <code>LogDestinationConfig</code> at a time inside the retrieved <code>LoggingConfiguration</code> object.</p>
-/// <p>You can perform only one of the following actions in any call to <code>UpdateLoggingConfiguration</code>:</p>
+/// <p>Sets the logging configuration for the specified firewall. </p>
+/// <p>To change the logging configuration, retrieve the <code>LoggingConfiguration</code> by calling <code>DescribeLoggingConfiguration</code>, then change it and provide the modified object to this update call. You must change the logging configuration one <code>LogDestinationConfig</code> at a time inside the retrieved <code>LoggingConfiguration</code> object. </p>
+/// <p>You can perform only one of the following actions in any call to <code>UpdateLoggingConfiguration</code>: </p>
 /// <ul>
-/// <li>
-/// <p>Create a new log destination object by adding a single <code>LogDestinationConfig</code> array element to <code>LogDestinationConfigs</code>.</p></li>
-/// <li>
-/// <p>Delete a log destination object by removing a single <code>LogDestinationConfig</code> array element from <code>LogDestinationConfigs</code>.</p></li>
-/// <li>
-/// <p>Change the <code>LogDestination</code> setting in a single <code>LogDestinationConfig</code> array element.</p></li>
+/// <li> <p>Create a new log destination object by adding a single <code>LogDestinationConfig</code> array element to <code>LogDestinationConfigs</code>.</p> </li>
+/// <li> <p>Delete a log destination object by removing a single <code>LogDestinationConfig</code> array element from <code>LogDestinationConfigs</code>.</p> </li>
+/// <li> <p>Change the <code>LogDestination</code> setting in a single <code>LogDestinationConfig</code> array element.</p> </li>
 /// </ul>
 /// <p>You can't change the <code>LogDestinationType</code> or <code>LogType</code> in a <code>LogDestinationConfig</code>. To change these settings, delete the existing <code>LogDestinationConfig</code> object and create a new one, using two separate calls to this update operation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -120,36 +117,36 @@ impl UpdateLoggingConfigurationFluentBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub fn firewall_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.firewall_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub fn set_firewall_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_firewall_arn(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub fn get_firewall_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_firewall_arn()
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub fn firewall_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.firewall_name(input.into());
         self
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub fn set_firewall_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_firewall_name(input);
         self
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub fn get_firewall_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_firewall_name()
     }

@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAssessmentControlOutput {
-    /// <p>The name of the updated control set that the <code>UpdateAssessmentControl</code> API returned.</p>
+    /// <p> The name of the updated control set that the <code>UpdateAssessmentControl</code> API returned. </p>
     pub control: ::std::option::Option<crate::types::AssessmentControl>,
     _request_id: Option<String>,
 }
 impl UpdateAssessmentControlOutput {
-    /// <p>The name of the updated control set that the <code>UpdateAssessmentControl</code> API returned.</p>
+    /// <p> The name of the updated control set that the <code>UpdateAssessmentControl</code> API returned. </p>
     pub fn control(&self) -> ::std::option::Option<&crate::types::AssessmentControl> {
         self.control.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct UpdateAssessmentControlOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateAssessmentControlOutputBuilder {
-    /// <p>The name of the updated control set that the <code>UpdateAssessmentControl</code> API returned.</p>
+    /// <p> The name of the updated control set that the <code>UpdateAssessmentControl</code> API returned. </p>
     pub fn control(mut self, input: crate::types::AssessmentControl) -> Self {
         self.control = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The name of the updated control set that the <code>UpdateAssessmentControl</code> API returned.</p>
+    /// <p> The name of the updated control set that the <code>UpdateAssessmentControl</code> API returned. </p>
     pub fn set_control(mut self, input: ::std::option::Option<crate::types::AssessmentControl>) -> Self {
         self.control = input;
         self
     }
-    /// <p>The name of the updated control set that the <code>UpdateAssessmentControl</code> API returned.</p>
+    /// <p> The name of the updated control set that the <code>UpdateAssessmentControl</code> API returned. </p>
     pub fn get_control(&self) -> &::std::option::Option<crate::types::AssessmentControl> {
         &self.control
     }

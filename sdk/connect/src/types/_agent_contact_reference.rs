@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AgentContactReference {
-    /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
+    /// <p>The identifier of the contact in this instance of Amazon Connect. </p>
     pub contact_id: ::std::option::Option<::std::string::String>,
     /// <p>The channel of the contact.</p>
     pub channel: ::std::option::Option<crate::types::Channel>,
@@ -20,7 +20,7 @@ pub struct AgentContactReference {
     pub queue: ::std::option::Option<crate::types::QueueReference>,
 }
 impl AgentContactReference {
-    /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
+    /// <p>The identifier of the contact in this instance of Amazon Connect. </p>
     pub fn contact_id(&self) -> ::std::option::Option<&str> {
         self.contact_id.as_deref()
     }
@@ -69,17 +69,17 @@ pub struct AgentContactReferenceBuilder {
     pub(crate) queue: ::std::option::Option<crate::types::QueueReference>,
 }
 impl AgentContactReferenceBuilder {
-    /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
+    /// <p>The identifier of the contact in this instance of Amazon Connect. </p>
     pub fn contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
+    /// <p>The identifier of the contact in this instance of Amazon Connect. </p>
     pub fn set_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.contact_id = input;
         self
     }
-    /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
+    /// <p>The identifier of the contact in this instance of Amazon Connect. </p>
     pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.contact_id
     }

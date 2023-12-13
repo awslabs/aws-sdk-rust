@@ -114,17 +114,17 @@ impl ListFlywheelsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_flywheels::paginator::ListFlywheelsPaginator {
         crate::operation::list_flywheels::paginator::ListFlywheelsPaginator::new(self.handle, self.inner)
     }
-    /// <p>Filters the flywheels that are returned. You can filter flywheels on their status, or the date and time that they were submitted. You can only set one filter at a time.</p>
+    /// <p>Filters the flywheels that are returned. You can filter flywheels on their status, or the date and time that they were submitted. You can only set one filter at a time. </p>
     pub fn filter(mut self, input: crate::types::FlywheelFilter) -> Self {
         self.inner = self.inner.filter(input);
         self
     }
-    /// <p>Filters the flywheels that are returned. You can filter flywheels on their status, or the date and time that they were submitted. You can only set one filter at a time.</p>
+    /// <p>Filters the flywheels that are returned. You can filter flywheels on their status, or the date and time that they were submitted. You can only set one filter at a time. </p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::FlywheelFilter>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }
-    /// <p>Filters the flywheels that are returned. You can filter flywheels on their status, or the date and time that they were submitted. You can only set one filter at a time.</p>
+    /// <p>Filters the flywheels that are returned. You can filter flywheels on their status, or the date and time that they were submitted. You can only set one filter at a time. </p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::FlywheelFilter> {
         self.inner.get_filter()
     }

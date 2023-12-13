@@ -13,18 +13,16 @@ pub struct BatchExecuteStatementInput {
     pub sql: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database.</p>
     pub database: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the database schema.</p><note>
+    /// <p>The name of the database schema.</p> <note>
     /// <p>Currently, the <code>schema</code> parameter isn't supported.</p>
     /// </note>
     pub schema: ::std::option::Option<::std::string::String>,
     /// <p>The parameter set for the batch operation.</p>
     /// <p>The SQL statement is executed as many times as the number of parameter sets provided. To execute a SQL statement with no parameters, use one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p>Specify one or more empty parameter sets.</p></li>
-    /// <li>
-    /// <p>Use the <code>ExecuteStatement</code> operation instead of the <code>BatchExecuteStatement</code> operation.</p></li>
-    /// </ul><note>
+    /// <li> <p>Specify one or more empty parameter sets.</p> </li>
+    /// <li> <p>Use the <code>ExecuteStatement</code> operation instead of the <code>BatchExecuteStatement</code> operation.</p> </li>
+    /// </ul> <note>
     /// <p>Array parameters are not supported.</p>
     /// </note>
     pub parameter_sets: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::SqlParameter>>>,
@@ -50,7 +48,7 @@ impl BatchExecuteStatementInput {
     pub fn database(&self) -> ::std::option::Option<&str> {
         self.database.as_deref()
     }
-    /// <p>The name of the database schema.</p><note>
+    /// <p>The name of the database schema.</p> <note>
     /// <p>Currently, the <code>schema</code> parameter isn't supported.</p>
     /// </note>
     pub fn schema(&self) -> ::std::option::Option<&str> {
@@ -59,11 +57,9 @@ impl BatchExecuteStatementInput {
     /// <p>The parameter set for the batch operation.</p>
     /// <p>The SQL statement is executed as many times as the number of parameter sets provided. To execute a SQL statement with no parameters, use one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p>Specify one or more empty parameter sets.</p></li>
-    /// <li>
-    /// <p>Use the <code>ExecuteStatement</code> operation instead of the <code>BatchExecuteStatement</code> operation.</p></li>
-    /// </ul><note>
+    /// <li> <p>Specify one or more empty parameter sets.</p> </li>
+    /// <li> <p>Use the <code>ExecuteStatement</code> operation instead of the <code>BatchExecuteStatement</code> operation.</p> </li>
+    /// </ul> <note>
     /// <p>Array parameters are not supported.</p>
     /// </note>
     ///
@@ -159,21 +155,21 @@ impl BatchExecuteStatementInputBuilder {
     pub fn get_database(&self) -> &::std::option::Option<::std::string::String> {
         &self.database
     }
-    /// <p>The name of the database schema.</p><note>
+    /// <p>The name of the database schema.</p> <note>
     /// <p>Currently, the <code>schema</code> parameter isn't supported.</p>
     /// </note>
     pub fn schema(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the database schema.</p><note>
+    /// <p>The name of the database schema.</p> <note>
     /// <p>Currently, the <code>schema</code> parameter isn't supported.</p>
     /// </note>
     pub fn set_schema(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema = input;
         self
     }
-    /// <p>The name of the database schema.</p><note>
+    /// <p>The name of the database schema.</p> <note>
     /// <p>Currently, the <code>schema</code> parameter isn't supported.</p>
     /// </note>
     pub fn get_schema(&self) -> &::std::option::Option<::std::string::String> {
@@ -186,11 +182,9 @@ impl BatchExecuteStatementInputBuilder {
     /// <p>The parameter set for the batch operation.</p>
     /// <p>The SQL statement is executed as many times as the number of parameter sets provided. To execute a SQL statement with no parameters, use one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p>Specify one or more empty parameter sets.</p></li>
-    /// <li>
-    /// <p>Use the <code>ExecuteStatement</code> operation instead of the <code>BatchExecuteStatement</code> operation.</p></li>
-    /// </ul><note>
+    /// <li> <p>Specify one or more empty parameter sets.</p> </li>
+    /// <li> <p>Use the <code>ExecuteStatement</code> operation instead of the <code>BatchExecuteStatement</code> operation.</p> </li>
+    /// </ul> <note>
     /// <p>Array parameters are not supported.</p>
     /// </note>
     pub fn parameter_sets(mut self, input: ::std::vec::Vec<crate::types::SqlParameter>) -> Self {
@@ -202,11 +196,9 @@ impl BatchExecuteStatementInputBuilder {
     /// <p>The parameter set for the batch operation.</p>
     /// <p>The SQL statement is executed as many times as the number of parameter sets provided. To execute a SQL statement with no parameters, use one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p>Specify one or more empty parameter sets.</p></li>
-    /// <li>
-    /// <p>Use the <code>ExecuteStatement</code> operation instead of the <code>BatchExecuteStatement</code> operation.</p></li>
-    /// </ul><note>
+    /// <li> <p>Specify one or more empty parameter sets.</p> </li>
+    /// <li> <p>Use the <code>ExecuteStatement</code> operation instead of the <code>BatchExecuteStatement</code> operation.</p> </li>
+    /// </ul> <note>
     /// <p>Array parameters are not supported.</p>
     /// </note>
     pub fn set_parameter_sets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::SqlParameter>>>) -> Self {
@@ -216,11 +208,9 @@ impl BatchExecuteStatementInputBuilder {
     /// <p>The parameter set for the batch operation.</p>
     /// <p>The SQL statement is executed as many times as the number of parameter sets provided. To execute a SQL statement with no parameters, use one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p>Specify one or more empty parameter sets.</p></li>
-    /// <li>
-    /// <p>Use the <code>ExecuteStatement</code> operation instead of the <code>BatchExecuteStatement</code> operation.</p></li>
-    /// </ul><note>
+    /// <li> <p>Specify one or more empty parameter sets.</p> </li>
+    /// <li> <p>Use the <code>ExecuteStatement</code> operation instead of the <code>BatchExecuteStatement</code> operation.</p> </li>
+    /// </ul> <note>
     /// <p>Array parameters are not supported.</p>
     /// </note>
     pub fn get_parameter_sets(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::SqlParameter>>> {
